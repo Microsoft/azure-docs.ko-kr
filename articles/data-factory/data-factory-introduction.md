@@ -110,6 +110,7 @@ Azure 구독에는 하나 이상의 Azure Data Factory 인스턴스(또는 데�
 ### Data Factory 엔터티 간의 관계
 <a id="relationship-between-data-factory-entities" class="xliff"></a>
 ![다이어그램: Data Factory, 클라우드 데이터 통합 서비스 - 주요 개념](./media/data-factory-introduction/data-integration-service-key-concepts.png)
+
 **그림 2.** 데이터 집합, 활동, 파이프라인 및 연결된 서비스 간의 관계
 
 ## 지원되는 지역
