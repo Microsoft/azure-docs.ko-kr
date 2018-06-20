@@ -37,7 +37,7 @@ Azure SDK 2.9의 새로운 변경 내용은 이번 릴리스에 도입되지 않
 ### <a name="azure-diagnostics"></a>Azure 진단
 
 - 이 동작은 키가 Cloud Services 진단 저장소 연결 문자열에 대한 토큰으로 교체되어 부분 연결 문자열만 저장하는 방식으로 변경되었습니다. 이제 실제 저장소 키가 액세스를 제어할 수 있도록 사용자 프로필 폴더에 저장됩니다. Visual Studio는 로컬 디버깅 및 게시 프로세스에 대한 사용자 프로필 폴더에서 저장소 키를 읽습니다. 
-- 위에 설명된 변경에 대한 응답으로, Visual Studio Online 팀은 사용자가 연속 통합 및 배포에서 Azure에 게시할 때 진단 확장을 설정하기 위한 저장소 키를 지정할 수 있도록 Azure Cloud Services 배포 작업 템플릿을 개선했습니다.
+- 위의 변화에 따라, Visual Studio Online 팀은 사용자가 연속 통합 및 배포에서 Azure에 게시할 때 진단 확장을 설정하기 위한 저장소 키를 지정할 수 있도록 Azure Cloud Services 배포 작업 템플릿을 개선했습니다.
 - 작업 환경 간 구성 문제를 해결하는 데 도움을 주기 위해 Azure 진단(WAD)에 대한 보안 연결 문자열 및 토큰화를 저장할 수 있게 했습니다.
  
 ### <a name="windows-server-2016-virtual-machines"></a>Windows Server 2016 가상 머신
