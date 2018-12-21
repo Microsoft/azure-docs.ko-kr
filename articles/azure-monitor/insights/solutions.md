@@ -24,7 +24,7 @@ ms.locfileid: "51714429"
 # <a name="management-solutions-in-azure"></a>Azure의 관리 솔루션
 관리 솔루션은 Azure의 서비스를 활용하여 특정 응용 프로그램이나 서비스의 작업에 대한 추가 인사이트를 제공합니다. 이 문서에서는 Azure 관리 솔루션에 대해 간략하게 설명하고 관리 솔루션을 설치 및 사용하는 방법을 자세히 알아봅니다.
 
-관리 솔루션은 일반적으로 Log Analytics로 정보를 수집하고, 수집된 데이터를 분석하기 위한 로그 검색 및 보기를 제공합니다. 또한 Azure Automation 같은 다른 서비스를 활용하여 응용 프로그램이나 서비스와 관련된 작업을 수행합니다.
+관리 솔루션은 일반적으로 Log Analytics로 정보를 수집하고, 수집된 데이터를 분석하기 위한 로그 검색 및 보기를 제공합니다. 또한 Azure Automation과 같은 다른 서비스를 활용하여 응용 프로그램이나 서비스와 관련된 작업을 수행합니다.
 
 사용하는 응용 프로그램 및 서비스의 Azure 구독에 관리 솔루션을 추가할 수 있습니다. 관리 솔루션은 일반적으로 무료로 제공되지만 데이터 수집 시 사용 요금이 발생할 수 있습니다. Microsoft에서 제공한 솔루션 외에도 파트너 및 고객은 자신의 환경에서 사용하거나 커뮤니티를 통해 고객이 이용할 수 있는 [관리 솔루션을 만들 수 있습니다](solutions-creating.md).
 
@@ -57,7 +57,7 @@ ms.locfileid: "51714429"
 Microsoft 및 파트너의 관리 솔루션은 [Azure Marketplace](https://azuremarketplace.microsoft.com)에서 사용할 수 있습니다. 다음 절차를 사용하여 사용 가능한 솔루션을 검색하고 설치할 수 있습니다.
 
 1. [구독의 솔루션 목록](#list-installed-management-solutions)에서 **추가**를 클릭합니다. 
-1. **관리 솔루션** 오른쪽에서 **기타**를 클릭합니다. 
+1. **관리 솔루션** 오른쪽에서 **더보기**를 클릭합니다. 
 1. 원하는 관리 솔루션을 찾아서 해당 설명을 자세히 읽습니다.
 1. 설치 프로세스를 시작하려면 **만들기**를 클릭합니다.
 1. 설치 프로세스가 시작되면 필요한 구성을 입력하라는 메시지가 표시되며, 필요한 구성은 솔루션마다 다릅니다. 모든 솔루션에서 솔루션이 설치되고 데이터가 수집될 Log Analytics 작업 영역을 선택해야 합니다. 
@@ -92,9 +92,9 @@ Log Analytics 작업 영역 및 Automation 계정을 지정하는 방법은 솔�
 ### <a name="verifying-the-link-between-a-log-analytics-workspace-and-automation-account"></a>Log Analytics 작업 영역 및 Automation 계정 간의 링크 확인
 다음 절차를 통해 Log Analytics 작업 영역 및 Automation 계정 간의 링크를 확인할 수 있습니다.
 
-1. Azure Portal에서 Automation 계정을 선택합니다.
-1. 메뉴의 **관련 리소스** 섹션이 나올 때까지 스크롤합니다.
-1. **작업 영역** 설정을 사용하도록 설정하면 이 계정이 Log Analytics 작업 영역에 연결됩니다. **작업 영역**을 클릭하여 작업 영역의 세부 정보를 확인할 수 있습니다.
+1. Azure 포털에서 Automation 계정을 선택합니다.
+1. 메뉴의 **관련 리소스** 섹션이 나올 때까지 스크롤하고 **연결된 작업 영역**을 클릭합니다.
+1. **작업 영역** 설정을 사용하도록 설정했다면 이 계정이 Log Analytics 작업 영역에 연결됩니다. **작업 영역**을 클릭하여 작업 영역의 세부 정보를 확인할 수 있습니다.
 
 ## <a name="remove-a-management-solution"></a>관리 솔루션 제거
 설치된 솔루션을 제거하려면 [설치된 솔루션 목록](#list-installed-management-solutions)에서 해당 솔루션을 찾습니다. 솔루션 이름을 클릭하여 요약 페이지를 열고 **삭제**를 클릭합니다.
