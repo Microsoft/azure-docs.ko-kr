@@ -19,7 +19,7 @@ ms.lasthandoff: 09/12/2018
 ms.locfileid: "44718092"
 ---
 # <a name="copy-data-from-azure-blob-storage-to-a-sql-database-by-using-the-copy-data-tool"></a>데이터 복사 도구를 사용하여 Azure Blob 저장소에서 SQL 데이터베이스로 데이터 복사
-> [!div class="op_single_selector" title1="Select the version of the Data Factory service that you're using:"]
+> [!div class="op_single_selector" title1="사용중인 Data Factory 서비스의 버전을 선택하십시오:"]
 > * [버전 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [현재 버전](tutorial-copy-data-tool.md)
 
