@@ -21,7 +21,7 @@ ms.lasthandoff: 12/04/2018
 ms.locfileid: "52876480"
 ---
 # <a name="pipeline-execution-and-triggers-in-azure-data-factory"></a>Azure Data Factory에서 파이프라인 실행 및 트리거
-> [!div class="op_single_selector" title1="Select the version of the Data Factory service that you're using:"]
+> [!div class="op_single_selector" title1="사용중인 Data Factory 서비스의 버전을 선택하십시오:"]
 > * [버전 1](v1/data-factory-scheduling-and-execution.md)
 > * [현재 버전](concepts-pipeline-execution-triggers.md)
 
