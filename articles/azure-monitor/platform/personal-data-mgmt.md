@@ -25,7 +25,7 @@ ms.locfileid: "53810273"
 Log Analytics는 개인 데이터를 찾을 수 있는 데이터 저장소입니다. Application Insights는 해당 데이터를 Log Analytics 파티션에 저장합니다. 이 문서에서는 Log Analytics 및 Application Insights에서 일반적으로 이러한 데이터가 발견되는 위치와 이러한 데이터를 처리하는 데 사용할 수 있는 기능에 대해 설명합니다.
 
 > [!NOTE]
-> 이 문서의 목적을 위해, _로그 데이터_는 Log Analytics 작업 영역으로 전송된 데이터를 가리키고, _애플리케이션 데이터_는 Application Insights에 의해 수집된 데이터를 가리킵니다.
+> 이 문서의 목적을 위해, _로그 데이터_ 는 Log Analytics 작업 영역으로 전송된 데이터를 가리키고, _애플리케이션 데이터_ 는 Application Insights에 의해 수집된 데이터를 가리킵니다.
 
 [!INCLUDE [gdpr-dsr-and-stp-note](../../../includes/gdpr-dsr-and-stp-note.md)]
 
