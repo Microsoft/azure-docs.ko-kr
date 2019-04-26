@@ -228,12 +228,21 @@ Linux 디바이스에서 테스트 인증서를 생성하려면 이 섹션의 �
 
 3. config.yaml 파일의 **certificate** 속성을 IoT Edge 디바이스에서 인증서 및 키 파일을 배치한 경로로 설정합니다.
 
-```yaml
-certificates:
-  device_ca_cert: "<CERTDIR>\\certs\\new-edge-device-full-chain.cert.pem"
-  device_ca_pk: "<CERTDIR>\\private\\new-edge-device.key.pem"
-  trusted_ca_certs: "<CERTDIR>\\certs\\azure-iot-test-only.root.ca.cert.pem"
-```
+   * Windows:
+   ```yaml
+   certificates:
+     device_ca_cert: "<CERTDIR>\\certs\\new-edge-device-full-chain.cert.pem"
+     device_ca_pk: "<CERTDIR>\\private\\new-edge-device.key.pem"
+     trusted_ca_certs: "<CERTDIR>\\certs\\azure-iot-test-only.root.ca.cert.pem"
+   ```
+
+   * Linux:
+   ```yaml
+   certificates:
+     device_ca_cert: "<CERTDIR>/certs/new-edge-device-full-chain.cert.pem"
+     device_ca_pk: "<CERTDIR>/private/new-edge-device.key.pem"
+     trusted_ca_certs: "<CERTDIR>/certs/azure-iot-test-only.root.ca.cert.pem"
+   ```
 
 ## <a name="deploy-edgehub-to-the-gateway"></a>게이트웨이에 Edge Hub 배포
 
