@@ -58,8 +58,8 @@ ms.locfileid: "54330010"
 
 | 자산 | 설명 | 필수 |
 | -------- | ----------- | -------- |
-| 형식 | type 속성을 다음으로 설정해야 합니다. **AzureSearch**. | 예 |
-| URL | Azure Search 서비스의 URL입니다. | 예 |
+| type | type 속성을 다음으로 설정해야 합니다. **AzureSearch**. | 예 |
+| url | Azure Search 서비스의 URL입니다. | 예 |
 | key | Azure Search 서비스의 관리자 키입니다. | 예 |
 
 ## <a name="dataset-properties"></a>데이터 세트 속성
@@ -68,7 +68,7 @@ ms.locfileid: "54330010"
 
 | 자산 | 설명 | 필수 |
 | -------- | ----------- | -------- |
-| 형식 | 형식 속성은 **AzureSearchIndex**로 설정되어야 합니다.| 예 |
+| type | 형식 속성은 **AzureSearchIndex**로 설정되어야 합니다.| 예 |
 | indexName | Azure Search 인덱스의 이름입니다. Data Factory는 인덱스를 만들지 않습니다. Azure Search에는 인덱스가 있어야 합니다. | 예 |
 
 
@@ -80,7 +80,7 @@ ms.locfileid: "54330010"
 | 자산 | 설명 | 허용되는 값 | 필수 |
 | -------- | ----------- | -------------- | -------- |
 | WriteBehavior | 문서가 인덱스에 이미 있는 경우 병합할지 또는 바꿀지를 지정합니다. [WriteBehavior 속성](#writebehavior-property)을 참조하세요.| 병합(기본값)<br/>업로드| 아니요 |
-| writeBatchSize | 버퍼 크기가 writeBatchSize에 도달한 경우 Azure Search 인덱스에 데이터를 업로드합니다. 자세한 내용은 [WriteBatchSize 속성](#writebatchsize-property)을 참조하세요. | 1~1,000입니다. 기본값은 1,000입니다. | 아니요 |
+| WriteBatchSize | 버퍼 크기가 writeBatchSize에 도달한 경우 Azure Search 인덱스에 데이터를 업로드합니다. 자세한 내용은 [WriteBatchSize 속성](#writebatchsize-property)을 참조하세요. | 1~1,000입니다. 기본값은 1,000입니다. | 아니요 |
 
 ### <a name="writebehavior-property"></a>WriteBehavior 속성
 데이터를 쓸 때 AzureSearchSink가 삽입됩니다. 즉, 문서를 작성할 때 문서 키가 Azure Search 인덱스가 이미 있는 경우 Azure Search는 충돌 예외를 throw하지 않는 대신 기존 문서를 업데이트합니다.
@@ -100,13 +100,13 @@ Azure Search 서비스는 일괄 처리로 문서 작성을 지원합니다. 일
 
 | Azure Search 데이터 형식 | Azure Search 싱크에서 지원됨 |
 | ---------------------- | ------------------------------ |
-| 문자열 | Y |
+| String | Y |
 | Int32 | Y |
 | Int64 | Y |
 | Double | Y |
-| BOOLEAN | Y |
+| Boolean | Y |
 | DataTimeOffset | Y |
-| 문자열 배열 | N |
+| String Array | N |
 | GeographyPoint | N |
 
 ## <a name="json-example-copy-data-from-on-premises-sql-server-to-azure-search-index"></a>JSON 예제: 온-프레미스 SQL Server에서 Azure Search 인덱스로 데이터 복사
