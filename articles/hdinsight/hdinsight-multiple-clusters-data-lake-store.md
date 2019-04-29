@@ -2,7 +2,6 @@
 title: Azure Data Lake Storage 계정으로 여러 HDInsight 클러스터 사용 - Azure
 description: 단일 Data Lake Storage 계정으로 하나 이상의 HDInsight 클러스터를 사용하는 방법에 대해 알아봅니다
 keywords: hdinsight 저장소, hdfs, 구조화된 데이터, 구조화되지 않은 데이터, Data Lake Store
-services: hdinsight,storage
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -10,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: hrasheed
-ms.openlocfilehash: 0d57c65c93ffcd6c4c5249a1e5effeb457ed1736
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
-ms.translationtype: MT
+ms.openlocfilehash: b580890b1663aa6ce742443e927e4d760585d4ce
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57440899"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63764401"
 ---
 # <a name="use-multiple-hdinsight-clusters-with-an-azure-data-lake-storage-account"></a>Azure Data Lake Storage 계정으로 여러 HDInsight 클러스터 사용
 

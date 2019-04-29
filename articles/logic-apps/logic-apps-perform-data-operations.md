@@ -11,11 +11,11 @@ ms.date: 07/30/2018
 ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.openlocfilehash: 93c24f88fcd6a002493933ef71c5c80bd2ff8c10
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50231647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62120182"
 ---
 # <a name="perform-data-operations-in-azure-logic-apps"></a>Azure Logic Apps에서 데이터 작업 수행
 
@@ -33,7 +33,7 @@ ms.locfileid: "50231647"
 
 배열의 데이터를 사용할 수 있는 작업은 다음과 같습니다.
 
-| 조치 | 설명 | 
+| 액션(Action) | 설명 | 
 |--------|-------------| 
 | [**CSV 테이블 만들기**](#create-csv-table-action) | 배열에서 CSV(쉼표로 구분된 값) 테이블을 만듭니다. | 
 | [**HTML 테이블 만들기**](#create-html-table-action) | 배열에서 HTML 테이블을 만듭니다. | 
@@ -46,7 +46,7 @@ ms.locfileid: "50231647"
 
 JSON(JavaScript Object Notation) 형식으로 데이터를 사용할 수 있는 작업은 다음과 같습니다.
 
-| 조치 | 설명 | 
+| 액션(Action) | 설명 | 
 |--------|-------------| 
 | [**Compose**](#compose-action) | 다양한 데이터 형식이 있을 수 있는 여러 입력에서 메시지 또는 문자열을 만듭니다. 그런 다음, 동일한 입력을 반복적으로 입력하는 대신, 이 문자열을 단일 입력으로 사용할 수 있습니다. 예를 들어 다양한 입력에서 단일 JSON 메시지를 만들 수 있습니다. | 
 | [**JSON 구문 분석**](#parse-json-action) | JSON 콘텐츠의 속성에 대해 사용자에게 친숙한 데이터 토큰을 만들어 논리 앱에서 해당 속성을 더 쉽게 사용할 수 있습니다. | 
@@ -62,7 +62,7 @@ JSON(JavaScript Object Notation) 형식으로 데이터를 사용할 수 있는 
 
 * 데이터 작업을 위한 작업이 필요한 논리 앱 
 
-  논리 앱을 처음 사용하는 경우 [Azure Logic Apps](../logic-apps/logic-apps-overview.md) 및 [빠른 시작: 첫 번째 논리 앱 만들기](../logic-apps/quickstart-create-first-logic-app-workflow.md)를 검토합니다.
+  논리 앱을 처음 접하는 경우 [Azure Logic Apps란?](../logic-apps/logic-apps-overview.md) 및 [빠른 시작: 첫 번째 논리 앱 만들기](../logic-apps/quickstart-create-first-logic-app-workflow.md)를 검토하세요.
 
 * 논리 앱의 첫 번째 단계인 [트리거](../logic-apps/logic-apps-overview.md#logic-app-concepts) 
 
@@ -82,7 +82,7 @@ JSON(JavaScript Object Notation) 형식으로 데이터를 사용할 수 있는 
 
 `{"age":35,"fullName":"Owens,Sophie"}`
 
-이 예제를 시도하려면 Logic Apps 디자이너를 사용하여 다음 단계를 수행합니다. 또는 코드 보기 편집기에서 작업하려는 경우 [데이터 작업 코드 예제 - 작성](../logic-apps/logic-apps-data-operations-code-samples.md#compose-action-example) 문서의 **작성** 및 **변수 초기화** 작업 정의 예제를 사용자 고유의 논리 앱의 기본 워크플로 정의에 복사할 수 있습니다. 
+이 예제를 시도하려면 Logic Apps 디자이너를 사용하여 다음 단계를 수행합니다. 또는 코드 보기 편집기에서 작업을 원할 경우 예제를 복사할 수 있습니다 **Compose** 하 고 **변수 초기화** 고유한 논리 앱에이 문서에서 작업 정의 기본 워크플로 정의: [데이터 작업 코드 예제-구성](../logic-apps/logic-apps-data-operations-code-samples.md#compose-action-example) 
 
 1. <a href="https://portal.azure.com" target="_blank">Azure Portal</a> 또는 Visual Studio의 논리 앱 디자이너에서 논리 앱을 엽니다. 
 
@@ -100,7 +100,7 @@ JSON(JavaScript Object Notation) 형식으로 데이터를 사용할 수 있는 
    * 단계 사이에 작업을 추가하려면 더하기 기호(+)가 나타날 때까지 연결 화살표 위로 마우스를 이동합니다. 
    더하기 기호를 선택한 다음, **작업 추가**를 선택합니다.
 
-3. 검색 상자에서 필터로 "작성"을 입력합니다. 작업 목록에서 **작성** 작업을 선택합니다.
+3. 검색 상자에서 필터로 "작성"을 입력합니다. 작업 목록에서 다음 작업을 선택합니다. **작성**
 
    !["작성" 작업 선택](./media/logic-apps-perform-data-operations/select-compose-action.png)
 
@@ -142,7 +142,7 @@ JSON(JavaScript Object Notation) 형식으로 데이터를 사용할 수 있는 
 
 배열에 JSON(JavaScript Object Notation) 개체의 속성과 값이 있는 CSV(쉼표로 구분된 값) 테이블을 만들려면 **데이터 작업 - CSV 테이블 만들기** 작업을 사용합니다. 그런 다음, **CSV 테이블 만들기** 작업 이후에 수행하는 작업에서 결과 테이블을 사용할 수 있습니다. 
 
-코드 보기 편집기에서 작업하려는 경우 [데이터 작업 코드 예제 - CSV 테이블 만들기](../logic-apps/logic-apps-data-operations-code-samples.md#create-csv-table-action-example) 문서의 **CSV 테이블 만들기** 및 **변수 초기화** 작업 정의 예제를 사용자 고유의 논리 앱의 기본 워크플로 정의에 복사할 수 있습니다. 
+코드 보기 편집기에서 작업을 원할 경우 예제를 복사할 수 있습니다 **CSV 테이블 만들기** 하 고 **변수 초기화** 고유한 논리 앱에이 문서에서 작업 정의 기본 워크플로 정의: [데이터 작업 코드 예제-CSV 테이블 만들기](../logic-apps/logic-apps-data-operations-code-samples.md#create-csv-table-action-example) 
 
 1. <a href="https://portal.azure.com" target="_blank">Azure Portal</a> 또는 Visual Studio의 논리 앱 디자이너에서 논리 앱을 엽니다. 
 
@@ -161,7 +161,7 @@ JSON(JavaScript Object Notation) 형식으로 데이터를 사용할 수 있는 
    * 단계 사이에 작업을 추가하려면 더하기 기호(+)가 나타날 때까지 연결 화살표 위로 마우스를 이동합니다. 
    더하기 기호를 선택한 다음, **작업 추가**를 선택합니다.
 
-3. 검색 상자에서 필터로 "csv 테이블 만들기"를 입력합니다. 작업 목록에서 **CSV 테이블 만들기** 작업을 선택합니다.
+3. 검색 상자에서 필터로 "csv 테이블 만들기"를 입력합니다. 작업 목록에서 다음 작업을 선택합니다. **CSV 테이블 만들기**
 
    !["CSV 테이블 만들기" 작업 선택](./media/logic-apps-perform-data-operations/select-create-csv-table-action.png)
 
@@ -211,7 +211,7 @@ JSON(JavaScript Object Notation) 형식으로 데이터를 사용할 수 있는 
 
 배열에 JSON(JavaScript Object Notation) 개체의 속성과 값이 있는 HTML 테이블을 만들려면 **데이터 작업 - HTML 테이블 만들기** 작업을 사용합니다. 그런 다음, **HTML 테이블 만들기** 작업 이후에 수행하는 작업에서 결과 테이블을 사용할 수 있습니다.
 
-코드 보기 편집기에서 작업하려는 경우 [데이터 작업 코드 예제 - HTML 테이블 만들기](../logic-apps/logic-apps-data-operations-code-samples.md#create-html-table-action-example) 문서의 **HTML 테이블 만들기** 및 **변수 초기화** 작업 정의 예제를 사용자 고유의 논리 앱의 기본 워크플로 정의에 복사할 수 있습니다. 
+코드 보기 편집기에서 작업을 원할 경우 예제를 복사할 수 있습니다 **HTML 테이블 만들기** 하 고 **변수 초기화** 고유한 논리 앱에이 문서에서 작업 정의 기본 워크플로 정의: [데이터 작업 코드 예제-HTML 테이블 만들기](../logic-apps/logic-apps-data-operations-code-samples.md#create-html-table-action-example) 
 
 1. <a href="https://portal.azure.com" target="_blank">Azure Portal</a> 또는 Visual Studio의 논리 앱 디자이너에서 논리 앱을 엽니다. 
 
@@ -230,7 +230,7 @@ JSON(JavaScript Object Notation) 형식으로 데이터를 사용할 수 있는 
    * 단계 사이에 작업을 추가하려면 더하기 기호(+)가 나타날 때까지 연결 화살표 위로 마우스를 이동합니다. 
    더하기 기호를 선택한 다음, **작업 추가**를 선택합니다.
 
-3. 검색 상자에서 필터로 "html 테이블 만들기"를 입력합니다. 작업 목록에서 **HTML 테이블 만들기** 작업을 선택합니다.
+3. 검색 상자에서 필터로 "html 테이블 만들기"를 입력합니다. 작업 목록에서 다음 작업을 선택합니다. **HTML 테이블 만들기**
 
    !["HTML 테이블 만들기" 작업 선택](./media/logic-apps-perform-data-operations/select-create-html-table-action.png)
 
@@ -288,7 +288,7 @@ JSON(JavaScript Object Notation) 형식으로 데이터를 사용할 수 있는 
 > 
 > **배열 필터링** 작업에서 배열 출력을 사용하는 작업의 경우 해당 작업에서 배열을 입력으로 받아들여야 하거나 출력 배열을 호환되는 다른 형식으로 변환해야 할 수 있습니다. 
 
-또는 코드 보기 편집기에서 작업하려는 경우 [데이터 작업 코드 예제 - 배열 필터링](../logic-apps/logic-apps-data-operations-code-samples.md#filter-array-action-example) 문서의 **배열 필터링** 및 **변수 초기화** 작업 정의 예제를 사용자 고유의 논리 앱의 기본 워크플로 정의에 복사할 수 있습니다. 
+코드 보기 편집기에서 작업을 원할 경우 예제를 복사할 수 있습니다 **배열 필터링** 하 고 **변수 초기화** 고유한 논리 앱에이 문서에서 작업 정의 기본 워크플로 정의: [데이터 작업 코드 예제-필터 배열](../logic-apps/logic-apps-data-operations-code-samples.md#filter-array-action-example) 
 
 1. <a href="https://portal.azure.com" target="_blank">Azure Portal</a> 또는 Visual Studio의 논리 앱 디자이너에서 논리 앱을 엽니다. 
 
@@ -309,7 +309,7 @@ JSON(JavaScript Object Notation) 형식으로 데이터를 사용할 수 있는 
    * 단계 사이에 작업을 추가하려면 더하기 기호(+)가 나타날 때까지 연결 화살표 위로 마우스를 이동합니다. 
    더하기 기호를 선택한 다음, **작업 추가**를 선택합니다.
 
-3. 검색 상자에서 필터로 "배열 필터링"을 입력합니다. 작업 목록에서 **배열 필터링** 작업을 선택합니다.
+3. 검색 상자에서 필터로 "배열 필터링"을 입력합니다. 작업 목록에서 다음 작업을 선택합니다. **배열 필터링**
 
    !["배열 필터링" 작업 선택](./media/logic-apps-perform-data-operations/select-filter-array-action.png)
 
@@ -357,7 +357,7 @@ JSON(JavaScript Object Notation) 형식으로 데이터를 사용할 수 있는 
 
 배열의 모든 항목이 있고 특정 구분 기호 문자로 해당 항목이 구분된 문자열을 만들려면 **데이터 작업 - 조인** 작업을 사용합니다. 그런 다음, **조인** 작업 이후에 수행하는 작업에서 문자열을 사용할 수 있습니다.
 
-코드 보기 편집기에서 작업하려는 경우 [데이터 작업 코드 예제 - 조인](../logic-apps/logic-apps-data-operations-code-samples.md#join-action-example) 문서의 **조인** 및 **변수 초기화** 작업 정의 예제를 사용자 고유의 논리 앱의 기본 워크플로 정의에 복사할 수 있습니다. 
+코드 보기 편집기에서 작업을 원할 경우 예제를 복사할 수 있습니다 **조인** 하 고 **변수 초기화** 고유한 논리 앱에이 문서에서 작업 정의 워크플로 정의 기본: [데이터 작업 코드 예제-조인](../logic-apps/logic-apps-data-operations-code-samples.md#join-action-example) 
 
 1. <a href="https://portal.azure.com" target="_blank">Azure Portal</a> 또는 Visual Studio의 논리 앱 디자이너에서 논리 앱을 엽니다. 
 
@@ -376,7 +376,7 @@ JSON(JavaScript Object Notation) 형식으로 데이터를 사용할 수 있는 
    * 단계 사이에 작업을 추가하려면 더하기 기호(+)가 나타날 때까지 연결 화살표 위로 마우스를 이동합니다. 
    더하기 기호를 선택한 다음, **작업 추가**를 선택합니다.
 
-3. 검색 상자에서 필터로 "조인"을 입력합니다. 작업 목록에서 **조인** 작업을 선택합니다.
+3. 검색 상자에서 필터로 "조인"을 입력합니다. 작업 목록에서 다음 작업을 선택합니다. **Join**
 
    !["데이터 작업 - 조인" 작업 선택](./media/logic-apps-perform-data-operations/select-join-action.png)
 
@@ -421,7 +421,7 @@ JSON(JavaScript Object Notation) 형식으로 데이터를 사용할 수 있는 
 JSON(JavaScript Object Notation) 콘텐츠의 속성을 참조하거나 액세스하려면 **데이터 작업 - JSON 구문 분석** 작업을 사용하여 사용자에게 친숙한 필드 또는 토큰을 만들 수 있습니다.
 이렇게 하면 논리 앱에 대한 입력을 지정할 때 동적 콘텐츠 목록에서 해당 속성을 선택할 수 있습니다. 이 작업의 경우 JSON 콘텐츠 또는 페이로드 샘플에서 JSON 스키마를 제공하거나 생성할 수 있습니다.
 
-코드 보기 편집기에서 작업하려는 경우 [데이터 작업 코드 예제 - JSON 구문 분석](../logic-apps/logic-apps-data-operations-code-samples.md#parse-json-action-example) 문서의 **JSON 구문 분석** 및 **변수 초기화** 작업 정의 예제를 사용자 고유의 논리 앱의 기본 워크플로 정의에 복사할 수 있습니다. 
+코드 보기 편집기에서 작업을 원할 경우 예제를 복사할 수 있습니다 **JSON 구문 분석** 하 고 **변수 초기화** 고유한 논리 앱에이 문서에서 작업 정의 기본 워크플로 정의 : [데이터 작업 코드 예-JSON 구문 분석](../logic-apps/logic-apps-data-operations-code-samples.md#parse-json-action-example) 
 
 1. <a href="https://portal.azure.com" target="_blank">Azure Portal</a> 또는 Visual Studio의 논리 앱 디자이너에서 논리 앱을 엽니다. 
 
@@ -440,7 +440,7 @@ JSON(JavaScript Object Notation) 콘텐츠의 속성을 참조하거나 액세�
    * 단계 사이에 작업을 추가하려면 더하기 기호(+)가 나타날 때까지 연결 화살표 위로 마우스를 이동합니다. 
    더하기 기호를 선택한 다음, **작업 추가**를 선택합니다.
 
-3. 검색 상자에서 필터로 "json 구문 분석"을 입력합니다. 작업 목록에서 **JSON 구문 분석** 작업을 선택합니다.
+3. 검색 상자에서 필터로 "json 구문 분석"을 입력합니다. 작업 목록에서 다음 작업을 선택합니다. **JSON 구문 분석**
 
    !["JSON 구문 분석" 작업 선택](./media/logic-apps-perform-data-operations/select-parse-json-action.png)
 
@@ -499,7 +499,7 @@ JSON(JavaScript Object Notation) 콘텐츠의 속성을 참조하거나 액세�
 > [!NOTE]
 > **선택** 작업에서 배열 출력을 사용하는 작업의 경우 해당 작업에서 배열을 입력으로 받아들여야 하거나 출력 배열을 호환되는 다른 형식으로 변환해야 할 수 있습니다. 
 
-코드 보기 편집기에서 작업하려는 경우 [데이터 작업 코드 예제 - 선택](../logic-apps/logic-apps-data-operations-code-samples.md#select-action-example) 문서의 **선택** 및 **변수 초기화** 작업 정의 예제를 사용자 고유의 논리 앱의 기본 워크플로 정의에 복사할 수 있습니다. 
+코드 보기 편집기에서 작업을 원할 경우 예제를 복사할 수 있습니다 **선택** 하 고 **변수 초기화** 고유한 논리 앱에이 문서에서 작업 정의 워크플로 정의 기본: [데이터 작업 코드 예제-선택](../logic-apps/logic-apps-data-operations-code-samples.md#select-action-example) 
 
 1. <a href="https://portal.azure.com" target="_blank">Azure Portal</a> 또는 Visual Studio의 논리 앱 디자이너에서 논리 앱을 엽니다. 
 
@@ -518,7 +518,7 @@ JSON(JavaScript Object Notation) 콘텐츠의 속성을 참조하거나 액세�
    * 단계 사이에 작업을 추가하려면 더하기 기호(+)가 나타날 때까지 연결 화살표 위로 마우스를 이동합니다. 
    더하기 기호를 선택한 다음, **작업 추가**를 선택합니다.
 
-3. 검색 상자에서 필터로 "선택"을 입력합니다. 작업 목록에서 **선택** 작업을 선택합니다.
+3. 검색 상자에서 필터로 "선택"을 입력합니다. 작업 목록에서 다음 작업을 선택합니다. **Select**
 
    !["선택" 작업 선택](./media/logic-apps-perform-data-operations/select-select-action.png)
 

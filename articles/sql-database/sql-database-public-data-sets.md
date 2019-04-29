@@ -7,17 +7,18 @@ ms.subservice: development
 ms.custom: ''
 ms.devlang: ''
 ms.topic: reference
-author: CarlRabeler
-ms.author: carlrab
+author: WenJason
+ms.author: v-jay
 ms.reviewer: ''
-manager: craigg
-ms.date: 10/01/2018
+manager: digimobile
+origin.date: 10/01/2018
+ms.date: 04/08/2019
 ms.openlocfilehash: e7d01a6512c2d39c86da9f7020aa3988c9680c6b
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57995213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60584457"
 ---
 # <a name="public-data-sets-for-testing-and-prototyping"></a>테스트 및 프로토타입 생성을 위한 공용 데이터 집합
 

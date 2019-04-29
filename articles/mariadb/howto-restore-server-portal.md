@@ -7,11 +7,11 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 04/15/2019
 ms.openlocfilehash: 23d683fea494ad0509af359d6e49519f2bc6aa99
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59615781"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60746641"
 ---
 # <a name="how-to-backup-and-restore-a-server-in-azure-database-for-mariadb-using-the-azure-portal"></a>Azure Portal을 사용하여 Azure Database for MariaDB에서 서버를 백업 및 복원하는 방법
 
@@ -79,7 +79,7 @@ Azure Database for MariaDB를 사용하면 특정 시점의 서버를 서버의 
 ## <a name="geo-restore"></a>지역 복원
 서버를 지리적으로 중복된 백업으로 구성한 경우 기존 서버의 백업에서 새 서버를 만들 수 있습니다. 이 새 서버는 Azure Database for MariaDB를 사용할 수 있는 모든 지역에서 만들 수 있습니다.  
 
-1. 선택 **데이터베이스** > **Azure Database for MariaDB**합니다. 입력할 수도 있습니다 **MariaDB** 서비스를 찾기 위해 검색 상자에 있습니다.
+1. **데이터베이스** > **Azure Database for MariaDB**를 차례로 선택합니다. 검색 상자에서 **MariaDB**를 입력하여 해당 서비스를 찾을 수도 있습니다.
 
    ![“Azure Database for MariaDB” 옵션](./media/howto-restore-server-portal/2_navigate-to-mariadb.png)
 

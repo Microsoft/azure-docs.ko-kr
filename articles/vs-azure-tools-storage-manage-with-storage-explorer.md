@@ -2,24 +2,18 @@
 title: Storage 탐색기 시작 | Microsoft Docs
 description: Storage 탐색기로 Azure 스토리지 리소스 관리
 services: storage
-documentationcenter: na
 author: cawaMS
-manager: paulyuk
-editor: ''
-ms.assetid: 1ed0f096-494d-49c4-ab71-f4164ee19ec8
 ms.service: storage
 ms.devlang: multiple
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 07/17/2017
+ms.date: 04/22/2019
 ms.author: cawa
-ms.openlocfilehash: 38a857b1d309b92c48137a46655155e0e131908c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3db1d638aa1e0d8488c310593a593465c2b9b336
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/23/2019
-ms.locfileid: "60459433"
+ms.locfileid: "62128282"
 ---
 # <a name="get-started-with-storage-explorer"></a>Storage 탐색기 시작
 
@@ -115,7 +109,9 @@ Storage 탐색기는 Storage 계정에 연결하는 여러 방법을 제공합�
 
 Storage 탐색기로 에뮬레이터를 사용하여 로컬 스토리지에서 작업할 수 있습니다. 이 방식에서는 Azure에 스토리지 계정을 반드시 배포하지 않고도, Azure Storage 작업을 시뮬레이션할 수 있습니다.
 
-로컬 저장소 에뮬레이터는 버전 1.1.0부터 모든 플랫폼에서 지원됩니다. Storage 탐색기는 해당 기본 로컬 스토리지 엔드포인트를 수신 대기하는 모든 에뮬레이트된 서비스에 연결할 수 있습니다.
+버전 1.1.0 이상에서는 Storage 탐색기는 로컬 저장소 에뮬레이터를 사용 하 여 모든 플랫폼에서 지원 합니다. Storage 탐색기는 해당 기본 로컬 스토리지 엔드포인트를 수신 대기하는 모든 에뮬레이트된 서비스에 연결할 수 있습니다.
+
+합니다 [Azure storage 에뮬레이터](storage/common/storage-use-emulator.md) 현재 Windows 에서만 실행 됩니다. Linux용 저장소 에뮬레이터를 고려 중인 경우 커뮤니티에서 유지 관리하는 오픈 소스 저장소 에뮬레이터 [Azurite](https://github.com/azure/azurite)가 하나의 옵션이 될 수 있습니다.
 
 > [!NOTE]
 > Storage 서비스 및 기능에 대한 지원은 에뮬레이터의 선택에 따라 광범위하게 달라질 수 있습니다. 에뮬레이터가 함께 작업하려는 서비스 및 기능을 지원하는지 확인합니다.

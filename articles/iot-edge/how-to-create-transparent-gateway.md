@@ -4,21 +4,21 @@ description: Azure IoT Edge 디바이스를 다운스트림 디바이스의 정�
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 11/29/2018
+ms.date: 04/23/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 95ee0a4d5d150741e59c0c2d20abebe9609e179f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 722ee6197b467454818026c960e1ce0e5b39efb4
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59699016"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63766313"
 ---
 # <a name="configure-an-iot-edge-device-to-act-as-a-transparent-gateway"></a>IoT Edge 디바이스를 투명 게이트웨이로 작동하도록 구성
 
-이 문서에서는 IoT Hub와 통신하는 다른 디바이스에 대해 투명한 게이트웨이로 작동하는 IoT Edge 디바이스를 구성하기 위한 자세한 지침을 제공합니다. 이 문서에서 *IoT Edge 게이트웨이*라는 용어는 투명한 게이트웨이로 사용되는 IoT Edge 디바이스를 의미합니다. 자세한 내용은 개념적 개요를 제공하는 [IoT Edge 디바이스를 게이트웨이로 사용하는 방법](./iot-edge-as-gateway.md)을 참조하세요.
+이 문서에서는 IoT Hub와 통신하는 다른 디바이스에 대해 투명한 게이트웨이로 작동하는 IoT Edge 디바이스를 구성하기 위한 자세한 지침을 제공합니다. 이 문서에서 *IoT Edge 게이트웨이*라는 용어는 투명한 게이트웨이로 사용되는 IoT Edge 디바이스를 의미합니다. 자세한 내용은 [어떻게는 IoT Edge 장치를 게이트웨이로 사용할 수](./iot-edge-as-gateway.md)입니다.
 
 >[!NOTE]
 >현재 상황:
@@ -26,21 +26,21 @@ ms.locfileid: "59699016"
 > * Edge 가능 디바이스는 IoT Edge 게이트웨이에 연결할 수 없습니다. 
 > * 다운스트림 디바이스는 파일 업로드를 사용할 수 없습니다.
 
-디바이스가 게이트웨이로 작동하려면 다운스트림 디바이스에 안전하게 연결할 수 있어야 합니다. Azure IoT Edge를 사용하면 PKI(공개 키 인프라)를 사용하여 이러한 디바이스 간에 안전한 연결을 설정할 수 있습니다. 이 경우에 투명한 게이트웨이로 작동하는 IoT Edge 디바이스에 다운스트림 디바이스를 연결할 수 있습니다. 디바이스를 잠재적인 악성 게이트웨이가 아닌 게이트웨이에 연결하려고 하기 때문에 적절한 보안을 유지하려면 다운스트림 디바이스가 Edge 디바이스의 ID를 확인해야 합니다.
+디바이스가 게이트웨이로 작동하려면 다운스트림 디바이스에 안전하게 연결할 수 있어야 합니다. Azure IoT Edge를 사용하면 PKI(공개 키 인프라)를 사용하여 이러한 디바이스 간에 안전한 연결을 설정할 수 있습니다. 이 경우에 투명한 게이트웨이로 작동하는 IoT Edge 디바이스에 다운스트림 디바이스를 연결할 수 있습니다. 적절 한 보안 유지를 위해 다운스트림 장치는 IoT Edge 장치 id를 확인 해야 합니다. 장치 프로그램 게이트웨이만 악성 아닌 게이트웨이를 연결 해야 합니다.
 
 다운스트림 디바이스는 [Azure IoT Hub](https://docs.microsoft.com/azure/iot-hub) 클라우드 서비스를 사용하여 생성된 ID가 있는 애플리케이션 또는 플랫폼이 될 수 있습니다. 많은 경우에 이러한 애플리케이션은 [Azure IoT 디바이스 SDK](../iot-hub/iot-hub-devguide-sdks.md)를 사용합니다. 모든 실질적인 용도의 경우 다운스트림 디바이스는 IoT Edge 게이트웨이 디바이스 자체에서 실행 중인 애플리케이션일 수 있습니다. 
 
-디바이스-게이트웨이 토폴로지에 필요한 신뢰를 설정하는 어떤 인증서 인프라도 만들 수 있습니다. 이 문서에서는 IoT Hub에서 [X.509 CA 보안](../iot-hub/iot-hub-x509ca-overview.md)을 사용하도록 설정하는 데 사용하는 것과 동일한 인증서 설정을 가정합니다. 여기에는 특정 IoT Hub에 연결된 X.509 CA 인증서(IoT Hub 소유자 CA) 및 이 CA로 서명된 일련의 인증서 및 Edge 디바이스용 CA가 포함됩니다.
+디바이스-게이트웨이 토폴로지에 필요한 신뢰를 설정하는 어떤 인증서 인프라도 만들 수 있습니다. 이 문서에서는 사용 하도록 설정 하는 데 사용 하는 동일한 인증서 설정을 가정 [X.509 CA 보안](../iot-hub/iot-hub-x509ca-overview.md) (IoT hub 소유자 CA)에 특정 IoT hub와 일련의 인증서에 연결 된 X.509 CA 인증서를 포함 하는 IoT Hub에서 IoT Edge 장치에 대 한이 CA와 CA 서명 합니다.
 
 ![게이트웨이 인증서 설정](./media/how-to-create-transparent-gateway/gateway-setup.png)
 
-게이트웨이는 연결을 시작할 때 다운스트림 디바이스에 해당하는 Edge 디바이스 CA 인증서를 나타냅니다. 다운스트림 디바이스는 Edge 디바이스 CA 인증서가 소유자 CA 인증서에서 서명했는지를 확인합니다. 이 프로세스를 사용하면 다운스트림 디바이스는 게이트웨이가 신뢰되는 원본에서 전송되었는지 확인할 수 있습니다.
+게이트웨이 연결의 시작 하는 동안 해당 IoT Edge 장치 CA 인증서는 다운스트림 장치를 표시합니다. 다운스트림 장치에 IoT Edge 장치 CA 인증서 소유자 CA 인증서로 서명 되어 있는지 확인 합니다. 이 프로세스를 사용하면 다운스트림 디바이스는 게이트웨이가 신뢰되는 원본에서 전송되었는지 확인할 수 있습니다.
 
 다음 단계에서는 인증서를 만들고 적절한 위치에 설치하는 프로세스를 설명합니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
-Azure IoT Edge 디바이스를 게이트웨이로 구성합니다. 다음 운영 체제를 위한 단계에 따라 개발 머신 또는 가상 머신을 IoT Edge 디바이스로 사용할 수 있습니다.
+Azure IoT Edge 디바이스를 게이트웨이로 구성합니다. 다음 운영 체제에 대 한 IoT Edge 설치 단계를 사용 합니다.
 * [Windows](./how-to-install-iot-edge-windows.md)
 * [Linux x64](./how-to-install-iot-edge-linux.md)
 * [Linux ARM32](./how-to-install-iot-edge-linux-arm.md)
@@ -52,7 +52,7 @@ Azure IoT Edge 디바이스를 게이트웨이로 구성합니다. 다음 운영
 
 ## <a name="generate-certificates-with-windows"></a>Windows를 사용하여 인증서 생성
 
-Windows 디바이스에서 테스트 인증서를 생성하려면 이 섹션의 단계를 사용합니다. IoT Edge 디바이스 자체에서 인증서를 생성하거나 별도 머신을 사용하여 지원되는 운영 체제를 실행하는 모든 IoT Edge 디바이스에 최종 인증서를 복사할 수 있습니다. 
+Windows 디바이스에서 테스트 인증서를 생성하려면 이 섹션의 단계를 사용합니다. Windows IoT Edge 장치에 인증서를 생성 하려면 다음이 단계를 사용할 수 있습니다. 또는 Windows 개발 컴퓨터에 인증서를 생성 하 고 그런 다음 모든 IoT Edge 장치에 복사 합니다. 
 
 이 섹션에서 생성된 인증서는 테스트 목적으로만 설계되었습니다. 
 
@@ -133,13 +133,13 @@ C용 Azure IoT 디바이스 SDK에는 테스트 인증서를 생성하는 데 �
       New-CACertsCertChain rsa
       ```
 
-2. 다음 명령을 사용하여 Edge 디바이스 CA 인증서 및 개인 키를 만듭니다. 인증서를 생성하는 동안 및 파일 이름을 지정하는 데 사용할 게이트웨이 디바이스에 대한 이름을 입력합니다. 
+2. 다음 명령을 사용 하 여 IoT Edge 장치 CA 인증서와 개인 키를 만듭니다. 인증서를 생성하는 동안 및 파일 이름을 지정하는 데 사용할 게이트웨이 디바이스에 대한 이름을 입력합니다. 
 
    ```powershell
    New-CACertsEdgeDevice "<gateway name>"
    ```
 
-3. 다음 명령을 사용하여 소유자 CA 인증서, 중간 인증서 및 Edge 디바이스 CA 인증서에서 인증서 체인을 만듭니다. 
+3. 소유자 CA 인증서, 중간 인증서 및 다음 명령 사용 하 여 IoT Edge 장치 CA 인증서에서 인증서 체인을 만듭니다. 
 
    ```powershell
    Write-CACertsCertificatesForEdgeDevice "<gateway name>"
@@ -193,7 +193,7 @@ Linux 디바이스에서 테스트 인증서를 생성하려면 이 섹션의 �
    * `<WRKDIR>/private/azure-iot-test-only.root.ca.key.pem`
    * `<WRKDIR>/private/azure-iot-test-only.intermediate.key.pem`
 
-2. 다음 명령을 사용하여 Edge 디바이스 CA 인증서 및 개인 키를 만듭니다. 인증서를 생성하는 동안 및 파일 이름을 지정하는 데 사용할 게이트웨이 디바이스에 대한 이름을 입력합니다. 
+2. 다음 명령을 사용 하 여 IoT Edge 장치 CA 인증서와 개인 키를 만듭니다. 인증서를 생성하는 동안 및 파일 이름을 지정하는 데 사용할 게이트웨이 디바이스에 대한 이름을 입력합니다. 
 
    ```bash
    ./certGen.sh create_edge_device_certificate "<gateway name>"
@@ -203,7 +203,7 @@ Linux 디바이스에서 테스트 인증서를 생성하려면 이 섹션의 �
    * `<WRKDIR>/certs/new-edge-device.*`
    * `<WRKDIR>/private/new-edge-device.key.pem`
 
-3. 소유자 CA 인증서, 중간 인증서 및 Edge 디바이스 CA 인증서에서 **new-edge-device-full-chain.cert.pem**이라는 인증서 체인을 만듭니다.
+3. 라는 인증서 체인을 만들 **새-edge-장치-전체-chain.cert.pem** 소유자 CA 인증서, 중간 인증서 및 IoT Edge 장치 CA 인증서에서.
 
    ```bash
    cat ./certs/new-edge-device.cert.pem ./certs/azure-iot-test-only.intermediate.cert.pem ./certs/azure-iot-test-only.root.ca.cert.pem > ./certs/new-edge-device-full-chain.cert.pem
@@ -215,7 +215,7 @@ Linux 디바이스에서 테스트 인증서를 생성하려면 이 섹션의 �
 
 1. *\<WRKDIR>* 에서 다음 파일을 복사합니다. IoT Edge 디바이스 아무데나 저장합니다. IoT Edge 디바이스에 있는 대상 디렉터리를 *\<CERTDIR>* 이라고 하겠습니다. 
 
-   Edge 디바이스 자체에서 인증서를 생성한 경우 이 단계를 건너뛸 수 있으며 작업 디렉터리에 대한 경로를 사용합니다.
+   IoT Edge 장치 자체에서 인증서를 생성 한 경우이 단계를 건너뛸 하 수 작업 디렉터리에 경로 사용 합니다.
 
    * 디바이스 CA 인증서 - `<WRKDIR>\certs\new-edge-device-full-chain.cert.pem`
    * 디바이스 CA 개인 키 - `<WRKDIR>\private\new-edge-device.key.pem`
@@ -228,16 +228,28 @@ Linux 디바이스에서 테스트 인증서를 생성하려면 이 섹션의 �
 
 3. config.yaml 파일의 **certificate** 속성을 IoT Edge 디바이스에서 인증서 및 키 파일을 배치한 경로로 설정합니다.
 
-```yaml
-certificates:
-  device_ca_cert: "<CERTDIR>\\certs\\new-edge-device-full-chain.cert.pem"
-  device_ca_pk: "<CERTDIR>\\private\\new-edge-device.key.pem"
-  trusted_ca_certs: "<CERTDIR>\\certs\\azure-iot-test-only.root.ca.cert.pem"
-```
+   * Windows:
+
+      ```yaml
+      certificates:
+        device_ca_cert: "<CERTDIR>\\certs\\new-edge-device-full-chain.cert.pem"
+        device_ca_pk: "<CERTDIR>\\private\\new-edge-device.key.pem"
+        trusted_ca_certs: "<CERTDIR>\\certs\\azure-iot-test-only.root.ca.cert.pem"
+      ```
+   
+   * Linux: 
+      ```yaml
+      certificates:
+        device_ca_cert: "<CERTDIR>/certs/new-edge-device-full-chain.cert.pem"
+        device_ca_pk: "<CERTDIR>/private/new-edge-device.key.pem"
+        trusted_ca_certs: "<CERTDIR>/certs/azure-iot-test-only.root.ca.cert.pem"
+      ```
+
+4. Linux 장치를 확인 하는 사용자 **iotedge** 읽기 인증서를 보유 하는 디렉터리에 대 한 권한이 있어야 합니다. 
 
 ## <a name="deploy-edgehub-to-the-gateway"></a>게이트웨이에 Edge Hub 배포
 
-IoT Edge를 디바이스에 처음으로 설치하는 경우 Edge 에이전트라는 하나의 시스템 모듈만 자동으로 시작됩니다. 디바이스를 게이트웨이로 작동시키려면 시스템 모듈이 모두 필요합니다. 이전에 모듈을 게이트웨이 디바이스로 개발한 적이 없는 경우 두 번째 시스템 모듈인 Edge Hub를 시작하도록 디바이스용 배포를 생성합니다. 배포는 마법사에서 모듈을 추가하지 않았으므로 비어 있는 상태로 표시되지만 두 시스템 모듈을 모두 배포하게 됩니다. 
+장치에서 IoT Edge를 처음 설치 하면 하나의 시스템 모듈 자동으로 시작: IoT Edge 에이전트입니다. 디바이스를 게이트웨이로 작동시키려면 시스템 모듈이 모두 필요합니다. 모든 모듈 하기 전에 게이트웨이 장치에 배포 하지 않은 경우에 두 번째 시스템 모듈을 IoT Edge hub를 시작 하기 위해 장치에 대 한 배포를 만듭니다. 배포는 마법사에서 모듈을 추가하지 않았으므로 비어 있는 상태로 표시되지만 두 시스템 모듈을 모두 배포하게 됩니다. 
 
 `iotedge list` 명령을 사용하여 디바이스에서 실행되는 모듈을 확인할 수 있습니다.
 
@@ -265,7 +277,7 @@ IoT Edge를 디바이스에 처음으로 설치하는 경우 Edge 에이전트�
 
 표준 IoT Edge 장치는 IoT Hub를 사용 하 여 모든 통신이 아웃 바운드 연결을 통해 수행 되기 때문에 함수에 대 한 모든 인바운드 연결이 필요 하지 않습니다. 그러나 게이트웨이 장치는 다운스트림 장치에서 메시지를 받을 수 있으려면 필요 하기 때문에 다릅니다.
 
-작동 하려면 게이트웨이 시나리오의 경우 다운스트림 장치에서 인바운드 트래픽을 위해 열린 IoT Edge 허브의 지원 되는 프로토콜의 하나 이상 이어야 합니다. 지원 되는 portocols MQTT, AMQP 및 HTTPS 됩니다.
+작동 하려면 게이트웨이 시나리오의 경우 다운스트림 장치에서 인바운드 트래픽을 위해 열린 IoT Edge 허브의 지원 되는 프로토콜의 하나 이상 이어야 합니다. 지원 되는 프로토콜에는 MQTT, AMQP 및 HTTPS 됩니다.
 
 | 포트 | 프로토콜 |
 | ---- | -------- |
@@ -274,7 +286,7 @@ IoT Edge를 디바이스에 처음으로 설치하는 경우 Edge 에이전트�
 | 443 | HTTPS <br> MQTT+WS <br> AMQP+WS | 
 
 ## <a name="route-messages-from-downstream-devices"></a>다운스트림 디바이스에서 메시지 라우팅
-IoT Edge 런타임은 모듈에서 전송한 메시지와 같은 다운스트림 디바이스에서 전송된 메시지를 라우팅할 수 있습니다. 그러면 클라우드로 데이터를 보내기 전에 게이트웨이에서 실행되는 모듈에서 분석을 수행할 수 있습니다. 
+IoT Edge 런타임은 모듈에서 전송한 메시지와 같은 다운스트림 디바이스에서 전송된 메시지를 라우팅할 수 있습니다. 이 기능을 사용 하면 클라우드로 모든 데이터를 보내기 전에 게이트웨이에서 실행 중인 모듈의 분석을 수행할 수 있습니다. 
 
 현재 다운스트림 디바이스에서 보낸 메시지를 라우팅하는 방식은 모듈에 의해 전송 된 메시지와 구별됩니다. 모듈에서 보낸 메시지에는 모두 **connectionModuleId**라는 시스템 속성이 포함되지만 다운스트림 디바이스에서 보낸 메시지에는 포함되지 않습니다. 경로의 WHERE 절을 사용하여 해당 시스템 특성을 포함하는 메시지를 제외할 수 있습니다. 
 

@@ -8,14 +8,15 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 12/07/2018
-ms.author: azfuncdf
+origin.date: 12/07/2018
+ms.date: 03/19/2019
+ms.author: v-junlch
 ms.openlocfilehash: 76b6f013333113d5a24b744bc962d36b1c0e21b3
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57455737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60731121"
 ---
 # <a name="durable-functions-types-and-features-azure-functions"></a>지 속성 함수 유형 및 기능 (Azure Functions)
 
@@ -131,7 +132,7 @@ public static async Task RunRemoteOrchestrator(
 public static async Task<string> StartRemoteOrchestration([ActivityTrigger] string orchestratorName)
 {
     using (var response = await HttpClient.PostAsync(
-        $"https://appB.azurewebsites.net/orchestrations/{orchestratorName}",
+        $"https://appB.chinacloudsites.cn/orchestrations/{orchestratorName}",
         new StringContent("")))
     {
         string statusUrl = await response.Content.ReadAsAsync<string>();
@@ -183,7 +184,7 @@ const request = require("request-promise-native");
 module.exports = async function(context, orchestratorName) {
     const options = {
         method: "POST",
-        uri: `https://appB.azurewebsites.net/orchestrations/${orchestratorName}`,
+        uri: `https://appB.chinacloudsites.cn/orchestrations/${orchestratorName}`,
         body: ""
     };
 
@@ -217,3 +218,5 @@ module.exports = async function(context, statusUrl) {
 
 <!-- Media references -->
 [1]: media/durable-functions-types-features-overview/durable-concepts.png
+
+<!-- Update_Description: wording update -->

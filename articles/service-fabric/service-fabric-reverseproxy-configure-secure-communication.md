@@ -14,11 +14,11 @@ ms.workload: required
 ms.date: 08/10/2017
 ms.author: kavyako
 ms.openlocfilehash: d8a11a3289037602535d1b5727d041e376012bd8
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39502443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60837846"
 ---
 # <a name="connect-to-a-secure-service-with-the-reverse-proxy"></a>역방향 프록시를 사용하여 보안 서비스 연결
 
@@ -35,14 +35,14 @@ Service Fabric에서 역방향 프록시를 구성하려면 [Azure Service Fabri
 서비스는 역방향 프록시에서 제공한 인증서를 확인하기 위한 논리를 구현할 수 있습니다. 이 서비스는 허용된 클라이언트 인증서 세부 정보를 구성 패키지의 구성 설정으로 지정할 수 있습니다. 이는 런타임 시 읽을 수 있으며 역방향 프록시에서 제공한 인증서의 유효성을 검사하는 데 사용됩니다. 구성 설정을 추가하려면 [애플리케이션 매개 변수 관리](service-fabric-manage-multiple-environment-app-configuration.md)를 참조하세요. 
 
 ### <a name="reverse-proxy-verifying-the-services-identity-via-the-certificate-presented-by-the-service"></a>서비스에서 제공한 인증서를 통해 서비스의 ID를 확인하는 역방향 프록시:
-역방향 프록시는 서비스에서 제공하는 인증서의 서버 인증서 유효성 검사를 수행하기 위해 None, ServiceCommonNameAndIssuer 및 ServiceCertificateThumbprints 정책 중 하나를 지원합니다.
+역방향 프록시 서비스에서 제공 하는 인증서의 서버 인증서 유효성 검사를 수행 하려면 다음 정책을 지원 합니다. None, ServiceCommonNameAndIssuer 및 ServiceCertificateThumbprints 합니다.
 사용할 역방향 프록시에 대한 정책을 선택하려면 [fabricSettings](service-fabric-cluster-fabric-settings.md) 아래에 있는 **ApplicationGateway/Http** 섹션에서 **ApplicationCertificateValidationPolicy**를 지정합니다.
 
 다음 섹션에서는 이러한 옵션 각각에 대한 구성 세부 정보를 보여줍니다.
 
 ### <a name="service-certificate-validation-options"></a>서비스 인증서 유효성 검사 옵션 
 
-- **None**: 역방향 프록시가 프록시 설정된 서비스 인증서의 확인을 건너뛰고 보안 연결을 설정합니다. 기본 동작입니다.
+- **없음**: 역방향은 프록시 설정 된 서비스 인증서의 확인을 건너뛰고 보안 연결을 설정 합니다. 기본 동작입니다.
 [**ApplicationGateway/Http**](./service-fabric-cluster-fabric-settings.md#applicationgatewayhttp) 섹션에서 값이 **None**인 **ApplicationCertificateValidationPolicy**를 지정합니다.
 
    ```json
@@ -63,7 +63,7 @@ Service Fabric에서 역방향 프록시를 구성하려면 [Azure Service Fabri
    }
    ```
 
-- **ServiceCommonNameAndIssuer**: 역방향 프록시가 인증서의 일반 이름과 직접 발급자의 지문을 기반으로 한 서비스에서 제공하는 인증서를 확인합니다. [**ApplicationGateway/Http**](./service-fabric-cluster-fabric-settings.md#applicationgatewayhttp) 섹션에서 값이 **ServiceCommonNameAndIssuer**인 **ApplicationCertificateValidationPolicy**를 지정합니다.
+- **ServiceCommonNameAndIssuer**: 역방향 프록시 인증서의 일반 이름과 직접 발급자의 지문을 기반 서비스에서 제공 하는 인증서를 확인 합니다. 지정 된 **ApplicationCertificateValidationPolicy** 값으로 **ServiceCommonNameAndIssuer** 에 [ **ApplicationGateway/Http** ](./service-fabric-cluster-fabric-settings.md#applicationgatewayhttp) 섹션입니다.
 
    ```json
    {
@@ -85,7 +85,7 @@ Service Fabric에서 역방향 프록시를 구성하려면 [Azure Service Fabri
 
    서비스 일반 이름 및 발급자 지문 목록을 지정하려면 아래 표시된 것처럼 **fabricSettings** 아래에 [**ApplicationGateway/Http/ServiceCommonNameAndIssuer**](./service-fabric-cluster-fabric-settings.md#applicationgatewayhttpservicecommonnameandissuer) 섹션을 추가합니다. 여러 인증서 일반 이름 및 발급자 지문 쌍을 **매개 변수** 배열에 추가할 수 있습니다. 
 
-   끝점 역방향 프록시가 연결되어 일반 이름과 발급자 지문이 여기에 지정된 값과 일치하는 인증서가 제시되면 SSL 채널이 설정됩니다. 
+   엔드포인트 역방향 프록시가 연결되어 일반 이름과 발급자 지문이 여기에 지정된 값과 일치하는 인증서가 제시되면 SSL 채널이 설정됩니다. 
    인증서 세부 정보가 일치하지 않으면 502(잘못된 게이트웨이) 상태 코드와 함께 역방향 프록시가 클라이언트 요청에 대해 실패합니다. HTTP 상태 줄에 "잘못된 SSL 인증서"라는 구문이 포함됩니다. 
 
    ```json
@@ -110,7 +110,7 @@ Service Fabric에서 역방향 프록시를 구성하려면 [Azure Service Fabri
    }
    ```
 
-- **ServiceCertificateThumbprints**: 역방향 프록시가 지문을 기반으로 프록시 설정된 서비스 인증서를 확인합니다. 서비스가 자체 서명된 인증서로 구성될 때 이 경로를 선택할 수 있습니다. [**ApplicationGateway/Http**](./service-fabric-cluster-fabric-settings.md#applicationgatewayhttp) 섹션에서 값이 **ServiceCertificateThumbprints**인 **ApplicationCertificateValidationPolicy**를 지정합니다.
+- **ServiceCertificateThumbprints**: 역방향 프록시가 지문을 기반으로 프록시 설정 된 서비스 인증서를 확인 합니다. 서명 된 인증서는 서비스 자체를 사용 하 여 구성 된 경우이 경로 이동 하도록 선택할 수 있습니다. 지정 된 **ApplicationCertificateValidationPolicy** 값으로 **ServiceCertificateThumbprints** 에 [ **ApplicationGateway/Http** ](./service-fabric-cluster-fabric-settings.md#applicationgatewayhttp) 섹션입니다.
 
    ```json
    {
@@ -153,8 +153,8 @@ Service Fabric에서 역방향 프록시를 구성하려면 [Azure Service Fabri
 
    이 구성 항목 목록에 서버 인증서의 지문이 있으면 역방향 프록시가 SSL 연결에 성공합니다. 그렇지 않으면 연결을 종료하고 502(잘못된 게이트웨이)와 함께 클라이언트의 요청에 실패합니다. HTTP 상태 줄에 "잘못된 SSL 인증서"라는 구문이 포함됩니다.
 
-## <a name="endpoint-selection-logic-when-services-expose-secure-as-well-as-unsecured-endpoints"></a>서비스가 보안 끝점과 비보안 끝점을 노출할 때 끝점 선택 논리
-Service Fabric은 서비스에 대한 다중 끝점 구성을 지원합니다. 자세한 내용은 [서비스 매니페스트에서 리소스 지정](service-fabric-service-manifest-resources.md)을 참조하세요.
+## <a name="endpoint-selection-logic-when-services-expose-secure-as-well-as-unsecured-endpoints"></a>서비스가 보안 엔드포인트와 비보안 엔드포인트를 노출할 때 엔드포인트 선택 논리
+Service Fabric은 서비스에 대한 다중 엔드포인트 구성을 지원합니다. 자세한 내용은 [서비스 매니페스트에서 리소스 지정](service-fabric-service-manifest-resources.md)을 참조하세요.
 
 역방향 프록시는 [서비스 URI](./service-fabric-reverseproxy.md#uri-format-for-addressing-services-by-using-the-reverse-proxy)에서 **ListenerName** 쿼리 매개 변수를 기반으로 요청을 전달할 엔드포인트 중 하나를 선택합니다. **ListenerName** 매개 변수를 지정하지 않은 경우 역방향 프록시는 엔드포인트 목록에서 모든 엔드포인트를 선택할 수 있습니다. 서비스에 대해 구성된 엔드포인트에 따라 선택한 엔드포인트는 HTTP 또는 HTTPS 엔드포인트가 될 수 있습니다. 역방향 프록시가 "보안 전용 모드"에서 작동하기를 원하는 시나리오 또는 요구 사항이 있을 수 있습니다. 즉, 보안 역방향 프록시가 비보안 엔드포인트에 요청을 전달하지 않도록 하고 싶습니다. 역방향 프록시를 보안 전용 모드로 설정하려면 [**ApplicationGateway/Http**](./service-fabric-cluster-fabric-settings.md#applicationgatewayhttp) 섹션에서 값이 **true**인 **SecureOnlyMode** 구성 항목을 지정합니다.   
 

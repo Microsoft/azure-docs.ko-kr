@@ -12,11 +12,11 @@ ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
 ms.openlocfilehash: 68378c87e18df874059579445352b8fd1b2b6c13
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50232718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62105583"
 ---
 # <a name="exchange-messages-in-the-cloud-with-azure-service-bus-and-azure-logic-apps"></a>Azure Service Bus 및 Azure Logic Apps를 사용하여 클라우드에서 메시지 교환
 
@@ -74,7 +74,7 @@ Azure Logic Apps 및 Azure Service Bus 커넥터를 사용하면 영업 및 구�
 
 1. *트리거*를 빈 논리 앱에 추가하려면 검색 상자에 “Azure Service Bus”를 필터로 입력합니다. 트리거 목록에서 원하는 트리거를 선택합니다. 
 
-   예를 들어 새 항목이 Service Bus 큐로 보내질 때 논리 앱을 트리거하려면 **큐에 메시지가 수신될 때(자동 완성)** 트리거를 선택합니다.
+   예를 들어 새 항목이 Service Bus 큐로 보내질 때 논리 앱 트리거이 트리거를 선택 합니다. **(자동 완성) 큐에 메시지를 받을 때**
 
    ![Service Bus 트리거 선택](./media/connectors-create-api-azure-service-bus/select-service-bus-trigger.png)
 
@@ -95,7 +95,7 @@ Azure Logic Apps 및 Azure Service Bus 커넥터를 사용하면 영업 및 구�
    1. 검색 상자에서 “Azure Service Bus”를 필터로 입력합니다. 
    작업 목록에서 원하는 작업을 선택합니다. 
  
-      예를 들어 **메시지 보내기** 작업을 선택합니다.
+      예를 들어,이 작업을 선택 합니다. **메시지 보내기**
 
       ![Service Bus 동작 선택](./media/connectors-create-api-azure-service-bus/select-service-bus-send-message-action.png) 
 
@@ -118,14 +118,14 @@ Azure Logic Apps 및 Azure Service Bus 커넥터를 사용하면 영업 및 구�
 
 1. 트리거 또는 작업에 필요한 세부 정보를 입력합니다. 이 예제의 경우 트리거 또는 작업에 대해 관련 단계를 수행합니다. 
 
-   * **샘플 트리거의 경우**: 폴링 간격 및 큐 점검을 위한 주기를 설정합니다.
+   * **샘플 트리거에 대 한**: 폴링 간격 및 큐 점검을 위한 빈도 설정 합니다.
 
      ![폴링 간격 설정](./media/connectors-create-api-azure-service-bus/service-bus-trigger-details.png)
 
      완료되면 원하는 작업을 추가하여 논리 앱의 워크플로를 계속 빌드합니다. 예를 들어 새 메시지가 도착하면 이메일을 보내는 작업을 추가할 수 있습니다.
      트리거가 큐를 확인하고 새 메시지를 발견하는 경우 논리 앱은 찾은 메시지에 대해 사용자가 선택한 작업을 실행합니다.
 
-   * **샘플 작업의 경우**: 메시지 콘텐츠 및 기타 세부 정보를 입력합니다. 
+   * **샘플 작업에 대 한**: 메시지 콘텐츠 및 기타 세부 정보를 입력 합니다. 
 
      ![메시지 콘텐츠 및 세부 정보를 입력합니다.](./media/connectors-create-api-azure-service-bus/service-bus-send-message-details.png)
 

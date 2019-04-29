@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: pbutlerm
 ms.openlocfilehash: af9b34d90098409135020fa8a45ecd0253f25b22
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57454547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60825718"
 ---
 # <a name="create-azure-marketplace-and-appsource-offers"></a>Azure Marketplace 및 AppSource 제품 만들기
 

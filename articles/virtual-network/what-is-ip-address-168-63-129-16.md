@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 01/21/2019
 ms.author: genli
 ms.openlocfilehash: 7f0539e7c2f7e5ae8847b35b47d3708c6c5d6a09
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55296041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62107996"
 ---
 # <a name="what-is-ip-address-1686312916"></a>IP 주소 168.63.129.16
 

@@ -13,11 +13,11 @@ ms.reviewer: billgib, sstein
 manager: craigg
 ms.date: 12/18/2018
 ms.openlocfilehash: c7c10608d90f7659b108d2d8c80038f59396de2d
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57878077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485250"
 ---
 # <a name="manage-schema-in-a-saas-application-that-uses-sharded-multi-tenant-sql-databases"></a>분할된 다중 테넌트 SQL 데이터베이스를 사용하는 SaaS 애플리케이션에서 스키마 관리
 
@@ -73,7 +73,7 @@ Wingtip Tickets SaaS 다중 테넌트 데이터베이스 스크립트 및 애플
 
 ## <a name="create-a-job-agent-database-and-new-job-agent"></a>작업 에이전트 데이터베이스와 새 작업 에이전트 만들기
 
-이 자습서를 사용하려면 PowerShell을 사용하여 작업 에이전트 데이터베이스와 작업 에이전트를 만들어야 합니다. SQL 에이전트에서 사용되는 MSDB 데이터베이스와 마찬가지로, 작업 에이전트는 Azure SQL Database를 사용하여 작업 정의, 작업 상태 및 기록을 저장합니다. 작업 에이전트가 만들어지면 즉시 작업을 만들고 모니터링할 수 있습니다.
+이 자습서를 사용하려면 PowerShell을 사용하여 작업 에이전트 데이터베이스와 작업 에이전트를 만들어야 합니다. SQL 에이전트에서 사용되는 MSDB 데이터베이스와 마찬가지로, 작업 에이전트는 Azure SQL 데이터베이스를 사용하여 작업 정의, 작업 상태 및 기록을 저장합니다. 작업 에이전트가 만들어지면 즉시 작업을 만들고 모니터링할 수 있습니다.
 
 1. **PowerShell ISE**에서 *...\\Learning Modules\\Schema Management\\Demo-SchemaManagement.ps1*을 엽니다.
 2. **F5** 키를 눌러 스크립트를 실행합니다.

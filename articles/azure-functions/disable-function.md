@@ -3,29 +3,33 @@ title: Azure Functions에서 함수를 사용하지 않도록 설정하는 방�
 description: Azure Functions 1.x 및 2.x에서 함수를 사용하지 않도록 설정하고 사용하도록 설정하는 방법을 알아봅니다.
 services: functions
 documentationcenter: ''
-author: ggailey777
-manager: jeconnoc
-ms.service: azure-functions
-ms.topic: conceptual
-ms.date: 07/24/2018
-ms.author: glenga
-ms.openlocfilehash: ab9cf429a0af69db116fe910ab90b83d404afbb7
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
-ms.translationtype: HT
+author: tdykstra
+manager: cfowler
+editor: ''
+ms.service: functions
+ms.workload: na
+ms.devlang: na
+ms.topic: article
+origin.date: 07/24/2018
+ms.date: 08/31/2018
+ms.author: v-junlch
+ms.openlocfilehash: a32b4815a2716428ceeec034ddc5589e3aa062e8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44093637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60710582"
 ---
 # <a name="how-to-disable-functions-in-azure-functions"></a>Azure Functions에서 함수를 사용하지 않도록 설정하는 방법
 
 이 문서에서는 Azure Functions에서 함수를 사용하지 않도록 설정하는 방법을 설명합니다. 함수를 *사용하지 안도록 설정*하는 것은 함수에 대해 정의된 자동 트리거를 런타임에서 무시하도록 하는 것입니다. 이렇게 하는 방식은 런타임 버전 및 프로그래밍 언어에 따라 다릅니다.
 
-* Functions 1.x
-  * 스크립팅 언어
-  * C# 클래스 라이브러리
-* Functions 2.x
-  * 모든 언어에 대한 한 가지 방법
-  * C# 클래스 라이브러리에 대한 선택적 방법
+- Functions 1.x
+  - 스크립팅 언어
+  - C# 클래스 라이브러리
+- Functions 2.x
+  - 모든 언어에 대한 한 가지 방법
+  - C# 클래스 라이브러리에 대한 선택적 방법
 
 ## <a name="functions-1x---scripting-languages"></a>Functions 1.x - 스크립팅 언어
 
@@ -58,7 +62,7 @@ C# 스크립트 및 JavaScript와 같은 스크립팅 언어의 경우 *function
 
 Azure Portal에서 파일을 편집하거나 함수의 **관리** 탭에서 **함수 상태** 스위치를 사용할 수 있습니다. 포털 스위치는 *function.json* 파일을 변경하면 작동됩니다.
 
-![함수 상태 스위치](media/disable-function/function-state-switch.png)
+![함수 상태 스위치](./media/disable-function/function-state-switch.png)
 
 ## <a name="functions-1x---c-class-libraries"></a>Functions 1.x - C# 클래스 라이브러리
 
@@ -109,7 +113,7 @@ public static class QueueFunctions
 
 Functions 2.x에서 앱 설정을 사용하여 함수를 사용하지 않도록 설정합니다. 예를 들어 `QueueTrigger`라는 함수를 사용하지 않도록 설정하려면 `AzureWebJobs.QueueTrigger.Disabled`라는 앱 설정을 만들어 `true`로 설정합니다. 함수를 사용하도록 설정하려면 앱 설정을 `false`로 설정합니다. 함수의 **관리** 탭에서 **함수 상태** 스위치를 사용할 수도 있습니다. 스위치는 `AzureWebJobs.<functionname>.Disabled` 앱 설정을 만들고 삭제함으로써 작동됩니다.
 
-![함수 상태 스위치](media/disable-function/function-state-switch.png)
+![함수 상태 스위치](./media/disable-function/function-state-switch.png)
 
 ## <a name="functions-2x---c-class-libraries"></a>Functions 2.x - C# 클래스 라이브러리
 
@@ -118,3 +122,4 @@ Functions 2.x 클래스 라이브러리에서 모든 언어에 대해 작동하�
 ## <a name="next-steps"></a>다음 단계
 
 이 문서에서는 자동 트리거를 사용하지 않도록 설정하는 방법을 설명합니다. 트리거에 대한 자세한 내용은 [트리거 및 바인딩](functions-triggers-bindings.md)을 참조하세요.
+

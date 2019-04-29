@@ -13,11 +13,11 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: b6f0d25f621768f79e8262f38617152e91692a23
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57838853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62129859"
 ---
 # <a name="disaster-recovery-for-a-multi-tenant-saas-application-using-database-geo-replication"></a>데이터베이스 지역에서 복제를 사용하여 다중 테넌트 SaaS 애플리케이션 재해 복구
 
@@ -312,7 +312,7 @@ Traffic Manager에서 애플리케이션 엔드포인트를 사용하지 않도�
 > * 애플리케이션 및 카탈로그와 테넌트 데이터베이스를 복구 지역으로 장애 조치(Failover) 
 > * 애플리케이션, 카탈로그 및 테넌트 데이터베이스를 원래 지역으로 다시 장애 복구(Failback)
 
-[비즈니스 연속성 개요](sql-database-business-continuity.md) 설명서에서 Azure SQL Database가 비즈니스 연속성을 사용하도록 설정하기 위해 제공하는 기술에 대해 자세히 알아볼 수 있습니다.
+[비즈니스 연속성 개요](sql-database-business-continuity.md) 설명서에서 Azure SQL 데이터베이스가 비즈니스 연속성을 사용하도록 설정하기 위해 제공하는 기술에 대해 자세히 알아볼 수 있습니다.
 
 ## <a name="additional-resources"></a>추가 리소스
 

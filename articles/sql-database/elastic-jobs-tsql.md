@@ -13,11 +13,11 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: 59e0e4cf82af9851dacf3ec030575ed392571331
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59523769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61475816"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs"></a>T-SQL(Transact-SQL)을 사용하여 Elastic Database 작업 만들기 및 관리
 
@@ -1216,14 +1216,14 @@ GO
 |**job_execution_id**   |uniqueidentifier|  작업 실행 인스턴스의 고유 ID입니다.
 |**job_name**   |nvarchar(128)  |작업의 이름입니다.
 |**job_id** |uniqueidentifier|  작업의 고유 ID입니다.
-|**job_version**    |ssNoversion    |작업 버전입니다(작업이 수정될 때마다 자동으로 업데이트됨).
-|**step_id**    |ssNoversion|   이 작업의 단계에 대한 고유 ID입니다. NULL은 부모 작업 실행임을 나타냅니다.
+|**job_version**    |int    |작업 버전입니다(작업이 수정될 때마다 자동으로 업데이트됨).
+|**step_id**    |int|   이 작업의 단계에 대한 고유 ID입니다. NULL은 부모 작업 실행임을 나타냅니다.
 |**is_active**| bit |정보가 활성 또는 비활성 상태인지 여부를 나타냅니다. 1은 활성 작업을 나타내고, 0은 비활성 작업을 나타냅니다.
 |**lifecycle**| nvarchar(50)|작업 상태를 나타내는 값: ‘Created’, ‘In Progress’, ‘Failed’, ‘Succeeded’, ‘Skipped’, ‘SucceededWithSkipped’|
 |**create_time**|   datetime2(7)|   작업을 만든 날짜 및 시간입니다.
 |**start_time** |datetime2(7)|  작업 실행을 시작한 날짜 및 시간입니다. 작업이 아직 실행되지 않은 경우 NULL입니다.
 |**end_time**|  datetime2(7)    |작업 실행을 완료한 날짜 및 시간입니다. 작업이 아직 실행되지 않았거나 실행이 아직 완료되지 않은 경우 NULL입니다.
-|**current_attempts**   |ssNoversion    |단계를 다시 시도한 횟수입니다. 부모 작업은 0이고, 자식 작업 실행은 실행 정책에 따라 1 이상입니다.
+|**current_attempts**   |int    |단계를 다시 시도한 횟수입니다. 부모 작업은 0이고, 자식 작업 실행은 실행 정책에 따라 1 이상입니다.
 |**current_attempt_start_time** |datetime2(7)|  작업 실행을 시작한 날짜 및 시간입니다. NULL은 부모 작업 실행임을 나타냅니다.
 |**last_message**   |nvarchar(max)| 작업 또는 단계 기록 메시지입니다. 
 |**target_type**|   nvarchar(128)   |서버의 모든 데이터베이스, 탄력적 풀의 모든 데이터베이스 또는 데이터베이스가 포함된 대상 데이터베이스 또는 데이터베이스 컬렉션의 유형입니다. target_type에 대해 유효한 값은 'SqlServer', 'SqlElasticPool' 또는 'SqlDatabase'입니다. NULL은 부모 작업 실행임을 나타냅니다.
@@ -1243,10 +1243,10 @@ GO
 |------|------|-------|
 |**job_name**|  nvarchar(128)   |작업의 이름입니다.|
 |**job_id**|    uniqueidentifier    |작업의 고유 ID입니다.|
-|**job_version**    |ssNoversion    |작업 버전입니다(작업이 수정될 때마다 자동으로 업데이트됨).|
+|**job_version**    |int    |작업 버전입니다(작업이 수정될 때마다 자동으로 업데이트됨).|
 |**description**    |nvarchar(512)| 작업에 대한 설명입니다. bit 형식으로 사용됩니다. 작업의 사용 여부를 나타냅니다. 1은 사용되는 작업을 나타내고, 0은 사용되지 않는 작업을 나타냅니다.|
 |**schedule_interval_type** |nvarchar(50)   |작업을 실행할 시기를 나타내는 값: 'Once', 'Minutes', 'Hours', 'Days', 'Weeks', 'Months'
-|**schedule_interval_count**|   ssNoversion|    각 작업 실행 간에 발생할 schedule_interval_type 기간의 수입니다.|
+|**schedule_interval_count**|   int|    각 작업 실행 간에 발생할 schedule_interval_type 기간의 수입니다.|
 |**schedule_start_time**    |datetime2(7)|  작업 실행을 마지막으로 시작한 날짜 및 시간입니다.|
 |**schedule_end_time**| datetime2(7)|   작업 실행을 마지막으로 완료한 날짜 및 시간입니다.|
 
@@ -1261,7 +1261,7 @@ GO
 |------|------|-------|
 |**job_name**|  nvarchar(128)   |작업의 이름입니다.|
 |**job_id**|    uniqueidentifier    |작업의 고유 ID입니다.|
-|**job_version**    |ssNoversion    |작업 버전입니다(작업이 수정될 때마다 자동으로 업데이트됨).|
+|**job_version**    |int    |작업 버전입니다(작업이 수정될 때마다 자동으로 업데이트됨).|
 
 
 ### <a name="jobsteps-view"></a>jobsteps 보기
@@ -1274,8 +1274,8 @@ GO
 |------|------|-------|
 |**job_name**   |nvarchar(128)| 작업의 이름입니다.|
 |**job_id** |uniqueidentifier   |작업의 고유 ID입니다.|
-|**job_version**|   ssNoversion|    작업 버전입니다(작업이 수정될 때마다 자동으로 업데이트됨).|
-|**step_id**    |ssNoversion    |이 작업의 단계에 대한 고유 ID입니다.|
+|**job_version**|   int|    작업 버전입니다(작업이 수정될 때마다 자동으로 업데이트됨).|
+|**step_id**    |int    |이 작업의 단계에 대한 고유 ID입니다.|
 |**step_name**  |nvarchar(128)  |이 작업의 단계에 대한 고유 이름입니다.|
 |**command_type**   |nvarchar(50)   |작업 단계에서 실행할 명령의 유형입니다. v1의 경우 값은 기본값인 'TSql'과 같아야 합니다.|
 |**command_source** |nvarchar(50)|  명령의 위치입니다. v1의 경우 'Inline'이 기본값이며, 허용되는 유일한 값입니다.|
@@ -1283,11 +1283,11 @@ GO
 |**credential_name**|   nvarchar(128)   |작업 실행에 사용된 데이터베이스 범위 자격 증명의 이름입니다.|
 |**target_group_name**| nvarchar(128)   |대상 그룹의 이름입니다.|
 |**target_group_id**|   uniqueidentifier|   대상 그룹의 고유 ID입니다.|
-|**initial_retry_interval_seconds**|    ssNoversion |첫 번째 재시도가 시도될 때까지의 지연 시간입니다. 기본값은 1입니다.|
-|**maximum_retry_interval_seconds** |ssNoversion|   재시도 간의 최대 지연 시간입니다. 재시도 간의 지연 시간이 이 값보다 커지면 대신 이 값으로 제한됩니다. 기본값은 120입니다.|
+|**initial_retry_interval_seconds**|    int |첫 번째 재시도가 시도될 때까지의 지연 시간입니다. 기본값은 1입니다.|
+|**maximum_retry_interval_seconds** |int|   재시도 간의 최대 지연 시간입니다. 재시도 간의 지연 시간이 이 값보다 커지면 대신 이 값으로 제한됩니다. 기본값은 120입니다.|
 |**retry_interval_backoff_multiplier**  |real|  여러 작업 단계 실행 시도가 실패하는 경우 재시도 지연 시간에 적용할 승수입니다. 기본값은 2.0입니다.|
-|**retry_attempts** |ssNoversion|   이 단계가 실패하는 경우 사용할 재시도 횟수입니다. 기본값은 10이며, 재시도 횟수가 없음을 나타냅니다.|
-|**step_timeout_seconds**   |ssNoversion|   재시도 간의 시간 간격(분)입니다. 기본값은 0이며, 0분 간격을 나타냅니다.|
+|**retry_attempts** |int|   이 단계가 실패하는 경우 사용할 재시도 횟수입니다. 기본값은 10이며, 재시도 횟수가 없음을 나타냅니다.|
+|**step_timeout_seconds**   |int|   재시도 간의 시간 간격(분)입니다. 기본값은 0이며, 0분 간격을 나타냅니다.|
 |**output_type**    |nvarchar(11)|  명령의 위치입니다. 현재 미리 보기에서는 'Inline'이 기본값이며, 허용되는 유일한 값입니다.|
 |**output_credential_name**|    nvarchar(128)   |결과 집합을 저장할 대상 서버에 연결하는 데 사용할 자격 증명의 이름입니다.|
 |**output_subscription_id**|    uniqueidentifier|   쿼리 실행의 결과 집합에 대한 대상 서버\데이터베이스의 구독에 대한 고유 ID입니다.|
@@ -1296,7 +1296,7 @@ GO
 |**output_database_name**   |nvarchar(128)| 결과 집합에 대한 대상 데이터베이스의 이름입니다.|
 |**output_schema_name** |nvarchar(max)| 대상 스키마의 이름입니다. 지정되지 않은 경우 기본값은 dbo입니다.|
 |**output_table_name**| nvarchar(max)|  쿼리 결과의 결과 집합을 저장할 테이블의 이름입니다. 테이블이 아직 없는 경우 결과 집합의 스키마를 기반으로 하여 자동으로 만들어집니다. 스키마는 결과 집합의 스키마와 일치해야 합니다.|
-|**max_parallelism**|   ssNoversion|    작업 단계가 한 번에 실행될 탄력적 풀당 최대 데이터베이스 수입니다. 기본값은 NULL이며, 제한이 없음을 의미합니다. |
+|**max_parallelism**|   int|    작업 단계가 한 번에 실행될 탄력적 풀당 최대 데이터베이스 수입니다. 기본값은 NULL이며, 제한이 없음을 의미합니다. |
 
 
 ### <a name="jobstepversions-view"></a>jobstep_versions 보기
@@ -1326,7 +1326,7 @@ GO
 |-----|-----|-----|
 |**target_group_name**  |nvarchar(128)|데이터베이스 컬렉션인 대상 그룹의 이름입니다. |
 |**target_group_id**    |uniqueidentifier   |대상 그룹의 고유 ID입니다.|
-|**membership_type**    |ssNoversion|   대상 그룹 멤버가 대상 그룹에 포함되거나 제외되는지 여부를 지정합니다. target_group_name에 대해 유효한 값은 'Include' 또는 'Exclude'입니다.|
+|**membership_type**    |int|   대상 그룹 멤버가 대상 그룹에 포함되거나 제외되는지 여부를 지정합니다. target_group_name에 대해 유효한 값은 'Include' 또는 'Exclude'입니다.|
 |**target_type**    |nvarchar(128)| 서버의 모든 데이터베이스, 탄력적 풀의 모든 데이터베이스 또는 데이터베이스가 포함된 대상 데이터베이스 또는 데이터베이스 컬렉션의 유형입니다. target_type에 대해 유효한 값은 'SqlServer', 'SqlElasticPool', 'SqlDatabase' 또는 'SqlShardMap'입니다.|
 |**target_id**  |uniqueidentifier|  대상 그룹 멤버의 고유 ID입니다.|
 |**refresh_credential_name**    |nvarchar(128)  |대상 그룹 멤버에 연결하는 데 사용되는 데이터베이스 범위 자격 증명의 이름입니다.|

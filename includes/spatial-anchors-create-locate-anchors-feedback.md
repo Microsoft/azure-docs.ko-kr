@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 685d982835042aa4a697d19a650e8dcb1476b400
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58632235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60232517"
 ---
 ## <a name="provide-feedback-to-the-user"></a>사용자에 게 피드백을 제공 합니다.
 

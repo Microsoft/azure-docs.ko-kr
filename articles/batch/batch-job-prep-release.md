@@ -3,7 +3,7 @@ title: 계산 노드에서 작업을 준비하고 완료하는 태스크 만들�
 description: 작업 수준 준비 태스크를 사용하여 Azure Batch 계산 노드로의 데이터 전송을 최소화하고 작업 완료 시 태스크를 해제하여 노드를 정리합니다.
 services: batch
 documentationcenter: .net
-author: laurenhughes
+author: dlepow
 manager: jeconnoc
 editor: ''
 ms.assetid: 63d9d4f1-8521-4bbb-b95a-c4cad73692d3
@@ -12,15 +12,16 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
-ms.date: 02/27/2017
-ms.author: lahugh
-ms.custom: seodec18
+origin.date: 02/27/2017
+ms.date: 06/29/2018
+ms.author: v-junlch
+ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 517ac0f612b9e5fc5909a7f0fe2ce088c9b367d9
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53548700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60776211"
 ---
 # <a name="run-job-preparation-and-job-release-tasks-on-batch-compute-nodes"></a>Batch 계산 노드에서 작업 준비 및 작업 릴리스 태스크 실행
 
@@ -195,11 +196,11 @@ Sample complete, hit ENTER to exit...
 
 Azure Batch 팀 멤버 중 하나에서 작성하고 애플리케이션과 데이터를 계산 노드에 배포하는 데 사용할 수 있는 몇 가지 방법을 설명하고 있습니다.
 
-[api_net]: https://msdn.microsoft.com/library/azure/mt348682.aspx
+[api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
 [api_net_listjobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
-[api_rest]: https://msdn.microsoft.com/library/azure/dn820158.aspx
-[azure_storage]: https://azure.microsoft.com/services/storage/
-[portal]: https://portal.azure.com
+[api_rest]: http://msdn.microsoft.com/library/azure/dn820158.aspx
+[azure_storage]: https://www.azure.cn/home/features/storage/
+[portal]: https://portal.azure.cn
 [job_prep_release_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/JobPrepRelease
 [forum_post]: https://social.msdn.microsoft.com/Forums/en-US/87b19671-1bdf-427a-972c-2af7e5ba82d9/installing-applications-and-staging-data-on-batch-compute-nodes?forum=azurebatch
 [net_batch_client]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx
@@ -225,3 +226,5 @@ Azure Batch 팀 멤버 중 하나에서 작성하고 애플리케이션과 데�
 [net_list_tasks]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listtasks.aspx
 
 [1]: ./media/batch-job-prep-release/portal-jobprep-01.png
+
+<!-- Update_Description: wording update -->

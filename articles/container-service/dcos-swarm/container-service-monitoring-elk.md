@@ -10,11 +10,11 @@ ms.date: 03/27/2017
 ms.author: saudas
 ms.custom: mvc
 ms.openlocfilehash: 342cf23db2df7d7c79a2b56df96d1a78d6ba215e
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52998121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61467771"
 ---
 # <a name="deprecated-monitor-an-azure-container-service-cluster-with-elk"></a>(사용되지 않음) ELK를 사용하여 Azure Container Service 클러스터 모니터링
 
@@ -60,7 +60,7 @@ HAPROXY 대시보드에 액세스하려면 `http://$PUBLIC_NODE_IP_ADDRESS:9090/
 
 ## <a name="next-steps"></a>다음 단계
 
-* 시스템 및 응용 프로그램 로그 전달 및 설정은 [ELK로 DC/OS에서 로그 관리](https://docs.mesosphere.com/1.8/administration/logging/elk/)를 참조하세요.
+* 시스템 및 애플리케이션 로그 전달 및 설정은 [ELK로 DC/OS에서 로그 관리](https://docs.mesosphere.com/1.8/administration/logging/elk/)를 참조하세요.
 
 * 로그를 필터링하려면 [ELK로 로그 필터링](https://docs.mesosphere.com/1.8/administration/logging/filter-elk/)을 참조하세요. 
 

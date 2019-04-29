@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 03/26/2019
 ms.author: danlep
 ms.openlocfilehash: 7fdc1417ac524b422a12a087cf1661040efb9f8a
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58521961"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60582824"
 ---
 # <a name="azure-container-registry-skus"></a>Azure Container Registry SKU
 
@@ -28,7 +28,7 @@ ACR(Azure Container Registry)은 다중 서비스 계층(즉, SKU)에서 사용 
 > [!IMPORTANT]
 > Classic 레지스트리 SKU 되 **더 이상 사용 되지**, 한 후 사용할 수 없게 됩니다 및 **2019 년 4 월**합니다. Basic, Standard 또는 Premium을 사용 하 여 모든 새로운 레지스트리에 대 한 것이 좋습니다. 2019 년 4 월 전에 모든 기존 Classic 레지스트리 업그레이드 해야 합니다. 업그레이드 정보를 참조 하세요 [Classic 레지스트리 업그레이드][container-registry-upgrade]합니다.
 
-Basic, Standard 및 Premium Sku (통틀어 호출 *레지스트리를 관리 되는*) 모두 동일한 프로그래밍 성능을 제공 합니다. 이러한 모든에서 활용할 수도 [이미지 저장소] [ container-registry-storage] Azure에서 완전히 관리 합니다. 더 높은 수준의 SKU를 선택하면 향상된 성능과 규모를 제공합니다. 여러 서비스 계층을 사용하여 Basic로 시작한 다음 레지스트리 사용량 증가에 따라 Standard 및 Premium으로 변환할 수 있습니다.
+Basic, Standard 및 Premium Sku (통틀어 호출 *레지스트리를 관리 되는*) 모두 동일한 프로그래밍 성능을 제공 합니다. 이러한 모든에서 활용할 수도 [이미지 저장소] [ container-registry-storage] Azure에서 완전히 관리 합니다. 더 높은 수준의 SKU를 선택하면 향상된 성능과 규모를 제공합니다. 여러 서비스 계층을 사용하여 Basic로 시작한 다음, 레지스트리 사용량 증가에 따라 Standard 및 Premium으로 변환할 수 있습니다.
 
 ## <a name="sku-feature-matrix"></a>SKU 기능 행렬
 

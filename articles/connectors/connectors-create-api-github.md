@@ -11,12 +11,12 @@ services: logic-apps
 ms.reviewer: klam, LADocs
 ms.suite: integration
 tags: connectors
-ms.openlocfilehash: ce567dc631c3a147b795eb2355a4961faa8881d6
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
-ms.translationtype: HT
+ms.openlocfilehash: 0d2ff9368bc244a5afd6fafc40cf476b90a80a52
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35295815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61462601"
 ---
 # <a name="connect-to-github"></a>GitHub에 연결
 
@@ -30,7 +30,7 @@ GitHub 커넥터를 시작하려면 [먼저 논리 앱을 만듭니다](../logic
 
 | 자산 | 필수 | 설명 | 
 | -------- | -------- | ----------- | 
-| 신뢰 | 예 | GitHub 자격 증명을 제공합니다. |
+| 토큰 | 예 | GitHub 자격 증명을 제공합니다. |
 
 연결을 만든 후에 이 작업을 실행하고 이 문서에서 설명하는 트리거를 수신 대기할 수 있습니다.
 

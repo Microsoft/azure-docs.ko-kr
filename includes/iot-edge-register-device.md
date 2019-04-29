@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/25/2018
 ms.author: kgremban
 ms.custom: include file
-ms.openlocfilehash: bacafdc8f7fd8e206335f3be0a086df1c54f1081
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: bb0b140dd1f42cae1d5d4bb670af8780d66c1f80
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "58114974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60768634"
 ---
 IoT Hub와 통신할 수 있도록, 시뮬레이션된 디바이스의 디바이스 ID를 만듭니다. IoT Edge 디바이스는 일반적인 IoT 디바이스와 다르게 작동하며 다른 방식으로 관리될 수 있으므로, 처음부터 IoT Edge 디바이스로 선언합니다. 
 

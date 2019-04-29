@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: 7f1352b018fe9ea46b0f0824ba53ee0204c7dc7c
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 711f6395959b3718ca0a094a03c07c4381892104
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60005522"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63762848"
 ---
 # <a name="api-management-policies"></a>API Management 정책
 이 섹션에서는 다음 API Management 정책에 대한 참조를 제공합니다. 정책의 추가 및 구성에 대한 자세한 내용은 [API Management 정책](api-management-howto-policies.md)을 참조하세요.  
@@ -53,7 +53,7 @@ ms.locfileid: "60005522"
 -   [인증 정책](api-management-authentication-policies.md#AuthenticationPolicies)  
     -   [기본 사용 인증](api-management-authentication-policies.md#Basic) - 기본 인증을 사용하여 백 엔드 서비스를 인증합니다.  
     -   [클라이언트 인증서 사용 인증](api-management-authentication-policies.md#ClientCertificate) - 클라이언트 인증서를 사용하여 백 엔드 서비스를 인증합니다.  
-    -   [관리 id를 사용 하 여 인증](api-management-authentication-policies.md#ManagedIdentity) -클라이언트 인증서를 사용 하 여 백 엔드 서비스를 사용 하 여 인증 합니다.  
+    -   [관리 되는 id를 사용 하 여 인증](api-management-authentication-policies.md#ManagedIdentity) -사용 하 여 백 엔드 서비스를 사용 하 여 인증을 [관리 id](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)합니다.  
 -   [캐싱 정책](api-management-caching-policies.md#CachingPolicies)  
     -   [캐시에서 가져오기](api-management-caching-policies.md#GetFromCache) - 캐시 조회를 수행하여 사용 가능한 경우 올바르게 캐시된 응답을 반환합니다.  
     -   [캐시에 저장](api-management-caching-policies.md#StoreToCache) - 지정된 캐시 제어 구성에 따라 응답을 캐시합니다.  

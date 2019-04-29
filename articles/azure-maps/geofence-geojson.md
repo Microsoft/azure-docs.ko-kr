@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: 6f76eea365311cd6c10dd39054187bf3a07bd595
-ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
-ms.translationtype: MT
+ms.openlocfilehash: d4b6c8289ae7c22521fc433c928f2b25a56c87ef
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57568994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62130214"
 ---
 # <a name="geofencing-geojson-data"></a>지오펜싱 GeoJSON 데이터
 
-Azure Maps [GET 지오펜스](https://docs.microsoft.com/rest/api/maps/spatial/getgeofencepreview) 및 [POST 지오펜스](https://docs.microsoft.com/rest/api/maps/spatial/postgeofencepreview) API를 사용하면 제공된 지오펜스 또는 펜스 세트를 기준으로 좌표의 근접성을 검색할 수 있습니다. 이 문서에서는 Azure Maps GET 및 POST API에 사용할 수 있는 지오펜스 데이터를 준비하는 방법을 자세히 설명합니다.
+Azure Maps [GET 지오펜스](/rest/api/maps/spatial/getgeofence) 및 [POST 지오펜스](/rest/api/maps/spatial/postgeofence) API를 사용하면 제공된 지오펜스 또는 펜스 세트를 기준으로 좌표의 근접성을 검색할 수 있습니다. 이 문서에서는 Azure Maps GET 및 POST API에 사용할 수 있는 지오펜스 데이터를 준비하는 방법을 자세히 설명합니다.
 
 지오펜스 또는 지오펜스 세트의 데이터는 [rfc7946](https://tools.ietf.org/html/rfc7946)에서 정의된 `GeoJSON` 형식의 `Feature` 개체 및 `FeatureCollection` 개체로 표시됩니다. 이외에도 다음 사항에 유의하세요.
 

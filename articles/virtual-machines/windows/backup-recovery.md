@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 09/13/2017
 ms.author: cynthn
-ms.openlocfilehash: ec3bd5666e6282554e3d242f8ff56019ee41011b
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
-ms.translationtype: HT
+ms.openlocfilehash: b8f63d2a0f69f1eb1b8a1b9c645b1a0bcb3d9469
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30915221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61456311"
 ---
 # <a name="backup-and-restore-options-for-virtual-machines-in-azure"></a>Azure의 가상 머신을 위한 백업 및 복원 옵션
 정기적으로 백업을 수행하여 데이터를 보호할 수 있습니다. 사용 사례에 따라 VM에 사용 가능한 여러 백업 옵션이 있습니다.

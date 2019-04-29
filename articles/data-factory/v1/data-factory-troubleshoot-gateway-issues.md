@@ -13,11 +13,11 @@ ms.date: 10/01/2017
 ms.author: abnarain
 robots: noindex
 ms.openlocfilehash: 0559d89bd691323a95713d518df05e58283cef39
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58119346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61252440"
 ---
 # <a name="troubleshoot-issues-with-using-data-management-gateway"></a>데이터 관리 게이트웨이 사용 관련 문제 해결
 이 문서에서는 데이터 관리 게이트웨이 사용과 관련된 문제 해결에 대한 정보를 제공합니다.
@@ -36,7 +36,7 @@ ms.locfileid: "58119346"
 #### <a name="cause"></a>원인
 게이트웨이를 설치하려는 컴퓨터에서 네트워크 문제로 인해 다운로드 센터에서 최신 게이트웨이 설치 파일을 다운로드하지 못했습니다.
 
-#### <a name="resolution"></a>해결
+#### <a name="resolution"></a>해결 방법
 방화벽 프록시 서버 설정을 검사하여 이 설정이 컴퓨터와 [다운로드 센터](https://download.microsoft.com/) 간의 네트워크 연결을 차단하는지 확인한 후 상황에 따라 설정을 업데이트합니다.
 
 또는 다운로드 센터에 액세스할 수있는 다른 컴퓨터의 [다운로드 센터](https://www.microsoft.com/download/details.aspx?id=39717)에서 최신 게이트웨이의 설치 파일을 다운로드할 수 있습니다. 그런 다음 설치 프로그램 파일을 게이트웨이 호스트 컴퓨터에 복사한 다음 수동으로 실행하여 게이트웨이를 설치하고 업데이트할 수 있습니다.
@@ -49,7 +49,7 @@ Azure Portal에서 **이 컴퓨터에 바로 설치**를 클릭하여 게이트�
 #### <a name="cause"></a>원인
 게이트웨이가 컴퓨터에 이미 설치되어 있습니다.
 
-#### <a name="resolution"></a>해결
+#### <a name="resolution"></a>해결 방법
 컴퓨터에서 기존 게이트웨이를 제거하고 **이 컴퓨터에 바로 설치** 링크를 다시 클릭합니다.
 
 ### <a name="3-problem"></a>3. 문제
@@ -64,7 +64,7 @@ Azure Portal에서 **이 컴퓨터에 바로 설치**를 클릭하여 게이트�
 * 게이트웨이 키가 무효화되었습니다.
 * 게이트웨이 키가 포털에서 다시 생성되었습니다.  
 
-#### <a name="resolution"></a>해결
+#### <a name="resolution"></a>해결 방법
 포털에서 올바른 게이트웨이 키를 사용하는지 확인합니다. 필요한 경우 키를 다시 생성하고 이 키를 사용하여 게이트웨이를 등록합니다.
 
 ### <a name="4-problem"></a>4. 문제
@@ -79,7 +79,7 @@ Azure Portal에서 **이 컴퓨터에 바로 설치**를 클릭하여 게이트�
 #### <a name="cause"></a>원인
 입력된 게이트웨이 키의 내용 또는 형식이 잘못되었습니다. 그 이유 중 하나는 포털에서 키의 일부만 복사했거나 잘못된 키를 사용하고 있기 때문일 수 있습니다.
 
-#### <a name="resolution"></a>해결
+#### <a name="resolution"></a>해결 방법
 포털에서 게이트웨이 키를 생성하고 복사 단추를 사용하여 전체 키를 복사합니다. 그런 다음 게이트웨이를 등록하려면 이 창에 붙여넣습니다.
 
 ### <a name="5-problem"></a>5. 문제
@@ -92,7 +92,7 @@ Azure Portal에서 **이 컴퓨터에 바로 설치**를 클릭하여 게이트�
 #### <a name="cause"></a>원인
 게이트웨이 키가 다시 생성되었거나 게이트웨이가 Azure Portal에서 삭제되었습니다. 데이터 관리 게이트웨이 설치가 최신이 아닌 경우에도 발생할 수 있습니다.
 
-#### <a name="resolution"></a>해결
+#### <a name="resolution"></a>해결 방법
 데이터 관리 게이트웨이 설치가 최신 버전인지 확인하고 Microsoft [다운로드 센터](https://go.microsoft.com/fwlink/p/?LinkId=271260)에서 최신 버전을 찾을 수 있습니다.
 
 설치가 최신이고 게이트웨이가 포털에 여전히 존재하는 경우 Azure Portal에서 게이트웨이 키를 생성하고 복사 단추를 사용하여 전체 키를 복사한 다음 이 창에 붙여넣어 게이트웨이를 등록합니다. 그렇지 않은 경우 게이트웨이를 다시 만들고 처음부터 다시 시작합니다.
@@ -107,7 +107,7 @@ Azure Portal에서 **이 컴퓨터에 바로 설치**를 클릭하여 게이트�
 #### <a name="cause"></a>원인
 게이트웨이가 삭제되었거나 연결된 게이트웨이 키가 다시 생성되었기 때문에 이 오류가 발생할 수 있습니다.
 
-#### <a name="resolution"></a>해결
+#### <a name="resolution"></a>해결 방법
 게이트웨이가 삭제된 경우 포털에서 게이트웨이를 다시 만들고 **등록**을 클릭한 다음 포털에서 키를 복사하여 붙여넣고 게이트웨이를 등록합니다.
 
 게이트웨이가 여전히 존재하지만 해당 키가 다시 생성된 경우 새 키를 사용하여 게이트웨이를 등록합니다. 키가 없는 경우 포털에서 키를 다시 생성합니다.
@@ -137,7 +137,7 @@ Azure Portal에서 **이 컴퓨터에 바로 설치**를 클릭하여 게이트�
 #### <a name="cause"></a>원인
 게이트웨이가 인터넷 리소스에 액세스하기 위해 HTTP 프록시가 필요한 환경에 있거나 프록시의 인증 암호가 변경되었지만 이에 따라 게이트웨이에서 해당 암호를 적절히 업데이트하지 않은 경우에 이 오류가 발생합니다.
 
-#### <a name="resolution"></a>해결
+#### <a name="resolution"></a>해결 방법
 이 문서의 프록시 서버 고려 사항 섹션의 지침에 따라 데이터 관리 게이트웨이 구성 관리자를 사용하여 프록시 설정을 구성합니다.
 
 ## <a name="gateway-is-online-with-limited-functionality"></a>게이트웨이는 기능이 제한된 온라인입니다.
@@ -152,7 +152,7 @@ Azure Portal에서 **이 컴퓨터에 바로 설치**를 클릭하여 게이트�
 
 게이트웨이가 온라인 상태이지만 기능이 제한되면 Data Factory 복사 마법사를 사용하여 온-프레미스 데이터 저장소에(서) 데이터를 복사하기 위한 데이터 파이프라인을 만들지 못할 수도 없습니다. 이 문제를 해결하기 위해 포털, Visual Studio 또는 Azure PowerShell에서 Data Factory 편집기를 사용할 수 있습니다.
 
-#### <a name="resolution"></a>해결
+#### <a name="resolution"></a>해결 방법
 게이트웨이가 클라우드 서비스에 연결할 수 없는지 아니면 다른 방법으로 연결할 수 있는지에 따라 이 문제(온라인 상태이지만 기능이 제한됨)를 해결할 수 있습니다. 다음 섹션에서는 이러한 해결 방법을 제공합니다.
 
 ### <a name="2-problem"></a>2. 문제
@@ -165,7 +165,7 @@ Azure Portal에서 **이 컴퓨터에 바로 설치**를 클릭하여 게이트�
 #### <a name="cause"></a>원인
 게이트웨이가 Service Bus를 통해 클라우드 서비스에 연결할 수 없습니다.
 
-#### <a name="resolution"></a>해결
+#### <a name="resolution"></a>해결 방법
 게이트웨이를 다시 온라인으로 가져오려면 다음 단계를 따릅니다.
 
 1. 게이트웨이 컴퓨터와 회사 방화벽에서 IP 주소 아웃바운드 규칙을 허용합니다. 다음과 같은 Windows 이벤트 로그에서 IP 주소를 찾을 수 있습니다(ID == 401). 액세스 권한 XX.XX.XX.XX:9350에 의해 숨겨진 소켓에 액세스를 시도했습니다.
@@ -180,7 +180,7 @@ Azure Portal에서 **이 컴퓨터에 바로 설치**를 클릭하여 게이트�
 #### <a name="cause"></a>원인
 네트워크 연결에서 일시적인 오류가 발생했습니다.
 
-#### <a name="resolution"></a>해결
+#### <a name="resolution"></a>해결 방법
 게이트웨이를 다시 온라인으로 가져오려면 다음 단계를 따릅니다.
 
 1. 몇 분 정도 기다리면 오류가 사라지고 연결이 자동으로 복구됩니다.
@@ -201,7 +201,7 @@ Azure Portal에서 **이 컴퓨터에 바로 설치**를 클릭하여 게이트�
 
  `Unable to get the gateway settings from cloud service. Check the gateway key and the network connection. (Certificate with thumbprint cannot be loaded.)`
 
-#### <a name="resolution"></a>해결
+#### <a name="resolution"></a>해결 방법
 문제를 해결하려면 다음 단계를 수행합니다.
 
 1. 데이터 관리 게이트웨이 구성 관리자를 시작합니다.
@@ -222,7 +222,7 @@ Azure Portal에서 **이 컴퓨터에 바로 설치**를 클릭하여 게이트�
 #### <a name="cause"></a>원인
 이 오류는 여러 가지 이유로 발생할 수 있으며 그에 따라 완화하는 방법이 달라집니다.
 
-#### <a name="resolution"></a>해결
+#### <a name="resolution"></a>해결 방법
 SQL 데이터베이스에 연결하기 전에 데이터 관리 게이트웨이 클라이언트 쪽의 TCP/1433 포트를 통한 아웃바운드 TCP 연결을 허용합니다.
 
 대상 데이터베이스가 Azure SQL 데이터베이스인 경우 Azure에 대한 SQL Server 방화벽 설정도 확인합니다.

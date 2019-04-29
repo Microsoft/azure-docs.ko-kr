@@ -17,11 +17,11 @@ ms.date: 04/02/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 8240308b3e0955b1d4d3ef2e82cad215daf95b00
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59009371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61482230"
 ---
 # <a name="azure-hana-large-instances-control-through-azure-portal"></a>Azure Portal을 통한 Azure HANA 대규모 인스턴스 제어
 이 문서에서는 방식 [HANA 큰 인스턴스](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture) 사항은 [Azure portal](https://portal.azure.com) 및 수에 대 한 배포 된 HANA 큰 인스턴스 단위를 사용 하 여 Azure portal을 통해 어떤 작업을 수행할 수 있습니다. Azure portal에서 HANA 큰 인스턴스 표시 여부는 현재 공개 미리 보기로 제공 되는 HANA 큰 인스턴스에 대 한 Azure 리소스 공급자를 통해 제공 됩니다.

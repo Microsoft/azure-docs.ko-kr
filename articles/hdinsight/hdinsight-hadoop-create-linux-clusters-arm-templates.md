@@ -1,7 +1,6 @@
 ---
 title: 템플릿을 사용하여 Apache Hadoop 클러스터 만들기 - Azure HDInsight
 description: Resource Manager 템플릿을 사용하여 HDInsight 클러스터를 만드는 방법에 대해 알아봅니다.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: e3757e94dcd8ccc39613b9a6fff8bf491812866a
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 73402421a87d2cf14719ff34201890ea96c90519
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59044983"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62097425"
 ---
 # <a name="create-apache-hadoop-clusters-in-hdinsight-by-using-resource-manager-templates"></a>Resource Manager 템플릿을 사용하여 HDInsight에서 Apache Hadoop 클러스터 만들기
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
@@ -32,7 +31,7 @@ ms.locfileid: "59044983"
 ### <a name="resource-manager-templates"></a>리소스 관리자 템플릿
 Resource Manager 템플릿을 쉽게 조정 된 단일 작업에서 응용 프로그램에 대 한 다음 리소스를 만듭니다.
 * HDInsight 클러스터 및 해당 종속 리소스(예: 기본 스토리지 계정)
-* 기타 리소스(예: [Apache Sqoop](https://sqoop.apache.org/)을 사용하는 Azure SQL Database)
+* 기타 리소스(예: [Apache Sqoop](https://sqoop.apache.org/)을 사용하는 Azure SQL Database).
 
 템플릿에서 애플리케이션에 필요한 리소스를 정의합니다. 또한 다양한 환경에 대한 값을 입력하기 위한 배포 매개 변수를 지정합니다. 템플릿은 배포에 대한 값을 생성하는 데 사용하는 JSON과 식으로 구성됩니다.
 

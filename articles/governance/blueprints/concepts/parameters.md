@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 9b5b151c62c4294563f704dc9a0cf7daeaca874f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: ac7b662bc9ef4f3ae675c4cbde18e159383d3d8e
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59279978"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63767044"
 ---
 # <a name="creating-dynamic-blueprints-through-parameters"></a>매개 변수를 통해 동적 청사진 만들기
 
@@ -169,7 +169,7 @@ REST API를 통해 청사진을 만들 때 [청사진 매개 변수](#blueprint-
 
 ### <a name="dynamic-parameters"></a>동적 매개 변수
 
-정적 매개 변수와 대조되는 것이 **동적 매개 변수**입니다. 이 매개 변수는 청사진에서 정의되는 것이 아니라 청사진을 할당할 때 정의됩니다. 리소스 그룹 예제에서는 **동적 매개 변수**를 리소스 그룹 이름에 사용하는 것이 좋습니다. 청사진의 모든 할당에 다른 이름을 제공합니다.
+정적 매개 변수와 대조되는 것이 **동적 매개 변수**입니다. 이 매개 변수는 청사진에서 정의되는 것이 아니라 청사진을 할당할 때 정의됩니다. 리소스 그룹 예제에서는 **동적 매개 변수**를 리소스 그룹 이름에 사용하는 것이 좋습니다. 청사진의 모든 할당에 다른 이름을 제공합니다. Blueprint 함수의 목록을 보려면 참조는 [blueprint 함수](../reference/blueprint-functions.md) 참조 합니다.
 
 #### <a name="setting-dynamic-parameters-in-the-portal"></a>포털에서 동적 매개 변수 설정
 
@@ -185,9 +185,7 @@ REST API를 통해 청사진을 만들 때 [청사진 매개 변수](#blueprint-
 
 #### <a name="setting-dynamic-parameters-from-rest-api"></a>REST API에서 정적 매개 변수 설정
 
-할당 과정에서 **동적 매개 변수**를 설정하는 작업은 값을 직접 입력하는 방식으로 수행됩니다.
-`parameters()` 같은 함수를 사용하는 대신, 입력한 값이 적절한 문자열입니다.
-리소스 그룹에 대한 아티팩트는 “템플릿 이름”, **이름** 및 **위치** 속성으로 정의됩니다. 포함된 아티팩트에 대한 그 외의 매개 변수는 **\<이름\>** 및 **값** 키 쌍을 사용하여 **매개 변수** 아래에 정의됩니다. 할당 과정에서 제공하지 않는 동적 매개 변수에 대해 청사진이 구성된 경우 할당이 실패합니다.
+할당 과정에서 **동적 매개 변수**를 설정하는 작업은 값을 직접 입력하는 방식으로 수행됩니다. 와 같은 함수를 사용 하는 대신 [parameters()](../reference/blueprint-functions.md#parameters), 제공 된 값은 적절 한 문자열입니다. 리소스 그룹에 대한 아티팩트는 “템플릿 이름”, **이름** 및 **위치** 속성으로 정의됩니다. 포함된 아티팩트에 대한 그 외의 매개 변수는 **\<이름\>** 및 **값** 키 쌍을 사용하여 **매개 변수** 아래에 정의됩니다. 할당 과정에서 제공하지 않는 동적 매개 변수에 대해 청사진이 구성된 경우 할당이 실패합니다.
 
 - REST API URI
 
@@ -240,6 +238,7 @@ REST API를 통해 청사진을 만들 때 [청사진 매개 변수](#blueprint-
 
 ## <a name="next-steps"></a>다음 단계
 
+- 목록은 [함수를 blueprint](../reference/blueprint-functions.md)합니다.
 - [청사진 수명 주기](lifecycle.md)에 대해 알아보기
 - [청사진 시퀀싱 순서](sequencing-order.md)를 사용자 지정하는 방법 알아보기
 - [청사진 리소스 잠금](resource-locking.md)을 활용하는 방법 알아보기

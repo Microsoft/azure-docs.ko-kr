@@ -7,11 +7,11 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 08/31/2018
 ms.openlocfilehash: a3c88953eea95871529e8ab257f52b694db443a9
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53544858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61244313"
 ---
 # <a name="azure-database-for-mysql-data-in-replication-stored-procedures"></a>Azure Database for MySQL 데이터 내부 복제 저장 프로시저
 
@@ -21,10 +21,10 @@ ms.locfileid: "53544858"
 
 |**저장 프로시저 이름**|**입력 매개 변수**|**출력 매개 변수**|**사용 정보**|
 |-----|-----|-----|-----|
-|*mysql.az_replication_change_master*|master_host<br/>master_user<br/>master_password<br/>master_port<br/>master_log_file<br/>master_log_pos<br/>master_ssl_ca|해당 없음|SSL 모드를 사용하여 데이터를 전송하려면 CA 인증서의 컨텍스트를 master_ssl_ca 매개 변수로 전달합니다. </br><br>SSL을 사용하지 않고 데이터를 전송하려면 빈 문자열을 master_ssl_ca 매개 변수로 전달합니다.|
-|*mysql.az_replication _start*|해당 없음|해당 없음|복제를 시작합니다.|
-|*mysql.az_replication _stop*|해당 없음|해당 없음|복제를 중지합니다.|
-|*mysql.az_replication _remove_master*|해당 없음|해당 없음|마스터 및 복제본 간의 복제 관계를 제거합니다.|
-|*mysql.az_replication_skip_counter*|해당 없음|해당 없음|복제 오류 하나를 건너뜁니다.|
+|*mysql.az_replication_change_master*|master_host<br/>master_user<br/>master_password<br/>master_port<br/>master_log_file<br/>master_log_pos<br/>master_ssl_ca|N/A|SSL 모드를 사용하여 데이터를 전송하려면 CA 인증서의 컨텍스트를 master_ssl_ca 매개 변수로 전달합니다. </br><br>SSL을 사용하지 않고 데이터를 전송하려면 빈 문자열을 master_ssl_ca 매개 변수로 전달합니다.|
+|*mysql.az_replication _start*|N/A|N/A|복제를 시작합니다.|
+|*mysql.az_replication _stop*|N/A|N/A|복제를 중지합니다.|
+|*mysql.az_replication _remove_master*|N/A|N/A|마스터 및 복제본 간의 복제 관계를 제거합니다.|
+|*mysql.az_replication_skip_counter*|N/A|N/A|복제 오류 하나를 건너뜁니다.|
 
 Azure Database for MySQL에서 마스터 및 복제본 간 데이터 내부 복제를 설정하려면 [데이터 내부 복제 구성 방법](howto-data-in-replication.md)을 참조합니다.

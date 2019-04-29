@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 12/04/2018
 ms.author: kraigb
 ms.openlocfilehash: 14a4191612a5d42836ae4be3ff902ca47a6b06d4
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59271521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60634349"
 ---
 # <a name="access-cloud-data-in-a-notebook"></a>Notebook에서 클라우드 데이터 액세스
 
@@ -49,11 +49,11 @@ if response.status_code == 200:
     print(dataframe_rest2)
 ```
 
-## <a name="azure-sql-databases"></a>Azure SQL Database
+## <a name="azure-sql-databases"></a>Azure SQL 데이터베이스
 
 pyodbc 또는 pymssql 라이브러리 지원으로 SQL Server 데이터베이스를 액세스할 수 있습니다.
 
-[Python을 사용하여 Azure SQL Database 쿼리](https://docs.microsoft.com/azure/sql-database/sql-database-connect-query-python)는 AdventureWorks 데이터를 포함하는 데이터베이스를 만드는 방법에 대한 지침을 제공하고 해당 데이터를 쿼리하는 방법을 보여 줍니다. 동일한 코드는 이 문서에 대한 샘플 Notebook에 표시됩니다.
+[Python을 사용하여 Azure SQL 데이터베이스 쿼리](https://docs.microsoft.com/azure/sql-database/sql-database-connect-query-python)는 AdventureWorks 데이터를 포함하는 데이터베이스를 만드는 방법에 대한 지침을 제공하고 해당 데이터를 쿼리하는 방법을 보여 줍니다. 동일한 코드는 이 문서에 대한 샘플 Notebook에 표시됩니다.
 
 ## <a name="azure-storage"></a>Azure Storage
 

@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 08/31/2018
 ms.author: danlep
 ms.openlocfilehash: 2687a64bfd952888086862d929a3e5869aee5a4f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58003428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60584172"
 ---
 # <a name="use-azure-container-instances-as-a-jenkins-build-agent"></a>Azure Container Instances를 Jenkins 빌드 에이전트로 사용
 
@@ -31,7 +31,7 @@ Azure Container Instances에 대한 자세한 내용은 [Azure Container Instanc
    - **인증 형식**: SSH 공개 키 인증을 사용하는 것이 좋습니다. 이 옵션을 선택하는 경우 Jenkins 가상 머신에 로그인할 때 사용할 SSH 공개 키를 붙여넣습니다.
    - **구독**: Azure 구독을 선택합니다.
    - **리소스 그룹**: 리소스 그룹을 만들거나 기존 그룹을 선택합니다.
-   - **위치**: Jenkins 서버의 위치를 선택합니다.
+   - **Location**: Jenkins 서버의 위치를 선택합니다.
 
    ![Jenkins 포털 배포의 기본 설정](./media/container-instances-jenkins/jenkins-portal-01.png)
 

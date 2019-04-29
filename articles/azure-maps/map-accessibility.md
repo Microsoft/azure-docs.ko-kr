@@ -12,11 +12,11 @@ documentationcenter: ''
 manager: timlt
 ms.devlang: na
 ms.openlocfilehash: ef948b4dca3d3800a81ac52f3a73beee2558d21c
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51247231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60769705"
 ---
 # <a name="building-an-accessible-application"></a>액세스 가능한 애플리케이션 작성
 
@@ -24,7 +24,7 @@ ms.locfileid: "51247231"
 
 ## <a name="understand-the-code"></a>코드 이해
 
-<iframe height='500' scrolling='no' title='액세스 가능한 애플리케이션 만들기' src='//codepen.io/azuremaps/embed/ZoVyZQ/?height=504&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)의 펜 <a href='https://codepen.io/azuremaps/pen/ZoVyZQ/'>액세스 가능한 응용 프로그램 만들기</a>를 참조하세요.
+<iframe height='500' scrolling='no' title='액세스 가능한 애플리케이션 만들기' src='//codepen.io/azuremaps/embed/ZoVyZQ/?height=504&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)의 펜 <a href='https://codepen.io/azuremaps/pen/ZoVyZQ/'>액세스 가능한 애플리케이션 만들기</a>를 참조하세요.
 </iframe>
 
 맵에는 손쉬운 사용 기능이 미리 구축되어 있습니다. 사용자는 키보드를 사용하여 맵을 탐색할 수 있습니다. 화면 판독기가 실행 중이면 맵 상태 변경 내용 알림이 사용자에게 표시됩니다.

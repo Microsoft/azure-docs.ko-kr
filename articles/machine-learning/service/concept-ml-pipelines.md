@@ -12,11 +12,11 @@ author: sanpil
 ms.date: 12/4/2018
 ms.custom: seodec18
 ms.openlocfilehash: 3f1dd0921153d6b65bdc257f91019483adbb18fa
-ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57213673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60821060"
 ---
 # <a name="build-machine-learning-pipelines-with-the-azure-machine-learning-service"></a>Azure Machine Learning 서비스를 사용하여 기계 학습 파이프라인 빌드
 

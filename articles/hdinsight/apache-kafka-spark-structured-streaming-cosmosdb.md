@@ -15,12 +15,12 @@ ms.workload: big-data
 origin.date: 11/06/2018
 ms.author: v-yiso
 ms.date: 01/21/2019
-ms.openlocfilehash: 9d29608ded920b14af1be6d4d68ab1d77c3c8cb5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c2f3d882ac01427ea017d4f9b81edc3c64cc932d
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/23/2019
-ms.locfileid: "60538076"
+ms.locfileid: "62128401"
 ---
 # <a name="use-apache-spark-structured-streaming-with-apache-kafka-and-azure-cosmos-db"></a>Apache Kafka 및 Azure Cosmos DB에서 Apache Spark 정형 스트림 사용
 

@@ -8,14 +8,15 @@ manager: jeconnoc
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: reference
-ms.date: 02/18/2019
-ms.author: cshoe
+origin.date: 02/18/2019
+ms.date: 04/26/2019
+ms.author: v-junlch
 ms.openlocfilehash: 5534086d5754691f650370e465fa2c63210e0dc7
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56740504"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61437857"
 ---
 # <a name="register-azure-functions-binding-extensions"></a>Azure Functions 바인딩 확장 등록
 
@@ -37,7 +38,7 @@ Azure Functions HTTP 및 즉시는 타이머를 지원 합니다. 다른 서비�
 
 ## <a name="azure-portal-development"></a>Azure Portal 개발
 
-함수를 만들거나 바인딩을 추가할 때 트리거 또는 바인딩에 대한 확장에 등록이 필요한 경우 메시지가 표시됩니다. **설치**를 클릭하여 프롬프트에 응답하고 확장을 등록합니다. 소비 계획에 대해 설치는 최대 10분이 소요될 수 있습니다.
+함수를 만들거나 바인딩을 추가할 때 트리거 또는 바인딩에 대한 확장에 등록이 필요한 경우 메시지가 표시됩니다. **설치**를 클릭하여 프롬프트에 응답하고 확장을 등록합니다. 소비 계획에 대해 설치는 최대 10분이 소요될 수 있습니다. 
 
 지정된 함수 앱에 대해 각 확장을 한 번만 등록하면 됩니다. 포털에서 사용할 수 없는 지원되는 바인딩의 경우 또는 설치된 확장을 업데이트하려면 [포털에서 Azure Functions 바인딩 확장을 수동으로 설치 또는 업데이트](install-update-binding-extensions-manual.md)할 수도 있습니다.  
 
@@ -75,4 +76,5 @@ dotnet add package Microsoft.Azure.WebJobs.Extensions.ServiceBus --version <targ
 ## <a name="next-steps"></a>다음 단계
 > [!div class="nextstepaction"]
 > [Azure 함수 트리거 및 바인딩 예제](./functions-bindings-example.md)
+
 

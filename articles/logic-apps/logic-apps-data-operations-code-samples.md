@@ -4,18 +4,19 @@ description: Azure Logic Apps의 데이터 작업 작업 정의에 대한 코드
 services: logic-apps
 ms.service: logic-apps
 author: ecfan
-ms.author: estfan
+ms.author: v-yiso
 manager: jeconnoc
 ms.topic: reference
-ms.date: 07/25/2018
+origin.date: 07/25/2018
+ms.date: 12/10/2018
 ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.openlocfilehash: 8de70e8df50b79f27c19c74307d9321ff8cd1eb5
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50229966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62128552"
 ---
 # <a name="data-operation-code-samples-for-azure-logic-apps"></a>Azure Logic Apps용 데이터 작업 코드 샘플
 

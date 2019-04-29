@@ -11,11 +11,11 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
 ms.openlocfilehash: 6db86d3e5aba1a2e43e69e71df8cc516fb14581f
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59527356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60871663"
 ---
 # <a name="how-to-index-json-blobs-using-azure-search-blob-indexer"></a>Azure Search Blob 인덱서를 사용 하 여 JSON blob을 인덱싱하는 방법
 이 문서에서는 Azure Search blob을 구성 하는 방법을 보여 줍니다 [인덱서](search-indexer-overview.md) Azure Blob storage에서 JSON 문서에서 구조적된 콘텐츠를 추출 하 여 Azure Search에서 가능 합니다. 이 워크플로 Azure Search 인덱스를 만들고 JSON blob에서 추출 하는 기존 텍스트를 사용 하 여 로드 합니다. 
@@ -40,7 +40,7 @@ Azure Search와 동일한 지역에 Azure storage에 대 한 동일한 Azure 구
 
 ### <a name="1---prepare-source-data"></a>1 - 원본 데이터 준비
 
-1. [Azure portal에 로그인](https://portal.azure.com/)합니다.
+1. [Azure Portal에 로그인](https://portal.azure.com/)합니다.
 
 1. [Blob 컨테이너 만들기](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal) 데이터를 포함 합니다. 유효한 값 중 하나에 대 한 공용 액세스 수준은 설정할 수 있습니다.
 

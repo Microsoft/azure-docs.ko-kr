@@ -14,11 +14,11 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: bda3df3ce869d7717f572f72c38472e7eae4a0ef
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57437431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60567217"
 ---
 # <a name="move-data-to-and-from-azure-cosmos-db-using-azure-data-factory"></a>Azure Data Factory를 사용하여 Azure Cosmos DB 간 데이터 이동
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -484,16 +484,16 @@ Azure Cosmos DB는 중첩된 구조를 허용하는 JSON 문서용 NoSQL 저장�
 ## <a name="appendix"></a>부록
 1. **질문:** 복사 작업은 기존 레코드의 업데이트를 지원합니까?
 
-    **답변:**  아니요.
+    **대답:** 아니요.
 2. **질문:** Azure Cosmos DB로 복사 재시도는 이미 복사된 레코드를 어떻게 처리하나요?
 
-    **답변:** 레코드에 "ID" 필드가 있고 복사 작업이 동일한 ID를 가진 레코드를 삽입하려고 시도하는 경우 복사 작업에서 오류가 발생합니다.
+    **대답:** 레코드에 "ID" 필드가 있고 복사 작업이 동일한 ID를 가진 레코드를 삽입하려고 시도하는 경우 복사 작업에서 오류가 발생합니다.
 3. **질문:** Data Factory는 [범위 또는 해시 기반 데이터 분할](../../cosmos-db/sql-api-partition-data.md)을 지원합니까?
 
-    **답변:**  아니요.
+    **대답:** 아니요.
 4. **질문:** 하나의 테이블에 대해 둘 이상의 Azure Cosmos DB 컬렉션을 지정할 수 있습니까?
 
-    **답변:**  아니요. 이 경우 하나의 컬렉션만 지정할 수 있습니다.
+    **대답:** 아니요. 이 경우 하나의 컬렉션만 지정할 수 있습니다.
 
 ## <a name="performance-and-tuning"></a>성능 및 튜닝
 Azure Data Factory의 데이터 이동(복사 작업) 성능에 영향을 주는 주요 요소 및 최적화하는 다양한 방법에 대해 알아보려면 [복사 작업 성능 및 조정 가이드](data-factory-copy-activity-performance.md)를 참조하세요.

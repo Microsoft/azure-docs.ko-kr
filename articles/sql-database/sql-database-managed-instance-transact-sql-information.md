@@ -13,11 +13,11 @@ manager: craigg
 ms.date: 03/13/2019
 ms.custom: seoapril2019
 ms.openlocfilehash: 5f476aa571ba2827cbe6f4e4f258545b5e9d3ba1
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59579311"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62106364"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Azure SQL Database Managed Instance 및 SQL Server 간의 T-SQL 차이점
 
@@ -79,9 +79,9 @@ T-SQL을 사용하는 백업에 대한 자세한 내용은 [BACKUP](https://docs
 
 ### <a name="auditing"></a>감사
 
-Azure SQL Database의 데이터베이스 및 SQL Server의 데이터베이스 감사 간의 주요 차이점은 다음과 같습니다.
+Azure SQL Database의 데이터베이스 및 SQL Server의 데이터베이스에서 감사 간의 주요 차이점은 다음과 같습니다.
 
-- Azure SQL Database의 Managed Instance 배포 옵션을 사용하는 경우 감사는 서버 수준에서 작동하며 `.xel` 로그 파일이 Azure Blob Storage에 저장됩니다.
+- Azure SQL Database의 Managed Instance 배포 옵션을 사용하는 경우 감사는 서버 수준에서 작동하며 `.xel` 로그 파일이 Azure Blob 스토리지에 저장됩니다.
 - Azure SQL Database의 단일 데이터베이스 및 탄력적 풀 배포 옵션을 사용하면 감사는 데이터베이스 수준에서 작동합니다.
 - SQL Server 온-프레미스/가상 머신에서 감사는 서버 수준에서 작동하지만 파일 시스템/Windows 이벤트 로그에 이벤트를 저장합니다.
   

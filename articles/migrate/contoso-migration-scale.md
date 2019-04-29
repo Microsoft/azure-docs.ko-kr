@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 10/08/2018
 ms.author: raynew
-ms.openlocfilehash: bd1761ecf16bbfb0d3fdc354ab1b9fa1f42f9c17
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: 9253051d907a811ffedad3a714112c9b25543a35
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56328581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60667450"
 ---
 # <a name="contoso---scale-a-migration-to-azure"></a>Contoso - Azure 대상 마이그레이션 크기 조정
 
@@ -293,6 +293,7 @@ Contoso는 용량 고려 사항에 따라 이러한 구성 요소를 배포하�
 **프로세스 서버** | Contoso는100~200개 VM을 복제하는 기능을 사용하여 독립 실행형 전용 프로세스 서버를 배포합니다.<br/><br/> CPU: 16개 vCPU(2개 소켓 * 8코어 @ 2.5GHz)<br/><br/> 메모리: 32GB<br/><br/> 캐시 디스크: 1TB<br/><br/> 데이터 변경률: 1TB ~ 2TB<br/><br/> 프로세스 서버는 사용량이 매우 많으므로 복제에 필요한 디스크 I/O, 네트워크 트래픽 및 CPU를 처리할 수 있는 ESXi 호스트에 있어야 합니다. Contoso는 이 목적으로 전용 호스트를 고려합니다. 
 **네트워킹** | Contoso는 현재 사이트 간 VPN 인프라를 검토했고 Azure ExpressRoute를 구현하기로 결정했습니다. 이 구현은 대기 시간을 줄이고 대역폭을 Contoso의 기본 미국 동부 2 Azure 지역으로 개선하므로 중요합니다.<br/><br/> **모니터링**: Contoso는 프로세스 서버에서 데이터 흐름을 주의 깊게 모니터링해야 합니다. 데이터가 네트워크 대역폭을 오버로드하는 경우 Contoso는 [프로세스 서버 대역폭의 제한](../site-recovery/site-recovery-plan-capacity-vmware.md#control-network-bandwidth)을 고려합니다.
 **Azure 저장소** | 마이그레이션을 위해 Contoso는 대상 Azure Storage 계정의 적합한 유형 및 개수를 식별해야 합니다.  Site Recovery는 VM 데이터를 Azure 저장소에 복제합니다.<br/><br/> Site Recovery는 표준 또는 프리미엄(SSD) 저장소 계정으로 복제할 수 있습니다.<br/><br/> Contoso는 저장소를 결정하기 위해 [저장소 한도](../virtual-machines/windows/disks-types.md)를 검토하고 시간에 따른 예상 성장률 및 사용량 증가를 고려해야 합니다. Contoso는 마이그레이션의 속도 및 우선 순위를 고려하여 프리미엄 SSD를 사용하기로 했습니다.<br/><br/>
+
 Contoso는 Azure에 배포된 모든 VM에 관리 디스크를 사용하도록 결정했습니다.  필요한 IOPS에 따라 디스크가 표준 HDD, 표준 SSD 또는 프리미엄(SSD)인지 여부가 결정됩니다.<br/><br/>
 
 #### <a name="data-migration-service"></a>데이터 마이그레이션 서비스
@@ -379,7 +380,7 @@ Security Center를 [자세히 알아보세요](https://azure.microsoft.com/servi
 
 ### <a name="monitoring"></a>모니터링
 
-Contoso는 현재 Azure를 실행하는 새로 마이그레이션된 앱, 인프라 및 데이터의 상태와 성능을 시각적으로 파악해야 합니다. Contoso는 Azure Monitor, Log Analytics, Application Insights 등의 기본 제공 Azure 클라우드 모니터링 도구를 활용합니다.
+Contoso는 현재 Azure를 실행하는 새로 마이그레이션된 앱, 인프라 및 데이터의 상태와 성능을 시각적으로 파악해야 합니다. Contoso는 Azure Monitor, Log Analytics 작업 영역 및 Application Insights와 같은 도구를 모니터링 하는 기본 제공 Azure 클라우드를 활용 합니다.
  
 - 이러한 도구를 사용하면 Contoso는 원본에서 데이터를 쉽게 수집하고 풍부한 인사이트를 얻을 수 있습니다. 예를 들어, Contoso는 VM의 CPU 디스크 및 메모리 사용률을 측정하고, 여러 VM에서 애플리케이션 및 네트워크 종속성을 확인하고, 애플리케이션 성능을 추적할 수 있습니다.
 - Contoso는 이러한 클라우드 모니터링 도구를 사용하여 작업을 수행하고 서비스 솔루션과 통합합니다.

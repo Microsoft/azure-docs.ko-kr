@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 12/31/2018
 ms.author: raynew
 ms.openlocfilehash: 3ad3438f02ead9063a683a39d4ac5823274d55f7
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54155173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61276140"
 ---
 # <a name="what-workloads-can-you-protect-with-azure-site-recovery"></a>Azure Site Recovery로 어떤 워크로드를 보호할 수 있습니까?
 
@@ -55,7 +55,7 @@ Site Recovery는 지원되는 컴퓨터에서 실행 중인 모든 앱을 복제
 | Linux(운영 체제 및 앱) |예(Microsoft에서 테스트) |예(Microsoft에서 테스트) |예(Microsoft에서 테스트) |예(Microsoft에서 테스트) |예(Microsoft에서 테스트)|
 | Dynamics AX |Y |Y |Y |Y |Y|
 | Windows 파일 서버 |Y |Y |Y |Y |Y|
-| Citrix XenApp 및 XenDesktop |Y|해당 없음 |Y |해당 없음 |Y |
+| Citrix XenApp 및 XenDesktop |Y|N/A |Y |N/A |Y |
 
 ## <a name="replicate-active-directory-and-dns"></a>Active Directory 및 DNS 복제
 Active Directory 및 DNS 인프라는 대부분의 엔터프라이즈 앱에 필수적입니다. 재해 복구 중에 워크로드 및 앱을 복구하기 전에 이러한 인프라 구성 요소를 보호하고 복구해야 합니다.
@@ -103,8 +103,8 @@ Azure Site Recovery를 사용하면 다음과 같이 Dynamics AX ERP 솔루션�
 
 | **RDS** |**Azure VM을 Azure에 복제** | **Hyper-V VM을 보조 사이트로 복제** | **Hyper-V VM을 Azure에 복제** | **VMware VM을 보조 사이트에 복제** | **VMware VM을 Azure에 복제** | **물리적 서버를 보조 사이트에 복제** | **물리적 서버를 Azure에 복제** |
 |---| --- | --- | --- | --- | --- | --- | --- |
-| **풀링된 가상 데스크톱(관리되지 않음)** |아니요|예 |no |예 |no |예 |아니요 |
-| **풀링된 가상 데스크톱(관리됨/UPD 없음)** |아니요|예 |no |예 |no |예 |아니요 |
+| **풀링된 가상 데스크톱(관리되지 않음)** |아닙니다.|사용자 계정 컨트롤 |no |사용자 계정 컨트롤 |no |사용자 계정 컨트롤 |아닙니다. |
+| **풀링된 가상 데스크톱(관리됨/UPD 없음)** |아닙니다.|사용자 계정 컨트롤 |no |사용자 계정 컨트롤 |no |사용자 계정 컨트롤 |아닙니다. |
 | **원격 애플리케이션 및 데스크톱 세션(UPD 없음)** |예|예 |예 |예 |예 |예 |예 |
 
 [Azure Site Recovery를 사용하여 RDS에 대한 재해 복구를 설정합니다](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-disaster-recovery-with-azure).

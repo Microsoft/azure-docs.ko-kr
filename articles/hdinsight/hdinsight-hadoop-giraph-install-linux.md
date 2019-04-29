@@ -1,27 +1,22 @@
 ---
-title: HDInsight(Hadoop)에서 Giraph 설치 및 사용 - Azure
-description: 스크립트 작업을 사용하여 Linux 기반 HDInsight 클러스터에 Giraph를 설치하는 방법에 대해 알아봅니다. 스크립트 작업을 사용하면 클러스터 구성을 변경하거나 서비스 및 유틸리티를 설치하여 생성 중 클러스터를 사용자 지정할 수 있습니다.
-services: hdinsight
+title: 설치 하 고 Azure HDInsight에서 Giraph를 사용 합니다.
+description: 스크립트 동작을 사용 하 여 HDInsight 클러스터에 Giraph를 설치 하는 방법에 알아봅니다. 그래프는 Azure 클라우드에서 Apache Hadoop에서 처리를 위해 Giraph를 사용할 수 있습니다.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 04/23/2018
-ms.author: hrasheed
-ms.openlocfilehash: a2f964915efda6ce83439c3c1970de58b0467456
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
-ms.translationtype: MT
+ms.date: 04/22/2019
+ms.openlocfilehash: aa13d8dfc65f020f3f27183423913933cd0b9404
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58201724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61395386"
 ---
 # <a name="install-apache-giraph-on-hdinsight-hadoop-clusters-and-use-giraph-to-process-large-scale-graphs"></a>HDInsight Hadoop 클러스터에 Apache Giraph를 설치하고 Giraph를 사용하여 대규모 그래프를 처리합니다.
 
 HDInsight 클러스터에 Apache Giraph를 설치하는 방법을 알아봅니다. Hdinsight의 스크립트 작업 기능을 사용하면 bash 스크립트를 실행하여 클러스터를 사용자 지정할 수 있습니다. 클러스터를 만드는 도중 및 만든 후에 클러스터를 사용자 지정하는 데 스크립트를 사용할 수 있습니다.
-
-> [!IMPORTANT]  
-> 이 문서의 단계에는 Linux를 사용하는 HDInsight 클러스터가 필요합니다. Linux는 HDInsight 버전 3.4 이상에서 사용되는 유일한 운영 체제입니다. 자세한 내용은 [Windows에서 HDInsight 사용 중지](hdinsight-component-versioning.md#hdinsight-windows-retirement)를 참조하세요.
 
 ## <a name="whatis"></a>Giraph 정의
 
@@ -58,7 +53,7 @@ HDInsight 클러스터에서 Giraph를 설치하는 샘플 스크립트는 다�
 > [!NOTE]  
 > 스크립트 작업은 다음 방법 중 하나를 사용하여 적용될 수 있습니다.
 > * Azure PowerShell
-> * Azure 클래식 CLI
+> * Azure CLI
 > * HDInsight .NET SDK
 > * Azure 리소스 관리자 템플릿
 > 
@@ -148,7 +143,7 @@ HDInsight 클러스터에서 Giraph를 설치하는 샘플 스크립트는 다�
 
     이 밖에 Giraph 샘플과 함께 사용된 기타 매개 변수에 대한 자세한 내용은 [Giraph 빠른 시작](https://giraph.apache.org/quick_start.html)을 참조하세요.
 
-6. 작업이 완료되면 결과는 **/example/out/shotestpathss** 디렉터리에 저장됩니다. 출력 파일 이름은 **part-m-** 으로 시작하고 첫 번째, 두 번째 파일 등을 나타내는 숫자로 끝납니다. 다음 명령을 사용하여 출력을 봅니다.
+6. 작업이 완료 되 면 결과에 저장 되므로 합니다 **/example/out/shortestpaths** 디렉터리입니다. 출력 파일 이름은 **part-m-** 으로 시작하고 첫 번째, 두 번째 파일 등을 나타내는 숫자로 끝납니다. 다음 명령을 사용하여 출력을 봅니다.
 
     ```bash
     hdfs dfs -text /example/output/shortestpaths/*

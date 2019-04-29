@@ -9,12 +9,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 06/02/2017
-ms.openlocfilehash: 11fbec81e88eec6c7daa9136eb5421387b79d71c
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: f0591b47ce7ba6837f300088c856c0098fb66710
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43124337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60998831"
 ---
 # <a name="b2b-errors-and-solutions-for-azure-logic-apps"></a>Azure Logic Apps의 B2B 오류 및 해결 방법
 
@@ -34,7 +34,7 @@ ms.locfileid: "43124337"
 
 |   |   | 
 |---|---|
-| 오류 설명 | ID가 'AS2Identity'::'Partner1' 및 'AS2Identity'::'Partner3'인 규약을 찾을 수 없습니다. | 
+| 오류 설명 | 계약을 id로 찾을 수 없습니다. 'AS2Identity': 'Partner1' 및 'AS2Identity': 'Partner3' | 
 | 사용자 조치 | 규약에 대해 구성된 AS2-From 또는 AS2-To가 잘못되었습니다. </br>AS2 메시지 헤더의 AS2 ID가 규약 구성과 일치하도록 AS2 메시지의 "AS2-From" 또는 "AS2-To" 헤더나 규약을 수정합니다. |
 |   |   |     
 
@@ -145,7 +145,7 @@ ms.locfileid: "43124337"
 
 |   |   | 
 |---|---|
-| 오류 설명 | 잘못된 템플릿(InvalidTemplate)입니다. 행 '1', 열 '1902'에 있는 'Flat_File_Decoding' 작업 입력의 템플릿 언어 식을 처리할 수 없습니다. ''content' 필수 속성은 값을 필요로 하지만 null을 받았습니다. 경로 ''.'. |
+| 오류 설명 | 잘못된 템플릿(InvalidTemplate)입니다. '1', 열 '1902' '에 있는 Flat_File_Decoding' 작업의 템플릿 언어 식을 처리할 수 없습니다 줄에 입력 합니다. ' 필수 'content' 속성이 예상 값 하지만 null을 받았습니다. 경로 ''.'. |
 | 사용자 조치 | 이 오류는 입력 메시지에 본문이 포함되어 있지 않음을 나타냅니다. |
 |   |   | 
 

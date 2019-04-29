@@ -12,11 +12,11 @@ ms.workload: infrastructure-services
 ms.date: 03/08/2019
 ms.author: sharadag
 ms.openlocfilehash: 256435dfd016ebbd86dbbe49f4abbb346fb1cd19
-ms.sourcegitcommit: 280d9348b53b16e068cf8615a15b958fccad366a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58407754"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60736669"
 ---
 # <a name="frequently-asked-questions-for-azure-front-door-service"></a>Azure 프런트 도어 서비스에 대 한 질문과 대답
 

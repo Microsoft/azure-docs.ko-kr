@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 10/28/2018
 ms.author: rkarlin
 ms.openlocfilehash: 5b41af83122d74fc766e6c5179d98803979269f7
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56108911"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60704659"
 ---
 # <a name="enable-auditing-and-threat-detection-on-sql-servers-in-azure-security-center"></a>Azure Security Center에서 SQL 서버에 대한 감사 및 위협 감지 사용
 감사 및 위협 감지를 아직 사용하도록 설정하지 않은 경우 Azure SQL 서버의 모든 데이터베이스에 대한 감사를 켜는 것이 좋습니다. 감사 및 위협 감지는 규정 준수를 유지 관리하고, 데이터베이스 작업을 이해하고, 비즈니스 문제나 의심스러운 보안 위반을 나타낼 수 있는 불일치 및 이상 활동을 파악하는 데 도움이 될 수 있습니다.
@@ -42,7 +42,7 @@ ms.locfileid: "56108911"
 3. **감사 및 위협 감지** 블레이드의 **감사**에서 **켜기**를 선택합니다.
 
    ![감사 설정 켜기][2]
-4. [Azure Portal에서 SQL Database 감사](../sql-database/sql-database-auditing-portal.md)의 단계에 따라 감사 로그를 저장할 저장소를 구성합니다. 데이터 컬렉션에 대한 구독의 저장소 계정은 기본 저장소 계정입니다.
+4. [Azure Portal에서 SQL Database 감사](../sql-database/sql-database-auditing-portal.md)의 단계에 따라 감사 로그를 저장할 스토리지를 구성합니다. 데이터 컬렉션에 대한 구독의 저장소 계정은 기본 저장소 계정입니다.
 5. [SQL Database 위협 감지 시작](../sql-database/sql-database-threat-detection.md) 의 단계에 따라 위협 감지를 켜고 구성하며, 비정상적인 활동이 검색될 때 보안 경고가 수신되는 전자 메일 목록을 구성할 수 있습니다.
 
 ## <a name="see-also"></a>참고 항목

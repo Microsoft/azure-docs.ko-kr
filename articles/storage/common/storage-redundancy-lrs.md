@@ -9,11 +9,11 @@ ms.date: 02/12/2019
 ms.author: jeking
 ms.subservice: common
 ms.openlocfilehash: 30470f7313fb198aedd89f5dd37325359f0d7a9e
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56232948"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60729635"
 ---
 # <a name="locally-redundant-storage-lrs-low-cost-data-redundancy-for-azure-storage"></a>LRS(로컬 중복 스토리지): Azure Storage에 대한 저렴한 데이터 중복성
 

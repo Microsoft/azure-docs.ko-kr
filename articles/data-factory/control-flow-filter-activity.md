@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 05/04/2018
 ms.author: shlo
 ms.openlocfilehash: 787c9393e2700bd7ed349b501e70abc4a0687b9c
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54021835"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60554850"
 ---
 # <a name="filter-activity-in-azure-data-factory"></a>Azure Data Factory의 필터 작업
 입력 배열에 필터 식을 적용하려면 파이프라인에서 필터 작업을 사용할 수 있습니다. 
@@ -39,8 +39,8 @@ ms.locfileid: "54021835"
 
 자산 | 설명 | 허용되는 값 | 필수
 -------- | ----------- | -------------- | --------
-name | `Filter` 작업의 이름입니다. | 문자열 | 예
-type | **필터**로 설정되어야 합니다. | 문자열 | 예
+이름 | `Filter` 작업의 이름입니다. | String | 예
+형식 | **필터**로 설정되어야 합니다. | String | 예
 condition | 입력을 필터링하는 데 사용할 조건입니다. | 식 | 예
 items | 필터를 적용해야 하는 입력 배열입니다. | 식 | 예
 

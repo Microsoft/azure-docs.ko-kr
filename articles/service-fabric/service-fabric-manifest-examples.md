@@ -15,11 +15,11 @@ ms.workload: multiple
 ms.date: 06/11/2018
 ms.author: pepogors
 ms.openlocfilehash: 85a3066095cfc30da19b06d26f41bdc156f85832
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58664695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60718226"
 ---
 # <a name="service-fabric-application-and-service-manifest-examples"></a>Service Fabric 애플리케이션 및 서비스 매니페스트 예제
 이 섹션에는 애플리케이션 및 서비스 매니페스트 예제가 포함되어 있습니다. 이러한 예제의 목적은 중요한 시나리오를 보여주는 것아 아니라 사용 가능한 다양한 설정과 사용 방법을 보여주는 것입니다. 

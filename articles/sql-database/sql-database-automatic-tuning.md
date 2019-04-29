@@ -13,15 +13,15 @@ ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 03/06/2019
 ms.openlocfilehash: 6e818da29b7ee0d17ebe4f8e523648146973fa63
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59796619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61415777"
 ---
 # <a name="automatic-tuning-in-azure-sql-database"></a>Azure SQL Database에서 자동 조정
 
-Azure SQL Database 자동 조정은 AI 및 Machine Learning에 기반한 지속적인 성능 조정을 통해 최고의 성능과 안정적인 워크로드를 제공합니다.
+Azure SQL Database 자동 조정은 AI 및 기계 학습에 기반한 지속적인 성능 조정을 통해 최고의 성능과 안정적인 워크로드를 제공합니다.
 
 자동 조정은 기본 제공 인텔리전스를 사용하여 데이터베이스에서 실행된 쿼리를 지속적으로 모니터링하고 해당 성능을 자동으로 개선하는 완전히 관리되는 지능형 성능 서비스입니다. 이것은 변화하는 워크로드에 동적으로 데이터베이스를 적용하고 튜닝 권장 사항을 적용함으로써 달성됩니다. 자동 조정은 AI를 통해 Azure의 모든 데이터베이스에서 수평적으로 학습하고 동적으로 조정 작업을 개선합니다. Azure SQL Database가 자동 조정으로 실행되는 시간이 길어질수록 성능이 향상됩니다.
 

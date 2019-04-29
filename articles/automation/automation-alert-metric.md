@@ -9,11 +9,11 @@ ms.date: 11/01/2018
 ms.topic: article
 manager: carmonm
 ms.openlocfilehash: 7932d057a348957d369ba325044055ac8dfe3428
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58170193"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62119897"
 ---
 # <a name="monitoring-runbooks-with-metric-alerts"></a>메트릭 경고로 Runbook 모니터링
 
@@ -21,7 +21,7 @@ ms.locfileid: "58170193"
 
 ## <a name="sign-in-to-azure"></a>Azure에 로그인
 
-https://portal.azure.com에서 Azure에 로그인
+ https://portal.azure.com 에서 Azure에 로그인
 
 ## <a name="create-alert"></a>경고 만들기
 

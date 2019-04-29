@@ -13,11 +13,11 @@ ms.custom: ''
 ms.date: 03/12/2019
 ms.author: juliako
 ms.openlocfilehash: b0329c8c0bfa56e5ae36c5f4223edca91e6510a0
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58755593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60733116"
 ---
 # <a name="how-to-encode-with-a-custom-transform---cli"></a>사용자 지정 변환-CLI 사용 하 여 인코딩하는 방법
 

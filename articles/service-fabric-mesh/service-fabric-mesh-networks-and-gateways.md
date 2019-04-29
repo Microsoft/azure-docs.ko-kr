@@ -16,11 +16,11 @@ ms.date: 11/26/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
 ms.openlocfilehash: b0e1047c5bbd7d8caaf2afd8b002be1c46837852
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58339264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60811068"
 ---
 # <a name="introduction-to-networking-in-service-fabric-mesh-applications"></a>Service Fabric Mesh 애플리케이션의 네트워킹 소개
 이 문서에서는 다양한 유형의 부하 분산 장치, 게이트웨이가 사용자 애플리케이션을 사용하는 네트워크를 다른 네트워크에 연결하는 방법 및 애플리케이션에서 서비스 간에 트래픽이 라우팅되는 방법을 설명합니다.

@@ -11,12 +11,12 @@ services: logic-apps
 ms.reviewer: klam, LADocs
 ms.suite: integration
 tags: connectors
-ms.openlocfilehash: 44152101f1a2be6268d4e27430fdf60ef0131fae
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
-ms.translationtype: HT
+ms.openlocfilehash: c10a2aa097b63fd3751be01bbfeb6097080bbb9c
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35295781"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62105822"
 ---
 # <a name="get-started-with-the-office365-video-connector"></a>Office 365 비디오 커넥터 시작
 Office 365 비디오에 연결하여 Office 365 비디오에 대한 정보 가져오기, 비디오 목록 가져오기 등을 수행합니다. Office 365 비디오로 다음을 수행할 수 있습니다.

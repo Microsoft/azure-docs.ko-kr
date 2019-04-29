@@ -5,14 +5,15 @@ author: shizn
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 01/07/2018
+origin.date: 01/07/2018
+ms.date: 05/06/2019
 ms.author: xshi
 ms.openlocfilehash: ab3c02d7207bca70a90df8aa08c73c1484cd635d
-ms.sourcegitcommit: e89b9a75e3710559a9d2c705801c306c4e3de16c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59571314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61440746"
 ---
 # <a name="use-cloud-explorer-for-visual-studio-to-send-and-receive-messages-between-your-device-and-iot-hub"></a>Visual Studio용 클라우드 탐색기를 사용하여 디바이스와 IoT Hub 간에 메시지 보내고 받기
 
@@ -48,14 +49,10 @@ Visual Studio 설치 관리자의 클라우드 탐색기 구성 요소는 디바
 
     ![계정 관리 클릭](media/iot-hub-visual-studio-cloud-device-messaging/click-account-management.png)
 
-
-2. 클라우드 탐색기에서 **계정 관리**를 클릭합니다.
-
-3. 새 창에서 **계정 추가...** 를 클릭하여 처음으로 Azure에 로그인합니다.
-
-4. 로그인한 후 Azure 구독 목록이 나타납니다. 보려는 Azure 구독을 선택하고 **적용**을 클릭합니다.
-
-5. **구독** > **IoT Hub** > **IoT Hub**를 확장하면 IoT Hub 노드 아래에 디바이스 목록이 표시됩니다.
+1. 클라우드 탐색기에서 **계정 관리**를 클릭합니다.
+1. 새 창에서 **계정 추가...** 를 클릭하여 처음으로 Azure에 로그인합니다.
+1. 로그인한 후 Azure 구독 목록이 나타납니다. 보려는 Azure 구독을 선택하고 **적용**을 클릭합니다.
+1. **구독** > **IoT Hub** > **IoT Hub**를 확장하면 IoT Hub 노드 아래에 디바이스 목록이 표시됩니다.
 
     ![디바이스 목록](media/iot-hub-visual-studio-cloud-device-messaging/device-list.png)
 
@@ -67,11 +64,11 @@ Visual Studio 설치 관리자의 클라우드 탐색기 구성 요소는 디바
 
     ![D2C 메시지 모니터링 시작](media/iot-hub-visual-studio-cloud-device-messaging/start-monitoring-d2c-message.png)
 
-2. 모니터링되는 메시지가 **IoT Hub** 출력 창에 표시됩니다.
+1. 모니터링되는 메시지가 **IoT Hub** 출력 창에 표시됩니다.
 
     ![D2C 메시지 모니터링 결과](media/iot-hub-visual-studio-cloud-device-messaging/monitor-d2c-message-result.png)
 
-3. 모니터링을 중지하려면 IoT Hub 또는 디바이스를 마우스 오른쪽 단추로 클릭하고 **D2C 메시지 모니터링 중지**를 선택합니다.
+1. 모니터링을 중지하려면 IoT Hub 또는 디바이스를 마우스 오른쪽 단추로 클릭하고 **D2C 메시지 모니터링 중지**를 선택합니다.
 
 ## <a name="send-cloud-to-device-messages"></a>클라우드-장치 메시지 보내기
 
@@ -81,9 +78,8 @@ IoT Hub에서 디바이스로 메시지를 보내려면 다음 단계를 수행�
 
     ![C2D 메시지 보내기](media/iot-hub-visual-studio-cloud-device-messaging/send-c2d-message.png)
 
-2. 입력 상자에 메시지를 입력합니다.
-
-3. **IoT Hub** 출력 창에 결과가 표시됩니다.
+1. 입력 상자에 메시지를 입력합니다.
+1. **IoT Hub** 출력 창에 결과가 표시됩니다.
 
     ![C2D 메시지 보내기 결과](media/iot-hub-visual-studio-cloud-device-messaging/send-c2d-message-result.png)
 

@@ -2,18 +2,18 @@
 title: 포함 파일
 description: 포함 파일
 services: virtual-machines
-author: roygara
+author: rockboyfor
 ms.service: virtual-machines
 ms.topic: include
 ms.date: 03/13/2019
-ms.author: rogarana
+ms.author: v-yeche
 ms.custom: include file
 ms.openlocfilehash: 88a4110d68dc8aa921d647f90de654d2ebb4e17d
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58395602"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60618073"
 ---
 ## <a name="premium-ssd"></a>프리미엄 SSD
 

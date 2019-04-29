@@ -2,19 +2,20 @@
 title: AKS(Azure Kubernetes Service)로 Apache Spark 작업 실행
 description: AKS(Azure Kubernetes Service)를 사용하여 Apache Spark 작업 실행
 services: container-service
-author: lenadroid
-manager: jeconnoc
+author: rockboyfor
+manager: digimobile
 ms.service: container-service
 ms.topic: article
-ms.date: 03/15/2018
-ms.author: alehall
+origin.date: 03/15/2018
+ms.date: 03/04/2019
+ms.author: v-yeche
 ms.custom: mvc
 ms.openlocfilehash: ddaff590fd493b430a72c30dd35cb1b891b80d84
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50414032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62104955"
 ---
 # <a name="running-apache-spark-jobs-on-aks"></a>AKS에서 Apache Spark 작업 실행
 
@@ -40,7 +41,7 @@ Spark는 대규모 데이터 처리에 사용되며 Kubernetes 노드의 크기�
 클러스터용 리소스 그룹을 만듭니다.
 
 ```azurecli
-az group create --name mySparkCluster --location eastus
+az group create --name mySparkCluster --location chinaeast2
 ```
 
 노드 크기가 `Standard_D3_v2`인 AKS 클러스터를 만듭니다.
@@ -176,7 +177,7 @@ jar 파일을 보관할 Azure 저장소 계정 및 컨테이너를 만듭니다.
 ```azurecli
 RESOURCE_GROUP=sparkdemo
 STORAGE_ACCT=sparkdemo$RANDOM
-az group create --name $RESOURCE_GROUP --location eastus
+az group create --name $RESOURCE_GROUP --location chinaeast2
 az storage account create --resource-group $RESOURCE_GROUP --name $STORAGE_ACCT --sku Standard_LRS
 export AZURE_STORAGE_CONNECTION_STRING=`az storage account show-connection-string --resource-group $RESOURCE_GROUP --name $STORAGE_ACCT -o tsv`
 ```
@@ -257,7 +258,7 @@ Spark UI에 액세스하려면 브라우저에서 `127.0.0.1:4040` 주소를 엽
 kubectl get pods --show-all
 ```
 
-출력:
+출력
 
 ```bash
 NAME                                               READY     STATUS      RESTARTS   AGE
@@ -313,7 +314,7 @@ ENTRYPOINT [ "/opt/entrypoint.sh" ]
 ```
 
 > [!WARNING]
-> Spark [설명서][spark-docs]에서 "Kubernetes 스케줄러는 현재 실험적입니다. 이후 버전에서는 구성, 컨테이너 이미지 및 진입점 동작이 변경될 수 있습니다."
+> Spark에서 [설명서][spark-docs]: "Kubernetes 스케줄러는 현재 실험적입니다. 이후 버전에서는 구성, 컨테이너 이미지 및 진입점 동작이 변경될 수 있습니다."
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -325,16 +326,15 @@ ENTRYPOINT [ "/opt/entrypoint.sh" ]
 <!-- LINKS - external -->
 [apache-spark]: https://spark.apache.org/
 [docker-hub]: https://docs.docker.com/docker-hub/
-[java-install]: https://aka.ms/azure-jdks
+[java-install]: https://docs.azure.cn/zh-cn/java/java-supported-jdk-runtime?view=azure-java-stable
 [sbt-install]: https://www.scala-sbt.org/1.0/docs/Setup.html
 [spark-docs]: https://spark.apache.org/docs/latest/running-on-kubernetes.html
 [spark-latest-release]: https://spark.apache.org/releases/spark-release-2-3-0.html
 [spark-quickstart]: https://spark.apache.org/docs/latest/quick-start.html
 
-
 <!-- LINKS - internal -->
-[acr-aks]: https://docs.microsoft.com/azure/container-registry/container-registry-auth-aks
-[acr-create]: https://docs.microsoft.com/azure/container-registry/container-registry-get-started-azure-cli
-[aks-quickstart]: https://docs.microsoft.com/azure/aks/
-[azure-cli]: https://docs.microsoft.com/cli/azure/?view=azure-cli-latest
-[storage-account]: https://docs.microsoft.com/azure/storage/common/storage-azure-cli
+[acr-aks]: /container-registry/container-registry-auth-aks
+[acr-create]: /container-registry/container-registry-get-started-azure-cli
+[aks-quickstart]: /aks/
+[azure-cli]: https://docs.azure.cn/zh-cn/cli/?view=azure-cli-latest?view=azure-cli-latest
+[storage-account]: /storage/common/storage-azure-cli

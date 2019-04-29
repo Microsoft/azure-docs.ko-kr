@@ -13,11 +13,11 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 12/17/2018
 ms.openlocfilehash: 4351017cc1848e29cca038f82fd96548ae3492e0
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58892469"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122662"
 ---
 # <a name="multi-model-capabilities-of-azure-sql-database"></a>Azure SQL Database의 다중 모델 기능
 
@@ -38,7 +38,7 @@ Azure SQL은 다음 다중 모델 기능을 제공합니다.
 - [그래프 기능](#graph-features)을 사용하면 데이터를 노드 및 에지 세트로 표시하고 그래프 `MATCH` 연산자로 향상된 표준 Transact-SQL 쿼리를 사용하여 그래프 데이터를 쿼리할 수 있습니다.
 - [JSON 기능](#json-features)을 사용하면 JSON 문서를 테이블에 넣고, 관계형 데이터를 JSON 문서로 변환하거나 그 반대로 변환할 수 있습니다. JSON 함수로 향상된 표준 Transact-SQL 언어를 문서 구문 분석에 사용하고, 비클러스터형 인덱스, columnstore 인덱스 또는 메모리 최적화 테이블을 사용하여 쿼리를 최적화할 수 있습니다.
 - [공간 기능](#spatial-features)을 사용하면 지리적 및 기하학적 데이터를 저장하고, 공간 인덱스를 사용하여 해당 데이터를 인덱싱하고, 공간 쿼리를 사용하여 데이터를 검색할 수 있습니다.
-- [XML 기능](#xml-features)을 사용하면 데이터베이스에서 XML 데이터를 저장 및 인덱싱하고 네이티브 XQuery/XPath 작업을 통해 XML 데이터를 사용할 수 있습니다. Azure SQL Database에는 XML 데이터를 처리하는 특수화된 기본 제공 XML 쿼리 엔진이 있습니다.
+- [XML 기능](#xml-features)을 사용하면 데이터베이스에서 XML 데이터를 저장 및 인덱싱하고 네이티브 XQuery/XPath 작업을 통해 XML 데이터를 사용할 수 있습니다. Azure SQL 데이터베이스에는 XML 데이터를 처리하는 특수화된 기본 제공 XML 쿼리 엔진이 있습니다.
 - [키-값 쌍](#key-value-pairs)은 기본적으로 2열 테이블로 모델링될 수 있으므로 명시적으로 특수 기능으로 지원되지는 않습니다.
 
   > [!Note]
@@ -67,7 +67,7 @@ Azure SQL Database는 데이터베이스에서 다 대 다 관계를 모델링�
 
 ## <a name="json-features"></a>JSON 기능
 
-Azure SQL Database를 사용하면 [JSON](https://www.json.org/) (JavaScript Object Notation) 형식으로 표현된 데이터를 구문 분석 및 쿼리하고 관계형 데이터를 JSON 텍스트로 내보낼 수 있습니다.
+Azure SQL Database를 사용하면 [JSON](https://www.json.org/)(JavaScript Object Notation) 형식으로 표현된 데이터를 구문 분석 및 쿼리하고 관계형 데이터를 JSON 텍스트로 내보낼 수 있습니다.
 
 JSON은 최신 웹 및 모바일 애플리케이션에서 데이터를 교환하는 데 사용되는 일반적인 데이터 형식입니다. 또한 JSON은 로그 파일 또는 NoSQL 데이터베이스(예: [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/))에 반구조화된 데이터를 저장하는 데도 사용됩니다. 많은 REST 웹 서비스는 JSON 텍스트로 형식이 지정된 결과를 반환하거나 JSON으로 형식이 지정된 데이터를 수락합니다. 대부분의 Azure 서비스(예: [Azure Search](https://azure.microsoft.com/services/search/), [Azure Storage](https://azure.microsoft.com/services/storage/) 및 [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/))에는 JSON을 반환하거나 사용하는 REST 엔드포인트가 있습니다.
 
@@ -96,7 +96,7 @@ Azure SQL Database는 두 개의 공간 데이터 형식(기하 도형 데이터
 - 기하 도형 형식은 유클리드(평면) 좌표계의 데이터를 나타냅니다.
 - 지리 형식은 둥근 표면 좌표계의 데이터를 나타냅니다.
 
-[Point](https://docs.microsoft.com/sql/relational-databases/spatial/point), [LineString](https://docs.microsoft.com/sql/relational-databases/spatial/linestring), [Polygon](https://docs.microsoft.com/sql/relational-databases/spatial/polygon)과 같이 Azure SQL Database에서 사용할 수 있는 많은 공간 개체가 있습니다.
+[Point](https://docs.microsoft.com/sql/relational-databases/spatial/point), [LineString](https://docs.microsoft.com/sql/relational-databases/spatial/linestring), [Polygon](https://docs.microsoft.com/sql/relational-databases/spatial/polygon)과 같이 Azure SQL 데이터베이스에서 사용할 수 있는 많은 공간 개체가 있습니다.
 
 Azure SQL Database는 공간 쿼리의 성능을 향상하는 데 사용할 수 있는 특수화된 [공간 인덱스](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-indexes-overview)도 제공합니다.
 

@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 09/04/2018
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7af578cf282c1bb8d8d7d00fee57bafed32b9a0e
-ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
-ms.translationtype: HT
+ms.openlocfilehash: 80ef63cdd9de8cb2340fe15d761402bb9f00fae9
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44031013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60795945"
 ---
 # <a name="sap-hana-large-instances-architecture-on-azure"></a>Azure의 SAP HANA(대규모 인스턴스) 아키텍처
 
@@ -34,24 +34,24 @@ SAP HANA on Azure(대규모 인스턴스)의 전체 아키텍처는 SAP TDI 인�
 
 표시된 아키텍처는 다음과 같은 세 가지 섹션으로 구분됩니다.
 
-- **오른쪽**: 최종 사용자가 SAP와 같은 LOB 응용 프로그램에 액세스할 수 있도록 데이터 센터에서 서로 다른 응용 프로그램을 실행하는 온-프레미스 인프라를 보여 줍니다. 이상적으로 이 온-프레미스 인프라는 [ExpressRoute](https://azure.microsoft.com/services/expressroute/)를 통해 Azure에 연결됩니다.
+- **오른쪽**: 최종 사용자가 액세스할 수 있도록 데이터의 서로 다른 응용 프로그램을 실행 하는 온-프레미스 인프라 센터에서는 LOB SAP와 같은 응용 프로그램입니다. 이상적으로 이 온-프레미스 인프라는 [ExpressRoute](https://azure.microsoft.com/services/expressroute/)를 통해 Azure에 연결됩니다.
 
-- **가운데:** Azure IaaS를 보여 주고, 이 경우 VM을 사용하여 SAP HANA를 DBMS 시스템으로 사용하는 SAP 또는 다른 응용 프로그램을 호스팅합니다. VM에서 제공하는 메모리에서 작동하는 더 작은 HANA 인스턴스는 애플리케이션 계층과 함께 VM에 배포됩니다. 가상 머신에 대한 자세한 내용은 [가상 머신](https://azure.microsoft.com/services/virtual-machines/)을 참조하세요.
+- **Center**: Azure IaaS를 보여 줍니다.,이 경우를 사용 하 여 Vm의 SAP 또는 DBMS 시스템으로 SAP HANA를 사용 하는 다른 응용 프로그램을 호스트 합니다. VM에서 제공하는 메모리에서 작동하는 더 작은 HANA 인스턴스는 애플리케이션 계층과 함께 VM에 배포됩니다. 가상 머신에 대한 자세한 내용은 [가상 머신](https://azure.microsoft.com/services/virtual-machines/)을 참조하세요.
 
    Azure 네트워크 서비스는 다른 애플리케이션과 함께 SAP 시스템을 가상 네트워크로 그룹화하는 데 사용됩니다. 이러한 가상 네트워크는 온-프레미스 시스템 및 SAP HANA on Azure(대규모 인스턴스)에 연결됩니다.
 
-   Azure에서 실행하도록 지원되는 SAP NetWeaver 애플리케이션 및 데이터베이스의 경우 [SAP Support Note #1928533 – Azure의 SAP 애플리케이션: 지원되는 제품 및 Azure VM 유형](https://launchpad.support.sap.com/#/notes/1928533)을 참조하세요. Azure에 SAP 솔루션을 배포하는 방법에 대한 설명서는 다음을 참조하세요.
+   SAP NetWeaver 응용 프로그램 및 Azure에서 실행 되도록 지원 되는 데이터베이스에 대 한 참조 [SAP Support Note #1928533 – Azure의 SAP 응용 프로그램: 지원 되는 제품 및 Azure VM 유형](https://launchpad.support.sap.com/#/notes/1928533)합니다. Azure에 SAP 솔루션을 배포하는 방법에 대한 설명서는 다음을 참조하세요.
 
   -  [Windows 가상 머신에서 SAP 사용](../../virtual-machines-windows-sap-get-started.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
   -  [Azure 가상 머신에서 SAP 솔루션 사용](get-started.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
-- **왼쪽:** Azure 대규모 인스턴스 스탬프의 SAP HANA TDI 인증 하드웨어를 보여 줍니다. HANA 대규모 인스턴스 장치는 온-프레미스에서 Azure로 연결할 때와 동일한 기술을 사용하여 구독의 가상 네트워크에 연결됩니다.
+- **왼쪽**: Azure 큰 인스턴스 스탬프에서 SAP HANA TDI 인증 하드웨어를 표시합니다. HANA 대규모 인스턴스 장치는 온-프레미스에서 Azure로 연결할 때와 동일한 기술을 사용하여 구독의 가상 네트워크에 연결됩니다.
 
 Azure 큰 인스턴스 스탬프 자체는 다음 구성 요소를 결합합니다.
 
-- **컴퓨팅:** 필요한 컴퓨팅 기능을 제공하고 SAP HANA 인증을 받은 Intel Xeon E7-8890v3 또는 Intel Xeon E7-8890v4 프로세서를 기반으로 하는 서버입니다.
-- **네트워크:** 컴퓨팅, 저장소 및 LAN 구성 요소를 상호 연결하는 통합된 고속 네트워크 패브릭입니다.
-- **저장소:** 통합된 네트워크 패브릭을 통해 액세스되는 저장소 인프라입니다. 제공되는 특정 저장소 용량은 배포되는 특정 SAP HANA on Azure(대규모 인스턴스) 구성에 따라 다릅니다. 추가 저장소 용량은 추가 월별 비용으로 사용할 수 있습니다.
+- **컴퓨팅**: 필요한 컴퓨팅 기능을 제공 하는 SAP HANA 인증 된 Intel Xeon E7 8890v3 또는 Intel Xeon E7-8890v4 프로세서를 기반으로 하는 서버입니다.
+- **네트워크**: 컴퓨팅, 저장소 및 LAN 구성 요소를 상호 연결 하는 통합 된 고속 네트워크 패브릭입니다.
+- **저장소**: 통합된 된 네트워크 패브릭을 통해 액세스 되는 저장소 인프라입니다. 제공되는 특정 저장소 용량은 배포되는 특정 SAP HANA on Azure(대규모 인스턴스) 구성에 따라 다릅니다. 추가 저장소 용량은 추가 월별 비용으로 사용할 수 있습니다.
 
 큰 인스턴스 스탬프의 다중 테넌트 인프라 내에서 고객이 격리된 테넌트로 배포됩니다. 테넌트 배포 시 Azure 등록 내에서 Azure 구독 이름을 지정합니다. Azure 구독은 HANA 대규모 인스턴스가 청구되는 구독입니다. 이러한 테넌트는 Azure 구독과 1:1 관계를 포함합니다. 네트워크의 경우 서로 다른 Azure 구독에 속한 다른 가상 네트워크에서 한 Azure 지역의 한 테넌트에 배포된 HANA 대규모 인스턴스 장치에 액세스할 수 있습니다. 이러한 Azure 구독은 동일한 Azure 등록에 속해야 합니다. 
 

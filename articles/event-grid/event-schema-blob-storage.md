@@ -8,11 +8,11 @@ ms.topic: reference
 ms.date: 01/17/2019
 ms.author: spelluru
 ms.openlocfilehash: 401eb660d7e5ddc68bc7422ef9f2e600295d2aea
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54469742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60614899"
 ---
 # <a name="azure-event-grid-event-schema-for-blob-storage"></a>Azure Event Grid Blob Storage에 대한 이벤트 스키마
 
@@ -88,30 +88,30 @@ Blob이 삭제된 이벤트의 스키마는 다음과 유사합니다.
 
 이벤트에는 다음과 같은 최상위 데이터가 있습니다.
 
-| 자산 | type | 설명 |
+| 자산 | Type | 설명 |
 | -------- | ---- | ----------- |
-| 토픽 | string | 이벤트 원본에 대한 전체 리소스 경로입니다. 이 필드는 쓸 수 없습니다. Event Grid는 이 값을 제공합니다. |
-| 제목 | string | 게시자가 정의한 이벤트 주체에 대한 경로입니다. |
-| eventType | string | 이 이벤트 원본에 대해 등록된 이벤트 유형 중 하나입니다. |
-| eventTime | string | 공급자의 UTC 시간을 기준으로 이벤트가 생성되는 시간입니다. |
-| id | string | 이벤트에 대한 고유 식별자입니다. |
+| 토픽 | 문자열 | 이벤트 원본에 대한 전체 리소스 경로입니다. 이 필드는 쓸 수 없습니다. Event Grid는 이 값을 제공합니다. |
+| 제목 | 문자열 | 게시자가 정의한 이벤트 주체에 대한 경로입니다. |
+| eventType | 문자열 | 이 이벤트 원본에 대해 등록된 이벤트 유형 중 하나입니다. |
+| eventTime | 문자열 | 공급자의 UTC 시간을 기준으로 이벤트가 생성되는 시간입니다. |
+| id | 문자열 | 이벤트에 대한 고유 식별자입니다. |
 | 데이터 | object | Blob Storage 이벤트 데이터입니다. |
-| dataVersion | string | 데이터 개체의 스키마 버전입니다. 게시자가 스키마 버전을 정의합니다. |
-| metadataVersion | string | 이벤트 메타데이터의 스키마 버전입니다. Event Grid는 최상위 속성의 스키마를 정의합니다. Event Grid는 이 값을 제공합니다. |
+| dataVersion | 문자열 | 데이터 개체의 스키마 버전입니다. 게시자가 스키마 버전을 정의합니다. |
+| metadataVersion | 문자열 | 이벤트 메타데이터의 스키마 버전입니다. Event Grid는 최상위 속성의 스키마를 정의합니다. Event Grid는 이 값을 제공합니다. |
 
 데이터 개체의 속성은 다음과 같습니다.
 
-| 자산 | type | 설명 |
+| 자산 | Type | 설명 |
 | -------- | ---- | ----------- |
-| api | string | 이벤트를 트리거하는 작업입니다. |
-| clientRequestId | string | 1KB 문자 제한이 있는 클라이언트 생성 불투명 값입니다. 스토리지 분석 로깅을 사용하도록 설정하면 분석 로그에 기록됩니다. |
-| requestId | string | 요청에 대한 고유 식별자입니다. 요청 문제를 해결할 때 사용합니다. |
-| eTag | string | 조건부로 작업을 수행하는 데 사용할 수 있는 값입니다. |
-| contentType | string | Blob에 대해 지정된 콘텐츠 형식입니다. |
+| api | 문자열 | 이벤트를 트리거하는 작업입니다. |
+| clientRequestId | 문자열 | 1KB 문자 제한이 있는 클라이언트 생성 불투명 값입니다. 스토리지 분석 로깅을 사용하도록 설정하면 분석 로그에 기록됩니다. |
+| requestId | 문자열 | 요청에 대한 고유 식별자입니다. 요청 문제를 해결할 때 사용합니다. |
+| eTag | 문자열 | 조건부로 작업을 수행하는 데 사용할 수 있는 값입니다. |
+| contentType | 문자열 | Blob에 대해 지정된 콘텐츠 형식입니다. |
 | contentLength | 정수 | Blob의 크기(바이트)입니다. |
-| blobType | string | Blob의 형식입니다. 유효한 값은 "BlockBlob" 또는 "PageBlob"입니다. |
-| URL | string | Blob에 대한 경로입니다. |
-| sequencer | string | 요청을 추적하는 데 사용할 수 있는 사용자 제어 값입니다. |
+| blobType | 문자열 | Blob의 형식입니다. 유효한 값은 "BlockBlob" 또는 "PageBlob"입니다. |
+| URL | 문자열 | Blob에 대한 경로입니다. |
+| sequencer | 문자열 | 요청을 추적하는 데 사용할 수 있는 사용자 제어 값입니다. |
 | storageDiagnostics | object | 저장소 진단에 대한 정보입니다. |
  
 ## <a name="next-steps"></a>다음 단계

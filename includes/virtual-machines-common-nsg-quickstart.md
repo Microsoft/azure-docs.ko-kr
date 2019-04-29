@@ -2,18 +2,19 @@
 title: 포함 파일
 description: 포함 파일
 services: virtual-machines-windows
-author: cynthn
+author: rockboyfor
 ms.service: virtual-machines-windows
 ms.topic: include
-ms.date: 09/12/2018
-ms.author: cynthn
+origin.date: 09/12/2018
+ms.date: 11/12/2018
+ms.author: v-yeche
 ms.custom: include file
 ms.openlocfilehash: ec6cbcbc93fe87634c87caeb0041b75ec916a22f
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48888562"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60405399"
 ---
 서브넷 또는 VM 네트워크 인터페이스에서 네트워크 필터를 만들어, Azure에서 VM(가상 머신)에 대한 포트를 열거나 엔드포인트를 만듭니다. 인바운드 및 아웃바운드 트래픽을 모두 제어하는 이러한 필터를 트래픽을 수신하는 리소스에 연결된 네트워크 보안 그룹에 배치합니다.
 
@@ -29,12 +30,8 @@ ms.locfileid: "48888562"
 
    - **소스 포트 범위**: *(모든 소스 포트 허용)
 
-   - **우선 순위 값**: 65,500 미만이고 기본 catch-all 거부 인바운드 규칙보다 우선 순위에서 상위에 있는 값을 입력하세요.
+   - **우선 순위 값**: 65,500 및 범용 기본값 보다 우선 순위가 더 높은 인바운드 규칙을 거부 하는 보다 작은 값을 입력 합니다.
 
 3. 네트워크 보안 그룹을 VM 네트워크 인터페이스 또는 서브넷에 연결합니다.
 
-이 예제에서는 HTTP 트래픽을 허용하는 단순 규칙을 사용하지만 네트워크 보안 그룹 및 규칙을 사용하여 더 복잡한 네트워크 구성을 작성할 수도 있습니다. 
-
-
-
-
+    이 예제에서는 HTTP 트래픽을 허용하는 단순 규칙을 사용하지만 네트워크 보안 그룹 및 규칙을 사용하여 더 복잡한 네트워크 구성을 작성할 수도 있습니다.

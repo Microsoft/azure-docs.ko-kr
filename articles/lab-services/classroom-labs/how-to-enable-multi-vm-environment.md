@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: spelluru
 ms.openlocfilehash: 6faf32232c42f863bff52fdfb3c0714aee8e9b88
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58190555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60702438"
 ---
 # <a name="create-an-environment-with-multiple-vms-inside-a-template-vm-of-a-classroom-lab"></a>템플릿 클래스 룸 랩의 VM 내에서 여러 Vm을 사용 하 여 환경 만들기
 현재 Azure Lab Services를 사용 하는 랩의 가상 머신 템플릿 설정 및 단일 복사본을 각 사용자를 사용할 수 있도록 수 있습니다. 하지만 네트워크를 통해 여러 가상 컴퓨터가 서로 통신할 수 있습니다 environment를 사용 하 여 각 학생 들에 게 제공 해야 서버나 방화벽을 설정 하는 방법에는 IT 클래스를 가르치는 교수 인 경우.

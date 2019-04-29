@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 11/08/2018
 ms.author: mbullwin
 ms.openlocfilehash: 652591fc4539e6f19c0606c1502609a823327f2b
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55811021"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60794663"
 ---
 # <a name="annotations-on-metric-charts-in-application-insights"></a>Application Insights의 메트릭 차트에 대한 주석
 

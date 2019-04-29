@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 06/12/2018
 ms.author: shlo
 ms.openlocfilehash: 845544a2062b43f0d9f883ddecbc2589b3357221
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57997927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61262347"
 ---
 # <a name="pipelines-and-activities-in-azure-data-factory"></a>Azure Data Factory의 파이프라인 및 작업
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -254,7 +254,7 @@ dependsOn | 이 속성을 사용하여 작업 종속성 및 이후 작업이 이
 ```
 
 ## <a name="sample-copy-pipeline"></a>샘플 복사 파이프라인
-다음 샘플 파이프라인에는 **Copy** in the **활동** 유형의 하나의 활동이 있습니다. 샘플에서 [복사 활동](copy-activity-overview.md)은 Azure Blob Storage의 데이터를 Azure SQL Database에 복사합니다.
+다음 샘플 파이프라인에는 **Copy** in the **활동** 유형의 하나의 활동이 있습니다. 샘플에서 [복사 활동](copy-activity-overview.md)은 Azure Blob 스토리지의 데이터를 Azure SQL 데이터베이스에 복사합니다.
 
 ```json
 {

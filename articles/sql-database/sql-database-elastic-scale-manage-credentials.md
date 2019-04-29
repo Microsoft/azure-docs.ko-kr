@@ -13,11 +13,11 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 01/03/2019
 ms.openlocfilehash: e6c7d682d9b16266208baeeff14168b3da157251
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54186625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60584882"
 ---
 # <a name="credentials-used-to-access-the-elastic-database-client-library"></a>Elastic Database 클라이언트 라이브러리 액세스에 사용되는 자격 증명
 
@@ -27,7 +27,7 @@ ms.locfileid: "54186625"
 * **액세스 자격 증명**: 분할된 데이터베이스에 대한 정보를 얻기 위해 기존의 분할된 데이터베이스 맵 관리자에 액세스하는 데 사용됩니다.
 * **연결 자격 증명**: 분할된 데이터베이스에 연결하는 데 사용됩니다.
 
-[Azure SQL Database에서 데이터베이스 및 로그인 관리](sql-database-manage-logins.md)를 참조하세요.
+[Azure SQL Database에서 데이터베이스 및 로그인 관리](sql-database-manage-logins.md)도 참조하세요.
 
 ## <a name="about-management-credentials"></a>관리 자격 증명 정보
 

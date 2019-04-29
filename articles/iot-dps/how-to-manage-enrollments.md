@@ -9,11 +9,11 @@ ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.openlocfilehash: 51b072bfd0827528a5504133dff8c1cdd7a7ca86
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58089389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122780"
 ---
 # <a name="how-to-manage-device-enrollments-with-azure-portal"></a>Azure Portal을 사용하여 디바이스 등록을 관리하는 방법
 
@@ -29,8 +29,8 @@ ms.locfileid: "58089389"
     다음 단계를 사용하여 포털에서 디바이스 그룹에 대한 등록 그룹을 만들 수 있습니다.
 
   1. Azure Portal에 로그인하고 왼쪽 메뉴에서 **모든 리소스**를 클릭합니다.  
-  1. 리소스의 목록 간에 디바이스를 등록하려는 디바이스 프로비전 서비스를 클릭합니다.  
-  1. 프로비전 서비스에서 다음을 수행합니다.  
+  2. 리소스의 목록 간에 디바이스를 등록하려는 디바이스 프로비전 서비스를 클릭합니다.  
+  3. 프로비전 서비스에서 다음을 수행합니다.  
      a. **등록 관리**를 클릭한 후 **등록 그룹** 탭을 선택합니다.  
      b. 위쪽에 있는 **추가** 단추를 클릭합니다.  
      다. "등록 그룹 추가" 패널이 표시되면 등록 목록 항목에 대한 정보를 입력합니다.  **그룹 이름**이 필요합니다. 또한 **인증서 유형**에 대해 "CA 또는 중간"을 선택하고 디바이스 그룹에 대해 루트 **기본 인증서**를 업로드합니다.  

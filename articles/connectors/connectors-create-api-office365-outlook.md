@@ -3,20 +3,21 @@ title: Office 365 Outlook에 연결 - Azure Logic Apps | Microsoft Docs
 description: Office 365 REST API 및 Azure Logic Apps를 사용하여 이메일, 연락처 및 달력 관리
 author: ecfan
 manager: jeconnoc
-ms.author: estfan
-ms.date: 10/18/2016
+ms.author: v-yiso
+origin.date: 10/18/2016
+ms.date: 09/03/2018
 ms.topic: article
 ms.service: logic-apps
 services: logic-apps
 ms.reviewer: klam, LADocs
 ms.suite: integration
 tags: connectors
-ms.openlocfilehash: 0355f121a09e1ba89f98a8af5037eb1371db2242
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
-ms.translationtype: HT
+ms.openlocfilehash: 52abf17e869216e65780129a7b48df79bd79f67a
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39215641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62105057"
 ---
 # <a name="get-started-with-the-office-365-outlook-connector"></a>Office 365 Outlook 커넥터 시작
 Office 365 Outlook 커넥터를 통해 Office 365에서 Outlook과 상호 작용할 수 있습니다. 이 커넥터를 사용하여 연락처 및 일정 항목을 만들기, 편집 및 업데이트하고 전자 메일을 가져오고 보내며 회신할 수도 있습니다.
@@ -68,7 +69,7 @@ Logic Apps에 대해 자세히 알아보려면 [논리 앱이란 무엇인가요
 ## <a name="use-an-action"></a>작업 사용
 작업은 논리 앱에 정의된 워크플로에 의해 수행되는 작업입니다. [작업에 대해 자세히 알아봅니다.](../logic-apps/logic-apps-overview.md#logic-app-concepts)
 
-1. 더하기 기호를 선택합니다. **작업 추가**, **조건 추가** 또는 **자세히** 옵션 중 하나 등 몇 가지가 표시됩니다.
+1. 더하기 기호를 선택합니다. 여러 선택 항목 표시 됩니다. **작업 추가**, **조건 추가**, 또는 중 하나는 **자세한** 옵션입니다.
    
     ![](./media/connectors-create-api-office365-outlook/add-action.png)
 2. **작업 추가**를 선택합니다.

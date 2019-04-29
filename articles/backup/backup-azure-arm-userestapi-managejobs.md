@@ -1,5 +1,5 @@
 ---
-title: 'Azure Backup: REST API를 사용하여 백업 작업 관리'
+title: 'Azure Backup: REST API를 사용 하 여 백업 작업 관리'
 description: REST API를 사용하여 Azure Backup의 백업 및 복원 작업 관리
 services: backup
 author: pvrk
@@ -11,11 +11,11 @@ ms.date: 08/03/2018
 ms.author: pullabhk
 ms.assetid: b234533e-ac51-4482-9452-d97444f98b38
 ms.openlocfilehash: eb8b7dc77d180eb56c2585e93e60a36742f6c84c
-ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51289430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60646625"
 ---
 # <a name="track-backup-and-restore-jobs-using-rest-api"></a>REST API를 사용하여 백업 및 복원 작업 추적
 
@@ -23,7 +23,7 @@ Azure Backup 서비스는 백업을 트리거하거나, 복원 작업을 수행�
 
 ## <a name="fetch-job-information-from-operations"></a>작업(operation)에서 작업(job) 정보 가져오기
 
-백업 트리거와 같은 작업은 항상 jobID를 반환합니다. 예를 들어, [백업 REST API 작업 트리거](backup-azure-arm-userestapi-backupazurevms.md#example-responses-3)의 최종 응답은 다음과 같습니다.
+백업 트리거와 같은 작업은 항상 jobID를 반환합니다. 에 대 한 예를 들어: 최종 응답을 [백업 REST API 작업을 트리거](backup-azure-arm-userestapi-backupazurevms.md#example-responses-3) 는 다음과 같습니다.
 
 ```http
 {
@@ -51,13 +51,13 @@ GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 ### <a name="response"></a>response
 
-|이름  |type  |설명  |
+|이름  |형식  |설명  |
 |---------|---------|---------|
 |200 정상     | [JobResource](https://docs.microsoft.com/rest/api/backup/jobdetails/get#jobresource)        | 확인        |
 
 #### <a name="example-response"></a>예제 응답
 
-*GET* URI가 제출되면 200(OK) 응답이 반환됩니다.
+*GET* URI를 제출하면 200(정상) 응답이 반환됩니다.
 
 ```http
 HTTP/1.1 200 OK

@@ -13,11 +13,11 @@ ms.reviewer: mbullwin
 ms.date: 03/07/2019
 ms.author: mbullwin
 ms.openlocfilehash: bf19d4f5ce60411413c21fce12f9fe9d2f391bf1
-ms.sourcegitcommit: f596d88d776a3699f8c8cf98415eb874187e2a48
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58094942"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60783979"
 ---
 # <a id="troubleshooting"></a> Application Insights 스냅숏 디버거를 사용 하도록 설정 하거나 스냅숏 보기 문제 해결
 응용 프로그램에 대 한 Application Insights 스냅숏 디버거를 사용 하도록 설정 해도 예외에 대 한 스냅숏이 표시 되지 않는 경우에 문제를 해결 하려면 다음이 지침을 사용할 수 있습니다. 스냅숏이 생성 되지 않습니다 하는 여러 가지 이유가 있을 수 있습니다. 몇 가지 일반적인 원인은 스냅숏 상태 검사를 실행할 수 있습니다.

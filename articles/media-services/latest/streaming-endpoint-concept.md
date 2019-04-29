@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/16/2019
+ms.date: 04/21/2019
 ms.author: juliako
-ms.openlocfilehash: 4a29da2b070133f87ca5fdab0be607368c83790f
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 8b6deadca610916a10f719d715fe6a17e29148bb
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59999453"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62125426"
 ---
 # <a name="streaming-endpoints"></a>스트리밍 엔드포인트
 
@@ -149,6 +149,10 @@ CDN 통합은 중국 및 연방 정부 지역을 제외한 모든 Azure 데이�
 ### <a name="determine-if-dns-change-has-been-made"></a>DNS 변경 된 내용이 있는지 확인 합니다.
 
 사용 하 여 스트리밍 끝점 (Azure CDN에 트래픽을 보내지는)에 DNS 변경이 수행 되었을 경우를 확인할 수 있습니다 https://www.digwebinterface.com합니다. 결과 결과에 azureedge.net 도메인 이름이 있으면 트래픽은 이제를 가리키는지 CDN 합니다.
+
+## <a name="provide-feedback"></a>피드백 제공
+
+[Azure Media Services 커뮤니티](media-services-community.md) 문서를 체크 아웃하여 다양한 방법으로 질문을 하고, 피드백을 제공하고, Media Services에 대한 업데이트를 가져올 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

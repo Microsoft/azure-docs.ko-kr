@@ -4,14 +4,15 @@ description: 이 문서에서는 Azure CLI를 통해 Application Gateway에서 �
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.date: 2/22/2019
-ms.author: victorh
+origin.date: 02/22/2019
+ms.date: 02/26/2019
+ms.author: v-junlch
 ms.openlocfilehash: 5e364c597b8c524e95297f279003462f2d16abe1
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56726264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60832900"
 ---
 # <a name="customize-web-application-firewall-rules-through-the-azure-cli"></a>Azure CLI를 통해 웹 애플리케이션 방화벽 규칙 사용자 지정
 
@@ -25,7 +26,7 @@ Azure Application Gateway WAF(웹 애플리케이션 방화벽)는 웹 애플리
 
 다음 예제에서는 규칙 그룹을 보는 방법을 보여 줍니다.
 
-```azurecli-interactive
+```azurecli
 az network application-gateway waf-config list-rule-sets --type OWASP
 ```
 
@@ -78,7 +79,7 @@ az network application-gateway waf-config list-rule-sets --type OWASP
 
 다음 예제에서는 지정된 규칙 그룹에서 규칙을 보는 방법을 보여 줍니다.
 
-```azurecli-interactive
+```azurecli
 az network application-gateway waf-config list-rule-sets --group "REQUEST-910-IP-REPUTATION"
 ```
 
@@ -117,7 +118,7 @@ az network application-gateway waf-config list-rule-sets --group "REQUEST-910-IP
 
 다음 예제는 애플리케이션 게이트웨이에서 규칙 `910018` 및 `910017`을 비활성화합니다.
 
-```azurecli-interactive
+```azurecli
 az network application-gateway waf-config set --resource-group AdatumAppGatewayRG --gateway-name AdatumAppGateway --enabled true --rule-set-version 3.0 --disabled-rules 910018 910017
 ```
 
@@ -125,14 +126,14 @@ az network application-gateway waf-config set --resource-group AdatumAppGatewayR
 
 다음 목록에는 WAF (검색 모드에서 예외로 기록 됩니다) 방지 모드에서 요청을 차단 하는 조건이 포함 됩니다. 이러한 구성 하거나 비활성화할 수 있습니다.
 
-* 요청 본문을 구문 분석 하지 못하면 차단 되 고 요청에 본문 검사 됩니다 (XML, JSON, 양식 데이터)를 해제 하지 않는다면
-* 요청 본문 (파일 없음)와 데이터 길이 구성된 된 제한 보다 큽니다.
-* 요청 본문 (파일 포함) 제한 보다 큽니다.
-* WAF 엔진에 내부 오류가 발생 했습니다.
+- 요청 본문을 구문 분석 하지 못하면 차단 되 고 요청에 본문 검사 됩니다 (XML, JSON, 양식 데이터)를 해제 하지 않는다면
+- 요청 본문 (파일 없음)와 데이터 길이 구성된 된 제한 보다 큽니다.
+- 요청 본문 (파일 포함) 제한 보다 큽니다.
+- WAF 엔진에 내부 오류가 발생 했습니다.
 
 CRS 3.x 관련:
 
-* 인바운드 변칙을 초과 하는 점수 임계값
+- 인바운드 변칙을 초과 하는 점수 임계값
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -142,3 +143,5 @@ CRS 3.x 관련:
 [1]: ./media/application-gateway-customize-waf-rules-portal/figure1.png
 [2]: ./media/application-gateway-customize-waf-rules-portal/figure2.png
 [3]: ./media/application-gateway-customize-waf-rules-portal/figure3.png
+
+<!-- Update_Description: wording update -->

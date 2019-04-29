@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/25/2018
-ms.openlocfilehash: d9639a4a116e06e17005ebddbb26379882491b33
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 657f8df959ccda5d51748ef5fbfc2e280f7d2c2e
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/23/2019
-ms.locfileid: "60483789"
+ms.locfileid: "62126582"
 ---
 # <a name="visualize-interactive-query-apache-hive-data-with-microsoft-power-bi-using-direct-query-in-azure-hdinsight"></a>Azure HDInsight에서 직접 쿼리를 사용하여 Microsoft Power BI에서 대화형 쿼리 Apache Hive 데이터 시각화
 
@@ -47,7 +47,7 @@ ms.locfileid: "60483789"
 
 6. 에 **HDInsight 대화형 쿼리** 창에서 다음 정보를 입력 한 다음 선택 **확인**:
 
-    |자산 | Value |
+    |자산 | 값 |
     |---|---|
     |서버 |예를 들어 클러스터 이름을 입력 *myiqcluster.azurehdinsight.net*합니다.|
     |데이터베이스 |입력 **기본** 이 문서에 대 한 합니다.|

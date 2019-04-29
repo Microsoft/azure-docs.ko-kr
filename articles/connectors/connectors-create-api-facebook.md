@@ -11,12 +11,12 @@ services: logic-apps
 ms.reviewer: klam, LADocs
 ms.suite: integration
 tags: connectors
-ms.openlocfilehash: 985f3cf70a07b3080f34181e64c5bb1419d530bd
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
-ms.translationtype: HT
+ms.openlocfilehash: 25595127d913d3cd093e0af3d7916e33fc7cb352
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35295009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62105978"
 ---
 # <a name="get-started-with-the-facebook-connector"></a>Facebook 커넥터 시작
 Facebook에 연결하여 타임라인에 게시, 페이지 피드 가져오기 등의 작업을 수행합니다. Facebook을 사용하면 다음과 같은 작업을 수행할 수 있습니다.

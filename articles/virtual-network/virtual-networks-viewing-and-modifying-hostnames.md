@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2018
 ms.author: genli
 ms.openlocfilehash: 3fdb0f566789382a1606b19e4fac179f9ecf40cd
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57887462"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122960"
 ---
 # <a name="viewing-and-modifying-hostnames"></a>호스트 이름 보기 및 수정
 호스트 이름으로 역할 인스턴스를 참조하려면 각 역할의 서비스 구성 파일에서 호스트 이름의 값을 설정해야 합니다. 이렇게 하려면 **역할** 요소의 **vmName** 특성에 원하는 호스트 이름을 추가합니다. **vmName** 특성의 값은 각 역할 인스턴스의 호스트 이름에 대한 기준으로 사용됩니다. 예를 들어 경우 **vmName**이 *webrole*이고 해당 역할의 인스턴스가 3개 있으면 인스턴스의 호스트 이름은 *webrole0*, *webrole1*, *webrole2*가 됩니다. 가상 머신의 호스트 이름은 가상 머신 이름을 기준으로 채워지므로 구성 파일에서 가상 머신의 호스트 이름을 지정하지 않아도 됩니다. Microsoft Azure 서비스 구성에 대한 자세한 내용은 [Azure 서비스 구성 스키마(.cscfg 파일)](https://msdn.microsoft.com/library/azure/ee758710.aspx)

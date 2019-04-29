@@ -1,6 +1,6 @@
 ---
 title: Azure Mobile App(Xamarin.Forms)에 대해 오프라인 동기화 사용 | Microsoft Docs
-description: App Service 모바일 앱을 사용하여 Xamarin.Forms 응용 프로그램에서 오프라인 데이터를 캐시 및 동기화하는 방법을 알아봅니다.
+description: App Service 모바일 앱을 사용하여 Xamarin.Forms 애플리케이션에서 오프라인 데이터를 캐시 및 동기화하는 방법을 알아봅니다.
 documentationcenter: xamarin
 author: conceptdev
 manager: yochayk
@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/04/2016
 ms.author: crdun
 ms.openlocfilehash: 506c59ca24aeafbac59b1508bb78142051302765
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53001815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62127882"
 ---
 # <a name="enable-offline-sync-for-your-xamarinforms-mobile-app"></a>Xamarin.Forms 모바일 앱에 대해 오프라인 동기화 사용
 [!INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
@@ -111,20 +111,20 @@ ms.locfileid: "53001815"
             }
         }
 
-    이 샘플에서는 기본 동기화 처리기와 함께 간단한 오류 처리를 사용합니다. 실제 응용 프로그램에서는 사용자 지정 **IMobileServiceSyncHandler** 구현을 사용하여 네트워크 상태 및 서버 충돌과 같은 다양한 오류를 처리합니다.
+    이 샘플에서는 기본 동기화 처리기와 함께 간단한 오류 처리를 사용합니다. 실제 애플리케이션에서는 사용자 지정 **IMobileServiceSyncHandler** 구현을 사용하여 네트워크 상태 및 서버 충돌과 같은 다양한 오류를 처리합니다.
 
 ## <a name="offline-sync-considerations"></a>오프라인 동기화 고려 사항
-이 샘플에서 **SyncAsync** 메서드는 시작 시 동기화가 요청된 경우에만 호출됩니다.  Android 또는 iOS 앱에서 동기화를 시작하려면 항목 목록을 풀다운하고 Windows의 경우 **동기화** 단추를 사용합니다. 실제 응용 프로그램에서는 네트워크 상태가 변경될 때 동기화가 트리거되도록 할 수도 있습니다.
+이 샘플에서 **SyncAsync** 메서드는 시작 시 동기화가 요청된 경우에만 호출됩니다.  Android 또는 iOS 앱에서 동기화를 시작하려면 항목 목록을 풀다운하고 Windows의 경우 **동기화** 단추를 사용합니다. 실제 애플리케이션에서는 네트워크 상태가 변경될 때 동기화가 트리거되도록 할 수도 있습니다.
 
 끌어오기가 컨텍스트에 의해 추적되는 로컬 업데이트를 보류 중인 테이블에 대해 실행되는 경우 끌어오기 작업은 먼저 자동으로 컨텍스트 푸시를 트리거합니다. 이 샘플에서 항목을 새로 고침, 추가 및 완료하는 경우 명시적인 **PushAsync** 호출을 생략할 수 있습니다.
 
 제공된 코드에서 원격 TodoItem 테이블에 있는 모든 레코드를 쿼리하지만 쿼리 ID 및 쿼리를 **PushAsync**로 전달하여 레코드를 필터링할 수도 있습니다. 자세한 내용은 [Azure Mobile Apps에서 오프라인 데이터 동기화][2]에서 *증분 동기화* 섹션을 참조하세요.
 
 ## <a name="run-the-client-app"></a>클라이언트 앱을 실행합니다.
-이제 오프라인 동기화를 사용하도록 설정하면 각 플랫폼에서 클라이언트 응용 프로그램을 한 번 이상 실행하여 로컬 저장소 데이터베이스를 채웁니다. 나중에 앱이 오프라인인 동안 오프라인 시나리오를 시뮬레이션하고 로컬 저장소에 있는 데이터를 수정합니다.
+이제 오프라인 동기화를 사용하도록 설정하면 각 플랫폼에서 클라이언트 애플리케이션을 한 번 이상 실행하여 로컬 저장소 데이터베이스를 채웁니다. 나중에 앱이 오프라인인 동안 오프라인 시나리오를 시뮬레이션하고 로컬 저장소에 있는 데이터를 수정합니다.
 
 ## <a name="update-the-sync-behavior-of-the-client-app"></a>클라이언트 앱의 동기화 동작 업데이트
-이 섹션에서 백엔드에 잘못된 응용 프로그램 URL을 사용하여 오프라인 시나리오를 시뮬레이션하도록 클라이언트 프로젝트를 수정합니다. 또는 "비행기 모드"로 디바이스를 전환하여 네트워크 연결을 해제할 수 있습니다.  데이터 항목을 추가하거나 변경하는 경우 이러한 변경 내용은 로컬 저장소에 보관되지만 연결이 다시 설정될 때까지 백 엔드 데이터 저장소에 동기화되지 않습니다.
+이 섹션에서 백엔드에 잘못된 애플리케이션 URL을 사용하여 오프라인 시나리오를 시뮬레이션하도록 클라이언트 프로젝트를 수정합니다. 또는 "비행기 모드"로 디바이스를 전환하여 네트워크 연결을 해제할 수 있습니다.  데이터 항목을 추가하거나 변경하는 경우 이러한 변경 내용은 로컬 저장소에 보관되지만 연결이 다시 설정될 때까지 백 엔드 데이터 저장소에 동기화되지 않습니다.
 
 1. 솔루션 탐색기에서 **이식 가능** 프로젝트의 Constants.cs 프로젝트 파일을 열고 `ApplicationURL` 값이 다음과 같은 잘못된 URL을 가리키도록 변경합니다.
 

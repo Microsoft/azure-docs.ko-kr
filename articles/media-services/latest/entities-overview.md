@@ -13,11 +13,11 @@ ms.date: 04/08/2019
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: 28c880e8709074d808a41d9920361eaa2b20ecc4
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59496576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60732368"
 ---
 # <a name="filtering-ordering-paging-of-media-services-entities"></a>Media Services 엔터티 필터링, 순서 지정, 페이징
 
@@ -54,7 +54,7 @@ Media Services에서 지원하는 Media Services v3 엔터티에 대한 OData �
 
 다음 표에서는 [자산](https://docs.microsoft.com/rest/api/media/assets) 속성에 필터림 및 순서 지정 옵션을 적용하는 방법을 보여줍니다. 
 
-|name|Filter|순서|
+|이름|Filter|순서|
 |---|---|---|
 |id|||
 |이름|eq, gt, lt| 오름차순 및 내림차순|
@@ -141,7 +141,7 @@ https://management.azure.com/subscriptions/00000000-3761-485c-81bb-c50b291ce214/
 
 다음 표에는 이러한 옵션을 [콘텐츠 키 정책](https://docs.microsoft.com/rest/api/media/contentkeypolicies) 속성에 적용하는 방법이 나와 있습니다. 
 
-|name|Filter|순서|
+|이름|Filter|순서|
 |---|---|---|
 |id|||
 |이름|eq, ne, ge, le, gt, lt|오름차순 및 내림차순|
@@ -176,7 +176,7 @@ REST 예제는 [콘텐츠 키 정책 - List](https://docs.microsoft.com/rest/api
 
 다음 표에는 [작업](https://docs.microsoft.com/rest/api/media/jobs) 속성에 이러한 옵션을 적용하는 방법이 나와 있습니다. 
 
-| name    | Filter                        | 순서 |
+| 이름    | Filter                        | 순서 |
 |---------|-------------------------------|-------|
 | 이름                    | eq            | 오름차순 및 내림차순|
 | properties.state        | eq, ne        |                         |
@@ -223,7 +223,7 @@ REST 예제는 [작업 - 목록](https://docs.microsoft.com/rest/api/media/jobs/
 
 다음 표에는 이러한 옵션을 StreamingLocator 속성에 적용하는 방법이 나와 있습니다. 
 
-|name|Filter|순서|
+|이름|Filter|순서|
 |---|---|---|
 |id |||
 |이름|eq, ne, ge, le, gt, lt|오름차순 및 내림차순|
@@ -262,7 +262,7 @@ REST 예제의 경우 [스트리밍 로케이터 - List](https://docs.microsoft.
 
 다음 표에는 이러한 옵션을 StreamingPolicy 속성에 적용하는 방법이 나와 있습니다. 
 
-|name|Filter|순서|
+|이름|Filter|순서|
 |---|---|---|
 |id|||
 |이름|eq, ne, ge, le, gt, lt|오름차순 및 내림차순|
@@ -298,7 +298,7 @@ REST 예제의 경우 [스트리밍 정책 - 목록](https://docs.microsoft.com/
 
 다음 표에는 [변환](https://docs.microsoft.com/rest/api/media/transforms) 속성에 이러한 옵션을 적용하는 방법이 나와 있습니다. 
 
-| name    | Filter                        | 순서 |
+| 이름    | Filter                        | 순서 |
 |---------|-------------------------------|-------|
 | 이름                    | eq            | 오름차순 및 내림차순|
 | properties.created      | gt, ge, lt, le| 오름차순 및 내림차순|

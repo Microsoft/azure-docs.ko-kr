@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: barclayn
-ms.openlocfilehash: 76a50c483b9246e3e2f9df97d5287f3e2fbd9897
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 2bcf1d1e007398cf80839f5e1d0bac78fd80db07
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56104621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60912232"
 ---
 # <a name="azure-dedicated-hsm-monitoring"></a>Azure Dedicated HSM 모니터링
 

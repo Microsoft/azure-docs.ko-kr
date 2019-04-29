@@ -1,19 +1,18 @@
 ---
 title: Azure HDInsight에서 관리 되는 id
 description: Azure HDInsight에서 관리 되는 id의 구현에 대 한 개요를 제공합니다.
-services: hdinsight
 author: hrasheed-msft
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/12/2019
 ms.author: hrasheed
-ms.openlocfilehash: 9386bcb8e455bff5ceed1fccdf55874caf7b6507
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 5012b669b7460a44cb2732d7db7bf76fd1f567cf
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58175805"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63766947"
 ---
 # <a name="managed-identities-in-azure-hdinsight"></a>Azure HDInsight에서 관리 되는 id
 

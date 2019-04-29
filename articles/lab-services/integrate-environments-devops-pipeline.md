@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 04/02/2019
 ms.author: spelluru
 ms.openlocfilehash: deb5595ac6a8b0d189e5594fda8e4b60480d038c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59357396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61318392"
 ---
 # <a name="integrate-environments-into-your-azure-devops-cicd-pipelines"></a>환경에 Azure DevOps CI/CD 파이프라인 통합
 Azure DevOps 서비스 (이전의 Visual Studio Team Services)를 쉽게 연속 통합 (CI)를 통합 설치 된 Azure DevTest Labs 작업 확장을 사용 하면 Azure로 지속적인 업데이트 (CD) 빌드 및 릴리스 파이프라인 / DevTest Labs 합니다. 이와 같이이 확장을 사용 하면 신속 하 게 배포 하기 쉬운를 [환경](devtest-lab-test-env.md) 특정 작업을 테스트 하 고 테스트가 완료 되 면 삭제 됩니다. 

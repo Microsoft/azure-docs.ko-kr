@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/22/2018
 ms.author: tomfitz
-ms.openlocfilehash: c88bdce64e88f8639da2c4ebb01f4594fccff8a0
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
-ms.translationtype: HT
+ms.openlocfilehash: b1392c29881a9077e26baafc8972148800d03d3d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42747091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60746319"
 ---
 # <a name="test-azure-portal-interface-for-your-managed-application"></a>관리되는 애플리케이션에 대해 Azure Portal 인터페이스 테스트
 Azure Managed Application에 대해 [createUiDefinition.json 파일을 만든 후](create-uidefinition-overview.md) 사용자 환경을 테스트해야 합니다. 간단한 테스트를 위해 파일을 포털에 로드하는 스크립트를 사용합니다. 실제로 관리되는 애플리케이션을 배포할 필요는 없습니다.

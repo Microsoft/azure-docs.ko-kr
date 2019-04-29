@@ -12,12 +12,12 @@ ms.date: 12/14/2017
 ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: ''
-ms.openlocfilehash: 662c78fc7074b0dafc53c393962aa4b578779095
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
-ms.translationtype: HT
+ms.openlocfilehash: 31e18285bf6211e73d994e037a91adc396972715
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44092261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62106973"
 ---
 # <a name="call-a-function-from-microsoft-flow"></a>Microsoft Flow에서 함수 호출
 
@@ -132,7 +132,7 @@ PowerApps에서 동일한 함수를 호출하는 방법에 대한 내용은 [Pow
 
     ![조건 추가](media/functions-flow-scenario/add-condition.png)
 
-    Microsoft Flow는 흐름에 두 개의 분기 **그렇다면** 및 **그렇지 않다면**을 추가합니다. 일치시킬 조건을 정의한 후 분기 하나 또는 둘 모두에 단계를 추가합니다.
+    Microsoft Flow 흐름에 두 개의 분기를 추가합니다. **그렇다면** 하 고 **없으면**합니다. 일치시킬 조건을 정의한 후 분기 하나 또는 둘 모두에 단계를 추가합니다.
 
     ![조건 분기](media/functions-flow-scenario/condition-branches.png)
 
@@ -229,7 +229,7 @@ PowerApps에서 동일한 함수를 호출하는 방법에 대한 내용은 [Pow
     | **제목**           | Turbine 60 |
     | **LastServiceDate** | 08/04/2017 |
     | **MaxOutput**       | 2500 |
-    | **ServiceRequired** | yes |
+    | **ServiceRequired** | 예 |
     | **EstimatedEffort** | 10 |
 
 3. **Done**을 클릭합니다.

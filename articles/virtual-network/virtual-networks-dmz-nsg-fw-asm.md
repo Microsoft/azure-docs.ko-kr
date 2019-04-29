@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 02/01/2016
 ms.author: jonor;sivae
 ms.openlocfilehash: e0271c9212b093bd803518ebeaa4b7d9682cc773
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57997473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60868351"
 ---
 # <a name="example-2-build-a-perimeter-network-to-protect-applications-with-a-firewall-and-nsgs"></a>예 2: 방화벽 및 Nsg로 응용 프로그램을 보호 하는 경계 네트워크 빌드
 [Microsoft cloud services 및 네트워크 보안 페이지를 반환 합니다.][HOME]

@@ -16,11 +16,11 @@ ms.workload: na
 ms.date: 08/25/2016
 ms.author: cherylmc
 ms.openlocfilehash: 9361c0b2ee84d7459bd432f5a8ce13fc5fd85ef8
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58114354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60583539"
 ---
 # <a name="connecting-your-on-premises-network-to-azure"></a>Azure에 온-프레미스 네트워크 연결
 Microsoft는 몇 가지 유형의 클라우드 서비스를 제공합니다. 공용 인터넷을 통해 모든 서비스에 연결 하 고 수 하는 동안 인터넷을 통해 또는 Microsoft에 직접, 개인 연결을 통해 가상 사설망 (VPN) 터널을 사용 하 여 서비스에 연결할 수 있습니다. 이 문서에서는 연결 옵션 사용 하는 Microsoft 클라우드 서비스의 유형을 기반으로 사용자의 요구를 가장 잘 맞는 결정 합니다. 대부분의 조직에는 아래에 설명 된 연결 유형을 여러 개 활용 합니다.

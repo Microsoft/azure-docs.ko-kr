@@ -1,24 +1,28 @@
 ---
 title: HDInsight 클러스터를 최신 버전으로 업그레이드 - Azure
 description: HDInsight 클러스터를 최신 버전으로 업그레이드하는 방법을 알아봅니다.
+services: hdinsight
 ms.service: hdinsight
 author: omidm1
-ms.author: omidm
+ms.author: v-yiso
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 04/04/2017
-ms.openlocfilehash: 266de596633201b5590a6433d078cc05f2a267b4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+origin.date: 04/04/2017
+ms.date: 02/04/2019
+ms.openlocfilehash: b5048266fe17bc16fba8228f7cc17d0ee9f3bc0b
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60306177"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63763984"
 ---
 # <a name="upgrade-hdinsight-cluster-to-a-newer-version"></a>HDInsight 클러스터를 최신 버전으로 업그레이드
 최신 HDInsight 기능을 활용하려면 HDInsight 클러스터를 최신 버전으로 업그레이드하는 것이 좋습니다. 아래 지침에 따라 HDInsight 클러스터 버전을 업그레이드합니다.
 
-> [!NOTE]  
+> [!NOTE]
 > 지원되는 HDInsight 버전에 대한 자세한 내용은 [HDInsight 구성 요소 버전](hdinsight-component-versioning.md#supported-hdinsight-versions)을 참조하세요.
+>
+>
 
 ## <a name="upgrade-tasks"></a>업그레이드 작업
 HDInsight 클러스터를 업그레이드하는 워크플로는 다음과 같습니다.

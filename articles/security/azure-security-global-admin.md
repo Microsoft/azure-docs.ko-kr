@@ -8,12 +8,12 @@ editor: TomSh
 ms.topic: article
 ms.date: 03/20/2018
 ms.author: barclayn
-ms.openlocfilehash: 2dcd7f42d86000dd3b642c10f6d3db0b0d0fcb03
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: d0479b834f814616e44a1888ab8b958990610820
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56116340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60611711"
 ---
 # <a name="enforce-multi-factor-authentication-mfa-for-subscription-administrators"></a>구독 관리자에 대해 MFA(Multi-Factor Authentication) 적용
 

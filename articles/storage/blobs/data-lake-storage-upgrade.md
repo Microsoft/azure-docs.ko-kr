@@ -8,12 +8,12 @@ ms.author: normesta
 ms.date: 02/07/2019
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 1a9d26736a444efb83f9040b51676202b1ea4450
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.openlocfilehash: 84e3aff9c1c8cb3e7fe399c861c2c7d58c278fed
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60006117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62107876"
 ---
 # <a name="upgrade-your-big-data-analytics-solutions-from-azure-data-lake-storage-gen1-to-azure-data-lake-storage-gen2"></a>빅 데이터 분석 솔루션을 Azure Data Lake Storage Gen1에서 Azure Data Lake Storage Gen2로 업그레이드
 
@@ -222,7 +222,7 @@ Data Lake Storage Gen1은 파이프라인을 운영하는 데 도움이 되는 �
 |------------------------------------|-----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **리프트 앤 시프트**                 | [Azure 데이터 팩터리](https://docs.microsoft.com/azure/data-factory/load-azure-data-lake-storage-gen2-from-gen1) | 관리형 클라우드 서비스                                                                                                                | 데이터만 복사합니다. ACL은 현재 복사할 수 없습니다.                                                                                                                                                                                                                                                                      |
 |                                    | [Distcp](https://hadoop.apache.org/docs/r1.2.1/distcp.html)                                                           | 잘 알려진 Hadoop 제공 도구 권한 - 이 도구를 사용하여 ACL을 복사할 수 있음                                                   | Data Lake Storage Gen1과 Gen2 모두에 동시에 연결할 수 있는 클러스터가 필요합니다.                                                                                                                                                                                   |
-| **한 번 복사 및 증분 복사** | Azure 데이터 팩터리                                                                                                    | 관리형 클라우드 서비스                                                                                                                | ADF에서 증분 복사를 지원하려면 데이터를 시계열 방식으로 구성해야 합니다. 증분 복사 간의 가장 짧은 간격은 [15분](https://docs.microsoft.com/azure/data-factory/how-to-create-tumbling-window-trigger)입니다. 간격이 더 짧으면 ADF가 작동하지 않습니다. ACL은 현재 복사할 수 없습니다. |
+| **한 번 복사 및 증분 복사** | Azure Data Factory                                                                                                    | 관리형 클라우드 서비스                                                                                                                | ADF에서 증분 복사를 지원하려면 데이터를 시계열 방식으로 구성해야 합니다. 증분 복사 간의 가장 짧은 간격은 [15분](https://docs.microsoft.com/azure/data-factory/how-to-create-tumbling-window-trigger)입니다. 간격이 더 짧으면 ADF가 작동하지 않습니다. ACL은 현재 복사할 수 없습니다. |
 | **병렬 도입**              | [WANdisco](https://docs.wandisco.com/bigdata/wdfusion/adls/)                                                           | 일관된 복제 지원, Azure Data Lake Storage에 연결된 순수 Hadoop 환경을 사용하는 경우 양방향 복제 지원 | 순수 Hadoop 환경을 사용하지 않는 경우 복제가 지연될 수 있습니다.                                                                                                                                                                                                                                                  |
 
 위의 데이터/메타데이터 복사 도구를 사용하지 않고 Data Lake Storage Gen1에서 Data Lake Storage Gen2로 업그레이드할 수 있는 타사 제품(예: [Cloudera](https://blog.cloudera.com/blog/2017/08/use-amazon-s3-with-cloudera-bdr/))이 있습니다. 데이터 마이그레이션뿐만 아니라 워크로드 마이그레이션도 수행하는 "원스톱 쇼핑(one-stop shop)" 환경을 제공합니다. 에코시스템 외부에 있는 도구에 대해서는 대역 외 업그레이드를 수행해야 합니다.
@@ -249,7 +249,7 @@ URI의 접두사를 가진를 변환 하는 주요 작업을 여기 `adl://` URI
 
 Data Lake Storage Gen1의 URI 체계는 [여기](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-store)서 자세히 설명되지만, 대체로 *adl://mydatalakestore.azuredatalakestore.net/\<file_path\>입니다.*
 
-Data Lake 저장소 Gen2 파일에 액세스 하기 위한 URI 체계는 설명 [여기](https://docs.microsoft.com/azure/storage/data-lake-storage/use-hdi-cluster) 세부 정보, 하지만 대체로에서는 `abfss://<FILE_SYSTEM_NAME>@<ACCOUNT_NAME>.dfs.core.widows.net/<PATH>`합니다.
+Data Lake 저장소 Gen2 파일에 액세스 하기 위한 URI 체계는 설명 [여기](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md) 세부 정보, 하지만 대체로에서는 `abfss://<FILE_SYSTEM_NAME>@<ACCOUNT_NAME>.dfs.core.widows.net/<PATH>`합니다.
 
 기존 애플리케이션을 살펴보고 Data Lake Storage Gen2를 가리키도록 URI를 적절히 변경했는지 확인해야 합니다. 또한 적절한 자격 증명도 추가해야 합니다. 마지막으로, 원래 애플리케이션을 사용 중지하고 새 애플리케이션으로 교체하는 방법은 전체 업그레이드 전략과 긴밀하게 연계되어야 합니다.
 

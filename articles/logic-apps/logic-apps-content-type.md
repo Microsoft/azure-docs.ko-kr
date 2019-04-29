@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 07/20/2018
 ms.reviewer: klam, LADocs
 ms.suite: integration
-ms.openlocfilehash: 82eb9c895f016efe569651dc89885d2e4850fd59
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: 2a9318317d5a01136a42b4fb6d580bafaf53ec4e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39159094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60685767"
 ---
 # <a name="handle-content-types-in-azure-logic-apps"></a>Azure Logic Apps에서 콘텐츠 형식 처리
 
@@ -140,15 +140,15 @@ Logic Apps는 항상 수신한 HTTP 요청 또는 응답의 `Content-Type`을 �
 
 이 목록은 다음 [함수](../logic-apps/workflow-definition-language-functions-reference.md)를 사용할 때 Logic Apps가 콘텐츠를 변환하는 방법을 설명합니다.
 
-* `json()`: 데이터를 `application/json`로 캐스팅합니다.
-* `xml()`: 데이터를 `application/xml`로 캐스팅합니다.
-* `binary()`: 데이터를 `application/octet-stream`로 캐스팅합니다.
-* `string()`: 데이터를 `text/plain`로 캐스팅합니다.
+* `json()`: 데이터를 캐스팅 `application/json`
+* `xml()`: 데이터를 캐스팅 `application/xml`
+* `binary()`: 데이터를 캐스팅 `application/octet-stream`
+* `string()`: 데이터를 캐스팅 `text/plain`
 * `base64()`: 콘텐츠를 base64 문자열로 변환합니다.
-* `base64toString()`: base64 인코딩 문자열을 `text/plain`으로 변환합니다.
-* `base64toBinary()`: base64 인코딩 문자열을 `application/octet-stream`으로 변환합니다.
+* `base64toString()`: Base64로 인코딩된 문자열을 변환 `text/plain`
+* `base64toBinary()`: Base64로 인코딩된 문자열을 변환 `application/octet-stream`
 * `encodeDataUri()`: 문자열을 dataUri 바이트 배열로 인코딩합니다.
-* `decodeDataUri()`: `dataUri`를 바이트 배열로 디코딩합니다.
+* `decodeDataUri()`: 디코딩 한 `dataUri` 바이트 배열로
 
 예를 들어 이 콘텐츠처럼 `Content-Type`이 `application/xml`로 설정된 HTTP 요청을 받는 경우:
 

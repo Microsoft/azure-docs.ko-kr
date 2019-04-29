@@ -11,11 +11,11 @@ ms.date: 03/22/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.openlocfilehash: 7f9500adc6871c4c9f81c32bf456bc36cf91db4b
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58402561"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61439976"
 ---
 # <a name="analyze-data-with-azure-machine-learning"></a>Azure Machine Learning을 사용하여 데이터 분석
 > [!div class="op_single_selector"]

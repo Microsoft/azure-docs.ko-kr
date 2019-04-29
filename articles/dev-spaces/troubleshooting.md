@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Azure에서 컨테이너 및 마이크로 서비스를 통한 신속한 Kubernetes 개발
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, 컨테이너, Helm, 서비스 메시, 서비스 메시 라우팅, kubectl, k8s '
-ms.openlocfilehash: 4617e878f2af446608ede4e0aed644848564a074
-ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
-ms.translationtype: MT
+ms.openlocfilehash: 044e997703f5b274215fb05c7152186948b331b4
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59609078"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63761410"
 ---
 # <a name="troubleshooting-guide"></a>문제 해결 가이드
 
@@ -296,7 +296,7 @@ Dev Spaces를 통해 빌드/디버그하려는 서비스가 VM 노드에서 실�
 ## <a name="azure-dev-spaces-proxy-can-interfere-with-other-pods-running-in-a-dev-space"></a>Azure Dev Spaces 프록시는 개발 공간에서 실행되는 다른 Pod를 방해할 수 있습니다.
 
 ### <a name="reason"></a>이유
-AKS 클러스터의 네임스페이스에서 Dev Spaces를 활성화하면 _mindaro-proxy_라는 추가 컨테이너가 해당 네임스페이스 내에서 실행되는 각 Pod에 설치됩니다. 이 컨테이너는 Pod의 서비스에 대한 호출을 가로채며, Dev Spaces의 팀 개발 기능에 필수적입니다. 그러나 이러한 Pod에서 실행 중인 특정 서비스를 방해할 수 있습니다. Azure Cache for Redis 실행 Pod를 방해하여 연결 오류 및 마스터/슬레이브 통신 실패를 초래하는 것으로 알려져 있습니다.
+AKS 클러스터의 네임스페이스에서 Dev Spaces를 활성화하면 _mindaro-proxy_라는 추가 컨테이너가 해당 네임스페이스 내에서 실행되는 각 Pod에 설치됩니다. 이 컨테이너는 Pod의 서비스에 대한 호출을 가로채며, Dev Spaces의 팀 개발 기능에 필수적입니다. 그러나 이러한 Pod에서 실행 중인 특정 서비스를 방해할 수 있습니다. Redis Azure Cache 실행 되 고, 주/보조 통신에서 연결 오류 및 실패를 일으키는 pod를 방해 하는 것이 이라고 합니다.
 
 ### <a name="try"></a>다음을 시도해 보세요.
 영향을 받는 Pod를 Dev Spaces가 ‘사용되지 않는’ 클러스터 내의 네임스페이스로 이동할 수 있습니다. 애플리케이션의 나머지 부분은 Dev Spaces 사용 네임스페이스 내에서 계속 실행할 수 있습니다. Dev Spaces는 비 Dev Spaces 사용 네임스페이스 내에 _mindaro-proxy_ 컨테이너를 설치하지 않습니다.
@@ -368,7 +368,7 @@ AKS 클러스터에 대 한 사용자의 권한을 업데이트에 대 한 자�
 
 컨트롤러에 대 한 사용자의 RBAC 역할을 업데이트.
 
-1.  https://portal.azure.com에서 Azure Portal에 로그인합니다.
+1.  [https://portal.azure.com](https://portal.azure.com) 에서 Azure Portal에 로그인합니다.
 1. AKS 클러스터와 동일한는 일반적으로 컨트롤러를 포함 하는 리소스 그룹으로 이동 합니다.
 1. 사용 하도록 설정 합니다 *숨겨진된 형식 표시* 확인란을 선택 합니다.
 1. 컨트롤러에서를 클릭 합니다.

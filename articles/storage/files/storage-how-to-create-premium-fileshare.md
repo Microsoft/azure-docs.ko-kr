@@ -9,11 +9,11 @@ ms.date: 03/25/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 72dec14dde47580313e57bb3b8d7315604929277
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59288428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60844549"
 ---
 # <a name="how-to-create-an-azure-premium-file-share"></a>프리미엄 Azure 파일 공유를 만드는 방법
 
@@ -79,7 +79,7 @@ Azure Storage에 액세스하려면 Azure 구독이 있어야 합니다. Azure �
 
 먼저 [PowerShellGet](https://docs.microsoft.com/powershell/gallery/installing-psget) 모듈의 최신 버전을 설치합니다.
 
-그런 다음 powershell 모듈을 업그레이드, Azure 구독에 로그인, 리소스 그룹을 만들려면 및 그런 다음 저장소 계정을 만듭니다.
+그런 다음, powershell 모듈을 업그레이드하고, Azure 구독에 로그인하고, 리소스 그룹을 만든 다음, 스토리지 계정을 만듭니다.
 
 ### <a name="upgrade-your-powershell-module"></a>PowerShell 모듈 업그레이드
 
@@ -93,7 +93,7 @@ Az.Storage 모듈을 설치 합니다.
 Install-Module Az.Storage -Repository PSGallery -AllowPrerelease -AllowClobber -Force
 ```
 
-### <a name="sign-in-to-your-azure-subscription"></a>Azure 구독에 로그인
+### <a name="sign-in-to-your-azure-subscription"></a>Azure 구독에 로그인합니다.
 
 `Login-AzAccount` 명령을 사용하고 화면의 지시에 따라 인증합니다.
 
@@ -144,7 +144,7 @@ Remove-AzResourceGroup -Name $resourceGroup
 
 ## <a name="create-a-premium-file-share-using-azure-cli"></a>Azure CLI를 사용 하 여 premium 파일 공유 만들기
 
-Azure Cloud Shell을 시작 하려면에 로그인 합니다 [Azure portal](https://portal.azure.com)합니다.
+Azure Cloud Shell을 시작하려면 [Azure Portal](https://portal.azure.com)에 로그인합니다.
 
 CLI의 로컬 설치에 로그인하려면 로그인 명령을 실행합니다.
 

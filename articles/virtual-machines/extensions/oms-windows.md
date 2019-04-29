@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 03/14/2017
 ms.author: roiyz
 ms.openlocfilehash: 7c56b54f2d5be2bd47644e07369120468bb6015e
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57533700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61468383"
 ---
 # <a name="azure-monitor-virtual-machine-extension-for-windows"></a>Windows 용 azure 모니터링 가상 머신 확장
 

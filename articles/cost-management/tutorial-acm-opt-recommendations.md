@@ -11,11 +11,11 @@ ms.service: cost-management
 manager: dougeby
 ms.custom: seodec18
 ms.openlocfilehash: 8471ae8ed0b391df11d81569b5660a2b098f5793
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58000926"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61021497"
 ---
 # <a name="tutorial-optimize-costs-from-recommendations"></a>자습서: 권장 사항에서 비용 최적화
 
@@ -29,7 +29,7 @@ Azure Cost Management는 Azure Advisor와 함께 실행되어 비용 최적화 �
 > * 가상 머신의 크기가 성공적으로 조정되었는지 확인하기 위해 작업 확인
 
 ## <a name="prerequisites"></a>필수 조건
-권장 사항은 다양 한 범위 및 응용 프로그램을 포함 하 여 Azure 계정 유형, 사용 가능한 [EA (기업 계약)](https://azure.microsoft.com/pricing/enterprise-agreement/) 고객. 지원되는 계정 유형의 전체 목록을 보려면 [Cost Management 데이터 이해](understand-cost-mgt-data.md)를 참조하세요. 비용 데이터를 보려면 다음 범위 중 하나 이상에 대해 최소한 읽기 권한이 있어야 합니다. 범위에 대 한 자세한 내용은 참조 하세요. [이해 및 작업 범위를 사용 하 여](understand-work-scopes.md)입니다.
+권장 사항은 다양 한 범위 및 응용 프로그램을 포함 하 여 Azure 계정 유형, 사용 가능한 [EA (기업 계약)](https://azure.microsoft.com/pricing/enterprise-agreement/) 고객. 지원되는 계정 유형의 전체 목록을 보려면 [Cost Management 데이터 이해](understand-cost-mgt-data.md)를 참조하세요. 비용 데이터를 보려면 다음 범위 중 하나 이상에 대해 최소한 읽기 권한이 있어야 합니다. 범위에 대한 자세한 내용은 [범위 이해 및 작업](understand-work-scopes.md)을 참조하세요.
 
 - 구독
 - 리소스 그룹
@@ -43,7 +43,7 @@ Azure Cost Management는 Azure Advisor와 함께 실행되어 비용 최적화 �
 
 구독에 대 한 비용 최적화 권장 사항을 보려면 Azure portal 선택에서 원하는 범위를 엽니다 **Advisor 권장 사항**합니다.
 
-관리 그룹에 대 한 권장 사항을 보려면 Azure portal 선택에서 원하는 범위를 엽니다 **비용 분석** 메뉴에서. 사용 합니다 **범위** 필 관리 그룹 등의 다른 범위도 전환 합니다. 선택 **Advisor 권장 사항** 메뉴에서. 범위에 대 한 자세한 내용은 참조 하세요. [이해 및 작업 범위를 사용 하 여](understand-work-scopes.md)입니다.
+관리 그룹에 대 한 권장 사항을 보려면 Azure portal 선택에서 원하는 범위를 엽니다 **비용 분석** 메뉴에서. 사용 합니다 **범위** 필 관리 그룹 등의 다른 범위도 전환 합니다. 선택 **Advisor 권장 사항** 메뉴에서. 범위에 대한 자세한 내용은 [범위 이해 및 작업](understand-work-scopes.md)을 참조하세요.
 
 ![Azure Portal에 표시되는 비용 관리 Advisor 권장 사항](./media/tutorial-acm-opt-recommendations/advisor-recommendations.png)
 

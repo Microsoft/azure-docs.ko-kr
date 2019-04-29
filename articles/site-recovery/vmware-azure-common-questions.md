@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 services: site-recovery
-ms.date: 04/18/2019
+ms.date: 04/23/2019
 ms.topic: conceptual
 ms.author: raynew
-ms.openlocfilehash: d0e39f9e24b3c486eccd71eb1c19823cfd33391a
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: dffbb2c52b4e43eefe6b4f377bd7af529bae8cc5
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60004774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62125562"
 ---
 # <a name="common-questions---vmware-to-azure-replication"></a>일반적인 질문 - VMware에서 Azure로 복제
 
@@ -245,11 +245,15 @@ Site Recovery는 N-4 지원 모델을 따릅니다. [자세한](https://aka.ms/a
 
 Recovery Services 자격 증명 모음에서 클릭 **구성 서버** 에 **Site Recovery 인프라** > **관리**합니다. 그런 다음 **서버**를 선택 **등록 키 다운로드** 자격 증명 모음 자격 증명 파일을 다운로드 합니다.
 
+## <a name="process-server"></a>프로세스 서버
 
+### <a name="unable-to-select-process-server-during-enable-replication"></a>복제 활성화 하는 동안 프로세스 서버를 선택할 수 없습니다.
 
+9.24 버전에서 향상 된 기능 제공에 내용이 [제품 설명서](vmware-azure-manage-process-server.md#process-server-selection-guidance) 스케일 아웃 프로세스 서버를 설정 하는 경우에 합니다. 프로세스 서버 제한을 방지 하 고 비정상 프로세스 서버의 사용을 방지 하기 위해입니다.
 
+### <a name="what-should-i-do-to-obtain-accurate-health-status-of-process-server"></a>프로세스 서버의 정확한 상태를 가져오려면 어떻게 해야 합니까?
 
-
+Site Recovery 구성 요소를 업그레이드 합니다 [최신 버전](service-updates-how-to.md#links-to-currently-supported-update-rollups) (적어도 9.24 이상).
 
 ## <a name="failover-and-failback"></a>장애 조치 및 장애 복구
 ### <a name="can-i-use-the-process-server-at-on-premises-for-failback"></a>사용할 수 있습니까 프로세스 서버가 온-프레미스에 장애 복구에 대 한?

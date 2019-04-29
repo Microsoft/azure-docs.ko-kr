@@ -2,17 +2,18 @@
 title: Azure VPN Gateway에 Cisco ASA 디바이스를 연결하는 샘플 구성 | Microsoft Docs
 description: 이 문서에서는 Azure VPN Gateway에 Cisco ASA 디바이스를 연결하는 샘플 구성을 제공합니다.
 services: vpn-gateway
-author: yushwang
+author: WenJason
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 10/19/2018
-ms.author: yushwang
+origin.date: 10/19/2018
+ms.date: 03/04/2019
+ms.author: v-jay
 ms.openlocfilehash: e575fac61a1c5d9351391d39d200b87e34ff26cd
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55817243"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60648762"
 ---
 # <a name="sample-configuration-cisco-asa-device-ikev2no-bgp"></a>샘플 구성: Cisco ASA 디바이스(IKEv2/BGP 아님)
 이 문서에서는 Azure VPN Gateway에 Cisco ASA(적응 보안 어플라이언스) 디바이스를 연결하는 샘플 구성을 제공합니다. 이 예제는 BGP(경계 게이트웨이 프로토콜) 없이 IKEv2를 실행하는 Cisco ASA 디바이스에 적용됩니다. 
@@ -27,7 +28,7 @@ ms.locfileid: "55817243"
 | 테스트 모델           | ASA 5505                          |
 | 테스트 버전         | 9.2                               |
 | IKE 버전            | IKEv2                             |
-| BGP                    | 아니요                                |
+| BGP                    | 아닙니다.                                |
 | Azure VPN 게이트웨이 유형 | 경로 기반 VPN Gateway           |
 |                        |                                   |
 
@@ -302,3 +303,4 @@ sysopt connection tcpmss 1350
 
 ## <a name="next-steps"></a>다음 단계
 활성-활성 크로스-프레미스 및 VNet 간 연결을 구성하려면 [활성-활성 VPN Gateway 구성](vpn-gateway-activeactive-rm-powershell.md)을 참조하세요.
+<!--Update_Description: wording update -->

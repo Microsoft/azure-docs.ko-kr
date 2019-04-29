@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 08/13/2018
 ms.author: asrastog
 ms.openlocfilehash: dc5bfe6b431659b7b99140eb29a0e64922a42275
-ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57576346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61364514"
 ---
 # <a name="use-iot-hub-message-routing-to-send-device-to-cloud-messages-to-different-endpoints"></a>다른 끝점으로 장치-클라우드 메시지를 보내도록 IoT Hub 메시지 라우팅 사용
 
@@ -39,7 +39,7 @@ IoT Hub에는 Event Hubs와 호환되는 기본 제공 엔드포인트(**메시�
 
 ### <a name="azure-blob-storage"></a>Azure Blob Storage
 
-IoT Hub는 Azure Blob storage에 데이터 쓰기를 지원 합니다 [Apache Avro](https://avro.apache.org/) JSON 형식 뿐만 아니라 합니다. IoT Hub를 사용할 수 있습니다, 미국 동부, 미국 서 부 및 유럽 서 부를 제외한 모든 지역에서 미리 보기를 JSON 형식으로 인코딩하는 기능이입니다. 기본값은 AVRO입니다. Blob storage 끝점을 구성한 경우 인코딩 형식은 설정할 수 있습니다. 기존 끝점에 대 한 형식으로 편집할 수 없습니다. JSON으로 메시지에 u t F-8로 contentEncoding contentType JSON 인코딩을 사용 하는 경우 설정 해야 합니다 [시스템 속성](iot-hub-devguide-routing-query-syntax.md#system-properties)합니다. 특히 IoT Hub 만들기 또는 업데이트 REST API를 사용 하 여 인코딩 형식을 선택할 수 있습니다 합니다 [RoutingStorageContainerProperties](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate#routingstoragecontainerproperties), Azure Portal [Azure CLI](https://docs.microsoft.com/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest) 또는 [Azure Powershell](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubroutingendpoint?view=azps-1.3.0)합니다. 다음 다이어그램에는 Azure Portal에서 인코딩 형식을 선택 하는 방법을 보여 줍니다.
+IoT Hub는 Azure Blob storage에 데이터 쓰기를 지원 합니다 [Apache Avro](https://avro.apache.org/) JSON 형식 뿐만 아니라 합니다. JSON 형식을 인코딩하는 기능은 미국 동부, 미국 서부 및 서유럽을 제외하고, IoT Hub가 지원되는 모든 지역에서 미리 보기로 제공되고 있습니다. 기본값은 AVRO입니다. Blob storage 끝점을 구성한 경우 인코딩 형식은 설정할 수 있습니다. 기존 끝점에 대 한 형식으로 편집할 수 없습니다. JSON으로 메시지에 u t F-8로 contentEncoding contentType JSON 인코딩을 사용 하는 경우 설정 해야 합니다 [시스템 속성](iot-hub-devguide-routing-query-syntax.md#system-properties)합니다. 특히 IoT Hub 만들기 또는 업데이트 REST API를 사용 하 여 인코딩 형식을 선택할 수 있습니다 합니다 [RoutingStorageContainerProperties](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate#routingstoragecontainerproperties), Azure Portal [Azure CLI](https://docs.microsoft.com/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest) 또는 [Azure Powershell](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubroutingendpoint?view=azps-1.3.0)합니다. 다음 다이어그램에는 Azure Portal에서 인코딩 형식을 선택 하는 방법을 보여 줍니다.
 
 ![Blob 저장소 끝점의 인코딩](./media/iot-hub-devguide-messages-d2c/blobencoding.png)
 
@@ -51,7 +51,7 @@ IoT Hub는 메시지를 일괄 처리하고, 일괄 처리가 특정 크기에 �
 
 원하는 파일 명명 규칙을 사용할 수 있지만, 나열된 토큰은 모두 사용해야 합니다. 쓸 데이터가 없으면 IoT Hub가 빈 Blob을 작성합니다.
 
-Blob 저장소에 라우팅 blob을 인 리스트 먼 트 하 고 반복 파티션의 어떠한가 정도 하지 않고 모든 컨테이너는 읽을 수 있도록 하는 것이 좋습니다. 파티션 범위 동안 변경 될 수 있습니다는 [Microsoft에서 시작 된 장애 조치](iot-hub-ha-dr.md#microsoft-initiated-failover) 또는 IoT Hub [수동 장애 조치](iot-hub-ha-dr.md#manual-failover-preview)합니다. 사용할 수는 [목록 Blob API](https://docs.microsoft.com/rest/api/storageservices/list-blobs) blob 목록을 열거 합니다. 지침으로 다음 샘플을 참조 하세요.
+Blob Storage로 라우팅 시 파티션을 가정하지 않고 모든 컨테이너를 읽을 수 있도록, Blob을 등록한 다음, 반복하는 것이 좋습니다. 파티션 범위는 [Microsoft 시작 장애 조치(failover)](iot-hub-ha-dr.md#microsoft-initiated-failover) 또는 IoT Hub [수동 장애 조치(failover)](iot-hub-ha-dr.md#manual-failover-preview) 중에 변경할 수 있습니다. 사용할 수는 [목록 Blob API](https://docs.microsoft.com/rest/api/storageservices/list-blobs) blob 목록을 열거 합니다. 지침으로 다음 샘플을 참조 하세요.
 
    ```csharp
         public void ListBlobsInContainer(string containerName, string iothub)

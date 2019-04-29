@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 02/07/2018
 ms.author: jingwang
 ms.openlocfilehash: e9fd818990c8a985a77c2e7eeea19bf63c440e4e
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54018996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61347754"
 ---
 # <a name="copy-data-from-teradata-using-azure-data-factory"></a>Azure Data Factory를 사용하여 Teradata에서 데이터 복사
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -57,9 +57,9 @@ Teradata 연결된 서비스에 다음 속성이 지원됩니다.
 | 형식 | type 속성을 다음으로 설정해야 합니다. **Teradata** | 예 |
 | 서버 | Teradata 서버의 이름입니다. | 예 |
 | authenticationType | Teradata 데이터베이스에 연결하는 데 사용되는 인증 형식입니다.<br/>허용되는 값은 다음과 같습니다. **기본** 및 **Windows**. | 예 |
-| 사용자 이름 | Teradata 데이터베이스에 연결할 사용자 이름을 지정합니다. | 예 |
+| username | Teradata 데이터베이스에 연결할 사용자 이름을 지정합니다. | 예 |
 | 암호 | 사용자 이름에 지정한 사용자 계정의 암호를 지정합니다. 이 필드를 SecureString으로 표시하여 Data Factory에 안전하게 저장하거나 [Azure Key Vault에 저장되는 비밀을 참조](store-credentials-in-key-vault.md)합니다. | 예 |
-| connectVia | 데이터 저장소에 연결하는 데 사용할 [Integration Runtime](concepts-integration-runtime.md)입니다. [필수 조건](#prerequisites)에 설명된 대로 자체 호스팅 Integration Runtime이 필요합니다. |예 |
+| connectVia | 데이터 저장소에 연결하는 데 사용할 [Integration Runtime](concepts-integration-runtime.md)입니다. [필수 조건](#prerequisites)에 설명된 대로 자체 호스팅 Integration Runtime이 필요합니다. |예. |
 
 **예제:**
 
@@ -93,7 +93,7 @@ Teradata에서 데이터를 복사하려면 데이터 세트의 type 속성을 *
 
 | 속성 | 설명 | 필수 |
 |:--- |:--- |:--- |
-| 형식 | 데이터 세트의 type 속성을 다음으로 설정해야 합니다. **RelationalTable** | 예 |
+| type | 데이터 세트의 type 속성을 다음으로 설정해야 합니다. **RelationalTable** | 예 |
 | tableName | Teradata 데이터베이스의 테이블 이름입니다. | 아니요(작업 원본에서 "query"가 지정된 경우) |
 
 **예제:**
@@ -122,7 +122,7 @@ Teradata에서 데이터를 복사하려면 복사 작업의 원본 형식을 **
 
 | 자산 | 설명 | 필수 |
 |:--- |:--- |:--- |
-| 형식 | 복사 작업 원본의 type 속성을 다음으로 설정해야 합니다. **RelationalSource** | 예 |
+| type | 복사 작업 원본의 type 속성을 다음으로 설정해야 합니다. **RelationalSource** | 예 |
 | 쿼리 | 사용자 지정 SQL 쿼리를 사용하여 데이터를 읽습니다. 예: `"SELECT * FROM MyTable"` | 아니요(데이터 세트의 "tableName"이 지정된 경우) |
 
 **예제:**
@@ -167,41 +167,41 @@ Teradata에서 데이터를 복사하는 경우 Teradata 데이터 형식에서 
 | Blob |Byte[] |
 | Byte |Byte[] |
 | ByteInt |Int16 |
-| Char |문자열 |
-| Clob |문자열 |
-| Date |Datetime |
-| 10진수 |10진수 |
+| Char |String |
+| Clob |String |
+| Date |DateTime |
+| Decimal |Decimal |
 | Double |Double |
-| Graphic |문자열 |
+| Graphic |String |
 | 정수  |Int32 |
-| Interval Day |timespan |
-| Interval Day To Hour |timespan |
-| Interval Day To Minute |timespan |
-| Interval Day To Second |timespan |
-| Interval Hour |timespan |
-| Interval Hour To Minute |timespan |
-| Interval Hour To Second |timespan |
-| Interval Minute |timespan |
-| Interval Minute To Second |timespan |
-| Interval Month |문자열 |
-| Interval Second |timespan |
-| Interval Year |문자열 |
-| Interval Year To Month |문자열 |
+| Interval Day |TimeSpan |
+| Interval Day To Hour |TimeSpan |
+| Interval Day To Minute |TimeSpan |
+| Interval Day To Second |TimeSpan |
+| Interval Hour |TimeSpan |
+| Interval Hour To Minute |TimeSpan |
+| Interval Hour To Second |TimeSpan |
+| Interval Minute |TimeSpan |
+| Interval Minute To Second |TimeSpan |
+| Interval Month |String |
+| Interval Second |TimeSpan |
+| Interval Year |String |
+| Interval Year To Month |String |
 | Number |Double |
-| Period(Date) |문자열 |
-| Period(Time) |문자열 |
-| Period(Time With Time Zone) |문자열 |
-| Period(Timestamp) |문자열 |
-| Period(Timestamp With Time Zone) |문자열 |
+| Period(Date) |String |
+| Period(Time) |String |
+| Period(Time With Time Zone) |String |
+| Period(Timestamp) |String |
+| Period(Timestamp With Time Zone) |String |
 | SmallInt |Int16 |
-| Time |timespan |
-| Time With Time Zone |문자열 |
-| 타임 스탬프 |Datetime |
+| Time |TimeSpan |
+| Time With Time Zone |String |
+| 타임 스탬프 |DateTime |
 | Timestamp With Time Zone |DateTimeOffset |
 | VarByte |Byte[] |
-| VarChar |문자열 |
-| VarGraphic |문자열 |
-| xml |문자열 |
+| VarChar |String |
+| VarGraphic |String |
+| Xml |String |
 
 
 ## <a name="next-steps"></a>다음 단계

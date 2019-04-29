@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/19/2018
 ms.author: pbutlerm
 ms.openlocfilehash: e05813297707165d59d1b1ed969b54fb0f433277
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57848093"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60844494"
 ---
 # <a name="virtual-machine-skus-tab"></a>가상 머신 SKU 탭
 

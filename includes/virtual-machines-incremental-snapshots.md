@@ -9,11 +9,11 @@ ms.date: 09/15/2018
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 06e6e491fa1e9a047527efb78149855b125771ef
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49960211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60543791"
 ---
 # <a name="back-up-azure-unmanaged-vm-disks-with-incremental-snapshots"></a>증분 스냅숏을 사용하여 Azure 관리되지 않는 VM 디스크 백업
 ## <a name="overview"></a>개요
@@ -58,7 +58,7 @@ Blob 스냅숏은 특정 시점에 캡처된 Blob의 읽기 전용 버전입니�
 * 2016년 1월 1일 또는 그 이후에 Blob을 만든 경우
 * [PutPage](https://docs.microsoft.com/rest/api/storageservices/Put-Page) 또는 [Blob 복사](https://docs.microsoft.com/rest/api/storageservices/Copy-Blob)를 사용하여 두 스냅숏 간에 Blob을 덮어쓰지 않은 경우
 
-**참고**: 이 기능은 프리미엄 및 표준 Azure 페이지 Blob에 대해 사용할 수 있습니다.
+**참고**: 이 기능은 프리미엄 및 표준 Azure 페이지 Blob에 사용할 수 있습니다.
 
 스냅숏을 사용하는 사용자 지정 백업 전략이 있는 경우 하나의 저장소 계정에서 다른 저장소 계정으로 스냅숏을 복사하는 작업이 느려지고 저장소 공간을 많이 사용할 수 있습니다. 전체 스냅숏을 백업 저장소 계정에 복사하는 대신 백업 페이지 Blob에 연속 스냅숏 간의 차이를 기록할 수 있습니다. 이러한 방식으로 복사하는 시간 및 백업을 저장하는 공간이 상당히 줄어듭니다.
 
@@ -77,7 +77,7 @@ Blob 스냅숏은 특정 시점에 캡처된 Blob의 읽기 전용 버전입니�
 ## <a name="scenario"></a>시나리오
 이 섹션에서는 스냅숏을 사용하여 가상 컴퓨터 디스크에 대한 사용자 지정 백업 전략을 포함하는 시나리오에 대해 설명합니다.
 
-프리미엄 저장소 P30 디스크가 연결된 DS 시리즈 Azure VM을 고려합니다. *mypremiumdisk*라는 P30 디스크는 *mypremiumaccount*라는 프리미엄 저장소 계정에 저장됩니다. *mybackupstdaccount*라는 표준 저장소 계정은 *mypremiumdisk*의 백업을 저장하는 데 사용됩니다. 12시간마다 *mypremiumdisk* 의 스냅숏을 유지하려고 합니다.
+Premium Storage P30 디스크가 연결된 DS 시리즈 Azure VM을 고려합니다. *mypremiumdisk*라는 P30 디스크는 *mypremiumaccount*라는 Premium Storage 계정에 저장됩니다. *mybackupstdaccount*라는 표준 저장소 계정은 *mypremiumdisk*의 백업을 저장하는 데 사용됩니다. 12시간마다 *mypremiumdisk* 의 스냅숏을 유지하려고 합니다.
 
 저장소 계정을 만드는 방법에 대해 알아보려면 [저장소 계정 만들기](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account)를 참조하세요.
 
@@ -86,12 +86,12 @@ Azure VM 백업에 대해 알아보려면 [Azure VM 백업 계획](../articles/b
 ## <a name="steps-to-maintain-backups-of-a-disk-using-incremental-snapshots"></a>증분 스냅숏을 사용하여 디스크의 백업을 유지 관리하는 단계
 다음 단계는 *mypremiumdisk*의 스냅숏을 만들고 *mybackupstdaccount*에서 백업을 유지 관리하는 방법을 설명합니다. 이 백업은 *mybackupstdpageblob*이라는 표준 페이지 Blob입니다. 백업 페이지 Blob은 항상 *mypremiumdisk*라는 마지막 스냅숏과 동일한 상태를 반영합니다.
 
-1. *mypremiumdisk_ss1*이라는 *mypremiumdisk* 스냅숏을 만들어서 프리미엄 저장소 디스크에 대한 백업 페이지 Blob을 만듭니다.
+1. *mypremiumdisk_ss1*이라는 *mypremiumdisk* 스냅숏을 만들어서 Premium Storage 디스크에 대한 백업 페이지 Blob을 만듭니다.
 2. 이 스냅숏을 mybackupstdaccount에 *mybackupstdpageblob*이라는 페이지 Blob으로 복사합니다.
 3. [스냅숏 Blob](https://docs.microsoft.com/rest/api/storageservices/Snapshot-Blob)을 사용하여 *mybackupstdpageblob_ss1*이라는 *mybackupstdpageblob*의 스냅숏을 만들고 *mybackupstdaccount*에 저장합니다.
 4. 백업 창에 있는 동안 *mypremiumdisk_ss2*라는 *mypremiumdisk*의 또 다른 스냅숏을 만들고 *mypremiumaccount*에 저장합니다.
 5. **prevsnapshot** 매개 변수가 *mypremiumdisk_ss1*의 타임스탬프로 설정된 *mypremiumdisk_ss2*의 [GetPageRanges](https://docs.microsoft.com/rest/api/storageservices/Get-Page-Ranges)를 사용하여 두 스냅숏 *mypremiumdisk_ss2*와 *mypremiumdisk_ss1* 간의 증분 변경 내용을 가져옵니다. 이러한 증분 변경 내용을 *mybackupstdaccount*의 백업 페이지 Blob *mybackupstdpageblob*에 작성합니다. 증분 변경 내용에 삭제된 범위가 있는 경우 백업 페이지 Blob에서 지워야 합니다. [PutPage](https://docs.microsoft.com/rest/api/storageservices/Put-Page) 를 사용하여 증분 변경 내용을 백업 페이지 Blob에 작성합니다.
-6. *mybackupstdpageblob_ss2*라는 백업 페이지 Blob *mybackupstdpageblob*의 스냅숏을 만듭니다. 프리미엄 저장소 계정에서 이전 스냅숏 *mypremiumdisk_ss1*을 삭제합니다.
+6. *mybackupstdpageblob_ss2*라는 백업 페이지 Blob *mybackupstdpageblob*의 스냅숏을 만듭니다. Premium Storage 계정에서 이전 스냅숏 *mypremiumdisk_ss1*을 삭제합니다.
 7. 백업 창마다 4~6단계를 반복합니다. 이러한 방식으로 표준 저장소 계정에서 *mypremiumdisk* 의 백업을 유지할 수 있습니다.
 
 ![증분 스냅숏을 사용하여 디스크 백업](../articles/virtual-machines/windows/media/incremental-snapshots/storage-incremental-snapshots-1.png)

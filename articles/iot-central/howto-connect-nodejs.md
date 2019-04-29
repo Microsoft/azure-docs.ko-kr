@@ -9,11 +9,11 @@ ms.service: iot-central
 services: iot-central
 manager: philmea
 ms.openlocfilehash: 5497e4956fbdc74eced302867c33a66d07d6a184
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59617940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60888944"
 ---
 # <a name="connect-a-generic-client-application-to-your-azure-iot-central-application-nodejs"></a>Azure IoT Central 애플리케이션에 일반 클라이언트 애플리케이션 연결(Node.js)
 
@@ -75,8 +75,8 @@ Azure IoT Central 응용 프로그램에서 다음 측정, 장치 속성, 설정
 
 | 표시 이름        | 필드 이름        | 데이터 형식 |
 | ------------------- | ----------------- | --------- |
-| 일련 번호       | serialNumber      | 텍스트      |
-| 디바이스 제조업체 | manufacturer      | 텍스트      |
+| 일련 번호       | serialNumber      | text      |
+| 디바이스 제조업체 | manufacturer      | text      |
 
 테이블에 표시된 필드 이름을 디바이스 템플릿에 똑같이 입력합니다. 필드 이름은 해당 장치 코드의 속성 이름과 일치 하지 않으면 응용 프로그램에서 속성을 표시할 수 없습니다.
 

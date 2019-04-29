@@ -1,6 +1,6 @@
 ---
 title: 성능 권장 사항 - Azure SQL Database | Microsoft Docs
-description: Azure SQL Database는 현재 쿼리 성능을 향상시킬 수 있는 SQL Database에 대한 권장 사항을 제공합니다.
+description: Azure SQL Database는 현재 쿼리 성능을 향상시킬 수 있는 SQL 데이터베이스에 대한 권장 사항을 제공합니다.
 services: sql-database
 ms.service: sql-database
 ms.subservice: monitor
@@ -13,11 +13,11 @@ ms.reviewer: jrasnik
 manager: craigg
 ms.date: 12/19/2018
 ms.openlocfilehash: d09adbfa7cb2782d710ef3116cbd7bc68ee247b7
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59787803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61417586"
 ---
 # <a name="performance-recommendations-for-sql-database"></a>SQL Database에 대한 성능 권장 사항
 

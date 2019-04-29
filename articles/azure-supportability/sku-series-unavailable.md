@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/09/2017
 ms.author: xingwan
-ms.openlocfilehash: 62964d0c5d75168226a35b25e5c256a1b57f3f81
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
-ms.translationtype: HT
+ms.openlocfilehash: a57899e36a6716a6fd59cb018119c225b7396c0d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/16/2017
-ms.locfileid: "24870581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60649131"
 ---
 # <a name="region-or-sku-unavailable"></a>지역 또는 SKU 사용할 수 없음
 이 문서에서는 Azure 구독에 지역 또는 VM SKU에 대한 액세스 권한이 없는 문제를 해결하는 방법을 설명합니다.
@@ -67,7 +67,7 @@ Message: This size is currently unavailable in this location for this subscripti
 
 -   문제 페이지에서 문제 유형을 "기타 일반적인 질문"으로 선택합니다.
 - 세부 정보 섹션에서:
-  - 가상 머신을 배포하거나 예약 가상 머신 인스턴스를 구입하려고 하는지를 알려주세요.
+  - 가상 머신을 배포하거나 예약 Virtual Machine 인스턴스를 구입하려고 하는지를 알려주세요.
   - 배포하거나 구입하려고 계획 중인 지역, SKU 및 가상 머신 인스턴스 수를 지정하세요
 
 

@@ -1,18 +1,26 @@
 ---
 title: IoT Hub C SDK를 사용하여 제한된 디바이스에 대한 Azure IoT Hub 개발 | Microsoft Docs
 description: 개발자 가이드 - 제한된 디바이스에 Azure IoT SDK를 사용하여 개발하는 방법에 대한 지침입니다.
-author: yzhong94
-ms.service: iot-hub
 services: iot-hub
-ms.topic: conceptual
-ms.date: 05/24/2018
-ms.author: yizhon
+documentationcenter: c
+author: yzhong94
+manager: timlt
+editor: ''
+ms.assetid: 979136db-c92d-4288-870c-f305e8777bdd
+ms.service: iot-hub
+ms.devlang: multiple
+ms.topic: article
+ms.tgt_pltfrm: na
+ms.workload: na
+origin.date: 05/24/2018
+ms.date: 04/29/2019
+ms.author: v-yiso
 ms.openlocfilehash: 7788bca621a59ec8cdfe36edf73a99efca8c460c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59261397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61320942"
 ---
 # <a name="develop-for-constrained-devices-using-azure-iot-c-sdk"></a>Azure IoT C SDK를 사용하여 제한된 디바이스 개발
 
@@ -44,7 +52,6 @@ cmake -Duse_amqp=OFF -Duse_http=OFF <Path_to_cmake>
 ### <a name="remove-sdk-logging-capability"></a>SDK 로깅 기능 제거
 
 C SDK는 디버깅에 유용한 광범위한 로깅 기능을 제공합니다. 다음 cmake 명령을 사용하여 프로덕션 디바이스에 대한 로깅 기능을 제거할 수 있습니다.
-
 ```
 cmake -Dno_logging=OFF <Path_to_cmake>
 ```
@@ -80,7 +87,15 @@ C SDK는 두 가지 프로그래밍 모델을 지원합니다. 한 집합에는 
 _LL_ 인덱스가 없는 다른 API 집합을 편의 계층이라고 하며 작업자 스레드가 자동으로 회전합니다. 예를 들어 디바이스 클라이언트용 편의 계층 API는 이 [IoT 디바이스 클라이언트 헤더 파일](https://github.com/Azure/azure-iot-sdk-c/blob/master/iothub_client/inc/iothub_device_client.h)에서 찾을 수 있습니다. 각각의 추가 스레드에서 상당한 양의 시스템 리소스를 사용할 수 있는 제한된 디바이스의 경우 _LL_ API를 사용하는 것이 좋습니다.
 
 ## <a name="next-steps"></a>다음 단계
-
 Azure IoT C SDK 아키텍처에 대한 자세한 내용은 다음을 참조하세요.
--   [Azure IoT C SDK 소스 코드](https://github.com/Azure/azure-iot-sdk-c/)
--   [C용 Azure IoT 디바이스 SDK 소개](iot-hub-device-sdk-c-intro.md)
+- [Azure IoT C SDK 소스 코드](https://github.com/Azure/azure-iot-sdk-c/)
+- [C용 Azure IoT 디바이스 SDK 소개](iot-hub-device-sdk-c-intro.md)
+
+------
+[lnk-cmake]: https://cmake.org/
+[lnk-devbox-setup]:  https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md
+[lnk-choosing-protocol]: iot-hub-devguide-protocols.md
+[lnk-hub-file-upload]: iot-hub-devguide-file-upload.md
+[lnk-strip]: https://en.wikipedia.org/wiki/Strip_(Unix)
+[lnk-serializer]: https://github.com/Azure/azure-iot-sdk-c/tree/master/serializer
+[lnk-parson]: https://github.com/kgabis/parson

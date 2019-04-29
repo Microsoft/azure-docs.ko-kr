@@ -1,14 +1,12 @@
 ---
-ms.openlocfilehash: a1a57cbcd9284489e00bf36b25baf7e04fbea9e6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: 55adc512447160b409af0002a72ec2473409d796
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60306804"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63759496"
 ---
 # <a name="contributing-to-microsoft-azure-documentation"></a>Microsoft Azure 설명서에 기여
-
-> 2019년 3월 5일부터 3월 9일까지 MicrosoftDocs/azure-docs 리포지토리가 현재 Markdown 엔진에서 [Markdig](https://github.com/lunet-io/markdig) Markdown 엔진으로 마이그레이션됩니다. 이 기간 동안, 마이그레이션을 완료하기 위해 공용 끌어오기 요청 병합을 일시 중단하는 기능이 해제됩니다.
 
 Microsoft Azure 설명서에 기여 하는 시간을 내어 주셔서 감사 합니다.
 

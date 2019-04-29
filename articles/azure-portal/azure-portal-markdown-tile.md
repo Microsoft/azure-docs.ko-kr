@@ -4,17 +4,18 @@ description: Azure 대시보드에 markdown 타일을 추가하여 정적 콘텐
 services: azure-portal
 keywords: ''
 author: kfollis
-ms.author: kfollis
-ms.date: 01/25/2019
+ms.author: v-biyu
+origin.date: 01/25/2019
+ms.date: 03/04/2019
 ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
 ms.openlocfilehash: ec8cbddda4137656a53fd4968c451cd413959274
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58110786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60551587"
 ---
 # <a name="use-a-markdown-tile-on-azure-dashboards-to-show-custom-content"></a>Azure 대시보드에서 markdown 타일을 사용하여 사용자 지정 콘텐츠 표시
 
@@ -28,7 +29,7 @@ Azure 대시보드에 markdown 타일을 추가하여 사용자 지정 정적 �
 
 2. **파일 갤러리**에서 **markdown**이라는 타일을 찾고 **추가**를 클릭합니다. 타일이 대시보드에 추가되고 **markdown 편집** 창이 열립니다.
 
-1. **제목**, **부제목** 및 **콘텐츠** 필드를 편집하여 타일을 사용자 지정합니다. 여기에 표시된 예에서는 사용자 지정 지원 센터 정보를 표시하도록 markdown 타일이 편집되었습니다.
+3. **제목**, **부제목** 및 **콘텐츠** 필드를 편집하여 타일을 사용자 지정합니다. 여기에 표시된 예에서는 사용자 지정 지원 센터 정보를 표시하도록 markdown 타일이 편집되었습니다.
 
    ![markdown 타일 편집 보기를 표시하는 스크린샷](./media/azure-portal-markdown-tile/azure-portal-edit-markdown-tile.png)
 

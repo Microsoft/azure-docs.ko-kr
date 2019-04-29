@@ -14,11 +14,11 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 96d16552cfadca9b345d0f0cd0a344249897f571
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54020951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61258439"
 ---
 # <a name="move-data-from-sap-hana-using-azure-data-factory"></a>Azure Data Factory를 사용하여 SAP HANA에서 데이터 이동
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -60,12 +60,12 @@ SAP HANA 인스턴스에 대한 연결을 사용하도록 설정하려면 다음
 
 자산 | 설명 | 허용되는 값 | 필수
 -------- | ----------- | -------------- | --------
-서버 | SAP HANA 인스턴스가 상주하는 서버의 이름. 서버에서 사용자 지정된 포트를 사용하는 경우 `server:port`를 지정합니다. | string | 예
+서버 | SAP HANA 인스턴스가 상주하는 서버의 이름. 서버에서 사용자 지정된 포트를 사용하는 경우 `server:port`를 지정합니다. | 문자열 | 예
 authenticationType | 인증 유형입니다. | string. "Basic" 또는 "Windows" | 예 
-사용자 이름 | SAP 서버에 대한 액세스 권한이 있는 사용자의 이름 | string | 예
-암호 | 사용자에 대한 암호입니다. | string | 예
-gatewayName | Data Factory 서비스가 온-프레미스 SAP HANA 인스턴스에 연결하는 데 사용해야 하는 게이트웨이의 이름. | string | 예
-encryptedCredential | 암호화된 자격 증명 문자열. | string | 아니요
+사용자 이름 | SAP 서버에 대한 액세스 권한이 있는 사용자의 이름 | 문자열 | 예
+암호 | 사용자에 대한 암호입니다. | 문자열 | 예
+gatewayName | Data Factory 서비스가 온-프레미스 SAP HANA 인스턴스에 연결하는 데 사용해야 하는 게이트웨이의 이름. | 문자열 | 예
+encryptedCredential | 암호화된 자격 증명 문자열. | 문자열 | 아닙니다.
 
 ## <a name="dataset-properties"></a>데이터 세트 속성
 데이터 세트 정의에 사용할 수 있는 섹션 및 속성의 전체 목록은 [데이터 세트 만들기](data-factory-create-datasets.md) 문서를 참조하세요. 구조, 가용성 및 JSON 데이터 세트의 정책과 같은 섹션이 모든 데이터 세트 형식에 대해 유사합니다(Azure SQL, Azure blob, Azure 테이블 등).
@@ -288,19 +288,19 @@ TINYINT | Byte
 SmallInt | Int16
 INT | Int32
 BIGINT | Int64
-Real | 단일
-DOUBLE | 단일
-DECIMAL | 10진수
+Real | Single
+DOUBLE | Single
+DECIMAL | Decimal
 BOOLEAN | Byte
-VARCHAR | 문자열
-NVARCHAR | 문자열
+VARCHAR | String
+NVARCHAR | String
 CLOB | Byte[]
-ALPHANUM | 문자열
+ALPHANUM | String
 BLOB | Byte[]
-DATE | Datetime
-TIME | timespan
-TIMESTAMP | Datetime
-SECONDDATE | Datetime
+DATE | DateTime
+TIME | TimeSpan
+TIMESTAMP | DateTime
+SECONDDATE | DateTime
 
 ## <a name="known-limitations"></a>알려진 제한 사항
 SAP HANA에서 데이터를 복사하는 경우 몇 가지 알려진 제한 사항이 있습니다.

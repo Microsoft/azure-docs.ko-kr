@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 55e46e058bddca717929df61b2bc766b89e0f885
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58122759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485302"
 ---
 ![독립 실행형 클라우드 서비스의 가상 머신](./media/virtual-machines-common-classic-connect-vms/CloudServiceExample.png)
 

@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: pbutlerm
 ms.openlocfilehash: bdec2d699e8448c8e2303dfbabcb4d176a9ca389
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54430384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60729790"
 ---
 # <a name="view-the-publishing-status-of-azure-marketplace-and-appsource-offers"></a>Azure Marketplace 및 AppSource 제품의 게시 상태 보기
 

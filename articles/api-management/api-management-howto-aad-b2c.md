@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/30/2017
 ms.author: apimpm
-ms.openlocfilehash: db701a239aedb312c7671e403cdfde7135130c6d
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: 644cc2a4175043b523d53b39f17483c6f3acfe96
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58089610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60558489"
 ---
 # <a name="how-to-authorize-developer-accounts-by-using-azure-active-directory-b2c-in-azure-api-management"></a>Azure API Management에서 Azure Active Directory B2C를 사용하여 개발자 계정에 권한을 부여하는 방법
 
@@ -69,29 +69,20 @@ Azure Active Directory B2C는 소비자 지향 웹 및 모바일 애플리케이
    ![애플리케이션 ID 1][api-management-howto-aad-b2c-app-id]
 
 9. API Management **ID 공급자 추가** 창으로 다시 전환하고 ID를 **클라이언트 ID** 텍스트 상자에 붙여 넣습니다.
-
-   ![애플리케이션 ID 2][api-management-howto-aad-b2c-client-id]
-
+    
 10. B2C 앱 등록으로 다시 전환하고 **키** 단추를 클릭한 다음, **키 생성**을 클릭합니다. **저장**을 클릭하여 구성을 저장하고 **앱 키**를 표시합니다. 키를 클립보드에 복사합니다.
 
     ![앱 키 1][api-management-howto-aad-b2c-app-key]
 
 11. API Management **ID 공급자 추가** 창으로 다시 전환하고 키를 **클라이언트 비밀** 텍스트 상자에 붙여 넣습니다.
+    
+12. Azure Active Directory B2C 테 넌 트의 도메인 이름을 지정 **Signin 테 넌 트**합니다.
 
-    ![앱 키 2][api-management-howto-aad-b2c-client-secret]
+13. 합니다 **기관** 필드를 사용 하는 데 Azure AD B2C 로그인 URL을 제어할 수 있습니다. 값을 설정 합니다 **< your_b2c_tenant_name >. b2clogin.com**합니다.
 
-12. **허용된 테넌트**에서 Azure Active Directory B2C 테넌트의 도메인 이름을 지정합니다.
+14. B2C 테넌트 정책에서 **등록 정책** 및 **로그인 정책**을 지정합니다. 선택적으로 **프로필 편집 정책** 및 **암호 재설정 정책**을 제공할 수도 있습니다.
 
-    ![허용된 테넌트][api-management-howto-aad-b2c-allowed-tenant]
-
-13. B2C 테넌트 정책에서 **등록 정책** 및 **로그인 정책**을 지정합니다. 선택적으로 **프로필 편집 정책** 및 **암호 재설정 정책**을 제공할 수도 있습니다.
-
-    ![정책][api-management-howto-aad-b2c-policies]
-
-    > [!NOTE]
-    > 정책에 대한 자세한 내용은 [Azure Active Directory B2C: 확장 가능한 정책 프레임워크]를 참조하세요.
-
-14. 원하는 구성이 지정되면 **저장**을 클릭합니다.
+15. 원하는 구성이 지정되면 **저장**을 클릭합니다.
 
     변경 내용이 저장되면 개발자는 Azure Active Directory B2C를 사용하여 새 계정을 만들고 개발자 포털에 로그인할 수 있습니다.
 

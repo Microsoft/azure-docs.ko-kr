@@ -8,11 +8,11 @@ ms.service: container-service
 ms.date: 12/03/2018
 ms.author: iainfou
 ms.openlocfilehash: 4b9e9aeab6ed24dd2179f853def02ad194fe1b67
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59681032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61025187"
 ---
 # <a name="preview---create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-in-the-azure-portal"></a>미리 보기-만들기 및 Azure portal에서 가상 노드를 사용 하 여 Azure Kubernetes 서비스 (AKS) 클러스터를 구성 합니다.
 
@@ -45,7 +45,7 @@ ms.locfileid: "59681032"
 
 ## <a name="sign-in-to-azure"></a>Azure에 로그인
 
- https://portal.azure.com에서 Azure Portal에 로그인합니다.
+ [https://portal.azure.com](https://portal.azure.com) 에서 Azure Portal에 로그인합니다.
 
 ## <a name="create-an-aks-cluster"></a>AKS 클러스터 만들기
 

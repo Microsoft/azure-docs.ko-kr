@@ -8,11 +8,11 @@ ms.topic: reference
 ms.date: 01/12/2019
 ms.author: spelluru
 ms.openlocfilehash: 4994063dfc3bce88489f70969c06bf36b591f907
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57536252"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60561679"
 ---
 # <a name="azure-event-grid-event-schema-for-subscriptions"></a>Azure Event Grid 구독에 대한 이벤트 스키마
 

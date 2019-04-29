@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 08/14/2018
 ms.author: iainfou
 ms.openlocfilehash: a6a2fb246e407d6ea240ff40f4d2fa2b1b780931
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54054015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61023741"
 ---
 # <a name="use-virtual-kubelet-with-azure-kubernetes-service-aks"></a>AKS(Azure Kubernetes Service)에서 Virtual Kubelet 사용
 
@@ -90,13 +90,13 @@ az aks install-connector --resource-group myAKSCluster --name myAKSCluster --con
 | `--connector-name` | ACI 커넥터의 이름입니다.| 예 |
 | `--name` `-n` | 관리되는 클러스터의 이름입니다. | 예 |
 | `--resource-group` `-g` | 리소스 그룹의 이름입니다. | 예 |
-| `--os-type` | 컨테이너 인스턴스 운영 체제 형식입니다. 허용되는 값은 다음과 같습니다. 둘 다, Linux, Windows. Default: Linux. | 아니요 |
-| `--aci-resource-group` | ACI 컨테이너 그룹을 만들 리소스 그룹입니다. | 아니요 |
-| `--location` `-l` | ACI 컨테이너 그룹을 만들 위치입니다. | 아니요 |
-| `--service-principal` | Azure API에 대한 인증에 사용되는 서비스 사용자입니다. | 아니요 |
-| `--client-secret` | 서비스 사용자와 연결된 암호입니다. | 아니요 |
-| `--chart-url` | ACI 커넥터를 설치하는 Helm 차트의 URL입니다. | 아니요 |
-| `--image-tag` | Virtual Kubelet 컨테이너 이미지의 이미지 태그입니다. | 아니요 |
+| `--os-type` | 컨테이너 인스턴스 운영 체제 형식입니다. 허용되는 값은 다음과 같습니다. 둘 다, Linux, Windows. Default: Linux. | 아닙니다. |
+| `--aci-resource-group` | ACI 컨테이너 그룹을 만들 리소스 그룹입니다. | 아닙니다. |
+| `--location` `-l` | ACI 컨테이너 그룹을 만들 위치입니다. | 아닙니다. |
+| `--service-principal` | Azure API에 대한 인증에 사용되는 서비스 사용자입니다. | 아닙니다. |
+| `--client-secret` | 서비스 사용자와 연결된 암호입니다. | 아닙니다. |
+| `--chart-url` | ACI 커넥터를 설치하는 Helm 차트의 URL입니다. | 아닙니다. |
+| `--image-tag` | Virtual Kubelet 컨테이너 이미지의 이미지 태그입니다. | 아닙니다. |
 
 ## <a name="validate-virtual-kubelet"></a>Virtual Kubelet 유효성 검사
 

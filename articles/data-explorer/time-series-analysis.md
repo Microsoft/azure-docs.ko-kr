@@ -8,11 +8,11 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 04/07/2019
 ms.openlocfilehash: 8492f736e64366802b3601f9b5fc8bd1d9b6ea79
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59273076"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60827438"
 ---
 # <a name="time-series-analysis-in-azure-data-explorer"></a>Azure 데이터 탐색기에서 시계열 분석
 
@@ -72,7 +72,7 @@ demo_make_series1
 이 섹션에서는 일반적인 시계열 처리 함수를 수행합니다.
 시계열 집합을 만든 후 ADX는 증가하는 함수 목록을 지원하여 [시계열 설명서](/azure/kusto/query/machine-learning-and-tsa)에 있을 수 있는 함수를 처리하고 분석합니다. 시계열의 처리 및 분석을 위한 몇 가지 대표적인 함수에 대해 설명하겠습니다.
 
-### <a name="filtering"></a>필터링
+### <a name="filtering"></a>Filtering
 
 필터링은 신호 처리의 일반적인 사례로서 시계열 처리 작업(예: 노이즈가 있는 신호 및 변경 내용 검색 평활화)에 유용합니다.
 - 일반 필터링 함수에는 다음과 같은 두 가지가 있습니다.

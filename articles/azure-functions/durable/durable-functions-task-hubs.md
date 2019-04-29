@@ -8,14 +8,15 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 12/07/2017
-ms.author: azfuncdf
+origin.date: 12/07/2017
+ms.date: 02/21/2019
+ms.author: v-junlch
 ms.openlocfilehash: 596eedab39ff926fcdc880c82c49ac464b7ff23b
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55753473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60730273"
 ---
 # <a name="task-hubs-in-durable-functions-azure-functions"></a>지속성 함수의 작업 허브(Azure Functions)
 
@@ -29,11 +30,11 @@ ms.locfileid: "55753473"
 
 작업 허브는 다음과 같은 저장소 리소스로 구성됩니다.
 
-* 하나 이상의 제어 큐
-* 하나의 작업 항목 큐
-* 하나의 기록 테이블
-* 하나의 인스턴스 테이블
-* 하나 이상의 저장소 Blob을 포함하는 하나의 저장소 컨테이너
+- 하나 이상의 제어 큐
+- 하나의 작업 항목 큐
+- 하나의 기록 테이블
+- 하나의 인스턴스 테이블
+- 하나 이상의 저장소 Blob을 포함하는 하나의 저장소 컨테이너
 
 오케스트레이터 또는 작업 함수가 실행되거나 실행되도록 예약된 경우 이러한 모든 리소스는 기본 Azure Storage 계정에 자동으로 만들어집니다. [성능 및 크기 조정](durable-functions-perf-and-scale.md) 문서에서는 이러한 리소스를 사용하는 방법을 설명합니다.
 
@@ -140,3 +141,5 @@ public static async Task<HttpResponseMessage> Run(
 
 > [!div class="nextstepaction"]
 > [버전 관리 처리](durable-functions-versioning.md)
+
+<!-- Update_Description: wording update -->

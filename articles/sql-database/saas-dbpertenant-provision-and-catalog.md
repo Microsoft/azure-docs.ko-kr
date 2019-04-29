@@ -13,11 +13,11 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 09/24/2018
 ms.openlocfilehash: 803d05e1aaf4d9c26a6132bde30f101ce3905924
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58096829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61388345"
 ---
 # <a name="learn-how-to-provision-new-tenants-and-register-them-in-the-catalog"></a>새 테넌트를 프로비전하고 카탈로그에 등록하는 방법 알아보기
 
@@ -92,7 +92,7 @@ Wingtip Tickets 애플리케이션에서 새 테넌트 프로비전을 구현하
 
 4. 스크립트 실행이 중단점에서 중지된 후 F11 키를 눌러 한 단계씩 코드를 실행합니다.
 
-   ![디버깅하는 중](media/saas-dbpertenant-provision-and-catalog/debug.png)
+   ![디버그](media/saas-dbpertenant-provision-and-catalog/debug.png)
 
 
 

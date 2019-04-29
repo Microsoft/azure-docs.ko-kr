@@ -12,11 +12,11 @@ ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
 ms.openlocfilehash: 0fbd89202796cb4543dbecbeee605c9b87cc9d05
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50230662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62104989"
 ---
 # <a name="monitor-and-manage-twitter-by-using-azure-logic-apps"></a>Azure Logic Apps를 사용하여 Twitter 모니터링 및 관리
 
@@ -70,13 +70,13 @@ Azure Logic Apps 및 Twitter 커넥터를 사용하면 다음과 같이 다른 �
 
 ## <a name="examples"></a>예
 
-### <a name="twitter-trigger-when-a-new-tweet-is-posted"></a>Twitter 트리거: 새 트윗이 게시되는 경우
+### <a name="twitter-trigger-when-a-new-tweet-is-posted"></a>Twitter 트리거: 새 트윗이 게시될 때
 
 이 트리거는 예를 들어 #Seattle이란 해시태그가 있는 새 트윗을 트리거에서 감지하면 논리 앱 워크플로를 시작합니다. 따라서 예를 들어 이러한 트윗을 찾으면 Dropbox 커넥터를 사용하여 Dropbox 계정과 같은 저장소에 트윗의 콘텐츠가 포함된 파일을 추가할 수 있습니다. 
 
 필요에 따라 지정된 최소 팔로워가 있는 사용자의 트윗만 가져오도록 조건을 포함시킬 수 있습니다.
 
-**엔터프라이즈 예제**: 이 트리거를 사용하여 회사에 대한 트윗을 모니터링하고 SQL 데이터베이스에 트윗의 콘텐츠를 업로드할 수 있습니다.
+**엔터프라이즈 예제**: 회사에 대 한 트 윗을 모니터링 하 고 SQL database에 트 윗의 콘텐츠를 업로드 하려면이 트리거를 사용할 수 있습니다.
 
 ### <a name="twitter-action-post-a-tweet"></a>Twitter 작업: 트윗 게시
 

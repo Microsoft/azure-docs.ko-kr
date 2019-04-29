@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 06/11/2018
 ms.author: spelluru
 ms.openlocfilehash: cb4a3ec9be82957b4c0366ec232f1147c52d0251
-ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60148775"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62125902"
 ---
 # <a name="import-vms-from-another-lab-in-azure-devtest-labs"></a>Azure DevTest Labs에서 다른 랩의 VM 가져오기
 Azure DevTest Labs 서비스를 사용하면 개발 및 테스트 활동을 위한 VM(가상 머신) 관리 방식을 크게 개선할 수 있습니다. 이 서비스에서는 팀 또는 인프라 요구 사항 변경 시 랩 간에 VM을 이동할 수 있습니다. VM을 이동해야 할 수 있는 몇 가지 일반적인 시나리오는 다음과 같습니다.

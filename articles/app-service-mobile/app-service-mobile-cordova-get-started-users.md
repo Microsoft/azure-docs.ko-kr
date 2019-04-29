@@ -14,12 +14,12 @@ ms.devlang: javascript
 ms.topic: article
 ms.date: 10/30/2016
 ms.author: crdun
-ms.openlocfilehash: b5cce832ae7ae83552c2a5ded2f5f5bda0ac76bf
-ms.sourcegitcommit: df4ddc55b42b593f165d56531f591fdb1e689686
-ms.translationtype: HT
+ms.openlocfilehash: 23b5967782cf237ed5af2b802aabbbf9c2f781e7
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2018
-ms.locfileid: "27591949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62114213"
 ---
 # <a name="add-authentication-to-your-apache-cordova-app"></a>Apache Cordova 앱에 인증 추가
 [!INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "27591949"
 이제 백 엔드에 대한 익명 액세스가 비활성화되었는지 확인할 수 있습니다. Visual Studio에서
 
 * [Mobile Apps 시작]자습서를 완료했을 때 생성된 프로젝트를 엽니다.
-* **Google Android 에뮬레이터**에서 응용 프로그램을 실행합니다.
+* **Google Android 에뮬레이터**에서 애플리케이션을 실행합니다.
 * 앱이 시작된 후 예기치 않은 연결 오류가 표시되는지 확인합니다.
 
 다음으로 앱을 업데이트하여 모바일 앱 백 엔드에서 리소스를 요청하기 전에 사용자를 인증하도록 합니다.

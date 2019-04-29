@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
 ms.openlocfilehash: 8e8b493881662483e66dd835d1cc68a471b18454
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58803310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60545523"
 ---
 # <a name="azure-media-services-telemetry"></a>Azure Media Services 원격 분석  
 
@@ -80,7 +80,7 @@ PartitionKey|{account ID}_{entity ID}|e49bef329c29495f9b9570989682069d_64435281c
 RowKey|{seconds to midnight}_{random value}|01688_00199<br/><br/>행 키는 파티션 내의 상위 n개 스타일 쿼리를 허용하기 위해 자정까지 남은 시간(초)부터 시작됩니다. 자세한 내용은 [이](../../cosmos-db/table-storage-design-guide.md#log-tail-pattern) 문서를 참조하세요. 
 타임 스탬프|날짜/시간|Azure 테이블에서의 자동 타임스탬프 2016-09-09T22:43:42.241Z
 Type|원격 분석 데이터를 제공하는 엔터티 형식|Channel/StreamingEndpoint/Archive<br/><br/>이벤트 형식은 문자열 값입니다.
-name|원격 분석 이벤트의 이름입니다.|ChannelHeartbeat/StreamingEndpointRequestLog
+이름|원격 분석 이벤트의 이름입니다.|ChannelHeartbeat/StreamingEndpointRequestLog
 ObservedTime|원격 분석 이벤트가 발생한 시간(UTC)|2016-09-09T22:42:36.924Z<br/><br/>원격 분석을 보내는 엔터티(예: 채널)가 관측된 시간을 제공합니다. 구성 요소 간에 시간 동기화 문제가 있을 수 있으므로 이 값은 근사치입니다.
 ServiceID|{service ID}|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 엔터티별 속성|이벤트에 의해 정의|StreamName: stream1, Bitrate 10123, …<br/><br/>나머지 속성은 지정된 이벤트 형식에 대해 정의됩니다. Azure 테이블 콘텐츠는 키/값 쌍입니다.  즉, 테이블 행마다 서로 다른 속성 집합을 갖습니다.
@@ -101,7 +101,7 @@ PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab701
 RowKey|RowKey|01688_00199
 타임 스탬프|타임 스탬프|Azure 테이블에서의 자동 타임스탬프 2016-09-09T22:43:42.241Z
 Type|Type|StreamingEndpoint
-name|name|StreamingEndpointRequestLog
+이름|이름|StreamingEndpointRequestLog
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924Z
 ServiceID|서비스 ID|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 HostName|엔드포인트의 호스트 이름|builddemoserver.origin.mediaservices.windows.net
@@ -120,7 +120,7 @@ PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab701
 RowKey|RowKey|01688_00199
 타임 스탬프|타임 스탬프|Azure 테이블에서의 자동 타임스탬프 2016-09-09T22:43:42.241Z
 Type|Type|채널
-name|name|ChannelHeartbeat
+이름|이름|ChannelHeartbeat
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924Z
 ServiceID|서비스 ID|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 TrackType|비디오/오디오/텍스트 트랙 유형|비디오/오디오
@@ -145,7 +145,7 @@ PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab701
 RowKey|RowKey|01688_00199
 타임 스탬프|타임 스탬프|Azure 테이블에서의 자동 타임스탬프 2016-09-09T22:43:42.241Z
 Type|Type|보관
-name|name|ArchiveHeartbeat
+이름|이름|ArchiveHeartbeat
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924Z
 ServiceID|서비스 ID|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 ManifestName|프로그램 URL|asset-eb149703-ed0a-483c-91c4-e4066e72cce3/a0a5cfbf-71ec-4bd2-8c01-a92a2b38c9ba.ism

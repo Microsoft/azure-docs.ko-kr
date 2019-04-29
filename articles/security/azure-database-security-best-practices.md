@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 09/20/2018
 ms.author: tomsh
 ms.openlocfilehash: 3e244f89904ce9aca161ed1ea435f4137e42bc5d
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56117972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60587536"
 ---
 # <a name="azure-database-security-best-practices"></a>Azure 데이터베이스 보안 모범 사례
 보안은 데이터베이스 관리에서 가장 중요하며 항상 [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/)의 최우선 순위였습니다. HIPAA, ISO 27001/27002, PCI DSS 수준 1을 포함한 대부분의 규정 또는 보안 요구 사항을 충족할 수 있도록 데이터베이스를 철저히 보호할 수 있습니다. 보안 규정 준수 인증의 최신 목록은 [Microsoft Azure 보안 센터 사이트](https://azure.microsoft.com/support/trust-center/services/)에서 제공합니다. 또한 규정 요구 사항에 따라 특정 Azure 데이터 센터에 데이터베이스를 배치하도록 선택할 수도 있습니다.
@@ -55,7 +55,7 @@ Azure SQL Database 서비스는 TCP 포트 1433을 통해서만 사용할 수 �
 SQL Database의 방화벽 규칙에 대한 자세한 내용은 [SQL Database 방화벽 규칙](../sql-database/sql-database-firewall-configure.md)을 참조하세요.
 
 > [!Note]
-> IP 규칙 이외에 방화벽도 가상 네트워크 규칙을 관리합니다. 가상 네트워크 규칙은 가상 네트워크 서비스 엔드포인트를 기반으로 합니다. 경우에 따라 가상 네트워크 규칙이 IP 규칙보다 더 좋을 수 있습니다. 자세히 알아보려면 [Azure SQL Database용 가상 네트워크 서비스 엔드포인트 및 규칙](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md)을 참조하세요.
+> IP 규칙 이외에 방화벽도 가상 네트워크 규칙을 관리합니다. 가상 네트워크 규칙은 가상 네트워크 서비스 엔드포인트를 기반으로 합니다. 경우에 따라 가상 네트워크 규칙이 IP 규칙보다 더 좋을 수 있습니다. 자세한 내용은 [Azure SQL Database에 대한 가상 네트워크 서비스 엔드포인트 및 규칙](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md)을 참조하세요.
 
 ## <a name="enable-database-authentication"></a>데이터베이스 인증 사용
 SQL Database는 두 가지 인증 유형, 즉 SQL Server 인증 및 Azure AD 인증을 지원합니다.

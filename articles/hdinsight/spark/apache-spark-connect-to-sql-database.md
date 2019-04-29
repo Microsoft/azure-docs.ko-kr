@@ -1,6 +1,6 @@
 ---
-title: Apache Spark를 사용하여 Azure SQL Database에서 데이터 읽기 및 쓰기
-description: HDInsight Spark 클러스터와 Azure SQL Database 간에 연결을 설정하여 SQL Database에서 데이터를 읽고 쓰고 스트리밍하는 방법을 알아봅니다.
+title: Apache Spark를 사용하여 Azure SQL 데이터베이스에서 데이터 읽기 및 쓰기
+description: HDInsight Spark 클러스터와 Azure SQL 데이터베이스 간에 연결을 설정하여 SQL 데이터베이스에서 데이터를 읽고 쓰고 스트리밍하는 방법을 알아봅니다.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,26 +8,26 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/15/2018
-ms.openlocfilehash: 2b818350c19d1d9ff34bcdac0e438def0f859e40
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 84946083146517146ad9aeb48693230aaaaf7943
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/23/2019
-ms.locfileid: "60327012"
+ms.locfileid: "62124495"
 ---
-# <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>HDInsight Spark 클러스터를 사용하여 Azure SQL Database에서 데이터 읽기 및 쓰기
+# <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>HDInsight Spark 클러스터를 사용하여 Azure SQL 데이터베이스에서 데이터 읽기 및 쓰기
 
-Azure HDInsight의 Apache Spark 클러스터를 Azure SQL Database에 연결한 다음 SQL Database에서 데이터를 읽고 쓰고 스트리밍하는 방법을 알아봅니다. 이 문서의 지침은 [Jupyter Notebook](https://jupyter.org/)을 사용하여 Scala 코드 조각을 실행합니다. 그러나 Scala 또는 Python에 독립 실행형 애플리케이션을 만들고 동일한 작업을 수행할 수 있습니다. 
+Azure HDInsight의 Apache Spark 클러스터를 Azure SQL 데이터베이스에 연결한 다음, SQL 데이터베이스에서 데이터를 읽고 쓰고 스트리밍하는 방법을 알아봅니다. 이 문서의 지침은 [Jupyter Notebook](https://jupyter.org/)을 사용하여 Scala 코드 조각을 실행합니다. 그러나 Scala 또는 Python에 독립 실행형 애플리케이션을 만들고 동일한 작업을 수행할 수 있습니다. 
 
 ## <a name="prerequisites"></a>필수 조건
 
 * **Azure HDInsight Spark 클러스터** -  [HDInsight에서 Apache Spark 클러스터 만들기](apache-spark-jupyter-spark-sql.md)의 지침을 따르세요.
 
-* **Azure SQL Database**. [Azure SQL Database 만들기](../../sql-database/sql-database-get-started-portal.md)의 지침을 따르세요. 샘플 **AdventureWorksLT** 스키마와 데이터를 사용해서 데이터베이스를 만들어야 합니다. 또한 클라이언트의 IP 주소로 서버의 SQL Database에 액세스하도록 허용하기 위한 서버 수준 방화벽 규칙을 만들어야 합니다. 방화벽 규칙을 추가하는 지침은 같은 문서에 제공됩니다. Azure SQL Database를 만든 후에는 다음 값을 준비해 둡니다. Spark 클러스터에서 데이터베이스에 연결할 때 필요합니다.
+* **Azure SQL 데이터베이스**. [Azure SQL 데이터베이스 만들기](../../sql-database/sql-database-get-started-portal.md)의 지침을 따르세요. 샘플 **AdventureWorksLT** 스키마와 데이터를 사용해서 데이터베이스를 만들어야 합니다. 또한 클라이언트의 IP 주소로 서버의 SQL Database에 액세스하도록 허용하기 위한 서버 수준 방화벽 규칙을 만들어야 합니다. 방화벽 규칙을 추가하는 지침은 같은 문서에 제공됩니다. Azure SQL 데이터베이스를 만든 후에는 다음 값을 준비해 둡니다. Spark 클러스터에서 데이터베이스에 연결할 때 필요합니다.
 
-    * Azure SQL Database를 호스트하는 서버 이름.
-    * Azure SQL Database 이름.
-    * Azure SQL Database 관리 사용자 이름/암호.
+    * Azure SQL 데이터베이스를 호스트하는 서버 이름.
+    * Azure SQL 데이터베이스 이름.
+    * Azure SQL 데이터베이스 관리 사용자 이름/암호.
 
 * **SQL Server Management Studio**. [SSMS를 사용하여 데이터 연결 및 쿼리](../../sql-database/sql-database-connect-query-ssms.md)의 지침을 따릅니다.
 
@@ -60,11 +60,11 @@ Azure HDInsight의 Apache Spark 클러스터를 Azure SQL Database에 연결한 
 
 이제 애플리케이션 만들기를 시작할 수 있습니다.
     
-## <a name="read-data-from-azure-sql-database"></a>Azure SQL Database에서 데이터 읽기
+## <a name="read-data-from-azure-sql-database"></a>Azure SQL 데이터베이스에서 데이터 읽기
 
 이 섹션에서는 AdventureWorks 데이터베이스에 존재하는 테이블(예: **SalesLT.Address**)에서 데이터를 읽습니다.
 
-1. 새 Jupyter 노트의 코드 셀에 다음 코드 조각을 붙여 넣고, 자리 표시자 값을 Azure SQL Database에 대한 값으로 바꿉니다.
+1. 새 Jupyter 노트의 코드 셀에 다음 코드 조각을 붙여넣고, 자리 표시자 값을 Azure SQL 데이터베이스에 대한 값으로 바꿉니다.
 
        // Declare the values for your Azure SQL database
 
@@ -85,7 +85,7 @@ Azure HDInsight의 Apache Spark 클러스터를 Azure SQL Database에 연결한 
        connectionProperties.put("user", s"${jdbcUsername}")
        connectionProperties.put("password", s"${jdbcPassword}")         
 
-1. 다음 코드 조각을 사용하여 Azure SQL Database의 테이블에 있는 데이터로 데이터 프레임을 만듭니다. 이 코드 조각에서는 **AdventureWorksLT** 데이터베이스의 일부로 사용할 수 있는 **SalesLT.Address** 테이블을 사용합니다. 이 코드 조각을 코드 셀에 붙여 넣고 **Shift+Enter**를 눌러 실행합니다.
+1. 다음 코드 조각을 사용하여 Azure SQL 데이터베이스의 테이블에 있는 데이터로 데이터 프레임을 만듭니다. 이 코드 조각에서는 **AdventureWorksLT** 데이터베이스의 일부로 사용할 수 있는 **SalesLT.Address** 테이블을 사용합니다. 이 코드 조각을 코드 셀에 붙여 넣고 **Shift+Enter**를 눌러 실행합니다.
 
        val sqlTableDF = spark.read.jdbc(jdbc_url, "SalesLT.Address", connectionProperties)
 
@@ -105,11 +105,11 @@ Azure HDInsight의 Apache Spark 클러스터를 Azure SQL Database에 연결한 
 
        sqlTableDF.select("AddressLine1", "City").show(10)
 
-## <a name="write-data-into-azure-sql-database"></a>Azure SQL Database에 데이터 쓰기
+## <a name="write-data-into-azure-sql-database"></a>Azure SQL 데이터베이스에 데이터 쓰기
 
-이 섹션에서는 클러스터에서 사용할 수 있는 샘플 CSV 파일을 사용하여 Azure SQL Database에서 테이블을 만들고 데이터를 채웁니다. 샘플 CSV 파일(**HVAC.csv**)은 `HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv`의 모든 HDInsight 클러스터에서 사용할 수 있습니다.
+이 섹션에서는 클러스터에서 사용할 수 있는 샘플 CSV 파일을 사용하여 Azure SQL 데이터베이스에서 테이블을 만들고 데이터를 채웁니다. 샘플 CSV 파일(**HVAC.csv**)은 `HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv`의 모든 HDInsight 클러스터에서 사용할 수 있습니다.
 
-1. 새 Jupyter 노트의 코드 셀에 다음 코드 조각을 붙여 넣고, 자리 표시자 값을 Azure SQL Database에 대한 값으로 바꿉니다.
+1. 새 Jupyter 노트의 코드 셀에 다음 코드 조각을 붙여넣고, 자리 표시자 값을 Azure SQL 데이터베이스에 대한 값으로 바꿉니다.
 
        // Declare the values for your Azure SQL database
 
@@ -140,17 +140,17 @@ Azure HDInsight의 Apache Spark 클러스터를 Azure SQL Database에 연결한 
        readDf.createOrReplaceTempView("temphvactable")
        spark.sql("create table hvactable_hive as select * from temphvactable")
 
-1. 마지막으로, hive 테이블을 사용하여 Azure SQL Database에 테이블을 만듭니다. 다음 코드 조각은 Azure SQL Database에 `hvactable`을 만듭니다.
+1. 마지막으로, hive 테이블을 사용하여 Azure SQL 데이터베이스에 테이블을 만듭니다. 다음 코드 조각은 Azure SQL 데이터베이스에 `hvactable`을 만듭니다.
 
        spark.table("hvactable_hive").write.jdbc(jdbc_url, "hvactable", connectionProperties)
 
-1. SSMS를 사용하여 Azure SQL Database에 연결하고 `dbo.hvactable`이 표시되는지 확인합니다.
+1. SSMS를 사용하여 Azure SQL 데이터베이스에 연결하고 `dbo.hvactable`이 표시되는지 확인합니다.
 
-    a. SSMS를 시작한 후 아래 스크린샷에 표시된 것과 같은 연결 세부 정보를 입력하여 Azure SQL Database에 연결합니다.
+    a. SSMS를 시작한 후 아래 스크린샷에 표시된 것과 같은 연결 세부 정보를 입력하여 Azure SQL 데이터베이스에 연결합니다.
 
     ![SSMS를 사용하여 SQL Database에 연결](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms.png "SSMS를 사용하여 SQL Database에 연결")
 
-    b. 개체 탐색기에서 Azure SQL Database 및 테이블 노드를 확장하고 생성된 **dbo.hvactable**을 확인합니다.
+    b. 개체 탐색기에서 Azure SQL 데이터베이스 및 테이블 노드를 확장하고 생성된 **dbo.hvactable**을 확인합니다.
 
     ![SSMS를 사용하여 SQL Database에 연결](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms-locate-table.png "SSMS를 사용하여 SQL Database에 연결")
 
@@ -158,9 +158,9 @@ Azure HDInsight의 Apache Spark 클러스터를 Azure SQL Database에 연결한 
 
         SELECT * from hvactable
 
-## <a name="stream-data-into-azure-sql-database"></a>Azure SQL Database으로 데이터 스트리밍
+## <a name="stream-data-into-azure-sql-database"></a>Azure SQL 데이터베이스로 데이터 스트리밍
 
-이 섹션에서는 이전 섹션에서 Azure SQL Database에 미리 만든 **hvactable**로 데이터를 스트리밍합니다.
+이 섹션에서는 이전 섹션에서 Azure SQL 데이터베이스에 미리 만든 **hvactable**로 데이터를 스트리밍합니다.
 
 1. 첫 번째 단계로, **hvactable**에 레코드가 없는지 확인합니다. SSMS를 사용하여 테이블에 대해 다음 쿼리를 실행합니다.
 
@@ -184,7 +184,7 @@ Azure HDInsight의 Apache Spark 클러스터를 Azure SQL Database에 연결한 
 
     ![테이블의 스키마](./media/apache-spark-connect-to-sql-database/schema-of-table.png "테이블의 스키마")
 
-1. 마지막으로 다음 코드 조각을 사용하여 HVAC.csv에서 데이터를 읽은 후 Azure SQL Database의 **hvactable**로 스트리밍합니다. 이 코드 조각을 코드 셀에 붙여 넣고, 자리 표시자 값을 Azure SQL Database에 대한 값으로 바꾼 다음, **Shift+Enter**를 눌러 실행합니다.
+1. 마지막으로 다음 코드 조각을 사용하여 HVAC.csv에서 데이터를 읽은 후 Azure SQL 데이터베이스의 **hvactable**로 스트리밍합니다. 이 코드 조각을 코드 셀에 붙여 넣고, 자리 표시자 값을 Azure SQL 데이터베이스에 대한 값으로 바꾼 다음, **SHIFT + ENTER**를 눌러 실행합니다.
 
        val WriteToSQLQuery  = readStreamDf.writeStream.foreach(new ForeachWriter[Row] {
           var connection:java.sql.Connection = _

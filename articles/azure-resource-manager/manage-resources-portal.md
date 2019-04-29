@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
 ms.openlocfilehash: 20bf38b87ce29f8506a5611ecd25cf38f6d4ed61
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56824988"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60550703"
 ---
 # <a name="manage-azure-resources-by-using-the-azure-portal"></a>Azure portal을 사용 하 여 Azure 리소스 관리
 
@@ -103,7 +103,7 @@ Azure Resource Manager 리소스의 삭제를 정렬 하는 방법에 대 한 �
 리소스 그룹 및 리소스를 논리적으로 구성 하는 데 도움이 됩니다. 태그를 지정 합니다. 
 
 1. 포털에서 리소스를 엽니다. 단계를 참조 하세요 [리소스를 열려면](#open-resources)합니다.
-2. 선택 **태그**합니다. 다음 스크린샷은 저장소 계정에 대 한 관리 옵션을 보여 줍니다.
+2. **태그**를 선택합니다. 다음 스크린샷은 저장소 계정에 대 한 관리 옵션을 보여 줍니다.
 
     ![azure 태그 리소스](./media/manage-resources-portal/manage-azure-resources-portal-tag-resource.png)
 3. 태그 속성을 지정 하 고 선택한 **저장할**합니다.

@@ -16,11 +16,11 @@ ms.date: 11/10/2017
 ms.author: jennile
 ms.custom: seodec18
 ms.openlocfilehash: a8b256f43d8e4103404ab4276431ceb06d9ed36a
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53730459"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60839438"
 ---
 # <a name="azure-app-service-diagnostics-overview"></a>Azure App Service 진단 개요 
 

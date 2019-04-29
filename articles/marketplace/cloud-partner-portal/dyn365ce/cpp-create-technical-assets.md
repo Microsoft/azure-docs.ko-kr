@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 12/29/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 50c4fd512206cdf17ebb555acb88de2a3f74c2bd
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54082156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61472671"
 ---
 # <a name="create-technical-assets-for-azure-application-offer"></a>Azure 애플리케이션 제안에 대한 기술 자산 만들기
 

@@ -1,15 +1,10 @@
 ---
-author: ecfan
-ms.service: logic-apps
-ms.topic: include
-ms.date: 11/03/2016
-ms.author: estfan
 ms.openlocfilehash: 3f4430631a664f81f53f9df1f46ebc27c635de36
-ms.sourcegitcommit: 5e4ca656baf3c7d370ab3c0fbad0278aa2c9f1e6
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58319693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60860205"
 ---
 ### <a name="prerequisites"></a>필수 조건
 * [Dropbox](https://www.Dropbox.com/) 계정 

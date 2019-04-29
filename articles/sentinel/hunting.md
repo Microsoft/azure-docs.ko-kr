@@ -16,16 +16,16 @@ ms.workload: na
 ms.date: 2/28/2019
 ms.author: rkarlin
 ms.openlocfilehash: adedc8bc1f574ae089f2a11033fab4f390c57a9a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58087027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60714872"
 ---
 # <a name="hunt-for-threats-with-in-azure-sentinel-preview"></a>끊임없이 연구 하 고 Azure Sentinel 미리 보기에서 사용 하 여 위협
 
 > [!IMPORTANT]
-> Azure Sentinel 현재 공개 미리 보기 중입니다.
+> Azure Sentinel은 현재 공개 미리 보기로 제공됩니다.
 > 이 미리 보기 버전은 서비스 수준 계약 없이 제공되며 프로덕션 워크로드에는 사용하지 않는 것이 좋습니다. 특정 기능이 지원되지 않거나 기능이 제한될 수 있습니다. 자세한 내용은 [Microsoft Azure Preview에 대한 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조하세요.
 
 보안 위협에 대 한 확인 하는 방법에 대 한 문제를 예방 해야 하려는 조사 담당자 라면 검색 및 쿼리 도구를 사용 하 여 조직의 데이터 원본에서 보안 위협에 대 한 hunt를 렵 Azure Sentinel 강력 합니다. 하지만 시스템 및 보안 어플라이언스 생성 방대한 데이터를 구문 분석 하 고 의미 있는 이벤트를 필터링 하기 어려울 수 있습니다. 보안을 위해 분석가 검색할 사전에 Azure Sentinel 보안 앱에 검색 되지 않은 새로운 이상 현상을 ' 네트워크에 이미 있는 데이터의 문제를 찾으려면 올바른 질문 하기에 기본 제공 hunting 쿼리 과정을 안내 합니다. 
@@ -143,7 +143,7 @@ Azure Sentinel에서 찾거나 Azure Log Analytics 쿼리 언어를 기반으로
    ![사용자 지정 쿼리](./media/tutorial-hunting/custom-query.png)
 
 ## <a name="next-steps"></a>다음 단계
-이 문서에서는 Azure Sentinel hunting 조사를 실행 하는 방법을 알아보았습니다. Azure에서 감시 하는 방법에 대 한 자세한 내용은 다음 문서를 참조 합니다.
+이 문서에서는 Azure Sentinel hunting 조사를 실행 하는 방법을 알아보았습니다. Azure Sentinel에 대한 자세한 내용은 다음 문서를 참조하세요.
 
 
 - [Notebook을 사용 하 여 자동화 된 hunting 캠페인 실행](notebooks.md)

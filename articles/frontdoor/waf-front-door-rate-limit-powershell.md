@@ -12,11 +12,11 @@ ms.workload: infrastructure-services
 ms.date: 04/16/2019
 ms.author: kumud;tyao
 ms.openlocfilehash: e0ad1e85a4cd47de823bc4f224b5a8834b1068b9
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59685830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61459320"
 ---
 # <a name="configure-a-web-application-firewall-rate-limit-rule-using-azure-powershell"></a>Azure PowerShell을 사용 하 여 웹 응용 프로그램 방화벽 속도 제한 규칙 구성
 Azure 웹 응용 프로그램 방화벽 (WAF) 속도 제한 규칙에 대 한 Azure 프런트 도어 1 분 기간 동안 단일 클라이언트 IP의 허용 된 요청의 수를 제어 합니다.

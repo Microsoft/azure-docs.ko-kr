@@ -14,15 +14,15 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 12/04/2018
 ms.openlocfilehash: 46232afcaf9504d4cfbd80160e2d7e7ea958d600
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53272782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61488189"
 ---
-# <a name="designing-globally-available-services-using-azure-sql-database"></a>Azure SQL Database를 사용하여 전역 사용 가능 서비스 디자인
+# <a name="designing-globally-available-services-using-azure-sql-database"></a>Azure SQL Database를 사용하여 전역적으로 사용 가능 서비스 디자인
 
-Azure SQL Database에서 클라우드 서비스를 빌드하고 배포하는 경우 [활성 지역 복제](sql-database-active-geo-replication.md) 또는 [자동 장애 조치(Failover) 그룹](sql-database-auto-failover-group.md)을 사용하여 지역 오류 및 심각한 서비스 중단에 대한 복원 기능을 제공합니다. 동일한 기능을 사용하여 데이터에 로컬로 액세스하도록 최적화된 전역 분산 응용 프로그램을 만들 수 있습니다. 이 문서에서는 일반적인 응용 프로그램 패턴에 초점을 맞추고 각 옵션의 이점 및 장단점을 설명합니다.
+Azure SQL Database에서 클라우드 서비스를 빌드하고 배포하는 경우 [활성 지역 복제](sql-database-active-geo-replication.md) 또는 [자동 장애 조치(Failover) 그룹](sql-database-auto-failover-group.md)을 사용하여 지역 오류 및 심각한 서비스 중단에 대한 복원 기능을 제공합니다. 동일한 기능을 사용하여 데이터에 로컬로 액세스하도록 최적화된 전역 분산 애플리케이션을 만들 수 있습니다. 이 문서에서는 일반적인 애플리케이션 패턴에 초점을 맞추고 각 옵션의 이점 및 장단점을 설명합니다.
 
 > [!NOTE]
 > 프리미엄 또는 중요 비즈니스용 데이터베이스 및 탄력적 풀을 사용하는 경우, 영역 중복 배포 구성으로 변환하여 지역 중단 시 탄력적으로 복원할 수 있습니다. [영역 중복 데이터베이스](sql-database-high-availability.md)를 참조하세요.  
@@ -74,9 +74,9 @@ Azure SQL Database에서 클라우드 서비스를 빌드하고 배포하는 경
 이 옵션은 다음 특성을 가진 애플리케이션에 가장 적합합니다.
 
 * 어떤 경우든 데이터 손실은 비즈니스에 큰 위험이 됩니다. 치명적인 실패에 의한 가동 중단의 경우 데이터베이스 장애 조치는 최후의 수단으로만 사용할 수 있습니다.
-* 응용 프로그램에서 작업의 읽기 전용 및 읽기-쓰기 모드를 지원하며, 일정 기간 동안 "읽기 전용 모드"에서 작동할 수 있습니다.
+* 애플리케이션에서 작업의 읽기 전용 및 읽기-쓰기 모드를 지원하며, 일정 기간 동안 "읽기 전용 모드"에서 작동할 수 있습니다.
 
-이 패턴에서 읽기-쓰기 연결에 대한 시간 제한 오류가 발생하기 시작하면 애플리케이션이 읽기 전용 모드로 전환됩니다. 웹 애플리케이션은 두 지역 모두에 배포되며, 읽기-쓰기 수신기 엔드포인트에 대한 연결과 읽기 전용 수신기 엔드포인트에 대한 다른 연결을 포함합니다(1). 트래픽 관리자 프로필은 [우선 순위 라우팅](../traffic-manager/traffic-manager-configure-priority-routing-method.md)을 사용해야 합니다. 각 지역의 응용 프로그램 엔드포인트에 대해 [엔드포인트 모니터링](../traffic-manager/traffic-manager-monitoring.md)을 활성화해야 합니다(2).
+이 패턴에서 읽기-쓰기 연결에 대한 시간 제한 오류가 발생하기 시작하면 애플리케이션이 읽기 전용 모드로 전환됩니다. 웹 애플리케이션은 두 지역 모두에 배포되며, 읽기-쓰기 수신기 엔드포인트에 대한 연결과 읽기 전용 수신기 엔드포인트에 대한 다른 연결을 포함합니다(1). 트래픽 관리자 프로필은 [우선 순위 라우팅](../traffic-manager/traffic-manager-configure-priority-routing-method.md)을 사용해야 합니다. 각 지역의 애플리케이션 엔드포인트에 대해 [엔드포인트 모니터링](../traffic-manager/traffic-manager-monitoring.md)을 활성화해야 합니다(2).
 
 다음 다이어그램은 작동 중단 전의 이 구성을 보여 줍니다.
 
@@ -111,7 +111,7 @@ Azure SQL Database에서 클라우드 서비스를 빌드하고 배포하는 경
 * 대부분의 사용자에 대해 동일 지역에서 데이터에 대한 쓰기 액세스를 지원해야 함
 * 최종 사용자 환경에 읽기 대기 시간 중요
 
-이러한 요구 사항에 부합하기 위해, 사용자 디바이스가 **항상** 데이터 탐색, 분석 등 읽기 전용 작업을 위해 동일한 지역에 배포된 응용 프로그램에 연결해야 합니다. 반면 OLTP 작업은 **대부분** 동일한 지역에서 처리됩니다. 예를 들어 일과 중에는 OLTP 작업이 동일한 지역에서 처리되지만 업무 시간 외에는 다른 지역에서 처리될 수 있습니다. 최종 사용자 작업이 대부분 일과 시간 중에 일어난다면 대부분의 시간 동안 대부분의 사용자에게 최적 성능을 보장할 수 있습니다. 다음 다이어그램은 이 토폴로지를 보여 줍니다.
+이러한 요구 사항에 부합하기 위해, 사용자 디바이스가 **항상** 데이터 탐색, 분석 등 읽기 전용 작업을 위해 동일한 지역에 배포된 애플리케이션에 연결해야 합니다. 반면 OLTP 작업은 **대부분** 동일한 지역에서 처리됩니다. 예를 들어 일과 중에는 OLTP 작업이 동일한 지역에서 처리되지만 업무 시간 외에는 다른 지역에서 처리될 수 있습니다. 최종 사용자 작업이 대부분 일과 시간 중에 일어난다면 대부분의 시간 동안 대부분의 사용자에게 최적 성능을 보장할 수 있습니다. 다음 다이어그램은 이 토폴로지를 보여 줍니다.
 
 애플리케이션의 리소스는 사용 요청이 많은 각 지역에 배포되어야 합니다. 예를 들어 애플리케이션이 미국, 유럽 및 동남아에서 활발히 사용된다면 이 지역 모두에 애플리케이션을 배포해야 합니다. 업무 시간이 끝나면 주 데이터베이스가 한 지역에서 다음 지역으로 동적으로 전환됩니다. 이 방법을 "해바라기"라고 합니다. OLTP 워크로드는 항상 읽기-쓰기 수신기 **&lt;failover-group-name&gt;.database.windows.net**를 통해 데이터베이스에 연결합니다(1). 읽기 전용 워크로드는 데이터베이스 서버 엔드포인트 **&lt;server-name&gt;.database.windows.net**를 통해 직접 로컬 데이터베이스에 연결합니다(2). 트래픽 관리자에는 [성능 라우팅 메서드](../traffic-manager/traffic-manager-configure-performance-routing-method.md)가 구성되어 있습니다. 이를 통해 최종 사용자 디바이스는 가장 가까운 지역의 웹 서비스에 연결됩니다. 각각의 웹 서비스와 끝점에 대해 끝점 모니터링이 활성화된 상태로 트래픽 관리자가 설정되어야 합니다(3).
 

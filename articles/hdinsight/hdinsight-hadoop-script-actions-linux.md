@@ -1,27 +1,22 @@
 ---
-title: Linux 기반 HDInsight를 사용하여 스크립트 작업 개발 - Azure
-description: Bash 스크립트를 사용하여 Linux 기반 HDInsight 클러스터를 사용자 지정하는 방법을 알아봅니다. HDInsight의 스크립트 작업 기능을 사용하면 클러스터를 생성하는 동안 또는 생성한 후에 스크립트를 실행할 수 있습니다. 클러스터 구성 설정을 변경하거나 추가 소프트웨어를 설치하는 데 스크립트를 사용할 수 있습니다.
-services: hdinsight
+title: Azure HDInsight 클러스터 사용자 지정 스크립트 작업 개발
+description: Bash 스크립트를 사용 하 여 HDInsight 클러스터 사용자 지정 하는 방법에 알아봅니다. 스크립트 작업을 허용 하는 동안 또는 클러스터 구성 설정을 변경 하거나 추가 소프트웨어를 설치 하려면 클러스터를 만든 후 스크립트를 실행할 수 있습니다.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 02/15/2019
-ms.author: hrasheed
-ms.openlocfilehash: 0d56d901ca932f044ef71ef2bc24933bcf18c24a
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.date: 04/22/2019
+ms.openlocfilehash: 66132a2a6a7b5b89bca0767efe7c194ca3dec051
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59544588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60590791"
 ---
 # <a name="script-action-development-with-hdinsight"></a>HDInsight를 사용하여 스크립트 작업 개발
 
 Bash 스크립트를 사용하여 HDInsight 클러스터를 사용자 지정하는 방법에 대해 알아봅니다. 스크립트 작업은 클러스터를 만드는 동안 또는 만든 후에 HDInsight를 사용자 지정하는 방법입니다.
-
-> [!IMPORTANT]  
-> 이 문서의 단계에는 Linux를 사용하는 HDInsight 클러스터가 필요합니다. Linux는 HDInsight 버전 3.4 이상에서 사용되는 유일한 운영 체제입니다. 자세한 내용은 [Windows에서 HDInsight 사용 중지](hdinsight-component-versioning.md#hdinsight-windows-retirement)를 참조하세요.
 
 ## <a name="what-are-script-actions"></a>스크립트 작업 정의
 
@@ -61,13 +56,28 @@ HDInsight 클러스터용으로 사용자 지정 스크립트를 개발할 때 �
 
 HDInsight의 서로 다른 버전에는 설치된 Hadoop 서비스 및 구성 요소의 서로 다른 버전이 있습니다. 스크립트가 특정 버전의 서비스 또는 구성 요소를 기대하는 경우 필수 구성 요소를 포함하는 HDInsight의 버전으로 스크립트를 사용해야 합니다. [HDInsight 구성 요소 버전 관리](hdinsight-component-versioning.md) 문서를 사용하여 HDInsight가 포함된 구성 요소 버전에 대한 정보를 찾을 수 있습니다.
 
-### <a name="bps10"></a> OS 버전 대상
+### <a name="checking-the-operating-system-version"></a>운영 체제 버전 검사
+
+HDInsight의 다른 버전들은 Ubuntu의 특정 버전에 의존합니다. 스크립트에서 확인해야 하는 OS 버전 간의 차이가 있을 수 있습니다. 예를 들어 Ubuntu의 버전에 연결된 이진 파일을 설치해야 할 수 있습니다.
+
+OS 버전을 확인하려면 `lsb_release`을 사용합니다. 예를 들어, 다음 스크립트에서 OS 버전에 따라 특정 tar 파일을 참조하는 방법을 보여 줍니다.
+
+```bash
+OS_VERSION=$(lsb_release -sr)
+if [[ $OS_VERSION == 14* ]]; then
+    echo "OS version is $OS_VERSION. Using hue-binaries-14-04."
+    HUE_TARFILE=hue-binaries-14-04.tgz
+elif [[ $OS_VERSION == 16* ]]; then
+    echo "OS version is $OS_VERSION. Using hue-binaries-16-04."
+    HUE_TARFILE=hue-binaries-16-04.tgz
+fi
+```
+
+### <a name="bps10"></a> 대상 운영 체제 버전
 
 Linux 기반 HDInsight는 Ubuntu Linux 배포를 기반으로 합니다. HDInsight는 버전이 다르면 다른 버전의 Ubuntu에 의존하는데 이는 스크립트 동작 방식을 변경할 수 있습니다. 예를 들어 HDInsight 3.4 이전 버전은 Upstart를 사용하는 Ubuntu 버전을 기반으로 합니다. 버전 3.5 이상은 Systemd를 사용하는 Ubuntu 16.04를 기반으로 합니다. Systemd 및 Upstart는 다른 명령에 의존하기 때문에 이를 사용하여 작업하기 위해 스크립트가 작성되어야 합니다.
 
-HDInsight 3.4와 3.5 간의 또 다른 중요한 차이는 현재 `JAVA_HOME`이 Java 8을 가리킨다는 것입니다.
-
-`lsb_release`를 사용하여 OS 버전을 확인할 수 있습니다. 다음 코드는 Ubuntu 14 또는 16에서 스크립트가 실행되고 있는지 확인하는 방법을 보여 줍니다.
+HDInsight 3.4와 3.5 간의 또 다른 중요한 차이는 현재 `JAVA_HOME`이 Java 8을 가리킨다는 것입니다. 다음 코드는 Ubuntu 14 또는 16에서 스크립트가 실행되고 있는지 확인하는 방법을 보여 줍니다.
 
 ```bash
 OS_VERSION=$(lsb_release -sr)
@@ -136,10 +146,10 @@ Linux 기반 HDInsight 클러스터는 클러스터 내에서 활성화 되는 �
 
 클러스터에 설치하는 구성 요소에는 Apache HDFS(Hadoop 분산 파일 시스템) 스토리지를 사용하기 위한 기본 구성이 있을 수 있습니다. HDInsight는 Azure Storage 또는 Data Lake Storage를 기본 스토리지로 사용합니다. 클러스터가 삭제되는 경우에도 데이터가 지속되는 HDFS 호환 가능 파일 시스템을 제공합니다. 설치하는 구성 요소가 HDFS 대신 WASB 또는 ADL을 사용하도록 구성해야 할 수 있습니다.
 
-대부분의 작업의 경우 파일 시스템을 지정할 필요가 없습니다. 예를 들어 다음은 giraph-examples.jar 파일을 로컬 파일 시스템에서 클러스터 저장소로 복사합니다.
+대부분의 작업의 경우 파일 시스템을 지정할 필요가 없습니다. 예를 들어 다음 복사 hadoop common.jar 파일을 로컬 파일 시스템에서 클러스터 저장소에:
 
 ```bash
-hdfs dfs -put /usr/hdp/current/giraph/giraph-examples.jar /example/jars/
+hdfs dfs -put /usr/hdp/current/hadoop-client/hadoop-common.jar /example/jars/
 ```
 
 이 예제에서 `hdfs` 명령은 기본 클러스터 저장소를 투명하게 사용합니다. 일부 작업의 경우 URI를 지정해야 할 수도 있습니다. 예를 들어 Azure Data Lake Storage Gen1은 `adl:///example/jars`, Data Lake Storage Gen2는 `abfs:///example/jars`, Azure Storage는 `wasb:///example/jars`입니다.
@@ -289,23 +299,6 @@ Azure Storage 계정 또는 Azure Data Lake Storage에서 파일을 저장하면
 
 > [!NOTE]  
 > 스크립트를 참조하는 데 사용되는 URI 형식은 사용 중인 서비스에 따라 다릅니다. HDInsight 클러스터와 연결된 저장소 계정의 경우 `wasb://` 또는 `wasbs://`를 사용합니다. 공개적으로 읽을 수 있는 URI의 경우 `http://` 또는 `https://`를 사용합니다. Data Lake Storage의 경우 `adl://`을 사용합니다.
-
-### <a name="checking-the-operating-system-version"></a>운영 체제 버전 검사
-
-HDInsight의 다른 버전들은 Ubuntu의 특정 버전에 의존합니다. 스크립트에서 확인해야 하는 OS 버전 간의 차이가 있을 수 있습니다. 예를 들어 Ubuntu의 버전에 연결된 이진 파일을 설치해야 할 수 있습니다.
-
-OS 버전을 확인하려면 `lsb_release`을 사용합니다. 예를 들어, 다음 스크립트에서 OS 버전에 따라 특정 tar 파일을 참조하는 방법을 보여 줍니다.
-
-```bash
-OS_VERSION=$(lsb_release -sr)
-if [[ $OS_VERSION == 14* ]]; then
-    echo "OS version is $OS_VERSION. Using hue-binaries-14-04."
-    HUE_TARFILE=hue-binaries-14-04.tgz
-elif [[ $OS_VERSION == 16* ]]; then
-    echo "OS version is $OS_VERSION. Using hue-binaries-16-04."
-    HUE_TARFILE=hue-binaries-16-04.tgz
-fi
-```
 
 ## <a name="deployScript"></a>스크립트 작업 배포를 위한 검사 목록
 

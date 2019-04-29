@@ -7,11 +7,11 @@ ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 04/05/2019
 ms.openlocfilehash: a6f2cf1dcee6a85376c8d767e57c504b6b246e5d
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60011387"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60580462"
 ---
 # <a name="azure-data-catalog-terminology"></a>Azure 데이터 카탈로그 용어
 
@@ -86,4 +86,4 @@ Azure 데이터 카탈로그에서 모든 사용자가 등록된 데이터 자�
 
 ## <a name="next-steps"></a>다음 단계
 
-[빠른 시작: Azure 데이터 카탈로그를 만들려면](data-catalog-get-started.md) 
+[빠른 시작: Azure Data Catalog 만들기](data-catalog-get-started.md) 

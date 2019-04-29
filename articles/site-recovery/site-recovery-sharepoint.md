@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: sutalasi
 ms.openlocfilehash: 5f477cf20b817d7a6c8be856636bf1e3755b5424
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57443490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61472114"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-sharepoint-application-for-disaster-recovery-using-azure-site-recovery"></a>Azure Site Recovery를 사용하여 다중 계층 SharePoint 애플리케이션에 대한 재해 복구 설정
 
@@ -83,7 +83,7 @@ SharePoint은 계층된 토폴로지 및 서버 역할을 사용하여 한 개 �
 
 [이 지침](site-recovery-vmware-to-azure.md)에 따라 가상 머신을 Azure로 복제합니다.
 
-* 복제가 완료되면 각 계층의 각 가상 머신으로 이동하여 ‘복제된 항목 &gt; 설정 &gt; 속성 &gt; Compute 및 네트워크’에서 동일한 가용성 집합을 선택했는지 확인합니다. 예를 들어 웹 계층에 VM이 3개 있는 경우 VM 3개가 모두 Azure의 동일한 가용성 집합에 속해 있도록 구성되었는지 확인합니다.
+* 복제가 완료되면 각 계층의 각 가상 머신으로 이동하여 '복제된 항목 &gt; 설정 &gt; 속성 &gt; Compute 및 네트워크'에서 동일한 가용성 집합을 선택했는지 확인합니다. 예를 들어 웹 계층에 VM이 3개 있는 경우 VM 3개가 모두 Azure의 동일한 가용성 집합에 속해 있도록 구성되었는지 확인합니다.
 
     ![가용성 집합 설정](./media/site-recovery-sharepoint/select-av-set.png)
 

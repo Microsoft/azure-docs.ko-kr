@@ -4,20 +4,21 @@ titlesuffix: Azure Virtual Network
 description: Microsoft Azure Virtual Network에 대해 자주 묻는 질문에 답변합니다.
 services: virtual-network
 documentationcenter: na
-author: jimdial
+author: KumudD
+manager: twooley
 ms.service: virtual-network
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/12/2019
-ms.author: jdial
+ms.author: kumud
 ms.openlocfilehash: 19fdf2e7e1c7c56b6bfe8ddbf7329d3722f4e8de
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58188614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60713612"
 ---
 # <a name="azure-virtual-network-frequently-asked-questions-faq"></a>Azure Virtual Network FAQ(질문과 대답)
 
@@ -194,7 +195,7 @@ Azure에서 제공하는 DNS를 사용한 테넌트 간 이름 확인에 대한 
 
 ### <a name="which-azure-paas-resources-can-i-restrict-access-to-from-a-vnet"></a>VNet에 대한 액세스를 제한할 수 있는 Azure PaaS 리소스는 무엇입니까?
 
-일부 Azure PaaS 서비스(예: Azure Storage 및 Azure SQL Database)를 통해 배포된 리소스는 가상 네트워크 서비스 엔드포인트를 사용하여 VNet의 리소스만으로 네트워크 액세스를 제한할 수 있습니다. 자세한 내용은 [상 네트워크 서비스 엔드포인트 개요](virtual-network-service-endpoints-overview.md)를 참조하세요.
+일부 Azure PaaS 서비스(예: Azure Storage 및 Azure SQL Database)를 통해 배포된 리소스는 가상 네트워크 서비스 엔드포인트를 사용하여 VNet의 리소스만으로 네트워크 액세스를 제한할 수 있습니다. 자세한 내용은 [가상 네트워크 서비스 엔드포인트 개요](virtual-network-service-endpoints-overview.md)를 참조하세요.
 
 ### <a name="can-i-move-my-services-in-and-out-of-vnets"></a>서비스를 VNet 내부 및 외부로 이동할 수 있습니까?
 아니요. 서비스를 VNet 내부 및 외부로 이동할 수 없습니다. 리소스를 다른 VNet으로 옮기려면 리소스를 삭제하고 다시 배포해야 합니다.

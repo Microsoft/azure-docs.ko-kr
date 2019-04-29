@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: c99f4491af8fe3e5f0f0ed7a264995ae3ec5911f
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55658269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60749447"
 ---
 # <a name="amqp-10-in-azure-service-bus-and-event-hubs-protocol-guide"></a>Azure Service Bus 및 Event Hubs 프로토콜 가이드의 AMQP 1.0
 
@@ -361,9 +361,9 @@ CBS는 *$cbs*라는 가상 관리 노드가 메시징 인프라에 의해 제공
 
 | 키 | 옵션 | 값 형식 | 값 내용 |
 | --- | --- | --- | --- |
-| operation |아니요 |string |**put-token** |
-| 형식 |아니요 |string |배치되는 토큰의 형식입니다. |
-| 이름 |아니요 |string |토큰이 적용되는 "대상"입니다. |
+| operation |아닙니다. |문자열 |**put-token** |
+| 형식 |아닙니다. |문자열 |배치되는 토큰의 형식입니다. |
+| 이름 |아닙니다. |문자열 |토큰이 적용되는 "대상"입니다. |
 | expiration |예 |timestamp |토큰의 만료 시간입니다. |
 
 *name* 속성은 토큰이 연결되어야 하는 엔터티를 식별합니다. Service Bus에서 큐 또는 토픽/구독에 대한 경로에 해당합니다. *type* 속성은 토큰 형식을 식별합니다.
@@ -380,8 +380,8 @@ CBS는 *$cbs*라는 가상 관리 노드가 메시징 인프라에 의해 제공
 
 | 키 | 옵션 | 값 형식 | 값 내용 |
 | --- | --- | --- | --- |
-| status-code |아니요 |int |HTTP 응답 코드 **[RFC2616]** |
-| status-description |예 |string |상태에 대한 설명입니다. |
+| status-code |아닙니다. |int |HTTP 응답 코드 **[RFC2616]** |
+| status-description |예 |문자열 |상태에 대한 설명입니다. |
 
 클라이언트는 메시징 인프라의 모든 엔터티에 대해 반복적으로 *put-token*을 호출할 수 있습니다. 토큰은 현재 클라이언트로 범위가 지정되며 현재 연결에 고정됩니다. 즉, 연결이 삭제되면 서버는 보유된 토큰을 모두 삭제합니다.
 

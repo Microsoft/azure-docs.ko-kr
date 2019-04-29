@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
 ms.openlocfilehash: 535ba0049e91e09de3d1dcf05fc8ede80ef403ef
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58088063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60672109"
 ---
 # <a name="contoso-migration-rehost-an-on-premises-app-on-azure-vms-and-sql-server-alwayson-availability-group"></a>Contoso 마이그레이션: 온-프레미스 앱을 Azure VM 및 SQL Server AlwaysOn 가용성 그룹에 다시 호스트
 
@@ -355,7 +355,7 @@ Contoso 관리자는 다음과 같이 설정합니다.
 
 3. 네트워크 및 저장소 계정이 준비되면 이제 Recovery Services 자격 증명 모음(**ContosoMigrationVault**)을 만들어 주 지역인 미국 동부 2의 **ContosoFailoverRG** 리소스 그룹에 배치합니다.
 
-    ![복구 서비스 자격 증명 모음](media/contoso-migration-rehost-vm-sql-ag/asr-vault.png)
+    ![Recovery Services 자격 증명 모음](media/contoso-migration-rehost-vm-sql-ag/asr-vault.png)
 
 **도움이 더 필요하세요?**
 
@@ -607,7 +607,7 @@ SQL 배포를 설정하는 마지막 단계로, Contoso 관리자는 내부 부�
 ![클러스터 수신기](media/contoso-migration-rehost-vm-sql-ag/cluster-listener.png)
 
 
-### <a name="verify-the-configuration"></a>구성되어 있는지 확인
+### <a name="verify-the-configuration"></a>구성 확인
 
 Contoso가 모든 설정을 완료하면 마이그레이션된 데이터베이스를 사용하는 기능 가용성 그룹이 Azure에 생성됩니다. 관리자는 SQL Management Studio에서 내부 부하 분산 장치에 연결하여 이를 확인합니다.
 
@@ -646,7 +646,7 @@ Contoso 관리자는 빠른 테스트 장애 조치를 실행한 다음, VM을 �
 
 2. 계획에 대해 장애 조치(failover)를 실행합니다. 최근 복구 지점을 선택하고 Site Recovery에서 장애 조치를 트리거하기 전에 온-프레미스 VM을 종료하도록 지정합니다.
 
-    ![페일오버](./media/contoso-migration-rehost-vm-sql-ag/failover1.png)
+    ![장애 조치(failover)](./media/contoso-migration-rehost-vm-sql-ag/failover1.png)
 
 3. 장애 조치(failover) 후 Azure Portal에 예상대로 Azure VM이 표시되는지 확인합니다.
 
@@ -654,7 +654,7 @@ Contoso 관리자는 빠른 테스트 장애 조치를 실행한 다음, VM을 �
 
 6. Azure에서 VM이 확인되면 마이그레이션을 완료하여 마이그레이션 프로세스를 마치고, VM에 대한 복제를 중지하고, VM에 대한 Site Recovery 청구를 중지합니다.
 
-    ![페일오버](./media/contoso-migration-rehost-vm-sql-ag/failover3.png)
+    ![장애 조치(failover)](./media/contoso-migration-rehost-vm-sql-ag/failover3.png)
 
 ### <a name="update-the-connection-string"></a>연결 문자열 업데이트
 
@@ -662,7 +662,7 @@ Contoso 관리자는 빠른 테스트 장애 조치를 실행한 다음, VM을 �
 
 1. C:\inetpub\SmartHotelWeb\web.config에서 파일을 찾습니다.  AOG FQDN(shaog.contoso.com)을 반영하도록 서버의 이름을 변경합니다.
 
-    ![페일오버](./media/contoso-migration-rehost-vm-sql-ag/failover4.png)  
+    ![장애 조치(failover)](./media/contoso-migration-rehost-vm-sql-ag/failover4.png)  
 
 2. 파일이 업데이트되고 저장되면 WEBVM에서 IIS를 다시 시작합니다. 이 작업은 cmd 프롬프트에서 IISRESET/RESTART를 사용하여 수행합니다.
 2. IIS를 다시 시작한 후에는 애플리케이션이 SQL MI에서 실행되는 데이터베이스를 사용합니다.

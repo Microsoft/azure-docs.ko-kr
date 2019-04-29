@@ -1,6 +1,6 @@
 ---
 title: SSL 오프로드 구성 - Azure Application Gateway - PowerShell 클래식 | Microsoft Docs
-description: 이 문서에서는 Azure 클래식 배포 모델을 사용하여 SSL 오프로드와 함께 응용 프로그램 게이트웨이를 만드는 지침을 제공합니다.
+description: 이 문서에서는 Azure 클래식 배포 모델을 사용하여 SSL 오프로드와 함께 애플리케이션 게이트웨이를 만드는 지침을 제공합니다.
 documentationcenter: na
 services: application-gateway
 author: vhorne
@@ -15,13 +15,13 @@ ms.workload: infrastructure-services
 ms.date: 01/23/2017
 ms.author: victorh
 ms.openlocfilehash: 89a88d79b6b93a233dbd4f335d0eb449e49d5289
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53001772"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122203"
 ---
-# <a name="configure-an-application-gateway-for-ssl-offload-by-using-the-classic-deployment-model"></a>클래식 배포 모델을 사용하여 SSL 오프로드에 대한 응용 프로그램 게이트웨이 구성
+# <a name="configure-an-application-gateway-for-ssl-offload-by-using-the-classic-deployment-model"></a>클래식 배포 모델을 사용하여 SSL 오프로드에 대한 애플리케이션 게이트웨이 구성
 
 > [!div class="op_single_selector"]
 > * [Azure Portal](application-gateway-ssl-portal.md)
@@ -29,24 +29,24 @@ ms.locfileid: "53001772"
 > * [Azure 클래식 PowerShell](application-gateway-ssl.md)
 > * [Azure CLI](application-gateway-ssl-cli.md)
 
-Azure Application Gateway 구성을 사용하여 웹 팜에서 발생하는 비용이 많이 드는 SSL(Secure Sockets Layer) 암호 해독 작업을 방지하기 위한 게이트웨이에서 SSL 세션을 종료합니다. SSL 오프로드는 또한 프런트 엔드 서버 설치 및 웹 응용 프로그램의 관리를 간소화합니다.
+Azure Application Gateway 구성을 사용하여 웹 팜에서 발생하는 비용이 많이 드는 SSL(Secure Sockets Layer) 암호 해독 작업을 방지하기 위한 게이트웨이에서 SSL 세션을 종료합니다. SSL 오프로드는 또한 프런트 엔드 서버 설치 및 웹 애플리케이션의 관리를 간소화합니다.
 
 ## <a name="before-you-begin"></a>시작하기 전에
 
 1. 웹 플랫폼 설치 관리자를 사용하여 Azure PowerShell cmdlet의 최신 버전을 설치합니다. **다운로드 페이지** 의 [Windows PowerShell](https://azure.microsoft.com/downloads/)섹션에서 최신 버전을 다운로드하여 설치할 수 있습니다.
-2. 유효한 서브넷과 작업 가상 네트워크가 있는지 확인합니다. 서브넷을 사용 중인 가상 머신 또는 클라우드 배포가 없는지 확인합니다. 응용 프로그램 게이트웨이는 가상 네트워크 서브넷에서 단독이어야 합니다.
-3. 응용 프로그램 게이트웨이를 사용하도록 구성된 서버가 존재하거나 가상 네트워크나 공용 IP 주소 또는 VIP(가상 IP 주소)가 할당된 해당 엔드포인트가 만들어져야 합니다.
+2. 유효한 서브넷과 작업 가상 네트워크가 있는지 확인합니다. 서브넷을 사용 중인 가상 머신 또는 클라우드 배포가 없는지 확인합니다. 애플리케이션 게이트웨이는 가상 네트워크 서브넷에서 단독이어야 합니다.
+3. 애플리케이션 게이트웨이를 사용하도록 구성된 서버가 존재하거나 가상 네트워크나 공용 IP 주소 또는 VIP(가상 IP 주소)가 할당된 해당 엔드포인트가 만들어져야 합니다.
 
-응용 프로그램 게이트웨이에서 SSL 오프로드를 구성하려면 다음 단계를 나열된 순서대로 완료합니다.
+애플리케이션 게이트웨이에서 SSL 오프로드를 구성하려면 다음 단계를 나열된 순서대로 완료합니다.
 
-1. [응용 프로그램 게이트웨이 만들기](#create-an-application-gateway)
+1. [애플리케이션 게이트웨이 만들기](#create-an-application-gateway)
 2. [SSL 인증서를 업로드 합니다.](#upload-ssl-certificates)
 3. [게이트웨이 구성](#configure-the-gateway)
 4. [게이트웨이 구성 설정](#set-the-gateway-configuration)
 5. [게이트웨이 시작](#start-the-gateway)
 6. [게이트웨이 상태를 확인합니다.](#verify-the-gateway-status)
 
-## <a name="create-an-application-gateway"></a>응용 프로그램 게이트웨이 만들기
+## <a name="create-an-application-gateway"></a>애플리케이션 게이트웨이 만들기
 
 게이트웨이를 생성하려면 `New-AzureApplicationGateway` cmdlet을 입력하여 해당 값을 원하는 값으로 바꿉니다. 게이트웨이에 대한 청구는 이 시점에서 시작되지 않습니다. 게이트웨이가 성공적으로 작동되면, 요금청구가 시작됩니다.
 
@@ -64,7 +64,7 @@ Get-AzureApplicationGateway AppGwTest
 
 ## <a name="upload-ssl-certificates"></a>SSL 인증서를 업로드 합니다.
 
-`Add-AzureApplicationGatewaySslCertificate`를 입력하여 응용 프로그램 게이트웨이에 PFX 형식의 서버 인증서를 업로드합니다. 인증서 이름은 사용자가 선택해야 하고 응용 프로그램 게이트웨이 내에서 고유해야 합니다. 이 인증서는 응용 프로그램 게이트웨이에 대한 모든 인증서 관리작업에 이름이 참조됩니다.
+`Add-AzureApplicationGatewaySslCertificate`을 입력하여 애플리케이션 게이트웨이에 PFX 형식의 서버 인증서를 업로드합니다. 인증서 이름은 사용자가 선택해야 하고 애플리케이션 게이트웨이 내에서 고유해야 합니다. 이 인증서는 애플리케이션 게이트웨이에 대한 모든 인증서 관리작업에 이름이 참조됩니다.
 
 다음 샘플은 cmdlet을 보여 줍니다. 사용자 고유의 값으로 샘플의 값을 대체합니다.
 
@@ -95,7 +95,7 @@ State..........: Provisioned
 
 ## <a name="configure-the-gateway"></a>게이트웨이 구성
 
-응용 프로그램 게이트웨이는 여러 값으로 구성됩니다. 값은 연결되어 구성을 만듭니다.
+애플리케이션 게이트웨이는 여러 값으로 구성됩니다. 값은 연결되어 구성을 만듭니다.
 
 값은 다음과 같습니다.
 
@@ -164,7 +164,7 @@ SSL 인증서 구성에서 **HttpListener** 의 프로토콜은 **Https** (대/�
 
 ## <a name="set-the-gateway-configuration"></a>게이트웨이 구성 설정
 
-다음으로 응용 프로그램 게이트웨이를 설정합니다. `Set-AzureApplicationGatewayConfig` cmdlet을 구성 개체 또는 구성 XML 파일과 함께 입력할 수 있습니다.
+다음으로 애플리케이션 게이트웨이를 설정합니다. `Set-AzureApplicationGatewayConfig` cmdlet을 구성 개체 또는 구성 XML 파일과 함께 입력할 수 있습니다.
 
 ```powershell
 Set-AzureApplicationGatewayConfig -Name AppGwTest -ConfigFile D:\config.xml
@@ -172,7 +172,7 @@ Set-AzureApplicationGatewayConfig -Name AppGwTest -ConfigFile D:\config.xml
 
 ## <a name="start-the-gateway"></a>게이트웨이 시작
 
-게이트웨이가 구성된 후 `Start-AzureApplicationGateway` cmdlet을 입력하여 게이트웨이를 시작합니다. 응용 프로그램 게이트웨이에 대한 청구는 게이트웨이가 성공적으로 작동된 후 시작합니다.
+게이트웨이가 구성된 후 `Start-AzureApplicationGateway` cmdlet을 입력하여 게이트웨이를 시작합니다. 애플리케이션 게이트웨이에 대한 청구는 게이트웨이가 성공적으로 작동된 후 시작합니다.
 
 > [!NOTE]
 > `Start-AzureApplicationGateway` cmdlet은 완료하는 데 15-20분 정도가 걸릴 수 있습니다.
@@ -187,7 +187,7 @@ Start-AzureApplicationGateway AppGwTest
 
 `Get-AzureApplicationGateway` cmdlet을 입력하여 게이트웨이의 상태를 확인합니다. `Start-AzureApplicationGateway`가 이전 단계에서 성공한 경우 **상태**가 **실행 중**이어야 하고, **VirtualIP**와 **DnsName**에 유효한 항목이 있어야 합니다.
 
-이 샘플에서는 응용 프로그램 게이트웨이가 시작, 실행 그리고 트래픽을 받을 준비가 된 것을 보여 줍니다.
+이 샘플에서는 애플리케이션 게이트웨이가 시작, 실행 그리고 트래픽을 받을 준비가 된 것을 보여줍니다.
 
 ```powershell
 Get-AzureApplicationGateway AppGwTest

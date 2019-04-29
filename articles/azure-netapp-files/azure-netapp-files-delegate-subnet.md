@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/13/2018
+ms.date: 03/25/2019
 ms.author: b-juche
-ms.openlocfilehash: 1cac267be026d0e472db9a7a321f5fff6ab3e917
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
-ms.translationtype: MT
+ms.openlocfilehash: fd8e380ad68b86b9ffd0f1e40efde8bdadfb19c5
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58434775"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63763299"
 ---
 # <a name="delegate-a-subnet-to-azure-netapp-files"></a>Azure NetApp Files에 서브넷 위임 
 
@@ -30,7 +30,7 @@ Azure NetApp Files에 서브넷을 위임해야 합니다.   볼륨을 만들 �
 * 각 Azure Vnet(Virtual Network)에서 하나의 서브넷만 Azure NetApp Files에 위임할 수 있습니다.
 * 위임된 서브넷에서 네트워크 보안 그룹 또는 서비스 엔드포인트를 지정할 수 없습니다. 이렇게 하면 서브넷 위임이 실패합니다.
 * 볼륨에 액세스 하는 전역적으로 피어 링 된 가상 네트워크에서 현재 지원 되지 않습니다.
-* 만드는 [사용자 정의 사용자 지정 경로](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview#custom-routes) 주소를 사용 하 여 VM 서브넷에 Azure NetApp 파일에 위임 하는 서브넷 접두사 (대상)은 지원 되지 않으며 VM 연결에 영향을 줍니다.
+* 만드는 [사용자 정의 사용자 지정 경로](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview#custom-routes) 지원 되지 않습니다 (대상) 접두사 Azure NetApp 파일에 위임 된 서브넷에 주소를 사용 하 여 VM 서브넷에 있습니다. 이렇게 하면 VM 연결 영향을 줍니다.
 
 ## <a name="steps"></a>단계 
 1.  Azure Portal에서 **가상 네트워크** 블레이드로 이동하여 Azure NetApp Files에 사용할 가상 네트워크를 선택합니다.    

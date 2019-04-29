@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: 319f9cba23d088553f361b6a0d648bbde94e0743
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
-ms.translationtype: HT
+ms.openlocfilehash: be3c31951c4721a861f9239c5220419dec11b6bf
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38968564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60799140"
 ---
 # <a name="extending-geojson-geometries"></a>GeoJSON 기하 도형 확장
 
@@ -30,7 +30,7 @@ Azure Maps에는 지리적 특징의 안팎을 검색할 수 있는 강력한 AP
 * Point
 * Polygon
 
-일부 Azure Maps API(예: [Search Inside Geometry](https://docs.microsoft.com/rest/api/maps/search/postsearchinsidegeometry))는 [GeoJSON 사양][1]에 속하지 않는 "Circle"과 같은 기하 도형을 허용합니다.
+일부 Azure Maps Api (예: [검색 내에서 기 하 도형](https://docs.microsoft.com/rest/api/maps/search/postsearchinsidegeometry)) 허용 되지 않는 "Circle" 같은 기 하 도형 부분 합니다 [GeoJSON 사양][1]합니다.
 
 이 문서에서는 Azure Maps가 [GeoJSON 사양][1]을 확장하여 특정 기하 도형을 나타내는 방법에 대한 자세한 설명을 제공합니다.
 
@@ -52,7 +52,7 @@ Azure Maps에는 지리적 특징의 안팎을 검색할 수 있는 강력한 AP
 
 #### <a name="example"></a>예
 
-다음은 `GeoJSON Feature` 개체를 사용하여 반지름이 100미터이면서 위도: 47.639754, 경도: -122.126986에 중심을 둔 원을 나타내는 방법입니다.
+가운데에 원을 나타내는 것 방법을 다음과 같습니다 (위도: 47.639754, 경도:-122.126986) 100 미터를 사용 하 여 같음 반지름을 `GeoJSON Feature` 개체:
 
 ```json            
 {

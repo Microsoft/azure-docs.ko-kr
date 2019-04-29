@@ -2,7 +2,6 @@
 title: Azure HDInsight에서 Apache Zeppelin을 사용하여 Apache Hive 쿼리 실행
 description: Apache Zeppelin을 사용하여 Apache Hive 쿼리를 실행하는 방법을 알아봅니다.
 keywords: hdinsight,hadoop,hive,대화형 쿼리,LLAP
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -10,12 +9,12 @@ ms.custom: hdinsightactive,
 ms.topic: conceptual
 ms.date: 11/05/2018
 ms.author: hrasheed
-ms.openlocfilehash: 035e70eef88d5d5dae08c329017430db25c20464
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
-ms.translationtype: HT
+ms.openlocfilehash: 417e9f8ae78889374983bf77900ee00fa7fc6338
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52494836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62098763"
 ---
 # <a name="use-apache-zeppelin-to-run-apache-hive-queries-in-azure-hdinsight"></a>Azure HDInsight에서 Apache Zeppelin을 사용하여 Apache Hive 쿼리 실행 
 

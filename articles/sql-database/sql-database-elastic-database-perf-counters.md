@@ -13,11 +13,11 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 02/07/2019
 ms.openlocfilehash: 5c6c923c86ea0c5968079188c87ec3988ec30142
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59494921"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61475697"
 ---
 # <a name="create-performance-counters-to-track-performance-of-shard-map-manager"></a>분할 된 데이터베이스 맵 관리자의 성과 추적 하는 성능 카운터 만들기
 

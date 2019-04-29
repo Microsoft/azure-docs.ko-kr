@@ -12,11 +12,11 @@ ms.date: 04/04/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: f4a0cba18f27c9cabfc03d1934469e6899c5cd18
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59010416"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60564785"
 ---
 # <a name="monitor-resource-consumption-and-query-activity-in-azure-search"></a>Azure Search에서 리소스 사용량 및 쿼리 작업 모니터링
 
@@ -109,41 +109,41 @@ resourceId=/subscriptions/<subscriptionID>/resourcegroups/<resourceGroupName>/pr
 ## <a name="log-schema"></a>로그 스키마
 검색 서비스 트래픽 로그가 포함된 Blob은 이 섹션에서 설명한 대로 구성됩니다. 각 Blob에는 로그 개체의 배열이 포함된 **records**라는 하나의 루트 개체가 있습니다. 각 Blob에는 동일한 시간 동안 발생한 모든 작업에 대한 레코드가 포함됩니다.
 
-| name | Type | 예 | 메모 |
+| 이름 | Type | 예 | 메모 |
 | --- | --- | --- | --- |
-| 실시간 |Datetime |"2018-12-07T00:00:43.6872559Z" |작업 타임스탬프 |
-| ResourceId |문자열 |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/>  MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |ResourceId |
+| time |Datetime |"2018-12-07T00:00:43.6872559Z" |작업 타임스탬프 |
+| resourceId |문자열 |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/>  MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |ResourceId |
 | operationName |문자열 |"Query.Search" |작업 이름 |
 | operationVersion |문자열 |"2017-11-11" |사용된 api-version |
-| 카테고리 |문자열 |"OperationLogs" |constant |
+| category |문자열 |"OperationLogs" |constant |
 | resultType |문자열 |"Success" |가능한 값은 다음과 같습니다. Success 또는 Failure |
-| resultSignature |ssNoversion |200 |HTTP 결과 코드 |
-| durationMS |ssNoversion |50 |밀리초 단위의 작업 기간 |
+| resultSignature |int |200 |HTTP 결과 코드 |
+| durationMS |int |50 |밀리초 단위의 작업 기간 |
 | properties |object |다음 테이블 참조 |데이터별 작업을 포함하는 개체 |
 
 **속성 스키마**
 
-| name | Type | 예 | 메모 |
+| 이름 | Type | 예 | 메모 |
 | --- | --- | --- | --- |
 | 설명 |문자열 |"GET /indexes('content')/docs" |작업의 엔드포인트 |
 | 쿼리 |문자열 |"?search=AzureSearch&$count=true&api-version=2017-11-11" |쿼리 매개 변수 |
-| 문서 |ssNoversion |42 |처리된 문서 수 |
+| 문서 |int |42 |처리된 문서 수 |
 | IndexName |문자열 |"testindex" |작업과 연결된 인덱스의 이름 |
 
 ## <a name="metrics-schema"></a>메트릭 스키마
 
 쿼리 요청에 대한 메트릭이 캡처됩니다.
 
-| name | Type | 예 | 메모 |
+| 이름 | Type | 예 | 메모 |
 | --- | --- | --- | --- |
-| ResourceId |문자열 |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/> MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |리소스 ID |
+| resourceId |문자열 |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/> MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |리소스 ID |
 | metricName |문자열 |"Latency" |메트릭 이름 |
 | 실시간 |Datetime |"2018-12-07T00:00:43.6872559Z" |작업의 타임스탬프 |
-| average |ssNoversion |64 |메트릭 시간 간격에 원시 샘플의 평균 값 |
-| minimum |ssNoversion |37 |메트릭 시간 간격에 원시 샘플의 최소 값 |
-| maximum |ssNoversion |78 |메트릭 시간 간격에 원시 샘플의 최대 값 |
-| total |ssNoversion |258 |메트릭 시간 간격에 원시 샘플의 총 값 |
-| count |ssNoversion |4 |메트릭을 생성하는 데 사용되는 원시 샘플 수 |
+| average |int |64 |메트릭 시간 간격에 원시 샘플의 평균 값 |
+| minimum |int |37 |메트릭 시간 간격에 원시 샘플의 최소 값 |
+| maximum |int |78 |메트릭 시간 간격에 원시 샘플의 최대 값 |
+| total |int |258 |메트릭 시간 간격에 원시 샘플의 총 값 |
+| count |int |4 |메트릭을 생성하는 데 사용되는 원시 샘플 수 |
 | timegrain |문자열 |"PT1M" |ISO 8601에서 메트릭의 시간 조직 |
 
 모든 메트릭은 1 분 간격으로 보고됩니다. 각 메트릭은 분당 최소, 최대 및 평균 값을 표시합니다.

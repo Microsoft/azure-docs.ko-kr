@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 02/01/2016
 ms.author: cynthn
 ms.openlocfilehash: 76f1ddeebb173bf19b15753d12e4374e6365bf8f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57998996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61474230"
 ---
 # <a name="install-and-configure-postgresql-on-azure"></a>Azure에서 PostgreSQL 설치 및 구성
 PostgreSQL은 Oracle 및 DB2와 유사한 고급 오픈 소스 데이터베이스입니다. 전체 ACID 규정 준수, 신뢰할 수 있는 트랜잭션 처리 및 다중 버전 동시성 제어와 같은 엔터프라이즈 기능이 포함됩니다. 또한 ANSI SQL 및 SQL/MED(Oracle, MySQL, MongoDB 등에 대한 외부 데이터 래퍼 포함)와 같은 표준을 지원합니다. 12개 이상의 프로시저 언어, GIN 및 GiST 인덱스, 공간 데이터 지원 및 JSON에 대한 여러 NoSQL 같은 기능 또는 키 값 기반 애플리케이션에 대한 지원을 통해 확장성을 높일 수 있습니다.
@@ -126,7 +126,7 @@ PuTTY를 통해 생성한 Linux VM에 연결합니다. Azure Linux VM을 처음 
    
     다음과 같은 출력이 표시됩니다.
 
-![이미지](./media/postgresql-install/no1.png)
+![Image](./media/postgresql-install/no1.png)
 
 ## <a name="set-up-postgresql"></a>PostgreSQL 설정
 <!--    [postgres@ test ~]$ exit -->
@@ -143,7 +143,7 @@ PuTTY를 통해 생성한 Linux VM에 연결합니다. Azure Linux VM을 처음 
 
     # sed -i '35s#usr/local/pgsql/data#opt/pgsql_data#' /etc/init.d/postgresql
 
-![이미지](./media/postgresql-install/no2.png)
+![Image](./media/postgresql-install/no2.png)
 
 파일을 변경하여 실행 가능하도록 설정합니다.
 
@@ -159,7 +159,7 @@ PostgreSQL의 엔드포인트가 켜져 있는지 확인합니다.
 
 다음 출력이 표시됩니다.
 
-![이미지](./media/postgresql-install/no3.png)
+![Image](./media/postgresql-install/no3.png)
 
 ## <a name="connect-to-the-postgres-database"></a>Postgres 데이터베이스에 연결
 다시 한 번 postgres 사용자로 전환합니다.
@@ -190,11 +190,11 @@ Postgres 데이터베이스를 만듭니다.
 
 테이블이 생성된 경우 다음이 표시됩니다.
 
-![이미지](./media/postgresql-install/no4.png)
+![Image](./media/postgresql-install/no4.png)
 
 다음 명령을 사용하여 테이블 구조를 확인할 수 있습니다.
 
-![이미지](./media/postgresql-install/no5.png)
+![Image](./media/postgresql-install/no5.png)
 
 ### <a name="add-data-to-a-table"></a>테이블에 데이터 추가
 먼저, 행에 정보를 삽입합니다.
@@ -203,7 +203,7 @@ Postgres 데이터베이스를 만듭니다.
 
 다음 출력이 표시됩니다.
 
-![이미지](./media/postgresql-install/no6.png)
+![Image](./media/postgresql-install/no6.png)
 
 테이블에 몇 명의 더 많은 사람을 추가할 수 있습니다. 다음은 몇 가지 옵션입니다. 또는 직접 만들 수도 있습니다.
 
@@ -220,7 +220,7 @@ Postgres 데이터베이스를 만듭니다.
 
 출력은 다음과 같습니다.
 
-![이미지](./media/postgresql-install/no7.png)
+![Image](./media/postgresql-install/no7.png)
 
 ### <a name="delete-data-in-a-table"></a>테이블의 데이터 삭제
 테이블의 데이터를 삭제하려면 다음 명령을 사용합니다.
@@ -229,7 +229,7 @@ Postgres 데이터베이스를 만듭니다.
 
 "John" 행에 있는 모든 정보를 삭제합니다. 출력은 다음과 같습니다.
 
-![이미지](./media/postgresql-install/no8.png)
+![Image](./media/postgresql-install/no8.png)
 
 ### <a name="update-data-in-a-table"></a>테이블의 데이터 업데이트
 테이블의 데이터를 업데이트하려면 다음 명령을 사용합니다. 이 경우에는 Sandy가 참석하겠다고 확인했으므로 회신을 "N"에서 "Y"로 RSVP를 변경합니다.

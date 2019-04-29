@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
 ms.openlocfilehash: aa0ffbd69e73ddbef72e0eabf79f2736079c3d23
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51622026"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60636522"
 ---
 # <a name="manage-all-policies-for-a-lab-in-azure-devtest-labs"></a>Azure DevTest Labs에서 랩에 대한 모든 정책 관리
 
@@ -91,7 +91,7 @@ Azure DevTest Labs에서는 각 랩의 정책(설정)을 관리하여 랩에서 
 
 1. 랩의 홈 페이지에서 **구성 및 정책**을 선택합니다.
 2. 왼쪽 메뉴의 **일정** 섹션에서 **자동 종료 정책**을 선택합니다.
-3. 옵션 중 하나를 선택합니다. 다음 섹션에서는 이러한 옵션에 대한 자세한 정보를 제공합니다. 설정 정책은 기존 VM이 아닌 랩에서 생성된 새 VM에만 적용됩니다. 
+3. 옵션 중 하나를 선택합니다. 다음 섹션에서는 이러한 옵션에 대 한 자세한 정보를 제공 합니다. 정책 설정에는 기존 Vm 아니라 lab에서 생성 하는 새 Vm에만 적용 됩니다. 
 
     ![자동 종료 정책 옵션](./media/devtest-lab-set-lab-policy/auto-shutdown-policy-options.png)
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/24/2018
 ms.author: anavin
-ms.openlocfilehash: 5496be93a5241621cd4dc5e873e4386f8ed6c992
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.openlocfilehash: 3cc4933ae70ad1d661835749dd23e7e634ab54f0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57195220"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61474439"
 ---
 # <a name="public-ip-address-prefix"></a>공용 IP 주소 접두사
 
@@ -52,7 +52,7 @@ ms.locfileid: "57195220"
 |리소스|시나리오|단계|
 |---|---|---|
 |Virtual Machines| 접두사의 공용 IP를 Azure의 가상 머신에 연결하면 방화벽의 IP를 허용 목록에 대한 관리 오버헤드가 줄어듭니다. 하나의 방화벽 규칙에서 전체 접두사를 허용 목록에 포함시킬 수 있습니다. Azure에서 가상 머신으로 확장할 때 동일한 접두사의 IP를 연결하면 비용, 시간 및 관리 오버헤드를 절약할 수 있습니다.| 접두사의 IP를 가상 머신에 연결하려면: 1. [접두사를 만듭니다.](manage-public-ip-address-prefix.md) 2. [접두사에서 IP를 만듭니다.](manage-public-ip-address-prefix.md) 3. [IP를 가상 머신의 네트워크 인터페이스에 연결합니다.](virtual-network-network-interface-addresses.md#add-ip-addresses)
-| 부하 분산 장치 | 접두사의 공용 IP를 프런트 엔드 IP 구성 또는 부하 분산 장치의 아웃바운드 규칙에 연결하면 Azure 공용 IP 주소 공간이 간소화됩니다. 공용 IP 접두사로 정의된 일련의 연속 IP 주소에서 발생할 아웃바운드 연결을 정리하여 시나리오를 간소화할 수 있습니다. | 접두사의 IP를 부하 분산 장치에 연결하려면: 1. [접두사를 만듭니다.](manage-public-ip-address-prefix.md) 2. [접두사에서 IP를 만듭니다.](manage-public-ip-address-prefix.md) 3. Load Balancer를 만들 때 위의 2단계에서 부하 분산 장치의 프런트 엔드 IP로 만든 IP를 선택하거나 업데이트합니다. |
+| Load Balancer | 접두사의 공용 IP를 프런트 엔드 IP 구성 또는 부하 분산 장치의 아웃바운드 규칙에 연결하면 Azure 공용 IP 주소 공간이 간소화됩니다. 공용 IP 접두사로 정의된 일련의 연속 IP 주소에서 발생할 아웃바운드 연결을 정리하여 시나리오를 간소화할 수 있습니다. | 접두사의 IP를 부하 분산 장치에 연결하려면: 1. [접두사를 만듭니다.](manage-public-ip-address-prefix.md) 2. [접두사에서 IP를 만듭니다.](manage-public-ip-address-prefix.md) 3. Load Balancer를 만들 때 위의 2단계에서 부하 분산 장치의 프런트 엔드 IP로 만든 IP를 선택하거나 업데이트합니다. |
 | Azure Firewall | 아웃바운드 SNAT의 접두사에서 공용 IP를 사용할 수 있습니다. 즉, 모든 아웃바운드 가상 네트워크 트래픽은 [Azure Firewall](../firewall/overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) 공용 IP로 변환됩니다. 이 IP는 미리 정해진 접두사에서 사용되기 때문에, Azure의 공용 IP 공간이 어떤 모양인지를 쉽게 미리 알 수 있습니다. | 1. [접두사를 만듭니다.](manage-public-ip-address-prefix.md) 2. [접두사에서 IP를 만듭니다.](manage-public-ip-address-prefix.md) 3. [Azure 방화벽을 배포](../firewall/tutorial-firewall-deploy-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json#deploy-the-firewall)할 때 접두사에서 이전에 할당한 IP를 반드시 선택해야 합니다.|
 
 ## <a name="constraints"></a>제약 조건

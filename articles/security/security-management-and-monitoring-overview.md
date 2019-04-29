@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 10/30/2018
 ms.author: terrylan
 ms.openlocfilehash: f79f94c277b02a9f377b90bf74763ac617f65c16
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57892900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60597912"
 ---
 # <a name="azure-security-management-and-monitoring-overview"></a>Azure 보안 관리 및 모니터링 개요
 
@@ -97,7 +97,7 @@ Azure Virtual Network 게이트웨이라는 VPN Gateway는 가상 네트워크�
 * [VPN 게이트웨이 정보](../vpn-gateway/vpn-gateway-about-vpngateways.md)
 * [Azure 네트워크 보안 개요](security-network-overview.md)
 
-## <a name="privileged-identity-management"></a>Privileged Identity Management
+## <a name="privileged-identity-management"></a>권한 있는 ID 관리
 
 경우에 따라 사용자는 Azure 리소스 또는 기타 SaaS 애플리케이션에서 권한 있는 작업을 수행해야 합니다. 이는 보통 조직이 사용자에게 Azure AD(Azure Active Directory)에서 영구 권한 있는 액세스를 제공함을 의미합니다. 
 
@@ -110,7 +110,7 @@ Privileged Identity Management는 역할에 대해 임시 관리자 개념 또�
 * [Azure AD 권한 있는 ID 관리](../active-directory/privileged-identity-management/pim-configure.md)
 * [Azure AD Privileged Identity Management 시작](../active-directory/privileged-identity-management/pim-getting-started.md)
 
-## <a name="identity-protection"></a>ID 보호
+## <a name="identity-protection"></a>Identity Protection
 
 Azure AD Identity Protection은 의심스러운 로그인 활동 및 잠재적 취약성에 대한 통합 뷰를 제공하여 비즈니스를 보호하는 데 도움이 됩니다. Identity Protection은 다음과 같은 신호에 따라 사용자 및 권한 있는(관리자) ID에 대한 의심스러운 활동을 감지합니다.
 

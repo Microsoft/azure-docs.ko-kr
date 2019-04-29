@@ -15,11 +15,11 @@ ms.workload: iaas-sql-server
 ms.date: 12/05/2017
 ms.author: ninarn
 ms.openlocfilehash: da850b8ff9174fa310c5247cd7e99af69db28a8b
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56328438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61477455"
 ---
 # <a name="storage-configuration-for-sql-server-vms"></a>SQL Server VM에 대한 저장소 구성
 
@@ -129,8 +129,8 @@ Azure는 다음 설정을 사용하여 SQL Server VM에 저장소 풀을 만듭�
 | 디스크 크기 |각각 1TB |
 | 캐시 |읽기 |
 | 할당 크기 |64KB NTFS 할당 단위 크기 |
-| 즉시 파일 초기화 |사용 |
-| 메모리 내 페이지 잠금 |사용 |
+| 즉시 파일 초기화 |Enabled |
+| 메모리 내 페이지 잠금 |Enabled |
 | 복구 |단순 복구(복원력 없음) |
 | 열 수 |데이터 디스크 수<sup>1</sup> |
 | TempDB 위치 |데이터 디스크에 저장됨<sup>2</sup> |

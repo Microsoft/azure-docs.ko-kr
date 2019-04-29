@@ -16,11 +16,11 @@ ms.date: 03/27/2019
 ms.author: lahugh
 ms.custom: seodec18
 ms.openlocfilehash: e33d014bd2dddf0c7310727229f8137c9f181325
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58540978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60776387"
 ---
 # <a name="batch-service-quotas-and-limits"></a>Batch 서비스 할당량 및 제한
 
@@ -49,7 +49,7 @@ Batch에서 프로덕션 작업을 실행하려고 계획하는 경우, 위 기�
 
 | **리소스** | **최대 제한** |
 | --- | --- |
-| **[노드 간 통신 사용 풀](batch-mpi.md)의 계산 노드 수**  ||
+| **[노드 간 통신 사용 풀](batch-mpi.md)의 계산 노드**  ||
 | Batch 서비스 풀 할당 모드 | 100 |
 | Batch 구독 풀 할당 모드 | 80 |
 | **[사용자 지정 VM 이미지를 사용하여 만든 풀](batch-custom-images.md)<sup>1</sup>의 계산 노드 수** ||
@@ -62,7 +62,7 @@ Batch에서 프로덕션 작업을 실행하려고 계획하는 경우, 위 기�
 
 | **리소스** | **최대 제한** |
 | --- | --- |
-| [동시 작업](batch-parallel-node-tasks.md)  | 4 x 노드 코어 수 |
+| 계산 노드당 [동시 작업](batch-parallel-node-tasks.md) | 4 x 노드 코어 수 |
 | [애플리케이션](batch-application-packages.md) | 20 |
 | 애플리케이션당 애플리케이션 패키지 | 40 |
 | 풀 당 응용 프로그램 패키지 | 10 |

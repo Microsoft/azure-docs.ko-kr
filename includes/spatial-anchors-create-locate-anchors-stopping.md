@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 6d6886996d926ce778600dfa1d69caaa1c7ac004
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58632439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60232605"
 ---
 ## <a name="pause-reset-or-stop-the-session"></a>일시 중지, 다시 설정 하거나 세션 중지
 

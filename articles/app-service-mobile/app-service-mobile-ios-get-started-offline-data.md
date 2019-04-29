@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
 ms.openlocfilehash: 1283f812799fe71ef6987dbc7fab092aed4d3417
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57435136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62112653"
 ---
 # <a name="enable-offline-syncing-with-ios-mobile-apps"></a>iOS 모바일 앱으로 오프라인 동기화 사용
 [!INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
@@ -162,9 +162,9 @@ Swift 앱은 사용자가 새로 고침 제스처를 수행할 때 및 시작 �
 | 특성 | Type |
 | --- | --- |
 | id | 정수 64 |
-| itemId | 문자열 |
+| itemId | String |
 | properties | 이진 데이터 |
-| 테이블 | 문자열 |
+| 테이블 | String |
 | tableKind | 정수 16 |
 
 
@@ -174,7 +174,7 @@ Swift 앱은 사용자가 새로 고침 제스처를 수행할 때 및 시작 �
 
 | 특성 | Type |
 | --- | --- |
-| id |문자열 |
+| id |String |
 | operationId |정수 64 |
 | properties |이진 데이터 |
 | tableKind |정수 16 |
@@ -185,11 +185,11 @@ Swift 앱은 사용자가 새로 고침 제스처를 수행할 때 및 시작 �
 
 | 특성 | Type |
 | --- | --- |
-| id |문자열 |
-| key |문자열 |
+| id |String |
+| key |String |
 | keyType |정수 64 |
-| 테이블 |문자열 |
-| 값 |문자열 |
+| 테이블 |String |
+| 값 |String |
 
 ### <a name="data-table"></a>데이터 테이블
 
@@ -198,11 +198,11 @@ Swift 앱은 사용자가 새로 고침 제스처를 수행할 때 및 시작 �
 | 특성 | Type | 참고 |
 | --- | --- | --- |
 | id | 문자열, 필수로 표시 |원격 저장소의 기본 키 |
-| complete | BOOLEAN | 할 일 항목 필드 |
-| text |문자열 |할 일 항목 필드 |
+| complete | Boolean | 할 일 항목 필드 |
+| text |String |할 일 항목 필드 |
 | createdAt | Date | (옵션) **createdAt** 시스템 속성에 매핑됩니다. |
 | updatedAt | Date | (옵션) **updatedAt** 시스템 속성에 매핑됩니다. |
-| 버전 | 문자열 | (옵션) 충돌을 검색하는 데 사용되며 version에 매핑됩니다. |
+| 버전 | String | (옵션) 충돌을 검색하는 데 사용되며 version에 매핑됩니다. |
 
 ## <a name="setup-sync"></a>앱의 동기화 동작 변경
 이 섹션에서는 앱 시작 시 또는 항목을 삽입하거나 업데이트할 때 동기화하지 않도록 앱을 수정합니다. 새로 고침 제스처 단추를 누를 때만 동기화됩니다.

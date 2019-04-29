@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/11/2018
 ms.author: spelluru
-ms.openlocfilehash: 9b9a1839bf4b028aec13b764b4de66385de4189e
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
-ms.translationtype: HT
+ms.openlocfilehash: a0bc618a9c0a02aae884d8be359df6bdbf4c0d2a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47090754"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60868095"
 ---
 # <a name="resize-a-vm-in-a-lab-in-azure-devtest-labs"></a>Azure DevTest Labs의 랩에서 VM 크기 조정
 Azure Virtual Machines의 주요 기능 중 하나는 CPU, 네트워크 또는 디스크 성능 관련 요구에 따라 VM(가상 머신) 크기를 변경할 수 있다는 것입니다. Azure DevTest Labs의 랩에서는 현재 VM에 대해 이 기능이 지원됩니다. 크기 조정 기능은 랩에서 허용되는 VM 크기와 관련한 랩 정책을 따릅니다. 즉, VM의 크기는 랩에서 허용되는 크기로만 변경할 수 있습니다. 

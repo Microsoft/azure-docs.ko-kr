@@ -8,14 +8,15 @@ manager: jeconnoc
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: reference
-ms.date: 01/14/2019
-ms.author: cshoe
+origin.date: 01/14/2019
+ms.date: 03/04/2019
+ms.author: v-junlch
 ms.openlocfilehash: 4ccfe192eaea94cb9b199bd3c6f0bdacf1685519
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56740629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61437721"
 ---
 # <a name="using-the-azure-function-return-value"></a>Azure 함수 반환 값을 사용 하 여
 
@@ -23,8 +24,8 @@ ms.locfileid: "56740629"
 
 반환 값이 있는 언어에서 함수를 바인딩할 수 있습니다 [출력 바인딩을](./functions-triggers-bindings.md#binding-direction) 반환 값:
 
-* C# 클래스 라이브러리에서 출력 바인딩 특성을 메서드 반환 값에 적용합니다.
-* 다른 언어에서 *function.json*의 `name` 속성을 `$return`에 설정합니다.
+- C# 클래스 라이브러리에서 출력 바인딩 특성을 메서드 반환 값에 적용합니다.
+- 다른 언어에서 *function.json*의 `name` 속성을 `$return`에 설정합니다.
 
 여러 개의 출력 바인딩이 있으면 둘 중 하나에 대한 반환 값을 사용합니다.
 
@@ -32,11 +33,11 @@ C# 및 C# 스크립트에서 데이터를 출력 바인딩으로 보내는 또 �
 
 반환 값 사용 방법을 보여주는 언어별 예제를 참조하세요.
 
-* [C#](#c-example)
-* [C# 스크립트(.csx)](#c-script-example)
-* [F#](#f-example)
-* [JavaScript](#javascript-example)
-* [Python](#python-example)
+- [C#](#c-example)
+- [C# 스크립트(.csx)](#c-script-example)
+- [F#](#f-example)
+- [JavaScript](#javascript-example)
+- [Python](#python-example)
 
 ## <a name="c-example"></a>C# 예제
 
@@ -169,3 +170,4 @@ def main(input: azure.functions.InputStream) -> str:
 
 > [!div class="nextstepaction"]
 > [Azure Functions 바인딩 오류 처리](./functions-bindings-errors.md)
+

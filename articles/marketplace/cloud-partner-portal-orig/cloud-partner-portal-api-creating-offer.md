@@ -15,11 +15,11 @@ ms.topic: reference
 ms.date: 09/13/2018
 ms.author: pbutlerm
 ms.openlocfilehash: c7aed97c442c414e86c9531f9b0a8431e22b8b44
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48807155"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60624992"
 ---
 <a name="create-or-modify-an-offer"></a>제안 만들기 또는 수정
 =========================
@@ -34,8 +34,8 @@ ms.locfileid: "48807155"
 
 |  **Name**         |  **설명**                      |  **데이터 형식**  |
 |  --------         |  ----------------                     |  -------------  |
-| publisherId       |  게시자 식별자입니다(예: `contoso`). |   문자열 |
-| offerId           |  제안 식별자입니다.                     |   문자열        |
+| publisherId       |  게시자 식별자입니다(예: `contoso`). |   String |
+| offerId           |  제안 식별자입니다.                     |   String        |
 | api-version       |  최신 버전의 API입니다.            |   Date           |
 |  |  |  |
 
@@ -253,11 +253,11 @@ ms.locfileid: "48807155"
 
 | **코드**  |  **설명**                                                                            |
 | --------  |  ---------------                                                                            |
-|  200      | `OK` 요청이 성공적으로 처리되었으며 제안이 수정되었습니다.           |
-|  201      | `Created` 요청이 성공적으로 처리되었으며 제안이 만들어졌습니다.   |
-|  400      | `Bad/Malformed request` 오류 응답 본문이 자세한 정보를 제공할 수 있습니다.            |
-|  403      | `Forbidden` 클라이언트에서 요청된 네임스페이스에 액세스할 수 없습니다.                     |
-|  404      | `Not found` 클라이언트에서 참조한 엔터티가 존재하지 않습니다.                           |
+|  200      | `OK`. 요청이 성공적으로 처리되었으며 제안이 수정되었습니다.           |
+|  201      | `Created`. 요청이 성공적으로 처리되었으며 제안이 만들어졌습니다.   |
+|  400      | `Bad/Malformed request`. 오류 응답 본문이 자세한 정보를 제공할 수 있습니다.            |
+|  403      | `Forbidden`. 클라이언트에서 요청된 네임스페이스에 액세스할 수 없습니다.                     |
+|  404      | `Not found`. 클라이언트에서 참조한 엔터티가 존재하지 않습니다.                           |
 |  412      | 요청자가 요청에 지정한 사전 조건 중 하나를 서버가 충족하지 않습니다. 클라이언트가 요청과 함께 전송된 ETAG를 확인해야 합니다. |
 |  |  |
 

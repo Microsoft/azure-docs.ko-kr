@@ -6,14 +6,14 @@ author: laurenhughes
 manager: jeconnoc
 ms.service: batch
 ms.topic: article
-ms.date: 10/04/2018
+ms.date: 04/15/2019
 ms.author: lahugh
-ms.openlocfilehash: 0bc43b82a987ab065677bdbb56de73ef341c249d
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 233b26b330fabe7da8664114ba1857f74feea4bc
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55752129"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63764271"
 ---
 # <a name="use-a-custom-image-to-create-a-pool-of-virtual-machines"></a>사용자 지정 이미지를 사용하여 가상 머신 풀 만들기 
 
@@ -48,9 +48,9 @@ Virtual Machine 구성을 사용하여 Azure Batch 풀을 만들 경우 풀에�
 
 Azure에서는 Azure VM OS 및 데이터 디스크의 스냅숏, 관리되는 디스크가 있는 일반화된 Azure VM 또는 직접 업로드한 일반화된 온-프레미스 VHD에서 관리되는 이미지를 준비할 수 있습니다. 사용자 지정 이미지를 사용하여 안정적으로 Batch 풀 크기를 조정하려는 경우 VM 디스크의 스냅숏을 사용하는 *첫 번째 방법만* 사용하여 관리되는 이미지를 만드는 것이 좋습니다. VM을 준비하고 스냅숏을 생성하고 스냅숏에서 이미지를 만들려면 다음 단계를 참조하세요. 
 
-### <a name="prepare-a-vm"></a>VM 준비 
+### <a name="prepare-a-vm"></a>VM 준비
 
-이미지용으로 새 VM을 만드는 경우 Batch에서 지원되는 Azure Marketplace 이미지를 관리되는 이미지의 기본 이미지로 사용한 후 사용자 지정할 수 있습니다.  Azure Batch에서 지원하는 Azure Marketplace 이미지 참조의 목록을 가져오려면 [노드 에이전트 SKU 나열](/rest/api/batchservice/account/listnodeagentskus) 작업을 참조하세요. 
+이미지에 대 한 새 VM을 만드는 경우 관리 되는 이미지에 대 한 기본 이미지로 Batch에서 지 원하는 첫 번째 파티 Azure Marketplace 이미지를 사용 합니다. 만 자사 이미지를 기본 이미지로 사용할 수 있습니다. Azure Batch에서 지 원하는 Azure Marketplace 이미지 참조의 전체 목록은 참조 합니다 [목록 노드 에이전트 Sku](/rest/api/batchservice/account/listnodeagentskus) 작업 합니다.
 
 > [!NOTE]
 > 추가 라이선스 및 구매 약관이 있는 타사 이미지는 기본 이미지로 사용할 수 없습니다. Marketplace 이미지에 대한 자세한 내용은 [Linux](../virtual-machines/linux/cli-ps-findimage.md#deploy-an-image-with-marketplace-terms
@@ -78,6 +78,7 @@ Azure에서는 Azure VM OS 및 데이터 디스크의 스냅숏, 관리되는 �
 > [!NOTE]
 > Batch API 중 하나를 사용하여 풀을 만드는 경우 AAD 인증에 사용하는 ID가 이미지 리소스에 대한 권한을 가지고 있는지 확인합니다. [Active Directory를 사용하여 Batch 서비스 솔루션 인증](batch-aad-auth.md)을 참조하세요.
 >
+> 관리 되는 이미지에 대 한 리소스 풀의 수명 동안 존재 해야 합니다. 기본 리소스 삭제 되 면 풀을 확장할 수 없습니다. 
 
 1. Azure Portal에서 Batch 계정으로 이동합니다. 이 계정은 사용자 지정 이미지가 포함된 리소스 그룹과 동일한 구독 및 지역에 있어야 합니다. 
 2. 왼쪽의 **설정** 창에서 **풀** 메뉴 항목을 선택합니다.
@@ -109,6 +110,16 @@ Azure에서는 Azure VM OS 및 데이터 디스크의 스냅숏, 관리되는 �
 - **크기 조정 시간 제한** - 풀에 고정된 수의 노드가 포함되는 경우(풀 크기가 자동으로 조정되지 않음) 풀의 resizeTimeout 속성을 20~30분 등의 값으로 늘립니다. 풀이 제한 시간 내에 대상 크기에 도달하지 않으면 다른 [크기 조정 작업](/rest/api/batchservice/pool/resize)을 수행합니다.
 
   풀에 계산 노드를 300개보다 많이 포함하려는 경우에는 풀이 대상 크기에 도달하도록 크기를 여러 번 조정해야 할 수 있습니다.
+
+## <a name="considerations-for-using-packer"></a>Packer 사용 시 고려 사항
+
+사용자 구독 모드 일괄 처리 계정을 사용 하 여 Packer를 사용 하 여 직접 관리 이미지 리소스를 만들기만 수행 수입니다. Batch 서비스 모드 계정에 대 한 VHD를 먼저 만든 다음 VHD 관리 이미지 리소스를 가져올 해야 합니다. (사용자 구독 또는 일괄 처리 서비스)에 풀 할당 모드에 따라 관리 되는 이미지 리소스를 만드는 단계 달라 집니다.
+
+사용자 지정 이미지를 참조 하는 모든 풀의 수명에 대 한 관리 되는 이미지를 만드는 데 사용 되는 리소스 있는지 확인 합니다. 이렇게 하지 않으면 풀 할당 오류가 발생 하거나 오류 크기를 조정할 수 있습니다. 
+
+이미지 또는 기본 리소스를 제거 하면 오류가 발생할 수 있습니다는 비슷합니다: `There was an error encountered while performing the last resize on the pool. Please try resizing the pool again. Code: AllocationFailed`합니다. 이 경우 기본 리소스는 제거 되지 않도록 확인 합니다.
+
+Packer를 사용 하 여 VM 만들기에 대 한 자세한 내용은 참조 하세요. [Packer 사용 하 여 Linux 이미지를 빌드하고](../virtual-machines/linux/build-image-with-packer.md) 하거나 [Packer 사용 하 여 Windows 이미지를 빌드하고](../virtual-machines/windows/build-image-with-packer.md)합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

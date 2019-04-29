@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 04/17/2018
 ms.author: miradic
 ms.openlocfilehash: 8e57c071c9fd93a8581d574aeec2b23b38b3ab95
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51281662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60844026"
 ---
 # <a name="introduction-to-auto-scaling"></a>자동 크기 조정 소개
 자동 크기 조정은 서비스가 보고하는 로드 또는 리소스의 사용량에 따라 서비스를 동적으로 조정하는 Service Fabric의 추가 기능입니다. 자동 크기 조정 기능은 뛰어난 탄력성을 제공하며 필요에 따라 서비스의 인스턴스 또는 파티션을 추가로 프로비전할 수 있습니다. 전체 자동 크기 조정 프로세스는 자동화되고 투명합니다. 서비스에 정책을 설정하면 서비스 수준에서 수동으로 크기 조정 작업을 수행할 필요가 없습니다. 자동 크기 조정은 서비스 생성 시 또는 서비스를 업데이트하여 언제든지 설정할 수 있습니다.
@@ -208,4 +208,4 @@ New-ServiceFabricService -ApplicationName $applicationName -ServiceName $service
 ResourceMonitorService는 사용자 서비스의 cpu 및 메모리 사용량을 추적하는 일을 담당합니다. 이 서비스는 잠재적인 일시적 급증을 설명하기 위해 가중 이동 평균을 적용합니다. 리소스 모니터링은 Windows의 컨테이너화 및 컨테이너화되지 않은 애플리케이션과 Linux의 컨테이너화된 애플리케이션 모두에서 지원됩니다. 리소스에 대한 자동 크기 조정은 [단독 프로세스 모델](service-fabric-hosting-model.md#exclusive-process-model)에서 활성화된 서비스에만 사용할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
-[응용 프로그램 확장성](service-fabric-concepts-scalability.md)에 대해 자세히 알아봅니다.
+[애플리케이션 확장성](service-fabric-concepts-scalability.md)에 대해 자세히 알아봅니다.

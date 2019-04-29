@@ -13,13 +13,13 @@ ms.reviewer: billgib,andrela,stein
 manager: craigg
 ms.date: 09/24/2018
 ms.openlocfilehash: d29baaad6090cea5eb31f5f50bba444cb3771155
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57835784"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485981"
 ---
-# <a name="provision-and-catalog-new-tenants-in-a-saas-application-using-a-sharded-multi-tenant-azure-sql-database"></a>분할 다중 테넌트 Azure SQL Database를 사용하여 SaaS 애플리케이션에 새 테넌트를 프로비전하고 카탈로그로 만들기
+# <a name="provision-and-catalog-new-tenants-in-a-saas-application-using-a-sharded-multi-tenant-azure-sql-database"></a>공유 다중 테넌트 Azure SQL 데이터베이스를 사용하여 SaaS 애플리케이션에 새 테넌트를 프로비전하고 카탈로그로 만들기
 
 이 문서에서는 *다중 분할된 데이터베이스* 모델 또는 패턴에서 새 테넌트의 프로비전 및 카탈로그 만들기에 대해 다룹니다.
 
@@ -86,7 +86,7 @@ Wingtip에서 카탈로그는 *tenantcatalog* 데이터베이스에서 구현됩
 - 테이블에 새 테넌트에 대한 필요한 참조 데이터가 있습니까? 또는 데이터를 추가할 수 있습니까?
 - 새 테넌트에 대해 기본 스키마의 적절한 변형이 있습니까?
 - 새 테넌트와 가까운 적절한 지리적 위치에 있습니까?
-- 새 테넌트에 대해 올바른 서비스 계층에 있습니까?
+- 새 테넌트에 대해 올바른 서비스 계층에 있나요?
 
 새 테넌트를 자체 고유한 데이터베이스에서 격리하려고 하는 경우 테넌트에 대한 사양을 충족시키도록 만들 수 있습니다.
 

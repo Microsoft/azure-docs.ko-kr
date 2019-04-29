@@ -9,11 +9,11 @@ ms.date: 04/06/2019
 ms.author: glenga
 ms.custom: include file
 ms.openlocfilehash: b6cafcfe6c892cd43f056458fe3586da834c2fd1
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59497355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60403883"
 ---
 Functions를 사용하면 간단하게 [Azure Portal]에서 함수 앱에 Application Insights 통합을 추가할 수 있습니다.
 
@@ -28,7 +28,7 @@ Functions를 사용하면 간단하게 [Azure Portal]에서 함수 앱에 Applic
     | 설정      | 제안 값  | 설명                                        |
     | ------------ |  ------- | -------------------------------------------------- |
     | **Name** | 고유한 앱 이름 | 함수 앱과 동일한 이름을 사용하는 것이 가장 간단하며, 구독 내에서 고유해야 합니다. | 
-    | **위치** | 서유럽 | 가능하다면 함수 앱과 동일한 [Azure 지역](https://azure.microsoft.com/regions/) 또는 그 근처 지역을 사용합니다. |
+    | **위치**: | 서유럽 | 가능하다면 함수 앱과 동일한 [Azure 지역](https://azure.microsoft.com/regions/) 또는 그 근처 지역을 사용합니다. |
 
 1. **확인**을 선택합니다. 함수 앱과 동일한 리소스 그룹 및 구독에 Application Insights 리소스가 만들어집니다. 만들기가 완료되면 Application Insights 창을 닫습니다.
 

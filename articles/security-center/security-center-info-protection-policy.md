@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 09/20/2018
 ms.author: rkarlin
 ms.openlocfilehash: 9b63fb963408b8f22453c7ea78e36a49402273a7
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56105725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60906107"
 ---
 # <a name="customize-the-sql-information-protection-policy-in-azure-security-center-preview"></a>Azure Security Center에서 SQL 정보 보호 정책 사용자 지정
  
@@ -76,7 +76,7 @@ Azure 테넌트에 대한 정보 보호 정책을 사용자 지정하려면 [테
 6. 정보 형식 관리를 완료하면 특정 레이블에 대한 **구성**을 클릭하고, 적절하게 정보 형식을 추가하거나 삭제하여 적절한 레이블과 관련 형식을 연결하도록 합니다.
 7. 주요 **레이블** 블레이드에서 **저장**을 클릭하여 모든 변경 내용을 적용하도록 합니다.
  
-정보 보호 정책이 완벽하게 정의되고 저장되면 테넌트의 모든 Azure SQL Database에서 데이터 분류에 적용됩니다.
+정보 보호 정책이 완벽하게 정의되고 저장되면 테넌트의 모든 Azure SQL 데이터베이스에서 데이터 분류에 적용됩니다.
  
  
 ## <a name="next-steps"></a>다음 단계

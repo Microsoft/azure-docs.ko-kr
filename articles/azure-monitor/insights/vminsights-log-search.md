@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 04/10/2019
 ms.author: magoedte
 ms.openlocfilehash: 8b6745a2b9afe8d3101585e3f7a13f2fc978c84a
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59492091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122594"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-vms-preview"></a>VM용 Azure Monitor에서 로그를 쿼리하는 방법(미리 보기)
 Vm에 대 한 azure Monitor는 성능 및 연결 메트릭, 컴퓨터 및 프로세스 인벤토리 데이터 및 상태 정보를 수집 하 고 Azure Monitor에서 Log Analytics 작업 영역으로 전달 합니다.  이 데이터를 사용할 수 [쿼리](../../azure-monitor/log-query/log-query-overview.md) Azure Monitor에서. 마이그레이션 계획, 용량 분석, 검색 및 주문형 성능 문제 해결을 포함하는 시나리오에 이 데이터를 적용할 수 있습니다.
@@ -52,13 +52,13 @@ Vm에 대 한 azure Monitor는 성능 및 연결 메트릭, 컴퓨터 및 프로
 
 | 자산 | 설명 |
 |:--|:--|
-|Direction |연결 방향으로 값은 *인바운드* 또는 *아웃바운드*입니다. |
-|Machine |컴퓨터 FQDN |
+|방향 |연결 방향으로 값은 *인바운드* 또는 *아웃바운드*입니다. |
+|컴퓨터 |컴퓨터 FQDN |
 |Process |연결을 시작/수락하는 프로세스 또는 프로세스 그룹의 ID입니다. |
 |SourceIp |원본의 IP 주소 |
 |DestinationIp |대상의 IP 주소 |
 |DestinationPort |대상의 포트 번호 |
-|Protocol |연결에 사용되는 프로토콜입니다.  값은 *tcp*입니다. |
+|프로토콜 |연결에 사용되는 프로토콜입니다.  값은 *tcp*입니다. |
 
 그룹화의 영향을 고려하기 위해 그룹화된 물리적 연결 수에 대한 정보가 다음과 같은 레코드 속성에서 제공됩니다.
 
@@ -77,7 +77,7 @@ Vm에 대 한 azure Monitor는 성능 및 연결 메트릭, 컴퓨터 및 프로
 |:--|:--|
 |BytesSent |보고 기간 동안 전송된 총 바이트 수 |
 |BytesReceived |보고 기간 동안 수신된 총 바이트 수 |
-|Responses |보고 기간 동안 관찰된 응답의 수 
+|응답 |보고 기간 동안 관찰된 응답의 수 
 |ResponseTimeMax |보고 기간 동안 관찰된 최대 응답 시간(밀리초). 값이 없는 경우 속성은 비어 있습니다.|
 |ResponseTimeMin |보고 기간 동안 관찰된 최소 응답 시간(밀리초). 값이 없는 경우 속성은 비어 있습니다.|
 |ResponseTimeSum |보고 기간 동안 관찰된 모든 응답 시간의 합계(밀리초). 값이 없는 경우 속성은 비어 있습니다.|
@@ -112,10 +112,10 @@ Vm에 대 한 azure Monitor는 성능 및 연결 메트릭, 컴퓨터 및 프로
 |:--|:--|
 |MaliciousIp |RemoteIp 주소 |
 |IndicatorThreadType |검색된 위협 표시기가 *Botnet*, *C2*, *CryptoMining*, *Darknet*, *DDos*, *MaliciousUrl*, *Malware*, *Phishing*, *Proxy*, *PUA*, *Watchlist* 값 중 하나입니다.   |
-|Description |관찰된 위협에 대한 설명입니다. |
+|설명 |관찰된 위협에 대한 설명입니다. |
 |TLPLevel |TLP(Traffic Light Protocol) 수준은 정의된 *White*, *Green*, *Amber*, *Red* 값 중 하나입니다. |
-|Confidence |값은 *0 - 100*입니다. |
-|Severity |값은 *0 - 5*입니다. 여기서 *5*는 가장 심각하고 *0*은 심각하지 않습니다. 기본값은 *3*입니다.  |
+|신뢰도 |값은 *0 - 100*입니다. |
+|심각도 |값은 *0 - 5*입니다. 여기서 *5*는 가장 심각하고 *0*은 심각하지 않습니다. 기본값은 *3*입니다.  |
 |FirstReportedDateTime |공급자가 표시기를 처음 보고한 시간입니다. |
 |LastReportedDateTime |표시기가 Interflow에 의해 마지막으로 확인된 시간입니다. |
 |IsActive |표시기가 *True* 또는 *False* 값으로 비활성화되었음을 나타냅니다. |
@@ -137,9 +137,9 @@ VMBoundPort의 모든 레코드는 다음 필드에 의해 식별 됩니다.
 | 자산 | 설명 |
 |:--|:--|
 |Process | 포트와 연결 된 프로세스 (또는 프로세스의 그룹)의 id입니다.|
-|Ip | Ip 포트 (와일드 카드 IP 수 *0.0.0.0*) |
-|Port |포트 번호 |
-|Protocol | 프로토콜입니다.  예에서 *tcp* 하거나 *udp* (만 *tcp* 는 현재 지원).|
+|IP | Ip 포트 (와일드 카드 IP 수 *0.0.0.0*) |
+|포트 |포트 번호 |
+|프로토콜 | 프로토콜입니다.  예에서 *tcp* 하거나 *udp* (만 *tcp* 는 현재 지원).|
  
 Id는 포트는 위의 다섯 개의 필드에서 파생 되며 PortId 속성에 저장 됩니다. 이 속성은 특정 포트에 대 한 전체 시간 레코드를 신속 하 게 찾는 데 사용할 수 있습니다. 
 
@@ -204,7 +204,7 @@ Id는 포트는 위의 다섯 개의 필드에서 파생 되며 PortId 속성에
 | CommandLine_s | 명령줄 |
 | ExecutablePath _s | 실행 파일 경로 |
 | WorkingDirectory_s | 작업 디렉터리 |
-| UserName | 프로세스를 실행 중인 계정 |
+| 사용자 이름 | 프로세스를 실행 중인 계정 |
 | UserDomain | 프로세스를 실행 중인 도메인 |
 
 ## <a name="sample-log-searches"></a>샘플 로그 검색

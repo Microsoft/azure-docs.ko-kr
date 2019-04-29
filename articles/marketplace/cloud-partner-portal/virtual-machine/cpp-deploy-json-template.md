@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 11/29/2018
 ms.author: pbutlerm
 ms.openlocfilehash: b122d12394fe39990e359a3192e1ec5b68f17515
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57899896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60743662"
 ---
 # <a name="virtual-hard-disk-deployment-template"></a>가상 하드 디스크 배포 템플릿 
 

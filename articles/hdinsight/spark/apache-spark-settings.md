@@ -1,7 +1,6 @@
 ---
 title: Spark 설정 구성 - Azure HDInsight
 description: Azure HDInsight 클러스터에 대해 Spark를 구성하는 방법입니다.
-services: hdinsight
 author: maxluk
 ms.author: maxluk
 ms.reviewer: jasonh
@@ -9,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: 91f706b882c4f245dbd111b0f9cac269db6fd65f
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
-ms.translationtype: HT
+ms.openlocfilehash: 77f4ec9cce5d02ea4cbcc4968d02773a13edfe5b
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53652238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62098385"
 ---
 # <a name="configure-apache-spark-settings"></a>Apache Spark 설정 구성
 

@@ -11,15 +11,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 09/10/2018
+ms.date: 04/22/2019
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ca4d5912d75dd7b33737f61737a209284b7a5a47
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 76d8bb816bdf229d13a49fa61337899a8bf29ecd
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/23/2019
-ms.locfileid: "60338514"
+ms.locfileid: "62098289"
 ---
 # <a name="disaster-recovery-failover-procedure"></a>재해 복구 장애 조치(failover) 프로시저
 
@@ -35,34 +35,20 @@ DR 사이트로 장애 조치(failover)할 때 고려할 두 가지 경우가 �
 >[!NOTE]
 >다음 단계는 DR 단위를 나타내는 HANA 대규모 인스턴스 단위에서 실행되어야 합니다. 
  
-최신 복제된 저장소 스냅숏을 복원하려면 다음 단계를 수행합니다. 
+섹션에 나열 된 최신 복제 된 저장소 스냅숏을 복원 하려면 단계를 수행 **'전체 DR 장애 조치-azure_hana_dr_failover 수행'** 문서의 [Microsoft Azure의 SAP HANA에 대 한 도구를 스냅숏 ](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.0/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.0.pdf). 
 
-1. 실행 중인 HANA 대규모 인스턴스의 재해 복구 단위에서 HANA의 비프로덕션 인스턴스를 종료합니다. 유휴 HANA 프로덕션 인스턴스가 미리 설치되어 있기 때문입니다.
-1. 실행 중인 SAP HANA 프로세스가 없는지 확인해야 합니다. 이것을 확인하려면 다음 명령을 사용합니다. `/usr/sap/hostctrl/exe/sapcontrol –nr <HANA instance number> - function GetProcessList` 출력에는 **hdbdaemon** 프로세스가 중지된 상태로 표시되고, 실행 중이거나 시작된 상태의 다른 HANA 프로세스는 표시되지 않습니다.
-1. DR 사이트 HANA 대규모 인스턴스 단위에서 *azure_hana_dr_failover.pl* 스크립트를 실행합니다. 스크립트에서 복원할 SAP HANA SID를 묻는 메시지가 표시됩니다. 요청되면 복제되었으며 DR 사이트의 HANA 대규모 인스턴스 단위에 있는 *HANABackupCustomerDetails.txt* 파일에서 유지 관리되는 하나 또는 유일한 SAP HANA SID를 입력합니다. 
+여러 SAP HANA 인스턴스를 장애 조치 하려는 경우 azure_hana_dr_failover 명령을 여러 번 실행 해야 합니다. 요청된 경우 장애 조치하고 복원하려는 SAP HANA SID를 입력합니다. 
 
-      여러 SAP HANA 인스턴스를 장애 조치하려는 경우 스크립트를 여러 번 실행해야 합니다. 요청된 경우 장애 조치하고 복원하려는 SAP HANA SID를 입력합니다. 완료 시 스크립트에서 HANA 대규모 인스턴스 단위에 추가된 볼륨의 탑재 지점 목록을 표시합니다. 이 목록에는 복원된 DR 볼륨도 포함됩니다.
 
-1. Linux 운영 체제 명령을 사용하여 복원된 재해 복구 볼륨을 재해 복구 사이트의 HANA 대규모 인스턴스 단위에 탑재합니다. 
-1. 유휴 SAP HANA 프로덕션 인스턴스를 시작합니다.
-1. RPO 시간을 줄이기 위해 트랜잭션 로그 백업 로그를 복사하도록 선택한 경우 해당 트랜잭션 로그 백업을 새로 탑재된 DR/hana/logbackups 디렉터리에 병합해야 합니다. 기존 백업을 덮어쓰지 마십시오. 저장소 스냅숏의 최신 복제를 사용하여 복제되지 않은 최신 백업만 복사합니다.
-1. DR Azure 지역의 /hana/shared/PRD 볼륨에 복제된 스냅숏에서 단일 파일을 복원할 수도 있습니다. 
-
-실제 복제 관계에 영향을 주지 않고 DR 장애 조치(failover)를 테스트할 수 있습니다. 테스트 장애 조치를 수행하려면 위의 1, 2단계를 수행한 다음, 3단계를 계속 진행합니다.
+실제 복제 관계에 영향을 주지 않고 DR 장애 조치(failover)를 테스트할 수 있습니다. 테스트 장애 조치를 수행 하려면의 단계를 따릅니다 **'테스트 장애 조치 DR azure_hana_test_dr_failover 수행'** 문서의 [Microsoft Azure의 SAP HANA에 대 한 도구를 스냅숏](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.0/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.0.pdf)합니다. 
 
 >[!IMPORTANT]
->3단계에서 소개된 스크립트를 사용하여 **장애 조치(failover) 테스트** 과정을 통해 DR 사이트에서 만든 인스턴스에서 프로덕션 트랜잭션을 실행하지 *않습니다*. 해당 명령은 기본 사이트와 아무 관계도 없는 볼륨 세트를 만듭니다. 따라서 기본 사이트로 다시 동기화할 수 *없습니다*. 
+>수행할 *되지* 과정을 통해 DR 사이트에서 만든 인스턴스에서 프로덕션 트랜잭션을 실행할 **테스트 장애 조치**합니다. 해당 명령은 azure_hana_test_dr_failover 기본 사이트에 아무 관계도 없는 볼륨 세트를 만듭니다. 따라서 기본 사이트로 다시 동기화할 수 *없습니다*. 
 
-테스트 장애 조치의 3단계:
+여러 SAP HANA 인스턴스를 테스트하려는 경우 스크립트를 여러 번 실행해야 합니다. 요청된 경우 장애 조치를 위해 테스트하려는 인스턴스의 SAP HANA SID를 입력합니다. 
 
-DR 사이트 HANA 대규모 인스턴스 단위에서 **azure_hana_test_dr_failover.pl** 스크립트를 실행합니다. 이 스크립트는 기본 사이트와 DR 사이트 간의 복제 관계를 중지하지 *않습니다*. 대신, 이 스크립트는 DR 저장소 볼륨을 복제합니다. 복제 프로세스가 성공하면 복제된 볼륨이 최신 스냅숏 상태로 복원된 후 DR 단위에 탑재됩니다. 스크립트에서 복원할 SAP HANA SID를 묻는 메시지가 표시됩니다. 복제되었으며 DR 사이트의 HANA 대규모 인스턴스 단위에 있는 *HANABackupCustomerDetails.txt* 파일에서 유지 관리되는 하나 또는 유일한 SAP HANA SID를 입력합니다. 
-
-여러 SAP HANA 인스턴스를 테스트하려는 경우 스크립트를 여러 번 실행해야 합니다. 요청된 경우 장애 조치를 위해 테스트하려는 인스턴스의 SAP HANA SID를 입력합니다. 완료 시 스크립트에서 HANA 대규모 인스턴스 단위에 추가된 볼륨의 탑재 지점 목록을 표시합니다. 이 목록에는 복제된 DR 볼륨도 포함됩니다.
-
-4단계로 계속 진행합니다.
-
-   >[!NOTE]
-   >몇 시간 전에 삭제한 일부 데이터를 복구하기 위해 장애 조치(failover)하고 DR 볼륨을 이전 스냅숏으로 설정해야 하는 경우 이 프로시저가 적용됩니다. 
+>[!NOTE]
+>시간 전에 삭제 된 일부 데이터를 복구 하 고 DR 볼륨을 이전 스냅숏으로 설정 해야 하는 DR 사이트로 장애 조치 해야 할 경우이 절차에 적용 됩니다. 
 
 1. 실행 중인 HANA 대규모 인스턴스의 재해 복구 단위에서 HANA의 비프로덕션 인스턴스를 종료합니다. 유휴 HANA 프로덕션 인스턴스가 미리 설치되어 있기 때문입니다.
 1. 실행 중인 SAP HANA 프로세스가 없는지 확인해야 합니다. 이것을 확인하려면 다음 명령을 사용합니다. `/usr/sap/hostctrl/exe/sapcontrol –nr <HANA instance number> - function GetProcessList` 출력에는 **hdbdaemon** 프로세스가 중지된 상태로 표시되고, 실행 중이거나 시작된 상태의 다른 HANA 프로세스는 표시되지 않습니다.
@@ -121,34 +107,8 @@ DR에서 프로덕션 사이트로 장애 복구(Failback)할 수 있습니다. 
 
 ## <a name="monitor-disaster-recovery-replication"></a>재해 복구 복제 모니터링
 
-`azure_hana_replication_status.pl` 스크립트를 실행하여 저장소 복제 진행 상태를 모니터링할 수 있습니다. 이 스크립트를 재해 복구 위치에서 실행되는 단위에서 실행하여 예상되는 대로 작동시켜야 합니다. 이 스크립트는 복제가 활성 상태인지 여부에 관계없이 작동합니다. 이 스크립트는 재해 복구 위치에서 테넌트의 모든 HANA 큰 인스턴스 단위에 대해 실행할 수 있습니다. 부팅 볼륨에 대한 세부 정보를 가져오는 데는 사용할 수 없습니다.
+`azure_hana_replication_status` 스크립트를 실행하여 저장소 복제 진행 상태를 모니터링할 수 있습니다. 이 명령은 예상 대로 작동 하는 재해 복구 위치에서 실행 되는 단위에서 실행 되어야 합니다. 이 명령은 복제 활성 상태 인지 여부에 관계 없이 작동 합니다. 재해 복구 위치에서 테 넌 트의 모든 HANA 큰 인스턴스 단위에 대해 명령을 실행할 수 있습니다. 부팅 볼륨에 대한 세부 정보를 가져오는 데는 사용할 수 없습니다. 명령 및 해당 출력의 세부 정보에 대 한 읽을 **'DR 복제 상태-azure_hana_replication_status Get'** 문서의 [Microsoft Azure의 SAP HANA에 대 한 도구를 스냅숏](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.0/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.0.pdf)합니다.
 
-이 명령을 사용하여 스크립트를 호출합니다.
-```
-./azure_hana_replication_status.pl
-```
 
-출력은 볼륨별로 다음 섹션으로 세분화됩니다.  
-
-- 연결 상태
-- 현재 복제 작업
-- 마지막에 복제된 스냅숏 
-- 최신 스냅숏의 크기
-- 스냅숏 간 현재 지연 시간(마지막으로 완료된 스냅숏 복제와 현재 간)
-
-위치 간의 연결이 끊어지지 않고 현재 장애 조치(failover) 이벤트가 진행 중인 경우 연결 상태는 **활성**으로 표시됩니다. 복제 작업은 현재 복제 중이거나 유휴 상태인 데이터가 있는지 여부 또는 현재 연결에서 수행되고 있는 다른 작업이 있는지를 확인합니다. 마지막에 복제된 스냅숏은 `snapmirror…`로만 표시됩니다. 그런 후 마지막 스냅숏의 크기가 표시됩니다. 마지막으로 지연 시간이 표시됩니다. 지연 시간은 예약된 복제부터 복제가 완료될 때까지의 시간을 나타냅니다. 복제가 시작된 경우에도 데이터 복제의 지연 시간은 1시간을 초과할 수 있습니다(특히 초기 복제에서). 지연 시간은 진행 중인 복제가 완료될 때까지 계속 증가합니다.
-
-출력의 예제는 다음과 같습니다.
-
-```
-hana_data_hm3_mnt00002_t020_dp
--------------------------------------------------
-Link Status: Broken-Off
-Current Replication Activity: Idle
-Latest Snapshot Replicated: snapmirror.c169b434-75c0-11e6-9903-00a098a13ceb_2154095454.2017-04-21_051515
-Size of Latest Snapshot Replicated: 244KB
-Current Lag Time between snapshots: -   ***Less than 90 minutes is acceptable***
-```
-
-**다음 단계**
-- [HANA 쪽에서 모니터링 및 문제 해결](hana-monitor-troubleshoot.md)을 참조하세요.
+## <a name="next-steps"></a>다음 단계
+- 가리킵니다 [모니터링 및 HANA 쪽에서 문제 해결](hana-monitor-troubleshoot.md)합니다.

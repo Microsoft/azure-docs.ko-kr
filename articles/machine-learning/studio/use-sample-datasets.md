@@ -11,11 +11,11 @@ ms.author: amlstudiodocs
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/19/2018
 ms.openlocfilehash: f86ae4977621927a09d9b83287a00dfa3bc17196
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57880996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60736618"
 ---
 # <a name="use-the-sample-datasets-in-azure-machine-learning-studio"></a>Azure Machine Learning Studio에서 샘플 데이터 세트 사용
 [top]: #machine-learning-sample-datasets
@@ -367,14 +367,14 @@ Azure Machine Learning Studio로 업로드하기 전에 데이터 세트가 다�
 <tr>
   <td><a href="https://azuremlsampleexperiments.blob.core.windows.net/datasets/lyrl2004_tokens_test.csv">lyrl2004_tokens_test.csv</a></td>
   <td>
-RCV1-V2 Reuters 뉴스 데이터 세트에 있는 테스트 예제 기능입니다. 이 데이터 세트에는 781,000개의 뉴스 기사가 해당 ID(데이터 세트의 첫 번째 열)와 함께 나옵니다. 각 기사는 토큰화, 중지 단어 지정, 형태소 분석됩니다. 이 데이터 세트는 David. 4. Lewis가 제공했습니다.
+RCV1-V2 Reuters 뉴스 데이터 세트에 있는 테스트 예제 기능입니다. 이 데이터 세트에는 781,000개의 뉴스 기사가 해당 ID(데이터 세트의 첫 번째 열)와 함께 나옵니다. 각 기사는 토큰화, 중지 단어 지정, 형태소 분석됩니다. 이 데이터 세트는 David. D. Lewis가 제공했습니다.
   </td>
 </tr>
 
 <tr>
   <td><a href="https://azuremlsampleexperiments.blob.core.windows.net/datasets/lyrl2004_tokens_train.csv">lyrl2004_tokens_train.csv</a></td>
   <td>
-RCV1-V2 Reuters 뉴스 데이터 세트에 있는 학습 예제의 기능입니다. 이 데이터 세트에는 23,000개의 뉴스 기사가 해당 ID(데이터 세트의 첫 번째 열)와 함께 나옵니다. 각 기사는 토큰화, 중지 단어 지정, 형태소 분석됩니다. 이 데이터 세트는 David. 4. Lewis가 제공했습니다.
+RCV1-V2 Reuters 뉴스 데이터 세트에 있는 학습 예제의 기능입니다. 이 데이터 세트에는 23,000개의 뉴스 기사가 해당 ID(데이터 세트의 첫 번째 열)와 함께 나옵니다. 각 기사는 토큰화, 중지 단어 지정, 형태소 분석됩니다. 이 데이터 세트는 David. D. Lewis가 제공했습니다.
   </td>
 </tr>
 
@@ -390,7 +390,7 @@ KDD Cup 1999 지식 검색 및 데이터 마이닝 도구 경합(<a href="https:
 <tr>
   <td><a href="https://azuremlsampleexperiments.blob.core.windows.net/datasets/rcv1-v2.topics.qrels.csv">rcv1-v2.topics.qrels.csv</a></td>
   <td>
-RCV1-V2 Reuters 뉴스 데이터 세트의 뉴스 기사에 대한 토픽 할당입니다. 하나의 뉴스 기사를 여러 항목에 할당할 수 있습니다. 각 행의 형식은 "&lt;항목 이름&gt; &lt;문서 ID&gt; 1"입니다. 이 데이터 세트에는 260만 개의 항목 할당이 포함됩니다. 이 데이터 세트는 David. 4. Lewis가 제공했습니다.
+RCV1-V2 Reuters 뉴스 데이터 세트의 뉴스 기사에 대한 토픽 할당입니다. 하나의 뉴스 기사를 여러 항목에 할당할 수 있습니다. 각 행의 형식은 "&lt;항목 이름&gt; &lt;문서 ID&gt; 1"입니다. 이 데이터 세트에는 260만 개의 항목 할당이 포함됩니다. 이 데이터 세트는 David. D. Lewis가 제공했습니다.
   </td>
 </tr>
 

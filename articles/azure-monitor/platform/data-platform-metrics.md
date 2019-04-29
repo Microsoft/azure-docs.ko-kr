@@ -11,18 +11,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2019
 ms.author: bwren
-ms.openlocfilehash: 2646941e2384acf6d303615f564b65d616931180
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: c00f703c5cfa606eaeb6ea0dea5fe5d754d3de5d
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59794255"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62108087"
 ---
 # <a name="metrics-in-azure-monitor"></a>Azure Monitor의 메트릭
 
 > [!NOTE]
 > Azure Monitor 데이터 플랫폼은 두 가지 기본 데이터 형식을 기반으로 합니다. 메트릭 및 로그 합니다. 이 문서에는 메트릭을 설명합니다. 가리킵니다 [Azure Monitor의 로그](data-platform-logs.md) 로그와 자세한 설명은 [Azure Monitor 데이터 platforn](data-platform.md) 두 비교 합니다.
-
 
 Azure Monitor의 메트릭은 간단 하 고 거의 실시간 시나리오에 특히 유용 있도록를 지원할 수 있는 문제의 경고 하 고 빠르게 검색 합니다. 이 문서에서는 메트릭 구조화는 방식과,를 사용 하 여 수행할 수 있는 작업에 대해 설명 하 고 메트릭에서 데이터를 저장 하는 다양 한 데이터 소스를 식별 합니다.
 
@@ -42,7 +41,6 @@ Azure Monitor의 메트릭은 간단 하 고 거의 실시간 시나리오에 �
 | 장치 | 메트릭 값을 사용 하 여 명령줄에서 액세스 [PowerShell cmdlet](https://docs.microsoft.com/powershell/module/az.applicationinsights)<br>메트릭 값을 사용 하 여 사용자 지정 응용 프로그램에서 액세스할 [REST API](rest-api-walkthrough.md)합니다.<br>사용 하 여 명령줄에서 메트릭 값에 액세스할 [CLI](/cli/azure/monitor/metrics)합니다. |
 | 보관 | 규정 준수, 감사 또는 오프라인 보고의 목적으로 리소스의 성능 또는 상태 기록을 [보관](..//learn/tutorial-archive-data.md)합니다. |
 
-
 ## <a name="how-is-data-in-azure-monitor-metrics-structured"></a>Azure Monitor 메트릭 구성에 대 한 데이터 요금은 어떻게 되나요?
 Azure Monitor 메트릭에 의해 수집 된 데이터는 타임 스탬프 데이터 분석을 위해 최적화 된 시계열 데이터베이스에 저장 됩니다. 메트릭 값의 각 집합은 다음 속성을 사용 하 여 시계열:
 
@@ -52,8 +50,6 @@ Azure Monitor 메트릭에 의해 수집 된 데이터는 타임 스탬프 데�
 * 메트릭 이름
 * 값 자체
 * 에 설명 된 대로 몇 가지 메트릭을 여러 차원이 있을 [다차원 메트릭](#multi-dimensional-metrics)합니다. 사용자 지정 메트릭에는 최대 10개의 차원이 있을 수 있습니다.
-
-Azure의 메트릭 93 일 동안 저장 됩니다. 할 수 있습니다 [플랫폼 메트릭을 Azure Monitor 리소스에 대 한 Log Analytics 작업 영역으로 보낼](diagnostic-logs-stream-log-store.md) 장기 추세에 대 한 합니다.
 
 ## <a name="multi-dimensional-metrics"></a>다차원 메트릭
 메트릭 데이터 과제 중 하나는 종종 제한적으로 수집 된 값에 대 한 컨텍스트를 제공 하는 정보입니다. Azure Monitor는 다차원 메트릭 사용 하 여이 문제를 해결합니다. 메트릭의 차원은 메트릭 값을 설명하도록 추가 데이터를 전송하는 이름 값 쌍입니다. 예를 들어, 메트릭을 _사용 가능한 디스크 공간_ 라는 차원이 있을 수 있습니다 _드라이브_ 값을 사용 하 여 _c:_ 를 _d:_ 를 볼 수 있는 하거나 모든 사용 가능한 디스크 공간 드라이브 또는 각 드라이브 개별적으로 합니다.
@@ -101,6 +97,13 @@ Azure Monitor에서 수집되는 메트릭의 세 가지 기본 원본이 있습
 
 **사용자 지정 메트릭** 메트릭이 자동으로 사용할 수 있는 표준 메트릭 외에도 정의 합니다. 할 수 있습니다 [응용 프로그램에서 사용자 지정 메트릭을 정의](../app/api-custom-events-metrics.md) Application Insights에 의해 모니터링 되는 또는 사용 하 여 Azure 서비스에 대 한 사용자 지정 메트릭을 만들 합니다 [사용자 지정 메트릭 API](metrics-store-custom-rest-api.md)합니다.
 
+## <a name="retention-of-metrics"></a>메트릭의 보존
+Azure에서 대부분의 리소스에 대 한 메트릭은 93 일 동안 저장 됩니다. 일부의 예외가 있습니다.
+  * **클래식 게스트 OS 메트릭**합니다. 클래식 게스트 OS 메트릭 14 일간 유지 됩니다. 장기 보존을 위해 사용 하 여 수집 되는 새 게스트 OS 메트릭을 사용 하 여 권장 [Windows 진단 확장 (WAD)](../platform/diagnostics-extension-overview.md) 및 사용 하 여 Linux 가상 머신의 [InfluxData Telegraf 에이전트](https://www.influxdata.com/time-series-platform/telegraf/)합니다.
+  * **Application Insights 로그 기반 메트릭**합니다. 내부를 들여다보면 [로그 기반 메트릭](../app/pre-aggregated-metrics-log-metrics.md) 로그 쿼리로 변환 합니다. 해당 보존 기본 로그에서 이벤트의 보존을 찾습니다. Application Insights 리소스에 대 한 로그는 90 일 동안 저장 됩니다. 
+
+> [!NOTE]
+> 할 수 있습니다 [플랫폼 메트릭을 Azure Monitor 리소스에 대 한 Log Analytics 작업 영역으로 보낼](diagnostic-logs-stream-log-store.md) 장기 추세에 대 한 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

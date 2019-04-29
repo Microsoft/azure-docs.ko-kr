@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 06/22/2017
 ms.author: alkohli
 ms.openlocfilehash: 4f093251ce3c711cc060369abb27770157024d91
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51238695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61488964"
 ---
 # <a name="deploy-your-on-premises-storsimple-device-in-the-government-portal"></a>Government 포털에서 온-프레미스 StorSimple 디바이스 배포
 
@@ -47,18 +47,18 @@ StorSimple 디바이스를 구성하여 StorSimple 디바이스 관리자 서비
 | [배포 필수 조건](#deployment-prerequisites) |배포할 준비가 되어 있는 환경인지 유효성을 검사합니다. |
 |  | |
 | **단계별 배포** |프로덕션 환경에서 StorSimple 디바이스를 배포하려면 다음 단계가 필요합니다. |
-| [1단계: 새 서비스 만들기](#step-1-create-a-new-service) |StorSimple 디바이스에 대한 클라우드 관리 및 저장소를 설정합니다. *다른 StorSimple 장치에 대해 기존 서비스가 있는 경우 이 단계를 건너뜁니다*. |
-| [2단계: 서비스 등록 키 받기](#step-2-get-the-service-registration-key) |이 키를 사용하여 StorSimple 디바이스를 관리 서비스에 등록 및 연결합니다. |
-| [3단계: StorSimple용 Windows PowerShell을 통해 장치 구성 및 등록](#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple) |디바이스를 네트워크에 연결하고 관리 서비스를 사용하여 Azure로 등록하여 설정을 완료합니다. |
-| [4단계: 최소 장치 설정 완료](#step-4-complete-minimum-device-setup) </br>선택 사항: StorSimple 디바이스를 업데이트합니다. |관리 서비스를 사용하여 디바이스 설정을 완료하고 저장소를 제공할 수 있도록 설정합니다. |
+| [1단계: 새 서비스 만들기](#step-1-create-a-new-service) |StorSimple 디바이스에 대한 클라우드 관리 및 저장소를 설정합니다. *다른 StorSimple 디바이스에 대해 기존 서비스가 있는 경우 이 단계를 건너뜁니다*. |
+| [2단계: 서비스 등록 키 가져오기](#step-2-get-the-service-registration-key) |이 키를 사용하여 StorSimple 디바이스를 관리 서비스에 등록 및 연결합니다. |
+| [3단계: 구성 및 StorSimple 용 Windows PowerShell을 통해 장치 등록](#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple) |디바이스를 네트워크에 연결하고 관리 서비스를 사용하여 Azure로 등록하여 설정을 완료합니다. |
+| [4단계: 최소 장치 설정 완료](#step-4-complete-minimum-device-setup) </br>선택 사항: StorSimple 장치를 업데이트 합니다. |관리 서비스를 사용하여 디바이스 설정을 완료하고 저장소를 제공할 수 있도록 설정합니다. |
 | [5단계: 볼륨 컨테이너 만들기](#step-5-create-a-volume-container) |볼륨을 프로비전할 컨테이너를 만듭니다. 볼륨 컨테이너에는 저장소 계정, 대역폭 및 그 안에 포함된 모든 볼륨에 대한 암호화 설정이 있습니다. |
 | [6단계: 볼륨 만들기](#step-6-create-a-volume) |서버에 대한 StorSimple 디바이스의 저장소 볼륨을 프로비전합니다. |
 | [7단계: 볼륨 탑재, 초기화 및 포맷](#step-7-mount-initialize-and-format-a-volume) </br>선택 사항: MPIO를 구성합니다. |서버를 디바이스에서 제공하는 iSCSI 저장소에 연결합니다. 필요에 따라 MPIO를 구성하여 서버가 링크, 네트워크 및 인터페이스 실패를 허용할 수 있도록 합니다. |
-| [8단계: 백업 수행](#step-8-take-a-backup) |백업 정책을 설정하여 데이터 보호 |
+| [8단계: 백업을 수행합니다](#step-8-take-a-backup) |백업 정책을 설정하여 데이터 보호 |
 |  | |
 | **기타 절차** |솔루션을 배포하는 경우 이러한 절차를 참조해야 합니다. |
 | [서비스에 대한 새 저장소 계정 구성](#configure-a-new-storage-account-for-the-service) | |
-| [장치 직렬 콘솔 연결에 PuTTY 사용](#use-putty-to-connect-to-the-device-serial-console) | |
+| [디바이스 직렬 콘솔 연결에 PuTTY 사용](#use-putty-to-connect-to-the-device-serial-console) | |
 | [업데이트 검색 및 적용](#scan-for-and-apply-updates) | |
 | [Windows Server 호스트의 IQN 가져오기](#get-the-iqn-of-a-windows-server-host) | |
 | [수동 백업 만들기](#create-a-manual-backup) | |
@@ -85,13 +85,13 @@ StorSimple 디바이스를 배포하기 전에 정보를 수집하여 디바이�
 
 * 다음에서 설명한 대로 디바이스가 완전히 개봉, 랙에 탑재되고 전원, 네트워크 및 직렬 액세스에 완전히 연결되었습니다.
   
-  * [8100 장치 개봉, 랙 탑재, 케이블 연결](storsimple-8100-hardware-installation.md)
-  * [8600 장치 개봉, 랙 탑재, 케이블 연결](storsimple-8600-hardware-installation.md)
+  * [8100 디바이스 개봉, 랙 탑재, 케이블 연결](storsimple-8100-hardware-installation.md)
+  * [8600 디바이스 개봉, 랙 탑재, 케이블 연결](storsimple-8600-hardware-installation.md)
 
 ### <a name="for-the-network-in-the-datacenter"></a>데이터 센터에서 네트워크의 경우
 시작하기 전에 다음 사항을 확인합니다.
 
-* [StorSimple 장치에 대한 네트워킹 요구 사항](storsimple-8000-system-requirements.md#networking-requirements-for-your-storsimple-device)에서 설명한 대로 데이터 센터 방화벽에서 포트가 열려 있어 iSCSI 및 클라우드 트래픽을 허용합니다.
+* [StorSimple 디바이스에 대한 네트워킹 요구 사항](storsimple-8000-system-requirements.md#networking-requirements-for-your-storsimple-device)에서 설명한 대로 데이터 센터 방화벽에서 포트가 열려 있어 iSCSI 및 클라우드 트래픽을 허용합니다.
 
 ## <a name="step-by-step-deployment"></a>단계별 배포
 다음 단계별 지침을 사용하여 데이터 센터에서 StorSimple 디바이스를 배포합니다.
@@ -105,22 +105,22 @@ StorSimple 디바이스 관리자 서비스는 여러 StorSimple 디바이스를
 > 서비스와 함께 저장소 계정을 자동으로 만들도록 설정하지 않은 경우, 서비스를 성공적으로 만든 후 하나 이상의 저장소 계정을 만들어야 합니다. 이 저장소 계정은 볼륨 컨테이너를 만들 때 사용됩니다.
 > 
 > * 저장소 계정을 자동으로 만들지 않은 경우 자세한 지침은 [서비스에 대한 새 저장소 계정 구성](#configure-a-new-storage-account-for-the-service) 을 참조하세요.
-> * 저장소 계정을 자동으로 생성하도록 설정한 경우, [2단계: 서비스 등록 키 받기](#step-2-get-the-service-registration-key)로 이동합니다.
+> * 저장소 계정을 자동으로 생성하도록 설정한 경우 [2단계: 서비스 등록 키 가져오기](#step-2-get-the-service-registration-key)로 이동합니다.
 
 
-## <a name="step-2-get-the-service-registration-key"></a>2단계: 서비스 등록 키 받기
+## <a name="step-2-get-the-service-registration-key"></a>2단계: 서비스 등록 키 가져오기
 StorSimple 디바이스 관리자 서비스를 실행한 후에는 서비스 등록 키를 받아야 합니다. 이 키는 StorSimple 디바이스를 서비스에 등록 및 연결하는 데 사용됩니다.
 
 Government 포털에서 다음 단계를 수행합니다.
 
 [!INCLUDE [storsimple-8000-get-service-registration-key](../../includes/storsimple-8000-get-service-registration-key.md)]
 
-## <a name="step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple"></a>3단계: StorSimple용 Windows PowerShell을 통해 디바이스 구성 및 등록
+## <a name="step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple"></a>3단계: 구성 및 StorSimple 용 Windows PowerShell을 통해 장치 등록
 다음 절차에서 설명한 대로 StorSimple 디바이스의 초기 설정을 완료하려면 StorSimple용 Windows PowerShell을 사용합니다. 이 단계를 완료하려면 터미널 에뮬레이션 소프트웨어를 사용해야 합니다. 자세한 내용은 [디바이스 직렬 콘솔 연결에 PuTTY 사용](#use-putty-to-connect-to-the-device-serial-console)을 참조하세요.
 
 [!INCLUDE [storsimple-8000-configure-and-register-device-gov](../../includes/storsimple-8000-configure-and-register-device-gov-u2.md)]
 
-## <a name="step-4-complete-minimum-device-setup"></a>4단계: 최소 디바이스 설정 완료
+## <a name="step-4-complete-minimum-device-setup"></a>4단계: 최소 장치 설정 완료
 StorSimple 디바이스의 최소 디바이스 구성에는 다음 사항이 필요합니다.
 
 * 디바이스에 대한 친숙한 이름을 제공합니다.
@@ -158,7 +158,7 @@ MPIO를 구성하지 않으려는 경우 다음 단계를 수행하여 Windows S
 
 [!INCLUDE [storsimple-mount-initialize-format-volume](../../includes/storsimple-mount-initialize-format-volume.md)]
 
-## <a name="step-8-take-a-backup"></a>8단계: 백업 수행
+## <a name="step-8-take-a-backup"></a>8단계: 백업을 수행합니다
 Backup은 볼륨의 지정 시간 보호 기능을 제공하며 복원 시간을 최소화하면서 복구 기능을 개선합니다. StorSimple 디바이스에서 두 유형(로컬 스냅숏 및 클라우드 스냅숏)의 백업을 수행할 수 있습니다. 이러한 각 유형의 백업은 **예약됨** 또는 **수동**이 될 수 있습니다.
 
 예약된 백업을 만들려면 Government 포털에서 다음 단계를 수행합니다.
@@ -195,6 +195,6 @@ StorSimple 디바이스에서 단일 볼륨에 대한 주문형 수동 백업을
 [!INCLUDE [Create a manual backup](../../includes/storsimple-8000-create-manual-backup.md)]
 
 ## <a name="next-steps"></a>다음 단계
-* [가상 장치](storsimple-8000-cloud-appliance-u2.md)를 구성합니다.
-* [StorSimple 장치 관리자 서비스](storsimple-8000-manager-service-administration.md)를 사용하여 StorSimple 장치를 관리합니다.
+* [가상 디바이스](storsimple-8000-cloud-appliance-u2.md)를 구성합니다.
+* [StorSimple 디바이스 관리자 서비스](storsimple-8000-manager-service-administration.md)를 사용하여 StorSimple 디바이스를 관리합니다.
 

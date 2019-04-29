@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 03/24/2018
 ms.reviewer: sngun
 ms.openlocfilehash: f32434e5ac0cd35cf620c1589aeb441476622442
-ms.sourcegitcommit: 280d9348b53b16e068cf8615a15b958fccad366a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58407456"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60892202"
 ---
 # <a name="choose-the-right-consistency-level"></a>올바른 일관성 수준 선택 
 

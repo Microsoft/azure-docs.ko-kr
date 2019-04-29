@@ -11,11 +11,11 @@ ms.date: 06/13/2018
 ms.author: mausher
 ms.reviewer: igorstan
 ms.openlocfilehash: d88d1390f590a86c83273f2170f3854a7972a24b
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55466226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61475918"
 ---
 # <a name="t-sql-language-elements-supported-in-azure-sql-data-warehouse"></a>Azure SQL Data Warehouse에서 지원되는 T-SQL 언어 요소
 Azure SQL Data Warehouse에서 지원되는 T-SQL 언어 요소에 대한 설명서 링크입니다.

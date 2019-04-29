@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
 ms.openlocfilehash: ecf0bb6ac7fc77e804c9fc8d62aba52810de5640
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48808200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60625009"
 ---
 <a name="concurrency-control"></a>동시성 제어
 ===================
@@ -27,7 +27,7 @@ ms.locfileid: "48808200"
 클라우드 파트너 포털 게시 API를 호출할 때는 항상 사용할 동시성 제어 전략을 명시적으로 지정해야 합니다. **If-Match** 헤더를 제공하지 않으면 HTTP 400 오류 응답이 반환됩니다. 동시성 제어를 위해 제공되는 두 가지 전략은 다음과 같습니다.
 
 -   **낙관적** - 업데이트를 수행하는 클라이언트가 데이터를 마지막으로 읽은 후 데이터가 변경되었는지를 확인합니다.
--   **마지막 데이터 적용** - 데이터를 마지막으로 읽은 시간 이후 다른 응용 프로그램이 데이터를 수정했는지에 관계없이 클라이언트가 데이터를 직접 업데이트합니다.
+-   **마지막 데이터 적용** - 데이터를 마지막으로 읽은 시간 이후 다른 애플리케이션이 데이터를 수정했는지에 관계없이 클라이언트가 데이터를 직접 업데이트합니다.
 
 <a name="optimistic-concurrency-workflow"></a>낙관적 동시성 워크플로
 -------------------------------

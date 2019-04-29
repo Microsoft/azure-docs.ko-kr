@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 03/25/2019
+ms.date: 04/23/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 6a69d8d60b2e588ded9ccca20521195ae11ff136
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
-ms.translationtype: MT
+ms.openlocfilehash: 8c226608f6c1c776463aa05c02b1d3cc04b699ec
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58449415"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63766819"
 ---
 # <a name="azure-analysis-services-scale-out"></a>Azure Analysis Services 규모 확장
 
@@ -128,6 +128,8 @@ PowerShell을 사용 하기 전에 [설치 하거나 최신 Azure PowerShell 모
 쿼리 복제본 수를 설정 하려면 [집합 AzAnalysisServicesServer](https://docs.microsoft.com/powershell/module/az.analysisservices/set-azanalysisservicesserver)합니다. 선택적 `-ReadonlyReplicaCount` 매개 변수를 지정합니다.
 
 쿼리 풀에서 처리 서버 구분을 사용 하 여 [집합 AzAnalysisServicesServer](https://docs.microsoft.com/powershell/module/az.analysisservices/set-azanalysisservicesserver)합니다. 선택적으로 지정할 `-DefaultConnectionMode` 매개 변수를 사용 하 여 `Readonly`입니다.
+
+자세한 내용은 참조 하세요 [Az.AnalysisServices 모듈을 사용 하 여 서비스 주체를 사용 하 여](analysis-services-service-principal.md#azmodule)입니다.
 
 ## <a name="connections"></a>연결
 

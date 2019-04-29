@@ -14,17 +14,17 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: v-sharos
-ms.openlocfilehash: b97753e6f1b67e3c8d247281c5e5208033a56eca
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: dc24ebd59fd977ef35766c304aec5824e2c7bb4c
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23111291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62127193"
 ---
 # <a name="use-storsimple-snapshot-manager-to-manage-the-backup-catalog"></a>StorSimple 스냅숏 관리자를 사용하여 백업 카탈로그 관리
 
 ## <a name="overview"></a>개요
-StorSimple Snapshot Manager의 기본 기능은 StorSimple 볼륨의 응용 프로그램과 일치하는 백업 복사본을 스냅숏의 형태로 만들 수 있도록 하는 것입니다. 스냅숏은 *백업 카탈로그*라는 XML 파일에 나열됩니다. 백업 카탈로그는 볼륨 그룹별로 스냅숏을 구성한 다음 로컬 스냅숏 또는 클라우드 스냅숏별로 구성합니다.
+StorSimple Snapshot Manager의 기본 기능은 StorSimple 볼륨의 애플리케이션과 일치하는 백업 복사본을 스냅숏의 형태로 만들 수 있도록 하는 것입니다. 스냅숏은 *백업 카탈로그*라는 XML 파일에 나열됩니다. 백업 카탈로그는 볼륨 그룹별로 스냅숏을 구성한 다음 로컬 스냅숏 또는 클라우드 스냅숏별로 구성합니다.
 
 이 자습서에서는 **백업 카탈로그** 노드를 사용하여 다음 작업을 완료하는 방법을 설명합니다.
 
@@ -34,7 +34,7 @@ StorSimple Snapshot Manager의 기본 기능은 StorSimple 볼륨의 응용 프�
 * 파일 복구
 * StorSimple 스냅숏 관리자 데이터베이스 복원
 
-**범위** 창에서 **백업 카탈로그** 노드를 확장한 후 볼륨 그룹을 확장하면 백업 카탈로그를 볼 수 있습니다.
+**범위** 창에서 **Backup 카탈로그** 노드를 확장한 후 볼륨 그룹을 확장하면 백업 카탈로그를 볼 수 있습니다.
 
 * 볼륨 그룹 이름을 클릭하면 **결과** 창에 해당 볼륨 그룹에서 사용할 수 있는 로컬 스냅숏 및 클라우드 스냅숏의 개수가 표시됩니다. 
 * **로컬 스냅숏** 또는 **클라우드 스냅숏**을 클릭하면 **결과** 창에 각 백업 스냅숏에 대한 다음 정보가 표시됩니다(**보기** 설정에 따라 다름).
@@ -43,14 +43,14 @@ StorSimple Snapshot Manager의 기본 기능은 StorSimple 볼륨의 응용 프�
   * **유형** – 로컬 스냅숏인지 또는 클라우드 스냅숏인지.
   * **소유자** – 콘텐츠 소유자. 
   * **사용 가능** – 스냅숏을 현재 사용할 수 있는지 여부입니다. **True**이면 스냅숏을 사용할 수 있고 복원 가능합니다. **False**이면 스냅숏을 더 이상 사용할 수 없습니다. 
-  * **가져옴** – 백업을 가져왔는지 여부입니다. **True**이면 StorSimple Snapshot Manager에서 장치를 구성했을 때 백업을 StorSimple 장치 관리자 서비스에서 가져왔습니다. **False**이면 백업을 가져오지 않았지만 StorSimple Snapshot Manager에서는 만들었습니다. (가져온 볼륨 그룹에는 해당 볼륨 그룹을 가져온 원본 장치를 식별하는 접미사가 추가되므로 쉽게 식별할 수 있습니다.)
+  * **가져옴** – 백업을 가져왔는지 여부입니다. **True**이면 StorSimple Snapshot Manager에서 디바이스를 구성했을 때 백업을 StorSimple 디바이스 관리자 서비스에서 가져왔습니다. **False**이면 백업을 가져오지 않았지만 StorSimple Snapshot Manager에서는 만들었습니다. (가져온 볼륨 그룹에는 해당 볼륨 그룹을 가져온 원본 디바이스를 식별하는 접미사가 추가되므로 쉽게 식별할 수 있습니다.)
     
-    ![백업 카탈로그](./media/storsimple-snapshot-manager-manage-backup-catalog/HCS_SSM_Backup_catalog.png)
+    ![Backup 카탈로그](./media/storsimple-snapshot-manager-manage-backup-catalog/HCS_SSM_Backup_catalog.png)
 * **로컬 스냅숏** 또는 **클라우드 스냅숏**을 확장한 다음 개별 스냅숏 이름을 클릭하면 **결과** 창에 선택한 스냅숏에 대해 다음 정보가 표시됩니다.
   
   * **이름** – 드라이브 문자로 식별되는 볼륨. 
   * **로컬 이름** – 드라이브의 로컬 이름(있는 경우). 
-  * **장치** – 볼륨이 있는 장치의 이름. 
+  * **디바이스** – 볼륨이 있는 디바이스의 이름. 
   * **사용 가능** – 스냅숏을 현재 사용할 수 있는지 여부입니다. **True**이면 스냅숏을 사용할 수 있고 복원 가능합니다. **False**이면 스냅숏을 더 이상 사용할 수 없습니다. 
 
 ## <a name="restore-a-volume"></a>볼륨 복원
@@ -69,8 +69,8 @@ StorSimple 스냅숏 관리자는 예비 백업이 생성되는 동안 다음 �
 > 
 
 #### <a name="to-restore-a-volume"></a>볼륨을 복원하려면
-1. 바탕 화면 아이콘을 클릭하여 StorSimple 스냅숏 관리자를 시작합니다. 
-2. **범위** 창에서 **백업 카탈로그** 노드를 확장하고 볼륨 그룹을 확장한 다음 **로컬 스냅숏** 또는 **클라우드 스냅숏**을 클릭합니다. 백업 스냅숏 목록이 **결과** 창에 표시됩니다.
+1. 바탕 화면 아이콘을 클릭하여 StorSimple Snapshot Manager를 시작합니다. 
+2. **범위** 창에서 **Backup 카탈로그** 노드를 확장하고 볼륨 그룹을 확장한 다음 **로컬 스냅숏** 또는 **클라우드 스냅숏**을 클릭합니다. 백업 스냅숏 목록이 **결과** 창에 표시됩니다.
 3. 복원할 백업을 찾아 마우스 오른쪽 단추로 클릭한 다음 **복원**을 클릭합니다.
    
     ![백업 카탈로그 복원](./media/storsimple-snapshot-manager-manage-backup-catalog/HCS_SSM_Restore_BU_catalog.png) 
@@ -83,8 +83,8 @@ StorSimple 스냅숏 관리자는 예비 백업이 생성되는 동안 다음 �
 다음 절차를 사용하여 볼륨 또는 볼륨 그룹의 클론을 만듭니다.
 
 #### <a name="to-clone-a-volume-or-volume-group"></a>볼륨 또는 볼륨 그룹을 복제하려면
-1. 바탕 화면 아이콘을 클릭하여 StorSimple 스냅숏 관리자를 시작합니다.
-2. **범위** 창에서 **백업 카탈로그** 노드를 확장하고 볼륨 그룹을 확장한 다음 **클라우드 스냅숏**을 클릭합니다. 백업 목록이 **결과** 창에 표시됩니다.
+1. 바탕 화면 아이콘을 클릭하여 StorSimple Snapshot Manager를 시작합니다.
+2. **범위** 창에서 **Backup 카탈로그** 노드를 확장하고 볼륨 그룹을 확장한 다음 **클라우드 스냅숏**을 클릭합니다. 백업 목록이 **결과** 창에 표시됩니다.
 3. 복제할 볼륨 또는 볼륨 그룹을 찾아 해당 볼륨 또는 볼륨 그룹 이름을 마우스 오른쪽 단추로 클릭하고 **복제**를 클릭합니다. **클라우드 스냅숏 복제** 대화 상자가 나타납니다.
    
     ![클라우드 스냅숏 복제](./media/storsimple-snapshot-manager-manage-backup-catalog/HCS_SSM_Clone.png) 
@@ -104,8 +104,8 @@ StorSimple 스냅숏 관리자는 예비 백업이 생성되는 동안 다음 �
 
 
 #### <a name="to-delete-a-backup"></a>백업을 삭제하려면
-1. 바탕 화면 아이콘을 클릭하여 StorSimple 스냅숏 관리자를 시작합니다.
-2. **범위** 창에서 **백업 카탈로그** 노드를 확장하고 볼륨 그룹을 확장한 다음 **로컬 스냅숏** 또는 **클라우드 스냅숏**을 클릭합니다. 스냅숏 목록이 **결과** 창에 표시됩니다.
+1. 바탕 화면 아이콘을 클릭하여 StorSimple Snapshot Manager를 시작합니다.
+2. **범위** 창에서 **Backup 카탈로그** 노드를 확장하고 볼륨 그룹을 확장한 다음 **로컬 스냅숏** 또는 **클라우드 스냅숏**을 클릭합니다. 스냅숏 목록이 **결과** 창에 표시됩니다.
 3. 삭제할 스냅숏을 마우스 오른쪽 단추로 클릭하고 **삭제**를 클릭합니다.
 4. 확인 메시지가 나타나면 **확인**을 클릭합니다.
 
@@ -117,7 +117,7 @@ StorSimple 스냅숏 관리자는 예비 백업이 생성되는 동안 다음 �
 
 #### <a name="to-recover-a-deleted-file"></a>삭제된 파일을 복구하려면
 1. 바탕 화면에서 StorSimple 스냅숏 관리자 아이콘을 클릭합니다. StorSimple 스냅숏 관리자 콘솔 창이 나타납니다. 
-2. **범위** 창에서 **백업 카탈로그** 노드를 확장한 후 삭제된 파일이 포함된 스냅숏을 찾습니다. 일반적으로 삭제되기 바로 전에 만든 스냅숏을 선택해야 합니다.
+2. **범위** 창에서 **Backup 카탈로그** 노드를 확장한 후 삭제된 파일이 포함된 스냅숏을 찾습니다. 일반적으로 삭제되기 바로 전에 만든 스냅숏을 선택해야 합니다.
 3. 복제할 볼륨을 찾아서 마우스 오른쪽 단추로 클릭한 후 **복제**를 클릭합니다. **클라우드 스냅숏 복제** 대화 상자가 나타납니다.
    
     ![클라우드 스냅숏 복제](./media/storsimple-snapshot-manager-manage-backup-catalog/HCS_SSM_Clone.png) 

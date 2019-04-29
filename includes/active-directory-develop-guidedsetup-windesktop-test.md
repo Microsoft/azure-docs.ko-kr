@@ -15,11 +15,11 @@ ms.date: 04/10/2019
 ms.author: jmprieur
 ms.custom: include file
 ms.openlocfilehash: a11b291ab89dc9f8159e00e1f2304706f041068e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59804641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60297714"
 ---
 ## <a name="test-your-code"></a>코드 테스트
 
@@ -44,7 +44,7 @@ ms.locfileid: "59804641"
 |자산  |형식  |설명 |
 |---------|---------|---------|
 
-|**사용자 이름**  | <span> user@domain.com </span> | 사용자를 식별 하는 데 사용 되는 사용자 이름입니다. | | **토큰이 만료 되** | 날짜/시간 | 토큰이 만료 되는 시간입니다. MSAL은 필요에 따라 토큰을 갱신 해 만료 날짜를 확장 합니다. |
+|**사용자 이름** |<span>user@domain.com</span> | 사용자를 식별하는 데 사용되는 사용자 이름입니다.||**토큰 만료** |날짜/시간 |토큰이 만료되는 시간입니다. MSAL은 필요에 따라 토큰을 갱신하여 만료 날짜를 연장합니다.|
 
 
 <!--start-collapse-->

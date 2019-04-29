@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/12/2019
 ms.author: raynew
-ms.openlocfilehash: fece1adc9ad2f5844a7d6cc1e0e9cc92d44de6d8
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: 5ee1328dddb6ae1e1c878384097b0e10aa32feeb
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57892934"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60776291"
 ---
 # <a name="whats-new-in-site-recovery"></a>Site Recovery의 새로운 기능
 
@@ -126,7 +126,7 @@ Azure VM 재해 복구에는 VM 라이선스 비용과 네트워크 및 스토�
 **업데이트** | **세부 정보**
 --- | ---
 **공급자 및 에이전트** | Site Recovery 에이전트 및 공급자 (롤업에 자세 함)에 대 한 업데이트
-**Linux에 대 한 재해 복구** | **Azure VM**: RedHat Enterprise Linux 6.10;에 대 한 지원 추가 CentOS 6.10 합니다.<br/><br/> **VMware Vm**: RedHat Enterprise Linux 6.10; CentOS 6.10.<br/><br/> Linux 기반 Vm GUID 파티션 테이블 (GPT) 파티션 스타일 레거시 BIOS 호환 모드에서 사용 하 여 이제 지원 됩니다.
+**Linux에 대 한 재해 복구** | **Azure VM**: RedHat Enterprise Linux 6.10;에 대 한 지원 추가 CentOS 6.10 합니다.<br/><br/> **VMware Vm**: RedHat Enterprise Linux 6.10; CentOS 6.10.<br/><br/> Linux 기반 Vm GUID 파티션 테이블 (GPT) 파티션 스타일 레거시 BIOS 호환 모드에서 사용 하 여 이제 지원 됩니다. 참조 [Azure IaaS VM 디스크에 대 한 질문과 대답](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/faq-for-disks) 자세한 내용은 합니다. 
 **클라우드 지원** | Azure 독일 클라우드의 Vm에 대 한 재해 복구를 지원 합니다.
 **구독 간 재해 복구** | 한 지역의 Azure Vm을 동일한 Azure Active Directory 테 넌 트 내에서 다른 구독에서 다른 지역으로 복제를 지원 합니다. [자세히 알아보기](https://aka.ms/cross-sub-blog).
 **Windows Server 2008** | 마이그레이션에 대 한 지원에는 실행 중인 Windows Server 2008 R2 2008 64 비트 및 32 비트 컴퓨터입니다.<br/><br/> 마이그레이션에만 (복제 및 장애 조치)입니다. 장애 복구는 지원 되지 않습니다.

@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 06/28/2018
 ms.author: terrylan
 ms.openlocfilehash: 5f8378de18796fd679354c88880942df83399ad5
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56112047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60586805"
 ---
 # <a name="azure-facilities-premises-and-physical-security"></a>Azure 시설, 구역 및 물리적 보안
 Azure는 전 세계적으로 수천 개의 온라인 서비스를 지원하고 100개가 넘는 고도의 보안 시설에 걸쳐 있는 [글로벌로 분산된 데이터 센터 인프라](https://azure.microsoft.com/global-infrastructure/)로 구성되어 있습니다.
@@ -66,7 +66,7 @@ Microsoft는 [NIST 800-88 규격](https://csrc.nist.gov/publications/detail/sp/8
 ## <a name="equipment-disposal"></a>장비 폐기
 시스템의 수명이 다하면 Microsoft 운영 담당자가 엄격한 데이터 처리 및 하드웨어 폐기 절차에 따라 고객 데이터를 포함하는 하드웨어를 신뢰할 수 없는 사용자가 사용할 수 없도록 합니다. 하드 드라이브에는 지원되는 안전한 지우기 방법이 사용됩니다. 초기화할 수 없는 하드 드라이브의 경우 드라이브를 파기하여 정보를 복구할 수 없게 렌더링하는 파기 프로세스가 사용됩니다. 파기 프로세스로는 분해, 파쇄, 분쇄 또는 소각 등이 있습니다. 폐기 방법은 자산 유형에 따라 결정됩니다. 파기 기록은 유지됩니다. 모든 Azure 서비스는 승인된 미디어 저장소 및 폐기 관리 서비스를 사용합니다.
 
-## <a name="compliance"></a>규정 준수
+## <a name="compliance"></a>준수
 Microsoft는 광범위한 국제 및 산업별 준수 표준(예: ISO 27001, HIPAA, FedRAMP, SOC 1 및 SOC 2)을 충족하도록 Azure 인프라를 디자인하고 관리합니다. 호주 IRAP, UK G-Cloud 및 싱가포르 MTCS를 비롯한 국가별 표준도 준수합니다. 영국 표준 협회 등의 엄격한 타사 감사를 통해 이러한 표준에 규정된 엄격한 보안 제어 정책의 준수 여부를 검사합니다.
 
 Azure가 준수하는 전체 규정 준수 표준 목록은 [규정 준수 제안](https://www.microsoft.com/trustcenter/compliance/complianceofferings)을 참조하세요. 

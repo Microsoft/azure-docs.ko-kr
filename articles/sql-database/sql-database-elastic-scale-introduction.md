@@ -13,11 +13,11 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: 9f61748a489987bf6c3f38e8ebfdab660198e10a
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55463024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60585461"
 ---
 # <a name="scaling-out-with-azure-sql-database"></a>Azure SQL Database를 사용하여 규모 확장
 **Elastic Database** 도구를 사용하여 Azure SQL 데이터베이스의 규모를 쉽게 확장할 수 있습니다. 이러한 도구와 기능을 사용하면 **Azure SQL Database**의 데이터베이스 리소스를 사용하여 트랜잭션 워크로드에 대한 솔루션, 특히 SaaS(Software as a Service) 애플리케이션을 만들 수 있습니다. Elastic Database 기능은 다음으로 구성됩니다.
@@ -57,7 +57,7 @@ ms.locfileid: "55463024"
 
 수평적 크기 조정은 용량 또는 전체 성능을 조정하기 위해 데이터베이스를 추가하거나 제거하는 것을 말하며, "규모 확장"이라고도 합니다. 분할은 동일한 구조 데이터베이스 컬렉션 간의 분할된 데이터의 수평적 확장 구현을 위한 일반적인 방법입니다.  
 
-수직적 크기 조정은 개별 데이터베이스의 계산 크기를 늘리거나 줄이는 것을 말하며, "강화"라고도 합니다.
+수직적 크기 조정은 개별 데이터베이스의 컴퓨팅 크기를 늘리거나 줄이는 것을 말하며, "강화"라고도 합니다.
 
 대부분의 클라우드 규모 데이터베이스 애플리케이션에 이러한 두 가지 전략이 결합하여 사용됩니다. 예를 들어, 서비스 애플리케이션 같은 소프트웨어는 새로운 최종고객을 프로비전하기 위해 수평적 확장을 사용할 것이고, 워크로드의 필요에 의해 개별 최종 고객의 데이터베이스 리소스를 늘리거나 줄이기 위해 수직적 확장을 사용할 것입니다.
 

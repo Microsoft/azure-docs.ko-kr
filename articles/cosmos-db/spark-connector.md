@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 02/21/2019
 ms.author: ramkris
 ms.openlocfilehash: 60afd8128224050d456699e798d814a259e106ae
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59543824"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61330249"
 ---
 # <a name="accelerate-big-data-analytics-by-using-the-apache-spark-to-azure-cosmos-db-connector"></a>Apache Spark-Azure Cosmos DB 커넥터를 사용하여 빅 데이터 분석 가속화
 
@@ -19,7 +19,7 @@ ms.locfileid: "59543824"
 
 커넥터를 사용할 수 있습니다 [Azure Databricks](https://azure.microsoft.com/services/databricks) 하거나 [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/), Azure에서 관리 되는 Spark 클러스터를 제공 하는 합니다. 다음 표에서 지원 되는 Spark 버전을 보여 줍니다.
 
-| 구성 요소 | 버전 |
+| 구성 요소 | Version |
 |---------|-------|
 | Apache Spark | 2.4.x, 2.3.x, 2.2.x, and 2.1.x |
 | 스칼라 | 2.11 |

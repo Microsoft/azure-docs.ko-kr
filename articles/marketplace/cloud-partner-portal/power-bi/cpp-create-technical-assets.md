@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: pbutlerm
 ms.openlocfilehash: f3d6466ced6efdb4047f9531329b70477911bf21
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56414767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60729167"
 ---
 # <a name="create-power-bi-app-offer-technical-assets"></a>Power BI 앱 제품 기술 자산 만들기
 

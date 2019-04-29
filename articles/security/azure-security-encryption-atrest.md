@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 10/18/2018
 ms.author: barclayn
 ms.openlocfilehash: 4ced712b1b2716d85f0366ea892460053db598b8
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58076907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60613019"
 ---
 # <a name="azure-data-encryption-at-rest"></a>Azure 미사용 데이터 암호화
 
@@ -270,7 +270,7 @@ Azure SQL Database 데이터의 클라이언트 쪽 암호화는 [Always Encrypt
 | StorSimple                       | 예                | -                  | 예                |
 | Backup                           | 예                | -                  | 예                |
 | **인텔리전스 및 분석**   |                    |                    |                    |
-| Azure 데이터 팩터리               | 예                | -                  | -                  |
+| Azure Data Factory               | 예                | -                  | -                  |
 | Azure Machine Learning           | -                  | 미리 보기, RSA 2048비트 | -                  |
 | Azure Stream Analytics           | 예                | -                  | -                  |
 | HDInsight(Azure Blob Storage)   | 예                | -                  | -                  |

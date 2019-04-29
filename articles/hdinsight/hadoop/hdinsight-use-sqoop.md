@@ -8,11 +8,11 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/12/2019
 ms.openlocfilehash: 6764d8d812789c9f54fa59e10b2a3e416e583a9c
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59565855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62129402"
 ---
 # <a name="use-apache-sqoop-with-hadoop-in-hdinsight"></a>HDInsight에서 Hadoop과 Apache Sqoop 사용
 [!INCLUDE [sqoop-selector](../../../includes/hdinsight-selector-use-sqoop.md)]
@@ -80,7 +80,7 @@ HDInsight 클러스터는 일부 샘플 데이터와 함께 제공됩니다. 다
     |---|---|
     |구독 |드롭다운 목록에서 Azure 구독을 선택 합니다.|
     |리소스 그룹 |드롭다운 목록에서 리소스 그룹을 선택 하거나 새로 만듭니다|
-    |위치 |드롭다운 목록에서 지역을 선택 합니다.|
+    |Location |드롭다운 목록에서 지역을 선택 합니다.|
     |클러스터 이름 |Hadoop 클러스터에 사용할 이름을 입력합니다. 소문자만 사용 합니다.|
     |클러스터 로그인 사용자 이름 |미리 채워진된 값을 유지 `admin`합니다.|
     |클러스터 로그인 암호 |암호를 입력합니다.|
@@ -91,7 +91,7 @@ HDInsight 클러스터는 일부 샘플 데이터와 함께 제공됩니다. 다
     |_artifacts 위치 | 다른 위치에 bacpac 파일을 직접 사용 하려는 경우가 아니면 기본값을 사용 합니다.|
     |_artifacts 위치 Sas 토큰 |비워 둡니다.|
     |Bacpac 파일 이름 |Bacpac 파일을 직접 사용 하려는 경우가 아니면 기본값을 사용 합니다.|
-    |위치 |기본값을 사용합니다.|
+    |Location |기본값을 사용합니다.|
 
     Azure SQL Server 이름은 `<ClusterName>dbserver`합니다. 데이터베이스 이름은 `<ClusterName>db`합니다. 기본 저장소 계정 이름은 `e6qhezrh2pdqu`합니다.
 

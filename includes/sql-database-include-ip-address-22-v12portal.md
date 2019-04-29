@@ -10,14 +10,14 @@ ms.custom: develop apps
 ms.topic: include
 ms.date: 07/13/2018
 ms.author: ninarn
-ms.openlocfilehash: 07bbba28b7e1b048ef3a4e1afa4db255967dc093
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
-ms.translationtype: HT
+ms.openlocfilehash: 8d0f9899dbb7599340b8d15ca010a0157011fb9e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39117276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60202157"
 ---
-1. [Azure 포털](https://portal.azure.com/)에 로그인합니다.
+1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
 
 2. 왼쪽에 있는 목록에서 **모든 서비스**를 선택합니다.
 

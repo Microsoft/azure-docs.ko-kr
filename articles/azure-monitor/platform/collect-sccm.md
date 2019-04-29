@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 03/22/2018
 ms.author: magoedte
 ms.openlocfilehash: e5cf89b7fe01946de9944a7026ec448cd55dd6dc
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58630663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60741665"
 ---
 # <a name="connect-configuration-manager-to-azure-monitor"></a>Azure Monitor에 Configuration Manager 연결
 System Center Configuration Manager 환경의 장치 컬렉션 데이터를 동기화 하려면 Azure Monitor에 연결할 수 있으며 Azure Monitor 및 Azure Automation에서 이러한 컬렉션을 참조할 수 있습니다.  

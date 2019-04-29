@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
 ms.openlocfilehash: 77587b0b7506ef0ccadbeb6d1f010f5b6a72d93e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59793606"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60714560"
 ---
 # <a name="connect-data-from-office-365-logs"></a>Office 365 로그에서 데이터 연결
 

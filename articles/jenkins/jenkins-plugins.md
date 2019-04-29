@@ -9,11 +9,11 @@ ms.author: tarcher
 ms.date: 03/22/2019
 ms.topic: article
 ms.openlocfilehash: c103bc0a314f1e5a4a0afef3f7969f53b6a0dccd
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58621603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60640976"
 ---
 # <a name="jenkins-plugins-for-azure"></a>Azure 용 Jenkins 플러그 인
 

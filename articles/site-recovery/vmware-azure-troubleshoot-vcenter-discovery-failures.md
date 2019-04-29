@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: v-doglov
 ms.openlocfilehash: c598c5e238458c010500579c5371622b85e71de0
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58540808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60565194"
 ---
 # <a name="troubleshoot-vcenter-discovery-failures"></a>vCenter 검색 실패 문제 해결
 

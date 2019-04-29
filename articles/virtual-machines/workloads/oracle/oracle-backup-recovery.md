@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 93fbd5bbba91b45e1afd123a2466b249302e2354
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
+ms.openlocfilehash: c41f13a6437f69121d3bbb387c96d8e13f2be0b3
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39492843"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60567084"
 ---
 # <a name="back-up-and-recover-an-oracle-database-12c-database-on-an-azure-linux-virtual-machine"></a>Azure Linux Virtual Machine에서 Oracle Database 12c 데이터베이스 백업 및 복구
 
@@ -45,7 +45,7 @@ Azure CLI를 사용하여 명령줄 프롬프트 또는 스크립트를 사용�
     ssh <publicIpAddress>
     ```
 
-### <a name="step-3-prepare-the-database"></a>3단계: 데이터베이스 준비
+### <a name="step-3-prepare-the-database"></a>3단계: 데이터베이스를 준비 합니다.
 
 1.  이 단계에서는 *myVM*이라는 VM이 실행되는 Oracle 인스턴스(cdb1)가 있다고 가정합니다.
 
@@ -133,7 +133,7 @@ Azure CLI를 사용하여 명령줄 프롬프트 또는 스크립트를 사용�
     RMAN> backup database plus archivelog;
     ```
 
-### <a name="step-4-application-consistent-backup-for-linux-vms"></a>4단계: Linux VM의 애플리케이션 일치 백업
+### <a name="step-4-application-consistent-backup-for-linux-vms"></a>4단계: Linux Vm의 응용 프로그램 일치 백업
 
 애플리케이션 일치 백업은 Azure Backup의 새 기능입니다. VM 스냅숏(사전 스냅숏 및 사후 스냅숏) 이전 및 이후에 실행하는 스크립트를 만들고 선택할 수 있습니다.
 
@@ -266,7 +266,7 @@ Azure CLI를 사용하여 명령줄 프롬프트 또는 스크립트를 사용�
 자세한 내용은 [Linux VM에 대한 애플리케이션 일치 백업](https://azure.microsoft.com/blog/announcing-application-consistent-backup-for-linux-vms-using-azure-backup/)을 참조하세요.
 
 
-### <a name="step-5-use-azure-recovery-services-vaults-to-back-up-the-vm"></a>5 단계: Azure Recovery Services 자격 증명 모음을 사용하여 VM 백업
+### <a name="step-5-use-azure-recovery-services-vaults-to-back-up-the-vm"></a>5단계: VM 백업에 사용 하 여 Azure Recovery Services 자격 증명 모음
 
 1.  Azure Portal에서 **Recovery Services 자격 증명 모음**을 검색합니다.
 
@@ -307,7 +307,7 @@ Azure CLI를 사용하여 명령줄 프롬프트 또는 스크립트를 사용�
 
     ![Recovery Services 자격 증명 모음 지금 Backup 명령](./media/oracle-backup-recovery/recovery_service_09.png)
 
-10. **Backup** 단추를 클릭합니다. 백업 프로세스가 완료될 때까지 기다립니다. 그런 다음, [6단계: 데이터베이스 파일 제거](#step-6-remove-the-database-files)로 이동합니다.
+10. **Backup** 단추를 클릭합니다. 백업 프로세스가 완료될 때까지 기다립니다. 그런 다음 [6 단계: 데이터베이스 파일 제거](#step-6-remove-the-database-files)합니다.
 
     백업 작업의 상태를 보려면 **작업**을 클릭합니다.
 
@@ -452,7 +452,7 @@ Azure CLI를 사용하여 명령줄 프롬프트 또는 스크립트를 사용�
 
 Recovery Services 자격 증명 모음에서 삭제된 파일을 복원하는 대신 전체 VM을 복원할 수 있습니다.
 
-### <a name="step-1-delete-myvm"></a>1단계: myVM 삭제
+### <a name="step-1-delete-myvm"></a>1단계: MyVM 삭제
 
 *   Azure Portal에서 **myVM1**로 이동한 다음, **삭제**를 선택합니다.
 
@@ -496,7 +496,7 @@ Recovery Services 자격 증명 모음에서 삭제된 파일을 복원하는 �
 
     ![복원 프로세스의 상태](./media/oracle-backup-recovery/recover_vm_09.png)
 
-### <a name="step-3-set-the-public-ip-address"></a>3단계: 공용 IP 주소 설정
+### <a name="step-3-set-the-public-ip-address"></a>3단계: 공용 IP 주소를 설정 합니다.
 VM을 복원한 후에 공용 IP 주소를 설정합니다.
 
 1.  검색 상자에서 **공용 IP 주소**를 입력합니다.
@@ -527,7 +527,7 @@ VM을 복원한 후에 공용 IP 주소를 설정합니다.
     ssh <publicIpAddress>
     ```
 
-### <a name="step-5-test-whether-the-database-is-accessible"></a>5단계: 데이터베이스에 액세스할 수 있는지 여부 테스트
+### <a name="step-5-test-whether-the-database-is-accessible"></a>5단계: 데이터베이스에 액세스할 수 있는지 여부를 테스트 합니다.
 *   액세스 가능 여부를 테스트하려면 다음 스크립트를 사용합니다.
 
     ```bash 
@@ -537,9 +537,9 @@ VM을 복원한 후에 공용 IP 주소를 설정합니다.
     ```
 
     > [!IMPORTANT]
-    > 데이터베이스 **시작** 명령으로 인해 오류가 발생한 경우 데이터베이스를 복구하려면 [6단계: RMAN을 사용하여 데이터베이스 복구](#step-6-optional-use-rman-to-recover-the-database)를 참조하세요.
+    > 경우 데이터베이스 **시동** 명령은 오류를 생성, 데이터베이스를 복구 하려면 참조 [6 단계: RMAN을 사용 하 여 데이터베이스를 복구 하려면](#step-6-optional-use-rman-to-recover-the-database)합니다.
 
-### <a name="step-6-optional-use-rman-to-recover-the-database"></a>6단계: (선택 사항) RMAN을 사용하여 데이터베이스 복구
+### <a name="step-6-optional-use-rman-to-recover-the-database"></a>6단계: (선택 사항) RMAN을 사용 하 여 데이터베이스를 복구 하려면
 *   데이터베이스를 복구하려면 다음 스크립트를 사용합니다.
 
     ```bash

@@ -16,11 +16,11 @@ ms.date: 04/25/2017
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: fb8dedac8b795ec127d7b4a14728d73c9397a1dd
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56807408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62128435"
 ---
 # <a name="configure-apps-in-azure-app-service"></a>Azure App Service에서 앱 구성
 

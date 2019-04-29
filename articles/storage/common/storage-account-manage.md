@@ -8,17 +8,17 @@ ms.topic: article
 ms.date: 03/05/2019
 ms.author: tamram
 ms.openlocfilehash: fa574558afeec5a7706482a142c0187e6a34bdb3
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58370400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61484277"
 ---
 # <a name="manage-storage-account-settings-in-the-azure-portal"></a>Azure Portal에서 저장소 계정 설정 관리
 
 저장소 계정에 대한 다양한 설정은 [Azure Portal](https://portal.azure.com)에서 사용할 수 있습니다. 이 문서에서는 이러한 설정 및 해당 설정을 사용하는 방법에 대해 설명합니다.
 
-## <a name="access-control"></a>Access Control
+## <a name="access-control"></a>액세스 제어
 
 Azure Storage Blob storage 및 Queue storage를 통해 역할 기반 액세스 제어 (RBAC)에 대 한 Azure Active Directory를 사용 하 여 인증을 지원합니다. Azure AD로 인증 하는 방법에 대 한 자세한 내용은 참조 하세요. [Authenticate 권한을 Azure blob 및 Azure Active Directory를 사용 하 여 큐](storage-auth-aad.md)합니다.
 

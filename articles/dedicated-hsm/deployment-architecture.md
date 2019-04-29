@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: barclayn
-ms.openlocfilehash: 1e00e1f06f2409c94174a752a799cd4c1b7b23ef
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.openlocfilehash: f078df7677e771d131f15056ac4a54a58a3134bd
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58539975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60912291"
 ---
 # <a name="azure-dedicated-hsm-deployment-architecture"></a>Azure 전용 HSM 배포 아키텍처
 
@@ -35,7 +35,7 @@ HSM은 Microsoft의 데이터 센터에 분산되며 고가용성 솔루션의 �
 * 미국 중남부
 * 동남아시아
 * 동아시아
-* 북유럽
+* 유럽 북부
 * 서유럽
 * 영국 남부
 * 영국 서부

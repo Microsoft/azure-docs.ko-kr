@@ -13,13 +13,13 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: spelluru
 ms.openlocfilehash: feabd055833e5f0d850138af528cce1da82cae49
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58439977"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60622686"
 ---
-# <a name="save-custom-images-and-distribute-to-multiple-labs"></a>사용자 지정 이미지를 저장 하 고 여러 개의 랩에 배포
+# <a name="save-custom-images-and-distribute-to-multiple-labs"></a>사용자 지정 이미지 저장 및 여러 랩에 배포
 이 문서에서는 이미 만든된 virtual machines (Vm)에서 사용자 지정 이미지를 저장 하는 단계를 제공 합니다. 또한 조직에서 다른 DevTest Labs에 이러한 사용자 지정 이미지를 배포 하는 방법에 대해서도 설명 합니다.
 
 ## <a name="prerequisites"></a>필수 조건

@@ -10,11 +10,11 @@ ms.date: 03/11/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 59d433bfb888eaa41cc8f66bdf3ad28c16efbe5c
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58225963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61302621"
 ---
 # <a name="move-your-azure-automation-account-to-another-subscription"></a>다른 구독으로 Azure Automation 계정 이동
 

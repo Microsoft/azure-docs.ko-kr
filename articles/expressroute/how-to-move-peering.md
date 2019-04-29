@@ -9,15 +9,15 @@ ms.date: 03/12/2018
 ms.author: cherylmc
 ms.custom: seodec18
 ms.openlocfilehash: 6b2bce6b488698db0a72c9a17f67c2555c6afa5b
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53100024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60883149"
 ---
 # <a name="move-a-public-peering-to-microsoft-peering"></a>공용 피어링을 Microsoft 피어링으로 이동
 
-이 문서에서는 가동 중지 없이 공용 피어링 구성을 Microsoft 피어링으로 이동할 수 있습니다. ExpressRoute는 Azure Storage 및 Azure SQL Database와 같은 Azure PaaS 서비스에 대한 경로 필터를 사용하여 Microsoft 피어링 사용을 지원합니다. Microsoft PaaS 및 SaaS 서비스에 액세스하려면 하나의 라우팅 도메인만 있으면 됩니다. 경로 필터를 사용하여 사용하려는 Azure 지역에 대한 PaaS 서비스 접두사를 선택적으로 보급할 수 있습니다. 라우팅 도메인 및 피어링에 대한 자세한 내용은 [ExpressRoute 회로 및 라우팅 도메인](expressroute-circuit-peerings.md)을 참조하세요.
+이 문서에서는 가동 중지 없이 공용 피어링 구성을 Microsoft 피어링으로 이동할 수 있습니다. ExpressRoute는 Azure 스토리지 및 Azure SQL Database와 같은 Azure PaaS 서비스에 대한 경로 필터를 사용하여 Microsoft 피어링 사용을 지원합니다. Microsoft PaaS 및 SaaS 서비스에 액세스하려면 하나의 라우팅 도메인만 있으면 됩니다. 경로 필터를 사용하여 사용하려는 Azure 지역에 대한 PaaS 서비스 접두사를 선택적으로 보급할 수 있습니다. 라우팅 도메인 및 피어링에 대한 자세한 내용은 [ExpressRoute 회로 및 라우팅 도메인](expressroute-circuit-peerings.md)을 참조하세요.
 
 ## <a name="before"></a>시작하기 전에
 

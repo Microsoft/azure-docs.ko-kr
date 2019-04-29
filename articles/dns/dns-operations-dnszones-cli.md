@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/27/2017
 ms.author: victorh
-ms.openlocfilehash: 7f132c513354a87b4f1bd37db4c6c6ed8e0fd041
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: df741b34e1268c547723af87401760197d395780
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46949964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61293832"
 ---
 # <a name="how-to-manage-dns-zones-in-azure-dns-using-the-azure-cli"></a>Azure CLI를 사용하여 Azure DNS에서 DNS 영역을 관리하는 방법
 
@@ -68,8 +68,8 @@ az account list
 az account set --subscription "subscription name"
 ```
 
-### <a name="optional-to-installuse-azure-dns-private-zones-feature-public-preview"></a>선택 사항: Azure DNS Private Zones 기능을 설치/사용하려면(공개 미리 보기)
-Azure DNS Private Zones 기능은 Azure CLI 확장을 통해 공개 미리 보기로 출시되었습니다. “dns” Azure CLI 확장 설치 
+### <a name="optional-to-installuse-azure-dns-private-zones-feature-public-preview"></a>선택 사항: Azure DNS 사설 영역 기능(공개 미리 보기)을 설치/사용하려면
+Azure DNS 사설 영역 기능은 Azure CLI 확장을 통해 공개 미리 보기로 출시되었습니다. “dns” Azure CLI 확장 설치 
 ```
 az extension add --name dns
 ``` 

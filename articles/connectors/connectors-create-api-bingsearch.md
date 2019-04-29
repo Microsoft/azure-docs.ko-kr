@@ -11,11 +11,11 @@ ms.topic: article
 ms.date: 05/21/2018
 tags: connectors
 ms.openlocfilehash: 7146e59eabf9e30fa263f957f1c546414ad0fe26
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58313552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60952607"
 ---
 # <a name="find-news-with-bing-search-and-azure-logic-apps"></a>Bing Search 및 Azure Logic Apps 소식
 
@@ -56,9 +56,9 @@ Azure Logic Apps에서 모든 논리 앱은 특정 이벤트가 발생하거나 
    | 자산 | 필수 | Value | 설명 |
    |----------|----------|-------|-------------|
    | Search Query | 예 | <*search-words*> | 사용하려는 검색 키워드를 입력합니다. |
-   | Market | 예 | <*locale*> | 검색 로캘입니다. 기본값은 "en-US"이지만 다른 값을 선택할 수 있습니다. |
-   | Safe Search | 예 | <*search-level*> | 성인물을 제외하기 위한 필터 수준입니다. 기본값은 "보통"이지만 다른 수준을 선택할 수 있습니다. |
-   | Count | 아닙니다. | <*results-count*> | 지정된 결과 수만 반환합니다. 기본값은 20이지만 다른 값을 지정할 수 있습니다. 반환된 결과의 실제 수는 지정된 수 미만일 수 있습니다. |
+   | 시장 | 예 | <*locale*> | 검색 로캘입니다. 기본값은 "en-US"이지만 다른 값을 선택할 수 있습니다. |
+   | 안전 검색 | 예 | <*search-level*> | 성인물을 제외하기 위한 필터 수준입니다. 기본값은 "보통"이지만 다른 수준을 선택할 수 있습니다. |
+   | 카운트 | 아닙니다. | <*results-count*> | 지정된 결과 수만 반환합니다. 기본값은 20이지만 다른 값을 지정할 수 있습니다. 반환된 결과의 실제 수는 지정된 수 미만일 수 있습니다. |
    | Offset | 아닙니다. | <*skip-value*> | 결과를 반환하기 전에 건너뛸 결과 수입니다. |
    |||||
 
@@ -107,9 +107,9 @@ Azure Logic Apps에서 [작업](../logic-apps/logic-apps-overview.md#logic-app-c
    | 자산 | 필수 | Value | 설명 |
    |----------|----------|-------|-------------|
    | Search Query | 예 | <*search-expression*> | 트리거 결과를 쿼리하는 식을 입력합니다. 동적 콘텐츠 목록의 필드에서 선택하거나 식 작성기를 사용하여 식을 만들 수 있습니다. |
-   | Market | 예 | <*locale*> | 검색 로캘입니다. 기본값은 "en-US"이지만 다른 값을 선택할 수 있습니다. |
-   | Safe Search | 예 | <*search-level*> | 성인물을 제외하기 위한 필터 수준입니다. 기본값은 "보통"이지만 다른 수준을 선택할 수 있습니다. |
-   | Count | 아닙니다. | <*results-count*> | 지정된 결과 수만 반환합니다. 기본값은 20이지만 다른 값을 지정할 수 있습니다. 반환된 결과의 실제 수는 지정된 수 미만일 수 있습니다. |
+   | 시장 | 예 | <*locale*> | 검색 로캘입니다. 기본값은 "en-US"이지만 다른 값을 선택할 수 있습니다. |
+   | 안전 검색 | 예 | <*search-level*> | 성인물을 제외하기 위한 필터 수준입니다. 기본값은 "보통"이지만 다른 수준을 선택할 수 있습니다. |
+   | 카운트 | 아닙니다. | <*results-count*> | 지정된 결과 수만 반환합니다. 기본값은 20이지만 다른 값을 지정할 수 있습니다. 반환된 결과의 실제 수는 지정된 수 미만일 수 있습니다. |
    | Offset | 아닙니다. | <*skip-value*> | 결과를 반환하기 전에 건너뛸 결과 수입니다. |
    |||||
 

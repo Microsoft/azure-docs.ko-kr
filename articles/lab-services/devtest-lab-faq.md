@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2019
 ms.author: spelluru
-ms.openlocfilehash: c26418d36271b4d2d39a43eda7e8b23585d69f4a
-ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.openlocfilehash: 91c598bde0912cffb8aa1dd7ba022c86a9084faa
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60149430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62127398"
 ---
 # <a name="azure-devtest-labs-faq"></a>Azure DevTest Labs FAQ
 Azure DevTest Labs에 대한 일반적인 질문에 대한 답변을 확인합니다.
@@ -350,7 +350,7 @@ Azure DevOps를 사용 하는 경우 사용할 수 있습니다는 [DevTest Labs
 ### <a name="when-should-i-create-a-new-virtual-network-for-my-devtest-labs-environment-vs-using-an-existing-virtual-network"></a>DevTest Labs 환경용으로 신규 가상 네트워크를 생성해야 하는 경우와 기존 가상 네트워크를 사용해야 하는 경우는 각각 언제인가요?
 Vm을 기존 인프라와 상호 작용 해야 하는 경우 다음 DevTest Labs 환경 내에서 기존 가상 네트워크를 사용 하 여 고려 합니다. Vnet의 양을 최소화 하려는 경우 ExpressRoute를 사용 하 여 / 서브넷 구독에서 사용 하기 위해 할당 되는 IP 주소 공간을 조각화 하지 않도록 합니다. 
 
-여기에 VNet 피어 링 패턴을 사용 하는 것이 좋습니다 ([허브-스포크 모델](/architecture/reference-architectures/hybrid-networking/hub-spoke)) 너무 합니다. 이 방법은 구독 간에 vnet/subnet 통신을 가능합니다. 각 DevTest Labs 환경에 자체 가상 네트워크가 있을 수도 있습니다. 
+여기에 VNet 피어 링 패턴을 사용 하는 것이 좋습니다 ([허브-스포크 모델](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke)) 너무 합니다. 이 방법은 구독 간에 vnet/subnet 통신을 가능합니다. 각 DevTest Labs 환경에 자체 가상 네트워크가 있을 수도 있습니다. 
 
 가지 [제한](../azure-subscription-service-limits.md) 구독 당 가상 네트워크의 수에 합니다. 기본 수는 50이지만 100까지 높일 수 있습니다.
 

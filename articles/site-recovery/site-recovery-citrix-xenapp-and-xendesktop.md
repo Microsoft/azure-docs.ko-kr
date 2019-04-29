@@ -8,20 +8,20 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: ponatara
 ms.openlocfilehash: 68f12bb7335da0a996aeadd752f59db0aa360a8e
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53310524"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61038237"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-citrix-xenapp-and-xendesktop-deployment"></a>다중 계층 Citrix XenApp 및 XenDesktop 배포에 대해 재해 복구 설정
 
 
 
-Citrix XenDesktop은 어디서든 모든 사용자에게 데스크톱 및 응용 프로그램을 주문형으로 전달하는 데스크톱 가상화 솔루션입니다. FlexCast 전달 기술을 사용하여 XenDesktop은 응용 프로그램 및 데스크톱을 사용자에게 빠르고 안전하게 전달할 수 있습니다.
+Citrix XenDesktop은 어디서든 모든 사용자에게 데스크톱 및 애플리케이션을 주문형으로 전달하는 데스크톱 가상화 솔루션입니다. FlexCast 전달 기술을 사용하여 XenDesktop은 애플리케이션 및 데스크톱을 사용자에게 빠르고 안전하게 전달할 수 있습니다.
 현재 Citrix XenApp은 재해 복구 기능을 제공하지 않습니다.
 
-훌륭한 재해 복구 솔루션에서는 위의 복잡한 응용 프로그램 아키텍처에 기반하여 복구 계획을 모델링할 수 있어야 하며, 다양한 계층 간의 응용 프로그램 매핑을 처리하기 위한 사용자 지정 단계를 추가할 수 있어야 합니다. 이에 따라 재해 발생시 한 번의 클릭으로 RTO(복구 시간 목표)를 낮추는 확실한 솔루션을 제공할 수 있습니다.
+훌륭한 재해 복구 솔루션에서는 위의 복잡한 애플리케이션 아키텍처에 기반하여 복구 계획을 모델링할 수 있어야 하며, 다양한 계층 간의 애플리케이션 매핑을 처리하기 위한 사용자 지정 단계를 추가할 수 있어야 합니다. 이에 따라 재해 발생시 한 번의 클릭으로 RTO(복구 시간 목표)를 낮추는 확실한 솔루션을 제공할 수 있습니다.
 
 이 문서에서는 Hyper-V 및 VMware vSphere 플랫폼에서 온-프레미스 Citrix XenApp 배포용 재해 복구 솔루션을 빌드하기 위한 단계별 지침을 제공합니다. 또한 복구 계획, 지원되는 구성 및 필수 구성 요소를 사용하여 Azure로의 테스트 장애 조치(재해 복구 드릴) 및 계획되지 않은 장애 조치를 수행하는 방법을 설명합니다.
 
@@ -56,9 +56,9 @@ AD DNS 서버, SQL Database 서버, Citrix Delivery Controller, StoreFront 서�
 
 **시나리오** | **보조 사이트로** | **Azure로**
 --- | --- | ---
-**Hyper-V** | 이 문서에서 다루지 않는 내용 | yes
-**VMware** | 이 문서에서 다루지 않는 내용 | yes
-**물리적 서버** | 이 문서에서 다루지 않는 내용 | yes
+**Hyper-V** | 이 문서에서 다루지 않는 내용 | 예
+**VMware** | 이 문서에서 다루지 않는 내용 | 예
+**물리적 서버** | 이 문서에서 다루지 않는 내용 | 예
 
 ### <a name="versions"></a>버전
 고객은 Hyper-V 또는 VMware에서 실행되는 Virtual Machines 또는 물리적 서버로 XenApp 구성 요소를 배포할 수 있습니다. Azure Site Recovery는 Azure에 대한 실제 배포와 가상 배포를 모두 보호할 수 있습니다.
@@ -192,4 +192,4 @@ Azure로 장애 조치된 경우 마스터 VDA VM은 실행 상태가 됩니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-이 백서에서 XenApp 및 XenDesktop 배포를 복제하는 방법에 대해 [자세히](https://aka.ms/citrix-xenapp-xendesktop-with-asr) 알아볼 수 있습니다. Site Recovery를 사용하여 [다른 응용 프로그램을 복제하는 방법](site-recovery-workload.md)에 대한 지침을 확인하세요.
+이 백서에서 XenApp 및 XenDesktop 배포를 복제하는 방법에 대해 [자세히](https://aka.ms/citrix-xenapp-xendesktop-with-asr) 알아볼 수 있습니다. Site Recovery를 사용하여 [다른 애플리케이션을 복제하는 방법](site-recovery-workload.md)에 대한 지침을 확인하세요.

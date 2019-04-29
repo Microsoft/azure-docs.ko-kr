@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 11/07/2018
 ms.author: babanisa
 ms.openlocfilehash: 0195ce82396a7b05335242a38a2881e1b2d1afb3
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58317496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61436601"
 ---
 # <a name="use-cloudevents-schema-with-event-grid"></a>Event Grid에서 CloudEvents 스키마 사용
 
@@ -64,14 +64,14 @@ CloudEvents v0.1에서는 다음과 같은 속성을 사용할 수 있습니다.
 
 | CloudEvents        | Type     | 예제 JSON 값             | 설명                                                        | Event Grid 매핑
 |--------------------|----------|--------------------------------|--------------------------------------------------------------------|-------------------------
-| eventType          | 문자열   | "com.example.someevent"          | 발생한 이벤트 유형                                   | eventType
-| eventTypeVersion   | 문자열   | "1.0"                            | eventType 버전(선택 사항)                            | dataVersion
-| cloudEventsVersion | 문자열   | "0.1"                            | 이벤트가 사용하여 CloudEvents 사양 버전        | *통과*
-| 원본             | URI      | "/mycontext"                     | 이벤트 생산자를 설명합니다.                                       | topic#subject
-| eventID            | 문자열   | "1234-1234-1234"                 | 이벤트의 ID                                                    | id
+| eventType          | String   | "com.example.someevent"          | 발생한 이벤트 유형                                   | eventType
+| eventTypeVersion   | String   | "1.0"                            | eventType 버전(선택 사항)                            | dataVersion
+| cloudEventsVersion | String   | "0.1"                            | 이벤트가 사용하여 CloudEvents 사양 버전        | *통과*
+| source             | URI      | "/mycontext"                     | 이벤트 생산자를 설명합니다.                                       | topic#subject
+| eventID            | String   | "1234-1234-1234"                 | 이벤트의 ID                                                    | id
 | eventTime          | 타임 스탬프| "2018-04-05T17:31:00Z"           | 이벤트가 발생한 때의 타임스탬프(선택 사항)                    | eventTime
 | schemaURL          | URI      | "https:\//myschema.com"           | 데이터 특성이 준수하는 스키마에 대한 링크(선택 사항) | *사용되지 않음*
-| contentType        | 문자열   | "application/json"               | 데이터 인코딩 형식을 설명합니다(선택 사항).                       | *사용되지 않음*
+| contentType        | String   | "application/json"               | 데이터 인코딩 형식을 설명합니다(선택 사항).                       | *사용되지 않음*
 | 확장         | Map      | { "extA": "vA", "extB", "vB" }  | 추가 메타데이터(선택 사항)                                 | *사용되지 않음*
 | 데이터               | Object   | { "objA": "vA", "objB", "vB" }  | 이벤트 페이로드(선택 사항)                                       | 데이터
 

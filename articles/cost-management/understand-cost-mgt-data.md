@@ -5,21 +5,23 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 04/11/2019
+ms.date: 04/22/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: 5c8f70ff76da458fcc1433226a51012fb7ccd18e
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.openlocfilehash: 81947baccf723ab759f2dc24df40b81af4502e09
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59544639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61004006"
 ---
 # <a name="understand-cost-management-data"></a>Cost Management 데이터 이해
 
 이 문서는 Azure Cost Management에 포함된 데이터를 파악하는 데 도움이 됩니다. 또한 데이터의 처리, 수집, 표시 및 마감 빈도를 설명합니다. Azure 사용 요금은 매월 청구됩니다. 그러나 Azure 구독 유형에 따라 청구 월이 종료되는 시점이 결정됩니다. Cost Management가 사용량 데이터를 받는 빈도는 다양한 요인에 따라 달라집니다. 이러한 요인에는 데이터 처리에 걸리는 시간, Azure 서비스에서 사용량을 청구 시스템으로 내보내는 빈도 등이 있습니다.
+
+Cost Management는 모든 사용량 및 예약 등 EA (기업 계약) 계정에 대 한 타사 제품 구매를 포함 합니다. Microsoft 고객 계약 (MCA) 계정 및 종 량 제 구독에서 Azure 및 Marketplace 서비스 사용을 포함 됩니다. 지원 및 기타 비용 포함 되지 않습니다. 송장을 생성 될 때까지 비용 예측 및 크레딧 팩터링 하지.
 
 ## <a name="supported-microsoft-offers"></a>지원되는 Microsoft 제품
 
@@ -86,6 +88,7 @@ Azure Cost Management에서 현재 지원되는 [Microsoft Azure 제품](https:/
 |   | 크레딧 - 자세한 내용은 [청구서 용어 설명](../billing/billing-understand-your-invoice.md)을 참조하세요. |
 
 <sup>1</sup> Azure 서비스 사용량은 예약 및 협상 가격을 기준으로 합니다.
+
 <sup>2</sup> 사용량을 제공 하는 marketplace를 사용할 수 없으며 종 량 제, MSDN, Visual Studio는 현재 제공 합니다.
 
 **Metadata**
@@ -113,7 +116,7 @@ EA(기업계약) 구독 - 청구 월이 3월 31일에 종료되는 경우 예상
 
 ### <a name="rerated-data"></a>데이터 재평가
 
-[Cost Management API](https://aka.ms/costmgmt/docs), PowerBI 또는 Azure Portal을 사용하여 데이터를 검색하든 상관없이, 청구서가 마감되기 전에는 현재 청구 기간의 요금이 재평가되고 그에 따라 변경될 수 있습니다.
+사용 여부를 [비용 관리 Api](https://aka.ms/costmgmt/docs), Power BI 또는 Azure portal에서 데이터를 검색 하려면 등급 다시 가져오기 청구서 닫힐 때까지 결과적으로 변경 하는 현재 청구 기간 요금을 예상 합니다.
 
 ## <a name="usage-data-update-frequency-varies"></a>사용량 데이터 업데이트 빈도 변동
 

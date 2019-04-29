@@ -10,11 +10,11 @@ ms.date: 04/20/2018
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: a9e8d2cbc067fd92208fac778ba17c58bdc7a5e4
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58079148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61289589"
 ---
 # <a name="filters-in-azure-search"></a>Azure Search의 필터 
 

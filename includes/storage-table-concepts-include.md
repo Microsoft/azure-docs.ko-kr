@@ -5,24 +5,24 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: tamram
 ms.openlocfilehash: 042aedf1a043cd89d74ff099554642d38a3c7dd3
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50164505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122984"
 ---
-## <a name="what-is-table-storage"></a>테이블 저장소란?
-Azure 테이블 저장소는 많은 양의 구조화된 데이터를 저장합니다. 이 서비스는 Azure 클라우드 내부 및 외부에서 인증된 호출을 수락하는 NoSQL 데이터 저장소입니다. Azure 테이블은 구조화된 비관계형 데이터를 저장하는 데 적합합니다. 테이블 저장소의 일반적인 용도는 다음과 같습니다.
+## <a name="what-is-table-storage"></a>Table Storage란?
+Azure Table Storage는 많은 양의 구조화된 데이터를 저장합니다. 이 서비스는 Azure 클라우드 내부 및 외부에서 인증된 호출을 수락하는 NoSQL 데이터 저장소입니다. Azure 테이블은 구조화된 비관계형 데이터를 저장하는 데 적합합니다. Table Storage의 일반적인 용도는 다음과 같습니다.
 
 * 웹 규모 애플리케이션을 처리할 수 있는 구조화된 데이터 TB 저장
 * 복합 조인, 외래 키 또는 저장 프로시저가 필요하지 않고 빠른 액세스를 위해 역정규화할 수 있는 데이터 세트 저장
 * 클러스터형 인덱스를 사용하여 신속하게 데이터 쿼리
 * WCF 데이터 서비스 .NET 라이브러리와 함께 OData 프로토콜 및 LINQ 쿼리를 사용하여 데이터 액세스
 
-테이블 저장소를 사용하여 매우 큰 구조화된 비관계형 데이터 집합을 저장하고 쿼리할 수 있으며, 수요가 증가함에 따라 테이블의 크기가 조정됩니다.
+Table Storage를 사용하여 매우 큰 구조화된 비관계형 데이터 집합을 저장하고 쿼리할 수 있으며, 수요가 증가함에 따라 테이블의 크기가 조정됩니다.
 
-## <a name="table-storage-concepts"></a>테이블 저장소 개념
-테이블 저장소에 포함되는 구성 요소는 다음과 같습니다.
+## <a name="table-storage-concepts"></a>Table Storage 개념
+Table Storage에 포함되는 구성 요소는 다음과 같습니다.
 
 ![테이블 저장소 구성 요소 다이어그램][Table1]
 

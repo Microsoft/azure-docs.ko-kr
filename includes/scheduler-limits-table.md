@@ -9,11 +9,11 @@ ms.date: 08/16/2016
 ms.author: deli
 ms.custom: include file
 ms.openlocfilehash: b3788ede23a423bebf96661ea88b227bfb5fdf4c
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57553872"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60531304"
 ---
 다음 표에서는 Azure Scheduler의 주요 할당량, 제한, 기본값 및 한계를 각각 설명합니다.
 

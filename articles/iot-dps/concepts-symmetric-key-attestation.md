@@ -3,17 +3,17 @@ title: Azure IoT Hub Device Provisioning Service - 대칭 키 증명
 description: 이 문서에서는 IoT Device Provisioning Service를 사용하여 대칭 키 증명에 대한 개념적 개요를 제공합니다.
 author: wesmc7777
 ms.author: wesmc
-ms.date: 04/04/2019
+ms.date: 08/18/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-manager: philmea
+manager: timlt
 ms.openlocfilehash: 2f6e1e1a27e32e567cf0eaa8ff7a99046ed81bbe
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59050947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60746169"
 ---
 # <a name="symmetric-key-attestation"></a>대칭 키 증명
 

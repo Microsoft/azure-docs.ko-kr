@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 5/04/2017
 ms.author: rli
-ms.openlocfilehash: b4751320af82a29fb13dc6012c1b197ebc2b1f9b
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
-ms.translationtype: HT
+ms.openlocfilehash: 2d27cd54486a08e18fe74c852af29d5cf6432023
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33764845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60737077"
 ---
 # <a name="http2-support-in-azure-cdn"></a>Azure CDN에서 HTTP/2 지원
 
@@ -55,7 +55,7 @@ HTTP/2의 이점은 다음과 같습니다.
 
 ## <a name="enabling-http2-support-in-azure-cdn"></a>Azure CDN에서 HTTP/2 지원 활성화
 
-현재, HTTP/2 지원은 모든 Azure CDN 프로필에 대해 활성화되어 있습니다. 고객의 별도의 작업이 필요하지 않습니다.
+현재, HTTP/2 지원은 모든 Azure CDN 프로필에 대해 활성화되어 있습니다. 고객의 추가적인 조치가 필요하지 않습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

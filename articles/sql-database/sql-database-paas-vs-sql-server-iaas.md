@@ -14,11 +14,11 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 03/11/2019
 ms.openlocfilehash: d9cd5ba0b697cbf67f943eb49d66010745d8561e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59360808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60584869"
 ---
 # <a name="choose-the-right-sql-server-option-in-azure"></a>Azure에서 적절한 SQL Server 옵션 선택
 
@@ -56,7 +56,7 @@ Azure와 온-프레미스 SQL Server 데이터베이스를 비교 논의할 때 
 - Azure Virtual Machine의 SQL Server(Microsoft 공용 클라우드)
 - Azure SQL Database(Microsoft 공용 클라우드)
 
-다음 섹션에서는 Microsoft 공용 클라우드의 SQL Server인 Azure VM의 SQL Server 및 Azure SQL Database에 대해 알아봅니다. 또한 애플리케이션에 가장 적합한 옵션을 결정하는 데 영향을 미치는 일반적인 비즈니스 동인도 살펴봅니다.
+다음 섹션에서는 Microsoft 공용 클라우드의 SQL Server인 Azure VM의 SQL Server 및 Azure SQL Database. 또한 애플리케이션에 가장 적합한 옵션을 결정하는 데 영향을 미치는 일반적인 비즈니스 동인도 살펴봅니다.
 
 ## <a name="a-closer-look-at-azure-sql-database-and-sql-server-on-azure-vms"></a>Azure SQL Database 및 Azure VM의 SQL Server에서 자세히 보기
 
@@ -109,7 +109,7 @@ PaaS 또는 IaaS 중에서 SQL Database의 호스트를 결정할 때 영향을 
 - 데이터베이스 인스턴스 간에 리소스를 공유하도록 [탄력적 풀](sql-database-elastic-pool.md)을 만들어서 비용을 줄이고 사용량 급증에 대비할 수 있습니다.
 - SQL Database 관리되는 인스턴스를 선택하면 고객이 보유한 라이선스를 사용할 수도 있습니다. BYOL(사용자 라이선스 필요)에 대한 자세한 내용은 [Azure에서 Software Assurance를 통한 라이선스 이동](https://azure.microsoft.com/pricing/license-mobility/)을 참조하거나 [Azure 하이브리드 혜택 계산기](https://azure.microsoft.com/pricing/hybrid-benefit/#sql-database)를 사용하여 **최대 40%를 절감하는 방법**을 알아보세요.
 
-또한 일반 [데이터 전송 요금](https://azure.microsoft.com/pricing/details/data-transfers/)으로 발신 인터넷 트래픽에 대해 요금이 청구됩니다. 애플리케이션의 다양한 처리량 요구에 맞게 서비스 계층과 계산 크기를 동적으로 조정할 수 있습니다.
+또한 일반 [데이터 전송 요금](https://azure.microsoft.com/pricing/details/data-transfers/)으로 발신 인터넷 트래픽에 대해 요금이 청구됩니다. 애플리케이션의 다양한 처리량 요구에 맞게 서비스 계층과 컴퓨팅 크기를 동적으로 조정할 수 있습니다.
 
 **SQL Database**에서 데이터베이스 소프트웨어는 Microsoft에서 구성, 패치 적용 및 업그레이드를 수행하며 이는 관리 비용을 줄입니다. 또한 [기본 제공 백업](sql-database-automated-backups.md) 기능을 사용하여 비용을 크게 절감할 수 있으며, 특히 데이터베이스 수가 많을 경우 그 효과가 큽니다.
 
@@ -158,9 +158,9 @@ Microsoft는 **SQL Database**에 대해 99.99%의 가용성 SLA를 제공합니�
 
 **SQL Database 단일 데이터베이스 또는 탄력적 풀**은 새 솔루션에 대한 개발자 생산성과 빠른 출시 시간이 중요한 경우, 클라우드용으로 설계된 애플리케이션에 적합한 솔루션입니다. 프로그래밍 방식 DBA와 비슷한 기능을 사용하여 기본 운영 체제 및 데이터베이스를 관리할 필요성을 낮추므로 클라우드 설계자와 개발자에게 이상적인 솔루션입니다.
 
-**SQL Database 관리되는 인스턴스**는 기존 애플리케이션을 Azure SQL Database로 마이그레이션하는 과정을 간소화하므로 Azure에서 마이그레이션된 데이터베이스 애플리케이션을 빠르게 출시할 수 있습니다.
+**SQL Database 관리형 인스턴스**는 기존 애플리케이션을 Azure SQL Database로 마이그레이션하는 과정을 간소화하므로 Azure에서 마이그레이션된 데이터베이스 애플리케이션을 빠르게 출시할 수 있습니다.
 
-**Azure VM에서 실행 중인 SQL Server**는 기존 애플리케이션 또는 새 애플리케이션에 큰 데이터베이스가 필요하거나 SQL Server 또는 Windows/Linux의 모든 기능에 액세스해야 하며 새로운 온-프레미스 하드웨어를 획득하는 시간과 비용을 피하려는 경우에 유용합니다. 또한 기존 온-프레미스 애플리케이션 및 데이터베이스를 Azure로 있는 그대로 마이그레이션하기를 원하지만 Azure SQL Database 관리되는 인스턴스가 적합하지 않은 경우에 적절한 선택입니다. 프레젠테이션, 애플리케이션 및 데이터 계층을 변경할 필요가 없으므로 기존 솔루션 재설계에 따른 비용과 예산이 절감됩니다. 대신 모든 솔루션을 Azure에 마이그레이션하고 Azure 플랫폼에 필요할 수 있는 일부 성능 최적화를 수행하는 데 집중할 수 있습니다. 자세한 내용은 [Azure Virtual Machines의 SQL Server에 대한 성능 모범 사례](../virtual-machines/windows/sql/virtual-machines-windows-sql-performance.md)를 참조하세요.
+**Azure VM에서 실행 중인 SQL Server**는 기존 애플리케이션 또는 새 애플리케이션에 큰 데이터베이스가 필요하거나 SQL Server 또는 Windows/Linux의 모든 기능에 액세스해야 하며 새로운 온-프레미스 하드웨어를 획득하는 시간과 비용을 피하려는 경우에 유용합니다. 또한 기존 온-프레미스 애플리케이션 및 데이터베이스를 Azure로 있는 그대로 마이그레이션하기를 원하지만 Azure SQL Database 관리형 인스턴스가 적합하지 않은 경우에 적절한 선택입니다. 프레젠테이션, 애플리케이션 및 데이터 계층을 변경할 필요가 없으므로 기존 솔루션 재설계에 따른 비용과 예산이 절감됩니다. 대신 모든 솔루션을 Azure에 마이그레이션하고 Azure 플랫폼에 필요할 수 있는 일부 성능 최적화를 수행하는 데 집중할 수 있습니다. 자세한 내용은 [Azure Virtual Machines의 SQL Server에 대한 성능 모범 사례](../virtual-machines/windows/sql/virtual-machines-windows-sql-performance.md)를 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

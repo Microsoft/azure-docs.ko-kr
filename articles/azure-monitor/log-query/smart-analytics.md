@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 01/15/2019
 ms.author: bwren
 ms.openlocfilehash: f6617a504bbda666ce9ece018ccb0cf02635c360
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54355210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61425843"
 ---
 # <a name="log-analytics-smart-analytics-examples"></a>Log Analytics 스마트 분석 예제
 이 문서에는 Log Analytics의 스마트 분석 기능을 사용하여 사용자 활동을 분석하는 예제가 포함되어 있습니다. 이 예제를 사용하여 Application Insights에서 모니터링되는 사용자 고유의 애플리케이션을 분석하거나, 다른 데이터에 대한 유사한 분석을 위해 이러한 쿼리의 개념을 사용할 수 있습니다. 

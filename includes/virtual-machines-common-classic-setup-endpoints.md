@@ -9,11 +9,11 @@ ms.date: 10/23/2018
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: ee5faedd4f59aa791424a1f178f0462922f21d28
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58116036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485226"
 ---
 각 엔드포인트에는 *공용 포트*와 *개인 포트*가 있습니다.
 
@@ -74,7 +74,7 @@ Azure Portal을 사용하여 엔드포인트를 만드는 경우 잘 알려진 �
 
    ![ACL 세부 정보 지정](./media/virtual-machines-common-classic-setup-endpoints/aclpreentry.png)
 
-4. 목록의 행을 사용하여 ACL에 대한 규칙을 추가, 삭제 또는 편집하고 해당 순서를 변경합니다. **원격 서브넷** 값은 인터넷에서 들어오는 트래픽에 대한 IP 주소 범위로서, Azure 부하 분산 장치는 해당 원본 IP 주소에 따라 트래픽을 허용하거나 거부하도록 사용합니다. 주소 접두사 형식이라고도 하는 CIDR(Classless Inter-Domain Routing) 형식으로 IP 주소 범위를 지정해야 합니다. 예: `10.1.0.0/8`
+4. 목록의 행을 사용하여 ACL에 대한 규칙을 추가, 삭제 또는 편집하고 해당 순서를 변경합니다. **원격 서브넷** 값은 인터넷에서 들어오는 트래픽에 대한 IP 주소 범위로서, Azure 부하 분산 장치는 해당 원본 IP 주소에 따라 트래픽을 허용하거나 거부하도록 사용합니다. 주소 접두사 형식이라고도 하는 CIDR(Classless Inter-Domain Routing) 형식으로 IP 주소 범위를 지정해야 합니다. 예: `10.1.0.0/8`.
 
    ![새 ACL 항목](./media/virtual-machines-common-classic-setup-endpoints/newaclentry.png)
 

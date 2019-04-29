@@ -9,11 +9,11 @@ ms.date: 03/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 9a8863189ee9cb63d86b157c0bbebb6fd16116b0
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58669625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61027986"
 ---
 # <a name="connecting-to-servers"></a>서버에 연결
 

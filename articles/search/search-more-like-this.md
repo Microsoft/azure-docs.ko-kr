@@ -11,11 +11,11 @@ ms.date: 10/27/2016
 ms.author: brjohnst
 ms.custom: seodec2018
 ms.openlocfilehash: d55a6d883e0dcd5ad4b1c1584b76bae06e6c742a
-ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57569045"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61283359"
 ---
 # <a name="morelikethis-in-azure-search-preview"></a>Azure Search의 moreLikeThis(미리 보기)
 

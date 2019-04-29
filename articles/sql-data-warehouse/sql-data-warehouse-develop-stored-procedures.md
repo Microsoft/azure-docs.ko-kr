@@ -11,11 +11,11 @@ ms.date: 04/02/2019
 ms.author: cakarst
 ms.reviewer: igorstan
 ms.openlocfilehash: 8a53a63b7425935e117d7af951717999bc9340b7
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59794831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61439714"
 ---
 # <a name="using-stored-procedures-in-sql-data-warehouse"></a>SQL Data Warehouse의 저장 프로시저 사용
 솔루션 개발을 위한 Azure SQL Data Warehouse의 저장 프로시저 구현을 위한 팁

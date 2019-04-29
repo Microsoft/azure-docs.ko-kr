@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 01/15/2019
 ms.author: jegeib
 ms.openlocfilehash: c2ef02fd4c057dbdb15632752521ae314571560b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59791406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60586070"
 ---
 # <a name="threat-modeling-tool-releases"></a>Threat Modeling Tool 릴리스
 

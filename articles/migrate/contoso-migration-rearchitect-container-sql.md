@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
 ms.openlocfilehash: cb984bcbe79b69c0614579d66a3b853cd38a7e12
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58099089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60690256"
 ---
 # <a name="contoso-migration-rearchitect-an-on-premises-app-to-an-azure-container-and-azure-sql-database"></a>Contoso 마이그레이션: 온-프레미스 앱 아키텍처를 Azure 컨테이너 및 Azure SQL Database로 변경
 
@@ -190,11 +190,11 @@ Azure 컨테이너는 웹 VM에서 내보낸 파일을 사용하여 생성됩니
 
 1. Contoso 관리자는 Azure Portal에서 Container Registry를 만듭니다.
 
-     ![컨테이너 레지스트리](./media/contoso-migration-rearchitect-container-sql/container-registry1.png)
+     ![Container Registry](./media/contoso-migration-rearchitect-container-sql/container-registry1.png)
 
 2. 레지스트리 이름을 입력하고(**contosoacreus2**), 인프라 리소스에 사용되는 리소스 그룹의 주 지역에 배치합니다. 관리 사용자에 대한 액세스를 사용할 수 있도록 설정하고 프리미엄 SKU로 설정하면 지역 복제를 활용할 수 있습니다.
 
-    ![컨테이너 레지스트리](./media/contoso-migration-rearchitect-container-sql/container-registry2.png)  
+    ![Container Registry](./media/contoso-migration-rearchitect-container-sql/container-registry2.png)  
 
 
 ## <a name="step-3-provision-azure-service-fabric"></a>3단계: Azure Service Fabric 프로비전
@@ -492,7 +492,7 @@ Contoso 관리자는 다음과 같이 Visual Studio 및 SDK Tools를 사용하�
 
 17. **저장** > **릴리스 만들기**를 클릭합니다.
 
-    ![릴리스](./media/contoso-migration-rearchitect-container-sql/pipeline15.png)
+    ![해제](./media/contoso-migration-rearchitect-container-sql/pipeline15.png)
 
 18. 배포가 완료되면 SmartHotel360은 이제 Service Fabric을 실행합니다.
 
@@ -516,16 +516,16 @@ SmartHotel360 앱 및 데이터베이스가 Azure에서 실행되자, Contoso는
 
 1. Azure Marketplace에서 Azure Cosmos DB 리소스를 만듭니다.
 
-    ![연장](./media/contoso-migration-rearchitect-container-sql/extend1.png)
+    ![Extend](./media/contoso-migration-rearchitect-container-sql/extend1.png)
 
 2. 데이터베이스 이름(**contososmarthotel**)을 입력하고, SQL API를 선택하고, 프로덕션 리소스 그룹의 주 지역인 미국 동부 2에 리소스를 배치합니다.
 
-    ![연장](./media/contoso-migration-rearchitect-container-sql/extend2.png)
+    ![Extend](./media/contoso-migration-rearchitect-container-sql/extend2.png)
 
 3. **시작**에서 **데이터 탐색기**를 선택하고 새 컬렉션을 추가합니다.
 4. **컬렉션 추가**에서 ID를 입력하고 저장소 용량 및 처리량을 설정합니다.
 
-    ![연장](./media/contoso-migration-rearchitect-container-sql/extend3.png)
+    ![Extend](./media/contoso-migration-rearchitect-container-sql/extend3.png)
 
 5. 포털에서 새 데이터베이스 > **컬렉션** > **문서**를 열고 **새 문서**를 클릭합니다.
 6. 문서 창에 다음 JSON 코드를 붙여넣습니다. 단일 트윗 형태의 샘플 데이터입니다.
@@ -549,11 +549,11 @@ SmartHotel360 앱 및 데이터베이스가 Azure에서 실행되자, Contoso는
     }
     ```
 
-    ![연장](./media/contoso-migration-rearchitect-container-sql/extend4.png)
+    ![Extend](./media/contoso-migration-rearchitect-container-sql/extend4.png)
 
 7. Cosmos DB 엔드포인트 및 인증 키를 찾습니다. 앱에서 컬렉션에 연결할 때 사용됩니다. 데이터베이스에서 **키**를 클릭하고, URI 및 기본 키를 메모장에 복사합니다.
 
-    ![연장](./media/contoso-migration-rearchitect-container-sql/extend5.png)
+    ![Extend](./media/contoso-migration-rearchitect-container-sql/extend5.png)
 
 ### <a name="update-the-sentiment-app"></a>감정 앱 업데이트
 
@@ -609,7 +609,7 @@ Azure에서 마이그레이션된 리소스를 사용하여 Contoso는 새 인�
 - 특히 인증서에 SSL을 사용하도록 컨테이너를 업데이트해야 합니다.
 - Key Vault를 사용하여 Service Fabric 앱의 비밀을 보호하는 방안을 고려해야 합니다. [자세히 알아보기](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-secret-management).
 
-### <a name="backups"></a>예비
+### <a name="backups"></a>Backup
 
 - Contoso는 Azure SQL Database에 대한 백업 요구 사항을 검토해야 합니다. [자세히 알아보기](https://docs.microsoft.com/azure/sql-database/sql-database-automated-backups).
 - Contoso 관리자는 데이터베이스에 대한 지역별 장애 조치(failover)를 제공하는 장애 조치(failover) 그룹 구현을 고려해야 합니다. [자세히 알아보기](https://docs.microsoft.com/azure/sql-database/sql-database-geo-replication-overview).

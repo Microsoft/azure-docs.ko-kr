@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
 ms.openlocfilehash: df323d121b42ab1200844f3fefb713122ba43106
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53316083"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60625077"
 ---
 # <a name="business-process-libraries"></a>비즈니스 프로세스 라이브러리
 

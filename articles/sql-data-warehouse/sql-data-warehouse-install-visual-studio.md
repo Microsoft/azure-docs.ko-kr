@@ -13,11 +13,11 @@ ms.date: 04/05/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.openlocfilehash: f67c2a4547ee923e5c1b49302c38693e9ffe87c4
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59262213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61474252"
 ---
 # <a name="install-visual-studio-and-ssdt-for-sql-data-warehouse"></a>SQL Data Warehouse용 Visual Studio 및 SSDT 설치
 SQL Data Warehouse에 대 한 응용 프로그램을 개발 하려면 Visual Studio 2017을 사용 합니다. 현재 Visual Studio 2019 SSDT는 SQL Data Warehouse에 대 한 지원 되지 않습니다. 

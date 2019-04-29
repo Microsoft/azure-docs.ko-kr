@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 10/28/2018
 ms.author: rkarlin
 ms.openlocfilehash: b736bb5549b7d236e746ba7b161cde79209e927b
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56110526"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60906582"
 ---
 # <a name="restrict-access-through-internet-facing-endpoints-in-azure-security-center"></a>Azure Security Center에서 인터넷 엔드포인트를 통한 액세스 제한
 Azure Security Center는 네트워크 보안 그룹(NSG)에 "임의" 원본 IP 주소에서 액세스할 수 있도록 하는 인바운드 규칙이 하나 이상 있는 경우 인터넷 엔드포인트를 통한 액세스를 제한할 것을 권장 합니다. 공격자가 "임의"에 대한 열기 액세스를 사용하여 리소스에 액세스할 수 있습니다. 보안 센터는 실제로 액세스가 필요한 원본 IP 주소에 대한 액세스를 제한하도록 이러한 인바운드 규칙을 편집할 것을 권장합니다.

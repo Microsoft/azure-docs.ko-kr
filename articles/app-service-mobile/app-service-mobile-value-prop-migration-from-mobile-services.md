@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 10/01/2016
 ms.author: crdun
 ms.openlocfilehash: 8a0bf1c39977d1659d398fce7c4bb3ae0024c88a
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57771143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60859922"
 ---
 # <a name="getting-started"></a>Mobile Services를 사용하고 있습니다. App Service가 어떤 도움을 주나요?
 ## <a name="overview"></a>개요

@@ -12,11 +12,11 @@ ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
 ms.openlocfilehash: 92e8435e4336c68982e4becc2a95f99b2c776c0e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58861845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60736646"
 ---
 # <a name="protocol-support-for-http-headers-in-azure-front-door-service"></a>Azure 프런트 도어 서비스의 HTTP 헤더에 대 한 프로토콜 지원
 이 문서에서는 호출 경로 부분을 사용 하 여 첫 번째 관문 서비스가 지 원하는 프로토콜을 설명 (이미지 참조). 다음 섹션에서는 첫 번째 관문 서비스에서 지 원하는 HTTP 헤더에 대 한 자세한 정보를 제공 합니다.

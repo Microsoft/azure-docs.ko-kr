@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 05/31/2017
 ms.author: kmouss;aglick
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 70aec41c885ab81371f5318f7557b0e628ac3308
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
-ms.translationtype: HT
+ms.openlocfilehash: dc71e8564b35f4fdd4153a04c66a3d8c5df88c30
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30915418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61478847"
 ---
 # <a name="what-to-do-in-the-event-that-an-azure-service-disruption-impacts-azure-vms"></a>Azure VM에 영향을 주는 Azure 서비스 중단 발생 시 수행할 작업
 Microsoft에서는 서비스가 필요할 때 서비스를 항상 사용할 수 있도록 하기 위해 많은 노력을 기울입니다. 다만 경우에 따라 계획되지 않은 서비스 중단이 발생하여 강제적으로 제어 영향을 벗어날 때가 있습니다.
@@ -33,8 +33,8 @@ Azure에는 항상 사용 가능한 애플리케이션을 지원하는 많은 �
 
 이러한 드문 경우를 처리할 수 있도록 Azure 가상 머신 애플리케이션이 배포되는 전체 영역의 서비스가 중단될 경우에 대비해서 Azure 가상 머신에 대한 다음 지침을 제공합니다.
 
-## <a name="option-1-initiate-a-failover-by-using-azure-site-recovery"></a>옵션 1: Azure Site Recovery를 사용하여 장애 조치(failover) 시작
-비교적 짧은 시간에 한 번의 클릭으로 애플리케이션을 복구할 수 있도록 VM에 Azure Site Recovery를 구성할 수 있습니다. 사용자가 선택한 Azure 지역에 복제할 수 있고 쌍을 이루는 지역으로 제한되지 않습니다. [가상 머신을 복제](https://aka.ms/a2a-getting-started)하여 시작할 수 있습니다. [복구 계획을 만들어](../site-recovery/site-recovery-create-recovery-plans.md) 응용 프로그램에 대한 전체 장애 조치(failover) 프로세스를 자동화할 수 있습니다. 프로덕션 애플리케이션 또는 진행 중인 복제에 영향을 주지 않고 미리 [장애 조치(failover)를 테스트](../site-recovery/site-recovery-test-failover-to-azure.md)할 수 있습니다. 주 지역에 중단이 발생한 경우 [장애 조치(failover)를 시작](../site-recovery/site-recovery-failover.md)하고 대상 지역에 애플리케이션을 가져옵니다.
+## <a name="option-1-initiate-a-failover-by-using-azure-site-recovery"></a>옵션 1: Azure Site Recovery를 사용 하 여 장애 조치 시작
+비교적 짧은 시간에 한 번의 클릭으로 애플리케이션을 복구할 수 있도록 VM에 Azure Site Recovery를 구성할 수 있습니다. 사용자가 선택한 Azure 지역에 복제할 수 있고 쌍을 이루는 지역으로 제한되지 않습니다. [가상 머신을 복제](https://aka.ms/a2a-getting-started)하여 시작할 수 있습니다. [복구 계획을 만들어](../site-recovery/site-recovery-create-recovery-plans.md) 애플리케이션에 대한 전체 장애 조치(failover) 프로세스를 자동화할 수 있습니다. 프로덕션 애플리케이션 또는 진행 중인 복제에 영향을 주지 않고 미리 [장애 조치(failover)를 테스트](../site-recovery/site-recovery-test-failover-to-azure.md)할 수 있습니다. 주 지역에 중단이 발생한 경우 [장애 조치(failover)를 시작](../site-recovery/site-recovery-failover.md)하고 대상 지역에 애플리케이션을 가져옵니다.
 
 
 ## <a name="option-2-wait-for-recovery"></a>옵션 2: 복구 대기

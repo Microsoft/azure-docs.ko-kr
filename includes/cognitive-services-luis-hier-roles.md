@@ -11,11 +11,11 @@ ms.custom: include file
 ms.date: 10/23/2018
 ms.author: diberry
 ms.openlocfilehash: 3803bc7f1e0da01fbaa8aa11bc6e8fc5c508b5ae
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59528840"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61074292"
 ---
 ## <a name="roles-versus-hierarchical-entities"></a>역할 및 계층 구조 엔터티
 

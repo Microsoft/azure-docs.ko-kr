@@ -15,11 +15,11 @@ ms.topic: reference
 ms.date: 09/13/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 9233a5919ad86adcbb7947cd095945654ed015a7
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48808275"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61093984"
 ---
 <a name="retrieve-offer-status"></a>제안 상태 검색 
 =====================
@@ -33,8 +33,8 @@ ms.locfileid: "48808275"
 
 |  **Name**       |   **설명**                            |  **데이터 형식** |
 |  -------------  |  ------------------------------------------  |  ------------  |
-|  publisherid    | 게시자 식별자입니다(예: `Contoso`).  |     문자열     |
-|  offerId        | 제안을 고유하게 식별하는 GUID입니다.      |     문자열     |
+|  publisherId    | 게시자 식별자입니다(예: `Contoso`).  |     String     |
+|  offerId        | 제안을 고유하게 식별하는 GUID입니다.      |     String     |
 |  api-version    | 최신 버전 API                        |     Date       |
 |  |  |
 

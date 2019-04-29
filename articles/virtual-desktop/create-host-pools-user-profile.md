@@ -8,11 +8,11 @@ ms.topic: how-to
 ms.date: 04/05/2019
 ms.author: helohr
 ms.openlocfilehash: 0cb4df099faad8ca482fd15cf0bb50504c1528ab
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59276391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60883873"
 ---
 # <a name="set-up-a-user-profile-share-for-a-host-pool"></a>호스트 풀에 대한 사용자 프로필 공유 설정
 
@@ -62,9 +62,9 @@ FSLogix 소프트웨어를 사용 하 여 가상 컴퓨터를 구성 하려면 �
 6. 명명 된 키를 만듭니다 **프로필**합니다.
 7. 프로필 키에 대해 다음 값을 만듭니다.
 
-| name                | Type               | 데이터/값                        |
+| 이름                | Type               | 데이터/값                        |
 |---------------------|--------------------|-----------------------------------|
-| 사용             | DWORD              | 1                                 |
+| Enabled             | DWORD              | 1                                 |
 | VHDLocations        | 다중 문자열 값 | "파일 공유에 대 한 네트워크 경로"     |
 
 >[!IMPORTANT]

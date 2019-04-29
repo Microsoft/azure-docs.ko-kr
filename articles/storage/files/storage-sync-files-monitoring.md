@@ -2,18 +2,18 @@
 title: Azure 파일 동기화 모니터링 | Microsoft Docs
 description: Azure 파일 동기화를 모니터링하는 방법을 설명합니다.
 services: storage
-author: jeffpatt24
+author: roygara
 ms.service: storage
 ms.topic: article
 ms.date: 01/31/2019
-ms.author: jeffpatt
+ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 4ae17249903f317e7a75a3e6bc7c03292021c96a
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
-ms.translationtype: MT
+ms.openlocfilehash: c0f19e3ea4f5952ac96b589fa267a2136c85e4f3
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57534636"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63759470"
 ---
 # <a name="monitor-azure-file-sync"></a>Azure 파일 동기화 모니터링
 

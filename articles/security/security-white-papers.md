@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 11/15/2018
 ms.author: tomsh
 ms.openlocfilehash: 3fb6e42e55119684ace8547a55297d38dbb9a26e
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57402379"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60596835"
 ---
 # <a name="azure-security-white-papers"></a>Azure 보안 백서
 | | |

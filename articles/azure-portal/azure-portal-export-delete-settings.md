@@ -11,11 +11,11 @@ ms.custom: ''
 manager: mtillman
 ms.author: kfollis
 ms.openlocfilehash: fde7ffbaa3ef4d47eea48302a99948932aeb4f00
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59361960"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60551670"
 ---
 # <a name="export-or-delete-user-settings"></a>사용자 설정 내보내기 또는 삭제
 

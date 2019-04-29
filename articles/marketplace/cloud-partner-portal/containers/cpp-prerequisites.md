@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: pbutlerm
 ms.openlocfilehash: 09c9afcf3126f7f84c20f5514bc038a65b2ea1b2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57990719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61472790"
 ---
 # <a name="container-publishing-prerequisites"></a>컨테이너 게시 필수 구성 요소
 

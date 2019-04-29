@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 9f525e68502e32a3f9c7e7cebe6d45627f9077c3
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
-ms.translationtype: HT
+ms.openlocfilehash: 09df1421d6deae6db305cef2a46d6c40d0c12ba3
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39495030"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60835879"
 ---
 # <a name="disaster-recovery-for-an-oracle-database-12c-database-in-an-azure-environment"></a>Azure 환경의 Oracle Database 12c 데이터베이스 재해 복구
 
@@ -32,7 +32,7 @@ ms.locfileid: "39495030"
 ## <a name="goals"></a>목표
 - DR(재해 복구) 요구 사항을 충족하는 토폴로지 및 구성을 설계합니다.
 
-## <a name="scenario-1-primary-and-dr-sites-on-azure"></a>시나리오 1: 기본 사이트 및 DR 사이트가 Azure에 있음
+## <a name="scenario-1-primary-and-dr-sites-on-azure"></a>시나리오 1: 주 서버와 Azure DR 사이트
 
 기본 사이트에 설치한 Oracle 데이터베이스가 고객에게 있습니다. DR 사이트는 다른 지역에 있습니다. 고객은 이러한 사이트 간의 빠른 복구를 위해 Oracle Data Guard를 사용합니다. 기본 사이트에는 보고 및 다른 용도를 위한 보조 데이터베이스도 있습니다. 
 
@@ -45,20 +45,20 @@ ms.locfileid: "39495030"
 - Data Guard가 있는 두 Oracle 데이터베이스(주 및 대기)
 - Golden Gate 또는 Data Guard가 있는 두 Oracle 데이터베이스(기본 사이트에만 해당)
 - 두 애플리케이션 서비스(기본 사이트 및 DR 사이트 각각에 하나씩)
-- *가용성 집합* - 기본 사이트의 데이터베이스 및 응용 프로그램 서비스에 사용됩니다.
+- *가용성 집합* - 기본 사이트의 데이터베이스 및 애플리케이션 서비스에 사용됩니다.
 - Jumpbox(각 사이트에 하나씩) - 사설망에 대한 액세스를 제한하며, 관리자만 로그인할 수 있습니다.
 - 별도의 서브넷에 있는 Jumpbox, 애플리케이션 서비스, 데이터베이스 및 VPN 게이트웨이
 - 애플리케이션 및 데이터베이스 서브넷에 적용되는 NSG
 
 ![DR 토폴로지 페이지의 스크린샷](./media/oracle-disaster-recovery/oracle_topology_01.png)
 
-## <a name="scenario-2-primary-site-on-premises-and-dr-site-on-azure"></a>시나리오 2: 기본 사이트는 온-프레미스에 있고, DR 사이트는 Azure에 있음
+## <a name="scenario-2-primary-site-on-premises-and-dr-site-on-azure"></a>시나리오 2: Azure에서 DR 사이트와 기본 사이트는 온-프레미스
 
 고객이 온-프레미스에 Oracle 데이터베이스를 설치했습니다(기본 사이트). DR 사이트는 Azure에 있습니다. Oracle Data Guard는 이러한 사이트 간의 빠른 복구에 사용됩니다. 기본 사이트에는 보고 및 다른 용도를 위한 보조 데이터베이스도 있습니다. 
 
 이 설치에 대한 접근 방법은 두 가지가 있습니다.
 
-### <a name="approach-1-direct-connections-between-on-premises-and-azure-requiring-open-tcp-ports-on-the-firewall"></a>방법 1: 온-프레미스와 Azure 간에 직접 연결하고, 방화벽에서 열려 있는 TCP 포트가 필요합니다. 
+### <a name="approach-1-direct-connections-between-on-premises-and-azure-requiring-open-tcp-ports-on-the-firewall"></a>접근 방식 1: 온-프레미스와 Azure, 방화벽에 열린 TCP 포트가 필요 간의 직접 연결 
 
 TCP 포트를 외부에 공개하므로 직접 연결은 사용하지 않는 것이 좋습니다.
 

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.date: 4/9/2019
 ms.topic: conceptual
 ms.author: ramamill
-ms.openlocfilehash: c198e6cd9d5c5e0aca69491db9df5d0ab8e08c7a
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 7b10db06ab4ade1b23985b1a259d82d4818941b1
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59358017"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62124969"
 ---
 # <a name="plan-capacity-and-scaling-for-vmware-disaster-recovery-to-azure"></a>Azure로 VMware 재해 복구를 위한 용량 및 크기 조정 계획
 
@@ -120,7 +120,7 @@ Site Recovery 인프라를 설정하기 전에 환경에 액세스하여 호환�
 
 ## <a name="deploy-additional-process-servers"></a>추가 프로세스 서버 배포
 
-원본 머신이 200개를 초과하도록 배포를 스케일 아웃하거나 총 일일 변동률이 2TB를 초과하는 경우에는 트래픽 볼륨을 처리할 프로세스 서버를 추가해야 합니다. 프로세스 서버를 설정하는 방법을 알아보려면 [추가 프로세스 서버를 사용하여 장애 복구(failback) 확장](vmware-azure-set-up-process-server-scale.md)을 참조하세요. 프로세스 서버를 설정하면 이를 사용하도록 원본 머신을 마이그레이션할 수 있습니다.
+원본 머신이 200개를 초과하도록 배포를 스케일 아웃하거나 총 일일 변동률이 2TB를 초과하는 경우에는 트래픽 볼륨을 처리할 프로세스 서버를 추가해야 합니다. 제품 제공 9.24 버전에서 향상 되었습니다 [제품 설명서](vmware-azure-manage-process-server.md#process-server-selection-guidance) 스케일 아웃 프로세스 서버를 설정 하는 경우에 합니다. [프로세스 서버 설정](vmware-azure-set-up-process-server-scale.md) 새 원본 컴퓨터를 보호 하기 위해 또는 [부하 분산](vmware-azure-manage-process-server.md#balance-the-load-on-process-server)합니다.
 
 ### <a name="migrate-machines-to-use-the-new-process-server"></a>새 프로세스 서버를 사용하도록 컴퓨터 마이그레이션
 

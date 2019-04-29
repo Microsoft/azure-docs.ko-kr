@@ -13,11 +13,11 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 12/04/2018
 ms.openlocfilehash: 8abb2e3ac4f62a3ea51cc686bbf23260fccc4077
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57441375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61475680"
 ---
 # <a name="managing-scaled-out-cloud-databases"></a>규모가 확장된 클라우드 데이터베이스 관리
 
@@ -50,11 +50,11 @@ ms.locfileid: "57441375"
 
 ### <a name="reports"></a>보고서
 
-Azure SQL Database의 컬렉션에서 단일 대상 테이블로 데이터를 집계합니다.
+Azure SQL 데이터베이스의 컬렉션에서 단일 대상 테이블로 데이터를 집계합니다.
 
 ### <a name="reduce-overhead"></a>오버헤드 줄이기
 
-일반적으로는 Transact-SQL 문을 실행하거나 다른 관리 작업을 수행하려면 각 데이터베이스에 개별적으로 연결해야 합니다. 작업은 대상 그룹의 각 데이터베이스에 로그인하는 태스크를 처리합니다. Azure SQL Database 그룹에서 실행할 Transact-SQL 스크립트를 정의, 유지 관리 및 보존합니다.
+일반적으로는 Transact-SQL 문을 실행하거나 다른 관리 작업을 수행하려면 각 데이터베이스에 개별적으로 연결해야 합니다. 작업은 대상 그룹의 각 데이터베이스에 로그인하는 태스크를 처리합니다. Azure SQL 데이터베이스 그룹에서 실행할 Transact-SQL 스크립트를 정의, 유지 관리 및 보존합니다.
 
 ### <a name="accounting"></a>회계
 
@@ -62,7 +62,7 @@ Azure SQL Database의 컬렉션에서 단일 대상 테이블로 데이터를 �
 
 ### <a name="flexibility"></a>유연성
 
-Azure SQL Database의 사용자 지정 그룹을 정의하고 작업 실행을 위한 일정을 정의합니다.
+Azure SQL 데이터베이스의 사용자 지정 그룹을 정의하고 작업 실행을 위한 일정을 정의합니다.
 
 > [!NOTE]
 > Azure 포털에서는 SQL Azure 탄력적 풀로 제한된 감소된 기능 집합만 사용할 수 있습니다. PowerShell API를 사용하여 현재 기능의 전체 집합에 액세스할 수 있습니다.

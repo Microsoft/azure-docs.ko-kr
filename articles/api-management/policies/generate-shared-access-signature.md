@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
 ms.openlocfilehash: 2c3adaa6f4e113f09e676583c2c35b5f1fbdb622
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52877864"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61062193"
 ---
 # <a name="generate-shared-access-signature"></a>공유 액세스 서명 생성
 

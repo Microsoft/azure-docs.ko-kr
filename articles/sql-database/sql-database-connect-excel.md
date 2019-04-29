@@ -1,6 +1,6 @@
 ---
 title: Azure SQL Database의 단일 데이터베이스에 Excel 연결 | Microsoft Docs
-description: Azure SQL Database의 단일 데이터베이스에 Microsoft Excel을 연결하는 방법을 알아봅니다. 보고 및 데이터 탐색을 위해 Excel로 데이터를 가져옵니다.
+description: Azure SQL 데이터베이스의 단일 데이터베이스에 Microsoft Excel을 연결하는 방법을 알아봅니다. 보고 및 데이터 탐색을 위해 Excel로 데이터를 가져옵니다.
 services: sql-database
 ms.service: sql-database
 ms.subservice: development
@@ -13,13 +13,13 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 02/12/2019
 ms.openlocfilehash: e1cd0d8462c31c8b843f7962f923accc6b63ae00
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58103403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61414304"
 ---
-# <a name="connect-excel-to-a-single-database-in-azure-sql-database-and-create-a-report"></a>Azure SQL Database의 단일 데이터베이스에 Excel을 연결하고 보고서 만들기
+# <a name="connect-excel-to-a-single-database-in-azure-sql-database-and-create-a-report"></a>Azure SQL 데이터베이스의 단일 데이터베이스에 Excel을 연결하고 보고서 만들기
 
 Azure SQL Database의 단일 데이터베이스에 Excel을 연결하여 데이터를 가져오고, 데이터베이스의 값을 기반으로 테이블 및 차트를 만듭니다. 이 자습서에서는 Excel과 데이터베이스 테이블 간의 연결을 설정하고 Excel에 대한 데이터 및 연결 정보가 있는 파일을 저장한 후 데이터베이스 값에서 피벗 차트를 만듭니다.
 

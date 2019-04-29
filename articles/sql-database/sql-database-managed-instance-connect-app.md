@@ -13,11 +13,11 @@ ms.reviewer: sstein, bonova, carlrab
 manager: craigg
 ms.date: 11/09/2018
 ms.openlocfilehash: ed9fbdd3e999cfd262ecbcf05a843c19cc969ed1
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59360429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60701307"
 ---
 # <a name="connect-your-application-to-azure-sql-database-managed-instance"></a>애플리케이션을 Azure SQL Database Managed Instance에 연결
 
@@ -138,7 +138,7 @@ Managed Instance는 개인 IP 주소를 통해서만 액세스할 수 있습니�
 
 Managed Instance에 연결하려면 다음과 같은 버전 이상의 도구와 드라이버를 사용하는 것이 좋습니다.
 
-| 드라이버/도구 | 버전 |
+| 드라이버/도구 | Version |
 | --- | --- |
 |.NET Framework | 4.6.1(또는 .NET Core) |
 |ODBC 드라이버| v17 |

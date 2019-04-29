@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 12/21/2018
 ms.author: ellacroi
 ms.openlocfilehash: e5db2f340917705ec29f7b6db4de40914c66efcd
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57863936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62120993"
 ---
 # <a name="offer-listing-best-practices"></a>목록에 제품 추가 모범 사례
 
@@ -35,7 +35,7 @@ ms.locfileid: "57863936"
 | 상점 설정 | 모범 사례 |
 |:--- |:--- |  
 | 산업: AppSource 앱 및 컨설팅 서비스만 해당 | 제품에서 산업별 요구 사항을 처리하는 경우 산업을 선택합니다. <ul><li> 제품 설명에서 산업 관련 기능을 호출합니다.</li> </ul> **참고**: 최대 옵션 수는 제품 유형에 따라 다르며, [Cloud 파트너 포털](https://cloudpartner.azure.com/#insights)에 표시됩니다. |
-| 범주 | 제품에 가장 적합한 범주를 선택합니다.<br> <ul> <li> 고객이 관련 앱을 검색할 때 사용하므로 범주를 신중하게 선택합니다. </li> <li> 제품에서 제품 설명의 범주 관련 요구 사항을 지원하는 방법을 호출해야 합니다. </li> </ul> **참고**: 최대 옵션 수는 제품 유형에 따라 다르며, [Cloud 파트너 포털](https://cloudpartner.azure.com/#insights)에 표시됩니다. |
+| Categories | 제품에 가장 적합한 범주를 선택합니다.<br> <ul> <li> 고객이 관련 앱을 검색할 때 사용하므로 범주를 신중하게 선택합니다. </li> <li> 제품에서 제품 설명의 범주 관련 요구 사항을 지원하는 방법을 호출해야 합니다. </li> </ul> **참고**: 최대 옵션 수는 제품 유형에 따라 다르며, [Cloud 파트너 포털](https://cloudpartner.azure.com/#insights)에 표시됩니다. |
 | 앱이 작동하는 제품(최대 3개): AppSource 앱만 해당 | 솔루션에서 사용하거나 확장하는 추가 제품과 기술을 나열합니다. 예: Azure IoT Hub 또는 Azure Machine Learning |
 | 검색 키워드(최대 3개) | 검색 키워드는 비즈니스 사용자가 검색 시 제품을 찾을 수 있도록 도와줍니다. <ul> <li> Azure Marketplace </li> <li> AppSource </li> <li> 검색 엔진 사용 </li> </ul> 목록이 이러한 검색에 표시되려면 다음을 수행해야 합니다. <ul> <li> 제품의 상위 검색 키워드 3개를 식별합니다. </li> <li> 제품 요약 및 설명에 검색 키워드를 통합합니다. </li> <li> 여기에 검색 키워드를 나열합니다. </li> </ul> |
 

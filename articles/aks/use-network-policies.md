@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 04/08/2019
 ms.author: iainfou
 ms.openlocfilehash: 29180d6c1bb5f0991a4f33c3b7c9418f84d8260c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59785912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61027975"
 ---
 # <a name="preview---secure-traffic-between-pods-using-network-policies-in-azure-kubernetes-service-aks"></a>미리 보기-Azure Kubernetes Service (AKS)에서 네트워크 정책을 사용 하 여 pod 간의 트래픽 보안
 

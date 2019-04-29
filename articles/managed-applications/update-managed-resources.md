@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.date: 10/26/2017
 ms.author: tomfitz
-ms.openlocfilehash: 7c2b38055771dae458e4a3a56c2c98231335ae03
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
-ms.translationtype: HT
+ms.openlocfilehash: 21f4e0aa339eb0c746f9b9b06f8aaada6c4d4b71
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34304973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61043459"
 ---
 # <a name="work-with-resources-in-the-managed-resource-group-for-azure-managed-application"></a>Azure 관리되는 애플리케이션의 관리되는 리소스 그룹에서 리소스 작업
 

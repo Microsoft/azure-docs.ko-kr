@@ -9,11 +9,11 @@ ms.date: 04/01/2019
 ms.author: jehollan
 ms.custom: include file
 ms.openlocfilehash: f01ad6e1e6444a417300b38009ac9fbbe5cdbc88
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60012560"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61031227"
 ---
 1. Azure Portal로 이동합니다.
 2. 선택 하 여 새 리소스를 추가 합니다 **리소스 만들기** Azure portal에서 단추입니다.

@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 4/11/2019
 ms.author: alkarche
 ms.openlocfilehash: 96ab479d3373eb6e575a00898f7007a4df252e39
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60002797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62125680"
 ---
 # <a name="integrate-a-function-app-with-an-azure-virtual-network"></a>Azure virtual network를 사용 하 여 함수 앱 통합
 

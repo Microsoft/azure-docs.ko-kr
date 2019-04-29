@@ -15,11 +15,11 @@ ms.devlang: azurecli
 ms.date: 11/01/2018
 ms.author: delhan
 ms.openlocfilehash: 4c783c70217a84bbe5ccf15accc4a2bec0b7cca8
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52959685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485508"
 ---
 # <a name="troubleshoot-azure-vm-rdp-connection-issues-by-event-id"></a>이벤트 ID로 Azure VM RDP 연결 문제 해결 
 
@@ -61,7 +61,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Microsoft-Windo
 **작업 범주:** 없음 <br />
 **수준:**         오류 <br />
 **키워드:**      클래식 <br />
-**사용자:**          해당 없음 <br />
+**사용자:**          N/A <br />
 **컴퓨터:** *컴퓨터* <br />
 **설명:** RD 세션 호스트 서버가 SSL 연결에서 RD 세션 호스트 서버 인증에 사용할 자체 서명된 만료 인증서를 바꾸지 못했습니다. 관련 상태 코드는 '액세스가 거부되었습니다.'입니다.
 
@@ -72,7 +72,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Microsoft-Windo
 **작업 범주:** 없음 <br />
 **수준:**         오류 <br />
 **키워드:**      클래식 <br />
-**사용자:**          해당 없음 <br />
+**사용자:**          N/A <br />
 **컴퓨터:** *컴퓨터* <br />
 **설명:** RD 세션 호스트 서버가 SSL 연결에서 RD 세션 호스트 서버 인증에 사용할 새 자체 서명된 인증서를 만들지 못했습니다. 관련 상태 코드는 ‘개체가 이미 있습니다’였습니다.
 
@@ -83,7 +83,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Microsoft-Windo
 **작업 범주:** 없음 <br />
 **수준:**         오류 <br />
 **키워드:**      클래식 <br />
-**사용자:**          해당 없음 <br />
+**사용자:**          N/A <br />
 **컴퓨터:** *컴퓨터* <br />
 **설명:** RD 세션 호스트 서버가 SSL 연결에서 RD 세션 호스트 서버 인증에 사용할 새 자체 서명된 인증서를 만들지 못했습니다. 관련 상태 코드는 '키 집합이 없습니다.'입니다.
 

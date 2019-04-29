@@ -2,18 +2,19 @@
 title: 포함 파일
 description: 포함 파일
 services: virtual-network
-author: genlin
+author: rockboyfor
 ms.service: virtual-network
 ms.topic: include
-ms.date: 04/13/2018
-ms.author: genli
+origin.date: 04/13/2018
+ms.date: 06/11/2018
+ms.author: v-yeche
 ms.custom: include file
-ms.openlocfilehash: 873549442284ede2e9f020bd90879f721b9c1a18
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: 588aa260f2ece543445bfd4da7ef4682dab8334c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38760363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60309966"
 ---
 ## <a name="scenario"></a>시나리오
 NSG를 만드는 방법을 보다 잘 설명하기 위해 이 문서에서는 다음 시나리오를 사용합니다.
@@ -30,4 +31,3 @@ NSG를 만드는 방법을 보다 잘 설명하기 위해 이 문서에서는 �
   * **web-rule**. *BackEnd* 서브넷의 모든 인터넷 관련 트래픽을 거부합니다.
 
 이러한 규칙의 조합은 DMZ와 비슷한 시나리오를 만듭니다. 이 경우 백 엔드 서브넷은 프런트 엔드 서브넷의 SQL에 대해 들어오는 트래픽만 수신할 수 있고 인터넷에 액세스할 수 없는 반면 프런트 엔드 서브넷은 인터넷과 통신하고 들어오는 HTTP 요청만 수신할 수 있습니다.
-

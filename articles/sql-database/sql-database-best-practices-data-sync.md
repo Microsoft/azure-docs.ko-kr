@@ -13,11 +13,11 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 12/20/2018
 ms.openlocfilehash: 0b1e3b98fe5b934b712db2a5549ebdc865523bfb
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58487722"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61412575"
 ---
 # <a name="best-practices-for-sql-data-sync"></a>SQL 데이터 동기화의 모범 사례 
 
@@ -46,7 +46,7 @@ SQL 데이터 동기화에 대한 개요는 [Azure SQL 데이터 동기화를 �
 
 -   **프로비전 해제의 경우**. 동기화 중 테이블 부분 변경, 동기화 메타데이터 테이블에서 선택/삭제, 동기화 추적 테이블, 저장 프로시저 및 사용자 정의 형식 제어.
 
-Azure SQL Database는 단일 자격 증명 집합만 지원합니다. 이 제약 조건 내에서 작업을 수행하려면 다음 옵션을 고려해 봅니다.
+Azure SQL Database는 단일 자격 증명 세트만 지원합니다. 이 제약 조건 내에서 작업을 수행하려면 다음 옵션을 고려해 봅니다.
 
 -   자격 증명을 다른 단계로 변경합니다(예를 들어 설정에는 *credentials1*, 진행 중에는 *credentials2*).  
 -   자격 증명의 권한을 변경합니다(즉, 동기화를 설정한 후 사용 권한을 변경).
@@ -228,8 +228,8 @@ SQL 데이터 동기화에 대한 자세한 내용은 다음 항목을 참조하
     - PowerShell 사용
         -  [PowerShell을 사용하여 여러 Azure SQL Database 간 동기화](scripts/sql-database-sync-data-between-sql-databases.md)
         -  [PowerShell을 사용하여 Azure SQL Database와 SQL Server 온-프레미스 데이터베이스 간 동기화](scripts/sql-database-sync-data-between-azure-onprem.md)
--   데이터 동기화 에이전트 - [Azure SQL 데이터 동기화용 데이터 동기화 에이전트](sql-database-data-sync-agent.md)
--   모니터- [기록 하는 Azure Monitor를 사용 하 여 SQL 데이터 동기화 모니터링](sql-database-sync-monitor-oms.md)
+-   데이터 동기화 에이전트 - [Azure SQL 데이타 동기화용 데이터 동기화 에이전트](sql-database-data-sync-agent.md)
+-   모니터 - [Azure Monitor 로그를 사용하여 SQL 데이터 동기화 모니터링](sql-database-sync-monitor-oms.md)
 -   문제 해결 - [Azure SQL 데이터 동기화 문제 해결](sql-database-troubleshoot-data-sync.md)
 -   동기화 스키마 업데이트
     -   Transact-SQL 사용 - [Azure SQL 데이터 동기화에서 스키마 변경 내용 복제 자동화](sql-database-update-sync-schema.md)

@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: abshamsft
 ms.openlocfilehash: d0819b57307fc037b3be6ab04ed9ec6c8720a618
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58103590"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62110143"
 ---
 # <a name="expressroute-monitor"></a>ExpressRoute 모니터
 

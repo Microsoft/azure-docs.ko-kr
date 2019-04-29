@@ -2,17 +2,18 @@
 title: P2S 게이트웨이에 대해 공용 CA 인증서로 전환 | Azure VPN Gateway | Microsoft Docs
 description: 이 문서는 P2S 게이트웨이에 대해 새 공용 CA 인증서로 전환하는 데 도움이 됩니다.
 services: vpn-gateway
-author: cherylmc
+author: WenJason
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 03/12/2019
-ms.author: cherylmc
+origin.date: 03/12/2019
+ms.date: 04/29/2019
+ms.author: v-jay
 ms.openlocfilehash: 29f2aeee53e07adfeafb8017c489c0b830f24b36
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59521597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60859650"
 ---
 # <a name="transition-to-a-public-ca-gateway-certificate-for-p2s"></a>P2S용 공용 CA 게이트웨이 인증서로 전환
 

@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 12/20/2018
 ms.author: jingwang
 ms.openlocfilehash: 99798b35419ec9574c99aaba42803fbeeb1555f1
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59267126"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60615633"
 ---
 # <a name="schema-mapping-in-copy-activity"></a>복사 작업의 스키마 매핑
 이 문서에서는 Azure Data Factory 복사 작업에서 데이터 복사를 실행할 때 원본 데이터의 스키마 매핑과 데이터 형식을 싱크 데이터에 매핑하는 방법을 설명합니다.
@@ -229,7 +229,7 @@ ms.locfileid: "59267126"
 Data Factory는 다음과 같은 중간 데이터 형식을 지원합니다. [데이터 세트 구조](concepts-datasets-linked-services.md#dataset-structure) 구성에서 형식 정보를 구성할 때 아래 값을 지정할 수 있습니다.
 
 * Byte[]
-* BOOLEAN
+* Boolean
 * DateTime
 * Datetimeoffset
 * Decimal
@@ -239,7 +239,7 @@ Data Factory는 다음과 같은 중간 데이터 형식을 지원합니다. [�
 * Int32
 * Int64
 * Single
-* 문자열
+* String
 * Timespan
 
 ### <a name="explicit-data-type-conversion"></a>명시적 데이터 형식 변환

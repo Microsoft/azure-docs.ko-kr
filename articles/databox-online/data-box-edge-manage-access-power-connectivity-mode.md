@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 813563b500b9365289285a89536f2724fb87acad
-ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58417805"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60757338"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-data-box-edge"></a>Azure 데이터 상자의 가장자리에 대 한 액세스, 기능 및 연결 모드 관리
 
@@ -92,4 +92,4 @@ ms.locfileid: "58417805"
 
 ## <a name="next-steps"></a>다음 단계
 
-- 설명 하는 방법 [공유 관리](data-box-edge-manage-shares.md)합니다.
+- [공유 관리](data-box-edge-manage-shares.md) 방법에 대해 알아봅니다.

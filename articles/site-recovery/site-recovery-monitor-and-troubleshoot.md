@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: rayne-wiselman
 ms.openlocfilehash: 605421196c2ec7f62826e2f6c823d50262af8144
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58316646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61278145"
 ---
 # <a name="monitor-site-recovery"></a>Site Recovery 모니터링
 

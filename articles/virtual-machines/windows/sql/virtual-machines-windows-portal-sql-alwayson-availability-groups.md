@@ -16,13 +16,13 @@ ms.workload: iaas-sql-server
 ms.date: 03/17/2017
 ms.author: mikeray
 ms.openlocfilehash: bddc83d55c8909412f7f935a4324a6f316a82cd7
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51238168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62129556"
 ---
-# <a name="configure-always-on-availability-groups-in-azure-virtual-machines-automatically-resource-manager"></a>Azure Virtual Machines에서 자동으로 Always On 가용성 그룹 구성: Resource Manager
+# <a name="configure-always-on-availability-groups-in-azure-virtual-machines-automatically-resource-manager"></a>Always On 가용성 그룹에서 Azure Virtual Machines을 자동으로 구성 합니다. Resource Manager
 
 이 자습서에서는 Azure Resource Manager 가상 머신을 사용하는 SQL Server 가용성 그룹을 만드는 방법을 보여 줍니다. 자습서에서는 Azure 블레이드를 사용하여 템플릿을 구성합니다. 이 자습서를 살펴보면서 기본 설정을 검토하고 필요한 설정을 입력하며 포털에서 블레이드를 업데이트할 수 있습니다.
 
@@ -153,7 +153,7 @@ Azure의 가상 네트워크에 대한 자세한 내용은 [가상 네트워크 
 * 복원력은 단순합니다(복원력 없음).
 
 > [!NOTE]
-> Azure 프리미엄 저장소는 로컬로 중복되며 단일 지역 내에 세 개의 데이터 복사본을 유지하므로 저장소 풀에 추가 복원력이 필요하지 않습니다.
+> Azure Premium Storage는 로컬로 중복되며 단일 지역 내에 세 개의 데이터 복사본을 유지하므로 스토리지 풀에 추가 복원력이 필요하지 않습니다.
 >
 >
 

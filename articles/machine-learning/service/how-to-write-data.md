@@ -6,18 +6,18 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.author: cforbe
-author: cforbe
+ms.author: sihhu
+author: MayMSFT
 manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 5cad83c6b8ca11fe45a2b29dc115c340d6e16361
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 92f04d80ea956f3036d7778a5d6de62e53b969ad
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58014637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60817362"
 ---
 # <a name="write-and-configure-data-using-azure-machine-learning"></a>작성 하 고 Azure Machine Learning을 사용 하 여 데이터를 구성 합니다.
 

@@ -1,24 +1,24 @@
 ---
-title: 관리 솔루션에 저장된 검색 및 경고 | Microsoft Docs
-description: 관리 솔루션은 일반적으로 솔루션에서 수집한 데이터를 분석하기 위해 Log Analytics에 저장된 검색을 포함하게 됩니다. 또한 중요한 문제에 대한 응답으로 사용자에게 알리거나 자동으로 조치를 취하기 위한 경고를 정의합니다. 이 문서에서는 관리 솔루션에 포함되도록 리소스 관리 템플릿에서 Log Analytics 저장된 검색 및 경고를 정의하는 방법을 설명합니다.
+title: 관리 솔루션에 저장 된 검색 | Microsoft Docs
+description: 관리 솔루션은 일반적으로 솔루션에서 수집한 데이터를 분석하기 위해 Log Analytics에 저장된 검색을 포함하게 됩니다. 또한 중요한 문제에 대한 응답으로 사용자에게 알리거나 자동으로 조치를 취하기 위한 경고를 정의합니다. 이 문서에서는 Log Analytics 관리 솔루션에 포함 될 수 있도록 Resource Manager 템플릿에서 저장 검색을 정의 하는 방법을 설명 합니다.
 services: monitoring
 documentationcenter: ''
 author: bwren
 manager: carmonm
 editor: tysonn
-ms.service: monitoring
+ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 06/18/2018
+ms.date: 02/27/2019
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 97e6029ff85ce7ee8572fd76d04a5d72b27b2950
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 0975b23a8f96da6fc2dfcc8bd9ad046847a68aa9
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55980111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62104833"
 ---
 # <a name="adding-log-analytics-saved-searches-and-alerts-to-management-solution-preview"></a>관리 솔루션(미리 보기)에 Log Analytics에서 저장한 검색 및 경고 추가
 
@@ -78,7 +78,7 @@ Resource Manager 템플릿에 정의된 모든 Log Analytics 리소스에는 리
 
 | 자산 | 설명 |
 |:--- |:--- |
-| 카테고리 | 저장된 검색의 범주입니다.  같은 솔루션에 있는 저장된 검색은 종종 단일 범주를 공유하므로 콘솔에서 함께 그룹화됩니다. |
+| category | 저장된 검색의 범주입니다.  같은 솔루션에 있는 저장된 검색은 종종 단일 범주를 공유하므로 콘솔에서 함께 그룹화됩니다. |
 | displayname | 포털에서 저장된 검색에 표시할 이름입니다. |
 | 쿼리 | 실행할 쿼리입니다. |
 
@@ -90,7 +90,6 @@ Resource Manager 템플릿에 정의된 모든 Log Analytics 리소스에는 리
 
 > [!NOTE]
 > 2018년 5월 14일부터 Log Analytics 작업 영역의 Azure 공용 클라우드 인스턴스에서 발생하는 모든 경고가 Azure로 확장됩니다. 자세한 내용은 [Azure로 경고 확장](../../azure-monitor/platform/alerts-extend.md)을 참조하세요. Azure로 경고를 확장하는 사용자의 경우 작업은 이제 Azure 작업 그룹에서 제어됩니다. 작업 영역 및 해당 경고가 Azure로 확장되는 경우 [작업 그룹 - Azure Resource Manager 템플릿](../../azure-monitor/platform/action-groups-create-resource-manager-template.md)을 사용하여 작업을 검색하거나 추가할 수 있습니다.
-
 관리 솔루션의 경고 규칙은 다음 세 가지 리소스로 구성됩니다.
 
 - **저장된 검색.** 실행될 로그 검색을 정의합니다. 여러 경고 규칙이 하나의 저장된 검색을 공유할 수 있습니다.
@@ -120,7 +119,6 @@ Resource Manager 템플릿에 정의된 모든 Log Analytics 리소스에는 리
             "enabled": "[variables('Schedule').Enabled]"
         }
     }
-
 일정 리소스의 속성은 다음 테이블에 설명되어 있습니다.
 
 | 요소 이름 | 필수 | 설명 |
@@ -130,19 +128,14 @@ Resource Manager 템플릿에 정의된 모든 Log Analytics 리소스에는 리
 | queryTimeSpan | 예 | 결과를 평가하는 시간의 길이(분)입니다. |
 
 일정 전에 저장된 검색이 생성되도록 일정 리소스는 저장된 검색에 따라 결정됩니다.
-
 > [!NOTE]
 > 일정 이름은 지정된 작업 영역에서 고유해야 합니다. 두 일정이 서로 다른 저장된 검색과 연결되었다 하더라도 동일한 ID를 가질 수 없습니다. 또한 Log Analytics API를 사용하여 만든 저장된 모든 검색, 일정 및 작업의 이름은 소문자여야 합니다.
 
 ### <a name="actions"></a>작업
 일정이 여러 작업을 가질 수 있습니다. 작업은 메일 보내기 또는 Runbook 시작과 같은 하나 이상의 수행할 프로세스를 정의하거나 검색 결과가 일부 조건과 일치하는 경우를 결정하는 임계값을 정의할 수 있습니다. 일부 작업은 임계값을 만족할 때 프로세스가 수행되도록 정의합니다.
-
 [작업 그룹] 리소스 또는 작업 리소스를 사용하여 작업을 정의할 수 있습니다.
-
 > [!NOTE]
 > 2018년 5월 14일부터 Log Analytics 작업 영역의 Azure 공용 클라우드 인스턴스에서 발생하는 모든 경고가 Azure로 자동 확장됩니다. 자세한 내용은 [Azure로 경고 확장](../../azure-monitor/platform/alerts-extend.md)을 참조하세요. Azure로 경고를 확장하는 사용자의 경우 작업은 이제 Azure 작업 그룹에서 제어됩니다. 작업 영역 및 해당 경고가 Azure로 확장되는 경우 [작업 그룹 - Azure Resource Manager 템플릿](../../azure-monitor/platform/action-groups-create-resource-manager-template.md)을 사용하여 작업을 검색하거나 추가할 수 있습니다.
-
-
 **Type** 속성에서 지정하는 두 가지 형식의 작업 리소스가 있습니다. 일정에는 경고 규칙 세부 정보 그리고 경고가 생성될 때 수행할 작업을 정의하는 **경고** 작업 하나가 필요합니다. 작업 리소스의 형식은 `Microsoft.OperationalInsights/workspaces/savedSearches/schedules/actions`입니다.
 
 경고 작업의 구조는 다음과 같습니다. 여기에는 일반 변수 및 매개 변수가 포함되어 있으므로 이 코드 조각을 복사하여 솔루션 파일에 붙여넣고 매개 변수 이름을 변경할 수 있습니다.
@@ -184,8 +177,8 @@ Resource Manager 템플릿에 정의된 모든 Log Analytics 리소스에는 리
 | 요소 이름 | 필수 | 설명 |
 |:--|:--|:--|
 | Type | 예 | 작업의 유형입니다.  경고 작업의 **경고**가 됩니다. |
-| Name | 예 | 경고에 대한 표시 이름입니다.  경고 규칙에 대한 콘솔에 표시되는 이름입니다. |
-| 설명 | 아니요 | 경고에 대한 선택적 설명입니다. |
+| 이름 | 예 | 경고에 대한 표시 이름입니다.  경고 규칙에 대한 콘솔에 표시되는 이름입니다. |
+| 설명 | 아닙니다. | 경고에 대한 선택적 설명입니다. |
 | 심각도 | 예 | 다음 값의 경고 레코드의 심각도입니다.<br><br> **중요**<br>**경고**<br>**정보 제공**
 
 
@@ -225,8 +218,8 @@ Azure에서 모든 경고는 작업을 처리하기 위한 기본 메커니즘�
 | 요소 이름 | 필수 | 설명 |
 |:--|:--|:--|
 | AzNsNotification | 예 | 경고 조건이 충족되면 필요한 작업을 수행하도록 경고와 연결되는 Azure 작업 그룹의 리소스 ID. |
-| CustomEmailSubject | 아니요 | 연결된 작업 그룹에서 지정된 모든 주소로 전송되는 메일의 사용자 지정 제목 줄. |
-| CustomWebhookPayload | 아니요 | 연결된 작업 그룹에 정의된 모든 웹후크 엔드포인트로 보낼 사용자 지정된 페이로드. 형식은 웹후크에서 기대하는 내용에 따라 달라지며 유효한 직렬화 JSON이어야 합니다. |
+| CustomEmailSubject | 아닙니다. | 연결된 작업 그룹에서 지정된 모든 주소로 전송되는 메일의 사용자 지정 제목 줄. |
+| CustomWebhookPayload | 아닙니다. | 연결된 작업 그룹에 정의된 모든 웹후크 엔드포인트로 보낼 사용자 지정된 페이로드. 형식은 웹후크에서 기대하는 내용에 따라 달라지며 유효한 직렬화 JSON이어야 합니다. |
 
 #### <a name="actions-for-oms-legacy"></a>OMS에 대한 작업(레거시)
 
@@ -240,18 +233,18 @@ Azure에서 모든 경고는 작업을 처리하기 위한 기본 메커니즘�
 
 | 요소 이름 | 필수 | 설명 |
 |:--|:--|:--|
-| 받는 사람 | 예 | 다음 예제와 같이 경고가 생성되면 알림을 보낼 쉼표로 구분된 전자 메일 주소 목록입니다.<br><br>**[ "recipient1@contoso.com", "recipient2@contoso.com" ]** |
-| 제목 | 예 | 메일의 제목 줄입니다. |
-| 첨부 파일 | 아니요 | 첨부 파일은 현재 지원되지 않습니다. 이 요소를 포함하는 경우 **없음**이어야 합니다. |
+| Recipients | 예 | 다음 예제와 같이 경고가 생성되면 알림을 보낼 쉼표로 구분된 전자 메일 주소 목록입니다.<br><br>**[ "recipient1\@contoso.com", "recipient2\@contoso.com" ]** |
+| Subject | 예 | 메일의 제목 줄입니다. |
+| Attachment | 아닙니다. | 첨부 파일은 현재 지원되지 않습니다. 이 요소를 포함하는 경우 **없음**이어야 합니다. |
 
 ##### <a name="remediation"></a>재구성
-이 섹션은 선택 사항입니다. 경고에 대한 응답으로 runbook을 시작하려면 이 섹션을 포함해야 합니다. |
+이 섹션은 선택 사항입니다. 경고에 대한 응답으로 runbook을 시작하려면 이 섹션을 포함해야 합니다. 
 
 | 요소 이름 | 필수 | 설명 |
 |:--|:--|:--|
 | RunbookName | 예 | 시작할 runbook의 이름입니다. |
 | WebhookUri | 예 | runbook의 웹후크 Uri입니다. |
-| Expiry | 아니요 | 재구성이 만료되는 날짜 및 시간입니다. |
+| Expiry | 아닙니다. | 재구성이 만료되는 날짜 및 시간입니다. |
 
 ##### <a name="webhook-actions"></a>웹후크 작업
 
@@ -274,7 +267,6 @@ Azure에서 모든 경고는 작업을 처리하기 위한 기본 메커니즘�
         "customPayload": "[variables('Alert').Webhook.CustomPayLoad]"
       }
     }
-
 웹후크 작업 리소스의 속성은 다음 표에 설명되어 있습니다.
 
 | 요소 이름 | 필수 | 설명 |
@@ -282,7 +274,7 @@ Azure에서 모든 경고는 작업을 처리하기 위한 기본 메커니즘�
 | 형식 | 예 | 작업의 유형입니다. 웹후크 작업의 **웹후크**가 됩니다. |
 | 이름 | 예 | 작업의 표시 이름입니다. 콘솔에 표시되지 않습니다. |
 | webhookUri | 예 | 웹후크의 Uri입니다. |
-| customPayload | 아니요 | 웹후크에 보낼 사용자 지정 페이로드입니다. 형식은 예상하는 웹후크에 따라 달라집니다. |
+| customPayload | 아닙니다. | 웹후크에 보낼 사용자 지정 페이로드입니다. 형식은 예상하는 웹후크에 따라 달라집니다. |
 
 ## <a name="sample"></a>샘플
 

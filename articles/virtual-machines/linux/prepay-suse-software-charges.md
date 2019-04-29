@@ -13,13 +13,13 @@ ms.workload: na
 ms.date: 04/12/2019
 ms.author: banders
 ms.openlocfilehash: e15dcdbbcaed32d836bb751ef93ce17e90bd6905
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60011098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60771246"
 ---
-# <a name="prepay-for-azure-software-plans"></a>Azure 소프트웨어 계획에 대 한 요금을 선불합니다
+# <a name="prepay-for-azure-software-plans"></a>Azure 소프트웨어 플랜 선결제
 
 Azure에서 SUSE 및 RedHat 소프트웨어 사용량에 대 한 이용 하면 선불 하는 경우에 종 량 제 비용 보다 비용을 저장할 수 있습니다. 할인은 SUSE 및 RedHat 미터와 가상 머신 사용량에 없는만 적용 됩니다. 추가적인 절약을 위해 별도로 virtual machines에 대 한 예약을 구입할 수 있습니다.
 

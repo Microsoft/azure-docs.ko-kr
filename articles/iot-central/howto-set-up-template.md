@@ -9,11 +9,11 @@ ms.service: iot-central
 services: iot-central
 manager: peterpr
 ms.openlocfilehash: db8c8de7a8047f7aa6a81f6a3b372d161408f1be
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59679349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62097142"
 ---
 # <a name="set-up-a-device-template"></a>디바이스 템플릿 설정
 
@@ -237,7 +237,7 @@ IoT Central 애플리케이션에서 Azure Maps를 사용하여 애플리케이�
 
 | 표시 이름  | 필드 이름 | 기본 시간 제한 | 데이터 형식 |
 | --------------| -----------|---------------- | --------- |
-| Echo 명령  | echo       |  30             | 텍스트      |
+| Echo 명령  | echo       |  30             | text      |
 
 ![Echo에 대한 세부 정보가 있는 "명령 구성" 양식](./media/howto-set-up-template/commandsecho.png)
 

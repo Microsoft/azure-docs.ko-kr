@@ -15,11 +15,11 @@ ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: 4901630509eb60cb1bbe88a46b51277af244c8f8
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58670730"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60556834"
 ---
 # <a name="sfctl-mesh"></a>sfctl mesh
 Service Fabric Mesh 애플리케이션을 삭제하고 관리합니다.

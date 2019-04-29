@@ -3,17 +3,18 @@ title: 원격 모니터링 솔루션에서 Edge 패키지 가져오기 - Azure |
 description: 이 문서에서는 원격 모니터링 솔루션 가속기로 IoT Edge 패키지를 가져오는 방법을 설명합니다.
 author: dominicbetts
 manager: timlt
-ms.author: dobett
+ms.author: v-yiso
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.date: 10/10/2018
+origin.date: 10/10/2018
+ms.date: 12/17/2018
 ms.topic: conceptual
 ms.openlocfilehash: 34222f396ed3c43932371aa9f64a459bb2a5dd0e
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51827490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61443014"
 ---
 # <a name="import-an-iot-edge-package-into-your-remote-monitoring-solution-accelerator"></a>원격 모니터링 솔루션 가속기로 IoT Edge 패키지 가져오기
 
@@ -29,11 +30,11 @@ ms.locfileid: "51827490"
 
 Azure Portal을 사용하여 개발 환경에서 배포 매니페스트를 내보냅니다.
 
-1. Azure Portal에서 IoT Edge 디바이스를 개발 및 테스트하는 데 사용할 IoT Hub로 이동합니다. **IoT Edge**, **IoT Edge 배포**를 차례로 클릭합니다. ![IoT Edge](media/iot-accelerators-remote-monitoring-import-edge-package/iotedge.png)
+1. Azure Portal에서 IoT Edge 디바이스를 개발 및 테스트하는 데 사용할 IoT Hub로 이동합니다. 클릭 **IoT Edge** 차례로 **IoT Edge 배포**: ![IoT Edge](media/iot-accelerators-remote-monitoring-import-edge-package/iotedge.png)
 
-1. 사용하려는 배포 구성을 포함하는 배포를 클릭합니다. **배포 세부 정보** 페이지에 ![IoT Edge 배포 세부 정보](media/iot-accelerators-remote-monitoring-import-edge-package/deploymentdetails.png)가 표시됩니다.
+1. 사용하려는 배포 구성을 포함하는 배포를 클릭합니다. 합니다 **배포 세부 정보** 페이지가 표시 됩니다. ![IoT Edge 배포 세부 정보](media/iot-accelerators-remote-monitoring-import-edge-package/deploymentdetails.png)
 
-1. **IoT Edge 다운로드 매니페스트**를 클릭합니다. ![배포 매니페스트 다운로드](media/iot-accelerators-remote-monitoring-import-edge-package/download.png)
+1. 클릭 **IoT Edge 다운로드 매니페스트**:  ![배포 매니페스트를 다운로드 합니다.](media/iot-accelerators-remote-monitoring-import-edge-package/download.png)
 
 1. JSON 파일을 **deploymentmanifest.json**이라는 로컬 파일로 저장합니다.
 
@@ -43,11 +44,11 @@ Azure Portal을 사용하여 개발 환경에서 배포 매니페스트를 내�
 
 아래 단계에 따라 Edge 배포 매니페스트를 솔루션에 패키지로 가져옵니다.
 
-1. 원격 모니터링 웹 UI에서 **패키지** 페이지로 이동합니다. ![패키지 페이지](media/iot-accelerators-remote-monitoring-import-edge-package/packagespage.png)
+1. 원격 모니터링 웹 UI에서 **패키지** 페이지로 이동합니다.  ![패키지 페이지](media/iot-accelerators-remote-monitoring-import-edge-package/packagespage.png)
 
-1. **+ 새 패키지**를 클릭하고 패키지 유형으로 **Edge 매니페스트**를 선택하고 **찾아보기**를 클릭하여 이전 섹션에서 저장한 **deploymentmanifest.json** 파일을 선택합니다. ![매니페스트 선택](media/iot-accelerators-remote-monitoring-import-edge-package/selectmanifest.png)
+1. 클릭 **+ 새 패키지**, 선택 **Edge 매니페스트** 패키지 형식과 클릭 **찾아보기** 선택 하는 **deploymentmanifest.json** 파일 이전 섹션에서 저장 합니다.  ![매니페스트 선택](media/iot-accelerators-remote-monitoring-import-edge-package/selectmanifest.png)
 
-1. **업로드**를 클릭하여 원격 모니터링 솔루션에 패키지를 추가합니다. ![업로드한 패키지](media/iot-accelerators-remote-monitoring-import-edge-package/uploadedpackage.png)
+1. **업로드**를 클릭하여 원격 모니터링 솔루션에 패키지를 추가합니다.  ![업로드 된 패키지](media/iot-accelerators-remote-monitoring-import-edge-package/uploadedpackage.png)
 
 이제 IoT Edge 배포 매니페스트를 패키지로 업로드했습니다. **배포** 페이지에서 이 패키지를 연결된 IoT Edge 디바이스로 배포할 수 있습니다.
 

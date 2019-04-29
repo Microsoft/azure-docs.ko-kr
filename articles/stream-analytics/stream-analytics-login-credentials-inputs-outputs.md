@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: 14e24c1e9a61eb7ea73a949e17ffbf8c5b768f05
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53099072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61479665"
 ---
 # <a name="rotate-login-credentials-for-inputs-and-outputs-of-a-stream-analytics-job"></a>Stream Analytics 작업에서 입력 및 출력을 위한 로그인 자격 증명 순환
 
@@ -24,7 +24,7 @@ Stream Analytics 작업의 입력 또는 출력에대 한 자격 증명을 다�
 
 이 섹션에서는 Blob 스토리지, Event Hubs, SQL Database 및 Table Storage에 대한 자격 증명을 다시 생성하는 과정을 안내합니다. 
 
-### <a name="blob-storagetable-storage"></a>Blob 저장소/테이블 저장소
+### <a name="blob-storagetable-storage"></a>Blob Storage/Table Storage
 1. Azure Portal에 로그인하고 Stream Analytics 작업에 대한 입/출력으로 사용한 저장소 계정으로 이동합니다.    
 2. 설정 섹션에서 **액세스 키**를 엽니다. 두 개의 기본 키(key1, key2) 중에서 작업에서 사용하지 않은 키를 선택하고 다시 생성합니다.  
    ![저장소 계정에 대한 키 다시 생성](media/stream-analytics-login-credentials-inputs-outputs/regenerate-storage-keys.png)

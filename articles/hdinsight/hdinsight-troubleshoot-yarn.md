@@ -1,18 +1,17 @@
 ---
 title: Azure HDInsight의 YARN 문제 해결
 description: Apache Hadoop YARN 및 Azure HDInsight 작업에 대한 일반적인 질문에 답합니다.
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.openlocfilehash: d5582038c35ba3b599be89b7b7939e644d55ea78
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 4ca3dddb2b5ea4897ff82f1d91e88dc656305453
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53408833"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63764293"
 ---
 # <a name="troubleshoot-apache-hadoop-yarn-by-using-azure-hdinsight"></a>Azure HDInsight를 사용하여 Apache Hadoop YARN 문제를 해결합니다.
 
@@ -25,8 +24,9 @@ Apache Ambari에서 Apache Hadoop YARN 페이로드를 사용할 때의 주요 �
 Ambari에서 다음 단계를 사용하여 새 YARN 큐를 만들고 모든 큐에 용량이 균형 있게 할당되도록 조정합니다. 
 
 이 예제에서는 기존 큐 두 개(**default** 및 **thriftsvr**) 모두 새 큐(spark)를 50% 용량으로 하여 50% 용량에서 25% 용량으로 변경됩니다.
+
 | 큐 | 용량 | 최대 용량 |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | 기본값 | 25% | 50% |
 | thrftsvr | 25% | 50% |
 | spark | 50% | 50% |
@@ -132,8 +132,8 @@ Ambari에서 다음 단계를 사용하여 새 YARN 큐를 만들고 모든 큐�
 ### <a name="additional-reading-2"></a>추가 참조 자료
 
 - [SSH를 사용하여 HDInsight(Apache Hadoop)에 연결](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-use-ssh-unix)
-- [Apache Hadoop YARN 개념 및 응용 프로그램](https://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/)
+- [Apache Hadoop YARN 개념 및 애플리케이션](https://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/)
 
 
-### <a name="see-also"></a>참고 항목
+### <a name="see-also"></a>관련 항목
 [Azure HDInsight를 사용하여 문제 해결](hdinsight-troubleshoot-guide.md)

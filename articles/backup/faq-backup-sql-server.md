@@ -6,18 +6,22 @@ author: sachdevaswati
 manager: vijayts
 ms.service: backup
 ms.topic: conceptual
-ms.date: 03/19/2019
+ms.date: 04/23/2019
 ms.author: sachdevaswati
-ms.openlocfilehash: 8d6323c73e5313a29b7b0df09ebdd24a190879f5
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 649e50634d901ab48f1cb36c39d7331401c0cc51
+ms.sourcegitcommit: a95dcd3363d451bfbfea7ec1de6813cad86a36bb
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59791896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62733551"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Azure VM 백업에서 실행 되는 SQL Server 데이터베이스에 대 한 FAQ
 
 이 문서에서는 Azure virtual machines (Vm)에서 실행 되는 및 사용 하는 SQL Server 데이터베이스 백업에 대 한 일반적인 질문에 답변 합니다 [Azure Backup](backup-overview.md) 서비스입니다.
+
+## <a name="can-i-use-azure-backup-for-iaas-vm-as-well-as-sql-server-on-the-same-machine"></a>사용할 수 있습니까 Azure backup IaaS VM 뿐만 아니라 SQL Server에 대 한 동일한 컴퓨터에서?
+예, 할 수 있습니다 VM 백업 및 SQL 백업 모두 동일한 VM에서. 이 예에서는 내부적으로 트리거할 복사 전용 전체 백업을 vm 로그를 자르지 않습니다.
+
 
 ## <a name="does-the-solution-retry-or-auto-heal-the-backups"></a>솔루션을 다시 시도 또는 자동 치료 백업을?
 
@@ -45,7 +49,8 @@ ms.locfileid: "59791896"
   `{"DefaultBackupTasksThreshold": 5}`
 
 3. 변경 내용을 저장하고 파일을 닫습니다.
-4. SQL Server 인스턴스에서 **작업 관리자**를 엽니다. **AzureWLBackupCoordinatorSvc** 서비스를 다시 시작합니다.
+4. SQL Server 인스턴스에서 **작업 관리자**를 엽니다. **AzureWLBackupCoordinatorSvc** 서비스를 다시 시작합니다.<br/> <br/>
+ 백업 응용 프로그램 리소스, SQL Server를 많이 사용 하는 경우이 방법을 사용 하는 동안 [Resource Governor](https://docs.microsoft.com/sql/relational-databases/resource-governor/resource-governor?view=sql-server-2017) CPU, 물리적 IO 및 들어오는 응용 프로그램 요청 수 있는 메모리의 양에 제한을 지정 하는 보다 일반적인 방법 이 옵션을 사용 합니다.
 
 > [!NOTE]
 > UX 여전히 진행를 특정 시점 백업을 예약에 위의 예제에 따라 5, 슬라이딩 윈도우에서 처리 됩니다 있지만.

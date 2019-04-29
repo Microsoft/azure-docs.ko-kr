@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 04/18/2019
 ms.author: haroldw
-ms.openlocfilehash: 39eea84cc9301263381533e03e8f783e0a73ea19
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 296bc42313ef80425004d3c9b43c6792cbaf97f4
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59999963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62127007"
 ---
 # <a name="deploy-openshift-container-platform-in-azure"></a>Azure에서 OpenShift Container Platform 배포
 
@@ -251,7 +251,7 @@ Resource Manager 템플릿을 사용하여 배포하려면 매개 변수 파일�
 
 | 자산 | 설명 | 유효한 옵션 | 기본값 |
 |----------|-------------|---------------|---------------|
-| `_artifactsLocation`  | 아티팩트 (json, 스크립트 등)에 대 한 URL |  |  https://raw.githubusercontent.com/Microsoft/openshift-container-platform/master  |
+| `_artifactsLocation`  | 아티팩트 (json, 스크립트 등)에 대 한 URL |  |  https:\//raw.githubusercontent.com/Microsoft/openshift-container-platform/master  |
 | `location` | 리소스를 배포할 azure 지역 |  |  |
 | `masterVmSize` | 마스터 VM의 크기입니다. Azuredeploy.json 파일에 나열 된 허용 되는 VM 크기 중 하나를 선택 합니다. |  | Standard_E2s_v3 |
 | `infraVmSize` | 크기는 인프라 VM. Azuredeploy.json 파일에 나열 된 허용 되는 VM 크기 중 하나를 선택 합니다. |  | Standard_D4s_v3 |

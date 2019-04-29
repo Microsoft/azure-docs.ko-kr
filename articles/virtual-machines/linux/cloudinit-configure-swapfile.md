@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 11/29/2017
 ms.author: rclaus
 ms.openlocfilehash: 626fd4739daf2506854c42f16ac986a361ebab38
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55769915"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60729820"
 ---
 # <a name="use-cloud-init-to-configure-a-swapfile-on-a-linux-vm"></a>Linux VM에서 cloud-init를 사용하여 스왑 파일 구성
 이 문서에서는 [cloud-init](https://cloudinit.readthedocs.io)를 사용하여 다양한 Linux 배포에서 스왑 파일을 구성하는 방법을 보여 줍니다. 일반적으로 스왑 파일은 해당 파일이 필요한 배포에 따라 Linux 에이전트(WALA)에 의해 구성되었습니다.  이 문서는 cloud-init를 사용하여 프로비저닝 시간 동안 요청 시 스왑 파일을 빌드하는 프로세스를 간략하게 설명합니다.  기본적으로 cloud-init가 Azure에서 작동되는 방식과 지원되는 Linux 배포판에 대한 자세한 내용은 [cloud-init 개요](using-cloud-init.md)를 참조하세요.

@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
 ms.openlocfilehash: e203877b2bc939c1d7fb9390df39f3e2451d12d3
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59551114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60852315"
 ---
 # <a name="configure-a-linux-aspnet-core-app-for-azure-app-service"></a>Linux를 구성 합니다. Azure App Service 용 ASP.NET Core 앱
 
@@ -50,7 +50,7 @@ az webapp config set --name <app-name> --resource-group <resource-group-name> --
 
 ## <a name="access-environment-variables"></a>환경 변수 액세스
 
-App Service에서 수행할 수 있습니다 [앱 설정을](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-settings) 코드 외부에서 앱. 그런 다음 표준 ASP.NET 패턴을 사용 하 여 액세스할 수 있습니다.
+App Service에서, 앱 코드 외부에서 [앱 설정](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-settings)을 지정할 수 있습니다. 그런 다음 표준 ASP.NET 패턴을 사용 하 여 액세스할 수 있습니다.
 
 ```csharp
 include Microsoft.Extensions.Configuration;
@@ -141,7 +141,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [자습서: SQL Database 사용 하 여 ASP.NET Core 앱](tutorial-dotnetcore-sqldb-app.md)
+> [자습서: SQL Database를 사용하는 ASP.NET Core 앱](tutorial-dotnetcore-sqldb-app.md)
 
 > [!div class="nextstepaction"]
 > [App Service Linux FAQ](app-service-linux-faq.md)

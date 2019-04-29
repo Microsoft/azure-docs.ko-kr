@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: bc3590e90cacfa4966f0d1f64aa1c8d49483cb1b
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "58114352"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485461"
 ---
 이 문서에서는 클래식 배포 모델을 사용하여 만든 Azure 가상 머신에 대한 사용자의 일부 일반적인 질문을 해결합니다.
 

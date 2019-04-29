@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/05/2018
 ms.author: yijenj
 ms.openlocfilehash: de31ceea4faeecabd54c0d23e9263cbb4090925d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59791823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60733524"
 ---
 # <a name="support-for-the-marketplace"></a>Marketplace에 대한 지원  
 다음은 Marketplace에 대한 지원 옵션 목록입니다.  

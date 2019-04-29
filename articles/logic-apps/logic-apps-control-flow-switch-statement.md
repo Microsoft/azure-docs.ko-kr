@@ -10,11 +10,11 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 10/08/2018
 ms.openlocfilehash: 2a3f8ee5cba3110d392555fad78c1cb2513b5d4e
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50232446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60683131"
 ---
 # <a name="create-switch-statements-that-run-workflow-actions-based-on-specific-values-in-azure-logic-apps"></a>Azure Logic Apps에서 특정 값에 따라 워크플로 작업을 실행하는 switch 문 만들기
 
@@ -32,7 +32,7 @@ ms.locfileid: "50232446"
 
 * 이 문서의 예를 수행하려면 Outlook.com 또는 Office 365 Outlook 계정으로 [이 샘플 논리 앱을 만듭니다](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-  1. 전자 메일을 보내는 작업을 추가하는 경우 **승인 전자 메일 보내기**를 대신 선택합니다.
+  1. 전자 메일을 보내는 작업을 추가 하면 찾기 및이 작업을 대신 선택 합니다. **승인 이메일 보내기**
 
      !["승인 이메일 보내기" 선택](./media/logic-apps-control-flow-switch-statement/send-approval-email-action.png)
 
@@ -47,7 +47,7 @@ ms.locfileid: "50232446"
 
    단계 사이에 switch 문을 추가하려면 switch 문을 추가하려는 화살표 위로 포인터를 이동합니다. 표시되는 **더하기 기호**(**+**)를 선택한 다음 **작업 추가**를 선택합니다.
 
-1. 검색 상자에 필터로 "switch"를 입력합니다. **전환 - 제어** 작업을 선택합니다.
+1. 검색 상자에 필터로 "switch"를 입력합니다. 현재 선택한 작업: **스위치-컨트롤**
 
    ![switch 추가](./media/logic-apps-control-flow-switch-statement/add-switch-statement.png)
 
@@ -66,7 +66,7 @@ ms.locfileid: "50232446"
 
 1. 해당 케이스에 다음 작업을 추가합니다.
 
-   | 케이스 # | **SelectedOption** | 조치 |
+   | 케이스 # | **SelectedOption** | 액션(Action) |
    |--------|--------------------|--------|
    | 케이스 1 | **승인** | 승인자가 **승인**을 선택한 경우에만 RSS 항목에 대한 세부 정보를 보내는 Outlook **이메일 보내기** 작업을 추가합니다. |
    | 케이스 2 | **거부** | 다른 승인자에게 RSS 항목이 거부되었음을 알리는 Outlook **이메일 보내기** 작업을 추가합니다. |

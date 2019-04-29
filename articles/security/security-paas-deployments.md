@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 03/05/2019
 ms.author: terrylan
 ms.openlocfilehash: e833317fa16576fa0006a774226d12974fd93ed8
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57404810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62107449"
 ---
 # <a name="securing-paas-deployments"></a>PaaS 배포 보안
 
@@ -158,7 +158,7 @@ Application Insight에는 수집하는 데이터와 상호 작용할 수 있는 
 
 
 ## <a name="next-steps"></a>다음 단계
-이 문서에서는 Azure PaaS 배포의 보안 이점과 클라우드 애플리케이션의 보안 모범 사례에 대해 중점적으로 설명했습니다. 다음 단계에서는 특정 Azure 서비스를 사용하여 PaaS 웹 및 모바일 솔루션을 보호하는 권장 사례에 대해 알아보겠습니다. 먼저 Azure App Service, Azure SQL Database and Azure SQL Data Warehouse 및 Azure Storage를 살펴보겠습니다. 다른 Azure 서비스에 권장되는 사례에 대한 문서를 사용할 수 있으며, 해당 링크는 다음 목록에서 제공합니다.
+이 문서에서는 Azure PaaS 배포의 보안 이점과 클라우드 애플리케이션의 보안 모범 사례에 대해 중점적으로 설명했습니다. 다음 단계에서는 특정 Azure 서비스를 사용하여 PaaS 웹 및 모바일 솔루션을 보호하는 권장 사례에 대해 알아보겠습니다. 먼저 Azure App Service, Azure SQL Database, Azure SQL Data Warehouse 및 Azure Storage를 살펴보겠습니다. 다른 Azure 서비스에 권장되는 사례에 대한 문서를 사용할 수 있으며, 해당 링크는 다음 목록에서 제공합니다.
 
 - [Azure App Service](security-paas-applications-using-app-services.md)
 - [Azure SQL Database 및 Azure SQL Data Warehouse](security-paas-applications-using-sql.md)

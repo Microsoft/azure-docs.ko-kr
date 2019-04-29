@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/02/2018
 ms.author: clemensv
 ms.custom: include file
-ms.openlocfilehash: 04cb694f556d1b53344c0fd95947a258170c4f88
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
-ms.translationtype: HT
+ms.openlocfilehash: 3c18efa7eb520b765c9bb3c2aff00104f971f5a8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33905210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60553965"
 ---
 ### <a name="create-a-nodejs-application"></a>Node.js 애플리케이션 만들기
 

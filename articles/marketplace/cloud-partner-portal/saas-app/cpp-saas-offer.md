@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 9d8b425ff73672ce8989e235c4a2c130c763716c
-ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57213554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60594543"
 ---
 # <a name="azure-saas-application-offer"></a>Azure SaaS 애플리케이션 제품
 

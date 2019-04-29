@@ -12,11 +12,11 @@ author: tedway
 ms.date: 1/29/2019
 ms.custom: seodec18
 ms.openlocfilehash: 7aa0e11ed47219829830369d17b300270d3fbffb
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58259417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60819437"
 ---
 # <a name="deploy-a-model-as-a-web-service-on-an-fpga-with-azure-machine-learning-service"></a>Azure Machine Learning 서비스를 사용하여 FPGA에 웹 서비스로 모델 배포
 

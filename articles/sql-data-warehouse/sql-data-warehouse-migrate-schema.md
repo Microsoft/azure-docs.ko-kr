@@ -2,20 +2,21 @@
 title: SQL Data Warehouse로 스키마 마이그레이션| Microsoft Docs
 description: 솔루션 개발을 위한 Azure SQL Data Warehouse로 스키마를 마이그레이션하기 위한 팁
 services: sql-data-warehouse
-author: jrowlandjones
-manager: craigg
+author: WenJason
+manager: digimobile
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: implement
-ms.date: 04/17/2018
-ms.author: jrj
+ms.component: implement
+origin.date: 04/17/2018
+ms.date: 10/15/2018
+ms.author: v-jay
 ms.reviewer: igorstan
 ms.openlocfilehash: 4139ea776f6947eeacf4620c3676606d6535dd2b
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55461687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60748155"
 ---
 # <a name="migrate-your-schemas-to-sql-data-warehouse"></a>SQL Data Warehouse로 스키마 마이그레이션
 SQL Data Warehouse에 SQL 스키마를 마이그레이션하기 위한 지침입니다. 
@@ -40,13 +41,6 @@ SQL Data Warehouse와 호환되도록 데이터 형식을 수정합니다. 지�
 
 PolyBase는 테이블 행 너비를 1MB로 제한합니다.  PolyBase를 사용하여 SQL Data Warehouse로 데이터를 로드하려는 경우 최대 행 너비가 1MB 미만이 되도록 테이블을 업데이트합니다. 
 
-<!--
-- For example, this table uses variable length data but the largest possible size of the row is still less than 1 MB. PolyBase will load data into this table.
-
-- This table uses variable length data and the defined row width is less than one MB. When loading rows, PolyBase allocates the full length of the variable-length data. The full length of this row is greater than one MB.  PolyBase will not load data into this table.  
-
--->
-
 ## <a name="specify-the-distribution-option"></a>배포 옵션 지정
 SQL Data Warehouse는 배포된 데이터베이스 시스템입니다. 각 테이블은 Compute 노드에 배포되거나 복제됩니다. 데이터를 배포하는 방법을 지정할 수 있는 테이블 옵션이 있습니다. 라운드 로빈, 복제 또는 해시 배포를 선택할 수 있습니다. 각각에 장점 및 단점이 있습니다. 배포 옵션을 지정하지 않은 경우 SQL Data Warehouse는 기본적으로 라운드 로빈을 사용합니다.
 
@@ -55,7 +49,6 @@ SQL Data Warehouse는 배포된 데이터베이스 시스템입니다. 각 테�
 - 배포된 해시는 해시 함수를 통해 모든 노드에 행을 배포합니다. 배포된 해시 테이블은 큰 테이블에서 높은 쿼리 성능을 제공하도록 설계되었기 때문에 SQL Data Warehouse의 핵심입니다. 이 옵션을 사용하려면 데이터를 배포하는 경우 가장 적합한 열을 선택해야 합니다. 그러나 처음으로 가장 적합한 열을 선택하지 않더라도 다른 열에 데이터를 다시 쉽게 배포할 수 있습니다. 
 
 각 테이블에 가장 적합한 배포 옵션을 선택하려면 [배포된 테이블](sql-data-warehouse-tables-distribute.md)을 참조하세요.
-
 
 ## <a name="next-steps"></a>다음 단계
 SQL Data Warehouse로 데이터베이스 스키마를 성공적으로 마이그레이션한 후에 다음 문서 중 하나를 진행할 수 있습니다.
@@ -78,5 +71,6 @@ SQL Data Warehouse 모범 사례에 대한 자세한 내용은 [모범 사례][b
 
 <!--MSDN references-->
 
-
 <!--Other Web references-->
+
+<!--Update_Description: update meta properties, add new content about Migrate schemas to SQL Data Warehouse -->

@@ -2,18 +2,19 @@
 title: 포함 파일
 description: 포함 파일
 services: virtual-network
-author: genlin
+author: rockboyfor
 ms.service: virtual-network
 ms.topic: include
-ms.date: 04/13/2018
-ms.author: genli
+origin.date: 04/13/2018
+ms.date: 06/11/2018
+ms.author: v-yeche
 ms.custom: include file
-ms.openlocfilehash: cff737b8c79c44494cb0151d6a6281550401b26e
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
-ms.translationtype: HT
+ms.openlocfilehash: 2b1f9990985951a4e6ef260954968c0e1466c298
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31805069"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60597025"
 ---
 ## <a name="scenario"></a>시나리오
 
@@ -25,4 +26,3 @@ VNet 및 서브넷을 만드는 방법을 설명하기 위해 이 문서에서�
 
 * **FrontEnd**, CIDR 블록으로 **192.168.1.0/24** 사용
 * **BackEnd**, CIDR 블록으로 **192.168.2.0/24** 사용
-

@@ -16,11 +16,11 @@ ms.date: 04/17/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: a931b303e40e41bc23e8b586e1d37e600625b1a8
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57881064"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61415095"
 ---
 # <a name="deploy-storsimple-virtual-array---set-up-as-file-server-via-azure-portal"></a>StorSimple 가상 배열 배포 - Azure Portal을 통해 파일 서버로 설정
 ![](./media/storsimple-virtual-array-deploy3-fs-setup/fileserver4.png)
@@ -200,8 +200,7 @@ StorSimple 가상 배열을 구성하고 설정하기 전에 다음 사항을 �
 이전 단계에서 만든 하나 이상의 공유에 연결해야 합니다. StorSimple 가상 배열에 연결된 Windows Server 호스트에서 이러한 단계를 수행합니다.
 
 #### <a name="to-connect-to-the-share"></a>공유에 연결하려면
-1. 
-  ![](./media/storsimple-virtual-array-deploy3-fs-setup/image22.png) + R 키를 누릅니다. 실행 창에서 *&#92;&#92;&lt;파일 서버 이름&gt;* 으로 경로를 지정하고, *파일 서버 이름*을 파일 서버에 할당한 디바이스 이름으로 변경합니다. **확인**을 클릭합니다.
+1. ![](./media/storsimple-virtual-array-deploy3-fs-setup/image22.png) + R 키를 누릅니다. 실행 창에서 *&amp;#92;&amp;#92;&lt;파일 서버 이름&gt;* 으로 경로를 지정하고, *파일 서버 이름*을 파일 서버에 할당한 디바이스 이름으로 변경합니다. **확인**을 클릭합니다.
    
    ![](./media/storsimple-virtual-array-deploy3-fs-setup/image23.png)
 2. 그러면 파일 탐색기가 열립니다. 폴더로 만든 공유가 표시됩니다. 공유(폴더)를 선택하고 두 번 클릭하여 콘텐츠를 봅니다.

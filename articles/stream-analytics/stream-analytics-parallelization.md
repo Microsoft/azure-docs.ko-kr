@@ -10,11 +10,11 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/07/2018
 ms.openlocfilehash: 0b68819ba032d7655433aadd30fe2852941096ce
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54000549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61478881"
 ---
 # <a name="leverage-query-parallelization-in-azure-stream-analytics"></a>Azure Stream Analytics에서 쿼리 병렬 처리 사용
 이 문서에서는 Azure Stream Analytics에서 병렬 처리 기능을 활용하는 방법을 보여 줍니다. 입력 파티션을 구성하고, 분석 쿼리 정의를 조정하여 Stream Analytics 작업의 크기를 조정하는 방법을 알아봅니다.
@@ -37,10 +37,10 @@ Stream Analytics 작업 크기 조정은 입력 또는 출력에 있는 파티�
 ### <a name="outputs"></a>outputs
 
 Stream Analytics로 작업할 때 다음 출력에서 분할을 활용할 수 있습니다.
--   Azure Data Lake 저장소
+-   Azure Data Lake 스토리지
 -   Azure 기능
 -   Azure 테이블
--   Blob 저장소(파티션 키를 명시적으로 설정할 수 있음)
+-   Blob Storage(파티션 키를 명시적으로 설정할 수 있음)
 -   Cosmos DB(파티션 키를 명시적으로 설정해야 함)
 -   Event Hubs(파티션 키를 명시적으로 설정해야 함)
 -   IoT Hub(파티션 키를 명시적으로 설정해야 함)
@@ -64,11 +64,11 @@ Power BI는 분할을 지원하지 않습니다. 그러나 [이 섹션](#multi-s
 
 3. 대부분의 출력은 분할을 활용할 수 있지만 분할을 지원하지 않는 출력 형식을 사용하는 경우 작업이 완벽하게 병렬 처리되지 않습니다. 자세한 내용은 [출력 섹션](#outputs)을 참조하세요.
 
-4. 입력 파티션 수가 출력 파티션 수와 같아야 합니다. Blob 저장소 출력은 파티션을 지원할 수 있고 업스트림 쿼리의 파티션 구성표를 상속합니다. Blob 저장소에 대한 파티션 키가 지정되면 데이터는 입력 파티션별로 분할되므로 결과는 여전히 완전 병렬 상태입니다. 다음은 완전한 병렬 작업을 허용하는 파티션 값의 예입니다.
+4. 입력 파티션 수가 출력 파티션 수와 같아야 합니다. Blob Storage 출력은 파티션을 지원할 수 있고 업스트림 쿼리의 파티션 구성표를 상속합니다. Blob Storage에 대한 파티션 키가 지정되면 데이터는 입력 파티션별로 분할되므로 결과는 여전히 완전 병렬 상태입니다. 다음은 완전한 병렬 작업을 허용하는 파티션 값의 예입니다.
 
    * 8개의 이벤트 허브 입력 파티션 및 8개의 이벤트 허브 출력 파티션
    * 8개의 이벤트 허브 입력 파티션 및 Blob Storage 출력
-   * 임의 카디널리티를 사용하여 사용자 지정 필드별로 분할되는 8개의 이벤트 허브 입력 파티션 및 Blob 저장소 출력
+   * 임의 카디널리티를 사용하여 사용자 지정 필드별로 분할되는 8개의 이벤트 허브 입력 파티션 및 Blob Storage 출력
    * 8개의 Blob Storage 입력 파티션 및 Blob Storage 출력
    * 8개의 Blob Storage 입력 파티션 및 8개의 이벤트 허브 출력 파티션
 
@@ -77,7 +77,7 @@ Power BI는 분할을 지원하지 않습니다. 그러나 [이 섹션](#multi-s
 ### <a name="simple-query"></a>단순 쿼리
 
 * 입력: 8개의 파티션이 있는 이벤트 허브
-* 출력: 8개의 파티션이 있는 이벤트 허브
+* 출력 8개의 파티션이 있는 이벤트 허브
 
 쿼리:
 
@@ -92,7 +92,7 @@ Power BI는 분할을 지원하지 않습니다. 그러나 [이 섹션](#multi-s
 ### <a name="query-with-a-grouping-key"></a>그룹화 키가 있는 쿼리
 
 * 입력: 8개의 파티션이 있는 이벤트 허브
-* 출력: Blob 저장소
+* 출력 Blob 저장소
 
 쿼리:
 
@@ -110,19 +110,19 @@ Power BI는 분할을 지원하지 않습니다. 그러나 [이 섹션](#multi-s
 
 ### <a name="mismatched-partition-count"></a>일치하지 않는 파티션 수
 * 입력: 8개의 파티션이 있는 이벤트 허브
-* 출력: 32개의 파티션이 있는 이벤트 허브
+* 출력 32개의 파티션이 있는 이벤트 허브
 
 이 경우 쿼리 내용은 중요하지 않습니다. 입력 파티션 수가 출력 파티션 수와 일치하지 않는 토폴로지는 병렬 처리가 적합하지 않습니다. 그렇지만 특정 수준의 병렬 처리는 여전히 사용할 수 있습니다.
 
 ### <a name="query-using-non-partitioned-output"></a>분할되지 않은 출력을 사용하여 쿼리
 * 입력: 8개의 파티션이 있는 이벤트 허브
-* 출력: Power BI
+* 출력 Power BI
 
 Power BI 출력은 현재 분할을 지원하지 않습니다. 따라서 이 시나리오는 병렬 처리가 적합하지 않습니다.
 
 ### <a name="multi-step-query-with-different-partition-by-values"></a>서로 다른 PARTITION BY 값이 있는 다중 단계 쿼리
 * 입력: 8개의 파티션이 있는 이벤트 허브
-* 출력: 8개의 파티션이 있는 이벤트 허브
+* 출력 8개의 파티션이 있는 이벤트 허브
 
 쿼리:
 

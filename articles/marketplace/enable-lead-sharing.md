@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 3fea858f23c6b271a117f2edcc749e0c6b737e27
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
-ms.translationtype: HT
+ms.openlocfilehash: 346ebd9636623a2fc8b08d42c2170a21a5e9a316
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39159996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62121081"
 ---
 # <a name="enable-lead-sharing"></a>잠재 고객 공유 사이트 사용
 [Azure Marketplace](https://azuremarketplace.microsoft.com) 또는 [Microsoft AppSource](https://appsource.microsoft.com)에서 목록에 잠재 고객 관리를 사용하면 다음 대상에 대한 연락처 정보를 받을 수 있습니다.
@@ -57,7 +57,7 @@ ms.locfileid: "39159996"
 
 Marketplace 상점의 잠재 고객은 공동 판매 프로그램의 특징에 해당하는 Microsoft의 판매자 자격을 갖는 잠재 고객과는 다릅니다.
 
-Co-Sell 프로그램에 액세스하는 방법에 대한 자세한 내용은 [Microsoft를 통해 비즈니스 홍보](./promote-your-business-with-microsoft.md) 페이지를 참조하세요.
+Co-Sell 프로그램에 액세스하는 방법에 대한 자세한 내용은 [Microsoft를 통한 비즈니스 홍보](./promote-your-business-with-microsoft.md) 페이지를 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계
 [Azure Marketplace 및 AppSource 게시 가이드](./marketplace-publishers-guide.md)를 검토합니다.

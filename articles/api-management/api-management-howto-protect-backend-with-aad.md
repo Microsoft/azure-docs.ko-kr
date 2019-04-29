@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/18/2018
 ms.author: apimpm
 ms.openlocfilehash: cfe2620801f743831f77fb76f344c156676966d3
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52635070"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60657563"
 ---
 # <a name="protect-an-api-by-using-oauth-20-with-azure-active-directory-and-api-management"></a>Azure Active Directory 및 API Management에서 OAuth 2.0을 사용하여 API 보호
 
@@ -46,11 +46,11 @@ Azure AD에서 API를 보호하려는 경우 첫 번째 단계는 API를 나타�
 
 1. Azure AD 테넌트로 이동한 다음, **앱 등록**으로 이동합니다.
 
-2. **새 응용 프로그램 등록**을 선택합니다. 
+2. **새 애플리케이션 등록**을 선택합니다. 
 
 3. 애플리케이션 이름을 지정합니다. (이 예제에서는 이름이 `backend-app`입니다.)  
 
-4. **응용 프로그램 유형**으로 **웹앱/API**를 선택합니다. 
+4. **애플리케이션 유형**으로 **웹앱/API**를 선택합니다. 
 
 5. **로그온 URL**에 대해 `https://localhost`를 자리 표시자로 사용할 수 있습니다.
 
@@ -62,11 +62,11 @@ Azure AD에서 API를 보호하려는 경우 첫 번째 단계는 API를 나타�
 
 API를 호출하는 모든 클라이언트 애플리케이션을 Azure AD에서도 애플리케이션으로 등록해야 합니다. 이 예제에서 샘플 클라이언트 애플리케이션은 API Management 개발자 포털의 개발자 콘솔입니다. 다음은 개발자 콘솔을 나타내기 위해 Azure AD에 다른 애플리케이션을 등록하는 방법입니다.
 
-1. **새 응용 프로그램 등록**을 선택합니다. 
+1. **새 애플리케이션 등록**을 선택합니다. 
 
 2. 애플리케이션 이름을 지정합니다. (이 예제에서는 이름이 `client-app`입니다.)
 
-3. **응용 프로그램 유형**으로 **웹앱/API**를 선택합니다.  
+3. **애플리케이션 유형**으로 **웹앱/API**를 선택합니다.  
 
 4. **로그온 URL**에 대해 `https://localhost`를 자리 표시자로 사용하거나 API Management 인스턴스의 로그인 URL을 사용할 수 있습니다. (이 예제에서는 URL이 `https://contoso5.portal.azure-api.net/signin`입니다.)
 
@@ -86,7 +86,7 @@ API를 호출하는 모든 클라이언트 애플리케이션을 Azure AD에서�
 
 API 및 개발자 콘솔을 나타내는 두 개의 애플리케이션을 등록했으니 client-app가 backend-app를 호출할 수 있도록 권한을 부여해야 합니다.  
 
-1. **응용 프로그램 등록**으로 이동합니다. 
+1. **애플리케이션 등록**으로 이동합니다. 
 
 2. `client-app`을 선택하고 **설정**으로 이동합니다.
 
@@ -99,7 +99,7 @@ API 및 개발자 콘솔을 나타내는 두 개의 애플리케이션을 등록
 6. **선택**을 선택한 다음, **완료**를 선택합니다. 
 
 > [!NOTE]
-> **Azure Active Directory**가 다른 응용 프로그램에 대한 사용 권한에 나열되지 않으면 **추가**를 선택하고 목록에서 추가합니다.
+> **Azure Active Directory**가 다른 애플리케이션에 대한 사용 권한에 나열되지 않으면 **추가**를 선택하고 목록에서 추가합니다.
 
 ## <a name="enable-oauth-20-user-authorization-in-the-developer-console"></a>개발자 포털에서 OAuth 2.0 사용자 권한 부여를 사용하도록 설정
 
@@ -128,7 +128,7 @@ API 및 개발자 콘솔을 나타내는 두 개의 애플리케이션을 등록
 
 9. 다음으로 클라이언트 자격 증명을 지정합니다. 이러한 자격 증명은 client-app에 대한 자격 증명입니다.
 
-10. **클라이언트 ID**에는 client-app에 대한 **응용 프로그램 ID**를 사용합니다.
+10. **클라이언트 ID**에는 client-app에 대한 **애플리케이션 ID**를 사용합니다.
 
 11. **클라이언트 암호**로 이전에 client-app에 대해 만든 키를 사용합니다. 
 

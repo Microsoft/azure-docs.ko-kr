@@ -1,15 +1,10 @@
 ---
-author: ecfan
-ms.service: logic-apps
-ms.topic: include
-ms.date: 11/03/2016
-ms.author: estfan
 ms.openlocfilehash: d249a205c64f4e067f2d81c7e1068c8ad9756958
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "58115945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62130061"
 ---
 ### <a name="prerequisites"></a>필수 조건
 * [SFTP](https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol) 계정  

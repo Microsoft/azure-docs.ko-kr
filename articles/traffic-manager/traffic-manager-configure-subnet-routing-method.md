@@ -13,11 +13,11 @@ ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: kumud
 ms.openlocfilehash: b3eb7995dac1adf3053d28b40cf322e78c69c55f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58001322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60716333"
 ---
 # <a name="direct-traffic-to-specific-endpoints-based-on-user-subnet-using-traffic-manager"></a>Traffic Manager를 사용하여 사용자 서브넷을 기반으로 특정 엔드포인트로 트래픽 전송
 
@@ -36,7 +36,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 ### <a name="sign-in-to-azure"></a>Azure에 로그인
 
-https://portal.azure.com 에서 Azure Portal에 로그인합니다.
+ [https://portal.azure.com](https://portal.azure.com) 에서 Azure Portal에 로그인합니다.
 
 ### <a name="create-websites"></a>웹 사이트 만들기
 
@@ -56,7 +56,7 @@ https://portal.azure.com 에서 Azure Portal에 로그인합니다.
     |사용자 이름| 선택한 사용자 이름을 입력합니다.|
     |암호| 선택한 암호를 입력합니다. 암호는 12자 이상이어야 하며 [정의된 복잡성 요구 사항](../virtual-machines/windows/faq.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm)을 충족해야 합니다.|
     |리소스 그룹| **새로 만들기**를 선택한 다음, *myResourceGroupTM1*을 입력합니다.|
-    |위치| **미국 동부**를 선택합니다.|
+    |Location| **미국 동부**를 선택합니다.|
     |||
 
 4. **크기 선택**에서 VM 크기를 선택합니다.
@@ -76,7 +76,7 @@ https://portal.azure.com 에서 Azure Portal에 로그인합니다.
     |설정|값|
     |---|---|
     |리소스 그룹 | **새로 만들기**를 선택하고 *myResourceGroupTM2*를 입력합니다.|
-    |위치|서유럽|
+    |Location|서유럽|
     |VM 이름 | myIISVMWEurope|
     |가상 네트워크 | **가상 네트워크**를 선택하고 **가상 네트워크 만들기**에서 **이름**에 *myVNet2*를 입력하고 서브넷에 *mySubnet*을 입력합니다.|
     |||

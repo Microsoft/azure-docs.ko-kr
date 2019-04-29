@@ -10,14 +10,15 @@ ms.assetid: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 02/01/2018
-ms.author: cshoe
+origin.date: 02/01/2018
+ms.date: 11/22/2018
+ms.author: v-junlch
 ms.openlocfilehash: bf54d312de5625a7fa44cea4d5107e83cf15583c
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50248254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62105511"
 ---
 # <a name="azure-functions-error-handling"></a>Azure Functions 오류 처리
 
@@ -33,14 +34,16 @@ Azure 서비스와 통합하는 경우 기본 서비스의 API에서 발생하�
 
 + [Azure Cosmos DB](functions-bindings-cosmosdb.md#exceptions-and-return-codes)
 
-+ [Blob storage](functions-bindings-storage-blob.md#exceptions-and-return-codes)
++ [Blob Storage](functions-bindings-storage-blob.md#exceptions-and-return-codes)
 
 + [Event Hubs](functions-bindings-event-hubs.md#exceptions-and-return-codes)
 
 + [Notification Hubs](functions-bindings-notification-hubs.md#exceptions-and-return-codes)
 
-+ [Queue storage](functions-bindings-storage-queue.md#exceptions-and-return-codes)
++ [Queue Storage](functions-bindings-storage-queue.md#exceptions-and-return-codes)
 
 + [Service Bus](functions-bindings-service-bus.md#exceptions-and-return-codes)
 
 + [Table Storage](functions-bindings-storage-table.md#exceptions-and-return-codes)
+
+<!-- Update_Description: update metedata properties -->

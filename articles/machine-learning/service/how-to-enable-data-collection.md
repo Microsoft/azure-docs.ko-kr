@@ -12,11 +12,11 @@ author: marthalc
 ms.date: 12/3/2018
 ms.custom: seodec18
 ms.openlocfilehash: a127a211157edb0b26d0495bc2ed05dd79323111
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57842637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60820404"
 ---
 # <a name="collect-data-for-models-in-production"></a>프로덕션 환경에서 모델용 데이터 수집
 
@@ -218,7 +218,7 @@ Blob의 데이터에 빠르게 액세스하려면 다음을 수행합니다.
 
     [![DB 테이블](media/how-to-enable-data-collection/dbtable.PNG)](./media/how-to-enable-data-collection/dbtable.PNG#lightbox)
 
-1. 데이터 위치를 업데이트합니다. 다음 예를 참조하세요.
+1. 데이터 위치를 업데이트합니다. 다음은 예제입니다.
 
     ```
     file_location = "wasbs://mycontainer@storageaccountname.blob.core.windows.net/modeldata/1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14/myresourcegrp/myWorkspace/aks-w-collv9/best_model/10/inputs/2018/*/*/data.csv" 

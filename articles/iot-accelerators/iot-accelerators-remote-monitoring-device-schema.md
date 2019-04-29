@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 12/18/2018
 ms.topic: conceptual
 ms.openlocfilehash: 3c2bca45a7927689992cf44fb70199e246641760
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54445425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61446121"
 ---
 # <a name="understand-the-device-model-schema"></a>디바이스 모델 스키마 이해
 

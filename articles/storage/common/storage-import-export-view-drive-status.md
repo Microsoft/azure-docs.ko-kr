@@ -9,11 +9,11 @@ ms.date: 05/17/2018
 ms.author: alkohli
 ms.subservice: common
 ms.openlocfilehash: 225164fe00f70839446f8b74155cd3959f745a49
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55467750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61478048"
 ---
 # <a name="view-the-status-of-azure-importexport-jobs"></a>Azure Import/Export의 상태 보기
 
@@ -63,7 +63,7 @@ Azure Portal의 이 이미지는 예제 작업의 드라이브 상태를 나타�
 | 드라이브 상태 | 행사 | 해결 방법/다음 단계 |
 |:--- |:--- |:--- |
 | 수신되지 않음 | 작업 운송물의 일부로 받지 못하여 **NeverReceived**으로 표시된 드라이브가 다른 운송을 통해 도착했습니다. | 작업 팀은 드라이브를 **수신됨** 상태로 전환합니다. |
-| 해당 없음 | 작업에 포함되지 않은 드라이브가 다른 작업의 일부로 데이터 센터에 도착했습니다. | 드라이브가 추가 드라이브로 표시되며 원래 패키지와 관련된 작업이 완료되면 사용자에게 반환됩니다. |
+| N/A | 작업에 포함되지 않은 드라이브가 다른 작업의 일부로 데이터 센터에 도착했습니다. | 드라이브가 추가 드라이브로 표시되며 원래 패키지와 관련된 작업이 완료되면 사용자에게 반환됩니다. |
 
 ## <a name="time-to-process-job"></a>작업 처리 시간
 Import/Export 작업을 처리하는 데 걸리는 시간은 다음과 같은 다양한 요인에 따라 달라집니다.

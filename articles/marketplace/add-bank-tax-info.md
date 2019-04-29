@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
 ms.openlocfilehash: f194b02e5b92ca2de5b58a033c38d4f2e35f93f6
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57790919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60626148"
 ---
 # <a name="add-bank-and-tax-information"></a>은행 및 세금 정보 추가  
 은행 및 세금 정보는 거래 목록 유형을 사용하는 모든 상용 제품에 필요합니다.  

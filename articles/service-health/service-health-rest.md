@@ -8,11 +8,11 @@ ms.custom: REST
 ms.topic: article
 ms.date: 06/06/2017
 ms.openlocfilehash: 6d83aed6910127ceb34b9a694f48ca9c19ab6d18
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55878394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60790915"
 ---
 # <a name="get-resource-health-using-the-rest-api"></a>REST API를 사용하여 리소스 상태 가져오기 
 
@@ -39,7 +39,7 @@ https://management.azure.com/subscriptions/{subscription-id}/providers/microsoft
 
 ### <a name="uri-parameters"></a>URI 매개 변수
 
-| Name | 설명 |
+| 이름 | 설명 |
 | :--- | :---------- |
 | subscriptionId | Azure 구독을 식별하는 구독 ID입니다. 구독이 여러 개인 경우 [여러 구독으로 작업](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest)을 참조합니다. |
 | api-version | 요청에 사용할 API 버전입니다.<br /><br /> 이 문서에서는 위 URL에 포함되어 있는 api-version `2015-04-01`을 다룹니다.  |

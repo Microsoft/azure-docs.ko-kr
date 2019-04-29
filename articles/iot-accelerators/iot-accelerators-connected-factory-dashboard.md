@@ -8,16 +8,16 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 07/10/2018
 ms.author: dobett
-ms.openlocfilehash: 4af93b5667181941585cc1ac89f5696379962026
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
-ms.translationtype: HT
+ms.openlocfilehash: 05befc72f512f502456f798f25b6c72571451363
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39075569"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61450985"
 ---
 # <a name="use-features-in-the-connected-factory-solution-accelerator-dashboard"></a>연결된 팩터리 솔루션 가속기 대시보드의 기능 사용
 
-[산업용 IoT 장치를 관리하는 클라우드 기반 솔루션 배포](quickstart-connected-factory-deploy.md) 빠른 시작에서는 대시보드를 탐색하고 경보에 응답하는 방법을 보여 주었습니다. 이 방법 가이드에서는 산업용 IoT 디바이스를 모니터링하고 관리하는 데 사용할 수 있는 몇 가지 추가 대시보드 기능을 보여 줍니다.
+[산업용 IoT 디바이스를 관리하는 클라우드 기반 솔루션 배포](quickstart-connected-factory-deploy.md) 빠른 시작에서는 대시보드를 탐색하고 경보에 응답하는 방법을 보여 주었습니다. 이 방법 가이드에서는 산업용 IoT 디바이스를 모니터링하고 관리하는 데 사용할 수 있는 몇 가지 추가 대시보드 기능을 보여 줍니다.
 
 ## <a name="apply-filters"></a>필터 적용
 
@@ -112,5 +112,5 @@ ms.locfileid: "39075569"
 작동하는 솔루션 가속기를 배포했으므로 다음 문서를 참고하여 IoT 솔루션 가속기를 계속 시작할 수 있습니다.
 
 * [연결된 팩터리 솔루션 가속기 연습](iot-accelerators-connected-factory-sample-walkthrough.md)
-* [연결된 팩터리 솔루션 가속기에 장치 연결](iot-accelerators-connected-factory-gateway-deployment.md)
+* [연결된 팩터리 솔루션 가속기에 디바이스 연결](iot-accelerators-connected-factory-gateway-deployment.md)
 * [azureiotsolutions.com 사이트에 대한 사용 권한](iot-accelerators-permissions.md)

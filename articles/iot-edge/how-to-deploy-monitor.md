@@ -11,11 +11,11 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: 69ba0a882c0e52e7c0d063b8f77e7a0fe22526a1
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56428780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62126367"
 ---
 # <a name="deploy-and-monitor-iot-edge-modules-at-scale-using-the-azure-portal"></a>Azure Portal을 사용하여 대규모 IoT Edge 모듈 배포 및 모니터링
 
@@ -132,17 +132,17 @@ SELECT deviceId FROM devices
 
 ## <a name="deploy-modules-from-azure-marketplace"></a>Azure Marketplace에서 모듈 배포
 
-Azure Marketplace는 [IoT Edge 모듈](https://azuremarketplace.microsoft.com/marketplace/apps/category/internet-of-things?page=1&subcategories=iot-edge-modules)을 포함하여 Azure에서 실행되도록 인증 및 최적화된 광범위한 엔터프라이즈 애플리케이션 및 솔루션을 찾아볼 수 있는 온라인 애플리케이션 및 서비스 마켓플레이스입니다. Azure Portal의 **리소스 만들기**에서도 Azure Marketplace에 액세스할 수 있습니다.
+Azure Marketplace는 [IoT Edge 모듈](https://azuremarketplace.microsoft.com/marketplace/apps/category/internet-of-things?page=1&subcategories=iot-edge-modules)을 포함하여 Azure에서 실행되도록 인증되고 최적화된 광범위한 엔터프라이즈 애플리케이션 및 솔루션을 검색할 수 있는 온라인 애플리케이션 및 서비스 마켓플레이스입니다. Azure Portal의 **리소스 만들기**에서도 Azure Marketplace에 액세스할 수 있습니다.
 
 Azure Marketplace 또는 Azure Portal에서 IoT Edge 모듈을 설치할 수 있습니다.
 
-1. 모듈을 찾은 다음, 배포 프로세스를 시작합니다.
+1. 모듈을 찾고 배포 프로세스를 시작합니다.
 
-   * Azure Portal: 모듈을 찾은 다음, **만들기**를 선택합니다.
+   * Azure Portal: 모듈을 찾고 **만들기**를 선택합니다.
 
    * Azure Marketplace:
 
-     1. 모듈을 찾은 다음, **지금 가져오기**를 선택합니다.
+     1. 모듈을 찾고 **지금 가져오기**를 선택합니다.
      1. **계속**을 선택하여 공급자의 사용 약관 및 개인정보처리방침을 확인합니다.
 
 1. 사용자 구독 및 대상 디바이스가 연결된 IoT Hub를 선택합니다.

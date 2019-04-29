@@ -5,11 +5,11 @@ ms.topic: persist-storage
 ms.date: 9/7/2018
 ms.author: juluk
 ms.openlocfilehash: c28441b6fe25b3480a55b79682d5067b19e3023a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58051620"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60200265"
 ---
 # <a name="persist-files-in-azure-cloud-shell"></a>Azure Cloud Shell에서 파일 유지
 Cloud Shell은 Azure File 스토리지를 활용하여 세션 간에 파일을 유지합니다. 처음 시작 시 Cloud Shell은 세션 간에 파일을 유지하기 위해 새 또는 기존 파일 공유를 연결하도록 요구합니다.
@@ -49,7 +49,7 @@ Cloud Shell은 Azure File 스토리지를 활용하여 세션 간에 파일을 �
 
 Cloud Shell 컴퓨터는 아래 하위 지역에 위치합니다.
 
-|영역|영역|
+|영역|지역|
 |---|---|
 |아메리카|미국 동부, 미국 중남부, 미국 서부|
 |유럽|북유럽, 서유럽|

@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
-ms.date: 02/24/2019
+ms.date: 04/23/2019
 ms.author: raynew
-ms.openlocfilehash: aacfe725310b3c8e4785e24b80728f0e60694814
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: eaad582dc6484cb62d0bebf1af447ff61301a3bb
+ms.sourcegitcommit: a95dcd3363d451bfbfea7ec1de6813cad86a36bb
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59496098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62733970"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Azure VM Backup의 지원 매트릭스
 사용할 수는 [Azure Backup 서비스](backup-overview.md) 온-프레미스 컴퓨터 및 워크 로드 및 Azure virtual machines (Vm)를 백업 합니다. 이 문서에서는 Azure Backup을 사용 하 여 Azure Vm을 백업할 때 지원 설정 및 제한 사항 요약입니다.
@@ -168,7 +168,7 @@ Write Accelerator가 설정된 디스크 | 지원되지 않습니다.<br/><br/> 
 공유 저장소| 클러스터 공유 볼륨 (CSV) 또는 스케일 아웃 파일 서버를 사용 하 여 Vm을 백업 하는 것은 좋지 않습니다. CSV 기록기는 백업 하는 동안 실패할 수 있습니다. 복원에서 CSV 볼륨을 포함 하는 디스크 수 하지 돌아와 접속 합니다.
 
 > [!NOTE]
-> Azure Backup에서 스트라이프 디스크를 지원 하지 않습니다. Azure Backup에서 디스크의 크기 조정 권장 되지 않습니다.
+> Azure Backup에서 디스크의 크기 조정 권장 되지 않습니다.
 
 
 ## <a name="vm-network-support"></a>VM 네트워크 지원

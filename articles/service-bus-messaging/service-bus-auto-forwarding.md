@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 85ab5e3bb963ee692e5b70af3eb90cc68cec361f
-ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.openlocfilehash: 86fa7f62230c0ae0530b67ff2384942c876083d4
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56593389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62098595"
 ---
 # <a name="chaining-service-bus-entities-with-autoforwarding"></a>자동 전달을 사용한 Service Bus 엔터티 연결
 
@@ -46,6 +46,10 @@ namespaceManager.CreateSubscription(srcSubscription));
 ![자동 전달 시나리오][1]
 
 Alice가 휴가를 가면 ERP 토픽이 아닌 그녀의 개인 큐가 채워집니다. 이러한 경우 영업 담당자가 메시지를 확인하지 못하기 때문에 어떤 ERP 토픽도 할당량에 도달하지 못합니다.
+
+> [!NOTE]
+> 자동 전달에는 설치 되 면 AutoDeleteOnIdle 대상에 대 한 값 데이터 형식의 최대값을 자동으로 설정 됩니다.
+> 이렇게 메시지를 전달할 대상 항상 인지 확인 합니다.
 
 ## <a name="autoforwarding-considerations"></a>자동 전달 관련 고려 사항
 

@@ -9,11 +9,11 @@ ms.topic: reference
 ms.date: 09/24/2018
 ms.author: dech
 ms.openlocfilehash: 1cb6889305e5f6bce5728039712a1834dc2e9353
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54033590"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60626743"
 ---
 # <a name="azure-cosmos-db-nodejs-sdk-for-sql-api-release-notes-and-resources"></a>SQL API용 Azure Cosmos DB Node.js SDK: 릴리스 정보 및 리소스
 > [!div class="op_single_selector"]
@@ -212,7 +212,7 @@ Microsoft는 최신/지원 버전으로 원활히 전환할 수 있도록 SDK �
 
 <br/>
 
-| 버전 | 릴리스 날짜 | 사용 중지 날짜 |
+| Version | 릴리스 날짜 | 사용 중지 날짜 |
 | --- | --- | --- |
 | [2.0.0-3(RC)](#2.0.0-3) |2018년 8월 2일 |--- |
 | [1.14.4](#1.14.4) |2018년 5월 3일 |--- |

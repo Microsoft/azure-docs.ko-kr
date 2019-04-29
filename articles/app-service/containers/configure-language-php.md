@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
 ms.openlocfilehash: 11d0648ee5090f02cb96c2d42a8d90cc3ea0ed28
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59551339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60853306"
 ---
 # <a name="configure-a-linux-php-app-for-azure-app-service"></a>Azure App Service에 대 한 Linux PHP 앱 구성
 
@@ -105,7 +105,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 ## <a name="access-environment-variables"></a>환경 변수 액세스
 
-App Service에서 수행할 수 있습니다 [앱 설정을](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-settings) 코드 외부에서 앱. 표준을 사용 하 여 액세스할 수 있습니다 [getenv ()](https://secure.php.net/manual/function.getenv.php) 패턴입니다. 예를 들어 앱 설정 `DB_HOST`에 액세스하려면 다음 코드를 사용합니다.
+App Service에서, 앱 코드 외부에서 [앱 설정](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-settings)을 지정할 수 있습니다. 표준을 사용 하 여 액세스할 수 있습니다 [getenv ()](https://secure.php.net/manual/function.getenv.php) 패턴입니다. 예를 들어 앱 설정 `DB_HOST`에 액세스하려면 다음 코드를 사용합니다.
 
 ```php
 getenv("DB_HOST")
@@ -232,7 +232,7 @@ zend_extension=/home/site/wwwroot/bin/xdebug.so
 
 작업 중인 PHP 앱이 App Service에서 다르게 동작 또는 오류가 하는 경우 다음과 같이 하세요.
 
-- [로그 스트림 액세스](#access-diagnostic-logs)합니다.
+- [로그 스트림에 액세스](#access-diagnostic-logs)합니다.
 - 프로덕션 모드에서 앱을 로컬로 테스트 합니다. App Service는 프로젝트가 프로덕션 모드로 로컬로 예상 대로 작동 하는지 확인 해야 하므로 프로덕션 모드에서 Node.js 앱을 실행 합니다. 예를 들면 다음과 같습니다.
     - 에 따라 프로그램 *composer.json*, 프로덕션 모드에 대 한 서로 다른 패키지를 설치할 수 있습니다 (`require` 비교 `require-dev`).
     - 특정 웹 프레임 워크는 다르게 프로덕션 모드에서에서 정적 파일을 배포할 수 있습니다.
@@ -252,7 +252,7 @@ zend_extension=/home/site/wwwroot/bin/xdebug.so
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [자습서: MySQL 사용 하 여 PHP 앱](tutorial-php-mysql-app.md)
+> [자습서: MySQL을 사용하는 PHP 앱](tutorial-php-mysql-app.md)
 
 > [!div class="nextstepaction"]
 > [App Service Linux FAQ](app-service-linux-faq.md)

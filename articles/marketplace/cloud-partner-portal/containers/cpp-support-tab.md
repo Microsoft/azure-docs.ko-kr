@@ -15,15 +15,15 @@ ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 90a103bcdfdcd5d61433c05d4cadfa746c67e192
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50980357"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61472739"
 ---
 # <a name="container-support-tab"></a>컨테이너 지원 탭
 
-**새 제품** 페이지의 **지원** 탭을 사용하여 제품에 대한 기술 및 사용자 지원 리소스를 제공합니다.  지원 양식에서 다음 입력 영역: **엔지니어링 연락처**, **고객 지원** 및 **지원 Url**이 제공됩니다. 필드 이름에 추가된 별표(*)는 필수를 나타냅니다.
+**새 제품** 페이지의 **지원** 탭을 사용하여 제품에 대한 기술 및 사용자 지원 리소스를 제공합니다.  다음과 같은 입력된 영역 지원 양식에서 제공 됩니다. **엔지니어링 연락처**하십시오 **고객 지원**, 및 **Url을 지원**합니다. 필드 이름에 추가된 별표(*)는 필수를 나타냅니다.
 
 ## <a name="support-form-fields"></a>지원 양식 필드
 

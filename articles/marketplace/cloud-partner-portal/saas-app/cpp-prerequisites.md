@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: pbutlerm
 ms.openlocfilehash: 7322a4c0ba82218d9b2ed77e4c4533cc504c2616
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58008884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62101252"
 ---
 # <a name="saas-application-publishing-prerequisites"></a>SaaS 애플리케이션 게시를 위한 필수 조건
 

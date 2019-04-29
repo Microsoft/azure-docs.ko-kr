@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: danis
 ms.openlocfilehash: fe3803b7dc75ab13831a5e42d4b1a96f5aa894e5
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58882432"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60800295"
 ---
 # <a name="use-the-azure-custom-script-extension-version-1-with-linux-virtual-machines"></a>Linux 가상 머신에서 Azure 사용자 지정 스크립트 확장 버전 1 사용
 
@@ -124,7 +124,7 @@ ms.locfileid: "58882432"
 | apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.OSTCExtensions | 문자열 |
 | 형식 | CustomScriptForLinux | 문자열 |
-| typeHandlerVersion | 1.5 | ssNoversion |
+| typeHandlerVersion | 1.5 | int |
 | fileUris(예) | https://github.com/MyProject/Archive/MyPythonScript.py | array |
 | commandToExecute(예) | python MyPythonScript.py \<my-param1\> | 문자열 |
 | enableInternalDNSCheck | true | 부울 |

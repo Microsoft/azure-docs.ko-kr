@@ -16,11 +16,11 @@ ms.topic: conceptual
 ms.date: 3/13/2019
 ms.author: banders
 ms.openlocfilehash: b910cb3061b1451ea80b9843e2aa4047a784548f
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57876871"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60918837"
 ---
 # <a name="add-update-or-remove-a-credit-or-debit-card-for-azure"></a>Azure에 대한 신용 카드 또는 직불 카드 추가, 업데이트 또는 제거
 
@@ -40,7 +40,7 @@ Azure portal에서 새 신용 카드를 추가, 기존 신용 카드를 업데�
     ![검색을 보여 주는 스크린샷](./media/billing-how-to-change-credit-card/search.png)
 
 1. 신용 카드나 직불 카드를 추가 하려는 구독을 선택 합니다.
-1. 선택 **지불 방법을**합니다.
+1. **결제 방법**을 선택합니다.
 
     ![선택한 결제 방법 관리 옵션을 보여 주는 스크린샷](./media/billing-how-to-change-credit-card/payment-methods-blade-x.png)
 
@@ -64,7 +64,7 @@ Azure portal에서 새 신용 카드를 추가, 기존 신용 카드를 업데�
 
     ![검색을 보여 주는 스크린샷](./media/billing-how-to-change-credit-card/search.png)
 
-1. 선택 **지불 방법을**합니다.
+1. **결제 방법**을 선택합니다.
 
     ![선택한 결제 방법 관리 옵션을 보여 주는 스크린샷](./media/billing-how-to-change-credit-card/payment-methods-blade-x.png)
 
@@ -85,7 +85,7 @@ Azure portal에서 새 신용 카드를 추가, 기존 신용 카드를 업데�
     ![검색을 보여 주는 스크린샷](./media/billing-how-to-change-credit-card/search.png)
 
 1. 신용 카드나 직불 카드를 추가 하려는 구독을 선택 합니다.
-1. 선택 **지불 방법을**합니다.
+1. **결제 방법**을 선택합니다.
 
     ![선택한 결제 방법 관리 옵션을 보여 주는 스크린샷](./media/billing-how-to-change-credit-card/payment-methods-blade-x.png)
 

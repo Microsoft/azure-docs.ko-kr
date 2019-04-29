@@ -11,11 +11,11 @@ ms.date: 12/04/2018
 ms.author: kevin
 ms.reviewer: igorstan
 ms.openlocfilehash: dc78fbc93d625b39379e07f240eef7fbad10d194
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60003856"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61474847"
 ---
 # <a name="troubleshooting-azure-sql-data-warehouse"></a>Azure SQL Data Warehouse 문제 해결
 이 문서에서는 일반적인 문제 해결 질문을 나열합니다.
@@ -33,7 +33,7 @@ ms.locfileid: "60003856"
 | 문제                                                        | 해결 방법                                                   |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Visual Studio 개체 탐색기에 AAD 사용자가 없음           | 이는 알려진 문제입니다.  해결 방법으로 [sys.database_principals][sys.database_principals]에서 사용자를 봅니다.  SQL Data Warehouse에서 Azure Active Directory를 사용하는 방법에 대한 자세한 내용을 [Azure SQL Data Warehouse에 대한 인증][Authentication to Azure SQL Data Warehouse]을 참조하세요. |
-| 수동 스크립팅, 스크립팅 마법사를 사용 하 여 또는 SSMS를 통해 연결 속도가 느린 응답 하지 않거나 오류를 생성 합니다. | 사용자가 master 데이터베이스에서 만들어졌는지 확인합니다. 스크립팅 옵션에서 엔진 버전이 "Microsoft Azure SQL Data Warehouse 버전"으로 설정되고 엔진 유형이 "Microsoft Azure SQL Database"로 설정되어 있는지도 확인합니다. |
+| 수동 스크립팅, 스크립팅 마법사를 사용 하 여 또는 SSMS를 통해 연결 속도가 느린 응답 하지 않거나 오류를 생성 합니다. | 사용자가 master 데이터베이스에서 만들어졌는지 확인합니다. 스크립팅 옵션에서 엔진 버전이 “Microsoft Azure SQL Data Warehouse 버전”으로 설정되고 엔진 유형이 “Microsoft Azure SQL Database”로 설정되어 있는지도 확인합니다. |
 | SSMS에서 스크립트 생성 실패                             | "종속 개체에 대한 스크립트 생성" 옵션이 "True"로 설정된 경우 SQL 데이터 웨어하우스용 스크립트 생성이 실패합니다. 이 문제를 해결하려면 사용자가 수동으로 도구 -> 옵션 -> SQL Server 개체 탐색기 -> 종속 개체에 대한 스크립트 생성 옵션으로 이동하여 false로 설정해야 합니다 |
 
 ## <a name="performance"></a>성능

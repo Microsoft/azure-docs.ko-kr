@@ -15,12 +15,12 @@ ms.workload: TBD
 ms.date: 02/27/2017
 ms.author: v-sharos
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 38c197c7bc57110b29b1d8cb789d5b7310823da2
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 3f7436bb63f52c9c2b697c8e7031922ce89d786b
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23111471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60789617"
 ---
 # <a name="an-introduction-to-storsimple-snapshot-manager"></a>StorSimple Snapshot Manager 소개
 
@@ -29,11 +29,11 @@ StorSimple 스냅숏 관리자는 Microsoft Azure StorSimple 환경에서 데이
 
 이 개요에서는 StorSimple 스냅숏 관리자를 소개하고, 해당 기능을 설명하며, Microsoft Azure StorSimple에서의 역할을 살펴봅니다. 
 
-StorSimple 장치, StorSimple 관리자 서비스, StorSimple 스냅숏 관리자, SharePoint용 StorSimple 어댑터 등을 포함한 전체 Microsoft Azure StorSimple 시스템에 대한 개요는 [StorSimple 8000 시리즈: 하이브리드 클라우드 저장소 솔루션](storsimple-overview.md)을 참조하세요. 
+StorSimple 디바이스, StorSimple Manager 서비스, StorSimple Snapshot Manager, SharePoint용 StorSimple 어댑터 등을 포함한 전체 Microsoft Azure StorSimple 시스템에 대한 개요는 [StorSimple 8000 시리즈: 하이브리드 클라우드 스토리지 솔루션](storsimple-overview.md)을 참조하세요. 
 
 > [!NOTE]
-> * StorSimple 스냅숏 관리자를 사용하여 Microsoft Azure StorSimple 가상 배열 (StorSimple 온-프레미스 가상 장치라고도 함)를 관리할 수 없습니다.
-> * StorSimple 장치에 StorSimple 업데이트 2를 설치하려는 경우 StorSimple Snapshot Manager의 최신 버전을 다운로드하여 **StorSimple 업데이트 2를 설치하기 전에**설치해야 합니다. StorSimple Snapshot Manager의 최신 버전은 이전 버전과 호환되며 릴리스된 모든 버전의 Microsoft Azure StorSimple에서 작동합니다. StorSimple Snapshot Manager의 이전 버전을 사용하고 있다면 업데이트해야 합니다(새 버전을 설치하기 전에 이전 버전을 제거할 필요 없음).
+> * StorSimple 스냅숏 관리자를 사용하여 Microsoft Azure StorSimple 가상 배열 (StorSimple 온-프레미스 가상 디바이스라고도 함)를 관리할 수 없습니다.
+> * StorSimple 디바이스에 StorSimple 업데이트 2를 설치하려는 경우 StorSimple Snapshot Manager의 최신 버전을 다운로드하여 **StorSimple 업데이트 2를 설치하기 전에**설치해야 합니다. StorSimple Snapshot Manager의 최신 버전은 이전 버전과 호환되며 릴리스된 모든 버전의 Microsoft Azure StorSimple에서 작동합니다. StorSimple Snapshot Manager의 이전 버전을 사용하고 있다면 업데이트해야 합니다(새 버전을 설치하기 전에 이전 버전을 제거할 필요 없음).
 > 
 > 
 
@@ -41,13 +41,13 @@ StorSimple 장치, StorSimple 관리자 서비스, StorSimple 스냅숏 관리�
 StorSimple 스냅숏 관리자는 로컬 및 클라우드 데이터의 일관된 지정 시간 백업 복사본을 만드는 데 사용할 수 있는 중앙 관리 콘솔을 제공합니다. 예를 들어 콘솔을 사용하여 다음을 수행할 수 있습니다.
 
 * 볼륨을 구성, 백업 및 삭제합니다.
-* 백업된 데이터가 응용 프로그램과 일관되도록 볼륨 그룹을 구성합니다.
+* 백업된 데이터가 애플리케이션과 일관되도록 볼륨 그룹을 구성합니다.
 * 미리 정해진 일정에 따라 데이터가 백업되도록 백업 정책을 관리합니다.
 * 클라우드에 저장하고 재해 복구에 사용할 수 있는 로컬 및 클라우드 스냅숏을 만듭니다.
 
-StorSimple Snapshot Manager는 호스트의 VSS 공급자에 등록된 응용 프로그램 목록을 가져옵니다. 그런 다음 응용 프로그램에 일관된 백업을 만들려면 응용 프로그램에서 사용하는 볼륨을 확인하고 구성할 볼륨 그룹을 제안합니다. StorSimple 스냅숏 관리자는 응용 프로그램에 일관된 백업 복사본을 생성하기 위해 이러한 볼륨 그룹을 사용합니다. 모든 관련 파일과 데이터베이스가 동기화되고 특정 시점에서 응용 프로그램의 실제 상태를 나타날 때 응용 프로그램이 일관성 있는 것입니다. 
+StorSimple Snapshot Manager는 호스트의 VSS 공급자에 등록된 애플리케이션 목록을 가져옵니다. 그런 다음, 애플리케이션에 일관된 백업을 만들려면 애플리케이션에서 사용하는 볼륨을 확인하고 구성할 볼륨 그룹을 제안합니다. StorSimple Snapshot Manager는 애플리케이션에 일관된 백업 복사본을 생성하기 위해 이러한 볼륨 그룹을 사용합니다. 모든 관련 파일과 데이터베이스가 동기화되고 특정 시점에서 애플리케이션의 실제 상태를 나타날 때 애플리케이션이 일관성 있는 것입니다. 
 
-StorSimple 스냅숏 관리자 백업은 마지막 백업 이후의 변경 내용만 캡처하는 증분 스냅숏의 형태입니다. 결과적으로, 백업 저장소가 덜 필요 하고 신속하게 생성 및 복원할 수 있습니다. StorSimple 스냅숏 관리자는 스냅숏이 응용 프로그램과 일관된 데이터를 캡처하도록 Windows 볼륨 섀도 복사본 서비스(VSS)를 사용합니다. 자세한 내용은 Windows 볼륨 섀도 복사본 서비스와 통합에서 제공합니다. StorSimple 스냅숏 관리자를 사용하여 백업 일정을 만들거나 필요에 따라 즉시 백업을 수행할 수 있습니다. 백업에서 데이터를 복원해야 하는 경우, StorSimple 스냅숏 관리자에서 로컬 또는 클라우드 스냅숏의 카탈로그 중에서 선택할 수 있습니다. Azure StorSimple은 필요에 따라 필요한 데이터만을 복원하므로 복원 작업 중의 데이터 가용성 지연을 방지합니다.
+StorSimple 스냅숏 관리자 백업은 마지막 백업 이후의 변경 내용만 캡처하는 증분 스냅숏의 형태입니다. 결과적으로, 백업 저장소가 덜 필요 하고 신속하게 생성 및 복원할 수 있습니다. StorSimple Snapshot Manager는 스냅숏이 애플리케이션과 일관된 데이터를 캡처하도록 Windows 볼륨 섀도 복사본 서비스(VSS)를 사용합니다. 자세한 내용은 Windows 볼륨 섀도 복사본 서비스와 통합에서 제공합니다. StorSimple 스냅숏 관리자를 사용하여 백업 일정을 만들거나 필요에 따라 즉시 백업을 수행할 수 있습니다. 백업에서 데이터를 복원해야 하는 경우, StorSimple 스냅숏 관리자에서 로컬 또는 클라우드 스냅숏의 카탈로그 중에서 선택할 수 있습니다. Azure StorSimple은 필요에 따라 필요한 데이터만을 복원하므로 복원 작업 중의 데이터 가용성 지연을 방지합니다.
 
 ![StorSimple 스냅숏 관리자 아키텍처](./media/storsimple-what-is-snapshot-manager/HCS_SSM_Overview.png)
 
@@ -70,14 +70,14 @@ StorSimple 스냅숏 관리자를 사용하여 다음과 같은 유형의 볼륨
 StorSimple 스냅숏 관리자를 사용하여 전체 볼륨 그룹을 복원하거나, 개별 볼륨을 복제하고 개별 파일을 복구할 수 있습니다.
 
 * [볼륨 및 볼륨 그룹](#volumes-and-volume-groups) 
-* [백업 유형 및 백업 정책](#backup-types-and-backup-policies) 
+* [Backup 유형 및 백업 정책](#backup-types-and-backup-policies) 
 
 StorSimple 스냅숏 관리자 기능 및 사용 방법에 대한 자세한 내용은 [StorSimple 스냅숏 관리자 사용자 인터페이스](storsimple-use-snapshot-manager.md)를 참조하세요.
 
 ## <a name="volumes-and-volume-groups"></a>볼륨 및 볼륨 그룹
 StorSimple 스냅숏 관리자를 사용하여 볼륨을 만든 다음 볼륨 그룹에 구성합니다. 
 
-StorSimple 스냅숏 관리자는 볼륨 그룹을 사용하여 응용 프로그램과 일관된 백업 사본을 만듭니다. 모든 관련 파일과 데이터베이스가 동기화되고 특정 시점에서 응용 프로그램의 실제 상태를 나타날 때 응용 프로그램이 일관성 있는 것입니다. 볼륨 그룹( *일관성 그룹*이라고도 함)은 백업 또는 복원 작업의 기초가 됩니다.
+StorSimple Snapshot Manager는 볼륨 그룹을 사용하여 애플리케이션과 일관된 백업 사본을 만듭니다. 모든 관련 파일과 데이터베이스가 동기화되고 특정 시점에서 애플리케이션의 실제 상태를 나타날 때 애플리케이션이 일관성 있는 것입니다. 볼륨 그룹( *일관성 그룹*이라고도 함)은 백업 또는 복원 작업의 기초가 됩니다.
 
 볼륨 그룹은 볼륨 컨테이너와는 다릅니다. 볼륨 컨테이너는 클라우드 저장소 계정과, 암호화 및 대역폭 소비 등과 같은 기타 특성을 공유합니다. 단일 볼륨 컨테이너는 최대 256개의 씬 프로비저닝된 StorSimple 볼륨을 포함할 수 있습니다. 볼륨 컨테이너에 대한 자세한 내용은 [볼륨 컨테이너 관리](storsimple-manage-volume-containers.md)에서 제공합니다. 볼륨 그룹은 백업 작업을 촉진하기 위해 구성할 수 있는 볼륨 컬렉션입니다. 다른 볼륨 컨테이너에 속한 두 볼륨을 선택하고, 두 항목을 단일 볼륨 그룹에 넣은 다음 해당 볼륨 그룹의 백업 정책을 만든 경우 각 볼륨은 해당 저장소 계정을 사용하여 적합한 볼륨 컨테이너에 백업됩니다.
 
@@ -87,16 +87,16 @@ StorSimple 스냅숏 관리자는 볼륨 그룹을 사용하여 응용 프로그
 > 
 
 ## <a name="integration-with-windows-volume-shadow-copy-service"></a>Windows 볼륨 섀도 복사본 서비스와의 통합
-StorSimple 스냅숏 관리자는 스냅숏이 응용 프로그램과 일관된 데이터를 캡처하기 위해 Windows 볼륨 섀도 복사본 서비스(VSS)를 사용합니다. VSS는 VSS 인식 응용 프로그램과의 통신을 통해 증분 스냅숏 생성을 조정하여 응용 프로그램 일관성을 높입니다. VSS는 스냅숏을 만들 때 응용 프로그램이 일시 비활성 상태인지 또는 정지되었는지 확인합니다. 
+StorSimple Snapshot Manager는 스냅숏이 애플리케이션과 일관된 데이터를 캡처하기 위해 Windows 볼륨 섀도 복사본 서비스(VSS)를 사용합니다. VSS는 VSS 인식 애플리케이션과의 통신을 통해 증분 스냅숏 생성을 조정하여 애플리케이션 일관성을 높입니다. VSS는 스냅숏을 만들 때 애플리케이션이 일시 비활성 상태인지 또는 정지되었는지 확인합니다. 
 
 VSS의 StorSimple Snapshot Manager 구현은 SQL 서버 및 일반 NTFS 볼륨에서 작동합니다. 프로세스는 다음과 같습니다. 
 
-1. 요청자(일반적으로 StorSimple 스냅숏 관리자 같은 데이터 관리 및 보호 솔루션)나 백업 응용 프로그램이 VSS를 호출하고 대상 응용 프로그램에서기록기 소프트웨어로부터 정보를 수집하도록 요청합니다.
+1. 요청자(일반적으로 StorSimple Snapshot Manager 같은 데이터 관리 및 보호 솔루션)나 백업 애플리케이션이 VSS를 호출하고 대상 애플리케이션에서기록기 소프트웨어로부터 정보를 수집하도록 요청합니다.
 2. VSS는 데이터 설명을 검색하는 기록기 요소에 연결합니다. 기록기가 백업 대상 데이터의 설명을 반환합니다. 
-3. VSS가 응용 프로그램 백업을 준비하기 위해 기록기에 신호를 보냅니다. 기록기는 열려 있는 트랜잭션을 완료하고, 트랜잭션 로그를 업데이트 하는 등의 작업을 수행하여 백업을 위해 데이터를 준비하고 VSS에 알립니다.
-4. VSS는 기록기가 일시적으로 응용 프로그램의 데이터 저장을 중지하도록 지시하고, 섀도 복사본을 만드는 동안 해당 볼륨에 어떤 데이터도 기록되지 않게 합니다. 이 단계로 데이터 일관성을 유지하며 60초 이하가 걸립니다.
+3. VSS가 애플리케이션 백업을 준비하기 위해 기록기에 신호를 보냅니다. 기록기는 열려 있는 트랜잭션을 완료하고, 트랜잭션 로그를 업데이트 하는 등의 작업을 수행하여 백업을 위해 데이터를 준비한 다음, VSS에 알립니다.
+4. VSS는 기록기가 일시적으로 애플리케이션의 데이터 저장을 중지하도록 지시하고, 섀도 복사본을 만드는 동안 해당 볼륨에 어떤 데이터도 기록되지 않게 합니다. 이 단계로 데이터 일관성을 유지하며 60초 이하가 걸립니다.
 5. VSS가 공급자에게 섀도 복사본을 만들도록 지시합니다. 소프트웨어 또는 하드웨어 기반의 공급자가, 현재 실행 중인 볼륨을 관리하며 요청에 따라 해당 볼륨의 섀도 복사본을 만듭니다. 공급자가 섀도 복사본을 만들고 완료되면 VSS에 알립니다.
-6. VSS가 기록기에 연결하여 I/O를 재개할 수 있고, 섀도 복사본 생성 중에 I/O가 성공적으로 일시 중지되었음을 응용 프로그램에 알립니다. 
+6. VSS가 기록기에 연결하여 I/O를 재개할 수 있고, 섀도 복사본 생성 중에 I/O가 성공적으로 일시 중지되었음을 애플리케이션에 알립니다. 
 7. 복사본을 성공적으로 만들었으면 VSS가 복사본 위치를 요청자에게 반환합니다. 
 8. 섀도 복사본을 만드는 동안 데이터를 쓸 경우 백업 일관성이 없어집니다. VSS가 섀도 복사본을 지우고 요청자에게 알립니다. 요청자는 백업 프로세스를 자동으로 반복하거나 관리자에게 알려 나중에 다시 시도할 수 있습니다.
 
@@ -106,13 +106,13 @@ VSS의 StorSimple Snapshot Manager 구현은 SQL 서버 및 일반 NTFS 볼륨�
 
 **Windows 볼륨 섀도 복사본 서비스 프로세스** 
 
-## <a name="backup-types-and-backup-policies"></a>백업 유형 및 백업 정책
-StorSimple 스냅숏 관리자를 사용하여 데이터를 백업하고 로컬 및 클라우드에 저장할 수 있습니다. StorSimple 스냅숏 관리자를 사용하여 즉시 데이터를 백업하거나, 백업 정책을 사용하여 자동 백업 수행을 위한 일정을 만들 수 있습니다. 백업 정책을 통해 보유할 스냅숏 수를 지정할 수도 있습니다. 
+## <a name="backup-types-and-backup-policies"></a>Backup 유형 및 백업 정책
+StorSimple 스냅숏 관리자를 사용하여 데이터를 백업하고 로컬 및 클라우드에 저장할 수 있습니다. StorSimple 스냅숏 관리자를 사용하여 즉시 데이터를 백업하거나, 백업 정책을 사용하여 자동 백업 수행을 위한 일정을 만들 수 있습니다. Backup 정책을 통해 보유할 스냅숏 수를 지정할 수도 있습니다. 
 
-### <a name="backup-types"></a>백업 유형
+### <a name="backup-types"></a>Backup 유형
 StorSimple 스냅숏 관리자를 사용하여 다음 백업 유형을 만들 수 있습니다.
 
-* **로컬 스냅숏** – 로컬 스냅숏은 StorSimple 장치에 저장되는 볼륨 데이터의 지정 시간 복사본입니다. 일반적으로 이러한 유형의 백업은 신속하게 만들고 복원할 수 있습니다. 로컬 스냅숏은 로컬 백업 사본처럼 사용할 수 있습니다.
+* **로컬 스냅숏** – 로컬 스냅숏은 StorSimple 디바이스에 저장되는 볼륨 데이터의 지정 시간 복사본입니다. 일반적으로 이러한 유형의 백업은 신속하게 만들고 복원할 수 있습니다. 로컬 스냅숏은 로컬 백업 사본처럼 사용할 수 있습니다.
 * **클라우드 스냅숏** - 클라우드 스냅숏은 클라우드에 저장된 볼륨 데이터의 지정 시간 복사본입니다. 클라우드 스냅숏은 다른 오프 사이트 저장소 시스템에 복제된 스냅숏과 같습니다. 클라우드 스냅숏은 특히 재해 복구 상황에서 유용합니다.
 
 ### <a name="on-demand-and-scheduled-backups"></a>주문 및 예약 백업
@@ -132,7 +132,7 @@ StorSimple 스냅숏 관리자를 사용하여 필요할 때마다 백업 정책
 
 백업 정책 구성에 대한 내용은 [StorSimple 스냅숏 관리자를 사용한 백업 정책 만들기 및 관리](storsimple-snapshot-manager-manage-backup-policies.md)에서 제공합니다.
 
-### <a name="backup-job-monitoring-and-management"></a>백업 작업 모니터링 및 관리
+### <a name="backup-job-monitoring-and-management"></a>Backup 작업 모니터링 및 관리
 StorSimple 스냅숏 관리자를 사용하여 차후의 백업 작업, 예약된 백업 작업 및 완료된 백업 작업을 모니터링하고 관리할 수 있습니다. 또한 StorSimple 스냅숏 관리자에서는 최대 64개의 완료된 백업에 대한 카탈로그를 제공합니다. 카탈로그를 사용하여 볼륨 또는 개별 파일을 찾아 복원할 수 있습니다. 
 
 백업 작업 모니터링에 대한 내용은 [StorSimple 스냅숏 관리자를 사용한 백업 작업 보기 및 관리](storsimple-snapshot-manager-manage-backup-jobs.md)에서 제공합니다.

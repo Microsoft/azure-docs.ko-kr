@@ -1,5 +1,5 @@
 ---
-title: Azure SQL Database를 사용한 트랜잭션 복제 | Microsoft Docs
+title: Azure SQL Database를 사용한 트랜잭션 복제 | Microsoft Docs"
 description: Azure SQL Database에서 단일 데이터베이스, 풀링된 데이터베이스 및 인스턴스 데이터베이스와 함께 SQL Server 트랜잭션 복제를 사용하는 방법에 대해 알아봅니다.
 services: sql-database
 ms.service: sql-database
@@ -13,11 +13,11 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 02/08/2019
 ms.openlocfilehash: 409c1abd7e9f532bb243ecab00228b402215c77e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57852776"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61313670"
 ---
 # <a name="transactional-replication-with-single-pooled-and-instance-databases-in-azure-sql-database"></a>Azure SQL Database에서 단일 데이터베이스, 풀링된 데이터베이스 및 인스턴스 데이터베이스와 함께 트랜잭션 복제
 
@@ -26,7 +26,7 @@ ms.locfileid: "57852776"
 ## <a name="when-to-use-transactional-replication"></a>트랜잭션 복제를 사용하는 경우
 
 트랜잭션 복제는 다음과 같은 시나리오에서 유용합니다.
-- 게시를 수행하면 데이터베이스에 있는 하나 이상의 테이블에서 변경이 수행된 후 변경을 위해 구독되는 하나 이상의 SQL Server 또는 Azure SQL Datrabase로 배포됩니다.
+- 게시를 수행하면 데이터베이스에 있는 하나 이상의 테이블에서 변경이 수행된 후 변경을 위해 구독되는 하나 이상의 SQL Server 또는 Azure SQL 데이터베이스로 배포됩니다.
 - 여러 개의 분산된 데이터베이스를 동기화된 상태로 유지합니다.
 - 변경 내용을 지속적으로 게시하여 SQL Server 또는 Managed Instance의 데이터베이스를 다른 데이터베이스로 마이그레이션합니다.
 

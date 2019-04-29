@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 370d8160661c1f73124151a3a49d0bb3170dfb77
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52276043"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60910935"
 ---
 # <a name="iot-edge-module-skus-tab"></a>IoT Edge 모듈 SKU 탭
 
@@ -41,7 +41,7 @@ ms.locfileid: "52276043"
 
 |  **필드**       |     **설명**                                                          |
 |  ---------       |     ---------------                                                          |
-| **SKU ID**       | 이 SKU에 대한 식별자입니다. 이 이름은 소문자 영숫자 또는 대시(-)로 구성되며, 최대 50자이지만 대시로 끝날 수 없습니다. **참고:** 제품이 게시된 후에 이 이름을 변경할 수 없습니다. 이름은 제품 URL에 공개적으로 표시됩니다. |
+| **SKU ID**       | 이 SKU에 대한 식별자입니다. 이 이름은 소문자 영숫자 또는 대시(-)로 구성되며, 최대 50자이지만 대시로 끝날 수 없습니다. **참고:** 제품의 게시 된 후에이 이름을 변경할 수 없습니다. 이름은 제품 URL에 공개적으로 표시됩니다. |
 
 ## <a name="sku-details"></a>SKU 세부 정보
 
@@ -109,7 +109,7 @@ SKU가 Azure Marketplace 및 Azure Portal 웹 사이트에 표시될 방법을 �
 | **구독 ID**        | ACR의 Azure 구독 ID입니다.|
 | **리소스 그룹 이름**      | ACR의 리소스 그룹 이름입니다.|
 | **레지스트리 이름**  | ACR 레지스트리 이름입니다. 로그인 서버 이름이 아닌 레지스트리 이름만을 복사합니다(예: `azurecr.io` 없이). |
-| **리포지토리 이름**  | IoT Edge 모듈을 포함하는 ACR의 리포지토리 이름입니다. **참고:** 이름이 설정되면 나중에 변경할 수 없습니다. 계정에 같은 이름의 다른 제품이 없도록 고유한 이름을 사용합니다. |
+| **리포지토리 이름**  | IoT Edge 모듈을 포함하는 ACR의 리포지토리 이름입니다. **참고:** 이름을 설정 된 후 나중에 변경할 수 없습니다. 계정에 같은 이름의 다른 제품이 없도록 고유한 이름을 사용합니다. |
 | **사용자 이름** | ACR(관리자 사용자 이름)과 연결된 사용자 이름입니다. |
 | **암호** | ACR과 연결된 암호입니다. |
 |  ***이미지 버전***   |  |

@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/01/2017
-ms.openlocfilehash: 3d50f96f3dea3646bb32a3a42d0248957dabf9f0
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
-ms.translationtype: HT
+ms.openlocfilehash: 4a6d359b27b9a2e52d71ed5f8547041645147605
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31526824"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61479969"
 ---
 # <a name="data-driven-debugging-by-using-the-job-diagram"></a>작업 다이어그램을 사용하여 데이터 기반 디버그
 
@@ -71,8 +71,8 @@ Azure Event Hubs 입력의 파티션을 보려면 **. . .** 을 선택합니다.
  
 ### <a name="are-events-being-dropped-or-adjusted"></a>이벤트 삭제되거나 조정됩니까?
 
-*   **InputEventsEarlyTotal**은 상위 워터마크 전의 응용 프로그램 타임스탬프가 있는 이벤트 수입니다.
-*   **InputEventsLateTotal**은 상위 워터마크 후의 응용 프로그램 타임스탬프가 있는 이벤트 수입니다.
+*   **InputEventsEarlyTotal**은 상위 워터마크 전의 애플리케이션 타임스탬프가 있는 이벤트 수입니다.
+*   **InputEventsLateTotal**은 상위 워터마크 후의 애플리케이션 타임스탬프가 있는 이벤트 수입니다.
 *   **InputEventsDroppedBeforeApplicationStartTimeTotal**은 작업 시작 시간 전에 삭제된 숫자 이벤트입니다.
  
 ### <a name="are-we-falling-behind-in-reading-data"></a>데이터를 읽을 때 뒤쳐지고 있습니까?

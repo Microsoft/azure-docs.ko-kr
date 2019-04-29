@@ -14,11 +14,11 @@ ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: 4a3d1c513bcfb6449ca73d873c0dd9831c6fe01d
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57540133"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60605690"
 ---
 # <a name="use-case---product-recommendations"></a>사용 사례 - 제품 추천
 Azure Data Factory는 솔루션 가속기의 Cortana Intelligence Suite를 구현하는 데 사용되는 다양한 서비스 중 하나입니다.  이 제품군에 대한 자세한 내용은 [Cortana Intelligence Suite](https://www.microsoft.com/cortanaanalytics) 페이지를 참조하세요. 이 문서에서는 Azure 사용자가 Azure Data Factory 및 기타 Cortana Intelligence 구성 요소 서비스를 사용하여 이미 해결하고 구현한 경험이 있는 일반적인 사용 사례를 설명합니다.
@@ -48,7 +48,7 @@ Azure Data Factory는 솔루션 가속기의 Cortana Intelligence Suite를 구�
 
 ![사용 사례 다이어그램](./media/data-factory-product-reco-usecase/diagram-1.png)
 
-온라인 소매점 웹 사이트에서 원시 웹 로그 파일(기가바이트)이 반구조적 파일로 매일 생성됩니다. 원시 웹 로그 파일, 고객 및 제품 카탈로그 정보가 Data Factory의 전역 배포된 데이터 이동을 서비스로 사용하여 정기적으로 Azure Blob Storage에 수집됩니다. 하루 동안의 원시 로그 파일은 Blob Storage에 장기간 보관을 위해 분할됩니다(연 및 월 단위).  [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/) 가 사용됩니다. 그런 다음 분할된 웹 로그 데이터를 처리하여 기계 학습 권장 시스템에 필요한 입력을 추출하여 개인 설정된 제품 추천을 생성합니다.
+온라인 소매점 웹 사이트에서 원시 웹 로그 파일(기가바이트)이 반구조적 파일로 매일 생성됩니다. 원시 웹 로그 파일, 고객 및 제품 카탈로그 정보가 Data Factory의 전역 배포된 데이터 이동을 서비스로 사용하여 정기적으로 Azure Blob Storage에 수집됩니다. 하루 동안의 원시 로그 파일은 Blob Storage에 장기간 보관을 위해 분할됩니다(연 및 월 단위).  [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/)를 사용하여 blob 저장소에서 원시 로그 파일을 분할하고 Hive 및 Pig 스크립트를 사용하는 대규모로 수집된 로그를 처리합니다. 그런 다음 분할된 웹 로그 데이터를 처리하여 기계 학습 권장 시스템에 필요한 입력을 추출하여 개인 설정된 제품 추천을 생성합니다.
 
 이 예에서 기계 학습에 사용되는 권장 시스템은 [Apache Mahout](https://mahout.apache.org/)의 공개 소스 기계 학습 권장 플랫폼입니다.  모든 [Azure Machine Learning](https://azure.microsoft.com/services/machine-learning/) 또는 사용자 지정 모델을 시나리오에 적용할 수 있습니다.  Mahout 모델은 전체 사용 패턴을 기반으로 웹 사이트에 있는 항목 간의 유사성을 예측하고 개별 사용자에 따라 개인 설정된 권장을 생성하는 데 사용됩니다.
 

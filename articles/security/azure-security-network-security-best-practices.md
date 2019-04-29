@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/17/2018
 ms.author: TomSh
-ms.openlocfilehash: 86246d3d580737837ec07ccdc89ed82914cde209
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: b644a175814fb28563a2524e27f52d0285415d66
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56118414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60610955"
 ---
 # <a name="azure-network-security-best-practices"></a>Azure 네트워크 보안 모범 사례
 [Azure VM(가상 머신)](https://azure.microsoft.com/services/virtual-machines/) 및 어플라이언스를 [Azure 가상 네트워크](https://azure.microsoft.com/documentation/services/virtual-network/)에 배치하여 네트워크에 연결된 기타 장치에 연결할 수 있습니다. 즉, 가상 네트워크 인터페이스 카드를 가상 네트워크에 연결하여 네트워크 지원 디바이스 간에 TCP/IP 통신을 허용할 수 있습니다. Azure 가상 네트워크에 연결된 가상 머신은 동일한 가상 네트워크, 다른 가상 네트워크, 인터넷 또는 사용자 고유의 온-프레미스 네트워크에 있는 디바이스에 연결할 수 있습니다.

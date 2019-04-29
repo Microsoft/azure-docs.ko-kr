@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.service: azure-monitor
 ms.subservice: alerts
 ms.openlocfilehash: 59973d9530bf1c3ab3e77290b25e50860f9de0ca
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56342986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60712868"
 ---
 # <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Azure Monitor에서 메트릭 경고가 작동하는 방식 이해
 
@@ -148,16 +148,16 @@ Azure Monitor의 메트릭 경고는 하나의 규칙을 사용하여 여러 차
 | Microsoft.ApiManagement/service | 예 |
 | Microsoft.Batch/batchAccounts| 예|
 |Microsoft.Cache/redis| 예 |
-|Microsoft.ClassicCompute/virtualMachines | 아니요 |
-|Microsoft.ClassicCompute/domainNames/slots/roles | 아니요|
-|Microsoft.CognitiveServices/accounts | 아니요 |
+|Microsoft.ClassicCompute/virtualMachines | 아닙니다. |
+|Microsoft.ClassicCompute/domainNames/slots/roles | 아닙니다.|
+|Microsoft.CognitiveServices/accounts | 아닙니다. |
 |Microsoft.Compute/virtualMachines | 예|
 |Microsoft.Compute/virtualMachineScaleSets| 예|
-|Microsoft.ClassicStorage/storageAccounts| 아니요 |
+|Microsoft.ClassicStorage/storageAccounts| 아닙니다. |
 |Microsoft.DataFactory/datafactories | 예|
 |Microsoft.DBforMySQL/servers| 예|
 |Microsoft.DBforPostgreSQL/servers| 예|
-|Microsoft.Devices/IotHubs | 아니요|
+|Microsoft.Devices/IotHubs | 아닙니다.|
 |Microsoft.DocumentDB/databaseAccounts| 예|
 |Microsoft.EventHub/namespaces | 예|
 |Microsoft.Logic/workflows | 예|
@@ -173,9 +173,9 @@ Azure Monitor의 메트릭 경고는 하나의 규칙을 사용하여 여러 차
 |Microsoft.TimeSeriesInsights/environments | 예|
 |Microsoft. Web/serverfarms | 예 |
 |Microsoft. Web/sites(함수 제외) | 예|
-|Microsoft. Web/hostingEnvironments/multiRolePools | 아니요|
-|Microsoft. Web/hostingEnvironments/workerPools| 아니요 |
-|Microsoft.SQL/Servers | 아니요 |
+|Microsoft. Web/hostingEnvironments/multiRolePools | 아닙니다.|
+|Microsoft. Web/hostingEnvironments/workerPools| 아닙니다. |
+|Microsoft.SQL/Servers | 아닙니다. |
 
 ## <a name="next-steps"></a>다음 단계
 

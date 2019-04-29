@@ -7,11 +7,11 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 03/12/2019
 ms.openlocfilehash: d842898ca700490ae99b46140be6609622a144df
-ms.sourcegitcommit: 5f41e855d415cfa741d8f710792ea486480df5cf
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58133164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60627119"
 ---
 # <a name="azure-data-factory-alter-row-transformation"></a>Azure Data Factory Alter 행 변환
 

@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 10/12/2017
 ms.author: tomfitz
 ms.openlocfilehash: 80fd593eecf189d516a8c9d7ef2a94ec9f23fc39
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54063797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60587923"
 ---
 # <a name="createuidefinition-functions"></a>CreateUiDefinition 함수
 이 섹션에는 CreateUiDefinition의 지원되는 모든 함수에 대한 서명이 포함되어 있습니다.
@@ -526,7 +526,7 @@ null이 아닌 첫 번째 매개 변수의 값을 반환합니다. 이 함수는
 "[float(2.9)]"
 ```
 
-### <a name="string"></a>string
+### <a name="string"></a>문자열
 매개 변수를 문자열로 변환합니다. 이 함수는 모든 JSON 데이터 형식의 매개 변수를 지원합니다.
 
 다음 예제는 `"1"`을 반환합니다.

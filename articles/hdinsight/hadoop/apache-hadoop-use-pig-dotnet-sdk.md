@@ -1,7 +1,6 @@
 ---
 title: Hadoop용 .NET SDK로 Apache Pig 작업 실행 - Azure HDInsight
 description: HDInsight에서 Hadoop로 Pig 작업을 제출하기 위해 Hadoop용 .NET SDK를 사용하는 방법에 대해 알아봅니다.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: hrasheed
-ms.openlocfilehash: 721bb93dc259bd2b4cc9f51d8d0d665c9b921128
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
-ms.translationtype: HT
+ms.openlocfilehash: ebf1f2806a6606294c61860a24fb2f02033a4bf4
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53436843"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62110959"
 ---
 # <a name="run-apache-pig-jobs-using-the-net-sdk-for-apache-hadoop-in-hdinsight"></a>HDInsight에서 Apache Hadoop용 .NET SDK를 사용하여 Apache Pig 작업 실행
 
@@ -22,7 +21,7 @@ ms.locfileid: "53436843"
 
 Azure HDInsight에서 Hadoop로 Apache Pig 작업을 제출하기 위해 Apache Hadoop용 .NET SDK를 사용하는 방법에 대해 알아봅니다.
 
-HDInsight .NET SDK는 .NET에서 HDInsight 클러스터로 더 쉽게 작업하도록 지원하는 .NET 클라이언트 라이브러리를 제공합니다. Pig를 사용하면 일련의 데이터 변환을 모델링하여 MapReduce 작업을 만들 수 있습니다. 이 문서에서는 기본 C# 응용 프로그램을 사용하여 HDInsight 클러스터에 Pig 작업을 제출하는 방법에 대해 배웁니다.
+HDInsight .NET SDK는 .NET에서 HDInsight 클러스터로 더 쉽게 작업하도록 지원하는 .NET 클라이언트 라이브러리를 제공합니다. Pig를 사용하면 일련의 데이터 변환을 모델링하여 MapReduce 작업을 만들 수 있습니다. 이 문서에서는 기본 C# 애플리케이션을 사용하여 HDInsight 클러스터에 Pig 작업을 제출하는 방법에 대해 배웁니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -35,7 +34,7 @@ HDInsight .NET SDK는 .NET에서 HDInsight 클러스터로 더 쉽게 작업하�
 
 * Visual Studio 2012, 2013, 2015 또는 2017.
 
-## <a name="create-the-application"></a>응용 프로그램 만들기
+## <a name="create-the-application"></a>애플리케이션 만들기
 
 HDInsight .NET SDK는 .NET에서 HDInsight 클러스터로 더 쉽게 작업하도록 지원하는 .NET 클라이언트 라이브러리를 제공합니다.
 
@@ -46,7 +45,7 @@ HDInsight .NET SDK는 .NET에서 HDInsight 클러스터로 더 쉽게 작업하�
    | 자산 | 값 |
    | ------ | ------ |
    | Category | Templates/Visual C#/Windows |
-   | Template | 콘솔 응용 프로그램 |
+   | Template | 콘솔 애플리케이션 |
    | 이름 | SubmitPigJob |
 
 3. **확인**을 클릭하여 프로젝트를 만듭니다.
@@ -112,9 +111,9 @@ HDInsight .NET SDK는 .NET에서 HDInsight 클러스터로 더 쉽게 작업하�
     }
     ```
 
-7. 응용 프로그램을 시작하려면 **F5** 키를 누릅니다.
+7. 애플리케이션을 시작하려면 **F5** 키를 누릅니다.
 
-8. 응용 프로그램을 종료하려면 **ENTER** 키를 누릅니다.
+8. 애플리케이션을 종료하려면 **ENTER** 키를 누릅니다.
 
 ## <a name="next-steps"></a>다음 단계
 

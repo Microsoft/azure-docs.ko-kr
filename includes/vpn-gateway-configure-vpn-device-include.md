@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 04/04/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: efb6ffa1d3a0a04ef67d9a46c3525a489fa79961
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
-ms.translationtype: HT
+ms.openlocfilehash: 272dbf75f68eff73b360cde7d36776c8303e5064
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30921514"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60407659"
 ---
-**VPN 장치 구성 스크립트를 다운로드하려면,**
+**VPN 디바이스 구성 스크립트를 다운로드하려면:**
 
 사용하고 있는 VPN 디바이스에 따라 VPN 디바이스 구성 스크립트를 다운로드할 수 있습니다. 자세한 내용은 [VPN 디바이스 구성 스크립트 다운로드](../articles/vpn-gateway/vpn-gateway-download-vpndevicescript.md)를 참조하세요.
 

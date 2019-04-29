@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 4/15/2019
 ms.author: barclayn
 ms.openlocfilehash: d432dc25a1995a2f0348c7626a051f46ffbf418b
-ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59608867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62118981"
 ---
 # <a name="frequently-asked-questions-faq"></a>질문과 대답(FAQ)
 

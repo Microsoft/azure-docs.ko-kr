@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 12/14/2017
 ms.author: apimpm
 ms.openlocfilehash: a771b437258046f937b97a9e37ffedbe0a17c1c1
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58079797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60693611"
 ---
 # <a name="configure-a-custom-domain-name"></a>사용자 지정 도메인 이름 구성 
 
@@ -56,7 +56,7 @@ APIM(API Management) 인스턴스를 만들 때 Azure에서는 azure-api.net의 
 1. 업데이트하려는 엔드포인트를 선택합니다. 
 1. 오른쪽 창에서 **사용자 지정**을 클릭합니다.
 
-   + **사용자 지정 도메인 이름**에서 사용하려는 이름을 지정합니다. 예: `api.contoso.com` 와일드 카드 도메인 이름(예를 들어 *.domain.com)도 지원됩니다.
+   + **사용자 지정 도메인 이름**에서 사용하려는 이름을 지정합니다. 예: `api.contoso.com`. 와일드 카드 도메인 이름(예를 들어 *.domain.com)도 지원됩니다.
    + 에 **인증서**, Key Vault에서 인증서를 선택 합니다. 유효한 업로드할 수도 있습니다. PFX 파일을 제공 해당 **암호**인증서는 암호로 보호 되는 경우.
 
      > [!TIP]

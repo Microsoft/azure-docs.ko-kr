@@ -15,11 +15,11 @@ ms.date: 09/17/2018
 ms.author: jmprieur
 ms.custom: include file
 ms.openlocfilehash: 5940195207f85d8011f61336c0318e456c2a8a4c
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58214361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60300589"
 ---
 ## <a name="configure-your-aspnet-web-app-with-the-applications-registration-information"></a>애플리케이션의 등록 정보를 사용하여 ASP.NET 웹앱 구성
 

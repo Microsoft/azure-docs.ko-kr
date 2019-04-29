@@ -9,12 +9,12 @@ ms.service: media-services
 ms.topic: article
 ms.date: 03/05/2019
 ms.author: juliako
-ms.openlocfilehash: e6dead0f08f50b32dd963832824d9166ff2467c0
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 89903d3f65c74da6903e53284f168d2d6a12168a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58893455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60559911"
 ---
 # <a name="upload-and-index-your-videos"></a>비디오 업로드 및 인덱싱  
 
@@ -32,7 +32,7 @@ Video Indexer API를 사용하여 비디오를 업로드할 때 다음과 같은
 
 - URL을 기반으로 하여 비디오를 업로드하는 경우(기본 설정) TLS 1.2 이상을 사용하여 엔드포인트를 보호해야 합니다.
 - URL 옵션을 사용 하 여 업로드 크기는 30GB로 제한
-- 대부분의 브라우저에서 URL 길이 2,000 자로 제한 됩니다.
+- 요청 URL 길이 2048 자로 제한 됩니다.
 - 바이트 배열 옵션을 사용하면 업로드 크기가 2GB로 제한됩니다.
 - 바이트 배열 옵션은 30분 후 시간 초과됩니다.
 - `videoURL` 매개 변수에 제공된 URL은 인코딩해야 합니다.
@@ -59,7 +59,7 @@ POST 요청을 사용하여 고객에게 다음 이벤트를 알리는 데 사�
 - 인덱싱 상태 변경 
     - 속성    
     
-        |name|설명|
+        |이름|설명|
         |---|---|
         |id|비디오 ID|
         |state|비디오 상태|  
@@ -67,7 +67,7 @@ POST 요청을 사용하여 고객에게 다음 이벤트를 알리는 데 사�
 - 비디오에서 식별된 사용자
   - properties
     
-      |name|설명|
+      |이름|설명|
       |---|---|
       |id| 비디오 ID|
       |faceId|비디오 인덱스에 표시되는 얼굴 ID|

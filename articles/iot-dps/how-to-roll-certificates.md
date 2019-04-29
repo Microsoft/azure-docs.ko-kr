@@ -9,11 +9,11 @@ ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.openlocfilehash: 8cf5f262a758efe08ad73e2d8066ad4b736e76d1
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51247724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60627043"
 ---
 # <a name="how-to-roll-x509-device-certificates"></a>X.509 디바이스 인증서 배포 방법
 
@@ -21,7 +21,7 @@ IoT 솔루션의 수명 주기 동안 인증서를 배포해야 합니다. 인�
 
 인증서 배포는 위반 발생 시 시스템을 보호할 수 있는 보안 모범 사례입니다. [보안 위험 가정 방법론](https://download.microsoft.com/download/C/1/9/C1990DBA-502F-4C2A-848D-392B93D9B9C3/Microsoft_Enterprise_Cloud_Red_Teaming.pdf)의 일환으로 Microsoft는 예방 조치와 함께 사후 보안 프로세스의 필요성을 주장하고 있습니다. 디바이스 인증서 배포는 이러한 보안 프로세스의 일환으로 포함되어야 합니다. 인증서의 배포 빈도는 솔루션의 보안 요구 사항에 따라 달라집니다. 중요도 높은 데이터가 포함된 솔루션을 사용하는 고객은 매일 인증서를 배포하기도 하며 어떤 고객은 2년마다 인증서를 배포할 수도 있습니다.
 
-디바이스 인증서 배포에는 디바이스 및 IoT Hub에 저장된 인증서 업데이트가 포함됩니다. 이후 디바이스는 Device Provisioning Service를 통해 일반 [자동 프로비전](concepts-auto-provisioning.md)을 사용하여 IoT Hub로 직접 다시 프로비전합니다.
+디바이스 인증서 배포에는 디바이스 및 IoT Hub에 저장된 인증서 업데이트가 포함됩니다. 이후 디바이스는 Device Provisioning Service를 통해 일반 [자동 프로비전](concepts-auto-provisioning.md)을 사용하여 IoT Hub로 스스로 다시 프로비전합니다.
 
 
 ## <a name="obtain-new-certificates"></a>새 인증서 가져오기
@@ -52,11 +52,11 @@ IoT 솔루션의 수명 주기 동안 인증서를 배포해야 합니다. 인�
 
 새 리프 인증서가 디바이스에 배포되면 새 인증서를 사용하여 연결하므로 더 이상 IoT Hub에 연결할 수 없습니다. IoT Hub는 이전 인증서가 있는 디바이스만 인식합니다. 디바이스의 연결 시도 결과는 "권한 없음" 연결 오류입니다. 이 오류를 해결하려면 디바이스의 새 리프 인증서에 부합하게 디바이스에 대한 등록 항목을 업데이트해야 합니다. 그러면 디바이스가 다시 프로비전될 때 프로비전 서비스가 IoT Hub 디바이스 레지스트리 정보를 필요에 따라 업데이트할 수 있습니다. 
 
-이 연결 실패에 대해 가능한, 한 가지 예외는 프로비전 서비스에서 디바이스에 대해 [등록 그룹](concepts-service.md#enrollment-group)을 만드는 시나리오입니다. 이 상황에서는 디바이스의 인증서 신뢰 체인에 루트 또는 중간 인증서를 배포하지 않는 경우, 새 인증서가 등록 그룹에 정의된 신뢰 체인의 일부일 때 디바이스가 인식됩니다. 이 시나리오는 보안 위반에 대한 조치로 발생하며 최소한 위반된 것으로 간주되는 그룹의 특정 디바이스 인증서를 블랙리스트 처리해야 합니다. 자세한 내용은 [등록 그룹의 특정 디바이스 블랙리스트 처리](https://docs.microsoft.com/azure/iot-dps/how-to-revoke-device-access-portal#blacklist-specific-devices-in-an-enrollment-group)를 참조하세요.
+이 연결 실패의 가능한 예외 하나는 프로비전서비스에서 디바이스에 대해 [등록 그룹](concepts-service.md#enrollment-group)을 만드는 시나리오입니다. 이 상황에서는 디바이스의 인증서 신뢰 체인에 루트 또는 중간 인증서를 배포하지 않는 경우, 새 인증서가 등록 그룹에 정의된 신뢰 체인의 일부일 때 디바이스가 인식됩니다. 이 시나리오는 보안 위반에 대한 조치로 발생하며 최소한 위반된 것으로 간주되는 그룹의 특정 디바이스 인증서를 블랙리스트 처리해야 합니다. 자세한 내용은 [등록 그룹의 특정 디바이스 블랙리스트 처리](https://docs.microsoft.com/azure/iot-dps/how-to-revoke-device-access-portal#blacklist-specific-devices-in-an-enrollment-group)를 참조하세요.
 
 등록된 인증서에 대한 등록 항목 업데이트는 **등록 관리** 페이지에서 수행됩니다. 이 페이지에 액세스하려면 다음 단계를 따르세요.
 
-1. [Azure Portal](https://portal.azure.com)에 로그인하고 장치에 대한 등록 항목이 있는 IoT Hub Device Provisioning Service 인스턴스로 이동합니다.
+1. [Azure Portal](https://portal.azure.com)에 로그인하고 디바이스에 대한 등록 항목이 있는 IoT Hub Device Provisioning Service 인스턴스로 이동합니다.
 
 2. **등록 관리**를 클릭합니다.
 

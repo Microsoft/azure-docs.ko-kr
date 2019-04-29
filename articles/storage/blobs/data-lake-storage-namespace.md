@@ -2,18 +2,19 @@
 title: Azure Data Lake Storage Gen2 계층 구조 네임스페이스
 description: Azure Data Lake Storage Gen2에 대한 계층 구조 네임스페이스의 개념 설명
 services: storage
-author: jamesbak
+author: WenJason
 ms.service: storage
 ms.topic: conceptual
-ms.date: 12/06/2018
-ms.author: jamesbak
+origin.date: 12/06/2018
+ms.date: 02/25/2019
+ms.author: v-jay
 ms.subservice: data-lake-storage-gen2
 ms.openlocfilehash: b423d40884dd9132312e79ba0cbff00b8771b207
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55877034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60747543"
 ---
 # <a name="azure-data-lake-storage-gen2-hierarchical-namespace"></a>Azure Data Lake Storage Gen2 계층 구조 네임스페이스
 

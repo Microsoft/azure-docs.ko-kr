@@ -9,22 +9,22 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/20/2019
+ms.date: 04/21/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 8f21374ae5da76c9954acc5227f593ab4be19ce9
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
-ms.translationtype: MT
+ms.openlocfilehash: 74a4ee03562963c8a50159f085e4b76b6d461ed9
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58630546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62103854"
 ---
 # <a name="media-services-concepts"></a>Media Services 개념
 
 이 항목에서는 Azure Media Services 개념의 간략 한 개요를 제공 하 고 심층적인 설명은 Media Services v3 개념 및 기능을 사용 하 여 문서에 대 한 링크를 제공 합니다. 이 항목에는 개발을 시작하기 전에 검토해야 하는 기본 개념이 설명되어 있습니다.
 
 > [!NOTE]
-> 현재는 Azure Portal을 사용하여 v3 리소스를 관리할 수 없습니다. 사용 된 [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref), 또는 지원 되는 하나 [Sdk](developers-guide.md).
+> 현재는 Azure Portal을 사용하여 v3 리소스를 관리할 수 없습니다. [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) 또는 지원되는 [SDK](developers-guide.md) 중 하나를 사용하세요.
 
 ## <a name="cloud-upload-and-storage"></a>클라우드 업로드 및 저장
 
@@ -116,11 +116,15 @@ Azure Media Services를 사용하면 Azure 클라우드에서 고객에게 라�
 
 - [Azure Media Player 개요](use-azure-media-player.md)
 
+## <a name="provide-feedback"></a>피드백 제공
+
+[Azure Media Services 커뮤니티](media-services-community.md) 문서를 체크 아웃하여 다양한 방법으로 질문을 하고, 피드백을 제공하고, Media Services에 대한 업데이트를 가져올 수 있습니다.
+
 ## <a name="next-steps"></a>다음 단계
 
-* [원격 파일 및 스트림 비디오 – REST 인코딩](stream-files-tutorial-with-rest.md)
-* [업로드 된 파일 및 스트림 비디오-.NET 인코딩](stream-files-tutorial-with-api.md)
-* [Stream 라이브-.NET](stream-live-tutorial-with-api.md)
-* [-.NET 비디오를 분석합니다](analyze-videos-tutorial-with-api.md)
-* [AES-128 동적 암호화-.NET](protect-with-aes128.md)
-* [다중 DRM-.NET을 사용 하 여 동적으로 암호화](protect-with-drm.md) 
+* [원격 파일 및 스트림 비디오 인코딩 – REST](stream-files-tutorial-with-rest.md)
+* [업로드된 파일 및 스트림 비디오 인코딩 – .NET](stream-files-tutorial-with-api.md)
+* [라이브 스트리밍 - .NET](stream-live-tutorial-with-api.md)
+* [비디오 분석 - .NET](analyze-videos-tutorial-with-api.md)
+* [AES-128 동적 암호화 - .NET](protect-with-aes128.md)
+* [다중 DRM으로 동적으로 암호화 - .NET](protect-with-drm.md) 

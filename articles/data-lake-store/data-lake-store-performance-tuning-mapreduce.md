@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/19/2016
 ms.author: stewu
-ms.openlocfilehash: b661499786057a3083f79684dfd12c85266b7b5c
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
-ms.translationtype: HT
+ms.openlocfilehash: b9e5d034db4711384d2ac8a1083da5c93ea11900
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46128794"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61437245"
 ---
 # <a name="performance-tuning-guidance-for-mapreduce-on-hdinsight-and-azure-data-lake-storage-gen1"></a>HDInsight의 MapReduce 및 Azure Data Lake Storage Gen1에 대한 성능 조정 지침
 
@@ -42,22 +42,22 @@ MapReduce 작업을 실행할 때 Data Lake Storage Gen1에서 성능을 향상�
 
 **Mapreduce.job.maps / Mapreduce.job.reduces** 생성할 최대 매퍼 또는 리듀서 수가 결정됩니다.  분할 수에 따라 MapReduce 작업에 대해 생성될 매퍼 수가 결정됩니다.  따라서 분할 수가 요청한 매퍼 수보다 적은 경우 요청한 것보다 적은 수의 매퍼를 얻을 수 있습니다.       
 
-## <a name="guidance"></a>인도
+## <a name="guidance"></a>지침
 
-**1단계: 실행 중인 작업 수 결정** - 기본적으로 MapReduce는 작업에 대한 전체 클러스터를 사용합니다.  제공되는 컨테이너보다 적은 수의 매퍼를 사용하면 클러스터를 덜 사용할 수 있습니다.  이 문서의 내용에서는 애플리케이션이 클러스터에서 실행 중인 유일한 애플리케이션이라고 가정합니다.      
+**1단계: 실행 중인 작업 수 결정** -기본적으로 MapReduce를 사용 하 여 전체 클러스터 작업에 대 한 합니다.  제공되는 컨테이너보다 적은 수의 매퍼를 사용하면 클러스터를 덜 사용할 수 있습니다.  이 문서의 내용에서는 애플리케이션이 클러스터에서 실행 중인 유일한 애플리케이션이라고 가정합니다.      
 
-**2단계: mapreduce.map.memory/mapreduce.reduce.memory 설정** –  맵 및 리듀스 태스크에 대한 메모리 크기는 작업에 따라 달라집니다.  동시성을 늘리려면 메모리 크기를 줄일 수 있습니다.  동시에 실행 중인 태스크 수는 컨테이너 수에 따라 달라집니다.  매퍼 또는 리듀서당 메모리 양을 줄이면 더 많은 컨테이너를 생성할 수 있으며 따라서 더 많은 매퍼 또는 리듀서를 동시에 실행할 수 있습니다.  메모리 양을 너무 많이 줄이면 일부 프로세스에서 메모리 부족이 발생할 수 있습니다.  작업을 실행할 때 힙 오류가 발생하면 매퍼 또는 리듀서당 메모리를 늘려야 합니다.  더 많은 컨테이너를 추가하면 각 컨테이너당 오버헤드가 더 추가되며 이로 인해 성능이 저하될 수 있다는 것을 고려해야 합니다.  다른 대안은 메모리가 많은 클러스터를 사용하거나 클러스터의 노드 수를 늘려 더 많은 메모리를 확보하는 것입니다.  메모리가 많아지면 더 많은 컨테이너가 사용되며 이것은 동시성 증가로 이어집니다.  
+**2단계: Mapreduce.map.memory/mapreduce.reduce.memory 설정** – 맵에 대 한 메모리의 크기를 줄이고 작업에 특정 작업에 종속 됩니다.  동시성을 늘리려면 메모리 크기를 줄일 수 있습니다.  동시에 실행 중인 태스크 수는 컨테이너 수에 따라 달라집니다.  매퍼 또는 리듀서당 메모리 양을 줄이면 더 많은 컨테이너를 생성할 수 있으며 따라서 더 많은 매퍼 또는 리듀서를 동시에 실행할 수 있습니다.  메모리 양을 너무 많이 줄이면 일부 프로세스에서 메모리 부족이 발생할 수 있습니다.  작업을 실행할 때 힙 오류가 발생하면 매퍼 또는 리듀서당 메모리를 늘려야 합니다.  더 많은 컨테이너를 추가하면 각 컨테이너당 오버헤드가 더 추가되며 이로 인해 성능이 저하될 수 있다는 것을 고려해야 합니다.  다른 대안은 메모리가 많은 클러스터를 사용하거나 클러스터의 노드 수를 늘려 더 많은 메모리를 확보하는 것입니다.  메모리가 많아지면 더 많은 컨테이너가 사용되며 이것은 동시성 증가로 이어집니다.  
 
-**3단계: 총 YARN 메모리 결정** - mapreduce.job.maps/mapreduce.job.reduces를 조정하려면 사용할 수 있는 총 YARN 메모리 양을 고려해야 합니다.  이 정보는 Ambari에 제공됩니다.  YARN으로 이동한 후 Configs 탭을 확인합니다.  이 창에 YARN 메모리가 표시됩니다.  YARN 메모리에 클러스터에 있는 노드 수를 곱하여 총 YARN 메모리를 얻습니다.
+**3단계: 총 YARN 메모리 결정** -조정 mapreduce.job.maps/mapreduce.job.reduces를 사용할 수 있는 총 YARN 메모리 양을 고려해 야 합니다.  이 정보는 Ambari에 제공됩니다.  YARN으로 이동한 후 Configs 탭을 확인합니다.  이 창에 YARN 메모리가 표시됩니다.  YARN 메모리에 클러스터에 있는 노드 수를 곱하여 총 YARN 메모리를 얻습니다.
 
     Total YARN memory = nodes * YARN memory per node
 비어 있는 클러스터를 사용 중인 경우 이 메모리가 클러스터의 총 YARN 메모리일 수 있습니다.  다른 애플리케이션에서 메모리를 사용하고 있으면 매퍼 또는 리듀서 수를 사용하려는 컨테이너 수로 줄여서 클러스터 메모리 중에서 일부만 사용하도록 선택할 수 있습니다.  
 
-**4단계: YARN 컨테이너 수 계산** – YARN 컨테이너는 작업에 대해 사용 가능한 동시성의 양을 결정합니다.  총 YARN 메모리를 가져와 mapreduce.map.memory로 나눕니다.  
+**4단계: YARN 컨테이너 수가 계산** – YARN 컨테이너 작업에 대 한 사용 가능한 동시성의 양을 결정 합니다.  총 YARN 메모리를 가져와 mapreduce.map.memory로 나눕니다.  
 
     # of YARN containers = total YARN memory / mapreduce.map.memory
 
-**5단계: mapreduce.job.maps/mapreduce.job.reduces 설정** mapreduce.job.maps/mapreduce.job.reduces를 사용 가능한 컨테이너 수 이상의 값으로 설정합니다.  매퍼 및 리듀서 수를 늘리면 더 나은 성능을 얻을 수 있는지 실험해볼 수 있습니다.  매퍼 수가 늘어나면 추가 오버헤드가 발생하므로 매퍼 수가 너무 많으면 성능이 저하될 수 있음에 유의해야 합니다.  
+**5단계: Mapreduce.job.maps/mapreduce.job.reduces 설정** 로 mapreduce.job.maps/mapreduce.job.reduces 적어도 사용 가능한 컨테이너 수입니다.  매퍼 및 리듀서 수를 늘리면 더 나은 성능을 얻을 수 있는지 실험해볼 수 있습니다.  매퍼 수가 늘어나면 추가 오버헤드가 발생하므로 매퍼 수가 너무 많으면 성능이 저하될 수 있음에 유의해야 합니다.  
 
 기본적으로 CPU 예약 및 CPU 격리는 해제되어 있으므로 YARN 컨테이너 수가 메모리로 제한됩니다.
 
@@ -65,15 +65,15 @@ MapReduce 작업을 실행할 때 Data Lake Storage Gen1에서 성능을 향상�
 
 현재 D14 노드 8개로 구성된 클러스터가 있고 I/O 집약적인 작업을 실행하려고 한다고 가정해 보겠습니다.  수행할 계산은 다음과 같습니다.
 
-**1단계: 실행 중인 작업 수 결정** - 이 예에서는 이 작업이 실행 중인 유일한 작업이라고 가정합니다.  
+**1단계: 실행 중인 작업 수 결정** -예를 들어 하나만 실행 하는 것을 가정 합니다.  
 
-**2단계: mapreduce.map.memory/mapreduce.reduce.memory 설정** – 이 예에서는 I/O 집약적인 작업을 실행 중이고 맵 태스크에 대해 3GB 메모리면 충분하다고 결정합니다.
+**2단계: Mapreduce.map.memory/mapreduce.reduce.memory 설정** – 예를 들어 I/O 집약적인 작업을 실행 하 고이 3GB의 메모리 맵 작업에 대 한 충분 한 되도록 결정 합니다.
 
     mapreduce.map.memory = 3GB
-**3단계: 총 YARN 메모리 결정**
+**3단계: 총 YARN 메모리 양 결정**
 
     total memory from the cluster is 8 nodes * 96GB of YARN memory for a D14 = 768GB
-**4단계: YARN 컨테이너 수 결정**
+**4단계: YARN 컨테이너 수 계산**
 
     # of YARN containers = 768GB of available memory / 3 GB of memory =   256
 

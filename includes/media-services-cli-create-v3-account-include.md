@@ -9,11 +9,11 @@ ms.date: 02/21/2019
 ms.author: juliako
 ms.custom: include file
 ms.openlocfilehash: 79af6512e9ce3d3f897be216ee3626c5d4fbcf1d
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56741004"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60733892"
 ---
 ## <a name="create-a-media-services-account"></a>Media Services 계정 만들기
 

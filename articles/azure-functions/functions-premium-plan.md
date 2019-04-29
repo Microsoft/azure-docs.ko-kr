@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 4/11/2019
 ms.author: jehollan
 ms.openlocfilehash: d327146c4a1fa61e55bb904308038c1ce717123d
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59543761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61031243"
 ---
 # <a name="azure-functions-premium-plan-preview"></a>Azure Functions Premium 계획 (미리 보기)
 
@@ -114,7 +114,7 @@ az resource update -g <resource_group> -n <premium_plan_name> --set properties.m
 |프랑스 중부|
 |일본 서부|
 |한국 중부|
-|북유럽|
+|유럽 북부|
 |미국 중남부|
 |인도 남부|
 |동남아시아|

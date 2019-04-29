@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 03/25/2019
 ms.custom: seodec2018
 ms.openlocfilehash: cfc9b44963f6880e97859bc7ab77bff12d258471
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58500171"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61283528"
 ---
 # <a name="how-to-compose-a-query-in-azure-search"></a>Azure Search에서 쿼리를 작성하는 방법
 

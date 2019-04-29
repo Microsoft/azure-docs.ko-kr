@@ -11,14 +11,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 3/19/2018
-ms.author: amsriva
+origin.date: 03/19/2018
+ms.date: 04/17/2019
+ms.author: v-junlch
 ms.openlocfilehash: 8e88e0e11b3ccab7cc2c68b2617df2d588680780
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58170057"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60715818"
 ---
 # <a name="application-gateway-redirect-overview"></a>Application Gateway 리디렉션 개요
 
@@ -50,3 +51,5 @@ Application Gateway 리디렉션 지원에서는 다음과 같은 기능을 제�
 ### <a name="next-steps"></a>다음 단계
 
 [애플리케이션 게이트웨이에서 URL 리디렉션 구성](tutorial-url-redirect-powershell.md)
+
+<!-- Update_Description: wording update -->

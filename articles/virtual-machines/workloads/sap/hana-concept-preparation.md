@@ -15,11 +15,11 @@ ms.date: 09/10/2018
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 73643cd6954932f933e200baad09e4301300aac2
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60794706"
 ---
 # <a name="disaster-recovery-principles"></a>재해 복구 원칙
 
@@ -83,7 +83,7 @@ HANA 대규모 인스턴스는 서로 다른 Azure 지역의 HANA 대규모 인�
 복구 지점 목표를 최소화하려면 다음을 설정합니다.
 - **hana** 형식 스토리지 스냅숏(“7단계: 스냅샷 수행 참조”)을 30분~1시간마다 수행합니다.
 - SAP HANA 트랜잭션 로그 백업을 5분마다 수행합니다.
-- **logs** 유형의 저장소 스냅숏은 5~15분마다 수행합니다. 이 간격 주기로 약 15-25분의 RPO를 설정합니다.
+- **logs** 형식의 스토리지 스냅숏은 5~15분마다 수행됩니다. 이 간격 주기로 약 15-25분의 RPO를 설정합니다.
 
 이 설정을 사용하면 트랜잭션 로그 백업의 시퀀스, 저장소 스냅숏 및 HANA 트랜잭션 로그 백업 볼륨 복제와 /hana/data, /hana/shared(/usr/sap 포함)가 다음 그래픽의 데이터와 같이 표시될 수 있습니다.
 

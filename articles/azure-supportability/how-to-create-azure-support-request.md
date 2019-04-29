@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/25/2016
 ms.author: gangan
-ms.openlocfilehash: 0b45bd2a1a2599908d2077198dce0062071b79af
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
-ms.translationtype: HT
+ms.openlocfilehash: f6d9e683e1feff670c26b01a31ce977557295bff
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31512513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62129062"
 ---
 # <a name="how-to-create-an-azure-support-request"></a>Azure 지원 요청을 만드는 방법
 ## <a name="summary"></a>요약
@@ -32,9 +32,9 @@ Azure 고객은 Azure Portal([https://portal.azure.com](https://portal.azure.com
 
 고객의 의견에 따라 다음 세 가지 기본 목표에 초점을 맞춰 지원 요청 환경을 업데이트했습니다.
 
-* **간소성**: 지원 요청 제출 프로세스를 간단히 하기 위해 클릭 및 블레이드 수를 줄였습니다.
-* **통합**: Azure 리소스 문제를 해결할 때 컨텍스트를 전환하지 않고도 해당 리소스에 대한 지원 요청을 쉽게 개설할 수 있어야 합니다.
-* **효율성**: 지원 담당 엔지니어가 문제를 효율적으로 해결하는 데 필요한 주요 정보를 수집합니다.
+* **간소화 된**: 클릭 및 블레이드 지원 요청을 제출 하는 프로세스를 간단 하 게 줄입니다.
+* **통합**: Azure 리소스를 사용 하 여 문제를 해결 하는 경우 쉽게 컨텍스트 전환 없이 해당 리소스에 대 한 지원 요청을 개설할 여야 합니다.
+* **효율성**: 지원 엔지니어에 게 효율적으로 문제를 해결 하는 데 필요한 주요 정보를 수집 합니다.
 
 ## <a name="getting-started"></a>시작
 위쪽 탐색 메뉴에서 또는 리소스 블레이드에서 직접 지원 요청을 만들 수 있습니다.
@@ -54,7 +54,7 @@ Azure 고객은 Azure Portal([https://portal.azure.com](https://portal.azure.com
 ## <a name="basics"></a>기본 사항
 지원 요청 프로세스의 첫 번째 단계에서는 문제 및 지원 계획에 대한 기본 정보를 수집합니다.
 
-예를 들어 보겠습니다. 가상 머신에 기술적인 문제가 발생했으며 네트워크 연결 문제가 의심됩니다.
+예를 들어를 보겠습니다. 가상 컴퓨터를 사용 하 여 기술적인 문제가 직면 한 네트워크 연결 문제가 의심 있습니다.
 마법사의 첫 번째 단계에서 서비스("Windows를 실행하는 Virtual Machine")와 리소스 (가상 머신의 이름)을 선택하면 이 문제에 대한 도움을 얻는 프로세스가 시작됩니다.
 
 ![기본 사항 블레이드](./media/how-to-create-azure-support-request/Basics.png)

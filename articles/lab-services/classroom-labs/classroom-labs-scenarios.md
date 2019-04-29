@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 02/22/2019
 ms.author: spelluru
 ms.openlocfilehash: 4d2ba11181977f1976b5ae933e8b93a92424fa96
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56809426"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60695294"
 ---
 # <a name="use-classroom-labs-for-trainings"></a>학습에 사용 하 여 클래스 룸 랩
 학습 하기 위한 랩을 설정할 수 있습니다. Azure Lab Services의 클래스 룸 랩의 각 실습생이 학습에 대 한 격리 된 환경과 동일한을 사용 하는 교육에 대 한 랩을 만들 수 있습니다. 각 실습생이 필요할 때에만 교육 환경을 이용할 수 있도록 하고 교육에 필요한 리소스(예: 가상 머신)를 충분히 포함하는 정책을 적용할 수 있습니다. 

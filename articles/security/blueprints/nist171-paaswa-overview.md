@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 07/31/2018
 ms.author: jomolesk
 ms.openlocfilehash: f9773c3b372ab22cbcd99828e147d23c185c4eb6
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57244624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62127330"
 ---
 # <a name="azure-security-and-compliance-blueprint---paas-web-application-for-nist-special-publication-800-171"></a>Azure 보안 및 규정 준수 청사진 - NIST 특별 발행물 800-171용 PaaS 웹 애플리케이션
 
@@ -66,7 +66,7 @@ SQL Database는 보통 SQL Server Management Studio를 통해 관리되며, 보�
 - Azure SQL Database
 - Azure Storage
 - Azure Automation
-- Azure Web Apps
+- Azure 웹앱
 
 ## <a name="deployment-architecture"></a>배포 아키텍처
 다음 섹션에서는 개발 및 구현 요소에 대해 자세히 설명합니다.
@@ -77,7 +77,7 @@ SQL Database는 보통 SQL Server Management Studio를 통해 관리되며, 보�
 
 이 솔루션은 다음 구성을 사용하여 도메인 조인 배스천 호스트로 VM을 만듭니다.
 -   [맬웨어 방지 확장](https://docs.microsoft.com/azure/security/azure-security-antimalware)
--   [Azure 진단 확장](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-diagnostics-template)
+-   [Azure Diagnostics 확장](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-diagnostics-template).
 -   Key Vault를 사용하는 [Azure Disk Encryption](https://docs.microsoft.com/azure/security/azure-security-disk-encryption)
 -   사용하지 않을 때 VM 리소스 사용량을 줄이기 위한 [자동 종료 정책](https://azure.microsoft.com/blog/announcing-auto-shutdown-for-vms-using-azure-resource-manager/)
 -   자격 증명과 기타 비밀이 실행 중인 운영 체제에서 격리되는 보호된 환경에서 실행되도록 [Windows Defender Credential Guard](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard) 사용
@@ -91,7 +91,7 @@ App Service Environment는 단일 애플리케이션만 실행할 수 있도록 
 이 아키텍처에 대해 App Service Environment를 사용하는 경우 다음 컨트롤 및 구성이 제공됩니다.
 
 - 보안 Azure 가상 네트워크의 호스트 및 네트워크 보안 규칙
-- HTTPS 통신을 위해 자체 서명된 내부 부하 분산 장치 인증서. 모범 사례로, Microsoft에서는 보안 강화를 위해 신뢰할 수 있는 인증 기관을 사용하는 것을 권장합니다.
+- HTTPS 통신을 위해 자체 서명된 내부 부하 분산 장치 인증서. 모범 사례로서 Microsoft는 강화된 보안을 위해 신뢰할 수 있는 인증 기관 사용을 권장합니다.
 - [내부 부하 분산 모드](https://docs.microsoft.com/azure/app-service-web/app-service-environment-with-internal-load-balancer)(모드 3)
 - [TLS 1.0](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-custom-settings) 사용 안 함
 - [TLS 암호화](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-custom-settings) 변경

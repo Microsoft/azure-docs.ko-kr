@@ -1,28 +1,30 @@
 ---
-title: Azure Site Recovery를 사용한 VMware VM 및 물리적 서버의 재해 복구 중에 장애 복구(failback)하기 위해 Azure에서 프로세스 서버 설정 | Microsoft Docs
-description: 이 문서에서는 VMware VM 및 물리적 서버의 재해 복구 중에 Azure에서 온-프레미스로 장애 복구(failback)하기 위해 Azure에서 프로세스 서버를 설정하는 방법을 설명합니다.
+title: Azure Site Recovery를 사용 하 여 VMware Vm 및 물리적 서버의 재해 복구 중 스케일 아웃 프로세스 서버 설정 | Microsoft Docs
+description: 이 문서에서는 VMware Vm 및 물리적 서버의 재해 복구 중 스케일 아웃 프로세스 서버를 설정 하는 방법을 설명 합니다.
 author: Rajeswari-Mamilla
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 4/9/2019
+ms.date: 4/23/2019
 ms.author: ramamill
-ms.openlocfilehash: 6849ffb6fa46365aa775b9410067cb0874c70ef8
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 678f9aa60d4970540ded8ba0bb1a4ddaa6281a49
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59362162"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62101900"
 ---
-# <a name="scale-for-failback-with-additional-process-servers"></a>추가 프로세스 서버를 사용한 장애 복구(failback)를 위한 확장
+# <a name="scale-with-additional-process-servers"></a>추가 프로세스 서버를 사용 하 여 크기 조정
 
-기본적으로 [사이트 복구](site-recovery-overview.md)를 사용하여 VMware VM 또는 물리적 서버를 Azure에 복제하는 경우 프로세스 서버가 구성 서버 컴퓨터에 설치되어 사이트 복구 및 온-프레미스 인프라 간의 데이터 전송을 조정하는 데 사용됩니다. 용량을 늘리고 복제 배포를 확장하려면 추가 독립 실행형 프로세스 서버를 추가할 수 있습니다. 이 문서에서는 이를 수행하는 방법을 설명합니다.
+기본적으로 [사이트 복구](site-recovery-overview.md)를 사용하여 VMware VM 또는 물리적 서버를 Azure에 복제하는 경우 프로세스 서버가 구성 서버 컴퓨터에 설치되어 사이트 복구 및 온-프레미스 인프라 간의 데이터 전송을 조정하는 데 사용됩니다. 용량을 늘리고 복제 배포를 확장하려면 추가 독립 실행형 프로세스 서버를 추가할 수 있습니다. 이 문서에서는 스케일 아웃 프로세스 서버를 설정 하는 방법을 설명 합니다.
 
 ## <a name="before-you-start"></a>시작하기 전에
 
 ### <a name="capacity-planning"></a>용량 계획
 
 VMware 복제에 대해 [용량 계획](site-recovery-plan-capacity-vmware.md)을 수행했는지 확인합니다. 추가 프로세스 서버를 배포해야 시기와 방법을 식별하도록 도와줍니다.
+
+9.24 버전에서 새 복제에 대 한 프로세스 서버를 선택 하는 동안 지침 추가 됩니다. 프로세스 서버는 정상, 경고 및 중요 특정 조건에 따라 표시 됩니다. 프로세스 서버의 상태에 영향을 줄 수 있는 다양 한 시나리오를 이해 하려면 방문 [프로세스 서버 선택 지침](vmware-azure-manage-process-server.md#process-server-selection-guidance)합니다.
 
 > [!NOTE]
 > 복제된 프로세스 서버 구성 요소를 사용하는 것은 지원되지 않습니다. 각 PS 스케일 아웃에서 이 문서의 단계를 수행할 수 있습니다.
@@ -44,8 +46,6 @@ VMware 복제에 대해 [용량 계획](site-recovery-plan-capacity-vmware.md)�
 추가 프로세스 서버에 대한 필수 구성 요소는 다음 표에 요약되어 있습니다.
 
 [!INCLUDE [site-recovery-configuration-server-requirements](../../includes/site-recovery-configuration-and-scaleout-process-server-requirements.md)]
-
-
 
 ## <a name="download-installation-file"></a>설치 파일 다운로드
 

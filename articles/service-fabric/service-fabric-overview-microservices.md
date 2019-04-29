@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 07/02/2017
 ms.author: atsenthi
 ms.openlocfilehash: 1e02e4fdf0dbe04d8756fc6355c6a9e414b27d2b
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58665605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60719158"
 ---
 # <a name="why-a-microservices-approach-to-building-applications"></a>애플리케이션 구축에 마이크로 서비스 접근 방식이 필요한 이유
 
@@ -141,7 +141,7 @@ DNS가 특정 URL을 특정 머신으로 확인하는 것과 동일한 방법으
 
 ## <a name="service-fabric-as-a-microservices-platform"></a>마이크로 서비스 플랫폼으로서의 서비스 패브릭
 
-Azure Service Fabric은 Microsoft가 보통 모놀리식 스타일의 박스 제품을 제공하는 방식에서 서비스를 제공하는 방식으로 전환하는 과정에 등장했습니다. Azure SQL Database 및 Azure Cosmos DB와 같은 대규모 서비스를 구축 및 운영한 경험을 기반으로 Service Fabric을 만들었습니다. 플랫폼은 시간이 지남에 따라 더 많은 서비스를 도입하는 방향으로 발전했습니다. Service Fabric이 Azure뿐 아니라 독립 실행형 Windows Server 배포에서 실행되어야 했다는 점입니다.
+Azure Service Fabric은 Microsoft가 보통 모놀리식 스타일의 박스 제품을 제공하는 방식에서 서비스를 제공하는 방식으로 전환하는 과정에 등장했습니다. Azure SQL Database 및 Azure Cosmos DB와 같은 대규모 서비스를 빌드 및 운영한 경험을 기반으로 Service Fabric을 만들었습니다. 플랫폼은 시간이 지남에 따라 더 많은 서비스를 도입하는 방향으로 발전했습니다. Service Fabric이 Azure뿐 아니라 독립 실행형 Windows Server 배포에서 실행되어야 했다는 점입니다.
 
 ***Service Fabric의 목표는 인프라 리소스의 효율적 활용 등, 서비스 구축 및 실행의 난제를 해결하여 팀이 마이크로 서비스 접근 방식을 사용하여 비즈니스 문제를 해결할 수 있게 하는 것입니다.***
 

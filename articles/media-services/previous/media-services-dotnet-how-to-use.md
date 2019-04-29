@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 7da57c01b6717b505ea09fa9e6197bab4d4976fd
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: 47db5ba826b94422672dd46b191556da43b70b02
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57873828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61465000"
 ---
 # <a name="media-services-development-with-net"></a>.NET을 사용한 Media Services 개발 
 [!INCLUDE [media-services-selector-setup](../../../includes/media-services-selector-setup.md)]

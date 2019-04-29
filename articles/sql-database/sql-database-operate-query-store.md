@@ -13,17 +13,17 @@ ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 12/19/2018
 ms.openlocfilehash: 3ceb8569d952f2947870ce7314f869623b2d87f9
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55562949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60584746"
 ---
 # <a name="operating-the-query-store-in-azure-sql-database"></a>Azure SQL Database에서 쿼리 저장소 운영
 
 Azure의 쿼리 저장소는 모든 쿼리에 대한 자세한 기록 정보를 지속적으로 수집하고 제공하는, 완전히 관리되는 데이터베이스 기능입니다. 쿼리 저장소는 비행기의 블랙박스와 비슷하게 생각할 수 있으며, 클라우드와 온-프레미스 고객의 쿼리 성능 문제 해결을 상당히 간소화합니다. 이 문서는 Azure의 쿼리 저장소 운영에 대한 구체적인 측면을 설명합니다. 미리 수집된 쿼리 데이터를 사용하면, 성능 문제를 신속하게 진단하고 해결할 수 있기 때문에 업무에 더 많은 시간을 집중할 수 있습니다. 
 
-쿼리 저장소는 2015년 11월부터 Azure SQL Database에서 [전세계적으로 사용할 수 있습니다](https://azure.microsoft.com/updates/general-availability-azure-sql-database-query-store/) . 쿼리 저장소는 [SQL Database 관리자 및 성능 대시보드](https://azure.microsoft.com/updates/sqldatabaseadvisorga/)같은 성능 분석 및 기능 조정을 위한 기반입니다. 이 문서를 게시하는 순간에도, 200,000개가 넘는 Azure의 사용자 데이터베이스에서 쿼리 저장소가 실행 중이며, 쿼리 관련 정보를 몇 달 동안 중단 없이 수집하고 있습니다.
+쿼리 저장소는 2015년 11월부터 Azure SQL Database에서 [전역적으로 사용할 수 있습니다](https://azure.microsoft.com/updates/general-availability-azure-sql-database-query-store/) . 쿼리 저장소는 [SQL Database 관리자 및 성능 대시보드](https://azure.microsoft.com/updates/sqldatabaseadvisorga/)같은 성능 분석 및 기능 조정을 위한 기반입니다. 이 문서를 게시하는 순간에도, 200,000개가 넘는 Azure의 사용자 데이터베이스에서 쿼리 저장소가 실행 중이며, 쿼리 관련 정보를 몇 달 동안 중단 없이 수집하고 있습니다.
 
 > [!IMPORTANT]
 > Microsoft는 모든 Azure SQL 데이터베이스(기존 및 신규)에 대해 쿼리 저장소를 활성화하는 과정에 있습니다. 

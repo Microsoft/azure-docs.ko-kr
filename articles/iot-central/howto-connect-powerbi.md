@@ -8,11 +8,11 @@ ms.author: viviali
 ms.date: 02/15/2019
 ms.topic: conceptual
 ms.openlocfilehash: 322be1e13662d92a3cb0a805a9ccaacd05928f7d
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56328098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60886794"
 ---
 # <a name="visualize-and-analyze-your-azure-iot-central-data-in-a-power-bi-dashboard"></a>Power BI 대시보드에서 Azure IoT Central 데이터 시각화 및 분석
 
@@ -60,7 +60,7 @@ Azure IoT Central용 Power BI 솔루션을 사용하여 IoT 디바이스의 성�
 ### <a name="azure-functions"></a>Azure 기능
 Azure Function App은 Blob Storage에 새 파일을 쓸 때마다 트리거됩니다. 함수는 각 측정값, 디바이스 및 디바이스 템플릿 파일 내의 필드를 추출하고 Azure Data Factory에서 사용할 여러 개의 중간 SQL 테이블을 채웁니다.
 
-### <a name="azure-data-factory"></a>Azure 데이터 팩터리
+### <a name="azure-data-factory"></a>Azure Data Factory
 Azure Data Factory는 연결된 서비스로 SQL 데이터베이스에 연결됩니다. 데이터를 처리하고 분석 테이블에 저장하는 저장 프로시저 활동을 실행합니다.
 
 ### <a name="azure-sql-database"></a>Azure SQL Database

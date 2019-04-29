@@ -10,17 +10,17 @@ ms.date: 07/16/2018
 ms.author: iainfou
 ms.custom: ''
 ms.openlocfilehash: a7a7455ce9167a9c480d317d50fdce49e2ef06a9
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52994305"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60721802"
 ---
 # <a name="deprecated-deploy-docker-ce-cluster"></a>(사용되지 않음) Docker CE 클러스터 배포
 
 [!INCLUDE [ACS deprecation](../../../includes/container-service-deprecation.md)]
 
-이 빠른 시작에서는 Azure CLI를 사용하여 Docker CE 클러스터가 배포됩니다. 웹 프런트 엔드 및 Redis 인스턴스로 구성된 다중 컨테이너 응용 프로그램이 클러스터에 배포되어 실행됩니다. 완료되면 인터넷을 통해 응용 프로그램에 액세스할 수 있습니다.
+이 빠른 시작에서는 Azure CLI를 사용하여 Docker CE 클러스터가 배포됩니다. 웹 프런트 엔드 및 Redis 인스턴스로 구성된 다중 컨테이너 애플리케이션이 클러스터에 배포되어 실행됩니다. 완료되면 인터넷을 통해 애플리케이션에 액세스할 수 있습니다.
 
 Azure Container Service에서 Docker CE는 미리 보기 상태이며 **프로덕션 워크로드에는 사용할 수 없습니다**.
 
@@ -38,7 +38,7 @@ CLI를 로컬로 설치하여 사용하도록 선택한 경우 이 빠른 시작
 az group create --name myResourceGroup --location westus2
 ```
 
-출력:
+출력
 
 ```json
 {
@@ -76,7 +76,7 @@ az acs create --name mySwarmCluster --orchestrator-type dockerce --resource-grou
 az acs list --resource-group myResourceGroup --query '[*].{Master:masterProfile.fqdn,Agent:agentPoolProfiles[0].fqdn}' -o table
 ```
 
-출력:
+출력
 
 ```bash
 Master                                                               Agent
@@ -126,7 +126,7 @@ services:
 docker stack deploy azure-vote --compose-file azure-vote.yaml
 ```
 
-출력:
+출력
 
 ```bash
 Creating network azure-vote_default
@@ -134,13 +134,13 @@ Creating service azure-vote_azure-vote-back
 Creating service azure-vote_azure-vote-front
 ```
 
-[docker stack ps](https://docs.docker.com/engine/reference/commandline/stack_ps/) 명령을 사용하여 응용 프로그램의 배포 상태를 반환합니다.
+[docker stack ps](https://docs.docker.com/engine/reference/commandline/stack_ps/) 명령을 사용하여 애플리케이션의 배포 상태를 반환합니다.
 
 ```bash
 docker stack ps azure-vote
 ```
 
-각 서비스의 `CURRENT STATE`가 `Running`이면 응용 프로그램이 준비된 것입니다.
+각 서비스의 `CURRENT STATE`가 `Running`이면 애플리케이션이 준비된 것입니다.
 
 ```bash
 ID                  NAME                            IMAGE                                 NODE                               DESIRED STATE       CURRENT STATE                ERROR               PORTS
@@ -148,9 +148,9 @@ tnklkv3ogu3i        azure-vote_azure-vote-front.1   microsoft/azure-vote-front:v
 lg99i4hy68r9        azure-vote_azure-vote-back.1    redis:latest                          swarmm-agentpool0-66066781000002   Running             Running about a minute ago
 ```
 
-## <a name="test-the-application"></a>응용 프로그램 테스트
+## <a name="test-the-application"></a>애플리케이션 테스트
 
-Azure Vote 응용 프로그램을 테스트하려면 Swarm 에이전트 풀의 FQDN을 찾습니다.
+Azure Vote 애플리케이션을 테스트하려면 Swarm 에이전트 풀의 FQDN을 찾습니다.
 
 ![Azure Vote로 이동하는 이미지](media/container-service-docker-swarm-mode-walkthrough/azure-vote.png)
 
@@ -163,13 +163,13 @@ az group delete --name myResourceGroup --yes --no-wait
 
 ## <a name="get-the-code"></a>코드 가져오기
 
-이 빠른 시작에서는 Docker 서비스를 만드는 데 미리 생성된 컨테이너 이미지를 사용했습니다. 관련된 응용 프로그램 코드, Dockerfile 및 Compose 파일을 GitHub에서 사용할 수 있습니다.
+이 빠른 시작에서는 Docker 서비스를 만드는 데 미리 생성된 컨테이너 이미지를 사용했습니다. 관련된 애플리케이션 코드, Dockerfile 및 Compose 파일을 GitHub에서 사용할 수 있습니다.
 
 [https://github.com/Azure-Samples/azure-voting-app-redis](https://github.com/Azure-Samples/azure-voting-app-redis.git)
 
 ## <a name="next-steps"></a>다음 단계
 
-이 빠른 시작에서는 Docker Swarm 클러스터를 배포하고, 이 클러스터에 다중 컨테이너 응용 프로그램을 배포했습니다.
+이 빠른 시작에서는 Docker Swarm 클러스터를 배포하고, 이 클러스터에 다중 컨테이너 애플리케이션을 배포했습니다.
 
 Docker Swarm을 Azure DevOps와 통합하는 방법에 대해 알아보려면 Docker Swarm 및 Azure DevOps를 사용하는 CI/CD를 진행합니다.
 

@@ -9,11 +9,11 @@ ms.date: 02/14/2019
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: 9f7f71f47fadd7cfe2364acf1a8505e1967a78e5
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56333852"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60399548"
 ---
 Azure IoT Hub를 계속 시작하고 모든 확장 IoT 시나리오를 살펴보려면 다음을 참조하세요.
 

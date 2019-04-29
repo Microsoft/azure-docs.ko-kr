@@ -6,17 +6,18 @@ ms.service: sql-database
 ms.subservice: security
 ms.custom: ''
 ms.topic: conceptual
-author: srdan-bozovic-msft
-ms.author: srbozovi
+author: WenJason
+ms.author: v-jay
 ms.reviewer: vanto, carlrab
-manager: craigg
-ms.date: 04/16/2019
+manager: digimobile
+origin.date: 04/16/2019
+ms.date: 04/29/2019
 ms.openlocfilehash: 9d5a3d18e8a7d3c5a6cb08e16e74dd4fbda9ca31
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60014021"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61315058"
 ---
 # <a name="using-azure-sql-database-managed-instance-securely-with-public-endpoint"></a>인스턴스 공용 끝점을 사용 하 여 안전 하 게 관리 되는 Azure SQL Database를 사용 하 여
 

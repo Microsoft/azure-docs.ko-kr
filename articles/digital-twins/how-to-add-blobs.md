@@ -10,11 +10,11 @@ ms.date: 01/11/2019
 ms.author: adgera
 ms.custom: seodec18
 ms.openlocfilehash: ffd7d71c33b569b396b9f8babf8105968ee525b9
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54263070"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60926503"
 ---
 # <a name="add-blobs-to-objects-in-azure-digital-twins"></a>Azure Digital Twins에서 개체에 Blob 추가
 
@@ -51,16 +51,16 @@ JSON Blob 메타데이터는 다음과 같은 모델을 준수합니다.
   }
 ```
 
-| 특성 | type | 설명 |
+| 특성 | Type | 설명 |
 | --- | --- | --- |
-| **parentId** | 문자열 | Blob을 연결할 부모 엔터티(공백, 디바이스 또는 사용자)입니다. |
-| **name** |문자열 | Blob의 이름입니다. |
-| **type** | 문자열 | Blob의 형식으로, *type* 및 *typeId*를 사용할 수 없습니다.  |
+| **parentId** | String | Blob을 연결할 부모 엔터티(공백, 디바이스 또는 사용자)입니다. |
+| **name** |String | Blob의 이름입니다. |
+| **type** | String | Blob의 형식으로, *type* 및 *typeId*를 사용할 수 없습니다.  |
 | **typeId** | 정수  | Blob 형식 ID로, *type* 및 *typeId*를 사용할 수 없습니다. |
-| **subtype** | 문자열 | Blob 하위 형식으로, *subtype* 및 *subtypeId*를 사용할 수 없습니다. |
+| **subtype** | String | Blob 하위 형식으로, *subtype* 및 *subtypeId*를 사용할 수 없습니다. |
 | **subtypeId** | 정수  | Blob의 하위 형식 ID로, *subtype* 및 *subtypeId*를 사용할 수 없습니다. |
-| **description** | 문자열 | Blob의 사용자 지정 설명입니다. |
-| **sharing** | 문자열 | Blob을 공유할 수 있는지 여부로, 열거형 [`None`, `Tree`, `Global`]입니다. |
+| **description** | String | Blob의 사용자 지정 설명입니다. |
+| **sharing** | String | Blob을 공유할 수 있는지 여부로, 열거형 [`None`, `Tree`, `Global`]입니다. |
 
 Blob 메타데이터는 항상 **Content-type** `application/json`을 포함하는 첫 번째 청크 또는 `.json` 파일로 제공됩니다. 파일 데이터는 두 번째 청크에 제공되고, 지원되는 임의 MIME 형식일 수 있습니다.
 
@@ -108,20 +108,20 @@ Swagger 설명서는 이러한 모델 스키마에 대해 매우 자세하게 �
 }
 ```
 
-| 특성 | type | 설명 |
+| 특성 | Type | 설명 |
 | --- | --- | --- |
-| **id** | 문자열 | Blob의 고유한 식별자입니다. |
-| **name** |문자열 | Blob의 이름입니다. |
-| **parentId** | 문자열 | Blob을 연결할 부모 엔터티(공백, 디바이스 또는 사용자)입니다. |
-| **type** | 문자열 | Blob의 형식으로, *type* 및 *typeId*를 사용할 수 없습니다.  |
+| **id** | String | Blob의 고유한 식별자입니다. |
+| **name** |String | Blob의 이름입니다. |
+| **parentId** | String | Blob을 연결할 부모 엔터티(공백, 디바이스 또는 사용자)입니다. |
+| **type** | String | Blob의 형식으로, *type* 및 *typeId*를 사용할 수 없습니다.  |
 | **typeId** | 정수  | Blob 형식 ID로, *type* 및 *typeId*를 사용할 수 없습니다. |
-| **subtype** | 문자열 | Blob 하위 형식으로, *subtype* 및 *subtypeId*를 사용할 수 없습니다. |
+| **subtype** | String | Blob 하위 형식으로, *subtype* 및 *subtypeId*를 사용할 수 없습니다. |
 | **subtypeId** | 정수  | Blob의 하위 형식 ID로, *subtype* 및 *subtypeId*를 사용할 수 없습니다. |
-| **sharing** | 문자열 | Blob을 공유할 수 있는지 여부로, 열거형 [`None`, `Tree`, `Global`]입니다. |
-| **description** | 문자열 | Blob의 사용자 지정 설명입니다. |
+| **sharing** | String | Blob을 공유할 수 있는지 여부로, 열거형 [`None`, `Tree`, `Global`]입니다. |
+| **description** | String | Blob의 사용자 지정 설명입니다. |
 | **contentInfos** | 배열 | 버전을 포함하는 구조화되지 않은 메타데이터 정보를 지정합니다. |
-| **fullName** | 문자열 | Blob의 전체 이름입니다. |
-| **spacePaths** | 문자열 | 공간 경로 |
+| **fullName** | String | Blob의 전체 이름입니다. |
+| **spacePaths** | String | 공간 경로 |
 
 Blob 메타데이터는 항상 **Content-type** `application/json`을 포함하는 첫 번째 청크 또는 `.json` 파일로 제공됩니다. 파일 데이터는 두 번째 청크에 제공되고, 지원되는 임의 MIME 형식일 수 있습니다.
 

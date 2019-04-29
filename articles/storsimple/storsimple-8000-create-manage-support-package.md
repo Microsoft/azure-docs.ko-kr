@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 01/09/2018
 ms.author: alkohli
 ms.openlocfilehash: dfc2d8d763a1eb64a37af73e03992f2d948a6856
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51254369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61481870"
 ---
 # <a name="create-and-manage-a-support-package-for-storsimple-8000-series"></a>StorSimple 8000 시리즈용 지원 패키지 만들기 및 관리
 
@@ -121,7 +121,7 @@ Microsoft 지원 사이트에 업로드하기 전에 지원 패키지를 편집�
         Supply values for the following parameters:EncryptionPassphrase: ****
 9. Microsoft 지원 요청 시 공유할 수 있도록 새 암호를 적어둡니다.
 
-### <a name="example-editing-files-in-a-support-package-on-a-password-protected-share"></a>예: 암호로 보호된 공유에 대한 지원 패키지에서 파일 편집
+### <a name="example-editing-files-in-a-support-package-on-a-password-protected-share"></a>예제: 지원 패키지를 암호로 보호 된 공유에 파일 편집
 
 다음 예제에서는 지원 패키지의 암호를 해독하고 편집 및 다시 암호화하는 방법을 보여 줍니다.
 
@@ -148,6 +148,6 @@ Microsoft 지원 사이트에 업로드하기 전에 지원 패키지를 편집�
 ## <a name="next-steps"></a>다음 단계
 
 * [지원 패키지에서 수집된 정보](https://support.microsoft.com/help/3193606/storsimple-support-packages-and-device-logs)에 대해 자세히 알아보기
-* [지원 패키지 및 장치 로그를 사용하여 장치 배포 문제를 해결](storsimple-8000-troubleshoot-deployment.md#support-packages-and-device-logs-available-for-troubleshooting)하는 방법을 알아봅니다.
-* [StorSimple 장치 관리자 서비스를 사용하여 StorSimple 장치를 관리](storsimple-8000-manager-service-administration.md)하는 방법을 알아봅니다.
+* [지원 패키지 및 디바이스 로그를 사용하여 디바이스 배포 문제를 해결](storsimple-8000-troubleshoot-deployment.md#support-packages-and-device-logs-available-for-troubleshooting)하는 방법을 알아봅니다.
+* [StorSimple 디바이스 관리자 서비스를 사용하여 StorSimple 디바이스를 관리](storsimple-8000-manager-service-administration.md)하는 방법을 알아봅니다.
 

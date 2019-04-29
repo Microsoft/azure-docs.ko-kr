@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: twooley
 ms.openlocfilehash: d200f72b3c0e5634c3dca8f60a4754a14351110a
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58877961"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60878757"
 ---
 # <a name="accessing-diagnostic-logs-for-azure-data-lake-storage-gen1"></a>Azure Data Lake Storage Gen1에 대한 진단 로그 액세스
 Azure Data Lake Storage Gen1 계정에 대해 진단 로깅을 사용하도록 설정하는 방법 및 계정에 대해 수집된 로그를 보는 방법을 알아봅니다.
@@ -113,27 +113,27 @@ Azure Data Lake Storage Gen1 계정에 대해 진단 로깅을 사용하도록 �
     }
 
 #### <a name="request-log-schema"></a>요청 로그 스키마
-| name | 형식 | 설명 |
+| 이름 | 형식 | 설명 |
 | --- | --- | --- |
-| 실시간 |문자열 |로그의 타임스탬프(UTC) |
-| ResourceId |문자열 |작업이 수행되는 리소스의 ID |
-| 카테고리 |문자열 |로그 범주 예: **Requests** |
-| operationName |문자열 |기록된 작업의 이름 예를 들어 getfilestatus |
-| resultType |문자열 |작업의 상태, 예를 들어 200 |
-| callerIpAddress |문자열 |요청한 클라이언트의 IP 주소 |
-| CorrelationId |문자열 |관련된 로그 항목의 집합을 그룹화하는 데 사용할 수 있는 로그의 ID |
+| time |String |로그의 타임스탬프(UTC) |
+| resourceId |String |작업이 수행되는 리소스의 ID |
+| category |String |로그 범주 예: **Requests** |
+| operationName |String |기록된 작업의 이름 예를 들어 getfilestatus |
+| resultType |String |작업의 상태, 예를 들어 200 |
+| callerIpAddress |String |요청한 클라이언트의 IP 주소 |
+| CorrelationId |String |관련된 로그 항목의 집합을 그룹화하는 데 사용할 수 있는 로그의 ID |
 | ID |Object |로그를 생성하는 ID |
 | properties |JSON |자세한 내용은 다음을 참조하세요. |
 
 #### <a name="request-log-properties-schema"></a>요청 로그 속성 스키마
-| name | 형식 | 설명 |
+| 이름 | 형식 | 설명 |
 | --- | --- | --- |
-| HttpMethod |문자열 |작업에 사용된 HTTP 메서드 예를 들어 GET |
-| path |문자열 |작업이 수행된 경로 |
-| RequestContentLength |ssNoversion |HTTP 요청의 콘텐츠 길이 |
-| ClientRequestId |문자열 |이 요청을 고유하게 식별하는 ID |
-| StartTime |문자열 |서버가 요청을 받은 시간 |
-| EndTime |문자열 |서버가 응답을 전송한 시간 |
+| HttpMethod |String |작업에 사용된 HTTP 메서드 예를 들어 GET |
+| path |String |작업이 수행된 경로 |
+| RequestContentLength |int |HTTP 요청의 콘텐츠 길이 |
+| ClientRequestId |String |이 요청을 고유하게 식별하는 ID |
+| StartTime |String |서버가 요청을 받은 시간 |
+| EndTime |String |서버가 응답을 전송한 시간 |
 
 ### <a name="audit-logs"></a>감사 로그
 다음은 JSON 형식인 감사 로그의 샘플 항목입니다. 각 Blob는 **레코드** 라는 하나의 루트 개체를 포함하며 여기에는 로그 개체의 배열이 포함됩니다.
@@ -160,22 +160,22 @@ Azure Data Lake Storage Gen1 계정에 대해 진단 로깅을 사용하도록 �
     }
 
 #### <a name="audit-log-schema"></a>감사 로그 스키마
-| name | 형식 | 설명 |
+| 이름 | 형식 | 설명 |
 | --- | --- | --- |
-| 실시간 |문자열 |로그의 타임스탬프(UTC) |
-| ResourceId |문자열 |작업이 수행되는 리소스의 ID |
-| 카테고리 |문자열 |로그 범주 예: **Audit**. |
-| operationName |문자열 |기록된 작업의 이름 예를 들어 getfilestatus |
-| resultType |문자열 |작업의 상태, 예를 들어 200 |
-| resultSignature |문자열 |작업에 대한 추가 세부 정보입니다. |
-| CorrelationId |문자열 |관련된 로그 항목의 집합을 그룹화하는 데 사용할 수 있는 로그의 ID |
+| time |String |로그의 타임스탬프(UTC) |
+| resourceId |String |작업이 수행되는 리소스의 ID |
+| category |String |로그 범주 예: **Audit**. |
+| operationName |String |기록된 작업의 이름 예를 들어 getfilestatus |
+| resultType |String |작업의 상태, 예를 들어 200 |
+| resultSignature |String |작업에 대한 추가 세부 정보입니다. |
+| CorrelationId |String |관련된 로그 항목의 집합을 그룹화하는 데 사용할 수 있는 로그의 ID |
 | ID |Object |로그를 생성하는 ID |
 | properties |JSON |자세한 내용은 다음을 참조하세요. |
 
 #### <a name="audit-log-properties-schema"></a>감사 로그 속성 스키마
-| name | 형식 | 설명 |
+| 이름 | 형식 | 설명 |
 | --- | --- | --- |
-| StreamName |문자열 |작업이 수행된 경로 |
+| StreamName |String |작업이 수행된 경로 |
 
 ## <a name="samples-to-process-the-log-data"></a>로그 데이터를 처리하는 샘플
 Azure Monitor 로그로 Azure Data Lake 저장소 Gen1에서 로그를 보낼 때 (참조 [뷰 또는 Azure Monitor의 로그 검색을 사용 하 여 수집 된 데이터를 분석](../azure-monitor/learn/tutorial-viewdata.md) Azure Monitor 사용에 대 한 로그), 다음 쿼리가 포함 된 테이블을 반환 합니다를 사용자 목록을 표시 이름, 이벤트의 시간 및 이벤트 수 시각적 차트와 함께 이벤트의 시간에 대 한 합니다. 사용자 GUID 또는 기타 특성을 표시하도록 쉽게 수정할 수 있습니다.

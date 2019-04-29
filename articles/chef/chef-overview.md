@@ -9,11 +9,11 @@ ms.author: tarcher
 ms.date: 05/15/2018
 ms.topic: article
 ms.openlocfilehash: 5c4e20177c1b334a34f7ce9328dfaa7bd8c66d3d
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57545738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60656577"
 ---
 # <a name="using-chef-with-azure"></a>Azure로 Chef 사용하기
 [Chef](https://www.chef.io)는 Azure에서 가상 머신 인프라를 코드로 변환하는 강력한 자동화 플랫폼입니다. Chef는 크기에 관계 없이 네트워크를 통해 인프라를 구성하고 배포하고 관리하는 방법을 자동화합니다.

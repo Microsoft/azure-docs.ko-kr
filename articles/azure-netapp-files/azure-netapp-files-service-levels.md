@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 02/14/2019
 ms.author: b-juche
 ms.openlocfilehash: c2086eb0c5529d8e570a545e35fc716f70c7541f
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56668347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60691056"
 ---
 # <a name="service-levels-for-azure-netapp-files"></a>Azure NetApp Files에 대한 서비스 수준
 Azure NetApp Files는 두 가지 서비스 수준(“프리미엄” 및 “표준”)을 지원합니다. 

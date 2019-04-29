@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 03/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 98f9e0377e560fa0bba2fd470ff01431b2ed21d9
-ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58431482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60754684"
 ---
 | 포트 번호| 인 또는 아웃 | 포트 범위| 필수|   메모 |   |
 |--------|-----|-----|-----------|----------|-----------|

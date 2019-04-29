@@ -9,11 +9,11 @@ ms.assetid: cf5633d4-bc43-444e-90fc-f90fbd0b7935
 ms.topic: conceptual
 ms.date: 02/12/2018
 ms.openlocfilehash: 7fd88383e909ebd6be64c22721b813946e37179e
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56959136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60616508"
 ---
 # <a name="accessing-diagnostic-logs-for-azure-data-lake-analytics"></a>Azure Data Lake Analytics에 대한 진단 로그에 액세스
 
@@ -127,13 +127,13 @@ ms.locfileid: "56959136"
 
 | 이름 | 형식 | 설명 |
 | --- | --- | --- |
-| 실시간 |문자열 |로그의 타임스탬프(UTC) |
-| ResourceId |문자열 |작업이 수행되는 리소스의 식별자 |
-| 카테고리 |문자열 |로그 범주 예: **Requests** |
-| operationName |문자열 |기록된 작업의 이름 예를 들어 GetAggregatedJobHistory |
-| resultType |문자열 |작업의 상태, 예를 들어 200 |
-| callerIpAddress |문자열 |요청한 클라이언트의 IP 주소 |
-| CorrelationId |문자열 |로그의 식별자입니다. 이 값을 사용하여 관련된 로그 항목의 집합을 그룹화할 수 있습니다. |
+| time |String |로그의 타임스탬프(UTC) |
+| resourceId |String |작업이 수행되는 리소스의 식별자 |
+| category |String |로그 범주 예: **Requests** |
+| operationName |String |기록된 작업의 이름 예를 들어 GetAggregatedJobHistory |
+| resultType |String |작업의 상태, 예를 들어 200 |
+| callerIpAddress |String |요청한 클라이언트의 IP 주소 |
+| CorrelationId |String |로그의 식별자입니다. 이 값을 사용하여 관련된 로그 항목의 집합을 그룹화할 수 있습니다. |
 | ID |Object |로그를 생성하는 ID |
 | properties |JSON |자세한 내용은 다음 섹션(요청 로그 속성 스키마)을 참조하세요. |
 
@@ -141,12 +141,12 @@ ms.locfileid: "56959136"
 
 | 이름 | 형식 | 설명 |
 | --- | --- | --- |
-| HttpMethod |문자열 |작업에 사용된 HTTP 메서드 예를 들어 GET |
-| path |문자열 |작업이 수행된 경로 |
+| HttpMethod |String |작업에 사용된 HTTP 메서드 예를 들어 GET |
+| path |String |작업이 수행된 경로 |
 | RequestContentLength |int |HTTP 요청의 콘텐츠 길이 |
-| ClientRequestId |문자열 |이 요청을 고유하게 식별하는 식별자 |
-| StartTime |문자열 |서버가 요청을 받은 시간 |
-| EndTime |문자열 |서버가 응답을 전송한 시간 |
+| ClientRequestId |String |이 요청을 고유하게 식별하는 식별자 |
+| StartTime |String |서버가 요청을 받은 시간 |
+| EndTime |String |서버가 응답을 전송한 시간 |
 
 ### <a name="audit-logs"></a>감사 로그
 
@@ -179,13 +179,13 @@ ms.locfileid: "56959136"
 
 | 이름 | 형식 | 설명 |
 | --- | --- | --- |
-| 실시간 |문자열 |로그의 타임스탬프(UTC) |
-| ResourceId |문자열 |작업이 수행되는 리소스의 식별자 |
-| 카테고리 |문자열 |로그 범주 예: **Audit**. |
-| operationName |문자열 |기록된 작업의 이름 예를 들어 JobSubmitted |
-| resultType |문자열 |작업 상태(operationName)에 대한 하위 상태입니다. |
-| resultSignature |문자열 |작업 상태(operationName)에 추가 세부 정보입니다. |
-| ID |문자열 |작업을 요청한 사용자입니다. 예: susan@contoso.com |
+| time |String |로그의 타임스탬프(UTC) |
+| resourceId |String |작업이 수행되는 리소스의 식별자 |
+| category |String |로그 범주 예: **Audit**. |
+| operationName |String |기록된 작업의 이름 예를 들어 JobSubmitted |
+| resultType |String |작업 상태(operationName)에 대한 하위 상태입니다. |
+| resultSignature |String |작업 상태(operationName)에 추가 세부 정보입니다. |
+| ID |String |작업을 요청한 사용자입니다. 예: susan@contoso.com. |
 | properties |JSON |자세한 내용은 다음 섹션(감사 로그 속성 스키마)을 참조하세요. |
 
 > [!NOTE]
@@ -197,13 +197,13 @@ ms.locfileid: "56959136"
 
 | 이름 | 형식 | 설명 |
 | --- | --- | --- |
-| JobId |문자열 |작업에 할당된 ID |
-| JobName |문자열 |작업에 대해 제공된 이름 |
-| JobRunTime |문자열 |작업을 처리하는 데 사용된 런타임 |
-| SubmitTime |문자열 |작업이 제출된 시간(UTC) |
-| StartTime |문자열 |제출 후(UTC) 작업이 실행을 시작한 시간 |
-| EndTime |문자열 |작업이 종료된 시간 |
-| 병렬 처리 |문자열 |제출하는 동안 이 작업에 대해 요청된 Data Lake Analytics 단위의 수 |
+| JobId |String |작업에 할당된 ID |
+| JobName |String |작업에 대해 제공된 이름 |
+| JobRunTime |String |작업을 처리하는 데 사용된 런타임 |
+| SubmitTime |String |작업이 제출된 시간(UTC) |
+| StartTime |String |제출 후(UTC) 작업이 실행을 시작한 시간 |
+| EndTime |String |작업이 종료된 시간 |
+| 병렬 처리 |String |제출하는 동안 이 작업에 대해 요청된 Data Lake Analytics 단위의 수 |
 
 > [!NOTE]
 > **SubmitTime**, **StartTime**, **EndTime** 및 **Parallelism**은 작업에 대한 정보를 제공합니다. 해당 작업이 시작 또는 완료되는 경우 이러한 항목만 값을 포함합니다. 예를 들어 **operationName**이 **JobSubmitted** 값을 가진 후 **SubmitTime**은 값을 포함합니다.

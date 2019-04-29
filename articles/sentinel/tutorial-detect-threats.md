@@ -15,16 +15,16 @@ ms.workload: na
 ms.date: 03/20/2019
 ms.author: rkarlin
 ms.openlocfilehash: a0a16fbda662ee1d3718dbafc4231de67aab277e
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58400666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60614841"
 ---
 # <a name="tutorial-detect-threats-with-azure-sentinel-preview"></a>자습서: Azure Sentinel 미리 보기를 사용 하 여 위협 감지
 
 > [!IMPORTANT]
-> Azure Sentinel 현재 공개 미리 보기 중입니다.
+> Azure Sentinel은 현재 공개 미리 보기로 제공됩니다.
 > 이 미리 보기 버전은 서비스 수준 계약 없이 제공되며 프로덕션 워크로드에는 사용하지 않는 것이 좋습니다. 특정 기능이 지원되지 않거나 기능이 제한될 수 있습니다. 자세한 내용은 [Microsoft Azure Preview에 대한 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조하세요.
 
 한 후 [데이터 원본 연결](quickstart-onboard.md) Azure Sentinel 하려는 문제가 의심 스러운 경우 알림을 받을 합니다. 이 작업을 수행할 수 있도록, 만든 Azure Sentinel 있습니다 고급 할당할 수 있는 사례를 생성 하는 경고 규칙 및 비정상 및 위협 환경에 긴밀 하 게 조사를 사용 하 여 있습니다. 

@@ -11,11 +11,11 @@ ms.topic: article
 ms.assetid: f169c411-1bd7-4554-80c1-84351247bf94
 ms.date: 01/27/2017
 ms.openlocfilehash: 180d90450497b38f107f3601944385a003f50282
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57193520"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60845786"
 ---
 # <a name="create-schemas-for-tracking-as2-messages-and-mdns-in-integration-accounts-for-azure-logic-apps"></a>Azure Logic Apps 통합 계정에서 AS2 메시지 및 MDN을 추적하는 스키마 만들기
 
@@ -58,23 +58,23 @@ ms.locfileid: "57193520"
 
 | 자산 | Type | 설명 |
 | --- | --- | --- |
-| senderPartnerName | 문자열 | AS2 메시지 보낸 사람의 파트너 이름입니다. (선택 사항) |
-| receiverPartnerName | 문자열 | AS2 메시지 받는 사람의 파트너 이름입니다. (선택 사항) |
-| as2To | 문자열 | AS2 메시지의 헤더에서 AS2 메시지 받는 사람의 이름입니다. 필수 사항입니다. |
-| as2From | 문자열 | AS2 메시지의 헤더에서 AS2 메시지 보낸 사람의 이름입니다. 필수 사항입니다. |
-| agreementName | 문자열 | 메시지가 확인되는 AS2 규약의 이름입니다. 선택 사항입니다. |
-| direction | 문자열 | 메시지 흐름, 수신 또는 송신 방향입니다. 필수 사항입니다. |
-| messageId | 문자열 | AS2 메시지의 헤더에서 AS2 메시지 ID입니다. 선택 사항입니다. |
-| dispositionType |문자열 | MDN(메시지 처리 알림) 처리 유형 값입니다. (선택 사항) |
-| fileName | 문자열 | AS2 메시지의 헤더에서 파일 이름입니다. (선택 사항) |
-| isMessageFailed |BOOLEAN | AS2 메시지의 실패 여부입니다. 필수 사항입니다. |
-| isMessageSigned | BOOLEAN | AS2 메시지의 서명 여부입니다. 필수 사항입니다. |
-| isMessageEncrypted | BOOLEAN | AS2 메시지의 암호화 여부입니다. 필수 사항입니다. |
-| isMessageCompressed |BOOLEAN | AS2 메시지의 압축 여부입니다. 필수 사항입니다. |
-| correlationMessageId | 문자열 | MDN과 메시지를 상호 연관 짓기 위한 AS2 메시지 ID입니다. (선택 사항) |
+| senderPartnerName | String | AS2 메시지 보낸 사람의 파트너 이름입니다. (선택 사항) |
+| receiverPartnerName | String | AS2 메시지 받는 사람의 파트너 이름입니다. (선택 사항) |
+| as2To | String | AS2 메시지의 헤더에서 AS2 메시지 받는 사람의 이름입니다. 필수 사항입니다. |
+| as2From | String | AS2 메시지의 헤더에서 AS2 메시지 보낸 사람의 이름입니다. 필수 사항입니다. |
+| agreementName | String | 메시지가 확인되는 AS2 규약의 이름입니다. 선택 사항입니다. |
+| direction | String | 메시지 흐름, 수신 또는 송신 방향입니다. 필수 사항입니다. |
+| messageId | String | AS2 메시지의 헤더에서 AS2 메시지 ID입니다. 선택 사항입니다. |
+| dispositionType |String | MDN(메시지 처리 알림) 처리 유형 값입니다. (선택 사항) |
+| fileName | String | AS2 메시지의 헤더에서 파일 이름입니다. (선택 사항) |
+| isMessageFailed |Boolean | AS2 메시지의 실패 여부입니다. 필수 사항입니다. |
+| isMessageSigned | Boolean | AS2 메시지의 서명 여부입니다. 필수 사항입니다. |
+| isMessageEncrypted | Boolean | AS2 메시지의 암호화 여부입니다. 필수 사항입니다. |
+| isMessageCompressed |Boolean | AS2 메시지의 압축 여부입니다. 필수 사항입니다. |
+| correlationMessageId | String | MDN과 메시지를 상호 연관 짓기 위한 AS2 메시지 ID입니다. (선택 사항) |
 | incomingHeaders |JToken의 사전 | 들어오는 AS2 메시지 헤더 세부 정보입니다. (선택 사항) |
 | outgoingHeaders |JToken의 사전 | 보내는 AS2 메시지 헤더 세부 정보입니다. (선택 사항) |
-| isNrrEnabled | BOOLEAN | 값을 알 수 없는 경우 기본값을 사용합니다. 필수 사항입니다. |
+| isNrrEnabled | Boolean | 값을 알 수 없는 경우 기본값을 사용합니다. 필수 사항입니다. |
 | isMdnExpected | Boolean | 값을 알 수 없는 경우 기본값을 사용합니다. 필수 사항입니다. |
 | mdnType | 열거형 | 허용되는 값은 **NotConfigured**, **Sync** 또는 **Async**입니다. 필수 사항입니다. |
 ||||
@@ -111,21 +111,21 @@ ms.locfileid: "57193520"
 
 | 자산 | Type | 설명 |
 | --- | --- | --- |
-| senderPartnerName | 문자열 | AS2 메시지 보낸 사람의 파트너 이름입니다. (선택 사항) |
-| receiverPartnerName | 문자열 | AS2 메시지 받는 사람의 파트너 이름입니다. (선택 사항) |
-| as2To | 문자열 | AS2 메시지를 받는 파트너 이름입니다. 필수 사항입니다. |
-| as2From | 문자열 | AS2 메시지를 보내는 파트너 이름입니다. 필수 사항입니다. |
-| agreementName | 문자열 | 메시지가 확인되는 AS2 규약의 이름입니다. 선택 사항입니다. |
-| direction |문자열 | 메시지 흐름, 수신 또는 송신 방향입니다. 필수 사항입니다. |
-| messageId | 문자열 | AS2 메시지 ID입니다. (선택 사항) |
-| OriginalMessageId |문자열 | AS2 원래 메시지 ID입니다. (선택 사항) |
-| dispositionType | 문자열 | MDN 처리 유형 값입니다. (선택 사항) |
-| isMessageFailed |BOOLEAN | AS2 메시지의 실패 여부입니다. 필수 사항입니다. |
-| isMessageSigned |BOOLEAN | AS2 메시지의 서명 여부입니다. 필수 사항입니다. |
-| isNrrEnabled | BOOLEAN | 값을 알 수 없는 경우 기본값을 사용합니다. 필수 사항입니다. |
+| senderPartnerName | String | AS2 메시지 보낸 사람의 파트너 이름입니다. (선택 사항) |
+| receiverPartnerName | String | AS2 메시지 받는 사람의 파트너 이름입니다. (선택 사항) |
+| as2To | String | AS2 메시지를 받는 파트너 이름입니다. 필수 사항입니다. |
+| as2From | String | AS2 메시지를 보내는 파트너 이름입니다. 필수 사항입니다. |
+| agreementName | String | 메시지가 확인되는 AS2 규약의 이름입니다. 선택 사항입니다. |
+| direction |String | 메시지 흐름, 수신 또는 송신 방향입니다. 필수 사항입니다. |
+| messageId | String | AS2 메시지 ID입니다. (선택 사항) |
+| OriginalMessageId |String | AS2 원래 메시지 ID입니다. (선택 사항) |
+| dispositionType | String | MDN 처리 유형 값입니다. (선택 사항) |
+| isMessageFailed |Boolean | AS2 메시지의 실패 여부입니다. 필수 사항입니다. |
+| isMessageSigned |Boolean | AS2 메시지의 서명 여부입니다. 필수 사항입니다. |
+| isNrrEnabled | Boolean | 값을 알 수 없는 경우 기본값을 사용합니다. 필수 사항입니다. |
 | statusCode | 열거형 | 허용되는 값은 **Accepted**, **Rejected** 또는 **AcceptedWithErrors**입니다. 필수 사항입니다. |
 | micVerificationStatus | 열거형 | 허용되는 값은 **NotApplicable**, **Succeeded** 또는 **Failed**입니다. 필수 사항입니다. |
-| correlationMessageId | 문자열 | 상관 관계 ID입니다. 원래 메시지 ID(MDN이 구성된 메시지의 메시지 ID)입니다. (선택 사항) |
+| correlationMessageId | String | 상관 관계 ID입니다. 원래 메시지 ID(MDN이 구성된 메시지의 메시지 ID)입니다. (선택 사항) |
 | incomingHeaders | JToken의 사전 | 들어오는 메시지 헤더 세부 정보를 나타냅니다. (선택 사항) |
 | outgoingHeaders |JToken의 사전 | 보내는 메시지 헤더 세부 정보를 나타냅니다. (선택 사항) |
 ||||

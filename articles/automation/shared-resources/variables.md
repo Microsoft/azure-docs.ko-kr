@@ -10,11 +10,11 @@ ms.date: 04/01/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: fc26c0357dcb071c4c75e8684fe47144a04177e4
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58807045"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60880267"
 ---
 # <a name="variable-assets-in-azure-automation"></a>Azure Automation의 변수 자산
 
@@ -41,10 +41,10 @@ Azure Portal에서 변수를 만들 때 드롭다운 목록에서 해당 데이�
 
 다음은 Automation에서 사용할 수 있는 변수 형식의 목록입니다.
 
-* 문자열
+* String
 * 정수 
 * DateTime
-* BOOLEAN
+* Boolean
 * Null
 
 ## <a name="azurerm-powershell-cmdlets"></a>AzureRM PowerShell cmdlet

@@ -2,20 +2,21 @@
 title: SQL Data Warehouse에 솔루션 마이그레이션| Microsoft Docs
 description: Azure SQL Data Warehouse 플랫폼에 솔루션을 가져오기 위한 마이그레이션 지침
 services: sql-data-warehouse
-author: jrowlandjones
-manager: craigg
+author: WenJason
+manager: digimobile
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: implement
-ms.date: 04/17/2018
-ms.author: jrj
+origin.date: 04/17/2018
+ms.date: 03/25/2019
+ms.author: v-jay
 ms.reviewer: igorstan
 ms.openlocfilehash: 04c921282d3591e7326d326c230bf72e7f5c1812
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57313024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60776223"
 ---
 # <a name="migrate-your-solution-to-azure-sql-data-warehouse"></a>Azure SQL Data Warehouse에 솔루션 마이그레이션
 Azure SQL Data Warehouse로 기존 데이터베이스 솔루션을 마이그레이션하는 데 관련된 정보를 참조하세요. 
@@ -36,7 +37,6 @@ Azure SQL Data Warehouse로 기존 데이터베이스 솔루션을 마이그레�
 - 행 단위 처리 요구 사항
 - 호환되지 않는 형식(JSON, XML)
 
-
 ## <a name="plan-the-migration"></a>마이그레이션 계획
 
 SQL Data Warehouse에 기존 솔루션을 마이그레이션하기로 결정했다면 시작하기 전에 마이그레이션을 계획해야 합니다. 
@@ -51,17 +51,6 @@ SQL Data Warehouse에 기존 솔루션을 마이그레이션하기로 결정했�
 -  [코드 마이그레이션](sql-data-warehouse-migrate-code.md)
 -  [데이터 마이그레이션](sql-data-warehouse-migrate-data.md) 
 
-<!--
-## Perform the migration
-
-
-## Deploy the solution
-
-
-## Validate the migration
-
--->
-
 ## <a name="next-steps"></a>다음 단계
 CAT(고객 자문 팀)에서 블로그를 통해 게시하는 몇 가지 유용한 SQL Data Warehouse 관련 지침도 확인할 수 있습니다.  [Azure SQL Data Warehouse로의 데이터 마이그레이션 실습][Migrating data to Azure SQL Data Warehouse in practice] 문서에서 마이그레이션 관련 추가 지침을 확인해 보세요.
 
@@ -73,3 +62,5 @@ CAT(고객 자문 팀)에서 블로그를 통해 게시하는 몇 가지 유용�
 
 <!--Other Web references-->
 [Migrating data to Azure SQL Data Warehouse in practice]: https://blogs.msdn.microsoft.com/sqlcat/20../../migrating-data-to-azure-sql-data-warehouse-in-practice/
+
+<!--Update_Description: update meta properties, wording update-->

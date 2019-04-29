@@ -2,19 +2,20 @@
 title: Azure Disk Storage에서 애플리케이션 벤치마킹 - 관리형 디스크
 description: Azure에서 애플리케이션을 벤치마킹하는 프로세스를 알아봅니다.
 services: virtual-machines-linux,storage
-author: roygara
-ms.author: rogarana
-ms.date: 01/11/2019
+author: rockboyfor
+ms.author: v-yeche
+origin.date: 01/11/2019
+ms.date: 04/01/2019
 ms.topic: article
 ms.service: virtual-machines-linux
 ms.tgt_pltfrm: linux
 ms.subservice: disks
 ms.openlocfilehash: 21ed4e9a6b1da10d0ae4c276612459506e13d94f
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56331804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61474371"
 ---
 # <a name="benchmarking-a-disk"></a>디스크 벤치마킹
 

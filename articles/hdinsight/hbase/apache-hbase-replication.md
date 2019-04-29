@@ -1,7 +1,6 @@
 ---
 title: Azure 가상 네트워크에서 HBase 클러스터 복제 설정 - Azure HDInsight
 description: 부하 분산, 고가용성, 무중단 마이그레이션/업데이트 및 재해 복구를 위해 한 HDInsight 버전에서 다른 HDInsight 버전으로 HBase 복제를 설정하는 방법을 알아봅니다.
-services: hdinsight,virtual-network
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -9,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/15/2018
-ms.openlocfilehash: d50c3f4452dd00b5656b6cde5e671caebcb4bb7c
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: 95a1055df283765b24322f6f8efe3efcb9b19022
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58112537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62123085"
 ---
 # <a name="set-up-apache-hbase-cluster-replication-in-azure-virtual-networks"></a>Azure Virtual Network에서 Apache HBase 클러스터 복제 설정
 
@@ -69,7 +68,7 @@ Azure에서 한 가상 네트워크 내에 또는 두 가상 네트워크 간에
 
 | 자산 | 값 |
 |----------|-------|
-| 위치 | 미국 서부 |
+| Location | 미국 서부 |
 | VNet 이름 | &lt;ClusterNamePrevix>-vnet1 |
 | 주소 공간 접두사 | 10.1.0.0/16 |
 | 서브넷 이름 | 서브넷 1 |
@@ -86,7 +85,7 @@ Azure에서 한 가상 네트워크 내에 또는 두 가상 네트워크 간에
 
 | 자산 | 값 |
 |----------|-------|
-| 위치 | 미국 동부 |
+| Location | 미국 동부 |
 | VNet 이름 | &lt;ClusterNamePrevix>-vnet2 |
 | 주소 공간 접두사 | 10.2.0.0/16 |
 | 서브넷 이름 | 서브넷 1 |

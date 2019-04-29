@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: rimman
 ms.openlocfilehash: 997a80ed1a8089c5255292f23bc5dacf8a6cb0e7
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55452629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61059676"
 ---
 # <a name="pricing-model-in-azure-cosmos-db"></a>Azure Cosmos DB의 가격 책정 모델 
 

@@ -13,11 +13,11 @@ ms.workload: infrastructure-services
 ms.date: 02/11/2016
 ms.author: genli
 ms.openlocfilehash: 9e7a5772dd1e10abf43eddf0548833d625ecfb24
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58652170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60742125"
 ---
 # <a name="ip-address-types-and-allocation-methods-classic-in-azure"></a>Azure의 IP 주소 유형 및 할당 방법
 다른 Azure 리소스, 온-프레미스 네트워크 및 인터넷과 통신하기 위해 Azure 리소스에 IP 주소를 할당할 수 있습니다. Azure에서 사용할 수 있는 IP 주소는 공용 및 개인의 두 종류가 있습니다.
@@ -162,7 +162,7 @@ Azure에서 [네트워킹에 대한 제한](../azure-subscription-service-limits
 ## <a name="differences-between-resource-manager-and-classic-deployments"></a>리소스 관리자와 클래식 배포 간 차이점
 아래는 리소스 관리자와 클래식 배포 모델의 IP 주소 기능을 비교한 것입니다.
 
-|  | 리소스 | 클래식 | 리소스 관리자 |
+|  | 리소스 | 클래식 | Resource Manager |
 | --- | --- | --- | --- |
 | **공용 IP 주소** |***VM*** |ILPIP(동적 전용)로 참조 |공용 IP(동적 또는 정적)로 참조 |
 |  ||IaaS VM 또는 PaaS 역할 인스턴스에 할당 |VM의 NIC에 연결 |

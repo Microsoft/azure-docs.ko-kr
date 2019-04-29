@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: pbutlerm
 ms.openlocfilehash: 953c53b4ef2244b3444abb745f52e125306468f2
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56807119"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60725530"
 ---
 # <a name="update-a-power-bi-app-offer"></a>Power BI 앱 제품 업데이트
 

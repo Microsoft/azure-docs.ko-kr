@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 11/15/2018
 ms.author: pbutlerm
 ms.openlocfilehash: c73c846db4b22d8c19ccdaa2ec99a3fe7fdadf78
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54076708"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60777239"
 ---
 # <a name="manage-azure-marketplace-and-appsource-publisher-profile"></a>'Azure Marketplace' 및 'AppSource' 게시자 프로필 관리
 

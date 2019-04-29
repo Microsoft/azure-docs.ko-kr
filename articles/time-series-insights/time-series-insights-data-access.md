@@ -11,24 +11,27 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 11/26/2018
 ms.custom: seodec18
-ms.openlocfilehash: 9aea7a9c9dd96bf30ebb3def9354df9e4bd30114
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
+ms.openlocfilehash: dd4c5e1652eb4dbff66591aa4bbe74e51be3e6c0
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53558525"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63759557"
 ---
 # <a name="grant-data-access-to-an-environment"></a>환경에 대한 데이터 액세스 권한 부여
 
 이 문서에서는 두 가지 유형의 Azure Time Series Insights 미리 보기 액세스 정책에 대해 설명합니다.
 
-## <a name="grant-data-access"></a>데이터 액세스 권한 부여
-
-다음 단계에 따라 사용자 계정에 대해 데이터 액세스 권한을 부여합니다.
+## <a name="sign-in-to-tsi"></a>TSI에 로그인
 
 1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
 1. Time Series Insights 환경을 찾습니다. **검색** 상자에 `Time Series`를 입력합니다. 검색 결과에서 **시계열 환경**을 선택합니다.
 1. 목록에서 Time Series Insights 환경을 선택합니다.
+
+## <a name="grant-data-access"></a>데이터 액세스 권한 부여
+
+다음 단계에 따라 사용자 계정에 대해 데이터 액세스 권한을 부여합니다.
+
 1. **데이터 액세스 정책**을 선택한 다음, **+ 추가**를 선택합니다.
 
     ![Data-access-one][1]
@@ -55,15 +58,12 @@ ms.locfileid: "53558525"
 
     ![Data-access-five][5]
 
-## <a name="provide-guest-access-to-a-user-from-another-azure-active-directory-tenant"></a>다른 Azure Active Directory 테넌트에서 사용자에게 게스트 액세스 제공
+## <a name="provide-guest-access-from-another-aad-tenant"></a>다른 AAD 테 넌 트에서 게스트 액세스를 제공 합니다.
 
 `Guest`는 관리 역할이 아니라 특정 테넌트에서 다른 테넌트로 초대된 계정에 사용되는 용어입니다. 게스트 계정을 테넌트의 디렉터리에 초대한 후에는 다른 계정과 동일한 액세스 제어가 적용될 수 있습니다. 액세스 제어(IAM) 블레이드를 사용하여 Time Series Insights 환경에 대한 관리 액세스 권한을 부여할 수 있습니다. 또는 데이터 액세스 정책 블레이드를 통해 환경의 데이터에 대한 액세스 권한을 부여할 수 있습니다. Azure AD(Azure Active Directory) 테넌트 게스트 액세스에 대한 자세한 내용은 [Azure Portal에서 Azure Active Directory B2B 공동 작업 사용자 추가](https://docs.microsoft.com/azure/active-directory/b2b/add-users-administrator)를 참조하세요.
 
 다른 테넌트의 Azure AD 사용자에게 Time Series Insights 환경에 대한 게스트 액세스 권한을 부여하려면 다음 단계를 수행합니다.
 
-1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
-1. Time Series Insights 환경을 찾습니다. **검색** 창에 **시계열**을 입력합니다. 검색 결과에서 **시계열 환경**을 선택합니다.
-1. 목록에서 Time Series Insights 환경을 선택합니다.
 1. **데이터 액세스 정책**을 선택한 다음, **+ 초대**를 선택합니다.
 
     ![Data-access-six][6]
@@ -112,12 +112,14 @@ ms.locfileid: "53558525"
 
     ![Data-access-fifteen][15]
 
-게스트 사용자가 테넌트를 선택하면 액세스 권한이 부여된 Time Series Insights 환경이 표시됩니다. 이제 8단계에서 제공된 역할과 연결된 모든 기능을 사용할 수 있습니다.
+게스트 사용자가 테넌트를 선택하면 액세스 권한이 부여된 Time Series Insights 환경이 표시됩니다. 이제 사용자가 제공한에 사용 하 여 역할에 연결 된 모든 기능을 갖습니다 **5 단계**합니다.
 
 ## <a name="next-steps"></a>다음 단계
 
 * Time Series Insights 환경에 [Azure Event Hubs 이벤트 원본을 추가하는 방법](./time-series-insights-how-to-add-an-event-source-eventhub.md)을 알아봅니다.
+
 * [이벤트 원본으로 이벤트를 전송](./time-series-insights-send-events.md)합니다.
+
 * [Time Series Insights 미리 보기 탐색기에서 사용자 환경을 봅니다](./time-series-insights-update-explorer.md).
 
 <!-- Images -->

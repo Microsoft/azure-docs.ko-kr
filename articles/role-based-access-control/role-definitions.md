@@ -16,11 +16,11 @@ ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
 ms.openlocfilehash: 7855c2bd45ba35ecb0ede5c60268e6446f37ed5a
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58804533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62121829"
 ---
 # <a name="understand-role-definitions-for-azure-resources"></a>Azure 리소스에 대한 역할 정의 이해
 
@@ -157,7 +157,7 @@ Bob의 권한은 제한만 `Actions` 하 고 `DataActions` 에 지정 된 된 [S
 
 데이터 작업을 보고 작업하려면 도구 또는 SDK의 올바른 버전이 있어야 합니다.
 
-| 도구  | 버전  |
+| 도구  | Version  |
 |---------|---------|
 | [Azure PowerShell](/powershell/azure/install-az-ps) | 1.1.0 이상 |
 | [Azure CLI](/cli/azure/install-azure-cli) | 2.0.30 이상 |

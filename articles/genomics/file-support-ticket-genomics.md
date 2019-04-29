@@ -1,5 +1,5 @@
 ---
-title: Microsoft Genomics:지원 요청을 파일링하는 방법 | Microsoft Docs
+title: 'Microsoft Genomics: 지원 요청을 제출 하는 방법 | Microsoft Docs'
 titleSuffix: Azure
 description: 이 개요에서는 지원 요청을 파일링하여 Microsoft Genomics에 문의하는 방법을 설명합니다. 이 기능은 문제 해결 가이드 또는 FAQ를 사용하여 문제를 해결할 수 없는 경우에 유용할 수 있습니다.
 keywords: 문제 해결, 오류, 디버깅, 지원
@@ -10,12 +10,12 @@ ms.author: grhuynh
 ms.service: genomics
 ms.topic: article
 ms.date: 05/23/2018
-ms.openlocfilehash: d5e33f5b22012b297cdceacbe38425934f0f65b4
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
-ms.translationtype: HT
+ms.openlocfilehash: ed37d42d8ec1692cc5edb62b68536803f47205f5
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45734372"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60721292"
 ---
 # <a name="how-to-contact-microsoft-genomics-for-support"></a>지원을 위해 Microsoft Genomics에 문의하는 방법
 이 개요에서는 지원 요청을 파일링하여 Microsoft Genomics에 문의하는 방법을 설명합니다. 이 기능은 [문제 해결 가이드](troubleshooting-guide-genomics.md) 또는 [FAQ](frequently-asked-questions-genomics.md)를 사용하여 문제를 해결할 수 없는 경우에 유용할 수 있습니다. 

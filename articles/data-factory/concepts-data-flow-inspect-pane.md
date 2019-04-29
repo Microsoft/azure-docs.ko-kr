@@ -8,11 +8,11 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.openlocfilehash: 47cde50e0874f0f73523925b6d1b2f8ee4abaea9
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56727828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61284109"
 ---
 # <a name="azure-data-factory-mapping-data-flow-transformation-inspect-tab"></a>Azure Data Factory 데이터 흐름 매핑 변환 검사 탭
 

@@ -16,11 +16,11 @@ ms.date: 07/30/2018
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: bb6ab29f02282a394e3f93e41682ceaec5208b75
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59357623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60853282"
 ---
 # <a name="azure-app-service-static-access-restrictions"></a>Azure App Service에 정적 액세스 제한 #
 

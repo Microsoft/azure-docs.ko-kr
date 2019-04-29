@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 06/28/2018
 ms.author: terrylan
 ms.openlocfilehash: cd2ad16f910f5d2b3b801c8d54e9df7660751462
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56103951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62121659"
 ---
 # <a name="azure-sql-database-security-features"></a>Azure SQL Database 보안 기능    
 Azure SQL Database는 Azure에서 관계형 데이터베이스 서비스를 제공합니다. 고객 데이터를 보호하고 고객이 관계형 데이터베이스 서비스에서 기대하는 강력한 보안 기능을 제공하기 위해 SQL Database에는 자체의 보안 기능 집합이 있습니다. 이러한 기능은 Azure에서 상속된 제어를 기반으로 합니다.

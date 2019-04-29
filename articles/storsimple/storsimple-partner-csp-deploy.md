@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
 ms.openlocfilehash: 0dac86a696599a391cb243ad11e16931e00b8921
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51238933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60629991"
 ---
 # <a name="deploy-storsimple-virtual-array-for-cloud-solution-provider-program"></a>클라우드 솔루션 공급자 프로그램용 StorSimple 가상 배열 배포
 
@@ -44,7 +44,7 @@ ms.locfileid: "51238933"
 
      ![파트너 센터의 대시보드](./media/storsimple-partner-csp-deploy/image1.png)
                               
-2. 왼쪽 창에서 **고객**을 클릭합니다. 오른쪽 창에서 **고객 추가**를 클릭합니다. 고객의 세부 정보를 입력합니다. **다음: 구독**을 클릭하여 고객 구독을 만듭니다.
+2. 왼쪽 창에서 **고객**을 클릭합니다. 오른쪽 창에서 **고객 추가**를 클릭합니다. 고객의 세부 정보를 입력합니다. **다음: 구독** 고객 구독을 만듭니다.
 
     ![고객 추가](./media/storsimple-partner-csp-deploy/image2.png)
 
@@ -103,5 +103,5 @@ ms.locfileid: "51238933"
 
 ## <a name="next-steps"></a>다음 단계
 
-- CSP의 StorSimple에 대한 추가 질문이 있으면 [CSP의 StorSimple: 질문과 대답](storsimple-partner-csp-faq.md)으로 이동합니다.
+- CSP에서 StorSimple에 대 한 추가 질문을 해야 하는 경우 이동 [CSP의 StorSimple. 질문과 대답](storsimple-partner-csp-faq.md)을 참조하세요.
 - StorSimple을 배포할 준비가 되면 [CSP에서 StorSimple 배포](storsimple-partner-csp-deploy.md)로 이동합니다.

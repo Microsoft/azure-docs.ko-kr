@@ -3,8 +3,8 @@ title: Azure 가상 네트워크 계획 | Microsoft Docs
 description: 격리, 연결 및 위치 요구 사항을 기반으로 가상 네트워크를 계획하는 방법을 알아봅니다.
 services: virtual-network
 documentationcenter: na
-author: jimdial
-manager: jeconnoc
+author: KumudD
+manager: twooley
 editor: ''
 ms.assetid: 3a4a9aea-7608-4d2e-bb3c-40de2e537200
 ms.service: virtual-network
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/16/2018
-ms.author: jdial
+ms.author: kumud
 ms.openlocfilehash: acd7a88acb31b9d3bd3ba714387561e91b3524a6
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56339519"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61034742"
 ---
 # <a name="plan-virtual-networks"></a>가상 네트워크 계획
 
@@ -63,7 +63,7 @@ ms.locfileid: "56339519"
 - 각 서브넷에는 가상 네트워크의 주소 공간 내에 CIDR 형식으로 지정된 고유한 주소 범위가 있어야 합니다. 주소 범위는 가상 네트워크의 다른 서브넷과 겹칠 수 없습니다.
 - 일부 Azure 서비스 리소스를 가상 네트워크에 배포하려는 경우 고유한 서브넷을 만들거나 필요할 수 있으므로 이를 위해 할당되지 않은 충분한 공간이 있어야 합니다. Azure 서비스에서 자체 서브넷을 만드는지 여부를 확인하려면 [가상 네트워크에 배포할 수 있는 각 Azure 서비스](virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network)에 대한 정보를 참조하세요. 예를 들어 Azure VPN 게이트웨이를 사용하여 온-프레미스 네트워크에 가상 네트워크를 연결하는 경우 가상 네트워크에 해당 게이트웨이 전용 서브넷이 있어야 합니다. 자세한 내용은 [게이트웨이 서브넷](../vpn-gateway/vpn-gateway-about-vpn-gateway-settings.md?toc=%2fazure%2fvirtual-network%2ftoc.json#gwsub)을 참조하세요.
 - 기본적으로 Azure에서는 가상 네트워크 내의 모든 서브넷 간에 네트워크 트래픽을 라우팅합니다. 서브넷 간의 Azure 라우팅을 방지하거나 네트워크 가상 어플라이언스를 통해 서브넷 간에 트래픽을 라우팅하도록 Azure의 기본 라우팅을 재정의할 수 있습니다. NVA(네트워크 가상 어플라이언스)를 통해 동일한 가상 네트워크 흐름에서 리소스 간에 이러한 트래픽이 필요한 경우 서로 다른 서브넷에 리소스를 배포합니다. 자세한 내용을 [보안](#security)을 참조하세요.
-- Azure Storage 계정 또는 Azure SQL Database와 같은 Azure 리소스에 대한 액세스를 가상 네트워크 서비스 엔드포인트가 있는 특정 서브넷으로 제한할 수 있습니다. 또한 인터넷에서 리소스에 대한 액세스를 거부할 수 있습니다. 여러 서브넷을 만들고 일부 서브넷의 서비스 엔드포인트만 사용하도록 설정할 수 있습니다. [서비스 엔드포인트](virtual-network-service-endpoints-overview.md) 및 이를 사용하도록 설정할 수 있는 Azure 리소스에 대해 자세히 알아보세요.
+- Azure Storage 계정 또는 Azure SQL 데이터베이스와 같은 Azure 리소스에 대한 액세스를 가상 네트워크 서비스 엔드포인트가 있는 특정 서브넷으로 제한할 수 있습니다. 또한 인터넷에서 리소스에 대한 액세스를 거부할 수 있습니다. 여러 서브넷을 만들고 일부 서브넷의 서비스 엔드포인트만 사용하도록 설정할 수 있습니다. [서비스 엔드포인트](virtual-network-service-endpoints-overview.md) 및 이를 사용하도록 설정할 수 있는 Azure 리소스에 대해 자세히 알아보세요.
 - 가상 네트워크의 각 서브넷에 하나의 네트워크 보안 그룹을 연결하거나 연결하지 않을 수 있습니다. 각 서브넷에 동일하거나 다른 네트워크 보안 그룹을 연결할 수 있습니다. 각 네트워크 보안 그룹에는 원본과 대상 간의 트래픽을 허용하거나 거부하는 규칙이 있습니다. [네트워크 보안 그룹](#traffic-filtering)에 대해 자세히 알아보세요.
 
 ## <a name="security"></a>보안

@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 06/04/2018
 ms.author: sngun
 ms.openlocfilehash: 06fa98ae4acc2252d8866858ed0e2194ed84ff79
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54034389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60928293"
 ---
 # <a name="retiring-the-s1-s2-and-s3-performance-levels"></a>S1, S2 및 S3 성능 수준 사용 중지
 
@@ -47,7 +47,7 @@ S1, S2 및 S3 성능 수준은 표준 Azure Cosmos DB 제품이 제공하는 유
 |---|---|---|---|---|---|
 |최대 처리량|Unlimited|10,000RU/s|250RU/s|1,000RU/s|2,500RU/s|
 |최소 처리량|2,500RU/s|400RU/s|250RU/s|1,000RU/s|2,500RU/s|
-|최대 저장소|Unlimited|10 GB|10 GB|10 GB|10 GB|
+|최대 저장소|Unlimited|10 GB|10GB|10GB|10 GB|
 |가격(월별)|처리량: $6/100RU/s<br><br>저장소: $0.25/GB|처리량: $6/100RU/s<br><br>저장소: $0.25/GB|$25(미화)|$50(미화)|$100(미화)|
 
 EA 고객입니까? 그렇다면 [EA 고객에게 미치는 영향은?](#ea-customer)을 참조하세요.

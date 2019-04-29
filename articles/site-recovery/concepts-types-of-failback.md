@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: raynew
 ms.openlocfilehash: 6f178ef1a0aec7f742bce4c2570962b995876026
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58316272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62124121"
 ---
 # <a name="failback-after-disaster-recovery-of-vmware-vms"></a>VMware Vm의 재해 복구 후 장애 복구
 

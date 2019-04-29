@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 2/23/2018
 ms.author: atsenthi
 ms.openlocfilehash: 750970233cbcb14d901dbb5fa94f649f6ff8ae6c
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58666276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60621454"
 ---
 # <a name="model-an-application-in-service-fabric"></a>서비스 패브릭에서 애플리케이션 모델링
 이 문서에서는 Azure Service Fabric 애플리케이션 모델의 개요 및 매니페스트 파일을 통해 애플리케이션과 서비스를 정의하는 방법에 대해 설명합니다.

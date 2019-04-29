@@ -6,14 +6,14 @@ author: sachdevaswati
 manager: vijayts
 ms.service: backup
 ms.topic: conceptual
-ms.date: 03/19/2019
+ms.date: 03/23/2019
 ms.author: sachdevaswati
-ms.openlocfilehash: 5e4bd3647b557b260e65e3fb1ce297892f5d7d78
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
-ms.translationtype: MT
+ms.openlocfilehash: 08eff24dc42f594424d109b82933b01b5c1be454
+ms.sourcegitcommit: a95dcd3363d451bfbfea7ec1de6813cad86a36bb
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59578827"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62733903"
 ---
 # <a name="back-up-sql-server-databases-in-azure-vms"></a>Azure VM의 SQL Server 데이터베이스 백업
 
@@ -40,12 +40,12 @@ SQL Server 데이터베이스를 백업하기 전에 다음 조건을 확인하�
 
 ### <a name="establish-network-connectivity"></a>네트워크 연결 설정
 
-모든 작업에서 SQL Server VM 가상 머신에는 Azure 공용 IP 주소에 대한 연결이 필요합니다. VM 작업 (데이터베이스 검색, 백업을 구성, 백업 일정, 복원 복구 지점 등) 공용 IP 주소에 연결할 수 없는 실패 합니다. 다음 옵션 중 하나를 사용하여 연결을 설정합니다.
+모든 작업에서 SQL Server VM 가상 머신에는 Azure 공용 IP 주소에 대한 연결이 필요합니다. 공용 IP 주소에 연결할 수 없는 VM 작업 (데이터베이스 검색 백업을 구성, 백업 일정, 복구 지점 복원 및 등)이 실패 합니다. 다음 옵션 중 하나를 사용하여 연결을 설정합니다.
 
 - **Azure 데이터 센터 IP 범위 허용**: 다운로드에서 [IP 범위](https://www.microsoft.com/download/details.aspx?id=41653)를 허용합니다. 네트워크 보안 그룹 (NSG)에 액세스 하려면 사용 합니다 **Set-azurenetworksecurityrule** cmdlet.
 - **트래픽을 라우팅하는 HTTP 프록시 서버 배포**: Azure VM에서 SQL Server 데이터베이스를 백업하는 경우 VM의 백업 확장에서 HTTPS API를 사용하여 관리 명령을 Azure Backup에 보내고 데이터를 Azure Storage에 보냅니다. 백업 확장은 인증에 Azure AD(Azure Active Directory)도 사용합니다. HTTP 프록시를 통해 이 세 가지 서비스에 대한 백업 확장 트래픽을 라우팅합니다. 확장의 경우 공용 인터넷에 액세스 하도록 구성 된 유일한 구성 요소
 
-각 옵션마다 장단점이 있습니다.
+각 옵션에 장점 및 단점
 
 **옵션** | **장점** | **단점**
 --- | --- | ---
@@ -60,11 +60,11 @@ Azure Backup은 SQL Server 데이터베이스에 대한 백업을 구성할 때 
 - 가상 머신에서 데이터베이스를 검색하기 위해 Azure Backup은 **NT SERVICE\AzureWLBackupPluginSvc** 계정을 만듭니다. 이 계정은 백업 및 복원에 사용되며 SQL sysadmin 권한이 필요합니다.
 - Azure Backup은 데이터베이스 검색/조회에서 **NT AUTHORITY\SYSTEM** 계정을 활용하므로 이 계정은 SQL에서 공개적으로 로그인해야 합니다.
 
-Azure Marketplace에서 SQL Server VM을 만들지 않은 경우 **UserErrorSQLNoSysadminMembership** 오류가 발생할 수 있습니다. 이 경우 [다음 지침을 따르세요](backup-azure-sql-database.md#fix-sql-sysadmin-permissions).
+Azure Marketplace에서 SQL Server VM을 만들지 않은 경우 **UserErrorSQLNoSysadminMembership** 오류가 발생할 수 있습니다. 이 문제가 발생 하면 [이 지침에 따라](backup-azure-sql-database.md#fix-sql-sysadmin-permissions)합니다.
 
 ### <a name="verify-database-naming-guidelines-for-azure-backup"></a>Azure Backup의 데이터베이스 명명 지침 확인
 
-데이터베이스 이름에 다음 문자를 사용하지 않습니다.
+방지는 아래 데이터베이스 이름에 대 한 합니다.
 
   * 선행/후행 공백
   * 후행 ‘!’
@@ -106,7 +106,7 @@ VM에서 실행되는 데이터베이스를 검색합니다.
 
     ![배포 성공 메시지](./media/backup-azure-sql-database/notifications-db-discovered.png)
 
-8. Azure Backup은 VM의 모든 SQL Server 데이터베이스를 검색합니다. 검색하는 동안 백그라운드에서 수행되는 작업은 다음과 같습니다.
+8. Azure Backup은 VM의 모든 SQL Server 데이터베이스를 검색합니다. 검색 하는 동안는 아래 백그라운드에서 발생 합니다.
 
     - Azure Backup에서 워크로드 백업용 자격 증명 모음에 VM을 등록합니다. 등록된 VM의 모든 데이터베이스는 이 자격 증명 모음에만 백업할 수 있습니다.
     - Azure Backup에서 **AzureBackupWindowsWorkload** 확장을 VM에 설치합니다. 에이전트는 SQL 데이터베이스에 설치되지 않습니다.
@@ -171,7 +171,7 @@ VM에서 실행되는 데이터베이스를 검색합니다.
 백업 정책을 만들려면:
 
 1. 자격 증명 모음에서 **백업 정책** > **추가**를 차례로 클릭합니다.
-2. **추가** 메뉴에서 **Azure VM의 SQL Server**를 클릭합니다. 이렇게 하면 정책 유형이 정의됩니다.
+2. **추가** 메뉴에서 **Azure VM의 SQL Server**를 클릭합니다. 하려면 정책 유형을 정의합니다.
 
    ![새 백업 정책에 대한 정책 유형 선택](./media/backup-azure-sql-database/policy-type-details.png)
 
@@ -179,7 +179,7 @@ VM에서 실행되는 데이터베이스를 검색합니다.
 4. **전체 백업 정책**에서 **백업 빈도**를 선택하고, **매일** 또는 **매주**를 선택합니다.
 
    - **매일**의 경우 백업 작업이 시작될 때 시간과 표준 시간대를 선택합니다.
-   - 전체 백업을 실행해야 합니다. **전체 백업** 옵션은 해제할 수 없습니다.
+   - 해제할 수 없습니다으로 전체 백업을 실행 해야 합니다는 **전체 백업** 옵션입니다.
    - **전체 백업**을 클릭하여 정책을 확인합니다.
    - 매일 전체 백업에 대해서는 차등 백업을 만들 수 없습니다.
    - **매주**의 경우 백업 작업이 시작되는 요일, 시간 및 표준 시간대를 선택합니다.

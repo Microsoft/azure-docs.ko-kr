@@ -15,11 +15,11 @@ ms.date: 06/13/2017
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: eef13c5a4e3757b0eafd77c0915717175c2dbd8c
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59545419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60769115"
 ---
 # <a name="create-an-external-app-service-environment"></a>외부 App Service Environment 만들기
 
@@ -39,7 +39,7 @@ ASE(App Service Environment)에는 두 가지 배포 방법이 있습니다.
 
 ASE를 만든 후에는 다음을 변경할 수 없습니다.
 
-- 위치
+- Location
 - 구독
 - 리소스 그룹
 - 사용되는 VNet

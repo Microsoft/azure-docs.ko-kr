@@ -20,11 +20,11 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: eae7de00294a6a09cb7f942d11ee2391710fc55f
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56007811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60844309"
 ---
 # <a name="add-scoring-profiles-to-an-azure-search-index"></a>Azure Search 인덱스에 점수 매기기 프로필 추가
 
@@ -243,8 +243,8 @@ GET /indexes/hotels/docs?search=inn&scoringProfile=geo&scoringParameter=currentL
 |`Fieldname`|점수 매기기 함수의 필수 항목으로, 점수 매기기 함수는 인덱스 필드 컬렉션의 일부이며 필터링 가능한 필드에만 적용할 수 있습니다. 또한 각 함수 유형에서는 추가적인 제한이 적용됩니다. 또한 각 함수 형식마다 추가 제한 사항이 도입됩니다. 예를 들어 freshness는 datetime 필드에, magnitude는 integer/double 필드에, distance는 location 필드에 사용됩니다.다. 필드는 함수 정의당 하나만 지정할 수 있습니다. 예를 들어 같은 프로필에서 magnitude를 두 번 사용하려면 각 필드에 하나씩 두 개의 magnitude 정의를 포함해야 합니다.|  
 |`Interpolation`|점수 매기기 함수의 필수 항목으로, 점수 매기기 함수는 인덱스 필드 컬렉션의 일부이며 필터링 가능한 필드에만 적용할 수 있습니다. 범위 시작부터 범위 끝까지 점수 상승이 증가하는 기울기를 정의합니다. 유효한 값에는 Linear(기본값), Constant, Quadratic, Logarithmic 등이 있습니다. 자세한 내용은 [보간 설정](#bkmk_interpolation)을 참조하세요.|  
 |`magnitude`|magnitude 점수 매기기 함수는 숫자 필드의 값 범위를 기준으로 순위를 변경하는 데 사용됩니다. 이 함수를 사용하는 가장 일반적인 몇 가지 예는 다음과 같습니다.<br /><br /> -   **별 등급:** “별 등급” 필드 내의 값을 기준으로 점수 매기기를 변경합니다. 관련 항목이 두 개이면 등급이 높은 항목이 먼저 표시됩니다.<br />-   **이익:** 소매업체에서 두 개의 관련 문서 중 이익이 더 높은 문서의 순위를 높이려는 경우를 예로 들 수 있습니다.<br />-   **클릭 수:** 제품이나 페이지에 대한 클릭스루 동작을 추적하는 애플리케이션의 경우 magnitude를 사용하여 가장 많은 트래픽을 받는 항목의 순위를 높일 수 있습니다.<br />-   **다운로드 수:**: 다운로드를 추적하는 애플리케이션의 경우 magnitude 함수를 사용하면 다운로드 수가 가장 많은 항목의 순위를 높일 수 있습니다.|  
-|`magnitude` &#124; `boostingRangeStart`|magnitude의 점수를 매길 범위의 시작 값을 설정합니다. 이 값은 정수이거나 부동 소수점 숫자여야 합니다. 별 등급 1-4에서 시작 값은 1이고 50%를 초과하는 이익의 경우에는 시작 값이 50입니다.|  
-|`magnitude` &#124; `boostingRangeEnd`|magnitude의 점수를 매길 범위의 끝 값을 설정합니다. 이 값은 정수이거나 부동 소수점 숫자여야 합니다. 별 등급 1-4에서 끝 값은 4가 됩니다.|  
+|`magnitude` &#124; `boostingRangeStart`|magnitude의 점수를 매길 범위의 시작 값을 설정합니다. 이 값은 정수이거나 부동 소수점 숫자여야 합니다. 별 등급 1~4에서 시작 값은 1이고 50%를 초과하는 이익의 경우에는 시작 값이 50입니다.|  
+|`magnitude` &#124; `boostingRangeEnd`|magnitude의 점수를 매길 범위의 끝 값을 설정합니다. 이 값은 정수이거나 부동 소수점 숫자여야 합니다. 별 등급 1~4에서 끝 값은 4가 됩니다.|  
 |`magnitude` &#124; `constantBoostBeyondRange`|유효한 값은 true 또는 false(기본값)입니다. 값을 true로 설정하면 대상 필드의 값이 범위 상한보다 큰 문서에 완전 상승이 계속해서 적용됩니다. 값을 false로 설정하는 경우에는 대상 필드의 값이 범위를 벗어나는 문서에 이 함수의 상승이 적용되지 않습니다.|  
 |`freshness`|freshness 점수 매기기 함수는 `DateTimeOffset` 필드의 값을 기준으로 항목의 순위 점수를 변경하는 데 사용됩니다. 예를 들어 보다 최근 날짜의 항목에 오래된 날짜의 항목보다 더 높은 순위를 지정할 수 있습니다.<br /><br /> 현재 날짜에 더 가까운 항목이 더 먼 미래의 항목보다 높은 순위가 지정되도록 미래 날짜의 일정 이벤트 같은 항목에 순위를 지정할 수도 있습니다.<br /><br /> 현재 서비스 릴리스에서는 범위의 한쪽 끝이 현재 시간으로 고정됩니다. 반대쪽은 `boostingDuration`을(를) 기반으로 하는 과거의 시간입니다. 미래 시간 범위의 순위를 높이려면 음수 `boostingDuration`을 사용합니다.<br /><br /> 상승 기준이 최대 범위에서 최소 범위로 변경되는 비율은 점수 매기기 프로필에 적용되는 보간을 통해 결정됩니다(아래 그림 참조). 적용된 상승 계수의 방향을 바꾸려면 1보다 작은 상승 계수를 선택합니다.|  
 |`freshness` &#124; `boostingDuration`|특정 문서에 대해 상승을 중지할 만료 기간을 설정합니다. 구문 및 예제는 다음 섹션의 [boostingDuration 설정](#bkmk_boostdur)을 참조하세요.|  

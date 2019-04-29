@@ -2,18 +2,19 @@
 title: Azure IoT Hub Device Provisioning Service에서 디바이스를 다시 프로비전하는 방법 | Microsoft Docs
 description: 디바이스 프로비저닝 서비스 인스턴스를 사용하여 디바이스를 프로비전하는 방법입니다.
 author: wesmc7777
-ms.author: wesmc
-ms.date: 04/04/2019
+ms.author: v-yiso
+origin.date: 04/04/2019
+ms.date: 05/06/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.openlocfilehash: 92680a453d93c8dc0189c6ae376449a8e7a22076
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59799136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60627351"
 ---
 # <a name="how-to-reprovision-devices"></a>디바이스를 다시 프로비전하는 방법
 

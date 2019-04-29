@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 03/22/2019
 ms.author: alkohli
 ms.openlocfilehash: a687398032adffe5e787ef1469abe0b2627a38fe
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58403547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60758027"
 ---
 # <a name="azure-data-box-edge-limits"></a>Azure 데이터 가장자리가 상자의 제한
 

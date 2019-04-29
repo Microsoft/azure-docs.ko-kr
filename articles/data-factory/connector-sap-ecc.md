@@ -3,21 +3,22 @@ title: Azure Data Factory를 사용하여 SAP ECC에서 데이터 복사 | Micro
 description: Azure Data Factory 파이프라인의 복사 활동을 사용하여 데이터를 SAP ECC에서 지원되는 싱크 데이터 저장소로 복사하는 방법을 알아봅니다.
 services: data-factory
 documentationcenter: ''
-author: linda33wj
-manager: craigg
+author: WenJason
+manager: digimobile
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 04/26/2018
-ms.author: jingwang
+origin.date: 04/26/2018
+ms.date: 04/22/2019
+ms.author: v-jay
 ms.openlocfilehash: d86264b632daa09a899fae28e73e117b16322617
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58121964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62128120"
 ---
 # <a name="copy-data-from-sap-ecc-using-azure-data-factory"></a>Azure Data Factory를 사용하여 SAP ECC에서 데이터 복사
 
@@ -55,7 +56,7 @@ SAP ECC 연결된 서비스에 지원되는 속성은 다음과 같습니다.
 |:--- |:--- |:--- |
 | 형식 | type 속성을 다음으로 설정해야 합니다. **SapEcc** | 예 |
 | URL | SAP ECC OData 서비스의 URL입니다. | 예 |
-| 사용자 이름 | SAP ECC에 연결하는 데 사용되는 사용자 이름입니다. | 아닙니다. |
+| username | SAP ECC에 연결하는 데 사용되는 사용자 이름입니다. | 아닙니다. |
 | 암호 | SAP ECC에 연결하는 데 사용되는 일반 텍스트 암호입니다. | 아닙니다. |
 | connectVia | 데이터 저장소에 연결하는 데 사용할 [Integration Runtime](concepts-integration-runtime.md)입니다. 자체 호스팅 Integration Runtime 또는 Azure Integration Runtime을 사용할 수 있습니다(데이터 저장소를 공개적으로 액세스할 수 있는 경우). 지정하지 않으면 기본 Azure Integration Runtime을 사용합니다. |아닙니다. |
 
@@ -120,7 +121,7 @@ SAP ECC에서 데이터를 복사하려면 복사 활동의 원본 형식을 **S
 
 | 자산 | 설명 | 필수 |
 |:--- |:--- |:--- |
-| 형식 | 복사 작업 원본의 type 속성을 다음으로 설정해야 합니다. **SapEccSource** | 예 |
+| type | 복사 작업 원본의 type 속성을 다음으로 설정해야 합니다. **SapEccSource** | 예 |
 | 쿼리 | 데이터를 필터링하는 OData 쿼리 옵션입니다. 예제: "$select=Name,Description&$top=10".<br/><br/>SAP ECC 커넥터는 결합된 URL(연결된 서비스에 지정된 URL)/(데이터 세트에 지정된 경로)?(복사 활동 원본에 지정된 쿼리)의 데이터를 복사합니다. [OData URL 구성 요소](https://www.odata.org/documentation/odata-version-3-0/url-conventions/)를 참조하세요. | 아닙니다. |
 
 **예제:**
@@ -161,14 +162,14 @@ SAP ECC에서 데이터를 복사하는 경우 SAP ECC 데이터에 대한 OData
 
 | OData 데이터 형식 | Data Factory 중간 데이터 형식 |
 |:--- |:--- |
-| Edm.Binary | 문자열 |
+| Edm.Binary | String |
 | Edm.Boolean | Bool |
-| Edm.Byte | 문자열 |
+| Edm.Byte | String |
 | Edm.DateTime | DateTime |
 | Edm.Decimal | Decimal |
 | Edm.Double | Double |
 | Edm.Single | Single |
-| Edm.Guid | 문자열 |
+| Edm.Guid | String |
 | Edm.Int16 | Int16 |
 | Edm.Int32 | Int32 |
 | Edm.Int64 | Int64 |

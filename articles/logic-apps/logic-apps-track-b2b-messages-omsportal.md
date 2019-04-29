@@ -10,11 +10,11 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 10/19/2018
 ms.openlocfilehash: 8cf5d9f3ee1503769a2ec199847175899bcd86bf
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57193214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62120129"
 ---
 # <a name="track-b2b-messages-with-azure-monitor-logs"></a>Azure Monitor 로그를 사용하여 B2B 메시지 추적
 
@@ -153,7 +153,7 @@ B2B 메시지가 처리된 후 **Logic Apps B2B** 타일에서 해당 메시지�
 | 논리 앱 | AS2 작업이 설정된 논리 앱 |
 | 상태 | AS2 메시지 상태 <br>성공 = 유효한 AS2 메시지를 받거나 보냈습니다. MDN이 설정되지 않습니다. <br>성공 = 유효한 AS2 메시지를 받거나 보냈습니다. MDN이 설정 및 수신됩니다. 또는 MDN이 전송됩니다. <br>실패 = 유효하지 않은 AS2 메시지를 받았습니다. MDN이 설정되지 않습니다. <br>보류 중 = 유효한 AS2 메시지를 받거나 보냈습니다. MDN이 설정되었고 MDN을 기다립니다. |
 | Ack | MDN 메시지 상태 <br>수락됨 = 양의 MDN을 받거나 보냈습니다. <br>보류 중 = MDN을 받거나 보낼 때까지 대기 중입니다. <br>거부됨 = 음의 MDN을 받거나 보냈습니다. <br>필요하지 않음 = 규약에 MDN이 설정되지 않습니다. |
-| 방향 | AS2 메시지 방향 |
+| Direction | AS2 메시지 방향 |
 | 상관관계 ID | 논리 앱의 모든 트리거와 작업을 상호 연결하는 ID |
 | 메시지 ID | AS2 메시지 헤더의 AS2 메시지 ID |
 | 타임 스탬프 | AS2 작업이 메시지를 처리한 시간 |
@@ -184,7 +184,7 @@ B2B 메시지가 처리된 후 **Logic Apps B2B** 타일에서 해당 메시지�
 | 논리 앱 | X12 작업이 설정된 논리 앱 |
 | 상태 | X12 메시지 상태 <br>성공 = 유효한 X12 메시지를 받거나 보냈습니다. 기능 Ack가 설정되지 않습니다. <br>성공 = 유효한 X12 메시지를 받거나 보냈습니다. 기능 Ack가 설정되고 수신되었거나 기능 Ack가 전송되었습니다. <br>실패 = 유효하지 않은 X12 메시지를 받거나 보냈습니다. <br>보류 중 = 유효한 X12 메시지를 받거나 보냈습니다. 기능 Ack가 설정되었고 기능 Ack를 기다립니다. |
 | Ack | 기능 Ack(997) 상태 <br>수락됨 = 양의 기능 Ack를 받거나 보냈습니다. <br>거부됨 = 음의 기능 Ack를 받거나 보냈습니다. <br>보류 중 = 기능 Ack를 기다렸지만 받지 못했습니다. <br>보류 중 = 기능 Ack를 생성했지만 파트너에게 보낼 수 없습니다. <br>필요하지 않음 = 기능 Ack가 설정되지 않습니다. |
-| 방향 | X12 메시지 방향 |
+| Direction | X12 메시지 방향 |
 | 상관관계 ID | 논리 앱의 모든 트리거와 작업을 상호 연결하는 ID |
 | 메시지 유형 | EDI X12 메시지 유형 |
 | ICN | X12 메시지의 교환 컨트롤 번호 |
@@ -217,7 +217,7 @@ B2B 메시지가 처리된 후 **Logic Apps B2B** 타일에서 해당 메시지�
 | 논리 앱 | EDIFACT 작업이 설정된 논리 앱 |
 | 상태 | EDIFACT 메시지 상태 <br>성공 = 유효한 EDIFACT 메시지를 받거나 보냈습니다. 기능 Ack가 설정되지 않습니다. <br>성공 = 유효한 EDIFACT 메시지를 받거나 보냈습니다. 기능 Ack가 설정되고 수신되었거나 기능 Ack가 전송되었습니다. <br>실패 = 유효하지 않은 EDIFACT 메시지를 받거나 보냈습니다. <br>보류 중 = 유효한 EDIFACT 메시지를 받거나 보냈습니다. 기능 Ack가 설정되었고 기능 Ack를 기다립니다. |
 | Ack | 기능 Ack(997) 상태 <br>수락됨 = 양의 기능 Ack를 받거나 보냈습니다. <br>거부됨 = 음의 기능 Ack를 받거나 보냈습니다. <br>보류 중 = 기능 Ack를 기다렸지만 받지 못했습니다. <br>보류 중 = 기능 Ack를 생성했지만 파트너에게 보낼 수 없습니다. <br>필요하지 않음 = 기능 Ack가 설정되지 않습니다. |
-| 방향 | EDIFACT 메시지 방향 |
+| Direction | EDIFACT 메시지 방향 |
 | 상관관계 ID | 논리 앱의 모든 트리거와 작업을 상호 연결하는 ID |
 | 메시지 유형 | EDIFACT 메시지 형식 |
 | ICN | EDIFACT 메시지의 교환 컨트롤 번호 |

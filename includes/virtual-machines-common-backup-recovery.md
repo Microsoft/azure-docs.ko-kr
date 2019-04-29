@@ -2,18 +2,19 @@
 title: 포함 파일
 description: 포함 파일
 services: virtual-machines
-author: cynthn
+author: rockboyfor
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 03/09/2018
-ms.author: cynthn
+origin.date: 03/09/2018
+ms.date: 04/16/2018
+ms.author: v-yeche
 ms.custom: include file
-ms.openlocfilehash: 3dfc72ff0347a93c6c6dce0e7ec763dd8241c55b
-ms.sourcegitcommit: 8aab1aab0135fad24987a311b42a1c25a839e9f3
-ms.translationtype: HT
+ms.openlocfilehash: be71b269e618d13a126e4005754b307e9c6517d7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/16/2018
-ms.locfileid: "29958812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60543726"
 ---
 ## <a name="azure-backup"></a>Azure Backup
 
@@ -22,7 +23,6 @@ ms.locfileid: "29958812"
 Azure VM용 Azure Backup 실습에 대한 간단한 소개는 [Linux](../articles/virtual-machines/linux/tutorial-backup-vms.md) 또는 [Windows](../articles/virtual-machines/windows/tutorial-backup-vms.md)에 대한 "Azure 가상 머신 백업" 자습서를 참조하세요.
 
 Azure Backup 작동 방법에 대한 자세한 내용은 [Azure에서 VM 백업 인프라 계획](../articles/backup/backup-azure-vms-introduction.md)을 참조하세요.
-
 
 ## <a name="azure-site-recovery"></a>Azure Site Recovery
 
@@ -40,8 +40,6 @@ Azure Site Recovery는 주요 자연 재해 또는 광범위한 서비스 중단
 
 * [Windows에서 스냅숏을 사용하여 관리 디스크로 저장된 VHD 복사본 만들기](../articles/virtual-machines/windows/snapshot-copy-managed-disk.md)
 * [Linux에서 스냅숏을 사용하여 관리 디스크로 저장된 VHD 복사본 만들기](../articles/virtual-machines/linux/snapshot-copy-managed-disk.md)
-
-
 
 ## <a name="next-steps"></a>다음 단계
 [Linux](../articles/virtual-machines/linux/tutorial-backup-vms.md) 또는 [Windows](../articles/virtual-machines/windows/tutorial-backup-vms.md)에 대한 "Windows 가상 머신 백업" 자습서를 수행하여 Azure Backup을 체험해 볼 수 있습니다.

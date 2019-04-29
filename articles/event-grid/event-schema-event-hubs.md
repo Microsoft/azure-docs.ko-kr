@@ -8,11 +8,11 @@ ms.topic: reference
 ms.date: 01/17/2019
 ms.author: spelluru
 ms.openlocfilehash: 9c0113687d27bf43375f298057129a5594ec0a06
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54475410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60561831"
 ---
 # <a name="azure-event-grid-event-schema-for-event-hubs"></a>Azure Event Grid 이벤트 허브에 대한 이벤트 스키마
 
@@ -57,30 +57,30 @@ Event Hubs는 캡처 파일이 생성되면 **Microsoft.EventHub.CaptureFileCrea
 
 이벤트에는 다음과 같은 최상위 데이터가 있습니다.
 
-| 자산 | type | 설명 |
+| 자산 | Type | 설명 |
 | -------- | ---- | ----------- |
-| 토픽 | string | 이벤트 원본에 대한 전체 리소스 경로입니다. 이 필드는 쓸 수 없습니다. Event Grid는 이 값을 제공합니다. |
-| 제목 | string | 게시자가 정의한 이벤트 주체에 대한 경로입니다. |
-| eventType | string | 이 이벤트 원본에 대해 등록된 이벤트 유형 중 하나입니다. |
-| eventTime | string | 공급자의 UTC 시간을 기준으로 이벤트가 생성되는 시간입니다. |
-| id | string | 이벤트에 대한 고유 식별자입니다. |
+| 토픽 | 문자열 | 이벤트 원본에 대한 전체 리소스 경로입니다. 이 필드는 쓸 수 없습니다. Event Grid는 이 값을 제공합니다. |
+| 제목 | 문자열 | 게시자가 정의한 이벤트 주체에 대한 경로입니다. |
+| eventType | 문자열 | 이 이벤트 원본에 대해 등록된 이벤트 유형 중 하나입니다. |
+| eventTime | 문자열 | 공급자의 UTC 시간을 기준으로 이벤트가 생성되는 시간입니다. |
+| id | 문자열 | 이벤트에 대한 고유 식별자입니다. |
 | 데이터 | object | 이벤트 허브 이벤트 데이터입니다. |
-| dataVersion | string | 데이터 개체의 스키마 버전입니다. 게시자가 스키마 버전을 정의합니다. |
-| metadataVersion | string | 이벤트 메타데이터의 스키마 버전입니다. Event Grid는 최상위 속성의 스키마를 정의합니다. Event Grid는 이 값을 제공합니다. |
+| dataVersion | 문자열 | 데이터 개체의 스키마 버전입니다. 게시자가 스키마 버전을 정의합니다. |
+| metadataVersion | 문자열 | 이벤트 메타데이터의 스키마 버전입니다. Event Grid는 최상위 속성의 스키마를 정의합니다. Event Grid는 이 값을 제공합니다. |
 
 데이터 개체의 속성은 다음과 같습니다.
 
-| 자산 | type | 설명 |
+| 자산 | Type | 설명 |
 | -------- | ---- | ----------- |
-| fileUrl | string | 캡처 파일에 대한 경로입니다. |
-| fileType | string | 캡처 파일의 파일 형식입니다. |
-| partitionId | string | shard ID입니다. |
+| fileUrl | 문자열 | 캡처 파일에 대한 경로입니다. |
+| fileType | 문자열 | 캡처 파일의 파일 형식입니다. |
+| partitionId | 문자열 | shard ID입니다. |
 | sizeInBytes | 정수 | 파일 크기입니다. |
 | eventCount | 정수 | 파일에 있는 이벤트의 수입니다. |
 | firstSequenceNumber | 정수 | 큐의 가장 작은 시퀀스 번호입니다. |
 | lastSequenceNumber | 정수 | 큐의 마지막 시퀀스 번호입니다. |
-| firstEnqueueTime | string | 큐의 처음 시간입니다. |
-| lastEnqueueTime | string | 큐의 마지막 시간입니다. |
+| firstEnqueueTime | 문자열 | 큐의 처음 시간입니다. |
+| lastEnqueueTime | 문자열 | 큐의 마지막 시간입니다. |
 
 ## <a name="next-steps"></a>다음 단계
 

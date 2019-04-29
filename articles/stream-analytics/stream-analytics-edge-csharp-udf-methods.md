@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
 ms.openlocfilehash: 5df4c9dfe18b02ade3a37717da9c68acbfcf1853
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53106603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61480986"
 ---
 # <a name="develop-net-standard-user-defined-functions-for-azure-stream-analytics-edge-jobs-preview"></a>Azure Stream Analytics Edge 작업에 대한 .NET Standard 사용자 정의 함수 개발(미리 보기)
 
@@ -40,7 +40,7 @@ UDF를 구현하는 다음 세 가지 방법이 있습니다.
 |---------|---------|
 |long  |  bigint   |
 |double  |  double   |
-|string  |  nvarchar(max)   |
+|문자열  |  nvarchar(max)   |
 |datetime  |  datetime   |
 |struct  |  IRecord   |
 |object  |  IRecord   |

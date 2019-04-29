@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 04/07/2019
 ms.author: juliako
 ms.openlocfilehash: d55e246e6fc3a5eeb182a49d1e159887f66d6872
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60011326"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60560051"
 ---
 # <a name="examine-the-video-indexer-output-produced-by-api"></a>API에 의해 생성 된 비디오 인덱서 출력 검토
 
@@ -405,7 +405,7 @@ id|블록의 ID입니다.|
 
 #### <a name="scenes"></a>장면
 
-|Name|설명|
+|이름|설명|
 |---|---|
 |id|장면 id입니다.|
 |인스턴스|이 장면 (장면 있습니다 1 개 인스턴스)의 시간 범위 목록입니다.|
@@ -557,7 +557,7 @@ id|블록의 ID입니다.|
 
 #### <a name="a-idaudioeffectsaudioeffects"></a><a id="audioEffects"/>audioEffects
 
-|Name|설명|
+|이름|설명|
 |---|---|
 |id|오디오 효과 ID입니다.|
 |형식|오디오 효과 유형(예: 박수, 음성, 음소거)입니다.|

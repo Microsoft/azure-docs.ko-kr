@@ -1,7 +1,6 @@
 ---
 title: Azure HDInsight 릴리스 정보
 description: Azure HDInsight에 대한 최신 릴리스 정보입니다. Hadoop, Spark, R Server, Hive 및 더에 대 한 개발 팁 및 세부 정보를 가져옵니다.
-services: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/15/2019
-ms.openlocfilehash: 5769f90ef69a82497194ff6de01b378acc84deec
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
-ms.translationtype: MT
+ms.openlocfilehash: 0beac64ceb0bbf729d2f6d0f6a0ca8d5af499f42
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59678397"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63760119"
 ---
 # <a name="release-notes-for-azure-hdinsight"></a>Azure HDInsight 릴리스 정보
 

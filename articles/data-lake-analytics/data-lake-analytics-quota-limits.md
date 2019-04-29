@@ -9,12 +9,12 @@ ms.reviewer: jasonwhowell
 ms.assetid: 49416f38-fcc7-476f-a55e-d67f3f9c1d34
 ms.topic: conceptual
 ms.date: 03/15/2018
-ms.openlocfilehash: 4629b52f3b2c9e351ddc2a68a40c5178a9a73950
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: d3601fd8c32c70cf828cd08fada71258ec8fa5d4
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43048258"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60812661"
 ---
 # <a name="adjust-quotas-and-limits-in-azure-data-lake-analytics"></a>Azure Data Lake Analytics에서 할당량 및 한도 조정
 
@@ -22,7 +22,7 @@ ADLA(Azure Data Lake Analytics) 계정에서 할당량 및 한도를 조정하�
 
 ## <a name="azure-subscriptions-limits"></a>Azure 구독 한도
 
-**지역당 구독당 최대 ADLA 계정 수:** 5
+**지역별 구독 당 ADLA 계정의 최대 수:**  5
 
 6번째 ADLA 계정을 만들려고 하면 "구독 이름에 따라 지역에서 허용되는 Data Lake Analytics 계정의 최대 수(5)에 도달했습니다." 오류가 발생합니다. 
 
@@ -32,18 +32,18 @@ ADLA(Azure Data Lake Analytics) 계정에서 할당량 및 한도를 조정하�
 
 ## <a name="default-adla-account-limits"></a>기본 ADLA 계정 한도
 
-**계정당 최대 AU(분석 단위) 수** 32
+**계정당 최대 Au (분석 단위) 횟수:** 32
 
 이는 계정에서 동시에 실행할 수 있는 AU의 최대 개수입니다. 모든 작업에서 실행 중인 총 AU 수가 이 한도를 초과하면 최신 작업이 자동으로 큐에 대기됩니다. 예를 들면 다음과 같습니다.
 
 * 32AU로 실행되는 작업이 하나뿐인 경우 두 번째 작업을 제출하면 첫 번째 작업이 완료될 때까지 이 작업이 작업 큐에서 대기합니다.
 * 이미 4개의 작업이 실행 중이고 각각 8AU를 사용하는 경우 8AU가 필요한 5번째 작업을 제출하면 8AU가 사용 가능 상태가 될 때까지 작업 큐에서 대기합니다.
 
-**작업당 최대 AU(분석 단위) 수** 32
+**작업당 Au (분석 단위)의 최대 수:** 32
 
 계정에서 각 개별 작업에 할당될 수 있는 AU의 기본 최대 개수입니다. 제출자가 작업당 더 많은 AU를 제공하는 계산 정책(작업 제출 한도)의 영향을 받지 않는 한 이 한도보다 많이 할당된 작업은 거부됩니다. 이 값의 상한은 계정에 대한 AU 한도입니다.
 
-**계정당 동시 U-SQL 작업의 최대 수:** 20.
+**계정당 동시 U-SQL 작업의 최대 수:** 20
 
 이는 계정에서 동시에 실행할 수 있는 작업의 최대 개수입니다. 이 값을 초과하면 최신 작업이 자동으로 큐에 대기합니다.
 

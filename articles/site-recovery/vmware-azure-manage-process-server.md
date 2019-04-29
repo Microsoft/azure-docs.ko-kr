@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: ramamill
-ms.openlocfilehash: ba80c8ce57495eaa46e915cb0c472eb4aabcee57
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0a0b6c83f800c0a479ba7a16c91b497d1a11da9e
+ms.sourcegitcommit: a95dcd3363d451bfbfea7ec1de6813cad86a36bb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/23/2019
-ms.locfileid: "60318579"
+ms.locfileid: "62732488"
 ---
 # <a name="manage-process-servers"></a>프로세스 서버 관리
 
@@ -49,7 +49,7 @@ ms.locfileid: "60318579"
 
 이 옵션을 통해 하나 이상의 가상 머신을 선택하고 다른 프로세스 서버로 전송할 수 있습니다.
 
-1. **부하 분산**을 클릭하고, 드롭다운에서 대상 프로세스 서버를 선택합니다.  **확인**을 클릭합니다.
+1. **부하 분산**을 클릭하고, 드롭다운에서 대상 프로세스 서버를 선택합니다. **확인**
 
     ![LoadPS](media/vmware-azure-manage-process-server/LoadPS.PNG)
 
@@ -67,6 +67,19 @@ ms.locfileid: "60318579"
 
 2. **Recovery Services 자격 증명 모음** > **모니터링** > **Site Recovery 작업**에서 작업의 진행률을 모니터링합니다.
 3. 이 작업의 성공적인 완료 후에 변경 내용을 반영하거나 즉시 적용을 위해 [구성 서버를 새로 고치](vmware-azure-manage-configuration-server.md#refresh-configuration-server)는 데 15분이 걸립니다.
+
+## <a name="process-server-selection-guidance"></a>프로세스 서버 선택 지침
+
+Azure Site Recovery 프로세스 서버에 도달 하 고 사용량 제한 하는 경우에 자동으로 식별 합니다. 프로세스 서버 확장을 설정 하는 경우 지침은 제공 됩니다.
+
+|상태  |설명  | 리소스 가용성  | 권장 사항|
+|---------|---------|---------|---------|
+| 정상 (녹색)    |   프로세스 서버에 연결 되 고 정상 상태      |CPU 및 메모리 사용률은 80%; 미만 사용 가능한 공간 가용성을 30% 초과| 추가 서버를 보호 하기 위해이 프로세스 서버를 사용할 수 있습니다. 새 작업 이내 인지 확인 합니다 [프로세스 서버 제한 정의](vmware-azure-set-up-process-server-scale.md#sizing-requirements)합니다.
+|경고 (주황색)    |   프로세스 서버가 연결 되어 있지만 특정 리소스가 최대 한도 도달 하려고 합니다.  |   CPU 및 메모리 사용률은 80%-95% 사이의; 사용 가능한 공간 가용성은 25%-30% 사이의       | 프로세스 서버의 사용량 임계값에 가깝습니다. 새 서버 추가 프로세스 서버를 동일한 임계값을 통과 시킬를 기존 보호 된 항목에 영향을 줄 수 있습니다. 하는 것이 좋습니다 [스케일 아웃 프로세스 서버 설정](vmware-azure-set-up-process-server-scale.md#before-you-start) 새 복제에 대 한 합니다.
+|경고 (주황색)   |   프로세스 서버가 연결 되어 있지만 데이터는 지난 30 분에서 Azure에 업로드 되지 않았습니다.  |   임계값 제한 내에서 리소스 사용률은       | 문제 해결 [데이터 업로드 실패](vmware-azure-troubleshoot-replication.md#monitor-process-server-health-to-avoid-replication-issues) 새 워크 로드를 추가 하기 전에 **하거나** [스케일 아웃 프로세스 서버 설정](vmware-azure-set-up-process-server-scale.md#before-you-start) 새 복제에 대 한 합니다.
+|위험 (빨강)    |     프로세스 서버 연결이 끊어졌을 수 있습니다.  |  임계값 제한 내에서 리소스 사용률은      | 문제 해결 [서버 간의 연결 문제를 처리할](vmware-azure-troubleshoot-replication.md#monitor-process-server-health-to-avoid-replication-issues) 또는 [스케일 아웃 프로세스 서버 설정](vmware-azure-set-up-process-server-scale.md#before-you-start) 새 복제에 대 한 합니다.
+|위험 (빨강)    |     리소스 사용률 임계값 제한에 도달한 |  CPU 및 메모리 사용률을 95%; 초과 공간 가용성은 25% 미만입니다.   | 새 워크 로드 같은 프로세스 서버를 추가 제한 사항이 이미 충족 하는 리소스 임계값으로 사용할 수 없습니다. 따라서 [스케일 아웃 프로세스 서버 설정](vmware-azure-set-up-process-server-scale.md#before-you-start) 새 복제에 대 한 합니다.
+위험 (빨강)    |     데이터 지난 45 분에 Azure로 업로드 되지 않았습니다. |  임계값 제한 내에서 리소스 사용률은      | 문제 해결 [데이터 업로드 실패](vmware-azure-troubleshoot-replication.md#monitor-process-server-health-to-avoid-replication-issues) 동일한 프로세스 서버를 새 워크 로드를 추가 하기 전에 또는 [스케일 아웃 프로세스 서버 설정](vmware-azure-set-up-process-server-scale.md#before-you-start)
 
 ## <a name="reregister-a-process-server"></a>프로세스 서버 등록
 
@@ -109,7 +122,6 @@ ms.locfileid: "60318579"
    exit
    ```
 
-
 ## <a name="remove-a-process-server"></a>프로세스 서버 제거
 
 [!INCLUDE [site-recovery-vmware-unregister-process-server](../../includes/site-recovery-vmware-unregister-process-server.md)]
@@ -126,4 +138,3 @@ ms.locfileid: "60318579"
 - C:\ProgramData\LogUploadServiceLogs
 - C:\ProgramData\Microsoft Azure Site Recovery
 - 프로세스 서버 설치 디렉터리, 예제: C:\Program Files (x86)\Microsoft Azure Site Recovery
-

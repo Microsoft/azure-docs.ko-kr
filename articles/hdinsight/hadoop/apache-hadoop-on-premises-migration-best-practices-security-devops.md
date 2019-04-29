@@ -1,7 +1,6 @@
 ---
 title: 온-프레미스 Apache Hadoop 클러스터를 Azure HDInsight로 마이그레이션 - 보안 및 DevOps 모범 사례
 description: 온-프레미스 Hadoop 클러스터를 Azure HDInsight로 마이그레이션하는 보안 및 DevOps 모범 사례를 알아봅니다.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: ashishth
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: hrasheed
-ms.openlocfilehash: 7cfb327a3eb6cbf2ae90c9d258a470797732acaa
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
-ms.translationtype: HT
+ms.openlocfilehash: 1d13b52d253562a24946e6df2fc069f41b485fef
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53437506"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62095381"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---security-and-devops-best-practices"></a>온-프레미스 Apache Hadoop 클러스터를 Azure HDInsight로 마이그레이션 - 보안 및 DevOps 모범 사례
 
@@ -119,7 +118,7 @@ ESP는 ESP는 Apache Hadoop, Apache Spark, Apache HBase, Apache Kafka 및 Intera
 
 ## <a name="post-migration"></a>마이그레이션 후 작업
 
-1. **응용 프로그램 재구성** - 반복적으로 작업, 프로세스 및 스크립트를 필요한 대로 변경합니다.
+1. **애플리케이션 재구성** - 반복적으로 작업, 프로세스 및 스크립트를 필요한 대로 변경합니다.
 2. **테스트 수행** - 반복적으로 기능 및 성능 테스트를 실행합니다.
 3. **최적화** - 위의 테스트 결과에 따라 성능 문제를 해결한 후 다시 테스트하여 성능이 개선되었는지 확인합니다.
 

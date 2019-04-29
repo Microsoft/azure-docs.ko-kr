@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.service: iot-central
 manager: peterpr
 ms.openlocfilehash: 635c8d0f149895798eece8cf3b48712ab74374ea
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57759885"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60887135"
 ---
 # <a name="build-workflows-with-the-iot-central-connector-in-azure-logic-apps"></a>Azure Logic Apps에서 IoT Central 커넥터를 통해 워크플로 작성
 
@@ -38,7 +38,7 @@ IoT Central 커넥터는 Microsoft Flow에서 사용할 수 있습니다. Azure 
 
     ![Azure Portal에서 논리 앱 만들기](./media/howto-build-azure-logic-apps/createinazureportal.png)
 
-1. 논리 앱에 성공적으로 생성 된 후 Logic Apps 디자이너에 자동으로 탐색 되 고 있습니다. 선택 **비어 있는 논리 앱**합니다. 
+1. 논리 앱에 성공적으로 생성 된 후 Logic Apps 디자이너에 자동으로 탐색 되 고 있습니다. **빈 논리 앱**을 선택합니다. 
 
     ![빈 논리 앱을 만들기](./media/howto-build-azure-logic-apps/blanklogicapp.png)
 

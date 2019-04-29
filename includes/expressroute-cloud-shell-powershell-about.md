@@ -9,11 +9,11 @@ ms.date: 02/13/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: ece75ff84c9f45e7284d7a5976f55f8a4ac4680f
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57410676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60366384"
 ---
 이 문서에서는 PowerShell cmdlet을 사용합니다. cmdlet을 실행하기 위해 무료 대화형 셸인 Azure Cloud Shell을 사용할 수 있습니다. 공용 Azure 도구가 사전 설치되어 계정에서 사용하도록 구성되어 있습니다. **복사**를 클릭하여 코드를 복사하고, Cloud Shell에 붙여넣고, Enter 키를 눌러 실행합니다. Cloud Shell을 시작하는 몇 가지 방법이 있습니다.
 

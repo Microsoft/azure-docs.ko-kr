@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 04/03/2019
 ms.author: jegeib
 ms.openlocfilehash: 502c1e8a422eb9e74586e5a6820d5b12ec4ae2a4
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59798250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60610639"
 ---
 # <a name="threat-modeling-tool-update-release-71604081---492019"></a>위협 모델링 도구 업데이트 릴리스 7.1.60408.1-4/9/2019
 

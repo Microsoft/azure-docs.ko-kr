@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
-ms.openlocfilehash: e66d896a7df48645dad39b5b978c4f7c2f8d8cb9
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
-ms.translationtype: HT
+ms.openlocfilehash: 0dadf0ec248dac01e5cc65779004477bf4afc823
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46954554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62113586"
 ---
 # <a name="how-to-disenroll-a-device-from-azure-iot-hub-device-provisioning-service"></a>Azure IoT Hub Device Provisioning 서비스에서 디바이스 등록을 해제하는 방법
 
@@ -96,7 +96,7 @@ X.509 증명 메커니즘을 구현하는 디바이스는 디바이스의 인증
 2. 리소스 목록에서 차단 목록에 추가하려는 디바이스에 대한 등록 그룹이 포함된 프로비전 서비스를 선택합니다.
 3. 프로비전 서비스에서 **등록 관리**를 클릭한 후 **개별 등록** 탭을 선택합니다.
 4. 위쪽에서 **개별 등록 추가** 단추를 선택합니다. 
-5. **등록 추가** 페이지에서 해당 장치에 대한 증명 **메커니즘**으로 **X.509**를 선택합니다.
+5. **등록 추가** 페이지에서 해당 디바이스에 대한 증명 **메커니즘**으로 **X.509**를 선택합니다.
 
     장비 인증서를 업로드하고 차단할 디바이스의 디바이스 ID를 입력합니다. 인증서의 경우에는 디바이스에 설치된 서명된 최종 엔터티 인증서를 사용합니다. 디바이스는 서명된 최종 엔터티 인증서를 인증에 사용합니다.
 
@@ -104,7 +104,7 @@ X.509 증명 메커니즘을 구현하는 디바이스는 디바이스의 인증
 
 6. **등록 추가** 페이지의 아래쪽으로 스크롤하고 **항목 사용** 스위치에서 **사용 안 함**을 선택한 후 **저장**을 선택합니다. 
 
-    [![사용하지 않도록 설정된 개인 등록 항목을 사용하여 포털에서 장치의그룹 등록 해제](./media/how-to-revoke-device-access-portal/disable-individual-enrollment-in-enrollment-group.png)](./media/how-to-revoke-device-access-portal/disable-individual-enrollment-in-enrollment-group.png#lightbox)
+    [![사용하지 않도록 설정된 개인 등록 항목을 사용하여 포털에서 디바이스의그룹 등록 해제](./media/how-to-revoke-device-access-portal/disable-individual-enrollment-in-enrollment-group.png)](./media/how-to-revoke-device-access-portal/disable-individual-enrollment-in-enrollment-group.png#lightbox)
 
 등록을 성공적으로 만들면 **개별 등록** 탭에 나열된 사용하지 않도록 설정된 디바이스 등록을 확인할 수 있습니다. 
 

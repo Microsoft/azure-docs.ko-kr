@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 09/13/2018
 ms.author: tarcher
 ms.openlocfilehash: 7145a50bc53fd28afafd3de9c724b5e5f71624fa
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57762309"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60905893"
 ---
 # <a name="store-terraform-state-in-azure-storage"></a>Terraform 상태를 Azure Storage에 저장
 

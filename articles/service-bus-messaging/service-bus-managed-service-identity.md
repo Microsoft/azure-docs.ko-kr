@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 09/01/2018
 ms.author: aschhab
 ms.openlocfilehash: 5edeebd9698384785082e5a441c24e136ed22481
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54856889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61317078"
 ---
 # <a name="managed-identities-for-azure-resources-with-service-bus"></a>Service Bus를 통해 Azure 리소스에 관리 ID 사용 
 

@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 11/1/2018
 ms.author: qianw211
 ms.openlocfilehash: c3294aaa2b6c88e08028c8958d2ab3a7297aea74
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351816"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60735932"
 ---
 # <a name="private-offers"></a>전용 제품
 

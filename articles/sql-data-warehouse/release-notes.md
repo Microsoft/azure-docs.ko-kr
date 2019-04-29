@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.subservice: manage
 ms.date: 02/09/2019
 ms.openlocfilehash: e77556ac0d6f64797906c0f3b4181f147b1668e2
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58448418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61475070"
 ---
 # <a name="azure-sql-data-warehouse-release-notes-and-documentation-updates"></a>Azure SQL Data Warehouse 릴리스 정보 및 설명서 업데이트
 

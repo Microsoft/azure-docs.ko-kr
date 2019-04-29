@@ -14,11 +14,11 @@ ms.date: 12/13/2017
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: fb1cafcf9405576749ea91aeea033c6ee783a026
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54330435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60739270"
 ---
 # <a name="frequently-asked-questions-for-sql-server-on-linux-azure-virtual-machines"></a>Linux Azure Virtual Machines의 SQL Server에 대한 FAQ(질문과 대답)
 
@@ -73,7 +73,7 @@ ms.locfileid: "54330435"
 
 1. **종량제 갤러리 이미지 중 하나에서 만들어진 경우 사용자 고유의 SQL Server 라이선스를 사용하도록 VM을 변경할 수 있나요?**
 
-    아니요. 초 단위로 요금이 부과되는 라이선스에서 사용자 라이선스 사용으로 전환할 수 없습니다. 새로운 Linux VM을 만들고, SQL Server를 설치하고, 데이터를 마이그레이션해야 합니다. 사용자 고유 라이선스를 가져오기에 대한 자세한 내용은 이전 질문을 참조하세요.
+   아니요. 초 단위로 요금이 부과되는 라이선스에서 사용자 라이선스 사용으로 전환할 수 없습니다. 새로운 Linux VM을 만들고, SQL Server를 설치하고, 데이터를 마이그레이션해야 합니다. 사용자 고유 라이선스를 가져오기에 대한 자세한 내용은 이전 질문을 참조하세요.
 
 ## <a name="administration"></a>관리
 

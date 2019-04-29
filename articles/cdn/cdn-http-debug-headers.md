@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 04/12/2018
 ms.author: magattus
 ms.openlocfilehash: 4ba42850ee28e2e212d9bc2b7b64be103218757c
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49094227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60736975"
 ---
 # <a name="x-ec-debug-http-headers-for-azure-cdn-rules-engine"></a>Azure CDN 규칙 엔진의 X-EC-Debug HTTP 헤더
 `X-EC-Debug` 디버그 캐시 요청 헤더는 요청된 자산에 적용되는 캐시 정책에 대한 추가 정보를 제공합니다. 이러한 헤더는 **Verizon의 Azure CDN Premium** 제품에만 해당됩니다.
@@ -68,11 +68,11 @@ X-EC-Debug 헤더는 캐시 상태 코드 정보를 다음과 같은 형식으�
 - `X-EC-Debug: x-ec-cache-remote: <StatusCode from Platform (POP/ID)>`
 
 위의 응답 헤더 구문에 사용된 용어는 다음과 같이 정의됩니다.
-- StatusCode: 요청된 콘텐츠를 CDN에서 처리한 방법을 나타내며, 캐시 상태 코드를 통해 표현됩니다.
+- StatusCode: Cdn에서 캐시 상태 코드를 통해 표현 되는 요청 된 콘텐츠를 처리 하는 방법을 나타냅니다.
     
     TCP_DENIED 상태 코드는 토큰 기반 인증에 따라 권한이 없는 요청이 거부될 때 NONE 대신 보고될 수 있습니다. 그러나 캐시 상태 보고서 또는 원시 로그 데이터를 볼 때에는 NONE 상태 코드가 계속 사용됩니다.
 
-- Platform: 콘텐츠가 요청된 플랫폼을 나타냅니다. 이 필드에 유효한 코드는 다음과 같습니다.
+- 플랫폼: 콘텐츠가 요청 된 플랫폼을 나타냅니다. 이 필드에 유효한 코드는 다음과 같습니다.
 
     코드  | 플랫폼
     ------| --------
@@ -80,7 +80,7 @@ X-EC-Debug 헤더는 캐시 상태 코드 정보를 다음과 같은 형식으�
     ECS   | HTTP Small
     ECD   | ADN(애플리케이션 전달 네트워크)
 
-- POP: 요청을 처리한 [POP](cdn-pop-abbreviations.md)를 나타냅니다. 
+- POP: 나타냅니다 합니다 [POP](cdn-pop-abbreviations.md) 요청을 처리 하는 합니다. 
 
 ### <a name="sample-response-headers"></a>응답 헤더 샘플
 
@@ -106,7 +106,7 @@ X-EC-Debug 헤더는 캐시 상태 코드 정보를 다음과 같은 형식으�
 값  | 설명
 -------| --------
 예    | 요청된 콘텐츠가 캐싱에 적합했음을 나타냅니다.
-아니요     | 요청된 콘텐츠가 캐싱에 적합하지 않았음을 나타냅니다. 이 상태는 다음 이유 중 하나로 인해 발생할 수 있습니다. <br /> - 고객별 구성: 계정별 구성으로 인해 POP 서버에서 자산을 캐시하지 못할 수 있습니다. 예를 들어 규칙 엔진은 인증 요청에 대한 캐시 무시 기능을 사용하도록 설정하여 자산을 캐시하지 못하도록 방지할 수 있습니다.<br /> - 캐시 응답 헤더: 요청된 자산의 Cache-Control 및 Expires 헤더로 인해 POP 서버에서 자산을 캐시하지 못하도록 방지할 수 있습니다.
+아니요     | 요청된 콘텐츠가 캐싱에 적합하지 않았음을 나타냅니다. 이 상태는 다음 이유 중 하나로 인해 발생할 수 있습니다. <br /> -고객별 구성: 계정에 특정 구성에서 자산을 캐시 pop 서버를 방지할 수 있습니다. 예를 들어 규칙 엔진은 인증 요청에 대한 캐시 무시 기능을 사용하도록 설정하여 자산을 캐시하지 못하도록 방지할 수 있습니다.<br /> -캐시 응답 헤더: 요청 된 자산의 Cache-control 및 Expires 헤더에서 자산을 캐시 POP 서버를 방지할 수 있습니다.
 UNKNOWN | 서버에서 요청된 자산을 캐시할 수 있는지 여부를 평가할 수 없었음을 나타냅니다. 이 상태는 일반적으로 토큰 기반 인증에 따라 요청이 거부될 때 발생합니다.
 
 ### <a name="sample-response-header"></a>응답 헤더 샘플
@@ -147,23 +147,23 @@ UNKNOWN | 서버에서 요청된 자산을 캐시할 수 있는지 여부를 평
 
 위의 응답 헤더 구문에 사용된 용어는 다음과 같이 정의됩니다.
 
-- MASeconds: 요청된 콘텐츠의 Cache-Control 헤더에 정의된 최대 처리 기간(초)을 나타냅니다.
+- MASeconds: 요청된 된 콘텐츠의 Cache-control 헤더에 의해 정의 된 max-age 초 단위로 나타냅니다.
 
-- MATimePeriod: 최대 처리 기간 값(즉 MASeconds)을 더 큰 단위(예: 일)에 해당하는 근삿값으로 변환합니다. 
+- MATimePeriod: 최대 처리 기간 값 (즉 MASeconds)을 더 큰 단위 (예를 들어, 일)으로 변환합니다. 
 
-- UnixTime: 요청된 콘텐츠의 캐시 타임스탬프를 Unix 시간 형식(POSIX 시간 또는 Unix Epoch라고도 함)으로 나타냅니다. 캐시 타임스탬프는 자산의 TTL이 계산되는 시작 날짜/시간을 나타냅니다. 
+- UnixTime: Unix 시간에서 (즉, 요청 된 콘텐츠의 캐시 타임 스탬프를 나타냅니다. 또는 Unix Epoch라고도 함)으로 나타냅니다. 캐시 타임스탬프는 자산의 TTL이 계산되는 시작 날짜/시간을 나타냅니다. 
 
-    원본 서버에서 타사 HTTP 캐싱 서버를 활용하지 않거나 해당 서버에서 Age 응답 헤더를 반환하지 않는 경우, 캐시 타임스탬프는 항상 자산을 검색하거나 유효성을 다시 검사한 날짜/시간이 됩니다. 그렇지 않으면 POP 서버에서 Age 필드를 사용하여 Retrieval/RevalidateDateTime - Age 식으로 자산의 TTL을 계산합니다.
+    원본 서버에서 타사 HTTP 캐싱 서버를 활용하지 않거나 해당 서버에서 Age 응답 헤더를 반환하지 않는 경우, 캐시 타임스탬프는 항상 자산을 검색하거나 유효성을 다시 검사한 날짜/시간이 됩니다. 이 고, 그렇지 POP 서버는 자산의 TTL을 다음과 같이 계산 필드를 사용 합니다. Retrieval/RevalidateDateTime - Age.
 
-- ddd, dd MMM yyyy HH:mm:ss GMT: 요청된 콘텐츠의 캐시 타임스탬프를 나타냅니다. 자세한 내용은 위의 UnixTime 용어를 참조하세요.
+- ddd, dd MMM yyyy HH:mm:ss GMT: 요청 된 콘텐츠의 캐시 타임 스탬프를 나타냅니다. 자세한 내용은 위의 UnixTime 용어를 참조하세요.
 
-- CASeconds: 캐시 타임스탬프 이후로 경과한 시간(초)을 나타냅니다.
+- CASeconds: 캐시 타임 스탬프 이후 경과 된 시간 (초) 수를 나타냅니다.
 
-- RTSeconds: 새로 고친 캐시된 콘텐츠로 간주되는 데 남아 있는 시간(초)을 나타냅니다. 이 값은 RTSeconds = 최대 처리 기간 - 캐시 처리 기간으로 계산됩니다.
+- RTSeconds: 캐시 된 콘텐츠를 간주 되는 남은 시간 (초) 수를 나타냅니다. 이 값은 다음과 같이 계산 됩니다. RTSeconds = 최대 처리 기간-캐시 처리 기간입니다.
 
-- RTTimePeriod: 나머지 TTL 값(즉 RTSeconds)을 더 큰 단위(예: 일)에 해당하는 근삿값으로 변환합니다.
+- RTTimePeriod: 나머지 TTL 값 (즉 RTSeconds)을 더 큰 단위 (예를 들어, 일)으로 변환합니다.
 
-- ExpiresSeconds: `Expires` 응답 헤더에 지정된 날짜/시간까지 남아 있는 시간(초)을 나타냅니다. 응답에 `Expires` 응답 헤더가 포함되지 않은 경우 이 용어의 값은 *none*입니다.
+- ExpiresSeconds: 에 지정 된 날짜/시간까지 남은 시간 (초) 수를 나타냅니다는 `Expires` 응답 헤더입니다. 응답에 `Expires` 응답 헤더가 포함되지 않은 경우 이 용어의 값은 *none*입니다.
 
 ### <a name="sample-response-header"></a>응답 헤더 샘플
 

@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: clemensv
 ms.openlocfilehash: bbcf38ab54632144920b729f433c222f426d96dc
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56825360"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60419900"
 ---
 1. [Azure Portal][Azure portal]에 로그인합니다.
 2. 왼쪽 메뉴에서 **+ 리소스 만들기**를 선택합니다. 그런 다음, **통합** > **릴레이**를 선택합니다. 목록에서 **릴레이**를 찾을 수 없으면 오른쪽 위 모서리에서 **모두 보기**를 선택합니다. 

@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 05/09/2018
 ms.author: magattus
 ms.openlocfilehash: 8d4fc5fbdc3185c46f00d94537b197ec03f66755
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59528172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60709923"
 ---
 # <a name="http-variables-for-azure-cdn-rules-engine"></a>Azure CDN 규칙 엔진에 대한 HTTP 변수
 HTTP 변수는 HTTP 요청 및 응답 메타데이터를 검색할 수 있는 수단을 제공합니다. 이 메타데이터는 요청 또는 응답을 동적으로 변경하는 데 사용할 수 있습니다. HTTP 변수의 사용은 다음 규칙 엔진 기능으로 제한됩니다.
@@ -195,7 +195,7 @@ https:\//www.mydomain.com/mobile/marketing/proposal.htm
 ### <a name="find-and-replace"></a>찾기 및 바꾸기
 찾기 및 바꾸기 구문은 다음 표에 설명되어 있습니다.
 
-| 구문 | 조치 |
+| 구문 | 액션(Action) |
 | ------ | ------ |
 | %{Variable/Find/Replace} | 지정된 패턴의 첫 번째 발생을 찾아서 바꿉니다. |
 | %{Variable//Find/Replace} | 지정된 패턴의 모든 발생을 찾아서 바꿉니다. |
@@ -207,7 +207,7 @@ https:\//www.mydomain.com/mobile/marketing/proposal.htm
 ### <a name="find-and-rewrite"></a>찾기 및 다시 쓰기
 찾기 및 바꾸기에 대한 변형의 경우 다시 작성하는 경우 지정된 패턴과 일치하는 텍스트를 사용합니다. 찾기 및 다시 쓰기 구문은 다음 표에 설명되어 있습니다.
 
-| 구문 | 조치 |
+| 구문 | 액션(Action) |
 | ------ | ------ |
 | %{Variable/=Find/Rewrite} | 지정된 패턴의 모든 발생을 찾고, 복사하고, 다시 작성합니다. |
 | %{Variable/^Find/Rewrite} | 변수의 시작에서 발생하는 경우 지정된 패턴을 찾기, 복사 및 다시 씁니다. |

@@ -8,17 +8,18 @@ ms.subservice: high-availability
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: anosov1960
-ms.author: sashan
+author: WenJason
+ms.author: v-jay
 ms.reviewer: mathoma, carlrab
-manager: craigg
-ms.date: 04/04/2019
+manager: digimobile
+origin.date: 04/04/2019
+ms.date: 04/15/2019
 ms.openlocfilehash: dfa5d4cb2d782f1466329300157a64fd17765460
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59797696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61412346"
 ---
 # <a name="overview-of-business-continuity-with-azure-sql-database"></a>Azure SQL Database의 비즈니스 연속성 개요
 
@@ -67,7 +68,7 @@ SQL Database는 이러한 시나리오를 완화할 수 있는 자동화된 백�
 
 ## <a name="recover-a-database-to-the-existing-server"></a>기존 서버에 데이터베이스 복구
 
-SQL Database는 데이터 손실로부터 비즈니스를 보호하기 위해 매주 전체 데이터베이스 백업, 일반적으로 12시간 간격의 차등 데이터베이스 백업 및 5-10분 간격의 트랜잭션 로그 백업을 조합하여 자동으로 수행합니다. 백업은 7일 동안 백업이 저장되는 기본 DTU 서비스 계층을 제외한 모든 서비스 계층에 대해 35일 동안 RA-GRS 저장소에 저장됩니다. 자세한 내용은 [자동 데이터베이스 백업](sql-database-automated-backups.md)을 참조하세요. Azure Portal, PowerShell 또는 REST API를 사용하여 자동화된 백업의 기존 데이터베이스를 특정 이전 시점의 상태로 동일한 SQL Database 서버에 새 데이터베이스로 복원할 수 있습니다. 자세한 내용은 [특정 시점 복원](sql-database-recovery-using-backups.md#point-in-time-restore)을 참조하세요.
+SQL Database는 데이터 손실로부터 비즈니스를 보호하기 위해 매주 전체 데이터베이스 백업, 일반적으로 12시간 간격의 차등 데이터베이스 백업 및 5-10분 간격의 트랜잭션 로그 백업을 조합하여 자동으로 수행합니다. 백업은 7일 동안 백업이 저장되는 기본 DTU 서비스 계층을 제외한 모든 서비스 계층에 대해 35일 동안 RA-GRS 스토리지에 저장됩니다. 자세한 내용은 [자동 데이터베이스 백업](sql-database-automated-backups.md)을 참조하세요. Azure Portal, PowerShell 또는 REST API를 사용하여 자동화된 백업의 기존 데이터베이스를 특정 이전 시점의 상태로 동일한 SQL Database 서버에 새 데이터베이스로 복원할 수 있습니다. 자세한 내용은 [특정 시점 복원](sql-database-recovery-using-backups.md#point-in-time-restore)을 참조하세요.
 
 지원되는 최대 PITR(Point-in-Time 복원) 보존 기간이 애플리케이션에 대해 충분하지 않을 경우에 데이터베이스에 대한 LTR(장기 보존) 정책을 구성하여 확장할 수 있습니다. 자세한 내용은 [장기 백업 보존](sql-database-long-term-retention.md)을 참조하세요.
 

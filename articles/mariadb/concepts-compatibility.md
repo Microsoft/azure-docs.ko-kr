@@ -7,11 +7,11 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 03/19/2019
 ms.openlocfilehash: 7a3d9a5f87a565625052fc54e3ecccc99fd928a7
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58259502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61386818"
 ---
 # <a name="mariadb-drivers-and-management-tools-compatible-with-azure-database-for-mariadb"></a>MariaDB 드라이버 및 관리 도구를 Azure Database for MariaDB 호환
 
@@ -44,7 +44,7 @@ SSL 연결 | X | X | X
 SQL 쿼리 자동 완성 | X | X |
 데이터 가져오기 및 내보내기 | X | X | X
 여러 형식으로 내보내기 | X | X | X
-Backup 및 복원 |  | X |
+Backup 및 Restore 메서드 |  | X |
 서버 매개 변수 표시 | X | X | X
 클라이언트 연결 표시 | X | X | X
 

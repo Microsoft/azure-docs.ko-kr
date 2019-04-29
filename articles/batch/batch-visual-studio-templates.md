@@ -16,11 +16,11 @@ ms.date: 02/27/2017
 ms.author: lahugh
 ms.custom: seodec18
 ms.openlocfilehash: 085bfa582b676f34a02e4c1c5ae7e69c49e5cb4e
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53538126"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60550077"
 ---
 # <a name="use-visual-studio-project-templates-to-jump-start-batch-solutions"></a>Visual Studio 프로젝트 템플릿을 사용하여 Batch 솔루션 빠르게 시작
 
@@ -63,7 +63,7 @@ Batch 템플릿을 사용하려면 다음이 필요합니다.
     * Azure Batch 작업 관리자(작업 분할자 포함)
     * Azure Batch 태스크 프로세서
   * Visual Studio의 온라인 갤러리에서 템플릿을 다운로드합니다. [Microsoft Azure Batch 프로젝트 템플릿][vs_gallery_templates]
-* [애플리케이션 패키지](batch-application-packages.md) 기능을 사용하여 작업 관리자 및 태스크 프로세서를 Batch 계산 노드에 배포할 계획인 경우 스토리지 계정을 배치 계정에 연결해야 합니다.
+* [애플리케이션 패키지](batch-application-packages.md) 기능을 사용하여 작업 관리자 및 태스크 프로세서를 Batch 계산 노드에 배포할 계획인 경우 스토리지 계정을 Batch 계정에 연결해야 합니다.
 
 ## <a name="preparation"></a>준비
 작업 관리자 및 태스크 프로세서 프로그램 간에 코드를 쉽게 공유할 수 있으므로 작업 관리자 및 태스크 프로세서를 포함할 수 있는 솔루션을 만드는 것이 좋습니다. 이 솔루션을 만들려면 다음 단계를 따르세요.
@@ -385,7 +385,7 @@ Run() 구현에서는 다음에 액세스할 수 있습니다.
 ### <a name="client-considerations"></a>클라이언트 고려 사항
 **Storage 자격 증명**
 
-태스크 프로세서에서 출력을 유지하기 위해 Azure Blob 저장소를 사용하는 경우(예를 들어 파일 규약 도우미 라이브러리를 사용하는 경우) 클라우드 저장소 계정 자격 증명 *또는* 공유 액세스 서명(SAS)을 포함하는 Blob 컨테이너 URL 중 *하나에* 액세스해야 합니다. 템플릿에는 일반적인 환경 변수를 통해 자격 증명을 제공하기 위한 지원이 포함됩니다. 클라이언트는 다음과 같이 저장소 자격 증명을 전달할 수 있습니다.
+태스크 프로세서에서 출력을 유지하기 위해 Azure Blob Storage를 사용하는 경우(예를 들어 파일 규약 도우미 라이브러리를 사용하는 경우) 클라우드 스토리지 계정 자격 증명 *또는* 공유 액세스 서명(SAS)을 포함하는 Blob 컨테이너 URL 중 *하나에* 액세스해야 합니다. 템플릿에는 일반적인 환경 변수를 통해 자격 증명을 제공하기 위한 지원이 포함됩니다. 클라이언트는 다음과 같이 저장소 자격 증명을 전달할 수 있습니다.
 
 ```csharp
 job.CommonEnvironmentSettings = new [] {

@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: zhshang
 ms.openlocfilehash: e284a0492774e02cab79db6d9006c1718a7fcfc9
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623185"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60809164"
 ---
 # <a name="how-to-scale-signalr-service-with-multiple-instances"></a>여러 인스턴스를 사용 하 여 SignalR Service를 확장 하는 방법
 최신 SignalR Service SDK는 SignalR Service 인스턴스에 대 한 여러 끝점을 지원합니다. 동시 연결을 확장 하려면이 기능을 사용 하거나 지역 간 메시징에 사용할 수 있습니다.

@@ -7,11 +7,11 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 08/08/2018
 ms.openlocfilehash: 8c081c6436939089565425a0f14bbf1856ca7ce8
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53536766"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61230699"
 ---
 # <a name="azure-database-for-mysql-migration-partners"></a>Azure Database for MySQL 마이그레이션 파트너
 Azure Database for MySQL 솔루션을 광범위하게 지원하기 위해 다양한 업계 선도 파트너 및 도구를 선택할 수 있습니다. 이 문서에서는 Azure Database for MySQL을 지원하는 마이그레이션 솔루션을 제공하는 Microsoft 파트너를 중점적으로 소개합니다.

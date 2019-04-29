@@ -8,11 +8,11 @@ ms.date: 3/24/2019
 ms.author: mjbrown
 ms.reviewer: sngun
 ms.openlocfilehash: 1e866560ceab342f08a98ba3db05980a2b0947d2
-ms.sourcegitcommit: 280d9348b53b16e068cf8615a15b958fccad366a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58407558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60888518"
 ---
 # <a name="high-availability-with-azure-cosmos-db"></a>Azure Cosmos DB의 고가용성
 
@@ -68,7 +68,7 @@ Cosmos 계정의 분산 되는 경우 *N* Azure 지역에 있을 것 이상 *N* 
 
 ## <a name="next-steps"></a>다음 단계
 
-이제 다음 문서를 다음과 같이 읽을 수 있습니다.
+이제 다음 문서를 읽을 수 있습니다.
 
 * [다양한 일관성 수준의 가용성 및 성능 절충](consistency-levels-tradeoffs.md)
 * [전역적으로 프로비전된 처리량 크기 조정](scaling-throughput.md)

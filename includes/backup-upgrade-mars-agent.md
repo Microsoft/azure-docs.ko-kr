@@ -12,12 +12,12 @@ ms.devlang: <optional>
 ms.topic: article
 ms.date: 8/29/2018
 ms.author: markgal
-ms.openlocfilehash: 2a969240da6e16f5a5ba76605a6efa2a96f9e4dd
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
-ms.translationtype: HT
+ms.openlocfilehash: 56310b7356dd9e263238234cf3e28bd498fa70fc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43283055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60648344"
 ---
 ## <a name="upgrade-the-mars-agent"></a>MARS 에이전트 업그레이드
 

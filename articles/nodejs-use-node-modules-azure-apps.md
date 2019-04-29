@@ -14,15 +14,15 @@ ms.devlang: nodejs
 ms.topic: article
 ms.date: 08/17/2016
 ms.author: tarcher
-ms.openlocfilehash: 045250f0b0f97cbefe05b36f1c8d4480244a172d
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
-ms.translationtype: HT
+ms.openlocfilehash: 08f3a2dcf9d36eb76b2f657232a426b078066273
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45575850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60634924"
 ---
 # <a name="using-nodejs-modules-with-azure-applications"></a>Azure 애플리케이션에 Node.js 모듈 사용
-이 문서에서는 Azure에서 호스트되는 애플리케이션에 Node.js 모듈을 사용하는 방법에 대해 안내합니다. 또한 애플리케이션에서 특정 버전의 모듈을 사용하고 Azure를 통해 네이티브 모듈을 사용하도록 하는 방법에 대한 지침을 제공합니다.
+이 문서에서는 Azure에서 호스트되는 애플리케이션에 Node.js 모듈을 사용하는 방법에 대해 안내합니다. 또한 응용 프로그램에서 특정 버전의 모듈을 사용하고 Azure를 통해 네이티브 모듈을 사용하도록 하는 방법에 대한 지침을 제공합니다.
 
 Node.js 모듈, **package.json** 및 **npm-shrinkwrap.json** 파일 사용법을 이미 잘 알고 있는 경우 다음 정보를 통해 이 문서에서 설명하는 내용의 요약을 빠르게 확인할 수 있습니다.
 
@@ -40,14 +40,14 @@ Node.js 모듈, **package.json** 및 **npm-shrinkwrap.json** 파일 사용법을
 
 모듈이 설치되면 **node\_modules** 디렉터리에서 애플리케이션 디렉터리 구조 루트에 저장됩니다. **node\_modules** 디렉터리 내의 각 모듈에서는 종속되는 모든 모듈이 포함된 자체의 디렉터리를 유지하며, 이 동작은 종속성 체인의 모든 모듈에 대해 일관되게 반복됩니다. 이 환경에서는 설치된 각 모듈이 종속되는 모듈에 대해 고유한 버전 요구 사항을 가지지만 상당히 큰 규모의 디렉터리 구조가 생길 수 있습니다.
 
-**node\_modules** 디렉터리를 응용 프로그램의 일부로 배포하면 **package.json** 또는 **npm-shrinkwrap.json** 파일을 사용하는 경우에 비해 배포의 크기가 커지지만 프로덕션에 사용되는 모듈 버전과 개발에 사용되는 모듈 버전이 항상 동일합니다.
+**node\_modules** 디렉터리를 애플리케이션의 일부로 배포하면 **package.json** 또는 **npm-shrinkwrap.json** 파일을 사용하는 경우에 비해 배포의 크기가 커지지만 프로덕션에 사용되는 모듈 버전과 개발에 사용되는 모듈 버전이 항상 동일합니다.
 
 ### <a name="native-modules"></a>네이티브 모듈
 대부분의 모듈이 단순히 일반 텍스트 JavaScript 파일인 반면, 일부 모듈은 플랫폼별 이진 이미지입니다. 이 모듈은 설치 시간에 대개 Python 및 node-gyp를 사용하여 컴파일됩니다. Azure Cloud Services에서는 **node\_modules** 폴더가 애플리케이션의 일부로 배포되므로, 설치되는 모듈의 일부로 포함된 네이티브 모듈은 Windows 개발 시스템에서 설치 및 컴파일된 경우 클라우드 서비스에서 작동합니다.
 
 Azure App Service는 일부 네이티브 모듈을 지원하지 않으며 특정 필수 구성 요소가 필요한 모듈을 컴파일할 때는 오류가 발생할 수 있습니다. MongoDB와 같은 일부 일반적인 모듈에는 선택적 네이티브 종속성이 있으며 이러한 종속성 없이도 정상적으로 작동하지만 다음 두 가지 해결 방법은 현재 사용 가능한 거의 모든 네이티브 모듈에 효과적인 것으로 입증되었습니다.
 
-* 모든 네이티브 모듈의 필수 구성 요소가 설치되어 있는 Windows 컴퓨터에서 **npm install** 을 실행합니다. 그런 다음, 만든 **node\_modules** 폴더를 애플리케이션의 일부로 Azure App Service에 배포합니다.
+* 모든 네이티브 모듈의 필수 구성 요소가 설치되어 있는 Windows 컴퓨터에서 **npm install** 을 실행합니다. 그런 다음 만든 **node\_modules** 폴더를 애플리케이션의 일부로 Azure App Service에 배포합니다.
 
   * 컴파일링하기 전에 설치된 local Node.js의 아키텍처가 일치하고 버전이 Azure에서 사용된 것과 최대한 가까운지 확인합니다(현재 값은 **process.arch** 및 **process.version** 속성의 런타임에서 확인할 수 있음).
 
@@ -55,7 +55,7 @@ Azure App Service는 일부 네이티브 모듈을 지원하지 않으며 특정
 
 ### <a name="using-a-packagejson-file"></a>package.json 파일 사용
 
-**package.json** 파일을 사용하여 응용 프로그램에서 요구하는 최상위 종속성을 지정할 수 있습니다. 그러면 호스팅 플랫폼이 배포의 일부로 **node\_modules** 폴더를 포함하도록 요구하는 대신 종속성을 설치할 수 있게 됩니다. 애플리케이션이 배포된 후에는 **npm install** 명령을 사용하여 **package.json** 파일을 구문 분석하고 나열된 모든 종속성을 설치합니다.
+**package.json** 파일을 사용하여 애플리케이션에서 요구하는 최상위 종속성을 지정할 수 있습니다. 그러면 호스팅 플랫폼이 배포의 일부로 **node\_modules** 폴더를 포함하도록 요구하는 대신 종속성을 설치할 수 있게 됩니다. 애플리케이션이 배포된 후에는 **npm install** 명령을 사용하여 **package.json** 파일을 구문 분석하고 나열된 모든 종속성을 설치합니다.
 
 개발하는 동안 모듈 설치 시 **package.json** 파일에 모듈의 항목이 자동으로 추가되도록 **--save**, **--save-dev** 또는 **--save-optional** 매개 변수를 사용할 수 있습니다. 자세한 내용은 [npm-install](https://docs.npmjs.com/cli/install)(영문)을 참조하십시오.
 

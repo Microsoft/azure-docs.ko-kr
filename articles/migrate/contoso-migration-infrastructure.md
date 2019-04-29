@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 10/1/2018
 ms.author: raynew
 ms.openlocfilehash: 5dfe768ddb3509f896b90f913ffecdf33907357a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57876683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60682798"
 ---
 # <a name="contoso---deploy-a-migration-infrastructure"></a>Contoso - 마이그레이션 인프라 배포
 

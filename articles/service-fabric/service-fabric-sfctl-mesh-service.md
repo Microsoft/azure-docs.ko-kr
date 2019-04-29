@@ -15,11 +15,11 @@ ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: e8b735780f4ed3402845d9d401f8e37701b9a1a6
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58667585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60836929"
 ---
 # <a name="sfctl-mesh-service"></a>sfctl mesh service
 애플리케이션 리소스의 서비스를 나열하고 서비스 세부 정보를 가져옵니다.

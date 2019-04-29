@@ -2,19 +2,19 @@
 title: Azure Stream Analytics 창 함수 소개
 description: 이 문서에서는 Azure Stream Analytics 작업에 사용되는 네 개의 창 함수(연속, 도약, 슬라이딩, 세션)를 설명합니다.
 services: stream-analytics
-author: jseb225
-ms.author: jeanb
-manager: kfile
+author: lingliw
+ms.author: v-lingwu
+manager: digimobile
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 05/07/2018
+ms.date: 01/21/19
 ms.openlocfilehash: 04c19e7e51777db4c59bfab3d5a8a7598560556a
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54231651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60844771"
 ---
 # <a name="introduction-to-stream-analytics-windowing-functions"></a>Stream Analytics 창 함수 소개
 실시간 스트리밍 시나리오에서 임시 창에 포함된 데이터에서 작업을 수행하는 것은 일반적인 패턴입니다. Stream Analytics에는 개발자가 최소한의 노력으로 복잡한 스트림 처리 작업을 작성할 수 있도록 창 함수에 대한 네이티브 지원이 있습니다.
@@ -51,7 +51,6 @@ ms.locfileid: "54231651"
 
 파티션 키가 제공되는 경우 이벤트는 키와 함께 그룹화되고 세션 창은 각 그룹에 독립적으로 적용됩니다. 이 분할은 다른 사용자 또는 디바이스에 다른 세션 창이 필요한 경우에 유용합니다.
 
-
 ## <a name="next-steps"></a>다음 단계
 * [Azure Stream Analytics 소개](stream-analytics-introduction.md)
 * [Azure Stream Analytics 사용 시작](stream-analytics-real-time-fraud-detection.md)
@@ -59,3 +58,4 @@ ms.locfileid: "54231651"
 * [Azure  Stream Analytics 쿼리 언어 참조](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 * [Azure Stream Analytics 관리 REST API 참조](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
+<!--Update_Description: update meta properties -->

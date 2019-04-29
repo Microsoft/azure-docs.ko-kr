@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 03/14/2019
 ms.author: alkohli
 ms.openlocfilehash: e5713af737a6d9d190814b4155a8e772deea06bc
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58013905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60630367"
 ---
 # <a name="introduction-to-the-storsimple-virtual-array"></a>StorSimple 가상 배열 소개
 
@@ -40,7 +40,7 @@ Microsoft Azure StorSimple 가상 배열은 하이퍼바이저 및 Microsoft Azu
 | 기능 | StorSimple 가상 배열 |
 | --- | --- |
 | 설치 요구 사항 |가상화 인프라(Hyper-V 또는 VMware)  사용 |
-| 사용 가능 |단일 노드 |
+| 가용성 |단일 노드 |
 | 총 용량(클라우드 포함) |가상 배열당 사용 가능 용량 최대 64TB |
 | 로컬 용량 |가상 배열당 사용 가능 용량 390GB~6.4TB(500GB~8TB의 디스크 공간을 프로비전해야 함) |
 | 네이티브 프로토콜 |iSCSI 또는 SMB |
@@ -74,10 +74,10 @@ StorSimple은 애플리케이션을 수정하지 않고 사용자와 서버를 �
 
 지원되는 StorSimple 워크로드가 아래 표에 요약되어 있습니다.
 
-|시나리오     |작업     |지원됨      |제한               | 적용 가능한 버전|
+|시나리오     |워크로드     |지원됨      |제한               | 적용 가능한 버전|
 |-------------|-------------|---------------|---------------------------|--------------------|
-|원격 사무실/지사(ROBO)  |파일 공유     |예.      |[파일 서버의 최대 제한](storsimple-ova-limits.md)을 참조하세요.<br></br>[지원되는 SMB 버전에 대한 시스템 요구 사항](storsimple-ova-system-requirements.md).| 모든 버전     |
-|클라우드 보관  |보관 파일 공유     |예.      |[파일 서버의 최대 제한](storsimple-ova-limits.md)을 참조하세요.<br></br>[지원되는 SMB 버전에 대한 시스템 요구 사항](storsimple-ova-system-requirements.md).| 모든 버전     |
+|원격 사무실/지사(ROBO)  |파일 공유     |예      |[파일 서버의 최대 제한](storsimple-ova-limits.md)을 참조하세요.<br></br>[지원되는 SMB 버전에 대한 시스템 요구 사항](storsimple-ova-system-requirements.md).| 모든 버전     |
+|클라우드 보관  |보관 파일 공유     |예      |[파일 서버의 최대 제한](storsimple-ova-limits.md)을 참조하세요.<br></br>[지원되는 SMB 버전에 대한 시스템 요구 사항](storsimple-ova-system-requirements.md).| 모든 버전     |
 
 StorSimple 가상 배열은 자주 액세스되지 않는 데이터에 가장 적합합니다. 가상 배열에는 성능 향상을 위한 로컬 캐시가 있지만 사용자는 디바이스가 저장소의 가장 낮은 계층(클라우드)에서 파일을 서비스한다고 가정해야 합니다. 각 가상 배열은 약 100Mbps로 Azure 저장소에 쓰고 읽을 수 있습니다. 해당 링크는 디바이스에 들어오는 모든 요청 간에 공유되며 아래 다이어그램에 나와 있는 것처럼 병목 상태가 될 수 있습니다.
 

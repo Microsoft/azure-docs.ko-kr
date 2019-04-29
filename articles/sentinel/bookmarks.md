@@ -16,16 +16,16 @@ ms.workload: na
 ms.date: 2/28/2019
 ms.author: rkarlin
 ms.openlocfilehash: 9a7ceeab6d2ad761752f778038692256bd87624b
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57242839"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60596938"
 ---
 # <a name="keep-track-of-data-during-hunting"></a>사냥 하는 동안 데이터 한 추적
 
 > [!IMPORTANT]
-> Azure Sentinel 현재 공개 미리 보기 중입니다.
+> Azure Sentinel은 현재 공개 미리 보기로 제공됩니다.
 > 이 미리 보기 버전은 서비스 수준 계약 없이 제공되며 프로덕션 워크로드에는 사용하지 않는 것이 좋습니다. 특정 기능이 지원되지 않거나 기능이 제한될 수 있습니다. 자세한 내용은 [Microsoft Azure Preview에 대한 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조하세요.
  
 위협 구하기는 일반적으로 방대한 악의적인 동작의 증명 정보에 대 한 로그 데이터를 검토 해야 합니다. 이 과정에서 investigators 기억 전하고 다시 수행 하 고 잠재적인 가설의 유효성을 검사 하 고 손상의 전체 스토리를 이해의 일부로 분석 하고자 하는 이벤트를 찾습니다.
@@ -95,7 +95,7 @@ Log Analytics에서 책갈피에 추가 된 데이터를 볼 수는 방법은 �
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서에서는 Azure Sentinel에서 책갈피를 사용 하 여 찾거나 조사를 실행 하는 방법을 알아보았습니다. Azure에서 감시 하는 방법에 대 한 자세한 내용은 다음 문서를 참조 합니다.
+이 문서에서는 Azure Sentinel에서 책갈피를 사용 하 여 찾거나 조사를 실행 하는 방법을 알아보았습니다. Azure Sentinel에 대한 자세한 내용은 다음 문서를 참조하세요.
 
 
 - [사전에 위협에 대 한 hunt](hunting.md)

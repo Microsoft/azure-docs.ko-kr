@@ -9,12 +9,12 @@ ms.reviewer: jasonwhowell
 ms.assetid: 0a6102d1-7554-4df2-b487-4dae9a7287b6
 ms.topic: conceptual
 ms.date: 04/30/2018
-ms.openlocfilehash: f84cb59e7d4fd7d8301d22348ca066a7f9d9e94e
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
-ms.translationtype: HT
+ms.openlocfilehash: 64095f6706bb978cd33b8fe7833fe4e65fc3b0f8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43048821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60813416"
 ---
 # <a name="manage-azure-data-lake-analytics-using-policies"></a>정책을 사용하여 Azure Data Lake Analytics 관리
 
@@ -68,8 +68,8 @@ Data Lake Analytics 계정의 AU 수를 변경하려면:
 
 Data Lake Analytics에는 작업 수준에서 설정할 수 있는 두 가지 정책이 있습니다.
 
-* **작업당 AU 한도**: 사용자는 최대 이 AU 수가 있는 작업만 제출할 수 있습니다. 기본적으로 이 한도는 계정의 최대 AU 한도와 같습니다.
-* **우선 순위**: 사용자는 우선 순위가 이 값보다 낮거나 같은 작업만 제출할 수 있습니다. 숫자가 높을수록 우선 순위가 낮습니다. 기본적으로 이 한도는 가능한 가장 높은 우선 순위인 1로 설정됩니다.
+* **작업당 AU 한도**: 사용자는이 Au 수가 해야 하는 작업을 제출만 수 있습니다. 기본적으로 이 한도는 계정의 최대 AU 한도와 같습니다.
+* **우선 순위**: 사용자는 우선 순위가이 값 보다 작거나는 작업을 제출만 있습니다. 숫자가 높을수록 우선 순위가 낮습니다. 기본적으로 이 한도는 가능한 가장 높은 우선 순위인 1로 설정됩니다.
 
 모든 계정에는 설정된 기본 정책이 있습니다. 기본 정책은 계정의 모든 사용자에게 적용됩니다. 특정 사용자 및 그룹에 대한 추가 정책을 설정할 수 있습니다. 
 
@@ -82,10 +82,10 @@ Data Lake Analytics에는 작업 수준에서 설정할 수 있는 두 가지 �
 1. Azure Portal에서 Data Lake Analytics 계정으로 이동합니다.
 2. **속성**을 클릭합니다.
 3. **작업 제출 한도** 아래에서 **정책 추가** 단추를 클릭합니다. 그런 후 다음 설정을 선택하거나 입력합니다.
-    1. **Compute 정책 이름**: 정책의 목적을 상기시키는 정책 이름을 입력합니다.
-    2. **사용자 또는 그룹 선택**: 이 정책이 적용되는 사용자 또는 그룹을 선택합니다.
-    3. **Set the Job AU Limit**(작업 AU 한도 설정): 선택한 사용자 또는 그룹에 적용되는 AU 한도를 설정합니다.
-    4. **Set the Priority Limit**(우선 순위 한도 설정): 선택한 사용자 또는 그룹에 적용되는 우선 순위 한도를 설정합니다.
+    1. **계산 정책 이름**: 정책의 목적은 알려 정책 이름을 입력 합니다.
+    2. **사용자 또는 그룹 선택**: 사용자 또는이 정책을 적용할 그룹을 선택 합니다.
+    3. **작업 AU 한도 설정**: 선택한 사용자 또는 그룹에 적용 되는 AU 한도 설정 합니다.
+    4. **Set the Priority Limit**: 선택한 사용자 또는 그룹에 적용 되는 우선 순위 제한을 설정 합니다.
 
 4. **Ok**를 클릭합니다.
 

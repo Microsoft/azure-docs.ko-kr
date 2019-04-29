@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/18/2017
 ms.author: glenga
 ms.openlocfilehash: dc44cfbd24bd04caeede03dcbcfc60da06f61135
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60011627"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60921772"
 ---
 # <a name="get-started-guide-for-azure-developers"></a>Azure 개발자를 위한 시작 가이드
 
@@ -247,7 +247,7 @@ REST API 외에도 여러 Azure 서비스를 사용하여 다음 개발 플랫�
     
 Azure에서 앱 실행에는 여러 Azure 서비스 작업이 포함될 수 있습니다. 이러한 서비스 작업은 모두 같은 수명 주기를 따르고 논리적 단위로 간주될 수 있습니다. 예를 들어 웹앱은 Web Apps, SQL Database, Storage, Azure Cache for Redis 및 Azure Content Delivery Network 서비스를 사용할 수 있습니다. [Azure Resource Manager](../../azure-resource-manager/resource-group-overview.md)를 사용하면 그룹으로 애플리케이션에서 리소스와 함께 사용할 수 있습니다. 조정된 단일 작업에서 모든 리소스를 배포, 업데이트 또는 삭제할 수 있습니다.
 
-관련 리소스를 논리적으로 그룹화하고 관리하는 것 외에도 Azure Resource Manager에는 관련 리소스의 배포 및 구성을 사용자 지정할 수 있는 배포 기능이 포함되어 있습니다. 예를 들어 Resource Manager를 사용하면 여러 가상 머신, 부하 분산 장치 및 Azure SQL Database를 단일 단위로 구성하는 애플리케이션을 배포 및 구성할 수 있습니다.
+관련 리소스를 논리적으로 그룹화하고 관리하는 것 외에도 Azure Resource Manager에는 관련 리소스의 배포 및 구성을 사용자 지정할 수 있는 배포 기능이 포함되어 있습니다. 예를 들어 Resource Manager를 사용하면 여러 가상 머신, 부하 분산 장치 및 Azure SQL 데이터베이스를 단일 단위로 구성하는 애플리케이션을 배포 및 구성할 수 있습니다.
 
 JSON 형식 문서인 Azure Resource Manager 템플릿을 사용하여 이러한 배포를 개발합니다. 템플릿을 사용하면 스크립트 대신 선언적 템플릿을 통해 배포를 정의하고 애플리케이션을 관리할 수 있습니다. 템플릿은 테스트, 스테이징 및 프로덕션과 같은 여러 환경에 사용할 수 있습니다. 예를 들어 템플릿을 사용하여 GitHub 리포지토리에 한 번 클릭으로 일련의 Azure 서비스에 리포지토리의 코드를 배포하는 단추를 추가할 수 있습니다.
 

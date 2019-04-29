@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mikeray
-ms.openlocfilehash: 0466265ad5a24e8ea6dc5079e2b4006d74e7dde0
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: 0e6a52ea2fdd05546a4da9f8cd1165b41ed27944
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38452535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62097741"
 ---
 # <a name="configure-an-ilb-listener-for-always-on-availability-groups-in-azure"></a>Azure에서 Always On 가용성 그룹에 대한 ILB 수신기 구성
 > [!div class="op_single_selector"]
@@ -32,7 +32,7 @@ ms.locfileid: "38452535"
 ## <a name="overview"></a>개요
 
 > [!IMPORTANT]
-> Azure에는 리소스를 만들고 작업하기 위한 두 가지 배포 모델, 즉 [Azure Resource Manager 및 클래식](../../../azure-resource-manager/resource-manager-deployment-model.md) 모델이 있습니다. 이 문서에서는 클래식 배포 모델의 사용에 대해 설명합니다. 대부분의 새로운 배포에서는 Azure Resource Manager 모델을 사용하는 것이 좋습니다.
+> Azure에는 리소스를 만들고 사용하기 위한 [Azure Resource Manager 및 클래식](../../../azure-resource-manager/resource-manager-deployment-model.md)이라는 두 가지 배포 모델이 있다는 것을 이해해야 합니다. 이 문서에서는 클래식 배포 모델의 사용에 대해 설명합니다. 대부분의 새로운 배포에서는 Azure Resource Manager 모델을 사용하는 것이 좋습니다.
 
 Resource Manager 모델에서 Always On 가용성 그룹에 대한 수신기를 구성하려면 [Azure에서 Always On 가용성 그룹에 대한 부하 분산 장치 구성](../sql/virtual-machines-windows-portal-sql-alwayson-int-listener.md)을 참조하세요.
 
@@ -49,16 +49,16 @@ Azure에서 가용성 그룹 수신기에 ILB(내부 부하 분산 장치)를 �
 
 이 문서에서는 ILB를 사용하는 수신기를 만드는 데 중점을 둡니다. 공용 또는 외부 수신기가 필요한 경우 [외부 수신기](../classic/ps-sql-ext-listener.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json) 설정에 대해 설명하는 이 문서의 다른 버전을 참조하세요.
 
-## <a name="create-load-balanced-vm-endpoints-with-direct-server-return"></a>직접 서버 반환이 있는 부하 분산 VM 끝점 만들기
+## <a name="create-load-balanced-vm-endpoints-with-direct-server-return"></a>직접 서버 반환이 있는 부하 분산 VM 엔드포인트 만들기
 이 섹션에서는 스크립트를 실행하여 ILB를 먼저 만듭니다.
 
-Azure 복제본을 호스트하는 각 VM에 대해 부하가 분산된 끝점을 만듭니다. 여러 지역에 복제본이 있는 경우 해당 지역에 대한 각 복제본은 동일한 Azure 가상 네트워크의 동일한 클라우드 서비스에 있어야 합니다. 여러 Azure 지역에 걸쳐 있는 가용성 그룹 복제본을 만들려면 여러 가상 네트워크를 구성해야 합니다. 가상 네트워크 간의 연결을 구성하는 방법에 대한 정보는 [가상 네트워크 연결에 가상 네트워크 구성](../../../vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md)을 참조하세요.
+Azure 복제본을 호스트하는 각 VM에 대해 부하가 분산된 엔드포인트를 만듭니다. 여러 지역에 복제본이 있는 경우 해당 지역에 대한 각 복제본은 동일한 Azure 가상 네트워크의 동일한 클라우드 서비스에 있어야 합니다. 여러 Azure 지역에 걸쳐 있는 가용성 그룹 복제본을 만들려면 여러 가상 네트워크를 구성해야 합니다. 가상 네트워크 간의 연결을 구성하는 방법에 대한 정보는 [가상 네트워크 연결에 가상 네트워크 구성](../../../vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md)을 참조하세요.
 
 1. Azure Portal에서 세부 정보를 보려면 복제본을 호스팅하는 각 VM으로 이동합니다.
 
-2. 각 VM에 대한 **끝점** 탭을 클릭합니다.
+2. 각 VM에 대한 **엔드포인트** 탭을 클릭합니다.
 
-3. 사용할 수신기 끝점의 **이름** 및 **공용 포트**가 사용 중이지 않은지 확인합니다. 이 섹션의 예제에서는 이름이 *MyEndpoint*이고 포트는 *1433*입니다.
+3. 사용할 수신기 엔드포인트의 **이름** 및 **공용 포트**가 사용 중이지 않은지 확인합니다. 이 섹션의 예제에서는 이름이 *MyEndpoint*이고 포트는 *1433*입니다.
 
 4. 로컬 클라이언트에서 최신 [PowerShell 모듈](https://azure.microsoft.com/downloads/)을 다운로드하고 설치합니다.
 
@@ -154,7 +154,7 @@ Azure 복제본을 호스트하는 각 VM에 대해 부하가 분산된 끝점�
 3. 변수를 설정한 후에는 앞으로 온 Windows PowerShell 창을 열고 텍스트 편집기의 스크립트를 복사하여 PowerShell 세션에 붙여넣어 실행합니다. 프롬프트에 **>>** 가 계속 표시되면 Enter를 다시 입력하여 스크립트 실행이 시작되도록 합니다.
 
 4. 각 VM에 대해 이전 단계를 반복합니다.  
-    이 스크립트는 클라우드 서비스의 IP 주소로 IP 주소 리소스를 구성하고 프로브 포트 등의 다른 매개 변수를 설정합니다. IP 주소 리소스를 온라인으로 불러올 때 앞 부분에서 부하가 분산된 끝점으로부터 프로브 포트에 대한 폴링에 응답할 수 있습니다.
+    이 스크립트는 클라우드 서비스의 IP 주소로 IP 주소 리소스를 구성하고 프로브 포트 등의 다른 매개 변수를 설정합니다. IP 주소 리소스를 온라인으로 불러올 때 앞 부분에서 부하가 분산된 엔드포인트로부터 프로브 포트에 대한 폴링에 응답할 수 있습니다.
 
 ## <a name="bring-the-listener-online"></a>수신기를 온라인 상태로 만들기
 [!INCLUDE [Bring-Listener-Online](../../../../includes/virtual-machines-ag-listener-bring-online.md)]

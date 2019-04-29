@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/26/2017
 ms.author: maxluk
-ms.openlocfilehash: cf001d86356f4dd5fd3735803f0e329aa1e0940d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 69ae1bd05b64912b3d53ca88b468a72a90ff5a74
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/23/2019
-ms.locfileid: "60255059"
+ms.locfileid: "62097039"
 ---
 # <a name="authorize-users-for-apache-ambari-views"></a>사용자에게 Apache Ambari Views에 대한 권한 부여
 
@@ -107,7 +107,7 @@ Tez 보기 인스턴스에 사용자 및 그룹을 할당하려면 앞서 설명
 
 ![역할 블록 보기](./media/hdinsight-authorize-users-to-ambari/roles-block-view.png)
 
-### <a name="list-view"></a>목록 뷰
+### <a name="list-view"></a>목록 보기
 
 목록 보기는 두 개의 범주에서 신속한 편집 기능을 제공합니다. 사용자 및 그룹
 

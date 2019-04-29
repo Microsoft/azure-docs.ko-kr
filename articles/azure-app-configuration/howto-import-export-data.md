@@ -13,11 +13,11 @@ ms.date: 02/24/2019
 ms.author: yegu
 ms.custom: mvc
 ms.openlocfilehash: 6557f3a4129076c1e8708208e5d4e0d4f53dcec3
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60000558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60741789"
 ---
 # <a name="import-or-export-configuration-data"></a>구성 데이터 가져오기 또는 내보내기
 
@@ -70,4 +70,4 @@ Azure 앱 구성을 지 원하는 데이터 가져오기 및 내보내기 작업
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [ASP.NET Core 웹 앱 만들기](./quickstart-aspnet-core-app.md)  
+> [ASP.NET Core 웹앱 만들기](./quickstart-aspnet-core-app.md)  

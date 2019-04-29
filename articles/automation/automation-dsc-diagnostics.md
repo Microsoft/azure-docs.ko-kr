@@ -10,11 +10,11 @@ ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 0dad74f75fd7b73e7dab0b2dddbdfda193d5b2ec
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58445793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61073948"
 ---
 # <a name="forward-azure-automation-state-configuration-reporting-data-to-azure-monitor-logs"></a>Azure Automation 상태 구성이 Azure Monitor 로그로 보고 데이터 전달
 
@@ -37,8 +37,7 @@ Azure Monitor 로그로 자동화 상태 구성 보고서를 보내려면 다음
 
 - [Azure PowerShell](/powershell/azure/overview)의 2016년 11월(v2.3.0) 이후 릴리스
 - Azure Automation 계정. 자세한 내용은 [Azure Automation 시작](automation-offering-get-started.md)을 참조하세요.
-- 
-  **Automation &amp; Control** 서비스가 제공되는 Log Analytics 작업 공간 자세한 내용은 [Azure Monitor 로그 시작](../log-analytics/log-analytics-get-started.md)합니다.
+- **Automation &amp; Control** 서비스를 제공하는 Log Analytics 작업 영역. 자세한 내용은 [Azure Monitor 로그 시작](../log-analytics/log-analytics-get-started.md)합니다.
 - 적어도 하나 이상의 Azure Automation 상태 구성 노드 자세한 내용은 [Azure Automation 상태 구성을 통해 관리를 위한 머신 온보드](automation-dsc-onboarding.md)를 참조하세요.
 
 ## <a name="set-up-integration-with-azure-monitor-logs"></a>Azure Monitor 로그와의 통합 설정
@@ -138,7 +137,7 @@ Azure Automation의 진단은 Azure Monitor 로그의 두 가지 범주의 레�
 | HostName_s | 관리되는 노드의 이름입니다. |
 | IPAddress | 관리되는 노드의 IPv4 주소입니다. |
 | Category | DscNodeStatus |
-| Resource | Azure Automation 계정의 이름입니다. |
+| 리소스 | Azure Automation 계정의 이름입니다. |
 | Tenant_g | 호출자에 대한 테넌트를 식별하는 GUID입니다. |
 | NodeId_g |관리되는 노드를 식별하는 GUID입니다. |
 | DscReportId_g |보고서를 식별하는 GUID입니다. |
@@ -164,7 +163,7 @@ Azure Automation의 진단은 Azure Monitor 로그의 두 가지 범주의 레�
 | ResultType |리소스가 규정을 준수하는지 여부입니다. |
 | NodeName_s |관리되는 노드의 이름입니다. |
 | Category | DscNodeStatus |
-| Resource | Azure Automation 계정의 이름입니다. |
+| 리소스 | Azure Automation 계정의 이름입니다. |
 | Tenant_g | 호출자에 대한 테넌트를 식별하는 GUID입니다. |
 | NodeId_g |관리되는 노드를 식별하는 GUID입니다. |
 | DscReportId_g |보고서를 식별하는 GUID입니다. |

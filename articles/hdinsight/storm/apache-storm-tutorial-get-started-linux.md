@@ -2,7 +2,6 @@
 title: HDInsight의 Apache Storm에서 Storm-starter예제 - Azure
 description: HDInsight에서 Apache Storm 및 storm-starter 예제를 사용하여 빅 데이터 분석 및 데이터 처리를 수행하는 방법을 알아봅니다.
 keywords: storm-starter, apache storm 예제
-services: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -10,12 +9,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: 5c0fe0921446dde12771bacf096f806701b90444
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: 40757c80878ef5a06d3368d4c20f65ebfa11e47b
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58118002"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62116390"
 ---
 # <a name="get-started-with-apache-storm-on-hdinsight-using-the-storm-starter-examples"></a>storm-starter 예제를 사용하여 HDInsight의 Apache Storm 시작
 
@@ -90,7 +89,7 @@ Apache Storm은 데이터 스트림 처리용 확장 가능한 분산형 실시�
     > SSH 클라이언트에서 호스트의 신뢰성을 설정할 수 없다고 표시될 수도 있습니다. 그럴 경우 `yes`를 입력하여 계속합니다.
 
     > [!NOTE]  
-    > SSH 사용자 계정을 보호하는 암호를 사용한 경우 암호를 묻는 메시지가 나타납니다. 공개 키를 사용하는 경우, `-i` 매개 변수를 사용하여 일치하는 개인 키를 지정해야 할 수 있습니다. 예: `ssh -i ~/.ssh/id_rsa USERNAME@CLUSTERNAME-ssh.azurehdinsight.net`
+    > SSH 사용자 계정을 보호하는 암호를 사용한 경우 암호를 묻는 메시지가 나타납니다. 공개 키를 사용하는 경우, `-i` 매개 변수를 사용하여 일치하는 개인 키를 지정해야 할 수 있습니다. 예: `ssh -i ~/.ssh/id_rsa USERNAME@CLUSTERNAME-ssh.azurehdinsight.net`.
 
     자세한 내용은 [HDInsight와 함께 SSH 사용](../hdinsight-hadoop-linux-use-ssh-unix.md)을 참조하세요.
 

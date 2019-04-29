@@ -9,11 +9,11 @@ ms.date: 01/18/2019
 ms.author: tamram
 ms.subservice: common
 ms.openlocfilehash: 347ae6dbdbab866b6d82d64bec4e668689078429
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57791242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60729565"
 ---
 # <a name="azure-storage-redundancy"></a>Azure Storage 중복성
 

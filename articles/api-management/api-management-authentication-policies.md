@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/27/2017
 ms.author: apimpm
-ms.openlocfilehash: 9ee4a9fb5c63061eed32389b5672652aad01208a
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: c0f8da779ca656cf357c418b8766a53307643695
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59994950"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63764350"
 ---
 # <a name="api-management-authentication-policies"></a>API Management 인증 정책
 이 토픽에서는 다음 API Management 정책에 대한 참조를 제공합니다. 정책의 추가 및 구성에 대한 자세한 내용은 [API Management 정책](https://go.microsoft.com/fwlink/?LinkID=398186)을 참조하세요.  
@@ -49,16 +49,16 @@ ms.locfileid: "59994950"
   
 ### <a name="elements"></a>요소  
   
-|Name|설명|필수|  
+|이름|설명|필수|  
 |----------|-----------------|--------------|  
 |인증-기본|루트 요소입니다.|예|  
   
 ### <a name="attributes"></a>특성  
   
-|Name|설명|필수|Default|  
+|이름|설명|필수|기본값|  
 |----------|-----------------|--------------|-------------|  
-|사용자 이름|기본 자격 증명의 사용자 이름을 지정합니다.|예|N/A|  
-|password|기본 자격 증명의 비밀번호를 지정합니다.|예|N/A|  
+|username|기본 자격 증명의 사용자 이름을 지정합니다.|예|N/A|  
+|암호|기본 자격 증명의 비밀번호를 지정합니다.|예|N/A|  
   
 ### <a name="usage"></a>사용 현황  
  이 정책은 다음과 같은 정책 [섹션](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) 및 [범위](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes)에서 사용할 수 있습니다.  
@@ -70,29 +70,35 @@ ms.locfileid: "59994950"
 ##  <a name="ClientCertificate"></a> 클라이언트 인증서 사용 인증  
  `authentication-certificate` 정책을 사용하여 클라이언트 인증서를 사용하는 백 엔드 서비스를 인증합니다. 먼저 인증서를 [API Management에 설치](https://go.microsoft.com/fwlink/?LinkID=511599)하고 지문으로 식별해야 합니다.  
   
-### <a name="policy-statement"></a>정책 명령문  
+### <a name="policy-statement"></a>정책 문  
   
 ```xml  
-<authentication-certificate thumbprint="thumbprint" />  
+<authentication-certificate thumbprint="thumbprint" certificate-id="resource name"/>  
 ```  
   
-### <a name="example"></a>예  
+### <a name="examples"></a>예  
   
+이 예제에서는 클라이언트 인증서의 지 문으로 식별 됩니다.
 ```xml  
-<authentication-certificate thumbprint="....." />  
+<authentication-certificate thumbprint="CA06F56B258B7A0D4F2B05470939478651151984" />  
+``` 
+이 예제에서 클라이언트 인증서는 리소스 이름으로 식별 됩니다.
+```xml  
+<authentication-certificate certificate-id="544fe9ddf3b8f30fb490d90f" />  
 ```  
-  
+
 ### <a name="elements"></a>요소  
   
-|Name|설명|필수|  
+|이름|설명|필수|  
 |----------|-----------------|--------------|  
 |인증-인증서|루트 요소입니다.|예|  
   
 ### <a name="attributes"></a>특성  
   
-|Name|설명|필수|Default|  
+|이름|설명|필수|기본값|  
 |----------|-----------------|--------------|-------------|  
-|thumbprint|클라이언트 인증서에 대한 지문입니다.|예|N/A|  
+|thumbprint|클라이언트 인증서에 대한 지문입니다.|중 하나 `thumbprint` 또는 `certificate-id` 있어야 합니다.|N/A|  
+|인증서 id|인증서 리소스 이름입니다.|중 하나 `thumbprint` 또는 `certificate-id` 있어야 합니다.|N/A|  
   
 ### <a name="usage"></a>사용 현황  
  이 정책은 다음과 같은 정책 [섹션](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) 및 [범위](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes)에서 사용할 수 있습니다.  
@@ -118,13 +124,13 @@ ms.locfileid: "59994950"
   
 ### <a name="elements"></a>요소  
   
-|Name|설명|필수|  
+|이름|설명|필수|  
 |----------|-----------------|--------------|  
 |authentication-managed-identity |루트 요소입니다.|예|  
   
 ### <a name="attributes"></a>특성  
   
-|Name|설명|필수|Default|  
+|이름|설명|필수|기본값|  
 |----------|-----------------|--------------|-------------|  
 |resource|문자열입니다. Azure Active Directory에서 대상 웹 API (보안된 리소스)의 앱 ID URI입니다.|예|N/A|  
 |output-token-variable-name|문자열입니다. 개체 형식으로 토큰 값을 받는 컨텍스트 변수의 이름을 `string`입니다.|아닙니다.|N/A|  

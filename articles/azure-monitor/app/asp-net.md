@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: mbullwin
 ms.openlocfilehash: 719cbe1ec8962b320aa2850053d44cdef7f56a8c
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58437819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60691603"
 ---
 # <a name="set-up-application-insights-for-your-aspnet-website"></a>ASP.NET 웹 사이트용 Application Insights 설정
 
@@ -127,7 +127,7 @@ ApplicationInsights.config에 대한 사용자 지정을 수행한 경우, 업�
 
 ## <a name="video"></a>비디오
 
-* 에 대 한 외부 단계별 비디오 [처음부터.NET 응용 프로그램을 사용 하 여 Application Insights 구성](https://www.youtube.com/watch?v=blnGAVgMAfA)합니다.
+* [처음부터 .NET 애플리케이션으로 Application Insight 구성](https://www.youtube.com/watch?v=blnGAVgMAfA)에 대한 외부의 단계별 비디오입니다.
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 06/28/2018
 ms.author: terrylan
 ms.openlocfilehash: 49615dcb2f077d2e1d8b93a4bb900b435e4c87bf
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56104494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60589071"
 ---
 # <a name="azure-customer-data-protection"></a>Azure 고객 데이터 보호   
 Microsoft 운영 및 지원 담당자의 고객 데이터 액세스는 기본적으로 거부됩니다. 고객 데이터에 대한 액세스 권한이 부여되면 권한 승인이 필요하며 액세스가 신중하게 관리되고 기록됩니다. 액세스 제어 요구 사항은 다음 Azure 보안 정책으로 설정됩니다.

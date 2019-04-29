@@ -17,11 +17,11 @@ ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: 81535d51617a419174331dbf9b18ea558913dfa9
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50413165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60922247"
 ---
 # <a name="troubleshoot-application-connectivity-issues-on-virtual-machines-in-azure"></a>Azure의 가상 머신에서 애플리케이션 연결 문제해결
 
@@ -69,7 +69,7 @@ Azure 가상 머신에서 실행되는 애플리케이션의 액세스 문제 �
 
 문제 및 해당 보정의 원인을 확인하려면 다음 단계를 수행합니다.
 
-## <a name="step-1-access-application-from-target-vm"></a>1단계: 대상 VM에서 애플리케이션에 액세스
+## <a name="step-1-access-application-from-target-vm"></a>1단계: 대상 VM에서에서 응용 프로그램 액세스
 애플리케이션이 실행 중인 VM에서 해당 클라이언트 프로그램으로 애플리케이션에 액세스합니다. 로컬 호스트 이름, 로컬 IP 주소 또는 루프백 주소(127.0.0.1)를 사용합니다.
 
 ![VM에서 직접 애플리케이션 시작](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access2.png)
@@ -85,7 +85,7 @@ Azure 가상 머신에서 실행되는 애플리케이션의 액세스 문제 �
 
 Windows 및 Linux 기반 가상 머신 둘 다에서 **netstat -a** 명령을 사용하여 활성 수신 포트를 표시합니다. 애플리케이션이 수신해야 할 예상되는 포트에 대한 출력을 검토하세요. 애플리케이션을 다시 시작하거나 필요에 따라 예상되는 포트를 사용하도록 구성하여 다시 로컬로 애플리케이션에 액세스해 보세요.
 
-## <a id="step2"></a>2단계: 동일한 가상 네트워크의 다른 VM에서 응용 프로그램에 액세스
+## <a id="step2"></a>2단계: 동일한 가상 네트워크의 다른 VM에서 응용 프로그램 액세스
 VM의 호스트 이름 또는 Azure 할당 공용, 개인 또는 공급자 IP 주소를 사용하여 다른 VM이지만 동일한 가상 네트워크에서 애플리케이션에 액세스합니다. 클래식 배포 모델을 사용하여 만든 가상 머신의 경우 클라우드 서비스의 공용 IP 주소를 사용하지 않습니다.
 
 ![다른 VM에서 애플리케이션 시작](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access3.png)
@@ -105,7 +105,7 @@ VM의 호스트 이름 또는 Azure 할당 공용, 개인 또는 공급자 IP �
 
 Windows 기반 가상 컴퓨터에서, 방화벽 규칙이 사용자의 애플리케이션의 인바운드 및 아웃 바운드 트래픽을 제외할지 여부를 확인하려면 고급 보안이 포함된 Windows 방화벽을 사용하세요.
 
-## <a id="step3"></a>3단계: 가상 네트워크 외부에서 응용 프로그램에 액세스
+## <a id="step3"></a>3단계: 가상 네트워크 외부에서 액세스 응용 프로그램
 VM에서 애플리케이션이 실행되고 있는 경우 가상 네트워크 외부의 컴퓨터에서 애플리케이션에 대한 액세스를 시도하세요. 다른 네트워크를 원래의 클라이언트 컴퓨터로 사용합니다.
 
 ![가상 네트워크 외부의 컴퓨터에서 애플리케이션 시작](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access4.png)
@@ -132,7 +132,7 @@ VM에서 애플리케이션이 실행되고 있는 경우 가상 네트워크 �
   * 애플리케이션이 프로브 프로토콜(TCP 또는 UDP) 및 포트 번호에서 수신 대기 중인지 확인합니다(대상 VM에서 **netstat –a** 사용).
   * 대상 VM의 호스트 방화벽이 인바운드 프로브 요청 및 아웃바운드 프로브 응답 트래픽을 허용하는지 확인합니다.
 
-애플리케이션에 액세스할 수 있는 경우, 인터넷 에지 디바이스가 다음을 허용하는지 확인합니다.
+애플리케이션에 액세스 할 수 있는 경우, 인터넷 에지 장치가 다음을 허용하는지 확인합니다.
 
 * 아웃 바운드 애플리케이션이 클라이언트 컴퓨터에서 부터 Azure 가상 머신에 도달하는 트래픽 요청
 * Azure 가상 머신에서 발생하는 인바운드 애플리케이션 응답 트래픽

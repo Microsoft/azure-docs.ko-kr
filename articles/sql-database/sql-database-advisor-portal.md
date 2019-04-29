@@ -13,11 +13,11 @@ ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 12/19/2018
 ms.openlocfilehash: d80581aae56fc9d65d6f24d21f2c582cb74b3f2d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58863205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61420382"
 ---
 # <a name="find-and-apply-performance-recommendations"></a>성능 권장 사항 찾기 및 적용
 
@@ -156,7 +156,7 @@ Azure SQL Database가 권장 사항을 자동으로 구현하도록 설정할 �
 ![성능에 미치는 영향을 모니터링합니다.](./media/sql-database-advisor-portal/query-insights.png)
 
 ## <a name="summary"></a>요약
-Azure SQL Database는 SQL Database 성능을 향상하기 위한 권장 사항을 제공합니다. T-SQL 스크립트를 제공하여 데이터베이스를 최적화하고 궁극적으로 쿼리 성능을 향상시키도록 지원합니다.
+Azure SQL Database는 SQL 데이터베이스 성능을 향상하기 위한 권장 사항을 제공합니다. T-SQL 스크립트를 제공하여 데이터베이스를 최적화하고 궁극적으로 쿼리 성능을 향상시키도록 지원합니다.
 
 ## <a name="next-steps"></a>다음 단계
 권장 사항을 모니터링하고 개선된 성능을 계속 적용합니다. 데이터베이스 워크로드는 동적 이며 지속적으로 변경합니다. Azure SQL Database는 데이터베이스 성능을 잠재적으로 향상시킬 권장 사항을 계속 제공하고 모니터링할 것입니다. 

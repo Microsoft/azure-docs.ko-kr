@@ -9,11 +9,11 @@ ms.date: 09/24/2018
 ms.author: anantr
 ms.subservice: alerts
 ms.openlocfilehash: cb93f38c05156d7ab5acb89ffff810949583e507
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58089406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60551875"
 ---
 # <a name="manage-alert-instances"></a>경고 인스턴스 관리
 Azure Monitor의 [통합 경고 환경](https://aka.ms/azure-alerts-overview)을 통해, 이제 Azure 전체에서 여러 구독에 대한 모든 유형의 경고를 한 곳에서 볼 수 있습니다. 이 문서에서는 경고 인스턴스를 보는 방법과 포털에서 문제 해결을 위해 특정 경고 인스턴스를 찾는 방법을 설명합니다.

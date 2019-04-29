@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 01/28/2019
+ms.date: 04/22/2019
 ms.author: juliako
-ms.openlocfilehash: 30cd77799837f9b1ef08a9c609e518fd679b9b15
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 393b87aeed759950b946ccb45a008da9af4b7ebe
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60322304"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63766850"
 ---
 # <a name="live-event-latency-in-media-services"></a>Media Services의 라이브 이벤트 대기 시간
 
@@ -27,7 +27,7 @@ ms.locfileid: "60322304"
 새로운 **LowLatency** 기능을 사용하려면 **LiveEvent**에서 **StreamOptionsFlag**를 **LowLatency**로 설정할 수 있습니다. HLS 재생에 대한 [LiveOutput](https://docs.microsoft.com/rest/api/media/liveoutputs)을 만들 때 [LiveOutput.Hls.fragmentsPerTsSegment](https://docs.microsoft.com/rest/api/media/liveoutputs/create#hls)를 1로 설정합니다. 스트림이 실행되면 [Azure Media Player](https://ampdemo.azureedge.net/)(AMP) 데모 페이지를 사용할 수 있으며, 재생 옵션을 설정하여 "짧은 대기 시간 추론 프로필"을 사용할 수 있습니다.
 
 > [!NOTE]
-> 현재 Azure Media Player에서 LowLatency HeuristicProfile은 DASH 프로토콜 또는 CMAF로 HLS에서 스트림을 재생하기 위해 설계되었습니다. TS를 사용하여 HLS를 통해 MacOS 또는 iOS 디바이스를 대상으로 하는 경우(예: `format=m3u8-aapl` 또는 `format=m3u8-aapl-v3`) AMP는 이 경우 OS에서 제공하는 네이티브 플레이어를 직접 사용하기 때문에 이 설정을 사용하지 않아야 합니다.
+> 현재 Azure Media Player에서 LowLatency HeuristicProfile 용인지 CSF 또는 CMAF 형식으로 사용 하 여 MPEG DASH 프로토콜에서 스트림을 재생 (예를 들어 `format=mdp-time-csf` 또는 `format=mdp-time-cmaf`). 
 
 다음 .NET 예제에서는 **LiveEvent**에서 **LowLatency**를 설정하는 방법을 보여줍니다.
 

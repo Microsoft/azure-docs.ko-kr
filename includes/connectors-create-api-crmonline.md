@@ -1,15 +1,10 @@
 ---
-author: ecfan
-ms.service: logic-apps
-ms.topic: include
-ms.date: 11/03/2016
-ms.author: estfan
 ms.openlocfilehash: 53c683dacbb3b94e34bd8662743673c3a0490d94
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "58114664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62119962"
 ---
 #### <a name="prerequisites"></a>필수 조건
 * Azure 계정의 경우 [무료 계정](https://azure.microsoft.com/free)

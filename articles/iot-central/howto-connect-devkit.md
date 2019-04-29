@@ -9,11 +9,11 @@ ms.service: iot-central
 services: iot-central
 manager: philmea
 ms.openlocfilehash: 82222dd927f46761941a6a750d96222cc626e71b
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60006185"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60887340"
 ---
 # <a name="connect-an-mxchip-iot-devkit-device-to-your-azure-iot-central-application"></a>Azure IoT Central 애플리케이션에 MXChip IoT DevKit 장치 연결
 
@@ -208,12 +208,12 @@ Azure IoT Central 응용 프로그램에 속성 값을 보고 하는 방법을 �
 | gyroscopeZ     | mdps   | -2000   | 2000    | 0              |
 
 #### <a name="states"></a>상태 
-| Name          | 표시 이름   | 정상 | 주의 | 위험 | 
+| 이름          | 표시 이름   | 정상 | 주의 | 위험 | 
 | ------------- | -------------- | ------ | ------- | ------ | 
 | DeviceState   | 디바이스 상태   | 녹색  | 주황색  | 빨강    | 
 
 #### <a name="events"></a>이벤트 
-| Name             | 표시 이름      | 
+| 이름             | 표시 이름      | 
 | ---------------- | ----------------- | 
 | ButtonBPressed   | 단추 B 누름  | 
 

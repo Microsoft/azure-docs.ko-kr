@@ -11,13 +11,13 @@ author: aliceku
 ms.author: aliceku
 ms.reviewer: vanto, carlrab, emlisa
 manager: craigg
-ms.date: 04/11/2019
-ms.openlocfilehash: cb4ff203a69e04aeaff6d446d6ce3719f4158305
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.date: 04/26/2019
+ms.openlocfilehash: f466a1c3fd0b2d527fc4ab407d096f6bb9b7d8b9
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60001085"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63766914"
 ---
 # <a name="an-overview-of-azure-sql-database-security-capabilities"></a>Azure SQL Database 보안 기능의 개요
 
@@ -35,9 +35,9 @@ IP 방화벽 규칙은 각 요청이 시작된 IP 주소를 기준으로 하여 
 
 ### <a name="virtual-network-firewall-rules"></a>Virtual Network 방화벽 규칙
 
-[Virtual Network 서비스 엔드포인트](../virtual-network/virtual-network-service-endpoints-overview.md)는 Azure 백본을 통해 Virtual Network 연결을 확장하며, 트래픽이 생성되는 Virtual Network 서브넷을 Azure SQL Database가 식별할 수 있도록 합니다. 트래픽이 Azure SQL Database로 전송되도록 하려면 SQL [서비스 태그](../virtual-network/security-overview.md)를 사용해 네트워크 보안 그룹을 통한 아웃바운드 트래픽을 허용합니다.
+[가상 네트워크 서비스 엔드포인트](../virtual-network/virtual-network-service-endpoints-overview.md)는 Azure 백본을 통해 가상 네트워크 연결을 확장하며, 트래픽이 생성되는 가상 네트워크 서브넷을 Azure SQL Database가 식별할 수 있도록 합니다. 트래픽이 Azure SQL Database로 전송되도록 하려면 SQL [서비스 태그](../virtual-network/security-overview.md)를 사용해 네트워크 보안 그룹을 통한 아웃바운드 트래픽을 허용합니다.
 
-Azure SQL Database는 [Virtual Network 규칙](sql-database-vnet-service-endpoint-rule-overview.md)을 통해 Virtual Network 내의 선택한 서브넷에서 전송된 통신만 수락할 수 있습니다.
+Azure SQL Database는 [가상 네트워크 규칙](sql-database-vnet-service-endpoint-rule-overview.md)을 통해 Virtual Network 내의 선택한 서브넷에서 전송된 통신만 수락할 수 있습니다.
 
 > [!NOTE]
 > 방화벽 규칙을 사용한 액세스 제어는 **관리되는 인스턴스**에 적용되지 *않습니다*. 필요한 네트워킹 구성에 대한 자세한 내용은 [관리되는 인스턴스에 연결](sql-database-managed-instance-connect-app.md)을 참조하세요.
@@ -53,7 +53,7 @@ Azure SQL Database는 [Virtual Network 규칙](sql-database-vnet-service-endpoin
 
 - **SQL 인증**:
 
-    SQL Database 인증은 사용자 이름과 암호를 사용하여 [Azure SQL Database](sql-database-technical-overview.md)에 연결할 때 사용자가 수행하는 인증을 지칭합니다. 데이터베이스용 데이터베이스 서버를 만들 때 사용자 이름과 암호를 사용하는 "서버 관리자" 로그인을 지정해야 합니다. "서버 관리자"는 이러한 자격 증명을 사용하여 해당 데이터베이스 서버의 모든 데이터베이스에 데이터베이스 소유자로 인증할 수 있습니다. 그리고 나면 서버 관리자는 추가 SQL 로그인 및 사용자를 만들 수 있으며, 그러면 사용자가 사용자 이름과 암호를 사용하여 연결할 수 있습니다.
+    SQL 데이터베이스 인증은 사용자 이름과 암호를 사용하여 [Azure SQL Database](sql-database-technical-overview.md)에 연결할 때 사용자가 수행하는 인증을 지칭합니다. 데이터베이스용 데이터베이스 서버를 만들 때 사용자 이름과 암호를 사용하는 "서버 관리자" 로그인을 지정해야 합니다. "서버 관리자"는 이러한 자격 증명을 사용하여 해당 데이터베이스 서버의 모든 데이터베이스에 데이터베이스 소유자로 인증할 수 있습니다. 그리고 나면 서버 관리자는 추가 SQL 로그인 및 사용자를 만들 수 있으며, 그러면 사용자가 사용자 이름과 암호를 사용하여 연결할 수 있습니다.
 
 - **Azure Active Directory 인증**:
 
@@ -66,19 +66,17 @@ Azure SQL Database는 [Virtual Network 규칙](sql-database-vnet-service-endpoin
 > [!IMPORTANT]
 > Azure 내에서 데이터베이스와 서버를 관리하는 작업은 포털 사용자 계정의 역할 할당을 통해 제어됩니다. 이 아티클에 대한 자세한 내용은 [Azure Portal의 역할 기반 액세스 제어](../role-based-access-control/overview.md)를 참조하세요. 방화벽 규칙을 사용한 액세스 제어는 **관리되는 인스턴스**에 적용되지 *않습니다*. 필요한 네트워킹 구성에 대한 자세한 내용은 [관리되는 인스턴스에 연결](sql-database-managed-instance-connect-app.md)에 관한 다음 문서를 참조하세요.
 
-Azure SQL Database 내에서 사용자에게 할당되는 권한을 지칭하는 권한 부여는 사용자가 수행할 수 있는 작업을 결정합니다. 데이터베이스 수준 권한을 정의하는 [데이터베이스 역할](/sql/relational-databases/security/authentication-access/database-level-roles)에 사용자 계정을 추가하거나, 사용자에게 특정 [개체 수준 권한](/sql/relational-databases/security/permissions-database-engine)을 부여하는 방식으로 권한을 제어합니다. 자세한 내용은 [로그인 및 사용자](sql-database-manage-logins.md)를 참조하세요.
+## <a name="authorization"></a>권한 부여
 
-사용자가 직무를 수행하는 데 필요한 최소 권한이 있는 역할에 사용자를 추가하는 것이 모범 사례입니다. 서버 관리자 계정은 db_owner 역할의 구성원입니다. 이 역할은 광범위한 권한을 포함하므로 사용자에게 부여할 때는 주의해야 합니다. Azure SQL Database와 함께 애플리케이션을 사용할 때는 권한이 제한된 [애플리케이션 역할](/sql/relational-databases/security/authentication-access/application-roles)을 사용합니다. 그러면 데이터베이스에 연결하는 애플리케이션에 필요한 최소 권한만 제공됩니다.
+Azure SQL Database 내에서 사용자에게 할당되는 권한을 지칭하는 권한 부여는 사용자가 수행할 수 있는 작업을 결정합니다. 사용 권한은 사용자 계정을 추가 하 여 제어 됩니다 [데이터베이스 역할](/sql/relational-databases/security/authentication-access/database-level-roles) 하 고 해당 역할 또는 특정 사용자 권한을 부여 하 여 데이터베이스 수준 사용 권한을 할당 [개체 수준 사용 권한](/sql/relational-databases/security/permissions-database-engine)합니다. 자세한 내용은 [로그인 및 사용자](sql-database-manage-logins.md)를 참조하세요.
+
+모범 사례로, 필요한 경우 사용자 지정 역할을 만듭니다. 해당 직무를 수행 하는 데 필요한 최소한의 권한을 가진 역할에 사용자를 추가 합니다. 사용자에 게 직접 사용 권한을 할당 하지 마세요. 서버 관리자 계정을 광범위 한 사용 권한을 관리 상의 임무를 사용 하 여 적은 수의 사용자만 부여 해야 하며 기본 제공 db_owner 역할의 멤버 임 Azure SQL Database 응용 프로그램을 사용 합니다 [EXECUTE AS](/sql/t-sql/statements/execute-as-clause-transact-sql) 호출된 모듈의 실행 컨텍스트를 지정 하거나 사용 [응용 프로그램 역할](/sql/relational-databases/security/authentication-access/application-roles) 제한 된 권한으로 합니다. 이 방법은 데이터베이스에 연결 하는 응용 프로그램에 응용 프로그램에서 필요한 최소한의 권한이 있는지 확인 합니다. 업무를 분리 하는 데도 이러한 모범 사례를 따르면 됩니다.
 
 ### <a name="row-level-security"></a>행 수준 보안
 
-행 수준 보안을 통해 고객은 쿼리를 실행하는 사용자의 특성(예: 그룹 멤버 자격 또는 실행 컨텍스트)을 기반으로 하여 데이터베이스 테이블의 행에 대한 액세스를 제어할 수 있습니다. 자세한 내용은 [행 수준 보안](/sql/relational-databases/security/row-level-security)을 참조하세요.
+행 수준 보안을 통해 고객은 쿼리를 실행하는 사용자의 특성(예: 그룹 멤버 자격 또는 실행 컨텍스트)을 기반으로 하여 데이터베이스 테이블의 행에 대한 액세스를 제어할 수 있습니다. 행 수준 보안 사용자 지정 레이블 기반 보안 개념 구현도 사용할 수 있습니다. 자세한 내용은 [행 수준 보안](/sql/relational-databases/security/row-level-security)을 참조하세요.
 
 ![azure-database-rls.png](media/sql-database-security-overview/azure-database-rls.png)
-
-  이 인증 방법은 사용자 이름과 암호를 사용합니다. 
-
-Azure SQL Database의 권한 개요는 [로그인 및 사용자](sql-database-manage-logins.md#permissions)를 참조하세요.
 
 ## <a name="threat-protection"></a>위협 보호
 

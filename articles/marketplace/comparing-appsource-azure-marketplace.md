@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
 ms.openlocfilehash: f204f01fae0bd01f9f2f0e242c63ec2070d6d195
-ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52678052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62121163"
 ---
 # <a name="comparing-appsource-and-the-azure-marketplace"></a>AppSource와 Azure Marketplace 비교
 [Azure Marketplace](https://azuremarketplace.microsoft.com) 및 [Microsoft AppSource](https://appsource.microsoft.com)의 상점은 고유한 고객 요구에 맞춰 서비스합니다. 상점을 사용하여 역할별로 대상 고객을 지정할 수 있습니다. 사용자는 고객에 따라 적합한 솔루션 또는 서비스를 제공할 수 있습니다.

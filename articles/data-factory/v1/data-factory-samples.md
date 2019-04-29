@@ -14,11 +14,11 @@ ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: 03127dc777588f669ef07af52c8f73d986bfe0ea
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54020815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61260039"
 ---
 # <a name="azure-data-factory---samples"></a>Azure 데이터 팩터리 - 샘플
 > [!NOTE]
@@ -50,7 +50,7 @@ GitHub의 데이터 팩터리에 대한 다음 Azure Resource Manager 템플릿�
 
 | Template | 설명 |
 | --- | --- |
-| [Azure Blob Storage에서 Azure SQL Database로 데이터 복사](https://github.com/Azure/azure-quickstart-templates/tree/master/101-data-factory-blob-to-sql-copy) |이 템플릿을 배포하면 지정된 Azure Blob Storage에서 Azure SQL Database에 데이터를 복사하는 파이프라인으로 Azure Data Factory가 만들어집니다. |
+| [Azure Blob Storage에서 Azure SQL Database로 데이터 복사](https://github.com/Azure/azure-quickstart-templates/tree/master/101-data-factory-blob-to-sql-copy) |이 템플릿을 배포하면 지정된 Azure Blob 스토리지에서 Azure SQL 데이터베이스에 데이터를 복사하는 파이프라인으로 Azure Data Factory가 만들어집니다. |
 | [Salesforce에서 Azure Blob Storage로 데이터 복사](https://github.com/Azure/azure-quickstart-templates/tree/master/101-data-factory-salesforce-to-blob-copy) |이 템플릿을 배포하면 지정된 Salesforce 계정에서 Azure Blob Storage에 데이터를 복사하는 파이프라인으로 Azure Data Factory가 만들어집니다. |
 | [Azure HDInsight 클러스터에서 Hive 스크립트를 실행하여 데이터 변환](https://github.com/Azure/azure-quickstart-templates/tree/master/101-data-factory-hive-transformation) |이 템플릿을 배포하면 Azure HDInsight Hadoop 클러스터에서 Hive 스크립트를 실행하여 데이터를 변환하는 파이프라인으로 Azure Data Factory가 만들어집니다. |
 
@@ -106,7 +106,7 @@ GitHub의 데이터 팩터리에 대한 다음 Azure Resource Manager 템플릿�
    4. 데이터 팩터리의 **리소스 그룹** 을 선택합니다.
    5. **지역**에서 **미국 서부**, **미국 동부** 또는 **북유럽**을 선택합니다.
    6. **다음**을 클릭합니다.
-6. **데이터 저장소 구성** 페이지에서 기존 **Azure SQL Database** 및 **Azure Storage 계정**을 지정하거나, 데이터베이스/스토리지를 만들고 다음을 클릭합니다.
+6. **데이터 저장소 구성** 페이지에서 기존 **Azure SQL 데이터베이스** 및 **Azure 스토리지 계정**을 지정하거나, 데이터베이스/스토리지를 만들고 다음을 클릭합니다.
 7. **계산 구성** 페이지에서 기본값을 선택하고 **다음**을 클릭합니다.
 8. **요약** 페이지에서 모든 설정을 검토하고 **다음**을 클릭합니다.
 9. **배포 상태** 페이지에서 배포가 완료될 때까지 대기하고 **마침**을 클릭합니다.

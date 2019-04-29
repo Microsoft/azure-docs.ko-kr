@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: milanga;juliako;
 ms.openlocfilehash: e0b083cba575f4d1c0eb19afb76fca29431ae75e
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58259104"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61463534"
 ---
 # <a name="detect-motions-with-azure-media-analytics"></a>Azure 미디어 검색으로 동작 검색
 ## <a name="overview"></a>개요
@@ -94,14 +94,14 @@ ms.locfileid: "58259104"
 
 | 요소 | 설명 |
 | --- | --- |
-| 버전 |동영상 API의 버전을 나타냅니다. 현재 버전은 2입니다. |
+| Version |동영상 API의 버전을 나타냅니다. 현재 버전은 2입니다. |
 | 시간 간격 |동영상의 초당 "틱"입니다. |
 | Offset |"틱" 단위의 타임스탬프에 대한 시간 오프셋입니다. 동영상 API 버전 1.0에서는 항상 0입니다. 향후 지원하는 시나리오에서는 이 값이 변경될 수 있습니다. |
 | 프레임 속도 |동영상의 초당 프레임 수입니다. |
 | 너비, 높이 |픽셀 단위의 동영상 너비와 높이를 참조합니다. |
 | 시작 |"틱" 단위의 시작 타임스탬프입니다. |
 | 기간 |"틱" 단위의 이벤트 길이입니다. |
-| 간격 |"틱" 단위의 이벤트에 있는 각 항목의 간격입니다. |
+| Interval |"틱" 단위의 이벤트에 있는 각 항목의 간격입니다. |
 | 이벤트 |각 이벤트 조각에는 해당 기간 내에 검색된 동작이 포함됩니다. |
 | Type |현재 버전에서 이 값은 일반 동작에 대해 항상 '2'입니다. 이 레이블은 향후 버전에서 동영상 API에 동작 분류에 대한 유연성을 제공합니다. |
 | RegionID |위에서 설명했듯이 이 버전에서 이 값은 항상 0입니다. 이 레이블은 향후 버전에서 동영상 API에 다양한 영역에서 동작을 찾는 유연성을 제공합니다. |

@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: mayg
 ms.openlocfilehash: 90388d570d027aea3c897f7306a1714fd7e847b3
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59618102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60772418"
 ---
 # <a name="integrate-azure-expressroute-with-disaster-recovery-for-azure-vms"></a>Azure VM을 위한 재해 복구와 Azure ExpressRoute 통합
 
@@ -106,10 +106,10 @@ ExpressRoute를 사용하면 연결 공급자가 지원하는 개인 연결을 �
 
 **방향** | **설정** | **State**
 --- | --- | ---
-스포크-허브 | 가상 네트워크 주소 허용 | 사용
-스포크-허브 | 전달된 트래픽 허용 | 사용
+스포크-허브 | 가상 네트워크 주소 허용 | Enabled
+스포크-허브 | 전달된 트래픽 허용 | Enabled
 스포크-허브 | 게이트웨이 전송 허용 | 사용 안 함
-스포크-허브 | 게이트웨이 제거 사용 | 사용
+스포크-허브 | 게이트웨이 제거 사용 | Enabled
 
  ![허브 피어링 구성에 대한 스포크](./media/azure-vm-disaster-recovery-with-expressroute/spoke-to-hub-peering-configuration.png)
 
@@ -117,9 +117,9 @@ ExpressRoute를 사용하면 연결 공급자가 지원하는 개인 연결을 �
 
 **방향** | **설정** | **State**
 --- | --- | ---
-허브-스포크 | 가상 네트워크 주소 허용 | 사용
-허브-스포크 | 전달된 트래픽 허용 | 사용
-허브-스포크 | 게이트웨이 전송 허용 | 사용
+허브-스포크 | 가상 네트워크 주소 허용 | Enabled
+허브-스포크 | 전달된 트래픽 허용 | Enabled
+허브-스포크 | 게이트웨이 전송 허용 | Enabled
 허브-스포크 | 게이트웨이 제거 사용 | 사용 안 함
 
  ![스포크 피어링 구성에 대한 허브](./media/azure-vm-disaster-recovery-with-expressroute/hub-to-spoke-peering-configuration.png)

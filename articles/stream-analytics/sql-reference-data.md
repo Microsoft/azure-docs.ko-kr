@@ -9,11 +9,11 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/29/2019
 ms.openlocfilehash: 3368be291770133cdfa10158f6e30540e17b8223
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58084313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61363762"
 ---
 # <a name="use-reference-data-from-a-sql-database-for-an-azure-stream-analytics-job-preview"></a>Azure Stream Analytics 작업에 SQL Database의 참조 데이터 사용(미리 보기)
 
@@ -72,7 +72,7 @@ Visual Studio를 사용하여 Azure SQL Database를 참조 입력 원본으로 �
 
 ### <a name="create-a-sql-database-table"></a>SQL Database 테이블 만들기
 
-SQL Server Management Studio를 사용하여 참조 데이터를 저장할 테이블을 만듭니다. 자세한 내용은 [SSMS를 사용하여 첫 번째 Azure SQL Database 디자인](../sql-database/sql-database-design-first-database.md)을 참조하세요.
+SQL Server Management Studio를 사용하여 참조 데이터를 저장할 테이블을 만듭니다. 자세한 내용은 [SSMS를 사용하여 첫 번째 Azure SQL 데이터베이스 디자인](../sql-database/sql-database-design-first-database.md)을 참조하세요.
 
 다음 예제에서 사용하는 예제 테이블은 다음 문에서 만들었습니다.
 

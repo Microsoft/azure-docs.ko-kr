@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 04/26/2018
 ms.author: barclayn
 ms.openlocfilehash: 9413c0503c1b78550776d1c2f6ab8239205a788b
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56117870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62121627"
 ---
 # <a name="internet-of-things-security-best-practices"></a>사물 인터넷 보안 모범 사례
 

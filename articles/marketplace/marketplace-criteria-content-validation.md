@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/05/2018
 ms.author: yijenj
 ms.openlocfilehash: e72b115420e49a50f18ae9a27c6243394427ea4a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58000415"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61093202"
 ---
 # <a name="azure-marketplace-listing-guidelines"></a>Azure Marketplace 목록 가이드라인
 
@@ -95,7 +95,7 @@ ms.locfileid: "58000415"
 | 7 | 개인정보처리방침 및 사용 약관 제공  |  정책 또는 사용 약관이 필요하지 않음  | | 
 | 8 | 서비스 유형 | 서비스 유형이 이름과 일치하는지 확인 | |
 | 9 | 역량 |<br>• 최소한 다음 중 하나여야 함:<br>• 애플리케이션 개발 <br>• 애플리케이션 통합 <br>• 애플리케이션 수명 주기 관리 <br>• 클라우드 플랫폼 <br>• 데이터 분석 <br>• 데이터 센터 <br>• 데이터 플랫폼 <br>• DevOps |
-| 10 | 제품 | Azure여야 함 | |
+| 10 | Products | Azure여야 함 | |
 | 11 | 국가/지역 | 국가 및 지역이 선택한 통화와 일치하는지 확인 | |
 | 12 | 자세한 정보  | <br>• 맨 아래 링크(설명 아래에 있고 왼쪽의 마켓플레이스 링크 아님)를 클릭하면 솔루션에 대한 자세한 정보로 이동하며, 공개적으로 사용 가능하고 올바르게 표시됨 <br>• 링크에 “이름”이 있고 다운로드의 파일 이름으로 표시되지 않아야 함 | |
 

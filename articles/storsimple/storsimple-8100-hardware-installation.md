@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 01/09/2018
 ms.author: alkohli
-ms.openlocfilehash: 5fbc407a9792d033037fdaa2b14f4055d94c15ab
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: b367b6e7126a442dc68646ff52a29c955f50b798
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38701945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60631229"
 ---
 # <a name="unpack-rack-mount-and-cable-your-storsimple-8100-device"></a>StorSimple 8100 디바이스 개봉, 랙 탑재, 케이블 연결
 ## <a name="overview"></a>개요
@@ -44,7 +44,7 @@ Microsoft Azure StorSimple 8100은 단일 인클로저의 랙 탑재 디바이�
    
      ![저장 디바이스 개봉하기](./media/storsimple-8100-hardware-installation/HCSUnpackyour2Udevice.png)
    
-    **저장소 장치가 개봉된 상태**
+    **저장 디바이스가 개봉된 상태**
    
    | 레이블 | 설명 |
    | --- | --- |
@@ -139,7 +139,7 @@ Microsoft Azure StorSimple 8100은 단일 인클로저의 랙 탑재 디바이�
    
     ![랙에 디바이스 삽입](./media/storsimple-8100-hardware-installation/HCSInsertingDeviceintheRack.png)
    
-    **랙에 장치를 탑재합니다.**
+    **랙에 디바이스를 탑재합니다.**
 3. 왼쪽 및 오른쪽 전면 플랜지 캡을 당겨서 제거합니다. 플랜지 캡은 플랜지에 쉽게 부착됩니다.
 4. 왼쪽 및 오른쪽 각 플랜지를 통해 제공된 십자 머리 나사 하나를 설치하여 인클로저를 랙에 고정합니다.
 5. 플랜지 캡을 제자리에 밀어 넣어 설치합니다.<br/>
@@ -167,7 +167,7 @@ Microsoft Azure StorSimple 8100은 단일 인클로저의 랙 탑재 디바이�
 * 제공된 직렬 케이블
 * PC에 적절한 드라이버가 설치된 직렬 USB 변환기(필요한 경우)
 * 10GbE 네트워크 인터페이스와 함께 사용하기 위해 제공된 4개의 QSFP-대-SFP+어댑터
-* [StorSimple 장치의 10GbE 네트워크 인터페이스에 대해 지원되는 하드웨어](storsimple-supported-hardware-for-10-gbe-network-interfaces.md)
+* [StorSimple 디바이스의 10GbE 네트워크 인터페이스에 대해 지원되는 하드웨어](storsimple-supported-hardware-for-10-gbe-network-interfaces.md)
 
 ### <a name="power-cabling"></a>전원 케이블 연결
 디바이스에는 예비 전원 및 냉각 모듈(PCM)이 포함됩니다. 두 PCM을 모두 설치하고 다른 전원 공급 장치에 연결하여 높은 가용성을 보장해야 합니다.
@@ -186,7 +186,7 @@ Microsoft Azure StorSimple 8100은 단일 인클로저의 랙 탑재 디바이�
    
     ![8100 디바이스의 백플레인](./media/storsimple-8100-hardware-installation/HCSBackplaneof2UDevicewithPortsLabeled.jpg)
    
-    **데이터 포트를 표시하는 장치의 뒷면**
+    **데이터 포트를 표시하는 디바이스의 뒷면**
    
    | 레이블 | 설명 |
    | --- | --- |
@@ -197,7 +197,7 @@ Microsoft Azure StorSimple 8100은 단일 인클로저의 랙 탑재 디바이�
 
     ![네트워크에 2U 디바이스를 케이블로 연결](./media/storsimple-8100-hardware-installation/HCSCableYour2UDeviceforNetwork.png)
 
-    **장치에 네트워크 케이블 연결**
+    **디바이스에 네트워크 케이블 연결**
 
    |레이블 | 설명 |
    |----- | ----------- |
@@ -232,20 +232,20 @@ Microsoft Azure StorSimple 8100은 단일 인클로저의 랙 탑재 디바이�
 다음 단계를 수행하여 직렬 포트를 케이블로 연결하세요.
 
 #### <a name="to-cable-for-serial-connection"></a>케이블로 직렬 연결을 하려면
-1. 디바이스에는 각 컨트롤러에 렌치 아이콘으로 식별되는 직렬 포트가 있습니다. [네트워크 케이블 연결](#network-cabling) 섹션의 그림을 참조하여 장치의 백플레인에서 직렬 포트를 찾으세요.
+1. 디바이스에는 각 컨트롤러에 렌치 아이콘으로 식별되는 직렬 포트가 있습니다. [네트워크 케이블 연결](#network-cabling) 섹션의 그림을 참조하여 디바이스의 백플레인에서 직렬 포트를 찾으세요.
 2. 디바이스 백플레인에서 활성 컨트롤러를 찾으세요. 파란색 LED가 깜빡이면 컨트롤러가 활성 상태인 것입니다.
 3. 제공된 직렬 케이블(필요한 경우 노트북용 USB-직렬 변환기 사용)을 사용하여 콘솔 또는 컴퓨터(디바이스에 터미널 에뮬레이션이 있는)를 활성 컨트롤러의 직렬 포트에 연결합니다.
 4. 컴퓨터에 (디바이스와 함께 제공된) 직렬-USB 드라이버를 설치합니다.
-5. 직렬 연결을 다음과 같이 설정합니다. 115,200 baud, 8 데이터 비트, 1 정지 비트, 패리티 없음, 흐름 제어를 없음으로 설정
+5. 다음과 같이 직렬 연결을 설정합니다. 115,200 baud, 8 데이터 비트, 1 정지 비트, 패리티 없음, 및 흐름 제어를 없음으로 설정 합니다.
 6. 콘솔에서 Enter 키를 눌러 연결이 작동하는지 확인합니다. 그러면 직렬 콘솔 메뉴가 나타납니다.
 
 > [!NOTE]
-> **정전 시 관리:** 장치가 원격 데이터센터나 접근이 제한된 컴퓨터실에 설치되어 있다면 두 컨트롤러에 대한 직렬 연결이 항상 직렬 콘솔 스위치나 유사한 장치에 연결되어 있는지 확인해야 합니다. 이렇게 하면 네트워크 중단 또는 예기치 않은 장애 발생 시 대역 외 원격 제어 및 지원 작업이 허용됩니다.
+> **Lights-Out Management**: 장치가 원격 데이터 센터에서 또는 액세스가 제한 된 컴퓨터실에 설치 되 면 두 컨트롤러에 대 한 직렬 연결이 항상 직렬 콘솔 스위치 또는 유사한 장비에 연결 되어 있는지 확인 합니다. 이렇게 하면 네트워크 중단 또는 예기치 않은 장애 발생 시 대역 외 원격 제어 및 지원 작업이 허용됩니다.
 > 
 > 
 
 이제 디바이스가 케이블로 전원, 네트워크 액세스 및 직렬 디바이스에 연결되었습니다. 다음 단계는 소프트웨어를 구성하고 디바이스를 배포하는 것입니다.
 
 ## <a name="next-steps"></a>다음 단계
-[온-프레미스 StorSimple 장치를 배포 및 구성](storsimple-8000-deployment-walkthrough-u2.md)하는 방법에 대해 알아봅니다.
+[온-프레미스 StorSimple 디바이스를 배포 및 구성](storsimple-8000-deployment-walkthrough-u2.md)하는 방법에 대해 알아봅니다.
 

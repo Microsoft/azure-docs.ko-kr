@@ -13,11 +13,11 @@ ms.reviewer: vanto, carlrab
 manager: craigg
 ms.date: 03/31/2019
 ms.openlocfilehash: 710a94c919f4262c3f572f28d03c79b77e658287
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59797067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60614555"
 ---
 # <a name="advanced-threat-protection-for-azure-sql-database"></a>Azure SQL Database의 Advanced Threat Protection
 
@@ -80,6 +80,6 @@ Advanced Threat Protection에는 해당 경고를 통합 하며 [Azure 보안 �
 - 에 대해 자세히 알아보세요 [단일 및 풀링된 데이터베이스에서 Advanced Threat Protection](sql-database-threat-detection.md)합니다.
 - 에 대해 자세히 알아보세요 [Advanced Threat Protection에서 관리 되는 인스턴스](sql-database-managed-instance-threat-detection.md)합니다.
 - 에 대해 자세히 알아보세요 [고급 데이터 보안](sql-database-advanced-data-security.md)합니다.
-- [Azure SQL Database 감사](sql-database-auditing.md)에 대해 자세히 알아봅니다.
+- [Azure SQL Database 감사](sql-database-auditing.md)에 대한 자세한 정보
 - [Azure Security Center](https://docs.microsoft.com/azure/security-center/security-center-intro)에 대해 자세히 알아봅니다.
 - 가격 책정에 대한 자세한 내용은 [SQL Database 가격 책정 페이지](https://azure.microsoft.com/pricing/details/sql-database/)를 참조하세요.  

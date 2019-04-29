@@ -15,11 +15,11 @@ ms.topic: reference
 ms.date: 09/13/2018
 ms.author: pbutlerm
 ms.openlocfilehash: ea3f26d70c4a4ce07c988612890687504a4cf5ac
-ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56594681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60624975"
 ---
 <a name="go-live"></a>Go Live
 =======
@@ -33,8 +33,8 @@ ms.locfileid: "56594681"
 
 |  **Name**      |   **설명**                                                           | **데이터 형식** |
 |  --------      |   ---------------                                                           | ------------- |
-| publisherId    | 검색할 제품의 게시자 식별자입니다(예: `contoso`).       |  문자열       |
-| offerId        | 검색할 제품의 제품 식별자입니다.                                   |  문자열       |
+| publisherId    | 검색할 제품의 게시자 식별자입니다(예: `contoso`).       |  String       |
+| offerId        | 검색할 제품의 제품 식별자입니다.                                   |  String       |
 | api-version    | 최신 버전의 API입니다.                                                   |  Date         |
 |  |  |  |
 

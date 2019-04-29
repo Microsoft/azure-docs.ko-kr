@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 1775bbb2913f6b1a985ca7ec9e89bafed42fd0e6
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58258210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61129714"
 ---
 # <a name="manage-streaming-endpoints-with-the-azure-portal"></a>Azure 포털을 통해 스트리밍 엔드포인트 관리 
 
@@ -63,7 +63,7 @@ Azure 포털을 사용하여 스트리밍 엔드포인트를 추가/삭제하려
 ## <a id="configure_streaming_endpoints"></a>스트리밍 엔드포인트 구성
 스트리밍 엔드포인트를 사용하면 다음 속성을 구성할 수 있습니다.
 
-* Access Control
+* 액세스 제어
 * 캐시 제어
 * 교차 사이트 액세스 정책
 

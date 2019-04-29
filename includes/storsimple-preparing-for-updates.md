@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 4e262c9e5bb88e77bc9c09853c06f4cdb41eedaa
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58891026"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60860398"
 ---
 ## <a name="preparing-for-updates"></a>업데이트 준비
 업데이트를 스캔하고 적용하기 전에 다음 단계를 수행해야 합니다.

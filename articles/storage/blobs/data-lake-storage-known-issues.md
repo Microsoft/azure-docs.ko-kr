@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 02/28/2019
 ms.author: normesta
 ms.openlocfilehash: d56fb411eb032e5e6227d68cd8abe02c0e30850b
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60006865"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60708467"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Azure Data Lake Storage Gen2에서 알려진 문제
 

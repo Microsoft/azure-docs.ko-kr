@@ -1,19 +1,22 @@
 ---
 title: Power BI 작업 영역 컬렉션에서 보고서 저장 | Microsoft Docs
 description: Power BI 작업 영역 컬렉션 내에서 보고서를 저장하는 방법을 알아봅니다. 성공적인 작업을 위해서는 적절한 사용 권한이 필요합니다.
-services: power-bi-workspace-collections
-ms.service: power-bi-workspace-collections
+services: power-bi-embedded
 author: markingmyname
-ms.author: maghan
+ROBOTS: NOINDEX
+ms.assetid: ''
+ms.service: power-bi-embedded
 ms.topic: article
 ms.workload: powerbi
-ms.date: 09/20/2017
-ms.openlocfilehash: bc3c9f71900abcbba440db259d92df53a4c7a586
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+origin.date: 09/26/2018
+ms.date: 03/05/2019
+ms.author: v-junlch
+ms.openlocfilehash: b61abee3382697d50b9a18de763c8a4d01e1ccba
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58516453"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62103885"
 ---
 # <a name="save-reports-in-power-bi-workspace-collections"></a>Power BI 작업 영역 컬렉션에서 보고서 저장
 
@@ -26,15 +29,15 @@ Power BI 작업 영역 컬렉션 내에서 기존 보고서를 편집하고 저�
 
 보고서를 저장하려면 먼저 올바른 범위를 지정하여 특정 보고서에 대한 토큰을 만들어야 합니다.
 
-* 저장을 사용하려면 Report.ReadWrite 범위가 필요합니다.
-* 다른 이름으로 저장을 사용하려면 Report.Read 및 Workspace.Report.Copy 범위가 필요합니다.
-* 저장 및 다른 이름으로 저장을 사용하려면 Report.ReadWrite 및 Workspace.Report.Copy가 필요합니다.
+- 저장을 사용하려면 Report.ReadWrite 범위가 필요합니다.
+- 다른 이름으로 저장을 사용하려면 Report.Read 및 Workspace.Report.Copy 범위가 필요합니다.
+- 저장 및 다른 이름으로 저장을 사용하려면 Report.ReadWrite 및 Workspace.Report.Copy가 필요합니다.
 
 파일 메뉴에서 적절한 저장/다른 이름으로 저장 단추를 각각 사용하기 위해서는 보고서를 포함할 때 Embed 구성에서 적절한 사용 권한을 제공해야 합니다.
 
-* models.Permissions.ReadWrite
-* models.Permissions.Copy
-* models.Permissions.All
+- models.Permissions.ReadWrite
+- models.Permissions.Copy
+- models.Permissions.All
 
 > [!NOTE]
 > 액세스 토큰에도 적절한 범위가 필요합니다. 자세한 내용은 [범위](app-token-flow.md#scopes)를 참조하세요.
@@ -59,7 +62,7 @@ Power BI 작업 영역 컬렉션 내에서 기존 보고서를 편집하고 저�
     var config= {
         type: 'report',
         accessToken: 'eyJ0eXAiO...Qron7qYpY9MI',
-        embedUrl: 'https://embedded.powerbi.com/appTokenReportEmbed',
+        embedUrl: 'https://embedded.powerbi.cn/appTokenReportEmbed',
         id:  '5dac7a4a-4452-46b3-99f6-a25915e0fe55',
         permissions: models.Permissions.All /*both save & save as buttons will be visible*/,
         viewMode: models.ViewMode.Edit,
@@ -74,7 +77,7 @@ Power BI 작업 영역 컬렉션 내에서 기존 보고서를 편집하고 저�
 
     // Embed the report and display it within the div container.
     var report = powerbi.embed(reportContainer, config);
-    </script>
+    </script>    
 ```
 
 이제 보고서가 편집 모드에서 앱에 포함됩니다.
@@ -112,10 +115,10 @@ Power BI 작업 영역 컬렉션 내에서 기존 보고서를 편집하고 저�
 
 ```html
 <div id="reportContainer"></div>
-<script>
+<script>  
 var embedConfiguration = {
         accessToken: 'eyJ0eXAiO...Qron7qYpY9MJ',
-        embedUrl: 'https://embedded.powerbi.com/appTokenReportEmbed',
+        embedUrl: 'https://embedded.powerbi.cn/appTokenReportEmbed',
         reportId: '5dac7a4a-4452-46b3-99f6-a25915e0fe54',
     };
     
@@ -124,7 +127,7 @@ var embedConfiguration = {
 
     // Embed report
     var report = powerbi.embed(reportContainer, embedConfiguration);
-</script>
+</script>    
 ```
 
 ## <a name="see-also"></a>참고 항목
@@ -138,3 +141,5 @@ var embedConfiguration = {
 
 궁금한 점이 더 있나요? [Power BI 커뮤니티를 이용하세요.](https://community.powerbi.com/)
 
+
+<!-- Update_Description: update metedata properties -->

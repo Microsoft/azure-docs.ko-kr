@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2018
 ms.author: ericrad
 ms.openlocfilehash: 2ed92486b55aa4fd7dce32f54f0b6567c7bb3cf2
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58486736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60711002"
 ---
 # <a name="azure-metadata-service-scheduled-events-for-windows-vms"></a>Azure Metadata 서비스: Windows VM의 예약된 이벤트
 
@@ -64,7 +64,7 @@ VNET 사용 VM의 경우 메타데이터 서비스를 정적 경로 조정 불�
 ### <a name="version-and-region-availability"></a>버전 및 지역 가용성
 예약된 이벤트 서비스의 버전이 지정됩니다. 버전은 필수이며 최신 버전은 `2017-11-01`입니다.
 
-| 버전 | 릴리스 종류 | 영역 | 릴리스 정보 | 
+| Version | 릴리스 종류 | 영역 | 릴리스 정보 | 
 | - | - | - | - |
 | 2017-11-01 | 일반 공급 | 모두 | <li> 우선 순위가 낮은 VM 제거 EventType 'Preempt'에 대 한 지원 추가<br> | 
 | 2017-08-01 | 일반 공급 | 모두 | <li> IaaS VM의 리소스 이름에서 앞에 붙은 밑줄이 제거됨<br><li>모든 요청에 대해 메타데이터 헤더 요구 사항이 적용됨 | 

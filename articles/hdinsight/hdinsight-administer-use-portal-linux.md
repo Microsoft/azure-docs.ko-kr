@@ -1,7 +1,6 @@
 ---
 title: Azure Portal을 사용하여 HDInsight의 Apache Hadoop 클러스터 관리
 description: Azure Portal을 사용하여 HDInsight 클러스터를 만들고 관리하는 방법에 대해 알아봅니다.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: hrasheed
-ms.openlocfilehash: 80c27d588bb8b4c60ae8432fbd3a2ac3d2db1394
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 003aeadba1f4683af40f390d40dd3bbe32e02a83
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58802663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62096363"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Azure Portal을 사용하여 HDInsight의 Apache Hadoop 클러스터 관리
 
@@ -107,7 +106,7 @@ ms.locfileid: "58802663"
 |날짜 생성됨|클러스터가 배포된 날짜입니다.|
 |운영 체제|**Windows** 또는 **Linux**입니다.|
 |Type|Hadoop, HBase, Storm, Spark입니다.|
-|버전|[HDInsight 버전](hdinsight-component-versioning.md) 참조|
+|Version|[HDInsight 버전](hdinsight-component-versioning.md) 참조|
 |구독|구독 이름입니다.|
 |기본 데이터 원본|기본 클러스터 파일 시스템입니다.|
 |작업자 노드 크기|선택한 작업자 노드의 VM 크기입니다.|
@@ -268,7 +267,7 @@ HDInsight 클러스터마다 두 개의 사용자 계정이 포함될 수 있습
    | 필드 | 값 |
    | --- | --- |
    | 스크립트 유형 | 드롭다운 목록에서 **- 사용자 지정**을 선택합니다.|
-   | name |“SSH 암호 변경” |
+   | 이름 |“SSH 암호 변경” |
    | Bash 스크립트 URI |Changepassword.sh 파일에 대한 URI |
    | 노드 유형: (헤드, 작업자, Nimbus, 감독자, Zookeeper 등) |나열된 모든 노드 형식에 대한 ✓ |
    | 매개 변수 |SSH 사용자 이름 및 새 암호를 입력합니다. 사용자 이름과 암호 사이에 공백이 하나 있어야 합니다. |

@@ -16,11 +16,11 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: banders
 ms.openlocfilehash: 520d3f6a45b44ba2023dee34642f796689f48221
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58648849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60919004"
 ---
 # <a name="view-and-download-your-azure-usage-and-charges"></a>Azure 사용량 및 요금에 보기 및 다운로드
 
@@ -113,7 +113,7 @@ Microsoft 고객 계약에 있는 경우 청구 프로필에 대 한 Azure 사�
 청구서 및 사용량 요금에 대 한 자세한 내용은 다음을 참조 하세요.
 
 - [Microsoft Azure 세부 사용량의 용어 이해](billing-understand-your-usage.md)
-- [Microsoft Azure 청구서 이해](billing-understand-your-bill.md)
+- [Microsoft Azure 요금 청구 방식 이해](billing-understand-your-bill.md)
 - [보기 및 Microsoft Azure 청구서를 다운로드 합니다.](billing-download-azure-invoice.md)
 - [보기 및 조직의 Azure 가격 책정 다운로드](billing-ea-pricing.md)
 

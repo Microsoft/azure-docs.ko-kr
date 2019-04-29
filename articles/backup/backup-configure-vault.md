@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: raynew
 ms.openlocfilehash: 7a1bd6da68b49481429709c7e4fd37dd5c07ae2c
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58200789"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60810153"
 ---
 # <a name="back-up-windows-machines-with-the-azure-backup-mars-agent"></a>Azure Backup MARS 에이전트를 사용 하 여 Windows 컴퓨터 백업
 

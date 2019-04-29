@@ -1,19 +1,18 @@
 ---
 title: Azure HDInsight 클러스터에 Azure Data Lake Storage Gen2 사용
 description: Azure HDInsight 클러스터를 사용 하 여 Azure Data Lake 저장소 Gen2를 사용 하는 방법에 알아봅니다.
-services: hdinsight
 author: hrasheed-msft
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: hrasheed
-ms.openlocfilehash: 43f335bdd8b918fa717d9084d3c9c30d97920c10
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 6452e73b2429ab89a466b1c3b59cc892eca31205
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60004961"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63766932"
 ---
 # <a name="use-azure-data-lake-storage-gen2-with-azure-hdinsight-clusters"></a>Azure HDInsight 클러스터에 Azure Data Lake Storage Gen2 사용
 
@@ -69,7 +68,7 @@ Azure Data Lake Storage Gen2 스토리지 계정을 만듭니다. 있는지 확�
         ![Azure HDInsight에서 Data Lake Storage Gen2를 사용하기 위한 ID 설정](./media/hdinsight-hadoop-data-lake-storage-gen2/managed-identity-cluster-creation.png)
         
 > [!Note]
-> 동일한 클러스터에서 보조 저장소로 Data Lake 저장소 Gen2 계정을 하나 이상 추가할 수 있습니다. 관리 되는 동일한 id를 사용 하 여 추가 하려는 각 Data Lake 저장소 Gen2 계정에서 위의 단계를 반복 합니다.
+> 보조 Data Lake 저장소 Gen2 계정, 저장소 계정 수준에 추가 하려면 추가 하려는 새 Data Lake 저장소 Gen2 저장소 계정에 이전에 만든 관리 되는 id를 할당 하면 됩니다. 알아두세요는 "추가 저장소 계정" 블레이드를 통해 보조 Data Lake 저장소 Gen2 계정을 추가 하 여 HDInsight에서 지원 되지 않습니다. 
 
 ## <a name="create-a-cluster-with-data-lake-storage-gen2-through-the-azure-cli"></a>Azure CLI를 통해 Data Lake 저장소 Gen2를 사용 하 여 클러스터 만들기
 

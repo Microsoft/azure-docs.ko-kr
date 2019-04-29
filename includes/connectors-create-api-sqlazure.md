@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/15/2018
 ms.author: estfan
 ms.custom: include file
-ms.openlocfilehash: 4ffda692da0ab7b63f7376c36dfab0bec914e334
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
-ms.translationtype: HT
+ms.openlocfilehash: da03c5247b8ebe0a3305b08a05d661264497663f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37138068"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60541146"
 ---
 * Azure SQL Database를 사용하는 경우 [Azure SQL Database에 연결](#connect-azure-sql-db)의 단계를 따릅니다. 
 
@@ -104,7 +104,7 @@ ms.locfileid: "37138068"
    | SQL Database 이름 | <*my-sql-database*>  | SQL Database의 이름 |
    | 사용자 이름 | <*my-sql-username*> | 데이터베이스에 액세스하기 위한 사용자 이름 |
    | 암호 | <*my-sql-password*> | 데이터베이스에 액세스하기 위한 암호 | 
-   | 인증 유형 | Windows 또는 Basic | 선택 사항: SQL Server에서 사용되는 인증 유형 | 
+   | 인증 유형 | Windows 또는 Basic | 선택 사항: SQL server에서 사용 하는 인증 유형 | 
    | 게이트웨이 | <*my-data-gateway*> | 온-프레미스 데이터 게이트웨이의 이름 | 
    |||| 
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: alkohli
 ms.openlocfilehash: 8dd55032c933cdc31b848addfdac991550376dcf
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58805585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60729236"
 ---
 # <a name="data-transfer-for-large-datasets-with-moderate-to-high-network-bandwidth"></a>보통-높은 네트워크 대역폭에서 대용량 데이터 세트의 데이터 전송
  
@@ -83,7 +83,7 @@ ms.locfileid: "58805585"
 
 ### <a name="high-network-bandwidth"></a>높은 네트워크 대역폭
 
-|                                     |    도구 AzCopy, <br>Azure PowerShell, <br>Azure CLI             |    Azure Storage REST API, SDK                   |    데이터 상자 게이트웨이나 가장자리가 상자의 데이터          |    Azure 데이터 팩터리                                            |
+|                                     |    도구 AzCopy, <br>Azure PowerShell, <br>Azure CLI             |    Azure Storage REST API, SDK                   |    데이터 상자 게이트웨이나 가장자리가 상자의 데이터          |    Azure Data Factory                                            |
 |-------------------------------------|------------------------------------|----------------------------------------------|----------------------------------|-----------------------------------------------------------------------|
 |    데이터 형식                  |    Azure Blob, Azure Files, Azure 테이블    |    Azure Blob, Azure Files, Azure 테이블    |    Azure Blob, Azure Files                           |   데이터 저장소 및 형식을 위해 70개 이상의 데이터 커넥터 지원    |
 |    폼 팩터                |    명령줄 도구                        |    프로그래밍 인터페이스                    |    Microsoft에서 가상 <br>또는 물리적 디바이스 제공     |    Azure Portal의 서비스                                            |

@@ -16,10 +16,10 @@ ms.date: 01/23/2017
 ms.author: aungoo
 ms.subservice: disks
 ms.openlocfilehash: 06b0e8a16dc112728c9a69450cf88a399a27ed13
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55475162"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60543785"
 ---
 [!INCLUDE [virtual-machines-incremental-snapshots](../../../includes/virtual-machines-incremental-snapshots.md)]

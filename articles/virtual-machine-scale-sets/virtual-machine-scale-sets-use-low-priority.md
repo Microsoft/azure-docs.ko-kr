@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 05/01/2018
 ms.author: memccror
 ms.openlocfilehash: 861c68ae8163e0ba8c2af2a3d96153ac3e84855f
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55978139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60803198"
 ---
 # <a name="low-priority-vms-on-scale-sets-preview"></a>확장 집합에서 우선 순위가 낮은 VM(미리 보기)
 

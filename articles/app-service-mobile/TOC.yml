@@ -1,315 +1,322 @@
+items:
 - name: Mobile Apps 설명서
   href: index.md
 - name: 개요
   items:
-    - name: Mobile Apps란?
-      href: app-service-mobile-value-prop.md
-    - name: App Service 계획
-      href: ../app-service/overview-hosting-plans.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+  - name: Mobile Apps란?
+    href: app-service-mobile-value-prop.md
+  - name: App Service 계획
+    href: ../app-service/overview-hosting-plans.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
 - name: 빠른 시작
   items:
-    - name: Android
-      href: app-service-mobile-android-get-started.md
-    - name: Cordova
-      href: app-service-mobile-cordova-get-started.md
-    - name: iOS
-      href: app-service-mobile-ios-get-started.md
-    - name: ' Windows'
-      href: app-service-mobile-windows-store-dotnet-get-started.md
-    - name: Xamarin.Android
-      href: app-service-mobile-xamarin-android-get-started.md
-    - name: Xamarin.Forms
-      href: app-service-mobile-xamarin-forms-get-started.md
-    - name: Xamarin.iOS
-      href: app-service-mobile-xamarin-ios-get-started.md
+  - name: Android
+    href: app-service-mobile-android-get-started.md
+  - name: Cordova
+    href: app-service-mobile-cordova-get-started.md
+  - name: iOS
+    href: app-service-mobile-ios-get-started.md
+  - name: Windows
+    href: app-service-mobile-windows-store-dotnet-get-started.md
+  - name: Xamarin.Android
+    href: app-service-mobile-xamarin-android-get-started.md
+  - name: Xamarin.Forms
+    href: app-service-mobile-xamarin-forms-get-started.md
+  - name: Xamarin.iOS
+    href: app-service-mobile-xamarin-ios-get-started.md
 - name: 방법
   items:
-    - name: 계획 및 디자인
+  - name: 계획 및 디자인
+    items:
+    - name: Azure Mobile Apps의 인증 및 권한 부여
+      href: app-service-mobile-auth.md
+    - name: Azure Mobile Apps에서 오프라인 데이터 동기화
+      href: app-service-mobile-offline-data-sync.md
+    - name: Azure App Service에 대한 모범 사례
+      href: ../app-service/app-service-best-practices.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: App Service 세부 계획
+      href: ../app-service/overview-hosting-plans.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: 고밀도 호스팅
+      href: ../app-service/manage-scale-per-app.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: App Service 환경
+      href: ../app-service/environment/app-service-app-service-environment-intro.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+  - name: 개발
+    items:
+    - name: Android
       items:
-        - name: Azure Mobile Apps의 인증 및 권한 부여
-          href: app-service-mobile-auth.md
-        - name: Azure Mobile Apps에서 오프라인 데이터 동기화
-          href: app-service-mobile-offline-data-sync.md
-        - name: Azure App Service에 대한 모범 사례
-          href: ../app-service/app-service-best-practices.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: App Service 세부 계획
-          href: ../app-service/overview-hosting-plans.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: 고밀도 호스팅
-          href: ../app-service/manage-scale-per-app.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: App Service 환경
-          href: ../app-service/environment/app-service-app-service-environment-intro.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-    - name: 개발
+      - name: 오프라인 및 동기화 사용
+        href: app-service-mobile-android-get-started-offline-data.md
+      - name: 인증 추가
+        href: app-service-mobile-android-get-started-users.md
+      - name: 푸시 알림 추가
+        href: app-service-mobile-android-get-started-push.md
+      - name: 클라이언트 SDK와 함께 작동
+        href: app-service-mobile-android-how-to-use-client-library.md
+    - name: Cordova
       items:
-        - name: Android
-          items:
-            - name: 오프라인 및 동기화 사용
-              href: app-service-mobile-android-get-started-offline-data.md
-            - name: 인증 추가
-              href: app-service-mobile-android-get-started-users.md
-            - name: 푸시 알림 추가
-              href: app-service-mobile-android-get-started-push.md
-            - name: 클라이언트 SDK와 함께 작동
-              href: app-service-mobile-android-how-to-use-client-library.md
+      - name: 오프라인 및 동기화 사용
+        href: app-service-mobile-cordova-get-started-offline-data.md
+      - name: 인증 추가
+        href: app-service-mobile-cordova-get-started-users.md
+      - name: 푸시 알림 추가
+        href: app-service-mobile-cordova-get-started-push.md
+      - name: 클라이언트 SDK와 함께 작동
+        items:
         - name: Cordova
-          items:
-            - name: 오프라인 및 동기화 사용
-              href: app-service-mobile-cordova-get-started-offline-data.md
-            - name: 인증 추가
-              href: app-service-mobile-cordova-get-started-users.md
-            - name: 푸시 알림 추가
-              href: app-service-mobile-cordova-get-started-push.md
-            - name: 클라이언트 SDK와 함께 작동
-              items:
-                - name: Cordova
-                  href: app-service-mobile-cordova-how-to-use-client-library.md
-                - name: JavaScript/HTML
-                  href: app-service-mobile-html-how-to-use-client-library.md
-        - name: iOS
-          items:
-            - name: 오프라인 및 동기화 사용
-              href: app-service-mobile-ios-get-started-offline-data.md
-            - name: 인증 추가
-              href: app-service-mobile-ios-get-started-users.md
-            - name: 푸시 알림 추가
-              href: app-service-mobile-ios-get-started-push.md
-            - name: 클라이언트 SDK와 함께 작동
-              href: app-service-mobile-ios-how-to-use-client-library.md
-        - name: ' Windows'
-          items:
-            - name: 오프라인 및 동기화 사용
-              href: app-service-mobile-windows-store-dotnet-get-started-offline-data.md
-            - name: 인증 추가
-              href: app-service-mobile-windows-store-dotnet-get-started-users.md
-            - name: 푸시 알림 추가
-              href: app-service-mobile-windows-store-dotnet-get-started-push.md
-            - name: 클라이언트 SDK와 함께 작동
-              href: app-service-mobile-dotnet-how-to-use-client-library.md
-        - name: Xamarin.Android
-          items:
-            - name: 오프라인 및 동기화 사용
-              href: app-service-mobile-xamarin-android-get-started-offline-data.md
-            - name: 인증 추가
-              href: app-service-mobile-xamarin-android-get-started-users.md
-            - name: 푸시 알림 추가
-              href: app-service-mobile-xamarin-android-get-started-push.md
-            - name: 클라이언트 SDK와 함께 작동
-              href: app-service-mobile-dotnet-how-to-use-client-library.md
-        - name: Xamarin.Forms
-          items:
-            - name: 오프라인 및 동기화 사용
-              href: app-service-mobile-xamarin-forms-get-started-offline-data.md
-            - name: 인증 추가
-              href: app-service-mobile-xamarin-forms-get-started-users.md
-            - name: 푸시 알림 추가
-              href: app-service-mobile-xamarin-forms-get-started-push.md
-            - name: 클라이언트 SDK와 함께 작동
-              href: app-service-mobile-dotnet-how-to-use-client-library.md
-        - name: Xamarin.iOS
-          items:
-            - name: 오프라인 및 동기화 사용
-              href: app-service-mobile-xamarin-ios-get-started-offline-data.md
-            - name: 인증 추가
-              href: app-service-mobile-xamarin-ios-get-started-users.md
-            - name: 푸시 알림 추가
-              href: app-service-mobile-xamarin-ios-get-started-push.md
-            - name: 클라이언트 SDK와 함께 작동
-              href: app-service-mobile-dotnet-how-to-use-client-library.md
-        - name: SDK 서버와 함께 작동
-          items:
-            - name: .NET 백 엔드
-              href: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
-            - name: Node.js 백 엔드
-              href: app-service-mobile-node-backend-how-to-use-server-sdk.md
-            - name: 클라이언트 및 서버 버전 관리
-              href: app-service-mobile-client-and-server-versioning.md
-        - name: App Service 환경
-          items:
-            - name: App Service Environment에서 웹앱 만들기
-              href: ../app-service/environment/intro.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: 내부 부하 분산 장치 만들기 및 사용
-              href: ../app-service/environment/create-ilb-ase.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: 템플릿을 사용하여 ASE 만들기
-              href: ../app-service/environment/create-from-template.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-    - name: 배포
+          href: app-service-mobile-cordova-how-to-use-client-library.md
+        - name: JavaScript/HTML
+          href: app-service-mobile-html-how-to-use-client-library.md
+    - name: iOS
       items:
-        - name: 클라우드 동기화 배포
-          href: ../app-service/deploy-content-sync.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: 연속 배포
-          href: ../app-service/deploy-continuous-deployment.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: 스테이징 환경
-          href: ../app-service/deploy-staging-slots.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: 로컬 Git 배포
-          href: ../app-service/deploy-local-git.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: Azure Resource Manager 배포
-          href: ../app-service/deploy-complex-application-predictably.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-    - name: 확장
+      - name: 오프라인 및 동기화 사용
+        href: app-service-mobile-ios-get-started-offline-data.md
+      - name: 인증 추가
+        href: app-service-mobile-ios-get-started-users.md
+      - name: 푸시 알림 추가
+        href: app-service-mobile-ios-get-started-push.md
+      - name: 클라이언트 SDK와 함께 작동
+        href: app-service-mobile-ios-how-to-use-client-library.md
+    - name: Windows
       items:
-        - name: 앱 강화
-          href: ../app-service/web-sites-scale.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: App Service 환경
-          href: ../app-service/environment/intro.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-          items:
-            - name: App Service Environment로 지역 분산된 규모
-              href: ../app-service/environment/app-service-app-service-environment-geo-distributed-scale.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: App Service Environment에서 앱 확장
-              href: ../app-service/environment/app-service-web-scale-a-web-app-in-an-app-service-environment.md
-            - name: App Service Environment에서 자동 크기 조정
-              href: ../app-service/environment/app-service-environment-auto-scale.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-    - name: 관리
+      - name: 오프라인 및 동기화 사용
+        href: app-service-mobile-windows-store-dotnet-get-started-offline-data.md
+      - name: 인증 추가
+        href: app-service-mobile-windows-store-dotnet-get-started-users.md
+      - name: 푸시 알림 추가
+        href: app-service-mobile-windows-store-dotnet-get-started-push.md
+      - name: 클라이언트 SDK와 함께 작동
+        href: app-service-mobile-dotnet-how-to-use-client-library.md
+    - name: Xamarin.Android
       items:
-        - name: 구성
-          href: ../app-service/web-sites-configure.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: 사용자 지정 도메인
-          items:
-            - name: 사용자 지정 도메인 구입 및 구성
-              href: ../app-service/manage-custom-dns-buy-domain.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: 사용자 고유의 사용자 지정 도메인 매핑
-              href: ../app-service/app-service-web-tutorial-custom-domain.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: Traffic Manager로 사용자 지정 도메인
-              href: ../app-service/web-sites-traffic-manager-custom-domain-name.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: 기존 앱 복제
-          href: ../app-service/app-service-web-app-cloning.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: Azure Virtual Network
-          href: ../app-service/web-sites-integrate-with-vnet.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: 리소스 그룹
-          href: '../azure-resource-manager/resource-group-move-resources.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json#app-service-limitations'
-          items:
-            - name: WebJob으로 백그라운드 작업 실행
-              href: ../app-service/webjobs-create.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: 구성
-              href: ../app-service/environment/app-service-web-configure-an-app-service-environment.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: 사용자 지정 구성 설정
-              href: ../app-service/environment/app-service-app-service-environment-custom-settings.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: 인바운드 트래픽을 제어하는 방법
-              href: ../app-service/environment/app-service-app-service-environment-control-inbound-traffic.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: 네트워크 아키텍처 개요
-              href: ../app-service/environment/app-service-app-service-environment-network-architecture-overview.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: ExpressRoute를 사용하기 위한 네트워크 구성 세부 정보
-              href: ../app-service/environment/app-service-app-service-environment-network-configuration-expressroute.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-    - name: 마이그레이션
+      - name: 오프라인 및 동기화 사용
+        href: app-service-mobile-xamarin-android-get-started-offline-data.md
+      - name: 인증 추가
+        href: app-service-mobile-xamarin-android-get-started-users.md
+      - name: 푸시 알림 추가
+        href: app-service-mobile-xamarin-android-get-started-push.md
+      - name: 클라이언트 SDK와 함께 작동
+        href: app-service-mobile-dotnet-how-to-use-client-library.md
+    - name: Xamarin.Forms
       items:
-        - name: App Service를 Mobile Services와 비교하는 방법
-          href: app-service-mobile-value-prop-migration-from-mobile-services.md
-        - name: 기존 Mobile Services를 App Service에 마이그레이션
-          href: app-service-mobile-migrating-from-mobile-services.md
-        - name: 기존 Mobile Services를 App Service에 마이그레이션
-          items:
-            - name: .NET 백 엔드
-              href: app-service-mobile-net-upgrading-from-mobile-services.md
-            - name: Node.js 백 엔드
-              href: app-service-mobile-node-backend-upgrading-from-mobile-services.md
-    - name: 보안
+      - name: 오프라인 및 동기화 사용
+        href: app-service-mobile-xamarin-forms-get-started-offline-data.md
+      - name: 인증 추가
+        href: app-service-mobile-xamarin-forms-get-started-users.md
+      - name: 푸시 알림 추가
+        href: app-service-mobile-xamarin-forms-get-started-push.md
+      - name: 클라이언트 SDK와 함께 작동
+        href: app-service-mobile-dotnet-how-to-use-client-library.md
+    - name: Xamarin.iOS
       items:
-        - name: ID 공급자를 사용하여 인증
-          items:
-            - name: Azure Active Directory 인증
-              href: ../app-service/configure-authentication-provider-aad.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: Facebook 인증
-              href: ../app-service/configure-authentication-provider-facebook.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: Google 인증
-              href: ../app-service/configure-authentication-provider-google.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: Microsoft 계정 인증
-              href: ../app-service/configure-authentication-provider-microsoft.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: Twitter 인증
-              href: ../app-service/configure-authentication-provider-twitter.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: HTTPS
-          items:
-            - name: TLS 상호 인증 구성
-              href: ../app-service/app-service-web-configure-tls-mutual-auth.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: Azure의 SSL 인증서 구입
-              href: ../app-service/web-sites-purchase-ssl-web-site.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: 다른 곳에서 얻은 SSL 인증서 사용
-              href: ../app-service/app-service-web-tutorial-custom-ssl.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: App Service 환경 보안
-          items:
-            - name: 웹앱 방화벽 구성
-              href: ../app-service/environment/app-service-app-service-environment-web-application-firewall.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: 계층화된 보안 아키텍처 구현
-              href: ../app-service/environment/app-service-app-service-environment-layered-security.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-            - name: 백 엔드 리소스에 안전하게 연결
-              href: ../app-service/environment/app-service-app-service-environment-securely-connecting-to-backend-resources.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-    - name: Backup
+      - name: 오프라인 및 동기화 사용
+        href: app-service-mobile-xamarin-ios-get-started-offline-data.md
+      - name: 인증 추가
+        href: app-service-mobile-xamarin-ios-get-started-users.md
+      - name: 푸시 알림 추가
+        href: app-service-mobile-xamarin-ios-get-started-push.md
+      - name: 클라이언트 SDK와 함께 작동
+        href: app-service-mobile-dotnet-how-to-use-client-library.md
+    - name: SDK 서버와 함께 작동
       items:
-        - name: Azure에서 앱 백업
-          href: ../app-service/manage-backup.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: Azure에서 앱 복원
-          href: ../app-service/web-sites-restore.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-    - name: 모니터
-      href: ../app-service/web-sites-monitor.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: .NET 백 엔드
+        href: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
+      - name: Node.js 백 엔드
+        href: app-service-mobile-node-backend-how-to-use-server-sdk.md
+      - name: 클라이언트 및 서버 버전 관리
+        href: app-service-mobile-client-and-server-versioning.md
+    - name: App Service 환경
       items:
-        - name: 진단 로깅 사용
-          href: ../app-service/troubleshoot-diagnostic-logs.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: Visual Studio를 사용하여 문제 해결
-          href: ../app-service/troubleshoot-dotnet-visual-studio.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-    - name: 통합
+      - name: App Service Environment에서 웹앱 만들기
+        href: ../app-service/environment/intro.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: 내부 부하 분산 장치 만들기 및 사용
+        href: ../app-service/environment/create-ilb-ase.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: 템플릿을 사용하여 ASE 만들기
+        href: ../app-service/environment/create-from-template.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+  - name: 배포
+    items:
+    - name: 클라우드 동기화 배포
+      href: ../app-service/deploy-content-sync.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: 연속 배포
+      href: ../app-service/deploy-continuous-deployment.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: 스테이징 환경
+      href: ../app-service/deploy-staging-slots.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: 로컬 Git 배포
+      href: ../app-service/deploy-local-git.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: Azure Resource Manager 배포
+      href: ../app-service/deploy-complex-application-predictably.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+  - name: 확장
+    items:
+    - name: 앱 강화
+      href: ../app-service/web-sites-scale.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: App Service 환경
+      href: ../app-service/environment/intro.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
       items:
-        - name: Azure에서 SendGrid를 사용하여 전자 메일을 보내는 방법
-          href: ../sendgrid-dotnet-how-to-send-email.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: PowerApps 및 Microsoft Flow로 내보내기
-          href: ../azure-functions/app-service-export-api-to-powerapps-and-flow.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: 관리형 ID 사용
-          href: ../app-service/overview-managed-identity.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-    - name: 문제 해결
+      - name: App Service Environment로 지역 분산된 규모
+        href: ../app-service/environment/app-service-app-service-environment-geo-distributed-scale.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: App Service Environment에서 앱 확장
+        href: ../app-service/environment/app-service-web-scale-a-web-app-in-an-app-service-environment.md
+      - name: App Service Environment에서 자동 크기 조정
+        href: ../app-service/environment/app-service-environment-auto-scale.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+  - name: 관리
+    items:
+    - name: 구성
+      href: ../app-service/web-sites-configure.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: 사용자 지정 도메인
       items:
-        - name: Mobile Apps에 대한 일반적인 문제 해결
-          items:
-            - name: .NET 백 엔드
-              href: 'app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#how-to-debug-and-troubleshoot-the-net-server-sdk'
-            - name: Node.js 백 엔드
-              href: 'app-service-mobile-node-backend-how-to-use-server-sdk.md#Debugging'
-        - name: 진단 로깅 사용
-          href: ../app-service/troubleshoot-diagnostic-logs.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-        - name: Visual Studio를 사용하여 문제 해결
-          href: ../app-service/troubleshoot-dotnet-visual-studio.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: 사용자 지정 도메인 구입 및 구성
+        href: ../app-service/manage-custom-dns-buy-domain.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: 사용자 고유의 사용자 지정 도메인 매핑
+        href: ../app-service/app-service-web-tutorial-custom-domain.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: Traffic Manager로 사용자 지정 도메인
+        href: ../app-service/web-sites-traffic-manager-custom-domain-name.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: 기존 앱 복제
+      href: ../app-service/app-service-web-app-cloning.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: Azure Virtual Network
+      href: ../app-service/web-sites-integrate-with-vnet.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: 리소스 그룹
+      href: ../azure-resource-manager/resource-group-move-resources.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json#app-service-limitations
+      items:
+      - name: WebJob으로 백그라운드 작업 실행
+        href: ../app-service/webjobs-create.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: 구성
+        href: ../app-service/environment/app-service-web-configure-an-app-service-environment.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: 사용자 지정 구성 설정
+        href: ../app-service/environment/app-service-app-service-environment-custom-settings.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: 인바운드 트래픽을 제어하는 방법
+        href: ../app-service/environment/app-service-app-service-environment-control-inbound-traffic.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: 네트워크 아키텍처 개요
+        href: ../app-service/environment/app-service-app-service-environment-network-architecture-overview.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: ExpressRoute를 사용하기 위한 네트워크 구성 세부 정보
+        href: ../app-service/environment/app-service-app-service-environment-network-configuration-expressroute.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+  - name: 마이그레이션
+    items:
+    - name: App Service를 Mobile Services와 비교하는 방법
+      href: app-service-mobile-value-prop-migration-from-mobile-services.md
+    - name: 기존 Mobile Services를 App Service에 마이그레이션
+      href: app-service-mobile-migrating-from-mobile-services.md
+    - name: 기존 Mobile Services를 App Service에 마이그레이션
+      items:
+      - name: .NET 백 엔드
+        href: app-service-mobile-net-upgrading-from-mobile-services.md
+      - name: Node.js 백 엔드
+        href: app-service-mobile-node-backend-upgrading-from-mobile-services.md
+  - name: 보안
+    items:
+    - name: ID 공급자를 사용하여 인증
+      items:
+      - name: Azure Active Directory 인증
+        href: ../app-service/configure-authentication-provider-aad.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: Facebook 인증
+        href: ../app-service/configure-authentication-provider-facebook.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: Google 인증
+        href: ../app-service/configure-authentication-provider-google.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: Microsoft 계정 인증
+        href: ../app-service/configure-authentication-provider-microsoft.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: Twitter 인증
+        href: ../app-service/configure-authentication-provider-twitter.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: HTTPS
+      items:
+      - name: TLS 상호 인증 구성
+        href: ../app-service/app-service-web-configure-tls-mutual-auth.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: Azure의 SSL 인증서 구입
+        href: ../app-service/web-sites-purchase-ssl-web-site.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: 다른 곳에서 얻은 SSL 인증서 사용
+        href: ../app-service/app-service-web-tutorial-custom-ssl.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: App Service 환경 보안
+      items:
+      - name: 웹앱 방화벽 구성
+        href: ../app-service/environment/app-service-app-service-environment-web-application-firewall.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: 계층화된 보안 아키텍처 구현
+        href: ../app-service/environment/app-service-app-service-environment-layered-security.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+      - name: 백 엔드 리소스에 안전하게 연결
+        href: ../app-service/environment/app-service-app-service-environment-securely-connecting-to-backend-resources.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+  - name: Backup
+    items:
+    - name: Azure에서 앱 백업
+      href: ../app-service/manage-backup.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: Azure에서 앱 복원
+      href: ../app-service/web-sites-restore.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+  - name: 모니터
+    href: ../app-service/web-sites-monitor.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    items:
+    - name: 진단 로깅 사용
+      href: ../app-service/troubleshoot-diagnostic-logs.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: Visual Studio를 사용하여 문제 해결
+      href: ../app-service/troubleshoot-dotnet-visual-studio.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+  - name: 통합
+    items:
+    - name: Azure에서 SendGrid를 사용하여 전자 메일을 보내는 방법
+      href: ../sendgrid-dotnet-how-to-send-email.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: PowerApps 및 Microsoft Flow로 내보내기
+      href: ../azure-functions/app-service-export-api-to-powerapps-and-flow.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: 관리형 ID 사용
+      href: ../app-service/overview-managed-identity.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+  - name: 문제 해결
+    items:
+    - name: Mobile Apps에 대한 일반적인 문제 해결
+      items:
+      - name: .NET 백 엔드
+        href: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#how-to-debug-and-troubleshoot-the-net-server-sdk
+      - name: Node.js 백 엔드
+        href: app-service-mobile-node-backend-how-to-use-server-sdk.md#Debugging
+    - name: 진단 로깅 사용
+      href: ../app-service/troubleshoot-diagnostic-logs.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+    - name: Visual Studio를 사용하여 문제 해결
+      href: ../app-service/troubleshoot-dotnet-visual-studio.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
 - name: 참고 자료
   items:
-    - name: .NET 백 엔드 SDK
-      href: 'https://msdn.microsoft.com/library/azure/dn961176.aspx'
-    - name: Node.js 백 엔드 SDK
-      href: 'https://azure.github.io/azure-mobile-apps-node/'
-    - name: Android 클라이언트 SDK
-      href: 'https://azure.github.io/azure-mobile-apps-android-client/'
-    - name: iOS 클라이언트 SDK
-      href: 'https://azure.github.io/azure-mobile-apps-ios-client/'
-    - name: JavaScript/Cordova 클라이언트 SDK
-      href: 'https://azure.github.io/azure-mobile-apps-js-client/'
-    - name: Windows/Xamarin 클라이언트 SDK
-      href: 'https://msdn.microsoft.com/library/azure/mt419521.aspx'
+  - name: .NET 백 엔드 SDK
+    href: https://msdn.microsoft.com/library/azure/dn961176.aspx
+  - name: Node.js 백 엔드 SDK
+    href: https://azure.github.io/azure-mobile-apps-node/
+  - name: Android 클라이언트 SDK
+    href: https://azure.github.io/azure-mobile-apps-android-client/
+  - name: iOS 클라이언트 SDK
+    href: https://azure.github.io/azure-mobile-apps-ios-client/
+  - name: JavaScript/Cordova 클라이언트 SDK
+    href: https://azure.github.io/azure-mobile-apps-js-client/
+  - name: Windows/Xamarin 클라이언트 SDK
+    href: https://msdn.microsoft.com/library/azure/mt419521.aspx
 - name: 관련 항목
   items:
-    - name: GitHub 리포지토리
-      href: 'https://github.com/Azure/azure-mobile-apps'
+  - name: GitHub 리포지토리
+    href: https://github.com/Azure/azure-mobile-apps
 - name: 리소스
   items:
-    - name: App Service 모범 사례
-      href: ../app-service/app-service-best-practices.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
-    - name: Azure 로드맵
-      href: 'https://azure.microsoft.com/roadmap/'
-    - name: MSDN 포럼
-      href: 'https://social.msdn.microsoft.com/forums/azure/home?forum=azuremobile'
-    - name: 가격
-      href: 'https://azure.microsoft.com/pricing/details/app-service/'
-    - name: 요금 계산기
-      href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: 서비스 업데이트
-      href: 'https://azure.microsoft.com/updates/?product=mobile-services'
-    - name: 스택 오버플로
-      href: 'https://stackoverflow.com/questions/tagged/azure-mobile-services'
-    - name: 동영상
-      href: 'https://azure.microsoft.com/documentation/videos/index/?services=mobile-services'
-    - name: 샘플
+  - name: App Service 모범 사례
+    href: ../app-service/app-service-best-practices.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
+  - name: Azure 로드맵
+    href: https://azure.microsoft.com/roadmap/
+  - name: MSDN 포럼
+    href: https://social.msdn.microsoft.com/forums/azure/home?forum=azuremobile
+  - name: 가격
+    href: https://azure.microsoft.com/pricing/details/app-service/
+  - name: 요금 계산기
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: 서비스 업데이트
+    href: https://azure.microsoft.com/updates/?product=mobile-services
+  - name: 스택 오버플로
+    href: https://stackoverflow.com/questions/tagged/azure-mobile-services
+  - name: 동영상
+    href: https://azure.microsoft.com/documentation/videos/index/?services=mobile-services
+  - name: 샘플
+    items:
+    - name: 현장 엔지니어
+      href: https://azure.microsoft.com/resources/samples/app-service-mobile-dotnet-fieldengineer/
+    - name: 구조화된 데이터 동기화
+      href: https://azure.microsoft.com/resources/samples/app-service-mobile-dotnet-todo-list-files/
+    - name: 빠른 시작 완료됨
       items:
-        - name: 현장 엔지니어
-          href: 'https://azure.microsoft.com/resources/samples/app-service-mobile-dotnet-fieldengineer/'
-        - name: 구조화된 데이터 동기화
-          href: 'https://azure.microsoft.com/resources/samples/app-service-mobile-dotnet-todo-list-files/'
-        - name: 빠른 시작 완료됨
-          items:
-            - name: .NET 백 엔드
-              href: 'https://azure.microsoft.com/resources/samples/app-service-mobile-dotnet-backend-quickstart/'
-            - name: Node.js 백 엔드
-              href: 'https://azure.microsoft.com/resources/samples/app-service-mobile-nodejs-backend-quickstart/'
-            - name: ' Windows'
-              href: 'https://azure.microsoft.com/resources/samples/app-service-mobile-windows-quickstart/'
-            - name: Xamarin.Android
-              href: 'https://azure.microsoft.com/resources/samples/app-service-mobile-xamarin-android-quickstart/'
+      - name: .NET 백 엔드
+        href: https://azure.microsoft.com/resources/samples/app-service-mobile-dotnet-backend-quickstart/
+      - name: Node.js 백 엔드
+        href: https://azure.microsoft.com/resources/samples/app-service-mobile-nodejs-backend-quickstart/
+      - name: Windows
+        href: https://azure.microsoft.com/resources/samples/app-service-mobile-windows-quickstart/
+      - name: Xamarin.Android
+        href: https://azure.microsoft.com/resources/samples/app-service-mobile-xamarin-android-quickstart/
+ms.openlocfilehash: b7aa7664e7261233cda211b3d206432f388c4e87
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60861755"

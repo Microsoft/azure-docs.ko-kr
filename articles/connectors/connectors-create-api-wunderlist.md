@@ -12,11 +12,11 @@ ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
 ms.openlocfilehash: e3570ab1227ca388ac62bffdc74bb68b1ddc41d1
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50230170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62105669"
 ---
 # <a name="monitor-and-manage-wunderlist-by-using-azure-logic-apps"></a>Azure Logic Apps를 사용하여 Wunderlist 모니터링 및 관리
 
@@ -27,7 +27,7 @@ Azure Logic Apps 및 Wunderlist 커넥터를 사용하면 다음과 같이 다�
 * 미리 알림을 설정합니다.
 * 목록, 작업, 하위 작업, 알림, 파일, 정보, 설명 등을 가져옵니다.
 
-[Wunderlist](https://www.wunderlist.com/)는 어디서든 장치에서 사용자 프로젝트, 할 일 목록 및 작업을 계획, 관리 및 완료하는 데 유용한 서비스입니다. 트리거를 사용하여 Wunderlist 계정에서 응답을 가져오고 다른 작업에서 출력을 사용하도록 할 수 있습니다. Wunderlist 계정을 사용하여 작업을 수행하는 작업을 사용할 수 있습니다. 또한 다른 작업에서 Wunderlist 작업의 출력을 사용하도록 할 수 있습니다. 예를 들어, 새 작업이 만료되면 Slack 커넥터를 사용하여 메시지를 게시할 수 있습니다. 논리 앱을 처음 접하는 경우 [Azure Logic Apps란?](../logic-apps/logic-apps-overview.md)을 검토합니다.
+[Wunderlist](https://www.wunderlist.com/)는 어디서든 디바이스에서 사용자 프로젝트, 할 일 목록 및 작업을 계획, 관리 및 완료하는 데 유용한 서비스입니다. 트리거를 사용하여 Wunderlist 계정에서 응답을 가져오고 다른 작업에서 출력을 사용하도록 할 수 있습니다. Wunderlist 계정을 사용하여 작업을 수행하는 작업을 사용할 수 있습니다. 또한 다른 작업에서 Wunderlist 작업의 출력을 사용하도록 할 수 있습니다. 예를 들어, 새 작업이 만료되면 Slack 커넥터를 사용하여 메시지를 게시할 수 있습니다. 논리 앱을 처음 접하는 경우 [Azure Logic Apps란?](../logic-apps/logic-apps-overview.md)을 검토합니다.
 
 ## <a name="prerequisites"></a>필수 조건
 

@@ -1,6 +1,6 @@
 ---
 title: StorSimple Virtual Array에서 볼륨 관리 | Microsoft Docs
-description: StorSimple 장치 관리자 및 이 기능을 사용하여 StorSimple 가상 배열에서 볼륨을 관리하는 방법을 설명합니다.
+description: StorSimple Device Manager 및 이 기능을 사용하여 StorSimple Virtual Array에서 볼륨을 관리하는 방법을 설명합니다.
 services: storsimple
 documentationcenter: ''
 author: manuaery
@@ -14,27 +14,27 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2016
 ms.author: manuaery
-ms.openlocfilehash: a507bf1866952cb79fa6334fed80c88cd207cd0a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: a233a9deb58a7c1abc87a622a4f1f2581ee2e477
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23110211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62125800"
 ---
-# <a name="use-storsimple-device-manager-service-to-manage-volumes-on-the-storsimple-virtual-array"></a>StorSimple 장치 관리자 서비스를 사용하여 StorSimple 가상 배열에서 볼륨 관리
+# <a name="use-storsimple-device-manager-service-to-manage-volumes-on-the-storsimple-virtual-array"></a>StorSimple Device Manager 서비스를 사용하여 StorSimple Virtual Array에서 볼륨 관리
 
 ## <a name="overview"></a>개요
 
-이 자습서는 StorSimple 장치 관리자 서비스를 사용하여 StorSimple 가상 배열에서 볼륨을 만들고 관리하는 방법에 대해 설명합니다.
+이 자습서는 StorSimple Device Manager 서비스를 사용하여 StorSimple Virtual Array에서 볼륨을 만들고 관리하는 방법에 대해 설명합니다.
 
-StorSimple 장치 관리자 서비스는 단일 웹 인터페이스에서 StorSimple 솔루션을 관리하는 Azure Portal의 확장입니다. 공유 및 볼륨 관리 외에도 StorSimple 장치 관리자 서비스를 사용하여 장치를 보고 관리하며, 경고를 보고, 백업 정책 및 백업 카탈로그를 보고 관리할 수 있습니다.
+StorSimple Device Manager 서비스는 단일 웹 인터페이스에서 StorSimple 솔루션을 관리하는 Azure Portal의 확장입니다. 공유 및 볼륨 관리 외에도 StorSimple Device Manager 서비스를 사용하여 디바이스를 보고 관리하며, 경고를 보고, 백업 정책 및 백업 카탈로그를 보고 관리할 수 있습니다.
 
 ## <a name="volume-types"></a>볼륨 유형
 
 StorSimple 볼륨은 다음과 같을 수 있습니다.
 
-* **로컬로 고정**: 이러한 볼륨의 데이터는 항상 배열에 유지되고 클라우드로 분산되지 않습니다.
-* **계층화**: 이러한 볼륨의 데이터를 클라우드로 분산할 수 있습니다. 계층화된 볼륨을 만들 때 공간의 약 10%는 로컬 계층에 프로비전되고 공간의 90%는 클라우드에 프로비전됩니다. 예를 들어, 1TB 볼륨을 프로비전하는 경우 100GB는 로컬 공간에 상주하고 900GB는 데이터가 계층화될 때 클라우드에서 사용됩니다. 따라서 장치의 로컬 공간이 부족하면 로컬 계층에 필요한 10%를 사용할 수 없기 때문에 계층화된 볼륨을 프로비전할 수 없다는 것을 의미합니다.
+* **로컬로 고정 된**: 이러한 볼륨의 데이터가 항상 배열에 유지 되 고 클라우드로 유출 되지 않습니다.
+* **계층화 된**: 이러한 볼륨의 데이터를 클라우드로 분산할 수 있습니다. 계층화된 볼륨을 만들 때 공간의 약 10%는 로컬 계층에 프로비전되고 공간의 90%는 클라우드에 프로비전됩니다. 예를 들어, 1TB 볼륨을 프로비전하는 경우 100GB는 로컬 공간에 상주하고 900GB는 데이터가 계층화될 때 클라우드에서 사용됩니다. 따라서 디바이스의 로컬 공간이 부족하면 로컬 계층에 필요한 10%를 사용할 수 없기 때문에 계층화된 볼륨을 프로비전할 수 없다는 것을 의미합니다.
 
 ### <a name="provisioned-capacity"></a>프로비전된 용량
 각 볼륨 유형에 대한 최대 프로비전된 용량에 대해 다음 표를 참조하세요.
@@ -57,7 +57,7 @@ StorSimple 서비스 요약 블레이드의 **볼륨** 메뉴에서는 지정된
 * **상태** – 온라인 또는 오프라인 상태가 될 수 있습니다. 오프라인인 경우 볼륨은 해당 볼륨을 사용하는 데 액세스가 허용된 초기자(서버)에 보이지 않습니다.
 * **유형** – 볼륨이 **계층화됨**(기본값) 또는 **로컬로 고정**인지를 나타냅니다.
 * **용량** - 용량은 초기자(서버)가 저장할 수 있는 데이터의 전체 크기에 비해 사용된 데이터의 양을 지정합니다.
-* **백업** – StorSimple 가상 배열의 경우에 모든 볼륨은 자동으로 백업에서 사용할 수 있습니다.
+* **Backup** – StorSimple 가상 배열의 경우에 모든 볼륨은 자동으로 백업에서 사용할 수 있습니다.
 * **연결된 호스트** – 이 볼륨에 대한 액세스가 허용된 초기자(서버)를 지정합니다.
 
 ![볼륨 세부 정보](./media/storsimple-virtual-array-manage-volumes/volume-details.png)
@@ -102,7 +102,7 @@ StorSimple 서비스 요약 블레이드의 **볼륨** 메뉴에서는 지정된
 
 ## <a name="take-a-volume-offline"></a>볼륨을 오프라인으로 전환
 
-볼륨을 수정 또는 삭제하려는 경우 볼륨을 오프라인으로 전환해야 할 수 있습니다. 볼륨이 오프라인 상태인 경우 읽기 전용 액세스를 사용할 수 없습니다. 장치에서뿐 아니라 호스트에서도 볼륨을 오프라인으로 전환해야 합니다.
+볼륨을 수정 또는 삭제하려는 경우 볼륨을 오프라인으로 전환해야 할 수 있습니다. 볼륨이 오프라인 상태인 경우 읽기 전용 액세스를 사용할 수 없습니다. 디바이스에서뿐 아니라 호스트에서도 볼륨을 오프라인으로 전환해야 합니다.
 
 #### <a name="to-take-a-volume-offline"></a>볼륨을 오프라인으로 전환하려면
 

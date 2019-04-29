@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 12/27/2018
 ms.author: raynew
 ms.openlocfilehash: eeadfd6a57ff8a26f3f124e2a807fcd66e77b85f
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53976718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036746"
 ---
 # <a name="plan-capacity-for-hyper-v-vm-disaster-recovery"></a>Hyper-V VM에 재해 복구에 대한 용량 계획 
 
@@ -113,7 +113,7 @@ Site Recovery Capacity Planner를 사용하여 원본 환경 및 워크로드를
    * 필수 입력의 유효성을 검사합니다.
    * IOPS를 계산하고 Azure로 복제할 수 있는 각 VM에 최적으로 일치하는 Azure VM 크기를 제안합니다. Azure VM에 적합한 크기를 감지할 수 없는 경우 오류가 발생합니다. 예를 들어 연결된 디스크 수가 65인 경우 가장 높은 Azure VM 크기가 64이므로 오류가 표시됩니다.
    * Azure VM에 대해 사용할 수 있는 저장소 계정을 제안합니다.
-   * 워크로드에 필요한 표준 저장소 계정 및 프리미엄 저장소 계정의 총 수를 계산합니다. 아래로 스크롤하면 원본 서버에 사용할 수 있는 Azure Storage 유형 및 스토리지 계정을 볼 수 있습니다.
+   * 워크로드에 필요한 표준 스토리지 계정 및 Premium Storage 계정의 총 수를 계산합니다. 아래로 스크롤하면 원본 서버에 사용할 수 있는 Azure Storage 유형 및 스토리지 계정을 볼 수 있습니다.
    * VM에 할당된 필요한 저장소 유형(Standard 또는 Premium) 및 연결된 디스크 수를 기반으로 테이블의 나머지 부분을 완료하고 정렬합니다. Azure에 대한 요구 사항을 충족하는 모든 VM의 경우 **VM 적합 여부**가 **예**로 표시됩니다. VM을 Azure로 백업할 수 없는 경우 오류가 표시됩니다.
 
 각 VM에 대한 정보를 제공하는 AA~AE 열이 출력됩니다.
@@ -128,14 +128,14 @@ Site Recovery Capacity Planner를 사용하여 원본 환경 및 워크로드를
 * 이 예제 출력에서 다음을 확인할 수 있습니다.
 
   * 첫 번째 열은 VM, 디스크 및 이탈에 대한 유효성 검사 열입니다.
-  * VM 5대에 표준 저장소 계정 두 개와 프리미엄 저장소 계정 하나가 필요합니다.
+  * VM 5대에 표준 스토리지 계정 두 개와 Premium Storage 계정 하나가 필요합니다.
   * VM3은 하나 이상의 디스크가 1TB를 초과하므로 보호하기에 적합하지 않습니다.
   * VM1 및 VM2는 첫 번째 표준 저장소 계정을 사용할 수 있습니다.
   * VM4는 두 번째 표준 저장소 계정을 사용할 수 있습니다.
   * VM5 및 VM6에는 Premium Storage 계정이 필요하고 둘 다 단일 계정을 사용할 수 있습니다.
 
     > [!NOTE]
-    > 표준 및 프리미엄 저장소의 IOPS는 디스크 수준이 아니라 VM 수준에서 계산됩니다. 표준 VM은 디스크당 최대 500 IOPS를 처리할 수 있습니다. 디스크의 IOPS가 500개보다 많은 경우 Premium Storage가 필요합니다. 디스크의 IOPS가 500보다 많지만 총 VM 디스크의 IOPS가 지원되는 표준 Azure VM 제한 내에 속하는 경우에는 플래너가 DS 또는 GS 시리즈 대신 표준 VM을 선택합니다. (Azure VM 제한은 VM 크기, 디스크 수, 어댑터 수, CPU, 메모리입니다.) 사용자는 적절한 DS 또는 GS 시리즈 VM을 사용하여 매핑 Azure 크기 셀을 수동으로 업데이트해야 합니다.
+    > 표준 및 Premium Storage의 IOPS는 디스크 수준이 아니라 VM 수준에서 계산됩니다. 표준 VM은 디스크당 최대 500 IOPS를 처리할 수 있습니다. 디스크의 IOPS가 500개보다 많은 경우 Premium Storage가 필요합니다. 디스크의 IOPS가 500보다 많지만 총 VM 디스크의 IOPS가 지원되는 표준 Azure VM 제한 내에 속하는 경우에는 플래너가 DS 또는 GS 시리즈 대신 표준 VM을 선택합니다. (Azure VM 제한은 VM 크기, 디스크 수, 어댑터 수, CPU, 메모리입니다.) 사용자는 적절한 DS 또는 GS 시리즈 VM을 사용하여 매핑 Azure 크기 셀을 수동으로 업데이트해야 합니다.
 
 
 모든 정보가 입력되었으면 **플래너 도구에 데이터 전송**을 선택하여 Capacity Planner를 엽니다. 보호에 적합한지 여부를 표시하기 위해 워크로드가 강조 표시됩니다.

@@ -9,11 +9,11 @@ ms.date: 06/03/2017
 ms.author: tamram
 ms.subservice: common
 ms.openlocfilehash: 411b43ec631c77246da1ee55f2532486f8b55ffc
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58006638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60730109"
 ---
 # <a name="azure-storage-samples"></a>Azure Storage 샘플
 

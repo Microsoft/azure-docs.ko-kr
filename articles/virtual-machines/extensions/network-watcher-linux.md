@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 02/14/2017
 ms.author: dennisg
 ms.openlocfilehash: 5ed5e791cd6e611218769650115c78afd1869f67
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59798779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60743432"
 ---
 # <a name="network-watcher-agent-virtual-machine-extension-for-linux"></a>Linux용 Network Watcher 에이전트 가상 머신 확장
 
@@ -36,7 +36,7 @@ ms.locfileid: "59798779"
 
 Network Watcher 에이전트 확장은 다음 Linux 배포판에 대해 구성될 수 있습니다.
 
-| 배포 | 버전 |
+| 배포 | Version |
 |---|---|
 | Ubuntu | 12+ |
 | Debian | 7 및 8 |

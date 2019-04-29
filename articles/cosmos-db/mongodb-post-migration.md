@@ -8,15 +8,15 @@ ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: roaror
 ms.openlocfilehash: c0c761fef481a1fdaa027f1329e9a4e72d62985a
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60013801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61331218"
 ---
 # <a name="post-migration-optimization-steps-when-using-azure-cosmos-dbs-api-for-mongodb"></a>MongoDB에 대 한 Azure Cosmos DB API를 사용 하는 경우 마이그레이션 후 최적화 단계 
 
-MongoDB에 대 한 Azure Cosmos DB API에 MongoDB 데이터베이스에 저장 된 데이터를 마이그레이션한 후 Azure Cosmos DB에 연결 하 고 데이터를 관리할 수 있습니다. 이 가이드는 마이그레이션 후 고려해 야 하는 단계를 제공 합니다. 참조 된 [MongoDB 자습서에 대 한 Azure Cosmos DB API에 MongoDB 마이그레이션](../dms/tutorial-mongodb-cosmos-db.md) 마이그레이션 단계에 대 한 합니다.
+MongoDB 데이터베이스에 저장된 데이터를 MongoDB용 Azure Cosmos DB의 API로 마이그레이션한 후 Azure Cosmos DB에 연결하고 데이터를 관리할 수 있습니다. 이 가이드는 마이그레이션 후 고려해 야 하는 단계를 제공 합니다. 참조 된 [MongoDB 자습서에 대 한 Azure Cosmos DB API에 MongoDB 마이그레이션](../dms/tutorial-mongodb-cosmos-db.md) 마이그레이션 단계에 대 한 합니다.
 
 이 가이드에서는 다음을 수행하는 방법을 배우게 됩니다.
 - [응용 프로그램 연결](#connect-account)
@@ -64,9 +64,9 @@ Azure Cosmos DB는 잘 정의 된 5 [일관성 수준](consistency-levels.md)합
 * [Studio 3T를 사용 하 여 Azure Cosmos DB 계정에 연결](mongodb-mongochef.md)
 * [Azure Cosmos DB API를 사용 하 여 MongoDB에 대 한 전역적으로 배포 하는 방법 읽기](mongodb-readpreference.md)
 * [MongoDB에 대 한 Azure Cosmos DB API 사용 하 여 데이터를 만료](mongodb-time-to-live.md)
-* [Azure Cosmos DB의에서 일관성 수준](consistency-levels.md)
+* [Azure Cosmos DB의 일관성 수준](consistency-levels.md)
 * [Azure Cosmos DB의 인덱싱](index-overview.md)
-* [Azure Cosmos DB의에서 요청 단위](request-units.md)
+* [Azure Cosmos DB의 요청 단위](request-units.md)
 
 
 

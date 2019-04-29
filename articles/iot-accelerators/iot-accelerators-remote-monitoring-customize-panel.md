@@ -1,19 +1,20 @@
 ---
-title: 원격 모니터링 솔루션 UI에 패널 추가 - Azure | Microsoft Docs
+title: 원격 모니터링 솔루션 UI-Azure에 패널 추가 | Microsoft Docs
 description: 이 문서에서는 원격 모니터링 솔루션 가속기 웹 UI의 대시보드에 새 패널을 추가하는 방법을 보여 줍니다.
 author: dominicbetts
 manager: timlt
-ms.author: dobett
+ms.author: v-yiso
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.date: 10/05/2018
+origin.date: 10/05/2018
+ms.date: 11/26/2018
 ms.topic: conceptual
 ms.openlocfilehash: 3b855c3bed75945f44b55463bdacd049b7930aa7
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49165881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61447066"
 ---
 # <a name="add-a-custom-panel-to-the-dashboard-in-the-remote-monitoring-solution-accelerator-web-ui"></a>원격 모니터링 솔루션 가속기 웹 UI의 대시보드에 사용자 지정 패널 추가
 
@@ -45,7 +46,6 @@ ms.locfileid: "49165881"
 
 **examplePanel.js**
 
-[!code-javascript[Example panel](~/remote-monitoring-webui/src/walkthrough/components/pages/dashboard/panels/examplePanel/examplePanel.js?name=panel "Example panel")]
 
 **src/walkthrough/components/pages/dashboard/panels/examplePanel** 폴더를 **src/components/pages/dashboard/panels** 폴더에 복사합니다.
 

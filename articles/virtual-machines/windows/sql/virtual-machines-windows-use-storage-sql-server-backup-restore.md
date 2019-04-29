@@ -15,15 +15,15 @@ ms.workload: iaas-sql-server
 ms.date: 01/31/2017
 ms.author: mikeray
 ms.openlocfilehash: 1b6660a1565b3c119cc1dec0823870c7dd5bd24f
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53654090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61477147"
 ---
 # <a name="use-azure-storage-for-sql-server-backup-and-restore"></a>SQL Server 백업 및 복원에 Azure Storage 사용
 ## <a name="overview"></a>개요
-SQL Server 2012 SP1 CU2부터는 Azure Blob 저장소 서비스에 직접 SQL Server 백업을 쓸 수 있습니다. 이 기능을 사용하여 온-프레미스 SQL Server 데이터베이스 또는 Azure 가상 머신의 SQL Server 데이터베이스를 사용하여 Azure Blob service에 백업하고 Azure Blob service에서 복원할 수 있습니다. 클라우드로 Backup하면 가용성, 무제한으로 지역에서 복제되는 오프사이트 저장소, 클라우드로/에서 쉬운 데이터 마이그레이션 등의 이점이 있습니다. Transact-SQL 또는 SMO를 사용하여 BACKUP 또는 RESTORE 문을 실행할 수 있습니다.
+SQL Server 2012 SP1 CU2부터는 Azure Blob Storage 서비스에 직접 SQL Server 백업을 쓸 수 있습니다. 이 기능을 사용하여 온-프레미스 SQL Server 데이터베이스 또는 Azure 가상 머신의 SQL Server 데이터베이스를 사용하여 Azure Blob service에 백업하고 Azure Blob service에서 복원할 수 있습니다. 클라우드로 Backup하면 가용성, 무제한으로 지역에서 복제되는 오프사이트 저장소, 클라우드로/에서 쉬운 데이터 마이그레이션 등의 이점이 있습니다. Transact-SQL 또는 SMO를 사용하여 BACKUP 또는 RESTORE 문을 실행할 수 있습니다.
 
 SQL Server 2016에는 여러 새 기능이 포함되어 있습니다. [파일-스냅숏 백업](https://msdn.microsoft.com/library/mt169363.aspx)을 사용하여 거의 즉시 백업을 수행하고 매우 빠르게 복원할 수 있습니다.
 
@@ -42,10 +42,10 @@ SQL Server를 백업할 때 발생하는 몇 가지 해결 과제는 다음과 �
 
 자세한 내용은 [Azure Blob Storage 서비스로 SQL Server 백업 및 복원](https://go.microsoft.com/fwlink/?LinkId=271617)을 참조하십시오.
 
-다음 두 섹션에서는 필수 SQL Server 구성 요소를 포함하여 Azure Blob 저장소 서비스를 소개합니다. Azure Blob 저장소 서비스로 백업하거나 서비스에서 복원하기 위해서는 구성 요소와 구성 요소 간 조작에 대해 이해하는 것이 중요합니다.
+다음 두 섹션에서는 필수 SQL Server 구성 요소를 포함하여 Azure Blob Storage 서비스를 소개합니다. Azure Blob Storage 서비스로 백업하거나 서비스에서 복원하기 위해서는 구성 요소와 구성 요소 간 조작에 대해 이해하는 것이 중요합니다.
 
 ## <a name="azure-blob-storage-service-components"></a>Azure Blob Storage 서비스 구성 요소
-다음 Azure 구성 요소는 Azure Blob 저장소 서비스로 백업할 때 사용됩니다.
+다음 Azure 구성 요소는 Azure Blob Storage 서비스로 백업할 때 사용됩니다.
 
 | 구성 요소 | 설명 |
 | --- | --- |
@@ -54,12 +54,12 @@ SQL Server를 백업할 때 발생하는 몇 가지 해결 과제는 다음과 �
 | **Blob** |임의 형식 및 크기의 파일입니다. Blob은 다음 URL 형식을 사용하여 주소를 지정할 수 있습니다. **https://[storage account].blob.core.windows.net/[container]/[blob]** 페이지 Blob에 대한 자세한 내용은 [블록 및 페이지 Blob 이해](https://msdn.microsoft.com/library/azure/ee691964.aspx)를 참조하세요. |
 
 ## <a name="sql-server-components"></a>SQL Server 구성 요소
-다음 SQL Server 구성 요소는 Azure Blob 저장소 서비스로 백업할 때 사용됩니다.
+다음 SQL Server 구성 요소는 Azure Blob Storage 서비스로 백업할 때 사용됩니다.
 
 | 구성 요소 | 설명 |
 | --- | --- |
 | **URL** |URL은 고유한 백업 파일에 대한 URI(Uniform Resource Identifier)를 지정합니다. URL은 SQL Server 백업 파일의 위치 및 이름을 지정하는 데 사용합니다. URL은 컨테이너가 아닌 실제 Blob을 가리켜야 합니다. Blob이 없는 경우 새로 만듭니다. 기존 Blob이 지정된 경우 > WITH FORMAT 옵션을 지정하지 않으면 BACKUP이 실패합니다. 다음은 BACKUP 명령에 지정하는 URL 예제입니다. **http[s]://[storageaccount].blob.core.windows.net/[container]/[FILENAME.bak]** HTTPS는 필수가 아니지만 사용하는 것이 좋습니다. |
-| **자격 증명** |Azure Blob 저장소 서비스에 연결하고 인증하는 데 필요한 정보는 자격 증명으로 저장됩니다.  SQL Server가 백업을 Azure Blob에 쓰거나 Azure Blob에서 복원하려면 SQL Server 자격 증명을 만들어야 합니다. 자세한 내용은 [SQL Server 자격 증명](https://msdn.microsoft.com/library/ms189522.aspx)을 참조하세요. |
+| **자격 증명** |Azure Blob Storage 서비스에 연결하고 인증하는 데 필요한 정보는 자격 증명으로 저장됩니다.  SQL Server가 백업을 Azure Blob에 쓰거나 Azure Blob에서 복원하려면 SQL Server 자격 증명을 만들어야 합니다. 자세한 내용은 [SQL Server 자격 증명](https://msdn.microsoft.com/library/ms189522.aspx)을 참조하세요. |
 
 > [!NOTE]
 > Sql Server 2016은 블록 Blob을 지원하도록 업데이트되었습니다. 자세한 내용은 [자습서: SQL Server 2016 데이터베이스에서 Microsoft Azure Blob 스토리지 서비스 사용](https://msdn.microsoft.com/library/dn466438.aspx)을 참조하세요.

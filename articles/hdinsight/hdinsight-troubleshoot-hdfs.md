@@ -1,19 +1,18 @@
 ---
 title: Azure HDInsight의 HDFS 문제 해결
 description: HDFS 및 Azure HDInsight 작업에 대한 일반적인 질문에 답합니다.
-services: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: fca763d04cc8cbf22d1578b18d504ec3ce9656d9
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
+ms.openlocfilehash: 0a310eaeb9baf6ed2438b9f824cd6ad7eb492915
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53993028"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63763998"
 ---
 # <a name="troubleshoot-apache-hadoop-hdfs-by-using-azure-hdinsight"></a>Azure HDInsight를 사용하여 Apache Hadoop HDFS 문제 해결
 
@@ -227,5 +226,5 @@ HDInsight 클러스터 규모가 매우 적은 수의 노드로 축소되었습�
     hdfs dfsadmin -D "fs.default.name=hdfs://mycluster/" -safemode leave
     ```
 
-### <a name="see-also"></a>참고 항목
+### <a name="see-also"></a>관련 항목
 [Azure HDInsight를 사용하여 문제 해결](hdinsight-troubleshoot-guide.md)

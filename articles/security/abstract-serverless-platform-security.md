@@ -7,11 +7,11 @@ ms.date: 06/21/2018
 ms.topic: article
 ms.service: security
 ms.openlocfilehash: 87010b3256fb8eef6871d76f80db2999760386b4
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53320747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60587498"
 ---
 # <a name="azure-functions-and-serverless-platform-security"></a>Azure Functions 및 서버를 사용하지 않는 플랫폼 보안
 ## <a name="abstract"></a>요약

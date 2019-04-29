@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
 ms.openlocfilehash: f5ffc795e6469971d1eaf335d6683f94d05f0807
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53278617"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122441"
 ---
 # <a name="upgrade-your-existing-net-azure-mobile-service-to-app-service"></a>기존 .NET Azure 모바일 서비스를 App Service로 업그레이드
 App Service 모바일은 Microsoft Azure를 사용하여 모바일 애플리케이션을 빌드하는 새로운 방법입니다. 자세한 내용은 [Mobile Apps 정의]를 참조하세요.
@@ -63,12 +63,12 @@ Mobile Services 클라이언트 SDK는 새 Mobile Apps 서버 SDK와 호환할 �
 3. 새 버전의 클라이언트 애플리케이션 릴리스
 4. (선택 사항) 원래 마이그레이션된 인스턴스 삭제
 
-## <a name="mobile-app-version"></a>두 번째 응용 프로그램 인스턴스 만들기
-업그레이드의 첫 번째 단계는 새 버전의 애플리케이션을 호스트할 모바일 앱 리소스를 만드는 것입니다. 기존 모바일 서비스를 이미 마이그레이션한 경우 동일한 호스팅 계획에 이 버전을 만들려고 합니다. [Azure Portal] 을 열고 마이그레이션된 응용 프로그램으로 이동합니다. App Service 계획에서 실행 중인지 확인합니다.
+## <a name="mobile-app-version"></a>두 번째 애플리케이션 인스턴스 만들기
+업그레이드의 첫 번째 단계는 새 버전의 애플리케이션을 호스트할 모바일 앱 리소스를 만드는 것입니다. 기존 모바일 서비스를 이미 마이그레이션한 경우 동일한 호스팅 계획에 이 버전을 만들려고 합니다. [Azure Portal]을 열고 마이그레이션된 애플리케이션으로 이동합니다. App Service 계획에서 실행 중인지 확인합니다.
 
 다음으로 [.NET 백 엔드 만들기 지침](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#create-app)을 수행하여 두 번째 애플리케이션 인스턴스를 만듭니다. App Service 계획 또는 "호스팅 계획"을 선택하라는 메시지가 나타나면 마이그레이션된 애플리케이션의 계획을 선택합니다.
 
-Mobile Services와 동일한 데이터베이스 및 알림 허브를 사용하려는 경우가 많습니다. [Azure Portal]을 열고 원래 응용 프로그램 탐색하여 이러한 값을 복사한 다음 **설정** > **응용 프로그램 설정**을 클릭할 수 있습니다. **연결 문자열**에서 `MS_NotificationHubConnectionString` 및 `MS_TableConnectionString`을 복사합니다. 새 업그레이드 사이트로 이동하고 붙여 넣어 기존 값을 덮어씁니다. 앱에 필요한 다른 애플리케이션 설정에 이 프로세스를 반복합니다.
+Mobile Services와 동일한 데이터베이스 및 알림 허브를 사용하려는 경우가 많습니다. [Azure Portal]을 열고 원래 애플리케이션 탐색하여 이러한 값을 복사한 다음 **설정** > **애플리케이션 설정**을 클릭할 수 있습니다. **연결 문자열**에서 `MS_NotificationHubConnectionString` 및 `MS_TableConnectionString`을 복사합니다. 새 업그레이드 사이트로 이동하고 붙여 넣어 기존 값을 덮어씁니다. 앱에 필요한 다른 애플리케이션 설정에 이 프로세스를 반복합니다.
 
 애플리케이션에 대한 ASP.NET 프로젝트의 복사본을 만들고 새 사이트에 게시합니다. 새 URL를 통해 업데이트된 클라이언트 애플리케이션의 복사본을 사용하여 모든 작업이 예상 대로 작동하는 것을 확인합니다.
 
@@ -160,12 +160,12 @@ Mobile Apps 클라이언트 SDK는 새 시스템 속성 이름을 사용하므�
 
 iOS에서 다음과 일치하도록 데이터 엔터티에 대한 핵심 데이터 스키마를 변경해야 합니다. 속성 `createdAt`, `updatedAt` 및 `version`에는 더 이상 `ms_` 접두사가 없습니다.
 
-| 특성 | type | 참고 |
+| 특성 | Type | 참고 |
 | --- | --- | --- |
 | id |문자열, 필수로 표시 |원격 저장소의 기본 키 |
 | createdAt |Date |(옵션) createdAt 시스템 속성에 매핑됩니다. |
 | updatedAt |Date |(옵션) updatedAt 시스템 속성에 매핑됩니다. |
-| 버전 |문자열 |(옵션) 충돌을 검색하는 데 사용되며 version에 매핑됩니다. |
+| 버전 |String |(옵션) 충돌을 검색하는 데 사용되며 version에 매핑됩니다. |
 
 #### <a name="querying-system-properties"></a>시스템 속성 쿼리
 Azure Mobile Services에서 시스템 속성은 기본적으로 전송되지 않지만 쿼리 문자열 `__systemProperties`을 사용하여 요청된 경우에만 그렇습니다. 반면 Azure Mobile Apps 시스템에서 속성은 서버 SDK 개체 모델의 일부이기 때문에 **항상 선택** 됩니다.

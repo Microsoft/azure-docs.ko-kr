@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 03/30/2018
 ms.author: danlep
 ms.openlocfilehash: 577e2386c352798bc21a2c78b22726128ac7cf0a
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48854091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60579749"
 ---
 # <a name="execute-a-command-in-a-running-azure-container-instance"></a>실행 중인 Azure Container Instances에서 명령 실행
 
@@ -74,7 +74,7 @@ Bye.
 
 ## <a name="multi-container-groups"></a>다중 컨테이너 그룹
 
-[컨테이너 그룹](container-instances-container-groups.md)에 응용 프로그램 컨테이너 및 로깅 사이드카 등의 여러 컨테이너가 있는 경우 `--container-name`을 사용하여 명령을 실행할 컨테이너의 이름을 지정합니다.
+[컨테이너 그룹](container-instances-container-groups.md)에 애플리케이션 컨테이너 및 로깅 사이드카 등의 여러 컨테이너가 있는 경우 `--container-name`을 사용하여 명령을 실행할 컨테이너의 이름을 지정합니다.
 
 예를 들어 컨테이너 그룹에서 *mynginx*는 *nginx-app* 및 *logger*라는 두 개의 컨테이너입니다. *nginx-app* 컨테이너에서 셸을 시작하려면:
 

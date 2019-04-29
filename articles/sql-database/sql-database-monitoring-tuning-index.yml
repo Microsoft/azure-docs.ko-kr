@@ -1,10 +1,4 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 51bec37f6b052d51d6cc8f5a8667789bec9e6881
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56235968"
 documentType: LandingData
 title: 'Azure SQL Database: 모니터링 및 튜닝'
 metadata:
@@ -17,47 +11,47 @@ metadata:
   manager: craigg
   ms.service: sql-database
   ms.tgt_pltfrm: na
-  ms.devlang: 
+  ms.devlang: null
   ms.topic: overview
   ms.date: 02/08/2019
   ms.author: jovanpop
 sections:
-- items:
-  - type: paragraph
-    text: Azure SQL Database를 사용하면 데이터베이스 워크로드를 쉽게 모니터링하고 튜닝할 수 있습니다.
-  - type: list
-    style: cards
-    className: cardsM
-    columns: 3
+  - items:
+      - type: paragraph
+        text: Azure SQL Database를 사용하면 데이터베이스 워크로드를 쉽게 모니터링하고 튜닝할 수 있습니다.
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 3
+        items:
+          - title: Query Performance Insight
+            href: /azure/sql-database/sql-database-query-performance
+            html: <p>Azure Portal의 기본 제공 모니터링 기능을 사용하여 Azure SQL 데이터베이스(단일 또는 풀링된 데이터베이스)의 리소스 사용량을 쉽게 모니터링할 수 있습니다.</p>
+          - title: Azure SQL Analytics
+            href: 'https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql?toc=/azure/sql-database/toc.json'
+            html: '<p>Azure SQL 분석 모니터링을 사용하면 하나의 창에서 데이터베이스, 탄력적 풀 및 인스턴스의 대규모 세트를 쉽게 모니터링할 수 있습니다.</p>'
+          - title: 자동 조정
+            href: /azure/sql-database/sql-database-automatic-tuning
+            html: <p>자동 튜닝은 쿼리 계획 문제를 자동으로 추천 및 수정하고 인덱스를 만들고 삭제하여 성능을 개선합니다.</p>
+          - title: Intelligent Performance Insight
+            href: /azure/sql-database/sql-database-intelligent-insights
+            html: <p>Azure SQL Database의 기본 제공 인텔리전스는 데이터베이스의 성능을 저하시키는 중단 이벤트를 탐지하고 가능한 경우 완화 권장 사항을 제공합니다.</p>
+          - title: 성능 권장 사항
+            href: /azure/sql-database/sql-database-advisor
+            html: <p>Azure SQL Database는 Azure Portal에서 데이터베이스를 최적화하는 데 도움이 될 수 있는 권장 사항을 제공합니다.</p>
+          - title: 메트릭 및 로깅
+            href: /azure/sql-database/sql-database-metrics-diag-logging
+            html: '<p>사용자 지정 통합을 위해 데이터베이스 진단 원격 분석을 Azure SQL 분석, Azure Event Hubs 또는 Azure Blob 스토리지로 스트림합니다.</p>'
+  - title: 추가 리소스
     items:
-    - title: Query Performance Insight
-      href: /azure/sql-database/sql-database-query-performance
-      html: <p>Azure Portal의 기본 제공 모니터링 기능을 사용하여 Azure SQL 데이터베이스(단일 또는 풀링된 데이터베이스)의 리소스 사용량을 쉽게 모니터링할 수 있습니다.</p>
-    - title: Azure SQL Analytics
-      href: https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql?toc=/azure/sql-database/toc.json
-      html: <p>Azure SQL 분석 모니터링을 사용하면 하나의 창에서 데이터베이스, 탄력적 풀 및 인스턴스의 대규모 세트를 쉽게 모니터링할 수 있습니다.</p>
-    - title: 자동 조정
-      href: /azure/sql-database/sql-database-automatic-tuning
-      html: <p>자동 튜닝은 쿼리 계획 문제를 자동으로 추천 및 수정하고 인덱스를 만들고 삭제하여 성능을 개선합니다.</p>
-    - title: Intelligent Performance Insight
-      href: /azure/sql-database/sql-database-intelligent-insights
-      html: <p>Azure SQL Database의 기본 제공 인텔리전스는 데이터베이스의 성능을 저하시키는 중단 이벤트를 탐지하고 가능한 경우 완화 권장 사항을 제공합니다.</p>
-    - title: 성능 권장 사항
-      href: /azure/sql-database/sql-database-advisor
-      html: <p>Azure SQL Database는 Azure Portal에서 데이터베이스를 최적화하는 데 도움이 될 수 있는 권장 사항을 제공합니다.</p>
-    - title: 메트릭 및 로깅
-      href: /azure/sql-database/sql-database-metrics-diag-logging
-      html: <p>사용자 지정 통합을 위해 데이터베이스 진단 원격 분석을 Azure SQL 분석, Azure Event Hubs 또는 Azure Blob 스토리지로 스트림합니다.</p>
-- title: 추가 리소스
-  items:
-  - type: paragraph
-    text: 데이터베이스 성능을 최적화하는 데 도움이 될 수 있는 추가 기능에 대해 알아봅니다.
-  - type: list
-    style: unordered
-    items:
-    - html: Azure SQL Database의 <a href="sql-database-monitor-tune-overview.md">모니터링 및 튜닝</a>에 대해 자세히 알아봅니다.
-    - html: <a href="https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing?toc=/azure/sql-database/toc.json">인텔리전트 쿼리 처리</a>가 데이터베이스 성능을 어떻게 개선할 수 있는지 알아봅니다.
-    - html: <a href="sql-database-operate-query-store.md">쿼리 저장소</a> 설정 및 운영 - 쿼리 성능에 대한 실시간 인사이트를 얻을 수 있는 핵심 SQL Server 기술입니다.
-    - html: <a href="sql-database-operate-query-store.md">동적 관리 뷰</a>를 사용하여 워크로드의 성능을 분석하는 방법을 알아봅니다.
-    - html: <a href="sql-database-xevent-db-diff-from-svr.md">XEvents</a>를 사용하여 데이터베이스 활동을 모니터링하는 방법을 알아봅니다.
-    - html: <a href="sql-database-performance-guidance.md">데이터베이스를 수동으로 튜닝</a>하는 방법을 알아봅니다.
+      - type: paragraph
+        text: 데이터베이스 성능을 최적화하는 데 도움이 될 수 있는 추가 기능에 대해 알아봅니다.
+      - type: list
+        style: unordered
+        items:
+          - html: Azure SQL Database의 <a href="sql-database-monitor-tune-overview.md">모니터링 및 튜닝</a>에 대해 자세히 알아봅니다.
+          - html: '<a href="https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing?toc=/azure/sql-database/toc.json">인텔리전트 쿼리 처리</a>가 데이터베이스 성능을 어떻게 개선할 수 있는지 알아봅니다.'
+          - html: <a href="sql-database-operate-query-store.md">쿼리 저장소</a> 설정 및 운영 - 쿼리 성능에 대한 실시간 인사이트를 얻을 수 있는 핵심 SQL Server 기술입니다.
+          - html: <a href="sql-database-operate-query-store.md">동적 관리 뷰</a>를 사용하여 워크로드의 성능을 분석하는 방법을 알아봅니다.
+          - html: <a href="sql-database-xevent-db-diff-from-svr.md">XEvents</a>를 사용하여 데이터베이스 활동을 모니터링하는 방법을 알아봅니다.
+          - html: <a href="sql-database-performance-guidance.md">데이터베이스를 수동으로 튜닝</a>하는 방법을 알아봅니다.

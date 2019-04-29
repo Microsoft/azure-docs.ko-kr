@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
-ms.openlocfilehash: 75d0bbc536c907e6530570b4d7568f39371cfced
-ms.sourcegitcommit: b07d06ea51a20e32fdc61980667e801cb5db7333
-ms.translationtype: HT
+ms.openlocfilehash: e2adccaf1371cf322b5a50b0e1f6ef64dde14b66
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/08/2017
-ms.locfileid: "26367678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60628662"
 ---
 # <a name="what-is-storsimple-for-cloud-solutions-providers-program"></a>클라우드 솔루션 공급자 프로그램용 StorSimple이란?
 
@@ -32,7 +32,7 @@ CSP(클라우드 솔루션 공급자)용 StorSimple 가상 배열을 통해 파�
 
 CSP용 StorSimple에 대한 자세한 내용은 [Azure CSP 개요](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-overview) 페이지를 방문합니다.
 
-요금 청구, 가격 책정, 인센티브 및 CSP에서 지원 얻기에 대한 자세한 내용은 [CSP의 StorSimple: FAQ](storsimple-partner-csp-faq.md)로 이동합니다. 
+청구에 대 한 자세한 내용은 가격 책정, 인센티브 및 CSP에서 지원 받기로 [CSP의 StorSimple. FAQ](storsimple-partner-csp-faq.md)합니다. 
 
 ## <a name="deploy-and-manage-storsimple-for-csp"></a>CSP용 StorSimple 배포 및 관리
 
@@ -42,5 +42,5 @@ CSP용 StorSimple은 현재 StorSimple을 사용할 수 있는 모든 시장에�
 
 ## <a name="next-steps"></a>다음 단계
 
-- CSP의 StorSimple에 대한 추가 질문이 있으면 [CSP용 StorSimple: 질문과 대답](storsimple-partner-csp-faq.md)으로 이동합니다.
+- CSP에서 StorSimple에 대 한 추가 질문을 해야 하는 경우 이동 [CSP 용 StorSimple. 질문과 대답](storsimple-partner-csp-faq.md)을 참조하세요.
 - StorSimple을 배포할 준비가 되면 [CSP용 StorSimple 배포](storsimple-partner-csp-deploy.md)로 이동합니다.

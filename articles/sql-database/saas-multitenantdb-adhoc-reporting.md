@@ -1,5 +1,5 @@
 ---
-title: 여러 Azure SQL Database에 대해 임시 보고 쿼리 실행 | Microsoft Docs
+title: 여러 Azure SQL 데이터베이스에 대해 임시 보고 쿼리 실행 | Microsoft Docs
 description: 다중 테넌트 앱 예에서 여러 SQL Database에 대해 임시 보고 쿼리를 실행합니다.
 services: sql-database
 ms.service: sql-database
@@ -13,13 +13,13 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 10/30/2018
 ms.openlocfilehash: d4c5a2ca88f982626c8c2a8b37e4a7d6dfdbe599
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58076363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485826"
 ---
-# <a name="run-ad-hoc-analytics-queries-across-multiple-azure-sql-databases"></a>여러 Azure SQL Database에 대해 임시 분석 쿼리 실행
+# <a name="run-ad-hoc-analytics-queries-across-multiple-azure-sql-databases"></a>여러 Azure SQL 데이터베이스에 대해 임시 분석 쿼리 실행
 
 이 자습서에서는 테넌트 데이터베이스의 전체 집합에서 배포된 쿼리를 실행하여 임시 대화형 보고를 사용하도록 설정합니다. 이러한 쿼리는 Wingtip Tickets SaaS 앱의 일일 운영 데이터에 담긴 정보를 추출할 수 있습니다. 이러한 추출을 수행하려면 추가 분석 데이터베이스를 카탈로그 서버에 배포하고 탄력적 쿼리를 사용하여 배포된 쿼리를 사용하도록 설정합니다.
 

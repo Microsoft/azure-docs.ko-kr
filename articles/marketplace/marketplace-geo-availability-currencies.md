@@ -9,12 +9,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 02/28/2019
 ms.author: ellacroi
-ms.openlocfilehash: 5a07ea4d1d27dcc054d64cb4ce8893a13adc4aad
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 394ec230b836d55e4ce29a444566221c14efe296
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60007664"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63762805"
 ---
 # <a name="geographic-availability-and-currency-support"></a>지리적 가용성 및 통화 지원
 
@@ -117,7 +117,7 @@ ms.locfileid: "60007664"
 | 노르웨이                              | 아니요        | NOK          |
 | 오만                                | OM        | USD          |
 | 파키스탄                            | PK        | USD          |
-| Palestine                           | PS        | USD          |
+| 팔레스타인 자치 정부               | PS        | USD          |
 | 파나마                              | PA        | USD          |
 | 파라과이                            | PY        | USD          |
 | 페루                                | PE        | USD          |

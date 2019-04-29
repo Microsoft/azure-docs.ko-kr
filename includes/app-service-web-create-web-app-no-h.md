@@ -9,11 +9,11 @@ ms.date: 02/02/2018
 ms.author: cephalin
 ms.custom: include file
 ms.openlocfilehash: 9f7c82a2bd35f06da096fa0dd9d5d1fa4d08011e
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59549170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60838931"
 ---
 Cloud Shell에서 `myAppServicePlan` App Service 계획에 [웹앱](../articles/app-service/overview.md)을 만듭니다. 이 작업은 [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az_webapp_create) 명령을 사용하여 수행할 수 있습니다. 다음 예제에서는 바꿉니다  *\<앱 이름 >* 전역적으로 고유한 앱 이름으로 (유효한 문자는 `a-z`에 `0-9`, 및 `-`).
 

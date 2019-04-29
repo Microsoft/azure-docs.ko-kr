@@ -8,11 +8,11 @@ ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
 ms.openlocfilehash: be6c0f9a8874507433606903bcbd58c7723d6a8a
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57791803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62118690"
 ---
 # <a name="azure-batch-rendering-capabilities"></a>Azure Batch 렌더링 기능
 
@@ -30,7 +30,7 @@ Windows 2016 이미지 및 CentOS 이미지가 있습니다.  [Azure Marketplace
 
 풀 구성 예제는 [Azure CLI 렌더링 자습서](https://docs.microsoft.com/azure/batch/tutorial-rendering-cli)를 참조하세요.  Azure Portal 및 Batch Explorer는 풀을 만들 때 렌더링 VM 이미지를 선택하기 위한 GUI 도구를 제공합니다.  Batch API를 사용하는 경우 풀을 만들 때 [ImageReference](https://docs.microsoft.com/rest/api/batchservice/pool/add#imagereference)에 대한 다음 속성 값을 지정합니다.
 
-| 게시자 | 제안 | SKU | 버전 |
+| 게시자 | 제안 | SKU | Version |
 |---------|---------|---------|--------|
 | 일괄 처리 | rendering-centos73 | 렌더링 | 최신 |
 | 일괄 처리 | rendering-windows2016 | 렌더링 | 최신 |

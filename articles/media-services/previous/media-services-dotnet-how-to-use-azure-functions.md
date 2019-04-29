@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 02/10/2019
+ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 69099fe1369223871142f74d8f6d1c6a8bd66dab
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 618acae10b874eb5ebd5b6da7fe081368528dbd8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57851776"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61217509"
 ---
 # <a name="develop-azure-functions-with-media-services"></a>Media Services에서 Azure Functions 개발
 
@@ -64,19 +64,19 @@ Media Services 함수를 개발하는 경우 함수 전체에서 사용할 환�
 2. **C#** 언어 및 **데이터 처리** 시나리오를 선택합니다.
 3. **BlobTrigger** 템플릿을 선택합니다. 이 함수는 Blob이 **input** 컨테이너에 업로드될 때마다 트리거됩니다. **input** 이름은 다음 단계에서 **Path**에 지정됩니다.
 
-    ![개 파일 표시](./media/media-services-azure-functions/media-services-azure-functions004.png)
+    ![업로드](./media/media-services-azure-functions/media-services-azure-functions004.png)
 
 4. **BlobTrigger**를 선택하면 페이지에 몇 개의 추가 컨트롤이 표시됩니다.
 
-    ![개 파일 표시](./media/media-services-azure-functions/media-services-azure-functions005.png)
+    ![업로드](./media/media-services-azure-functions/media-services-azure-functions005.png)
 
 4. **만들기**를 클릭합니다. 
 
-## <a name="files"></a>Project Anomaly Finder
+## <a name="files"></a>파일
 
 Azure Function은 이 섹션에 설명된 코드 파일 및 기타 파일과 연결됩니다. Azure Portal을 사용하여 함수를 만들 경우 **function.json** 및 **run.csx**가 자동으로 만들어집니다. **project.json** 파일을 추가하고 업로드해야 합니다. 이 섹션의 나머지 부분에서는 각 파일을 간략하게 설명하고 해당 정의를 표시합니다.
 
-![개 파일 표시](./media/media-services-azure-functions/media-services-azure-functions003.png)
+![업로드](./media/media-services-azure-functions/media-services-azure-functions003.png)
 
 ### <a name="functionjson"></a>function.json
 

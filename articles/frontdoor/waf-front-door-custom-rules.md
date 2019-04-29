@@ -10,11 +10,11 @@ ms.workload: infrastructure-services
 ms.date: 04/07/2019
 ms.author: kumud;tyao
 ms.openlocfilehash: 744c6fb9235c9daa2d5239ef9fd13679db943650
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59783970"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61459711"
 ---
 #  <a name="custom-rules-for-web-application-firewall-with-azure-front-door"></a>Azure 프런트 도어를 사용 하 여 웹 응용 프로그램 방화벽에 대 한 사용자 지정 규칙
 프런트 도어 서비스를 사용 하 여 azure 웹 응용 프로그램 방화벽 (WAF)를 사용 하면 정의 된 조건에 따라 웹 응용 프로그램에 대 한 액세스를 제어할 수 있습니다. 사용자 지정 WAF 규칙에 우선 순위 번호, 규칙 유형, 일치 조건 및 작업으로 구성 됩니다. 사용자 지정 규칙의 두 가지가: 규칙과 일치 하 고 속도 제한 규칙입니다. 일치 규칙을 속도 제한 규칙 일치 조건 및 들어오는 요청의 속도에 따라 액세스를 제어 하는 동안 일치 하는 조건을 기반으로 액세스를 제어 합니다. 평가 방지 하기 위해 사용자 지정 규칙을 사용 하지 않도록 설정할 수 있지만 여전히 구성을 유지 합니다. 이 문서는 http 매개 변수를 기반으로 하는 일치 규칙에 설명 합니다.

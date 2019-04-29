@@ -14,11 +14,11 @@ ms.date: 04/12/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: bcb154f7cffb92ef23fc2606e1f604bb12f8d1a3
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59996614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60561530"
 ---
 # <a name="azure-devtest-labs---reference-architecture-for-an-enterprise"></a>Azure DevTest Labs-엔터프라이즈에 대 한 참조 아키텍처
 이 문서에서는 기업에서 Azure DevTest Labs를 기반으로 솔루션을 배포 하기 위한 참조 아키텍처를 제공 합니다. 가상 컴퓨터를 원격으로 로그인 하려면 원격 데스크톱 게이트웨이, 개인 아티팩트 및 환경에서 사용 되는 다른 PaaS 서비스에 대 한 아티팩트 리포지토리를 연결할 Express 경로 통해 온-프레미스 연결을 포함 합니다.

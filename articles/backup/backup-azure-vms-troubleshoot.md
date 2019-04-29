@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: srinathv
 ms.openlocfilehash: 6f10d8bc7f813245a66296988e4bb3792d898e08
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59618195"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60550025"
 ---
 # <a name="troubleshoot-azure-virtual-machine-backup"></a>Azure 가상 머신 백업 문제 해결
 다음 테이블에 나열된 정보를 참조하여 Azure Backup을 사용하는 동안 발생하는 오류를 해결할 수 있습니다.
@@ -40,7 +40,7 @@ ms.locfileid: "59618195"
 ### <a name="usererrorfsfreezefailed---failed-to-freeze-one-or-more-mount-points-of-the-vm-to-take-a-file-system-consistent-snapshot"></a>UserErrorFsFreezeFailed-하나 이상의 탑재 지점을 파일 시스템 일치 스냅숏을 만들려면 vm을 중지 하지 못했습니다.
 
 오류 코드: UserErrorFsFreezeFailed <br/>
-오류 메시지: 하나 이상의 탑재 지점을 파일 시스템 일치 스냅숏을 만들려면 vm을 중지 하지 못했습니다.
+오류 메시지: VM의 탑재 지점을 하나 이상을 동결하지 못하여 파일-시스템 일치 스냅숏을 만들지 못했습니다.
 
 * 사용 하 여 탑재 된 모든 장치의 파일 시스템 상태를 확인 합니다 **tune2fs** 명령, 예를 들어 **tune2fs-l/dev/sdb1 \\** .\| grep **Filesystem state**.
 * 사용 하는 파일 시스템 상태가 정리 되지 않았습니다, 장치를 탑재 해제 합니다 **umount** 명령입니다.
@@ -82,7 +82,7 @@ Windows 서비스 문제로 인해 백업 작업이 실패 했습니다 **COM + 
 ### <a name="extensionconfigparsingfailure--failure-in-parsing-the-config-for-the-backup-extension"></a>ExtensionConfigParsingFailure-백업 확장에 대 한 구성 분석이 실패 했습니다
 
 오류 코드: ExtensionConfigParsingFailure<br/>
-오류 메시지: 백업 확장에 대한 구성 분석이 실패했습니다.
+오류 메시지: 백업 확장에 대한 구성을 구문 분석하지 못했습니다.
 
 이 오류는 **MachineKeys** 디렉터리: **%systemdrive%\programdata\microsoft\crypto\rsa\machinekeys**에 대한 권한 변경으로 인해 발생합니다.
 다음 명령을 실행 하 고 확인에 대 한 해당 권한을 합니다 **MachineKeys** 디렉터리는 기본 구성을:**icacls %systemdrive%\programdata\microsoft\crypto\rsa\machinekeys**합니다.

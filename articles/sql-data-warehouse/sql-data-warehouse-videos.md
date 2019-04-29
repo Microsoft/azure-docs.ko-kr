@@ -11,11 +11,11 @@ ms.date: 02/15/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.openlocfilehash: 15893b023e629a9739c7af3a414f35a7761b55d2
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58318256"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61474934"
 ---
 # <a name="azure-sql-data-warehouse---videos"></a>Azure SQL Data Warehouse-비디오
 

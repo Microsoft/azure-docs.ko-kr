@@ -1,5 +1,5 @@
 ---
-title: 리소스 변경 내용을 가져오려면
+title: 리소스 변경 내용 가져오기
 description: 리소스 변경 된 시기를 찾는 방법을 이해 하 고 변경 된 속성의 목록을 가져옵니다.
 services: resource-graph
 author: DCtheGeek
@@ -8,20 +8,20 @@ ms.date: 04/20/2019
 ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: f4618e945db443e8d7cf9fdcc49e20e5a09ebd39
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 0ae85b45dfcd80056316ed5f2099aab4057d24c8
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60014098"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63760819"
 ---
-# <a name="get-resource-changes"></a>리소스 변경 내용을 가져오려면
+# <a name="get-resource-changes"></a>리소스 변경 내용 가져오기
 
 리소스 가져오기 매일 사용 하 여, 재구성, 및도 재배포 과정을 통해 변경 됩니다.
 개별 또는 자동화 된 프로세스에 의해 변경 가져올 수 있습니다. 기본적으로 대부분의 변경 되었지만 없는 경우가 있습니다. 변경 기록의 지난 14 일을 사용 하 여 Azure 리소스 그래프를 사용 하면 수 있습니다.
 
-- Azure 리소스 관리자 속성에 변경 내용을 발견 하는 경우를 찾습니다.
-- 속성 변경 이벤트의 일부로 변경 내용을 참조 하세요.
+- Azure Resource Manager 속성에서 변경이 탐지된 시기를 확인합니다.
+- 해당 변경 이벤트의 일부로 변경된 속성을 확인합니다.
 
 변경 내용 검색 및 세부 정보는 다음과 같은 시나리오에 대 한 중요:
 
@@ -39,7 +39,7 @@ ms.locfileid: "60014098"
 
 ## <a name="find-when-changes-were-detected"></a>변경이 감지 된 시기 찾기
 
-첫 번째 단계는 리소스에 대해 변경 내용 표시 하는 시간 범위 내에서 해당 리소스와 관련 된 변경 이벤트를 찾는 것입니다. 이 단계를 통해 수행 됩니다 합니다 [resourceChanges](/rest/api/azureresourcegraph/resourceChanges) REST 끝점입니다.
+첫 번째 단계는 리소스에 대해 변경 내용 표시 하는 시간 범위 내에서 해당 리소스와 관련 된 변경 이벤트를 찾는 것입니다. 이 단계를 통해 수행 됩니다 합니다 **resourceChanges** REST 끝점입니다.
 
 합니다 **resourceChanges** 끝점에 요청 본문에는 두 개의 매개 변수가 필요 합니다.
 
@@ -95,7 +95,7 @@ POST https://management.azure.com/providers/Microsoft.ResourceGraph/resourceChan
 
 ## <a name="see-what-properties-changed"></a>속성 변경 내용 확인
 
-사용 하 여는 **changeId** 에서 합니다 **resourceChanges** 끝점에는 [resourceChangeDetails](/rest/api/azureresourcegraph/resourceChangeDetails) REST 끝점 변경 이벤트의 세부 정보를 가져오는 데 다음 합니다.
+사용 하 여는 **changeId** 에서 합니다 **resourceChanges** 끝점에는 **resourceChangeDetails** REST 끝점 변경 이벤트의 세부 정보를 가져오는 데 다음 합니다.
 
 합니다 **resourceChangeDetails** 끝점에 요청 본문에는 두 개의 매개 변수가 필요 합니다.
 
@@ -108,7 +108,6 @@ POST https://management.azure.com/providers/Microsoft.ResourceGraph/resourceChan
 {
     "resourceId": "/subscriptions/{subscriptionId}/resourceGroups/MyResourceGroup/providers/Microsoft.Storage/storageAccounts/mystorageaccount",
     "changeId": "53dc0515-b86b-4bc2-979b-e4694ab4a556"
-    }
 }
 ```
 

@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 06/04/2018
 ms.author: ellacroi
 ms.openlocfilehash: 3bd2361547a8210ae287eabaa67b60e8ba1f26e3
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56738150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60735887"
 ---
 # <a name="promote-your-business-with-microsoft"></a>Microsoft를 통한 비즈니스 홍보  
 Microsoft는 파트너(여러분)를 지원하고 Marketplace의 상점에서 여러분의 앱 또는 제품 판매를 간소화하고자 합니다. Marketplace 목록에 추가하면 Marketplace에서 프로그램 및 리소스에 액세스할 수 있습니다. 

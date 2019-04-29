@@ -17,11 +17,11 @@ ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
 ms.openlocfilehash: c8f2dba8ff30ceae4085d96640623a01b6784b1e
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56957524"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60822321"
 ---
 # <a name="set-up-diagnostic-logs-for-an-azure-event-hub"></a>Azure 이벤트 허브에 대한 진단 로그 설정
 
@@ -60,8 +60,8 @@ Azure Event Hubs에 대해 다음 두 가지 유형의 로그를 볼 수 있습�
 
 Event Hubs는 다음 두 가지 범주에 대한 진단 로그를 캡처합니다.
 
-* **ArchiveLogs:** Event Hubs 보관, 특히 보관 오류와 관련된 로그입니다.
-* **OperationalLogs:** Event Hubs 작업 중에 발생하는 정보, 특히 이벤트 허브 만들기, 사용된 리소스 및 작업 상태와 같은 작업 유형입니다.
+* **보관 로그:** Event Hubs 보관, 특히 보관 오류와 관련된 로그입니다.
+* **작업 로그:** Event Hubs 작업 중에 발생하는 정보, 특히 이벤트 허브 만들기, 사용된 리소스 및 작업 상태와 같은 작업 유형입니다.
 
 ## <a name="diagnostic-logs-schema"></a>진단 로그 스키마
 
@@ -76,7 +76,7 @@ Event Hubs는 다음 두 가지 범주에 대한 진단 로그를 캡처합니�
 TaskName | 실패한 작업에 대한 설명입니다.
 ActivityId | 추적에 사용되는 내부 ID입니다.
 trackingId | 추적에 사용되는 내부 ID입니다.
-ResourceId | Azure Resource Manager 리소스 ID입니다.
+resourceId | Azure Resource Manager 리소스 ID입니다.
 eventHub | 이벤트 허브 전체 이름(네임스페이스 이름 포함)입니다.
 partitionId | 데이터가 기록되는 이벤트 허브 파티션입니다.
 archiveStep | ArchiveFlushWriter
@@ -84,7 +84,7 @@ startTime | 실패 시작 시간입니다.
 failures | 실패가 발생한 횟수입니다.
 durationInSeconds | 실패 기간입니다.
 Message | 오류 메시지입니다.
-카테고리 | ArchiveLogs
+category | ArchiveLogs
 
 다음 코드는 보관 로그 JSON 문자열에 대한 예입니다.
 
@@ -113,13 +113,13 @@ Message | 오류 메시지입니다.
 ------- | -------
 ActivityId | 추적 목적에 사용되는 내부 ID입니다.
 EventName | 작업 이름입니다.  
-ResourceId | Azure Resource Manager 리소스 ID입니다.
+resourceId | Azure Resource Manager 리소스 ID입니다.
 SubscriptionId | 구독 ID가 표시됩니다.
 EventTimeString | 작업 시간입니다.
 EventProperties | 작업 속성입니다.
 상태 | 작업 상태입니다.
 Caller | 작업 호출자(Azure Portal 또는 관리 클라이언트)입니다.
-카테고리 | OperationalLogs
+category | OperationalLogs
 
 다음 코드는 작업 로그 JSON 문자열에 대한 예입니다.
 

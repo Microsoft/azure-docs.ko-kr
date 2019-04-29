@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 97570a16c7d87a3c8182909b61c04fde30b3fe9b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 14f76a716447e09299cfa18d6758245706c7b481
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58000212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60556531"
 ---
 # <a name="deploy-and-explore-a-multitenant-saas-app-that-uses-the-database-per-tenant-pattern-with-sql-database"></a>SQL Database로 테넌트별 데이터베이스 패턴을 사용하는 다중 테넌트 SaaS 앱 배포 및 탐색
 
@@ -64,8 +64,8 @@ ms.locfileid: "58000212"
     > 일부 인증 및 서버 방화벽은 데모 목적으로 의도적으로 보호되지 않습니다. 새 리소스 그룹을 만드는 것이 좋습니다. 기존 리소스 그룹, 서버 또는 풀을 사용하지 마세요. 이 애플리케이션, 스크립트 또는 배포된 리소스를 프로덕션에 사용하지 마세요. 관련된 결제를 중지하려면 애플리케이션을 완료할 때 이 리소스 그룹을 삭제합니다.
 
     - **리소스 그룹**: **새로 만들기**를 선택하고 이전에 선택한 고유 이름을 리소스 그룹 이름으로 입력합니다.
-    - **위치**: 드롭다운 목록에서 위치를 선택합니다.
-    - **사용자**: 앞에서 선택한 사용자 이름 값을 사용합니다.
+    - **Location**: 드롭다운 목록에서 위치를 선택합니다.
+    - **User**: 앞에서 선택한 사용자 이름 값을 사용합니다.
 
 1. 애플리케이션을 배포합니다.
 

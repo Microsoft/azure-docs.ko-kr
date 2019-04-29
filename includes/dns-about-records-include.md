@@ -1,15 +1,16 @@
 ---
-author: vhorne
+author: WenJason
 ms.service: dns
 ms.topic: include
-ms.date: 11/25/2018
-ms.author: victorh
+origin.date: 11/25/2018
+ms.date: 12/24/2018
+ms.author: v-jay
 ms.openlocfilehash: f7fa018225d82e2db4a3c51b333aea6fcb9a1514
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52331252"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60563394"
 ---
 ### <a name="record-names"></a>레코드 이름
 
@@ -21,7 +22,7 @@ Azure DNS에서는 상대 이름을 사용하여 레코드를 지정합니다. F
 
 각 DNS 레코드에는 이름 및 형식이 있습니다. 레코드는 포함된 데이터에 따라 다양한 형식으로 구성됩니다. 가장 일반적인 형식은 이름을 IPv4 주소에 매핑하는 'A' 레코드입니다. 또 다른 일반적인 형식은 이름을 메일 서버에 매핑하는 'MX' 레코드입니다.
 
-Azure DNS는 A, AAAA, CAA, CNAME, MX, NS, PTR, SOA, SRV, TXT 등 일반적인 DNS 레코드 형식을 모두 지원합니다. [SPF 레코드는 TXT 레코드를 사용하여 표현됩니다](../articles/dns/dns-zones-records.md#spf-records).
+Azure DNS는 모든 일반적인 DNS 레코드 형식을 지원 합니다. A, AAAA, CAA, CNAME, MX, NS, PTR, SOA, SRV 및 TXT입니다. [SPF 레코드는 TXT 레코드를 사용하여 표현됩니다](../articles/dns/dns-zones-records.md#spf-records).
 
 ### <a name="record-sets"></a>레코드 집합
 

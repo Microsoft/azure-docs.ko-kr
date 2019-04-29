@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 04/18/2018
 ms.author: priyamo
 ms.openlocfilehash: d97aa34f8e76a1ea49841f26534b6a5403e6b5d7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58116033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60251678"
 ---
 ## <a name="register-your-application-with-your-ad-tenant"></a>AD 테넌트에 애플리케이션 등록
 먼저, 애플리케이션을 Azure AD(Azure Active Directory) 테넌트에 등록해야 합니다. 그러면 애플리케이션에 대한 애플리케이션 ID가 제공되며 토큰을 수신하는 데 사용할 수 있습니다.

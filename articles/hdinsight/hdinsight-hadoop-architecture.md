@@ -1,7 +1,6 @@
 ---
 title: Apache Hadoop 아키텍처 - Azure HDInsight
 description: HDInsight 클러스터의 Apache Hadoop 스토리지 및 처리에 대해 설명합니다.
-services: hdinsight
 author: ashishthaps
 ms.author: ashishth
 ms.reviewer: jasonh
@@ -9,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: 9f45b1603fe0e34bfdf6192fd85ecaf27311ae32
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: edf7655c20f1b3bad5ce4d337861bd2ff3e029db
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53718080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62097185"
 ---
 # <a name="apache-hadoop-architecture-in-hdinsight"></a>HDInsight의 Apache Hadoop 아키텍처
 

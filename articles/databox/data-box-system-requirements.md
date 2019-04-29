@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: alkohli
 ms.openlocfilehash: 7d52af9e3948f40936795efab5b6671c3f71007a
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55206750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60746933"
 ---
 # <a name="azure-data-box-system-requirements"></a>Azure Data Box 시스템 요구 사항
 
@@ -36,7 +36,7 @@ Data Box 디바이스에 연결된 클라이언트를 통해 데이터 복사 �
 | **운영 체제** | **버전** | 
 | --- | --- | 
 | Windows Server |2008 R2 SP1 <br> 2012 <br> 2012 R2 <br> 2016 | 
-|  Windows |7, 8, 10 | 
+| Windows |7, 8, 10 | 
 |Linux    |         |
 
 ### <a name="supported-file-systems-for-linux-clients"></a>Linux 클라이언트에 지원되는 파일 시스템

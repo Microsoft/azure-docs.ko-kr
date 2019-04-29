@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
 ms.openlocfilehash: 60a0d7c2da25f63d0728dbb86f9a6c2328def811
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57245257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60611240"
 ---
 # <a name="azure-advanced-threat-detection"></a>Azure 지능형 위협 탐지
 
@@ -241,7 +241,7 @@ Azure용 [Microsoft 맬웨어 방지 프로그램](https://docs.microsoft.com/az
 
 -   **맬웨어 방지 이벤트 수집**: 맬웨어 방지 서비스 상태, 의심스러운 활동 및 운영 체제 이벤트 로그에서 수행된 수정 작업을 기록하고 고객의 Azure Storage 계정에 수집합니다.
 
-### <a name="azure-sql-database-threat-detection"></a>Azure SQL Database 위협 검색
+### <a name="azure-sql-database-threat-detection"></a>Azure SQL Database 위협 탐지
 
 [Azure SQL Database 위협 검색](https://azure.microsoft.com/blog/azure-sql-database-threat-detection-your-built-in-security-expert/)은 Azure SQL Database 서비스에 기본 제공되는 새로운 보안 인텔리전스 기능입니다. Azure SQL Database 위협 검색은 24시간 내내 항시 작동하여 비정상적인 데이터베이스 활동을 학습하고, 프로파일링하며, 검색하면서 데이터베이스에 대한 잠재적 위협을 식별합니다.
 

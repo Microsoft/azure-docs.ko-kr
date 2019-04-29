@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: bwren
 ms.openlocfilehash: ecbea91cef69c80975dd105c35f526b357033a6b
-ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/24/2019
-ms.locfileid: "56749821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61425965"
 ---
 # <a name="azure-monitor-log-queries"></a>Azure Monitor 로그 쿼리
 Azure Monitor 로그는 Azure Data Explorer에서 빌드되고, Azure Monitor 로그 쿼리는 동일한 Kusto 쿼리 언어의 한 버전을 사용합니다. [Kusto 쿼리 언어 문서](/azure/kusto/query)에는 언어에 대한 모든 세부 정보가 나와 있으며, Azure Monitor 로그 쿼리 작성을 위한 주요 리소스로 참조해야 합니다. 이 페이지에는 쿼리를 작성하는 방법 및 Azure Monitor 언어 구현과의 차이점을 알아보기 위한 다른 리소스의 링크가 나와 있습니다.

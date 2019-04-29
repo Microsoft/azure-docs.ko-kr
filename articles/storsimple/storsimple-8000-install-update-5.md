@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 11/13/2017
 ms.author: alkohli
-ms.openlocfilehash: d6e17c7609fd41b8f4457edda373f6882a1a9d2b
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: d86e77ef0148c0fac3dfa31153364de153b094ef
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38698713"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62126752"
 ---
 # <a name="install-update-5-on-your-storsimple-device"></a>StorSimple 디바이스에 업데이트 5 설치
 
@@ -33,7 +33,7 @@ ms.locfileid: "38698713"
 > * 업데이트 5는 필수 업데이트로, 즉시 설치해야 합니다. 자세한 내용은 [업데이트 5 릴리스 정보](storsimple-update5-release-notes.md)를 참조하세요.
 > * 설치하기 전에 일련의 수동 및 자동 전 검사를 수행하며 하드웨어 상태와 네트워크 연결 측면에서 디바이스 상태를 확인합니다. Azure Portal에서 업데이트를 적용하는 경우 이러한 사전 검사를 수행합니다.
 > * 업데이트 3 이전 버전을 실행하는 디바이스를 업데이트할 때는 핫픽스 방법을 사용하여 업데이트를 설치하는 것이 좋습니다. 문제가 발생할 경우 [지원 티켓을 로그](storsimple-8000-contact-microsoft-support.md)합니다.
-> * Azure Portal을 통해 소프트웨어 및 기타 정기적인 업데이트를 설치하는 것이 좋습니다. 포털에서 사전 업데이트 게이트웨이 검사가 실패한 경우 (업데이트를 설치하려면) 디바이스의 Windows PowerShell 인터페이스로 이동해야 합니다. 업데이트하는 버전에 따라 업데이트 설치에 4시간(이상)이 걸릴 수 있습니다. 유지 관리 모드 업데이트는 중단 업데이트입니다. 유지 관리 모드 업데이트는 중단 업데이트입니다. 이는 디바이스에 중단 시간을 발생시킵니다.
+> * Azure Portal을 통해 소프트웨어 및 기타 정기적인 업데이트를 설치하는 것이 좋습니다. 포털에서 사전 업데이트 게이트웨이 검사가 실패한 경우 (업데이트를 설치하려면) 디바이스의 Windows PowerShell 인터페이스로 이동해야 합니다. 업데이트하는 버전에 따라 업데이트 설치에 4시간(이상)이 걸릴 수 있습니다. 디바이스의 Windows PowerShell 인터페이스를 통해 유지 관리 모드 업데이트를 설치해야 합니다. 유지 관리 모드 업데이트는 중단 업데이트입니다. 이는 디바이스에 중단 시간을 발생시킵니다.
 > * 선택적 StorSimple Snapshot Manager를 실행하는 경우 디바이스를 업데이트하기 전에 Snapshot Manager 버전을 업데이트 5로 업그레이드했는지 확인합니다.
 
 

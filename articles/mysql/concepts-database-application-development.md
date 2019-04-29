@@ -7,11 +7,11 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/28/2018
 ms.openlocfilehash: 946f7011c51b7c6844e023d03e01e4c2043d2578
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53544466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60615649"
 ---
 # <a name="application-development-overview-for-azure-database-for-mysql"></a>MySQL용 Azure 데이터베이스에 대한 애플리케이션 개발 개요 
 이 문서에서는 개발자가 Azure Database for MySQL에 연결하기 위한 애플리케이션 코드를 작성할 때 따라야 하는 디자인 고려 사항을 설명합니다. 
@@ -33,7 +33,7 @@ Azure Database for MySQL은 다음 두 가지 메커니즘을 사용하여 서�
 ## <a name="security"></a>보안
 Azure Database for MySQL은 액세스를 제한하고, 데이터를 보호하고, 사용자 및 역할을 구성하고, MySQL 데이터베이스에 대한 작업을 모니터링하기 위한 리소스를 제공합니다.
 
-## <a name="authentication"></a>인증
+## <a name="authentication"></a>Authentication
 Azure Database for MySQL은 사용자 및 로그인의 서버 인증을 지원합니다.
 
 ## <a name="resiliency"></a>복원력

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/11/2019
 ms.author: barclayn
-ms.openlocfilehash: d6da4dbe9322ab38591a84ff5b075992d9495f1b
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: fa845ba81139c9930f66ce9bd8e99a5f65eece56
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56111257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60610978"
 ---
 # <a name="azure-security-mvp-program"></a>Azure 보안 MVP 프로그램
 

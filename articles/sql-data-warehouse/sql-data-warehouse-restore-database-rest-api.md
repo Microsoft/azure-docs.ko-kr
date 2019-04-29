@@ -11,11 +11,11 @@ ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
 ms.openlocfilehash: daf013472e5fa533912920e4c14a552905b5d333
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55241521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60935690"
 ---
 # <a name="restore-an-azure-sql-data-warehouse-with-rest-apis"></a>REST API로 Azure SQL Data Warehouse 복원
 REST API를 사용하여 Azure SQL Data Warehouse를 복원합니다.
@@ -49,4 +49,4 @@ REST API를 사용하여 Azure SQL Data Warehouse를 복원합니다.
 > 
 
 ## <a name="next-steps"></a>다음 단계
-Azure SQL Database 버전의 무중단 업무 방식 기능에 대해 알아보려면 [Azure SQL Database 무중단 업무 방식 개요](../sql-database/sql-database-business-continuity.md)를 읽으세요.
+Azure SQL Database 버전의 비즈니스 연속성 기능에 대해 알아보려면 [Azure SQL Database 비즈니스 연속성 개요](../sql-database/sql-database-business-continuity.md)를 읽으세요.

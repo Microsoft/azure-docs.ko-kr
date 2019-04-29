@@ -11,11 +11,11 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seofeb2018
 ms.openlocfilehash: e95eff015340659b642dff800a03f615e22c1577
-ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57220841"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60871202"
 ---
 # <a name="indexing-blobs-producing-multiple-search-documents"></a>여러 검색 문서를 생성 하는 blob 인덱싱
 기본적으로 blob 인덱서는 단일 검색 문서와 blob의 콘텐츠를 처리 합니다. 특정 **parsingMode** 은 경우에는 개별 blob 수에서 여러 문서 검색을 지원 합니다. 다양 한 유형의 **parsingMode** blob에서 하나의 검색 문서 보다는 인덱서를 추출 하는 수 있도록 합니다.

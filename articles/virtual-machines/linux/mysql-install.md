@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 02/01/2016
 ms.author: cynthn
 ms.openlocfilehash: f9e0582a1338bcae7b330c7ece7c3d8cc8593cfa
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58004506"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60543942"
 ---
 # <a name="how-to-install-mysql-on-azure"></a>Azure에 MySQL을 설치하는 방법
 이 문서에서는 Linux를 실행하는 Azure 가상 머신에서 MySQL을 설치 및 구성하는 방법을 알아봅니다.
@@ -53,11 +53,11 @@ putty를 통해 생성한 Linux VM에 연결합니다. 처음으로 Azure Linux 
   
     설치 하는 동안 아래 MySQL 루트 암호를 설정 하 라는 메시지가 표시 대화 상자 창이 표시 됩니다 하 고 여기에 암호를 설정 해야 합니다.
   
-    ![이미지](./media/mysql-install/virtual-machines-linux-install-mysql-p1.png)
+    ![Image](./media/mysql-install/virtual-machines-linux-install-mysql-p1.png)
 
     암호를 다시 입력하여 확인합니다.
 
-    ![이미지](./media/mysql-install/virtual-machines-linux-install-mysql-p2.png)
+    ![Image](./media/mysql-install/virtual-machines-linux-install-mysql-p2.png)
 
 * 2단계: MySQL Server 로그인
   

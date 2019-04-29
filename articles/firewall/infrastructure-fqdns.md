@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: article
 ms.date: 9/24/2018
 ms.author: victorh
-ms.openlocfilehash: 1369a82829b2c80768d746ba92daf2482c1fd7f8
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 34201a0eb4139de64261f77f285096a2aa2dd3aa
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46994142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61066328"
 ---
 # <a name="infrastructure-fqdns"></a>인프라 FQDN
 

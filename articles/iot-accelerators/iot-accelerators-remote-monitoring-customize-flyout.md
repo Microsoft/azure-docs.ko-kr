@@ -1,25 +1,26 @@
 ---
-title: 원격 모니터링 솔루션 UI에 플라이아웃 추가 - Azure | Microsoft Docs
+title: 원격 모니터링 솔루션 UI-Azure 플라이 아웃을 추가할 | Microsoft Docs
 description: 이 문서에서는 원격 모니터링 솔루션 가속기 웹 UI의 페이지에 새 플라이아웃을 추가하는 방법을 보여줍니다.
 author: dominicbetts
 manager: timlt
-ms.author: dobett
+ms.author: v-yiso
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.date: 10/05/2018
+origin.date: 10/05/2018
+ms.date: 11/26/2018
 ms.topic: conceptual
 ms.openlocfilehash: ccb1a7ff6abbc68f42c7632a8ba7a392b2c48794
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49167429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61447117"
 ---
 # <a name="add-a-custom-flyout-to-the-remote-monitoring-solution-accelerator-web-ui"></a>원격 모니터링 솔루션 가속기 웹 UI에 사용자 지정 플라이아웃 추가
 
 이 문서에서는 원격 모니터링 솔루션 가속기 웹 UI의 페이지에 새 플라이아웃을 추가하는 방법을 보여줍니다. 문서에서는 다음을 설명합니다.
 
-- 로컬 개발 환경을 준비하는 방법
+- 로컬 개발 환경을 준비하는 방법.
 - 웹 UI의 페이지에 새 플라이아웃을 추가하는 방법
 
 이 문서의 예제 플라이아웃은 [원격 모니터링 솔루션 가속기 웹 UI에 사용자 지정 그리드 추가](iot-accelerators-remote-monitoring-customize-grid.md) 방법 문서에서 추가 방법을 보여주는 그리드가 있는 페이지에 표시됩니다.
@@ -33,7 +34,7 @@ ms.locfileid: "49167429"
 
 ## <a name="before-you-start"></a>시작하기 전에
 
-계속하려면 먼저 다음 문서의 단계를 완료해야 합니다.
+계속하려면 다음 문서의 단계를 완료해야 합니다.
 
 - [원격 모니터링 솔루션 가속기 웹 UI에 사용자 지정 페이지 추가](iot-accelerators-remote-monitoring-customize-page.md)
 - [원격 모니터링 솔루션 가속기 웹 UI에 사용자 지정 서비스 추가](iot-accelerators-remote-monitoring-customize-service.md)
@@ -49,11 +50,11 @@ ms.locfileid: "49167429"
 
 **exampleFlyout.container.js**
 
-[!code-javascript[Example flyout container](~/remote-monitoring-webui/src/walkthrough/components/pages/pageWithFlyout/flyouts/exampleFlyout/exampleFlyout.container.js?name=flyoutcontainer "Example flyout container")]
+
 
 **exampleFlyout.js**
 
-[!code-javascript[Example flyout](~/remote-monitoring-webui/src/walkthrough/components/pages/pageWithFlyout/flyouts/exampleFlyout/exampleFlyout.js?name=flyout "Example flyout")]
+
 
 **src/walkthrough/components/pages/pageWithFlyout/flyouts** 폴더를 **src/components/pages/example** 폴더에 복사합니다.
 
@@ -137,7 +138,7 @@ npm start
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서에서는 원격 모니터링 솔루션 가속기의 웹 UI에서 페이지를 추가 또는 사용자 지정하는 데 사용할 수 있는 리소스에 대해 알아보았습니다.
+이 문서에서는 원격 모니터링 솔루션 가속기의 웹 UI에서 페이지를 추가하거나 사용자 지정하는 데 용이하게 사용할 수 있는 리소스에 대해 알아보았습니다.
 
 페이지에서 플라이아웃을 정의했으니, 그 다음 단계는 [원격 모니터링 솔루션 가속기 웹 UI의 대시보드에 패널을 추가](iot-accelerators-remote-monitoring-customize-panel.md)하는 것입니다.
 

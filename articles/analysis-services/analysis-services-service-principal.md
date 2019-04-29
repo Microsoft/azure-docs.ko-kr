@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 12/06/2018
+ms.date: 04/23/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b10be061e015686c68684723fd2d73c1431c7266
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: a440494b183d18c1d888b5d39836eb4317190d02
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59699409"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63764341"
 ---
 # <a name="automation-with-service-principals"></a>서비스 사용자를 사용한 자동화
 
@@ -47,13 +47,37 @@ UPN과 거의 동일하게 서비스 사용자 appID 및 암호 또는 인증서
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-리소스 관리 작업에 대 한 서비스 주체를 사용 하는 경우는 [Az.AnalysisServices](/powershell/module/az.analysisservices) 모듈을 사용 하 여 `Connect-AzAccount` cmdlet. [SQLServer](https://www.powershellgallery.com/packages/SqlServer) 모듈이 있는 서버 작업에 서비스 사용자를 사용하는 경우 `Add-AzAnalysisServicesAccount` cmdlet을 사용합니다. 
+#### <a name="a-nameazmodule-using-azanalysisservices-module"></a><a name="azmodule" />Az.AnalysisServices 모듈을 사용 하 여
+
+리소스 관리 작업에 대 한 서비스 주체를 사용 하는 경우는 [Az.AnalysisServices](/powershell/module/az.analysisservices) 모듈을 사용 하 여 `Connect-AzAccount` cmdlet. 
+
+다음 예제에서는 appID 및 암호를 읽기 전용 복제본에 동기화에 대 한 제어 평면 작업을 수행 하 고 업그레이드/확장에 사용 됩니다.
+
+```powershell
+Param (
+        [Parameter(Mandatory=$true)] [String] $AppId,
+        [Parameter(Mandatory=$true)] [String] $PlainPWord,
+        [Parameter(Mandatory=$true)] [String] $TenantId
+       )
+$PWord = ConvertTo-SecureString -String $PlainPWord -AsPlainText -Force
+$Credential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $AppId, $PWord
+
+# Connect using Az module
+Connect-AzAccount -Credential $Credential -SubscriptionId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx"
+
+# Syncronize a database for query scale out
+Sync-AzAnalysisServicesInstance -Instance "asazure://westus.asazure.windows.net/testsvr" -Database "testdb"
+
+# Scale up the server to an S1, set 2 read-only replicas, and remove the primary from the query pool. The new replicas will hydrate from the synchronized data.
+Set-AzAnalysisServicesServer -Name "testsvr" -ResourceGroupName "testRG" -Sku "S1" -ReadonlyReplicaCount 2 -DefaultConnectionMode Readonly
+```
+
+#### <a name="using-sqlserver-module"></a>SQLServer 모듈을 사용 하 여
 
 다음 예제에서는 appID 및 암호가 모델 데이터베이스 새로 고침 작업을 수행하는 데 사용됩니다.
 
 ```powershell
 Param (
-
         [Parameter(Mandatory=$true)] [String] $AppId,
         [Parameter(Mandatory=$true)] [String] $PlainPWord,
         [Parameter(Mandatory=$true)] [String] $TenantId

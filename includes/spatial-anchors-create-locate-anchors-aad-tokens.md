@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: c06b94d179f9f5a17a652cf32bd560cc9b5f8e4f
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58632419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60232704"
 ---
 ### <a name="azure-active-directory-authentication"></a>Azure Active Directory 인증
 

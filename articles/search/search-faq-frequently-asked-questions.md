@@ -10,11 +10,11 @@ ms.date: 08/03/2017
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: 9ea4e4ec78e5613758bd9e5ff7a4fbd3273208c6
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53312819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61290451"
 ---
 # <a name="azure-search---frequently-asked-questions-faq"></a>Azure Search - FAQ(질문과 대답)
 
@@ -28,7 +28,7 @@ Azure Search에서는 여러 데이터 원본, [다국어 언어 분석](https:/
 
 ### <a name="what-is-the-difference-between-azure-search-and-elasticsearch"></a>Azure Search과 Elasticsearch의 차이는 무엇입니까?
 
-검색 기술을 비교할 때 고객은 Azure Search와 Elasticsearch의 특정한 차이점에 대해 자주 질문합니다. 고객은 보통 Azure Search가 주요 업무를 더 쉽게 해 주거나 타 Microsoft 기술과의 기본 제공 통합이 필요하기 때문에 검색 응용 프로그램으로 Elasticsearch 대신 Azure Search를 선택합니다.
+검색 기술을 비교할 때 고객은 Azure Search와 Elasticsearch의 특정한 차이점에 대해 자주 질문합니다. 고객은 보통 Azure Search가 주요 업무를 더 쉽게 해 주거나 타 Microsoft 기술과의 기본 제공 통합이 필요하기 때문에 검색 애플리케이션으로 Elasticsearch 대신 Azure Search를 선택합니다.
 
 + Azure Search는 충분한 중복 구성(읽기 액세스용 복제본 2개, 읽기-쓰기용 복제본 3개)을 통해 프로비전 시 99.9%의 서비스 수준 계약(SLA)을 제공하는 완전 관리형 클라우드 서비스입니다.
 + Microsoft의 [자연어 프로세서](https://docs.microsoft.com/rest/api/searchservice/language-support)는 첨단 언어 분석을 제공합니다.  
@@ -54,7 +54,7 @@ Azure Search에서는 여러 데이터 원본, [다국어 언어 분석](https:/
 
 인덱스, 인덱서, 데이터 원본 및 기술 집합 같은 리소스를 복원하려면 코드에서 다시 만들어야 합니다. 인덱스의 경우 외부 원본에서 데이터를 다시 인덱스해야 합니다. 따라서 Azure SQL Database 또는 Cosmos DB와 같은 다른 데이터 저장소에 원래 데이터의 마스터 복사본 또는 백업을 유지하는 것이 좋습니다.
 
-### <a name="can-i-index-from-sql-database-replicas-applies-to-azure-sql-database-indexershttpsdocsmicrosoftcomazuresearchsearch-howto-connecting-azure-sql-database-to-azure-search-using-indexers"></a>SQL 데이터베이스 복제본에서 인덱싱할 수 있나요?([Azure SQL Database 인덱서](https://docs.microsoft.com/azure/search/search-howto-connecting-azure-sql-database-to-azure-search-using-indexers)에 적용)
+### <a name="can-i-index-from-sql-database-replicas-applies-to-azure-sql-database-indexershttpsdocsmicrosoftcomazuresearchsearch-howto-connecting-azure-sql-database-to-azure-search-using-indexers"></a>SQL 데이터베이스 복제본에서 인덱싱할 수 있나요([Azure SQL Database 인덱서](https://docs.microsoft.com/azure/search/search-howto-connecting-azure-sql-database-to-azure-search-using-indexers)에 적용)?
 
 처음부터 새롭게 인덱스를 구축할 때 주 또는 보조 복제본을 데이터 원본으로 사용하는 데는 제약이 없습니다. 그러나 증분 업데이트(변경된 레코드 기준)를 통해 인덱스를 새로 고칠 때는 주 복제본이 필요합니다. 이것은 주 복제본에서만 변경 추적을 보장하는 SQL Database에 따른 요구 사항입니다. 인덱스 새로 고침 작업에 보조 복제본을 사용할 경우 전체 데이터를 확보한다고는 보장할 수 없습니다.
 

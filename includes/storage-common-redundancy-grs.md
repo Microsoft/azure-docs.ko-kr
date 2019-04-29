@@ -9,11 +9,11 @@ ms.date: 03/26/2018
 ms.author: jeking
 ms.custom: include file
 ms.openlocfilehash: efa593d0ff0043d81574b67192deed30933e1e40
-ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51219854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60516264"
 ---
 GRS(지역 중복 저장소)는 기본 지역에서 수백 마일 떨어진 보조 지역에 데이터를 복제하여 지정된 1년에 걸쳐 99.99999999999999%(16개의 9) 이상의 개체 내구성을 제공하도록 설계되었습니다. 스토리지 계정에서 GRS를 활성화하면 전체 지역 가동 중단 또는 기본 지역을 복구할 수 없는 재해의 경우라도 데이터는 지속됩니다.
 
@@ -24,7 +24,7 @@ GRS를 선택하는 경우 선택할 수 있는 두 가지 관련 옵션은 다�
 
 GRS 또는 RA-GRS를 사용하도록 설정된 스토리지 계정의 경우 모든 데이터는 먼저 LRS(로컬 중복 스토리지)를 사용하여 복제됩니다. 업데이트는 먼저 기본 위치에 커밋되고 LRS를 사용하여 복제됩니다. 그런 다음, 업데이트는 GRS를 사용하여 보조 지역에 비동기적으로 복제됩니다. 데이터가 보조 위치에 기록되는 경우 LRS를 사용하여 해당 위치 내에도 복제됩니다. 
 
-주 지역 및 보조 지역에서 모두 별도의 장애 도메인에서 복제본을 관리하고, 저장소 배율 단위 내에서 도메인을 업그레이드합니다. 저장소 배율 단위는 데이터 센터 내의 기본 복제 단위입니다. 이 수준의 복제는 LRS에서 제공합니다. 자세한 내용은 [LRS(로컬 중복 스토리지): Azure Storage에 대한 저렴한 데이터 중복](../articles/storage/common/storage-redundancy-lrs.md)을 참조하세요.
+주 지역 및 보조 지역에서 모두 별도의 장애 도메인에서 복제본을 관리하고, 저장소 배율 단위 내에서 도메인을 업그레이드합니다. 저장소 배율 단위는 데이터 센터 내의 기본 복제 단위입니다. 이 수준의 복제 LRS;에서 제공 되며 자세한 내용은 참조 하세요. [로컬 중복 저장소 (LRS): Azure Storage에 대한 저렴한 데이터 중복성](../articles/storage/common/storage-redundancy-lrs.md)을 참조하세요.
 
 사용할 복제 옵션을 결정할 때 다음 사항에 유의하세요.
 

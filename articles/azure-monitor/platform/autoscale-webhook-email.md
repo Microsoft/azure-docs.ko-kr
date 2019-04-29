@@ -9,11 +9,11 @@ ms.date: 04/03/2017
 ms.author: ancav
 ms.subservice: autoscale
 ms.openlocfilehash: 25ef2541dfa0b4cbd6e11d64381da645acfe653a
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58259298"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60787316"
 ---
 # <a name="use-autoscale-actions-to-send-email-and-webhook-alert-notifications-in-azure-monitor"></a>크기 자동 조정 작업을 사용하여 Azure Monitor에서 전자 메일 및 webhook 경고 알림 보내기
 이 문서에서는 Azure에서 크기 자동 조정 작업을 기준으로 특정 웹 URL을 호출하거나 전자 메일을 보낼 수 있도록 트리거를 설정하는 방법을 설명합니다.  
@@ -116,7 +116,7 @@ REST API 또는 Resource Manager 템플릿을 사용하는 경우 다음 옵션�
 | resourceGroupName |예 |크기 조정 중인 대상 리소스의 리소스 그룹 이름입니다. |
 | resourceName |예 |크기 조정 중인 대상 리소스의 이름입니다. |
 | resourceType |예 |다음의 세 값이 지원됩니다. "microsoft.classiccompute/domainnames/slots/roles" - Cloud Service 역할/"microsoft.compute/virtualmachinescalesets" - Virtual Machine Scale Sets/"Microsoft.Web/serverfarms" - Web App |
-| ResourceId |예 |크기 조정 중인 대상 리소스의 Resource Manager ID |
+| resourceId |예 |크기 조정 중인 대상 리소스의 Resource Manager ID |
 | portalLink |예 |대상 리소스의 요약 페이지에 대한 Azure 포털 링크입니다. |
 | oldCapacity |예 |크기 자동 조정에서 크기 조정 작업을 수행한 현재(이전) 인스턴스 수입니다. |
 | newCapacity |yes |크기 자동 조정에서 리소스 크기를 조정한 새 인스턴스 수입니다. |

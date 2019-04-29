@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/12/2016
 ms.author: crdun
 ms.openlocfilehash: 99f2d9fb7c9a74e57eff3cd0b007fcee459cab88
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53000209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62098729"
 ---
 # <a name="add-push-notifications-to-your-xamarinforms-app"></a>Xamarin.Forms 앱에 푸시 알림 추가
 
@@ -118,7 +118,7 @@ FCM를 사용하여 백 엔드를 구성한 경우 FCM에 등록할 클라이언
     }
     ```
 
-    `FirebaseRegistrationService` 클래스는 FCM에 액세스하는 응용 프로그램을 인증하는 보안 토큰 생성을 담당합니다. 애플리케이션이 FCM에서 등록 토큰을 수신하는 경우 `OnTokenRefresh` 메서드가 호출됩니다. 메서드는 FCM에서 비동기적으로 업데이트되는 `FirebaseInstanceId.Instance.Token` 속성에서 토큰을 검색합니다. 토큰은 애플리케이션을 설치하거나 제거할 때, 사용자가 애플리케이션 데이터를 삭제할 때, 애플리케이션이 인스턴스 ID를 지울 때 또는 토큰의 보안이 손상되었을 때만 업데이트되므로 `OnTokenRefresh` 메서드는 드물게 호출됩니다. 또한 FCM 인스턴스 ID 서비스는 애플리케이션에서 해당 토큰을 정기적으로, 일반적으로 6개월마다 새로 고치도록 요청합니다.
+    `FirebaseRegistrationService` 클래스는 FCM에 액세스하는 애플리케이션을 인증하는 보안 토큰 생성을 담당합니다. 애플리케이션이 FCM에서 등록 토큰을 수신하는 경우 `OnTokenRefresh` 메서드가 호출됩니다. 메서드는 FCM에서 비동기적으로 업데이트되는 `FirebaseInstanceId.Instance.Token` 속성에서 토큰을 검색합니다. 토큰은 애플리케이션을 설치하거나 제거할 때, 사용자가 애플리케이션 데이터를 삭제할 때, 애플리케이션이 인스턴스 ID를 지울 때 또는 토큰의 보안이 손상되었을 때만 업데이트되므로 `OnTokenRefresh` 메서드는 드물게 호출됩니다. 또한 FCM 인스턴스 ID 서비스는 애플리케이션에서 해당 토큰을 정기적으로, 일반적으로 6개월마다 새로 고치도록 요청합니다.
 
     `OnTokenRefresh` 메서드는 또한 사용자의 등록 토큰을 Azure 알림 허브에 연결하는 데 사용되는 `SendRegistrationTokenToAzureNotificationHub` 메서드를 호출합니다.
 

@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: juliako
 ms.openlocfilehash: 96c3a3eb5e4c07ad9cad8ea5060a27c0c33eec5f
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58621301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61466819"
 ---
 # <a name="cloud-upload-and-storage"></a>클라우드 업로드 및 저장
 

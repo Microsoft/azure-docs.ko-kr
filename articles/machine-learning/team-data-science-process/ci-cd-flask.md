@@ -12,11 +12,11 @@ ms.date: 05/22/2018
 ms.author: tdsp
 ms.custom: seodec18, previous-author=jainr, previous-ms.author=jainr
 ms.openlocfilehash: d99149f8112c19a07208523a1ee26ba1c36e5362
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55474227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62103564"
 ---
 # <a name="creating-continuous-integration-pipeline-on-azure-using-docker-kubernetes-and-python-flask-application"></a>Docker, Kubernetes 및 Python Flask 애플리케이션을 사용하여 Azure에서 지속적인 통합 파이프라인 만들기
 AI 애플리케이션의 경우 대개 Machine Learning 모델을 빌드하는 데이터 과학자와 애플리케이션을 빌드하고 사용할 최종 사용자에게 노출하는 앱 개발자라는 두 가지 작업 스트림이 있습니다. 이 문서에서는 AI 애플리케이션을 위한 CI(연속 통합)/CD(연속 배포) 파이프라인을 구현하는 방법을 설명합니다. AI 애플리케이션은 미리 학습된 ML(Machine Learning) 모델이 포함된 애플리케이션 코드의 조합입니다. 이 문서의 경우 개인 Azure Blob Storage 계정에서 미리 학습된 모델을 페치합니다. 이는 AWS S3 계정에도 적용될 수 있습니다. 문서에서는 간단한 python flask 웹 애플리케이션을 사용합니다.

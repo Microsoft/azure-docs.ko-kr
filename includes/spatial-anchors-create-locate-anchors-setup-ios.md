@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 26eff7b10542843be561264c316bdcf1a63271f7
-ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/24/2019
-ms.locfileid: "56751931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60232441"
 ---
 ## <a name="setting-up-the-library"></a>라이브러리 설정
 

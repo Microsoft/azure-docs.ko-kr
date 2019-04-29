@@ -8,11 +8,11 @@ ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
 ms.openlocfilehash: 3e26365c4273611c81682a760695522575f3875d
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58225045"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61483383"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Azure Storage 탐색기 문제 해결 가이드
 
@@ -128,7 +128,7 @@ macOS 키 집합은 Storage 탐색기의 인증 라이브러리에서 문제를 
 3. "로그인" 키 집합을 선택합니다.
 4. 자물쇠 아이콘을 클릭하여 키 집합을 잠급니다(완료되면 자물쇠가 잠긴 모양으로 바뀌며 열려 있는 앱에 따라 몇 초 정도 걸릴 수 있음).
 
-    ![이미지](./media/storage-explorer-troubleshooting/unlockingkeychain.png)
+    ![Image](./media/storage-explorer-troubleshooting/unlockingkeychain.png)
 
 5. Storage 탐색기를 시작합니다.
 6. "서비스 허브가 키 집합에 액세스하려고 합니다" 같은 팝업 메시지가 나타납니다. 그럴 때 Mac 관리자 계정의 암호를 입력하고 **항상 허용**(또는 **항상 허용**을 사용할 수 경우 **허용**)을 클릭합니다.

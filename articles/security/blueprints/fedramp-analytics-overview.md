@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 05/02/2018
 ms.author: jomolesk
 ms.openlocfilehash: fa10ff14bf893c268d6b6b1a0d181d11a3f27dc4
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57451878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60586290"
 ---
 # <a name="azure-security-and-compliance-blueprint-analytics-for-fedramp"></a>Azure 보안 및 규정 준수 청사진: FedRAMP에 대 한 분석
 
@@ -39,7 +39,7 @@ Microsoft Azure는 고객을 위해 다양한 보고 및 분석 서비스를 제
 
 이 아키텍처는 강화된 보안을 위해 Azure Active Directory 및 Azure Key Vault를 사용하여 리소스를 관리합니다. 시스템 상태는 Azure Monitor를 통해 모니터링됩니다. 고객은 로그를 캡처하고 쉽게 탐색할 수 있는 단일 대시보드에 시스템 상태를 표시하도록 두 모니터링 서비스를 구성합니다.
 
-Azure SQL Database는 일반적으로 보안 VPN 또는 ExpressRoute 연결을 통해 Azure SQL Database에 액세스하도록 구성된 로컬 컴퓨터에서 실행되는 SSMS(SQL Server Management Studio)를 통해 관리됩니다. **Azure에서는 관리 및 참조 아키텍처 리소스 그룹에 데이터 가져오기를 위해 VPN 또는 Azure ExpressRoute 연결을 구성하는 것이 좋습니다**.
+Azure SQL Database는 일반적으로 보안 VPN 또는 ExpressRoute 연결을 통해 Azure SQL Database에 액세스하도록 구성된 로컬 머신에서 실행되는 SSMS(SQL Server Management Studio)를 통해 관리됩니다. **Azure에서는 관리 및 참조 아키텍처 리소스 그룹에 데이터 가져오기를 위해 VPN 또는 Azure ExpressRoute 연결을 구성하는 것이 좋습니다**.
 
 ![Analytics for FedRAMP에 대한 참조 아키텍처 다이어그램](images/fedramp-analytics-reference-architecture.png?raw=true "Analytics for FedRAMP에 대한 참조 아키텍처 다이어그램")
 

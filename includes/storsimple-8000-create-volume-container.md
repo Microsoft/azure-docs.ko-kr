@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 467af776af95cf035121250fdcadd2fee65d9805
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55889661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60724719"
 ---
 #### <a name="to-create-a-volume-container"></a>볼륨 컨테이너를 만들려면
 1. StorSimple 디바이스 관리자 서비스로 이동하고 **디바이스**를 클릭합니다. 테이블 형식 디바이스 목록에서 디바이스를 선택하여 클릭합니다. 

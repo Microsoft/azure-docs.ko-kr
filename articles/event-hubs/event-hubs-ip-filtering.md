@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 12/06/2018
 ms.author: spelluru
 ms.openlocfilehash: ccb2fa7b0805b332957513c52c0c1051d068d2cc
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55507538"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60821671"
 ---
 # <a name="use-firewall-rules"></a>방화벽 규칙 사용
 
@@ -54,7 +54,7 @@ IP 필터 규칙은 순서대로 적용되며 IP 주소와 일치하는 첫 번�
 > - Azure Data Explorer
 >
 > 아래 Microsoft 서비스는 가상 네트워크에 있어야 합니다.
-> - Azure Web Apps
+> - Azure 웹앱
 > - Azure 기능
 
 ### <a name="creating-a-firewall-rule-with-azure-resource-manager-templates"></a>Azure Resource Manager 템플릿을 사용하여 방화벽 규칙 만들기

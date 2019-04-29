@@ -1,7 +1,6 @@
 ---
 title: 기계 학습 개요 - Azure HDInsight
 description: HDInsight의 기계 학습 옵션에 대해 설명합니다.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: hrasheed
-ms.openlocfilehash: a88ff7c7b889d197e78dddfbb498b7150e08d5ed
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
-ms.translationtype: MT
+ms.openlocfilehash: ca69424ecbddc068fdaf8bb5839a647701ee27fe
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59526812"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63766721"
 ---
 # <a name="machine-learning-on-hdinsight"></a>HDInsight의 기계 학습
 

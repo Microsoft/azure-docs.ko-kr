@@ -14,11 +14,11 @@ ms.workload: load-balancer
 ms.date: 06/06/2018
 ms.author: kumud
 ms.openlocfilehash: 159fe9d6a891858d8d2cc2315e9544b79eb44cff
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53079724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60884982"
 ---
 # <a name="create-an-azure-basic-load-balancer-using-rest-api"></a>REST API를 사용하여 Azure 기본 Load Balancer 만들기
 
@@ -35,10 +35,10 @@ Azure Load Balancer는 규칙 및 상태 프로브에 따라, 부하 분산 장�
 
 |이름  |그런 다음  |필수 |형식 |설명 |
 |---------|---------|---------|---------|--------|
-|subscriptionId   |  경로       |  True       |   string      |  Microsoft Azure 구독을 고유하게 식별하는 구독 자격 증명입니다. 구독 ID는 모든 서비스 호출에 대한 URI의 파트를 형성합니다.      |
-|resourceGroupName     |     경로    | True        |  string       |   리소스 그룹의 이름.     |
-|loadBalancerName     |  경로       |      True   |    string     |    부하 분산 장치의 이름입니다.    |
-|api-version    |   쿼리     |  True       |     string    |  클라이언트 API 버전입니다.      |
+|subscriptionId   |  경로       |  True        |   문자열      |  Microsoft Azure 구독을 고유하게 식별하는 구독 자격 증명입니다. 구독 ID는 모든 서비스 호출에 대한 URI의 파트를 형성합니다.      |
+|resourceGroupName     |     경로    | True         |  문자열       |   리소스 그룹의 이름.     |
+|loadBalancerName     |  경로       |      True    |    문자열     |    부하 분산 장치의 이름입니다.    |
+|api-version    |   쿼리     |  True        |     문자열    |  클라이언트 API 버전입니다.      |
 
 
 
@@ -46,9 +46,9 @@ Azure Load Balancer는 규칙 및 상태 프로브에 따라, 부하 분산 장�
 
 필수 매개변수는 `location`뿐입니다. *SKU* 버전을 정의하지 않는 경우에는 기본적으로 기본 Load Balancer가 만들어집니다.  부하 분산 장치를 사용자 지정하려면 [선택적 매개 변수](https://docs.microsoft.com/rest/api/load-balancer/loadbalancers/createorupdate#request-body)를 사용합니다.
 
-| 이름 | type | 설명 |
+| 이름 | 형식 | 설명 |
 | :--- | :--- | :---------- |
-| location | string | 리소스 위치. [위치 나열](https://docs.microsoft.com/rest/api/resources/subscriptions/listlocations) 작업을 사용하여 현재 위치 목록을 가져옵니다. |
+| location | 문자열 | 리소스 위치. [위치 나열](https://docs.microsoft.com/rest/api/resources/subscriptions/listlocations) 작업을 사용하여 현재 위치 목록을 가져옵니다. |
 
 
 ## <a name="example-create-and-update-a-basic-load-balancer"></a>예제: 기본 Load Balancer 만들기 및 업데이트

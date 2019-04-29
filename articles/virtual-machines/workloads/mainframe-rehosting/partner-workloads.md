@@ -11,11 +11,11 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.service: multiple
 ms.openlocfilehash: 1923d6fe71a0a7c4b469dc88b61a6ab3a794c45e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58896060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61487310"
 ---
 # <a name="mainframe-workloads-supported-on-azure"></a>Azure에서 지원 되는 메인프레임 워크 로드
 

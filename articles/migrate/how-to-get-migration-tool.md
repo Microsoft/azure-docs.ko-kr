@@ -7,11 +7,11 @@ ms.topic: article
 ms.date: 09/17/2018
 ms.author: raynew
 ms.openlocfilehash: 068b55e40afc96dbcfae26c8bf7da8a1b9ea349a
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53249780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60598370"
 ---
 # <a name="migrate-machines-after-assessment"></a>평가 후 컴퓨터 마이그레이션
 

@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/30/2016
 ms.author: crdun
 ms.openlocfilehash: 40a7552ffd0bfcab173d2e35c52313a94ec3d0bb
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52960331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62114362"
 ---
 # <a name="add-push-notifications-to-your-apache-cordova-app"></a>Apache Cordova 앱에 푸시 알림 추가
 
@@ -33,7 +33,7 @@ ms.locfileid: "52960331"
 
 ## <a name="prerequisites"></a>필수 조건
 
-이 자습서에서는 Visual Studio 2015를 사용하여 개발 된 Apache Cordova 응용 프로그램이 있다고 가정합니다. 이 디바이스는 Google Android Emulator, Android 디바이스, Windows 디바이스 또는 iOS 디바이스에서 실행해야 합니다.
+이 자습서에서는 Visual Studio 2015를 사용하여 개발 된 Apache Cordova 애플리케이션이 있다고 가정합니다. 이 디바이스는 Google Android Emulator, Android 디바이스, Windows 디바이스 또는 iOS 디바이스에서 실행해야 합니다.
 
 이 자습서를 완료하려면 다음이 필요합니다.
 
@@ -70,7 +70,7 @@ Apache Cordova 앱 프로젝트가 푸시 알림을 처리할 준비가 되었�
 
 #### <a name="install-the-push-plugin"></a>푸시 플러그 인 설치
 
-Apache Cordova 응용 프로그램에서는 기본적으로 디바이스 또는 네트워크 기능을 처리하지 않습니다.  이러한 기능은 [npm][10] 또는 GitHub에 게시된 플러그 인에서 제공됩니다. `phonegap-plugin-push` 플러그 인은 네트워크 푸시 알림을 처리합니다.
+Apache Cordova 애플리케이션에서는 기본적으로 장치 또는 네트워크 기능을 처리하지 않습니다.  이러한 기능은 [npm][10] 또는 GitHub에 게시된 플러그 인에서 제공됩니다. `phonegap-plugin-push` 플러그 인은 네트워크 푸시 알림을 처리합니다.
 
 다음 방법 중 하나로 푸시 플러그 인을 설치할 수 있습니다.
 
@@ -103,7 +103,7 @@ Apache Cordova 응용 프로그램에서는 기본적으로 디바이스 또는 
 
 푸시 플러그 인을 설치할 때 사용한 것과 동일한 절차를 따릅니다. 코어 플러그 인 목록에서 디바이스 플러그 인을 추가합니다. (**플러그 인** > **코어**를 선택해 찾습니다.) 플랫폼 이름을 가져오려면 이 플러그 인이 필요합니다.
 
-#### <a name="register-your-device-when-the-application-starts"></a>응용 프로그램 시작 시 디바이스 등록 
+#### <a name="register-your-device-when-the-application-starts"></a>애플리케이션 시작 시 장치 등록 
 
 처음에 Android에 대한 최소한의 코드를 포함합니다. 나중에 iOS 또는 Windows 10에서 실행되도록 앱을 수정할 수 있습니다.
 
@@ -215,7 +215,7 @@ pushRegistration = PushNotification.init({
 
 #### <a name="configure-device"></a>USB 디버깅을 위해 Android 디바이스 구성
 
-Android 디바이스에 응용 프로그램을 배포하려면 먼저 USB 디버깅을 사용하도록 설정해야 합니다. Android 휴대폰에서 다음 단계를 수행합니다.
+Android 장치에 애플리케이션을 배포하려면 먼저 USB 디버깅을 사용하도록 설정해야 합니다. Android 휴대폰에서 다음 단계를 수행합니다.
 
 1. **설정** > **전화 정보**로 이동합니다. 그런 다음, 개발자 모드가 사용하도록 설정될 때까지 **빌드 번호**를 누릅니다(약 7회).
 2. 다시 **설정** > **개발자 옵션**에서 **USB 디버깅**을 활성화합니다. 그런 다음, Android 휴대폰을 USB 케이블을 사용해 개발 PC에 연결합니다.
@@ -240,9 +240,9 @@ Android 디바이스에 응용 프로그램을 배포하려면 먼저 USB 디버
 
 이제 앱을 실행하고 TodoItem 테이블에 항목을 삽입하여 푸시 알림을 테스트할 수 있습니다. 동일한 백 엔드를 사용하는 한, 같은 디바이스에서 테스트해도 되고 두 번째 디바이스에서 테스트해도 됩니다. 다음 방법 중 하나로 Android 플랫폼에서 Cordova 앱을 테스트합니다.
 
-* *실제 디바이스에서:* USB 케이블을 사용하여 Android 디바이스를 개발 컴퓨터에 연결합니다.  **Google Android Emulator** 대신 **디바이스**를 선택합니다. Visual Studio에서 디바이스에 응용 프로그램을 배포하고 응용 프로그램을 실행합니다. 이제 디바이스에서 응용 프로그램과 상호 작용할 수 있습니다.
+* *실제 디바이스에서:* USB 케이블을 사용하여 Android 디바이스를 개발 컴퓨터에 연결합니다.  **Google Android Emulator** 대신 **디바이스**를 선택합니다. Visual Studio에서 장치에 애플리케이션을 배포하고 애플리케이션을 실행합니다. 이제 장치에서 애플리케이션과 상호 작용할 수 있습니다.
 
-  [Mobizen] [ 20]과 같은 화면 공유 응용 프로그램을 사용하면 Android 응용 프로그램을 개발하는 데 도움이 될 수 있습니다. Mobizen은 PC의 웹 브라우저에 Android 화면을 투영합니다.
+  [Mobizen][20]과 같은 화면 공유 애플리케이션을 사용하면 Android 애플리케이션을 개발하는 데 도움이 될 수 있습니다. Mobizen은 PC의 웹 브라우저에 Android 화면을 투영합니다.
 
 * *Android 에뮬레이터에서:* 에뮬레이터를 사용할 때 필요한 추가 구성 단계가 있습니다.
 

@@ -1,7 +1,6 @@
 ---
 title: Azure HDInsight에서 Hadoop과 함께 Data Lake Storage Gen1 사용
 description: Azure Data Lake Storage Gen1에서 데이터를 쿼리하고 분석을 위해 결과를 저장하는 방법을 알아봅니다.
-services: hdinsight,storage
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -9,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: ed8884462030e10625f332b182bd900e833f34f4
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 067bdcfc496fc986ae87620b7d57d7cad3a0f734
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59272736"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63766970"
 ---
 # <a name="use-data-lake-storage-gen1-with-azure-hdinsight-clusters"></a>Azure HDInsight 클러스터에 Data Lake Storage Gen1 사용
 

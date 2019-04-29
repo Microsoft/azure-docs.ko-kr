@@ -9,11 +9,11 @@ ms.date: 04/11/2019
 ms.author: lahugh
 ms.custom: include file
 ms.openlocfilehash: d89a9c4c4498e249dbfbd453ef9772d18ffd213f
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59550156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60541627"
 ---
 이 섹션에서는 이전 세대의 가상 머신 크기에 정보를 제공합니다. 이러한 크기는 계속 지원 되지만 추가 용량을 받지 않습니다. 일반적으로 사용할 수 있는 최신 또는 대체 크기가 있습니다. 참조 하십시오 [Azure에서 가상 컴퓨터 크기에 대 한 Windows](../articles/virtual-machines/windows/sizes.md) 또는 [Azure에서 Linux 가상 머신 크기](../articles/virtual-machines/linux/sizes.md) VM 선택 가장 하는 크기 조정 필요 합니다.  
 

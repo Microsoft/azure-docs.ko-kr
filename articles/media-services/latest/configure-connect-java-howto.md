@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 04/18/2019
 ms.author: juliako
 ms.openlocfilehash: 68e09ec6ce4aeb91e00c2a15caa8ec81f40064c1
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59997192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60733915"
 ---
 # <a name="connect-to-media-services-v3-api---java"></a>Media Services v3 API-Java에 연결
 

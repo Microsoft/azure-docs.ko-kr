@@ -8,11 +8,11 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/08/2018
 ms.openlocfilehash: d0482d1081c16dc89e7371c4c33de9b2bb4e4c2e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57898757"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61348389"
 ---
 # <a name="azure-data-factory-data-flow-sort-transformations"></a>Azure Data Factory 데이터 흐름 정렬 변환
 

@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 03/13/2019
 ms.author: monhaber
 ms.openlocfilehash: cede54f69fbeec5e01c17d84436bdc4c9ee91002
-ms.sourcegitcommit: f596d88d776a3699f8c8cf98415eb874187e2a48
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58117062"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60706608"
 ---
 # <a name="adaptive-network-hardening-in-azure-security-center"></a>Azure Security Center에서 적응 네트워크 강화
 Azure Security Center에서 적응 네트워크 강화를 구성 하는 방법에 알아봅니다.

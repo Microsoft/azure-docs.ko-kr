@@ -12,11 +12,11 @@ ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 59f8b8b253fc914e5723a9c41475ec78bc3f376e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57888402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61429351"
 ---
 # <a name="move-data-from-an-on-premises-sql-server-to-sql-azure-with-azure-data-factory"></a>Azure Data Factory를 사용하여 온-프레미스 SQL Server에서 SQL Azure로 데이터 이동
 
@@ -40,7 +40,7 @@ ADF에서는 정기적으로 데이터 이동을 관리하는 간단한 JSON 스
 두 가지 데이터 마이그레이션 작업을 구성하는 ADF 파이프라인을 설정했습니다. 데이터는 매일 온-프레미스 SQL 데이터베이스와 클라우드의 Azure SQL Database 간에 이동됩니다. 두 활동은 다음과 같습니다.
 
 * 온-프레미스 SQL Server 데이터베이스에서 Azure Blob Storage 계정으로 데이터 복사
-* Azure Blob Storage 계정에서 Azure SQL Database로 데이터 복사
+* Azure Blob Storage 계정에서 Azure SQL Database로 데이터를 복사합니다.
 
 > [!NOTE]
 > 여기에 표시된 단계는 ADF 팀이 제공하는 자세한 자습서 [온-프레미스 SQL Server 데이터베이스에서 Azure Blob Storage로 데이터 복사](https://docs.microsoft.com/azure/data-factory/tutorial-hybrid-copy-portal/)에서 조정되었습니다. 필요한 경우 해당 항목의 관련 섹션에 대한 참조가 제공됩니다.

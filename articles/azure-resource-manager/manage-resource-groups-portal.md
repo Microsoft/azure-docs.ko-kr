@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: jgao
 ms.openlocfilehash: cb1eb5ac27c53f4c0d48fe3644febc62f848486d
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58484698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60551283"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-the-azure-portal"></a>Azure portal을 사용 하 여 Azure Resource Manager 리소스 그룹 관리
 
@@ -123,7 +123,7 @@ Resource Manager 템플릿을 만든 후에 Azure 리소스를 배포 하려면 
 이 메서드는 특정 배포에 대 한 템플릿을 내보냅니다. 여러 배포에서 리소스를 추가/제거를 포털에서 리소스를 변경한 경우 참조 [리소스 그룹에서 템플릿을 내보낼](#export-templates-from-resource-groups)합니다.
 
 1. 내보내려는 리소스 그룹을 엽니다.  참조 [리소스 그룹을 열고](#open-resource-groups)합니다.
-2. 왼쪽된 창에서 선택 **배포**, 아래에 있는 링크를 선택 하거나 **배포**합니다.  다음 스크린샷에서 보여 줍니다 **4 성공** 네 개의 서로 다른 배포 이름으로 구분 된 4 개의 배포 되어 있습니다. 표시 될 수 있습니다 **1 성공**합니다.
+2. 왼쪽 창에서 **배포**를 선택하거나 **배포** 아래에 있는 링크를 선택합니다.  다음 스크린샷에서 보여 줍니다 **4 성공** 네 개의 서로 다른 배포 이름으로 구분 된 4 개의 배포 되어 있습니다. 표시 될 수 있습니다 **1 성공**합니다.
 
     ![azure 리소스 그룹 내보내기 템플릿](./media/manage-resource-groups-portal/manage-resource-groups-export-templates-deployment-history.png)
 

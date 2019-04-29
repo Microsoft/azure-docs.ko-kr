@@ -15,11 +15,11 @@ ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: 27cfe380e5988f17ca79c430cde7defc7f7bc440
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58661363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60839082"
 ---
 # <a name="sfctl-mesh-gateway"></a>sfctl mesh gateway
 메시 게이트웨이 리소스를 가져오고 삭제합니다.

@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 01/29/2018
 ms.topic: conceptual
 ms.openlocfilehash: c2151a4b1eb2a853ed343f6720b4f53af5e5e449
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54449523"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61446347"
 ---
 # <a name="implement-the-device-model-behavior"></a>디바이스 모델 동작 구현
 

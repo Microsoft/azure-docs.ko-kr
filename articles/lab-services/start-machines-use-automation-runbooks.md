@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: spelluru
 ms.openlocfilehash: 8d3885ba25e479316f97ecbb0681a1680650fc09
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59996665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61083621"
 ---
 # <a name="start-virtual-machines-in-a-lab-in-order-by-using-azure-automation-runbooks"></a>Azure Automation runbook을 사용 하 여 순서 대로 랩에서 가상 머신을 시작합니다
 합니다 [autostart](devtest-lab-set-lab-policy.md#set-autostart) DevTest Labs의 기능을 사용 하면 지정된 된 시간에 자동으로 시작 되도록 Vm을 구성할 수 있습니다. 그러나이 기능은 특정 순서 대로 시작 하려면 컴퓨터를 지원 하지 않습니다. 이 유형의 자동화도 유용 하다는 몇 가지 시나리오가 있습니다.  하나의 시나리오 랩 내에서 Jumpbox VM 해야 하는 다른 Vm과 하기 전에 먼저 시작할 Jumpbox를 다른 Vm에 대 한 액세스 지점으로 사용 되는 것입니다.  이 문서에서는 스크립트를 실행 하는 PowerShell runbook 사용 하 여 Azure Automation 계정을 설정 하는 방법을 보여 줍니다. 스크립트를 변경 하지 않고도 시작 순서를 제어할 수 있도록 랩의 Vm에 태그를 사용 하는 스크립트입니다.

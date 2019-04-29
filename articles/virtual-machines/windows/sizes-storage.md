@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 04/17/2019
 ms.author: jonbeck
 ms.openlocfilehash: 6bf073356137588075da3d9dcc220eee36ac59cf
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60006667"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60778245"
 ---
 # <a name="storage-optimized-virtual-machine-sizes"></a>저장소 최적화 가상 컴퓨터 크기
 

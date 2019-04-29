@@ -1,19 +1,18 @@
 ---
 title: Virtual Network로 HDInsight 확장 - Azure
 description: Azure Virtual Network를 사용하여 HDInsight 다른 클라우드 리소스 또는 데이터 센터에서 리소스에 연결하는 방법을 알아봅니다.
-services: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/29/2019
-ms.openlocfilehash: a2d06cdbcc6ce995c55c858cb7a50a93ef6b3fb1
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: f97c07c522dfb22818aca84d41d30c023f564d84
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58883567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62097340"
 ---
 # <a name="extend-azure-hdinsight-using-an-azure-virtual-network"></a>Azure Virtual Network를 사용하여 Azure HDInsight 확장
 
@@ -259,7 +258,7 @@ Azure Virtual Networks의 네트워크 트래픽은 다음 방법을 사용하�
 
 1. 다음 IP 주소에서 트래픽을 항상 허용해야 합니다.
 
-    | 원본 IP 주소 | 대상 포트 | 방향 |
+    | 원본 IP 주소 | 대상 포트 | Direction |
     | ---- | ----- | ----- |
     | 168.61.49.99 | 443 | 인바운드 |
     | 23.99.5.239 | 443 | 인바운드 |
@@ -271,7 +270,7 @@ Azure Virtual Networks의 네트워크 트래픽은 다음 방법을 사용하�
     > [!IMPORTANT]  
     > 사용하는 Azure 지역이 나열되지 않으면 1단계의 4가지 IP 주소만 사용합니다.
 
-    | 국가 | 지역 | 허용된 원본 IP 주소 | 상위 대상 포트 | 방향 |
+    | 국가 | 지역 | 허용된 원본 IP 주소 | 상위 대상 포트 | Direction |
     | ---- | ---- | ---- | ---- | ----- |
     | 아시아 | 동아시아 | 23.102.235.122</br>52.175.38.134 | 443 | 인바운드 |
     | &nbsp; | 동남아시아 | 13.76.245.160</br>13.76.136.249 | 443 | 인바운드 |

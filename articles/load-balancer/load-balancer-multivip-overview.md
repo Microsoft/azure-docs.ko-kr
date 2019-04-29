@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 03/22/2018
 ms.author: chkuhtz
 ms.openlocfilehash: b9a140314b8eba6386c37bdbcf2bb3de58589335
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53163432"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60594167"
 ---
 # <a name="multiple-frontends-for-azure-load-balancer"></a>Azure Load Balancer의 다중 프런트 엔드
 
@@ -44,7 +44,7 @@ Azure Load Balancer는 부하 분산 규칙을 정의하는 데 유연성을 제
 1. 백 엔드 포트 재사용이 없는 기본 규칙
 2. 백 엔드 포트가 재사용되는 부동 IP 규칙
 
-Azure Load Balancer를 사용하면 동일한 부하 분산 장치 구성에서 두 규칙 유형을 혼합할 수 있습니다. 부하 분산 장치는 규칙의 제약 조건을 준수하는 한 주어진 VM이나 어떠한 조합에 대해서도 그것들을 동시에 사용할 수 있습니다. 어떤 규칙 유형을 선택하는지는 응용 프로그램의 요구 사항 및 해당 구성을 지원하는 복잡성에 따라 달라집니다. 어떤 규칙 유형이 시나리오에 가장 적합한지 평가해야 합니다.
+Azure Load Balancer를 사용하면 동일한 부하 분산 장치 구성에서 두 규칙 유형을 혼합할 수 있습니다. 부하 분산 장치는 규칙의 제약 조건을 준수하는 한 주어진 VM이나 어떠한 조합에 대해서도 그것들을 동시에 사용할 수 있습니다. 어떤 규칙 유형을 선택하는지는 애플리케이션의 요구 사항 및 해당 구성을 지원하는 복잡성에 따라 달라집니다. 어떤 규칙 유형이 시나리오에 가장 적합한지 평가해야 합니다.
 
 기본 동작을 시작으로 이러한 시나리오를 더 자세히 알아봅니다.
 
@@ -81,7 +81,7 @@ Azure Load Balancer에서 전체 매핑은 이제 다음과 같습니다.
 
 ## <a name="rule-type-2-backend-port-reuse-by-using-floating-ip"></a>규칙 유형 #2: 부동 IP를 사용하여 백엔드 포트 재사용
 
-Azure Load Balancer는 사용된 규칙 유형에 관계없이 여러 프런트 엔드 전반에 걸쳐 프런트 엔드 포트를 재사용할 수 있는 유연성을 제공합니다. 또한 일부 응용 프로그램 시나리오는 백 엔드 풀의 단일 VM에서 여러 응용 프로그램 인스턴스가 동일한 포트를 사용하는 것을 선호하거나 필요로 합니다. 포트 재사용의 일반적인 예에는 고가용성을 위한 클러스터링, 네트워크 가상 어플라이언스 및 재암호화 없이 다중 TLS 엔드포인트 노출이 포함됩니다.
+Azure Load Balancer는 사용된 규칙 유형에 관계없이 여러 프런트 엔드 전반에 걸쳐 프런트 엔드 포트를 재사용할 수 있는 유연성을 제공합니다. 또한 일부 애플리케이션 시나리오는 백 엔드 풀의 단일 VM에서 여러 애플리케이션 인스턴스가 동일한 포트를 사용하는 것을 선호하거나 필요로 합니다. 포트 재사용의 일반적인 예에는 고가용성을 위한 클러스터링, 네트워크 가상 어플라이언스 및 재암호화 없이 다중 TLS 엔드포인트 노출이 포함됩니다.
 
 여러 규칙 전반에 백 엔드 포트를 재사용하려면 규칙 정의에 부동 IP를 사용하도록 설정해야 합니다.
 
@@ -132,7 +132,7 @@ Azure Load Balancer는 사용된 규칙 유형에 관계없이 여러 프런트 
 ## <a name="limitations"></a>제한 사항
 
 * 다중 프런트 엔드 구성은 IaaS VM에서만 지원됩니다.
-* 부동 IP 규칙을 사용하면 응용 프로그램은 아웃바운드 흐름에 대해 기본 IP 구성을 사용해야 합니다. 응용 프로그램이 게스트 OS에서 루프백 인터페이스에 구성된 프런트 엔드 IP 주소에 바인딩하는 경우 아웃바운드 흐름을 다시 작성하는 데 Azure의 SNAT를 사용할 수 없으며 흐름이 실패합니다.
+* 부동 IP 규칙을 사용하면 애플리케이션은 아웃바운드 흐름에 대해 기본 IP 구성을 사용해야 합니다. 애플리케이션이 게스트 OS에서 루프백 인터페이스에 구성된 프런트 엔드 IP 주소에 바인딩하는 경우 아웃바운드 흐름을 다시 작성하는 데 Azure의 SNAT를 사용할 수 없으며 흐름이 실패합니다.
 * 공용 IP 주소는 대금 청구에 영향을 미칩니다. 자세한 내용은 [IP 주소 가격 책정](https://azure.microsoft.com/pricing/details/ip-addresses/)
 * 구독 제한이 적용됩니다. 자세한 내용은 [서비스 제한](../azure-subscription-service-limits.md#networking-limits) 을 참조하세요.
 

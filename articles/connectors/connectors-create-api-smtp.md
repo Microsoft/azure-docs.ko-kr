@@ -12,11 +12,11 @@ ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
 ms.openlocfilehash: 78b1eb6272fa97ef392e97723454d29cf56bb4bf
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50230508"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62106153"
 ---
 # <a name="send-email-from-your-smtp-account-with-azure-logic-apps"></a>Azure Logic Apps를 사용하여 SMTP 계정에서 이메일 보내기
 
@@ -55,12 +55,12 @@ Azure Logic Apps 및 SMTP(Simple Mail Transfer Protocol) 커넥터를 사용하�
 
    | 자산 | 필수 | 설명 |
    |----------|----------|-------------|
-   | **연결 이름** | yes | SMTP 서버에 대한 연결의 이름 | 
-   | **SMTP 서버 주소** | yes | SMTP 서버에 대한 주소 | 
-   | **사용자 이름** | yes | SMTP 계정에 대한 사용자 이름 | 
-   | **암호** | yes | SMTP 계정에 대한 암호 | 
-   | **SMTP 서버 포트** | 아니요 | 사용하려는 SMTP 서버의 특정 포트 | 
-   | **SSL 사용?** | 아니요 | SSL 암호화를 설정하거나 해제합니다. | 
+   | **연결 이름** | 예 | SMTP 서버에 대한 연결의 이름 | 
+   | **SMTP 서버 주소** | 예 | SMTP 서버에 대한 주소 | 
+   | **사용자 이름** | 예 | SMTP 계정에 대한 사용자 이름 | 
+   | **암호** | 예 | SMTP 계정에 대한 암호 | 
+   | **SMTP 서버 포트** | 아닙니다. | 사용하려는 SMTP 서버의 특정 포트 | 
+   | **SSL 사용?** | 아닙니다. | SSL 암호화를 설정하거나 해제합니다. | 
    |||| 
 
 1. 선택한 작업에 필요한 정보를 입력합니다. 

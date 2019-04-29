@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 07/06/2018
 ms.author: terrylan
 ms.openlocfilehash: 24d54fa7a8985a6af58cddfc969b8023485c73c2
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56104944"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60587124"
 ---
 # <a name="azure-infrastructure-integrity"></a>Azure 인프라 무결성
 

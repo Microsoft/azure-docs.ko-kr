@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 07/10/2017
 ms.author: v-sharos@microsoft.com
 ms.openlocfilehash: 63906e65acb8e8aa836e6e59714bddca24ea21eb
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56326929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60630209"
 ---
 # <a name="storsimple-8000-series-a-hybrid-cloud-storage-solution"></a>StorSimple 8000 시리즈: 하이브리드 클라우드 저장소 솔루션
 ## <a name="overview"></a>개요
@@ -205,7 +205,7 @@ Microsoft Azure StorSimple은 중복 제거 및 데이터 압축을 사용하여
 ## <a name="storsimple-workload-summary"></a>StorSimple 워크로드 요약
 지원되는 StorSimple 워크로드가 아래 표에 요약되어 있습니다.
 
-| 시나리오 | 워크로드 | 지원됨 | 제한 | 버전 |
+| 시나리오 | 워크로드 | 지원됨 | 제한 | Version |
 | --- | --- | --- | --- | --- |
 | 공동 작업 |파일 공유 |예 | |모든 버전 |
 | 공동 작업 |분산 파일 공유 |예 | |모든 버전 |
@@ -232,7 +232,7 @@ Microsoft Azure StorSimple은 중복 제거 및 데이터 압축을 사용하여
 
 다음은 StorSimple 지원 인프라 구성 요소의 목록입니다.
 
-| 시나리오 | 워크로드 | 지원됨 | 제한 | 버전 |
+| 시나리오 | 워크로드 | 지원됨 | 제한 | Version |
 | --- | --- | --- | --- | --- |
 | 일반 |Express 경로 |예 | |모든 버전 |
 | 일반 |DataCore FC |예* |DataCore SANsymphony 지원 |모든 버전 |

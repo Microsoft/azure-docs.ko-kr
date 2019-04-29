@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: helohr
 ms.openlocfilehash: 8b18224339654c067d8ab9b543fa49a9c7d55ddd
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58400171"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60870526"
 ---
-# <a name="host-pool-load-balancing-methods"></a>호스트 풀 부하 분산 방법
+# <a name="host-pool-load-balancing-methods"></a>호스트 풀 부하 분산 메서드
 
 Windows 가상 데스크톱 미리 보기에는 두 개의 부하 분산 방법을 지원합니다. 각 메서드는 리소스 풀을 호스트에 연결할 때 사용자의 세션을 호스트 하는 세션 호스트를 결정 합니다.
 

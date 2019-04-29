@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
 ms.date: 04/04/2019
-ms.openlocfilehash: f25bc9bc3a958b2fa97ae4d5ab3715b602110393
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 4159b2e7af83030f46d5aca150ef99a1380e711f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58915478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61473011"
 ---
 # <a name="status-of-migration-scenarios-supported-by-azure-database-migration-service"></a>Azure Database Migration Service를 지 원하는 마이그레이션 시나리오의 상태
 Azure Database Migration Service는 오프 라인 둘 다에 대 한 여러 마이그레이션 시나리오 (원본/대상 쌍)를 지원 하도록 설계 되었습니다 (1 회) 및 온라인 (연속 동기화) 마이그레이션. Azure Database Migration Service가 제공 하는 시나리오 범위를 시간에 따라 확장 되 고 있습니다. 새로운 시나리오를 정기적으로 추가되고 있습니다. 이 문서에서는 Azure Database Migration Service 및 각 시나리오에 대 한 상태 (비공개 미리 보기, 공개 미리 보기 또는 일반 공급)에서 현재 지 원하는 마이그레이션 시나리오를 식별 합니다.

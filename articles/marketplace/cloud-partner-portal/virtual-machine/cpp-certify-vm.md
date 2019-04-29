@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 09/26/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 24430b1b785a24da06a8ea51594147040e6d5bd6
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53190393"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60638348"
 ---
 # <a name="certify-your-vm-image"></a>VM 이미지 인증
 

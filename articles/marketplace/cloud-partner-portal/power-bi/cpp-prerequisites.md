@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: pbutlerm
 ms.openlocfilehash: 5014a9cdf9a8811aa6081476f9ec6c41be0ff906
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58012932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60725638"
 ---
 # <a name="power-bi-app-offer-prerequisites"></a>필수 구성 요소를 제공 하는 power BI 앱
 

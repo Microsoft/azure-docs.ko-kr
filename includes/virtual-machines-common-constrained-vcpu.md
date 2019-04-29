@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/09/2018
 ms.author: azcspmt;jonbeck;cynthn
 ms.custom: include file
-ms.openlocfilehash: eaf490979167ea5cbfe5846e62444526310452f8
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
-ms.translationtype: HT
+ms.openlocfilehash: 82cbffb257d85197848b8bca14231e5363d6d45c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36269547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60729848"
 ---
 SQL Server 또는 Oracle과 같은 일부 데이터베이스 워크로드는 메모리, 저장소 및 I/O 대역폭 요구량은 많지만 코어 수 요구량은 많지 않습니다. 대부분의 데이터베이스 워크로드는 CPU를 많이 사용하지 않습니다. Azure에서는 VM vCPU 수를 제한하여 소프트웨어 라이선스 비용을 줄이면서도 메모리, 저장소 및 I/O 대역폭을 그대로 유지할 수 있는 특정 VM 크기를 제공합니다.
 
@@ -24,7 +24,7 @@ vCPU 수를 원래 VM 크기의 절반이나 1/4로 제한할 수 있습니다. 
 SQL Server 또는 Oracle에 대해 청구되는 라이선스 요금은 새 vCPU 개수로 제한되며 다른 제품은 새 vCPU 수를 기준으로 청구됩니다. 따라서 활성(청구 가능) vCPU에 대한 VM 사양의 비율이 50~75% 증가합니다. Azure에서만 사용할 수 있는 이 새 VM 크기를 통해 적은 코어당 라이선스 비용으로 CPU 활용도를 높일 수 있습니다. 현재 OS 라이선스를 포함하는 계산 비용은 원래 크기와 동일하게 유지됩니다. 자세한 내용은 [Azure VM sizes for more cost-effective database workloads](https://azure.microsoft.com/blog/announcing-new-azure-vm-sizes-for-more-cost-effective-database-workloads/)(비용 효율적인 데이터베이스 워크로드를 위한 Azure VM 크기)를 참조하세요.
 
 
-| Name                | vCPU | 사양           |
+| 이름                | vCPU | 사양           |
 |---------------------|------|-----------------|
 | Standard_M8-2ms     | 2    | M8ms와 동일    |
 | Standard_M8-4ms     | 4    | M8ms와 동일    |

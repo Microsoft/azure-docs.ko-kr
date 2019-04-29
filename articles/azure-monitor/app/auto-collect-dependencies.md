@@ -13,11 +13,11 @@ ms.date: 08/13/2018
 ms.reviewer: mbullwin
 ms.author: nimolnar
 ms.openlocfilehash: 7f152de89f5d374a5b97368eafe7287fc9377291
-ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "57011333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60691124"
 ---
 # <a name="dependency-auto-collection"></a>종속성 자동 수집
 

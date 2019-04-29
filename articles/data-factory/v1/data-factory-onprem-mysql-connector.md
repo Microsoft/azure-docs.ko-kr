@@ -14,11 +14,11 @@ ms.date: 06/06/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: de1263d68e96a23bd6b5eca4297e74b56ba22e40
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54021644"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60823949"
 ---
 # <a name="move-data-from-mysql-using-azure-data-factory"></a>Azure 데이터 팩터리를 사용하여 MySQL에서 데이터 이동
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -71,7 +71,7 @@ MySQL 데이터베이스에 연결할 데이터 관리 게이트웨이의 경우
 | 형식 |type 속성을 다음으로 설정해야 합니다. **OnPremisesMySql** |예 |
 | 서버 |MySQL 서버의 이름입니다. |예 |
 | 데이터베이스 |MySQL 데이터베이스의 이름입니다. |예 |
-| schema |데이터베이스에서 스키마의 이름입니다. |아니요 |
+| schema |데이터베이스에서 스키마의 이름입니다. |아닙니다. |
 | authenticationType |MySQL 데이터베이스에 연결하는 데 사용되는 인증 형식입니다. 가능한 값은 `Basic`입니다. |예 |
 | 사용자 이름 |MySQL 데이터베이스에 연결할 사용자 이름을 지정합니다. |예 |
 | 암호 |지정한 사용자 계정의 암호를 지정합니다. |예 |
@@ -301,45 +301,45 @@ MySQL에 데이터를 이동하는 경우 MySQL 형식에서 .NET 형식으로 �
 
 | MySQL 데이터베이스 형식 | .NET Framework 형식 |
 | --- | --- |
-| bigint unsigned |10진수 |
+| bigint unsigned |Decimal |
 | bigint |Int64 |
-| bit |10진수 |
+| bit |Decimal |
 | Blob |Byte[] |
-| bool |BOOLEAN |
-| char |문자열 |
+| bool |Boolean |
+| char |String |
 | date |DateTime |
 | Datetime |DateTime |
-| decimal |10진수 |
+| decimal |Decimal |
 | double precision |Double |
 | Double |Double |
-| enum |문자열 |
-| float |단일 |
+| enum |String |
+| float |Single |
 | int unsigned |Int64 |
 | int |Int32 |
 | integer unsigned |Int64 |
 | 정수 |Int32 |
 | long varbinary |Byte[] |
-| long varchar |문자열 |
+| long varchar |String |
 | longblob |Byte[] |
-| longtext |문자열 |
+| longtext |String |
 | mediumblob |Byte[] |
 | mediumint unsigned |Int64 |
 | mediumint |Int32 |
-| mediumtext |문자열 |
-| numeric |10진수 |
+| mediumtext |String |
+| numeric |Decimal |
 | real |Double |
-| set |문자열 |
+| set |String |
 | smallint unsigned |Int32 |
 | smallint |Int16 |
-| text |문자열 |
-| 실시간 |timespan |
+| text |String |
+| time |TimeSpan |
 | timestamp |DateTime |
 | tinyblob |Byte[] |
 | tinyint unsigned |Int16 |
 | tinyint |Int16 |
-| tinytext |문자열 |
-| varchar |문자열 |
-| year |int |
+| tinytext |String |
+| varchar |String |
+| year |Int |
 
 ## <a name="map-source-to-sink-columns"></a>원본을 싱크 열로 매핑
 원본 데이터 세트의 열을 싱크 데이터 세트의 열로 매핑하는 방법은 [Azure Data Factory의 데이터 세트 열 매핑](data-factory-map-columns.md)을 참조하세요.

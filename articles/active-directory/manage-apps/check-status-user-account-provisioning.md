@@ -15,12 +15,12 @@ ms.date: 09/09/2018
 ms.author: celested
 ms.reviewer: asmalser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a6d1684c4bc0031978fb5e76548a3112b0f1ef2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e293eb555269a1f8beeeccd74000358abe1ef5c8
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60442007"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63759755"
 ---
 # <a name="tutorial-reporting-on-automatic-user-account-provisioning"></a>자습서: 자동 사용자 계정 프로비전에 대한 보고
 
@@ -43,7 +43,7 @@ Azure Active Directory에는 종단 간 ID 수명 주기 관리를 위해 SaaS �
 
 * **원본 시스템** - Azure AD 프로비전 서비스에서 동기화하기 위해 원본이 되는 사용자의 리포지토리입니다. Azure Active Directory는 대부분의 사전 통합된 프로비전 커넥터를 위한 원본 시스템이지만, 몇 가지 예외(예: Workday 인바운드 동기화)가 있습니다.
 
-* **대상 시스템** - Azure AD 프로비전 서비스에서 동기화하기 위해 대상이 되는 사용자의 리포지토리입니다. 이 시스템은 일반적으로 SaaS 애플리케이션(예: Salesforce, ServiceNow, Google Apps, Dropbox for Business)이지만, 경우에 따라 Active Directory와 같은 온-프레미스 시스템(예: Active Directory에 대한 Workday 인바운드 동기화)일 수도 있습니다.
+* **대상 시스템** - Azure AD 프로비전 서비스에서 동기화하기 위해 대상이 되는 사용자의 리포지토리입니다. 이 시스템은 일반적으로 SaaS 애플리케이션(예: Salesforce, ServiceNow, G Suite, Dropbox for Business) 경우에 따라 Active Directory와 같은 온-프레미스 시스템을 수 있지만 (예: Active Directory에 대한 Workday 인바운드 동기화)일 수도 있습니다.
 
 
 ## <a name="getting-provisioning-reports-from-the-azure-management-portal"></a>Azure 관리 포털에서 프로비전 보고서 가져오기

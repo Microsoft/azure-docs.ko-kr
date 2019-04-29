@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: spelluru
 ms.openlocfilehash: 93136c7d685bd9fc8ec4bcdea3a900b28029059b
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58653069"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60695212"
 ---
 # <a name="use-a-shared-image-gallery-in-azure-lab-services"></a>Azure Lab Services에서 공유 이미지 갤러리를 사용 합니다.
 이 문서에서는 교사/랩 관리자 사람이 다시 사용할 수에 대 한 템플릿 가상 머신 이미지를 저장할 수 하는 방법을 보여 줍니다. 이러한 이미지를 Azure에 저장 됩니다 [공유 이미지 갤러리](../../virtual-machines/windows/shared-image-galleries.md)합니다. 첫 번째 단계로, 랩 관리자는 기존 공유 이미지 갤러리를 랩 계정에 연결합니다. 공유 이미지 갤러리 연결 되 면 랩 계정에 만든 랩 공유 이미지 갤러리에 이미지를 저장할 수 있습니다. 다른 교사는 해당 클래스에 대 한 템플릿을 만들려면 공유 이미지 갤러리에서이 이미지를 선택할 수 있습니다. 
@@ -30,9 +30,9 @@ ms.locfileid: "58653069"
 다음 절차는 랩 계정에 공유 이미지 갤러리를 연결 하는 방법을 보여 줍니다. 
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
-2. 왼쪽 메뉴에서 **모든 서비스**를 선택합니다. 선택 **Lab Services** 에 **DEVOPS** 섹션입니다. 별표를 선택 하는 경우 (`*`) 옆에 **Lab Services**에 추가 되는 **즐겨찾기** 왼쪽 메뉴의 섹션입니다. 다음 시간 이상에서 선택 **Lab Services** 아래에서 **즐겨찾기**합니다.
+2. 왼쪽 메뉴에서 **모든 서비스**를 선택합니다. **DEVOPS** 섹션에서 **랩 서비스**를 선택합니다. **랩 서비스** 옆에 있는 별표(`*`)를 선택하면 왼쪽 메뉴의 **즐겨찾기** 섹션에 추가됩니다. 다음부터는 **즐겨찾기** 아래에서 **랩 서비스**를 선택합니다.
 
-    ![모든 서비스에는 랩 서비스->](../media/tutorial-setup-lab-account/select-lab-accounts-service.png)
+    ![모든 서비스 -> 랩 서비스](../media/tutorial-setup-lab-account/select-lab-accounts-service.png)
 3. 랩 계정을 확인 하려면 선택 합니다 **랩 계정을** 페이지입니다. 
 4. 선택 **공유 이미지 갤러리** 선택 고 왼쪽된 메뉴에서 **연결** 도구 모음에서 합니다. 
 

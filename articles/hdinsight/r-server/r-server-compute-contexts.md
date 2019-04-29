@@ -1,7 +1,6 @@
 ---
 title: HDInsight의 ML Services에 대한 계산 컨텍스트 옵션 - Azure
 description: HDInsight의 ML Services 사용자에게 제공되는 다양한 계산 컨텍스트 옵션에 대해 알아봅니다.
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: 1e01a3db2c0ca1f9024afb3faecf677ac4e3131b
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
-ms.translationtype: MT
+ms.openlocfilehash: 9dac7aa19e428c964bd10c3ef62df949393e8d1f
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52494463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62124641"
 ---
 # <a name="compute-context-options-for-ml-services-on-hdinsight"></a>HDInsight의 ML Services에 대한 계산 컨텍스트 옵션
 

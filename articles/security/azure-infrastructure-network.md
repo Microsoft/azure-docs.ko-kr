@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 02/20/2019
 ms.author: terrylan
 ms.openlocfilehash: 48a7e52d4284e5c2db1d77d24d91fd4701aad8d7
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56455759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60587162"
 ---
 # <a name="azure-network-architecture"></a>Azure 네트워크 아키텍처
 Azure 네트워크 아키텍처는 별도의 하드웨어 계층을 사용하여 업계 표준 코어/배포/액세스 모델의 수정 버전을 따릅니다. 계층은 다음과 같습니다.

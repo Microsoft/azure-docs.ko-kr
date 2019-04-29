@@ -12,14 +12,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure services
-ms.date: 08/03/2017
-ms.author: amsriva
+origin.date: 08/03/2017
+ms.date: 02/26/2019
+ms.author: v-junlch
 ms.openlocfilehash: 46a823e4e230656b53a93a97f195d0879fd08bf2
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56731959"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122237"
 ---
 # <a name="application-gateway-ssl-policy-overview"></a>Application Gateway SSL 정책 개요
 
@@ -46,7 +47,7 @@ Application Gateway에는 세 가지 미리 정의된 보안 정책이 있습니
 |   ---      |  ---       |
 |이름     | AppGwSslPolicy20170401        |
 |MinProtocolVersion     | TLSv1_1        |
-|기본값| False |
+|기본값| 거짓 |
 |CipherSuites     |TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA<br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384<br>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA<br>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_256_GCM_SHA384<br>TLS_RSA_WITH_AES_128_GCM_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA256<br>TLS_RSA_WITH_AES_128_CBC_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_128_CBC_SHA |
   
 ### <a name="appgwsslpolicy20170401s"></a>AppGwSslPolicy20170401S
@@ -55,7 +56,7 @@ Application Gateway에는 세 가지 미리 정의된 보안 정책이 있습니
 |---|---|
 |이름     | AppGwSslPolicy20170401S        |
 |MinProtocolVersion     | TLSv1_2        |
-|기본값| False |
+|기본값| 거짓 |
 |CipherSuites     |TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 <br>    TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 <br>    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA <br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA <br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384<br>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA<br>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_256_GCM_SHA384<br>TLS_RSA_WITH_AES_128_GCM_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA256<br>TLS_RSA_WITH_AES_128_CBC_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_128_CBC_SHA<br> |
 
 ## <a name="custom-ssl-policy"></a>SSL 정책 사용자 지정
@@ -64,9 +65,9 @@ Application Gateway에는 세 가지 미리 정의된 보안 정책이 있습니
  
 ### <a name="ssl-protocol-versions"></a>SSL 프로토콜 버전
 
-* SSL 2.0 및 3.0은 모든 Application Gateway에 대해 기본적으로 사용되지 않습니다. 이러한 프로토콜 버전을 구성할 수 없습니다.
-* 사용자 지정 SSL 정책을 게이트웨이의 최소 SSL 프로토콜 버전으로 다음 세 가지 프로토콜 중 하나를 선택 하는 옵션이 있습니다. 게 TLSv1_0, TLSv1_1 및 TLSv1_2 중에서 선택 합니다.
-* SSL 정책을 하나도 정의하지 않으면 3개 프로토콜(TLSv1_0, TLSv1_1, TLSv1_2) 모두 활성화됩니다.
+- SSL 2.0 및 3.0은 모든 Application Gateway에 대해 기본적으로 사용되지 않습니다. 이러한 프로토콜 버전을 구성할 수 없습니다.
+- 사용자 지정 SSL 정책을 게이트웨이의 최소 SSL 프로토콜 버전으로 다음 세 가지 프로토콜 중 하나를 선택 하는 옵션이 있습니다. 게 TLSv1_0, TLSv1_1 및 TLSv1_2 중에서 선택 합니다.
+- SSL 정책을 하나도 정의하지 않으면 3개 프로토콜(TLSv1_0, TLSv1_1, TLSv1_2) 모두 활성화됩니다.
 
 ### <a name="cipher-suites"></a>암호 그룹
 
@@ -105,3 +106,5 @@ Application Gateway는 사용자 지정 정책을 선택할 수 있는 다음과
 ## <a name="next-steps"></a>다음 단계
 
 SSL 정책 구성에 대해 자세히 알아보려면 [Application Gateway에 SSL 정책 구성](application-gateway-configure-ssl-policy-powershell.md)을 참조하세요.
+
+<!-- Update_Description: wording update -->

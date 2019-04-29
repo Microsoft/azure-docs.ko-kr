@@ -9,11 +9,11 @@ ms.date: 03/09/2018
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: b0b5e817d5e39dd7800a1482d40c56db5f2be6ff
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58115086"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61127145"
 ---
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
 

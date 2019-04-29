@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 08/17/2018
 ms.author: jingwang
 ms.openlocfilehash: 4bf4c5c8339c8c56d91737fa1ff62f55b9c38696
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54019625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60786376"
 ---
 # <a name="copy-data-from-db2-by-using-azure-data-factory"></a>Azure Data Factory를 사용하여 DB2에서 데이터 복사
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -65,9 +65,9 @@ DB2 연결된 서비스에 다음 속성이 지원됩니다.
 | 서버 |DB2 서버의 이름입니다. 콜론으로 구분된 서버 이름 뒤에 포트 번호를 지정할 수 있습니다(예: `server:port`). |예 |
 | 데이터베이스 |DB2 데이터베이스의 이름입니다. |예 |
 | authenticationType |DB2 데이터베이스에 연결하는 데 사용되는 인증 형식입니다.<br/>허용되는 값은 다음과 같습니다. **Basic**. |예 |
-| 사용자 이름 |DB2 데이터베이스에 연결할 사용자 이름을 지정합니다. |예 |
+| username |DB2 데이터베이스에 연결할 사용자 이름을 지정합니다. |예 |
 | 암호 |사용자 이름에 지정한 사용자 계정의 암호를 지정합니다. 이 필드를 SecureString으로 표시하여 Data Factory에 안전하게 저장하거나 [Azure Key Vault에 저장되는 비밀을 참조](store-credentials-in-key-vault.md)합니다. |예 |
-| connectVia | 데이터 저장소에 연결하는 데 사용할 [Integration Runtime](concepts-integration-runtime.md)입니다. 자체 호스팅 Integration Runtime 또는 Azure Integration Runtime을 사용할 수 있습니다(데이터 저장소를 공개적으로 액세스할 수 있는 경우). 지정하지 않으면 기본 Azure Integration Runtime을 사용합니다. |아니요 |
+| connectVia | 데이터 저장소에 연결하는 데 사용할 [Integration Runtime](concepts-integration-runtime.md)입니다. 자체 호스팅 Integration Runtime 또는 Azure Integration Runtime을 사용할 수 있습니다(데이터 저장소를 공개적으로 액세스할 수 있는 경우). 지정하지 않으면 기본 Azure Integration Runtime을 사용합니다. |아닙니다. |
 
 **예제:**
 
@@ -102,7 +102,7 @@ DB2에서 데이터를 복사하려면 데이터 세트의 type 속성을 **Rela
 
 | 속성 | 설명 | 필수 |
 |:--- |:--- |:--- |
-| 형식 | 데이터 세트의 type 속성을 다음으로 설정해야 합니다. **RelationalTable** | 예 |
+| type | 데이터 세트의 type 속성을 다음으로 설정해야 합니다. **RelationalTable** | 예 |
 | tableName | DB2 데이터베이스의 테이블 이름입니다. | 아니요(작업 원본에서 "query"가 지정된 경우) |
 
 **예제**
@@ -132,7 +132,7 @@ DB2에서 데이터를 복사하려면 복사 작업의 원본 형식을 **Relat
 
 | 자산 | 설명 | 필수 |
 |:--- |:--- |:--- |
-| 형식 | 복사 작업 원본의 type 속성을 다음으로 설정해야 합니다. **RelationalSource** | 예 |
+| type | 복사 작업 원본의 type 속성을 다음으로 설정해야 합니다. **RelationalSource** | 예 |
 | 쿼리 | 사용자 지정 SQL 쿼리를 사용하여 데이터를 읽습니다. 예: `"query": "SELECT * FROM \"DB2ADMIN\".\"Customers\""` | 아니요(데이터 세트의 "tableName"이 지정된 경우) |
 
 **예제:**
@@ -176,29 +176,29 @@ DB2에서 데이터를 복사하는 경우 DB2 데이터 형식에서 Azure Data
 | BigInt |Int64 |
 | 이진 |Byte[] |
 | Blob |Byte[] |
-| Char |문자열 |
-| Clob |문자열 |
+| Char |String |
+| Clob |String |
 | Date |DateTime |
-| DB2DynArray |문자열 |
-| DbClob |문자열 |
-| 10진수 |10진수 |
-| DecimalFloat |10진수 |
+| DB2DynArray |String |
+| DbClob |String |
+| Decimal |Decimal |
+| DecimalFloat |Decimal |
 | Double |Double |
 | Float |Double |
-| Graphic |문자열 |
+| Graphic |String |
 | 정수  |Int32 |
 | LongVarBinary |Byte[] |
-| LongVarChar |문자열 |
-| LongVarGraphic |문자열 |
-| 숫자 |10진수 |
-| Real |단일 |
+| LongVarChar |String |
+| LongVarGraphic |String |
+| Numeric |Decimal |
+| Real |Single |
 | SmallInt |Int16 |
-| Time |timespan |
-| 타임 스탬프 |Datetime |
+| Time |TimeSpan |
+| 타임 스탬프 |DateTime |
 | VarBinary |Byte[] |
-| VarChar |문자열 |
-| VarGraphic |문자열 |
-| xml |Byte[] |
+| VarChar |String |
+| VarGraphic |String |
+| Xml |Byte[] |
 
 
 ## <a name="next-steps"></a>다음 단계

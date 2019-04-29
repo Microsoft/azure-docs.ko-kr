@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: pbutlerm
 ms.openlocfilehash: 0e82041dab1932ed7c129b598740b2441aa59315
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56822755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60725717"
 ---
 # <a name="publish-a-power-bi-app-offer"></a>Power BI 앱 제품을 게시
 

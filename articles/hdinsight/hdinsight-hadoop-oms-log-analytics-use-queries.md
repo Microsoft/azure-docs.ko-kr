@@ -1,7 +1,6 @@
 ---
 title: Azure HDInsight 클러스터를 모니터링 하려면 로그 쿼리 Azure 모니터링
 description: HDInsight 클러스터에서 실행 하는 작업을 모니터링 하려면 Azure Monitor 로그 쿼리를 실행 하는 방법을 알아봅니다.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/05/2018
 ms.author: hrasheed
-ms.openlocfilehash: 2ca2fdc2627245a8b7676ed0d6d5877788eb7930
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
-ms.translationtype: MT
+ms.openlocfilehash: cbaaed3fff99778bfab1feeacdab02bf8245a85a
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58336799"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63761226"
 ---
 # <a name="query-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>HDInsight 클러스터를 모니터링 하려면 로그 쿼리 Azure 모니터링
 

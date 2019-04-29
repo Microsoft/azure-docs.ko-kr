@@ -10,11 +10,11 @@ services: azure-maps
 manager: ''
 ms.custom: codepen
 ms.openlocfilehash: f61c7a939902ee5d02b2e9ba896c7555968f9d0d
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59547988"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60769518"
 ---
 # <a name="add-a-shape-to-a-map"></a>맵에 도형 추가
 
@@ -178,4 +178,4 @@ A `Shape` 클래스를 래핑하고 [기 하 도형](https://docs.microsoft.com/
 맵에 추가할 더 많은 코드 예제를 보려면 다음 문서를 참조하세요.
 
 > [!div class="nextstepaction"]
-> [사용 하 여 데이터 기반 스타일 식](data-driven-style-expressions-web-sdk.md)
+> [데이터 기반 스타일 식 사용](data-driven-style-expressions-web-sdk.md)

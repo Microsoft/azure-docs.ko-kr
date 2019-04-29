@@ -15,24 +15,24 @@ ms.workload: na
 ms.date: 09/28/2018
 ms.author: terrylan
 ms.openlocfilehash: 22db43413b5c752decf6785a75dff22ff4a68039
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56109371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60596663"
 ---
 # <a name="best-practices-for-securing-paas-databases-in-azure"></a>Azure에서 PaaS 데이터베이스 보안을 유지하기 위한 모범 사례
 
-이 문서에서는 PaaS(Platform as a Service) 웹 및 모바일 응용 프로그램 보안을 위한 [Azure SQL Database](../sql-database/sql-database-technical-overview.md) 및 [SQL Data Warehouse](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) 보안 모범 사례에 대해 설명합니다. 이러한 모범 사례는 Azure에 대한 Microsoft와 고객의 경험에서 비롯된 것입니다.
+이 문서에서는 PaaS(Platform as a Service) 웹 및 모바일 애플리케이션 보안을 위한 [Azure SQL Database](../sql-database/sql-database-technical-overview.md) 및 [SQL Data Warehouse](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) 보안 모범 사례에 대해 설명합니다. 이러한 모범 사례는 Azure에 대한 Microsoft와 고객의 경험에서 비롯된 것입니다.
 
-Azure SQL Database 및 SQL Data Warehouse는 인터넷 기반 응용 프로그램용 관계형 데이터베이스 서비스를 제공합니다. PaaS 배포에서 Azure SQL Database 및 SQL Data Warehouse를 사용할 때 애플리케이션과 데이터를 보호하는 데 도움이 되는 서비스를 살펴보겠습니다.
+Azure SQL Database 및 SQL Data Warehouse는 인터넷 기반 애플리케이션용 관계형 데이터베이스 서비스를 제공합니다. PaaS 배포에서 Azure SQL Database 및 SQL Data Warehouse를 사용할 때 애플리케이션과 데이터를 보호하는 데 도움이 되는 서비스를 살펴보겠습니다.
 
 - Azure Active Directory 인증(SQL Server 인증 대신)
 - Azure SQL 방화벽
 - TDE(투명한 데이터 암호화)
 
 ## <a name="use-a-centralized-identity-repository"></a>중앙 집중식 ID 리포지토리 사용
-Azure SQL Database는 다음 두 가지 인증 유형 중 하나를 사용하도록 구성할 수 있습니다.
+Azure SQL 데이터베이스는 다음 두 가지 인증 유형 중 하나를 사용하도록 구성할 수 있습니다.
 
 - **SQL 인증**은 사용자 이름과 암호를 사용합니다. 데이터베이스의 논리 서버를 만들 때 사용자 이름 및 암호를 사용하여 "서버 관리자" 로그인을 지정했습니다. 이러한 자격 증명을 사용하면 해당 서버의 모든 데이터베이스에 대해 데이터베이스 소유자로 인증 할 수 있습니다.
 

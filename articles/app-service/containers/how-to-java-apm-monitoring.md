@@ -11,11 +11,11 @@ ms.date: 03/21/2019
 ms.author: astay;routlaw
 ms.custom: seodec18
 ms.openlocfilehash: e6a22258266bda18c9ff79590d88e70d512f6c77
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58630151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60849968"
 ---
 # <a name="how-to-application-performance-monitoring-tools-with-java-apps-on-azure-app-service-on-linux"></a>방법: Linux에서 Azure App Service의 Java 앱을 사용한 애플리케이션 성능 모니터링 도구
 

@@ -59,14 +59,14 @@ Azure SQL Database가 정의된 [계산 리소스](memory-and-concurrency-limits
 
     ![데이터 웨어하우스 만들기](media/create-data-warehouse-portal/select-sample.png)
 
-4. **서버**를 클릭하여 새 데이터베이스에 새 서버를 만들고 구성합니다. 다음 정보로 **새 서버 양식**을 작성합니다. 
+4. **서버**를 클릭하여 새 데이터베이스에 새 서버를 만들고 구성합니다. 다음 정보로 **새 서버 폼**을 작성합니다. 
 
     | 설정 | 제안 값 | 설명 |
     | :------ | :-------------- | :---------- |
     | **서버 이름** | 전역적으로 고유한 이름 | 유효한 서버 이름은 [명명 규칙 및 제한 사항](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions)을 참조하세요. |
-    | **서버 관리자 로그인** | 모든 유효한 이름 | 유효한 로그인 이름은 [데이터베이스 식별자](https://docs.microsoft.com/sql/relational-databases/databases/database-identifiers)를 참조하세요.|
+    | **서버 관리자 로그인** | 유효한 이름 | 유효한 로그인 이름은 [데이터베이스 식별자](https://docs.microsoft.com/sql/relational-databases/databases/database-identifiers)를 참조하세요.|
     | **암호** | 유효한 암호 | 암호는 8자 이상이어야 하며 대문자, 소문자, 숫자 및 영숫자가 아닌 문자 범주 중 세 가지 범주의 문자를 포함해야 합니다. |
-    | **위치**: | 모든 유효한 위치 | 지역에 대한 자세한 내용은 [Azure 지역](https://azure.microsoft.com/regions/)을 참조하세요. |
+    | **위치**: | 유효한 위치 | 지역에 대한 자세한 내용은 [Azure 지역](https://azure.microsoft.com/regions/)을 참조하세요. |
     ||||
 
     ![데이터베이스 서버 만들기](media/load-data-from-azure-blob-storage-using-polybase/create-database-server.png)
@@ -81,7 +81,7 @@ Azure SQL Database가 정의된 [계산 리소스](memory-and-concurrency-limits
 
 8. **적용**을 클릭합니다.
 
-9. 이제 SQL Data Warehouse 양식을 완료했으므로 **만들기**를 클릭하여 데이터베이스를 프로비전합니다. 프로비전하는 데 몇 분이 걸립니다. 
+9. 이제 SQL Data Warehouse 폼을 완료했으므로 **만들기**를 클릭하여 데이터베이스를 프로비전합니다. 프로비전하는 데 몇 분이 걸립니다. 
 
     ![만들기 클릭](media/load-data-from-azure-blob-storage-using-polybase/click-create.png)
 
@@ -127,8 +127,8 @@ SQL Data Warehouse 서비스는 외부 애플리케이션 및 도구가 서버 �
 Azure Portal에서 SQL 서버의 정규화된 서버 이름을 확인합니다. 나중에 서버에 연결할 때 이 정규화된 이름을 사용합니다.
 
 1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
-2. 왼쪽 메뉴에서 **SQL Data Warehouses**를 선택하고, **SQL Data Warehouses** 페이지에서 사용자의 데이터 웨어하우스를 클릭합니다. 
-3. 데이터베이스의 경우 Azure Portal의 **Essentials** 창에서 **서버 이름**을 찾고 복사합니다. 이 예제에서 정규화된 이름은 mynewserver-20180430.database.windows.net입니다. 
+2. 왼쪽 메뉴에서 **SQL Data Warehouse**를 선택하고, **SQL Data Warehouse** 페이지에서 사용자의 데이터 웨어하우스를 클릭합니다. 
+3. 데이터베이스의 경우 Azure Portal의 **개요** 창에서 **서버 이름**을 찾고 복사합니다. 이 예제에서 정규화된 이름은 mynewserver-20180430.database.windows.net입니다. 
 
     ![연결 정보](media/load-data-from-azure-blob-storage-using-polybase/find-server-name.png)
 
@@ -144,14 +144,14 @@ Azure Portal에서 SQL 서버의 정규화된 서버 이름을 확인합니다. 
    | :------ | :-------------- | :---------- |
    | 서버 유형 | 데이터베이스 엔진 | 이 값은 필수입니다. |
    | 서버 이름 | 정규화된 서버 이름 | 다음은 예제 **mynewserver-20180430.database.windows.net**입니다. |
-   | Authentication | SQL Server 인증 | SQL 인증은 이 자습서에서 구성되어 있는 유일한 인증 유형입니다. |
+   | 인증 | SQL Server 인증 | SQL 인증은 이 자습서에서 구성되어 있는 유일한 인증 유형입니다. |
    | 로그인 | 서버 관리자 계정 | 서버를 만들 때 지정한 계정입니다. |
    | 암호 | 서버 관리자 계정의 암호 | 서버를 만들 때 지정한 암호입니다. |
    ||||
 
     ![서버 연결](media/load-data-from-azure-blob-storage-using-polybase/connect-to-server.png)
 
-3. **Connect**를 클릭합니다. SSMS에서 개체 탐색기 창이 열립니다. 
+3. **연결**을 클릭합니다. SSMS에서 개체 탐색기 창이 열립니다. 
 
 4. 개체 탐색기에서 **데이터베이스**를 확장합니다. 그런 다음 **mySampleDatabase**를 확장하여 새 데이터베이스의 개체를 표시합니다.
 

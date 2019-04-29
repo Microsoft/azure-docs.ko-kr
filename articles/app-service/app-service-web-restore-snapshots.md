@@ -15,11 +15,11 @@ ms.date: 04/04/2018
 ms.author: aelnably;nicking
 ms.custom: seodec18
 ms.openlocfilehash: 8d4290f1411749e2d8d3d27fbd792ceeeea47ef7
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56100505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60851368"
 ---
 # <a name="restore-an-app-in-azure-from-a-snapshot"></a>스냅숏에서 Azure의 앱 복원
 이 문서에서는 스냅숏에서 [Azure App Service](../app-service/overview.md)의 앱을 복원하는 방법을 설명합니다. 앱의 스냅숏 중 하나를 기반으로 이전 상태로 앱을 복원할 수 있습니다. 스냅숏 백업을 사용하도록 설정할 필요는 없으며 플랫폼이 데이터 복구를 위해 모든 앱의 스냅숏을 자동으로 저장합니다.

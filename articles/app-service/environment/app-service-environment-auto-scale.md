@@ -16,11 +16,11 @@ ms.date: 07/11/2017
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: 29a639142395c43fea06c1d6d18909b3c9f33b86
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53270028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60769417"
 ---
 # <a name="autoscaling-and-app-service-environment-v1"></a>자동 크기 조정 및 App Service Environment v1
 
@@ -76,7 +76,7 @@ App Service Environment는 다음과 같이 수동 크기 조정으로 구성되
 
 QA 및 개발에 대한 App Service 계획은 수동 확장 하도록 구성됩니다. App Service 계획 프로덕션은 부하 및 트래픽을 다양하게 처리하도록 자동 크기 조정으로 설정됩니다.
 
-Frank는 응용 프로그램에 대해 잘 알고 있습니다. 직원이 사무실에 있는 동안 사용하는 LOB(기간 업무) 응용 프로그램이므로 사용이 많은 피크 시간은 오전 9시와 오후 6시 사이라는 것을 알고 있습니다. 사용자가 퇴근한 후에는 사용량이 줍니다. 피크 시간 이외에도 사용자가 모바일 디바이스 또는 가정용 PC를 사용하여 원격으로 앱에 액세스할 수 있으므로 여전히 일부 부하가 있습니다. 프로덕션 App Service 계획은 이미 다음 규칙을 기준으로 CPU 사용량에 따라 자동 크기 조정을 수행하도록 구성되어 있습니다.
+Frank는 애플리케이션에 대해 잘 알고 있습니다. 직원이 사무실에 있는 동안 사용하는 LOB(기간 업무) 애플리케이션이므로 사용이 많은 피크 시간은 오전 9시와 오후 6시 사이라는 것을 알고 있습니다. 사용자가 퇴근한 후에는 사용량이 줍니다. 피크 시간 이외에도 사용자가 모바일 디바이스 또는 가정용 PC를 사용하여 원격으로 앱에 액세스할 수 있으므로 여전히 일부 부하가 있습니다. 프로덕션 App Service 계획은 이미 다음 규칙을 기준으로 CPU 사용량에 따라 자동 크기 조정을 수행하도록 구성되어 있습니다.
 
 ![LOB 앱에 대한 특정 설정입니다.][asp-scale]
 

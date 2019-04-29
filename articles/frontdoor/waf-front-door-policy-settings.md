@@ -11,11 +11,11 @@ ms.workload: infrastructure-services
 ms.date: 04/08/2019
 ms.author: tyao;kumud
 ms.openlocfilehash: 4c2f070e9b3c972f063008df8880b196ddb069cc
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59797466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61459371"
 ---
 # <a name="policy-settings-for-web-application-firewall-with-azure-front-door"></a>Azure 프런트 도어를 사용 하 여 웹 응용 프로그램 방화벽에 대 한 정책 설정
 

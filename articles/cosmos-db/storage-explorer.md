@@ -8,11 +8,11 @@ ms.date: 12/07/2018
 ms.author: dech
 ms.custom: seodec18
 ms.openlocfilehash: 8700d0988927b221ace82a492e9902f1f36a562b
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55731373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60951266"
 ---
 # <a name="work-with-data-using-azure-storage-explorer"></a>Azure Storage 탐색기를 사용하여 데이터 작업
 

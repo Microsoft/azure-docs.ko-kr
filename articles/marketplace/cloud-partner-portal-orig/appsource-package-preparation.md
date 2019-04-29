@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
 ms.openlocfilehash: cc06ddf2fce93bef27e7aaee85b47179608e192b
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57837036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60625476"
 ---
 # <a name="appsource-package-preparation"></a>AppSource 패키지 준비
 
@@ -86,7 +86,7 @@ AppSource 패키지에는 다음과 같은 몇 가지 추가 파일이 필요합
 1. jpg(해상도 32x32)
 2. html(HTML 서식 파일)
 3. **Content_Types.xml**(위의 파일과 같음)
-4. xml
+4. Xml
 
 input.xml의 예제 코드는 다음과 같습니다. 정의는 아래 표를 참조하세요.
 
@@ -133,7 +133,7 @@ input.xml의 예제 코드는 다음과 같습니다. 정의는 아래 표를 �
 
 1. 앞에서 만든 zip 파일
 2. **Content_Types.xml**
-3. xml
+3. Xml
 4. png
 5. html
 

@@ -1,5 +1,5 @@
 ---
-title: 원격 모니터링 데이터 액세스 제어 - Azure | Microsoft Docs
+title: 원격 모니터링 데이터 액세스 제어-Azure | Microsoft Docs
 description: 이 문서에서는 원격 모니터링 솔루션 가속기에서 Time Series Insights 원격 분석 데이터 탐색기에 대한 액세스 제어를 구성하는 방법에 대한 정보를 제공합니다.
 author: dominicbetts
 manager: timlt
@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 08/06/2018
 ms.topic: conceptual
-ms.openlocfilehash: ecc3cb32a4bbacb92c875133bf72fc0374bc24df
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
-ms.translationtype: HT
+ms.openlocfilehash: 778637b7488b7c5c21b600673890da79a76b4997
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46370099"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61443242"
 ---
 # <a name="configure-access-controls-for-the-time-series-insights-telemetry-explorer"></a>Time Series Insights 원격 분석 데이터 탐색기에 대한 액세스 제어 구성
 
@@ -29,5 +29,5 @@ ms.locfileid: "46370099"
 
 원격 모니터링 솔루션 가속기에 대한 자세한 개념 정보는 [원격 모니터링 아키텍처](iot-accelerators-remote-monitoring-sample-walkthrough.md)를 참조하세요.
 
-원격 모니터링 솔루션 사용자 지정에 대한 자세한 내용은 [마이크로 서비스 사용자 지정 및 재배포](iot-accelerators-microservices-example.md)
-<!-- Next tutorials in the sequence -->를 참조하세요.
+원격 모니터링 솔루션 사용자 지정에 대한 자세한 내용은 [마이크로 서비스 사용자 지정 및 재배포](iot-accelerators-microservices-example.md)를 참조하세요.
+<!-- Next tutorials in the sequence -->

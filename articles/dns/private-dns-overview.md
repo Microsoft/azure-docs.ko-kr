@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 3/1/2019
 ms.author: victorh
 ms.openlocfilehash: 7f5f377f34a43dfb01ea516e023bb98f118d0dd4
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57247225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60596547"
 ---
 # <a name="use-azure-dns-for-private-domains"></a>사설 도메인에 Azure DNS 사용
 

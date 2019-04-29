@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: f7a14e975a5ca3aee5588f55f43b28081c100074
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: e60b202a32745062d2078d9721dfeba7aba69bda
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59358167"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63763894"
 ---
 # <a name="best-practices-to-use-azure-maps-search-service"></a>Azure Maps 검색 서비스를 사용 하는 모범 사례
 
@@ -132,9 +132,9 @@ https://atlas.microsoft.com/search/address/reverse/json?api-version=1.0&subscrip
 
 ### <a name="predictive-mode-auto-suggest"></a>예측 모드 (자동 제안)
 
-일부 쿼리에 대 한 더 많은 일치 항목을 찾으려면 `typeHead` 매개 변수 'true'로 설정 해야 합니다. 쿼리를 부분 입력으로 해석 됩니다 하 고 검색 예측 모드로 전환 됩니다. 그렇지 않은 경우 서비스는 모든 관련 정보에 전달 된 가정 합니다.
+일부 쿼리에 대 한 더 많은 일치 항목을 찾으려면 `typeahead` 매개 변수 'true'로 설정 해야 합니다. 쿼리를 부분 입력으로 해석 됩니다 하 고 검색 예측 모드로 전환 됩니다. 그렇지 않은 경우 서비스는 모든 관련 정보에 전달 된 가정 합니다.
 
-샘플에서 쿼리 아래 볼 수 있습니다 "Microso"에 대 한 주소 서비스 검색 쿼리를 사용 하 여 합니다 `typehead` 매개 변수 설정 **true**합니다. 응답에 관찰 되는 경우에 검색 서비스 부분 쿼리로 쿼리를 해석 하 고 자동으로 제안 된 쿼리에 대 한 결과 포함 하는 응답을 볼 수 있습니다.
+샘플에서 쿼리 아래 볼 수 있습니다 "Microso"에 대 한 주소 서비스 검색 쿼리를 사용 하 여 합니다 `typeahead` 매개 변수 설정 **true**합니다. 응답에 관찰 되는 경우에 검색 서비스 부분 쿼리로 쿼리를 해석 하 고 자동으로 제안 된 쿼리에 대 한 결과 포함 하는 응답을 볼 수 있습니다.
 
 **샘플 쿼리:**
 

@@ -1,14 +1,8 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 7abfe08a6c6446149b6960ba724fc3227d7a2700
-ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
-ms.translationtype: MT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 02/24/2019
-ms.locfileid: "56752077"
 documentType: LandingData
 title: Azure 공간 앵커를 사용 하 여 Unity에서 빌드
 metadata:
-  document_id: 
+  document_id: null
   title: Azure 공간 앵커 Unity 개요 | Microsoft Docs
   meta.description: Learn how Azure Spatial Anchors can be used within Unity Apps.
   services: azure-spatial-anchors
@@ -21,22 +15,22 @@ metadata:
   ms.date: 02/22/2019
   ms.author: rgarcia
 sections:
-- title: 
-  items:
-  - type: paragraph
-    text: 개발자를 만들고 Azure 공간 앵커를 사용 하는 혼합된 현실 응용 프로그램 배포에 대 한 Unity를 선택할 수 있습니다. 다음 플랫폼 지원 됩니다.
-  - type: list
-    style: icon48
+  - title: null
     items:
-    - image:
-        src: https://docs.microsoft.com/media/logos/logo_Windows.svg
-      text: HoloLens
-      href: https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens
-    - image:
-        src: https://docs.microsoft.com/media/logos/logo_android.svg
-      text: Android
-      href: https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-android
-    - image:
-        src: https://docs.microsoft.com/media/logos/logo_ios.svg
-      text: iOS
-      href: https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-ios
+      - type: paragraph
+        text: 개발자를 만들고 Azure 공간 앵커를 사용 하는 혼합된 현실 응용 프로그램 배포에 대 한 Unity를 선택할 수 있습니다. 다음 플랫폼 지원 됩니다.
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/logos/logo_Windows.svg'
+            text: HoloLens
+            href: 'https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens'
+          - image:
+              src: 'https://docs.microsoft.com/media/logos/logo_android.svg'
+            text: Android
+            href: 'https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-android'
+          - image:
+              src: 'https://docs.microsoft.com/media/logos/logo_ios.svg'
+            text: iOS
+            href: 'https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-ios'

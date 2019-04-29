@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: roaror
 ms.openlocfilehash: 476a143555323bbb5058541000a5b1a26d23b71a
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60013908"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61330867"
 ---
 # <a name="pre-migration-steps-for-data-migrations-from-mongodb-to-azure-cosmos-dbs-api-for-mongodb"></a>마이그레이션 전 단계 데이터 마이그레이션에 대 한 MongoDB에서 Azure Cosmos DB의 MongoDB 용 API
 
@@ -89,4 +89,4 @@ Vm 또는 온-프레미스 서버와는 달리 Ru는 언제 든 지 확장 및 �
 * [Azure Cosmos DB에서 분할](partition-data.md)
 * [Azure Cosmos DB의에서 전역 배포](distribute-data-globally.md)
 * [Azure Cosmos DB의 인덱싱](index-overview.md)
-* [Azure Cosmos DB의에서 요청 단위](request-units.md)
+* [Azure Cosmos DB의 요청 단위](request-units.md)

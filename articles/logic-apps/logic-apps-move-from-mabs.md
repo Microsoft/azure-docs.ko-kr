@@ -9,12 +9,12 @@ ms.author: jonfan
 ms.reviewer: estfan, LADocs
 ms.topic: article
 ms.date: 05/30/2017
-ms.openlocfilehash: f27e82e780917e00625ef6a14ab8317d1f5b8ae8
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
-ms.translationtype: HT
+ms.openlocfilehash: f813cb5d8d5c442fc17f126c3a2ff6de7b0bdde1
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43124802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61321253"
 ---
 # <a name="migrate-from-biztalk-services-to-azure-logic-apps"></a>BizTalk Services에서 Azure Logic Apps로 마이그레이션
 
@@ -106,7 +106,7 @@ BizTalk Services 처리에서 보강 단계는 받은 데이터와 관련된 메
 
 BizTalk Services를 사용하면 사용자 고유의 어셈블리에 업로드된 [사용자 지정 코드를 실행](https://msdn.microsoft.com/library/azure/dn232389.aspx)할 수 있습니다. 이 기능은 [IMessageInspector](https://msdn.microsoft.com/library/microsoft.biztalk.services.imessageinspector) 인터페이스에 의해 구현됩니다. 브리지의 각 단계에는 이 인터페이스를 구현하기 위해 만든 .NET 형식을 제공하는 두 개의 속성(On Enter Inspector 및 On Exit Inspector)이 있습니다. 사용자 지정 코드를 사용하면 데이터에 대해 더 복잡한 처리를 수행할 수 있으며, 일반적인 비즈니스 논리를 수행하는 어셈블리에서 기존 코드를 다시 사용할 수 있습니다. 
 
-Logic Apps는 사용자 지정 코드를 실행하는 두 가지 기본 방법인 Azure Functions 및 API Apps를 제공합니다. Azure Functions는 Logic Apps에서 만들고 호출할 수 있습니다. [Azure Functions를 통해 Logic Apps에 대한 사용자 지정 코드 추가 및 실행](../logic-apps/logic-apps-azure-functions.md)을 참조하세요. Azure App Service의 일부인 API Apps를 사용하여 고유한 트리거 및 작업을 만듭니다. [Logic Apps에서 사용할 사용자 지정 API 만들기](../logic-apps/logic-apps-create-api-app.md)에 대해 자세히 알아보세요. 
+Logic Apps는 사용자 지정 코드를 실행 하는 두 가지를 제공 합니다. Azure Functions 및 API 앱입니다. Azure Functions는 Logic Apps에서 만들고 호출할 수 있습니다. [Azure Functions를 통해 Logic Apps에 대한 사용자 지정 코드 추가 및 실행](../logic-apps/logic-apps-azure-functions.md)을 참조하세요. Azure App Service의 일부인 API Apps를 사용하여 고유한 트리거 및 작업을 만듭니다. [Logic Apps에서 사용할 사용자 지정 API 만들기](../logic-apps/logic-apps-create-api-app.md)에 대해 자세히 알아보세요. 
 
 BizTalk Services에서 호출하는 어셈블리에 사용자 지정 코드가 있는 경우, 이 코드를 Azure Functions로 이동하거나 구현하는 항목에 따라 API Apps를 사용하여 사용자 지정 API를 만들 수 있습니다. 예를 들어 Logic Apps에 커넥터가 없는 다른 서비스를 래핑하는 코드가 있는 경우, API App을 만들고 API App이 논리 앱 내에서 제공하는 작업을 사용합니다. 도우미 함수 또는 라이브러리가 있는 경우 Azure Functions가 가장 적합할 수 있습니다.
 

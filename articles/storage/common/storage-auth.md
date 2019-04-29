@@ -2,18 +2,19 @@
 title: Azure Storage에 대한 액세스 권한 부여 | Microsoft Docs
 description: Azure Active Directory, 공유 키 인증 또는 공유 액세스 서명을 포함하여 Azure Storage에 대한 액세스 권한을 부여하는 다양한 방법을 알아봅니다.
 services: storage
-author: tamram
+author: WenJason
 ms.service: storage
 ms.topic: article
-ms.date: 03/21/2019
-ms.author: tamram
+origin.date: 03/21/2019
+ms.date: 04/08/2019
+ms.author: v-jay
 ms.subservice: common
 ms.openlocfilehash: ba4d83d620a597c9a59f1a3c7f2f9d6722ba42d8
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58368367"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61483709"
 ---
 # <a name="authorizing-access-to-azure-storage"></a>Azure Storage에 대한 액세스 권한 부여
 

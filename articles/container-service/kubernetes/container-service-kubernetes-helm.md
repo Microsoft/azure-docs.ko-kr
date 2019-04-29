@@ -10,11 +10,11 @@ ms.date: 04/10/2017
 ms.author: saudas
 ms.custom: mvc
 ms.openlocfilehash: 05edbf40e8cd5f8edbdc8b74b540962b1a25c8de
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52997878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60712315"
 ---
 # <a name="deprecated-use-helm-to-deploy-containers-on-a-kubernetes-cluster"></a>(사용되지 않음) Helm을 사용하여 Kubernetes 클러스터에 컨테이너 배포
 
@@ -28,7 +28,7 @@ ms.locfileid: "52997878"
 Helm에는 두 가지 구성 요소가 있습니다. 
 * **Helm CLI**는 사용자 컴퓨터에서 로컬로 또는 클라우드에서 실행되는 클라이언트입니다  
 
-* **Tiller**는 Kubernetes 클러스터에서 실행되는 서버로 Kubernetes 응용 프로그램의 수명 주기를 관리합니다 
+* **Tiller**는 Kubernetes 클러스터에서 실행되는 서버로 Kubernetes 애플리케이션의 수명 주기를 관리합니다 
  
 ## <a name="prerequisites"></a>필수 조건
 

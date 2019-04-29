@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 02/20/2019
 ms.author: juliako
 ms.openlocfilehash: 1c2ec576211741390ef91233101261a7881e4180
-ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56652215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61466751"
 ---
 # <a name="transforms-and-jobs"></a>Transform 및 Job
 
@@ -67,7 +67,7 @@ Event Grid로 이벤트를 모니터링하여 작업의 진행 상황 및 상태
 
 [오류 코드](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode)를 참조하세요.
 
-## <a name="paging"></a>페이징
+## <a name="paging"></a>Paging
 
 [Media Services 엔터티 필터링, 순서 지정, 페이징](entities-overview.md)을 참조하세요.
 

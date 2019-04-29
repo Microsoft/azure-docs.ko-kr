@@ -13,15 +13,15 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 01/30/2019
 ms.openlocfilehash: 928338a911efae051df7164239dbd19f9317338a
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55825170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60584610"
 ---
 # <a name="planning-for-azure-maintenance-events-in-azure-sql-database"></a>Azure SQL Database의 Azure 유지 관리 이벤트 계획
 
-Azure SQL Database에서 계획된 유지 관리 이벤트를 준비하는 방법을 알아봅니다.
+Azure SQL 데이터베이스에서 계획된 유지 관리 이벤트를 준비하는 방법을 알아봅니다.
 
 ## <a name="what-is-a-planned-maintenance-event"></a>계획된 유지 관리 이벤트란?
 

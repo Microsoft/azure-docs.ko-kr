@@ -11,11 +11,11 @@ ms.topic: article
 ms.date: 06/27/2018
 ms.author: sachins
 ms.openlocfilehash: 50d0ed644b5afa744e8bce478199079fd4fb7432
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59684160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60878961"
 ---
 # <a name="best-practices-for-using-azure-data-lake-storage-gen1"></a>Azure Data Lake Storage Gen1을 사용하는 모범 사례
 
@@ -98,7 +98,7 @@ Data Lake Storage Gen1을 사용하여 데이터를 복원하는 경우 HA/DR �
 
 다음은 Data Lake Storage Gen1 계정 간의 복제를 오케스트레이션하는 데 권장되는 상위 세 가지 옵션과 각각의 주요 차이점입니다.
 
-|  |Distcp  |Azure 데이터 팩터리  |AdlCopy  |
+|  |Distcp  |Azure Data Factory  |AdlCopy  |
 |---------|---------|---------|---------|
 |**크기 조정 제한**     | 작업자 노드로 제한됨        | 최대 클라우드 데이터 이동 단위로 제한됨        | 분석 단위로 제한됨        |
 |**델타 복사 지원**     |   예      | 아니오         | 아닙니다.         |

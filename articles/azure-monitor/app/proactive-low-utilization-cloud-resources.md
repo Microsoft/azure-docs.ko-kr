@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 12/12/2017
 ms.author: mbullwin
 ms.openlocfilehash: 7cf72068b9cabceb0c5b535986ac4dfb62151b94
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54027600"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61297515"
 ---
 # <a name="low-cpu-utilization-in-cloud-resources-preview"></a>클라우드 리소스의 낮은 CPU 사용률(미리 보기)
 

@@ -13,11 +13,11 @@ ms.reviewer: billgib, stein
 manager: craigg
 ms.date: 10/16/2018
 ms.openlocfilehash: 8f19303dba7fcf2a9edb325464fdd3748220903e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57994914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61486149"
 ---
 # <a name="deploy-and-explore-a-sharded-multi-tenant-application"></a>분할된 다중 테넌트 응용 프로그램 배포 및 탐색
 
@@ -250,7 +250,7 @@ PowerShell 세션을 닫으면 모든 작업이 중지됩니다.
 
 - 탄력적 풀에 대해 알아보려면 다음을 참조하세요.
 
-  - [탄력적 풀이 여러 Azure SQL Database를 관리하고 크기를 조정하는 데 도움을 주는 방식](sql-database-elastic-pool.md)
+  - [탄력적 풀이 여러 Azure SQL 데이터베이스를 관리하고 크기를 조정하는 데 도움을 주는 방식](sql-database-elastic-pool.md)
   - [Azure SQL Database를 사용하여 확장](sql-database-elastic-scale-introduction.md)
 
 ## <a name="next-steps"></a>다음 단계

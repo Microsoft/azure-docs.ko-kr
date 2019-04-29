@@ -12,15 +12,15 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
-ms.date: 06/15/2018
+ms.date: 04/05/2019
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6fd3eccf3de5d46520dc5a50cab66667c875799e
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: MT
+ms.openlocfilehash: ee54d37050991763e60a6feb96c75d80384a42ac
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55454612"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60722227"
 ---
 # <a name="deploy-applications-to-compute-nodes-with-batch-application-packages"></a>애플리케이션을 배포하여 Batch 애플리케이션 패키지에서 노드 계산
 
@@ -29,14 +29,11 @@ Azure Batch의 애플리케이션 패키지 기능은 풀의 계산 노드에 �
 이 문서에서는 Azure portal을 사용하여 애플리케이션 패키지를 업로드하고 관리하는 방법을 알아봅니다. [Batch .NET][api_net] 라이브러리를 사용하여 풀의 계산 노드에 설치하는 방법을 알아봅니다.
 
 > [!NOTE]
-> 
-> 애플리케이션 패키지는 2017년 7월 5일 이후에 만들어진 모든 Batch 풀에서 지원됩니다. 2016년 3월 10일에서 2017년 7월 5일 사이에 만들어진 Batch 풀에서는 Cloud Service 구성을 사용하여 풀을 만든 경우에만 이러한 패키지가 지원됩니다. 2016년 3월 10일 이전에 만들어진 Batch 풀은 애플리케이션 패키지를 지원하지 않습니다.
+> 애플리케이션 패키지는 2017년 7월 5일 이후에 만든 모든 Batch 풀에서 지원됩니다. 2016년 3월 10일에서 2017년 7월 5일 사이에 만들어진 Batch 풀에서는 Cloud Service 구성을 사용하여 풀을 만든 경우에만 이러한 패키지가 지원됩니다. 2016년 3월 10일 이전에 만들어진 Batch 풀은 애플리케이션 패키지를 지원하지 않습니다.
 >
 > 애플리케이션 패키지를 만들고 관리하는 API는 [Batch Management .NET][api_net_mgmt] 라이브러리의 일부입니다. 계산 노드에서 애플리케이션 패키지를 설치하는 API는 [Batch .NET][api_net] 라이브러리의 일부입니다. 다른 언어의 경우 상응하는 기능을 Batch API에서 제공합니다. 
 >
 > 여기서 설명하는 애플리케이션 패키지 기능은 이전 버전의 서비스에서 사용할 수 있는 Batch 앱 기능을 대체합니다.
-> 
-> 
 
 ## <a name="application-package-requirements"></a>애플리케이션 패키지 요구 사항
 애플리케이션 패키지를 사용하려면 Batch 계정에 [Azure Storage 계정을 연결](#link-a-storage-account)해야 합니다.
@@ -116,6 +113,14 @@ Batch 계정의 애플리케이션을 보려면 **Batch 계정**이 표시되는
 * **패키지**: 이 애플리케이션과 연결된 버전의 수입니다.
 * **기본 버전**: 풀용 애플리케이션을 지정할 때 버전을 지정하지 않으면 설치되는 애플리케이션 버전입니다. 이 설정은 선택 사항입니다.
 * **업데이트 허용**: 패키지 업데이트, 삭제 및 추가 허용 여부를 지정하는 값입니다. 이 값을 **아니요**로 설정하면 애플리케이션에 패키지 업데이트 및 삭제를 사용할 수 없습니다. 새 애플리케이션 패키지 버전만 추가할 수 있습니다. 기본값은 **예**입니다.
+
+계산 노드 응용 프로그램 패키지의 파일 구조를 확인 하려는 경우 포털에서 Batch 계정으로 이동 합니다. Batch 계정에서로 이동 **풀**합니다. 원하는 계산 노드를 포함 하는 풀을 선택 합니다.
+
+![풀의 노드][13]
+
+풀을 선택한 후에 응용 프로그램 패키지를 설치 하는 계산 노드로 이동 합니다. 여기에서 응용 프로그램 패키지의 세부 정보에 위치한 합니다 **응용 프로그램** 폴더입니다. 계산 노드에서 추가 폴더에는 시작 태스크, 출력 파일, 오류 출력 등과 같은 다른 파일을 포함합니다.
+
+![노드에 파일][14]
 
 ### <a name="view-application-details"></a>애플리케이션 세부 정보 보기
 애플리케이션에 대한 세부 정보를 확인하려면 **애플리케이션** 창에서 애플리케이션을 선택합니다.
@@ -374,3 +379,5 @@ foreach (ApplicationSummary app in applications)
 [10]: ./media/batch-application-packages/app_pkg_10.png "포털에서 저장소 계정 블레이드 선택"
 [11]: ./media/batch-application-packages/app_pkg_11.png "Azure portal의 패키지 업데이트 블레이드"
 [12]: ./media/batch-application-packages/app_pkg_12.png "Azure portal의 패키지 삭제 확인 대화 상자"
+[13]: ./media/batch-application-packages/package-file-structure.png "Azure portal에서 노드 정보를 계산 합니다."
+[14]: ./media/batch-application-packages/package-file-structure-node.png "Azure portal에 표시 하는 계산 노드에서 파일"

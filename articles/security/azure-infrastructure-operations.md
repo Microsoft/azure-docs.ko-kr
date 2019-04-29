@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 06/28/2018
 ms.author: terrylan
 ms.openlocfilehash: 0099eb61d97f813f7adca320b47c195fa1aabbdc
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56104554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60591469"
 ---
 # <a name="azure-production-operations-and-management"></a>Azure 프로덕션 운영 및 관리    
 Azure 프로덕션 네트워크의 관리 및 운영은 Azure 및 Azure SQL Database의 운영 팀 간에 조정된 노력입니다. 이러한 팀은 환경 내에서 여러 시스템 및 애플리케이션 성능 모니터링 도구를 사용합니다. 또한 적절한 도구를 사용하여 네트워크 장치, 서버, 서비스 및 애플리케이션 프로세스를 모니터링합니다.
@@ -36,7 +36,7 @@ Azure 환경에서 실행되는 서비스의 안전한 실행을 보장하기 �
    - 분산 시스템의 노드 전체에서 실시간 모니터링, 경고 및 디버깅 기능
    - 분산 근본 원인 분석 및 서비스 인사이트를 위한 운영 데이터 및 메트릭의 중앙 집중식 수집
    - 배포, 변경 관리 및 모니터링을 위한 운영 도구
-   - 지속적으로 실행되고 실시간으로 모니터링하는 Azure SQL Database Windows Fabric 플랫폼 및 watchdog 스크립트
+   - 지속적으로 실행되고 실시간으로 모니터링하는 Azure SQL Database Windows Fabric 플랫폼 및 watchdog 스크립트.
 
 예외가 발생하면 Azure 인시던트 심사 팀에 이어 수행되는 인시던트 대응 프로세스가 활성화됩니다. 적절한 Azure 지원 담당자에게 인시던트에 응답하도록 알려줍니다. 문제 추적 및 해결은 중앙 집중식 발권 시스템에서 문서화되고 관리됩니다. 시스템 작동 시간 메트릭은 NDA(비밀 유지 계약) 및 요청에 따라 제공됩니다.
 

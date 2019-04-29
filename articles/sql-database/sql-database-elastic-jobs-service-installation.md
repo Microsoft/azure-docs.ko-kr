@@ -13,11 +13,11 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 12/04/2018
 ms.openlocfilehash: 32df3e7ac6dc22e247bd4aecea4f39bf6d3a8017
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58316896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61475765"
 ---
 # <a name="installing-elastic-database-jobs-overview"></a>Elastic Database 작업 설치 개요
 
@@ -92,7 +92,7 @@ ms.locfileid: "58316896"
 
 <tr>
     <td>SqlServerDatabaseSlo</td>
-    <td>Standard 버전에 대한 계산 크기를 제공합니다. 이 매개 변수의 기본값은 S0입니다. 매개 변수 값... /.. /.. /.. / S9/S12 Azure SQL database가 해당 계산 크기를 사용 하는 허용 됩니다. SQL Database 계산 크기에 대한 자세한 내용은 <a href="https://docs.microsoft.com/azure/sql-database/sql-database-elastic-jobs-overview#components-and-pricing">Elastic Database 작업 구성 요소 및 가격</a>을 참조하세요.</td>
+    <td>Standard 버전에 대한 컴퓨팅 크기를 제공합니다. 이 매개 변수의 기본값은 S0입니다. 매개 변수 값... /.. /.. /.. / S9/S12 Azure SQL database가 해당 계산 크기를 사용 하는 허용 됩니다. SQL Database 컴퓨팅 크기에 대한 자세한 내용은 <a href="https://docs.microsoft.com/azure/sql-database/sql-database-elastic-jobs-overview#components-and-pricing">Elastic Database 작업 구성 요소 및 가격</a>을 참조하세요.</td>
 </tr>
 
 <tr>

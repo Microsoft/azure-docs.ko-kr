@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.date: 08/14/2017
 ms.author: cynthn
 ms.topic: conceptual
-ms.openlocfilehash: 05ebb362a8d6de78605493569ce313c044373104
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.openlocfilehash: b2904e23c8569522c93ea648300174d0873ca16b
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57790801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61487467"
 ---
 # <a name="how-to-monitor-virtual-machines-in-azure"></a>Azure에서 가상 머신을 모니터링하는 방법
 

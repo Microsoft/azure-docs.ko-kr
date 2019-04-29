@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.custom: seodec18
 ms.openlocfilehash: 33d8e18dcec98710443623c03651aa568aa37009
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60010384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60819949"
 ---
 # <a name="configure-automated-machine-learning-experiments"></a>자동화된 Machine Learning 실험 구성
 
@@ -121,7 +121,7 @@ y_valid |   pandas 데이터 프레임 또는 numpy 배열 | data_train, label |
 sample_weight | pandas 데이터 프레임 또는 numpy 배열 |   data_train, label, columns| _선택 사항_ 각 샘플에 대한 가중치입니다. 데이터 요소에 대해 서로 다른 가중치를 할당하려는 경우에 사용합니다.
 sample_weight_valid | pandas 데이터 프레임 또는 numpy 배열 | data_train, label, columns |    _선택 사항_ 각 유효성 검사 샘플에 대한 가중치입니다. 지정하지 않으면 sample_weight가 학습과 유효성 검사 간에 분할됩니다.
 data_train |    pandas 데이터 프레임 |  X, y, X_valid, y_valid |    학습할 모든 데이터(기능 + 레이블)입니다.
-label | string  | X, y, X_valid, y_valid |  레이블을 나타내는 data_train의 열입니다.
+label | 문자열  | X, y, X_valid, y_valid |  레이블을 나타내는 data_train의 열입니다.
 열 | 문자열 배열  ||  _선택 사항_ 기능에 사용할 열의 허용 목록입니다.
 cv_splits_indices   | 정수 배열 ||  _선택 사항_ 교차 유효성 검사를 위해 데이터를 분할할 인덱스 목록입니다.
 
@@ -134,7 +134,7 @@ cv_splits_indices   | 정수 배열 ||  _선택 사항_ 교차 유효성 검사�
 >* 식을 사용하여 열 추가
 >* 누락 값 입력
 >* 예제별 열 파생
->* 필터링
+>* Filtering
 >* 사용자 지정 Python 변환
 
 data prep sdk에 대해 알아보려면 [모델링을 위한 데이터 준비 방법 문서](how-to-load-data.md)를 참조하세요.

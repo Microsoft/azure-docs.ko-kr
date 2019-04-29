@@ -15,15 +15,15 @@ ms.date: 04/03/2019
 ms.author: celested
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a2965fecd3aca17d6c4df7e49ad466377de9762
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b63118a7c5fae49edebe4ae4976a1362781ae8cf
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60291690"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63759781"
 ---
 # <a name="customizing-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Azure Active Directory에서 SaaS 애플리케이션에 대한 사용자 프로비전 특성 매핑 사용자 지정
-Microsoft Azure AD는 Salesforce, Google Apps 등과 같은 타사 SaaS 애플리케이션에 프로비전을 하는 사용자에 대한 지원을 제공합니다. 타사 SaaS 응용 프로그램에 대 한 사용자 프로 비전을 사용 하는 경우 Azure portal 특성 매핑을 통해 그 특성 값을 제어 합니다.
+Microsoft Azure AD는 Salesforce, G Suite 등과 같은 타사 SaaS 응용 프로그램에 사용자 프로 비전에 대 한 지원을 제공 합니다. 타사 SaaS 응용 프로그램에 대 한 사용자 프로 비전을 사용 하는 경우 Azure portal 특성 매핑을 통해 그 특성 값을 제어 합니다.
 
 특성 및 특성-Azure AD 사용자 개체와 각 SaaS 앱의 사용자 개체 간의 매핑 집합을 미리 구성 된 경우 일부 앱은 다른 유형의 개체 그룹과 같은 사용자와 함께 관리 합니다.
 
@@ -84,7 +84,7 @@ Microsoft Azure AD는 Salesforce, Google Apps 등과 같은 타사 SaaS 애플�
 
 ## <a name="editing-group-attribute-mappings"></a>그룹 특성 매핑 편집
 
-ServiceNow, Box 및 Google Apps 등의 응용 프로그램의 그룹 개체와 사용자 개체 프로 비전 하는 기능을 지원 합니다. 그룹 개체는 표시 이름과 같은 그룹 속성을 포함 하 고 그룹 멤버와 함께 별칭, 전자 메일 수 있습니다.
+ServiceNow, Box 및 G Suite 등의 응용 프로그램의 그룹 개체와 사용자 개체 프로 비전 하는 기능을 지원 합니다. 그룹 개체는 표시 이름과 같은 그룹 속성을 포함 하 고 그룹 멤버와 함께 별칭, 전자 메일 수 있습니다.
 
 ![ServiceNow](./media/customize-application-attributes/24.png)
 

@@ -12,11 +12,11 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 04/10/2019
 ms.openlocfilehash: 23314e97051da95ab164baeab6e9d089f486351a
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59489693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61487414"
 ---
 # <a name="time-zone-in-azure-sql-database-managed-instance-preview"></a>Azure SQL Database 관리 되는 인스턴스 (미리 보기)의 표준 시간대
 

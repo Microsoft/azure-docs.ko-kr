@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
 ms.openlocfilehash: 24bb7a1fcb1569922fb34034fb3c0d003cdd7061
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51572429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60335392"
 ---
 ## <a name="repeatability-during-copy"></a>복사 중 반복성
 다른 데이터 저장소에서 Azure SQL/SQL Server로 데이터를 복사할 때 의도치 않은 결과를 방지하려면 반복성을 유지해야 합니다. 

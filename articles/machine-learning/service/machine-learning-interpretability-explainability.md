@@ -11,11 +11,11 @@ author: mesameki
 ms.reviewer: larryfr
 ms.date: 04/09/2019
 ms.openlocfilehash: 668551603dfa2a9c42f4538fd9a66ee646e1feb7
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59682460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60817258"
 ---
 # <a name="model-interpretability-with-azure-machine-learning-service"></a>Azure Machine Learning 서비스를 사용 하 여 모델 interpretability
 

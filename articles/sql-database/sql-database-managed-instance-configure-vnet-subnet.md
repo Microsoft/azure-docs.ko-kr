@@ -7,17 +7,18 @@ ms.subservice: managed-instance
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: srdan-bozovic-msft
-ms.author: srbozovi
+author: WenJason
+ms.author: v-jay
 ms.reviewer: sstein, bonova, carlrab
-manager: craigg
-ms.date: 01/15/2019
+manager: digimobile
+origin.date: 01/15/2019
+ms.date: 04/29/2019
 ms.openlocfilehash: c4ff12f0c9adcb9943a6e2426eaf2740ba171e39
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59792438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60700482"
 ---
 # <a name="configure-an-existing-virtual-network-for-azure-sql-database-managed-instance"></a>Azure SQL Database Managed Instance의 기존 가상 네트워크 구성
 

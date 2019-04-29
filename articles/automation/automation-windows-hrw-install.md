@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 09/17/2018
+ms.date: 04/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 7c6d8fbe54d89fc587c8841b8983d7fdcba29b7d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 0cc00b4f2075ba77490d310080b9968bedb8dc1f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59787984"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61304959"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Windows Hybrid Runbook Worker 배포
 
@@ -91,9 +91,13 @@ Log Analytics 작업 영역이 아직 없는 경우 [작업 영역 관리](../az
 
 #### <a name="2-add-the-automation-solution-to-the-log-analytics-workspace"></a>2. Log Analytics 작업 영역에 Automation 솔루션 추가
 
-Azure Monitor 로그에 기능을 추가 하는 솔루션입니다. Automation 솔루션은 Hybrid Runbook Worker에 대한 지원을 포함하여 Azure Automation을 위한 기능을 추가합니다. 작업 영역에 솔루션을 추가할 때 다음 단계에서 설치할 에이전트 컴퓨터로 Worker 구성 요소를 자동으로 푸시합니다.
+Azure Monitor Automation 로그 솔루션 Hybrid Runbook Worker에 대 한 지원을 비롯 하 여 Azure Automation에 대 한 기능을 추가 합니다. 작업 영역에 솔루션을 추가할 때 다음 단계에서 설치할 에이전트 컴퓨터로 Worker 구성 요소를 자동으로 푸시합니다.
 
-Log Analytics 작업 영역에 **Automation** 솔루션을 추가하려면 [솔루션 갤러리를 사용하여 솔루션을 추가하려면](../log-analytics/log-analytics-add-solutions.md)의 지침에 따릅니다.
+추가할 합니다 **Automation** Azure Monitor 다음 PowerShell을 실행 작업 영역에 솔루션을 기록 합니다.
+
+```powershell-interactive
+Set-AzureRmOperationalInsightsIntelligencePack -ResourceGroupName <logAnalyticsResourceGroup> -WorkspaceName <LogAnalyticsWorkspaceName> -IntelligencePackName "AzureAutomation" -Enabled $true
+```
 
 #### <a name="3-install-the-microsoft-monitoring-agent"></a>3. Microsoft Monitoring Agent 설치
 

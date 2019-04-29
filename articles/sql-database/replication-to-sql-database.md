@@ -13,11 +13,11 @@ ms.reviewer: mathoma
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: b9d6569504b5352c6187afe12d903c986019c517
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57860706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60646817"
 ---
 # <a name="replication-to-sql-database-single-and-pooled-databases"></a>SQL Database 단일 및 풀링된 데이터베이스에 복제
 
@@ -65,7 +65,7 @@ Azure SQL Database에서 [SQL Database 서버](sql-database-servers.md)의 단�
 
 1. 온-프레미스 SQL Server 데이터베이스에서 트랜잭션 복제 게시를 만듭니다.  
 2. 온-프레미스 SQL Server에서 **새 구독 마법사** 또는 Transact-SQL 명령문을 사용하여 Azure SQL Database에 대한 구독 밀어넣기를 생성합니다.  
-3. Azure SQL Database에서 풀링된 단일 데이터베이스와 함께 초기 데이터 세트는 스냅숏 에이전트에 의해 생성되고 배포 에이전트에 의해 배포 및 적용된 스냅숏입니다. Managed Instance 데이터베이스와 함께 데이터베이스 백업을 사용하여 구독자 데이터베이스를 시드할 수도 있습니다.
+3. Azure SQL Database에 단일 및 풀링된 데이터베이스를 사용하는 경우 초기 데이터 세트는 스냅숏 에이전트에 의해 생성되고 배포 에이전트에 의해 배포 및 적용된 스냅숏입니다. 관리형 인스턴스 데이터베이스와 함께 데이터베이스 백업을 사용하여 구독자 데이터베이스를 시드할 수도 있습니다.
 
 ### <a name="data-migration-scenario"></a>데이터 마이그레이션 시나리오  
 
@@ -107,7 +107,7 @@ Azure SQL Database에서 [SQL Database 서버](sql-database-servers.md)의 단�
 게시 및 밀어넣기 구독을 만듭니다. 자세한 내용은 다음을 참조하세요.
   
 - [게시 만들기](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
-- 구독자로는 Azure SQL Database 서버 이름(예: **N'azuresqldbdns.database.windows.net'**)을, 대상 데이터베이스로는 Azure SQL Database 이름(예: **AdventureWorks**)을 사용하여 [밀어넣기 구독을 만듭니다](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/).  
+- 구독자로는 Azure SQL Database 서버 이름(예: **N'azuresqldbdns.database.windows.net'**)을, 대상 데이터베이스로는 Azure SQL 데이터베이스 이름(예: **AdventureWorks**)을 사용하여 [밀어넣기 구독을 만듭니다](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/).  
 
 ## <a name="see-also"></a>관련 항목  
 

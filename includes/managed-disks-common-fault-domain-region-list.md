@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/25/2018
 ms.author: cynthn
 ms.openlocfilehash: 0ee40c3ad692deccbc185fa7f8e51dd25eeaf95d
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52440301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60613831"
 ---
 ### <a name="number-of-fault-domains-per-region"></a>지역당 장애 도메인 수
 
@@ -26,7 +26,7 @@ ms.locfileid: "52440301"
 | 캐나다 중부      | 3                      |
 | 캐나다 동부         | 2                       |
 |                     |                         |
-| 북유럽        | 3                       |
+| 유럽 북부        | 3                       |
 | 서유럽         | 3                       |
 | 영국 남부            | 2                       |
 | 영국 서부             | 2                       |
@@ -36,7 +36,7 @@ ms.locfileid: "52440301"
 | 일본 동부          | 2                       |
 | 일본 서부          | 2                       |
 | 인도 남부         | 2                       |
-| 인도 중부       | 2                       |
+| 중앙 인도       | 2                       |
 | 인도 서부          | 2                       |
 | 한국 중부       | 2                       |
 | 한국 남부         | 2                       |
@@ -46,7 +46,7 @@ ms.locfileid: "52440301"
 |                     |                         |
 | 브라질 남부        | 2                       |
 |                     |                         |
-| 미국 정부 버지니아     | 2                       |
+| US Gov 버지니아     | 2                       |
 | 미국 정부 텍사스        | 2                       |
 | 미국 정부 애리조나      | 2                       |
 | 미국 국방부 중부      | 2                       |

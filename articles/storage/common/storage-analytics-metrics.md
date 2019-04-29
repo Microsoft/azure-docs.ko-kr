@@ -9,11 +9,11 @@ ms.date: 03/11/2019
 ms.author: fryu
 ms.subservice: common
 ms.openlocfilehash: c15242b0c480e2da39897b850ab7b2a2fd05bf11
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59489292"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61483522"
 ---
 # <a name="azure-storage-analytics-metrics-classic"></a>Azure Storage analytics 메트릭 (클래식)
 

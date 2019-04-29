@@ -16,11 +16,11 @@ ms.date: 08/28/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a7cd986544dfb1472f5cc8a013fec951dca42a59
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57898655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60523774"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workteam"></a>자습서: Workteam과 Azure Active Directory 통합
 
@@ -200,7 +200,7 @@ Azure AD 사용자가 Workteam에 로그인할 수 있도록 하려면 Workteam�
 
     a. **이름** 텍스트 상자에 사용자의 이름(예: **Brittasimon**)을 입력합니다.
 
-    b. **전자 메일** 텍스트 상자에 같은 사용자의 전자 메일을 입력 합니다 **Brittasimon\@contoso.com**합니다.
+    b. **이메일** 텍스트 상자에 사용자의 이메일 주소(예: **Brittasimon\@contoso.com**)를 입력합니다.
 
     다. **확인**을 클릭합니다.
 

@@ -3,17 +3,17 @@ title: Azure IoT Hub Device Provisioning Service - TPM 증명
 description: 이 문서에서는 IoT 디바이스 프로비저닝 서비스를 사용하여 TPM 증명 흐름에 대한 개념적 개요를 제공합니다.
 author: nberdy
 ms.author: nberdy
-ms.date: 04/04/2019
+ms.date: 04/23/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: briz
 ms.openlocfilehash: 07c5dbce0b98d1c197164f4fc77682f78ede57f0
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59048880"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60746473"
 ---
 # <a name="tpm-attestation"></a>TPM 증명
 

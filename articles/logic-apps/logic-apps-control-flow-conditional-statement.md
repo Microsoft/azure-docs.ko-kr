@@ -10,11 +10,11 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 10/09/2018
 ms.openlocfilehash: 9ee484971e217b0ca4dd7ad855e9e6dc3313e5d4
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50230338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60684807"
 ---
 # <a name="create-conditional-statements-that-control-workflow-actions-in-azure-logic-apps"></a>Azure Logic Apps에서 워크플로 작업을 제어하는 조건문 만들기
 
@@ -45,7 +45,7 @@ ms.locfileid: "50230338"
 
    워크플로 끝 부분에 조건을 추가하려면 논리 앱의 맨 아래에서 **새 단계** > **작업 추가**를 선택합니다.
 
-1. 검색 상자에서 필터로 “조건”을 입력합니다. **조건 - 제어** 작업을 선택합니다.
+1. 검색 상자에서 필터로 “조건”을 입력합니다. 현재 선택한 작업: **조건-컨트롤**
 
    ![조건 추가](./media/logic-apps-control-flow-conditional-statement/add-condition.png)
 
@@ -62,7 +62,7 @@ ms.locfileid: "50230338"
    이 예제에서는 "**포함**"을 선택합니다. 
 
    1. 오른쪽 상자에서 또는 필드를 기준으로 값 지정합니다. 
-   예를 들어 **Microsoft**라는 문자열을 지정합니다.
+   예를 들어이 문자열을 지정 합니다. **Microsoft**
 
    완성된 조건은 다음과 같습니다.
 

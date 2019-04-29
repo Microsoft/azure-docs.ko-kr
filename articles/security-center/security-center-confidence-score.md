@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 08/23/2018
 ms.author: rkarlin
 ms.openlocfilehash: 64bab5c1b99720eecb189834d7a11802cf919ca3
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58106783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60916595"
 ---
 # <a name="alert-confidence-score"></a>경고 신뢰도 점수 
 

@@ -10,12 +10,12 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: 7422d2d5-b1c7-4a11-8c9b-0d8cfa463164
 ms.date: 01/31/2017
-ms.openlocfilehash: 6665ea8bc4016c9d64005f9c742115cf785ed5ba
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: f06e213dbae31c9d7c4e212d605cc962aba71d2d
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57842144"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63766545"
 ---
 # <a name="exchange-x12-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>엔터프라이즈 통합 팩이 포함된 Azure Logic Apps에서 B2B 엔터프라이즈 통합용 X12 메시지 교환
 
@@ -53,11 +53,11 @@ Azure Logic Apps의 X12 메시지를 교환하기 전에 X12 규약을 만들고
 4. **개요**를 선택한 다음 **규약** 타일을 선택합니다. 
    규약 타일이 없는 경우 먼저 타일을 추가합니다. 
 
-   !["규약" 타일 선택](./media/logic-apps-enterprise-integration-as2/agreement-1.png)
+   !["규약" 타일 선택](./media/logic-apps-enterprise-integration-x12/agreement-1.png)
 
 5. **규약**에서 **추가**를 선택합니다.
 
-   !["추가" 선택](./media/logic-apps-enterprise-integration-as2/agreement-2.png)     
+   !["추가" 선택](./media/logic-apps-enterprise-integration-x12/agreement-2.png)     
 
 6. **추가** 아래에서 규약의 **이름**을 입력합니다. 
    규약 유형에 **X12**를 선택합니다. 
@@ -122,7 +122,7 @@ Azure Logic Apps의 X12 메시지를 교환하기 전에 X12 규약을 만들고
 
 | 자산 | 설명 |
 | --- | --- |
-| 버전 |X12 버전 선택 |
+| Version |X12 버전 선택 |
 | 트랜잭션 유형(ST01) |트랜잭션 유형 선택 |
 | 발신자 애플리케이션(GS02) |발신자 애플리케이션 선택 |
 | 스키마 |사용하려는 스키마 파일을 선택합니다. 스키마가 통합 계정에 추가됩니다. |
@@ -216,7 +216,7 @@ Azure Logic Apps의 X12 메시지를 교환하기 전에 X12 규약을 만들고
 
 | 자산 | 설명 |
 | --- | --- |
-| 버전 |X12 버전 선택 |
+| Version |X12 버전 선택 |
 | 트랜잭션 유형(ST01) |트랜잭션 유형 선택 |
 | 스키마 |사용할 스키마를 선택합니다. 스키마는 통합 계정에 있습니다. 스키마를 먼저 선택하면 버전 및 트랜잭션 유형이 자동으로 구성됩니다.  |
 

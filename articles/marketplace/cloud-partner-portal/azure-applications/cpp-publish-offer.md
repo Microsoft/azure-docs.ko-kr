@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 01/25/2019
 ms.author: pbutlerm
 ms.openlocfilehash: fdca47877d4cb2192eef0a26448cd21e8afe4b77
-ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57217940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60740259"
 ---
 # <a name="publish-azure-application-offer"></a>Azure 애플리케이션 제품 게시
 

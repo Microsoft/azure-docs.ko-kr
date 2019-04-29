@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: pbutlerm
 ms.openlocfilehash: dfa512a26334567301812ecefd8c5673b0ea4094
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49955903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60916161"
 ---
 # <a name="publish-iot-edge-module-offer"></a>IoT Edge 모듈 제안 게시
 

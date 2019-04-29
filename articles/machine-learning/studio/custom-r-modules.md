@@ -11,11 +11,11 @@ ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 11/29/2017
 ms.openlocfilehash: 0dec86eff9b9df70514be6f32f3aad60bfb311ca
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58120383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60751220"
 ---
 # <a name="define-custom-r-modules-for-azure-machine-learning-studio"></a>Azure Machine Learning Studio에 사용할 사용자 지정 R 모듈 정의
 
@@ -283,10 +283,10 @@ defaultValue, minValue 및 maxValue와 같은 모듈의 선택적 속성을 **Pr
   
   * **allowedTypes** - 선택할 수 있는 열 형식을 필터링합니다. 유효한 값은 다음과 같습니다. 
     
-    * 숫자
-    * BOOLEAN
+    * Numeric
+    * Boolean
     * 범주
-    * 문자열
+    * String
     * 레이블
     * 기능
     * Score

@@ -1,7 +1,6 @@
 ---
 title: 온-프레미스 Apache Hadoop 클러스터를 Azure HDInsight로 마이그레이션 - 저장소 모범 사례
 description: 온-프레미스 Hadoop 클러스터를 Azure HDInsight로 마이그레이션하는 저장소 모범 사례를 알아봅니다.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: ashishth
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: hrasheed
-ms.openlocfilehash: f3ac60eb45c86b6cd2ded0340ac6bde478086464
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.openlocfilehash: c62a5384edf66fd9309bc7afcb50ada48e3fca7d
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60000065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62095288"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---storage-best-practices"></a>온-프레미스 Apache Hadoop 클러스터를 Azure HDInsight로 마이그레이션 - 저장소 모범 사례
 
@@ -172,11 +171,11 @@ HDInsight는 기본적으로 클러스터와 연결된 Azure Storage 계정의 �
 
 5. 공유 액세스 서명을 사용하여 컨테이너에 대한 액세스를 제한하려면 Ambari HDFS Configs 고급 사용자 지정 core-site 추가 속성 아래의 클러스터에 대한 core-site 구성에 사용자 지정 항목을 추가합니다.
 
-6.  **키** 및 **값** 필드에 다음 값을 사용합니다.
+6. **Key** 및 **Value** 필드에 다음 값을 사용합니다.
 
     **키**: `fs.azure.sas.YOURCONTAINER.YOURACCOUNT.blob.core.windows.net` **값**: 위의 4단계에서 Python 애플리케이션에 의해 반환되는 SAS 키입니다.
 
-7.  **Add** 단추를 클릭하여 이 키 및 값을 저장한 다음,  **Save** 단추를 클릭하여 구성 변경을 저장합니다. 메시지가 나타나면 변경에 대한 설명(예: "SAS 저장소 액세스 추가")을 추가한 다음,  **저장**을 클릭합니다.
+7. **Add** 단추를 클릭하여 이 키 및 값을 저장한 후 **Save** 단추를 클릭하여 구성 변경을 저장합니다. 메시지가 나타나면 변경에 대한 설명(예: "SAS 저장소 액세스 추가")을 추가하고 **저장**을 클릭합니다.
 
 8. Ambari 웹 UI의 왼쪽 목록에서 HDFS를 선택한 다음, 오른쪽의 Service Actions 드롭다운 목록에서  **영향을 받은 모든 항목 다시 시작**을 선택합니다. 메시지가 나타나면  **모두 다시 시작 확인**을 선택합니다.
 

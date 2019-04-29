@@ -9,11 +9,11 @@ ms.date: 12/14/2018
 ms.author: shants
 ms.custom: include file
 ms.openlocfilehash: c26c037455b6d14a906894ec39bf46630826950b
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59551537"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60301718"
 ---
 Azure에서는 가상 머신에 대한 호스트 인프라의 안정성, 성능 및 보안을 개선하기 위해 주기적으로 플랫폼을 업데이트합니다. 이러한 업데이트는 호스팅 환경의 소프트웨어 구성 요소 패치, 네트워킹 구성 요소 업그레이드, 하드웨어 서비스 해제 등을 포함합니다. 대부분의 업데이트는 호스트된 가상 머신에 영향을 주지 않습니다. 그러나 업데이트가 영향을 주는 경우가 있으며, Azure는 업데이트의 영향을 최소화하는 방법을 선택합니다.
 

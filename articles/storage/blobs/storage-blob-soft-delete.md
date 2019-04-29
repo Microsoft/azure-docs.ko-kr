@@ -5,20 +5,20 @@ services: storage
 author: MichaelHauss
 ms.service: storage
 ms.topic: article
-ms.date: 07/15/2018
+ms.date: 04/23/2019
 ms.author: mihauss
 ms.subservice: blobs
-ms.openlocfilehash: 08d51b1b6a09bb4df3986bd8c4c44d3834882def
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: d9055b0c0decbeca0bb43969af4e854c396c3bb6
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55506128"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63764224"
 ---
 # <a name="soft-delete-for-azure-storage-blobs"></a>Azure Storage Blob에 대한 일시 삭제
 Azure Storage는 이제 응용 프로그램 또는 다른 스토리지 계정 사용자에 의해 잘못 수정되거나 삭제될 때 데이터를 보다 쉽게 복구할 수 있도록 Blob 개체에 대한 일시 삭제를 제공합니다.
 
-## <a name="how-does-it-work"></a>작동 원리
+## <a name="how-does-it-work"></a>어떻게 작동합니까?
 설정하면 일시 삭제를 통해 Blob 또는 Blob 스냅숏이 삭제되는 경우 데이터를 저장 및 복구할 수 있습니다. 이 보호는 덮어쓰기의 결과로 삭제되는 Blob 데이터로 확장합니다.
 
 데이터가 삭제되면 영구적으로 삭제되는 대신 일시 삭제된 상태로 전환됩니다. 일시 삭제가 있고 데이터를 덮어쓰는 경우 일시 삭제된 스냅숏은 덮어쓴 데이터의 상태를 저장하기 위해 생성됩니다. 일시 삭제된 개체는 명시적으로 나열되지 않는 한 표시되지 않습니다. 일시 삭제된 데이터가 영구적으로 만료되기 전에 복구 가능한 기간을 구성할 수 있습니다.
@@ -278,6 +278,9 @@ blockBlob.StartCopy(copySource);
 데이터가 애플리케이션 또는 다른 저장소 계정 사용자에 의해 실수로 수정 또는 삭제되는 기회가 있는 경우 일시 삭제를 설정하는 것이 좋습니다. 일시 삭제는 데이터 보호 전략의 한 부분이며 의도하지 않은 데이터 손실을 방지할 수 있습니다.
 
 ## <a name="faq"></a>FAQ
+**일시 삭제 사용에 대 한 특별 한 고려 사항이 있습니까?**  
+Blob을 나열할 때 자주 덮어쓴된 데이터에 대 한 일시 삭제를 사용 하도록 설정 하면 증가 된 저장소 용량 요금 및 대기 시간 증가 될 수 있습니다. 사용 하지 않도록 설정 하는 일시 삭제를 사용 하 여 별도 저장소 계정에 자주 덮어쓴된 데이터를 저장 하 여이 줄일 수 있습니다. 
+
 **어떤 저장소 유형에 대해 일시 삭제를 사용할 수 있나요?**  
 현재 일시 삭제는 Blob(개체) 저장소에 대해서만 사용 가능합니다.
 

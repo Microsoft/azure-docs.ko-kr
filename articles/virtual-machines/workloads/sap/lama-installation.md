@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 11/17/2018
 ms.author: sedusch
 ms.openlocfilehash: f09f66e81ec4878aedebfee9be4c0c67b75c8ad6
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58313603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61463007"
 ---
 # <a name="sap-lama-connector-for-azure"></a>Azure용 SAP LaMa 커넥터
 
@@ -306,7 +306,7 @@ SAP NetWeaver 프로필 매개 변수 dbs/hdb/hdb_use_ident를 사용하여 HDB 
 
 테넌트 복사를 시도하기 전에 SYSTEMDB 및 모든 테넌트 데이터베이스를 백업해야 합니다. 테넌트가 시스템 복제본을 이동하거나 생성합니다.
 
-### <a name="microsoft-sql-server"></a>Microsoft SQL Server에 대한 연결 문자열
+### <a name="microsoft-sql-server"></a>Microsoft SQL Server
 
 아래 예제에서는 시스템 ID AS1로 SAP NetWeaver 시스템을 설치한다고 가정합니다. 가상 호스트 이름은 SAP NetWeaver 시스템에 사용되는 SQL Server 인스턴스는 as1-db이고 SAP NetWeaver ASCS는 as1-ascs이고 첫 번째 SAP NetWeaver Application Server는 as1-di-0입니다.
 

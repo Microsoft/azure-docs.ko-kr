@@ -11,11 +11,11 @@ ms.date: 03/15/2019
 ms.author: rortloff
 ms.reviewer: igorstan
 ms.openlocfilehash: 1073e1b4ad38c4b05c9195cf4ea16ade7416fbce
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58133410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61474976"
 ---
 # <a name="designing-tables-in-azure-sql-data-warehouse"></a>Azure SQL Data Warehouse의 테이블 디자인
 
@@ -42,7 +42,7 @@ SQL Data Warehouse의 테이블 구성을 표시하려면 fact, dim 및 int를 �
 
 | WideWorldImportersDW 테이블  | 테이블 형식 | SQL Data Warehouse |
 |:-----|:-----|:------|:-----|
-| 도시 | 차원 | wwi.DimCity |
+| City | 차원 | wwi.DimCity |
 | 순서 | 팩트 | wwi.FactOrder |
 
 

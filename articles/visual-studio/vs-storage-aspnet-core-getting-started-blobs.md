@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 12/07/2017
 ms.author: casoper
 ms.openlocfilehash: f8de7f7a263a087abb16ed48d05b2cae9834b4ad
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52961113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62110521"
 ---
 # <a name="get-started-with-azure-blob-storage-and-visual-studio-connected-services-aspnet-core"></a>Azure Blob Storage 및 Visual Studio 연결된 서비스 시작(ASP.NET Core)
 
@@ -27,7 +27,7 @@ ms.locfileid: "52961113"
 > - [ASP.NET](./vs-storage-aspnet-getting-started-blobs.md)
 > - [ASP.NET Core](./vs-storage-aspnet-core-getting-started-blobs.md)
 
-Azure Blob 저장소는 구조화되지 않은 데이터를 개체 또는 Blob으로 클라우드에 저장하는 서비스입니다. Blob storage는 문서, 미디어 파일 또는 응용 프로그램 설치 프로그램과 같은 모든 종류의 텍스트 또는 이진 데이터를 저장할 수 있습니다. 또한 Blob Storage를 개체 스토리지라고 합니다. Blob Storage에 대한 자세한 내용은 [Azure Blob Storage 소개](../storage/blobs/storage-blobs-introduction.md)를 참조하세요.
+Azure Blob Storage는 구조화되지 않은 데이터를 개체 또는 Blob으로 클라우드에 저장하는 서비스입니다. Blob Storage는 문서, 미디어 파일 또는 응용 프로그램 설치 프로그램과 같은 모든 종류의 텍스트 또는 이진 데이터를 저장할 수 있습니다. 또한 Blob Storage를 개체 스토리지라고 합니다. Blob Storage에 대한 자세한 내용은 [Azure Blob Storage 소개](../storage/blobs/storage-blobs-introduction.md)를 참조하세요.
 
 이 자습서에서는 Blob Storage를 사용하는 몇 가지 일반적인 시나리오에 대한 ASP.NET Core 코드를 작성하는 방법을 보여 줍니다. 시나리오에는 Blob 컨테이너 만들기, Blob 업로드, 나열, 다운로드 및 삭제가 포함됩니다.
 
@@ -47,13 +47,13 @@ Azure Blob 저장소는 구조화되지 않은 데이터를 개체 또는 Blob�
 
 1. 주 메뉴에서 **파일** > **새로 만들기** > **프로젝트**를 선택합니다.
 
-1. **새 프로젝트** 대화 상자에서 **웹** > **ASP.NET Core 웹 응용 프로그램** > **AspNetCoreStorage**를 선택합니다. 그런 다음 **확인**을 선택합니다.
+1. **새 프로젝트** 대화 상자에서 **웹** > **ASP.NET Core 웹 애플리케이션** > **AspNetCoreStorage**를 선택합니다. 그런 다음 **확인**을 선택합니다.
 
     ![Visual Studio 새 프로젝트 대화 상자 스크린샷](./media/vs-storage-aspnet-core-getting-started-blobs/new-project.png)
 
-1. **새 ASP.NET Core 웹 응용 프로그램** 대화 상자에서 **.NET Core** > **ASP.NET Core 2.0** > **웹 응용 프로그램(모델-뷰-컨트롤러)** 을 선택합니다. 그런 다음 **확인**을 선택합니다.
+1. **새 ASP.NET Core 웹 애플리케이션** 대화 상자에서 **.NET Core** > **ASP.NET Core 2.0** > **웹 애플리케이션(모델-뷰-컨트롤러)** 을 선택합니다. 그런 다음 **확인**을 선택합니다.
 
-    ![새 ASP.NET Core 웹 응용 프로그램 대화 상자 스크린샷](./media/vs-storage-aspnet-core-getting-started-blobs/new-mvc.png)
+    ![새 ASP.NET Core 웹 애플리케이션 대화 상자 스크린샷](./media/vs-storage-aspnet-core-getting-started-blobs/new-mvc.png)
 
 ### <a name="use-connected-services-to-connect-to-an-azure-storage-account"></a>연결된 서비스를 사용하여 Azure Storage 계정에 연결
 
@@ -61,7 +61,7 @@ Azure Blob 저장소는 구조화되지 않은 데이터를 개체 또는 Blob�
 
 2. 상황에 맞는 메뉴에서 **추가** > **연결된 서비스**를 선택합니다.
 
-1. **연결된 서비스** 대화 상자에서 **Azure Storage에서 클라우드 저장소**를 선택한 다음 **구성**을 선택합니다.
+1. **연결된 서비스** 대화 상자에서 **Azure Storage에서 클라우드 스토리지**를 선택한 다음 **구성**을 선택합니다.
 
     ![연결된 서비스 대화 상자 스크린샷](./media/vs-storage-aspnet-core-getting-started-blobs/connected-services.png)
 
@@ -202,7 +202,7 @@ Blob 컨테이너는 Blob 및 폴더의 중첩된 계층 구조입니다. 이 �
     <li><a asp-area="" asp-controller="Blobs" asp-action="CreateBlobContainer">Create blob container</a></li>
     ```
 
-1. 응용 프로그램을 실행하고 **Blob 컨테이너 만들기**를 선택하여 다음 스크린샷과 유사한 결과를 확인합니다.
+1. 애플리케이션을 실행하고 **Blob 컨테이너 만들기**를 선택하여 다음 스크린샷과 유사한 결과를 확인합니다.
   
     ![Blob 컨테이너 만들기 스크린샷](./media/vs-storage-aspnet-core-getting-started-blobs/create-blob-container-results.png)
 
@@ -272,7 +272,7 @@ Blob 컨테이너는 Blob 및 폴더의 중첩된 계층 구조입니다. 이 �
     <li><a asp-area="" asp-controller="Blobs" asp-action="UploadBlob">Upload blob</a></li>
     ```
 
-1. 응용 프로그램을 실행하고 **Blob 업로드**를 선택합니다. ‘성공!’이라는 단어가 표시됩니다.
+1. 애플리케이션을 실행하고 **Blob 업로드**를 선택합니다. ‘성공!’이라는 단어가 표시됩니다.
     
     ![성공 확인 스크린샷](./media/vs-storage-aspnet-core-getting-started-blobs/upload-blob.png)
   
@@ -387,7 +387,7 @@ Blob 컨테이너는 Blob 및 폴더의 중첩된 계층 구조입니다. 이 �
     <li><a asp-area="" asp-controller="Blobs" asp-action="ListBlobs">List blobs</a></li>
     ```
 
-1. 응용 프로그램을 실행하고 **Blob 나열**을 선택하여 다음 스크린샷과 유사한 결과를 확인합니다.
+1. 애플리케이션을 실행하고 **Blob 나열**을 선택하여 다음 스크린샷과 유사한 결과를 확인합니다.
   
     ![Blob 나열 스크린샷](./media/vs-storage-aspnet-core-getting-started-blobs/listblobs.png)
 

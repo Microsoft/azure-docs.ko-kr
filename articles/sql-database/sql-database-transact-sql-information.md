@@ -1,6 +1,6 @@
 ---
 title: T-SQL 차이점 해결-마이그레이션-Azure SQL Database | Microsoft Docs
-description: Azure SQL Database에서 완전히 지원되지 않는 TRANSACT-SQL 문
+description: Azure SQL Database에서 완전히 지원되지 않는 Transact-SQL 문
 services: sql-database
 ms.service: sql-database
 ms.subservice: single-database
@@ -13,11 +13,11 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 12/03/2018
 ms.openlocfilehash: 4d3f27d48819a4bd997cbb62177f5aae4afc85eb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57993149"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60615391"
 ---
 # <a name="resolving-transact-sql-differences-during-migration-to-sql-database"></a>SQL Database로의 마이그레이션 중 Transact-SQL 차이점 해결
 
@@ -56,7 +56,7 @@ SQL Database에서 지원되는 기능 및 지원되지 않는 기능 목록은 
 - 고가용성: Microsoft Azure 계정을 통해 관리되는 고가용성과 관련된 구문입니다. 백업, 복원, Alwayson, 데이터베이스 미러링, 로그 전달, 복구 모드에 대한 구문을 포함합니다.
 - 로그 판독기: SQL Database에서 사용할 수 없는 로그 판독기를 사용하는 구문: 밀어넣기 복제, 변경 데이터 캡처입니다. SQL Database는 푸시 복제 문서의 구독자가 될 수 있습니다.
 - 함수: `fn_get_sql`, `fn_virtualfilestats`, `fn_virtualservernodes`
-- 하드웨어: 하드웨어 관련 서버 설정과 관련된 구문: 메모리, 작업자 스레드 수, CPU 선호도, 추적 플래그 등입니다. 그 대신 서비스 계층 및 계산 크기를 사용합니다.
+- 하드웨어: 하드웨어 관련 서버 설정과 관련된 구문: 메모리, 작업자 스레드 수, CPU 선호도, 추적 플래그 등입니다. 대신 서비스 계층 및 컴퓨팅 크기를 사용합니다.
 - `KILL STATS JOB`
 - `OPENQUERY`, `OPENROWSET`, `OPENDATASOURCE` 및 네 부분으로 된 이름
 - .NET Framework: CLR과 SQL Server 통합

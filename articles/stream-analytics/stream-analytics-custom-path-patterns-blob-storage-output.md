@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.custom: seodec18
 ms.openlocfilehash: 9cdf99884845a9cb83ac26723c3ea0e7a779ebff
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55982678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60771814"
 ---
 # <a name="azure-stream-analytics-custom-blob-output-partitioning"></a>Azure Stream Analytics 사용자 지정 Blob 출력 분할
 
@@ -66,7 +66,7 @@ Blob의 각 레코드에는 폴더 이름과 일치하는 **client_id** 열이 �
 
 ## <a name="custom-datetime-path-patterns"></a>사용자 지정 날짜/시간 경로 패턴
 
-사용자 지정 날짜/시간 경로 패턴을 사용하면 Hive 스트리밍 규칙을 사용하여 정렬하는 출력 형식을 지정하여 Azure Stream Analytics에서 다운스트림 처리를 위해 Azure Databricks 및 Azure HDInsight에 데이터를 보낼 수 있는 기능을 부여할 수 있습니다. 사용자 지정 날짜/시간 경로 패턴은 서식 지정자와 함께 Blob 출력의 경로 접두사 필드에서 `datetime` 키워드를 사용하여 쉽게 구현됩니다. 예: `{datetime:yyyy}`
+사용자 지정 날짜/시간 경로 패턴을 사용하면 Hive 스트리밍 규칙을 사용하여 정렬하는 출력 형식을 지정하여 Azure Stream Analytics에서 다운스트림 처리를 위해 Azure Databricks 및 Azure HDInsight에 데이터를 보낼 수 있는 기능을 부여할 수 있습니다. 사용자 지정 날짜/시간 경로 패턴은 서식 지정자와 함께 Blob 출력의 경로 접두사 필드에서 `datetime` 키워드를 사용하여 쉽게 구현됩니다. 예: `{datetime:yyyy}`.
 
 ### <a name="supported-tokens"></a>지원되는 토큰
 
@@ -104,7 +104,7 @@ Blob의 각 레코드에는 폴더 이름과 일치하는 **client_id** 열이 �
 
 Blob Storage에 대한 사용자 지정 경로 패턴은 Hive 스트리밍 규칙에서 사용될 수 있습니다. 폴더 이름에서 `column=`으로 레이블이 지정된 폴더가 생성됩니다.
 
-예: `year={datetime:yyyy}/month={datetime:MM}/day={datetime:dd}/hour={datetime:HH}`
+예: `year={datetime:yyyy}/month={datetime:MM}/day={datetime:dd}/hour={datetime:HH}`.
 
 사용자 지정 출력은 테이블을 변경하고 파티션을 수동으로 추가하는 번거로움을 없애서 Azure Stream Analytics와 Hive 간에 데이터를 전송합니다. 대신, 다음을 사용하여 자동으로 여러 폴더를 추가할 수 있습니다.
 

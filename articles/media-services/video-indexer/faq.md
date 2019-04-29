@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 02/10/2019
 ms.author: juliako
 ms.openlocfilehash: e85beea4250b5ac5f4defd0b918786079d3dbe3e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57892662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60553694"
 ---
 # <a name="frequently-asked-questions"></a>질문과 대답
 
@@ -160,7 +160,7 @@ Video Indexer는 인덱싱하는 콘텐츠 입력 기간을 기반으로 하는 
 
 ### <a name="when-am-i-billed-for-using-video-indexer"></a>Video Indexer를 사용 하 여에 대 한 청구 하는 경우
 
-인덱싱할 비디오를 보낼 때 사용자는 분석 비디오, 오디오 분석 또는 둘 다를 인덱싱 정의 합니다. 이 결정 됩니다 Sku 요금이 청구 됩니다. 있으면 중요 수준 오류를 처리 하는 동안 오류 코드를 응답으로 반환 됩니다. 이러한 경우 요금이 청구 되지 않습니다.  코드의 버그로 인해 오류가 발생할 수 있습니다 또는 내부 종속성 서비스에에서 오류가 발생 했습니다. 오류 잘못 된 id 또는 insight 추출 같은 심각한 예외로 간주 되지 않습니다 하 고 응답이 반환 됩니다. 어떤 경우 든 (오류가 아닌 코드) 유효한 응답이 반환 됩니다 하는 경우 청구 발생 합니다.
+인덱싱할 비디오를 보낼 때 사용자가 인덱싱을 비디오 분석, 오디오 분석 또는 2가지 모두로 정의합니다. 사용자가 인덱싱을 정의하면 어떤 SKU가 청구되는지 결정됩니다. 처리 중 심각한 수준의 오류가 발생하는 경우 오류 코드가 응답으로 반환됩니다. 이 경우 비용이 청구되지 않습니다.  심각한 오류는 코드의 버그 또는 서비스의 내부 종속성에서 발생한 심각한 오류로 인해 발생할 수 있습니다. 잘못된 식별 또는 인사이트 추출과 같은 오류는 심각한 오류로 간주되지 않으며 응답이 반환됩니다. 유효한(오류 코드가 아님) 응답이 반환되는 경우 비용이 청구됩니다.
  
 ### <a name="does-video-indexer-offer-a-free-trial"></a>Video Indexer는 평가판을 제공하나요?
 

@@ -9,11 +9,11 @@ ms.date: 02/22/2019
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
 ms.openlocfilehash: 134023c0884ce3a402b99806f1bf19dcb59ecc32
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57882831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60564870"
 ---
 # <a name="logging-and-diagnostics-in-azure-spatial-anchors"></a>로깅 및 진단 Azure 공간 앵커에
 

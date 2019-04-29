@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: magoedte
 ms.openlocfilehash: b79f8a44f0fc38dd7e5f9ae7e3ac1fe6e9f6b7b8
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58884179"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60776036"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Linux용 Log Analytics 에이전트의 문제를 해결하는 방법 
 
@@ -166,7 +166,7 @@ OMS 출력 플러그 인을 사용하는 대신 데이터 항목을 `stdout`으�
 2. [프록시 설정 업데이트](agent-manage.md#update-proxy-settings) 섹션을 검토하여 프록시 서버를 통해 통신하도록 에이전트를 제대로 구성했는지 확인합니다.    
 * 다음 Azure Monitor 끝점이 허용 목록에 다시 확인 합니다.
 
-    |에이전트 리소스| 포트 | 방향 |
+    |에이전트 리소스| 포트 | Direction |
     |------|---------|----------|  
     |*.ods.opinsights.azure.com | 포트 443| 인바운드 및 아웃바운드 |  
     |*.oms.opinsights.azure.com | 포트 443| 인바운드 및 아웃바운드 |  

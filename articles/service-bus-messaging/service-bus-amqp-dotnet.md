@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: 82301a17bb461b6d8733d5f046fe791ffbcf3ecb
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58885709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60749260"
 ---
 # <a name="use-service-bus-from-net-with-amqp-10"></a>AMQP 1.0을 사용하여 .NET에서 Service Bus 사용
 
@@ -70,7 +70,7 @@ AMQP를 사용하는 경우 `;TransportType=Amqp`을(를) 사용하여 연결 �
 | ulong |ulong |AMQP 값 |
 | sbyte |byte |AMQP 값 |
 | short |short |AMQP 값 |
-| ssNoversion |ssNoversion |AMQP 값 |
+| int |int |AMQP 값 |
 | long |long |AMQP 값 |
 | float |float |AMQP 값 |
 | double |double |AMQP 값 |

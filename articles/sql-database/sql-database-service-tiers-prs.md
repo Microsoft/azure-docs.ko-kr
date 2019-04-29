@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: f8fc1f7e338f69b42df69d9a8983e8ce3bb409e3
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: d7d1bc95a646527ccdf9d2808aefe6b8f46d7e9a
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59359635"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62111768"
 ---
 # <a name="azure-sql-database-premium-rs-service-tier-preview-is-being-retired---options-for-migration"></a>Azure SQL Database Premium RS 서비스 계층(미리 보기)이 더 이상 사용되지 않음 - 마이그레이션 옵션
 
@@ -27,7 +27,7 @@ ms.locfileid: "59359635"
 
 - vCore 서비스 계층
 
-  [vCore 기반 구매 모델](sql-database-service-tiers-vcore.md)의 **범용** 및 **중요 비즈니스용** 서비스 계층입니다. 이러한 두 서비스 계층은 일반 공급됩니다. 또한 vCore 기반 구매 모델은 데이터베이스당 100TB까지 자동으로 확장됨으로써 요청 시에 워크로드의 요구에 맞게 조정되는 **하이퍼스케일** 서비스 계층(공용 미리 보기)을 제공합니다. 하이퍼스케일 서비스 계층은 프리미엄 RS 서비스 계층과 비슷한 가격으로 [DTU 기반 구매 모델](sql-database-service-tiers-dtu.md)의 프리미엄 서비스 계층에 필적할만한 IO 성능을 제공합니다.
+  [vCore 기반 구매 모델](sql-database-service-tiers-vcore.md)의 **범용** 및 **중요 비즈니스** 서비스 계층입니다. 이러한 두 서비스 계층은 일반 공급됩니다. 또한 vCore 기반 구매 모델은 데이터베이스당 100TB까지 자동으로 확장됨으로써 요청 시에 워크로드의 요구에 맞게 조정되는 **하이퍼스케일** 서비스 계층(공용 미리 보기)을 제공합니다. 하이퍼스케일 서비스 계층은 프리미엄 RS 서비스 계층과 비슷한 가격으로 [DTU 기반 구매 모델](sql-database-service-tiers-dtu.md)의 프리미엄 서비스 계층에 필적할만한 IO 성능을 제공합니다.
 - 개발/테스트 가격
 
   [개발/테스트 가격](https://azure.microsoft.com/pricing/dev-test/)은 최대 55% 비용 절감 효과를 가져오거나 Visual Studio 구독을 통한 라이선스 포함 요금이 됩니다.
@@ -100,5 +100,5 @@ vCore 기반 구매 모델의 서비스 계층은 80%까지 비용을 절감할 
 
 ## <a name="next-steps"></a>다음 단계
 
-- 단일 데이터베이스에 사용할 수 있는 특정 계산 크기 및 스토리지 크기 선택 방법에 대한 자세한 내용은 [단일 데이터베이스에 대한 SQL Database vCore 기반 리소스 제한](sql-database-vcore-resource-limits-single-databases.md#general-purpose-service-tier-storage-sizes-and-compute-sizes)을 참조하세요.
-- 탄력적 풀에 사용할 수 있는 특정 계산 크기 및 스토리지 크기 옵션에 대한 자세한 내용은 [탄력적 풀에 대한 SQL Database vCore 기반 리소스 제한](sql-database-vcore-resource-limits-elastic-pools.md#general-purpose-service-tier-storage-sizes-and-compute-sizes)을 참조하세요.
+- 단일 데이터베이스에 사용할 수 있는 특정 컴퓨팅 크기 및 스토리지 크기 선택 방법에 대한 자세한 내용은 [단일 데이터베이스에 대한 SQL Database vCore 기반 리소스 제한](sql-database-vcore-resource-limits-single-databases.md#general-purpose-service-tier)을 참조하세요.
+- 탄력적 풀에 사용할 수 있는 특정 컴퓨팅 크기 및 스토리지 크기 옵션에 대한 자세한 내용은 [탄력적 풀에 대한 SQL Database vCore 기반 리소스 제한](sql-database-vcore-resource-limits-elastic-pools.md#general-purpose-service-tier-storage-sizes-and-compute-sizes)을 참조하세요.

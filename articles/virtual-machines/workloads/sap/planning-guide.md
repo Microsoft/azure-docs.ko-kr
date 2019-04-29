@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 02/05/2019
 ms.author: sedusch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d4798f8c3e262129135a6677ccf90dc0fb3be7f2
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 097b5e8ee69d945e0a9e24ba1c62b0ae82dd896b
+ms.sourcegitcommit: a95dcd3363d451bfbfea7ec1de6813cad86a36bb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59999538"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62732420"
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>SAP NetWeaver에 대한 Azure Virtual Machines 계획 및 구현
 
@@ -451,7 +451,11 @@ Azure에 SAP 시스템을 성공적으로 배포하려면 온-프레미스 SAP �
 >
 > 이러한 제한이 적용되는 이유는 단일 SAP 시스템 내에서, 특히 SAP 시스템의 애플리케이션 인스턴스와 DBMS 계층 사이에서 대기 시간이 짧은 고성능 네트워크를 보장하기 위해서입니다.
 >
->
+> 시스템 및 영역에 대 한 특수 계획 밀접 하 게 통합 되는 여러 SAP 시스템을 사용 하는 경우 발생 해야 합니다. 네트워크 대기 시간을 최소화 하기 위해 서로를 최대한 가깝게 이러한 시스템을 배포 해야 합니다. 고도로 통합 된 SAP 시스템의 예입니다.
+> * SAP BW ERP, CRM, SRM; SAP OLTP 시스템에서 데이터 읽기 또는
+> * SAP 시스템과 SAP 이외의; 간에 또는 여러 SPA 시스템 간에 데이터를 복제 하는 데 사용 되는 SAP SLT 또는
+> * SAP S/4는 SAP ERP 시스템에 연결 등
+
 
 ### <a name="supported-os-and-database-releases"></a>지원되는 OS 및 데이터베이스 릴리스
 * Azure Virtual Machines 서비스에 대해 지원되는 Microsoft 서버 소프트웨어는 이 문서에 나열되어 있습니다. <https://support.microsoft.com/kb/2721672>

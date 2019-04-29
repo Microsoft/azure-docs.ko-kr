@@ -8,14 +8,15 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 10/23/2018
-ms.author: azfuncdf, glenga
+origin.date: 10/23/2018
+ms.date: 03/25/2019
+ms.author: v-junlch
 ms.openlocfilehash: 1c60bd4dae6c279ccff637ff0aa798c48ebec6f1
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58108072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60710951"
 ---
 # <a name="create-durable-functions-using-the-azure-portal"></a>Azure Portal을 사용하는 Durable Functions 만들기
 
@@ -91,7 +92,7 @@ JavaScript Durable Functions를 만드는 경우 [`durable-functions` npm 패키
 1. Postman 또는 cURL과 같은 HTTP 도구를 사용하여 POST 요청을 사용자가 복사한 URL로 보냅니다. 다음 예제는 Durable Functions로 POST 요청을 보내는 cURL 명령입니다.
 
     ```bash
-    curl -X POST https://{your-function-app-name}.azurewebsites.net/api/orchestrators/HelloSequence
+    curl -X POST https://{your-function-app-name}.chinacloudsites.cn/api/orchestrators/HelloSequence
     ```
 
     이 예제에서는 `{your-function-app-name}`은 도메인으로, 함수 앱의 이름입니다. 응답 메시지에는 실행을 모니터링하고 관리하기 위해 사용할 수 있는 URI 엔드포인트 세트가 포함되어 있습니다. 다음 예와 같습니다.
@@ -140,3 +141,5 @@ JavaScript Durable Functions를 만드는 경우 [`durable-functions` npm 패키
 
 > [!div class="nextstepaction"]
 > [일반적인 지속성 함수 패턴에 대해 알아보기](durable-functions-concepts.md)
+
+<!-- Update_Description: wording update -->

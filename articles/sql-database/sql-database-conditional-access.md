@@ -13,11 +13,11 @@ ms.reviewer: vanto
 manager: craigg
 ms.date: 03/29/2019
 ms.openlocfilehash: 79d15a46affb2a6b7159ba080d4235073c59919c
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58648986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61413686"
 ---
 # <a name="conditional-access-mfa-with-azure-sql-database-and-data-warehouse"></a>Azure SQL Database 및 데이터 웨어하우스를 사용하여 조건부 액세스(MFA)  
 
@@ -40,7 +40,7 @@ Azure [SQL Database](sql-database-technical-overview.md)를 [관리 되는 인�
 3. **할당** 아래에서 **사용자 및 그룹**을 선택하고 **사용자 및 그룹 선택**을 선택한 다음 조건부 액세스에 대한 사용자 또는 그룹을 선택합니다. **선택**을 클릭한 다음 **완료**를 클릭하여 선택 사항을 적용합니다.  
    ![사용자 및 그룹 선택](./media/sql-database-conditional-access/select-users-and-groups.png)  
 
-4. **클라우드 앱**을 선택하고 **앱 선택**을 클릭합니다. 조건부 액세스에 사용할 수 있는 모든 앱이 표시됩니다. **Azure SQL Database**를 선택하고 아래쪽에서 **선택**을 클릭한 다음 **완료**를 클릭합니다.  
+4. **클라우드 앱**을 선택하고 **앱 선택**을 클릭합니다. 조건부 액세스에 사용할 수 있는 모든 앱이 표시됩니다. **Azure SQL Database**를 선택하고 아래쪽에서 **선택**을 클릭한 다음, **완료**를 클릭합니다.  
    ![SQL Database 선택](./media/sql-database-conditional-access/select-sql-database.png)  
    찾을 수 없으면 **Azure SQL Database** 다음 단계를 완료 하는 다음 세 번째 스크린샷에 나열:   
    - SSMS를 사용하여 AAD 관리자 계정으로 Azure SQL DB/DW 인스턴스에 로그인합니다.  

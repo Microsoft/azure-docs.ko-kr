@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 12/06/2018
 ms.author: bahariri
 ms.openlocfilehash: e704a2595130a2a815388447ac482ab96789d64a
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57453986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60821777"
 ---
 # <a name="exchange-events-between-consumers-and-producers-that-use-different-protocols-amqp-kafka-and-https"></a>서로 다른 프로토콜(AMQP, Kafka 및 HTTPS)을 사용하는 소비자와 생산자 간의 이벤트 교환입니다.
 Azure Event Hubs는 소비자와 생산자를 위한 세 가지 프로토콜 (AMQP, Kafka 및 HTTPS)을 지원합니다. 이러한 프로토콜 각각에는 메시지를 표현하는 자체의 고유한 방법이 있으므로 당연히 제기되는 질문은 다음과 같습니다. 애플리케이션에서 하나의 프로토콜을 사용하여 Event Hub에 이벤트를 보내고 다른 프로토콜을 사용하여 이벤트를 소비하는 경우 소비자에게 도착할 때 이벤트의 다양한 부분과 값은 어떻게 보일까요? 이 문서에서는 이벤트 내의 값이 소비 애플리케이션에서 올바르게 해석되도록 하는 생산자와 소비자 모두에 대한 모범 사례를 설명합니다.
@@ -344,5 +344,5 @@ String myStringProperty = new String(rawbytes, StandardCharsets.UTF_8);
 * [Event Hubs에 대해 알아봅니다](event-hubs-what-is-event-hubs.md).
 * [Kafka용 Event Hubs에 대해 알아보기](event-hubs-for-kafka-ecosystem-overview.md)
 * [Kafka GitHub용 Event Hubs에서 더 많은 샘플 탐색](https://github.com/Azure/azure-event-hubs-for-kafka)
-* 사용 하 여 [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) 에 [온-프레미스에서 Kafka에서 kafka 스트림 이벤트 클라우드에서 Event Hubs를 사용 하도록 설정 합니다.](event-hubs-kafka-mirror-maker-tutorial.md)
+* [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330)를 사용하여 [온-프레미스 Kafka에서 클라우드의 Kafka 지원 Event Hubs로 이벤트를 스트림합니다.](event-hubs-kafka-mirror-maker-tutorial.md)
 * [네이티브 Kafka 애플리케이션](event-hubs-quickstart-kafka-enabled-event-hubs.md), [Apache Flink](event-hubs-kafka-flink-tutorial.md) 또는 [Akka Streams](event-hubs-kafka-akka-streams-tutorial.md)를 사용하여 Kafka 지원 Event Hubs에 스트림하는 방법을 알아봅니다.

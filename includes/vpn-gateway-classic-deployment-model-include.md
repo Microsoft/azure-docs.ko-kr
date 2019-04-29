@@ -2,18 +2,19 @@
 title: 포함 파일
 description: 포함 파일
 services: vpn-gateway
-author: cherylmc
+author: WenJason
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 03/21/2018
-ms.author: cherylmc
+origin.date: 03/21/2018
+ms.date: 12/24/2018
+ms.author: v-jay
 ms.custom: include file
 ms.openlocfilehash: 1cf8babe1e769382ba86a2cfa8c570ae2d1e5c62
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53439376"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60407986"
 ---
 > [!NOTE]
 > 이 문서는 클래식 배포 모델 사용에 대해 설명합니다. Azure을 처음 접하는 경우 Resource Manager 배포 모델을 사용하는 것이 좋습니다. Resource Manager 배포 모델은 가장 최신 배포 모델로 클래식 배포 모델보다 더 많은 옵션과 기능 호환성을 제공합니다. 배포 모델에 대한 자세한 내용은 [배포 모델 이해](../articles/resource-manager-deployment-model.md)를 참조하세요.

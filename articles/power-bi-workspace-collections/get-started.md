@@ -3,17 +3,17 @@ title: Microsoft Power BI 작업 영역 컬렉션 시작
 description: Power BI 작업 영역 컬렉션은 애플리케이션 개발자가 자신의 애플리케이션에 대화형 Power BI 보고서를 추가할 수 있는 Azure 서비스입니다.
 services: power-bi-workspace-collections
 ms.service: power-bi-workspace-collections
-author: markingmyname
-ms.author: maghan
+author: rkarlin
+ms.author: rkarlin
 ms.topic: conceptual
 ms.workload: powerbi
 ms.date: 09/25/2017
-ms.openlocfilehash: 751d69cd9b52cf88bb54900e67283fdff3d90579
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: d1011a8fd8f181233be8e1fa27c3bfaea3d86141
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58520482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62110454"
 ---
 # <a name="get-started-with-microsoft-power-bi-workspace-collections"></a>Microsoft Power BI 작업 영역 컬렉션 시작
 

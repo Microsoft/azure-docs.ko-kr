@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 12/11/2018
 ms.author: kumud
 ms.openlocfilehash: 328471292ea6cbe07e96cc18af7f9c524407de3d
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55809473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60930285"
 ---
 # <a name="high-availability-ports-overview"></a>고가용성 포트 개요
 

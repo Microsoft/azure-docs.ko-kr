@@ -13,11 +13,11 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 03/12/2019
 ms.openlocfilehash: e488e742fc49102f7c58d132a66bca2347ad575c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57849876"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60702098"
 ---
 # <a name="managing-azure-sql-databases-using-azure-automation"></a>Azure Automation을 사용하여 Azure SQL 데이터베이스 관리
 
@@ -40,13 +40,13 @@ Azure SQL Database는 [Azure PowerShell 도구](/powershell/azure/overview)에�
 [Azure Automation Runbook 갤러리](https://azure.microsoft.com/blog/20../../introducing-the-azure-automation-runbook-gallery/)에는 Azure SQL 데이터베이스, 다른 Azure 서비스 및 타사 시스템의 관리 자동화를 시작할 수 있는 다양한 제품 팀 및 커뮤니티 Runbook이 포함되어 있습니다. Runbook 갤러리에는 다음이 포함됩니다.
 
 - [SQL Server 데이터베이스에 대해 SQL 쿼리를 실행 합니다.](https://gallery.technet.microsoft.com/scriptcenter/How-to-use-a-SQL-Command-be77f9d2)
-- [일정에 따라 Azure SQL Database를 세로로(위쪽 또는 아래쪽) 조정합니다.](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-Database-e957354f)
+- [일정에 따라 Azure SQL Database를 세로로(위쪽 또는 아래쪽) 조정](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-Database-e957354f)
 - [해당 데이터베이스의 최대 크기에 도달한 경우 SQL 테이블을 줄이세요.](https://gallery.technet.microsoft.com/scriptcenter/Azure-Automation-Your-SQL-30f8736b)
-- [Azure SQL Database가 심하게 조각화 된 경우 테이블에 색인을 달아주세요.](https://gallery.technet.microsoft.com/scriptcenter/Indexes-tables-in-an-Azure-73a2a8ea)
+- [Azure SQL Database가 심하게 조각화된 경우 테이블에 인덱스를 달아주세요.](https://gallery.technet.microsoft.com/scriptcenter/Indexes-tables-in-an-Azure-73a2a8ea)
 
 ## <a name="next-steps"></a>다음 단계
 
-Azure Automation의 기본 사항과 Azure Automation을 사용하여 SQL 데이터베이스를 관리하는 방법을 알아보았으므로 이제 다음 링크에 따라 Azure Automation에 대해 자세히 알아보세요.
+Azure Automation의 기본 사항과 Azure Automation을 사용하여 Azure SQL 데이터베이스를 관리하는 방법을 알아보았으므로 이제 다음 링크에 따라 Azure Automation에 대해 자세히 알아보세요.
 
 - [Azure Automation 개요](../automation/automation-intro.md)
 - [내 첫 번째 runbook](../automation/automation-first-runbook-graphical.md)

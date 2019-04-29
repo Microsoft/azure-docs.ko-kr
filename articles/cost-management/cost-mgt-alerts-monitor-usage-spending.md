@@ -11,11 +11,11 @@ ms.service: cost-management
 manager: alavital
 ms.custom: ''
 ms.openlocfilehash: feb7fcdd9005ef131acadfc63defbe4caeaca014
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57991926"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60576564"
 ---
 # <a name="use-cost-alerts-to-monitor-usage-and-spending"></a>비용 경고를 사용하여 사용량 및 지출 모니터링
 
@@ -49,7 +49,7 @@ Azure Portal에서는 비용을 통해 예산이 정의됩니다. Azure Consumpt
 
 ## <a name="view-cost-alerts"></a>비용 경고 보기
 
-비용 경고를 보려면 Azure portal 선택에서 원하는 범위를 엽니다 **예산을** 메뉴에서. 사용 된 **범위** 필 다른 범위로 전환 하려면. 선택 **경고 비용** 메뉴에서. 범위에 대 한 자세한 내용은 참조 하세요. [이해 및 작업 범위를 사용 하 여](understand-work-scopes.md)입니다.
+비용 경고를 보려면 Azure portal 선택에서 원하는 범위를 엽니다 **예산을** 메뉴에서. 사용 된 **범위** 필 다른 범위로 전환 하려면. 선택 **경고 비용** 메뉴에서. 범위에 대한 자세한 내용은 [범위 이해 및 작업](understand-work-scopes.md)을 참조하세요.
 
 ![Cost Management에 표시된 경고의 예제 이미지](./media/cost-mgt-alerts-monitor-usage-spending/budget-alerts-fullscreen.png)
 

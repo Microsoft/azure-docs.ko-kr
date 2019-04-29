@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 04/12/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: 35639dac0eacd5eae04b7848bdbbc1bc30fbf214
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
-ms.translationtype: MT
+ms.openlocfilehash: 18780deba1910b3ea77f7313bfb6d204dacabd82
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59680777"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62112024"
 ---
 # <a name="serverless-event-based-architectures-with-azure-cosmos-db-and-azure-functions"></a>Azure Cosmos DB 및 Azure Functions를 사용 하 여 서버 리스 이벤트 기반 아키텍처
 
-Azure Functions에 연결 하는 가장 간단한 방법은 제공 된 [변경 피드]()합니다. 각 새 Azure Cosmos 컨테이너의 변경 피드 이벤트에 자동으로 트리거될 수 있는 작은 사후 Azure Functions를 만들 수 있습니다.
+Azure Functions에 연결 하는 가장 간단한 방법은 제공 된 [변경 피드](change-feed.md)합니다. 각 새 Azure Cosmos 컨테이너의 변경 피드 이벤트에 자동으로 트리거될 수 있는 작은 사후 Azure Functions를 만들 수 있습니다.
 
 ![Azure Cosmos DB 트리거를 사용 하 여 작업 하는 서버 리스 이벤트 기반 함수](./media/change-feed-functions/functions.png)
 

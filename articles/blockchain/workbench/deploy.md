@@ -11,11 +11,11 @@ ms.service: azure-blockchain
 ms.reviewer: brendal
 manager: femila
 ms.openlocfilehash: 5f488811e57ee20cb25db56b2d9e04202b17ffb2
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59579532"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60869813"
 ---
 # <a name="deploy-azure-blockchain-workbench"></a>Azure Blockchain Workbench 배포
 
@@ -86,7 +86,7 @@ Azure Blockchain Workbench를 사용하려면 Azure AD 구성 및 애플리케�
     | 배포 지역 | Blockchain Workbench 리소스를 배포할 위치를 지정합니다. 최상의 가용성을 위해 이 위치는 **위치** 설정과 일치해야 합니다. |
     | 구독 | 배포에 사용할 Azure 구독을 지정합니다. |
     | 리소스 그룹 | **새로 만들기**를 선택하여 새 리소스 그룹을 만들고 고유한 리소스 그룹 이름을 지정합니다. |
-    | 위치 | 프레임워크를 배포할 영역을 지정합니다. |
+    | Location | 프레임워크를 배포할 영역을 지정합니다. |
 
 7. **확인**을 선택하여 기본 설정 구성 섹션을 완료합니다.
 
@@ -205,7 +205,7 @@ Blockchain Workbench 배포에는 Azure AD 애플리케이션의 등록이 필�
 
     |설정  | 값  |
     |---------|---------|
-    |name | `Blockchain API` |
+    |이름 | `Blockchain API` |
     |애플리케이션 형식 |웹앱/API|
     |로그온 URL | `https://blockchainapi` |
 

@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 32f533d06b7db0284459951e65f9c04fe0bb0285
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "58114351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485354"
 ---
 가용성 집합을 사용하면 유지 관리 중과 같은 가동 중지 시간 동안에도 가상 머신을 계속 사용할 수 있습니다. 가용성 집합 내에 비슷하게 구성된 둘 이상의 가상 머신을 배치하면 가상 머신이 실행하는 서비스나 애플리케이션의 가용성을 유지하는 데 필요한 중복성이 생성됩니다. 이 기능이 작동하는 방식에 대한 자세한 내용은 [가상 머신의 가용성 관리][Manage the availability of virtual machines]를 참조하세요.
 

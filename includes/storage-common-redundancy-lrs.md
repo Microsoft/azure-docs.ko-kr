@@ -9,11 +9,11 @@ ms.date: 02/12/2019
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: 32032f729283cb3f2a786412b563fdee88ba4c8a
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56238570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60729637"
 ---
 LRS(로컬 중복 스토리지)는 지정된 기간 동안 개체에 99.999999999% 이상의 내구성을 제공합니다(11개의 9). LRS는 스토리지 확장 단위에 데이터를 복제하여 이 개체 내구성을 제공합니다. 스토리지 계정을 만든 지역에 위치한 데이터 센터는 스토리지 확장 단위를 호스팅합니다. LRS 스토리지 계정에 대한 쓰기 요청은 데이터가 모든 복제본에 기록된 후에만 성공적으로 반환됩니다. 각 복제본은 스토리지 배율 단위 내에서 별도의 장애 도메인 및 업그레이드 도메인에 상주합니다.
 

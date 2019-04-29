@@ -9,11 +9,11 @@ ms.date: 04/04/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 19ad4e39ca4e402c37b2cfa69c7c306b6e5a2766
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53444252"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60407674"
 ---
 1. 가상 네트워크 게이트웨이에 대한 페이지로 이동하여 엽니다. 여러 가지 방법으로 이동할 수 있습니다. **TestVNet1 -> 개요 -> 연결된 장치 -> VNet1GW**로 이동하여 'VNet1GW' 게이트웨이로 이동합니다.
 2. VNet1GW 페이지에서 **연결**을 클릭합니다. 연결 페이지의 맨 위에 있는 **+추가**를 클릭하여 **연결 추가** 페이지를 엽니다.

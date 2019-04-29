@@ -9,11 +9,11 @@ ms.date: 01/23/2017
 ms.author: muralikk
 ms.subservice: common
 ms.openlocfilehash: 00e226134039d29efd744290c4bc63abd50adc89
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55697835"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61478609"
 ---
 # <a name="azure-importexport-service-log-file-format"></a>Azure Import/Export 서비스 로그 파일 형식
 Microsoft Azure Import/Export 서비스가 드라이브에서 가져오기 작업 또는 내보내기 작업의 일부로 작업을 수행하는 경우 로그는 해당 작업과 연결된 스토리지 계정의 블록 Blob에 작성됩니다.  
@@ -105,15 +105,15 @@ properties-status ::=
 |-----------------|----------|-----------------|  
 |`DriveLog`|XML 요소|드라이브 로그를 나타냅니다.|  
 |`Version`|특성, 문자열|로그 형식의 버전입니다.|  
-|`DriveId`|문자열|드라이브의 하드웨어 일련 번호입니다.|  
-|`Status`|문자열|처리 중인 드라이브의 상태입니다. 자세한 내용은 아래 `Drive Status Codes` 테이블을 참조하세요.|  
+|`DriveId`|String|드라이브의 하드웨어 일련 번호입니다.|  
+|`Status`|String|처리 중인 드라이브의 상태입니다. 자세한 내용은 아래 `Drive Status Codes` 테이블을 참조하세요.|  
 |`Blob`|중첩 XML 요소|Blob을 나타냅니다.|  
-|`Blob/BlobPath`|문자열|Blob의 URI입니다.|  
-|`Blob/FilePath`|문자열|드라이브의 파일에 대한 상대 경로입니다.|  
+|`Blob/BlobPath`|String|Blob의 URI입니다.|  
+|`Blob/FilePath`|String|드라이브의 파일에 대한 상대 경로입니다.|  
 |`Blob/Snapshot`|DateTime|내보내기 작업에 대한 Blob의 스냅숏 버전입니다.|  
 |`Blob/Length`|정수 |바이트 단위인 Blob의 총 길이입니다.|  
 |`Blob/LastModified`|DateTime|내보내기 작업에 대해 Blob를 마지막으로 수정한 날짜/시간입니다.|  
-|`Blob/ImportDisposition`|문자열|가져오기 작업에 대한 Blob의 가져오기 처리입니다.|  
+|`Blob/ImportDisposition`|String|가져오기 작업에 대한 Blob의 가져오기 처리입니다.|  
 |`Blob/ImportDisposition/@Status`|특성, 문자열|가져오기 처리의 상태입니다.|  
 |`PageRangeList`|중첩 XML 요소|페이지 Blob에 대한 페이지 범위 목록을 나타냅니다.|  
 |`PageRange`|XML 요소|페이지 범위를 나타냅니다.|  
@@ -130,17 +130,17 @@ properties-status ::=
 |`Block/@Status`|특성, 문자열|블록을 처리하는 상태입니다.|  
 |`Metadata`|중첩 XML 요소|Blob의 메타데이터를 나타냅니다.|  
 |`Metadata/@Status`|특성, 문자열|Blob 메타데이터를 처리하는 상태입니다.|  
-|`Metadata/GlobalPath`|문자열|전역 메타데이터 파일에 대한 상대 경로입니다.|  
+|`Metadata/GlobalPath`|String|전역 메타데이터 파일에 대한 상대 경로입니다.|  
 |`Metadata/GlobalPath/@Hash`|특성, 문자열|전역 메타데이터 파일의 Base16 인코딩 MD5 해시입니다.|  
-|`Metadata/Path`|문자열|메타데이터 파일에 대한 상대 경로입니다.|  
+|`Metadata/Path`|String|메타데이터 파일에 대한 상대 경로입니다.|  
 |`Metadata/Path/@Hash`|특성, 문자열|메타데이터 파일의 Base16 인코딩 MD5 해시입니다.|  
 |`Properties`|중첩 XML 요소|Blob 속성을 나타냅니다.|  
 |`Properties/@Status`|특성, 문자열|Blob 속성을 처리하는 상태입니다(예: 파일을 찾을 수 없음, 완료됨).|  
-|`Properties/GlobalPath`|문자열|전역 속성 파일에 대한 상대 경로입니다.|  
+|`Properties/GlobalPath`|String|전역 속성 파일에 대한 상대 경로입니다.|  
 |`Properties/GlobalPath/@Hash`|특성, 문자열|전역 속성 파일의 Base16 인코딩 MD5 해시입니다.|  
-|`Properties/Path`|문자열|속성 파일에 대한 상대 경로입니다.|  
+|`Properties/Path`|String|속성 파일에 대한 상대 경로입니다.|  
 |`Properties/Path/@Hash`|특성, 문자열|속성 파일의 Base16 인코딩 MD5 해시입니다.|  
-|`Blob/Status`|문자열|Blob을 처리하는 상태입니다.|  
+|`Blob/Status`|String|Blob을 처리하는 상태입니다.|  
   
 ## <a name="drive-status-codes"></a>드라이브 상태 코드  
 다음 테이블에서는 드라이브를 처리하는 상태 코드를 나열합니다.  

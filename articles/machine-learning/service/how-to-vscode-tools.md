@@ -11,11 +11,11 @@ author: swinner95
 ms.date: 12/04/2018
 ms.custom: seodec18
 ms.openlocfilehash: bbeb0dbbd5e9c919eda4b298dc5bee31965e9bac
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59995254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60818597"
 ---
 # <a name="get-started-with-azure-machine-learning-for-visual-studio-code"></a>Visual Studio Code용 Azure Machine Learning 시작
 

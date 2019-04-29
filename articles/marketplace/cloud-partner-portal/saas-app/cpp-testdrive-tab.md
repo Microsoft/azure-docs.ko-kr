@@ -12,14 +12,14 @@ ms.workload: ''
 ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 12/04/2018
+ms.date: 04/24/2019
 ms.author: pbutlerm
 ms.openlocfilehash: b12ba53f847b46479b3100c088c29372b58c1b8e
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58649036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60594220"
 ---
 # <a name="saas-application-test-drive-tab"></a>SaaS 애플리케이션 시험 사용 탭
 
@@ -31,9 +31,11 @@ ms.locfileid: "58649036"
 
 시험 사용은 실제 구현 시나리오에서 입증된 제품의 주요 기능과 이점에 대한 실습 중심의 자기 주도형 평가판을 고객에게 제공합니다.
 
+
 ## <a name="how-a-test-drive-works"></a>시험 사용의 작동 방식
 
 잠재 고객은 Marketplace에서 애플리케이션을 검색합니다. 고객은 로그인하여 사용 약관에 동의합니다. 이때 고객은 일정 시간 동안 사용해 보도록 미리 구성된 환경을 받고 여러분은 향후 연락할 우수한 잠재 고객을 얻게 됩니다. 자세한 내용은 [시험 사용이란?](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/what-is-test-drive)을 참조하세요.
+
 
 ## <a name="publishing-steps"></a>게시 단계
 
@@ -43,6 +45,7 @@ ms.locfileid: "58649036"
 2. Resource Manager 템플릿 빌드 및/또는 수정
 3. 시험 사용 단계별 설명서 만들기
 4. 제품 다시 게시
+
 
 ## <a name="setting-up-a-test-drive"></a>시험 사용 설정
 
@@ -54,6 +57,8 @@ ms.locfileid: "58649036"
 |       호스트형             |       호스트형 시험 사용을 진행하면 시험 사용 사용자 프로비저닝 및 프로비전 해제를 수행하는 서비스를 Microsoft에서 호스팅하고 유지 관리하므로 복잡한 설정을 수행할 필요가 없습니다.             |         [호스팅된 시험 사용](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/hosted-test-drive)          |
 |      논리 앱              |       논리 앱 시험 사용은 모든 복잡한 솔루션 아키텍처가 포함된 배포 템플릿입니다. 모든 Dynamics 애플리케이션 또는 사용자 지정 제품은 이 유형의 시험 사용을 사용해야 합니다.            |      [논리 앱 시험 사용](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/logic-app-test-drive)             |
 |       Power BI             |         Power BI 시험 사용은 사용자 지정 빌드 대시보드에 포함된 링크로 구성됩니다. 대화형 Power BI 시각적 개체를 보여 주려는 제품은 이 유형의 시험 사용을 사용해야 합니다. 포함된 Power BI URL만 업로드하면 됩니다.          |        [Power BI 시험 사용](#power-bi-test-drive)           |
+|   |   |   |
+
 
 ### <a name="power-bi-test-drive"></a>Power BI 시험 사용
 

@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 12/21/2018
 ms.author: ellacroi
 ms.openlocfilehash: bdae273506a238c4d47c1cdce004cdd92b2d58a1
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54355280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62121027"
 ---
 # <a name="marketing-best-practices"></a>마케팅 모범 사례
 
@@ -53,7 +53,7 @@ ms.locfileid: "54355280"
 먼저 실제 구매자와 구매 영향력 행사자를 결정합니다. 조직 내에 다양한 사람이 있을 수 있으며, 각 역할에 대한 전술 및 행동 지침이 다를 수 있습니다. 다음과 같은 평가 질문을 통해 대상 그룹을 더 잘 이해할 수 있습니다.
 
 * 구매자가 구매 결정을 얼마나 많이 제어하나요?
-* 영향을 미치는 사람은 얼마나 큰 영향력을 가지나요?
+* 영향을 미치는 사람은 얼마나 큰 영향력을 갖나요?
 * 영향을 미치는 사람은 무엇에 영향을 미치나요?
 * 이 사람이 예산에 영향을 주는가요? 또는 어떤 솔루션을 선택했습니까?
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/19/2018
 ms.author: apimpm
-ms.openlocfilehash: 73609e802eceea6aa94d77cef6ca1d654264973d
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.openlocfilehash: 2bde63bb668188936b3dd3cf5ecbf3b8c604eb95
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36265010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60564332"
 ---
 # <a name="error-handling-in-api-management-policies"></a>API Management 정책에서 오류 처리
 
@@ -73,19 +73,19 @@ ms.locfileid: "36265010"
 -   [json-to-xml](api-management-transformation-policies.md#ConvertJSONtoXML)  
 -   [xml-to-json](api-management-transformation-policies.md#ConvertXMLtoJSON)  
   
-## <a name="lasterror"></a>LastError
+## <a name="lasterror"></a>lastError
 
  오류가 발생하고 제어가 `on-error` 정책 섹션으로 이동하는 경우 오류가 `on-error` 섹션에 있는 정책에서 액세스할 수 있고 [context.LastError](api-management-policy-expressions.md#ContextVariables) 속성에 저장됩니다. LastError에는 다음 속성이 있습니다.  
   
-| Name     | type   | 설명                                                                                               | 필수 |
+| 이름     | 형식   | 설명                                                                                               | 필수 |
 |----------|--------|-----------------------------------------------------------------------------------------------------------|----------|
-| `Source`   | string | 오류가 발생한 요소 이름을 지정합니다. 정책 또는 기본 제공 파이프라인 단계 이름일 수 있습니다.     | 예      |
-| `Reason`   | string | 오류 처리에 사용될 수 있는 컴퓨터에 익숙한 오류 코드입니다.                                       | 아니오       |
-| `Message`  | string | 사람이 읽을 수 있는 오류 설명입니다.                                                                         | 예      |
-| `Scope`    | string | 오류가 발생한 범위 이름으로 "global", "product", "api" 또는 "operation" 중 하나일 수 있습니다. | 아니오       |
-| `Section`  | string | 오류가 발생한 섹션 이름입니다. 가능한 값: "inbound", "backend", "outbound" 또는 "on-error".       | 아니오       |
-| `Path`     | string | 중첩된 정책(예: "choose[3]/when[2]")을 지정합니다.                                                        | 아니오       |
-| `PolicyId` | string | 오류가 발생한 정책에서 `id` 특성 값(고객이 지정한 경우)             | 아니오       |
+| 원본   | 문자열 | 오류가 발생한 요소 이름을 지정합니다. 정책 또는 기본 제공 파이프라인 단계 이름일 수 있습니다.     | 예      |
+| 이유   | 문자열 | 오류 처리에 사용될 수 있는 컴퓨터에 익숙한 오류 코드입니다.                                       | 아닙니다.       |
+| Message  | 문자열 | 사람이 읽을 수 있는 오류 설명입니다.                                                                         | 예      |
+| 범위    | 문자열 | 오류가 발생한 범위 이름으로 "global", "product", "api" 또는 "operation" 중 하나일 수 있습니다. | 아닙니다.       |
+| 섹션  | 문자열 | 오류가 발생한 섹션 이름입니다. 가능한 값: "inbound", "backend", "outbound" 또는 "on-error".       | 아닙니다.       |
+| path     | 문자열 | 중첩된 정책(예: "choose[3]/when[2]")을 지정합니다.                                                        | 아닙니다.       |
+| PolicyId | 문자열 | 오류가 발생한 정책에서 `id` 특성 값(고객이 지정한 경우)             | 아닙니다.       |
 
 > [!TIP]
 > context.Response.StatusCode를 통해 상태 코드에 액세스할 수 있습니다.  

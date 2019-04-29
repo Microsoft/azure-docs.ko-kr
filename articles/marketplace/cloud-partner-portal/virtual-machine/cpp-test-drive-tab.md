@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/19/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 97fb21dc390bd365357f6395c72aa282423c83c9
-ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49639430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61344622"
 ---
 # <a name="virtual-machine-test-drive-tab"></a>가상 머신 시험 사용 탭
 

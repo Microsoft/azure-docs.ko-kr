@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 09/10/2018
 ms.author: akjosh; cynthn
 ms.custom: ''
-ms.openlocfilehash: 8f2253c70a75a7494c840155a2b032e1b5c55dfb
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
-ms.translationtype: HT
+ms.openlocfilehash: 5366a4d2ef353ba09c18147dceb231631c8ad52e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47046526"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60799520"
 ---
 # <a name="shared-image-galleries-overview"></a>공유 이미지 갤러리 개요
 

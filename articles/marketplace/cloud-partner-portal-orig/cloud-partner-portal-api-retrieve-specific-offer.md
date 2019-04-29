@@ -15,11 +15,11 @@ ms.topic: reference
 ms.date: 09/13/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 9484cf0f549db94be8f1ac2363addca952a3cff3
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48808270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61096066"
 ---
 <a name="retrieve-a-specific-offer"></a>특정 제안 검색
 =========================
@@ -47,8 +47,8 @@ ms.locfileid: "48808270"
 
 | **Name**    | **설명**                                                                          | **데이터 형식** |
 |-------------|------------------------------------------------------------------------------------------|---------------|
-| publisherId | publisherId입니다. 예: Contoso                                                        | 문자열        |
-| offerId     | 제안을 고유하게 식별하는 GUID입니다.                                                 | 문자열        |
+| publisherId | publisherId입니다. 예: Contoso                                                        | String        |
+| offerId     | 제안을 고유하게 식별하는 GUID입니다.                                                 | String        |
 | 버전     | 검색 중인 제안의 버전입니다. 기본적으로 최신 제안 버전이 검색됩니다. | 정수        |
 | slotId      | 제안이 검색될 슬롯으로, 다음 중 하나일 수 있습니다.      <br/>  - `Draft`(기본값)는 현재 초안에 있는 제안 버전을 검색합니다.  <br/>  -  `Preview`는 현재 미리 보기에 있는 제안 버전을 검색합니다.     <br/>  -  `Production`은 현재 프로덕션 환경에 있는 제안 버전을 검색합니다.          |      enum |
 | api-version | 최신 버전 API                                                                    | Date          |
@@ -181,7 +181,7 @@ ms.locfileid: "48808270"
 |  publisherId    | 게시자의 고유 식별자입니다.                                                                                              |
 |  status         | 제안의 상태입니다. 가능한 값 목록을 보려면 아래 [제안 상태](#offer-status)를 참조하세요.                                  |
 |  Id             | 제안을 고유하게 식별하는 GUID입니다.                                                                                         |
-|  버전        | 제안의 현재 버전입니다. version 속성은 클라이언트에서 수정할 수 없습니다. 게시할 때마다 증분됩니다.    |
+|  버전        | 제안의 현재 버전입니다. 버전 속성은 클라이언트가 수정할 수 없습니다. 각 게시 후에 증분됩니다.    |
 |  정의     | 워크로드의 실제 정의입니다.                                                                                               |
 |  changedTime    | 제안을 마지막으로 수정한 UTC 날짜/시간입니다.                                                                                   |
 |  |  |
@@ -193,7 +193,7 @@ ms.locfileid: "48808270"
 |  ------   | ------------------------------------------------------------------------------------------------------------------------------- |
 |  200      | `OK` - 요청이 성공적으로 처리되었으며 해당 게시자의 모든 제안이 클라이언트에 반환되었습니다.               |
 |  400      | `Bad/Malformed request` - 오류 응답 본문에 자세한 정보가 들어 있을 수 있습니다.                                                 |
-|  403      | `Forbidden` - 클라이언트에서는 지정된 네임스페이스에 액세스할 수 없습니다.                                                        |
+|  403      | `Forbidden` - 클라이언트는 지정된 네임스페이스에 액세스할 수 없습니다.                                                        |
 |  404      | `Not found` - 지정된 엔터티가 존재하지 않습니다. 클라이언트는 publisherId, offerId 및 version(지정된 경우)을 확인해야 합니다.      |
 |  |  |
 

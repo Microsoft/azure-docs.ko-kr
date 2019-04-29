@@ -1,5 +1,5 @@
 ---
-title: 여러 Azure SQL Database에 대해 보고 쿼리 실행 | Microsoft Docs
+title: 여러 Azure SQL 데이터베이스에 대해 보고 쿼리 실행 | Microsoft Docs
 description: 분산 쿼리를 사용한 교차 테넌트 보고
 services: sql-database
 ms.service: sql-database
@@ -13,11 +13,11 @@ ms.reviewers: billgib,ayolubek
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: 9562d0cd1ad97a459c3630456a6070ac2b6e63f3
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58096030"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61484743"
 ---
 # <a name="cross-tenant-reporting-using-distributed-queries"></a>분산 쿼리를 사용한 교차 테넌트 보고
 

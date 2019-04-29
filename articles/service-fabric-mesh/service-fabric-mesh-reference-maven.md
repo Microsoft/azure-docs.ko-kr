@@ -10,11 +10,11 @@ ms.topic: reference
 ms.service: service-fabric-mesh
 manager: subramar
 ms.openlocfilehash: 08e842f5b91bd0ca5f8e8b2a7866f3f9a689ac28
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52998983"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60811623"
 ---
 # <a name="maven-plugin-for-service-fabric-mesh"></a>Service Fabric Mesh에 대한 Maven 플러그 인
 
@@ -153,7 +153,7 @@ mvn azure-sfmesh:addsecretvalue -DsecretValue=someVal -DsecretValueName=secret1/
 
 - `secretvalue_secret1_v1`라고 명명된 `servicefabric->appresources`번 폴더에 비밀 값 YAML을 만듭니다.
 
-### <a name="run-the-application-locally"></a>로컬에서 응용 프로그램 실행
+### <a name="run-the-application-locally"></a>로컬에서 애플리케이션 실행
 
 `azure-sfmesh:deploytocluster` 목표를 활용하여 아래 명령을 사용해 로컬에서 애플리케이션을 실행할 수 있습니다.
 

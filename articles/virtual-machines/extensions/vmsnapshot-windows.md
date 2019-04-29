@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 12/17/2018
 ms.author: trinadhk
 ms.openlocfilehash: 0392a187bf40e1fe35053b493733c7e89aa6969e
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57783128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60799424"
 ---
 # <a name="vm-snapshot-windows-extension-for-azure-backup"></a>Azure Backup용 VM 스냅숏 Windows 확장
 

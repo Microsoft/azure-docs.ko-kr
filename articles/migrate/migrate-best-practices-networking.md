@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 12/04/2018
 ms.author: raynew
 ms.openlocfilehash: 302445038dc9767bd412e232f62fc5249a1a7f09
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55696952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61296537"
 ---
 # <a name="best-practices-to-set-up-networking-for-workloads-migrated-to-azure"></a>Azure로 마이그레이션된 워크로드에 대한 네트워킹 설정 모범 사례
 
@@ -135,7 +135,7 @@ VNet을 배포하는 경우 Azure에서 기본적으로 DNS 서버를 추가합�
 
 - 컴퓨팅, 스토리지, 네트워킹 및 데이터 리소스를 한 영역 내에 배치하고 다른 영역에 이를 복제하여 마이그레이션 아키텍처에 고가용성을 계획하고 구축할 수 있습니다. 가용성 영역을 지원하는 Azure 서비스는 다음 두 가지 범주로 나뉩니다.
     - 영역 서비스: 리소스를 특정 영역에 연결합니다. 예: VM, 관리 디스크, IP 주소
-    - 영역 중복 서비스: 리소스가 영역 간에 자동으로 복제됩니다. 예: 영역 중복 스토리지, Azure SQL Database
+    - 영역 중복 서비스: 리소스가 영역 간에 자동으로 복제됩니다. 예: 영역 중복 스토리지, Azure SQL Database.
 - 인터넷 연결 워크로드 또는 애플리케이션 계층을 사용하여 표준 Azure 부하 분산 장치를 배포하여 영역 내결함성을 제공할 수 있습니다.
 
     ![부하 분산 장치](./media/migrate-best-practices-networking/load-balancer.png) *부하 분산 장치*

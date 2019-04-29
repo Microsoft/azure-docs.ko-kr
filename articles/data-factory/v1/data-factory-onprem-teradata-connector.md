@@ -14,11 +14,11 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: d22318f4d9e233a57d521fe36f0827b9fc3af3e0
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55746339"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60610735"
 ---
 # <a name="move-data-from-teradata-using-azure-data-factory"></a>Azure 데이터 팩터리를 사용하여 Teradata에서 데이터 이동
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -67,8 +67,8 @@ Teradata 데이터베이스에 연결할 데이터 관리 게이트웨이의 경
 | 형식 |type 속성을 다음으로 설정해야 합니다. **OnPremisesTeradata** |예 |
 | 서버 |Teradata 서버의 이름입니다. |예 |
 | authenticationType |Teradata 데이터베이스에 연결하는 데 사용되는 인증 형식입니다. 가능한 값은 다음과 같습니다. 익명, 기본 및 Windows입니다. |예 |
-| 사용자 이름 |기본 또는 Windows 인증을 사용하는 경우 사용자 이름을 지정합니다. |아니요 |
-| 암호 |사용자 이름에 지정한 사용자 계정의 암호를 지정합니다. |아니요 |
+| 사용자 이름 |기본 또는 Windows 인증을 사용하는 경우 사용자 이름을 지정합니다. |아닙니다. |
+| 암호 |사용자 이름에 지정한 사용자 계정의 암호를 지정합니다. |아닙니다. |
 | gatewayName |데이터 팩터리 서비스가 온-프레미스 Teradata 데이터베이스에 연결하는 데 사용해야 하는 게이트웨이의 이름입니다. |예 |
 
 ## <a name="dataset-properties"></a>데이터 세트 속성
@@ -285,11 +285,11 @@ Teradata로 데이터를 이동하는 경우 Teradata 형식에서 .NET 형식�
 
 | Teradata 데이터베이스 형식 | .NET Framework 형식 |
 | --- | --- |
-| Char |문자열 |
-| Clob |문자열 |
-| Graphic |문자열 |
-| VarChar |문자열 |
-| VarGraphic |문자열 |
+| Char |String |
+| Clob |String |
+| Graphic |String |
+| VarChar |String |
+| VarGraphic |String |
 | Blob |Byte[] |
 | Byte |Byte[] |
 | VarByte |Byte[] |
@@ -302,7 +302,7 @@ Teradata로 데이터를 이동하는 경우 Teradata 형식에서 .NET 형식�
 | SmallInt |Int16 |
 | Date |DateTime |
 | Time |TimeSpan |
-| Time With Time Zone |문자열 |
+| Time With Time Zone |String |
 | 타임 스탬프 |DateTime |
 | Timestamp With Time Zone |DateTimeOffset |
 | Interval Day |TimeSpan |
@@ -315,15 +315,15 @@ Teradata로 데이터를 이동하는 경우 Teradata 형식에서 .NET 형식�
 | Interval Minute |TimeSpan |
 | Interval Minute To Second |TimeSpan |
 | Interval Second |TimeSpan |
-| Interval Year |문자열 |
-| Interval Year To Month |문자열 |
-| Interval Month |문자열 |
-| Period(Date) |문자열 |
-| Period(Time) |문자열 |
-| Period(Time With Time Zone) |문자열 |
-| Period(Timestamp) |문자열 |
-| Period(Timestamp With Time Zone) |문자열 |
-| xml |문자열 |
+| Interval Year |String |
+| Interval Year To Month |String |
+| Interval Month |String |
+| Period(Date) |String |
+| Period(Time) |String |
+| Period(Time With Time Zone) |String |
+| Period(Timestamp) |String |
+| Period(Timestamp With Time Zone) |String |
+| Xml |String |
 
 ## <a name="map-source-to-sink-columns"></a>원본을 싱크 열로 매핑
 원본 데이터 세트의 열을 싱크 데이터 세트의 열로 매핑하는 방법은 [Azure Data Factory의 데이터 세트 열 매핑](data-factory-map-columns.md)을 참조하세요.

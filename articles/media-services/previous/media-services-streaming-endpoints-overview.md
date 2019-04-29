@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: c5979fa7ff67c5acda9ab653bc4ee52d8b5129a5
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58293807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60544960"
 ---
 # <a name="streaming-endpoints-overview"></a>스트리밍 엔드포인트 개요  
 
@@ -97,7 +97,7 @@ IP 필터링/G20/사용자 지정 호스트|예|예
 
 ## <a name="migration-between-types"></a>유형 간의 마이그레이션
 
-원본 | 받는 사람 | 조치
+원본 | 받는 사람 | 액션(Action)
 ---|---|---
 클래식|Standard|옵트인할 필요
 클래식|Premium| 크기 조정(추가 스트리밍 단위)

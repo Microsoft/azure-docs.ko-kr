@@ -3,22 +3,23 @@ title: Azure 주문형 스트리밍 작업으로 Postman 컬렉션 가져오기
 description: 이 문서에서는 Azure Media Services REST 호출에 대한 Postman 컬렉션 정의를 제공합니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
-manager: femila
+author: WenJason
+manager: digimobile
 editor: ''
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/20/2019
-ms.author: juliako
+origin.date: 03/20/2019
+ms.date: 04/01/2019
+ms.author: v-jay
 ms.openlocfilehash: 37fd131e570fa9f50df2479503b35407d67410cb
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58311529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60637538"
 ---
 # <a name="import-a-postman-collection-with-on-demand-streaming-operations"></a>주문형 스트리밍 작업으로 Postman 컬렉션 가져오기 
 
@@ -35,7 +36,7 @@ ms.locfileid: "58311529"
     "item": [
         {
             "name": "1. Get AAD Auth Token",
-            "description": "To get started making calls to Azure Media Services you have to first do the following:\n1) Get Token and cache it.\n2) Get the Closest API endpoint from http://media.windows.net",
+            "description": "To get started making calls to Azure Media Services you have to first do the following:\n1) Get Token and cache it.\n2) Get the Closest API endpoint from http://media.chinacloudapi.cn",
             "item": [
                 {
                     "name": "Get Azure AD Token for Service Principal Authentication",
@@ -86,8 +87,8 @@ ms.locfileid: "58311529"
                                 },
                                 {
                                     "key": "resource",
-                                    "value": "https://rest.media.azure.net",
-                                    "description": "Normally this is https://rest.media.azure.net",
+                                    "value": "https://rest.media.chinacloudapi.cn",
+                                    "description": "Normally this is https://rest.media.chinacloudapi.cn",
                                     "type": "text"
                                 }
                             ]
@@ -3123,7 +3124,7 @@ ms.locfileid: "58311529"
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\r\n  \"Name\": \"NewTestJob\",\r\n  \"InputMediaAssets\": [{\r\n    \"__metadata\": {\r\n     \"uri\": \"https://tvmewest.restv2.westcentralus-2.media.azure.net/api/Assets('nb:cid:UUID:847dcc53-6f4a-4bc1-925b-96538a11b8e3')\"\r\n    }\r\n  }],\r\n  \"Tasks\": [{\r\n    \"Configuration\": \"H264 Multiple Bitrate 720p\",\r\n    \"MediaProcessorId\": \"nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56\",\r\n    \"TaskBody\": \"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\"?>\r\n                <taskBody>\r\n                    <inputAsset>JobInputAsset(0)</inputAsset>\r\n                    <outputAsset assetName=\\\"foobar.mp4\\\">JobOutputAsset(0)</outputAsset>\r\n                </taskBody>\"\r\n  }]\r\n}"
+                            "raw": "{\r\n  \"Name\": \"NewTestJob\",\r\n  \"InputMediaAssets\": [{\r\n    \"__metadata\": {\r\n     \"uri\": \"https://tvmewest.restv2.chinanorth.media.chinacloudapi.cn/api/Assets('nb:cid:UUID:847dcc53-6f4a-4bc1-925b-96538a11b8e3')\"\r\n    }\r\n  }],\r\n  \"Tasks\": [{\r\n    \"Configuration\": \"H264 Multiple Bitrate 720p\",\r\n    \"MediaProcessorId\": \"nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56\",\r\n    \"TaskBody\": \"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\"?>\r\n                <taskBody>\r\n                    <inputAsset>JobInputAsset(0)</inputAsset>\r\n                    <outputAsset assetName=\\\"foobar.mp4\\\">JobOutputAsset(0)</outputAsset>\r\n                </taskBody>\"\r\n  }]\r\n}"
                         },
                         "url": {
                             "raw": "{{RESTAPIEndpoint}}/Jobs",
@@ -3219,7 +3220,7 @@ ms.locfileid: "58311529"
                                 },
                                 {
                                     "key": "Location",
-                                    "value": "https://tvmewest.restv2.westcentralus-2.media.azure.net/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')",
+                                    "value": "https://tvmewest.restv2.chinanorth.media.chinacloudapi.cn/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')",
                                     "name": "Location",
                                     "description": "Used in redirection, or when a new resource has been created."
                                 },
@@ -3268,7 +3269,7 @@ ms.locfileid: "58311529"
                             ],
                             "cookie": [],
                             "responseTime": 895,
-                            "body": "{\"d\":{\"__metadata\":{\"id\":\"https://tvmewest.restv2.westcentralus-2.media.azure.net/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')\",\"uri\":\"https://tvmewest.restv2.westcentralus-2.media.azure.net/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')\",\"type\":\"Microsoft.Cloud.Media.Vod.Rest.Data.Models.Job\"},\"Tasks\":{\"__deferred\":{\"uri\":\"https://tvmewest.restv2.westcentralus-2.media.azure.net/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')/Tasks\"}},\"OutputMediaAssets\":{\"__deferred\":{\"uri\":\"https://tvmewest.restv2.westcentralus-2.media.azure.net/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')/OutputMediaAssets\"}},\"InputMediaAssets\":{\"__deferred\":{\"uri\":\"https://tvmewest.restv2.westcentralus-2.media.azure.net/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')/InputMediaAssets\"}},\"Id\":\"nb:jid:UUID:2470355d-1500-80c0-97f2-f1e7c56bca63\",\"Name\":\"NewTestJob\",\"Created\":\"2017-11-09T16:34:01.578661Z\",\"LastModified\":\"2017-11-09T16:34:01.578661Z\",\"EndTime\":null,\"Priority\":0,\"RunningDuration\":0,\"StartTime\":null,\"State\":0,\"TemplateId\":null,\"JobNotificationSubscriptions\":{\"__metadata\":{\"type\":\"Collection(Microsoft.Cloud.Media.Vod.Rest.Data.Models.JobNotificationSubscription)\"},\"results\":[]}}}"
+                            "body": "{\"d\":{\"__metadata\":{\"id\":\"https://tvmewest.restv2.chinanorth.media.chinacloudapi.cn/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')\",\"uri\":\"https://tvmewest.restv2.chinanorth.media.chinacloudapi.cn/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')\",\"type\":\"Microsoft.Cloud.Media.Vod.Rest.Data.Models.Job\"},\"Tasks\":{\"__deferred\":{\"uri\":\"https://tvmewest.restv2.chinanorth.media.chinacloudapi.cn/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')/Tasks\"}},\"OutputMediaAssets\":{\"__deferred\":{\"uri\":\"https://tvmewest.restv2.chinanorth.media.chinacloudapi.cn/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')/OutputMediaAssets\"}},\"InputMediaAssets\":{\"__deferred\":{\"uri\":\"https://tvmewest.restv2.chinanorth.media.chinacloudapi.cn/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')/InputMediaAssets\"}},\"Id\":\"nb:jid:UUID:2470355d-1500-80c0-97f2-f1e7c56bca63\",\"Name\":\"NewTestJob\",\"Created\":\"2017-11-09T16:34:01.578661Z\",\"LastModified\":\"2017-11-09T16:34:01.578661Z\",\"EndTime\":null,\"Priority\":0,\"RunningDuration\":0,\"StartTime\":null,\"State\":0,\"TemplateId\":null,\"JobNotificationSubscriptions\":{\"__metadata\":{\"type\":\"Collection(Microsoft.Cloud.Media.Vod.Rest.Data.Models.JobNotificationSubscription)\"},\"results\":[]}}}"
                         }
                     ]
                 },
@@ -3326,7 +3327,7 @@ ms.locfileid: "58311529"
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\r\n  \"Name\": \"Custom Encoding Job with Thumbnails\",\r\n  \"InputMediaAssets\": [{\r\n    \"__metadata\": {\r\n     \"uri\": \"https://tvmewest.restv2.westcentralus-2.media.azure.net/api/Assets('nb:cid:UUID:847dcc53-6f4a-4bc1-925b-96538a11b8e3')\"\r\n    }\r\n  }],\r\n  \"Tasks\": [{\r\n    \"Configuration\": \"{\r\n  'Version': 1.0,\r\n  'Codecs': [\r\n    {\r\n      'KeyFrameInterval': '00:00:02',\r\n      'SceneChangeDetection': 'true',\r\n      'H264Layers': [\r\n        {\r\n          'Profile': 'Auto',\r\n          'Level': 'auto',\r\n          'Bitrate': 4500,\r\n          'MaxBitrate': 4500,\r\n          'BufferWindow': '00:00:05',\r\n          'Width': 1280,\r\n          'Height': 720,\r\n          'ReferenceFrames': 3,\r\n          'EntropyMode': 'Cabac',\r\n          'AdaptiveBFrame': true,\r\n          'Type': 'H264Layer',\r\n          'FrameRate': '0/1'\r\n\r\n        }\r\n      ],\r\n      'Type': 'H264Video'\r\n    },\r\n    {\r\n      'JpgLayers': [\r\n        {\r\n          'Quality': 90,\r\n          'Type': 'JpgLayer',\r\n          'Width': '100%',\r\n          'Height': '100%'\r\n        }\r\n      ],\r\n      'Start': '{Best}',\r\n      'Type': 'JpgImage'\r\n    },\r\n    {\r\n      'Channels': 2,\r\n      'SamplingRate': 48000,\r\n      'Bitrate': 128,\r\n      'Type': 'AACAudio'\r\n    }\r\n  ],\r\n  'Outputs': [\r\n    {\r\n      'FileName': '{Basename}_{Index}{Extension}',\r\n      'Format': {\r\n        'Type': 'JpgFormat'\r\n      }\r\n    },\r\n    {\r\n      'FileName': '{Basename}_{Resolution}_{VideoBitrate}.mp4',\r\n      'Format': {\r\n        'Type': 'MP4Format'\r\n      }\r\n    }\r\n  ]\r\n}\",\r\n    \"MediaProcessorId\": \"nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56\",\r\n    \"TaskBody\": \"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\"?>\r\n                <taskBody>\r\n                    <inputAsset>JobInputAsset(0)</inputAsset>\r\n                    <outputAsset assetName=\\\"foobar.mp4\\\">JobOutputAsset(0)</outputAsset>\r\n                </taskBody>\"\r\n  }]\r\n}"
+                            "raw": "{\r\n  \"Name\": \"Custom Encoding Job with Thumbnails\",\r\n  \"InputMediaAssets\": [{\r\n    \"__metadata\": {\r\n     \"uri\": \"https://tvmewest.restv2.chinanorth.media.chinacloudapi.cn/api/Assets('nb:cid:UUID:847dcc53-6f4a-4bc1-925b-96538a11b8e3')\"\r\n    }\r\n  }],\r\n  \"Tasks\": [{\r\n    \"Configuration\": \"{\r\n  'Version': 1.0,\r\n  'Codecs': [\r\n    {\r\n      'KeyFrameInterval': '00:00:02',\r\n      'SceneChangeDetection': 'true',\r\n      'H264Layers': [\r\n        {\r\n          'Profile': 'Auto',\r\n          'Level': 'auto',\r\n          'Bitrate': 4500,\r\n          'MaxBitrate': 4500,\r\n          'BufferWindow': '00:00:05',\r\n          'Width': 1280,\r\n          'Height': 720,\r\n          'ReferenceFrames': 3,\r\n          'EntropyMode': 'Cabac',\r\n          'AdaptiveBFrame': true,\r\n          'Type': 'H264Layer',\r\n          'FrameRate': '0/1'\r\n\r\n        }\r\n      ],\r\n      'Type': 'H264Video'\r\n    },\r\n    {\r\n      'JpgLayers': [\r\n        {\r\n          'Quality': 90,\r\n          'Type': 'JpgLayer',\r\n          'Width': '100%',\r\n          'Height': '100%'\r\n        }\r\n      ],\r\n      'Start': '{Best}',\r\n      'Type': 'JpgImage'\r\n    },\r\n    {\r\n      'Channels': 2,\r\n      'SamplingRate': 48000,\r\n      'Bitrate': 128,\r\n      'Type': 'AACAudio'\r\n    }\r\n  ],\r\n  'Outputs': [\r\n    {\r\n      'FileName': '{Basename}_{Index}{Extension}',\r\n      'Format': {\r\n        'Type': 'JpgFormat'\r\n      }\r\n    },\r\n    {\r\n      'FileName': '{Basename}_{Resolution}_{VideoBitrate}.mp4',\r\n      'Format': {\r\n        'Type': 'MP4Format'\r\n      }\r\n    }\r\n  ]\r\n}\",\r\n    \"MediaProcessorId\": \"nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56\",\r\n    \"TaskBody\": \"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\"?>\r\n                <taskBody>\r\n                    <inputAsset>JobInputAsset(0)</inputAsset>\r\n                    <outputAsset assetName=\\\"foobar.mp4\\\">JobOutputAsset(0)</outputAsset>\r\n                </taskBody>\"\r\n  }]\r\n}"
                         },
                         "url": {
                             "raw": "{{RESTAPIEndpoint}}/Jobs",
@@ -3422,7 +3423,7 @@ ms.locfileid: "58311529"
                                 },
                                 {
                                     "key": "Location",
-                                    "value": "https://tvmewest.restv2.westcentralus-2.media.azure.net/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')",
+                                    "value": "https://tvmewest.restv2.chinanorth.media.chinacloudapi.cn/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')",
                                     "name": "Location",
                                     "description": "Used in redirection, or when a new resource has been created."
                                 },
@@ -3471,7 +3472,7 @@ ms.locfileid: "58311529"
                             ],
                             "cookie": [],
                             "responseTime": 895,
-                            "body": "{\"d\":{\"__metadata\":{\"id\":\"https://tvmewest.restv2.westcentralus-2.media.azure.net/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')\",\"uri\":\"https://tvmewest.restv2.westcentralus-2.media.azure.net/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')\",\"type\":\"Microsoft.Cloud.Media.Vod.Rest.Data.Models.Job\"},\"Tasks\":{\"__deferred\":{\"uri\":\"https://tvmewest.restv2.westcentralus-2.media.azure.net/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')/Tasks\"}},\"OutputMediaAssets\":{\"__deferred\":{\"uri\":\"https://tvmewest.restv2.westcentralus-2.media.azure.net/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')/OutputMediaAssets\"}},\"InputMediaAssets\":{\"__deferred\":{\"uri\":\"https://tvmewest.restv2.westcentralus-2.media.azure.net/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')/InputMediaAssets\"}},\"Id\":\"nb:jid:UUID:2470355d-1500-80c0-97f2-f1e7c56bca63\",\"Name\":\"NewTestJob\",\"Created\":\"2017-11-09T16:34:01.578661Z\",\"LastModified\":\"2017-11-09T16:34:01.578661Z\",\"EndTime\":null,\"Priority\":0,\"RunningDuration\":0,\"StartTime\":null,\"State\":0,\"TemplateId\":null,\"JobNotificationSubscriptions\":{\"__metadata\":{\"type\":\"Collection(Microsoft.Cloud.Media.Vod.Rest.Data.Models.JobNotificationSubscription)\"},\"results\":[]}}}"
+                            "body": "{\"d\":{\"__metadata\":{\"id\":\"https://tvmewest.restv2.chinanorth.media.chinacloudapi.cn/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')\",\"uri\":\"https://tvmewest.restv2.chinanorth.media.chinacloudapi.cn/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')\",\"type\":\"Microsoft.Cloud.Media.Vod.Rest.Data.Models.Job\"},\"Tasks\":{\"__deferred\":{\"uri\":\"https://tvmewest.restv2.chinanorth.media.chinacloudapi.cn/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')/Tasks\"}},\"OutputMediaAssets\":{\"__deferred\":{\"uri\":\"https://tvmewest.restv2.chinanorth.media.chinacloudapi.cn/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')/OutputMediaAssets\"}},\"InputMediaAssets\":{\"__deferred\":{\"uri\":\"https://tvmewest.restv2.chinanorth.media.chinacloudapi.cn/api/Jobs('nb%3Ajid%3AUUID%3A2470355d-1500-80c0-97f2-f1e7c56bca63')/InputMediaAssets\"}},\"Id\":\"nb:jid:UUID:2470355d-1500-80c0-97f2-f1e7c56bca63\",\"Name\":\"NewTestJob\",\"Created\":\"2017-11-09T16:34:01.578661Z\",\"LastModified\":\"2017-11-09T16:34:01.578661Z\",\"EndTime\":null,\"Priority\":0,\"RunningDuration\":0,\"StartTime\":null,\"State\":0,\"TemplateId\":null,\"JobNotificationSubscriptions\":{\"__metadata\":{\"type\":\"Collection(Microsoft.Cloud.Media.Vod.Rest.Data.Models.JobNotificationSubscription)\"},\"results\":[]}}}"
                         }
                     ]
                 },
@@ -4328,7 +4329,7 @@ ms.locfileid: "58311529"
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "  {\n      \"Name\": \"FunctionWebHook\",\n      \"EndPointAddress\": \"https://johdeufunctions.azurewebsites.net/api/Notification_Webhook_Function?code=j0txf1f8msjytzvpe40nxbpxdcxtqcgxy0nt\",\n      \"EndPointType\": 3\n  }"
+                            "raw": "  {\n      \"Name\": \"FunctionWebHook\",\n      \"EndPointAddress\": \"https://johdeufunctions.chinacloudsites.cn/api/Notification_Webhook_Function?code=j0txf1f8msjytzvpe40nxbpxdcxtqcgxy0nt\",\n      \"EndPointType\": 3\n  }"
                         },
                         "url": {
                             "raw": "{{RESTAPIEndpoint}}/NotificationEndPoints",

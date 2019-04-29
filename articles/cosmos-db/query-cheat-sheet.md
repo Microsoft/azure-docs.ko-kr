@@ -1,17 +1,17 @@
 ---
 title: Azure Cosmos DB PDF 쿼리 참고 자료
 description: Azure Cosmos DB의 SQL, MongoDB, Graph 및 Table API를 사용하여 데이터를 쿼리하는 방법을 알려주는 인쇄 가능한 PDF 참고 자료입니다.
-author: SnehaGunda
+author: rockboyfor
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 03/20/2018
-ms.author: sngun
+ms.date: 03/18/2019
+ms.author: v-yeche
 ms.openlocfilehash: 848b5a75e4e957b2ad61072ff2e229cacdba2019
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54035086"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60928217"
 ---
 # <a name="azure-cosmos-db-query-cheat-sheets"></a>Azure Cosmos DB 쿼리 참고 자료
 

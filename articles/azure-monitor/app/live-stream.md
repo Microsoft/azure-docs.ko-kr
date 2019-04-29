@@ -10,15 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 01/28/2019
+ms.date: 04/22/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: 588b8b11a02551a790145aafb013759699004267
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: bc85de0c8ec89ea88d2bae8e3f226da7d3163f53
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59009968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62115353"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>라이브 메트릭 스트림: 1초 대기 시간으로 모니터링 및 진단
 
@@ -50,10 +50,13 @@ ms.locfileid: "59009968"
 
 4. 필터에 고객 이름과 같은 중요한 데이터를 사용할 경우 [컨트롤 채널을 보호](#secure-the-control-channel)합니다.
 
+### <a name="nodejs"></a>Node.js
+
+Node.js를 사용 하 여 라이브 메트릭을 사용 하 여 SDK의 1.30 이상 버전으로 업데이트 해야 합니다. 기본적으로 라이브 메트릭이 Node.js SDK에서 비활성화 되었습니다. 사용할 수 있도록 라이브 메트릭 추가 `setSendLiveMetrics(true)` 에 사용자 [구성 메서드](https://github.com/Microsoft/ApplicationInsights-node.js#configuration) SDK를 초기화 하는 대로 합니다.
+
 ### <a name="no-data-check-your-server-firewall"></a>데이터가 없나요? 서버 방화벽을 확인합니다.
 
 [라이브 메트릭 스트림의 나가는 포트](../../azure-monitor/app/ip-addresses.md#outgoing-ports)가 서버의 방화벽에서 열려 있는지 확인합니다. 
-
 
 ## <a name="how-does-live-metrics-stream-differ-from-metrics-explorer-and-analytics"></a>라이브 메트릭 스트림과 메트릭 탐색기 및 분석과의 차이점
 
@@ -65,7 +68,6 @@ ms.locfileid: "59009968"
 |무료|라이브 스트림 데이터 무료|[가격 책정](../../azure-monitor/app/pricing.md)에 따라 다름
 |샘플링|선택한 모든 메트릭 및 카운터가 전송되고 오류 및 스택 추적이 샘플링되며 TelemetryProcessors가 적용되지 않음|이벤트가 [샘플링](../../azure-monitor/app/api-filtering-sampling.md)될 수 있음|
 |컨트롤 채널|필터 제어 신호가 SDK로 전송되며 이 채널을 보호하는 것이 좋습니다.|포털로의 단방향 통신임|
-
 
 ## <a name="select-and-filter-your-metrics"></a>메트릭 선택 및 필터링
 

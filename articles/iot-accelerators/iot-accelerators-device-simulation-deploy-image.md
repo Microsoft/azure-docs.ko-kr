@@ -10,11 +10,11 @@ ms.custom: mvc
 ms.date: 11/06/2018
 ms.author: dobett
 ms.openlocfilehash: c1f321f452b65016c11cb66d08ebab108509cc62
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51285325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61448413"
 ---
 # <a name="deploy-a-custom-device-simulation-docker-image"></a>사용자 지정 디바이스 시뮬레이션 Docker 이미지 배포
 
@@ -135,7 +135,7 @@ docker-hub 계정을 사용하여 새 Docker 이미지를 Docker 허브에 게�
 
 이제 사용자 지정된 디바이스 시뮬레이션 솔루션을 사용하여 시뮬레이션을 실행할 수 있습니다.
 
-1. [Microsoft Azure IoT 솔루션 가속기](https://www.azureiotsolutions.com/Accelerators#dashboard)에서 장치 시뮬레이션 웹 UI를 시작합니다.
+1. [Microsoft Azure IoT 솔루션 가속기](https://www.azureiotsolutions.com/Accelerators#dashboard)에서 디바이스 시뮬레이션 웹 UI를 시작합니다.
 
 1. 웹 UI를 사용하여 시뮬레이션을 구성하고 실행합니다. 이전에 [프로토콜 버퍼를 사용하여 원격 분석 직렬화](iot-accelerators-device-simulation-protobuf.md)를 완료한 경우 사용자 지정 디바이스 모델을 사용할 수 있습니다.
 

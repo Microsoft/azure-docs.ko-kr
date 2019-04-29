@@ -9,11 +9,11 @@ ms.date: 09/24/2018
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 4b5d2de2e9ccd44517e083a435e127bd5678f002
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "58114362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60564343"
 ---
 # <a name="ultra-disks-preview-managed-disks-for-azure-virtual-machine-workloads"></a>Ultra (미리 보기) managed disks에 대 한 Azure virtual machine 워크 로드
 

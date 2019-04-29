@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/07/2019
 ms.author: spelluru
 ms.openlocfilehash: f761af3a5a3f08e4da89d8869aea5d666ecd69d0
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58517269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60868289"
 ---
 # <a name="track-costs-associated-with-a-lab-in-azure-devtest-labs"></a>Azure DevTest Labs에서 랩과 관련 된 비용 추적
 이 문서에서는 랩의 비용을 추적 하는 방법에 정보를 제공 합니다. 예상 보는 방법 표시 trent 랩에 대 한 달에 대 한 비용입니다. 또한 문서는 랩에서 리소스 당 월 누계 비용을 확인 하는 방법을 보여줍니다.

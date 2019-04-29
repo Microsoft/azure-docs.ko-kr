@@ -13,11 +13,11 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: 7c2e3b2bea7ddef3dfbf69f85b499d9a60158689
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57999131"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60585017"
 ---
 # <a name="get-started-with-elastic-database-tools"></a>Elastic Database 도구 시작하기
 
@@ -86,7 +86,7 @@ JAR 파일을 빌드하고 샘플 프로젝트를 시작하려면 다음을 수�
 
 2. 프로젝트를 만들려면 *C#* 디렉터리에서 *ElasticScaleStarterKit.sln* 솔루션을 엽니다.
 
-3. 샘플 프로젝트에 대한 솔루션에서 *app.config* 파일을 엽니다. 그런 다음 파일의 지침에 따라 Azure SQL Database 서버 이름 및 로그인 정보(사용자 이름과 암호)를 추가합니다.
+3. 샘플 프로젝트에 대한 솔루션에서 *app.config* 파일을 엽니다. 그런 다음, 파일의 지침에 따라 Azure SQL Database 서버 이름 및 로그인 정보(사용자 이름과 암호)를 추가합니다.
 
 4. 애플리케이션을 빌드 및 실행합니다. 메시지가 표시되면 Visual Studio가 솔루션의 NuGet 패키지를 복원하도록 허용합니다. 그러면 NuGet에서 최신 버전의 Elastic Database 클라이언트 라이브러리가 다운로드됩니다.
 

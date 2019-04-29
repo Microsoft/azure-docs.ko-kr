@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 06/13/2018
 ms.author: ellacroi
 ms.openlocfilehash: a0ab88b1375f5178ca6f41689de8d2f30f8d7808
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56728134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60739444"
 ---
 # <a name="guidelines"></a>지침  
 

@@ -11,11 +11,11 @@ ms.date: 04/17/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
 ms.openlocfilehash: a3204c2705ba7b83c4fe22ab6bdd15c11eeeeda5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58182441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61421132"
 ---
 # <a name="threat-detection-in-azure-sql-data-warehouse"></a>Azure SQL Data Warehouse에서 위협 탐지
 Azure SQL Data Warehouse에서 위협 탐지를 구성하고 의심스러운 이벤트 탐색합니다.

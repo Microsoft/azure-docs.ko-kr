@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 01/03/2017
 ms.author: jonor
 ms.openlocfilehash: 6753b3a76ff5d3e0266f238d8e354943dec694a8
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58480461"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60788918"
 ---
 # <a name="sample-application-for-use-with-dmzs"></a>DMZ에 사용할 샘플 애플리케이션
 [보안 경계 모범 사례 페이지로 돌아가기][HOME]

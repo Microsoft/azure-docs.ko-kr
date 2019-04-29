@@ -9,11 +9,11 @@ ms.date: 01/28/2019
 ms.author: juliako
 ms.custom: include file
 ms.openlocfilehash: 8439da94c770bee313a1ae1d1da5df30683cd2ad
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57964224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61224322"
 ---
 ## <a name="cli-shell"></a>CLI 셸
 
@@ -45,6 +45,6 @@ Linux/Mac 및 Windows OS의 절대 파일 경로
 * `@ "/usr/home/mytestfile.json"`
 *   `@"c:\tmp\user\mytestfile.json"`
 
-사용 하 여 `{file}` 명령을 파일에 대 한 경로 요청 하는 경우. 예: `az ams transform create -a amsaccount -g resourceGroup -n custom --preset .\customPreset.json` <br/> 사용 하 여 `@{file}` 명령은 지정된 된 파일을 로드 하려는 경우. 예: `az ams account-filter create -a amsaccount -g resourceGroup -n filterName --tracks @tracks.json`
+명령이 파일 경로를 묻는 경우 `{file}`을 사용하세요. 예: `az ams transform create -a amsaccount -g resourceGroup -n custom --preset .\customPreset.json` <br/> 명령이 특정 파일을 로드하려는 경우 `@{file}`을 사용하세요. 예: `az ams account-filter create -a amsaccount -g resourceGroup -n filterName --tracks @tracks.json`
 
 [파일 업로드]: ./media/media-services-cli/upload-download-files.png

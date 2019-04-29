@@ -11,11 +11,11 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 03/10/2019
 ms.openlocfilehash: b950e7d38235d089c6236c76136d8ec2fc7a1f74
-ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57731319"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60821422"
 ---
 # <a name="enterprise-security-for-azure-machine-learning-service"></a>Azure Machine Learning 서비스에 대 한 엔터프라이즈 보안
 
@@ -88,7 +88,7 @@ print(primary)
 | 작업 영역 | 참가자 | 
 | Storage 계정 | Storage Blob 데이터 Contributor | 
 | Key Vault | 모든 키, 비밀, 인증서에 대 한 액세스 | 
-| Azure Container Registry | 참가자 | 
+| Azure 컨테이너 레지스트리 | 참가자 | 
 | 작업 영역을 포함 하는 리소스 그룹 | 참가자 | 
 | (다른 작업 영역에 포함 된) 경우 Key Vault를 포함 하는 리소스 그룹 | 참가자 | 
 

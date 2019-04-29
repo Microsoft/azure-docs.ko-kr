@@ -10,15 +10,16 @@ ms.assetid: 9058fb2f-8a93-4036-a921-97a0772f503c
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 10/16/2017
-ms.author: glenga
+origin.date: 10/16/2017
+ms.date: 03/25/2019
+ms.author: v-junlch
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 30b187676f0c1fb03b7124d93b3991b0e32d61ae
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57848952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62104679"
 ---
 # <a name="optimize-the-performance-and-reliability-of-azure-functions"></a>Azure Functions의 성능 및 안정성 최적화
 
@@ -122,3 +123,5 @@ C# 함수의 경우 강력한 형식의 배열로 형식을 변경할 수 있습
 
 * [Azure Functions에서 연결을 관리하는 방법](manage-connections.md)
 * [Azure App Service 모범 사례](../app-service/app-service-best-practices.md)
+
+<!-- Update_Description: wording update -->

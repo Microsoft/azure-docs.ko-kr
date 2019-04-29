@@ -9,11 +9,11 @@ ms.topic: article
 ms.service: storage
 ms.subservice: blobs
 ms.openlocfilehash: 4bc683908646a5c05fee14f721e2c26482518947
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55751398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61427630"
 ---
 # <a name="reacting-to-blob-storage-events"></a>Blob Storage 이벤트에 대응
 
@@ -43,24 +43,24 @@ Blob Storage 이벤트에는 데이터 변경에 대응하는 데 필요한 모�
 
 > |자산|Type|설명|
 > |-------------------|------------------------|-----------------------------------------------------------------------|
-> |토픽|string|이벤트를 내보내는 저장소 계정의 전체 Azure Resource Manager ID입니다.|
-> |제목|string|이벤트 주체인 개체에 대한 상대 리소스 경로로, Azure RBAC용 저장소 계정, 서비스 및 컨테이너를 설명하는 데 사용하는 것과 동일한 확장 Azure Resource Manager 형식을 사용합니다.  이 형식은 대소문자가 구분되는 Blob 이름을 포함합니다.|
-> |eventTime|string|이벤트가 생성된 날짜/시간(ISO 8601 형식)|
-> |eventType|string|"Microsoft.Storage.BlobCreated" 또는 "Microsoft.Storage.BlobDeleted"|
-> |Id|string|이 이벤트의 고유 식별자|
-> |dataVersion|string|데이터 개체의 스키마 버전입니다.|
-> |metadataVersion|string|최상위 속성의 스키마 버전입니다.|
+> |토픽|문자열|이벤트를 내보내는 저장소 계정의 전체 Azure Resource Manager ID입니다.|
+> |제목|문자열|이벤트 주체인 개체에 대한 상대 리소스 경로로, Azure RBAC용 저장소 계정, 서비스 및 컨테이너를 설명하는 데 사용하는 것과 동일한 확장 Azure Resource Manager 형식을 사용합니다.  이 형식은 대소문자가 구분되는 Blob 이름을 포함합니다.|
+> |eventTime|문자열|이벤트가 생성된 날짜/시간(ISO 8601 형식)|
+> |eventType|문자열|"Microsoft.Storage.BlobCreated" 또는 "Microsoft.Storage.BlobDeleted"|
+> |Id|문자열|이 이벤트의 고유 식별자|
+> |dataVersion|문자열|데이터 개체의 스키마 버전입니다.|
+> |metadataVersion|문자열|최상위 속성의 스키마 버전입니다.|
 > |데이터|object|Blob Storage 관련 이벤트 데이터의 컬렉션|
-> |data.contentType|string|Blob의 콘텐츠 형식으로, Blob에서 Content-Type 헤더에 반환됩니다.|
+> |data.contentType|문자열|Blob의 콘텐츠 형식으로, Blob에서 Content-Type 헤더에 반환됩니다.|
 > |data.contentLength|number|Blob의 크기(바이트 수를 나타내는 정소)로, Blob에서 Content-Length 헤더에 반환됩니다.  BlobCreated 이벤트와 함께 전송되지만 BlobDeleted와 함께 전송되지 않습니다.|
-> |data.url|string|이벤트의 주체인 개체의 URL|
-> |data.eTag|string|이 이벤트가 발생할 때 개체의 etag입니다.  BlobDeleted 이벤트에 대해서는 사용할 수 없습니다.|
-> |data.api|string|이 이벤트를 트리거한 api 작업의 이름입니다. BlobCreated 이벤트의 경우 이 값은 "PutBlob", "PutBlockList" 또는 "CopyBlob"입니다. BlobDeleted 이벤트의 경우 이 값은 "DeleteBlob"입니다. 이러한 값은 Azure Storage 진단 로그에 있는 것과 동일한 api 이름입니다. [기록한 작업 및 상태 메시지](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages)를 참조하세요.|
-> |data.sequencer|string|특정 Blob 이름에 대한 이벤트의 논리적 순서를 나타내는 불투명 문자열 값입니다.  사용자는 표준 문자열 비교를 사용하여 동일한 Blob 이름에 대한 두 이벤트의 상대적 순서를 이해할 수 있습니다.|
-> |data.requestId|string|저장소 API 작업에 대한 서비스에서 생성된 요청 ID입니다. 로그의 "request-id-header" 필드를 사용하여 Azure Storage 진단 로그와의 상관 관계를 지정하는 데 사용할 수 있으며, 'x-ms-request-id' 헤더에서 API 호출을 시작하여 반환됩니다. [로그 형식](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-log-format)을 참조하세요.|
-> |data.clientRequestId|string|저장소 API 작업에 대한 클라이언트에서 제공된 요청 ID입니다. 로그의 "client-request-id" 필드를 사용하여 Azure Storage 진단 로그와의 상관 관계를 지정하는 데 사용할 수 있으며, "x-ms-client-request-id" 헤더를 사용하여 클라이언트 요청에 제공할 수 있습니다. [로그 형식](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-log-format)을 참조하세요. |
+> |data.url|문자열|이벤트의 주체인 개체의 URL|
+> |data.eTag|문자열|이 이벤트가 발생할 때 개체의 etag입니다.  BlobDeleted 이벤트에 대해서는 사용할 수 없습니다.|
+> |data.api|문자열|이 이벤트를 트리거한 api 작업의 이름입니다. BlobCreated 이벤트의 경우 이 값은 "PutBlob", "PutBlockList" 또는 "CopyBlob"입니다. BlobDeleted 이벤트의 경우 이 값은 "DeleteBlob"입니다. 이러한 값은 Azure Storage 진단 로그에 있는 것과 동일한 api 이름입니다. [기록한 작업 및 상태 메시지](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages)를 참조하세요.|
+> |data.sequencer|문자열|특정 Blob 이름에 대한 이벤트의 논리적 순서를 나타내는 불투명 문자열 값입니다.  사용자는 표준 문자열 비교를 사용하여 동일한 Blob 이름에 대한 두 이벤트의 상대적 순서를 이해할 수 있습니다.|
+> |data.requestId|문자열|저장소 API 작업에 대한 서비스에서 생성된 요청 ID입니다. 로그의 "request-id-header" 필드를 사용하여 Azure Storage 진단 로그와의 상관 관계를 지정하는 데 사용할 수 있으며, 'x-ms-request-id' 헤더에서 API 호출을 시작하여 반환됩니다. [로그 형식](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-log-format)을 참조하세요.|
+> |data.clientRequestId|문자열|저장소 API 작업에 대한 클라이언트에서 제공된 요청 ID입니다. 로그의 "client-request-id" 필드를 사용하여 Azure Storage 진단 로그와의 상관 관계를 지정하는 데 사용할 수 있으며, "x-ms-client-request-id" 헤더를 사용하여 클라이언트 요청에 제공할 수 있습니다. [로그 형식](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-log-format)을 참조하세요. |
 > |data.storageDiagnostics|object|경우에 따라 Azure Storage 서비스에 의해 포함되는 진단 데이터입니다. 포함될 경우, 이벤트 소비자는 무시해야 합니다.|
-|data.blobType|string|Blob의 형식입니다. 유효한 값은 "BlockBlob" 또는 "PageBlob"입니다.| 
+|data.blobType|문자열|Blob의 형식입니다. 유효한 값은 "BlockBlob" 또는 "PageBlob"입니다.| 
 
 다음은 BlobCreated 이벤트의 예입니다.
 ```json

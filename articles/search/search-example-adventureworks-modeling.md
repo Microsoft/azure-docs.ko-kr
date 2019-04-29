@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 01/25/2019
 ms.author: chstone
 ms.openlocfilehash: 6d5d01dfbbcfda56818f5c38b06117a87e021445
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55174570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61291911"
 ---
 # <a name="example-model-the-adventureworks-inventory-database-for-azure-search"></a>예제: Azure Search에 대한 AdventureWorks Inventory 데이터베이스 모델링
 

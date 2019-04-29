@@ -10,11 +10,11 @@ manager: cgronlun
 ms.author: magottei
 ms.custom: seodec2018
 ms.openlocfilehash: b7e7ecd2a82a8d64967288def9c6ede7a292f72a
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57759394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61127590"
 ---
 # <a name="searching-blob-storage-with-azure-search"></a>Azure Search로 Blob Storage 검색
 

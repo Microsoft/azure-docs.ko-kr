@@ -10,11 +10,11 @@ ms.date: 1/10/2017
 ms.author: saurse
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 59236774f98af927082c78f4b75a1f5880a7cac4
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51259607"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60646963"
 ---
 # <a name="move-your-long-term-storage-from-tape-to-the-azure-cloud"></a>장기 저장소를 테이프에서 Azure 클라우드로 이동
 Azure Backup 및 System Center Data Protection Manager 고객은 다음을 수행할 수 있습니다.
@@ -44,10 +44,10 @@ Azure Backup 및 System Center Data Protection Manager 고객은 다음을 수�
 ## <a name="example--putting-both-together"></a>예 - 두 가지를 결합
 ![샘플 화면](./media/backup-azure-backup-cloud-as-tape/samplescreen.png)
 
-1. **일 단위 보존 정책**: 매일 수행된 백업이 7일 동안 저장됩니다.
-2. **주 단위 보존 정책**: 매주 토요일 자정과 오후 6시에 수행된 백업이 4주 동안 유지됩니다
-3. **월 단위 보존 정책**: 매달 마지막 주 토요일 자정과 오후 6시에 수행된 백업이 12개월 동안 유지됩니다.
-4. **연 단위 보존 정책**: 매년 3월 마지막 주 토요일 자정에 수행된 백업이 10년 동안 유지됩니다.
+1. **일별 보존 정책**: 매일 수행 된 백업이 7 일 동안 저장 됩니다.
+2. **주 단위 보존 정책**: 매일 자정 및 토요일 오후 6 시에 수행 된 백업이 4 주 동안 유지 됩니다.
+3. **월 단위 보존 정책**: 매월 마지막 주 토요일 오후 6 시와 자정에 수행 된 백업이 12 개월 동안 유지 됩니다.
+4. **연간 보존 정책**: 모든 3 월 마지막 주 토요일 자정에 수행 된 백업이 10 년 동안 유지 됩니다.
 
 앞의 도표에서 "보존 지점"(데이터를 복원할 수 있는 지점)의 총 수는 다음과 같이 계산됩니다.
 

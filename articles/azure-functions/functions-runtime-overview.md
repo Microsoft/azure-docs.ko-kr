@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 11/28/2017
 ms.author: anwestg
 ms.openlocfilehash: 2af9575c50ee522d6330ddf46c75b666132b7a84
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59546836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61021233"
 ---
 # <a name="azure-functions-runtime-overview-preview"></a>Azure Functions 런타임 개요(미리 보기)
 

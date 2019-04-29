@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 10/30/2018
 ms.author: TomSh
 ms.openlocfilehash: 7e0e93c82279ec1a4fbecbbf27c7a1866286b2f8
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57860519"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60587655"
 ---
 # <a name="azure-database-security-overview"></a>Azure 데이터베이스 보안 개요
 
@@ -35,9 +35,9 @@ Microsoft는 엔터프라이즈 데이터를 암호화하는 추가적인 방법
 
 Azure SQL Database 감사를 사용하면 기업에서 로그인 Azure Storage에 이벤트를 기록할 수 있습니다. 또한 드릴다운 보고서 및 분석을 용이하게 하려면 SQL Database 감사 기능을 Microsoft Power BI와 통합합니다.
 
-Azure SQL Database는 HIPAA, ISO 27001/27002, PCI DSS Level 1 등을 비롯한 대부분의 규제 또는 보안 요구 사항을 만족할 수 있게 강력히 보호될 수 있습니다. 보안 규정 준수 인증의 최신 목록은 [Microsoft Azure Trust Center 사이트](https://azure.microsoft.com/support/trust-center/services/)에서 제공합니다.
+Azure SQL 데이터베이스는 HIPAA, ISO 27001/27002, PCI DSS Level 1 등을 비롯한 대부분의 규제 또는 보안 요구 사항을 만족할 수 있게 강력히 보호될 수 있습니다. 보안 규정 준수 인증의 최신 목록은 [Microsoft Azure Trust Center 사이트](https://azure.microsoft.com/support/trust-center/services/)에서 제공합니다.
 
-이 문서에서는 구조적, 테이블 형식 및 관계형 데이터에 대한 Microsoft Azure SQL Database 보호의 기본 사항을 안내합니다. 특히 이 문서에서는 데이터 보호, 액세스 제어 및 사전 모니터링을 위한 리소스로 시작합니다.
+이 문서에서는 구조적, 테이블 형식 및 관계형 데이터에 대한 Microsoft Azure SQL 데이터베이스 보호의 기본 사항을 안내합니다. 특히 이 문서에서는 데이터 보호, 액세스 제어 및 사전 모니터링을 위한 리소스로 시작합니다.
 
 ## <a name="protection-of-data"></a>데이터 보호
 
@@ -92,7 +92,7 @@ Always Encrypted는 데이터를 소유하고 볼 수 있는 사용자와 데이
 
 또한 Always Encrypted는 애플리케이션에 대해 암호화를 투명하게 합니다. 클라이언트 애플리케이션에서 중요 데이터를 자동으로 암호화 및 암호 해독할 수 있게, Always Encrypted를 구현하는 드라이버는 클라이언트 컴퓨터에 설치됩니다. 드라이버는 데이터베이스 엔진에 데이터를 전달하기 전에 중요한 열의 데이터를 암호화합니다. 드라이버는 애플리케이션에 대한 의미 체계가 유지되도록 쿼리를 자동으로 다시 작성합니다. 마찬가지로, 드라이버는 암호화된 데이터베이스 열에 저장되고 쿼리 결과에 포함된 데이터를 투명하게 암호 해독합니다.
 
-## <a name="access-control"></a>Access Control
+## <a name="access-control"></a>액세스 제어
 
 보안을 제공하기 위해 SQL Database는 다음을 사용하여 액세스를 제어합니다.
 
@@ -127,7 +127,7 @@ Azure SQL Database 서비스는 TCP 포트 1433을 통해서만 사용할 수 �
 
 #### <a name="authorization"></a>권한 부여
 
-[권한 부여](https://docs.microsoft.com/azure/sql-database/sql-database-manage-logins)는 사용자가 Azure SQL Data Database 내에서 수행할 수 있는 작업을 참조합니다. 사용자 계정의 데이터베이스 [역할 멤버 자격](https://msdn.microsoft.com/library/ms189121) 및 [개체 수준 사용 권한](https://msdn.microsoft.com/library/ms191291.aspx)에 따라 제어됩니다. 권한 부여는 보안 주체가 액세스할 수 있는 보호 가능한 리소스와, 해당 리소스에 대해 허용되는 작업을 결정하는 프로세스입니다.
+[권한 부여](https://docs.microsoft.com/azure/sql-database/sql-database-manage-logins)는 사용자가 Azure SQL Data 데이터베이스 내에서 수행할 수 있는 작업을 참조합니다. 사용자 계정의 데이터베이스 [역할 멤버 자격](https://msdn.microsoft.com/library/ms189121) 및 [개체 수준 사용 권한](https://msdn.microsoft.com/library/ms191291.aspx)에 따라 제어됩니다. 권한 부여는 보안 주체가 액세스할 수 있는 보호 가능한 리소스와, 해당 리소스에 대해 허용되는 작업을 결정하는 프로세스입니다.
 
 ### <a name="application-access"></a>애플리케이션 액세스
 
@@ -229,7 +229,7 @@ Azure Marketplace는 고객과 파트너에게 더 좋은 서비스를 제공하
 
 ## <a name="next-steps"></a>다음 단계
 
-- [Azure SQL Database 보안](https://docs.microsoft.com/azure/sql-database/sql-database-security-tutorial)
+- [Azure SQL 데이터베이스 보안](https://docs.microsoft.com/azure/sql-database/sql-database-security-tutorial)
 - [Azure Security Center 및 Azure SQL Database 서비스](https://docs.microsoft.com/azure/security-center/security-center-sql-database)
 - [SQL Database 위협 검색](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection)
 - [SQL Database 성능 향상](https://docs.microsoft.com/azure/sql-database/sql-database-performance-tutorial)

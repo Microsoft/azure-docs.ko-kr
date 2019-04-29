@@ -8,11 +8,11 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 04/05/2019
 ms.openlocfilehash: 24bbddd28943adc929fbaea456eeae8165db290c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59261601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60758667"
 ---
 # <a name="manage-cluster-scale-out-to-accommodate-changing-demand"></a>변화하는 요구를 수용하도록 클러스터 스케일 아웃 관리
 

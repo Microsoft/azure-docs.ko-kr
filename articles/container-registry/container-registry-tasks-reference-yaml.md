@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: danlep
 ms.openlocfilehash: b2398e7db7ed91dee8d85c0c50058bb15b9f4c7e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58894135"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60827258"
 ---
 # <a name="acr-tasks-reference-yaml"></a>ACR 작업 참조: YAML
 
@@ -159,8 +159,8 @@ steps:
 | `network` | object | 옵션 |
 | `ports` | [string, string, ...] | 옵션 |
 | `pull` | bool | 옵션 |
-| `repeat` | ssNoversion | 옵션 |
-| `retries` | ssNoversion | 옵션 |
+| `repeat` | int | 옵션 |
+| `retries` | int | 옵션 |
 | `retryDelay` | int(초) | 옵션 |
 | `secret` | object | 옵션 |
 | `startDelay` | int(초) | 옵션 |
@@ -276,8 +276,8 @@ steps:
 | `network` | object | 옵션 |
 | `ports` | [string, string, ...] | 옵션 |
 | `pull` | bool | 옵션 |
-| `repeat` | ssNoversion | 옵션 |
-| `retries` | ssNoversion | 옵션 |
+| `repeat` | int | 옵션 |
+| `retries` | int | 옵션 |
 | `retryDelay` | int(초) | 옵션 |
 | `secret` | object | 옵션 |
 | `startDelay` | int(초) | 옵션 |
@@ -377,8 +377,8 @@ steps:
 | `ports` | [string, string, ...] | 예 | 컨테이너에서 호스트에 게시 되는 포트의 배열입니다. |  없음 |
 | `pull` | bool | 예 | 모든 캐싱 동작을 방지 하기 위해를 실행 하기 전에 컨테이너의 끌어오기를 강제 적용 여부를 나타냅니다. | `false` |
 | `privileged` | bool | 예 | 특권된 모드에서 컨테이너를 실행할 것인지 지정 합니다. | `false` |
-| `repeat` | ssNoversion | 예 | 컨테이너의 실행을 반복 하는 재시도 횟수입니다. | 0 |
-| `retries` | ssNoversion | 예 | 컨테이너 실행을 실패 하면 재시도 횟수입니다. 재시도 컨테이너의 종료 코드가 0이 아닌 경우에 시도 됩니다. | 0 |
+| `repeat` | int | 예 | 컨테이너의 실행을 반복 하는 재시도 횟수입니다. | 0 |
+| `retries` | int | 예 | 컨테이너 실행을 실패 하면 재시도 횟수입니다. 재시도 컨테이너의 종료 코드가 0이 아닌 경우에 시도 됩니다. | 0 |
 | `retryDelay` | int(초) | 예 | 컨테이너의 실행을 다시 시도 간격 (초)에서 지연입니다. | 0 |
 | `secret` | object | 예 | Azure Key Vault 비밀 또는 Azure 리소스에 대 한 관리 되는 id를 식별 합니다. | 없음 |
 | `startDelay` | int(초) | 예 | 컨테이너의 실행을 지연 시간 (초) 수입니다. | 0 |

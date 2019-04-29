@@ -11,17 +11,17 @@ ms.date: 04/17/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
 ms.openlocfilehash: d2fcdd4aa28a7d3b1a8e50629e5be1d88046a12b
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58621212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60747560"
 ---
 # <a name="integrate-other-services-with-sql-data-warehouse"></a>SQL Data Warehouse와 기타 서비스 통합
 핵심 기능 외에도 SQL Data Warehouse는 사용자가 Azure에서 다양한 기타 서비스를 통합할 수 있게 설정합니다. 일부 이러한 서비스에는 다음이 포함됩니다.
 
 * Power BI
-* Azure 데이터 팩터리
+* Azure Data Factory
 * Azure Machine Learning
 * Azure Stream Analytics
 
@@ -35,7 +35,7 @@ Power BI 통합을 통해 Power BI의 동적 보고 및 시각화와 SQL Data Wa
 
 자세한 내용은 [Power BI와 통합](sql-data-warehouse-get-started-visualize-with-power-bi.md) 또는 [Power BI 설명서](https://powerbi.microsoft.com/blog/exploring-azure-sql-data-warehouse-with-power-bi/)를 참조하세요.
 
-## <a name="azure-data-factory"></a>Azure 데이터 팩터리
+## <a name="azure-data-factory"></a>Azure Data Factory
 Azure 데이터 팩터리는 복잡한 추출을 만들고 파이프라인을 로드할 수 있는 관리되는 플랫폼을 사용자에게 제공합니다. Azure Data Factory와 SQL Data Warehouse의 통합에는 다음이 포함됩니다.
 
 * **저장 프로시저**: SQL Data Warehouse에서 저장 프로시저의 실행을 오케스트레이션합니다.

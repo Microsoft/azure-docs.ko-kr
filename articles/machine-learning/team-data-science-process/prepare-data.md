@@ -12,11 +12,11 @@ ms.date: 11/09/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 2b3ec3352d6e1939b195bbba87b8a824404346ae
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55453521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61044603"
 ---
 # <a name="tasks-to-prepare-data-for-enhanced-machine-learning"></a>확장된 기계 학습을 위한 데이터 준비 작업
 데이터 전처리 및 정리는 일반적으로 기계 학습에 데이터 세트를 효과적으로 사용할 수 있기 전에 수행해야 하는 중요한 작업입니다. 원시 데이터는 노이즈가 많고, 불안정하고, 값이 누락된 경우가 종종 있습니다. 이러한 데이터를 모델링에 사용하면 결과가 잘못될 수 있습니다. 이러한 작업은 TDSP(팀 데이터 과학 프로세스)의 일부이며 일반적으로 필요한 전처리를 검색하고 계획하는 데 사용되는 데이터 세트의 초기 탐색을 수행합니다. TDSP 프로세스에 대한 자세한 지침은 [팀 데이터 과학 프로세스](overview.md)에 설명된 단계를 참조하세요.

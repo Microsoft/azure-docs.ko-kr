@@ -15,11 +15,11 @@ ms.devlang: azurecli
 ms.date: 02/21/2019
 ms.author: cynthn
 ms.openlocfilehash: 98bc10377dff8f06cd02d4a384ca14b364a73e74
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56740533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60713770"
 ---
 # <a name="workloads-on-azure-virtual-machines"></a>Azure Virtual Machines에서 워크 로드
 

@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 12/13/2018
 ms.author: shants
 ms.openlocfilehash: d48a8d2f937cee67d6ab9a12618607d367cdaed8
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53409958"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60615120"
 ---
 # <a name="maintenance-for-virtual-machines-in-azure"></a>Azure에서 가상 머신 유지 관리 
 

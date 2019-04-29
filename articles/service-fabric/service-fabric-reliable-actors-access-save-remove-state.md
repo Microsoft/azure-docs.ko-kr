@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 03/19/2018
 ms.author: vturecek
 ms.openlocfilehash: 7c10d00916ef65767c98616c7337bfa444c339a9
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58664729"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60725400"
 ---
 # <a name="access-save-and-remove-reliable-actors-state"></a>Reliable Actors 상태에 액세스, 저장 및 제거
 [Reliable Actors](service-fabric-reliable-actors-introduction.md)는 논리와 상태를 모두 캡슐화하고 상태를 안정적으로 유지할 수 있는 단일 스레드 개체입니다. 모든 행위자 인스턴스에는 안정적으로 키/값 쌍을 저장하는 사전 형식의 데이터 구조인 고유한 [상태 관리자](service-fabric-reliable-actors-state-management.md)가 있습니다. 상태 관리자는 상태 제공자에 대한 래퍼입니다. 사용되는 [지속성 설정](service-fabric-reliable-actors-state-management.md#state-persistence-and-replication)에 상관없이 데이터를 저장하는 데 사용할 수 있습니다.

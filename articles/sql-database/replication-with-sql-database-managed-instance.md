@@ -1,6 +1,6 @@
 ---
-title: Azure SQL Database 관리되는 인스턴스 데이터베이스에서 복제 구성 | Microsoft Docs
-description: Azure SQL Database 관리되는 인스턴스 데이터베이스에서 트랜잭션 복제를 구성하는 방법 알아보기
+title: Azure SQL Database 관리형 인스턴스 데이터베이스에서 복제 구성 | Microsoft Docs
+description: Azure SQL Database 관리형 인스턴스 데이터베이스에서 트랜잭션 복제를 구성하는 방법 알아보기
 services: sql-database
 ms.service: sql-database
 ms.subservice: data-movement
@@ -13,15 +13,15 @@ ms.reviewer: mathoma
 manager: craigg
 ms.date: 02/07/2019
 ms.openlocfilehash: b20a119a69ac796bc9ea85083d335f0a7d2fdf2d
-ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58417958"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60646767"
 ---
-# <a name="configure-replication-in-an-azure-sql-database-managed-instance-database"></a>Azure SQL Database 관리되는 인스턴스 데이터베이스에서 복제 구성
+# <a name="configure-replication-in-an-azure-sql-database-managed-instance-database"></a>Azure SQL Database 관리형 인스턴스 데이터베이스에서 복제 구성
 
-트랜잭션 복제를 사용하면 SQL Server 데이터베이스 또는 다른 인스턴스 데이터베이스에서 Azure SQL Database 관리되는 인스턴스 데이터베이스로 데이터를 복제할 수 있습니다. 또한 트랜잭션 복제를 사용하여 Azure SQL Database 관리되는 인스턴스의 인스턴스 데이터베이스에서 변경한 사항을 Azure SQL Database의 단일 데이터베이스, Azure SQL Database 탄력적 풀의 풀링된 데이터베이스로 내보낼 수 있습니다. 트랜잭션 복제는 [Azure SQL Database 관리되는 인스턴스](sql-database-managed-instance.md)에서 공개 미리 보기로 제공됩니다. 관리되는 인스턴스는 게시자, 배포자 및 구독자 데이터베이스를 호스트할 수 있습니다. 사용 가능한 구성에 대해서는 [트랜잭션 복제 구성](sql-database-managed-instance-transactional-replication.md#common-configurations)을 참조하세요.
+트랜잭션 복제를 사용하면 SQL Server 데이터베이스 또는 다른 인스턴스 데이터베이스에서 Azure SQL Database 관리형 인스턴스 데이터베이스로 데이터를 복제할 수 있습니다. 또한 트랜잭션 복제를 사용하여 Azure SQL Database 관리형 인스턴스의 인스턴스 데이터베이스에서 변경한 사항을 Azure SQL Database의 단일 데이터베이스, Azure SQL Database 탄력적 풀의 풀링된 데이터베이스로 내보낼 수 있습니다. 트랜잭션 복제는 [Azure SQL Database 관리형 인스턴스](sql-database-managed-instance.md)에서 공개 미리 보기로 제공됩니다. 관리되는 인스턴스는 게시자, 배포자 및 구독자 데이터베이스를 호스트할 수 있습니다. 사용 가능한 구성에 대해서는 [트랜잭션 복제 구성](sql-database-managed-instance-transactional-replication.md#common-configurations)을 참조하세요.
 
 ## <a name="requirements"></a>요구 사항
 
@@ -44,18 +44,18 @@ ms.locfileid: "58417958"
 
 지원:
 
-- Azure SQL Database의 SQL Server 온-프레미스 및 관리되는 인스턴스의 트랜잭션 및 스냅숏 복제 조합
+- Azure SQL Database의 SQL Server 온-프레미스 및 관리형 인스턴스의 트랜잭션 및 스냅숏 복제 조합.
 - 구독자는 온-프레미스 SQL Server 데이터베이스를 Azure SQL Database 또는 Azure SQL Database 탄력적 풀에 풀링된 데이터베이스에 대 한 단일 데이터베이스/관리 되는 인스턴스 수 있습니다.
 - 단방향 또는 양방향 복제.
 
-Azure SQL Database의 관리되는 인스턴스에서는 다음과 같은 기능이 지원되지 않습니다.
+Azure SQL Database의 관리형 인스턴스에서는 다음과 같은 기능이 지원되지 않습니다.
 
 - 업데이트할 수 있는 구독
 - [활성 지역 복제](sql-database-active-geo-replication.md) 하 고 [자동 장애 조치 그룹](sql-database-auto-failover-group.md) 트랜잭션 복제를 구성 된 경우 사용할 수 해야 합니다.
 
 ## <a name="configure-publishing-and-distribution-example"></a>게시 및 배포 예제 구성
 
-1. 포털에서 [Azure SQL Database 관리되는 인스턴스를 생성](sql-database-managed-instance-create-tutorial-portal.md)합니다.
+1. 포털에서 [Azure SQL Database 관리형 인스턴스를 생성](sql-database-managed-instance-create-tutorial-portal.md)합니다.
 2. 작업 디렉터리에 대한 [Azure Storage 계정을 만듭니다](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account#create-a-storage-account).
 
    저장소 키를 복사해야 합니다. [저장소 액세스 키 보기 및 복사](../storage/common/storage-account-manage.md#access-keys

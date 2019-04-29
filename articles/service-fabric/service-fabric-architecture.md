@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 10/12/2017
 ms.author: rsinha
 ms.openlocfilehash: a1e68e2e39ea6f1c8cf8669e2e02d8dacaf0f284
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58664593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62097847"
 ---
 # <a name="service-fabric-architecture"></a>서비스 패브릭 아키텍처
 서비스 패브릭은 계층화된 하위 시스템으로 빌드됩니다. 이러한 하위 시스템을 사용하여 다음 특징을 가진 애플리케이션을 작성할 수 있습니다.

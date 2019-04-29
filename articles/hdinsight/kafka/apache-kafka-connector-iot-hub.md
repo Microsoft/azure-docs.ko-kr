@@ -1,7 +1,6 @@
 ---
 title: Azure IoT Hub를 통해 HDInsight에서 Apache Kafka 사용
 description: Azure IoT Hub를 통해 HDInsight에서 Apache Kafka를 사용하는 방법에 대해 알아봅니다. Kafka 연결 Azure IoT Hub 프로젝트는 Kafka에 대한 원본 및 싱크 커넥터를 제공합니다. 원본 커넥터는 IoT Hub에서 데이터를 읽을 수 있으며 싱크 커넥터는 IoT Hub에 기록합니다.
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: e64490517603687684617ce915e0d3f3e35298e9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 420800e718c8f98bfd3d5d7383829d5aa5472828
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58093391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62115334"
 ---
 # <a name="use-apache-kafka-on-hdinsight-with-azure-iot-hub"></a>Azure IoT Hub를 통해 HDInsight에서 Apache Kafka 사용
 
@@ -239,14 +238,14 @@ IoT Hub와 작동하도록 원본을 구성하려면 SSH 연결에서 에지 노
 
     편집기에서 다음 항목을 찾아 변경합니다.
 
-   * `Kafka.Topic=PLACEHOLDER`: 을 `iotin`로 바꿉니다. IoT Hub에서 받은 메시지는 `iotin` 항목에 배치됩니다.
+   * `Kafka.Topic=PLACEHOLDER`: `PLACEHOLDER`을 `iotin`로 바꿉니다. IoT Hub에서 받은 메시지는 `iotin` 항목에 배치됩니다.
    * `IotHub.EventHubCompatibleName=PLACEHOLDER`: `PLACEHOLDER`를 Event Hub 호환 이름으로 바꿉니다.
    * `IotHub.EventHubCompatibleEndpoint=PLACEHOLDER`: `PLACEHOLDER`를 Event Hub 호환 엔드포인트로 바꿉니다.
    * `IotHub.Partitions=PLACEHOLDER`: `PLACEHOLDER`를 이전 단계의 파티션 수로 바꿉니다.
-   * `IotHub.AccessKeyName=PLACEHOLDER`: 을 `service`로 바꿉니다.
+   * `IotHub.AccessKeyName=PLACEHOLDER`: `PLACEHOLDER`을 `service`로 바꿉니다.
    * `IotHub.AccessKeyValue=PLACEHOLDER`: `PLACEHOLDER`를 `service` 정책의 기본 키로 바꿉니다.
    * `IotHub.StartType=PLACEHOLDER`: `PLACEHOLDER`를 UTC 날짜로 바꿉니다. 이 날짜는 커넥터가 메시지에 대한 검사를 시작할 때입니다. 날짜 형식은 `yyyy-mm-ddThh:mm:ssZ`입니다.
-   * `BatchSize=100`: 을 `5`로 바꿉니다. 이 변경으로 인해 IoT Hub에 5개의 새 메시지가 있는 경우 커넥터가 메시지를 Kafka로 읽어 들일 수 있습니다.
+   * `BatchSize=100`: `100`을 `5`로 바꿉니다. 이 변경으로 인해 IoT Hub에 5개의 새 메시지가 있는 경우 커넥터가 메시지를 Kafka로 읽어 들일 수 있습니다.
 
      예제 구성은 [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Source.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Source.md)을 참조합니다.
 
@@ -272,7 +271,7 @@ IoT Hub와 작동하도록 싱크 연결을 구성하려면 SSH 연결에서 에
 
     편집기에서 다음 항목을 찾아 변경합니다.
 
-   * `topics=PLACEHOLDER`: 을 `iotout`로 바꿉니다. `iotout` 항목에 기록된 메시지는 IoT Hub로 전달됩니다.
+   * `topics=PLACEHOLDER`: `PLACEHOLDER`을 `iotout`로 바꿉니다. `iotout` 항목에 기록된 메시지는 IoT Hub로 전달됩니다.
    * `IotHub.ConnectionString=PLACEHOLDER`: `PLACEHOLDER`를 `service` 정책에 대한 연결 문자열로 바꿉니다.
 
      예제 구성은 [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md)을 참조합니다.

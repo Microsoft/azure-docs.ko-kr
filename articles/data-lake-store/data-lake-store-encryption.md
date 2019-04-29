@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: yagupta
 ms.openlocfilehash: a009f212bd8baaa353d602dc6090aeeccddd4936
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58098137"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60878445"
 ---
 # <a name="encryption-of-data-in-azure-data-lake-storage-gen1"></a>Azure Data Lake Storage Gen1의 데이터 암호화
 
@@ -57,7 +57,7 @@ Data Lake Storage Gen1은 MEK(마스터 암호화 키)를 관리하는 두 가�
 |데이터가 어떻게 저장되나요?|저장하기 전에 항상 암호화됩니다.|저장하기 전에 항상 암호화됩니다.|
 |마스터 암호화 키가 어디에 저장되나요?|Key Vault|Key Vault|
 |Key Vault 외부에 저장되는 암호화 키가 있나요? |아닙니다.|아닙니다.|
-|Key Vault에서 MEK를 검색할 수 있나요?| 아니요. MEK는 Key Vault에 저장된 후에 암호화 및 암호 해독에만 사용할 수 있습니다.|안 됩니다. MEK는 Key Vault에 저장된 후에 암호화 및 암호 해독에만 사용할 수 있습니다.|
+|Key Vault에서 MEK를 검색할 수 있나요?|아니요. MEK는 Key Vault에 저장된 후에 암호화 및 암호 해독에만 사용할 수 있습니다.|안 됩니다. MEK는 Key Vault에 저장된 후에 암호화 및 암호 해독에만 사용할 수 있습니다.|
 |Key Vault 인스턴스 및 MEK 소유자는 누구인가요?|Data Lake Storage Gen1 서비스|사용자는 고유한 Azure 구독에 속한 Key Vault 인스턴스를 소유합니다. Key Vault의 MEK는 소프트웨어 또는 하드웨어로 관리할 수 있습니다.|
 |사용자가 Data Lake Storage Gen1 서비스의 MEK에 대한 액세스를 취소할 수 있나요?|아닙니다.|예. 사용자는 Key Vault의 액세스 제어 목록을 관리하고 Data Lake Storage Gen1 서비스의 서비스 ID에 대한 액세스 제어 항목을 제거할 수 있습니다.|
 |MEK를 영구적으로 삭제할 수 있나요?|아닙니다.|예. Key Vault에서 MEK를 삭제하면 Data Lake Storage Gen1 서비스를 포함하여 누구도 Data Lake Storage Gen1 계정의 데이터를 해독할 수 없습니다. <br><br> Key Vault에서 MEK를 삭제하기 전에 명시적으로 백업하면 MEK를 복원하고 데이터 복구할 수 있습니다. 그러나 Key Vault에서 MEK를 삭제하기 전에 백업하지 않으면 이후에 Data Lake Storage Gen1 계정의 데이터를 해독할 수 없습니다.|

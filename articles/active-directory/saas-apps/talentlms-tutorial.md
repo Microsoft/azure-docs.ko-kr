@@ -16,11 +16,11 @@ ms.date: 07/13/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8fa78ec2b5623dfd010a8fe5709916a47e221a9e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57902198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60732333"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-talentlms"></a>자습서: TalentLMS와 Azure Active Directory 통합
 
@@ -219,7 +219,7 @@ Azure AD 사용자가 TalentLMS에 로그인할 수 있도록 하려면 TalentLM
 
     b. **성** 텍스트 상자에 사용자의 성(예: **Simon**)을 입력합니다.
  
-    다. 에 **전자 메일 주소** 텍스트 상자과 같은 사용자의 전자 메일 입력 **brittasimon\@contoso.com**합니다.
+    다. **이메일 주소** 텍스트 상자에 사용자의 메일 주소(예: **brittasimon\@contoso.com**)를 입력합니다.
 
     d. **사용자 추가**를 클릭합니다.
 

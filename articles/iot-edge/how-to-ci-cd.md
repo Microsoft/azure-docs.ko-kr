@@ -10,11 +10,11 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: f449449c542ce6ac04daa58ff37a3577f0d75aee
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57896231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61222062"
 ---
 # <a name="continuous-integration-and-continuous-deployment-to-azure-iot-edge"></a>Azure IoT Edge 연속 통합 및 지속적인 배포
 
@@ -103,7 +103,7 @@ Azure Repos를 사용하는 방법에 대한 자세한 내용은 [Share your cod
 
    모듈 이미지를 호스트하는 컨테이너 레지스트리가 여러 개 있는 경우 이 작업을 복제하고 다른 컨테이너 레지스트리를 선택한 다음, 고급 설정의 **모듈 무시**를 사용하여 이 특정 레지스트리에 해당되지 않는 이미지를 무시해야 합니다.
 
-8. **빌드 아티팩트 게시** 작업을 선택하여 편집합니다. 빌드 작업에서 생성된 배포 파일의 파일 경로를 제공합니다. 빌드 모듈 작업에서 설정한 출력 변수와 일치하도록 **게시할 경로** 값을 설정합니다. 예: `$(edge.DEPLOYMENT_FILE_PATH)` 다른 값은 기본값으로 그대로 둡니다. 
+8. **빌드 아티팩트 게시** 작업을 선택하여 편집합니다. 빌드 작업에서 생성된 배포 파일의 파일 경로를 제공합니다. 빌드 모듈 작업에서 설정한 출력 변수와 일치하도록 **게시할 경로** 값을 설정합니다. 예: `$(edge.DEPLOYMENT_FILE_PATH)`. 다른 값은 기본값으로 그대로 둡니다. 
 
 9. **트리거** 탭을 열고 **연속 통합 사용** 상자를 선택합니다. 코드를 포함하는 분기가 포함되어 있는지 확인합니다.
 

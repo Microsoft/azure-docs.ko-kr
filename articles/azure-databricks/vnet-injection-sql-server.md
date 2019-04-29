@@ -9,11 +9,11 @@ ms.service: azure-databricks
 ms.topic: conceptual
 ms.date: 04/02/2019
 ms.openlocfilehash: 345e07fac30f4ad0c8e9918cb8a1ff0fb8aeb811
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59288953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60770792"
 ---
 # <a name="tutorial-query-a-sql-server-linux-docker-container-in-a-virtual-network-from-an-azure-databricks-notebook"></a>자습서: 쿼리는 Azure Databricks notebook에서 가상 네트워크의 SQL Server Linux Docker 컨테이너
 
@@ -71,7 +71,7 @@ ms.locfileid: "59288953"
     |대상 IP 주소|<your vm public ip\>|가상 머신의 공용 IP 주소를 입력 합니다. 이 찾을 수 있습니다 합니다 **개요** 가상 머신의 페이지입니다.|
     |대상 포트 범위|22|SSH에 대 한 포트 22를 엽니다.|
     |우선 순위|290|규칙 우선 순위를 지정 합니다.|
-    |name|ssh-databricks-tutorial-vm|규칙 이름을 지정 합니다.|
+    |이름|ssh-databricks-tutorial-vm|규칙 이름을 지정 합니다.|
 
 
     ![포트 22에 인바운드 보안 규칙 추가](./media/vnet-injection-sql-server/open-port.png)
@@ -87,7 +87,7 @@ ms.locfileid: "59288953"
     |대상 IP 주소|<your vm public ip\>|가상 머신의 공용 IP 주소를 입력 합니다. 이 찾을 수 있습니다 합니다 **개요** 가상 머신의 페이지입니다.|
     |대상 포트 범위|1433|SQL Server에 대 한 포트 22를 엽니다.|
     |우선 순위|300|규칙 우선 순위를 지정 합니다.|
-    |name|sql-databricks-tutorial-vm|규칙 이름을 지정 합니다.|
+    |이름|sql-databricks-tutorial-vm|규칙 이름을 지정 합니다.|
 
     ![포트 1433에 대 한 인바운드 보안 규칙 추가](./media/vnet-injection-sql-server/open-port2.png)
 
@@ -195,11 +195,11 @@ ms.locfileid: "59288953"
 
 ## <a name="clean-up-resources"></a>리소스 정리
 
-더 이상 필요한 경우 리소스 그룹, Azure Databricks 작업 영역 및 모든 관련된 리소스를 삭제 합니다. 작업을 삭제 하면 불필요 한 요금 청구를 방지 합니다. Azure Databricks 작업 영역을 나중에 사용 하려는 경우 클러스터를 중지 하 고 나중에 다시 시작 합니다. 이 Azure Databricks 작업 영역을 사용 하 여 계속 하려는 경우 다음 단계를 사용 하 여이 자습서에서 만든 모든 리소스를 삭제 합니다.
+더 이상 필요하지 않은 경우 리소스 그룹, Azure Databricks 작업 영역 및 모든 관련 리소스를 삭제합니다. 작업을 삭제하면 불필요한 요금 청구를 방지합니다. 나중에 Azure Databricks 작업 영역을 사용하려는 경우 클러스터를 중지하고 나중에 다시 시작할 수 있습니다. 이 Azure Databricks 작업 영역을 계속 사용하지 않으려면 다음 단계를 사용하여 이 자습서에서 만든 모든 리소스를 삭제합니다.
 
-1. Azure portal의 왼쪽 메뉴에서 클릭 **리소스 그룹** 만든 리소스 그룹의 이름을 클릭 하 고 있습니다.
+1. Azure Portal의 왼쪽 메뉴에서 **리소스 그룹**을 클릭한 다음, 만든 리소스 그룹의 이름을 클릭합니다.
 
-2. 리소스 그룹 페이지에서 선택 **삭제할**, 텍스트 상자에서 삭제 하 고 선택한 리소스의 이름을 입력 **삭제** 다시 합니다.
+2. 리소스 그룹 페이지에서 **삭제**를 선택하고, 텍스트 상자에서 삭제할 리소스의 이름을 입력한 다음, **삭제**를 다시 선택합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

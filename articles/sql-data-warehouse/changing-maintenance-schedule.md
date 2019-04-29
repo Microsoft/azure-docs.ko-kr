@@ -11,11 +11,11 @@ ms.date: 04/03/2019
 ms.author: anvang
 ms.reviewer: jrasnick
 ms.openlocfilehash: 4bc1867f0dd18a101b2e764970de4e1904b960e0
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59790861"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60680440"
 ---
 # <a name="change-a-maintenance-schedule"></a>유지 관리 일정 변경 
 

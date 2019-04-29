@@ -10,11 +10,11 @@ ms.date: 09/13/2016
 ms.author: rogardle
 ms.custom: mvc
 ms.openlocfilehash: 04cc9048271d653bd77fd7f2707c8f510ea8c29f
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52997958"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61456568"
 ---
 # <a name="deprecated-container-management-with-docker-swarm"></a>(사용되지 않음) Docker Swarm을 사용하여 컨테이너 관리
 
@@ -48,7 +48,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 4298d397b9ab        yeasy/simple-web    "/bin/sh -c 'python i"   31 seconds ago      Up 9 seconds        10.0.0.5:80->80/tcp   swarm-agent-34A73819-1/happy_allen
 ```  
 
-이제 Swarm 에이전트 부하 분산 장치의 공개 DNS 이름을 통해 이 컨테이너에서 실행되고 있는 응용 프로그램에 액세스할 수 있습니다. 이 정보는 Azure 포털에서 찾을 수 있습니다.  
+이제 Swarm 에이전트 부하 분산 장치의 공개 DNS 이름을 통해 이 컨테이너에서 실행되고 있는 애플리케이션에 액세스할 수 있습니다. 이 정보는 Azure 포털에서 찾을 수 있습니다.  
 
 ![실제 방문 결과](./media/container-service-docker-swarm/real-visit.jpg)  
 

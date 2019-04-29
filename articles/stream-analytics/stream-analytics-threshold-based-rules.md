@@ -2,19 +2,20 @@
 title: Azure Stream Analytics에서 구성 가능한 임계값 기반 규칙 처리
 description: 이 문서에서는 Azure Stream Analytics를 사용하여 Azure Stream Analytics에서 구성 가능한 임계값 기반 규칙이 있는 경고 솔루션을 얻는 방법을 설명합니다.
 services: stream-analytics
-author: zhongc
-ms.author: zhongc
-manager: kfile
+author: rockboyfor
+ms.author: v-yeche
+manager: digimobile
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 04/30/2018
+origin.date: 04/30/2018
+ms.date: 08/20/2018
 ms.openlocfilehash: ce2cf6ebdfd74549114e94e4c7356e387576d3c8
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56731194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60761729"
 ---
 # <a name="process-configurable-threshold-based-rules-in-azure-stream-analytics"></a>Azure Stream Analytics에서 구성 가능한 임계값 기반 규칙 처리
 이 문서에서는 Azure Stream Analytics를 사용하여 Azure Stream Analytics에서 구성 가능한 임계값 기반 규칙을 사용하는 경고 솔루션을 얻는 방법을 설명합니다.
@@ -46,7 +47,6 @@ Stream Analytics 작업에 대한 참조 데이터 입력을 사용하여 경고
 - 규칙에는 나중에 `AVGGREATEROREQUAL`의 쿼리 구문에서 동적으로 해석되는 **연산자** 필드가 있습니다. 
 - 규칙은 `C1` 값을 갖는 특정 차원 키 `2`의 데이터를 필터링합니다. 다른 필드는 빈 문자열로, 이벤트 필드를 기준으로 입력 스트림을 필터링하지 않을 것임을 나타냅니다. 필요에 따라 일치하는 다른 필드를 필터링하도록 추가 CPU 규칙을 설정할 수 있습니다.
 - 모든 열을 출력 경고 이벤트에 포함해야 하는 것은 아닙니다. 이 경우 스트림에 있는 이벤트 데이터의 필드 번호 2가 정식 출력 이벤트에 포함될 것임을 나타내기 위해 `includedDim` 키 번호 `2`가 `TRUE`로 설정됩니다. 다른 필드는 경고 출력에 포함되지 않지만 필드 목록을 조정할 수 있습니다.
-
 
 ```json
 {
@@ -292,3 +292,4 @@ HAVING
 "alert":"hot node AVG CPU over 90","avg":96.5,"min":95.0,"max":98.0,
 "dim0":null,"dim1":null,"dim2":"N024","dim3":null,"dim4":null}
 ```
+<!--Update_Description: updat meta properties, wording update-->

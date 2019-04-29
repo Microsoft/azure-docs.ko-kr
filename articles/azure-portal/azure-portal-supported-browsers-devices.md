@@ -16,11 +16,11 @@ ms.date: 03/27/2019
 ms.author: kfollis
 ms.custom: accessibility
 ms.openlocfilehash: 1595d744fbfda47a9db9ff27de09cd53c6f73ece
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58576397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60551160"
 ---
 # <a name="supported-devices"></a>지원되는 디바이스
 

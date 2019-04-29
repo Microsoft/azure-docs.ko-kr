@@ -1,18 +1,19 @@
 ---
 title: Azure Cosmos DB의 고유 키 사용
 description: Azure Cosmos 데이터베이스에서 고유 키를 사용하는 방법에 대한 자세한 정보
-author: rimman
-ms.author: rimman
+author: rockboyfor
+ms.author: v-yeche
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 04/08/2019
+origin.date: 04/08/2019
+ms.date: 04/15/2019
 ms.reviewer: sngun
 ms.openlocfilehash: 3c5e8a2c85898175772dc353258e77fc8e0a74f2
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59799119"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62115726"
 ---
 # <a name="unique-key-constraints-in-azure-cosmos-db"></a>Azure Cosmos DB의 고유 키 제약 조건
 
@@ -26,14 +27,14 @@ ms.locfileid: "59799119"
 
 예를 들어 항목이 다음 값으로 컨테이너에 포함될 수 있으며, 이 경우 각 항목이 고유 키 제약 조건을 준수합니다.
 
-|CompanyID|이름|성|메일 주소|
-|---|---|---|---|
-|Contoso|Gaby|Duperre|gaby@contoso.com |
-|Contoso|Gaby|Duperre|gaby@fabrikam.com|
-|Fabrikam|Gaby|Duperre|gaby@fabrikam.com|
-|Fabrikam|Ivan|Duperre|gaby@fabrikam.com|
-|Fabrkam|   |Duperre|gaby@fabraikam.com|
-|Fabrkam|   |   |gaby@fabraikam.com|
+| CompanyID | 이름 | 성 |   메일 주소    |
+|-----------|------------|-----------|--------------------|
+|  Contoso  |    Gaby    |  Duperre  |  gaby@contoso.com  |
+|  Contoso  |    Gaby    |  Duperre  | gaby@fabrikam.com  |
+| Fabrikam  |    Gaby    |  Duperre  | gaby@fabrikam.com  |
+| Fabrikam  |    Ivan    |  Duperre  | gaby@fabrikam.com  |
+|  Fabrkam  |            |  Duperre  | gaby@fabraikam.com |
+|  Fabrkam  |            |           | gaby@fabraikam.com |
 
 앞의 표에 나열된 조합으로 다른 항목을 삽입하려고 하면 오류가 표시됩니다. 오류는 고유 키 제약 조건이 충족되지 않았음을 나타냅니다. 중 하나를 받게 `Resource with specified ID or name already exists` 또는 `Resource with specified ID, name, or unique index already exists` 메시지로 반환 합니다. 
 
@@ -56,3 +57,5 @@ Azure Cosmos 컨테이너를 만들 때만 고유 키를 정의할 수 있습니
 ## <a name="next-steps"></a>다음 단계
 
 * [논리 파티션](partition-data.md)에 대해 자세히 알아봅니다.
+
+<!-- Update_Description: update meta propreties, wording update -->

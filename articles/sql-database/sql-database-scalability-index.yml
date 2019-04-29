@@ -1,10 +1,4 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 7ee79da6219452ace4f7e71bd670de3cfdc968fb
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
-ms.contentlocale: ko-KR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56232367"
 documentType: LandingData
 title: Azure SQL Database - 확장성
 metadata:
@@ -12,49 +6,49 @@ metadata:
   title: Azure SQL Database - 확장성
   meta.description: Learn how to scale your Azure SQL Database.
   services: sql-database
-  ms.subservice: scale-out
-  author: jovanpop-msft
-  manager: craigg
+  author: WenJason
+  manager: digimobile
   requires-business-manager-approval: false
   ms.service: sql-database
   ms.tgt_pltfrm: na
-  ms.devlang: 
+  ms.devlang: null
   ms.topic: overview
-  ms.date: 01/25/2019
-  ms.author: jovanpop-msft
+  origin.date: 01/25/2019
+  ms.date: 02/25/2019
+  ms.author: v-jay
 sections:
-- items:
-  - type: paragraph
-    text: Azure SQL Database를 사용하면 계산 능력을 추가(강화)하거나 데이터베이스 단위를 추가(스케일 아웃)하여 데이터베이스 크기를 쉽게 조정할 수 있습니다.
-  - type: list
-    style: cards
-    className: cardsM
-    columns: 3
+  - items:
+      - type: paragraph
+        text: Azure SQL Database를 사용하면 계산 능력을 추가(강화)하거나 데이터베이스 단위를 추가(스케일 아웃)하여 데이터베이스 크기를 쉽게 조정할 수 있습니다.
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 3
+        items:
+          - title: 강화
+            href: /sql-database/sql-database-scale-resources
+            html: <p>최상의 가격/성능 비율을 찾거나 성능 문제를 완화하기 위해 SQL Database에서 리소스를 쉽게 추가하거나 제거합니다.</p>
+          - title: 읽기 확장
+            href: /sql-database/sql-database-read-scale-out
+            html: '<p>중요 비즈니스용 계층은 데이터 복사본에 대해 보고서, 분석 및 기타 읽기 전용 쿼리를 실행할 수 있는 데이터베이스의 무료 복제본을 제공합니다.</p>'
+          - title: 분할된 데이터베이스
+            href: /sql-database/sql-database-elastic-scale-introduction
+            html: <p>여러 개의 분할된 데이터베이스를 사용하여 단일 데이터베이스의 최대 컴퓨팅 및 스토리지 한도를 초과하여 데이터베이스를 확장할 수 있습니다.</p>
+          - title: 탄력적 쿼리
+            href: /sql-database/sql-database-elastic-query-overview
+            html: <p>탄력적 쿼리를 사용하면 분할된 전역 분산 데이터베이스 세트에 대해 표준 Transact-SQL 쿼리를 실행할 수 있습니다.</p>
+          - title: 탄력적 트랜잭션
+            href: /sql-database/sql-database-elastic-transactions-overview
+            html: <p>전역 분산 트랜잭션을 사용하여 분산 데이터에 대해 트랜잭션이 일관된 액세스를 보장할 수 있습니다.</p>
+          - title: 크로스 데이터베이스 작업
+            href: /sql-database/elastic-jobs-overview
+            html: <p>데이터베이스 간 탄력적 작업을 사용하여 데이터베이스 세트를 유지 관리합니다.</p>
+  - title: 추가 리소스
     items:
-    - title: 강화
-      href: /azure/sql-database/sql-database-scale-resources
-      html: <p>최상의 가격/성능 비율을 찾거나 성능 문제를 완화하기 위해 SQL Database에서 리소스를 쉽게 추가하거나 제거합니다.</p>
-    - title: 읽기 확장
-      href: /azure/sql-database/sql-database-read-scale-out
-      html: <p>중요 비즈니스용 계층은 데이터 복사본에 대해 보고서, 분석 및 기타 읽기 전용 쿼리를 실행할 수 있는 데이터베이스의 무료 복제본을 제공합니다.</p>
-    - title: 분할된 데이터베이스
-      href: /azure/sql-database/sql-database-elastic-scale-introduction
-      html: <p>여러 개의 분할된 데이터베이스를 사용하여 단일 데이터베이스의 최대 컴퓨팅 및 스토리지 한도를 초과하여 데이터베이스를 확장할 수 있습니다.</p>
-    - title: 탄력적 쿼리
-      href: /azure/sql-database/sql-database-elastic-query-overview
-      html: <p>탄력적 쿼리를 사용하면 분할된 전역 분산 데이터베이스 세트에 대해 표준 Transact-SQL 쿼리를 실행할 수 있습니다.</p>
-    - title: 탄력적 트랜잭션
-      href: /azure/sql-database/sql-database-elastic-transactions-overview
-      html: <p>전역 분산 트랜잭션을 사용하여 분산 데이터에 대해 트랜잭션이 일관된 액세스를 보장할 수 있습니다.</p>
-    - title: 크로스 데이터베이스 작업
-      href: /azure/sql-database/elastic-jobs-overview
-      html: <p>데이터베이스 간 탄력적 작업을 사용하여 데이터베이스 세트를 유지 관리합니다.</p>
-- title: 추가 리소스
-  items:
-  - type: paragraph
-    text: 데이터 크기 조정에 도움이 되는 추가 기능에 대해 알아봅니다.
-  - type: list
-    style: ordered
-    items:
-    - html: <a href="https://docs.microsoft.com/sql/relational-databases/linked-servers/linked-servers-database-engine">연결된 서버</a>는 Transact-SQL 코드에서 다른 데이터베이스 엔진으로 분산 쿼리를 실행할 수 있는 핵심 SQL Server 데이터베이스 엔진 기능입니다.
-    - html: <a href="sql-database-geo-replication-overview.md">지역 복제</a>를 사용하면 여러 지역에 읽기 가능한 복제본을 개수 제한없이 배치할 수 있습니다.
+      - type: paragraph
+        text: 데이터 크기 조정에 도움이 되는 추가 기능에 대해 알아봅니다.
+      - type: list
+        style: ordered
+        items:
+          - html: '<a href="https://docs.microsoft.com/sql/relational-databases/linked-servers/linked-servers-database-engine">연결된 서버</a>는 Transact-SQL 코드에서 다른 데이터베이스 엔진으로 분산 쿼리를 실행할 수 있는 핵심 SQL Server 데이터베이스 엔진 기능입니다.'
+          - html: <a href="sql-database-geo-replication-overview.md">지역 복제</a>를 사용하면 여러 지역에 읽기 가능한 복제본을 개수 제한없이 배치할 수 있습니다.

@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/05/2018
-ms.openlocfilehash: 2a59a81b0894cbf58c5d3ab5a5569f4749b64b00
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
-ms.translationtype: MT
+ms.openlocfilehash: 0eb4b77964aa3c07bac2af615a26c3a9199525de
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57543290"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63760851"
 ---
 # <a name="understand-time-handling-in-azure-stream-analytics"></a>Azure Stream Analytics의 시간 처리 이해
 
@@ -26,7 +26,7 @@ ms.locfileid: "57543290"
 
 - **처리 시간**: 이벤트가 처리 시스템에 도달하여 관찰되는 시간입니다. 예를 들어 요금소 창구 센서에서 자동차를 확인하고 컴퓨터 시스템에서 데이터를 처리하는 데 몇 분이 걸리는 경우가 있습니다.
 
-- **워터마크**: 스트리밍 프로세서에 들어온 시점까지 모든 이벤트를 나타내는 이벤트 시간 표식입니다. 워터마크를 사용하면 시스템에서 이벤트 수집에 대한 명확한 진행률을 표시할 수 있습니다. 스트림의 특성에 따라 들어오는 이벤트 데이터가 중지되지 않으므로 워터마크는 스트림의 특정 시점까지의 진행률을 나타냅니다.
+- **워터마크**: 어떤 지점까지 이벤트 스트리밍 프로세서에 수신 되었습니다 나타내는 이벤트 시간 표식입니다. 워터마크를 사용하면 시스템에서 이벤트 수집에 대한 명확한 진행률을 표시할 수 있습니다. 스트림의 특성에 따라 들어오는 이벤트 데이터가 중지되지 않으므로 워터마크는 스트림의 특정 시점까지의 진행률을 나타냅니다.
 
    워터마크는 중요한 개념입니다. 워터마크를 사용하면 Stream Analytics에서 시스템이 취소할 필요가 없는 완전하고, 정확하며, 반복 가능한 결과를 생성할 수 있는 시기를 결정할 수 있습니다. 처리는 예측 가능하고 반복 가능한 보장된 방식으로 수행할 수 있습니다. 예를 들어 일부 오류 처리 조건에 대해 다시 계산해야 하는 경우 워터마크는 안전한 시작 지점과 종료 지점입니다.
 

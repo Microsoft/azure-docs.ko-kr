@@ -1,6 +1,6 @@
 ---
 title: 단일 테넌트 SaaS 자습서 - Azure SQL Database | Microsoft Docs
-description: Azure SQL Database를 사용하는 독립형 단일 테넌트 SaaS 애플리케이션 배포 및 탐색
+description: Azure SQL Database를 사용하는 독립형 단일 테넌트 SaaS 애플리케이션을 배포 및 탐색합니다.
 services: sql-database
 ms.service: sql-database
 ms.subservice: scenario
@@ -13,13 +13,13 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 11/07/2018
 ms.openlocfilehash: 4dbf53df4d3f34e80757f9575981b4b053587d97
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58012689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485154"
 ---
-# <a name="deploy-and-explore-a-standalone-single-tenant-application-that-uses-azure-sql-database"></a>Azure SQL Database를 사용하는 독립형 단일 테넌트 애플리케이션을 배포하고 탐색합니다.
+# <a name="deploy-and-explore-a-standalone-single-tenant-application-that-uses-azure-sql-database"></a>Azure SQL Database를 사용하는 독립형 단일 테넌트 애플리케이션을 배포 및 탐색합니다.
 
 이 자습서에서는 독립형 애플리케이션 패턴 또는 테넌트별 앱 패턴을 사용하여 개발한 Wingtip 티켓 SaaS 애플리케이션 예제를 배포하고 탐색합니다.  애플리케이션은 다중 테넌트 SaaS 활성화 시나리오를 간소화하는 Azure SQL Database의 기능을 보여 주도록 설계되었습니다.
 

@@ -15,11 +15,11 @@ ms.topic: reference
 ms.date: 09/13/2018
 ms.author: pbutlerm
 ms.openlocfilehash: de9261548ec79e206b0db87caabc1fa4c9ad6771
-ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56591553"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61094508"
 ---
 <a name="retrieve-offers"></a>제품 검색
 ===============
@@ -34,7 +34,7 @@ ms.locfileid: "56591553"
 
 | **Name**         |  **설명**                         |  **데이터 형식** |
 | -------------    |  ------------------------------------    |  -----------   |
-|  publisherId     | 게시자 식별자입니다(예: `contoso`). |   문자열    |
+|  publisherId     | 게시자 식별자입니다(예: `contoso`). |   String    |
 |  api-version     | 최신 버전 API                    |    Date        |
 |  |  |
 

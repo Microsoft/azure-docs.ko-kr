@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 08/25/2017
 ms.author: elioda
 ms.openlocfilehash: f93abac563d47f6505f42d29e882698ef31174bf
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59795888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61444820"
 ---
 # <a name="get-started-with-device-twins-node"></a>디바이스 쌍 시작(Node)
 

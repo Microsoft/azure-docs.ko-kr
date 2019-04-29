@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/27/2019
 ms.author: magoedte
-ms.openlocfilehash: 2f500ea127d3f2042e7c97eeace592b4da8d8d0e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f0c9b84f31810a4b0cec93738f7ce327bc24d8d0
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/23/2019
-ms.locfileid: "60494854"
+ms.locfileid: "62101611"
 ---
 # <a name="how-to-update-azure-monitor-for-containers-to-enable-metrics"></a>메트릭을 사용 하도록 설정 하려면 컨테이너에 대 한 Azure Monitor를 업데이트 하는 방법
 컨테이너에 대 한 azure Monitor는 Azure Kubernetes 서비스 (AKS) 클러스터 노드 및 pod에서 메트릭을 수집 하 고 Azure Monitor 메트릭 저장소에 쓰기에 대 한 지원을 소개 합니다. Azure portal 대시보드에서 성능 차트를 고정 하는 지원의 성능 차트에서 집계 계산 (Avg, Count, Max, Min, Sum)를 표시할 때 향상 된 적시성을 제공 하 고 메트릭 경고를 지원 합니다.이 변경이 됩니다.
@@ -35,7 +35,7 @@ Azure 포털, Azure PowerShell 또는 Azure CLI를 사용 하 여 이러한 새 
 할당을 처리 중 하나는 **모니터링 메트릭을 게시자** 역할 클러스터의 서비스 주체에 에이전트에 의해 데이터가 수집 되도록를 게시할 수 있는 클러스터 리소스입니다. 푸시 메트릭 리소스에 권한이 메트릭 게시자를 모니터링, 모든 상태 변경, 리소스를 업데이트 하거나 데이터를 읽을 수 없습니다 것입니다. 역할에 대 한 자세한 내용은 참조 [모니터링 메트릭을 게시자 역할](../../role-based-access-control/built-in-roles.md#monitoring-metrics-publisher)입니다.
 
 ## <a name="prerequisites"></a>필수 조건 
-시작 하기 전에의 구성원 인지 확인 합니다 **[소유자](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-role.md#owner)** 노드의 컬렉션을 사용 하도록 설정 하 고 사용자 지정 성능 메트릭을 pod를 AKS 클러스터 리소스에 대 한 역할입니다. 
+시작 하기 전에의 구성원 인지 확인 합니다 **[소유자](../../role-based-access-control/built-in-roles.md#owner)** 노드의 컬렉션을 사용 하도록 설정 하 고 사용자 지정 성능 메트릭을 pod를 AKS 클러스터 리소스에 대 한 역할입니다. 
 
 Azure CLI를 사용하도록 선택한 경우, 먼저 CLI를 로컬에 설치하고 사용해야 합니다. Azure CLI 버전 2.0.59 실행 해야 이상. 버전을 확인하려면 `az --version`을 실행합니다. Azure CLI를 설치하거나 업그레이드해야 하는 경우 [Azure CLI 설치](https://docs.microsoft.com/cli/azure/install-azure-cli)를 참조하세요. 
 

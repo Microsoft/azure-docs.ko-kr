@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
 ms.openlocfilehash: 0f5452ade7a34a06cef4564760dc31981f1d8f37
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59492569"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62118080"
 ---
 # <a name="connect-your-f5-appliance"></a>F5 어플라이언스에서 연결
 

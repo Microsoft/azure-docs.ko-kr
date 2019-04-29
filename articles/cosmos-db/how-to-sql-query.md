@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: mjbrown
 ms.openlocfilehash: 04a88558e3aea33c6d99bd0e4f1354c4316f5529
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59579223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61054125"
 ---
 # <a name="sql-query-examples-for-azure-cosmos-db"></a>Azure Cosmos DB에 대한 SQL 쿼리 예제
 
@@ -448,7 +448,7 @@ FROM 절을 더 작은 하위 집합으로 소스를 줄일 수 있습니다. �
 |비트    | \|, &, ^, <<, >>, >>>(0 채우기 오른쪽 시프트) |
 |논리    | AND, OR, NOT      |
 |비교 | =, !=, &lt;, &gt;, &lt;=, &gt;=, <> |
-|문자열     |  \|\|(연결) |
+|String     |  \|\|(연결) |
 
 다음 쿼리는 이항 연산자를 사용합니다.
 

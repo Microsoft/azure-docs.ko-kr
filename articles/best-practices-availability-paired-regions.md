@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 04/17/2019
 ms.author: raynew
 ms.openlocfilehash: ecbe73e02631e3c3601bd929282d467cb05b41e4
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59678873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60616845"
 ---
 # <a name="business-continuity-and-disaster-recovery-bcdr-azure-paired-regions"></a>BCDR(비즈니스 연속성 및 재해 복구): Azure 쌍을 이루는 지역
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/08/2018
 ms.author: alkohli
 ms.custom: include file
-ms.openlocfilehash: e7f3f80c886f90a8bc3ae8c38e7d101c506439a6
-ms.sourcegitcommit: 50f82f7682447245bebb229494591eb822a62038
-ms.translationtype: HT
+ms.openlocfilehash: e683d17422321b780a1c01b3011292f2e2c631cb
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35250225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60724735"
 ---
 볼륨 컨테이너를 삭제하려면
  - 볼륨 컨테이너에서 볼륨을 삭제해야 합니다. 볼륨 컨테이너가 볼륨에 연결된 경우 해당 볼륨을 먼저 오프라인으로 전환합니다. [볼륨을 오프라인으로 전환](../articles/storsimple/storsimple-8000-manage-volumes-u2.md#take-a-volume-offline)단계를 따릅니다. 볼륨이 오프라인이 되면 삭제할 수 있습니다. 
@@ -22,7 +22,7 @@ ms.locfileid: "35250225"
 볼륨 컨테이너에 연결된 볼륨, 백업 정책 및 클라우드 스냅숏이 있는 경우 삭제할 수 있습니다. 볼륨 컨테이너를 삭제하려면 다음 절차를 수행합니다.
 
 #### <a name="to-delete-a-volume-container"></a>볼륨 컨테이너를 삭제하려면
-1. StorSimple 디바이스 관리자 서비스로 이동한 다음 **디바이스**를 클릭합니다. 장치를 선택하여 클릭하고 **설정 > 관리 > 볼륨 컨테이너**로 이동합니다.
+1. StorSimple 디바이스 관리자 서비스로 이동하고 **디바이스**를 클릭합니다. 디바이스를 선택하여 클릭하고 **설정 &gt; 관리 &gt; 볼륨 컨테이너**로 이동합니다.
 
     ![볼륨 컨테이너 블레이드](./media/storsimple-8000-create-volume-container/createvolumecontainer2.png)
 

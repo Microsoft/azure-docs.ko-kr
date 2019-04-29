@@ -1,7 +1,6 @@
 ---
 title: Apache Spark Machine Learning 학습 파이프라인 만들기 - Azure HDInsight
 description: Apache Spark 기계 학습 라이브러리를 사용하여 데이터 파이프라인을 만듭니다.
-services: hdinsight
 ms.service: hdinsight
 author: maxluk
 ms.author: maxluk
@@ -9,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/19/2018
-ms.openlocfilehash: dbda20554b119bfb72b939cbeb7f19e0b9093b31
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: c539460177a0a85938b886d161803e1fdf0e9e68
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53597480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62124461"
 ---
 # <a name="create-an-apache-spark-machine-learning-pipeline"></a>Apache Spark 기계 학습 파이프라인 만들기
 

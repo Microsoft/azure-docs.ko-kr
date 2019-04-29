@@ -15,11 +15,11 @@ ms.topic: reference
 ms.date: 09/14/2018
 ms.author: pbutlerm
 ms.openlocfilehash: a7666ada6c4535010297415eac8b0bd9e5226d9e
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51974470"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61094214"
 ---
 <a name="retrieve-operations"></a>작업 검색
 ===================
@@ -40,10 +40,10 @@ ms.locfileid: "51974470"
 
 |  **Name**          |      **설명**                                                                                           | **데이터 형식** |
 |  ----------------  |     --------------------------------------------------------------------------------------------------------   |  -----------  |
-|  publisherId       |  게시자 식별자입니다(예: `Contoso`).                                                                   |  문자열       |
-|  offerId           |  제안 식별자입니다.                                                                                              |  문자열       |
+|  publisherId       |  게시자 식별자입니다(예: `Contoso`).                                                                   |  String       |
+|  offerId           |  제안 식별자입니다.                                                                                              |  String       |
 |  operationId       |  제품에 대한 작업을 고유하게 식별하는 GUID입니다. operationId는 이 API를 사용하여 검색할 수 있으며, [제품 게시](./cloud-partner-portal-api-publish-offer.md) API와 같은 장기 실행 작업에 대한 응답의 HTTP 헤더에도 반환됩니다.  |   Guid   |
-|  filteredStatus    | 이 API가 반환하는 컬렉션을 상태(예: `running`)별로 필터링하는 데 사용되는 선택적 쿼리 매개 변수입니다.  |   문자열 |
+|  filteredStatus    | 이 API가 반환하는 컬렉션을 상태(예: `running`)별로 필터링하는 데 사용되는 선택적 쿼리 매개 변수입니다.  |   String |
 |  api-version       | 최신 버전 API                                                                                           |    Date      |
 |  |  |  |
 

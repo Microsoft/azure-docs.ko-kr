@@ -2,7 +2,6 @@
 title: Hadoop 스택 추적 오류 메시지 - Azure HDInsight
 description: Azire HDInsight의 Hadoop 스택 추적 오류 메시지의 인덱스입니다. 문제 해결 정보를 보려면 목록에서 오류를 찾습니다.
 keywords: 스택 추적, 오류 메시지
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -10,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
-ms.openlocfilehash: 20d13f3df730ff4a81c7304ae1ad7e4158403521
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
-ms.translationtype: MT
+ms.openlocfilehash: 0fb884c46525c0d5d14deb1521f086451a969656
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337785"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63761145"
 ---
 # <a name="index-of-apache-hadoop-in-hdinsight-troubleshooting-articles"></a>HDInsight에서 Apache Hadoop의 인덱스 문제 해결 문서
 문서는 오류의 유형별로 구성됩니다.

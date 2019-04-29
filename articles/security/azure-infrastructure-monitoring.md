@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 06/28/2018
 ms.author: terrylan
 ms.openlocfilehash: 88bc76116392140c533f67402642c68d714227c0
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56108215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60591651"
 ---
 # <a name="azure-infrastructure-monitoring"></a>Azure 인프라 모니터링   
 

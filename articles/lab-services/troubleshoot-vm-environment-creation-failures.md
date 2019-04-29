@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 04/12/2019
 ms.author: spelluru
 ms.openlocfilehash: a653a785e99619c3e256613d6a4d2c7592f54c8c
-ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60149396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60848492"
 ---
 # <a name="troubleshoot-virtual-machine-vm-and-environment-creation-failures-in-azure-devtest-labs"></a>가상 머신 (VM) 및 Azure DevTest Labs에서 환경 만들기 실패 문제 해결
 DevTest Labs는 랩 정책을 위반 하려는 경우 또는 컴퓨터 이름에 유효 하지 않은 경우 경고를 제공 합니다. 빨간색 표시 하는 경우가 `X` 랩 VM 또는 환경 상태 문제가 발생 했음을 알리는 옆에 있는 합니다.  이 문서에서는 기본 문제를 찾고 다행히 나중에 이러한 문제를 방지 하는 데 사용할 수 있는 몇 가지 트릭을 제공 합니다.

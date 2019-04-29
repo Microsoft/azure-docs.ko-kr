@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/02/2017
 ms.author: alkohli
-ms.openlocfilehash: 855ea6c34082b859bb5b5b6e69b3e3f2fa54eb4a
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
-ms.translationtype: HT
+ms.openlocfilehash: b36d721896bd7b4f95d831eded500a96969937c5
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39056466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60631892"
 ---
 # <a name="technical-specifications-and-compliance-for-the-storsimple-device"></a>StorSimple 디바이스에 대한 기술 사양 및 규정 준수
 
@@ -37,7 +37,7 @@ EBOD 엔클로저는 580 W PCM을 사용하며 기본 엔클로저는 764 W PCM�
 | --- | --- | --- |
 | 최대 출력 전원 |580W |764 |
 | Frequency(빈도) |50/60Hz |50/60Hz |
-| 전압 범위 선택 |자동 범위 지정: 90-264V AC, 47/63Hz |자동 범위 지정: 90- 264 V AC, 47/63Hz |
+| 전압 범위 선택 |자동 범위 지정: 90 – 264 V AC, 47/63 Hz |자동 범위 지정: 90- 264 V AC, 47/63 Hz |
 | 최대 유입 전류 |20A |20A |
 | 전원 요소 수정 |> 95% 정격 입력 전압 |> 95% 정격 입력 전압 |
 | 고주파 |EN61000-3-2를 충족합니다. |EN61000-3-2를 충족합니다. |
@@ -149,8 +149,8 @@ Microsoft Azure StorSimple 디바이스에서 다음 국제 표준을 준수합�
 
 Microsoft Azure StorSimple 디바이스는 다음 안전 등급을 만족합니다.
 
-* 시스템 제품 유형 승인: UL, cUL, CE
-* 보안 준수: UL 60950, IEC 60950, EN 60950
+* 시스템 제품 형식 승인: UL, cUL, CE
+* 안전 규정 준수: UL 60950, IEC 60950, EN 60950
 
 ## <a name="emc-compliance"></a>EMC 규정 준수
 
@@ -160,8 +160,8 @@ Microsoft Azure StorSimple 디바이스는 다음 EMC 등급을 만족합니다.
 
 디바이스는 전도성 및 복사성 배출 수준에 대한 EMC 규정을 준수합니다.
 
-* 전도성 배출 제한 수준: CFR 47 Part 15B Class A EN55022 Class A CISPR Class A
-* 복사성 배출 제한 수준: CFR 47 Part 15B Class A EN55022 Class A CISPR Class A
+* 전도성 방출 제한 수준: CFR 47 파트 15B 클래스 A EN55022 클래스 A CISPR 클래스는
+* 방출 제한 수준 복사 성: CFR 47 파트 15B 클래스 A EN55022 클래스 A CISPR 클래스는
 
 ### <a name="harmonics-and-flicker"></a>고주파 및 깜박임
 

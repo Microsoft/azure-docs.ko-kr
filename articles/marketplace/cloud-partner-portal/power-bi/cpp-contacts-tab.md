@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: pbutlerm
 ms.openlocfilehash: 191f58252aadf776465bb097207a7e76c0f92003
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56415173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60594963"
 ---
 # <a name="power-bi-app-contacts-tab"></a>Power BI 앱 연락처 탭
 

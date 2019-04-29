@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/13/2017
 ms.author: v-dabosl
-ms.openlocfilehash: 753d6abcdd063d5c092b0c90770396d176bc52e8
-ms.sourcegitcommit: b854df4fc66c73ba1dd141740a2b348de3e1e028
-ms.translationtype: HT
+ms.openlocfilehash: 243b6b7846719d3f848073e3aa973c9406ca59c7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2017
-ms.locfileid: "26129943"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60586606"
 ---
 # <a name="how-to-log-a-security-event-support-ticket"></a>보안 이벤트 지원 티켓을 로그하는 방법
 
@@ -32,7 +32,7 @@ ms.locfileid: "26129943"
 
     i. 문제 및/또는 취약성은 무엇인가요?
 
-    ii. 취약성의 경우 CVE(mitre.org)를 제공하거나 CVSS3 v3 계산기(https://www.first.org/cvss/calculator/3.0)를 작성합니다.
+    ii. 취약점, 주시기 CVE (mitre.org) 하거나 CVSS3 v3 계산기 (https://www.first.org/cvss/calculator/3.0)합니다.
 
     iii. 해결 방법 또는 위험 완화가 있나요? 있다면 수정 단계를 제공해 주세요.
 

@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: spelluru
 ms.openlocfilehash: abb85d568e26e4b6f85b960a2560aae570daf201
-ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60149183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61320614"
 ---
 # <a name="run-an-image-factory-from-azure-devops"></a>Azure DevOps에서 이미지 팩터리 실행
 이 문서에서는 Azure DevOps (이전의 Visual Studio Team Services)에서 이미지 팩터리를 실행 하는 데 필요한 모든 준비를 다룹니다.
@@ -78,7 +78,7 @@ PowerShell, 템플릿 및 이미지 팩터리에 대 한 구성에는 [공용 De
 명령줄 매개 변수를 간단 하 게 하려면 빌드 변수 집합에 이미지 팩터리를 구동 하는 키 값을 캡슐화 됩니다. 선택 된 **변수** 탭을 몇 가지 기본 변수 목록이 표시 됩니다. Azure devops에 입력 하는 변수 목록에는 다음과 같습니다.
 
 
-| 변수 이름 | Value | 메모 |
+| 변수 이름 | 값 | 메모 |
 | ------------- | ----- | ----- |
 | ConfigurationLocation | /Scripts/ImageFactory/Configuration | 이 저장소의 전체 경로 **구성** 폴더입니다. 위의 전체 리포지토리를 가져온 경우 왼쪽 값은 올바른. 그렇지 않으면 구성 위치를 가리키도록 업데이트 합니다. |
 | DevTestLabName | MyImageFactory | 팩터리에서 사용 하 여 이미지를 생성 하는 Azure DevTest Labs에서 랩의 이름입니다. 사용자 계정이 없는 경우 만듭니다. 랩 서비스 끝점에 액세스할 수 있는 동일한 구독 인지 확인 합니다. |
