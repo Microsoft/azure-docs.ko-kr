@@ -109,6 +109,7 @@ Microsoft는 Azure 테넌트 관리자에게 공격으로부터 워크로드를 
 - Azure Security Center에서 엔드포인트 보호가 실행되지 않는 VM을 쉽게 식별하고 필요한 경우 Microsoft 맬웨어 방지 프로그램을 설치할 수 있습니다.
 
 ![VM용 맬웨어 방지 프로그램](./media/migrate-best-practices-security-management/antimalware.png)
+
 *VM용 맬웨어 방지 프로그램*
 
 **자세한 정보:**
@@ -266,6 +267,7 @@ Azure는 고급 보안 옵션을 제공하는 다양한 다른 보안 기능을 
 
 
 ![태그 지정](./media/migrate-best-practices-security-management/tagging.png)
+
 *태그 지정*
 
 **자세한 정보:**
@@ -312,6 +314,7 @@ Azure App Service Environment는 Windows 및 Linux 웹앱, Docker 컨테이너, 
 다음 다이어그램은 관리 그룹을 사용하여 거버넌스용 계층을 만드는 예를 보여줍니다.
 
 ![관리 그룹](./media/migrate-best-practices-security-management/management-groups.png)
+
 *관리 그룹*
 
 **자세한 정보:**
@@ -328,6 +331,7 @@ Azure Policy는 정책을 만들고, 할당하고, 관리하는 데 사용하는
 
 
 ![Azure Policy](./media/migrate-best-practices-security-management/policy.png)
+
 *Azure Policy*
 
 **자세한 정보:**
@@ -384,6 +388,7 @@ Azure Backup을 사용하여 여러 가지 방법으로 VM을 백업할 수 있�
 
 
 ![Azure Backup](./media/migrate-best-practices-security-management/iaas-backup.png)
+
 *Azure Backup*
 
 **자세한 정보:**
@@ -430,6 +435,7 @@ Azure SQL Database는 완전 관리형 PaaS 데이터베이스 엔진입니다. 
 
 
 ![Azure SQL 백업](./media/migrate-best-practices-security-management/sql-backup.png)
+
 *Azure SQL 백업*
 
 **자세한 정보:**
@@ -583,6 +589,7 @@ Azure Managed Disks는 VM 디스크와 연결된 스토리지 계정을 관리�
 
 
 ![Azure Monitor](./media/migrate-best-practices-security-management/monitor.png)
+
 *Azure Monitor*
 
 **자세한 정보:**
@@ -602,6 +609,7 @@ Azure 리소스는 상당히 많은 수의 로깅 메트릭 및 원격 분석 �
 
 
 ![진단 로깅](./media/migrate-best-practices-security-management/diagnostics.png)
+
 *진단 로깅*
 
 **자세한 정보:**
@@ -621,6 +629,7 @@ Azure 리소스에 대해 진단 로깅을 사용하도록 설정하면 로깅 �
 
 
 ![경고](./media/migrate-best-practices-security-management/alerts.png)
+
 *경고*
 
 **자세한 정보:**
@@ -635,6 +644,7 @@ Azure Portal은 웹 기반 통합 콘솔로, 간단한 웹앱에서 복잡한 �
 
 
 ![Azure 대시보드](./media/migrate-best-practices-security-management/dashboard.png)
+
 *Azure 대시보드*
 
 **자세한 정보:**
@@ -652,6 +662,7 @@ Azure Portal은 웹 기반 통합 콘솔로, 간단한 웹앱에서 복잡한 �
 
 
 ![지원 플랜](./media/migrate-best-practices-security-management/support.png)
+
 *지원 플랜*
 
 **자세한 정보:**
@@ -669,6 +680,7 @@ Azure Portal은 웹 기반 통합 콘솔로, 간단한 웹앱에서 복잡한 �
 
 
 ![VM 업데이트](./media/migrate-best-practices-security-management/updates.png)
+
 *업데이트*
 
 **자세한 정보:**
@@ -695,6 +707,7 @@ Azure Automation에는 변경 내용 추적 솔루션에 있습니다.
 
 
 ![변경 관리](./media/migrate-best-practices-security-management/change.png)
+
 *변경 관리*
 
 **자세한 정보:**
