@@ -140,6 +140,7 @@ Azure는 다음과 같은 몇 가지 솔루션을 제공합니다.
 
 
 ![웹앱 보호](./media/migrate-best-practices-security-management/web-apps.png)
+
 *Azure Key Vault*
 
 **자세한 정보:**
@@ -160,6 +161,7 @@ Azure는 다음과 같은 몇 가지 솔루션을 제공합니다.
 - Azure 액세스 권한이 있는 관리자가 사용자가 허용하려는 리소스에만 액세스할 수 있는지 확인합니다.  Azure의 미리 정의된 역할이 충분히 세부적이지 않으면 사용자 지정 역할을 만들어 액세스 권한을 구분하고 제한할 수 있습니다.
 
 ![액세스 제어](./media/migrate-best-practices-security-management/subscription.png)
+
 *액세스 제어 - IAM*
 
 **자세한 정보:**
@@ -179,6 +181,7 @@ Azure AD(Active Directory)는 Azure Monitor에서표시되는 활동 로그를 �
 
 
 ![사용자 및 그룹](./media/migrate-best-practices-security-management/azure-ad.png)
+
 *Azure AD 사용자 및 그룹*
 
 **자세한 정보:**
@@ -219,6 +222,7 @@ Azure는 고급 보안 옵션을 제공하는 다양한 다른 보안 기능을 
 - AD Connect를 사용하여 온-프레미스 AD DS를 Azure AD와 동기화하는 경우 온-프레미스의 보안 그룹 이름과 Azure의 보안 그룹 이름이 일치하도록 하는 것이 좋습니다.
 
 ![이름 지정](./media/migrate-best-practices-security-management/naming.png)
+
 *리소스 그룹 이름 지정*
 
 
@@ -232,6 +236,7 @@ Azure는 고급 보안 옵션을 제공하는 다양한 다른 보안 기능을 
 
 
 ![삭제 잠금](./media/migrate-best-practices-security-management/locks.png)
+
 *삭제 잠금*
 
 **자세한 정보:**
@@ -457,6 +462,7 @@ Azure Site Recovery는 중단이 발생할 때 Azure VM이 온라인 상태가 �
 
 
 ![Azure Site Recovery](./media/migrate-best-practices-security-management/site-recovery.png)
+
 *Site Recovery*
 
 **자세한 정보:**
@@ -510,6 +516,7 @@ PaaS 워크로드 예제에 대해 재해 복구 옵션을 고려해 보세요.
 
 
 ![지역에서 복제](./media/migrate-best-practices-security-management/geo-replication.png)
+
 *지역에서 복제*
 
 **자세한 정보:**
@@ -532,6 +539,7 @@ Azure의 컴퓨팅 인프라가 실패하면 Azure 함수 앱을 사용하지 �
 
 
 ![Traffic Manager](./media/migrate-best-practices-security-management/traffic-manager.png)
+
 *Traffic Manager*
 
 **자세한 정보:**
@@ -552,6 +560,7 @@ Azure Managed Disks는 VM 디스크와 연결된 스토리지 계정을 관리�
 
 
 ![Managed Disks](./media/migrate-best-practices-security-management/managed-disks.png)
+
 *Managed Disks*
 
 **자세한 정보:**
