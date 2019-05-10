@@ -40,7 +40,9 @@ ms.locfileid: "64926160"
 
 - **Azure 가격 계산기**: VM 및 스토리지와 같이 예상하려는 제품을 선택합니다. 가격 계산기에 비용을 입력하여 추정 비용을 산출합니다.
 
-  ![Azure 가격 계산기](./media/migrate-best-practices-costs/pricing.png) *Azure 가격 계산기*
+  ![Azure 가격 계산기](./media/migrate-best-practices-costs/pricing.png) 
+  
+  *Azure 가격 계산기*
 
 - **Azure Migrate**: 비용을 추정하려면 Azure에서 워크로드를 실행하는 데 필요한 모든 리소스를 검토하고 설명해야 합니다. 이 데이터를 획득하려면 서버, VM, 데이터베이스 및 스토리지를 포함한 자산의 인벤토리를 만듭니다. Azure Migrate를 사용하여 이 정보를 수집할 수 있습니다.
 
@@ -51,6 +53,7 @@ ms.locfileid: "64926160"
     - 스토리지 비용: Azure Migrate는 평가에서 모든 VM의 스토리지 비용을 집계하여 월별 총 스토리지 비용을 계산합니다. 특정 머신의 월별 스토리지 비용은 연결된 모든 디스크의 월별 비용을 집계하여 계산할 수 있습니다. 
 
     ![Azure Migrate](./media/migrate-best-practices-costs/assess.png)
+    
     *Azure Migrate 평가*
 
 **자세한 정보:**
@@ -170,6 +173,7 @@ Windows Server 및 SQL Server와 같은 시스템의 소프트웨어에 수년�
 - 예약 인스턴스는 취소할 수 있습니다.
 
 ![예약 인스턴스](./media/migrate-best-practices-costs/reserve.png)
+
 *Azure 예약 VM*
 
 **자세한 정보:**
@@ -218,6 +222,7 @@ Cost Management에서 수행할 수 있는 작업은 다음과 같습니다.
   - 분석을 위해 비용 관리 데이터를 Azure 스토리지에 내보낼 수 있습니다.
 
     ![비용된 관리 예산](./media/migrate-best-practices-costs/budget.png)
+    
     *Azure Cost Management 예산*
 
 - **비용 분석 수행**: 비용 분석을 통해 조직 비용을 검색 및 분석하여 비용이 발생하는 방식을 이해하고 지출 추세를 파악할 수 있습니다.
@@ -226,7 +231,9 @@ Cost Management에서 수행할 수 있는 작업은 다음과 같습니다.
   - 당월의 총 비용과 누적된 일별 비용을 보여 주는 비용 분석을 얻을 수 있습니다. 
 
     ![비용 관리 분석](./media/migrate-best-practices-costs/analysis.png)
+    
     *Azure Cost Management 분석*
+    
 - **추천 사항 가져오기**: 효율성을 최적화하고 향상시킬 수 는 방법을 보여 주는 Advisor 추천 사항을 가져옵니다.
 
 
@@ -291,6 +298,7 @@ Azure에서는 리소스를 사용할 때 사용하는 항목에 대해 비용�
 - StorSimple을 사용하여 사용자 지정 정책에 따라 부실 데이터를 이동할 수 있도록 지원합니다. 
 
 **자세한 정보:**
+
 - 액세스 계층에 대해 [알아보기](https://docs.microsoft.com/azure/storage/blobs/storage-blob-storage-tiers)
 - StorSimple 개요 및 [StorSimple 가격 책정](https://azure.microsoft.com/pricing/details/storsimple/) [살펴보기](https://docs.microsoft.com/azure/azure-monitor/overview)
 
