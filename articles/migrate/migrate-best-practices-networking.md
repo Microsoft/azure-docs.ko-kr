@@ -67,6 +67,7 @@ IP 주소 공간을 정렬하는 방법, 허브-스포크 네트워크를 구현
 - 허브 및 스포크 VNet은 서로 다른 리소스 그룹에서 구현할 수 있으며, 심지어 다른 구독에서도 구현할 수 있습니다. 다른 구독에서 가상 네트워크를 피어링하는 경우 구독을 동일하거나 다른 Azure AD(Active Directory) 테넌트에 연결할 수 있습니다. 이렇게 하면 허브 네트워크에서 유지 관리되는 서비스를 공유하는 동안 각 워크로드를 분산 관리할 수 있습니다.
 
 ![변경 관리](./media/migrate-best-practices-networking/hub-spoke.png)
+
 *허브 및 스포크 토폴로지*
 
 **자세한 정보:**
@@ -114,7 +115,9 @@ VNet을 배포하는 경우 Azure에서 기본적으로 DNS 서버를 추가합�
 - 네트워크 인터페이스 또는 클라우드 서비스에 지정된 DNS 서버는 VNet에 지정된 서버보다 우선적으로 적용됩니다.
 - Azure Resource Manager 배포 모델에서는 VNet 및 네트워크 인터페이스에 DNS 서버를 지정할 수 있지만 VNet에서만 해당 설정을 사용하는 것이 가장 좋습니다.
 
-    ![DNS 서버](./media/migrate-best-practices-networking/dns2.png) *VNet에 대한 DNS 서버*
+    ![DNS 서버](./media/migrate-best-practices-networking/dns2.png) 
+    
+    *VNet에 대한 DNS 서버*
 
 **자세한 정보:**
 - 사용자 고유의 DNS 서버를 사용하는 경우의 이름 확인에 대해 [알아보기](https://docs.microsoft.com/azure/migrate/contoso-migration-infrastructure)
@@ -131,14 +134,18 @@ VNet을 배포하는 경우 Azure에서 기본적으로 DNS 서버를 추가합�
 - 한 지역 내에서 가용성 영역을 물리적으로 구분하면 애플리케이션 및 데이터를 데이터 센터 오류로부터 보호할 수 있습니다.
 - 영역 중복 서비스는 단일 실패 지점으로부터 보호하기 위해 가용성 영역 전체에서 애플리케이션과 데이터를 복제합니다. Azure는 가용성 영역을 통해 VM 가동 시간에 대한 99.99% SLA를 제공합니다.
 
-    ![가용성 영역](./media/migrate-best-practices-networking/availability-zone.png) *가용성 영역*
+    ![가용성 영역](./media/migrate-best-practices-networking/availability-zone.png) 
+    
+    *가용성 영역*
 
 - 컴퓨팅, 스토리지, 네트워킹 및 데이터 리소스를 한 영역 내에 배치하고 다른 영역에 이를 복제하여 마이그레이션 아키텍처에 고가용성을 계획하고 구축할 수 있습니다. 가용성 영역을 지원하는 Azure 서비스는 다음 두 가지 범주로 나뉩니다.
     - 영역 서비스: 리소스를 특정 영역에 연결합니다. 예: VM, 관리 디스크, IP 주소
     - 영역 중복 서비스: 리소스가 영역 간에 자동으로 복제됩니다. 예: 영역 중복 스토리지, Azure SQL Database.
 - 인터넷 연결 워크로드 또는 애플리케이션 계층을 사용하여 표준 Azure 부하 분산 장치를 배포하여 영역 내결함성을 제공할 수 있습니다.
 
-    ![부하 분산 장치](./media/migrate-best-practices-networking/load-balancer.png) *부하 분산 장치*
+    ![부하 분산 장치](./media/migrate-best-practices-networking/load-balancer.png) 
+    
+    *부하 분산 장치*
 
 **자세한 정보:**
 -   가용성 영역 [개요 살펴보기](https://docs.microsoft.com/azure/availability-zones/az-overview)
@@ -180,6 +187,7 @@ VNet을 배포하는 경우 Azure에서 기본적으로 DNS 서버를 추가합�
  - BGP(Border Gateway Protocol)는 Azure ExpressRoute 및 경로 기반 VPN 게이트웨이에서 사용하여 온-프레미스 BGP 경로를 VNet에 전파할 수 있는 선택적 기능입니다.
 
 ![VPN](./media/migrate-best-practices-networking/vpn.png)
+
 *사이트 간 VPN*
  
 **자세한 정보:**
@@ -253,6 +261,7 @@ ExpressRoute 연결을 배포할 때 일반적으로 ExpressRoute 서비스 공�
     - WAN 네트워크에서는 두 접두사가 미국 서부보다 미국 동부에 더 가깝다고 가정할 수 있습니다. 이에 따라 두 사무실의 사용자를 미국 동부의 ExpressRoute 회로로 라우팅하여 로스엔젤레스 사무실의 사용자에게 최적의 환경을 제공하지 않습니다.
 
 ![VPN](./media/migrate-best-practices-networking/bgp1.png)
+
 *BGP 커뮤니티에서 최적화 되지 않은 연결*
 
 **해결 방법**
@@ -265,6 +274,7 @@ ExpressRoute 연결을 배포할 때 일반적으로 ExpressRoute 서비스 공�
 - 이 구성은 Microsoft에 대한 두 경로를 모두 사용할 수 있을 때, 로스엔젤레스의 사용자가 서부 회로를 사용하여 Azure 미국 서부에 연결하고, 뉴욕의 사용자는 동부 회로를 사용하여 Azure 미국 동부에 연결하도록 보장합니다. 라우팅이 양쪽 모두에서 최적화됩니다.
 
 ![VPN](./media/migrate-best-practices-networking/bgp2.png)
+
 *BGP 커뮤니티에서 최적화된 연결*
 
 
@@ -295,6 +305,7 @@ Microsoft는 클라우드 인프라를 보호하는 데 많은 투자를 하고 
 다음 그림은 두 보안 경계가 있는 회사 네트워크의 단일 서브넷 경계 네트워크 예를 나타냅니다.
 
 ![VPN](./media/migrate-best-practices-networking/perimeter.png)
+
 *경계 네트워크 배포*
 
 **자세한 정보:**
@@ -351,6 +362,7 @@ Vnet을 보호하는 경우 공격 벡터를 고려해야 합니다.
 ### <a name="example"></a>예
 
 ![애플리케이션 보안 그룹](./media/migrate-best-practices-networking/asg.png)
+
 *애플리케이션 보안 그룹 예*
 
 **네트워크 인터페이스** | **애플리케이션 보안 그룹**
@@ -385,6 +397,7 @@ VNet 서비스 엔드포인트는 직접 연결을 통해 VNet 사설 주소 공
 - VNet에서 서비스 엔드포인트를 사용하도록 설정되면 서비스 리소스에 VNet 규칙을 추가하여 Azure 서비스 리소스를 보호할 수 있습니다. 이렇게 하면 리소스에 대한 공용 인터넷 액세스를 완전히 제거하고 VNet의 트래픽만 허용하여 보안이 향상됩니다.
 
 ![서비스 엔드포인트](./media/migrate-best-practices-networking/endpoint.png)
+
 *서비스 엔드포인트*
 
 **자세한 정보:**
@@ -419,6 +432,7 @@ Azure에는 사용하기 쉽고 일반적인 네트워크 공격에 대해 다�
 Azure Firewall은 VNet 리소스를 보호하는 관리형 클라우드 기반 네트워크 보안 서비스입니다. 고가용성 및 무제한 클라우드 확장성이 기본적으로 제공되는 완벽한 상태 저장 방화벽 기반 서비스(firewall-as-a-service)입니다.
 
 ![서비스 엔드포인트](./media/migrate-best-practices-networking/firewall.png)
+
 *Azure Firewall*
 
 - Azure Firewall에서는 구독 및 VNet 전반에 걸쳐 애플리케이션 및 네트워크 연결 정책을 중앙에서 만들고, 적용하고, 기록할 수 있습니다.
@@ -457,6 +471,7 @@ Azure WAF(웹 애플리케이션 방화벽)는 Azure 애플리케이션 게이�
 Azure Network Watcher는 Azure VNet의 리소스와 통신을 모니터링하는 도구를 제공합니다. 예를 들어 VM과 엔드포인트(예; 다른 VM 또는 FQDN) 간의 통신을 모니터링하거나, VNet의 리소스 및 리소스 관계를 보거나, 네트워크 트래픽 문제를 진단할 수 있습니다.
 
 ![Network Watcher](./media/migrate-best-practices-networking/network-watcher.png)
+
 *Network Watcher*
 
 - Network Watcher를 사용하면 VM에 로그인하지 않고도 네트워킹 문제를 모니터링하고 진단할 수 있습니다.
