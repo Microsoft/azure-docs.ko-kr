@@ -288,6 +288,7 @@ Azure에서 안전하고 확장 가능하고 관리가 용이한 워크로드를
 
 참조 아키텍처는 시나리오별로 정렬되어 있습니다. 여기에는 권장 방법, 관리, 가용성, 확장성 및 보안에 대한 권장 사항이 포함되어 있습니다.
 Azure App Service Environment는 Windows 및 Linux 웹앱, Docker 컨테이너, 모바일 앱 및 함수를 포함하는 App Service 앱을 실행하는 완전히 격리된 전용 환경을 제공합니다. App Service는 보안, 부하 분산, 자동 크기 조정 및 자동화된 관리를 포함하는 Azure의 강력한 기능을 애플리케이션에 추가합니다. 또한 Azure DevOps 및 GitHub, 패키지 관리, 스테이징 환경, 사용자 지정 도메인 및 SSL 인증서의 지속적인 배포와 같은 DevOps 기능도 활용할 수 있습니다. App Service는 격리 및 보안된 네트워크 액세스가 필요한 앱과 많은 양의 메모리와 크기 조정이 필요한 기타 리소스를 사용하는 앱에 유용합니다.
+
 **자세한 정보:**
 
 - Azure 참조 아키텍처에 대해 [알아봅니다](https://docs.microsoft.com/azure/architecture/reference-architectures/).
