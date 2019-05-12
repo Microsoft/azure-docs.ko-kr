@@ -34,6 +34,7 @@ ms.locfileid: "60533218"
 Azure Migrate 프로젝트를 삭제하면 마이그레이션 프로젝트와 모든 그룹 및 평가가 삭제됩니다. 그러나 프로젝트에 연결한 Log Analytics 작업 영역은 자동으로 삭제되지 않습니다. 이는 같은 Log Analytics 작업 영역이 여러 사용 사례에 사용되었을 수 있기 때문입니다. Log Analytics 작업 영역도 삭제하려면 수동으로 작업 영역을 삭제해야 합니다.
 
 1. 프로젝트에 연결된 Log Analytics 작업 영역을 찾습니다.
+
    a. 마이그레이션 프로젝트를 아직 삭제하지 않았다면 프로젝트 개요 페이지의 Essentials 섹션에서 작업 영역으로 이동하는 링크를 확인할 수 있습니다.
 
    ![LA 작업 영역](./media/troubleshooting-general/LA-workspace.png)
