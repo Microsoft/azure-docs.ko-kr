@@ -156,7 +156,8 @@ Contoso 관리자는 마이그레이션 전에 ContosoDev 컬렉션 데이터베
 
 2. Contoso는 도구를 실행하고 프로젝트 컬렉션의 URL을 지정하여 유효성을 검사합니다.
 
-   **TfsMigrator /collection:http 유효성 검사:\//contosotfs:8080 tfs/ContosoDev**
+   **TfsMigrator validate /collection:http:\//contosotfs:8080/tfs/ContosoDev
+**
 
 
 3. 도구가 오류를 표시합니다.
@@ -175,7 +176,8 @@ Contoso 관리자는 마이그레이션 전에 ContosoDev 컬렉션 데이터베
 
      ![TFS](./media/contoso-migration-tfs-vsts/collection5.png)
 
-6. 유효성 검사 명령을 다시 실행하는데, 이번에는 Azure AD 이름과 함께 다음 값을 포함합니다. **TfsMigrator /collection:http의 유효성을 검사 합니다.\//tenantDomainName:contosomigration.onmicrosoft.com /contosotfs:8080/tfs ContosoDev**합니다.
+6. 유효성 검사 명령을 다시 실행하는데, 이번에는 Azure AD 이름과 함께 다음 값을 포함합니다. **TfsMigrator validate /collection:http:\//contosotfs:8080/tfs/ContosoDev /tenantDomainName:contosomigration.onmicrosoft.com.
+**
 
     ![TFS](./media/contoso-migration-tfs-vsts/collection7.png)
 
@@ -195,7 +197,8 @@ Contoso 관리자는 마이그레이션 전에 ContosoDev 컬렉션 데이터베
 
 1. 도구에서 준비 단계를 실행합니다.
 
-    **TfsMigrator /collection:http 준비:\//contosotfs:8080 tfs/ContosoDev /tenantDomainName:contosomigration.onmicrosoft.com /accountRegion:cus**
+    **TfsMigrator prepare /collection:http:\//contosotfs:8080/tfs/ContosoDev /tenantDomainName:contosomigration.onmicrosoft.com /accountRegion:cus
+**
 
      ![준비](./media/contoso-migration-tfs-vsts/prep1.png)
 
