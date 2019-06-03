@@ -54,7 +54,7 @@ sections:
             text: 큐
             href: /azure/azure-functions/functions-create-storage-queue-triggered-function
       - type: paragraph
-        text: '로컬에서 개발하고 디버그하는 방법 알아보기:'
+        text: '다음을 통해 로컬에서 개발하고 디버그하는 방법 알아보기'
       - type: list
         style: icon48
         items:
@@ -69,7 +69,7 @@ sections:
   - title: 단계별 자습서
     items:
       - type: paragraph
-        text: 'Azure Functions를 만들고 관리하는 방법 알아보기:'
+        text: '다음을 과정을 통해 Azure Functions를 만들고 관리하는 방법 알아보기'
       - type: list
         style: ordered
         items:
