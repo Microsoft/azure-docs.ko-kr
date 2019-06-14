@@ -76,7 +76,7 @@ Linux용 Azure Disk Encryption을 사용하려면 Active Directory, Key Vault, S
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.Azure.Security | 문자열 |
-| 형식 | AzureDiskEncryptionForLinux | 문자열 |
+| type | AzureDiskEncryptionForLinux | 문자열 |
 | typeHandlerVersion | 0.1, 1.1(VMSS) | int |
 | AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
 | AADClientSecret | 암호 | 문자열 |
@@ -86,7 +86,7 @@ Linux용 Azure Disk Encryption을 사용하려면 Active Directory, Key Vault, S
 | KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | 문자열 |
 | KeyEncryptionKeyURL | url | 문자열 |
 | KeyVaultURL | url | 문자열 |
-| 암호 | 암호 | 문자열 | 
+| Passphrase | 암호 | 문자열 | 
 | SequenceVersion | uniqueidentifier | 문자열 |
 | VolumeType | OS, Data, All | 문자열 |
 
