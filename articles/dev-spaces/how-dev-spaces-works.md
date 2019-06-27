@@ -1,5 +1,5 @@
 ---
-title: Azure 개발 공간 작동 하 고는 하는 방법 구성
+title: Azure 개발 공간 구성과 작동
 titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
@@ -17,11 +17,11 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 06/17/2019
 ms.locfileid: "67154561"
 ---
-# <a name="how-azure-dev-spaces-works-and-is-configured"></a>Azure 개발 공간 작동 하 고는 하는 방법 구성
+# <a name="how-azure-dev-spaces-works-and-is-configured"></a>Azure 개발 공간 구성과 작동 방법
 
 Kubernetes 응용 프로그램을 개발 하는 것은 어려울 수 있습니다. Docker 및 Kubernetes 구성 파일을 해야합니다. 응용 프로그램을 로컬로 테스트 및 다른 종속 서비스와 상호 작용 하는 방법을 파악 해야 합니다. 개발 및 테스트 한 번에 여러 서비스 및 개발자 팀을 사용 하 여 처리 해야 합니다.
 
-Azure 개발 공간을 사용 하면 개발, 배포 하 고 직접 Azure Kubernetes Service (AKS)에서 Kubernetes 응용 프로그램을 디버그 합니다. Azure 개발 공간에는 팀을 개발 공간을 공유할 수 있습니다. 팀 개발 공간을 공유할 수 개별 팀 멤버를를 복제 하거나 종속성 또는 클러스터의 다른 응용 프로그램의 모형을 않고도 격리를 개발할 수 있습니다.
+Azure 개발 공간을 사용 하면 개발, 배포 하고 직접 Azure Kubernetes Service (AKS)에서 Kubernetes 응용 프로그램을 디버그 합니다. Azure 개발 공간에는 팀을 개발 공간을 공유할 수 있습니다. 팀 개발 공간을 공유할 수 개별 팀 멤버를를 복제 하거나 종속성 또는 클러스터의 다른 응용 프로그램의 모형을 않고도 격리를 개발할 수 있습니다.
 
 Azure 개발 공간 만들고, 배포, 실행 및 AKS에서 Kubernetes 응용 프로그램 디버깅에 대 한 구성 파일을 사용 합니다. 이 구성 파일은 응용 프로그램의 코드를 사용 하 여 있고 버전 제어 시스템에 추가할 수 있습니다.
 
@@ -41,7 +41,7 @@ Azure 개발 공간에 상호 작용 하는 두 가지 구성 요소가: 컨트�
 컨트롤러에는 다음 작업을 수행합니다.
 
 * 개발 공간 만들기 및 선택 영역을 관리합니다.
-* 응용 프로그램의 Helm 차트를 설치 하 고 Kubernetes 개체를 만듭니다.
+* 응용 프로그램의 Helm 차트를 설치 하고 Kubernetes 개체를 만듭니다.
 * 응용 프로그램의 컨테이너 이미지를 빌드합니다.
 * AKS에 응용 프로그램을 배포합니다.
 * 소스 코드 변경 되 면 다시 시작 되 고 증분 빌드를 수행 합니다.
