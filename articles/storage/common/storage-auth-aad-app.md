@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/05/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 30ebfec88182684f8e852808e978a51854389898
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e57291292d8957fd323f9be03bb7df0492484ea8
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67073470"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341627"
 ---
 # <a name="authenticate-with-azure-active-directory-from-an-application-for-access-to-blobs-and-queues"></a>Blob 및 큐에 대 한 액세스를 위해 응용 프로그램에서 Azure Active Directory를 사용 하 여 인증
 
@@ -121,7 +121,7 @@ Azure Storage 리소스 ID를 사용 하 여 Azure Storage에 대 한 요청 권
 
 응용 프로그램에서 Azure Storage에 액세스할 때 의미에 로그온 한 사용자의 권한을 사용 하 여 blob 또는 큐 리소스에 액세스 하는 사용자 대신을 등지 않습니다. 이 코드 예제를 실행 하려면 Azure AD id를 사용 하 여 로그인 하 라는 메시지는 웹 응용 프로그램을 해야 합니다. 직접 작성 하거나 Microsoft에 제공한 샘플 응용 프로그램을 사용 수 있습니다.
 
-토큰을 획득 하 고 Azure Storage에 blob 만들기 하는 데 사용 하는 완성 된 샘플 웹 응용 프로그램은에서 사용할 수 있습니다 [GitHub](http://aka.ms/aadstorage)합니다. 검토 및 완료 된 샘플을 실행할 코드 예제를 이해 하는 데 유용할 수 있습니다. 완성 된 샘플을 실행 하는 방법에 대 한 지침 섹션을 참조 하세요 [뷰와 완성 된 샘플을 실행](#view-and-run-the-completed-sample)합니다.
+토큰을 획득 하 고 Azure Storage에 blob 만들기 하는 데 사용 하는 완성 된 샘플 웹 응용 프로그램은에서 사용할 수 있습니다 [GitHub](https://aka.ms/aadstorage)합니다. 검토 및 완료 된 샘플을 실행할 코드 예제를 이해 하는 데 유용할 수 있습니다. 완성 된 샘플을 실행 하는 방법에 대 한 지침 섹션을 참조 하세요 [뷰와 완성 된 샘플을 실행](#view-and-run-the-completed-sample)합니다.
 
 #### <a name="add-references-and-using-statements"></a>참조 추가 및 명령문 사용  
 
@@ -235,7 +235,7 @@ private AuthenticationProperties BuildAuthenticationPropertiesForIncrementalCons
 
 ## <a name="view-and-run-the-completed-sample"></a>보기 및 완성 된 샘플을 실행 합니다.
 
-샘플 응용 프로그램을 실행 하려면 먼저 복제 또는에서 다운로드할 [GitHub](http://aka.ms/aadstorage)합니다. 다음 섹션에 설명 된 대로 응용 프로그램을 업데이트 합니다.
+샘플 응용 프로그램을 실행 하려면 먼저 복제 또는에서 다운로드할 [GitHub](https://aka.ms/aadstorage)합니다. 다음 섹션에 설명 된 대로 응용 프로그램을 업데이트 합니다.
 
 ### <a name="provide-values-in-the-settings-file"></a>설정 파일의 값을 제공 합니다.
 

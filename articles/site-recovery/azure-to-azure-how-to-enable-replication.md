@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 04/29/2018
 ms.author: asgang
-ms.openlocfilehash: 86bd41d518006b0601a5c9d18e5429f76d5a4fc5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0dec8179cc9b69eeea679f517693e4debb9fb56e
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64926643"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340695"
 ---
 # <a name="replicate-azure-vms-to-another-azure-region"></a>다른 Azure 지역에 Azure Vm 복제
 
@@ -66,7 +66,7 @@ ms.locfileid: "64926643"
      >복제를 사용하도록 설정한 후에는 가용성 유형(단일 인스턴스, 가용성 집합 또는 가용성 영역)을 변경할 수 없습니다. 가용성 유형을 변경하려면 복제를 사용하지 않도록 설정했다가 다시 사용하도록 설정해야 합니다.
      >
     
-   - **복제 정책**: 복구 지점 보존 기록 및 앱 일치 스냅샷 빈도에 대한 설정을 정의합니다. 기본적으로 Azure Site Recovery는 복구 지점 보존의 경우 '24시간', 앱 일치 스냅샷 빈도의 경우 '60분'인 기본 설정으로 새 복제 정책을 만듭니다.
+   - **복제 정책**: 복구 지점 보존 기록 및 앱 일치 스냅샷 빈도에 대한 설정을 정의합니다. 기본적으로 Azure Site Recovery ' 24 시간 복구 지점 보존의 기본 설정을 사용 하 여 새 복제 정책을 만듭니다 및 '4 시간' 응용 프로그램 일치 스냅숏 빈도입니다.
 
      ![복제 사용](./media/site-recovery-replicate-azure-to-azure/enabledrwizard3.PNG)
 

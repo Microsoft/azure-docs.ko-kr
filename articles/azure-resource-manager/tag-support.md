@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 06/07/2019
 ms.author: tomfitz
-ms.openlocfilehash: 8b7e6d234984e84f5b238d657281dd8b1b9ec423
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4f1bc1415fbb875120d7b64128cae69e1e3f442c
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67056878"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67339854"
 ---
 # <a name="tag-support-for-azure-resources"></a>Azure 리소스에 대한 태그 지원
 이 문서에서는 리소스 종류가 [태그](resource-group-using-tags.md)를 지원하는지 여부를 설명합니다. 레이블이 지정 된 열 **태그를 지 원하는** 리소스 종류는 태그에 대 한 속성이 있는지 여부를 나타냅니다. 레이블이 지정 된 열 **비용 보고서에서 태그** 리소스 종류를 비용 보고서에 태그를 전달 하는지 여부를 나타냅니다.
@@ -864,8 +864,8 @@ ms.locfileid: "67056878"
 | dnszones/TXT | 아닙니다. |  아닙니다. |
 | expressRouteCircuits | 예  | 아닙니다. |
 | expressRouteServiceProviders | 아닙니다. |  아닙니다. |
-| frontdoors | 예 | 예 |
-| frontdoorWebApplicationFirewallPolicies | 예 | 예 |
+| frontdoors | 예, 하지만 제한 (참조 [아래 참고](#frontdoor)) | 예 |
+| frontdoorWebApplicationFirewallPolicies | 예, 하지만 제한 (참조 [아래 참고](#frontdoor)) | 예 |
 | getDnsResourceReference | 아닙니다. |  아닙니다. |
 | interfaceEndpoints | 예 | 예 |
 | internalNotify | 아닙니다. |  아닙니다. |
@@ -898,6 +898,10 @@ ms.locfileid: "67056878"
 | vpnGateways | 예 | 아닙니다. |
 | vpnSites | 예 | 예 |
 | webApplicationFirewallPolicies | 예 | 예 |
+
+<a id="frontdoor" />
+
+Azure 프런트 도어 서비스에 대 한 리소스를 만들 때에 태그를 적용할 수 있지만 업데이트 또는 태그를 추가 합니다. 현재 지원 되지 않습니다.
 
 ## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
 | 리소스 종류 | 태그 지원 | 비용 보고서에서 태그 지정 |

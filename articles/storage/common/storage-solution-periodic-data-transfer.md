@@ -6,14 +6,14 @@ author: alkohli
 ms.service: storage
 ms.subservice: blobs
 ms.topic: article
-ms.date: 04/01/2019
+ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 8f106674c1b1ec90477c7c030dc55085fcf10656
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fb49802adf6242f445b700d06622d7e6aa336b4d
+ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60729922"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357032"
 ---
 # <a name="solutions-for-periodic-data-transfer"></a>정기적 데이터 전송을 위한 솔루션
  
@@ -66,7 +66,7 @@ ms.locfileid: "60729922"
 ## <a name="next-steps"></a>다음 단계
 
 - [AzCopy를 사용하여 데이터 전송](/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2ftables%2ftoc.json)
-- [Storage REST API를 사용한 데이터 전송에 대한 자세한 정보](https://docs.microsoft.com/azure/databox-online/data-box-gateway-deploy-add-shares)
+- [Storage REST API를 사용한 데이터 전송에 대한 자세한 정보](https://docs.microsoft.com/dotnet/api/overview/azure/storage?view=azure-dotnet)
 - 다음 작업을 수행하는 방법을 이해합니다.
     - [Data Box Gateway를 통해 데이터 전송](https://docs.microsoft.com/azure/databox-online/data-box-gateway-deploy-add-shares).
     - [Azure로 보내기 전에 Data Box Edge를 사용하여 데이터 변환](https://docs.microsoft.com/azure/databox-online/data-box-edge-deploy-configure-compute)

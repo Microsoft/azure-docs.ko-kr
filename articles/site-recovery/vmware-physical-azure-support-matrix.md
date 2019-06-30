@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 06/18/2019
 ms.author: raynew
-ms.openlocfilehash: 8fd9f56c262ce3a7110aa71bf72d01fe875212c0
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 3ff6a1a52048e805f9236349d4fc8d45a14b78ea
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67275751"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341446"
 ---
 # <a name="support-matrix-for-disaster-recovery--of-vmware-vms-and-physical-servers-to-azure"></a>VMware VM 또는 물리적 서버와 Azure 간 재해 복구를 위한 지원 매트릭스
 
@@ -69,9 +69,9 @@ Site Recovery는 지원되는 컴퓨터에서 실행되는 모든 워크로드�
 컴퓨터 설정 | Azure로 복제하는 컴퓨터는 [Azure 요구 사항](#azure-vm-requirements)을 충족해야 합니다.
 머신 워크로드 | Site Recovery는 지원되는 컴퓨터에서 실행되는 모든 워크로드의 복제를 지원합니다. [자세히 알아보기](https://aka.ms/asr_workload).
 Windows | Windows Server 2019 (에서 지 원하는 [업데이트 롤업 34](https://support.microsoft.com/help/4490016) (Mobility service 버전 9.22) 이상.<br/> Windows Server 2016 (64 비트 Server Core, 데스크톱 환경 포함 서버)<br/> - Windows Server 2012 R2, Windows Server 2012<br/> Windows Server 2008 R2 SP1 이상.<br/> -64 및 32 비트와에서 Windows Server 2008 SP2 이상]. 마이그레이션에만 지원 합니다. [자세히 알아보기](migrate-tutorial-windows-server-2008.md).<br/> Windows 10, Windows 8.1, Windows 8, Windows 7 64 비트 (에서 지 원하는 [업데이트 롤업 36](https://support.microsoft.com/help/4503156) (9.22부터 모바일 서비스의 버전). Windows 7 RTM 지원 되지 않습니다. 
-Linux | 64 비트 시스템만 지원 됩니다. 32 비트 시스템에서 지원 되지 않습니다.<br/><br/> Site Recovery는 Azure에서 Linux 서버를 실행하도록 장애 조치(failover)를 오케스트레이션합니다. 그러나 Linux 공급 업체 지원 수명 종료에 해당하지 않는 배포 버전만으로 제한될 수 있습니다.<br/><br/> Linux 배포에서는 배포의 부 버전 릴리스/업데이트에 포함된 스톡 커널만 지원됩니다.<br/><br/> 주요 Linux 배포 버전에서 보호된 시스템을 업그레이드하는 것은 지원되지 않습니다. 업그레이드하려면 복제를 사용하지 않도록 설정하고, 운영 체제를 업그레이드한 다음, 복제를 다시 사용하도록 설정합니다.<br/><br/> [자세한](https://support.microsoft.com/help/2941892/support-for-linux-and-open-source-technology-in-azure) 에 대 한 Linux 및 Azure에서 오픈 소스 기술을 지원 합니다.
-Linux Red Hat Enterprise | 5.2 ~ 5.11</b><br/> 6.1에 6.10</b><br/> 7.0을 7.6<br/> <br/> Red Hat Enterprise Linux를 실행 하는 서버 5.2-5.11 있어야 합니다 [Integration Services LIS (Linux) 구성 요소](https://www.microsoft.com/download/details.aspx?id=55106) Azure에서 부팅 하는 컴퓨터에 설치 합니다.
-Linux: CentOS | 5.2 ~ 5.11</b><br/> 6.1에 6.10</b><br/> 7.0을 7.6<br/> <br/> CentOS 5.2-5.11를 실행 하는 서버에 있어야 합니다 [Integration Services LIS (Linux) 구성 요소](https://www.microsoft.com/download/details.aspx?id=55106) Azure에서 부팅 하는 컴퓨터에 설치 합니다.
+Linux | 64 비트 시스템만 지원 됩니다. 32 비트 시스템에서 지원 되지 않습니다.<br/><br/>모든 Linux 서버에 있어야 [Integration Services LIS (Linux) 구성 요소](https://www.microsoft.com/download/details.aspx?id=55106) 설치 합니다. 테스트 장애 조치/장애 조치 후 Azure에서 서버를 부팅 하는 것이 반드시 합니다. LIS 구성 요소를 누락 하는 경우 설치 해야 합니다 [구성 요소](https://www.microsoft.com/download/details.aspx?id=55106) Azure에서 부팅 하는 컴퓨터에 대 한 복제를 사용 하도록 설정 하기 전에 합니다. <br/><br/> Site Recovery는 Azure에서 Linux 서버를 실행하도록 장애 조치(failover)를 오케스트레이션합니다. 그러나 Linux 공급 업체 지원 수명 종료에 해당하지 않는 배포 버전만으로 제한될 수 있습니다.<br/><br/> Linux 배포에서는 배포의 부 버전 릴리스/업데이트에 포함된 스톡 커널만 지원됩니다.<br/><br/> 주요 Linux 배포 버전에서 보호된 시스템을 업그레이드하는 것은 지원되지 않습니다. 업그레이드하려면 복제를 사용하지 않도록 설정하고, 운영 체제를 업그레이드한 다음, 복제를 다시 사용하도록 설정합니다.<br/><br/> [자세한](https://support.microsoft.com/help/2941892/support-for-linux-and-open-source-technology-in-azure) 에 대 한 Linux 및 Azure에서 오픈 소스 기술을 지원 합니다.
+Linux Red Hat Enterprise | 5.2 ~ 5.11</b><br/> 6.1에 6.10</b><br/> 7.0을 7.6<br/> <br/> 5\.2-5.11 & 6.1 6.10 Red Hat Enterprise Linux를 실행 하는 서버 없는 [Integration Services LIS (Linux) 구성 요소](https://www.microsoft.com/download/details.aspx?id=55106) 사전 설치 합니다. 설치 해야 합니다 [구성 요소](https://www.microsoft.com/download/details.aspx?id=55106) Azure에서 부팅 하는 컴퓨터에 대 한 복제를 사용 하도록 설정 하기 전에 합니다.
+Linux: CentOS | 5.2 ~ 5.11</b><br/> 6.1에 6.10</b><br/> 7.0을 7.6<br/> <br/> 5\.2-5.11 & 6.1 6.10 CentOS를 실행 하는 서버 없는 [Integration Services LIS (Linux) 구성 요소](https://www.microsoft.com/download/details.aspx?id=55106) 사전 설치 합니다. 설치 해야 합니다 [구성 요소](https://www.microsoft.com/download/details.aspx?id=55106) Azure에서 부팅 하는 컴퓨터에 대 한 복제를 사용 하도록 설정 하기 전에 합니다.
 Ubuntu | Ubuntu 14.04 LTS 서버 [(검토 지원 되는 커널 버전)](#ubuntu-kernel-versions)<br/><br/>Ubuntu 16.04 LTS 서버 [(검토 지원 되는 커널 버전)](#ubuntu-kernel-versions)
 Debian | Debian 7/debian 8 [(검토 지원 되는 커널 버전)](#debian-kernel-versions)
 SUSE Linux | SUSE Linux Enterprise Server 12 SP1, SP2, SP3, SP4 [(검토 지원 되는 커널 버전)](#suse-linux-enterprise-server-12-supported-kernel-versions)<br/> SUSE Linux Enterprise Server 11 SP3 또는 SUSE Linux Enterprise Server 11 SP4<br/> SUSE Linux Enterprise Server 11 SP3에서 SP4로 복제 된 컴퓨터를 업그레이드 지원 되지 않습니다. 을 업그레이드 하려면 복제를 사용 하지 않도록 설정 하 고 업그레이드 후에 다시 사용 하도록 설정 합니다.
@@ -194,7 +194,7 @@ Docker 디스크 구성 | 아닙니다.
 게스트/서버 - 디스크 제외 | 예
 게스트/서버 다중 경로(MPIO) | 아닙니다.
 게스트/서버 GPT 파티션 | 5 개의 파티션을 지원 됩니다 [업데이트 롤업 37](https://support.microsoft.com/help/4508614/) (Mobility service 버전 9.25) 이상. 이전에 4 개의 지원 되었습니다.
-게스트/서버 EFI/UEFI 부팅 | Mobility service 버전 9.13 이상이 실행 하는 경우 지원 합니다.<br/> VMware Vm 또는 Windows Server 2012를 실행 하는 물리적 서버를 마이그레이션하는 경우 또는 나중에 Azure 지원 합니다.<br/> -만 마이그레이션에 대 한 Vm을 복제할 수 있습니다. 온-프레미스로 장애 복구는 지원 되지 않습니다.<br/> -NTFS만 지원 됩니다. <br/> 디스크 섹터 크기가 512 바이트 물리적 섹터 수 있어야 합니다.
+게스트/서버 EFI/UEFI 부팅 | Mobility service 버전 9.13 이상이 실행 하는 경우 지원 합니다.<br/> VMware Vm 또는 Windows Server 2012를 실행 하는 물리적 서버를 마이그레이션하는 경우 또는 나중에 Azure 지원 합니다.<br/> -만 마이그레이션에 대 한 Vm을 복제할 수 있습니다. 온-프레미스로 장애 복구는 지원 되지 않습니다.<br/> -NTFS만 지원 됩니다 & 보안 UEFI 부팅 유형은 지원 되지 않습니다. <br/> 디스크 섹터 크기가 512 바이트 물리적 섹터 수 있어야 합니다.
 
 ## <a name="replication-channels"></a>복제 채널
 

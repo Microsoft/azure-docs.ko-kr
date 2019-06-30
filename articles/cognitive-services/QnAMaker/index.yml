@@ -5,15 +5,15 @@ metadata:
   title: QnA Maker 설명서 - Microsoft Cognitive Services | Microsoft Docs
   description: QnA Maker 서비스 및 질문 및 답변에서 이 서비스의 기술 자료를 사용하는 방법에 대해 알아봅니다.
   services: cognitive-services
-  author: tulasim88
-  manager: cgronlun
+  author: diberry
+  manager: nitinme
   ms.service: cognitive-services
   ms.subservice: qna-maker
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
   ms.date: 12/18/2018
-  ms.author: tulasim
+  ms.author: diberry
 abstract:
   description: 'QnA Maker는 데이터 위에 대화형 질문 및 답변 레이어를 만드는 클라우드 기반 API 서비스입니다. QnA Maker를 사용하면 FAQ 문서, URL 및 제품 설명서와 같은 반구조적 내용에서 질문과 대답 서비스를 사용할 수 있습니다. QnA Maker 서비스는 기술 자료에서 가장 적합한 QnA 답변과 매칭하는 방식으로 사용자의 자연어 질문에 답합니다.'
   aside:

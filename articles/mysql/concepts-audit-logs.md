@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 06/11/2019
-ms.openlocfilehash: 35cbe04380e2113f986d1e7adf3f7fdf89cb9326
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a82afe6f5299609fd6dd57a54f04f49fad5d2268
+ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67078873"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357637"
 ---
 # <a name="audit-logs-in-azure-database-for-mysql"></a>MySQL 용 Azure Database에서 감사 로그
 
@@ -45,7 +45,7 @@ Azure Database for MySQL에서는 감사 로그의 사용자에 게 제공 합�
 
 감사 로그는 Azure Monitor 진단 로그와 통합 됩니다. MySQL 서버에서 감사 로그를 설정한 후에 Azure Monitor 로그, Event Hubs 또는 Azure 저장소로 내보낼 수 있습니다. Azure portal에서 진단 로그를 사용 하도록 설정 하는 방법에 대 한 자세한 내용은 참조는 [감사 로그에 대 한 포털 문서](howto-configure-audit-logs-portal.md#set-up-diagnostic-logs)합니다.
 
-## <a name="schemas"></a>스키마
+## <a name="diagnostic-logs-schemas"></a>진단 로그 스키마
 
 다음 섹션에서는 출력 MySQL 감사 로그 이벤트 유형을 기반으로 하는 새로운 기능을 설명 합니다. 포함되는 필드와 이러한 필드가 표시되는 순서는 출력 방법에 따라 달라질 수 있습니다.
 

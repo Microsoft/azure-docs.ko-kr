@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/22/2018
 ms.author: sngun
-ms.openlocfilehash: 91f15f9c19b480d950b2c715e6d9290e01184cf7
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 14350125f88c315a813eb64e3ce2b88dbec2aa24
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67272383"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340191"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>SQL API에 대한 Azure Cosmos DB .NET Core SDK: 릴리스 정보 및 리소스
 > [!div class="op_single_selector"]
@@ -50,10 +50,8 @@ Azure Cosmos DB .NET Core SDK에는 [Azure Cosmos DB .NET SDK](sql-api-sdk-dotne
 * 스트림 지원
 * 상태 코드를 반환하고 응답이 반환되지 않을 경우에만 예외를 throw하는 서버에서 업데이트된 CosmosResponseMessage
 
-### <a name="a-name250250"></a><a name="2.5.0"/>2.5.0
+### <a name="a-name241241"></a><a name="2.4.1"/>2.4.1
 
-* 원래 하나가 실패할 경우 다른 지역으로 대체 (fallback)에 대 한 쓰기 요청 수
-* 쓰기 요청에 대 한 세션 다시 시도 정책 추가
 * 빈 페이지를 일으키는 쿼리에 대 한 경합 상태를 추적 하는 수정
 
 ### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
@@ -234,7 +232,7 @@ Azure Cosmos DB .NET Core SDK에는 [Azure Cosmos DB .NET SDK](sql-api-sdk-dotne
 
 ### <a name="a-name110110"></a><a name="1.1.0"/>1.1.0
 
-* 집계 쿼리(COUNT, MIN, MAX, SUM 및 AVG)에 대한 지원이 추가되었습니다. [집계 지원](how-to-sql-query.md#Aggregates)을 참조하세요.
+* 집계 쿼리(COUNT, MIN, MAX, SUM 및 AVG)에 대한 지원이 추가되었습니다. [집계 지원](sql-query-aggregates.md)을 참조하세요.
 * 분할된 컬렉션에 대한 최소 처리량이 10,100RU/s에서 2500RU/s로 감소됩니다.
 
 ### <a name="a-name100100"></a><a name="1.0.0"/>1.0.0
@@ -257,7 +255,7 @@ Azure Cosmos DB .NET Core Preview SDK에는 [Azure Cosmos DB .NET SDK](sql-api-s
 
 | Version | 릴리스 날짜 | 사용 중지 날짜 |
 | --- | --- | --- |
-| [2.5.0](#2.5.0) |2019 년 6 월 18 일 |--- |
+| [2.4.1](#2.4.1) |2019 년 6 월 20 일 |--- |
 | [2.4.0](#2.4.0) |2019 년 5 월 5 일 |--- |
 | [2.3.0](#2.3.0) |2019 년 4 월 4 일 |--- |
 | [2.2.3](#2.2.3) |2019 년 3 월 11 일 |--- |

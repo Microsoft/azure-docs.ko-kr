@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/08/2018
 ms.author: glenga
-ms.openlocfilehash: ddd3b0889eedd55f809dbb57b2ef41a2ae3f9c94
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 89c4723e83979f89721677146810abdf99fb5d11
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65521388"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67310477"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x"></a>Azure Functions 2.x에 대한 host.json 참조  
 
@@ -147,7 +147,7 @@ ms.locfileid: "65521388"
 
 ## <a name="functiontimeout"></a>functionTimeout
 
-모든 함수에 대한 시간 제한 기간을 나타냅니다. 서버리스 사용 계획에서 유효한 범위는 1초에서 10분 사이이고 기본값은 5분입니다. 앱 서비스 계획의 경우 전체 제한은 없으며 기본값은 런타임 버전에 따라 달라집니다. 버전 2.x에서 앱 서비스 계획의 기본값은 30분입니다. 버전 1.x의 기본값은 *null*(시간 제한 없음)입니다.
+모든 함수에 대한 시간 제한 기간을 나타냅니다. 서버리스 사용 계획에서 유효한 범위는 1초에서 10분 사이이고 기본값은 5분입니다. 전용된 App Service 계획에서 전체 제한이 이며 기본값은 30 분입니다. 값 `-1` 무제한 실행을 나타냅니다.
 
 ```json
 {

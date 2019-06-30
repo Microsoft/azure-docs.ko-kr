@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2019
 ms.author: sharadag
-ms.openlocfilehash: 256435dfd016ebbd86dbbe49f4abbb346fb1cd19
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b033f463722ddb3a0b7beabdf659900e7d7188df
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60736669"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67330876"
 ---
 # <a name="frequently-asked-questions-for-azure-front-door-service"></a>Azure 프런트 도어 서비스에 대 한 질문과 대답
 
@@ -75,11 +75,11 @@ Azure 프런트 도어 서비스에는 Microsoft의 Azure CDN POP (Point of Pres
 
 ### <a name="is-azure-front-door-service-a-dedicated-deployment-for-my-application-or-is-it-shared-across-customers"></a>고객 간에 공유 되는 Azure 프런트 도어 서비스 응용 프로그램에 대 한 전용된 배포 여부
 
-Azure 프런트 도어 서비스는 전역적으로 분산 된 다중 테 넌 트 서비스입니다. 따라서 프런트 도어에 대 한 인프라는 모든 고객 간에 공유 됩니다. 그러나 응용 프로그램에 필요한 특정 구성을 정의 프런트 도어를 만들어 및 
+Azure 프런트 도어 서비스는 전역적으로 분산 된 다중 테 넌 트 서비스입니다. 따라서 프런트 도어에 대 한 인프라는 모든 고객 간에 공유 됩니다. 그러나 첫 번째 관문 프로필을 만들어 응용 프로그램에 필요한 특정 구성을 정의 하 고 영향을 기타 프런트 도어 구성에 첫 번째 관문 변경 되지 않습니다.
 
 ### <a name="is-http-https-redirection-supported"></a>HTTP->HTTPS 리디렉션이 지원되나요?
 
-현재 첫 번째 관문 URL 리디렉션을 지원 하지 않습니다.
+예. 사실, Azure 프런트 도어 서비스 호스트는 지원, 경로 및 쿼리 문자열 URL 리디렉션의 뿐만 아니라 리디렉션. 에 대해 자세히 알아보세요 [URL 리디렉션](front-door-url-redirect.md)합니다. 
 
 ### <a name="in-what-order-are-routing-rules-processed"></a>어떤 순서로 처리 규칙을 라우팅하는?
 
@@ -141,6 +141,11 @@ Azure 프런트 도어 서비스는 엄청난 양의 응용 프로그램의 확�
 
 안전 하 게 첫 번째 관문 사용자 지정 도메인에서 콘텐츠를 제공 하는 것에 대 한 HTTPS 프로토콜을 사용 하려면 Azure 프런트 도어 서비스에서 관리 되는 인증서를 사용 하거나 사용자 고유의 인증서를 사용 하 여 선택할 수 있습니다.
 첫 번째 관문 Digicert 통해 표준 SSL 인증서를 프로 비전 옵션을 관리 및 앞에 도어의 키 자격 증명 모음을 저장 합니다. 사용자 고유의 인증서를 사용 하려는 경우 지원 되는 CA에서 인증서를 등록할 수 있습니다 및 표준 SSL, 확장된 유효성 검사 인증서 또는 와일드 카드 인증서도 될 수 있습니다. 자체 서명 된 인증서는 지원 되지 않습니다. 에 대해 알아봅니다 [사용자 지정 도메인에 대 한 HTTPS를 사용 하는 방법](https://aka.ms/FrontDoorCustomDomainHTTPS)합니다.
+
+### <a name="does-front-door-support-auto-rotation-of-certificates"></a>첫 번째 관문에서 인증서의 자동 회전을 지원 하나요?
+
+사용자 고유의 사용자 지정 SSL 인증서에 대 한 자동 회전 지원 되지 않습니다. 어떻게이 설정 된 지정된 된 사용자 지정 도메인을 위해 처음으로 비슷합니다는 해야 지점 프런트 도어를 올바른 인증서 버전 Key Vault에서 하 고 첫 번째 관문의 서비스 주체 키 자격 증명 모음에 대 한 액세스를 여전히에 있는지 확인 합니다. 첫 번째 관문에서이 업데이트 된 인증서 출시 작업 완전 한 원자성 이며 프로덕션 영향은 주체 이름을 제공 해도 또는 SAN 인증서에 대 한 변경 되지 않습니다.
+</br>관리 되는 첫 번째 관문 인증서 옵션에 대 한 인증서가 첫 번째 관문에서 자동으로 회전 합니다.
 
 ### <a name="what-are-the-current-cipher-suites-supported-by-azure-front-door-service"></a>Azure 프런트 도어 서비스에서 지원 되는 현재 암호 그룹 이란?
 

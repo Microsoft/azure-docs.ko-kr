@@ -498,7 +498,7 @@ Media Services는 아래에 설명된 **라이브** 이벤트 유형도 내보�
 | trackName | string | 트랙의 이름입니다(인코더에서 제공하거나, RTMP의 경우 서버에서 *TrackType_Bitrate* 형식으로 생성함). |
 | bitrate | integer | 트랙의 비트 전송률입니다. |
 | ingestUrl | string | 라이브 이벤트에서 제공하는 수집 URL입니다. |
-| encoderIp | string | 인코더의 IP입니다. |
+| encoderIp | string  | 인코더의 IP입니다. |
 | encoderPort | string | 이 스트림이 발생한 인코더의 포트입니다. |
 | timestamp | string | 받은 데이터 청크의 첫 번째 타임스탬프입니다. |
 | timescale | string | 타임스탬프가 표시되는 시간 간격입니다. |
@@ -571,7 +571,7 @@ Media Services는 아래에 설명된 **라이브** 이벤트 유형도 내보�
 | -------- | ---- | ----------- |
 | firstTimestamp | string | 비디오 유형의 트랙/품질 수준 중 하나에 대해 받은 타임스탬프입니다. |
 | firstDuration | string | 첫 번째 타임스탬프가 있는 데이터 청크의 기간입니다. |
-| secondTimestamp | string | 비디오 유형의 다른 트랙/품질 수준 일부에 대해 받은 타임스탬프입니다. |
+| secondTimestamp | string  | 비디오 유형의 다른 트랙/품질 수준 일부에 대해 받은 타임스탬프입니다. |
 | secondDuration | string | 두 번째 타임스탬프가 있는 데이터 청크의 기간입니다. |
 | timescale | string | 타임스탬프 및 지속 기간의 시간 간격입니다.|
 

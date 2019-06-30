@@ -40,13 +40,13 @@ Azure CLI를 로컬로 사용하려면 Azure CLI 버전 **2.0.46** 이상이 설
 
 ### <a name="github-account"></a>GitHub 계정
 
-아직 계정이 없는 경우 https://github.com에서 계정을 만듭니다. 이 자습서 시리즈에서는 GitHub 리포지토리를 사용하여 ACR 작업에서 자동화된 이미지 빌드를 보여 줍니다.
+아직 계정이 없는 경우  https://github.com 에서 계정을 만듭니다. 이 자습서 시리즈에서는 GitHub 리포지토리를 사용하여 ACR 작업에서 자동화된 이미지 빌드를 보여 줍니다.
 
 ### <a name="fork-sample-repository"></a>샘플 리포지토리 포크
 
 다음으로, GitHub UI를 사용하여 샘플 리포지토리를 GitHub 계정에 포크합니다. 이 자습서에서는 리포지토리의 원본에서 컨테이너 이미지를 빌드하고, 다음 자습서에서는 커밋을 리포지토리의 포크에 푸시하여 자동화된 작업을 시작합니다.
 
-https://github.com/Azure-Samples/acr-build-helloworld-node 리포지토리를 포크합니다.
+[https://github.com/Azure-Samples/acr-build-helloworld-node](https://github.com/Azure-Samples/acr-build-helloworld-node ) 리포지토리를 포크합니다.
 
 ![GitHub에 있는 포크 단추(강조 표시됨)의 스크린샷][quick-build-01-fork]
 

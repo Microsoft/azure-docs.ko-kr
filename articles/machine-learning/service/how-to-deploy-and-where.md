@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 05/31/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: c4ab5fe4625bce1ed66258a5b9aab597dae17a1a
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: b5a08b9b998f8d0b30091af016af564e836d4651
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67303992"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331667"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Azure Machine Learning Services를 사용하여 모델 배포
 
@@ -39,7 +39,9 @@ ms.locfileid: "67303992"
 
 ## <a id="registermodel"></a> 모델 등록
 
-기계 학습 Azure Machine Learning 작업 영역에서 모델을 등록 합니다. 모델을 Azure Machine Learning에서 가져올 수 있습니다 또는 다른 곳에서 가져올 수 있습니다. 다음 예제에서는 파일에서 모델을 등록 하는 방법을 보여 줍니다.
+모델을 구성 하는 하나 이상의 파일에 대 한 등록 된 모델 논리적 컨테이너입니다. 예를 들어, 여러 파일에 저장 된 모델에 있으면 등록할 수 있습니다 작업 영역에서 단일 모델로 합니다. 등록이 완료 되 면 다음 또는 등록 된 모델을 배포할 수 있으며 등록 된 모든 파일을 수신 합니다.
+
+기계 학습 모델은 Azure Machine Learning 작업 영역에 등록 됩니다. 모델을 Azure Machine Learning에서 가져올 수 있습니다 또는 다른 곳에서 가져올 수 있습니다. 다음 예제에서는 파일에서 모델을 등록 하는 방법을 보여 줍니다.
 
 ### <a name="register-a-model-from-an-experiment-run"></a>실험을 실행 하는 모델을 등록
 
@@ -48,11 +50,18 @@ ms.locfileid: "67303992"
   model = run.register_model(model_name='sklearn_mnist', model_path='outputs/sklearn_mnist_model.pkl')
   print(model.name, model.id, model.version, sep='\t')
   ```
+
+  > [!TIP]
+  > 모델 등록에 여러 파일을 포함 하려면 설정 `model_path` 파일이 포함 된 디렉터리에 있습니다.
+
 + **CLI를 사용 하 여**
+
   ```azurecli-interactive
   az ml model register -n sklearn_mnist  --asset-path outputs/sklearn_mnist_model.pkl  --experiment-name myexperiment
   ```
 
+  > [!TIP]
+  > 모델 등록에 여러 파일을 포함 하려면 설정 `--asset-path` 파일이 포함 된 디렉터리에 있습니다.
 
 + **VS Code를 사용 하 여**
 
@@ -77,10 +86,16 @@ ms.locfileid: "67303992"
                          description = "MNIST image classification CNN from ONNX Model Zoo",)
   ```
 
+  > [!TIP]
+  > 모델 등록에 여러 파일을 포함 하려면 설정 `model_path` 파일이 포함 된 디렉터리에 있습니다.
+
 + **CLI를 사용 하 여**
   ```azurecli-interactive
   az ml model register -n onnx_mnist -p mnist/model.onnx
   ```
+
+  > [!TIP]
+  > 모델 등록에 여러 파일을 포함 하려면 설정 `-p` 파일이 포함 된 디렉터리에 있습니다.
 
 **예상 시간**: 약 10초
 
@@ -110,12 +125,14 @@ ms.locfileid: "67303992"
 * `run(input_data)`: 이 함수는 모델을 사용하여 입력 데이터를 기반으로 값을 예측합니다. 실행에 대한 입력 및 출력은 일반적으로 serialization 및 deserialization용으로 JSON을 사용합니다. 원시 이진 데이터를 사용할 수도 있습니다. 모델에 보내기 전에 또는 클라이언트에 반환하기 전에 데이터를 변환할 수 있습니다.
 
 #### <a name="what-is-getmodelpath"></a>Get_model_path 란?
-모델을 등록 하면 레지스트리에서 모델 관리에 사용 되는 모델 이름을 제공 합니다. 로컬 파일 시스템에 모델 파일의 경로 반환 하는 API get_model_path이이 이름을 사용 합니다. 폴더 또는 파일의 컬렉션을 등록 하는 경우이 API 해당 파일이 포함 된 디렉터리 경로 반환 합니다.
 
-모델을 등록 하면 있습니다 이름을 해당 하는 모델 위치를 로컬 또는 서비스 배포 중에 있습니다.
+모델을 등록 하면 레지스트리에서 모델 관리에 사용 되는 모델 이름을 제공 합니다. 사용 하 여이 이름을 사용 하는 [Model.get_model_path()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#get-model-path-model-name--version-none---workspace-none-) 로컬 파일 시스템에 모델 파일의 경로를 검색 합니다. 폴더 또는 파일의 컬렉션을 등록 하는 경우이 API 해당 파일이 포함 된 디렉터리 경로 반환 합니다.
 
-아래 예제에서는 돌아갑니다 경로 라는 단일 파일 'sklearn_mnist_model.pkl' ('sklearn_mnist' 이름으로 등록 된) 있음
-```
+모델을 등록 하면 모델 위치를 로컬 또는 서비스 배포 중에 해당 하는 이름을 제공 합니다.
+
+아래 예제에서는 돌아갑니다 경로 라는 단일 파일 `sklearn_mnist_model.pkl` (이름으로 등록 된는 `sklearn_mnist`):
+
+```python
 model_path = Model.get_model_path('sklearn_mnist')
 ``` 
 
@@ -293,7 +310,8 @@ InferenceConfig 기능에 대 한 내용은 참조는 [InferenceConfig](https://
 
 ### <a name="optional-profile-your-model"></a>선택 사항: 모델을 프로 파일링
 서비스 모델을 배포 하기 전에 최적의 CPU 및 메모리 요구 사항을 확인 하는 프로 파일링 하는 것이 좋습니다.
-SDK 또는 CLI를 통해이 수행할 수 있습니다.
+
+사용자 프로필 모델 SDK 또는 CLI를 사용 하 여 수행할 수 있습니다.
 
 자세한 내용은 여기 SDK 설명서를 확인할 수 있습니다. https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#profile-workspace--profile-name--models--inference-config--input-data-
 
@@ -386,7 +404,7 @@ ACI에 대 한 할당량 및 지역 가용성을 확인, 참조를 [할당량 �
 AKS 배포 및에서 자동 크기 조정에 대 한 자세한 정보는 [AksWebservice.deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice) 참조 합니다.
 
 #### 새 AKS 클러스터 만들기<a id="create-attach-aks"></a>
-**예상 시간:** 약 5 분입니다.
+**예상 시간**: 약 20분입니다.
 
 AKS 클러스터는 한 번 연결 또는 만들기 작업 영역에 대 한 처리 합니다. 이 클러스터를 여러 배포에 재사용할 수 있습니다. 클러스터 또는 포함 하는 리소스 그룹을 삭제 하면 다음에 배포 해야 새 클러스터를 만들어야 합니다. 작업 영역에 연결 된 여러 AKS 클러스터를 사용할 수 있습니다.
 
@@ -425,10 +443,11 @@ Azure Machine Learning SDK 외부에서 AKS 클러스터를 만드는 방법에 
 
 > [!IMPORTANT]
 > [`provisioning_configuration()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py)의 경우, agent_count 및 vm_size에 대한 사용자 지정 값을 선택하는 경우 agent_count와 vm_size를 곱한 값이 12개 가상 CPU보다 크거나 같아야 합니다. 예를 들어, 4개의 가상 CPU가 있는 "Standard_D3_v2"의 vm_size를 사용하는 경우는 3 이상의 agent_count를 선택해야 합니다.
-
-**예상 시간**: 약 20분입니다.
+>
+> Azure Machine Learning SDK에는 AKS 클러스터 크기 조정 지원을 제공 하지 않습니다. 클러스터의 노드 크기를 조정 하려면 Azure portal에서 AKS 클러스터에 대 한 UI를 사용 합니다. 클러스터의 VM 크기가 아니라 노드 수를 변경할 수 있습니다.
 
 #### <a name="attach-an-existing-aks-cluster"></a>기존 AKS 클러스터를 연결 합니다.
+**예상 시간:** 약 5 분입니다.
 
 Azure 구독에서 AKS 클러스터를 이미 있는 경우 버전 1.12. # #, 이미지를 배포 하려면 사용할 수 있습니다.
 

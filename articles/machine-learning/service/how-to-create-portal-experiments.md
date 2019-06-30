@@ -11,12 +11,12 @@ author: tsikiksr
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 05/02/2019
-ms.openlocfilehash: a2a281fda9272fb794692becb0ca08f3cf791458
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 714283628e1b2ac445d36d0b07fe299b589a1cf0
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65990145"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312813"
 ---
 # <a name="create-and-explore-automated-machine-learning-experiments-in-the-azure-portal-preview"></a>작성 및 자동화 된 machine learning 실험 (미리 보기)는 Azure 포털을 탐색 합니다.
 
@@ -96,16 +96,16 @@ ms.locfileid: "65990145"
 
 1. 예측:
     1. 시간 열을 선택 합니다. 이 열에 사용할 데이터를 포함 합니다.
-    1. 예측된 기간을 선택 합니다. 얼마나 많은 시간 (분/시간/일/주/월/년) 단위 될 것임을 나타내려면 모델 미래를 예측할 수 있습니다. 할수록 모델은 덜 정확 하 게 될 것으로, 예측 해야 합니다. [에 대 한 예측 및 자세한 예측 기간](https://docs.microsoft.com/azure/machine-learning/service/how-to-auto-train-forecast#configure-experiment)합니다.
+    1. 예측된 기간을 선택 합니다. 얼마나 많은 시간 (분/시간/일/주/월/년) 단위 될 것임을 나타내려면 모델 미래를 예측할 수 있습니다. 할수록 모델은 덜 정확 하 게 될 것으로, 예측 해야 합니다. [에 대 한 예측 및 자세한 예측 기간](how-to-auto-train-forecast.md)합니다.
 
 1. (선택 사항) 고급 설정: 추가 설정을 사용 하면 교육 작업을 더 잘 제어할 수 있습니다.
 
     고급 설정|설명
     ------|------
-    기본 메트릭| 모델 점수 매기기에 사용 되는 주요 메트릭. [모델 메트릭에 대 한 자세한](https://docs.microsoft.com/azure/machine-learning/service/how-to-configure-auto-train#explore-model-metrics)합니다.
+    기본 메트릭| 모델 점수 매기기에 사용 되는 주요 메트릭. [모델 메트릭에 대 한 자세한](how-to-configure-auto-train.md#explore-model-metrics)합니다.
     종료 기준| 이러한 조건 중 하나라도 충족 되 면 전체 완료 되기 전에 교육 작업을 종료 합니다. <br> *작업 시간 (분)을 학습*: 학습 작업을 실행할 수 있도록 기간입니다.  <br> *최대 반복 횟수*: 파이프라인 (반복) 교육 작업에서 테스트의 최대 수입니다. 작업에 지정 된 반복 횟수 이상 실행 되지 않습니다. <br> *메트릭 점수 임계값*:  모든 파이프라인에 대 한 최소 메트릭 점수입니다. 이 통해 정의 된 대상 메트릭에 연결 하려는 경우 있습니다 수행 하지 시간이 더 필요한 것 보다 교육 작업에 있습니다.
     전처리| 자동화 된 기계 학습을 수행한 전처리을 사용할지를 선택 합니다. 전처리 자동 데이터 정리, 준비 하 고 변환 가상 기능을 생성할 포함 되어 있습니다. [전처리 하는 방법에 대 한 자세한](#preprocess)합니다.
-    유효성 검사| 학습 작업에 사용 하 여 교차 유효성 검사 옵션 중 하나를 선택 합니다. [교차 유효성 검사에 대 한 자세한 내용은](https://docs.microsoft.com/azure/machine-learning/service/how-to-configure-auto-train#cross-validation-split-options)합니다.
+    유효성 검사| 학습 작업에 사용 하 여 교차 유효성 검사 옵션 중 하나를 선택 합니다. [교차 유효성 검사에 대 한 자세한 내용은](how-to-configure-auto-train.md)합니다.
     동시성| 다중 코어 계산을 사용 하는 경우 사용 하려는 다중 코어 한도 선택 합니다.
     차단 된 알고리즘| 학습 작업에서 제외 하려면 알고리즘을 선택 합니다.
 
@@ -180,7 +180,7 @@ ms.locfileid: "65990145"
 
 ### <a name="view-training-run-details"></a>교육 실행 세부 정보 보기
 
-성능 메트릭 및 배포 차트와 같은 실행된 세부 정보를 학습을 보려면 출력 모델 중 하나에서 드릴 다운 합니다. [차트에 자세히 알아보려면](https://docs.microsoft.com/azure/machine-learning/service/how-to-track-experiments#understanding-automated-ml-charts)합니다.
+성능 메트릭 및 배포 차트와 같은 실행된 세부 정보를 학습을 보려면 출력 모델 중 하나에서 드릴 다운 합니다. [차트에 자세히 알아보려면](how-to-track-experiments.md#understanding-automated-ml-charts)합니다.
 
 ![반복 세부 정보](media/how-to-create-portal-experiments/iteration-details.png)
 
@@ -220,7 +220,7 @@ ms.locfileid: "65990145"
 
 1. 선택 된 **찾아보기** 이전에 다운로드 한 (condaEnv.yml) 환경에서 파일을 업로드할 "Conda 파일" 상자 옆에 있는 단추입니다.
 
-    추가 파일 업로드 수 있을 뿐만 아니라 고유한 점수 매기기 스크립트 및 conda 파일을 사용할 수 있습니다. [점수 매기기 스크립트에 자세히 알아보려면](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-and-where#script)합니다.
+    추가 파일 업로드 수 있을 뿐만 아니라 고유한 점수 매기기 스크립트 및 conda 파일을 사용할 수 있습니다. [점수 매기기 스크립트에 자세히 알아보려면](how-to-deploy-and-where.md#script)합니다.
 
       >[!Important]
       > 파일 이름에서 32 자가 하 여야 하 고 해야 시작 하 고 끝나야 영숫자를 사용 하 여 합니다. 대시, 밑줄, 마침표, 및 사이의 영숫자만 포함할 수 있습니다. 공백은 허용 되지 않습니다.
@@ -228,7 +228,7 @@ ms.locfileid: "65990145"
     ![이미지 만들기](media/how-to-create-portal-experiments/create-image.png)
 
 1. 이미지 만들기를 시작 하려면 "만들기" 단추를 선택 합니다. 완료 되 면 완료 하는 데 몇 분 걸립니다, 그리고 위쪽 막대에서 메시지가 나타납니다.
-1. "이미지" 탭으로 이동한 배포 하려는 이미지 옆의 확인란을 "배포 만들기"를 선택 합니다. [배포에 자세히 알아보려면](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-and-where)합니다.
+1. "이미지" 탭으로 이동한 배포 하려는 이미지 옆의 확인란을 "배포 만들기"를 선택 합니다. [배포에 자세히 알아보려면](how-to-deploy-and-where.md)합니다.
 
     2 가지 방법으로 배포 합니다.
      + Azure Container Instance (ACI)-이 값은 대규모로 운영 배포가 아닌 범용 테스트에 더 사용 됩니다. 에 대 한 하나 이상의 코어에 대 한 값을 입력 해야 _CPU 예약 용량_, 및 적어도 하나의 기가바이트 (GB에 대 한) _메모리 예약 용량_

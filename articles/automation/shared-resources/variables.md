@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 05/14/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 0ac34f1d1e7fc2a967c7608f31f3b943f9380d01
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 622b4ab41162a7858097f717a103878f05917cd3
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65786202"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67342155"
 ---
 # <a name="variable-assets-in-azure-automation"></a>Azure Automation의 변수 자산
 
@@ -28,7 +28,7 @@ ms.locfileid: "65786202"
 
 Automation 변수 유지 되므로 runbook 또는 DSC 구성에 실패 하는 경우에 사용할 수 있습니다. 이 동작에는 값을을 동일한 runbook 또는 DSC 구성 실행 되는 다음에 다른가 사용 또는 사용 되는 하나의 runbook에서 설정할 수 있습니다.
 
-변수를 만들 때 암호화된 상태로 저장되도록 지정할 수 있습니다. 암호화 된 변수는 Azure Automation에 안전 하 게 저장 하 고 해당 값에서 검색할 수 없습니다는 [Get-azurermautomationvariable](/powershell/module/AzureRM.Automation/Get-AzureRmAutomationVariable) Azure PowerShell 모듈의 일부로 제공 되는 cmdlet입니다. 오직 runbook 또는 DSC 구성의 **Get-AutomationVariable** 에서만 암호화 된 값을 검색할 수 있습니다.
+변수를 만들 때 암호화된 상태로 저장되도록 지정할 수 있습니다. 암호화 된 변수는 Azure Automation에 안전 하 게 저장 하 고 해당 값에서 검색할 수 없습니다는 [Get-azurermautomationvariable](/powershell/module/AzureRM.Automation/Get-AzureRmAutomationVariable) Azure PowerShell 모듈의 일부로 제공 되는 cmdlet입니다. 오직 runbook 또는 DSC 구성의 **Get-AutomationVariable** 에서만 암호화 된 값을 검색할 수 있습니다. 암호화 되지 않은 암호화 된 변수를 변경 하려는 경우 수 삭제 하며 다시으로 암호화 되지 않은 변수를 만듭니다.
 
 >[!NOTE]
 >Azure Automation의 안전한 자산에는 자격 증명, 인증서, 연결, 암호화된 변수 등이 있습니다. 이러한 자산은 각 Automation 계정에 대해 생성되는 고유 키를 사용하여 암호화되고 Azure Automation에 저장됩니다. 이 키는 시스템에서 관리하는 Key Vault에 저장됩니다. 보안 자산을 저장하기 전에 Key Vault에서 키가 로드된 다음, 자산을 암호화하는 데 사용됩니다. Azure Automation에서 이 프로세스를 관리합니다.

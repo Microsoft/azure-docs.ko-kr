@@ -49,7 +49,7 @@ Resource Manager 템플릿에 정의된 모든 Log Analytics 리소스에는 리
 
 다음 표에는 이 예제에서 사용된 리소스의 API 버전이 제공됩니다.
 
-| 리소스 종류 | API 버전 | 쿼리 |
+| 리소스 종류 | API 버전 | query |
 |:---|:---|:---|
 | savedSearches | 2017-03-15-preview | Event &#124; where EventLevelName == "Error"  |
 
@@ -76,11 +76,11 @@ Resource Manager 템플릿에 정의된 모든 Log Analytics 리소스에는 리
 
 저장된 검색의 각 속성은 다음 표에 설명되어 있습니다.
 
-| 자산 | 설명 |
+| 자산 | description |
 |:--- |:--- |
 | category | 저장된 검색의 범주입니다.  같은 솔루션에 있는 저장된 검색은 종종 단일 범주를 공유하므로 콘솔에서 함께 그룹화됩니다. |
 | displayname | 포털에서 저장된 검색에 표시할 이름입니다. |
-| 쿼리 | 실행할 쿼리입니다. |
+| query | 실행할 쿼리입니다. |
 
 > [!NOTE]
 > JSON으로 해석될 수 있는 문자를 포함하고 있는 경우 쿼리에 이스케이프 문자를 사용해야 합니다. 예를 들어, 쿼리가 **AzureActivity | OperationName:“Microsoft.Compute/virtualMachines/write”** 이면 솔루션 파일에 **AzureActivity | OperationName:/\"Microsoft.Compute/virtualMachines/write\"** 라고 써야 합니다.
@@ -121,7 +121,7 @@ Resource Manager 템플릿에 정의된 모든 Log Analytics 리소스에는 리
     }
 일정 리소스의 속성은 다음 테이블에 설명되어 있습니다.
 
-| 요소 이름 | 필수 | 설명 |
+| 요소 이름 | 필수 | description |
 |:--|:--|:--|
 | enabled       | 예 | 경고를 만들 때 사용 여부를 지정합니다. |
 | interval      | 예 | 쿼리가 실행되는 빈도(분)입니다. |
@@ -174,18 +174,18 @@ Resource Manager 템플릿에 정의된 모든 Log Analytics 리소스에는 리
 
 경고 작업 리소스의 속성은 다음 테이블에 설명되어 있습니다.
 
-| 요소 이름 | 필수 | 설명 |
+| 요소 이름 | 필수 | description |
 |:--|:--|:--|
-| Type | 예 | 작업의 유형입니다.  경고 작업의 **경고**가 됩니다. |
-| 이름 | 예 | 경고에 대한 표시 이름입니다.  경고 규칙에 대한 콘솔에 표시되는 이름입니다. |
-| 설명 | 아닙니다. | 경고에 대한 선택적 설명입니다. |
+| type | 예 | 작업의 유형입니다.  경고 작업의 **경고**가 됩니다. |
+| name | 예 | 경고에 대한 표시 이름입니다.  경고 규칙에 대한 콘솔에 표시되는 이름입니다. |
+| description | 아닙니다. | 경고에 대한 선택적 설명입니다. |
 | 심각도 | 예 | 다음 값의 경고 레코드의 심각도입니다.<br><br> **중요**<br>**경고**<br>**정보 제공**
 
 
 #### <a name="threshold"></a>임계값
 이 섹션은 필수입니다. 경고 임계값의 속성을 정의합니다.
 
-| 요소 이름 | 필수 | 설명 |
+| 요소 이름 | 필수 | description |
 |:--|:--|:--|
 | 연산자 | 예 | 다음 값의 비교 연산자입니다.<br><br>**gt = 보다 큼<br>lt = 보다 작음** |
 | 값 | 예 | 결과를 비교하는 값입니다. |
@@ -196,7 +196,7 @@ Resource Manager 템플릿에 정의된 모든 Log Analytics 리소스에는 리
 > [!NOTE]
 > 미터법 알림은 현재 공개 미리 보기 상태입니다.
 
-| 요소 이름 | 필수 | 설명 |
+| 요소 이름 | 필수 | description |
 |:--|:--|:--|
 | TriggerCondition | 예 | 임계값이 총 위반 수인지 아니면 연속 위반인지 다음 값을 사용하여 지정합니다.<br><br>**총<br>연속** |
 | 연산자 | 예 | 다음 값의 비교 연산자입니다.<br><br>**gt = 보다 큼<br>lt = 보다 작음** |
@@ -206,7 +206,7 @@ Resource Manager 템플릿에 정의된 모든 Log Analytics 리소스에는 리
 #### <a name="throttling"></a>제한
 이 섹션은 선택 사항입니다. 경고가 생성된 후 일정 시간 동안 같은 규칙의 경고를 표시하지 않으려면 이 섹션을 포함해야 합니다.
 
-| 요소 이름 | 필수 | 설명 |
+| 요소 이름 | 필수 | description |
 |:--|:--|:--|
 | DurationInMinutes | 제한 요소가 포함된 경우 필수입니다. | 같은 경고 규칙에서 경고가 생성되면 이 시간 동안 경고를 표시하지 않습니다. |
 
@@ -215,7 +215,7 @@ Azure에서 모든 경고는 작업을 처리하기 위한 기본 메커니즘�
 
 자신의 경고를 Azure로 확장한 사용자의 경우 일정은 이제 경고를 만들 수 있도록 임계값과 함께 전달된 작업 그룹 세부 정보가 있어야 합니다. 경고를 만들려면 먼저 작업 그룹 내에서 이메일 세부 정보, 웹후크 URL, Runbook Automation 세부 정보 및 기타 작업을 정의해야 합니다. 사용자는 포털에서 [Azure Monitor로 작업 그룹](../../azure-monitor/platform/action-groups.md)을 만들거나 [작업 그룹 - 리소스 템플릿](../../azure-monitor/platform/action-groups-create-resource-manager-template.md)을 사용할 수 있습니다.
 
-| 요소 이름 | 필수 | 설명 |
+| 요소 이름 | 필수 | description |
 |:--|:--|:--|
 | AzNsNotification | 예 | 경고 조건이 충족되면 필요한 작업을 수행하도록 경고와 연결되는 Azure 작업 그룹의 리소스 ID. |
 | CustomEmailSubject | 아닙니다. | 연결된 작업 그룹에서 지정된 모든 주소로 전송되는 메일의 사용자 지정 제목 줄. |
@@ -231,7 +231,7 @@ Azure에서 모든 경고는 작업을 처리하기 위한 기본 메커니즘�
 ##### <a name="emailnotification"></a>EmailNotification
  이 섹션은 선택 사항입니다. 한 명 이상의 수신자에게 메일을 보내 경고하려면 이 섹션을 포함해야 합니다.
 
-| 요소 이름 | 필수 | 설명 |
+| 요소 이름 | 필수 | description |
 |:--|:--|:--|
 | Recipients | 예 | 다음 예제와 같이 경고가 생성되면 알림을 보낼 쉼표로 구분된 전자 메일 주소 목록입니다.<br><br>**[ "recipient1\@contoso.com", "recipient2\@contoso.com" ]** |
 | Subject | 예 | 메일의 제목 줄입니다. |
@@ -240,7 +240,7 @@ Azure에서 모든 경고는 작업을 처리하기 위한 기본 메커니즘�
 ##### <a name="remediation"></a>재구성
 이 섹션은 선택 사항입니다. 경고에 대한 응답으로 runbook을 시작하려면 이 섹션을 포함해야 합니다. 
 
-| 요소 이름 | 필수 | 설명 |
+| 요소 이름 | 필수 | description |
 |:--|:--|:--|
 | RunbookName | 예 | 시작할 runbook의 이름입니다. |
 | WebhookUri | 예 | runbook의 웹후크 Uri입니다. |
@@ -269,7 +269,7 @@ Azure에서 모든 경고는 작업을 처리하기 위한 기본 메커니즘�
     }
 웹후크 작업 리소스의 속성은 다음 표에 설명되어 있습니다.
 
-| 요소 이름 | 필수 | 설명 |
+| 요소 이름 | 필수 | description |
 |:--|:--|:--|
 | 형식 | 예 | 작업의 유형입니다. 웹후크 작업의 **웹후크**가 됩니다. |
 | name | 예 | 작업의 표시 이름입니다. 콘솔에 표시되지 않습니다. |

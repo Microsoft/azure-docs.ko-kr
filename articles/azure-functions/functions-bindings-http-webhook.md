@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: fb219316afa798dfda777c4d0d406d5b8cabf7f9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f9f43720ff36b6dfac51a1626413ff7c2e590cd0
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66472372"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67342253"
 ---
 # <a name="azure-functions-http-triggers-and-bindings"></a>Azure Functions HTTP 트리거 및 바인딩
 
@@ -307,6 +307,7 @@ module.exports = function(context, req) {
 ```python
 import logging
 import azure.functions as func
+
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
@@ -792,7 +793,7 @@ HTTP 트리거를 사용하는 함수가 약 2.5분 안에 완료되지 않으�
 
 [!INCLUDE [functions-host-json-http](../../includes/functions-host-json-http.md)]
 
-## <a name="output"></a>출력
+## <a name="output"></a>Output
 
 HTTP 요청 발신기(sender)에 응답하려면 HTTP 출력 바인딩을 사용합니다. 이 바인딩에는 HTTP 트리거가 필요하며 트리거 요청과 관련된 응답을 사용자 지정할 수 있습니다. HTTP 출력 바인딩을 제공하지 않으면 HTTP 트리거는 Functions 1.x에서 본문이 비어 있는 HTTP 200 OK 또는 Functions 2.x에서 본문이 비어 있는 HTTP 204 No Content를 반환합니다.
 

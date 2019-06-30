@@ -8,11 +8,13 @@
       href: iot-services-and-technologies.md
 - name: 보안
   items:
-    - name: 보안 아키텍처
-      href: iot-security-architecture.md
-    - name: 보안 모범 사례
-      href: iot-security-best-practices.md
-    - name: 안전한 배포
-      href: iot-security-deployment.md
+    - name: 권장 사항
+      href: security-recommendations.md
     - name: 처음부터 보안을 고려
       href: iot-security-ground-up.md
+    - name: 보안 모범 사례
+      href: iot-security-best-practices.md
+    - name: 보안 아키텍처
+      href: iot-security-architecture.md
+    - name: 안전한 배포
+      href: iot-security-deployment.md

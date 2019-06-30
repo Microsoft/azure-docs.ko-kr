@@ -7,25 +7,25 @@ ms.service: container-service
 ms.topic: article
 ms.date: 03/04/2019
 ms.author: iainfou
-ms.openlocfilehash: 1b5d18a3dfd1181fd06b58fd58f496457e24b58e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 50a2161be4ee70f7ae5c8baa3816eb9f9943a5d2
+ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65956378"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358010"
 ---
 # <a name="use-an-internal-load-balancer-with-azure-kubernetes-service-aks"></a>AKS(Azure Kubernetes Service)를 통해 내부 부하 분산 장치 사용
 
 AKS(Azure Kubernetes Service)에서 애플리케이션에 대한 액세스를 제한하기 위해 내부 부하 분산 장치를 만들고 사용할 수 있습니다. 내부 부하 분산 장치는 Kubernetes 서비스가 Kubernetes 클러스터와 동일한 가상 네트워크에서 실행되는 애플리케이션에만 액세스할 수 있게 합니다. 이 문서에서는 AKS(Azure Kubernetes Service)를 통해 내부 부하 분산 장치를 만들고 사용하는 방법을 보여줍니다.
 
 > [!NOTE]
-> Azure Load Balancer는 ‘기본’ 및 ‘표준’이라는 두 SKU에서 사용할 수 있습니다.   AKS는 현재 ‘기본’ SKU를 지원합니다.  *표준* SKU를 사용하려면 업스트림 [aks-engine][aks-engine]을 사용할 수 있습니다. 자세한 내용은 [Azure Load Balancer SKU 비교][azure-lb-comparison]를 참조하세요.
+> Azure Load Balancer는 ‘기본’ 및 ‘표준’이라는 두 SKU에서 사용할 수 있습니다.   기본적으로 *기본* SKU는 AKS에서 부하 분산 장치를 만들려면 서비스 매니페스트를 사용 하는 경우에 사용 됩니다. 자세한 내용은 [Azure load balancer SKU 비교][azure-lb-comparison]합니다.
 
 ## <a name="before-you-begin"></a>시작하기 전에
 
-이 문서에서는 기존 AKS 클러스터가 있다고 가정합니다. AKS 클러스터가 필요한 경우 AKS 빠른 시작[Azure CLI 사용][aks-quickstart-cli] 또는 [Azure Portal 사용][aks-quickstart-portal]을 참조하세요.
+이 문서에서는 기존 AKS 클러스터가 있다고 가정합니다. AKS 클러스터에 필요한 경우 AKS 빠른 시작을 참조 하세요 [Azure CLI를 사용 하 여][aks-quickstart-cli] or [using the Azure portal][aks-quickstart-portal]합니다.
 
-또한 Azure cli 버전 2.0.59 또는 나중에 설치 하 고 구성한 합니다.  `az --version`을 실행하여 버전을 찾습니다. 설치 또는 업그레이드해야 하는 경우  [Azure CLI 설치][install-azure-cli]를 참조하세요.
+또한 Azure cli 버전 2.0.59 또는 나중에 설치 하 고 구성한 합니다.  `az --version`을 실행하여 버전을 찾습니다. 설치 또는 업그레이드를 참조 해야 하는 경우 [Azure CLI 설치][install-azure-cli]합니다.
 
 AKS 클러스터 서비스 주체에 기존 서브넷 또는 리소스 그룹을 사용 하는 경우 네트워크 리소스를 관리할 수 있는 권한이 필요 합니다. 일반적으로 할당 합니다 *네트워크 참가자* 위임 된 리소스에 서비스 주체에 역할입니다. 사용 권한에 대 한 자세한 내용은 참조 하세요. [다른 Azure 리소스에 대 한 액세스를 대리자 AKS][aks-sp]합니다.
 
@@ -48,7 +48,7 @@ spec:
     app: internal-app
 ```
 
-사용 하 여 내부 부하 분산 장치 배포를 [kubectl 적용] kubectl-적용] YAML 매니페스트의 이름을 지정 합니다.
+사용 하 여 내부 부하 분산 장치 배포 합니다 [kubectl 적용][kubectl-apply] YAML 매니페스트의 이름을 지정 합니다.
 
 ```console
 kubectl apply -f internal-lb.yaml
@@ -96,7 +96,7 @@ internal-app   LoadBalancer   10.0.184.168   10.240.0.25   80:30225/TCP   4m
 
 ## <a name="use-private-networks"></a>프라이빗 네트워크 사용
 
-AKS 클러스터를 만들 때 고급 네트워킹 설정을 지정할 수 있습니다. 이 방법을 통해 클러스터를 기존 Azure 가상 네트워크 및 서브넷에 배포할 수 있습니다. 한 가지 시나리오는 온-프레미스 환경에 연결된 프라이빗 네트워크에 AKS 클러스터를 배포하여 내부에서 액세스할 수 있는 서비스만 실행하는 것입니다. 자세한 내용은 참조 하세요. 사용 하 여 사용자 고유의 가상 네트워크 서브넷 구성 [Kubenet] [ use-kubenet] 하거나 [Azure CNI][advanced-networking]합니다.
+AKS 클러스터를 만들 때 고급 네트워킹 설정을 지정할 수 있습니다. 이 방법을 통해 클러스터를 기존 Azure 가상 네트워크 및 서브넷에 배포할 수 있습니다. 한 가지 시나리오는 온-프레미스 환경에 연결된 프라이빗 네트워크에 AKS 클러스터를 배포하여 내부에서 액세스할 수 있는 서비스만 실행하는 것입니다. 자세한 내용은 참조 하세요. 사용 하 여 사용자 고유의 가상 네트워크 서브넷 구성 [Kubenet][use-kubenet] or [Azure CNI][advanced-networking]합니다.
 
 프라이빗 네트워크를 사용하는 AKS 클러스터에 내부 부하 분산 장치를 배포하려면 이전 단계를 변경하지 않아도 됩니다. 부하 분산 장치는 AKS 클러스터와 동일한 리소스 그룹에 만들어지지만 다음 예와 같이 프라이빗 가상 네트워크 및 서브넷에 연결됩니다.
 
@@ -108,7 +108,7 @@ internal-app   LoadBalancer   10.1.15.188   10.0.0.35     80:31669/TCP   1m
 ```
 
 > [!NOTE]
-> AKS 클러스터의 서비스 주체에 Azure 가상 네트워크 리소스가 배포되어 있는 리소스 그룹에 대한 *네트워크 기여자* 역할을 부여해야 할 수도 있습니다. [az aks show][az-aks-show]를 사용하여 서비스 주체를 확인합니다. 예: `az aks show --resource-group myResourceGroup --name myAKSCluster --query "servicePrincipalProfile.clientId"`. 역할 할당을 만들려면 [az role assignment create][az-role-assignment-create] 명령을 사용합니다.
+> AKS 클러스터의 서비스 주체에 Azure 가상 네트워크 리소스가 배포되어 있는 리소스 그룹에 대한 *네트워크 기여자* 역할을 부여해야 할 수도 있습니다. 사용 하 여 서비스 주체를 보려면 [az aks show][az-aks-show]와 같은 `az aks show --resource-group myResourceGroup --name myAKSCluster --query "servicePrincipalProfile.clientId"`합니다. 역할 할당을 만들려면 사용 합니다 [az 역할 할당 만들기][az-role-assignment-create] 명령입니다.
 
 ## <a name="specify-a-different-subnet"></a>다른 서브넷 지정
 
@@ -138,9 +138,10 @@ spec:
 
 ## <a name="next-steps"></a>다음 단계
 
-[Kubernetes 서비스 설명서][kubernetes-services]에서 Kubernetes 서비스를 알아봅니다.
+Kubernetes 서비스에 자세히 알아보려면 합니다 [Kubernetes 서비스 설명서][kubernetes-services]합니다.
 
 <!-- LINKS - External -->
+[kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
 [kubernetes-services]: https://kubernetes.io/docs/concepts/services-networking/service/
 [aks-engine]: https://github.com/Azure/aks-engine
 

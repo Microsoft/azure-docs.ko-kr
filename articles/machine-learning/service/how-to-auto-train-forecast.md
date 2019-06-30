@@ -9,13 +9,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.reviewer: trbye
 ms.topic: conceptual
-ms.date: 05/02/2019
-ms.openlocfilehash: c7f4b6d8aa614a460772fb7af11f9b83dc3fc979
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/20/2019
+ms.openlocfilehash: 4a3ab9094080ab257a885bb7a745fc83948327c2
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65800806"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331692"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>시계열 예측된 모델을 자동-학습
 
@@ -26,6 +26,14 @@ ms.locfileid: "65800806"
 * 시계열 데이터를 사용 하 여 예측을 실행 합니다.
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2X1GW]
+
+자동화 된 기계 학습 기법 및 접근 방식을 결합 하 여 권장 되는, 고품질 시계열 예측을 가져오기에 사용할 수 있습니다. 자동화 된 시계열 실험 다변량 회귀 문제로 처리 됩니다. 이전 시계열 값은 "피벗" 추가 차원이 다른 예측자 함께 회귀 변수에 대해 되도록 합니다. 
+
+고전 시계열 메서드, 달리이 방식에서는 여러 컨텍스트 변수 및 해당 관계를 학습 하는 동안 자연스럽 게 통합 하는 이점은 있습니다. 실제 예측 응용 프로그램에서 여러 요인 예보를 변경할 수 있습니다. 예를 들어, 판매를 예측 하는 경우의 기록 추세, 환율 및 price가 모든 상호 작용 판매 결과 공동 드라이브입니다. 추가 혜택 예측을 회귀 모델의 모든 최근 혁신 즉시 적용 됩니다.
+
+할 수 있습니다 [구성](#config) 미래를 얼마나 예측 확장 해야 (예측된 기간), 지연 및 더 합니다. 자동화 된 기계 학습 데이터 집합 및 예측 지평에서 모든 항목에 대 한 단일 하지만 내부적으로 자주 분기 된 모델을 학습. 더 많은 데이터를 모델 매개 변수를 예측 하 사용할 수 있으므로 보이지 않는 계열에 일반화가 가능해 집니다. 
+
+학습 데이터에서 추출 된 기능을 중요 한 역할을 합니다. 및 자동화 된 ML 표준 사전 처리 단계를 수행 하 고 계절의 영향이 캡처 및 예측 정확도 최대화 하 추가-시계열 기능을 생성 합니다. 
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -69,6 +77,7 @@ y_test = X_test.pop("sales_quantity").values
 > [!NOTE]
 > 미래 가치를 예측 하는 것에 대 한 모델을 학습할 때 의도 한 시야에 대 한 예측을 실행 하는 경우 학습에 사용 되는 기능을 사용할 수 모두를 확인 합니다. 예를 들어, 한 수요 예측을 만들 때 현재 주가 대 한 기능을 포함 하 여 증가할 수 있습니다 대규모 학습 정확도입니다. 그러나 긴 기간을 사용 하 여 예측 하려는 경우 향후 시계열 지점에 해당 주식 값을 정확 하 게 예측할 수 있습니다 및 모델 정확도 저하 될 수 있습니다.
 
+<a name="config"></a>
 ## <a name="configure-and-run-experiment"></a>구성 하 고 실험 실행
 
 작업 예측에 대 한 자동화 된 기계 학습에서는 시계열 데이터에만 적용 되는 전처리, 예측 단계를 사용 합니다. 전처리 단계 실행 됩니다.
@@ -85,7 +94,7 @@ y_test = X_test.pop("sales_quantity").values
 |-------|-------|-------|
 |`time_column_name`|시계열을 빌드하고 해당 빈도 유추에 사용할 입력된 데이터에서 날짜/시간 열을 지정 하는 데 사용 합니다.|✓|
 |`grain_column_names`|입력된 데이터의 개별 계열 그룹을 정의 하는 이름입니다. 수준이 정의 되어 있지 않으면 데이터 집합을 하나의 시계열 수로 간주 됩니다.||
-|`max_horizon`|최대 원하는 예측된 기간 시계열 빈도 단위입니다.|✓|
+|`max_horizon`|시계열 빈도 단위에서 최대 원하는 예측된 기간을 정의합니다. 단위는 forecaster 아웃 예측 해야는 예를 들어 월별, 주별, 학습 데이터의 시간 간격 기반으로 합니다.|✓|
 |`target_lags`|*n* 정방향 지연 기간이 대상 모델을 학습 하기 전에 값입니다.||
 |`target_rolling_window_size`|*n* 기록 기간 예측된 값을 생성 하는 데 < = 학습 집합 크기입니다. 생략 *n* 는 전체 학습 집합 크기입니다.||
 

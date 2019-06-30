@@ -14,8 +14,6 @@
   items:
     - name: ESP 클러스터 플랜
       href: apache-domain-joined-architecture.md
-    - name: ESP 클러스터 생성 및 온-프레미스와 동기화
-      href: apache-domain-joined-create-configure-enterprise-security-cluster.md
     - name: Azure AD DS를 사용하여 ESP 클러스터 구성
       href: apache-domain-joined-configure-using-azure-adds.md
     - name: Azure AD 사용자를 HDInsight 클러스터에 동기화
@@ -30,26 +28,30 @@
       href: ../spark/apache-spark-eclipse-tool-plugin.md
     - name: ESP 클러스터에서 Apache Oozie 사용
       href: hdinsight-use-oozie-domain-joined-clusters.md
-- name: 데이터 보안
-  href: ../hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage.md
-- name: 네트워크 액세스
+    - name: 데이터 보안
+      href: ../hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage.md
+    - name: 네트워크 액세스
+      items:
+        - name: Azure VNet의 HDInsight
+          href: ../hdinsight-extend-hadoop-virtual-network.md
+        - name: 온-프레미스 네트워크와 HDInsight 연결
+          href: ../connect-on-premises-network.md
+        - name: Azure VNet에서 Apache HBase 클러스터 만들기
+          href: ../hbase/apache-hbase-provision-vnet.md
+        - name: Azure VNet의 Apache HBase 클러스터 복제
+          href: ../hbase/apache-hbase-replication.md
+    - name: Azure Monitor 로그를 사용한 모니터링
+      items:
+        - name: Azure Monitor 로그 사용
+          href: ../hdinsight-hadoop-oms-log-analytics-tutorial.md
+        - name: Azure Monitor 로그에서 쿼리 사용
+          href: ../hdinsight-hadoop-oms-log-analytics-use-queries.md
+        - name: 클러스터 성능 모니터링
+          href: ../hdinsight-key-scenarios-to-monitor.md
+- name: 방법
   items:
-    - name: Azure VNet의 HDInsight
-      href: ../hdinsight-extend-hadoop-virtual-network.md
-    - name: 온-프레미스 네트워크와 HDInsight 연결
-      href: ../connect-on-premises-network.md
-    - name: Azure VNet에서 Apache HBase 클러스터 만들기
-      href: ../hbase/apache-hbase-provision-vnet.md
-    - name: Azure VNet의 Apache HBase 클러스터 복제
-      href: ../hbase/apache-hbase-replication.md
-- name: Azure Monitor 로그를 사용한 모니터링
-  items:
-    - name: Azure Monitor 로그 사용
-      href: ../hdinsight-hadoop-oms-log-analytics-tutorial.md
-    - name: Azure Monitor 로그에서 쿼리 사용
-      href: ../hdinsight-hadoop-oms-log-analytics-use-queries.md
-    - name: 클러스터 성능 모니터링
-      href: ../hdinsight-key-scenarios-to-monitor.md
+    - name: ESP 클러스터 생성 및 온-프레미스와 동기화
+      href: apache-domain-joined-create-configure-enterprise-security-cluster.md
 - name: 참고 자료
   items:
     - name: 코드 샘플

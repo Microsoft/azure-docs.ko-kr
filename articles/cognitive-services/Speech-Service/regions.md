@@ -13,7 +13,7 @@ ms.author: panosper
 ms.custom: seodec18
 ms.openlocfilehash: 83cea56cecf9792c829e062965fe39b63201af3e
 ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/02/2019
 ms.locfileid: "65020655"
@@ -30,7 +30,7 @@ ms.locfileid: "65020655"
 
 ### <a name="speech-to-text-text-to-speech-and-translation"></a>음성-텍스트, 텍스트 음성 변환, 및 변환
 
-에 대 한 이러한 지역에서 Speech SDK를 사용할 수 **음성 인식**를 **text to speech**, 및 **번역**:
+Speech SDK는 **음성 인식**, **텍스트 음성 변환** 및 **번역**에 대해 다음 지역에서 사용 가능합니다.
 
   지역 | 음성 SDK 매개 변수 | 음성 사용자 지정 포털
  ------|-------|--------

@@ -14,12 +14,12 @@ ms.devlang: objective-c
 ms.topic: article
 ms.date: 05/21/2019
 ms.author: miparker
-ms.openlocfilehash: a4773ddd8114659118e89cfee57e73ddb39ff6b6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c35044918876b2c7710e26f6b868bc1096c2f538
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67116646"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340397"
 ---
 # <a name="tutorial-push-notifications-to-swift-ios-apps-that-use-the-notification-hubs-rest-api"></a>자습서: Notification Hubs REST API를 사용 하는 Swift iOS 앱에 알림 푸시
 
@@ -89,10 +89,10 @@ IOS 개발을 사용 하 여 이전에 경험이 없다고가 하는 경우에�
 
    | 키                            | Type                     | 값                     |
    |--------------------------------| -------------------------| --------------------------|
-   | notificationHubKey             | String                   | <hubKey>                  |
-   | notificationHubKeyName         | String                   | <hubKeyName>              |
-   | notificationHubName            | String                   | <hubName>                 |
-   | notificationHubNamespace       | String                   | <hubNamespace>            |
+   | notificationHubKey             | String                   | \<hubKey>                  |
+   | notificationHubKeyName         | String                   | \<hubKeyName>              |
+   | notificationHubName            | String                   | \<hubName>                 |
+   | notificationHubNamespace       | String                   | \<hubNamespace>            |
 
    Azure portal에서 알림 허브 리소스를 이동 하 여 필요한 값을 찾을 수 있습니다. 특히 합니다 **notificationHubName** 및 **notificationHubNamespace** 의 오른쪽 위 모서리에 있는 값은 합니다 **Essentials** 합니다 내요약**개요** 페이지입니다.
 
@@ -411,7 +411,7 @@ Swift이 예에서는 Apple의 오픈 소스를 사용 하려는 **CommonCrypto*
    | 키           | 값            |
    | ------------- | ---------------- |
    | 콘텐츠 형식  | application/json |
-   | 권한 부여 | <sasToken>       |
+   | 권한 부여 | \<sasToken>       |
    | x-ms-version  | 2015-01          |
 
 1. 선택 합니다 **코드** 아래에서 오른쪽 상단에 표시 되는 단추를 **저장** 단추입니다. 다음 예제 요청 유사 합니다.
@@ -659,7 +659,7 @@ class NotificationRegistrationService {
    | 키                            | 값                          |
    | ------------------------------ | ------------------------------ |
    | 콘텐츠 형식                   | application/json;charset=utf-8 |
-   | 권한 부여                  | <sasToken>                     |
+   | 권한 부여                  | \<sasToken>                     |
    | ServiceBusNotification-Format  | template                       |
    | 태그들                           | "12345"                        |
 

@@ -15,12 +15,12 @@ ms.date: 05/16/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 0789ab981590ac1b7531c1f05d85d7ada3a9f56b
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 5a63053cc7fa1c1c86669ce2cea56b68f1a7b4b6
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295278"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341498"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Azure 리소스에 대한 기본 제공 역할
 
@@ -98,8 +98,8 @@ ms.locfileid: "67295278"
 | [랩 작성자](#lab-creator) | Azure Lab 계정 하에서 관리 랩을 만들고, 관리하고, 삭제할 수 있습니다. |
 | [Log Analytics 기여자](#log-analytics-contributor) | Log Analytics 기여자는 모든 모니터링 데이터를 읽고 모니터링 설정을 편집할 수 있습니다. 모니터링 설정 편집에는 VM에 VM 확장 추가, Azure Storage에서 로그 컬렉션을 구성할 수 있는 스토리지 계정 키 읽기, Automation 계정 생성 및 구성, 솔루션 추가 및 모든 Azure 리소스에 대한 Azure 진단을 구성하는 기능도 포함되어 있습니다. |
 | [Log Analytics 독자](#log-analytics-reader) | Log Analytics 독자는 모든 Azure 리소스에 대한 Azure 진단의 구성 보기를 비롯하여 모니터링 설정 보기 및 모든 모니터링 데이터를 보고 검색할 수 있습니다. |
-| [논리 앱 기여자](#logic-app-contributor) | 논리 앱을 관리할 수 있지만 액세스할 수는 없습니다. |
-| [논리 앱 운영자](#logic-app-operator) | 논리 앱을 읽고, 설정하고, 해제할 수 있습니다. |
+| [논리 앱 기여자](#logic-app-contributor) | 있습니다 logic apps를 관리 하지만에 대 한 액세스를 변경 하지. |
+| [논리 앱 운영자](#logic-app-operator) | 읽기, 사용 및 logic apps를 사용 하지 않도록 설정 하지만 하지 편집 또는 업데이트할 수 있습니다. |
 | [관리되는 애플리케이션 운영자 역할](#managed-application-operator-role) | 관리되는 애플리케이션 리소스에서 작업을 읽고 수행할 수 있습니다. |
 | [Managed Applications 읽기 권한자](#managed-applications-reader) | 관리 앱 및 요청 JIT 액세스에서 리소스를 읽을 수 있습니다. |
 | [관리 ID 기여자](#managed-identity-contributor) | 사용자 할당 ID를 만들고, 읽고, 업데이트하고, 삭제합니다. |
@@ -1620,7 +1620,7 @@ ms.locfileid: "67295278"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **설명** | 논리 앱을 관리할 수 있지만 액세스할 수는 없습니다. |
+> | **설명** | 있습니다 logic apps를 관리 하지만에 대 한 액세스를 변경 하지. |
 > | **Id** | 87a39d53-fc1b-424a-814c-f7e04687dc9e |
 > | **actions** |  |
 > | Microsoft.Authorization/*/read | 역할 및 역할 할당 읽기 |
@@ -1654,7 +1654,7 @@ ms.locfileid: "67295278"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **설명** | 논리 앱을 읽고, 사용하거나 사용하지 않도록 설정할 수 있습니다. |
+> | **설명** | 읽기, 사용 및 logic apps를 사용 하지 않도록 설정 하지만 하지 편집 또는 업데이트할 수 있습니다. |
 > | **Id** | 515c2055-d9d4-4321-b1b9-bd0c9a0f79fe |
 > | **actions** |  |
 > | Microsoft.Authorization/*/read | 역할 및 역할 할당 읽기 |

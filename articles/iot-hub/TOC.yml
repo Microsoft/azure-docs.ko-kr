@@ -159,6 +159,8 @@
           href: iot-hub-devguide-glossary.md
     - name: 보안
       items:
+        - name: 권장 사항
+          href: /azure/iot-fundamentals/security-recommendations?context=azure/iot-hub/rc/rc
         - name: 처음부터 보안을 고려
           href: /azure/iot-fundamentals/iot-security-ground-up?context=azure/iot-hub/rc/rc
         - name: 보안 모범 사례

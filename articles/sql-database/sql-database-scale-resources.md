@@ -11,17 +11,17 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: jrasnik, carlrab
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: 6285348aa8067f356635dfff9ecd4eb34c431f0b
-ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.date: 06/25/2019
+ms.openlocfilehash: d8949f63dfa9b409cc14fe9c3bbed70f23a73c86
+ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67147686"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357145"
 ---
 # <a name="dynamically-scale-database-resources-with-minimal-downtime"></a>최소 가동 중지 시간으로 동적으로 데이터베이스 리소스 크기 조정
 
-Azure SQL Database를 사용하면 가동 중지 시간을 최소화하면서 데이터베이스에 리소스를 동적으로 추가할 수 있습니다.
+Azure SQL Database를 사용 하면 최소 사용 하 여 데이터베이스에 더 많은 리소스를 동적으로 추가할 [가동 중지 시간](https://azure.microsoft.com/support/legal/sla/sql-database/v1_2/)하지만 있습니다는 스위치를 기간 동안 연결 데이터베이스에 손실 될 수 있는 시간을 짧은 시간에 대 한 재시도 논리를 사용 하 여 완화 합니다.
 
 ## <a name="overview"></a>개요
 

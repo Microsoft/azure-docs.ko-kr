@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/07/2018
-ms.openlocfilehash: 0b68819ba032d7655433aadd30fe2852941096ce
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 55db909f240756200d758fe89aabb217fb380d16
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61478881"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67329810"
 ---
 # <a name="leverage-query-parallelization-in-azure-stream-analytics"></a>Azure Stream Analytics에서 쿼리 병렬 처리 사용
 이 문서에서는 Azure Stream Analytics에서 병렬 처리 기능을 활용하는 방법을 보여 줍니다. 입력 파티션을 구성하고, 분석 쿼리 정의를 조정하여 Stream Analytics 작업의 크기를 조정하는 방법을 알아봅니다.
@@ -60,7 +60,7 @@ Power BI는 분할을 지원하지 않습니다. 그러나 [이 섹션](#multi-s
 
 1. 쿼리 논리가 동일한 쿼리 인스턴스에서 처리되는 동일한 키에 따라 다른 경우 이벤트가 동일한 입력 파티션으로 이동하는지 확인해야 합니다. Event Hubs 또는 IoT Hub의 경우 이것은 이벤트 데이터에 **PartitionKey** 값 집합이 있어야 한다는 의미입니다. 또는 분할된 보낸 사람을 사용할 수 있습니다. Blob Storage의 경우 이것은 이벤트가 같은 파티션 폴더에 전송된다는 것을 의미합니다. 쿼리 논리가 동일한 쿼리 인스턴스에서 동일한 키를 처리할 필요가 없는 경우 이 요구 사항을 무시할 수 있습니다. 이 논리에 대한 예로 간단한 선택/프로젝트/필터 쿼리를 참조하세요.  
 
-2. 데이터가 입력 측에 배치되면 쿼리가 분할되었는지 확인해야 합니다. 그러려면 모든 단계에서 **PARTITION BY**를 사용해야 합니다. 여러 단계가 허용되지만 모두 동일한 키로 분할되어야 합니다. 현재는 작업을 완전히 병렬로 처리하기 위해 분할 키를 **PartitionId**로 설정해야 합니다.  
+2. 데이터가 입력 측에 배치되면 쿼리가 분할되었는지 확인해야 합니다. 그러려면 모든 단계에서 **PARTITION BY**를 사용해야 합니다. 여러 단계가 허용되지만 모두 동일한 키로 분할되어야 합니다. 호환성 수준 1.0 및 1.1에서 분할 키로 설정 해야 합니다 **PartitionId** 순서로 작업을 완전히 병렬로 처리 합니다. 1\.2 및 더 높은 호환성 수준 사용 하 여 작업에 대 한 입력된 설정에 사용자 지정 열을 파티션 키로 지정할 수 있습니다 및 작업에는 PARTITION BY 절 없이 paralellized automoatically 됩니다.
 
 3. 대부분의 출력은 분할을 활용할 수 있지만 분할을 지원하지 않는 출력 형식을 사용하는 경우 작업이 완벽하게 병렬 처리되지 않습니다. 자세한 내용은 [출력 섹션](#outputs)을 참조하세요.
 
@@ -87,7 +87,7 @@ Power BI는 분할을 지원하지 않습니다. 그러나 [이 섹션](#multi-s
     WHERE TollBoothId > 100
 ```
 
-이 쿼리는 간단한 필터입니다. 따라서 이벤트 허브로 전송되는 입력을 분할하는 것에 대해 걱정하지 않아도 됩니다. 쿼리가 **PARTITION BY PartitionId**를 포함하므로 앞에서 언급된 요구 사항 2번을 충족합니다. 출력의 경우 파티션 키가 **PartitionId**로 설정되도록 작업에서 이벤트 허브 출력을 구성해야 합니다. 마지막 한 가지 검사는 입력 파티션 수가 출력 파티션 수와 같은지 확인하는 것입니다.
+이 쿼리는 간단한 필터입니다. 따라서 이벤트 허브로 전송되는 입력을 분할하는 것에 대해 걱정하지 않아도 됩니다. 1\.2 포함 해야 하기 전에 호환성 수준으로 작업 하는 **PARTITION BY PartitionId** 절을 언급 앞의 요구 사항 2 번을 충족 하도록 합니다. 출력의 경우 파티션 키가 **PartitionId**로 설정되도록 작업에서 이벤트 허브 출력을 구성해야 합니다. 마지막 한 가지 검사는 입력 파티션 수가 출력 파티션 수와 같은지 확인하는 것입니다.
 
 ### <a name="query-with-a-grouping-key"></a>그룹화 키가 있는 쿼리
 
@@ -141,6 +141,26 @@ Power BI 출력은 현재 분할을 지원하지 않습니다. 따라서 이 시
 보이는 것처럼 두 번째 단계에서는 **TollBoothId** 를 분할 키로 사용합니다. 이 단계는 첫 번째 단계와 동일하지 않으므로 순서를 섞어야 합니다. 
 
 앞의 예제에서는 병렬 처리가 적합한 토폴로지를 준수(또는 준수하지 않는) 일부 Stream Analytics 작업을 보여 줍니다. 준수하는 경우 최대 규모의 가능성을 포함합니다. 이러한 프로필 중 하나에 적합하지 않는 작업의 경우 향후 업데이트에서 크기 조정 지침이 제공될 예정입니다. 현재는 다음 섹션에 있는 일반적인 지침을 사용하세요.
+
+### <a name="compatibility-level-12---multi-step-query-with-different-partition-by-values"></a>호환성 수준 1.2-서로 다른 PARTITION BY 값이 있는 다중 단계 쿼리 
+* 입력: 8개의 파티션이 있는 이벤트 허브
+* 출력 8개의 파티션이 있는 이벤트 허브
+
+쿼리:
+
+```SQL
+    WITH Step1 AS (
+    SELECT COUNT(*) AS Count, TollBoothId
+    FROM Input1
+    GROUP BY TumblingWindow(minute, 3), TollBoothId
+    )
+
+    SELECT SUM(Count) AS Count, TollBoothId
+    FROM Step1
+    GROUP BY TumblingWindow(minute, 3), TollBoothId
+```
+
+호환성 수준 1.2 기본적으로 병렬 쿼리 실행을 사용 합니다. 예를 들어, 이전 섹션에서 쿼리 "TollBoothId" 열은 입력된 파티션 키로 설정 하기만 parttioned 됩니다. 파티션 여 ParttionId 절이 필요 하지 않습니다.
 
 ## <a name="calculate-the-maximum-streaming-units-of-a-job"></a>작업의 최대 스트리밍 단위 계산
 Stream Analytics 작업에 사용될 수 있는 스트리밍 단위의 총 수는 작업에 대해 정의된 쿼리의 단계 수와 각 단계에 대한 파티션 수에 따라 결정됩니다.

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: anantr
 ms.component: alerts
-ms.openlocfilehash: 6e97826499842a257f6402bd5268edc4cd6a486e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 212e6b042caec5f24a620dc491dc674417816df7
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66734899"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67310372"
 ---
 # <a name="action-rules-preview"></a>작업 규칙 (미리 보기)
 
@@ -30,6 +30,8 @@ ms.locfileid: "66734899"
 
 경고 규칙을 사용 하면 경고가 생성 되 면 트리거되는 작업 그룹을 정의할 수 있습니다, 있지만 고객은 종종 작업의 범위에서 일반 작업 그룹을 경향이 있습니다. 예를 들어, 'ContosoRG' 리소스 그룹에 대 한 팀 아마도 'ContosoRG' 내에 정의 된 모든 경고 규칙에 대해 동일한 작업 그룹을 정의 됩니다. 작업 규칙을 사용 하면 대규모 작업을 정의할 수 있습니다 작업 그룹은 구성된 범위에 생성 된 모든 경고에 대 한 트리거될 수 있도록 허용 하 여이 프로세스를 간소화 하기 위해 수행할 수 있습니다. 이전 예로 돌아가서, 팀 이제 하나의 작업 규칙 정의에서 동일한 작업 그룹에 생성 된 모든 경고를 트리거하는 'ContosoRG'.
 
+> [!NOTE]
+> 작업 규칙이 현재 적용 되지 않습니다 서비스 상태 경고 합니다.
 
 ## <a name="configuring-an-action-rule"></a>작업 규칙 구성
 
@@ -98,7 +100,7 @@ ms.locfileid: "66734899"
 ### <a name="action-rule-details"></a>작업 규칙 세부 정보
 
 마지막으로, 작업 규칙에 대 한 다음 세부 정보 구성
-* 이름
+* Name
 * 이 저장 될 리소스 그룹
 * 설명 
 

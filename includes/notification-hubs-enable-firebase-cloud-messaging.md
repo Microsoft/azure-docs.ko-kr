@@ -44,7 +44,7 @@ ms.locfileid: "67182455"
         ```
         apply plugin: 'com.google.gms.google-services'
         ```        
-    4. 도구 모음에서 **지금 동기화***를 선택합니다. 
+    4. 도구 모음에서 **지금 동기화** *를 선택합니다. 
  
         ![build.gradle 구성 변경](./media/notification-hubs-enable-firebase-cloud-messaging/build-gradle-configurations.png)
 6. 이 페이지에서 **다음**을 선택합니다. 

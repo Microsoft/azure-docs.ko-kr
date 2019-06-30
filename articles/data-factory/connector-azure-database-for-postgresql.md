@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 35ac227bd420b614525d468f2d3332a2a02b5388
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 18e60d8bc3feb1aa7ba76e5a0b39531d2f52c7dd
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60390910"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312033"
 ---
 # <a name="copy-data-from-azure-database-for-postgresql-using-azure-data-factory"></a>Azure Data Factory를 사용하여 Azure Database for PostgreSQL에서 데이터 복사
 
@@ -49,7 +49,7 @@ Azure Data Factory는 연결을 사용하는 기본 제공 드라이버를 제�
 
 | 자산 | 설명 | 옵션 | 필수 |
 |:--- |:--- |:--- |:--- |
-| EncryptionMethod(EM)| 드라이버와 데이터베이스 서버 간에 전송되는 데이터를 암호화하기 위해 드라이버에서 사용하는 메서드입니다. 예를 들어 `ValidateServerCertificate=<0/1/6>;`| 0(암호화 없음) **(기본값)** / 1(SSL) / 6(RequestSSL) | 아닙니다. |
+| EncryptionMethod(EM)| 드라이버와 데이터베이스 서버 간에 전송되는 데이터를 암호화하기 위해 드라이버에서 사용하는 메서드입니다. 예를 들어 `EncryptionMethod=<0/1/6>;`| 0(암호화 없음) **(기본값)** / 1(SSL) / 6(RequestSSL) | 아닙니다. |
 | ValidateServerCertificate(VSC) | SSL 암호화를 사용할 때(암호화 메서드=1) 데이터베이스 서버에서 보내는 인증서의 유효성을 드라이버가 검사하는지 여부를 결정합니다. 예를 들어 `ValidateServerCertificate=<0/1>;`| 0(사용 안 함) **(기본값)** / 1(사용) | 아닙니다. |
 
 **예제:**

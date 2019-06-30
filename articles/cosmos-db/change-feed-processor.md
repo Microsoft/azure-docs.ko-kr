@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: 9cf9e1aabc0898ef025c7c2f517e631a812e67d7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d0faeba5278e23990a72c9d2dd3d7e18510bdf80
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65969029"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67342054"
 ---
 # <a name="change-feed-processor-in-azure-cosmos-db"></a>Azure Cosmos DB의 변경 피드 프로세서 
 
@@ -66,7 +66,7 @@ Cosmos 컨테이너 내부 및 외부의 데이터 이동은 항상 RU를 사용
 ## <a name="additional-resources"></a>추가 리소스
 
 * [Azure Cosmos DB 변경 피드 프로세서 라이브러리](sql-api-sdk-dotnet-changefeed.md)
-* [NugGet 패키지](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.ChangeFeedProcessor/)
+* [NuGet 패키지](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.ChangeFeedProcessor/)
 * [GitHub의 추가 샘플](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/ChangeFeedProcessor)
 
 ## <a name="next-steps"></a>다음 단계

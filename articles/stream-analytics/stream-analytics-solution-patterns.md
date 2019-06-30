@@ -6,27 +6,27 @@ ms.author: zhongc
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 05/06/2019
-ms.openlocfilehash: 80843abe130f1388a5d4081adab7b9128446763b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/21/2019
+ms.openlocfilehash: 5929ff439bc31e16643e5c57868cd6b68f9cd99c
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65761987"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67329566"
 ---
 # <a name="azure-stream-analytics-solution-patterns"></a>Azure Stream Analytics 솔루션 패턴
 
 Azure의 다른 많은 서비스와 마찬가지로 Stream Analytics는 가장 다른 서비스를 사용 하 여 더 큰 종단 간 솔루션을 만드는 사용 됩니다. 이 문서에서는 간단한 Azure Stream Analytics 솔루션 및 다양 한 아키텍처 패턴에 설명 합니다. 이러한 패턴을 더 복잡 한 솔루션을 개발 하도록 빌드할 수 있습니다. 이 문서에서 설명한 패턴은 다양 한 시나리오에서에서 사용할 수 있습니다. 시나리오별 패턴의 예에 사용할 [Azure 솔루션 아키텍처](https://azure.microsoft.com/solutions/architecture/?product=stream-analytics)합니다.
 
-## <a name="create-a-stream-analytics-job-with-a-real-time-dashboard"></a>실시간 대시보드를 사용 하 여 Stream Analytics 작업 만들기
+## <a name="create-a-stream-analytics-job-to-power-real-time-dashboarding-experience"></a>전원 실시간 대시보드 환경에 Stream Analytics 작업 만들기
 
-사용 편의성은 Azure Stream Analytics를 사용 하 여 구축할 수 있습니다 신속 하 게 실시간 대시보드 및 경고 합니다. Event Hubs 또는 IoT Hub에서 이벤트를 수집 하는 간단한 솔루션 및 [스트리밍 데이터 집합을 사용 하 여 Power BI 대시보드를 피드](/power-bi/service-real-time-streaming)합니다. 자세한 내용은 자세한 자습서를 참조 [Stream Analytics를 사용 하 여 전화 통화 데이터를 분석 하 고 결과 Power BI 대시보드에서 시각화할](stream-analytics-manage-job.md)합니다.
+Azure Stream Analytics를 사용 하 여 구축할 수 있습니다 신속 하 게 실시간 대시보드 및 경고 합니다. Event Hubs 또는 IoT Hub에서 이벤트를 수집 하는 간단한 솔루션 및 [스트리밍 데이터 집합을 사용 하 여 Power BI 대시보드를 피드](/power-bi/service-real-time-streaming)합니다. 자세한 내용은 자세한 자습서를 참조 [Stream Analytics를 사용 하 여 전화 통화 데이터를 분석 하 고 결과 Power BI 대시보드에서 시각화할](stream-analytics-manage-job.md)합니다.
 
 ![ASA Power BI 대시보드](media/stream-analytics-solution-patterns/pbidashboard.png)
 
 Azure portal에서 단 몇 분 후에이 솔루션을 빌드할 수 있습니다. 관련 없는 광범위 한 코딩 되며 SQL 언어는 비즈니스 논리를 표현 하는 데 사용 됩니다.
 
-이 실시간 대시보드 솔루션 패턴 브라우저에서 Power BI 대시보드로 이벤트 원본에서 가장 낮은 대기 시간을 제공합니다. Azure Stream Analytics는이 기본 제공 기능을 사용 하 여 Azure 서비스입니다.
+이 솔루션 패턴 브라우저에서 Power BI 대시보드로 이벤트 원본에서 가장 낮은 대기 시간을 제공합니다. Azure Stream Analytics는이 기본 제공 기능을 사용 하 여 Azure 서비스입니다.
 
 ## <a name="use-sql-for-dashboard"></a>대시보드에 대 한 SQL을 사용 합니다.
 
@@ -34,19 +34,19 @@ Power BI 대시보드는 짧은 대기 시간을 제공 하지만 완전 한 Pow
 
 ![ASA SQL 대시보드](media/stream-analytics-solution-patterns/sqldashboard.png)
 
-SQL을 사용 하 여 데이터베이스를 사용 하면 대기 시간이 증가 하는 대신 더 많은 유연성. 이 솔루션은 1 초 보다 큰 대기 시간 요구 사항 사용 하 여 작업에 적합 합니다. 이 메서드를 사용 하 여 Power BI의 유틸리티 추가 조각을 최대화 수 있으며 보고서에 대 한 데이터를 분할 키를 누릅니다. 또한 Tableau와 같은 다른 대시보드 솔루션을 사용 하 여 유연 합니다.
+SQL database를 사용 하면 보다 유연 하 게 하지만 약간 더 높은 대기 시간을 희생 합니다. 이 솔루션은 1 초 보다 큰 대기 시간 요구 사항 사용 하 여 작업에 적합 합니다. 이 메서드를 사용 하 여 추가 조각에 Power BI 기능을 최대화할 수 있으며 보고서 및 시각화 옵션을 훨씬 더 많은 데이터를 분할 수 있습니다. 또한 Tableau와 같은 다른 대시보드 솔루션을 사용 하 여 유연 합니다.
 
-SQL은 처리량이 높은 데이터 저장소 및 Azure Stream Analytics에서 SQL database에 대 한 최대 처리량은 24 MB/s. 빠른 속도로 데이터를 생성 하는 솔루션의 이벤트 소스를 Stream Analytics에서 처리 논리를 사용 하 여 SQL 출력 속도 줄입니다 해야 합니다. Temporal 조인을 사용 하 여 일치 하는 기간 이동 집계, 필터링 등의 기술을 패턴 및 분석 기능을 사용할 수 있습니다. Sql 출력 속도 최적화할 수 있습니다. 추가에 설명 된 기술을 사용 하 여 [Azure SQL Database에 Azure Stream Analytics 출력](stream-analytics-sql-output-perf.md)합니다.
+SQL은 처리량이 높은 데이터 저장소 아닙니다. Azure Stream Analytics에서 SQL database에 대 한 최대 처리량은 현재 약 24 MB/s입니다. 빠른 속도로 데이터를 생성 하는 솔루션의 이벤트 소스를 Stream Analytics에서 처리 논리를 사용 하 여 SQL 출력 속도 줄입니다 해야 합니다. Temporal 조인을 사용 하 여 일치 하는 기간 이동 집계, 필터링 등의 기술을 패턴 및 분석 기능을 사용할 수 있습니다. Sql 출력 속도 최적화할 수 있습니다. 추가에 설명 된 기술을 사용 하 여 [Azure SQL Database에 Azure Stream Analytics 출력](stream-analytics-sql-output-perf.md)합니다.
 
 ## <a name="incorporate-real-time-insights-into-your-application-with-event-messaging"></a>이벤트 메시징을 사용 하 여 응용 프로그램에 대 한 실시간 정보를 통합 합니다.
 
 가장 인기 있는 두 번째 Stream Analytics 사용 실시간 경고를 생성 하는 것입니다. 이 솔루션 패턴에서 Stream Analytics의 비즈니스 논리를 사용할 수를 검색할 [temporal 및 공간 패턴](stream-analytics-geospatial-functions.md) 또는 [변칙](stream-analytics-machine-learning-anomaly-detection.md), 다음 신호 경고 생성 합니다. 그러나 여기서 Stream Analytics가 Power BI를 사용 하 여 기본 끝점으로 대시보드 솔루션과 달리 다양 한 중간 데이터 싱크로 사용할 수 있습니다. 이러한 싱크는 Event Hubs, Service Bus 및 Azure Functions를 포함 합니다. 응용 프로그램 작성기로 결정 해야 데이터 싱크는 시나리오에 적합 합니다.
 
-기존 비즈니스 워크플로에서 경고를 생성 하도록 다운스트림 이벤트 소비자 논리를 구현 합니다. Azure Functions에서 사용자 지정 논리를 구현할 수 있으므로 함수는이 통합을 수행할 수 있습니다 가장 빠른 방법입니다. Stream Analytics 작업의 출력에서 찾을 수 있습니다 하는 대로 Azure 함수를 사용 하 여에 대 한 자습서 [Azure Stream Analytics 작업에서 Azure Functions 실행](stream-analytics-with-azure-functions.md)합니다. Azure Functions에는 또한 다양 한 유형의 텍스트 등 전자 메일 알림 지원 합니다. Stream Analytics 및 논리 앱 간에 Event Hubs를 사용 하 여 이러한 통합을 위해 논리 앱을 사용할 수도 있습니다.
+기존 비즈니스 워크플로에서 경고를 생성 하도록 다운스트림 이벤트 소비자 논리를 구현 합니다. Azure Functions Azure Functions에서 사용자 지정 논리를 구현할 수 있습니다, 되므로 가장 빠른 방법은이 통합을 수행할 수 있습니다. Stream Analytics 작업의 출력에서 찾을 수 있습니다 하는 대로 Azure 함수를 사용 하 여에 대 한 자습서 [Azure Stream Analytics 작업에서 Azure Functions 실행](stream-analytics-with-azure-functions.md)합니다. Azure Functions에는 또한 다양 한 유형의 텍스트 등 전자 메일 알림 지원 합니다. Stream Analytics 및 논리 앱 간에 Event Hubs를 사용 하 여 이러한 통합을 위해 논리 앱을 사용할 수도 있습니다.
 
 ![ASA 이벤트 메시징 앱](media/stream-analytics-solution-patterns/eventmessagingapp.png)
 
-Event Hubs는 반면에 가장 유연한 통합 지점을 제공 합니다. Azure Data Explorer 및 Time Series Insight 같은 여러 다른 서비스는 Event Hubs에서 이벤트를 사용할 수 있습니다. 서비스는 솔루션을 완료 하려면 Azure Stream Analytics에서 Event hubs에 직접 연결할 수 있습니다. Event Hubs는 또한 높은 처리량 메시징 브로커 이러한 통합 시나리오에 대 한 Azure에서 사용할 수 있습니다.
+Event Hubs는 반면에 가장 유연한 통합 지점을 제공 합니다. Azure Data Explorer 및 Time Series Insights와 같은 다른 많은 서비스는 Event Hubs에서 이벤트를 사용할 수 있습니다. 서비스는 솔루션을 완료 하려면 Azure Stream Analytics에서 Event hubs에 직접 연결할 수 있습니다. Event Hubs는 또한 높은 처리량 메시징 브로커 이러한 통합 시나리오에 대 한 Azure에서 사용할 수 있습니다.
 
 ## <a name="dynamic-applications-and-websites"></a>동적 응용 프로그램 및 웹 사이트
 
@@ -185,7 +185,7 @@ Azure Stream Analytics 작업을 실시간으로 지속적으로 들어오는 �
 
 ## <a name="next-steps"></a>다음 단계
 
-이제 Azure Stream Analytics를 사용 하 여 솔루션 패턴의 다양 한을 살펴보았습니다. 다음으로 심층적으로 알아보고 첫 번째 Stream Analytics 작업을 만들 수 있습니다.
+이제 Azure Stream Analytics를 사용 하 여 솔루션 패턴의 다양 한을 살펴보았습니다. 다음으로 Stream Analytics 작업을 심층적으로 알아보고 첫 번째 Stream Analytics 작업을 만들 수 있습니다.
 
 * [Azure Portal을 사용하여 Stream Analytics 작업 만들기](stream-analytics-quick-create-portal.md)
 * [Azure PowerShell을 사용하여 Stream Analytics 작업 만들기](stream-analytics-quick-create-powershell.md)

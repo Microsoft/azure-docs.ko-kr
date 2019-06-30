@@ -14,12 +14,12 @@ ms.devlang: python
 ms.topic: article
 ms.date: 04/10/2019
 ms.author: aschhab
-ms.openlocfilehash: 6d95e4a0a7aeedef2fc7e635d2e49ea68c3ba0ca
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b74238ee49fe0d96d218f1800a33a9d60badc6d5
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65992042"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341704"
 ---
 # <a name="how-to-use-service-bus-queues-with-python"></a>Python에서 Service Bus 큐를 사용하는 방법
 
@@ -45,13 +45,13 @@ ms.locfileid: "65992042"
 from azure.servicebus import ServiceBusClient
 ```
 
-다음 코드를 **ServiceBusClient** 개체입니다. `mynamespace`, `sharedaccesskeyname` 및 `sharedaccesskey`를 네임스페이스, SAS(공유 액세스 서명) 키 이름 및 값으로 바꿉니다.
+다음 코드를 **ServiceBusClient** 개체입니다. 대체 `<CONNECTION STRING>` 에 service bus 연결 문자열을 사용 하 여 합니다.
 
 ```python
 sb_client = ServiceBusClient.from_connection_string('<CONNECTION STRING>')
 ```
 
-SAS 키 이름 및 값에 대한 값은 [Azure Portal][Azure portal] 연결 정보 또는 Visual Studio **속성** 창(이전 섹션에 표시된 대로 서버 탐색기에서 Service Bus 네임스페이스 선택)에서 확인할 수 있습니다.
+SAS 키 이름 및 값에 대 한 값에서 찾을 수 있습니다는 [Azure portal][Azure portal] 연결 정보 또는 Visual Studio **속성** 창 (서버 탐색기에서 Service Bus 네임 스페이스를 선택 하는 경우 표시 된 이전 섹션에서).
 
 ```python
 sb_client.create_queue("taskqueue")

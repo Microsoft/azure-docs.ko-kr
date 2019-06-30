@@ -14,9 +14,6 @@
       href: apache-hadoop-linux-tutorial-get-started.md
 - name: 자습서
   items:
-    - name: ETL 작업 수행
-      href: ../hdinsight-analyze-flight-delay-data-linux.md
-      maintainContext: true
     - name: 주문형 클러스터 만들기
       href: ../hdinsight-hadoop-create-linux-clusters-adf.md
       maintainContext: true
@@ -141,6 +138,10 @@
         - name: VSCode용 도구
           href: ../hdinsight-for-vscode.md
           maintainContext: true
+        - name: IntelliJ용 도구
+          href: ../spark/apache-spark-intellij-tool-plugin.md
+        - name: Eclipse용 도구
+          href: ../spark/apache-spark-eclipse-tool-plugin.md
         - name: Hortonworks 샌드박스를 사용한 Data Lake 도구
           href: ../hdinsight-hadoop-emulator-visual-studio.md
           maintainContext: true
@@ -186,9 +187,6 @@
           maintainContext: true
         - name: 스크립트 작업 개발
           href: ../hdinsight-hadoop-script-actions-linux.md
-          maintainContext: true
-        - name: Presto 설치 및 사용
-          href: ../hdinsight-hadoop-install-presto.md
           maintainContext: true
         - name: Apache Hive 라이브러리 추가
           href: ../hdinsight-hadoop-add-hive-libraries.md
@@ -467,15 +465,11 @@
     - name: Resource Manager 템플릿
       displayName: 'resource manager template, arm template, resource manager group'
       href: /azure/templates/microsoft.hdinsight/allversions
-- name: 관련 항목
-  items:
-    - name: Windows 클러스터
-      items:
-        - name: Linux 클러스터로 .NET 솔루션 마이그레이션
-          href: ../hdinsight-hadoop-migrate-dotnet-to-linux.md
-          maintainContext: true
 - name: 리소스
   items:
+    - name: Linux 클러스터로 .NET 솔루션 마이그레이션
+      href: ../hdinsight-hadoop-migrate-dotnet-to-linux.md
+      maintainContext: true
     - name: 릴리스 정보
       items:
         - name: 현재 릴리스 정보

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: b-juche
-ms.openlocfilehash: bf2262d8a222cec6c5d0d7e53ded7b2994481656
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 207fb003eb1fdaafe4f43f7cd41dd4b7662eddf9
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205684"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331971"
 ---
 # <a name="guidelines-for-azure-netapp-files-network-planning"></a>Azure NetApp Files 네트워크 계획 지침
 
@@ -81,7 +81,7 @@ VNet은 다른 VNet과 피어 링 하는 경우 VNet 주소 공간을 확장할 
 
 ### <a name="udrs-and-nsgs"></a>Udr 및 Nsg
 
-다음 홉을 사용 하 여 네트워크 보안 그룹 (Nsg) Azure NetApp 파일에 대 한 위임 된 서브넷으로 사용할 수 없습니다. 마찬가지로, 사용자 정의 경로 (Udr)도 지원 되지 않습니다. 
+사용자 정의 경로 (Udr) 및 네트워크 보안 그룹 (Nsg) Azure NetApp 파일에 대 한 위임 된 서브넷에 지원 되지 않습니다.
 
 해결 방법으로 허용 하거나 위임 하는 Azure NetApp 파일 서브넷 간의 트래픽을 거부 하는 다른 서브넷에 Nsg를 적용할 수 있습니다.  
 

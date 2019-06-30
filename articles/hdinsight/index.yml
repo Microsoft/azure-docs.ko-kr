@@ -56,7 +56,7 @@ sections:
           - image:
               src: media/index/ml-server_r.svg
             text: ML 서비스
-            href: /azure/hdinsight/r-server/r-server-get-started
+            href: /azure/hdinsight/r-server/ml-services-quickstart-job-rstudio
   - title: 단계별 자습서
     items:
       - type: paragraph
@@ -64,7 +64,6 @@ sections:
       - type: list
         style: unordered
         items:
-          - html: 'Apache Hadoop&#58; <a href="/azure/hdinsight/hdinsight-analyze-flight-delay-data-linux">ETL 작업 수행</a> | <a href="/azure/hdinsight/hdinsight-hadoop-create-linux-clusters-adf">주문형 클러스터 만들기</a>'
           - html: 'Apache Spark&#58; <a href="/azure/hdinsight/spark/apache-spark-load-data-run-query">대화형 쿼리 실행</a> | <a href="/azure/hdinsight/spark/apache-spark-use-bi-tools">데이터 시각화</a> | <a href="/azure/hdinsight/spark/apache-spark-ipython-notebook-machine-learning">기계 학습</a>'
           - html: 'Apache Kafka&#58; <a href="/azure/hdinsight/hdinsight-apache-kafka-spark-structured-streaming">Kafka를 통한 구조적 스트리밍</a> | <a href="/azure/hdinsight/hdinsight-apache-storm-with-kafka">HDInsight의 Storm에서 사용</a> | <a href="/azure/hdinsight/kafka/apache-kafka-producer-consumer-api">Kafka 생산자 및 소비자 API 사용</a>'
           - html: 'Apache HBase&#58; <a href="/azure/hdinsight/hbase/apache-hbase-provision-vnet">VNET에 HBase 클러스터 만들기</a> | <a href="/azure/hdinsight/hdinsight-phoenix-in-hdinsight">Apache Phoenix 사용</a> | <a href="/azure/hdinsight/hdinsight-using-spark-query-hbase">Spark에 연결</a>'

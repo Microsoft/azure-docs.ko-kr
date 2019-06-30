@@ -3,17 +3,17 @@ title: Azure Stream Analytics 작업에 대한 모니터링 경고 설정
 description: 이 아티클에서는 Azure Portal을 사용하여 Azure Stream Analytics 작업에 대한 모니터링 및 경고를 설정하는 방법을 설명합니다.
 services: stream-analytics
 author: jseb225
-ms.author: jeanb
+ms.author: sidram
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 06/11/2019
-ms.openlocfilehash: 09a5c77c770f7709b90d4959da5be9134b0f0ad9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 06/21/2019
+ms.openlocfilehash: 26e8e004f917b1c138bc27389cac1cc52672f3d4
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67077677"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67329870"
 ---
 # <a name="set-up-alerts-for-azure-stream-analytics-jobs"></a>Azure Stream Analytics 작업에 대한 경고 설정
 
@@ -22,6 +22,7 @@ Azure Stream Analytics 작업을 모니터링하여 작업이 문제 없이 계�
 포털을 통해 작업 로그 데이터에서 메트릭에 대 한 규칙을 정의할 수 있습니다 뿐만 [프로그래밍 방식으로](https://code.msdn.microsoft.com/windowsazure/Receive-Email-Notifications-199e2c9a)입니다.
 
 ## <a name="set-up-alerts-in-the-azure-portal"></a>Azure Portal에서 경고 설정
+### <a name="get-alerted-when-a-job-stops-unexpectedly"></a>작업이 예기치 않게 중지 될 때 알림을 받을합니다
 
 다음 예제에서는 작업이 실패한 상태가 될 때 경고를 설정하는 방법을 보여 줍니다. 이 경고는 모든 작업에 권장됩니다.
 

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: bb99a3c063f69aa5aeb00efdb51319a53d05b2d1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: aaab5ef4d8fc3d60a12f9e9f85f2846695fd1ab4
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67067614"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67329669"
 ---
 # <a name="request-real-time-data-using-the-azure-maps-mobility-service"></a>Azure Maps Mobility Service를 사용 하 여 실시간 데이터를 요청 합니다.
 
@@ -113,22 +113,23 @@ Azure Maps 공용 전송 Api에 대 한 모든 호출을 하려면 맵 계정 �
             }
         ]
     }
+    ```
 
 
-## Real-time data for bike docking station
+## <a name="real-time-data-for-bike-docking-station"></a>자전거 도킹 스테이션에 대 한 실시간 데이터
 
-The [Get Transit Dock Info API](https://aka.ms/AzureMapsMobilityTransitDock) of the Azure Maps Mobility Service, allows to request static and real-time information such as availability and vacancy information for a given bike or scooter docking station. We will make a request to get real-time data for a docking station for bikes.
+합니다 [전송 도킹 정보 API 가져오기](https://aka.ms/AzureMapsMobilityTransitDock) Azure Maps Mobility 서비스 지정된 자전거 또는 스쿠터 도킹 스테이션에 대 한 공석 정보와 가용성 같은 정적 및 실시간 정보를 요청할 수 있습니다. 자전거 도킹 스테이션에 대 한 실시간 데이터를 가져오려는 요청을 해 드립니다.
 
-In order to make a request to the Get Transit Dock Info API, you will need the **dockId** for that station. You can get the dock ID by making a search request to the [Get Nearby Transit API](https://aka.ms/AzureMapsMobilityNearbyTransit) and setting the **objectType** parameter to "bikeDock". Follow the steps below to get real-time data of a docking station for bikes.
+전송 도킹 정보 가져오기 API를 요청 하기 위해 필요 합니다 **dockId** 해당 스테이션에 대 한 합니다. 검색 요청을 수행 하 여 도킹 ID를 가져올 수 있습니다는 [주변 전송 API 가져오기](https://aka.ms/AzureMapsMobilityNearbyTransit) 설정 하는 **objectType** "bikeDock" 매개 변수입니다. 자전거 도킹 스테이션의 실시간 데이터를 가져오려면 다음 단계를 수행 합니다.
 
 
-### Get dock ID
+### <a name="get-dock-id"></a>도킹 ID 가져오기
 
-To get **dockID**, follow the steps below to make a request to the Get Nearby Transit API:
+가져오려는 **dockID**, 주변 전송 API 가져오기 요청을 수행 하려면 다음 단계를 수행 합니다.
 
-1. In Postman, click **New Request** | **GET request** and name it **Get dock ID**.
+1. Postman에서 클릭 **새 요청** | **GET 요청** 하 고 이름을 **Get 도킹 ID**합니다.
 
-2.  On the Builder tab, select the **GET** HTTP method, enter the following request URL, and click **Send**.
+2.  작성기 탭에서 선택 합니다 **가져올** HTTP 메서드를 다음 요청 URL을 입력 하 고 클릭 **보낼**합니다.
  
     ```HTTP
     https://atlas.microsoft.com/mobility/transit/nearby/json?subscription-key={subscription-key}&api-version=1.0&metroId=121&query=40.7663753,-73.9627498&radius=100&objectType=bikeDock

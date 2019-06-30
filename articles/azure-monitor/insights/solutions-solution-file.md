@@ -70,7 +70,7 @@ Azure의 관리 솔루션은 [Resource Manager 템플릿](../../azure-resource-m
 
 | 특성 | 설명 |
 |:--- |:--- |
-| 형식 |매개 변수의 데이터 형식입니다. 사용자에게 표시되는 입력 컨트롤은 데이터 형식에 따라 다릅니다.<br><br>bool - 드롭다운 상자<br>string - 텍스트 상자<br>int - 텍스트 상자<br>securestring - 암호 필드<br> |
+| type |매개 변수의 데이터 형식입니다. 사용자에게 표시되는 입력 컨트롤은 데이터 형식에 따라 다릅니다.<br><br>bool - 드롭다운 상자<br>string - 텍스트 상자<br>int - 텍스트 상자<br>securestring - 암호 필드<br> |
 | category |매개 변수의 선택적 범주입니다.  같은 범주의 매개 변수는 함께 그룹화됩니다. |
 | control |string 매개 변수의 추가 기능입니다.<br><br>datetime - Datetime 컨트롤이 표시됩니다.<br>guid - Guid 값이 자동으로 생성되고 매개 변수가 표시되지 않습니다. |
 | description |매개 변수에 대한 선택적 설명입니다.  매개 변수 옆에 정보 풍선으로 표시됩니다. |
@@ -83,14 +83,14 @@ Azure의 관리 솔루션은 [Resource Manager 템플릿](../../azure-resource-m
 >
 >
 
-| 매개 변수 | 형식 | 설명 |
+| 매개 변수 | type | 설명 |
 |:--- |:--- |:--- |
-| accountName |문자열 |Azure Automation 계정 이름입니다. |
-| pricingTier |문자열 |Log Analytics 작업 영역 및 Azure Automation 계정의 가격 책정 계층입니다. |
-| regionId |문자열 |Azure Automation 계정의 지역입니다. |
-| solutionName |문자열 |솔루션의 이름입니다.  빠른 시작 템플릿을 통해 솔루션을 배포하는 경우 사용자에게 지정하도록 요구하는 대신 문자열을 정의할 수 있도록 solutionName을 매개 변수로 정의해야 합니다. |
-| workspaceName |문자열 |Log Analytics 작업 영역 이름입니다. |
-| workspaceRegionId |문자열 |Log Analytics 작업 영역의 지역입니다. |
+| accountName |string |Azure Automation 계정 이름입니다. |
+| pricingTier |string |Log Analytics 작업 영역 및 Azure Automation 계정의 가격 책정 계층입니다. |
+| regionId |string |Azure Automation 계정의 지역입니다. |
+| solutionName |string |솔루션의 이름입니다.  빠른 시작 템플릿을 통해 솔루션을 배포하는 경우 사용자에게 지정하도록 요구하는 대신 문자열을 정의할 수 있도록 solutionName을 매개 변수로 정의해야 합니다. |
+| workspaceName |string |Log Analytics 작업 영역 이름입니다. |
+| workspaceRegionId |string |Log Analytics 작업 영역의 지역입니다. |
 
 
 다음은 솔루션 파일에 복사하여 붙여넣을 수 있는 표준 매개 변수 구조입니다.  
@@ -225,7 +225,7 @@ Azure의 관리 솔루션은 [Resource Manager 템플릿](../../azure-resource-m
 | 자산 | 설명 |
 |:--- |:--- |
 | name |솔루션의 이름입니다. |
-| 버전 |솔루션 버전은 작성자가 결정합니다. |
+| version |솔루션 버전은 작성자가 결정합니다. |
 | product |솔루션을 식별하는 고유 문자열입니다. |
 | publisher |솔루션의 게시자입니다. |
 

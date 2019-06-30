@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: apimpm
-ms.openlocfilehash: 9a19165f9ac15f7a40aea0501f960b06efbd63a3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6446919c80e7e3fd379e6e39eb51712f9736ea7e
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66304370"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341208"
 ---
 # <a name="api-management-policy-expressions"></a>API Management 정책 식
 이 문서에서는 C# 7 정책 식 구문에 대해 설명합니다. 각 식에서 암시적으로 제공된 [컨텍스트](api-management-policy-expressions.md#ContextVariables) 변수와 .NET Framework 형식의 허용된 [하위 집합](api-management-policy-expressions.md#CLRTypes)에 액세스합니다.
@@ -94,19 +94,19 @@ ms.locfileid: "66304370"
 |System.Byte|모두|
 |System.Char|모두|
 |System.Collections.Generic.Dictionary<TKey, TValue>|모두|
-|System.Collections.Generic.HashSet<T>|모두|
-|System.Collections.Generic.ICollection<T>|모두|
+|System.Collections.Generic.HashSet\<T>|모두|
+|System.Collections.Generic.ICollection\<T>|모두|
 |System.Collections.Generic.IDictionary<TKey, TValue>|모두|
-|System.Collections.Generic.IEnumerable<T>|모두|
-|System.Collections.Generic.IEnumerator<T>|모두|
-|System.Collections.Generic.IList<T>|모두|
-|System.Collections.Generic.IReadOnlyCollection<T>|모두|
+|System.Collections.Generic.IEnumerable\<T>|모두|
+|System.Collections.Generic.IEnumerator\<T>|모두|
+|System.Collections.Generic.IList\<T>|모두|
+|System.Collections.Generic.IReadOnlyCollection\<T>|모두|
 |System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>|모두|
-|System.Collections.Generic.ISet<T>|모두|
+|System.Collections.Generic.ISet\<T>|모두|
 |System.Collections.Generic.KeyValuePair<TKey, TValue>|모두|
-|System.Collections.Generic.List<T>|모두|
-|System.Collections.Generic.Queue<T>|모두|
-|System.Collections.Generic.Stack<T>|모두|
+|System.Collections.Generic.List\<T>|모두|
+|System.Collections.Generic.Queue\<T>|모두|
+|System.Collections.Generic.Stack\<T>|모두|
 |System.Convert|모두|
 |System.DateTime|(생성자)에 AddDays, AddHours, AddMilliseconds, AddMinutes, AddMonths, AddSeconds, AddTicks, AddYears, 날짜, Day, DayOfWeek, DayOfYear, DaysInMonth, 시간, IsDaylightSavingTime, IsLeapYear, MaxValue, 밀리초, 분, MinValue, 월, 지금 추가 를 구문 분석, 둘째, Subtract, 틱, 시간, 오늘, ToString, UtcNow, 연도|
 |System.DateTimeKind|Utc|

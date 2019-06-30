@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: cff1bbefc3c54f7f9c02c646bd9eef528fe28c73
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 73ef5cc00b5154dbdbc92911d17740c7d13038ec
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64939564"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341974"
 ---
 # <a name="troubleshooting-metrics-charts"></a>메트릭 차트를 문제 해결
 
@@ -73,7 +73,7 @@ Azure에서 메트릭에 액세스 하 여 제어 됩니다 [역할 기반 액�
 
 ## <a name="error-retrieving-data-message-on-dashboard"></a>대시보드에서 "데이터 검색 중 오류 발생" 메시지
 
-이 문제는 나중에 사용 되지 않으며 Azure에서 제거 하는 메트릭을 사용 하 여 대시보드를 만들 때 일반적입니다. 대/소문자 인지를 확인 하려면 엽니다는 **메트릭** 리소스 및 메트릭 선택기의 사용 가능한 메트릭 확인 탭. 메트릭이 표시 되지 않으면 Azure에서 메트릭을 제거 되었습니다. 일반적으로 메트릭은 사용 되지 경우 리소스 상태와 유사한 큐브 뷰를 사용 하 여 제공 하는 보다 잘 새 메트릭을 않습니다.
+이 문제는 나중에 사용 되지 않으며 Azure에서 제거 하는 메트릭을 사용 하 여 대시보드를 만들 때 발생할 수 있습니다. 대/소문자 인지를 확인 하려면 엽니다는 **메트릭** 리소스 및 메트릭 선택기의 사용 가능한 메트릭 확인 탭. 메트릭이 표시 되지 않으면 Azure에서 메트릭을 제거 되었습니다. 일반적으로 메트릭은 사용 되지 경우 리소스 상태와 유사한 큐브 뷰를 사용 하 여 제공 하는 보다 잘 새 메트릭을 않습니다.
 
 **해결 방법:** 대시보드에서 차트에 대 한 대체는 메트릭을 선택 하 여 실패 한 타일을 업데이트 합니다. 할 수 있습니다 [Azure 서비스에 대 한 사용 가능한 메트릭 목록을 검토](metrics-supported.md)합니다.
 

@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: routlaw
 ms.custom: seodec18
-ms.openlocfilehash: 9339d891e8fe895f598e1a2615fcfa66b053b3e0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 91368ac3b1d7948257fa9e55debc862567593425
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67063847"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341377"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Azure App Service에 대 한 Linux Java 앱 구성
 
@@ -60,6 +60,43 @@ Azure Portal 또는 [Azure CLI](/cli/azure/webapp/log#az-webapp-log-config)를 �
 ### <a name="troubleshooting-tools"></a>문제 해결 도구
 
 기본 제공 Java 이미지를 기반으로 합니다 [Alpine Linux](https://alpine-linux.readthedocs.io/en/latest/getting_started.html) 운영 체제입니다. 사용 된 `apk` 문제 해결을 설치 하려면 패키지 관리자 도구 또는 명령입니다.
+
+### <a name="flight-recorder"></a>비행 레코더
+
+App Service의 모든 Linux Java 이미지에는 쉽게 JVM에 연결 하 고 기록 하는 프로파일러를 시작 하거나 생성할 수 있습니다 힙 덤프를 설치 하는 Zulu 비행 레코더는 있습니다.
+
+#### <a name="timed-recording"></a>시간 초과 기록
+
+시작, App Service에 대 한 SSH 가져오고 실행 하는 `jcmd` 실행 중인 모든 Java 프로세스의 목록을 보려면 명령입니다. 프로세스 ID 번호 (pid)를 사용 하 여 실행 중인 Java 응용 프로그램 자체 jcmd, 외에도 표시 됩니다.
+
+```shell
+078990bbcd11:/home# jcmd
+Picked up JAVA_TOOL_OPTIONS: -Djava.net.preferIPv4Stack=true
+147 sun.tools.jcmd.JCmd
+116 /home/site/wwwroot/app.jar
+```
+
+30 초 기록 하면 JVM 시작 하려면 아래 명령을 실행 합니다. JVM을 프로 파일링 되 고 라는 JFR 파일을 만들고 `jfr_example.jfr` 홈 디렉터리에 있습니다. (Java 앱의 pid를 사용 하 여 116을 바꿉니다.)
+
+```shell
+jcmd 116 JFR.start name=MyRecording settings=profile duration=30s filename="/home/jfr_example.jfr"
+```
+
+녹음/녹화를 확인할 수는 30 초 간격 동안 수행 되 고 실행 하 여 `jcmd 116 JFR.check`. 지정된 된 Java 프로세스에 대 한 모든 기록 표시 됩니다.
+
+#### <a name="continuous-recording"></a>연속 기록
+
+지속적으로 런타임 성능에 영향을 최소화 하면서 Java 응용 프로그램 프로 파일링 하려면 Zulu 비행 레코더를 사용할 수 있습니다 ([원본](https://assets.azul.com/files/Zulu-Mission-Control-data-sheet-31-Mar-19.pdf)). 이렇게 하려면 필요한 구성을 사용 하 여 JAVA_OPTS 라는 앱 설정을 만들고 다음 Azure CLI 명령을 실행 합니다. JAVA_OPTS 앱 설정의 내용을 전달 되는 `java` 앱이 시작 될 때 명령입니다.
+
+```azurecli
+az webapp config appsettings set -g <your_resource_group> -n <your_app_name> --settings JAVA_OPTS=-XX:StartFlightRecording=disk=true,name=continuous_recording,dumponexit=true,maxsize=1024m,maxage=1d
+```
+
+자세한 내용은 참조 하십시오 합니다 [Jcmd 명령 참조](https://docs.oracle.com/javacomponents/jmc-5-5/jfr-runtime-guide/comline.htm#JFRRT190)합니다.
+
+### <a name="analyzing-recordings"></a>녹음/녹화를 분석합니다.
+
+사용 하 여 [FTPS](../deploy-ftp.md) JFR 파일에 로컬 컴퓨터에 다운로드 합니다. 파일을 분석 JFR, 다운로드 및 설치 [Zulu 관제](https://www.azul.com/products/zulu-mission-control/)합니다. 를 Zulu 임무 컨트롤에 대 한 참조를 [Azul 설명서](https://docs.azul.com/zmc/) 하며 [설치 지침](https://docs.microsoft.com/en-us/java/azure/jdk/java-jdk-flight-recorder-and-mission-control).
 
 ## <a name="customization-and-tuning"></a>사용자 지정 및 튜닝
 
@@ -230,7 +267,7 @@ Spring 또는 Tomcat 구성 파일에서 이러한 암호를 삽입, 환경 변�
 
 기본적으로 App Service는 이라는 이름으로 JAR 응용 프로그램 `app.jar`합니다. 이 이름에 해당 하는 경우 자동으로 실행 됩니다. Maven 사용자에 게는 JAR 이름을 포함 하 여 설정할 수 있습니다 `<finalName>app</finalName>` 에 `<build>` 부분에 `pom.xml`입니다. [Gradle에서 동일 하 게 수행할 수 있습니다](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html#org.gradle.api.tasks.bundling.Jar:archiveFileName) 설정 하 여는 `archiveFileName` 속성입니다.
 
-JAR에 대 한 다른 이름을 사용 하려는 경우 제공 해야 합니다 [시작 명령](app-service-linux-faq.md#built-in-images) JAR 파일을 실행 하는 합니다. 예: `java -jar my-jar-app.jar`. 구성 포털의 시작 명령에 대 한 값을 설정할 수 있습니다 > 일반 설정 또는 이름이 응용 프로그램 설정을 `STARTUP_COMMAND`합니다.
+JAR에 대 한 다른 이름을 사용 하려는 경우 제공 해야 합니다 [시작 명령](app-service-linux-faq.md#built-in-images) JAR 파일을 실행 하는 합니다. 예: `java -jar my-jar-app.jar` 구성 포털의 시작 명령에 대 한 값을 설정할 수 있습니다 > 일반 설정 또는 이름이 응용 프로그램 설정을 `STARTUP_COMMAND`합니다.
 
 ### <a name="server-port"></a>서버 포트
 

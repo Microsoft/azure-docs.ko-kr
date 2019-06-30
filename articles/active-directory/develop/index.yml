@@ -1,6 +1,13 @@
 ### YamlMime:Landing
 title: Microsoft ID 플랫폼(이전의 개발자용 Azure Active Directory)
 summary: 'Microsoft ID 플랫폼은 Azure AD(Azure Active Directory) 개발자 플랫폼의 발전된 형태입니다. 이 플랫폼을 사용하면 개발자가 모든 Microsoft ID에 로그인하고, Microsoft Graph와 같은 Microsoft API 또는 개발자가 빌드한 API를 호출하기 위한 토큰을 가져오는 애플리케이션을 빌드할 수 있습니다. OAuth 2.0 및 OpenID Connect 표준 규격 인증 서비스, 오픈 소스 라이브러리, 애플리케이션 등록 및 구성, 강력한 개념 및 참조 설명서, 빠른 시작 샘플, 코드 샘플, 자습서 및 방법 가이드로 구성된 모든 기능을 갖춘 플랫폼입니다.'
+metadata:
+  ms.topic: landing-page
+  ms.date: 06/22/2019
+  author: CelesteDG
+  ms.service: active-directory
+  ms.subservice: develop
+  ms.workload: identity
 landingContent:
   - title: Microsoft ID 플랫폼 정보
     linkLists:

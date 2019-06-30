@@ -5,8 +5,8 @@ metadata:
   title: Azure AD Domain Services 설명서
   description: Active Directory Domain Services를 사용하여 도메인 컨트롤러를 사용하지 않고 Azure 가상 머신을 도메인에 조인하는 방법에 대해 알아봅니다. 자습서 및 기타 설명서에서는 그룹 정책을 사용하여 가상 머신을 관리하는 방법을 보여 줍니다.
   keywords: 'Azure AD, Azure, 도메인 가입, 그룹 정책, LDAP, Kerberos, 도메인 컨트롤러, DC, 리프트 앤 시프트'
-  author: MikeStephens-MS
-  ms.author: mstephen
+  author: iainfoulds
+  ms.author: iainfou
   manager: daveba
   ms.date: 05/22/2019
   ms.topic: landing-page

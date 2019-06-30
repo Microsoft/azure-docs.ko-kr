@@ -31,7 +31,7 @@ ms.locfileid: "64922383"
 
 ## <a name="prequisites"></a>필수 조건
 
-이 빠른 시작의 목적상 Origin으로 사용할 웹 애플리케이션이 있어야 합니다. 이 빠른 시작에서 사용한 예제 웹 애플리케이션은 https://cdndemo.azurewebsites.net에 배포되었습니다.
+이 빠른 시작의 목적상 Origin으로 사용할 웹 애플리케이션이 있어야 합니다. 이 빠른 시작에서 사용한 예제 웹 애플리케이션은 https://cdndemo.azurewebsites.net 에 배포되었습니다.
 
 자세한 내용은 [Azure에서 정적 HTML 웹앱 만들기](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-html)를 참조하세요.
 
@@ -210,7 +210,7 @@ az cdn endpoint list --profile-name standard-microsoft --resource-group cdn -o t
 
 ![CDN 엔드포인트 보기](./media/create-profile-resource-manager-template/cdn-view-endpoint.png)
 
-콘텐츠를 보려면 HostName을 사용합니다. 예를 들어, 브라우저를 사용하여 https://cdndemo-azurewebsites-net.azureedge.net에 액세스합니다.
+콘텐츠를 보려면 HostName을 사용합니다. 예를 들어, 브라우저를 사용하여 https://cdndemo-azurewebsites-net.azureedge.net 에 액세스합니다.
 
 ## <a name="clean-up"></a>정리
 

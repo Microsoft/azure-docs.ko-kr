@@ -8,17 +8,17 @@ manager: kfile
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 05/17/2019
-ms.openlocfilehash: acafd6d8f37edd3e16561a4e588556bb771619f8
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.date: 06/21/2019
+ms.openlocfilehash: 54296f0b4aed22457a5218154111a42ad01ec262
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67206701"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67329333"
 ---
 # <a name="understand-and-adjust-streaming-units"></a>스트리밍 단위 이해 및 조정
 
-SU(스트리밍 단위)는 작업을 실행하도록 할당된 컴퓨팅 리소스를 나타냅니다. SU 수가 클수록 작업에 더 많은 CPU 및 메모리 리소스가 할당됩니다. 이러한 용량을 통해 쿼리 논리에 중점을 두고 Stream Analytics 작업을 적시에 실행하도록 하드웨어를 관리해야 할 필요성을 요약할 수 있습니다.
+스트리밍 단위 (Su) 실행 하는 Stream Analytics 작업에 할당 되는 컴퓨팅 리소스를 나타냅니다. SU 수가 클수록 작업에 더 많은 CPU 및 메모리 리소스가 할당됩니다. 이러한 용량을 통해 쿼리 논리에 중점을 두고 Stream Analytics 작업을 적시에 실행하도록 하드웨어를 관리해야 할 필요성을 요약할 수 있습니다.
 
 Azure Stream Analytics 작업은 대기 시간이 짧은 스트리밍 처리를 위해 모든 처리를 메모리 안에서 수행합니다. 메모리가 부족하면 스트리밍 작업이 실패합니다. 결과적으로, 프로덕션 작업의 경우 스트리밍 작업의 리소스 사용을 모니터링하고 작업을 중단 없이 실행하기에 충분한 리소스가 할당되도록 확인해야 합니다.
 
@@ -85,7 +85,7 @@ temporal 시간 범위 개념은 몇 가지 Stream Analytics 쿼리 요소에 �
    GROUP BY  clusterid, tumblingwindow (minutes, 5)
    ```
 
-앞의 쿼리에서 카디널리티가 커서 발생한 문제를 개선하기 위해 `clusterid`로 분할된 Event Hubs에 이벤트를 보내고 아래 예제에서처럼 **PARTITION BY**를 사용하여 개별적으로 각 입력 파티션을 처리할 수 있습니다.
+이전 쿼리에서 카디널리티가 발생 하는 모든 문제를 완화 하기 위해 분할 하 여 이벤트 허브로 이벤트를 보낼 수 있습니다 `clusterid`, 및 시스템을 사용 하 여 별도로 각 입력된 파티션을 처리할 수 있도록 하 여 쿼리 확장 **파티션**  아래 예와에서 같이:
 
    ```sql
    SELECT count(*) 

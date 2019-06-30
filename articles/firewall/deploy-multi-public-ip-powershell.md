@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 06/15/2019
+ms.date: 06/21/2019
 ms.author: victorh
-ms.openlocfilehash: a7dd35212a573fc3e94dadea4365f150122e1b5a
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 9ec37197376c815c4fb9072164520a707b02be2b
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67276744"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312734"
 ---
 # <a name="deploy-an-azure-firewall-with-multiple-public-ip-addresses-using-azure-powershell"></a>Azure PowerShell을 사용 하 여 여러 공용 IP 주소를 사용 하 여 Azure 방화벽을 배포
 
@@ -31,7 +31,7 @@ ms.locfileid: "67276744"
 다음 Azure PowerShell 예제를 추가, 제거 하는 방법 Azure 방화벽에 대 한 공용 IP 주소를 구성에 표시 합니다.
 
 > [!NOTE]
-> 를 추가 하거나 실행 중인 방화벽에 공용 IP 주소를 제거 하는 경우 40 120 초 DNAT 규칙을 사용 하 여 기존 인바운드 연결이 작동 하지 않습니다. 이 기능에 대 한 공개 미리 보기 제한 됩니다.
+> 공개 미리 보기에서 추가 하거나 실행 중인 방화벽에 공용 IP 주소를 제거 하면 DNAT 규칙을 사용 하 여 기존 인바운드 연결이 작동 하지 않을 40 120 초. 방화벽을 할당 취소 하거나 삭제 하는 경우가 아니면 방화벽에 할당 된 첫 번째 공용 IP 주소를 제거할 수 없습니다.
 
 ## <a name="add-a-public-ip-address-to-an-existing-firewall"></a>기존 방화벽에 공용 IP 주소 추가
 

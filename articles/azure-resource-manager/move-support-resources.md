@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 6/6/2019
 ms.author: tomfitz
-ms.openlocfilehash: 314b28edbd5770186d96fb2a2b203f26ff27bda0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9ab8fbd8fa0453ca6c89f3e7ad91bea95b0b9096
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66752360"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331994"
 ---
 # <a name="move-operation-support-for-resources"></a>리소스에 대한 이동 작업 지원
 이 문서에서는 Azure 리소스 종류가 이동 작업을 지원하는지 여부에 대한 정보를 제공합니다. 이동 작업을 지원하는 리소스 종류라도 해당 리소스를 이동할 수 없는 조건이 있을 수 있습니다. 이동 작업에 영향을 주는 조건에 대한 자세한 내용은 [새 리소스 그룹 또는 구독으로 리소스 이동](resource-group-move-resources.md)을 참조하세요.
@@ -564,8 +564,8 @@ ms.locfileid: "66752360"
 | expressroutecrossconnections | 아닙니다. | 아닙니다. |
 | expressroutegateways | 아닙니다. | 아닙니다. |
 | expressrouteports | 아닙니다. | 아닙니다. |
-| frontdoors | 예 | 예 |
-| frontdoorwebapplicationfirewallpolicies | 예 | 예 |
+| frontdoors | 아닙니다. | 아닙니다. |
+| frontdoorwebapplicationfirewallpolicies | 아닙니다. | 아닙니다. |
 | loadbalancers | 예 | 예 |
 | localnetworkgateways | 예 | 예 |
 | natgateways | 예 | 예 |

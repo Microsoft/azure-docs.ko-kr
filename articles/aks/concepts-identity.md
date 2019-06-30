@@ -75,7 +75,7 @@ ClusterRoleBinding은 사용자에게 역할을 바인딩하는 것과 동일한
 
 Azure AD 및 Kubernetes RBAC를 시작하려면 [AKS와 Azure Active Directory 통합][aks-aad]을 참조하세요.
 
-관련된 모범 사례를 참조 하세요 [인증 및 권한 부여 AKS에 대 한 유용한][operator-best-practices-identity]합니다.
+관련 모범 사례는 [AKS에서 인증 및 권한 부여하기에 대한 모범 사례][operator-best-practices-identity]를 참조하세요.
 
 Kubernetes 및 AKS 핵심 개념에 대한 자세한 내용은 다음 문서를 참조하세요.
 

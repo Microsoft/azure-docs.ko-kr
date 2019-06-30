@@ -33,7 +33,7 @@ Azure Cosmos DB의 etcd API에 대한 자세한 내용은 [개요](etcd-api-intr
 
    Azure Kubernetes 엔진(**aks-engine**)은 Azure에서 Kubernetes 클러스터용 Azure Resource Manager 템플릿을 생성합니다. aks-engine에 입력하는 항목은 오케스트레이터, 기능 및 에이전트를 포함하여 원하는 클러스터를 설명하는 클러스터 정의 파일입니다. 입력 파일의 구조는 Azure Kubernetes Service의 공용 API와 비슷합니다.
 
-1. Azure Cosmos DB의 etcd API는 현재 미리 보기로 제공됩니다. https://aka.ms/cosmosetcdapi-signup에서 미리 보기 버전을 사용하도록 가입합니다. 양식을 제출하면 구독은 Azure Cosmos etcd API를 사용하기 위한 허용 목록에 추가됩니다. 
+1. Azure Cosmos DB의 etcd API는 현재 미리 보기로 제공됩니다. [https://aka.ms/cosmosetcdapi-signup](https://aka.ms/cosmosetcdapi-signup )에서 미리 보기 버전을 사용하도록 가입합니다. 양식을 제출하면 구독은 Azure Cosmos etcd API를 사용하기 위한 허용 목록에 추가됩니다. 
 
 ## <a name="deploy-the-cluster-with-azure-cosmos-db"></a>Azure Cosmos DB를 사용하여 클러스터 배포
 

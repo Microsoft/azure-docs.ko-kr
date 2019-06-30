@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: a3b4886bc175311e9a0e61f3dfb99b1fe7e1a679
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 757366f1d1f94d11438be4df0772ce1155f71cee
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66236754"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67310581"
 ---
 # <a name="azure-cosmos-db-as-a-key-value-store--cost-overview"></a>키 값 저장소로서의 Azure Cosmos DB – 비용 개요
 
 Azure Cosmos DB는 대규모의 고가용성 애플리케이션을 쉽게 빌드하기 위한 전역으로 분산된 다중 모델 데이터베이스 서비스입니다. 기본적으로 Azure Cosmos DB는 수집하는 모든 데이터를 자동으로 효율적으로 인덱싱합니다. 이를 통해 모든 종류의 데이터에 대해 빠르고 일관된 [SQL](how-to-sql-query.md)(및 [JavaScript](stored-procedures-triggers-udfs.md)) 쿼리가 가능해집니다. 
 
-이 문서는 키/값 저장소로 사용될 경우 간단한 쓰기 및 읽기 작업의 Azure Cosmos DB 비용에 대해 설명합니다. 쓰기 작업에는 문서의 삽입, 바꾸기, 삭제 및 upsert가 포함됩니다. Azure Cosmos DB는 모든 단일 지역 계정과, 여유 일관성으로 구성된 모든 다중 지역 계정에 대해 99.99% 가용성 SLA를 보장하고 모든 다중 지역 데이터베이스 계정에 대해 99.999% 읽기 가용성을 보장하는 것 외에도, &lt;10-ms 읽기 대기 시간과 &lt;15-ms 쓰기(인덱싱된) 대기 시간을 보장합니다(백분위수 99). 
+이 문서는 키/값 저장소로 사용될 경우 간단한 쓰기 및 읽기 작업의 Azure Cosmos DB 비용에 대해 설명합니다. 쓰기 작업에는 문서의 삽입, 바꾸기, 삭제 및 upsert가 포함됩니다. 99.99% 보장 하는 것 외에도 가용성 SLA 모든 단일 지역 계정 및 모든 다중 지역 계정 관대 한 일관성 및 99.999% 읽기 가용성을 모든 다중 지역 데이터베이스 계정에 Azure Cosmos DB는 보장 < 10 밀리초 대기 시간 읽기 및 (인덱싱된)에 대 한 쓰기 각각 99 번째 백분위 수에 합니다. 
 
 ## <a name="why-we-use-request-units-rus"></a>RU(요청 단위)를 사용하는 이유
 

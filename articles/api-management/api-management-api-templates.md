@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: 82c180d869801cd9cd91a3e2a3659644f4e263d9
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: e8519bf436e1af19a22a840f48bf1bfccdae99b2
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67273332"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341264"
 ---
 # <a name="api-templates-in-azure-api-management"></a>Azure API Management의 API 템플릿
 
@@ -1363,7 +1363,7 @@ except Exception as e:
     print("[Errno {0}] {1}".format(e.errno, e.strerror))  
   
 ####################################  
-```  
+```
   
 #### <a name="controls"></a>컨트롤  
  코드 샘플 템플릿에서는 [페이지 컨트롤](api-management-page-controls.md) 사용을 허용하지 않습니다.  

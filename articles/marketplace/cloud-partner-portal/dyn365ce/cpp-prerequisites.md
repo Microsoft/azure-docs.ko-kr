@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: pabutler
-ms.openlocfilehash: dd2e68c820a8c9e503a3539fd50bf3fba68e3949
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9cfec65843012e781c8a8dd06cbc4d1225b0dd36
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66257518"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67338904"
 ---
 # <a name="dynamics-365-for-customer-engagement-prerequisites"></a>Dynamics 365 for Customer Engagement 필수 구성 요소
 
@@ -40,7 +40,7 @@ Dynamics 365 for Customer Engagement 애플리케이션에서 다음 요구 사�
 
 비즈니스 요구 사항에는 다음과 같은 절차, 계약 및 법적 의무가 포함됩니다.
 
-* [MPN(Microsoft 파트너 네트워크)](https://partners.microsoft.com/PartnerProgram/simplifiedenrollment.aspx)에 등록되거나 등록된 클라우드 Marketplace 게시자여야 합니다. 등록되지 않은 경우 [클라우드 Marketplace 게시자 되기](https://docs.microsoft.com/azure/marketplace/become-publisher)의 단계를 수행합니다.  (세 번째 단계에서는 [AppSource 파트너 후보 추천 양식](https://appsource.microsoft.com/partners/signup)을 대신 사용합니다.) 
+* [MPN(Microsoft 파트너 네트워크)](https://partners.microsoft.com/PartnerProgram/simplifiedenrollment.aspx)에 등록되거나 등록된 클라우드 Marketplace 게시자여야 합니다. 등록되지 않은 경우 [클라우드 Marketplace 게시자 되기](https://docs.microsoft.com/azure/marketplace/become-publisher)의 단계를 수행합니다.  (사용 하 여 연결할 수 있습니다 합니다 [Dynamics 365 Customer Engagement 온 보 딩 팀](https://experience.dynamics.com/isvengage/)).
 
     >[!NOTE]
     >동일한 Microsoft 개발자 센터 등록 계정을 사용하여 Cloud 파트너 포털에 로그온해야 합니다. Azure Marketplace 제품에 대해 Microsoft 계정이 하나만 있으면 됩니다. 이 계정은 개별 서비스 또는 제품에 한정되지 않아야 합니다.

@@ -14,14 +14,17 @@
     - name: Video Indexer API 사용
       href: video-indexer-use-apis.md
 - name: 개념
-  href: video-indexer-concepts.md
   items:
+    - name: 개요
+      href: video-indexer-concepts.md
     - name: Video Indexer와 Media Services 사전 설정 비교
       href: compare-video-indexer-with-media-services-presets.md
     - name: 여러 테넌트 관리
       href: manage-multiple-tenants.md
     - name: 콘텐츠 모델 사용자 지정
       items:
+        - name: 개요
+          href: customize-content-models-overview.md
         - name: 브랜드
           href: customize-brands-model-overview.md
         - name: 언어
@@ -86,3 +89,5 @@
       href: faq.md
     - name: 규정 준수
       href: 'https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942'
+    - name: 릴리스 정보
+      href: release-notes.md

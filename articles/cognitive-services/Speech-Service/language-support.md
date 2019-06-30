@@ -18,7 +18,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 05/27/2019
 ms.locfileid: "65020848"
 ---
-# <a name="language-and-region-support-for-the-speech-services"></a>음성 서비스에 대 한 언어 및 지역 지원
+# <a name="language-and-region-support-for-the-speech-services"></a>음성 서비스에 대한 언어 및 지역 지원
 
 Speech Service 기능마다 다른 언어가 지원됩니다. 다음 표에서는 언어 지원을 요약합니다.
 
@@ -184,7 +184,7 @@ zh-TW | 중국어(대만) | Female | “Microsoft Server Speech Text to Speech V
 사용자 지정 음성 수 DE-DE "," EN-GB "," en에 "," EN-US "," es-MX, FR-FR, IT-IT, PT-BR, 및 ZH-CN 합니다. 사용자 지정 음성 모델을 학습 해야 하는 학습 데이터와 일치 하는 올바른 로캘을 선택 합니다. 예를 들어 있는 기록 데이터는 영국 악센트를 사용 하 여 영어에서 사용 되는, 하는 경우 EN-GB를 선택 합니다.  
 
 > [!NOTE]
-> 지원 되지 않습니다 이중 모델 학습에 사용자 지정 음성 영 bi 이중 제외 하 고 있습니다. 영어를도 말할 수 있는 중국어 음성 학습 하려는 경우 '영 일반'를 선택 합니다. 모든 로캘에서 음성 교육 2,000 개 이상의 길이 발언을 EN-US 및 ZH-CN 학습 데이터의 모든 크기를 사용 하 여 시작할 수 있는 제외 하 고 데이터 집합을 시작 합니다.
+> 중국어-영어 이중 언어(bi-lingual)를 제외하고 이중 언어(bi-lingual) 모델 학습을 지원하지 않습니다. 영어로도 말할 수 있는 중국어 음성을 학습시키려는 경우 'Chinese-English bilingual'을 선택합니다. 모든 크기의 학습 데이터를 사용하여 시작할 수 있는 en-US 및 zh-CN을 제외하고 모든 로캘에서 음성 학습은 2,000개 이상의 발성 데이터 집합으로 시작합니다.
 
 ## <a name="speech-translation"></a>음성 번역
 

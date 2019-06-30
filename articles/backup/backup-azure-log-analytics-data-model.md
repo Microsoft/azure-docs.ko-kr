@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: adigan
-ms.openlocfilehash: dd4dad2cc3e541d3b6866c02341161dc1d9e1e6c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 801516ae2cfad891098c16f8cd6e9a4c7f157a93
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61234974"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67342007"
 ---
 # <a name="log-analytics-data-model-for-azure-backup-data"></a>Azure Backup 데이터용 Log Analytics 데이터 모델
 
@@ -50,7 +50,7 @@ Log Analytics에서 사용자 지정 경고를 만들려면 Log Analytics 데이
 | OperationName |텍스트 |현재 작업의 이름(예: Alert) |
 | Category |텍스트 |Azure Monitor 로그에 푸시된 진단 데이터의 범주입니다. 항상 AzureBackupReport임 |
 | Resource |텍스트 |데이터가 수집되는 리소스이며, Recovery Services 자격 증명 모음 이름이 표시됩니다. |
-| ProtectedServerUniqueId_s |텍스트 |경고와 관련된 보호된 서버의 고유 식별자 |
+| ProtectedContainerUniqueId_s |텍스트 |경고 (V1의 ProtectedServerUniqueId_s 되었습니다)와 관련 된 보호 된 서버의 고유 식별자|
 | VaultUniqueId_s |텍스트 |경고와 관련된 보호된 자격 증명 모음의 고유 식별자 |
 | SourceSystem |텍스트 |현재 데이터의 원본 시스템(Azure) |
 | ResourceId |텍스트 |데이터가 수집되는 리소스의 고유 식별자(예: Recovery Services 자격 증명 모음 리소스 ID) |
@@ -67,10 +67,12 @@ Log Analytics에서 사용자 지정 경고를 만들려면 Log Analytics 데이
 | --- | --- | --- |
 | EventName_s |텍스트 |이벤트의 이름입니다. 항상 AzureBackupCentralReport임 |  
 | BackupItemUniqueId_s |텍스트 |백업 항목의 고유 식별자 |
-| BackupItemId_s |텍스트 |백업 항목의 식별자 |
+| BackupItemId_s |텍스트 |(V1 스키마에 대해서만이 필드는) 백업 항목의 식별자 |
 | BackupItemName_s |텍스트 |백업 항목의 이름 |
 | BackupItemFriendlyName_s |텍스트 |백업 항목의 친숙한 이름 |
 | BackupItemType_s |텍스트 |백업 항목의 형식(예: VM, FileFolder) |
+| BackupItemProtectionState_s |텍스트 |백업 항목의 보호 상태 |
+| BackupItemAppVersion_s |텍스트 |백업 항목의 응용 프로그램 버전 |
 | ProtectionState_s |텍스트 |백업 항목의 현재 보호 상태(예: Protected, ProtectionStopped) |
 | ProtectionGroupName_s |텍스트 | 보호 그룹 백업 항목의 이름은 보호에서는 SC DPM 및 MABS에 해당 하는 경우|
 | SecondaryBackupProtectionState_s |텍스트 |백업 항목에 대 한 보조 보호 사용 여부|
@@ -103,8 +105,7 @@ Log Analytics에서 사용자 지정 경고를 만들려면 Log Analytics 데이
 | Category |텍스트 |Log Analytics에 푸시된 진단 데이터의 범주를 나타내며, AzureBackupReport입니다. |
 | OperationName |텍스트 |현재 작업의 이름(BackupItemAssociation)을 나타냅니다. |
 | Resource |텍스트 |데이터가 수집되는 리소스이며, Recovery Services 자격 증명 모음 이름이 표시됩니다. |
-| PolicyUniqueId_g |텍스트 |백업 항목과 관련된 정책에 대한 고유 식별자 |
-| ProtectedServerUniqueId_s |텍스트 |백업 항목과 관련된 보호된 서버의 고유 식별자 |
+| ProtectedContainerUniqueId_s |텍스트 |백업 항목 (V1의 ProtectedServerUniqueId_s 되었습니다)와 연결 된 보호 된 서버의 고유 식별자 |
 | VaultUniqueId_s |텍스트 |백업 항목이 포함된 자격 증명 모음의 고유 식별자 |
 | SourceSystem |텍스트 |현재 데이터의 원본 시스템(Azure) |
 | ResourceId |텍스트 |수집되는 데이터에 대한 리소스 식별자(예: Recovery Services 자격 증명 모음 리소스 ID) |
@@ -249,13 +250,14 @@ Log Analytics에서 사용자 지정 경고를 만들려면 Log Analytics 데이
 | ProtectedContainerOSType_s |텍스트 |보호 컨테이너의 OS 유형 |
 | ProtectedContainerOSVersion_s |텍스트 |보호 되는 컨테이너의 OS 버전 |
 | AgentVersion_s |텍스트 |백업 에이전트 또는 SC DPM 및 MABS) (의 보호 에이전트의 버전 번호 |
-| BackupManagementType_s |텍스트 |백업 수행에 대한 공급자 유형(예: IaaSVM, FileFolder) |
-| EntityState_s |텍스트 |보호된 서버 개체의 현재 상태(예: 활성, 삭제됨) |
+| BackupManagementType_s |텍스트 |백업 수행에 대 한 공급자 유형입니다. 예: IaaSVM, FileFolder |
+| EntityState_s |텍스트 |보호 된 서버 개체의 현재 상태입니다. 예를 들어, 활성, 삭제 됨 |
 | ProtectedContainerFriendlyName_s |텍스트 |보호된 서버의 친숙한 이름 |
 | ProtectedContainerName_s |텍스트 |보호 컨테이너의 이름 |
-| ProtectedContainerWorkloadType_s |텍스트 |보호 컨테이너의 형식 예를 들어 IaaSVMContainer 백업 |
+| ProtectedContainerWorkloadType_s |텍스트 |백업 보호 컨테이너의 형식입니다. 예를 들어 IaaSVMContainer |
 | ProtectedContainerLocation_s |텍스트 |보호 컨테이너를 온-프레미스 인지 또는 Azure에서 |
 | ProtectedContainerType_s |텍스트 |보호 컨테이너를 컨테이너 또는 서버 인지 |
+| ProtectedContainerProtectionState_s’  |텍스트 |보호 되는 컨테이너의 보호 상태 |
 
 ### <a name="storage"></a>Storage
 
@@ -263,7 +265,7 @@ Log Analytics에서 사용자 지정 경고를 만들려면 Log Analytics 데이
 
 | 필드 | 데이터 형식 | 설명 |
 | --- | --- | --- |
-| CloudStorageInBytes_s |10진수 |백업에 사용되는 클라우드 백업 저장소 크기이며, |
+| CloudStorageInBytes_s |10진수 |(V1 스키마에 대해서만이 필드는) 최신 값을 기반으로 하는 계산 된, 백업에서 사용 하는 클라우드 백업 저장소|
 | ProtectedInstances_s |10진수 |청구에서 프런트 엔드 저장소 계산에 사용된 보호된 인스턴스 수이며, 최신 값을 기준으로 하여 계산됩니다. |
 | EventName_s |텍스트 |이 이벤트의 이름을 나타내며, 항상 AzureBackupCentralReport입니다. |
 | SchemaVersion_s |텍스트 |스키마의 현재 버전을 나타내며, **V2** |
@@ -280,6 +282,10 @@ Log Analytics에서 사용자 지정 경고를 만들려면 Log Analytics 데이
 | ResourceGroup |텍스트 |데이터가 수집되는 리소스의 리소스 그룹(예: Recovery Services 자격 증명 모음) |
 | ResourceProvider |텍스트 |데이터가 수집되는 리소스 공급자(예: Microsoft.RecoveryServices) |
 | ResourceType |텍스트 |데이터가 수집되는 리소스 종류(예: Vaults) |
+| StorageUniqueId_s |텍스트 |저장소는 엔터티를 식별 하는 데 사용 되는 고유 Id |
+| StorageType_s |텍스트 |예를 들어 클라우드, 볼륨, 디스크 저장소 유형으로 |
+| StorageName_s |텍스트 |예를 들어 E:\ 저장소 엔터티의 이름 |
+| StorageTotalSizeInGBs_s |텍스트 |저장소 엔터티에 의해 사용 된 gb에서 저장소의 총 크기|
 
 ### <a name="storageassociation"></a>StorageAssociation
 
@@ -342,7 +348,7 @@ Log Analytics에서 사용자 지정 경고를 만들려면 Log Analytics 데이
 
 ### <a name="protectedinstance"></a>ProtectedInstance
 
-이 표에서 기본 보호 된 인스턴스 관련된 필드를 제공 합니다.
+이 표에서 기본 보호 된 인스턴스가 관련 필드를 제공 합니다.
 
 | 필드 | 데이터 형식 |적용 가능한 버전 | 설명 |
 | --- | --- | --- | --- |

@@ -53,7 +53,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [무료 계정](https:/
 node --version
 ```
 
-https://github.com/Azure-Samples/azure-iot-samples-node/archive/master.zip에서 샘플 Node.js 프로젝트를 다운로드하고 ZIP 보관 파일을 추출합니다.
+[https://github.com/Azure-Samples/azure-iot-samples-node/archive/master.zip](https://github.com/Azure-Samples/azure-iot-samples-node/archive/master.zip )에서 샘플 Node.js 프로젝트를 다운로드하고 ZIP 보관 파일을 추출합니다.
 
 ## <a name="set-up-azure-resources"></a>Azure 리소스 설정
 

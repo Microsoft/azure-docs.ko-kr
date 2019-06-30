@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/29/2018
 ms.author: rkarlin
-ms.openlocfilehash: a5deee4209001d8c2212033c2d547d7c4199bd25
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ab7165c3315e3a53f90900be8eaf1b9c614a2b07
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65192617"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341119"
 ---
 # <a name="custom-alert-rules-in-azure-security-center-preview"></a>Azure Security Center의 사용자 지정 경고 규칙(미리 보기)
 이 문서를 통해 Azure Security Center에서 사용자 지정 경고 규칙을 만들 수 있습니다.
@@ -29,17 +29,15 @@ ms.locfileid: "65192617"
 
 ## <a name="retirement-of-custom-alert-rules-in-azure-security-center"></a>Azure Security Center에서 사용 중지의 사용자 지정 경고 규칙
 
-사용자 지정 경고 환경은 기본 인프라를 사용 하는 사용 중지를 기반으로 인해 2019 년 6 월 30 일 사용 되지 것입니다. 사용 중단 될 때까지 기간, 사용자가 기존 사용자 지정 경고 규칙을 편집할 수 있지만 새로 추가할 수 없습니다.
+사용자 지정 경고 환경은 기본 인프라를 사용 하는 사용 중지를 기반으로 인해 2019 년 6 월 30 일 사용 되지 것입니다. 사용 중단 될 때까지 기간, 사용자가 기존 사용자 지정 경고 규칙을 편집할 수 있지만 새로 추가할 수 없습니다. 사용 중단, 다음 정의 된 모든 사용자 지정 경고 적용 되지 않습니다 하 고 해당 사용자 지정 경고 규칙을 기반으로 하는 보안 경고를 생성 되지 않습니다.
 사용자는을 사용 하는 것이 좋습니다.
-- 사용 하도록 설정 [Azure Sentinel](https://azure.microsoft.com/services/azure-sentinel/) 자동으로 자신의 기존 경고를 마이그레이션하고 새로 만들 원클릭 등록
+- 사용 하도록 설정 [Azure Sentinel](https://azure.microsoft.com/services/azure-sentinel/) 하 고 해당 기본 제공 사용 [analytics](https://docs.microsoft.com/azure/sentinel/tutorial-detect-threats) 다시는 경고 규칙을 만드는 기능
 - Azure Monitor의 로그 경고를 사용 하 여 해당 경고를 다시 만들기
                                      
-기존 경고를 유지 하 고 Azure Sentinel 마이그레이션할 하세요 [Azure Sentinel 시작](https://portal.azure.com/#create/Microsoft.ASI/preview)합니다. 첫 번째 단계로, 사용자 지정 경고 저장 된 작업 영역을 선택 하 고 경고를 자동으로 마이그레이션할 '분석' 메뉴 항목을 선택 합니다.
+기존 경고를 유지 하 고 Azure Sentinel 마이그레이션할 하세요 [Azure Sentinel 시작](https://portal.azure.com/#create/Microsoft.ASI/preview)합니다. 첫 번째 단계로, 사용자 지정 경고 저장 된 작업 영역을 선택 하 고 사용자 지정 경고 규칙을 설정 하려면 'Analytics' 메뉴 항목을 선택 합니다. 방문 하십시오 합니다 [설명서](https://docs.microsoft.com/azure/sentinel/tutorial-detect-threats) 추가 정보에 대 한 합니다.
 
 > [!NOTE]
-> 사용자 지정 경고로 Azure Sentinel 마이그레이션이 선택한 작업 영역에서 모든 사용자 지정 경고 일회성 마이그레이션을 수행 하는 합니다. 마이그레이션이 완료 된 후 해당 선택한 작업 영역에 대 한 사용자 지정 경고는 Azure Security Center를 통해 액세스할 수 없습니다.
->
-> 사용 하 여 사용자 지정 경고 [검색](https://docs.microsoft.com/azure/azure-monitor/log-query/search-queries) 하거나 [Union](https://docs-analytics-eus.azurewebsites.net/queryLanguage/query_language_unionoperator.html) 문 쿼리 Sentinel Azure에서 지원 되지 않습니다 및 마이그레이션할 수 없습니다. 마이그레이션을 수행 하기 전에 이러한 경고를 편집 하십시오.
+> 사용 하 여 사용자 지정 경고 [검색](https://docs.microsoft.com/azure/azure-monitor/log-query/search-queries) 하거나 [Union](https://docs-analytics-eus.azurewebsites.net/queryLanguage/query_language_unionoperator.html) 문을 쿼리 Sentinel Azure에서 지원 되지 않습니다. 마이그레이션을 수행 하기 전에 이러한 경고를 편집 하십시오.
 
 Azure Monitor의 로그 경고를 사용 하 여 경고를 다시 만들려면 다음을 참조 하세요. [만들기, 보기 및 관리 Azure Monitor를 사용 하 여 로그 경고](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) 로그 경고를 만드는 방법에 대 한 지침은 합니다. Azure Monitor의 로그 경고의 일반적인 개요를 클릭 [여기](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log)합니다.
 

@@ -7,17 +7,19 @@ ms.author: jeanb
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 05/15/2019
-ms.openlocfilehash: ff2930fbe0e53c4b3c1223f87919c0913296d07c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/21/2019
+ms.openlocfilehash: a41c3f60d4b949f78c0755f97c9ef7e6302d78d8
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66515927"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67329990"
 ---
 # <a name="troubleshoot-azure-stream-analytics-by-using-diagnostics-logs"></a>진단 로그를 사용하여 Azure Stream Analytics 문제 해결
 
 경우에 따라 Azure Stream Analytics 작업이 예기치 않게 처리를 중지합니다. 이 이벤트 종류의 문제를 해결하는 것이 중요합니다. 오류는 예기치 않은 쿼리 결과, 디바이스에 대한 연결 또는 예기치 않은 서비스 중단으로 인해 발생할 수 있습니다. Stream Analytics에서 진단 로그를 사용하면 이와 같은 오류가 발생했을 때 문제 원인을 파악하고 복구 시간을 단축할 수 있습니다.
+
+모든 프로덕션 작업에 대 한 진단 로그를 사용 하도록 설정 하는 것이 좋습니다.
 
 ## <a name="log-types"></a>로그 형식
 
@@ -62,7 +64,7 @@ Stream Analytics에서는 다음과 같은 두 가지 형식의 로그를 제공
 
     ![진단 로그에 대한 블레이드 탐색](./media/stream-analytics-job-diagnostic-logs/diagnostic-logs-monitoring.png)  
 
-2.  **진단 설정**에서 **이름**을 만들고 **Log Analytics에 보내기** 옆에 있는 상자를 선택합니다. 그런 다음, 기존 **Log Analytics 작업 영역**을 추가하거나 새 작업 영역을 만듭니다. **로그** 아래에서 **실행** 및 **작성** 상자를 선택하고 **메트릭** 아래에서 **AllMetrics** 상자를 선택합니다. **저장**을 클릭합니다.
+2.  **진단 설정**에서 **이름**을 만들고 **Log Analytics에 보내기** 옆에 있는 상자를 선택합니다. 그런 다음, 기존 **Log Analytics 작업 영역**을 추가하거나 새 작업 영역을 만듭니다. **로그** 아래에서 **실행** 및 **작성** 상자를 선택하고 **메트릭** 아래에서 **AllMetrics** 상자를 선택합니다. **저장**을 클릭합니다. 추가 비용을 방지 하기 위해 Stream Analytics 작업과 동일한 Azure 지역에서 Log Analytics 작업 영역을 사용 하는 것이 좋습니다.
 
     ![진단 로그 설정](./media/stream-analytics-job-diagnostic-logs/diagnostic-settings.png)
 
@@ -97,7 +99,7 @@ Azure Stream Analytics는 두 가지 범주의 진단 로그를 캡처합니다.
 
 모든 로그는 JSON 형식으로 저장됩니다. 각 항목에는 다음과 같은 일반적인 문자열 필드가 있습니다.
 
-이름 | 설명
+Name | 설명
 ------- | -------
 time | 로그의 타임스탬프(UTC)입니다.
 ResourceId | 작업이 수행되는 리소스의 ID(대문자)입니다. 여기에는 구독 ID, 리소스 그룹 및 작업 이름이 포함됩니다. 예: **/SUBSCRIPTIONS/6503D296-DAC1-4449-9B03-609A1F4A1C87/RESOURCEGROUPS/MY-RESOURCE-GROUP/PROVIDERS/MICROSOFT.STREAMANALYTICS/STREAMINGJOBS/MYSTREAMINGJOB**.
@@ -113,7 +115,7 @@ properties | 로그 항목별 세부 정보로, JSON 문자열로 직렬화됩�
 
 ### <a name="data-errors"></a>데이터 오류
 
-작업이 데이터를 처리하는 동안 발생한 오류는 이 로그 범주에 속합니다. 이러한 로그는 데이터 읽기, serialization 및 쓰기 작업 도중에 가장 자주 생성됩니다. 이러한 로그는 연결 오류를 포함하지 않습니다. 연결 오류는 일반 이벤트로 처리됩니다.
+작업이 데이터를 처리하는 동안 발생한 오류는 이 로그 범주에 속합니다. 이러한 로그는 데이터 읽기, serialization 및 쓰기 작업 도중에 가장 자주 생성됩니다. 이러한 로그는 연결 오류를 포함하지 않습니다. 연결 오류는 일반 이벤트로 처리됩니다. 다른 다양 한 원인에 대 한 자세히 알아볼 수 있습니다 [입력 및 출력 데이터 오류](https://docs.microsoft.com/azure/stream-analytics/data-errors)합니다.
 
 이름 | 설명
 ------- | -------
@@ -136,7 +138,7 @@ Data | 오류 출처를 정확히 찾는 데 도움이 되는 데이터를 포�
 
 일반 이벤트는 다른 모든 항목을 처리합니다.
 
-이름 | 설명
+Name | 설명
 -------- | --------
 오류 | (선택 사항) 오류 정보입니다. 일반적으로 예외 정보입니다(사용 가능한 경우).
 Message| 로그 메시지
@@ -149,4 +151,4 @@ Type | 메시지 형식입니다. 내부 오류 분류에 매핑합니다. 예: 
 * [Stream Analytics 시작](stream-analytics-real-time-fraud-detection.md)
 * [Stream Analytics 작업 크기 조정](stream-analytics-scale-jobs.md)
 * [Stream Analytics 쿼리 언어 참조](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-* [Stream Analytics 관리 REST API 참조](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+* [Stream Analytics 데이터 오류](https://docs.microsoft.com/azure/stream-analytics/data-errors)

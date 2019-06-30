@@ -144,8 +144,6 @@
           items:
             - name: Azure VM 백업 관리
               href: backup-azure-manage-vms.md
-            - name: Azure VM 백업에 대한 경고 모니터링
-              href: backup-azure-monitor-vms.md
         - name: Azure VM 복원
           items:
             - name: 포털에서 Azure VM 복원

@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: c9689a468e8784eb4ec3590011e02a37d92d6b9c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a91d0f75b7e27065bd2ee0ea430a859d265afacb
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67083390"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67332045"
 ---
 # <a name="vpn-gateways-overview"></a>VPN gateway 개요
 
@@ -26,7 +26,7 @@ CloudSimple 두 가지를 VPN gateway 제공합니다.
 
 ## <a name="site-to-site-vpn-gateway"></a>사이트 간 VPN 게이트웨이
 
-사이트 간 VPN gateway CloudSimple 지역 네트워크 및 온-프레미스 데이터 센터 간에 암호화 된 트래픽을 보낼 사용 됩니다. 이 연결을 사용 하 여 온-프레미스 네트워크와 CloudSimple 지역 네트워크 간에 네트워크 트래픽에 대 한 서브넷/CIDR 범위를 정의 하도록 합니다.
+사이트 간 VPN gateway CloudSimple 지역 네트워크 및 온-프레미스 데이터 센터 간에 암호화 된 트래픽을 보낼 사용 됩니다. 온-프레미스 네트워크와 CloudSimple 지역 네트워크 간의 통신에 대 한 서브넷/CIDR 범위를 정의 하도록이 연결을 사용 합니다.
 
 VPN gateway에서 온-프레미스 사설 클라우드에 서비스를 사용할 수 있도록 및 사설 클라우드, 온-프레미스 네트워크에서 서비스.  CloudSimple 온-프레미스 네트워크에서 연결에 대 한 정책 기반 VPN 서버를 제공 합니다.
 
@@ -38,6 +38,9 @@ VPN gateway에서 온-프레미스 사설 클라우드에 서비스를 사용할
 * 온-프레미스 네트워크에서 사설 클라우드에서 실행 중인 워크 로드의 접근성입니다.
 
 ![사이트 간 VPN 연결 토폴로지](media/cloudsimple-site-to-site-vpn-connection.png)
+
+> [!IMPORTANT]
+> 1078 바이트 이하로 TCP MSS 고정 해야 합니다. 또는 VPN 장치가 MSS 고정를 지원 하지 않는 경우 설정할 수 있습니다 또는 MTU 1118 바이트로 터널 인터페이스에서 대신 합니다. 
 
 ### <a name="cryptographic-parameters"></a>암호화 매개 변수
 

@@ -53,7 +53,7 @@ VOTE2VALUE = 'Purple'
 SHOWHOST = 'false'
 ```
 
-`vi`에서 `:wq`를 사용하여 파일을 저장하고 닫습니다. 
+파일을 저장하고 닫습니다. `vi`에서 `:wq`를 사용합니다.
 
 ## <a name="update-the-container-image"></a>컨테이너 이미지 업데이트
 

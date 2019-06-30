@@ -8,12 +8,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 4/16/2019
 ms.author: yoafr
-ms.openlocfilehash: 069345f9c2d0fff0b580365153d8be13bb4ba204
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1d364da9506124a35c724209c68ff72db4243e80
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65952143"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341564"
 ---
 # <a name="retirement-of-security-center-features-july-2019"></a>Security Center의 사용 중지 기능 (2019 년 7 월)
 
@@ -114,16 +114,18 @@ Security Center에 기본 제공 경고 맵 기능을 사용 하는 것이 좋�
 
 ## 사용자 지정 경고 규칙 (미리 보기)<a name="menu_customalerts"></a>
 
-우리가 [경고 환경 사용자 지정을 사용 중지](https://docs.microsoft.com/azure/security-center/security-center-custom-alert) 2019 년 6 월 30 일에 있으므로 기본 인프라 사용을 중지 합니다. 그때까지 기존 사용자 지정 경고 규칙을 편집할 수 있지만 새로 추가할 수 없는 합니다. 사용할 수 있도록 하는 것이 좋습니다 [Azure Sentinel](https://azure.microsoft.com/services/azure-sentinel/) 자동으로 기존 경고를 마이그레이션하고 새 항목을 만듭니다. 또는 Azure Monitor의 로그 경고를 사용 하 여 경고를 만들 수 있습니다.
+우리가 [경고 환경 사용자 지정을 사용 중지](https://docs.microsoft.com/azure/security-center/security-center-custom-alert) 2019 년 6 월 30 일에 있으므로 기본 인프라 사용을 중지 합니다. 그때까지 기존 사용자 지정 경고 규칙을 편집할 수 있지만 새로 추가할 수 없는 합니다. 사용 중지 날짜를 다음 정의 된 모든 사용자 지정 경고 적용 되지 않습니다 하 고 이러한 규칙을 기반으로 하는 보안 경고를 생성 되지 않습니다.
+사용할 수 있도록 하는 것이 좋습니다 [Azure Sentinel](https://azure.microsoft.com/services/azure-sentinel/) 하 고 있는 사용자 지정 경고를 다시 만듭니다. 또는 Azure Monitor의 로그 경고를 사용 하 여 경고를 만들 수 있습니다.
 
-기존 경고를 유지 하려면 Azure Sentinel 마이그레이션할:
+기존 경고를 유지 및 Azure Sentinel 만듭니다.
 
-1. Azure Sentinel 열고 사용자 지정 경고를 저장할 작업 영역을 선택 합니다.
-1. 선택 **Analytics** 경고를 자동으로 마이그레이션하려 합니다.
+1. [Azure Sentinel 엽니다](https://portal.azure.com/#create/Microsoft.ASI/preview) 사용자 지정 경고를 저장할 작업 영역 선택
+1. 선택 **Analytics** 메뉴에서
+1. 다음 지침을 따릅니다 [자습서](https://docs.microsoft.com/azure/sentinel/tutorial-detect-threats) Azure Sentinel 사용자 지정 경고를 생성 하는 방법에
+
+Azure Sentinel 사용에 관심이 있는 모르는 경우에 Azure Monitor의 로그 경고를 사용 하 여 경고를 만들 수 있습니다. 지침은 [만들기, 보기 및 Azure Monitor를 사용 하 여 로그 경고를 관리](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) 하 고 [Azure Monitor의 로그 경고](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log)합니다.
 
 ![사용자 지정 경고][13]
-
-라면 Azure Sentinel로 전환 하는 데 관심이 좋습니다 Azure Monitor의 로그 경고를 사용 하 여 경고를 만들 수 있습니다. 지침은 [만들기, 보기 및 Azure Monitor를 사용 하 여 로그 경고를 관리](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) 하 고 [Azure Monitor의 로그 경고](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log)합니다.
 
 사용자 지정 경고 사용 중지에 대 한 자세한 내용은 참조 하세요. [Azure 보안 센터 (미리 보기)에서 사용자 지정 경고 규칙](https://docs.microsoft.com/azure/security-center/security-center-custom-alert)합니다.
 

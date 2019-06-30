@@ -19,11 +19,13 @@
               href: service-bus-quickstart-powershell.md
             - name: Azure CLI
               href: service-bus-quickstart-cli.md
+            - name: Azure Resource Manager 템플릿
+              href: service-bus-resource-manager-namespace-queue.md
         - name: 메시지 보내기 및 받기
           items:
             - name: .NET
               href: service-bus-dotnet-get-started-with-queues.md
-            - name: 자바
+            - name: Java
               href: service-bus-java-how-to-use-queues.md
             - name: Node.js
               items:
@@ -40,12 +42,16 @@
     - name: Service Bus 토픽 및 구독
       items:
         - name: 토픽 및 구독 만들기
-          href: service-bus-quickstart-topics-subscriptions-portal.md
+          items:
+            - name: Azure portal
+              href: service-bus-quickstart-topics-subscriptions-portal.md
+            - name: Azure Resource Manager 템플릿
+              href: service-bus-resource-manager-namespace-topic.md
         - name: 메시지 게시 및 구독
           items:
             - name: .NET
               href: service-bus-dotnet-how-to-use-topics-subscriptions.md
-            - name: 자바
+            - name: Java
               href: service-bus-java-how-to-use-topics-subscriptions.md
             - name: Node.js
               items:
@@ -187,10 +193,6 @@
           items:
             - name: 네임스페이스 만들기
               href: service-bus-resource-manager-namespace.md
-            - name: 네임스페이스 및 큐 만들기
-              href: service-bus-resource-manager-namespace-queue.md
-            - name: 토픽 및 구독이 있는 네임스페이스 만들기
-              href: service-bus-resource-manager-namespace-topic.md
             - name: 네임스페이스 및 큐에 대한 권한 부여 규칙 만들기
               href: service-bus-resource-manager-namespace-auth-rule.md
             - name: '토픽, 구독 및 규칙이 있는 네임스페이스 만들기'
@@ -207,7 +209,7 @@
           href: /dotnet/api/microsoft.servicebus.messaging
         - name: Microsoft.Azure.ServiceBus(.NET Standard)
           href: /dotnet/api/microsoft.azure.servicebus
-    - name: 자바
+    - name: Java
       href: /java/api/overview/azure/servicebus
     - name: Python
       href: /python/api/overview/azure/servicebus?view=azure-python

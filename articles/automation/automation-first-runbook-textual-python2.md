@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/19/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: e79f4b58582ab6643a7a13ffee25503060a2208c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f5408ce82b16d72dde364238d427a798441dfc8b
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60929270"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340827"
 ---
 # <a name="my-first-python-runbook"></a>내 첫 번째 Python Runbook
 
@@ -153,13 +153,14 @@ Azure VM을 사용하려면 [Python용 Azure 계산 클라이언트](https://doc
 ```python
 # Initialize the compute management client with the RunAs credential and specify the subscription to work against.
 compute_client = ComputeManagementClient(
-azure_credential,
-  str(runas_connection["SubscriptionId"])
+    azure_credential,
+    str(runas_connection["SubscriptionId"])
 )
 
 
 print('\nStart VM')
-async_vm_start = compute_client.virtual_machines.start("MyResourceGroup", "TestVM")
+async_vm_start = compute_client.virtual_machines.start(
+    "MyResourceGroup", "TestVM")
 async_vm_start.wait()
 ```
 
@@ -188,7 +189,8 @@ vm_name = str(sys.argv[2])
 이제 하드 코드된 값을 사용하는 대신 입력 매개 변수 값을 사용하도록 Runbook의 마지막 두 줄을 수정할 수 있습니다.
 
 ```python
-async_vm_start = compute_client.virtual_machines.start(resource_group_name, vm_name)
+async_vm_start = compute_client.virtual_machines.start(
+    resource_group_name, vm_name)
 async_vm_start.wait()
 ```
 

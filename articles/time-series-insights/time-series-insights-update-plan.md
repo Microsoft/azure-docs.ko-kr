@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 04/30/2019
 ms.custom: seodec18
-ms.openlocfilehash: 435e5f2163270672ac5f1f5695ca2fe9be22ee6b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5f89105abc21f5ef6cce53ea55622a808f947e86
+ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66388751"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357297"
 ---
 # <a name="plan-your-azure-time-series-insights-preview-environment"></a>Azure Time Series Insights 미리 보기 환경 계획
 
@@ -88,5 +88,8 @@ Time Series Insights에 이벤트를 보내는 방법을 확인할 수 있습니
 
 ## <a name="next-steps"></a>다음 단계
 
+- 검토 [Azure Advisor](../advisor/advisor-overview.md) 비즈니스 복구 구성 옵션을 계획 합니다.
+
 - 에 대해 자세히 알아보세요 [저장소 및 수신](./time-series-insights-update-storage-ingress.md) Time Series Insights 미리 보기에 있습니다.
+
 - 에 대 한 자세한 [데이터 모델링](./time-series-insights-update-tsm.md) Time Series Insights 미리 보기에 있습니다.

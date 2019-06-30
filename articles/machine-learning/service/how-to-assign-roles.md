@@ -11,12 +11,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 02/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2410787c3307136f827ea7fc34df9a545a59cbf4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e062fd73f2baeb4948430b13e0caa1f5c0b3f066
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65850898"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341105"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Azure Machine Learning 작업 영역에 대 한 액세스 관리
 
@@ -49,13 +49,13 @@ Azure Machine Learning 작업 영역을 Azure 리소스입니다. 다른 Azure �
 설치한 후 합니다 [Azure Machine Learning CLI](reference-azure-machine-learning-cli.md), 사용자에 게 역할을 할당 하는 CLI 명령을 사용할 수도 있습니다.
 
 ```azurecli-interactive 
-az ml workspace share -n <workspace_name> -g <resource_group_name> --role <role_name> --user <user_corp_email_address>
+az ml workspace share -w <workspace_name> -g <resource_group_name> --role <role_name> --user <user_corp_email_address>
 ```
 
 `user` 필드는 기존 작업 영역 부모 구독 거주 하는 Azure Active Directory 인스턴스의 사용자의 전자 메일 주소입니다. 이 명령을 사용 하는 방법의 예는 다음과 같습니다.
 
 ```azurecli-interactive 
-az ml workspace share -n my_workspace -g my_resource_group --role Contributor --user jdoe@contoson.com
+az ml workspace share -w my_workspace -g my_resource_group --role Contributor --user jdoe@contoson.com
 ```
 
 ## <a name="create-custom-role"></a>사용자 지정 역할 만들기

@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/31/2019
-ms.openlocfilehash: ba803c493fd85a7be7bc6c5922171678cc6e0df0
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 4e62ae47de95f95600faa3dc27f6867b065e117b
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67164461"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67329972"
 ---
 # <a name="understand-outputs-from-azure-stream-analytics"></a>Azure Stream Analytics의 출력 이해
 
@@ -30,7 +30,7 @@ Stream Analytics 쿼리를 디자인할 때 출력의 이름을 사용 하 여 �
 
 Stream Analytics에서 지 원하는 [Azure Data Lake 저장소 Gen 1](../data-lake-store/data-lake-store-overview.md)합니다. Azure Data Lake Storage는 빅 데이터 분석 워크 로드에는 엔터프라이즈 수준 하이퍼 스케일 리포지토리입니다. 모든 크기, 유형 및 운영 및 예비 분석에 대해 수집 속도의 데이터를 저장 하려면 Data Lake Storage를 사용할 수 있습니다. Stream Analytics Data Lake Storage에 액세스할 수 있는 권한이 필요 합니다.
 
-Stream Analytics에서 azure Data Lake 저장소 출력은 현재 Azure 중국 (21Vianet) 및 Azure Germany (T-systems International) 지역에서 지원 되지.
+Stream Analytics에서 azure Data Lake 저장소 출력은 현재 Azure 중국 21Vianet 및 Azure Germany (T-systems International) 지역에서 지원 되지.
 
 다음 표에서 속성 이름 및 Data Lake 저장소 Gen 1 출력을 구성 하려면 해당 설명을 나열 합니다.   
 
@@ -50,7 +50,7 @@ Stream Analytics에서 azure Data Lake 저장소 출력은 현재 Azure 중국 (
 
 ## <a name="sql-database"></a>SQL Database
 
-사용할 수 있습니다 [Azure SQL Database](https://azure.microsoft.com/services/sql-database/) 사실상에서 관계형 인 데이터 또는 관계형 데이터베이스에서 호스트 되는 콘텐츠에 종속 되는 응용 프로그램에 대 한 출력으로 합니다. SQL Database의 기존 테이블에 Stream Analytics 작업 작성합니다. 테이블 스키마는 작업의 출력에 해당 형식과 필드에 정확히 일치 해야 합니다. 지정할 수 있습니다 [Azure SQL Data Warehouse](https://azure.microsoft.com/documentation/services/sql-data-warehouse/) SQL Database를 통해 출력으로 옵션을 출력 합니다. 쓰기 처리량을 개선 하는 방법에 대 한 자세한 내용은 참조는 [Stream Analytics 출력으로 Azure SQL Database를 사용 하 여](stream-analytics-sql-output-perf.md) 문서. 
+사용할 수 있습니다 [Azure SQL Database](https://azure.microsoft.com/services/sql-database/) 사실상에서 관계형 인 데이터 또는 관계형 데이터베이스에서 호스트 되는 콘텐츠에 종속 되는 응용 프로그램에 대 한 출력으로 합니다. SQL Database의 기존 테이블에 Stream Analytics 작업 작성합니다. 테이블 스키마는 작업의 출력에 해당 형식과 필드에 정확히 일치 해야 합니다. 지정할 수 있습니다 [Azure SQL Data Warehouse](https://azure.microsoft.com/documentation/services/sql-data-warehouse/) SQL Database를 통해 출력으로 옵션을 출력 합니다. 쓰기 처리량을 개선 하는 방법에 대 한 자세한 내용은 참조는 [Stream Analytics 출력으로 Azure SQL Database를 사용 하 여](stream-analytics-sql-output-perf.md) 문서.
 
 다음 표에서 속성 이름 및 SQL Database 출력을 만들기 위한 해당 설명을 나열 합니다.
 
@@ -63,10 +63,10 @@ Stream Analytics에서 azure Data Lake 저장소 출력은 현재 Azure 중국 (
 | 암호 | 데이터베이스에 연결하는 암호입니다. |
 | 테이블 | 출력을 기록되는 테이블 이름입니다. 테이블 이름은 대/소문자 구분입니다. 이 테이블의 스키마 필드 및 작업 출력을 생성 하는 해당 형식 수가 정확히 일치 해야 합니다. |
 |파티션 구성표 상속| 테이블에 여러 기록기를 사용 하 여 완전 한 병렬 토폴로지를 사용 하도록 설정 하 여 이전 쿼리 단계의 파티션 구성표를 상속 하는 옵션입니다. 자세한 내용은 [Azure SQL Database에 Azure Stream Analytics 출력](stream-analytics-sql-output-perf.md)을 참조하세요.|
-|최대 일괄 처리 수| 권장 되는 제한 모든 bulk와 함께 전달 된 레코드의 수에 트랜잭션을 삽입 합니다.|
+|최대 일괄 처리 수| 권장 되는 모든 bulk와 함께 전달 된 레코드의 수에 상한값 트랜잭션을 삽입 합니다.|
 
 > [!NOTE]
-> Azure SQL Database를 Azure 가상 머신에 연결 된 데이터베이스를 사용 하 여 실행 중인 SQL Server 지원 되지 않습니다 하지만 Stream Analytics 출력 작업에 대해서는 제공 합니다.
+> Azure SQL Database 제공은 Azure 가상 머신에서 실행 중인 SQL Server 또는 SQL Azure 관리 되는 인스턴스에 연결 된 데이터베이스를 사용 하 여 아직 지원 되지 않습니다 하지만 Stream Analytics 작업 출력을 지원 합니다. 후속 릴리스에서는 변경될 수 있습니다.
 
 ## <a name="blob-storage"></a>Blob 저장소
 
@@ -108,7 +108,7 @@ Blob 저장소를 출력으로 사용 하는 경우 다음과 같은 경우 blob
 | 속성 이름 | 설명 |
 | --- | --- |
 | 출력 별칭 | 쿼리 출력을이 이벤트 허브로 보내기 위해 쿼리에서 사용 되는 이름입니다. |
-| 이벤트 허브 네임스페이스 |메시징 엔터티 집합에 대 한 컨테이너입니다. 새 이벤트 허브를 만들 때에 이벤트 허브 네임 스페이스를 만들었습니다. |
+| 이벤트 허브 네임스페이스 | 메시징 엔터티 집합에 대 한 컨테이너입니다. 새 이벤트 허브를 만들 때에 이벤트 허브 네임 스페이스를 만들었습니다. |
 | 이벤트 허브 이름 | 이벤트 허브 출력의 이름입니다. |
 | 이벤트 허브 정책 이름 | 이벤트 허브에서 만들 수 있는 공유 액세스 정책 **구성** 탭 합니다. 각 공유 액세스 정책에는 이름, 사용자가 설정한 사용 권한 및 액세스 키가 있습니다. |
 | 이벤트 허브 정책 키 | 이벤트 허브 네임 스페이스에 대 한 액세스를 인증 하는 데 사용 되는 공유 액세스 키입니다. |
@@ -123,7 +123,7 @@ Blob 저장소를 출력으로 사용 하는 경우 다음과 같은 경우 blob
 
 사용할 수 있습니다 [Power BI](https://powerbi.microsoft.com/) 분석 결과 풍부한 시각화 환경을 제공 하는 Stream Analytics 작업에 대 한 출력으로 합니다. 운영 대시보드, 보고서 생성 및 메트릭 제어 보고에 대 한이 기능을 사용할 수 있습니다.
 
-Stream Analytics의 Power BI 출력은 현재 Azure 중국(21Vianet) 및 Azure 독일(T-Systems International) 영역에서 사용할 수 없습니다.
+Stream Analytics에서 power BI 출력은 현재 Azure 중국 21Vianet 및 Azure Germany (T-systems International) 지역에서 지원 되지.
 
 다음 표에서 속성 이름 및 Power BI 출력을 구성 하려면 해당 설명을 나열 합니다.
 
@@ -212,14 +212,14 @@ DateTime | 문자열 | 문자열 |  DateTime | String
 ## <a name="service-bus-topics"></a>Service Bus 토픽
 Service Bus 큐는 수신자에 게 보낸에서 일대일 통신 방법을 제공합니다. [Service Bus 토픽](https://msdn.microsoft.com/library/azure/hh367516.aspx) 에 일 대 다 형태의 통신을 제공 합니다.
 
-다음 표에서 속성 이름 및 토픽 출력을 만들기 위한 해당 설명을 나열 합니다.
+다음 표에서 속성 이름 및 Service Bus 토픽 출력을 만들기 위한 해당 설명을 나열 합니다.
 
 | 속성 이름 | 설명 |
 | --- | --- |
 | 출력 별칭 |쿼리 출력을이 Service Bus 토픽을 보내기 위해 쿼리에서 사용 되는 이름입니다. |
 | Service Bus 네임스페이스 |메시징 엔터티 집합에 대 한 컨테이너입니다. 새 이벤트 허브를 만들 때 Service Bus 네임스페이스도 만들었습니다. |
 | 항목 이름 |토픽은 이벤트 허브 및 큐와 유사한 메시징 엔터티입니다. 장치 및 서비스에서 이벤트 스트림을 수집 하도록 설계 되었습니다. 토픽을 만들 때 특정 이름도 지정에 해당 합니다. 구독을 만들지 않으면 토픽에 전송 된 메시지를 사용할 수 없습니다, 있도록 토픽 아래에 있는 하나 이상의 구독이 있습니다. |
-| 토픽 정책 이름 |도에서 항목의 공유 액세스 정책 항목을 만들 때 만들면 **구성** 탭 합니다. 각 공유 액세스 정책에는 이름, 사용자가 설정한 사용 권한 및 액세스 키가 있습니다. |
+| 토픽 정책 이름 |공유 액세스 정책 항목의에서 만들 수 Service Bus 토픽을 만들면 **구성** 탭 합니다. 각 공유 액세스 정책에는 이름, 사용자가 설정한 사용 권한 및 액세스 키가 있습니다. |
 | 토픽 정책 키 |Service Bus 네임스페이스에 대한 액세스를 인증하는 데 사용되는 공유 액세스 키입니다. |
 | 이벤트 직렬화 형식 |출력 데이터에 대 한 serialization 형식입니다. JSON, CSV 및 Avro를 지원합니다. |
 | Encoding |CSV 또는 JSON 형식을 사용 하는 경우 인코딩을 지정 해야 합니다. 지금은 지원되는 인코딩 형식이 UTF-8뿐입니다. |
@@ -231,7 +231,7 @@ Service Bus 큐는 수신자에 게 보낸에서 일대일 통신 방법을 제�
 ## <a name="azure-cosmos-db"></a>Azure Cosmos DB
 [Azure Cosmos DB](https://azure.microsoft.com/services/documentdb/) 는 전 세계, 풍부한 쿼리 및 스키마 제약 없는 데이터 모델을 통해 자동 인덱싱 제한 없는 탄력적인 확장을 제공 하는 전역으로 분산된 데이터베이스 서비스입니다. Stream Analytics에 대 한 Azure Cosmos DB 컬렉션 옵션에 대 한 자세한 내용은 참조는 [Stream Analytics 출력으로 Azure Cosmos DB를 사용 하 여](stream-analytics-documentdb-output.md) 문서.
 
-Stream Analytics의 Azure Cosmos DB 출력은 현재 Azure 중국(21Vianet) 및 Azure 독일(T-Systems International) 영역에서 사용할 수 없습니다.
+Stream Analytics에서 azure Cosmos DB 출력은 현재 Azure 중국 21Vianet 및 Azure Germany (T-systems International) 지역에서 지원 되지.
 
 > [!Note]
 > 이때 Azure Stream Analytics SQL API를 사용 하 여 Azure Cosmos DB에 연결만을 지원 합니다.
@@ -253,7 +253,7 @@ Stream Analytics의 Azure Cosmos DB 출력은 현재 Azure 중국(21Vianet) 및 
 ## <a name="azure-functions"></a>Azure 기능
 Azure Functions는 인프라를 명시적으로 프로 비전 또는 관리 하지 않고도 요청 시 코드를 실행 하는 데 사용할 수 있는 서버 리스 계산 서비스입니다. Azure 또는 파트너 서비스에서 발생 하는 이벤트로 트리거되는 코드를 구현할 수 있습니다. 트리거에 응답 하는 Azure Functions의이 기능 수 Azure Stream Analytics에 대 한 출력이 자연스럽 게 있습니다. 이 출력 어댑터를 사용 하면 Azure Functions를 Stream Analytics를 연결 하 고 다양 한 이벤트에 대 한 응답으로 스크립트 또는 코드 조각을 실행할 수 있습니다.
 
-Stream Analytics의 Azure Functions 출력은 현재 Azure 중국(21Vianet) 및 Azure 독일(T-Systems International) 영역에서 사용할 수 없습니다.
+Stream Analytics에서 azure Functions 출력은 현재 Azure 중국 21Vianet 및 Azure Germany (T-systems International) 지역에서 지원 되지.
 
 Azure Stream Analytics는 HTTP 트리거를 통해 Azure Functions를 호출합니다. Azure Functions 출력 어댑터는 다음 구성 가능한 속성으로 제공 됩니다.
 
@@ -295,7 +295,7 @@ Azure Stream Analytics는 413 ("http 요청 엔터티 너무 큼")를 수신 하
 | 출력 형식 | 분할 지원 | 파티션 키  | 출력 기록기 수 |
 | --- | --- | --- | --- |
 | Azure Data Lake Store | 예 | 경로 접두사 패턴에 {time} 토큰을 사용 하 여 {date} 날짜 형식은 YYYY/MM/DD, DD/MM/YYYY 또는 MM-DD-YYYY 등을 선택 합니다. HH는 시간 형식에 사용 됩니다. | [완전히 병렬 처리 가능한 쿼리](stream-analytics-scale-jobs.md)에 대한 입력 분할을 따릅니다. |
-| Azure SQL Database | 예 | PARTITION BY 절을 쿼리의 기반으로 합니다. | [완전히 병렬 처리 가능한 쿼리](stream-analytics-scale-jobs.md)에 대한 입력 분할을 따릅니다. 달성 하는 방법에 대 한 자세한 내용은 더 쓰기 처리량 성능을 Azure SQL Database로 데이터를 로드 하는 경우에 대해 알아보려면 [Azure SQL Database에 Azure Stream Analytics 출력](stream-analytics-sql-output-perf.md)합니다. |
+| Azure SQL Database | 예, 사용 하도록 설정 해야 합니다. | PARTITION BY 절을 쿼리의 기반으로 합니다. | 상속 분할 옵션을 설정 하는 경우에 대 한 입력 분할을 따릅니다 [완전히 병렬 처리 가능한 쿼리](stream-analytics-scale-jobs.md)합니다. 달성 하는 방법에 대 한 자세한 내용은 더 쓰기 처리량 성능을 Azure SQL Database로 데이터를 로드 하는 경우에 대해 알아보려면 [Azure SQL Database에 Azure Stream Analytics 출력](stream-analytics-sql-output-perf.md)합니다. |
 | Linux에서 File Storage 사용에 대한 자세한 내용은 Linux에서 Azure 파일 스토리지 사용 방법을 참조하세요. | 예 | 경로 패턴에서 이벤트 필드에서 {time} 토큰을 사용 하 여 {date} 날짜 형식은 YYYY/MM/DD, DD/MM/YYYY 또는 MM-DD-YYYY 등을 선택 합니다. HH는 시간 형식에 사용 됩니다. 단일 사용자 지정 이벤트 특성 {fieldname} 또는 {datetime:\<specifier>}로 Blob 출력을 분할할 수 있습니다. | [완전히 병렬 처리 가능한 쿼리](stream-analytics-scale-jobs.md)에 대한 입력 분할을 따릅니다. |
 | Azure Event Hubs | 예 | 예 | 파티션 맞춤에 따라 달라집니다.<br /> 이벤트 허브 출력에 대 한 파티션 키가 업스트림 (이전의) 쿼리 단계로 동일 하 게 맞춰질, 작성자 수 때 이벤트 허브 출력에서 파티션 수와 동일 합니다. 각 작성기를 사용 합니다 [EventHubSender 클래스](/dotnet/api/microsoft.servicebus.messaging.eventhubsender?view=azure-dotnet) 특정 파티션에 이벤트를 보내도록 합니다. <br /> 이벤트 허브 출력에 대 한 파티션 키가 업스트림 (이전의) 쿼리 단계로 사용 하 여 정렬 되지 않은 경우 작성기의 수는는 이전 단계의 파티션 수와 동일 합니다. 각 작성기를 사용 하는 [SendBatchAsync 클래스](/dotnet/api/microsoft.servicebus.messaging.eventhubclient.sendasync?view=azure-dotnet) 에 **EventHubClient** 모든 출력 파티션에 이벤트를 보내도록 합니다. |
 | Power BI | 아닙니다. | 없음 | 사용할 수 없습니다. |
@@ -315,14 +315,14 @@ Azure Stream Analytics는 이벤트를 처리 하 고 출력을 쓰는 변수 �
 | 출력 형식 | 최대 메시지 크기 | 일괄 처리 크기 최적화 |
 | :--- | :--- | :--- |
 | Azure Data Lake Store | 참조 [Data Lake Storage 제한](../azure-subscription-service-limits.md#data-lake-store-limits)합니다. | 쓰기 작업당 최대 4MB를 사용 합니다. |
-| Azure SQL Database | 단일 대량 당 최대 10,000 개의 행을 삽입합니다.<br />단일 대량 삽입 당 100 개의 최소 행입니다. <br />참조 [Azure SQL 한도](../sql-database/sql-database-resource-limits.md)합니다. |  처음에 모든 일괄 처리는 대량 최대 일괄 처리 크기를 사용 하 여 삽입 합니다. SQL에서 재시도 가능한 오류를 기반으로 절반 (까지 최소 일괄 처리 크기)의 일괄 처리를 분할할 수 있습니다. |
+| Azure SQL Database | 최대 일괄 처리 수를 사용 하 여 구성할 수 있습니다. 기본적으로 10,000 최대값과 100 행 그룹당 최대 행 단일 대량 삽입합니다.<br />참조 [Azure SQL 한도](../sql-database/sql-database-resource-limits.md)합니다. |  처음에 모든 일괄 처리는 대량 삽입 최대 일괄 처리 수입니다. 일괄 처리의 절반 (최소 일괄 처리 수) 될 때까지 SQL에서 재시도 가능한 오류를 기반으로 분할 됩니다. |
 | Linux에서 File Storage 사용에 대한 자세한 내용은 Linux에서 Azure 파일 스토리지 사용 방법을 참조하세요. | 참조 [Azure Storage 용량 한도](../azure-subscription-service-limits.md#storage-limits)합니다. | 최대 blob 블록 크기는 4MB입니다.<br />최대 blob 블록 개수는 50,000입니다. |
-| Azure Event Hubs  | 메시지당 256KB입니다. <br />참조 [Event Hubs 제한](../event-hubs/event-hubs-quotas.md)합니다. |  각 이벤트에 개별적으로 압축 하 고 정렬 되지 입/출력 분할 하는 경우 **EventData** 최대 메시지 크기 (Premium SKU에 대 한 1MB)의 일괄 처리에 전송 합니다. <br /><br />  여러 이벤트를 단일 압축 되는 입/출력 분할 aligned 인 경우 **EventData** 최대 메시지 크기, 최대 인스턴스 및 전송 합니다.  |
+| Azure Event Hubs  | 256KB 또는 메시지당 1MB입니다. <br />참조 [Event Hubs 제한](../event-hubs/event-hubs-quotas.md)합니다. |  각 이벤트에 개별적으로 압축 된 입/출력 분할 정렬 되지 경우 `EventData` 최대 메시지 크기의 일괄 처리에 전송 합니다. 이 경우에 발생 [사용자 지정 메타 데이터 속성](#custom-metadata-properties-for-output) 사용 됩니다. <br /><br />  여러 이벤트를 단일 압축 되는 입/출력 분할 aligned 인 경우 `EventData` 최대 메시지 크기, 최대 인스턴스 및 전송 합니다. |
 | Power BI | 참조 [Power BI Rest API 제한](https://msdn.microsoft.com/library/dn950053.aspx)합니다. |
 | Azure Table Storage | 참조 [Azure Storage 용량 한도](../azure-subscription-service-limits.md#storage-limits)합니다. | 기본값은 단일 트랜잭션당 100 개의 엔터티가 있습니다. 필요에 따라 작은 값으로 구성할 수 있습니다. |
-| Azure Service Bus 큐   | 메시지당 256KB입니다.<br /> 참조 [Service Bus 한도](../service-bus-messaging/service-bus-quotas.md)합니다. | 메시지당 단일 이벤트를 사용 합니다. |
-| Azure Service Bus 항목 | 메시지당 256KB입니다.<br /> 참조 [Service Bus 한도](../service-bus-messaging/service-bus-quotas.md)합니다. | 메시지당 단일 이벤트를 사용 합니다. |
-| Azure Cosmos DB   | 참조 [Azure Cosmos DB 제한](../azure-subscription-service-limits.md#azure-cosmos-db-limits)합니다. | 일괄 처리 크기 및 빈도 동적으로 조정 하는 쓰기 Azure Cosmos DB 응답을 기반으로 합니다. <br /> Stream Analytics에서 미리 정해진 제한은 없습니다. |
+| Azure Service Bus 큐   | 표준 계층에서 프리미엄 계층에 대 한 1MB 메시지당 256KB입니다.<br /> 참조 [Service Bus 한도](../service-bus-messaging/service-bus-quotas.md)합니다. | 메시지당 단일 이벤트를 사용 합니다. |
+| Azure Service Bus 항목 | 표준 계층에서 프리미엄 계층에 대 한 1MB 메시지당 256KB입니다.<br /> 참조 [Service Bus 한도](../service-bus-messaging/service-bus-quotas.md)합니다. | 메시지당 단일 이벤트를 사용 합니다. |
+| Azure Cosmos DB   | 참조 [Azure Cosmos DB 제한](../azure-subscription-service-limits.md#azure-cosmos-db-limits)합니다. | 일괄 처리 크기 및 쓰기 빈도 Azure Cosmos DB 응답에 따라 동적으로 조정 됩니다. <br /> Stream Analytics에서 미리 정해진 제한은 없습니다. |
 | Azure 기능   | | 기본 배치 크기는 262,144 바이트 (256 KB)입니다. <br /> 일괄 처리당 기본 이벤트 수는 100입니다. <br /> 일괄 처리 크기는 구성 가능하며 Stream Analytics [출력 옵션](#azure-functions)에서 증가 또는 감소될 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계

@@ -7,23 +7,25 @@ ms.author: mamccrea
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 12/06/2018
+ms.date: 6/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: e43e1034abe4bbe3d31a46ab3b98b0efe612b852
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cb81c73f7946a10bae0470a55dcf1c0d55c2b847
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66159435"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67330045"
 ---
-# <a name="clean-up-your-azure-stream-analytics-job"></a>Azure Stream Analytics 작업 정리
+# <a name="stop-or-delete-your-azure-stream-analytics-job"></a>중지 하거나 삭제 하 여 Azure Stream Analytics 작업
 
-Azure Stream Analytics 작업은 Azure Portal, Azure PowerShell, .Net 또는 REST API용 Azure SDK를 통해 쉽게 삭제될 수 있습니다. 삭제 된 후에 Stream Analytics 작업을 복구할 수 없습니다.
+Azure Stream Analytics 작업을 쉽게 중지 또는 Azure portal, Azure PowerShell, Azure SDK for.Net 또는 REST API를 통해 삭제할 수 있습니다. 삭제 된 후에 Stream Analytics 작업을 복구할 수 없습니다.
 
 >[!NOTE] 
 >Stream Analytics 작업을 중지한 경우 Event Hubs 또는 Azure SQL Database와 같은 입력 및 출력 스토리지에서만 데이터가 유지됩니다. Azure에서 데이터를 제거해야 하는 경우 Stream Analytics 작업의 입력 및 출력 리소스에 대해 제거 프로세스를 수행해야 합니다.
 
 ## <a name="stop-a-job-in-azure-portal"></a>Azure Portal에서 작업 중지
+
+작업을 중지 하면 리소스가 deprovisionned 및 이벤트 처리를 중지 합니다. 이 작업에 관련 된 요금 서비스도 중지 됩니다. 그러나 모든 구성을 유지 하 고 나중에 작업을 다시 시작 수 있습니다. 
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다. 
 
@@ -35,6 +37,9 @@ Azure Stream Analytics 작업은 Azure Portal, Azure PowerShell, .Net 또는 RES
 
 
 ## <a name="delete-a-job-in-azure-portal"></a>Azure Portal에서 작업 삭제
+
+>[!WARNING] 
+>삭제 된 후에 Stream Analytics 작업을 복구할 수 없습니다.
 
 1. Azure 포털에 로그인합니다. 
 

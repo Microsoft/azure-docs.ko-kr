@@ -2,22 +2,22 @@
 title: Visual Studio용 R 도구에서 작업 제출 - Azure HDInsight
 description: 로컬 Visual Studio 컴퓨터에서 HDInsight 클러스터로 R 작업을 제출합니다.
 ms.service: hdinsight
-author: maxluk
-ms.author: maxluk
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 06/27/2018
-ms.openlocfilehash: 8f1ed582b7abf43afd38ca5c358aa7e179bfecb3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/19/2019
+ms.openlocfilehash: d977d5a25db0cbe641179bce860e9f67c60f29ab
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64702286"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340811"
 ---
 # <a name="submit-jobs-from-r-tools-for-visual-studio"></a>Visual Studio용 R 도구에서 작업 제출
 
-RTVS([Visual Studio용 R 도구](https://www.visualstudio.com/vs/rtvs/))는 [Visual Studio 2017](https://www.visualstudio.com/downloads/) 및 [Visual Studio 2015 업데이트 3](https://go.microsoft.com/fwlink/?LinkId=691129) 이상의 Community(무료), Professional 및 Enterprise 버전에 대한 무료, 오픈 소스 확장입니다.
+RTVS([Visual Studio용 R 도구](https://www.visualstudio.com/vs/rtvs/))는 [Visual Studio 2017](https://www.visualstudio.com/downloads/) 및 [Visual Studio 2015 업데이트 3](https://go.microsoft.com/fwlink/?LinkId=691129) 이상의 Community(무료), Professional 및 Enterprise 버전에 대한 무료, 오픈 소스 확장입니다. RTVS는 사용할 수 없습니다 [Visual Studio 2019](https://docs.microsoft.com/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects?view=vs-2019)합니다.
 
 RTVS는 ggplot2 및 ggviz 등의 R 라이브러리, [R 코드 디버깅](https://docs.microsoft.com/visualstudio/rtvs/debugging) 등을 통해 [R 대화형 창](https://docs.microsoft.com/visualstudio/rtvs/interactive-repl)(REPL), intellisense(코드 완성), [플롯 시각화](https://docs.microsoft.com/visualstudio/rtvs/visualizing-data)와 같은 도구를 제공하여 R 워크플로를 개선합니다.
 
@@ -48,7 +48,7 @@ RTVS는 ggplot2 및 ggviz 등의 R 라이브러리, [R 코드 디버깅](https:/
 
 ## <a name="execute-local-r-methods"></a>로컬 R 메서드 실행
 
-1. [HDInsight ML 서비스 클러스터](r-server-get-started.md)를 만듭니다.
+1. ML Services HDInsight 클러스터를 만듭니다.
 2. [RTVS 확장](https://docs.microsoft.com/visualstudio/rtvs/installation)을 설치합니다.
 3. [샘플 zip 파일](https://github.com/Microsoft/RTVS-docs/archive/master.zip)을 다운로드합니다.
 4. Visual Studio에서 `examples/Examples.sln`을 열어 솔루션을 시작합니다.
@@ -65,15 +65,9 @@ RTVS는 ggplot2 및 ggviz 등의 R 라이브러리, [R 코드 디버깅](https:/
 
 PuTTY가 장착된 Windows 컴퓨터에서 Microsoft ML Server/Microsoft R Client를 사용하여, 로컬 클라이언트에서 HDInsight 클러스터로 분산 `RevoScaleR` 함수를 실행하는 계산 컨텍스트를 만들 수 있습니다. `RxSpark`를 통해 사용자 이름, Apache Hadoop 클러스터의 Edge 노드, SSH 스위치 등을 지정하여 컴퓨팅 컨텍스트를 만듭니다.
 
-1. 에지 노드의 호스트 이름을 찾으려면 Azure에서 HDInsight ML 서비스 클러스터 창을 연 다음, 개요 창의 상단 메뉴에서 **SSH(보안 셸)** 를 선택합니다.
+1. HDInsight에서 기계 학습 서비스에 지 노드 주소는 `CLUSTERNAME-ed-ssh.azurehdinsight.net` 여기서 `CLUSTERNAME` ML 서비스 클러스터의 이름입니다.
 
-    ![SSH(보안 셸)](./media/r-server-submit-jobs-r-tools-vs/ssh.png)
-
-2. **Edge 노드 호스트 이름** 값을 복사합니다.
-
-    ![Edge 노드 호스트 이름](./media/r-server-submit-jobs-r-tools-vs/edge-node.png)
-
-3. 사용자 환경에 맞게 설정 변수 값을 변경하여 Visual Studio의 R 대화형 창에 다음 코드를 붙여 넣습니다.
+1. 사용자 환경에 맞게 설정 변수 값을 변경하여 Visual Studio의 R 대화형 창에 다음 코드를 붙여 넣습니다.
 
     ```R
     # Setup variables that connect the compute context to your HDInsight cluster
@@ -103,7 +97,7 @@ PuTTY가 장착된 Windows 컴퓨터에서 Microsoft ML Server/Microsoft R Clien
     
     ![Spark 컨텍스트 설정](./media/r-server-submit-jobs-r-tools-vs/spark-context.png)
 
-4. R 대화형 창에서 다음 명령을 실행합니다.
+1. R 대화형 창에서 다음 명령을 실행합니다.
 
     ```R
     rxHadoopCommand("version") # should return version information
@@ -115,7 +109,7 @@ PuTTY가 장착된 Windows 컴퓨터에서 Microsoft ML Server/Microsoft R Clien
 
     ![성공적인 rx 명령 실행](./media/r-server-submit-jobs-r-tools-vs/rx-commands.png)
 
-5. `rxHadoopCopy`가 예제 데이터 폴더의 `people.json` 파일을 새로 만든 `/user/RevoShare/newUser` 폴더로 복사했는지 확인합니다.
+1. `rxHadoopCopy`가 예제 데이터 폴더의 `people.json` 파일을 새로 만든 `/user/RevoShare/newUser` 폴더로 복사했는지 확인합니다.
 
     1. Azure의 HDInsight ML 서비스 클러스터 창의 왼쪽 메뉴에서 **저장소 계정**을 선택합니다.
 
@@ -131,7 +125,7 @@ PuTTY가 장착된 Windows 컴퓨터에서 Microsoft ML Server/Microsoft R Clien
 
         ![복사된 파일](./media/r-server-submit-jobs-r-tools-vs/copied-file.png)
 
-6. 현재 Apache Spark 컨텍스트의 사용이 끝나면 중지해야 합니다. 여러 컨텍스트를 한 번에 실행할 수 없습니다.
+1. 현재 Apache Spark 컨텍스트의 사용이 끝나면 중지해야 합니다. 여러 컨텍스트를 한 번에 실행할 수 없습니다.
 
     ```R
     rxStopEngine(mySparkCluster)
@@ -141,4 +135,4 @@ PuTTY가 장착된 Windows 컴퓨터에서 Microsoft ML Server/Microsoft R Clien
 
 * [HDInsight의 ML Services에 대한 계산 컨텍스트 옵션](r-server-compute-contexts.md)
 * [ScaleR 및 SparkR 결합](../hdinsight-hadoop-r-scaler-sparkr.md)에서는 항공편 지연 예측의 예를 제공합니다.
-<!-- * You can also submit R jobs with the [R Studio Server](hdinsight-submit-jobs-from-r-studio-server.md) -->
+

@@ -7,16 +7,16 @@ ms.service: bastion
 ms.topic: conceptual
 ms.date: 06/03/2019
 ms.author: cherylmc
-ms.openlocfilehash: d8012fb75282d64f7d1858e02b842b1c770200f9
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: 5fbd64d2f001a0fbe91de2d954889816a1819479
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67191773"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67339444"
 ---
 # <a name="create-an-azure-bastion-host-preview"></a>(미리 보기)는 Azure 요새 호스트 만들기
 
-이 문서에서는 Azure 요새 호스트를 만드는 방법을 보여 줍니다. 배스 천 Azure 서비스를 가상 네트워크에 프로 비전 하면 원활한 RDP/SSH 환경은 동일한 가상 네트워크에 있는 모든 Vm에 사용할 수 있습니다. 구독/계정 또는 가상 머신 단위가 아니라 가상 네트워크 당이 배포가 됩니다.
+이 문서에서는 Azure 요새 호스트를 만드는 방법을 보여 줍니다. 배스 천 Azure 서비스를 가상 네트워크에 프로 비전 하면 원활한 RDP/SSH 환경은 동일한 가상 네트워크에 있는 모든 Vm에 사용할 수 있습니다. 이 배포의 단위는 구독/계정 또는 가상 머신이 아니라 가상 네트워크입니다.
 
 요새 호스트 리소스를 만들 수 있는 두 가지 있습니다.
 
@@ -41,7 +41,7 @@ ms.locfileid: "67191773"
 
 이 섹션에서는 Azure portal에서 새 Azure 배스 천 리소스를 만들 수 있습니다.
 
-1. 홈 페이지에서 [ Azure portal-미리 보기](http://aka.ms/BastionHost), 클릭 **+ 리소스 만들기**합니다. 이 미리 보기에 일반 Azure portal이 아닌 포털에 액세스 하려면 제공 된 링크를 사용 해야 합니다.
+1. 홈 페이지에서 [ Azure portal-미리 보기](https://aka.ms/BastionHost), 클릭 **+ 리소스 만들기**합니다. 이 미리 보기에 일반 Azure portal이 아닌 포털에 액세스 하려면 제공 된 링크를 사용 해야 합니다.
 
 1. 에 **새로 만들기** 페이지를 *마켓플레이스를 검색 합니다* 필드에 입력 **배스 천**, 클릭 **Enter** 검색 결과를 가져오려고 합니다.
 

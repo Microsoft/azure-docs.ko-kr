@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 92cb427149e6e6cbddfb96c6e4488017641e6482
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7dbb04a9d002fdcff49d28f69ee0975500bb7ed0
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60761746"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340780"
 ---
 # <a name="troubleshoot-azure-stream-analytics-outputs"></a>Azure Stream Analytics 출력 문제 해결
 
@@ -90,6 +90,10 @@ SQL 테이블에 UNIQUE KEY 제약 조건이 설정되고 SQL 테이블에 중�
 * 기본 키에서 IGNORE_DUP_KEY 또는 ALTER INDEX를 사용하는 고유한 제약 조건을 설정할 수 없습니다. 인덱스를 삭제하고 다시 만들어야 합니다.  
 * 고유 인덱스에 ALTER INDEX를 사용하여 IGNORE_DUP_KEY 옵션을 설정할 수 있습니다. PRIMARY KEY/UNIQUE 제약 조건과 다르게 CREATE INDEX 또는 INDEX 정의를 사용하여 만듭니다.  
 * 이러한 인덱스에 고유성을 적용할 수 없기 때문에 IGNORE_DUP_KEY는 열 저장소 인덱스에 적용되지 않습니다.  
+
+## <a name="column-names-are-lower-cased-by-azure-stream-analytics"></a>열 이름은 Azure Stream Analytics에서 소문자로 변환
+원래 호환성 수준 (1.0)를 사용 하면 Azure Stream Analytics는 열 이름을 소문자로 변경 하는 데 사용 합니다. 이 동작은 이후 호환성 수준에서 수정 되었습니다. 대/소문자를 유지 하기 위해 고객은 호환성 수준 1.1 이상으로 이동할 것이 좋습니다. 자세한 정보를 확인할 수 있습니다 [Azure Stream Analytics 작업에 대 한 호환성 수준을](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-compatibility-level)합니다.
+
 
 ## <a name="get-help"></a>도움말 보기
 

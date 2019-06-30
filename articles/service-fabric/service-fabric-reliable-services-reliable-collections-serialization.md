@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 5/8/2017
 ms.author: aljo
-ms.openlocfilehash: ee19be45915b3ff1253ec721f4334fead19647b8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2445b37e8152d8f55dad6eff057d273851dc2209
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60723602"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340688"
 ---
 # <a name="reliable-collection-object-serialization-in-azure-service-fabric"></a>Azure Service Fabric의 신뢰할 수 있는 컬렉션 개체 serialization
 신뢰할 수 있는 컬렉션은 해당 항목을 복제하고 유지하여 컴퓨터 장애 및 정전이 발생해도 지속되도록 합니다.
@@ -55,7 +55,7 @@ Reliable State Manager에는 다음 형식에 대한 기본 제공 직렬 변환
 
 사용자 지정 직렬 변환기는 성능 향상이나 네트워크 및 디스크의 데이터 암호화에 주로 사용됩니다. 무엇보다, 사용자 지정 직렬 변환기는 형식 정보를 직렬화해야 할 필요가 없기 때문에 일반적으로 제네릭 직렬 변환기보다 더 효율적입니다. 
 
-[IReliableStateManager.TryAddStateSerializer<T>](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.data.ireliablestatemanager.tryaddstateserializer)는 지정된 형식 T에 대한 사용자 지정 직렬 변환기를 등록하는 데 사용됩니다. 이 등록은 StatefulServiceBase 생성 시 수행되어 복구가 시작되기 전에 신뢰할 수 있는 모든 컬렉션이 적절한 직렬 변환기에 액세스하여 영구 데이터를 읽을 수 있도록 해야 합니다.
+[IReliableStateManager.TryAddStateSerializer\<T >](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.data.ireliablestatemanager.tryaddstateserializer) T. 지정된 된 형식에 대 한 사용자 지정 직렬 변환기를 등록 하는 데 사용 됩니다 이 등록은 StatefulServiceBase 복구가 시작 되기 전에 모든 신뢰할 수 있는 컬렉션 액세스할 수 있는 지속형된 데이터를 읽을 적절 한 직렬 변환기의 생성에 수행 되어야 합니다.
 
 ```csharp
 public StatefulBackendService(StatefulServiceContext context)
@@ -73,10 +73,10 @@ public StatefulBackendService(StatefulServiceContext context)
 
 ### <a name="how-to-implement-a-custom-serializer"></a>사용자 지정 직렬 변환기를 구현하는 방법
 
-사용자 지정 직렬 변환기는 [IStateSerializer<T>](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.data.istateserializer-1) 인터페이스를 구현해야 합니다.
+사용자 지정 serializer를 구현 해야 합니다 [IStateSerializer\<T >](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.data.istateserializer-1) 인터페이스입니다.
 
 > [!NOTE]
-> IStateSerializer<T>에는 기준 값이라는 추가 T를 사용하는 쓰기 및 읽기 오버로드가 포함되어 있습니다. 이 API는 차등 serialization에 사용됩니다. 현재 차등 serialization 기능은 노출되지 않습니다. 따라서 이러한 두 오버로드는 차등 serialization이 노출되고 사용될 때까지 호출되지 않습니다.
+> IStateSerializer\<T > 기준 값 이라는 추가 t를 사용 하는 쓰기 및 읽기에 대 한 오버 로드를 포함 합니다. 이 API는 차등 serialization에 사용됩니다. 현재 차등 serialization 기능은 노출되지 않습니다. 따라서 이러한 두 오버로드는 차등 serialization이 노출되고 사용될 때까지 호출되지 않습니다.
 
 다음은 4가지 속성을 포함하는 OrderKey라는 사용자 지정 형식 예제입니다.
 

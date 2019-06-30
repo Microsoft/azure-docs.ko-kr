@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 08/29/2018
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: bcb0c806d916b9dff4461cad829a1d75e8df7cf6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 35193380cc890a93d93c68bf5fc405572b5aa409
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60766270"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67339889"
 ---
 # <a name="certificates-and-the-app-service-environment"></a>인증서 및 App Service Environment 
 
@@ -85,7 +85,9 @@ ASE에서 인증서를 앱에 업로드하려면 다음을 수행합니다.
 
     84EC242A4EC7957817B8E48913E50953552DAFA6,6A5C65DC9247F762FE17BF8D4906E04FE6B31819
 
-인증서는 해당 설정을 구성한 앱과 동일한 App Service 계획에 있는 모든 앱에서 사용할 수 있습니다. 다른 App Service 계획의 응용 프로그램에서 이 인증서를 사용할 수 있도록 하려면 해당 App Service 계획의 앱에서 앱 설정 작업을 반복해야 합니다. 인증서가 설정되었는지 확인하려면 Kudu 콘솔로 이동하여 PowerShell 디버그 콘솔에서 dir cert:\localmachine\root 명령을 실행합니다. 
+인증서는 해당 설정을 구성한 앱과 동일한 App Service 계획에 있는 모든 앱에서 사용할 수 있습니다. 다른 App Service 계획의 응용 프로그램에서 이 인증서를 사용할 수 있도록 하려면 해당 App Service 계획의 앱에서 앱 설정 작업을 반복해야 합니다. 인증서 설정 되어 있는지를 확인 하려면 Kudu 콘솔로 이동 하 고 PowerShell 디버그 콘솔에서 다음 명령을 실행:
+
+    dir cert:\localmachine\root
 
 테스트를 수행하려면 자체 서명된 인증서를 만들고 다음 PowerShell을 사용하여 *.cer* 파일을 생성할 수 있습니다. 
 

@@ -8,12 +8,12 @@ ms.date: 05/22/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 8867912d98897a695c1e59ebd4177301230281bb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 012cf227bea7dc24eb85fcd9179a7b1025327dcf
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66399765"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67342144"
 ---
 # <a name="troubleshoot-errors-when-onboarding-solutions"></a>솔루션을 온보딩할 때 발생하는 오류 문제 해결
 
@@ -55,7 +55,7 @@ Failed to configure automation account for diagnostic logging
 
 #### <a name="cause"></a>원인
 
-가격 책정 계층에는 구독의 청구 모델 맞지 않는 경우이 오류를 발생할 수 있습니다. 자세한 내용은 [모니터링 사용량 및 예상된 비용 Azure Monitor에서](http://aka.ms/PricingTierWarning)합니다.
+가격 책정 계층에는 구독의 청구 모델 맞지 않는 경우이 오류를 발생할 수 있습니다. 자세한 내용은 [모니터링 사용량 및 예상된 비용 Azure Monitor에서](https://aka.ms/PricingTierWarning)합니다.
 
 #### <a name="resolution"></a>해결 방법
 

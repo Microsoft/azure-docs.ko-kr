@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/01/2019
 ms.author: willzhan
-ms.openlocfilehash: d3ff97dc86ea6932ba51a4a30e53edf1082d5305
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae5fdd51d9bc1a3e7e2521c6ca1ff64d884c96f8
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64937480"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341774"
 ---
 # <a name="offline-playready-streaming-for-windows-10"></a>Windows 10에서 PlayReady 오프라인 스트리밍
 
@@ -27,6 +27,9 @@ Azure Media Services는 DRM 보호 기능을 사용하여 오프라인 다운로
 
 - [iOS용 오프라인 FairPlay 스트리밍](offline-fairplay-for-ios.md)
 - [Android용 오프라인 Widevine 스트리밍](offline-widevine-for-android.md)
+
+> [!NOTE]
+> 오프 라인 DRM은만 콘텐츠를 다운로드 하는 경우 라이선스에 대 한 단일 요청에 대 한 요금이 청구 됩니다. 오류 청구 되지 않습니다.
 
 ## <a name="overview"></a>개요
 

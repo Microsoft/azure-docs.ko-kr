@@ -9,12 +9,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 3/18/2019
-ms.openlocfilehash: 4be73554df0b6bddaafe3910c80c855e127d79f1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ac58bbbc252d66620ad410bffa805b75ec3042d4
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60771654"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341762"
 ---
 # <a name="azure-stream-analytics-output-to-azure-sql-database"></a>Azure SQL Database에 Azure Stream Analytics 출력
 
@@ -39,7 +39,7 @@ Azure Stream Analytics의 SQL 출력에서는 병렬 쓰기를 옵션으로 지�
 
 - **분할된 테이블 및 인덱스** – 파티션 키와 동일한 열(예: PartitionId)이 있는 테이블에서 [분할된](https://docs.microsoft.com/sql/relational-databases/partitions/partitioned-tables-and-indexes?view=sql-server-2017) SQL 테이블 및 분할된 인덱스를 사용하면 데이터를 쓰는 동안 파티션 간 경합을 대폭 줄일 수 있습니다. 분할된 테이블의 경우 주 파일 그룹에 [파티션 함수](https://docs.microsoft.com/sql/t-sql/statements/create-partition-function-transact-sql?view=sql-server-2017) 및 [파티션 구성표](https://docs.microsoft.com/sql/t-sql/statements/create-partition-scheme-transact-sql?view=sql-server-2017)를 만들어야 합니다. 이렇게 하면 새 데이터가 로드되는 동안 기존 데이터의 가용성도 향상됩니다. 파티션 수에 따라 로그 IO 제한에 도달할 수 있으며, 파티션 수는 SKU를 업그레이드하여 늘릴 수 있습니다.
 
-- **고유 키 위반 방지** – Azure Stream Analytics 활동 로그에서 [다중 키 위반 경고 메시지](stream-analytics-common-troubleshooting-issues.md#handle-duplicate-records-in-azure-sql-database-output)를 받은 경우 작업이 복구 과정에서 발생하기 쉬운 고유한 제약 조건 위반의 영향을 받지 않게 해야 합니다. 이렇게 하려면 인덱스에서 [IGNORE\_DUP\_KEY](stream-analytics-common-troubleshooting-issues.md#handle-duplicate-records-in-azure-sql-database-output) 옵션을 설정하면 됩니다.
+- **고유 키 위반 방지** – Azure Stream Analytics 활동 로그에서 [다중 키 위반 경고 메시지](stream-analytics-troubleshoot-output.md#key-violation-warning-with-azure-sql-database-output)를 받은 경우 작업이 복구 과정에서 발생하기 쉬운 고유한 제약 조건 위반의 영향을 받지 않게 해야 합니다. 이렇게 하려면 인덱스에서 [IGNORE\_DUP\_KEY](stream-analytics-troubleshoot-output.md#key-violation-warning-with-azure-sql-database-output) 옵션을 설정하면 됩니다.
 
 ## <a name="azure-data-factory-and-in-memory-tables"></a>Azure Data Factory 및 메모리 내 테이블
 

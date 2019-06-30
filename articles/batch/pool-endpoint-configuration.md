@@ -8,12 +8,12 @@ ms.service: batch
 ms.topic: article
 ms.date: 02/13/2018
 ms.author: lahugh
-ms.openlocfilehash: 9b6b28b9f55623fbdff6ab80c889141c8815600f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d788db9d554c6200316bb4e3f36640dac1925fc4
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67071525"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341544"
 ---
 # <a name="configure-or-disable-remote-access-to-compute-nodes-in-an-azure-batch-pool"></a>Azure Batch 풀의 계산 노드에 대한 원격 액세스 구성 또는 비활성화
 
@@ -53,7 +53,7 @@ pool.NetworkConfiguration = new NetworkConfiguration
 다음 Python 코드 조각에서는 모든 인터넷 트래픽을 거부하도록 Linux 풀의 계산 노드에 있는 SSH 엔드포인트를 구성하는 방법을 보여줍니다. 이 엔드포인트는 *4000 - 4100* 범위의 프런트 엔드 포트 풀을 사용합니다. 
 
 ```python
-pool.network_configuration=batchmodels.NetworkConfiguration(
+pool.network_configuration = batchmodels.NetworkConfiguration(
     endpoint_configuration=batchmodels.PoolEndpointConfiguration(
         inbound_nat_pools=[batchmodels.InboundNATPool(
             name='SSH',
@@ -63,14 +63,14 @@ pool.network_configuration=batchmodels.NetworkConfiguration(
             frontend_port_range_end=4100,
             network_security_group_rules=[
                 batchmodels.NetworkSecurityGroupRule(
-                priority=170,
-                access=batchmodels.NetworkSecurityGroupRuleAccess.deny,
-                source_address_prefix='Internet'
+                    priority=170,
+                    access=batchmodels.NetworkSecurityGroupRuleAccess.deny,
+                    source_address_prefix='Internet'
                 )
             ]
         )
         ]
-    ) 
+    )
 )
 ```
 
@@ -97,7 +97,7 @@ pool.NetworkConfiguration = new NetworkConfiguration
 다음 Python 코드 조각에서는 *192.168.1.0/24*라는 서브넷에서 오는 액세스만 허용하도록 Linux 풀의 계산 노드에 있는 SSH 엔드포인트를 구성하는 방법을 보여줍니다. 두 번째 NSG 규칙은 서브넷과 일치하지 않는 트래픽을 거부합니다.
 
 ```python
-pool.network_configuration=batchmodels.NetworkConfiguration(
+pool.network_configuration = batchmodels.NetworkConfiguration(
     endpoint_configuration=batchmodels.PoolEndpointConfiguration(
         inbound_nat_pools=[batchmodels.InboundNATPool(
             name='SSH',
@@ -107,14 +107,14 @@ pool.network_configuration=batchmodels.NetworkConfiguration(
             frontend_port_range_end=4100,
             network_security_group_rules=[
                 batchmodels.NetworkSecurityGroupRule(
-                priority=170,
-                access='allow',
-                source_address_prefix='192.168.1.0/24'
+                    priority=170,
+                    access='allow',
+                    source_address_prefix='192.168.1.0/24'
                 ),
                 batchmodels.NetworkSecurityGroupRule(
-                priority=175,
-                access='deny',
-                source_address_prefix='*'
+                    priority=175,
+                    access='deny',
+                    source_address_prefix='*'
                 )
             ]
         )

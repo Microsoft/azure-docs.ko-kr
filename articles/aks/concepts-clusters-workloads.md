@@ -70,7 +70,9 @@ AKS는 전용 API 서버, 스케줄러 등을 사용하여 단일 테넌트 클�
 
 노드의 Azure VM 크기는 CPU 수, 메모리 크기, 사용 가능한 저장소(예: 고성능 SSD 또는 일반 HDD)의 크기 및 유형을 정의합니다. 대용량의 CPU와 메모리 또는 고성능 저장소가 필요한 애플리케이션이 요구되는 경우 노드 크기를 적절히 계획합니다. 요구에 맞게 AKS 클러스터의 노드 수를 확장할 수도 있습니다.
 
-AKS 클러스터의 노드에 대 한 VM 이미지는 Ubuntu Linux 또는 Windows Server 2019에 따라 현재. AKS 클러스터를 만들거나 노드 수를 확장하면 Azure 플랫폼에서 요청된 수의 VM을 만들고 구성합니다. 수행 하는 수동 구성이 없습니다. 에이전트 노드는 표준 virtual machines로 청구 되며, 사용 하는 VM 크기에 해야 할인 (포함 [Azure 예약][reservation-discounts]) 자동으로 적용 됩니다.
+
+AKS에서 클러스터의 노드에 대한 VM 이미지는 현재 Ubuntu Linux 또는 Windows Server 2019 기반입니다. AKS 클러스터를 만들거나 노드 수를 확장하면 Azure 플랫폼에서 요청된 수의 VM을 만들고 구성합니다. 수동으로 진행해야 하는 구성은 없습니다. 에이전트 노드는 표준 가상 머신으로 청구되며, 사용하는 VM 크기에 대한 할인 ([Azure 예약][reservation-discounts] 포함)이 자동으로 적용됩니다.
+
 
 다른 호스트 OS, 컨테이너 런타임을 사용하거나 사용자 지정 패키지를 포함해야 하는 경우 [aks-engine][aks-engine]을 사용하여 사용자 고유의 Kubernetes 클러스터를 배포할 수 있습니다. 업스트림 `aks-engine`은 AKS 클러스터에서 공식적으로 지원되기 전에 기능을 릴리스하여 구성 옵션을 제공합니다. 예를 들어 모비(Moby) 이외의 컨테이너 런타임을 사용하려면 `aks-engine`을 사용하여 Kubernetes 클러스터를 구성하고 배포할 수 있습니다.
 
@@ -109,7 +111,7 @@ AKS에서 여러 노드 풀을 사용하는 자세한 방법은 [AKS 클러스�
 
 AKS 클러스터에서 여러 노드 풀을 포함하는 경우 지정된 리소스에 대해 사용할 노드 풀을 Kubernetes 스케줄러에게 알려주어야 할 수 있습니다. 예를 들어, 수신 컨트롤러는 Windows Server 노드에서 실행하지 않아야 합니다(현재 AKS에서 미리 보기). 노드 선택기를 사용하면 노드 OS와 같은 다양한 매개 변수를 정의하여 pod 예약 제어를 할 수 있습니다.
 
-다음 기본 예제에서는 노드 선택기를 사용 하 여 Linux 노드 상의 NGINX 인스턴스를 예약 *"beta.kubernetes.io/os": linux*:
+다음 기본 예제에서는 노드 선택기 *"beta.kubernetes.io/os": linux*를 사용하여 Linux 노드 상의 NGINX 인스턴스를 예약합니다.
 
 ```yaml
 kind: Pod
@@ -124,7 +126,7 @@ spec:
     "beta.kubernetes.io/os": linux
 ```
 
-Pod 예정인를 제어 하는 방법에 대 한 자세한 내용은 참조 하세요. [AKS에 고급 스케줄러 기능에 대 한 유용한][operator-best-practices-advanced-scheduler]합니다.
+Pod 예약을 제어하는 방법에 대한 자세한 내용은 [AKS의 고급 스케줄러 기능에 대한 모범 사례][operator-best-practices-advanced-scheduler]를 참조하세요.
 
 ## <a name="pods"></a>Pod
 

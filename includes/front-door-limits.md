@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/09/2019
 ms.author: sharadag
 ms.custom: include file
-ms.openlocfilehash: e1f5a1c8229544d97d9ff64748390f0d5237ab97
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: deca0034996f6c8ddcac71cd4f191c1a0659b655
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67182576"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67333384"
 ---
 | Resource | 기본/최대 제한 |
 | --- | --- |
@@ -25,6 +25,15 @@ ms.locfileid: "67182576"
 | 라우팅 규칙에 일치하는 경로 패턴 | 25 |
 | 정책당 사용자 지정 웹 애플리케이션 방화벽 규칙 | 10 |
 | 리소스당 웹 애플리케이션 방화벽 정책 | 100 |
+| 사용자 지정 규칙 웹 응용 프로그램 방화벽 일치 조건 | 10 |
+| 웹 응용 프로그램 방화벽 IP 주소 범위 별로 일치 조건 | 600 |
+| 일치 조건에 대해 웹 응용 프로그램 방화벽 문자열 일치 값 | 10 |
+| 웹 응용 프로그램 방화벽 문자열 일치 값 길이 | 256 |
+| 웹 응용 프로그램 방화벽 POST 본문 매개 변수 이름 길이 | 256 |
+| 웹 응용 프로그램 방화벽 HTTP 헤더 이름 길이 | 256 |
+| 웹 응용 프로그램 방화벽 쿠키 이름 길이 | 256 |
+| 웹 응용 프로그램 방화벽 HTTP 요청 본문 크기 검사 | 128KB |
+| 웹 응용 프로그램 방화벽 사용자 지정 응답 본문 길이 | 2KB |
 
 ### <a name="timeout-values"></a>시간 제한 값
 #### <a name="client-to-front-door"></a>클라이언트-Front Door
@@ -42,3 +51,6 @@ ms.locfileid: "67182576"
 | ---- | ------- | ------- |
 | **다운로드** | 다운로드 크기에는 제한이 없습니다. | 다운로드 크기에는 제한이 없습니다. |
 | **업로드** |  각 CTE 업로드 2GB 미만인 경우에 제한이 없습니다. | 크기는 2GB 보다 클 수 없습니다. |
+
+### <a name="other-limits"></a>기타 제한
+- 최대 URL 크기-8192 바이트-원시 URL의 최대 길이 지정 (구성표 + 호스트 이름 + 포트 + 경로 + 쿼리 문자열 url)-최대 쿼리 문자열 크기-4,096 바이트-쿼리 문자열의 최대 길이 바이트 단위로 지정 합니다.

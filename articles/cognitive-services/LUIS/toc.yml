@@ -258,7 +258,7 @@
           href: luis-migration-api-v1-to-v2.md
         - name: V3 REST API로 마이그레이션
           href: luis-migration-api-v3.md
-          displayName: 'json, response, verbose, dynamic, dynamic list object, brackets, array, role, show-all-intents,prebuilt domain, domain, external entities, "$instance",TimezoneOffset, datetimeReference'
+          displayName: 'json, response, verbose, dynamic, dynamic list object, brackets, array, role, show-all-intents,prebuilt domain, domain, external entities, "$instance",TimezoneOffset, datetimeReference, overridePredictions, override'
     - name: 컨테이너 사용
       items:
         - name: 컨테이너 설치 및 실행

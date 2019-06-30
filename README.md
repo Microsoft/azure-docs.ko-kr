@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d4e9e26f2c6764cc179826266891d861514e23f6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 01d6fa30fc781ffe2a9f387f7c9eb4c27eaacc77
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60344092"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67338233"
 ---
 # <a name="microsoft-azure-documentation"></a>Microsoft Azure 설명서
 
@@ -34,10 +34,9 @@ ms.locfileid: "60344092"
 
 ## <a name="license"></a>License
 
-모든 라이선싱 정보는 [LICENSE](.github/LICENSE), [LICENSE-CODE](.github/LICENSE-CODE) 및 [ThirdPartyNotices](.github/ThirdPartyNotices.md)를 참조하세요.
+모든 라이선싱 정보는 [LICENSE](LICENSE), [LICENSE-CODE](LICENSE-CODE) 및 [ThirdPartyNotices](ThirdPartyNotices.md)를 참조하세요.
 
 ## <a name="code-of-conduct"></a>준수 사항
 
 이 프로젝트에는 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)(Microsoft 오픈 소스 준수 사항)이 적용됩니다.
 자세한 내용은 [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)(준수 사항 FAQ)를 참조하거나 [opencode@microsoft.com](mailto:opencode@microsoft.com)에 추가 질문 또는 의견을 알려주세요.
-

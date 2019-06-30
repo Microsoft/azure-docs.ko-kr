@@ -6,12 +6,12 @@ ms.author: janeng
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: 42f290109ca380464cb07ac9f684cdde25b8fdcd
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a92017c462ef62cbfb1aa6c2613a502d1cc5ffc6
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67063760"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340734"
 ---
 # <a name="pricing-tiers-in-azure-database-for-postgresql---single-server"></a>Azure Database for PostgreSQL-단일 서버에서 가격 책정 계층
 
@@ -67,7 +67,7 @@ Azure Portal 또는 Azure CLI 명령을 사용하여 I/O 사용량을 모니터�
 | IOPS | 3IOPS/GB<br/>최소 100IOPS<br/>최대 20,000 IOPS| 3IOPS/GB<br/>최소 100IOPS<br/>최대 20,000 IOPS |
 
 > [!IMPORTANT]
-> 대용량 저장소는 현재 다음 지역에서 공개 미리 보기: 미국 동부, 미국 동부 2, 미국 중부, 미국 서 부, 미국 서 부 2, 북유럽, 유럽 서 부, 동남 아시아, 일본 동부, 한국 중부, 오스트레일리아 동부입니다.
+> 대용량 저장소는 현재 다음 지역에서 공개 미리 보기: 미국 동부, 미국 동부 2, 미국 중부, 미국 서 부, 북유럽, 유럽 서 부, 동남 아시아, 일본 동부, 한국 중부, 오스트레일리아 동부입니다.
 >
 >현재 큰 저장소 미리 보기 지원 하지 않습니다.
 >

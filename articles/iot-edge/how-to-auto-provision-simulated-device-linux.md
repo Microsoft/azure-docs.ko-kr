@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 9a549221a9e1864e1b7565f35139cb4c2a6ca65e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f75ad287b5f026dea7ba0152b009a60572929148
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61248116"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67329637"
 ---
 # <a name="create-and-provision-an-iot-edge-device-with-a-virtual-tpm-on-a-linux-virtual-machine"></a>만들기 및 Linux 가상 머신에 가상 TPM 사용 하 여 IoT Edge 장치를 프로 비전
 
@@ -106,6 +106,8 @@ VM이 만들어지면 autoprovision 장치 수 있는 가상 신뢰할 수 있�
    make
    sudo ./tpm_device_provision
    ```
+   >[!TIP]
+   >추가 매개 변수를 배치 해야 TPM 시뮬레이터를 사용 하 여 테스트 하는 경우 `-Duse_tpm_simulator:BOOL=ON` 사용 하도록 설정 합니다. 전체 명령은 `cmake -Duse_prov_client:BOOL=ON -Duse_tpm_simulator:BOOL=ON .. `합니다.
 
 5. **등록 ID** 및 **인증 키**의 값을 복사합니다. 이러한 값을 사용하여 DPS에서 디바이스에 대한 개별 등록을 만듭니다. 
 

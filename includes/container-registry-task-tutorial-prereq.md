@@ -25,7 +25,7 @@ ms.locfileid: "66148979"
 
 Git 리포지토리에 커밋할 때 작업을 트리거하려면 ACR 작업에서 리포지토리에 액세스하기 위해 PAT가 필요합니다. PAT가 아직 없는 경우 다음 단계에 따라 GitHub에서 하나를 생성합니다.
 
-1. https://github.com/settings/tokens/new에 있는 GitHub의 PAT 만들기 페이지로 이동합니다.
+1. [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new )에 있는 GitHub의 PAT 만들기 페이지로 이동합니다.
 1. 토큰에 대한 짧은 **설명**을 입력합니다(예: "ACR 작업 데모").
 1. **repo**(리포지토리) 아래에서 **repo:status** 및 **public_repo**를 사용하도록 설정합니다.
 

@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/02/2019
+ms.date: 06/12/2019
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 086161b73e2a3e07df835394dc26082e12fbd434
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3a58d2b235757faf760539f514ea349e33e12b41
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65963988"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67310013"
 ---
 # <a name="automate-user-provisioning-and-deprovisioning-to-saas-applications-with-azure-active-directory"></a>Azure Active Directory를 사용하여 SaaS 애플리케이션의 사용자를 자동으로 프로비저닝 및 프로비저닝 해제
 
@@ -58,13 +58,13 @@ Azure Active Directory (Azure AD)를 사용 하면 생성, 유지 관리 및 클
 합니다 **Azure AD 프로 비전 서비스** 각 응용 프로그램 공급 업체에서 제공 하는 사용자 관리 API 끝점에 연결 하 여 SaaS 앱 및 다른 시스템에 사용자를 프로 비전 합니다. 이러한 사용자 관리 API 엔드포인트를 사용하면 Azure AD에서 프로그래밍 방식으로 사용자를 만들고, 업데이트하고, 제거할 수 있습니다. 선택한 응용 프로그램의 경우 프로 비전 서비스를 만들고 수도 있습니다, 업데이트, 그룹 및 역할과 같은 추가 id 관련 개체를 제거 합니다. 
 
 ![프로비전](./media/user-provisioning/provisioning0.PNG)
-그림 1: Azure AD Provisioning Service*
+*그림 1: Azure AD Provisioning Service*
 
 ![아웃바운드 프로비전](./media/user-provisioning/provisioning1.PNG)
-그림 2: Azure AD에서 인기 있는 SaaS 애플리케이션으로의 “아웃바운드” 사용자 프로비저닝 워크플로*
+*그림 2: Azure AD에서 인기 있는 SaaS 애플리케이션으로의 “아웃바운드” 사용자 프로비저닝 워크플로*
 
 ![인바운드 프로비전](./media/user-provisioning/provisioning2.PNG)
-그림 3: 인기 있는 HCM(Human Capital Management) 애플리케이션에서 Azure Active Directory 및 Windows Server Active Directory로의 “인바운드”사용자 프로비저닝 워크플로*
+*그림 3: 인기 있는 HCM(Human Capital Management) 애플리케이션에서 Azure Active Directory 및 Windows Server Active Directory로의 “인바운드”사용자 프로비저닝 워크플로*
 
 
 ## <a name="what-applications-and-systems-can-i-use-with-azure-ad-automatic-user-provisioning"></a>Azure AD 자동 사용자 프로비전에서 사용할 수 있는 애플리케이션과 시스템은 무엇입니까?
@@ -190,46 +190,7 @@ Azure AD가 소스 시스템인 경우 프로비저닝 서비스는 [Azure AD Gr
 
 ## <a name="how-long-will-it-take-to-provision-users"></a>사용자를 프로비전하는 데 걸리는 시간은 어느 정도인가요?
 
-성능 초기 동기화 또는 증분 동기화를 프로 비전 작업이 실행 되는 여부에 따라 달라 집니다.
-
-에 대 한 **초기 동기화**, 작업에 사용자 및 그룹 원본 시스템의 총 수를 프로 비전 범위에 사용자 및 그룹의 수를 비롯 한 다양 한 요인에 따라 달라 집니다. 초기 동기화 성능에 영향을 주는 포괄적인 요인 목록은 이 섹션의 뒷부분에 요약되어 있습니다.
-
-**증분 동기화**의 경우, 작업 시간은 해당 동기화 주기에서 검색된 변경 수에 따라 달라집니다. 사용자 또는 그룹 멤버 자격 변경이 5,000개 미만인 경우, 단일 증분 동기화 주기 내에 작업이 완료될 수 있습니다. 
-
-다음 표에는 일반적인 프로비저닝 시나리오의 동기화 시간이 요약되어 있습니다. 이러한 시나리오에서 원본 시스템은 Azure AD이고, 대상 시스템은 SaaS 애플리케이션입니다. 동기화 시간 ServiceNow, 작업 공간 연결, Salesforce 및 G Suite SaaS 응용 프로그램에 대 한 동기화 작업의 통계 분석에서 파생 됩니다.
-
-
-| 범위 구성 | 범위 내 사용자, 그룹 및 멤버 | 초기 동기화 시간 | 증분 동기화 시간 |
-| -------- | -------- | -------- | -------- |
-| 할당된 사용자 및 그룹만 동기화 |  1,000 미만 |  30분 미만 | 30분 미만 |
-| 할당된 사용자 및 그룹만 동기화 |  1,000 - 10,000 | 142 - 708분 | 30분 미만 |
-| 할당된 사용자 및 그룹만 동기화 |   10,000 - 100,000 | 1,170 - 2,340분 | 30분 미만 |
-| Azure AD의 모든 사용자 및 그룹 동기화 |  1,000 미만 | 30분 미만  | 30분 미만 |
-| Azure AD의 모든 사용자 및 그룹 동기화 |  1,000 - 10,000 | 30 - 120분 | 30분 미만 |
-| Azure AD의 모든 사용자 및 그룹 동기화 |  10,000 - 100,000  | 713 - 1,425분 | 30분 미만 |
-| Azure AD의 모든 사용자 동기화|  1,000 미만  | 30분 미만 | 30분 미만 |
-| Azure AD의 모든 사용자 동기화 | 1,000 - 10,000  | 43 - 86분 | 30분 미만 |
-
-
-**할당된 사용자 및 그룹만 동기화** 구성의 경우, 다음 공식을 사용하여 대략적인 최소 및 최대 예상 **초기 동기화** 시간을 확인할 수 있습니다.
-
-    Minimum minutes =  0.01 x [Number of assigned users, groups, and group members]
-    Maximum minutes = 0.08 x [Number of assigned users, groups, and group members] 
-    
-**초기 동기화**를 완료하는 데 걸리는 시간에 영향을 주는 요인 요약:
-
-- 프로비저닝 범위에 속하는 사용자 및 그룹의 총 수
-
-- 원본 시스템(Azure AD)에 있는 사용자, 그룹 및 그룹 멤버의 총 수
-
-- 사용자 프로 비전 범위에 대상 응용 프로그램에서 기존 사용자에 게 일치 하는 여부 처음으로 만들어야 합니다. 에 대 한 모든 사용자가 처음으로 생성 됩니다는 동기화 작업 수행 *오랫동안 두 번* 로 기존 사용자에 게 일치 하는 모든 사용자는 작업을 동기화 합니다.
-
-- [감사 로그](check-status-user-account-provisioning.md)의 오류 수. 많은 오류가 있고 프로비저닝 서비스가 격리 상태로 전환된 경우 성능이 저하됩니다.    
-
-- 대상 시스템에서 구현된 요청 비율 한도 및 제한. 일부 대상 시스템 구현 요청 속도 제한 및 제한, 대규모 동기화 작업 중에 성능에 영향을 줄 수 있습니다. 이러한 조건에서 너무 많은 요청을 너무 빠르게 받는 앱은 응답 속도가 느려지거나 연결을 닫을 수도 있습니다. 성능을 개선하려면 커넥터가 앱이 처리할 수 있는 속도보다 빠르게 앱 요청이 전송되지 않도록 조정해야 합니다. Microsoft에서 빌드한 프로비저닝 커넥터는 이러한 조정 작업을 수행합니다. 
-
-- 할당된 그룹 수 및 크기. 할당된 그룹 동기화가 사용자 동기화보다 시간이 오래 걸립니다. 할당된 그룹 수와 크기는 둘 다 성능에 영향을 줍니다. 애플리케이션에 [그룹 개체 동기화가 사용되는 매핑](customize-application-attributes.md#editing-group-attribute-mappings)이 있는 경우 그룹 이름 및 멤버 자격과 같은 그룹 속성이 사용자와 함께 동기화됩니다. 이러한 추가 동기화 때문에 사용자 객체만 동기화하는 것보다 시간이 오래 걸립니다.
-
+성능 프로 비전 작업의 실행 여부는 초기 프로 비전 주기는 증분 주기에 따라 달라 집니다. 프로 비전 시간 사용에 대 한 세부 정보 및 프로 비전 서비스의 상태를 모니터링 하는 방법에 대 한 참조 [사용자 프로 비전의 상태를 확인할](application-provisioning-when-will-provisioning-finish-specific-user.md)합니다. 
 
 ## <a name="how-can-i-tell-if-users-are-being-provisioned-properly"></a>사용자가 적절히 프로비전되는지 어떻게 확인할 수 있나요?
 
@@ -255,7 +216,7 @@ Azure portal에서 감사 로그를 읽는 방법에 대 한 자세한 내용은
 
 예, SaaS 응용 프로그램에 Azure AD에서 서비스를 프로 비전 B2B (또는 게스트) 사용자 프로 비전 하는 Azure AD 사용자를 사용 하는 것이 같습니다.
 
-그러나 Azure AD를 사용 하 여 SaaS 응용 프로그램에 로그인 하는 B2B 사용자에 대 한 SaaS 응용 프로그램의 SAML 기반 single sign on 기능을 특정 방식에서으로 구성 있어야 합니다. 지원 하도록 SaaS 응용 프로그램을 구성 하는 방법에 대 한 자세한 내용은에서 로그인 B2B 사용자를 참조 하십시오 [B2B 공동 작업에 대 한 구성 하는 SaaS 앱]( https://docs.microsoft.com/azure/active-directory/b2b/configure-saas-apps)합니다.
+그러나 Azure AD를 사용 하 여 SaaS 응용 프로그램에 로그인 하는 B2B 사용자에 대 한 SaaS 응용 프로그램의 SAML 기반 single sign on 기능을 특정 방식에서으로 구성 있어야 합니다. B2B 사용자의 로그인을 지원하도록 SaaS 애플리케이션을 구성하는 방법에 대한 자세한 내용은 [B2B 협업을 위한 SaaS 앱 구성]( https://docs.microsoft.com/azure/active-directory/b2b/configure-saas-apps)을 참조하세요.
 
 ### <a name="does-automatic-user-provisioning-to-saas-apps-work-with-dynamic-groups-in-azure-ad"></a>SaaS 앱에 대한 자동 사용자 프로비저닝이 Azure AD의 동적 그룹에 작동하나요?
 

@@ -7,15 +7,15 @@ ms.service: log-analytics
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: bwren
-ms.openlocfilehash: b395b7bccbf93b56e84d5e7b5a4ed7355eaca335
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 7605bf36c41c5b1276d29076173efd52409afaa9
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67296319"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67310333"
 ---
 # <a name="overview-of-log-queries-in-azure-monitor"></a>Azure Monitor에서 로그 쿼리 개요
-로그 쿼리 값을 최대한 활용할 수 있도록 하는 데 도움이 된에서 수집 된 데이터 [Azure Monitor 로그](../platform/data-platform-logs.md)합니다. 강력한 쿼리 언어를 사용 하면, 여러 테이블의 데이터를 조인 하 고, 대량의 데이터를 집계 하 고, 최소한의 코드를 사용 하 여 복잡 한 작업을 수행할 수 있습니다. 거의 모든 질문에 대답할 수 있습니다 및 분석을 수행할 지원 데이터를 수집 하 고 올바른 쿼리를 작성 하는 방법을 이해 합니다.
+로그 쿼리를 사용 하면 수집 된 데이터의 값을 완벽 하 게 활용 하 여 도움이 [Azure Monitor 로그](../platform/data-platform-logs.md)합니다. 강력한 쿼리 언어를 사용 하면, 여러 테이블의 데이터를 조인 하 고, 대량의 데이터를 집계 하 고, 최소한의 코드를 사용 하 여 복잡 한 작업을 수행할 수 있습니다. 거의 모든 질문에 대답할 수 있습니다 및 분석을 수행할 지원 데이터를 수집 하 고 올바른 쿼리를 작성 하는 방법을 이해 합니다.
 
 와 같은 Azure Monitor의 몇 가지 기능 [insights](../insights/insights-overview.md) 하 고 [솔루션](../insights/solutions-inventory.md) 기본 쿼리를 노출 하지 않고 로그 데이터를 처리 합니다. Azure Monitor의 다른 기능을 완전히 활용 하려면 쿼리를 생성 하는 방법 및 대화형으로 Azure Monitor 로그에서 데이터를 분석 하 고를 사용 하는 방법을 이해 해야 합니다.
 

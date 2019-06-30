@@ -79,7 +79,7 @@ Azure Pipelines 릴리스 파이프라인에서는 애플리케이션 패키지�
     
     ![DevOps의 템플릿 옵션에서 빈 프로세스 선택](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-select-template-empty-process.png)
 
-3. **트리거** 아래에서 **지속적인 통합 사용** 트리거 상태를 확인하여 연속 통합을 사용하도록 설정합니다.  **저장 및 큐**를 선택하여 수동으로 빌드를 시작합니다. 
+3. **트리거** 아래에서 **지속적인 통합 사용** 트리거 상태를 확인하여 지속적인 통합을 사용하도록 설정합니다.  **저장 및 큐**를 선택하여 수동으로 빌드를 시작합니다. 
     
     ![지속적인 통합 사용 트리거 상태](./media/stream-analytics-tools-visual-studio-cicd-vsts/build-trigger-status-ci.png)
 
@@ -118,7 +118,7 @@ Azure Pipelines 릴리스 파이프라인에서는 애플리케이션 패키지�
     |**설정**  |**제안 값**  |
     |---------|---------|
     |구독  |  구독을 선택합니다.   |
-    |조치  |  리소스 그룹을 만들기 또는 업데이트   |
+    |작업  |  리소스 그룹을 만들기 또는 업데이트   |
     |리소스 그룹  |  리소스 그룹 이름을 입력합니다.   |
     |Template  | [솔루션 경로]\bin\Debug\Deploy\\[프로젝트 이름].JobTemplate.json   |
     |템플릿 매개 변수  | [솔루션 경로]\bin\Debug\Deploy\\[프로젝트 이름].JobTemplate.parameters.json   |

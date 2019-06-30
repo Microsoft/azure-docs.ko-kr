@@ -96,6 +96,7 @@
         - name: Azure CLI
           href: tutorial-manage-web-traffic-cli.md
         - name: Template
+          displayName: 'ARM, Resource Manager, template'
           href: create-vmss-template.md
     - name: 내부 부하 분산 장치 구성
       items:
@@ -241,6 +242,8 @@
       href: /rest/api/applicationgateway
     - name: Azure 리소스 관리자
       href: ../azure-resource-manager/resource-group-overview.md
+    - name: Resource Manager 템플릿
+      href: 'https://docs.microsoft.com/azure/templates/microsoft.network/allversions'
 - name: 리소스
   items:
     - name: 작성자 템플릿

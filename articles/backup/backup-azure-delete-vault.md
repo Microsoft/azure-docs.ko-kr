@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.author: raynew
-ms.openlocfilehash: 8df4f17c9afbf10c6507e505c6540c3f66a42309
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 51de1c4ac17360282877f05d52c3ea8fa2c6d712
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67275643"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67310755"
 ---
 # <a name="delete-a-recovery-services-vault"></a>Recovery Services 자격 증명 모음 삭제
 
@@ -114,7 +114,7 @@ ms.locfileid: "67275643"
 1. 자격 증명 모음 대시보드 메뉴에서 클릭 **Backup 인프라**합니다.
 2. 클릭 **Backup 관리 서버** 서버를 표시 합니다.
 
-    ![대시보드를 열려면 자격 증명 모음 선택](./media/backup-azure-delete-vault/delete-backup-management-servers.png)
+    ![해당 대시보드를 열려면 자격 증명 모음 선택](./media/backup-azure-delete-vault/delete-backup-management-servers.png)
 
 3. 항목을 마우스 오른쪽 단추로 클릭 > **삭제**합니다.
 4. 에 **삭제할** 메뉴에서 서버 이름을 입력 하 고 클릭 **삭제**합니다.
@@ -124,7 +124,7 @@ ms.locfileid: "67275643"
 
 > [!NOTE]
 > 파일을 보호 된 서버의 MARS 콘솔에서 또는 관리 서버 콘솔에서 항목을 제거 하려면 보호를 중지 하 고 백업을 삭제 합니다. 백업 항목을 유지 하는 경우 삭제 하 고 서버 등록을 취소 하려고 할 때 다음 오류가 표시 됩니다.
-> 
+>
 >![삭제 하지 못했습니다.](./media/backup-azure-delete-vault/deletion-failed.png)
 
 6. 삭제 작업이 완료 되었는지 확인 하려면 Azure 메시지 확인 ![백업 데이터 삭제](./media/backup-azure-delete-vault/messages.png).
@@ -159,8 +159,8 @@ ms.locfileid: "67275643"
 
 > [!NOTE]
 > 이러한 서버의 등록을 삭제 하기 전에 백업 관리 서버 또는 Azure Backup Agent 서버에 연결 된 백업 항목을 삭제 되어야 합니다. 백업 항목을 제거 하려면 해당 하는 경우 서버에서 MARS 관리 콘솔, SC DPM 및 MABS에 이동 하 고 보호를 중지 하 고 백업을 삭제 하는 관련 옵션을 선택 합니다. 백업 항목에 계속 연결 되어 있으면 다음 오류가 표시 됩니다.
-> 
-> 
+>
+>
 >![삭제 하지 못했습니다.](./media/backup-azure-delete-vault/deletion-failed.png)
 
 8. 삭제 작업이 완료 되었는지 확인 하려면 Azure 메시지 확인 ![백업 데이터 삭제](./media/backup-azure-delete-vault/messages.png).

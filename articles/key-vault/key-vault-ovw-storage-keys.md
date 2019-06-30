@@ -8,12 +8,12 @@ author: msmbaldwin
 ms.author: mbaldwin
 manager: barbkess
 ms.date: 03/01/2019
-ms.openlocfilehash: 91cc3f96f9cdd231c38232c972c2628d12b9f4b3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6ac054bc9750e4297080c4ab64030c9c6a5fb55a
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66476157"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312843"
 ---
 # <a name="manage-storage-account-keys-with-azure-key-vault-and-the-azure-cli"></a>Azure Key Vault 및 Azure CLI를 사용 하 여 저장소 계정 키를 관리 합니다. 
 
@@ -94,7 +94,7 @@ Key Vault를 사용 하 여 저장소 계정 키를 관리 하는 네 가지 기
 1. Key Vault에 "저장소 계정 키 운영자 서비스 역할" RBAC 역할을 할당 합니다. 이 역할은 저장소 계정에 대 한 액세스 범위를 제한합니다. 클래식 저장소 계정에 대 한 "클래식 Storage 계정 키 운영자 서비스 역할" 역할을 사용 합니다.
 
     ```
-    az role assignment create --role "Storage Account Key Operator Service Role"  --assignee-object-id <ObjectIdOfKeyVault> --scope 93c27d83-f79b-4cb2-8dd4-4aa716542e74
+    az role assignment create --role "Storage Account Key Operator Service Role" --assignee-object-id 93c27d83-f79b-4cb2-8dd4-4aa716542e74 --scope "/subscriptions/<subscriptionID>/resourceGroups/<StorageAccountResourceGroupName>/providers/Microsoft.Storage/storageAccounts/<StorageAccountName>"
     ```
     
     `93c27d83-f79b-4cb2-8dd4-4aa716542e74` Azure 공용 클라우드에서 Key Vault에 대 한 개체 ID입니다. Azure Government 클라우드에서 Key Vault에 대 한 개체 ID를 가져오려면 참조 [서비스 주체 응용 프로그램 ID](#service-principal-application-id)합니다.

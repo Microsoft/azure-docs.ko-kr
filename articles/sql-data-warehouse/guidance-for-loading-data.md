@@ -11,12 +11,12 @@ ms.date: 05/31/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seoapril2019
-ms.openlocfilehash: 1b5af710feb743a30ac4a2af94b6e7e8b6c56595
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3387f6df36e9f5d98606e33b60a7584ff591efd6
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66479886"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340117"
 ---
 # <a name="best-practices-for-loading-data-into-azure-sql-data-warehouse"></a>Azure SQL Data Warehouse에 데이터를 로드하는 모범 사례
 
@@ -102,7 +102,7 @@ columnstore 인덱스는 고품질 행 그룹으로 데이터를 압축하기 �
 
 ## <a name="creating-statistics-after-the-load"></a>로드 후 통계 만들기
 
-쿼리 성능을 개선하려면 데이터를 처음 로드하거나 데이터 내에 상당한 변화가 생긴 후에, 모든 테이블의 모든 열에서 통계를 만드는 것이 중요합니다.  수동으로 수행할 수 있습니다 또는 설정할 수 있습니다 [자동 생성 statustics](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistics#automatic-creation-of-statistic)합니다.
+쿼리 성능을 개선하려면 데이터를 처음 로드하거나 데이터 내에 상당한 변화가 생긴 후에, 모든 테이블의 모든 열에서 통계를 만드는 것이 중요합니다.  수동으로 수행할 수 있습니다 또는 설정할 수 있습니다 [통계 자동 작성](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistics#automatic-creation-of-statistic)합니다.
 
 통계에 대한 자세한 설명은 [통계](sql-data-warehouse-tables-statistics.md)를 참조하세요. 다음 예제에서는 Customer_Speed 테이블에 있는 5 개의 열에 통계를 수동으로 만드는 방법을 보여 줍니다.
 

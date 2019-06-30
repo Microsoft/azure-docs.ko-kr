@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 05/28/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 666430a11fb95871eb601b2a38eb7b97ad16119f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 362f0b32ea99d0b888ea9f1efa0cd4ea74eb2fa1
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66498951"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67338487"
 ---
 # <a name="app-service-networking-features"></a>App Service 네트워킹 기능
 
@@ -103,7 +103,7 @@ App Service에 서비스를 관리 하는 데 사용 되는 끝점 수가 있습
 
 ![첫 번째 관문을 사용 하 여 액세스 제한](media/networking-features/access-restrictions-afd.png)
 
-Azure Virtual Network (VNet)의 리소스에서만 도달할 수 있도록 앱에 대 한 액세스를 잠그는 원한다 면 VNet에서 무엇이 원본 정적 공용 주소를 해야 합니다. 리소스에 공용가 없는 경우 대신 서비스 끝점 기능을 사용 해야 합니다. 이 자습서를 사용 하 여이 기능을 사용 하는 방법을 알아봅니다 [구성 액세스 제한][iprestrictions]합니다.
+Azure Virtual Network (VNet)의 리소스에서만 도달할 수 있도록 앱에 대 한 액세스를 잠그는 원한다 면 VNet에서 무엇이 원본 정적 공용 주소를 해야 합니다. 리소스에 공용가 없는 경우 대신 서비스 끝점 기능을 사용 해야 합니다. 이 자습서를 사용 하 여이 기능을 사용 하는 방법을 알아봅니다 [액세스 제한 구성][iprestrictions]합니다.
 
 ### <a name="service-endpoints"></a>서비스 엔드포인트
 
@@ -112,7 +112,7 @@ Azure Virtual Network (VNet)의 리소스에서만 도달할 수 있도록 앱�
 ![서비스 엔드포인트](media/networking-features/service-endpoints.png)
 
 * 앱으로의 인바운드 트래픽을 잠그는 데 앱을 사용 하 여 응용 프로그램 게이트웨이 설정
-* VNet의 리소스에 앱에 대 한 문서에서는 액세스 합니다. Vm, Ase 또는 VNet 통합을 사용 하는 다른 앱 포함할 수 있습니다. 
+* VNet의 리소스에 앱에 대 한 액세스를 제한 합니다. Vm, Ase 또는 VNet 통합을 사용 하는 다른 앱 포함할 수 있습니다. 
 
 ![응용 프로그램 게이트웨이 사용 하 여 서비스 끝점](media/networking-features/service-endpoints-appgw.png)
 
@@ -136,7 +136,7 @@ App Service 하이브리드 연결 기능은 Azure 릴레이 하이브리드 연
 
 기능에는 인바운드 방화벽 빈틈 없이 온-프레미스 리소스에 액세스할 수 있도록, 이므로 개발자와 인기 있는 합니다. 아웃 바운드 App Service 네트워킹 기능을 매우 Azure 가상 네트워킹 관련 됩니다. 하이브리드 연결에는 VNet을 통한 이동에 대 한 종속성이 없는 및 다양 한 네트워킹 요구 사항에 사용할 수 있습니다. App Service 하이브리드 연결 기능을 처리 하거나 그 위에 수행 하는 것을 알고 하지 않는 하는 것이 반드시 합니다. 데이터베이스, 웹 서비스 또는 메인프레임에서 임의의 TCP 소켓에 액세스를 사용할 수 있습니다. 기능에는 기본적으로 TCP 패킷을 터널링 합니다. 
 
-하이브리드 연결 개발을 위한 인기 있는 상태인도 다양 한 프로덕션 응용 프로그램 에서도 사용 됩니다. 웹 서비스 또는 데이터베이스에 액세스 하는 데 적합 하지만 유용한 많은 연결이 생성을 포함 하는 상황에 적합 하지 않습니다. 
+하이브리드 연결 개발을 위한 인기 있는 상태인도 다양 한 프로덕션 응용 프로그램 에서도 사용 됩니다. 웹 서비스 또는 데이터베이스에 액세스 하는 데 적합 하지만 많은 연결을 만들기를 포함 하는 상황에 적합 하지 않습니다. 
 
 ### <a name="gateway-required-vnet-integration"></a>게이트웨이 필요 VNet 통합 
 

@@ -127,17 +127,17 @@ Microsoft Azure Germany에 대한 자세한 내용은 [Microsoft Azure Germany](
 
 | 매개 변수 | 설명 | 기본값 |
 | --- | --- | --- |
-| 이름 |캐시의 이름 | |
+| Name |캐시의 이름 | |
 | Location |캐시의 위치 | |
 | ResourceGroupName |캐시를 만들 리소스 그룹 이름 | |
-| 크기 |캐시의 크기. 유효한 값은 P1, P2, P3, P4, C0, C1, C2, C3, C4, C5, C6, 250MB, 1GB, 2.5GB, 6GB, 13GB, 26GB, 53GB |1GB |
+| Size |캐시의 크기. 유효한 값은 P1, P2, P3, P4, C0, C1, C2, C3, C4, C5, C6, 250MB, 1GB, 2.5GB, 6GB, 13GB, 26GB, 53GB |1GB |
 | ShardCount |클러스터링을 사용하는 프리미엄 캐시를 만들 때 만들 분할된 데이터베이스 수. 유효한 값은 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 | |
 | SKU |캐시의 SKU를 지정합니다. 유효한 값은 Basic, Standard, Premium |Standard |
 | RedisConfiguration |Redis 구성 설정을 지정합니다. 각 설정에 대한 자세한 내용은 다음 [RedisConfiguration 속성](#redisconfiguration-properties) 테이블을 참조하세요. | |
 | EnableNonSslPort |비 SSL 포트를 사용하는지 여부를 나타냅니다. |False |
 | MaxMemoryPolicy |이 매개 변수는 더 이상 사용되지 않으며 대신 RedisConfiguration을 사용합니다. | |
 | StaticIP |VNET에서 캐시를 호스팅하는 경우 서브넷에서 캐시에 대한 고유 IP 주소를 지정합니다. 제공되지 않으면 하나의 IP 주소가 서브넷에서 자동으로 선택됩니다. | |
-| 서브넷 |VNET에서 캐시를 호스팅하는 경우에 캐시를 배포할 서브넷의 이름을 지정합니다. | |
+| Subnet |VNET에서 캐시를 호스팅하는 경우에 캐시를 배포할 서브넷의 이름을 지정합니다. | |
 | VirtualNetwork |VNET에서 캐시를 호스팅하는 경우에 캐시를 배포할 VNET의 리소스 ID를 지정합니다. | |
 | KeyType |액세스 키를 갱신할 때 다시 생성할 액세스 키를 지정합니다. 유효한 값은 Primary, Secondary | |
 

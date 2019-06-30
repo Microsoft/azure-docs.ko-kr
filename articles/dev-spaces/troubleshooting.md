@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Azure에서 컨테이너 및 마이크로 서비스를 통한 신속한 Kubernetes 개발
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, 컨테이너, Helm, 서비스 메시, 서비스 메시 라우팅, kubectl, k8s '
-ms.openlocfilehash: 53571fdd7c5a93fef4df0832253542a5a6dfbec5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e0379bbc7f26ea30f65c5eac73633ca0371aa283
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67058546"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331300"
 ---
 # <a name="troubleshooting-guide"></a>문제 해결 가이드
 
@@ -414,3 +414,12 @@ azds controller create --name my-controller --target-name MyAKS --resource-group
 
 ### <a name="try"></a>시도해 보기
 [추가 검은](../aks/operator-best-practices-advanced-scheduler.md#provide-dedicated-nodes-using-taints-and-tolerations) Linux 되도록 AKS 클러스터에 pod는 Windows 노드에서 실행 되도록 예약 되지 않았습니다.
+
+## <a name="error-found-no-untainted-linux-nodes-in-ready-state-on-the-cluster-there-needs-to-be-at-least-one-untainted-linux-node-in-ready-state-to-deploy-pods-in-azds-namespace"></a>오류가 "클러스터에서 준비 상태가 완벽된 Linux 노드가 없습니다을 발견 합니다. 필요 'azds' 네임 스페이스의 pod를 배포 하려면 준비 상태가 완벽된 Linux 노드가 하나 이상 있습니다. "
+
+### <a name="reason"></a>이유
+
+Azure 개발 공간을 만들지 못했습니다 컨트롤러 AKS 클러스터에서 완벽된 한 노드를 찾을 수 없기 때문에 *준비* 에서 pod를 예약 하는 상태입니다. Azure 개발 공간에 Linux 노드가 하나 이상 필요는 *준비* tolerations 지정 하지 않고 포드를 예약 하는 데 허용 하는 상태입니다.
+
+### <a name="try"></a>시도해 보기
+[구성을 업데이트 하 여 검은](../aks/operator-best-practices-advanced-scheduler.md#provide-dedicated-nodes-using-taints-and-tolerations) 하나 이상의 Linux를 확인 하 여 AKS 클러스터에 노드 tolerations 지정 하지 않고 포드를 예약 하는 데 있습니다. 또한 하나 이상의 예약을 허용 하는 Linux 노드에 tolerations 지정 하지 않고 포드 인지 확인 합니다 *준비* 상태입니다. 노드는 도달 하는 데 시간이 오래 걸리고 경우 합니다 *준비* 상태, 노드를 다시 시작을 시도할 수 있습니다.

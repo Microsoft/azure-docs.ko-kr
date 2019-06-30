@@ -12,12 +12,12 @@ author: wenjiefu
 ms.author: wenjiefu
 ms.reviewer: sawinark
 manager: craigg
-ms.openlocfilehash: 7789970b47f0e55adee5bbe9da9f303aee6cdb25
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: a018a383de855a05b14aa6e1f1c465f8868f672d
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67190115"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312161"
 ---
 # <a name="troubleshooting-package-execution-in-ssis-integration-runtime"></a>SSIS integration runtime에서 패키지 실행 문제 해결
 
@@ -110,6 +110,11 @@ ms.locfileid: "67190115"
   * 잠재적 원인은 사용 하도록 설정 하는 MFA 사용 하 여 해당 사용자 이름/암호 하나가 지원 되지 않는 SSIS integration runtime에서 아직 Azure Analysis Services 인증에 대해 구성 되었습니다. Azure Analysis Service 인증에 대 한 서비스 주체를 사용 하려고 합니다.
     1. AAS에 대 한 서비스 주체를 준비 합니다. [https://docs.microsoft.com/azure/analysis-services/analysis-services-service-principal](https://docs.microsoft.com/azure/analysis-services/analysis-services-service-principal)
     2. 연결 관리자 구성 "특정 사용자 이름 및 암호를 사용 하 여": "AppID" 사용자 이름 및 암호와 "clientSecret"으로 설정
+
+### <a name="error-message-adonet-source-has-failed-to-acquire-the-connection-guid-with-the-following-error-message-login-failed-for-user-nt-authorityanonymous-logon-when-using-managed-identity"></a>오류 메시지: "ADONET 원본이 다음과 같은 오류 메시지가 {GUID} 연결을 설정 하지 못했습니다. 사용자 ' NT AUTHORITY\ANONYMOUS LOGON' 로그인 하지 못했습니다 "관리 되는 id를 사용 하는 경우
+
+* 잠재적 원인 및 권장된 작업:
+  * 매개 변수 "ConnectUsingManagedIdentity"가 true 인 경우 "Active Directory 암호 인증"으로 연결 관리자의 인증 방법을 구성 하지 있는지 확인 합니다. 구성할 수 있습니다 "SQL 인증" 대신 "ConnectUsingManagedIdentity" 설정 된 경우는 무시 됩니다. 됩니다.
 
 ### <a name="package-takes-unexpected-long-time-to-execute"></a>패키지는 예기치 않은 데 오래 걸리는 실행
 

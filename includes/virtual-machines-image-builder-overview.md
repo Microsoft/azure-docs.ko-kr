@@ -5,12 +5,12 @@ ms.date: 04/30/2019
 ms.topic: include
 ms.service: virtual-machines-linux
 manager: jeconnoc
-ms.openlocfilehash: e1b3b5fe603072069cb3a19c7597fcc1872fefd7
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 5884bb5dc389e6abfd4fa23d28dd71ecd16ff423
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67182185"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67347116"
 ---
 조직이 클라우드로 마이그레이션하고 배포 일관성을 확인 수 있게 하는 표준화 된 가상 머신 (VM) 이미지입니다. 이미지에는 일반적으로 미리 정의 된 보안 및 구성 설정 및 필수 소프트웨어가 포함 됩니다. 시간, 인프라 및 설치 프로그램을 고유한 이미징 파이프라인을 설정 하려면 필요 하지만 Azure VM 이미지 작성기를 사용 하 여 이미지를 설명 하는 간단한 구성을 제공, 서비스에 제출 및 이미지를 작성 및 배포 합니다.
  
@@ -33,7 +33,7 @@ Azure VM 이미지 작성기 (Azure 이미지 작성기)를 사용 하는 Window
 - VHD 형식의 이미지를 만듭니다.
  
 
-## <a name="regions"></a>영역
+## <a name="regions"></a>Regions
 Azure 이미지 작성기 서비스는 이러한 지역에서 미리 보기로 제공 됩니다. 이러한 지역 외부에서 이미지를 배포할 수 있습니다.
 - 미국 동부
 - 미국 동부 2
@@ -65,9 +65,9 @@ Azure 이미지 작성기는 Azure 리소스 공급자에서 액세스할 수 �
 ![Azure 이미지 작성기 프로세스의 개념적 그리기](./media/virtual-machines-image-builder-overview/image-builder-process.png)
 
 1. .Json 파일로 이미지 템플릿을 만듭니다. 이.json 파일의 이미지 원본, 사용자 지정 및 배포에 대 한 정보를 포함합니다. 여러 예제에서 가지는 [Azure 이미지 작성기 GitHub 리포지토리](https://github.com/danielsollondon/azvmimagebuilder/tree/master/quickquickstarts)합니다.
-1. 서비스에 제출, 그러면 이미지 템플릿을 아티팩트 지정 하는 리소스 그룹에 만들어집니다. 이미지 작성기는 백그라운드에서 소스 이미지 또는 ISO 및 필요에 따라 스크립트를 다운로드 합니다. 이러한 형식으로 구독에서 자동으로 만들어지는 별도 리소스 그룹에 저장 됩니다. IT_<DestinationResourceGroup>_<TemplateName>. 
-1. 이미지 템플릿을 만든 후에 다음 이미지를 빌드할 수 있습니다. 백그라운드에서 이미지 작성기 사용 하 여 템플릿 및 소스 파일을 만듭니다 VM, 네트워크 및 저장소는 IT_<DestinationResourceGroup>_<TemplateName> 리소스 그룹입니다.
-1. 이미지 만들기의 일환으로, 이미지 작성기는 이미지를 배포 템플릿에 따라 그런 다음 삭제를 IT_의 추가 리소스<DestinationResourceGroup>_<TemplateName> 프로세스에 대해 생성 된 리소스 그룹입니다.
+1. 서비스에 제출, 그러면 이미지 템플릿을 아티팩트 지정 하는 리소스 그룹에 만들어집니다. 이미지 작성기는 백그라운드에서 소스 이미지 또는 ISO 및 필요에 따라 스크립트를 다운로드 합니다. 이러한 형식으로 구독에서 자동으로 만들어지는 별도 리소스 그룹에 저장 됩니다. IT_\<DestinationResourceGroup>_\<TemplateName>. 
+1. 이미지 템플릿을 만든 후에 다음 이미지를 빌드할 수 있습니다. 백그라운드에서 이미지 작성기 사용 하 여 템플릿 및 소스 파일을 만듭니다 VM, 네트워크 및 저장소는 IT_\<DestinationResourceGroup > _\<TemplateName > 리소스 그룹입니다.
+1. 이미지 만들기의 일환으로, 이미지 작성기는 이미지를 배포 템플릿에 따라 그런 다음 삭제를 IT_의 추가 리소스\<DestinationResourceGroup > _\<TemplateName >에 대해 생성 된 리소스 그룹 프로세스입니다.
 
 
 ## <a name="permissions"></a>권한

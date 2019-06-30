@@ -6,17 +6,17 @@ author: mamccrea
 ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 05/09/2019
-ms.openlocfilehash: b00eb12092838746f4bfe16f00eac55df9224b09
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/21/2019
+ms.openlocfilehash: ecc7077bf208adf1ac89adcce2f2e480ce34888e
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65607230"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67329592"
 ---
 # <a name="azure-stream-analytics-data-errors"></a>Azure Stream Analytics 데이터 오류
 
-Azure Stream Analytics 작업에서 처리 되는 데이터에 차이가 있으면 Stream Analytics 진단 로그 데이터 오류 이벤트를 보냅니다. Stream Analytics 진단 로그 데이터 오류가 발생 하면 자세한 정보 및 예제에서는 이벤트를 씁니다. 일부 오류에 대 한 포털 알림을 통해이 정보의 요약도 제공 됩니다.
+데이터 오류는 데이터를 처리 하는 동안 발생 하는 오류입니다.  이러한 오류는 대부분의 데이터 역직렬화를 직렬화 하는 동안 발생 하 고 쓰기 작업.  데이터 오류가 발생 하면 Stream Analytics 자세한 정보 및 이벤트의 예로 진단 로그에 기록 합니다.  일부 경우에도이 정보의 요약 포털 알림을 통해 제공 됩니다.
 
 이 문서에서는 다양 한 오류 유형, 원인 및 입력 및 출력 데이터 오류에 대 한 진단 로그 세부 정보를 설명 합니다.
 
@@ -45,6 +45,7 @@ Azure Stream Analytics 작업에서 처리 되는 데이터에 차이가 있으�
 * 원인: 선택한 압축 입력된 형식에는 데이터가 일치 하지 않습니다.
 * 포털 알림을 제공 합니다. 예
 * 진단 로그 수준: Warning
+* 영향: 잘못 된 압축 유형을 포함 하 여 deserialization 오류를 사용 하 여 메시지 입력에서 삭제 됩니다.
 * 로그 세부 정보
    * 메시지 식별자를 입력 합니다. 이벤트 허브에 대 한 식별자가 PartitionId, 오프셋 및 시퀀스 번호입니다.
 
@@ -59,6 +60,7 @@ Azure Stream Analytics 작업에서 처리 되는 데이터에 차이가 있으�
 * 원인: 입력된 데이터의 헤더가 잘못 되었습니다. 예를 들어, CSV 이름이 중복 된 열이 있습니다.
 * 포털 알림을 제공 합니다. 예
 * 진단 로그 수준: Warning
+* 영향: 잘못 된 헤더를 포함 하 여 deserialization 오류를 사용 하 여 메시지 입력에서 삭제 됩니다.
 * 로그 세부 정보
    * 메시지 식별자를 입력 합니다. 
    * 몇 킬로바이트 최대 실제 페이로드입니다.
@@ -74,6 +76,7 @@ Azure Stream Analytics 작업에서 처리 되는 데이터에 차이가 있으�
 * 원인: TIMESTAMP BY를 통해 또는 CREATE TABLE을 사용 하 여 정의 된 입력된 열이 존재 하지 않습니다.
 * 포털 알림을 제공 합니다. 예
 * 진단 로그 수준: Warning
+* 영향: 누락 된 열을 사용 하 여 이벤트 입력에서 삭제 됩니다.
 * 로그 세부 정보
    * 메시지 식별자를 입력 합니다. 
    * 누락 된 열의 이름입니다. 
@@ -94,6 +97,7 @@ Azure Stream Analytics 작업에서 처리 되는 데이터에 차이가 있으�
 * 원인: CREATE TABLE 문에서 지정 된 형식에 대 한 입력을 변환할 수 없습니다.
 * 포털 알림을 제공 합니다. 예
 * 진단 로그 수준: Warning
+* 영향: 이벤트 유형 변환 오류를 사용 하 여 입력에서 삭제 됩니다.
 * 로그 세부 정보
    * 메시지 식별자를 입력 합니다. 
    * 필요한 형식 및 열 이름입니다.
@@ -113,6 +117,7 @@ Azure Stream Analytics 작업에서 처리 되는 데이터에 차이가 있으�
 * 원인: 입력된 데이터가 올바른 형식이 아닙니다. 예를 들어, 입력에 유효한 JSON 하지 않습니다.
 * 포털 알림을 제공 합니다. 예
 * 진단 로그 수준: Warning
+* 영향: 잘못 된 데이터 오류가 발생 했습니다. 이후의 메시지의 모든 이벤트는 입력에서 삭제 됩니다.
 * 로그 세부 정보
    * 메시지 식별자를 입력 합니다. 
    * 몇 킬로바이트 최대 실제 페이로드입니다.
@@ -132,6 +137,7 @@ Azure Stream Analytics 작업에서 처리 되는 데이터에 차이가 있으�
 * 원인: TIMESTAMP BY 식의 값을 datetime로 변환할 수 없습니다.
 * 포털 알림을 제공 합니다. 예
 * 진단 로그 수준: Warning
+* 영향: 잘못 된 입력된 타임 스탬프를 사용 하 여 이벤트 입력에서 삭제 됩니다.
 * 로그 세부 정보
    * 메시지 식별자를 입력 합니다. 
    * 오류 메시지입니다. 
@@ -148,6 +154,7 @@ Azure Stream Analytics 작업에서 처리 되는 데이터에 차이가 있으�
 * 원인: TIMESTAMP BY OVER timestampColumn의 값은 NULL입니다.
 * 포털 알림을 제공 합니다. 예
 * 진단 로그 수준: Warning
+* 영향: 입력에서 잘못 된 입력된 타임 스탬프 키를 가진 이벤트가 삭제 됩니다.
 * 로그 세부 정보
    * 몇 킬로바이트 최대 실제 페이로드입니다.
 
@@ -162,6 +169,7 @@ Azure Stream Analytics 작업에서 처리 되는 데이터에 차이가 있으�
 * 원인: 응용 프로그램 시간과 도착 시간 사이의 차이 지연 도착 허용 시간 보다 큽니다.
 * 포털 알림을 제공 합니다. 아닙니다.
 * 진단 로그 수준: 정보
+* 영향:  늦은 입력된 이벤트를 "처리" 다른 이벤트에 따라 처리는 이벤트 작업 구성의 섹션을 순서를 설정 합니다. 자세한 내용은 참조 [시간 처리 정책](https://docs.microsoft.com/stream-analytics-query/time-skew-policies-azure-stream-analytics)합니다.
 * 로그 세부 정보
    * 응용 프로그램 시간과 도착 시간입니다. 
    * 몇 킬로바이트 최대 실제 페이로드입니다.
@@ -177,6 +185,7 @@ Azure Stream Analytics 작업에서 처리 되는 데이터에 차이가 있으�
 * 원인: 응용 프로그램 시간과 도착 시간 사이의 차이가 5 분 보다 큽니다.
 * 포털 알림을 제공 합니다. 아닙니다.
 * 진단 로그 수준: 정보
+* 영향:  초기 입력된 이벤트를 처리 하는 "다른 이벤트를 처리할"에 따라 작업 구성의 섹션 이벤트 순서를 설정 합니다. 자세한 내용은 참조 [시간 처리 정책](https://docs.microsoft.com/stream-analytics-query/time-skew-policies-azure-stream-analytics)합니다.
 * 로그 세부 정보
    * 응용 프로그램 시간과 도착 시간입니다. 
    * 몇 킬로바이트 최대 실제 페이로드입니다.
@@ -192,6 +201,7 @@ Azure Stream Analytics 작업에서 처리 되는 데이터에 차이가 있으�
 * 원인: 이벤트는 순서가 정의 잘못 된 순서 허용 시간에 따라 간주 됩니다.
 * 포털 알림을 제공 합니다. 아닙니다.
 * 진단 로그 수준: 정보
+* 영향:  이벤트를 "처리" 다른 이벤트에 따라 처리 되는 순서가 설정 이벤트 순서 지정 작업 구성 섹션입니다. 자세한 내용은 참조 [시간 처리 정책](https://docs.microsoft.com/stream-analytics-query/time-skew-policies-azure-stream-analytics)합니다.
 * 로그 세부 정보
    * 몇 킬로바이트 최대 실제 페이로드입니다.
 
@@ -208,6 +218,7 @@ Azure Stream Analytics 작업에서 처리 되는 데이터에 차이가 있으�
 * 원인: 출력에 필요한 열이 존재 하지 않습니다. 예를 들어, Azure 테이블 PartitionKey 않는으로 정의 된 열이 존재 합니다.
 * 포털 알림을 제공 합니다. 예
 * 진단 로그 수준: Warning
+* 영향:  누락 필요한 열을 포함 하 여 모든 출력 데이터 변환 오류에 따라 처리 합니다 [출력 데이터 정책](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-output-error-policy) 설정 합니다.
 * 로그 세부 정보
    * 열 및 레코드 식별자 또는 레코드의 일부분의 이름입니다.
 
@@ -222,6 +233,7 @@ Azure Stream Analytics 작업에서 처리 되는 데이터에 차이가 있으�
 * 원인: 출력을 사용 하 여 열 값을 준수 하지 않습니다. 예를 들어 열 이름에는 유효한 Azure 표 열 하지 않습니다.
 * 포털 알림을 제공 합니다. 예
 * 진단 로그 수준: Warning
+* 영향:  잘못 된 열 이름을 포함 하 여 모든 출력 데이터 변환 오류에 따라 처리 합니다 [출력 데이터 정책](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-output-error-policy) 설정 합니다.
 * 로그 세부 정보
    * 열 및 레코드 식별자 또는 레코드의 일부분의 이름입니다.
 
@@ -236,6 +248,7 @@ Azure Stream Analytics 작업에서 처리 되는 데이터에 차이가 있으�
 * 원인: 열 출력에 유효한 형식으로 변환할 수 없습니다. 예를 들어, 열의 값 제약 조건 또는 SQL 테이블에 정의 된 형식을 사용 하 여 호환 되지 않습니다.
 * 포털 알림을 제공 합니다. 예
 * 진단 로그 수준: Warning
+* 영향:  유형 변환 오류를 포함 하 여 모든 출력 데이터 변환 오류에 따라 처리 합니다 [출력 데이터 정책](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-output-error-policy) 설정 합니다.
 * 로그 세부 정보
    * 열의 이름입니다.
    * 레코드 식별자 또는 레코드의 일부입니다.
@@ -251,6 +264,7 @@ Azure Stream Analytics 작업에서 처리 되는 데이터에 차이가 있으�
 * 원인: 메시지의 값이 지원 되는 출력 크기 보다 큽니다. 예를 들어, 레코드를 이벤트 허브 출력에 대 한 1MB 보다 큽니다.
 * 포털 알림을 제공 합니다. 예
 * 진단 로그 수준: Warning
+* 영향:  레코드 초과 크기 제한을 비롯 한 모든 출력 데이터 변환 오류에 따라 처리 합니다 [출력 데이터 정책](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-output-error-policy) 설정 합니다.
 * 로그 세부 정보
    * 레코드 식별자 또는 레코드의 일부입니다.
 
@@ -265,6 +279,7 @@ Azure Stream Analytics 작업에서 처리 되는 데이터에 차이가 있으�
 * 원인: 레코드는 시스템 열 이름이 같은 열에 이미 있습니다. 예를 들어 열을 사용 하 여 CosmosDB 출력 라는 다른 열에 ID 열이 ID입니다.
 * 포털 알림을 제공 합니다. 예
 * 진단 로그 수준: Warning
+* 영향:  중복 키를 포함 하 여 모든 출력 데이터 변환 오류에 따라 처리 합니다 [출력 데이터 정책](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-output-error-policy) 설정 합니다.
 * 로그 세부 정보
    * 열의 이름입니다.
    * 레코드 식별자 또는 레코드의 일부입니다.

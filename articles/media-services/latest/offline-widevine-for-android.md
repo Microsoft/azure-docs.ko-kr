@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/08/2019
 ms.author: willzhan
-ms.openlocfilehash: 5102720242edd3ffc0a377bbddf0f7f3ade68b63
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9e90951f810c5101a46c29570af8ad71b42be637
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64937214"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341027"
 ---
 # <a name="offline-widevine-streaming-for-android"></a>Android용 오프라인 Widevine 스트리밍
 
@@ -38,6 +38,9 @@ Android 플레이어 앱을 빌드하는 경우 다음 세 가지 옵션을 사�
 > * Chrome 모바일 브라우저 v62 이상에서 EME(Encrypted Media Extension) 및 MSE(Media Source Extension)를 사용하여 플레이어 빌드
 
 또한 Widevine 보호 콘텐츠의 오프라인 스트리밍과 관련된 몇 가지 일반적인 질문에 대한 답변도 제공되어 있습니다.
+
+> [!NOTE]
+> 오프 라인 DRM은만 콘텐츠를 다운로드 하는 경우 라이선스에 대 한 단일 요청에 대 한 요금이 청구 됩니다. 오류 청구 되지 않습니다.
 
 ## <a name="prerequisites"></a>필수 조건 
 

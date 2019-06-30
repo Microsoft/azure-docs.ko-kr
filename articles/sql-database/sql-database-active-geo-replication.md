@@ -11,13 +11,13 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
-ms.date: 03/26/2019
-ms.openlocfilehash: ca53f4bfa80d6fdead24dc7d562c2240bb3fa86d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 06/18/2019
+ms.openlocfilehash: 826944fd3713f5cc3e99f20cb140055bfdb11a14
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60387454"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341441"
 ---
 # <a name="creating-and-using-active-geo-replication"></a>만들기 및 활성 지역 복제를 사용 합니다.
 
@@ -100,9 +100,6 @@ ms.locfileid: "60387454"
 
   각 보조 데이터베이스가 탄력적 풀에 개별적으로 참여하거나 탄력적 풀에 참여하지 않을 수 있습니다. 각 보조 데이터베이스에 대한 풀 선택은 별개이며 다른 보조 데이터베이스의 구성(주 데이터베이스인지, 보조 데이터베이스인지 여부)에 종속되지 않습니다. 각 탄력적 풀은 단일 지역 내에 포함되므로 동일한 토폴로지의 여러 보조 데이터베이스에서 탄력적 풀을 공유할 수 없습니다.
 
-- **구성 가능한 보조 데이터베이스의 크기 계산**
-
-  동일한 서비스 계층을 확보하려면 주 데이터베이스와 보조 데이터베이스 모두 필요합니다. 또한 보조 데이터베이스는 주 데이터베이스와 동일한 컴퓨팅 크기(DTU 또는 vCore 수)로 만드는 것이 좋습니다. 복제 지연 시간이 늘어나고 잠재적으로 보조 데이터베이스의 가용성이 손실될 위험이 있으므로 컴퓨팅 크기가 더 작은 보조 데이터베이스는 이로 인해 장애 조치(failover) 후에 상당한 데이터 손실을 초래할 수 있습니다. 따라서 게시된 RPO = 5초를 보증할 수 없습니다. 더 큰 컴퓨팅 크기로 업그레이드될 때까지 새 주 데이터베이스의 컴퓨팅 용량이 부족하므로 장애 조치(failover) 후에 애플리케이션의 성능에 영향을 미칠 수 있는 다른 위험이 있습니다. 업그레이드 시간은 데이터베이스 크기에 따라 달라집니다. 또한 현재 이러한 업그레이드를 수행하려면 주 및 보조 데이터베이스가 모두 온라인 상태여야 하며, 이에 따라 가동 중단이 완화될 때까지 완료할 수 없습니다. 컴퓨팅 크기가 더 작은 보조 데이터베이스를 만들려는 경우 Azure Portal의 로그 IO 백분율 차트에서 복제 로드를 유지하는 데 필요한 보조 데이터베이스의 최소 컴퓨팅 크기를 추정하는 좋은 방법을 제공합니다. 예를 들어 주 데이터베이스가 P6(1000 DTU)이면 해당 로그 IO 백분율은 50%이고 보조 데이터베이스는 최소한 P4(500 DTU) 이상이어야 합니다. [sys.resource_stats](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) 또는 [ys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database) 데이터베이스 뷰를 사용하여 로그 IO 데이터를 검색할 수도 있습니다.  SQL Database 컴퓨팅 크기에 대한 자세한 내용은 [SQL Database 서비스 계층이란?](sql-database-purchase-models.md)를 참조하세요.
 
 - **사용자 제어 장애 조치 및 장애 복구**
 
@@ -112,7 +109,19 @@ ms.locfileid: "60387454"
 
 사용 하는 것이 좋습니다 [데이터베이스 수준 방화벽 규칙 IP](sql-database-firewall-configure.md) 모든 보조 데이터베이스에는 주 데이터베이스와 동일한 IP 방화벽 규칙을 확인 하기 위해 데이터베이스를 사용 하 여 이러한 규칙을 복제할 수 있도록 지리적으로 복제 된 데이터베이스에 대 한 합니다. 이렇게 하면 고객이 주 데이터베이스 및 보조 데이터베이스를 호스팅하는 서버에서 수동으로 방화벽 규칙을 구성하고 유지 관리할 필요가 없습니다. 마찬가지로, 데이터 액세스에 [포함된 데이터베이스 사용자](sql-database-manage-logins.md)를 사용하면 주 데이터베이스와 보조 데이터베이스의 사용자 자격 증명이 항상 똑같기 때문에 장애 조치(failover) 시에 로그인과 암호가 불일치하여 중단되는 일이 없습니다. [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md)가 추가되면서 고객은 주 데이터베이스 및 보조 데이터베이스에 대한 사용자 액세스를 관리할 수 있으므로 데이터베이스의 자격 증명을 모두 관리할 필요가 없습니다.
 
-## <a name="upgrading-or-downgrading-a-primary-database"></a>주 데이터베이스 업그레이드 또는 다운그레이드
+## <a name="configuring-secondary-database"></a>보조 데이터베이스 구성
+
+동일한 서비스 계층을 확보하려면 주 데이터베이스와 보조 데이터베이스 모두 필요합니다. 또한 보조 데이터베이스는 주 데이터베이스와 동일한 컴퓨팅 크기(DTU 또는 vCore 수)로 만드는 것이 좋습니다. 주 데이터베이스는 많은 쓰기 작업에 발생 하는 경우 낮은 계산 크기를 사용 하 여 보조를 유지할 것 못할 수 있습니다. 보조에서 잠재적인 비 가용성으로 다시 실행 지연 하면 결과적으로 및 장애 조치 후 후속 데이터 손실의 위험에 노출 합니다. 따라서 게시된 RPO = 5초를 보증할 수 없습니다. 또한 발생할 오류 또는 주 데이터베이스의 다른 워크 로드의 상태일 합니다. 
+
+불균형 보조 구성의 다른 결과 장애 조치 후 새 주 복제본의 부족 하 여 계산 용량으로 인해 응용 프로그램의 성능이 저하 됩니다. 더 높은 계산을 불가능 가동 중단이 완화 될 때까지 필요한 수준으로 업그레이드 하는 데 필요한 것입니다. 
+
+> [!NOTE]
+> 현재 주 데이터베이스의 업그레이드는 오프 라인 보조 데이터베이스가 있는 경우 가능한 수 없습니다. 
+
+
+컴퓨팅 크기가 더 작은 보조 데이터베이스를 만들려는 경우 Azure Portal의 로그 IO 백분율 차트에서 복제 로드를 유지하는 데 필요한 보조 데이터베이스의 최소 컴퓨팅 크기를 추정하는 좋은 방법을 제공합니다. 예를 들어 주 데이터베이스가 P6(1000 DTU)이면 해당 로그 IO 백분율은 50%이고 보조 데이터베이스는 최소한 P4(500 DTU) 이상이어야 합니다. [sys.resource_stats](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) 또는 [ys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database) 데이터베이스 뷰를 사용하여 로그 IO 데이터를 검색할 수도 있습니다.  SQL Database 컴퓨팅 크기에 대한 자세한 내용은 [SQL Database 서비스 계층이란?](sql-database-purchase-models.md)를 참조하세요.
+
+## <a name="upgrading-or-downgrading-primary-database"></a>업그레이드 또는 주 데이터베이스를 다운 그레이드
 
 보조 데이터베이스와의 연결을 끊지 않고도 주 데이터베이스를 다른 컴퓨팅 크기(동일한 서비스 계층 내, 범용 및 중요 비즈니스용 사이 아님)로 업그레이드하거나 다운그레이드할 수 있습니다. 업그레이드하는 경우에는 보조 데이터베이스를 먼저 업그레이드한 다음에 주 데이터베이스를 업그레이드하는 것이 좋습니다. 다운그레이드하는 경우에는 반대 순서로 주 데이터베이스를 먼저 다운그레이드하고 보조 데이터베이스를 다운그레이드합니다. 데이터베이스를 다른 서비스 계층으로 업그레이드하거나 다운그레이드할 때 이 권장 사항이 적용됩니다.
 
@@ -134,7 +143,7 @@ ms.locfileid: "60387454"
 
 ## <a name="monitoring-geo-replication-lag"></a>지역에서 복제 지연 모니터링
 
-RPO에 대해 지연 시간을 모니터링 하려면 *replication_lag_sec* 열의 [sys.dm_geo_replication_link_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-geo-replication-link-status-azure-sql-database) 주 데이터베이스에서. 주 복제본에서 커밋 및 보조 복제본에서 지속형 트랜잭션 간의 초 지연 보여 줍니다. 예: 지연의 값은 1 초, 즉, 주 지금은 가동 중단의 영향을 받는 경우 장애 조치가 시작한을 1 초의 최신 transtions 저장 되지 않습니다. 
+RPO에 대해 지연 시간을 모니터링 하려면 *replication_lag_sec* 열의 [sys.dm_geo_replication_link_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-geo-replication-link-status-azure-sql-database) 주 데이터베이스에서. 주 복제본에서 커밋 및 보조 복제본에서 지속형 트랜잭션 간의 초 지연 보여 줍니다. 예: 1 초 지연의 값을 사용 하는 경우 주 지금은 가동 중단의 영향을 받는 장애 조치를 시작 하 고 가장 최근의 전환의 1 초 저장 되지 것입니다 하는 경우 의미 합니다. 
 
 즉, 보조 데이터베이스에서 읽을 수 있는 보조 데이터베이스에 적용 된 주 데이터베이스에서 변경 내용에 대해 지연 시간을 측정 하려면 비교 *last_commit* 주 복제본에서 동일한 값을 사용 하 여 보조 데이터베이스 시간 데이터베이스입니다.
 

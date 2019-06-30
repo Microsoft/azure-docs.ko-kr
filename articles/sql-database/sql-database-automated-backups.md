@@ -12,12 +12,12 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 05/20/2019
-ms.openlocfilehash: 1c81f5748d1e3edff4902eb462b9beea78acd8bc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3e56244f074e31672cf77bc74998096e215a4db7
+ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65951679"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357342"
 ---
 # <a name="automated-backups"></a>자동화된 백업
 
@@ -32,7 +32,7 @@ SQL Database SQL Server 기술을 사용 하 여 만듭니다 [전체 백업을]
 이러한 백업을 사용하여 다음을 수행할 수 있습니다.
 
 - **과거에는-특정 시점에 기존 데이터베이스를 복원할** Azure 포털, Azure PowerShell, Azure CLI 또는 REST API를 사용 하 여 보존 기간입니다. 단일 데이터베이스 및 탄력적 풀에서이 작업은 새 데이터베이스는 원본 데이터베이스와 동일한 서버에 만들어집니다. 관리 되는 인스턴스에서이 작업 데이터베이스 또는 동일 하거나 다른 관리 되는 인스턴스는 동일한 구독에서의 복사본을 만들 수 있습니다.
-  - **[백업 보존 기간을 변경](#how-to-change-the-pitr-backup-retention-period)**  간의 백업 정책을 구성 하려면 35 일입니다.
+  - **[백업 보존 기간을 변경](#how-to-change-the-pitr-backup-retention-period)**  백업 정책을 구성 하려면 7-35 일 사이입니다.
   - **10 년까지 장기 보존 정책을 변경** 단일 데이터베이스 및 탄력적 풀 사용 [Azure portal](sql-database-long-term-backup-retention-configure.md#configure-long-term-retention-policies) 하거나 [Azure PowerShell](sql-database-long-term-backup-retention-configure.md#use-powershell-to-configure-long-term-retention-policies-and-restore-backups)합니다.
 - **삭제 된 시간에 삭제 된 데이터베이스를 복원** 또는 보존 기간 내에 언제 든 지 합니다. 삭제 된 데이터베이스를 원래 데이터베이스 만들어진 관리 되는 인스턴스를 동일한 논리 서버에만 복원할 수 있습니다.
 - **다른 지역에 데이터베이스를 복원**합니다. 이러한 지리적 복원을 사용하면 서버 및 데이터베이스에 액세스할 수 없는 경우 지리적 재해로부터 복구할 수 있습니다. 그러면 전 세계 어디에서든 기존 서버에 새 데이터베이스가 만들어집니다.

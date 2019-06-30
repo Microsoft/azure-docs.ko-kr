@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.reviewer: vitalyg
 ms.author: cithomas
-ms.openlocfilehash: 7a657f175307e019155e37538021c5aecf5bb068
-ms.sourcegitcommit: e5dcf12763af358f24e73b9f89ff4088ac63c6cb
+ms.openlocfilehash: 4da91150999864c64ead28b74242e85d23a51ead
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67136889"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67310442"
 ---
 # <a name="sampling-in-application-insights"></a>Application Insights의 샘플링
 
@@ -313,7 +313,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Telemetr
                     <Add name = "SamplingPercentage" value = "50" />
                 </Processor>
             </BuiltInProcessors>
-        <TelemetryProcessors/>
+        </TelemetryProcessors>
     ```
 
 3. 프로세서 태그 “FixedRateSamplingTelemetryProcessor” 내부에 다음 태그를 사용하여 샘플링에서 특정 유형의 원격 분석을 포함하거나 제외할 수 있습니다.

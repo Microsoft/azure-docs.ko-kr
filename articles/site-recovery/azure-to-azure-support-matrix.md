@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 06/09/2019
 ms.author: raynew
-ms.openlocfilehash: 6a6db30bfe6e4dc1eed04d11b53113c90210a5cf
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 2cf9aee498c649cdbf973652a60fb2d1f3feb371
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67275212"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312154"
 ---
 # <a name="support-matrix-for-replicating-azure-vms-from-one-region-to-another"></a>한 지역에서 다른 지역으로 Azure VM 복제를 위한 지원 매트릭스
 
@@ -168,7 +168,7 @@ RBAC 정책 | 지원되지 않음 | 역할 기반 액세스 제어 (RBAC) 정책
 **작업** | **세부 정보**
 -- | ---
 복제된 VM에서 디스크 크기 조정 | 지원됨
-복제된 VM에 디스크 추가 | 지원되지 않습니다.<br/><br/> VM에 복제를 사용하지 않도록 설정하고, 디스크를 추가한 다음, 복제를 다시 사용하도록 설정해야 합니다.
+복제된 VM에 디스크 추가 | 지원됨
 
 ## <a name="replicated-machines---storage"></a>복제된 컴퓨터 - 저장소
 

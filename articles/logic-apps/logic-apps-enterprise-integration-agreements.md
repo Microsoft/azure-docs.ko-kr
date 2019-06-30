@@ -8,16 +8,15 @@ author: divyaswarnkar
 ms.author: divswa
 ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
-ms.assetid: 447ffb8e-3e91-4403-872b-2f496495899d
-ms.date: 04/05/2019
-ms.openlocfilehash: 26d653b873e959f0804e0456ed87ee68c39413e5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/22/2019
+ms.openlocfilehash: 4bfee4ec442c9e7b0351b0fd0c6a2b8e163a2541
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64720682"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67330317"
 ---
-# <a name="create-and-manage-trading-partner-agreements-by-using-azure-logic-apps-and-enterprise-integration-pack"></a>Azure Logic Apps 및 엔터프라이즈 통합 팩을 사용 하 여 거래 업체 규약을 만들고
+# <a name="create-and-manage-trading-partner-agreements-in-azure-logic-apps"></a>Azure Logic Apps에서 거래 업체 규약을 만들고 설정 합니다.
 
 A [거래](../logic-apps/logic-apps-enterprise-integration-partners.md) 
 *계약* 조직 및 비즈니스가 교환할 때 사용할 특정 산업 표준 프로토콜을 정의 하 여 서로 원활 하 게 통신할 수 있습니다. 기업 간 B2B 메시지입니다. 계약 예를 들어 일반적인 혜택을 제공합니다.
@@ -27,6 +26,8 @@ A [거래](../logic-apps/logic-apps-enterprise-integration-partners.md)
 * 생성, 관리 및 엔터프라이즈 통합 솔루션을 구축 하기 위한 사용 하기 쉽습니다.
 
 이 문서에서는 AS2, EDIFACT 또는 X12를 만드는 방법을 보여 줍니다.를 사용 하 여 엔터프라이즈 B2B 시나리오에 대 한 통합 솔루션을 빌드할 때 사용할 수 있는 계약을 [엔터프라이즈 통합 팩](../logic-apps/logic-apps-enterprise-integration-overview.md) 및 [Azure Logic Apps](../logic-apps/logic-apps-overview.md). 규약을 만든 후 사용할 수 있습니다 다음 AS2, EDIFACT 또는 X12 B2B 메시지를 교환 하는 것에 대 한 커넥터.
+
+RosettaNet 메시지를 교환 하는 것에 대 한 계약을 만들려면 참조 [Exchange RosettaNet 메시지](../logic-apps/logic-apps-enterprise-integration-rosettanet.md)합니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -65,8 +66,8 @@ Azure 주 메뉴에서 **모든 서비스**를 선택합니다. 검색 상자에
    | **호스트 Id** | 예 | <*host-partner-identifier*> | 호스트 파트너의 식별자 |
    | **게스트 파트너** | 예 | <*guest-partner-name*> | 게스트 파트너는 호스트 파트너와 비즈니스를 수행하는 조직을 나타냅니다. |
    | **게스트 Id** | 예 | <*guest-partner-identifier*> | 게스트 파트너의 식별자 |
-   | **수신 설정** | 다름 | 다름 | 이러한 속성에는 규약을 통해 받는 모든 들어오는 메시지를 처리 하는 방법을 지정 합니다. 자세한 내용은 각 계약 형식을 참조 하십시오. <p>- [AS2 메시지 설정](../logic-apps/logic-apps-enterprise-integration-as2-message-settings.md) <br>- [EDIFACT 메시지 설정](logic-apps-enterprise-integration-edifact.md) <br>- [X12 메시지 설정](logic-apps-enterprise-integration-x12.md) |
-   | **송신 설정** | 다름 | 다름 | 이러한 속성에는 규약에서 보낸 모든 나가는 메시지를 처리 하는 방법을 지정 합니다. 자세한 내용은 각 계약 형식을 참조 하십시오. <p>- [AS2 메시지 설정](../logic-apps/logic-apps-enterprise-integration-as2-message-settings.md) <br>- [EDIFACT 메시지 설정](logic-apps-enterprise-integration-edifact.md) <br>- [X12 메시지 설정](logic-apps-enterprise-integration-x12.md) |
+   | **수신 설정** | 다름 | 다름 | 이러한 속성은 호스트 파트너가 규약의 게스트 파트너 로부터 모든 들어오는 메시지를 수신 하는 방법을 지정 합니다. 자세한 내용은 각 계약 형식을 참조 하십시오. <p>- [AS2 메시지 설정](../logic-apps/logic-apps-enterprise-integration-as2-message-settings.md) <br>- [EDIFACT 메시지 설정](logic-apps-enterprise-integration-edifact.md) <br>- [X12 메시지 설정](logic-apps-enterprise-integration-x12.md) |
+   | **송신 설정** | 다름 | 다름 | 이러한 속성은 호스트 파트너 규약에서 게스트 파트너로 보내는 모든 메시지를 전송 하는 방법을 지정 합니다. 자세한 내용은 각 계약 형식을 참조 하십시오. <p>- [AS2 메시지 설정](../logic-apps/logic-apps-enterprise-integration-as2-message-settings.md) <br>- [EDIFACT 메시지 설정](logic-apps-enterprise-integration-edifact.md) <br>- [X12 메시지 설정](logic-apps-enterprise-integration-x12.md) |
    |||||
 
 1. 완료 되 면에서 규약을 만드는 합니다 **추가** 페이지에서 **확인**, 통합 계정으로 돌아갑니다.

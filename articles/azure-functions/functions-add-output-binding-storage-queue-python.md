@@ -20,7 +20,7 @@ ms.locfileid: "64870024"
 ---
 # <a name="add-an-azure-storage-queue-binding-to-your-function"></a>함수에 Azure Storage 큐 바인딩 추가
 
-Azure Functions를 사용하면 통합 코드를 작성하지 않고도 함수에 Azure 서비스 및 기타 리소스를 연결할 수 있습니다. 입력과 출력을 모두 나타내는 이러한 *바인딩*은 함수 정의 내에서 선언됩니다. 바인딩의 데이터는 함수에 매개 변수로 제공됩니다. 트리거는 특수한 형식의 입력 바인딩입니다. 한 함수는 하나의 트리거만 가질 수 있지만, 입력 및 출력 바인딩은 여러 개 가질 수 있습니다. 자세한 내용은 [Azure Functions 트리거 및 바인딩 개념](functions-triggers-bindings.md)을 참조하세요.
+Azure Functions를 사용하면 자체 통합 코드를 작성하지 않고도 함수에 Azure 서비스 및 기타 리소스를 연결할 수 있습니다. 입력과 출력을 모두 나타내는 이러한 *바인딩*은 함수 정의 내에서 선언됩니다. 바인딩의 데이터는 함수에 매개 변수로 제공됩니다. 트리거는 특수한 형식의 입력 바인딩입니다. 한 함수는 하나의 트리거만 가질 수 있지만, 입력 및 출력 바인딩은 여러 개 가질 수 있습니다. 자세한 내용은 [Azure Functions 트리거 및 바인딩 개념](functions-triggers-bindings.md)을 참조하세요.
 
 [이전의 빠른 시작 문서](functions-create-first-function-python.md)에서 Azure Storage 큐를 사용하여 만든 함수를 통합하는 방법을 보여줍니다. 이 함수에 추가되는 출력 바인딩은 HTTP 요청의 데이터를 큐의 메시지에 씁니다. 
 
@@ -59,7 +59,7 @@ Functions에서 각 바인딩 형식의 `direction`, `type` 및 고유한 `name`
 | **`queueName`** | `outqueue` | 바인딩이 데이터를 쓰는 큐의 이름입니다. 바인딩을 처음 사용할 때 *queueName*이 없으면 바인딩이 알아서 만듭니다. |
 | **`connection`** | `AzureWebJobsStorage` | Storage 계정의 연결 문자열이 포함된 앱 설정의 이름입니다. `AzureWebJobsStorage` 설정은 함수 앱을 사용하여 만든 Storage 계정의 연결 문자열을 포함합니다. |
 
-function.json 파일은 이제 다음과 비슷할 것입니다.
+이제 아래의 예제와 같은 function.json 파일을 확인할 수 있습니다.
 
 ```json
 {

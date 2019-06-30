@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: article
 ms.author: cabailey
 manager: barbkess
-ms.date: 05/07/2019
-ms.openlocfilehash: 468e392cd2c45d79cbb24f8d737a6e83fbcd2725
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/20/2019
+ms.openlocfilehash: 0ee2dde5a941d069f5b745eafb35df780f657a47
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65079272"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312630"
 ---
 # <a name="customer-lockbox-for-microsoft-azure"></a>고객 Lockbox Microsoft azure
 
@@ -97,7 +97,7 @@ Microsoft Azure에 대 한 고객 Lockbox 검토 및 승인 하거나 고객 데
 ### <a name="remote-desktop-access-to-virtual-machines"></a>Virtual machines에 원격 데스크톱 액세스
 
 고객 Lockbox 가상 컴퓨터에 원격 데스크톱 액세스 요청에 대 한 사용 중입니다. 다음 워크 로드가 지원 됩니다.
-- Platform-as-a-service (PaaS)-버전 1
+- Platform-as-a-service (PaaS)-Azure Cloud Services (웹 역할 및 작업자 역할)
 - 인프라 서비스 (IaaS)-Windows 및 Linux (Azure Resource Manager에만 해당)
 - 가상 머신 확장 집합-Windows 및 Linux
 

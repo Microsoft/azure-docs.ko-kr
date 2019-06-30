@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/16/2019
-ms.openlocfilehash: f6971038be7404850d958de67eb4755ae7d21a29
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b0f513462f1e09718dc18e9ce454b82e8978961f
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65761962"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67329603"
 ---
 # <a name="query-examples-for-common-stream-analytics-usage-patterns"></a>일반적인 Stream Analytics 사용 패턴에 대한 쿼리 예제
 
@@ -437,7 +437,12 @@ GROUP BY
 
 ```SQL
     SELECT
-        [user], feature, DATEDIFF(second, LAST(Time) OVER (PARTITION BY [user], feature LIMIT DURATION(hour, 1) WHEN Event = 'start'), Time) as duration
+        [user],
+    feature,
+    DATEDIFF(
+        second,
+        LAST(Time) OVER (PARTITION BY [user], feature LIMIT DURATION(hour, 1) WHEN Event = 'start'),
+        Time) as duration
     FROM input TIMESTAMP BY Time
     WHERE
         Event = 'end'
@@ -695,6 +700,15 @@ GROUP BY DeviceId,TumblingWindow(minute, 5)
 ```
 
 **설명**: [COUNT(DISTINCT Time)](/stream-analytics-query/count-azure-stream-analytics)는 시간 범위 내에서 Time 열의 고유한 값 수를 반환합니다. 그러면 중복 항목을 삭제하여 디바이스당 평균을 컴퓨팅하는 데 이 단계의 출력을 사용할 수 있습니다.
+
+## <a name="geofencing-and-geospatial-queries"></a>지 오 펜싱 및 지리 공간 쿼리
+Azure Stream Analytics fleet 관리와 같은 시나리오를 구현 하 여 공유, 연결 된 자동차 및 자산 추적 재정의를 사용할 수 있는 기본 제공 지리 공간적 함수를 제공 합니다. 지리 공간적 데이터 이벤트 스트림의 일부로 GeoJSON 또는 WKT 형식에서 수집할 수 있습니다 하거나 데이터를 참조 합니다. 자세한 내용은 참조는 [Azure Stream Analytics를 사용 하 여 지 오 펜싱 및 지리 공간 집계 시나리오](geospatial-scenarios.md) 문서.
+
+## <a name="language-extensibility-through-javascript-and-c"></a>JavaScript 통해 언어 확장성 및C#
+Azure Stream Ananlytics 쿼리 langugae JavaScript로 작성 된 사용자 지정 함수를 사용 하 여 확장할 수 있습니다 또는 C# 언어입니다. 자세한 내용은 다음 항목이 문서를 참조 합니다.
+* [Azure Stream Analytics JavaScript 사용자 정의 함수](stream-analytics-javascript-user-defined-functions.md)
+* [Azure Stream Analytics JavaScript 사용자 정의 집계](stream-analytics-javascript-user-defined-aggregates.md)
+* [Azure Stream Analytics Edge 작업에 대 한.NET 표준 사용자 정의 함수를 개발 합니다.](stream-analytics-edge-csharp-udf-methods.md)
 
 ## <a name="get-help"></a>도움말 보기
 

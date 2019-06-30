@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 01/14/2016
 ms.author: aelnably
 ms.custom: seodec18
-ms.openlocfilehash: 198fedbbd1e97dcda15c9124109e50664f58f8e7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 907816d4f44a953ae338f6ca505b8fb3e048234e
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66139714"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67329643"
 ---
 # <a name="azure-app-service-app-cloning-using-powershell"></a>PowerShell을 사용하여 Azure App Service 앱 복제
 
@@ -28,7 +28,7 @@ ms.locfileid: "66139714"
 
 Microsoft Azure PowerShell 버전 1.1.0 릴리스에서는 기존 App Service 앱을 다른 지역이나 동일한 지역에서 새로 만든 앱에 복제할 수 있도록 하는 새 옵션이 `New-AzWebApp`에 추가되었습니다. 이 옵션을 사용하여 고객은 수많은 앱을 다른 지역에 배포할 수 있습니다.
 
-앱 복제는 현재 프리미엄 계층의 앱 서비스 계획에만 지원됩니다. 새로운 기능은 App Service 백업 기능과 동일한 제한 사항을 사용합니다. [Azure App Service에서 앱 백업](manage-backup.md)을 참조하세요.
+앱 복제는 Standard, Premium, Premium V2 및 격리 app service 계획에 지원 됩니다. 새로운 기능은 App Service 백업 기능과 동일한 제한 사항을 사용합니다. [Azure App Service에서 앱 백업](manage-backup.md)을 참조하세요.
 
 ## <a name="cloning-an-existing-app"></a>기존 앱 복제
 시나리오: 미국 중남부 지역에 기존 앱이 있고, 콘텐츠를 미국 중북부 지역의 새 앱으로 복제하려고 합니다. 이 작업은 `-SourceWebApp` 옵션으로 새 앱을 만들기 위해 PowerShell cmdlet의 Azure Resource Manager 버전을 사용하여 수행할 수 있습니다.

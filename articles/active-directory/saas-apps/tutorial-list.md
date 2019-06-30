@@ -17,12 +17,12 @@ ms.author: jeedes
 ms.custom: it-pro
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73d26dffa005ac4bf8df0ecc0cee2c570960a38d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 49a87346d76bbf1502a073f4bcb4d11eb659929d
+ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66239944"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358146"
 ---
 # <a name="tutorials-for-integrating-saas-applications-with-azure-active-directory"></a>SaaS 응용 프로그램과 Azure Active Directory를 통합하는 방법에 대한 자습서
 
@@ -46,7 +46,7 @@ Azure AD에 사전 통합된 SaaS 앱 전체 목록은 [Active Directory Marketp
 
 | 로고 | Single Sign-On에 대한 애플리케이션 자습서 | 사용자 프로비전에 대한 애플리케이션 자습서 |
 | :--- | :--- | :--- |
-| ![로고](./media/tutorial-list/active-directory-saas-amazon-web-service-tutorial.png)| [Amazon Web Services (AWS) 콘솔](amazon-web-service-tutorial.md)| [Amazon Web Services (AWS) 콘솔-역할 프로 비전](amazon-web-service-tutorial.md#configure-azure-ad-single-sign-on) |
+| ![로고](./media/tutorial-list/active-directory-saas-amazon-web-service-tutorial.png)| [Amazon Web Services (AWS) 콘솔](amazon-web-service-tutorial.md)| [Amazon Web Services (AWS) 콘솔-역할 프로 비전](amazon-web-service-tutorial.md#configure-azure-ad-sso) |
 | ![로고](./media/tutorial-list/active-directory-saas-alibaba-tutorial.png)| [Alibaba 클라우드 서비스 (역할 기반 SSO)](alibaba-cloud-service-role-based-sso-tutorial.md)| |
 | ![로고](./media/tutorial-list/active-directory-saas-google-apps-tutorial.png)| [Google Cloud Platform](google-apps-tutorial.md)| [Google Cloud Platform-사용자 프로 비전](google-apps-provisioning-tutorial.md) |
 | ![로고](./media/tutorial-list/active-directory-saas-salesforce-tutorial.png)| [Salesforce](salesforce-tutorial.md)| [Salesforce - 사용자 프로비전](salesforce-provisioning-tutorial.md) |

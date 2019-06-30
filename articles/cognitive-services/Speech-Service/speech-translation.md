@@ -13,18 +13,18 @@ ms.author: erhopf
 ms.custom: seodec18
 ms.openlocfilehash: 95682612b4b0fdb1baa5038039630e74abddb1a9
 ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/19/2019
 ms.locfileid: "57890478"
 ---
 # <a name="what-is-speech-translation"></a>음성 번역이란?
 
-Azure 음성 서비스의 음성 번역은 오디오 스트림의 실시간, 다국어 음성-음성 및 음성-텍스트 번역을 가능하게 합니다. Speech SDK를 사용하여 응용 프로그램, 도구 및 장치가 제공된 오디오에 대한 원본 기록 및 변환 출력에 액세스할 수 있습니다. 중간 기록 및 번역 결과는 음성이 감지되면 반환되며, 최종 결과는 합성된 음성으로 변환될 수 있습니다.
+Azure 음성 서비스의 음성 번역을 오디오 스트림 음성-음성 및 음성-텍스트 번역을 실시간, 다중 언어 수 있습니다. Speech SDK를 사용 하 여 응용 프로그램, 도구 및 장치에 액세스할 수 있으며 원본 기록 및 변환 출력에 제공 된 오디오에 대 한 기록 및 번역에 대 한 중간 결과는 음성이 감지 되는, 및 결승전 결과 합성 된 음성으로 변환 될 수 반환 됩니다.
 
 Microsoft의 번역 엔진은 두 가지 방법을 통해 제공됩니다: 통계 기계 번역(SMT) 및 신경 기계 번역(NMT). SMT는 단어 몇 개의 컨텍스트에서 최상의 가능한 번역을 추정하기 위해 고급 통계 분석을 사용 합니다. NMT의 경우 신경망이 사용되며, 이는 문장의 전체 컨텍스트를 사용하여 단어를 번역함으로써 보다 정확하고, 자연스럽게 들리는 번역을 제공합니다.
 
-현재 Microsoft는 대부분 인기 있는 언어로의 번역에 NMT를 사용합니다. [음성 대 음성 번역에 사용할 수 있는 모든 언어](language-support.md#speech-translation)는 NMT를 통해 지원됩니다. 음성 대 텍스트 번역은 언어 쌍에 따라 SMT 또는 NMT를 사용할 수 있습니다. 대상 언어가 NMT에서 지원되는 경우 전체 번역은 NMT를 기반으로 합니다. 대상 언어가 NMT에서 지원되지 않는 경우, 번역은 NMT 및 SMT를 혼합하며, 두 언어 사이의 "피벗"으로 영어를 사용합니다.
+현재 Microsoft는 가장 인기 있는 언어로 번역에 대 한 NMT를 사용합니다. [음성 대 음성 번역에 사용할 수 있는 모든 언어](language-support.md#speech-translation)는 NMT를 통해 지원됩니다. 음성 대 텍스트 번역은 언어 쌍에 따라 SMT 또는 NMT를 사용할 수 있습니다. 대상 언어 NMT에서 지원 되는 경우 전체 변환은 NMT 기반 합니다. 변환 대상 언어 NMT에서 지원 되지 않습니다 때 NMT 및 두 언어 사이의 "피벗"으로 영어를 사용 하 여 SMT를 혼합 합니다.
 
 ## <a name="core-features"></a>핵심 기능
 
