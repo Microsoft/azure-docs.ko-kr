@@ -31,7 +31,7 @@ ms.locfileid: "67514162"
 ## <a name="prerequisites"></a>필수 조건
 
 - 시작하기 전에 장애 조치(failover)에 대한 [질문과 대답](site-recovery-faq.md#failover)을 검토합니다.
-- [재해 복구 드릴](azure-to-azure-tutorial-dr-drill.md)을 완료하여 모든 항목이 예상대로 작동하는지 확인합니다.
+- [재해 복구 ](azure-to-azure-tutorial-dr-drill.md)을 완료하여 모든 항목이 예상대로 작동하는지 확인합니다.
 - 테스트 장애 조치(failover)를 실행하기 전에 VM 속성을 확인합니다. VM은 [Azure 요구 사항](azure-to-azure-support-matrix.md#replicated-machine-operating-systems)을 준수해야 합니다.
 
 ## <a name="run-a-failover-to-the-secondary-region"></a>보조 지역으로 장애 조치(failover) 실행
