@@ -129,7 +129,7 @@ az batch pool create my_batch_pool.json
 
 명령줄 옵션만 사용하여 대부분의 Batch 리소스를 만들 수 있지만, 일부 기능에서는 리소스 세부 정보를 포함하는 JSON 형식의 파일을 지정해야 합니다. 예를 들어 시작 태스크에 대한 리소스 파일을 지정하려면 JSON 파일을 사용해야 합니다.
 
-리소스를 만드는 데 필요한 JSON 구문을 보려면 [Batch REST API 참조][rest_api] 설명서를 참조 하세요. REST API 참조의 "*리소스 종류* 추가" 항목마다 해당 리소스를 만들기 위한 샘플 JSON 스크립트가 포함되어 있습니다. 이러한 샘플 JSON 스크립트를 JSON 파일의 템플릿으로 사용하여 Azure CLI와 함께 사용할 수 있습니다. 예를 들어 풀 만들기에 대 한 JSON 구문을 보려면 [계정에 풀 추가][rest_add_pool]를 참조 하세요.
+리소스를 만드는 데 필요한 JSON 구문을 보려면 [Batch REST API 참조][rest_api] 설명서를 참조 하세요. REST API 참조의 "*리소스 종류* 추가" 항목마다 해당 리소스를 만들기 위한 샘플 JSON 스크립트가 포함되어 있습니다. 이러한 샘플 JSON 스크립트를 JSON 파일의 템플릿으로 사용하여 Azure CLI와 함께 사용할 수 있습니다. 예를 들어 풀 만들기에 대한 JSON 구문을 보려면 [계정에 풀 추가][rest_add_pool]를 참조 하세요.
 
 JSON 파일을 지정하는 샘플 스크립트는 [Batch로 작업 및 태스크 실행](./scripts/batch-cli-sample-run-job.md)을 참조하세요.
 

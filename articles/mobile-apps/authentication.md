@@ -30,7 +30,7 @@ ms.locfileid: "75453240"
     - 보안 및 글로벌 서비스.
 - 자신의 id 및 옵션을 사용 하 여 좋아하게 되었습니다 및 Firebase와 같은 기타 인기 있는 id 및 액세스 관리 공급자를 사용 합니다.
 - Azure Active Directory 지원.
-    - 기존 Azure AD 테 넌 트에 연결 합니다. 
+    - 기존 Azure AD 테넌트에 연결 합니다. 
     - 회사 도메인에 대해 인증을 사용 하도록 설정 합니다.
     - 중요 한 데이터에 대 한 액세스를 관리 합니다.
 - Visual Studio App Center SDK를 사용 하 여 Microsoft 인증 라이브러리를 래핑하여 간단한 사용자 환경 및 마법 SDK 환경.

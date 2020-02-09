@@ -527,9 +527,9 @@ ms.locfileid: "76715583"
 > | CdnWebApplicationFirewallPolicies | yes |
 > | edgenodes | 예 |
 > | 프로필 | yes |
-> | 프로필/끝점 | yes |
-> | 프로필/끝점/customdomains | 예 |
-> | 프로필/끝점/원본 | 예 |
+> | 프로필/엔드포인트 | yes |
+> | 프로필/엔드포인트/customdomains | 예 |
+> | 프로필/엔드포인트/원본 | 예 |
 > | validateProbe | 예 |
 
 ## <a name="microsoftcertificateregistration"></a>Microsoft.CertificateRegistration

@@ -48,7 +48,7 @@ ms.locfileid: "70050437"
 ![기능을 보여 주는 디바이스 쌍 이미지](./media/iot-hub-selector-twin-get-started/twin.png)
 
 또한 솔루션 백 엔드는 위의 모든 데이터를 기반으로 하는 디바이스 쌍을 쿼리할 수 있습니다.
-장치 쌍에 대 한 자세한 내용은 장치 쌍 [이해](../articles/iot-hub/iot-hub-devguide-device-twins.md)를 참조 하세요. 쿼리 하는 방법에 대 한 자세한 내용은 [IoT Hub 쿼리 언어](../articles/iot-hub/iot-hub-devguide-query-language.md)를 참조 하세요.
+장치 쌍에 대한 자세한 내용은 장치 쌍 [이해](../articles/iot-hub/iot-hub-devguide-device-twins.md)를 참조 하세요. 쿼리 하는 방법에 대한 자세한 내용은 [IoT Hub 쿼리 언어](../articles/iot-hub/iot-hub-devguide-query-language.md)를 참조 하세요.
 
 
 이 자습서에서는 다음을 수행하는 방법에 대해 설명합니다.

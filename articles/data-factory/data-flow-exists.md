@@ -61,7 +61,7 @@ Data Factory UX에서이 변환은 아래 이미지와 같습니다.
 
 ![Exists 예](media/data-flow/exists-script.png "Exists 예")
 
-이 변환에 대 한 데이터 흐름 스크립트는 아래 코드 조각에 있습니다.
+이 변환에 대한 데이터 흐름 스크립트는 아래 코드 조각에 있습니다.
 
 ```
 NameNorm2, TypeConversions

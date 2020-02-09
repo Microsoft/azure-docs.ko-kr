@@ -94,7 +94,7 @@ Azure Repos Git 리포지토리의 경우 유효한 PAT와 조합해서 사용�
 
 GitHub 및 Azure Repos의 개인용 액세스 토큰에 대한 자세한 내용은 다음을 참조하세요.
 
-GitHub: [명령줄에 대 한 개인용 액세스 토큰 만들기][pat-github]
+GitHub: [명령줄에 대한 개인용 액세스 토큰 만들기][pat-github]
 
 Azure Repos: [액세스를 인증 하는 개인 액세스 토큰 만들기][pat-repos]
 

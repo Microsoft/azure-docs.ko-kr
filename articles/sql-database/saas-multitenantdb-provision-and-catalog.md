@@ -1,5 +1,5 @@
 ---
-title: SaaS 다중 테 넌 트에서 프로 비전
+title: SaaS 다중 테넌트에서 프로 비전
 description: Azure SQL Database 다중 테넌트 SaaS 앱에서 새 테넌트를 프로비전하고 카탈로그로 만드는 방법 알아보기
 services: sql-database
 ms.service: sql-database
@@ -236,7 +236,7 @@ Azure Portal은 테넌트 데이터베이스를 표시하지만 공유 데이터
 - 테넌트 이름이 테넌트 테이블에 저장됩니다.
 - 데이터베이스 이름은 분할 관리 테이블에 저장됩니다.
 
-1. SSMS (SQL Server Management Studio)에서 카탈로그-mt에서 테 넌 트 서버에 연결 **\<사용자\>. database.windows.net**, Login = **developer**, Password = **P\@ssword1**
+1. SSMS (SQL Server Management Studio)에서 카탈로그-mt에서 테넌트 서버에 연결 **\<사용자\>. database.windows.net**, Login = **developer**, Password = **P\@ssword1**
 
     ![SSMS 연결 대화 상자](media/saas-multitenantdb-provision-and-catalog/SSMSConnection.png)
 

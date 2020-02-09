@@ -52,11 +52,11 @@ ms.locfileid: "74668694"
 
 1. UWP 프로젝트를 엽니다.
 
-2. [Azure Portal](https://portal.azure.com/) 로 이동 하 여 만든 모바일 앱으로 이동 합니다. `Overview` 블레이드에서 모바일 앱에 대 한 공용 끝점 인 URL을 찾습니다. 예-내 앱 이름 "test123"에 대 한 sitename이 https://test123.azurewebsites.net 됩니다.
+2. [Azure Portal](https://portal.azure.com/) 로 이동 하 여 만든 모바일 앱으로 이동 합니다. `Overview` 블레이드에서 모바일 앱에 대한 공용 엔드포인트 인 URL을 찾습니다. 예-내 앱 이름 "test123"에 대한 sitename이 https://test123.azurewebsites.net 됩니다.
 
 3. 이 폴더에서 파일 `App.xaml.cs`를 엽니다.-windows-uwp-cs/ZUMOAPPNAME/. 응용 프로그램 이름이 `ZUMOAPPNAME`입니다.
 
-4. `App` 클래스에서 `ZUMOAPPURL` 매개 변수를 위의 공용 끝점으로 바꿉니다.
+4. `App` 클래스에서 `ZUMOAPPURL` 매개 변수를 위의 공용 엔드포인트으로 바꿉니다.
 
     `public static MobileServiceClient MobileService = new MobileServiceClient("ZUMOAPPURL");`
 

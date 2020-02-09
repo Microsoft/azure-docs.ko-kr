@@ -51,7 +51,7 @@ ms.locfileid: "76154519"
 | InvalidSubscriptionRegistrationState | 리소스 공급자에 구독을 등록합니다. | [등록 오류 해결](error-register-resource-provider.md) |
 | InvalidTemplate | 템플릿 구문에 오류가 있는지 확인합니다. | [잘못된 템플릿 오류 해결](error-invalid-template.md) |
 | InvalidTemplateCircularDependency | 불필요한 종속성을 제거합니다. | [순환 종속성 해결](error-invalid-template.md#circular-dependency) |
-| LinkedAuthorizationFailed | 계정이 배포 하는 리소스 그룹과 동일한 테 넌 트에 속하는지 확인 합니다. | |
+| LinkedAuthorizationFailed | 계정이 배포 하는 리소스 그룹과 동일한 테넌트에 속하는지 확인 합니다. | |
 | LinkedInvalidPropertyId | 리소스에 대한 리소스 ID가 올바르게 해석되지 않습니다. 구독 ID, 리소스 그룹 이름, 리소스 종류, 부모 리소스 이름(필요한 경우) 및 리소스 이름을 포함하여 리소스 ID에 필요한 모든 값을 제공했는지 확인합니다. | |
 | LocationRequired | 리소스의 위치를 제공 합니다. | [위치 설정](resource-location.md) |
 | MismatchingResourceSegments | 중첩되는 리소스의 이름 및 형식에 세그먼트 수가 올바른지 확인하십시오. | [리소스 세그먼트 해결](error-invalid-template.md#incorrect-segment-lengths)

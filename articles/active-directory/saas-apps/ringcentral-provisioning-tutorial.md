@@ -36,7 +36,7 @@ ms.locfileid: "77060833"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [RingCentral 테 넌 트](https://www.ringcentral.com/office/plansandpricing.html)
+* [RingCentral 테넌트](https://www.ringcentral.com/office/plansandpricing.html)
 * 관리자 권한이 있는 RingCentral의 사용자 계정
 
 ## <a name="assigning-users-to-ringcentral"></a>RingCentral에 사용자 할당
@@ -97,7 +97,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위한 RingCentral�
 > [RingCentral single sign-on 자습서](ringcentral-tutorial.md)에 제공 된 지침에 따라 RingCentral에 대해 SAML 기반 Single Sign-On를 사용 하도록 선택할 수도 있습니다. Single Sign-On과 자동 사용자 프로비저닝은 서로 보완적이지만, 별개로 구성할 수 있습니다.
 
 > [!NOTE]
-> RingCentral의 SCIM 끝점에 대 한 자세한 내용은 [RINGCENTRAL API 참조](https://developers.ringcentral.com/api-reference)를 참조 하세요.
+> RingCentral의 SCIM 엔드포인트에 대 한 자세한 내용은 [RINGCENTRAL API 참조](https://developers.ringcentral.com/api-reference)를 참조 하세요.
 
 ### <a name="to-configure-automatic-user-provisioning-for-ringcentral-in-azure-ad"></a>Azure AD에서 RingCentral에 대 한 자동 사용자 프로 비전을 구성 하려면:
 
@@ -117,7 +117,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위한 RingCentral�
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에 있는 **테 넌 트 URL**에 `https://platform.ringcentral.com/scim/v2`을 입력 합니다. 이전에 **비밀 토큰**에서 검색 된 **Scim 인증 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 RingCentral에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 RingCentral 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
+5. **관리자 자격 증명** 섹션 아래에 있는 **테넌트 URL**에 `https://platform.ringcentral.com/scim/v2`을 입력 합니다. 이전에 **비밀 토큰**에서 검색 된 **Scim 인증 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 RingCentral에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 RingCentral 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 

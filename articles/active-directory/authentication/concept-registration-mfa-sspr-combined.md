@@ -83,7 +83,7 @@ Azure AD에 더 많은 인증 방법을 추가 하기 때문에 이러한 메서
 
 ### <a name="interrupt-mode"></a>인터럽트 모드
 
-둘 다 테 넌 트에 대해 사용 하도록 설정 된 경우 결합 된 등록은 Multi-Factor Authentication 및 SSPR 정책을 모두 사용 합니다. 이러한 정책은 로그인 하는 동안 사용자 등록이 중단 되었는지 여부와 등록에 사용할 수 있는 방법을 제어 합니다.
+둘 다 테넌트에 대해 사용 하도록 설정 된 경우 결합 된 등록은 Multi-Factor Authentication 및 SSPR 정책을 모두 사용 합니다. 이러한 정책은 로그인 하는 동안 사용자 등록이 중단 되었는지 여부와 등록에 사용할 수 있는 방법을 제어 합니다.
 
 사용자에 게 보안 정보를 등록 하거나 새로 고치는 메시지가 표시 될 수 있는 몇 가지 시나리오는 다음과 같습니다.
 
@@ -140,7 +140,7 @@ SSPR 정책에서 사용자가 일정 한 간격으로 보안 정보를 검토 �
 
 [사용자가 인증 방법을 다시 등록 하도록 강제](howto-mfa-userdevicesettings.md#manage-authentication-methods)
 
-[테 넌 트에서 결합 된 등록 사용](howto-registration-mfa-sspr-combined.md)
+[테넌트에서 결합 된 등록 사용](howto-registration-mfa-sspr-combined.md)
 
 [SSPR 및 MFA 사용량 및 통찰력 보고](howto-authentication-methods-usage-insights.md)
 

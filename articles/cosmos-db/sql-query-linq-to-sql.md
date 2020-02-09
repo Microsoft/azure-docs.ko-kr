@@ -15,7 +15,7 @@ ms.locfileid: "75441247"
 ---
 # <a name="linq-to-sql-translation"></a>LINQ to SQL 변환
 
-Azure Cosmos DB 쿼리 공급자는 LINQ 쿼리에서 Cosmos DB SQL 쿼리로 매핑을 수행 하는 데 가장 적합 한 작업을 수행 합니다. 다음 설명에서는 LINQ에 대 한 기본적인 지식이 있다고 가정 합니다.
+Azure Cosmos DB 쿼리 공급자는 LINQ 쿼리에서 Cosmos DB SQL 쿼리로 매핑을 수행 하는 데 가장 적합 한 작업을 수행 합니다. 다음 설명에서는 LINQ에 대한 기본적인 지식이 있다고 가정 합니다.
 
 쿼리 공급자 유형 시스템은 JSON 기본 유형인 numeric, Boolean, string 및 null만 지원 합니다.
 
@@ -32,7 +32,7 @@ Azure Cosmos DB 쿼리 공급자는 LINQ 쿼리에서 Cosmos DB SQL 쿼리로 �
     family.children[n].grade; //n is an int variable
   ```
   
-- 숫자 및 부울 값에 대 한 일반적인 산술 식을 포함 하는 산술 식 전체 목록은 [AZURE COSMOS DB SQL 사양을](https://go.microsoft.com/fwlink/p/?LinkID=510612)참조 하십시오.
+- 숫자 및 부울 값에 대한 일반적인 산술 식을 포함 하는 산술 식 전체 목록은 [AZURE COSMOS DB SQL 사양을](https://go.microsoft.com/fwlink/p/?LinkID=510612)참조 하십시오.
   
   ```
     2 * family.children[0].grade;

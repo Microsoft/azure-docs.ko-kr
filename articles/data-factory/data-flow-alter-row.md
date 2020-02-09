@@ -17,11 +17,11 @@ ms.locfileid: "75834532"
 ---
 # <a name="alter-row-transformation-in-mapping-data-flow"></a>매핑 데이터 흐름의 Alter row 변환
 
-행에 대 한 insert, delete, update 및 upsert 정책을 설정 하려면 행 변경 변환을 사용 합니다. 일대다 조건을 식으로 추가할 수 있습니다. 이러한 조건은 각 행이 첫 번째 일치 식에 해당 하는 정책으로 표시 되므로 우선 순위에 따라 지정 해야 합니다. 이러한 각 조건은 행 (또는 행)이 삽입, 업데이트, 삭제 또는 upserted에 게 발생할 수 있습니다. Alter Row는 데이터베이스에 대해 DDL & DML 작업을 모두 생성할 수 있습니다.
+행에 대한 insert, delete, update 및 upsert 정책을 설정 하려면 행 변경 변환을 사용 합니다. 일대다 조건을 식으로 추가할 수 있습니다. 이러한 조건은 각 행이 첫 번째 일치 식에 해당 하는 정책으로 표시 되므로 우선 순위에 따라 지정 해야 합니다. 이러한 각 조건은 행 (또는 행)이 삽입, 업데이트, 삭제 또는 upserted에 게 발생할 수 있습니다. Alter Row는 데이터베이스에 대해 DDL & DML 작업을 모두 생성할 수 있습니다.
 
 ![행 설정 변경](media/data-flow/alter-row1.png "행 설정 변경")
 
-Alter Row 변환은 데이터 흐름의 데이터베이스 또는 CosmosDB 싱크에 대해서만 작동 합니다. 행에 할당 하는 작업 (insert, update, delete, upsert)은 디버그 세션 중에 발생 하지 않습니다. 파이프라인에서 데이터 흐름 실행 작업을 실행 하 여 데이터베이스 테이블에 대 한 alter row 정책을 적용 합니다.
+Alter Row 변환은 데이터 흐름의 데이터베이스 또는 CosmosDB 싱크에 대해서만 작동 합니다. 행에 할당 하는 작업 (insert, update, delete, upsert)은 디버그 세션 중에 발생 하지 않습니다. 파이프라인에서 데이터 흐름 실행 작업을 실행 하 여 데이터베이스 테이블에 대한 alter row 정책을 적용 합니다.
 
 ## <a name="specify-a-default-row-policy"></a>기본 행 정책 지정
 
@@ -30,7 +30,7 @@ Alter Row 변환을 만들고 조건 `true()`를 사용 하 여 행 정책을 �
 ![행 정책 변경](media/data-flow/alter-row4.png "행 정책 변경")
 
 > [!NOTE]
-> 모든 행을 하나의 정책으로 표시 하려면 해당 정책에 대 한 조건을 만들고 조건을 `true()`지정 하면 됩니다.
+> 모든 행을 하나의 정책으로 표시 하려면 해당 정책에 대한 조건을 만들고 조건을 `true()`지정 하면 됩니다.
 
 ## <a name="view-policies-in-data-preview"></a>데이터 미리 보기에서 정책 보기
 
@@ -73,7 +73,7 @@ Data Factory UX에서이 변환은 아래 이미지와 같습니다.
 
 ![Alter row 예](media/data-flow/alter-row4.png "Alter row 예")
 
-이 변환에 대 한 데이터 흐름 스크립트는 아래 코드 조각에 있습니다.
+이 변환에 대한 데이터 흐름 스크립트는 아래 코드 조각에 있습니다.
 
 ```
 SpecifyUpsertConditions alterRow(insertIf(alterRowCondition == 'insert'),

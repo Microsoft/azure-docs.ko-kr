@@ -15,8 +15,8 @@ Azure Functions 발생 하는 오류는 다음 원본 중 하나에서 가져올
 
 - 기본 제공 Azure Functions [트리거 및 바인딩](..\articles\azure-functions\functions-triggers-bindings.md) 사용
 - 기본 Azure 서비스의 Api 호출
-- REST 끝점에 대 한 호출
-- 클라이언트 라이브러리, 패키지 또는 타사 Api에 대 한 호출
+- REST 엔드포인트에 대한 호출
+- 클라이언트 라이브러리, 패키지 또는 타사 Api에 대한 호출
 
 데이터 또는 누락 된 메시지의 손실을 방지 하기 위해 다음과 같은 견고한 오류 처리 방법을 사용 하는 것이 중요 합니다. 권장 되는 오류 처리 방법에는 다음 작업이 포함 됩니다.
 
@@ -39,4 +39,4 @@ Azure Functions 발생 하는 오류는 다음 원본 중 하나에서 가져올
 
 기본적으로이 작업은 다시 시도 요청을 최대 5 회까지 트리거합니다. 5 번째 재시도 후에는 Azure Queue storage와 Azure Service Bus 트리거에서 모두 [포이즌 큐](..\articles\azure-functions\functions-bindings-storage-queue.md#trigger---poison-messages)에 메시지를 씁니다.
 
-다른 트리거 또는 바인딩 유형에 대 한 재시도 정책을 수동으로 구현 해야 합니다. 수동 구현에는 [포이즌 메시지 큐](..\articles\azure-functions\functions-bindings-storage-blob.md#trigger---poison-blobs)에 오류 정보를 기록 하는 작업이 포함 될 수 있습니다. 포이즌 큐에 기록 하면 나중에 작업을 다시 시도할 수 있습니다. 이 방법은 Blob storage 트리거에서 사용 하는 것과 동일 합니다.
+다른 트리거 또는 바인딩 유형에 대한 재시도 정책을 수동으로 구현 해야 합니다. 수동 구현에는 [포이즌 메시지 큐](..\articles\azure-functions\functions-bindings-storage-blob.md#trigger---poison-blobs)에 오류 정보를 기록 하는 작업이 포함 될 수 있습니다. 포이즌 큐에 기록 하면 나중에 작업을 다시 시도할 수 있습니다. 이 방법은 Blob storage 트리거에서 사용 하는 것과 동일 합니다.

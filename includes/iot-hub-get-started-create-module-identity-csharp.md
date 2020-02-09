@@ -27,9 +27,9 @@ ms.locfileid: "68883798"
 
 1. **다음** 을 선택 하 여 **새 프로젝트 구성**을 엽니다. 프로젝트 이름을 *CreateIdentitie*로, 솔루션 이름을 *IoTHubGetStarted*로 지정합니다. .NET Framework 버전이 4.6.1 이상인지 확인합니다.
 
-    ![Visual Studio 솔루션에 대 한 이름 및 프레임 워크 입력](./media/iot-hub-get-started-create-module-identity-csharp/configure-createidentities-project.png)
+    ![Visual Studio 솔루션에 대한 이름 및 프레임 워크 입력](./media/iot-hub-get-started-create-module-identity-csharp/configure-createidentities-project.png)
 
-1. Visual Studio에서 **도구** > **nuget 패키지 관리자** > **솔루션에 대 한 nuget 패키지 관리**를 엽니다. **찾아보기** 탭을 선택합니다.
+1. Visual Studio에서 **도구** > **nuget 패키지 관리자** > **솔루션에 대한 nuget 패키지 관리**를 엽니다. **찾아보기** 탭을 선택합니다.
 
 1. **Microsoft. Azure. 장치**를 검색 합니다. 선택 하 고 **설치**를 선택 합니다.
 

@@ -30,9 +30,9 @@ ms.locfileid: "77059490"
 
 Azure Migrate 어플라이언스는 온-프레미스 환경에 대 한 정보를 지속적으로 수집 합니다. 하지만 평가는 온-프레미스 Vm의 특정 시점 스냅숏입니다. 평가 하려는 VM의 설정을 변경 하는 경우 다시 계산 옵션을 사용 하 여 평가를 최신 변경 내용으로 업데이트 합니다.
 
-### <a name="how-do-i-discover-vms-in-a-multitenant-environment"></a>다중 테 넌 트 환경에서 Vm을 검색 어떻게 할까요??
+### <a name="how-do-i-discover-vms-in-a-multitenant-environment"></a>다중 테넌트 환경에서 Vm을 검색 어떻게 할까요??
 
-- VMware의 경우 사용자 환경이 테 넌 트 간에 공유 되 고 다른 테 넌 트의 구독에 있는 한 테 넌 트의 Vm을 검색 하지 않으려는 경우 검색 하려는 Vm에만 액세스할 수 있는 vCenter Server 자격 증명을 만듭니다. 그런 다음 Azure Migrate 어플라이언스에서 검색을 시작할 때 해당 자격 증명을 사용 합니다.
+- VMware의 경우 사용자 환경이 테넌트 간에 공유 되 고 다른 테넌트의 구독에 있는 한 테넌트의 Vm을 검색 하지 않으려는 경우 검색 하려는 Vm에만 액세스할 수 있는 vCenter Server 자격 증명을 만듭니다. 그런 다음 Azure Migrate 어플라이언스에서 검색을 시작할 때 해당 자격 증명을 사용 합니다.
 - Hyper-v의 경우 검색에서 Hyper-v 호스트 자격 증명을 사용 합니다. Vm이 동일한 Hyper-v 호스트를 공유 하는 경우 현재 검색을 분리할 수 있는 방법이 없습니다.  
 
 

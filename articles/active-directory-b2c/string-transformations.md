@@ -1,7 +1,7 @@
 ---
-title: 사용자 지정 정책에 대 한 문자열 클레임 변환 예제
+title: 사용자 지정 정책에 대한 문자열 클레임 변환 예제
 titleSuffix: Azure AD B2C
-description: Azure Active Directory B2C의 IEF (Identity Experience Framework) 스키마에 대 한 문자열 클레임 변환 예입니다.
+description: Azure Active Directory B2C의 IEF (Identity Experience Framework) 스키마에 대한 문자열 클레임 변환 예입니다.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -375,8 +375,8 @@ GetLocalizedStringsTransformation 클레임 변환을 사용 하려면 다음을
 1. [지역화 문자열](localization.md) 을 정의 하 고 [자체 어설션된 기술 프로필](self-asserted-technical-profile.md)에 연결 합니다.
 1. `LocalizedString` 요소의 `ElementType`는 `GetLocalizedStringsTransformationClaimType`로 설정 되어야 합니다.
 1. `StringId`은 사용자가 정의 하는 고유 식별자 이며 나중에 클레임 변환에서 사용 합니다.
-1. 클레임 변환에서 지역화 된 문자열을 사용 하 여 설정할 클레임 목록을 지정 합니다. `ClaimTypeReferenceId`은 정책의 ClaimsSchema 섹션에 이미 정의 되어 있는 ClaimType에 대 한 참조입니다. `TransformationClaimType`은 `LocalizedString` 요소의 `StringId`에 정의 된 지역화 된 문자열의 이름입니다.
-1. [자체 어설션된 기술 프로필](self-asserted-technical-profile.md)또는 [디스플레이 컨트롤](display-controls.md) 입력 또는 출력 클레임 변환에서 클레임 변환에 대 한 참조를 만듭니다.
+1. 클레임 변환에서 지역화 된 문자열을 사용 하 여 설정할 클레임 목록을 지정 합니다. `ClaimTypeReferenceId`은 정책의 ClaimsSchema 섹션에 이미 정의 되어 있는 ClaimType에 대한 참조입니다. `TransformationClaimType`은 `LocalizedString` 요소의 `StringId`에 정의 된 지역화 된 문자열의 이름입니다.
+1. [자체 어설션된 기술 프로필](self-asserted-technical-profile.md)또는 [디스플레이 컨트롤](display-controls.md) 입력 또는 출력 클레임 변환에서 클레임 변환에 대한 참조를 만듭니다.
 
 ![GetLocalizedStringsTransformation](./media/string-transformations/get-localized-strings-transformation.png)
 

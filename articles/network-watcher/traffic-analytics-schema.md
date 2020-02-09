@@ -169,7 +169,7 @@ https://{saName}@insights-logs-networksecuritygroupflowevent/resoureId=/SUBSCRIP
 1. 상호 Vnet-흐름의 IP 주소는 서로 다른 두 Azure 가상 네트워크에 상주 합니다.
 1. S2S – (사이트 간) IP 주소 중 하나가 Azure Virtual Network에 속하고, 다른 IP 주소는 VPN gateway 또는 Express 경로를 통해 Azure Virtual Network에 연결 된 고객 네트워크 (사이트)에 속합니다.
 1. P2S-(지점 및 사이트 간) IP 주소 중 하나가 Azure Virtual Network에 속하고, 다른 IP 주소는 VPN gateway를 통해 Azure Virtual Network에 연결 된 고객 네트워크 (사이트)에 속합니다.
-1. AzurePublic-IP 주소 중 하나는 Azure Virtual Network에 속하며 다른 IP 주소는 Microsoft 소유의 Azure 내부 공용 IP 주소에 속합니다. 고객 소유 공용 IP 주소는이 흐름 유형에 속하지 않습니다. 예를 들어 Azure 서비스 (저장소 끝점)로 트래픽을 보내는 고객 소유의 VM은이 흐름 유형 아래에서 분류 됩니다.
+1. AzurePublic-IP 주소 중 하나는 Azure Virtual Network에 속하며 다른 IP 주소는 Microsoft 소유의 Azure 내부 공용 IP 주소에 속합니다. 고객 소유 공용 IP 주소는이 흐름 유형에 속하지 않습니다. 예를 들어 Azure 서비스 (저장소 엔드포인트)로 트래픽을 보내는 고객 소유의 VM은이 흐름 유형 아래에서 분류 됩니다.
 1. ExternalPublic-IP 주소 중 하나가 azure Virtual Network에 속하며, 다른 IP 주소는 Azure에 없는 공용 IP 이지만, 트래픽 분석에서 처리 간격에 대해 사용 하는 ASC 피드의 악성으로 보고 되지 않습니다. " FlowIntervalStartTime_t "및" FlowIntervalEndTime_t "입니다.
 1. MaliciousFlow-IP 주소 중 하나는 azure virtual network에 속하며, 다른 IP 주소는 Azure에 있지 않은 공용 IP이 고, 트래픽 분석는 " FlowIntervalStartTime_t "및" FlowIntervalEndTime_t "입니다.
 1. UnknownPrivate-IP 주소 중 하나가 Azure Virtual Network에 속하며 다른 IP 주소는 RFC 1918에 정의 된 개인 IP 범위에 속하고 고객 소유 사이트 또는 Azure Virtual Network에 트래픽 분석에 매핑할 수 없습니다.

@@ -39,7 +39,7 @@ Azure 포털 또는 PowerShell에서 DSC 구성, 리소스 및 대상 노드를 
 
 ### <a name="import-reporting-data-into-azure-monitor-logs"></a>Azure Monitor 로그로 보고 데이터 가져오기
 
-Azure Automation 상태 구성으로 관리되는 노드는 상세한 보고 상태 데이터를 기본 제공 끌어오기 서버에 보냅니다. 이 데이터를 Log Analytics 작업 영역으로 보내려면 Azure Automation 상태 구성을 구성할 수 있습니다. 상태 구성 상태 데이터를 Log Analytics 작업 영역으로 전송 하는 방법에 대 한 자세한 내용은 [Azure Automation 상태 구성 보고 데이터를 Azure Monitor 로그로 전달](automation-dsc-diagnostics.md)을 참조 하세요.
+Azure Automation 상태 구성으로 관리되는 노드는 상세한 보고 상태 데이터를 기본 제공 끌어오기 서버에 보냅니다. 이 데이터를 Log Analytics 작업 영역으로 보내려면 Azure Automation 상태 구성을 구성할 수 있습니다. 상태 구성 상태 데이터를 Log Analytics 작업 영역으로 전송 하는 방법에 대한 자세한 내용은 [Azure Automation 상태 구성 보고 데이터를 Azure Monitor 로그로 전달](automation-dsc-diagnostics.md)을 참조 하세요.
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -81,11 +81,11 @@ Azure에서 실행 되는 모든 Linux 노드의 경우 온 보 딩 중에 [linu
 
 이는 관리 되는 노드가 Azure Automation와 통신할 수 있도록 네트워크 연결을 제공 합니다.
 [WaitFor * 리소스](https://docs.microsoft.com/powershell/scripting/dsc/reference/resources/windows/waitForAllResource)와 같이 노드 간에 통신 하는 DSC 리소스를 사용 하는 경우에는 노드 간 트래픽만 허용 해야 합니다.
-이러한 네트워크 요구 사항을 이해 하려면 각 DSC 리소스에 대 한 설명서를 참조 하세요.
+이러한 네트워크 요구 사항을 이해 하려면 각 DSC 리소스에 대한 설명서를 참조 하세요.
 
 #### <a name="proxy-support"></a>프록시 지원
 
-DSC 에이전트에 대 한 프록시 지원은 Windows 버전 1809 이상에서 사용할 수 있습니다.
+DSC 에이전트에 대한 프록시 지원은 Windows 버전 1809 이상에서 사용할 수 있습니다.
 이 옵션을 구성 하려면 노드를 등록 하는 데 사용 되는 [메타 구성 스크립트](automation-dsc-onboarding.md#generating-dsc-metaconfigurations) 에서 **Proxyurl** 및 **ProxyCredential** 의 값을 설정 합니다.
 프록시는 이전 버전의 Windows 용 DSC에서 사용할 수 없습니다.
 

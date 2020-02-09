@@ -94,7 +94,7 @@ Batch 서비스는 연결된 Storage 계정을 사용하여 애플리케이션 �
 > 현재 [방화벽 규칙](../storage/common/storage-network-security.md)이 구성된 Azure Storage 계정에는 애플리케이션 패키지를 사용할 수 없습니다.
 > 
 
-Batch 서비스는 Azure Storage를 사용하여 애플리케이션 패키지를 블록 Blob으로 저장합니다. 블록 blob 데이터의 경우 [정상으로 청구][storage_pricing] 되 고 각 패키지의 크기는 최대 블록 blob 크기를 초과할 수 없습니다. 자세한 내용은 [저장소 계정에 대 한 확장성 및 성능 목표 Azure Storage](../storage/blobs/scalability-targets.md)를 참조 하세요. 비용을 최소화할 수 있도록 애플리케이션 패키지의 크기와 숫자에 신경 쓰고, 사용하지 않는 패키지를 주기적으로 제거해 주세요.
+Batch 서비스는 Azure Storage를 사용하여 애플리케이션 패키지를 블록 Blob으로 저장합니다. 블록 blob 데이터의 경우 [정상으로 청구][storage_pricing] 되 고 각 패키지의 크기는 최대 블록 blob 크기를 초과할 수 없습니다. 자세한 내용은 [저장소 계정에 대한 확장성 및 성능 목표 Azure Storage](../storage/blobs/scalability-targets.md)를 참조 하세요. 비용을 최소화할 수 있도록 애플리케이션 패키지의 크기와 숫자에 신경 쓰고, 사용하지 않는 패키지를 주기적으로 제거해 주세요.
 > 
 > 
 
@@ -117,7 +117,7 @@ Batch 계정의 애플리케이션을 보려면 **Batch 계정**이 표시되는
 
 ![풀의 노드][13]
 
-풀을 선택한 후에는 응용 프로그램 패키지가 설치 된 계산 노드로 이동 합니다. 여기에서 응용 프로그램 패키지에 대 한 세부 정보는 **응용 프로그램** 폴더에 있습니다. 계산 노드의 추가 폴더에는 시작 작업, 출력 파일, 오류 출력 등의 다른 파일이 포함 되어 있습니다.
+풀을 선택한 후에는 응용 프로그램 패키지가 설치 된 계산 노드로 이동 합니다. 여기에서 응용 프로그램 패키지에 대한 세부 정보는 **응용 프로그램** 폴더에 있습니다. 계산 노드의 추가 폴더에는 시작 작업, 출력 파일, 오류 출력 등의 다른 파일이 포함 되어 있습니다.
 
 ![노드의 파일][14]
 
@@ -345,8 +345,8 @@ foreach (ApplicationSummary app in applications)
 애플리케이션 패키지를 사용하면 고객이 작업에 대한 애플리케이션을 선택하고 Batch 지원 서비스를 통해 작업을 처리할 때 사용할 정확한 버전을 지정할 수 있습니다. 또한 고객이 서비스에서 자신의 고유한 애플리케이션을 업로드 및 추적하는 기능을 제공할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
-* 또한 [일괄 처리 REST API][api_rest] 는 응용 프로그램 패키지 작업을 지원 합니다. 예를 들어 REST API를 사용 하 여 설치할 패키지를 지정 하는 방법에 대 한 자세한 내용은 [계정에 풀 추가][rest_add_pool] 에서 [applicationPackageReferences][rest_add_pool_with_packages] 요소를 참조 하세요. 일괄 처리 REST API를 사용 하 여 응용 프로그램 정보를 얻는 방법에 대 한 자세한 내용은 [응용 프로그램][rest_applications] 을 참조 하십시오.
-* 프로그래밍 방식으로 [Batch 관리 .NET으로 Azure Batch 계정 및 할당량 관리](batch-management-dotnet.md)를 수행하는 방법을 알아보세요. [Batch 관리 .net][api_net_mgmt] 라이브러리는 batch 응용 프로그램 또는 서비스에 대 한 계정 만들기 및 삭제 기능을 사용 하도록 설정할 수 있습니다.
+* 또한 [일괄 처리 REST API][api_rest] 는 응용 프로그램 패키지 작업을 지원 합니다. 예를 들어 REST API를 사용 하 여 설치할 패키지를 지정 하는 방법에 대한 자세한 내용은 [계정에 풀 추가][rest_add_pool] 에서 [applicationPackageReferences][rest_add_pool_with_packages] 요소를 참조 하세요. 일괄 처리 REST API를 사용 하 여 응용 프로그램 정보를 얻는 방법에 대한 자세한 내용은 [응용 프로그램][rest_applications] 을 참조 하십시오.
+* 프로그래밍 방식으로 [Batch 관리 .NET으로 Azure Batch 계정 및 할당량 관리](batch-management-dotnet.md)를 수행하는 방법을 알아보세요. [Batch 관리 .net][api_net_mgmt] 라이브러리는 batch 응용 프로그램 또는 서비스에 대한 계정 만들기 및 삭제 기능을 사용 하도록 설정할 수 있습니다.
 
 [api_net]: https://docs.microsoft.com/dotnet/api/overview/azure/batch/client?view=azure-dotnet
 [api_net_mgmt]: https://docs.microsoft.com/dotnet/api/overview/azure/batch/management?view=azure-dotnet

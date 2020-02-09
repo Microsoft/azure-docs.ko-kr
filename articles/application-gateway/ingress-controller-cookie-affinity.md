@@ -1,6 +1,6 @@
 ---
 title: Application Gateway로 쿠키 기반 선호도 사용
-description: 이 문서에서는 Application Gateway로 쿠키 기반 선호도를 사용 하도록 설정 하는 방법에 대 한 정보를 제공 합니다.
+description: 이 문서에서는 Application Gateway로 쿠키 기반 선호도를 사용 하도록 설정 하는 방법에 대한 정보를 제공 합니다.
 services: application-gateway
 author: caya
 ms.service: application-gateway

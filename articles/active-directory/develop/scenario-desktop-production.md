@@ -36,7 +36,7 @@ ms.locfileid: "76702133"
 > [!NOTE]
 > 여러 리소스에 대 한 동의를 얻는 것은 Microsoft id 플랫폼에서 작동 하지만 Azure Active Directory (Azure AD) B2C의 경우에는 작동 하지 않습니다. Azure AD B2C은 사용자 동의가 아닌 관리자 동의만 지원 합니다.
 
-V2.0 (Microsoft identity platform) 끝점을 사용 하 여 한 번에 여러 리소스에 대 한 토큰을 가져올 수 없습니다. `scopes` 매개 변수는 단일 리소스에 대 한 범위만 포함할 수 있습니다. `extraScopesToConsent` 매개 변수를 사용 하 여 사용자가 여러 리소스를 미리 동의 수 있도록 할 수 있습니다.
+V2.0 (Microsoft identity platform) 엔드포인트을 사용 하 여 한 번에 여러 리소스에 대 한 토큰을 가져올 수 없습니다. `scopes` 매개 변수는 단일 리소스에 대 한 범위만 포함할 수 있습니다. `extraScopesToConsent` 매개 변수를 사용 하 여 사용자가 여러 리소스를 미리 동의 수 있도록 할 수 있습니다.
 
 예를 들어, 두 개의 범위가 각각 포함 된 두 개의 리소스가 있을 수 있습니다.
 

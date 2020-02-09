@@ -98,7 +98,7 @@ PrivateKey privKey = (PrivateKey) ks.getKey("<subject-cn>", ("<password>").toCha
 ...
 ```
 
-지원 하지 않거나 Windows 인증서 저장소에 대 한 충분 한 지원을 제공 하지 않는 언어의 경우 [파일에서 인증서 로드](#load-certificate-from-file)를 참조 하세요.
+지원 하지 않거나 Windows 인증서 저장소에 대한 충분 한 지원을 제공 하지 않는 언어의 경우 [파일에서 인증서 로드](#load-certificate-from-file)를 참조 하세요.
 
 ## <a name="load-certificate-in-linux-apps"></a>Linux 앱에서 인증서 로드
 
@@ -120,7 +120,7 @@ var cert = new X509Certificate2(bytes);
 // Use the loaded certificate
 ```
 
-Node.js, PHP, Python, Java 또는 Ruby의 파일에서 SSL 인증서를 로드 하는 방법을 보려면 해당 언어 또는 웹 플랫폼에 대 한 설명서를 참조 하세요.
+Node.js, PHP, Python, Java 또는 Ruby의 파일에서 SSL 인증서를 로드 하는 방법을 보려면 해당 언어 또는 웹 플랫폼에 대한 설명서를 참조 하세요.
 
 ## <a name="load-certificate-from-file"></a>파일에서 인증서 로드
 
@@ -148,7 +148,7 @@ var cert = new X509Certificate2(bytes);
 // Use the loaded certificate
 ```
 
-Node.js, PHP, Python, Java 또는 Ruby의 파일에서 SSL 인증서를 로드 하는 방법을 보려면 해당 언어 또는 웹 플랫폼에 대 한 설명서를 참조 하세요.
+Node.js, PHP, Python, Java 또는 Ruby의 파일에서 SSL 인증서를 로드 하는 방법을 보려면 해당 언어 또는 웹 플랫폼에 대한 설명서를 참조 하세요.
 
 ## <a name="more-resources"></a>추가 리소스
 

@@ -15,7 +15,7 @@ ms.locfileid: "75456656"
 ---
 # <a name="schedule-and-run-recurring-automated-tasks-processes-and-workflows-with-azure-logic-apps"></a>Azure Logic Apps를 사용 하 여 반복적인 자동화 된 작업, 프로세스 및 워크플로 예약 및 실행
 
-Logic Apps는 일정에 따라 자동화 된 되풀이 작업 및 프로세스를 만들고 실행 하는 데 도움이 됩니다. 일정 유형의 트리거 인 기본 제공 되풀이 트리거 또는 슬라이딩 윈도우 트리거로 시작 하는 논리 앱 워크플로를 만들어 나중에 또는 되풀이 간격으로 작업을 즉시 실행할 수 있습니다. HTTP 또는 HTTPS 끝점과 같은 Azure 내부 및 외부에서 서비스를 호출 하 고, Azure Storage 및 Azure Service Bus와 같은 Azure 서비스에 메시지를 게시 하거나, 파일 공유에 업로드 된 파일을 가져올 수 있습니다. 되풀이 트리거를 사용 하 여 작업 실행을 위한 복잡 한 일정 및 고급 되풀이를 설정할 수도 있습니다. 기본 제공 일정 트리거 및 작업에 대 한 자세한 내용은 [일정 트리거](#schedule-triggers) 및 [작업 예약](#schedule-actions)을 참조 하세요. 
+Logic Apps는 일정에 따라 자동화 된 되풀이 작업 및 프로세스를 만들고 실행 하는 데 도움이 됩니다. 일정 유형의 트리거 인 기본 제공 되풀이 트리거 또는 슬라이딩 윈도우 트리거로 시작 하는 논리 앱 워크플로를 만들어 나중에 또는 되풀이 간격으로 작업을 즉시 실행할 수 있습니다. HTTP 또는 HTTPS 엔드포인트과 같은 Azure 내부 및 외부에서 서비스를 호출 하 고, Azure Storage 및 Azure Service Bus와 같은 Azure 서비스에 메시지를 게시 하거나, 파일 공유에 업로드 된 파일을 가져올 수 있습니다. 되풀이 트리거를 사용 하 여 작업 실행을 위한 복잡 한 일정 및 고급 되풀이를 설정할 수도 있습니다. 기본 제공 일정 트리거 및 작업에 대 한 자세한 내용은 [일정 트리거](#schedule-triggers) 및 [작업 예약](#schedule-actions)을 참조 하세요. 
 
 > [!TIP]
 > 예약 된 각 작업에 대해 별도의 논리 앱을 만들고 [지역 및 구독 당 워크플로 제한](../logic-apps/logic-apps-limits-and-config.md#definition-limits)에 실행 하지 않고 되풀이 작업을 예약 하 고 실행할 수 있습니다. 대신, Azure 빠른 시작 템플릿에서 만든 논리 앱 패턴 [Logic Apps 작업 scheduler](https://github.com/Azure/azure-quickstart-templates/tree/master/301-logicapps-jobscheduler/)를 사용할 수 있습니다.

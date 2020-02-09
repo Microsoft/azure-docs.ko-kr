@@ -12,7 +12,7 @@ ms.locfileid: "74456092"
 ---
 # <a name="acr-tasks-samples"></a>ACR 작업 샘플
 
-이 문서에서는 몇 가지 [Azure Container Registry 작업](container-registry-tasks-overview.md) (ACR 작업) 시나리오에 대 한 예제 `task.yaml` 파일 및 관련 Dockerfiles에 연결 합니다. 
+이 문서에서는 몇 가지 [Azure Container Registry 작업](container-registry-tasks-overview.md) (ACR 작업) 시나리오에 대한 예제 `task.yaml` 파일 및 관련 Dockerfiles에 연결 합니다. 
 
 추가 예제는 [Azure 샘플][task-examples] 리포지토리를 참조 하세요.
 
@@ -39,7 +39,7 @@ ACR 작업에 대해 자세히 알아보세요.
 
 * [다중 단계 작업](container-registry-tasks-multi-step.md) -클라우드의 컨테이너 이미지를 빌드, 테스트 및 패치 하기 위한 ACR 작업 기반 워크플로.
 * [작업 참조](container-registry-tasks-reference-yaml.md) - 작업 단계 유형, 해당 속성 및 사용법을 확인할 수 있습니다.
-* [Cmd 리포지토리](https://github.com/AzureCR/cmd) -ACR 태스크에 대 한 명령으로 컨테이너의 컬렉션입니다.
+* [Cmd 리포지토리](https://github.com/AzureCR/cmd) -ACR 태스크에 대한 명령으로 컨테이너의 컬렉션입니다.
 
 
 <!-- LINKS - External -->

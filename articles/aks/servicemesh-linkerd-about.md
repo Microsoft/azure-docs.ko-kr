@@ -21,13 +21,13 @@ ms.locfileid: "72530213"
 
 ## <a name="architecture"></a>건축
 
-Linkerd는 ultralight [linkerd][linkerd-proxy] 다루고 proxy 사이드카로 구성 된 데이터 평면을 제공 합니다. 이러한 지능형 프록시는 사용자가 선택한 앱 및 워크 로드에서 모든 네트워크 트래픽을 제어 합니다. 또한 프록시는 [프로메테우스][prometheus] 메트릭 끝점을 통해 메트릭을 노출 합니다.
+Linkerd는 ultralight [linkerd][linkerd-proxy] 다루고 proxy 사이드카로 구성 된 데이터 평면을 제공 합니다. 이러한 지능형 프록시는 사용자가 선택한 앱 및 워크 로드에서 모든 네트워크 트래픽을 제어 합니다. 또한 프록시는 [프로메테우스][prometheus] 메트릭 엔드포인트을 통해 메트릭을 노출 합니다.
 
 컨트롤 평면은 다음과 같은 [구성 요소][linkerd-architecture]를 통해 구성 및 집계 된 원격 분석을 관리 합니다.
 
-- **컨트롤러** -Linkerd CLI 및 대시보드를 구동 하는 api를 제공 합니다. 프록시에 대 한 구성을 제공 합니다.
+- **컨트롤러** -Linkerd CLI 및 대시보드를 구동 하는 api를 제공 합니다. 프록시에 대한 구성을 제공 합니다.
 
-- 요청 및 응답에 대 한 실시간 감시를 **탭** 하 여 설정 합니다.
+- 요청 및 응답에 대한 실시간 감시를 **탭** 하 여 설정 합니다.
 
 - **Id** -서비스 간 mTLS를 허용 하는 id 및 보안 기능을 제공 합니다.
 
@@ -37,7 +37,7 @@ Linkerd는 ultralight [linkerd][linkerd-proxy] 다루고 proxy 사이드카로 �
 다음 아키텍처 다이어그램에서는 데이터 평면 및 컨트롤 평면 내의 여러 구성 요소가 상호 작용 하는 방식을 보여 줍니다.
 
 
-![Linkerd 구성 요소 및 아키텍처에 대 한 개요입니다.](media/servicemesh/linkerd/about-architecture.png)
+![Linkerd 구성 요소 및 아키텍처에 대한 개요입니다.](media/servicemesh/linkerd/about-architecture.png)
 
 
 ## <a name="selection-criteria"></a>선택 기준

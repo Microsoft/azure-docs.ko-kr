@@ -19,7 +19,7 @@ Azure Functions는 클래스와 해당 종속성 간의 [IoC (제어 반전)](ht
 
 - Azure Functions의 종속성 주입은 .NET Core 종속성 주입 기능을 기반으로 합니다. [.Net Core 종속성 주입](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) 에 대해 잘 알고 있는 것이 좋습니다. 그러나 소비 계획의 Azure Functions에서 종속성을 재정의 하는 방법과 구성 값을 읽는 방법에는 차이가 있습니다.
 
-- 종속성 주입에 대 한 지원은 Azure Functions 2.x로 시작 합니다.
+- 종속성 주입에 대한 지원은 Azure Functions 2.x로 시작 합니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -119,7 +119,7 @@ namespace MyNamespace
 Azure Functions 앱은 [ASP.NET 종속성 주입](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection#service-lifetimes)과 동일한 서비스 수명을 제공 합니다. 함수 앱의 경우 서로 다른 서비스 수명이 다음과 같이 동작 합니다.
 
 - **임시**: 임시 서비스는 서비스의 각 요청에 대해 만들어집니다.
-- **범위가**지정 된 서비스 수명은 함수 실행 수명과 일치 합니다. 범위가 지정 된 서비스는 실행 당 한 번 생성 됩니다. 실행 중에 해당 서비스에 대 한 이후 요청은 기존 서비스 인스턴스를 다시 사용 합니다.
+- **범위가**지정 된 서비스 수명은 함수 실행 수명과 일치 합니다. 범위가 지정 된 서비스는 실행 당 한 번 생성 됩니다. 실행 중에 해당 서비스에 대한 이후 요청은 기존 서비스 인스턴스를 다시 사용 합니다.
 - **Singleton**: 단일 서비스 수명이 호스트 수명과 일치 하 고 해당 인스턴스의 함수 실행에서 다시 사용 됩니다. `SqlConnection` 또는 `HttpClient` 인스턴스와 같은 연결 및 클라이언트에는 Singleton 수명 서비스를 권장 합니다.
 
 GitHub의 [다른 서비스 수명 샘플](https://aka.ms/functions/di-sample) 을 보거나 다운로드 합니다.
@@ -201,7 +201,7 @@ public class HttpTrigger
 }
 ```
 
-옵션 사용에 대 한 자세한 내용은 [ASP.NET Core의 옵션 패턴](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/options) 을 참조 하세요.
+옵션 사용에 대한 자세한 내용은 [ASP.NET Core의 옵션 패턴](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/options) 을 참조 하세요.
 
 > [!WARNING]
 > *로컬. settings* 또는 appsettings와 같은 파일에서 값을 읽으려고 시도 하지 마십시오 *. { 환경}.* 트리거 연결과 관련 된 이러한 파일에서 읽은 값은 호스팅 인프라가 구성 정보에 액세스할 수 없기 때문에 앱이 확장 될 때 사용할 수 없습니다.
@@ -211,4 +211,4 @@ public class HttpTrigger
 자세한 내용은 다음 리소스를 참조하세요.
 
 - [함수 앱을 모니터링 하는 방법](functions-monitoring.md)
-- [함수에 대 한 모범 사례](functions-best-practices.md)
+- [함수에 대한 모범 사례](functions-best-practices.md)

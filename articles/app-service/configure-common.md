@@ -1,6 +1,6 @@
 ---
 title: 포털에서 앱 구성
-description: Azure Portal에서 App Service 앱에 대 한 일반 설정을 구성 하는 방법을 알아봅니다. 앱 설정, 연결 문자열, 플랫폼, 언어 스택, 컨테이너 등
+description: Azure Portal에서 App Service 앱에 대한 일반 설정을 구성 하는 방법을 알아봅니다. 앱 설정, 연결 문자열, 플랫폼, 언어 스택, 컨테이너 등
 keywords: azure app service, 웹 앱, 앱 설정, 환경 변수
 ms.assetid: 9af8a367-7d39-4399-9941-b80cbc5f39a0
 ms.topic: article
@@ -15,7 +15,7 @@ ms.locfileid: "75666189"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Azure Portal에서 App Service 앱 구성
 
-이 항목에서는 [Azure Portal]를 사용 하 여 웹 앱, 모바일 백 엔드 또는 API 앱에 대 한 일반 설정을 구성 하는 방법에 대해 설명 합니다.
+이 항목에서는 [Azure Portal]를 사용 하 여 웹 앱, 모바일 백 엔드 또는 API 앱에 대한 일반 설정을 구성 하는 방법에 대해 설명 합니다.
 
 ## <a name="configure-app-settings"></a>앱 설정 구성
 
@@ -59,7 +59,7 @@ ASP.NET 및 ASP.NET Core 개발자를 위해 App Service에서 앱 설정을 설
 완료 되 면 **업데이트**를 클릭 합니다. **구성** 페이지에서 다시 **저장** 을 클릭 해야 합니다.
 
 > [!NOTE]
-> 기본 Linux 컨테이너 또는 사용자 지정 Linux 컨테이너에서 `ApplicationInsights:InstrumentationKey`와 같은 앱 설정 이름의 중첩 된 모든 JSON 키 구조를 키 이름에 대 한 `ApplicationInsights__InstrumentationKey` App Service 구성 해야 합니다. 즉, 모든 `:` `__` (이중 밑줄)로 바꾸어야 합니다.
+> 기본 Linux 컨테이너 또는 사용자 지정 Linux 컨테이너에서 `ApplicationInsights:InstrumentationKey`와 같은 앱 설정 이름의 중첩 된 모든 JSON 키 구조를 키 이름에 대한 `ApplicationInsights__InstrumentationKey` App Service 구성 해야 합니다. 즉, 모든 `:` `__` (이중 밑줄)로 바꾸어야 합니다.
 >
 
 ### <a name="edit-in-bulk"></a>대량 편집
@@ -92,7 +92,7 @@ ASP.NET 및 ASP.NET Core 개발자를 위해 App Service에서 앱 설정을 설
 
 ASP.NET 및 ASP.NET Core 개발자를 위해 App Service에서 연결 *문자열을 설정*하는 것은 web.config의 `<connectionStrings>`에서 설정 하는 것과 같지만 App Service에서 설정한 값이 *web.config의 값*을 재정의 합니다. *Web.config* 및 프로덕션 암호 (예: SQL Database 자격 증명)에서 개발 설정 (예: 데이터베이스 파일)을 App Service 안전 하 게 유지할 수 있습니다. 로컬에서 디버그할 때 동일한 코드가 개발 설정을 사용 하 고 Azure에 배포 될 때 프로덕션 암호를 사용 합니다.
 
-다른 언어 스택에서는 값에 액세스 하기 위해 연결 문자열에 변수 키에 대 한 특수 형식이 필요 하기 때문에 [앱 설정을](#configure-app-settings) 대신 사용 하는 것이 좋습니다. 단, 응용 프로그램에서 연결 문자열을 구성 하는 경우 특정 Azure 데이터베이스 형식이 앱과 함께 백업 됩니다. 자세한 내용은 백업 되는 [항목](manage-backup.md#what-gets-backed-up)을 참조 하세요. 이 자동화 된 백업이 필요 하지 않은 경우 앱 설정을 사용 합니다.
+다른 언어 스택에서는 값에 액세스 하기 위해 연결 문자열에 변수 키에 대한 특수 형식이 필요 하기 때문에 [앱 설정을](#configure-app-settings) 대신 사용 하는 것이 좋습니다. 단, 응용 프로그램에서 연결 문자열을 구성 하는 경우 특정 Azure 데이터베이스 형식이 앱과 함께 백업 됩니다. 자세한 내용은 백업 되는 [항목](manage-backup.md#what-gets-backed-up)을 참조 하세요. 이 자동화 된 백업이 필요 하지 않은 경우 앱 설정을 사용 합니다.
 
 런타임에 연결 문자열은 환경 변수로 사용할 수 있으며, 다음 연결 형식이 접두사로 사용 됩니다.
 
@@ -161,15 +161,15 @@ ASP.NET 및 ASP.NET Core 개발자를 위해 App Service에서 연결 *문자열
 
 ![일반 설정](./media/configure-common/open-general.png)
 
-여기에서 앱에 대 한 몇 가지 일반 설정을 구성할 수 있습니다. 일부 설정의 경우 [더 높은 가격 책정 계층으로 확장](manage-scale-up.md)해야 합니다.
+여기에서 앱에 대한 몇 가지 일반 설정을 구성할 수 있습니다. 일부 설정의 경우 [더 높은 가격 책정 계층으로 확장](manage-scale-up.md)해야 합니다.
 
 - **스택 설정**: 언어 및 SDK 버전을 포함 하 여 앱을 실행 하는 소프트웨어 스택입니다. Linux 앱 및 사용자 지정 컨테이너 앱의 경우 선택적 시작 명령 또는 파일을 설정할 수도 있습니다.
-- **플랫폼 설정**: 다음을 포함 하 여 호스팅 플랫폼에 대 한 설정을 구성할 수 있습니다.
+- **플랫폼 설정**: 다음을 포함 하 여 호스팅 플랫폼에 대한 설정을 구성할 수 있습니다.
     - **비트: 32**비트 또는 64 비트.
-    - **WebSocket 프로토콜**: 예를 들어 [ASP.NET SignalR] 또는 [socket.io](https://socket.io/)에 대 한입니다.
+    - **WebSocket 프로토콜**: 예를 들어 [ASP.NET SignalR] 또는 [socket.io](https://socket.io/)에 대한입니다.
     - **Always On**: 트래픽이 없는 경우에도 앱을 로드 된 상태로 유지 합니다. CRON 식을 사용 하 여 트리거되는 연속 WebJobs 또는 WebJobs에 필요 합니다.
     - **관리 되는 파이프라인 버전**: IIS [파이프라인 모드]입니다. 이전 버전의 IIS가 필요한 레거시 앱이 있는 경우 **클래식** 으로 설정 합니다.
-    - **HTTP 버전**: [HTTPS/2](https://wikipedia.org/wiki/HTTP/2) 프로토콜에 대 한 지원을 사용 하도록 설정 하려면 **2.0** 로 설정 합니다.
+    - **HTTP 버전**: [HTTPS/2](https://wikipedia.org/wiki/HTTP/2) 프로토콜에 대한 지원을 사용 하도록 설정 하려면 **2.0** 로 설정 합니다.
     > [!NOTE]
     > 대부분의 최신 브라우저는 TLS를 통해서만 HTTP/2 프로토콜을 지원하는 반면에 암호화되지 않은 트래픽은 HTTP/1.1을 계속 사용합니다. 클라이언트 브라우저가 HTTP/2를 사용 하 여 앱에 연결 되도록 하려면 [Azure App Service에서 SSL 바인딩을 사용 하 여 사용자 지정 DNS 이름을 보호](configure-ssl-bindings.md)합니다.
     - **ARR 선호도**: 다중 인스턴스 배포에서 클라이언트가 세션 수명 동안 동일한 인스턴스로 라우팅되도록 합니다. 상태 비저장 응용 프로그램의 경우이 옵션을 **Off** 로 설정할 수 있습니다.
@@ -200,11 +200,11 @@ ASP.NET 및 ASP.NET Core 개발자를 위해 App Service에서 연결 *문자열
 
 Windows 앱의 경우 IIS 처리기 매핑과 가상 응용 프로그램 및 디렉터리를 사용자 지정할 수 있습니다.
 
-처리기 매핑을 사용 하면 특정 파일 확장명에 대 한 요청을 처리 하는 사용자 지정 스크립트 프로세서를 추가할 수 있습니다. 사용자 지정 처리기를 추가 하려면 **새 처리기**를 클릭 합니다. 다음과 같이 처리기를 구성 합니다.
+처리기 매핑을 사용 하면 특정 파일 확장명에 대한 요청을 처리 하는 사용자 지정 스크립트 프로세서를 추가할 수 있습니다. 사용자 지정 처리기를 추가 하려면 **새 처리기**를 클릭 합니다. 다음과 같이 처리기를 구성 합니다.
 
 - **확장명**. 처리 하려는 파일 확장명 (예: *\*php* 또는 *handler*)입니다.
-- **스크립트 프로세서**. 스크립트 프로세서의 절대 경로입니다. 파일 확장명과 일치 하는 파일에 대 한 요청은 스크립트 프로세서에 의해 처리 됩니다. 경로 `D:\home\site\wwwroot` 를 사용하여 앱의 루트 디렉터리를 참조합니다.
-- **인수**. 스크립트 프로세서에 대 한 선택적인 명령줄 인수입니다.
+- **스크립트 프로세서**. 스크립트 프로세서의 절대 경로입니다. 파일 확장명과 일치 하는 파일에 대한 요청은 스크립트 프로세서에 의해 처리 됩니다. 경로 `D:\home\site\wwwroot` 를 사용하여 앱의 루트 디렉터리를 참조합니다.
+- **인수**. 스크립트 프로세서에 대한 선택적인 명령줄 인수입니다.
 
 각 앱에는 기본적으로 코드가 배포 되는 `D:\home\site\wwwroot`에 매핑되는 기본 루트 경로 (`/`)가 있습니다. 앱 루트가 다른 폴더에 있거나 리포지토리에 둘 이상의 응용 프로그램이 있는 경우 여기에서 가상 응용 프로그램 및 디렉터리를 편집 하거나 추가할 수 있습니다. **새 가상 응용 프로그램 또는 디렉터리**를 클릭 합니다.
 
@@ -212,7 +212,7 @@ Windows 앱의 경우 IIS 처리기 매핑과 가상 응용 프로그램 및 디
 
 ### <a name="containerized-apps"></a>컨테이너 화 된 앱
 
-[컨테이너 화 된 앱에 대 한 사용자 지정 저장소를 추가할](containers/how-to-serve-content-from-azure-storage.md)수 있습니다. 컨테이너 화 된 apps에는 모든 Linux 앱 및 App Service에서 실행 되는 Windows 및 Linux 사용자 지정 컨테이너도 포함 됩니다. **새로 만들기 Azure Storage** 클릭 하 여 다음과 같이 사용자 지정 저장소를 탑재 하 고 구성 합니다.
+[컨테이너 화 된 앱에 대한 사용자 지정 저장소를 추가할](containers/how-to-serve-content-from-azure-storage.md)수 있습니다. 컨테이너 화 된 apps에는 모든 Linux 앱 및 App Service에서 실행 되는 Windows 및 Linux 사용자 지정 컨테이너도 포함 됩니다. **새로 만들기 Azure Storage** 클릭 하 여 다음과 같이 사용자 지정 저장소를 탑재 하 고 구성 합니다.
 
 - **이름**: 표시 이름입니다.
 - **구성 옵션**: **Basic** 또는 **Advanced**
@@ -240,7 +240,7 @@ Linux 앱의 경우 다음을 참조 하세요.
 
 ## <a name="configure-custom-containers"></a>사용자 지정 컨테이너 구성
 
-[Azure App Service에 대 한 사용자 지정 Linux 컨테이너 구성을](containers/configure-custom-container.md) 참조 하세요.
+[Azure App Service에 대한 사용자 지정 Linux 컨테이너 구성을](containers/configure-custom-container.md) 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

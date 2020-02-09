@@ -58,7 +58,7 @@ Azure 데이터는 처리를 위해 Log Analytics 수집 지점에서 사용할 
 각 솔루션에 대한 문서를 참조하여 해당 수집 빈도를 확인하세요.
 
 ### <a name="pipeline-process-time"></a>파이프라인 프로세스 시간
-로그 레코드가 Azure Monitor 파이프라인으로 수집 ( [_TimeReceived](log-standard-properties.md#_timereceived) 속성에서 식별 됨), 테 넌 트 격리를 보장 하 고 데이터가 손실 되지 않도록 하기 위해 임시 저장소에 기록 됩니다. 이 프로세스로 인해 일반적으로 5~15초가 추가됩니다. 일부 관리 솔루션은 데이터가 스트리밍될 때 데이터를 집계하고 인사이트를 파생하기 위해 부하가 높은 알고리즘을 구현합니다. 예를 들어, 네트워크 성능 모니터링은 들어오는 데이터를 3분 간격으로 집계하므로 대기 시간 3분이 추가됩니다. 대기 시간을 증가시키는 또 다른 프로세스는 사용자 지정 로그를 처리하는 프로세스입니다. 경우에 따라 이 프로세스로 인해 로그에 에이전트가 파일에서 수집하는 대기 시간이 몇 분 정도 추가될 수 있습니다.
+로그 레코드가 Azure Monitor 파이프라인으로 수집 ( [_TimeReceived](log-standard-properties.md#_timereceived) 속성에서 식별 됨), 테넌트 격리를 보장 하 고 데이터가 손실 되지 않도록 하기 위해 임시 저장소에 기록 됩니다. 이 프로세스로 인해 일반적으로 5~15초가 추가됩니다. 일부 관리 솔루션은 데이터가 스트리밍될 때 데이터를 집계하고 인사이트를 파생하기 위해 부하가 높은 알고리즘을 구현합니다. 예를 들어, 네트워크 성능 모니터링은 들어오는 데이터를 3분 간격으로 집계하므로 대기 시간 3분이 추가됩니다. 대기 시간을 증가시키는 또 다른 프로세스는 사용자 지정 로그를 처리하는 프로세스입니다. 경우에 따라 이 프로세스로 인해 로그에 에이전트가 파일에서 수집하는 대기 시간이 몇 분 정도 추가될 수 있습니다.
 
 ### <a name="new-custom-data-types-provisioning"></a>새 사용자 지정 데이터 형식 프로비저닝
 [사용자 지정 로그](data-sources-custom-logs.md) 또는 [데이터 수집기 API](data-collector-api.md)에서 새 사용자 지정 데이터 형식이 생성되는 경우, 시스템이 전용 스토리지 컨테이너를 만듭니다. 이는 이 데이터 형식이 처음 나타날 때만 발생하는 일회성 오버헤드입니다.
@@ -79,7 +79,7 @@ Azure Monitor의 최우선 과제는 고객 데이터가 손실되지 않도록 
 | 단계 | 속성 또는 함수 | 의견 |
 |:---|:---|:---|
 | 데이터 원본에 생성 되는 레코드 | [TimeGenerated](log-standard-properties.md#timegenerated-and-timestamp) <br>데이터 원본에서이 값을 설정 하지 않으면 _TimeReceived와 같은 시간으로 설정 됩니다. |
-| Azure Monitor 수집 끝점에서 받은 레코드 | [_TimeReceived](log-standard-properties.md#_timereceived) | |
+| Azure Monitor 수집 엔드포인트에서 받은 레코드 | [_TimeReceived](log-standard-properties.md#_timereceived) | |
 | 작업 영역에 저장 되어 쿼리에 사용할 수 있는 레코드 | [ingestion_time ()](/azure/kusto/query/ingestiontimefunction) | |
 
 ### <a name="ingestion-latency-delays"></a>수집 대기 시간 지연

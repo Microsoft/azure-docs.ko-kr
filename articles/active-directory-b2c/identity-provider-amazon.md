@@ -22,7 +22,7 @@ ms.locfileid: "76846641"
 
 ## <a name="create-an-amazon-application"></a>Amazon 애플리케이션 만들기
 
-Amazon 계정을 Azure Active Directory B2C (Azure AD B2C)에서 [id 공급자로](authorization-code-flow.md) 사용 하려면 테 넌 트에서 응용 프로그램을 나타내는 응용 프로그램을 만들어야 합니다. Amazon 계정이 아직 없는 경우 [https://www.amazon.com/](https://www.amazon.com/)에서 등록할 수 있습니다.
+Amazon 계정을 Azure Active Directory B2C (Azure AD B2C)에서 [id 공급자로](authorization-code-flow.md) 사용 하려면 테넌트에서 응용 프로그램을 나타내는 응용 프로그램을 만들어야 합니다. Amazon 계정이 아직 없는 경우 [https://www.amazon.com/](https://www.amazon.com/)에서 등록할 수 있습니다.
 
 1. Amazon 계정 자격 증명을 사용하여 [Amazon 개발자 센터](https://login.amazon.com/)에 로그인합니다.
 1. 이미 수행한 경우 **등록**을 클릭하고 개발자 등록 단계를 수행하며 정책에 동의합니다.

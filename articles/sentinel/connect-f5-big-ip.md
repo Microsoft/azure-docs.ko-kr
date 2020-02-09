@@ -39,7 +39,7 @@ F5 빅 IP 커넥터를 사용 하면 모든 F5 빅 IP 로그를 Azure 센티널�
 F5 빅 IP는 로그를 Azure 센티널로 직접 통합 하 고 내보낼 수 있습니다.
 
 1. Azure 센티널 포털에서 **데이터 커넥터** 를 클릭 하 고 **F5 빅 IP** 를 선택한 다음 **커넥터 페이지를 엽니다**. 
-1. F5 빅 IP를 연결 하려면 시스템의 API 끝점에 JSON 선언을 게시 해야 합니다. 이 작업을 수행 하는 방법에 대 한 지침은 [F5 빅 IP를 Azure 센티널과 통합](https://devcentral.f5.com/s/articles/Integrating-the-F5-BIGIP-with-Azure-Sentinel)을 참조 하세요.
+1. F5 빅 IP를 연결 하려면 시스템의 API 엔드포인트에 JSON 선언을 게시 해야 합니다. 이 작업을 수행 하는 방법에 대 한 지침은 [F5 빅 IP를 Azure 센티널과 통합](https://devcentral.f5.com/s/articles/Integrating-the-F5-BIGIP-with-Azure-Sentinel)을 참조 하세요.
 8. F5 빅 IP 커넥터 페이지에서 작업 영역 ID 및 기본 키를 복사 하 고 [Azure Log Analytics로 데이터 스트리밍에](https://devcentral.f5.com/s/articles/Integrating-the-F5-BIGIP-with-Azure-Sentinel#streaming-data-to-azure-log-analytics)설명 된 대로 붙여넣습니다.
 1. F5 큰 IP 지침을 완료 한 후 Azure 센티널 커넥터 페이지에 연결 된 데이터 형식이 표시 됩니다.
 1. Log Analytics에서 관련 스키마를 사용 하 여 F5 큰 IP 이벤트를 사용 하려면 **F5Telemetry_LTM_CL**, **F5Telemetry_system_CL**및 **F5Telemetry_ASM_CL**를 검색 합니다.

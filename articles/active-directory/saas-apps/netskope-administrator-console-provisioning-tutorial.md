@@ -36,7 +36,7 @@ ms.locfileid: "77061291"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [Net관리자 콘솔 테 넌 트](https://www.netskope.com/)
+* [Net관리자 콘솔 테넌트](https://www.netskope.com/)
 * Netskope 관리자 콘솔의 사용자 계정에는 관리자 권한이 있습니다.
 
 ## <a name="assigning-users-to-netskope-administrator-console"></a>Net\\관리자 콘솔에 사용자 할당
@@ -70,7 +70,7 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
     ![Net\k관리자 콘솔 클라이언트 이름](media/netskope-administrator-console-provisioning-tutorial/clientname.png)
 
-3.  **Scim 서버 URL** 및 **토큰**을 복사 합니다. 이러한 값은 Azure Portal에서 Netskope 관리자 콘솔 응용 프로그램의 프로 비전 탭에 각각 테 넌 트 URL 및 암호 토큰 필드에 입력 됩니다.
+3.  **Scim 서버 URL** 및 **토큰**을 복사 합니다. 이러한 값은 Azure Portal에서 Netskope 관리자 콘솔 응용 프로그램의 프로 비전 탭에 각각 테넌트 URL 및 암호 토큰 필드에 입력 됩니다.
 
     ![Netskope 관리자 콘솔 토큰 만들기](media/netskope-administrator-console-provisioning-tutorial/token.png)
 
@@ -104,7 +104,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 Netskope 관
 > [Netskope 관리자 콘솔 single sign-on 자습서](https://docs.microsoft.com/azure/active-directory/saas-apps/netskope-cloud-security-tutorial)에 제공 된 지침에 따라 net\or관리자 콘솔에 대해 SAML 기반 Single Sign-On를 사용 하도록 선택할 수도 있습니다. Single sign-on은 자동 사용자 프로 비전과 독립적으로 구성할 수 있습니다. 하지만이 두 가지 기능은 서로 보완적입니다.
 
 > [!NOTE]
-> Netskope 관리자 콘솔의 SCIM 끝점에 대 한 자세한 내용은 [이](https://docs.google.com/document/d/1n9P_TL98_kd1sx5PAvZL2HS6MQAqkQqd-OSkWAAU6ck/edit#heading=h.prxq74iwdpon)을 참조 하세요.
+> Netskope 관리자 콘솔의 SCIM 엔드포인트에 대 한 자세한 내용은 [이](https://docs.google.com/document/d/1n9P_TL98_kd1sx5PAvZL2HS6MQAqkQqd-OSkWAAU6ck/edit#heading=h.prxq74iwdpon)을 참조 하세요.
 
 ### <a name="to-configure-automatic-user-provisioning-for-netskope-administrator-console-in-azure-ad"></a>Azure AD에서 Net\\관리자 콘솔에 대 한 자동 사용자 프로 비전을 구성 하려면:
 
@@ -124,7 +124,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 Netskope 관
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에서 이전에 **테 넌 트 url**에서 검색 된 **scim 서버 url** 값을 입력 합니다. **비밀 토큰**에서 이전에 검색 된 **토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 netskope 관리자 콘솔에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Netskope 관리자 콘솔 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
+5. **관리자 자격 증명** 섹션 아래에서 이전에 **테넌트 url**에서 검색 된 **scim 서버 url** 값을 입력 합니다. **비밀 토큰**에서 이전에 검색 된 **토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 netskope 관리자 콘솔에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Netskope 관리자 콘솔 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 

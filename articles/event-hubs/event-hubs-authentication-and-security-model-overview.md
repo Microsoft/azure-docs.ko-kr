@@ -68,7 +68,7 @@ nm.CreateEventHub(ed);
 
 ### <a name="generate-tokens"></a>토큰 생성
 
-SAS 키를 사용하여 토큰을 생성할 수 있습니다. 클라이언트당 하나의 토큰만 생성해야 합니다. 다음 메서드를 사용하여 토큰을 생성할 수 있습니다. 모든 토큰은 **EventHubSendKey** 키를 사용하여 생성됩니다. 각 토큰에는 고유한 URI가 할당됩니다. 'Resource' 매개 변수 (이 경우 이벤트 허브) 서비스의 URI 끝점에 해당합니다.
+SAS 키를 사용하여 토큰을 생성할 수 있습니다. 클라이언트당 하나의 토큰만 생성해야 합니다. 다음 메서드를 사용하여 토큰을 생성할 수 있습니다. 모든 토큰은 **EventHubSendKey** 키를 사용하여 생성됩니다. 각 토큰에는 고유한 URI가 할당됩니다. 'Resource' 매개 변수 (이 경우 이벤트 허브) 서비스의 URI 엔드포인트에 해당합니다.
 
 ```csharp
 public static string SharedAccessSignatureTokenProvider.GetSharedAccessSignature(string keyName, string sharedAccessKey, string resource, TimeSpan tokenTimeToLive)

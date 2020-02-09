@@ -36,7 +36,7 @@ ms.locfileid: "77059269"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트.
-* [15Five 개의 테 넌 트](https://www.15five.com/pricing/).
+* [15Five 개의 테넌트](https://www.15five.com/pricing/).
 * 관리 권한이 있는 15Five의 사용자 계정
 
 ## <a name="assigning-users-to-15five"></a>15Five에 사용자 할당
@@ -68,7 +68,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전에 15Five를 구성 �
 
     ![15Five SCIM 추가](media/15five-provisioning-tutorial/image02.png)
 
-4.  **Scim 2.0 기준 URL** 및 **액세스 토큰**의 값을 복사 합니다. 이 값은 Azure Portal에서 15Five 응용 프로그램의 프로 비전 탭에 있는 **테 넌 트 URL** 및 **암호 토큰** 필드에 입력 됩니다.
+4.  **Scim 2.0 기준 URL** 및 **액세스 토큰**의 값을 복사 합니다. 이 값은 Azure Portal에서 15Five 응용 프로그램의 프로 비전 탭에 있는 **테넌트 URL** 및 **암호 토큰** 필드에 입력 됩니다.
     
     ![15Five SCIM 추가](media/15five-provisioning-tutorial/image03.png)
 
@@ -119,7 +119,7 @@ Azure AD를 사용한 자동 사용자 프로 비전에 15Five를 구성 하려�
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5.  관리자 자격 증명 섹션 아래에서 먼저 **테 넌 트 url** 및 **암호 토큰** 에서 검색 된 **Scim 2.0 기준 url 및 액세스 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 15five에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 15Five 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
+5.  관리자 자격 증명 섹션 아래에서 먼저 **테넌트 url** 및 **암호 토큰** 에서 검색 된 **Scim 2.0 기준 url 및 액세스 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 15five에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 15Five 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 

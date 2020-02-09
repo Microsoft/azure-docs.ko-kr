@@ -63,17 +63,17 @@ Azure AD는 널리 사용 되는 많은 SaaS 앱 및 인적 자원 시스템에 
 
    ![Salesforce 로고](./media/user-provisioning/gallery-app-logos.png)
 
-   프로 비전을 위해 새 응용 프로그램을 요청 하려는 경우 [응용 프로그램을 앱 갤러리와 통합 하도록 요청할](../develop/howto-app-gallery-listing.md)수 있습니다. 사용자 프로 비전 요청의 경우 응용 프로그램에 SCIM 규격 끝점이 있어야 합니다. 앱을 플랫폼에 빠르게 등록할 수 있도록 응용 프로그램 공급 업체가 SCIM 표준을 따르도록 요청 하세요.
+   프로 비전을 위해 새 응용 프로그램을 요청 하려는 경우 [응용 프로그램을 앱 갤러리와 통합 하도록 요청할](../develop/howto-app-gallery-listing.md)수 있습니다. 사용자 프로 비전 요청의 경우 응용 프로그램에 SCIM 규격 엔드포인트이 있어야 합니다. 앱을 플랫폼에 빠르게 등록할 수 있도록 응용 프로그램 공급 업체가 SCIM 표준을 따르도록 요청 하세요.
 
-* **SCIM 2.0을 지 원하는 응용 프로그램**입니다. 일반적으로 SCIM 2.0 기반 사용자 관리 Api를 구현 하는 응용 프로그램을 연결 하는 방법에 대 한 자세한 내용은 [scim 끝점 빌드 및 사용자 프로 비전 구성](use-scim-to-provision-users-and-groups.md)을 참조 하세요.
+* **SCIM 2.0을 지 원하는 응용 프로그램**입니다. 일반적으로 SCIM 2.0 기반 사용자 관리 Api를 구현 하는 응용 프로그램을 연결 하는 방법에 대 한 자세한 내용은 [scim 엔드포인트 빌드 및 사용자 프로 비전 구성](use-scim-to-provision-users-and-groups.md)을 참조 하세요.
 
 ## <a name="what-is-system-for-cross-domain-identity-management-scim"></a>SCIM (도메인 간 Id 관리)에 대 한 시스템 이란?
 
-프로 비전 및 프로 비전 해제를 자동화 하기 위해 앱은 독점적인 사용자 및 그룹 Api를 노출 합니다. 그러나 둘 이상의 앱에서 사용자를 관리 하려는 사용자는 모든 앱이 사용자 만들기 또는 업데이트, 그룹에 사용자 추가 또는 프로 비전 해제와 같은 간단한 작업을 수행 하려고 한다는 것을 알 수 있습니다. 그러나 이러한 모든 간단한 작업은 다른 끝점 경로, 사용자 정보를 지정 하는 다양 한 메서드 및 정보의 각 요소를 나타내는 다른 스키마를 사용 하 여 약간 약간 다르게 구현 됩니다.
+프로 비전 및 프로 비전 해제를 자동화 하기 위해 앱은 독점적인 사용자 및 그룹 Api를 노출 합니다. 그러나 둘 이상의 앱에서 사용자를 관리 하려는 사용자는 모든 앱이 사용자 만들기 또는 업데이트, 그룹에 사용자 추가 또는 프로 비전 해제와 같은 간단한 작업을 수행 하려고 한다는 것을 알 수 있습니다. 그러나 이러한 모든 간단한 작업은 다른 엔드포인트 경로, 사용자 정보를 지정 하는 다양 한 메서드 및 정보의 각 요소를 나타내는 다른 스키마를 사용 하 여 약간 약간 다르게 구현 됩니다.
 
 이러한 문제를 해결 하기 위해 SCIM 사양은 사용자가 앱으로 전환 하 고 앱을 확장 하는 데 도움이 되는 공용 사용자 스키마를 제공 합니다. SCIM은 프로 비전을 위한 사실상 표준으로 사용 되며, SAML 또는 Openid connect Connect와 같은 페더레이션 표준과 함께 사용 될 경우 관리자에 게 액세스 관리를 위한 종단 간 표준 기반 솔루션을 제공 합니다.
 
-SCIM을 사용 하 여 응용 프로그램에 사용자 및 그룹의 프로 비전 및 프로 비전 해제를 자동화 하는 방법에 대 한 자세한 지침은 [scim 끝점 빌드 및 사용자 프로 비전 구성](use-scim-to-provision-users-and-groups.md)을 참조 하세요.
+SCIM을 사용 하 여 응용 프로그램에 사용자 및 그룹의 프로 비전 및 프로 비전 해제를 자동화 하는 방법에 대 한 자세한 지침은 [scim 엔드포인트 빌드 및 사용자 프로 비전 구성](use-scim-to-provision-users-and-groups.md)을 참조 하세요.
 
 ## <a name="manual-vs-automatic-provisioning"></a>수동 및 자동 프로비저닝
 
@@ -95,7 +95,7 @@ Azure AD 갤러리에서 자동 프로 비전을 지 원하는 응용 프로그�
 
 > [!VIDEO https://www.youtube.com/embed/pKzyts6kfrw]
 
-SCIM 2.0을 지 원하는 다른 응용 프로그램의 경우 [scim 끝점 빌드 및 사용자 프로 비전 구성](use-scim-to-provision-users-and-groups.md)문서의 단계를 따릅니다.
+SCIM 2.0을 지 원하는 다른 응용 프로그램의 경우 [scim 엔드포인트 빌드 및 사용자 프로 비전 구성](use-scim-to-provision-users-and-groups.md)문서의 단계를 따릅니다.
 
 
 ## <a name="related-articles"></a>관련 문서
@@ -104,5 +104,5 @@ SCIM 2.0을 지 원하는 다른 응용 프로그램의 경우 [scim 끝점 빌�
 - [사용자 프로 비전을 위한 특성 매핑 사용자 지정](customize-application-attributes.md)
 - [특성 매핑에 대 한 식 작성](../app-provisioning/functions-for-customizing-application-data.md)
 - [사용자 프로 비전을 위한 범위 지정 필터](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)
-- [SCIM 끝점 빌드 및 사용자 프로 비전 구성](use-scim-to-provision-users-and-groups.md)
+- [SCIM 엔드포인트 빌드 및 사용자 프로 비전 구성](use-scim-to-provision-users-and-groups.md)
 - [Azure AD 동기화 API 개요](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/synchronization-overview)

@@ -29,4 +29,4 @@ ms.locfileid: "67182696"
 
         table.access = 'authenticated';
 
-    자세한 [내용은 방법: 테이블](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#howto-tables-auth)에 대 한 액세스 인증을 요구 합니다. 사이트에서 빠른 시작 코드 프로젝트를 다운로드 하는 방법에 대 한 [자세한 내용은 방법: Git](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart)를 사용 하 여 node.js 백 엔드 빠른 시작 코드 프로젝트를 다운로드 합니다.
+    자세한 [내용은 방법: 테이블](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#howto-tables-auth)에 대한 액세스 인증을 요구 합니다. 사이트에서 빠른 시작 코드 프로젝트를 다운로드 하는 방법에 대한 [자세한 내용은 방법: Git](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart)를 사용 하 여 node.js 백 엔드 빠른 시작 코드 프로젝트를 다운로드 합니다.

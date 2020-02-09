@@ -67,7 +67,7 @@ OpenSSL를 사용 하 여 루트 CA 인증서를 만듭니다.
    ```
    이전 명령은 루트 인증서를 만듭니다. 서버 인증서에 서명 하는 데 사용 합니다.
 
-1. 메시지가 표시 되 면 루트 키에 대 한 암호를 입력 하 고, 사용자 지정 CA에 대 한 조직 정보 (예: Country, State, Org, OU 및 정규화 된 도메인 이름)를 입력 합니다 (발급자의 도메인).
+1. 메시지가 표시 되 면 루트 키에 대한 암호를 입력 하 고, 사용자 지정 CA에 대한 조직 정보 (예: Country, State, Org, OU 및 정규화 된 도메인 이름)를 입력 합니다 (발급자의 도메인).
 
    ![루트 인증서 만들기](media/self-signed-certificates/root-cert.png)
 
@@ -77,7 +77,7 @@ OpenSSL를 사용 하 여 루트 CA 인증서를 만듭니다.
 
 ### <a name="create-the-certificates-key"></a>인증서의 키 만들기
 
-다음 명령을 사용 하 여 서버 인증서에 대 한 키를 생성 합니다.
+다음 명령을 사용 하 여 서버 인증서에 대한 키를 생성 합니다.
 
    ```
    openssl ecparam -out fabrikam.key -name prime256v1 -genkey
@@ -85,7 +85,7 @@ OpenSSL를 사용 하 여 루트 CA 인증서를 만듭니다.
 
 ### <a name="create-the-csr-certificate-signing-request"></a>CSR (인증서 서명 요청) 만들기
 
-CSR은 인증서를 요청할 때 CA에 제공 되는 공개 키입니다. CA는이 특정 요청에 대 한 인증서를 발급 합니다.
+CSR은 인증서를 요청할 때 CA에 제공 되는 공개 키입니다. CA는이 특정 요청에 대한 인증서를 발급 합니다.
 
 > [!NOTE]
 > 서버 인증서의 CN (일반 이름)은 발급자의 도메인과 달라 야 합니다. 예를 들어이 경우 발급자의 CN은 `www.contoso.com` 되며 서버 인증서의 CN은 `www.fabrikam.com`됩니다.
@@ -97,7 +97,7 @@ CSR은 인증서를 요청할 때 CA에 제공 되는 공개 키입니다. CA는
    openssl req -new -sha256 -key fabrikam.key -out fabrikam.csr
    ```
 
-1. 메시지가 표시 되 면 루트 키에 대 한 암호를 입력 하 고, 사용자 지정 CA에 대 한 조직 정보 (Country, State, Org, OU 및 정규화 된 도메인 이름)를 입력 합니다. 이는 웹 사이트의 도메인 이며 발급자와 달라 야 합니다.
+1. 메시지가 표시 되 면 루트 키에 대한 암호를 입력 하 고, 사용자 지정 CA에 대한 조직 정보 (Country, State, Org, OU 및 정규화 된 도메인 이름)를 입력 합니다. 이는 웹 사이트의 도메인 이며 발급자와 달라 야 합니다.
 
    ![서버 인증서](media/self-signed-certificates/server-cert.png)
 
@@ -131,7 +131,7 @@ CSR은 인증서를 요청할 때 CA에 제공 되는 공개 키입니다. CA는
 
 ### <a name="iis"></a>IIS
 
-인증서를 가져오고 IIS에서 서버 인증서로 업로드 하는 방법에 대 한 지침은 [방법: Windows server 2003의 웹 서버에 가져온 인증서 설치](https://support.microsoft.com/help/816794/how-to-install-imported-certificates-on-a-web-server-in-windows-server)를 참조 하세요.
+인증서를 가져오고 IIS에서 서버 인증서로 업로드 하는 방법에 대한 지침은 [방법: Windows server 2003의 웹 서버에 가져온 인증서 설치](https://support.microsoft.com/help/816794/how-to-install-imported-certificates-on-a-web-server-in-windows-server)를 참조 하세요.
 
 SSL 바인딩 지침은 [IIS 7에서 ssl을 설정 하는 방법](https://docs.microsoft.com/iis/manage/configuring-security/how-to-set-up-ssl-on-iis#create-an-ssl-binding-1)을 참조 하세요.
 
@@ -271,5 +271,5 @@ Set-AzApplicationGateway -ApplicationGateway $gw
 
 ## <a name="next-steps"></a>Következő lépések
 
-Application Gateway의 SSL\TLS에 대 한 자세한 내용은 [Application Gateway를 사용 하 여 ssl 종료 및 종단 간 Ssl 개요](ssl-overview.md)를 참조 하세요.
+Application Gateway의 SSL\TLS에 대한 자세한 내용은 [Application Gateway를 사용 하 여 ssl 종료 및 종단 간 Ssl 개요](ssl-overview.md)를 참조 하세요.
 

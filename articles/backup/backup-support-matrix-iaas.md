@@ -16,8 +16,8 @@ ms.locfileid: "76988127"
 
 기타 지원 매트릭스:
 
-- Azure Backup에 대 한 [일반 지원 매트릭스](backup-support-matrix.md)
-- Azure Backup server/System Center Data Protection Manager (DPM) 백업에 대 한 [지원 매트릭스](backup-support-matrix-mabs-dpm.md)
+- Azure Backup에 대한 [일반 지원 매트릭스](backup-support-matrix.md)
+- Azure Backup server/System Center Data Protection Manager (DPM) 백업에 대한 [지원 매트릭스](backup-support-matrix-mabs-dpm.md)
 - Microsoft Azure Recovery Services (MARS) 에이전트를 사용 하 여 백업을 위한 [지원 매트릭스](backup-support-matrix-mars-agent.md)
 
 ## <a name="supported-scenarios"></a>지원되는 시나리오
@@ -26,7 +26,7 @@ ms.locfileid: "76988127"
 
 **시나리오** | **Backup** | **에이전트** |**복원**
 --- | --- | --- | ---
-Azure VM의 직접 백업  | 전체 VM을 백업 합니다.  | Azure VM에 추가 에이전트가 필요 하지 않습니다. Azure Backup는 VM에서 실행 되는 [AZURE vm 에이전트](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows) 에 대 한 확장을 설치 하 고 사용 합니다. | 다음과 같이 복원합니다.<br/><br/> - **기본 VM 만들기**. VM에 여러 IP 주소와 같은 특수 구성이 없는 경우에 유용 합니다.<br/><br/> - **VM 디스크 복원**. 디스크를 복원합니다. 그런 다음 기존 VM에 연결 하거나 PowerShell을 사용 하 여 디스크에서 새 VM을 만듭니다.<br/><br/> - **VM 디스크 바꾸기**. VM이 있으며 Managed Disks(암호화되지 않음)를 사용하는 경우 디스크를 복원하고 VM에서 기존 디스크 대신 사용할 수 있습니다.<br/><br/> - **특정 파일/폴더 복원**. 전체 VM이 아닌 VM에서 파일/폴더를 복원할 수 있습니다.
+Azure VM의 직접 백업  | 전체 VM을 백업 합니다.  | Azure VM에 추가 에이전트가 필요 하지 않습니다. Azure Backup는 VM에서 실행 되는 [AZURE vm 에이전트](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows) 에 대한 확장을 설치 하 고 사용 합니다. | 다음과 같이 복원합니다.<br/><br/> - **기본 VM 만들기**. VM에 여러 IP 주소와 같은 특수 구성이 없는 경우에 유용 합니다.<br/><br/> - **VM 디스크 복원**. 디스크를 복원합니다. 그런 다음 기존 VM에 연결 하거나 PowerShell을 사용 하 여 디스크에서 새 VM을 만듭니다.<br/><br/> - **VM 디스크 바꾸기**. VM이 있으며 Managed Disks(암호화되지 않음)를 사용하는 경우 디스크를 복원하고 VM에서 기존 디스크 대신 사용할 수 있습니다.<br/><br/> - **특정 파일/폴더 복원**. 전체 VM이 아닌 VM에서 파일/폴더를 복원할 수 있습니다.
 Azure Vm의 직접 백업 (Windows에만 해당)  | 특정 파일/폴더/볼륨을 백업 합니다. | [Azure Recovery Services 에이전트](backup-azure-file-folder-backup-faq.md)를 설치 합니다.<br/><br/> 파일/폴더 수준에서 VM을 백업하려면 Azure VM 에이전트에 대한 백업 확장과 함께 MARS 에이전트를 실행할 수 있습니다. | 특정 폴더/파일을 복원합니다.
 Backup server에 Azure VM 백업  | 파일/폴더/볼륨 백업 시스템 상태/운영 체제 미 설치 파일 응용 프로그램 데이터를 System Center DPM 또는 MABS (Microsoft Azure Backup 서버)에 연결할 수 있습니다.<br/><br/> 그런 다음 DPM/MABS는 백업 자격 증명 모음에 백업 합니다. | VM에 DPM/MABS 보호 에이전트를 설치 합니다. MARS 에이전트는 DPM/MABS에 설치됩니다.| 파일/폴더/볼륨, 시스템 상태/완전 파일 및 앱 데이터를 복원합니다.
 
@@ -55,9 +55,9 @@ VM의 백업 정책 수정 | 지원됩니다.<br/><br/> 새 정책의 일정 및
 매일 백업(MARS 에이전트를 통해) | 매일 3회 백업 예약
 매일 백업(DPM/MABS를 통해) | 매일 2회 백업 예약
 월별/연도별 백업| Azure VM 확장을 사용하여 백업하는 경우에는 지원되지 않습니다. 일별 및 주별만 지원됩니다.<br/><br/> 월별/연도별 보존 기간에 대해 일별/주별 백업을 유지하도록 정책을 설정할 수 있습니다.
-자동 클록 조정 | 지원되지 않습니다.<br/><br/> VM을 백업 하는 경우 일광 절약 시간제 변경 내용에 대 한 Azure Backup 자동으로 조정 되지 않습니다.<br/><br/>  필요에 따라 정책을 수동으로 수정합니다.
+자동 클록 조정 | 지원되지 않습니다.<br/><br/> VM을 백업 하는 경우 일광 절약 시간제 변경 내용에 대한 Azure Backup 자동으로 조정 되지 않습니다.<br/><br/>  필요에 따라 정책을 수동으로 수정합니다.
 [하이브리드 백업에 대한 보안 기능](https://docs.microsoft.com/azure/backup/backup-azure-security-feature) |보안 기능을 사용 하지 않도록 설정할 지원 되지 않습니다.
-컴퓨터 시간이 변경 된 VM 백업 | 지원되지 않습니다.<br/><br/> 해당 VM에 대 한 백업을 사용 하도록 설정한 후 컴퓨터 시간이 이후 날짜-시간으로 변경 되는 경우 그러나 시간 변경이 되돌아간 경우에도 성공적인 백업이 보장 되지 않습니다.  
+컴퓨터 시간이 변경 된 VM 백업 | 지원되지 않습니다.<br/><br/> 해당 VM에 대한 백업을 사용 하도록 설정한 후 컴퓨터 시간이 이후 날짜-시간으로 변경 되는 경우 그러나 시간 변경이 되돌아간 경우에도 성공적인 백업이 보장 되지 않습니다.  
 
 ## <a name="operating-system-support-windows"></a>운영 체제 지원(Windows)
 
@@ -126,7 +126,7 @@ LVM/RAID 배열을 사용하여 Linux VM에서 파일 복원 | 동일한 VM에�
 
 ## <a name="support-for-vm-management"></a>VM 관리 지원
 
-다음 표에는 vm 디스크 추가 또는 교체와 같은 VM 관리 작업을 수행 하는 동안 백업에 대 한 지원이 요약 되어 있습니다.
+다음 표에는 vm 디스크 추가 또는 교체와 같은 VM 관리 작업을 수행 하는 동안 백업에 대한 지원이 요약 되어 있습니다.
 
 **복원** | **지원됨**
 --- | ---
@@ -182,7 +182,7 @@ Nic (네트워크 인터페이스) 수 | 특정 Azure VM 크기에서 지원되�
 여러 네트워크 어댑터를 사용하는 VM| 지원됩니다. <br/><br/> 특수한 네트워크 설정을 사용하여 VM을 복원하는 방법에 대해 [자세히 알아봅니다](backup-azure-arm-restore-vms.md#restore-vms-with-special-configurations).
 공용 IP 주소가 있는 VM| 지원됩니다.<br/><br/> 기존 공용 IP 주소를 NIC와 연결 하거나, 복원을 완료 한 후 주소를 만들고 NIC와 연결 합니다.
 NIC/서브넷의 NSG(네트워크 보안 그룹)입니다. |지원됩니다.
-고정 IP 주소 | 지원되지 않습니다.<br/><br/> 복원 지점에서 만든 새 VM에는 동적 IP 주소가 할당 됩니다.<br/><br/> 클래식 Vm의 경우 예약 된 IP 주소를 사용 하는 VM을 백업할 수 없으며 끝점이 정의 되어 있지 않습니다.
+고정 IP 주소 | 지원되지 않습니다.<br/><br/> 복원 지점에서 만든 새 VM에는 동적 IP 주소가 할당 됩니다.<br/><br/> 클래식 Vm의 경우 예약 된 IP 주소를 사용 하는 VM을 백업할 수 없으며 엔드포인트이 정의 되어 있지 않습니다.
 동적 IP 주소 |지원됩니다.<br/><br/> 원본 VM의 NIC가 동적 IP 주소 지정을 사용 하는 경우 기본적으로 복원 된 VM의 NIC가이를 사용 합니다.
 Azure Traffic Manager| 지원됩니다.<br/><br/>백업 된 VM이 Traffic Manager에 있는 경우 복원 된 VM을 동일한 Traffic Manager 인스턴스에 수동으로 추가 합니다.
 Azure DNS |지원됩니다.

@@ -51,7 +51,7 @@ App Service 환경은 수평 확장을 위한 이상적인 플랫폼입니다.  
 * **webfrontend2.fe2ase.p.azurewebsites.net:** 두 번째 App Service Environment에 배포된 샘플 앱의 인스턴스입니다.
 * **webfrontend3.fe3ase.p.azurewebsites.net:** 세 번째 App Service Environment에 배포된 샘플 앱의 인스턴스입니다.
 
-**동일한** Azure 지역에서 실행 되는 여러 Azure App Service 끝점을 등록 하는 가장 쉬운 방법은 Powershell [Azure Resource Manager 지원 Traffic Manager][ARMTrafficManager]를 사용 하는 것입니다.  
+**동일한** Azure 지역에서 실행 되는 여러 Azure App Service 엔드포인트을 등록 하는 가장 쉬운 방법은 Powershell [Azure Resource Manager 지원 Traffic Manager][ARMTrafficManager]를 사용 하는 것입니다.  
 
 첫 번째 단계는 Azure Traffic Manager 프로필을 만드는 것입니다.  아래 코드에서는 샘플 앱에 프로필을 만든 방법을 보여줍니다.
 

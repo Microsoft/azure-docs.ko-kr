@@ -47,7 +47,7 @@ ___
 <code><b>addDays(<i>&lt;date/timestamp&gt;</i> : datetime, <i>&lt;days to add&gt;</i> : integral) => datetime</b></code><br/><br/>
 날짜 또는 타임스탬프에 일을 추가합니다. 날짜 * ``addDays(toDate('2016-08-08'), 1) -> toDate('2016-08-09')``
 ___
-### <code>addMonths</code>에 대 한 + 연산자와 동일 
+### <code>addMonths</code>에 대한 + 연산자와 동일 
 <code><b>addMonths(<i>&lt;date/timestamp&gt;</i> : datetime, <i>&lt;months to add&gt;</i> : integral, [<i>&lt;value3&gt;</i> : string]) => datetime</b></code><br/><br/>
 날짜 또는 타임 스탬프에 월을 추가 합니다. 필요에 따라 표준 시간대 * ``addMonths(toDate('2016-08-31'), 1) -> toDate('2016-09-30')``
 * ``addMonths(toTimestamp('2016-09-30 10:10:10'), -1) -> toTimestamp('2016-08-31 10:10:10')``
@@ -93,7 +93,7 @@ ___
 * ``isNull(case(10 + 20 == 25, 'bojjus', 'do' > 'go', 'gunchus')) -> true``
 * ``case(10 + 20 == 25, 'bojjus', 'do' > 'go', 'gunchus', 'dumbo') -> 'dumbo'``
 ___
-### <code>cbrt</code>에 대 한 기본값은 NULL입니다 
+### <code>cbrt</code>에 대한 기본값은 NULL입니다 
 <code><b>cbrt(<i>&lt;value1&gt;</i> : number) => double</b></code><br/><br/>
 숫자 * ``cbrt(8) -> 2.0``
 ___
@@ -128,7 +128,7 @@ ___
 제공 된 배열의 요소가 제공 된 조건자에서 true로 평가 되 면 true를 반환 합니다. Contains에는 
 * ``contains([1, 2, 3, 4], #item > 5) -> false``
 ___
-### <code>cos</code>* ``contains([1, 2, 3, 4], #item == 3) -> true``#item 조건자 함수의 한 요소에 대 한 참조가 필요 
+### <code>cos</code>* ``contains([1, 2, 3, 4], #item == 3) -> true``#item 조건자 함수의 한 요소에 대한 참조가 필요 
 <code><b>cos(<i>&lt;value1&gt;</i> : number) => double</b></code><br/><br/>
 
 ___
@@ -140,9 +140,9 @@ ___
 <code><b>crc32(<i>&lt;value1&gt;</i> : any, ...) => long</b></code><br/><br/>
 0(256), 224, 256, 384, 512 값의 지정된 비트 길이를 갖는 다양한 기본 데이터 형식의 열 세트에서 CRC32 해시를 계산합니다. 이를 사용 하 여 행 * ``crc32(256, 'gunchus', 8.2, 'bojjus', true, toDate('2010-4-4')) -> 3630253689L``
 ___
-### <code>currentDate</code>에 대 한 지문을 계산할 수 있습니다 
+### <code>currentDate</code>에 대한 지문을 계산할 수 있습니다 
 <code><b>currentDate([<i>&lt;value1&gt;</i> : string]) => date</b></code><br/><br/>
-이 작업 실행이 시작되는 현재 날짜를 가져옵니다. 'GMT', 'PST', 'UTC', 'America/Cayman' 형태로 선택적 표준 시간대를 제공할 수 있습니다. 로컬 표준 시간대가 기본값으로 사용 됩니다. 사용 가능한 형식에 대 한 자세한 내용은 Java의 SimpleDateFormat를 참조 하세요. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``currentDate() == toDate('2250-12-31') -> false``
+이 작업 실행이 시작되는 현재 날짜를 가져옵니다. 'GMT', 'PST', 'UTC', 'America/Cayman' 형태로 선택적 표준 시간대를 제공할 수 있습니다. 로컬 표준 시간대가 기본값으로 사용 됩니다. 사용 가능한 형식에 대한 자세한 내용은 Java의 SimpleDateFormat를 참조 하세요. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``currentDate() == toDate('2250-12-31') -> false``
 * ``currentDate('PST')  == toDate('2250-12-31') -> false``
 * ``currentDate('America/New_York')  == toDate('2250-12-31') -> false``
 ___
@@ -152,7 +152,7 @@ ___
 ___
 ### <code>currentUTC</code>를 사용 하 여 작업을 실행 하기 시작할 때 현재 타임 스탬프를 가져옵니다 
 <code><b>currentUTC([<i>&lt;value1&gt;</i> : string]) => timestamp</b></code><br/><br/>
-현재 타임 스탬프를 UTC로 가져옵니다. 현재 시간을 클러스터 표준 시간대와 다른 표준 시간대로 해석 하려면 선택적인 표준 시간대를 ' GMT ', ' PST ', ' UTC ', ' 아메리카/케이맨 ' 형식으로 전달할 수 있습니다. 기본적으로 현재 표준 시간대로 설정 됩니다. 사용 가능한 형식에 대 한 자세한 내용은 Java의 SimpleDateFormat를 참조 하세요. [https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)를 참조하세요. UTC 시간을 다른 표준 시간대로 변환 하려면 fromUTC () * ``currentUTC() == toTimestamp('2050-12-12 19:18:12') -> false``
+현재 타임 스탬프를 UTC로 가져옵니다. 현재 시간을 클러스터 표준 시간대와 다른 표준 시간대로 해석 하려면 선택적인 표준 시간대를 ' GMT ', ' PST ', ' UTC ', ' 아메리카/케이맨 ' 형식으로 전달할 수 있습니다. 기본적으로 현재 표준 시간대로 설정 됩니다. 사용 가능한 형식에 대한 자세한 내용은 Java의 SimpleDateFormat를 참조 하세요. [https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)를 참조하세요. UTC 시간을 다른 표준 시간대로 변환 하려면 fromUTC () * ``currentUTC() == toTimestamp('2050-12-12 19:18:12') -> false``
 * ``currentUTC() != toTimestamp('2050-12-12 19:18:12') -> true``
 * ``fromUTC(currentUTC(), 'Asia/Seoul') != toTimestamp('2050-12-12 19:18:12') -> true``
 ___
@@ -209,7 +209,7 @@ ___
 ___
 ### <code>filter</code>
 <code><b>filter(<i>&lt;value1&gt;</i> : array, <i>&lt;value2&gt;</i> : unaryfunction) => array</b></code><br/><br/>
-제공 된 조건자를 충족 하지 않는 배열에서 요소를 필터링 합니다. 필터에는 조건자 함수의 한 요소에 대 한 참조가 #item * ``filter([1, 2, 3, 4], #item > 2) -> [3, 4]``
+제공 된 조건자를 충족 하지 않는 배열에서 요소를 필터링 합니다. 필터에는 조건자 함수의 한 요소에 대한 참조가 #item * ``filter([1, 2, 3, 4], #item > 2) -> [3, 4]``
 * ``filter(['a', 'b', 'c', 'd'], #item == 'a' || #item == 'b') -> ['a', 'b']``
 ___
 ### <code>floor</code>으로 필요 
@@ -222,7 +222,7 @@ Base64 * ``fromBase64('Z3VuY2h1cw==') -> 'gunchus'``
 ___
 ### <code>fromUTC</code>에서 지정 된 문자열을 인코딩합니다 
 <code><b>fromUTC(<i>&lt;value1&gt;</i> : timestamp, [<i>&lt;value2&gt;</i> : string]) => timestamp</b></code><br/><br/>
-UTC의 타임 스탬프로 변환 합니다. 필요에 따라 표준 시간대를 ' GMT ', ' PST ', ' UTC ', ' 아메리카/케이맨 ' 형식으로 전달할 수 있습니다. 사용 가능한 형식에 대 한 현재 timezoneRefer Java의 SimpleDateFormat로 기본값을 사용 합니다. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``fromUTC(currentTimeStamp()) == toTimestamp('2050-12-12 19:18:12') -> false``
+UTC의 타임 스탬프로 변환 합니다. 필요에 따라 표준 시간대를 ' GMT ', ' PST ', ' UTC ', ' 아메리카/케이맨 ' 형식으로 전달할 수 있습니다. 사용 가능한 형식에 대한 현재 timezoneRefer Java의 SimpleDateFormat로 기본값을 사용 합니다. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``fromUTC(currentTimeStamp()) == toTimestamp('2050-12-12 19:18:12') -> false``
 * ``fromUTC(currentTimeStamp(), 'Asia/Seoul') != toTimestamp('2050-12-12 19:18:12') -> true``
 ___
 ### <code>greater</code>
@@ -249,7 +249,7 @@ ___
 ___
 ### <code>hour</code>* ``hasColumn('parent')``수 있습니다 
 <code><b>hour(<i>&lt;value1&gt;</i> : timestamp, [<i>&lt;value2&gt;</i> : string]) => integer</b></code><br/><br/>
-타임스탬프의 시간 값을 가져옵니다. 'GMT', 'PST', 'UTC', 'America/Cayman' 형태로 선택적 표준 시간대를 제공할 수 있습니다. 로컬 표준 시간대가 기본값으로 사용 됩니다. 사용 가능한 형식에 대 한 자세한 내용은 Java의 SimpleDateFormat를 참조 하세요. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``hour(toTimestamp('2009-07-30 12:58:59')) -> 12``
+타임스탬프의 시간 값을 가져옵니다. 'GMT', 'PST', 'UTC', 'America/Cayman' 형태로 선택적 표준 시간대를 제공할 수 있습니다. 로컬 표준 시간대가 기본값으로 사용 됩니다. 사용 가능한 형식에 대한 자세한 내용은 Java의 SimpleDateFormat를 참조 하세요. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``hour(toTimestamp('2009-07-30 12:58:59')) -> 12``
 * ``hour(toTimestamp('2009-07-30 12:58:59'), 'PST') -> 12``
 ___
 ### <code>hours</code>
@@ -393,20 +393,20 @@ ___
 ___
 ### <code>map</code>에 지정 된 모든 문자를 자릅니다 
 <code><b>map(<i>&lt;value1&gt;</i> : array, <i>&lt;value2&gt;</i> : unaryfunction) => any</b></code><br/><br/>
-제공 된 식을 사용 하 여 배열의 각 요소를 새 요소에 매핑합니다. Map에는 식 함수에서 하나의 요소에 대 한 참조가 필요한 #item * ``map([1, 2, 3, 4], #item + 2) -> [3, 4, 5, 6]``
+제공 된 식을 사용 하 여 배열의 각 요소를 새 요소에 매핑합니다. Map에는 식 함수에서 하나의 요소에 대한 참조가 필요한 #item * ``map([1, 2, 3, 4], #item + 2) -> [3, 4, 5, 6]``
 * ``map(['a', 'b', 'c', 'd'], #item + '_processed') -> ['a_processed', 'b_processed', 'c_processed', 'd_processed']``
 ___
 ### <code>mapIndex</code>
 <code><b>mapIndex(<i>&lt;value1&gt;</i> : array, <i>&lt;value2&gt;</i> : binaryfunction) => any</b></code><br/><br/>
-제공 된 식을 사용 하 여 배열의 각 요소를 새 요소에 매핑합니다. Map에는 #item 식 함수의 한 요소에 대 한 참조와 #index * ``mapIndex([1, 2, 3, 4], #item + 2 + #index) -> [4, 6, 8, 10]``
+제공 된 식을 사용 하 여 배열의 각 요소를 새 요소에 매핑합니다. Map에는 #item 식 함수의 한 요소에 대한 참조와 #index * ``mapIndex([1, 2, 3, 4], #item + 2 + #index) -> [4, 6, 8, 10]``
 ___
-### <code>md5</code>요소 인덱스에 대 한 참조가 필요 
+### <code>md5</code>요소 인덱스에 대한 참조가 필요 
 <code><b>md5(<i>&lt;value1&gt;</i> : any, ...) => string</b></code><br/><br/>
 다양한 기본 데이터 형식의 열 세트에서 MD5 다이제스트를 계산하고 32자의 16진수 문자열을 반환합니다. 이를 사용 하 여 행 * ``md5(5, 'gunchus', 8.2, 'bojjus', true, toDate('2010-4-4')) -> '4ce8a880bd621a1ffad0bca905e1bc5a'``
 ___
-### <code>millisecond</code>에 대 한 지문을 계산할 수 있습니다 
+### <code>millisecond</code>에 대한 지문을 계산할 수 있습니다 
 <code><b>millisecond(<i>&lt;value1&gt;</i> : timestamp, [<i>&lt;value2&gt;</i> : string]) => integer</b></code><br/><br/>
-날짜의 밀리초 값을 가져옵니다. 'GMT', 'PST', 'UTC', 'America/Cayman' 형태로 선택적 표준 시간대를 제공할 수 있습니다. 로컬 표준 시간대가 기본값으로 사용 됩니다. 사용 가능한 형식에 대 한 자세한 내용은 Java의 SimpleDateFormat를 참조 하세요. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``millisecond(toTimestamp('2009-07-30 12:58:59.871', 'yyyy-MM-dd HH:mm:ss.SSS')) -> 871``
+날짜의 밀리초 값을 가져옵니다. 'GMT', 'PST', 'UTC', 'America/Cayman' 형태로 선택적 표준 시간대를 제공할 수 있습니다. 로컬 표준 시간대가 기본값으로 사용 됩니다. 사용 가능한 형식에 대한 자세한 내용은 Java의 SimpleDateFormat를 참조 하세요. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``millisecond(toTimestamp('2009-07-30 12:58:59.871', 'yyyy-MM-dd HH:mm:ss.SSS')) -> 871``
 ___
 ### <code>milliseconds</code>
 <code><b>milliseconds(<i>&lt;value1&gt;</i> : integer) => long</b></code><br/><br/>
@@ -423,7 +423,7 @@ ___
 ___
 ### <code>minute</code>
 <code><b>minute(<i>&lt;value1&gt;</i> : timestamp, [<i>&lt;value2&gt;</i> : string]) => integer</b></code><br/><br/>
-타임스탬프의 분 값을 가져옵니다. 'GMT', 'PST', 'UTC', 'America/Cayman' 형태로 선택적 표준 시간대를 제공할 수 있습니다. 로컬 표준 시간대가 기본값으로 사용 됩니다. 사용 가능한 형식에 대 한 자세한 내용은 Java의 SimpleDateFormat를 참조 하세요. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``minute(toTimestamp('2009-07-30 12:58:59')) -> 58``
+타임스탬프의 분 값을 가져옵니다. 'GMT', 'PST', 'UTC', 'America/Cayman' 형태로 선택적 표준 시간대를 제공할 수 있습니다. 로컬 표준 시간대가 기본값으로 사용 됩니다. 사용 가능한 형식에 대한 자세한 내용은 Java의 SimpleDateFormat를 참조 하세요. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``minute(toTimestamp('2009-07-30 12:58:59')) -> 58``
 * ``minute(toTimestamp('2009-07-30 12:58:59'), 'PST') -> 58``
 ___
 ### <code>minutes</code>
@@ -441,7 +441,7 @@ ___
 ___
 ### <code>monthsBetween</code>* ``month(toDate('2012-8-8')) -> 8``날짜 또는 타임 스탬프의 월 값을 가져옵니다 
 <code><b>monthsBetween(<i>&lt;from date/timestamp&gt;</i> : datetime, <i>&lt;to date/timestamp&gt;</i> : datetime, [<i>&lt;roundoff&gt;</i> : boolean], [<i>&lt;time zone&gt;</i> : string]) => double</b></code><br/><br/>
-두 날짜 사이의 개월 수를 가져옵니다. 계산을 반올림할 수 있습니다. 선택적인 표준 시간대를 ' GMT ', ' PST ', ' UTC ', ' 아메리카/케이맨 ' 형식으로 전달할 수 있습니다. 로컬 표준 시간대가 기본값으로 사용 됩니다. 사용 가능한 형식에 대 한 자세한 내용은 Java의 SimpleDateFormat를 참조 하세요. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``monthsBetween(toTimestamp('1997-02-28 10:30:00'), toDate('1996-10-30')) -> 3.94959677``
+두 날짜 사이의 개월 수를 가져옵니다. 계산을 반올림할 수 있습니다. 선택적인 표준 시간대를 ' GMT ', ' PST ', ' UTC ', ' 아메리카/케이맨 ' 형식으로 전달할 수 있습니다. 로컬 표준 시간대가 기본값으로 사용 됩니다. 사용 가능한 형식에 대한 자세한 내용은 Java의 SimpleDateFormat를 참조 하세요. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``monthsBetween(toTimestamp('1997-02-28 10:30:00'), toDate('1996-10-30')) -> 3.94959677``
 ___
 ### <code>multiply</code>
 <code><b>multiply(<i>&lt;value1&gt;</i> : any, <i>&lt;value2&gt;</i> : any) => any</b></code><br/><br/>
@@ -503,7 +503,7 @@ ___
 ___
 ### <code>reduce</code>의 기능으로 거듭제곱 
 <code><b>reduce(<i>&lt;value1&gt;</i> : array, <i>&lt;value2&gt;</i> : any, <i>&lt;value3&gt;</i> : binaryfunction, <i>&lt;value4&gt;</i> : unaryfunction) => any</b></code><br/><br/>
-배열의 요소를 누적 합니다. 줄이기는 첫 번째 식 함수에서 누적기 및 one 요소에 대 한 참조를 #acc 및 #item으로 예상 하며, 결과 값이 두 번째 식 함수에 사용 되는 #result * ``toString(reduce(['1', '2', '3', '4'], '0', #acc + #item, #result)) -> '01234'``
+배열의 요소를 누적 합니다. 줄이기는 첫 번째 식 함수에서 누적기 및 one 요소에 대한 참조를 #acc 및 #item으로 예상 하며, 결과 값이 두 번째 식 함수에 사용 되는 #result * ``toString(reduce(['1', '2', '3', '4'], '0', #acc + #item, #result)) -> '01234'``
 ___
 ### <code>regexExtract</code>
 <code><b>regexExtract(<i>&lt;string&gt;</i> : string, <i>&lt;regex to find&gt;</i> : string, [<i>&lt;match group 1-based index&gt;</i> : integral]) => string</b></code><br/><br/>
@@ -566,7 +566,7 @@ ___
 ___
 ### <code>second</code>에 지정 된 모든 문자를 자릅니다 
 <code><b>second(<i>&lt;value1&gt;</i> : timestamp, [<i>&lt;value2&gt;</i> : string]) => integer</b></code><br/><br/>
-날짜의 초 값을 가져옵니다. 'GMT', 'PST', 'UTC', 'America/Cayman' 형태로 선택적 표준 시간대를 제공할 수 있습니다. 로컬 표준 시간대가 기본값으로 사용 됩니다. 사용 가능한 형식에 대 한 자세한 내용은 Java의 SimpleDateFormat를 참조 하세요. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``second(toTimestamp('2009-07-30 12:58:59')) -> 59``
+날짜의 초 값을 가져옵니다. 'GMT', 'PST', 'UTC', 'America/Cayman' 형태로 선택적 표준 시간대를 제공할 수 있습니다. 로컬 표준 시간대가 기본값으로 사용 됩니다. 사용 가능한 형식에 대한 자세한 내용은 Java의 SimpleDateFormat를 참조 하세요. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``second(toTimestamp('2009-07-30 12:58:59')) -> 59``
 ___
 ### <code>seconds</code>
 <code><b>seconds(<i>&lt;value1&gt;</i> : integer) => long</b></code><br/><br/>
@@ -576,11 +576,11 @@ ___
 <code><b>sha1(<i>&lt;value1&gt;</i> : any, ...) => string</b></code> * ``seconds(2) -> 2000L``시간 (밀리초)<br/><br/>
 다양한 기본 데이터 형식의 열 세트에서 SHA-1 다이제스트를 계산하고 40자의 16진수 문자열을 반환합니다. 이를 사용 하 여 행 * ``sha1(5, 'gunchus', 8.2, 'bojjus', true, toDate('2010-4-4')) -> '46d3b478e8ec4e1f3b453ac3d8e59d5854e282bb'``
 ___
-### <code>sha2</code>에 대 한 지문을 계산할 수 있습니다 
+### <code>sha2</code>에 대한 지문을 계산할 수 있습니다 
 <code><b>sha2(<i>&lt;value1&gt;</i> : integer, <i>&lt;value2&gt;</i> : any, ...) => string</b></code><br/><br/>
-0 (256), 224, 256, 384, 512 값만 사용할 수 있는 비트 길이를 지정 하 여 다양 한 기본 데이터 형식의 열 집합에 대 한 SHA-2 다이제스트를 계산 합니다. 이를 사용 하 여 행 * ``sha2(256, 'gunchus', 8.2, 'bojjus', true, toDate('2010-4-4')) -> 'afe8a553b1761c67d76f8c31ceef7f71b66a1ee6f4e6d3b5478bf68b47d06bd3'``
+0 (256), 224, 256, 384, 512 값만 사용할 수 있는 비트 길이를 지정 하 여 다양 한 기본 데이터 형식의 열 집합에 대한 SHA-2 다이제스트를 계산 합니다. 이를 사용 하 여 행 * ``sha2(256, 'gunchus', 8.2, 'bojjus', true, toDate('2010-4-4')) -> 'afe8a553b1761c67d76f8c31ceef7f71b66a1ee6f4e6d3b5478bf68b47d06bd3'``
 ___
-### <code>sin</code>에 대 한 지문을 계산할 수 있습니다 
+### <code>sin</code>에 대한 지문을 계산할 수 있습니다 
 <code><b>sin(<i>&lt;value1&gt;</i> : number) => double</b></code><br/><br/>
 
 ___
@@ -599,7 +599,7 @@ ___
 ___
 ### <code>sort</code>의 끝이 됩니다 
 <code><b>sort(<i>&lt;value1&gt;</i> : array, <i>&lt;value2&gt;</i> : binaryfunction) => array</b></code><br/><br/>
-제공 된 조건자 함수를 사용 하 여 배열을 정렬 합니다. Sort는 #item1 식 함수에서 두 개의 연속 된 요소에 대 한 참조를 예상 하 고 #item2 * ``sort([4, 8, 2, 3], compare(#item1, #item2)) -> [2, 3, 4, 8]``
+제공 된 조건자 함수를 사용 하 여 배열을 정렬 합니다. Sort는 #item1 식 함수에서 두 개의 연속 된 요소에 대한 참조를 예상 하 고 #item2 * ``sort([4, 8, 2, 3], compare(#item1, #item2)) -> [2, 3, 4, 8]``
 * ``sort(['a3', 'b2', 'c1'], iif(right(#item1, 1) >= right(#item2, 1), 1, -1)) -> ['c1', 'b2', 'a3']``
 ___
 ### <code>soundex</code>
@@ -663,7 +663,7 @@ ___
 ___
 ### <code>toDate</code>
 <code><b>toDate(<i>&lt;string&gt;</i> : any, [<i>&lt;date format&gt;</i> : string]) => date</b></code><br/><br/>
-선택적인 입력 날짜 형식을 사용 하 여 입력 날짜 문자열을 날짜로 변환 합니다. 사용 가능한 형식에 대 한 자세한 내용은 Java의 SimpleDateFormat를 참조 하세요. 입력 날짜 형식이 생략 된 경우 기본 형식은 yyyy-[M] M-[d] d입니다. 허용 되는 형식은 다음과 같습니다. [yyyy, yyyy-[M] M, yyyy-[M] M-[d] d, yyyy-[M] M-[d] dT *] * ``toDate('2012-8-18') -> toDate('2012-08-18')``
+선택적인 입력 날짜 형식을 사용 하 여 입력 날짜 문자열을 날짜로 변환 합니다. 사용 가능한 형식에 대한 자세한 내용은 Java의 SimpleDateFormat를 참조 하세요. 입력 날짜 형식이 생략 된 경우 기본 형식은 yyyy-[M] M-[d] d입니다. 허용 되는 형식은 다음과 같습니다. [yyyy, yyyy-[M] M, yyyy-[M] M-[d] d, yyyy-[M] M-[d] dT *] * ``toDate('2012-8-18') -> toDate('2012-08-18')``
 * ``toDate('12/18/2012', 'MM/dd/yyyy') -> toDate('2012-12-18')``
 ___
 ### <code>toDecimal</code>
@@ -724,7 +724,7 @@ ___
 ___
 ### <code>toUTC</code>
 <code><b>toUTC(<i>&lt;value1&gt;</i> : timestamp, [<i>&lt;value2&gt;</i> : string]) => timestamp</b></code><br/><br/>
-타임스탬프를 UTC로 변환합니다. 'GMT', 'PST', 'UTC', 'America/Cayman' 형태로 선택적 표준 시간대를 제공할 수 있습니다. 사용 가능한 형식에 대 한 현재 timezoneRefer Java의 SimpleDateFormat로 기본값을 사용 합니다. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``toUTC(currentTimeStamp()) == toTimestamp('2050-12-12 19:18:12') -> false``
+타임스탬프를 UTC로 변환합니다. 'GMT', 'PST', 'UTC', 'America/Cayman' 형태로 선택적 표준 시간대를 제공할 수 있습니다. 사용 가능한 형식에 대한 현재 timezoneRefer Java의 SimpleDateFormat로 기본값을 사용 합니다. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``toUTC(currentTimeStamp()) == toTimestamp('2050-12-12 19:18:12') -> false``
 * ``toUTC(currentTimeStamp(), 'Asia/Seoul') != toTimestamp('2050-12-12 19:18:12') -> true``
 ___
 ### <code>translate</code>
@@ -792,7 +792,7 @@ ___
 <code><b>countDistinct(<i>&lt;value1&gt;</i> : any, [<i>&lt;value2&gt;</i> : any], ...) => long</b></code><br/><br/>
 
 ___
-### <code>countIf</code>* ``countDistinct(custId, custName)``열 집합에 대 한 고유 값의 집계 수를 가져옵니다 
+### <code>countIf</code>* ``countDistinct(custId, custName)``열 집합에 대한 고유 값의 집계 수를 가져옵니다 
 <code><b>countIf(<i>&lt;value1&gt;</i> : boolean, [<i>&lt;value2&gt;</i> : any]) => long</b></code><br/><br/>
 조건에 따라 값의 집계 개수를 가져옵니다. 선택적 열이 지정 된 경우 count * ``countIf(state == 'CA' && commission < 10000, name)``
 ___
@@ -838,7 +838,7 @@ ___
 <code><b>maxIf(<i>&lt;value1&gt;</i> : boolean, <i>&lt;value2&gt;</i> : any) => any</b></code><br/><br/>
 조건에 따라 
 ___
-### <code>mean</code>* ``maxIf(region == 'West', sales)``열에 대 한 최대값을 가져옵니다 
+### <code>mean</code>* ``maxIf(region == 'West', sales)``열에 대한 최대값을 가져옵니다 
 <code><b>mean(<i>&lt;value1&gt;</i> : number) => number</b></code><br/><br/>
 열 값의 평균값을 가져옵니다. AVG * ``mean(sales)``
 ___
@@ -862,7 +862,7 @@ ___
 <code><b>skewnessIf(<i>&lt;value1&gt;</i> : boolean, <i>&lt;value2&gt;</i> : number) => double</b></code><br/><br/>
 조건에 따라 
 ___
-### <code>stddev</code>* ``skewnessIf(region == 'West', sales)``열에 대 한 왜곡도를 가져옵니다 
+### <code>stddev</code>* ``skewnessIf(region == 'West', sales)``열에 대한 왜곡도를 가져옵니다 
 <code><b>stddev(<i>&lt;value1&gt;</i> : number) => double</b></code><br/><br/>
 열 * ``stdDev(sales)``
 ___
@@ -870,7 +870,7 @@ ___
 <code><b>stddevIf(<i>&lt;value1&gt;</i> : boolean, <i>&lt;value2&gt;</i> : number) => double</b></code><br/><br/>
 조건에 따라 
 ___
-### <code>stddevPopulation</code>* ``stddevIf(region == 'West', sales)``열에 대 한 표준 편차를 가져옵니다 
+### <code>stddevPopulation</code>* ``stddevIf(region == 'West', sales)``열에 대한 표준 편차를 가져옵니다 
 <code><b>stddevPopulation(<i>&lt;value1&gt;</i> : number) => double</b></code><br/><br/>
 열 * ``stddevPopulation(sales)``
 ___
@@ -878,7 +878,7 @@ ___
 <code><b>stddevPopulationIf(<i>&lt;value1&gt;</i> : boolean, <i>&lt;value2&gt;</i> : number) => double</b></code><br/><br/>
 조건에 따라 
 ___
-### <code>stddevSample</code>* ``stddevPopulationIf(region == 'West', sales)``열에 대 한 모집단 표준 편차를 가져옵니다 
+### <code>stddevSample</code>* ``stddevPopulationIf(region == 'West', sales)``열에 대한 모집단 표준 편차를 가져옵니다 
 <code><b>stddevSample(<i>&lt;value1&gt;</i> : number) => double</b></code><br/><br/>
 열 * ``stddevSample(sales)``
 ___
@@ -886,7 +886,7 @@ ___
 <code><b>stddevSampleIf(<i>&lt;value1&gt;</i> : boolean, <i>&lt;value2&gt;</i> : number) => double</b></code><br/><br/>
 조건에 따라 
 ___
-### <code>sum</code>* ``stddevSampleIf(region == 'West', sales)``열에 대 한 샘플 표준 편차를 가져옵니다 
+### <code>sum</code>* ``stddevSampleIf(region == 'West', sales)``열에 대한 샘플 표준 편차를 가져옵니다 
 <code><b>sum(<i>&lt;value1&gt;</i> : number) => number</b></code><br/><br/>
 
 ___
@@ -894,7 +894,7 @@ ___
 <code><b>sumDistinct(<i>&lt;value1&gt;</i> : number) => number</b></code><br/><br/>
 
 ___
-### <code>sumDistinctIf</code>* ``sumDistinct(col)``숫자 열에 대 한 고유 값의 집계 합계를 가져옵니다 
+### <code>sumDistinctIf</code>* ``sumDistinct(col)``숫자 열에 대한 고유 값의 집계 합계를 가져옵니다 
 <code><b>sumDistinctIf(<i>&lt;value1&gt;</i> : boolean, <i>&lt;value2&gt;</i> : number) => number</b></code><br/><br/>
 기준에 따라 숫자 열의 집계 합계를 가져옵니다. 조건은 * ``sumDistinctIf(state == 'CA' && commission < 10000, sales)``
 * ``sumDistinctIf(true, sales)``
@@ -912,7 +912,7 @@ ___
 <code><b>varianceIf(<i>&lt;value1&gt;</i> : boolean, <i>&lt;value2&gt;</i> : number) => double</b></code><br/><br/>
 조건에 따라 
 ___
-### <code>variancePopulation</code>* ``varianceIf(region == 'West', sales)``열에 대 한 분산을 가져옵니다 
+### <code>variancePopulation</code>* ``varianceIf(region == 'West', sales)``열에 대한 분산을 가져옵니다 
 <code><b>variancePopulation(<i>&lt;value1&gt;</i> : number) => double</b></code><br/><br/>
 열 * ``variancePopulation(sales)``
 ___
@@ -920,14 +920,14 @@ ___
 <code><b>variancePopulationIf(<i>&lt;value1&gt;</i> : boolean, <i>&lt;value2&gt;</i> : number) => double</b></code><br/><br/>
 조건에 따라 
 ___
-### <code>varianceSample</code>* ``variancePopulationIf(region == 'West', sales)``열에 대 한 모집단 분산을 가져옵니다 
+### <code>varianceSample</code>* ``variancePopulationIf(region == 'West', sales)``열에 대한 모집단 분산을 가져옵니다 
 <code><b>varianceSample(<i>&lt;value1&gt;</i> : number) => double</b></code><br/><br/>
 열 * ``varianceSample(sales)``
 ___
 ### <code>varianceSampleIf</code>의 비편향 분산을 가져옵니다 
 <code><b>varianceSampleIf(<i>&lt;value1&gt;</i> : boolean, <i>&lt;value2&gt;</i> : number) => double</b></code><br/><br/>
 조건에 따라 
-## 창 함수 * ``varianceSampleIf(region == 'West', sales)``열에 대 한 비편향 분산을 가져옵니다. 다음 함수는 창 변환 ___
+## 창 함수 * ``varianceSampleIf(region == 'West', sales)``열에 대한 비편향 분산을 가져옵니다. 다음 함수는 창 변환 ___
 ### <code>cumeDist</code>에서만 사용할 수 있습니다 
 <code><b>cumeDist() => integer</b></code><br/><br/>
 CumeDist 함수는 파티션의 모든 값을 기준으로 값의 위치를 계산합니다. 결과는 파티션 순서에서 현재 행보다 앞에 있거나 같은 위치에 있는 행 수를 창 파티션의 총 행 수로 나눈 값입니다. 정렬의 모든 동률 값은 동일한 위치로 평가 됩니다.

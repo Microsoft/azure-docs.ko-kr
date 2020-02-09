@@ -18,7 +18,7 @@ ms.locfileid: "76900271"
 
 [Azure Logic Apps](../logic-apps/logic-apps-overview.md) 및 기본 제공 요청 트리거 또는 응답 작업을 사용 하 여 들어오는 HTTPS 요청을 수신 하 고 응답 하는 자동화 된 작업 및 워크플로를 만들 수 있습니다. 예를 들어 논리 앱을 사용할 수 있습니다.
 
-* 온-프레미스 데이터베이스에서 데이터에 대 한 HTTPS 요청을 수신 하 고 응답 합니다.
+* 온-프레미스 데이터베이스에서 데이터에 대한 HTTPS 요청을 수신 하 고 응답 합니다.
 * 외부 webhook 이벤트가 발생 하는 경우 워크플로를 트리거합니다.
 * 다른 논리 앱에서 HTTPS 호출을 받고 응답 합니다.
 
@@ -40,13 +40,13 @@ ms.locfileid: "76900271"
 
 * Azure 구독 구독이 없는 경우 [무료 Azure 계정에 등록할](https://azure.microsoft.com/free/)수 있습니다.
 
-* [논리 앱](../logic-apps/logic-apps-overview.md)에 대 한 기본 지식. 논리 앱을 처음 접하는 경우 [첫 번째 논리 앱을 만드는 방법](../logic-apps/quickstart-create-first-logic-app-workflow.md)에 대해 알아보세요.
+* [논리 앱](../logic-apps/logic-apps-overview.md)에 대한 기본 지식. 논리 앱을 처음 접하는 경우 [첫 번째 논리 앱을 만드는 방법](../logic-apps/quickstart-create-first-logic-app-workflow.md)에 대해 알아보세요.
 
 <a name="add-request"></a>
 
 ## <a name="add-request-trigger"></a>요청 트리거 추가
 
-이 기본 제공 트리거 *는 들어오는 https* 요청만 수신할 수 있는 수동으로 호출할 수 있는 https 끝점을 만듭니다. 이 이벤트가 발생 하면 트리거가 발생 하 고 논리 앱을 실행 합니다. 트리거의 기본 JSON 정의 및이 트리거를 호출 하는 방법에 대 한 자세한 내용은 [요청 트리거 형식](../logic-apps/logic-apps-workflow-actions-triggers.md#request-trigger) 및 [Azure Logic Apps에서 HTTP 끝점을 사용 하 여 워크플로 호출, 트리거 또는 중첩](../logic-apps/logic-apps-http-endpoint.md)을 참조 하세요.
+이 기본 제공 트리거 *는 들어오는 https* 요청만 수신할 수 있는 수동으로 호출할 수 있는 https 엔드포인트을 만듭니다. 이 이벤트가 발생 하면 트리거가 발생 하 고 논리 앱을 실행 합니다. 트리거의 기본 JSON 정의 및이 트리거를 호출 하는 방법에 대한 자세한 내용은 [요청 트리거 형식](../logic-apps/logic-apps-workflow-actions-triggers.md#request-trigger) 및 [Azure Logic Apps에서 HTTP 엔드포인트을 사용 하 여 워크플로 호출, 트리거 또는 중첩](../logic-apps/logic-apps-http-endpoint.md)을 참조 하세요.
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다. 빈 논리 앱을 만듭니다.
 
@@ -60,7 +60,7 @@ ms.locfileid: "76900271"
 
    | 속성 이름 | JSON 속성 이름 | 필수 | Description |
    |---------------|--------------------|----------|-------------|
-   | **HTTP 게시 URL** | {없음} | 예 | 논리 앱을 저장 한 후에 생성 되 고 논리 앱을 호출 하는 데 사용 되는 끝점 URL입니다. |
+   | **HTTP 게시 URL** | {없음} | 예 | 논리 앱을 저장 한 후에 생성 되 고 논리 앱을 호출 하는 데 사용 되는 엔드포인트 URL입니다. |
    | **요청 본문 JSON 스키마** | `schema` | 아닙니다. | 들어오는 요청 본문의 속성 및 값을 설명 하는 JSON 스키마입니다. |
    |||||
 
@@ -68,7 +68,7 @@ ms.locfileid: "76900271"
 
    ![JSON 스키마 예제](./media/connectors-native-reqres/provide-json-schema.png)
 
-   디자이너는이 스키마를 사용 하 여 요청에서 속성에 대 한 토큰을 생성 합니다. 이렇게 하면 논리 앱에서 트리거를 통해 요청에서 데이터를 구문 분석 하 고, 사용 하 고, 전달할 수 있습니다.
+   디자이너는이 스키마를 사용 하 여 요청에서 속성에 대한 토큰을 생성 합니다. 이렇게 하면 논리 앱에서 트리거를 통해 요청에서 데이터를 구문 분석 하 고, 사용 하 고, 전달할 수 있습니다.
 
    샘플 스키마는 다음과 같습니다.
 
@@ -160,7 +160,7 @@ ms.locfileid: "76900271"
    | 속성 이름 | JSON 속성 이름 | 필수 | Description |
    |---------------|--------------------|----------|-------------|
    | **메서드** | `method` | 아닙니다. | 들어오는 요청에서 논리 앱을 호출 하는 데 사용 해야 하는 메서드입니다. |
-   | **상대 경로** | `relativePath` | 아닙니다. | 논리 앱의 끝점 URL에서 수락할 수 있는 매개 변수의 상대 경로입니다. |
+   | **상대 경로** | `relativePath` | 아닙니다. | 논리 앱의 엔드포인트 URL에서 수락할 수 있는 매개 변수의 상대 경로입니다. |
    |||||
 
    이 예제에서는 **메서드** 속성을 추가 합니다.
@@ -187,7 +187,7 @@ ms.locfileid: "76900271"
 
 ### <a name="trigger-outputs"></a>트리거 출력
 
-요청 트리거의 출력에 대 한 자세한 내용은 다음과 같습니다.
+요청 트리거의 출력에 대한 자세한 내용은 다음과 같습니다.
 
 | JSON 속성 이름 | 데이터 형식 | Description |
 |--------------------|-----------|-------------|
@@ -199,7 +199,7 @@ ms.locfileid: "76900271"
 
 ## <a name="add-a-response-action"></a>응답 동작 추가
 
-응답 작업을 사용 하 여 들어오는 HTTPS 요청에 대 한 페이로드 (데이터)에 응답 하 고 HTTPS 요청에 의해 트리거되는 논리 앱 에서만 응답을 받을 수 있습니다. 워크플로의 어떤 지점에서 든 응답 작업을 추가할 수 있습니다. 이 트리거에 대 한 기본 JSON 정의에 대 한 자세한 내용은 [응답 작업 형식](../logic-apps/logic-apps-workflow-actions-triggers.md#response-action)을 참조 하세요.
+응답 작업을 사용 하 여 들어오는 HTTPS 요청에 대한 페이로드 (데이터)에 응답 하 고 HTTPS 요청에 의해 트리거되는 논리 앱 에서만 응답을 받을 수 있습니다. 워크플로의 어떤 지점에서 든 응답 작업을 추가할 수 있습니다. 이 트리거에 대한 기본 JSON 정의에 대한 자세한 내용은 [응답 작업 형식](../logic-apps/logic-apps-workflow-actions-triggers.md#response-action)을 참조 하세요.
 
 논리 앱은 1 분 동안만 들어오는 요청을 열어 둡니다. 논리 앱 워크플로에 응답 작업이 포함 되어 있다고 가정 하면 논리 앱이이 시간 경과 후 응답을 반환 하지 않는 경우 논리 앱은 호출자에 게 `504 GATEWAY TIMEOUT`을 반환 합니다. 그렇지 않고 논리 앱에 응답 동작이 포함 되지 않은 경우 논리 앱은 즉시 호출자에 게 `202 ACCEPTED` 응답을 반환 합니다.
 
@@ -229,7 +229,7 @@ ms.locfileid: "76900271"
 
    ![머리글-텍스트 뷰로 전환](./media/connectors-native-reqres/switch-to-text-view.png)
 
-   응답 작업에서 설정할 수 있는 속성에 대 한 자세한 내용은 다음과 같습니다. 
+   응답 작업에서 설정할 수 있는 속성에 대한 자세한 내용은 다음과 같습니다. 
 
    | 속성 이름 | JSON 속성 이름 | 필수 | Description |
    |---------------|--------------------|----------|-------------|
@@ -238,7 +238,7 @@ ms.locfileid: "76900271"
    | **본문** | `body` | 아닙니다. | 응답 본문 |
    |||||
 
-1. 응답 본문에 대 한 JSON 스키마와 같은 추가 속성을 지정 하려면 **새 매개 변수 추가** 목록을 열고 추가 하려는 매개 변수를 선택 합니다.
+1. 응답 본문에 대한 JSON 스키마와 같은 추가 속성을 지정 하려면 **새 매개 변수 추가** 목록을 열고 추가 하려는 매개 변수를 선택 합니다.
 
 1. 완료되면 논리 앱을 저장합니다. 디자이너 도구 모음에서 **저장**을 선택합니다. 
 

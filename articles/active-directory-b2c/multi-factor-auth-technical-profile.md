@@ -1,7 +1,7 @@
 ---
 title: 사용자 지정 정책의 Azure MFA 기술 프로필
 titleSuffix: Azure AD B2C
-description: Azure AD B2C의 MFA (Azure Multi-Factor Authentication) 기술 프로필에 대 한 사용자 지정 정책 참조입니다.
+description: Azure AD B2C의 MFA (Azure Multi-Factor Authentication) 기술 프로필에 대한 사용자 지정 정책 참조입니다.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg

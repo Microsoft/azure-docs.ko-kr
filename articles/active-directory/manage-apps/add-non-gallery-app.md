@@ -1,6 +1,6 @@
 ---
 title: 비 갤러리 응용 프로그램 추가-Microsoft identity platform | Microsoft Docs
-description: 비 갤러리 응용 프로그램을 Azure AD 테 넌 트에 추가 합니다.
+description: 비 갤러리 응용 프로그램을 Azure AD 테넌트에 추가 합니다.
 services: active-directory
 author: msmimart
 manager: CelesteDG

@@ -47,7 +47,7 @@ $InformationPreference = 'Continue'
 
 ## <a name="establish-a-web3-connection"></a>Web3 연결 설정
 
-컨소시엄 멤버를 관리 하려면 Blockchain 서비스 구성원 끝점에 대 한 Web3 연결을 설정 합니다. 이 스크립트를 사용 하 여 컨소시엄 관리 cmdlet을 호출 하는 전역 변수를 설정할 수 있습니다.
+컨소시엄 멤버를 관리 하려면 Blockchain 서비스 구성원 엔드포인트에 대 한 Web3 연결을 설정 합니다. 이 스크립트를 사용 하 여 컨소시엄 관리 cmdlet을 호출 하는 전역 변수를 설정할 수 있습니다.
 
 ```powershell-interactive
 $Connection = New-Web3Connection -RemoteRPCEndpoint '<Endpoint address>'
@@ -66,16 +66,16 @@ Azure Portal에서 다른 값을 찾습니다.
 
     *\<구성원 계정\>* 및 *\<rootcontract address\>* 를 포털의 값으로 바꿉니다.
 
-1. 끝점 주소에 대해 **트랜잭션 노드**를 선택 하 고 **기본 트랜잭션 노드**를 선택 합니다. 기본 노드의 이름은 blockchain 멤버와 동일 합니다.
+1. 엔드포인트 주소에 대해 **트랜잭션 노드**를 선택 하 고 **기본 트랜잭션 노드**를 선택 합니다. 기본 노드의 이름은 blockchain 멤버와 동일 합니다.
 1. **연결 문자열**을 선택합니다.
 
     ![연결 문자열](./media/manage-consortium-powershell/connection-strings.png)
 
-    *\<끝점 주소\>* 를 **https (액세스 키 1)** 또는 **https (액세스 키 2)** 의 값으로 바꿉니다.
+    *\<엔드포인트 주소\>* 를 **https (액세스 키 1)** 또는 **https (액세스 키 2)** 의 값으로 바꿉니다.
 
 ## <a name="manage-the-network-and-smart-contracts"></a>네트워크 및 스마트 계약 관리
 
-네트워크 및 스마트 계약 cmdlet을 사용 하 여 컨소시엄 관리를 담당 하는 블록 체인 끝점의 스마트 계약에 대 한 연결을 설정 합니다.
+네트워크 및 스마트 계약 cmdlet을 사용 하 여 컨소시엄 관리를 담당 하는 블록 체인 엔드포인트의 스마트 계약에 대 한 연결을 설정 합니다.
 
 ### <a name="import-consortiummanagementcontracts"></a>Import-ConsortiumManagementContracts
 
@@ -113,13 +113,13 @@ Import-Web3Account -ManagedAccountAddress '<Member account address>'  -ManagedAc
 
 ### <a name="new-web3connection"></a>New-Web3Connection
 
-이 cmdlet을 사용 하 여 트랜잭션 노드의 RPC 끝점에 대 한 연결을 설정할 수 있습니다.
+이 cmdlet을 사용 하 여 트랜잭션 노드의 RPC 엔드포인트에 대 한 연결을 설정할 수 있습니다.
 
 `New-Web3Connection [-RemoteRPCEndpoint <String>]`
 
 | 매개 변수 | 설명 | 필수 |
 |-----------|-------------|:--------:|
-| RemoteRPCEndpoint | Blockchain 구성원 끝점 주소 | 예 |
+| RemoteRPCEndpoint | Blockchain 구성원 엔드포인트 주소 | 예 |
 
 #### <a name="example"></a>예
 

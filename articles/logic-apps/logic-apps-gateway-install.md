@@ -30,9 +30,9 @@ ms.locfileid: "74893689"
 
 * Azure 계정 및 구독 구독이 있는 Azure 계정이 없는 경우 [무료 azure 계정에 등록](https://azure.microsoft.com/free/)합니다.
 
-  * Azure 계정은 단일 [Azure Active Directory (AZURE AD) 테 넌 트 또는 디렉터리](../active-directory/fundamentals/active-directory-whatis.md#terminology)에 속해야 합니다. 로컬 컴퓨터에 게이트웨이를 설치 하 고 관리 하려면 동일한 Azure 계정을 사용 해야 합니다.
+  * Azure 계정은 단일 [Azure Active Directory (AZURE AD) 테넌트 또는 디렉터리](../active-directory/fundamentals/active-directory-whatis.md#terminology)에 속해야 합니다. 로컬 컴퓨터에 게이트웨이를 설치 하 고 관리 하려면 동일한 Azure 계정을 사용 해야 합니다.
 
-  * 게이트웨이 설치 중에 azure 계정으로 로그인 합니다. 그러면 azure 계정 및 해당 계정에만 연결 됩니다. 나중에 Azure Portal에서 게이트웨이 설치를 등록 하 고 클레임 하는 Azure 게이트웨이 리소스를 만들 때 동일한 Azure 계정 및 Azure AD 테 넌 트를 사용 해야 합니다. Azure Logic Apps 온-프레미스 트리거 및 작업은 온-프레미스 데이터 원본에 연결 하기 위해 게이트웨이 리소스를 사용 합니다.
+  * 게이트웨이 설치 중에 azure 계정으로 로그인 합니다. 그러면 azure 계정 및 해당 계정에만 연결 됩니다. 나중에 Azure Portal에서 게이트웨이 설치를 등록 하 고 클레임 하는 Azure 게이트웨이 리소스를 만들 때 동일한 Azure 계정 및 Azure AD 테넌트를 사용 해야 합니다. Azure Logic Apps 온-프레미스 트리거 및 작업은 온-프레미스 데이터 원본에 연결 하기 위해 게이트웨이 리소스를 사용 합니다.
 
     > [!NOTE]
     > 하나의 게이트웨이 설치와 하나의 Azure 게이트웨이 리소스를 서로 연결할 수 있습니다. 동일한 게이트웨이 설치를 여러 Azure 계정 또는 Azure 게이트웨이 리소스에 연결할 수 없습니다. 그러나 Azure 계정은 여러 게이트웨이 설치 및 Azure gateway 리소스에 연결할 수 있습니다. 온-프레미스 트리거 또는 작업에서 다양 한 Azure 구독을 선택 하 고 연결 된 게이트웨이 리소스를 선택할 수 있습니다.
@@ -40,9 +40,9 @@ ms.locfileid: "74893689"
   * 회사 계정 또는 학교 계정으로 로그인 해야 합니다. *조직* 계정이 라고도 합니다 .이 계정에는 `username@contoso.com`같습니다. Azure B2B (게스트) 계정 또는 개인 Microsoft 계정 (예: @hotmail.com 또는 @outlook.com)을 사용할 수 없습니다.
 
     > [!TIP]
-    > Office 365 제품에 등록 하 고 회사 메일 주소를 제공 하지 않은 경우 주소는 `username@domain.onmicrosoft.com`처럼 보일 수 있습니다. 사용자 계정은 Azure Active Directory (Azure AD)의 테 넌 트 내에 저장 됩니다. 대부분의 경우 Azure AD 계정의 UPN (사용자 계정 이름)은 전자 메일 주소와 동일 합니다.
+    > Office 365 제품에 등록 하 고 회사 메일 주소를 제공 하지 않은 경우 주소는 `username@domain.onmicrosoft.com`처럼 보일 수 있습니다. 사용자 계정은 Azure Active Directory (Azure AD)의 테넌트 내에 저장 됩니다. 대부분의 경우 Azure AD 계정의 UPN (사용자 계정 이름)은 전자 메일 주소와 동일 합니다.
     >
-    > Microsoft 계정에 연결 된 [Visual Studio 표준 구독](https://visualstudio.microsoft.com/vs/pricing/) 을 사용 하려면 먼저 [Azure AD에서 테 넌 트를 만들거나](../active-directory/develop/quickstart-create-new-tenant.md) 기본 디렉터리를 사용 합니다. 디렉터리에 암호를 가진 사용자를 추가한 다음 해당 사용자에 게 Azure 구독에 대 한 액세스 권한을 부여 합니다. 그런 다음 이 사용자 이름 및 암호를 사용하여 게이트웨이 설치 중에 로그인할 수 있습니다.
+    > Microsoft 계정에 연결 된 [Visual Studio 표준 구독](https://visualstudio.microsoft.com/vs/pricing/) 을 사용 하려면 먼저 [Azure AD에서 테넌트를 만들거나](../active-directory/develop/quickstart-create-new-tenant.md) 기본 디렉터리를 사용 합니다. 디렉터리에 암호를 가진 사용자를 추가한 다음 해당 사용자에 게 Azure 구독에 대 한 액세스 권한을 부여 합니다. 그런 다음 이 사용자 이름 및 암호를 사용하여 게이트웨이 설치 중에 로그인할 수 있습니다.
 
 * 로컬 컴퓨터에 대한 요구 사항은 다음과 같습니다.
 
@@ -72,7 +72,7 @@ ms.locfileid: "74893689"
 
   * Windows 인증을 사용 하려는 경우 데이터 원본과 동일한 Active Directory 환경의 멤버인 컴퓨터에 게이트웨이를 설치 해야 합니다.
 
-  * 게이트웨이 설치를 위해 선택한 지역은 나중에 논리 앱에 대 한 Azure 게이트웨이 리소스를 만들 때 선택 해야 하는 위치와 동일 합니다. 기본적으로이 지역은 azure 계정을 관리 하는 Azure AD 테 넌 트와 동일한 위치입니다. 그러나 게이트웨이를 설치 하는 동안에는 위치를 변경할 수 있습니다.
+  * 게이트웨이 설치를 위해 선택한 지역은 나중에 논리 앱에 대 한 Azure 게이트웨이 리소스를 만들 때 선택 해야 하는 위치와 동일 합니다. 기본적으로이 지역은 azure 계정을 관리 하는 Azure AD 테넌트와 동일한 위치입니다. 그러나 게이트웨이를 설치 하는 동안에는 위치를 변경할 수 있습니다.
 
   * 게이트웨이 설치를 최신 버전으로 업데이트 하는 경우 클리너 환경을 위해 현재 게이트웨이를 먼저 제거 합니다.
 
@@ -102,7 +102,7 @@ ms.locfileid: "74893689"
 
 1. 게이트웨이 설치에 대해 다음 정보를 제공합니다.
 
-   * Azure AD 테 넌 트 전체에서 고유한 게이트웨이 이름
+   * Azure AD 테넌트 전체에서 고유한 게이트웨이 이름
    * 사용 하려는 복구 키 (8 자 이상 이어야 함)
    * 복구 키 확인
 
@@ -113,7 +113,7 @@ ms.locfileid: "74893689"
 
    [고가용성 시나리오](#high-availability)에 대 한 추가 게이트웨이를 설치할 때 선택 하는 **기존 게이트웨이 클러스터에 추가**하는 옵션을 확인 합니다.
 
-1. 게이트웨이를 설치 하는 데 사용 되는 [Azure Service Bus](https://azure.microsoft.com/services/service-bus/) 게이트웨이 클라우드 서비스에 대 한 지역을 확인 합니다. 기본적으로이 지역은 Azure 계정에 대 한 Azure AD 테 넌 트와 동일한 위치입니다.
+1. 게이트웨이를 설치 하는 데 사용 되는 [Azure Service Bus](https://azure.microsoft.com/services/service-bus/) 게이트웨이 클라우드 서비스에 대 한 지역을 확인 합니다. 기본적으로이 지역은 Azure 계정에 대 한 Azure AD 테넌트와 동일한 위치입니다.
 
    ![게이트웨이 서비스 및 서비스 버스에 대 한 영역 확인](./media/logic-apps-gateway-install/confirm-gateway-region.png)
 
@@ -182,9 +182,9 @@ ms.locfileid: "74893689"
 
 1. 준비가 되 면 작업을 완료할 수 있도록 **구성** 을 선택 합니다.
 
-## <a name="tenant-level-administration"></a>테 넌 트 수준 관리
+## <a name="tenant-level-administration"></a>테넌트 수준 관리
 
-Azure AD 테 넌 트의 모든 온-프레미스 데이터 게이트웨이에 대 한 가시성을 확보 하기 위해 테 넌 트의 전역 관리자는 테 넌 트 관리자로 [Power Platform 관리 센터](https://powerplatform.microsoft.com) 에 로그인 하 고 **데이터 게이트웨이** 옵션을 선택할 수 있습니다. 자세한 내용은 [온-프레미스 데이터 게이트웨이에 대 한 테 넌 트 수준 관리](https://docs.microsoft.com/data-integration/gateway/service-gateway-tenant-level-admin)를 참조 하세요.
+Azure AD 테넌트의 모든 온-프레미스 데이터 게이트웨이에 대 한 가시성을 확보 하기 위해 테넌트의 전역 관리자는 테넌트 관리자로 [Power Platform 관리 센터](https://powerplatform.microsoft.com) 에 로그인 하 고 **데이터 게이트웨이** 옵션을 선택할 수 있습니다. 자세한 내용은 [온-프레미스 데이터 게이트웨이에 대 한 테넌트 수준 관리](https://docs.microsoft.com/data-integration/gateway/service-gateway-tenant-level-admin)를 참조 하세요.
 
 <a name="restart-gateway"></a>
 
@@ -232,7 +232,7 @@ Azure AD 테 넌 트의 모든 온-프레미스 데이터 게이트웨이에 대
 
 ### <a name="azure-active-directory-azure-ad"></a>Azure AD(Azure Active Directory)
 
-Microsoft 클라우드 서비스는 [AZURE AD](../active-directory/fundamentals/active-directory-whatis.md) 를 사용 하 여 사용자를 인증 합니다. Azure AD 테 넌 트에는 사용자 이름 및 보안 그룹이 포함 됩니다. 일반적으로 로그인 하는 데 사용 하는 전자 메일 주소는 계정에 대 한 UPN (사용자 계정 이름)과 동일 합니다.
+Microsoft 클라우드 서비스는 [AZURE AD](../active-directory/fundamentals/active-directory-whatis.md) 를 사용 하 여 사용자를 인증 합니다. Azure AD 테넌트에는 사용자 이름 및 보안 그룹이 포함 됩니다. 일반적으로 로그인 하는 데 사용 하는 전자 메일 주소는 계정에 대 한 UPN (사용자 계정 이름)과 동일 합니다.
 
 ### <a name="what-is-my-upn"></a>UPN 이란?
 
@@ -248,12 +248,12 @@ Azure AD와 온-프레미스 Active Directory 계정을 일치 시킬 수 있는
 
   Azure Portal 또는 Microsoft 365 관리 센터에 계정을 만듭니다. 계정 이름이 온-프레미스 Active Directory 계정의 UPN과 일치 하는지 확인 합니다.
 
-* Azure Active Directory Connect 도구를 사용 하 여 Azure AD 테 넌 트에 로컬 계정을 동기화 합니다.
+* Azure Active Directory Connect 도구를 사용 하 여 Azure AD 테넌트에 로컬 계정을 동기화 합니다.
 
-  Azure AD Connect 도구는 디렉터리 동기화 및 인증 설정에 대 한 옵션을 제공 합니다. 이러한 옵션에는 암호 해시 동기화, 통과 인증 및 페더레이션이 포함 됩니다. 테 넌 트 관리자 또는 로컬 도메인 관리자가 아닌 경우 IT 관리자에 게 문의 하 여 Azure AD Connect 설정 하세요. Azure AD Connect Azure AD UPN이 로컬 Active Directory UPN과 일치 하는지 확인 합니다. 이러한 일치는 SSO (Power BI 또는 Single Sign-On) 기능을 사용 하 여 Analysis Services 라이브 연결을 사용 하는 경우에 유용 합니다.
+  Azure AD Connect 도구는 디렉터리 동기화 및 인증 설정에 대 한 옵션을 제공 합니다. 이러한 옵션에는 암호 해시 동기화, 통과 인증 및 페더레이션이 포함 됩니다. 테넌트 관리자 또는 로컬 도메인 관리자가 아닌 경우 IT 관리자에 게 문의 하 여 Azure AD Connect 설정 하세요. Azure AD Connect Azure AD UPN이 로컬 Active Directory UPN과 일치 하는지 확인 합니다. 이러한 일치는 SSO (Power BI 또는 Single Sign-On) 기능을 사용 하 여 Analysis Services 라이브 연결을 사용 하는 경우에 유용 합니다.
 
   > [!NOTE]
-  > 계정을 Azure AD Connect 도구와 동기화 하면 Azure AD 테 넌 트에 새 계정이 만들어집니다.
+  > 계정을 Azure AD Connect 도구와 동기화 하면 Azure AD 테넌트에 새 계정이 만들어집니다.
 
 <a name="faq"></a>
 

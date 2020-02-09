@@ -37,5 +37,5 @@ Azure Portal을 사용하여 Resource Manager 배포 모델에서 VNet을 만들
    - **주소 범위**: 10.1.0.0/24
 
    ![가상 네트워크 만들기 페이지](./media/vpn-gateway-create-virtual-network-portal-include/create-virtual-network1.png)
-5. DDoS를 기본으로, 서비스 끝점을 사용 안 함으로 설정 하 고 방화벽을 사용 안 함으로 유지 합니다.
+5. DDoS를 기본으로, 서비스 엔드포인트을 사용 안 함으로 설정 하 고 방화벽을 사용 안 함으로 유지 합니다.
 6. **만들기**를 클릭하여 VNet을 만듭니다.

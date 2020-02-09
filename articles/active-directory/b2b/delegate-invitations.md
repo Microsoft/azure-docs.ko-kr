@@ -35,7 +35,7 @@ Azure AD B2B 협업을 사용하면 테넌트 관리자가 다음 초대 정책�
 
 ### <a name="to-configure-external-collaboration-settings"></a>외부 공동 작업 설정을 구성 하려면:
 
-1. 테 넌 트 관리자로 [Azure Portal](https://portal.azure.com) 에 로그인 합니다.
+1. 테넌트 관리자로 [Azure Portal](https://portal.azure.com) 에 로그인 합니다.
 2. **Azure Active Directory** > **사용자** > **사용자 설정**을 선택합니다.
 3. **외부 사용자**에서 **외부 협업 설정 관리**를 선택합니다.
    > [!NOTE]

@@ -30,7 +30,7 @@ Azure Database Migration Service는 기존 도구 및 서비스의 일부 기능
 
 ## <a name="regional-availability"></a>지역별 가용성
 
-Azure Database Migration Service 지역 가용성에 대 한 최신 정보는 [지역별 사용 가능한 제품](https://azure.microsoft.com/global-infrastructure/services/?products=database-migration)을 참조 하세요.
+Azure Database Migration Service 지역 가용성에 대한 최신 정보는 [지역별 사용 가능한 제품](https://azure.microsoft.com/global-infrastructure/services/?products=database-migration)을 참조 하세요.
 
 ## <a name="pricing"></a>가격
 
@@ -42,5 +42,5 @@ Azure Database Migration Service 가격 책정에 대한 최신 정보는 [Azure
 * [Azure Portal를 사용 하 여 Azure Database Migration Service의 인스턴스를 만듭니다](quickstart-create-data-migration-service-portal.md).
 * [SQL Server를 Azure SQL Database로 마이그레이션](tutorial-sql-server-to-azure-sql.md).
 * [Azure Database Migration Service 사용을 위한 필수 구성 요소 개요](pre-reqs.md)
-* [Azure Database Migration Service 사용에 대 한 FAQ](faq.md)입니다.
+* [Azure Database Migration Service 사용에 대한 FAQ](faq.md)입니다.
 * [데이터 마이그레이션 시나리오에 사용할 수 있는 서비스 및 도구](dms-tools-matrix.md).

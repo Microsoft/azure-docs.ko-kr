@@ -43,7 +43,7 @@ Azure Data Factory는 스케일 아웃, 관리되는 데이터 이동 솔루션�
    
    ![새 창에서 Data Factory 선택](./media/quickstart-create-data-factory-portal/new-azure-data-factory-menu.png)
 
-2. **새 데이터 팩터리** 페이지에서 다음 이미지에 표시 된 필드에 대 한 값을 제공 합니다. 
+2. **새 데이터 팩터리** 페이지에서 다음 이미지에 표시 된 필드에 대한 값을 제공 합니다. 
       
    ![새 데이터 팩터리 페이지](./media/load-azure-data-lake-storage-gen2-from-gen1/new-azure-data-factory.png)
  
@@ -129,7 +129,7 @@ Azure Data Factory는 스케일 아웃, 관리되는 데이터 이동 솔루션�
 
     ![작업 실행 모니터링](./media/load-azure-data-lake-storage-gen2-from-gen1/monitor-activity-runs.png)
 
-16. 각 복사 작업의 실행 세부 정보를 모니터링하려면 작업 모니터링 보기의 **작업** 아래에서 **세부 정보** 링크(안경 이미지)를 선택합니다. 원본에서 싱크로 복사 되는 데이터 볼륨, 데이터 처리량, 해당 기간에 대 한 실행 단계 및 사용 된 구성과 같은 세부 정보를 모니터링할 수 있습니다.
+16. 각 복사 작업의 실행 세부 정보를 모니터링하려면 작업 모니터링 보기의 **작업** 아래에서 **세부 정보** 링크(안경 이미지)를 선택합니다. 원본에서 싱크로 복사 되는 데이터 볼륨, 데이터 처리량, 해당 기간에 대한 실행 단계 및 사용 된 구성과 같은 세부 정보를 모니터링할 수 있습니다.
 
     ![작업 실행 세부 정보 모니터링](./media/load-azure-data-lake-storage-gen2-from-gen1/monitor-activity-run-details.png)
 
@@ -159,7 +159,7 @@ Data Lake Storage Gen1에서 데이터를 읽고 Data Lake Storage Gen2에 데�
 
 ### <a name="permissions"></a>권한 
 
-Data Factory에서 [Data Lake Storage Gen1 커넥터](connector-azure-data-lake-store.md) 는 Azure 리소스 인증에 대 한 서비스 주체 및 관리 id를 지원 합니다. [Data Lake Storage Gen2 커넥터](connector-azure-data-lake-storage.md) 는 Azure 리소스 인증에 대 한 계정 키, 서비스 주체 및 관리 id를 지원 합니다. 필요한 모든 파일 또는 Acl (액세스 제어 목록)을 탐색 하 고 복사할 수 Data Factory 있도록 하려면 사용자가 제공 하는 계정에 대 한 충분 한 권한을 부여 하 여 모든 파일을 액세스, 읽기 또는 작성 하 고 원하는 경우 Acl을 설정 합니다. 마이그레이션 기간 중에 슈퍼 사용자 또는 소유자 역할을 부여 합니다. 
+Data Factory에서 [Data Lake Storage Gen1 커넥터](connector-azure-data-lake-store.md) 는 Azure 리소스 인증에 대한 서비스 주체 및 관리 id를 지원 합니다. [Data Lake Storage Gen2 커넥터](connector-azure-data-lake-storage.md) 는 Azure 리소스 인증에 대한 계정 키, 서비스 주체 및 관리 id를 지원 합니다. 필요한 모든 파일 또는 Acl (액세스 제어 목록)을 탐색 하 고 복사할 수 Data Factory 있도록 하려면 사용자가 제공 하는 계정에 대한 충분 한 권한을 부여 하 여 모든 파일을 액세스, 읽기 또는 작성 하 고 원하는 경우 Acl을 설정 합니다. 마이그레이션 기간 중에 슈퍼 사용자 또는 소유자 역할을 부여 합니다. 
 
 ### <a name="preserve-acls-from-data-lake-storage-gen1"></a>Data Lake Storage Gen1에서 Acl 유지
 

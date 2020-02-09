@@ -44,12 +44,12 @@ ms.locfileid: "75933327"
 
 
 * 함수는 ```warmup``` (대/소문자 구분 안 함)로 명명 되어야 하 고 앱 당 하나의 준비 함수만 있을 수 있습니다.
-* 워밍업을 .NET 클래스 라이브러리 함수로 사용 하려면 WebJobs에 대 한 패키지 참조가 있는지 확인 하세요. **> = 3.0.5**
+* 워밍업을 .NET 클래스 라이브러리 함수로 사용 하려면 WebJobs에 대한 패키지 참조가 있는지 확인 하세요. **> = 3.0.5**
     * ```<PackageReference Include="Microsoft.Azure.WebJobs.Extensions" Version="3.0.5" />```
 
 
 자리 표시자 주석은 응용 프로그램에서 공유 종속성을 선언 하 고 초기화 하는 위치를 보여 줍니다. 
-[공유 종속성에 대 한 자세한 내용은 여기를 참조](./manage-connections.md#client-code-examples)하세요.
+[공유 종속성에 대한 자세한 내용은 여기를 참조](./manage-connections.md#client-code-examples)하세요.
 
 ```cs
 using Microsoft.Azure.WebJobs;
@@ -251,7 +251,7 @@ Python에서 특성을 지원 하지 않습니다.
 
 ## <a name="trigger---usage"></a>트리거 - 사용
 
-호출 된 준비 트리거 함수에 대 한 추가 정보가 제공 되지 않습니다.
+호출 된 준비 트리거 함수에 대한 추가 정보가 제공 되지 않습니다.
 
 ## <a name="trigger---limits"></a>트리거 - 제한
 

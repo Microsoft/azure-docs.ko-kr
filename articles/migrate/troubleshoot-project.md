@@ -49,10 +49,10 @@ Azure Migrate 프로젝트를 만들려면 구독에 대 한 참가자 또는 �
 - 일시적인 오류일 경우에 대비 하 여 프로젝트를 다시 만들어 보세요. **배포**에서 다시 **배포** 를 클릭 하 여 다시 시도 합니다.
 - 구독에 대 한 참가자 또는 소유자 권한이 있는지 확인 합니다.
 - 새로 추가 된 지리에 배포 하는 경우 잠시 기다린 후 다시 시도 합니다.
-- "요청에 사용자 id 헤더가 포함 되어야 합니다." 라는 오류가 표시 되 면 조직의 Azure Active Directory (Azure AD) 테 넌 트에 액세스할 수 없음을 나타낼 수 있습니다. 이 경우 다음과 같습니다.
-    - Azure AD 테 넌 트에 처음 추가 하는 경우 테 넌 트에 가입 하 라는 전자 메일 초대를 받게 됩니다.
-    - 테 넌 트에 추가 될 초대를 수락 합니다.
-    - 전자 메일을 볼 수 없는 경우 테 넌 트에 대 한 액세스 권한이 있는 사용자에 게 연락 하 여 사용자에 게 초대를 다시 [보내도록](https://docs.microsoft.com/azure/active-directory/b2b/add-users-administrator#resend-invitations-to-guest-users) 요청 합니다.
+- "요청에 사용자 id 헤더가 포함 되어야 합니다." 라는 오류가 표시 되 면 조직의 Azure Active Directory (Azure AD) 테넌트에 액세스할 수 없음을 나타낼 수 있습니다. 이 경우 다음과 같습니다.
+    - Azure AD 테넌트에 처음 추가 하는 경우 테넌트에 가입 하 라는 전자 메일 초대를 받게 됩니다.
+    - 테넌트에 추가 될 초대를 수락 합니다.
+    - 전자 메일을 볼 수 없는 경우 테넌트에 대 한 액세스 권한이 있는 사용자에 게 연락 하 여 사용자에 게 초대를 다시 [보내도록](https://docs.microsoft.com/azure/active-directory/b2b/add-users-administrator#resend-invitations-to-guest-users) 요청 합니다.
     - 초대 전자 메일을 받은 후이를 열고 초대를 수락 하기 위한 링크를 선택 합니다. 그런 다음 Azure Portal 로그 아웃 하 고 다시 로그인 합니다. 브라우저 새로 고침은 작동 하지 않습니다. 그런 다음 마이그레이션 프로젝트 만들기를 시작할 수 있습니다.
 
 ## <a name="how-do-i-delete-a-project"></a>프로젝트를 삭제 어떻게 할까요?

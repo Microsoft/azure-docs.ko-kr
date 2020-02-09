@@ -194,7 +194,7 @@ Azure Cosmos DB(SQL API)에서 데이터를 복사하려면 복사 작업의 **s
 ]
 ```
 
-[JSON 문서를 있는 그대로 내보내려는](#import-and-export-json-documents)경우를 제외 하 고 Cosmos DB에서 데이터를 복사 하는 경우 복사 작업에서 매핑을 지정 하는 것이 가장 좋습니다. Data Factory는 활동에 대해 지정한 매핑을 준수 합니다. 행에 열에 대 한 값이 포함 되어 있지 않으면 열 값에 대해 null 값이 제공 됩니다. 매핑을 지정 하지 않으면 Data Factory은 데이터의 첫 번째 행을 사용 하 여 스키마를 유추 합니다. 첫 번째 행에 전체 스키마가 포함 되어 있지 않으면 일부 열이 활동 작업의 결과에서 누락 됩니다.
+[JSON 문서를 있는 그대로 내보내려는](#import-and-export-json-documents)경우를 제외 하 고 Cosmos DB에서 데이터를 복사 하는 경우 복사 작업에서 매핑을 지정 하는 것이 가장 좋습니다. Data Factory는 활동에 대해 지정한 매핑을 준수 합니다. 행에 열에 대한 값이 포함 되어 있지 않으면 열 값에 대해 null 값이 제공 됩니다. 매핑을 지정 하지 않으면 Data Factory은 데이터의 첫 번째 행을 사용 하 여 스키마를 유추 합니다. 첫 번째 행에 전체 스키마가 포함 되어 있지 않으면 일부 열이 활동 작업의 결과에서 누락 됩니다.
 
 ### <a name="azure-cosmos-db-sql-api-as-sink"></a>Azure Cosmos DB(SQL API) 싱크
 
@@ -207,7 +207,7 @@ Azure Cosmos DB(SQL API)로 데이터를 복사하려면 복사 작업의 **sink
 | type | 복사 작업 싱크의 **type** 속성은 **CosmosDbSqlApiSink**로 설정 해야 합니다. |예 |
 | writeBehavior |Azure Cosmos DB에 데이터를 쓰는 방법을 설명합니다. 허용되는 값은 **insert** 및 **upsert**입니다.<br/><br/>**upsert**의 동작은 동일한 ID의 문서가 이미 존재하는 경우 문서를 바꾸는 것이며, 존재하지 않는 경우 문서를 삽입하는 것입니다.<br /><br />**참고**: ID가 원래 문서 또는 열 매핑에 지정되지 않은 경우 Data Factory는 문서에 대한 ID를 자동으로 생성합니다. 즉, **upsert**가 예상대로 작동하려면 문서에 ID가 있는지 확인해야 합니다. |아닙니다.<br />(기본값: **insert**) |
 | writeBatchSize | Data Factory는 [Azure Cosmos DB 대량 실행기 라이브러리](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started)를 사용하여 Azure Cosmos DB에 데이터를 씁니다. **Writebatchsize** 속성은 ADF가 라이브러리에 제공 하는 문서 크기를 제어 합니다. 성능을 개선하기 위해 **writeBatchSize**에 대한 값을 늘리고 문서 크기가 커지는 경우 값을 줄이도록 시도할 수 있습니다. 아래 팁을 참조하세요. |아닙니다.<br />(기본값: **10,000**) |
-| disableMetricsCollection | Data Factory 복사 성능 최적화 및 권장 사항에 대 한 Cosmos DB RUs와 같은 메트릭을 수집 합니다. 이 동작에 관심이 있는 경우 `true` 지정 하 여 해제 합니다. | 아니요(기본값: `false`) |
+| disableMetricsCollection | Data Factory 복사 성능 최적화 및 권장 사항에 대한 Cosmos DB RUs와 같은 메트릭을 수집 합니다. 이 동작에 관심이 있는 경우 `true` 지정 하 여 해제 합니다. | 아니요(기본값: `false`) |
 
 >[!TIP]
 >JSON 문서를 있는 그대로 가져오려면 [json 문서 가져오기/내보내기](#import-and-export-json-documents) 섹션을 참조 하세요. 테이블 형식 데이터에서 복사 하려면 [관계형 데이터베이스에서 Cosmos DB로 마이그레이션](#migrate-from-relational-database-to-cosmos-db)을 참조 하세요.
@@ -255,7 +255,7 @@ Azure Cosmos DB에서 테이블 형식 싱크로 또는 역방향으로 데이�
 
 ## <a name="mapping-data-flow-properties"></a>데이터 흐름 속성 매핑
 
-매핑 데이터 흐름에서 데이터를 변환 하는 경우 Cosmos DB에서 컬렉션에 대 한 읽기 및 쓰기를 수행할 수 있습니다. 자세한 내용은 데이터 흐름 매핑에서 [원본 변환](data-flow-source.md) 및 [싱크 변환을](data-flow-sink.md) 참조 하세요.
+매핑 데이터 흐름에서 데이터를 변환 하는 경우 Cosmos DB에서 컬렉션에 대한 읽기 및 쓰기를 수행할 수 있습니다. 자세한 내용은 데이터 흐름 매핑에서 [원본 변환](data-flow-source.md) 및 [싱크 변환을](data-flow-sink.md) 참조 하세요.
 
 ### <a name="source-transformation"></a>원본 변환
 
@@ -265,9 +265,9 @@ Azure Cosmos DB 관련 된 설정은 원본 변환의 **원본 옵션** 탭에�
 
 **페이지 크기:** 쿼리 결과의 페이지당 문서 수입니다. 기본값은 서비스 동적 페이지를 1000까지 사용 하는 "-1"입니다.
 
-**처리량:** 읽기 작업을 수행 하는 동안이 데이터 흐름을 실행할 때마다 CosmosDB collection에 적용할 RUs 수에 대 한 선택적 값을 설정 합니다. 최소값은 400입니다.
+**처리량:** 읽기 작업을 수행 하는 동안이 데이터 흐름을 실행할 때마다 CosmosDB collection에 적용할 RUs 수에 대한 선택적 값을 설정 합니다. 최소값은 400입니다.
 
-**기본 설정 영역:** 이 프로세스에 대 한 기본 읽기 영역을 선택 합니다.
+**기본 설정 영역:** 이 프로세스에 대한 기본 읽기 영역을 선택 합니다.
 
 #### <a name="json-settings"></a>JSON 설정
 
@@ -285,23 +285,23 @@ Azure Cosmos DB 관련 된 설정은 원본 변환의 **원본 옵션** 탭에�
 
 Azure Cosmos DB 관련 된 설정은 싱크 변환의 **설정** 탭에서 사용할 수 있습니다.
 
-**업데이트 방법:** 데이터베이스 대상에서 허용 되는 작업을 결정 합니다. 기본값은 삽입만 허용 하는 것입니다. 행을 업데이트, upsert 또는 삭제 하려면 해당 작업에 대 한 행의 태그를 변경 하는 행을 변경 해야 합니다. 업데이트, upsert 및 삭제의 경우 변경할 행을 결정 하기 위해 키 열을 설정 해야 합니다.
+**업데이트 방법:** 데이터베이스 대상에서 허용 되는 작업을 결정 합니다. 기본값은 삽입만 허용 하는 것입니다. 행을 업데이트, upsert 또는 삭제 하려면 해당 작업에 대한 행의 태그를 변경 하는 행을 변경 해야 합니다. 업데이트, upsert 및 삭제의 경우 변경할 행을 결정 하기 위해 키 열을 설정 해야 합니다.
 
 **수집 작업:** 쓰기 전에 대상 컬렉션을 다시 만들지 여부를 결정 합니다.
-* 없음: 컬렉션에 대 한 작업이 수행 되지 않습니다.
+* 없음: 컬렉션에 대한 작업이 수행 되지 않습니다.
 * 다시 만들기: 컬렉션을 삭제 하 고 다시 만듭니다.
 
 **일괄 처리 크기**: 각 버킷에 작성 되는 행 수를 제어 합니다. 일괄 처리 크기가 클수록 압축 및 메모리 최적화가 향상 되지만 데이터를 캐시할 때 메모리 예외가 발생할 위험이 있습니다.
 
-**파티션 키:** 컬렉션에 대 한 파티션 키를 나타내는 문자열을 입력 합니다. 예: ```/movies/title```
+**파티션 키:** 컬렉션에 대한 파티션 키를 나타내는 문자열을 입력 합니다. 예: ```/movies/title```
 
-**처리량:** 이 데이터 흐름을 실행할 때마다 CosmosDB collection에 적용 하려는 RUs 수에 대 한 선택적 값을 설정 합니다. 최소값은 400입니다.
+**처리량:** 이 데이터 흐름을 실행할 때마다 CosmosDB collection에 적용 하려는 RUs 수에 대한 선택적 값을 설정 합니다. 최소값은 400입니다.
 
 **쓰기 처리량 예산:** 대량 수집 Spark 작업에 할당 하려는 RUs의 수를 나타내는 정수입니다. 이 수는 컬렉션에 할당 된 총 처리량을 초과 합니다.
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
+속성에 대한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
 
 ## <a name="import-and-export-json-documents"></a>JSON 문서 가져오기 및 내보내기
 
@@ -318,7 +318,7 @@ Azure Cosmos DB 관련 된 설정은 싱크 변환의 **설정** 탭에서 사�
 
 ## <a name="migrate-from-relational-database-to-cosmos-db"></a>관계형 데이터베이스에서 Cosmos DB로 마이그레이션
 
-관계형 데이터베이스 (예: SQL Server Azure Cosmos DB에서 마이그레이션할 때 복사 작업은 원본에서 테이블 형식 데이터를 Cosmos DB의 플랫 JSON 문서에 쉽게 매핑할 수 있습니다. 경우에 따라 [Azure Cosmos DB에서 데이터 모델링](../cosmos-db/modeling-data.md)에 따라 nosql 사용 사례에 최적화 하도록 데이터 모델을 다시 디자인 하는 것이 좋습니다. 예를 들어 하나의 JSON 문서에 모든 관련 하위 항목을 포함 하 여 데이터를 비 정규화 수 있습니다. 이러한 경우 Azure Data Factory 복사 작업을 사용 하 여이 작업을 수행 하는 방법에 대 한 연습은 [이 블로그 게시물](https://medium.com/@ArsenVlad/denormalizing-via-embedding-when-copying-data-from-sql-to-cosmos-db-649a649ae0fb) 을 참조 하세요.
+관계형 데이터베이스 (예: SQL Server Azure Cosmos DB에서 마이그레이션할 때 복사 작업은 원본에서 테이블 형식 데이터를 Cosmos DB의 플랫 JSON 문서에 쉽게 매핑할 수 있습니다. 경우에 따라 [Azure Cosmos DB에서 데이터 모델링](../cosmos-db/modeling-data.md)에 따라 nosql 사용 사례에 최적화 하도록 데이터 모델을 다시 디자인 하는 것이 좋습니다. 예를 들어 하나의 JSON 문서에 모든 관련 하위 항목을 포함 하 여 데이터를 비 정규화 수 있습니다. 이러한 경우 Azure Data Factory 복사 작업을 사용 하 여이 작업을 수행 하는 방법에 대한 연습은 [이 블로그 게시물](https://medium.com/@ArsenVlad/denormalizing-via-embedding-when-copying-data-from-sql-to-cosmos-db-649a649ae0fb) 을 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

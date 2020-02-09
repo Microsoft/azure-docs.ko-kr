@@ -1,5 +1,5 @@
 ---
-title: 다중 테 넌 트 응용 프로그램 사용-Azure Digital Twins | Microsoft Docs
+title: 다중 테넌트 응용 프로그램 사용-Azure Digital Twins | Microsoft Docs
 description: Azure Digital Twins에 대한 다중 테넌트 Azure Active Directory 애플리케이션을 구성하는 방법
 ms.author: alinast
 author: alinamstanciu

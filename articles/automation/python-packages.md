@@ -32,7 +32,7 @@ Automation 계정의 **공유 리소스** 아래에서 **Python 2 패키지**를
 
 ## <a name="import-packages-with-dependencies"></a>종속성이 있는 패키지 가져오기
 
-Azure automation은 가져오기 프로세스 중에 python 패키지에 대 한 종속성을 확인 하지 않습니다. 모든 종속성이 있는 패키지를 가져오는 방법에는 두 가지가 있습니다. 다음 단계 중 하나만 사용 하 여 패키지를 Automation 계정으로 가져올 수 있습니다.
+Azure automation은 가져오기 프로세스 중에 python 패키지에 대한 종속성을 확인 하지 않습니다. 모든 종속성이 있는 패키지를 가져오는 방법에는 두 가지가 있습니다. 다음 단계 중 하나만 사용 하 여 패키지를 Automation 계정으로 가져올 수 있습니다.
 
 ### <a name="manually-download"></a>수동으로 다운로드
 

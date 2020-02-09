@@ -1,6 +1,6 @@
 ---
-title: Azure AD Domain Services에 대 한 일반적인 배포 시나리오 Microsoft Docs
-description: 가치를 제공 하 고 비즈니스 요구를 충족 하는 Azure Active Directory Domain Services에 대 한 일반적인 시나리오 및 사용 사례에 대해 알아봅니다.
+title: Azure AD Domain Services에 대한 일반적인 배포 시나리오 Microsoft Docs
+description: 가치를 제공 하 고 비즈니스 요구를 충족 하는 Azure Active Directory Domain Services에 대한 일반적인 시나리오 및 사용 사례에 대해 알아봅니다.
 services: active-directory-ds
 author: iainfoulds
 manager: daveba
@@ -18,7 +18,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/04/2019
 ms.locfileid: "73474438"
 ---
-# <a name="common-use-cases-and-scenarios-for-azure-active-directory-domain-services"></a>Azure Active Directory Domain Services에 대 한 일반적인 사용 사례 및 시나리오
+# <a name="common-use-cases-and-scenarios-for-azure-active-directory-domain-services"></a>Azure Active Directory Domain Services에 대한 일반적인 사용 사례 및 시나리오
 
 Azure Active Directory Domain Services (Azure AD DS)는 도메인 가입, 그룹 정책, LDAP (lightweight directory access protocol), Kerberos/NTLM 인증 등의 관리 되는 도메인 서비스를 제공 합니다. Azure AD DS는 기존 Azure AD 테넌트와 통합되므로 사용자가 기존 자격 증명을 사용하여 로그인할 수 있습니다. 클라우드에서 도메인 컨트롤러를 배포, 관리 및 패치 하지 않고도 이러한 도메인 서비스를 사용할 수 있습니다 .이는 온-프레미스 리소스를 Azure로 원활 하 게 리프트 앤 시프트 하는 기능을 제공 합니다.
 
@@ -46,7 +46,7 @@ Azure AD DS는이 사용 사례에 적합 합니다. Azure AD DS 관리 되는 �
 
 ## <a name="lift-and-shift-on-premises-applications-that-use-ldap-bind-authentication"></a>LDAP 바인딩 인증을 사용 하는 리프트 앤 시프트 온-프레미스 응용 프로그램
 
-예를 들어 Contoso는 ISV가 지난 몇 년 전에 구매한 온-프레미스 응용 프로그램을 보유 하 고 있습니다. 응용 프로그램은 현재 ISV에 의해 유지 관리 모드에 있으며 응용 프로그램에 대 한 변경 요청은 매우 비용이 많이 듭니다. 이 응용 프로그램에는 웹 폼을 사용 하 여 사용자 자격 증명을 수집 하 고 온-프레미스 AD DS 환경에 대 한 LDAP 바인딩을 수행 하 여 사용자를 인증 하는 웹 기반 프런트 엔드가 있습니다.
+예를 들어 Contoso는 ISV가 지난 몇 년 전에 구매한 온-프레미스 응용 프로그램을 보유 하 고 있습니다. 응용 프로그램은 현재 ISV에 의해 유지 관리 모드에 있으며 응용 프로그램에 대한 변경 요청은 매우 비용이 많이 듭니다. 이 응용 프로그램에는 웹 폼을 사용 하 여 사용자 자격 증명을 수집 하 고 온-프레미스 AD DS 환경에 대한 LDAP 바인딩을 수행 하 여 사용자를 인증 하는 웹 기반 프런트 엔드가 있습니다.
 
 ![LDAP 바인딩](./media/active-directory-domain-services-scenarios/ldap-bind.png)
 
@@ -58,12 +58,12 @@ Contoso는이 응용 프로그램을 Azure로 마이그레이션해야 합니다
 
 이 예제 사용 사례에 적용 되는 배포 고려 사항은 다음과 같습니다.
 
-* 응용 프로그램에서 디렉터리에 대 한 수정/쓰기가 필요 하지 않은지 확인 합니다. Azure AD DS 관리 되는 도메인에 대 한 LDAP 쓰기 액세스는 지원 되지 않습니다.
+* 응용 프로그램에서 디렉터리에 대한 수정/쓰기가 필요 하지 않은지 확인 합니다. Azure AD DS 관리 되는 도메인에 대한 LDAP 쓰기 액세스는 지원 되지 않습니다.
 * Azure AD DS 관리 되는 도메인에 대해 직접 암호를 변경할 수 없습니다. 최종 사용자가 Azure AD의 셀프 서비스 암호 변경 메커니즘을 사용하거나 온-프레미스 디렉터리에 대해 암호를 바꿀 수 있습니다. 이러한 변경 내용은 자동으로 동기화 되며 Azure AD DS 관리 되는 도메인에서 사용할 수 있습니다.
 
 ## <a name="lift-and-shift-on-premises-applications-that-use-ldap-read-to-access-the-directory"></a>LDAP read를 사용 하 여 디렉터리에 액세스 하는 리프트 앤 시프트 온-프레미스 응용 프로그램
 
-이전 예제 시나리오와 마찬가지로 Contoso에 거의 10 년 전에 개발 된 온-프레미스 LOB (기간 업무) 응용 프로그램이 있다고 가정해 보겠습니다. 이 응용 프로그램은 디렉터리를 인식 하며 LDAP를 사용 하 여 AD DS에서 사용자에 대 한 정보/특성을 읽도록 설계 되었습니다. 응용 프로그램은 특성을 수정 하거나 디렉터리에 쓰지 않습니다.
+이전 예제 시나리오와 마찬가지로 Contoso에 거의 10 년 전에 개발 된 온-프레미스 LOB (기간 업무) 응용 프로그램이 있다고 가정해 보겠습니다. 이 응용 프로그램은 디렉터리를 인식 하며 LDAP를 사용 하 여 AD DS에서 사용자에 대한 정보/특성을 읽도록 설계 되었습니다. 응용 프로그램은 특성을 수정 하거나 디렉터리에 쓰지 않습니다.
 
 Contoso는이 응용 프로그램을 Azure로 마이그레이션하고 현재이 응용 프로그램을 호스트 하는 에이징 온-프레미스 하드웨어를 사용 중지 하려고 합니다. REST 기반 Azure AD Graph API와 같은 최신 디렉터리 Api를 사용 하도록 응용 프로그램을 다시 작성할 수 없습니다. 리프트 앤 시프트 옵션은 코드를 수정 하거나 응용 프로그램을 다시 작성 하지 않고 클라우드에서 실행 되도록 응용 프로그램을 마이그레이션할 수 있는 경우에 필요 합니다.
 
@@ -73,7 +73,7 @@ Contoso는이 응용 프로그램을 Azure로 마이그레이션하고 현재이
 
 이 예제 사용 사례에 적용 되는 배포 고려 사항은 다음과 같습니다.
 
-* 응용 프로그램에서 디렉터리에 대 한 수정/쓰기가 필요 하지 않은지 확인 합니다. Azure AD DS 관리 되는 도메인에 대 한 LDAP 쓰기 액세스는 지원 되지 않습니다.
+* 응용 프로그램에서 디렉터리에 대한 수정/쓰기가 필요 하지 않은지 확인 합니다. Azure AD DS 관리 되는 도메인에 대한 LDAP 쓰기 액세스는 지원 되지 않습니다.
 * 응용 프로그램에 사용자 지정/확장 Active Directory 스키마가 필요 하지 않은지 확인 합니다. Azure AD DS에서 스키마 확장이 지원 되지 않습니다.
 
 ## <a name="migrate-an-on-premises-service-or-daemon-application-to-azure"></a>온-프레미스 서비스 또는 디먼 응용 프로그램을 Azure로 마이그레이션
@@ -82,7 +82,7 @@ Contoso는이 응용 프로그램을 Azure로 마이그레이션하고 현재이
 
 ![WIA를 사용하는 서비스 계정](./media/active-directory-domain-services-scenarios/wia-service-account.png)
 
-이 예제 시나리오에서 Contoso에는 웹 프런트 엔드, SQL server 및 백 엔드 FTP 서버를 포함 하는 사용자가 작성 한 소프트웨어 자격 증명 모음 응용 프로그램이 있습니다. 서비스 계정을 사용 하는 Windows 통합 인증 FTP 서버에 대 한 웹 프런트 엔드를 인증 합니다. 웹 프런트 엔드는 서비스 계정으로 실행되도록 설정됩니다. 백 엔드 서버는 웹 프런트 엔드에 대한 서비스 계정에서 액세스 권한을 부여하도록 구성됩니다. Contoso는이 응용 프로그램을 Azure로 이동 하기 위해 클라우드에서 자신의 도메인 컨트롤러 Vm을 배포 하 고 관리 하지 않으려고 합니다.
+이 예제 시나리오에서 Contoso에는 웹 프런트 엔드, SQL server 및 백 엔드 FTP 서버를 포함 하는 사용자가 작성 한 소프트웨어 자격 증명 모음 응용 프로그램이 있습니다. 서비스 계정을 사용 하는 Windows 통합 인증 FTP 서버에 대한 웹 프런트 엔드를 인증 합니다. 웹 프런트 엔드는 서비스 계정으로 실행되도록 설정됩니다. 백 엔드 서버는 웹 프런트 엔드에 대한 서비스 계정에서 액세스 권한을 부여하도록 구성됩니다. Contoso는이 응용 프로그램을 Azure로 이동 하기 위해 클라우드에서 자신의 도메인 컨트롤러 Vm을 배포 하 고 관리 하지 않으려고 합니다.
 
 이 시나리오에서는 웹 프런트 엔드, SQL server 및 FTP 서버를 호스트 하는 서버를 Azure Vm으로 마이그레이션하고 Azure AD DS 관리 되는 도메인에 조인할 수 있습니다. 그런 다음 Vm은 앱의 인증 목적으로 온-프레미스 디렉터리에 동일한 서비스 계정을 사용할 수 있습니다 .이는 Azure AD Connect을 사용 하 여 Azure AD를 통해 동기화 됩니다.
 
@@ -95,13 +95,13 @@ Contoso는이 응용 프로그램을 Azure로 마이그레이션하고 현재이
 
 ## <a name="windows-server-remote-desktop-services-deployments-in-azure"></a>Azure의 Windows Server 원격 데스크톱 서비스 배포
 
-Azure AD DS를 사용 하 여 Azure에 배포 된 원격 데스크톱 서버에 관리 되는 도메인 서비스를 제공할 수 있습니다. 이 배포 시나리오에 대 한 자세한 내용은 [Azure AD Domain Services을 RDS 배포와 통합 하는 방법][windows-rds]을 참조 하세요.
+Azure AD DS를 사용 하 여 Azure에 배포 된 원격 데스크톱 서버에 관리 되는 도메인 서비스를 제공할 수 있습니다. 이 배포 시나리오에 대한 자세한 내용은 [Azure AD Domain Services을 RDS 배포와 통합 하는 방법][windows-rds]을 참조 하세요.
 
 ## <a name="domain-joined-hdinsight-clusters-preview"></a>도메인에 가입 된 HDInsight 클러스터 (미리 보기)
 
 Apache 레인저를 사용 하도록 설정 하 여 Azure AD DS 관리 되는 도메인에 가입 된 Azure HDInsight 클러스터를 설정할 수 있습니다. Apache 레인저를 통해 Hive 정책을 만들고 적용할 수 있으며, Excel 또는 Tableau와 같은 ODBC 기반 도구를 사용 하 여 데이터 과학자 같은 사용자가 Hive에 연결할 수 있습니다. 도메인에 가입 된 HDInsight에 HBase, Spark 및 스톰과 같은 다른 워크 로드를 추가 하는 작업을 계속 합니다.
 
-이 배포 시나리오에 대 한 자세한 내용은 [도메인에 가입 된 HDInsight 클러스터를 구성 하는 방법][hdinsight] 을 참조 하세요.
+이 배포 시나리오에 대한 자세한 내용은 [도메인에 가입 된 HDInsight 클러스터를 구성 하는 방법][hdinsight] 을 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -21,7 +21,7 @@ ms.locfileid: "65917237"
 
 네트워크를 구성 하려면 다음 단계를 수행 하겠습니다.
 
-- 계산에 대 한 데이터 상자 Edge 장치에서 네트워크 인터페이스를 사용 하도록 설정
+- 계산에 대한 데이터 상자 Edge 장치에서 네트워크 인터페이스를 사용 하도록 설정
 - 모듈을 추가 하 여 데이터 상자 Edge 계산 네트워크 액세스
 - 모듈을 사용할 수 있는 네트워크 인터페이스에 액세스할 수 확인
 
@@ -34,7 +34,7 @@ ms.locfileid: "65917237"
 - 장치 설치 완료를 데이터 상자 Edge 장치입니다.
 - 마친 **계산 구성** 당 단계는 [자습서: Azure 데이터 상자 Edge를 사용 하 여 데이터 변환](data-box-edge-deploy-configure-compute-advanced.md#configure-compute) 장치의 합니다. 장치는 연결된 된 IoT Hub 리소스는 IoT 장치 및 IoT Edge 장치에 있어야 합니다.
 
-## <a name="enable-network-interface-for-compute"></a>계산에 대 한 네트워크 인터페이스를 사용 하도록 설정
+## <a name="enable-network-interface-for-compute"></a>계산에 대한 네트워크 인터페이스를 사용 하도록 설정
 
 외부 네트워크를 통해 장치에서 실행 되는 모듈에 액세스 하려면 장치에서 네트워크 인터페이스에 IP 주소를 할당 해야 합니다. 로컬 웹 UI에서 이러한 컴퓨팅 설정을 관리 할 수 있습니다.
 
@@ -61,8 +61,8 @@ ms.locfileid: "65917237"
 2. 데이터 상자 Edge 장치에 연결 된 IoT Edge 장치를 선택 합니다. 에 **장치 세부 정보**를 선택 **모듈 설정**합니다. 온 **모듈을 추가**를 선택 **+ 추가** 선택한 후 **IoT Edge 모듈**합니다.
 3. 에 **IoT Edge 사용자 지정 모듈** 블레이드에서:
 
-    1. 지정 된 **이름을** 배포 하려는 웹 서버 앱 모듈에 대 한 합니다.
-    2. 제공 된 **이미지 URI** 모듈 이미지에 대 한 합니다. 제공 된 이름 및 태그와 일치 하는 모듈 검색 됩니다. 이 예에서 `nginx:stable` 으로부터 (안정적으로 태그 지정) 하는 안정적인 nginx 이미지를 끌어오면 [Docker 리포지토리](https://hub.docker.com/_/nginx/)합니다.
+    1. 지정 된 **이름을** 배포 하려는 웹 서버 앱 모듈에 대한 합니다.
+    2. 제공 된 **이미지 URI** 모듈 이미지에 대한 합니다. 제공 된 이름 및 태그와 일치 하는 모듈 검색 됩니다. 이 예에서 `nginx:stable` 으로부터 (안정적으로 태그 지정) 하는 안정적인 nginx 이미지를 끌어오면 [Docker 리포지토리](https://hub.docker.com/_/nginx/)합니다.
     3. 에 **컨테이너 만들기 옵션**, 다음 샘플 코드를 붙여 넣습니다.  
 
         ```
@@ -94,7 +94,7 @@ ms.locfileid: "65917237"
 
     웹 앱이 실행 되는 표시 됩니다.
 
-    ![지정 된 포트를 통해 모듈에 대 한 연결을 확인 합니다.](media/data-box-edge-extend-compute-access-modules/verify-connect-module-1.png)
+    ![지정 된 포트를 통해 모듈에 대한 연결을 확인 합니다.](media/data-box-edge-extend-compute-access-modules/verify-connect-module-1.png)
 
 ## <a name="next-steps"></a>다음 단계
 

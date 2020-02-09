@@ -1,7 +1,7 @@
 ---
 title: 컨트롤 참조 표시
 titleSuffix: Azure AD B2C
-description: Azure AD B2C 표시 컨트롤에 대 한 참조입니다. 표시 컨트롤을 사용 하 여 사용자 지정 정책에 정의 된 사용자 경험 사용자 지정 합니다.
+description: Azure AD B2C 표시 컨트롤에 대한 참조입니다. 표시 컨트롤을 사용 하 여 사용자 지정 정책에 정의 된 사용자 경험 사용자 지정 합니다.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -78,9 +78,9 @@ ms.locfileid: "75479060"
 
 표시 컨트롤의 각 형식에는 다른 표시 클레임, [출력 클레임](#output-claims)및 수행할 [작업](#display-control-actions) 집합이 필요 합니다.
 
-[자체 어설션된 기술 프로필](self-asserted-technical-profile.md#display-claims)에 정의 된 **표시 클레임** 과 마찬가지로 표시 클레임은 표시 컨트롤 내에서 사용자 로부터 수집할 클레임을 나타냅니다. 참조 된 **ClaimType** 요소는 `TextBox` 또는 `DropdownSingleSelect`와 같이 Azure AD B2C에서 지 원하는 사용자 입력 유형에 대해 **userinputtype** 요소를 지정 해야 합니다. **작업**에서 표시 클레임 값을 요구 하는 경우 **필수** 특성을 `true` 설정 하 여 사용자가 특정 표시 클레임에 대 한 값을 제공 하도록 합니다.
+[자체 어설션된 기술 프로필](self-asserted-technical-profile.md#display-claims)에 정의 된 **표시 클레임** 과 마찬가지로 표시 클레임은 표시 컨트롤 내에서 사용자 로부터 수집할 클레임을 나타냅니다. 참조 된 **ClaimType** 요소는 `TextBox` 또는 `DropdownSingleSelect`와 같이 Azure AD B2C에서 지 원하는 사용자 입력 유형에 대해 **userinputtype** 요소를 지정 해야 합니다. **작업**에서 표시 클레임 값을 요구 하는 경우 **필수** 특성을 `true` 설정 하 여 사용자가 특정 표시 클레임에 대한 값을 제공 하도록 합니다.
 
-특정 유형의 표시 컨트롤에 대 한 특정 표시 클레임이 필요 합니다. 예를 들어 **VerificationControl**형식의 표시 컨트롤에는 **VerificationCode** 가 필요 합니다. 특성 **Controlclaimtype** 을 사용 하 여 해당 필수 클레임에 지정 된 DisplayClaim를 지정 합니다. 예:
+특정 유형의 표시 컨트롤에 대한 특정 표시 클레임이 필요 합니다. 예를 들어 **VerificationControl**형식의 표시 컨트롤에는 **VerificationCode** 가 필요 합니다. 특성 **Controlclaimtype** 을 사용 하 여 해당 필수 클레임에 지정 된 DisplayClaim를 지정 합니다. 예:
 
 ```XML
 <DisplayClaim ClaimTypeReferenceId="otpCode" ControlClaimType="VerificationCode" Required="true" />

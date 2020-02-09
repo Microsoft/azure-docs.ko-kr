@@ -15,7 +15,7 @@ ms.locfileid: "76280937"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mariadb-preview-using-cli"></a>CLI를 사용 하 여 Azure Database for MariaDB (미리 보기)에 대 한 개인 링크 만들기 및 관리
 
-프라이빗 엔드포인트는 Azure에서 프라이빗 링크를 만드는 데 사용되는 기본 구성 요소입니다. 프라이빗 엔드포인트는 VM(Virtual Machines) 같은 Azure 리소스가 프라이빗 링크 리소스와 비공개로 통신할 수 있게 해줍니다. 이 문서에서는 azure 개인 끝점을 사용 하 여 Azure Virtual Network 및 Azure Database for MariaDB 서버에서 VM을 만드는 Azure CLI를 사용 하는 방법을 알아봅니다.
+프라이빗 엔드포인트는 Azure에서 프라이빗 링크를 만드는 데 사용되는 기본 구성 요소입니다. 프라이빗 엔드포인트는 VM(Virtual Machines) 같은 Azure 리소스가 프라이빗 링크 리소스와 비공개로 통신할 수 있게 해줍니다. 이 문서에서는 azure 개인 엔드포인트을 사용 하 여 Azure Virtual Network 및 Azure Database for MariaDB 서버에서 VM을 만드는 Azure CLI를 사용 하는 방법을 알아봅니다.
 
 > [!NOTE]
 > 이 기능은 Azure Database for MariaDB 범용 및 메모리 액세스에 최적화 된 가격 책정 계층을 지 원하는 모든 Azure 지역에서 사용할 수 있습니다.
@@ -85,7 +85,7 @@ az mariadb server create \
 MariaDB 서버 ID는 다음 단계에서 MariaDB 서버 ID를 사용 하 ```/subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.DBforMariaDB/servers/servername.```와 유사 합니다. 
 
 ## <a name="create-the-private-endpoint"></a>프라이빗 엔드포인트 만들기 
-Virtual Network에서 다음과 같이 Aadb 서버에 대 한 개인 끝점을 만듭니다. 
+Virtual Network에서 다음과 같이 Aadb 서버에 대 한 개인 엔드포인트을 만듭니다. 
 ```azurecli-interactive
 az network private-endpoint create \  
     --name myPrivateEndpoint \  
@@ -186,4 +186,4 @@ az group delete --name myResourceGroup --yes
 ```
 
 ## <a name="next-steps"></a>다음 단계
-[Azure 개인 끝점 이란?](https://docs.microsoft.com/azure/private-link/private-endpoint-overview) 에 대해 자세히 알아보세요.
+[Azure 개인 엔드포인트 이란?](https://docs.microsoft.com/azure/private-link/private-endpoint-overview) 에 대해 자세히 알아보세요.

@@ -21,7 +21,7 @@ ms.locfileid: "74172635"
 >
 > * PowerShell을 설정 하 고 Azure Recovery Services 공급자를 등록 합니다.
 > * Recovery Services 자격 증명 모음을 만듭니다.
-> * Azure VM 내에서 SQL DB에 대 한 백업을 구성 합니다.
+> * Azure VM 내에서 SQL DB에 대한 백업을 구성 합니다.
 > * 백업 작업을 실행 합니다.
 > * 백업 된 SQL DB를 복원 합니다.
 > * 백업 및 복원 작업을 모니터링 합니다.
@@ -30,7 +30,7 @@ ms.locfileid: "74172635"
 
 * Recovery Services 자격 증명 모음에 대해 [자세히 알아보세요](backup-azure-recovery-services-vault-overview.md) .
 * [Azure vm 내에서 SQL db를 백업](backup-azure-sql-database.md#before-you-start)하기 위한 기능 기능에 대해 알아보세요.
-* Recovery Services에 대 한 PowerShell 개체 계층 구조를 검토 합니다.
+* Recovery Services에 대한 PowerShell 개체 계층 구조를 검토 합니다.
 
 ### <a name="recovery-services-object-hierarchy"></a>Recovery Services 개체 계층 구조
 
@@ -52,7 +52,7 @@ PowerShell을 다음과 같이 설정 합니다.
     Get-Command *azrecoveryservices*
     ```
 
-3. Azure Backup 및 Recovery Services 자격 증명 모음에 대 한 별칭 및 cmdlet을 검토 합니다. 다음은 표시 될 수 있는 항목의 예입니다. Cmdlet의 전체 목록은 아닙니다.
+3. Azure Backup 및 Recovery Services 자격 증명 모음에 대한 별칭 및 cmdlet을 검토 합니다. 다음은 표시 될 수 있는 항목의 예입니다. Cmdlet의 전체 목록은 아닙니다.
 
     ![Recovery Services cmdlet 목록](./media/backup-azure-afs-automation/list-of-recoveryservices-ps-az.png)
 
@@ -60,7 +60,7 @@ PowerShell을 다음과 같이 설정 합니다.
 5. 표시 되는 웹 페이지에 계정 자격 증명을 입력 하 라는 메시지가 표시 됩니다.
 
     * 또는 **자격**증명을 사용 하 여 **AzAccount** cmdlet에 계정 자격 증명을 매개 변수로 포함할 수 있습니다.
-    * 테 넌 트에 대해 작동 하는 CSP 파트너 인 경우 해당 tenantID 또는 테 넌 트 주 도메인 이름을 사용 하 여 고객을 테 넌 트로 지정 합니다. 예: **Connect-AzAccount -Tenant** fabrikam.com.
+    * 테넌트에 대해 작동 하는 CSP 파트너 인 경우 해당 tenantID 또는 테넌트 주 도메인 이름을 사용 하 여 고객을 테넌트로 지정 합니다. 예: **Connect-AzAccount -Tenant** fabrikam.com.
 
 6. 계정에 여러 구독이 있을 수 있으므로 사용 하려는 구독을 계정과 연결 합니다.
 
@@ -103,7 +103,7 @@ Recovery Services 자격 증명 모음은 Resource Manager 리소스이므로 �
 3. 자격 증명 모음 저장소에 사용할 중복성 유형을 지정 합니다.
 
     * [로컬 중복 스토리지](../storage/common/storage-redundancy-lrs.md) 또는 [지역 중복 스토리지](../storage/common/storage-redundancy-grs.md)를 사용할 수 있습니다.
-    * 다음 예에서는 **GeoRedundant**로 설정 된 **testvault 된** 에 대 한 **BackupStorageRedundancy** 옵션을[AzRecoveryServicesBackupProperty](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperty) cmd로 설정 합니다.
+    * 다음 예에서는 **GeoRedundant**로 설정 된 **testvault 된** 에 대한 **BackupStorageRedundancy** 옵션을[AzRecoveryServicesBackupProperty](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperty) cmd로 설정 합니다.
 
     ```powershell
     $vault1 = Get-AzRecoveryServicesVault -Name "testvault"
@@ -172,7 +172,7 @@ $schpol.ScheduleRunTimes[0] = $UtcTime
 > [!IMPORTANT]
 > 30 분의 배수로 시작 시간을 제공 해야 합니다. 위의 예제에서 "01:00:00" 또는 "02:30:00"만 가능 합니다. 시작 시간은 "01:15:00" 일 수 없습니다.
 
-다음 예제에서는 일정 정책 및 보존 정책을 변수에 저장합니다. 그런 다음 해당 변수를 새 정책에 대 한 매개 변수로 사용 합니다 (**Newsqlpolicy**). **Newsqlpolicy** 는 매일 "전체" 백업을 수행 하며, 180 일 동안 유지 하 고 2 시간 마다 로그 백업을 수행 합니다.
+다음 예제에서는 일정 정책 및 보존 정책을 변수에 저장합니다. 그런 다음 해당 변수를 새 정책에 대한 매개 변수로 사용 합니다 (**Newsqlpolicy**). **Newsqlpolicy** 는 매일 "전체" 백업을 수행 하며, 180 일 동안 유지 하 고 2 시간 마다 로그 백업을 수행 합니다.
 
 ```powershell
 $schPol = Get-AzRecoveryServicesBackupSchedulePolicyObject -WorkloadType "MSSQL"
@@ -203,7 +203,7 @@ Register-AzRecoveryServicesBackupContainer -ResourceId $myVM.ID -BackupManagemen
 이 명령은이 리소스의 ' 백업 컨테이너 '를 반환 하 고 상태는 ' 등록 됨 '으로 나타납니다.
 
 > [!NOTE]
-> Force 매개 변수를 지정 하지 않으면 사용자에 게 '이 컨테이너에 대 한 보호를 사용 하지 않도록 설정 하 시겠습니까 ' 텍스트를 확인 하 라는 메시지가 표시 됩니다. 이 텍스트는 무시 하 고 확인 하려면 "Y"를 입력 하세요. 이것은 알려진 문제 이며 force 매개 변수에 대 한 텍스트 및 요구 사항을 제거 하기 위해 작업 중입니다.
+> Force 매개 변수를 지정 하지 않으면 사용자에 게 '이 컨테이너에 대한 보호를 사용 하지 않도록 설정 하 시겠습니까 ' 텍스트를 확인 하 라는 메시지가 표시 됩니다. 이 텍스트는 무시 하 고 확인 하려면 "Y"를 입력 하세요. 이것은 알려진 문제 이며 force 매개 변수에 대한 텍스트 및 요구 사항을 제거 하기 위해 작업 중입니다.
 
 ### <a name="fetching-sql-dbs"></a>SQL Db 페치
 
@@ -221,7 +221,7 @@ $SQLDB = Get-AzRecoveryServicesBackupProtectableItem -workloadType MSSQL -ItemTy
 
 ### <a name="configuring-backup"></a>백업 구성
 
-필요한 SQL DB와이를 백업 해야 하는 정책을 만들었으므로 [AzRecoveryServicesBackupProtection](https://docs.microsoft.com/powershell/module/az.recoveryservices/Enable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) cmdlet을 사용 하 여이 sql db에 대 한 백업을 구성할 수 있습니다.
+필요한 SQL DB와이를 백업 해야 하는 정책을 만들었으므로 [AzRecoveryServicesBackupProtection](https://docs.microsoft.com/powershell/module/az.recoveryservices/Enable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) cmdlet을 사용 하 여이 sql db에 대한 백업을 구성할 수 있습니다.
 
 ````powershell
 Enable-AzRecoveryServicesBackupProtection -ProtectableItem $SQLDB -Policy $NewSQLPolicy
@@ -282,7 +282,7 @@ $bkpItem = Get-AzRecoveryServicesBackupItem -BackupManagementType AzureWorkload 
 
 #### <a name="fetch-distinct-recovery-points"></a>고유 복구 지점의 페치
 
-AzRecoveryServicesBackupRecoveryPoint를 사용 하 여 백업 된 SQL DB에 대 한 고유 (전체/차등) 복구 지점만 [가져옵니다](https://docs.microsoft.com/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupRecoveryPoint?view=azps-1.5.0) .
+AzRecoveryServicesBackupRecoveryPoint를 사용 하 여 백업 된 SQL DB에 대한 고유 (전체/차등) 복구 지점만 [가져옵니다](https://docs.microsoft.com/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupRecoveryPoint?view=azps-1.5.0) .
 
 ````powershell
 $startDate = (Get-Date).AddDays(-7).ToUniversalTime()
@@ -324,7 +324,7 @@ SQLDataBase;MSSQLSERVER;azu... 3/18/2019 8:09:35 PM           3/19/2019 12:08:32
 위의 출력은 사용자가 표시 된 시작 시간과 종료 시간 사이의 특정 시점으로 복원할 수 있음을 의미 합니다. 시간은 UTC 단위입니다. PS에서 위에 표시 된 범위 내에 있는 특정 시점을 생성 합니다.
 
 > [!NOTE]
-> 복원에 대 한 로그 지정 시간을 선택한 경우 사용자는 DB가 복원 되는 전체 백업, 즉 시작 지점을 지정할 필요가 없습니다. Azure Backup 서비스는 전체 복구 계획 (즉, 선택할 전체 백업, 적용할 로그 백업 등)을 처리 합니다.
+> 복원에 대한 로그 지정 시간을 선택한 경우 사용자는 DB가 복원 되는 전체 백업, 즉 시작 지점을 지정할 필요가 없습니다. Azure Backup 서비스는 전체 복구 계획 (즉, 선택할 전체 백업, 적용할 로그 백업 등)을 처리 합니다.
 
 ### <a name="determine-recovery-configuration"></a>복구 구성 확인
 
@@ -355,7 +355,7 @@ $OverwriteWithLogConfig = Get-AzRecoveryServicesBackupWorkloadRecoveryConfig -Po
 #### <a name="alternate-workload-restore"></a>대체 작업 복원
 
 > [!IMPORTANT]
-> 백업 된 SQL DB는이 자격 증명 모음에 대 한 Azure VM ' 등록 '에 있는 다른 SQLInstance에만 새 DB로 복원할 수 있습니다.
+> 백업 된 SQL DB는이 자격 증명 모음에 대한 Azure VM ' 등록 '에 있는 다른 SQLInstance에만 새 DB로 복원할 수 있습니다.
 
 위에서 설명한 것 처럼 대상 SQLInstance 다른 Azure VM에 있는 경우 [이 자격 증명 모음에 등록](#registering-the-sql-vm) 되어 있는지 확인 하 고 관련 SQLInstance 보호 가능한 항목으로 나타납니다.
 
@@ -377,7 +377,7 @@ $AnotherInstanceWithFullConfig = Get-AzRecoveryServicesBackupWorkloadRecoveryCon
 $AnotherInstanceWithLogConfig = Get-AzRecoveryServicesBackupWorkloadRecoveryConfig -PointInTime $PointInTime -Item $bkpItem -AlternateWorkloadRestore -VaultId $targetVault.ID
 ```
 
-[AzRecoveryServicesBackupWorkloadRecoveryConfig](https://docs.microsoft.com/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupWorkloadRecoveryConfig?view=azps-1.5.0) PS cmdlet에서 가져온 최종 복구 지점 구성 개체는 다음과 같이 복원에 대 한 모든 관련 정보를 포함 합니다.
+[AzRecoveryServicesBackupWorkloadRecoveryConfig](https://docs.microsoft.com/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupWorkloadRecoveryConfig?view=azps-1.5.0) PS cmdlet에서 가져온 최종 복구 지점 구성 개체는 다음과 같이 복원에 대한 모든 관련 정보를 포함 합니다.
 
 ````powershell
 TargetServer         : <SQL server name>
@@ -393,7 +393,7 @@ RecoveryPoint        : Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.
 PointInTime          : 1/1/0001 12:00:00 AM
 ````
 
-복원 된 DB 이름, OverwriteWLIfpresent, targetPhysicalPath 필드를 편집할 수 있습니다. 아래 표시 된 것 처럼 대상 파일 경로에 대 한 자세한 내용을 확인 하세요.
+복원 된 DB 이름, OverwriteWLIfpresent, targetPhysicalPath 필드를 편집할 수 있습니다. 아래 표시 된 것 처럼 대상 파일 경로에 대한 자세한 내용을 확인 하세요.
 
 ````powershell
 $AnotherInstanceWithFullConfig.targetPhysicalPath
@@ -446,7 +446,7 @@ MSSQLSERVER/m... Restore              InProgress           3/17/2019 10:02:45 AM
 
 ### <a name="on-demand-backup"></a>주문형 백업
 
-DB에 대해 백업을 사용 하도록 설정 하면 사용자가 [AzRecoveryServicesBackupItem](https://docs.microsoft.com/powershell/module/az.recoveryservices/Backup-AzRecoveryServicesBackupItem?view=azps-1.5.0) PS cmdlet을 사용 하 여 db에 대 한 요청 시 백업을 트리거할 수도 있습니다. 다음 예에서는 압축을 사용 하 여 SQL DB에서 전체 백업을 트리거하고 전체 백업은 60 일 동안 보존 되어야 합니다.
+DB에 대해 백업을 사용 하도록 설정 하면 사용자가 [AzRecoveryServicesBackupItem](https://docs.microsoft.com/powershell/module/az.recoveryservices/Backup-AzRecoveryServicesBackupItem?view=azps-1.5.0) PS cmdlet을 사용 하 여 db에 대한 요청 시 백업을 트리거할 수도 있습니다. 다음 예에서는 압축을 사용 하 여 SQL DB에서 전체 백업을 트리거하고 전체 백업은 60 일 동안 보존 되어야 합니다.
 
 ````powershell
 $bkpItem = Get-AzRecoveryServicesBackupItem -BackupManagementType AzureWorkload -WorkloadType MSSQL -Name "<backup item name>" -VaultId $targetVault.ID
@@ -464,9 +464,9 @@ MSSQLSERVER/m... Backup               InProgress           3/18/2019 8:41:27 PM 
 
 출력이 손실 되거나 관련 작업 ID를 가져오려는 경우 Azure Backup 서비스에서 [작업 목록을 가져온](#track-azure-backup-jobs) 다음 해당 작업의 세부 정보를 추적 합니다.
 
-### <a name="change-policy-for-backup-items"></a>백업 항목에 대 한 정책 변경
+### <a name="change-policy-for-backup-items"></a>백업 항목에 대한 정책 변경
 
-사용자는 기존 정책을 수정 하거나 백업 된 항목의 정책을 Policy1에서 Policy2로 변경할 수 있습니다. 백업 항목에 대 한 정책을 전환 하려면 관련 정책을 페치하고 항목을 백업 하 고 백업 항목과 함께 [AzRecoveryServices](https://docs.microsoft.com/powershell/module/az.recoveryservices/Enable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) 명령을 매개 변수로 사용 합니다.
+사용자는 기존 정책을 수정 하거나 백업 된 항목의 정책을 Policy1에서 Policy2로 변경할 수 있습니다. 백업 항목에 대한 정책을 전환 하려면 관련 정책을 페치하고 항목을 백업 하 고 백업 항목과 함께 [AzRecoveryServices](https://docs.microsoft.com/powershell/module/az.recoveryservices/Enable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) 명령을 매개 변수로 사용 합니다.
 
 ````powershell
 $TargetPol1 = Get-AzRecoveryServicesBackupProtectionPolicy -Name <PolicyName>
@@ -551,7 +551,7 @@ Get-AzRecoveryServicesBackupJob -Status InProgress -BackupManagementType AzureWo
 
 ## <a name="managing-sql-always-on-availability-groups"></a>SQL Always On 가용성 그룹 관리
 
-SQL Always On 가용성 그룹의 경우 AG (가용성 그룹)의 [모든 노드를 등록](#registering-the-sql-vm) 해야 합니다. 모든 노드에 대 한 등록이 완료 되 면 보호 가능한 항목 아래에 SQL 가용성 그룹 개체가 논리적으로 만들어집니다. SQL AG 아래의 데이터베이스가 ' Backup-sqldatabase '로 나열 됩니다. 노드는 독립 실행형 인스턴스로 표시 되 고 기본 SQL 데이터베이스는 SQL database로도 나열 됩니다.
+SQL Always On 가용성 그룹의 경우 AG (가용성 그룹)의 [모든 노드를 등록](#registering-the-sql-vm) 해야 합니다. 모든 노드에 대한 등록이 완료 되 면 보호 가능한 항목 아래에 SQL 가용성 그룹 개체가 논리적으로 만들어집니다. SQL AG 아래의 데이터베이스가 ' Backup-sqldatabase '로 나열 됩니다. 노드는 독립 실행형 인스턴스로 표시 되 고 기본 SQL 데이터베이스는 SQL database로도 나열 됩니다.
 
 예를 들어 SQL AG에 ' s q l-서버-0 ' 및 ' s q l-서버-1 '과 1 개의 노드가 있다고 가정해 보겠습니다. 이러한 두 노드가 모두 등록 되 면 사용자가 [보호 가능한 항목을 나열](#fetching-sql-dbs)하는 경우 다음 구성 요소를 나열 합니다.
 

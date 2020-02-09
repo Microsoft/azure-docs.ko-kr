@@ -1,6 +1,6 @@
 ---
 title: FAQ-Azure Vm에서 SQL Server 데이터베이스 백업
-description: Azure Backup를 사용 하 여 Azure Vm에 SQL Server 데이터베이스를 백업 하는 방법에 대 한 일반적인 질문과 대답을 찾습니다.
+description: Azure Backup를 사용 하 여 Azure Vm에 SQL Server 데이터베이스를 백업 하는 방법에 대한 일반적인 질문과 대답을 찾습니다.
 ms.reviewer: vijayts
 ms.topic: conceptual
 ms.date: 04/23/2019
@@ -11,9 +11,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/19/2019
 ms.locfileid: "74172027"
 ---
-# <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Azure VM 백업에서 실행 되는 SQL Server 데이터베이스에 대 한 FAQ
+# <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Azure VM 백업에서 실행 되는 SQL Server 데이터베이스에 대한 FAQ
 
-이 문서에서는 Azure Vm (가상 머신)에서 실행 되 고 [Azure Backup](backup-overview.md) 서비스를 사용 하는 SQL Server 데이터베이스 백업에 대 한 일반적인 질문에 답변 합니다.
+이 문서에서는 Azure Vm (가상 머신)에서 실행 되 고 [Azure Backup](backup-overview.md) 서비스를 사용 하는 SQL Server 데이터베이스 백업에 대한 일반적인 질문에 답변 합니다.
 
 ## <a name="can-i-use-azure-backup-for-iaas-vm-as-well-as-sql-server-on-the-same-machine"></a>IaaS VM에 대해 Azure backup을 사용할 수 있을 뿐만 아니라 동일한 컴퓨터에서 SQL Server 수 있나요?
 
@@ -47,7 +47,7 @@ ms.locfileid: "74172027"
 
 3. 변경 내용을 저장하고 파일을 닫습니다.
 4. SQL Server 인스턴스에서 **작업 관리자**를 엽니다. **AzureWLBackupCoordinatorSvc** 서비스를 다시 시작합니다.<br/> <br/>
- 이 방법을 사용 하면 백업 응용 프로그램이 많은 양의 리소스를 사용 하는 경우에는 SQL Server [Resource Governor](https://docs.microsoft.com/sql/relational-databases/resource-governor/resource-governor?view=sql-server-2017) 는 들어오는 응용 프로그램 요청이 사용할 수 있는 CPU, 물리적 IO 및 메모리 양에 대 한 제한을 지정 하는 보다 일반적인 방법입니다.
+ 이 방법을 사용 하면 백업 응용 프로그램이 많은 양의 리소스를 사용 하는 경우에는 SQL Server [Resource Governor](https://docs.microsoft.com/sql/relational-databases/resource-governor/resource-governor?view=sql-server-2017) 는 들어오는 응용 프로그램 요청이 사용할 수 있는 CPU, 물리적 IO 및 메모리 양에 대한 제한을 지정 하는 보다 일반적인 방법입니다.
 
 > [!NOTE]
 > UX에서 계속 진행 하 여 지정 된 시간에 많은 백업을 예약할 수 있지만 위의 예제에 따라 5 라는 슬라이딩 윈도우에서 처리 됩니다.
@@ -66,7 +66,7 @@ Azure Backup Recovery Services 자격 증명 모음은 자격 증명 모음과 �
 
 ## <a name="do-successful-backup-jobs-create-alerts"></a>성공한 백업 작업에 경고가 만들어지나요?
 
-아니요. 성공한 백업 작업에서는 경고가 생성되지 않습니다. 경고는 실패한 백업 작업에 대해서만 전송됩니다. 포털 경고에 대 한 자세한 동작은 [여기](backup-azure-monitoring-built-in-monitor.md)에 설명 되어 있습니다. 그러나 성공한 작업에 대해서도 경고가 표시 되는 경우 [Azure Monitor를 사용 하 여 모니터링](backup-azure-monitoring-use-azuremonitor.md)을 사용할 수 있습니다.
+아니요. 성공한 백업 작업에서는 경고가 생성되지 않습니다. 경고는 실패한 백업 작업에 대해서만 전송됩니다. 포털 경고에 대한 자세한 동작은 [여기](backup-azure-monitoring-built-in-monitor.md)에 설명 되어 있습니다. 그러나 성공한 작업에 대해서도 경고가 표시 되는 경우 [Azure Monitor를 사용 하 여 모니터링](backup-azure-monitoring-use-azuremonitor.md)을 사용할 수 있습니다.
 
 ## <a name="can-i-see-scheduled-backup-jobs-in-the-backup-jobs-menu"></a>백업 작업 메뉴에서 예약 된 백업 작업을 볼 수 있나요?
 
@@ -92,7 +92,7 @@ Autoprotected 인스턴스에서 데이터베이스를 삭제 하면 데이터�
 
 이름이 바뀐 데이터베이스는 새 데이터베이스로 처리 됩니다. 따라서 서비스는 데이터베이스를 찾을 수 없고 백업에 실패 한 것 처럼이 상황을 처리 합니다.
 
-이제 데이터베이스를 선택 하 여 해당 데이터베이스에 대 한 보호를 구성할 수 있습니다. 인스턴스에서 자동 보호를 사용 하도록 설정 하는 경우 이름이 바뀐 데이터베이스가 자동으로 검색 되 고 보호 됩니다.
+이제 데이터베이스를 선택 하 여 해당 데이터베이스에 대한 보호를 구성할 수 있습니다. 인스턴스에서 자동 보호를 사용 하도록 설정 하는 경우 이름이 바뀐 데이터베이스가 자동으로 검색 되 고 보호 됩니다.
 
 ## <a name="why-cant-i-see-an-added-database-for-an-autoprotected-instance"></a>Autoprotected 인스턴스에 대해 추가 된 데이터베이스가 표시 되지 않는 이유는 무엇 인가요?
 

@@ -65,7 +65,7 @@ ms.locfileid: "75439631"
             9   iiiiiiiii   2017-09-09 09:01:00.000
     ```
     
-2. 델타 데이터 로드에 대 한 높은 워터 마크 값을 저장 하기 위해 SQL Server 또는 Azure SQL Database에서 컨트롤 테이블을 만듭니다. 다음 예제에서 컨트롤 테이블의 이름은 *watermarktable*입니다. 이 테이블에서 *WatermarkValue* 는 상위 워터 마크 값을 저장 하는 열이 고, 해당 형식은 *datetime*입니다.
+2. 델타 데이터 로드에 대한 높은 워터 마크 값을 저장 하기 위해 SQL Server 또는 Azure SQL Database에서 컨트롤 테이블을 만듭니다. 다음 예제에서 컨트롤 테이블의 이름은 *watermarktable*입니다. 이 테이블에서 *WatermarkValue* 는 상위 워터 마크 값을 저장 하는 열이 고, 해당 형식은 *datetime*입니다.
 
     ```sql
             create table watermarktable
@@ -90,15 +90,15 @@ ms.locfileid: "75439631"
             END
     ```
     
-4. **데이터베이스 템플릿에서 델타 복사** 로 이동 합니다. 데이터를 복사 하려는 원본 데이터베이스에 대 한 **새** 연결을 만듭니다.
+4. **데이터베이스 템플릿에서 델타 복사** 로 이동 합니다. 데이터를 복사 하려는 원본 데이터베이스에 대한 **새** 연결을 만듭니다.
 
     ![원본 테이블에 대한 새 연결 만들기](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable4.png)
 
-5. 데이터를 복사 하려는 대상 데이터 저장소에 대 한 **새** 연결을 만듭니다.
+5. 데이터를 복사 하려는 대상 데이터 저장소에 대한 **새** 연결을 만듭니다.
 
     ![대상 테이블에 대한 새 연결 만들기](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable5.png)
 
-6. 2 단계와 3 단계에서 만든 외부 제어 테이블 및 저장 프로시저에 대 한 **새** 연결을 만듭니다.
+6. 2 단계와 3 단계에서 만든 외부 제어 테이블 및 저장 프로시저에 대한 **새** 연결을 만듭니다.
 
     ![제어 테이블 데이터 저장소에 대한 새 연결 만들기](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable6.png)
 
@@ -114,7 +114,7 @@ ms.locfileid: "75439631"
 
 10. 콘텐츠 **\@{activity (' LookupCurrentWaterMark 마크 '). NewWatermarkValue}** 를 작성 한 후 **마침**을 선택 합니다.  
 
-    ![저장 프로시저의 매개 변수에 대 한 내용 작성](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable10.png)       
+    ![저장 프로시저의 매개 변수에 대한 내용 작성](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable10.png)       
      
 11. **디버그**를 선택 하 고 **매개 변수**를 입력 한 다음 **마침**을 선택 합니다.
 
@@ -138,7 +138,7 @@ ms.locfileid: "75439631"
 
     새 행만 대상으로 복사 된 것을 볼 수 있습니다.
 
-15. 필드 Azure Synapse Analytics (이전의 SQL DW)를 데이터 대상으로 선택 하는 경우에는 Polybase를 SQL Data Warehouse 하는 데 필요한 Azure Blob storage에 대 한 연결도 준비 해야 합니다. 템플릿이 컨테이너 경로를 생성 합니다. 파이프라인이 실행 된 후 컨테이너를 Blob 저장소에서 만들었는지 확인 합니다.
+15. 필드 Azure Synapse Analytics (이전의 SQL DW)를 데이터 대상으로 선택 하는 경우에는 Polybase를 SQL Data Warehouse 하는 데 필요한 Azure Blob storage에 대한 연결도 준비 해야 합니다. 템플릿이 컨테이너 경로를 생성 합니다. 파이프라인이 실행 된 후 컨테이너를 Blob 저장소에서 만들었는지 확인 합니다.
     
     ![PolyBase 구성](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable15.png)
     

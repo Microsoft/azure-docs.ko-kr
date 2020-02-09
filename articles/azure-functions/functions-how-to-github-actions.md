@@ -39,7 +39,7 @@ Azure Functions 워크플로의 경우 파일에는 다음과 같은 세 개의 
 az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.Web/sites/<APP_NAME> --sdk-auth
 ```
 
-이 예제에서는 리소스의 자리 표시자를 구독 ID, 리소스 그룹 및 함수 앱 이름으로 바꿉니다. 출력은 함수 앱에 대 한 액세스를 제공 하는 역할 할당 자격 증명입니다. GitHub에서 인증 하는 데 사용할 수 있는이 JSON 개체를 복사 합니다.
+이 예제에서는 리소스의 자리 표시자를 구독 ID, 리소스 그룹 및 함수 앱 이름으로 바꿉니다. 출력은 함수 앱에 대한 액세스를 제공 하는 역할 할당 자격 증명입니다. GitHub에서 인증 하는 데 사용할 수 있는이 JSON 개체를 복사 합니다.
 
 > [!IMPORTANT]
 > 최소한의 액세스 권한을 부여 하는 것이 항상 좋은 방법입니다. 이전 예제의 범위가 전체 리소스 그룹이 아닌 특정 함수 앱으로 제한 되기 때문입니다.
@@ -60,8 +60,8 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 1. 새 비밀을 추가 합니다.
 
-   * Azure CLI를 사용 하 여 만든 서비스 주체를 사용 하는 경우 **이름**에 `AZURE_CREDENTIALS`를 사용 합니다. 그런 다음 **값**에 대 한 복사 된 JSON 개체 출력을 붙여넣고 **비밀 추가**를 선택 합니다.
-   * 게시 프로필을 사용 하는 경우 **이름**에 `SCM_CREDENTIALS`를 사용 합니다. 그런 다음 **값**에 대 한 게시 프로필의 파일 콘텐츠를 사용 하 고 **비밀 추가**를 선택 합니다.
+   * Azure CLI를 사용 하 여 만든 서비스 주체를 사용 하는 경우 **이름**에 `AZURE_CREDENTIALS`를 사용 합니다. 그런 다음 **값**에 대한 복사 된 JSON 개체 출력을 붙여넣고 **비밀 추가**를 선택 합니다.
+   * 게시 프로필을 사용 하는 경우 **이름**에 `SCM_CREDENTIALS`를 사용 합니다. 그런 다음 **값**에 대한 게시 프로필의 파일 콘텐츠를 사용 하 고 **비밀 추가**를 선택 합니다.
 
 이제 GitHub에서 Azure의 함수 앱에 인증할 수 있습니다.
 
@@ -220,4 +220,4 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 전체 워크플로를 보려면 [Azure GitHub 작업 워크플로 샘플 리포지토리](https://aka.ms/functions-actions-samples) 에서 이름에 `functionapp` 있는 파일 중 하나를 참조 하세요. 이러한 샘플을 워크플로의 시작 지점으로 사용할 수 있습니다.
 
 > [!div class="nextstepaction"]
-> [GitHub 동작에 대 한 자세한 정보](https://help.github.com/en/articles/about-github-actions)
+> [GitHub 동작에 대한 자세한 정보](https://help.github.com/en/articles/about-github-actions)

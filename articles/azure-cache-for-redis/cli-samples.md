@@ -1,6 +1,6 @@
 ---
-title: Redis 샘플에 대 한 Azure Cache Azure CLI
-description: 'Redis 용 Azure 캐시에 대 한 Azure CLI 샘플: 캐시를 만들고, 캐시를 삭제 하 고, 캐시 세부 정보, 호스트 이름, 포트 및 키를 가져오고, 웹 앱에 연결 합니다.'
+title: Redis 샘플에 대한 Azure Cache Azure CLI
+description: 'Redis 용 Azure 캐시에 대한 Azure CLI 샘플: 캐시를 만들고, 캐시를 삭제 하 고, 캐시 세부 정보, 호스트 이름, 포트 및 키를 가져오고, 웹 앱에 연결 합니다.'
 author: yegu-ms
 ms.author: yegu
 ms.service: cache

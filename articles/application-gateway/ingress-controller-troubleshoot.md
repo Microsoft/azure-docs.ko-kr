@@ -1,6 +1,6 @@
 ---
 title: Application Gateway 수신 컨트롤러 문제 해결
-description: 이 문서에서는 Application Gateway 수신 컨트롤러와 관련 된 일반적인 질문 및/또는 문제를 해결 하는 방법에 대 한 설명서를 제공 합니다.
+description: 이 문서에서는 Application Gateway 수신 컨트롤러와 관련 된 일반적인 질문 및/또는 문제를 해결 하는 방법에 대한 설명서를 제공 합니다.
 services: application-gateway
 author: caya
 ms.service: application-gateway
@@ -14,7 +14,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/07/2019
 ms.locfileid: "73795506"
 ---
-# <a name="troubleshoot-common-questions-or-issues-with-ingress-controller"></a>수신 컨트롤러에 대 한 일반적인 질문 및 문제 해결
+# <a name="troubleshoot-common-questions-or-issues-with-ingress-controller"></a>수신 컨트롤러에 대한 일반적인 질문 및 문제 해결
 
 [Azure Cloud Shell](https://shell.azure.com/) 은 AKS 및 AGIC 설치와 관련 된 문제를 해결 하는 가장 편리한 방법입니다. [Shell.azure.com](https://shell.azure.com/) 에서 또는 링크를 클릭 하 여 셸을 시작 합니다.
 
@@ -115,7 +115,7 @@ Application Gateway는 다음 구성을 적용 합니다.
 ![backend_pool](./media/application-gateway-ingress-controller-troubleshooting/tsg--backendpools.png)
 
 
-마지막으로 [Cloud Shell](https://shell.azure.com/) 내에서 `cURL` 명령을 사용 하 여 새로 배포 된 앱에 대 한 HTTP 연결을 설정할 수 있습니다.
+마지막으로 [Cloud Shell](https://shell.azure.com/) 내에서 `cURL` 명령을 사용 하 여 새로 배포 된 앱에 대한 HTTP 연결을 설정할 수 있습니다.
 
 1. `kubectl get ingress`를 사용 하 여의 공용 IP 주소를 가져옵니다 Application Gateway
 2. `curl -I -H 'test.agic.contoso.com' <publitc-ip-address-from-previous-command>` 사용
@@ -158,7 +158,7 @@ AGIC가 예상 대로 작동 하려면 다음 사항을 준비 해야 합니다.
      aspnetapp   *                 80      17h   <none>
      ```
 
-  4. 위의 수신에 대 한 주석 보기: `kubectl get ingress aspnetapp -o yaml` (`aspnetapp`를 수신 이름으로 대체)
+  4. 위의 수신에 대한 주석 보기: `kubectl get ingress aspnetapp -o yaml` (`aspnetapp`를 수신 이름으로 대체)
      ```bash
      delyan@Azure:~$ kubectl get ingress aspnetapp -o yaml
 
@@ -179,7 +179,7 @@ AGIC가 예상 대로 작동 하려면 다음 사항을 준비 해야 합니다.
 
 ### <a name="verify-observed-namespace"></a>관찰 된 네임 스페이스 확인
 
-* Kubernetes 클러스터에서 기존 네임 스페이스를 가져옵니다. 앱이 실행 되는 네임 스페이스는 무엇 인가요? 해당 네임 스페이스를 감시 하 고 AGIC? 관찰 된 네임 스페이스를 적절 하 게 구성 하는 방법에 대 한 [여러 네임 스페이스 지원](./ingress-controller-multiple-namespace-support.md#enable-multiple-namespace-support) 설명서를 참조 하세요.
+* Kubernetes 클러스터에서 기존 네임 스페이스를 가져옵니다. 앱이 실행 되는 네임 스페이스는 무엇 인가요? 해당 네임 스페이스를 감시 하 고 AGIC? 관찰 된 네임 스페이스를 적절 하 게 구성 하는 방법에 대한 [여러 네임 스페이스 지원](./ingress-controller-multiple-namespace-support.md#enable-multiple-namespace-support) 설명서를 참조 하세요.
 
     ```bash
     # What namespaces exist on your cluster
@@ -223,7 +223,7 @@ AGIC가 예상 대로 작동 하려면 다음 사항을 준비 해야 합니다.
     ```
 
 
-* AGIC는 특정 심각한 오류에 대 한 Kubernetes 이벤트를 내보냅니다. 다음을 볼 수 있습니다.
+* AGIC는 특정 심각한 오류에 대한 Kubernetes 이벤트를 내보냅니다. 다음을 볼 수 있습니다.
   - `kubectl get events --sort-by=.metadata.creationTimestamp`를 통해 터미널에서
   - [Kubernetes 웹 UI (대시보드)](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) 를 사용 하 여 브라우저에서
 
@@ -233,17 +233,17 @@ AGIC가 예상 대로 작동 하려면 다음 사항을 준비 해야 합니다.
 AGIC에는 3 개의 로깅 수준이 있습니다. 수준 1은 기본 항목 이며 최소 수의 로그 줄을 표시 합니다.
 반면 수준 5는 ARM에 적용 된 구성의 삭제 된 콘텐츠를 포함 하 여 모든 로그를 표시 합니다.
 
-Kubernetes 커뮤니티는 [kubectl](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-output-verbosity-and-debugging) 도구에 대 한 9 가지 로깅 수준을 설정 했습니다. 이 리포지토리에는 다음과 같은 의미 체계를 사용 하 여 세 가지를 활용 합니다.
+Kubernetes 커뮤니티는 [kubectl](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-output-verbosity-and-debugging) 도구에 대한 9 가지 로깅 수준을 설정 했습니다. 이 리포지토리에는 다음과 같은 의미 체계를 사용 하 여 세 가지를 활용 합니다.
 
 
 | 자세한 정도 | 설명 |
 |-----------|-------------|
 |  1        | 기본 로그 수준 시작 정보, 경고 및 오류를 표시 합니다. |
-|  3        | 이벤트 및 변경 내용에 대 한 확장 된 정보 만든 개체 목록 |
+|  3        | 이벤트 및 변경 내용에 대한 확장 된 정보 만든 개체 목록 |
 |  5        | 마샬링된 개체를 로깅합니다. ARM에 적용 된 삭제 된 JSON 구성 표시 |
 
 
-자세한 정도는 [투구-.config](#sample-helm-config-file) 파일의 `verbosityLevel` 변수를 통해 조정할 수 있습니다. `5`에 대 한 자세한 정도를 높여 [ARM](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)에 디스패치 된 JSON 구성을 가져옵니다.
+자세한 정도는 [투구-.config](#sample-helm-config-file) 파일의 `verbosityLevel` 변수를 통해 조정할 수 있습니다. `5`에 대한 자세한 정도를 높여 [ARM](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)에 디스패치 된 JSON 구성을 가져옵니다.
   - [투구-config.xml](#sample-helm-config-file) 에서 한 줄에 `verbosityLevel: 5` 추가 하 고 다시 설치
   - `kubectl logs <pod-name>`로 로그 가져오기
 

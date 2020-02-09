@@ -1,5 +1,5 @@
 ---
-title: Traffic Manager를 사용 하 여 여러 Azure CDN 끝점 간 장애 조치 (Failover)
+title: Traffic Manager를 사용 하 여 여러 Azure CDN 엔드포인트 간 장애 조치 (Failover)
 description: Azure CDN 엔드포인트를 사용하여 Azure Traffic Manager를 설정하는 방법을 알아봅니다.
 services: cdn
 documentationcenter: ''
@@ -82,7 +82,7 @@ CDN 및 Traffic Manager 프로필을 설정한 후 이러한 단계를 수행하
     이 등록 프로세스를 완료하려면 Azure CDN은 *cdnverify* 하위 도메인을 사용하여 DNS 매핑의 유효성을 검사합니다. 자세한 내용은 [CNAME DNS 레코드 만들기](cdn-map-content-to-custom-domain.md#create-a-cname-dns-record)를 참조하세요. 이 단계에서는 해당 요청에 응답할 수 있도록 Azure CDN이 사용자 지정 도메인을 인식할 수 있게 설정합니다.
     
     > [!NOTE]
-    > **Akamai 프로필의 Azure CDN** 에서 SSL을 사용 하도록 설정 하려면 사용자 지정 도메인을 끝점에 직접 cname 해야 합니다. SSL 사용에 대 한 cdnverify는 아직 지원 되지 않습니다. 
+    > **Akamai 프로필의 Azure CDN** 에서 SSL을 사용 하도록 설정 하려면 사용자 지정 도메인을 엔드포인트에 직접 cname 해야 합니다. SSL 사용에 대한 cdnverify는 아직 지원 되지 않습니다. 
     >
 
 3.  사용자 지정 도메인의 도메인 공급자에 대한 웹 사이트로 돌아가서 첫 번째 DNS 매핑을 업데이트하여 사용자 지정 도메인이 두 번째 CDN 엔드포인트에 매핑되게 합니다.

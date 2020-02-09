@@ -37,7 +37,7 @@ https://docs.microsoft.com/azure/virtual-machines/windows/time-sync
 |--|--|--|
 | 2.2 | 6.5, 6.6 | Customer |
 
-Azure Monitor를 통해 로그를 수집 하 여 끝점 장치, 네트워크 리소스 및 기타 보안 시스템에 의해 생성 된 보안 데이터를 집계 합니다. Azure Monitor 내에서 Log Analytics 작업 영역을 사용 하 여 분석을 쿼리하고 수행 하 고 장기/보관 저장소에 Azure Storage 계정을 사용할 수 있습니다.
+Azure Monitor를 통해 로그를 수집 하 여 엔드포인트 장치, 네트워크 리소스 및 기타 보안 시스템에 의해 생성 된 보안 데이터를 집계 합니다. Azure Monitor 내에서 Log Analytics 작업 영역을 사용 하 여 분석을 쿼리하고 수행 하 고 장기/보관 저장소에 Azure Storage 계정을 사용할 수 있습니다.
 
 또는 Azure 센티널 또는 타사 SIEM에 대 한 온보드 데이터를 사용할 수 있습니다. Azure 센티널을 등록 하는 방법:
 

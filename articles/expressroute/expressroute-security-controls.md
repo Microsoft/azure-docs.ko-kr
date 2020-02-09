@@ -14,7 +14,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/14/2019
 ms.locfileid: "74079924"
 ---
-# <a name="security-controls-for-azure-expressroute"></a>Azure Express 경로에 대 한 보안 제어
+# <a name="security-controls-for-azure-expressroute"></a>Azure Express 경로에 대한 보안 제어
 
 이 문서에서는 Azure Express 경로에 기본 제공 되는 보안 컨트롤을 설명 합니다.
 
@@ -41,8 +41,8 @@ ms.locfileid: "74079924"
 
 | 보안 제어 | 예/아니요 | 참고 사항|
 |---|---|--|
-| 인증| 예 | Microsoft 용 게이트웨이 서비스 계정 (GWM) (컨트롤러) Dev 및 OP에 대 한 JIT (just-in-time) 액세스 |
-| 권한 부여|  예 |Microsoft 용 게이트웨이 서비스 계정 (GWM) (컨트롤러) Dev 및 OP에 대 한 JIT (just-in-time) 액세스 |
+| 인증| 예 | Microsoft 용 게이트웨이 서비스 계정 (GWM) (컨트롤러) Dev 및 OP에 대한 JIT (just-in-time) 액세스 |
+| 권한 부여|  예 |Microsoft 용 게이트웨이 서비스 계정 (GWM) (컨트롤러) Dev 및 OP에 대한 JIT (just-in-time) 액세스 |
 
 ## <a name="data-protection"></a>데이터 보호
 

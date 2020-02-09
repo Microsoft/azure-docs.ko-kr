@@ -1,7 +1,7 @@
 ---
 title: LUIS에서 제작 및 런타임 키를 사용 하는 방법
 titleSuffix: Azure Cognitive Services
-description: LUIS는 두 가지 키 인 제작 키를 사용 하 여 모델을 만들고 사용자 길이 발언를 사용 하 여 예측 끝점을 쿼리 하기 위한 런타임 키를 사용 합니다.
+description: LUIS는 두 가지 키 인 제작 키를 사용 하 여 모델을 만들고 사용자 길이 발언를 사용 하 여 예측 엔드포인트을 쿼리 하기 위한 런타임 키를 사용 합니다.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -34,7 +34,7 @@ Language Understanding (LUIS)에는 두 가지 서비스 및 API 집합이 있�
 LUIS 사용을 처음으로 시작 하면 시작 **키** 가 생성 됩니다. 이 리소스는 다음을 제공 합니다.
 
 * LUIS 포털 또는 Api를 통해 무료 제작 서비스 요청 (Sdk 포함)
-* 브라우저, API 또는 Sdk를 통해 매월 무료 1000 예측 끝점 요청
+* 브라우저, API 또는 Sdk를 통해 매월 무료 1000 예측 엔드포인트 요청
 
 ## <a name="azure-resources-for-luis"></a>LUIS 용 Azure 리소스
 
@@ -47,15 +47,15 @@ LUIS는 다음과 같은 세 가지 유형의 Azure 리소스를 허용 합니�
 |키|용도|인식 서비스 `kind`|인식 서비스 `type`|
 |--|--|--|--|
 |[작성 키](#programmatic-key)|작성, 학습, 게시 및 테스트를 사용 하 여 응용 프로그램의 데이터에 액세스 하 고 관리 합니다. LUIS apps를 프로그래밍 방식으로 작성 하려는 경우 LUIS authoring key를 만듭니다.<br><br>`LUIS.Authoring` 키의 목적은 다음을 수행할 수 있도록 하는 것입니다.<br>* 교육 및 게시를 포함 하 여 프로그래밍 방식으로 Language Understanding 앱 및 모델 관리<br> * [참가자 역할](#contributions-from-other-authors)에 사용자를 할당 하 여 제작 리소스에 대 한 사용 권한을 제어 합니다.|`LUIS.Authoring`|`Cognitive Services`|
-|[예측 키](#prediction-endpoint-runtime-key)| 예측 끝점 요청을 쿼리 합니다. 클라이언트 앱이 스타터 리소스에서 제공 하는 1000 요청 보다 많은 예측을 요청 하기 전에 LUIS 예측 키를 만듭니다. |`LUIS`|`Cognitive Services`|
-|[인식 서비스 다중 서비스 리소스 키](../cognitive-services-apis-create-account-cli.md?tabs=windows#create-a-cognitive-services-resource)|LUIS 및 기타 지원 되는 Cognitive Services 공유 된 쿼리 예측 끝점 요청|`CognitiveServices`|`Cognitive Services`|
+|[예측 키](#prediction-endpoint-runtime-key)| 예측 엔드포인트 요청을 쿼리 합니다. 클라이언트 앱이 스타터 리소스에서 제공 하는 1000 요청 보다 많은 예측을 요청 하기 전에 LUIS 예측 키를 만듭니다. |`LUIS`|`Cognitive Services`|
+|[인식 서비스 다중 서비스 리소스 키](../cognitive-services-apis-create-account-cli.md?tabs=windows#create-a-cognitive-services-resource)|LUIS 및 기타 지원 되는 Cognitive Services 공유 된 쿼리 예측 엔드포인트 요청|`CognitiveServices`|`Cognitive Services`|
 
 리소스 만들기 프로세스가 완료 되 면 LUIS 포털에서 해당 키를 앱에 [할당](luis-how-to-azure-subscription.md) 합니다.
 
 게시 하 고 쿼리 하려는 [지역](luis-reference-regions.md#publishing-regions) 에서 LUIS apps를 작성 하는 것이 중요 합니다.
 
 > [!CAUTION]
-> 편의를 위해 대부분의 샘플은 [할당량](luis-boundaries.md#key-limits)에 몇 가지 무료 예측 끝점 호출을 제공 하므로 [스타터 키](#starter-key) 를 사용 합니다.  
+> 편의를 위해 대부분의 샘플은 [할당량](luis-boundaries.md#key-limits)에 몇 가지 무료 예측 엔드포인트 호출을 제공 하므로 [스타터 키](#starter-key) 를 사용 합니다.  
 
 
 ### <a name="query-prediction-resources"></a>쿼리 예측 리소스
@@ -63,9 +63,9 @@ LUIS는 다음과 같은 세 가지 유형의 Azure 리소스를 허용 합니�
 * 런타임 키는 모든 LUIS apps 또는 특정 LUIS 앱에 사용할 수 있습니다. 
 * LUIS apps를 작성 하는 데 런타임 키를 사용 하지 마세요. 
 
-LUIS runtime 끝점은 두 가지 유형의 쿼리를 수락 합니다 .이 두 가지는 모두 예측 끝점 런타임 키를 사용 하지만 다른 위치에서 사용 됩니다.
+LUIS runtime 엔드포인트은 두 가지 유형의 쿼리를 수락 합니다 .이 두 가지는 모두 예측 엔드포인트 런타임 키를 사용 하지만 다른 위치에서 사용 됩니다.
 
-런타임에 액세스 하는 데 사용 되는 끝점은 리소스 지역에 고유한 하위 도메인을 사용 하며 다음 표에 `{region}` 표시 됩니다. 
+런타임에 액세스 하는 데 사용 되는 엔드포인트은 리소스 지역에 고유한 하위 도메인을 사용 하며 다음 표에 `{region}` 표시 됩니다. 
 
 ## <a name="assignment-of-the-key"></a>키 할당
 
@@ -129,7 +129,7 @@ LUIS 앱을 이동할 수 있습니다. Azure Portal 또는 Azure CLI에서 다�
 
 <a name="prediction-endpoint-runtime-key"></a>
 
-### <a name="prediction-endpoint-runtime-access"></a>예측 끝점 런타임 액세스
+### <a name="prediction-endpoint-runtime-access"></a>예측 엔드포인트 런타임 액세스
 
 쿼리 액세스는 **관리** 섹션의 **응용 프로그램 정보** 페이지에 있는 설정에 의해 제어 됩니다. 
 
@@ -137,7 +137,7 @@ LUIS 앱을 이동할 수 있습니다. Azure Portal 또는 Azure CLI에서 다�
 |:--|:--|
 |소유자 및 참가자가 사용할 수 있음|소유자, 참가자 및 앱 ID를 알고 있는 다른 사람이 사용할 수 있습니다.|
 
-서버 간 환경에서 LUIS 런타임 키를 호출 하 여 해당 키를 볼 수 있는 사용자를 제어할 수 있습니다. 봇에서 LUIS를 사용하는 경우, 봇과 LUIS 간의 연결은 이미 안전합니다. LUIS 엔드포인트를 직접 호출하는 경우에는 제어된 액세스(예: [AAD](https://azure.microsoft.com/services/active-directory/))를 사용하여 서버 쪽 API(예 : Azure [함수](https://azure.microsoft.com/services/functions/))를 만들어야 합니다. 서버 쪽 API를 호출 하 여 인증 하 고 권한 부여를 확인 한 경우에는에 대 한 호출을 LUIS에 전달 합니다. 이 전략은 메시지 가로채기 (man-in-the-middle) 공격을 방지 하지는 않지만 사용자의 키 및 끝점 URL을 난독 처리 액세스를 추적할 수 있으며 끝점 응답 로깅 (예: [Application Insights](https://azure.microsoft.com/services/application-insights/))을 추가할 수 있습니다.
+서버 간 환경에서 LUIS 런타임 키를 호출 하 여 해당 키를 볼 수 있는 사용자를 제어할 수 있습니다. 봇에서 LUIS를 사용하는 경우, 봇과 LUIS 간의 연결은 이미 안전합니다. LUIS 엔드포인트를 직접 호출하는 경우에는 제어된 액세스(예: [AAD](https://azure.microsoft.com/services/active-directory/))를 사용하여 서버 쪽 API(예 : Azure [함수](https://azure.microsoft.com/services/functions/))를 만들어야 합니다. 서버 쪽 API를 호출 하 여 인증 하 고 권한 부여를 확인 한 경우에는에 대 한 호출을 LUIS에 전달 합니다. 이 전략은 메시지 가로채기 (man-in-the-middle) 공격을 방지 하지는 않지만 사용자의 키 및 엔드포인트 URL을 난독 처리 액세스를 추적할 수 있으며 엔드포인트 응답 로깅 (예: [Application Insights](https://azure.microsoft.com/services/application-insights/))을 추가할 수 있습니다.
 
 #### <a name="runtime-security-for-private-apps"></a>전용 앱에 대 한 런타임 보안
 
@@ -163,7 +163,7 @@ LUIS에는 리소스 소유권을 이전 하는 개념이 없습니다.
 
 ## <a name="securing-the-endpoint"></a>엔드포인트 보안 
 
-서버 간 환경에서 호출 하 여 LUIS 예측 런타임 끝점 키를 볼 수 있는 사람을 제어할 수 있습니다. 봇에서 LUIS를 사용하는 경우, 봇과 LUIS 간의 연결은 이미 안전합니다. LUIS 엔드포인트를 직접 호출하는 경우에는 제어된 액세스(예: [AAD](https://azure.microsoft.com/services/active-directory/))를 사용하여 서버 쪽 API(예 : Azure [함수](https://azure.microsoft.com/services/functions/))를 만들어야 합니다. 서버 쪽 API가 호출되고 인증 및 권한 부여가 확인되면 LUIS에 해당 호출을 전달합니다. 이 전략은 가로채기 공격을 방지하지 않지만 사용자의 엔드포인트를 난독 처리하고, 액세스를 추적하도록 허용하고, 엔드포인트 응답 로깅(예: [Application Insights](https://azure.microsoft.com/services/application-insights/))을 추가하도록 허용합니다.  
+서버 간 환경에서 호출 하 여 LUIS 예측 런타임 엔드포인트 키를 볼 수 있는 사람을 제어할 수 있습니다. 봇에서 LUIS를 사용하는 경우, 봇과 LUIS 간의 연결은 이미 안전합니다. LUIS 엔드포인트를 직접 호출하는 경우에는 제어된 액세스(예: [AAD](https://azure.microsoft.com/services/active-directory/))를 사용하여 서버 쪽 API(예 : Azure [함수](https://azure.microsoft.com/services/functions/))를 만들어야 합니다. 서버 쪽 API가 호출되고 인증 및 권한 부여가 확인되면 LUIS에 해당 호출을 전달합니다. 이 전략은 가로채기 공격을 방지하지 않지만 사용자의 엔드포인트를 난독 처리하고, 액세스를 추적하도록 허용하고, 엔드포인트 응답 로깅(예: [Application Insights](https://azure.microsoft.com/services/application-insights/))을 추가하도록 허용합니다.  
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -13,7 +13,7 @@ ms.locfileid: "75746928"
 ---
 # <a name="service-fabric-cluster-security-scenarios"></a>서비스 패브릭 클러스터 보안 시나리오
 
-Azure 서비스 패브릭 클러스터는 사용자가 소유하는 리소스입니다. 사용자는 권한이 없는 사용자가 연결되는 것을 방지하기 위해 클러스터를 보호해야 합니다. 보안 클러스터는 클러스터에서 프로덕션 워크로드를 실행하는 경우에 특히 중요합니다. 보안 되지 않은 클러스터를 만들 수 있지만 클러스터가 공용 인터넷에 관리 끝점을 노출 하는 경우 익명 사용자가 해당 클러스터에 연결할 수 있습니다. 보호되지 않은 클러스터는 프로덕션 워크로드에 지원되지 않습니다. 
+Azure 서비스 패브릭 클러스터는 사용자가 소유하는 리소스입니다. 사용자는 권한이 없는 사용자가 연결되는 것을 방지하기 위해 클러스터를 보호해야 합니다. 보안 클러스터는 클러스터에서 프로덕션 워크로드를 실행하는 경우에 특히 중요합니다. 보안 되지 않은 클러스터를 만들 수 있지만 클러스터가 공용 인터넷에 관리 엔드포인트을 노출 하는 경우 익명 사용자가 해당 클러스터에 연결할 수 있습니다. 보호되지 않은 클러스터는 프로덕션 워크로드에 지원되지 않습니다. 
 
 이 문서는 Azure 클러스터와 독립 실행형 클러스터의 보안 시나리오 및 이를 구현하는 데 사용할 수 있는 다양한 기술의 개요입니다.
 
@@ -63,7 +63,7 @@ Azure의 클러스터에서 인증서 보안을 설정하는 방법을 알아보
 
 ### <a name="client-to-node-azure-active-directory-security-on-azure"></a>Azure에서 클라이언트-노드 Azure Active Directory 보안
 
-조직(테넌트)에서는 Azure AD를 사용하여 애플리케이션에 대한 사용자 액세스를 관리할 수 있습니다. 애플리케이션은 웹 기반 로그인 UI를 갖는 항목과 네이티브 클라이언트 환경을 갖는 항목으로 나뉩니다. 테 넌 트를 아직 만들지 않은 경우 먼저 [Azure Active Directory 테 넌 트를 가져오는 방법][active-directory-howto-tenant]을 읽어 보세요.
+조직(테넌트)에서는 Azure AD를 사용하여 애플리케이션에 대한 사용자 액세스를 관리할 수 있습니다. 애플리케이션은 웹 기반 로그인 UI를 갖는 항목과 네이티브 클라이언트 환경을 갖는 항목으로 나뉩니다. 테넌트를 아직 만들지 않은 경우 먼저 [Azure Active Directory 테넌트를 가져오는 방법][active-directory-howto-tenant]을 읽어 보세요.
 
 Service Fabric 클러스터는 웹 기반 [Service Fabric Explorer][service-fabric-visualizing-your-cluster] 및 [Visual Studio][service-fabric-manage-application-in-visual-studio]를 포함하여 관리 기능에 대한 몇 가지 진입점을 제공합니다. 결과적으로 두 개의 Azure AD 애플리케이션(웹 애플리케이션과 네이티브 애플리케이션)을 만들어 클러스터에 대한 액세스를 제어합니다.
 

@@ -127,7 +127,7 @@ Azure Blob storage에 저장 된 데이터에 대 한 고유 키를 사용 하�
 
 Azure Machine Learning은 Azure Cosmos DB 인스턴스에 메트릭과 메타 데이터를 저장 합니다. 이 인스턴스는 Azure Machine Learning에서 관리 하는 Microsoft 구독과 연결 되어 있습니다. Azure Cosmos DB에 저장 된 모든 데이터는 Microsoft에서 관리 하는 키를 사용 하 여 미사용으로 암호화 됩니다.
 
-사용자 고유의 (고객 관리) 키를 사용 하 여 Azure Cosmos DB 인스턴스를 암호화 하려면 작업 영역에 사용할 전용 Cosmos DB 인스턴스를 만들 수 있습니다. Microsoft 구독에서 호스트 되는 다중 테 넌 트 Cosmos DB 인스턴스 외부에 실행 기록 정보와 같은 데이터를 저장 하려는 경우이 방법을 사용 하는 것이 좋습니다. 
+사용자 고유의 (고객 관리) 키를 사용 하 여 Azure Cosmos DB 인스턴스를 암호화 하려면 작업 영역에 사용할 전용 Cosmos DB 인스턴스를 만들 수 있습니다. Microsoft 구독에서 호스트 되는 다중 테넌트 Cosmos DB 인스턴스 외부에 실행 기록 정보와 같은 데이터를 저장 하려는 경우이 방법을 사용 하는 것이 좋습니다. 
 
 > [!NOTE]
 > 이 기능은 현재 미국 동부, 미국 서 부 2, 미국 남부 중부 에서만 사용할 수 있습니다.
@@ -193,7 +193,7 @@ Azure에서 미사용 암호화가 작동 하는 방식에 대 한 자세한 내
 
 ### <a name="encryption-in-transit"></a>전송 중 암호화
 
-SSL을 사용 하 여 Azure Machine Learning 마이크로 서비스 간의 내부 통신을 보호 하 고 점수 매기기 끝점에 대 한 외부 호출의 보안을 유지할 수 있습니다. 모든 Azure Storage 액세스는 보안 채널을 통해 수행 됩니다.
+SSL을 사용 하 여 Azure Machine Learning 마이크로 서비스 간의 내부 통신을 보호 하 고 점수 매기기 엔드포인트에 대 한 외부 호출의 보안을 유지할 수 있습니다. 모든 Azure Storage 액세스는 보안 채널을 통해 수행 됩니다.
 
 자세한 내용은 [Azure Machine Learning를 통해 SSL을 사용 하 여 웹 서비스 보호](https://docs.microsoft.com/azure/machine-learning/how-to-secure-web-service)를 참조 하세요.
 
@@ -223,7 +223,7 @@ Microsoft는 리소스 이름 (예: 데이터 집합 이름 또는 machine learn
 
 자동화 된 Machine Learning와 같은 서비스를 사용 하는 경우 Microsoft는 여러 모델을 학습 하기 위해 미리 처리 된 일시적 데이터를 생성할 수 있습니다. 이 데이터는 작업 영역의 데이터 저장소에 저장 되며,이를 통해 액세스 제어 및 암호화를 적절 하 게 적용할 수 있습니다.
 
-[배포 된 끝점에서 기록 된 진단 정보](how-to-enable-app-insights.md) 를 Azure 애플리케이션 Insights 인스턴스로 암호화할 수도 있습니다.
+[배포 된 엔드포인트에서 기록 된 진단 정보](how-to-enable-app-insights.md) 를 Azure 애플리케이션 Insights 인스턴스로 암호화할 수도 있습니다.
 
 ## <a name="monitoring"></a>모니터링
 

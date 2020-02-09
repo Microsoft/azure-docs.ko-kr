@@ -29,7 +29,7 @@ Azure 인증서(자체 서명 인증서 포함)에 대한 자세한 내용은 [A
 
 [Azure Active Directory](https://azure.microsoft.com/services/active-directory/)를 사용하여 자동화를 위한 클라이언트 코드를 인증할 수도 있습니다.
 
-**참고:** 관리 인증서에서 작업을 수행 하려면 구독에 대 한 공동 관리자 여야 합니다. 새 Azure Portal에서 공동 관리자를 추가하거나 제거하는 방법에 대해 [자세히 알아보세요](https://go.microsoft.com/fwlink/?linkid=849300). 
+**참고:** 관리 인증서에서 작업을 수행 하려면 구독에 대한 공동 관리자 여야 합니다. 새 Azure Portal에서 공동 관리자를 추가하거나 제거하는 방법에 대해 [자세히 알아보세요](https://go.microsoft.com/fwlink/?linkid=849300). 
 
 ## <a name="upload-a-management-certificate"></a>관리 인증서 업로드
 관리 인증서(공개 키만 포함하는 .cer 파일)를 만든 후에는 포털에 업로드할 수 있습니다. 포털에서 인증서를 사용할 수 있는 경우 일치하는 인증서(프라이빗 키)가 있는 모든 사람이 관리 API를 통해 연결할 수 있고 연결된 구독에 대한 리소스에 액세스할 수 있습니다.

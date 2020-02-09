@@ -5936,7 +5936,7 @@ True인 경우 이 매개 변수의 값이 암호화됩니다.
 
 <a id="PoliciesElementServiceManifestImportPoliciesTypeComplexTypeDefinedInServiceManifestImportelement"></a>
 ## <a name="policies-element-type-servicemanifestimportpoliciestype"></a>Policies 요소(ServiceManifestImportPoliciesType 형식) 
-가져온 서비스 매니페스트에 적용할 정책(끝점 바인딩, 패키지 공유, 실행 및 보안 액세스)을 설명합니다.
+가져온 서비스 매니페스트에 적용할 정책(엔드포인트 바인딩, 패키지 공유, 실행 및 보안 액세스)을 설명합니다.
 
 |attribute|값|
 |---|---|

@@ -69,7 +69,7 @@ Azure DNS에서 도메인을 호스트하기 위한 지침은 [자습서: Azure 
 
 1. 리소스 그룹을 열고 첫 번째 웹 앱을 선택 합니다 (이 예제에서는**앱-01** ).
 2. 왼쪽 열에서 **속성**을 선택 합니다.
-3. **URL** 아래의 주소를 적어 두고, **아웃바운드 IP 주소** 아래에서 목록의 첫 번째 IP 주소를 적어 둡니다. 나중에 Traffic Manager 끝점을 구성할 때이 정보를 사용 합니다.
+3. **URL** 아래의 주소를 적어 두고, **아웃바운드 IP 주소** 아래에서 목록의 첫 번째 IP 주소를 적어 둡니다. 나중에 Traffic Manager 엔드포인트을 구성할 때이 정보를 사용 합니다.
 4. **App-02**에 대해 반복합니다.
 
 ## <a name="create-a-traffic-manager-profile"></a>Traffic Manager 프로필 만들기
@@ -83,7 +83,7 @@ Traffic Manager 프로필을 만드는 방법에 대한 자세한 내용은 [빠
 이제 두 개의 웹앱에 대한 엔드포인트를 만들 수 있습니다.
 
 1. 리소스 그룹을 열고 Traffic Manager 프로필을 선택 합니다.
-2. 왼쪽 열에서 **끝점**을 선택 합니다.
+2. 왼쪽 열에서 **엔드포인트**을 선택 합니다.
 3. **추가**를 선택합니다.
 4. 다음 표를 사용하여 엔드포인트를 구성합니다.
 
@@ -96,7 +96,7 @@ Traffic Manager 프로필을 만드는 방법에 대한 자세한 내용은 [빠
 
 테스트에 기존 DNS 영역을 사용하거나 새 영역을 만들 수 있습니다. Azure에서 새 DNS 영역을 만들고 위임하려면 [자습서: Azure DNS에 도메인 호스트](dns-delegate-domain-azure-dns.md)를 참조하세요.
 
-## <a name="add-a-txt-record-for-custom-domain-validation"></a>사용자 지정 도메인 유효성 검사에 대 한 TXT 레코드 추가
+## <a name="add-a-txt-record-for-custom-domain-validation"></a>사용자 지정 도메인 유효성 검사에 대한 TXT 레코드 추가
 
 웹 앱에 사용자 지정 호스트 이름을 추가 하면 특정 TXT 레코드를 검색 하 여 도메인의 유효성을 검사 합니다.
 
@@ -111,7 +111,7 @@ Traffic Manager 프로필을 만드는 방법에 대한 자세한 내용은 [빠
 
 ## <a name="add-a-custom-domain"></a>사용자 지정 도메인 추가
 
-두 웹 앱에 대 한 사용자 지정 도메인을 추가 합니다.
+두 웹 앱에 대한 사용자 지정 도메인을 추가 합니다.
 
 1. 리소스 그룹을 열고 첫 번째 웹 앱을 선택 합니다.
 2. 왼쪽 열에서 **사용자 지정 도메인**을 선택 합니다.
@@ -126,7 +126,7 @@ Traffic Manager 프로필을 만드는 방법에 대한 자세한 내용은 [빠
 
 ## <a name="add-the-alias-record-set"></a>별칭 레코드 집합 추가
 
-이제 apex 영역에 대 한 별칭 레코드를 추가 합니다.
+이제 apex 영역에 대한 별칭 레코드를 추가 합니다.
 
 1. 리소스 그룹을 열고 DNS 영역을 선택 합니다.
 2. **레코드 집합**을 선택합니다.
@@ -160,4 +160,4 @@ Traffic Manager 프로필을 만드는 방법에 대한 자세한 내용은 [빠
 - [자습서: Traffic Manager를 사용하여 apex 도메인 이름을 지원하도록 별칭 레코드 구성](tutorial-alias-tm.md)
 - [DNS FAQ](https://docs.microsoft.com/azure/dns/dns-faq#alias-records)
 
-활성 DNS 이름을 마이그레이션하는 방법에 대 한 자세한 내용은 [Azure App Service에 활성 dns 이름 마이그레이션](../app-service/manage-custom-dns-migrate-domain.md)을 참조 하세요.
+활성 DNS 이름을 마이그레이션하는 방법에 대한 자세한 내용은 [Azure App Service에 활성 dns 이름 마이그레이션](../app-service/manage-custom-dns-migrate-domain.md)을 참조 하세요.

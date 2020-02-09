@@ -22,7 +22,7 @@ ms.locfileid: "76846771"
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-Azure 애플리케이션 Insights와 함께 Azure Active Directory B2C (Azure AD B2C)를 사용 하는 경우 사용자 경험에 대 한 자세한 사용자 지정 이벤트 로그를 얻을 수 있습니다. 이 문서에서는 다음 방법을 설명합니다.
+Azure 애플리케이션 Insights와 함께 Azure Active Directory B2C (Azure AD B2C)를 사용 하는 경우 사용자 경험에 대한 자세한 사용자 지정 이벤트 로그를 얻을 수 있습니다. 이 문서에서는 다음 방법을 설명합니다.
 
 * 사용자 동작에 대한 정보를 얻습니다.
 * 개발에서 또는 프로덕션 환경에서 사용자 고유의 정책 문제를 해결합니다.

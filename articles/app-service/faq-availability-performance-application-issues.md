@@ -1,6 +1,6 @@
 ---
 title: 응용 프로그램 성능 Faq
-description: Azure App Service의 가용성, 성능 및 응용 프로그램 문제에 대 한 자주 묻는 질문에 대 한 대답을 확인 하세요.
+description: Azure App Service의 가용성, 성능 및 응용 프로그램 문제에 대한 자주 묻는 질문에 대한 대답을 확인 하세요.
 author: genlin
 manager: dcscontentpm
 tags: top-support-issue

@@ -43,24 +43,24 @@ Microsoft 365 정부 온라인 서비스에 대 한 조직의 초기 등록 중�
 
 ## <a name="changes-to-portal-access"></a>포털 액세스에 대 한 변경 내용
 
-[끝점 매핑 테이블](#endpoint-mapping)에 표시 된 것 처럼 Microsoft Azure Government, Microsoft 365 정부 – GCC High 및 Microsoft 365 정부 – DoD에 대 한 포털 끝점을 업데이트 했습니다.
+[엔드포인트 매핑 테이블](#endpoint-mapping)에 표시 된 것 처럼 Microsoft Azure Government, Microsoft 365 정부 – GCC High 및 Microsoft 365 정부 – DoD에 대 한 포털 엔드포인트을 업데이트 했습니다.
 
 이전 고객은 전 세계 Azure (portal.azure.com) 및 Office 365 (portal.office.com) 포털을 사용 하 여 로그인 할 수 있었습니다. 이 업데이트를 사용 하 여 고객은 이제 특정 Microsoft Azure Government, Microsoft 365 정부 GCC High 및 Microsoft 365 정부-DoD 포털을 사용 하 여 로그인 해야 합니다.
 
 ## <a name="endpoint-mapping"></a>엔드포인트 매핑
 
-다음 표에서는 모든 고객에 대 한 끝점을 보여 줍니다.
+다음 표에서는 모든 고객에 대 한 엔드포인트을 보여 줍니다.
 
-| 이름 | 끝점 세부 정보 |
+| 이름 | 엔드포인트 세부 정보 |
 |------|------------------|
 | 포털 |Microsoft Azure Government: https://portal.azure.us<p>Microsoft 365 정부 – GCC High: https://portal.office365.us<p>Microsoft 365 정부 – DoD: https://portal.apps.mil |
-| Azure Active Directory 기관 끝점 | https://login.microsoftonline.us |
+| Azure Active Directory 기관 엔드포인트 | https://login.microsoftonline.us |
 | Azure Active Directory Graph API | https://graph.windows.net |
 | Microsoft 365 정부에 대 한 Microsoft Graph API-GCC High | https://graph.microsoft.us |
 | Microsoft 365 정부용 Microsoft Graph API-DoD | https://dod-graph.microsoft.us |
-| Azure Government services 끝점 | 자세한 내용은 [Azure Government 개발자 가이드](https://docs.microsoft.com/azure/azure-government/documentation-government-developer-guide) 를 참조 하세요. |
-| 정부 GCC 고급 끝점 Microsoft 365 | 자세한 내용은 [Office 365 미국 정부 GCC 높은 끝점](https://docs.microsoft.com/office365/enterprise/office-365-u-s-government-gcc-high-endpoints) 을 참조 하세요. |
-| Microsoft 365 Government - DoD | 자세한 내용은 [Office 365 미국 정부 DoD 끝점](https://docs.microsoft.com/office365/enterprise/office-365-u-s-government-dod-endpoints) 을 참조 하세요. |
+| Azure Government services 엔드포인트 | 자세한 내용은 [Azure Government 개발자 가이드](https://docs.microsoft.com/azure/azure-government/documentation-government-developer-guide) 를 참조 하세요. |
+| 정부 GCC 고급 엔드포인트 Microsoft 365 | 자세한 내용은 [Office 365 미국 정부 GCC 높은 엔드포인트](https://docs.microsoft.com/office365/enterprise/office-365-u-s-government-gcc-high-endpoints) 을 참조 하세요. |
+| Microsoft 365 Government - DoD | 자세한 내용은 [Office 365 미국 정부 DoD 엔드포인트](https://docs.microsoft.com/office365/enterprise/office-365-u-s-government-dod-endpoints) 을 참조 하세요. |
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -68,8 +68,8 @@ Microsoft 365 정부 온라인 서비스에 대 한 조직의 초기 등록 중�
 
 - [Azure Government란?](https://docs.microsoft.com/azure/azure-government/documentation-government-welcome)
 
-- [Azure Government AAD 기관 끝점 업데이트](https://devblogs.microsoft.com/azuregov/azure-government-aad-authority-endpoint-update/)
+- [Azure Government AAD 기관 엔드포인트 업데이트](https://devblogs.microsoft.com/azuregov/azure-government-aad-authority-endpoint-update/)
 
-- [미국 정부 클라우드의 Microsoft Graph 끝점](https://developer.microsoft.com/graph/blogs/new-microsoft-graph-endpoints-in-us-government-cloud/)
+- [미국 정부 클라우드의 Microsoft Graph 엔드포인트](https://developer.microsoft.com/graph/blogs/new-microsoft-graph-endpoints-in-us-government-cloud/)
 
 - [Office 365 미국 정부 GCC High 및 DoD](https://docs.microsoft.com/office365/servicedescriptions/office-365-platform-service-description/office-365-us-government/gcc-high-and-dod)

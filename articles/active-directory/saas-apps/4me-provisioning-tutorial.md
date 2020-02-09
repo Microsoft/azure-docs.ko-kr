@@ -36,7 +36,7 @@ ms.locfileid: "77059169"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [4me 테 넌 트](https://www.4me.com/trial/)
+* [4me 테넌트](https://www.4me.com/trial/)
 * 관리자 권한이 있는 4me의 사용자 계정
 
 ## <a name="add-4me-from-the-gallery"></a>갤러리에서 4me 추가
@@ -100,7 +100,7 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. 4me 계정의 **테 넌 트 URL** 및 **암호 토큰** 을 검색 하려면 6 단계에 설명 된 대로 연습을 수행 합니다.
+5. 4me 계정의 **테넌트 URL** 및 **암호 토큰** 을 검색 하려면 6 단계에 설명 된 대로 연습을 수행 합니다.
 
 6. 4me 관리 콘솔에 로그인 합니다. **설정**으로 이동 합니다.
 
@@ -110,7 +110,7 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
     ![4me 앱](media/4me-provisioning-tutorial/4me02.png)
 
-    **Scim** 드롭다운을 열어 비밀 토큰과 scim 끝점을 검색 합니다.
+    **Scim** 드롭다운을 열어 비밀 토큰과 scim 엔드포인트을 검색 합니다.
 
     ![4me SCIM](media/4me-provisioning-tutorial/4me03.png)
 
@@ -160,7 +160,7 @@ Azure AD 프로비저닝 로그를 읽는 방법에 대한 자세한 내용은 [
 
 ## <a name="connector-limitations"></a>커넥터 제한 사항
 
-* 4me는 테스트 및 프로덕션 환경에 대해 다른 SCIM 끝점 Url을 포함 합니다. 후자는. c **a** **c** .
+* 4me는 테스트 및 프로덕션 환경에 대해 다른 SCIM 엔드포인트 Url을 포함 합니다. 후자는. c **a** **c** .
 * 생성 된 암호 토큰이 생성 되 면 1 월 만료 날짜가 생성 됩니다.
 * 4me는 **삭제** 작업을 지원 하지 않습니다.
 

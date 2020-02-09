@@ -113,7 +113,7 @@ Azure Storage 클라이언트 라이브러리를 사용 하면 다시 시도할 
 
 * **SecondaryThenPrimary**
 
-**Locationmode** 를 **PrimaryThenSecondary**로 설정 하는 경우 기본 끝점에 대 한 초기 읽기 요청이 다시 시도할 수 있는 오류로 인해 실패 하는 경우 클라이언트는 자동으로 보조 끝점에 대해 다른 읽기 요청을 만듭니다. 오류가 서버 시간 초과 오류이면 클라이언트는 서버로부터 재시도 가능한 오류를 수신하기 전에 시간 제한이 만료될 때까지 대기해야 합니다.
+**Locationmode** 를 **PrimaryThenSecondary**로 설정 하는 경우 기본 엔드포인트에 대 한 초기 읽기 요청이 다시 시도할 수 있는 오류로 인해 실패 하는 경우 클라이언트는 자동으로 보조 엔드포인트에 대해 다른 읽기 요청을 만듭니다. 오류가 서버 시간 초과 오류이면 클라이언트는 서버로부터 재시도 가능한 오류를 수신하기 전에 시간 제한이 만료될 때까지 대기해야 합니다.
 
 재시도 가능한 오류에 대응하는 방법을 결정하는 시나리오는 기본적으로 두 가지입니다.
 
@@ -271,4 +271,4 @@ static function OnBeforeResponse(oSession: Session) {
 
 * 마지막 동기화 시간 속성을 설정 하는 방법에 대 한 다른 예를 비롯 하 여 보조 지역에서 읽는 방법에 대 한 자세한 내용은 [Azure Storage 중복 옵션 및 읽기 액세스 지역 중복 저장소](https://blogs.msdn.microsoft.com/windowsazurestorage/2013/12/11/windows-azure-storage-redundancy-options-and-read-access-geo-redundant-storage/)를 참조 하세요.
 
-* 기본 끝점과 보조 끝점 간을 전환 하는 방법을 보여 주는 전체 샘플을 보려면 [Azure 샘플-GRS 저장소에서 회로 차단기 패턴 사용](https://github.com/Azure-Samples/storage-dotnet-circuit-breaker-pattern-ha-apps-using-ra-grs)을 참조 하세요.
+* 기본 엔드포인트과 보조 엔드포인트 간을 전환 하는 방법을 보여 주는 전체 샘플을 보려면 [Azure 샘플-GRS 저장소에서 회로 차단기 패턴 사용](https://github.com/Azure-Samples/storage-dotnet-circuit-breaker-pattern-ha-apps-using-ra-grs)을 참조 하세요.

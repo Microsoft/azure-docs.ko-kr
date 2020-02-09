@@ -95,7 +95,7 @@ Resource Manager에서 리소스에 대한 속성을 검색해야 하지만 구�
 
 참조 함수에서 `Full`를 사용 하 여 관리 id를 비롯 한 모든 속성을 가져옵니다.
 
-예를 들어 가상 머신 확장 집합에 적용 되는 관리 되는 id에 대 한 테 넌 트 ID를 가져오려면 다음을 사용 합니다.
+예를 들어 가상 머신 확장 집합에 적용 되는 관리 되는 id에 대 한 테넌트 ID를 가져오려면 다음을 사용 합니다.
 
 ```json
 "tenantId": "[reference(resourceId('Microsoft.Compute/virtualMachineScaleSets',  variables('vmNodeType0Name')), variables('vmssApiVersion'), 'Full').Identity.tenantId]"

@@ -24,7 +24,7 @@ Azure Api와 상호 작용 하기 위해 AKS 클러스터에는 [AD (Azure Activ
 
 Azure AD 서비스 주체를 만들려면 Azure AD 테넌트에 애플리케이션을 등록하고 구독의 역할에 해당 애플리케이션을 할당할 수 있는 사용 권한이 있어야 합니다. 필요한 사용 권한이 없으면 필요한 사용 권한을 할당하거나 AKS 클러스터로 사용하기 위한 서비스 주체를 미리 만들도록 Azure AD 또는 구독 관리자에 요청해야 합니다.
 
-다른 Azure AD 테 넌 트에서 서비스 주체를 사용 하는 경우 클러스터를 배포할 때 사용할 수 있는 사용 권한 관련 추가 고려 사항이 있습니다. 디렉터리 정보를 읽고 쓸 수 있는 적절 한 권한이 없을 수 있습니다. 자세한 내용은 [Azure Active Directory의 기본 사용자 권한은 무엇입니까?][azure-ad-permissions] 를 참조 하세요.
+다른 Azure AD 테넌트에서 서비스 주체를 사용 하는 경우 클러스터를 배포할 때 사용할 수 있는 사용 권한 관련 추가 고려 사항이 있습니다. 디렉터리 정보를 읽고 쓸 수 있는 적절 한 권한이 없을 수 있습니다. 자세한 내용은 [Azure Active Directory의 기본 사용자 권한은 무엇입니까?][azure-ad-permissions] 를 참조 하세요.
 
 또한 Azure CLI 버전 2.0.59 이상이 설치 및 구성 되어 있어야 합니다.  `az --version`을 실행하여 버전을 찾습니다. 설치 또는 업그레이드 해야 하는 경우 [Azure CLI 설치][install-azure-cli]를 참조 하세요.
 
@@ -79,7 +79,7 @@ Azure Portal을 사용하여 AKS 클러스터를 배포하는 경우 **Kubernete
 
 ## <a name="delegate-access-to-other-azure-resources"></a>다른 Azure 리소스에 대한 액세스 권한 위임
 
-AKS 클러스터에 대한 서비스 주체를 사용하여 다른 리소스에 액세스할 수 있습니다. 예를 들어 기존 Azure 가상 네트워크 서브넷에 AKS 클러스터를 배포 하거나 ACR (Azure Container Registry)에 연결 하려는 경우 해당 리소스에 대 한 액세스 권한을 서비스 주체에 위임 해야 합니다.
+AKS 클러스터에 대한 서비스 주체를 사용하여 다른 리소스에 액세스할 수 있습니다. 예를 들어 기존 Azure 가상 네트워크 서브넷에 AKS 클러스터를 배포 하거나 ACR (Azure Container Registry)에 연결 하려는 경우 해당 리소스에 대한 액세스 권한을 서비스 주체에 위임 해야 합니다.
 
 권한을 위임 하려면 [az role 대입문 create][az-role-assignment-create] 명령을 사용 하 여 역할 할당을 만듭니다. 리소스 그룹 또는 가상 네트워크 리소스와 같은 특정 범위에 `appId`을 할당 합니다. 그러면, 역할은 다음 예제에 표시된 것처럼 서비스 주체가 리소스에 대해 가진 사용 권한을 정의합니다.
 
@@ -93,7 +93,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
 
 ### <a name="azure-container-registry"></a>Azure Container Registry
 
-컨테이너 이미지 저장소로 ACR (Azure Container Registry)를 사용 하는 경우 이미지를 읽고 가져오도록 AKS 클러스터에 대 한 서비스 주체에 게 사용 권한을 부여 해야 합니다. 현재 권장 되는 구성은 [az aks create][az-aks-create] 또는 [az aks update][az-aks-update] 명령을 사용 하 여 레지스트리와 통합 하 고 서비스 주체에 적절 한 역할을 할당 하는 것입니다. 자세한 단계는 [Azure Kubernetes Service에서 Azure Container Registry 인증][aks-to-acr]을 참조 하세요.
+컨테이너 이미지 저장소로 ACR (Azure Container Registry)를 사용 하는 경우 이미지를 읽고 가져오도록 AKS 클러스터에 대한 서비스 주체에 게 사용 권한을 부여 해야 합니다. 현재 권장 되는 구성은 [az aks create][az-aks-create] 또는 [az aks update][az-aks-update] 명령을 사용 하 여 레지스트리와 통합 하 고 서비스 주체에 적절 한 역할을 할당 하는 것입니다. 자세한 단계는 [Azure Kubernetes Service에서 Azure Container Registry 인증][aks-to-acr]을 참조 하세요.
 
 ### <a name="networking"></a>네트워킹
 
@@ -115,7 +115,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
 - [사용자 지정 역할][rbac-custom-role] 을 만들고 다음 역할 권한을 정의 합니다.
   - *Microsoft.Compute/disks/read*
   - *Microsoft.Compute/disks/write*
-- 또는 리소스 그룹에 대 한 [저장소 계정 참가자][rbac-storage-contributor] 기본 제공 역할을 할당 합니다.
+- 또는 리소스 그룹에 대한 [저장소 계정 참가자][rbac-storage-contributor] 기본 제공 역할을 할당 합니다.
 
 ### <a name="azure-container-instances"></a>Azure Container Instances
 
@@ -142,7 +142,7 @@ AKS와 Azure AD 서비스 주체를 사용하는 경우 다음 고려 사항을 
 
 ## <a name="troubleshoot"></a>문제 해결
 
-AKS 클러스터에 대 한 서비스 주체 자격 증명은 Azure CLI에 의해 캐시 됩니다. 이러한 자격 증명이 만료 된 경우 AKS 클러스터를 배포 하는 동안 오류가 발생 합니다. [Az aks create][az-aks-create] 를 실행 하는 경우 다음 오류 메시지는 캐시 된 서비스 주체 자격 증명에 문제가 있음을 나타낼 수 있습니다.
+AKS 클러스터에 대한 서비스 주체 자격 증명은 Azure CLI에 의해 캐시 됩니다. 이러한 자격 증명이 만료 된 경우 AKS 클러스터를 배포 하는 동안 오류가 발생 합니다. [Az aks create][az-aks-create] 를 실행 하는 경우 다음 오류 메시지는 캐시 된 서비스 주체 자격 증명에 문제가 있음을 나타낼 수 있습니다.
 
 ```console
 Operation failed with status: 'Bad Request'.
@@ -160,9 +160,9 @@ ls -la $HOME/.azure/aksServicePrincipal.json
 
 ## <a name="next-steps"></a>다음 단계
 
-Azure Active Directory 서비스 주체에 대 한 자세한 내용은 [응용 프로그램 및 서비스 주체 개체][service-principal]를 참조 하세요.
+Azure Active Directory 서비스 주체에 대한 자세한 내용은 [응용 프로그램 및 서비스 주체 개체][service-principal]를 참조 하세요.
 
-자격 증명을 업데이트 하는 방법에 대 한 자세한 내용은 [AKS에서 서비스 사용자에 대 한 자격 증명 업데이트 또는 순환][update-credentials]을 참조 하세요.
+자격 증명을 업데이트 하는 방법에 대한 자세한 내용은 [AKS에서 서비스 사용자에 대한 자격 증명 업데이트 또는 순환][update-credentials]을 참조 하세요.
 
 <!-- LINKS - internal -->
 [aad-service-principal]:../active-directory/develop/app-objects-and-service-principals.md

@@ -23,9 +23,9 @@ Visual Studio는 함수를 개발할 때 다음과 같은 이점을 제공 합�
 * 미리 컴파일된 C# 함수를 개발하고 배포합니다. 미리 컴파일된 함수는 C# 스크립트 기반 함수보다 더 뛰어난 콜드 부팅 성능을 제공합니다. 
 * Visual Studio 개발의 모든 이점을 누리면서 C#에서 함수를 코딩합니다. 
 
-이 문서에서는 Visual Studio를 사용 하 여 클래스 라이브러리 함수 C# 를 개발 하 고 Azure에 게시 하는 방법에 대 한 세부 정보를 제공 합니다. 이 문서를 읽으려면 먼저 [Visual Studio용 Functions 빠른 시작](functions-create-your-first-function-visual-studio.md)을 완료해야 합니다. 
+이 문서에서는 Visual Studio를 사용 하 여 클래스 라이브러리 함수 C# 를 개발 하 고 Azure에 게시 하는 방법에 대한 세부 정보를 제공 합니다. 이 문서를 읽으려면 먼저 [Visual Studio용 Functions 빠른 시작](functions-create-your-first-function-visual-studio.md)을 완료해야 합니다. 
 
-별도로 언급 하지 않는 한, 표시 되는 프로시저와 예제는 Visual Studio 2019에 대 한 것입니다. 
+별도로 언급 하지 않는 한, 표시 되는 프로시저와 예제는 Visual Studio 2019에 대한 것입니다. 
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -144,7 +144,7 @@ Azure Storage 계정과 같이 필요한 다른 리소스는 게시 프로세스
 
 트리거와 마찬가지로 입력 및 출력 바인딩이 바인딩 특성으로 함수에 추가됩니다. 다음과 같이 함수에 바인딩을 추가합니다.
 
-1. [로컬 개발에 대 한 프로젝트를 구성](#configure-the-project-for-local-development)했는지 확인 합니다.
+1. [로컬 개발에 대한 프로젝트를 구성](#configure-the-project-for-local-development)했는지 확인 합니다.
 
 2. 특정 바인딩에 대한 적절한 NuGet 확장 패키지를 추가합니다. 자세한 내용은 트리거 및 바인딩 문서의 [Visual Studio를 사용하여 로컬 C# 개발](./functions-bindings-register.md#local-csharp)을 참조하세요. 바인딩에 대한 참조 문서에 바인딩 전용 NuGet 패키지 요구 사항이 있습니다. 예를 들어 [Event Hubs 바인딩 참조 문서](functions-bindings-event-hubs.md)에서 Event Hubs 트리거에 대한 패키지 요구 사항을 찾습니다.
 

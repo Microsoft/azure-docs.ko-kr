@@ -56,7 +56,7 @@ $destapp = New-AzWebApp -ResourceGroupName NewAzureResourceGroup -Name dest-weba
 ```
 
 ## <a name="cloning-an-existing-app-to-an-app-service-environment"></a>기존 앱을 App Service Environment로 복제
-시나리오: 미국 중 남부 지역의 기존 앱과 새 앱에 대 한 콘텐츠를 기존 App Service Environment (ASE)로 복제 하려고 합니다.
+시나리오: 미국 중 남부 지역의 기존 앱과 새 앱에 대한 콘텐츠를 기존 App Service Environment (ASE)로 복제 하려고 합니다.
 
 원본 앱을 포함하는 리소스 그룹 이름을 알고 있으면 다음 PowerShell 명령을 사용하여 원본 앱의 정보를 가져올 수 있습니다(이 경우 이름은 `source-webapp`임).
 
@@ -98,7 +98,7 @@ $destapp = New-AzWebApp -ResourceGroupName DestinationAzureResourceGroup -Name d
 ```
 
 ### <a name="adding-new-cloned-app-to-an-existing-traffic-manager-profile"></a>기존 Traffic Manager 프로필에 복제된 새 앱 추가
-시나리오: Azure Resource Manager traffic Manager 프로필이 이미 있으며 두 앱을 끝점으로 추가 하려고 합니다. 이렇게 하려면 먼저 기존 Traffic Manager 프로필 ID를 조합해야 합니다. 구독 ID, 리소스 그룹 이름 및 기존 Traffic Manager 프로필 이름이 필요합니다.
+시나리오: Azure Resource Manager traffic Manager 프로필이 이미 있으며 두 앱을 엔드포인트으로 추가 하려고 합니다. 이렇게 하려면 먼저 기존 Traffic Manager 프로필 ID를 조합해야 합니다. 구독 ID, 리소스 그룹 이름 및 기존 Traffic Manager 프로필 이름이 필요합니다.
 
 ```powershell
 $TMProfileID = "/subscriptions/<Your subscription ID goes here>/resourceGroups/<Your resource group name goes here>/providers/Microsoft.TrafficManagerProfiles/ExistingTrafficManagerProfileName"

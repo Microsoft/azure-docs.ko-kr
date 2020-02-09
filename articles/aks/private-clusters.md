@@ -16,9 +16,9 @@ ms.locfileid: "76932585"
 ---
 # <a name="create-a-private-azure-kubernetes-service-cluster-preview"></a>개인 Azure Kubernetes Service 클러스터 만들기 (미리 보기)
 
-개인 클러스터에서 제어 평면이 나 API 서버에는 [개인 인터넷 문서에 대 한 RFC1918 할당](https://tools.ietf.org/html/rfc1918) 에 정의 된 내부 IP 주소가 있습니다. 개인 클러스터를 사용 하 여 API 서버와 노드 풀 간의 네트워크 트래픽이 개인 네트워크에만 남아 있는지 확인할 수 있습니다.
+개인 클러스터에서 제어 평면이 나 API 서버에는 [개인 인터넷 문서에 대한 RFC1918 할당](https://tools.ietf.org/html/rfc1918) 에 정의 된 내부 IP 주소가 있습니다. 개인 클러스터를 사용 하 여 API 서버와 노드 풀 간의 네트워크 트래픽이 개인 네트워크에만 남아 있는지 확인할 수 있습니다.
 
-제어 평면 또는 API 서버는 Azure Kubernetes 서비스 (AKS)에서 관리 되는 Azure 구독에 있습니다. 고객의 클러스터 또는 노드 풀은 고객의 구독에 있습니다. 서버와 클러스터 또는 노드 풀은 API 서버 가상 네트워크의 [Azure 개인 링크 서비스][private-link-service] 및 고객의 AKS 클러스터의 서브넷에 노출 되는 개인 끝점을 통해 서로 통신할 수 있습니다.
+제어 평면 또는 API 서버는 Azure Kubernetes 서비스 (AKS)에서 관리 되는 Azure 구독에 있습니다. 고객의 클러스터 또는 노드 풀은 고객의 구독에 있습니다. 서버와 클러스터 또는 노드 풀은 API 서버 가상 네트워크의 [Azure 개인 링크 서비스][private-link-service] 및 고객의 AKS 클러스터의 서브넷에 노출 되는 개인 엔드포인트을 통해 서로 통신할 수 있습니다.
 
 > [!IMPORTANT]
 > AKS 미리 보기 기능은 셀프 서비스 이며 옵트인 기반으로 제공 됩니다. 미리 *보기는 그대로 제공* 되며 *사용 가능* 하 고 SLA (서비스 수준 계약) 및 제한 된 보증에서 제외 됩니다. AKS 미리 보기는 *최상의 노력* 을 기반으로 고객 지원을 통해 부분적으로 검사 됩니다. 따라서이 기능은 프로덕션 용도로 사용 되지 않습니다. 자세한 내용은 다음 지원 문서를 참조 하세요.
@@ -76,7 +76,7 @@ az provider register --namespace Microsoft.Network
 ```azurecli-interactive
 az aks create -n <private-cluster-name> -g <private-cluster-resource-group> --load-balancer-sku standard --enable-private-cluster  
 ```
-여기서 *--enable-private-cluster* 는 개인 클러스터에 대 한 필수 플래그입니다. 
+여기서 *--enable-private-cluster* 는 개인 클러스터에 대한 필수 플래그입니다. 
 
 ### <a name="advanced-networking"></a>고급 네트워킹  
 
@@ -92,13 +92,13 @@ az aks create \
     --dns-service-ip 10.2.0.10 \
     --service-cidr 10.2.0.0/24 
 ```
-여기서 *--enable-private-cluster* 는 개인 클러스터에 대 한 필수 플래그입니다. 
+여기서 *--enable-private-cluster* 는 개인 클러스터에 대한 필수 플래그입니다. 
 
 > [!NOTE]
 > Docker 브리지 주소 CIDR (172.17.0.1/16)이 서브넷 CIDR과 충돌 하는 경우 Docker 브리지 주소를 적절 하 게 변경 합니다.
 
 ## <a name="connect-to-the-private-cluster"></a>개인 클러스터에 연결
-API 서버 끝점에 공용 IP 주소가 없습니다. 따라서 가상 네트워크에서 Azure VM (가상 머신)을 만들고 API 서버에 연결 해야 합니다. 이렇게 하려면 다음을 수행합니다.
+API 서버 엔드포인트에 공용 IP 주소가 없습니다. 따라서 가상 네트워크에서 Azure VM (가상 머신)을 만들고 API 서버에 연결 해야 합니다. 이렇게 하려면 다음을 수행합니다.
 
 1. 클러스터에 연결 하기 위한 자격 증명을 가져옵니다.
 
@@ -132,14 +132,14 @@ API 서버 끝점에 공용 IP 주소가 없습니다. 따라서 가상 네트�
 
 ## <a name="limitations"></a>제한 사항 
 * 가용성 영역는 현재 미국 동부 2 및 미국 서 부 2 지역 에서만 지원 됩니다.
-* [Azure 개인 링크 서비스 제한은][private-link-service] 현재 동일한 가상 네트워크에서 지원 되지 않는 개인 클러스터, Azure 개인 끝점 및 가상 네트워크 서비스 끝점에 적용 됩니다.
+* [Azure 개인 링크 서비스 제한은][private-link-service] 현재 동일한 가상 네트워크에서 지원 되지 않는 개인 클러스터, Azure 개인 엔드포인트 및 가상 네트워크 서비스 엔드포인트에 적용 됩니다.
 * 개인 Azure 가상 네트워크에서 개인 Azure Container Instances (ACI)를 spin 개인 클러스터의 가상 노드가 지원 되지 않음
 * 개인 클러스터와 함께 기본 제공 되는 Azure DevOps 통합을 지원 하지 않습니다.
 * Azure Container Registry를 개인 AKS 사용 하도록 설정 해야 하는 고객의 경우 Container Registry 가상 네트워크는 에이전트 클러스터 가상 네트워크와 피어 링 되어야 합니다.
 * 현재 Azure Dev Spaces 지원 안 함
 * 기존 AKS 클러스터를 개인 클러스터로 변환 하는 기능이 지원 되지 않음
-* 고객 서브넷에서 개인 끝점을 삭제 하거나 수정 하면 클러스터의 작동이 중지 됩니다. 
-* 컨테이너 라이브 데이터에 대 한 Azure Monitor 현재 지원 되지 않습니다.
+* 고객 서브넷에서 개인 엔드포인트을 삭제 하거나 수정 하면 클러스터의 작동이 중지 됩니다. 
+* 컨테이너 라이브 데이터에 대한 Azure Monitor 현재 지원 되지 않습니다.
 * *사용자 고유의 DNS 가져오기* 는 현재 지원 되지 않습니다.
 
 

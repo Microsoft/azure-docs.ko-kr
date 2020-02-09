@@ -43,13 +43,13 @@ ms.locfileid: "73718978"
 
 ## <a name="billing-configuration-setting"></a>청구 구성 설정
 
-`Billing` 설정은 Azure에서 컨테이너에 대 한 청구 정보를 측정 하는 데 사용 되는 _Cognitive Services_ 리소스의 끝점 URI를 지정 합니다. 이 구성 설정의 값을 지정 해야 하며,이 값은 Azure의 _Cognitive Services_ 리소스에 대 한 올바른 끝점 URI 여야 합니다. 컨테이너는 약 10 ~ 15분마다 사용량을 보고합니다.
+`Billing` 설정은 Azure에서 컨테이너에 대 한 청구 정보를 측정 하는 데 사용 되는 _Cognitive Services_ 리소스의 엔드포인트 URI를 지정 합니다. 이 구성 설정의 값을 지정 해야 하며,이 값은 Azure의 _Cognitive Services_ 리소스에 대 한 올바른 엔드포인트 URI 여야 합니다. 컨테이너는 약 10 ~ 15분마다 사용량을 보고합니다.
 
 이 설정은 다음 위치에서 찾을 수 있습니다.
 
 * Azure Portal: **Cognitive Services** 개요, 레이블 `Endpoint`
 
-다음 표와 같이 끝점 URI에 `vision/v1.0` 라우팅을 추가 해야 합니다. 
+다음 표와 같이 엔드포인트 URI에 `vision/v1.0` 라우팅을 추가 해야 합니다. 
 
 |필수| Name | 데이터 형식 | 설명 |
 |--|------|-----------|-------------|
@@ -95,8 +95,8 @@ Computer Vision 컨테이너는 입력 또는 출력 탑재를 사용하여 학�
 
 | Placeholder | 값 | 형식 또는 예 |
 |-------------|-------|---|
-| **{API_KEY}** | Azure `Computer Vision` 키 페이지에 있는 `Computer Vision` 리소스의 끝점 키입니다. | `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` |
-| **{ENDPOINT_URI}** | 청구 끝점 값은 Azure `Computer Vision` 개요 페이지에서 사용할 수 있습니다.| 명시적 예제에 대 한 [필수 매개 변수 수집](computer-vision-how-to-install-containers.md#gathering-required-parameters) 을 참조 하세요. |
+| **{API_KEY}** | Azure `Computer Vision` 키 페이지에 있는 `Computer Vision` 리소스의 엔드포인트 키입니다. | `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` |
+| **{ENDPOINT_URI}** | 청구 엔드포인트 값은 Azure `Computer Vision` 개요 페이지에서 사용할 수 있습니다.| 명시적 예제에 대 한 [필수 매개 변수 수집](computer-vision-how-to-install-containers.md#gathering-required-parameters) 을 참조 하세요. |
 
 [!INCLUDE [subdomains-note](../../../includes/cognitive-services-custom-subdomains-note.md)]
 

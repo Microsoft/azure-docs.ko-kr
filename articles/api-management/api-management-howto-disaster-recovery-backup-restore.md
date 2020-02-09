@@ -178,10 +178,10 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 -   또한 다음 항목은 백업 데이터에 포함 되지 않습니다. 사용자 지정 도메인 SSL 인증서 및 고객, 개발자 포털 콘텐츠 및 가상 네트워크 통합 설정에서 업로드 하는 중간 또는 루트 인증서입니다.
 -   서비스 백업을 수행하는 빈도는 복구 지점 목표에 영향을 줍니다. 영향을 최소화하려면 정기 백업을 구현함과 동시에 API Management 서비스에 대한 변경을 수행한 후 요청 시 백업도 수행하는 것이 좋습니다.
 -   백업 작업이 진행되는 동안 API, 정책 및 개발자 포털 모양 등의 서비스 구성을 **변경**하는 경우 **해당 내용이 백업에서 제외되고 손실될 수 있습니다**.
--   [방화벽이][azure-storage-ip-firewall] 사용 하도록 설정 된 경우 제어 평면에서 Azure Storage 계정으로의 액세스를 **허용** 합니다. 고객은 저장소 계정에서 백업 또는 복원에 대 한 [Azure API Management 제어 평면 IP 주소][control-plane-ip-address] 집합을 열어야 합니다. 
+-   [방화벽이][azure-storage-ip-firewall] 사용 하도록 설정 된 경우 제어 평면에서 Azure Storage 계정으로의 액세스를 **허용** 합니다. 고객은 저장소 계정에서 백업 또는 복원에 대한 [Azure API Management 제어 평면 IP 주소][control-plane-ip-address] 집합을 열어야 합니다. 
 
 > [!NOTE]
-> 동일한 Azure 지역에서 [방화벽이][azure-storage-ip-firewall] 사용 하도록 설정 된 저장소 계정을 사용 하 여 API Management 서비스에서 백업/복원을 수행 하려고 하면이 작업이 작동 하지 않습니다. 이는 Azure Storage에 대 한 요청이 계산 > (Azure Api Management 제어 평면)의 공용 IP에는 없는 것 이기 때문입니다. 지역 간 저장소 요청은 SNATed
+> 동일한 Azure 지역에서 [방화벽이][azure-storage-ip-firewall] 사용 하도록 설정 된 저장소 계정을 사용 하 여 API Management 서비스에서 백업/복원을 수행 하려고 하면이 작업이 작동 하지 않습니다. 이는 Azure Storage에 대한 요청이 계산 > (Azure Api Management 제어 평면)의 공용 IP에는 없는 것 이기 때문입니다. 지역 간 저장소 요청은 SNATed
 
 ### <a name="step2"> </a>API Management 서비스 복원
 

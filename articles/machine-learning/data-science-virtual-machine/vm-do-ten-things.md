@@ -176,7 +176,7 @@ ep <- publishWebService(ws, fun = sleepyPredict, name="sleepy lm", inputSchema =
 ```
 
 #### <a name="consume-the-model-deployed-in-azure-machine-learning"></a>Azure Machine Learning에 배포된 모델 사용
-클라이언트 응용 프로그램에서 모델을 사용 하려면 Azure Machine Learning 라이브러리를 사용 하 여 게시 된 웹 서비스를 이름으로 조회 합니다. `services` API 호출을 사용 하 여 끝점을 확인 합니다. 그런 다음 `consume` 함수를 호출하여 예측할 데이터 프레임을 전달합니다.
+클라이언트 응용 프로그램에서 모델을 사용 하려면 Azure Machine Learning 라이브러리를 사용 하 여 게시 된 웹 서비스를 이름으로 조회 합니다. `services` API 호출을 사용 하 여 엔드포인트을 확인 합니다. 그런 다음 `consume` 함수를 호출하여 예측할 데이터 프레임을 전달합니다.
 
 Azure Machine Learning 웹 서비스로 게시 된 모델을 사용 하려면 다음 코드를 사용 합니다.
 

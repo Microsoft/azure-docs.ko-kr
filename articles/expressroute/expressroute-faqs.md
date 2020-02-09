@@ -42,7 +42,7 @@ ExpressRoute 연결은 공용 인터넷을 통해 이동하지 않습니다. 인
 
 ### <a name="if-i-pay-for-an-expressroute-circuit-of-a-given-bandwidth-do-i-have-the-ability-to-burst-up-to-higher-speeds-if-necessary"></a>지정된 대역폭의 ExpressRoute 회로에 대해 비용을 지불한다면 필요한 경우 더 높은 속도로 버스트할 수 있나요?
 
-예. ExpressRoute 회로는 추가 비용 없이 확보한 대역폭 제한의 최대 2배까지 버스트할 수 있도록 구성됩니다. 이 기능을 지원하는지 확인하려면 해당 서비스 공급자에게 문의하세요. 이는 지속 되는 기간에는 없으며 보장 되지 않습니다.  트래픽이 Express 경로 게이트웨이를 통해 이동 하는 경우 sku에 대 한 대역폭이 고정 되 고 안정화 되지 않습니다.
+예. ExpressRoute 회로는 추가 비용 없이 확보한 대역폭 제한의 최대 2배까지 버스트할 수 있도록 구성됩니다. 이 기능을 지원하는지 확인하려면 해당 서비스 공급자에게 문의하세요. 이는 지속 되는 기간에는 없으며 보장 되지 않습니다.  트래픽이 Express 경로 게이트웨이를 통해 이동 하는 경우 sku에 대한 대역폭이 고정 되 고 안정화 되지 않습니다.
 
 ### <a name="can-i-use-the-same-private-network-connection-with-virtual-network-and-other-azure-services-simultaneously"></a>가상 네트워크 및 다른 Azure 서비스와 동일한 프라이빗 네트워크 연결을 동시에 사용할 수 있나요?
 
@@ -62,7 +62,7 @@ Express 경로 게이트웨이는 Azure VNet의 *주소 공간* 을 보급 하�
 
 ## <a name="supported-services"></a>지원되는 서비스
 
-Express 경로는 개인 피어 링, Microsoft 피어 링 및 공용 피어 링 (사용 되지 않음)의 다양 한 서비스 유형에 대 한 [세 개의 라우팅 도메인](expressroute-circuit-peerings.md) 을 지원 합니다.
+Express 경로는 개인 피어 링, Microsoft 피어 링 및 공용 피어 링 (사용 되지 않음)의 다양 한 서비스 유형에 대한 [세 개의 라우팅 도메인](expressroute-circuit-peerings.md) 을 지원 합니다.
 
 ### <a name="private-peering"></a>프라이빗 피어링
 
@@ -72,12 +72,12 @@ Express 경로는 개인 피어 링, Microsoft 피어 링 및 공용 피어 링 
 
 ### <a name="microsoft-peering"></a>Microsoft 피어링
 
-Azure Microsoft 피어 링에 대해 Express 경로 회로를 사용 하도록 설정한 경우 회로를 통해 Azure에서 사용 되는 [공용 IP 주소 범위](../virtual-network/virtual-network-ip-addresses-overview-arm.md#public-ip-addresses) 에 액세스할 수 있습니다. Azure Microsoft 피어 링은 현재 Azure에서 호스트 되는 서비스에 대 한 액세스를 제공 합니다 (회로 SKU에 따라 지리적 제한 포함). 특정 서비스에 대 한 가용성의 유효성을 검사 하려면 해당 서비스에 대 한 설명서를 확인 하 여 해당 서비스에 대해 예약 된 범위가 게시 되었는지 확인 합니다. 그런 다음 대상 서비스의 IP 범위를 조회 하 고 [AZURE IP 범위 및 서비스 태그 – 공용 클라우드 XML 파일](https://www.microsoft.com/download/details.aspx?id=56519)에 나열 된 범위와 비교 합니다. 또는 확인을 위해 해당 서비스에 대 한 지원 티켓을 열 수 있습니다.
+Azure Microsoft 피어 링에 대해 Express 경로 회로를 사용 하도록 설정한 경우 회로를 통해 Azure에서 사용 되는 [공용 IP 주소 범위](../virtual-network/virtual-network-ip-addresses-overview-arm.md#public-ip-addresses) 에 액세스할 수 있습니다. Azure Microsoft 피어 링은 현재 Azure에서 호스트 되는 서비스에 대한 액세스를 제공 합니다 (회로 SKU에 따라 지리적 제한 포함). 특정 서비스에 대한 가용성의 유효성을 검사 하려면 해당 서비스에 대한 설명서를 확인 하 여 해당 서비스에 대해 예약 된 범위가 게시 되었는지 확인 합니다. 그런 다음 대상 서비스의 IP 범위를 조회 하 고 [AZURE IP 범위 및 서비스 태그 – 공용 클라우드 XML 파일](https://www.microsoft.com/download/details.aspx?id=56519)에 나열 된 범위와 비교 합니다. 또는 확인을 위해 해당 서비스에 대한 지원 티켓을 열 수 있습니다.
 
 **되지**
 
 * [Office 365](https://aka.ms/ExpressRouteOffice365)
-* Power BI-Azure 지역 커뮤니티를 통해 사용할 수 있습니다. Power BI 테 넌 트의 지역을 확인 하는 방법은 [여기](https://docs.microsoft.com/power-bi/service-admin-where-is-my-tenant-located) 를 참조 하세요.
+* Power BI-Azure 지역 커뮤니티를 통해 사용할 수 있습니다. Power BI 테넌트의 지역을 확인 하는 방법은 [여기](https://docs.microsoft.com/power-bi/service-admin-where-is-my-tenant-located) 를 참조 하세요.
 * Azure Active Directory
 * [Windows 가상 데스크톱](https://azure.microsoft.com/services/virtual-desktop/)
 * [Azure DevOps](https://blogs.msdn.microsoft.com/devops/2018/10/23/expressroute-for-azure-devops/)(Azure 글로벌 서비스 커뮤니티)
@@ -95,7 +95,7 @@ Azure Microsoft 피어 링에 대해 Express 경로 회로를 사용 하도록 �
 
 공용 피어링이 새 ExpressRoute 회로에서 사용되지 않도록 설정되었습니다. 이제 Microsoft 피어 링에서 Azure 서비스를 사용할 수 있습니다. 공용 피어 링 이전에 생성 된 회로가 더 이상 사용 되지 않는 경우 원하는 서비스에 따라 Microsoft 피어 링 또는 공용 피어 링을 사용 하도록 선택할 수 있습니다.
 
-공용 피어 링에 대 한 자세한 내용 및 구성 단계는 [express 경로 공용 피어 링](about-public-peering.md)을 참조 하세요.
+공용 피어 링에 대한 자세한 내용 및 구성 단계는 [express 경로 공용 피어 링](about-public-peering.md)을 참조 하세요.
 
 ### <a name="why-i-see-advertised-public-prefixes-status-as-validation-needed-while-configuring-microsoft-peering"></a>Microsoft 피어 링을 구성 하는 동안 ' 보급 된 공용 접두사 ' 상태가 ' 유효성 검사 필요 '로 표시 되는 이유는 무엇 인가요?
 
@@ -107,7 +107,7 @@ Microsoft는 지정 된 ' 보급 된 공용 접두사 ' 및 ' 피어 ASN ' (또�
 
 ### <a name="is-dynamics-365-supported-on-expressroute"></a>Express 경로에서 Dynamics 365이 지원 되나요?
 
-Dynamics 365 및 Common Data Service (CD) 환경은 Azure에서 호스트 되므로 고객은 Azure 리소스에 대 한 기본 Express 경로 지원을 활용 합니다. 라우터 필터에 Dynamics 365/CD 환경이 호스트 되는 Azure 지역이 포함 된 경우 해당 서비스 끝점에 연결할 수 있습니다.
+Dynamics 365 및 Common Data Service (CD) 환경은 Azure에서 호스트 되므로 고객은 Azure 리소스에 대한 기본 Express 경로 지원을 활용 합니다. 라우터 필터에 Dynamics 365/CD 환경이 호스트 되는 Azure 지역이 포함 된 경우 해당 서비스 엔드포인트에 연결할 수 있습니다.
 
 > [!NOTE]
 > [Express 경로 프리미엄](https://docs.microsoft.com/azure/expressroute/expressroute-faqs#expressroute-premium) 은 Azure express 경로를 통한 Dynamics 365 연결에 필요 **하지 않습니다** .
@@ -142,7 +142,7 @@ Dynamics 365 및 Common Data Service (CD) 환경은 Azure에서 호스트 되므
 
 교차 연결 중 하나가 실패할 경우 연결이 손실되지 않습니다. 네트워크의 부하를 지원하고 ExpressRoute 회로의 고가용성을 제공하기 위해 중복 연결을 사용할 수 있습니다. 회로 수준 복원력을 얻기 위해 다른 피어링 위치에 추가로 회로를 만들 수 있습니다.
 
-### <a name="how-do-i-implement-redundancy-on-private-peering"></a>개인 피어 링에 대 한 중복성을 구현 하는 어떻게 할까요??
+### <a name="how-do-i-implement-redundancy-on-private-peering"></a>개인 피어 링에 대한 중복성을 구현 하는 어떻게 할까요??
 
 서로 다른 피어 링 위치의 여러 Express 경로 회로를 동일한 가상 네트워크에 연결 하 여 단일 회로를 사용할 수 없게 되는 경우 고가용성을 제공할 수 있습니다. 그런 다음 특정 회로를 선호 하도록 로컬 연결에 [더 높은 가중치를 할당할](https://docs.microsoft.com/azure/expressroute/expressroute-optimize-routing#solution-assign-a-high-weight-to-local-connection) 수 있습니다. 단일 실패 지점이 발생 하지 않도록 하기 위해 고객은 두 개 이상의 Express 경로 회로를 설치 하는 것이 좋습니다. 
 
@@ -285,7 +285,7 @@ ExpressRoute Premium은 다음 기능의 모음입니다.
 
 * 증가된 라우팅 테이블은 프라이빗 피어링에 대해 4000개의 경로에서 경로 10, 000개의 경로로 제한합니다.
 * ExpressRoute 회로에서 사용할 수 있는 VNet 및 ExpressRoute Global Reach 연결 수가 증가했습니다(기본값은 10). 자세한 내용은 [ExpressRoute 제한](#limits) 표를 참조하세요.
-* Office 365에 대 한 연결
+* Office 365에 대한 연결
 * Microsoft 핵심 네트워크를 통해 전역 연결합니다. 이제 한 지리적 지역의 VNet을 다른 지역의 ExpressRoute 회로와 연결할 수 있습니다.<br>
     **예:**
 
@@ -321,17 +321,17 @@ ExpressRoute Premium은 REST API/PowerShell cmdlet을 호출하여 사용하지 
 
 ## <a name="expressroute-local"></a>Express 경로 로컬
 ### <a name="what-is-expressroute-local"></a>Express 경로 로컬 이란?
-Express 경로 로컬은 표준 SKU 및 프리미엄 SKU 외에도 Express 경로 회로의 SKU입니다. 로컬의 핵심 기능은 Express 경로 피어 링 위치의 로컬 회로에서 동일한 metro의 하나 또는 두 개의 Azure 지역에 대 한 액세스를 제공 한다는 것입니다. 반면, 표준 회로는 모든 Azure 지역에 대 한 지정 학적 영역 및 프리미엄 회로의 모든 Azure 지역에 대 한 액세스를 전역적으로 제공 합니다. 
+Express 경로 로컬은 표준 SKU 및 프리미엄 SKU 외에도 Express 경로 회로의 SKU입니다. 로컬의 핵심 기능은 Express 경로 피어 링 위치의 로컬 회로에서 동일한 metro의 하나 또는 두 개의 Azure 지역에 대한 액세스를 제공 한다는 것입니다. 반면, 표준 회로는 모든 Azure 지역에 대한 지정 학적 영역 및 프리미엄 회로의 모든 Azure 지역에 대한 액세스를 전역적으로 제공 합니다. 
 
 ### <a name="what-are-the-benefits-of-expressroute-local"></a>Express 경로 로컬의 이점은 무엇 인가요?
-Standard 또는 Premium Express 경로 회로에 대 한 송신 데이터 전송 비용을 지불 해야 하는 동안 Express 경로 로컬 회로에 대해 별도의 송신 데이터 전송을 지불 하지 않습니다. 즉, Express 경로 로컬의 가격은 데이터 전송 요금을 포함 합니다. Express 경로 로컬은 전송 하는 데 많은 양의 데이터가 있고 개인 연결을 통해 데이터를 원하는 Azure 지역 근처의 Express 경로 피어 링 위치로 가져올 수 있는 경우 보다 경제적인 솔루션입니다. 
+Standard 또는 Premium Express 경로 회로에 대한 송신 데이터 전송 비용을 지불 해야 하는 동안 Express 경로 로컬 회로에 대해 별도의 송신 데이터 전송을 지불 하지 않습니다. 즉, Express 경로 로컬의 가격은 데이터 전송 요금을 포함 합니다. Express 경로 로컬은 전송 하는 데 많은 양의 데이터가 있고 개인 연결을 통해 데이터를 원하는 Azure 지역 근처의 Express 경로 피어 링 위치로 가져올 수 있는 경우 보다 경제적인 솔루션입니다. 
 
 ### <a name="what-features-are-available-and-what-are-not-on-expressroute-local"></a>사용할 수 있는 기능과 Express 경로 로컬에 없는 항목
 표준 Express 경로 회로와 비교할 때 로컬 회로에는 다음을 제외한 동일한 기능 집합이 있습니다.
-* 위에서 설명한 대로 Azure 지역에 대 한 액세스 범위
+* 위에서 설명한 대로 Azure 지역에 대한 액세스 범위
 * Express 경로 Global Reach 로컬에서 사용할 수 없습니다.
 
-또한 Express 경로 로컬은 표준으로 리소스 (예: 회로 당 Vnet 수)에 대 한 한도를 가집니다. 
+또한 Express 경로 로컬은 표준으로 리소스 (예: 회로 당 Vnet 수)에 대한 한도를 가집니다. 
 
 ### <a name="where-is-expressroute-local-available-and-which-azure-regions-is-each-peering-location-mapped-to"></a>여기서는 Express 경로 로컬을 사용할 수 있으며 각 피어 링 위치가에 매핑되는 Azure 지역은 어디 인가요?
 Express 경로 로컬은 하나 또는 두 개의 Azure 지역이 종료 되는 피어 링 위치에서 사용할 수 있습니다. 해당 시/도 또는 국가에 Azure 지역이 없는 피어 링 위치에서는 사용할 수 없습니다. [위치 페이지](expressroute-locations-providers.md)에서 정확한 매핑을 참조 하세요.  
@@ -352,7 +352,7 @@ Express 경로 로컬은 하나 또는 두 개의 Azure 지역이 종료 되는 
 > 
 > 
 
-### <a name="can-my-existing-expressroute-circuits-support-connectivity-to-office-365-services"></a>기존 Express 경로 회로에서 Office 365 서비스에 대 한 연결을 지원할 수 있나요?
+### <a name="can-my-existing-expressroute-circuits-support-connectivity-to-office-365-services"></a>기존 Express 경로 회로에서 Office 365 서비스에 대한 연결을 지원할 수 있나요?
 
 예. 기존 ExpressRoute 회로가 Office 365 서비스에 대한 연결을 지원하도록 구성할 수 있나요? Office 365 서비스에 연결하는 데 충분한 용량이 있는지와 프리미엄 추가 기능을 사용하도록 설정했는지를 확인합니다. [Office 365의 네트워크 계획 및 성능 조정](https://aka.ms/tune/)을 참조하면 연결 요구 사항을 계획할 수 있습니다. [ExpressRoute 회로 만들기 및 수정](expressroute-howto-circuit-classic.md)도 참조하세요.
 
@@ -391,7 +391,7 @@ Office 365 서비스를 사용하려면 프리미엄 추가 기능을 사용하�
 
 ### <a name="i-enabled-microsoft-peering-prior-to-august-1-2017-how-can-i-take-advantage-of-route-filters"></a>2017년 8월 1일 이전에 Microsoft 피어링을 사용하도록 설정했습니다. 경로 필터를 사용하려면 어떻게 해야 하나요?
 
-기존 회로는 Office 365에 대 한 접두사를 계속 보급 합니다. 동일한 Microsoft 피어 링을 통해 Azure 공용 접두사 보급을 추가 하려는 경우 경로 필터를 만들고, 보급 해야 하는 서비스 (필요한 Office 365 서비스 포함)를 선택 하 고, Microsoft 피어 링에 필터를 연결 하면 됩니다. 자세한 내용은 [Microsoft 피어링용 경로 필터 구성](how-to-routefilter-powershell.md)을 참조하세요.
+기존 회로는 Office 365에 대한 접두사를 계속 보급 합니다. 동일한 Microsoft 피어 링을 통해 Azure 공용 접두사 보급을 추가 하려는 경우 경로 필터를 만들고, 보급 해야 하는 서비스 (필요한 Office 365 서비스 포함)를 선택 하 고, Microsoft 피어 링에 필터를 연결 하면 됩니다. 자세한 내용은 [Microsoft 피어링용 경로 필터 구성](how-to-routefilter-powershell.md)을 참조하세요.
 
 ### <a name="i-have-microsoft-peering-at-one-location-now-i-am-trying-to-enable-it-at-another-location-and-i-am-not-seeing-any-prefixes"></a>한 위치에서 Microsoft 피어링을 사용하고 있습니다. 이제 다른 위치에서 사용하도록 설정하려고 했지만 접두사가 표시되지 않습니다.
 

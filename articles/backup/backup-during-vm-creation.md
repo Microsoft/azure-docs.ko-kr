@@ -37,18 +37,18 @@ Azure Backup 서비스를 사용 하 여 Azure Vm (가상 머신)을 백업 합�
 6. 제안 된 자격 증명 모음 이름을 그대로 적용 하거나 고유한 이름을 지정 합니다.
 7. 자격 증명 모음을 배치할 리소스 그룹을 지정 하거나 만듭니다. 리소스 그룹 자격 증명 모음은 VM 리소스 그룹과 다를 수 있습니다.
 
-    ![VM에 대 한 백업 사용](./media/backup-during-vm-creation/enable-backup.png)
+    ![VM에 대한 백업 사용](./media/backup-during-vm-creation/enable-backup.png)
 
 8. 기본 백업 정책을 적용 하거나 설정을 수정 합니다.
     - 백업 정책은 VM의 백업 스냅숏을 가져오는 빈도와 백업 복사본을 보관 하는 기간을 지정 합니다.
     - 기본 정책은 하루에 한 번 VM을 백업 합니다.
-    - 매일 또는 매주 백업을 수행 하도록 Azure VM에 대 한 고유한 백업 정책을 사용자 지정할 수 있습니다.
-    - Azure Vm에 대 한 백업 고려 사항에 대해 [자세히 알아보세요](backup-azure-vms-introduction.md#backup-and-restore-considerations) .
+    - 매일 또는 매주 백업을 수행 하도록 Azure VM에 대한 고유한 백업 정책을 사용자 지정할 수 있습니다.
+    - Azure Vm에 대한 백업 고려 사항에 대해 [자세히 알아보세요](backup-azure-vms-introduction.md#backup-and-restore-considerations) .
     - 즉시 복원 기능에 [대해 자세히 알아보세요](backup-instant-restore-capability.md) .
 
       ![기본 백업 정책](./media/backup-during-vm-creation/daily-policy.png)
 
-## <a name="azure-backup-resource-group-for-virtual-machines"></a>Virtual Machines에 대 한 Azure Backup 리소스 그룹
+## <a name="azure-backup-resource-group-for-virtual-machines"></a>Virtual Machines에 대한 Azure Backup 리소스 그룹
 
 Backup 서비스는 VM의 리소스 그룹과 다른 별도 리소스 그룹 (RG)을 만들어 복원 지점 컬렉션 (RPC)을 저장 합니다. RPC는 관리 되는 Vm의 인스턴트 복구 위치를 보관 합니다. 백업 서비스에서 만든 리소스 그룹의 기본 명명 형식은 `AzureBackupRG_<Geo>_<number>`입니다. 예: *AzureBackupRG_northeurope_1*. 이제 Azure Backup에서 만든 리소스 그룹 이름을 사용자 지정할 수 있습니다.
 

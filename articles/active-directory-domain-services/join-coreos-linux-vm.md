@@ -20,7 +20,7 @@ ms.locfileid: "76712621"
 ---
 # <a name="join-a-coreos-virtual-machine-to-an-azure-ad-domain-services-managed-domain"></a>CoreOS 가상 컴퓨터를 관리 되는 Azure AD Domain Services 도메인에 가입
 
-사용자가 단일 자격 증명 집합을 사용 하 여 Azure에서 Vm (가상 머신)에 로그인 할 수 있도록 Vm을 Azure Active Directory Domain Services (AD DS) 관리 되는 도메인에 조인할 수 있습니다. Azure AD DS 관리 되는 도메인에 VM을 가입 하는 경우 도메인의 사용자 계정 및 자격 증명을 사용 하 여 서버에 로그인 하 고 서버를 관리할 수 있습니다. VM의 파일 또는 서비스에 대 한 액세스를 제어할 수 있도록 Azure AD DS 관리 되는 도메인의 그룹 멤버 자격도 적용 됩니다.
+사용자가 단일 자격 증명 집합을 사용 하 여 Azure에서 Vm (가상 머신)에 로그인 할 수 있도록 Vm을 Azure Active Directory Domain Services (AD DS) 관리 되는 도메인에 조인할 수 있습니다. Azure AD DS 관리 되는 도메인에 VM을 가입 하는 경우 도메인의 사용자 계정 및 자격 증명을 사용 하 여 서버에 로그인 하 고 서버를 관리할 수 있습니다. VM의 파일 또는 서비스에 대한 액세스를 제어할 수 있도록 Azure AD DS 관리 되는 도메인의 그룹 멤버 자격도 적용 됩니다.
 
 이 문서에서는 Azure AD DS 관리 되는 도메인에 CoreOS VM을 조인 하는 방법을 보여 줍니다.
 
@@ -82,7 +82,7 @@ sudo vi /etc/hosts
 sudo vi /etc/sssd/sssd.conf
 ```
 
-다음 매개 변수에 대 한 사용자 고유의 Azure AD DS 관리 되는 도메인 이름을 지정 합니다.
+다음 매개 변수에 대한 사용자 고유의 Azure AD DS 관리 되는 도메인 이름을 지정 합니다.
 
 * 모든 사례의 *도메인*
 * *[domain/aadds]* 여기에서 aadds가 모두 대문자 인 경우
@@ -122,7 +122,7 @@ krb5_realm = AADDS.CONTOSO.COM
 
 SSSD 구성 파일이 업데이트 되 면 이제 가상 컴퓨터를 관리 되는 도메인에 가입 시킵니다.
 
-1. 먼저 `adcli info` 명령을 사용 하 여 Azure AD DS 관리 되는 도메인에 대 한 정보를 볼 수 있는지 확인 합니다. 다음 예제에서는 도메인 Aadds에 대 한 정보를 가져옵니다 *. CONTOSO.COM*. Azure AD DS 관리 되는 도메인 이름을 모두 대문자로 지정 합니다.
+1. 먼저 `adcli info` 명령을 사용 하 여 Azure AD DS 관리 되는 도메인에 대한 정보를 볼 수 있는지 확인 합니다. 다음 예제에서는 도메인 Aadds에 대한 정보를 가져옵니다 *. CONTOSO.COM*. Azure AD DS 관리 되는 도메인 이름을 모두 대문자로 지정 합니다.
 
     ```console
     sudo adcli info AADDS.CONTOSO.COM
@@ -132,7 +132,7 @@ SSSD 구성 파일이 업데이트 되 면 이제 가상 컴퓨터를 관리 되
 
     * VM에서 도메인에 연결할 수 있는지 확인 합니다. `ping aadds.contoso.com`를 시도 하 여 긍정 회신이 반환 되는지 확인 합니다.
     * VM이 Azure AD DS 관리 되는 도메인을 사용할 수 있는 동일한 또는 피어 링 가상 네트워크에 배포 되었는지 확인 합니다.
-    * 가상 네트워크에 대 한 DNS 서버 설정이 Azure AD DS 관리 되는 도메인의 도메인 컨트롤러를 가리키도록 업데이트 되었는지 확인 합니다.
+    * 가상 네트워크에 대한 DNS 서버 설정이 Azure AD DS 관리 되는 도메인의 도메인 컨트롤러를 가리키도록 업데이트 되었는지 확인 합니다.
 
 1. 이제 `adcli join` 명령을 사용 하 여 VM을 Azure AD DS 관리 되는 도메인에 가입 시킵니다. *AAD DC 관리자* 그룹에 속한 사용자를 지정 합니다. 필요한 경우 [AZURE AD의 그룹에 사용자 계정을 추가](../active-directory/fundamentals/active-directory-groups-members-azure-portal.md)합니다.
 

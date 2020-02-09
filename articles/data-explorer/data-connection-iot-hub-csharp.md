@@ -1,6 +1,6 @@
 ---
-title: 을 사용 하 여 Azure 데이터 탐색기에 대 한 IoT Hub 데이터 연결 만들기C#
-description: 이 문서에서는를 사용 C#하 여 Azure 데이터 탐색기에 대 한 IoT Hub 데이터 연결을 만드는 방법에 대해 알아봅니다.
+title: 을 사용 하 여 Azure 데이터 탐색기에 대한 IoT Hub 데이터 연결 만들기C#
+description: 이 문서에서는를 사용 C#하 여 Azure 데이터 탐색기에 대한 IoT Hub 데이터 연결을 만드는 방법에 대해 알아봅니다.
 author: lucygoldbergmicrosoft
 ms.author: lugoldbe
 ms.reviewer: orspodek
@@ -14,7 +14,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/02/2019
 ms.locfileid: "74667378"
 ---
-# <a name="create-an-iot-hub-data-connection-for-azure-data-explorer-by-using-c-preview"></a>(미리 보기)를 사용 하 C# 여 Azure 데이터 탐색기에 대 한 IoT Hub 데이터 연결 만들기
+# <a name="create-an-iot-hub-data-connection-for-azure-data-explorer-by-using-c-preview"></a>(미리 보기)를 사용 하 C# 여 Azure 데이터 탐색기에 대한 IoT Hub 데이터 연결 만들기
 
 > [!div class="op_single_selector"]
 > * [Portal](ingest-data-iot-hub.md)
@@ -22,7 +22,7 @@ ms.locfileid: "74667378"
 > * [Python](data-connection-iot-hub-python.md)
 > * [Azure Resource Manager 템플릿](data-connection-iot-hub-resource-manager.md)
 
-Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능한 빠르고 확장성이 우수한 데이터 탐색 서비스입니다. Azure 데이터 탐색기는 blob 컨테이너에 기록 된 Event Hubs, IoT Hub 및 blob에서 수집 (데이터 로드)을 제공 합니다. 이 문서에서는를 사용 C#하 여 Azure 데이터 탐색기에 대 한 IoT Hub 데이터 연결을 만듭니다.
+Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능한 빠르고 확장성이 우수한 데이터 탐색 서비스입니다. Azure 데이터 탐색기는 blob 컨테이너에 기록 된 Event Hubs, IoT Hub 및 blob에서 수집 (데이터 로드)을 제공 합니다. 이 문서에서는를 사용 C#하 여 Azure 데이터 탐색기에 대한 IoT Hub 데이터 연결을 만듭니다.
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -80,8 +80,8 @@ await kustoManagementClient.DataConnections.CreateOrUpdate(resourceGroupName, cl
 |---|---|---|
 | tenantId | *xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx-xxxxx-xxxxxxxxx* | 테넌트 ID 디렉터리 ID 라고도 합니다.|
 | subscriptionId | *xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx-xxxxx-xxxxxxxxx* | 리소스를 만드는 데 사용 하는 구독 ID입니다.|
-| clientId | *xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx-xxxxx-xxxxxxxxx* | 테 넌 트의 리소스에 액세스할 수 있는 응용 프로그램의 클라이언트 ID입니다.|
-| clientSecret | *xxxxxxxxxxxxxx* | 테 넌 트의 리소스에 액세스할 수 있는 응용 프로그램의 클라이언트 암호입니다. |
+| clientId | *xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx-xxxxx-xxxxxxxxx* | 테넌트의 리소스에 액세스할 수 있는 응용 프로그램의 클라이언트 ID입니다.|
+| clientSecret | *xxxxxxxxxxxxxx* | 테넌트의 리소스에 액세스할 수 있는 응용 프로그램의 클라이언트 암호입니다. |
 | resourceGroupName | *testrg* | 클러스터를 포함 하는 리소스 그룹의 이름입니다.|
 | clusterName | *mykustocluster* | 클러스터의 이름입니다.|
 | databaseName | *mykustodatabase* | 클러스터에 있는 대상 데이터베이스의 이름입니다.|
@@ -90,7 +90,7 @@ await kustoManagementClient.DataConnections.CreateOrUpdate(resourceGroupName, cl
 | mappingRuleName | *StormEvents_CSV_Mapping* | 대상 테이블과 관련 된 열 매핑의 이름입니다.|
 | dataFormat | *csv* | 메시지의 데이터 형식입니다.|
 | iotHubResourceId | *리소스 ID* | 수집할 데이터를 보유 하는 IoT hub의 리소스 ID입니다. |
-| sharedAccessPolicyName | *iothubforread* | IoT Hub에 연결할 장치 및 서비스에 대 한 권한을 정의 하는 공유 액세스 정책의 이름입니다. |
+| sharedAccessPolicyName | *iothubforread* | IoT Hub에 연결할 장치 및 서비스에 대한 권한을 정의 하는 공유 액세스 정책의 이름입니다. |
 | consumerGroup | *$Default* | 이벤트 허브의 소비자 그룹입니다.|
 | location | *미국 중부* | 데이터 연결 리소스의 위치입니다.|
 

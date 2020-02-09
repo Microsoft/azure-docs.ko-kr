@@ -1,6 +1,6 @@
 ---
 title: Azure Storage 리소스 공급자를 사용 하 여 관리 리소스에 액세스
-description: Azure Storage 리소스 공급자는 Azure Storage에 대 한 관리 리소스에 대 한 액세스를 제공 하는 서비스입니다. Azure Storage 리소스 공급자를 사용 하 여 저장소 계정, 개인 끝점 및 계정 액세스 키와 같은 리소스를 만들고, 업데이트 하 고, 관리 하 고, 삭제할 수 있습니다.
+description: Azure Storage 리소스 공급자는 Azure Storage에 대 한 관리 리소스에 대 한 액세스를 제공 하는 서비스입니다. Azure Storage 리소스 공급자를 사용 하 여 저장소 계정, 개인 엔드포인트 및 계정 액세스 키와 같은 리소스를 만들고, 업데이트 하 고, 관리 하 고, 삭제할 수 있습니다.
 services: storage
 author: tamram
 ms.service: storage
@@ -18,7 +18,7 @@ ms.locfileid: "75972356"
 ---
 # <a name="use-the-azure-storage-resource-provider-to-access-management-resources"></a>Azure Storage 리소스 공급자를 사용 하 여 관리 리소스에 액세스
 
-Azure Resource Manager는 Azure용 배포 및 관리 서비스입니다. Azure Storage 리소스 공급자는 Azure Resource Manager를 기반으로 하며 Azure Storage의 관리 리소스에 대 한 액세스를 제공 하는 서비스입니다. Azure Storage 리소스 공급자를 사용 하 여 저장소 계정, 개인 끝점 및 계정 액세스 키와 같은 리소스를 만들고, 업데이트 하 고, 관리 하 고, 삭제할 수 있습니다. Azure Resource Manager에 대 한 자세한 내용은 [Azure Resource Manager 개요](/azure/azure-resource-manager/resource-group-overview)를 참조 하세요.
+Azure Resource Manager는 Azure용 배포 및 관리 서비스입니다. Azure Storage 리소스 공급자는 Azure Resource Manager를 기반으로 하며 Azure Storage의 관리 리소스에 대 한 액세스를 제공 하는 서비스입니다. Azure Storage 리소스 공급자를 사용 하 여 저장소 계정, 개인 엔드포인트 및 계정 액세스 키와 같은 리소스를 만들고, 업데이트 하 고, 관리 하 고, 삭제할 수 있습니다. Azure Resource Manager에 대 한 자세한 내용은 [Azure Resource Manager 개요](/azure/azure-resource-manager/resource-group-overview)를 참조 하세요.
 
 Azure Storage 리소스 공급자를 사용 하 여 저장소 계정 만들기 또는 삭제, 구독에서 저장소 계정 목록 가져오기 등의 작업을 수행할 수 있습니다. Azure Storage 리소스 공급자에 대 한 요청에 권한을 부여 하려면 Azure Active Directory (Azure AD)를 사용 합니다. 이 문서에서는 관리 리소스에 대 한 사용 권한을 할당 하는 방법을 설명 하 고 Azure Storage 리소스 공급자에 대 한 요청을 수행 하는 방법을 보여 주는 예제를 가리킵니다.
 

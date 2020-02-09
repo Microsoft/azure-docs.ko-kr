@@ -18,7 +18,7 @@ ms.locfileid: "76310801"
 ---
 # <a name="set-directory-level-inactivity-timeout"></a>디렉터리 수준 비활성 시간 제한 설정
 
-비활성 시간 제한 설정은 사용자가 자신의 워크스테이션을 보호 하는 것을 잊은 경우 리소스를 무단 액세스 로부터 보호 하는 데 도움이 됩니다. 사용자가 잠시 동안 유휴 상태 이면 해당 Azure Portal 세션이 자동으로 로그 아웃 됩니다. 관리자는 세션이 로그 아웃 되기 전에 최대 유휴 시간을 적용할 수 있습니다. 비활성 시간 제한 설정은 디렉터리 수준에서 적용 됩니다. 디렉터리에 대 한 자세한 내용은 [Active Directory Domain Services 개요](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)를 참조 하세요.
+비활성 시간 제한 설정은 사용자가 자신의 워크스테이션을 보호 하는 것을 잊은 경우 리소스를 무단 액세스 로부터 보호 하는 데 도움이 됩니다. 사용자가 잠시 동안 유휴 상태 이면 해당 Azure Portal 세션이 자동으로 로그 아웃 됩니다. 관리자는 세션이 로그 아웃 되기 전에 최대 유휴 시간을 적용할 수 있습니다. 비활성 시간 제한 설정은 디렉터리 수준에서 적용 됩니다. 디렉터리에 대한 자세한 내용은 [Active Directory Domain Services 개요](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)를 참조 하세요.
 
 ## <a name="configure-the-inactive-timeout-setting"></a>비활성 시간 제한 설정 구성
 
@@ -30,7 +30,7 @@ ms.locfileid: "76310801"
 
     ![링크 텍스트가 강조 표시 된 포털 설정을 보여 주는 스크린샷](./media/admin-timeout/settings.png)
 
-4. 새 페이지가 열립니다. **디렉터리 수준 비활성 시간 제한 구성** 페이지에서 **Azure Portal에 대 한 디렉터리 수준 유휴 시간 제한 사용** 을 선택 하 여 설정을 켭니다.
+4. 새 페이지가 열립니다. **디렉터리 수준 비활성 시간 제한 구성** 페이지에서 **Azure Portal에 대한 디렉터리 수준 유휴 시간 제한 사용** 을 선택 하 여 설정을 켭니다.
 5. 그런 다음 세션이 자동으로 로그 아웃 되기 전에 사용자가 유휴 상태를 유지할 수 있는 **시간** 및 **분** 을 입력 합니다.
 6. **적용**을 선택합니다.
 
@@ -38,7 +38,7 @@ ms.locfileid: "76310801"
 
 비활동 제한 시간 정책이 올바르게 설정 되었는지 확인 하려면 전역 페이지 헤더에서 **알림** 을 선택 합니다. 성공 알림이 나열 되는지 확인 합니다.
 
-  ![디렉터리 수준 비활성 시간 초과에 대 한 성공적인 알림 메시지를 보여 주는 스크린샷](./media/admin-timeout/confirmation.png)
+  ![디렉터리 수준 비활성 시간 초과에 대한 성공적인 알림 메시지를 보여 주는 스크린샷](./media/admin-timeout/confirmation.png)
 
 이 설정은 새 세션에 적용 됩니다. 이미 로그인 한 사용자에 게는 즉시 적용 되지 않습니다.
 

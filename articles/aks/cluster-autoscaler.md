@@ -45,9 +45,9 @@ AKS(Azure Kubernetes Service)에서 애플리케이션 수요에 맞추려면 �
 * PDB(Pod Disruption Budget)가 너무 제한적이고 이를 사용하면 Pod 수가 특정 임계값보다 낮아질 수 없습니다.
 * Pod는 다른 노드에서 예약된 경우 적용할 수 없는 노드 선택기 또는 선호도 방지를 사용합니다.
 
-클러스터 autoscaler를 축소 하지 못할 수 있는 방법에 대 한 자세한 내용은 [어떤 유형의 pod 클러스터 autoscaler 노드 제거를 방해할 수 있나요?][autoscaler-scaledown] 를 참조 하세요.
+클러스터 autoscaler를 축소 하지 못할 수 있는 방법에 대한 자세한 내용은 [어떤 유형의 pod 클러스터 autoscaler 노드 제거를 방해할 수 있나요?][autoscaler-scaledown] 를 참조 하세요.
 
-클러스터 자동 크기 조정기는 크기 조정 이벤트와 리소스 임계값 사이의 시간 간격 같은 항목에 시작 매개 변수를 사용합니다. 이러한 매개 변수는 Azure 플랫폼에 의해 정의되며 현재는 사용자가 조정하도록 표시되지 않습니다. 클러스터 autoscaler 사용 하는 매개 변수에 대 한 자세한 내용은 [cluster autoscaler parameters?][autoscaler-parameters]를 참조 하세요.
+클러스터 자동 크기 조정기는 크기 조정 이벤트와 리소스 임계값 사이의 시간 간격 같은 항목에 시작 매개 변수를 사용합니다. 이러한 매개 변수는 Azure 플랫폼에 의해 정의되며 현재는 사용자가 조정하도록 표시되지 않습니다. 클러스터 autoscaler 사용 하는 매개 변수에 대한 자세한 내용은 [cluster autoscaler parameters?][autoscaler-parameters]를 참조 하세요.
 
 Cluster 및 수평 pod autoscalers는 함께 작동할 수 있으며, 클러스터에 배포 되는 경우가 많습니다. 결합된 경우 Horizontal Pod Autoscaler는 애플리케이션 수요를 충족하는 데 필요한 개수의 Pod를 실행하는 데 중점을 둡니다. 클러스터 자동 크기 조정기는 예약된 Pod를 지원하는 데 필요한 개수의 노드를 실행하는 데 중점을 둡니다.
 
@@ -56,7 +56,7 @@ Cluster 및 수평 pod autoscalers는 함께 작동할 수 있으며, 클러스�
 
 ## <a name="create-an-aks-cluster-and-enable-the-cluster-autoscaler"></a>AKS 클러스터를 만들고 클러스터 자동 크기 조정기를 사용하도록 설정
 
-AKS 클러스터를 만들어야 하는 경우 [az AKS create][az-aks-create] 명령을 사용 합니다. 클러스터에 대 한 노드 풀에서 클러스터 autoscaler를 사용 하도록 설정 하 고 구성 하려면 *--autoscaler* 매개 변수를 사용 하 고 노드- *-min-count* 및 *--max-count*를 지정 합니다.
+AKS 클러스터를 만들어야 하는 경우 [az AKS create][az-aks-create] 명령을 사용 합니다. 클러스터에 대한 노드 풀에서 클러스터 autoscaler를 사용 하도록 설정 하 고 구성 하려면 *--autoscaler* 매개 변수를 사용 하 고 노드- *-min-count* 및 *--max-count*를 지정 합니다.
 
 > [!IMPORTANT]
 > 클러스터 자동 크기 조정기는 Kubernetes 구성 요소입니다. AKS 클러스터는 가상 머신 확장 집합을 노드에 사용하지만, Azure Portal에서 또는 Azure CLI를 사용하여 확장 집합 자동 크기 조정에 대한 설정을 직접 설정하거나 편집하지 마세요. Kubernetes 클러스터 자동 크기 조정기가 필수 크기 조정 설정을 자동으로 관리하게 두세요. 자세한 내용은 [노드 리소스 그룹에서 AKS 리소스를 수정할 수 있나요?](faq.md#can-i-modify-tags-and-other-properties-of-the-aks-resources-in-the-node-resource-group) 를 참조 하세요.
@@ -131,7 +131,7 @@ AKS는 사용자를 대신 하 여 클러스터 autoscaler를 관리 하 고 관
 
 Autoscaler 클러스터에서 푸시 되도록 로그를 구성 하려면 다음 단계를 수행 Log Analytics 합니다.
 
-1. Log Analytics에 클러스터 autoscaler 로그를 푸시하는 진단 로그에 대 한 규칙을 설정 합니다. [지침은 여기에 자세히 설명 되어](https://docs.microsoft.com/azure/aks/view-master-logs#enable-diagnostics-logs)있습니다. "로그" 옵션을 선택 하는 경우 `cluster-autoscaler`의 확인란을 선택 합니다.
+1. Log Analytics에 클러스터 autoscaler 로그를 푸시하는 진단 로그에 대한 규칙을 설정 합니다. [지침은 여기에 자세히 설명 되어](https://docs.microsoft.com/azure/aks/view-master-logs#enable-diagnostics-logs)있습니다. "로그" 옵션을 선택 하는 경우 `cluster-autoscaler`의 확인란을 선택 합니다.
 1. Azure Portal를 통해 클러스터에서 "로그" 섹션을 클릭 합니다.
 1. 다음 예제를 입력 하 Log Analytics에 쿼리 합니다.
 
@@ -150,7 +150,7 @@ AzureDiagnostics
 kubectl get configmap -n kube-system cluster-autoscaler-status -o yaml
 ```
 
-Autoscaler에서 로깅되는 내용에 대 한 자세한 내용은 [Kubernetes/Autoscaler GitHub 프로젝트](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#ca-doesnt-work-but-it-used-to-work-yesterday-why)에 대 한 FAQ를 참조 하세요.
+Autoscaler에서 로깅되는 내용에 대한 자세한 내용은 [Kubernetes/Autoscaler GitHub 프로젝트](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#ca-doesnt-work-but-it-used-to-work-yesterday-why)에 대한 FAQ를 참조 하세요.
 
 ## <a name="use-the-cluster-autoscaler-with-multiple-node-pools-enabled"></a>여러 노드 풀을 사용할 수 있는 클러스터 autoscaler 사용
 
@@ -182,7 +182,7 @@ az aks nodepool update \
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서에서는 AKS 노드 수를 자동으로 조정하는 방법을 설명했습니다. Horizontal Pod Autoscaler를 사용하여 애플리케이션을 실행하는 Pod 수를 자동으로 조정할 수도 있습니다. 수평 pod autoscaler 사용에 대 한 단계는 [AKS에서 응용 프로그램 크기 조정][aks-scale-apps]을 참조 하세요.
+이 문서에서는 AKS 노드 수를 자동으로 조정하는 방법을 설명했습니다. Horizontal Pod Autoscaler를 사용하여 애플리케이션을 실행하는 Pod 수를 자동으로 조정할 수도 있습니다. 수평 pod autoscaler 사용에 대한 단계는 [AKS에서 응용 프로그램 크기 조정][aks-scale-apps]을 참조 하세요.
 
 <!-- LINKS - internal -->
 [aks-upgrade]: upgrade-cluster.md

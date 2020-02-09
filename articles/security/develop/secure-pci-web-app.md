@@ -181,7 +181,7 @@ Azure SQL Database 인스턴스는 다음 데이터베이스 보안 조치를 �
 ### <a name="identity-management"></a>ID 관리
 Azure 환경에서 카드 소유자 데이터에 대한 액세스를 관리하는 기능을 제공하는 기술은 다음과 같습니다.
 
-- Azure Active Directory는 Microsoft의 다중 테 넌 트 클라우드 기반 디렉터리 및 id 관리 서비스입니다. Azure SQL Database에 액세스하는 사용자를 포함하여 이 솔루션의 모든 사용자는 Azure Active Directory에서 만들어졌습니다.
+- Azure Active Directory는 Microsoft의 다중 테넌트 클라우드 기반 디렉터리 및 id 관리 서비스입니다. Azure SQL Database에 액세스하는 사용자를 포함하여 이 솔루션의 모든 사용자는 Azure Active Directory에서 만들어졌습니다.
 - 애플리케이션에 대한 인증은 Azure Active Directory를 사용하여 수행됩니다. 자세한 내용은 [Azure Active Directory와 애플리케이션 통합](https://docs.microsoft.com/azure/active-directory/manage-apps/plan-an-application-integration)을 참조하세요. 또한 데이터베이스 열 암호화는 Azure Active Directory를 사용하여 Azure SQL Database에 애플리케이션을 인증합니다. 자세한 내용은 [Azure SQL Database에서 중요 한 데이터를 보호 하는 방법](https://docs.microsoft.com/azure/sql-database/sql-database-security-overview)을 참조 하세요.
 - 관리자는 Azure 역할 기반 액세스 제어를 통해 세분화 된 액세스 권한을 정의 하 여 사용자가 작업을 수행 하는 데 필요한 액세스 권한만 부여할 수 있습니다. 관리자는 모든 사용자에게 Azure 리소스에 대한 무제한 권한을 부여하는 대신 카드 소유자 데이터에 액세스하기 위한 특정 작업만 허용할 수 있습니다. 구독 액세스는 구독 관리자로 제한됩니다.
 - Azure Active Directory Privileged Identity Management를 통해 고객은 카드 소유자 데이터와 같은 특정 정보에 대 한 액세스 권한이 있는 사용자 수를 최소화할 수 있습니다. 관리자는 Azure Active Directory Privileged Identity Management를 사용하여 권한 있는 ID와 리소스에 대한 액세스를 검색, 제한 및 모니터링할 수 있습니다. 필요한 경우 이 기능을 사용하여 요청 시 JIT(Just-In-Time) 관리 액세스를 적용할 수도 있습니다.

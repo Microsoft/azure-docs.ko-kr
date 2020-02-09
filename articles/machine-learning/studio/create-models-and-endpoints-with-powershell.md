@@ -1,5 +1,5 @@
 ---
-title: 모델에 대 한 여러 끝점 만들기
+title: 모델에 대 한 여러 엔드포인트 만들기
 titleSuffix: ML Studio (classic) - Azure
 description: PowerShell을 사용하여 알고리즘은 동일하지만 다른 학습 데이터 세트로 여러 Machine Learning 모델 및 웹 서비스 엔드포인트를 만듭니다.
 services: machine-learning
@@ -17,7 +17,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75454771"
 ---
-# <a name="use-powershell-to-create-studio-classic-models-and-web-service-endpoints-from-one-experiment"></a>PowerShell을 사용 하 여 한 실험에서 Studio (클래식) 모델 및 웹 서비스 끝점 만들기
+# <a name="use-powershell-to-create-studio-classic-models-and-web-service-endpoints-from-one-experiment"></a>PowerShell을 사용 하 여 한 실험에서 Studio (클래식) 모델 및 웹 서비스 엔드포인트 만들기
 
 일반적인 기계 학습 문제는 동일한 학습 워크플로를 포함하고 동일한 알고리즘을 사용하지만 서로 다른 학습 데이터 세트를 입력으로 사용하려는 것입니다. 이 문서에서는 단일 실험을 사용 하 여 Azure Machine Learning Studio (클래식)의 규모에서이 작업을 수행 하는 방법을 보여 줍니다.
 
@@ -87,7 +87,7 @@ ms.locfileid: "75454771"
         Add-AmlWebServiceEndpoint -WebServiceId $scoringSvc.Id -EndpointName $endpointName -Description $endpointName     
     }
 
-이제 10개의 엔드포인트를 만들었고 모두 *customer001.csv*에서 학습된 동일한 학습 모델을 포함합니다. Azure Portal에서 끝점을 볼 수 있습니다.
+이제 10개의 엔드포인트를 만들었고 모두 *customer001.csv*에서 학습된 동일한 학습 모델을 포함합니다. Azure Portal에서 엔드포인트을 볼 수 있습니다.
 
 ![포털에서 학습 된 모델 목록 보기](./media/create-models-and-endpoints-with-powershell/created-endpoints.png)
 

@@ -78,7 +78,7 @@ Azure Portal을 사용하여 새로운 네임스페이스에서만 가용성 영
 [Service Bus 표준 계층 샘플에서 지역에서 복제][Geo-replication with Service Bus Standard Tier] 는 메시징 엔터티의 수동 복제를 보여 줍니다.
 
 ## <a name="protecting-relay-endpoints-against-datacenter-outages-or-disasters"></a>데이터센터 가동 중단 또는 재해로부터 릴레이 엔드포인트 보호
-[Azure Relay](../service-bus-relay/relay-what-is-it.md) 끝점의 지역에서 복제를 사용 하면 Service Bus 중단 상태에서 릴레이 끝점을 노출 하는 서비스에 연결할 수 있습니다. 지역 복제를 하려면 서비스에서 서로 다른 네임스페이스에 두 릴레이 엔드포인트를 만들어야 합니다. 네임스페이스는 서로 다른 데이터센터에 있어야 하고 두 엔드포인트 이름이 서로 달라야 합니다. 예를 들어, 기본 엔드포인트는 **contosoPrimary.servicebus.windows.net/myPrimaryService**에서 연결할 수 있고 이에 상응하는 보조 엔드포인트는 **contosoSecondary.servicebus.windows.net/mySecondaryService**에서 연결할 수 있습니다.
+[Azure Relay](../service-bus-relay/relay-what-is-it.md) 엔드포인트의 지역에서 복제를 사용 하면 Service Bus 중단 상태에서 릴레이 엔드포인트을 노출 하는 서비스에 연결할 수 있습니다. 지역 복제를 하려면 서비스에서 서로 다른 네임스페이스에 두 릴레이 엔드포인트를 만들어야 합니다. 네임스페이스는 서로 다른 데이터센터에 있어야 하고 두 엔드포인트 이름이 서로 달라야 합니다. 예를 들어, 기본 엔드포인트는 **contosoPrimary.servicebus.windows.net/myPrimaryService**에서 연결할 수 있고 이에 상응하는 보조 엔드포인트는 **contosoSecondary.servicebus.windows.net/mySecondaryService**에서 연결할 수 있습니다.
 
 서비스는 두 엔드포인트를 모두를 수신하고, 클라이언트는 두 엔드포인트 중 어디를 통해서든 서비스를 호출할 수 있습니다. 클라이언트 애플리케이션은 기본 엔드포인트에서 임의로 하나의 릴레이를 선택하고, 활성 엔드포인트로 요청을 보냅니다. 오류 코드가 표시되고 작업이 실패하면, 이 오류는 릴레이 엔드포인트를 사용할 수 없음을 나타냅니다. 애플리케이션은 백업 엔드포인트로의 채널을 열고, 요청을 다시 발송합니다. 이때 활성 엔드포인트와 백업 엔드포인트의 역할이 서로 바뀝니다. 클라이언트 애플리케이션은 이전 활성 엔드포인트를 새 백업 엔드포인트로, 이전 백업 엔드포인트를 새 활성 엔드포인트로 간주합니다. 두 보내기 작업이 모두 실패하면, 두 엔터티의 역할이 바뀌지 않고 유지되며 오류가 반환됩니다.
 

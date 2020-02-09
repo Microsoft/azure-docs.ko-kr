@@ -55,11 +55,11 @@ Visual Studio Code 내에서 Azurite를 구성 하려면 확장 창을 선택 �
 
 다음 설정이 지원 됩니다.
 
-   * **Azurite: Blob Host** -Blob service 수신 대기 끝점입니다. 기본 설정은 127.0.0.1입니다.
+   * **Azurite: Blob Host** -Blob service 수신 대기 엔드포인트입니다. 기본 설정은 127.0.0.1입니다.
    * **Azurite: Blob port** -Blob service 수신 대기 포트입니다. 기본 포트는 1만입니다.
    * **Azurite: debug** -디버그 로그를 Azurite 채널에 출력 합니다. 기본 값은 **false**입니다.
    * **Azurite: location** -작업 영역 위치 경로입니다. 기본값은 Visual Studio Code 작업 폴더입니다.
-   * **Azurite: Queue Host** -큐 서비스 수신 대기 끝점입니다. 기본 설정은 127.0.0.1입니다.
+   * **Azurite: Queue Host** -큐 서비스 수신 대기 엔드포인트입니다. 기본 설정은 127.0.0.1입니다.
    * **Azurite: Queue port** -큐 서비스 수신 포트입니다. 기본 포트는 10001입니다.
    * **Azurite: 자동** -자동 모드에서 액세스 로그를 사용 하지 않도록 설정 합니다. 기본 값은 **false**입니다.
 
@@ -357,9 +357,9 @@ Azure Storage 탐색기에서 **계정 추가** 아이콘을 클릭 하 여 Azur
 
 Azurite의 로컬 인스턴스와 클라우드의 Azure Storage 계정 사이에는 기능적인 차이점이 있습니다.
 
-### <a name="endpoint-and-connection-url"></a>끝점 및 연결 URL
+### <a name="endpoint-and-connection-url"></a>엔드포인트 및 연결 URL
 
-Azurite에 대 한 서비스 끝점은 Azure Storage 계정의 끝점과 다릅니다. 로컬 컴퓨터는 도메인 이름 확인을 수행 하지 않습니다. Azurite 끝점은 로컬 주소 여야 합니다.
+Azurite에 대 한 서비스 엔드포인트은 Azure Storage 계정의 엔드포인트과 다릅니다. 로컬 컴퓨터는 도메인 이름 확인을 수행 하지 않습니다. Azurite 엔드포인트은 로컬 주소 여야 합니다.
 
 Azure Storage 계정에서 리소스에 주소를 표시 하는 경우 계정 이름은 URI 호스트 이름의 일부입니다. 주소를 지정 하는 리소스는 URI 경로의 일부입니다.
 

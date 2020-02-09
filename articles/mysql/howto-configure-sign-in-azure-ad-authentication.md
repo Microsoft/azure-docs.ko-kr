@@ -31,7 +31,7 @@ Azure ad 관리 사용자만 Azure AD 기반 인증에 대 한 사용자를 만�
 
 ![azure ad 관리자 설정][2]
 
-3. Azure AD 관리자가 될 고객 테 넌 트의 유효한 Azure AD 사용자를 선택 합니다.
+3. Azure AD 관리자가 될 고객 테넌트의 유효한 Azure AD 사용자를 선택 합니다.
 
 > [!IMPORTANT]
 > 관리자를 설정 하면 모든 관리자 권한으로 Azure Database for MySQL 서버에 새 사용자가 추가 됩니다.
@@ -44,7 +44,7 @@ MySQL 서버당 하나의 Azure AD 관리자만 만들 수 있으며, 다른 항
 
 Azure Database for MySQL 데이터베이스에 Azure AD 사용자를 추가 하려면 연결 후 다음 단계를 수행 합니다 (연결 하는 방법에 대 한 뒷부분 섹션 참조).
 
-1. 먼저 azure ad 사용자 `<user>@yourtenant.onmicrosoft.com`가 Azure AD 테 넌 트의 유효한 사용자 인지 확인 합니다.
+1. 먼저 azure ad 사용자 `<user>@yourtenant.onmicrosoft.com`가 Azure AD 테넌트의 유효한 사용자 인지 확인 합니다.
 2. Azure AD 관리 사용자로 Azure Database for MySQL 인스턴스에 로그인 합니다.
 3. Azure Database for MySQL에서 사용자 `<user>@yourtenant.onmicrosoft.com`를 만듭니다.
 
@@ -168,7 +168,7 @@ mysql-h mydb.mysql.database.azure.com \-사용자 user@tenant.onmicrosoft.com@my
 Azure Database for MySQL의 Azure AD 인증은 사용자가 MySQL 서버에 존재 하는지 확인 하 고 토큰 내용의 유효성을 검사 하 여 토큰의 유효성을 검사 합니다. 다음 토큰 유효성 검사 단계를 수행 합니다.
 
 -   토큰이 Azure AD에 의해 서명 되었으며 변조 되지 않았습니다.
--   서버와 연결 된 테 넌 트에 대해 Azure AD에서 토큰을 발급 했습니다.
+-   서버와 연결 된 테넌트에 대해 Azure AD에서 토큰을 발급 했습니다.
 -   토큰이 만료 되지 않았습니다.
 -   토큰은 Azure Database for MySQL 리소스에 대 한 것 이며 다른 Azure 리소스는 아닙니다.
 

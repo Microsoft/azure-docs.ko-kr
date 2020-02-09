@@ -19,7 +19,7 @@ ms.locfileid: "74975825"
 ---
 # <a name="text-to-speech-rest-api"></a>Text-to-Speech REST API
 
-음성 서비스를 사용 하면 [텍스트를 합성 된 음성으로 변환](#convert-text-to-speech) 하 고 REST api 집합을 사용 하 여 지역에 대해 [지원 되는 음성 목록을 가져올](#get-a-list-of-voices) 수 있습니다. 사용 가능한 각 끝점은 지역과 연결됩니다. 사용하려는 끝점/지역에 대한 구독 키가 필요합니다.
+음성 서비스를 사용 하면 [텍스트를 합성 된 음성으로 변환](#convert-text-to-speech) 하 고 REST api 집합을 사용 하 여 지역에 대해 [지원 되는 음성 목록을 가져올](#get-a-list-of-voices) 수 있습니다. 사용 가능한 각 엔드포인트은 지역과 연결됩니다. 사용하려는 엔드포인트/지역에 대한 구독 키가 필요합니다.
 
 텍스트를 음성으로 변환 REST API는 인공신경망 및 표준 텍스트를 음성으로 보이스를 지원하며, 해당 음성 각각은 로캘로 식별되는 특정 언어를 지원합니다.
 
@@ -37,7 +37,7 @@ ms.locfileid: "74975825"
 
 ## <a name="get-a-list-of-voices"></a>음성 목록 가져오기
 
-`voices/list` 끝점을 사용하면 특정 지역/끝점에 대한 음성의 전체 목록을 가져올 수 있습니다.
+`voices/list` 엔드포인트을 사용하면 특정 지역/엔드포인트에 대한 음성의 전체 목록을 가져올 수 있습니다.
 
 ### <a name="regions-and-endpoints"></a>지역 및 엔드포인트
 
@@ -73,7 +73,7 @@ ms.locfileid: "74975825"
 
 ### <a name="request-body"></a>요청 본문
 
-이 끝점에 대한 `GET` 요청에는 본문이 필요하지 않습니다.
+이 엔드포인트에 대한 `GET` 요청에는 본문이 필요하지 않습니다.
 
 ### <a name="sample-request"></a>샘플 요청
 
@@ -91,7 +91,7 @@ Authorization: Bearer [Base64 access_token]
 이 응답은 응답의 구조를 설명 하기 위해 잘렸습니다.
 
 > [!NOTE]
-> 음성 가용성은 영역/끝점에 따라 다릅니다.
+> 음성 가용성은 영역/엔드포인트에 따라 다릅니다.
 
 ```json
 [
@@ -146,7 +146,7 @@ Authorization: Bearer [Base64 access_token]
 
 ## <a name="convert-text-to-speech"></a>텍스트 음성 변환
 
-`v1` 끝점을 사용하면 [Speech Synthesis Markup Language (SSML)](speech-synthesis-markup.md)를 사용하여 텍스트 음성 변환이 가능합니다.
+`v1` 엔드포인트을 사용하면 [Speech Synthesis Markup Language (SSML)](speech-synthesis-markup.md)를 사용하여 텍스트 음성 변환이 가능합니다.
 
 ### <a name="regions-and-endpoints"></a>지역 및 엔드포인트
 

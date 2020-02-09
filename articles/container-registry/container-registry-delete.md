@@ -22,7 +22,7 @@ Azure Container Registry의 크기를 유지하려면 오래된 이미지 데이
 
 삭제 작업을 자동화 하는 데 도움이 되는 샘플 스크립트가 제공 됩니다.
 
-이러한 개념에 대 한 소개는 [레지스트리, 리포지토리 및 이미지 정보](container-registry-concepts.md)를 참조 하세요.
+이러한 개념에 대한 소개는 [레지스트리, 리포지토리 및 이미지 정보](container-registry-concepts.md)를 참조 하세요.
 
 ## <a name="delete-repository"></a>리포지토리 삭제
 
@@ -259,7 +259,7 @@ if ($enableDelete) {
 
 Azure CLI 명령을 스크립팅 하는 대신 주문형 또는 예약 된 ACR 작업을 실행 하 여 특정 기간 보다 오래 되었거나 지정 된 이름 필터와 일치 하는 모든 태그를 삭제 합니다. 자세한 내용은 [Azure container registry에서 자동으로 이미지 제거](container-registry-auto-purge.md)를 참조 하세요.
 
-필요에 따라 각 레지스트리에 대 한 [보존 정책을](container-registry-retention-policy.md) 설정 하 여 태그가 없는 매니페스트를 관리 합니다. 보존 정책을 사용 하도록 설정 하면 레지스트리에 연결 된 태그와 기본 계층 데이터가 없는 이미지 매니페스트가 설정 된 기간이 지나면 자동으로 삭제 됩니다.
+필요에 따라 각 레지스트리에 대한 [보존 정책을](container-registry-retention-policy.md) 설정 하 여 태그가 없는 매니페스트를 관리 합니다. 보존 정책을 사용 하도록 설정 하면 레지스트리에 연결 된 태그와 기본 계층 데이터가 없는 이미지 매니페스트가 설정 된 기간이 지나면 자동으로 삭제 됩니다.
 
 ## <a name="next-steps"></a>다음 단계
 

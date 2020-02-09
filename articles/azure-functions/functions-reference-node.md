@@ -1,5 +1,5 @@
 ---
-title: Azure Functions에 대 한 JavaScript 개발자 참조
+title: Azure Functions에 대한 JavaScript 개발자 참조
 description: JavaScript를 사용하여 함수를 개발하는 방법을 알아봅니다.
 ms.assetid: 45dedd78-3ff9-411f-bb4b-16d29a11384c
 ms.topic: reference
@@ -408,7 +408,7 @@ HTTP 트리거로 작업할 때 여러 가지 방법으로 HTTP 요청 및 응�
 
 ## <a name="scaling-and-concurrency"></a>크기 조정 및 동시성
 
-기본적으로 Azure Functions는 응용 프로그램의 부하를 자동으로 모니터링 하 고 필요에 따라 node.js에 대 한 추가 호스트 인스턴스를 만듭니다. 함수는 다양 한 트리거 유형에 대해 기본 제공 (사용자 구성 불가능) 임계값을 사용 하 여 QueueTrigger에 대 한 메시지의 보존 기간 및 큐 크기와 같은 인스턴스를 추가할 시기를 결정 합니다. 자세한 내용은 [소비 및 프리미엄 계획의 작동 방식](functions-scale.md#how-the-consumption-and-premium-plans-work)을 참조 하세요.
+기본적으로 Azure Functions는 응용 프로그램의 부하를 자동으로 모니터링 하 고 필요에 따라 node.js에 대한 추가 호스트 인스턴스를 만듭니다. 함수는 다양 한 트리거 유형에 대해 기본 제공 (사용자 구성 불가능) 임계값을 사용 하 여 QueueTrigger에 대한 메시지의 보존 기간 및 큐 크기와 같은 인스턴스를 추가할 시기를 결정 합니다. 자세한 내용은 [소비 및 프리미엄 계획의 작동 방식](functions-scale.md#how-the-consumption-and-premium-plans-work)을 참조 하세요.
 
 이러한 크기 조정 동작은 많은 node.js 응용 프로그램에서 충분 합니다. CPU 바인딩된 응용 프로그램의 경우 여러 언어 작업자 프로세스를 사용 하 여 성능을 향상 시킬 수 있습니다.
 
@@ -467,7 +467,7 @@ module.exports = function(context) {
 
 ## <a name="environment-variables"></a>환경 변수
 
-Functions에서 [앱 설정](functions-app-settings.md)(예: 서비스 연결 문자열)은 실행 중에 환경 변수로 노출됩니다. `process.env`를 사용 하 여 이러한 설정에 액세스할 수 있습니다. 여기에는 `AzureWebJobsStorage`를 기록 하 고 `WEBSITE_SITE_NAME` 환경 변수를 기록 하는 `context.log()`에 대 한 두 번째 및 세 번째 호출에 나와 있습니다.
+Functions에서 [앱 설정](functions-app-settings.md)(예: 서비스 연결 문자열)은 실행 중에 환경 변수로 노출됩니다. `process.env`를 사용 하 여 이러한 설정에 액세스할 수 있습니다. 여기에는 `AzureWebJobsStorage`를 기록 하 고 `WEBSITE_SITE_NAME` 환경 변수를 기록 하는 `context.log()`에 대한 두 번째 및 세 번째 호출에 나와 있습니다.
 
 ```javascript
 module.exports = async function (context, myTimer) {
@@ -563,20 +563,20 @@ VS Code를 사용 하 여 디버깅 하는 경우 `--inspect` 매개 변수는 �
 
 ## <a name="typescript"></a>TypeScript
 
-함수 런타임의 버전 2.x를 대상으로 지정 하는 경우 Visual Studio Code 및 [Azure Functions Core Tools](functions-run-local.md) [에 대 한 Azure Functions](functions-create-first-function-vs-code.md) 를 모두 사용 하 여 TypeScript 함수 앱 프로젝트를 지 원하는 템플릿을 사용 하 여 함수 앱을 만들 수 있습니다. 템플릿에서는 이러한 도구를 사용 하 여 TypeScript 코드에서 JavaScript 함수를 더 쉽게 트랜스 파일 실행 하 고 게시할 수 있도록 하는 `package.json` 및 `tsconfig.json` 프로젝트 파일을 생성 합니다.
+함수 런타임의 버전 2.x를 대상으로 지정 하는 경우 Visual Studio Code 및 [Azure Functions Core Tools](functions-run-local.md) [에 대한 Azure Functions](functions-create-first-function-vs-code.md) 를 모두 사용 하 여 TypeScript 함수 앱 프로젝트를 지 원하는 템플릿을 사용 하 여 함수 앱을 만들 수 있습니다. 템플릿에서는 이러한 도구를 사용 하 여 TypeScript 코드에서 JavaScript 함수를 더 쉽게 트랜스 파일 실행 하 고 게시할 수 있도록 하는 `package.json` 및 `tsconfig.json` 프로젝트 파일을 생성 합니다.
 
 생성 된 `.funcignore` 파일은 프로젝트가 Azure에 게시 될 때 제외 되는 파일을 나타내는 데 사용 됩니다.  
 
 TypeScript 파일 (.ts)은 `dist` 출력 디렉터리에서 JavaScript 파일 (.js)로 트랜스 파일 된 됩니다. TypeScript 템플릿은 `function.json`의 [`scriptFile` 매개 변수](#using-scriptfile) 를 사용 하 여 `dist` 폴더에 있는 해당 .js 파일의 위치를 표시 합니다. 출력 위치는 `tsconfig.json` 파일의 `outDir` 매개 변수를 사용 하 여 템플릿에 의해 설정 됩니다. 이 설정 또는 폴더의 이름을 변경 하면 런타임에서 실행할 코드를 찾을 수 없습니다.
 
 > [!NOTE]
-> TypeScript에 대 한 실험적 지원은 함수 런타임의 버전 1.x에 있습니다. 함수가 호출 될 때 실험적 버전이 TypeScript 파일을 JavaScript 파일로 transpiles 합니다. 버전 2.x에서이 실험적 지원은 호스트가 초기화 되기 전과 배포 프로세스 중에로 하는 도구 기반 방법으로 대체 되었습니다.
+> TypeScript에 대한 실험적 지원은 함수 런타임의 버전 1.x에 있습니다. 함수가 호출 될 때 실험적 버전이 TypeScript 파일을 JavaScript 파일로 transpiles 합니다. 버전 2.x에서이 실험적 지원은 호스트가 초기화 되기 전과 배포 프로세스 중에로 하는 도구 기반 방법으로 대체 되었습니다.
 
 TypeScript 프로젝트에서 로컬로 개발 하 고 배포 하는 방법은 개발 도구에 따라 달라 집니다.
 
 ### <a name="visual-studio-code"></a>Visual Studio Code
 
-[Visual Studio Code 확장에 대 한 Azure Functions](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) 를 사용 하면 TypeScript를 사용 하 여 함수를 개발할 수 있습니다. 핵심 도구는 Azure Functions 확장의 요구 사항입니다.
+[Visual Studio Code 확장에 대한 Azure Functions](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) 를 사용 하면 TypeScript를 사용 하 여 함수를 개발할 수 있습니다. 핵심 도구는 Azure Functions 확장의 요구 사항입니다.
 
 Visual Studio Code에서 TypeScript 함수 앱을 만들려면 함수 앱을 만들 때 `TypeScript` 언어로 선택 합니다.
 

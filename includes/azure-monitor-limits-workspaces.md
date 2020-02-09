@@ -61,15 +61,15 @@ ms.locfileid: "75392277"
 | 범주 | 제한 | 의견 |
 |:---|:---|:---|
 | 테이블의 최대 열         | 500 | |
-| 열 이름에 대 한 최대 문자 | 500 | |
+| 열 이름에 대한 최대 문자 | 500 | |
 | 데이터 내보내기 | 현재 사용할 수 없음 | Azure Function 또는 논리 앱을 사용 하 여 데이터를 집계 하 고 내보냅니다. | 
 
 **데이터 수집 볼륨 요금**
 
 
-Azure Monitor는 점점 더 빠른 속도로 매달 테라바이트 단위의 데이터를 보내는 수천 명의 고객을 처리하는 대규모 데이터 서비스입니다. [진단 설정을](../articles/azure-monitor/platform/diagnostic-settings.md) 사용 하 여 Azure 리소스에서 전송 된 데이터에 대 한 기본 수집 볼륨 요금은 작업 영역 당 약 **6gb/최소값** 입니다. 실제 크기는 로그 길이와 압축 비율에 따라 데이터 형식에 따라 달라질 수 있으므로이 값은 근사치입니다. 이 제한은 에이전트 또는 [데이터 수집기 API](../articles/azure-monitor/platform/data-collector-api.md)에서 전송 된 데이터에는 적용 되지 않습니다.
+Azure Monitor는 점점 더 빠른 속도로 매달 테라바이트 단위의 데이터를 보내는 수천 명의 고객을 처리하는 대규모 데이터 서비스입니다. [진단 설정을](../articles/azure-monitor/platform/diagnostic-settings.md) 사용 하 여 Azure 리소스에서 전송 된 데이터에 대한 기본 수집 볼륨 요금은 작업 영역 당 약 **6gb/최소값** 입니다. 실제 크기는 로그 길이와 압축 비율에 따라 데이터 형식에 따라 달라질 수 있으므로이 값은 근사치입니다. 이 제한은 에이전트 또는 [데이터 수집기 API](../articles/azure-monitor/platform/data-collector-api.md)에서 전송 된 데이터에는 적용 되지 않습니다.
 
-데이터를 더 높은 속도로 단일 작업 영역으로 보내는 경우 일부 데이터가 삭제 되 고, 임계값을 계속 초과 하는 동안 6 시간 마다 이벤트가 작업 영역에서 *작업* 테이블로 전송 됩니다. 수집 볼륨이 계속 해 서 속도 제한을 초과 하거나 곧 도달할 것으로 예상 되는 경우 지원 요청을 열어 작업 영역에 대 한 증가를 요청할 수 있습니다.
+데이터를 더 높은 속도로 단일 작업 영역으로 보내는 경우 일부 데이터가 삭제 되 고, 임계값을 계속 초과 하는 동안 6 시간 마다 이벤트가 작업 영역에서 *작업* 테이블로 전송 됩니다. 수집 볼륨이 계속 해 서 속도 제한을 초과 하거나 곧 도달할 것으로 예상 되는 경우 지원 요청을 열어 작업 영역에 대한 증가를 요청할 수 있습니다.
  
 작업 영역에서 이러한 이벤트에 대해 알리려면 0 보다 많은 결과 클 경고 논리 기반을 사용 하는 다음 쿼리를 사용 하 여 [로그 경고 규칙](../articles/azure-monitor/platform/alerts-log.md) 을 만듭니다.
 
@@ -81,4 +81,4 @@ Operation
 
 
 >[!NOTE]
->Log Analytics 사용 하는 기간에 따라 레거시 가격 책정 계층에 대 한 액세스 권한이 있을 수 있습니다. [Log Analytics 레거시 가격 책정 계층](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#legacy-pricing-tiers)에 대해 자세히 알아보세요. 
+>Log Analytics 사용 하는 기간에 따라 레거시 가격 책정 계층에 대한 액세스 권한이 있을 수 있습니다. [Log Analytics 레거시 가격 책정 계층](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#legacy-pricing-tiers)에 대해 자세히 알아보세요. 

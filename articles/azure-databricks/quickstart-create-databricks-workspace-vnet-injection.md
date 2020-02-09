@@ -19,7 +19,7 @@ ms.locfileid: "77086556"
 
 Azure Databricks의 기본 배포에서는 Databricks로 관리 되는 새 가상 네트워크를 만듭니다. 이 빠른 시작에서는 대신 사용자 고유의 가상 네트워크에서 Azure Databricks 작업 영역을 만드는 방법을 보여 줍니다. 또한 해당 작업 영역 내에서 Apache Spark 클러스터를 만듭니다. 
 
-사용자 고유의 가상 네트워크에서 Azure Databricks 작업 영역을 만들도록 선택할 수 있는 이유에 대 한 자세한 내용은 [Azure Virtual Network (VNet 주입)에서 Azure Databricks 배포](https://docs.microsoft.com/azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject)를 참조 하세요.
+사용자 고유의 가상 네트워크에서 Azure Databricks 작업 영역을 만들도록 선택할 수 있는 이유에 대한 자세한 내용은 [Azure Virtual Network (VNet 주입)에서 Azure Databricks 배포](https://docs.microsoft.com/azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject)를 참조 하세요.
 
 Azure 구독이 아직 없는 경우 [체험 계정](https://azure.microsoft.com/free/databricks/)을 만듭니다.
 
@@ -42,11 +42,11 @@ Azure 구독이 아직 없는 경우 [체험 계정](https://azure.microsoft.com
     |설정|제안 값|Description|
     |-------|---------------|-----------|
     |Subscription|\<구독\>|사용할 Azure 구독을 선택합니다.|
-    |Resource group|databricks-quickstart|**새로 만들기** 를 선택 하 고 계정에 대 한 새 리소스 그룹 이름을 입력 합니다.|
+    |Resource group|databricks-quickstart|**새로 만들기** 를 선택 하 고 계정에 대한 새 리소스 그룹 이름을 입력 합니다.|
     |속성|databricks-quickstart|가상 네트워크에 대한 이름을 선택합니다.|
     |지역|\<사용자와 가장 가까운 지역 선택\>|가상 네트워크를 호스트할 수 있는 지리적 위치를 선택합니다. 사용자와 가장 가까운 위치를 사용합니다.|
 
-    ![Azure Portal의 가상 네트워크에 대 한 기본 사항](./media/quickstart-create-databricks-workspace-vnet-injection/create-virtual-network.png)
+    ![Azure Portal의 가상 네트워크에 대한 기본 사항](./media/quickstart-create-databricks-workspace-vnet-injection/create-virtual-network.png)
 
 3. **다음: IP 주소 >** 를 선택 하 고 다음 설정을 적용 합니다. 그런 다음 **검토 + 만들기**를 선택 합니다.
     
@@ -56,7 +56,7 @@ Azure 구독이 아직 없는 경우 [체험 계정](https://azure.microsoft.com
     |서브넷 이름|기본값|가상 네트워크에서 기본 서브넷의 이름을 선택 합니다.|
     |서브넷 주소 범위|10.2.0.0/24|CIDR 표기법의 서브넷의 주소 범위입니다. 가상 네트워크의 주소 공간에 포함 되어야 합니다. 사용 중인 서브넷의 주소 범위는 편집할 수 없습니다.|
 
-    ![Azure Portal에서 가상 네트워크에 대 한 IP 구성 설정](./media/quickstart-create-databricks-workspace-vnet-injection/create-virtual-network-ip-config.png)
+    ![Azure Portal에서 가상 네트워크에 대한 IP 구성 설정](./media/quickstart-create-databricks-workspace-vnet-injection/create-virtual-network-ip-config.png)
 
 4. **검토 + 만들기** 탭에서 **만들기** 를 선택 하 여 가상 네트워크를 배포 합니다. 배포가 완료 되 면 가상 네트워크로 이동 하 고 **설정**아래에서 **주소 공간** 을 선택 합니다. *추가 주소 범위 추가*상자에 `10.179.0.0/16` 삽입 하 고 **저장**을 선택 합니다.
 
@@ -72,11 +72,11 @@ Azure 구독이 아직 없는 경우 [체험 계정](https://azure.microsoft.com
 
     |설정|제안 값|Description|
     |-------|---------------|-----------|
-    |작업 영역 이름|databricks-quickstart|Azure Databricks 작업 영역에 대 한 이름을 선택 합니다.|
+    |작업 영역 이름|databricks-quickstart|Azure Databricks 작업 영역에 대한 이름을 선택 합니다.|
     |Subscription|\<구독\>|사용할 Azure 구독을 선택합니다.|
     |Resource group|databricks-quickstart|가상 네트워크에 사용한 것과 동일한 리소스 그룹을 선택 합니다.|
     |위치|\<사용자와 가장 가까운 지역 선택\>|가상 네트워크와 동일한 위치를 선택합니다.|
-    |가격 책정 계층|표준 또는 프리미엄 중에서 선택.|가격 책정 계층에 대 한 자세한 내용은 [Databricks 가격 책정 페이지](https://azure.microsoft.com/pricing/details/databricks/)를 참조 하세요.|
+    |가격 책정 계층|표준 또는 프리미엄 중에서 선택.|가격 책정 계층에 대한 자세한 내용은 [Databricks 가격 책정 페이지](https://azure.microsoft.com/pricing/details/databricks/)를 참조 하세요.|
 
     ![Azure Databricks 작업 영역 기본 사항 만들기](./media/quickstart-create-databricks-workspace-vnet-injection/create-databricks-workspace.png)
 

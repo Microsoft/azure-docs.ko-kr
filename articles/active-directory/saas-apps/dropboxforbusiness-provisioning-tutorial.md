@@ -34,7 +34,7 @@ ms.locfileid: "77058449"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [Dropbox for Business 테 넌 트](https://www.dropbox.com/business/pricing)
+* [Dropbox for Business 테넌트](https://www.dropbox.com/business/pricing)
 * 관리자 권한이 있는 Dropbox for Business의 사용자 계정
 
 ## <a name="add-dropbox-for-business-from-the-gallery"></a>갤러리에서 Dropbox for Business 추가
@@ -102,7 +102,7 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
     ![프로비전 ](common/provisioning-oauth.png)
 
-6. **AZURE AD와 연결 하기 위해 dropbox For business에 로그인** 대화 상자에서 Dropbox for business 테 넌 트에 로그인 하 고 id를 확인 합니다.
+6. **AZURE AD와 연결 하기 위해 dropbox For business에 로그인** 대화 상자에서 Dropbox for business 테넌트에 로그인 하 고 id를 확인 합니다.
 
     ![Dropbox for Business 로그인](media/dropboxforbusiness-provisioning-tutorial/dropbox01.png)
 

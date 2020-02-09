@@ -33,7 +33,7 @@ ms.locfileid: "74129393"
     이 링크는 JDBC를 사용하여 SQL 데이터베이스에 연결하기 위한 DataFrame API 및 JDBC 인터페이스를 통해 읽기의 병렬 처리를 제어하는 방법을 제공합니다. 이 항목에서는 Scala API를 사용하여 자세한 예제를 제공하며, 끝에 축약된 Python 및 Spark SQL 예제가 나와 있습니다.
 - [Azure Data Lake Storage](/azure/databricks/data/data-sources/azure/azure-datalake-gen2)
 
-    이 링크는 Azure Active Directory 서비스 주체를 사용 하 여 Azure Data Lake Storage 인증 하는 방법에 대 한 예제를 제공 합니다. 또한 Azure Databricks에서 Azure Data Lake Storage 데이터에 액세스 하는 방법에 대 한 지침을 제공 합니다.
+    이 링크는 Azure Active Directory 서비스 주체를 사용 하 여 Azure Data Lake Storage 인증 하는 방법에 대한 예제를 제공 합니다. 또한 Azure Databricks에서 Azure Data Lake Storage 데이터에 액세스 하는 방법에 대한 지침을 제공 합니다.
 
 - [Azure Blob Storage](/azure/databricks/data/data-sources/azure/azure-storage)
 

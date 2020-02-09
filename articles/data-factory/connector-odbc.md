@@ -41,7 +41,7 @@ ODBC 원본에서 지원되는 싱크 데이터 저장소로 또는 지원되는
 ODBC 커넥터를 사용하려면 다음을 수행해야 합니다.
 
 - 자체 호스팅 Integration Runtime을 설정합니다. 자세한 내용은 [자체 호스팅 Integration Runtime](create-self-hosted-integration-runtime.md)을 참조하세요.
-- Integration Runtime 컴퓨터의 데이터 저장소에 대 한 64 비트 ODBC 드라이버를 설치 합니다.
+- Integration Runtime 컴퓨터의 데이터 저장소에 대한 64 비트 ODBC 드라이버를 설치 합니다.
 
 ## <a name="getting-started"></a>시작
 
@@ -275,7 +275,7 @@ Data Factory 솔루션에서 SAP HANA 싱크를 사용하기 전에 [연결 문�
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
+속성에 대한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
 
 
 ## <a name="troubleshoot-connectivity-issues"></a>연결 문제 해결

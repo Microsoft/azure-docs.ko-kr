@@ -54,7 +54,7 @@ Usage: terraform [--version] [--help] <command> [args]
 
 Terraform에서 Azure로 리소스를 프로비전할 수 있도록 [Azure AD 서비스 사용자](/cli/azure/create-an-azure-service-principal-azure-cli)를 만듭니다. 서비스 사용자는 Azure 구독에서 리소스를 프로비전하는 권한을 Terraform 스크립트에 부여합니다.
 
-여러 Azure 구독이 있는 경우 먼저 [az account list](/cli/azure/account#az-account-list) 를 사용 하 여 계정을 쿼리하여 구독 id 및 테 넌 트 id 값의 목록을 가져옵니다.
+여러 Azure 구독이 있는 경우 먼저 [az account list](/cli/azure/account#az-account-list) 를 사용 하 여 계정을 쿼리하여 구독 id 및 테넌트 id 값의 목록을 가져옵니다.
 
 ```azurecli-interactive
 az account list --query "[].{name:name, subscriptionId:id, tenantId:tenantId}"

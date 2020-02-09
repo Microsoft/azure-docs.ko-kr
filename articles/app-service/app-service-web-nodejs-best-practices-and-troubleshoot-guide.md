@@ -1,6 +1,6 @@
 ---
 title: Node.js 모범 사례 및 문제 해결
-description: Azure App Service에서 실행 되는 node.js 응용 프로그램에 대 한 모범 사례 및 문제 해결 단계를 알아봅니다.
+description: Azure App Service에서 실행 되는 node.js 응용 프로그램에 대한 모범 사례 및 문제 해결 단계를 알아봅니다.
 author: msangapu-msft
 ms.assetid: 387ea217-7910-4468-8987-9a1022a99bef
 ms.devlang: nodejs

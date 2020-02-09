@@ -1,6 +1,6 @@
 ---
 title: FAQ-Azure Vm 백업
-description: 이 문서에서는 Azure Backup 서비스를 사용 하 여 Azure Vm을 백업 하는 방법에 대 한 일반적인 질문에 대 한 답변을 검색 합니다.
+description: 이 문서에서는 Azure Backup 서비스를 사용 하 여 Azure Vm을 백업 하는 방법에 대한 일반적인 질문에 대한 답변을 검색 합니다.
 ms.reviewer: sogup
 ms.topic: conceptual
 ms.date: 09/17/2019
@@ -19,13 +19,13 @@ ms.locfileid: "76705414"
 
 ### <a name="which-vm-images-can-be-enabled-for-backup-when-i-create-them"></a>백업할 VM 이미지를 만들 때 어떤 VM 이미지를 사용 하도록 설정할 수 있나요?
 
-VM을 만들 때 [지원 되는 운영 체제](backup-support-matrix-iaas.md#supported-backup-actions) 를 실행 하는 vm에 대 한 백업을 사용 하도록 설정할 수 있습니다.
+VM을 만들 때 [지원 되는 운영 체제](backup-support-matrix-iaas.md#supported-backup-actions) 를 실행 하는 vm에 대한 백업을 사용 하도록 설정할 수 있습니다.
 
 ### <a name="is-the-backup-cost-included-in-the-vm-cost"></a>백업 비용이 VM 비용에 포함 되나요?
 
 아닙니다. 백업 비용은 VM의 비용과 별개입니다. [Azure Backup 가격 책정](https://azure.microsoft.com/pricing/details/backup/)에 대해 자세히 알아보세요.
 
-### <a name="which-permissions-are-required-to-enable-backup-for-a-vm"></a>VM에 대 한 백업을 사용 하도록 설정 하는 데 필요한 권한은 무엇입니까?
+### <a name="which-permissions-are-required-to-enable-backup-for-a-vm"></a>VM에 대한 백업을 사용 하도록 설정 하는 데 필요한 권한은 무엇입니까?
 
 VM 참가자 인 경우 VM에서 백업을 사용 하도록 설정할 수 있습니다. 사용자 지정 역할을 사용 하는 경우 VM에서 백업을 사용 하도록 설정 하려면 다음 권한이 필요 합니다.
 
@@ -39,7 +39,7 @@ VM 참가자 인 경우 VM에서 백업을 사용 하도록 설정할 수 있습
 - Microsoft.RecoveryServices/Vaults/backupPolicies/read
 - Microsoft.RecoveryServices/Vaults/backupPolicies/write
 
-Recovery Services 자격 증명 모음 및 VM에 다른 리소스 그룹이 있는 경우 Recovery Services 자격 증명 모음에 대 한 리소스 그룹에서 쓰기 권한이 있는지 확인 합니다.  
+Recovery Services 자격 증명 모음 및 VM에 다른 리소스 그룹이 있는 경우 Recovery Services 자격 증명 모음에 대한 리소스 그룹에서 쓰기 권한이 있는지 확인 합니다.  
 
 ### <a name="does-an-on-demand-backup-job-use-the-same-retention-schedule-as-scheduled-backups"></a>주문형 백업 작업은 예약된 백업과 동일한 보존 일정을 사용하나요?
 
@@ -47,7 +47,7 @@ Recovery Services 자격 증명 모음 및 VM에 다른 리소스 그룹이 있�
 
 ### <a name="i-recently-enabled-azure-disk-encryption-on-some-vms-will-my-backups-continue-to-work"></a>최근에 일부 VM에서 Azure Disk Encryption을 사용할 수 있습니다. 내 백업이 계속 작동하나요?
 
-Key Vault에 액세스할 수 있는 Azure Backup에 대 한 권한을 제공 합니다. [Azure Backup PowerShell](backup-azure-vms-automation.md) 설명서의 **백업 사용** 섹션에 설명된 대로 PowerShell에서 권한을 지정합니다.
+Key Vault에 액세스할 수 있는 Azure Backup에 대한 권한을 제공 합니다. [Azure Backup PowerShell](backup-azure-vms-automation.md) 설명서의 **백업 사용** 섹션에 설명된 대로 PowerShell에서 권한을 지정합니다.
 
 ### <a name="i-migrated-vm-disks-to-managed-disks-will-my-backups-continue-to-work"></a>VM 디스크를 관리 디스크로 마이그레이션했습니다. 내 백업이 계속 작동하나요?
 
@@ -83,7 +83,7 @@ WA 지원 디스크에는 스냅샷을 만들 수 없습니다. 그러나 Azure 
 
 Azure Backup은 WA 지원 디스크를 백업할 수 없지만 백업에서 제외할 수는 있습니다. 그러나 WA 지원 디스크의 정보가 백업되지 않으므로 백업하더라도 데이터베이스 일관성이 제공되지 않습니다. 운영 체제 디스크 백업 및 WA 미사용 디스크 백업을 원하는 경우 이 구성으로 디스크를 백업하면 됩니다.
 
-RPO가 15 분인 SAP HANA 백업에 대 한 비공개 미리 보기를 실행 하 고 있습니다. SQL DB 백업과 비슷한 방식으로 빌드되었으며, SAP HANA에서 인증한 backInt 인터페이스를 타사 솔루션에 사용합니다. 관심이 있는 경우 **Azure vm에서 SAP HANA의 백업에 대 한 비공개 미리 보기를 등록**하 여 `AskAzureBackupTeam@microsoft.com` 전자 메일을 보내 주세요.
+RPO가 15 분인 SAP HANA 백업에 대한 비공개 미리 보기를 실행 하 고 있습니다. SQL DB 백업과 비슷한 방식으로 빌드되었으며, SAP HANA에서 인증한 backInt 인터페이스를 타사 솔루션에 사용합니다. 관심이 있는 경우 **Azure vm에서 SAP HANA의 백업에 대한 비공개 미리 보기를 등록**하 여 `AskAzureBackupTeam@microsoft.com` 전자 메일을 보내 주세요.
 
 ### <a name="what-is-the-maximum-delay-i-can-expect-in-backup-start-time-from-the-scheduled-backup-time-i-have-set-in-my-vm-backup-policy"></a>내 VM 백업 정책에 설정 된 예약 된 백업 시간부터 백업 시작 시간에 예상 되는 최대 지연 수는 얼마 인가요?
 
@@ -137,9 +137,9 @@ PowerShell에서 이 작업을 수행하는 방법을 [자세히 알아보세요
 
 [즉시 복원](backup-instant-restore-capability.md) 기능을 사용 하면 스냅숏에서 빠르게 백업 하 고 즉시 복원할 수 있습니다.
 
-### <a name="what-happens-when-we-change-the-key-vault-settings-for-the-encrypted-vm"></a>암호화 된 VM에 대 한 주요 자격 증명 모음 설정을 변경 하면 어떻게 되나요?
+### <a name="what-happens-when-we-change-the-key-vault-settings-for-the-encrypted-vm"></a>암호화 된 VM에 대한 주요 자격 증명 모음 설정을 변경 하면 어떻게 되나요?
 
-암호화 된 VM에 대 한 키 자격 증명 모음 설정을 변경한 후에는 백업이 새로운 세부 정보 집합을 사용 하 여 계속 작동 합니다. 그러나 변경 전에 복구 지점에서 복원한 후에는 키 자격 증명 모음에서 암호를 복원 해야 VM을 만들 수 있습니다. 자세한 내용은이 [문서](https://docs.microsoft.com/azure/backup/backup-azure-restore-key-secret) 를 참조 하세요.
+암호화 된 VM에 대한 키 자격 증명 모음 설정을 변경한 후에는 백업이 새로운 세부 정보 집합을 사용 하 여 계속 작동 합니다. 그러나 변경 전에 복구 지점에서 복원한 후에는 키 자격 증명 모음에서 암호를 복원 해야 VM을 만들 수 있습니다. 자세한 내용은이 [문서](https://docs.microsoft.com/azure/backup/backup-azure-restore-key-secret) 를 참조 하세요.
 
 비밀/키 롤오버와 같은 작업에는이 단계가 필요 하지 않으며 복원 후 동일한 KeyVault를 사용할 수 있습니다.
 

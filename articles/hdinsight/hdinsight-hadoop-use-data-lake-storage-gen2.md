@@ -95,7 +95,7 @@ Azure Data Lake Storage Gen2 스토리지 계정을 만듭니다.
 
 > [!NOTE]
 > * 보조 Data Lake Storage Gen2 계정을 추가 하려면 저장소 계정 수준에서 앞서 만든 관리 되는 id를 추가 하려는 새 Data Lake Storage Gen2 저장소 계정에 할당 하면 됩니다. HDInsight에서 "추가 저장소 계정" 블레이드를 통해 보조 Data Lake Storage Gen2 계정을 추가 하는 것은 지원 되지 않습니다.
-> * HDInsight에서 사용 하는 Azure storage 계정에서 RA-GRS 또는 ZRS를 사용 하도록 설정할 수 있습니다. 그러나 RA-GRS 또는 RA-ZRS 보조 끝점에 대 한 클러스터를 만드는 것은 지원 되지 않습니다.
+> * HDInsight에서 사용 하는 Azure storage 계정에서 RA-GRS 또는 ZRS를 사용 하도록 설정할 수 있습니다. 그러나 RA-GRS 또는 RA-ZRS 보조 엔드포인트에 대 한 클러스터를 만드는 것은 지원 되지 않습니다.
 
 
 ## <a name="create-a-cluster-with-data-lake-storage-gen2-through-the-azure-cli"></a>Azure CLI를 통해 Data Lake Storage Gen2를 사용 하 여 클러스터 만들기

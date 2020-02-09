@@ -20,7 +20,7 @@ AGIC (Application Gateway 수신 컨트롤러)는 Kubernetes 응용 프로그램
 수신 컨트롤러는 고객의 AKS에서 자체 pod로 실행 됩니다. AGIC는 Kubernetes 리소스의 하위 집합을 모니터링 하 여 변경 내용을 모니터링 합니다. AKS 클러스터의 상태는 특정 구성 Application Gateway 변환 되 고 [ARM (Azure Resource Manager)](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)에 적용 됩니다.
 
 ## <a name="benefits-of-application-gateway-ingress-controller"></a>Application Gateway 수신 컨트롤러의 이점
-AGIC를 사용 하면 배포가 단일 Application Gateway 수신 컨트롤러를 사용 하 여 여러 AKS 클러스터를 제어할 수 있습니다. 또한 AGIC를 사용 하면 AKS 클러스터 앞에 다른 부하 분산 장치/공용 IP를 사용 하지 않아도 되며 요청이 AKS 클러스터에 도달 하기 전에 데이터 경로에서 여러 홉을 피할 수 있습니다. Application Gateway는 해당 개인 IP를 직접 사용 하 여 pod에 대 한 통신을 수행 하며 NodePort 또는 KubeProxy services가 필요 하지 않습니다. 또한 배포에 더 나은 성능을 제공 합니다.
+AGIC를 사용 하면 배포가 단일 Application Gateway 수신 컨트롤러를 사용 하 여 여러 AKS 클러스터를 제어할 수 있습니다. 또한 AGIC를 사용 하면 AKS 클러스터 앞에 다른 부하 분산 장치/공용 IP를 사용 하지 않아도 되며 요청이 AKS 클러스터에 도달 하기 전에 데이터 경로에서 여러 홉을 피할 수 있습니다. Application Gateway는 해당 개인 IP를 직접 사용 하 여 pod에 대한 통신을 수행 하며 NodePort 또는 KubeProxy services가 필요 하지 않습니다. 또한 배포에 더 나은 성능을 제공 합니다.
 
 수신 컨트롤러는 Standard_v2 및 WAF_v2 Sku 에서만 지원 되며 자동 크기 조정 이점도 제공 합니다. AKS 클러스터의 리소스를 사용 하지 않고 트래픽 로드의 증가 또는 감소에 대응 하 여 적절 하 게 크기를 조정할 수 Application Gateway.
 
@@ -40,6 +40,6 @@ AGIC는 여러 네임 스페이스를 처리 하 고 ProhibitedTargets를 가질
 
 ## <a name="next-steps"></a>다음 단계
 
-- [**최적의 배포**](ingress-controller-install-new.md): AGIC, AKS 및 Application Gateway를 설치 하는 방법에 대 한 지침은 빈 슬레이트 인프라에 있습니다.
+- [**최적의 배포**](ingress-controller-install-new.md): AGIC, AKS 및 Application Gateway를 설치 하는 방법에 대한 지침은 빈 슬레이트 인프라에 있습니다.
 - [**Brownfield 배포**](ingress-controller-install-existing.md): 기존 AKS 및 APPLICATION GATEWAY에 AGIC을 설치 합니다.
 

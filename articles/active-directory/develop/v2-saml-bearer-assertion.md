@@ -27,7 +27,7 @@ ms.locfileid: "76700212"
 # <a name="microsoft-identity-platform-and-oauth-20-saml-bearer-assertion-flow"></a>Microsoft id 플랫폼 및 OAuth 2.0 SAML 전달자 어설션 흐름
 OAuth 2.0 SAML 전달자 어설션 흐름을 사용 하면 클라이언트에서 기존 트러스트 관계를 사용 해야 할 때 SAML 어설션을 사용 하 여 OAuth 액세스 토큰을 요청할 수 있습니다. SAML 어설션에 적용 되는 서명은 권한 있는 앱의 인증을 제공 합니다. SAML 어설션은 id 공급자가 발급 하 고 서비스 공급자가 사용 하는 XML 보안 토큰입니다. 서비스 공급자는 해당 콘텐츠를 사용 하 여 보안 관련 목적의 어설션의 주체를 식별 합니다.
 
-SAML 어설션이 OAuth 토큰 끝점에 게시 됩니다.  끝점은 어설션을 처리 하 고 앱의 이전 승인에 따라 액세스 토큰을 발급 합니다. 클라이언트는 새로 고침 토큰을 보유 하거나 저장할 필요가 없으며 토큰 끝점에 전달 하는 데 필요한 클라이언트 비밀이 아닙니다.
+SAML 어설션이 OAuth 토큰 엔드포인트에 게시 됩니다.  엔드포인트은 어설션을 처리 하 고 앱의 이전 승인에 따라 액세스 토큰을 발급 합니다. 클라이언트는 새로 고침 토큰을 보유 하거나 저장할 필요가 없으며 토큰 엔드포인트에 전달 하는 데 필요한 클라이언트 비밀이 아닙니다.
 
 SAML 전달자 어설션 흐름은 사용자에 게 자격 증명을 묻는 메시지를 표시 하지 않고 Microsoft Graph Api (위임 된 권한만 지원)에서 데이터를 가져올 때 유용 합니다. 이 시나리오에서는 백그라운드 프로세스에 선호 되는 클라이언트 자격 증명 부여가 작동 하지 않습니다.
 
@@ -45,7 +45,7 @@ Azure Active Directory에 페더레이션된 Active Directory Federation Service
 권한 부여 서버/환경 (Microsoft 365)과 id 공급자 또는 SAML 2.0 전달자 어설션 (ADFS)의 발급자 간에 트러스트 관계를 설정 합니다. Single Sign-On 및 id 공급자로 ADFS를 구성 하려면 [이 문서](https://blogs.technet.microsoft.com/canitpro/2015/09/11/step-by-step-setting-up-ad-fs-and-enabling-single-sign-on-to-office-365/)를 참조할 수 있습니다.
 
 [포털](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)에서 응용 프로그램을 등록 합니다.
-1. [포털의 앱 등록 블레이드](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) 에 로그인 합니다 (Graph API에 v2.0 끝점을 사용 하 고 있으므로이 포털에서 응용 프로그램을 등록 해야 합니다. 그렇지 않은 경우 Azure active directory에서 등록을 사용할 수 있습니다. 
+1. [포털의 앱 등록 블레이드](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) 에 로그인 합니다 (Graph API에 v2.0 엔드포인트을 사용 하 고 있으므로이 포털에서 응용 프로그램을 등록 해야 합니다. 그렇지 않은 경우 Azure active directory에서 등록을 사용할 수 있습니다. 
 1. **새 등록**을 선택합니다.
 1. **애플리케이션 등록** 페이지가 표시되면 애플리케이션의 등록 정보를 입력합니다. 
     1. **이름** -앱의 사용자에게 표시되는 의미 있는 애플리케이션 이름을 입력합니다.
@@ -59,7 +59,7 @@ Azure Active Directory에 페더레이션된 Active Directory Federation Service
 샘플 요청을 테스트 하는 데 필요한 도구인 [Postman](https://www.getpostman.com/)을 설치 합니다.  나중에 요청을 코드로 변환할 수 있습니다.
 
 ### <a name="get-the-saml-assertion-from-adfs"></a>ADFS에서 SAML 어설션 가져오기
-SAML 어설션을 인출 하기 위해 SOAP envelope을 사용 하 여 ADFS 끝점에 대 한 POST 요청을 만듭니다.
+SAML 어설션을 인출 하기 위해 SOAP envelope을 사용 하 여 ADFS 엔드포인트에 대 한 POST 요청을 만듭니다.
 
 ![SAML 어설션 가져오기](./media/v2-saml-bearer-assertion/2.png)
 

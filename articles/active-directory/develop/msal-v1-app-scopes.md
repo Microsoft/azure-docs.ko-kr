@@ -63,9 +63,9 @@ var result = await app.AcquireTokenInteractive(scopes).ExecuteAsync();
 
 Azure AD에서 사용하는 논리는 다음과 같습니다.
 
-- V2.0 액세스 토큰이 포함 된 ADAL (Azure AD v1.0) 끝점의 경우 (가능한 경우) aud = resource
-- MSAL (v2.0 (Microsoft identity platform))의 경우 v2.0 토큰을 수락 하는 리소스에 대 한 액세스 토큰을 요청 하는 끝점 `aud=resource.AppId`
-- V 1.0 액세스 토큰을 허용 하는 리소스 (위의 경우)에 대 한 액세스 토큰을 요청 하는 MSAL (v2.0 끝점)의 경우, Azure AD는 마지막 슬래시 앞에 있는 모든 항목을 사용 하 고 리소스 식별자로 사용 하 여 요청 된 범위에서 원하는 대상 그룹을 구문 분석 합니다. 따라서 https:\//database.windows.net에 "https:\//database.windows.net/"의 대상이 필요한 경우 "https:\//database.windows.net//.default" 범위를 요청 해야 합니다. 참고 항목: GitHub 문제 [#747: 리소스 url의 후행 슬래시가 생략 되어 sql 인증 오류가 발생](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747)했습니다.
+- V2.0 액세스 토큰이 포함 된 ADAL (Azure AD v1.0) 엔드포인트의 경우 (가능한 경우) aud = resource
+- MSAL (v2.0 (Microsoft identity platform))의 경우 v2.0 토큰을 수락 하는 리소스에 대 한 액세스 토큰을 요청 하는 엔드포인트 `aud=resource.AppId`
+- V 1.0 액세스 토큰을 허용 하는 리소스 (위의 경우)에 대 한 액세스 토큰을 요청 하는 MSAL (v2.0 엔드포인트)의 경우, Azure AD는 마지막 슬래시 앞에 있는 모든 항목을 사용 하 고 리소스 식별자로 사용 하 여 요청 된 범위에서 원하는 대상 그룹을 구문 분석 합니다. 따라서 https:\//database.windows.net에 "https:\//database.windows.net/"의 대상이 필요한 경우 "https:\//database.windows.net//.default" 범위를 요청 해야 합니다. 참고 항목: GitHub 문제 [#747: 리소스 url의 후행 슬래시가 생략 되어 sql 인증 오류가 발생](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747)했습니다.
 
 ## <a name="scopes-to-request-access-to-all-the-permissions-of-a-v10-application"></a>v1.0 애플리케이션의 모든 권한에 대한 액세스를 요청하는 범위
 

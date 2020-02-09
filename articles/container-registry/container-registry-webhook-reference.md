@@ -1,6 +1,6 @@
 ---
 title: 레지스트리 webhook 스키마 참조
-description: Webhook push 또는 delete 이벤트에 대해 웹 후크를 사용할 때 생성 되는 Azure container registry의 webhook 요청에 대 한 JSON 페이로드에 대 한 참조입니다.
+description: Webhook push 또는 delete 이벤트에 대해 웹 후크를 사용할 때 생성 되는 Azure container registry의 webhook 요청에 대한 JSON 페이로드에 대한 참조입니다.
 ms.topic: article
 ms.date: 03/05/2019
 ms.openlocfilehash: 8354ef9db24d5825238155ac567d5d829f9b0d7f

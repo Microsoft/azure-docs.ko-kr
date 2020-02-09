@@ -64,7 +64,7 @@ az provider register --namespace Microsoft.ContainerInstance
 가상 노드 기능은 ACI의 기능 집합에 따라 크게 달라 집니다. 다음 시나리오는 가상 노드에서 아직 지원 되지 않습니다.
 
 * 서비스 주체를 사용 하 여 ACR 이미지를 끌어옵니다. [해결 방법은](https://github.com/virtual-kubelet/virtual-kubelet/blob/master/providers/azure/README.md#Private-registry) [Kubernetes 암호](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#create-a-secret-by-providing-credentials-on-the-command-line) 를 사용 하는 것입니다.
-* 네트워크 보안 그룹을 사용 하 여 VNet 피어 링, Kubernetes 네트워크 정책 및 인터넷에 대 한 아웃 바운드 트래픽을 비롯 한 [제한 사항](../container-instances/container-instances-vnet.md) 입니다. Virtual Network
+* 네트워크 보안 그룹을 사용 하 여 VNet 피어 링, Kubernetes 네트워크 정책 및 인터넷에 대한 아웃 바운드 트래픽을 비롯 한 [제한 사항](../container-instances/container-instances-vnet.md) 입니다. Virtual Network
 * 초기화 컨테이너
 * [호스트 별칭](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/)
 * ACI의 exec [인수](../container-instances/container-instances-exec.md#restrictions)
@@ -83,7 +83,7 @@ Azure Portal의 왼쪽 위 모서리에서 **리소스 만들기** > **Kubernete
 
 - *프로젝트 세부 정보*: Azure 구독을 선택하고 *myResourceGroup* 같은 Azure 리소스 그룹을 선택하거나 만듭니다. **myAKSCluster** 같은 *Kubernetes 클러스터 이름*을 입력합니다.
 - *클러스터 세부 정보*: AKS 클러스터의 지역, Kubernetes 버전 및 DNS 이름 접두사를 선택합니다.
-- *주 노드 풀*: AKS 노드에 대 한 VM 크기를 선택 합니다. AKS 클러스터를 배포한 후에는 VM 크기를 변경할 수 **없습니다**.
+- *주 노드 풀*: AKS 노드에 대한 VM 크기를 선택 합니다. AKS 클러스터를 배포한 후에는 VM 크기를 변경할 수 **없습니다**.
      - 클러스터에 배포할 노드 수를 선택합니다. 이 문서에서는 **노드 수**를 *1*로 설정합니다. 클러스터를 배포한 후에 노드 수를 조정할 수 **있습니다**.
 
 **다음: 크기 조정**을 클릭 합니다.
@@ -225,7 +225,7 @@ $ curl -L 10.241.0.4
 
 - [Kubernetes 수평 pod autoscaler 사용][aks-hpa]
 - [Kubernetes cluster autoscaler 사용][aks-cluster-autoscaler]
-- [가상 노드에 대 한 자동 크기 조정 샘플 체크 아웃][virtual-node-autoscale]
+- [가상 노드에 대한 자동 크기 조정 샘플 체크 아웃][virtual-node-autoscale]
 - [가상 Kubelet 오픈 소스 라이브러리에 대해 자세히 알아보세요.][virtual-kubelet-repo]
 
 <!-- LINKS - external -->

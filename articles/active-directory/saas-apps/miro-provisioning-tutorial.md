@@ -36,7 +36,7 @@ ms.locfileid: "77063415"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [Miro 테 넌 트](https://miro.com/pricing/)
+* [Miro 테넌트](https://miro.com/pricing/)
 * 관리자 권한이 있는 Miro의 사용자 계정
 
 ## <a name="assigning-users-to-miro"></a>Miro에 사용자 할당
@@ -86,7 +86,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위한 Miro을 구�
 > [Miro single sign-on 자습서](https://docs.microsoft.com/azure/active-directory/saas-apps/miro-tutorial)에 제공 된 지침에 따라 MIRO에 SAML 기반 Single Sign-On를 사용 하도록 선택할 수도 있습니다. Single Sign-On과 자동 사용자 프로비저닝은 서로 보완적이지만, 별개로 구성할 수 있습니다.
 
 > [!NOTE]
-> Miro의 SCIM 끝점에 대 한 자세한 내용은 [다음](https://help.miro.com/hc/en-us/articles/360036777814)을 참조 하세요.
+> Miro의 SCIM 엔드포인트에 대 한 자세한 내용은 [다음](https://help.miro.com/hc/en-us/articles/360036777814)을 참조 하세요.
 
 ### <a name="to-configure-automatic-user-provisioning-for-miro-in-azure-ad"></a>Azure AD에서 Miro에 대해 자동 사용자 프로 비전을 구성 하려면
 
@@ -106,7 +106,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위한 Miro을 구�
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에 있는 **테 넌 트 URL**에 `https://miro.com/api/v1/scim`을 입력 합니다. 이전에 **비밀 토큰**에서 검색 된 **Scim 인증 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 miro에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Miro 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
+5. **관리자 자격 증명** 섹션 아래에 있는 **테넌트 URL**에 `https://miro.com/api/v1/scim`을 입력 합니다. 이전에 **비밀 토큰**에서 검색 된 **Scim 인증 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 miro에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Miro 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -152,7 +152,7 @@ Azure AD 프로비저닝 로그를 읽는 방법에 대한 자세한 내용은 [
 
 ## <a name="connector-limitations"></a>커넥터 제한 사항
 
-* Miro의 SCIM 끝점은 그룹에 대해 **만들기** 및 **삭제** 작업을 허용 하지 않습니다. 그룹 **업데이트** 작업만 지원 합니다.
+* Miro의 SCIM 엔드포인트은 그룹에 대해 **만들기** 및 **삭제** 작업을 허용 하지 않습니다. 그룹 **업데이트** 작업만 지원 합니다.
 
 ## <a name="additional-resources"></a>추가 리소스
 

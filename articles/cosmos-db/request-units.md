@@ -15,7 +15,7 @@ ms.locfileid: "74383103"
 ---
 # <a name="request-units-in-azure-cosmos-db"></a>Azure Cosmos DB의 요청 단위
 
-Azure Cosmos DB를 사용하면 프로비전하는 처리량 및 시간 단위로 사용하는 스토리지의 요금을 지불합니다. Azure Cosmos 데이터베이스에 대 한 충분 한 시스템 리소스를 항상 사용할 수 있도록 처리량을 프로 비전 해야 합니다. [Azure Cosmos DB sla](https://azure.microsoft.com/support/legal/sla/cosmos-db/v1_2/)를 충족 하거나 초과 하는 데 충분 한 리소스가 필요 합니다.
+Azure Cosmos DB를 사용하면 프로비전하는 처리량 및 시간 단위로 사용하는 스토리지의 요금을 지불합니다. Azure Cosmos 데이터베이스에 대한 충분 한 시스템 리소스를 항상 사용할 수 있도록 처리량을 프로 비전 해야 합니다. [Azure Cosmos DB sla](https://azure.microsoft.com/support/legal/sla/cosmos-db/v1_2/)를 충족 하거나 초과 하는 데 충분 한 리소스가 필요 합니다.
 
 Azure Cosmos DB는 SQL, MongoDB, Cassandra, Gremlin, Table 등의 많은 API를 지원합니다. 각 API에는 고유한 데이터베이스 작업 세트가 있습니다. 이러한 작업은 간단한 지점 읽기 및 쓰기에서 복잡한 쿼리에 이르기까지 다양합니다. 각 데이터베이스 작업은 작업의 복잡도에 따라 시스템 리소스를 사용합니다. 
 
@@ -71,7 +71,7 @@ Azure Cosmos DB는 SQL, MongoDB, Cassandra, Gremlin, Table 등의 많은 API를 
 * [프로비전된 처리량 크기를 전역적으로 조정](scaling-throughput.md)하는 방법을 자세히 알아봅니다.
 * [Azure Cosmos 컨테이너의 처리량을 프로비전](how-to-provision-container-throughput.md)하는 방법을 알아봅니다.
 * [Azure Cosmos 데이터베이스의 처리량을 프로비전](how-to-provision-database-throughput.md)하는 방법을 알아봅니다.
-* [작업에 대 한 요청 단위 요금을 찾는](find-request-unit-charge.md)방법에 대해 알아봅니다.
+* [작업에 대한 요청 단위 요금을 찾는](find-request-unit-charge.md)방법에 대해 알아봅니다.
 * [Azure Cosmos DB에서 프로 비전 된 처리량 비용을 최적화](optimize-cost-throughput.md)하는 방법을 알아봅니다.
 * [Azure Cosmos DB에서 읽기 및 쓰기 비용을 최적화](optimize-cost-reads-writes.md)하는 방법을 알아봅니다.
 * [Azure Cosmos DB에서 쿼리 비용을 최적화](optimize-cost-queries.md)하는 방법을 알아봅니다.

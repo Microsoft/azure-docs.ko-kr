@@ -30,7 +30,7 @@ Azure Media Services를 사용 하면 Azure 클라우드의 고객에 게 라이
 
 ## <a name="live-events"></a>라이브 이벤트
 
-[라이브 이벤트](https://docs.microsoft.com/rest/api/media/liveevents)는 라이브 비디오 피드 수집 및 처리를 담당합니다. 라이브 이벤트를 만들 때 원격 인코더에서 라이브 신호를 보내는 데 사용할 수 있는 기본 및 보조 입력 끝점이 생성 됩니다. 원격 라이브 인코더는 [RTMP](https://www.adobe.com/devnet/rtmp.html) 또는 [부드러운 스트리밍](https://msdn.microsoft.com/library/ff469518.aspx) (조각화 된 MP4) 입력 프로토콜을 사용 하 여 해당 입력 끝점에 기여 피드를 보냅니다. RTMP 수집 프로토콜의 경우 콘텐츠를 일반 (`rtmp://`)으로 전송 하거나 네트워크 (`rtmps://`)에서 안전 하 게 암호화할 수 있습니다. 부드러운 스트리밍 수집 프로토콜의 경우 지원되는 URL 체계는 `http://` 또는 `https://`입니다.  
+[라이브 이벤트](https://docs.microsoft.com/rest/api/media/liveevents)는 라이브 비디오 피드 수집 및 처리를 담당합니다. 라이브 이벤트를 만들 때 원격 인코더에서 라이브 신호를 보내는 데 사용할 수 있는 기본 및 보조 입력 엔드포인트이 생성 됩니다. 원격 라이브 인코더는 [RTMP](https://www.adobe.com/devnet/rtmp.html) 또는 [부드러운 스트리밍](https://msdn.microsoft.com/library/ff469518.aspx) (조각화 된 MP4) 입력 프로토콜을 사용 하 여 해당 입력 엔드포인트에 기여 피드를 보냅니다. RTMP 수집 프로토콜의 경우 콘텐츠를 일반 (`rtmp://`)으로 전송 하거나 네트워크 (`rtmps://`)에서 안전 하 게 암호화할 수 있습니다. 부드러운 스트리밍 수집 프로토콜의 경우 지원되는 URL 체계는 `http://` 또는 `https://`입니다.  
 
 ## <a name="live-event-types"></a>라이브 이벤트 유형
 
@@ -89,7 +89,7 @@ Live encoding을 사용 하는 경우, AAC/AVC 비디오 코덱 및 (AAC, He-aac
 * 최대 라이브 이벤트 이름은 32 자입니다.
 * 이름은 `^[a-zA-Z0-9]+(-*[a-zA-Z0-9])*$`[regex](https://docs.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference) 패턴을 따라야 합니다.
 
-또한 [스트리밍 끝점 명명 규칙](streaming-endpoint-concept.md#naming-convention)을 참조 하세요.
+또한 [스트리밍 엔드포인트 명명 규칙](streaming-endpoint-concept.md#naming-convention)을 참조 하세요.
 
 > [!TIP]
 > 라이브 이벤트 이름을 고유 하 게 유지 하기 위해 GUID를 생성 한 다음 모든 하이픈 및 중괄호 (있는 경우)를 제거할 수 있습니다. 문자열은 모든 라이브 이벤트에서 고유 하며 길이가 32이 되도록 보장 됩니다.
@@ -161,7 +161,7 @@ Live encoding을 사용 하는 경우, AAC/AVC 비디오 코덱 및 (AAC, He-aac
 
 ## <a name="live-event-preview-url"></a>라이브 이벤트 미리 보기 URL
 
-라이브 이벤트가 기여 피드를 수신 하기 시작 하면 미리 보기 끝점을 사용 하 여 추가 게시 전에 라이브 스트림을 수신 중인지 미리 보고 유효성을 검사할 수 있습니다. 미리 보기 스트림이 양호 하다 고 확인 한 후 라이브 이벤트를 사용 하 여 하나 이상의 (미리 만든) 스트리밍 끝점을 통해 라이브 스트림을 배달할 수 있도록 설정할 수 있습니다. 이를 수행 하려면 라이브 이벤트에 새 [라이브 출력](https://docs.microsoft.com/rest/api/media/liveoutputs) 을 만듭니다.
+라이브 이벤트가 기여 피드를 수신 하기 시작 하면 미리 보기 엔드포인트을 사용 하 여 추가 게시 전에 라이브 스트림을 수신 중인지 미리 보고 유효성을 검사할 수 있습니다. 미리 보기 스트림이 양호 하다 고 확인 한 후 라이브 이벤트를 사용 하 여 하나 이상의 (미리 만든) 스트리밍 엔드포인트을 통해 라이브 스트림을 배달할 수 있도록 설정할 수 있습니다. 이를 수행 하려면 라이브 이벤트에 새 [라이브 출력](https://docs.microsoft.com/rest/api/media/liveoutputs) 을 만듭니다.
 
 > [!IMPORTANT]
 > 계속하기 전에 비디오가 미리 보기 URL로 전달되고 있는지 확인합니다.

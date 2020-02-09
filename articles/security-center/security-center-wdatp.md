@@ -53,7 +53,7 @@ Microsoft Defender ATP를 사용 하는 경우 다음을 얻게 됩니다.
 Security Center의 Microsoft Defender ATP는 Windows Server 2016, 2012 R2 및 2008 R2 s p 1에 대 한 검색을 지원 합니다. Azure Vm의 경우 표준 계층 구독이 필요 하 고 비 Azure Vm의 경우 작업 영역 수준 에서만 표준 계층이 필요 합니다.
 
 > [!NOTE]
-> Azure Security Center를 사용 하 여 서버를 모니터링 하는 경우 Microsoft Defender ATP 테 넌 트가 자동으로 만들어지고 Microsoft Defender ATP 데이터는 기본적으로 유럽에 저장 됩니다. 데이터를 다른 위치로 이동 해야 하는 경우 Microsoft 지원에 문의 하 여 테 넌 트를 다시 설정 해야 합니다. 이러한 통합을 활용 하는 서버 끝점 모니터링은 Office 365 GCC 고객에 대해 사용 하지 않도록 설정 되었습니다.
+> Azure Security Center를 사용 하 여 서버를 모니터링 하는 경우 Microsoft Defender ATP 테넌트가 자동으로 만들어지고 Microsoft Defender ATP 데이터는 기본적으로 유럽에 저장 됩니다. 데이터를 다른 위치로 이동 해야 하는 경우 Microsoft 지원에 문의 하 여 테넌트를 다시 설정 해야 합니다. 이러한 통합을 활용 하는 서버 엔드포인트 모니터링은 Office 365 GCC 고객에 대해 사용 하지 않도록 설정 되었습니다.
 
 ## <a name="onboarding-servers-to-security-center"></a>Security Center에 서버 등록 
 

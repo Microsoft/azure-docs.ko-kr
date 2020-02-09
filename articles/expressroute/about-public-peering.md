@@ -1,6 +1,6 @@
 ---
 title: Azure Express 경로 공용 피어 링 만들기 및 관리
-description: Azure 공용 피어 링에 대 한 자세한 정보 및 관리
+description: Azure 공용 피어 링에 대한 자세한 정보 및 관리
 services: expressroute
 author: cherylmc
 ms.service: expressroute
@@ -22,10 +22,10 @@ ms.locfileid: "75483090"
 > * [문서-Microsoft 피어 링](expressroute-circuit-peerings.md#microsoftpeering)
 >
 
-이 문서는 Express 경로 회로에 대 한 공용 피어 링 라우팅 구성을 만들고 관리 하는 데 도움이 됩니다. 또한 상태를 확인, 업데이트 또는 삭제 하 고 피어 링을 프로 비전 해제할 수 있습니다. 이 문서는 공용 피어 링이 사용 되지 않기 전에 만들어진 리소스 관리자 회로에 적용 됩니다. 이전에 기존 회로 (공용 피어 링이 사용 되지 않기 전에 만들어짐)가 있는 경우 [Azure PowerShell](#powershell), [Azure CLI](#cli)및 [Azure Portal](#portal)를 사용 하 여 공용 피어 링을 관리/구성할 수 있습니다.
+이 문서는 Express 경로 회로에 대한 공용 피어 링 라우팅 구성을 만들고 관리 하는 데 도움이 됩니다. 또한 상태를 확인, 업데이트 또는 삭제 하 고 피어 링을 프로 비전 해제할 수 있습니다. 이 문서는 공용 피어 링이 사용 되지 않기 전에 만들어진 리소스 관리자 회로에 적용 됩니다. 이전에 기존 회로 (공용 피어 링이 사용 되지 않기 전에 만들어짐)가 있는 경우 [Azure PowerShell](#powershell), [Azure CLI](#cli)및 [Azure Portal](#portal)를 사용 하 여 공용 피어 링을 관리/구성할 수 있습니다.
 
 >[!NOTE]
->공용 피어 링은 사용 되지 않습니다. 새 Express 경로 회로에 대 한 공용 피어 링을 만들 수 없습니다. 새 Express 경로 회로를 사용 하는 경우 Azure 서비스에 [Microsoft 피어 링](expressroute-circuit-peerings.md#microsoftpeering) 을 사용 합니다.
+>공용 피어 링은 사용 되지 않습니다. 새 Express 경로 회로에 대한 공용 피어 링을 만들 수 없습니다. 새 Express 경로 회로를 사용 하는 경우 Azure 서비스에 [Microsoft 피어 링](expressroute-circuit-peerings.md#microsoftpeering) 을 사용 합니다.
 >
 
 ## <a name="connectivity"></a>연결
@@ -53,7 +53,7 @@ ms.locfileid: "75483090"
   * Multi-factor Authentication 서버 (레거시)
   * Traffic Manager
 
-특정 서비스에 대 한 가용성의 유효성을 검사 하려면 해당 서비스에 대 한 설명서를 확인 하 여 해당 서비스에 대해 예약 된 범위가 게시 되었는지 확인 합니다. 그런 다음 대상 서비스의 IP 범위를 조회 하 고 [AZURE IP 범위 및 서비스 태그 – 공용 클라우드 XML 파일](https://www.microsoft.com/download/details.aspx?id=56519)에 나열 된 범위와 비교할 수 있습니다. 또는 확인을 위해 해당 서비스에 대 한 지원 티켓을 열 수 있습니다.
+특정 서비스에 대한 가용성의 유효성을 검사 하려면 해당 서비스에 대한 설명서를 확인 하 여 해당 서비스에 대해 예약 된 범위가 게시 되었는지 확인 합니다. 그런 다음 대상 서비스의 IP 범위를 조회 하 고 [AZURE IP 범위 및 서비스 태그 – 공용 클라우드 XML 파일](https://www.microsoft.com/download/details.aspx?id=56519)에 나열 된 범위와 비교할 수 있습니다. 또는 확인을 위해 해당 서비스에 대한 지원 티켓을 열 수 있습니다.
 
 ## <a name="compare"></a>피어링 비교
 
@@ -290,7 +290,7 @@ az network express-route peering delete -g ExpressRouteResourceGroup --circuit-n
 
 ### <a name="update"></a>Azure 공용 피어링 구성을 업데이트하려면
 
-피어 링에 대 한 행을 선택 하 고 피어 링 속성을 수정 합니다.
+피어 링에 대한 행을 선택 하 고 피어 링 속성을 수정 합니다.
 
 ### <a name="delete"></a>Azure 공용 피어링을 삭제하려면
 

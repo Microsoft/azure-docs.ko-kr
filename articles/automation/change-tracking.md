@@ -27,7 +27,7 @@ ms.locfileid: "76844805"
 - Windows 서비스
 - Linux 데몬
 
-모니터링 되는 서버에서 설치 된 소프트웨어, Windows 서비스, Windows 레지스트리 및 파일 및 Linux 디먼에 대 한 변경 내용은 클라우드의 Azure Monitor 서비스로 전송 되어 처리 됩니다. 논리는 수신된 데이터에 적용되며 클라우드 서비스는 데이터를 기록합니다. 변경 내용 추적 대시보드의 정보를 사용하여 서버 인프라에서 수행한 변경 내용을 쉽게 확인할 수 있습니다.
+모니터링 되는 서버에서 설치 된 소프트웨어, Windows 서비스, Windows 레지스트리 및 파일 및 Linux 디먼에 대한 변경 내용은 클라우드의 Azure Monitor 서비스로 전송 되어 처리 됩니다. 논리는 수신된 데이터에 적용되며 클라우드 서비스는 데이터를 기록합니다. 변경 내용 추적 대시보드의 정보를 사용하여 서버 인프라에서 수행한 변경 내용을 쉽게 확인할 수 있습니다.
 
 > [!NOTE]
 > Azure Automation 변경 내용 추적는 가상 컴퓨터의 변경 내용을 추적 합니다. Azure Resource Manager 속성 변경 내용을 추적 하려면 Azure 리소스 그래프의 [변경 기록](../governance/resource-graph/how-to/get-resource-changes.md)을 참조 하세요.

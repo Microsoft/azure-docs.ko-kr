@@ -88,7 +88,7 @@ CDN POP는 캐시를 채워야 할 때마다 캐시되는 개체의 원본에 �
 - TTL 영향: 개체의 TTL이 높다는 것은 원본에서 개체를 가져오는 빈도를 낮춰야 한다는 뜻입니다. 또한 브라우저 같은 클라이언트에서 개체를 더 오래 캐시할 수 있으며, 따라서 CDN의 트랜잭션을 줄일 수 있다는 의미입니다.
 
 ## <a name="which-origin-services-are-eligible-for-free-data-transfer-with-azure-cdn-from-microsoft"></a>Microsoft의 Azure CDN을 사용 하 여 데이터를 무료로 전송할 수 있는 원본 서비스는 무엇 인가요? 
-다음 Azure 서비스 중 하나를 CDN 원본으로 사용 하는 경우 원본에서 CDN Pop로의 데이터 전송에 대 한 요금이 청구 되지 않습니다. 
+다음 Azure 서비스 중 하나를 CDN 원본으로 사용 하는 경우 원본에서 CDN Pop로의 데이터 전송에 대한 요금이 청구 되지 않습니다. 
 
 - Azure Storage
 - Azure Media Services

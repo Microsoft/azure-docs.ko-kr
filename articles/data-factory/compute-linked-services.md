@@ -115,7 +115,7 @@ Azure Data Factory 서비스는 데이터를 처리하는 주문형 HDInsight �
 | connectVia                   | 이 HDInsight 연결된 서비스에 작업을 디스패치하는 데 사용할 통합 런타임입니다. 주문형 HDInsight 연결된 서비스의 경우 Azure 통합 런타임만 지원합니다. 지정하지 않으면 기본 Azure Integration Runtime을 사용합니다. | 아닙니다.       |
 | clusterUserName                   | 클러스터에 액세스하기 위한 사용자 이름입니다. | 아닙니다.       |
 | clusterPassword                   | 클러스터에 액세스하기 위한 보안 문자열 형식의 암호입니다. | 아닙니다.       |
-| clusterSshUserName         | SSH에 대 한 사용자 이름은 클러스터의 노드에 원격으로 연결 됩니다 (Linux의 경우). | 아닙니다.       |
+| clusterSshUserName         | SSH에 대한 사용자 이름은 클러스터의 노드에 원격으로 연결 됩니다 (Linux의 경우). | 아닙니다.       |
 | clusterSshPassword         | SSH를 통해 클러스터 노드에 원격으로 연결하기 위한 보안 문자열 형식의 암호입니다(Linux용). | 아닙니다.       |
 | scriptActions | 주문형 클러스터를 만드는 동안 [HDInsight 클러스터 사용자 지정](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux)을 위한 스크립트를 지정합니다. <br />현재 Azure Data Factory의 사용자 인터페이스 제작 도구는 1개의 스크립트 동작만 지정하도록 지원하지만 JSON에서는 이 제한을 무시할 수 있습니다(JSON에서 여러 스크립트 동작 지정). | 아닙니다. |
 
@@ -293,7 +293,7 @@ Azure HDInsight 연결된 서비스를 만들어서 데이터 팩터리를 사�
 | 암호          | 사용자 계정으로 password를 지정합니다.                       | yes      |
 | linkedServiceName | HDInsight 클러스터에서 사용하는 Azure Blob Storage를 참조하는 Azure Storage 연결된 서비스의 이름입니다. <p>현재 이 속성에 대한 Azure Data Lake Store 연결된 서비스를 지정할 수 없습니다. HDInsight 클러스터가 Data Lake Store에 액세스할 경우 Hive/Pig 스크립트의 Azure Data Lake Store에 있는 데이터에 액세스할 수 있습니다. </p> | yes      |
 | isEspEnabled      | HDInsight 클러스터에서 [Enterprise Security Package](https://docs.microsoft.com/azure/hdinsight/domain-joined/apache-domain-joined-architecture)가 사용하도록 설정되어 있으면 '*true*'를 지정합니다. 기본값은 ‘*false*’입니다. | 아닙니다.       |
-| connectVia        | 이 연결된 서비스에 작업을 디스패치하는 데 사용할 통합 런타임입니다. Azure 통합 런타임 또는 자체 호스팅 통합 런타임을 사용할 수 있습니다. 지정하지 않으면 기본 Azure Integration Runtime을 사용합니다. <br />ESP (Enterprise Security Package)를 사용 하도록 설정 된 HDInsight 클러스터는 클러스터에 대 한 시야를 포함 하는 자체 호스팅 integration runtime을 사용 하 여 ESP HDInsight 클러스터와 동일한 Virtual Network 내에 배포 해야 합니다. | 아닙니다.       |
+| connectVia        | 이 연결된 서비스에 작업을 디스패치하는 데 사용할 통합 런타임입니다. Azure 통합 런타임 또는 자체 호스팅 통합 런타임을 사용할 수 있습니다. 지정하지 않으면 기본 Azure Integration Runtime을 사용합니다. <br />ESP (Enterprise Security Package)를 사용 하도록 설정 된 HDInsight 클러스터는 클러스터에 대한 시야를 포함 하는 자체 호스팅 integration runtime을 사용 하 여 ESP HDInsight 클러스터와 동일한 Virtual Network 내에 배포 해야 합니다. | 아닙니다.       |
 
 > [!IMPORTANT]
 > HDInsight는 배포할 수 있는 여러 Hadoop 클러스터 버전을 지원합니다. 각 버전을 선택하면 특정 버전의 HDP(Hortonworks Data Platform) 배포 및 배포에 포함된 구성 요소 집합이 만들어집니다. 지원되는 HDInsight 버전 목록을 계속 업데이트하여 최신 Hadoop 에코시스템 구성 요소 및 수정 프로그램을 제공합니다. [지원되는 HDInsight 버전 및 OS 형식](../hdinsight/hdinsight-component-versioning.md#supported-hdinsight-versions)의 최신 정보를 항상 참조하여 지원되는 HDInsight 버전을 사용 중인지 확인합니다. 
@@ -356,7 +356,7 @@ Azure Batch 서비스가 처음이라면 다음 문서를 참조하세요.
 | connectVia        | 이 연결된 서비스에 작업을 디스패치하는 데 사용할 통합 런타임입니다. Azure 통합 런타임 또는 자체 호스팅 통합 런타임을 사용할 수 있습니다. 지정하지 않으면 기본 Azure Integration Runtime을 사용합니다. | 아닙니다.       |
 
 ## <a name="azure-machine-learning-studio-linked-service"></a>Azure Machine Learning Studio 연결 된 서비스
-Azure Machine Learning Studio 연결 된 서비스를 만들어 데이터 팩터리에 Machine Learning 일괄 처리 점수 매기기 끝점을 등록 합니다.
+Azure Machine Learning Studio 연결 된 서비스를 만들어 데이터 팩터리에 Machine Learning 일괄 처리 점수 매기기 엔드포인트을 등록 합니다.
 
 ### <a name="example"></a>예제
 
@@ -386,7 +386,7 @@ Azure Machine Learning Studio 연결 된 서비스를 만들어 데이터 팩터
 | Type                   | 형식 속성은 **AzureML**로 설정해야 합니다. | yes                                      |
 | mlEndpoint             | 일괄 처리 점수 매기기 URL입니다.                   | yes                                      |
 | apiKey                 | 게시된 작업 영역 모델의 API입니다.     | yes                                      |
-| updateResourceEndpoint | 학습 된 모델 파일로 예측 웹 서비스를 업데이트 하는 데 사용 되는 Azure Machine Learning 웹 서비스 끝점에 대 한 업데이트 리소스 URL입니다. | 아닙니다.                                       |
+| updateResourceEndpoint | 학습 된 모델 파일로 예측 웹 서비스를 업데이트 하는 데 사용 되는 Azure Machine Learning 웹 서비스 엔드포인트에 대한 업데이트 리소스 URL입니다. | 아닙니다.                                       |
 | servicePrincipalId     | 애플리케이션의 클라이언트 ID를 지정합니다.     | UpdateResourceEndpoint가 지정된 경우에 필요합니다. |
 | servicePrincipalKey    | 애플리케이션의 키를 지정합니다.           | UpdateResourceEndpoint가 지정된 경우에 필요합니다. |
 | tenant                 | 애플리케이션이 있는 테넌트 정보(도메인 이름 또는 테넌트 ID)를 지정합니다. Azure Portal의 오른쪽 위 모서리에 마우스를 이동하여 검색할 수 있습니다. | UpdateResourceEndpoint가 지정된 경우에 필요합니다. |
@@ -396,7 +396,7 @@ Azure Machine Learning Studio 연결 된 서비스를 만들어 데이터 팩터
 Azure Machine Learning 연결 된 서비스를 만들어 Azure Machine Learning 작업 영역을 데이터 팩터리에 연결 합니다.
 
 > [!NOTE]
-> 현재 Azure Machine Learning 연결 된 서비스에 대 한 서비스 주체 인증만 지원 됩니다.
+> 현재 Azure Machine Learning 연결 된 서비스에 대한 서비스 주체 인증만 지원 됩니다.
 
 ### <a name="example"></a>예제
 
@@ -542,7 +542,7 @@ Databricks 워크 로드를 실행 하는 데 사용할 Databricks 작업 영역
 | newClusterNumOfWorker| 이 클러스터에 있어야 하는 작업자 노드의 수입니다. 하나의 클러스터에 총 num_workers + 1개의 Spark 노드에 대해 하나의 Spark 드라이버와 num_workers개의 실행기가 있습니다. 문자열 형식 Int32 (예: "1")는 numOfWorker가 1 또는 "1:10" 임을 의미 합니다. 1에서 min 및 10을 max로 자동 크기 조정을 의미 합니다.  | 아닙니다.                |
 | newClusterNodeType   | 이 필드는 단일 값을 통해 이 클러스터의 각 Spark 노드에서 사용할 수 있는 리소스를 인코딩합니다. 예를 들어, Spark 노드는 메모리 또는 계산 집약적 워크 로드에 대해 프로 비전 되 고 최적화 될 수 있습니다. 이 필드는 새 클러스터에 필요 합니다.                | 아닙니다.               |
 | newClusterSparkConf  | 선택적인 사용자 지정 Spark 구성 키-값 쌍의 집합입니다. 또한 사용자는 각각 spark.driver.extraJavaOptions 및 spark.executor.extraJavaOptions를 통해 드라이버와 실행기에 추가 JVM 옵션 문자열을 전달할 수 있습니다. | 아닙니다.  |
-| newClusterInitScripts| 새 클러스터에 대 한 선택적 사용자 정의 초기화 스크립트의 집합입니다. Init 스크립트에 대 한 DBFS 경로를 지정 합니다. | 아닙니다.  |
+| newClusterInitScripts| 새 클러스터에 대한 선택적 사용자 정의 초기화 스크립트의 집합입니다. Init 스크립트에 대한 DBFS 경로를 지정 합니다. | 아닙니다.  |
 
 
 ## <a name="azure-sql-database-linked-service"></a>Azure SQL Database 연결된 서비스

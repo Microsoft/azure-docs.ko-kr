@@ -60,7 +60,7 @@ Azure Cognitive Search에 필요한 암호화 된 연결을 설정한 후에는 
 ## <a name="configure-the-network-security-group-nsg"></a>NSG(네트워크 보안 그룹) 구성
 Azure VM에서 다른 대상에 액세스할 수 있게 하기 위해 NSG 및 해당 Azure 엔드포인트 또는 ACL(Access Control 목록)을 구성하는 것은 특별하지 않습니다. 이전에 이러한 구성을 수행하여 자체 애플리케이션 논리가 SQL Azure VM에 연결되도록 했을 것입니다. SQL Azure VM에 대 한 Azure Cognitive Search 연결에는 차이가 없습니다. 
 
-아래 링크는 VM 배포를 위한 NSG 구성에 대한 지침을 제공합니다. 이러한 지침을 사용 하 여 IP 주소에 따라 Azure Cognitive Search 끝점에 ACL을 설정 합니다.
+아래 링크는 VM 배포를 위한 NSG 구성에 대한 지침을 제공합니다. 이러한 지침을 사용 하 여 IP 주소에 따라 Azure Cognitive Search 엔드포인트에 ACL을 설정 합니다.
 
 > [!NOTE]
 > 배경 지식은 [네트워크 보안 그룹이란?](../virtual-network/security-overview.md)

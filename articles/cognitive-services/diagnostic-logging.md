@@ -1,7 +1,7 @@
 ---
 title: 진단 로깅
 titleSuffix: Azure Cognitive Services
-description: 이 가이드에서는 Azure 인식 서비스에 대 한 진단 로깅을 사용 하도록 설정 하는 단계별 지침을 제공 합니다. 이러한 로그는 문제를 식별 하 고 디버깅 하는 데 사용 되는 리소스 작업에 대 한 풍부 하 고 빈번한 데이터를 제공 합니다.
+description: 이 가이드에서는 Azure 인식 서비스에 대한 진단 로깅을 사용 하도록 설정 하는 단계별 지침을 제공 합니다. 이러한 로그는 문제를 식별 하 고 디버깅 하는 데 사용 되는 리소스 작업에 대한 풍부 하 고 빈번한 데이터를 제공 합니다.
 services: cognitive-services
 author: erhopf
 manager: nitinme
@@ -16,15 +16,15 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 10/02/2019
 ms.locfileid: "71827909"
 ---
-# <a name="enable-diagnostic-logging-for-azure-cognitive-services"></a>Azure Cognitive Services에 대 한 진단 로깅 사용
+# <a name="enable-diagnostic-logging-for-azure-cognitive-services"></a>Azure Cognitive Services에 대한 진단 로깅 사용
 
-이 가이드에서는 Azure 인식 서비스에 대 한 진단 로깅을 사용 하도록 설정 하는 단계별 지침을 제공 합니다. 이러한 로그는 문제를 식별 하 고 디버깅 하는 데 사용 되는 리소스 작업에 대 한 풍부 하 고 빈번한 데이터를 제공 합니다. 계속 하기 전에 [Bing Web Search](https://docs.microsoft.com/azure/cognitive-services/bing-web-search/overview), [Speech Services](https://docs.microsoft.com/azure/cognitive-services/speech-service/overview)또는 [LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/what-is-luis)와 같은 하나 이상의 인식 서비스에 대 한 구독이 있는 Azure 계정이 있어야 합니다.
+이 가이드에서는 Azure 인식 서비스에 대한 진단 로깅을 사용 하도록 설정 하는 단계별 지침을 제공 합니다. 이러한 로그는 문제를 식별 하 고 디버깅 하는 데 사용 되는 리소스 작업에 대한 풍부 하 고 빈번한 데이터를 제공 합니다. 계속 하기 전에 [Bing Web Search](https://docs.microsoft.com/azure/cognitive-services/bing-web-search/overview), [Speech Services](https://docs.microsoft.com/azure/cognitive-services/speech-service/overview)또는 [LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/what-is-luis)와 같은 하나 이상의 인식 서비스에 대한 구독이 있는 Azure 계정이 있어야 합니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
 진단 로깅을 사용 하도록 설정 하려면 로그 데이터를 저장 하는 위치에 있어야 합니다. 이 자습서에서는 Azure Storage와 Log Analytics를 사용 합니다.
 
-* [Azure storage](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-archive-diagnostic-logs) -정책 감사, 정적 분석 또는 백업에 대 한 진단 로그를 유지 합니다. 설정을 구성하는 사용자가 두 구독에 대한 적절한 RBAC 액세스를 가진 경우 스토리지 계정은 로그를 내보내는 리소스와 동일한 구독을 가지고 있지 않아도 됩니다.
+* [Azure storage](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-archive-diagnostic-logs) -정책 감사, 정적 분석 또는 백업에 대한 진단 로그를 유지 합니다. 설정을 구성하는 사용자가 두 구독에 대한 적절한 RBAC 액세스를 가진 경우 스토리지 계정은 로그를 내보내는 리소스와 동일한 구독을 가지고 있지 않아도 됩니다.
 * [Log Analytics](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitor-stream-diagnostic-logs-log-analytics) -Azure 리소스에서 생성 된 원시 로그를 분석할 수 있는 유연한 로그 검색 및 분석 도구입니다.
 
 > [!NOTE]
@@ -42,7 +42,7 @@ ms.locfileid: "71827909"
 3. 이전에 만든 리소스를 사용 하려는 경우 지금 선택할 수 있습니다. 그렇지 않으면 **+ 진단 설정 추가**를 선택 합니다.
 4. 설정의 이름을 입력 합니다. 그런 다음 **저장소 계정에 보관** 을 선택 하 고 **Log Analytics에 보냅니다**.
 5. 구성 하 라는 메시지가 표시 되 면 진단 로그를 저장 하는 데 사용할 저장소 계정 및 OMS 작업 영역을 선택 합니다. **참고**: 저장소 계정 또는 OMS 작업 영역이 없는 경우 표시 되는 메시지에 따라 하나를 만듭니다.
-6. **감사**, **RequestResponse**및 **allmetrics**을 선택 합니다. 그런 다음 진단 로그 데이터에 대 한 보존 기간을 설정 합니다. 보존 정책이 0으로 설정 된 경우 해당 로그 범주에 대 한 이벤트는 무기한 저장 됩니다.
+6. **감사**, **RequestResponse**및 **allmetrics**을 선택 합니다. 그런 다음 진단 로그 데이터에 대한 보존 기간을 설정 합니다. 보존 정책이 0으로 설정 된 경우 해당 로그 범주에 대한 이벤트는 무기한 저장 됩니다.
 7. **저장**을 클릭합니다.
 
 로깅 데이터를 쿼리 및 분석에 사용할 수 있을 때까지 최대 2 시간이 걸릴 수 있습니다. 바로 표시 되지 않는 경우 걱정 하지 마세요.
@@ -60,7 +60,7 @@ Azure Storage는 대량의 구조화 되지 않은 데이터를 저장 하기 �
 
 ## <a name="view-logs-in-log-analytics"></a>Log Analytics에서 로그 보기
 
-다음 지침에 따라 리소스에 대 한 log analytics 데이터를 탐색 합니다.
+다음 지침에 따라 리소스에 대한 log analytics 데이터를 탐색 합니다.
 
 1. Azure Portal의 왼쪽 탐색 메뉴에서 **Log Analytics** 을 찾아 선택 합니다.
 2. 진단을 사용 하도록 설정할 때 만든 리소스를 찾아 선택 합니다.
@@ -101,7 +101,7 @@ AzureDiagnostics
 by OperationName
 ```
 
-이 쿼리를 실행 하 여 모든 10 초에 대 한 개수를 기준으로 하는 OperationName으로 분할 된 시간에 따라 작업 볼륨을 볼 수 있습니다.
+이 쿼리를 실행 하 여 모든 10 초에 대한 개수를 기준으로 하는 OperationName으로 분할 된 시간에 따라 작업 볼륨을 볼 수 있습니다.
 
 ```kusto
 AzureDiagnostics

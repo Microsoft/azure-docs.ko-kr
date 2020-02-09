@@ -1,6 +1,6 @@
 ---
-title: Azure에서 테 넌 트 간에 갤러리 이미지 공유
-description: 공유 이미지 갤러리를 사용 하 여 Azure 테 넌 트 간에 VM 이미지를 공유 하는 방법을 알아봅니다.
+title: Azure에서 테넌트 간에 갤러리 이미지 공유
+description: 공유 이미지 갤러리를 사용 하 여 Azure 테넌트 간에 VM 이미지를 공유 하는 방법을 알아봅니다.
 services: virtual-machines-windows
 author: cynthn
 manager: gwallace
@@ -17,19 +17,19 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/14/2019
 ms.locfileid: "74065510"
 ---
-# <a name="share-gallery-vm-images-across-azure-tenants"></a>Azure 테 넌 트 간에 갤러리 VM 이미지 공유
+# <a name="share-gallery-vm-images-across-azure-tenants"></a>Azure 테넌트 간에 갤러리 VM 이미지 공유
 
-공유 이미지 갤러리를 사용 하면 RBAC를 사용 하 여 이미지를 공유할 수 있습니다. RBAC를 사용 하 여 테 넌 트 내에서 이미지를 공유 하 고 테 넌 트 외부의 사용자도 공유할 수 있습니다. 이 간단한 공유 옵션에 대 한 자세한 내용은 [갤러리 공유](/azure/virtual-machines/windows/shared-images-portal#share-the-gallery)를 참조 하세요.
+공유 이미지 갤러리를 사용 하면 RBAC를 사용 하 여 이미지를 공유할 수 있습니다. RBAC를 사용 하 여 테넌트 내에서 이미지를 공유 하 고 테넌트 외부의 사용자도 공유할 수 있습니다. 이 간단한 공유 옵션에 대 한 자세한 내용은 [갤러리 공유](/azure/virtual-machines/windows/shared-images-portal#share-the-gallery)를 참조 하세요.
 
 [!INCLUDE [virtual-machines-share-images-across-tenants](../../../includes/virtual-machines-share-images-across-tenants.md)]
 
 
 > [!IMPORTANT]
-> 포털을 사용 하 여 다른 azure 테 넌 트의 이미지에서 VM을 배포할 수 없습니다. 테 넌 트 간에 공유 되는 이미지에서 VM을 만들려면 [Azure CLI](../linux/share-images-across-tenants.md) 또는 Powershell을 사용 해야 합니다.
+> 포털을 사용 하 여 다른 azure 테넌트의 이미지에서 VM을 배포할 수 없습니다. 테넌트 간에 공유 되는 이미지에서 VM을 만들려면 [Azure CLI](../linux/share-images-across-tenants.md) 또는 Powershell을 사용 해야 합니다.
 
 ## <a name="create-a-vm-using-powershell"></a>PowerShell을 사용 하 여 VM 만들기
 
-응용 프로그램 ID, 암호 및 테 넌 트 ID를 사용 하 여 두 테 넌 트에 로그인 합니다. 
+응용 프로그램 ID, 암호 및 테넌트 ID를 사용 하 여 두 테넌트에 로그인 합니다. 
 
 ```azurepowershell-interactive
 $applicationId = '<App ID>'

@@ -27,7 +27,7 @@ Service Bus 바인딩은 [Microsoft.Azure.WebJobs.ServiceBus](https://www.nuget.
 
 ## <a name="packages---functions-2x-and-higher"></a>패키지-함수 2.x 이상
 
-Service Bus 바인딩은 [Microsoft.Azure.WebJobs.Extensions.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.ServiceBus) NuGet 패키지 버전 3.x에서 제공됩니다. 패키지에 대 한 소스 코드는 [servicebus](https://github.com/Azure/azure-functions-servicebus-extension) GitHub 리포지토리에 있습니다.
+Service Bus 바인딩은 [Microsoft.Azure.WebJobs.Extensions.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.ServiceBus) NuGet 패키지 버전 3.x에서 제공됩니다. 패키지에 대한 소스 코드는 [servicebus](https://github.com/Azure/azure-functions-servicebus-extension) GitHub 리포지토리에 있습니다.
 
 > [!NOTE]
 > 버전 2.x 이상에서는 `ServiceBusTrigger` 인스턴스에 구성 된 토픽 또는 구독을 만들지 않습니다. 이러한 버전은 큐 관리를 처리 하지 않는 [ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus) 을 기반으로 합니다.
@@ -332,7 +332,7 @@ Python에서 특성을 지원 하지 않습니다.
 * 사용자 지정 형식 - 메시지에 JSON이 포함된 경우 Azure Functions는 JSON 데이터를 역직렬화하려고 합니다.
 * `BrokeredMessage`- [BrokeredMessage\<t > ()](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) 메서드를 사용 하 여 deserialize 된 메시지를 제공 합니다.
 
-이러한 매개 변수 형식은 Azure Functions 버전 1.x에 대 한 것입니다. 2.x 이상에서는 `BrokeredMessage`대신 [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message) 를 사용 합니다.
+이러한 매개 변수 형식은 Azure Functions 버전 1.x에 대한 것입니다. 2.x 이상에서는 `BrokeredMessage`대신 [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message) 를 사용 합니다.
 
 # <a name="c-scripttabcsharp-script"></a>[C#스크립트도](#tab/csharp-script)
 
@@ -343,7 +343,7 @@ Python에서 특성을 지원 하지 않습니다.
 * 사용자 지정 형식 - 메시지에 JSON이 포함된 경우 Azure Functions는 JSON 데이터를 역직렬화하려고 합니다.
 * `BrokeredMessage`- [BrokeredMessage\<t > ()](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) 메서드를 사용 하 여 deserialize 된 메시지를 제공 합니다.
 
-이러한 매개 변수는 Azure Functions 버전 1.x에 대 한 것입니다. 2.x 이상에서는 `BrokeredMessage`대신 [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message) 를 사용 합니다.
+이러한 매개 변수는 Azure Functions 버전 1.x에 대한 것입니다. 2.x 이상에서는 `BrokeredMessage`대신 [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message) 를 사용 합니다.
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
@@ -390,7 +390,7 @@ Service Bus 트리거는 몇 가지 [메타데이터 속성](./functions-binding
 |`CorrelationId`|`string`|상관관계 ID입니다.|
 
 > [!NOTE]
-> 현재 세션 사용 큐 및 구독과 함께 작동 하는 Service Bus 트리거는 미리 보기 상태입니다. 이 항목에 대 한 추가 업데이트를 위해 [이 항목](https://github.com/Azure/azure-webjobs-sdk/issues/529#issuecomment-491113458) 을 추적 하세요. 
+> 현재 세션 사용 큐 및 구독과 함께 작동 하는 Service Bus 트리거는 미리 보기 상태입니다. 이 항목에 대한 추가 업데이트를 위해 [이 항목](https://github.com/Azure/azure-webjobs-sdk/issues/529#issuecomment-491113458) 을 추적 하세요. 
 
 이 아티클의 앞부분에서 이러한 속성을 사용하는 [코드 예제](#trigger---example)를 참조하세요.
 
@@ -585,7 +585,7 @@ public String pushToQueue(
 
  [Java 함수 런타임 라이브러리](/java/api/overview/azure/functions/runtime)에서 값이 Service Bus 큐에 기록될 함수 매개 변수에 대한 `@QueueOutput` 주석을 사용합니다.  매개 변수 형식은 `OutputBinding<T>`이어야 합니다. 여기서 T는 POJO의 원시 Java 형식입니다.
 
-Java 함수는 Service Bus 토픽에도 쓸 수 있습니다. 다음 예제에서는 `@ServiceBusTopicOutput` 주석을 사용 하 여 출력 바인딩에 대 한 구성을 설명 합니다. 
+Java 함수는 Service Bus 토픽에도 쓸 수 있습니다. 다음 예제에서는 `@ServiceBusTopicOutput` 주석을 사용 하 여 출력 바인딩에 대한 구성을 설명 합니다. 
 
 ```java
 @FunctionName("sbtopicsend")
@@ -681,7 +681,7 @@ Azure Functions 1.x에서 큐가 존재하지 않고 `accessRights`를 `manage`�
 * `out T paramName` - `T`는 JSON 직렬화 가능 형식일 수 있습니다. 함수가 종료될 때 매개 변수 값이 null이면 함수는 null 개체와 메시지를 만듭니다.
 * `out string` - 함수가 종료될 때 매개 변수 값이 null인 경우 함수는 메시지를 만들지 않습니다.
 * `out byte[]` - 함수가 종료될 때 매개 변수 값이 null인 경우 함수는 메시지를 만들지 않습니다.
-* `out BrokeredMessage`-함수가 종료 될 때 매개 변수 값이 null 이면 함수는 1. x 함수에 대 한 메시지를 생성 하지 않습니다.
+* `out BrokeredMessage`-함수가 종료 될 때 매개 변수 값이 null 이면 함수는 1. x 함수에 대한 메시지를 생성 하지 않습니다.
 * `out Message`-함수가 종료 될 때 매개 변수 값이 null 이면 함수는 2.x의 함수에 대해 메시지를 만들지 않습니다.
 * `ICollector<T>` 또는 `IAsyncCollector<T>` - 여러 개의 메시지를 만들려는 경우. 메시지는 `Add` 메서드를 호출할 때 생성됩니다.
 
@@ -698,7 +698,7 @@ Azure Functions 1.x에서 큐가 존재하지 않고 `accessRights`를 `manage`�
 * `out T paramName` - `T`는 JSON 직렬화 가능 형식일 수 있습니다. 함수가 종료될 때 매개 변수 값이 null이면 함수는 null 개체와 메시지를 만듭니다.
 * `out string` - 함수가 종료될 때 매개 변수 값이 null인 경우 함수는 메시지를 만들지 않습니다.
 * `out byte[]` - 함수가 종료될 때 매개 변수 값이 null인 경우 함수는 메시지를 만들지 않습니다.
-* `out BrokeredMessage`-함수가 종료 될 때 매개 변수 값이 null 이면 함수는 1. x 함수에 대 한 메시지를 생성 하지 않습니다.
+* `out BrokeredMessage`-함수가 종료 될 때 매개 변수 값이 null 이면 함수는 1. x 함수에 대한 메시지를 생성 하지 않습니다.
 * `out Message`-함수가 종료 될 때 매개 변수 값이 null 이면 함수는 2.x의 함수에 대해 메시지를 만들지 않습니다.
 * `ICollector<T>` 또는 `IAsyncCollector<T>` - 여러 개의 메시지를 만들려는 경우. 메시지는 `Add` 메서드를 호출할 때 생성됩니다.
 
@@ -733,7 +733,7 @@ Azure Functions 1.x에서 큐가 존재하지 않고 `accessRights`를 `manage`�
 
 ## <a name="hostjson-settings"></a>host.json 설정
 
-이 섹션에서는 버전 2.x 이상에서이 바인딩에 사용할 수 있는 전역 구성 설정에 대해 설명 합니다. 아래의 예제 호스트 json 파일에는이 바인딩에 대 한 설정만 포함 되어 있습니다. 전역 구성 설정에 대 한 자세한 내용은 [Azure Functions 버전에 대 한 호스트 json 참조](functions-host-json.md)를 참조 하세요.
+이 섹션에서는 버전 2.x 이상에서이 바인딩에 사용할 수 있는 전역 구성 설정에 대해 설명 합니다. 아래의 예제 호스트 json 파일에는이 바인딩에 대한 설정만 포함 되어 있습니다. 전역 구성 설정에 대한 자세한 내용은 [Azure Functions 버전에 대한 호스트 json 참조](functions-host-json.md)를 참조 하세요.
 
 > [!NOTE]
 > Functions 1.x에서 host.json의 참조는 [Azure Functions 1.x에 대한 host.json 참조](functions-host-json-v1.md)를 참조하세요.

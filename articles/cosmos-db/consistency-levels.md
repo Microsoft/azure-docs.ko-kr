@@ -35,7 +35,7 @@ Azure Cosmos DB를 사용하여 개발자는 일관성 스펙트럼에서 5개�
 
 ## <a name="guarantees-associated-with-consistency-levels"></a>일관성 수준과 연결된 보장
 
-Azure Cosmos DB에서 제공하는 포괄적인 SLA는 읽기 요청의 100%가 선택한 일관성 수준의 일관성 보장을 충족하도록 합니다. 일관성 수준과 연결된 모든 일관성 보증이 충족되면 읽기 요청이 일관성 SLA를 충족합니다. TLA + 사양 언어를 사용 하 Azure Cosmos DB에서 5 가지 일관성 수준에 대 한 정확한 정의는 [Azure-Cosmos](https://github.com/Azure/azure-cosmos-tla) GitHub 리포지토리에서 제공 됩니다.
+Azure Cosmos DB에서 제공하는 포괄적인 SLA는 읽기 요청의 100%가 선택한 일관성 수준의 일관성 보장을 충족하도록 합니다. 일관성 수준과 연결된 모든 일관성 보증이 충족되면 읽기 요청이 일관성 SLA를 충족합니다. TLA + 사양 언어를 사용 하 Azure Cosmos DB에서 5 가지 일관성 수준에 대한 정확한 정의는 [Azure-Cosmos](https://github.com/Azure/azure-cosmos-tla) GitHub 리포지토리에서 제공 됩니다.
 
 5가지 일관성 수준의 의미 체계는 여기에 설명되어 있습니다.
 

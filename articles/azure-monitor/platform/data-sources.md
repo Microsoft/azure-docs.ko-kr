@@ -32,7 +32,7 @@ Azure 응용 프로그램에서 모니터링 데이터의 소스는 계층으로
 
 | 계층 | Description | Collection 메서드 |
 |:---|:---|:---|
-| [Azure 테 넌 트](#azure-tenant) | Azure Active Directory 등, 테넌트 수준 Azure 서비스의 작업에 대한 데이터입니다. | 포털에서 AAD 데이터를 확인 하거나 테 넌 트 진단 설정을 사용 하 여 Azure Monitor 컬렉션을 구성 합니다. |
+| [Azure 테넌트](#azure-tenant) | Azure Active Directory 등, 테넌트 수준 Azure 서비스의 작업에 대한 데이터입니다. | 포털에서 AAD 데이터를 확인 하거나 테넌트 진단 설정을 사용 하 여 Azure Monitor 컬렉션을 구성 합니다. |
 | [Azure 구독](#azure-subscription) | 리소스 관리자 및 Service Health와 같은 Azure 구독에서 리소스 간 서비스의 상태 및 관리와 관련 된 데이터입니다. | 포털에서 보거나 로그 프로필을 사용 하 여 Azure Monitor 컬렉션을 구성 합니다. |
 | [Azure 리소스](#azure-resources) |  각 Azure 리소스의 작업 및 성능에 대 한 데이터입니다. | 자동으로 수집 된 메트릭, 메트릭 탐색기에서 보기<br>Azure Monitor에서 로그를 수집 하도록 진단 설정을 구성 합니다.<br>특정 리소스 종류에 대 한 자세한 모니터링에 대 한 모니터링 솔루션 및 정보를 제공 합니다. |
 

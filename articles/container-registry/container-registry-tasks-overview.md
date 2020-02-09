@@ -16,7 +16,7 @@ ms.locfileid: "76938872"
 
 ## <a name="what-is-acr-tasks"></a>ACR 작업이란?
 
-**ACR 작업**은 Azure Container Registry 내의 기능 모음입니다. Linux, Windows 및 ARM을 비롯 한 [플랫폼](#image-platforms) 에 대 한 클라우드 기반 컨테이너 이미지 빌드를 제공 하며 Docker 컨테이너에 대 한 [OS 및 프레임 워크 패치](#automate-os-and-framework-patching) 를 자동화할 수 있습니다. ACR 작업은 주문형 컨테이너 이미지 빌드를 사용 하 여 "내부 루프" 개발 주기를 클라우드로 확장할 뿐만 아니라 소스 코드 업데이트, 컨테이너의 기본 이미지 업데이트 또는 타이머에 의해 트리거되는 자동화 된 빌드도 가능 하 게 합니다. 예를 들어 기본 이미지 업데이트 트리거를 사용 하 여 OS 및 응용 프로그램 프레임 워크 패치 워크플로를 자동화 하 고, 변경할 수 없는 컨테이너의 원칙을 준수 하면서 보안 환경을 유지 관리할 수 있습니다.
+**ACR 작업**은 Azure Container Registry 내의 기능 모음입니다. Linux, Windows 및 ARM을 비롯 한 [플랫폼](#image-platforms) 에 대한 클라우드 기반 컨테이너 이미지 빌드를 제공 하며 Docker 컨테이너에 대한 [OS 및 프레임 워크 패치](#automate-os-and-framework-patching) 를 자동화할 수 있습니다. ACR 작업은 주문형 컨테이너 이미지 빌드를 사용 하 여 "내부 루프" 개발 주기를 클라우드로 확장할 뿐만 아니라 소스 코드 업데이트, 컨테이너의 기본 이미지 업데이트 또는 타이머에 의해 트리거되는 자동화 된 빌드도 가능 하 게 합니다. 예를 들어 기본 이미지 업데이트 트리거를 사용 하 여 OS 및 응용 프로그램 프레임 워크 패치 워크플로를 자동화 하 고, 변경할 수 없는 컨테이너의 원칙을 준수 하면서 보안 환경을 유지 관리할 수 있습니다.
 
 ## <a name="task-scenarios"></a>작업 시나리오
 
@@ -24,14 +24,14 @@ ACR 작업은 컨테이너 이미지 및 기타 아티팩트를 빌드하고 유
 
 * **[빠른 작업](#quick-task)** -로컬 Docker 엔진을 설치 하지 않고도 Azure의 주문형 컨테이너 레지스트리에 단일 컨테이너 이미지를 빌드하고 푸시합니다. 클라우드의 `docker build`, `docker push`를 생각하면 됩니다.
 * **자동으로 트리거된 작업** -하나 이상의 *트리거* 를 사용 하 여 이미지를 빌드합니다.
-  * **[소스 코드 업데이트에 대 한 트리거](#trigger-task-on-source-code-update)** 
-  * **[기본 이미지 업데이트에 대 한 트리거](#automate-os-and-framework-patching)** 
+  * **[소스 코드 업데이트에 대한 트리거](#trigger-task-on-source-code-update)** 
+  * **[기본 이미지 업데이트에 대한 트리거](#automate-os-and-framework-patching)** 
   * **[일정에 따라 트리거](#schedule-a-task)** 
 * 다단계 **[작업](#multi-step-tasks)** -다중 단계 다중 컨테이너 기반 워크플로를 사용 하 여 ACR 작업의 단일 이미지 빌드 및 푸시 기능을 확장 합니다. 
 
 각 ACR 작업에는 연결 된 [소스 코드 컨텍스트](#context-locations) (컨테이너 이미지 또는 다른 아티팩트를 빌드하는 데 사용 되는 소스 파일 집합의 위치)가 있습니다. 예제 컨텍스트에는 Git 리포지토리 또는 로컬 파일 시스템이 포함 됩니다.
 
-작업은 또한 [실행 변수](container-registry-tasks-reference-yaml.md#run-variables)를 활용할 수 있으므로 이미지 및 아티팩트에 대 한 작업 정의 및 표준화 태그를 다시 사용할 수 있습니다.
+작업은 또한 [실행 변수](container-registry-tasks-reference-yaml.md#run-variables)를 활용할 수 있으므로 이미지 및 아티팩트에 대한 작업 정의 및 표준화 태그를 다시 사용할 수 있습니다.
 
 ## <a name="quick-task"></a>빠른 작업
 
@@ -50,7 +50,7 @@ ACR 작업은 기본 컨테이너 수명 주기로 설계되었습니다. 예를
 > [!TIP]
 > Dockerfile을 사용 하지 않고 소스 코드에서 직접 이미지를 빌드하고 푸시 하려면 [az acr pack build][az-acr-pack-build] 명령 (미리 보기)을 제공 Azure Container Registry 합니다. 이 도구는 [클라우드 네이티브 Buildpacks](https://buildpacks.io/)을 사용 하 여 응용 프로그램 소스 코드에서 이미지를 빌드하고 푸시합니다.
 
-## <a name="trigger-task-on-source-code-update"></a>소스 코드 업데이트에 대 한 트리거 작업
+## <a name="trigger-task-on-source-code-update"></a>소스 코드 업데이트에 대한 트리거 작업
 
 GitHub 또는 Azure DevOps의 공용 또는 개인 Git 리포지토리로 코드를 커밋하거나 끌어오기 요청을 만들거나 업데이트할 때 컨테이너 이미지 빌드 또는 다중 단계 작업을 트리거합니다. 예를 들어 Git 리포지토리를 지정 하 고 선택적으로 분기 및 Dockerfile을 지정 하 여 Azure CLI 명령 [az acr task create][az-acr-task-create] 를 사용 하 여 빌드 작업을 구성 합니다. 팀이 리포지토리의 코드를 업데이트할 때 ACR 작업 생성 webhook는 리포지토리에 정의 된 컨테이너 이미지의 빌드를 트리거합니다. 
 
@@ -87,17 +87,17 @@ Dockerfile에서 이미지 빌드의 경우 기본 이미지가 다음 위치 �
 
 > [!NOTE]
 > * 기본 이미지 업데이트 트리거는 ACR 작업에서 기본적으로 사용 하도록 설정 됩니다. 
-> * 현재 ACR 작업은 응용 프로그램 (*런타임*) 이미지에 대 한 기본 이미지 업데이트만 추적 합니다. ACR 작업은 다중 단계 Dockerfiles에서 사용 되는 중간 (*buildtime*) 이미지에 대 한 기본 이미지 업데이트를 추적 하지 않습니다. 
+> * 현재 ACR 작업은 응용 프로그램 (*런타임*) 이미지에 대한 기본 이미지 업데이트만 추적 합니다. ACR 작업은 다중 단계 Dockerfiles에서 사용 되는 중간 (*buildtime*) 이미지에 대한 기본 이미지 업데이트를 추적 하지 않습니다. 
 
-세 번째 ACR 작업 자습서의 OS 및 프레임 워크 패치에 대 한 자세한 내용은 [Azure Container Registry 작업을 사용 하 여 기본 이미지 업데이트에서 이미지 빌드 자동화](container-registry-tutorial-base-image-update.md)를 확인 하세요.
+세 번째 ACR 작업 자습서의 OS 및 프레임 워크 패치에 대한 자세한 내용은 [Azure Container Registry 작업을 사용 하 여 기본 이미지 업데이트에서 이미지 빌드 자동화](container-registry-tutorial-base-image-update.md)를 확인 하세요.
 
 ## <a name="schedule-a-task"></a>작업 예약
 
-필요에 따라 작업을 만들거나 업데이트할 때 하나 이상의 *타이머 트리거* 를 설정 하 여 작업을 예약 합니다. 작업 예약은 정의 된 일정에 따라 컨테이너 작업을 실행 하거나 레지스트리에 정기적으로 푸시되는 이미지에 대 한 유지 관리 작업 또는 테스트를 실행 하는 데 유용 합니다. 자세한 내용은 [정의 된 일정에 따라 ACR 작업 실행](container-registry-tasks-scheduled.md)을 참조 하세요.
+필요에 따라 작업을 만들거나 업데이트할 때 하나 이상의 *타이머 트리거* 를 설정 하 여 작업을 예약 합니다. 작업 예약은 정의 된 일정에 따라 컨테이너 작업을 실행 하거나 레지스트리에 정기적으로 푸시되는 이미지에 대한 유지 관리 작업 또는 테스트를 실행 하는 데 유용 합니다. 자세한 내용은 [정의 된 일정에 따라 ACR 작업 실행](container-registry-tasks-scheduled.md)을 참조 하세요.
 
 ## <a name="multi-step-tasks"></a>다단계 작업
 
-다단계 태스크는 클라우드에서 컨테이너 이미지를 빌드, 테스트 및 패치 하기 위한 단계 기반 작업 정의 및 실행을 제공 합니다. [Yaml 파일](container-registry-tasks-reference-yaml.md) 에 정의 된 작업 단계는 컨테이너 이미지 또는 다른 아티팩트에 대 한 개별 빌드 및 푸시 작업을 지정 합니다. 해당 실행 환경으로 컨테이너를 사용하여 각 단계로 하나 이상의 컨테이너 실행을 정의할 수도 있습니다.
+다단계 태스크는 클라우드에서 컨테이너 이미지를 빌드, 테스트 및 패치 하기 위한 단계 기반 작업 정의 및 실행을 제공 합니다. [Yaml 파일](container-registry-tasks-reference-yaml.md) 에 정의 된 작업 단계는 컨테이너 이미지 또는 다른 아티팩트에 대한 개별 빌드 및 푸시 작업을 지정 합니다. 해당 실행 환경으로 컨테이너를 사용하여 각 단계로 하나 이상의 컨테이너 실행을 정의할 수도 있습니다.
 
 예를 들어, 다음을 자동화하는 다단계 작업을 만들 수 있습니다.
 
@@ -131,7 +131,7 @@ Dockerfile에서 이미지 빌드의 경우 기본 이미지가 다음 위치 �
 
 ## <a name="image-platforms"></a>이미지 플랫폼
 
-기본적으로 ACR 작업은 Linux OS 및 amd64 아키텍처용 이미지를 빌드합니다. 다른 아키텍처에 대 한 Windows 이미지 또는 Linux 이미지를 빌드하기 위해 `--platform` 태그를 지정 합니다. Os를 지정 하 고 필요에 따라 OS/아키텍처 형식으로 지원 되는 아키텍처를 지정 합니다 (예: `--platform Linux/arm`). ARM 아키텍처의 경우 필요에 따라 OS/아키텍처/변형 형식 (예: `--platform Linux/arm64/v8`)에서 variant를 지정 합니다.
+기본적으로 ACR 작업은 Linux OS 및 amd64 아키텍처용 이미지를 빌드합니다. 다른 아키텍처에 대한 Windows 이미지 또는 Linux 이미지를 빌드하기 위해 `--platform` 태그를 지정 합니다. Os를 지정 하 고 필요에 따라 OS/아키텍처 형식으로 지원 되는 아키텍처를 지정 합니다 (예: `--platform Linux/arm`). ARM 아키텍처의 경우 필요에 따라 OS/아키텍처/변형 형식 (예: `--platform Linux/arm64/v8`)에서 variant를 지정 합니다.
 
 | OS | 아키텍처|
 | --- | ------- | 
@@ -140,9 +140,9 @@ Dockerfile에서 이미지 빌드의 경우 기본 이미지가 다음 위치 �
 
 ## <a name="view-task-logs"></a>작업 로그 보기
 
-각 태스크 실행은 작업 단계가 성공적으로 실행 되었는지 여부를 확인 하기 위해 검사할 수 있는 로그 출력을 생성 합니다. [Az acr build](/cli/azure/acr#az-acr-build), [az acr run](/cli/azure/acr#az-acr-run)또는 [az acr task run](/cli/azure/acr/task#az-acr-task-run) 명령을 사용 하 여 작업을 트리거하는 경우에는 태스크 실행에 대 한 로그 출력이 콘솔로 스트리밍되 고 나중에 검색할 수 있도록 저장 됩니다. 소스 코드 커밋 또는 기본 이미지 업데이트 등에서 태스크가 자동으로 트리거되면 작업 로그만 저장 됩니다. Azure Portal에서 실행 되는 작업에 대 한 로그를 보거나 [az acr task logs](/cli/azure/acr/task#az-acr-task-logs) 명령을 사용 합니다.
+각 태스크 실행은 작업 단계가 성공적으로 실행 되었는지 여부를 확인 하기 위해 검사할 수 있는 로그 출력을 생성 합니다. [Az acr build](/cli/azure/acr#az-acr-build), [az acr run](/cli/azure/acr#az-acr-run)또는 [az acr task run](/cli/azure/acr/task#az-acr-task-run) 명령을 사용 하 여 작업을 트리거하는 경우에는 태스크 실행에 대한 로그 출력이 콘솔로 스트리밍되 고 나중에 검색할 수 있도록 저장 됩니다. 소스 코드 커밋 또는 기본 이미지 업데이트 등에서 태스크가 자동으로 트리거되면 작업 로그만 저장 됩니다. Azure Portal에서 실행 되는 작업에 대한 로그를 보거나 [az acr task logs](/cli/azure/acr/task#az-acr-task-logs) 명령을 사용 합니다.
 
-기본적으로 레지스트리의 태스크 실행에 대 한 데이터 및 로그는 30 일 동안 보존 된 후 자동으로 제거 됩니다. 태스크 실행에 대 한 데이터를 보관 하려면 [az acr 작업 업데이트-실행](/cli/azure/acr/task#az-acr-task-update-run) 명령을 사용 하 여 보관을 사용 하도록 설정 합니다. 다음 예에서는 registry *myregistry*에서 *cf11* 작업 실행을 위해 보관을 사용 하도록 설정 합니다.
+기본적으로 레지스트리의 태스크 실행에 대한 데이터 및 로그는 30 일 동안 보존 된 후 자동으로 제거 됩니다. 태스크 실행에 대한 데이터를 보관 하려면 [az acr 작업 업데이트-실행](/cli/azure/acr/task#az-acr-task-update-run) 명령을 사용 하 여 보관을 사용 하도록 설정 합니다. 다음 예에서는 registry *myregistry*에서 *cf11* 작업 실행을 위해 보관을 사용 하도록 설정 합니다.
 
 ```azurecli
 az acr task update-run --registry myregistry --run-id cf11 --no-archive false

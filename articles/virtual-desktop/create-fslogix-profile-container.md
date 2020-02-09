@@ -22,7 +22,7 @@ Windows 가상 데스크톱 환경에 대해 엔터프라이즈급 SMB 볼륨을
 
 이 가이드에서는 Azure NetApp Files 계정을 설정 하 고 Windows 가상 데스크톱에서 FSLogix 프로필 컨테이너를 만드는 방법을 보여 줍니다.
 
-이 문서에서는 이미 [호스트 풀이](create-host-pools-azure-marketplace.md) 설정 되어 있고 Windows 가상 데스크톱 환경에서 하나 이상의 테 넌 트로 그룹화 되어 있다고 가정 합니다. 테 넌 트를 설정 하는 방법을 알아보려면 [Windows 가상 데스크톱에서 테 넌 트 만들기](tenant-setup-azure-active-directory.md) 및 [기술 커뮤니티 블로그 게시물](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Getting-started-with-Windows-Virtual-Desktop/ba-p/391054)을 참조 하세요.
+이 문서에서는 이미 [호스트 풀이](create-host-pools-azure-marketplace.md) 설정 되어 있고 Windows 가상 데스크톱 환경에서 하나 이상의 테넌트로 그룹화 되어 있다고 가정 합니다. 테넌트를 설정 하는 방법을 알아보려면 [Windows 가상 데스크톱에서 테넌트 만들기](tenant-setup-azure-active-directory.md) 및 [기술 커뮤니티 블로그 게시물](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Getting-started-with-Windows-Virtual-Desktop/ba-p/391054)을 참조 하세요.
 
 이 가이드의 지침은 Windows 가상 데스크톱 사용자 전용입니다. Windows 가상 데스크톱 외부에서 Azure NetApp Files를 설정 하 고 FSLogix 프로필 컨테이너를 만드는 방법에 대 한 일반적인 지침을 찾고 있는 경우 [Azure NetApp Files 설정 및 NFS 볼륨 만들기 빠른](../azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes.md)시작을 참조 하세요.
 
@@ -198,7 +198,7 @@ Windows 가상 데스크톱 환경에 대해 엔터프라이즈급 SMB 볼륨을
    Add-RdsAccount -DeploymentUrl $brokerurl
    ```
 
-3. 자격 증명을 입력 하 라는 메시지가 표시 되 면 Windows 가상 데스크톱 테 넌 트에 테 넌 트 작성자 또는 RDS 소유자/RDS 참가자 역할이 있는 사용자의 자격 증명을 입력 합니다.
+3. 자격 증명을 입력 하 라는 메시지가 표시 되 면 Windows 가상 데스크톱 테넌트에 테넌트 작성자 또는 RDS 소유자/RDS 참가자 역할이 있는 사용자의 자격 증명을 입력 합니다.
 
 4. 다음 cmdlet을 실행 하 여 원격 데스크톱 그룹에 사용자를 할당 합니다.
 

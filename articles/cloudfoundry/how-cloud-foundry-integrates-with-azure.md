@@ -43,7 +43,7 @@ Azure 가용성 영역이 VM 집합을 2개 이상의 데이터 센터에 배치
 [Azure Application Gateway](https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction)에서는 SSL 오프로딩, 종단 간 SSL, 웹 애플리케이션 방화벽, 쿠키 기반 세션 선호도 등을 비롯한 다양한 계층 7 부하 분산 기능을 제공합니다. [오픈 소스 Cloud Foundry에서 Application Gateway를 구성](https://github.com/cloudfoundry-incubator/bosh-azure-cpi-release/tree/master/docs/advanced/application-gateway)할 수 있습니다. PCF의 경우 POC 테스트에 대한 [PCF 2.1 릴리스 정보](https://docs.pivotal.io/pivotalcf/2-1/pcf-release-notes/opsmanager-rn.html#azure-application-gateway)를 확인합니다.
 
 ### <a name="azure-standard-load-balancer-"></a>Azure 표준 Load Balancer *
-Azure Load Balancer는 계층 4 부하 분산 장치입니다. 부하 분산 된 집합의 서비스 인스턴스 간에 트래픽을 분산 하는 데 사용 됩니다. 표준 버전에서는 기본 버전을 기반으로 [고급 기능](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview)을 제공합니다. 예: 1 백 엔드 풀 최대 한도는 100대에서 1000대 VM으로 증가되었습니다.  2. 이제 엔드포인트는 단일 가용성 집합 대신 여러 가용성 집합을 지원합니다.  3. HA 포트, 다양 한 모니터링 데이터 등과 같은 추가 기능 Azure 가용성 영역으로 이동 하는 경우 표준 부하 분산 장치가 필요 합니다. 새 배포에서 Azure 표준 Load Balancer를 시작하는 것이 좋습니다. 
+Azure Load Balancer는 계층 4 부하 분산 장치입니다. 부하 분산 된 집합의 서비스 인스턴스 간에 트래픽을 분산 하는 데 사용 됩니다. 표준 버전에서는 기본 버전을 기반으로 [고급 기능](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview)을 제공합니다. 예: 1 백 엔드 풀 최대한도는 100대에서 1000대 VM으로 증가되었습니다.  2. 이제 엔드포인트는 단일 가용성 집합 대신 여러 가용성 집합을 지원합니다.  3. HA 포트, 다양 한 모니터링 데이터 등과 같은 추가 기능 Azure 가용성 영역으로 이동 하는 경우 표준 부하 분산 장치가 필요 합니다. 새 배포에서 Azure 표준 Load Balancer를 시작하는 것이 좋습니다. 
 
 ## <a name="3-authentication"></a>3. 인증 
 [Cloud Foundry 사용자 계정 및 인증](https://docs.cloudfoundry.org/concepts/architecture/uaa.html)은 CF 및 다양한 해당 구성 요소에 대한 중앙 ID 관리 서비스입니다. [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-whatis)는 Microsoft의 다중 테넌트 클라우드 기반 디렉터리 및 ID 관리 서비스입니다. 기본적으로 UAA는 Cloud Foundry 인증에 사용됩니다. 고급 옵션으로 UAA는 Azure AD를 외부 사용자 저장소로도 지원합니다. Azure AD 사용자는 Cloud Foundry 계정 없이 해당 LDAP ID를 사용하여 Cloud Foundry에 액세스할 수 있습니다. 다음 단계에 따라 [PCF에서 UAA용 Azure AD를 구성합니다](https://docs.pivotal.io/p-identity/1-6/azure/index.html).
@@ -69,7 +69,7 @@ Azure Service Broker는 Azure 서비스에 대한 애플리케이션의 액세�
 Azure Log Analytics 노즐은 [Cloud Foundry loggregator firehose](https://docs.cloudfoundry.org/loggregator/architecture.html) 에서 [Azure Monitor 로그](https://azure.microsoft.com/services/log-analytics/)로 메트릭을 전달 하는 Cloud Foundry 구성 요소입니다. Nozzle을 사용하면 여러 배포에서 CF 시스템 상태와 성능 메트릭을 수집, 확인 및 분석할 수 있습니다.
 [여기](https://docs.microsoft.com/azure/cloudfoundry/cloudfoundry-oms-nozzle) 를 클릭 하 여 오픈 소스 및 Pivotal Cloud Foundry 환경 모두에 Azure Log Analytics 노즐을 배포한 다음 Azure Monitor logs 콘솔에서 데이터에 액세스 하는 방법을 알아보세요. 
 > [!NOTE]
-> PCF 2.0에서 Vm에 대 한 BOSH 상태 메트릭은 기본적으로 Loggregator Firehose에 전달 되 고 Azure Monitor logs 콘솔에 통합 됩니다.
+> PCF 2.0에서 Vm에 대한 BOSH 상태 메트릭은 기본적으로 Loggregator Firehose에 전달 되 고 Azure Monitor logs 콘솔에 통합 됩니다.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 

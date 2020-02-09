@@ -1,6 +1,6 @@
 ---
 title: Azure Maps Android SDK를 사용 하 여 지도 스타일 설정 Microsoft Azure 맵
-description: 이 문서에서는 Android SDK에 대 한 스타일 관련 기능 Microsoft Azure 매핑하는 방법에 대해 알아봅니다.
+description: 이 문서에서는 Android SDK에 대한 스타일 관련 기능 Microsoft Azure 매핑하는 방법에 대해 알아봅니다.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 04/26/2019
@@ -17,7 +17,7 @@ ms.locfileid: "76988960"
 ---
 # <a name="set-map-style-using-azure-maps-android-sdk"></a>Azure Maps Android SDK를 사용 하 여 지도 스타일 설정
 
-이 문서에서는 Azure Maps Android SDK를 사용 하 여 지도 스타일을 설정 하는 두 가지 방법을 보여 줍니다. Azure Maps에는 6 가지 맵 스타일을 선택할 수 있습니다. 지원 되는 지도 스타일에 대 한 자세한 내용은 [Azure Maps에서 지원 되는 맵 스타일](./supported-map-styles.md)을 참조 하세요.
+이 문서에서는 Azure Maps Android SDK를 사용 하 여 지도 스타일을 설정 하는 두 가지 방법을 보여 줍니다. Azure Maps에는 6 가지 맵 스타일을 선택할 수 있습니다. 지원 되는 지도 스타일에 대한 자세한 내용은 [Azure Maps에서 지원 되는 맵 스타일](./supported-map-styles.md)을 참조 하세요.
 
 
 ## <a name="prerequisites"></a>필수 조건

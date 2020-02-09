@@ -31,7 +31,7 @@ AKS 클러스터의 자격 증명을 업데이트하려면 다음을 선택하�
 
 ### <a name="update-existing-service-principal-expiration"></a>기존 서비스 사용자 만료 업데이트
 
-기존 서비스 사용자에 대 한 자격 증명을 업데이트 하려면 [az aks show][az-aks-show] 명령을 사용 하 여 클러스터의 서비스 사용자 ID를 가져옵니다. 다음 예제에서는 *myResourceGroup* 리소스 그룹에서 *myAKSCluster* 클러스터의 ID를 가져옵니다. 서비스 사용자 ID는 추가 명령에서 사용할 *SP_ID* 이라는 변수로 설정 됩니다.
+기존 서비스 사용자에 대한 자격 증명을 업데이트 하려면 [az aks show][az-aks-show] 명령을 사용 하 여 클러스터의 서비스 사용자 ID를 가져옵니다. 다음 예제에서는 *myResourceGroup* 리소스 그룹에서 *myAKSCluster* 클러스터의 ID를 가져옵니다. 서비스 사용자 ID는 추가 명령에서 사용할 *SP_ID* 이라는 변수로 설정 됩니다.
 
 ```azurecli-interactive
 SP_ID=$(az aks show --resource-group myResourceGroup --name myAKSCluster \
@@ -44,7 +44,7 @@ SP_ID=$(az aks show --resource-group myResourceGroup --name myAKSCluster \
 SP_SECRET=$(az ad sp credential reset --name $SP_ID --query password -o tsv)
 ```
 
-이제 계속해서 [새 자격 증명으로 AKS 클러스터를 업데이트](#update-aks-cluster-with-new-credentials)합니다. 이 단계는 AKS 클러스터에 대 한 서비스 사용자 변경 내용을 반영 하기 위해 필요 합니다.
+이제 계속해서 [새 자격 증명으로 AKS 클러스터를 업데이트](#update-aks-cluster-with-new-credentials)합니다. 이 단계는 AKS 클러스터에 대한 서비스 사용자 변경 내용을 반영 하기 위해 필요 합니다.
 
 ### <a name="create-a-new-service-principal"></a>새 서비스 주체 만들기
 
@@ -67,18 +67,18 @@ az ad sp create-for-rbac --skip-assignment
 }
 ```
 
-이제 다음 예제와 같이 사용자 고유의 [az ad sp create-rbac][az-ad-sp-create] 명령의 출력을 사용 하 여 서비스 사용자 ID 및 클라이언트 암호에 대 한 변수를 정의 합니다. *SP_ID*는 사용자의 ‘앱 ID’이고, *SP_SECRET*은 사용자의 ‘암호’입니다.
+이제 다음 예제와 같이 사용자 고유의 [az ad sp create-rbac][az-ad-sp-create] 명령의 출력을 사용 하 여 서비스 사용자 ID 및 클라이언트 암호에 대한 변수를 정의 합니다. *SP_ID*는 사용자의 ‘앱 ID’이고, *SP_SECRET*은 사용자의 ‘암호’입니다.
 
 ```azurecli-interactive
 SP_ID=7d837646-b1f3-443d-874c-fd83c7c739c5
 SP_SECRET=a5ce83c9-9186-426d-9183-614597c7f2f7
 ```
 
-이제 계속해서 [새 자격 증명으로 AKS 클러스터를 업데이트](#update-aks-cluster-with-new-credentials)합니다. 이 단계는 AKS 클러스터에 대 한 서비스 사용자 변경 내용을 반영 하기 위해 필요 합니다.
+이제 계속해서 [새 자격 증명으로 AKS 클러스터를 업데이트](#update-aks-cluster-with-new-credentials)합니다. 이 단계는 AKS 클러스터에 대한 서비스 사용자 변경 내용을 반영 하기 위해 필요 합니다.
 
 ## <a name="update-aks-cluster-with-new-credentials"></a>새 자격 증명으로 AKS 클러스터 업데이트
 
-기존 서비스 사용자에 대 한 자격 증명을 업데이트 하거나 서비스 주체를 만들지 여부와 상관 없이 이제 [az AKS][az-aks-update-credentials] AKS 명령을 사용 하 여 새 자격 증명으로 클러스터를 업데이트 합니다. *--service-principal* 및 *--client-secret*의 변수는 다음과 같이 사용됩니다.
+기존 서비스 사용자에 대한 자격 증명을 업데이트 하거나 서비스 주체를 만들지 여부와 상관 없이 이제 [az AKS][az-aks-update-credentials] AKS 명령을 사용 하 여 새 자격 증명으로 클러스터를 업데이트 합니다. *--service-principal* 및 *--client-secret*의 변수는 다음과 같이 사용됩니다.
 
 ```azurecli-interactive
 az aks update-credentials \
@@ -93,7 +93,7 @@ az aks update-credentials \
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서에서는 AKS 클러스터 자체의 서비스 주체가 업데이트되었습니다. 클러스터 내에서 작업에 대 한 id를 관리 하는 방법에 대 한 자세한 내용은 [AKS의 인증 및 권한 부여에 대 한 모범 사례][best-practices-identity]를 참조 하세요.
+이 문서에서는 AKS 클러스터 자체의 서비스 주체가 업데이트되었습니다. 클러스터 내에서 작업에 대한 id를 관리 하는 방법에 대한 자세한 내용은 [AKS의 인증 및 권한 부여에 대한 모범 사례][best-practices-identity]를 참조 하세요.
 
 <!-- LINKS - internal -->
 [install-azure-cli]: /cli/azure/install-azure-cli

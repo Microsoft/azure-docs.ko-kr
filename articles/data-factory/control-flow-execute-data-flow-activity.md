@@ -54,7 +54,7 @@ ms.locfileid: "75644796"
 
 속성 | Description | 허용되는 값 | 필수
 -------- | ----------- | -------------- | --------
-데이터 | 실행 되는 데이터 흐름에 대 한 참조입니다. | DataFlowReference | 예
+데이터 | 실행 되는 데이터 흐름에 대한 참조입니다. | DataFlowReference | 예
 integrationRuntime | 데이터 흐름이 실행 되는 계산 환경입니다. 지정 하지 않으면 자동 확인 Azure 통합 런타임이 사용 됩니다. | IntegrationRuntimeReference | 아닙니다.
 compute. coreCount | Spark 클러스터에서 사용 되는 코어 수입니다. Azure Integration runtime 자동 확인이 사용 되는 경우에만 지정할 수 있습니다. | 8, 16, 32, 48, 80, 144, 272 | 아닙니다.
 계산. | Spark 클러스터에서 사용 되는 계산의 유형입니다. Azure Integration runtime 자동 확인이 사용 되는 경우에만 지정할 수 있습니다. | "일반", "서는 E최적화 됨", "MemoryOptimized" | 아닙니다.
@@ -65,7 +65,7 @@ linkedService | SQL DW 원본 또는 싱크를 사용 하는 경우 PolyBase 스
 
 ### <a name="data-flow-integration-runtime"></a>데이터 흐름 통합 런타임
 
-데이터 흐름 활동 실행에 사용할 Integration Runtime를 선택 합니다. 기본적으로 Data Factory은 4 개의 작업자 코어와 함께 Azure Integration runtime 자동 확인을 사용 하 고 TTL (time to live)은 사용 하지 않습니다. 이 IR은 범용 계산 형식이 며 팩터리와 동일한 지역에서 실행 됩니다. 데이터 흐름 활동 실행에 대 한 특정 지역, 계산 유형, 코어 수 및 TTL을 정의 하는 고유한 Azure 통합 런타임을 만들 수 있습니다.
+데이터 흐름 활동 실행에 사용할 Integration Runtime를 선택 합니다. 기본적으로 Data Factory은 4 개의 작업자 코어와 함께 Azure Integration runtime 자동 확인을 사용 하 고 TTL (time to live)은 사용 하지 않습니다. 이 IR은 범용 계산 형식이 며 팩터리와 동일한 지역에서 실행 됩니다. 데이터 흐름 활동 실행에 대한 특정 지역, 계산 유형, 코어 수 및 TTL을 정의 하는 고유한 Azure 통합 런타임을 만들 수 있습니다.
 
 파이프라인 실행의 경우 클러스터는 작업 클러스터로, 실행이 시작 되기 전에 몇 분 정도 걸릴 수 있습니다. TTL을 지정 하지 않으면 모든 파이프라인 실행에이 시작 시간이 필요 합니다. TTL을 지정 하면 웜 클러스터 풀은 마지막 실행 후에 지정 된 시간 동안 활성 상태를 유지 하므로 시작 시간이 짧아집니다. 예를 들어 TTL이 60 분이 고 한 시간에 한 번씩 데이터 흐름을 실행 하는 경우 클러스터 풀은 활성 상태로 유지 됩니다. 자세한 내용은 [Azure integration runtime](concepts-integration-runtime.md)을 참조 하세요.
 
@@ -112,7 +112,7 @@ Azure Integration runtime 자동 확인을 사용 하 고 compute. coreCount 및
 
 ### <a name="use-data-flow-activity-results-in-a-subsequent-activity"></a>후속 작업에서 데이터 흐름 활동 결과 사용
 
-데이터 흐름 작업은 각 싱크에 쓰여진 행 수와 각 원본에서 읽은 행에 대 한 메트릭을 출력 합니다. 이러한 결과는 활동 실행 결과의 `output` 섹션에서 반환 됩니다. 반환 되는 메트릭은 아래 json의 형식으로 되어 있습니다.
+데이터 흐름 작업은 각 싱크에 쓰여진 행 수와 각 원본에서 읽은 행에 대한 메트릭을 출력 합니다. 이러한 결과는 활동 실행 결과의 `output` 섹션에서 반환 됩니다. 반환 되는 메트릭은 아래 json의 형식으로 되어 있습니다.
 
 ``` json
 {

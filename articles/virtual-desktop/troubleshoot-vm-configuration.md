@@ -95,7 +95,7 @@ Vm을 프로 비전 하는 권장 방법은 **Windows 가상 데스크톱 호스
 **수정 2:** 다음 목록에서 항목을 확인 합니다.
 
 - 계정에 MFA가 없는지 확인 합니다.
-- 테 넌 트 이름이 정확 하 고 테 넌 트가 Windows 가상 데스크톱에 존재 하는지 확인 합니다.
+- 테넌트 이름이 정확 하 고 테넌트가 Windows 가상 데스크톱에 존재 하는지 확인 합니다.
 - 계정에 최소한 RDS 참가자 권한이 있는지 확인 합니다.
 
 ### <a name="error-authentication-failed-error-in-cwindowstempscriptloglog"></a>오류: 인증에 실패 했습니다. C:\Windows\Temp\ScriptLog.log에서 오류가 발생 했습니다.
@@ -105,7 +105,7 @@ Vm을 프로 비전 하는 권장 방법은 **Windows 가상 데스크톱 호스
 **해결 방법:** 다음 목록에서 항목을 확인 합니다.
 
 - Windows 가상 데스크톱 서비스를 사용 하 여 Vm을 수동으로 등록 합니다.
-- Windows 가상 데스크톱에 연결 하는 데 사용 되는 계정에 테 넌 트에서 호스트 풀을 만들 수 있는 권한이 있는지 확인 합니다.
+- Windows 가상 데스크톱에 연결 하는 데 사용 되는 계정에 테넌트에서 호스트 풀을 만들 수 있는 권한이 있는지 확인 합니다.
 - 계정 확인에 MFA가 없습니다.
 
 ## <a name="windows-virtual-desktop-agent-is-not-registering-with-the-windows-virtual-desktop-service"></a>Windows 가상 데스크톱 에이전트가 Windows 가상 데스크톱 서비스에 등록 되지 않습니다.
@@ -338,7 +338,7 @@ Azure 갤러리에서 최신 버전의 Windows 10 버전 1903 이미지를 사�
 ## <a name="next-steps"></a>다음 단계
 
 - Windows 가상 데스크톱 및 에스컬레이션 트랙 문제 해결에 대 한 개요는 [문제 해결 개요, 사용자 의견 및 지원](troubleshoot-set-up-overview.md)을 참조 하세요.
-- Windows 가상 데스크톱 환경에서 테 넌 트 및 호스트 풀을 만드는 동안 발생 하는 문제를 해결 하려면 [테 넌 트 및 호스트 풀 만들기](troubleshoot-set-up-issues.md)를 참조 하세요.
+- Windows 가상 데스크톱 환경에서 테넌트 및 호스트 풀을 만드는 동안 발생 하는 문제를 해결 하려면 [테넌트 및 호스트 풀 만들기](troubleshoot-set-up-issues.md)를 참조 하세요.
 - Windows 가상 데스크톱에서 VM (가상 컴퓨터)을 구성 하는 동안 발생 하는 문제를 해결 하려면 [세션 호스트 가상 컴퓨터 구성](troubleshoot-vm-configuration.md)을 참조 하세요.
 - Windows 가상 데스크톱 클라이언트 연결 문제를 해결 하려면 [Windows 가상 데스크톱 서비스 연결](troubleshoot-service-connection.md)을 참조 하세요.
 - 원격 데스크톱 클라이언트와 관련 된 문제를 해결 하려면 [원격 데스크톱 클라이언트 문제 해결](troubleshoot-client.md) 을 참조 하세요.

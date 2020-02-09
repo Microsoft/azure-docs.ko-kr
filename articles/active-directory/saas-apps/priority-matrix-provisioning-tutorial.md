@@ -36,7 +36,7 @@ ms.locfileid: "77063444"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [우선 순위 행렬 테 넌 트](https://appfluence.com/pricing/)
+* [우선 순위 행렬 테넌트](https://appfluence.com/pricing/)
 * 관리자 권한이 있는 우선 순위 행렬의 사용자 계정
 
 ## <a name="assign-users-to-priority-matrix"></a>우선 순위 행렬에 사용자 할당
@@ -95,7 +95,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위한 우선 순위 매
 
     ![우선 순위 행렬 OIDC 로그인](media/priority-matrix-provisioning-tutorial/msftsignin.png)
 
-7. 인증에 성공 하면 동의 페이지에 대 한 동의 확인 프롬프트를 수락 합니다. 그러면 응용 프로그램이 테 넌 트에 자동으로 추가 되 고 우선 순위 Matrix 계정으로 리디렉션됩니다.
+7. 인증에 성공 하면 동의 페이지에 대 한 동의 확인 프롬프트를 수락 합니다. 그러면 응용 프로그램이 테넌트에 자동으로 추가 되 고 우선 순위 Matrix 계정으로 리디렉션됩니다.
 
     ![우선 순위 Matrix OIDc 동의](media/priority-matrix-provisioning-tutorial/consent.png)
 
@@ -104,7 +104,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위한 우선 순위 매
 이 섹션에서는 azure ad의 사용자 및/또는 그룹 할당에 따라 우선 순위 행렬에서 사용자 및/또는 그룹을 만들고, 업데이트 하 고, 비활성화 하도록 Azure AD 프로 비전 서비스를 구성 하는 단계를 안내 합니다.
 
 > [!NOTE]
-> 우선 순위 매트릭스의 SCIM 끝점에 대 한 자세한 내용은 [사용자 프로 비전 및 우선 순위 매트릭스](https://appfluence.com/help/article/user-provisioning/)를 참조 하세요.
+> 우선 순위 매트릭스의 SCIM 엔드포인트에 대 한 자세한 내용은 [사용자 프로 비전 및 우선 순위 매트릭스](https://appfluence.com/help/article/user-provisioning/)를 참조 하세요.
 
 ### <a name="to-configure-automatic-user-provisioning-for-priority-matrix-in-azure-ad"></a>Azure AD의 우선 순위 행렬에 대해 자동 사용자 프로 비전을 구성 하려면:
 
@@ -124,7 +124,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위한 우선 순위 매
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에 있는 **테 넌 트 URL**에 `https://sync.appfluence.com/scim/v2/`을 입력 합니다. **비밀 토큰**의 우선 순위 행렬에서 이전에 검색 하 여 저장 한 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 우선 순위 행렬에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 우선 순위 Matrix 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
+5. **관리자 자격 증명** 섹션 아래에 있는 **테넌트 URL**에 `https://sync.appfluence.com/scim/v2/`을 입력 합니다. **비밀 토큰**의 우선 순위 행렬에서 이전에 검색 하 여 저장 한 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 우선 순위 행렬에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 우선 순위 Matrix 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 

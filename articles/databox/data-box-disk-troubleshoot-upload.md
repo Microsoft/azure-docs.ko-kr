@@ -19,13 +19,13 @@ ms.locfileid: "67807521"
 
 이 문서에서는 Microsoft Azure Data Box 디스크에 적용 되며 Azure에 데이터를 업로드할 때를 표시 하는 문제에 설명 합니다.
 
-## <a name="about-upload-logs"></a>로그 업로드 하는 방법에 대 한
+## <a name="about-upload-logs"></a>로그 업로드 하는 방법에 대한
 
-데이터는 데이터 센터에서 Azure에 업로드 되 면 `_error.xml` 고 `_verbose.xml` 각 저장소 계정에 대 한 파일이 생성 됩니다. 이러한 로그는 데이터를 업로드 하는 데 사용 된 동일한 저장소 계정에 업로드 됩니다. 
+데이터는 데이터 센터에서 Azure에 업로드 되 면 `_error.xml` 고 `_verbose.xml` 각 저장소 계정에 대한 파일이 생성 됩니다. 이러한 로그는 데이터를 업로드 하는 데 사용 된 동일한 저장소 계정에 업로드 됩니다. 
 
 로그를 모두 같은 형식 및 Azure Storage 계정에 디스크에서 데이터를 복사 하는 동안 발생 한 이벤트의 XML 설명을 포함 합니다.
 
-오류 로그를 blob 또는 파일을 업로드 하는 동안 오류가 발생 했습니다.에 대 한 정보만 포함 하는 반면 모든 blob 또는 파일에 대 한 복사 작업의 상태에 대 한 전체 정보를 포함 하는 자세한 로그 합니다.
+오류 로그를 blob 또는 파일을 업로드 하는 동안 오류가 발생 했습니다.에 대한 정보만 포함 하는 반면 모든 blob 또는 파일에 대한 복사 작업의 상태에 대한 전체 정보를 포함 하는 자세한 로그 합니다.
 
 오류 로그는 자세한 로그 있지만 성공적인 작업 필터링으로 동일한 구조를 가집니다.
 
@@ -90,7 +90,7 @@ ms.locfileid: "67807521"
 </DriveLog>
 ```
 
-같은 순서로의 샘플에 대 한는 `_error.xml` 아래에 표시 됩니다.
+같은 순서로의 샘플에 대한는 `_error.xml` 아래에 표시 됩니다.
 
 ```xml
 
@@ -115,7 +115,7 @@ ms.locfileid: "67807521"
 
 합니다 `Summary` 포함 된 `ValidationErrors` 및 `CopyErrors`합니다. 이 경우 8 파일 또는 폴더를 Azure에 업로드 된 및 유효성 검사 오류가 없습니다. Azure Storage 계정에 데이터를 복사 하는 경우 5 개의 파일 또는 폴더 업로드 했습니다. 나머지 3 개의 파일 또는 폴더를 Azure 컨테이너 명명 규칙에 따라 변경 했으며 Azure에 성공적으로 업로드 됩니다.
 
-파일 수준 상태는 `BlobStatus` 는 blob을 업로드 하는 데 걸린 모든 작업에 설명 합니다. 이 경우 세 개의 컨테이너를 컨테이너에 대 한 Azure 명명 규칙을 사용 하 여 데이터를 복사한 폴더를 준수 하지 않아 바뀝니다. 해당 컨테이너에 업로드 된 blob에 대 한 새 컨테이너 이름, Azure에서 blob의 경로, 원래 잘못 된 파일 경로 및 blob 크기가 포함 됩니다.
+파일 수준 상태는 `BlobStatus` 는 blob을 업로드 하는 데 걸린 모든 작업에 설명 합니다. 이 경우 세 개의 컨테이너를 컨테이너에 대한 Azure 명명 규칙을 사용 하 여 데이터를 복사한 폴더를 준수 하지 않아 바뀝니다. 해당 컨테이너에 업로드 된 blob에 대한 새 컨테이너 이름, Azure에서 blob의 경로, 원래 잘못 된 파일 경로 및 blob 크기가 포함 됩니다.
     
 ```xml
  <?xml version="1.0" encoding="utf-8"?>
@@ -174,12 +174,12 @@ Azure에 데이터를 업로드 하는 경우 생성 된 오류는 다음 표에
 |`MovedToOverflowShare` |원래 공유 크기와 새 공유로 업로드 된 파일에는 최대 Azure 크기 제한을 초과 했습니다. 새 파일 공유 이름에 원래 이름을 붙음 `-2`합니다.   |
 |`MovedToDefaultAzureShare` |기본 공유 폴더에 속하지 않았던 업로드 된 파일입니다. 공유 이름은 시작 `databox-`합니다. |
 |`ContainerRenamed` |이러한 파일의 컨테이너는 Azure 명명 규칙을 준수 하지 않은 하 고 이름이 바뀝니다. 새 이름을 사용 하 여 시작 `databox-` 원래 이름의 SHA1 해시 붙습니다 및 |
-|`ShareRenamed` |이러한 파일에 대 한 공유 Azure 명명 규칙을 준수 하지 않은 하 고 이름이 바뀝니다. 새 이름을 사용 하 여 시작 `databox-` 및 원래 이름의 SHA1 해시 붙습니다. |
-|`BlobRenamed` |이러한 Azure 명명 규칙을 준수 하지 않은 파일과 이름이 바뀌었습니다. 확인 된 `BlobPath` 새 이름에 대 한 필드입니다. |
-|`FileRenamed` |이러한 Azure 명명 규칙을 준수 하지 않은 파일과 이름이 바뀌었습니다. 확인 된 `FileStoragePath` 새 이름에 대 한 필드입니다. |
-|`DiskRenamed` |이러한 Azure 명명 규칙을 준수 하지 않은 파일과 이름이 바뀌었습니다. 확인 된 `BlobPath` 새 이름에 대 한 필드입니다. |
+|`ShareRenamed` |이러한 파일에 대한 공유 Azure 명명 규칙을 준수 하지 않은 하 고 이름이 바뀝니다. 새 이름을 사용 하 여 시작 `databox-` 및 원래 이름의 SHA1 해시 붙습니다. |
+|`BlobRenamed` |이러한 Azure 명명 규칙을 준수 하지 않은 파일과 이름이 바뀌었습니다. 확인 된 `BlobPath` 새 이름에 대한 필드입니다. |
+|`FileRenamed` |이러한 Azure 명명 규칙을 준수 하지 않은 파일과 이름이 바뀌었습니다. 확인 된 `FileStoragePath` 새 이름에 대한 필드입니다. |
+|`DiskRenamed` |이러한 Azure 명명 규칙을 준수 하지 않은 파일과 이름이 바뀌었습니다. 확인 된 `BlobPath` 새 이름에 대한 필드입니다. |
 
 
 ## <a name="next-steps"></a>다음 단계
 
-- [Data Box 디스크 문제에 대 한 지원 티켓을 열어](data-box-disk-contact-microsoft-support.md)합니다.
+- [Data Box 디스크 문제에 대한 지원 티켓을 열어](data-box-disk-contact-microsoft-support.md)합니다.

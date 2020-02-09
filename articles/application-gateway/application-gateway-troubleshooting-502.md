@@ -24,7 +24,7 @@ Azure 애플리케이션 Gateway를 사용 하는 경우 잘못 된 게이트웨
 
 응용 프로그램 게이트웨이를 구성한 후에 표시 될 수 있는 오류 중 하나는 "서버 오류: 502-웹 서버가 게이트웨이 또는 프록시 서버 역할을 하는 동안 잘못 된 응답을 받았습니다."입니다. 이 오류는 다음과 같은 주요 이유로 인해 발생할 수 있습니다.
 
-* NSG, UDR 또는 사용자 지정 DNS는 백엔드 풀 구성원에 대 한 액세스를 차단 합니다.
+* NSG, UDR 또는 사용자 지정 DNS는 백엔드 풀 구성원에 대한 액세스를 차단 합니다.
 * 백 엔드 Vm 또는 가상 머신 확장 집합의 인스턴스가 기본 상태 프로브에 응답 하지 않습니다.
 * 사용자 지정 상태 프로브의 구성이 잘못되었거나 부적절합니다.
 * Azure 애플리케이션 게이트웨이의 [백 엔드 풀이 구성 되지 않았거나 비어](#empty-backendaddresspool)있습니다.
@@ -35,7 +35,7 @@ Azure 애플리케이션 Gateway를 사용 하는 경우 잘못 된 게이트웨
 
 ### <a name="cause"></a>원인
 
-NSG, UDR 또는 사용자 지정 DNS로 인해 백 엔드에 대 한 액세스가 차단 된 경우 application gateway 인스턴스는 백 엔드 풀에 연결할 수 없습니다. 이로 인해 프로브 오류가 발생 하 여 502 오류가 발생 합니다.
+NSG, UDR 또는 사용자 지정 DNS로 인해 백 엔드에 대한 액세스가 차단 된 경우 application gateway 인스턴스는 백 엔드 풀에 연결할 수 없습니다. 이로 인해 프로브 오류가 발생 하 여 502 오류가 발생 합니다.
 
 응용 프로그램 Vm이 배포 되는 서브넷 또는 응용 프로그램 게이트웨이 서브넷에 NSG/UDR이 있을 수 있습니다.
 
@@ -45,8 +45,8 @@ NSG, UDR 또는 사용자 지정 DNS로 인해 백 엔드에 대 한 액세스�
 
 다음 단계를 통해 NSG, UDR 및 DNS 구성을 확인합니다.
 
-* Application gateway 서브넷과 연결 된 NSGs를 확인 합니다. 백 엔드에 대 한 통신이 차단 되지 않았는지 확인 합니다.
-* Application gateway 서브넷과 연결 된 UDR를 확인 합니다. UDR이 백 엔드 서브넷에서 트래픽을 외부로 전달 하지 않는지 확인 합니다. 예를 들어 Express 경로/v m을 통해 응용 프로그램 게이트웨이 서브넷에 보급 되는 네트워크 가상 어플라이언스 또는 기본 경로에 대 한 라우팅을 확인 합니다.
+* Application gateway 서브넷과 연결 된 NSGs를 확인 합니다. 백 엔드에 대한 통신이 차단 되지 않았는지 확인 합니다.
+* Application gateway 서브넷과 연결 된 UDR를 확인 합니다. UDR이 백 엔드 서브넷에서 트래픽을 외부로 전달 하지 않는지 확인 합니다. 예를 들어 Express 경로/v m을 통해 응용 프로그램 게이트웨이 서브넷에 보급 되는 네트워크 가상 어플라이언스 또는 기본 경로에 대한 라우팅을 확인 합니다.
 
 ```azurepowershell
 $vnet = Get-AzVirtualNetwork -Name vnetName -ResourceGroupName rgName
@@ -78,7 +78,7 @@ DhcpOptions            : {
 
 502 오류는 기본 상태 프로브에서 백 엔드 Vm에 연결할 수 없다는 것을 자주 확인할 수도 있습니다.
 
-응용 프로그램 게이트웨이 인스턴스가 프로 비전 되 면 BackendHttpSetting의 속성을 사용 하 여 각 BackendAddressPool 기본 상태 프로브를 자동으로 구성 합니다. 이 프로브를 설정하기 위해 사용자 입력이 필요하지 않습니다. 특히 부하 분산 규칙을 구성 하는 경우 BackendHttpSetting와 BackendAddressPool 간에 연결이 생성 됩니다. 이러한 각 연결에 대해 기본 프로브가 구성 되 고, application gateway는 BackendHttpSetting 요소에 지정 된 포트에서 BackendAddressPool의 각 인스턴스에 대 한 주기적인 상태 검사 연결을 시작 합니다. 
+응용 프로그램 게이트웨이 인스턴스가 프로 비전 되 면 BackendHttpSetting의 속성을 사용 하 여 각 BackendAddressPool 기본 상태 프로브를 자동으로 구성 합니다. 이 프로브를 설정하기 위해 사용자 입력이 필요하지 않습니다. 특히 부하 분산 규칙을 구성 하는 경우 BackendHttpSetting와 BackendAddressPool 간에 연결이 생성 됩니다. 이러한 각 연결에 대해 기본 프로브가 구성 되 고, application gateway는 BackendHttpSetting 요소에 지정 된 포트에서 BackendAddressPool의 각 인스턴스에 대한 주기적인 상태 검사 연결을 시작 합니다. 
 
 다음 표에서는 기본 상태 프로브와 관련 된 값을 나열 합니다.
 
@@ -95,7 +95,7 @@ DhcpOptions            : {
 * BackendHttpSetting이 포트 80이 아닌 다른 포트를 지정하는 경우 기본 사이트는 해당 포트에서 수신하도록 구성되어야 합니다.
 * `http://127.0.0.1:port` 호출은 HTTP 결과 코드 200을 반환해야 합니다. 이는 30 초 제한 시간 내에 반환 되어야 합니다.
 * 구성 된 포트가 열려 있고 구성 된 포트에서 들어오거나 나가는 트래픽을 차단 하는 방화벽 규칙 또는 Azure 네트워크 보안 그룹이 없는지 확인 합니다.
-* Azure 클래식 Vm 또는 클라우드 서비스를 FQDN 또는 공용 IP와 함께 사용 하는 경우 해당 [끝점이](../virtual-machines/windows/classic/setup-endpoints.md?toc=%2fazure%2fapplication-gateway%2ftoc.json) 열려 있는지 확인 합니다.
+* Azure 클래식 Vm 또는 클라우드 서비스를 FQDN 또는 공용 IP와 함께 사용 하는 경우 해당 [엔드포인트이](../virtual-machines/windows/classic/setup-endpoints.md?toc=%2fazure%2fapplication-gateway%2ftoc.json) 열려 있는지 확인 합니다.
 * VM이 Azure Resource Manager를 통해 구성 되 고 응용 프로그램 게이트웨이가 배포 된 VNet 외부에 있는 경우, 원하는 포트에서 액세스를 허용 하도록 [네트워크 보안 그룹](../virtual-network/security-overview.md) 을 구성 해야 합니다.
 
 ## <a name="problems-with-custom-health-probe"></a>사용자 지정 상태 검색의 문제
@@ -154,7 +154,7 @@ Application Gateway를 사용 하 여 BackendHttpSetting를 통해이 설정을 
 Get-AzApplicationGateway -Name "SampleGateway" -ResourceGroupName "ExampleResourceGroup"
 ```
 
-앞의 cmdlet에서 출력은 비어 있지 않은 백 엔드 주소 풀을 포함해야 합니다. 다음 예제에서는 백 엔드 Vm에 대 한 FQDN 또는 IP 주소를 사용 하 여 구성 된 두 개의 풀을 보여 줍니다. BackendAddressPool의 상태를 프로비전하는 작업은 '성공'해야 합니다.
+앞의 cmdlet에서 출력은 비어 있지 않은 백 엔드 주소 풀을 포함해야 합니다. 다음 예제에서는 백 엔드 Vm에 대한 FQDN 또는 IP 주소를 사용 하 여 구성 된 두 개의 풀을 보여 줍니다. BackendAddressPool의 상태를 프로비전하는 작업은 '성공'해야 합니다.
 
 BackendAddressPoolsText:
 
@@ -190,7 +190,7 @@ BackendAddressPool의 모든 인스턴스가 비정상 이면 응용 프로그�
 
 ### <a name="solution"></a>해결 방법
 
-인스턴스가 정상이고 애플리케이션이 올바르게 구성되어 있는지 확인합니다. 백 엔드 인스턴스가 동일한 VNet의 다른 VM에서 ping에 응답할 수 있는지 확인 합니다. 공용 끝점을 사용 하 여 구성 하는 경우 웹 응용 프로그램에 대 한 브라우저 요청을 서비스할 수 있는지 확인 합니다.
+인스턴스가 정상이고 애플리케이션이 올바르게 구성되어 있는지 확인합니다. 백 엔드 인스턴스가 동일한 VNet의 다른 VM에서 ping에 응답할 수 있는지 확인 합니다. 공용 엔드포인트을 사용 하 여 구성 하는 경우 웹 응용 프로그램에 대한 브라우저 요청을 서비스할 수 있는지 확인 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

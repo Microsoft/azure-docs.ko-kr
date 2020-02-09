@@ -26,14 +26,14 @@ ms.locfileid: "76775212"
 
 서비스 간 호출에 대 한 토큰을 획득 하 고 사용 하는 방법을 배웠으므로 이제 앱을 프로덕션으로 이동 하는 방법을 알아보세요.
 
-## <a name="deployment---multitenant-daemon-apps"></a>배포-다중 테 넌 트 디먼 앱
+## <a name="deployment---multitenant-daemon-apps"></a>배포-다중 테넌트 디먼 앱
 
-여러 테 넌 트에서 실행할 수 있는 디먼 응용 프로그램을 만드는 ISV 인 경우 테 넌 트 관리자가 다음을 확인 해야 합니다.
+여러 테넌트에서 실행할 수 있는 디먼 응용 프로그램을 만드는 ISV 인 경우 테넌트 관리자가 다음을 확인 해야 합니다.
 
 - 응용 프로그램에 대 한 서비스 주체를 프로 비전 합니다.
 - 응용 프로그램에 동의를 부여 합니다.
 
-이러한 작업을 수행 하는 방법을 고객에 게 설명 해야 합니다. 자세한 내용은 [전체 테 넌 트에 대 한 동의 요청](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant)을 참조 하세요.
+이러한 작업을 수행 하는 방법을 고객에 게 설명 해야 합니다. 자세한 내용은 [전체 테넌트에 대 한 동의 요청](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant)을 참조 하세요.
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
 
@@ -48,7 +48,7 @@ ms.locfileid: "76775212"
   - [ConfidentialClientApplication](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder)인스턴스화.
   - [AcquireTokenForClient](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.acquiretokenforclientparameterbuilder)를 호출 합니다.
 - 기타 샘플/자습서:
-  - [microsoft-](https://github.com/Azure-Samples/microsoft-identity-platform-console-daemon) --platform-디먼 기능 Microsoft Graph 쿼리 하는 테 넌 트의 사용자를 표시 하는 간단한 .net Core 디먼 콘솔 응용 프로그램입니다.
+  - [microsoft-](https://github.com/Azure-Samples/microsoft-identity-platform-console-daemon) --platform-디먼 기능 Microsoft Graph 쿼리 하는 테넌트의 사용자를 표시 하는 간단한 .net Core 디먼 콘솔 응용 프로그램입니다.
 
     ![샘플 디먼 앱 토폴로지](media/scenario-daemon-app/daemon-app-sample.svg)
 

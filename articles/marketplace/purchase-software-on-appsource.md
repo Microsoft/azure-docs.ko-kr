@@ -26,7 +26,7 @@ SaaS 제품을 구매 하려면 다음이 필요 합니다.
 - 회사 또는 학교 계정
 
     > [!Note]
-    > 회사 또는 학교 계정이 없는 경우 회사 또는 학교 계정을 추가할 수 있는 Azure Active Directory 테 넌 트를 만들어야 합니다. 자세히 알아보려면 [빠른 시작: Azure Active Directory에서 새 테 넌 트 만들기](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)를 참조 하세요.
+    > 회사 또는 학교 계정이 없는 경우 회사 또는 학교 계정을 추가할 수 있는 Azure Active Directory 테넌트를 만들어야 합니다. 자세히 알아보려면 [빠른 시작: Azure Active Directory에서 새 테넌트 만들기](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)를 참조 하세요.
 
 - 유효한 신용 카드입니다.
 

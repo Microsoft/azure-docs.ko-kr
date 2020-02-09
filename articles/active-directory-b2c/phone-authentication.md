@@ -29,12 +29,12 @@ Azure Active Directory B2C (Azure AD B2C)의 전화 등록 및 로그인을 사�
 ## <a name="prerequisites"></a>필수 조건
 
 * [Azure AD B2C 테넌트](tutorial-create-tenant.md)
-* 테 넌 트에 [등록 된 웹 응용 프로그램](tutorial-register-applications.md)
-* 테 넌 트에 업로드 된 [사용자 지정 정책](custom-policy-get-started.md)
+* 테넌트에 [등록 된 웹 응용 프로그램](tutorial-register-applications.md)
+* 테넌트에 업로드 된 [사용자 지정 정책](custom-policy-get-started.md)
 
 ## <a name="get-the-phone-sign-up--sign-in-starter-pack"></a>전화 등록 & 로그인 시작 팩 가져오기
 
-Azure AD B2C 테 넌 트와 함께 작동 하도록 전화 등록 및 로그인 사용자 지정 정책 파일을 업데이트 하 여 시작 합니다.
+Azure AD B2C 테넌트와 함께 작동 하도록 전화 등록 및 로그인 사용자 지정 정책 파일을 업데이트 하 여 시작 합니다.
 
 다음 단계에서는 [필수 구성 요소](#prerequisites) 를 완료 하 고 [사용자 지정 정책 시작 팩][starter-pack] 리포지토리를 로컬 컴퓨터에 이미 복제 했다고 가정 합니다.
 
@@ -42,13 +42,13 @@ Azure AD B2C 테 넌 트와 함께 작동 하도록 전화 등록 및 로그인 
 
     `active-directory-b2c-custom-policy-starterpack/scenarios/`**`phone-number-passwordless`**
 
-1. 각 파일에서 `yourtenant` 문자열을 Azure AD B2C 테 넌 트의 이름으로 바꿉니다. 예를 들어 B2C 테 넌 트의 이름이 *contosob2c*인 경우 `yourtenant.onmicrosoft.com`의 모든 인스턴스가 `contosob2c.onmicrosoft.com`됩니다.
+1. 각 파일에서 `yourtenant` 문자열을 Azure AD B2C 테넌트의 이름으로 바꿉니다. 예를 들어 B2C 테넌트의 이름이 *contosob2c*인 경우 `yourtenant.onmicrosoft.com`의 모든 인스턴스가 `contosob2c.onmicrosoft.com`됩니다.
 
 1. [Azure Active Directory B2C에서 사용자 지정 정책 시작](custom-policy-get-started.md)의 [사용자 지정 정책에 응용 프로그램 id 추가](custom-policy-get-started.md#add-application-ids-to-the-custom-policy) 섹션에 설명 된 단계를 완료 합니다. 이 경우 *IdentityExperienceFramework* 및 *ProxyIdentityExperienceFramework*필수 구성 요소를 완료할 때 등록 한 두 응용 프로그램의 **응용 프로그램 (클라이언트) id** 로 **`Phone_Email_Base.xml`** `/phone-number-passwordless/`업데이트 합니다.
 
 ## <a name="upload-the-policy-files"></a>정책 파일을 업로드 합니다.
 
-1. [Azure Portal](https://portal.azure.com) 에 로그인 하 여 Azure AD B2C 테 넌 트로 이동 합니다.
+1. [Azure Portal](https://portal.azure.com) 에 로그인 하 여 Azure AD B2C 테넌트로 이동 합니다.
 1. **정책**에서 **Id 경험 프레임 워크**를 선택 합니다.
 1. **사용자 지정 정책 업로드**를 선택 합니다.
 1. 다음 순서로 정책 파일을 업로드 합니다.

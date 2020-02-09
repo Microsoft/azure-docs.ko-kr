@@ -33,7 +33,7 @@ ms.locfileid: "69971343"
 | `image.pullByHash`| Docker 이미지를 해시로 끌어올 지 여부를 나타냅니다. 인 경우 `true`가필요합니다 `image.hash` . | `false` |
 | `image.hash`| **음성 텍스트** docker 이미지 해시입니다. 인 경우 `image.pullByHash: true`에만 사용 됩니다.  | |
 | `image.args.eula`하다 | 라이선스를 수락 했음을 나타냅니다. 유일 하 게 유효한 값은`accept` | |
-| `image.args.billing`하다 | 청구 끝점 URI 값은 Azure Portal의 음성 개요 페이지에서 사용할 수 있습니다. | |
+| `image.args.billing`하다 | 청구 엔드포인트 URI 값은 Azure Portal의 음성 개요 페이지에서 사용할 수 있습니다. | |
 | `image.args.apikey`하다 | 청구 정보를 추적하는 데 사용됩니다. ||
 | `service.type` | **음성 텍스트** 서비스의 Kubernetes 서비스 유형입니다. 자세한 내용은 [Kubernetes service types 지침](https://kubernetes.io/docs/concepts/services-networking/service/) 및 클라우드 공급자 지원 확인을 참조 하세요. | `LoadBalancer` |
 | `service.port`|  **음성 텍스트** 서비스의 포트입니다. | `80` |

@@ -40,7 +40,7 @@ Az 사용을 시작하려면 [Azure Az 설치 지침](https://docs.microsoft.com
 
 ## <a name="classic"></a> PowerShell 클래식
 
-Studio (클래식) [PowerShell 클래식 모듈](https://aka.ms/amlps) 을 사용 하면 **클래식 배포 모델**을 사용 하 여 배포 된 리소스를 관리할 수 있습니다. 이러한 리소스에는 Studio (클래식) 사용자 자산, "클래식" 웹 서비스 및 "클래식" 웹 서비스 끝점이 포함 됩니다.
+Studio (클래식) [PowerShell 클래식 모듈](https://aka.ms/amlps) 을 사용 하면 **클래식 배포 모델**을 사용 하 여 배포 된 리소스를 관리할 수 있습니다. 이러한 리소스에는 Studio (클래식) 사용자 자산, "클래식" 웹 서비스 및 "클래식" 웹 서비스 엔드포인트이 포함 됩니다.
 
 그러나 리소스의 배포 및 관리를 간소화 하기 위해 이후의 모든 리소스에 리소스 관리자 배포 모델을 사용 하는 것이 좋습니다. 배포 모델에 대해 자세히 알아보려면 [Azure Resource Manager와 클래식 배포 비교](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-model)를 참조하세요.
 
@@ -57,7 +57,7 @@ PowerShell 클래식은 Az 또는 AzureRM와 함께 설치 하 여 "새" 및 "�
 | 작업 영역 약정 계획 관리 | [New-AzMlCommitmentPlan](https://docs.microsoft.com/powershell/module/az.machinelearning/new-azmlcommitmentplan) | |
 | 작업 영역 사용자 관리 |  | [Add-AmlWorkspaceUsers](https://github.com/hning86/azuremlps#add-amlworkspaceusers)|
 | 웹 서비스 관리 | [New-AzMlWebService](https://docs.microsoft.com/powershell/module/az.machinelearning/new-azmlwebservice) <br>("새" 웹 서비스)|| [New-AmlWebService](https://github.com/hning86/azuremlps#manage-classic-web-service) <br>("클래식" 웹 서비스) |
-| 웹 서비스 끝점/키 관리 |  [Get-AzMlWebServiceKey](https://docs.microsoft.com/powershell/module/az.machinelearning/get-azmlwebservicekey)|  [Add-AmlWebServiceEndpoint](https://github.com/hning86/azuremlps#manage-classic-web-servcie-endpoint)|
+| 웹 서비스 엔드포인트/키 관리 |  [Get-AzMlWebServiceKey](https://docs.microsoft.com/powershell/module/az.machinelearning/get-azmlwebservicekey)|  [Add-AmlWebServiceEndpoint](https://github.com/hning86/azuremlps#manage-classic-web-servcie-endpoint)|
 | 사용자 데이터 집합/학습 된 모델 관리| | [Get-AmlDataset](https://github.com/hning86/azuremlps#manage-user-assets-dataset-trained-model-transform) |
 | 사용자 실험 관리 |  | [Start-AmlExperiment](https://github.com/hning86/azuremlps#manage-experiment) |
 | 사용자 지정 모듈 관리 | | [New-AmlCustomModule](https://github.com/hning86/azuremlps#manage-custom-module) |

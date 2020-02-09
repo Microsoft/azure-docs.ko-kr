@@ -33,7 +33,7 @@ ms.locfileid: "73812658"
     위의 목록에서 CRM 시스템을 명시적으로 지원 하지 않는 경우 고객 리드 데이터를 저장 하는 데 사용할 수 있는 다음과 같은 옵션을 사용할 수 있습니다. 그런 다음 이러한 데이터를 CRM 시스템으로 내보내거나 가져올 수 있습니다.
 
     * [Azure Table](../commercial-marketplace-lead-management-instructions-azure-table.md)
-    * [Https 끝점](../commercial-marketplace-lead-management-instructions-https.md)
+    * [Https 엔드포인트](../commercial-marketplace-lead-management-instructions-https.md)
 
 2. 선택한 잠재 고객 대상에 대해 위에서 설명한 설명서를 읽고 marketplace 제품에서 잠재 고객을 받는 잠재 고객을 설정 하는 방법을 확인 합니다. 
 3. 파트너 센터의 marketplace에 제품을 게시 하는 동안 제품을 잠재 고객 대상에 연결 합니다. 이 작업을 수행 하는 방법은 위에 링크 된 설명서를 참조 하세요.

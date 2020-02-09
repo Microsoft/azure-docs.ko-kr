@@ -1,5 +1,5 @@
 ---
-title: VNet 끝점 관리-Azure CLI-Azure Database for MySQL
+title: VNet 엔드포인트 관리-Azure CLI-Azure Database for MySQL
 description: 이 문서에서는 Azure CLI 명령줄을 사용하여 Azure Database for MySQL VNet 서비스 엔드포인트 및 규칙을 만들고 관리하는 방법을 설명합니다.
 author: bolzmj
 ms.author: mbolz

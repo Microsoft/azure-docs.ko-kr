@@ -26,7 +26,7 @@ ms.locfileid: "74819110"
 
 ## <a name="understanding-azure-kms-endpoints-for-windows-product-activation-of-azure-virtual-machines"></a>Azure Virtual Machines의 Windows 제품 정품 인증을 위한 Azure KMS 엔드포인트 이해
 
-Azure는 VM이 상주 하는 클라우드 지역에 따라 KMS (키 관리 서비스) 정품 인증에 서로 다른 끝점을 사용 합니다. 이 문제 해결 가이드를 사용하는 경우 사용자의 지역에 해당하는 적절한 KMS 엔드포인트를 사용합니다.
+Azure는 VM이 상주 하는 클라우드 지역에 따라 KMS (키 관리 서비스) 정품 인증에 서로 다른 엔드포인트을 사용 합니다. 이 문제 해결 가이드를 사용하는 경우 사용자의 지역에 해당하는 적절한 KMS 엔드포인트를 사용합니다.
 
 * Azure 퍼블릭 클라우드 지역: kms.core.windows.net:1688
 * Azure 중국 21Viant 국가 클라우드 지역: kms.core.chinacloudapi.cn:1688
@@ -100,7 +100,7 @@ Windows Azure VM을 활성화하려고 할 때 다음 샘플과 유사한 오류
 
    모든 DNS 서버를 가상 네트워크에서 제거하면 VM은 Azure의 내부 DNS 서비스를 사용할 수 있습니다. 이 서비스는 kms.core.windows.net을 확인할 수 있습니다.
   
-    또한 1688 포트가 있는 KMS 끝점에 대 한 아웃 바운드 네트워크 트래픽이 VM의 방화벽에서 차단 되지 않았는지 확인 합니다.
+    또한 1688 포트가 있는 KMS 엔드포인트에 대 한 아웃 바운드 네트워크 트래픽이 VM의 방화벽에서 차단 되지 않았는지 확인 합니다.
 
 5. kms.core.windows.net에 성공적으로 연결되었는지 확인한 후에 해당 관리자 권한 Windows PowerShell 프롬프트에서 다음 명령을 실행합니다. 이 명령은 여러 번 활성화되도록 시도합니다.
 

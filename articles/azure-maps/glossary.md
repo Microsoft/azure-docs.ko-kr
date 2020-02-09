@@ -1,6 +1,6 @@
 ---
 title: Azure Maps 용어집 | Microsoft Docs
-description: Azure Maps, 위치 기반 서비스 및 GIS와 관련 된 일반적으로 사용 되는 용어에 대 한 용어입니다.
+description: Azure Maps, 위치 기반 서비스 및 GIS와 관련 된 일반적으로 사용 되는 용어에 대한 용어입니다.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 09/18/2018
@@ -31,7 +31,7 @@ Azure Maps에서 사용되는 일반적인 단어 목록은 다음과 같습니�
 
 <a name="altitude"></a>고 **도: 참조**화면 위에 있는 점의 높이 또는 수직 상승입니다. 고도 측정은 평균 해면 등 지정된 참조 자료를 기반으로 합니다. 상승도 참조하세요.
 
-<a name="ambiguous"></a>**모호한**: 지정 된 특성에 대 한 둘 이상의 값이 개체에 적절 하 게 할당 될 수 있는 경우에 존재 하는 데이터 분류의 불확실성 상태입니다. 예를 들어, "CA"를 지오코딩하면 두 개의 모호한 결과가 반환됩니다. "CA"로 표시된 "캐나다" 및 "캘리포니아"는 각각 국가 및 상태 코드입니다. 
+<a name="ambiguous"></a>**모호한**: 지정 된 특성에 대한 둘 이상의 값이 개체에 적절 하 게 할당 될 수 있는 경우에 존재 하는 데이터 분류의 불확실성 상태입니다. 예를 들어, "CA"를 지오코딩하면 두 개의 모호한 결과가 반환됩니다. "CA"로 표시된 "캐나다" 및 "캘리포니아"는 각각 국가 및 상태 코드입니다. 
 
 <a name="annotation"></a>**주석**: 사용자에 게 정보를 제공 하기 위해 지도에 표시 되는 텍스트 또는 그래픽입니다. 주석은 특정 지도 엔터티를 식별하고 설명하거나, 지도에서 영역에 대한 일반 정보를 제공하거나, 지도 자체에 대한 정보를 제공할 수 있습니다.
 
@@ -41,19 +41,19 @@ Azure Maps에서 사용되는 일반적인 단어 목록은 다음과 같습니�
 
 <a name="api-key"></a>**API 키**: [공유 키 인증](#shared-key-authentication)을 참조 하세요.
 
-<a name="area-of-interest-aoi"></a>**관심 영역 (AOI)** : 지도 또는 데이터베이스 생산에 대 한 포커스 영역을 정의 하는 데 사용 되는 범위입니다.
+<a name="area-of-interest-aoi"></a>**관심 영역 (AOI)** : 지도 또는 데이터베이스 생산에 대한 포커스 영역을 정의 하는 데 사용 되는 범위입니다.
 
 <a name="asset-tracking"></a>**자산 추적**: 사람, 차량 또는 기타 개체와 같은 자산의 위치를 추적 하는 프로세스입니다.
 
-<a name="asynchronous-request"></a>**비동기 요청**: 연결을 열고 비동기 요청에 대 한 식별자를 반환 하는 서버에 요청을 한 다음 연결을 닫는 HTTP 요청입니다. 서버는 요청을 계속 처리하고 사용자는 식별자를 사용하여 상태를 확인할 수 있습니다. 요청 처리가 완료되면 사용자가 응답을 다운로드할 수 있습니다. 이 유형의 요청은 장기 실행 프로세스에 사용 됩니다.
+<a name="asynchronous-request"></a>**비동기 요청**: 연결을 열고 비동기 요청에 대한 식별자를 반환 하는 서버에 요청을 한 다음 연결을 닫는 HTTP 요청입니다. 서버는 요청을 계속 처리하고 사용자는 식별자를 사용하여 상태를 확인할 수 있습니다. 요청 처리가 완료되면 사용자가 응답을 다운로드할 수 있습니다. 이 유형의 요청은 장기 실행 프로세스에 사용 됩니다.
 
 <a name="autocomplete"></a>**자동 완성**: 응용 프로그램의 기능은 사용자가 입력 하는 나머지 단어를 예측 합니다. 
 
-<a name="autosuggest"></a>**Autosuggest**: 응용 프로그램의 기능으로, 사용자가 입력 하는 내용에 대 한 논리적 가능성을 예측 합니다.
+<a name="autosuggest"></a>**Autosuggest**: 응용 프로그램의 기능으로, 사용자가 입력 하는 내용에 대한 논리적 가능성을 예측 합니다.
 
 <a name="azure-location-based-services-lbs"></a>**Azure Location Based Services (이란)** : 미리 보기 상태인 Azure Maps의 이전 이름입니다.
 
-<a name="azure-active-directory"></a>**Azure Active Directory (AZURE ad)** : azure Ad는 Microsoft의 클라우드 기반 id 및 액세스 관리 서비스입니다. Azure Maps Azure AD 통합은 현재 모든 Azure Maps Api에 대해 미리 보기에서 사용할 수 있습니다. Azure AD는 RBAC (역할 기반 액세스 제어)를 지원 하 여 Azure Maps 리소스에 대 한 세분화 액세스를 허용 합니다. Azure Maps Azure AD 통합에 대 한 자세한 내용은 [Azure Maps 및 AZURE ad](azure-maps-authentication.md) 및 [Azure Maps에서 인증 관리](how-to-manage-authentication.md)를 참조 하세요.
+<a name="azure-active-directory"></a>**Azure Active Directory (AZURE ad)** : azure Ad는 Microsoft의 클라우드 기반 id 및 액세스 관리 서비스입니다. Azure Maps Azure AD 통합은 현재 모든 Azure Maps Api에 대해 미리 보기에서 사용할 수 있습니다. Azure AD는 RBAC (역할 기반 액세스 제어)를 지원 하 여 Azure Maps 리소스에 대한 세분화 액세스를 허용 합니다. Azure Maps Azure AD 통합에 대한 자세한 내용은 [Azure Maps 및 AZURE ad](azure-maps-authentication.md) 및 [Azure Maps에서 인증 관리](how-to-manage-authentication.md)를 참조 하세요.
 
 <a name="azure-maps-key"></a>**Azure Maps 키**: [공유 키 인증](#shared-key-authentication)을 참조 하세요.
 
@@ -73,7 +73,7 @@ Azure Maps에서 사용되는 일반적인 단어 목록은 다음과 같습니�
 
 ## <a name="c"></a>C
 
-<a name="cadastre"></a>**Cadastre**: 등록 된 육지 및 속성에 대 한 레코드입니다. 또한 [구획](#parcel)을 참조하세요.
+<a name="cadastre"></a>**Cadastre**: 등록 된 육지 및 속성에 대한 레코드입니다. 또한 [구획](#parcel)을 참조하세요.
 
 <a name="camera"></a>**카메라**: 대화형 지도 컨트롤의 컨텍스트에서 카메라는 보기의 맵 필드를 정의 합니다. 카메라의 뷰포트는 중심, 확대/축소 수준, 피치, 방위 등 여러 지도 매개 변수에 따라 결정됩니다. 
 
@@ -85,7 +85,7 @@ Azure Maps에서 사용되는 일반적인 단어 목록은 다음과 같습니�
 
 <a name="consumption-model"></a>**소비 모델**: 차량 연료 또는 전기를 소비 하는 속도를 정의 하는 정보입니다. 또한 [소비 모델 설명서](consumption-model.md)를 참조하세요.
 
-<a name="control"></a>**Control**: 인터페이스에 대 한 동작 집합을 정의 하는 그래픽 사용자 인터페이스로 구성 된 자체 포함 되거나 재사용 가능한 구성 요소입니다. 예를 들어 지도 컨트롤은 일반적으로 대화형 지도를 로드하는 사용자 인터페이스의 일부입니다.
+<a name="control"></a>**Control**: 인터페이스에 대한 동작 집합을 정의 하는 그래픽 사용자 인터페이스로 구성 된 자체 포함 되거나 재사용 가능한 구성 요소입니다. 예를 들어 지도 컨트롤은 일반적으로 대화형 지도를 로드하는 사용자 인터페이스의 일부입니다.
 
 <a name="convex-hull"></a>**볼록 선체**: 볼록 선체는 지정 된 데이터 집합의 모든 셰이프를 둘러싸는 최소 볼록 기 하 도형을 나타내는 도형입니다. 생성된 모양은 데이터 집합 주위를 래핑하는 탄력적 밴드와 비슷합니다.
 
@@ -93,7 +93,7 @@ Azure Maps에서 사용되는 일반적인 단어 목록은 다음과 같습니�
 
 <a name="coordinate-system"></a>**좌표계**: 두 개 또는 세 개의 차원에서 공간에 있는 점의 위치를 정의 하는 데 사용 되는 참조 프레임 워크입니다.
 
-<a name="country-code"></a>**국가 코드**: ISO 표준을 기반으로 하는 국가/지역에 대 한 고유 식별자입니다. ISO2는 국가의 두자리 코드(예: US)이고, ISO3은 3자리 코드(예: USA)를 나타냅니다.
+<a name="country-code"></a>**국가 코드**: ISO 표준을 기반으로 하는 국가/지역에 대한 고유 식별자입니다. ISO2는 국가의 두자리 코드(예: US)이고, ISO3은 3자리 코드(예: USA)를 나타냅니다.
 
 <a name="country-subdivision"></a>**국가**하위 수준: 일반적으로 시/도 라고 하는 국가/지역의 첫 번째 수준 하위 수준입니다.
 
@@ -107,7 +107,7 @@ Azure Maps에서 사용되는 일반적인 단어 목록은 다음과 같습니�
 
 ## <a name="d"></a>D
 
-<a name="datum"></a>**Datum**: 측정 시스템의 참조 사양으로, 표면 (가로 데이텀) 또는 표면 위 또는 아래 (세로 데이텀)의 좌표 위치에 대 한 시스템입니다.
+<a name="datum"></a>**Datum**: 측정 시스템의 참조 사양으로, 표면 (가로 데이텀) 또는 표면 위 또는 아래 (세로 데이텀)의 좌표 위치에 대한 시스템입니다.
 
 <a name="dbf-file"></a>**DBF 파일**: 셰이프 파일 (.shp)와 함께 사용 되는 데이터베이스 파일 형식입니다.
 
@@ -117,7 +117,7 @@ Azure Maps에서 사용되는 일반적인 단어 목록은 다음과 같습니�
 
 <a name="demographics"></a>**인구**통계: 인간 모집단의 통계 특성 (예: 나이, 출생 율 및 수입)입니다.
 
-<a name="destination"></a>**Destination**: 누군가가 이동 하는 끝점 또는 위치입니다.
+<a name="destination"></a>**Destination**: 누군가가 이동 하는 엔드포인트 또는 위치입니다.
 
 <a name="digital-elevation-model-dem"></a>**DEM (디지털 권한 상승 모델)** : 공통 된 일정을 사용 하 여 정기적으로 영역에 캡처한 서피스와 관련 된 상승 값의 데이터 집합입니다. DEM은 일반적으로 지형을 나타내는 데 사용됩니다.
 
@@ -291,13 +291,13 @@ Azure Maps에서 사용되는 일반적인 단어 목록은 다음과 같습니�
 
 <a name="prime-meridian"></a>**프라임 자오선**: 0도 경도를 나타내는 경도 선입니다. 일반적으로 경도 값은 서쪽 방향으로 180도 이동할 때 감소하고, 동쪽 방향으로 -180도 이동할 때 증가합니다. 
 
-<a name="prj"></a>**Prj**: 데이터 집합이 있는 예상 좌표 시스템에 대 한 정보가 포함 된 esri 파일이 자주 포함 되는 텍스트 파일입니다.
+<a name="prj"></a>**Prj**: 데이터 집합이 있는 예상 좌표 시스템에 대한 정보가 포함 된 esri 파일이 자주 포함 되는 텍스트 파일입니다.
 
 <a name="projection"></a>**프로젝션**: 가로 Mercator, Albers 같은 영역 및 Robinson과 같은 지도 프로젝션을 기반으로 하는 예상 좌표 시스템입니다. 여기에서는 2차원 데카르트 좌표 평면에 지표면의 지도를 투영하는 기능을 제공합니다. 투영된 좌표계는 지도 프로젝션이라고도 합니다.
 
 ## <a name="q"></a>Q
 
-<a name="quadkey"></a>**Quadkey**: quadtree 바둑판식 배열 시스템 내의 타일에 대 한 기본-4 주소 인덱스입니다. 자세한 내용은 [확대/축소 수준 및 타일 그리드](zoom-levels-and-tile-grid.md) 설명서를 참조하세요.
+<a name="quadkey"></a>**Quadkey**: quadtree 바둑판식 배열 시스템 내의 타일에 대한 기본-4 주소 인덱스입니다. 자세한 내용은 [확대/축소 수준 및 타일 그리드](zoom-levels-and-tile-grid.md) 설명서를 참조하세요.
 
 <a name="quadtree"></a>**Quadtree**: 각 노드에 정확히 네 개의 자식이 있는 데이터 구조입니다. Azure Maps에서 사용되는 타일링 시스템은 사용자가 한 수준을 확대하면 각 지도 타일이 4개의 하위 타일로 분할되는 4분할 구조를 사용합니다.  자세한 내용은 [확대/축소 수준 및 타일 그리드](zoom-levels-and-tile-grid.md) 설명서를 참조하세요.
 
@@ -311,7 +311,7 @@ Azure Maps에서 사용되는 일반적인 단어 목록은 다음과 같습니�
 
 <a name="raster-layer"></a>**래스터 계층**: 래스터 이미지로 구성 된 타일 계층입니다.
 
-<a name="reachable-range"></a>연결 가능한 **범위**: 연결 가능한 범위는 이동 하는 데 사용할 모드에 대 한 지정 된 시간 또는 거리 내에서 다른 사람이 이동 하는 영역을 정의 합니다. [등시선](#isochrone) 및 [등거리선](#isodistance)을 참조하세요.
+<a name="reachable-range"></a>연결 가능한 **범위**: 연결 가능한 범위는 이동 하는 데 사용할 모드에 대한 지정 된 시간 또는 거리 내에서 다른 사람이 이동 하는 영역을 정의 합니다. [등시선](#isochrone) 및 [등거리선](#isodistance)을 참조하세요.
 
 <a name="remote-sensing"></a>**원격 감지**: 거리에서 센서 데이터를 수집 하 고 해석 하는 프로세스입니다.
 
@@ -321,9 +321,9 @@ Azure Maps에서 사용되는 일반적인 단어 목록은 다음과 같습니�
 
 <a name="reproject"></a>**Reproject**: [변환](#transformation)을 참조 하세요.
 
-<a name="rest-service"></a>**REST 서비스**: Representational State Transfer에 대 한 머리글자어입니다. 분산되고 광범위한 환경에서 피어 간에 정보를 교환하는 아키텍처입니다. REST를 사용하면 다른 컴퓨터의 프로그램이 URL(Uniform Resource Locator)에 HTTP(Hypertext Transfer Protocol) 요청을 전송하여 운영 체제 또는 플랫폼과 독립적으로 통신하고 데이터를 다시 가져올 수 있습니다.
+<a name="rest-service"></a>**REST 서비스**: Representational State Transfer에 대한 머리글자어입니다. 분산되고 광범위한 환경에서 피어 간에 정보를 교환하는 아키텍처입니다. REST를 사용하면 다른 컴퓨터의 프로그램이 URL(Uniform Resource Locator)에 HTTP(Hypertext Transfer Protocol) 요청을 전송하여 운영 체제 또는 플랫폼과 독립적으로 통신하고 데이터를 다시 가져올 수 있습니다.
 
-<a name="route"></a>**Route**: 두 개 이상의 위치 간 경로입니다. 경로를 따라 waypoints에 대 한 지침과 같은 추가 정보를 포함할 수도 있습니다.
+<a name="route"></a>**Route**: 두 개 이상의 위치 간 경로입니다. 경로를 따라 waypoints에 대한 지침과 같은 추가 정보를 포함할 수도 있습니다.
 
 <a name="requests-per-second-rps"></a>초당 **요청 수 (RPS)** : [초당 쿼리 수 (QPS)](#queries-per-second-qps)를 참조 하십시오. 
 
@@ -337,13 +337,13 @@ Azure Maps에서 사용되는 일반적인 단어 목록은 다음과 같습니�
 
 <a name="shapefile-shp"></a>**Esri (.shp)** : ESRI esri 라고도 하는는 지리적 기능의 위치, 모양 및 특성을 저장 하는 벡터 데이터 저장소 형식입니다. 셰이프 파일은 관련된 파일 집합에 저장됩니다.
 
-<a name="shared-key-authentication"></a>**공유 키 인증**: 공유 키 인증은 Azure Maps에 대 한 각 요청과 함께 계정 생성 키 Azure Maps 전달에 의존 합니다. 이러한 키를 주로 구독 키 라고 합니다. 보안을 위해 키를 정기적으로 다시 생성 하는 것이 좋습니다. 다른 키를 다시 생성 하는 동안 한 키를 사용 하 여 연결을 유지할 수 있도록 두 개의 키가 제공 됩니다. 키를 다시 생성하는 경우 이 계정에 액세스하는 모든 애플리케이션이 새 키를 사용하도록 업데이트해야 합니다. Azure Maps 인증에 대 한 자세한 내용은 [Azure Maps 및 AZURE AD](azure-maps-authentication.md) 및 [Azure Maps에서 인증 관리](how-to-manage-authentication.md)를 참조 하세요.
+<a name="shared-key-authentication"></a>**공유 키 인증**: 공유 키 인증은 Azure Maps에 대한 각 요청과 함께 계정 생성 키 Azure Maps 전달에 의존 합니다. 이러한 키를 주로 구독 키 라고 합니다. 보안을 위해 키를 정기적으로 다시 생성 하는 것이 좋습니다. 다른 키를 다시 생성 하는 동안 한 키를 사용 하 여 연결을 유지할 수 있도록 두 개의 키가 제공 됩니다. 키를 다시 생성하는 경우 이 계정에 액세스하는 모든 애플리케이션이 새 키를 사용하도록 업데이트해야 합니다. Azure Maps 인증에 대한 자세한 내용은 [Azure Maps 및 AZURE AD](azure-maps-authentication.md) 및 [Azure Maps에서 인증 관리](how-to-manage-authentication.md)를 참조 하세요.
 
 <a name="software-development-kit-sdk"></a>**SDK (소프트웨어 개발 키트)** : 개발자가 API를 사용 하 여 앱을 빌드하는 데 도움이 되는 설명서, 샘플 코드 및 샘플 앱 모음입니다.
 
 <a name="spherical-mercator-projection"></a>**구면 Mercator 프로젝션**: [웹 Mercator](#web-mercator)를 참조 하세요. 
 
-<a name="spatial-query"></a>**공간 쿼리**: 공간 작업을 수행 하는 서비스에 대 한 요청입니다. 방사형 검색 또는 경로 검색 등이 있습니다.
+<a name="spatial-query"></a>**공간 쿼리**: 공간 작업을 수행 하는 서비스에 대한 요청입니다. 방사형 검색 또는 경로 검색 등이 있습니다.
 
 <a name="spatial-reference"></a>**공간 참조**: 지리적 엔터티를 정확 하 게 찾는 데 사용 되는 좌표 기반 지역, 지역 또는 전역 시스템입니다. 지도 좌표를 실제 위치에 연결하는 데 사용되는 좌표계를 정의합니다. 공간 참조를 사용하면 정확한 보기 또는 분석을 위해 다른 계층 또는 원본의 공간 데이터를 통합할 수 있도록 합니다. Azure Maps는 입력 기하 도형 데이터에 대해 [EPSG:3857](https://epsg.io/3857) 참조 좌표계 및 WGS 84를 사용합니다. 
 
@@ -361,7 +361,7 @@ Azure Maps에서 사용되는 일반적인 단어 목록은 다음과 같습니�
 
 <a name="terrain"></a>**지형**: 샌 트 지형 또는 mountainous와 같은 특정 특성을 갖는 지역입니다.
 
-<a name="thematic-maps"></a>**테마 maps**: 테마 map은 지리적 영역에 대 한 테마를 반영 하기 위해 작성 된 간단한 맵입니다. 이러한 유형의 지도에 대 한 일반적인 시나리오는 데이터의 일부 메트릭에 따라 국가/지역과 같은 관리 영역에 색을 설정 하는 것입니다.
+<a name="thematic-maps"></a>**테마 maps**: 테마 map은 지리적 영역에 대한 테마를 반영 하기 위해 작성 된 간단한 맵입니다. 이러한 유형의 지도에 대한 일반적인 시나리오는 데이터의 일부 메트릭에 따라 국가/지역과 같은 관리 영역에 색을 설정 하는 것입니다.
 
 <a name="tile-layer"></a>**타일 계층**: 지도 타일 (사각형 섹션)을 연속 계층으로 조합 하 여 표시 되는 계층입니다. 타일은 래스터 이미지 타일 또는 벡터 타일입니다. 래스터 타일 계층은 일반적으로 미리 렌더링되어 서버의 이미지로 저장됩니다. 이렇게 하면 스토리지 공간을 많이 사용할 수 있습니다. 벡터 타일 계층은 클라이언트 응용 프로그램 내에서 즉석에서 렌더링 되므로 서버 쪽 저장소 요구 사항은 더 작습니다.
 
@@ -378,7 +378,7 @@ Azure Maps에서 사용되는 일반적인 단어 목록은 다음과 같습니�
 
 <a name="trilateration"></a>**Trilateration**: 세 점 사이의 거리를 측정 하 여 두 개의 다른 점과 관련 하 여 지구 표면의 점의 위치를 확인 하는 프로세스입니다.
 
-<a name="turn-by-turn-navigation"></a>**단계별 탐색**: 사용자가 다음 행동에 도달할 때 경로의 각 단계에 대 한 경로 지침을 제공 하는 응용 프로그램입니다.
+<a name="turn-by-turn-navigation"></a>**단계별 탐색**: 사용자가 다음 행동에 도달할 때 경로의 각 단계에 대한 경로 지침을 제공 하는 응용 프로그램입니다.
 
 ## <a name="v"></a>V
 
@@ -386,7 +386,7 @@ Azure Maps에서 사용되는 일반적인 단어 목록은 다음과 같습니�
 
 <a name="vector-tile"></a>**Vector 타일**: 맵 컨트롤과 동일한 타일 시스템을 사용 하 여 지리 공간적 벡터 데이터를 저장 하기 위한 개방형 데이터 사양입니다. [타일 계층](#tile-layer)을 참조하세요.
 
-<a name="vehicle-routing-problem-vrp"></a>**차량 라우팅 문제 (VRP)** : 차량에 대 한 일련의 주문 경로를 계산 하는 동시에 제약 조건 집합을 고려 하는 문제를 해결 하는 클래스입니다. 이러한 제약 조건에는 배달 시간, 다중 경로 기능 및 이동 기간 제약 조건 등이 포함될 수 있습니다.
+<a name="vehicle-routing-problem-vrp"></a>**차량 라우팅 문제 (VRP)** : 차량에 대한 일련의 주문 경로를 계산 하는 동시에 제약 조건 집합을 고려 하는 문제를 해결 하는 클래스입니다. 이러한 제약 조건에는 배달 시간, 다중 경로 기능 및 이동 기간 제약 조건 등이 포함될 수 있습니다.
 
 <a name="voronoi-diagram"></a>**Voronoi 다이어그램**: 일련의 기하학적 개체 (일반적으로 point 기능)를 둘러싸는 영역 또는 셀로 이루어진 공간 파티션입니다. 이러한 셀 또는 다각형은 드로네 삼각형의 조건을 충족해야 합니다. 영역 내의 모든 위치는 집합의 다른 개체보다 둘러싸고 있는 개체에 더 가깝습니다. 보로노이 다이어그램은 지리적 기능에 영향을 주는 영역을 나타내는 데 자주 사용됩니다. 
 

@@ -1,6 +1,6 @@
 ---
 title: 자격 증명 모음 Azure Backup Recovery Services 이동 하는 방법
-description: Azure 구독 및 리소스 그룹에서 recovery services 자격 증명 모음을 이동 하는 방법에 대 한 지침입니다.
+description: Azure 구독 및 리소스 그룹에서 recovery services 자격 증명 모음을 이동 하는 방법에 대한 지침입니다.
 ms.reviewer: sogup
 ms.topic: conceptual
 ms.date: 04/08/2019
@@ -17,13 +17,13 @@ ms.locfileid: "74172882"
 
 ## <a name="supported-regions"></a>지원되는 지역
 
-Recovery Services 자격 증명 모음에 대 한 리소스 이동은 오스트레일리아 동부, 오스트레일리아 동부, 캐나다 중부, 캐나다 동부, 남부 동아시아, 동아시아, 미국 중부, 미국 중 북부, 미국 동부, 미국 미국, 미국 동부, 미국 서 부, 미국 서 부, 미국 서 부, 미국 서 부, 미국 서 부에서 지원 됩니다. 인도 중부, 인도 남부, 일본 동부, 일본 서 부, 대한민국 중부, 대한민국 남부, 유럽 서 부, 유럽 서부, 남아프리카 공화국 북부, 남아프리카 공화국, 영국 남부 및 영국 서부.
+Recovery Services 자격 증명 모음에 대한 리소스 이동은 오스트레일리아 동부, 오스트레일리아 동부, 캐나다 중부, 캐나다 동부, 남부 동아시아, 동아시아, 미국 중부, 미국 중 북부, 미국 동부, 미국 미국, 미국 동부, 미국 서 부, 미국 서 부, 미국 서 부, 미국 서 부, 미국 서 부에서 지원 됩니다. 인도 중부, 인도 남부, 일본 동부, 일본 서 부, 대한민국 중부, 대한민국 남부, 유럽 서 부, 유럽 서부, 남아프리카 공화국 북부, 남아프리카 공화국, 영국 남부 및 영국 서부.
 
-## <a name="prerequisites-for-moving-recovery-services-vault"></a>Recovery Services 자격 증명 모음 이동에 대 한 필수 조건
+## <a name="prerequisites-for-moving-recovery-services-vault"></a>Recovery Services 자격 증명 모음 이동에 대한 필수 조건
 
 - 리소스 그룹 간 자격 증명 모음 이동 중에는 쓰기 및 삭제 작업을 방지 하기 위해 원본 및 대상 리소스 그룹이 모두 잠깁니다. 자세한 내용은 이 [문서](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources)를 참조하세요.
 - 자격 증명 모음을 이동할 수 있는 권한은 관리자 구독에만 있습니다.
-- 구독에서 자격 증명 모음을 이동 하는 경우 대상 구독은 원본 구독과 동일한 테 넌 트에 상주해 야 하며 상태를 사용 하도록 설정 해야 합니다.
+- 구독에서 자격 증명 모음을 이동 하는 경우 대상 구독은 원본 구독과 동일한 테넌트에 상주해 야 하며 상태를 사용 하도록 설정 해야 합니다.
 - 대상 리소스 그룹에 쓰기 작업을 수행할 수 있는 권한이 있어야 합니다.
 - 자격 증명 모음을 이동하면 리소스 그룹이 변경됩니다. Recovery Services 자격 증명 모음은 동일한 위치에 있으며 변경할 수 없습니다.
 - 한 번에 하나의 지역에서 하나의 Recovery Services 자격 증명 모음만 이동할 수 있습니다.
@@ -132,7 +132,7 @@ az resource move --destination-group <destinationResourceGroupName> --ids <Vault
 
 ## <a name="post-migration"></a>마이그레이션 후
 
-1. 리소스 그룹에 대 한 액세스 제어를 설정/확인 합니다.  
+1. 리소스 그룹에 대한 액세스 제어를 설정/확인 합니다.  
 2. 이동이 완료된 후 자격 증명 모음에 대해 백업 보고 및 모니터링 기능을 다시 구성해야 합니다. 이전 구성은 이동 작업 중 손실됩니다.
 
 ## <a name="next-steps"></a>다음 단계

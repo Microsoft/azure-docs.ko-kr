@@ -1,6 +1,6 @@
 ---
-title: 수신 끝점에 대 한 내부 라우팅에 개인 IP 주소 사용
-description: 이 문서에서는 내부 라우팅에 개인 Ip를 사용 하 여 클러스터 내의 수신 엔드포인트를 나머지 VNet에 노출 하는 방법에 대 한 정보를 제공 합니다.
+title: 수신 엔드포인트에 대한 내부 라우팅에 개인 IP 주소 사용
+description: 이 문서에서는 내부 라우팅에 개인 Ip를 사용 하 여 클러스터 내의 수신 엔드포인트를 나머지 VNet에 노출 하는 방법에 대한 정보를 제공 합니다.
 services: application-gateway
 author: caya
 ms.service: application-gateway
@@ -14,9 +14,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/07/2019
 ms.locfileid: "73795486"
 ---
-# <a name="use-private-ip-for-internal-routing-for-an-ingress-endpoint"></a>수신 끝점에 대 한 내부 라우팅에 개인 IP 사용 
+# <a name="use-private-ip-for-internal-routing-for-an-ingress-endpoint"></a>수신 엔드포인트에 대한 내부 라우팅에 개인 IP 사용 
 
-이 기능을 사용 하면 개인 IP를 사용 하 여 `Virtual Network` 내에서 수신 끝점을 노출할 수 있습니다.
+이 기능을 사용 하면 개인 IP를 사용 하 여 `Virtual Network` 내에서 수신 엔드포인트을 노출할 수 있습니다.
 
 ## <a name="pre-requisites"></a>필수 구성 요소  
 [개인 IP 구성을](https://docs.microsoft.com/azure/application-gateway/configure-application-gateway-with-private-frontend-ip) 사용 하 여 Application Gateway
@@ -62,7 +62,7 @@ appgw:
     usePrivateIP: true
 ```
 
-그러면 Application Gateway에서 프런트 엔드 수신기를 구성할 때 수신 컨트롤러에서 개인 IP에 대 한 IP 주소 구성을 필터링 하 게 됩니다.
+그러면 Application Gateway에서 프런트 엔드 수신기를 구성할 때 수신 컨트롤러에서 개인 IP에 대한 IP 주소 구성을 필터링 하 게 됩니다.
 `usePrivateIP: true` 하 고 개인 IP가 할당 되지 않은 경우에는 AGIC가 작동 하지 않습니다.
 
 > [!NOTE]

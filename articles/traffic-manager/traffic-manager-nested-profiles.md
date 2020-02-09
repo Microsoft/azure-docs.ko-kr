@@ -101,13 +101,13 @@ Traffic Manager 프로필에서 모니터링 설정은 단일 프로필 내의 �
 
 * [트래픽 관리자가 지 원하는 중첩 계층은 몇 개입니까?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-many-layers-of-nesting-does-traffic-manger-support)
 
-* [동일한 Traffic Manager 프로필에서 다른 끝점 형식을 중첩 된 자식 프로필과 혼합할 수 있나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-mix-other-endpoint-types-with-nested-child-profiles-in-the-same-traffic-manager-profile)
+* [동일한 Traffic Manager 프로필에서 다른 엔드포인트 형식을 중첩 된 자식 프로필과 혼합할 수 있나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-mix-other-endpoint-types-with-nested-child-profiles-in-the-same-traffic-manager-profile)
 
 * [중첩 프로필에 대 한 청구 모델은 어떻게 적용 되나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-the-billing-model-apply-for-nested-profiles)
 
 * [중첩 프로필에 대 한 성능에 영향이 있나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#is-there-a-performance-impact-for-nested-profiles)
 
-* [부모 프로필에서 중첩 된 끝점의 상태를 계산 Traffic Manager는 방법](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-manager-compute-the-health-of-a-nested-endpoint-in-a-parent-profile)
+* [부모 프로필에서 중첩 된 엔드포인트의 상태를 계산 Traffic Manager는 방법](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-manager-compute-the-health-of-a-nested-endpoint-in-a-parent-profile)
 
 ## <a name="next-steps"></a>다음 단계
 

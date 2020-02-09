@@ -1,5 +1,5 @@
 ---
-title: 다중 테 넌 트 응용 프로그램에 대 한 올바른 페더레이션 프로토콜 선택
+title: 다중 테넌트 응용 프로그램에 대 한 올바른 페더레이션 프로토콜 선택
 description: Azure Active Directory와의 통합에 대 한 독립 소프트웨어 공급 업체 지침
 services: active-directory
 author: barbaraselden
@@ -19,7 +19,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75443387"
 ---
-# <a name="choose-the-right-federation-protocol-for-your-multi-tenant-application"></a>다중 테 넌 트 응용 프로그램에 대 한 올바른 페더레이션 프로토콜을 선택 합니다.
+# <a name="choose-the-right-federation-protocol-for-your-multi-tenant-application"></a>다중 테넌트 응용 프로그램에 대 한 올바른 페더레이션 프로토콜을 선택 합니다.
 
 SaaS (software as a service) 응용 프로그램을 개발 하는 경우와 고객의 요구에 가장 잘 맞는 페더레이션 프로토콜을 선택 해야 합니다. 이러한 결정은 개발 플랫폼을 기반으로 하며 고객의 Office 365 및 Azure AD 에코 시스템 내에서 사용 가능한 데이터와 통합 하고자 합니다.
 
@@ -96,6 +96,6 @@ Open ID Connect를 사용 하 여 인증 하는 경우 OAuth2를 사용 하 여 
 
 ## <a name="next-steps"></a>다음 단계
 
-[다중 테 넌 트 응용 프로그램에 SSO 사용](isv-sso-content.md)
+[다중 테넌트 응용 프로그램에 SSO 사용](isv-sso-content.md)
 
-[다중 테 넌 트 응용 프로그램에 대 한 설명서 만들기](isv-create-sso-documentation.md)
+[다중 테넌트 응용 프로그램에 대 한 설명서 만들기](isv-create-sso-documentation.md)

@@ -47,7 +47,7 @@ map.layers.add(new atlas.layer.PolygonLayer(dataSource, null,{
 }));
 ```
 
-다음은 위의 코드에 대 한 완전 하 고 실행 중인 샘플입니다.
+다음은 위의 코드에 대한 완전 하 고 실행 중인 샘플입니다.
 
 <br/>
 
@@ -88,7 +88,7 @@ map.layers.add(new atlas.layer.PolygonLayer(dataSource, null,{
 
 ## <a name="add-a-circle-to-the-map"></a>지도에 원 추가
 
-Azure Maps는 [여기](extend-geojson.md#circle)에 나와 있는 것 처럼 원에 대 한 정의를 제공 하는 GeoJSON 스키마의 확장 된 버전을 사용 합니다. 원은 `Point` 기능을 만들어 맵에 렌더링 됩니다. 이 `Point`에는 값이 `"Circle"` 인 `subType` 속성과 반지름을 미터 단위로 나타내는 숫자가 포함 된 `radius` 속성이 있습니다. 
+Azure Maps는 [여기](extend-geojson.md#circle)에 나와 있는 것 처럼 원에 대한 정의를 제공 하는 GeoJSON 스키마의 확장 된 버전을 사용 합니다. 원은 `Point` 기능을 만들어 맵에 렌더링 됩니다. 이 `Point`에는 값이 `"Circle"` 인 `subType` 속성과 반지름을 미터 단위로 나타내는 숫자가 포함 된 `radius` 속성이 있습니다. 
 
 ```javascript
 {

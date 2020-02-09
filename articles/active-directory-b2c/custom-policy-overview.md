@@ -21,7 +21,7 @@ ms.locfileid: "76847044"
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-사용자 지정 정책은 Azure Active Directory B2C (Azure AD B2C) 테 넌 트의 동작을 정의 하는 구성 파일입니다. 사용자 흐름은 가장 일반적인 ID 태스크에 대해 Azure AD B2C 포털에서 미리 정의됩니다. 사용자 지정 정책은 많은 다른 태스크를 완료하기 위해 ID 개발자가 완전히 편집할 수 있습니다.
+사용자 지정 정책은 Azure Active Directory B2C (Azure AD B2C) 테넌트의 동작을 정의 하는 구성 파일입니다. 사용자 흐름은 가장 일반적인 ID 태스크에 대해 Azure AD B2C 포털에서 미리 정의됩니다. 사용자 지정 정책은 많은 다른 태스크를 완료하기 위해 ID 개발자가 완전히 편집할 수 있습니다.
 
 ## <a name="comparing-user-flows-and-custom-policies"></a>사용자 흐름 및 사용자 지정 정책 비교
 
@@ -32,7 +32,7 @@ ms.locfileid: "76847044"
 | UI 사용자 지정 | HTML, CSS 및 JavaScript를 비롯 한 전체 UI 사용자 지정<br><br>사용자 지정 문자열을 사용하는 다국어 지원 | 동일 |
 | 특성 사용자 지정 | 표준 및 사용자 지정 특성 | 동일 |
 | 토큰 및 세션 관리 | 사용자 지정 토큰 및 다중 세션 옵션 | 동일 |
-| ID 공급자 | 미리 정의 된 로컬 또는 소셜 공급자와 대부분의 OIDC id 공급자 (예: Azure Active Directory 테 넌 트를 사용 하는 페더레이션) | 표준 기반 OIDC, OAUTH 및 SAML  REST Api와의 통합을 사용 하 여 인증을 수행할 수도 있습니다. |
+| ID 공급자 | 미리 정의 된 로컬 또는 소셜 공급자와 대부분의 OIDC id 공급자 (예: Azure Active Directory 테넌트를 사용 하는 페더레이션) | 표준 기반 OIDC, OAUTH 및 SAML  REST Api와의 통합을 사용 하 여 인증을 수행할 수도 있습니다. |
 | ID 작업 | 로컬 또는 많은 소셜 계정을 사용하여 등록 또는 로그인<br><br>셀프 서비스 암호 재설정<br><br>프로필 편집<br><br>Multi-Factor Authentication.<br><br>토큰 및 세션을 사용자 지정합니다.<br><br>액세스 토큰 흐름. | 사용자 지정 ID 공급자를 사용하는 사용자 흐름과 동일한 작업을 완료하거나 사용자 지정 범위를 사용합니다.<br><br>등록 시 다른 시스템에서 사용자를 프로비전합니다.<br><br>고유한 이메일 서비스 공급자를 사용하여 환영 이메일을 보냅니다.<br><br>Azure AD B2C 외부의 사용자 저장소를 사용합니다.<br><br>API를 사용하여 신뢰할 수 있는 시스템으로 사용자 제공 정보의 유효성을 검사합니다. |
 
 ## <a name="policy-files"></a>정책 파일

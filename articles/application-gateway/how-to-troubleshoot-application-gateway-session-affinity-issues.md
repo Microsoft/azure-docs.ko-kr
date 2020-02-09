@@ -1,7 +1,7 @@
 ---
 title: 세션 선호도 문제 해결
 titleSuffix: Azure Application Gateway
-description: 이 문서에서는 Azure 애플리케이션 게이트웨이에서 세션 선호도 문제를 해결 하는 방법에 대 한 정보를 제공 합니다.
+description: 이 문서에서는 Azure 애플리케이션 게이트웨이에서 세션 선호도 문제를 해결 하는 방법에 대한 정보를 제공 합니다.
 services: application-gateway
 author: abshamsft
 ms.service: application-gateway
@@ -142,7 +142,7 @@ Azure Portal을 통한 로깅 사용
 5. 다음 데이터를 확인 합니다.
 
 - **ClientIP**– 연결 하는 클라이언트의 클라이언트 IP 주소입니다.
-- **Clientport** -요청에 대 한 연결 하는 클라이언트의 원본 포트입니다.
+- **Clientport** -요청에 대한 연결 하는 클라이언트의 원본 포트입니다.
 - **Requestquery** – 요청이 수신 되는 대상 서버를 나타냅니다.
 - **서버에서 라우트된**: 요청이 수신 된 백 엔드 풀 인스턴스입니다.
 - **X-AzureApplicationGateway-LOG-ID**: 요청에 사용된 상관 관계 ID입니다. 백 엔드 서버에서 트래픽 문제를 해결하는 데 사용할 수 있습니다. 예: X-y = 0 & 서버-라우트된 = 10.0.2.4.
@@ -157,7 +157,7 @@ Azure Portal을 통한 로깅 사용
 
 ### <a name="use-web-debugger-to-capture-and-analyze-the-http-or-https-traffics"></a>웹 디버거를 사용 하 여 HTTP 또는 HTTPS 트래픽을 캡처 및 분석
 
-Fiddler와 같은 웹 디버깅 도구는 인터넷 및 테스트 컴퓨터 간의 네트워크 트래픽을 캡처하여 웹 응용 프로그램을 디버그 하는 데 도움이 될 수 있습니다. 이러한 도구를 사용 하면 브라우저에서 들어오고 나가는 데이터를 받거나 보낼 때 해당 데이터를 검사할 수 있습니다. 이 예제에서 Fiddler에는 웹 응용 프로그램과 관련 된 클라이언트 쪽 문제를 해결 하는 데 도움이 되는 HTTP replay 옵션이 있습니다. 특히 인증 종류 문제에 대 한 것입니다.
+Fiddler와 같은 웹 디버깅 도구는 인터넷 및 테스트 컴퓨터 간의 네트워크 트래픽을 캡처하여 웹 응용 프로그램을 디버그 하는 데 도움이 될 수 있습니다. 이러한 도구를 사용 하면 브라우저에서 들어오고 나가는 데이터를 받거나 보낼 때 해당 데이터를 검사할 수 있습니다. 이 예제에서 Fiddler에는 웹 응용 프로그램과 관련 된 클라이언트 쪽 문제를 해결 하는 데 도움이 되는 HTTP replay 옵션이 있습니다. 특히 인증 종류 문제에 대한 것입니다.
 
 원하는 웹 디버거를 사용 합니다. 이 샘플에서는 Fiddler를 사용 하 여 http 또는 https 트래픽을를 캡처 및 분석 하 고 지침을 따릅니다.
 
@@ -202,7 +202,7 @@ Fiddler와 같은 웹 디버깅 도구는 인터넷 및 테스트 컴퓨터 간�
    ![troubleshoot-session-affinity-issues-18](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-18.png)
 
 > [!NOTE]
-> 동일한 통신 세션의 경우 쿠키를 변경 하지 않아야 합니다. 오른쪽의 위쪽 상자를 선택 하 고, "쿠키" 탭을 선택 하 여 클라이언트에서 쿠키를 사용 하 고 있는지 여부를 확인 하 고 다시 Application Gateway으로 보냅니다. 그렇지 않은 경우 클라이언트 브라우저는 대화에 대 한 쿠키를 유지 하 고 사용 하지 않습니다. 경우에 따라 클라이언트가 있을 수 있습니다.
+> 동일한 통신 세션의 경우 쿠키를 변경 하지 않아야 합니다. 오른쪽의 위쪽 상자를 선택 하 고, "쿠키" 탭을 선택 하 여 클라이언트에서 쿠키를 사용 하 고 있는지 여부를 확인 하 고 다시 Application Gateway으로 보냅니다. 그렇지 않은 경우 클라이언트 브라우저는 대화에 대한 쿠키를 유지 하 고 사용 하지 않습니다. 경우에 따라 클라이언트가 있을 수 있습니다.
 
  
 

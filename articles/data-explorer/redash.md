@@ -16,12 +16,12 @@ ms.locfileid: "76773952"
 ---
 # <a name="visualize-data-from-azure-data-explorer-in-redash"></a>Redash의 Azure 데이터 탐색기에서 데이터 시각화
 
-[Redash](https://redash.io/) 는 데이터 원본을 연결 하 고 쿼리하고 데이터를 시각화 하 고 동료와 공유할 수 있는 대시보드를 작성 합니다. 이 문서에서는 Redash에 대 한 데이터 원본으로 Azure 데이터 탐색기를 설정 하 고 데이터를 시각화 하는 방법에 대해 알아봅니다.
+[Redash](https://redash.io/) 는 데이터 원본을 연결 하 고 쿼리하고 데이터를 시각화 하 고 동료와 공유할 수 있는 대시보드를 작성 합니다. 이 문서에서는 Redash에 대한 데이터 원본으로 Azure 데이터 탐색기를 설정 하 고 데이터를 시각화 하는 방법에 대해 알아봅니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
 1. [클러스터 및 데이터베이스를 만듭니다](create-cluster-database-portal.md).
-1. [Azure 데이터 탐색기에 샘플 데이터 수집](ingest-sample-data.md)에 설명 된 대로 데이터를 수집 합니다. 수집 옵션에 대 한 자세한 내용은 수집 [개요](ingest-data-overview.md)를 참조 하세요.
+1. [Azure 데이터 탐색기에 샘플 데이터 수집](ingest-sample-data.md)에 설명 된 대로 데이터를 수집 합니다. 수집 옵션에 대한 자세한 내용은 수집 [개요](ingest-data-overview.md)를 참조 하세요.
 
 [!INCLUDE [data-explorer-configure-data-source](../../includes/data-explorer-configure-data-source.md)]
 

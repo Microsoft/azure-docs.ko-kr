@@ -32,7 +32,7 @@ Microsoft Authentication Library for .NET (MSAL.NET)은 AD FS에 대해 인증 �
 ## <a name="msal-connects-to-azure-ad-which-is-federated-with-ad-fs"></a>MSAL은 AD FS와 페더레이션된 Azure AD에 연결 합니다.
 MSAL.NET는 관리 되는 사용자 (Azure AD에서 관리 되는 사용자) 또는 페더레이션된 사용자 (AD FS와 같은 다른 id 공급자가 관리 하는 사용자)에 로그인 하는 Azure AD에 대 한 연결을 지원 합니다. MSAL.NET는 사용자가 페더레이션 된다는 사실을 알지 못합니다. 중요 한 것 처럼 Azure AD와 통신 합니다.
 
-이 경우 사용 하는 [기관은](msal-client-application-configuration.md#authority) 일반적인 인증 기관 (기관 호스트 이름 + 테 넌 트, 공용 또는 조직)입니다.
+이 경우 사용 하는 [기관은](msal-client-application-configuration.md#authority) 일반적인 인증 기관 (기관 호스트 이름 + 테넌트, 공용 또는 조직)입니다.
 
 ### <a name="acquiring-a-token-interactively"></a>대화형으로 토큰 가져오기
 `AcquireTokenInteractive` 메서드를 호출 하는 경우 사용자 환경은 일반적으로 다음과 같습니다.

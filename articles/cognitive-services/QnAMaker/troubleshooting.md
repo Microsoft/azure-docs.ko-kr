@@ -24,9 +24,9 @@ QnA Maker 서비스와 관련 하 여 가장 자주 묻는 질문의 큐 레이�
 
 <a name="how-to-get-the-qnamaker-service-hostname"></a>
 
-## <a name="how-to-get-the-qnamaker-service-endpoint"></a>QnAMaker 서비스 끝점을 가져오는 방법
+## <a name="how-to-get-the-qnamaker-service-endpoint"></a>QnAMaker 서비스 엔드포인트을 가져오는 방법
 
-QnAMaker service 끝점은 QnAMaker 지원 또는 UserVoice에 문의할 때 디버깅 목적으로 유용 합니다. 끝점은 https://your-resource-name.azurewebsites.net 형식으로 된 URL입니다.
+QnAMaker service 엔드포인트은 QnAMaker 지원 또는 UserVoice에 문의할 때 디버깅 목적으로 유용 합니다. 엔드포인트은 https://your-resource-name.azurewebsites.net 형식으로 된 URL입니다.
 
 1. [Azure Portal](https://portal.azure.com)에서 QnAMaker 서비스(리소스 그룹)로 이동
 
@@ -36,9 +36,9 @@ QnAMaker service 끝점은 QnAMaker 지원 또는 UserVoice에 문의할 때 디
 
      ![QnAMaker App Service 선택](./media/qnamaker-how-to-troubleshoot/qnamaker-azure-appservice.png)
 
-1. 끝점 URL은 개요 섹션에서 사용할 수 있습니다.
+1. 엔드포인트 URL은 개요 섹션에서 사용할 수 있습니다.
 
-    ![QnAMaker 끝점](./media/qnamaker-how-to-troubleshoot/qnamaker-azure-gethostname.png)
+    ![QnAMaker 엔드포인트](./media/qnamaker-how-to-troubleshoot/qnamaker-azure-gethostname.png)
 
 ## <a name="manage-the-knowledge-base"></a>기술 자료 관리
 
@@ -114,7 +114,7 @@ QnA 집합이 기술 자료에 있으면 대답의 markdown 텍스트를 편집 
 
 ### <a name="when-should-i-restart-my-app-service"></a>내 App Service를 다시 시작해야 하는 경우는 언제인가요?
 
-**사용자 설정** [페이지](https://www.qnamaker.ai/UserSettings)의 **끝점 키** 테이블에서 기술 자료에 대 한 버전 값 옆에 주의 아이콘이 있는 경우 app service를 새로 고칩니다.
+**사용자 설정** [페이지](https://www.qnamaker.ai/UserSettings)의 **엔드포인트 키** 테이블에서 기술 자료에 대 한 버전 값 옆에 주의 아이콘이 있는 경우 app service를 새로 고칩니다.
 
 ### <a name="i-deleted-my-existing-search-service-how-can-i-fix-this"></a>기존 검색 서비스를 삭제 했습니다. 이 문제를 어떻게 해결할 수 있나요?
 
@@ -171,12 +171,12 @@ App service에 대 한 디스크 공간이 가득 찼을 수 있습니다. 디�
 기술 자료에 대 한 다음 정보가 필요 합니다.
 
 * 기술 자료 ID입니다.
-* 기술 자료의 게시 된 끝점 사용자 지정 하위 도메인 이름 (`host`이라고 함)은 게시 후 **설정** 페이지에서 찾을 수 있습니다.
-* 기술 자료의 게시 된 끝점 키-게시 후 **설정** 페이지에서 찾을 수 있습니다.
+* 기술 자료의 게시 된 엔드포인트 사용자 지정 하위 도메인 이름 (`host`이라고 함)은 게시 후 **설정** 페이지에서 찾을 수 있습니다.
+* 기술 자료의 게시 된 엔드포인트 키-게시 후 **설정** 페이지에서 찾을 수 있습니다.
 
 이 정보를 사용 하 여 Azure Portal에서 봇의 app service로 이동 합니다. **설정-> 구성-> 응용 프로그램 설정**에서 해당 값을 변경 합니다.
 
-기술 자료의 끝점 키에는 ABS 서비스의 `QnAAuthkey` 레이블이 지정 되어 있습니다.
+기술 자료의 엔드포인트 키에는 ABS 서비스의 `QnAAuthkey` 레이블이 지정 되어 있습니다.
 
 ### <a name="can-two-or-more-client-applications-share-a-knowledge-base"></a>두 개 이상의 클라이언트 응용 프로그램에서 기술 자료를 공유할 수 있나요?
 

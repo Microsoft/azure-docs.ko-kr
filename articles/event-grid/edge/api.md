@@ -598,7 +598,7 @@ IoT Edge Event Grid에는 HTTP (포트 5888) 및 HTTPS (포트 4438)를 통해 �
 ```
 
 ### <a name="set-up-webhook-as-destination-events-to-be-delivered-in-eventgridschema"></a>대상으로 WebHook 설정, eventgridschema에서 배달할 이벤트
-이 대상 형식을 사용 하 여 HTTP 끝점을 호스트 하는 다른 모듈이 나 네트워크/인터넷의 모든 HTTP 주소 지정 가능 끝점으로 이벤트를 전송 합니다.
+이 대상 형식을 사용 하 여 HTTP 엔드포인트을 호스트 하는 다른 모듈이 나 네트워크/인터넷의 모든 HTTP 주소 지정 가능 엔드포인트으로 이벤트를 전송 합니다.
 
 ```json
 {
@@ -676,7 +676,7 @@ EndpointUrl
 - 쿼리 문자열에 `api-version=2018-01-01` 있어야 합니다.
 - EventGridModule 설정에서 outbound__eventgrid__httpsOnly true로 설정 되어 있으면 (기본적으로 true 임) HTTPS 여야 합니다.
 - Outbound__eventgrid__httpsOnly false로 설정 된 경우 HTTP 또는 HTTPS가 될 수 있습니다.
-- Outbound__eventgrid__allowInvalidHostnames false (기본값은 false)로 설정 된 경우 다음 끝점 중 하나를 대상으로 해야 합니다.
+- Outbound__eventgrid__allowInvalidHostnames false (기본값은 false)로 설정 된 경우 다음 엔드포인트 중 하나를 대상으로 해야 합니다.
    - `eventgrid.azure.net`
    - `eventgrid.azure.us`
    - `eventgrid.azure.cn`

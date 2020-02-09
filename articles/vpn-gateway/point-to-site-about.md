@@ -51,7 +51,7 @@ Azure AD 인증을 사용 하면 사용자가 Azure Active Directory 자격 증�
 
 개략적인 수준에서 다음 단계를 수행 하 여 Azure AD 인증을 구성 해야 합니다.
 
-1. [Azure AD 테 넌 트 구성](openvpn-azure-ad-tenant.md)
+1. [Azure AD 테넌트 구성](openvpn-azure-ad-tenant.md)
 
 2. [게이트웨이에서 Azure AD 인증을 사용 하도록 설정](https://docs.microsoft.com/azure/vpn-gateway/openvpn-azure-ad-tenant#enable-authentication)
 

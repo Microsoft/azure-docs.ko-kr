@@ -90,7 +90,7 @@ Data Box Edge 고정 IP 주소에 따라 대부분의 경우 자유롭게 아웃
 
 [!INCLUDE [Azure Government URL patterns for firewall](../../includes/data-box-edge-gateway-gov-url-patterns-firewall.md)]
 
-### <a name="url-patterns-for-compute-for-azure-government"></a>Azure Government 계산에 대 한 URL 패턴
+### <a name="url-patterns-for-compute-for-azure-government"></a>Azure Government 계산에 대한 URL 패턴
 
 | URL 패턴                      | 구성 요소 또는 기능                     |  
 |----------------------------------|---------------------------------------------|
@@ -124,13 +124,13 @@ Data Box Edge 고정 IP 주소에 따라 대부분의 경우 자유롭게 아웃
 - 다음과 같이 장치의 PowerShell 인터페이스를 통해 사용할 수 있는 모니터링 명령입니다.
 
     - `dkrdbe stats` 하 여 컨테이너 리소스 사용 통계의 라이브 스트림을 가져옵니다. 명령은 CPU, 메모리 사용량, 메모리 제한 및 네트워크 IO 메트릭을 지원 합니다.
-    - 사용 된 디스크 공간 크기에 대 한 정보를 가져올 `dkrdbe system df`. 
+    - 사용 된 디스크 공간 크기에 대한 정보를 가져올 `dkrdbe system df`. 
     - 사용 하지 않는 이미지를 정리 하 고 공간을 확보 `dkrdbe image prune` 합니다.
     - `dkrdbe ps --size` 하 여 실행 중인 컨테이너의 대략적인 크기를 확인 합니다. 
 
-    사용 가능한 명령에 대 한 자세한 내용은 [계산 모듈 모니터링 및 문제 해결](data-box-edge-connect-powershell-interface.md#monitor-and-troubleshoot-compute-modules)을 참조 하세요.
+    사용 가능한 명령에 대한 자세한 내용은 [계산 모듈 모니터링 및 문제 해결](data-box-edge-connect-powershell-interface.md#monitor-and-troubleshoot-compute-modules)을 참조 하세요.
 
-마지막으로, 데이터 집합에 대 한 솔루션의 유효성을 검사 하 고 프로덕션 환경에 배포 하기 전에 Data Box Edge에 대 한 성능을 수량화 합니다.
+마지막으로, 데이터 집합에 대한 솔루션의 유효성을 검사 하 고 프로덕션 환경에 배포 하기 전에 Data Box Edge에 대한 성능을 수량화 합니다.
 
 
 ## <a name="next-step"></a>다음 단계

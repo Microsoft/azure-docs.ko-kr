@@ -1,6 +1,6 @@
 ---
-title: Azure 테 넌 트 전체에서 Azure 활동 로그를 Log Analytics 작업 영역으로 수집 | Microsoft Docs
-description: Event Hubs 및 Logic Apps를 사용 하 여 Azure 활동 로그에서 데이터를 수집 하 고 다른 테 넌 트의 Azure Monitor Log Analytics 작업 영역으로 보냅니다.
+title: Azure 테넌트 전체에서 Azure 활동 로그를 Log Analytics 작업 영역으로 수집 | Microsoft Docs
+description: Event Hubs 및 Logic Apps를 사용 하 여 Azure 활동 로그에서 데이터를 수집 하 고 다른 테넌트의 Azure Monitor Log Analytics 작업 영역으로 보냅니다.
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
@@ -14,10 +14,10 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/28/2019
 ms.locfileid: "75530003"
 ---
-# <a name="collect-azure-activity-logs-into-azure-monitor-across-azure-active-directory-tenants-legacy"></a>Azure 활동 로그를 Azure Active Directory 테 넌 트 간에 Azure Monitor으로 수집 (레거시)
+# <a name="collect-azure-activity-logs-into-azure-monitor-across-azure-active-directory-tenants-legacy"></a>Azure 활동 로그를 Azure Active Directory 테넌트 간에 Azure Monitor으로 수집 (레거시)
 
 > [!NOTE]
-> 이 문서에서는 Log Analytics 작업 영역에서 수집 되도록 Azure 테 넌 트 전체에서 Azure 활동 로그를 구성 하는 레거시 방법을 설명 합니다.  이제 리소스 로그를 수집 하는 방법과 유사한 진단 설정을 사용 하 여 활동 로그를 Log Analytics 작업 영역으로 수집할 수 있습니다. [Azure Monitor의 Log Analytics 작업 영역에서 Azure 활동 로그 수집 및 분석](activity-log-collect.md)을 참조 하세요.
+> 이 문서에서는 Log Analytics 작업 영역에서 수집 되도록 Azure 테넌트 전체에서 Azure 활동 로그를 구성 하는 레거시 방법을 설명 합니다.  이제 리소스 로그를 수집 하는 방법과 유사한 진단 설정을 사용 하 여 활동 로그를 Log Analytics 작업 영역으로 수집할 수 있습니다. [Azure Monitor의 Log Analytics 작업 영역에서 Azure 활동 로그 수집 및 분석](activity-log-collect.md)을 참조 하세요.
 
 
 이 문서에서는 azure Log Analytics 데이터 수집기 connector for Logic Apps를 사용 하 여 Azure Monitor에서 Log Analytics 작업 영역으로 Azure 활동 로그를 수집 하는 방법을 단계별로 안내 합니다. 다른 Azure Active Directory 테넌트의 작업 영역에 로그를 보내야 하는 경우 이 문서의 과정을 사용합니다. 예를 들어 관리형 서비스 공급자인 경우 고객의 구독에서 활동 로그를 수집하여 자체 구독의 Log Analytics 작업 영역에 저장하는 것이 좋습니다.

@@ -1,6 +1,6 @@
 ---
 title: ZIP 패키지에서 앱 실행
-description: 원자성을 사용 하 여 앱의 ZIP 패키지를 배포 합니다. ZIP 배포 프로세스 중에 앱의 동작에 대 한 예측 가능성과 안정성을 향상 시킵니다.
+description: 원자성을 사용 하 여 앱의 ZIP 패키지를 배포 합니다. ZIP 배포 프로세스 중에 앱의 동작에 대한 예측 가능성과 안정성을 향상 시킵니다.
 ms.topic: article
 ms.date: 01/14/2020
 ms.openlocfilehash: 5cc909d79b3f5ea2b4c6a3da12bc7250addbe00c
@@ -55,7 +55,7 @@ az webapp deployment source config-zip --resource-group <group-name> --name <app
 
 Azure Blob Storage와 같은 외부 URL에서 패키지를 실행할 수도 있습니다. [Azure Storage Explorer](../vs-azure-tools-storage-manage-with-storage-explorer.md)를 사용하여 Blob 스토리지 계정에 패키지 파일을 업로드할 수 있습니다. App Service 런타임이 패키지에 안전 하 게 액세스할 수 있도록 하려면 [SAS (공유 액세스 서명)](../vs-azure-tools-storage-manage-with-storage-explorer.md#generate-a-sas-in-storage-explorer) 와 함께 개인 저장소 컨테이너를 사용 해야 합니다. 
 
-Blob 저장소에 파일을 업로드 하 고 해당 파일에 대 한 SAS URL이 있는 경우 `WEBSITE_RUN_FROM_PACKAGE` 앱 설정을 URL로 설정 합니다. 다음 예에서는 Azure CLI를 사용 하 여이 작업을 수행 합니다.
+Blob 저장소에 파일을 업로드 하 고 해당 파일에 대한 SAS URL이 있는 경우 `WEBSITE_RUN_FROM_PACKAGE` 앱 설정을 URL로 설정 합니다. 다음 예에서는 Azure CLI를 사용 하 여이 작업을 수행 합니다.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings WEBSITE_RUN_FROM_PACKAGE="https://myblobstorage.blob.core.windows.net/content/SampleCoreMVCApp.zip?st=2018-02-13T09%3A48%3A00Z&se=2044-06-14T09%3A48%3A00Z&sp=rl&sv=2017-04-17&sr=b&sig=bNrVrEFzRHQB17GFJ7boEanetyJ9DGwBSV8OM3Mdh%2FM%3D"
@@ -72,5 +72,5 @@ Blob storage에 동일한 이름의 업데이트 된 패키지를 게시 하는 
 
 ## <a name="more-resources"></a>추가 리소스
 
-- [Azure App Service에 대 한 연속 배포](deploy-continuous-deployment.md)
+- [Azure App Service에 대한 연속 배포](deploy-continuous-deployment.md)
 - [ZIP 또는 WAR 파일을 사용 하 여 코드 배포](deploy-zip.md)

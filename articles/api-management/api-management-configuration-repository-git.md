@@ -235,7 +235,7 @@ REST API를 사용하여 이 작업을 수행하는 방법은 [REST API를 사�
 ### <a name="policies-folder"></a>policies 폴더
 `policies` 폴더에는 서비스 인스턴스에 대한 정책 설명이 포함되어 있습니다.
 
-* `policies\global.xml` -서비스 인스턴스에 대 한 전역 범위에 정의된 정책을 포함하고 있습니다.
+* `policies\global.xml` -서비스 인스턴스에 대한 전역 범위에 정의된 정책을 포함하고 있습니다.
 * `policies\apis\<api name>\` -API 범위에 정책을 정의 한 경우 해당 정책이 이 폴더에 포함되어 있습니다.
 * `policies\apis\<api name>\<operation name>\` 폴더 - 작업 범위에 정책을 정의한 경우 해당 정책은 각 작업에 대한 정책 설명에 매핑되는 이 폴더의 `<operation name>.xml` 파일에 포함되어 있습니다.
 * `policies\products\` - 제품 범위에 정책을 정의한 경우 해당 정책은 각 제품에 대한 정책 설명에 매핑되는 이 폴더의 `<product name>.xml` 파일에 포함되어 있습니다.

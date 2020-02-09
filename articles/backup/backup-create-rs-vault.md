@@ -57,7 +57,7 @@ Recovery Services 자격 증명 모음을 만들려면:
 
 ## <a name="set-storage-redundancy"></a>스토리지 중복 설정
 
-Azure Backup는 자격 증명 모음에 대 한 저장소를 자동으로 처리 합니다. 저장소를 복제 하는 방법을 지정 해야 합니다.
+Azure Backup는 자격 증명 모음에 대한 저장소를 자동으로 처리 합니다. 저장소를 복제 하는 방법을 지정 해야 합니다.
 
 1. **Recovery Services 자격 증명 모음** 블레이드에서 새 자격 증명 모음을 클릭합니다. **설정** 섹션에서 **속성**을 클릭 합니다.
 2. **속성**의 **백업 구성**에서 **업데이트**를 클릭 합니다.
@@ -66,12 +66,12 @@ Azure Backup는 자격 증명 모음에 대 한 저장소를 자동으로 처리
 
      ![새 자격 증명 모음의 스토리지 구성 설정](./media/backup-try-azure-backup-in-10-mins/recovery-services-vault-backup-configuration.png)
 
-   - Azure를 기본 백업 저장소 끝점으로 사용 하는 경우 기본 **지역 중복** 설정을 계속 사용 하는 것이 좋습니다.
+   - Azure를 기본 백업 저장소 엔드포인트으로 사용 하는 경우 기본 **지역 중복** 설정을 계속 사용 하는 것이 좋습니다.
    - Azure를 기본 백업 스토리지 엔드포인트로 사용하지 않는 경우 Azure Storage 비용이 감소되는 **로컬 중복**을 선택합니다.
    - [지역](../storage/common/storage-redundancy-grs.md) 및 [로컬](../storage/common/storage-redundancy-lrs.md) 중복성에 대해 자세히 알아보세요.
 
 > [!NOTE]
-> Recovery services 자격 증명 모음에 대 한 **저장소 복제 유형** (로컬 중복/지역 중복) 변경은 자격 증명 모음에서 백업을 구성 하기 전에 수행 해야 합니다. 백업을 구성한 후에는 수정 하는 옵션을 사용할 수 없으며 **저장소 복제 유형을**변경할 수 없습니다.
+> Recovery services 자격 증명 모음에 대한 **저장소 복제 유형** (로컬 중복/지역 중복) 변경은 자격 증명 모음에서 백업을 구성 하기 전에 수행 해야 합니다. 백업을 구성한 후에는 수정 하는 옵션을 사용할 수 없으며 **저장소 복제 유형을**변경할 수 없습니다.
 
 ## <a name="set-cross-region-restore"></a>지역 간 복원 설정
 
@@ -89,8 +89,8 @@ Azure Backup는 자격 증명 모음에 대 한 저장소를 자동으로 처리
 >
 >- 지원 되는 관리 되는 형식 및 지역 목록은 [지원 매트릭스](backup-support-matrix.md#cross-region-restore) 를 검토 하세요.
 >- CRR (지역 간 복원) 기능은 현재 WCUS 지역 에서만 사용할 수 있습니다.
->- CRR은 GRS 자격 증명 모음에 대 한 자격 증명 모음 수준 옵트인 기능입니다 (기본적으로 해제 됨).
->- 이 기능에 대 한 구독을 등록 하려면 다음 명령을 사용 하세요.<br>
+>- CRR은 GRS 자격 증명 모음에 대한 자격 증명 모음 수준 옵트인 기능입니다 (기본적으로 해제 됨).
+>- 이 기능에 대한 구독을 등록 하려면 다음 명령을 사용 하세요.<br>
 >  `Register-AzProviderFeature -FeatureName CrossRegionRestore -ProviderNamespace Microsoft.RecoveryServices`
 >- 제한 된 공개 미리 보기 중에이 기능을 등록 하는 경우 승인 전자 메일 검토에 가격 정책 세부 정보가 포함 됩니다.
 >- 옵트인 후에는 보조 지역에서 백업 항목을 사용 하는 데 최대 48 시간이 걸릴 수 있습니다.
@@ -117,7 +117,7 @@ GRS 중복성으로 만든 자격 증명 모음에는 지역 간 복원 기능�
 
 ## <a name="modifying-default-settings"></a>기본 설정 수정
 
-**저장소 복제 유형** 및 **보안 설정** 에 대 한 기본 설정은 자격 증명 모음에서 백업을 구성 하기 전에 검토 하는 것이 좋습니다.
+**저장소 복제 유형** 및 **보안 설정** 에 대한 기본 설정은 자격 증명 모음에서 백업을 구성 하기 전에 검토 하는 것이 좋습니다.
 
 - 기본적으로 **저장소 복제 유형은** **지역 중복**으로 설정 됩니다. 백업을 구성한 후에는 수정 하는 옵션을 사용할 수 없습니다. 설정을 검토 하 고 수정 하려면 다음 [단계](https://docs.microsoft.com/azure/backup/backup-create-rs-vault#set-storage-redundancy) 를 수행 합니다.
 

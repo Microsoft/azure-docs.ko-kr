@@ -40,11 +40,11 @@ Express 경로 다이렉트를 사용 하기 전에 먼저 구독을 등록 해�
 | 서비스 공급자를 활용하여 기존 인프라로 빠른 온보딩 및 연결 활성화 | 모든 계층의 100 Gbps/10 Gbps 인프라 및 전체 관리 필요
 | 이더넷 및 MPLS를 포함하는 수백 개의 공급자와 통합 | 규제 산업 및 대규모 데이터 수집에 대한 직접/전용 용량 |
 | 50Mbps - 10Gbps의 회로 SKU | 고객은 100 Gbps Express 경로에서 다음과 같은 회로 Sku의 조합을 선택할 수 있습니다. <ul><li>5Gbps</li><li>10Gbps</li><li>40Gbps</li><li>100 Gbps</li></ul> 고객은 10gbps Express 경로 다이렉트에서 다음 회로 Sku의 조합을 선택할 수 있습니다.<ul><li>1Gbps</li><li>2Gbps</li><li>5Gbps</li><li>10Gbps</li></ul>
-| 단일 테넌트에 최적화됨 | 여러 사업부 및 여러 작업 환경에서 단일 테 넌 트에 대해 최적화 됨
+| 단일 테넌트에 최적화됨 | 여러 사업부 및 여러 작업 환경에서 단일 테넌트에 대해 최적화 됨
 
 ## <a name="expressroute-direct-circuits"></a>ExpressRoute Direct 회로
 
-Microsoft Azure ExpressRoute를 사용하면 연결 공급자에서 쉽게 처리된 프라이빗 연결을 통해 온-프레미스 네트워크를 Microsoft 클라우드로 확장할 수 있습니다. Express 경로를 사용 하 여 Microsoft Azure 및 Office 365와 같은 Microsoft 클라우드 서비스에 대 한 연결을 설정할 수 있습니다.
+Microsoft Azure ExpressRoute를 사용하면 연결 공급자에서 쉽게 처리된 프라이빗 연결을 통해 온-프레미스 네트워크를 Microsoft 클라우드로 확장할 수 있습니다. Express 경로를 사용 하 여 Microsoft Azure 및 Office 365와 같은 Microsoft 클라우드 서비스에 대한 연결을 설정할 수 있습니다.
 
 각 피어링 위치는 Microsoft의 글로벌 네트워크에 대한 액세스 권한을 가지며 기본적으로 지리적 영역에 있는 모든 지역에 액세스할 수 있으며 프리미엄 회로를 사용하여 전 세계 모든 지역에 액세스할 수 있습니다.  
 
@@ -52,7 +52,7 @@ Microsoft Azure ExpressRoute를 사용하면 연결 공급자에서 쉽게 처�
 
 ## <a name="circuit-skus"></a>회로 SKU
 
-ExpressRoute Direct는 Azure Storage 및 기타 빅 데이터 서비스에 대규모 데이터 수집 시나리오를 지원합니다. 100 Gbps Express 경로에 대 한 Express 경로 회로는 이제 **40 gbps** 및 **100 Gbps** 회로 sku도 지원 합니다. 실제 포트 쌍은 **100 또는 10Gbps** 전용 이며 여러 가상 회로를 가질 수 있습니다. 회로 크기:
+ExpressRoute Direct는 Azure Storage 및 기타 빅 데이터 서비스에 대규모 데이터 수집 시나리오를 지원합니다. 100 Gbps Express 경로에 대한 Express 경로 회로는 이제 **40 gbps** 및 **100 Gbps** 회로 sku도 지원 합니다. 실제 포트 쌍은 **100 또는 10Gbps** 전용 이며 여러 가상 회로를 가질 수 있습니다. 회로 크기:
 
 | **100 Gbps Express 경로 직접** | **10gbps Express 경로 직접** | 
 | --- | --- |

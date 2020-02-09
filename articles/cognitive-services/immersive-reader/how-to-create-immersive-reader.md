@@ -1,7 +1,7 @@
 ---
 title: 몰입형 판독기 리소스 만들기
 titleSuffix: Azure Cognitive Services
-description: 이 문서에서는 사용자 지정 하위 도메인을 사용 하 여 새 몰입 형 판독기 리소스를 만든 다음 Azure 테 넌 트에서 Azure AD를 구성 하는 방법을 보여 줍니다.
+description: 이 문서에서는 사용자 지정 하위 도메인을 사용 하 여 새 몰입 형 판독기 리소스를 만든 다음 Azure 테넌트에서 Azure AD를 구성 하는 방법을 보여 줍니다.
 services: cognitive-services
 author: rwaller
 manager: guillasi

@@ -152,7 +152,7 @@ new CloudTask("4", "cmd.exe /c echo 4")
 
 예를 들어, 종속 태스크는 데이터가 업스트림 태스크를 완료하도록 대기 중입니다. 업스트림 태스크가 실패할 경우 종속 태스크는 오래된 데이터를 사용하여 실행될 수 있습니다. 이 경우에 종속성 작업은 상위 태스크가 실패하더라도 종속 태스크를 실행할 수 있는지 여부를 지정할 수 있습니다.
 
-종속성 작업은 상위 태스크에 대한 종료 조건을 기반으로 합니다. 다음 종료 조건에 대 한 종속성 작업을 지정할 수 있습니다. .NET의 경우에는 [Exitconditions][net_exitconditions] 클래스를 참조 하세요.
+종속성 작업은 상위 태스크에 대한 종료 조건을 기반으로 합니다. 다음 종료 조건에 대한 종속성 작업을 지정할 수 있습니다. .NET의 경우에는 [Exitconditions][net_exitconditions] 클래스를 참조 하세요.
 
 - 전처리 오류가 발생할 때
 - 파일을 업로드 오류가 발생할 때 태스크가 **exitCodes** 또는 **exitCodeRanges**를 통해 지정된 종료 코드로 인해 종료된 다음 파일 업로드 오류가 발생하면 해당 종료 코드로 지정된 작업이 우선적으로 적용됩니다.
@@ -160,7 +160,7 @@ new CloudTask("4", "cmd.exe /c echo 4")
 - 태스크가 **ExitCodeRanges** 속성에서 지정한 범위 내에서 실패한 종료 코드로 인해 종료되는 경우
 - 기본적인 경우(태스크가 **ExitCodes** 또는 **ExitCodeRanges**로 정의되지 않은 종료 코드로 인해 종료되거나 태스크가 전처리 오류와 함께 종료되고 **PreProcessingError** 속성이 설정되지 않았거나, 태스크가 파일 업로드 오류로 인해 실패하고 **FileUploadError** 속성이 설정되지 않은 경우) 
 
-.NET에서 종속성 동작을 지정 하려면 [Exitoptions][net_exitoptions]를 설정 합니다. 종료 조건에 대 한 [DependencyAction][net_dependencyaction] 속성입니다. **DependencyAction** 속성은 다음 두 값 중 하나를 사용합니다.
+.NET에서 종속성 동작을 지정 하려면 [Exitoptions][net_exitoptions]를 설정 합니다. 종료 조건에 대한 [DependencyAction][net_dependencyaction] 속성입니다. **DependencyAction** 속성은 다음 두 값 중 하나를 사용합니다.
 
 - **DependencyAction** 속성을 **충족**으로 설정하면 지정된 오류로 인해 상위 태스크를 종료하는 경우 종속 태스크를 실행할 수 있음을 나타냅니다.
 - **DependencyAction** 속성을 **차단**으로 설정하면 종속 태스크를 실행할 수 없음을 나타냅니다.
@@ -214,7 +214,7 @@ new CloudTask("B", "cmd.exe /c echo B")
 Batch의 [애플리케이션 패키지](batch-application-packages.md) 기능은 컴퓨팅 노드에서 태스크를 실행하는 애플리케이션을 배포하고 버전을 관리하는 쉬운 방법을 제공합니다.
 
 ### <a name="installing-applications-and-staging-data"></a>애플리케이션 설치 및 데이터 준비
-작업을 실행 하기 위해 노드를 준비 하는 방법에 대 한 개요는 Azure Batch 포럼의 [Batch 계산 노드에 응용 프로그램 설치 및 데이터 준비][forum_post] 를 참조 하세요. Azure Batch 팀 구성원 중 한 사람이 작성한 이 게시물은 컴퓨팅 노드에 애플리케이션, 태스크 입력 데이터 및 다른 파일을 복사하는 다른 방법에 대한 좋은 기초입니다.
+작업을 실행 하기 위해 노드를 준비 하는 방법에 대한 개요는 Azure Batch 포럼의 [Batch 계산 노드에 응용 프로그램 설치 및 데이터 준비][forum_post] 를 참조 하세요. Azure Batch 팀 구성원 중 한 사람이 작성한 이 게시물은 컴퓨팅 노드에 애플리케이션, 태스크 입력 데이터 및 다른 파일을 복사하는 다른 방법에 대한 좋은 기초입니다.
 
 [forum_post]: https://social.msdn.microsoft.com/Forums/en-US/87b19671-1bdf-427a-972c-2af7e5ba82d9/installing-applications-and-staging-data-on-batch-compute-nodes?forum=azurebatch
 [github_taskdependencies]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/TaskDependencies

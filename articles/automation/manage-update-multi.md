@@ -1,6 +1,6 @@
 ---
 title: 여러 Azure 가상 머신에 대한 업데이트 관리
-description: 이 문서에서는 Azure 및 비 Azure 가상 머신에 대 한 업데이트를 관리 하는 방법을 설명 합니다.
+description: 이 문서에서는 Azure 및 비 Azure 가상 머신에 대한 업데이트를 관리 하는 방법을 설명 합니다.
 services: automation
 ms.subservice: update-management
 ms.date: 01/16/2020
@@ -27,7 +27,7 @@ ms.locfileid: "76168040"
 
 - 지원되는 운영 체제 중 하나가 설치된 가상 머신 또는 컴퓨터
 
-- 솔루션에 등록 Linux Vm에 대 한 업데이트 리포지토리에 액세스할 수 있습니다.
+- 솔루션에 등록 Linux Vm에 대한 업데이트 리포지토리에 액세스할 수 있습니다.
 
 ## <a name="supported-operating-systems"></a>지원되는 운영 체제
 
@@ -104,7 +104,7 @@ Windows 및 Linux 용 Log Analytics 에이전트는 업데이트 관리를 사�
 
 ### <a name="collection-frequency"></a>수집 빈도
 
-컴퓨터에서 업데이트 준수에 대 한 검사를 완료 한 후 에이전트는 Azure Monitor 로그에 정보를 대량으로 전달 합니다. Windows 컴퓨터는 기본적으로 12시간마다 준수 검사가 실행됩니다.
+컴퓨터에서 업데이트 준수에 대한 검사를 완료 한 후 에이전트는 Azure Monitor 로그에 정보를 대량으로 전달 합니다. Windows 컴퓨터는 기본적으로 12시간마다 준수 검사가 실행됩니다.
 
 검사 일정 외에도, MMA가 다시 시작되면 업데이트 설치 전과 업데이트 설치 후 15분 이내에 업데이트 준수 검사가 시작됩니다.
 
@@ -146,7 +146,7 @@ Linux 컴퓨터의 경우 호환성 검사는 기본적으로 매시간 수행 �
   - 도구
   - 업데이트
 
-- **포함/제외할 업데이트** - **포함/제외** 페이지가 열립니다. 포함 또는 제외할 업데이트는 별도의 탭에 있습니다. 포함을 처리 하는 방법에 대 한 자세한 내용은 [업데이트 배포 예약](automation-tutorial-update-management.md#schedule-an-update-deployment)을 참조 하세요.
+- **포함/제외할 업데이트** - **포함/제외** 페이지가 열립니다. 포함 또는 제외할 업데이트는 별도의 탭에 있습니다. 포함을 처리 하는 방법에 대한 자세한 내용은 [업데이트 배포 예약](automation-tutorial-update-management.md#schedule-an-update-deployment)을 참조 하세요.
 
 > [!NOTE]
 > 제외는 포함을 재정의한다는 사실을 기억해야 합니다. 예를 들어 `*`의 제외 규칙을 정의하는 경우 모든 패치 또는 패키지가 제외되므로 설치되지 않습니다. 제외된 패치가 여전히 머신에서 누락된 것으로 표시됩니다. Linux 머신의 경우 패키지가 포함되었지만 종속 패키지가 제외되면 패키지가 설치되지 않습니다.

@@ -17,7 +17,7 @@ ms.locfileid: "68775192"
 ---
 # <a name="manage-an-azure-data-box-gateway-device-via-windows-powershell"></a>Windows PowerShell을 통해 Azure Data Box Gateway 장치 관리
 
-Azure Data Box Gateway 솔루션을 사용 하면 네트워크를 통해 Azure에 데이터를 보낼 수 있습니다. 이 문서에서는 Data Box Gateway 장치에 대 한 구성 및 관리 작업을 설명 합니다. Azure Portal, 로컬 웹 UI 또는 Windows PowerShell 인터페이스를 사용 하 여 장치를 관리할 수 있습니다.
+Azure Data Box Gateway 솔루션을 사용 하면 네트워크를 통해 Azure에 데이터를 보낼 수 있습니다. 이 문서에서는 Data Box Gateway 장치에 대한 구성 및 관리 작업을 설명 합니다. Azure Portal, 로컬 웹 UI 또는 Windows PowerShell 인터페이스를 사용 하 여 장치를 관리할 수 있습니다.
 
 이 문서에서는 PowerShell 인터페이스를 사용 하 여 수행 하는 작업을 중점적으로 설명 합니다.
 

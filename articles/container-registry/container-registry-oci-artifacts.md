@@ -22,7 +22,7 @@ Azure container registry를 사용 하 여 [OCI (Open Container 이니셔티브)
 ## <a name="prerequisites"></a>선행 조건
 
 * **Azure Container Registry** - Azure 구독 내에서 컨테이너 레지스트리를 만듭니다. 예를 들어 [Azure Portal](container-registry-get-started-portal.md) 또는 [Azure CLI](container-registry-get-started-azure-cli.md)를 사용합니다.
-* **Oras 도구** - [GitHub](https://github.com/deislabs/oras/releases)리포지토리에서 운영 체제에 대 한 현재 oras 릴리스를 다운로드 하 여 설치 합니다. 이 도구는 압축 된 tarball (`.tar.gz` 파일)로 릴리스됩니다. 운영 체제에 대 한 표준 절차를 사용 하 여 파일을 추출 하 고 설치 합니다.
+* **Oras 도구** - [GitHub](https://github.com/deislabs/oras/releases)리포지토리에서 운영 체제에 대한 현재 oras 릴리스를 다운로드 하 여 설치 합니다. 이 도구는 압축 된 tarball (`.tar.gz` 파일)로 릴리스됩니다. 운영 체제에 대한 표준 절차를 사용 하 여 파일을 추출 하 고 설치 합니다.
 * **Azure Active Directory 서비스 주체 (선택 사항)** -oras를 사용 하 여 직접 인증 하려면 레지스트리에 액세스 하는 [서비스 주체](container-registry-auth-service-principal.md) 를 만듭니다. 아티팩트를 푸시 및 끌어올 수 있는 권한이 있도록 서비스 사용자에 게 AcrPush와 같은 역할을 할당 해야 합니다.
 * **Azure CLI (선택 사항)** -개별 id를 사용 하려면 Azure CLI의 로컬 설치가 필요 합니다. 2\.0.71 이상 버전을 권장 합니다. `az --version `를 실행 하 여 버전을 찾습니다. 설치 또는 업그레이드해야 하는 경우 [Azure CLI 설치](/cli/azure/install-azure-cli)를 참조하세요.
 * **Docker (선택 사항)** -개별 id를 사용 하려면 로컬로 Docker를 설치 하 여 레지스트리로 인증 해야 합니다. Docker는 모든 [macOS][docker-mac], [Windows][docker-windows] 또는 [Linux][docker-linux] 시스템에서 Docker를 쉽게 구성할 수 있는 패키지를 제공합니다.
@@ -72,7 +72,7 @@ oras push myregistry.azurecr.io/samples/artifact:1.0 \
     ./artifact.txt:application/vnd.unknown.layer.v1+txt
 ```
 
-성공적인 푸시에 대 한 출력은 다음과 유사 합니다.
+성공적인 푸시에 대한 출력은 다음과 유사 합니다.
 
 ```console
 Uploading 33998889555f artifact.txt
@@ -142,8 +142,8 @@ az acr repository delete \
 
 ## <a name="next-steps"></a>다음 단계
 
-* 아티팩트에 대 한 매니페스트를 구성 하는 방법을 포함 하 여 [ORAS 라이브러리](https://github.com/deislabs/oras/tree/master/docs)에 대해 자세히 알아보세요.
-* 새 아티팩트 형식에 대 한 참조 정보를 보려면 [OCI 아티팩트](https://github.com/opencontainers/artifacts) 리포지토리를 방문 하세요.
+* 아티팩트에 대한 매니페스트를 구성 하는 방법을 포함 하 여 [ORAS 라이브러리](https://github.com/deislabs/oras/tree/master/docs)에 대해 자세히 알아보세요.
+* 새 아티팩트 형식에 대한 참조 정보를 보려면 [OCI 아티팩트](https://github.com/opencontainers/artifacts) 리포지토리를 방문 하세요.
 
 
 

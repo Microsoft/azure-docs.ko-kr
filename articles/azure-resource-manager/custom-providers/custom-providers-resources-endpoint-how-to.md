@@ -1,6 +1,6 @@
 ---
 title: Azure REST API에 사용자 지정 리소스 추가
-description: Azure REST API에 사용자 지정 리소스를 추가 하는 방법을 알아봅니다. 이 문서에서는 사용자 지정 리소스를 구현 하려는 끝점에 대 한 요구 사항 및 모범 사례를 안내 합니다.
+description: Azure REST API에 사용자 지정 리소스를 추가 하는 방법을 알아봅니다. 이 문서에서는 사용자 지정 리소스를 구현 하려는 엔드포인트에 대 한 요구 사항 및 모범 사례를 안내 합니다.
 ms.topic: conceptual
 ms.author: jobreen
 author: jjbfour
@@ -14,11 +14,11 @@ ms.locfileid: "75650527"
 ---
 # <a name="adding-custom-resources-to-azure-rest-api"></a>Azure REST API에 사용자 지정 리소스 추가
 
-이 문서에서는 사용자 지정 리소스를 구현 하는 Azure 사용자 지정 리소스 공급자 끝점을 만들기 위한 요구 사항 및 모범 사례를 살펴보겠습니다. Azure 사용자 지정 리소스 공급자에 대해 잘 모르는 경우 [사용자 지정 리소스 공급자에 대 한 개요](overview.md)를 참조 하세요.
+이 문서에서는 사용자 지정 리소스를 구현 하는 Azure 사용자 지정 리소스 공급자 엔드포인트을 만들기 위한 요구 사항 및 모범 사례를 살펴보겠습니다. Azure 사용자 지정 리소스 공급자에 대해 잘 모르는 경우 [사용자 지정 리소스 공급자에 대 한 개요](overview.md)를 참조 하세요.
 
-## <a name="how-to-define-a-resource-endpoint"></a>리소스 끝점을 정의 하는 방법
+## <a name="how-to-define-a-resource-endpoint"></a>리소스 엔드포인트을 정의 하는 방법
 
-**끝점** 은 서비스를 가리키는 URL로, 서비스와 Azure 간의 기본 계약을 구현 합니다. 끝점은 사용자 지정 리소스 공급자에 정의 되며 공개적으로 액세스할 수 있는 URL 일 수 있습니다. 아래 샘플에는 `endpointURL`에서 구현 하는 `myCustomResource` 이라는 **resourceType** 이 있습니다.
+**엔드포인트** 은 서비스를 가리키는 URL로, 서비스와 Azure 간의 기본 계약을 구현 합니다. 엔드포인트은 사용자 지정 리소스 공급자에 정의 되며 공개적으로 액세스할 수 있는 URL 일 수 있습니다. 아래 샘플에는 `endpointURL`에서 구현 하는 `myCustomResource` 이라는 **resourceType** 이 있습니다.
 
 샘플 **ResourceProvider**:
 
@@ -40,9 +40,9 @@ ms.locfileid: "75650527"
 }
 ```
 
-## <a name="building-a-resource-endpoint"></a>리소스 끝점 빌드
+## <a name="building-a-resource-endpoint"></a>리소스 엔드포인트 빌드
 
-**ResourceType** 을 구현 하는 **끝점** 은 Azure에서 새 API에 대 한 요청 및 응답을 처리 해야 합니다. **ResourceType** 을 사용 하 여 사용자 지정 리소스 공급자를 만들면 Azure에서 새로운 api 집합이 생성 됩니다. 이 경우 **resourceType** 은 `PUT`, `GET`및 `DELETE`에 대 한 새 AZURE 리소스 API를 생성 하 여 단일 리소스에 대 한 CRUD를 수행 하 고 모든 기존 리소스를 검색 `GET` 합니다.
+**ResourceType** 을 구현 하는 **엔드포인트** 은 Azure에서 새 API에 대 한 요청 및 응답을 처리 해야 합니다. **ResourceType** 을 사용 하 여 사용자 지정 리소스 공급자를 만들면 Azure에서 새로운 api 집합이 생성 됩니다. 이 경우 **resourceType** 은 `PUT`, `GET`및 `DELETE`에 대 한 새 AZURE 리소스 API를 생성 하 여 단일 리소스에 대 한 CRUD를 수행 하 고 모든 기존 리소스를 검색 `GET` 합니다.
 
 단일 리소스 (`PUT`, `GET`및 `DELETE`) 조작:
 
@@ -60,7 +60,7 @@ ms.locfileid: "75650527"
 
 ### <a name="proxy-routing-type"></a>프록시 라우팅 유형
 
-"`Proxy`" **Routingtype** 은 모든 요청 메서드를 사용자 지정 리소스 공급자에 지정 된 **끝점** 에 프록시 합니다. "`Proxy`"을 사용 하는 경우:
+"`Proxy`" **Routingtype** 은 모든 요청 메서드를 사용자 지정 리소스 공급자에 지정 된 **엔드포인트** 에 프록시 합니다. "`Proxy`"을 사용 하는 경우:
 
 - 응답에 대 한 모든 권한이 필요 합니다.
 - 기존 리소스와 시스템 통합
@@ -69,7 +69,7 @@ ms.locfileid: "75650527"
 
 ### <a name="proxy-cache-routing-type"></a>프록시 캐시 라우팅 유형
 
-"`Proxy, Cache`" **Routingtype** 프록시는 `PUT` 하 고 사용자 지정 리소스 공급자에 지정 된 **끝점** 에 대 한 요청 메서드만 `DELETE` 합니다. 사용자 지정 리소스 공급자는 캐시에 저장 된 내용에 따라 `GET` 요청을 자동으로 반환 합니다. 사용자 지정 리소스를 캐시로 표시 하는 경우 사용자 지정 리소스 공급자는 Api Azure를 준수 하도록 하기 위해 응답의 필드를 추가/덮어쓰기도 합니다. "`Proxy, Cache`"을 사용 하는 경우:
+"`Proxy, Cache`" **Routingtype** 프록시는 `PUT` 하 고 사용자 지정 리소스 공급자에 지정 된 **엔드포인트** 에 대 한 요청 메서드만 `DELETE` 합니다. 사용자 지정 리소스 공급자는 캐시에 저장 된 내용에 따라 `GET` 요청을 자동으로 반환 합니다. 사용자 지정 리소스를 캐시로 표시 하는 경우 사용자 지정 리소스 공급자는 Api Azure를 준수 하도록 하기 위해 응답의 필드를 추가/덮어쓰기도 합니다. "`Proxy, Cache`"을 사용 하는 경우:
 
 - 기존 리소스가 없는 새 시스템을 만듭니다.
 - 기존 Azure 에코 시스템을 사용 합니다.
@@ -106,7 +106,7 @@ az resource create --is-full-object \
 ---|---|---
 is-full-object | *예* | 속성 개체에 위치, 태그, SKU 및/또는 계획과 같은 다른 옵션이 포함된다는 것을 나타냅니다.
 id | *예* | 사용자 지정 리소스의 리소스 ID입니다. 이는 **ResourceProvider** 에 있어야 합니다.
-properties | *예* | **끝점**으로 전송 되는 요청 본문입니다.
+properties | *예* | **엔드포인트**으로 전송 되는 요청 본문입니다.
 
 Azure 사용자 지정 리소스 삭제:
 
@@ -131,11 +131,11 @@ id | *예* | 사용자 지정 리소스의 리소스 ID입니다. 이는 **Resou
 ### <a name="azure-resource-manager-template"></a>Azure Resource Manager 템플릿
 
 > [!NOTE]
-> 리소스에는 응답에 적절 한 `id`, `name`및 **끝점**의 `type` 포함 되어야 합니다.
+> 리소스에는 응답에 적절 한 `id`, `name`및 **엔드포인트**의 `type` 포함 되어야 합니다.
 
-Azure Resource Manager 템플릿을 수행 하려면 다운스트림 끝점에서 `id`, `name`및 `type`를 올바르게 반환 해야 합니다. 반환 된 리소스 응답은 다음과 같은 형식 이어야 합니다.
+Azure Resource Manager 템플릿을 수행 하려면 다운스트림 엔드포인트에서 `id`, `name`및 `type`를 올바르게 반환 해야 합니다. 반환 된 리소스 응답은 다음과 같은 형식 이어야 합니다.
 
-샘플 **끝점** 응답:
+샘플 **엔드포인트** 응답:
 
 ``` JSON
 {

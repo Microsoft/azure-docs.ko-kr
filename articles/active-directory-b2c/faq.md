@@ -1,6 +1,6 @@
 ---
-title: Azure Active Directory B2C에 대 한 FAQ (질문과 대답)
-description: Azure Active Directory B2C에 대 한 자주 묻는 질문에 대 한 대답입니다.
+title: Azure Active Directory B2C에 대한 FAQ (질문과 대답)
+description: Azure Active Directory B2C에 대한 자주 묻는 질문에 대한 대답입니다.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -19,7 +19,7 @@ ms.locfileid: "76847304"
 ---
 # <a name="azure-ad-b2c-frequently-asked-questions-faq"></a>Azure AD B2C: FAQ(질문과 대답)
 
-이 페이지는 Azure Active Directory B2C (Azure AD B2C)에 대 한 자주 묻는 질문에 답변 합니다. 업데이트를 계속 확인합니다.
+이 페이지는 Azure Active Directory B2C (Azure AD B2C)에 대한 자주 묻는 질문에 답변 합니다. 업데이트를 계속 확인합니다.
 
 ### <a name="why-cant-i-access-the-azure-ad-b2c-extension-in-the-azure-portal"></a>Azure Portal에서 Azure AD B2C 확장에 액세스할 수 없는 이유는 무엇인가요?
 
@@ -31,21 +31,21 @@ Azure AD 및 Azure AD B2C는 별개 제품으로, 동일한 테넌트에서 함�
 
 ### <a name="can-i-use-azure-ad-b2c-to-provide-social-login-facebook-and-google-into-office-365"></a>Azure AD B2C를 사용하여 소셜 로그인(Facebook 및 Google+)을 Office 365에 제공할 수 있나요?
 
-Azure AD B2C를 사용하여 Microsoft Office 365에 사용자를 인증할 수는 없습니다. Azure AD는 SaaS 앱에 대 한 직원 액세스를 관리 하기 위한 Microsoft 솔루션 이며 라이선스 및 조건부 액세스와 같은 용도로 설계 된 기능을 제공 합니다. Azure AD B2C는 웹 및 모바일 애플리케이션을 빌드하기 위한 ID 및 액세스 관리 플랫폼을 제공합니다. Azure AD B2C가 Azure AD 테넌트에 페더레이션되도록 구성된 경우 Azure AD 테넌트는 Azure AD B2C를 사용하는 애플리케이션에 대한 직원 액세스를 관리합니다.
+Azure AD B2C를 사용하여 Microsoft Office 365에 사용자를 인증할 수는 없습니다. Azure AD는 SaaS 앱에 대한 직원 액세스를 관리 하기 위한 Microsoft 솔루션 이며 라이선스 및 조건부 액세스와 같은 용도로 설계 된 기능을 제공 합니다. Azure AD B2C는 웹 및 모바일 애플리케이션을 빌드하기 위한 ID 및 액세스 관리 플랫폼을 제공합니다. Azure AD B2C가 Azure AD 테넌트에 페더레이션되도록 구성된 경우 Azure AD 테넌트는 Azure AD B2C를 사용하는 애플리케이션에 대한 직원 액세스를 관리합니다.
 
 ### <a name="what-are-local-accounts-in-azure-ad-b2c-how-are-they-different-from-work-or-school-accounts-in-azure-ad"></a>Azure AD B2C에서 로컬 계정은 무엇인가요? Azure AD의 회사 또는 학교 계정과 어떻게 다른가요?
 
 Azure AD 테넌트에서 테넌트에 속한 사용자는 `<xyz>@<tenant domain>` 형식의 메일 주소로 로그인합니다. `<tenant domain>`은 테넌트의 확인된 도메인 중 하나이거나 초기 `<...>.onmicrosoft.com` 도메인입니다. 이 계정 유형은 회사 또는 학교 계정입니다.
 
-Azure AD B2C 테넌트에서 대부분의 앱은 사용자가 임의의 메일 주소(예: joe@comcast.net, bob@gmail.com, sarah@contoso.com 또는 jim@live.com)로 로그인하도록 합니다. 이 계정 유형은 로컬 계정입니다. 또한 임의의 사용자 이름이 로컬 계정으로 지원됩니다(예: joe, bob, sarah 또는 jim). Azure Portal에서 Azure AD B2C에 대한 ID 공급자를 구성하는 경우 이러한 두 로컬 계정 형식 중 하나를 선택할 수 있습니다. Azure AD B2C 테 넌 트에서 **id 공급자**를 선택 하 고 **로컬 계정**을 선택한 다음 **사용자 이름**을 선택 합니다.
+Azure AD B2C 테넌트에서 대부분의 앱은 사용자가 임의의 메일 주소(예: joe@comcast.net, bob@gmail.com, sarah@contoso.com 또는 jim@live.com)로 로그인하도록 합니다. 이 계정 유형은 로컬 계정입니다. 또한 임의의 사용자 이름이 로컬 계정으로 지원됩니다(예: joe, bob, sarah 또는 jim). Azure Portal에서 Azure AD B2C에 대한 ID 공급자를 구성하는 경우 이러한 두 로컬 계정 형식 중 하나를 선택할 수 있습니다. Azure AD B2C 테넌트에서 **id 공급자**를 선택 하 고 **로컬 계정**을 선택한 다음 **사용자 이름**을 선택 합니다.
 
 등록 사용자 흐름, 등록 또는 로그인 사용자 흐름, Microsoft Graph API 또는 Azure Portal를 통해 응용 프로그램의 사용자 계정을 만들 수 있습니다.
 
 ### <a name="which-social-identity-providers-do-you-support-now-which-ones-do-you-plan-to-support-in-the-future"></a>지금 어떤 소셜 ID 공급자를 지원하나요? 나중에 어떤 공급자를 지원하려는 계획입니까?
 
-현재 Amazon, Facebook, GitHub (미리 보기), Google, LinkedIn, Microsoft 계정 (MSA), QQ (미리 보기), Twitter, WeChat (미리 보기) 및 Weibo (미리 보기)를 비롯 한 여러 소셜 id 공급자를 지원 합니다. 고객 수요를 기반으로 하는 다른 인기 있는 소셜 id 공급자에 대 한 지원 추가를 평가 합니다.
+현재 Amazon, Facebook, GitHub (미리 보기), Google, LinkedIn, Microsoft 계정 (MSA), QQ (미리 보기), Twitter, WeChat (미리 보기) 및 Weibo (미리 보기)를 비롯 한 여러 소셜 id 공급자를 지원 합니다. 고객 수요를 기반으로 하는 다른 인기 있는 소셜 id 공급자에 대한 지원 추가를 평가 합니다.
 
-Azure AD B2C는 [사용자 지정 정책](custom-policy-overview.md)도 지원 합니다. 사용자 지정 정책을 사용 하면 [Openid connect Connect](https://openid.net/specs/openid-connect-core-1_0.html) 또는 SAML을 지 원하는 모든 id 공급자에 대 한 사용자 고유의 정책을 만들 수 있습니다. [사용자 지정 정책 시작 팩](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack)을 확인하여 사용자 지정 정책을 시작하세요.
+Azure AD B2C는 [사용자 지정 정책](custom-policy-overview.md)도 지원 합니다. 사용자 지정 정책을 사용 하면 [Openid connect Connect](https://openid.net/specs/openid-connect-core-1_0.html) 또는 SAML을 지 원하는 모든 id 공급자에 대한 사용자 고유의 정책을 만들 수 있습니다. [사용자 지정 정책 시작 팩](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack)을 확인하여 사용자 지정 정책을 시작하세요.
 
 ### <a name="can-i-configure-scopes-to-gather-more-information-about-consumers-from-various-social-identity-providers"></a>범위를 구성하여 다양한 소셜 ID 공급자에서 소비자에 대한 자세한 정보를 수집할 수 있나요?
 
@@ -110,7 +110,7 @@ Azure AD B2C는 SharePoint 외부 파트너 공유 시나리오에 해당하지 
 
 ### <a name="should-i-use-azure-ad-b2c-or-b2b-to-manage-external-identities"></a>외부 ID를 관리하려면 Azure AD B2C 또는 B2B를 사용해야 합니까?
 
-외부 id 시나리오에 적절 한 기능을 적용 하는 방법에 대 한 자세한 내용은 [AZURE AD에서 B2B 공동 작업 및 B2C 비교](../active-directory/b2b/compare-with-b2c.md) 를 참조 하세요.
+외부 id 시나리오에 적절 한 기능을 적용 하는 방법에 대한 자세한 내용은 [AZURE AD에서 B2B 공동 작업 및 B2C 비교](../active-directory/b2b/compare-with-b2c.md) 를 참조 하세요.
 
 ### <a name="what-reporting-and-auditing-features-does-azure-ad-b2c-provide-are-they-the-same-as-in-azure-ad-premium"></a>Azure AD B2C가 제공하는 보고 및 감사 기능은 무엇인가요? Azure AD Premium과 동일한가요?
 
@@ -130,7 +130,7 @@ Azure AD B2C는 SharePoint 외부 파트너 공유 시나리오에 해당하지 
 
 ### <a name="how-do-i-delete-my-azure-ad-b2c-tenant"></a>Azure AD B2C 테넌트를 삭제하려면 어떻게 해야 하나요?
 
-Azure AD B2C 테 넌 트를 삭제 하려면 다음 단계를 수행 합니다.
+Azure AD B2C 테넌트를 삭제 하려면 다음 단계를 수행 합니다.
 
 현재 **응용 프로그램** 환경 또는 새로운 통합 **앱 등록 (미리 보기)** 환경을 사용할 수 있습니다. [새 환경에 대해 자세히 알아보세요](https://aka.ms/b2cappregintro).
 
@@ -139,8 +139,8 @@ Azure AD B2C 테 넌 트를 삭제 하려면 다음 단계를 수행 합니다.
 1. *구독 관리자로* [Azure Portal](https://portal.azure.com/) 에 로그인 합니다. 동일한 회사 또는 학교 계정 또는 Azure에 등록 하는 데 사용한 것과 동일한 Microsoft 계정를 사용 합니다.
 1. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택한 다음, Azure AD B2C 테넌트가 포함된 디렉터리를 선택합니다.
 1. 왼쪽 메뉴에서 **Azure AD B2C**를 선택합니다. 또는 **모든 서비스**를 선택하고 **Azure AD B2C**를 검색하여 선택합니다.
-1. Azure AD B2C 테 넌 트에서 모든 **사용자 흐름 (정책)** 을 삭제 합니다.
-1. Azure AD B2C 테 넌 트에 등록 한 모든 **응용 프로그램** 을 삭제 합니다.
+1. Azure AD B2C 테넌트에서 모든 **사용자 흐름 (정책)** 을 삭제 합니다.
+1. Azure AD B2C 테넌트에 등록 한 모든 **응용 프로그램** 을 삭제 합니다.
 1. 왼쪽 메뉴에서 **Azure Active Directory** 를 선택 합니다.
 1. **관리**에서 **사용자**를 선택합니다.
 1. 각 사용자를 차례로 선택 합니다 (현재 로그인 한 *구독 관리자* 사용자 제외). 페이지 맨 아래에서 **삭제** 를 선택 하 고 메시지가 표시 되 면 **예** 를 선택 합니다.
@@ -150,7 +150,7 @@ Azure AD B2C 테 넌 트를 삭제 하려면 다음 단계를 수행 합니다.
 1. **관리**에서 **사용자 설정**을 선택 합니다.
 1. 있는 경우 **LinkedIn 계정 연결**아래에서 **아니요**를 선택 하 고 **저장**을 선택 합니다.
 1. **관리**아래에서 **속성** 을 선택 합니다.
-1. **Azure 리소스에 대 한 액세스 관리**에서 **예**를 선택한 다음, **저장**을 선택 합니다.
+1. **Azure 리소스에 대한 액세스 관리**에서 **예**를 선택한 다음, **저장**을 선택 합니다.
 1. Azure Portal에서 로그 아웃 한 후 다시 로그인 하 여 액세스를 새로 고칩니다.
 1. 왼쪽 메뉴에서 **Azure Active Directory** 를 선택 합니다.
 1. **개요** 페이지에서 **디렉터리 삭제**를 선택 합니다. 화면의 지시에 따라 프로세스를 완료 합니다.
@@ -160,7 +160,7 @@ Azure AD B2C 테 넌 트를 삭제 하려면 다음 단계를 수행 합니다.
 1. *구독 관리자로* [Azure Portal](https://portal.azure.com/) 에 로그인 합니다. 동일한 회사 또는 학교 계정 또는 Azure에 등록 하는 데 사용한 것과 동일한 Microsoft 계정를 사용 합니다.
 1. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택한 다음, Azure AD B2C 테넌트가 포함된 디렉터리를 선택합니다.
 1. 왼쪽 메뉴에서 **Azure AD B2C**를 선택합니다. 또는 **모든 서비스**를 선택하고 **Azure AD B2C**를 검색하여 선택합니다.
-1. Azure AD B2C 테 넌 트에서 모든 **사용자 흐름 (정책)** 을 삭제 합니다.
+1. Azure AD B2C 테넌트에서 모든 **사용자 흐름 (정책)** 을 삭제 합니다.
 1. **앱 등록 (미리 보기)** 를 선택한 다음 **모든 응용 프로그램** 탭을 선택 합니다.
 1. 등록 한 모든 응용 프로그램을 삭제 합니다.
 1. **B2c 앱**을 삭제 합니다.
@@ -170,7 +170,7 @@ Azure AD B2C 테 넌 트를 삭제 하려면 다음 단계를 수행 합니다.
 1. **관리**에서 **사용자 설정**을 선택 합니다.
 1. 있는 경우 **LinkedIn 계정 연결**아래에서 **아니요**를 선택 하 고 **저장**을 선택 합니다.
 1. **관리**아래에서 **속성** 을 선택 합니다.
-1. **Azure 리소스에 대 한 액세스 관리**에서 **예**를 선택한 다음, **저장**을 선택 합니다.
+1. **Azure 리소스에 대한 액세스 관리**에서 **예**를 선택한 다음, **저장**을 선택 합니다.
 1. Azure Portal에서 로그 아웃 한 후 다시 로그인 하 여 액세스를 새로 고칩니다.
 1. 왼쪽 메뉴에서 **Azure Active Directory** 를 선택 합니다.
 1. **개요** 페이지에서 **디렉터리 삭제**를 선택 합니다. 화면의 지시에 따라 프로세스를 완료 합니다.

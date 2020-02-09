@@ -1,6 +1,6 @@
 ---
-title: Azure Resource Manager 템플릿을 사용 하 여 Azure 데이터 탐색기에 대 한 데이터베이스 보안 주체 추가
-description: 이 문서에서는 Azure Resource Manager 템플릿을 사용 하 여 Azure 데이터 탐색기에 대 한 데이터베이스 보안 주체를 추가 하는 방법에 대해 알아봅니다.
+title: Azure Resource Manager 템플릿을 사용 하 여 Azure 데이터 탐색기에 대한 데이터베이스 보안 주체 추가
+description: 이 문서에서는 Azure Resource Manager 템플릿을 사용 하 여 Azure 데이터 탐색기에 대한 데이터베이스 보안 주체를 추가 하는 방법에 대해 알아봅니다.
 author: lucygoldbergmicrosoft
 ms.author: lugoldbe
 ms.reviewer: orspodek
@@ -14,14 +14,14 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 02/02/2020
 ms.locfileid: "76965113"
 ---
-# <a name="add-database-principals-for-azure-data-explorer-by-using-an-azure-resource-manager-template"></a>Azure Resource Manager 템플릿을 사용 하 여 Azure 데이터 탐색기에 대 한 데이터베이스 보안 주체 추가
+# <a name="add-database-principals-for-azure-data-explorer-by-using-an-azure-resource-manager-template"></a>Azure Resource Manager 템플릿을 사용 하 여 Azure 데이터 탐색기에 대한 데이터베이스 보안 주체 추가
 
 > [!div class="op_single_selector"]
 > * [C#](database-principal-csharp.md)
 > * [Python](database-principal-python.md)
 > * [Azure Resource Manager 템플릿](database-principal-resource-manager.md)
 
-Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능한 빠르고 확장성이 우수한 데이터 탐색 서비스입니다. 이 문서에서는 Azure Resource Manager 템플릿을 사용 하 여 Azure 데이터 탐색기에 대 한 데이터베이스 보안 주체를 추가 합니다.
+Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능한 빠르고 확장성이 우수한 데이터 탐색 서비스입니다. 이 문서에서는 Azure Resource Manager 템플릿을 사용 하 여 Azure 데이터 탐색기에 대한 데이터베이스 보안 주체를 추가 합니다.
 
 ## <a name="prerequisites"></a>필수 조건
 

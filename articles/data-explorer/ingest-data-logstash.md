@@ -16,7 +16,7 @@ ms.locfileid: "66494536"
 ---
 # <a name="ingest-data-from-logstash-to-azure-data-explorer"></a>Logstash에서 Azure Data Explorer로 데이터 수집
 
-[Logstash](https://www.elastic.co/products/logstash)는 동시에 여러 원본의 데이터를 수집하고, 데이터를 변환한 다음, 데이터를 즐겨찾는 “스태시”에 전송하는 오픈 소스인 서버 쪽 데이터 처리 파이프라인입니다. 이 문서에서는 보내게 데이터는 Azure 데이터 탐색기로 로그 및 원격 분석 데이터에 대 한 빠르고 확장성이 높은 데이터 탐색 서비스인. 처음에 테이블 및 데이터 매핑을 테스트 클러스터에 만든 다음, 테이블에 데이터를 보내고 결과를 확인하도록 Logstash로 보냅니다.
+[Logstash](https://www.elastic.co/products/logstash)는 동시에 여러 원본의 데이터를 수집하고, 데이터를 변환한 다음, 데이터를 즐겨찾는 “스태시”에 전송하는 오픈 소스인 서버 쪽 데이터 처리 파이프라인입니다. 이 문서에서는 보내게 데이터는 Azure 데이터 탐색기로 로그 및 원격 분석 데이터에 대한 빠르고 확장성이 높은 데이터 탐색 서비스인. 처음에 테이블 및 데이터 매핑을 테스트 클러스터에 만든 다음, 테이블에 데이터를 보내고 결과를 확인하도록 Logstash로 보냅니다.
 
 ## <a name="prerequisites"></a>필수 조건
 

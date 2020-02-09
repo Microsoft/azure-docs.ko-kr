@@ -1,6 +1,6 @@
 ---
-title: SAP 고가용성 시나리오에서 Azure 표준 Load Balancer를 사용 하 Virtual Machines에 대 한 공용 끝점 연결
-description: SAP 고가용성 시나리오에서 Azure 표준 Load Balancer를 사용 하 Virtual Machines에 대 한 공용 끝점 연결
+title: SAP 고가용성 시나리오에서 Azure 표준 Load Balancer를 사용 하 Virtual Machines에 대 한 공용 엔드포인트 연결
+description: SAP 고가용성 시나리오에서 Azure 표준 Load Balancer를 사용 하 Virtual Machines에 대 한 공용 엔드포인트 연결
 services: virtual-machines-windows,virtual-network,storage,
 documentationcenter: saponazure
 author: rdeltcheva
@@ -22,9 +22,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 02/08/2020
 ms.locfileid: "77083732"
 ---
-# <a name="public-endpoint-connectivity-for-virtual-machines-using-azure-standard-load-balancer-in-sap-high-availability-scenarios"></a>SAP 고가용성 시나리오에서 Azure 표준 Load Balancer를 사용 하 Virtual Machines에 대 한 공용 끝점 연결
+# <a name="public-endpoint-connectivity-for-virtual-machines-using-azure-standard-load-balancer-in-sap-high-availability-scenarios"></a>SAP 고가용성 시나리오에서 Azure 표준 Load Balancer를 사용 하 Virtual Machines에 대 한 공용 엔드포인트 연결
 
-이 문서의 범위는 공용 끝점에 대 한 아웃 바운드 연결을 설정 하는 구성을 설명 하는 것입니다. 구성은 주로 SUSE/RHEL에 대 한 Pacemaker를 사용 하는 고가용성의 컨텍스트입니다.  
+이 문서의 범위는 공용 엔드포인트에 대 한 아웃 바운드 연결을 설정 하는 구성을 설명 하는 것입니다. 구성은 주로 SUSE/RHEL에 대 한 Pacemaker를 사용 하는 고가용성의 컨텍스트입니다.  
 
 고가용성 솔루션에서 Azure 펜스 에이전트와 함께 Pacemaker를 사용 하는 경우 Vm은 Azure 관리 API에 대 한 아웃 바운드 연결을 사용 해야 합니다.  
 이 문서에서는 시나리오에 가장 적합 한 옵션을 선택할 수 있는 몇 가지 옵션을 제공 합니다.  
@@ -35,26 +35,26 @@ ms.locfileid: "77083732"
 
 표준 Azure 부하 분산 장치는 기본 부하 분산 장치에 비해 몇 가지 이점을 제공 합니다. 예를 들어 Azure 가용성 영역에서 작동 하는 경우 보다 쉽게 문제를 해결 하 고 대기 시간을 줄일 수 있도록 더 나은 모니터링 및 로깅 기능을 제공 합니다. "HA 포트" 기능은 모든 포트를 포함 합니다. 즉, 더 이상 모든 개별 포트를 나열할 필요가 없습니다.  
 
-Azure 부하 분산 장치의 기본 SKU와 표준 SKU 간에는 몇 가지 중요 한 차이점이 있습니다. 그 중 하나는 공용 끝점에 대 한 아웃 바운드 트래픽을 처리 하는 것입니다. 전체 기본 및 표준 SKU 부하 분산 장치 비교는 [LOAD BALANCER SKU 비교](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview)를 참조 하세요.  
+Azure 부하 분산 장치의 기본 SKU와 표준 SKU 간에는 몇 가지 중요 한 차이점이 있습니다. 그 중 하나는 공용 엔드포인트에 대 한 아웃 바운드 트래픽을 처리 하는 것입니다. 전체 기본 및 표준 SKU 부하 분산 장치 비교는 [LOAD BALANCER SKU 비교](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview)를 참조 하세요.  
  
-공용 IP 주소가 없는 Vm이 내부 (공용 IP 주소 없음) 표준 Azure 부하 분산 장치의 백 엔드 풀에 배치 되는 경우, 추가 구성을 수행 하지 않으면 공용 끝점에 대 한 아웃 바운드 연결이 없습니다.  
+공용 IP 주소가 없는 Vm이 내부 (공용 IP 주소 없음) 표준 Azure 부하 분산 장치의 백 엔드 풀에 배치 되는 경우, 추가 구성을 수행 하지 않으면 공용 엔드포인트에 대 한 아웃 바운드 연결이 없습니다.  
 
-VM에 공용 IP 주소가 할당 되었거나 VM이 공용 IP 주소를 사용 하는 부하 분산 장치의 백 엔드 풀에 있는 경우 공용 끝점에 대 한 아웃 바운드 연결을 사용 합니다.  
+VM에 공용 IP 주소가 할당 되었거나 VM이 공용 IP 주소를 사용 하는 부하 분산 장치의 백 엔드 풀에 있는 경우 공용 엔드포인트에 대 한 아웃 바운드 연결을 사용 합니다.  
 
-SAP 시스템은 종종 중요 한 비즈니스 데이터를 포함 합니다. SAP 시스템을 호스트 하는 Vm에는 공용 IP 주소를 포함 하는 것이 거의 허용 되지 않습니다. 동시에 VM에서 공용 끝점으로의 아웃 바운드 연결을 요구 하는 시나리오가 있습니다.  
+SAP 시스템은 종종 중요 한 비즈니스 데이터를 포함 합니다. SAP 시스템을 호스트 하는 Vm에는 공용 IP 주소를 포함 하는 것이 거의 허용 되지 않습니다. 동시에 VM에서 공용 엔드포인트으로의 아웃 바운드 연결을 요구 하는 시나리오가 있습니다.  
 
-Azure 공용 끝점에 대 한 액세스를 요구 하는 시나리오의 예는 다음과 같습니다.  
+Azure 공용 엔드포인트에 대 한 액세스를 요구 하는 시나리오의 예는 다음과 같습니다.  
 - Pacemaker 클러스터에서 Azure Fence 에이전트를 fence 메커니즘으로 사용
 - Azure Backup
 - Azure Site Recovery  
 - 공용 리포지토리를 사용 하 여 운영 체제 패치
-- SAP 응용 프로그램 데이터 흐름에는 공용 끝점에 대 한 아웃 바운드 연결이 필요할 수 있습니다.
+- SAP 응용 프로그램 데이터 흐름에는 공용 엔드포인트에 대 한 아웃 바운드 연결이 필요할 수 있습니다.
 
-SAP 배포에 공용 끝점에 대 한 아웃 바운드 연결이 필요 하지 않은 경우에는 추가 구성을 구현할 필요가 없습니다. 공용 끝점에서 인바운드 연결이 필요 하지 않은 경우 고가용성 시나리오에 대 한 내부 표준 SKU Azure Load Balancer를 만들 수 있습니다.  
+SAP 배포에 공용 엔드포인트에 대 한 아웃 바운드 연결이 필요 하지 않은 경우에는 추가 구성을 구현할 필요가 없습니다. 공용 엔드포인트에서 인바운드 연결이 필요 하지 않은 경우 고가용성 시나리오에 대 한 내부 표준 SKU Azure Load Balancer를 만들 수 있습니다.  
 
 > [!Note]
-> 공용 IP 주소가 없는 Vm이 내부 (공용 IP 주소 없음) 표준 Azure 부하 분산 장치의 백 엔드 풀에 배치 되는 경우 공용 끝점으로의 라우팅을 허용 하기 위해 추가 구성을 수행 하지 않는 한 아웃 바운드 인터넷 연결이 없습니다.  
->Vm이 공용 ip 주소를 사용 하거나 공용 IP 주소를 사용 하는 Azure 부하 분산 장치의 백 엔드 풀에 이미 있는 경우 VM은 이미 공용 끝점에 대 한 아웃 바운드 연결을 가집니다.
+> 공용 IP 주소가 없는 Vm이 내부 (공용 IP 주소 없음) 표준 Azure 부하 분산 장치의 백 엔드 풀에 배치 되는 경우 공용 엔드포인트으로의 라우팅을 허용 하기 위해 추가 구성을 수행 하지 않는 한 아웃 바운드 인터넷 연결이 없습니다.  
+>Vm이 공용 ip 주소를 사용 하거나 공용 IP 주소를 사용 하는 Azure 부하 분산 장치의 백 엔드 풀에 이미 있는 경우 VM은 이미 공용 엔드포인트에 대 한 아웃 바운드 연결을 가집니다.
 
 
 다음 백서를 먼저 읽어 보세요.
@@ -71,18 +71,18 @@ SAP 배포에 공용 끝점에 대 한 아웃 바운드 연결이 필요 하지 
 
 ## <a name="additional-external-azure-standard-load-balancer-for-outbound-connections-to-internet"></a>인터넷에 대 한 아웃 바운드 연결에 대 한 추가 외부 Azure 표준 Load Balancer
 
-공용 끝점에서 VM에 대 한 인바운드 연결을 허용 하지 않고 공용 끝점에 대 한 아웃 바운드 연결을 구현 하는 한 가지 옵션은 공용 IP 주소를 사용 하 여 두 번째 부하 분산 장치를 만들고, 두 번째 부하 분산 장치의 백 엔드 풀에 Vm을 추가 하 고, [아웃 바운드 규칙만](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-rules-overview)정의 하는 것입니다.  
-[네트워크 보안 그룹](https://docs.microsoft.com/azure/virtual-network/security-overview) 을 사용 하 여 VM의 아웃 바운드 호출에 액세스할 수 있는 공용 끝점을 제어 합니다.  
+공용 엔드포인트에서 VM에 대 한 인바운드 연결을 허용 하지 않고 공용 엔드포인트에 대 한 아웃 바운드 연결을 구현 하는 한 가지 옵션은 공용 IP 주소를 사용 하 여 두 번째 부하 분산 장치를 만들고, 두 번째 부하 분산 장치의 백 엔드 풀에 Vm을 추가 하 고, [아웃 바운드 규칙만](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-rules-overview)정의 하는 것입니다.  
+[네트워크 보안 그룹](https://docs.microsoft.com/azure/virtual-network/security-overview) 을 사용 하 여 VM의 아웃 바운드 호출에 액세스할 수 있는 공용 엔드포인트을 제어 합니다.  
 자세한 내용은 문서 [아웃 바운드 연결](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections#scenarios)의 시나리오 2를 참조 하세요.  
 구성은 다음과 같습니다.  
 
-![네트워크 보안 그룹을 사용 하 여 공용 끝점에 대 한 연결 제어](./media/high-availability-guide-standard-load-balancer/high-availability-guide-standard-load-balancer-public.png)
+![네트워크 보안 그룹을 사용 하 여 공용 엔드포인트에 대 한 연결 제어](./media/high-availability-guide-standard-load-balancer/high-availability-guide-standard-load-balancer-public.png)
 
 ### <a name="important-considerations"></a>중요 고려 사항
 
-- 공용 끝점에 대 한 아웃 바운드 연결을 구현 하 고 비용을 최적화 하기 위해 동일한 서브넷의 여러 Vm에 대해 하나의 추가 공용 Load Balancer를 사용할 수 있습니다.  
-- [네트워크 보안 그룹](https://docs.microsoft.com/azure/virtual-network/security-overview) 을 사용 하 여 vm에서 액세스할 수 있는 공용 끝점을 제어 합니다. 네트워크 보안 그룹을 서브넷 또는 각 VM에 할당할 수 있습니다. 가능 하면 [서비스 태그](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags) 를 사용 하 여 보안 규칙의 복잡성을 줄입니다.  
-- 공용 IP 주소 및 아웃 바운드 규칙을 포함 하는 Azure 표준 부하 분산 장치는 공용 끝점에 직접 액세스할 수 있습니다. 감사 및 로깅을 위해 중앙 집중식 회사 솔루션을 통해 모든 아웃 바운드 트래픽이 전달 되도록 회사 보안 요구 사항이 있는 경우이 시나리오에서 요구 사항을 충족 하지 못할 수 있습니다.  
+- 공용 엔드포인트에 대 한 아웃 바운드 연결을 구현 하 고 비용을 최적화 하기 위해 동일한 서브넷의 여러 Vm에 대해 하나의 추가 공용 Load Balancer를 사용할 수 있습니다.  
+- [네트워크 보안 그룹](https://docs.microsoft.com/azure/virtual-network/security-overview) 을 사용 하 여 vm에서 액세스할 수 있는 공용 엔드포인트을 제어 합니다. 네트워크 보안 그룹을 서브넷 또는 각 VM에 할당할 수 있습니다. 가능 하면 [서비스 태그](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags) 를 사용 하 여 보안 규칙의 복잡성을 줄입니다.  
+- 공용 IP 주소 및 아웃 바운드 규칙을 포함 하는 Azure 표준 부하 분산 장치는 공용 엔드포인트에 직접 액세스할 수 있습니다. 감사 및 로깅을 위해 중앙 집중식 회사 솔루션을 통해 모든 아웃 바운드 트래픽이 전달 되도록 회사 보안 요구 사항이 있는 경우이 시나리오에서 요구 사항을 충족 하지 못할 수 있습니다.  
 
 >[!TIP]
 >가능 하면 [서비스 태그](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags) 를 사용 하 여 네트워크 보안 그룹의 복잡성을 줄입니다. 
@@ -106,7 +106,7 @@ SAP 배포에 공용 끝점에 대 한 아웃 바운드 연결이 필요 하지 
     az network lb outbound-rule create --address-pool MyBackendPoolOfPublicILB --frontend-ip-configs MyPublicILBFrondEndIP --idle-timeout 30 --lb-name MyPublicILB --name MyOutBoundRules  --outbound-ports 10000 --enable-tcp-reset true --protocol All --resource-group MyResourceGroup
    ```
 
-4. 특정 공용 끝점에 대 한 액세스를 제한 하는 네트워크 보안 그룹 규칙을 만듭니다. 기존 네트워크 보안 그룹이 있는 경우 조정할 수 있습니다. 아래 예제에서는 Azure 관리 API에 대 한 액세스를 사용 하도록 설정 하는 방법을 보여 줍니다. 
+4. 특정 공용 엔드포인트에 대 한 액세스를 제한 하는 네트워크 보안 그룹 규칙을 만듭니다. 기존 네트워크 보안 그룹이 있는 경우 조정할 수 있습니다. 아래 예제에서는 Azure 관리 API에 대 한 액세스를 사용 하도록 설정 하는 방법을 보여 줍니다. 
    1. 네트워크 보안 그룹으로 이동 합니다.
    1. 아웃 바운드 보안 규칙을 클릭 합니다.
    1. **인터넷**에 대 한 모든 아웃 바운드 액세스를 **거부** 하는 규칙을 추가 합니다.
@@ -121,7 +121,7 @@ SAP 배포에 공용 끝점에 대 한 아웃 바운드 연결이 필요 하지 
 
 ## <a name="azure-firewall-for-outbound-connections-to-internet"></a>인터넷에 대 한 아웃 바운드 연결을 위한 Azure 방화벽
 
-공용 끝점에서 VM에 대 한 인바운드 연결을 허용 하지 않고 공용 끝점에 대 한 아웃 바운드 연결을 구현 하는 또 다른 옵션은 Azure 방화벽을 사용 하는 것입니다. Azure 방화벽은 기본 제공 되는 고가용성을 포함 하는 관리 되는 서비스 이며 여러 가용성 영역 확장할 수 있습니다.  
+공용 엔드포인트에서 VM에 대 한 인바운드 연결을 허용 하지 않고 공용 엔드포인트에 대 한 아웃 바운드 연결을 구현 하는 또 다른 옵션은 Azure 방화벽을 사용 하는 것입니다. Azure 방화벽은 기본 제공 되는 고가용성을 포함 하는 관리 되는 서비스 이며 여러 가용성 영역 확장할 수 있습니다.  
 또한 azure 방화벽을 통해 트래픽을 라우팅하는 azure 방화벽을 가리키는 Vm 및 Azure 부하 분산 장치를 배포 하는 서브넷과 연결 된 [사용자 정의 경로](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview#custom-routes)를 배포 해야 합니다.  
 Azure 방화벽을 배포 하는 방법에 대 한 자세한 내용은 [Azure 방화벽 배포 및 구성](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal)을 참조 하세요.  
 
@@ -151,7 +151,7 @@ Azure 방화벽을 배포 하는 방법에 대 한 자세한 내용은 [Azure �
    1. 지역을 선택 하 고 Vm이 배포 되는 가용성 영역에 따라 2 개 이상의 가용성 영역을 선택 합니다.  
    1. SAP Vm 및 Azure 표준 부하 분산 장치를 배포 하는 Virtual Network를 선택 합니다.  
    1. 공용 IP 주소: 만들기를 클릭 하 고 이름을 입력 합니다. 예를 들면 **MyFirewallPublicIP**입니다.  
-4. 지정 된 공용 끝점에 대 한 아웃 바운드 연결을 허용 하는 Azure 방화벽 규칙을 만듭니다. 이 예제에서는 Azure 관리 API 공용 끝점에 대 한 액세스를 허용 하는 방법을 보여 줍니다.  
+4. 지정 된 공용 엔드포인트에 대 한 아웃 바운드 연결을 허용 하는 Azure 방화벽 규칙을 만듭니다. 이 예제에서는 Azure 관리 API 공용 엔드포인트에 대 한 액세스를 허용 하는 방법을 보여 줍니다.  
    1. 규칙, 네트워크 규칙 컬렉션을 차례로 선택한 다음 네트워크 규칙 컬렉션 추가를 클릭 합니다.  
    1. 이름: **MyOutboundRule**, 우선 순위를 입력 하 고 작업 **허용**을 선택 합니다.  
    1. 서비스: 이름 **Toazureapi**.  프로토콜: **Any**를 선택 합니다. 원본 주소: Vm 및 표준 Load Balancer 배포 되는 서브넷의 범위 (예: **11.97.0.0/24**)를 입력 합니다. 대상 포트: <b>*</b>을 입력 합니다.  
@@ -171,14 +171,14 @@ Azure 방화벽을 배포 하는 방법에 대 한 자세한 내용은 [Azure �
 
 ## <a name="using-proxy-for-pacemaker-calls-to-azure-management-api"></a>Azure 관리 API에 대 한 Pacemaker 호출에 Proxy 사용
 
-프록시를 사용 하 여 Azure 관리 API 공용 끝점에 대 한 Pacemaker 호출을 허용할 수 있습니다.  
+프록시를 사용 하 여 Azure 관리 API 공용 엔드포인트에 대 한 Pacemaker 호출을 허용할 수 있습니다.  
 
 ### <a name="important-considerations"></a>중요 고려 사항
 
-  - 이미 회사 프록시가 있는 경우 아웃 바운드 호출을 통해 공용 끝점으로 라우팅할 수 있습니다. 공용 끝점에 대 한 아웃 바운드 호출은 회사 제어 지점을 통해 전달 됩니다.  
+  - 이미 회사 프록시가 있는 경우 아웃 바운드 호출을 통해 공용 엔드포인트으로 라우팅할 수 있습니다. 공용 엔드포인트에 대 한 아웃 바운드 호출은 회사 제어 지점을 통해 전달 됩니다.  
   - 프록시 구성에서 Azure 관리 API에 대 한 아웃 바운드 연결을 허용 하는지 확인 합니다. https://management.azure.com  
   - Vm에서 프록시로의 경로가 있는지 확인 합니다.  
-  - 프록시는 HTTP/HTTPS 호출만 처리 합니다. 다른 프로토콜 (예: RFC)을 통해 공용 끝점에 대 한 아웃 바운드 호출을 추가로 수행 해야 하는 경우 대체 솔루션이 필요 합니다.  
+  - 프록시는 HTTP/HTTPS 호출만 처리 합니다. 다른 프로토콜 (예: RFC)을 통해 공용 엔드포인트에 대 한 아웃 바운드 호출을 추가로 수행 해야 하는 경우 대체 솔루션이 필요 합니다.  
   - Pacemaker 클러스터의 불안정성을 방지 하려면 프록시 솔루션을 항상 사용 가능 해야 합니다.  
   - 프록시 위치에 따라 azure 펜스 에이전트에서 Azure 관리 API로의 호출에 추가 대기 시간이 발생할 수 있습니다. 회사 프록시가 아직 온-프레미스에 있는 동안 Pacemaker 클러스터가 Azure에 있으면 대기 시간을 측정 하 고이 솔루션이 적합 한 경우를 고려 합니다.  
   - 아직 사용 가능한 회사 프록시가 아직 없는 경우 고객이 추가 비용 및 복잡성을 발생 시킬 수 있으므로이 옵션을 사용 하지 않는 것이 좋습니다. 그럼에도 불구 하 고 추가 프록시 솔루션을 배포 하기로 결정 한 경우 Pacemaker에서 Azure Management public API로 아웃 바운드 연결을 허용 하려면 프록시가 항상 사용 가능 하 고 Vm에서 프록시로의 대기 시간이 낮은 지 확인 합니다.  

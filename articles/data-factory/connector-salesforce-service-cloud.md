@@ -305,7 +305,7 @@ SOQL 또는 SQL 쿼리를 지정할 때 DateTime 형식 차이에 주의해야 �
 
 "MALFORMED_QUERY: 잘림" 오류가 발생 하는 경우 일반적으로 데이터에 JunctionIdList type 열이 있고 Salesforce에 많은 수의 행이 있는 이러한 데이터의 지원 제한이 있기 때문입니다. 완화 하려면 JunctionIdList 열을 제외 하거나 복사할 행 수를 제한 (여러 복사 작업 실행으로 분할할 수 있음)을 시도 합니다.
 
-## <a name="data-type-mapping-for-salesforce-service-cloud"></a>Salesforce Service Cloud에 대 한 데이터 형식 매핑
+## <a name="data-type-mapping-for-salesforce-service-cloud"></a>Salesforce Service Cloud에 대한 데이터 형식 매핑
 
 Salesforce 서비스 클라우드에서 데이터를 복사 하는 경우 Salesforce Service Cloud 데이터 형식에서 중간 데이터 형식을 Data Factory 하는 다음 매핑이 사용 됩니다. 복사 활동에서 원본 스키마와 데이터 형식을 싱크에 매핑하는 방법에 대한 자세한 내용은 [스키마 및 데이터 형식 매핑](copy-activity-schema-and-type-mapping.md)을 참조하세요.
 
@@ -333,7 +333,7 @@ Salesforce 서비스 클라우드에서 데이터를 복사 하는 경우 Salesf
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
+속성에 대한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
 
 
 ## <a name="next-steps"></a>다음 단계

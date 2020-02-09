@@ -34,5 +34,5 @@ ms.locfileid: "73523414"
 
     |포털의 리소스 탭|설정|값|
     |--|--|--|
-    |**개요**|엔드포인트|끝점을 복사 합니다. 다음과 같이 표시 됩니다 `https://speech.cognitiveservices.azure.com/sts/v1.0/issuetoken`|
+    |**개요**|엔드포인트|엔드포인트을 복사 합니다. 다음과 같이 표시 됩니다 `https://speech.cognitiveservices.azure.com/sts/v1.0/issuetoken`|
     |**키**|API 키|두 키의 1을 복사 합니다. `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`공백이 나 대시가 없는 32 영숫자 문자열입니다.|

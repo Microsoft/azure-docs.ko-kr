@@ -1,6 +1,6 @@
 ---
 title: 구성 Faq
-description: Azure App Service에 대 한 구성 및 관리 문제에 대 한 자주 묻는 질문에 대 한 답을 가져옵니다.
+description: Azure App Service에 대한 구성 및 관리 문제에 대한 자주 묻는 질문에 대한 답을 가져옵니다.
 author: genlin
 manager: dcscontentpm
 tags: top-support-issue
@@ -37,7 +37,7 @@ App Service 웹앱에 대한 사용자 지정 도메인을 구매 및 설정하�
 
 ## <a name="how-do-i-upload-and-configure-an-existing-ssl-certificate-for-my-web-app"></a>내 웹앱에 대한 기존 SSL 인증서를 어떻게 업로드 및 구성할 수 있나요?
 
-기존 사용자 지정 SSL 인증서를 업로드 하 고 설정 하는 방법에 대 한 자세한 내용은 [App Service 앱에 SSL 인증서 추가](configure-ssl-certificate.md)를 참조 하세요.
+기존 사용자 지정 SSL 인증서를 업로드 하 고 설정 하는 방법에 대한 자세한 내용은 [App Service 앱에 SSL 인증서 추가](configure-ssl-certificate.md)를 참조 하세요.
 
 
 ## <a name="how-do-i-purchase-and-configure-a-new-ssl-certificate-in-azure-for-my-web-app"></a>Azure에서 내 웹앱에 대한 새 SSL 인증서를 어떻게 구매 및 구성할 수 있나요?

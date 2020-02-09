@@ -30,7 +30,7 @@ Advisor 대시보드에 모든 구독에 대한 개인화된 권장 사항이 �
 * **보안**: 보안 위반으로 이어질 수 있는 위협 및 취약점을 검색합니다. 자세한 내용은 [Advisor 보안 권장 사항](advisor-security-recommendations.md)을 참조하세요.
 * **성능**: 애플리케이션의 속도를 향상시킵니다. 자세한 내용은 [Advisor 성능 권장 사항](advisor-performance-recommendations.md)을 참조하세요.
 * **비용**: 전체 Azure 사용을 최적화하고 사용량을 줄입니다. 자세한 내용은 [Advisor 비용 권장 사항](advisor-cost-recommendations.md)을 참조하세요.
-* **운영 뛰어난**기능: 프로세스 및 워크플로 효율성, 리소스 관리 효율성 및 배포 모범 사례를 달성할 수 있도록 지원 합니다. . 자세한 내용은 Advisor 작동에 대 한 [권장 사항](advisor-operational-excellence-recommendations.md)을 참조 하세요.
+* **운영 뛰어난**기능: 프로세스 및 워크플로 효율성, 리소스 관리 효율성 및 배포 모범 사례를 달성할 수 있도록 지원 합니다. . 자세한 내용은 Advisor 작동에 대한 [권장 사항](advisor-operational-excellence-recommendations.md)을 참조 하세요.
 
   ![Advisor 권장 사항 유형](./media/advisor-overview/advisor-dashboard.png)
 
@@ -55,9 +55,9 @@ Advisor 대시보드에 모든 구독에 대한 개인화된 권장 사항이 �
 
 ### <a name="what-resources-does-advisor-provide-recommendations-for"></a>Advisor는 어떤 리소스에 대해 권장 사항을 제공하나요?
 
-Advisor는 Application Gateway, App Services, 가용성 집합, Azure Cache, Azure Data Factory, Azure Database for MySQL, Azure Database for PostgreSQL, Azure Database for MariaDB, Azure Express 경로, Azure Cosmos DB, Azure 공개에 대 한 권장 사항을 제공 합니다. IP 주소, SQL Data Warehouse, SQL server, storage 계정, Traffic Manager 프로필 및 가상 머신.
+Advisor는 Application Gateway, App Services, 가용성 집합, Azure Cache, Azure Data Factory, Azure Database for MySQL, Azure Database for PostgreSQL, Azure Database for MariaDB, Azure Express 경로, Azure Cosmos DB, Azure 공개에 대한 권장 사항을 제공 합니다. IP 주소, SQL Data Warehouse, SQL server, storage 계정, Traffic Manager 프로필 및 가상 머신.
 
-Azure Advisor에는 추가 리소스 유형에 대 한 권장 사항을 포함 하는 [Azure Security Center](https://docs.microsoft.com/azure/security-center/security-center-recommendations) 의 권장 사항도 포함 되어 있습니다.
+Azure Advisor에는 추가 리소스 유형에 대한 권장 사항을 포함 하는 [Azure Security Center](https://docs.microsoft.com/azure/security-center/security-center-recommendations) 의 권장 사항도 포함 되어 있습니다.
 
 ### <a name="can-i-postpone-or-dismiss-a-recommendation"></a>권장 사항을 연기하거나 해제할 수 있나요?
 

@@ -17,11 +17,11 @@ ms.locfileid: "74048119"
 ---
 # <a name="use-log-analytics-to-examine-application-gateway-web-application-firewall-logs"></a>Log Analytics를 사용하여 Application Gateway 웹 애플리케이션 방화벽 로그 검사
 
-Application Gateway WAF가 작동 하 고 나면 로그를 사용 하 여 각 요청에서 발생 하는 상황을 검사할 수 있습니다. 방화벽 로그는 WAF가 평가, 일치 및 차단 하는 항목에 대 한 통찰력을 제공 합니다. Log Analytics를 사용 하면 방화벽 로그 내의 데이터를 검사 하 여 훨씬 더 많은 정보를 제공할 수 있습니다. Log Analytics 작업 영역을 만드는 방법에 대 한 자세한 내용은 [Azure Portal에서 Log Analytics 작업 영역 만들기](../azure-monitor/learn/quick-create-workspace.md)를 참조 하세요. 로그 쿼리에 대 한 자세한 내용은 Azure Monitor의 [로그 쿼리 개요](../azure-monitor/log-query/log-query-overview.md)를 참조 하세요.
+Application Gateway WAF가 작동 하 고 나면 로그를 사용 하 여 각 요청에서 발생 하는 상황을 검사할 수 있습니다. 방화벽 로그는 WAF가 평가, 일치 및 차단 하는 항목에 대한 통찰력을 제공 합니다. Log Analytics를 사용 하면 방화벽 로그 내의 데이터를 검사 하 여 훨씬 더 많은 정보를 제공할 수 있습니다. Log Analytics 작업 영역을 만드는 방법에 대한 자세한 내용은 [Azure Portal에서 Log Analytics 작업 영역 만들기](../azure-monitor/learn/quick-create-workspace.md)를 참조 하세요. 로그 쿼리에 대한 자세한 내용은 Azure Monitor의 [로그 쿼리 개요](../azure-monitor/log-query/log-query-overview.md)를 참조 하세요.
 
 ## <a name="import-waf-logs"></a>WAF 로그 가져오기
 
-Log Analytics로 방화벽 로그를 가져오려면 [백 엔드 상태, 진단 로그 및 Application Gateway에 대 한 메트릭](application-gateway-diagnostics.md#diagnostic-logging)을 참조 하세요. Log Analytics 작업 영역에 방화벽 로그가 있으면 데이터를 보고, 쿼리를 작성 하 고, 시각화를 만들어 포털 대시보드에 추가할 수 있습니다.
+Log Analytics로 방화벽 로그를 가져오려면 [백 엔드 상태, 진단 로그 및 Application Gateway에 대한 메트릭](application-gateway-diagnostics.md#diagnostic-logging)을 참조 하세요. Log Analytics 작업 영역에 방화벽 로그가 있으면 데이터를 보고, 쿼리를 작성 하 고, 시각화를 만들어 포털 대시보드에 추가할 수 있습니다.
 
 ## <a name="explore-data-with-examples"></a>예제를 사용 하 여 데이터 탐색
 
@@ -84,4 +84,4 @@ AzureDiagnostics
 
 ## <a name="next-steps"></a>다음 단계
 
-[Application Gateway에 대 한 백 엔드 상태, 진단 로그 및 메트릭](application-gateway-diagnostics.md)
+[Application Gateway에 대한 백 엔드 상태, 진단 로그 및 메트릭](application-gateway-diagnostics.md)

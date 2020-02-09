@@ -28,7 +28,7 @@ ms.locfileid: "76514615"
 | [Blob Storage 구독](scripts/event-grid-cli-blob.md)| Blob Storage 계정에 대한 이벤트를 구독합니다. |
 | [사용자 지정 항목 구독](scripts/event-grid-cli-subscribe-custom-topic.md)| 사용자 지정 항목에 대한 이벤트를 구독합니다. |
 | [리소스 그룹 구독](scripts/event-grid-cli-resource-group.md)| 리소스 그룹에 대한 이벤트를 구독합니다. |
-| [리소스 그룹을 구독하고 리소스 필터링](scripts/event-grid-cli-resource-group-filter.md)| 리소스 그룹에 대한 이벤트를 구독하고 리소스에 대 한 이벤트를 필터링합니다. |
+| [리소스 그룹을 구독하고 리소스 필터링](scripts/event-grid-cli-resource-group-filter.md)| 리소스 그룹에 대한 이벤트를 구독하고 리소스에 대한 이벤트를 필터링합니다. |
 |**Event Grid 항목**||
 | [사용자 지정 항목 만들기](scripts/event-grid-cli-create-custom-topic.md) | Event Grid 사용자 지정 토픽을 만들고 엔드포인트 및 키를 반환합니다.  |
 | | |

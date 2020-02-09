@@ -35,7 +35,7 @@ Azure Database for MySQL 서버에 대한 모든 데이터베이스 액세스는
 요청 IP 주소가 데이터베이스 수준 또는 서버 수준 방화벽 규칙의 지정된 범위 밖에 있으면 연결 요청이 실패합니다.
 
 ## <a name="connecting-from-azure"></a>Azure에서 연결
-응용 프로그램 또는 서비스의 나가는 IP 주소를 찾고 이러한 개별 IP 주소 또는 범위에 대 한 액세스를 명시적으로 허용 하는 것이 좋습니다. 예를 들어 Azure App Service의 나가는 IP 주소를 찾거나 가상 컴퓨터 또는 다른 리소스에 연결 된 공용 IP를 사용할 수 있습니다. 서비스 끝점을 통해 가상 컴퓨터의 개인 IP와 연결 하는 방법에 대 한 정보는 아래를 참조 하세요. 
+응용 프로그램 또는 서비스의 나가는 IP 주소를 찾고 이러한 개별 IP 주소 또는 범위에 대 한 액세스를 명시적으로 허용 하는 것이 좋습니다. 예를 들어 Azure App Service의 나가는 IP 주소를 찾거나 가상 컴퓨터 또는 다른 리소스에 연결 된 공용 IP를 사용할 수 있습니다. 서비스 엔드포인트을 통해 가상 컴퓨터의 개인 IP와 연결 하는 방법에 대 한 정보는 아래를 참조 하세요. 
 
 Azure 서비스에 대해 고정 된 나가는 IP 주소를 사용할 수 없는 경우 모든 Azure 데이터 센터 IP 주소에서 연결을 사용 하도록 설정할 수 있습니다. 이 설정은 **연결 보안** 창에서 **Azure 서비스에 대 한 액세스 허용** 옵션을 **켜기** 로 설정 하 고 **저장**을 사용 하 여 Azure Portal에서 사용 하도록 설정할 수 있습니다. Azure CLI에서 시작 주소와 끝 주소가 0.0.0.0 인 방화벽 규칙 설정은 해당 하는 것을 의미 합니다. 연결 시도가 허용되지 않으면 해당 요청이 Azure Database for MySQL 서버에 도달하지 않습니다.
 
@@ -46,7 +46,7 @@ Azure 서비스에 대해 고정 된 나가는 IP 주소를 사용할 수 없는
 ![포털에서 Azure 서비스 방문 허용 구성](./media/concepts-firewall-rules/allow-azure-services.png)
 
 ### <a name="connecting-from-a-vnet"></a>VNet에서 연결
-VNet에서 Azure Database for MySQL 서버에 안전 하 게 연결 하려면 [vnet 서비스 끝점](./concepts-data-access-and-security-vnet.md)을 사용 하는 것이 좋습니다. 
+VNet에서 Azure Database for MySQL 서버에 안전 하 게 연결 하려면 [vnet 서비스 엔드포인트](./concepts-data-access-and-security-vnet.md)을 사용 하는 것이 좋습니다. 
 
 ## <a name="programmatically-managing-firewall-rules"></a>방화벽 규칙을 프로그래밍 방식으로 관리
 Azure Portal 외에도 Azure CLI를 사용하여 방화벽 규칙을 프로그래밍 방식으로 관리할 수 있습니다. [Azure CLI를 사용한 MySQL용 Azure 데이터베이스 방화벽 규칙 만들기 및 관리](./howto-manage-firewall-using-cli.md)도 참조하세요.
@@ -70,4 +70,4 @@ Microsoft Azure Database for MySQL 서버 서비스에 대한 액세스가 예�
 
 * [Azure Portal을 사용한 MySQL용 Azure Database 방화벽 규칙 만들기 및 관리](./howto-manage-firewall-using-portal.md)
 * [Azure CLI를 사용 하 여 Azure Database for MySQL 방화벽 규칙 만들기 및 관리](./howto-manage-firewall-using-cli.md)
-- [Azure Database for MySQL의 VNet 서비스 끝점](./concepts-data-access-and-security-vnet.md)
+- [Azure Database for MySQL의 VNet 서비스 엔드포인트](./concepts-data-access-and-security-vnet.md)

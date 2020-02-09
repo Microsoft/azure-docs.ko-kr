@@ -21,7 +21,7 @@ ms.locfileid: "74930365"
 
 ## <a name="configuration"></a>구성
 
-데이터 흐름 식 작성기를 사용 하 여 필터 조건에 대 한 식을 입력 합니다. 식 작성기를 열려면 파란색 상자를 클릭 합니다. 필터 조건은 부울 유형 이어야 합니다. 식을 만드는 방법에 대 한 자세한 내용은 [식 작성기](concepts-data-flow-expression-builder.md) 설명서를 참조 하세요.
+데이터 흐름 식 작성기를 사용 하 여 필터 조건에 대한 식을 입력 합니다. 식 작성기를 열려면 파란색 상자를 클릭 합니다. 필터 조건은 부울 유형 이어야 합니다. 식을 만드는 방법에 대한 자세한 내용은 [식 작성기](concepts-data-flow-expression-builder.md) 설명서를 참조 하세요.
 
 ![필터 변환](media/data-flow/filter1.png "필터 변환")
 
@@ -44,7 +44,7 @@ Data Factory UX에서이 변환은 아래 이미지와 같습니다.
 
 ![필터 변환](media/data-flow/filter1.png "필터 변환")
 
-이 변환에 대 한 데이터 흐름 스크립트는 아래 코드 조각에 있습니다.
+이 변환에 대한 데이터 흐름 스크립트는 아래 코드 조각에 있습니다.
 
 ```
 CleanData

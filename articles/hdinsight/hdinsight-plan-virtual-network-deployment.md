@@ -255,9 +255,9 @@ HDInsight 클러스터를 만들 때 부하 분산 장치도 만들어집니다.
 
 ## <a name="transport-layer-security"></a>Transport Layer Security(전송 계층 보안)
 
-`https://<clustername>.azurehdinsight.net` 공용 클러스터 끝점을 통해 클러스터에 대 한 연결은 클러스터 게이트웨이 노드를 통해 프록시 됩니다. 이러한 연결은 TLS 라는 프로토콜을 사용 하 여 보호 됩니다. 게이트웨이에서 더 높은 버전의 TLS를 적용 하면 이러한 연결의 보안이 향상 됩니다. 최신 버전의 TLS를 사용 해야 하는 이유에 대 한 자세한 내용은 [tls 1.0 문제 해결](https://docs.microsoft.com/security/solving-tls1-problem)을 참조 하세요.
+`https://<clustername>.azurehdinsight.net` 공용 클러스터 엔드포인트을 통해 클러스터에 대 한 연결은 클러스터 게이트웨이 노드를 통해 프록시 됩니다. 이러한 연결은 TLS 라는 프로토콜을 사용 하 여 보호 됩니다. 게이트웨이에서 더 높은 버전의 TLS를 적용 하면 이러한 연결의 보안이 향상 됩니다. 최신 버전의 TLS를 사용 해야 하는 이유에 대 한 자세한 내용은 [tls 1.0 문제 해결](https://docs.microsoft.com/security/solving-tls1-problem)을 참조 하세요.
 
-배포 시 resource manager 템플릿에서 *Minsupportedtlsversion* 속성을 사용 하 여 HDInsight 클러스터의 게이트웨이 노드에서 지원 되는 최소 TLS 버전을 제어할 수 있습니다. 샘플 템플릿은 [HDInsight 최소 TLS 1.2 빠른 시작 템플릿](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-minimum-tls)을 참조 하세요. 이 속성은 "1.0", "1.1" 및 "1.2"의 세 가지 값을 지원 합니다 .이는 각각 TLS 1.0 +, TLS 1.1 + 및 TLS 1.2 +에 해당 합니다. 기본적으로이 속성을 지정 하지 않으면 Azure HDInsight 클러스터는 공용 HTTPS 끝점에서 TLS 1.2 연결을 허용 하 고 이전 버전과의 호환성을 위해 이전 버전을 허용 합니다. 결국 HDInsight는 모든 게이트웨이 노드 연결에 TLS 1.2 이상을 적용 합니다.
+배포 시 resource manager 템플릿에서 *Minsupportedtlsversion* 속성을 사용 하 여 HDInsight 클러스터의 게이트웨이 노드에서 지원 되는 최소 TLS 버전을 제어할 수 있습니다. 샘플 템플릿은 [HDInsight 최소 TLS 1.2 빠른 시작 템플릿](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-minimum-tls)을 참조 하세요. 이 속성은 "1.0", "1.1" 및 "1.2"의 세 가지 값을 지원 합니다 .이는 각각 TLS 1.0 +, TLS 1.1 + 및 TLS 1.2 +에 해당 합니다. 기본적으로이 속성을 지정 하지 않으면 Azure HDInsight 클러스터는 공용 HTTPS 엔드포인트에서 TLS 1.2 연결을 허용 하 고 이전 버전과의 호환성을 위해 이전 버전을 허용 합니다. 결국 HDInsight는 모든 게이트웨이 노드 연결에 TLS 1.2 이상을 적용 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

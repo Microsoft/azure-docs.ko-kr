@@ -37,7 +37,7 @@ Azure Information Protection 데이터 커넥터를 구성 하 여 [Azure Inform
 
 ## <a name="prerequisites"></a>필수 조건
 
-- 다음은 테 넌 트에 대 한 Azure AD 관리자 역할 중 하나입니다. 
+- 다음은 테넌트에 대 한 Azure AD 관리자 역할 중 하나입니다. 
     - Azure Information Protection 관리자
     - 보안 관리자
     - 규정 준수 관리자
@@ -45,7 +45,7 @@ Azure Information Protection 데이터 커넥터를 구성 하 여 [Azure Inform
     - 전역 관리자
     
     > [!NOTE]
-    > 테 넌 트가 [통합 레이블 지정 플랫폼](/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform)에 있는 경우 Azure Information Protection 관리자 역할을 사용할 수 없습니다.
+    > 테넌트가 [통합 레이블 지정 플랫폼](/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform)에 있는 경우 Azure Information Protection 관리자 역할을 사용할 수 없습니다.
     
     이러한 관리자 역할은 Azure Information Protection 커넥터를 구성 하는 데만 필요 하며 Azure 센티널이 Azure Information Protection에 연결 된 경우에는 필요 하지 않습니다.
 

@@ -32,7 +32,7 @@ ms.locfileid: "76153992"
 
 ## <a name="create-a-core-filer"></a>코어 파일러 만들기
 
-"Core 필터"는 백 엔드 저장소 시스템에 대 한 vFXT 용어입니다. 스토리지는 NetApp 또는 Isilon과 같은 하드웨어 NAS 어플라이언스이거나 클라우드 개체 스토리지일 수 있습니다. 핵심 필터에 대 한 자세한 내용은 [Avere 클러스터 설정 가이드](https://azure.github.io/Avere/legacy/ops_guide/4_7/html/settings_overview.html#managing-core-filers)에서 찾을 수 있습니다.
+"Core 필터"는 백 엔드 저장소 시스템에 대한 vFXT 용어입니다. 스토리지는 NetApp 또는 Isilon과 같은 하드웨어 NAS 어플라이언스이거나 클라우드 개체 스토리지일 수 있습니다. 핵심 필터에 대한 자세한 내용은 [Avere 클러스터 설정 가이드](https://azure.github.io/Avere/legacy/ops_guide/4_7/html/settings_overview.html#managing-core-filers)에서 찾을 수 있습니다.
 
 코어 파일러를 추가하려면 다음 두 가지 주요 유형 중 하나의 코어 파일러를 선택합니다.
 
@@ -41,7 +41,7 @@ ms.locfileid: "76153992"
 
 ### <a name="nas-core-filer"></a>NAS 코어 파일러
 
-NAS 코어 필터 온-프레미스 NetApp 또는 Isilon 어플라이언스 또는 클라우드의 NAS 끝점이 될 수 있습니다. 스토리지 시스템은 Avere vFXT 클러스터(예: 1GBps ExpressRoute 연결(VPN 아님))에 대한 안정적인 고속 연결이 있어야 하며, 사용되는 NAS 내보내기에 대한 클러스터 루트 액세스 권한을 제공해야 합니다.
+NAS 코어 필터 온-프레미스 NetApp 또는 Isilon 어플라이언스 또는 클라우드의 NAS 엔드포인트이 될 수 있습니다. 스토리지 시스템은 Avere vFXT 클러스터(예: 1GBps ExpressRoute 연결(VPN 아님))에 대한 안정적인 고속 연결이 있어야 하며, 사용되는 NAS 내보내기에 대한 클러스터 루트 액세스 권한을 제공해야 합니다.
 
 NAS core 필터를 추가 하려면 다음 단계를 수행 합니다.
 
@@ -86,8 +86,8 @@ Blob Storage를 클러스터에 추가하려면 다음 작업이 필요합니다
 >
 > * 제공 된 저장소 계정에서 새 Blob 컨테이너를 만듭니다.
 > * 컨테이너를 핵심 필터 정의 합니다.
-> * 컨테이너에 대 한 네임 스페이스 연결을 만듭니다.
-> * 클러스터의 가상 네트워크 내에 저장소 서비스 끝점을 만듭니다.
+> * 컨테이너에 대한 네임 스페이스 연결을 만듭니다.
+> * 클러스터의 가상 네트워크 내에 저장소 서비스 엔드포인트을 만듭니다.
 
 클러스터를 만든 후에 Blob Storage를 추가하려면 다음 단계를 수행합니다.
 

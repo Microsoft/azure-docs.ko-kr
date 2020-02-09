@@ -36,7 +36,7 @@ ms.locfileid: "77060464"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [SAP Cloud Platform Identity Authentication 테 넌 트](https://cloudplatform.sap.com/pricing.html)
+* [SAP Cloud Platform Identity Authentication 테넌트](https://cloudplatform.sap.com/pricing.html)
 * 관리자 권한으로 SAP Cloud Platform Identity Authentication의 사용자 계정
 
 ## <a name="assigning-users-to-sap-cloud-platform-identity-authentication"></a>SAP Cloud Platform Identity Authentication에 사용자 할당
@@ -115,7 +115,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위해 SAP Cloud Platfor
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에 있는 **테 넌 트 URL**에 `https://<tenantID>.accounts.ondemand.com/service/scim `을 입력 합니다. 이전에 **관리자 사용자 이름** 및 **관리자 암호** 에서 각각 검색 된 **사용자 ID** 및 **암호** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 SAP Cloud Platform Identity Authentication에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 SAP Cloud Platform Identity Authentication 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
+5. **관리자 자격 증명** 섹션 아래에 있는 **테넌트 URL**에 `https://<tenantID>.accounts.ondemand.com/service/scim `을 입력 합니다. 이전에 **관리자 사용자 이름** 및 **관리자 암호** 에서 각각 검색 된 **사용자 ID** 및 **암호** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 SAP Cloud Platform Identity Authentication에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 SAP Cloud Platform Identity Authentication 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
 
     ![테넌트 URL + 토큰](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/testconnection.png)
 
@@ -153,7 +153,7 @@ Azure AD 프로비저닝 로그를 읽는 방법에 대한 자세한 내용은 [
 
 ## <a name="connector-limitations"></a>커넥터 제한 사항
 
-* SAP Cloud Platform Identity Authentication의 SCIM 끝점을 사용 하려면 특정 특성이 특정 형식 이어야 합니다. 이러한 특성 및 해당 특정 형식에 대 한 자세한 내용은 [여기](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/b10fc6a9a37c488a82ce7489b1fab64c.html#)에서 확인할 수 있습니다.
+* SAP Cloud Platform Identity Authentication의 SCIM 엔드포인트을 사용 하려면 특정 특성이 특정 형식 이어야 합니다. 이러한 특성 및 해당 특정 형식에 대 한 자세한 내용은 [여기](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/b10fc6a9a37c488a82ce7489b1fab64c.html#)에서 확인할 수 있습니다.
 
 ## <a name="additional-resources"></a>추가 리소스
 

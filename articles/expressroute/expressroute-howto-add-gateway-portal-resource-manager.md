@@ -1,6 +1,6 @@
 ---
 title: 'Azure Express 경로: VNet에 게이트웨이 추가: 포털'
-description: 이 문서에서는 Azure Portal를 사용 하 여 이미 생성 된 Express 경로에 대 한 리소스 관리자 VNet에 가상 네트워크 게이트웨이를 추가 하는 과정을 안내 합니다.
+description: 이 문서에서는 Azure Portal를 사용 하 여 이미 생성 된 Express 경로에 대한 리소스 관리자 VNet에 가상 네트워크 게이트웨이를 추가 하는 과정을 안내 합니다.
 services: expressroute
 author: cherylmc
 ms.service: expressroute

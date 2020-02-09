@@ -77,11 +77,11 @@ ms.locfileid: "75443920"
 
     ![Office 365 데이터 세트 테이블 구성](./media/load-office-365-data/edit-dataset.png)
 
-8. 이제 **파이프라인** > **원본 탭** 으로 돌아가서 Office 365 데이터 추출에 대 한 추가 속성을 계속 구성 합니다.  사용자 범위 및 사용자 범위 필터는 Office 365에서 추출 하려는 데이터를 제한 하기 위해 정의할 수 있는 선택적 조건자입니다. 이러한 설정을 구성 하는 방법은 [Office 365 데이터 집합 속성](https://docs.microsoft.com/azure/data-factory/connector-office-365#dataset-properties) 섹션을 참조 하세요.
+8. 이제 **파이프라인** > **원본 탭** 으로 돌아가서 Office 365 데이터 추출에 대한 추가 속성을 계속 구성 합니다.  사용자 범위 및 사용자 범위 필터는 Office 365에서 추출 하려는 데이터를 제한 하기 위해 정의할 수 있는 선택적 조건자입니다. 이러한 설정을 구성 하는 방법은 [Office 365 데이터 집합 속성](https://docs.microsoft.com/azure/data-factory/connector-office-365#dataset-properties) 섹션을 참조 하세요.
 
 9. 날짜 필터 중 하나를 선택 하 고 시작 시간 및 종료 시간 값을 제공 해야 합니다.
 
-10. **스키마 가져오기** 탭을 클릭 하 여 메시지 데이터 집합에 대 한 스키마를 가져옵니다.
+10. **스키마 가져오기** 탭을 클릭 하 여 메시지 데이터 집합에 대한 스키마를 가져옵니다.
 
     ![Office 365 데이터 세트 스키마 구성](./media/load-office-365-data/edit-source-properties.png)
 
@@ -97,7 +97,7 @@ ms.locfileid: "75443920"
 
 5. 속성 창의 **연결 탭**으로 이동합니다. 연결된 서비스 텍스트 상자 옆에 있는 **+ 새로 만들기**를 선택합니다.
 
-6. 새 연결 된 서비스 창에서 이름으로 "AzureStorageLinkedService"을 입력 하 고, 인증 방법의 드롭다운 목록에서 "서비스 사용자"를 선택 하 고, 서비스 끝점, 테 넌 트, 서비스 주체 ID 및 서비스 주체 키를 입력 한 다음, 저장을 선택 합니다. 연결 된 서비스를 배포 합니다.  Azure Blob Storage용 서비스 주체 인증을 설정하는 방법은 [여기](connector-azure-blob-storage.md#service-principal-authentication)를 참조하세요.
+6. 새 연결 된 서비스 창에서 이름으로 "AzureStorageLinkedService"을 입력 하 고, 인증 방법의 드롭다운 목록에서 "서비스 사용자"를 선택 하 고, 서비스 엔드포인트, 테넌트, 서비스 주체 ID 및 서비스 주체 키를 입력 한 다음, 저장을 선택 합니다. 연결 된 서비스를 배포 합니다.  Azure Blob Storage용 서비스 주체 인증을 설정하는 방법은 [여기](connector-azure-blob-storage.md#service-principal-authentication)를 참조하세요.
 
     ![새 Blob 연결된 서비스](./media/load-office-365-data/configure-blob-linked-service.png)
 
@@ -124,11 +124,11 @@ ms.locfileid: "75443920"
 
 ![파이프라인 모니터링](./media/load-office-365-data/pipeline-status.png) 
 
-파이프라인 실행과 연결된 활동 실행을 확인하려면 작업 열에서 **활동 실행 보기** 링크를 선택합니다. 이 예에서는 활동이 하나뿐이므로 목록에 하나의 항목만 표시됩니다. 복사 작업에 대 한 자세한 내용을 보려면 작업 열에서 **세부 정보** 링크 (안경 아이콘)를 선택 합니다.
+파이프라인 실행과 연결된 활동 실행을 확인하려면 작업 열에서 **활동 실행 보기** 링크를 선택합니다. 이 예에서는 활동이 하나뿐이므로 목록에 하나의 항목만 표시됩니다. 복사 작업에 대한 자세한 내용을 보려면 작업 열에서 **세부 정보** 링크 (안경 아이콘)를 선택 합니다.
 
 ![작업 모니터링](./media/load-office-365-data/activity-status.png) 
 
-이 컨텍스트에 대 한 데이터를 처음으로 요청 하는 경우 (액세스 하는 데이터 테이블의 조합, 데이터 액세스를 요청 하는 대상 계정 및 데이터 액세스 요청을 만드는 사용자 id) 복사 작업 상태는 **진행**중으로 표시 되며, 작업 아래에서 "세부 정보" 링크를 클릭 하면 상태가 **RequesetingConsent**로 표시 됩니다.  데이터 액세스 승인자 그룹의 구성원이 Privileged Access Management에서 요청을 승인해야 데이터 추출을 진행할 수 있습니다.
+이 컨텍스트에 대한 데이터를 처음으로 요청 하는 경우 (액세스 하는 데이터 테이블의 조합, 데이터 액세스를 요청 하는 대상 계정 및 데이터 액세스 요청을 만드는 사용자 id) 복사 작업 상태는 **진행**중으로 표시 되며, 작업 아래에서 "세부 정보" 링크를 클릭 하면 상태가 **RequesetingConsent**로 표시 됩니다.  데이터 액세스 승인자 그룹의 구성원이 Privileged Access Management에서 요청을 승인해야 데이터 추출을 진행할 수 있습니다.
 
 _동의 요청 중 상태:_ 
 ![활동 실행 세부 정보 - 요청 동의](./media/load-office-365-data/activity-details-request-consent.png) 

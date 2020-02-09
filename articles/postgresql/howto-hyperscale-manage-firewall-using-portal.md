@@ -23,7 +23,7 @@ ms.locfileid: "74977542"
 ## <a name="create-a-server-level-firewall-rule-in-the-azure-portal"></a>Kiszolgálószintű tűzfalszabály létrehozása az Azure Portalon
 
 > [!NOTE]
-> 이러한 설정은 Citus (Azure Database for PostgreSQL-Hyperscale) 서버 그룹을 만드는 동안에도 액세스할 수 있습니다. **네트워킹** 탭에서 **공용 끝점**을 클릭 합니다.
+> 이러한 설정은 Citus (Azure Database for PostgreSQL-Hyperscale) 서버 그룹을 만드는 동안에도 액세스할 수 있습니다. **네트워킹** 탭에서 **공용 엔드포인트**을 클릭 합니다.
 > ![Azure Portal-네트워킹 탭](./media/howto-hyperscale-manage-firewall-using-portal/0-create-public-access.png)
 
 1. PostgreSQL 서버 그룹 페이지의 보안 제목 아래에서 **네트워킹** 을 클릭 하 여 방화벽 규칙을 엽니다.

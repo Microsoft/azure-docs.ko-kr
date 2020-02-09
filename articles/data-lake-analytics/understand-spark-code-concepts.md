@@ -17,10 +17,10 @@ ms.locfileid: "74424011"
 ---
 # <a name="understand-apache-spark-code-for-u-sql-developers"></a>U SQL 개발자를 위한 Apache Spark 코드 이해
 
-이 섹션에서는 Apache Spark로 U-SQL 스크립트를 변환 하는 방법에 대 한 개략적인 지침을 제공 합니다.
+이 섹션에서는 Apache Spark로 U-SQL 스크립트를 변환 하는 방법에 대한 개략적인 지침을 제공 합니다.
 
 - [두 언어의 처리 패러다임을 비교](#understand-the-u-sql-and-spark-language-and-processing-paradigms) 하 여 시작 합니다.
-- 다음 방법에 대 한 팁을 제공 합니다.
+- 다음 방법에 대한 팁을 제공 합니다.
    - U-SQL의 [행 집합 식을](#transform-u-sql-rowset-expressions-and-sql-based-scalar-expressions) 포함 하는 [Transform 스크립트](#transform-u-sql-scripts)
    - [.NET 코드](#transform-net-code)
    - [데이터 형식](#transform-typed-values)
@@ -62,7 +62,7 @@ Spark는 현재 .NET 코드 실행을 기본적으로 지원 하지 않으므로
 
 어떤 경우 든, U-SQL 스크립트에 많은 양의 .NET 논리가 있는 경우 Microsoft 계정 담당자에 게 문의 하 여 추가 지침을 확인 하세요.
 
-다음은 T-SQL 스크립트에서 사용 되는 .NET 및 C# 사용에 대 한 자세한 내용입니다.
+다음은 T-SQL 스크립트에서 사용 되는 .NET 및 C# 사용에 대한 자세한 내용입니다.
 
 ### <a name="transform-scalar-inline-u-sql-c-expressions"></a>스칼라 인라인 U-SQL C# 식 변환
 
@@ -72,13 +72,13 @@ Spark에는 DSL 또는 SparkSQL의 일부로 고유한 스칼라 식 언어가 �
 
 U-SQL에 스칼라 식이 있는 경우 먼저 가장 적합 한 고유 하 게 인식 되는 Spark 스칼라 식을 찾은 후 가장 많은 성능을 확보 하 고 다른 식을 선택한 Spark 호스팅 언어의 사용자 정의 함수에 매핑합니다.
 
-.NET 및 C# 에는 spark 호스팅 언어와 SPARK의 DSL과는 다른 형식 의미 체계가 있습니다. 형식 시스템 차이점에 대 한 자세한 내용은 [아래](#transform-typed-values) 를 참조 하세요.
+.NET 및 C# 에는 spark 호스팅 언어와 SPARK의 DSL과는 다른 형식 의미 체계가 있습니다. 형식 시스템 차이점에 대한 자세한 내용은 [아래](#transform-typed-values) 를 참조 하세요.
 
 ### <a name="transform-user-defined-scalar-net-functions-and-user-defined-aggregators"></a>사용자 정의 스칼라 .NET 함수 및 사용자 정의 집계 변환
 
 U-SQL은 임의의 스칼라 .NET 함수를 호출 하 고 .NET으로 작성 된 사용자 정의 집계를 호출 하는 방법을 제공 합니다.
 
-또한 spark는 Spark의 DSL 및 SparkSQL에서 호출할 수 있는 대부분의 호스팅 언어로 작성 된 사용자 정의 함수 및 사용자 정의 집계에 대 한 지원도 제공 합니다.
+또한 spark는 Spark의 DSL 및 SparkSQL에서 호출할 수 있는 대부분의 호스팅 언어로 작성 된 사용자 정의 함수 및 사용자 정의 집계에 대한 지원도 제공 합니다.
 
 ### <a name="transform-user-defined-operators-udos"></a>UDOs (사용자 정의 연산자) 변환
 
@@ -149,11 +149,11 @@ Spark에서 NULL은 값을 알 수 없음을 나타냅니다. Spark NULL 값은 
 
 한 가지 중요 한 차이점은 U-SQL 스크립트가 해당 카탈로그 개체를 사용할 수 있다는 것입니다 .이 중 상당수에는 직접 Spark가 없는 것입니다.
 
-Spark는 Hive 메타 저장소 개념, 주로 데이터베이스 및 테이블에 대 한 지원을 제공 하므로, U-SQL 데이터베이스 및 스키마를 Hive 데이터베이스에 매핑할 수 있으며, U-sql 테이블을 Spark 테이블에 매핑할 수 있습니다 ( [u sql 테이블에 저장 된 데이터 이동](understand-spark-data-formats.md#move-data-stored-in-u-sql-tables)참조). 그러나 뷰를 지원 하지 않습니다. Tvf (테이블 반환 함수), 저장 프로시저, U-SQL 어셈블리, 외부 데이터 원본 등
+Spark는 Hive 메타 저장소 개념, 주로 데이터베이스 및 테이블에 대한 지원을 제공 하므로, U-SQL 데이터베이스 및 스키마를 Hive 데이터베이스에 매핑할 수 있으며, U-sql 테이블을 Spark 테이블에 매핑할 수 있습니다 ( [u sql 테이블에 저장 된 데이터 이동](understand-spark-data-formats.md#move-data-stored-in-u-sql-tables)참조). 그러나 뷰를 지원 하지 않습니다. Tvf (테이블 반환 함수), 저장 프로시저, U-SQL 어셈블리, 외부 데이터 원본 등
 
 보기, Tvf, 저장 프로시저, 어셈블리 등의 U-SQL 코드 개체는 Spark의 코드 함수 및 라이브러리를 통해 모델링 되 고 호스트 언어의 함수 및 절차 추상화 메커니즘을 사용 하 여 참조 될 수 있습니다 (예: 가져오기를 통해). Python 모듈 또는 Scala 함수 참조).
 
-T-SQL 카탈로그가 프로젝트와 팀에서 데이터 및 코드 개체를 공유 하는 데 사용 되는 경우 공유에 대 한 동등한 메커니즘 (예: 코드를 공유 하기 위한 Maven)을 사용 해야 합니다.
+T-SQL 카탈로그가 프로젝트와 팀에서 데이터 및 코드 개체를 공유 하는 데 사용 되는 경우 공유에 대한 동등한 메커니즘 (예: 코드를 공유 하기 위한 Maven)을 사용 해야 합니다.
 
 ## <a name="transform-u-sql-rowset-expressions-and-sql-based-scalar-expressions"></a>Transform U SQL 행 집합 식 및 SQL 기반 스칼라 식
 
@@ -179,11 +179,11 @@ NULL 값을 다르게 처리 하기 때문에 두 열에 모두 NULL 값이 포�
 
 ## <a name="transform-other-u-sql-concepts"></a>다른 U-SQL 개념 변환
 
-또한 U-SQL은 SQL Server 데이터베이스, 매개 변수, 스칼라 및 람다 식 변수, 시스템 변수, `OPTION` 힌트에 대 한 페더레이션된 쿼리와 같은 다양 한 다른 기능 및 개념을 제공 합니다.
+또한 U-SQL은 SQL Server 데이터베이스, 매개 변수, 스칼라 및 람다 식 변수, 시스템 변수, `OPTION` 힌트에 대한 페더레이션된 쿼리와 같은 다양 한 다른 기능 및 개념을 제공 합니다.
 
-### <a name="federated-queries-against-sql-server-databasesexternal-tables"></a>SQL Server 데이터베이스/외부 테이블에 대 한 페더레이션된 쿼리
+### <a name="federated-queries-against-sql-server-databasesexternal-tables"></a>SQL Server 데이터베이스/외부 테이블에 대한 페더레이션된 쿼리
 
-U-SQL은 데이터 원본 및 외부 테이블 뿐만 아니라 Azure SQL Database에 대 한 직접 쿼리를 제공 합니다. Spark는 동일한 개체 추상화를 제공 하지 않지만 SQL 데이터베이스를 쿼리 하는 데 사용할 수 있는 [Azure SQL Database에 대 한 spark 커넥터](../sql-database/sql-database-spark-connector.md) 를 제공 합니다.
+U-SQL은 데이터 원본 및 외부 테이블 뿐만 아니라 Azure SQL Database에 대한 직접 쿼리를 제공 합니다. Spark는 동일한 개체 추상화를 제공 하지 않지만 SQL 데이터베이스를 쿼리 하는 데 사용할 수 있는 [Azure SQL Database에 대한 spark 커넥터](../sql-database/sql-database-spark-connector.md) 를 제공 합니다.
 
 ### <a name="u-sql-parameters-and-variables"></a>U-SQL 매개 변수 및 변수
 

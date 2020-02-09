@@ -44,7 +44,7 @@ ms.locfileid: "76758753"
 
 ## <a name="february-2020"></a>2 월 2020: 
 
-### <a name="empty-fragments-will-be-appended-to-every-http-redirect-from-the-login-endpoint"></a>로그인 끝점의 모든 HTTP 리디렉션에 빈 조각이 추가 됩니다. 
+### <a name="empty-fragments-will-be-appended-to-every-http-redirect-from-the-login-endpoint"></a>로그인 엔드포인트의 모든 HTTP 리디렉션에 빈 조각이 추가 됩니다. 
 
 **개시 날짜**: 2020 년 2 월 8 일
 
@@ -74,27 +74,27 @@ HTTP 리디렉션을 통해 login.microsoftonline.com에서 응용 프로그램�
 
 ## <a name="july-2019"></a>2019년 7월
 
-### <a name="app-only-tokens-for-single-tenant-applications-are-only-issued-if-the-client-app-exists-in-the-resource-tenant"></a>단일 테 넌 트 응용 프로그램에 대 한 앱 전용 토큰은 클라이언트 앱이 리소스 테 넌 트에 있는 경우에만 실행 됩니다.
+### <a name="app-only-tokens-for-single-tenant-applications-are-only-issued-if-the-client-app-exists-in-the-resource-tenant"></a>단일 테넌트 응용 프로그램에 대 한 앱 전용 토큰은 클라이언트 앱이 리소스 테넌트에 있는 경우에만 실행 됩니다.
 
 **개시 날짜**: 2019 년 7 월 26 일
 
-**영향을 받는 끝점**: [V1.0](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow) 및 [v2.0](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow) 모두
+**영향을 받는 엔드포인트**: [V1.0](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow) 및 [v2.0](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow) 모두
 
 **영향을 받는 프로토콜**: [클라이언트 자격 증명 (앱 전용 토큰)](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow)
 
-보안 변경은 응용 프로그램 전용 토큰 (클라이언트 자격 증명 부여를 통해 권한 부여를 통해)이 발급 되는 방식을 변경 하는 7 월 26 일에 실시간으로 발생 합니다. 이전에는 응용 프로그램에서 테 넌 트의 현재 상태와 상관 없이 해당 응용 프로그램에 대 한 동의한 다른 앱을 호출 하는 토큰을 가져올 수 있었습니다.  이 동작은 리소스 (웹 Api 라고도 함)가 단일 테 넌 트 (기본값)로 설정 되도록 업데이트 되었으므로 클라이언트 응용 프로그램이 리소스 테 넌 트 내에 있어야 합니다.  클라이언트와 API 간의 기존 동의는 여전히 필요 하지 않으며, 앱이 자체 권한 부여 검사를 수행 하 여 `roles` 클레임이 있고 API에 필요한 값을 포함 하 고 있는지 확인 해야 합니다.
+보안 변경은 응용 프로그램 전용 토큰 (클라이언트 자격 증명 부여를 통해 권한 부여를 통해)이 발급 되는 방식을 변경 하는 7 월 26 일에 실시간으로 발생 합니다. 이전에는 응용 프로그램에서 테넌트의 현재 상태와 상관 없이 해당 응용 프로그램에 대 한 동의한 다른 앱을 호출 하는 토큰을 가져올 수 있었습니다.  이 동작은 리소스 (웹 Api 라고도 함)가 단일 테넌트 (기본값)로 설정 되도록 업데이트 되었으므로 클라이언트 응용 프로그램이 리소스 테넌트 내에 있어야 합니다.  클라이언트와 API 간의 기존 동의는 여전히 필요 하지 않으며, 앱이 자체 권한 부여 검사를 수행 하 여 `roles` 클레임이 있고 API에 필요한 값을 포함 하 고 있는지 확인 해야 합니다.
 
 이 시나리오에 대 한 오류 메시지는 현재 다음과 같습니다. 
 
 `The service principal named <appName> was not found in the tenant named <tenant_name>. This can happen if the application has not been installed by the administrator of the tenant.`
 
-이 문제를 해결 하려면 관리자 동의 환경을 사용 하 여 테 넌 트에서 클라이언트 응용 프로그램 서비스 주체를 만들거나 수동으로 만듭니다.  이 요구 사항은 테 넌 트가 테 넌 트 내에서 작동할 수 있는 응용 프로그램 권한을 부여 했는지 확인 합니다.  
+이 문제를 해결 하려면 관리자 동의 환경을 사용 하 여 테넌트에서 클라이언트 응용 프로그램 서비스 주체를 만들거나 수동으로 만듭니다.  이 요구 사항은 테넌트가 테넌트 내에서 작동할 수 있는 응용 프로그램 권한을 부여 했는지 확인 합니다.  
 
 #### <a name="example-request"></a>요청 예
 
-이 예제에서 `https://login.microsoftonline.com/contoso.com/oauth2/authorize?resource=https://gateway.contoso.com/api&response_type=token&client_id=14c88eee-b3e2-4bb0-9233-f5e3053b3a28&...` 리소스 테 넌 트 (기관)는 contoso.com 리소스 앱은 Contoso 테 넌 트에 대해 `gateway.contoso.com/api` 라는 단일 테 넌 트 앱 이며 클라이언트 앱은 `14c88eee-b3e2-4bb0-9233-f5e3053b3a28`됩니다.  클라이언트 앱이 Contoso.com 내에 서비스 주체를 포함 하는 경우이 요청을 계속할 수 있습니다.  그러나 그렇지 않으면 위의 오류가 발생 하 여 요청이 실패 합니다.  
+이 예제에서 `https://login.microsoftonline.com/contoso.com/oauth2/authorize?resource=https://gateway.contoso.com/api&response_type=token&client_id=14c88eee-b3e2-4bb0-9233-f5e3053b3a28&...` 리소스 테넌트 (기관)는 contoso.com 리소스 앱은 Contoso 테넌트에 대해 `gateway.contoso.com/api` 라는 단일 테넌트 앱 이며 클라이언트 앱은 `14c88eee-b3e2-4bb0-9233-f5e3053b3a28`됩니다.  클라이언트 앱이 Contoso.com 내에 서비스 주체를 포함 하는 경우이 요청을 계속할 수 있습니다.  그러나 그렇지 않으면 위의 오류가 발생 하 여 요청이 실패 합니다.  
 
-그러나 Contoso 게이트웨이 앱이 다중 테 넌 트 응용 프로그램이 면 Contoso.com 내에서 서비스 사용자가 있는 클라이언트 앱에 관계 없이 요청이 계속 됩니다.  
+그러나 Contoso 게이트웨이 앱이 다중 테넌트 응용 프로그램이 면 Contoso.com 내에서 서비스 사용자가 있는 클라이언트 앱에 관계 없이 요청이 계속 됩니다.  
 
 ### <a name="redirect-uris-can-now-contain-query-string-parameters"></a>이제 리디렉션 Uri는 쿼리 문자열 매개 변수를 포함할 수 있습니다.
 

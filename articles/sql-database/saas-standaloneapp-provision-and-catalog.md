@@ -1,5 +1,5 @@
 ---
-title: 다중 테 넌 트 SaaS 자습서
+title: 다중 테넌트 SaaS 자습서
 description: 독립 실행형 애플리케이션 패턴을 사용하여 새 테넌트 프로비전 및 카탈로그 작업
 services: sql-database
 ms.service: sql-database

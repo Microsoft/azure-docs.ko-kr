@@ -30,7 +30,7 @@ Azure Storage 애플리케이션에서 보안 주체를 인증하려면 먼저 �
 
 ## <a name="register-your-application-with-an-azure-ad-tenant"></a>Azure AD 테넌트에 애플리케이션 등록
 
-Azure AD를 사용 하 여 저장소 리소스에 대 한 액세스 권한을 부여 하는 첫 번째 단계는 클라이언트 응용 프로그램을 [Azure Portal](https://portal.azure.com)의 azure ad 테 넌 트에 등록 하는 것입니다. 클라이언트 응용 프로그램을 등록할 때 응용 프로그램에 대 한 정보를 Azure AD에 제공 합니다. 그러면 Azure AD는 런타임 시 애플리케이션을 Azure AD와 연결하는 데 사용하는 클라이언트 ID(*애플리케이션 ID*라고도 함)를 제공합니다. 클라이언트 ID에 대한 자세한 내용은 [Azure Active Directory의 애플리케이션 및 서비스 사용자 개체](../../active-directory/develop/app-objects-and-service-principals.md)를 참조하세요.
+Azure AD를 사용 하 여 저장소 리소스에 대 한 액세스 권한을 부여 하는 첫 번째 단계는 클라이언트 응용 프로그램을 [Azure Portal](https://portal.azure.com)의 azure ad 테넌트에 등록 하는 것입니다. 클라이언트 응용 프로그램을 등록할 때 응용 프로그램에 대 한 정보를 Azure AD에 제공 합니다. 그러면 Azure AD는 런타임 시 애플리케이션을 Azure AD와 연결하는 데 사용하는 클라이언트 ID(*애플리케이션 ID*라고도 함)를 제공합니다. 클라이언트 ID에 대한 자세한 내용은 [Azure Active Directory의 애플리케이션 및 서비스 사용자 개체](../../active-directory/develop/app-objects-and-service-principals.md)를 참조하세요.
 
 Azure Storage 응용 프로그램을 등록 하려면 [퀵 스타트: Microsoft id 플랫폼에 응용 프로그램 등록](../../active-directory/develop/quickstart-configure-app-access-web-apis.md)에 표시 된 단계를 따르세요. 다음 이미지는 웹 응용 프로그램을 등록 하는 일반적인 설정을 보여 줍니다.
 
@@ -89,7 +89,7 @@ Microsoft 퍼블릭 클라우드의 경우 기본 Azure AD 권한은 다음과 �
 
 `https://login.microsoftonline.com/<tenant-id>/`
 
-테넌트 ID는 인증에 사용할 Azure AD 테넌트를 식별합니다. 디렉터리 ID 라고도 합니다. 테 넌 트 ID를 검색 하려면 Azure Portal에서 앱 등록에 대 한 **개요** 페이지로 이동 하 고 여기에서 값을 복사 합니다.
+테넌트 ID는 인증에 사용할 Azure AD 테넌트를 식별합니다. 디렉터리 ID 라고도 합니다. 테넌트 ID를 검색 하려면 Azure Portal에서 앱 등록에 대 한 **개요** 페이지로 이동 하 고 여기에서 값을 복사 합니다.
 
 ### <a name="azure-storage-resource-id"></a>Azure Storage 리소스 ID
 
@@ -102,7 +102,7 @@ Microsoft 퍼블릭 클라우드의 경우 기본 Azure AD 권한은 다음과 �
 토큰을 요청 하려면 앱 등록에서 다음 값이 필요 합니다.
 
 - Azure AD 도메인의 이름입니다. Azure Active Directory의 **개요** 페이지에서이 값을 검색 합니다.
-- 테 넌 트 (또는 디렉터리) ID입니다. 앱 등록의 **개요** 페이지에서이 값을 검색 합니다.
+- 테넌트 (또는 디렉터리) ID입니다. 앱 등록의 **개요** 페이지에서이 값을 검색 합니다.
 - 클라이언트 또는 응용 프로그램 ID입니다. 앱 등록의 **개요** 페이지에서이 값을 검색 합니다.
 - 클라이언트 리디렉션 URI입니다. 앱 등록에 대 한 **인증** 설정에서이 값을 검색 합니다.
 - 클라이언트 암호의 값입니다. 이전에 복사한 위치에서이 값을 검색 합니다.
@@ -176,7 +176,7 @@ Authorization: Bearer eyJ0eXAiOnJKV1...Xd6j
 
 #### <a name="get-an-oauth-token-from-azure-ad"></a>Azure AD에서 OAuth 토큰 가져오기
 
-다음으로, 사용자를 대신 하 여 Azure AD에서 토큰을 요청 하는 메서드를 추가 합니다. 이 메서드는 권한이 부여 되는 범위를 정의 합니다. 사용 권한 및 범위에 대 한 자세한 내용은 [Microsoft id 플랫폼 끝점의 사용 권한 및 동의](../../active-directory/develop/v2-permissions-and-consent.md)를 참조 하세요.
+다음으로, 사용자를 대신 하 여 Azure AD에서 토큰을 요청 하는 메서드를 추가 합니다. 이 메서드는 권한이 부여 되는 범위를 정의 합니다. 사용 권한 및 범위에 대 한 자세한 내용은 [Microsoft id 플랫폼 엔드포인트의 사용 권한 및 동의](../../active-directory/develop/v2-permissions-and-consent.md)를 참조 하세요.
 
 리소스 ID를 사용 하 여 토큰을 가져올 범위를 구성 합니다. 이 예제에서는 리소스 ID를 기본 제공 `user_impersonation` 범위와 함께 사용 하 여 범위를 구성 합니다 .이 범위는 사용자를 대신 하 여 토큰이 요청 됨을 나타냅니다.
 

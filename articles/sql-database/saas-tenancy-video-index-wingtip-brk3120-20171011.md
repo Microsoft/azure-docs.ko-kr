@@ -23,7 +23,7 @@ ms.locfileid: "73818470"
 이 문서는 SaaS 테넌트 모델 또는 패턴에 관한 81분짜리 동영상의 시간 위치에 달린 주석이 지정된 인덱스입니다. 이 문서를 사용하면 동영상에서 관심이 있는 부분으로 뒤로 또는 앞으로 건너뛸 수 있습니다. 동영상은 Azure SQL Database에서 다중 테넌트 데이터베이스 애플리케이션에 대한 주요 디자인 옵션을 설명합니다. 동영상은 데모, 관리 코드의 연습 및 때로 쓰여진 설명서보다 경험에 의해 알려지는 더 자세한 내용을 포함합니다.
 
 동영상은 다음에서 찾을 수 있는 쓰여진 설명서에 나오는 내용을 증폭합니다. 
-- *개념:* [다중 테 넌 트 SaaS 데이터베이스 테 넌 트 패턴][saas-concept-design-patterns-563e]
+- *개념:* [다중 테넌트 SaaS 데이터베이스 테넌트 패턴][saas-concept-design-patterns-563e]
 - *자습서:* [정문 ticket SaaS 응용 프로그램][saas-how-welcome-wingtip-app-679t]
 
 동영상과 문서는 클라우드의 Azure SQL Database에서 다중 테넌트 애플리케이션을 만드는 여러 단계를 설명합니다. Azure SQL Database의 특수 기능을 사용하면 관리하기 쉽고 안정적인 성능을 발휘하는 다중 테넌트 앱을 보다 쉽게 개발하고 구현할 수 있습니다.
@@ -46,38 +46,38 @@ ms.locfileid: "73818470"
 - [1. **(시작)** 시작 슬라이드, 0:00:03](#anchor-image-wtip-min00001)
 - [2. 세션 목표, 0:03:11](#anchor-image-wtip-min00311)
 - [3. 어 젠더, 0:04:17](#anchor-image-wtip-min00417)
-- [4. 다중 테 넌 트 웹 앱, 0:05:05](#anchor-image-wtip-min00505)
+- [4. 다중 테넌트 웹 앱, 0:05:05](#anchor-image-wtip-min00505)
 - [5. 작동 중인 앱 웹 폼, 0:05:55](#anchor-image-wtip-min00555)
-- [6. 테 넌 트 당 비용 (크기 조정, 격리, 복구), 0:09:31](#anchor-image-wtip-min00931)
-- [7. 다중 테 넌 트에 대 한 데이터베이스 모델: 장점 및 단점, 0:11:59](#anchor-image-wtip-min01159)
+- [6. 테넌트 당 비용 (크기 조정, 격리, 복구), 0:09:31](#anchor-image-wtip-min00931)
+- [7. 다중 테넌트에 대 한 데이터베이스 모델: 장점 및 단점, 0:11:59](#anchor-image-wtip-min01159)
 - [8. 하이브리드 모델은 MT/ST, 0:13:01의 이점을 혼합 합니다.](#anchor-image-wtip-min01301)
-- [9. 단일 테 넌 트 및 다중 테 넌 트: 장점 및 단점, 0:16:44](#anchor-image-wtip-min01644)
+- [9. 단일 테넌트 및 다중 테넌트: 장점 및 단점, 0:16:44](#anchor-image-wtip-min01644)
 - [10. 풀은 예측할 수 없는 워크 로드에 대해 비용 효율적 이며 0:19:36](#anchor-image-wtip-min01936)
-- [11. 테 넌 트 당 데이터베이스 및 하이브리드 ST/MT 데모, 0:20:08](#anchor-image-wtip-min02008)
+- [11. 테넌트 당 데이터베이스 및 하이브리드 ST/MT 데모, 0:20:08](#anchor-image-wtip-min02008)
 - [12. Dojo를 보여주는 라이브 앱 양식, 0:20:29](#anchor-image-wtip-min02029)
 - [13. MYOB는, 0:28:54의 DBA가 아닙니다.](#anchor-image-wtip-min02854)
 - [14. MYOB 탄력적 풀 사용 예제, 0:29:40](#anchor-image-wtip-min02940)
 - [15. MYOB 및 다른 Isv의 학습, 0:31:36](#anchor-image-wtip-min03136)
 - [16. 패턴은 E2E SaaS 시나리오, 0:43:15](#anchor-image-wtip-min04315)
-- [17. 정식 하이브리드 다중 테 넌 트 SaaS 앱, 0:47:33](#anchor-image-wtip-min04733)
+- [17. 정식 하이브리드 다중 테넌트 SaaS 앱, 0:47:33](#anchor-image-wtip-min04733)
 - [18. 정문 SaaS 샘플 앱, 0:48:10](#anchor-image-wtip-min04810)
 - [19. 자습서에서 탐색 한 시나리오 및 패턴, 0:49:10](#anchor-image-wtip-min04910)
 - [20. 자습서 및 GitHub 리포지토리 데모, 0:50:18](#anchor-image-wtip-min05018)
 - [21. GitHub 리포지토리 Microsoft/WingtipSaaS, 0:50:38](#anchor-image-wtip-min05038)
 - [22. 패턴 살펴보기, 0:56:20](#anchor-image-wtip-min05620)
-- [23. 테 넌 트 및 온 보 딩 프로 비전, 0:57:44](#anchor-image-wtip-min05744)
-- [24. 테 넌 트 및 응용 프로그램 연결 프로 비전, 0:58:58](#anchor-image-wtip-min05858)
-- [25. 단일 테 넌 트를 프로 비전 하는 관리 스크립트 데모, 0:59:43](#anchor-image-wtip-min05943)
+- [23. 테넌트 및 온 보 딩 프로 비전, 0:57:44](#anchor-image-wtip-min05744)
+- [24. 테넌트 및 응용 프로그램 연결 프로 비전, 0:58:58](#anchor-image-wtip-min05858)
+- [25. 단일 테넌트를 프로 비전 하는 관리 스크립트 데모, 0:59:43](#anchor-image-wtip-min05943)
 - [26. PowerShell 프로 비전 및 카탈로그, 1:00:02](#anchor-image-wtip-min10002)
 - [27. t-sql SELECT * FROM TenantsExtended, 1:03:30](#anchor-image-wtip-min10330)
-- [28. 예측할 수 없는 테 넌 트 워크 로드 관리, 1:04:36](#anchor-image-wtip-min10436)
+- [28. 예측할 수 없는 테넌트 워크 로드 관리, 1:04:36](#anchor-image-wtip-min10436)
 - [29. 탄력적 풀 모니터링, 1:06:39](#anchor-image-wtip-min10639)
 - [30. 부하 생성 및 성능 모니터링, 1:09:42](#anchor-image-wtip-min10942)
 - [31. 대규모 스키마 관리, 1:10:33](#anchor-image-wtip-min11033)
-- [32. 테 넌 트 데이터베이스 간 분산 쿼리, 1:12:21](#anchor-image-wtip-min11221)
+- [32. 테넌트 데이터베이스 간 분산 쿼리, 1:12:21](#anchor-image-wtip-min11221)
 - [33. 티켓 생성 데모, 1:12:32](#anchor-image-wtip-min11232)
 - [34. SSMS 임시 분석, 1:12:46](#anchor-image-wtip-min11246)
-- [35. SQL DW로 테 넌 트 데이터 추출, 1:16:32](#anchor-image-wtip-min11632)
+- [35. SQL DW로 테넌트 데이터 추출, 1:16:32](#anchor-image-wtip-min11632)
 - [36. 일일 판매 분포 그래프, 1:16:48](#anchor-image-wtip-min11648)
 - [37. 래핑 및 호출 작업, 1:19:52](#anchor-image-wtip-min11952)
 - [38. 자세한 내용은 1:20:42](#anchor-image-wtip-min12042)
@@ -119,7 +119,7 @@ ms.locfileid: "73818470"
 
 
 &nbsp; <a name="anchor-image-wtip-min00505"/>
-#### <a name="4-multi-tenant-web-app-00500"></a>4. 다중 테 넌 트 웹 앱, 0:05:00
+#### <a name="4-multi-tenant-web-app-00500"></a>4. 다중 테넌트 웹 앱, 0:05:00
 [![Wingtip SaaS 앱: 다중 테넌트 웹앱][image-wtip-min00505-web-app]](https://www.youtube.com/watch?v=jjNmcKBVjrc&t=300)
 
 
@@ -129,12 +129,12 @@ ms.locfileid: "73818470"
 
 
 &nbsp; <a name="anchor-image-wtip-min00931"/>
-#### <a name="6-per-tenant-cost-scale-isolation-recovery-00658"></a>6. 테 넌 트 당 비용 (크기 조정, 격리, 복구), 0:06:58
+#### <a name="6-per-tenant-cost-scale-isolation-recovery-00658"></a>6. 테넌트 당 비용 (크기 조정, 격리, 복구), 0:06:58
 [![테넌트 당 비용(비율, 격리, 복구)][image-wtip-min00931-per-tenant-cost]](https://www.youtube.com/watch?v=jjNmcKBVjrc&t=418)
 
 
 &nbsp; <a name="anchor-image-wtip-min01159"/>
-#### <a name="7-database-models-for-multi-tenant-pros-and-cons-00952"></a>7. 다중 테 넌 트에 대 한 데이터베이스 모델: 장점 및 단점, 0:09:52
+#### <a name="7-database-models-for-multi-tenant-pros-and-cons-00952"></a>7. 다중 테넌트에 대 한 데이터베이스 모델: 장점 및 단점, 0:09:52
 [![다중 테넌트에 대한 데이터베이스 모델: 장점 및 단점][image-wtip-min01159-db-models-pros-cons]](https://www.youtube.com/watch?v=jjNmcKBVjrc&t=592)
 
 
@@ -144,7 +144,7 @@ ms.locfileid: "73818470"
 
 
 &nbsp; <a name="anchor-image-wtip-min01644"/>
-#### <a name="9-single-tenant-vs-multi-tenant-pros-and-cons-01311"></a>9. 단일 테 넌 트 및 다중 테 넌 트: 장점 및 단점, 0:13:11
+#### <a name="9-single-tenant-vs-multi-tenant-pros-and-cons-01311"></a>9. 단일 테넌트 및 다중 테넌트: 장점 및 단점, 0:13:11
 [![단일 테넌트 및 다중 테넌트: 장점 및 단점][image-wtip-min01644-st-vs-mt]](https://www.youtube.com/watch?v=jjNmcKBVjrc&t=791)
 
 
@@ -154,7 +154,7 @@ ms.locfileid: "73818470"
 
 
 &nbsp; <a name="anchor-image-wtip-min02008"/>
-#### <a name="11-demo-of-database-per-tenant-and-hybrid-stmt-01959"></a>11. 테 넌 트 당 데이터베이스 및 하이브리드 ST/MT 데모, 0:19:59
+#### <a name="11-demo-of-database-per-tenant-and-hybrid-stmt-01959"></a>11. 테넌트 당 데이터베이스 및 하이브리드 ST/MT 데모, 0:19:59
 [![테넌트 당 데이터베이스 및 하이브리드 ST/MT 데모][image-wtip-min02008-demo-st-hybrid]](https://www.youtube.com/watch?v=jjNmcKBVjrc&t=1199)
 
 
@@ -183,7 +183,7 @@ ms.locfileid: "73818470"
 
 
 &nbsp; <a name="anchor-image-wtip-min04733"/>
-#### <a name="17-canonical-hybrid-multi-tenant-saas-app-04604"></a>17. 정식 하이브리드 다중 테 넌 트 SaaS 앱, 0:46:04
+#### <a name="17-canonical-hybrid-multi-tenant-saas-app-04604"></a>17. 정식 하이브리드 다중 테넌트 SaaS 앱, 0:46:04
 [![Canonical 하이브리드 다중 테넌트 SaaS 앱][image-wtip-min04733-canonical-hybrid]](https://www.youtube.com/watch?v=jjNmcKBVjrc&t=2764)
 
 
@@ -213,17 +213,17 @@ ms.locfileid: "73818470"
 
 
 &nbsp; <a name="anchor-image-wtip-min05744"/>
-#### <a name="23-provisioning-tenants-and-onboarding-05619"></a>23. 테 넌 트 및 온 보 딩 프로 비전, 0:56:19
+#### <a name="23-provisioning-tenants-and-onboarding-05619"></a>23. 테넌트 및 온 보 딩 프로 비전, 0:56:19
 [![테넌트 및 온보딩 프로비전][image-wtip-min05744-provisioning-tenants-onboarding-1]](https://www.youtube.com/watch?v=jjNmcKBVjrc&t=3379)
 
 
 &nbsp; <a name="anchor-image-wtip-min05858"/>
-#### <a name="24-provisioning-tenants-and-application-connection-05752"></a>24. 테 넌 트 및 응용 프로그램 연결 프로 비전, 0:57:52
+#### <a name="24-provisioning-tenants-and-application-connection-05752"></a>24. 테넌트 및 응용 프로그램 연결 프로 비전, 0:57:52
 [![테넌트 및 애플리케이션 연결 프로비전][image-wtip-min05858-provisioning-tenants-app-connection-2]](https://www.youtube.com/watch?v=jjNmcKBVjrc&t=3472)
 
 
 &nbsp; <a name="anchor-image-wtip-min05943"/>
-#### <a name="25-demo-of-management-scripts-provisioning-a-single-tenant-05936"></a>25. 단일 테 넌 트를 프로 비전 하는 관리 스크립트 데모, 0:59:36
+#### <a name="25-demo-of-management-scripts-provisioning-a-single-tenant-05936"></a>25. 단일 테넌트를 프로 비전 하는 관리 스크립트 데모, 0:59:36
 [![단일 테넌트를 프로비전하는 관리 스크립트 데모][image-wtip-min05943-demo-management-scripts-st]](https://www.youtube.com/watch?v=jjNmcKBVjrc&t=3576)
 
 
@@ -238,7 +238,7 @@ ms.locfileid: "73818470"
 
 
 &nbsp; <a name="anchor-image-wtip-min10436"/>
-#### <a name="28-managing-unpredictable-tenant-workloads-10334"></a>28. 예측할 수 없는 테 넌 트 워크 로드 관리, 1:03:34
+#### <a name="28-managing-unpredictable-tenant-workloads-10334"></a>28. 예측할 수 없는 테넌트 워크 로드 관리, 1:03:34
 [![예측할 수 없는 테넌트 워크로드 관리][image-wtip-min10436-managing-unpredictable-workloads]](https://www.youtube.com/watch?v=jjNmcKBVjrc&t=3814)
 
 
@@ -258,7 +258,7 @@ ms.locfileid: "73818470"
 
 
 &nbsp; <a name="anchor-image-wtip-min11221"/>
-#### <a name="32-distributed-query-across-tenant-databases-11118"></a>32. 테 넌 트 데이터베이스 간 분산 쿼리, 1:11:18
+#### <a name="32-distributed-query-across-tenant-databases-11118"></a>32. 테넌트 데이터베이스 간 분산 쿼리, 1:11:18
 [![테넌트 데이터베이스 간 분산 쿼리][image-wtip-min11221-distributed-query]](https://www.youtube.com/watch?v=jjNmcKBVjrc&t=4278)
 
 
@@ -273,7 +273,7 @@ ms.locfileid: "73818470"
 
 
 &nbsp; <a name="anchor-image-wtip-min11632"/>
-#### <a name="35-extract-tenant-data-into-sql-dw-11546"></a>35. SQL DW로 테 넌 트 데이터 추출, 1:15:46
+#### <a name="35-extract-tenant-data-into-sql-dw-11546"></a>35. SQL DW로 테넌트 데이터 추출, 1:15:46
 [![ SQL DW로 테넌트 데이터 추출][image-wtip-min11632-extract-tenant-data-sql-dw]](https://www.youtube.com/watch?v=jjNmcKBVjrc&t=4546)
 
 
@@ -293,14 +293,14 @@ ms.locfileid: "73818470"
 
 - [블로그 게시물, 2017 년 5 월 22 일][resource-blog-saas-patterns-app-dev-sql-db-768h]
 
-- *개념:* [다중 테 넌 트 SaaS 데이터베이스 테 넌 트 패턴][saas-concept-design-patterns-563e]
+- *개념:* [다중 테넌트 SaaS 데이터베이스 테넌트 패턴][saas-concept-design-patterns-563e]
 
 - *자습서:* [정문 ticket SaaS 응용 프로그램][saas-how-welcome-wingtip-app-679t]
 
 - Wingtip Tickets SaaS 테넌트 애플리케이션을 위한 GitHub 리포지토리:
     - [독립 실행형 응용 프로그램 모델에 대 한 GitHub 리포지토리][github-wingtip-standaloneapp]
-    - [-테 넌 트 모델용-DB에 대 한 GitHub 리포지토리][github-wingtip-dbpertenant]
-    - [-다중 테 넌 트 DB 모델에 대 한 GitHub 리포지토리][github-wingtip-multitenantdb]
+    - [-테넌트 모델용-DB에 대 한 GitHub 리포지토리][github-wingtip-dbpertenant]
+    - [-다중 테넌트 DB 모델에 대 한 GitHub 리포지토리][github-wingtip-multitenantdb]
 
 
 

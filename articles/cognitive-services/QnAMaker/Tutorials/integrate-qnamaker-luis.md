@@ -37,13 +37,13 @@ QnA Maker에서 간단하게 여러 기술 자료를 만들 수 있지만, 들�
 1. [앱을 만듭니다](https://docs.microsoft.com/azure/cognitive-services/luis/create-new-app).
 1. 각 QnA Maker 기술 자료에 대해 [의도를 추가](https://docs.microsoft.com/azure/cognitive-services/luis/add-intents)합니다. 예제 발언은 QnA Maker 기술 자료의 질문과 일치해야 합니다.
 1. [LUIS 앱을 학습](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-train)하고 [LUIS 앱을 게시](https://docs.microsoft.com/azure/cognitive-services/luis/publishapp)합니다.
-1. **관리** 섹션에서 LUIS 앱 ID, LUIS 끝점 키 및 [사용자 지정 도메인 이름을](../../cognitive-services-custom-subdomains.md)적어 둡니다. 나중에 이러한 값이 필요합니다. 
+1. **관리** 섹션에서 LUIS 앱 ID, LUIS 엔드포인트 키 및 [사용자 지정 도메인 이름을](../../cognitive-services-custom-subdomains.md)적어 둡니다. 나중에 이러한 값이 필요합니다. 
 
 ## <a name="create-qna-maker-knowledge-bases"></a>QnA Maker 기술 자료 만들기
 
 1. [QnA Maker](https://qnamaker.ai)에 로그인합니다.
 1. LUIS 앱의 각 의도에 대해 기술 자료를 [만듭니다](https://www.qnamaker.ai/Create).
-1. 기술 자료를 테스트하고 게시합니다. 각 KB를 게시할 때 KB ID, 리소스 이름 ( _azurewebsites.net/qnamaker_이전 사용자 지정 하위 도메인) 및 권한 부여 끝점 키를 적어 둡니다. 나중에 이러한 값이 필요합니다. 
+1. 기술 자료를 테스트하고 게시합니다. 각 KB를 게시할 때 KB ID, 리소스 이름 ( _azurewebsites.net/qnamaker_이전 사용자 지정 하위 도메인) 및 권한 부여 엔드포인트 키를 적어 둡니다. 나중에 이러한 값이 필요합니다. 
 
     이 문서에서는 기술 자료가 모두 동일한 Azure QnA Maker 구독에서 생성된다고 가정합니다.
 

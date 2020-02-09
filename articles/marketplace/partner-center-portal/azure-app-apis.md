@@ -32,11 +32,11 @@ Azure 제품용 파트너 센터 API를 사용 하기 위해 필요한 몇 가�
 
 - 사용자(또는 조직)에게 Azure AD 디렉터리와 해당 디렉터리에 대한 [전역 관리자](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) 권한이 있어야 합니다. 이미 Office 365 또는 Microsoft의 다른 비즈니스 서비스를 사용하는 경우 이미 Azure AD 디렉터리가 있습니다. 그렇지 않으면 추가 비용 없이 [파트너 센터에서 새 AZURE AD를 만들](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) 수 있습니다.
 
-- [AZURE AD 응용 프로그램을 파트너 센터 계정에 연결](https://docs.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services#associate-an-azure-ad-application-with-your-windows-partner-center-account) 하 고 테 넌 트 id, 클라이언트 id 및 키를 가져와야 합니다. 이러한 값은 Microsoft Store 제출 API에 대한 호출에 사용하는 Azure AD 액세스 토큰을 가져오는 데 필요합니다.
+- [AZURE AD 응용 프로그램을 파트너 센터 계정에 연결](https://docs.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services#associate-an-azure-ad-application-with-your-windows-partner-center-account) 하 고 테넌트 id, 클라이언트 id 및 키를 가져와야 합니다. 이러한 값은 Microsoft Store 제출 API에 대한 호출에 사용하는 Azure AD 액세스 토큰을 가져오는 데 필요합니다.
 
 #### <a name="how-to-associate-an-azure-ad-application-with-your-partner-center-account"></a>파트너 센터 계정에 Azure AD 응용 프로그램을 연결 하는 방법
 
-Microsoft Store 제출 API를 사용 하려면 Azure AD 응용 프로그램을 파트너 센터 계정에 연결 하 고, 응용 프로그램에 대 한 테 넌 트 ID와 클라이언트 ID를 검색 하 고, 키를 생성 해야 합니다. Azure AD 응용 프로그램은 파트너 센터 제출 API를 호출 하려는 앱 또는 서비스를 나타냅니다. API에 전달하는 Azure AD 액세스 토큰을 가져오려면 테넌트 ID, 클라이언트 ID 및 키가 필요합니다.
+Microsoft Store 제출 API를 사용 하려면 Azure AD 응용 프로그램을 파트너 센터 계정에 연결 하 고, 응용 프로그램에 대 한 테넌트 ID와 클라이언트 ID를 검색 하 고, 키를 생성 해야 합니다. Azure AD 응용 프로그램은 파트너 센터 제출 API를 호출 하려는 앱 또는 서비스를 나타냅니다. API에 전달하는 Azure AD 액세스 토큰을 가져오려면 테넌트 ID, 클라이언트 ID 및 키가 필요합니다.
 
 >[!Note]
 >이 작업은 한 번만 수행 하면 됩니다. 테넌트 ID, 클라이언트 ID 및 키는 Azure AD 액세스 토큰을 새로 만들 때마다 다시 사용할 수 있습니다.
@@ -50,7 +50,7 @@ Microsoft Store 제출 API를 사용 하려면 Azure AD 응용 프로그램을 �
 
 파트너 센터 제출 API의 메서드를 호출 하기 전에 먼저 API의 각 메서드에 대 한 **인증** 헤더에 전달 하는 Azure AD 액세스 토큰을 가져와야 합니다. 액세스 토큰을 얻은 후 만료되기 전에 60분 동안 사용할 수 있습니다. 토큰이 만료 된 후에는 API에 대 한 후속 호출에서 토큰을 계속 사용할 수 있도록 토큰을 새로 고칠 수 있습니다.
 
-액세스 토큰을 가져오려면 [클라이언트 자격 증명을 사용 하 여 서비스 호출](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) 에 대 한 지침에 따라 `HTTP POST`를 `https://login.microsoftonline.com/<tenant_id>/oauth2/token` 끝점으로 보냅니다. 다음은 샘플 요청입니다.
+액세스 토큰을 가져오려면 [클라이언트 자격 증명을 사용 하 여 서비스 호출](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) 에 대 한 지침에 따라 `HTTP POST`를 `https://login.microsoftonline.com/<tenant_id>/oauth2/token` 엔드포인트으로 보냅니다. 다음은 샘플 요청입니다.
 
 JSONCopy
 ```Json
@@ -64,7 +64,7 @@ grant_type=client_credentials
 &resource= https://api.partner.microsoft.com
 ```
 
-`POST URI` 및 *client_id* 및 *client_secret* 매개 변수의 *tenant_id* 값에 대해 이전 섹션에서 파트너 센터에서 검색 한 응용 프로그램의 테 넌 트 id, 클라이언트 id 및 키를 지정 합니다. *resource* 매개 변수에는 `https://api.partner.microsoft.com`을 지정해야 합니다.
+`POST URI` 및 *client_id* 및 *client_secret* 매개 변수의 *tenant_id* 값에 대해 이전 섹션에서 파트너 센터에서 검색 한 응용 프로그램의 테넌트 id, 클라이언트 id 및 키를 지정 합니다. *resource* 매개 변수에는 `https://api.partner.microsoft.com`을 지정해야 합니다.
 
 ### <a name="step-3-use-the-microsoft-store-submission-api"></a>3단계: Microsoft Store 제출 API 사용
 

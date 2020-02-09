@@ -24,5 +24,5 @@ ms.locfileid: "74224505"
 | CPU 용량 |하루 60 분 |무제한 |무제한 |
 | 아웃바운드 데이터 전송 |하루 165 MB (일별 롤오버) |포함됨 |포함됨 |
 
-제한 및 가격 책정에 대 한 자세한 내용은 [Azure Mobile Services 가격 책정](https://azure.microsoft.com/pricing/details/mobile-services/)을 참조 하세요. 
+제한 및 가격 책정에 대한 자세한 내용은 [Azure Mobile Services 가격 책정](https://azure.microsoft.com/pricing/details/mobile-services/)을 참조 하세요. 
 

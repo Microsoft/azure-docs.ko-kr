@@ -17,7 +17,7 @@ ms.locfileid: "74972339"
 ---
 # <a name="troubleshoot-azure-data-factory"></a>문제 해결 Azure Data Factory
 
-이 문서에서는 Azure Data Factory의 외부 제어 작업에 대 한 일반적인 문제 해결 방법을 살펴봅니다.
+이 문서에서는 Azure Data Factory의 외부 제어 작업에 대한 일반적인 문제 해결 방법을 살펴봅니다.
 
 ## <a name="connector-and-copy-activity"></a>커넥터 및 복사 작업
 
@@ -136,25 +136,25 @@ ms.locfileid: "74972339"
 
 - **메시지**: `The access token is from the wrong tenant.`
 
-- **원인**: 잘못 된 Azure Active Directory (Azure AD) 테 넌 트가 있습니다.
+- **원인**: 잘못 된 Azure Active Directory (Azure AD) 테넌트가 있습니다.
 
-- **권장 사항**: 잘못 된 Azure Active Directory (Azure AD) 테 넌 트.
+- **권장 사항**: 잘못 된 Azure Active Directory (Azure AD) 테넌트.
 
 <br/>
 
 - **메시지**: `We cannot accept your job at this moment. The maximum number of queued jobs for   your account is 200. `
 
-- **원인**:이 오류는 Data Lake Analytics에 대 한 제한으로 인해 발생 합니다.
+- **원인**:이 오류는 Data Lake Analytics에 대한 제한으로 인해 발생 합니다.
 
-- **권장 사항**: 작업에 대 한 Data Factory 트리거 및 동시성 설정을 변경 하 여 Data Lake Analytics 전송 된 작업 수를 줄입니다. 또는 Data Lake Analytics에 대 한 제한을 늘립니다.
+- **권장 사항**: 작업에 대한 Data Factory 트리거 및 동시성 설정을 변경 하 여 Data Lake Analytics 전송 된 작업 수를 줄입니다. 또는 Data Lake Analytics에 대한 제한을 늘립니다.
 
 <br/>  
 
 - **메시지**: `This job was rejected because it requires 24 AUs. This account's administrator-defined policy prevents a job from using more than 5 AUs.`
 
-- **원인**:이 오류는 Data Lake Analytics에 대 한 제한으로 인해 발생 합니다.
+- **원인**:이 오류는 Data Lake Analytics에 대한 제한으로 인해 발생 합니다.
 
-- **권장 사항**: 작업에 대 한 Data Factory 트리거 및 동시성 설정을 변경 하 여 Data Lake Analytics 전송 된 작업 수를 줄입니다. 또는 Data Lake Analytics에 대 한 제한을 늘립니다.
+- **권장 사항**: 작업에 대한 Data Factory 트리거 및 동시성 설정을 변경 하 여 Data Lake Analytics 전송 된 작업 수를 줄입니다. 또는 Data Lake Analytics에 대한 제한을 늘립니다.
 
 
 ### <a name="error-code--2705"></a>오류 코드: 2705
@@ -207,7 +207,7 @@ ms.locfileid: "74972339"
 
 - **원인**: Data Lake Analytics에서 오류가 발생 했습니다.
 
-- **권장 사항**: 예제와 같은 오류는 작업이 Data Lake Analytics 전송 되었고 스크립트가 실패 한 것을 의미 합니다. Data Lake Analytics를 조사 합니다. 포털에서 Data Lake Analytics 계정으로 이동 하 고 Data Factory 활동 실행 ID (파이프라인 실행 ID 아님)를 사용 하 여 작업을 찾습니다. 작업은 오류에 대 한 자세한 정보를 제공 하 고 문제를 해결 하는 데 도움이 됩니다. 해결 방법이 명확 하지 않은 경우 Data Lake Analytics 지원 팀에 문의 하 여 계정 이름 및 작업 ID를 포함 하는 작업 URL을 제공 합니다.
+- **권장 사항**: 예제와 같은 오류는 작업이 Data Lake Analytics 전송 되었고 스크립트가 실패 한 것을 의미 합니다. Data Lake Analytics를 조사 합니다. 포털에서 Data Lake Analytics 계정으로 이동 하 고 Data Factory 활동 실행 ID (파이프라인 실행 ID 아님)를 사용 하 여 작업을 찾습니다. 작업은 오류에 대한 자세한 정보를 제공 하 고 문제를 해결 하는 데 도움이 됩니다. 해결 방법이 명확 하지 않은 경우 Data Lake Analytics 지원 팀에 문의 하 여 계정 이름 및 작업 ID를 포함 하는 작업 URL을 제공 합니다.
           
 
 ## <a name="azure-functions"></a>Azure Functions
@@ -345,7 +345,7 @@ ms.locfileid: "74972339"
 
 - **메시지**: `Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
 
-- **원인**: 연결 된 Azure Machine Learning 서비스에서 제공 된 자격 증명이 잘못 되었거나 작업에 대 한 권한이 없습니다.
+- **원인**: 연결 된 Azure Machine Learning 서비스에서 제공 된 자격 증명이 잘못 되었거나 작업에 대한 권한이 없습니다.
 
 - **권장 사항**: 연결 된 서비스의 자격 증명이 유효 하 고 Azure Machine Learning에 액세스할 수 있는 권한이 있는지 확인 하세요.
 
@@ -363,9 +363,9 @@ ms.locfileid: "74972339"
 
 - **메시지**: `Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
 
-- **원인**: 게시 된 Azure ML 파이프라인 끝점이 없습니다.
+- **원인**: 게시 된 Azure ML 파이프라인 엔드포인트이 없습니다.
 
-- **권장 사항**: Azure Machine Learning에 연결 된 서비스에 지정 된 게시 된 Azure Machine Learning 파이프라인 끝점이 있는지 확인 하세요.
+- **권장 사항**: Azure Machine Learning에 연결 된 서비스에 지정 된 게시 된 Azure Machine Learning 파이프라인 엔드포인트이 있는지 확인 하세요.
 
 
 ### <a name="error-code--4125"></a>오류 코드: 4125
@@ -413,14 +413,14 @@ ms.locfileid: "74972339"
 
 - **원인**: 속성 값이 잘못 되었거나 필요한 형식이 아닙니다.
 
-- **권장 사항**: 속성에 대 한 설명서를 조회 하 여 제공 된 값이 필요한 형식 및 형식 인지 확인 하세요.
+- **권장 사항**: 속성에 대한 설명서를 조회 하 여 제공 된 값이 필요한 형식 및 형식 인지 확인 하세요.
 
 
 ### <a name="error-code--2106"></a>오류 코드: 2106
 
 - **메시지**: `The storage connection string is invalid. %errorMessage;`
 
-- **원인**: 저장소에 대 한 연결 문자열이 잘못 되었거나 형식이 잘못 되었습니다.
+- **원인**: 저장소에 대한 연결 문자열이 잘못 되었거나 형식이 잘못 되었습니다.
 
 - **권장 사항**: Azure Portal로 이동 하 여 저장소를 찾고 연결 문자열을 복사 하 여 연결 된 서비스에 붙여넣은 후 다시 시도 하세요.
 
@@ -467,7 +467,7 @@ ms.locfileid: "74972339"
 
 - **원인**: 네트워크 연결, DNS 오류, 서버 인증서 유효성 검사 또는 시간 초과
 
-- **권장 사항**: 적중 하려는 끝점이 요청에 응답 하는지 확인 합니다. Fiddler/Postman과 같은 도구를 사용할 수 있습니다.
+- **권장 사항**: 적중 하려는 엔드포인트이 요청에 응답 하는지 확인 합니다. Fiddler/Postman과 같은 도구를 사용할 수 있습니다.
 
 
 
@@ -713,14 +713,14 @@ ms.locfileid: "74972339"
 
 - **원인**: hdi 연결 된 서비스 또는 hdi 활동에 사용 된 저장소 연결 된 서비스가 MSI 인증으로 구성 되어 있으며이는 지원 되지 않습니다.
 
-- **권장 사항**: hdi 연결 된 서비스 또는 hdi 활동에서 사용 되는 저장소 계정에 대 한 전체 연결 문자열을 제공 하세요.
+- **권장 사항**: hdi 연결 된 서비스 또는 hdi 활동에서 사용 되는 저장소 계정에 대한 전체 연결 문자열을 제공 하세요.
 
 
 ### <a name="error-code--2305"></a>오류 코드: 2305
 
 - **메시지**: `Failed to initialize the HDInsight client for the cluster '%cluster;'. Error: '%message;'`
 
-- **원인**: hdi 클러스터에 대 한 연결 정보가 잘못 되었거나 제공 된 사용자에 게 필요한 작업을 수행할 수 있는 권한이 없거나, HDInsight 서비스에서 ADF의 요청에 응답 하는 동안 문제가 발생 했습니다.
+- **원인**: hdi 클러스터에 대한 연결 정보가 잘못 되었거나 제공 된 사용자에 게 필요한 작업을 수행할 수 있는 권한이 없거나, HDInsight 서비스에서 ADF의 요청에 응답 하는 동안 문제가 발생 했습니다.
 
 - **권장 사항**: 사용자 정보가 올바른지 확인 하세요. 또한 HDI 클러스터의 Ambari UI가 자체 호스팅 IR의 경우 IR이 설치 된 VM의 브라우저에서 열 수 있는지 또는 Azure IR 경우 모든 컴퓨터에서 열 수 있는지 확인 합니다.
 
@@ -787,7 +787,7 @@ ms.locfileid: "74972339"
 
 - **원인**: 제공 된 파일 경로가 비어 있습니다.
 
-- **권장 사항**: 존재 하는 파일에 대 한 경로를 제공 하세요.
+- **권장 사항**: 존재 하는 파일에 대한 경로를 제공 하세요.
 
 
 ### <a name="error-code--2340"></a>오류 코드: 2340
@@ -817,7 +817,7 @@ ms.locfileid: "74972339"
 - **권장 사항**:  
       1. 브라우저에서 HDInsight 클러스터의 Ambari UI를 열어 자격 증명이 올바른지 확인 합니다.
       2. 클러스터가 VNet에 있고 자체 호스팅 IR을 사용 하는 경우 HDI URL은 Vnet의 개인 URL 이어야 합니다. 즉, 클러스터 이름 뒤에 '-i n t '가 있어야 합니다. 예를 들어 "https://mycluster.azurehdinsight.net/ "은 "https://mycluster-int.azurehdinsight.net/ "로 변경 해야 합니다.
-      2. 클러스터가 VNet에 있고, 자체 호스팅 IR을 사용 하 고 있으며, 연결이 여전히 실패 한 경우 IR이 설치 된 VM이 HDI에 연결 하는 데 문제가 있는 것입니다. IR이 설치 된 VM에 연결 하 고 브라우저에서 Ambari UI를 엽니다. 클러스터에 대 한 개인 URL을 사용 합니다. 이 연결은 브라우저에서 작동 해야 합니다. 그렇지 않은 경우 추가 지원이 필요 하면 HDInsight 지원 팀에 문의 하세요.
+      2. 클러스터가 VNet에 있고, 자체 호스팅 IR을 사용 하 고 있으며, 연결이 여전히 실패 한 경우 IR이 설치 된 VM이 HDI에 연결 하는 데 문제가 있는 것입니다. IR이 설치 된 VM에 연결 하 고 브라우저에서 Ambari UI를 엽니다. 클러스터에 대한 개인 URL을 사용 합니다. 이 연결은 브라우저에서 작동 해야 합니다. 그렇지 않은 경우 추가 지원이 필요 하면 HDInsight 지원 팀에 문의 하세요.
       3. 자체 호스팅 IR을 사용 하지 않는 경우 HDI 클러스터에 공개적으로 액세스할 수 있어야 합니다. 브라우저에서 Ambari UI를 열고 열리고 있는지 확인 합니다. 클러스터 또는 서비스에 문제가 있는 경우 HDInsight 지원 팀에 도움을 요청 하세요.
       따라서 일반적으로 ADF 연결 된 서비스에 사용 되는 HDI 클러스터 URL에는 테스트 연결이 통과할 수 있도록 ADF IR (자체 호스팅 또는 Azure)에서 액세스할 수 있어야 하 고, 실행이 작동 합니다. 이는 VM 또는 모든 공용 컴퓨터에서 브라우저에서 해당 URL을 열어 쉽게 확인할 수 있습니다.
     
@@ -838,7 +838,7 @@ ms.locfileid: "74972339"
 
 - **원인**: 스크립트 파일이 없거나 ADF가 스크립트 위치에 연결할 수 없습니다.
 
-- **권장 사항**: 스크립트가 있는지 확인 하 고 연결 된 연결 된 서비스에 연결에 대 한 적절 한 자격 증명이 있는지 확인 하십시오.
+- **권장 사항**: 스크립트가 있는지 확인 하 고 연결 된 연결 된 서비스에 연결에 대한 적절 한 자격 증명이 있는지 확인 하십시오.
 
 
 ### <a name="error-code--2346"></a>오류 코드: 2346
@@ -865,7 +865,7 @@ ms.locfileid: "74972339"
 
 - **원인**: 저장소 연결 된 서비스 속성이 올바르게 설정 되지 않았습니다.
 
-- **권장 사항**: hdi 활동에 대 한 기본 저장소 연결 된 서비스에서 전체 연결 문자열만 지원 됩니다. MSI 인증 또는 응용 프로그램을 사용 하 고 있지 않은지 확인 하세요.
+- **권장 사항**: hdi 활동에 대한 기본 저장소 연결 된 서비스에서 전체 연결 문자열만 지원 됩니다. MSI 인증 또는 응용 프로그램을 사용 하 고 있지 않은지 확인 하세요.
 
 
 ### <a name="error-code--2350"></a>오류 코드: 2350
@@ -874,7 +874,7 @@ ms.locfileid: "74972339"
 
 - **원인**: 파일이 있는 저장소에 연결 하기 위해 제공 된 자격 증명이 잘못 되었거나 파일이 존재 하지 않습니다.
 
-- **권장 사항**:이 오류는 ADF가 hdi 활동에 대 한 준비 단계를 수행할 때 발생 합니다. HDI에 작업을 제출 하기 전에 주 저장소에 파일을 복사 하려고 합니다. 파일이 제공 된 위치에 있는지, 저장소 연결이 올바른지 확인 합니다. ADF HDI 활동은 HDI 활동과 관련 된 저장소 계정의 MSI 인증을 지원 하지 않으므로 연결 된 서비스에 전체 키가 있거나 Azure Key Vault를 사용 하 고 있는지 확인 합니다.
+- **권장 사항**:이 오류는 ADF가 hdi 활동에 대한 준비 단계를 수행할 때 발생 합니다. HDI에 작업을 제출 하기 전에 주 저장소에 파일을 복사 하려고 합니다. 파일이 제공 된 위치에 있는지, 저장소 연결이 올바른지 확인 합니다. ADF HDI 활동은 HDI 활동과 관련 된 저장소 계정의 MSI 인증을 지원 하지 않으므로 연결 된 서비스에 전체 키가 있거나 Azure Key Vault를 사용 하 고 있는지 확인 합니다.
 
 
 ### <a name="error-code--2351"></a>오류 코드: 2351
@@ -986,7 +986,7 @@ ms.locfileid: "74972339"
 
 - **원인**: 제공 된 추가 저장소가 Azure Blob storage가 아닙니다.
 
-- **권장 사항**: Azure Blob storage 계정을 주문형 HDInsight 연결 된 서비스에 대 한 추가 저장소로 제공 합니다.
+- **권장 사항**: Azure Blob storage 계정을 주문형 HDInsight 연결 된 서비스에 대한 추가 저장소로 제공 합니다.
 
 
 
@@ -998,7 +998,7 @@ ms.locfileid: "74972339"
 
 - **원인**: 네트워크 연결, DNS 오류, 서버 인증서 유효성 검사 또는 시간 초과
 
-- **권장 사항**: 적중 하려는 끝점이 요청에 응답 하는지 확인 합니다. Fiddler/Postman과 같은 도구를 사용할 수 있습니다.
+- **권장 사항**: 적중 하려는 엔드포인트이 요청에 응답 하는지 확인 합니다. Fiddler/Postman과 같은 도구를 사용할 수 있습니다.
 
 
 ### <a name="error-code--2108"></a>오류 코드: 2108
@@ -1044,14 +1044,14 @@ Fiddler를 사용 하 여 모니터링 되는 웹 응용 프로그램의 HTTP �
 
 ## <a name="next-steps"></a>다음 단계
 
-문제 해결에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
+문제 해결에 대한 자세한 내용은 다음 리소스를 참조 하세요.
 
 *  [Data Factory 블로그](https://azure.microsoft.com/blog/tag/azure-data-factory/)
 *  [Data Factory 기능 요청](https://feedback.azure.com/forums/270578-data-factory)
 *  [Azure 비디오](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
 *  [MSDN 포럼](https://social.msdn.microsoft.com/Forums/home?sort=relevancedesc&brandIgnore=True&searchTerm=data+factory)
-*  [Data Factory에 대 한 Stack Overflow 포럼](https://stackoverflow.com/questions/tagged/azure-data-factory)
-*  [Data Factory에 대 한 Twitter 정보](https://twitter.com/hashtag/DataFactory)
+*  [Data Factory에 대한 Stack Overflow 포럼](https://stackoverflow.com/questions/tagged/azure-data-factory)
+*  [Data Factory에 대한 Twitter 정보](https://twitter.com/hashtag/DataFactory)
 
 
             

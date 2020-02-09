@@ -1,5 +1,5 @@
 ---
-title: 새 다중 테 넌 트 응용 프로그램 구성 | Microsoft Docs
+title: 새 다중 테넌트 응용 프로그램 구성 | Microsoft Docs
 description: 애플리케이션을 다중 테넌트로 구성하는 방법과 다중 테넌트 애플리케이션이 작동하는 방식 알아보기
 services: active-directory
 documentationcenter: ''

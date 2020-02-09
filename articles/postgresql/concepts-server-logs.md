@@ -61,7 +61,7 @@ Azure Portal를 사용 하 여 진단 로그를 사용 하도록 설정 하려�
    1. 포털에서 Postgres server의 탐색 메뉴에 있는 *진단 설정* 으로 이동 합니다.
    2. *진단 설정 추가*를 선택 합니다.
    3. 이 설정의 이름을로 설정 합니다. 
-   4. 기본 설정 끝점 (저장소 계정, 이벤트 허브, log analytics)을 선택 합니다. 
+   4. 기본 설정 엔드포인트 (저장소 계정, 이벤트 허브, log analytics)을 선택 합니다. 
    5. **PostgreSQLLogs**로그 유형을 선택 합니다.
    7. 설정을 저장합니다.
 
@@ -69,7 +69,7 @@ Powershell, CLI 또는 REST API를 사용 하 여 진단 로그를 사용 하도
 
 ### <a name="access-diagnostic-logs"></a>진단 로그 액세스
 
-로그에 액세스 하는 방법은 선택한 끝점에 따라 다릅니다. Azure Storage는 [로그 저장소 계정](../azure-monitor/platform/resource-logs-collect-storage.md) 문서를 참조 하세요. Event Hubs에 대해서는 [Stream Azure logs](../azure-monitor/platform/resource-logs-stream-event-hubs.md) 문서를 참조 하세요.
+로그에 액세스 하는 방법은 선택한 엔드포인트에 따라 다릅니다. Azure Storage는 [로그 저장소 계정](../azure-monitor/platform/resource-logs-collect-storage.md) 문서를 참조 하세요. Event Hubs에 대해서는 [Stream Azure logs](../azure-monitor/platform/resource-logs-stream-event-hubs.md) 문서를 참조 하세요.
 
 Azure Monitor 로그의 경우 로그는 선택한 작업 영역으로 전송 됩니다. Postgres 로그 **는 azurediagnostics 수집 모드** 를 사용 하므로 azurediagnostics 테이블에서 쿼리할 수 있습니다. 테이블의 필드는 아래에 설명 되어 있습니다. [Azure Monitor 로그 쿼리](../azure-monitor/log-query/log-query-overview.md) 개요의 쿼리 및 경고에 대해 자세히 알아보세요.
 

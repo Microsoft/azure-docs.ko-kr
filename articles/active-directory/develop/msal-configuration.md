@@ -84,15 +84,15 @@ Android MSAL (Microsoft 인증 라이브러리)은 기본 [구성 JSON 파일](h
 }
 ```
 
-#### <a name="map-aad-authority--audience-to-microsoft-identity-platform-endpoints"></a>AAD authority & 대상을 Microsoft identity platform 끝점에 매핑
+#### <a name="map-aad-authority--audience-to-microsoft-identity-platform-endpoints"></a>AAD authority & 대상을 Microsoft identity platform 엔드포인트에 매핑
 
-| 유형 | 대상 | 테넌트 ID | Authority_Url | 결과 끝점 | 메모 |
+| 유형 | 대상 | 테넌트 ID | Authority_Url | 결과 엔드포인트 | 메모 |
 |------|------------|------------|----------------|----------------------|---------|
-| AAD | AzureADandPersonalMicrosoftAccount | | | https://login.microsoftonline.com/common | `common`는 계정이 인에 대 한 테 넌 트 별칭입니다. 예: 특정 Azure Active Directory 테 넌 트 또는 Microsoft 계정 시스템 |
-| AAD | AzureADMyOrg | contoso.com | | https://login.microsoftonline.com/contoso.com | Contoso.com에 있는 계정만 토큰을 획득할 수 있습니다. 확인 된 도메인 또는 테 넌 트 GUID는 테 넌 트 ID로 사용 될 수 있습니다. |
-| AAD | AzureADMultipleOrgs | | | https://login.microsoftonline.com/organizations | 이 끝점에는 Azure Active Directory 계정만 사용할 수 있습니다. Microsoft 계정은 조직의 멤버일 수 있습니다. 조직에서 리소스에 대 한 Microsoft 계정를 사용 하 여 토큰을 얻으려면 토큰을 원하는 조직 테 넌 트를 지정 합니다. |
-| AAD | PersonalMicrosoftAccount | | | https://login.microsoftonline.com/consumers | Microsoft 계정만이 끝점을 사용할 수 있습니다. |
-| B2C | | | 결과 끝점 보기 | https://login.microsoftonline.com/tfp/contoso.onmicrosoft.com/B2C_1_SISOPolicy/ | Contoso.onmicrosoft.com 테 넌 트에 있는 계정만 토큰을 획득할 수 있습니다. 이 예제에서 B2C 정책은 인증 기관 URL 경로의 일부입니다. |
+| AAD | AzureADandPersonalMicrosoftAccount | | | https://login.microsoftonline.com/common | `common`는 계정이 인에 대 한 테넌트 별칭입니다. 예: 특정 Azure Active Directory 테넌트 또는 Microsoft 계정 시스템 |
+| AAD | AzureADMyOrg | contoso.com | | https://login.microsoftonline.com/contoso.com | Contoso.com에 있는 계정만 토큰을 획득할 수 있습니다. 확인 된 도메인 또는 테넌트 GUID는 테넌트 ID로 사용 될 수 있습니다. |
+| AAD | AzureADMultipleOrgs | | | https://login.microsoftonline.com/organizations | 이 엔드포인트에는 Azure Active Directory 계정만 사용할 수 있습니다. Microsoft 계정은 조직의 멤버일 수 있습니다. 조직에서 리소스에 대 한 Microsoft 계정를 사용 하 여 토큰을 얻으려면 토큰을 원하는 조직 테넌트를 지정 합니다. |
+| AAD | PersonalMicrosoftAccount | | | https://login.microsoftonline.com/consumers | Microsoft 계정만이 엔드포인트을 사용할 수 있습니다. |
+| B2C | | | 결과 엔드포인트 보기 | https://login.microsoftonline.com/tfp/contoso.onmicrosoft.com/B2C_1_SISOPolicy/ | Contoso.onmicrosoft.com 테넌트에 있는 계정만 토큰을 획득할 수 있습니다. 이 예제에서 B2C 정책은 인증 기관 URL 경로의 일부입니다. |
 
 > [!NOTE]
 > MSAL에서는 인증 기관 유효성 검사를 사용 하거나 사용 하지 않도록 설정할 수 없습니다.
@@ -113,7 +113,7 @@ Android MSAL (Microsoft 인증 라이브러리)은 기본 [구성 JSON 파일](h
 | 속성 | 데이터 형식  | 필수 | 메모 |
 |-----------|-------------|------------|-------|
 | `type` | String | 예 | 앱이 대상으로 지정 하려는 대상 그룹을 지정 합니다. 가능한 값: `AzureADandPersonalMicrosoftAccount`, `PersonalMicrosoftAccount`, `AzureADMultipleOrgs`, `AzureADMyOrg` |
-| `tenant_id` | String | 예 | `"type":"AzureADMyOrg"`하는 경우에만 필요 합니다. 다른 `type` 값의 경우 선택 사항입니다. `contoso.com`와 같은 테 넌 트 도메인 이거나 `72f988bf-86f1-41af-91ab-2d7cd011db46`와 같은 테 넌 트 ID 일 수 있습니다. |
+| `tenant_id` | String | 예 | `"type":"AzureADMyOrg"`하는 경우에만 필요 합니다. 다른 `type` 값의 경우 선택 사항입니다. `contoso.com`와 같은 테넌트 도메인 이거나 `72f988bf-86f1-41af-91ab-2d7cd011db46`와 같은 테넌트 ID 일 수 있습니다. |
 
 ### <a name="authorization_user_agent"></a>authorization_user_agent
 
@@ -126,7 +126,7 @@ Android MSAL (Microsoft 인증 라이브러리)은 기본 [구성 JSON 파일](h
 
 ### <a name="multiple_clouds_supported"></a>multiple_clouds_supported
 
-여러 국가 클라우드를 지 원하는 클라이언트의 경우 `true`를 지정 합니다. Microsoft id 플랫폼은 권한 부여 및 토큰 상환 중에 올바른 국가 클라우드로 자동으로 리디렉션됩니다. `AuthenticationResult`와 연결 된 기관을 검사 하 여 로그인 한 계정의 국가별 클라우드를 확인할 수 있습니다. `AuthenticationResult`는 토큰을 요청 하는 리소스의 국가별 클라우드 관련 끝점 주소를 제공 하지 않습니다.
+여러 국가 클라우드를 지 원하는 클라이언트의 경우 `true`를 지정 합니다. Microsoft id 플랫폼은 권한 부여 및 토큰 상환 중에 올바른 국가 클라우드로 자동으로 리디렉션됩니다. `AuthenticationResult`와 연결 된 기관을 검사 하 여 로그인 한 계정의 국가별 클라우드를 확인할 수 있습니다. `AuthenticationResult`는 토큰을 요청 하는 리소스의 국가별 클라우드 관련 엔드포인트 주소를 제공 하지 않습니다.
 
 ### <a name="broker_redirect_uri_registered"></a>broker_redirect_uri_registered
 

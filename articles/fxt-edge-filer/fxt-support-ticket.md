@@ -1,6 +1,6 @@
 ---
-title: Microsoft Azure FXT Edge 필터에 대 한 지원 티켓을 엽니다.
-description: Azure FXT Edge 필터 시스템에 대 한 도움말을 위한 티켓을 여는 절차
+title: Microsoft Azure FXT Edge 필터에 대한 지원 티켓을 엽니다.
+description: Azure FXT Edge 필터 시스템에 대한 도움말을 위한 티켓을 여는 절차
 author: ekpgh
 ms.service: fxt-edge-filer
 ms.topic: conceptual
@@ -13,9 +13,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 10/10/2019
 ms.locfileid: "72255989"
 ---
-# <a name="open-a-support-ticket-for-the-azure-fxt-edge-filer"></a>Azure FXT Edge 필터에 대 한 지원 티켓을 엽니다.
+# <a name="open-a-support-ticket-for-the-azure-fxt-edge-filer"></a>Azure FXT Edge 필터에 대한 지원 티켓을 엽니다.
 
-이 문서에서는 Azure FXT Edge 필터 시스템에 대 한 도움을 받는 방법을 설명 합니다.
+이 문서에서는 Azure FXT Edge 필터 시스템에 대한 도움을 받는 방법을 설명 합니다.
 
 Azure Portal를 사용 하 여 Microsoft 고객 서비스 및 지원을 통해 지원 티켓을 열 수 있습니다.
 
@@ -32,7 +32,7 @@ Azure Portal를 사용 하 여 Microsoft 고객 서비스 및 지원을 통해 �
     1. **요약** 을 입력 하 고 **문제 유형을**선택 합니다. 
     빈 지원 요청 폼의 ![스크린샷](media/fxt-support-populated.png) 
     1. 계속하려면 **다음** 을 클릭합니다. 
-1. **세부** 정보 탭에서 문제에 대 한 정보 및 사용자에 게 연락 하는 방법을 추가 합니다. 문제와 관련 된 파일을 업로드할 수 있습니다. 
+1. **세부** 정보 탭에서 문제에 대한 정보 및 사용자에 게 연락 하는 방법을 추가 합니다. 문제와 관련 된 파일을 업로드할 수 있습니다. 
 1. **검토 + 만들기**에서 정보를 확인 하 고 **만들기** 단추를 클릭 하 여 요청을 제출 합니다.
 
 요청을 제출 하면 티켓 번호가 포함 된 확인 전자 메일을 받게 됩니다. 지원 직원 구성원은 요청에 대해 연락을 드립니다.

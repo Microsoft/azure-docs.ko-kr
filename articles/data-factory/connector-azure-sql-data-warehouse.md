@@ -61,7 +61,7 @@ Azure Synapse Analytics 연결 된 서비스에 대해 지원 되는 속성은 �
 | 속성            | Description                                                  | 필수                                                     |
 | :------------------ | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | type                | type 속성은 **AzureSqlDW**로 설정해야 합니다.             | 예                                                          |
-| connectionString    | **ConnectionString** 속성에 대 한 Azure Synapse Analytics 인스턴스에 연결 하는 데 필요한 정보를 지정 합니다. <br/>이 필드를 SecureString으로 표시하여 Data Factory에서 안전하게 저장합니다. 암호/서비스 주체 키를 Azure Key Vault에 넣고, SQL 인증인 경우 연결 문자열에서 `password` 구성을 끌어올 수도 있습니다. 자세한 내용은 표 아래의 JSON 예제 및 [Azure Key Vault에 자격 증명 저장](store-credentials-in-key-vault.md) 문서를 참조하세요. | 예                                                          |
+| connectionString    | **ConnectionString** 속성에 대한 Azure Synapse Analytics 인스턴스에 연결 하는 데 필요한 정보를 지정 합니다. <br/>이 필드를 SecureString으로 표시하여 Data Factory에서 안전하게 저장합니다. 암호/서비스 주체 키를 Azure Key Vault에 넣고, SQL 인증인 경우 연결 문자열에서 `password` 구성을 끌어올 수도 있습니다. 자세한 내용은 표 아래의 JSON 예제 및 [Azure Key Vault에 자격 증명 저장](store-credentials-in-key-vault.md) 문서를 참조하세요. | 예                                                          |
 | servicePrincipalId  | 애플리케이션의 클라이언트 ID를 지정합니다.                         | 서비스 주체와 함께 Azure AD 인증을 사용하는 경우 예 |
 | servicePrincipalKey | 애플리케이션의 키를 지정합니다. 이 필드를 SecureString으로 표시하여 Data Factory에 안전하게 저장하거나 [Azure Key Vault에 저장되는 비밀을 참조](store-credentials-in-key-vault.md)합니다. | 서비스 주체와 함께 Azure AD 인증을 사용하는 경우 예 |
 | tenant              | 애플리케이션이 있는 테넌트 정보(도메인 이름 또는 테넌트 ID)를 지정합니다. Azure Portal의 오른쪽 위 모서리에 마우스를 이동하여 검색할 수 있습니다. | 서비스 주체와 함께 Azure AD 인증을 사용하는 경우 예 |
@@ -181,7 +181,7 @@ Azure Synapse Analytics 연결 된 서비스에 대해 지원 되는 속성은 �
 
 1. 아직 수행하지 않은 경우 Azure Portal에서 Azure SQL Server에 대해 **[Azure Active Directory 관리자를 프로비저닝](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server)** 합니다. Azure AD 관리자는 Azure AD 사용자 또는 Azure AD 그룹이 될 수 있습니다. 관리 ID를 가진 그룹에 관리자 역할을 부여하는 경우 3단계 및 4단계를 건너뛰세요. 관리자는 데이터베이스에 대한 전체 액세스 권한을 가집니다.
 
-2. 관리 되는 Data Factory Id에 대 한 **[포함 된 데이터베이스 사용자를 만듭니다](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities)** . 최소한 ALTER ANY USER 권한이 있는 Azure AD ID를 사용하여 SSMS 등의 도구를 통해 데이터를 복사하려는 데이터 웨어하우스에 연결합니다. 다음 T-SQL을 실행합니다. 
+2. 관리 되는 Data Factory Id에 대한 **[포함 된 데이터베이스 사용자를 만듭니다](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities)** . 최소한 ALTER ANY USER 권한이 있는 Azure AD ID를 사용하여 SSMS 등의 도구를 통해 데이터를 복사하려는 데이터 웨어하우스에 연결합니다. 다음 T-SQL을 실행합니다. 
   
     ```sql
     CREATE USER [your Data Factory name] FROM EXTERNAL PROVIDER;
@@ -374,7 +374,7 @@ Azure SQL Data Warehouse에 데이터를 복사하려면 복사 작업의 싱크
 | writeBatchTimeout | 시간 초과되기 전에 배치 삽입 작업을 완료하기 위한 대기 시간입니다.<br/><br/>허용되는 값은 **시간 범위**입니다. 예: “00:30:00”(30분). | 아닙니다.<br/>Bulk insert를 사용할 때 적용 됩니다.        |
 | preCopyScript     | 각 실행 시 Azure SQL Data Warehouse에 데이터를 쓰기 전에 실행할 복사 작업에 대한 SQL 쿼리를 지정합니다. 이 속성을 사용하여 미리 로드된 데이터를 정리합니다. | 아닙니다.                                            |
 | tableOption | 원본 스키마에 따라 존재 하지 않는 경우 싱크 테이블을 자동으로 만들지 여부를 지정 합니다. 준비 된 복사본이 복사 작업에서 구성 된 경우 자동 테이블 만들기가 지원 되지 않습니다. 허용 되는 값은 `none` (기본값) `autoCreate`입니다. |아닙니다. |
-| disableMetricsCollection | Data Factory 복사 성능 최적화 및 권장 사항에 대 한 SQL Data Warehouse DWUs와 같은 메트릭을 수집 합니다. 이 동작에 관심이 있는 경우 `true` 지정 하 여 해제 합니다. | 아니요(기본값: `false`) |
+| disableMetricsCollection | Data Factory 복사 성능 최적화 및 권장 사항에 대한 SQL Data Warehouse DWUs와 같은 메트릭을 수집 합니다. 이 동작에 관심이 있는 경우 `true` 지정 하 여 해제 합니다. | 아니요(기본값: `false`) |
 
 #### <a name="sql-data-warehouse-sink-example"></a>SQL Data Warehouse 싱크 예제
 
@@ -394,13 +394,13 @@ Azure SQL Data Warehouse에 데이터를 복사하려면 복사 작업의 싱크
 
 ## <a name="use-polybase-to-load-data-into-azure-sql-data-warehouse"></a>PolyBase를 사용하여 Azure SQL Data Warehouse에 데이터 로드
 
-[PolyBase](https://docs.microsoft.com/sql/relational-databases/polybase/polybase-guide) 를 사용 하는 것은 처리량이 높은 Azure Synapse Analytics로 많은 양의 데이터를 로드 하는 효율적인 방법입니다. 기본 BULKINSERT 메커니즘 대신 PolyBase를 사용하면 처리량이 훨씬 증가합니다. 사용 사례에 대 한 연습은 [Azure Synapse Analytics로 1Tb 로드](v1/data-factory-load-sql-data-warehouse.md)를 참조 하세요.
+[PolyBase](https://docs.microsoft.com/sql/relational-databases/polybase/polybase-guide) 를 사용 하는 것은 처리량이 높은 Azure Synapse Analytics로 많은 양의 데이터를 로드 하는 효율적인 방법입니다. 기본 BULKINSERT 메커니즘 대신 PolyBase를 사용하면 처리량이 훨씬 증가합니다. 사용 사례에 대한 연습은 [Azure Synapse Analytics로 1Tb 로드](v1/data-factory-load-sql-data-warehouse.md)를 참조 하세요.
 
 * 원본 데이터가 **Azure Blob, Azure Data Lake Storage Gen1 또는 Azure Data Lake Storage Gen2**에 있고 **형식이 polybase 호환**인 경우 복사 작업을 사용 하 여 polybase를 직접 호출 하 여 원본에서 데이터를 Azure SQL Data Warehouse 가져올 수 있습니다. 자세한 내용은 **[PolyBase를 사용하여 직접 복사](#direct-copy-by-using-polybase)** 를 참조하세요.
 * 원본 데이터 저장소와 형식이 PolyBase에서 원래 지원되지 않는 경우, 대신 **[PolyBase를 사용한 준비된 복사](#staged-copy-by-using-polybase)** 기능을 사용합니다. 준비된 복사 기능을 사용할 경우, 처리량도 향상됩니다. 데이터를 PolyBase 호환 형식으로 자동으로 변환 하 고, 데이터를 Azure Blob 저장소에 저장 합니다. 그런 다음 PolyBase를 호출 하 여 데이터를 SQL Data Warehouse으로 로드 합니다.
 
 >[!TIP]
->[PolyBase 사용에 대 한 모범 사례](#best-practices-for-using-polybase)에 대해 자세히 알아보세요.
+>[PolyBase 사용에 대한 모범 사례](#best-practices-for-using-polybase)에 대해 자세히 알아보세요.
 
 복사 작업의 `polyBaseSettings`에서 다음 PolyBase 설정이 지원 됩니다.
 
@@ -429,7 +429,7 @@ PolyBase SQL Data Warehouse Azure Blob, Azure Data Lake Storage Gen1 및 Azure D
     | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage.md) | 계정 키 인증, 관리 id 인증 |
 
     >[!IMPORTANT]
-    >Azure Storage VNet 서비스 끝점을 사용 하 여 구성 된 경우 관리 되는 id 인증을 사용 해야 합니다. [Azure Storage에서 VNet 서비스 끝점을 사용 하는 경우의 영향](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage)을 참조 하세요. [Azure Blob 관리 id 인증](connector-azure-blob-storage.md#managed-identity) 및 [Azure Data Lake Storage Gen2 관리 id 인증](connector-azure-data-lake-storage.md#managed-identity) 섹션의 Data Factory에서 필요한 구성을 알아봅니다.
+    >Azure Storage VNet 서비스 엔드포인트을 사용 하 여 구성 된 경우 관리 되는 id 인증을 사용 해야 합니다. [Azure Storage에서 VNet 서비스 엔드포인트을 사용 하는 경우의 영향](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage)을 참조 하세요. [Azure Blob 관리 id 인증](connector-azure-blob-storage.md#managed-identity) 및 [Azure Data Lake Storage Gen2 관리 id 인증](connector-azure-data-lake-storage.md#managed-identity) 섹션의 Data Factory에서 필요한 구성을 알아봅니다.
 
 2. **원본 데이터 형식은** 다음과 같은 구성 **으로 Parquet**, **ORC**또는 **구분 된 텍스트**입니다.
 
@@ -486,10 +486,10 @@ PolyBase SQL Data Warehouse Azure Blob, Azure Data Lake Storage Gen1 및 Azure D
 
 원본 데이터가 PolyBase와 기본적으로 호환 되지 않는 경우 임시 스테이징 Azure Blob 저장소 인스턴스를 통해 데이터 복사를 사용 하도록 설정 합니다 (Azure Premium Storage 일 수 없음). 이 경우 Azure Data Factory는 PolyBase의 데이터 형식 요구 사항을 충족 하도록 데이터를 자동으로 변환 합니다. 그런 다음 PolyBase를 호출 하 여 SQL Data Warehouse에 데이터를 로드 합니다. 마지막으로, Blob Storage에서 임시 데이터를 정리합니다. 준비 Azure Blob Storage 인스턴스를 통해 데이터를 복사하는 방법에 대한 자세한 내용은 [준비된 복사](copy-activity-performance.md#staged-copy)를 참조하세요.
 
-이 기능을 사용 하려면 임시 Blob storage를 사용 하 여 Azure storage 계정을 참조 하는 [Azure Blob Storage 연결 된 서비스](connector-azure-blob-storage.md#linked-service-properties) 를 만듭니다. 그런 다음, 다음 코드와 같이 복사 활동에 대 한 `enableStaging` 및 `stagingSettings` 속성을 지정 합니다.
+이 기능을 사용 하려면 임시 Blob storage를 사용 하 여 Azure storage 계정을 참조 하는 [Azure Blob Storage 연결 된 서비스](connector-azure-blob-storage.md#linked-service-properties) 를 만듭니다. 그런 다음, 다음 코드와 같이 복사 활동에 대한 `enableStaging` 및 `stagingSettings` 속성을 지정 합니다.
 
 >[!IMPORTANT]
->스테이징 Azure Storage VNet 서비스 끝점을 사용 하 여 구성 된 경우 관리 id 인증을 사용 해야 합니다. [Azure Storage에서 VNet 서비스 끝점을 사용 하는 경우의 영향](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage)을 참조 하세요. [Azure Blob 관리 id 인증](connector-azure-blob-storage.md#managed-identity)에서 Data Factory에 필요한 구성을 알아봅니다.
+>스테이징 Azure Storage VNet 서비스 엔드포인트을 사용 하 여 구성 된 경우 관리 id 인증을 사용 해야 합니다. [Azure Storage에서 VNet 서비스 엔드포인트을 사용 하는 경우의 영향](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage)을 참조 하세요. [Azure Blob 관리 id 인증](connector-azure-blob-storage.md#managed-identity)에서 Data Factory에 필요한 구성을 알아봅니다.
 
 ```json
 "activities":[
@@ -607,7 +607,7 @@ COPY 문을 사용 하면 다음 구성이 지원 됩니다.
     | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage.md) | [구분 기호로 분리 된 텍스트](format-delimited-text.md)<br/>[Parquet](format-parquet.md)<br/>[ORC](format-orc.md) | 계정 키 인증, 서비스 주체 인증, 관리 id 인증 |
 
     >[!IMPORTANT]
-    >Azure Storage VNet 서비스 끝점을 사용 하 여 구성 된 경우 관리 되는 id 인증을 사용 해야 합니다. [Azure Storage에서 VNet 서비스 끝점을 사용 하는 경우의 영향](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage)을 참조 하세요. [Azure Blob 관리 id 인증](connector-azure-blob-storage.md#managed-identity) 및 [Azure Data Lake Storage Gen2 관리 id 인증](connector-azure-data-lake-storage.md#managed-identity) 섹션의 Data Factory에서 필요한 구성을 알아봅니다.
+    >Azure Storage VNet 서비스 엔드포인트을 사용 하 여 구성 된 경우 관리 되는 id 인증을 사용 해야 합니다. [Azure Storage에서 VNet 서비스 엔드포인트을 사용 하는 경우의 영향](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage)을 참조 하세요. [Azure Blob 관리 id 인증](connector-azure-blob-storage.md#managed-identity) 및 [Azure Data Lake Storage Gen2 관리 id 인증](connector-azure-data-lake-storage.md#managed-identity) 섹션의 Data Factory에서 필요한 구성을 알아봅니다.
 
 2. 서식 설정에는 다음이 포함 됩니다.
 
@@ -629,7 +629,7 @@ COPY 문을 사용 하면 다음 구성이 지원 됩니다.
 
 | 속성          | Description                                                  | 필수                                      |
 | :---------------- | :----------------------------------------------------------- | :-------------------------------------------- |
-| defaultValues | SQL DW의 각 대상 열에 대 한 기본값을 지정 합니다.  속성의 기본값은 데이터 웨어하우스의 기본 제약 조건 집합을 덮어쓰고 id 열에는 기본값을 사용할 수 없습니다. | 아닙니다. |
+| defaultValues | SQL DW의 각 대상 열에 대한 기본값을 지정 합니다.  속성의 기본값은 데이터 웨어하우스의 기본 제약 조건 집합을 덮어쓰고 id 열에는 기본값을 사용할 수 없습니다. | 아닙니다. |
 | additionalOptions | [Copy 문의](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest)"With" 절에서 직접 SQL DW 복사 문에 전달 되는 추가 옵션입니다. COPY 문 요구 사항에 맞게 조정 하는 데 필요한 값을 따옴표로 묶습니다. | 아닙니다. |
 
 ```json
@@ -682,17 +682,17 @@ COPY 문을 사용 하면 다음 구성이 지원 됩니다.
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
+속성에 대한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
 
 ## <a name="getmetadata-activity-properties"></a>GetMetadata 활동 속성
 
-속성에 대 한 자세한 내용을 보려면 [GetMetadata 활동](control-flow-get-metadata-activity.md) 을 확인 하세요. 
+속성에 대한 자세한 내용을 보려면 [GetMetadata 활동](control-flow-get-metadata-activity.md) 을 확인 하세요. 
 
 ## <a name="data-type-mapping-for-azure-sql-data-warehouse"></a>Azure SQL Data Warehouse에 대한 데이터 형식 매핑
 
 ## <a name="mapping-data-flow-properties"></a>데이터 흐름 속성 매핑
 
-매핑 데이터 흐름에서 데이터를 변환 하는 경우 Azure Synapse Analytics에서 테이블에 대 한 읽기 및 쓰기를 수행할 수 있습니다. 자세한 내용은 데이터 흐름 매핑에서 [원본 변환](data-flow-source.md) 및 [싱크 변환을](data-flow-sink.md) 참조 하세요.
+매핑 데이터 흐름에서 데이터를 변환 하는 경우 Azure Synapse Analytics에서 테이블에 대한 읽기 및 쓰기를 수행할 수 있습니다. 자세한 내용은 데이터 흐름 매핑에서 [원본 변환](data-flow-source.md) 및 [싱크 변환을](data-flow-sink.md) 참조 하세요.
 
 ### <a name="source-transformation"></a>원본 변환
 
@@ -700,7 +700,7 @@ Azure Synapse Analytics에 특정 한 설정은 원본 변환의 **원본 옵션
 
 **입력:** 원본 위치를 테이블에 표시할지 (```Select * from <table-name>```와 동일) 선택 하거나 사용자 지정 SQL 쿼리를 입력 합니다.
 
-**쿼리**: 입력 필드에서 쿼리를 선택 하는 경우 원본에 대 한 SQL 쿼리를 입력 합니다. 이 설정은 데이터 집합에서 선택한 테이블을 재정의 합니다. **Order by** 절은 여기서 지원 되지 않지만 전체 SELECT FROM 문을 설정할 수 있습니다. 사용자 정의 테이블 함수를 사용할 수도 있습니다. **select * From udfGetData ()** 는 테이블을 반환 하는 SQL의 UDF입니다. 이 쿼리는 데이터 흐름에서 사용할 수 있는 원본 테이블을 생성 합니다. 쿼리를 사용 하는 것은 테스트 또는 조회를 위해 행을 줄이는 좋은 방법 이기도 합니다. 
+**쿼리**: 입력 필드에서 쿼리를 선택 하는 경우 원본에 대한 SQL 쿼리를 입력 합니다. 이 설정은 데이터 집합에서 선택한 테이블을 재정의 합니다. **Order by** 절은 여기서 지원 되지 않지만 전체 SELECT FROM 문을 설정할 수 있습니다. 사용자 정의 테이블 함수를 사용할 수도 있습니다. **select * From udfGetData ()** 는 테이블을 반환 하는 SQL의 UDF입니다. 이 쿼리는 데이터 흐름에서 사용할 수 있는 원본 테이블을 생성 합니다. 쿼리를 사용 하는 것은 테스트 또는 조회를 위해 행을 줄이는 좋은 방법 이기도 합니다. 
 
 * SQL 예: ```Select * from MyTable where customerId > 1000 and customerId < 2000```
 
@@ -719,10 +719,10 @@ Azure Synapse Analytics에 특정 한 설정은 원본 변환의 **원본 옵션
 
 Azure Synapse Analytics에 특정 한 설정은 싱크 변환의 **설정** 탭에서 사용할 수 있습니다.
 
-**업데이트 방법:** 데이터베이스 대상에서 허용 되는 작업을 결정 합니다. 기본값은 삽입만 허용 하는 것입니다. 행을 업데이트, upsert 또는 삭제 하려면 해당 작업에 대 한 행의 태그를 변경 하는 행을 변경 해야 합니다. 업데이트, upsert 및 삭제의 경우 변경할 행을 결정 하기 위해 키 열을 설정 해야 합니다.
+**업데이트 방법:** 데이터베이스 대상에서 허용 되는 작업을 결정 합니다. 기본값은 삽입만 허용 하는 것입니다. 행을 업데이트, upsert 또는 삭제 하려면 해당 작업에 대한 행의 태그를 변경 하는 행을 변경 해야 합니다. 업데이트, upsert 및 삭제의 경우 변경할 행을 결정 하기 위해 키 열을 설정 해야 합니다.
 
 **테이블 작업:** 쓰기 전에 대상 테이블에서 모든 행을 다시 만들지 또는 제거할지를 결정 합니다.
-* 없음: 테이블에 대 한 작업이 수행 되지 않습니다.
+* 없음: 테이블에 대한 작업이 수행 되지 않습니다.
 * 다시 만들기: 테이블이 삭제 되 고 다시 생성 됩니다. 동적으로 새 테이블을 만드는 경우 필요 합니다.
 * Truncate: 대상 테이블의 모든 행이 제거 됩니다.
 
@@ -734,12 +734,12 @@ Azure Synapse Analytics에 특정 한 설정은 싱크 변환의 **설정** 탭�
 
 ![사전 및 사후 SQL 처리 스크립트](media/data-flow/prepost1.png "SQL 처리 스크립트")
 
-## <a name="data-type-mapping-for-azure-synapse-analytics"></a>Azure Synapse Analytics에 대 한 데이터 형식 매핑
+## <a name="data-type-mapping-for-azure-synapse-analytics"></a>Azure Synapse Analytics에 대한 데이터 형식 매핑
 
 Azure Synapse Analytics에서 데이터를 복사 하는 경우 Azure Synapse Analytics 데이터 형식에서 중간 데이터 형식을 Azure Data Factory 하는 다음과 같은 매핑이 사용 됩니다. 복사 작업에서 원본 스키마 및 데이터 형식을 싱크에 매핑하는 방법에 대한 자세한 내용은 [스키마 및 데이터 형식 매핑](copy-activity-schema-and-type-mapping.md)을 참조하세요.
 
 >[!TIP]
->SQL DW에서 지원 되는 데이터 형식 및 지원 되지 않는 데이터 형식에 대 한 자세한 내용은 [Azure Synapse Analytics의 테이블 데이터 형식](../sql-data-warehouse/sql-data-warehouse-tables-data-types.md) 문서를 참조 하세요.
+>SQL DW에서 지원 되는 데이터 형식 및 지원 되지 않는 데이터 형식에 대한 자세한 내용은 [Azure Synapse Analytics의 테이블 데이터 형식](../sql-data-warehouse/sql-data-warehouse-tables-data-types.md) 문서를 참조 하세요.
 
 | Azure Synapse Analytics 데이터 형식    | Data Factory 중간 데이터 형식 |
 | :------------------------------------ | :----------------------------- |

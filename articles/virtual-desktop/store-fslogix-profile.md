@@ -55,4 +55,4 @@ FSLogix 프로필 컨테이너, 사용자 프로필 디스크 및 기타 사용�
 - [Azure NetApp 파일을 사용 하 여 호스트 풀의 FSLogix 프로필 컨테이너 만들기](create-fslogix-profile-container.md)
 - [Azure에서 UPD 저장소에 대 한 2 노드 스토리지 공간 다이렉트 스케일 아웃 파일 서버 배포](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-storage-spaces-direct-deployment) 의 지침은 사용자 프로필 디스크 대신 FSLogix 프로필 컨테이너를 사용 하는 경우에도 적용 됩니다.
 
-[Windows 가상 데스크톱에서 테 넌 트 만들기](tenant-setup-azure-active-directory.md)에서 처음부터 시작 하 여 고유한 Windows 가상 데스크톱 솔루션을 설정할 수도 있습니다.
+[Windows 가상 데스크톱에서 테넌트 만들기](tenant-setup-azure-active-directory.md)에서 처음부터 시작 하 여 고유한 Windows 가상 데스크톱 솔루션을 설정할 수도 있습니다.

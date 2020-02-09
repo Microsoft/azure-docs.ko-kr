@@ -1,6 +1,6 @@
 ---
-title: '| 용 C# IoT 보안 에이전트 로컬 구성 파일에 대 한 Azure Security Center 이해 Microsoft Docs'
-description: IoT 보안 서비스의 Azure Security Center에 대 한 자세한 내용은의 C#보안 에이전트 로컬 구성 파일을 확인 하세요.
+title: '| 용 C# IoT 보안 에이전트 로컬 구성 파일에 대한 Azure Security Center 이해 Microsoft Docs'
+description: IoT 보안 서비스의 Azure Security Center에 대한 자세한 내용은의 C#보안 에이전트 로컬 구성 파일을 확인 하세요.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -35,7 +35,7 @@ IoT 보안 에이전트의 Azure Security Center은 로컬 구성 파일의 구�
 - **인증 구성-인증** 관련 구성 (인증 세부 정보 포함).
 - **Securityiotinterface .config** -IoT 관련 구성.
 
-구성 파일에는 기본 구성이 포함 되어 있습니다. 에이전트를 설치 하는 동안 인증 구성이 채워지고 에이전트가 다시 시작 될 때 구성 파일에 대 한 변경 내용이 적용 됩니다. 
+구성 파일에는 기본 구성이 포함 되어 있습니다. 에이전트를 설치 하는 동안 인증 구성이 채워지고 에이전트가 다시 시작 될 때 구성 파일에 대한 변경 내용이 적용 됩니다. 
 
 ## <a name="configuration-file-location"></a>구성 파일 위치
 Linux의 경우:
@@ -86,7 +86,7 @@ Windows의 경우:
 | deviceId | 문자열 | Azure IoT Hub에 등록 된 장치의 ID입니다. || schedulerInterval | TimeSpan 문자열 | 내부 스케줄러 간격입니다. |
 | 게이트웨이 호스트 이름 | 문자열 | Azure Iot Hub의 호스트 이름입니다. 일반적으로 < 내 허브 >. azure-devices.net |
 | filePath | 문자열-파일의 경로 | 인증 암호를 포함 하는 파일의 경로입니다.|
-| type | "SymmetricKey", "New-selfsignedcertificate" | 인증에 대 한 사용자 암호입니다. 사용자 비밀이 대칭 키인 경우 *SymmetricKey* 을 선택 하 고, 비밀이 자체 서명 된 인증서 인 경우 *자체 서명 된 인증서* 를 선택 합니다. |
+| type | "SymmetricKey", "New-selfsignedcertificate" | 인증에 대한 사용자 암호입니다. 사용자 비밀이 대칭 키인 경우 *SymmetricKey* 을 선택 하 고, 비밀이 자체 서명 된 인증서 인 경우 *자체 서명 된 인증서* 를 선택 합니다. |
 | ID | "DPS", "모듈", "장치" | 인증 id-dps를 통해 인증을 수행 하는 경우 dps, 모듈 자격 증명을 사용 하 여 인증을 수행 하는 경우 모듈, 장치 자격 증명을 사용 하 여 인증 하는 경우 장치
 | certificateLocationKind |  "LocalFile", "Store" | LocalFile 인증서가 파일에 저장 된 경우 인증서가 인증서 저장소에 있는 경우 저장 합니다. |
 | idScope | 문자열 | DPS의 ID 범위 |
@@ -124,10 +124,10 @@ Windows의 경우:
 ```
 
 ## <a name="next-steps"></a>다음 단계
-- IoT 서비스에 대 한 Azure Security Center [개요](overview.md) 를 참조 하십시오.
-- IoT [아키텍처](architecture.md) 에 대 한 Azure Security Center에 대해 자세히 알아보기
-- IoT [서비스](quickstart-onboard-iot-hub.md) 에 대 한 Azure Security Center 사용
-- IoT 서비스에 대 한 Azure Security Center [FAQ](resources-frequently-asked-questions.md) 읽기
+- IoT 서비스에 대한 Azure Security Center [개요](overview.md) 를 참조 하십시오.
+- IoT [아키텍처](architecture.md) 에 대한 Azure Security Center에 대해 자세히 알아보기
+- IoT [서비스](quickstart-onboard-iot-hub.md) 에 대한 Azure Security Center 사용
+- IoT 서비스에 대한 Azure Security Center [FAQ](resources-frequently-asked-questions.md) 읽기
 - [원시 보안 데이터](how-to-security-data-access.md)에 액세스하는 방법을 알아봅니다.
 - [추천 사항](concept-recommendations.md)을 살펴봅니다.
 - 보안 [경고](concept-security-alerts.md) 이해

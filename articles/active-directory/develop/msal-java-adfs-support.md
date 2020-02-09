@@ -28,7 +28,7 @@ Java 용 MSAL을 사용 하는 앱은 Azure Active Directory (Azure AD)와 통�
 
 Java 용 MSAL은 azure ad (관리 되는 사용자)에서 관리 되는 사용자 또는 AD FS (페더레이션된 사용자)와 같은 다른 id 공급자가 관리 하는 사용자에 게 로그인 하는 Azure AD에 연결 합니다. Java 용 MSAL은 사용자가 페더레이션된 임을 인식 하지 못합니다. 단지 Azure AD와만 통신 합니다.
 
-이 경우 사용 하는 [기관은](msal-client-application-configuration.md#authority) 일반적인 인증 기관 (기관 호스트 이름 + 테 넌 트, 공용 또는 조직)입니다.
+이 경우 사용 하는 [기관은](msal-client-application-configuration.md#authority) 일반적인 인증 기관 (기관 호스트 이름 + 테넌트, 공용 또는 조직)입니다.
 
 ## <a name="acquire-a-token-interactively-for-a-federated-user"></a>페더레이션된 사용자에 대해 대화형으로 토큰 획득
 

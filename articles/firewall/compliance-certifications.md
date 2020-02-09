@@ -1,6 +1,6 @@
 ---
 title: Azure 방화벽 준수 인증
-description: PCI, SOC 및 ISO에 대 한 Azure 방화벽 준수 인증 목록
+description: PCI, SOC 및 ISO에 대한 Azure 방화벽 준수 인증 목록
 services: firewall
 author: vhorne
 ms.service: firewall
@@ -18,11 +18,11 @@ ms.locfileid: "76158183"
 
 Azure 방화벽은 PCI (결제 카드 산업), SOC (서비스 조직 컨트롤), ISO (국제 표준화 기구) 및 HITRUST 규격입니다.
 
-다음 인증은 글로벌 Azure 및 Azure Government에 대 한 것입니다.
+다음 인증은 글로벌 Azure 및 Azure Government에 대한 것입니다.
 
 ## <a name="global-azure-certifications"></a>글로벌 Azure 인증
 
-다음은 글로벌 Azure에 대 한 Azure 방화벽 인증입니다.
+다음은 글로벌 Azure에 대한 Azure 방화벽 인증입니다.
 
 - 23 NYCRR 500
 - AFM 및 DNB (네덜란드)
@@ -80,7 +80,7 @@ Azure 방화벽은 PCI (결제 카드 산업), SOC (서비스 조직 컨트롤),
 
 ## <a name="azure-government-certifications"></a>Azure Government 인증
 
-Azure Government에 대 한 Azure 방화벽 인증은 다음과 같습니다.
+Azure Government에 대한 Azure 방화벽 인증은 다음과 같습니다.
 
 - CJIS
 - CNSSI 1253
@@ -107,7 +107,7 @@ Azure Government에 대 한 Azure 방화벽 인증은 다음과 같습니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-Microsoft 규정 준수에 대 한 자세한 내용은 다음 정보를 참조 하세요.
+Microsoft 규정 준수에 대한 자세한 내용은 다음 정보를 참조 하세요.
 
 - [Microsoft 규정 준수 가이드](https://servicetrust.microsoft.com/ViewPage/MSComplianceGuide)
 - [Microsoft Azure 규정 준수 개요](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942)

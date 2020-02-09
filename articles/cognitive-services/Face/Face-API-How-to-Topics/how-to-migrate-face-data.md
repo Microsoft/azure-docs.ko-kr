@@ -57,7 +57,7 @@ var FaceClientWestUS = new FaceClient(new ApiKeyServiceClientCredentials("<West 
     };
 ```
 
-원본 및 대상 구독에 대 한 구독 키 값 및 끝점 Url을 입력 합니다.
+원본 및 대상 구독에 대 한 구독 키 값 및 엔드포인트 Url을 입력 합니다.
 
 
 ## <a name="prepare-a-persongroup-for-migration"></a>PersonGroup 마이그레이션 준비

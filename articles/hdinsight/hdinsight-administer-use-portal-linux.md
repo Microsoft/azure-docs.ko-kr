@@ -104,7 +104,7 @@ HDInsight의 기존 Apache Hadoop 클러스터  [Azure 포털을 사용하여 HD
 |---|---|
 |N|클러스터 이름.|
 |클러스터 URL|Ambari 웹 인터페이스에 대한 URL입니다.|
-|Private Endpoint|클러스터에 대 한 개인 끝점입니다.|
+|Private Endpoint|클러스터에 대 한 개인 엔드포인트입니다.|
 |SSH (Secure shell)|SSH를 통해 클러스터에 액세스할 때 사용할 사용자 이름과 호스트 이름입니다.|
 |상태|다음 중 하나입니다. 중단됨, 수락됨, 클러스터 스토리지가 프로비전됨, Azure VM 구성, HDInsight 구성, 작동 가능, 실행 중, 오류, 삭제 중, 삭제됨, 시간이 초과됨, 삭제가 큐에 대기됨, 삭제 시간이 초과됨, 삭제 오류, 패치가 큐에 대기됨, 인증서 롤오버가 큐에 대기됨, 크기가 조정되어 큐에 대기됨 또는 클러스터 사용자 지정|
 |지역|Azure 위치입니다. 지원되는 Azure 위치의 목록은 [HDInsight 가격 책정](https://azure.microsoft.com/pricing/details/hdinsight/)의 **지역** 드롭다운 목록 상자를 참조하세요.|

@@ -45,9 +45,9 @@ Azure CNI 네트워킹을 사용하면 가상 네트워크 리소스가 AKS 클�
   * `Microsoft.Network/virtualNetworks/subnets/join/action`
   * `Microsoft.Network/virtualNetworks/subnets/read`
 
-AKS 서비스 주체 위임에 대 한 자세한 내용은 [다른 Azure 리소스에 대 한 액세스 위임][sp-delegation]을 참조 하세요.
+AKS 서비스 주체 위임에 대한 자세한 내용은 [다른 Azure 리소스에 대한 액세스 위임][sp-delegation]을 참조 하세요.
 
-각 노드 및 pod가 자체 IP 주소를 수신하는 경우 AKS 서브넷의 주소 범위를 계획하세요. 서브넷은 배포하는 모든 노드, pod 및 네트워크 리소스에 대해 IP 주소를 제공할 만큼 충분히 커야 합니다. 각 AKS 클러스터는 자체 서브넷에 배치해야 합니다. Azure에서 온-프레미스 또는 피어링된 네트워크에 대한 연결을 허용하려면 기존 네트워크 리소스와 겹치는 IP 주소 범위를 사용하지 마세요. Kubenet 및 Azure CNI 네트워킹을 사용하여 각 노드에서 실행되는 pod 수는 기본적으로 제한되어 있습니다. 규모 확장 이벤트 또는 클러스터 업그레이드를 처리 하려면 할당 된 서브넷에 사용할 수 있는 추가 IP 주소도 필요 합니다. 이러한 추가 주소 공간은 Windows Server 컨테이너를 사용 하는 경우 특히 중요 합니다 (현재 AKS에서 미리 보기 상태). 이러한 노드 풀에는 최신 보안 패치를 적용 하기 위해 업그레이드가 필요 하기 때문입니다. Windows Server 노드에 대 한 자세한 내용은 [AKS에서 노드 풀 업그레이드][nodepool-upgrade]를 참조 하세요.
+각 노드 및 pod가 자체 IP 주소를 수신하는 경우 AKS 서브넷의 주소 범위를 계획하세요. 서브넷은 배포하는 모든 노드, pod 및 네트워크 리소스에 대해 IP 주소를 제공할 만큼 충분히 커야 합니다. 각 AKS 클러스터는 자체 서브넷에 배치해야 합니다. Azure에서 온-프레미스 또는 피어링된 네트워크에 대한 연결을 허용하려면 기존 네트워크 리소스와 겹치는 IP 주소 범위를 사용하지 마세요. Kubenet 및 Azure CNI 네트워킹을 사용하여 각 노드에서 실행되는 pod 수는 기본적으로 제한되어 있습니다. 규모 확장 이벤트 또는 클러스터 업그레이드를 처리 하려면 할당 된 서브넷에 사용할 수 있는 추가 IP 주소도 필요 합니다. 이러한 추가 주소 공간은 Windows Server 컨테이너를 사용 하는 경우 특히 중요 합니다 (현재 AKS에서 미리 보기 상태). 이러한 노드 풀에는 최신 보안 패치를 적용 하기 위해 업그레이드가 필요 하기 때문입니다. Windows Server 노드에 대한 자세한 내용은 [AKS에서 노드 풀 업그레이드][nodepool-upgrade]를 참조 하세요.
 
 필요한 IP 주소를 계산 하려면 [AKS에서 Azure CNI 네트워킹 구성][advanced-networking]을 참조 하세요.
 
@@ -162,7 +162,7 @@ AKS의 작업 대부분은 Azure 관리 도구를 사용하거나 Kubernetes API
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서는 네트워크 연결 및 보안에 주안점을 두었습니다. Kubernetes의 네트워크 기본 사항에 대 한 자세한 내용은 [Azure Kubernetes Service의 응용 프로그램에 대 한 네트워크 개념 (AKS)][aks-concepts-network] 을 참조 하세요.
+이 문서는 네트워크 연결 및 보안에 주안점을 두었습니다. Kubernetes의 네트워크 기본 사항에 대한 자세한 내용은 [Azure Kubernetes Service의 응용 프로그램에 대한 네트워크 개념 (AKS)][aks-concepts-network] 을 참조 하세요.
 
 <!-- LINKS - External -->
 [cni-networking]: https://github.com/Azure/azure-container-networking/blob/master/docs/cni.md

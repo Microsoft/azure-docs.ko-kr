@@ -33,7 +33,7 @@ ms.locfileid: "74272838"
 ## <a name="configure-ad-fs-for-saml-20-direct-federation"></a>SAML 2.0 직접 페더레이션을 위한 AD FS 구성
 Azure AD B2B는 아래 나열 된 특정 요구 사항과 함께 SAML 프로토콜을 사용 하는 id 공급자와 페더레이션 하도록 구성할 수 있습니다. SAML 구성 단계를 설명 하기 위해이 섹션에서는 SAML 2.0에 대 한 AD FS를 설정 하는 방법을 보여 줍니다. 
 
-직접 페더레이션을 설정 하려면 id 공급자의 SAML 2.0 응답에서 다음 특성을 받아야 합니다. 이러한 특성은 온라인 보안 토큰 서비스 XML 파일에 연결 하거나 수동으로 입력 하 여 구성할 수 있습니다. [테스트 AD FS 만들기](https://medium.com/in-the-weeds/create-a-test-active-directory-federation-services-3-0-instance-on-an-azure-virtual-machine-9071d978e8ed) 의 12 단계에서는 AD FS 끝점을 찾는 방법이 나 `https://fs.iga.azure-test.net/federationmetadata/2007-06/federationmetadata.xml`와 같은 메타 데이터 URL을 생성 하는 방법을 설명 합니다. 
+직접 페더레이션을 설정 하려면 id 공급자의 SAML 2.0 응답에서 다음 특성을 받아야 합니다. 이러한 특성은 온라인 보안 토큰 서비스 XML 파일에 연결 하거나 수동으로 입력 하 여 구성할 수 있습니다. [테스트 AD FS 만들기](https://medium.com/in-the-weeds/create-a-test-active-directory-federation-services-3-0-instance-on-an-azure-virtual-machine-9071d978e8ed) 의 12 단계에서는 AD FS 엔드포인트을 찾는 방법이 나 `https://fs.iga.azure-test.net/federationmetadata/2007-06/federationmetadata.xml`와 같은 메타 데이터 URL을 생성 하는 방법을 설명 합니다. 
 
 |특성  |값  |
 |---------|---------|
@@ -106,7 +106,7 @@ Id 공급자가 발급 한 SAML 2.0 토큰에서 다음과 같은 클레임을 �
 ## <a name="configure-ad-fs-for-ws-fed-direct-federation"></a>WS-급지됨 직접 페더레이션을 위한 AD FS 구성 
 Azure AD B2B는 아래 나열 된 특정 요구 사항과 함께 WS-급지됨 프로토콜을 사용 하는 id 공급자와 페더레이션 하도록 구성할 수 있습니다. 현재 두 개의 WS (Shibboleth) 공급자는 Azure AD와의 호환성을 테스트 했습니다. 여기에는 AD FS 및 있습니다. 여기서는 WS-급지 id 공급자의 예로 Active Directory Federation Services (AD FS)를 사용 합니다. Azure AD를 사용 하 여 WS-급지 규격 공급자 간에 신뢰 당사자 트러스트를 설정 하는 방법에 대 한 자세한 내용은 Azure AD Id 공급자 호환성 문서를 다운로드 하세요.
 
-직접 페더레이션을 설정 하려면 id 공급자의 WS-급지됨 메시지에서 다음 특성을 받아야 합니다. 이러한 특성은 온라인 보안 토큰 서비스 XML 파일에 연결 하거나 수동으로 입력 하 여 구성할 수 있습니다. [테스트 AD FS 만들기](https://medium.com/in-the-weeds/create-a-test-active-directory-federation-services-3-0-instance-on-an-azure-virtual-machine-9071d978e8ed) 의 12 단계에서는 AD FS 끝점을 찾는 방법이 나 `https://fs.iga.azure-test.net/federationmetadata/2007-06/federationmetadata.xml`와 같은 메타 데이터 URL을 생성 하는 방법을 설명 합니다.
+직접 페더레이션을 설정 하려면 id 공급자의 WS-급지됨 메시지에서 다음 특성을 받아야 합니다. 이러한 특성은 온라인 보안 토큰 서비스 XML 파일에 연결 하거나 수동으로 입력 하 여 구성할 수 있습니다. [테스트 AD FS 만들기](https://medium.com/in-the-weeds/create-a-test-active-directory-federation-services-3-0-instance-on-an-azure-virtual-machine-9071d978e8ed) 의 12 단계에서는 AD FS 엔드포인트을 찾는 방법이 나 `https://fs.iga.azure-test.net/federationmetadata/2007-06/federationmetadata.xml`와 같은 메타 데이터 URL을 생성 하는 방법을 설명 합니다.
  
 |특성  |값  |
 |---------|---------|

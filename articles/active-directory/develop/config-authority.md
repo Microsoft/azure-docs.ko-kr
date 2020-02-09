@@ -176,15 +176,15 @@ do{
 
 각 소 버린 클라우드에 다른 범위를 전달 해야 할 수 있습니다. 보낼 범위는 사용 중인 리소스에 따라 달라 집니다. 예를 들어 전 세계 클라우드의 `"https://graph.microsoft.com/user.read"`를 사용 하 고 독일어 클라우드에서 `"https://graph.microsoft.de/user.read"` 수 있습니다.
 
-### <a name="signing-a-user-into-a-specific-tenant"></a>특정 테 넌 트에 사용자 서명
+### <a name="signing-a-user-into-a-specific-tenant"></a>특정 테넌트에 사용자 서명
 
-Authority URL이 `"login.microsoftonline.com/common"`로 설정 된 경우 사용자는 해당 홈 테 넌 트에 로그인 됩니다. 그러나 일부 앱은 사용자를 다른 테 넌 트에 서명 해야 할 수 있으며, 일부 앱은 단일 테 넌 트에서만 작동 합니다.
+Authority URL이 `"login.microsoftonline.com/common"`로 설정 된 경우 사용자는 해당 홈 테넌트에 로그인 됩니다. 그러나 일부 앱은 사용자를 다른 테넌트에 서명 해야 할 수 있으며, 일부 앱은 단일 테넌트에서만 작동 합니다.
 
-사용자를 특정 테 넌 트에 서명 하려면 특정 권한으로 `MSALPublicClientApplication`를 구성 합니다. 다음은 그 예입니다.
+사용자를 특정 테넌트에 서명 하려면 특정 권한으로 `MSALPublicClientApplication`를 구성 합니다. 다음은 그 예입니다.
 
 `https://login.microsoftonline.com/469fdeb4-d4fd-4fde-991e-308a78e4bea4`
 
-다음은 특정 테 넌 트에 사용자를 서명 하는 방법을 보여 줍니다.
+다음은 특정 테넌트에 사용자를 서명 하는 방법을 보여 줍니다.
 
 Objective-C
 ```objc

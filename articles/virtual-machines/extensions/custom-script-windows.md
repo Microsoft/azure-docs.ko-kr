@@ -34,7 +34,7 @@ Windows 용 사용자 지정 스크립트 확장은 지원 되는 확장 확장 
 
 ### <a name="script-location"></a>스크립트 위치
 
-Azure blob storage 자격 증명을 사용 하 여 Azure Blob storage에 액세스 하도록 확장을 구성할 수 있습니다. VM이 GitHub 또는 내부 파일 서버와 같은 해당 끝점으로 라우팅할 수 있으면 스크립트 위치는 어디에 나 있을 수 있습니다.
+Azure blob storage 자격 증명을 사용 하 여 Azure Blob storage에 액세스 하도록 확장을 구성할 수 있습니다. VM이 GitHub 또는 내부 파일 서버와 같은 해당 엔드포인트으로 라우팅할 수 있으면 스크립트 위치는 어디에 나 있을 수 있습니다.
 
 ### <a name="internet-connectivity"></a>인터넷 연결
 

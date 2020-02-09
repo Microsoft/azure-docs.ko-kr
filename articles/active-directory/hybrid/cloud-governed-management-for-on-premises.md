@@ -83,7 +83,7 @@ Azure AD 수 [게스트 사용자에 대 한 AD의 계정을 자동으로 만듭
 
 마지막으로, 사용자가 AD에서 자신의 암호를 변경 하도록 허용 하는 조직에서 AD 구성할 수 있습니다 조직은를 통해 Azure AD에서 사용 하는 동일한 암호 정책을 사용 하 여 [Azure AD 암호 보호 기능](https://docs.microsoft.com/azure/active-directory/authentication/concept-password-ban-bad-on-premises), 현재 공개 미리 보기로 제공 됩니다.
 
-조직을 클라우드로 AD 통합 응용 프로그램을 Azure에 응용 프로그램을 호스팅하는 운영 체제를 이동 하 여 이동할 준비가 되 면 [Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) -호환 되는 AD 도메인 서비스 (예: 도메인 가입을 제공 합니다. 그룹 정책, LDAP, Kerberos/NTLM 인증). Azure AD Domain Services는 조직의 기존 Azure AD 테 넌 트, 사용자가 회사 자격 증명을 사용 하 여 로그인 할 수 있도록와 통합 됩니다. 또한 기존 그룹과 사용자 계정을 사용할 수 있습니다 리소스에 대 한 액세스를 보호 하는 부드러운 ' 리프트 앤 시프트 ' Azure 인프라 서비스에 온-프레미스 리소스를 보장.
+조직을 클라우드로 AD 통합 응용 프로그램을 Azure에 응용 프로그램을 호스팅하는 운영 체제를 이동 하 여 이동할 준비가 되 면 [Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) -호환 되는 AD 도메인 서비스 (예: 도메인 가입을 제공 합니다. 그룹 정책, LDAP, Kerberos/NTLM 인증). Azure AD Domain Services는 조직의 기존 Azure AD 테넌트, 사용자가 회사 자격 증명을 사용 하 여 로그인 할 수 있도록와 통합 됩니다. 또한 기존 그룹과 사용자 계정을 사용할 수 있습니다 리소스에 대 한 액세스를 보호 하는 부드러운 ' 리프트 앤 시프트 ' Azure 인프라 서비스에 온-프레미스 리소스를 보장.
 
 ![Azure AD Domain Services](media/cloud-governed-management-for-on-premises/image4.png)
 

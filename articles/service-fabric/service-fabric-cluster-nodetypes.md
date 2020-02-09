@@ -76,7 +76,7 @@ Service Fabric 가상 머신 확장을 사용 하 여 Azure Virtual Machines에 
 | type | "ServiceFabricLinuxNode" 또는 "ServiceFabricWindowsNode" | Service Fabric OS를 식별 합니다. |
 | autoUpgradeMinorVersion | true 또는 false | SF 런타임 부 버전 자동 업그레이드 사용 |
 | publisher | Microsoft.Azure.ServiceFabric | Service Fabric 확장 게시자의 이름입니다. |
-| clusterEndpont | 문자열 | URI: 관리 끝점에 대 한 포트 |
+| clusterEndpont | 문자열 | URI: 관리 엔드포인트에 대 한 포트 |
 | nodeTypeRef | 문자열 | nodeType의 이름 |
 | durabilityLevel | bronze, silver, gold, platinum | 변경할 수 없는 Azure 인프라를 일시 중지할 수 있는 시간 |
 | enableParallelJobs | true 또는 false | VM 제거와 같은 계산 ParallelJobs를 사용 하도록 설정 하 고 동시에 동일한 확장 집합에서 VM 다시 부팅 |

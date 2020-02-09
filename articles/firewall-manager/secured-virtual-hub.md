@@ -1,6 +1,6 @@
 ---
 title: 보안 가상 허브 란 무엇 인가요?
-description: 보안 가상 허브에 대 한 자세한 정보
+description: 보안 가상 허브에 대한 자세한 정보
 author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
@@ -24,7 +24,7 @@ ms.locfileid: "73518438"
 
 온-프레미스 연결이 없는 관리 되는 중앙 VNet으로 보안 된 가상 허브를 사용할 수 있습니다. 이전에 Azure 방화벽 배포에 필요한 중앙 VNet을 대체 합니다. 보안 가상 허브는 자동화 된 라우팅을 제공 하므로 방화벽을 통해 트래픽을 라우팅하도록 자체 UDRs (사용자 정의 경로)를 구성할 필요가 없습니다.
 
-또한 전체 가상 WAN 아키텍처의 일부로 보안 가상 허브를 사용할 수 있습니다. 이 아키텍처는 Azure에 대 한 보안, 최적화 및 자동화 된 분기 연결을 제공 합니다. 서비스를 선택 하 여 Azure 방화벽 및 기타 타사 SECaaS (security as a service) 공급자를 비롯 한 네트워크 트래픽을 보호 하 고 관리할 수 있습니다.
+또한 전체 가상 WAN 아키텍처의 일부로 보안 가상 허브를 사용할 수 있습니다. 이 아키텍처는 Azure에 대한 보안, 최적화 및 자동화 된 분기 연결을 제공 합니다. 서비스를 선택 하 여 Azure 방화벽 및 기타 타사 SECaaS (security as a service) 공급자를 비롯 한 네트워크 트래픽을 보호 하 고 관리할 수 있습니다.
 
 ## <a name="create-a-secured-virtual-hub"></a>보안 가상 허브 만들기
 

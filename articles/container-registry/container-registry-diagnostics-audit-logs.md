@@ -1,6 +1,6 @@
 ---
 title: 리소스 로그 수집 & 분석
-description: 인증, 이미지 푸시, 이미지 풀 등의 Azure Container Registry에 대 한 리소스 로그 이벤트를 기록 하 고 분석 합니다.
+description: 인증, 이미지 푸시, 이미지 풀 등의 Azure Container Registry에 대한 리소스 로그 이벤트를 기록 하 고 분석 합니다.
 ms.topic: article
 ms.date: 01/03/2020
 ms.openlocfilehash: 72d03149cd24636ba2086dfaaff0dbba16d30f1e
@@ -10,9 +10,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/08/2020
 ms.locfileid: "75748007"
 ---
-# <a name="azure-container-registry-logs-for-diagnostic-evaluation-and-auditing"></a>진단 평가 및 감사에 대 한 Azure Container Registry 로그
+# <a name="azure-container-registry-logs-for-diagnostic-evaluation-and-auditing"></a>진단 평가 및 감사에 대한 Azure Container Registry 로그
 
-이 문서에서는 [Azure Monitor](../azure-monitor/overview.md)기능을 사용 하 여 Azure container registry에 대 한 로그 데이터를 수집 하는 방법을 설명 합니다. Azure Monitor는 레지스트리의 사용자 기반 이벤트에 대 한 [리소스 로그](../azure-monitor/platform/platform-logs-overview.md) (이전의 *진단 로그*)를 수집 합니다. 이 데이터를 수집 하 고 사용 하 여 다음과 같은 요구 사항을 충족 합니다.
+이 문서에서는 [Azure Monitor](../azure-monitor/overview.md)기능을 사용 하 여 Azure container registry에 대한 로그 데이터를 수집 하는 방법을 설명 합니다. Azure Monitor는 레지스트리의 사용자 기반 이벤트에 대한 [리소스 로그](../azure-monitor/platform/platform-logs-overview.md) (이전의 *진단 로그*)를 수집 합니다. 이 데이터를 수집 하 고 사용 하 여 다음과 같은 요구 사항을 충족 합니다.
 
 * 보안 및 규정 준수를 보장 하는 레지스트리 인증 이벤트 감사 
 
@@ -40,7 +40,7 @@ Azure Monitor를 사용 하 여 리소스 로그 데이터를 수집 하면 추�
 리소스 로그는 내부 작업을 설명 하는 Azure 리소스에서 내보낸 정보를 포함 합니다. Azure container registry의 경우 로그에는 다음 표에 저장 된 인증 및 리포지토리 수준 이벤트가 포함 됩니다. 
 
 * **ContainerRegistryLoginEvents** -들어오는 ID 및 IP 주소를 포함 하는 레지스트리 인증 이벤트 및 상태
-* **ContainerRegistryRepositoryEvents** -이미지 및 레지스트리 리포지토리의 기타 아티팩트에 대 한 푸시 및 가져오기와 같은 작업
+* **ContainerRegistryRepositoryEvents** -이미지 및 레지스트리 리포지토리의 기타 아티팩트에 대한 푸시 및 가져오기와 같은 작업
 * **Azuremetrics** 집계 된 푸시 및 끌어오기 수와 같은 [컨테이너 레지스트리 메트릭을](../azure-monitor/platform/metrics-supported.md#microsoftcontainerregistryregistries) - 합니다.
 
 작업의 경우 로그 데이터에는 다음이 포함 됩니다.
@@ -51,17 +51,17 @@ Azure는 리소스 로그 외에도 컨테이너 레지스트리의 생성 또�
 
 ## <a name="enable-collection-of-resource-logs"></a>리소스 로그 수집 사용
 
-컨테이너 레지스트리에 대 한 리소스 로그 컬렉션은 기본적으로 사용 하도록 설정 되어 있지 않습니다. 모니터링할 각 레지스트리에 대해 진단 설정을 명시적으로 사용 하도록 설정 합니다. 진단 설정을 사용 하도록 설정 하는 옵션은 [Azure에서 플랫폼 로그 및 메트릭을 수집 하는 진단 설정 만들기](../azure-monitor/platform/diagnostic-settings.md)를 참조 하세요.
+컨테이너 레지스트리에 대한 리소스 로그 컬렉션은 기본적으로 사용 하도록 설정 되어 있지 않습니다. 모니터링할 각 레지스트리에 대해 진단 설정을 명시적으로 사용 하도록 설정 합니다. 진단 설정을 사용 하도록 설정 하는 옵션은 [Azure에서 플랫폼 로그 및 메트릭을 수집 하는 진단 설정 만들기](../azure-monitor/platform/diagnostic-settings.md)를 참조 하세요.
 
-예를 들어 Azure Monitor의 거의 실시간으로 컨테이너 레지스트리에 대 한 로그 및 메트릭을 보려면 Log Analytics 작업 영역에서 리소스 로그를 수집 합니다. Azure Portal를 사용 하 여이 진단 설정을 사용 하려면:
+예를 들어 Azure Monitor의 거의 실시간으로 컨테이너 레지스트리에 대한 로그 및 메트릭을 보려면 Log Analytics 작업 영역에서 리소스 로그를 수집 합니다. Azure Portal를 사용 하 여이 진단 설정을 사용 하려면:
 
 1. 작업 영역이 아직 없는 경우 [Azure Portal](../azure-monitor/learn/quick-create-workspace.md)를 사용 하 여 작업 영역을 만듭니다. 데이터 수집의 대기 시간을 최소화 하려면 작업 영역이 container registry와 **동일한 지역** 에 있어야 합니다.
 1. 포털에서 레지스트리를 선택 하 고 **모니터링 > 진단 설정 > 진단 설정 추가**를 선택 합니다.
-1. 설정에 대 한 이름을 입력 하 고 **Log Analytics 보내기를**선택 합니다.
+1. 설정에 대한 이름을 입력 하 고 **Log Analytics 보내기를**선택 합니다.
 1. 레지스트리 진단 로그의 작업 영역을 선택 합니다.
 1. 수집 하려는 로그 데이터를 선택 하 고 **저장**을 클릭 합니다.
 
-다음 이미지는 포털을 사용 하 여 레지스트리에 대 한 진단 설정 생성을 보여 줍니다.
+다음 이미지는 포털을 사용 하 여 레지스트리에 대한 진단 설정 생성을 보여 줍니다.
 
 ![진단 설정을 사용하도록 설정](media/container-registry-diagnostics-audit-logs/diagnostic-settings.png)
 
@@ -70,7 +70,7 @@ Azure는 리소스 로그 외에도 컨테이너 레지스트리의 생성 또�
 
 ## <a name="view-data-in-azure-monitor"></a>Azure Monitor에서 데이터 보기
 
-Log Analytics에서 진단 로그의 컬렉션을 사용 하도록 설정 하면 데이터가 Azure Monitor에 표시 되는 데 몇 분 정도 걸릴 수 있습니다. 포털에서 데이터를 보려면 레지스트리를 선택 하 고 **모니터링 > 로그**를 선택 합니다. 레지스트리에 대 한 데이터가 포함 된 테이블 중 하나를 선택 합니다. 
+Log Analytics에서 진단 로그의 컬렉션을 사용 하도록 설정 하면 데이터가 Azure Monitor에 표시 되는 데 몇 분 정도 걸릴 수 있습니다. 포털에서 데이터를 보려면 레지스트리를 선택 하 고 **모니터링 > 로그**를 선택 합니다. 레지스트리에 대한 데이터가 포함 된 테이블 중 하나를 선택 합니다. 
 
 쿼리를 실행 하 여 데이터를 봅니다. 몇 가지 샘플 쿼리가 제공 되거나 직접 실행 됩니다. 예를 들어 다음 쿼리는 **ContainerRegistryRepositoryEvents** 테이블에서 최근 24 시간 동안의 데이터를 검색 합니다.
 
@@ -83,9 +83,9 @@ ContainerRegistryRepositoryEvents
 
 ![로그 데이터 쿼리](media/container-registry-diagnostics-audit-logs/azure-monitor-query.png)
 
-Azure Portal에서 Log Analytics를 사용 하는 방법에 대 한 자습서는 [Azure Monitor Log Analytics 시작](../azure-monitor/log-query/get-started-portal.md)또는 Log Analytics [Demo 환경](https://portal.loganalytics.io/demo)사용을 참조 하세요. 
+Azure Portal에서 Log Analytics를 사용 하는 방법에 대한 자습서는 [Azure Monitor Log Analytics 시작](../azure-monitor/log-query/get-started-portal.md)또는 Log Analytics [Demo 환경](https://portal.loganalytics.io/demo)사용을 참조 하세요. 
 
-로그 쿼리에 대 한 자세한 내용은 Azure Monitor의 [로그 쿼리 개요](../azure-monitor/log-query/log-query-overview.md)를 참조 하세요.
+로그 쿼리에 대한 자세한 내용은 Azure Monitor의 [로그 쿼리 개요](../azure-monitor/log-query/log-query-overview.md)를 참조 하세요.
 
 ### <a name="additional-query-examples"></a>추가 쿼리 예제
 

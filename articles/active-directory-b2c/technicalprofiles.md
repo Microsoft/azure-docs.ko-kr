@@ -94,7 +94,7 @@ ms.locfileid: "76982282"
 | InputClaimsTransformations | 0:1 | 클레임 공급자 또는 신뢰 당사자에게 클레임이 전송되기 전에 실행해야 하는 클레임 변환에 대한 이전에 정의된 참조 목록입니다. |
 | InputClaims | 0:1 | 기술 프로필에서 입력으로 사용되는 클레임 유형에 대한 이전에 정의된 참조 목록입니다. |
 | PersistedClaims | 0:1 | 기술 프로필과 관련된 클레임 공급자가 저장하는 클레임 유형에 대한 이전에 정의된 참조 목록입니다. |
-| DisplayClaims | 0:1 | [자체 어설션된 기술 프로필과](self-asserted-technical-profile.md)관련 된 클레임 공급자가 제공 하는 클레임 유형에 대 한 이전에 정의 된 참조 목록입니다. DisplayClaims 기능은 현재 **미리 보기**상태입니다. |
+| DisplayClaims | 0:1 | [자체 어설션된 기술 프로필과](self-asserted-technical-profile.md)관련 된 클레임 공급자가 제공 하는 클레임 유형에 대한 이전에 정의 된 참조 목록입니다. DisplayClaims 기능은 현재 **미리 보기**상태입니다. |
 | OutputClaims | 0:1 | 기술 프로필에서 출력으로 사용되는 클레임 유형에 대한 이전에 정의된 참조 목록입니다. |
 | OutputClaimsTransformations | 0:1 | 클레임 공급자로부터 클레임이 수신된 후에 실행해야 하는 클레임 변환에 대한 이전에 정의된 참조 목록입니다. |
 | ValidationTechnicalProfiles | 0:n | 기술 프로필이 유효성 검사를 위해 사용하는 다른 기술 프로필에 대한 참조 목록입니다. 자세한 내용은 [유효성 검사 기술 프로필](validation-technical-profile.md)을 참조하세요.|

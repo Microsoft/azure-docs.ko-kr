@@ -30,13 +30,13 @@ ms.locfileid: "76698019"
 - Azure Germany
 - Azure China 21Vianet
 
-국가별 클라우드는 고유 하며 Azure global과는 별개의 환경입니다. 이러한 환경을 위해 응용 프로그램을 개발 하는 동안 주요 차이점을 알고 있어야 합니다. 응용 프로그램 등록, 토큰 획득 및 끝점 구성 등의 차이점이 있습니다.
+국가별 클라우드는 고유 하며 Azure global과는 별개의 환경입니다. 이러한 환경을 위해 응용 프로그램을 개발 하는 동안 주요 차이점을 알고 있어야 합니다. 응용 프로그램 등록, 토큰 획득 및 엔드포인트 구성 등의 차이점이 있습니다.
 
 ## <a name="app-registration-endpoints"></a>앱 등록 엔드포인트
 
 국가별 클라우드 각각에 대해 별도의 Azure Portal 있습니다. 응용 프로그램을 국가별 클라우드의 Microsoft id 플랫폼과 통합 하려면 환경에 고유한 각 Azure Portal에 응용 프로그램을 별도로 등록 해야 합니다.
 
-다음 표에는 각 국가 클라우드의 응용 프로그램을 등록 하는 데 사용 되는 Azure AD 끝점에 대 한 기본 Url이 나열 되어 있습니다.
+다음 표에는 각 국가 클라우드의 응용 프로그램을 등록 하는 데 사용 되는 Azure AD 엔드포인트에 대 한 기본 Url이 나열 되어 있습니다.
 
 | 국가별 클라우드 | Azure AD 포털 엔드포인트 |
 |----------------|--------------------------|
@@ -49,21 +49,21 @@ ms.locfileid: "76698019"
 
 모든 국가별 클라우드는 각 환경의 사용자를 개별적으로 인증하며 별도의 인증 엔드포인트를 포함합니다.
 
-다음 표에는 각 국가별 클라우드의 토큰을 획득 하는 데 사용 되는 Azure AD 끝점에 대 한 기본 Url이 나열 되어 있습니다.
+다음 표에는 각 국가별 클라우드의 토큰을 획득 하는 데 사용 되는 Azure AD 엔드포인트에 대 한 기본 Url이 나열 되어 있습니다.
 
-| 국가별 클라우드 | Azure AD 인증 끝점 |
+| 국가별 클라우드 | Azure AD 인증 엔드포인트 |
 |----------------|-------------------------|
 | 미국 정부의 Azure AD | `https://login.microsoftonline.us` |
 | Azure AD Germany| `https://login.microsoftonline.de` |
 | 21Vianet으로 운영되는 Azure AD China | `https://login.chinacloudapi.cn` |
 | Azure AD(글로벌 서비스)| `https://login.microsoftonline.com` |
 
-적절 한 지역별 기본 URL을 사용 하 여 Azure AD 인증 또는 토큰 끝점에 대 한 요청을 구성할 수 있습니다. 예를 들어 Azure Germany의 경우
+적절 한 지역별 기본 URL을 사용 하 여 Azure AD 인증 또는 토큰 엔드포인트에 대 한 요청을 구성할 수 있습니다. 예를 들어 Azure Germany의 경우
 
   - 권한 부여 공통 엔드포인트는 `https://login.microsoftonline.de/common/oauth2/authorize`입니다.
   - 토큰 공통 엔드포인트는 `https://login.microsoftonline.de/common/oauth2/token`입니다.
 
-단일 테 넌 트 응용 프로그램의 경우 이전 Url의 "일반"을 테 넌 트 ID 또는 이름으로 바꿉니다. 예제는 `https://login.microsoftonline.de/contoso.com`입니다.
+단일 테넌트 응용 프로그램의 경우 이전 Url의 "일반"을 테넌트 ID 또는 이름으로 바꿉니다. 예제는 `https://login.microsoftonline.de/contoso.com`입니다.
 
 ## <a name="microsoft-graph-api"></a>Microsoft Graph API
 

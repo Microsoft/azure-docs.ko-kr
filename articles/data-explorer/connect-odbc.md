@@ -1,6 +1,6 @@
 ---
 title: ODBC를 사용 하 여 Azure 데이터 탐색기에 연결
-description: 이 문서에서는 Azure 데이터 탐색기에 대 한 ODBC (Open Database Connectivity) 연결을 설정 하는 방법에 대해 알아봅니다.
+description: 이 문서에서는 Azure 데이터 탐색기에 대한 ODBC (Open Database Connectivity) 연결을 설정 하는 방법에 대해 알아봅니다.
 author: orspod
 ms.author: orspodek
 ms.reviewer: gabil

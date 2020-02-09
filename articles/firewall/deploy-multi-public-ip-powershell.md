@@ -23,7 +23,7 @@ ms.locfileid: "74195875"
  
 여러 공용 IP 주소를 사용하는 Azure Firewall은 Azure Portal, Azure PowerShell, Azure CLI, REST 및 템플릿을 통해 사용할 수 있습니다. 최대 100 공용 IP 주소를 사용 하 여 Azure 방화벽을 배포할 수 있습니다.
 
-다음 Azure PowerShell 예제에서는 Azure 방화벽에 대 한 공용 IP 주소를 구성, 추가 및 제거할 수 있는 방법을 보여 줍니다.
+다음 Azure PowerShell 예제에서는 Azure 방화벽에 대한 공용 IP 주소를 구성, 추가 및 제거할 수 있는 방법을 보여 줍니다.
 
 > [!NOTE]
 > Azure 방화벽 공용 IP 주소 구성 페이지에서 첫 번째 ipConfiguration을 제거할 수 없습니다. IP 주소를 수정 하려는 경우 Azure PowerShell를 사용할 수 있습니다.

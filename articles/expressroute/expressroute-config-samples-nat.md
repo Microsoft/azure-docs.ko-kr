@@ -82,7 +82,7 @@ NAT 명령:
 
 
 ## <a name="juniper-srx-series-routers"></a>Juniper SRX 시리즈 라우터
-### <a name="1-create-redundant-ethernet-interfaces-for-the-cluster"></a>1. 클러스터에 대 한 중복 이더넷 인터페이스 만들기
+### <a name="1-create-redundant-ethernet-interfaces-for-the-cluster"></a>1. 클러스터에 대한 중복 이더넷 인터페이스 만들기
     interfaces {
         reth0 {
             description "To Internal Network";

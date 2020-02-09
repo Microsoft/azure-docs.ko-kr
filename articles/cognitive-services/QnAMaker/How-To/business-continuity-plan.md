@@ -33,7 +33,7 @@ ms.locfileid: "74977457"
 
 4. 기본 및 보조 스택이 설치되면 [트래픽 관리자](https://docs.microsoft.com/azure/traffic-manager/)를 사용하여 두 개의 엔드포인트를 구성하고 라우팅 메서드를 설정합니다.
 
-5. Traffic manager 끝점에 대 한 SSL(Secure Sockets Layer) (SSL) 인증서를 만들어야 합니다. 앱 서비스에서 [SSL 인증서를 바인딩합니다](https://docs.microsoft.com/azure/app-service/configure-ssl-bindings).
+5. Traffic manager 엔드포인트에 대 한 SSL(Secure Sockets Layer) (SSL) 인증서를 만들어야 합니다. 앱 서비스에서 [SSL 인증서를 바인딩합니다](https://docs.microsoft.com/azure/app-service/configure-ssl-bindings).
 
 6. 마지막으로, 봇 또는 앱에서 트래픽 관리자 엔드포인트를 사용합니다.
 

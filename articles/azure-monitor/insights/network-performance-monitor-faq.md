@@ -184,7 +184,7 @@ NPM은 경로 추적의 수정된 버전을 사용하여 원본 에이전트에�
 * 네트워크 디바이스가 ICMP_TTL_EXCEEDED 트래픽을 허용하지 않습니다.
 * 방화벽이 네트워크 디바이스에서 ICMP_TTL_EXCEEDED 응답을 차단합니다.
 
-Azure에 끝점 중 하나가 있는 경우 Azure ndrastructure에서 경로 추적에 id를 표시 하지 않으므로 경로 추적는 식별 되지 않은 홉을 표시 합니다. 
+Azure에 엔드포인트 중 하나가 있는 경우 Azure ndrastructure에서 경로 추적에 id를 표시 하지 않으므로 경로 추적는 식별 되지 않은 홉을 표시 합니다. 
 
 ### <a name="i-get-alerts-for-unhealthy-tests-but-i-do-not-see-the-high-values-in-npms-loss-and-latency-graph-how-do-i-check-what-is-unhealthy"></a>비정상 테스트에 대 한 경고를 가져오지만 NPM의 손실 및 대기 시간 그래프에 높은 값이 표시 되지 않습니다. 비정상 상태를 확인 어떻게 할까요?
 NPM는 원본과 대상 사이의 종단 간 대기 시간이 임계값을 초과 하는 경우 경고를 발생 시킵니다. 일부 네트워크에는 동일한 원본 및 대상을 연결 하는 경로가 여러 개 있습니다. NPM는 상태가 비정상 인 경우 경고를 발생 시킵니다. 그래프에 표시 되는 손실 및 대기 시간은 모든 경로의 평균 값 이므로 단일 경로의 정확한 값을 표시 하지 않을 수 있습니다. 임계값이 위반 된 위치를 이해 하려면 경고의 "하위 유형" 열을 찾습니다. 경로 때문에 문제가 발생 하는 경우 하위 유형 값은 NetworkPath (성능 모니터 테스트의 경우), EndpointPath (서비스 연결 모니터 테스트의 경우) 및 ExpressRoutePath (ExpressRotue Monitor 테스트의 경우)입니다. 
@@ -203,7 +203,7 @@ NPM는 종단 간 손실, 대기 시간 및 토폴로지를 서로 다른 간격
 E2EMedianLatency는 tcp ping 테스트 결과를 집계 한 후 3 분 마다 업데이트 되는 대기 시간으로, AvgHopLatencyList은 경로 추적에 따라 10 분 마다 업데이트 됩니다. E2EMedianLatency 계산 된 정확한 시간을 이해 하려면 TimeProcessed 필드를 사용 합니다. 경로 추적 완료 되 고 AvgHopLatencyList 업데이트 된 정확한 시간을 이해 하려면 TracerouteCompletedTime 필드를 사용 합니다.
 
 ### <a name="why-does-hop-by-hop-latency-numbers-differ-from-hoplatencyvalues"></a>홉 단위 대기 시간 수가 HopLatencyValues와 다른 이유는 무엇 인가요? 
-HopLatencyValues은 끝점에 대 한 소스입니다.
+HopLatencyValues은 엔드포인트에 대 한 소스입니다.
 예: 홉 A, B, C. AvgHopLatency-10, 15, 20. 즉, 소스가 대기 시간 = 10이 고 원본에서 B로의 대기 시간 = 15 이며 원본에서 C 대기 시간이 20입니다. UI는 토폴로지에서-B 홉 대기 시간을 5로 계산 합니다.
 
 ### <a name="the-solution-shows-100-loss-but-there-is-connectivity-between-the-source-and-destination"></a>솔루션은 100% 손실을 보여 주지만 원본과 대상 사이에 연결이 있습니다.

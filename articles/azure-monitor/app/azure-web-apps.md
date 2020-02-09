@@ -367,7 +367,7 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
         * 실행 되 고 있지 않으면 [Application Insights 모니터링 사용 지침](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps#enable-application-insights) 을 따릅니다.
 
     * 상태 원본이 존재 하 고 다음과 같이 표시 되는지 확인 합니다. `Status source D:\home\LogFiles\ApplicationInsights\status\status_RD0003FF0317B6_4248_1.json`
-        * 유사한 값이 없는 경우에는 응용 프로그램이 현재 실행 되 고 있지 않거나 지원 되지 않음을 의미 합니다. 응용 프로그램이 실행 되 고 있는지 확인 하려면 런타임 정보를 사용할 수 있게 하는 응용 프로그램 url/응용 프로그램 끝점을 수동으로 방문해 보세요.
+        * 유사한 값이 없는 경우에는 응용 프로그램이 현재 실행 되 고 있지 않거나 지원 되지 않음을 의미 합니다. 응용 프로그램이 실행 되 고 있는지 확인 하려면 런타임 정보를 사용할 수 있게 하는 응용 프로그램 url/응용 프로그램 엔드포인트을 수동으로 방문해 보세요.
 
     * `IKeyExists` 있는지 확인 `true`
         * False 이면 ikey guid를 사용 하 여 ' APPINSIGHTS_INSTRUMENTATIONKEY를 응용 프로그램 설정에 추가 합니다.

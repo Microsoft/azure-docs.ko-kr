@@ -48,7 +48,7 @@ Avere vFXT for Azure 배포의 요소 위치를 고려합니다. 아래 다이�
 
 Avere vFXT 클러스터의 네트워크 인프라를 계획 하는 경우 다음 지침을 따르세요.
 
-* Azure 배포에 대 한 각 Avere vFXT에 대 한 새 구독을 만듭니다. 이 구독의 모든 구성 요소를 관리 합니다.
+* Azure 배포에 대한 각 Avere vFXT에 대한 새 구독을 만듭니다. 이 구독의 모든 구성 요소를 관리 합니다.
 
   각 배포에 새 구독을 사용 하는 이점은 다음과 같습니다.
   * 더욱 간편한 비용 추적 - 리소스, 인프라 및 컴퓨팅 주기의 모든 비용을 구독 하나에서 확인하고 감사할 수 있습니다.
@@ -75,7 +75,7 @@ Avere vFXT 클러스터의 네트워크 인프라를 계획 하는 경우 다음
   |----------|-----------|----------|
   | 리소스 그룹 | 예 (비어 있는 경우) | 비어 있어야 합니다.|
   | Storage 계정 | 클러스터를 만든 후 기존 Blob 컨테이너를 연결 하는 경우 **예** <br/>  클러스터를 만드는 동안 새 Blob 컨테이너를 만드는 경우 **아니요** | 기존 Blob 컨테이너는 비어 있어야 합니다. <br/> &nbsp; |
-  | 가상 네트워크 | 예 | 새 Azure Blob 컨테이너를 만드는 경우 저장소 서비스 끝점을 포함 해야 합니다. |
+  | 가상 네트워크 | 예 | 새 Azure Blob 컨테이너를 만드는 경우 저장소 서비스 엔드포인트을 포함 해야 합니다. |
   | 서브넷 | 예 | 다른 리소스를 포함할 수 없음 |
 
 ## <a name="ip-address-requirements"></a>IP 주소 요구 사항
@@ -93,7 +93,7 @@ Avere vFXT 클러스터에서 사용하는 IP 주소는 다음과 같습니다.
 Azure Blob storage를 사용 하는 경우 클러스터의 가상 네트워크에서 IP 주소를 요구할 수도 있습니다.  
 
 * Azure Blob Storage 계정에는 5개 이상의 IP 주소가 필요합니다. 클러스터와 동일한 가상 네트워크에서 Blob 저장소를 찾았으면이 요구 사항을 염두에 두어야 합니다.
-* 클러스터의 가상 네트워크 외부에 있는 Azure Blob storage를 사용 하는 경우 가상 네트워크 내에 저장소 서비스 끝점을 만듭니다. 끝점은 IP 주소를 사용 하지 않습니다.
+* 클러스터의 가상 네트워크 외부에 있는 Azure Blob storage를 사용 하는 경우 가상 네트워크 내에 저장소 서비스 엔드포인트을 만듭니다. 엔드포인트은 IP 주소를 사용 하지 않습니다.
 
 클러스터와 다른 리소스 그룹에 네트워크 리소스와 Blob Storage(사용된 경우)를 배치할 수 있는 옵션이 있습니다.
 
@@ -109,7 +109,7 @@ Azure Blob storage를 사용 하는 경우 클러스터의 가상 네트워크�
 
 노드당 디스크 캐시의 크기를 구성할 수 있으며, 범위는 1,000-8,000GB입니다. 노드당 4tb는 Standard_E32s_v3 노드에 대해 권장 되는 캐시 크기입니다.
 
-이러한 Vm에 대 한 자세한 내용은 메모리 액세스에 최적화 된 [가상 머신 크기](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory) Microsoft Azure 설명서를 참조 하세요.
+이러한 Vm에 대한 자세한 내용은 메모리 액세스에 최적화 된 [가상 머신 크기](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory) Microsoft Azure 설명서를 참조 하세요.
 
 ## <a name="account-quota"></a>계정 할당량
 
@@ -157,7 +157,7 @@ Avere vFXT for Azure 클러스터는 프라이빗 서브넷에 있으며 공용 
 
 클러스터 컨트롤러의 공용 IP 주소를 설정하는 경우에는 해당 주소를 점프 호스트로 사용하여 프라이빗 서브넷 외부에서 Avere vFXT 클러스터에 연결할 수 있습니다. 그러나 컨트롤러에는 클러스터 노드 수정 권한이 있으므로 이와 같이 연결하면 보안상 다소 위험해집니다.
 
-공용 IP 주소가 있는 컨트롤러에 대 한 보안을 개선 하기 위해 배포 스크립트는 포트 22로만 인바운드 액세스를 제한 하는 네트워크 보안 그룹을 자동으로 만듭니다. 액세스 범위를 IP 원본 주소 범위로 고정(클러스터 액세스에 사용하려는 컴퓨터의 연결만 허용)하면 시스템을 추가로 보호할 수 있습니다.
+공용 IP 주소가 있는 컨트롤러에 대한 보안을 개선 하기 위해 배포 스크립트는 포트 22로만 인바운드 액세스를 제한 하는 네트워크 보안 그룹을 자동으로 만듭니다. 액세스 범위를 IP 원본 주소 범위로 고정(클러스터 액세스에 사용하려는 컴퓨터의 연결만 허용)하면 시스템을 추가로 보호할 수 있습니다.
 
 클러스터를 만들 때 클러스터 컨트롤러에서 공용 IP 주소를 만들지 여부를 결정할 수 있습니다.
 
@@ -173,8 +173,8 @@ Avere vFXT virtual machines에는 두 개의 기본 제공 Azure 역할이 사�
 * 클러스터 컨트롤러는 기본 제공 역할인 [Avere 기여자](../role-based-access-control/built-in-roles.md#avere-contributor)를 사용 합니다.
 * 클러스터 노드는 기본 제공 역할인 [Avere 연산자](../role-based-access-control/built-in-roles.md#avere-operator)를 사용 합니다.
 
-Avere vFXT 구성 요소에 대 한 액세스 역할을 사용자 지정 해야 하는 경우 사용자 고유의 역할을 정의 하 고 만들 때 Vm에 할당 해야 합니다. Azure Marketplace에서는 배포 템플릿을 사용할 수 없습니다. 시스템에 대 한 [도움말 보기](avere-vfxt-open-ticket.md)에 설명 된 대로 Azure Portal에서 티켓을 열어 Microsoft 고객 서비스 및 지원 센터에 문의 하세요.
+Avere vFXT 구성 요소에 대한 액세스 역할을 사용자 지정 해야 하는 경우 사용자 고유의 역할을 정의 하 고 만들 때 Vm에 할당 해야 합니다. Azure Marketplace에서는 배포 템플릿을 사용할 수 없습니다. 시스템에 대한 [도움말 보기](avere-vfxt-open-ticket.md)에 설명 된 대로 Azure Portal에서 티켓을 열어 Microsoft 고객 서비스 및 지원 센터에 문의 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 
-[배포 개요](avere-vfxt-deploy-overview.md) 는 Azure 시스템에 대 한 Avere vFXT를 만들고 데이터를 서비스할 준비를 하는 데 필요한 단계에 대 한 전체적인 그림 보기를 제공 합니다.
+[배포 개요](avere-vfxt-deploy-overview.md) 는 Azure 시스템에 대한 Avere vFXT를 만들고 데이터를 서비스할 준비를 하는 데 필요한 단계에 대한 전체적인 그림 보기를 제공 합니다.

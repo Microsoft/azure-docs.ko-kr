@@ -39,7 +39,7 @@ ms.locfileid: "76310835"
 
 영향을 받는 엔터티 및 시나리오는 다음과 같습니다.
 
-- [API](#api): `/configurations` 또는 `/configurations/{configurationName}` 끝점을 사용 하는 사용자입니다.
+- [API](#api): `/configurations` 또는 `/configurations/{configurationName}` 엔드포인트을 사용 하는 사용자입니다.
 - Visual Studio Code 버전 1.1.1 이하의 [Azure HDInsight 도구](#azure-hdinsight-tools-for-visual-studio-code)
 - [Azure Toolkit for IntelliJ](#azure-toolkit-for-intellij) 버전 3.20.0 이상입니다.
 - [Visual Studio 용 Azure Data Lake 및 Stream Analytics](#azure-data-lake-and-stream-analytics-tools-for-visual-studio) 버전 2.3.9000.1.

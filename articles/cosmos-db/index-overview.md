@@ -15,13 +15,13 @@ ms.locfileid: "74873627"
 ---
 # <a name="indexing-in-azure-cosmos-db---overview"></a>Azure Cosmos DB 인덱싱-개요
 
-Azure Cosmos DB은 스키마를 포함 하지 않는 데이터베이스 이며 스키마 또는 인덱스 관리를 처리할 필요 없이 응용 프로그램에서 반복할 수 있습니다. 기본적으로 Azure Cosmos DB는 스키마를 정의 하거나 보조 인덱스를 구성 하지 않고도 [컨테이너](databases-containers-items.md#azure-cosmos-containers) 의 모든 항목에 대 한 모든 속성을 자동으로 인덱싱합니다.
+Azure Cosmos DB은 스키마를 포함 하지 않는 데이터베이스 이며 스키마 또는 인덱스 관리를 처리할 필요 없이 응용 프로그램에서 반복할 수 있습니다. 기본적으로 Azure Cosmos DB는 스키마를 정의 하거나 보조 인덱스를 구성 하지 않고도 [컨테이너](databases-containers-items.md#azure-cosmos-containers) 의 모든 항목에 대한 모든 속성을 자동으로 인덱싱합니다.
 
 이 문서에서는 Azure Cosmos DB의 데이터 인덱싱 방법과 인덱스를 사용하여 쿼리 성능을 개선하는 방법을 설명합니다. [인덱싱 정책을](index-policy.md)사용자 지정 하는 방법을 살펴보기 전에이 섹션을 진행 하는 것이 좋습니다.
 
 ## <a name="from-items-to-trees"></a>항목에서 트리로
 
-항목이 컨테이너에 저장 될 때마다 해당 콘텐츠는 JSON 문서로 프로젝션 된 후 트리 표현으로 변환 됩니다. 즉, 해당 항목의 모든 속성은 트리의 노드로 표시 됩니다. 의사 루트 노드는 항목의 모든 첫 번째 수준 속성에 대 한 부모로 만들어집니다. 리프 노드에는 항목에서 전달 하는 실제 스칼라 값이 포함 됩니다.
+항목이 컨테이너에 저장 될 때마다 해당 콘텐츠는 JSON 문서로 프로젝션 된 후 트리 표현으로 변환 됩니다. 즉, 해당 항목의 모든 속성은 트리의 노드로 표시 됩니다. 의사 루트 노드는 항목의 모든 첫 번째 수준 속성에 대한 부모로 만들어집니다. 리프 노드에는 항목에서 전달 하는 실제 스칼라 값이 포함 됩니다.
 
 예를 들어 다음 항목을 살펴보세요.
 
@@ -47,9 +47,9 @@ Azure Cosmos DB은 스키마를 포함 하지 않는 데이터베이스 이며 �
 
 ## <a name="from-trees-to-property-paths"></a>트리에서 속성 경로로
 
-Azure Cosmos DB 항목을 트리로 변환 하는 이유는 해당 트리 내에서 속성을 참조할 수 있기 때문입니다. 속성의 경로를 가져오기 위해 루트 노드에서 해당 속성에 대 한 트리를 트래버스 하 고 각 트래버스 노드의 레이블을 연결할 수 있습니다.
+Azure Cosmos DB 항목을 트리로 변환 하는 이유는 해당 트리 내에서 속성을 참조할 수 있기 때문입니다. 속성의 경로를 가져오기 위해 루트 노드에서 해당 속성에 대한 트리를 트래버스 하 고 각 트래버스 노드의 레이블을 연결할 수 있습니다.
 
-위에서 설명한 예제 항목의 각 속성에 대 한 경로는 다음과 같습니다.
+위에서 설명한 예제 항목의 각 속성에 대한 경로는 다음과 같습니다.
 
     /locations/0/country: "Germany"
     /locations/0/city: "Berlin"
@@ -120,7 +120,7 @@ Azure Cosmos DB 항목을 트리로 변환 하는 이유는 해당 트리 내에
 
 ### <a name="spatial-index"></a>공간 인덱스
 
-**공간** 인덱스는 요소, 선, 다각형 및 multipolygon과 같은 지리 공간적 개체에 대 한 효율적인 쿼리를 가능 하 게 합니다. 이러한 쿼리는 ST_DISTANCE, ST_WITHIN ST_INTERSECTS 키워드를 사용 합니다. 공간 인덱스 종류를 사용 하는 몇 가지 예는 다음과 같습니다.
+**공간** 인덱스는 요소, 선, 다각형 및 multipolygon과 같은 지리 공간적 개체에 대한 효율적인 쿼리를 가능 하 게 합니다. 이러한 쿼리는 ST_DISTANCE, ST_WITHIN ST_INTERSECTS 키워드를 사용 합니다. 공간 인덱스 종류를 사용 하는 몇 가지 예는 다음과 같습니다.
 
 - 지리 공간적 거리 쿼리:
 
@@ -144,7 +144,7 @@ Azure Cosmos DB 항목을 트리로 변환 하는 이유는 해당 트리 내에
 
 ### <a name="composite-indexes"></a>복합 인덱스
 
-**복합** 인덱스는 여러 필드에 대 한 작업을 수행할 때 효율성을 높입니다. 복합 인덱스 종류는 다음에 사용 됩니다.
+**복합** 인덱스는 여러 필드에 대한 작업을 수행할 때 효율성을 높입니다. 복합 인덱스 종류는 다음에 사용 됩니다.
 
 - 여러 속성에 대해 쿼리를 `ORDER BY` 합니다.
 
@@ -158,7 +158,7 @@ Azure Cosmos DB 항목을 트리로 변환 하는 이유는 해당 트리 내에
  SELECT * FROM container c WHERE c.property1 = 'value' ORDER BY c.property1, c.property2
 ```
 
-- 하나 이상의 속성이 같음 필터 인 두 개 이상의 속성에 대 한 필터를 사용 하 여 쿼리
+- 하나 이상의 속성이 같음 필터 인 두 개 이상의 속성에 대한 필터를 사용 하 여 쿼리
 
 ```sql
  SELECT * FROM container c WHERE c.property1 = 'value' AND c.property2 > 'value'
@@ -175,7 +175,7 @@ Azure Cosmos DB 항목을 트리로 변환 하는 이유는 해당 트리 내에
 
 데이터를 인덱싱할 때 추출 된 경로를 통해 쿼리를 처리할 때 인덱스를 쉽게 조회할 수 있습니다. 쿼리의 `WHERE` 절을 인덱싱된 경로 목록과 일치 시켜 쿼리 조건자와 일치 하는 항목을 매우 빠르게 식별할 수 있습니다.
 
-예를 들어 다음 쿼리를 참조 하십시오. `SELECT location FROM location IN company.locations WHERE location.country = 'France'`. 쿼리 조건자 (항목에 대 한 필터링, 국가에 "프랑스"가 있는 위치)는 아래 빨간색으로 강조 표시 된 경로와 일치 합니다.
+예를 들어 다음 쿼리를 참조 하십시오. `SELECT location FROM location IN company.locations WHERE location.country = 'France'`. 쿼리 조건자 (항목에 대한 필터링, 국가에 "프랑스"가 있는 위치)는 아래 빨간색으로 강조 표시 된 경로와 일치 합니다.
 
 ![트리 내의 특정 경로 일치](./media/index-overview/matching-path.png)
 

@@ -1,6 +1,6 @@
 ---
-title: 하이브리드 모드 사용에 대 한 알려진 문제/마이그레이션 제한 사항
-description: 하이브리드 모드에서 Azure Database Migration Service 사용에 대 한 알려진 문제/마이그레이션 제한 사항에 대해 알아봅니다.
+title: 하이브리드 모드 사용에 대한 알려진 문제/마이그레이션 제한 사항
+description: 하이브리드 모드에서 Azure Database Migration Service 사용에 대한 알려진 문제/마이그레이션 제한 사항에 대해 알아봅니다.
 services: database-migration
 author: HJToland3
 ms.author: jtoland
@@ -18,7 +18,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75483116"
 ---
-# <a name="known-issuesmigration-limitations-with-using-hybrid-mode"></a>하이브리드 모드 사용에 대 한 알려진 문제/마이그레이션 제한 사항
+# <a name="known-issuesmigration-limitations-with-using-hybrid-mode"></a>하이브리드 모드 사용에 대한 알려진 문제/마이그레이션 제한 사항
 
 하이브리드 모드에서 Azure Database Migration Service를 사용 하는 것과 관련 된 알려진 문제 및 제한 사항에 대해서는 다음 섹션에서 설명 합니다.
 
@@ -65,7 +65,7 @@ AdApp에 인증서를 업로드 한 후 Azure를 사용 하 여 인증할 수 �
 
 2. 다른 로그온 계정을 사용 하도록 서비스를 업데이트 합니다.
 
-3. 로컬 컴퓨터 인증서에 대 한 certmgr.exe에서 **Dms 하이브리드 앱 키** 및 **Dms 시나리오 엔진 키 쌍** 인증서에 대 한 새 계정에 개인 키 권한을 부여 합니다.
+3. 로컬 컴퓨터 인증서에 대한 certmgr.exe에서 **Dms 하이브리드 앱 키** 및 **Dms 시나리오 엔진 키 쌍** 인증서에 대한 새 계정에 개인 키 권한을 부여 합니다.
 
     a. Certmgr.exe를 열어 다음 키를 확인 합니다.
 
@@ -77,7 +77,7 @@ AdApp에 인증서를 업로드 한 후 Azure를 사용 하 여 인증할 수 �
 
     다. **보안** 탭에서 **추가**를 선택한 다음 계정 이름을 입력 합니다.
 
-    d. 동일한 단계를 사용 하 여 새 계정에 대 한 개인 키 권한을 **DMS 시나리오 엔진 키 쌍** 인증서에 부여 합니다.
+    d. 동일한 단계를 사용 하 여 새 계정에 대한 개인 키 권한을 **DMS 시나리오 엔진 키 쌍** 인증서에 부여 합니다.
 
 ## <a name="unregistering-the-worker-manually"></a>수동으로 작업자 등록 취소
 
@@ -89,7 +89,7 @@ AdApp에 인증서를 업로드 한 후 Azure를 사용 하 여 인증할 수 �
 
 2. 작업자 항목 목록의 맨 오른쪽에 있는 줄임표를 선택 하 고 **등록 취소**를 선택 합니다.
 
-## <a name="addressing-issues-for-specific-migration-scenarios"></a>특정 마이그레이션 시나리오에 대 한 문제 해결
+## <a name="addressing-issues-for-specific-migration-scenarios"></a>특정 마이그레이션 시나리오에 대한 문제 해결
 
 다음 섹션에서는 Azure Database Migration Service 하이브리드 모드를 사용 하 여 온라인 마이그레이션을 수행 하는 것과 관련 된 시나리오 관련 문제에 대해 설명 합니다.
 

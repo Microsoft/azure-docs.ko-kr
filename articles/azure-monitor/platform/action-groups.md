@@ -94,7 +94,7 @@ Runbook 페이로드에 대 한 제한은 [Azure 구독 서비스](../../azure-r
 작업 그룹에 제한 된 수의 전자 메일 작업이 있을 수 있습니다. [Rate 제한 정보](./../../azure-monitor/platform/alerts-rate-limiting.md) 문서를 참조 하세요.
 
 ### <a name="function"></a>함수
-[Azure Functions](../../azure-functions/functions-create-first-azure-function.md#create-a-function-app)에서 기존 HTTP 트리거 끝점을 호출 합니다.
+[Azure Functions](../../azure-functions/functions-create-first-azure-function.md#create-a-function-app)에서 기존 HTTP 트리거 엔드포인트을 호출 합니다.
 
 작업 그룹에 제한 된 수의 함수 작업이 있을 수 있습니다.
 
@@ -109,7 +109,7 @@ ITSM 작업에는 ITSM 연결이 필요합니다. [ITSM 연결](../../azure-moni
 ### <a name="secure-webhook"></a>보안 Webhook
 **보안 Webhook 기능은 현재 미리 보기 상태입니다.**
 
-작업 그룹 웹 후크 작업을 사용 하면 Azure Active Directory를 활용 하 여 작업 그룹과 보호 된 웹 API (웹 후크 끝점) 간의 연결을 보호할 수 있습니다. 이 기능을 활용 하는 전체 워크플로는 아래에 설명 되어 있습니다. Azure AD 응용 프로그램 및 서비스 주체에 대 한 개요는 v2.0 [(Microsoft identity platform) 개요](https://docs.microsoft.com/azure/active-directory/develop/v2-overview)를 참조 하세요.
+작업 그룹 웹 후크 작업을 사용 하면 Azure Active Directory를 활용 하 여 작업 그룹과 보호 된 웹 API (웹 후크 엔드포인트) 간의 연결을 보호할 수 있습니다. 이 기능을 활용 하는 전체 워크플로는 아래에 설명 되어 있습니다. Azure AD 응용 프로그램 및 서비스 주체에 대 한 개요는 v2.0 [(Microsoft identity platform) 개요](https://docs.microsoft.com/azure/active-directory/develop/v2-overview)를 참조 하세요.
 
 1. 보호 된 web API에 대 한 Azure AD 응용 프로그램을 만듭니다. https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-overview을 참조하세요.
     - 디먼 앱에서 호출 하도록 보호 된 API를 구성 합니다.
@@ -119,7 +119,7 @@ ITSM 작업에는 ITSM 연결이 필요합니다. [ITSM 연결](../../azure-moni
     > [!NOTE]
     > 이 스크립트를 실행 하려면 [AZURE AD 응용 프로그램 관리자 역할](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#available-roles) 의 멤버 여야 합니다.
     
-    - PowerShell 스크립트의 AzureAD 호출을 수정 하 여 Azure AD 테 넌 트 ID를 사용 합니다.
+    - PowerShell 스크립트의 AzureAD 호출을 수정 하 여 Azure AD 테넌트 ID를 사용 합니다.
     - PowerShell 스크립트의 변수 $myAzureADApplicationObjectId 수정 하 여 Azure AD 응용 프로그램의 개체 ID를 사용 합니다.
     - 수정 된 스크립트를 실행 합니다.
     
@@ -208,7 +208,7 @@ Write-Host $myApp.AppRoles
 작업 그룹에 제한 된 수의 음성 작업이 있을 수 있습니다.
 
 ### <a name="webhook"></a>웹후크
-웹 후크는 다음 규칙을 사용 하 여 다시 시도 됩니다. 웹 후크 호출은 408, 429, 503, 504 또는 HTTP 끝점이 응답 하지 않는 경우 최대 2 회 다시 시도 됩니다. 10초 후에 첫 번째 다시 시도가 발생합니다. 두 번째 다시 시도는 100초 후에 진행됩니다. 두 번 실패 한 후에는 작업 그룹에서 30 분 동안 끝점을 호출 하지 않습니다. 
+웹 후크는 다음 규칙을 사용 하 여 다시 시도 됩니다. 웹 후크 호출은 408, 429, 503, 504 또는 HTTP 엔드포인트이 응답 하지 않는 경우 최대 2 회 다시 시도 됩니다. 10초 후에 첫 번째 다시 시도가 발생합니다. 두 번째 다시 시도는 100초 후에 진행됩니다. 두 번 실패 한 후에는 작업 그룹에서 30 분 동안 엔드포인트을 호출 하지 않습니다. 
 
 원본 IP 주소 범위
  - 13.72.19.232

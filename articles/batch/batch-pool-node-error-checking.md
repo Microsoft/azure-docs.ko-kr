@@ -42,7 +42,7 @@ Azure Batch 풀을 만들고 관리할 때 일부 작업은 즉시 수행됩니�
 - [풀이 가상 네트워크에 있을 때](https://docs.microsoft.com/azure/batch/batch-virtual-network) 리소스가 부족함
   - Batch 계정과 동일한 구독에 부하 분산 장치, 공용 IP 및 네트워크 보안 그룹과 같은 리소스를 만들 수 있습니다. 구독 할당량이 이러한 리소스에 대해 충분한지 확인합니다.
 - 사용자 지정 VM 이미지를 사용하는 큰 풀
-  - 사용자 지정 VM 이미지를 사용하는 큰 풀은 할당 시간이 더 오래 걸릴 수 있으며 크기 조정 오류가 발생할 수 있습니다.  제한 및 구성에 대 한 권장 사항은 [공유 이미지 갤러리를 사용 하 여 풀 만들기](batch-sig-images.md) 를 참조 하세요.
+  - 사용자 지정 VM 이미지를 사용하는 큰 풀은 할당 시간이 더 오래 걸릴 수 있으며 크기 조정 오류가 발생할 수 있습니다.  제한 및 구성에 대한 권장 사항은 [공유 이미지 갤러리를 사용 하 여 풀 만들기](batch-sig-images.md) 를 참조 하세요.
 
 ### <a name="automatic-scaling-failures"></a>자동 크기 조정 실패
 
@@ -108,22 +108,22 @@ Batch가 원인을 확인할 수 있으면 노드 [errors](https://docs.microsof
 
 - Vm이 [Azure virtual network](batch-virtual-network.md)에 있고 트래픽이 키 포트로 차단 되었습니다.
 
-- Vm이 가상 네트워크에 있지만 Azure storage에 대 한 아웃 바운드 트래픽이 차단 됩니다.
+- Vm이 가상 네트워크에 있지만 Azure storage에 대한 아웃 바운드 트래픽이 차단 됩니다.
 
 - Vm이 고객 DNS 구성을 사용 하는 가상 네트워크에 있으며 DNS 서버에서 Azure storage를 확인할 수 없습니다.
 
 ### <a name="node-agent-log-files"></a>노드 에이전트 로그 파일
 
-각 풀 노드에서 실행 되는 일괄 처리 에이전트 프로세스는 풀 노드 문제에 대 한 지원에 문의 해야 하는 경우 유용할 수 있는 로그 파일을 제공할 수 있습니다. Azure Portal, Batch Explorer 또는 [API](https://docs.microsoft.com/rest/api/batchservice/computenode/uploadbatchservicelogs)를 통해 노드의 로그 파일을 업로드할 수 있습니다. 로그 파일을 업로드하고 저장하면 유용합니다. 나중에 노드 또는 풀을 삭제하여 실행 중인 노드 비용을 절감할 수 있습니다.
+각 풀 노드에서 실행 되는 일괄 처리 에이전트 프로세스는 풀 노드 문제에 대한 지원에 문의 해야 하는 경우 유용할 수 있는 로그 파일을 제공할 수 있습니다. Azure Portal, Batch Explorer 또는 [API](https://docs.microsoft.com/rest/api/batchservice/computenode/uploadbatchservicelogs)를 통해 노드의 로그 파일을 업로드할 수 있습니다. 로그 파일을 업로드하고 저장하면 유용합니다. 나중에 노드 또는 풀을 삭제하여 실행 중인 노드 비용을 절감할 수 있습니다.
 
 ### <a name="node-disk-full"></a>노드 디스크가 꽉 찼습니다.
 
-풀 노드 VM에 대 한 임시 드라이브는 Batch에서 작업 파일, 태스크 파일 및 공유 파일에 사용 됩니다.
+풀 노드 VM에 대한 임시 드라이브는 Batch에서 작업 파일, 태스크 파일 및 공유 파일에 사용 됩니다.
 
 - 응용 프로그램 패키지 파일
 - 작업 리소스 파일
 - 배치 폴더 중 하나로 다운로드 되는 응용 프로그램별 파일
-- 각 작업 응용 프로그램 실행에 대 한 Stdout 및 stderr 파일
+- 각 작업 응용 프로그램 실행에 대한 Stdout 및 stderr 파일
 - 응용 프로그램별 출력 파일
 
 이러한 파일 중 일부는 풀 응용 프로그램 패키지 또는 풀 시작 작업 리소스 파일 등의 풀 노드를 만들 때 한 번만 기록 됩니다. 노드가 생성 될 때 한 번만 작성 된 경우에도 이러한 파일이 너무 크면 임시 드라이브를 채울 수 있습니다.

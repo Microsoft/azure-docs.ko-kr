@@ -40,13 +40,13 @@ helm repo update
 
 좋은 방법은 OpenFaaS 및 OpenFaaS 함수를 고유한 Kubernetes 네임스페이스에 저장하는 것입니다.
 
-OpenFaaS 시스템 및 함수에 대 한 네임 스페이스를 만듭니다.
+OpenFaaS 시스템 및 함수에 대한 네임 스페이스를 만듭니다.
 
 ```azurecli-interactive
 kubectl apply -f https://raw.githubusercontent.com/openfaas/faas-netes/master/namespaces.yml
 ```
 
-OpenFaaS UI 포털에 대 한 암호를 생성 하 고 REST API 합니다.
+OpenFaaS UI 포털에 대한 암호를 생성 하 고 REST API 합니다.
 
 ```azurecli-interactive
 # generate a random password

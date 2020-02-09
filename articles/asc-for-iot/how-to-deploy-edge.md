@@ -1,6 +1,6 @@
 ---
 title: IoT Edge 모듈의 Azure Security Center 배포 | Microsoft Docs
-description: IoT Edge에서 IoT 보안 에이전트에 대 한 Azure Security Center를 배포 하는 방법에 대해 알아봅니다.
+description: IoT Edge에서 IoT 보안 에이전트에 대한 Azure Security Center를 배포 하는 방법에 대해 알아봅니다.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -25,7 +25,7 @@ ms.locfileid: "76964042"
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>IoT Edge 장치에 보안 모듈 배포
 
 
-**IoT 모듈 Azure Security Center** 은 IoT Edge 장치에 대 한 포괄적인 보안 솔루션을 제공 합니다.
+**IoT 모듈 Azure Security Center** 은 IoT Edge 장치에 대한 포괄적인 보안 솔루션을 제공 합니다.
 보안 모듈은 운영 체제 및 컨테이너 시스템에서 실행 가능한 보안 권장 사항 및 경고로 원시 보안 데이터를 수집, 집계 및 분석 합니다.
 자세히 알아보려면 [IoT Edge 보안 모듈](security-edge-architecture.md)을 참조 하세요.
 
@@ -33,7 +33,7 @@ ms.locfileid: "76964042"
 
 ## <a name="deploy-security-module"></a>보안 모듈 배포
 
-다음 단계를 사용 하 여 IoT Edge 용 IoT 보안 모듈에 대 한 Azure Security Center를 배포 합니다.
+다음 단계를 사용 하 여 IoT Edge 용 IoT 보안 모듈에 대한 Azure Security Center를 배포 합니다.
 
 ### <a name="prerequisites"></a>필수 조건
 
@@ -55,18 +55,18 @@ ms.locfileid: "76964042"
 
 1. Azure Portal에서 **Marketplace**를 엽니다.
 
-1. **사물 인터넷**을 선택한 다음, **IoT에 대 한 Azure Security Center** 를 검색 하 고 선택 합니다.
+1. **사물 인터넷**을 선택한 다음, **IoT에 대한 Azure Security Center** 를 검색 하 고 선택 합니다.
 
-   ![IoT에 대 한 Azure Security Center 선택](media/howto/edge-onboarding-8.png)
+   ![IoT에 대한 Azure Security Center 선택](media/howto/edge-onboarding-8.png)
 
 1. **만들기** 를 클릭 하 여 배포를 구성 합니다. 
 
-1. IoT Hub의 Azure **구독** 을 선택한 다음 **IoT Hub**를 선택 합니다.<br>**장치에 배포** 를 선택 하 여 단일 장치를 대상으로 하거나, **대규모로 배포** 를 선택 하 여 여러 장치를 대상으로 하 고, **만들기**를 클릭 합니다. 대규모로 배포 하는 방법에 대 한 자세한 내용은 [배포 방법](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-monitor)을 참조 하세요. 
+1. IoT Hub의 Azure **구독** 을 선택한 다음 **IoT Hub**를 선택 합니다.<br>**장치에 배포** 를 선택 하 여 단일 장치를 대상으로 하거나, **대규모로 배포** 를 선택 하 여 여러 장치를 대상으로 하 고, **만들기**를 클릭 합니다. 대규모로 배포 하는 방법에 대한 자세한 내용은 [배포 방법](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-monitor)을 참조 하세요. 
 
     >[!Note] 
     >**대규모로 배포**를 선택한 경우 다음 지침의 **모듈 추가** 탭으로 계속 하기 전에 장치 이름 및 세부 정보를 추가 합니다.     
 
-IoT에 대 한 Azure Security Center에 대 한 IoT Edge 배포를 완료 하려면 각 단계를 완료 합니다. 
+IoT에 대한 Azure Security Center에 대한 IoT Edge 배포를 완료 하려면 각 단계를 완료 합니다. 
 
 #### <a name="step-1-modules"></a>1 단계: 모듈
 
@@ -157,7 +157,7 @@ IoT에 대 한 Azure Security Center에 대 한 IoT Edge 배포를 완료 하려
 
 ## <a name="diagnostic-steps"></a>진단 단계
 
-문제가 발생 하는 경우 컨테이너 로그가 IoT Edge 보안 모듈 장치의 상태에 대 한 정보를 확인 하는 가장 좋은 방법입니다. 이 섹션의 명령 및 도구를 사용하여 정보를 수집합니다.
+문제가 발생 하는 경우 컨테이너 로그가 IoT Edge 보안 모듈 장치의 상태에 대한 정보를 확인 하는 가장 좋은 방법입니다. 이 섹션의 명령 및 도구를 사용하여 정보를 수집합니다.
 
 ### <a name="verify-the-required-containers-are-installed-and-functioning-as-expected"></a>필요한 컨테이너가 설치 되어 있으며 예상 대로 작동 하는지 확인 합니다.
 
@@ -185,6 +185,6 @@ IoT에 대 한 Azure Security Center에 대 한 IoT Edge 배포를 완료 하려
 
 ## <a name="next-steps"></a>다음 단계
 
-구성 옵션에 대 한 자세한 내용을 보려면 모듈 구성 방법 가이드를 참조 하세요. 
+구성 옵션에 대한 자세한 내용을 보려면 모듈 구성 방법 가이드를 참조 하세요. 
 > [!div class="nextstepaction"]
 > [모듈 구성 방법 가이드](./how-to-agent-configuration.md)

@@ -44,15 +44,15 @@ ms.locfileid: "71299458"
 
 ![용량 메트릭](./media/api-management-capacity/capacity-ingredients.png)
 
-**용량** 은 API Management 인스턴스의 부하에 대 한 표시기입니다. 여기에는 리소스 사용량(CPU, 메모리)과 네트워크 큐 길이가 반영됩니다. CPU와 메모리 사용량은 다음을 통해 리소스 사용량을 나타냅니다.
+**용량** 은 API Management 인스턴스의 부하에 대한 표시기입니다. 여기에는 리소스 사용량(CPU, 메모리)과 네트워크 큐 길이가 반영됩니다. CPU와 메모리 사용량은 다음을 통해 리소스 사용량을 나타냅니다.
 
 + 요청을 전달 하거나 정책 실행을 포함 하는 요청 처리와 같은 데이터 평면 서비스를 API Management 합니다.
 + API Management 관리 평면 서비스 (예: Azure Portal 또는 ARM을 통해 적용 되는 관리 작업 또는 [개발자 포털](api-management-howto-developer-portal.md)에서 로드).
-+ 새 연결에 대 한 SSL 핸드셰이크 비용과 관련 된 프로세스를 포함 하 여 선택한 운영 체제 프로세스입니다.
++ 새 연결에 대한 SSL 핸드셰이크 비용과 관련 된 프로세스를 포함 하 여 선택한 운영 체제 프로세스입니다.
 
 총 **용량**은 API Management 인스턴스의 모든 단위에서 가져온 자체 값의 평균입니다.
 
-**용량 메트릭은** API Management 인스턴스에 대 한 문제를 노출 하도록 설계 되었지만 **용량 메트릭의**변경 내용에 문제가 반영 되지 않는 경우가 있습니다.
+**용량 메트릭은** API Management 인스턴스에 대한 문제를 노출 하도록 설계 되었지만 **용량 메트릭의**변경 내용에 문제가 반영 되지 않는 경우가 있습니다.
 
 ## <a name="capacity-metric-behavior"></a>용량 메트릭 동작
 

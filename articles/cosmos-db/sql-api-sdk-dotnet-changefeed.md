@@ -56,7 +56,7 @@ ms.locfileid: "75444850"
   * 새 공용 열거형 값 `Monitoring.MonitoredOperation.ReadChangeFeed`을 (를) 추가 했습니다. `HealthMonitoringRecord.Operation` 값이 `Monitoring.MonitoredOperation.ReadChangeFeed`으로 설정 된 경우 상태 문제는 변경 피드 읽기와 관련 되어 있음을 나타냅니다.
 
 ### <a name="a-name227227"></a><a name="2.2.7"/>2.2.7
-* 모든 임대를 가져오는 경우의 시나리오에 대 한 향상 된 부하 분산 전략은 임대 만료 간격 (예: 네트워크 문제 때문) 보다 오래 걸립니다.
+* 모든 임대를 가져오는 경우의 시나리오에 대한 향상 된 부하 분산 전략은 임대 만료 간격 (예: 네트워크 문제 때문) 보다 오래 걸립니다.
   * 이 시나리오에서는 임대가 만료 된 것으로 간주 하 여 활성 소유자의 임대를 도용 하는 데 사용 되는 부하 분산 알고리즘이 사용 됩니다. 이로 인해 많은 임대를 불필요 하 게 다시 분산 시킬 수 있습니다.
   * 이 문제는 소유자가 변경 하지 않고 만료 된 임대를 다음 부하 분산 반복으로 posponing 하는 만료 된 임대를 획득 하는 동안 충돌 시 재시도를 방지 하 여 해결 됩니다.
 
@@ -88,7 +88,7 @@ ms.locfileid: "75444850"
 
 ### <a name="a-name220220"></a><a name="2.2.0"/>2.2.0
 * 분할된 임대 컬렉션에 대한 지원이 추가되었습니다. 파티션 키는 /id로 정의되어야 합니다.
-* 주요 변경 내용: IChangeFeedDocumentClient 인터페이스 및 ChangeFeedDocumentClient 클래스의 메서드는 RequestOptions 및 CancellationToken 매개 변수를 포함하도록 변경되었습니다. IChangeFeedDocumentClient는 변경 피드 프로세서와 함께 사용할 문서 클라이언트의 사용자 지정 구현을 제공할 수 있도록 하는 고급 확장성 지점입니다 (예: 데코레이팅 DocumentClient 및이에 대 한 모든 호출을 가로채 추가 추적, 오류 처리 수행). 등. 이 업데이트를 사용 하는 경우 IChangeFeedDocumentClient을 구현 하는 코드를 변경 하 여 구현에 새 매개 변수를 포함 해야 합니다.
+* 주요 변경 내용: IChangeFeedDocumentClient 인터페이스 및 ChangeFeedDocumentClient 클래스의 메서드는 RequestOptions 및 CancellationToken 매개 변수를 포함하도록 변경되었습니다. IChangeFeedDocumentClient는 변경 피드 프로세서와 함께 사용할 문서 클라이언트의 사용자 지정 구현을 제공할 수 있도록 하는 고급 확장성 지점입니다 (예: 데코레이팅 DocumentClient 및이에 대한 모든 호출을 가로채 추가 추적, 오류 처리 수행). 등. 이 업데이트를 사용 하는 경우 IChangeFeedDocumentClient을 구현 하는 코드를 변경 하 여 구현에 새 매개 변수를 포함 해야 합니다.
 * 사소한 진단 개선 사항입니다.
 
 ### <a name="a-name210210"></a><a name="2.1.0"/>2.1.0

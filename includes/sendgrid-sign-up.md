@@ -11,7 +11,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75463495"
 ---
-Azure 고객은 매달 25,000통의 무료 전자 메일의 잠금을 해제할 수 있습니다. 이러한 25000 무료 월별 전자 메일을 통해 고급 보고 및 분석과 [모든 api][all APIs] (WEB, SMTP, Event, Parse 등)에 액세스할 수 있습니다. SendGrid에서 제공 하는 추가 서비스에 대 한 자세한 내용은 [SendGrid 솔루션][SendGrid Solutions] 페이지를 참조 하세요.
+Azure 고객은 매달 25,000통의 무료 전자 메일의 잠금을 해제할 수 있습니다. 이러한 25000 무료 월별 전자 메일을 통해 고급 보고 및 분석과 [모든 api][all APIs] (WEB, SMTP, Event, Parse 등)에 액세스할 수 있습니다. SendGrid에서 제공 하는 추가 서비스에 대한 자세한 내용은 [SendGrid 솔루션][SendGrid Solutions] 페이지를 참조 하세요.
 
 ### <a name="to-sign-up-for-a-sendgrid-account"></a>SendGrid 계정을 등록하려면
 1. [Azure Portal][Azure portal]에 로그인합니다.
@@ -76,7 +76,7 @@ Azure 고객은 매달 25,000통의 무료 전자 메일의 잠금을 해제할 
 
 ![manage][manage]
 
-SendGrid를 통해 전자 메일을 보내는 방법에 대 한 자세한 내용은 [EMAIL API 개요][Email API Overview]를 참조 하세요.
+SendGrid를 통해 전자 메일을 보내는 방법에 대한 자세한 내용은 [EMAIL API 개요][Email API Overview]를 참조 하세요.
 
 <!--images-->
 

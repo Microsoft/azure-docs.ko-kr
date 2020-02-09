@@ -29,13 +29,13 @@ Azure Automation의 실행 계정은 Azure에서 Azure cmdlet으로 리소스를
   * 구독에 관리 인증서를 만듭니다.
   * 지정된 Automation 계정에서 *AzureClassicRunAsCertificate*라는 Automation 인증서 자산을 만듭니다. 인증서 자산은 관리 인증서에서 사용되는 인증서 프라이빗 키를 보유합니다.
   * 지정된 Automation 계정에서 *AzureClassicRunAsConnection*이라는 Automation 연결 자산을 만듭니다. 연결 자산은 구독 이름, subscriptionId 및 인증서 자산 이름을 보유합니다.
-  * 만들거나 갱신 하려면 구독에 대 한 공동 관리자 여야 합니다.
+  * 만들거나 갱신 하려면 구독에 대한 공동 관리자 여야 합니다.
 
   > [!NOTE]
   > Azure CSP(Cloud Solution Provider) 구독은 Azure Resource Manager 모델만 지원하므로 Azure Resource Manager 이외의 서비스는 프로그램에서 사용할 수 없습니다. CSP 구독 사용 시에는 Azure 클래식 실행 계정이 생성되지 않습니다. Azure 실행 계정은 계속 생성됩니다. CSP 구독에 대해 자세히 알아보려면 [CSP 구독에서 사용 가능한 서비스](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services)를 참조하세요.
 
   > [!NOTE]
-  > 실행 계정에 대 한 서비스 주체에는 기본적으로 Azure Active Directory를 읽을 수 있는 권한이 없습니다. Azure Active directory를 읽거나 관리 하는 권한을 추가 하려면 **API 권한**에서 서비스 주체에 대 한 권한을 부여 해야 합니다. 자세한 내용은 [웹 api에 액세스 하기 위한 권한 추가](../active-directory/develop/quickstart-configure-app-access-web-apis.md#add-permissions-to-access-web-apis)를 참조 하세요.
+  > 실행 계정에 대한 서비스 주체에는 기본적으로 Azure Active Directory를 읽을 수 있는 권한이 없습니다. Azure Active directory를 읽거나 관리 하는 권한을 추가 하려면 **API 권한**에서 서비스 주체에 대한 권한을 부여 해야 합니다. 자세한 내용은 [웹 api에 액세스 하기 위한 권한 추가](../active-directory/develop/quickstart-configure-app-access-web-apis.md#add-permissions-to-access-web-apis)를 참조 하세요.
 
 ## <a name="permissions"></a>실행 계정 구성 권한
 
@@ -52,7 +52,7 @@ Azure Automation의 실행 계정은 Azure에서 Azure cmdlet으로 리소스를
 
 <sup>1</sup> Azure AD 테넌트의 **사용자 설정** 페이지에 있는 **사용자가 애플리케이션을 등록할 수 있음** 옵션이 **예**로 설정된 경우, Azure AD 테넌트의 관리자가 아닌 사용자가 [AD 애플리케이션을 등록](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions)할 수 있습니다. 앱 등록 설정이 **아니요**로 설정 된 경우이 작업을 수행 하는 사용자는 앞의 표에 정의 되어 있어야 합니다.
 
-구독의 **전역 관리자** 역할에 추가 되기 전에 구독의 Active Directory 인스턴스에 대 한 멤버가 아닌 경우 게스트로 추가 됩니다. 이 경우에는 **Automation 계정 추가** 페이지에 `You do not have permissions to create…` 경고가 표시됩니다. 먼저 **전역 관리자** 역할에 추가 된 사용자를 구독의 Active Directory 인스턴스에서 제거 하 고 다시 추가 하 여 Active Directory에서 전체 사용자로 만들 수 있습니다. Azure Portal의 **Azure Active Directory** 창에서 이 상황을 확인하려면 **사용자 및 그룹**을 선택한 다음 **모든 사용자**를 선택하거나 특정 사용자를 선택한 후 **프로필**을 선택합니다. 사용자 프로필에서 **사용자 유형** 속성의 값은 **Guest**와 같지 않아야 합니다.
+구독의 **전역 관리자** 역할에 추가 되기 전에 구독의 Active Directory 인스턴스에 대한 멤버가 아닌 경우 게스트로 추가 됩니다. 이 경우에는 **Automation 계정 추가** 페이지에 `You do not have permissions to create…` 경고가 표시됩니다. 먼저 **전역 관리자** 역할에 추가 된 사용자를 구독의 Active Directory 인스턴스에서 제거 하 고 다시 추가 하 여 Active Directory에서 전체 사용자로 만들 수 있습니다. Azure Portal의 **Azure Active Directory** 창에서 이 상황을 확인하려면 **사용자 및 그룹**을 선택한 다음 **모든 사용자**를 선택하거나 특정 사용자를 선택한 후 **프로필**을 선택합니다. 사용자 프로필에서 **사용자 유형** 속성의 값은 **Guest**와 같지 않아야 합니다.
 
 ## <a name="permissions-classic"></a>클래식 실행 계정을 구성할 수 있는 권한
 
@@ -403,14 +403,14 @@ Azure Automation의 실행 계정은 Azure에서 Azure cmdlet으로 리소스를
 
 ## <a name="limiting-run-as-account-permissions"></a>실행 계정 권한 제한
 
-Azure의 리소스에 대 한 자동화 대상을 제어 하려면 PowerShell 갤러리에서 [Update-AutomationRunAsAccountRoleAssignments](https://aka.ms/AA5hug8) 스크립트를 실행 하 여 기존 실행 계정 서비스 주체를 변경 하 여 사용자 지정 역할 정의를 만들고 사용할 수 있습니다. 이 역할은 [Key Vault](https://docs.microsoft.com/azure/key-vault/)를 제외한 모든 리소스에 대 한 권한을 가집니다.
+Azure의 리소스에 대한 자동화 대상을 제어 하려면 PowerShell 갤러리에서 [Update-AutomationRunAsAccountRoleAssignments](https://aka.ms/AA5hug8) 스크립트를 실행 하 여 기존 실행 계정 서비스 주체를 변경 하 여 사용자 지정 역할 정의를 만들고 사용할 수 있습니다. 이 역할은 [Key Vault](https://docs.microsoft.com/azure/key-vault/)를 제외한 모든 리소스에 대한 권한을 가집니다.
 
 > [!IMPORTANT]
-> `Update-AutomationRunAsAccountRoleAssignments.ps1` 스크립트를 실행 한 후 RunAs 계정을 사용 하 여 KeyVault에 액세스 하는 runbook은 더 이상 작동 하지 않습니다. Azure KeyVault에 대 한 호출에 대 한 계정의 runbook을 검토 해야 합니다.
+> `Update-AutomationRunAsAccountRoleAssignments.ps1` 스크립트를 실행 한 후 RunAs 계정을 사용 하 여 KeyVault에 액세스 하는 runbook은 더 이상 작동 하지 않습니다. Azure KeyVault에 대한 호출에 대한 계정의 runbook을 검토 해야 합니다.
 >
-> Azure Automation runbook에서 KeyVault에 대 한 액세스를 사용 하도록 설정 하려면 키 [자격 증명 모음에 RunAs 계정을 추가](#add-permissions-to-key-vault)해야 합니다.
+> Azure Automation runbook에서 KeyVault에 대한 액세스를 사용 하도록 설정 하려면 키 [자격 증명 모음에 RunAs 계정을 추가](#add-permissions-to-key-vault)해야 합니다.
 
-RunAs 서비스 사용자가 추가로 수행할 수 있는 작업을 제한 해야 하는 경우 사용자 지정 역할 정의의 `NotActions`에 다른 리소스 유형을 추가할 수 있습니다. 다음 예에서는 `Microsoft.Compute`에 대 한 액세스를 제한 합니다. 역할 정의의 **Notactions** 에이를 추가 하는 경우이 역할은 모든 계산 리소스에 액세스할 수 없게 됩니다. 역할 정의에 대 한 자세한 내용은 [Azure 리소스에 대 한 역할 정의 이해](../role-based-access-control/role-definitions.md)를 참조 하세요.
+RunAs 서비스 사용자가 추가로 수행할 수 있는 작업을 제한 해야 하는 경우 사용자 지정 역할 정의의 `NotActions`에 다른 리소스 유형을 추가할 수 있습니다. 다음 예에서는 `Microsoft.Compute`에 대한 액세스를 제한 합니다. 역할 정의의 **Notactions** 에이를 추가 하는 경우이 역할은 모든 계산 리소스에 액세스할 수 없게 됩니다. 역할 정의에 대한 자세한 내용은 [Azure 리소스에 대한 역할 정의 이해](../role-based-access-control/role-definitions.md)를 참조 하세요.
 
 ```powershell
 $roleDefinition = Get-AzureRmRoleDefinition -Name 'Automation RunAs Contributor'
@@ -422,16 +422,16 @@ $roleDefinition | Set-AzureRMRoleDefinition
 
 [![](media/manage-runas-account/verify-role.png "Verify the Run As Account role")](media/manage-runas-account/verify-role-expanded.png#lightbox)
 
-여러 구독 또는 Automation 계정에 대 한 Automation 실행 계정에서 사용 하는 역할 정의를 확인 하려면 PowerShell 갤러리 [Check-AutomationRunAsAccountRoleAssignments](https://aka.ms/AA5hug5) 스크립트를 사용할 수 있습니다.
+여러 구독 또는 Automation 계정에 대한 Automation 실행 계정에서 사용 하는 역할 정의를 확인 하려면 PowerShell 갤러리 [Check-AutomationRunAsAccountRoleAssignments](https://aka.ms/AA5hug5) 스크립트를 사용할 수 있습니다.
 
 ### <a name="add-permissions-to-key-vault"></a>Key Vault에 권한 추가
 
 Azure Automation에서 Key Vault를 관리할 수 있도록 허용 하 고 실행 계정 서비스 사용자가 사용자 지정 역할 정의를 사용 하는 경우 추가 단계를 수행 하 여이 동작을 허용 해야 합니다.
 
-* Key Vault에 대 한 사용 권한 부여
+* Key Vault에 대한 사용 권한 부여
 * 액세스 정책 설정
 
-PowerShell 갤러리에서 [Extend-AutomationRunAsAccountRoleAssignmentToKeyVault](https://aka.ms/AA5hugb) 스크립트를 사용 하 여 Keyvault에 실행 계정 권한을 부여 하거나, [응용 프로그램에 키 자격 증명 모음에](../key-vault/key-vault-group-permissions-for-apps.md) 대 한 액세스 권한 부여를 방문 하 여 keyvault의 설정 권한에 대 한 자세한 내용을 확인할 수 있습니다.
+PowerShell 갤러리에서 [Extend-AutomationRunAsAccountRoleAssignmentToKeyVault](https://aka.ms/AA5hugb) 스크립트를 사용 하 여 Keyvault에 실행 계정 권한을 부여 하거나, [응용 프로그램에 키 자격 증명 모음에](../key-vault/key-vault-group-permissions-for-apps.md) 대한 액세스 권한 부여를 방문 하 여 keyvault의 설정 권한에 대한 자세한 내용을 확인할 수 있습니다.
 
 ## <a name="misconfiguration"></a>잘못된 구성
 

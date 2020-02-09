@@ -80,11 +80,11 @@ Azure CNI를 사용하면 모든 Pod가 서브넷에서 IP 주소를 가져오�
 
 ![각 노드를 단일 Azure VNet에 연결하는 브리지가 있는 두 노드를 보여주는 다이어그램][advanced-networking-diagram]
 
-자세한 내용은 [AKS 클러스터에 대 한 Azure CNI 구성][aks-configure-advanced-networking]을 참조 하세요.
+자세한 내용은 [AKS 클러스터에 대한 Azure CNI 구성][aks-configure-advanced-networking]을 참조 하세요.
 
 ### <a name="compare-network-models"></a>네트워크 모델 비교
 
-Kubenet와 Azure CNI 모두 AKS 클러스터에 대 한 네트워크 연결을 제공 합니다. 그러나 각각에는 장점과 단점이 있습니다. 개략적인 수준에서 다음과 같은 고려 사항이 적용 됩니다.
+Kubenet와 Azure CNI 모두 AKS 클러스터에 대한 네트워크 연결을 제공 합니다. 그러나 각각에는 장점과 단점이 있습니다. 개략적인 수준에서 다음과 같은 고려 사항이 적용 됩니다.
 
 * **kubenet**
     * IP 주소 공간을 절약 합니다.
@@ -104,11 +104,11 @@ Kubenet와 Azure CNI 간에는 다음과 같은 동작 차이가 있습니다.
 | Pod-VM 연결 동일한 가상 네트워크의 VM                                          | Pod에 의해 시작 된 경우 작동 합니다. | 두 가지 방식으로 작동 합니다. |
 | Pod-VM 연결 피어 링 가상 네트워크의 VM                                            | Pod에 의해 시작 된 경우 작동 합니다. | 두 가지 방식으로 작동 합니다. |
 | VPN 또는 Express 경로를 사용 하 여 온-프레미스 액세스                                                | Pod에 의해 시작 된 경우 작동 합니다. | 두 가지 방식으로 작동 합니다. |
-| 서비스 끝점으로 보호 되는 리소스에 대 한 액세스                                             | 지원됨 | 지원됨 |
+| 서비스 엔드포인트으로 보호 되는 리소스에 대한 액세스                                             | 지원됨 | 지원됨 |
 | 부하 분산 장치 서비스, 앱 게이트웨이 또는 수신 컨트롤러를 사용 하 여 Kubernetes services 노출 | 지원됨 | 지원됨 |
 | 기본 Azure DNS 및 개인 영역                                                          | 지원됨 | 지원됨 |
 
-Kubenet 및 Azure CNI 플러그 인 dns를 모두 사용 하는 DNS와 관련 하 여 AKS에서 실행 되는 디먼 집합인 CoreDNS에서 제공 합니다. CoreDNS on Kubernetes에 대 한 자세한 내용은 [DNS 서비스 사용자 지정](https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/)을 참조 하세요. CoreDNS는 AKS 클러스터가 배포 되는 Azure Virtual Network의 DNS 기능에 대 한 알 수 없는 도메인을 노드 DNS 서버로 전달 하기 위해 기본적으로 구성 됩니다. 따라서 Azure DNS 및 개인 영역은 AKS에서 실행 되는 pod에 대해 작동 합니다.
+Kubenet 및 Azure CNI 플러그 인 dns를 모두 사용 하는 DNS와 관련 하 여 AKS에서 실행 되는 디먼 집합인 CoreDNS에서 제공 합니다. CoreDNS on Kubernetes에 대한 자세한 내용은 [DNS 서비스 사용자 지정](https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/)을 참조 하세요. CoreDNS는 AKS 클러스터가 배포 되는 Azure Virtual Network의 DNS 기능에 대한 알 수 없는 도메인을 노드 DNS 서버로 전달 하기 위해 기본적으로 구성 됩니다. 따라서 Azure DNS 및 개인 영역은 AKS에서 실행 되는 pod에 대해 작동 합니다.
 
 ### <a name="support-scope-between-network-models"></a>네트워크 모델 간의 범위 지원
 
@@ -117,10 +117,10 @@ Kubenet 및 Azure CNI 플러그 인 dns를 모두 사용 하는 DNS와 관련 �
 * Azure 플랫폼은 AKS 클러스터를 만들 때 가상 네트워크 리소스를 자동으로 만들고 구성할 수 있습니다.
 * AKS 클러스터를 만들 때 가상 네트워크 리소스를 수동으로 만들고 구성 하 고 해당 리소스에 연결할 수 있습니다.
 
-서비스 엔드포인트 나 UDRs와 같은 기능이 kubenet 및 Azure CNI 모두에서 지원 되기는 하지만 [AKS에 대 한 지원 정책은][support-policies] 어떤 변경 작업을 수행할 수 있는지를 정의 합니다. 다음은 그 예입니다.
+서비스 엔드포인트 나 UDRs와 같은 기능이 kubenet 및 Azure CNI 모두에서 지원 되기는 하지만 [AKS에 대한 지원 정책은][support-policies] 어떤 변경 작업을 수행할 수 있는지를 정의 합니다. 다음은 그 예입니다.
 
-* AKS 클러스터에 대 한 가상 네트워크 리소스를 수동으로 만드는 경우 고유한 UDRs 또는 서비스 끝점을 구성할 때 지원 됩니다.
-* Azure 플랫폼에서 AKS 클러스터에 대 한 가상 네트워크 리소스를 자동으로 만드는 경우 해당 AKS 관리 리소스를 수동으로 변경 하 여 사용자 고유의 UDRs 또는 서비스 끝점을 구성할 수 없습니다.
+* AKS 클러스터에 대한 가상 네트워크 리소스를 수동으로 만드는 경우 고유한 UDRs 또는 서비스 엔드포인트을 구성할 때 지원 됩니다.
+* Azure 플랫폼에서 AKS 클러스터에 대한 가상 네트워크 리소스를 자동으로 만드는 경우 해당 AKS 관리 리소스를 수동으로 변경 하 여 사용자 고유의 UDRs 또는 서비스 엔드포인트을 구성할 수 없습니다.
 
 ## <a name="ingress-controllers"></a>수신 컨트롤러
 
@@ -132,9 +132,9 @@ LoadBalancer 유형 Service를 만들면 기본 Azure 부하 분산 장치 리�
 
 AKS에서는 NGINX와 같은 도구를 사용하여 수신 리소스를 만들거나 AKS HTTP 애플리케이션 라우팅 기능을 사용할 수 있습니다. AKS 클러스터에 대한 HTTP 애플리케이션 라우팅을 사용하도록 설정하면 Azure 플랫폼에서 수신 컨트롤러와 *External-DNS* 컨트롤러를 만듭니다. Kubernetes에서 새 수신 리소스가 만들어지면 필요한 DNS A 레코드가 클러스터별 DNS 영역에 만들어집니다. 자세한 내용은 [HTTP 응용 프로그램 라우팅 배포][aks-http-routing]를 참조 하세요.
 
-수신의 또 다른 일반적인 기능은 SSL/TLS 종료입니다. HTTPS를 통해 액세스되는 대규모 웹 애플리케이션에서 TLS 종료는 애플리케이션 자체 내에서가 아니라 수신 리소스에서 처리할 수 있습니다. 자동 TLS 인증 생성 및 구성을 제공하기 위해 Let's Encrypt와 같은 공급자를 사용하도록 수신 리소스를 구성할 수 있습니다. 암호화를 사용 하 여 NGINX 수신 컨트롤러를 구성 하는 방법에 대 한 자세한 내용은 [수신 및 TLS][aks-ingress-tls]를 참조 하세요.
+수신의 또 다른 일반적인 기능은 SSL/TLS 종료입니다. HTTPS를 통해 액세스되는 대규모 웹 애플리케이션에서 TLS 종료는 애플리케이션 자체 내에서가 아니라 수신 리소스에서 처리할 수 있습니다. 자동 TLS 인증 생성 및 구성을 제공하기 위해 Let's Encrypt와 같은 공급자를 사용하도록 수신 리소스를 구성할 수 있습니다. 암호화를 사용 하 여 NGINX 수신 컨트롤러를 구성 하는 방법에 대한 자세한 내용은 [수신 및 TLS][aks-ingress-tls]를 참조 하세요.
 
-AKS 클러스터에서 컨테이너에 대한 요청에 클라이언트 원본 IP를 유지하기 위해 인그레스 컨트롤러를 구성할 수도 있습니다. 클라이언트의 요청이 수신 컨트롤러를 통해 AKS 클러스터의 컨테이너에 라우팅되는 경우 해당 요청의 원래 원본 IP를 대상 컨테이너에서 사용할 수 없습니다. *클라이언트 원본 ip 유지*를 사용 하도록 설정 하면 클라이언트에 대 한 원본 Ip가 *X로 전달 된의*요청 헤더에서 사용할 수 있습니다. 수신 컨트롤러에서 클라이언트 원본 IP 유지를 사용 하는 경우 SSL 통과를 사용할 수 없습니다. 클라이언트 원본 IP 유지 및 SSL 통과는 *LoadBalancer* 유형과 같은 다른 서비스와 함께 사용할 수 있습니다.
+AKS 클러스터에서 컨테이너에 대한 요청에 클라이언트 원본 IP를 유지하기 위해 인그레스 컨트롤러를 구성할 수도 있습니다. 클라이언트의 요청이 수신 컨트롤러를 통해 AKS 클러스터의 컨테이너에 라우팅되는 경우 해당 요청의 원래 원본 IP를 대상 컨테이너에서 사용할 수 없습니다. *클라이언트 원본 ip 유지*를 사용 하도록 설정 하면 클라이언트에 대한 원본 Ip가 *X로 전달 된의*요청 헤더에서 사용할 수 있습니다. 수신 컨트롤러에서 클라이언트 원본 IP 유지를 사용 하는 경우 SSL 통과를 사용할 수 없습니다. 클라이언트 원본 IP 유지 및 SSL 통과는 *LoadBalancer* 유형과 같은 다른 서비스와 함께 사용할 수 있습니다.
 
 ## <a name="network-security-groups"></a>네트워크 보안 그룹
 
@@ -152,7 +152,7 @@ AKS 클러스터에서 컨테이너에 대한 요청에 클라이언트 원본 I
 
 AKS 네트워킹을 시작 하려면 [kubenet][aks-configure-kubenet-networking] 또는 [Azure cni][aks-configure-advanced-networking]를 사용 하 여 고유한 IP 주소 범위를 사용 하 여 AKS 클러스터를 만들고 구성 합니다.
 
-관련 모범 사례는 [AKS의 네트워크 연결 및 보안에 대 한 모범 사례][operator-best-practices-network]를 참조 하세요.
+관련 모범 사례는 [AKS의 네트워크 연결 및 보안에 대한 모범 사례][operator-best-practices-network]를 참조 하세요.
 
 Kubernetes 및 AKS 핵심 개념에 대한 자세한 내용은 다음 문서를 참조하세요.
 

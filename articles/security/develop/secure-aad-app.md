@@ -358,7 +358,7 @@ Azure Disk Encryption는 Windows의 BitLocker 기능을 활용 하 여 데이터
 
 ### <a name="identity-management"></a>ID 관리
 다음 기술은 Azure 환경의 카드 소유자 데이터에 대 한 액세스를 관리 하는 기능을 제공 합니다.
-- Azure Active Directory는 Microsoft의 다중 테 넌 트 클라우드 기반 디렉터리 및 id 관리 서비스입니다. 이 솔루션에 대 한 모든 사용자는 Azure WebApp에 액세스 하는 사용자를 포함 하 여 Azure Active Directory에서 생성 됩니다.
+- Azure Active Directory는 Microsoft의 다중 테넌트 클라우드 기반 디렉터리 및 id 관리 서비스입니다. 이 솔루션에 대 한 모든 사용자는 Azure WebApp에 액세스 하는 사용자를 포함 하 여 Azure Active Directory에서 생성 됩니다.
 - 관리자는 Azure 역할 기반 액세스 제어를 통해 세분화 된 액세스 권한을 정의 하 여 사용자가 작업을 수행 하는 데 필요한 액세스 권한만 부여할 수 있습니다. 관리자는 모든 사용자에게 Azure 리소스에 대한 무제한 권한을 부여하는 대신 카드 소유자 데이터에 액세스하기 위한 특정 작업만 허용할 수 있습니다. 구독 액세스는 구독 관리자로 제한됩니다.
 - Azure Active Directory Privileged Identity Management를 통해 고객은 카드 소유자 데이터와 같은 특정 정보에 대 한 액세스 권한이 있는 사용자 수를 최소화할 수 있습니다. 관리자는 Azure Active Directory Privileged Identity Management를 사용하여 권한 있는 ID와 리소스에 대한 액세스를 검색, 제한 및 모니터링할 수 있습니다. 필요한 경우 이 기능을 사용하여 요청 시 JIT(Just-In-Time) 관리 액세스를 적용할 수도 있습니다.
 - Azure Active Directory Identity Protection는 조직의 id에 영향을 주는 잠재적 취약성을 검색 하 고, 조직의 id와 관련 된 검색 된 의심 스러운 작업에 대 한 자동화 된 응답을 구성 하 고, 의심 스러운 조사 인시던트를 해결 하기 위해 적절 한 조치를 취해야 합니다.

@@ -29,7 +29,7 @@ Azure Cognitive Search에는 Azure Cognitive Search 서비스에서 호스트 �
 
    ![명령 모음에서 인덱스 링크 추가](media/search-create-index-portal/add-index.png "명령 모음에서 인덱스 링크 추가")
 
-3. Azure Cognitive Search 인덱스의 이름을로 합니다. 인덱스 이름은 인덱싱 및 쿼리 작업에서 참조됩니다. 인덱스 이름은 인덱스에 연결 하 고 Azure Cognitive Search REST API에서 HTTP 요청을 보내는 데 사용 되는 끝점 URL의 일부가 됩니다.
+3. Azure Cognitive Search 인덱스의 이름을로 합니다. 인덱스 이름은 인덱싱 및 쿼리 작업에서 참조됩니다. 인덱스 이름은 인덱스에 연결 하 고 Azure Cognitive Search REST API에서 HTTP 요청을 보내는 데 사용 되는 엔드포인트 URL의 일부가 됩니다.
 
    * 문자로 시작합니다.
    * 소문자, 숫자 또는 대시(“-”)만 사용합니다.

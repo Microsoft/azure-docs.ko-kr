@@ -31,13 +31,13 @@ Azure Data Factory UX(사용자 인터페이스 환경)을 사용하면 코드�
 
 여기서는 팩터리를 구성 하는 파이프라인, 활동, 데이터 집합, 연결 된 서비스, 데이터 흐름, 트리거 및 통합 런타임을 작성 합니다. 제작 캔버스를 사용 하 여 파이프라인 빌드를 시작 하려면 [복사 작업을 사용 하 여 데이터 복사](tutorial-copy-data-portal.md)를 참조 하세요. 
 
-기본 시각적 작성 환경은 Data Factory 서비스를 직접 사용 하는 것입니다. Azure Repos Git 또는 GitHub 통합은 데이터 팩터리 파이프라인에 대 한 소스 제어 및 공동 작업을 허용 하는 데도 지원 됩니다. 이러한 제작 환경 간의 차이점에 대 한 자세한 내용은 [Azure Data Factory의 소스 제어](source-control.md)를 참조 하세요.
+기본 시각적 작성 환경은 Data Factory 서비스를 직접 사용 하는 것입니다. Azure Repos Git 또는 GitHub 통합은 데이터 팩터리 파이프라인에 대한 소스 제어 및 공동 작업을 허용 하는 데도 지원 됩니다. 이러한 제작 환경 간의 차이점에 대한 자세한 내용은 [Azure Data Factory의 소스 제어](source-control.md)를 참조 하세요.
 
 ## <a name="expressions-and-functions"></a>식 및 함수
 
 Azure Data Factory에서 많은 속성을 지정 하기 위해 정적 값 대신 식 및 함수를 사용할 수 있습니다.
 
-속성 값에 대 한 식을 지정 하려면 **동적 콘텐츠 추가** 를 선택 하거나 필드에 포커스를 둘 때 **Alt + P** 를 클릭 합니다.
+속성 값에 대한 식을 지정 하려면 **동적 콘텐츠 추가** 를 선택 하거나 필드에 포커스를 둘 때 **Alt + P** 를 클릭 합니다.
 
 ![동적 콘텐츠 추가](media/author-visually/dynamic-content-1.png)
 
@@ -45,7 +45,7 @@ Azure Data Factory에서 많은 속성을 지정 하기 위해 정적 값 대신
 
 ![식 작성기](media/author-visually/dynamic-content-2.png)
 
-식 언어에 대 한 자세한 내용은 [Azure Data Factory의 식 및 함수](control-flow-expression-language-functions.md)를 참조 하세요.
+식 언어에 대한 자세한 내용은 [Azure Data Factory의 식 및 함수](control-flow-expression-language-functions.md)를 참조 하세요.
 
 ## <a name="provide-feedback"></a>피드백 제공하기
 

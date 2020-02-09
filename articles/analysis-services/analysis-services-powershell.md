@@ -26,7 +26,7 @@ ms.locfileid: "73572703"
 
 대부분의 PowerShell 작업에는 관리하는 Analysis Services 서버에 대해 관리자 권한이 있어야 합니다. 예약된 PowerShell 작업은 무인 작업입니다. 스케줄러를 실행하는 계정 또는 서비스 주체에게는 Analysis Services 서버에 대해 관리자 권한이 있어야 합니다. 
 
-Azure PowerShell cmdlet을 사용 하는 서버 작업의 경우 스케줄러를 실행 하는 계정 또는 계정이 [Azure 역할 기반 Access Control (RBAC)](../role-based-access-control/overview.md)의 리소스에 대 한 소유자 역할에도 속해야 합니다. 
+Azure PowerShell cmdlet을 사용 하는 서버 작업의 경우 스케줄러를 실행 하는 계정 또는 계정이 [Azure 역할 기반 Access Control (RBAC)](../role-based-access-control/overview.md)의 리소스에 대한 소유자 역할에도 속해야 합니다. 
 
 ## <a name="resource-and-server-operations"></a>리소스 및 서버 작업 
 

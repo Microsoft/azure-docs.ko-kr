@@ -1,7 +1,7 @@
 ---
 title: 일반적인 질문-FAQ
 titleSuffix: Microsoft Genomics
-description: 기술 정보, SLA 및 청구를 포함 하 여 Microsoft Genomics 서비스 사용과 관련 된 일반적인 질문에 대 한 답변을 받으세요.
+description: 기술 정보, SLA 및 청구를 포함 하 여 Microsoft Genomics 서비스 사용과 관련 된 일반적인 질문에 대한 답변을 받으세요.
 services: genomics
 author: grhuynh
 manager: cgronlun
@@ -25,7 +25,7 @@ ms.locfileid: "76986039"
 Microsoft Genomics 서비스의 config.xml 파일에서 `gatk4`process_name를 지정 합니다. 정기적인 청구 요금으로 요금이 청구 됩니다.
 
 ## <a name="how-do-i-enable-output-compression"></a>출력 압축을 사용 하도록 설정 어떻게 할까요??
-출력 압축에 대 한 선택적 인수를 사용 하 여 출력 .vcf 또는 gvcf를 압축할 수 있습니다. 이는 `.gz` (bgzip output) 및 `.tbi` (tabix output) 파일을 생성 하기 위해 `-tabix` `-bgzip`를 실행 하는 것과 동일 합니다. `bgzip`는 .vcf 또는 gvcf 파일을 압축 하 `tabix` 압축 된 파일에 대 한 인덱스를 만듭니다. 인수는 부울로, 기본적으로 `false`는 .vcf 출력에 대해 설정 되 고 gcvf 출력에 대해 기본적으로 `true` 됩니다. 명령줄에서를 사용 하려면 `-bz` 또는 `--bgzip-output`을 `true` (bgzip 및 tabix 실행) 또는 `false`로 지정 합니다. Config.xml 파일에서이 인수를 사용 하려면 파일에 `bgzip_output: true` 또는 `bgzip_output: false`를 추가 합니다.
+출력 압축에 대한 선택적 인수를 사용 하 여 출력 .vcf 또는 gvcf를 압축할 수 있습니다. 이는 `.gz` (bgzip output) 및 `.tbi` (tabix output) 파일을 생성 하기 위해 `-tabix` `-bgzip`를 실행 하는 것과 동일 합니다. `bgzip`는 .vcf 또는 gvcf 파일을 압축 하 `tabix` 압축 된 파일에 대한 인덱스를 만듭니다. 인수는 부울로, 기본적으로 `false`는 .vcf 출력에 대해 설정 되 고 gcvf 출력에 대해 기본적으로 `true` 됩니다. 명령줄에서를 사용 하려면 `-bz` 또는 `--bgzip-output`을 `true` (bgzip 및 tabix 실행) 또는 `false`로 지정 합니다. Config.xml 파일에서이 인수를 사용 하려면 파일에 `bgzip_output: true` 또는 `bgzip_output: false`를 추가 합니다.
 
 ## <a name="what-is-the-sla-for-microsoft-genomics"></a>Microsoft Genomics의 SLA는 무엇인가요?
 워크플로 API 요청을 수신하는 데 Microsoft Genomics 서비스의 99.9% 가용성을 보장합니다. 자세한 내용은 [SLA](https://azure.microsoft.com/support/legal/sla/genomics/v1_0/)를 참조하세요.

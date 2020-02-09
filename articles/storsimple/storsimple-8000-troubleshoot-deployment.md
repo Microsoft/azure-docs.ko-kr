@@ -77,7 +77,7 @@ ms.locfileid: "64715223"
 | 4 |Invoke-HcsSetupWizard: 클러스터 리소스 실패 했습니다. (예외가 발생한 HRESULT: 0x800713AE). |VIP가 중복되었습니다. 제공된 IP가 이미 사용 중입니다. |사용되지 않는 새 IP를 제공합니다. |
 | 5 |Invoke-HcsSetupWizard: 잘못 된 IPv4 주소입니다. |IP 주소는 잘못된 형식으로 제공됩니다. |형식을 확인하고 다시 사용자의 IP 주소를 제공합니다. 자세한 내용은 [Ipv4 주소 지정][1]을 참조하세요. |
 | 6 |Invoke-HcsSetupWizard: 잘못 된 IPv6 주소입니다. |IP 주소는 잘못된 형식으로 제공됩니다. |형식을 확인하고 다시 사용자의 IP 주소를 제공합니다. 자세한 내용은 [Ipv6 주소 지정][2]을 참조하세요. |
-| 7 |Invoke-HcsSetupWizard: 끝점 매퍼에서 사용할 수 있는 끝점이 더 이상 있습니다. (예외가 발생한 HRESULT: 0x800706D9) |클러스터 기능이 작동하지 않습니다. |[Microsoft 지원에 문의](storsimple-8000-contact-microsoft-support.md)하세요. |
+| 7 |Invoke-HcsSetupWizard: 엔드포인트 매퍼에서 사용할 수 있는 엔드포인트이 더 이상 있습니다. (예외가 발생한 HRESULT: 0x800706D9) |클러스터 기능이 작동하지 않습니다. |[Microsoft 지원에 문의](storsimple-8000-contact-microsoft-support.md)하세요. |
 
 ## <a name="errors-during-the-optional-web-proxy-settings"></a>선택적 웹 프록시 설정 중 오류
 | 번호 | 오류 메시지 | 가능한 원인 | 권장 작업 |

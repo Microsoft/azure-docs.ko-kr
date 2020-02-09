@@ -1,6 +1,6 @@
 ---
 title: 리소스 관리자 템플릿을 사용 하 여 Azure Cosmos DB 만들기 및 관리
-description: Azure Resource Manager 템플릿을 사용 하 여 SQL (Core) API에 대 한 Azure Cosmos DB 만들기 및 구성
+description: Azure Resource Manager 템플릿을 사용 하 여 SQL (Core) API에 대한 Azure Cosmos DB 만들기 및 구성
 author: TheovanKraay
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -17,7 +17,7 @@ ms.locfileid: "75978720"
 
 이 문서에서는 Azure Resource Manager 템플릿을 사용 하 여 Azure Cosmos DB 계정, 데이터베이스 및 컨테이너의 관리를 자동화 하는 방법에 대해 알아봅니다.
 
-이 문서에서는 SQL API 계정에 대 한 Azure Resource Manager 템플릿 예제만 보여 줍니다. [Cassandra](manage-cassandra-with-resource-manager.md), [Gremlin](manage-gremlin-with-resource-manager.md), [MongoDB](manage-mongodb-with-resource-manager.md)및 [Table](manage-table-with-resource-manager.md) api에 대 한 템플릿 예제를 찾을 수도 있습니다.
+이 문서에서는 SQL API 계정에 대한 Azure Resource Manager 템플릿 예제만 보여 줍니다. [Cassandra](manage-cassandra-with-resource-manager.md), [Gremlin](manage-gremlin-with-resource-manager.md), [MongoDB](manage-mongodb-with-resource-manager.md)및 [Table](manage-table-with-resource-manager.md) api에 대한 템플릿 예제를 찾을 수도 있습니다.
 
 <a id="create-resource"></a>
 

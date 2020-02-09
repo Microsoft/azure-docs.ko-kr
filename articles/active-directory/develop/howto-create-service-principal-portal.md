@@ -72,7 +72,7 @@ Azure AD 애플리케이션 및 서비스 주체를 만들었습니다.
 
 1. **Azure Active Directory**를 선택합니다.
 1. Azure AD의 **앱 등록**에서 애플리케이션을 선택합니다.
-1. 디렉터리 (테 넌 트) ID를 복사 하 여 응용 프로그램 코드에 저장 합니다.
+1. 디렉터리 (테넌트) ID를 복사 하 여 응용 프로그램 코드에 저장 합니다.
 
     ![디렉터리(테넌트 ID)를 복사하여 앱 코드에 저장](./media/howto-create-service-principal-portal/copy-tenant-id.png)
 

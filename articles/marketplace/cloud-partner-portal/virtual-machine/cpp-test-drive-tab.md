@@ -42,7 +42,7 @@ ms.locfileid: "73808866"
 | **액세스 정보\***    | 일반 텍스트 또는 단순 HTML 형식으로 작성된 Azure Resource Manager 액세스 및 시험판 로그인 정보입니다. |
 | *시험 사용 배포 구독 세부 정보* |  |
 | **Azure 구독 Id\*** | 이 ID는 [Microsoft Azure Portal](https://ms.portal.azure.com)에 로그인하고, 왼쪽 메뉴 모음에서 **구독**을 클릭하여 가져올 수 있습니다 (예: "a83645ac-1234-5ab6-6789-1h234g764ghty")    이 식별자는 `a83645ac-1234-5ab6-6789-1h234g764ghty`형식의 GUID 여야 합니다.|
-| **Azure AD 테 넌 트 Id\***    | Azure Active Directory 테넌트 ID입니다.  이 ID는 [Microsoft Azure Portal](https://ms.portal.azure.com)에 로그인하고, 왼쪽 메뉴 모음에서 **Azure Active Directory**를 클릭하고, 중간 메뉴 모음에서 **속성**을 클릭한 다음, 양식의 **디렉터리 ID**를 복사하여 가져올 수 있습니다.  이 식별자도 GUID여야 합니다.  비워 두면 조직에 대한 테넌트 ID를 만들어야 합니다. |
+| **Azure AD 테넌트 Id\***    | Azure Active Directory 테넌트 ID입니다.  이 ID는 [Microsoft Azure Portal](https://ms.portal.azure.com)에 로그인하고, 왼쪽 메뉴 모음에서 **Azure Active Directory**를 클릭하고, 중간 메뉴 모음에서 **속성**을 클릭한 다음, 양식의 **디렉터리 ID**를 복사하여 가져올 수 있습니다.  이 식별자도 GUID여야 합니다.  비워 두면 조직에 대한 테넌트 ID를 만들어야 합니다. |
 | **Azure AD 앱 Id\***       | 등록된 Azure VM 솔루션에 대한 식별자입니다.  |
 | **Azure AD 앱 키\***      | 등록된 솔루션에 대한 인증 키입니다. |
 |   |   |

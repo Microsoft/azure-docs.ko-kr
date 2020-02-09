@@ -1,6 +1,6 @@
 ---
 title: Azure Maps API 사용 메트릭 보기 | Microsoft Azure 맵
-description: 이 문서에서는 Azure Portal에서 Microsoft Azure Maps API 호출에 대 한 메트릭을 보는 방법에 대해 설명 합니다.
+description: 이 문서에서는 Azure Portal에서 Microsoft Azure Maps API 호출에 대한 메트릭을 보는 방법에 대해 설명 합니다.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 08/06/2018

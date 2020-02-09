@@ -22,7 +22,7 @@ ms.locfileid: "76848929"
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-이 문서에서는 Azure Active Directory B2C (Azure AD B2C)에서 [사용자 지정 정책을](custom-policy-overview.md) 사용 하 여 Microsoft 계정에서 사용자에 대 한 로그인을 사용 하도록 설정 하는 방법을 보여 줍니다.
+이 문서에서는 Azure Active Directory B2C (Azure AD B2C)에서 [사용자 지정 정책을](custom-policy-overview.md) 사용 하 여 Microsoft 계정에서 사용자에 대한 로그인을 사용 하도록 설정 하는 방법을 보여 줍니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -31,28 +31,28 @@ ms.locfileid: "76848929"
 
 ## <a name="add-an-application"></a>애플리케이션 추가
 
-Microsoft 계정 사용자에 대 한 로그인을 사용 하도록 설정 하려면 Azure AD 테 넌 트 내에서 응용 프로그램을 등록 해야 합니다. Azure AD 테넌트는 Azure AD B2C 테넌트와 다릅니다.
+Microsoft 계정 사용자에 대한 로그인을 사용 하도록 설정 하려면 Azure AD 테넌트 내에서 응용 프로그램을 등록 해야 합니다. Azure AD 테넌트는 Azure AD B2C 테넌트와 다릅니다.
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
-1. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 azure ad 테 넌 트가 포함 된 디렉터리를 선택 하 여 azure ad 테 넌 트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다.
+1. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 azure ad 테넌트가 포함 된 디렉터리를 선택 하 여 azure ad 테넌트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다.
 1. Azure Portal의 왼쪽 상단 모서리에서 **모든 서비스**를 선택한 다음, **앱 등록**을 검색하여 선택합니다.
 1. **새 등록**을 선택합니다.
 1. 애플리케이션의 **이름**을 입력합니다. 예를 들어 *MSAapp1* 등을 입력합니다.
 1. **지원 되는 계정 유형**에서 **조직 디렉터리와 개인 Microsoft 계정 (예: Skype, Xbox, Outlook.com)의 계정을**선택 합니다.
-1. **URI 리디렉션 (선택 사항)** 에서 **웹** 을 선택 하 고 텍스트 상자에 `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp`을 입력 합니다. `your-tenant-name`를 Azure AD B2C 테 넌 트 이름으로 바꿉니다.
+1. **URI 리디렉션 (선택 사항)** 에서 **웹** 을 선택 하 고 텍스트 상자에 `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp`을 입력 합니다. `your-tenant-name`를 Azure AD B2C 테넌트 이름으로 바꿉니다.
 1. **등록** 선택
 1. 응용 프로그램 개요 페이지에 표시 된 **응용 프로그램 (클라이언트) ID** 를 기록 합니다. 이후 섹션에서 클레임 공급자를 구성할 때 필요 합니다.
 1. **인증서 & 암호** 선택
 1. **새 클라이언트 암호** 를 클릭 합니다.
-1. 암호에 대 한 **설명** (예: *MSA 응용 프로그램 클라이언트 암호*)을 입력 한 다음 **추가**를 클릭 합니다.
+1. 암호에 대한 **설명** (예: *MSA 응용 프로그램 클라이언트 암호*)을 입력 한 다음 **추가**를 클릭 합니다.
 1. **값** 열에 표시 된 응용 프로그램 암호를 기록 합니다. 다음 섹션에서이 값을 사용 합니다.
 
 ## <a name="create-a-policy-key"></a>정책 키 만들기
 
-이제 Azure AD 테 넌 트에서 응용 프로그램을 만들었으므로 Azure AD B2C 테 넌 트에 해당 응용 프로그램의 클라이언트 암호를 저장 해야 합니다.
+이제 Azure AD 테넌트에서 응용 프로그램을 만들었으므로 Azure AD B2C 테넌트에 해당 응용 프로그램의 클라이언트 암호를 저장 해야 합니다.
 
 1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
-1. Azure AD B2C 테 넌 트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 테 넌 트가 포함 된 디렉터리를 선택 합니다.
+1. Azure AD B2C 테넌트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 테넌트가 포함 된 디렉터리를 선택 합니다.
 1. Azure Portal의 왼쪽 상단 모서리에서 **모든 서비스**를 선택하고 **Azure AD B2C**를 검색하여 선택합니다.
 1. 개요 페이지에서 **ID 경험 프레임워크**를 선택합니다.
 1. **정책 키**, **추가**를 차례로 선택합니다.
@@ -64,7 +64,7 @@ Microsoft 계정 사용자에 대 한 로그인을 사용 하도록 설정 하�
 
 ## <a name="add-a-claims-provider"></a>클레임 공급자 추가
 
-사용자가 Microsoft 계정를 사용 하 여 로그인 할 수 있도록 하려면 끝점을 통해 통신할 수 있는 Azure AD B2C 클레임 공급자로 계정을 정의 해야 합니다. 엔드포인트는 Azure AD B2C에서 사용하는 일련의 클레임을 제공하여 특정 사용자가 인증했는지 확인합니다.
+사용자가 Microsoft 계정를 사용 하 여 로그인 할 수 있도록 하려면 엔드포인트을 통해 통신할 수 있는 Azure AD B2C 클레임 공급자로 계정을 정의 해야 합니다. 엔드포인트는 Azure AD B2C에서 사용하는 일련의 클레임을 제공하여 특정 사용자가 인증했는지 확인합니다.
 
 정책의 확장 파일에서 **ClaimsProvider** 요소를 추가하여 Azure AD를 클레임 공급자로 정의할 수 있습니다.
 
@@ -121,7 +121,7 @@ Microsoft 계정 사용자에 대 한 로그인을 사용 하도록 설정 하�
 
 계속 하기 전에 수정 된 정책을 업로드 하 여 지금까지 문제가 발생 하지 않았는지 확인 합니다.
 
-1. Azure Portal에서 Azure AD B2C 테 넌 트로 이동 하 여 **Id 경험 프레임 워크**를 선택 합니다.
+1. Azure Portal에서 Azure AD B2C 테넌트로 이동 하 여 **Id 경험 프레임 워크**를 선택 합니다.
 1. **사용자 지정 정책** 페이지에서 **사용자 지정 정책 업로드**를 선택 합니다.
 1. **정책이 있는 경우 덮어쓰기**를 사용하도록 설정하고 *TrustFrameworkExtensions.xml* 파일을 찾아서 선택합니다.
 1. **업로드**를 클릭합니다.
@@ -140,7 +140,7 @@ Microsoft 계정 사용자에 대 한 로그인을 사용 하도록 설정 하�
 
 ### <a name="display-the-button"></a>단추 표시
 
-**ClaimsProviderSelection** 요소는 등록 또는 로그인 화면의 ID 공급자 단추와 비슷합니다. Microsoft 계정에 대 한 **ClaimsProviderSelection** 요소를 추가 하면 사용자가 페이지를 이동할 때 새 단추가 표시 됩니다.
+**ClaimsProviderSelection** 요소는 등록 또는 로그인 화면의 ID 공급자 단추와 비슷합니다. Microsoft 계정에 대한 **ClaimsProviderSelection** 요소를 추가 하면 사용자가 페이지를 이동할 때 새 단추가 표시 됩니다.
 
 1. 앞에서 만든 사용자 경험의 `Order="1"`이 포함된 **OrchestrationStep** 요소를 *TrustFrameworkExtensions.xml* 파일에서 찾습니다.
 1. **ClaimsProviderSelects** 아래에 다음 요소를 추가합니다. **TargetClaimsExchangeId** 값을 적절한 값(예: `MicrosoftAccountExchange`)으로 설정합니다.
@@ -166,7 +166,7 @@ Microsoft 계정 사용자에 대 한 로그인을 사용 하도록 설정 하�
 
 ## <a name="create-an-azure-ad-b2c-application"></a>Azure AD B2C 애플리케이션 만들기
 
-Azure AD B2C와의 통신은 B2C 테 넌 트에 등록 하는 응용 프로그램을 통해 발생 합니다. 이 섹션에는 아직 만들지 않은 경우 테스트 애플리케이션을 만들기 위해 완료할 수 있는 선택적 단계가 나와 있습니다.
+Azure AD B2C와의 통신은 B2C 테넌트에 등록 하는 응용 프로그램을 통해 발생 합니다. 이 섹션에는 아직 만들지 않은 경우 테스트 애플리케이션을 만들기 위해 완료할 수 있는 선택적 단계가 나와 있습니다.
 
 [!INCLUDE [active-directory-b2c-appreg-idp](../../includes/active-directory-b2c-appreg-idp.md)]
 

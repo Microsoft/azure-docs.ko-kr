@@ -14,14 +14,14 @@ ms.locfileid: "75708311"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Azure Container Registry에 대해 자주 묻는 질문
 
-이 문서에서는 Azure Container Registry에 대 한 질문과 대답을 다룹니다.
+이 문서에서는 Azure Container Registry에 대한 질문과 대답을 다룹니다.
 
 ## <a name="resource-management"></a>리소스 관리
 
 - [리소스 관리자 템플릿을 사용 하 여 Azure container registry를 만들 수 있나요?](#can-i-create-an-azure-container-registry-using-a-resource-manager-template)
 - [ACR에서 이미지를 검색 하는 보안 취약성이 있나요?](#is-there-security-vulnerability-scanning-for-images-in-acr)
 - [Azure Container Registry를 사용 하 여 Kubernetes를 구성 어떻게 할까요??](#how-do-i-configure-kubernetes-with-azure-container-registry)
-- [컨테이너 레지스트리에 대 한 관리자 자격 증명을 가져올 어떻게 할까요? 있나요?](#how-do-i-get-admin-credentials-for-a-container-registry)
+- [컨테이너 레지스트리에 대한 관리자 자격 증명을 가져올 어떻게 할까요? 있나요?](#how-do-i-get-admin-credentials-for-a-container-registry)
 - [리소스 관리자 템플릿에서 관리자 자격 증명을 가져올 어떻게 할까요? 있나요?](#how-do-i-get-admin-credentials-in-a-resource-manager-template)
 - [Azure CLI 또는 Azure PowerShell를 사용 하 여 복제를 삭제 하더라도 복제 삭제가 거부 된 상태로 실패 합니다.](#delete-of-replication-fails-with-forbidden-status-although-the-replication-gets-deleted-using-the-azure-cli-or-azure-powershell)
 - [방화벽 규칙이 성공적으로 업데이트 되었지만 적용 되지 않습니다.](#firewall-rules-are-updated-successfully-but-they-do-not-take-effect)
@@ -36,9 +36,9 @@ ms.locfileid: "75708311"
 
 ### <a name="how-do-i-configure-kubernetes-with-azure-container-registry"></a>Azure Container Registry를 사용 하 여 Kubernetes를 구성 어떻게 할까요??
 
-[Azure Kubernetes Service](../aks/cluster-container-registry-integration.md)의 [Kubernetes](https://kubernetes.io/docs/user-guide/images/#using-azure-container-registry-acr) 및 단계에 대 한 설명서를 참조 하세요.
+[Azure Kubernetes Service](../aks/cluster-container-registry-integration.md)의 [Kubernetes](https://kubernetes.io/docs/user-guide/images/#using-azure-container-registry-acr) 및 단계에 대한 설명서를 참조 하세요.
 
-### <a name="how-do-i-get-admin-credentials-for-a-container-registry"></a>컨테이너 레지스트리에 대 한 관리자 자격 증명을 가져올 어떻게 할까요? 있나요?
+### <a name="how-do-i-get-admin-credentials-for-a-container-registry"></a>컨테이너 레지스트리에 대한 관리자 자격 증명을 가져올 어떻게 할까요? 있나요?
 
 > [!IMPORTANT]
 > 관리자 사용자 계정은 단일 사용자가 레지스트리에 액세스 하도록 설계 되었습니다. 주로 테스트 목적으로 사용 됩니다. 관리자 계정 자격 증명을 여러 사용자와 공유하지 않는 것이 좋습니다. 헤드리스 시나리오의 경우 사용자 및 서비스 주체는 개별 ID를 사용하는 것이 좋습니다. [인증 개요](container-registry-authentication.md)를 참조 하세요.
@@ -82,7 +82,7 @@ Invoke-AzureRmResourceAction -Action listCredentials -ResourceType Microsoft.Con
 
 ### <a name="delete-of-replication-fails-with-forbidden-status-although-the-replication-gets-deleted-using-the-azure-cli-or-azure-powershell"></a>Azure CLI 또는 Azure PowerShell를 사용 하 여 복제를 삭제 하더라도 복제 삭제가 거부 된 상태로 실패 합니다.
 
-사용자에 게 레지스트리에 대 한 사용 권한이 있지만 구독에 대 한 읽기 권한자 수준 권한이 없는 경우 오류가 표시 됩니다. 이 문제를 해결 하려면 사용자에 게 구독에 대 한 구독자 권한을 할당 합니다.
+사용자에 게 레지스트리에 대한 사용 권한이 있지만 구독에 대한 읽기 권한자 수준 권한이 없는 경우 오류가 표시 됩니다. 이 문제를 해결 하려면 사용자에 게 구독에 대한 구독자 권한을 할당 합니다.
 
 
 ```azurecli  
@@ -103,7 +103,7 @@ az role assignment create --role "Reader" --assignee user@contoso.com --scope /s
 - [컨테이너에서 CLI를 실행할 때 내 레지스트리를 사용 하 여 인증 어떻게 할까요??](#how-do-i-authenticate-with-my-registry-when-running-the-cli-in-a-container)
 - [TLS 1.2을 사용 하도록 설정 하는 방법](#how-to-enable-tls-12)
 - [Azure Container Registry 콘텐츠 신뢰를 지원 하나요?](#does-azure-container-registry-support-content-trust)
-- [레지스트리 리소스를 관리할 수 있는 권한 없이 풀 또는 푸시 이미지에 대 한 액세스 권한을 부여 어떻게 할까요??](#how-do-i-grant-access-to-pull-or-push-images-without-permission-to-manage-the-registry-resource)
+- [레지스트리 리소스를 관리할 수 있는 권한 없이 풀 또는 푸시 이미지에 대한 액세스 권한을 부여 어떻게 할까요??](#how-do-i-grant-access-to-pull-or-push-images-without-permission-to-manage-the-registry-resource)
 - [레지스트리에 대해 자동 이미지 격리를 사용 하도록 설정 어떻게 할까요?](#how-do-i-enable-automatic-image-quarantine-for-a-registry)
 
 ### <a name="how-do-i-access-docker-registry-http-api-v2"></a>Docker 레지스트리 HTTP API v 2에 액세스 어떻게 할까요??
@@ -186,7 +186,7 @@ az acr login -n MyRegistry
 최신 docker 클라이언트 (버전 18.03.0 이상)를 사용 하 여 TLS 1.2을 사용 하도록 설정 합니다. 
 
 > [!IMPORTANT]
-> 2020 년 1 월 13 일부 터 Azure Container Registry TLS 1.2을 사용 하려면 서버 및 응용 프로그램에서 모든 보안 연결이 필요 합니다. TLS 1.0 및 1.1에 대 한 지원은 사용이 중지 됩니다.
+> 2020 년 1 월 13 일부 터 Azure Container Registry TLS 1.2을 사용 하려면 서버 및 응용 프로그램에서 모든 보안 연결이 필요 합니다. TLS 1.0 및 1.1에 대한 지원은 사용이 중지 됩니다.
 
 ### <a name="does-azure-container-registry-support-content-trust"></a>Azure Container Registry는 콘텐츠 신뢰를 지원하나요?
 
@@ -198,11 +198,11 @@ az acr login -n MyRegistry
 `~/.docker/trust/tuf/myregistry.azurecr.io/myrepository/metadata`에서 다음을 수행 합니다.
 
 * 모든 역할의 공개 키와 인증서 (위임 역할 제외)는 `root.json`에 저장 됩니다.
-* 위임 역할의 공개 키 및 인증서는 부모 역할의 JSON 파일에 저장 됩니다 (예: `targets/releases` 역할에 대 한 `targets.json`).
+* 위임 역할의 공개 키 및 인증서는 부모 역할의 JSON 파일에 저장 됩니다 (예: `targets/releases` 역할에 대한 `targets.json`).
 
 Docker 및 Notary 클라이언트에서 수행 하는 전체 전체를 확인 한 후 해당 공개 키와 인증서를 확인 하는 것이 좋습니다.
 
-### <a name="how-do-i-grant-access-to-pull-or-push-images-without-permission-to-manage-the-registry-resource"></a>레지스트리 리소스를 관리할 수 있는 권한 없이 풀 또는 푸시 이미지에 대 한 액세스 권한을 부여 어떻게 할까요??
+### <a name="how-do-i-grant-access-to-pull-or-push-images-without-permission-to-manage-the-registry-resource"></a>레지스트리 리소스를 관리할 수 있는 권한 없이 풀 또는 푸시 이미지에 대한 액세스 권한을 부여 어떻게 할까요??
 
 ACR은 다양 한 수준의 사용 권한을 제공 하는 [사용자 지정 역할](container-registry-roles.md) 을 지원 합니다. 특히 `AcrPull` 및 `AcrPush` 역할을 통해 사용자는 Azure에서 레지스트리 리소스를 관리할 수 있는 권한 없이 이미지를 끌어오거나 푸시할 수 있습니다.
 
@@ -273,7 +273,7 @@ ACR은 다양 한 수준의 사용 권한을 제공 하는 [사용자 지정 역
 
  - 이 오류가 일시적인 문제인 경우 다시 시도는 성공 합니다.
  - `docker pull` 지속적으로 실패 하면 Docker 디먼에 문제가 있을 수 있습니다. 일반적으로 Docker 디먼을 다시 시작 하 여 문제를 완화할 수 있습니다. 
- - Docker 디먼을 다시 시작한 후에도이 문제가 계속 되 면이 문제는 컴퓨터의 네트워크 연결에 문제가 있을 수 있습니다. 컴퓨터의 일반 네트워크가 정상 상태 인지 확인 하려면 다음 명령을 실행 하 여 끝점 연결을 테스트 합니다. 이 연결 확인 명령을 포함 하는 최소 `az acr` 버전은 2.2.9입니다. 이전 버전을 사용 하는 경우 Azure CLI를 업그레이드 합니다.
+ - Docker 디먼을 다시 시작한 후에도이 문제가 계속 되 면이 문제는 컴퓨터의 네트워크 연결에 문제가 있을 수 있습니다. 컴퓨터의 일반 네트워크가 정상 상태 인지 확인 하려면 다음 명령을 실행 하 여 엔드포인트 연결을 테스트 합니다. 이 연결 확인 명령을 포함 하는 최소 `az acr` 버전은 2.2.9입니다. 이전 버전을 사용 하는 경우 Azure CLI를 업그레이드 합니다.
  
    ```azurecli
     az acr check-health -n myRegistry
@@ -288,7 +288,7 @@ ACR은 다양 한 수준의 사용 권한을 제공 하는 [사용자 지정 역
 
 ### <a name="docker-push-succeeds-but-docker-pull-fails-with-error-unauthorized-authentication-required"></a>Docker push는 성공 하지만 오류가 발생 하 docker pull 실패 합니다. 권한이 없음: 인증 필요
 
-이 오류는 Docker 디먼의 Red Hat 버전에서 발생할 수 있습니다. 여기서 `--signature-verification`는 기본적으로 사용 하도록 설정 되어 있습니다. 다음 명령을 실행 하 여 Red Hat Enterprise Linux (RHEL) 또는 Fedora에 대 한 Docker 디먼 옵션을 확인할 수 있습니다.
+이 오류는 Docker 디먼의 Red Hat 버전에서 발생할 수 있습니다. 여기서 `--signature-verification`는 기본적으로 사용 하도록 설정 되어 있습니다. 다음 명령을 실행 하 여 Red Hat Enterprise Linux (RHEL) 또는 Fedora에 대한 Docker 디먼 옵션을 확인할 수 있습니다.
 
 ```bash
 grep OPTIONS /etc/sysconfig/docker
@@ -319,7 +319,7 @@ unauthorized: authentication required
   sudo systemctl restart docker.service
   ```
 
-`man dockerd`를 실행 하 여 `--signature-verification`에 대 한 세부 정보를 찾을 수 있습니다.
+`man dockerd`를 실행 하 여 `--signature-verification`에 대한 세부 정보를 찾을 수 있습니다.
 
 ### <a name="az-acr-login-succeeds-but-docker-fails-with-error-unauthorized-authentication-required"></a>az acr login은 성공 하지만 docker는 다음 오류로 인해 실패: 권한 없음: 인증 필요
 
@@ -346,7 +346,7 @@ sudo service docker restart
  * 로그는 시스템에 따라 다른 위치에서 생성 될 수 있습니다. 예를 들어 Ubuntu 14.04의 경우 `/var/log/upstart/docker.log`됩니다.   
 자세한 내용은 [Docker 설명서](https://docs.docker.com/engine/admin/#read-the-logs) 를 참조 하세요.    
 
- * Windows용 Docker에 대 한 로그 는% LOCALAPPDATA%/docker/. 아래에 생성 됩니다. 그러나 일부 디버그 정보는 아직 포함 되지 않을 수 있습니다.   
+ * Windows용 Docker에 대한 로그 는% LOCALAPPDATA%/docker/. 아래에 생성 됩니다. 그러나 일부 디버그 정보는 아직 포함 되지 않을 수 있습니다.   
 
    전체 데몬 로그에 액세스 하기 위해 몇 가지 추가 단계가 필요할 수 있습니다.
 
@@ -363,7 +363,7 @@ sudo service docker restart
 서비스 사용자에 게 새 권한 (새 역할)을 부여 하면 변경 내용이 즉시 적용 되지 않을 수 있습니다. 가능한 두 가지 이유는 다음과 같습니다.
 
 * Azure Active Directory 역할 할당 지연입니다. 일반적으로 속도가 빠르며 전파 지연으로 인해 몇 분 정도 걸릴 수 있습니다.
-* ACR 토큰 서버에 대 한 사용 권한 지연입니다. 최대 10분이 걸릴 수 있습니다. 이를 완화 하려면 1 분 후에 동일한 사용자를 사용 하 여 다시 `docker logout` 다음 인증을 수행 하면 됩니다.
+* ACR 토큰 서버에 대한 사용 권한 지연입니다. 최대 10분이 걸릴 수 있습니다. 이를 완화 하려면 1 분 후에 동일한 사용자를 사용 하 여 다시 `docker logout` 다음 인증을 수행 하면 됩니다.
 
   ```bash
   docker logout myregistry.azurecr.io
@@ -455,7 +455,7 @@ Docker vm 가상 스위치의 ip를 찾습니다.
 (Get-NetIPAddress -InterfaceAlias "*Docker*" -AddressFamily IPv4).IPAddress
 ```
 
-이전 명령의 출력 및 포트 8888 (예: 10.0.75.1:8888)에 대 한 Docker 프록시를 구성 합니다.
+이전 명령의 출력 및 포트 8888 (예: 10.0.75.1:8888)에 대한 Docker 프록시를 구성 합니다.
 
 ## <a name="tasks"></a>작업
 
@@ -500,7 +500,7 @@ az acr task list-runs -r $myregistry --run-status Running --query '[].runId' -o 
 
 | 오류 메시지 | 문제 해결 가이드 |
 |---|---|
-|VM에 대 한 액세스가 구성 되지 않았으므로 구독을 찾을 수 없습니다.|ACR 작업에서 `az login --identity`를 사용 하는 경우 발생할 수 있습니다. 이 오류는 일시적인 오류 이며 관리 되는 Id의 역할 할당이 전파 되지 않은 경우에 발생 합니다. 몇 초 후에 작업을 다시 시도 합니다.|
+|VM에 대한 액세스가 구성 되지 않았으므로 구독을 찾을 수 없습니다.|ACR 작업에서 `az login --identity`를 사용 하는 경우 발생할 수 있습니다. 이 오류는 일시적인 오류 이며 관리 되는 Id의 역할 할당이 전파 되지 않은 경우에 발생 합니다. 몇 초 후에 작업을 다시 시도 합니다.|
 
 ## <a name="cicd-integration"></a>CI/CD 통합
 

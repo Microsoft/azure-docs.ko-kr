@@ -139,8 +139,8 @@ Media Services v3은 라이브 이벤트의 라이브 선형 인코딩의 24 시
 
 이제 Azure Monitor를 사용 하 여 Media Services에서 내보낸 원격 분석 데이터를 볼 수 있습니다.
 
-* Azure Monitor 진단 로그를 사용 하 여 Media Services 키 배달 끝점에서 보낸 요청을 모니터링 합니다. 
-* Media Services [스트리밍 끝점](streaming-endpoint-concept.md)에서 내보낸 메트릭을 모니터링 합니다.   
+* Azure Monitor 진단 로그를 사용 하 여 Media Services 키 배달 엔드포인트에서 보낸 요청을 모니터링 합니다. 
+* Media Services [스트리밍 엔드포인트](streaming-endpoint-concept.md)에서 내보낸 메트릭을 모니터링 합니다.   
 
 자세한 내용은 [Media Services 메트릭 및 진단 로그 모니터링](media-services-metrics-diagnostic-logs.md)을 참조 하세요.
 

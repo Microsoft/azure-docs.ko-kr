@@ -1,6 +1,6 @@
 ---
 title: 비용 분석 및 예산-Azure Batch
-description: Batch 워크 로드를 실행 하는 데 사용 되는 기본 계산 리소스 및 소프트웨어 라이선스에 대 한 비용 분석을 하 고 예산을 설정 하는 방법을 알아봅니다.
+description: Batch 워크 로드를 실행 하는 데 사용 되는 기본 계산 리소스 및 소프트웨어 라이선스에 대한 비용 분석을 하 고 예산을 설정 하는 방법을 알아봅니다.
 services: batch
 author: LauraBrenner
 manager: evansma
@@ -17,15 +17,15 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 02/05/2020
 ms.locfileid: "77022718"
 ---
-# <a name="cost-analysis-and-budgets-for-azure-batch"></a>Azure Batch에 대 한 비용 분석 및 예산
+# <a name="cost-analysis-and-budgets-for-azure-batch"></a>Azure Batch에 대한 비용 분석 및 예산
 
-일괄 작업을 실행 하는 데 사용 되는 기본 계산 리소스 및 소프트웨어 라이선스에 대 한 Azure Batch 자체 요금이 부과 되지 않습니다. 높은 수준에서 비용은 풀의 Vm (가상 머신), VM에서의 데이터 전송 또는 클라우드에 저장 된 입력 또는 출력 데이터에서 발생 합니다. 일괄 처리의 몇 가지 주요 구성 요소를 살펴보고, 비용이 발생 하는 위치, 풀 또는 계정에 대 한 예산을 설정 하는 방법 및 Batch 워크 로드를 더 비용 효율적으로 만드는 몇 가지 기법을 살펴보겠습니다.
+일괄 작업을 실행 하는 데 사용 되는 기본 계산 리소스 및 소프트웨어 라이선스에 대한 Azure Batch 자체 요금이 부과 되지 않습니다. 높은 수준에서 비용은 풀의 Vm (가상 머신), VM에서의 데이터 전송 또는 클라우드에 저장 된 입력 또는 출력 데이터에서 발생 합니다. 일괄 처리의 몇 가지 주요 구성 요소를 살펴보고, 비용이 발생 하는 위치, 풀 또는 계정에 대한 예산을 설정 하는 방법 및 Batch 워크 로드를 더 비용 효율적으로 만드는 몇 가지 기법을 살펴보겠습니다.
 
 ## <a name="batch-resources"></a>일괄 처리 리소스
 
-가상 머신은 일괄 처리에 사용 되는 가장 중요 한 리소스입니다. 일괄 처리에 대 한 Vm 사용 비용은 유형, 수량 및 사용 기간을 기준으로 계산 됩니다. VM 청구 옵션에는 [종 량](https://azure.microsoft.com/offers/ms-azr-0003p/) 제 또는 [예약](../cost-management-billing/reservations/save-compute-costs-reservations.md) (미리 지불)이 포함 됩니다. 두 지불 옵션 모두 계산 워크 로드에 따라 이점이 다르며 두 지불 모델은 모두 청구서에 다르게 영향을 줍니다.
+가상 머신은 일괄 처리에 사용 되는 가장 중요 한 리소스입니다. 일괄 처리에 대한 Vm 사용 비용은 유형, 수량 및 사용 기간을 기준으로 계산 됩니다. VM 청구 옵션에는 [종 량](https://azure.microsoft.com/offers/ms-azr-0003p/) 제 또는 [예약](../cost-management-billing/reservations/save-compute-costs-reservations.md) (미리 지불)이 포함 됩니다. 두 지불 옵션 모두 계산 워크 로드에 따라 이점이 다르며 두 지불 모델은 모두 청구서에 다르게 영향을 줍니다.
 
-응용 프로그램 [패키지](batch-application-packages.md)를 사용 하 여 응용 프로그램을 Batch 노드 (vm)에 배포 하는 경우 응용 프로그램 패키지에 사용 되는 Azure Storage 리소스에 대해 요금이 청구 됩니다. 또한 리소스 파일 및 기타 로그 데이터와 같은 입력 또는 출력 파일의 저장소에 대 한 요금이 청구 됩니다. 일반적으로 Batch와 연결 된 저장소 데이터의 비용은 계산 리소스의 비용 보다 훨씬 낮습니다. **VirtualMachineConfiguration** 를 사용 하 여 만든 풀의 각 VM에는 Azure에서 관리 되는 디스크를 사용 하는 연결 된 OS 디스크가 있습니다. Azure로 관리 되는 디스크에는 추가 비용이 포함 되 고 다른 디스크 성능 계층에는 다른 비용도 있습니다.
+응용 프로그램 [패키지](batch-application-packages.md)를 사용 하 여 응용 프로그램을 Batch 노드 (vm)에 배포 하는 경우 응용 프로그램 패키지에 사용 되는 Azure Storage 리소스에 대해 요금이 청구 됩니다. 또한 리소스 파일 및 기타 로그 데이터와 같은 입력 또는 출력 파일의 저장소에 대한 요금이 청구 됩니다. 일반적으로 Batch와 연결 된 저장소 데이터의 비용은 계산 리소스의 비용 보다 훨씬 낮습니다. **VirtualMachineConfiguration** 를 사용 하 여 만든 풀의 각 VM에는 Azure에서 관리 되는 디스크를 사용 하는 연결 된 OS 디스크가 있습니다. Azure로 관리 되는 디스크에는 추가 비용이 포함 되 고 다른 디스크 성능 계층에는 다른 비용도 있습니다.
 
 Batch 풀은 네트워킹 리소스를 사용 합니다. 특히 **VirtualMachineConfiguration** 풀의 경우 고정 IP 주소가 필요한 표준 부하 분산 장치가 사용 됩니다. Batch에서 사용 하는 부하 분산 장치는 **사용자 구독** 계정에 대해 표시 되지만 **batch 서비스** 계정에는 표시 되지 않습니다. 표준 부하 분산 장치는 Batch 풀 Vm에 전달 되는 모든 데이터에 대해 요금을 부과 합니다. 풀 노드 (예: 작업/노드 파일 가져오기)에서 데이터를 검색 하는 Batch Api, 작업 응용 프로그램 패키지, 리소스/출력 파일 및 컨테이너 이미지를 선택 하면 요금이 발생 합니다.
 
@@ -43,9 +43,9 @@ Batch와 함께 일반적으로 사용 되는 다른 서비스는 다음과 같�
 
 Batch 솔루션에서 사용 하는 서비스에 따라 추가 요금이 발생할 수 있습니다. 각 추가 서비스의 비용을 확인 하려면 [가격 계산기](https://azure.microsoft.com/pricing/calculator/) 를 참조 하세요.
 
-## <a name="cost-analysis-and-budget-for-a-pool"></a>풀에 대 한 비용 분석 및 예산
+## <a name="cost-analysis-and-budget-for-a-pool"></a>풀에 대한 비용 분석 및 예산
 
-Azure Portal를 통해 Batch 풀 또는 Batch 계정에 대 한 예산 및 지출 경고를 만들 수 있습니다. 예산과 경고는 관련자에 게 과도 한 지출 위험을 알리는 데 유용 합니다. 경고를 지출 하 고 예산을 약간 초과 하는 경우 지연이 발생할 수 있습니다. 이 예에서는 개별 Batch 풀의 비용 분석을 볼 수 있습니다.
+Azure Portal를 통해 Batch 풀 또는 Batch 계정에 대한 예산 및 지출 경고를 만들 수 있습니다. 예산과 경고는 관련자에 게 과도 한 지출 위험을 알리는 데 유용 합니다. 경고를 지출 하 고 예산을 약간 초과 하는 경우 지연이 발생할 수 있습니다. 이 예에서는 개별 Batch 풀의 비용 분석을 볼 수 있습니다.
 
 1. Azure Portal의 왼쪽 탐색 모음에서 **Cost Management + 청구** 를 선택 합니다.
 1. **내 구독** 섹션에서 구독을 선택 합니다.
@@ -56,9 +56,9 @@ Azure Portal를 통해 Batch 풀 또는 Batch 계정에 대 한 예산 및 지�
 
 결과 비용 분석은이 비용에 영향을 주는 리소스 뿐만 아니라 풀의 비용을 보여 줍니다. 이 예에서 풀에서 사용 되는 Vm은 가장 비용이 많이 드는 리소스입니다.
 
-풀에 대 한 예산을 만들려면 **예산: 없음**을 선택 하 고 **새 예산 > 만들기**를 선택 합니다. 이제이 창을 사용 하 여 풀에 대해 특별히 예산을 구성 합니다.
+풀에 대한 예산을 만들려면 **예산: 없음**을 선택 하 고 **새 예산 > 만들기**를 선택 합니다. 이제이 창을 사용 하 여 풀에 대해 특별히 예산을 구성 합니다.
 
-예산을 구성 하는 방법에 대 한 자세한 내용은 [Azure 예산 만들기 및 관리](../cost-management-billing/costs/tutorial-acm-create-budgets.md)를 참조 하세요.
+예산을 구성 하는 방법에 대한 자세한 내용은 [Azure 예산 만들기 및 관리](../cost-management-billing/costs/tutorial-acm-create-budgets.md)를 참조 하세요.
 
 > [!NOTE]
 > Azure Batch는 Azure Cloud Services 및 Azure Virtual Machines 기술을 기반으로 빌드됩니다. **Cloud Services 구성을**선택 하면 Cloud Services 가격 책정 구조에 따라 요금이 청구 됩니다. **가상 컴퓨터 구성을**선택 하면 Virtual Machines 가격 책정 구조에 따라 요금이 청구 됩니다. 이 페이지의 예제에서는 **가상 머신 구성을**사용 합니다.
@@ -87,7 +87,7 @@ Batch를 사용 하 [여 우선 순위가 낮은 Vm 사용](batch-low-pri-vms.md
 
 [자동 크기 조정은](batch-automatic-scaling.md) 현재 작업의 요구에 따라 Batch 풀의 vm 수를 동적으로 조정 합니다. 자동 크기 조정은 작업 수명에 따라 풀의 크기를 조정 하 여 수행할 작업이 있는 경우에만 Vm의 크기를 조정 하 고 사용할 수 있도록 합니다. 작업이 완료 되거나 작업이 없으면 Vm이 자동으로 축소 되어 계산 리소스를 저장 합니다. 크기 조정을 사용 하면 필요한 리소스만 사용 하 여 Batch 솔루션의 전체 비용을 낮출 수 있습니다.
 
-자동 크기 조정에 대 한 자세한 내용은 [Azure Batch 풀에서 자동으로 계산 노드 크기 조정](batch-automatic-scaling.md)을 참조 하세요.
+자동 크기 조정에 대한 자세한 내용은 [Azure Batch 풀에서 자동으로 계산 노드 크기 조정](batch-automatic-scaling.md)을 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -111,13 +111,13 @@ Azure Active Directory를 사용 하 여 각 명령에 SAS 토큰을 추가 하�
 azcopy login
 ```
 
-둘 이상의 조직에 속한 경우 저장소 계정이 속한 조직의 테 넌 트 ID를 포함 합니다.
+둘 이상의 조직에 속한 경우 저장소 계정이 속한 조직의 테넌트 ID를 포함 합니다.
 
 ```azcopy
 azcopy login --tenant-id=<tenant-id>
 ```
 
-`<tenant-id>` 자리 표시자를 저장소 계정이 속한 조직의 테 넌 트 ID로 바꿉니다. 테 넌 트 ID를 찾으려면 Azure Portal에서 **디렉터리 id > Azure Active Directory > 속성** 을 선택 합니다.
+`<tenant-id>` 자리 표시자를 저장소 계정이 속한 조직의 테넌트 ID로 바꿉니다. 테넌트 ID를 찾으려면 Azure Portal에서 **디렉터리 id > Azure Active Directory > 속성** 을 선택 합니다.
 
 이 명령은 웹 사이트의 인증 코드와 URL을 반환합니다. 웹 사이트를 열고, 코드를 입력하고, **다음** 단추를 선택합니다.
 
@@ -161,7 +161,7 @@ $env:AZCOPY_SPA_CLIENT_SECRET="$(Read-Host -prompt "Enter key")"
 azcopy login --service-principal --application-id <application-id> --tenant-id=<tenant-id>
 ```
 
-`<application-id>` 자리 표시자를 서비스 사용자의 앱 등록에 대 한 응용 프로그램 ID로 바꿉니다. `<tenant-id>` 자리 표시자를 저장소 계정이 속한 조직의 테 넌 트 ID로 바꿉니다. 테 넌 트 ID를 찾으려면 Azure Portal에서 **디렉터리 id > Azure Active Directory > 속성** 을 선택 합니다. 
+`<application-id>` 자리 표시자를 서비스 사용자의 앱 등록에 대 한 응용 프로그램 ID로 바꿉니다. `<tenant-id>` 자리 표시자를 저장소 계정이 속한 조직의 테넌트 ID로 바꿉니다. 테넌트 ID를 찾으려면 Azure Portal에서 **디렉터리 id > Azure Active Directory > 속성** 을 선택 합니다. 
 
 ##### <a name="using-a-certificate"></a>인증서 사용
 
@@ -186,7 +186,7 @@ $env:AZCOPY_SPA_CERT_PASSWORD="$(Read-Host -prompt "Enter key")"
 azcopy login --service-principal --certificate-path <path-to-certificate-file> --tenant-id=<tenant-id>
 ```
 
-`<path-to-certificate-file>` 자리 표시자를 인증서 파일의 상대 또는 정규화 된 경로로 바꿉니다. AzCopy는이 인증서에 대 한 경로를 저장 하지만 인증서 복사본을 저장 하지 않으므로 해당 인증서를 그대로 유지 해야 합니다. `<tenant-id>` 자리 표시자를 저장소 계정이 속한 조직의 테 넌 트 ID로 바꿉니다. 테 넌 트 ID를 찾으려면 Azure Portal에서 **디렉터리 id > Azure Active Directory > 속성** 을 선택 합니다.
+`<path-to-certificate-file>` 자리 표시자를 인증서 파일의 상대 또는 정규화 된 경로로 바꿉니다. AzCopy는이 인증서에 대 한 경로를 저장 하지만 인증서 복사본을 저장 하지 않으므로 해당 인증서를 그대로 유지 해야 합니다. `<tenant-id>` 자리 표시자를 저장소 계정이 속한 조직의 테넌트 ID로 바꿉니다. 테넌트 ID를 찾으려면 Azure Portal에서 **디렉터리 id > Azure Active Directory > 속성** 을 선택 합니다.
 
 > [!NOTE]
 > 이 예제에 나와 있는 것 처럼 프롬프트를 사용 하는 것이 좋습니다. 이렇게 하면 사용자의 암호가 콘솔의 명령 기록에 표시 되지 않습니다. 

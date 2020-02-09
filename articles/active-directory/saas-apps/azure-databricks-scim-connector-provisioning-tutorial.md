@@ -38,7 +38,7 @@ ms.locfileid: "77050448"
 
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
-* [Azure AD 테 넌 트](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
+* [Azure AD 테넌트](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
 * 프로 비전을 구성할 수 있는 [권한이](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) 있는 Azure AD의 사용자 계정 (예: 응용 프로그램 관리자, 클라우드 응용 프로그램 관리자, 응용 프로그램 소유자 또는 전역 관리자). 
 * 관리자 권한이 있는 Azure Databricks 계정
 
@@ -49,7 +49,7 @@ ms.locfileid: "77050448"
 
 ## <a name="step-2-configure-azure-databricks-scim-connector-to-support-provisioning-with-azure-ad"></a>2단계. Azure AD를 사용 하 여 프로 비전을 지원 하도록 Azure Databricks SCIM 커넥터 구성
 
-1. SCIM 프로 비전 Azure Databricks 설정 하려면 Azure Active Directory 테 넌 트에서 리소스로 추가 하 고 아래 설정을 사용 하 여 구성 합니다.
+1. SCIM 프로 비전 Azure Databricks 설정 하려면 Azure Active Directory 테넌트에서 리소스로 추가 하 고 아래 설정을 사용 하 여 구성 합니다.
 
     ![설치 Azure Databricks](./media/azure-databricks-scim-provisioning-connector-provisioning-tutorial/setup.png)
 
@@ -75,7 +75,7 @@ Azure AD 프로 비전 서비스를 사용 하면 응용 프로그램에 대 한
 이 섹션에서는 azure ad의 사용자 및/또는 그룹 할당에 따라 TestApp의 사용자 및/또는 그룹을 만들고, 업데이트 하 고, 비활성화 하도록 Azure AD 프로 비전 서비스를 구성 하는 단계를 안내 합니다.
 
 > [!NOTE]
-> Azure Databricks ' SCIM 끝점에 대 한 자세한 내용은 [다음](https://docs.databricks.com/dev-tools/api/latest/scim.html
+> Azure Databricks ' SCIM 엔드포인트에 대 한 자세한 내용은 [다음](https://docs.databricks.com/dev-tools/api/latest/scim.html
 )을 참조 하세요.
 
 ### <a name="to-configure-automatic-user-provisioning-for-azure-databricks-scim-connector-in-azure-ad"></a>Azure AD에서 Azure Databricks SCIM 커넥터에 대 한 자동 사용자 프로 비전을 구성 하려면:

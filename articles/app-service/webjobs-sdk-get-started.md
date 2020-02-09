@@ -15,7 +15,7 @@ ms.locfileid: "75640845"
 ---
 # <a name="get-started-with-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>이벤트 중심 백그라운드 처리를 위한 Azure WebJobs SDK 시작
 
-이 문서에서는 Visual Studio 2019을 사용 하 여 Azure WebJobs SDK 프로젝트를 만들고 로컬로 실행 한 다음 [Azure App Service](overview.md)에 배포 하는 방법을 보여 줍니다. WebJobs SDK의 버전 3(sp3)은 .NET Core와 .NET Framework 콘솔 앱을 모두 지원 합니다. WebJobs SDK로 작업 하는 방법에 대 한 자세한 내용은 [이벤트 기반 백그라운드 처리를 위해 AZURE WEBJOBS sdk를 사용 하는 방법](webjobs-sdk-how-to.md)을 참조 하세요.
+이 문서에서는 Visual Studio 2019을 사용 하 여 Azure WebJobs SDK 프로젝트를 만들고 로컬로 실행 한 다음 [Azure App Service](overview.md)에 배포 하는 방법을 보여 줍니다. WebJobs SDK의 버전 3(sp3)은 .NET Core와 .NET Framework 콘솔 앱을 모두 지원 합니다. WebJobs SDK로 작업 하는 방법에 대한 자세한 내용은 [이벤트 기반 백그라운드 처리를 위해 AZURE WEBJOBS sdk를 사용 하는 방법](webjobs-sdk-how-to.md)을 참조 하세요.
 
 이 문서에서는 WebJobs을 .NET Core 콘솔 앱으로 배포 하는 방법을 보여 줍니다. WebJobs를 .NET Framework 콘솔 앱으로 배포 하려면 [WebJobs as .NET Framework console apps](webjobs-dotnet-deploy-vs.md#webjobs-as-net-framework-console-apps)를 참조 하세요. .NET Framework 지 원하는 WebJobs SDK 버전 2.x에 관심이 있는 경우 [Visual Studio를 사용 하 여 WebJobs 개발 및 배포-Azure App Service](webjobs-dotnet-deploy-vs.md)를 참조 하세요.
 
@@ -47,7 +47,7 @@ ms.locfileid: "75640845"
 
 ## <a name="create-the-host"></a>호스트 만들기
 
-호스트는 트리거를 수신 하 고 함수를 호출 하는 함수에 대 한 런타임 컨테이너입니다. 다음 단계에서는 ASP.NET Core의 일반 호스트인 [`IHost`](/dotnet/api/microsoft.extensions.hosting.ihost)를 구현 하는 호스트를 만듭니다.
+호스트는 트리거를 수신 하 고 함수를 호출 하는 함수에 대한 런타임 컨테이너입니다. 다음 단계에서는 ASP.NET Core의 일반 호스트인 [`IHost`](/dotnet/api/microsoft.extensions.hosting.ihost)를 구현 하는 호스트를 만듭니다.
 
 1. *Program.cs*에 `using` 문을 추가합니다.
 
@@ -137,7 +137,7 @@ ASP.NET Core에서 호스트 구성은 [`HostBuilder`](/dotnet/api/microsoft.ext
 
 1. [Microsoft.Azure.WebJobs.Extensions.Storage](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.Storage) NuGet 패키지의 안정적인 최신 버전인 버전 3.x를 설치합니다. 
 
-    3\.0.4 버전에 대 한 **패키지 관리자 콘솔** 명령은 다음과 같습니다.
+    3\.0.4 버전에 대한 **패키지 관리자 콘솔** 명령은 다음과 같습니다.
 
     ```powershell
     Install-Package Microsoft.Azure.WebJobs.Extensions.Storage -Version 3.0.4

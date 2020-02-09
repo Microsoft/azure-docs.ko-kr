@@ -35,7 +35,7 @@ ms.locfileid: "77058445"
 이 자습서에 설명 된 시나리오에서는 다음과 같은 것으로 가정 합니다.
 
 * Azure AD 테넌트.
-* Cornerstone OnDemand 테 넌 트입니다.
+* Cornerstone OnDemand 테넌트입니다.
 * 관리자 권한이 있는 Cornerstone OnDemand의 사용자 계정
 
 > [!NOTE]
@@ -99,11 +99,11 @@ Azure AD에서 Cornerstone OnDemand에 대 한 자동 사용자 프로 비전을
 
 5. **관리자 자격 증명** 섹션 아래에 Cornerstone OnDemand 계정의 관리자 사용자 이름, 관리자 암호 및 도메인을 입력 합니다.
 
-    * **관리자 사용자 이름** 상자에서 Cornerstone OnDemand 테 넌 트의 관리자 계정에 대 한 도메인 또는 사용자 이름을 입력 합니다. 예는 contoso\admin.
+    * **관리자 사용자 이름** 상자에서 Cornerstone OnDemand 테넌트의 관리자 계정에 대 한 도메인 또는 사용자 이름을 입력 합니다. 예는 contoso\admin.
 
     * **관리자 암호** 상자에 관리자 사용자 이름에 해당 하는 암호를 입력 합니다.
 
-    * **도메인** 상자에서 Cornerstone OnDemand 테 넌 트의 웹 서비스 URL을 입력 합니다. 예를 들어 서비스는 `https://ws-[corpname].csod.com/feed30/clientdataservice.asmx`에 있으며 Contoso의 경우 도메인은 `https://ws-contoso.csod.com/feed30/clientdataservice.asmx`됩니다. 웹 서비스 URL을 검색 하는 방법에 대 한 자세한 내용은 [이 pdf](https://help.csod.com/help/csod_0/Content/Resources/Documents/WebServices/CSOD_Web_Services_-_User-OU_Technical_Specification_v20160222.pdf)를 참조 하세요.
+    * **도메인** 상자에서 Cornerstone OnDemand 테넌트의 웹 서비스 URL을 입력 합니다. 예를 들어 서비스는 `https://ws-[corpname].csod.com/feed30/clientdataservice.asmx`에 있으며 Contoso의 경우 도메인은 `https://ws-contoso.csod.com/feed30/clientdataservice.asmx`됩니다. 웹 서비스 URL을 검색 하는 방법에 대 한 자세한 내용은 [이 pdf](https://help.csod.com/help/csod_0/Content/Resources/Documents/WebServices/CSOD_Web_Services_-_User-OU_Technical_Specification_v20160222.pdf)를 참조 하세요.
 
 6. 5 단계에 표시 된 상자를 입력 한 후 **연결 테스트** 를 선택 하 여 Azure AD가 Cornerstone OnDemand에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Cornerstone OnDemand 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
 

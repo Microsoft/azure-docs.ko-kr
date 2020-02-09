@@ -1,5 +1,5 @@
 ---
-title: Azure SignalR Service에 대 한 액세스 키를 회전 하는 방법
+title: Azure SignalR Service에 대한 액세스 키를 회전 하는 방법
 description: 고객이 정기적으로 액세스 키를 회전해야 하는 이유 및 Azure Portal GUI와 Azure CLI를 사용하여 액세스 키를 회전하는 방법에 대한 개요입니다.
 author: sffamily
 ms.service: signalr
@@ -13,7 +13,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 07/04/2019
 ms.locfileid: "67565738"
 ---
-# <a name="how-to-rotate-access-key-for-azure-signalr-service"></a>Azure SignalR Service에 대 한 액세스 키를 회전 하는 방법
+# <a name="how-to-rotate-access-key-for-azure-signalr-service"></a>Azure SignalR Service에 대한 액세스 키를 회전 하는 방법
 
 각 Azure SignalR Service 인스턴스는 기본 키와 보조 키라고 하는 액세스 키 쌍을 갖고 있습니다. 두 키는 서비스에 요청을 만들 때 SignalR 클라이언트를 인증하는 데 사용됩니다. 키는 인스턴스 엔드포인트 URL과 연결됩니다. 키를 안전하게 보호하고 정기적으로 회전해야 합니다. 두 개의 액세스 키가 제공되므로 한 키를 다시 생성하는 동안 다른 키를 사용하여 연결을 유지할 수 있습니다.
 

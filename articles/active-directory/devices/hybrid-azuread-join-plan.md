@@ -73,7 +73,7 @@ Windows 데스크톱 운영 체제를 실행 하는 장치의 경우 지원 되�
 
 ## <a name="review-things-you-should-know"></a>알아야 할 사항 검토
 
-사용자 환경이 여러 Azure AD 테 넌 트에 id 데이터를 동기화 하는 단일 AD 포리스트로 구성 된 경우에는 하이브리드 Azure AD 조인이 현재 지원 되지 않습니다.
+사용자 환경이 여러 Azure AD 테넌트에 id 데이터를 동기화 하는 단일 AD 포리스트로 구성 된 경우에는 하이브리드 Azure AD 조인이 현재 지원 되지 않습니다.
 
 사용자 환경에서 VDI (가상 데스크톱 인프라)를 사용 하는 경우 [장치 id 및 데스크톱 가상화](https://docs.microsoft.com/azure/active-directory/devices/howto-device-identity-virtual-desktop-infrastructure)를 참조 하세요.
 
@@ -87,7 +87,7 @@ Windows 데스크톱 운영 체제를 실행 하는 장치의 경우 지원 되�
 
 VM (가상 머신) 스냅숏을 사용 하 여 추가 Vm을 만드는 경우, Azure AD에 이미 등록 된 VM의 스냅숏이 하이브리드 Azure AD 조인으로 사용 되지 않는지 확인 합니다.
 
-Windows 10 도메인 가입 장치가 테 넌 트에 [등록 된 azure](overview.md#getting-devices-in-azure-ad) ad 인 경우 하이브리드 azure ad 조인 및 azure ad 등록 장치의 이중 상태가 될 수 있습니다. 이 시나리오를 자동으로 해결 하려면 Windows 10 1803 (KB4489894 적용 됨) 이상으로 업그레이드 하는 것이 좋습니다. 1803 이전 버전에서는 하이브리드 Azure AD 조인을 사용 하도록 설정 하기 전에 Azure AD 등록 상태를 수동으로 제거 해야 합니다. 1803 이상 릴리스에서는 이러한 이중 상태를 방지 하기 위해 다음과 같이 변경 되었습니다.
+Windows 10 도메인 가입 장치가 테넌트에 [등록 된 azure](overview.md#getting-devices-in-azure-ad) ad 인 경우 하이브리드 azure ad 조인 및 azure ad 등록 장치의 이중 상태가 될 수 있습니다. 이 시나리오를 자동으로 해결 하려면 Windows 10 1803 (KB4489894 적용 됨) 이상으로 업그레이드 하는 것이 좋습니다. 1803 이전 버전에서는 하이브리드 Azure AD 조인을 사용 하도록 설정 하기 전에 Azure AD 등록 상태를 수동으로 제거 해야 합니다. 1803 이상 릴리스에서는 이러한 이중 상태를 방지 하기 위해 다음과 같이 변경 되었습니다.
 
 - 모든 기존 Azure AD 등록 상태는 <i>장치가 하이브리드 AZURE ad에 가입 된 후</i>자동으로 제거 됩니다.
 - 이 레지스트리 키 (HKLM\SOFTWARE\Policies\Microsoft\Windows\WorkplaceJoin, "BlockAADWorkplaceJoin" = dword: 00000001)를 추가 하 여 도메인 가입 장치가 Azure AD에 등록 되지 않도록 할 수 있습니다.
@@ -98,7 +98,7 @@ Windows 10 도메인 가입 장치가 테 넌 트에 [등록 된 azure](overview
 
 ## <a name="review-controlled-validation-of-hybrid-azure-ad-join"></a>하이브리드 Azure AD 조인에 대 한 제어 된 유효성 검사 검토
 
-모든 필수 구성 요소가 준비 되 면 Windows 장치가 자동으로 Azure AD 테 넌 트에 장치로 등록 됩니다. Azure AD에서 이러한 장치 id의 상태를 하이브리드 Azure AD 조인 이라고 합니다. 이 문서에서 다루는 개념에 대 한 자세한 내용은 [Azure Active Directory의 장치 id 관리 소개](overview.md)문서에서 찾을 수 있습니다.
+모든 필수 구성 요소가 준비 되 면 Windows 장치가 자동으로 Azure AD 테넌트에 장치로 등록 됩니다. Azure AD에서 이러한 장치 id의 상태를 하이브리드 Azure AD 조인 이라고 합니다. 이 문서에서 다루는 개념에 대 한 자세한 내용은 [Azure Active Directory의 장치 id 관리 소개](overview.md)문서에서 찾을 수 있습니다.
 
 조직에서는 전체 조직에서 한 번에 사용 하도록 설정 하기 전에 하이브리드 Azure AD 조인에 대 한 제어 된 유효성 검사를 수행할 수 있습니다. [하이브리드 AZURE AD 조인에 대 한 제어 된 유효성 검사](hybrid-azuread-join-control.md) 문서를 검토 하 여이를 수행 하는 방법을 이해 합니다.
 

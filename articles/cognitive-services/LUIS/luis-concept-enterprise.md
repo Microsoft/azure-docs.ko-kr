@@ -39,7 +39,7 @@ LUIS app request rate가 허용 된 [할당량](https://azure.microsoft.com/pric
 
 단일 앱을 마스터로 지정합니다. 검토를 위해 제안된 모든 발화는 마스터 앱에 추가된 다음, 다시 다른 모든 앱으로 이동되어야 합니다. 이것은 앱의 전체 내보내기이거나 마스터에서 자식으로 레이블이 지정된 발화를 로드하는 것입니다. [단일 발언](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c08) 또는 [일괄 처리](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09)를 위해 [LUIS](luis-reference-regions.md) 웹 사이트 또는 작성 API에서 로드할 수 있습니다. 
 
-활성 학습에 대 한 [끝점 길이 발언](luis-how-to-review-endpoint-utterances.md) 의 모든 2 주마다 정기적으로 검토 한 다음 다시 학습 및 다시 게시를 예약 합니다. 
+활성 학습에 대 한 [엔드포인트 길이 발언](luis-how-to-review-endpoint-utterances.md) 의 모든 2 주마다 정기적으로 검토 한 다음 다시 학습 및 다시 게시를 예약 합니다. 
 
 ### <a name="assign-multiple-luis-keys-to-same-app"></a>동일한 앱에 여러 LUIS 키 할당
 LUIS 앱이 단일 키 할당량이 허용하는 것보다 많은 엔드포인트 적중 횟수를 수신하는 경우, 더 많은 키를 만들고 LUIS 앱에 할당합니다. 트래픽 관리자 또는 부하 분산 디바이스를 만들어 여러 엔드포인트 키에서 엔드포인트 쿼리를 관리합니다. 

@@ -1,6 +1,6 @@
 ---
 title: Azure 앱 구성 키-값 저장소
-description: 구성 데이터가 Azure 앱 구성에 저장 되는 방식에 대 한 개요입니다.
+description: 구성 데이터가 Azure 앱 구성에 저장 되는 방식에 대한 개요입니다.
 author: lisaguthrie
 ms.author: lcozzens
 ms.service: azure-app-configuration

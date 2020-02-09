@@ -84,8 +84,8 @@ ms.locfileid: "68356153"
 
 Azure 데이터 센터에서 장치를 받은 후에는 장치에서 손상이 나 변조 징후가 검사 됩니다.
 
-- 장치가 그대로 도착 하 고 좋은 모양으로 청구 되 면 해당 리소스에 대 한 청구 측정기가 중지 됩니다. Microsoft 지원는 장치가 반환 되었는지 확인 하기 위해 사용자에 게 연락 합니다. 그런 다음 Azure Portal 장치와 연결 된 리소스를 삭제할 수 있습니다.
-- 장치가 심각한 손상에 도달 하면 벌금가 적용 될 수 있습니다. 자세한 내용은 [분실 또는 손상 된 장치](https://azure.microsoft.com/pricing/details/databox/edge/) 및 [제품 서비스 약관](https://www.microsoft.com/licensing/product-licensing/products)에 대 한 FAQ를 참조 하십시오.  
+- 장치가 그대로 도착 하 고 좋은 모양으로 청구 되 면 해당 리소스에 대한 청구 측정기가 중지 됩니다. Microsoft 지원는 장치가 반환 되었는지 확인 하기 위해 사용자에 게 연락 합니다. 그런 다음 Azure Portal 장치와 연결 된 리소스를 삭제할 수 있습니다.
+- 장치가 심각한 손상에 도달 하면 벌금가 적용 될 수 있습니다. 자세한 내용은 [분실 또는 손상 된 장치](https://azure.microsoft.com/pricing/details/databox/edge/) 및 [제품 서비스 약관](https://www.microsoft.com/licensing/product-licensing/products)에 대한 FAQ를 참조 하십시오.  
 
 
 Azure Portal에서 장치를 삭제할 수 있습니다.
@@ -111,8 +111,8 @@ Azure Portal에서 장치 및 리소스를 삭제 하려면 다음 단계를 수
 
 기존 장치에 하드웨어 오류가 있거나 업그레이드가 필요한 경우 교체 장치가 필요 합니다. 장치에 하드웨어 문제가 있는 경우 다음 단계를 수행 합니다.
 
-1. [하드웨어 문제에 대 한 지원 티켓을 엽니다](#open-a-support-ticket). Microsoft 지원는이 인스턴스에 대해 FRU (필드 대체 단위)를 사용할 수 없거나 장치에 하드웨어 업그레이드가 필요한 지 여부를 결정 합니다. 두 경우 모두 지원에서 대체 장치를 주문 합니다.
-2. 교체 장치에 대 한 [새 리소스를 만듭니다](data-box-edge-deploy-prep.md#create-a-new-resource) . **Data Box Edge 장치**에 대 한 확인란을 선택 해야 합니다. 
+1. [하드웨어 문제에 대한 지원 티켓을 엽니다](#open-a-support-ticket). Microsoft 지원는이 인스턴스에 대해 FRU (필드 대체 단위)를 사용할 수 없거나 장치에 하드웨어 업그레이드가 필요한 지 여부를 결정 합니다. 두 경우 모두 지원에서 대체 장치를 주문 합니다.
+2. 교체 장치에 대한 [새 리소스를 만듭니다](data-box-edge-deploy-prep.md#create-a-new-resource) . **Data Box Edge 장치**에 대한 확인란을 선택 해야 합니다. 
 3. 교체 장치를 받은 후에는 새 리소스에 대해 교체 장치를 [설치](data-box-edge-deploy-install.md) 하 고 [활성화](data-box-edge-deploy-connect-setup-activate.md) 합니다.
 4. 모든 단계를 수행 하 여 원래 장치를 반환 합니다.
     1. 다른 티켓을 열어 원래 장치를 반환 합니다.

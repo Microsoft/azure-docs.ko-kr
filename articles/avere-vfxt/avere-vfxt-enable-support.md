@@ -15,7 +15,7 @@ ms.locfileid: "75415361"
 ---
 # <a name="enable-support-uploads"></a>지원 업로드 사용
 
-Avere vFXT for Azure는 클러스터에 대 한 지원 데이터를 자동으로 업로드할 수 있습니다. 이러한 업로드를 통해 지원 담당자는 가능한 최고의 고객 서비스를 제공합니다.
+Avere vFXT for Azure는 클러스터에 대한 지원 데이터를 자동으로 업로드할 수 있습니다. 이러한 업로드를 통해 지원 담당자는 가능한 최고의 고객 서비스를 제공합니다.
 
 ## <a name="steps-to-enable-uploads"></a>업로드를 사용하도록 설정하는 단계
 

@@ -78,7 +78,7 @@ Azure AD는 응용 프로그램 갤러리 메뉴에 제공 된 템플릿을 사�
 
 ### <a name="solution-architectures"></a>솔루션 아키텍처
 
-Azure AD 프로 비전 서비스는 각 응용 프로그램 공급 업체에서 제공 하는 사용자 관리 API 끝점에 연결 하 여 SaaS 앱 및 기타 시스템에 사용자를 프로 비전 합니다. 이러한 사용자 관리 API 엔드포인트를 사용하면 Azure AD에서 프로그래밍 방식으로 사용자를 만들고, 업데이트하고, 제거할 수 있습니다.
+Azure AD 프로 비전 서비스는 각 응용 프로그램 공급 업체에서 제공 하는 사용자 관리 API 엔드포인트에 연결 하 여 SaaS 앱 및 기타 시스템에 사용자를 프로 비전 합니다. 이러한 사용자 관리 API 엔드포인트를 사용하면 Azure AD에서 프로그래밍 방식으로 사용자를 만들고, 업데이트하고, 제거할 수 있습니다.
 
 #### <a name="automatic-user-provisioning-for-hybrid-enterprises"></a>하이브리드 기업을 위한 자동 사용자 프로 비전
 
@@ -112,17 +112,17 @@ Azure AD 프로 비전 서비스는 각 응용 프로그램 공급 업체에서 
 
 #### <a name="automatic-user-provisioning-for-cloud-hr-applications"></a>클라우드 HR 응용 프로그램에 대 한 자동 사용자 프로 비전 
 
-이 예제에서는 사용자 및 또는 그룹이 Workday 및 SuccessFactors와 같은 클라우드 HR 응용 프로그램에 생성 됩니다. Azure AD 프로 비전 서비스 및 Azure AD Connect 프로 비전 에이전트는 클라우드 HR 앱 테 넌 트에서 사용자 데이터를 AD로 프로 비전 합니다. AD에서 계정이 업데이트 된 후에는 Azure AD Connect를 통해 Azure AD와 동기화 되며, 메일 주소 및 사용자 이름 특성을 클라우드 HR 앱 테 넌 트에 다시 쓸 수 있습니다.
+이 예제에서는 사용자 및 또는 그룹이 Workday 및 SuccessFactors와 같은 클라우드 HR 응용 프로그램에 생성 됩니다. Azure AD 프로 비전 서비스 및 Azure AD Connect 프로 비전 에이전트는 클라우드 HR 앱 테넌트에서 사용자 데이터를 AD로 프로 비전 합니다. AD에서 계정이 업데이트 된 후에는 Azure AD Connect를 통해 Azure AD와 동기화 되며, 메일 주소 및 사용자 이름 특성을 클라우드 HR 앱 테넌트에 다시 쓸 수 있습니다.
 
 ![그림 2](./media/plan-auto-user-provisioning/workdayprovisioning.png)
 
-1.  **Hr 팀** 은 cloud hr 앱 테 넌 트에서 트랜잭션을 수행 합니다.
-2.  **AZURE ad 프로 비전 서비스** 는 클라우드 HR 앱 테 넌 트에서 예약 된 주기를 실행 하 고 AD와 동기화 하기 위해 처리 해야 하는 변경 내용을 식별 합니다.
+1.  **Hr 팀** 은 cloud hr 앱 테넌트에서 트랜잭션을 수행 합니다.
+2.  **AZURE ad 프로 비전 서비스** 는 클라우드 HR 앱 테넌트에서 예약 된 주기를 실행 하 고 AD와 동기화 하기 위해 처리 해야 하는 변경 내용을 식별 합니다.
 3.  **AZURE ad 프로 비전 서비스** 는 ad 계정 만들기/업데이트/사용/사용 안 함 작업을 포함 하는 요청 페이로드를 사용 하 여 Azure AD Connect 프로 비전 에이전트를 호출 합니다.
 4.  **Azure AD Connect 프로 비전 에이전트** 는 서비스 계정을 사용 하 여 AD 계정 데이터를 관리 합니다.
 5.  **Azure AD Connect** 는 델타 동기화를 실행 하 여 AD에서 업데이트를 가져옵니다.
 6.  **Ad** 업데이트는 Azure ad와 동기화 됩니다. 
-7.  **AZURE ad 프로 비전 서비스** 는 azure ad에서 클라우드 HR 앱 테 넌 트로 메일 특성 및 사용자 이름을 쓰기 저장 합니다.
+7.  **AZURE ad 프로 비전 서비스** 는 azure ad에서 클라우드 HR 앱 테넌트로 메일 특성 및 사용자 이름을 쓰기 저장 합니다.
 
 ## <a name="plan-the-deployment-project"></a>배포 프로젝트 계획
 
@@ -168,7 +168,7 @@ Azure AD 포털을 사용 하 여 프로 비전을 지 원하는 모든 응용 �
 
 ### <a name="collect-information-to-authorize-application-access"></a>응용 프로그램 액세스 권한을 부여 하는 정보 수집
 
-자동 사용자 프로 비전을 설정 하는 작업은 응용 프로그램 별로입니다. 각 응용 프로그램에 대해 대상 시스템의 사용자 관리 끝점에 연결 하려면 [관리자 자격 증명](../app-provisioning/configure-automatic-user-provisioning-portal.md) 을 제공 해야 합니다.
+자동 사용자 프로 비전을 설정 하는 작업은 응용 프로그램 별로입니다. 각 응용 프로그램에 대해 대상 시스템의 사용자 관리 엔드포인트에 연결 하려면 [관리자 자격 증명](../app-provisioning/configure-automatic-user-provisioning-portal.md) 을 제공 해야 합니다.
 
 아래 이미지는 필수 관리자 자격 증명의 한 가지 버전을 보여 줍니다.
 

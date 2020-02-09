@@ -168,15 +168,15 @@ sudo chmod -R 700 <blob-dir>
 
 만드는 스토리지 요청의 Blob 엔드포인트로 IoT Edge 디바이스를 지정합니다. 구성한 IoT Edge 디바이스 정보 및 계정 이름을 사용하여 [명시적 스토리지 엔드포인트에 대한 연결 문자열을 만들 수 있습니다](../storage/common/storage-configure-connection-string.md#create-a-connection-string-for-an-explicit-storage-endpoint).
 
-* IoT Edge 모듈의 Azure Blob Storage와 동일한 장치에 배포 된 모듈의 경우 Blob 끝점은 `http://<module name>:11002/<account name>`입니다.
-* 다른 장치에서 실행 되는 모듈 또는 응용 프로그램의 경우 네트워크에 적합 한 끝점을 선택 해야 합니다. 네트워크 설정에 따라 외부 모듈이 나 응용 프로그램의 데이터 트래픽이 IoT Edge 모듈의 Azure Blob Storage를 실행 하는 장치에 도달할 수 있도록 끝점 형식을 선택 합니다. 이 시나리오에 대 한 blob 끝점은 다음 중 하나입니다.
+* IoT Edge 모듈의 Azure Blob Storage와 동일한 장치에 배포 된 모듈의 경우 Blob 엔드포인트은 `http://<module name>:11002/<account name>`입니다.
+* 다른 장치에서 실행 되는 모듈 또는 응용 프로그램의 경우 네트워크에 적합 한 엔드포인트을 선택 해야 합니다. 네트워크 설정에 따라 외부 모듈이 나 응용 프로그램의 데이터 트래픽이 IoT Edge 모듈의 Azure Blob Storage를 실행 하는 장치에 도달할 수 있도록 엔드포인트 형식을 선택 합니다. 이 시나리오에 대 한 blob 엔드포인트은 다음 중 하나입니다.
   * `http://<device IP >:11002/<account name>`
   * `http://<IoT Edge device hostname>:11002/<account name>`
   * `http://<fully qualified domain name>:11002/<account name>`
 
 ## <a name="azure-blob-storage-quickstart-samples"></a>Azure Blob Storage 빠른 시작 샘플
 
-Azure Blob Storage 설명서에는 여러 언어의 빠른 시작 샘플 코드가 포함 되어 있습니다. 이러한 샘플을 실행 하면 blob 끝점을 변경 하 여 로컬 blob Storage 모듈에 연결 하 여 IoT Edge에서 Azure Blob Storage를 테스트할 수 있습니다.
+Azure Blob Storage 설명서에는 여러 언어의 빠른 시작 샘플 코드가 포함 되어 있습니다. 이러한 샘플을 실행 하면 blob 엔드포인트을 변경 하 여 로컬 blob Storage 모듈에 연결 하 여 IoT Edge에서 Azure Blob Storage를 테스트할 수 있습니다.
 
 다음 퀵 스타트 샘플에서는 IoT Edge 에서도 지원 되는 언어를 사용 하므로 blob storage 모듈과 함께 IoT Edge 모듈로 배포할 수 있습니다.
 
@@ -212,7 +212,7 @@ Azure Blob Storage 설명서에는 여러 언어의 빠른 시작 샘플 코드�
 
 ## <a name="supported-storage-operations"></a>지원되는 스토리지 작업
 
-IoT Edge의 blob storage 모듈은 Azure Storage Sdk를 사용 하며, 블록 blob 끝점에 대 한 Azure Storage API의 2017-04-17 버전과 일치 합니다.
+IoT Edge의 blob storage 모듈은 Azure Storage Sdk를 사용 하며, 블록 blob 엔드포인트에 대 한 Azure Storage API의 2017-04-17 버전과 일치 합니다.
 
 IoT Edge Azure Blob Storage에서 모든 Azure Blob Storage 작업을 지원 하지 않기 때문에이 섹션에는 각 작업의 상태가 나열 됩니다.
 

@@ -95,7 +95,7 @@ HANA Large Instances를 배포 하는 데 필요한 일부 IP 주소 범위가 �
 궁극적으로 Microsoft에 제출 해야 하는 IP 주소 범위 (선택 사항)입니다.
 
 - [Express 경로 Global Reach](https://docs.microsoft.com/azure/expressroute/expressroute-global-reach) 를 사용 하 여 온-프레미스에서 HANA 대량 인스턴스 단위로 직접 라우팅하는 기능을 사용 하도록 선택 하는 경우 다른/29 IP 주소 범위를 예약 해야 합니다. 이 범위는 이전에 정의한 다른 IP 주소 범위와 겹칠 수 없습니다.
-- [Express 경로 Global Reach](https://docs.microsoft.com/azure/expressroute/expressroute-global-reach) 를 사용 하 여 한 AZURE 지역의 HANA large instance 테 넌 트에서 다른 azure 지역의 다른 Hana large instance 테 넌 트로 직접 라우팅하는 기능을 사용 하도록 선택 하는 경우 다른/29 IP 주소 범위를 예약 해야 합니다. 이 범위는 이전에 정의한 다른 IP 주소 범위와 겹칠 수 없습니다.
+- [Express 경로 Global Reach](https://docs.microsoft.com/azure/expressroute/expressroute-global-reach) 를 사용 하 여 한 AZURE 지역의 HANA large instance 테넌트에서 다른 azure 지역의 다른 Hana large instance 테넌트로 직접 라우팅하는 기능을 사용 하도록 선택 하는 경우 다른/29 IP 주소 범위를 예약 해야 합니다. 이 범위는 이전에 정의한 다른 IP 주소 범위와 겹칠 수 없습니다.
 
 Express 경로 Global Reach에 대 한 자세한 내용과 HANA large instances를 사용 하는 방법에 대 한 자세한 내용은 문서를 참조 하세요.
 

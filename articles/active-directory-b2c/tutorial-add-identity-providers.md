@@ -46,12 +46,12 @@ ID 공급자 애플리케이션은 Azure AD B2C 테넌트와 통신할 수 있�
 Azure AD에서 사용자 로그인을 허용하려면 Azure AD 테넌트 내에 애플리케이션을 등록해야 합니다. Azure AD 테넌트는 Azure AD B2C 테넌트와 다릅니다.
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
-1. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 azure ad 테 넌 트가 포함 된 디렉터리를 선택 하 여 azure ad 테 넌 트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다.
+1. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 azure ad 테넌트가 포함 된 디렉터리를 선택 하 여 azure ad 테넌트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다.
 1. Azure Portal의 왼쪽 상단 모서리에서 **모든 서비스**를 선택한 다음, **앱 등록**을 검색하여 선택합니다.
 1. **새 등록**을 선택합니다.
 1. 애플리케이션의 이름을 입력합니다. `Azure AD B2C App`)을 입력합니다.
 1. 이 응용 프로그램에 대해서 **만이 조직 디렉터리에서 선택한 계정** 에 동의 합니다.
-1. **리디렉션 URI**의 경우 **웹** 의 값을 그대로 사용 하 고, `your-B2C-tenant-name`를 Azure AD B2C 테 넌 트의 이름으로 대체 하 여 모든 소문자에 다음 URL을 입력 합니다.
+1. **리디렉션 URI**의 경우 **웹** 의 값을 그대로 사용 하 고, `your-B2C-tenant-name`를 Azure AD B2C 테넌트의 이름으로 대체 하 여 모든 소문자에 다음 URL을 입력 합니다.
 
     ```
     https://your-B2C-tenant-name.b2clogin.com/your-B2C-tenant-name.onmicrosoft.com/oauth2/authresp
@@ -63,7 +63,7 @@ Azure AD에서 사용자 로그인을 허용하려면 Azure AD 테넌트 내에 
 
 1. **등록**을 선택 하 고 이후 단계에서 사용 하는 **응용 프로그램 (클라이언트) ID** 를 기록 합니다.
 1. 응용 프로그램 메뉴의 **관리** 에서 **인증서 & 암호**를 선택한 다음 **새 클라이언트 암호**를 선택 합니다.
-1. 클라이언트 암호에 대 한 **설명을** 입력 합니다. `Azure AD B2C App Secret`)을 입력합니다.
+1. 클라이언트 암호에 대한 **설명을** 입력 합니다. `Azure AD B2C App Secret`)을 입력합니다.
 1. 만료 기간을 선택 합니다. 이 응용 프로그램의 경우 **1 년의**선택 항목을 수락 합니다.
 1. **추가**를 선택한 다음 이후 단계에서 사용 하는 새 클라이언트 암호의 값을 기록 합니다.
 
@@ -80,10 +80,10 @@ Azure AD B2C의 ID 공급자로 Facebook 계정을 사용하려면 Facebook에�
 1. `Business and Pages` 등의 **범주**를 선택합니다. 이 값은 Facebook에 필요 하지만 Azure AD B2C에서 사용 되지 않습니다.
 1. 페이지의 맨 아래에서 **플랫폼 추가**를 선택한 후 **웹 사이트**를 선택합니다.
 1. **사이트 URL**에 `https://your-tenant-name.b2clogin.com/`을 입력합니다. 여기서 `your-tenant-name`은 실제 테넌트의 이름으로 바꾸세요.
-1. **개인 정보 취급 방침 URL**의 URL(예: `http://www.contoso.com/`)을 입력합니다. 개인 정보 취급 방침 URL은 응용 프로그램에 대 한 개인 정보를 제공 하기 위해 유지 관리 하는 페이지입니다.
+1. **개인 정보 취급 방침 URL**의 URL(예: `http://www.contoso.com/`)을 입력합니다. 개인 정보 취급 방침 URL은 응용 프로그램에 대한 개인 정보를 제공 하기 위해 유지 관리 하는 페이지입니다.
 1. **변경 내용 저장**을 선택합니다.
 1. 페이지 맨 위에서 **앱 ID**값을 기록 합니다.
-1. **앱 비밀**옆의 값 **표시** 및 기록을 선택 합니다. 앱 ID 및 앱 암호를 모두 사용 하 여 테 넌 트에서 Facebook을 id 공급자로 구성 합니다. **앱 비밀** 은 안전 하 게 저장 해야 하는 중요 한 보안 자격 증명입니다.
+1. **앱 비밀**옆의 값 **표시** 및 기록을 선택 합니다. 앱 ID 및 앱 암호를 모두 사용 하 여 테넌트에서 Facebook을 id 공급자로 구성 합니다. **앱 비밀** 은 안전 하 게 저장 해야 하는 중요 한 보안 자격 증명입니다.
 1. **제품**옆에 있는 더하기 기호를 선택 하 고 **Facebook 로그인**아래에서 **설정**을 선택 합니다.
 1. 왼쪽 메뉴의 **Facebook 로그인** 아래에서 **설정**을 선택 합니다.
 1. **유효한 OAuth 리디렉션 URI**에 `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp`를 입력합니다. `your-tenant-name`을 테넌트 이름으로 바꿉니다. 페이지 맨 아래에 있는 **변경 내용 저장** 을 선택 합니다.
@@ -95,11 +95,11 @@ Azure AD B2C의 ID 공급자로 Facebook 계정을 사용하려면 Facebook에�
 
 ### <a name="add-the-azure-active-directory-identity-provider"></a>Azure Active Directory ID 공급자 추가
 
-1. Azure AD B2C 테 넌 트가 포함 된 디렉터리를 사용 하 고 있는지 확인 합니다. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 Azure AD B2C 테 넌 트를 포함 하는 디렉터리를 선택 합니다.
+1. Azure AD B2C 테넌트가 포함 된 디렉터리를 사용 하 고 있는지 확인 합니다. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 Azure AD B2C 테넌트를 포함 하는 디렉터리를 선택 합니다.
 1. Azure Portal의 왼쪽 상단 모서리에서 **모든 서비스**를 선택하고 **Azure AD B2C**를 검색하여 선택합니다.
 1. **Id 공급자**를 선택한 다음 **New openid connect Connect 공급자**를 선택 합니다.
 1. **이름**을 입력합니다. 예를 들어 *Contoso Azure AD*를 입력합니다.
-1. **메타 데이터 url**에 대해 `your-AD-tenant-domain`를 Azure AD 테 넌 트의 도메인 이름으로 바꾸는 다음 url을 입력 합니다.
+1. **메타 데이터 url**에 대해 `your-AD-tenant-domain`를 Azure AD 테넌트의 도메인 이름으로 바꾸는 다음 url을 입력 합니다.
 
     ```
     https://login.microsoftonline.com/your-AD-tenant-domain/.well-known/openid-configuration
@@ -109,8 +109,8 @@ Azure AD B2C의 ID 공급자로 Facebook 계정을 사용하려면 Facebook에�
 
 1. **클라이언트 id**에 대해 이전에 기록한 응용 프로그램 id를 입력 합니다.
 1. **클라이언트 암호**에 대해 이전에 기록한 클라이언트 암호를 입력 합니다.
-1. **범위**, **응답 유형**및 **응답 모드**에 대 한 기본값을 그대로 둡니다.
-1. 필드 **Domain_hint**에 대 한 값을 입력 합니다. 예를 들면 *ContosoAD*입니다. [도메인 힌트](../active-directory/manage-apps/configure-authentication-for-federated-users-portal.md) 는 응용 프로그램의 인증 요청에 포함 된 지시문입니다. 페더레이션된 IdP 로그인 페이지로 사용자를 빠르게 보내는 데 사용할 수 있습니다. 또는 다중 테넌트 애플리케이션에서 테넌트에 대한 브랜딩 Azure AD 로그인 페이지로 사용자를 바로 보내는 데 사용될 수 있습니다.
+1. **범위**, **응답 유형**및 **응답 모드**에 대한 기본값을 그대로 둡니다.
+1. 필드 **Domain_hint**에 대한 값을 입력 합니다. 예를 들면 *ContosoAD*입니다. [도메인 힌트](../active-directory/manage-apps/configure-authentication-for-federated-users-portal.md) 는 응용 프로그램의 인증 요청에 포함 된 지시문입니다. 페더레이션된 IdP 로그인 페이지로 사용자를 빠르게 보내는 데 사용할 수 있습니다. 또는 다중 테넌트 애플리케이션에서 테넌트에 대한 브랜딩 Azure AD 로그인 페이지로 사용자를 바로 보내는 데 사용될 수 있습니다.
 1. **Id 공급자 클레임 매핑**아래에서 다음 클레임 매핑 값을 입력 합니다.
 
     * **사용자 ID**: *oid*

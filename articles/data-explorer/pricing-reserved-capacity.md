@@ -14,21 +14,21 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/15/2020
 ms.locfileid: "75969278"
 ---
-# <a name="prepay-for-azure-data-explorer-markup-units-with-azure-data-explorer-reserved-capacity"></a>Azure 데이터 탐색기 예약 된 용량을 사용 하 여 Azure 데이터 탐색기 태그 단위에 대 한 선불
+# <a name="prepay-for-azure-data-explorer-markup-units-with-azure-data-explorer-reserved-capacity"></a>Azure 데이터 탐색기 예약 된 용량을 사용 하 여 Azure 데이터 탐색기 태그 단위에 대한 선불
 
-종 량 제 가격과 비교 하 여 태그 단위를 총액 하 여 Azure 데이터 탐색기로 비용을 절감 하세요. Azure 데이터 탐색기 reserved capacity를 사용 하 여 azure 데이터 탐색기 태그 비용에 대해 상당한 할인을 얻기 위해 1 년 또는 3 년 동안 Azure 데이터 탐색기에 대 한 약정을 설정 합니다. Azure 데이터 탐색기 reserved capacity를 구매 하려면 용어를 지정 하기만 하면 모든 지역에서 Azure 데이터 탐색기의 모든 배포에 적용 됩니다.
+종 량 제 가격과 비교 하 여 태그 단위를 총액 하 여 Azure 데이터 탐색기로 비용을 절감 하세요. Azure 데이터 탐색기 reserved capacity를 사용 하 여 azure 데이터 탐색기 태그 비용에 대해 상당한 할인을 얻기 위해 1 년 또는 3 년 동안 Azure 데이터 탐색기에 대한 약정을 설정 합니다. Azure 데이터 탐색기 reserved capacity를 구매 하려면 용어를 지정 하기만 하면 모든 지역에서 Azure 데이터 탐색기의 모든 배포에 적용 됩니다.
 
-예약을 구매 하면 1 년 또는 3 년 동안 태그 비용을 미리 지불 하 게 됩니다. 예약을 구매 하는 즉시, 예약 특성과 일치 하는 Azure 데이터 탐색기 태그 요금은 더 이상 종 량 제 요금으로 청구 되지 않습니다. 이미 실행 중인 Azure 데이터 탐색기 클러스터 또는 새로 배포 된 클러스터는 자동으로 혜택을 받게 됩니다. 이 예약에는 클러스터와 연결 된 계산, 네트워킹 또는 저장소 요금이 포함 되지 않습니다. 이러한 리소스에 대 한 예약 된 용량은 별도로 구입 해야 합니다. 예약 기간이 끝나면 청구 혜택이 만료 되며 Azure 데이터 탐색기 태그 단위는 종 량 제 요금으로 청구 됩니다. 예약은 자동 갱신 되지 않습니다. 가격 책정 정보는 [Azure 데이터 탐색기 가격 책정 페이지](https://azure.microsoft.com/pricing/details/data-explorer/)를 참조 하세요.
+예약을 구매 하면 1 년 또는 3 년 동안 태그 비용을 미리 지불 하 게 됩니다. 예약을 구매 하는 즉시, 예약 특성과 일치 하는 Azure 데이터 탐색기 태그 요금은 더 이상 종 량 제 요금으로 청구 되지 않습니다. 이미 실행 중인 Azure 데이터 탐색기 클러스터 또는 새로 배포 된 클러스터는 자동으로 혜택을 받게 됩니다. 이 예약에는 클러스터와 연결 된 계산, 네트워킹 또는 저장소 요금이 포함 되지 않습니다. 이러한 리소스에 대한 예약 된 용량은 별도로 구입 해야 합니다. 예약 기간이 끝나면 청구 혜택이 만료 되며 Azure 데이터 탐색기 태그 단위는 종 량 제 요금으로 청구 됩니다. 예약은 자동 갱신 되지 않습니다. 가격 책정 정보는 [Azure 데이터 탐색기 가격 책정 페이지](https://azure.microsoft.com/pricing/details/data-explorer/)를 참조 하세요.
 
 [Azure Portal](https://portal.azure.com)에서 Azure 데이터 탐색기 reserved capacity를 구매할 수 있습니다. Azure 데이터 탐색기 예약 된 용량을 구매 하려면 다음을 수행 합니다.
 
 * 하나 이상의 Enterprise 또는 종 량 제 구독 소유자 여야 합니다.
-* Enterprise 구독의 경우 [EA 포털](https://ea.azure.com)에서 **예약 인스턴스 추가**를 활성화해야 합니다. 또는 해당 설정을 사용 하지 않도록 설정한 경우에는 구독에 대 한 EA 관리자 여야 합니다.
+* Enterprise 구독의 경우 [EA 포털](https://ea.azure.com)에서 **예약 인스턴스 추가**를 활성화해야 합니다. 또는 해당 설정을 사용 하지 않도록 설정한 경우에는 구독에 대한 EA 관리자 여야 합니다.
 * CSP (클라우드 솔루션 공급자) 프로그램의 경우 관리 에이전트 또는 판매 에이전트만 Azure 데이터 탐색기 예약 된 용량을 구매할 수 있습니다.
 
-엔터프라이즈 고객과 종 량 제 고객이 예약 구매에 대해 부과 하는 방법에 대 한 자세한 내용은 다음을 참조 하세요.
-* [기업 등록에 대 한 Azure 예약 사용량 이해](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md) 
-* [종 량 제 구독에 대 한 Azure 예약 사용량을 이해](../cost-management-billing/reservations/understand-reserved-instance-usage.md)합니다.
+엔터프라이즈 고객과 종 량 제 고객이 예약 구매에 대해 부과 하는 방법에 대한 자세한 내용은 다음을 참조 하세요.
+* [기업 등록에 대한 Azure 예약 사용량 이해](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md) 
+* [종 량 제 구독에 대한 Azure 예약 사용량을 이해](../cost-management-billing/reservations/understand-reserved-instance-usage.md)합니다.
 
 ## <a name="determine-the-right-markup-usage-before-purchase"></a>구매 하기 전에 올바른 태그 사용 확인
 
@@ -38,7 +38,7 @@ ms.locfileid: "75969278"
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
 1. **모든 서비스** > **예약** > **지금 구입**을 선택 합니다. **추가**를 선택합니다.
-1. **제품 유형 선택** 창에서 azure **데이터 탐색기** 를 선택 하 여 azure 데이터 탐색기 태그 단위에 대 한 새 예약을 구매 합니다. 
+1. **제품 유형 선택** 창에서 azure **데이터 탐색기** 를 선택 하 여 azure 데이터 탐색기 태그 단위에 대한 새 예약을 구매 합니다. 
 1. **구매** 선택
 1. 필수 필드를 입력합니다. 
 
@@ -54,7 +54,7 @@ Azure 데이터 탐색기 예약 된 용량 예약을 취소 해야 하는 경�
 
 Azure 데이터 탐색기 예약 된 용량 예약을 다른 용어로 변경 해야 하는 경우 값이 같거나 큰 다른 예약에 대해 교환할 수 있습니다. 새 예약에 대한 기간 시작일은 교환된 예약에서 이월되지 않습니다. 새 예약을 만들 때 1년 또는 3년의 기간이 시작됩니다. 교환을 요청하려면 Azure Portal의 예약으로 이동하고, **교환**을 선택하여 지원 요청을 만듭니다.
 
-예약을 교환 하거나 환불 하는 방법에 대 한 자세한 내용은 [예약 교환 및 환불](../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md)을 참조 하세요.
+예약을 교환 하거나 환불 하는 방법에 대한 자세한 내용은 [예약 교환 및 환불](../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md)을 참조 하세요.
 
 ## <a name="manage-your-reserved-capacity-reservation"></a>예약 된 용량 예약 관리
 

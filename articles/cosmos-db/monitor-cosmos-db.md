@@ -31,24 +31,24 @@ Azure 서비스를 모니터링 하는 방법을 잘 모르는 경우 다음을 
 
 다음 섹션에서는 Azure Cosmos DB에서 수집한 특정 데이터를 설명 하 고 Azure tools를 사용 하 여 데이터 수집을 구성 하 고이 데이터를 분석 하기 위한 예제를 제공 하 여이 문서를 작성 합니다.
 
-## <a name="azure-monitor-for-cosmos-db-preview"></a>Cosmos DB에 대 한 Azure Monitor (미리 보기)
-[Azure Cosmos DB에 대 한 Azure Monitor](../azure-monitor/insights/cosmosdb-insights-overview.md) [Azure Monitor의 통합 문서 기능](../azure-monitor/app/usage-workbooks.md) 을 기반으로 하며 아래 섹션에 설명 된 Cosmos DB에 대해 수집 된 것과 동일한 모니터링 데이터를 사용 합니다. 이 도구를 사용 하 여 통합 된 대화형 환경에서 모든 Azure Cosmos DB 리소스의 전반적인 성능, 오류, 용량 및 운영 상태를 확인 하 고 자세한 분석 및 경고를 위해 Azure Monitor의 다른 기능을 활용 합니다. 
+## <a name="azure-monitor-for-cosmos-db-preview"></a>Cosmos DB에 대한 Azure Monitor (미리 보기)
+[Azure Cosmos DB에 대한 Azure Monitor](../azure-monitor/insights/cosmosdb-insights-overview.md) [Azure Monitor의 통합 문서 기능](../azure-monitor/app/usage-workbooks.md) 을 기반으로 하며 아래 섹션에 설명 된 Cosmos DB에 대해 수집 된 것과 동일한 모니터링 데이터를 사용 합니다. 이 도구를 사용 하 여 통합 된 대화형 환경에서 모든 Azure Cosmos DB 리소스의 전반적인 성능, 오류, 용량 및 운영 상태를 확인 하 고 자세한 분석 및 경고를 위해 Azure Monitor의 다른 기능을 활용 합니다. 
 
-![Cosmos DB에 대 한 Azure Monitor](media/monitor-cosmos-db/azure-monitor-cosmos-db.png)
+![Cosmos DB에 대한 Azure Monitor](media/monitor-cosmos-db/azure-monitor-cosmos-db.png)
 
 ## <a name="monitoring-data-collected-from-azure-cosmos-db"></a>Azure Cosmos DB에서 수집한 데이터 모니터링
 
-Azure Cosmos DB는 [azure 리소스의 데이터 모니터링](../azure-monitor/insights/monitor-azure-resource.md#monitoring-data)에 설명 된 다른 azure 리소스와 동일한 종류의 모니터링 데이터를 수집 합니다. Azure Cosmos DB에서 만든 로그 및 메트릭에 대 한 자세한 내용은 [Azure Cosmos DB 모니터링 데이터 참조](monitor-cosmos-db-reference.md) 를 참조 하세요.
+Azure Cosmos DB는 [azure 리소스의 데이터 모니터링](../azure-monitor/insights/monitor-azure-resource.md#monitoring-data)에 설명 된 다른 azure 리소스와 동일한 종류의 모니터링 데이터를 수집 합니다. Azure Cosmos DB에서 만든 로그 및 메트릭에 대한 자세한 내용은 [Azure Cosmos DB 모니터링 데이터 참조](monitor-cosmos-db-reference.md) 를 참조 하세요.
 
-각 Azure Cosmos 데이터베이스에 대 한 Azure Portal의 **개요** 페이지에는 요청 및 시간별 청구 사용량을 포함 하 여 데이터베이스 사용에 대 한 간략 한 보기가 포함 되어 있습니다. 이 정보는 유용 하지만 적은 양의 모니터링 데이터만 사용할 수 있습니다. 일부 구성에서 추가 데이터 수집을 사용 하도록 설정 하는 동안 데이터베이스를 만드는 즉시 이러한 데이터 중 일부가 자동으로 수집 되 고 분석에 사용할 수 있습니다.
+각 Azure Cosmos 데이터베이스에 대한 Azure Portal의 **개요** 페이지에는 요청 및 시간별 청구 사용량을 포함 하 여 데이터베이스 사용에 대한 간략 한 보기가 포함 되어 있습니다. 이 정보는 유용 하지만 적은 양의 모니터링 데이터만 사용할 수 있습니다. 일부 구성에서 추가 데이터 수집을 사용 하도록 설정 하는 동안 데이터베이스를 만드는 즉시 이러한 데이터 중 일부가 자동으로 수집 되 고 분석에 사용할 수 있습니다.
 
 ![개요 페이지](media/monitor-cosmos-db/overview-page.png)
 
 ## <a name="analyzing-metric-data"></a>메트릭 데이터 분석
 
-Azure Cosmos DB는 메트릭을 사용 하기 위한 사용자 지정 환경을 제공 합니다. 이 경험을 사용 하 고 다양 한 Azure Cosmos DB 시나리오를 분석 하는 방법에 대 한 자세한 내용은 [Azure Monitor에서 Azure Cosmos DB 메트릭 모니터링 및 디버그](cosmos-db-azure-monitor-metrics.md) 를 참조 하세요.
+Azure Cosmos DB는 메트릭을 사용 하기 위한 사용자 지정 환경을 제공 합니다. 이 경험을 사용 하 고 다양 한 Azure Cosmos DB 시나리오를 분석 하는 방법에 대한 자세한 내용은 [Azure Monitor에서 Azure Cosmos DB 메트릭 모니터링 및 디버그](cosmos-db-azure-monitor-metrics.md) 를 참조 하세요.
 
-**Azure Monitor** 메뉴에서 **메트릭을 열어 메트릭 탐색기를 사용** 하 여 다른 Azure 서비스의 메트릭과 함께 Azure Cosmos DB에 대 한 메트릭을 분석할 수 있습니다. 이 도구 사용에 대 한 자세한 내용은 [Azure 메트릭 탐색기 시작](../azure-monitor/platform/metrics-getting-started.md) 을 참조 하세요. Azure Cosmos DB에 대 한 모든 메트릭은 **표준 메트릭에 Cosmos DB**네임 스페이스에 있습니다. 차트에 필터를 추가할 때 이러한 메트릭에 다음 차원을 사용할 수 있습니다.
+**Azure Monitor** 메뉴에서 **메트릭을 열어 메트릭 탐색기를 사용** 하 여 다른 Azure 서비스의 메트릭과 함께 Azure Cosmos DB에 대한 메트릭을 분석할 수 있습니다. 이 도구 사용에 대한 자세한 내용은 [Azure 메트릭 탐색기 시작](../azure-monitor/platform/metrics-getting-started.md) 을 참조 하세요. Azure Cosmos DB에 대한 모든 메트릭은 **표준 메트릭에 Cosmos DB**네임 스페이스에 있습니다. 차트에 필터를 추가할 때 이러한 메트릭에 다음 차원을 사용할 수 있습니다.
 
 - CollectionName
 - DatabaseName
@@ -156,7 +156,7 @@ Azure Monitor 로그의 데이터는 각각 고유한 속성 집합이 있는 �
     | render timechart
     ```
     
-* 파티션 키 통계를 가져와서 데이터베이스 계정에 대 한 상위 3 개 파티션 간의 오차를 평가 하려면:
+* 파티션 키 통계를 가져와서 데이터베이스 계정에 대한 상위 3 개 파티션 간의 오차를 평가 하려면:
 
     ```Kusto
     AzureDiagnostics 
@@ -182,5 +182,5 @@ Azure Monitor 로그의 데이터는 각각 고유한 속성 집합이 있는 �
 
 ## <a name="next-steps"></a>다음 단계
 
-- Azure Cosmos DB에서 만든 로그 및 메트릭에 대 한 참조는 [Azure Cosmos DB 모니터링 데이터 참조](monitor-cosmos-db-reference.md) 를 참조 하세요.
-- Azure 리소스 모니터링에 대 한 자세한 내용은 [Azure Monitor를 사용 하 여 azure 리소스 모니터링](../azure-monitor/insights/monitor-azure-resource.md) 을 참조 하세요.
+- Azure Cosmos DB에서 만든 로그 및 메트릭에 대한 참조는 [Azure Cosmos DB 모니터링 데이터 참조](monitor-cosmos-db-reference.md) 를 참조 하세요.
+- Azure 리소스 모니터링에 대한 자세한 내용은 [Azure Monitor를 사용 하 여 azure 리소스 모니터링](../azure-monitor/insights/monitor-azure-resource.md) 을 참조 하세요.

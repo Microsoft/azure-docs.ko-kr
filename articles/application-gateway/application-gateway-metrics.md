@@ -1,5 +1,5 @@
 ---
-title: Application Gateway에 대 한 Azure Monitor 메트릭
+title: Application Gateway에 대한 Azure Monitor 메트릭
 description: 메트릭을 사용 하 여 application gateway의 성능을 모니터링 하는 방법을 알아봅니다.
 services: application-gateway
 author: abshamsft
@@ -14,9 +14,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 02/06/2020
 ms.locfileid: "77046314"
 ---
-# <a name="metrics-for-application-gateway"></a>Application Gateway에 대 한 메트릭
+# <a name="metrics-for-application-gateway"></a>Application Gateway에 대한 메트릭
 
-Application Gateway는 메트릭 이라는 데이터 요소를 게시 하 여 Application Gateway 및 백엔드 인스턴스의 성능을 [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) 합니다. 이러한 메트릭은 특정 시간에 응용 프로그램 게이트웨이의 일부 측면을 설명 하는 시계열 데이터의 정렬 된 집합에 있는 숫자 값입니다. Application Gateway을 통해 흐르는 요청이 있는 경우 해당 메트릭을 측정 하 고 60 초 간격으로 보냅니다. Application Gateway를 통해 전달 되는 요청이 없거나 메트릭에 대 한 데이터가 없는 경우 메트릭은 보고 되지 않습니다. 자세한 내용은 [Azure Monitor 메트릭](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics)을 참조하세요.
+Application Gateway는 메트릭 이라는 데이터 요소를 게시 하 여 Application Gateway 및 백엔드 인스턴스의 성능을 [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) 합니다. 이러한 메트릭은 특정 시간에 응용 프로그램 게이트웨이의 일부 측면을 설명 하는 시계열 데이터의 정렬 된 집합에 있는 숫자 값입니다. Application Gateway을 통해 흐르는 요청이 있는 경우 해당 메트릭을 측정 하 고 60 초 간격으로 보냅니다. Application Gateway를 통해 전달 되는 요청이 없거나 메트릭에 대한 데이터가 없는 경우 메트릭은 보고 되지 않습니다. 자세한 내용은 [Azure Monitor 메트릭](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics)을 참조하세요.
 
 ## <a name="metrics-supported-by-application-gateway-v2-sku"></a>Application Gateway V2 SKU에서 지원 되는 메트릭
 
@@ -38,13 +38,13 @@ Application Gateway는 모두 밀리초 단위로 측정 되는 요청 및 응�
 
 - **백 엔드 첫 번째 바이트 응답 시간**
 
-  백 엔드 서버에 대 한 연결을 설정 하 고 응답 헤더의 첫 번째 바이트를 수신 하는 시작 사이의 시간 간격입니다. 
+  백 엔드 서버에 대한 연결을 설정 하 고 응답 헤더의 첫 번째 바이트를 수신 하는 시작 사이의 시간 간격입니다. 
 
   이는 *백 엔드 연결 시간*, Application Gateway에서 백 엔드에 연결 하는 데 걸린 시간, 백 엔드 응용 프로그램에서 응답 하는 데 걸린 시간 (서버가 콘텐츠를 생성 하는 데 걸린 시간, 데이터베이스 쿼리를 잠재적으로 페치) 및 응답의 첫 번째 바이트가 백 엔드에서 Application Gateway에 도달 하는 데 걸린 시간 합계를 대략적으로 계산 합니다.
 
 - **백 엔드 마지막 바이트 응답 시간**
 
-  백 엔드 서버에 대 한 연결을 설정 하 고 응답 본문의 마지막 바이트를 받는 시작 사이의 시간 간격입니다. 
+  백 엔드 서버에 대한 연결을 설정 하 고 응답 본문의 마지막 바이트를 받는 시작 사이의 시간 간격입니다. 
 
   이는 *백 엔드 첫 번째 바이트 응답 시간* 및 데이터 전송 시간 합계를 대략적으로 계산 합니다 .이 수는 요청 된 개체의 크기와 서버 네트워크의 대기 시간에 따라 크게 다를 수 있습니다.
 
@@ -52,7 +52,7 @@ Application Gateway는 모두 밀리초 단위로 측정 되는 요청 및 응�
 
   요청을 수신 하 고 처리 하는 데 걸리는 평균 시간 및 전송 되는 응답입니다. 
 
-  이는 Application Gateway 마지막 응답 바이트가 클라이언트로 전송 된 시간에 대 한 HTTP 요청의 첫 번째 바이트를 수신 하는 시간 간격입니다. 여기에는 모든 응답과 *클라이언트 RTT*를 전송 하기 위해 Application Gateway에서 수행 하는 Application Gateway, *백 엔드 마지막 바이트 응답 시간*등의 처리 시간이 포함 됩니다.
+  이는 Application Gateway 마지막 응답 바이트가 클라이언트로 전송 된 시간에 대한 HTTP 요청의 첫 번째 바이트를 수신 하는 시간 간격입니다. 여기에는 모든 응답과 *클라이언트 RTT*를 전송 하기 위해 Application Gateway에서 수행 하는 Application Gateway, *백 엔드 마지막 바이트 응답 시간*등의 처리 시간이 포함 됩니다.
 
 - **클라이언트 RTT**
 
@@ -62,7 +62,7 @@ Application Gateway는 모두 밀리초 단위로 측정 되는 요청 및 응�
 
 이러한 메트릭을 사용 하 여 관찰 된 속도가 클라이언트 네트워크, Application Gateway 성능, 백 엔드 네트워크 및 백엔드 서버 TCP 스택 포화, 백 엔드 응용 프로그램 성능 또는 큰 파일 크기 때문 인지 여부를 확인할 수 있습니다.
 
-예를 들어 *백 엔드 첫 번째 바이트 응답 시간* 추세가 급증 하지만 *백 엔드 연결 시간* 추세가 안정적 이면 응용 프로그램 게이트웨이가 백 엔드 대기 시간으로, 연결을 설정 하는 데 걸리는 시간이 안정적이 고, 백 엔드 응용 프로그램의 응답 시간이 증가 하 여 스파이크가 발생 하는 것을 유추할 수 있습니다. 반면에 백 엔드에 대 한 *첫 번째 바이트 응답 시간이* *백 엔드 연결 시간*에 해당 스파이크와 연결 된 경우에는 Application Gateway와 백 엔드 서버 간의 네트워크 또는 백 엔드 서버 TCP 스택 포화 상태를 추론할 수 있습니다. 
+예를 들어 *백 엔드 첫 번째 바이트 응답 시간* 추세가 급증 하지만 *백 엔드 연결 시간* 추세가 안정적 이면 응용 프로그램 게이트웨이가 백 엔드 대기 시간으로, 연결을 설정 하는 데 걸리는 시간이 안정적이 고, 백 엔드 응용 프로그램의 응답 시간이 증가 하 여 스파이크가 발생 하는 것을 유추할 수 있습니다. 반면에 백 엔드에 대한 *첫 번째 바이트 응답 시간이* *백 엔드 연결 시간*에 해당 스파이크와 연결 된 경우에는 Application Gateway와 백 엔드 서버 간의 네트워크 또는 백 엔드 서버 TCP 스택 포화 상태를 추론할 수 있습니다. 
 
 *백 엔드의 마지막 바이트 응답 시간이* 급증 하지만 *백 엔드 바이트 응답 시간이* 안정적 이면 더 큰 파일을 요청 하는 것으로 인해 스파이크가 발생할 수 있습니다.
 
@@ -192,7 +192,7 @@ Application gateway로 이동 하 고 **모니터링** 에서 **메트릭**을 �
 
 현재 지원되는 메트릭 목록을 보려면 [Azure Monitor에서 지원되는 메트릭](../azure-monitor/platform/metrics-supported.md)을 참조하세요.
 
-### <a name="alert-rules-on-metrics"></a>메트릭에 대 한 경고 규칙
+### <a name="alert-rules-on-metrics"></a>메트릭에 대한 경고 규칙
 
 리소스에 대한 메트릭을 기반으로 하는 경고 규칙을 시작할 수 있습니다. 예를 들어 애플리케이션 게이트웨이의 처리량이 지정된 기간 동안 임계값보다 높거나 낮거나 같을 때 경고에서 웹후크를 호출하거나 관리자에게 전자 메일을 보낼 수 있습니다.
 

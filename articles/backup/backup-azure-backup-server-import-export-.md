@@ -77,7 +77,7 @@ Azure Backup의 오프라인 시드 기능 및 Azure Import/Export를 사용하�
 
     Azure 오프 라인 백업 AD 응용 프로그램이 없는 경우이 도구를 만듭니다.
 
-    응용 프로그램이 이미 있는 경우이 실행 파일은 테 넌 트에서 응용 프로그램에 인증서를 수동으로 업로드 하 라는 메시지를 표시 합니다. 응용 프로그램에 인증서를 수동으로 업로드 하려면 [이 섹션](#manually-upload-offline-backup-certificate) 의 다음 단계를 수행 합니다.
+    응용 프로그램이 이미 있는 경우이 실행 파일은 테넌트에서 응용 프로그램에 인증서를 수동으로 업로드 하 라는 메시지를 표시 합니다. 응용 프로그램에 인증서를 수동으로 업로드 하려면 [이 섹션](#manually-upload-offline-backup-certificate) 의 다음 단계를 수행 합니다.
 
 * Azuregacutil.exe Backup .exe 도구는이 파일을 생성 합니다.  MABS 또는 DPM을 사용 하 여이 파일을 서버에 복사 합니다.
 * DPM/Azure Backup (MABS) 서버에 [최신 MARS 에이전트](https://aka.ms/azurebackup_agent) 를 설치 합니다.

@@ -207,7 +207,7 @@ Windows 업데이트 정책에 대 한 자세한 내용은 [정책 CSP-업데이
 
 ### <a name="windows-defender-atp-intune-integration"></a>Windows Defender ATP Intune 통합
 
-Windows Defender ATP 및 Microsoft Intune는 함께 작동 하 여 보안 위반을 방지 합니다. 위반의 영향을 제한할 수도 있습니다. ATP 기능은 실시간 위협 감지를 제공 하 고, 끝점의 포괄적인 감사 및 로깅을 가능 하 게 합니다.
+Windows Defender ATP 및 Microsoft Intune는 함께 작동 하 여 보안 위반을 방지 합니다. 위반의 영향을 제한할 수도 있습니다. ATP 기능은 실시간 위협 감지를 제공 하 고, 엔드포인트의 포괄적인 감사 및 로깅을 가능 하 게 합니다.
 
 Windows Defender ATP 및 Intune의 통합을 구성 하려면 Azure Portal으로 이동 합니다.
 
@@ -260,7 +260,7 @@ Windows Defender ATP 및 Intune의 통합을 구성 하려면 Azure Portal으로
 
 ### <a name="set-rules-in-the-firewall-configuration-service-provider-csp"></a>방화벽 구성 서비스 공급자 (CSP)에서 규칙 설정
 
-허용 및 차단 된 끝점에 대 한 필요에 따라 인바운드 및 아웃 바운드 규칙의 관리를 추가로 변경할 수 있습니다. 보안 워크스테이션을 계속 강화 하면서 모든 인바운드 및 아웃 바운드 트래픽을 거부 하는 제한을 느슨하게 할 수 있습니다. 허용 되는 아웃 바운드 사이트를 추가 하 여 공통 및 신뢰할 수 있는 웹 사이트를 포함할 수 있습니다. 자세한 내용은 [방화벽 구성 서비스](https://docs.microsoft.com/Windows/client-management/mdm/firewall-csp)를 참조 하세요.
+허용 및 차단 된 엔드포인트에 대 한 필요에 따라 인바운드 및 아웃 바운드 규칙의 관리를 추가로 변경할 수 있습니다. 보안 워크스테이션을 계속 강화 하면서 모든 인바운드 및 아웃 바운드 트래픽을 거부 하는 제한을 느슨하게 할 수 있습니다. 허용 되는 아웃 바운드 사이트를 추가 하 여 공통 및 신뢰할 수 있는 웹 사이트를 포함할 수 있습니다. 자세한 내용은 [방화벽 구성 서비스](https://docs.microsoft.com/Windows/client-management/mdm/firewall-csp)를 참조 하세요.
 
 제한적인 URL 트래픽 관리에는 다음이 포함 됩니다.
 
@@ -408,7 +408,7 @@ Microsoft Scripting Center의 [Setdesktopbackground.](https://gallery.technet.mi
 
 * 지속적으로 취약성 및 잘못 확인 관찰 및 모니터링
 * WDATP를 활용 하 여 와일드 카드의 동적 위협 우선 순위 지정
-* EDR (끝점 검색 및 응답) 경고와 관련 된 취약성의 상관 관계
+* EDR (엔드포인트 검색 및 응답) 경고와 관련 된 취약성의 상관 관계
 * 조사 하는 동안 대시보드를 사용 하 여 컴퓨터 수준 취약점 식별
 * Intune에 재구성 푸시
 
@@ -455,7 +455,7 @@ Intune PowerShell 스크립트를 사용 하 여 MMA 에이전트 배포
 * [노출 점수](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/tvm-exposure-score) 를 검토 하는 방법 이해
 * [보안 권장 사항](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/tvm-security-recommendation) 검토
 * 보안 [재구성](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/tvm-remediation) 관리
-* [끝점 검색 및 응답](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/overview-endpoint-detection-response) 관리
+* [엔드포인트 검색 및 응답](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/overview-endpoint-detection-response) 관리
 * [Intune 프로필 모니터링](https://docs.microsoft.com/intune/device-profile-monitor)을 사용 하 여 프로필을 모니터링 합니다.
 
 ## <a name="next-steps"></a>다음 단계

@@ -1,6 +1,6 @@
 ---
 title: Microsoft Azure Data Box Edge 기술 사양 및 규정 준수 | Microsoft Docs
-description: Azure Data Box Edge에 대 한 기술 사양 및 규정 준수에 대해 알아봅니다.
+description: Azure Data Box Edge에 대한 기술 사양 및 규정 준수에 대해 알아봅니다.
 services: databox
 author: alkohli
 ms.service: databox
@@ -21,7 +21,7 @@ Microsoft Azure Data Box Edge 장치의 하드웨어 구성 요소는이 문서�
 
 ## <a name="compute-memory-specifications"></a>계산, 메모리 사양
 
-Data Box Edge 장치에는 계산 및 메모리에 대 한 다음과 같은 사양이 있습니다.
+Data Box Edge 장치에는 계산 및 메모리에 대한 다음과 같은 사양이 있습니다.
 
 | 사양           | 값                  |
 |-------------------------|----------------------------|
@@ -55,7 +55,7 @@ The following table lists the typical power consumption data (actual values may 
 
 ## <a name="storage-specifications"></a>스토리지 사양
 
-Data Box Edge 장치에는 각각 1.6 TB의 용량을 포함 하는 9 X 2.5 "NVMe Ssd가 있습니다. 이러한 Ssd 중 1 개는 운영 체제 디스크이 고 다른 8 개는 데이터 디스크입니다. 장치에 사용할 수 있는 총 용량은 약 12.5 TB입니다. 다음 표에는 장치의 저장소 용량에 대 한 세부 정보가 나와 있습니다.
+Data Box Edge 장치에는 각각 1.6 TB의 용량을 포함 하는 9 X 2.5 "NVMe Ssd가 있습니다. 이러한 Ssd 중 1 개는 운영 체제 디스크이 고 다른 8 개는 데이터 디스크입니다. 장치에 사용할 수 있는 총 용량은 약 12.5 TB입니다. 다음 표에는 장치의 저장소 용량에 대한 세부 정보가 나와 있습니다.
 
 |     사양                          |     값             |
 |--------------------------------------------|-----------------------|
@@ -115,7 +115,7 @@ Data Box Edge 장치에는 각각 1.6 TB의 용량을 포함 하는 9 X 2.5 "NVM
 |    기류                              |    시스템의 공기는 앞에서 뒤로 흐릅니다. 압력이 낮고, 후면 배기가 설치된 시스템을 작동할 수 있어야 합니다. <!--Back pressure created by rack doors and obstacles should not exceed 5 pascals (0.5 mm water gauge).-->    |
 |    최대 고도, 작동        |    3048 미터 (1만 피트), [운영 온도 비 등급 사양](#operating-temperature-de-rating-specifications)에 따라 결정 되는 최대 운영 온도 등급 지정                                                                                |
 |    최대 고가, 비작동    |    12000 미터 (39370 피트)                                                                                                                                                                                         |
-|    충격, 작동                   |    6 방향 12 밀리초에 대 한 6 G                                                                                                                                                                         |
+|    충격, 작동                   |    6 방향 12 밀리초에 대한 6 G                                                                                                                                                                         |
 |    충격, 작동 불가능               |    6 방향 2 밀리초의 경우 71 G                                                                                                                                                                           |
 |    진동, 작동               |    0.26G<sub>RMS</sub> 5Hz-350Hz 임의                                                                                                                                                                                     |
 |    진동, 작동 불가능           |    15 분 동안 1.88 G<sub>RMS</sub> 10 hz ~ 500 Hz (테스트 된 6 개 면 모두)                                                                                                                                                  |

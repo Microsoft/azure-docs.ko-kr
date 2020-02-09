@@ -21,7 +21,7 @@ ms.locfileid: "76721866"
 # <a name="cheat-sheet-for-an-automated-data-pipeline-for-azure-machine-learning-predictions"></a>Azure Machine Learning 예측에 대한 자동화된 데이터 파이프라인용 참고 자료
 **Microsoft Azure Machine Learning 자동화 데이터 파이프라인 참고 자료** 를 사용하면 예측 분석 모델별로 점수를 매길 수 있는 Machine Learning 웹 서비스로 데이터를 가져오는 데 사용할 수 있는 기술을 탐색하는 데 도움이 됩니다.
 
-데이터의 온-프레미스, 클라우드 또는 실시간 스트리밍 여부에 따라 점수 매기기를 위해 데이터를 웹 서비스 끝점으로 이동 하는 데 사용할 수 있는 여러 메커니즘이 있습니다.
+데이터의 온-프레미스, 클라우드 또는 실시간 스트리밍 여부에 따라 점수 매기기를 위해 데이터를 웹 서비스 엔드포인트으로 이동 하는 데 사용할 수 있는 여러 메커니즘이 있습니다.
 이 참고 자료는 필요한 결정을 내리는 단계를 안내하고 솔루션 개발에 도움이 될 수 있는 링크를 제공합니다.
 
 ## <a name="download-the-machine-learning-automated-data-pipeline-cheat-sheet"></a>Machine Learning 자동화된 데이터 파이프라인 참고 자료 다운로드

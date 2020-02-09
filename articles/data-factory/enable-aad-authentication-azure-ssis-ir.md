@@ -26,10 +26,10 @@ ms.locfileid: "74927436"
 
 - Azure-SSIS IR에서 SSIS 패키지를 실행할 때 다양 한 Azure 리소스에 연결 합니다.
 
-ADF의 관리 되는 id에 대 한 자세한 내용은 [Data Factory 관리 되는 identiy](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity)을 참조 하세요.
+ADF의 관리 되는 id에 대한 자세한 내용은 [Data Factory 관리 되는 identiy](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity)을 참조 하세요.
 
 > [!NOTE]
->-  이 시나리오에서 ADF에 대 한 관리 id를 사용 하는 Azure AD 인증은 SSISDB를 프로 비전 하 고 연결 하는 SSIS IR의 생성 및 후속 시작 작업에만 사용 됩니다. SSIS 패키지 실행의 경우, SSIS IR은 SSISDB 프로 비전 중에 생성 되는 완전히 관리 되는 계정으로 SQL 인증을 사용 하 여 SSISDB에 계속 연결 됩니다.
+>-  이 시나리오에서 ADF에 대한 관리 id를 사용 하는 Azure AD 인증은 SSISDB를 프로 비전 하 고 연결 하는 SSIS IR의 생성 및 후속 시작 작업에만 사용 됩니다. SSIS 패키지 실행의 경우, SSIS IR은 SSISDB 프로 비전 중에 생성 되는 완전히 관리 되는 계정으로 SQL 인증을 사용 하 여 SSISDB에 계속 연결 됩니다.
 >-  SQL 인증을 사용 하 여 SSIS IR을 이미 만든 경우에는 PowerShell을 통해 Azure AD 인증을 사용 하도록 다시 구성할 수 없지만 Azure Portal/ADF 앱을 통해 수행할 수 있습니다. 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
@@ -63,7 +63,7 @@ Azure SQL Database 서버는 Azure AD 사용자로 데이터베이스 만들기�
     6de75f3c-8b2f-4bf4-b9f8-78cc60a18050 SSISIrGroup
     ```
 
-3.  ADF의 관리 ID를 그룹에 추가합니다. [Identiy에 대 한 관리 되는 Data Factory에 대 한](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) 문서를 따라 주 관리 ID 개체 id (예: 765ad4ab-xxxx-XXXX-xxxx-51ed985819dc)를 가져올 수 있지만이 목적을 위해 관리 되는 Id 응용 프로그램 id를 사용 하지는 않습니다.
+3.  ADF의 관리 ID를 그룹에 추가합니다. [Identiy에 대한 관리 되는 Data Factory에 대한](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) 문서를 따라 주 관리 ID 개체 id (예: 765ad4ab-xxxx-XXXX-xxxx-51ed985819dc)를 가져올 수 있지만이 목적을 위해 관리 되는 Id 응용 프로그램 id를 사용 하지는 않습니다.
 
     ```powershell
     Add-AzureAdGroupMember -ObjectId $Group.ObjectId -RefObjectId 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc
@@ -149,7 +149,7 @@ Azure SQL Database Managed Instance는 직접 ADF에 대한 관리 ID로 데이�
 
 ### <a name="configure-azure-ad-authentication-for-azure-sql-database-managed-instance"></a>Azure SQL Database Managed Instance를 위한 Azure AD 인증 구성
 
-[Managed Instance에 대 한 Azure Active Directory 관리자 프로 비전](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure#provision-an-azure-active-directory-administrator-for-your-managed-instance)의 단계를 수행 합니다.
+[Managed Instance에 대한 Azure Active Directory 관리자 프로 비전](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure#provision-an-azure-active-directory-administrator-for-your-managed-instance)의 단계를 수행 합니다.
 
 ### <a name="add-the-managed-identity-for-your-adf-as-a-user-in-azure-sql-database-managed-instance"></a>ADF에 대한 관리 ID를 Azure SQL Database Managed Instance의 사용자로 추가
 
@@ -157,13 +157,13 @@ Azure SQL Database Managed Instance는 직접 ADF에 대한 관리 ID로 데이�
 
 1.  SSMS를 시작합니다.
 
-2.  **Sysadmin**인 SQL Server 계정을 사용 하 여 Managed Instance에 연결 합니다. Azure SQL Database Managed Instance에 대 한 Azure AD 서버 보안 주체 (로그인)가 GA 되 면 제거 되는 일시적인 제한입니다. Azure AD 관리자 계정을 사용 하 여 로그인을 만드는 경우 메시지 15247, 수준 16, 상태 1, 줄 1 사용자에 게이 작업을 수행할 수 있는 권한이 없는 경우 다음과 같은 오류가 표시 됩니다.
+2.  **Sysadmin**인 SQL Server 계정을 사용 하 여 Managed Instance에 연결 합니다. Azure SQL Database Managed Instance에 대한 Azure AD 서버 보안 주체 (로그인)가 GA 되 면 제거 되는 일시적인 제한입니다. Azure AD 관리자 계정을 사용 하 여 로그인을 만드는 경우 메시지 15247, 수준 16, 상태 1, 줄 1 사용자에 게이 작업을 수행할 수 있는 권한이 없는 경우 다음과 같은 오류가 표시 됩니다.
 
 3.  **개체 탐색기**에서 **데이터베이스** -> **시스템 데이터베이스** 폴더를 확장합니다.
 
 4.  **마스터** 데이터베이스를 마우스 오른쪽 단추로 클릭하고 **새 쿼리**를 선택합니다.
 
-5.  쿼리 창에서 다음 T-sql 스크립트를 실행 하 여 ADF에 대 한 관리 되는 id를 사용자로 추가 합니다.
+5.  쿼리 창에서 다음 T-sql 스크립트를 실행 하 여 ADF에 대한 관리 되는 id를 사용자로 추가 합니다.
 
     ```sql
     CREATE LOGIN [{your ADF name}] FROM EXTERNAL PROVIDER

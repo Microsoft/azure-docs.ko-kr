@@ -142,13 +142,13 @@ Azure HDInsight 용 ESP (Enterprise Security Package)를 사용 하면 Azure에�
 1. **그룹 이름** 텍스트 상자에 `AAD DC Administrators`을 입력 합니다.
 1. **만들기**를 선택합니다.
 
-## <a name="configure-your-azure-ad-tenant"></a>Azure AD 테 넌 트 구성
+## <a name="configure-your-azure-ad-tenant"></a>Azure AD 테넌트 구성
 
-이제 온-프레미스 Active Directory 인스턴스에서 클라우드로 사용자와 그룹을 동기화 할 수 있도록 Azure AD 테 넌 트를 구성 합니다.
+이제 온-프레미스 Active Directory 인스턴스에서 클라우드로 사용자와 그룹을 동기화 할 수 있도록 Azure AD 테넌트를 구성 합니다.
 
-Active Directory 테 넌 트 관리자를 만듭니다.
+Active Directory 테넌트 관리자를 만듭니다.
 
-1. Azure Portal에 로그인 하 고 Azure AD 테 넌 트, **Hdifabrikam**을 선택 합니다.
+1. Azure Portal에 로그인 하 고 Azure AD 테넌트, **Hdifabrikam**을 선택 합니다.
 
 1. **새 사용자** > **사용자** > **관리** 로 이동 합니다.
 
@@ -190,7 +190,7 @@ Active Directory 테 넌 트 관리자를 만듭니다.
 
 1. **Express 설정 사용**을 선택 합니다.
 
-1. **AZURE ad에 연결** 페이지에서 azure ad에 대 한 전역 관리자의 사용자 이름 및 암호를 입력 합니다. Active Directory 테 넌 트를 구성할 때 만든 사용자 이름 `fabrikamazureadmin@hdifabrikam.com`를 사용 합니다. 그런 후 **다음**을 선택합니다.
+1. **AZURE ad에 연결** 페이지에서 azure ad에 대 한 전역 관리자의 사용자 이름 및 암호를 입력 합니다. Active Directory 테넌트를 구성할 때 만든 사용자 이름 `fabrikamazureadmin@hdifabrikam.com`를 사용 합니다. 그런 후 **다음**을 선택합니다.
 
     !["Azure AD에 연결" 페이지](./media/apache-domain-joined-create-configure-enterprise-security-cluster/hdinsight-image-0058.png)
 

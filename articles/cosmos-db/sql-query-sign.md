@@ -34,7 +34,7 @@ SIGN(<numeric_expr>)
   
 ## <a name="examples"></a>예
   
-  다음 예에서는-2에서 2 까지의 숫자에 대 한 `SIGN` 값을 반환 합니다.  
+  다음 예에서는-2에서 2 까지의 숫자에 대한 `SIGN` 값을 반환 합니다.  
   
 ```sql
 SELECT SIGN(-2) AS s1, SIGN(-1) AS s2, SIGN(0) AS s3, SIGN(1) AS s4, SIGN(2) AS s5  

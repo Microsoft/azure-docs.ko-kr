@@ -32,8 +32,8 @@ ms.locfileid: "76028283"
 
 [Powerstig](https://github.com/microsoft/powerstig) 라는 커뮤니티 프로젝트는 stig (보안 기술 구현 가이드)에 대해 제공 된 [공개 정보](https://public.cyber.mil/stigs/) 에 따라 DSC 콘텐츠를 생성 하 여이 문제를 해결 하는 데 목적이 있습니다.
 
-기준에 대 한 처리는 소리 보다 복잡 합니다.
-많은 조직에서 규칙에 대 한 [예외를 문서화](https://github.com/microsoft/powerstig#powerstigdata) 하 고 대규모로 해당 데이터를 관리 해야 합니다.
+기준에 대한 처리는 소리 보다 복잡 합니다.
+많은 조직에서 규칙에 대한 [예외를 문서화](https://github.com/microsoft/powerstig#powerstigdata) 하 고 대규모로 해당 데이터를 관리 해야 합니다.
 PowerSTIG는 단일 파일에서 전체 설정 범위를 처리 하지 않고 구성의 각 영역을 처리 하는 [복합 리소스](https://github.com/microsoft/powerstig#powerstigdsc) 를 제공 하 여 문제를 해결 합니다.
 
 구성이 생성 된 후에는 [DSC 구성 스크립트](/powershell/scripting/dsc/configurations/configurations) 를 사용 하 여 mof 파일을 생성 하 고 [Azure Automation에 mof 파일을 업로드할](/azure/automation/tutorial-configure-servers-desired-state#create-and-upload-a-configuration-to-azure-automation)수 있습니다.

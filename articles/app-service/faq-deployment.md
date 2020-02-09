@@ -52,7 +52,7 @@ App Service 앱의 파일 구조에 대한 자세한 내용은 [File structure i
 
 ## <a name="how-do-i-resolve-ftp-error-550---there-is-not-enough-space-on-the-disk-when-i-try-to-ftp-my-files"></a>내 파일을 FTP하려고 할 때 “FTP 오류 550 - 디스크 공간이 부족합니다.” 메시지가 표시되면 어떻게 해결하나요?
 
-이 메시지가 표시 되 면 웹 앱에 대 한 서비스 계획에서 디스크 할당량이 실행 중일 가능성이 높습니다. 필요한 디스크 공간에 따라 상위 서비스 계층으로 확장해야 할 수 있습니다. 가격 계획 및 리소스 제한에 대한 자세한 내용은 [App Service 가격](https://azure.microsoft.com/pricing/details/app-service/)을 참조하세요.
+이 메시지가 표시 되 면 웹 앱에 대한 서비스 계획에서 디스크 할당량이 실행 중일 가능성이 높습니다. 필요한 디스크 공간에 따라 상위 서비스 계층으로 확장해야 할 수 있습니다. 가격 계획 및 리소스 제한에 대한 자세한 내용은 [App Service 가격](https://azure.microsoft.com/pricing/details/app-service/)을 참조하세요.
 
 ## <a name="how-do-i-set-up-continuous-deployment-for-my-app-service-web-app"></a>내 App Service 웹앱에 대한 지속적인 배포를 설정하려면 어떻게 하나요?
 

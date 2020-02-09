@@ -56,7 +56,7 @@ Azure 통합 런타임은 다음을 수행할 수 있습니다.
 - 공용 네트워크에서 다음과 같은 변환 작업을 디스패치 합니다. Databricks 노트북/Jar/Python 작업, hdinsight Hive 작업, hdinsight Pig 작업, hdinsight MapReduce 작업, HDInsight Spark 작업, HDInsight Streaming activity, Machine Learning Batch 실행 작업, Machine Learning 업데이트 리소스 작업, 저장 프로시저 작업, Data Lake Analytics U-SQL 작업, .NET 사용자 지정 작업, 웹 작업, 조회 작업 및 메타 데이터 가져오기 작업
 
 ### <a name="azure-ir-network-environment"></a>Azure IR 네트워크 환경
-Azure Integration Runtime는 액세스 가능한 공용 끝점을 사용 하 여 데이터 저장소 및 계산 서비스에 대 한 연결을 지원 합니다. Azure Virtual Network 환경에는 자체 호스팅 통합 런타임을 사용합니다.
+Azure Integration Runtime는 액세스 가능한 공용 엔드포인트을 사용 하 여 데이터 저장소 및 계산 서비스에 대한 연결을 지원 합니다. Azure Virtual Network 환경에는 자체 호스팅 통합 런타임을 사용합니다.
 
 ### <a name="azure-ir-compute-resource-and-scaling"></a>Azure IR 컴퓨팅 리소스 및 크기 조정
 Azure 통합 런타임은 Azure에서 완전히 관리되고, 서버리스 컴퓨팅을 제공합니다.  인프라 프로비전, 소프트웨어 설치, 패치 또는 용량 크기 조정을 걱정할 필요가 없습니다.  또한 실제 사용 기간에 대해서만 지불합니다.

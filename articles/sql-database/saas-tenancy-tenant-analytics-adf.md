@@ -1,5 +1,5 @@
 ---
-title: 테 넌 트 데이터베이스에 대해 분석 쿼리 실행
+title: 테넌트 데이터베이스에 대해 분석 쿼리 실행
 description: Azure SQL Database, SQL Data Warehouse, Azure Data Factory 또는 Power BI에서 추출된 데이터를 사용하는 교차 테넌트 분석 쿼리입니다.
 services: sql-database
 ms.service: sql-database

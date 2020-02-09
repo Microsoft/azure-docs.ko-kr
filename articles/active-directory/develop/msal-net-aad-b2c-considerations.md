@@ -29,12 +29,12 @@ ms.locfileid: "77083981"
 
 이 페이지는 MSAL 3.x 용입니다. MSAL 2.x에 관심이 있는 경우 [MSAL 2.x에서 Azure AD B2C 관련 사항을](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/AAD-B2C-Specifics-MSAL-2.x)참조 하세요.
 
-## <a name="authority-for-a-azure-ad-b2c-tenant-and-policy"></a>Azure AD B2C 테 넌 트 및 정책에 대 한 권한
+## <a name="authority-for-a-azure-ad-b2c-tenant-and-policy"></a>Azure AD B2C 테넌트 및 정책에 대 한 권한
 
 사용할 기관은 다음과 `https://{azureADB2CHostname}/tfp/{tenant}/{policyName}` 있습니다.
 
-- `azureADB2CHostname`은 Azure AD B2C 테 넌 트와 호스트 (예: `{your-tenant-name}.b2clogin.com`)의 이름입니다.
-- `tenant`은 Azure AD B2C 테 넌 트의 전체 이름 (예: `{your-tenant-name}.onmicrosoft.com`) 또는 테 넌 트의 GUID입니다. 
+- `azureADB2CHostname`은 Azure AD B2C 테넌트와 호스트 (예: `{your-tenant-name}.b2clogin.com`)의 이름입니다.
+- `tenant`은 Azure AD B2C 테넌트의 전체 이름 (예: `{your-tenant-name}.onmicrosoft.com`) 또는 테넌트의 GUID입니다. 
 - 적용할 정책 또는 사용자 흐름의 이름 (예를 들어, 등록/로그인에 대 한 "b2c_1_susi")을 `policyName` 합니다.
 
 Azure AD B2C 기관에 대 한 자세한 내용은이 [설명서](/azure/active-directory-b2c/b2clogin)를 참조 하세요.
@@ -129,7 +129,7 @@ ROPC 흐름에 대 한 자세한 내용은이 [설명서](v2-oauth-ropc.md)를 �
 - 사용자가 Single Sign-On을 수행할 수 없습니다.
 
 ### <a name="configure-the-ropc-flow-in-azure-ad-b2c"></a>Azure AD B2C에서 ROPC 흐름 구성
-Azure AD B2C 테 넌 트에서 새 사용자 흐름을 만들고 **ROPC를 사용 하 여 로그인**을 선택 합니다. 그러면 테 넌 트에 대해 ROPC 정책이 사용 됩니다. 자세한 내용은 [리소스 소유자 암호 자격 증명 흐름 구성](/azure/active-directory-b2c/configure-ropc) 을 참조 하세요.
+Azure AD B2C 테넌트에서 새 사용자 흐름을 만들고 **ROPC를 사용 하 여 로그인**을 선택 합니다. 그러면 테넌트에 대해 ROPC 정책이 사용 됩니다. 자세한 내용은 [리소스 소유자 암호 자격 증명 흐름 구성](/azure/active-directory-b2c/configure-ropc) 을 참조 하세요.
 
 `IPublicClientApplication`에는 메서드가 포함 됩니다.
 ```csharp
@@ -160,7 +160,7 @@ Google을 id 공급자로 사용 하는 Azure AD B2C 개발자 인 경우 Google
 ### <a name="known-issue-with-azure-ad-b2c"></a>Azure AD B2C의 알려진 문제
 
 MSAL.Net는 [토큰 캐시](/dotnet/api/microsoft.identity.client.tokencache?view=azure-dotnet)를 지원 합니다. 토큰 캐싱 키는 Id 공급자가 반환 하는 클레임을 기반으로 합니다. 현재 MSAL.Net는 토큰 캐시 키를 작성 하는 데 두 가지 클레임이 필요 합니다.  
-- Azure AD 테 넌 트 ID 인 `tid` 및 
+- Azure AD 테넌트 ID 인 `tid` 및 
 - `preferred_username` 
 
 이러한 두 클레임은 다 수의 Azure AD B2C 시나리오에서 누락 되었습니다. 
@@ -169,7 +169,7 @@ MSAL.Net는 [토큰 캐시](/dotnet/api/microsoft.identity.client.tokencache?vie
 
 ### <a name="workarounds"></a>해결 방법
 
-#### <a name="mitigation-for-the-missing-tenant-id"></a>누락 된 테 넌 트 ID에 대 한 완화
+#### <a name="mitigation-for-the-missing-tenant-id"></a>누락 된 테넌트 ID에 대 한 완화
 
 권장 되는 해결 방법은 정책에의 한 [캐싱을](#acquire-a-token-to-apply-a-policy) 사용 하는 것입니다.
 

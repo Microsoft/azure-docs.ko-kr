@@ -21,10 +21,10 @@ ms.locfileid: "74913422"
 ---
 # <a name="copy-data-to-or-from-azure-data-explorer-by-using-azure-data-factory"></a>Azure Data Factory를 사용 하 여 Azure 데이터 탐색기 간에 데이터 복사
 
-이 문서에서는 Azure Data Factory의 복사 작업을 사용 하 여 [Azure 데이터 탐색기](../data-explorer/data-explorer-overview.md)간에 데이터를 복사 하는 방법을 설명 합니다. 이 문서는 복사 작업에 대 한 일반적인 개요를 제공 하는 [복사 작업 개요](copy-activity-overview.md) 문서를 기반으로 합니다.
+이 문서에서는 Azure Data Factory의 복사 작업을 사용 하 여 [Azure 데이터 탐색기](../data-explorer/data-explorer-overview.md)간에 데이터를 복사 하는 방법을 설명 합니다. 이 문서는 복사 작업에 대한 일반적인 개요를 제공 하는 [복사 작업 개요](copy-activity-overview.md) 문서를 기반으로 합니다.
 
 >[!TIP]
->일반적인 Azure Data Factory 및 Azure 데이터 탐색기 통합에 대 한 자세한 내용은 [azure 데이터 탐색기를 Azure Data Factory와 통합](../data-explorer/data-factory-integration.md)을 통해 자세히 알아보세요.
+>일반적인 Azure Data Factory 및 Azure 데이터 탐색기 통합에 대한 자세한 내용은 [azure 데이터 탐색기를 Azure Data Factory와 통합](../data-explorer/data-factory-integration.md)을 통해 자세히 알아보세요.
 
 ## <a name="supported-capabilities"></a>지원되는 기능
 
@@ -47,7 +47,7 @@ Azure 데이터 탐색기 커넥터를 사용 하 여 다음을 수행할 수 �
 ## <a name="getting-started"></a>시작
 
 >[!TIP]
->Azure 데이터 탐색기 커넥터에 대 한 연습은 azure [데이터 탐색기에서/로 데이터 복사 Azure Data Factory를 사용 하 여](../data-explorer/data-factory-load-data.md) [데이터베이스에서 Azure 데이터 탐색기로 대량 복사](../data-explorer/data-factory-template.md)를 참조 하세요.
+>Azure 데이터 탐색기 커넥터에 대한 연습은 azure [데이터 탐색기에서/로 데이터 복사 Azure Data Factory를 사용 하 여](../data-explorer/data-factory-load-data.md) [데이터베이스에서 Azure 데이터 탐색기로 대량 복사](../data-explorer/data-factory-template.md)를 참조 하세요.
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -57,19 +57,19 @@ Azure 데이터 탐색기 커넥터를 사용 하 여 다음을 수행할 수 �
 
 Azure 데이터 탐색기 커넥터는 서비스 주체 인증을 사용 합니다. 다음 단계를 수행 하 여 서비스 주체를 가져오고 사용 권한을 부여 합니다.
 
-1. [AZURE AD 테 넌 트에 응용 프로그램 등록](../storage/common/storage-auth-aad-app.md#register-your-application-with-an-azure-ad-tenant)의 단계를 수행 하 여 Azure Active Directory에 응용 프로그램 엔터티를 등록 합니다. 연결된 서비스를 정의하는 데 사용되므로 다음 값을 적어둡니다.
+1. [AZURE AD 테넌트에 응용 프로그램 등록](../storage/common/storage-auth-aad-app.md#register-your-application-with-an-azure-ad-tenant)의 단계를 수행 하 여 Azure Active Directory에 응용 프로그램 엔터티를 등록 합니다. 연결된 서비스를 정의하는 데 사용되므로 다음 값을 적어둡니다.
 
     - 애플리케이션 UI
     - 애플리케이션 키
     - 테넌트 ID
 
-2. Azure 데이터 탐색기에서 서비스 주체에 게 올바른 권한을 부여 합니다. 역할 및 사용 권한과 사용 권한 관리에 대 한 자세한 내용은 [Azure 데이터 탐색기 데이터베이스 사용 권한 관리](../data-explorer/manage-database-permissions.md) 를 참조 하세요. 일반적으로 다음을 수행 해야 합니다.
+2. Azure 데이터 탐색기에서 서비스 주체에 게 올바른 권한을 부여 합니다. 역할 및 사용 권한과 사용 권한 관리에 대한 자세한 내용은 [Azure 데이터 탐색기 데이터베이스 사용 권한 관리](../data-explorer/manage-database-permissions.md) 를 참조 하세요. 일반적으로 다음을 수행 해야 합니다.
 
     - **원본으로**데이터베이스에 적어도 **데이터베이스 뷰어** 역할을 부여 합니다.
     - **싱크로**데이터베이스에 적어도 **데이터베이스 수집기** 역할을 부여 합니다.
 
 >[!NOTE]
->Data Factory UI를 사용 하 여 작성 하는 경우 로그인 사용자 계정은 Azure 데이터 탐색기 클러스터, 데이터베이스 및 테이블을 나열 하는 데 사용 됩니다. 이러한 작업에 대 한 권한이 없는 경우 수동으로 이름을 입력 합니다.
+>Data Factory UI를 사용 하 여 작성 하는 경우 로그인 사용자 계정은 Azure 데이터 탐색기 클러스터, 데이터베이스 및 테이블을 나열 하는 데 사용 됩니다. 이러한 작업에 대한 권한이 없는 경우 수동으로 이름을 입력 합니다.
 
 Azure 데이터 탐색기 연결 된 서비스에 대해 지원 되는 속성은 다음과 같습니다.
 
@@ -229,7 +229,7 @@ Azure Data Explorer로 데이터를 복사하려면 복사 작업 원본의 형�
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용은 [조회 작업](control-flow-lookup-activity.md)을 참조 하세요.
+속성에 대한 자세한 내용은 [조회 작업](control-flow-lookup-activity.md)을 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

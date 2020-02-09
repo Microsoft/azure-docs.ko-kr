@@ -114,7 +114,7 @@ ms.locfileid: "73817656"
 | **Azure Blob(사용되지 않음)** | 컨테이너 이름 및 연결 문자열을 사용 하 여 [Azure Blob 저장소](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview) 를 지정 합니다.  이 선택은 더 이상 사용 되지 않습니다. **Azure 테이블** 을 대신 사용 합니다.  |
 | **Azure Table**        | 연결 문자열을 사용 하 여 [Azure 테이블 저장소](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview) 를 지정 합니다.  |
 | **Dynamics CRM Online** | URL 및 인증 자격 증명을 사용 하 여 [Dynamics 365](https://dynamics.microsoft.com/) 을 지정 합니다. |
-| **HTTPS 끝점**     | JSON 페이로드를 사용 하 여 HTTPS 끝점을 지정 합니다.   |
+| **HTTPS 엔드포인트**     | JSON 페이로드를 사용 하 여 HTTPS 엔드포인트을 지정 합니다.   |
 | **Marketo**            | 서버 ID, munchkin ID 및 폼 ID를 사용 하 여 [Marketo](https://www.marketo.com/) 인스턴스를 지정 합니다.   |
 | **Salesforce**         | 개체 식별자를 사용 하 여 [Salesforce](https://www.salesforce.com/) 를 지정 합니다. |
 |  |  |

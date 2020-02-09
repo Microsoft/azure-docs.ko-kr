@@ -1,6 +1,6 @@
 ---
 title: Azure NetApp Files에 대한 리소스 제한 | Microsoft Docs
-description: Azure NetApp Files 리소스에 대 한 제한과 리소스 제한 증가를 요청 하는 방법을 설명 합니다.
+description: Azure NetApp Files 리소스에 대한 제한과 리소스 제한 증가를 요청 하는 방법을 설명 합니다.
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -27,7 +27,7 @@ Azure NetApp Files에 대한 리소스 제한을 이해하면 볼륨을 관리�
 
 ## <a name="resource-limits"></a>리소스 한계
 
-다음 표에서는 Azure NetApp Files에 대 한 리소스 제한을 설명 합니다.
+다음 표에서는 Azure NetApp Files에 대한 리소스 제한을 설명 합니다.
 
 |  리소스  |  기본 제한  |  지원 요청을 통해 조정 가능  |
 |----------------|---------------------|--------------------------------------|
@@ -46,7 +46,7 @@ Azure NetApp Files에 대한 리소스 제한을 이해하면 볼륨을 관리�
 
 ## Maxfiles 제한<a name="maxfiles"></a> 
 
-Azure NetApp Files 볼륨에는 *maxfiles*라는 제한이 있습니다. Maxfiles 한도는 볼륨에 포함 될 수 있는 파일 수입니다. Azure NetApp Files 볼륨의 maxfiles 제한은 볼륨의 크기 (할당량)를 기준으로 인덱싱됩니다. 볼륨에 대 한 maxfiles 제한은 프로 비전 된 볼륨 크기의 TiB 2000만 파일의 비율을 늘리거나 줄입니다. 
+Azure NetApp Files 볼륨에는 *maxfiles*라는 제한이 있습니다. Maxfiles 한도는 볼륨에 포함 될 수 있는 파일 수입니다. Azure NetApp Files 볼륨의 maxfiles 제한은 볼륨의 크기 (할당량)를 기준으로 인덱싱됩니다. 볼륨에 대한 maxfiles 제한은 프로 비전 된 볼륨 크기의 TiB 2000만 파일의 비율을 늘리거나 줄입니다. 
 
 서비스는 프로 비전 된 크기에 따라 볼륨의 maxfiles 제한을 동적으로 조정 합니다. 예를 들어 처음에 크기가 1 TiB 구성 된 볼륨은 maxfiles 한도가 2000만입니다. 이후에 볼륨의 크기를 변경 하면 다음 규칙에 따라 maxfiles 한도가 자동으로 readjustment 됩니다. 
 
@@ -70,11 +70,11 @@ Azure Portal 탐색 평면에서:
 2. **+ 새 지원 요청**을 클릭 합니다.
 3. 기본 사항 탭에서 다음 정보를 제공 합니다. 
     1. 문제 유형: **서비스 및 구독 제한 (할당량)** 을 선택 합니다.
-    2. 구독: 할당량이 증가 해야 하는 리소스에 대 한 구독을 선택 합니다.
+    2. 구독: 할당량이 증가 해야 하는 리소스에 대한 구독을 선택 합니다.
     3. 할당량 유형: **저장소: Azure NetApp Files 제한**을 선택 합니다.
     4. **다음: 솔루션**을 클릭 합니다.
 4. 세부 정보 탭에서 다음을 수행 합니다.
-    1. 설명 상자에 해당 하는 리소스 종류에 대 한 다음 정보를 제공 합니다.
+    1. 설명 상자에 해당 하는 리소스 종류에 대한 다음 정보를 제공 합니다.
 
         |  리소스  |    부모 리소스      |    요청 된 새 제한     |    할당량 증가 이유       |
         |----------------|------------------------------|---------------------------------|------------------------------------------|
@@ -91,4 +91,4 @@ Azure Portal 탐색 평면에서:
 ## <a name="next-steps"></a>다음 단계  
 
 - [Azure NetApp Files의 스토리지 계층 구조 이해](azure-netapp-files-understand-storage-hierarchy.md)
-- [Azure NetApp Files에 대 한 비용 모델](azure-netapp-files-cost-model.md)
+- [Azure NetApp Files에 대한 비용 모델](azure-netapp-files-cost-model.md)

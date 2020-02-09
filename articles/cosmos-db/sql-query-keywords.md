@@ -1,6 +1,6 @@
 ---
-title: Azure Cosmos DB에 대 한 SQL 키워드
-description: Azure Cosmos DB에 대 한 SQL 키워드에 알아봅니다.
+title: Azure Cosmos DB에 대한 SQL 키워드
+description: Azure Cosmos DB에 대한 SQL 키워드에 알아봅니다.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -18,7 +18,7 @@ ms.locfileid: "67342617"
 
 ## <a name="between"></a>간에
 
-ANSI SQL 에서처럼 문자열 또는 숫자 값의 범위에 대 한 쿼리를 표현 하는 BETWEEN 키워드를 사용할 수 있습니다. 예를 들어 다음 쿼리는 첫 번째 자식의 등급이 1-5를 포괄 하는 모든 항목을 반환 합니다.
+ANSI SQL 에서처럼 문자열 또는 숫자 값의 범위에 대한 쿼리를 표현 하는 BETWEEN 키워드를 사용할 수 있습니다. 예를 들어 다음 쿼리는 첫 번째 자식의 등급이 1-5를 포괄 하는 모든 항목을 반환 합니다.
 
 ```sql
     SELECT *
@@ -36,7 +36,7 @@ ANSI SQL 에서처럼 문자열 또는 숫자 값의 범위에 대 한 쿼리를
 ANSI SQL과 달리 SQL api에서 혼합 형식의 속성에 대해 범위 쿼리를 표현할 수 있습니다. 예를 들어 `grade` ' 좋아요 '를 숫자 않을 `5` 일부 항목에 같은 문자열 `grade4` 다른 합니다. 이러한 경우 JavaScript에서와 같이 두 가지 유형 간의 비교 결과 `Undefined`이므로 항목을 건너뜁니다.
 
 > [!TIP]
-> 쿼리 실행 시간을 단축 BETWEEN 절에서 필터링 하는 모든 숫자 속성 또는 경로 대 한 범위 인덱스 형식을 사용 하는 인덱싱 정책을 만듭니다.
+> 쿼리 실행 시간을 단축 BETWEEN 절에서 필터링 하는 모든 숫자 속성 또는 경로 대한 범위 인덱스 형식을 사용 하는 인덱싱 정책을 만듭니다.
 
 ## <a name="distinct"></a>DISTINCT
 
@@ -47,7 +47,7 @@ SELECT DISTINCT VALUE f.lastName
 FROM Families f
 ```
 
-이 예에서 쿼리는 각 성에 대 한 값을 프로젝션합니다.
+이 예에서 쿼리는 각 성에 대한 값을 프로젝션합니다.
 
 결과는 다음과 같습니다.
 
@@ -119,7 +119,7 @@ IN 키워드를 사용 하 여 지정된 된 값 목록에 있는 값이 일치 
     WHERE Families.address.state IN ("NY", "WA", "CA", "PA", "OH", "OR", "MI", "WI", "MN", "FL")
 ```
 
-SQL API에 대 한 지원 제공 [JSON 배열 반복](sql-query-object-array.md#Iteration), FROM 소스에서 in 키워드를 통해 추가 된 새 구문을 사용 하 여 합니다. 
+SQL API에 대한 지원 제공 [JSON 배열 반복](sql-query-object-array.md#Iteration), FROM 소스에서 in 키워드를 통해 추가 된 새 구문을 사용 하 여 합니다. 
 
 ## <a name="top"></a>맨 위로 이동
 

@@ -132,10 +132,10 @@ Office 365 앱 지원에 대 한 자세한 내용은 [민감도 레이블에 대
 
 민감도 레이블 옵션은 다음 조건이 모두 충족 될 경우에만 그룹에 대해 표시 됩니다.
 
-1. 이 테 넌 트에 대 한 Microsoft 365 준수 센터에 레이블이 게시 됩니다.
+1. 이 테넌트에 대 한 Microsoft 365 준수 센터에 레이블이 게시 됩니다.
 1. 이 기능을 사용 하도록 설정 하면 PowerShell에서 EnableMIPLabels가 True로 설정 됩니다.
 1. 그룹이 Office 365 그룹입니다.
-1. 테 넌 트에 활성 Azure Active Directory Premium P1 라이선스가 있습니다.
+1. 테넌트에 활성 Azure Active Directory Premium P1 라이선스가 있습니다.
 1. 현재 로그인 한 사용자에 게는 게시 된 레이블에 대 한 액세스 권한이 있습니다.
 1. 현재 로그인 한 사용자에 게는 레이블을 할당할 수 있는 충분 한 권한이 있습니다. 사용자는 전역 관리자, 그룹 관리자 또는 그룹 소유자 여야 합니다.
 1. 현재 로그인 한 사용자에 게 Office 365 라이선스가 할당 되어 있습니다. 라이선스 요구 사항에 대 한 자세한 내용은 [Office 앱의 민감도 레이블](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-office-apps)을 참조 하세요.

@@ -30,7 +30,7 @@ MSAL.NET 3.x를 사용 하는 경우 응용 프로그램 작성기를 사용 하
 
 - 클라이언트 ID (GUID를 나타내는 문자열)
 - 응용 프로그램에 대 한 id 공급자 URL (인스턴스 이름) 및 로그인 대상이 됩니다. 이러한 두 매개 변수를 통칭 하 여 기관 이라고 합니다.
-- 조직 전용 lob (단일 테 넌 트 응용 프로그램) 응용 프로그램을 작성 하는 경우 테 넌 트 ID입니다.
+- 조직 전용 lob (단일 테넌트 응용 프로그램) 응용 프로그램을 작성 하는 경우 테넌트 ID입니다.
 - 기밀 클라이언트 앱 인 경우 응용 프로그램 암호 (클라이언트 암호 문자열) 또는 인증서 (X509Certificate2 형식)입니다.
 - 웹 앱 및 공용 클라이언트 앱의 경우 (특히 앱에서 broker를 사용 해야 하는 경우) id 공급자가 응용 프로그램에 보안 토큰을 다시 연결 하는 redirectUri도 설정 해야 합니다.
 
@@ -98,7 +98,7 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 
 |Modifier | Description|
 |--------- | --------- |
-|`.WithAuthority()` 7 재정의 | Azure 클라우드, 대상 그룹, 테 넌 트 (테 넌 트 ID 또는 도메인 이름)를 선택 하거나 직접 인증 기관 URI를 제공 하 여 응용 프로그램 기본 기관을 Azure AD 기관에 설정 합니다.|
+|`.WithAuthority()` 7 재정의 | Azure 클라우드, 대상 그룹, 테넌트 (테넌트 ID 또는 도메인 이름)를 선택 하거나 직접 인증 기관 URI를 제공 하 여 응용 프로그램 기본 기관을 Azure AD 기관에 설정 합니다.|
 |`.WithAdfsAuthority(string)` | 응용 프로그램 기본 기관을 ADFS 기관으로 설정 합니다.|
 |`.WithB2CAuthority(string)` | 응용 프로그램 기본 기관을 Azure AD B2C 기관으로 설정 합니다.|
 |`.WithClientId(string)` | 클라이언트 ID를 재정의 합니다.|
@@ -109,7 +109,7 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 |`.WithLogging()` | 호출 되는 경우 응용 프로그램은 디버깅 추적과 함께 콜백을 호출 합니다. 자세한 내용은 [로깅](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/logging) 을 참조 하세요.|
 |`.WithRedirectUri(string redirectUri)` | 기본 리디렉션 URI를 재정의 합니다. 공용 클라이언트 응용 프로그램의 경우 broker를 포함 하는 시나리오에 유용 합니다.|
 |`.WithTelemetry(TelemetryCallback telemetryCallback)` | 원격 분석을 보내는 데 사용 되는 대리자를 설정 합니다.|
-|`.WithTenantId(string tenantId)` | 테 넌 트 ID 또는 테 넌 트 설명을 재정의 합니다.|
+|`.WithTenantId(string tenantId)` | 테넌트 ID 또는 테넌트 설명을 재정의 합니다.|
 
 ### <a name="modifiers-specific-to-xamarinios-applications"></a>Xamarin.ios 응용 프로그램에만 적용 되는 한정자
 
@@ -141,7 +141,7 @@ app = PublicClientApplicationBuilder.Create(clientId)
         .Build();
 ```
 
-흥미로운 부분은 이제 국가별 클라우드의 프로그래밍이 간소화 되었습니다. 응용 프로그램이 국가별 클라우드의 다중 테 넌 트 응용 프로그램이 되도록 하려면 다음과 같이 작성할 수 있습니다.
+흥미로운 부분은 이제 국가별 클라우드의 프로그래밍이 간소화 되었습니다. 응용 프로그램이 국가별 클라우드의 다중 테넌트 응용 프로그램이 되도록 하려면 다음과 같이 작성할 수 있습니다.
 
 ```csharp
 IPublicClientApplication app;
@@ -158,7 +158,7 @@ app = PublicClientApplicationBuilder.Create(clientId)
         .Build();
 ```
 
-마지막으로 Azure AD B2C 개발자 인 경우 다음과 같이 테 넌 트를 지정할 수 있습니다.
+마지막으로 Azure AD B2C 개발자 인 경우 다음과 같이 테넌트를 지정할 수 있습니다.
 
 ```csharp
 IPublicClientApplication app;

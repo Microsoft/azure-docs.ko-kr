@@ -159,9 +159,9 @@ MSAL은 사용자가 스마트 TV, IoT 장치 또는 프린터와 같은 입력 
 
 - 장치 코드 흐름은 공용 클라이언트 응용 프로그램 에서만 사용할 수 있습니다.
 - 공용 클라이언트 응용 프로그램을 구성할 때 전달 된 기관은 다음 중 하나 여야 합니다.
-  - 테 넌 트 (형식 `https://login.microsoftonline.com/{tenant}/` `{tenant}`. 여기서,은 테 넌 트 ID 또는 테 넌 트와 연결 된 도메인을 나타내는 GUID입니다.
+  - 테넌트 (형식 `https://login.microsoftonline.com/{tenant}/` `{tenant}`. 여기서,은 테넌트 ID 또는 테넌트와 연결 된 도메인을 나타내는 GUID입니다.
   - 모든 회사 및 학교 계정 (`https://login.microsoftonline.com/organizations/`)
-- Microsoft 개인 계정은 Azure AD v2.0 끝점에서 아직 지원 되지 않습니다 (`/common` 또는 `/consumers` 테 넌 트를 사용할 수 없음).
+- Microsoft 개인 계정은 Azure AD v2.0 엔드포인트에서 아직 지원 되지 않습니다 (`/common` 또는 `/consumers` 테넌트를 사용할 수 없음).
 
 ## <a name="integrated-windows-authentication"></a>Windows 통합 인증
 
@@ -182,21 +182,21 @@ IWA는 .NET Framework, .NET Core 및 유니버설 Windows 플랫폼 플랫폼용
 
 IWA multi-factor authentication을 바이패스 하지 않습니다. Multi-factor authentication이 구성 된 경우 multi-factor authentication 챌린지가 필요한 경우 IWA가 실패할 수 있습니다. Multi-factor authentication을 사용 하려면 사용자 조작이 필요 합니다.
 
-Id 공급자가 2 단계 인증을 요청 하는 시간을 제어 하지 않습니다. 테 넌 트 관리자가 수행 합니다. 일반적으로 다른 국가에서 로그인 할 때, VPN을 통해 회사 네트워크에 연결 되어 있지 않은 경우, VPN을 통해 연결 된 경우에도 2 단계 인증이 필요 합니다. Azure AD는 AI를 사용 하 여 2 단계 인증이 필요한 경우 계속 학습 합니다. IWA이 실패 하면 [대화형 사용자 프롬프트] (#interactive)로 대체 해야 합니다.
+Id 공급자가 2 단계 인증을 요청 하는 시간을 제어 하지 않습니다. 테넌트 관리자가 수행 합니다. 일반적으로 다른 국가에서 로그인 할 때, VPN을 통해 회사 네트워크에 연결 되어 있지 않은 경우, VPN을 통해 연결 된 경우에도 2 단계 인증이 필요 합니다. Azure AD는 AI를 사용 하 여 2 단계 인증이 필요한 경우 계속 학습 합니다. IWA이 실패 하면 [대화형 사용자 프롬프트] (#interactive)로 대체 해야 합니다.
 
 공용 클라이언트 응용 프로그램을 구성할 때 전달 된 기관은 다음 중 하나 여야 합니다.
-- 테 넌 트 (형식 `https://login.microsoftonline.com/{tenant}/` `tenant`. 여기서,은 테 넌 트 ID 또는 테 넌 트와 연결 된 도메인을 나타내는 guid입니다.
-- 모든 회사 및 학교 계정 (`https://login.microsoftonline.com/organizations/`) Microsoft 개인 계정은 지원 되지 않습니다 (`/common` 또는 `/consumers` 테 넌 트를 사용할 수 없음).
+- 테넌트 (형식 `https://login.microsoftonline.com/{tenant}/` `tenant`. 여기서,은 테넌트 ID 또는 테넌트와 연결 된 도메인을 나타내는 guid입니다.
+- 모든 회사 및 학교 계정 (`https://login.microsoftonline.com/organizations/`) Microsoft 개인 계정은 지원 되지 않습니다 (`/common` 또는 `/consumers` 테넌트를 사용할 수 없음).
 
 IWA는 자동 흐름 이므로 다음 중 하나가 true 여야 합니다.
 - 응용 프로그램의 사용자에 게는 응용 프로그램을 사용 하기 위해 이전에 동의한 있어야 합니다. 
-- 테 넌 트 관리자는 응용 프로그램을 사용 하기 위해 테 넌 트의 모든 사용자에 게 이전에 동의한 해야 합니다.
+- 테넌트 관리자는 응용 프로그램을 사용 하기 위해 테넌트의 모든 사용자에 게 이전에 동의한 해야 합니다.
 
 이는 다음 중 하나에 해당 하는 것을 의미 합니다.
 - 개발자가 Azure Portal에 대 한 **권한 부여** 를 선택 했습니다.
-- 테 넌 트 관리자가 응용 프로그램 등록의 **API 권한** 탭에서 **{테 넌 트 도메인}에 대 한 Grant/revoke 관리자 동의** 를 선택 했습니다 ( [웹 api에 대 한 액세스 권한 추가](quickstart-configure-app-access-web-apis.md#add-permissions-to-access-web-apis)참조).
+- 테넌트 관리자가 응용 프로그램 등록의 **API 권한** 탭에서 **{테넌트 도메인}에 대 한 Grant/revoke 관리자 동의** 를 선택 했습니다 ( [웹 api에 대 한 액세스 권한 추가](quickstart-configure-app-access-web-apis.md#add-permissions-to-access-web-apis)참조).
 - 사용자가 응용 프로그램에 동의할 수 있는 방법을 제공 했습니다 ( [개별 사용자 동의 요청](v2-permissions-and-consent.md#requesting-individual-user-consent)참조).
-- 테 넌 트 관리자가 응용 프로그램에 동의할 수 있는 방법을 제공 했습니다 ( [관리자 동의](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant)참조).
+- 테넌트 관리자가 응용 프로그램에 동의할 수 있는 방법을 제공 했습니다 ( [관리자 동의](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant)참조).
 
 IWA flow는 .NET 데스크톱, .NET Core 및 Windows 유니버설 플랫폼 앱에 대해 사용 하도록 설정 됩니다. .Net core는 운영 체제에서 사용자 이름을 가져올 수 없기 때문에 IWA에 대 한 사용자 이름을 제공 해야 합니다.
   
@@ -226,7 +226,7 @@ Windows 도메인 가입 컴퓨터에서 자동으로 토큰을 획득 하는 �
 
 [Windows 통합 인증 제약 조건](#integrated-windows-authentication)외에도 다음과 같은 제약 조건이 적용 됩니다.
 
-- 사용자 이름/암호 흐름은 조건부 액세스 및 multi-factor authentication과 호환 되지 않습니다. 따라서 테 넌 트 관리자가 다단계 인증을 필요로 하는 Azure AD 테 넌 트에서 앱이 실행 되는 경우이 흐름을 사용할 수 없습니다. 많은 조직에서이 작업을 수행 합니다.
+- 사용자 이름/암호 흐름은 조건부 액세스 및 multi-factor authentication과 호환 되지 않습니다. 따라서 테넌트 관리자가 다단계 인증을 필요로 하는 Azure AD 테넌트에서 앱이 실행 되는 경우이 흐름을 사용할 수 없습니다. 많은 조직에서이 작업을 수행 합니다.
 - 회사 및 학교 계정 (Microsoft 계정 아님)에 대해서만 작동 합니다.
 - 흐름은 .NET 데스크톱 및 .NET Core에서 사용할 수 있지만 유니버설 Windows 플랫폼에서는 사용할 수 없습니다.
 

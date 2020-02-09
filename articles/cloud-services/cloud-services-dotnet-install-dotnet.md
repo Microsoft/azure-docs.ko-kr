@@ -20,7 +20,7 @@ ms.locfileid: "75360993"
 # <a name="install-net-on-azure-cloud-services-roles"></a>Azure Cloud Services 역할에 .NET 설치
 이 문서에서는 Azure 게스트 OS와 함께 제공되지 않는 .NET Framework 버전을 설치하는 방법을 설명합니다. 클라우드 서비스 웹 및 작업자 역할을 구성하기 위해 게스트 OS에 .NET을 사용할 수 있습니다.
 
-예를 들어 .NET 4.6 릴리스와 함께 제공되지 않는 게스트 OS 제품군 4에서 .NET 4.6.2를 설치할 수 있습니다. (게스트 OS 제품군 5는 .NET 4.6과 함께 제공 됩니다.) Azure 게스트 OS 릴리스에 대 한 최신 정보는 [Azure 게스트 os 릴리스 뉴스](cloud-services-guestos-update-matrix.md)를 참조 하세요. 
+예를 들어 .NET 4.6 릴리스와 함께 제공되지 않는 게스트 OS 제품군 4에서 .NET 4.6.2를 설치할 수 있습니다. (게스트 OS 제품군 5는 .NET 4.6과 함께 제공 됩니다.) Azure 게스트 OS 릴리스에 대한 최신 정보는 [Azure 게스트 os 릴리스 뉴스](cloud-services-guestos-update-matrix.md)를 참조 하세요. 
 
 >[!IMPORTANT]
 >Azure SDK 2.9에는 게스트 OS 제품군 4 이하에서 .NET 4.6을 배포하는 데 제한이 있습니다. 제한에 대한 수정 사항은 [Microsoft Docs](https://github.com/MicrosoftDocs/azure-cloud-services-files/tree/master/Azure%20Targets%20SDK%202.9) 사이트에서 사용할 수 있습니다.

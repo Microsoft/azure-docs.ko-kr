@@ -22,7 +22,7 @@ ms.locfileid: "76028293"
 > 적용 대상: Windows PowerShell 5.1
 
 수백 또는 수천 대의 서버를 관리 하는 것은 쉽지 않을 수 있습니다.
-고객은 가장 어려운 측면에서 실제로 [구성 데이터](/powershell/scripting/dsc/configurations/configdata)를 관리 하는 데 대 한 피드백을 제공 했습니다.
+고객은 가장 어려운 측면에서 실제로 [구성 데이터](/powershell/scripting/dsc/configurations/configdata)를 관리 하는 데 대한 피드백을 제공 했습니다.
 위치, 형식, 환경 등의 논리적 구문으로 정보를 구성 합니다.
 
 > [!NOTE]

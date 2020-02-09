@@ -23,7 +23,7 @@ ms.locfileid: "74926188"
 이 문서에서는 Azure Data Factory의 복사 작업을 사용 하 여 SAP 테이블에서 데이터를 복사 하는 방법을 설명 합니다. 자세한 내용은 [복사 작업 개요](copy-activity-overview.md)를 참조 하세요.
 
 >[!TIP]
->SAP 데이터 통합 시나리오에 대 한 ADF의 전반적인 지원에 대 한 자세한 내용은 [Azure Data Factory 백서를 사용 하 여 sap 데이터 통합](https://github.com/Azure/Azure-DataFactory/blob/master/whitepaper/SAP%20Data%20Integration%20using%20Azure%20Data%20Factory.pdf) 에서 자세한 소개, comparsion 및 지침을 참조 하세요.
+>SAP 데이터 통합 시나리오에 대한 ADF의 전반적인 지원에 대한 자세한 내용은 [Azure Data Factory 백서를 사용 하 여 sap 데이터 통합](https://github.com/Azure/Azure-DataFactory/blob/master/whitepaper/SAP%20Data%20Integration%20using%20Azure%20Data%20Factory.pdf) 에서 자세한 소개, comparsion 및 지침을 참조 하세요.
 
 ## <a name="supported-capabilities"></a>지원되는 기능
 
@@ -60,7 +60,7 @@ SAP 테이블에서 지원 되는 모든 싱크 데이터 저장소로 데이터
 - Data Factory SAP 테이블 커넥터에서 사용 되는 SAP 사용자에 게는 다음 사용 권한이 있어야 합니다.
 
   - RFC (원격 함수 호출) 대상을 사용 하기 위한 권한 부여입니다.
-  - S_SDSAUTH 권한 부여 개체의 실행 작업에 대 한 사용 권한입니다.
+  - S_SDSAUTH 권한 부여 개체의 실행 작업에 대한 사용 권한입니다.
 
 ## <a name="get-started"></a>시작하기
 
@@ -80,10 +80,10 @@ SAP 테이블에서 지원 되는 모든 싱크 데이터 저장소로 데이터
 | `messageServer` | SAP 메시지 서버의 호스트 이름입니다.<br/>를 사용 하 여 SAP 메시지 서버에 연결 합니다. | 아닙니다. |
 | `messageServerService` | 메시지 서버의 서비스 이름 또는 포트 번호입니다.<br/>를 사용 하 여 SAP 메시지 서버에 연결 합니다. | 아닙니다. |
 | `systemId` | 테이블이 있는 SAP 시스템의 ID입니다.<br/>를 사용 하 여 SAP 메시지 서버에 연결 합니다. | 아닙니다. |
-| `logonGroup` | SAP 시스템에 대 한 로그온 그룹입니다.<br/>를 사용 하 여 SAP 메시지 서버에 연결 합니다. | 아닙니다. |
+| `logonGroup` | SAP 시스템에 대한 로그온 그룹입니다.<br/>를 사용 하 여 SAP 메시지 서버에 연결 합니다. | 아닙니다. |
 | `clientId` | SAP 시스템의 클라이언트 ID입니다.<br/>허용 되는 값: 문자열로 표현 되는 세 자리 10 진수입니다. | yes |
 | `language` | SAP 시스템에서 사용 하는 언어입니다.<br/>기본값은 `EN`입니다.| 아닙니다. |
-| `userName` | SAP 서버에 대 한 액세스 권한이 있는 사용자의 이름입니다. | yes |
+| `userName` | SAP 서버에 대한 액세스 권한이 있는 사용자의 이름입니다. | yes |
 | `password` | 이 사용자에 대한 암호입니다. 이 필드를 `SecureString` 형식으로 표시 하 여 Data Factory에 안전 하 게 저장 하거나 [Azure Key Vault에 저장 된 암호를 참조](store-credentials-in-key-vault.md)합니다. | yes |
 | `sncMode` | 테이블이 있는 SAP 서버에 액세스 하기 위한 SNC 활성화 표시기입니다.<br/>SNC를 사용 하 여 SAP 서버에 연결 하려는 경우에 사용 합니다.<br/>허용 되는 값은 `0` (해제, 기본값) 또는 `1` (설정)입니다. | 아닙니다. |
 | `sncMyName` | 테이블이 있는 SAP 서버에 액세스 하기 위한 개시자의 SNC 이름입니다.<br/>`sncMode`가 on 인 경우 적용 됩니다. | 아닙니다. |
@@ -176,7 +176,7 @@ SAP 테이블에서 지원 되는 모든 싱크 데이터 저장소로 데이터
 
 ## <a name="dataset-properties"></a>데이터 세트 속성
 
-데이터 집합 정의에 대 한 섹션 및 속성의 전체 목록은 [데이터 집합](concepts-datasets-linked-services.md)을 참조 하세요. 다음 섹션에서는 SAP 테이블 데이터 집합에서 지 원하는 속성의 목록을 제공 합니다.
+데이터 집합 정의에 대한 섹션 및 속성의 전체 목록은 [데이터 집합](concepts-datasets-linked-services.md)을 참조 하세요. 다음 섹션에서는 SAP 테이블 데이터 집합에서 지 원하는 속성의 목록을 제공 합니다.
 
 SAP BW 연결 된 허브 연결 된 서비스에서 데이터를 복사 하려면 다음 속성이 지원 됩니다.
 
@@ -206,7 +206,7 @@ SAP BW 연결 된 허브 연결 된 서비스에서 데이터를 복사 하려�
 
 ## <a name="copy-activity-properties"></a>복사 작업 속성
 
-작업 정의에 대 한 섹션 및 속성의 전체 목록은 [파이프라인](concepts-pipelines-activities.md)을 참조 하세요. 다음 섹션에서는 SAP 테이블 원본에서 지 원하는 속성의 목록을 제공 합니다.
+작업 정의에 대한 섹션 및 속성의 전체 목록은 [파이프라인](concepts-pipelines-activities.md)을 참조 하세요. 다음 섹션에서는 SAP 테이블 원본에서 지 원하는 속성의 목록을 제공 합니다.
 
 ### <a name="sap-table-as-source"></a>SAP 테이블을 원본으로
 
@@ -283,7 +283,7 @@ SAP 테이블에서 데이터를 복사 하기 위해 지원 되는 속성은 �
 ]
 ```
 
-## <a name="data-type-mappings-for-an-sap-table"></a>SAP 테이블에 대 한 데이터 형식 매핑
+## <a name="data-type-mappings-for-an-sap-table"></a>SAP 테이블에 대한 데이터 형식 매핑
 
 SAP 테이블에서 데이터를 복사 하는 경우 SAP 테이블 데이터 형식에서 Azure Data Factory 중간 데이터 형식으로 다음 매핑이 사용 됩니다. 복사 활동에서 원본 스키마와 데이터 형식을 싱크에 매핑하는 방법에 대한 자세한 내용은 [스키마 및 데이터 형식 매핑](copy-activity-schema-and-type-mapping.md)을 참조하세요.
 
@@ -300,7 +300,7 @@ SAP 테이블에서 데이터를 복사 하는 경우 SAP 테이블 데이터 �
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
+속성에 대한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
 
 
 ## <a name="next-steps"></a>다음 단계

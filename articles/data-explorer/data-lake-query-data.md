@@ -42,10 +42,10 @@ Azure 데이터 탐색기는 Azure Blob Storage 및 Azure Data Lake Storage Gen2
     ```
     
     > [!NOTE]
-    > * 보다 세분화 된 분할을 통해 성능이 향상 됩니다. 예를 들어 일별 파티션이 있는 외부 테이블에 대 한 쿼리는 월별 분할 된 테이블이 있는 쿼리 보다 성능이 더 우수 합니다.
+    > * 보다 세분화 된 분할을 통해 성능이 향상 됩니다. 예를 들어 일별 파티션이 있는 외부 테이블에 대한 쿼리는 월별 분할 된 테이블이 있는 쿼리 보다 성능이 더 우수 합니다.
     > * 파티션이 있는 외부 테이블을 정의 하는 경우 저장소 구조가 동일할 것으로 예상 됩니다.
 예를 들어 테이블이 yyyy/MM/dd 형식의 DateTime 파티션으로 정의 된 경우 (기본값) URI 저장소 파일 경로는 *container1/yyyy/mm/dd/all_exported_blobs*이어야 합니다. 
-    > * 외부 테이블이 datetime 열에 의해 분할 된 경우에는 쿼리에서 닫힌 범위에 대 한 시간 필터를 항상 포함 합니다. 예를 들어 쿼리 `ArchivedProducts | where Timestamp between (ago(1h) .. 10m)`는이 (열린 범위) 1 `ArchivedProducts | where Timestamp > ago(1h)`) 보다 잘 수행 되어야 합니다. 
+    > * 외부 테이블이 datetime 열에 의해 분할 된 경우에는 쿼리에서 닫힌 범위에 대한 시간 필터를 항상 포함 합니다. 예를 들어 쿼리 `ArchivedProducts | where Timestamp between (ago(1h) .. 10m)`는이 (열린 범위) 1 `ArchivedProducts | where Timestamp > ago(1h)`) 보다 잘 수행 되어야 합니다. 
 
 1. 외부 테이블은 웹 UI의 왼쪽 창에 표시 됩니다.
 
@@ -72,7 +72,7 @@ Json 형식의 외부 테이블을 만들 수 있습니다. 자세한 내용은 
     ) 
     ```
  
-1. Json 형식에는 아래와 같이 열에 대 한 매핑을 만드는 두 번째 단계가 있습니다. 다음 쿼리에서 *mappingName*이라는 특정 json 매핑을 만듭니다.
+1. Json 형식에는 아래와 같이 열에 대한 매핑을 만드는 두 번째 단계가 있습니다. 다음 쿼리에서 *mappingName*이라는 특정 json 매핑을 만듭니다.
 
     ```kusto
     .create external table ExternalTableJson json mapping "mappingName" '[{ "column" : "rownumber", "datatype" : "int", "path" : "$.rownumber"},{ "column" : "rowguid", "path" : "$.rowguid" }]' 
@@ -221,7 +221,7 @@ external_table("TaxiRides")
 | render piechart
 ```
 
-이 쿼리에서는 쿼리 시간 및 성능을 최적화 하는 분할을 사용 합니다. 분할 된 열 (pickup_datetime)에 대 한 쿼리를 필터링 하 고 몇 초 내에 결과를 반환 합니다.
+이 쿼리에서는 쿼리 시간 및 성능을 최적화 하는 분할을 사용 합니다. 분할 된 열 (pickup_datetime)에 대한 쿼리를 필터링 하 고 몇 초 내에 결과를 반환 합니다.
 
 ![분할 된 쿼리 렌더링](media/data-lake-query-data/taxirides-with-partition.png)
   
@@ -252,7 +252,7 @@ Azure 데이터 탐색기은 Parquet 및 ORC 칼럼 형식 형식을 지원 합�
  
 ### <a name="partitioning"></a>분할
  
-쿼리가 관련이 없는 경로를 건너뛸 수 있도록 하는 "폴더" 파티션을 사용 하 여 데이터를 구성 합니다. 분할을 계획할 때 타임 스탬프 또는 테 넌 트 ID와 같은 쿼리의 파일 크기 및 일반 필터를 고려 합니다.
+쿼리가 관련이 없는 경로를 건너뛸 수 있도록 하는 "폴더" 파티션을 사용 하 여 데이터를 구성 합니다. 분할을 계획할 때 타임 스탬프 또는 테넌트 ID와 같은 쿼리의 파일 크기 및 일반 필터를 고려 합니다.
  
 ### <a name="vm-size"></a>VM 크기
  

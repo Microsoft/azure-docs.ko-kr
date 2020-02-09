@@ -43,7 +43,7 @@ Azure Automation은 감시자 태스크를 사용하여 이벤트를 감시하�
 
 이 가져오기 프로세스는 [PowerShell 갤러리](https://www.powershellgallery.com)을 통해 수행할 수 있습니다.
 
-1. [Watch-NewFile](https://gallery.technet.microsoft.com/scriptcenter/Watcher-runbook-that-looks-36fc82cd)에 대 한 갤러리 페이지로 이동 합니다.
+1. [Watch-NewFile](https://gallery.technet.microsoft.com/scriptcenter/Watcher-runbook-that-looks-36fc82cd)에 대한 갤러리 페이지로 이동 합니다.
 2. **Azure Automation** 탭에서 **Azure Automation 배포를**클릭 합니다.
 
 다음 단계를 사용 하 여 포털에서이 runbook을 automation 계정으로 가져올 수도 있습니다.
@@ -70,7 +70,7 @@ Azure Automation은 감시자 태스크를 사용하여 이벤트를 감시하�
 
 이 가져오기 프로세스는 [PowerShell 갤러리](https://www.powershellgallery.com)을 통해 수행할 수 있습니다.
 
-1. [Process-NewFile](https://gallery.technet.microsoft.com/scriptcenter/Watcher-action-that-b4ff7cdf)에 대 한 갤러리 페이지로 이동 합니다.
+1. [Process-NewFile](https://gallery.technet.microsoft.com/scriptcenter/Watcher-action-that-b4ff7cdf)에 대한 갤러리 페이지로 이동 합니다.
 2. **Azure Automation** 탭에서 **Azure Automation 배포를**클릭 합니다.
 
 다음 단계를 사용 하 여 포털에서이 runbook을 automation 계정으로 가져올 수도 있습니다.

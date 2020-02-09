@@ -16,7 +16,7 @@ ms.locfileid: "76772343"
 ---
 # <a name="ingest-json-formatted-sample-data-into-azure-data-explorer"></a>JSON 형식의 샘플 데이터를 Azure 데이터 탐색기 수집
 
-이 문서에서는 JSON 형식의 데이터를 Azure 데이터 탐색기 데이터베이스에 수집 하는 방법을 보여 줍니다. 원시 및 매핑된 JSON의 간단한 예제를 시작 하 고, 여러 줄로 된 JSON을 계속 진행 하 고, 배열 및 사전을 포함 하는 더 복잡 한 JSON 스키마를 다룰 수 있습니다.  이 예에서는 KQL (Kusto query language), C#또는 Python을 사용 하 여 JSON 형식의 데이터를 수집 하는 프로세스를 자세히 설명 합니다. Kusto 쿼리 언어 `ingest` 제어 명령은 엔진 끝점에 직접 실행 됩니다. 프로덕션 시나리오에서 수집은 클라이언트 라이브러리 또는 데이터 연결을 사용 하 여 데이터 관리 서비스에 대해 실행 됩니다. Azure [데이터 탐색기 Python 라이브러리를 사용 하 여 데이터 수집](/azure/data-explorer/python-ingest-data) 을 읽고 [AZURE 데이터 탐색기 .NET Standard SDK를 사용 하 여 데이터를 수집 하 여](/azure/data-explorer/net-standard-ingest-data) 이러한 클라이언트 라이브러리와의 수집 데이터에 대 한 연습을 진행 합니다.
+이 문서에서는 JSON 형식의 데이터를 Azure 데이터 탐색기 데이터베이스에 수집 하는 방법을 보여 줍니다. 원시 및 매핑된 JSON의 간단한 예제를 시작 하 고, 여러 줄로 된 JSON을 계속 진행 하 고, 배열 및 사전을 포함 하는 더 복잡 한 JSON 스키마를 다룰 수 있습니다.  이 예에서는 KQL (Kusto query language), C#또는 Python을 사용 하 여 JSON 형식의 데이터를 수집 하는 프로세스를 자세히 설명 합니다. Kusto 쿼리 언어 `ingest` 제어 명령은 엔진 엔드포인트에 직접 실행 됩니다. 프로덕션 시나리오에서 수집은 클라이언트 라이브러리 또는 데이터 연결을 사용 하 여 데이터 관리 서비스에 대해 실행 됩니다. Azure [데이터 탐색기 Python 라이브러리를 사용 하 여 데이터 수집](/azure/data-explorer/python-ingest-data) 을 읽고 [AZURE 데이터 탐색기 .NET Standard SDK를 사용 하 여 데이터를 수집 하 여](/azure/data-explorer/net-standard-ingest-data) 이러한 클라이언트 라이브러리와의 수집 데이터에 대한 연습을 진행 합니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -418,7 +418,7 @@ INGESTION_CLIENT.ingest_from_blob(
     EventRecordsExpand() | getschema
     ```
 
-1. 대상 테이블에 업데이트 정책을 추가 합니다. 이 정책은 `RawEvents` 중간 테이블에서 새로 수집 데이터에 대 한 쿼리를 자동으로 실행 하 고 결과를 `Events` 테이블에 수집 합니다. 중간 테이블을 유지 하지 않으려면 0 보존 정책을 정의 합니다.
+1. 대상 테이블에 업데이트 정책을 추가 합니다. 이 정책은 `RawEvents` 중간 테이블에서 새로 수집 데이터에 대한 쿼리를 자동으로 실행 하 고 결과를 `Events` 테이블에 수집 합니다. 중간 테이블을 유지 하지 않으려면 0 보존 정책을 정의 합니다.
 
     ```Kusto
     .alter table Events policy update @'[{"Source": "RawEvents", "Query": "EventRecordsExpand()", "IsEnabled": "True"}]'
@@ -463,7 +463,7 @@ INGESTION_CLIENT.ingest_from_blob(
     > [!NOTE]
     > 함수에서 받은 스키마는 대상 테이블의 스키마와 일치 해야 합니다.
 
-1. 대상 테이블에 업데이트 정책을 추가 합니다. 이 정책은 `RawEvents` 중간 테이블에서 새로 수집 데이터에 대 한 쿼리를 자동으로 실행 하 고 해당 결과를 `Events` 테이블에 수집 합니다. 중간 테이블을 유지 하지 않으려면 0 보존 정책을 정의 합니다.
+1. 대상 테이블에 업데이트 정책을 추가 합니다. 이 정책은 `RawEvents` 중간 테이블에서 새로 수집 데이터에 대한 쿼리를 자동으로 실행 하 고 해당 결과를 `Events` 테이블에 수집 합니다. 중간 테이블을 유지 하지 않으려면 0 보존 정책을 정의 합니다.
 
     ```C#
     var command =
@@ -513,7 +513,7 @@ INGESTION_CLIENT.ingest_from_blob(
     > [!NOTE]
     > 함수가 받은 스키마는 대상 테이블의 스키마와 일치 해야 합니다.
 
-1. 대상 테이블에 업데이트 정책을 추가 합니다. 이 정책은 `RawEvents` 중간 테이블에서 새로 수집 데이터에 대 한 쿼리를 자동으로 실행 하 고 해당 결과를 `Events` 테이블에 수집 합니다. 중간 테이블을 유지 하지 않으려면 0 보존 정책을 정의 합니다.
+1. 대상 테이블에 업데이트 정책을 추가 합니다. 이 정책은 `RawEvents` 중간 테이블에서 새로 수집 데이터에 대한 쿼리를 자동으로 실행 하 고 해당 결과를 `Events` 테이블에 수집 합니다. 중간 테이블을 유지 하지 않으려면 0 보존 정책을 정의 합니다.
 
     ```Python
     CREATE_UPDATE_POLICY_COMMAND = 

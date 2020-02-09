@@ -18,7 +18,7 @@ ms.locfileid: "76985920"
 ---
 # <a name="interact-with-the-map"></a>맵과 상호 작용
 
-이 문서에서는 [map events 클래스](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?#events)를 사용 하는 방법을 보여 줍니다. 속성은 지도와 지도의 여러 계층에 대 한 이벤트를 강조 표시 합니다. HTML 표식과 상호 작용할 때 이벤트를 강조 표시할 수도 있습니다.
+이 문서에서는 [map events 클래스](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?#events)를 사용 하는 방법을 보여 줍니다. 속성은 지도와 지도의 여러 계층에 대한 이벤트를 강조 표시 합니다. HTML 표식과 상호 작용할 때 이벤트를 강조 표시할 수도 있습니다.
 
 ## <a name="interact-with-the-map"></a>맵과 상호 작용
 
@@ -87,7 +87,7 @@ ms.locfileid: "76985920"
 | `pitchend`          | 사용자 상호 작용이 나 메서드의 결과로 지도의 피치 (기울기)가 변경 되 면 즉시 발생 합니다.|
 | `pitchstart`        | 사용자 상호 작용 또는 메서드의 결과로 지도의 피치 (기울기)가 변경 될 때마다 발생 합니다.|
 | `ready`             | 지도를 프로그래밍 방식으로 상호 작용할 수 있도록 하기 위해 필요한 최소한의 map 리소스가 로드 될 때 발생 합니다.|
-| `render`            | <p>다음의 결과로 지도를 화면에 그릴 때마다 발생 합니다.<ul><li>지도의 위치, 확대/축소, 피치 또는 베어링에 대 한 변경 내용입니다.</li><li>지도의 스타일에 대 한 변경 내용입니다.</li><li>`DataSource` 소스에 대 한 변경 내용입니다.</li><li>벡터 타일, GeoJSON 파일, 문자 모양 또는 스프라이트를 로드 하는 중입니다.</li></ul></p>|
+| `render`            | <p>다음의 결과로 지도를 화면에 그릴 때마다 발생 합니다.<ul><li>지도의 위치, 확대/축소, 피치 또는 베어링에 대한 변경 내용입니다.</li><li>지도의 스타일에 대한 변경 내용입니다.</li><li>`DataSource` 소스에 대한 변경 내용입니다.</li><li>벡터 타일, GeoJSON 파일, 문자 모양 또는 스프라이트를 로드 하는 중입니다.</li></ul></p>|
 | `resize`            | 맵의 크기가 조정 된 직후에 발생 합니다.|
 | `rotate`            | "회전 하려면 끌기" 작업을 수행 하는 동안 반복적으로 발생 합니다.|
 | `rotateend`         | "끌기를 끌 때" 상호 작용이 종료 될 때 발생 합니다.|

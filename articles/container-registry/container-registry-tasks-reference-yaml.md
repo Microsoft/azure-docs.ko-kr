@@ -12,7 +12,7 @@ ms.locfileid: "75945733"
 ---
 # <a name="acr-tasks-reference-yaml"></a>ACR 작업 참조: YAML
 
-ACR 작업의 다단계 작업 정의는 컨테이너 빌드, 테스트 및 패치에 중점을 둔 컨테이너 중심의 컴퓨팅 기본 형식을 제공합니다. 이 문서에서는 여러 단계 작업을 정의 하는 YAML 파일에 대 한 명령, 매개 변수, 속성 및 구문을 설명 합니다.
+ACR 작업의 다단계 작업 정의는 컨테이너 빌드, 테스트 및 패치에 중점을 둔 컨테이너 중심의 컴퓨팅 기본 형식을 제공합니다. 이 문서에서는 여러 단계 작업을 정의 하는 YAML 파일에 대한 명령, 매개 변수, 속성 및 구문을 설명 합니다.
 
 이 문서에는 ACR 작업에 대한 다단계 작업 YAML 파일을 만들기 위한 참조가 포함되어 있습니다. ACR 작업에 대한 소개를 보려면 [ACR 작업 개요](container-registry-tasks-overview.md)를 참조하세요.
 
@@ -80,7 +80,7 @@ az configure --defaults acr=myregistry
 | `version` | 문자열 | 예 | ACR 작업 서비스에서 구문 분석한 `acr-task.yaml` 파일의 버전입니다. ACR 작업은 이전 버전과의 호환성을 유지하려고 하지만, 이 값을 사용하면 ACR 작업이 정의된 버전 내에서 호환성을 유지할 수 있습니다. 지정 하지 않으면 기본값은 최신 버전입니다. | 아닙니다. | 없음 |
 | `stepTimeout` | int(초) | 예 | 단계를 실행할 수 있는 최대 시간(초)입니다. 속성이 태스크에 지정 된 경우 모든 단계의 기본 `timeout` 속성을 설정 합니다. `timeout` 속성이 단계에서 지정 되는 경우 태스크에서 제공 하는 속성을 재정의 합니다. | 예 | 600(10분) |
 | `workingDirectory` | 문자열 | 예 | 런타임 중에 컨테이너의 작업 디렉터리입니다. 속성이 태스크에 지정 된 경우 모든 단계의 기본 `workingDirectory` 속성을 설정 합니다. 단계에서 지정 하는 경우 태스크에서 제공 하는 속성을 재정의 합니다. | 예 | `/workspace` |
-| `env` | [string, string, ...] | 예 |  태스크에 대 한 환경 변수를 정의 하는 `key=value` 형식의 문자열 배열입니다. 속성이 태스크에 지정 된 경우 모든 단계의 기본 `env` 속성을 설정 합니다. 단계에 지정 된 경우 태스크에서 상속 된 모든 환경 변수를 재정의 합니다. | 없음 |
+| `env` | [string, string, ...] | 예 |  태스크에 대한 환경 변수를 정의 하는 `key=value` 형식의 문자열 배열입니다. 속성이 태스크에 지정 된 경우 모든 단계의 기본 `env` 속성을 설정 합니다. 단계에 지정 된 경우 태스크에서 상속 된 모든 환경 변수를 재정의 합니다. | 없음 |
 | `secrets` | [비밀, 비밀, ...] | 예 | [비밀](#secret) 개체의 배열입니다. | 없음 |
 | `networks` | [네트워크, 네트워크, ...] | 예 | [네트워크](#network) 개체의 배열입니다. | 없음 |
 
@@ -92,7 +92,7 @@ Secret 개체에는 다음과 같은 속성이 있습니다.
 | -------- | ---- | -------- | ----------- | ------- |
 | `id` | 문자열 | 아닙니다. | 비밀의 식별자입니다. | 없음 |
 | `keyvault` | 문자열 | 예 | Azure Key Vault 비밀 URL입니다. | 없음 |
-| `clientID` | 문자열 | 예 | Azure 리소스에 대 한 [사용자 할당 관리 id](container-registry-tasks-authentication-managed-identity.md) 의 클라이언트 ID입니다. | 없음 |
+| `clientID` | 문자열 | 예 | Azure 리소스에 대한 [사용자 할당 관리 id](container-registry-tasks-authentication-managed-identity.md) 의 클라이언트 ID입니다. | 없음 |
 
 ### <a name="network"></a>네트워크
 
@@ -374,7 +374,7 @@ steps:
 | `repeat` | int | 예 | 컨테이너 실행을 반복 하기 위한 다시 시도 횟수입니다. | 0 |
 | `retries` | int | 예 | 컨테이너의 실행이 실패 한 경우 다시 시도 하는 횟수입니다. 컨테이너의 종료 코드가 0이 아닌 경우에만 재시도를 시도 합니다. | 0 |
 | `retryDelay` | int(초) | 예 | 컨테이너 실행 재시도 사이의 지연 시간 (초)입니다. | 0 |
-| `secret` | object | 예 | [Azure 리소스에 대 한](container-registry-tasks-authentication-managed-identity.md)Azure Key Vault 암호 또는 관리 되는 id를 식별 합니다. | 없음 |
+| `secret` | object | 예 | [Azure 리소스에 대한](container-registry-tasks-authentication-managed-identity.md)Azure Key Vault 암호 또는 관리 되는 id를 식별 합니다. | 없음 |
 | `startDelay` | int(초) | 예 | 컨테이너 실행을 지연 하는 시간 (초)입니다. | 0 |
 | `timeout` | int(초) | 예 | 종료되기 전에 단계를 실행할 수 있는 최대 시간(초)입니다. | 600 |
 | [`when`](#example-when) | [string, string, ...] | 예 | 작업 내의 다른 하나 이상 단계에 대한 단계의 종속성을 구성합니다. | 없음 |
@@ -567,7 +567,7 @@ steps:
   - build: -t $Registry/$repo/hello-world:$ID -f Dockerfile .
 ```
 
-사용자 지정 별칭 정의에 대 한 원격 또는 로컬 YAML 파일에 연결할 수 있습니다. 다음 예제에서는 Azure blob storage의 YAML 파일에 연결 합니다.
+사용자 지정 별칭 정의에 대한 원격 또는 로컬 YAML 파일에 연결할 수 있습니다. 다음 예제에서는 Azure blob storage의 YAML 파일에 연결 합니다.
 
 ```yml
 version: v1.1.0

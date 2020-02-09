@@ -1,7 +1,7 @@
 ---
-title: V3 API의 예측 끝점 변경 내용
+title: V3 API의 예측 엔드포인트 변경 내용
 titleSuffix: Azure Cognitive Services
-description: 쿼리 예측 끝점 V3 Api가 변경 되었습니다. 이 가이드를 사용 하 여 버전 3 끝점 Api로 마이그레이션하는 방법을 이해할 수 있습니다.
+description: 쿼리 예측 엔드포인트 V3 Api가 변경 되었습니다. 이 가이드를 사용 하 여 버전 3 엔드포인트 Api로 마이그레이션하는 방법을 이해할 수 있습니다.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -18,9 +18,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/28/2019
 ms.locfileid: "75531499"
 ---
-# <a name="prediction-endpoint-changes-for-v3"></a>V3에 대 한 예측 끝점 변경
+# <a name="prediction-endpoint-changes-for-v3"></a>V3에 대 한 예측 엔드포인트 변경
 
-쿼리 예측 끝점 V3 Api가 변경 되었습니다. 이 가이드를 사용 하 여 버전 3 끝점 Api로 마이그레이션하는 방법을 이해할 수 있습니다. 
+쿼리 예측 엔드포인트 V3 Api가 변경 되었습니다. 이 가이드를 사용 하 여 버전 3 엔드포인트 Api로 마이그레이션하는 방법을 이해할 수 있습니다. 
 
 [!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
@@ -32,7 +32,7 @@ V3 API는 다음과 같은 새로운 기능을 제공 합니다.
 * [동적 목록](#dynamic-lists-passed-in-at-prediction-time)
 * [미리 작성 한 엔터티 JSON 변경 내용](#prebuilt-entity-changes)
 
-예측 끝점 [요청](#request-changes) 및 [응답](#response-changes) 은 다음을 포함 하 여 위에 나열 된 새 기능을 지원 하기 위해 중요 한 변경 사항이 있습니다.
+예측 엔드포인트 [요청](#request-changes) 및 [응답](#response-changes) 은 다음을 포함 하 여 위에 나열 된 새 기능을 지원 하기 위해 중요 한 변경 사항이 있습니다.
 
 * [응답 개체 변경](#top-level-json-changes)
 * [엔터티 이름 대신 엔터티 역할 이름 참조](#entity-role-name-instead-of-entity-name)
@@ -59,29 +59,29 @@ V 3에서 GA로 이동 하는 과정의 일부로 다음과 같이 변경 했습
 
 ## <a name="suggested-adoption-strategy"></a>제안 된 채택 전략
 
-Bot Framework를 사용 하거나 V7를 Bing Spell Check 하거나 LUIS 앱 제작만 마이그레이션하려면 V2 끝점을 계속 사용 합니다. 
+Bot Framework를 사용 하거나 V7를 Bing Spell Check 하거나 LUIS 앱 제작만 마이그레이션하려면 V2 엔드포인트을 계속 사용 합니다. 
 
-클라이언트 응용 프로그램 또는 통합 (Bot Framework 및 Bing Spell Check V7)이 영향을 받지 않고 LUIS 앱 작성과 예측 끝점을 동시에 마이그레이션하는 것을 알고 있는 경우 V3 예측 끝점 사용을 시작 합니다. V2 예측 끝점은 계속 사용할 수 있으며 좋은 복구 전략입니다. 
+클라이언트 응용 프로그램 또는 통합 (Bot Framework 및 Bing Spell Check V7)이 영향을 받지 않고 LUIS 앱 작성과 예측 엔드포인트을 동시에 마이그레이션하는 것을 알고 있는 경우 V3 예측 엔드포인트 사용을 시작 합니다. V2 예측 엔드포인트은 계속 사용할 수 있으며 좋은 복구 전략입니다. 
 
 ## <a name="not-supported"></a>지원하지 않음
 
-* Bing Spell Check API은 V3 예측 끝점에서 지원 되지 않습니다.-계속 해 서 V2 API 예측 끝점을 사용 하 여 맞춤법을 수정 합니다.
+* Bing Spell Check API은 V3 예측 엔드포인트에서 지원 되지 않습니다.-계속 해 서 V2 API 예측 엔드포인트을 사용 하 여 맞춤법을 수정 합니다.
 
 ## <a name="bot-framework-and-azure-bot-service-client-applications"></a>Bot Framework 및 Azure Bot Service 클라이언트 응용 프로그램
 
-Bot Framework의 V 4.7이 릴리스될 때까지 V2 API 예측 끝점을 계속 사용 합니다. 
+Bot Framework의 V 4.7이 릴리스될 때까지 V2 API 예측 엔드포인트을 계속 사용 합니다. 
 
 ## <a name="v2-api-deprecation"></a>V2 API 사용 중단 
 
 V2 예측 API는 V3 preview 이후 최소 9 개월 동안 (6 월 8 일, 2020)에는 사용 되지 않습니다. 
 
-## <a name="endpoint-url-changes"></a>끝점 URL 변경 
+## <a name="endpoint-url-changes"></a>엔드포인트 URL 변경 
 
 ### <a name="changes-by-slot-name-and-version-name"></a>슬롯 이름 및 버전 이름 변경
 
-V3 끝점 HTTP 호출의 형식이 변경 되었습니다.
+V3 엔드포인트 HTTP 호출의 형식이 변경 되었습니다.
 
-버전을 기준으로 쿼리하려면 먼저 `"directVersionPublish":true`를 사용 하 여 [API를 통해 게시](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c3b) 해야 합니다. 슬롯 이름 대신 버전 ID를 참조 하는 끝점을 쿼리 합니다.
+버전을 기준으로 쿼리하려면 먼저 `"directVersionPublish":true`를 사용 하 여 [API를 통해 게시](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c3b) 해야 합니다. 슬롯 이름 대신 버전 ID를 참조 하는 엔드포인트을 쿼리 합니다.
 
 |예측 API 버전|METHOD|URL|
 |--|--|--|
@@ -287,7 +287,7 @@ V3에서 다음과 같이 `verbose` 플래그를 사용 하 여 엔터티 메타
 
 ## <a name="external-entities-passed-in-at-prediction-time"></a>예측 시 전달 되는 외부 엔터티
 
-외부 엔터티를 통해 LUIS 앱은 런타임 중에 엔터티를 식별 하 고 레이블을 지정 하는 기능을 기존 엔터티에 대 한 기능으로 사용할 수 있습니다. 이렇게 하면 예측 끝점에 쿼리를 보내기 전에 별도의 고유한 사용자 지정 엔터티 추출기를 사용할 수 있습니다. 이는 쿼리 예측 끝점에서 수행 되므로 모델을 다시 학습 하 고 게시할 필요가 없습니다.
+외부 엔터티를 통해 LUIS 앱은 런타임 중에 엔터티를 식별 하 고 레이블을 지정 하는 기능을 기존 엔터티에 대 한 기능으로 사용할 수 있습니다. 이렇게 하면 예측 엔드포인트에 쿼리를 보내기 전에 별도의 고유한 사용자 지정 엔터티 추출기를 사용할 수 있습니다. 이는 쿼리 예측 엔드포인트에서 수행 되므로 모델을 다시 학습 하 고 게시할 필요가 없습니다.
 
 클라이언트 응용 프로그램은 엔터티 일치를 관리 하 고 일치 하는 엔터티의 utterance 내에서 위치를 확인 한 다음 요청을 통해 해당 정보를 전송 하 여 자체 엔터티 추출기를 제공 합니다. 
 
@@ -297,7 +297,7 @@ V3에서 다음과 같이 `verbose` 플래그를 사용 하 여 엔터티 메타
 
 ### <a name="entity-already-exists-in-app"></a>엔터티가 앱에 이미 있습니다.
 
-끝점 요청 게시 본문에 전달 되는 외부 엔터티에 대 한 `entityName` 값은 요청 시 학습 된 앱과 게시 된 앱에 이미 존재 해야 합니다. 엔터티 형식이 중요 하지 않습니다. 모든 형식이 지원 됩니다.
+엔드포인트 요청 게시 본문에 전달 되는 외부 엔터티에 대 한 `entityName` 값은 요청 시 학습 된 앱과 게시 된 앱에 이미 존재 해야 합니다. 엔터티 형식이 중요 하지 않습니다. 모든 형식이 지원 됩니다.
 
 ### <a name="first-turn-in-conversation"></a>대화를 먼저 전환
 
@@ -429,10 +429,10 @@ _선택적_ `resolution` 속성은 예측 응답에서를 반환 하 여 외부 
 
 목록 엔터티 값을 주기적으로 변경 해야 하는 경우이 기능을 사용 합니다. 이 기능을 사용 하 여 이미 학습 되 고 게시 된 목록 엔터티를 확장할 수 있습니다.
 
-* 쿼리 예측 끝점 요청 시
+* 쿼리 예측 엔드포인트 요청 시
 * 단일 요청에 대 한입니다.
 
-LUIS 앱에서 목록 엔터티는 비어 있을 수 있지만 존재 해야 합니다. LUIS 앱의 목록 엔터티는 변경 되지 않지만 끝점의 예측 기능은 약 1000 항목을 포함 하는 최대 2 개의 목록을 포함 하도록 확장 됩니다.
+LUIS 앱에서 목록 엔터티는 비어 있을 수 있지만 존재 해야 합니다. LUIS 앱의 목록 엔터티는 변경 되지 않지만 엔드포인트의 예측 기능은 약 1000 항목을 포함 하는 최대 2 개의 목록을 포함 하도록 확장 됩니다.
 
 ### <a name="dynamic-list-json-request-body"></a>동적 목록 JSON 요청 본문
 
@@ -471,4 +471,4 @@ V2 API는 V3 미리 보기 후 9 개월 이상 사용 되지 않습니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-V3 API 설명서를 사용 하 여 LUIS [끝점](https://aka.ms/luis-api-v3) api에 대 한 기존 REST 호출을 업데이트 합니다. 
+V3 API 설명서를 사용 하 여 LUIS [엔드포인트](https://aka.ms/luis-api-v3) api에 대 한 기존 REST 호출을 업데이트 합니다. 

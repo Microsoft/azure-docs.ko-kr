@@ -33,7 +33,7 @@ ms.locfileid: "68600515"
 1. **보안 개요** 메뉴를 선택 합니다. 
 1. **IoT 솔루션 보안** 을 클릭 하 고 온 보 딩 폼을 완료 합니다. 
 
-축하합니다. IoT Hub에서 IoT 서비스에 대 한 Azure Security Center를 사용 하도록 설정 했습니다. 
+축하합니다. IoT Hub에서 IoT 서비스에 대한 Azure Security Center를 사용 하도록 설정 했습니다. 
 
 ## <a name="next-steps"></a>다음 단계
 

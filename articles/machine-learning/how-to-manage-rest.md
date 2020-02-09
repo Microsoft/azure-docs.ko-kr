@@ -43,7 +43,7 @@ Azure ML 리소스를 관리 하는 방법에는 여러 가지가 있습니다. 
 
 관리 REST 요청은 OAuth2 암시적 흐름으로 인증 됩니다. 이 인증 흐름은 구독의 서비스 사용자가 제공 하는 토큰을 사용 합니다. 이 토큰을 검색 하려면 다음이 필요 합니다.
 
-- 사용자의 테 넌 트 ID (구독이 속한 조직을 식별 하는)
+- 사용자의 테넌트 ID (구독이 속한 조직을 식별 하는)
 - 클라이언트 ID (생성 된 토큰과 연결 됨)
 - 클라이언트 암호 (보호 해야 함)
 
@@ -220,7 +220,7 @@ providers/Microsoft.MachineLearningServices/workspaces/{your-workspace-name}/mod
 | resourceGroups/{리소스 그룹}/ | resourceGroups/MyResourceGroup/ |
 | 공급자/작업-공급자/ | 공급자/MachineLearningServices/ |
 | 공급자-리소스 경로/ | workspace/MLWorkspace/MyWorkspace/FirstExperiment/실행/1/ |
-| 작업-끝점/ | 아티팩트/메타 데이터/ |
+| 작업-엔드포인트/ | 아티팩트/메타 데이터/ |
 
 
 ## <a name="create-and-modify-resources-using-put-and-post-requests"></a>PUT 및 POST 요청을 사용 하 여 리소스 만들기 및 수정
@@ -359,7 +359,7 @@ curl
 
 ## <a name="use-rest-to-score-a-deployed-model"></a>REST를 사용 하 여 배포 된 모델 점수 매기기
 
-서비스 사용자로 인증 되도록 모델을 배포할 수 있지만 대부분의 클라이언트 연결 배포는 키 기반 인증을 사용 합니다. 스튜디오의 **끝점** 탭에 있는 배포 페이지에서 적절 한 키를 찾을 수 있습니다. 동일한 위치에 끝점의 점수 매기기 URI가 표시 됩니다. 모델의 입력은 `data`이라는 JSON 배열로 모델링 되어야 합니다.
+서비스 사용자로 인증 되도록 모델을 배포할 수 있지만 대부분의 클라이언트 연결 배포는 키 기반 인증을 사용 합니다. 스튜디오의 **엔드포인트** 탭에 있는 배포 페이지에서 적절 한 키를 찾을 수 있습니다. 동일한 위치에 엔드포인트의 점수 매기기 URI가 표시 됩니다. 모델의 입력은 `data`이라는 JSON 배열로 모델링 되어야 합니다.
 
 ```bash
 curl 'https://{scoring-uri}' \

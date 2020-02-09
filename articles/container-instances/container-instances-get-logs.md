@@ -13,7 +13,7 @@ ms.locfileid: "75664729"
 ---
 # <a name="retrieve-container-logs-and-events-in-azure-container-instances"></a>Azure Container Instances에서 컨테이너 로그 및 이벤트 검색
 
-Azure Container Instances에 오동작 컨테이너가 있는 경우 [az container logs][az-container-logs]를 사용 하 여 로그를 확인 하 고 [az container attach][az-container-attach]를 사용 하 여 표준 출력 및 표준 오류를 스트리밍하는 것부터 시작 합니다. Azure Portal의 컨테이너 인스턴스에 대 한 로그 및 이벤트를 확인 하거나 컨테이너 그룹에 대 한 로그 및 이벤트 데이터를 [Azure Monitor 로그](container-instances-log-analytics.md)에 보낼 수도 있습니다.
+Azure Container Instances에 오동작 컨테이너가 있는 경우 [az container logs][az-container-logs]를 사용 하 여 로그를 확인 하 고 [az container attach][az-container-attach]를 사용 하 여 표준 출력 및 표준 오류를 스트리밍하는 것부터 시작 합니다. Azure Portal의 컨테이너 인스턴스에 대한 로그 및 이벤트를 확인 하거나 컨테이너 그룹에 대한 로그 및 이벤트 데이터를 [Azure Monitor 로그](container-instances-log-analytics.md)에 보낼 수도 있습니다.
 
 ## <a name="view-logs"></a>로그 보기
 
@@ -76,7 +76,7 @@ Start streaming logs:
 
 ## <a name="get-diagnostic-events"></a>진단 이벤트 가져오기
 
-컨테이너가 성공적으로 배포 되지 않으면 Azure Container Instances 리소스 공급자에서 제공 하는 진단 정보를 검토 합니다. 컨테이너에 대 한 이벤트를 보려면 [az container show][az-container-show] 명령을 실행 합니다.
+컨테이너가 성공적으로 배포 되지 않으면 Azure Container Instances 리소스 공급자에서 제공 하는 진단 정보를 검토 합니다. 컨테이너에 대한 이벤트를 보려면 [az container show][az-container-show] 명령을 실행 합니다.
 
 ```azurecli-interactive
 az container show --resource-group myResourceGroup --name mycontainer
@@ -145,7 +145,7 @@ az container show --resource-group myResourceGroup --name mycontainer
 ## <a name="next-steps"></a>다음 단계
 Azure Container Instances의 [컨테이너 및 배포 문제를 해결](container-instances-troubleshooting.md)하는 방법을 알아봅니다.
 
-컨테이너 그룹에 대 한 로그 및 이벤트 데이터를 [Azure Monitor 로그](container-instances-log-analytics.md)에 보내는 방법에 대해 알아봅니다.
+컨테이너 그룹에 대한 로그 및 이벤트 데이터를 [Azure Monitor 로그](container-instances-log-analytics.md)에 보내는 방법에 대해 알아봅니다.
 
 <!-- LINKS - Internal -->
 [az-container-attach]: /cli/azure/container#az-container-attach

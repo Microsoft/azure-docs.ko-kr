@@ -32,7 +32,7 @@ Azure Traffic Manager는 4가지의 다른 라우팅 방법을 사용합니다. 
 자세한 내용은 [Traffic Manager 라우팅 방법](../traffic-manager/traffic-manager-routing-methods.md)을 참조하세요.
 
 ## <a name="app-service-and-traffic-manager-profiles"></a>App Service 및 Traffic Manager 프로필
-앱 트래픽 App Service 제어를 구성 하려면 앞에서 설명한 4 가지 부하 분산 방법 중 하나를 사용 하는 Azure Traffic Manager에서 프로필을 만든 다음, 트래픽을 제어 하려는 끝점 (이 경우 App Service)을 추가 합니다. profile. 앱 상태(실행 중, 중지됨 또는 삭제됨)가 정기적으로 프로필에 전달되므로 Azure Traffic Manager가 상태에 따라 트래픽을 보낼 수 있습니다.
+앱 트래픽 App Service 제어를 구성 하려면 앞에서 설명한 4 가지 부하 분산 방법 중 하나를 사용 하는 Azure Traffic Manager에서 프로필을 만든 다음, 트래픽을 제어 하려는 엔드포인트 (이 경우 App Service)을 추가 합니다. profile. 앱 상태(실행 중, 중지됨 또는 삭제됨)가 정기적으로 프로필에 전달되므로 Azure Traffic Manager가 상태에 따라 트래픽을 보낼 수 있습니다.
 
 Azure에서 Azure Traffic Manager를 사용할 경우 다음 사항에 유의하십시오.
 

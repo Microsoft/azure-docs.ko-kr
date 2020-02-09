@@ -42,7 +42,7 @@ ms.locfileid: "75438713"
 | 관리 작업(예: 계정 만들기) |[역할 기반 액세스 제어](../role-based-access-control/overview.md) ) |[역할 기반 액세스 제어](../role-based-access-control/overview.md) ) |
 | 개발자 SDK |.NET, Java, Python, Node.js |.Net, Java, Python, Node.js, C++, Ruby, PHP, Go, Android, iOS |
 | 분석 워크로드 성능 |병렬 분석 워크로드에 대해 최적화된 성능입니다. 높은 처리량 및 IOPS. |병렬 분석 워크로드에 대해 최적화된 성능입니다. |
-| 크기 한도 |계정 크기, 파일 크기 또는 파일 수에 한도가 없음 |특정 한도에 대해서는 [standard storage 계정에 대 한 확장성 목표](../storage/common/scalability-targets-standard-account.md) 및 [Blob storage의 확장성 및 성능 목표](../storage/blobs/scalability-targets.md)를 참조 하세요. [Azure 지원](https://azure.microsoft.com/support/faq/)에 연결해 사용할 수 있는 더 큰 계정 한도 |
+| 크기 한도 |계정 크기, 파일 크기 또는 파일 수에 한도가 없음 |특정 한도에 대해서는 [standard storage 계정에 대한 확장성 목표](../storage/common/scalability-targets-standard-account.md) 및 [Blob storage의 확장성 및 성능 목표](../storage/blobs/scalability-targets.md)를 참조 하세요. [Azure 지원](https://azure.microsoft.com/support/faq/)에 연결해 사용할 수 있는 더 큰 계정 한도 |
 | 지리적 중복 |로컬 중복(Azure 하위 지역에 있는 데이터의 여러 복사본) |로컬 중복(LRS), 영역 중복(ZRS), 전역 중복(GRS), 읽기 액세스 전역 중복(RA-GRS). 자세한 내용은 [여기](../storage/common/storage-redundancy.md) 참조 |
 | 서비스 상태 |일반 공급 |일반 공급 |
 | 지역별 가용성 |자세한 내용은 [여기](https://azure.microsoft.com/regions/#services) |모든 Azure 지역에서 사용가능 |

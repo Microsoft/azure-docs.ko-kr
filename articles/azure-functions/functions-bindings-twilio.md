@@ -241,7 +241,7 @@ def main(req: func.HttpRequest, twilioMessage: func.Out[str]) -> func.HttpRespon
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-다음 예제에서는 [TwilioSmsOutput](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.twiliosmsoutput) 주석을 사용 하 여 SMS 메시지를 보내는 방법을 보여 줍니다. `to`, `from`및 `body`에 대 한 값은 프로그래밍 방식으로 재정의 하는 경우에도 특성 정의에 필요 합니다.
+다음 예제에서는 [TwilioSmsOutput](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.twiliosmsoutput) 주석을 사용 하 여 SMS 메시지를 보내는 방법을 보여 줍니다. `to`, `from`및 `body`에 대한 값은 프로그래밍 방식으로 재정의 하는 경우에도 특성 정의에 필요 합니다.
 
 ```java
 package com.function;

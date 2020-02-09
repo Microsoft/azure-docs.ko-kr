@@ -22,7 +22,7 @@ Azure 앱 구성 이벤트는 다양 한 재시도 정책 및 배달 못 한 편
 
 일반적인 앱 구성 이벤트 시나리오에는 응용 프로그램 구성 새로 고침, 배포 트리거 또는 모든 구성 지향 워크플로가 포함 됩니다. 변경 빈도가 낮더라도 즉각적인 대응이 필요한 시나리오에서는 이벤트 기반 아키텍처가 특히 효율적일 수 있습니다.
 
-간단한 예제를 보려면 [사용자 지정 웹 끝점에 대 한 Azure 앱 구성 이벤트 경로를](./howto-app-configuration-event.md) 살펴보세요. 
+간단한 예제를 보려면 [사용자 지정 웹 엔드포인트에 대한 Azure 앱 구성 이벤트 경로를](./howto-app-configuration-event.md) 살펴보세요. 
 
 ![Event Grid 모델](./media/event-grid-functional-model.png)
 
@@ -86,4 +86,4 @@ KeyValueModified 이벤트의 예는 다음과 같습니다.
 Event Grid에 대해 자세히 알아보고 Azure 앱 구성 이벤트를 사용해 보세요.
 
 - [Event Grid 정보](../event-grid/overview.md)
-- [Azure 앱 구성 이벤트를 사용자 지정 웹 끝점으로 라우팅](./howto-app-configuration-event.md)
+- [Azure 앱 구성 이벤트를 사용자 지정 웹 엔드포인트으로 라우팅](./howto-app-configuration-event.md)

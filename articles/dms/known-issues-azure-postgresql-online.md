@@ -21,7 +21,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75437864"
 ---
-# <a name="known-issuesmigration-limitations-with-online-migrations-from-postgresql-to-azure-db-for-postgresql-single-server"></a>PostgreSQL에서 Azure DB for PostgreSQL에 대 한 온라인 마이그레이션과의 알려진 문제/마이그레이션 제한 사항-단일 서버
+# <a name="known-issuesmigration-limitations-with-online-migrations-from-postgresql-to-azure-db-for-postgresql-single-server"></a>PostgreSQL에서 Azure DB for PostgreSQL에 대한 온라인 마이그레이션과의 알려진 문제/마이그레이션 제한 사항-단일 서버
 
 PostgreSQL에서 Azure Database for PostgreSQL 단일 서버로의 온라인 마이그레이션과 관련 된 알려진 문제 및 제한 사항은 다음 섹션에 설명 되어 있습니다.
 
@@ -166,12 +166,12 @@ AWS RDS PostgreSQL에서 Azure Database for PostgreSQL로 온라인 마이그레
 - **오류**: ' {database} ' 데이터베이스의 ' {table} ' 테이블에 있는 ' {column} ' 열의 기본값이 원본 서버와 대상 서버에서 다릅니다. 원본은 '{value on source}'이고 대상은 '{value on target}'입니다.
 
   **제한**사항:이 오류는 열 스키마의 기본값이 원본 데이터베이스와 대상 데이터베이스 간에 다를 때 발생 합니다.
-  **해결 방법**: 대상의 스키마가 원본의 스키마와 일치 하는지 확인 합니다. 스키마 마이그레이션에 대 한 자세한 내용은 [Azure PostgreSQL 온라인 마이그레이션 설명서](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online#migrate-the-sample-schema)를 참조 하세요.
+  **해결 방법**: 대상의 스키마가 원본의 스키마와 일치 하는지 확인 합니다. 스키마 마이그레이션에 대한 자세한 내용은 [Azure PostgreSQL 온라인 마이그레이션 설명서](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online#migrate-the-sample-schema)를 참조 하세요.
 
 - **오류**: 대상 데이터베이스 ' {database} '에 원본 데이터베이스 ' {database} '의 테이블 ' {number of tables} '이 (가) 있는 ' {tables} ' 테이블이 있습니다. 원본과 대상 데이터베이스의 테이블 수가 같아야 합니다.
 
   **제한 사항**:이 오류는 원본 데이터베이스와 대상 데이터베이스 간에 테이블 수가 다를 때 발생 합니다.
-  **해결 방법**: 대상의 스키마가 원본의 스키마와 일치 하는지 확인 합니다. 스키마 마이그레이션에 대 한 자세한 내용은 [Azure PostgreSQL 온라인 마이그레이션 설명서](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online#migrate-the-sample-schema)를 참조 하세요.
+  **해결 방법**: 대상의 스키마가 원본의 스키마와 일치 하는지 확인 합니다. 스키마 마이그레이션에 대한 자세한 내용은 [Azure PostgreSQL 온라인 마이그레이션 설명서](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online#migrate-the-sample-schema)를 참조 하세요.
 
 - **오류:** 원본 데이터베이스 {database}이 (가) 비어 있습니다.
 
@@ -181,7 +181,7 @@ AWS RDS PostgreSQL에서 Azure Database for PostgreSQL로 온라인 마이그레
 - **오류:** 대상 데이터베이스 {database}이 (가) 비어 있습니다. 스키마를 마이그레이션하세요.
 
   **제한**사항:이 오류는 대상 데이터베이스에 스키마가 없을 때 발생 합니다. 대상의 스키마가 원본의 스키마와 일치 하는지 확인 합니다.
-  **해결 방법**: 대상의 스키마가 원본의 스키마와 일치 하는지 확인 합니다. 스키마 마이그레이션에 대 한 자세한 내용은 [Azure PostgreSQL 온라인 마이그레이션 설명서](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online#migrate-the-sample-schema)를 참조 하세요.
+  **해결 방법**: 대상의 스키마가 원본의 스키마와 일치 하는지 확인 합니다. 스키마 마이그레이션에 대한 자세한 내용은 [Azure PostgreSQL 온라인 마이그레이션 설명서](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online#migrate-the-sample-schema)를 참조 하세요.
 
 ## <a name="other-limitations"></a>기타 제한 사항
 

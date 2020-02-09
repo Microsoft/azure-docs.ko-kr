@@ -77,9 +77,9 @@ Azure FarmBeats의 실제 설치를 시작 하기 전에 다음 단계를 완료
 
 ### <a name="verify-permissions"></a>권한 확인
 
-Azure FarmBeats를 설치 하려면 Azure 테 넌 트에서 다음 권한이 필요 합니다.
+Azure FarmBeats를 설치 하려면 Azure 테넌트에서 다음 권한이 필요 합니다.
 
-- 테 넌 트-AAD 앱 작성자
+- 테넌트-AAD 앱 작성자
 - 구독-소유자
 - FarmBeats가 설치 되는 리소스 그룹-소유자
 
@@ -97,7 +97,7 @@ Azure FarmBeats를 설치 하려는 Azure 구독 ID 및 지역이 필요 합니�
 
 Azure FarmBeats에는 응용 프로그램을 만들고 등록 하는 Azure Active Directory 필요 합니다. AAD 생성 스크립트를 성공적으로 실행 하려면 다음 권한이 필요 합니다.
 
-- 테 넌 트-AAD 앱 작성자
+- 테넌트-AAD 앱 작성자
 - 구독-소유자
 
 PowerShell 환경을 사용 하 여 Cloud Shell 인스턴스에서 다음 단계를 실행 합니다. 첫 번째 사용자에 게 구독을 선택 하 고 저장소 계정을 만들도록 요청 하는 메시지가 표시 됩니다. 지시에 따라 설치를 완료 합니다.
@@ -138,7 +138,7 @@ Azure FarmBeats 설치 프로그램을 사용 하 여 팜에 대 한 유럽 우�
 
 이제 FarmBeats을 설치할 준비가 되었습니다. 설치를 시작 하려면 다음 단계를 수행 합니다.
 
-1. Azure Portal에 로그인합니다. 오른쪽 위 모서리에서 계정을 선택 하 고 Azure FarmBeats를 설치 하려는 Azure AD 테 넌 트로 전환 합니다.
+1. Azure Portal에 로그인합니다. 오른쪽 위 모서리에서 계정을 선택 하 고 Azure FarmBeats를 설치 하려는 Azure AD 테넌트로 전환 합니다.
 
 2. 포털 내의 Azure Marketplace로 이동 하 고 Marketplace에서 **Azure FarmBeats** 를 검색 합니다.
 

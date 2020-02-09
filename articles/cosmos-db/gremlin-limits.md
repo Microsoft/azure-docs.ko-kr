@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB Gremlin 제한
-description: 그래프 엔진의 런타임 제한 사항에 대 한 참조 설명서
+description: 그래프 엔진의 런타임 제한 사항에 대한 참조 설명서
 author: LuisBosquez
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
@@ -26,7 +26,7 @@ Gremlin 제한에 도달 하는 경우 조정 오류를 나타내는 **x m m-** 
 **Resource**    | **기본 제한** | **설명**
 --- | --- | ---
 *스크립트 길이* | **64KB** | 요청당 Gremlin 순회 스크립트의 최대 길이입니다.
-*연산자 깊이* | **400** |  순회의 총 고유 단계 수입니다. 예를 들어 ```g.V().out()```의 연산자 개수는 2입니다. V () 및 out () ```g.V('label').repeat(out()).times(100)```의 연산자 깊이가 3입니다. @No__t-0은 ```.repeat()``` 연산자에 대 한 매개 변수 이므로 V (), repeat () 및 out ()입니다.
+*연산자 깊이* | **400** |  순회의 총 고유 단계 수입니다. 예를 들어 ```g.V().out()```의 연산자 개수는 2입니다. V () 및 out () ```g.V('label').repeat(out()).times(100)```의 연산자 깊이가 3입니다. @No__t-0은 ```.repeat()``` 연산자에 대한 매개 변수 이므로 V (), repeat () 및 out ()입니다.
 *병렬 처리 수준* | **32** | 단일 요청에서 스토리지 레이어에 쿼리한 스토리지 파티션의 최대 수입니다. 수백 개의 파티션이 있는 그래프는이 제한의 영향을 받습니다.
 *반복 제한* | **32** | ```.repeat()``` 연산자가 실행할 수 있는 최대 반복 횟수입니다. 대부분의 경우 ```.repeat()``` 단계의 각 반복은 너비 우선 순회를 실행 합니다. 즉, 모든 순회는 꼭 짓 점 사이의 최대 32 홉으로 제한 됩니다.
 *순회 시간 제한* | **30초** | 이 시간을 초과 하면 순회가 취소 됩니다. Cosmos DB Graph는 대부분의 순회가 밀리초 내에 완료되는 OLTP 데이터베이스입니다. Cosmos DB Graph에서 OLAP 쿼리를 실행 하려면 [그래프 데이터 프레임](https://spark.apache.org/docs/latest/sql-programming-guide.html#datasets-and-dataframes) 및 [Cosmos DB Spark 커넥터](https://github.com/Azure/azure-cosmosdb-spark)를 사용 하 여 [Apache Spark](https://azure.microsoft.com/services/cosmos-db/) 를 사용 합니다.

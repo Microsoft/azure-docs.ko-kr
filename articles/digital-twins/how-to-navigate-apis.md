@@ -35,21 +35,21 @@ Azure Digital Twins 관리 API는 IoT 앱에 대한 강력한 기능을 제공�
 
 * [/ontologies](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/Ontologies): 이러한 api는 확장 형식의 컬렉션인 온톨로지를 관리 하는 데 도움이 됩니다. 온톨로지는 나타내는 물리적 공간에 따라 개체 형식에 대한 이름을 제공합니다. 예를 들어 *BACnet* 온톨로지는 *sensor types*, *datatypes*, *datasubtypes* 및 *dataunittypes*에 대한 특정 이름을 제공합니다. 온톨로지는 서비스에 의해 관리되고 생성됩니다. 사용자는 온톨로지를 로드 및 언로드할 수 있습니다. 온톨로지가 로드되면 관련된 모든 해당 형식 이름이 활성화되고 공간 그래프에서 프로비전할 준비가 됩니다. 
 
-* [/Svkeys](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/PropertyKeys): 이러한 api를 사용 하 여 *스페이스*, *장치*, *사용자*및 *센서*에 대 한 사용자 지정 속성을 만들 수 있습니다. 이러한 속성은 키/값 쌍으로 생성됩니다. 해당 *PrimitiveDataType*을 설정하여 이러한 속성에 대한 데이터 형식을 정의할 수 있습니다. 예를 들어 센서에 대한 *uint* 형식의 *BasicTemperatureDeltaProcessingRefreshTime*이라는 속성을 정의한 다음, 각 센서에 대한 이 속성의 값을 할당할 수 있습니다. *Min* 및 *Max* 범위와 같은 속성을 만드는 동안 이러한 값 및 *ValidationData*로 허용된 값에 대한 제약 조건을 추가할 수도 있습니다.
+* [/Svkeys](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/PropertyKeys): 이러한 api를 사용 하 여 *스페이스*, *장치*, *사용자*및 *센서*에 대한 사용자 지정 속성을 만들 수 있습니다. 이러한 속성은 키/값 쌍으로 생성됩니다. 해당 *PrimitiveDataType*을 설정하여 이러한 속성에 대한 데이터 형식을 정의할 수 있습니다. 예를 들어 센서에 대한 *uint* 형식의 *BasicTemperatureDeltaProcessingRefreshTime*이라는 속성을 정의한 다음, 각 센서에 대한 이 속성의 값을 할당할 수 있습니다. *Min* 및 *Max* 범위와 같은 속성을 만드는 동안 이러한 값 및 *ValidationData*로 허용된 값에 대한 제약 조건을 추가할 수도 있습니다.
 
 * [/matchers](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/Matchers): 이러한 api를 사용 하 여 들어오는 장치 데이터에서 평가 하려는 조건을 지정할 수 있습니다. 자세한 내용은 [이 문서](concepts-user-defined-functions.md#matchers)를 참조하세요. 
 
 * [/userDefinedFunctions](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/UserDefinedFunctions): 이러한 api를 사용 하면 *선택기* 에서 정의한 조건이 설치에서 제공 되는 데이터를 처리할 때 실행 되는 사용자 지정 함수를 만들거나 삭제 하거나 업데이트할 수 있습니다. *사용자 정의 함수*라고도 하는 이러한 사용자 지정 함수에 대한 자세한 내용은 [이 문서](concepts-user-defined-functions.md#user-defined-functions)를 참조하세요. 
 
-* [/끝점](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/Endpoints): 이러한 api를 사용 하 여 끝점을 만들 수 있습니다. 그러면 디지털 쌍 솔루션이 데이터 저장 및 분석을 위해 다른 Azure 서비스와 통신할 수 있습니다. 자세한 내용은 [이 문서](concepts-events-routing.md)를 참조하세요. 
+* [/엔드포인트](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/Endpoints): 이러한 api를 사용 하 여 엔드포인트을 만들 수 있습니다. 그러면 디지털 쌍 솔루션이 데이터 저장 및 분석을 위해 다른 Azure 서비스와 통신할 수 있습니다. 자세한 내용은 [이 문서](concepts-events-routing.md)를 참조하세요. 
 
-* [/Keystores](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/KeyStores): 이러한 api를 사용 하면 스페이스에 대 한 보안 키 저장소를 관리할 수 있습니다. 이러한 저장소는 보안 키의 컬렉션을 포함하고, 유효한 최신 키를 쉽게 검색할 수 있도록 합니다.
+* [/Keystores](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/KeyStores): 이러한 api를 사용 하면 스페이스에 대한 보안 키 저장소를 관리할 수 있습니다. 이러한 저장소는 보안 키의 컬렉션을 포함하고, 유효한 최신 키를 쉽게 검색할 수 있도록 합니다.
 
 * [/사용자](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#!/Users): 이러한 api를 사용 하면 필요할 때 사용자를 공백과 연결 하 여 이러한 개인을 찾을 수 있습니다. 
 
 * [/시스템](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#!/System): 이러한 api를 사용 하면 기본 공백 유형 및 센서와 같은 시스템 수준 설정을 관리할 수 있습니다. 
 
-* [/Roleassignments](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#!/RoleAssignments): 이러한 api를 사용 하 여 사용자 ID, 사용자 정의 함수 ID 등과 같은 엔터티에 역할을 연결할 수 있습니다. 각 역할 할당에는 연결할 엔터티의 ID, 엔터티 형식, 연결할 역할의 ID, 테 넌 트 ID 및 엔터티가 해당 연결을 사용 하 여 액세스할 수 있는 리소스의 상한을 정의 하는 경로가 포함 됩니다. 자세한 내용은 [이 문서](security-role-based-access-control.md)를 참조하세요.
+* [/Roleassignments](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#!/RoleAssignments): 이러한 api를 사용 하 여 사용자 ID, 사용자 정의 함수 ID 등과 같은 엔터티에 역할을 연결할 수 있습니다. 각 역할 할당에는 연결할 엔터티의 ID, 엔터티 형식, 연결할 역할의 ID, 테넌트 ID 및 엔터티가 해당 연결을 사용 하 여 액세스할 수 있는 리소스의 상한을 정의 하는 경로가 포함 됩니다. 자세한 내용은 [이 문서](security-role-based-access-control.md)를 참조하세요.
 
 
 ## <a name="api-navigation"></a>API 탐색
@@ -114,6 +114,6 @@ Digital Twins API는 다음 매개 변수를 사용하여 공간 그래프 전�
 
 몇 가지 일반적인 API 쿼리 패턴에 대해 알아보려면 [일반적인 작업에 대해 Azure Digital Twins API를 쿼리하는 방법](./how-to-query-common-apis.md)을 참조하세요.
 
-API 끝점에 대 한 자세한 내용은 [Digital Twins Swagger를 사용 하는 방법](./how-to-use-swagger.md)을 참조 하세요.
+API 엔드포인트에 대한 자세한 내용은 [Digital Twins Swagger를 사용 하는 방법](./how-to-use-swagger.md)을 참조 하세요.
 
 OData 구문 및 사용 가능한 비교 연산자를 검토 하려면 [Azure Cognitive Search의 odata 비교 연산자](../search/search-query-odata-comparison-operators.md)를 참조 하세요.

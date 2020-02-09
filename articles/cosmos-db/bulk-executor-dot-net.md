@@ -18,9 +18,9 @@ ms.locfileid: "75442188"
 ---
 # <a name="use-the-bulk-executor-net-library-to-perform-bulk-operations-in-azure-cosmos-db"></a>대량 실행자 .NET 라이브러리를 사용 하 여 Azure Cosmos DB에서 대량 작업을 수행 합니다.
 
-이 자습서에서는 대량 실행자 .NET 라이브러리를 사용 하 여 Azure Cosmos 컨테이너에 문서를 가져오고 업데이트 하는 방법에 대 한 지침을 제공 합니다. 대량 실행자 라이브러리 및이 라이브러리를 사용 하 여 대규모 처리량 및 저장소를 활용 하는 방법에 대 한 자세한 내용은 [bulk executor 라이브러리 개요](bulk-executor-overview.md) 문서를 참조 하세요. 이 자습서에서는 무작위로 생성 된 문서를 Azure Cosmos 컨테이너로 대량으로 가져오는 샘플 .NET 응용 프로그램이 표시 됩니다. 가져온 후에는 특정 문서 필드에서 수행할 작업으로 패치를 지정하여 가져온 데이터를 대량으로 업데이트할 수 있는 방법을 보여 줍니다.
+이 자습서에서는 대량 실행자 .NET 라이브러리를 사용 하 여 Azure Cosmos 컨테이너에 문서를 가져오고 업데이트 하는 방법에 대한 지침을 제공 합니다. 대량 실행자 라이브러리 및이 라이브러리를 사용 하 여 대규모 처리량 및 저장소를 활용 하는 방법에 대한 자세한 내용은 [bulk executor 라이브러리 개요](bulk-executor-overview.md) 문서를 참조 하세요. 이 자습서에서는 무작위로 생성 된 문서를 Azure Cosmos 컨테이너로 대량으로 가져오는 샘플 .NET 응용 프로그램이 표시 됩니다. 가져온 후에는 특정 문서 필드에서 수행할 작업으로 패치를 지정하여 가져온 데이터를 대량으로 업데이트할 수 있는 방법을 보여 줍니다.
 
-현재 대량 실행자 라이브러리는 Azure Cosmos DB SQL API 및 Gremlin API 계정 에서만 지원 됩니다. 이 문서에서는 SQL API 계정에서 bulk executor .NET 라이브러리를 사용 하는 방법을 설명 합니다. Gremlin API 계정으로 bulk executor .NET 라이브러리를 사용 하는 방법에 대 한 자세한 내용은 [Azure Cosmos DB GREMLIN API에서 대량 작업 수행](bulk-executor-graph-dotnet.md)을 참조 하세요.
+현재 대량 실행자 라이브러리는 Azure Cosmos DB SQL API 및 Gremlin API 계정 에서만 지원 됩니다. 이 문서에서는 SQL API 계정에서 bulk executor .NET 라이브러리를 사용 하는 방법을 설명 합니다. Gremlin API 계정으로 bulk executor .NET 라이브러리를 사용 하는 방법에 대한 자세한 내용은 [Azure Cosmos DB GREMLIN API에서 대량 작업 수행](bulk-executor-graph-dotnet.md)을 참조 하세요.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -28,13 +28,13 @@ ms.locfileid: "75442188"
 
 * Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)을 만듭니다.
 
-* Azure 구독, 요금 및 약정 없이 [무료로 Azure Cosmos DB를 사용해 볼 수 있습니다](https://azure.microsoft.com/try/cosmosdb/). 또는 [Azure Cosmos DB 에뮬레이터](https://docs.microsoft.com/azure/cosmos-db/local-emulator) 를 `https://localhost:8081` 끝점과 함께 사용할 수 있습니다. 기본 키는 [인증 요청](local-emulator.md#authenticating-requests)에 제공됩니다.
+* Azure 구독, 요금 및 약정 없이 [무료로 Azure Cosmos DB를 사용해 볼 수 있습니다](https://azure.microsoft.com/try/cosmosdb/). 또는 [Azure Cosmos DB 에뮬레이터](https://docs.microsoft.com/azure/cosmos-db/local-emulator) 를 `https://localhost:8081` 엔드포인트과 함께 사용할 수 있습니다. 기본 키는 [인증 요청](local-emulator.md#authenticating-requests)에 제공됩니다.
 
 * .NET 빠른 시작 문서의 [데이터베이스 계정 만들기](create-sql-api-dotnet.md#create-account) 섹션에 설명된 단계를 사용하여 Azure Cosmos DB SQL API 계정을 만듭니다.
 
 ## <a name="clone-the-sample-application"></a>샘플 애플리케이션 복제
 
-이제 GitHub에서 샘플 .NET 응용 프로그램을 다운로드 하 여 코드 작업으로 전환 해 보겠습니다. 이 응용 프로그램은 Azure Cosmos 계정에 저장 된 데이터에 대 한 대량 작업을 수행 합니다. 응용 프로그램을 복제 하려면 명령 프롬프트를 열고 복사 하려는 디렉터리로 이동한 후 다음 명령을 실행 합니다.
+이제 GitHub에서 샘플 .NET 응용 프로그램을 다운로드 하 여 코드 작업으로 전환 해 보겠습니다. 이 응용 프로그램은 Azure Cosmos 계정에 저장 된 데이터에 대한 대량 작업을 수행 합니다. 응용 프로그램을 복제 하려면 명령 프롬프트를 열고 복사 하려는 디렉터리로 이동한 후 다음 명령을 실행 합니다.
 
 ```
 git clone https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started.git
@@ -72,7 +72,7 @@ git clone https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-st
    connectionPolicy)
    ```
 
-4. 대기 시간 및 제한 된 요청에 대 한 높은 다시 시도 값으로 대량 실행자 개체가 초기화 됩니다. 그런 다음, 정체 제어를 해당 수명에 대한 BulkExecutor로 전달하도록 0으로 설정됩니다.  
+4. 대기 시간 및 제한 된 요청에 대한 높은 다시 시도 값으로 대량 실행자 개체가 초기화 됩니다. 그런 다음, 정체 제어를 해당 수명에 대한 BulkExecutor로 전달하도록 0으로 설정됩니다.  
 
    ```csharp
    // Set retry options high during initialization (default values).
@@ -198,4 +198,4 @@ BulkUpdateAsync API를 사용하여 기존 문서를 업데이트할 수 있습�
 
 ## <a name="next-steps"></a>다음 단계
 
-* Nuget 패키지 세부 정보 및 릴리스 정보에 대 한 자세한 내용은 [bulk EXECUTOR SDK 세부 정보](sql-api-sdk-bulk-executor-dot-net.md)를 참조 하세요.
+* Nuget 패키지 세부 정보 및 릴리스 정보에 대한 자세한 내용은 [bulk EXECUTOR SDK 세부 정보](sql-api-sdk-bulk-executor-dot-net.md)를 참조 하세요.

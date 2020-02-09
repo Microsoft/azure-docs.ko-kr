@@ -27,7 +27,7 @@ ms.locfileid: "75772553"
 시작 하기 전에 MSIX 앱 연결을 구성 하는 데 필요한 사항은 다음과 같습니다.
 
 - MSIX 앱 연결 Api를 지 원하는 windows 10 버전을 얻으려면 Windows 참가자 포털에 액세스 합니다.
-- 작동 하는 Windows 가상 데스크톱 배포. 자세한 내용은 [Windows 가상 데스크톱에서 테 넌 트 만들기](tenant-setup-azure-active-directory.md)를 참조 하세요.
+- 작동 하는 Windows 가상 데스크톱 배포. 자세한 내용은 [Windows 가상 데스크톱에서 테넌트 만들기](tenant-setup-azure-active-directory.md)를 참조 하세요.
 - MSIX 패키징 도구
 - MSIX 패키지가 저장 되는 Windows 가상 데스크톱 배포의 네트워크 공유
 

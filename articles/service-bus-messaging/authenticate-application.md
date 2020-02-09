@@ -94,7 +94,7 @@ Service Bus에서 Azure AD를 사용 하는 경우의 주요 이점은 자격 �
 OAuth 2.0 코드 권한 부여 흐름의 개요는 [OAuth 2.0 코드 권한 부여 흐름을 사용하여 Azure Active Directory 웹 애플리케이션에 대한 액세스 권한 부여](../active-directory/develop/v2-oauth2-auth-code-flow.md)를 참조하세요.
 
 ### <a name="register-your-application-with-an-azure-ad-tenant"></a>Azure AD 테넌트에 애플리케이션 등록
-Azure AD를 사용 하 여 Service Bus 엔터티에 권한을 부여 하는 첫 번째 단계는 클라이언트 응용 프로그램을 [Azure Portal](https://portal.azure.com/)의 Azure ad 테 넌 트에 등록 하는 것입니다. 클라이언트 응용 프로그램을 등록할 때 응용 프로그램에 대 한 정보를 AD에 제공 합니다. 그런 다음 azure AD는 응용 프로그램을 Azure AD 런타임에 연결 하는 데 사용할 수 있는 클라이언트 ID (응용 프로그램 ID 라고도 함)를 제공 합니다. 클라이언트 ID에 대한 자세한 내용은 [Azure Active Directory의 애플리케이션 및 서비스 사용자 개체](../active-directory/develop/app-objects-and-service-principals.md)를 참조하세요. 
+Azure AD를 사용 하 여 Service Bus 엔터티에 권한을 부여 하는 첫 번째 단계는 클라이언트 응용 프로그램을 [Azure Portal](https://portal.azure.com/)의 Azure ad 테넌트에 등록 하는 것입니다. 클라이언트 응용 프로그램을 등록할 때 응용 프로그램에 대 한 정보를 AD에 제공 합니다. 그런 다음 azure AD는 응용 프로그램을 Azure AD 런타임에 연결 하는 데 사용할 수 있는 클라이언트 ID (응용 프로그램 ID 라고도 함)를 제공 합니다. 클라이언트 ID에 대한 자세한 내용은 [Azure Active Directory의 애플리케이션 및 서비스 사용자 개체](../active-directory/develop/app-objects-and-service-principals.md)를 참조하세요. 
 
 다음 이미지는 웹 응용 프로그램을 등록 하는 단계를 보여 줍니다.
 
@@ -138,7 +138,7 @@ Azure AD에서 애플리케이션을 등록하는 방법에 대한 자세한 정
 ## <a name="sample-on-github"></a>GitHub의 샘플
 GitHub의 다음 샘플을 참조 하세요. [Service Bus에 대 한 역할 기반 액세스 제어](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/RoleBasedAccessControl)입니다. 
 
-**대화형 사용자 로그인** 옵션이 아닌 **클라이언트 암호 로그인** 옵션을 사용 합니다. 클라이언트 암호 옵션을 사용 하면 팝업 창이 표시 되지 않습니다. 응용 프로그램은 인증을 위해 테 넌 트 ID 및 앱 ID를 활용 합니다. 
+**대화형 사용자 로그인** 옵션이 아닌 **클라이언트 암호 로그인** 옵션을 사용 합니다. 클라이언트 암호 옵션을 사용 하면 팝업 창이 표시 되지 않습니다. 응용 프로그램은 인증을 위해 테넌트 ID 및 앱 ID를 활용 합니다. 
 
 ### <a name="run-the-sample"></a>샘플 실행
 

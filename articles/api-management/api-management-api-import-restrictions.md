@@ -1,7 +1,7 @@
 ---
 title: API 형식 지원의 제한 사항 및 세부 정보
 titleSuffix: Azure API Management
-description: Azure API Management의 Open API, WSDL 및 WADL 형식 지원에 대 한 알려진 문제 및 제한 사항에 대 한 세부 정보입니다.
+description: Azure API Management의 Open API, WSDL 및 WADL 형식 지원에 대한 알려진 문제 및 제한 사항에 대한 세부 정보입니다.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -40,7 +40,7 @@ OpenAPI 문서를 가져올 때 오류가 표시되면 해당 문서의 유효�
 -   `Recursion`-API Management 자신을 참조 하는 스키마와 같이 재귀적으로 정의 된 정의를 지원 하지 않습니다.
 -   이 경우에는 원본 파일 URL(사용 가능한 경우)이 상대 서버 URL에 적용됩니다.
 -   보안 정의는 무시 됩니다.
--   API 작업에 대 한 인라인 스키마 정의는 지원 되지 않습니다. 스키마 정의는 API 범위에서 정의 되며 API 작업 요청 또는 응답 범위에서 참조할 수 있습니다.
+-   API 작업에 대한 인라인 스키마 정의는 지원 되지 않습니다. 스키마 정의는 API 범위에서 정의 되며 API 작업 요청 또는 응답 범위에서 참조할 수 있습니다.
 -   정의 된 URL 매개 변수는 URL 템플릿의 일부 여야 합니다.
 -   API에서 반환 하는 MIME 형식을 설명 하는 `Produces` 키워드는 지원 되지 않습니다. 
 
@@ -87,7 +87,7 @@ OperationId의 정규화 규칙
 - 소문자로 변환합니다.
 - 영숫자가 아닌 문자의 각 시퀀스를 단일 대시로 바꿉니다. 예를 들어 `GET-/foo/{bar}?buzz={quix}`은 `get-foo-bar-buzz-quix-`으로 변환 됩니다.
 - 두 면에서 대시를 트리밍합니다. 예를 들어 `get-foo-bar-buzz-quix-` `get-foo-bar-buzz-quix` 됩니다.
-- 크기를 조정 하면 76 문자, 4 자는 리소스 이름에 대 한 최대 한도 미만으로 잘립니다.
+- 크기를 조정 하면 76 문자, 4 자는 리소스 이름에 대한 최대한도 미만으로 잘립니다.
 - 필요한 경우 중복 제거 접미사에 대해 나머지 네 문자를 `-1, -2, ..., -999`형식으로 사용 합니다.
 
 

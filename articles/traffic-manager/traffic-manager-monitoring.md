@@ -40,7 +40,7 @@ Azure Traffic Manager에는 기본 제공된 엔드포인트 모니터링 및 �
 
 ## <a name="how-endpoint-monitoring-works"></a>엔드포인트 모니터링의 작동 방식
 
-모니터링 프로토콜이 HTTP 또는 HTTPS로 설정된 경우 Traffic Manager 검색 에이전트는 주어진 프로토콜, 포트 및 상대 경로를 사용하여 엔드포인트에 GET 요청을 수행합니다. 200-OK 응답이 나 **예상 상태 코드 \*범위**에 구성 된 응답을 모두 반환 하는 경우 해당 끝점은 정상으로 간주 됩니다. 응답이 다른 값이거나 지정된 제한 시간 내에 응답이 수신되지 않으면 Traffic Manager 검색 에이전트는 허용되는 오류 수 설정에 따라 다시 시도합니다(이 설정이 0이면 다시 시도하지 않음). 연속 오류 수가 허용되는 오류 수 설정보다 크면 해당 엔드포인트는 비정상 상태로 표시됩니다. 
+모니터링 프로토콜이 HTTP 또는 HTTPS로 설정된 경우 Traffic Manager 검색 에이전트는 주어진 프로토콜, 포트 및 상대 경로를 사용하여 엔드포인트에 GET 요청을 수행합니다. 200-OK 응답이 나 **예상 상태 코드 \*범위**에 구성 된 응답을 모두 반환 하는 경우 해당 엔드포인트은 정상으로 간주 됩니다. 응답이 다른 값이거나 지정된 제한 시간 내에 응답이 수신되지 않으면 Traffic Manager 검색 에이전트는 허용되는 오류 수 설정에 따라 다시 시도합니다(이 설정이 0이면 다시 시도하지 않음). 연속 오류 수가 허용되는 오류 수 설정보다 크면 해당 엔드포인트는 비정상 상태로 표시됩니다. 
 
 모니터링 프로토콜이 TCP인 경우 Traffic Manager는 지정된 포트를 사용하여 TCP 연결 요청을 시작합니다. 엔드포인트가 연결 설정 응답으로 요청에 응답하면 해당 상태 검사는 성공으로 표시되고 Traffic Manager 검색 에이전트가 TCP 연결을 다시 설정합니다. 응답이 다른 값이거나 지정된 제한 시간 내에 응답이 수신되지 않으면 Traffic Manager 검색 에이전트는 허용되는 오류 수 설정에 따라 다시 시도합니다(이 설정이 0이면 다시 시도하지 않음). 연속 오류 수가 허용되는 오류 수 설정보다 크면 해당 엔드포인트는 비정상 상태로 표시됩니다.
 
@@ -74,7 +74,7 @@ Traffic Manager 프로필 및 엔드포인트를 사용하거나 사용하지 �
 | 사용 |사용 |온라인 |엔드포인트는 모니터링되며 정상 상태입니다. DNS 응답에 포함되며 트래픽을 수신할 수 있습니다. |
 | 사용 |사용 |성능 저하됨 |엔드포인트 모니터링 상태 검사에 실패했습니다. 엔드포인트가 DNS 응답에 포함되지 않으며 트래픽을 수신하지 않습니다. <br>단, 모든 엔드포인트의 성능이 저하된 경우는 예외입니다. 이 경우 모든 엔드포인트가 쿼리 응답에 반환되는 것으로 간주됩니다.</br>|
 | 사용 |사용 |CheckingEndpoint |엔드포인트가 모니터링되지만 첫 번째 검사 결과가 아직 수신되지 않았습니다. CheckingEndpoint는 일반적으로 프로필에서 엔드포인트를 추가하거나 사용하도록 설정한 직후에 나타나는 일시적 상태입니다. 이 상태의 엔드포인트는 DNS 응답에 포함되며 트래픽을 수신할 수 있습니다. |
-| 사용 |사용 |중지됨 |끝점이 가리키는 웹 앱이 실행 되 고 있지 않습니다. 웹 앱 설정을 확인 합니다. 이 동작은 엔드포인트가 중첩된 엔드포인트 형식이고 자식 프로필이 사용되지 않거나 비활성 상태인 경우에도 발생할 수 있습니다. <br>Stopped 상태의 엔드포인트는 모니터링되지 않습니다. DNS 응답에 포함되지 않으며 트래픽을 수신하지 않습니다. 단, 모든 엔드포인트의 성능이 저하된 경우는 예외입니다. 이 경우 모든 엔드포인트가 쿼리 응답에 반환되는 것으로 간주됩니다.</br>|
+| 사용 |사용 |중지됨 |엔드포인트이 가리키는 웹 앱이 실행 되 고 있지 않습니다. 웹 앱 설정을 확인 합니다. 이 동작은 엔드포인트가 중첩된 엔드포인트 형식이고 자식 프로필이 사용되지 않거나 비활성 상태인 경우에도 발생할 수 있습니다. <br>Stopped 상태의 엔드포인트는 모니터링되지 않습니다. DNS 응답에 포함되지 않으며 트래픽을 수신하지 않습니다. 단, 모든 엔드포인트의 성능이 저하된 경우는 예외입니다. 이 경우 모든 엔드포인트가 쿼리 응답에 반환되는 것으로 간주됩니다.</br>|
 
 중첩된 엔드포인트의 엔드포인트 모니터 상태가 계산되는 방식에 대한 자세한 내용은 [중첩 Traffic Manager 프로필](traffic-manager-nested-profiles.md)을 참조하세요.
 
@@ -159,39 +159,39 @@ Traffic Manager는 비정상 엔드포인트를 포함하는 모든 엔드포인
 
 * [리소스 그룹 위치 선택은 Traffic Manager에 어떤 영향을 미칩니까?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-the-choice-of-resource-group-location-affect-traffic-manager)
 
-* [각 끝점의 현재 상태를 확인 어떻게 할까요??](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-do-i-determine-the-current-health-of-each-endpoint)
+* [각 엔드포인트의 현재 상태를 확인 어떻게 할까요??](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-do-i-determine-the-current-health-of-each-endpoint)
 
-* [HTTPS 끝점을 모니터링할 수 있나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-monitor-https-endpoints)
+* [HTTPS 엔드포인트을 모니터링할 수 있나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-monitor-https-endpoints)
 
-* [끝점을 추가할 때 IP 주소 또는 DNS 이름을 사용 하나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#do-i-use-an-ip-address-or-a-dns-name-when-adding-an-endpoint)
+* [엔드포인트을 추가할 때 IP 주소 또는 DNS 이름을 사용 하나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#do-i-use-an-ip-address-or-a-dns-name-when-adding-an-endpoint)
 
-* [끝점을 추가할 때 어떤 유형의 IP 주소를 사용할 수 있나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-types-of-ip-addresses-can-i-use-when-adding-an-endpoint)
+* [엔드포인트을 추가할 때 어떤 유형의 IP 주소를 사용할 수 있나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-types-of-ip-addresses-can-i-use-when-adding-an-endpoint)
 
-* [단일 프로필 내에서 다른 끝점 주소 유형을 사용할 수 있나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-different-endpoint-addressing-types-within-a-single-profile)
+* [단일 프로필 내에서 다른 엔드포인트 주소 유형을 사용할 수 있나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-different-endpoint-addressing-types-within-a-single-profile)
 
-* [들어오는 쿼리의 레코드 형식이 끝점의 주소 지정 유형과 연결 된 레코드 형식과 다를 경우 어떻게 되나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-happens-when-an-incoming-querys-record-type-is-different-from-the-record-type-associated-with-the-addressing-type-of-the-endpoints)
+* [들어오는 쿼리의 레코드 형식이 엔드포인트의 주소 지정 유형과 연결 된 레코드 형식과 다를 경우 어떻게 되나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-happens-when-an-incoming-querys-record-type-is-different-from-the-record-type-associated-with-the-addressing-type-of-the-endpoints)
 
-* [중첩 된 프로필에서 IPv4/IPv6 주소 지정 끝점을 사용 하 여 프로필을 사용할 수 있나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-a-profile-with-ipv4--ipv6-addressed-endpoints-in-a-nested-profile)
+* [중첩 된 프로필에서 IPv4/IPv6 주소 지정 엔드포인트을 사용 하 여 프로필을 사용할 수 있나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-a-profile-with-ipv4--ipv6-addressed-endpoints-in-a-nested-profile)
 
-* [내 Traffic Manager 프로필에서 웹 응용 프로그램 끝점을 중지 했지만 다시 시작한 후에도 트래픽을 수신 하지 않습니다. 이 문제를 해결 하려면 어떻게 해야 하나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#i-stopped-an-web-application-endpoint-in-my-traffic-manager-profile-but-i-am-not-receiving-any-traffic-even-after-i-restarted-it-how-can-i-fix-this)
+* [내 Traffic Manager 프로필에서 웹 응용 프로그램 엔드포인트을 중지 했지만 다시 시작한 후에도 트래픽을 수신 하지 않습니다. 이 문제를 해결 하려면 어떻게 해야 하나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#i-stopped-an-web-application-endpoint-in-my-traffic-manager-profile-but-i-am-not-receiving-any-traffic-even-after-i-restarted-it-how-can-i-fix-this)
 
 * [응용 프로그램에서 HTTP 또는 HTTPS를 지원 하지 않는 경우에도 Traffic Manager을 사용할 수 있나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-even-if-my-application-does-not-have-support-for-http-or-https)
 
-* [TCP 모니터링을 사용 하는 경우 끝점에서 필요한 특정 응답은 무엇 인가요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-specific-responses-are-required-from-the-endpoint-when-using-tcp-monitoring)
+* [TCP 모니터링을 사용 하는 경우 엔드포인트에서 필요한 특정 응답은 무엇 인가요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-specific-responses-are-required-from-the-endpoint-when-using-tcp-monitoring)
 
-* [Traffic Manager에서 사용자가 비정상 끝점에서 사용자를 이동 하는 속도는 어떻습니까?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-fast-does-traffic-manager-move-my-users-away-from-an-unhealthy-endpoint)
+* [Traffic Manager에서 사용자가 비정상 엔드포인트에서 사용자를 이동 하는 속도는 어떻습니까?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-fast-does-traffic-manager-move-my-users-away-from-an-unhealthy-endpoint)
 
-* [프로필에서 다른 끝점에 대해 서로 다른 모니터링 설정을 지정 하려면 어떻게 해야 하나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-specify-different-monitoring-settings-for-different-endpoints-in-a-profile)
+* [프로필에서 다른 엔드포인트에 대해 서로 다른 모니터링 설정을 지정 하려면 어떻게 해야 하나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-specify-different-monitoring-settings-for-different-endpoints-in-a-profile)
 
-* [끝점에 대 한 Traffic Manager 상태 검사에 HTTP 헤더를 할당 하려면 어떻게 해야 하나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-assign-http-headers-to-the-traffic-manager-health-checks-to-my-endpoints)
+* [엔드포인트에 대 한 Traffic Manager 상태 검사에 HTTP 헤더를 할당 하려면 어떻게 해야 하나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-assign-http-headers-to-the-traffic-manager-health-checks-to-my-endpoints)
 
-* [끝점 상태 검사에 사용 되는 호스트 헤더는 무엇 인가요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-host-header-do-endpoint-health-checks-use)
+* [엔드포인트 상태 검사에 사용 되는 호스트 헤더는 무엇 인가요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-host-header-do-endpoint-health-checks-use)
 
 * [상태 검사가 시작 되는 IP 주소는 무엇 인가요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-the-ip-addresses-from-which-the-health-checks-originate)
 
-* [Traffic Manager에서 끝점에 대 한 상태 검사 수는 몇 개입니까?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-many-health-checks-to-my-endpoint-can-i-expect-from-traffic-manager)
+* [Traffic Manager에서 엔드포인트에 대 한 상태 검사 수는 몇 개입니까?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-many-health-checks-to-my-endpoint-can-i-expect-from-traffic-manager)
 
-* [내 끝점 중 하나가 중단 되 면 알림 메시지를 받으려면 어떻게 해야 하나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-get-notified-if-one-of-my-endpoints-goes-down)
+* [내 엔드포인트 중 하나가 중단 되 면 알림 메시지를 받으려면 어떻게 해야 하나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-get-notified-if-one-of-my-endpoints-goes-down)
 
 ## <a name="next-steps"></a>다음 단계
 

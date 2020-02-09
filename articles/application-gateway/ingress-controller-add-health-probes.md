@@ -1,6 +1,6 @@
 ---
 title: AKS pod에 상태 프로브 추가
-description: 이 문서에서는 Application Gateway를 사용 하 여 AKS pod에 상태 프로브 (준비 및/또는 선거의)를 추가 하는 방법에 대 한 정보를 제공 합니다.
+description: 이 문서에서는 Application Gateway를 사용 하 여 AKS pod에 상태 프로브 (준비 및/또는 선거의)를 추가 하는 방법에 대한 정보를 제공 합니다.
 services: application-gateway
 author: caya
 ms.service: application-gateway
@@ -15,7 +15,7 @@ ms.lasthandoff: 11/07/2019
 ms.locfileid: "73795587"
 ---
 # <a name="add-health-probes-to-your-service"></a>서비스에 상태 프로브 추가
-기본적으로 수신 컨트롤러는 노출 된 pod에 대 한 HTTP GET 프로브를 프로 비전 합니다.
+기본적으로 수신 컨트롤러는 노출 된 pod에 대한 HTTP GET 프로브를 프로 비전 합니다.
 `deployment`/`pod` 사양에 [준비 또는 선거의 프로브](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) 를 추가 하 여 프로브 속성을 사용자 지정할 수 있습니다.
 
 ## <a name="with-readinessprobe-or-livenessprobe"></a>`readinessProbe` 또는 `livenessProbe`
@@ -55,9 +55,9 @@ Kubernetes API 참조:
 > * `HttpHeaders`, `InitialDelaySeconds``SuccessThreshold` 지원 되지 않습니다.
 
 ##  <a name="without-readinessprobe-or-livenessprobe"></a>`readinessProbe` 또는 `livenessProbe` 없음
-위의 프로브를 제공 하지 않으면 수신 컨트롤러는 서비스에 대 한 `ingress` 정의에 지정 된 `path` 또는 `backend-path-prefix` 주석에 지정 된 `Path`에서 서비스에 연결할 수 있다고 가정 합니다.
+위의 프로브를 제공 하지 않으면 수신 컨트롤러는 서비스에 대한 `ingress` 정의에 지정 된 `path` 또는 `backend-path-prefix` 주석에 지정 된 `Path`에서 서비스에 연결할 수 있다고 가정 합니다.
 
-## <a name="default-values-for-health-probe"></a>상태 프로브에 대 한 기본값
+## <a name="default-values-for-health-probe"></a>상태 프로브에 대한 기본값
 준비/선거의 프로브에서 유추할 수 없는 모든 속성의 경우 기본값이 설정 됩니다.
 
 | Application Gateway 프로브 속성 | 기본값 |

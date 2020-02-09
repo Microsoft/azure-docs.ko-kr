@@ -107,7 +107,7 @@ expand 문자열은 특정 정보를 얻는 데 필요한 API 호출 수를 줄�
 
 * [ODATADetailLevel][odata]. [Filterclause][odata_filter]: 반환 되는 항목 수를 제한 합니다.
 * [ODATADetailLevel][odata]. [Selectclause][odata_select]: 각 항목에 대해 반환 되는 속성 값을 지정 합니다.
-* [ODATADetailLevel][odata]. [ExpandClause][odata_expand]: 각 항목에 대 한 별도의 호출 대신 단일 API 호출의 모든 항목에 대 한 데이터를 검색 합니다.
+* [ODATADetailLevel][odata]. [ExpandClause][odata_expand]: 각 항목에 대한 별도의 호출 대신 단일 API 호출의 모든 항목에 대한 데이터를 검색 합니다.
 
 다음 코드 조각에서는 풀의 특정 집합에 대한 통계에 대해 Batch 서비스를 효율적으로 쿼리하기 위해 Batch .NET API를 사용합니다. 이 시나리오에서 Batch 사용자는 테스트 및 프로덕션 풀을 가집니다. 테스트 풀 ID는 "test"를 접두사로 사용하고 프로덕션 풀 ID는 "prod"를 접두사로 사용합니다. 이 코드 조각에서 *myBatchClient* 는 다음과 같은 [BatchClient](/dotnet/api/microsoft.azure.batch.batchclient) 클래스의 인스턴스를 적절하게 초기화합니다.
 
@@ -153,7 +153,7 @@ filter, select 및 expand 문자열의 속성 이름은 이름과 대소문자 �
 | --- | --- |
 | [CertificateOperations. ListCertificates][net_list_certs] |[계정에 인증서 나열][rest_list_certs] |
 | [CloudTask. ListNodeFiles][net_list_task_files] |[작업에 연결 된 파일 나열][rest_list_task_files] |
-| [JobOperations. ListJobPreparationAndReleaseTaskStatus][net_list_jobprep_status] |[작업 준비 및 작업에 대 한 작업 해제 태스크의 상태 나열][rest_list_jobprep_status] |
+| [JobOperations. ListJobPreparationAndReleaseTaskStatus][net_list_jobprep_status] |[작업 준비 및 작업에 대한 작업 해제 태스크의 상태 나열][rest_list_jobprep_status] |
 | [JobOperations 작업][net_list_jobs] |[계정에 작업 나열][rest_list_jobs] |
 | [JobOperations. ListNodeFiles][net_list_nodefiles] |[노드의 파일 나열][rest_list_nodefiles] |
 | [JobOperations 작업][net_list_tasks] |[작업과 관련 된 작업 나열][rest_list_tasks] |
@@ -168,15 +168,15 @@ filter, select 및 expand 문자열의 속성 이름은 이름과 대소문자 �
 
 | Batch .NET 형식 | REST API 엔터티 |
 | --- | --- |
-| [MSSQLSERVER에 대한 프로토콜 속성][net_cert] |[인증서에 대 한 정보 가져오기][rest_get_cert] |
-| [CloudJob][net_job] |[작업에 대 한 정보 가져오기][rest_get_job] |
-| [CloudJobSchedule][net_schedule] |[작업 일정에 대 한 정보 가져오기][rest_get_schedule] |
-| [ComputeNode][net_node] |[노드에 대 한 정보 가져오기][rest_get_node] |
-| [CloudPool][net_pool] |[풀에 대 한 정보 가져오기][rest_get_pool] |
-| [CloudTask][net_task] |[태스크에 대 한 정보 가져오기][rest_get_task] |
+| [MSSQLSERVER에 대한 프로토콜 속성][net_cert] |[인증서에 대한 정보 가져오기][rest_get_cert] |
+| [CloudJob][net_job] |[작업에 대한 정보 가져오기][rest_get_job] |
+| [CloudJobSchedule][net_schedule] |[작업 일정에 대한 정보 가져오기][rest_get_schedule] |
+| [ComputeNode][net_node] |[노드에 대한 정보 가져오기][rest_get_node] |
+| [CloudPool][net_pool] |[풀에 대한 정보 가져오기][rest_get_pool] |
+| [CloudTask][net_task] |[태스크에 대한 정보 가져오기][rest_get_task] |
 
 ## <a name="example-construct-a-filter-string"></a>예: filter 문자열 구성
-[ODATADetailLevel 절][odata_filter]에 대 한 필터 문자열을 생성 하는 경우 "필터 문자열 매핑"에서 위의 표를 참조 하 여 수행할 목록 작업에 해당 하 REST API 설명서 페이지를 찾으십시오. 해당 페이지의 첫 번째 다중 행 표에 필터링 가능한 속성과 지원되는 연산자가 있습니다. 종료 코드가 0이 아닌 모든 작업을 검색 하려는 경우, 예를 들어 작업에 연결 된 [작업 목록의][rest_list_tasks] 이 행은 적용 가능한 속성 문자열 및 허용 되는 연산자를 지정 합니다.
+[ODATADetailLevel 절][odata_filter]에 대한 필터 문자열을 생성 하는 경우 "필터 문자열 매핑"에서 위의 표를 참조 하 여 수행할 목록 작업에 해당 하 REST API 설명서 페이지를 찾으십시오. 해당 페이지의 첫 번째 다중 행 표에 필터링 가능한 속성과 지원되는 연산자가 있습니다. 종료 코드가 0이 아닌 모든 작업을 검색 하려는 경우, 예를 들어 작업에 연결 된 [작업 목록의][rest_list_tasks] 이 행은 적용 가능한 속성 문자열 및 허용 되는 연산자를 지정 합니다.
 
 | 속성 | 허용되는 연산 | 유형 |
 |:--- |:--- |:--- |
@@ -187,7 +187,7 @@ filter, select 및 expand 문자열의 속성 이름은 이름과 대소문자 �
 `(executionInfo/exitCode lt 0) or (executionInfo/exitCode gt 0)`
 
 ## <a name="example-construct-a-select-string"></a>예: select 문자열 구성
-[ODATADetailLevel 절][odata_select]을 생성 하려면 "Select strings 매핑"에서 위의 표를 참조 하 여 나열 된 엔터티 유형에 해당 하는 REST API 페이지로 이동 합니다. 해당 페이지의 첫 번째 다중 행 표에 선택 가능한 속성과 지원되는 연산자가 있습니다. 예를 들어 목록에서 각 태스크에 대 한 ID와 명령줄만 검색 하려는 경우 해당 테이블에서 [작업에 대 한 정보 가져오기][rest_get_task]의 행을 찾습니다.
+[ODATADetailLevel 절][odata_select]을 생성 하려면 "Select strings 매핑"에서 위의 표를 참조 하 여 나열 된 엔터티 유형에 해당 하는 REST API 페이지로 이동 합니다. 해당 페이지의 첫 번째 다중 행 표에 선택 가능한 속성과 지원되는 연산자가 있습니다. 예를 들어 목록에서 각 태스크에 대한 ID와 명령줄만 검색 하려는 경우 해당 테이블에서 [작업에 대한 정보 가져오기][rest_get_task]의 행을 찾습니다.
 
 | 속성 | 유형 | 메모 |
 |:--- |:--- |:--- |

@@ -36,7 +36,7 @@ ms.locfileid: "77061363"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [메타 네트워크 커넥터 테 넌 트](https://www.metanetworks.com/)
+* [메타 네트워크 커넥터 테넌트](https://www.metanetworks.com/)
 * 관리자 권한이 있는 메타 네트워크 커넥터의 사용자 계정
 
 ## <a name="assigning-users-to-meta-networks-connector"></a>메타 네트워크 커넥터에 사용자 할당
@@ -88,7 +88,7 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
     ![메타 네트워크 커넥터 SCIM 구성](media/meta-networks-connector-provisioning-tutorial/configure.png)
 
-9.  **관리 > 설정 > IdP 탭**으로 이동 합니다. 이전 단계에서 만든 IdP 구성의 이름을 클릭 하 여 **IDP ID**를 확인 합니다. 이 **ID** 는 **테 넌 트** url의 끝에 추가 되 고 Azure Portal에 있는 메타 네트워크 커넥터 응용 프로그램의 프로 비전 탭에 있는 **테 넌 트 url** 필드에 값을 입력 합니다.
+9.  **관리 > 설정 > IdP 탭**으로 이동 합니다. 이전 단계에서 만든 IdP 구성의 이름을 클릭 하 여 **IDP ID**를 확인 합니다. 이 **ID** 는 **테넌트** url의 끝에 추가 되 고 Azure Portal에 있는 메타 네트워크 커넥터 응용 프로그램의 프로 비전 탭에 있는 **테넌트 url** 필드에 값을 입력 합니다.
 
     ![메타 네트워크 커넥터 IdP ID](media/meta-networks-connector-provisioning-tutorial/idpid.png)
 
@@ -139,7 +139,7 @@ Azure AD를 사용 하 여 자동 사용자 프로비저닝을 위한 메타 네
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에 있는 **테 넌 트 URL**에 `https://api.metanetworks.com/v1/scim/<IdP ID>`을 입력 합니다. 이전에 **비밀 토큰**에서 검색 된 **Scim 인증 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 메타 네트워크 커넥터에 연결할 수 있는지 확인 합니다. 연결에 실패 하는 경우 메타 네트워크 커넥터 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
+5. **관리자 자격 증명** 섹션 아래에 있는 **테넌트 URL**에 `https://api.metanetworks.com/v1/scim/<IdP ID>`을 입력 합니다. 이전에 **비밀 토큰**에서 검색 된 **Scim 인증 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 메타 네트워크 커넥터에 연결할 수 있는지 확인 합니다. 연결에 실패 하는 경우 메타 네트워크 커넥터 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 

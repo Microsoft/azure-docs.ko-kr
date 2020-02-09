@@ -940,7 +940,7 @@ Azure Blob Storage 연결에 대 한 계정 이름 및 액세스 키를 제공 �
 |-----------|-------------|
 | `token:clientId` | 서비스 사용자와 연결 된 응용 프로그램 또는 클라이언트 ID입니다. |
 | `token:clientSecret` | 서비스 사용자와 연결 된 키 값입니다. |
-| `token:TenantId` | Azure AD 테 넌 트의 디렉터리 ID입니다. |
+| `token:TenantId` | Azure AD 테넌트의 디렉터리 ID입니다. |
 | `token:grantType` | 요청 된 권한 부여 형식으로 `client_credentials`해야 합니다. 자세한 내용은 [Microsoft id 플랫폼 및 OAuth 2.0 클라이언트 자격 증명 흐름](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md)을 참조 하세요. |
 |||
 

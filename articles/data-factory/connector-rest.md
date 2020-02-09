@@ -35,7 +35,7 @@ REST 원본에서 지원되는 모든 싱크 데이터 저장소로 데이터를
 특히 이 일반 REST 커넥터는 다음을 지원합니다.
 
 - **GET** 또는 **POST** 메서드를 사용하여 REST 엔드포인트에서 데이터 검색
-- 다음 인증 중 하나를 사용 하 여 데이터 검색: **익명**, **기본**, **AAD 서비스 사용자**및 **Azure 리소스에 대 한 관리 id**입니다.
+- 다음 인증 중 하나를 사용 하 여 데이터 검색: **익명**, **기본**, **AAD 서비스 사용자**및 **Azure 리소스에 대한 관리 id**입니다.
 - REST API의 **[페이지 매김](#pagination-support)**
 - REST JSON 응답을 [있는 그대로](#export-json-response-as-is) 복사하고 [스키마 매핑](copy-activity-schema-and-type-mapping.md#schema-mapping)을 사용하여 붙여넣기 **JSON**의 응답 페이로드만 지원됩니다.
 
@@ -60,7 +60,7 @@ REST 연결된 서비스에 다음 속성이 지원됩니다.
 |:--- |:--- |:--- |
 | type | **Type** 속성은 **RestService**로 설정 해야 합니다. | 예 |
 | url | REST 서비스의 기본 URL입니다. | 예 |
-| enableServerCertificateValidation | 끝점에 연결할 때 서버 쪽 SSL 인증서의 유효성을 검사할지 여부를 나타냅니다. | 아닙니다.<br /> (기본값: **true**) |
+| enableServerCertificateValidation | 엔드포인트에 연결할 때 서버 쪽 SSL 인증서의 유효성을 검사할지 여부를 나타냅니다. | 아닙니다.<br /> (기본값: **true**) |
 | authenticationType | REST 서비스에 연결하는 데 사용되는 인증 형식입니다. 허용되는 값은 **Anonymous**, **Basic**, **AadServicePrincipal** 및 **ManagedServiceIdentity**입니다. 추가 속성 및 예제를 보려면 아래 해당 섹션을 참조하세요. | 예 |
 | connectVia | 데이터 저장소에 연결하는 데 사용할 [통합 런타임](concepts-integration-runtime.md)입니다. [전제 조건](#prerequisites) 섹션에서 자세히 알아보세요. 지정하지 않으면 이 속성은 기본 Azure Integration Runtime을 사용합니다. |아닙니다. |
 
@@ -293,7 +293,7 @@ REST의 데이터를 복사하려는 경우 다음과 같은 속성이 지원됩
 
 ## <a name="pagination-support"></a>페이지 매김 지원
 
-일반적으로 REST API은 적절 한 수의 단일 요청에 대 한 응답 페이로드 크기를 제한 합니다. 많은 양의 데이터를 반환 하는 경우 결과를 여러 페이지로 분할 하 고 호출자가 다음 결과 페이지를 가져오기 위해 연속 요청을 보내야 합니다. 보통 한 페이지에 대한 요청은 동적이고 이전 페이지의 응답에서 반환된 정보로 구성됩니다.
+일반적으로 REST API은 적절 한 수의 단일 요청에 대한 응답 페이로드 크기를 제한 합니다. 많은 양의 데이터를 반환 하는 경우 결과를 여러 페이지로 분할 하 고 호출자가 다음 결과 페이지를 가져오기 위해 연속 요청을 보내야 합니다. 보통 한 페이지에 대한 요청은 동적이고 이전 페이지의 응답에서 반환된 정보로 구성됩니다.
 
 이 일반 REST 커넥터는 다음 페이지 매김 패턴을 지원합니다. 
 
@@ -387,16 +387,16 @@ Facebook Graph API는 다음 구조의 응답을 반환합니다. 이 경우 다
 
 ### <a name="how-to-use-this-solution-template"></a>이 솔루션 템플릿을 사용하는 방법
 
-1. **REST에서 복사 또는 OAuth 템플릿을 사용 하 여 HTTP** 로 이동 합니다. 원본 연결에 대 한 새 연결을 만듭니다. 
+1. **REST에서 복사 또는 OAuth 템플릿을 사용 하 여 HTTP** 로 이동 합니다. 원본 연결에 대한 새 연결을 만듭니다. 
     ![새 연결을 만듭니다](media/solution-template-copy-from-rest-or-http-using-oauth/source-connection.png)
 
-    다음은 새 연결 된 서비스 (REST) 설정에 대 한 주요 단계입니다.
+    다음은 새 연결 된 서비스 (REST) 설정에 대한 주요 단계입니다.
     
-     1. **기본 url**에서 원본 REST 서비스에 대 한 url 매개 변수를 지정 합니다. 
+     1. **기본 url**에서 원본 REST 서비스에 대한 url 매개 변수를 지정 합니다. 
      2. **인증 유형**으로 *익명*을 선택 합니다.
         새 REST 연결을 ![](media/solution-template-copy-from-rest-or-http-using-oauth/new-rest-connection.png)
 
-2. 대상 연결에 대 한 새 연결을 만듭니다.  
+2. 대상 연결에 대한 새 연결을 만듭니다.  
     ![새 Gen2 연결](media/solution-template-copy-from-rest-or-http-using-oauth/destination-connection.png)
 
 3. **이 템플릿 사용**을 선택합니다.
@@ -404,7 +404,7 @@ Facebook Graph API는 다음 구조의 응답을 반환합니다. 이 경우 다
 
 4. 다음 예제와 같이 생성 된 파이프라인이 표시 됩니다. ![파이프라인](media/solution-template-copy-from-rest-or-http-using-oauth/pipeline.png)
 
-5. **웹** 활동을 선택 합니다. **설정**에서 데이터를 복사 하려는 서비스의 로그인 API에서 OAuth 전달자 토큰을 검색할 해당 **URL**, **메서드**, **헤더**및 **본문** 을 지정 합니다. 템플릿의 자리 표시자는 AAD (Azure Active Directory) OAuth의 샘플을 보여 줍니다. 참고 AAD 인증은 기본적으로 REST 커넥터에서 지원 됩니다. 여기에는 OAuth flow에 대 한 예제만 있습니다. 
+5. **웹** 활동을 선택 합니다. **설정**에서 데이터를 복사 하려는 서비스의 로그인 API에서 OAuth 전달자 토큰을 검색할 해당 **URL**, **메서드**, **헤더**및 **본문** 을 지정 합니다. 템플릿의 자리 표시자는 AAD (Azure Active Directory) OAuth의 샘플을 보여 줍니다. 참고 AAD 인증은 기본적으로 REST 커넥터에서 지원 됩니다. 여기에는 OAuth flow에 대한 예제만 있습니다. 
 
     | 속성 | Description |
     |:--- |:--- |:--- |

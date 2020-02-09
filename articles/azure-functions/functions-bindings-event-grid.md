@@ -14,13 +14,13 @@ ms.locfileid: "76547458"
 ---
 # <a name="event-grid-trigger-for-azure-functions"></a>Azure Functions의 Event Grid 트리거
 
-이 문서에서는 Azure Functions에서 [Event Grid](../event-grid/overview.md) 이벤트를 처리하는 방법을 설명합니다. HTTP 끝점에서 Event Grid 메시지를 처리 하는 방법에 대 한 자세한 내용은 [http 끝점에 대 한 수신 이벤트](../event-grid/receive-events.md)를 참조 하세요.
+이 문서에서는 Azure Functions에서 [Event Grid](../event-grid/overview.md) 이벤트를 처리하는 방법을 설명합니다. HTTP 엔드포인트에서 Event Grid 메시지를 처리 하는 방법에 대한 자세한 내용은 [http 엔드포인트에 대한 수신 이벤트](../event-grid/receive-events.md)를 참조 하세요.
 
 Event Grid는 *게시자*에서 발생하는 이벤트를 알리기 위해 HTTP 요청을 전송하는 Azure 서비스입니다. 게시자는 이벤트를 시작하는 서비스 또는 리소스입니다. 예를 들어, Azure Blob Storage 계정은 게시자이고 [Blob 업로드 또는 삭제는 이벤트](../storage/blobs/storage-blob-event-overview.md)입니다. 일부 [Azure 서비스에는 Event Grid에 이벤트를 게시하는 방식을 기본적으로 지원합니다](../event-grid/overview.md#event-sources).
 
 이벤트 *처리기*는 이벤트를 수신하고 처리합니다. Azure Functions는 [Event Grid 이벤트를 처리를 기본적으로 지원하는 Azure 서비스](../event-grid/overview.md#event-handlers) 중 하나입니다. 이 문서에서는 Event Grid에서 이벤트가 수신될 때 Event Grid 트리거를 사용하여 함수를 호출하는 방법을 알아봅니다.
 
-원하는 경우 HTTP 트리거를 사용 하 여 Event Grid 이벤트를 처리할 수 있습니다. [HTTP 끝점으로 이벤트 수신을](../event-grid/receive-events.md)참조 하세요. 현재는, 이벤트가 [CloudEvents 스키마](../event-grid/cloudevents-schema.md#azure-functions)를 통해 전달되는 경우, Azure Functions 앱에 대해 Event Grid 트리거를 사용할 수 없습니다. 대신, HTTP 트리거를 사용합니다.
+원하는 경우 HTTP 트리거를 사용 하 여 Event Grid 이벤트를 처리할 수 있습니다. [HTTP 엔드포인트으로 이벤트 수신을](../event-grid/receive-events.md)참조 하세요. 현재는, 이벤트가 [CloudEvents 스키마](../event-grid/cloudevents-schema.md#azure-functions)를 통해 전달되는 경우, Azure Functions 앱에 대해 Event Grid 트리거를 사용할 수 없습니다. 대신, HTTP 트리거를 사용합니다.
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
@@ -40,7 +40,7 @@ Event Grid 트리거는 [Microsoft.Azure.WebJobs.Extensions.EventGrid](https://w
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-HTTP 트리거 예제는 [http 끝점으로 이벤트 수신](../event-grid/receive-events.md)을 참조 하세요.
+HTTP 트리거 예제는 [http 엔드포인트으로 이벤트 수신](../event-grid/receive-events.md)을 참조 하세요.
 
 ### <a name="c-2x-and-higher"></a>C#(2.x 이상)
 

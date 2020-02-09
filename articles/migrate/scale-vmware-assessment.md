@@ -63,13 +63,13 @@ ms.locfileid: "75453271"
 여러 접두사 | > 1만 | Azure Migrate 프로젝트 하나<br/> 여러 어플라이언스.<br/> 여러 vCenter 계정. | 1만 Vm < vCenter Server 경우 각 vCenter Server에 대 한 어플라이언스를 설정 합니다.<br/><br/> 1만 Vm > vCenter Server 경우 1만 Vm 마다 어플라이언스를 설정 합니다.<br/> VCenter 계정을 설정 하 고, 계정에 대 한 액세스를 1만 Vm 미만으로 제한 하도록 인벤토리를 나눕니다.<br/> 계정을 사용 하 여 각 어플라이언스를 vCenter server에 연결 합니다.<br/> 다른 어플라이언스로 검색 된 컴퓨터 간에 종속성을 분석할 수 있습니다.
 
 
-## <a name="plan-discovery-in-a-multi-tenant-environment"></a>다중 테 넌 트 환경에서 검색 계획
+## <a name="plan-discovery-in-a-multi-tenant-environment"></a>다중 테넌트 환경에서 검색 계획
 
-다중 테 넌 트 환경을 계획 하는 경우 vCenter Server 검색 범위를 지정할 수 있습니다.
+다중 테넌트 환경을 계획 하는 경우 vCenter Server 검색 범위를 지정할 수 있습니다.
 
 - 어플라이언스 검색 범위는 vCenter Server 데이터 센터, 클러스터 또는 클러스터, 호스트 또는 호스트의 폴더 또는 개별 Vm으로 설정할 수 있습니다.
-- 사용자 환경이 테 넌 트 간에 공유 되 고 각 테 넌 트를 개별적으로 검색 하려는 경우 어플라이언스에서 검색에 사용 하는 vCenter 계정에 대 한 액세스 범위를 지정할 수 있습니다. 
-    - 테 넌 트가 호스트를 공유 하는 경우 VM 폴더로 범위를 지정할 수 있습니다. Vcenter 계정에 vCenter VM 폴더 수준에서 액세스 권한이 부여 된 경우 Vm을 검색할 수 Azure Migrate. 검색 범위를 VM 폴더로 지정하려는 경우 vCenter 계정에 VM 수준의 읽기 전용 액세스 권한이 할당되도록 하여 검색을 수행할 수 있습니다. 검색 범위 지정에 대한 자세한 내용은 [여기](tutorial-assess-vmware.md#set-the-scope-of-discovery)를 참조하세요.
+- 사용자 환경이 테넌트 간에 공유 되 고 각 테넌트를 개별적으로 검색 하려는 경우 어플라이언스에서 검색에 사용 하는 vCenter 계정에 대 한 액세스 범위를 지정할 수 있습니다. 
+    - 테넌트가 호스트를 공유 하는 경우 VM 폴더로 범위를 지정할 수 있습니다. Vcenter 계정에 vCenter VM 폴더 수준에서 액세스 권한이 부여 된 경우 Vm을 검색할 수 Azure Migrate. 검색 범위를 VM 폴더로 지정하려는 경우 vCenter 계정에 VM 수준의 읽기 전용 액세스 권한이 할당되도록 하여 검색을 수행할 수 있습니다. 검색 범위 지정에 대한 자세한 내용은 [여기](tutorial-assess-vmware.md#set-the-scope-of-discovery)를 참조하세요.
 
 ## <a name="prepare-for-assessment"></a>평가 준비
 

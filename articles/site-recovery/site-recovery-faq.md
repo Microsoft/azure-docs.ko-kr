@@ -143,11 +143,11 @@ Site Recovery를 사용하여 지원되는 VM 또는 물리적 서버에서 실�
 ## <a name="replication"></a>복제
 
 ### <a name="can-i-replicate-over-a-site-to-site-vpn-to-azure"></a>사이트 간 VPN을 통해 Azure에 복제할 수 있습니까?
-Azure Site Recovery는 공용 끝점을 통해 Azure storage 계정 또는 관리 디스크로 데이터를 복제 합니다. 사이트 간 VPN을 통해 복제되지 않습니다. 
+Azure Site Recovery는 공용 엔드포인트을 통해 Azure storage 계정 또는 관리 디스크로 데이터를 복제 합니다. 사이트 간 VPN을 통해 복제되지 않습니다. 
 
 ### <a name="why-cant-i-replicate-over-vpn"></a>VPN을 통해 복제할 수 없는 이유는 무엇인가요?
 
-Azure에 복제 하는 경우 복제 트래픽은 Azure Storage의 공용 끝점에 도달 합니다. 따라서 공용 인터넷 이나 Express 경로 (Microsoft 피어 링 또는 기존 공용 피어 링)를 통해서만 복제할 수 있습니다.
+Azure에 복제 하는 경우 복제 트래픽은 Azure Storage의 공용 엔드포인트에 도달 합니다. 따라서 공용 인터넷 이나 Express 경로 (Microsoft 피어 링 또는 기존 공용 피어 링)를 통해서만 복제할 수 있습니다.
 
 ### <a name="can-i-use-riverbed-steelheads-for-replication"></a>복제에 Riverbed SteelHeads를 사용할 수 있나요?
 
@@ -156,7 +156,7 @@ Azure에 복제 하는 경우 복제 트래픽은 Azure Storage의 공용 끝점
 ### <a name="can-i-use-expressroute-to-replicate-virtual-machines-to-azure"></a>ExpressRoute를 사용하여 가상 머신을 Azure로 복제할 수 있습니까?
 예, [ExpressRoute를 사용](concepts-expressroute-with-site-recovery.md)하여 온-프레미스 가상 머신을 Azure로 복제할 수 있습니다.
 
-- Azure Site Recovery는 공용 끝점을 통해 Azure Storage 데이터를 복제 합니다. Site Recovery 복제를 위한 Express 경로를 사용 하려면 [Microsoft 피어 링](../expressroute/expressroute-circuit-peerings.md#microsoftpeering) 을 설정 하거나 기존 [공용 피어 링](../expressroute/about-public-peering.md) (새 회로에 사용 되지 않음)을 사용 해야 합니다.
+- Azure Site Recovery는 공용 엔드포인트을 통해 Azure Storage 데이터를 복제 합니다. Site Recovery 복제를 위한 Express 경로를 사용 하려면 [Microsoft 피어 링](../expressroute/expressroute-circuit-peerings.md#microsoftpeering) 을 설정 하거나 기존 [공용 피어 링](../expressroute/about-public-peering.md) (새 회로에 사용 되지 않음)을 사용 해야 합니다.
 - Microsoft 피어링은 복제에 권장되는 라우팅 도메인입니다.
 - 프라이빗 피어링에는 복제가 지원되지 않습니다.
 - VMware 컴퓨터 또는 물리적 컴퓨터를 보호 하는 경우에는 구성 서버에 대 한 [네트워킹 요구 사항도](vmware-azure-configuration-server-requirements.md#network-requirements) 충족 해야 합니다. Site Recovery 복제 오케스트레이션에 대해 구성 서버에서 특정 Url에 연결 해야 합니다. 이 연결에는 Express 경로를 사용할 수 없습니다.

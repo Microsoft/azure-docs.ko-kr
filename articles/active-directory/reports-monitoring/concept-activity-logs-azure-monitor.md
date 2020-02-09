@@ -26,7 +26,7 @@ ms.locfileid: "74014513"
 ---
 # <a name="azure-ad-activity-logs-in-azure-monitor"></a>Azure Monitor의 Azure AD 활동 로그
 
-장기 보존 및 데이터 통찰력을 위해 Azure AD (Azure Active Directory) 활동 로그를 여러 끝점으로 라우팅할 수 있습니다. 이 기능을 사용 하면 다음을 수행할 수 있습니다.
+장기 보존 및 데이터 통찰력을 위해 Azure AD (Azure Active Directory) 활동 로그를 여러 엔드포인트으로 라우팅할 수 있습니다. 이 기능을 사용 하면 다음을 수행할 수 있습니다.
 
 * 데이터를 장기간 보존하기 위해 Azure 스토리지 계정에 Azure AD 활동 로그를 보관합니다.
 * Splunk 및 QRadar 같은 인기 있는 SIEM(보안 정보 및 이벤트 관리) 도구를 사용하여 Azure AD 활동 로그를 Azure 이벤트 허브로 스트리밍하여 분석합니다.

@@ -1,5 +1,5 @@
 ---
-title: 'Azure 데이터 탐색기 Python 라이브러리를 사용 하 여 Azure 데이터 탐색기 클러스터 및 데이터베이스에 대 한 정책 만들기 '
+title: 'Azure 데이터 탐색기 Python 라이브러리를 사용 하 여 Azure 데이터 탐색기 클러스터 및 데이터베이스에 대한 정책 만들기 '
 description: 이 문서에서는 Python을 사용 하 여 정책을 만드는 방법에 대해 알아봅니다.
 author: lucygoldbergmicrosoft
 ms.author: lugoldbe
@@ -14,14 +14,14 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/02/2019
 ms.locfileid: "74667289"
 ---
-# <a name="create-database-and-table-policies-for-azure-data-explorer-by-using-python"></a>Python을 사용 하 여 Azure 데이터 탐색기에 대 한 데이터베이스 및 테이블 정책 만들기
+# <a name="create-database-and-table-policies-for-azure-data-explorer-by-using-python"></a>Python을 사용 하 여 Azure 데이터 탐색기에 대한 데이터베이스 및 테이블 정책 만들기
 
 > [!div class="op_single_selector"]
 > * [C#](database-table-policies-csharp.md)
 > * [Python](database-table-policies-python.md)
 >
 
-Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능한 빠르고 확장성이 우수한 데이터 탐색 서비스입니다. 이 문서에서는 Python을 사용 하 여 Azure 데이터 탐색기에 대 한 데이터베이스 및 테이블 정책을 만듭니다.
+Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능한 빠르고 확장성이 우수한 데이터 탐색 서비스입니다. 이 문서에서는 Python을 사용 하 여 Azure 데이터 탐색기에 대한 데이터베이스 및 테이블 정책을 만듭니다.
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -74,7 +74,7 @@ poller = kustoManagementClient.databases.update(resource_group_name=resource_gro
 ```
 
 ## <a name="alter-database-cache-policy"></a>Alter database cache 정책
-클러스터 SSD에 지난 5 일간의 데이터를 데이터베이스에 대 한 캐시 정책을 설정 합니다.
+클러스터 SSD에 지난 5 일간의 데이터를 데이터베이스에 대한 캐시 정책을 설정 합니다.
 
 ```python
 from azure.mgmt.kusto import KustoManagementClient
@@ -107,7 +107,7 @@ poller = kustoManagementClient.databases.update(resource_group_name=resource_gro
 ```
 
 ## <a name="alter-table-cache-policy"></a>Alter table cache 정책
-클러스터 SSD에 지난 5 일간의 데이터가 있는 테이블에 대 한 캐시 정책을 설정 합니다.
+클러스터 SSD에 지난 5 일간의 데이터가 있는 테이블에 대한 캐시 정책을 설정 합니다.
 
 ```python
 from azure.kusto.data.request import KustoClient, KustoConnectionStringBuilder

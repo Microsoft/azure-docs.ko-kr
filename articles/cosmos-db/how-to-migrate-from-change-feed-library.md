@@ -21,7 +21,7 @@ ms.locfileid: "71077556"
 
 .NET V3 SDK에는 몇 가지 주요 변경 사항이 포함 되어 있으며, 다음은 응용 프로그램을 마이그레이션하는 주요 단계입니다.
 
-1. 인스턴스를 `DocumentCollectionInfo` 모니터링 되 `Container` 는 및 임대 컨테이너에 대 한 참조로 변환 합니다.
+1. 인스턴스를 `DocumentCollectionInfo` 모니터링 되 `Container` 는 및 임대 컨테이너에 대한 참조로 변환 합니다.
 1. 를 사용 하 `WithProcessorOptions` 여 [시작 시간](how-to-configure-change-feed-start-time.md)에 대해 `WithLeaseConfiguration` 및 `WithPollInterval` `WithStartTime` 를 사용 하 고 `WithMaxItems` 최대 항목 수를 정의 하려면를 사용 하는 사용자 지정을 업데이트 해야 합니다.
 1. 에 구성 된 `GetChangeFeedProcessorBuilder` 값 `string.Empty` 과 일치 하도록 `processorName` on을 설정 하거나 ,그렇지않으면`ChangeFeedProcessorOptions.LeasePrefix`를 사용 합니다.
 1. 변경 내용은로 `IReadOnlyList<Document>`더 이상 전달 되지 않습니다. 대신 `IReadOnlyCollection<T>` `T` 에서 정의 해야 하는 형식이 며 기본 항목 클래스가 더 이상 없습니다.

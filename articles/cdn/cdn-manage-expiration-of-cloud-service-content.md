@@ -106,7 +106,7 @@ TTL(time-to-live)이 경과할 때까지 원본 웹 서버에서 공개적으로
 </configuration>
 ```
 
-**cacheControlMaxAge** 특성을 사용하려면 **cacheControlMode** 특성의 값을 `UseMaxAge`로 설정해야 합니다. 이 설정으로 인해 HTTP 헤더 및 지시문, `Cache-Control: max-age=<nnn>`이 응답에 추가됩니다. **cacheControlMaxAge** 특성에 대한 시간 범위 값의 형식은 `<days>.<hours>:<min>:<sec>`입니다. 해당 값은 초로 변환되고 `Cache-Control` `max-age` 지시문의 값으로 사용됩니다. 에 대 한 자세한 내용은 합니다 `<clientCache>` 요소를 참조 하세요 [클라이언트 캐시 \<clientCache >](https://www.iis.net/ConfigReference/system.webServer/staticContent/clientCache)합니다.  
+**cacheControlMaxAge** 특성을 사용하려면 **cacheControlMode** 특성의 값을 `UseMaxAge`로 설정해야 합니다. 이 설정으로 인해 HTTP 헤더 및 지시문, `Cache-Control: max-age=<nnn>`이 응답에 추가됩니다. **cacheControlMaxAge** 특성에 대한 시간 범위 값의 형식은 `<days>.<hours>:<min>:<sec>`입니다. 해당 값은 초로 변환되고 `Cache-Control` `max-age` 지시문의 값으로 사용됩니다. 에 대한 자세한 내용은 합니다 `<clientCache>` 요소를 참조 하세요 [클라이언트 캐시 \<clientCache >](https://www.iis.net/ConfigReference/system.webServer/staticContent/clientCache)합니다.  
 
 ## <a name="setting-cache-control-headers-programmatically"></a>프로그래밍 방식으로 Cache-Control 헤더 설정
 ASP.NET 애플리케이션의 경우 .NET API의 **HttpResponse.Cache** 속성을 설정하면 CDN 캐싱 동작을 프로그래밍 방식으로 제어합니다. **HttpResponse.Cache** 속성에 대한 자세한 내용은 [HttpResponse.Cache 속성](/dotnet/api/system.web.httpresponse.cache#System_Web_HttpResponse_Cache) 및 [HttpCachePolicy 클래스](/dotnet/api/system.web.httpcachepolicy)를 참조하세요.  

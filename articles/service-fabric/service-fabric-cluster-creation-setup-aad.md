@@ -53,7 +53,7 @@ PowerShell 명령 `Get-AzureSubscription`을 실행하여 *TenantId*를 찾을 �
 
 *ClusterName*은 스크립트로 만든 Azure AD 애플리케이션의 접두사로 사용됩니다. 실제 클러스터 이름과 정확히 일치할 필요는 없습니다. 단순히 Azure AD 아티팩트를, 함께 사용할 Service Fabric 패브릭 클러스터에 쉽게 매핑하기 위한 것입니다.
 
-*WebApplicationReplyUrl*은 Azure AD에서 로그인을 마친 후에 사용자에게 반환하는 기본 엔드포인트입니다. 이 끝점을 클러스터에 대 한 Service Fabric Explorer 끝점으로 설정 합니다. 기존 클러스터를 나타내는 Azure AD 응용 프로그램을 만드는 경우이 URL이 기존 클러스터의 끝점과 일치 하는지 확인 합니다. 새 클러스터에 대 한 응용 프로그램을 만드는 경우 클러스터에 포함 되는 끝점을 계획 하 고 기존 클러스터의 끝점을 사용 하지 않도록 해야 합니다. 기본적으로 Service Fabric Explorer 끝점은 다음과 같습니다.
+*WebApplicationReplyUrl*은 Azure AD에서 로그인을 마친 후에 사용자에게 반환하는 기본 엔드포인트입니다. 이 엔드포인트을 클러스터에 대 한 Service Fabric Explorer 엔드포인트으로 설정 합니다. 기존 클러스터를 나타내는 Azure AD 응용 프로그램을 만드는 경우이 URL이 기존 클러스터의 엔드포인트과 일치 하는지 확인 합니다. 새 클러스터에 대 한 응용 프로그램을 만드는 경우 클러스터에 포함 되는 엔드포인트을 계획 하 고 기존 클러스터의 엔드포인트을 사용 하지 않도록 해야 합니다. 기본적으로 Service Fabric Explorer 엔드포인트은 다음과 같습니다.
 
 https://&lt;cluster_domain&gt;:19080/Explorer
 

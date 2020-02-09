@@ -1,6 +1,6 @@
 ---
 title: Azure Data Factory 데이터 흐름 랭 글 링
-description: Azure Data Factory의 랭 글 링 데이터 흐름에 대 한 개요
+description: Azure Data Factory의 랭 글 링 데이터 흐름에 대한 개요
 author: djpmsft
 ms.author: daperlov
 ms.reviewer: gamal
@@ -28,7 +28,7 @@ Azure Data Factory의 랭 글 링 데이터 흐름을 사용 하면 클라우드
 
 ### <a name="fast-interactive-data-exploration-and-preparation"></a>신속한 대화형 데이터 탐색 및 준비
 
-여러 데이터 엔지니어와 시민 데이터 통합자는 클라우드 규모에서 데이터 집합을 대화형으로 탐색 하 고 준비할 수 있습니다. 데이터 레이크 데이터의 양이 증가 하 고 다양 하 고 속도가 증가 함에 맞게 사용자는 데이터 집합을 탐색 하 고 준비 하는 효과적인 방법이 필요 합니다. 예를 들어 ' 2017 ' 이후의 새 고객에 대 한 모든 고객 인구 통계 정보를 포함 하는 데이터 집합을 만들어야 할 수 있습니다. 알려진 대상에 매핑되지 않습니다. Lake에 게시 하기 전에 요구 사항을 충족 하기 위해 데이터 집합을 탐색, 랭 글 링 및 prepping 합니다. 랭 글 링 데이터 흐름은 더 짧은 공식 분석 시나리오에 사용 되는 경우가 많습니다. 준비 데이터 집합을 사용 하 여 변환 및 기계 학습 작업을 수행할 수 있습니다.
+여러 데이터 엔지니어와 시민 데이터 통합자는 클라우드 규모에서 데이터 집합을 대화형으로 탐색 하 고 준비할 수 있습니다. 데이터 레이크 데이터의 양이 증가 하 고 다양 하 고 속도가 증가 함에 맞게 사용자는 데이터 집합을 탐색 하 고 준비 하는 효과적인 방법이 필요 합니다. 예를 들어 ' 2017 ' 이후의 새 고객에 대한 모든 고객 인구 통계 정보를 포함 하는 데이터 집합을 만들어야 할 수 있습니다. 알려진 대상에 매핑되지 않습니다. Lake에 게시 하기 전에 요구 사항을 충족 하기 위해 데이터 집합을 탐색, 랭 글 링 및 prepping 합니다. 랭 글 링 데이터 흐름은 더 짧은 공식 분석 시나리오에 사용 되는 경우가 많습니다. 준비 데이터 집합을 사용 하 여 변환 및 기계 학습 작업을 수행할 수 있습니다.
 
 ### <a name="code-free-agile-data-preparation"></a>코드 없는 agile 데이터 준비
 
@@ -50,7 +50,7 @@ Azure Data Factory의 랭 글 링 데이터 흐름을 사용 하면 클라우드
 
 ## <a name="the-mashup-editor"></a>매시업 편집기
 
-랭 글 링 데이터 흐름을 만들 때 모든 원본 데이터 집합은 데이터 집합 쿼리가 되며 **Adfresource** 폴더에 배치 됩니다. 기본적으로 UserQuery는 첫 번째 데이터 집합 쿼리를 가리킵니다. 데이터 집합 쿼리에 대 한 변경 내용이 지원 되지 않거나 유지 되지 않으므로 UserQuery에서 모든 변환을 수행 해야 합니다. 현재는 쿼리 이름을 바꾸고 쿼리를 추가 및 삭제 하는 것은 지원 되지 않습니다.
+랭 글 링 데이터 흐름을 만들 때 모든 원본 데이터 집합은 데이터 집합 쿼리가 되며 **Adfresource** 폴더에 배치 됩니다. 기본적으로 UserQuery는 첫 번째 데이터 집합 쿼리를 가리킵니다. 데이터 집합 쿼리에 대한 변경 내용이 지원 되지 않거나 유지 되지 않으므로 UserQuery에서 모든 변환을 수행 해야 합니다. 현재는 쿼리 이름을 바꾸고 쿼리를 추가 및 삭제 하는 것은 지원 되지 않습니다.
 
 ![랭 글 링](media/wrangling-data-flow/editor.png)
 
@@ -58,7 +58,7 @@ Azure Data Factory의 랭 글 링 데이터 흐름을 사용 하면 클라우드
 
 `The wrangling data flow is invalid. Expression.Error: The transformation logic isn't supported. Please try a simpler expression`
 
-지원 되는 변환에 대 한 자세한 내용은 [랭 글 링 data flow 함수](wrangling-data-flow-functions.md)를 참조 하세요.
+지원 되는 변환에 대한 자세한 내용은 [랭 글 링 data flow 함수](wrangling-data-flow-functions.md)를 참조 하세요.
 
 현재 랭 글 링 데이터 흐름은 한 싱크에만 쓸 수 있도록 지원 합니다.
 

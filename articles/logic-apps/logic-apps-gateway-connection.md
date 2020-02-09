@@ -54,7 +54,7 @@ Azure Logic Apps는 데이터 게이트웨이를 통해 읽기 및 쓰기 작업
 
 * 이미 [로컬 컴퓨터에 온-프레미스 데이터 게이트웨이를 설치](../logic-apps/logic-apps-gateway-install.md)했습니다.
 
-* 해당 데이터 게이트웨이를 설치할 때 사용 된 것 [과 동일한 Azure 계정 및 구독](../logic-apps/logic-apps-gateway-install.md#requirements) 을 사용 하 고 있습니다. 이 Azure 계정은 단일 [Azure Active Directory (AZURE AD) 테 넌 트 또는 디렉터리](../active-directory/fundamentals/active-directory-whatis.md#terminology)에 속해야 합니다.
+* 해당 데이터 게이트웨이를 설치할 때 사용 된 것 [과 동일한 Azure 계정 및 구독](../logic-apps/logic-apps-gateway-install.md#requirements) 을 사용 하 고 있습니다. 이 Azure 계정은 단일 [Azure Active Directory (AZURE AD) 테넌트 또는 디렉터리](../active-directory/fundamentals/active-directory-whatis.md#terminology)에 속해야 합니다.
 
 * 게이트웨이 설치는 다른 Azure 게이트웨이 리소스에서 이미 등록 및 요청 되지 않습니다.
 
@@ -84,7 +84,7 @@ Azure Logic Apps는 데이터 게이트웨이를 통해 읽기 및 쓰기 작업
    | **구독** | 게이트웨이 설치에 사용 된 Azure 계정에 대 한 Azure 구독을 선택 합니다. 기본 구독은 로그인하는 데 사용한 Azure 계정을 기반으로 합니다. |
    | **리소스 그룹** | 사용 하려는 [Azure 리소스 그룹](../azure-resource-manager/management/overview.md) |
    | **위치** | [게이트웨이를 설치](../logic-apps/logic-apps-gateway-install.md)하는 동안 게이트웨이 클라우드 서비스에 대해 선택한 것과 동일한 지역 또는 위치입니다. 그렇지 않으면 게이트웨이 설치가 **설치 이름** 목록에 표시 되지 않습니다. 논리 앱 위치는 게이트웨이 리소스 위치와 다를 수 있습니다. |
-   | **설치 이름** | 이러한 조건이 충족 될 때만 목록에 표시 되는 게이트웨이 설치를 선택 합니다. <p><p>-게이트웨이 설치는 만들려는 게이트웨이 리소스와 동일한 지역을 사용 합니다. <br>-게이트웨이 설치는 다른 Azure 게이트웨이 리소스에 연결 되지 않습니다. <br>-게이트웨이 설치는 게이트웨이 리소스를 만드는 데 사용 하는 것과 동일한 Azure 계정에 연결 됩니다. <br>-Azure 계정은 단일 [Azure Active Directory (AZURE AD) 테 넌 트 또는 디렉터리](../active-directory/fundamentals/active-directory-whatis.md#terminology) 에 속하며 게이트웨이 설치에 사용 된 것과 동일한 계정입니다. <p><p>자세한 내용은 질문과 [대답](#faq) 섹션을 참조 하세요. |
+   | **설치 이름** | 이러한 조건이 충족 될 때만 목록에 표시 되는 게이트웨이 설치를 선택 합니다. <p><p>-게이트웨이 설치는 만들려는 게이트웨이 리소스와 동일한 지역을 사용 합니다. <br>-게이트웨이 설치는 다른 Azure 게이트웨이 리소스에 연결 되지 않습니다. <br>-게이트웨이 설치는 게이트웨이 리소스를 만드는 데 사용 하는 것과 동일한 Azure 계정에 연결 됩니다. <br>-Azure 계정은 단일 [Azure Active Directory (AZURE AD) 테넌트 또는 디렉터리](../active-directory/fundamentals/active-directory-whatis.md#terminology) 에 속하며 게이트웨이 설치에 사용 된 것과 동일한 계정입니다. <p><p>자세한 내용은 질문과 [대답](#faq) 섹션을 참조 하세요. |
    |||
 
    다음은 게이트웨이 리소스와 동일한 지역에 있고 동일한 Azure 계정에 연결 된 게이트웨이 설치를 보여 주는 예제입니다.
@@ -161,7 +161,7 @@ Azure 구독에 연결된 모든 API 연결을 찾으려면:
 **Q**: Azure에서 게이트웨이 리소스를 만들 때 게이트웨이 설치가 나타나지 않는 이유는 무엇 인가요? <br/>
 **A**: 이 문제는 다음과 같은 이유 때문에 발생할 수 있습니다.
 
-* Azure 계정은 로컬 컴퓨터의 게이트웨이 설치에 연결 된 계정과 동일 해야 합니다. 게이트웨이 설치에 연결 된 것과 동일한 id를 사용 하 여 Azure Portal 로그인 했는지 확인 합니다. 또한 Azure 계정이 단일 [AZURE ad 테 넌 트 또는 디렉터리](../active-directory/fundamentals/active-directory-whatis.md#terminology) 에 속하고 게이트웨이 설치 중에 사용 된 것과 동일한 azure ad 테 넌 트 또는 디렉터리로 설정 되었는지 확인 합니다.
+* Azure 계정은 로컬 컴퓨터의 게이트웨이 설치에 연결 된 계정과 동일 해야 합니다. 게이트웨이 설치에 연결 된 것과 동일한 id를 사용 하 여 Azure Portal 로그인 했는지 확인 합니다. 또한 Azure 계정이 단일 [AZURE ad 테넌트 또는 디렉터리](../active-directory/fundamentals/active-directory-whatis.md#terminology) 에 속하고 게이트웨이 설치 중에 사용 된 것과 동일한 azure ad 테넌트 또는 디렉터리로 설정 되었는지 확인 합니다.
 
 * 게이트웨이 리소스와 게이트웨이 설치는 동일한 지역을 사용 해야 합니다. 그러나 논리 앱 위치는 게이트웨이 리소스 위치와 다를 수 있습니다.
 

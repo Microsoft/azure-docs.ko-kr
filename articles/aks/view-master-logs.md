@@ -74,7 +74,7 @@ pod/nginx created
 
 ## <a name="view-collected-logs"></a>수집된 로그 보기
 
-진단 로그를 사용하도록 설정하고 Log Analytics 작업 영역에 표시되기까지 몇 분 정도 걸릴 수 있습니다. Azure Portal에서 *Myresourcegroup*과 같은 Log Analytics 작업 영역에 대 한 리소스 그룹을 선택 하 고 *myAKSLogs*와 같은 Log Analytics 리소스를 선택 합니다.
+진단 로그를 사용하도록 설정하고 Log Analytics 작업 영역에 표시되기까지 몇 분 정도 걸릴 수 있습니다. Azure Portal에서 *Myresourcegroup*과 같은 Log Analytics 작업 영역에 대한 리소스 그룹을 선택 하 고 *myAKSLogs*와 같은 Log Analytics 리소스를 선택 합니다.
 
 ![AKS 클러스터의 Log Analytics 작업 영역 선택](media/view-master-logs/select-log-analytics-workspace.png)
 
@@ -101,7 +101,7 @@ AzureDiagnostics
 
 추가 로그를 보려면 사용하도록 설정할 추가 로그에 따라 쿼리에서 *Category* 이름을 *kube-controller-manager* 또는 *kube-scheduler*로 업데이트하면 됩니다. 이때 검색하려는 이벤트를 구체화하기 위해 추가적인 *where* 문을 사용할 수 있습니다.
 
-로그 데이터를 쿼리하고 필터링 하는 방법에 대 한 자세한 내용은 [log analytics 로그 검색을 사용 하 여 수집한 데이터 보기 또는 분석][analyze-log-analytics]을 참조 하세요.
+로그 데이터를 쿼리하고 필터링 하는 방법에 대한 자세한 내용은 [log analytics 로그 검색을 사용 하 여 수집한 데이터 보기 또는 분석][analyze-log-analytics]을 참조 하세요.
 
 ## <a name="log-event-schema"></a>로그 이벤트 스키마
 
@@ -122,9 +122,9 @@ AzureDiagnostics
 
 | 역할                     | 설명 |
 |--------------------------|-------------|
-| *aksService*             | HcpService의 제어 평면 작업에 대 한 감사 로그의 표시 이름입니다. |
-| *masterclient*           | MasterClientCertificate에 대 한 감사 로그의 표시 이름, az aks get 자격 증명에서 가져온 인증서 |
-| *nodeclient*             | ClientCertificate에 대 한 표시 이름으로, 에이전트 노드에서 사용 됩니다. |
+| *aksService*             | HcpService의 제어 평면 작업에 대한 감사 로그의 표시 이름입니다. |
+| *masterclient*           | MasterClientCertificate에 대한 감사 로그의 표시 이름, az aks get 자격 증명에서 가져온 인증서 |
+| *nodeclient*             | ClientCertificate에 대한 표시 이름으로, 에이전트 노드에서 사용 됩니다. |
 
 ## <a name="next-steps"></a>다음 단계
 

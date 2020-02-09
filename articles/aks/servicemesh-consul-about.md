@@ -31,12 +31,12 @@ Consul은 기본적으로 [엔보이][envoy-proxy]기반 [사이드카][consul-s
 
 다음 아키텍처 다이어그램에서는 데이터 평면 및 컨트롤 평면 내의 여러 구성 요소가 상호 작용 하는 방식을 보여 줍니다.
 
-![Consul 구성 요소 및 아키텍처에 대 한 개요입니다.](media/servicemesh/consul/about-architecture.png)
+![Consul 구성 요소 및 아키텍처에 대한 개요입니다.](media/servicemesh/consul/about-architecture.png)
 
 
 ## <a name="selection-criteria"></a>선택 기준
 
-워크 로드에 대 한 Consul을 평가할 때 다음 영역을 이해 하 고 고려해 야 합니다.
+워크 로드에 대한 Consul을 평가할 때 다음 영역을 이해 하 고 고려해 야 합니다.
 
 - [Consul 원칙](#consul-principles)
 - [Capabilities](#capabilities)

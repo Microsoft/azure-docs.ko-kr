@@ -21,13 +21,13 @@ ms.locfileid: "75442932"
 
 [Azure 컨테이너 네트워킹 인터페이스 (cni)][cni-networking]를 사용 하 여 모든 pod는 서브넷에서 IP 주소를 가져오며 직접 액세스할 수 있습니다. 이러한 IP 주소는 네트워크 공간에서 고유해야 하며 미리 계획되어야 합니다. 각 노드에는 지원하는 최대 Pod 수에 대한 구성 매개 변수가 있습니다. 그러면 노드당 동일한 IP 주소 수가 해당 노드에 대해 미리 예약됩니다. 이 방식을 사용할 경우 더 많은 계획이 필요하며, 애플리케이션 요구가 증가하면서 IP 주소가 고갈되거나 더 큰 서브넷에서 클러스터를 구축해야 할 수 있습니다.
 
-이 문서에서는 *kubenet* 네트워킹을 사용하여 AKS 클러스터용 가상 네트워크를 만들고 사용하는 방법에 대해 설명합니다. 네트워크 옵션 및 고려 사항에 대 한 자세한 내용은 [Kubernetes 및 AKS의 네트워크 개념][aks-network-concepts]을 참조 하세요.
+이 문서에서는 *kubenet* 네트워킹을 사용하여 AKS 클러스터용 가상 네트워크를 만들고 사용하는 방법에 대해 설명합니다. 네트워크 옵션 및 고려 사항에 대한 자세한 내용은 [Kubernetes 및 AKS의 네트워크 개념][aks-network-concepts]을 참조 하세요.
 
 ## <a name="prerequisites"></a>필수 조건
 
 * AKS 클러스터에 대한 가상 네트워크는 아웃바운드 인터넷 연결을 허용해야 합니다.
 * 동일한 서브넷에 둘 이상의 AKS 클러스터를 만들지 마세요.
-* AKS 클러스터는 Kubernetes 서비스 주소 범위에 대 한 `169.254.0.0/16`, `172.30.0.0/16`, `172.31.0.0/16`또는 `192.0.2.0/24`를 사용 하지 않을 수 있습니다.
+* AKS 클러스터는 Kubernetes 서비스 주소 범위에 대한 `169.254.0.0/16`, `172.30.0.0/16`, `172.31.0.0/16`또는 `192.0.2.0/24`를 사용 하지 않을 수 있습니다.
 * AKS 클러스터에서 사용되는 서비스 주체에는 가상 네트워크 내의 서브넷에 대해 [네트워크 참가자](../role-based-access-control/built-in-roles.md#network-contributor) 이상의 권한이 있어야 합니다. 기본 제공 네트워크 참가자 역할을 사용하는 대신 [사용자 지정 역할](../role-based-access-control/custom-roles.md)을 정의하려는 경우 다음 권한이 필요합니다.
   * `Microsoft.Network/virtualNetworks/subnets/join/action`
   * `Microsoft.Network/virtualNetworks/subnets/read`
@@ -140,7 +140,7 @@ VNET_ID=$(az network vnet show --resource-group myResourceGroup --name myAKSVnet
 SUBNET_ID=$(az network vnet subnet show --resource-group myResourceGroup --vnet-name myAKSVnet --name myAKSSubnet --query id -o tsv)
 ```
 
-이제 [az role assign create][az-role-assignment-create] 명령을 사용 하 여 가상 네트워크에 대 한 AKS cluster *참여자* 권한에 대 한 서비스 주체를 할당 합니다. 이전 명령의 출력에 표시 된 것 처럼 사용자 고유의 *\<appId >* 를 제공 하 여 서비스 주체를 만듭니다.
+이제 [az role assign create][az-role-assignment-create] 명령을 사용 하 여 가상 네트워크에 대한 AKS cluster *참여자* 권한에 대한 서비스 주체를 할당 합니다. 이전 명령의 출력에 표시 된 것 처럼 사용자 고유의 *\<appId >* 를 제공 하 여 서비스 주체를 만듭니다.
 
 ```azurecli-interactive
 az role assignment create --assignee <appId> --scope $VNET_ID --role Contributor

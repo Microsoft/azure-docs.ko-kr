@@ -21,7 +21,7 @@ ms.locfileid: "76759878"
 
 음성 SDK(소프트웨어 개발 키트)를 사용하면 애플리케이션에서 Speech 서비스의 기능에 액세스할 수 있으므로 음성 지원 소프트웨어를 더 쉽게 개발할 수 있습니다. 현재, Sdk는 **음성 텍스트**, **텍스트 음성**변환, **음성 번역**, **의도 인식**및 **봇 프레임 워크의 직접 줄 음성 채널**에 대 한 액세스를 제공 합니다.
 
-마이크에서 쉽게 오디오를 캡처하거나, 스트림에서 읽거나, 음성 SDK를 사용 하 여 저장소에서 오디오 파일에 액세스할 수 있습니다. Speech SDK는 음성 인식을 위해 WAV/PCM 16비트, 16kHz/8kHz, 단일 채널 오디오를 지원합니다. 추가 오디오 형식은 [음성-텍스트 REST 끝점](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) 또는 [배치 기록 서비스](https://docs.microsoft.com/azure/cognitive-services/speech-service/batch-transcription#supported-formats)를 사용 하 여 지원 됩니다.
+마이크에서 쉽게 오디오를 캡처하거나, 스트림에서 읽거나, 음성 SDK를 사용 하 여 저장소에서 오디오 파일에 액세스할 수 있습니다. Speech SDK는 음성 인식을 위해 WAV/PCM 16비트, 16kHz/8kHz, 단일 채널 오디오를 지원합니다. 추가 오디오 형식은 [음성-텍스트 REST 엔드포인트](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) 또는 [배치 기록 서비스](https://docs.microsoft.com/azure/cognitive-services/speech-service/batch-transcription#supported-formats)를 사용 하 여 지원 됩니다.
 
 기능 및 지원 되는 플랫폼에 대 한 일반적인 개요는 설명서 [입력 페이지](https://aka.ms/csspeech)에서 찾을 수 있습니다.
 

@@ -100,7 +100,7 @@ echo "URI resource: " . $call->uri . "<br />";
 </html>
 ```
 
-전화 걸기와 함께, **makecall.php**는 몇몇 통화 메타데이터를 아래 이미지에 표시된 대로 표시합니다. 호출 메타 데이터에 대 한 자세한 내용은 [https://www.twilio.com/docs/api/rest/call#instance-properties][twilio_call_properties]을 참조 하십시오.
+전화 걸기와 함께, **makecall.php**는 몇몇 통화 메타데이터를 아래 이미지에 표시된 대로 표시합니다. 호출 메타 데이터에 대한 자세한 내용은 [https://www.twilio.com/docs/api/rest/call#instance-properties][twilio_call_properties]을 참조 하십시오.
 
 ![Twilio 및 PHP를 사용하는 Azure 통화 응답][twilio_php_response]
 
@@ -110,11 +110,11 @@ echo "URI resource: " . $call->uri . "<br />";
 ## <a name="next-steps"></a>다음 단계
 이 코드는 Azure의 PHP에서 Twilio를 사용하는 기본 기능을 보여 줍니다. Azure를 프로덕션에 배포하기 전에 더 많은 오류 처리 또는 기타 기능을 추가할 수 있습니다. 예:
 
-* 웹 양식을 사용하는 대신, Azure Storage Blob 또는 SQL Database를 사용하여 전화 번호 및 통화 텍스트를 저장할 수 있습니다. PHP에서 Azure storage blob을 사용 하는 방법에 대 한 자세한 내용은 [Php 응용 프로그램에서 Azure Storage 사용][howto_blob_storage_php]을 참조 하세요. PHP에서 SQL Database를 사용 하는 방법에 대 한 자세한 내용은 [Php 응용 프로그램에서 SQL Database 사용][howto_sql_azure_php]을 참조 하세요.
-* **Makecall.php** 코드는 Twilio 제공 URL ([https://twimlets.com/message][twimlet_message_url])을 사용 하 여 TwiML (Twilio Markup Language) 응답을 제공 합니다 .이 응답은 Twilio를 사용 하 여 처리 하는 방법을 알려줍니다. 예를 들어 반환되는 TwiML에는 통화 수신자에게 말하는 텍스트에 나타나는 `<Say>` 동사가 포함될 수 있습니다. Twilio 제공 URL을 사용 하는 대신 사용자 고유의 서비스를 빌드하여 Twilio의 요청에 응답할 수 있습니다. 자세한 내용은 [PHP에서 음성 및 SMS 기능을 위해 Twilio를 사용 하는 방법][howto_twilio_voice_sms_php]을 참조 하세요. TwiML에 대 한 자세한 내용은에서 확인할 [https://www.twilio.com/docs/api/twiml][twiml]수 있습니다 [https://www.twilio.com/docs/api/twiml/say][twilio_say]. 및 기타 `<Say>` Twilio 동사에 대 한 자세한 내용은을 참조 하십시오.
+* 웹 양식을 사용하는 대신, Azure Storage Blob 또는 SQL Database를 사용하여 전화 번호 및 통화 텍스트를 저장할 수 있습니다. PHP에서 Azure storage blob을 사용 하는 방법에 대한 자세한 내용은 [Php 응용 프로그램에서 Azure Storage 사용][howto_blob_storage_php]을 참조 하세요. PHP에서 SQL Database를 사용 하는 방법에 대한 자세한 내용은 [Php 응용 프로그램에서 SQL Database 사용][howto_sql_azure_php]을 참조 하세요.
+* **Makecall.php** 코드는 Twilio 제공 URL ([https://twimlets.com/message][twimlet_message_url])을 사용 하 여 TwiML (Twilio Markup Language) 응답을 제공 합니다 .이 응답은 Twilio를 사용 하 여 처리 하는 방법을 알려줍니다. 예를 들어 반환되는 TwiML에는 통화 수신자에게 말하는 텍스트에 나타나는 `<Say>` 동사가 포함될 수 있습니다. Twilio 제공 URL을 사용 하는 대신 사용자 고유의 서비스를 빌드하여 Twilio의 요청에 응답할 수 있습니다. 자세한 내용은 [PHP에서 음성 및 SMS 기능을 위해 Twilio를 사용 하는 방법][howto_twilio_voice_sms_php]을 참조 하세요. TwiML에 대한 자세한 내용은에서 확인할 [https://www.twilio.com/docs/api/twiml][twiml]수 있습니다 [https://www.twilio.com/docs/api/twiml/say][twilio_say]. 및 기타 `<Say>` Twilio 동사에 대한 자세한 내용은을 참조 하십시오.
 * 에서 [https://www.twilio.com/docs/security][twilio_docs_security]Twilio 보안 지침을 읽습니다.
 
-Twilio에 대 한 자세한 내용은을 [https://www.twilio.com/docs][twilio_docs]참조 하십시오.
+Twilio에 대한 자세한 내용은을 [https://www.twilio.com/docs][twilio_docs]참조 하십시오.
 
 ## <a name="see-also"></a>참고 항목
 * [PHP에서 음성 및 SMS 기능을 위해 Twilio를 사용하는 방법](partner-twilio-php-how-to-use-voice-sms.md)

@@ -1,6 +1,6 @@
 ---
 title: Azure Integration Runtime IP 주소
-description: 데이터 저장소에 대 한 네트워크 액세스를 보호 하기 위해 방화벽을 제대로 구성 하기 위해에서 인바운드 트래픽을 허용 해야 하는 IP 주소에 대해 알아봅니다.
+description: 데이터 저장소에 대한 네트워크 액세스를 보호 하기 위해 방화벽을 제대로 구성 하기 위해에서 인바운드 트래픽을 허용 해야 하는 IP 주소에 대해 알아봅니다.
 services: data-factory
 ms.author: abnarain
 author: nabhishek
@@ -65,4 +65,4 @@ Azure Integration Runtime 사용 하는 IP 주소는 Azure Integration Runtime�
 
 ## <a name="next-steps"></a>다음 단계
 
-* [Azure Data Factory의 데이터 이동에 대 한 보안 고려 사항](data-movement-security-considerations.md)
+* [Azure Data Factory의 데이터 이동에 대한 보안 고려 사항](data-movement-security-considerations.md)

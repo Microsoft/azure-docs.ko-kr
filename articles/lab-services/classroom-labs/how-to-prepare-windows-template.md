@@ -66,7 +66,7 @@ Active Directory를 사용 하지 않는 컴퓨터에 있는 경우 사용자가
 
 가상 컴퓨터가 Active Directory에 연결 된 경우 학생에 게 자동으로 알려진 폴더를 OneDrive로 이동 하도록 템플릿 컴퓨터를 설정할 수 있습니다.  
 
-먼저 Office 테 넌 트 ID를 검색 해야 합니다.  자세한 지침은 [Office 365 테 넌 트 ID 찾기](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id)를 참조 하세요.  다음 PowerShell을 사용 하 여 Office 365 테 넌 트 ID를 가져올 수도 있습니다.
+먼저 Office 테넌트 ID를 검색 해야 합니다.  자세한 지침은 [Office 365 테넌트 ID 찾기](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id)를 참조 하세요.  다음 PowerShell을 사용 하 여 Office 365 테넌트 ID를 가져올 수도 있습니다.
 
 ```powershell
 Install-Module MSOnline -Confirm
@@ -76,7 +76,7 @@ $officeTenantID = Get-MSOLCompanyInformation |
     Select-Object -expand Guid
 ```
 
-Office 365 테 넌 트 ID가 있는 경우 다음 PowerShell을 사용 하 여 OneDrive를 OneDrive로 이동 하도록 설정 합니다.
+Office 365 테넌트 ID가 있는 경우 다음 PowerShell을 사용 하 여 OneDrive를 OneDrive로 이동 하도록 설정 합니다.
 
 ```powershell
 if ($officeTenantID -eq $null)
@@ -120,7 +120,7 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\OneDrive"
 
 ### <a name="set-the-maximum-size-of-a-file-that-to-be-download-automatically"></a>자동으로 다운로드 되는 파일의 최대 크기를 설정 합니다.
 
-이 설정은 onedrive 동기화 클라이언트에 대 한 사용자의 Windows 자격 증명을 사용 하도록 설정 된 OneDrive 파일이 없는 장치에서 자동으로 사용자 로그인과 함께 사용 됩니다. 지정 된 임계값 (MB) 보다 큰 OneDrive를 사용 하는 모든 사용자에 게는 OneDrive 동기화 클라이언트 (cluster.exe)에서 파일을 다운로드 하기 전에 동기화 할 폴더를 선택 하 라는 메시지가 표시 됩니다.  이 예제에서 "1111-2222-3333-4444"은 Office 365 테 넌 트 ID 이며 0005000는 5gb의 임계값을 설정 합니다.
+이 설정은 onedrive 동기화 클라이언트에 대 한 사용자의 Windows 자격 증명을 사용 하도록 설정 된 OneDrive 파일이 없는 장치에서 자동으로 사용자 로그인과 함께 사용 됩니다. 지정 된 임계값 (MB) 보다 큰 OneDrive를 사용 하는 모든 사용자에 게는 OneDrive 동기화 클라이언트 (cluster.exe)에서 파일을 다운로드 하기 전에 동기화 할 폴더를 선택 하 라는 메시지가 표시 됩니다.  이 예제에서 "1111-2222-3333-4444"은 Office 365 테넌트 ID 이며 0005000는 5gb의 임계값을 설정 합니다.
 
 ```powershell
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\OneDrive"

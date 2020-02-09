@@ -153,7 +153,7 @@ SAML 요청에 NameIDPolicy에 대 한 요소가 포함 되지 않은 경우 Azu
 
 사용자 형식은 다음과 같을 수 있습니다.
 - **Any**: 모든 사용자가 응용 프로그램에 액세스할 수 있습니다.
-- **멤버**: 테 넌 트의 네이티브 멤버
+- **멤버**: 테넌트의 네이티브 멤버
 - **모든 게스트**: Azure AD를 사용 하거나 사용 하지 않고 외부 조직에서 사용자를 가져옵니다.
 - **AAD 게스트**: 게스트 사용자는 Azure AD를 사용 하는 다른 조직에 속합니다.
 - **외부 게스트**: 게스트 사용자는 Azure AD가 없는 외부 조직에 속합니다.
@@ -170,7 +170,7 @@ SAML 요청에 NameIDPolicy에 대 한 요소가 포함 되지 않은 경우 Azu
 
 조건을 추가 하는 순서는 중요 합니다. Azure AD는 클레임에서 내보낼 값을 결정 하기 위해 위에서 아래로의 조건을 평가 합니다. 
 
-예를 들어 Brita Simon는 Contoso 테 넌 트의 게스트 사용자입니다. 또한 Azure AD를 사용 하는 다른 조직에 속합니다. Fabrikam 응용 프로그램에 대 한 아래 구성을 고려 하 여 Brita가 Fabrikam에 로그인 하려고 하면 Azure AD는 다음과 같이 조건을 평가 합니다.
+예를 들어 Brita Simon는 Contoso 테넌트의 게스트 사용자입니다. 또한 Azure AD를 사용 하는 다른 조직에 속합니다. Fabrikam 응용 프로그램에 대 한 아래 구성을 고려 하 여 Brita가 Fabrikam에 로그인 하려고 하면 Azure AD는 다음과 같이 조건을 평가 합니다.
 
 첫째, Azure AD는 Brita의 사용자 형식이 `All guests`인지 확인 합니다. 이는 true 이므로 Azure AD는 클레임에 대 한 소스를 `user.extensionattribute1`에 할당 합니다. 두 번째로, Azure AD는 Brita의 사용자 형식이 `AAD guests`인지 확인 합니다 .이는 true 이기도 하므로 Azure AD는 클레임에 대 한 소스를 `user.mail`할당 합니다. 마지막으로 클레임은 Brita의 값 `user.email`로 내보내집니다.
 

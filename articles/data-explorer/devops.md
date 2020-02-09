@@ -1,5 +1,5 @@
 ---
-title: Azure 데이터 탐색기에 대 한 azure DevOps 작업
+title: Azure 데이터 탐색기에 대한 azure DevOps 작업
 description: 이 항목에서는 릴리스 파이프라인을 만들고 배포 설명
 services: data-explorer
 author: orspod
@@ -15,12 +15,12 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "66388988"
 ---
-# <a name="azure-devops-task-for-azure-data-explorer"></a>Azure 데이터 탐색기에 대 한 azure DevOps 작업
+# <a name="azure-devops-task-for-azure-data-explorer"></a>Azure 데이터 탐색기에 대한 azure DevOps 작업
 
 [Azure DevOps 서비스](https://azure.microsoft.com/services/devops/) 개발 고성능 파이프라인, 무료 비공개 Git 리포지토리, 구성 가능한 Kanban 보드 및 광범위 한 자동화 되 고 연속 테스트 기능 같은 공동 작업 도구를 제공 합니다. [Azure 파이프라인](https://azure.microsoft.com/services/devops/pipelines/) 모든 언어, 플랫폼 및 클라우드 사용 되는 고성능 파이프라인을 사용 하 여 코드를 배포 하는 CI/CD를 관리할 수 있도록 Azure DevOps 기능입니다.
 [Azure 데이터 탐색기-관리 명령을](https://marketplace.visualstudio.com/items?itemName=Azure-Kusto.PublishToADX) 릴리스 파이프라인을 만들고 데이터베이스를 배포할 수 있도록 Azure 파이프라인 작업에 Azure 데이터 탐색기 데이터베이스로 변경 됩니다. 무료로 사용 가능 합니다 [Visual Studio Marketplace](https://marketplace.visualstudio.com/)합니다.
 
-이 문서에서는 사용 하는 간단한 예제를 설명 합니다 **Azure 데이터 탐색기-관리자 명령** 데이터베이스 스키마를 배포 하는 작업을 변경 합니다. 전체 CI/CD 파이프라인에 대 한 참조 [Azure DevOps 설명서](/azure/devops/user-guide/what-is-azure-devops?view=azure-devops#vsts)합니다.
+이 문서에서는 사용 하는 간단한 예제를 설명 합니다 **Azure 데이터 탐색기-관리자 명령** 데이터베이스 스키마를 배포 하는 작업을 변경 합니다. 전체 CI/CD 파이프라인에 대한 참조 [Azure DevOps 설명서](/azure/devops/user-guide/what-is-azure-devops?view=azure-devops#vsts)합니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -63,7 +63,7 @@ ms.locfileid: "66388988"
 
     ![아티팩트 추가](media/devops/add-artifact.png)
 
-1. 에 **변수** 탭을 선택 **+ 추가** 에 대 한 변수를 만들려면 **끝점 URL** 태스크에서 사용할 합니다. 쓰기를 **이름을** 하며 **값** 끝점의 합니다. 선택 **저장할** 파이프라인을 저장 합니다. 
+1. 에 **변수** 탭을 선택 **+ 추가** 에 대한 변수를 만들려면 **엔드포인트 URL** 태스크에서 사용할 합니다. 쓰기를 **이름을** 하며 **값** 엔드포인트의 합니다. 선택 **저장할** 파이프라인을 저장 합니다. 
 
     ![변수 만들기](media/devops/create-variable.png)
 
@@ -86,8 +86,8 @@ ms.locfileid: "66388988"
 1. 클릭할 **Kusto 명령** 왼쪽에 다음 정보를 사용 하 여 작업 업데이트:
     * **표시 이름**: 태스크의 이름
     * **파일 경로**: 에 **테이블** 작업을 지정 */Tables/* .csl 테이블 만들기 파일이 있으므로 합니다 *테이블* 폴더.
-    * **끝점 URL**: 입력 된 `EndPoint URL`이전 단계에서 만든 변수입니다.
-    * 선택 **사용 하 여 서비스 끝점** 선택한 **+ 새로 만들기**합니다.
+    * **엔드포인트 URL**: 입력 된 `EndPoint URL`이전 단계에서 만든 변수입니다.
+    * 선택 **사용 하 여 서비스 엔드포인트** 선택한 **+ 새로 만들기**합니다.
 
     ![Kusto 명령 작업 업데이트](media/devops/kusto-command-task.png)
 
@@ -95,11 +95,11 @@ ms.locfileid: "66388988"
 
     |설정  |제안 값  |
     |---------|---------|
-    |**연결 이름**     |    이 서비스 끝점을 식별 하는 이름을 입력 합니다.     |
+    |**연결 이름**     |    이 서비스 엔드포인트을 식별 하는 이름을 입력 합니다.     |
     |**클러스터 Url**    |    Azure portal에서 Azure 데이터 탐색기 클러스터의 개요 섹션에서 값을 찾을 수 있습니다. | 
     |**서비스 주체 Id**    |    AAD 앱 ID (필수 조건으로 생성 됨)를 입력 합니다.     |
     |**서비스 주체 앱 키**     |    (필수 조건으로 생성 됨) 하 여 AAD 앱 키를 입력 합니다.    |
-    |**AAD 테 넌 트 Id**    |      AAD 테 넌 트 (예: microsoft.com contoso.com...)를 입력 합니다.    |
+    |**AAD 테넌트 Id**    |      AAD 테넌트 (예: microsoft.com contoso.com...)를 입력 합니다.    |
 
     선택 **이 연결을 사용 하는 모든 파이프라인 허용** 확인란을 선택 합니다. **확인**을 선택합니다.
 
@@ -117,4 +117,4 @@ ms.locfileid: "66388988"
 
     ![배포가 되었습니다.](media/devops/deployment-successful.png)
 
-이제 세 개의 태스크를 사전 프로덕션 배포에 대 한 릴리스 파이프라인을 만들기를 완료 했습니다.
+이제 세 개의 태스크를 사전 프로덕션 배포에 대한 릴리스 파이프라인을 만들기를 완료 했습니다.

@@ -109,7 +109,7 @@ Azure 방화벽에 사용할 수 있는 메트릭은 다음과 같습니다.
 
    이 메트릭에는 두 개의 차원이 있습니다.
   - 상태: 가능한 값은 *정상*, *저하*됨, *비정상*입니다.
-  - 이유: 방화벽의 해당 상태에 대 한 이유를 나타냅니다. 
+  - 이유: 방화벽의 해당 상태에 대한 이유를 나타냅니다. 
 
      SNAT 포트를 95% > 사용 하는 경우 사용 중인 것으로 간주 되 고 상태는 50% 상태 =**저하** 됨 및 이유 =**SNAT 포트**입니다. 방화벽은 처리 트래픽을 유지 하 고 기존 연결은 영향을 받지 않습니다. 그러나 새 연결은 간헐적으로 설정 되지 않을 수 있습니다.
 
@@ -128,4 +128,4 @@ Azure 방화벽에 사용할 수 있는 메트릭은 다음과 같습니다.
 
 - Azure Firewall 로그 및 메트릭을 모니터링하는 방법은 [자습서: Azure Firewall 로그 모니터링](tutorial-diagnostics.md)을 참조하세요.
 
-- Azure Monitor의 메트릭에 대 한 자세한 내용은 [Azure Monitor의 메트릭](../azure-monitor/platform/data-platform-metrics.md)을 참조 하세요.
+- Azure Monitor의 메트릭에 대한 자세한 내용은 [Azure Monitor의 메트릭](../azure-monitor/platform/data-platform-metrics.md)을 참조 하세요.

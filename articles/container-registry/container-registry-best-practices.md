@@ -14,7 +14,7 @@ ms.locfileid: "75445797"
 
 다음 모범 사례를 따르면 Azure에서 프라이빗 Docker 레지스트리 사용의 성능 및 비용 효과적 측면을 극대화하는 데 도움이 될 수 있습니다.
 
-레지스트리의 태그 및 버전 이미지에 대 한 전략의 컨테이너 이미지에 태그를 지정 하 고 버전을 지정 하기 [위한 권장](container-registry-image-tag-version.md) 사항도 참조 하세요. 
+레지스트리의 태그 및 버전 이미지에 대한 전략의 컨테이너 이미지에 태그를 지정 하 고 버전을 지정 하기 [위한 권장](container-registry-image-tag-version.md) 사항도 참조 하세요. 
 
 ## <a name="network-close-deployment"></a>네트워크가 가까운 배포
 
@@ -61,7 +61,7 @@ Azure Container Registry 인증에 대한 자세한 내용은 [Azure Container R
 
 ## <a name="manage-registry-size"></a>레지스트리 크기 관리
 
-각 [컨테이너 레지스트리 SKU][container-registry-skus] 의 저장소 제약 조건은 일반적인 시나리오 (시작 하기 위한 **기본** , 대부분의 프로덕션 응용 프로그램에 대 한 **표준** 및 하이퍼 규모의 성능 및 [지역에서 복제][container-registry-geo-replication]에 대 한 **프리미엄** )에 맞게 설계 되었습니다. 레지스트리 수명 동안에 미사용 콘텐츠는 정기적으로 삭제하여 크기를 관리해야 합니다.
+각 [컨테이너 레지스트리 SKU][container-registry-skus] 의 저장소 제약 조건은 일반적인 시나리오 (시작 하기 위한 **기본** , 대부분의 프로덕션 응용 프로그램에 대한 **표준** 및 하이퍼 규모의 성능 및 [지역에서 복제][container-registry-geo-replication]에 대한 **프리미엄** )에 맞게 설계 되었습니다. 레지스트리 수명 동안에 미사용 콘텐츠는 정기적으로 삭제하여 크기를 관리해야 합니다.
 
 Azure CLI 명령 [az acr show-usage][az-acr-show-usage] 를 사용 하 여 레지스트리의 현재 크기를 표시 합니다.
 

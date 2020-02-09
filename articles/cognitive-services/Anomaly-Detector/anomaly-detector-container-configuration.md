@@ -53,7 +53,7 @@ ms.locfileid: "73795845"
 
 ## <a name="billing-configuration-setting"></a>청구 구성 설정
 
-`Billing` 설정은 컨테이너의 청구 정보를 측정 하는 데 사용 되는 Azure의 _변칙 탐지기_ 리소스의 끝점 URI를 지정 합니다. 이 구성 설정의 값을 지정 해야 하며,이 값은 Azure의 _변칙 탐지기_ 리소스에 대 한 올바른 끝점 URI 여야 합니다.
+`Billing` 설정은 컨테이너의 청구 정보를 측정 하는 데 사용 되는 Azure의 _변칙 탐지기_ 리소스의 엔드포인트 URI를 지정 합니다. 이 구성 설정의 값을 지정 해야 하며,이 값은 Azure의 _변칙 탐지기_ 리소스에 대 한 올바른 엔드포인트 URI 여야 합니다.
 
 이 설정은 다음 위치에서 찾을 수 있습니다.
 
@@ -61,7 +61,7 @@ ms.locfileid: "73795845"
 
 |필수| Name | 데이터 형식 | 설명 |
 |--|------|-----------|-------------|
-|예| `Billing` | 문자열 | 청구 끝점 URI입니다. 청구 URI를 얻는 방법에 대 한 자세한 내용은 [필수 매개 변수 수집](anomaly-detector-container-howto.md#gathering-required-parameters)을 참조 하세요. 자세한 내용 및 지역별 엔드포인트의 전체 목록은 [Cognitive Services에 대한 사용자 지정 하위 도메인 이름](../cognitive-services-custom-subdomains.md)을 참조하세요. |
+|예| `Billing` | 문자열 | 청구 엔드포인트 URI입니다. 청구 URI를 얻는 방법에 대 한 자세한 내용은 [필수 매개 변수 수집](anomaly-detector-container-howto.md#gathering-required-parameters)을 참조 하세요. 자세한 내용 및 지역별 엔드포인트의 전체 목록은 [Cognitive Services에 대한 사용자 지정 하위 도메인 이름](../cognitive-services-custom-subdomains.md)을 참조하세요. |
 
 ## <a name="eula-setting"></a>Eula 설정
 
@@ -104,8 +104,8 @@ ms.locfileid: "73795845"
 
 | Placeholder | 값 | 형식 또는 예 |
 |-------------|-------|---|
-| **{API_KEY}** | Azure `Anomaly Detector` 키 페이지에 있는 `Anomaly Detector` 리소스의 끝점 키입니다. | `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` |
-| **{ENDPOINT_URI}** | 청구 끝점 값은 Azure `Anomaly Detector` 개요 페이지에서 사용할 수 있습니다.| 명시적 예제에 대 한 [필수 매개 변수 수집](anomaly-detector-container-howto.md#gathering-required-parameters) 을 참조 하세요. |
+| **{API_KEY}** | Azure `Anomaly Detector` 키 페이지에 있는 `Anomaly Detector` 리소스의 엔드포인트 키입니다. | `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` |
+| **{ENDPOINT_URI}** | 청구 엔드포인트 값은 Azure `Anomaly Detector` 개요 페이지에서 사용할 수 있습니다.| 명시적 예제에 대 한 [필수 매개 변수 수집](anomaly-detector-container-howto.md#gathering-required-parameters) 을 참조 하세요. |
 
 [!INCLUDE [subdomains-note](../../../includes/cognitive-services-custom-subdomains-note.md)]
 

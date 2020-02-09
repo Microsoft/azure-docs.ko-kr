@@ -17,7 +17,7 @@ ms.locfileid: "75613859"
 ---
 # <a name="manage-an-azure-data-box-edge-device-via-windows-powershell"></a>Windows PowerShell을 통해 Azure Data Box Edge 장치 관리
 
-Azure Data Box Edge 솔루션을 사용 하면 데이터를 처리 하 고 네트워크를 통해 Azure에 보낼 수 있습니다. 이 문서에서는 Data Box Edge 장치에 대 한 구성 및 관리 작업을 설명 합니다. Azure Portal, 로컬 웹 UI 또는 Windows PowerShell 인터페이스를 사용 하 여 장치를 관리할 수 있습니다.
+Azure Data Box Edge 솔루션을 사용 하면 데이터를 처리 하 고 네트워크를 통해 Azure에 보낼 수 있습니다. 이 문서에서는 Data Box Edge 장치에 대한 구성 및 관리 작업을 설명 합니다. Azure Portal, 로컬 웹 UI 또는 Windows PowerShell 인터페이스를 사용 하 여 장치를 관리할 수 있습니다.
 
 이 문서에서는 PowerShell 인터페이스를 사용 하 여 수행 하는 작업을 중점적으로 설명 합니다.
 
@@ -54,9 +54,9 @@ IoT Edge 인증서를 업로드 하 여 IoT Edge 장치와이 장치에 연결�
 ```
 Set-HcsCertificate -Scope IotEdge -RootCACertificateFilePath "\\hcfs\root-ca-cert.pem" -DeviceCertificateFilePath "\\hcfs\device-ca-cert.pem\" -DeviceKeyFilePath "\\hcfs\device-key-cert.pem" -Credential "username"
 ```
-이 cmdlet을 실행 하면 네트워크 공유에 대 한 암호를 제공 하 라는 메시지가 표시 됩니다.
+이 cmdlet을 실행 하면 네트워크 공유에 대한 암호를 제공 하 라는 메시지가 표시 됩니다.
 
-인증서에 대 한 자세한 내용은 인증서 [Azure IoT Edge](https://docs.microsoft.com/azure/iot-edge/iot-edge-certs) 또는 [게이트웨이에서 인증서 설치](https://docs.microsoft.com/azure/iot-edge/how-to-create-transparent-gateway)를 참조 하세요.
+인증서에 대한 자세한 내용은 인증서 [Azure IoT Edge](https://docs.microsoft.com/azure/iot-edge/iot-edge-certs) 또는 [게이트웨이에서 인증서 설치](https://docs.microsoft.com/azure/iot-edge/how-to-create-transparent-gateway)를 참조 하세요.
 
 ## <a name="view-device-information"></a>장치 정보 보기
  
@@ -71,7 +71,7 @@ Set-HcsCertificate -Scope IotEdge -RootCACertificateFilePath "\\hcfs\root-ca-cer
 장치에서 계산 역할이 구성 된 경우 PowerShell 인터페이스를 통해 계산 로그를 가져올 수도 있습니다.
 
 1. [PowerShell 인터페이스에 연결](#connect-to-the-powershell-interface)합니다.
-2. `Get-AzureDataBoxEdgeComputeRoleLogs`를 사용 하 여 장치에 대 한 계산 로그를 가져옵니다.
+2. `Get-AzureDataBoxEdgeComputeRoleLogs`를 사용 하 여 장치에 대한 계산 로그를 가져옵니다.
 
     다음 예에서는이 cmdlet을 사용 하는 방법을 보여 줍니다.
 
@@ -79,9 +79,9 @@ Set-HcsCertificate -Scope IotEdge -RootCACertificateFilePath "\\hcfs\root-ca-cer
     Get-AzureDataBoxEdgeComputeRoleLogs -Path "\\hcsfs\logs\myacct" -Credential "username" -FullLogCollection
     ```
 
-    다음은 cmdlet에 사용 되는 매개 변수에 대 한 설명입니다.
+    다음은 cmdlet에 사용 되는 매개 변수에 대한 설명입니다.
     - `Path`: 계산 로그 패키지를 만들려는 공유의 네트워크 경로를 제공 합니다.
-    - `Credential`: 네트워크 공유에 대 한 사용자 이름을 제공 합니다. 이 cmdlet을 실행 하는 경우 공유 암호를 제공 해야 합니다.
+    - `Credential`: 네트워크 공유에 대한 사용자 이름을 제공 합니다. 이 cmdlet을 실행 하는 경우 공유 암호를 제공 해야 합니다.
     - `FullLogCollection`:이 매개 변수를 사용 하면 로그 패키지에 모든 계산 로그가 포함 됩니다. 기본적으로 로그 패키지에는 로그 하위 집합만 포함 되어 있습니다.
 
 ## <a name="monitor-and-troubleshoot-compute-modules"></a>계산 모듈 모니터링 및 문제 해결

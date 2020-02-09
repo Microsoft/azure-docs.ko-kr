@@ -339,7 +339,7 @@ ssh -p 4000 poaadmin\@leader4vb.eastus.cloudapp.azure.com.
 
 ## <a name="azure-traffic-manager-load-balancing"></a>Azure Traffic Manager 부하 분산
 
-Azure Traffic Manager는 들어오는 트래픽을 여러 지역의 여러 배포로 라우팅하여 가동 중지 시간을 줄이고 PoA 네트워크의 응답성을 향상시킬 수 있습니다. 기본 제공 되는 상태 검사 및 자동 경로 바꾸기는 RPC 끝점과 거 버 넌 스 앱의 고가용성을 보장 하는 데 도움이 됩니다. 이 기능은 여러 지역에 배포하고 프로덕션을 준비하는 경우에 유용합니다.
+Azure Traffic Manager는 들어오는 트래픽을 여러 지역의 여러 배포로 라우팅하여 가동 중지 시간을 줄이고 PoA 네트워크의 응답성을 향상시킬 수 있습니다. 기본 제공 되는 상태 검사 및 자동 경로 바꾸기는 RPC 엔드포인트과 거 버 넌 스 앱의 고가용성을 보장 하는 데 도움이 됩니다. 이 기능은 여러 지역에 배포하고 프로덕션을 준비하는 경우에 유용합니다.
 
 자동 장애 조치 (failover)를 통해 PoA 네트워크 가용성을 향상 시키기 위해 Traffic Manager를 사용 합니다. 또한 Traffic Manager를 사용 하 여 네트워크 대기 시간이 가장 낮은 Azure 위치로 최종 사용자를 라우팅하여 네트워크 응답성을 높일 수 있습니다.
 
@@ -362,18 +362,18 @@ Traffic Manager 프로필을 만들려는 경우 네트워크에 액세스하기
 
     ![Traffic Manager DNS 찾기](./media/ethereum-poa-deployment/traffic-manager-dns.png)
 
-1. **끝점** 탭을 선택 하 고 **추가** 단추를 선택 합니다.
+1. **엔드포인트** 탭을 선택 하 고 **추가** 단추를 선택 합니다.
 1. 그런 다음 엔드포인트에 고유한 이름을 지정하고
 1. **대상 리소스 종류**에 대해 **공용 IP 주소**를 선택 합니다.
 1. 첫 번째 지역의 부하 분산 장치에 대 한 공용 IP 주소를 선택 합니다.
 
     ![Traffic Manager 라우팅](./media/ethereum-poa-deployment/traffic-manager-routing.png)
 
-배포된 네트워크의 각 지역에 대해 반복합니다. 끝점이 **활성화** 된 상태 이면 자동으로 로드 되 고, traffic MANAGER의 DNS 이름에서 지역 균형이 조정 됩니다. 이제 문서의 다른 단계에서 [CONSORTIUM_DATA_URL] 매개 변수 대신이 DNS 이름을 사용할 수 있습니다.
+배포된 네트워크의 각 지역에 대해 반복합니다. 엔드포인트이 **활성화** 된 상태 이면 자동으로 로드 되 고, traffic MANAGER의 DNS 이름에서 지역 균형이 조정 됩니다. 이제 문서의 다른 단계에서 [CONSORTIUM_DATA_URL] 매개 변수 대신이 DNS 이름을 사용할 수 있습니다.
 
 ## <a name="data-api"></a>데이터 API
 
-각 컨소시엄 멤버는 다른 멤버가 네트워크에 연결하는 데 필요한 정보를 호스팅합니다. 쉽게 연결할 수 있도록 각 멤버는 데이터 API 끝점에서 연결 정보 집합을 호스팅합니다.
+각 컨소시엄 멤버는 다른 멤버가 네트워크에 연결하는 데 필요한 정보를 호스팅합니다. 쉽게 연결할 수 있도록 각 멤버는 데이터 API 엔드포인트에서 연결 정보 집합을 호스팅합니다.
 
 기존 멤버는 멤버의 배포 전에 [CONSORTIUM_DATA_URL]를 제공 합니다. 배포 시 조인 멤버는 다음 엔드포인트의 JSON 인터페이스에서 정보를 검색합니다.
 
@@ -600,7 +600,7 @@ Truffle 프로젝트에는 blockchain 네트워크 연결 정보에 대 한 구�
 > 네트워크를 통해 Ethereum 개인 키를 보내지 마세요. 각 트랜잭션을 로컬에서 먼저 서명한 다음, 네트워크를 통해 서명된 트랜잭션을 보내도록 합니다.
 
 1. [Blockchain 네트워크를 배포할 때 사용 되는 Ethereum 관리자 계정](#ethereum-settings)에 대 한 니모닉 구가 필요 합니다. MetaMask를 사용 하 여 계정을 만든 경우 MetaMask에서 니모닉을 검색할 수 있습니다. MetaMask 확장의 오른쪽 위에 있는 관리자 계정 아이콘을 선택 하 고 **설정 > 보안 & 개인 정보 > 초기값 단어**를 표시 합니다.
-1. Truffle 프로젝트의 `truffle-config.js` 내용을 다음 콘텐츠로 바꿉니다. 자리 표시자 끝점 및 니모닉 값을 바꿉니다.
+1. Truffle 프로젝트의 `truffle-config.js` 내용을 다음 콘텐츠로 바꿉니다. 자리 표시자 엔드포인트 및 니모닉 값을 바꿉니다.
 
     ```javascript
     const HDWalletProvider = require("truffle-hdwallet-provider");

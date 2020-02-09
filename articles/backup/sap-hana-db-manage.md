@@ -35,7 +35,7 @@ Azure Backup Azure Portal의 **Backup 작업** 섹션에서 수동으로 트리�
 * [Azure Portal](https://portal.azure.com/)에 로그인합니다.
 * 자격 증명 모음 대시보드에서 **Backup 경고**를 선택 합니다.
 
-  ![자격 증명 모음 대시보드에 대 한 백업 경고](./media/sap-hana-db-manage/backup-alerts-dashboard.png)
+  ![자격 증명 모음 대시보드에 대한 백업 경고](./media/sap-hana-db-manage/backup-alerts-dashboard.png)
 
 * 경고를 볼 수 있습니다.
 
@@ -70,20 +70,20 @@ Azure Backup은 지원 되는 다양 한 관리 작업으로 백업 된 SAP HANA
 
 Azure Backup를 사용 하 여 백업 되는 데이터베이스의 로컬 백업 (HANA Studio/환경 사용)을 수행 하려면 다음을 수행 합니다.
 
-1. 데이터베이스에 대 한 전체 또는 로그 백업이 완료 될 때까지 기다립니다. SAP HANA Studio/환경에서 상태를 확인 합니다.
-2. 로그 백업을 사용 하지 않도록 설정 하 고, 관련 데이터베이스에 대 한 백업 카탈로그를 파일 시스템으로 설정 합니다.
+1. 데이터베이스에 대한 전체 또는 로그 백업이 완료 될 때까지 기다립니다. SAP HANA Studio/환경에서 상태를 확인 합니다.
+2. 로그 백업을 사용 하지 않도록 설정 하 고, 관련 데이터베이스에 대한 백업 카탈로그를 파일 시스템으로 설정 합니다.
 3. 이렇게 하려면 **systemdb** > **구성** >  > **데이터베이스 선택** **필터 (로그)** 를 차례로 선택 합니다.
 4. **Enable_auto_log_backup** 를 **아니요**로 설정 합니다.
 5. **Log_backup_using_backint** 을 **False**로 설정 합니다.
 6. 데이터베이스의 주문형 전체 백업을 수행 합니다.
 7. 전체 백업 및 카탈로그 백업이 완료 될 때까지 기다립니다.
-8. 이전 설정을 Azure에 대 한 설정을 다시 되돌립니다.
+8. 이전 설정을 Azure에 대한 설정을 다시 되돌립니다.
    * **Enable_auto_log_backup** 를 **예**로 설정 합니다.
    * **Log_backup_using_backint** 를 **True**로 설정 합니다.
 
 ### <a name="change-policy"></a>정책 변경
 
-SAP HANA 백업 항목에 대 한 기본 정책을 변경할 수 있습니다.
+SAP HANA 백업 항목에 대한 기본 정책을 변경할 수 있습니다.
 
 * 자격 증명 모음 대시보드에서 **백업 항목**으로 이동 합니다.
 
@@ -113,7 +113,7 @@ SAP HANA 백업 항목에 대 한 기본 정책을 변경할 수 있습니다.
 >
 > SAP HANA 데이터베이스에는 증분 백업 정책을 사용할 수 없습니다. 증분 백업은 현재 이러한 데이터베이스에 대해 지원 되지 않습니다.
 
-### <a name="stop-protection-for-an-sap-hana-database"></a>SAP HANA 데이터베이스에 대 한 보호 중지
+### <a name="stop-protection-for-an-sap-hana-database"></a>SAP HANA 데이터베이스에 대한 보호 중지
 
 몇 가지 방법으로 SAP HANA 데이터베이스 보호를 중지할 수 있습니다.
 
@@ -123,7 +123,7 @@ SAP HANA 백업 항목에 대 한 기본 정책을 변경할 수 있습니다.
 복구 지점의 보존을 선택 하는 경우 다음 세부 정보를 염두에 두어야 합니다.
 
 * 모든 복구 지점은 영구적으로 유지 되 고, 모든 정리는 데이터 보존을 사용 하 여 보호 중지에서 중지 됩니다.
-* 보호 된 인스턴스와 사용 된 저장소에 대 한 요금이 청구 됩니다. 자세한 내용은 [Azure Backup 가격 책정](https://azure.microsoft.com/pricing/details/backup/)을 참조 하세요.
+* 보호 된 인스턴스와 사용 된 저장소에 대한 요금이 청구 됩니다. 자세한 내용은 [Azure Backup 가격 책정](https://azure.microsoft.com/pricing/details/backup/)을 참조 하세요.
 * 백업을 중지 하지 않고 데이터 원본을 삭제 하는 경우 새 백업이 실패 합니다.
 
 데이터베이스에 대한 보호를 중지하려면:
@@ -147,11 +147,11 @@ SAP HANA 백업 항목에 대 한 기본 정책을 변경할 수 있습니다.
 
 * **백업 중지**를 선택 합니다.
 
-### <a name="resume-protection-for-an-sap-hana-database"></a>SAP HANA 데이터베이스에 대 한 보호 다시 시작
+### <a name="resume-protection-for-an-sap-hana-database"></a>SAP HANA 데이터베이스에 대한 보호 다시 시작
 
-SAP HANA 데이터베이스에 대 한 보호를 중지 하는 경우 **백업 데이터 보존** 옵션을 선택 하면 나중에 보호를 다시 시작할 수 있습니다. 백업 된 데이터를 유지 하지 않는 경우에는 보호를 다시 시작할 수 없습니다.
+SAP HANA 데이터베이스에 대한 보호를 중지 하는 경우 **백업 데이터 보존** 옵션을 선택 하면 나중에 보호를 다시 시작할 수 있습니다. 백업 된 데이터를 유지 하지 않는 경우에는 보호를 다시 시작할 수 없습니다.
 
-SAP HANA 데이터베이스에 대 한 보호를 다시 시작 하려면:
+SAP HANA 데이터베이스에 대한 보호를 다시 시작 하려면:
 
 * 백업 항목을 열고 **백업 다시 시작**을 선택 합니다.
 
@@ -161,7 +161,7 @@ SAP HANA 데이터베이스에 대 한 보호를 다시 시작 하려면:
 
 ### <a name="upgrading-from-sap-hana-10-to-20"></a>SAP HANA 1.0에서 2.0로 업그레이드
 
-[SAP HANA 1.0에서 2.0로 업그레이드 한 후](backup-azure-sap-hana-database-troubleshoot.md#upgrading-from-sap-hana-10-to-20)SAP HANA 데이터베이스에 대 한 백업을 계속 하는 방법에 대해 알아봅니다.
+[SAP HANA 1.0에서 2.0로 업그레이드 한 후](backup-azure-sap-hana-database-troubleshoot.md#upgrading-from-sap-hana-10-to-20)SAP HANA 데이터베이스에 대한 백업을 계속 하는 방법에 대해 알아봅니다.
 
 ### <a name="upgrading-without-a-sid-change"></a>SID 변경 없이 업그레이드
 

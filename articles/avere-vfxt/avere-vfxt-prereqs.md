@@ -30,7 +30,7 @@ Azure Portal에 새 Azure 구독을 만들려면 다음을 수행합니다.
 
 ## <a name="configure-subscription-owner-permissions"></a>구독 소유자 권한 구성
 
-구독에 대한 소유자 권한이 있는 사용자는 vFXT 클러스터를 만들어야 합니다. 클러스터를 만들려면 소유자가 소프트웨어 서비스 약관에 동의 하 고 네트워크 및 저장소 리소스에 대 한 변경 내용을 부여 해야 합니다.
+구독에 대한 소유자 권한이 있는 사용자는 vFXT 클러스터를 만들어야 합니다. 클러스터를 만들려면 소유자가 소프트웨어 서비스 약관에 동의 하 고 네트워크 및 저장소 리소스에 대한 변경 내용을 부여 해야 합니다.
 
 비 소유자가 Azure 클러스터용 Avere vFXT을 만들 수 있도록 허용 하는 몇 가지 해결 방법이 있습니다. 이러한 시나리오에는 리소스를 제한 하 고 추가 RBAC (역할 기반 액세스 제어) 역할을 작성자에 게 할당 하는 작업이 포함 됩니다. 이러한 모든 경우에 구독 소유자는 미리 [Avere vFXT software 약관에 동의](#accept-software-terms) 해야 합니다.
 
@@ -42,10 +42,10 @@ Azure Portal에 새 Azure 구독을 만들려면 다음을 수행합니다.
 
 ## <a name="quota-for-the-vfxt-cluster"></a>vFXT 클러스터에 대한 할당량
 
-다음 Azure 구성 요소에 대 한 할당량이 충분 한지 확인 합니다. 필요한 경우 [할당량 증가를 요청합니다](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request).
+다음 Azure 구성 요소에 대한 할당량이 충분 한지 확인 합니다. 필요한 경우 [할당량 증가를 요청합니다](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request).
 
 > [!NOTE]
-> 여기에 나와 있는 가상 머신 및 SSD 구성 요소는 vFXT 클러스터 자체에 사용되는 것입니다. 계산 팜에 사용할 Vm 및 Ssd에 대 한 할당량도 필요 합니다.
+> 여기에 나와 있는 가상 머신 및 SSD 구성 요소는 vFXT 클러스터 자체에 사용되는 것입니다. 계산 팜에 사용할 Vm 및 Ssd에 대한 할당량도 필요 합니다.
 >
 > 워크플로를 실행할 지역에 대한 할당량을 사용하도록 설정되어 있는지 확인하세요.
 
@@ -81,22 +81,22 @@ Azure Portal에 새 Azure 구독을 만들려면 다음을 수행합니다.
    az vm image accept-terms --urn microsoft-avere:vfxt:avere-vfxt-controller:latest
    ```
 
-## <a name="create-a-storage-service-endpoint-in-your-virtual-network-if-needed"></a>가상 네트워크에 저장소 서비스 끝점 만들기 (필요한 경우)
+## <a name="create-a-storage-service-endpoint-in-your-virtual-network-if-needed"></a>가상 네트워크에 저장소 서비스 엔드포인트 만들기 (필요한 경우)
 
-[서비스 끝점](../virtual-network/virtual-network-service-endpoints-overview.md) 은 Azure Blob 트래픽을 가상 네트워크 외부로 라우팅하는 대신 로컬에 유지 합니다. 백 엔드 데이터 저장소에 Azure Blob을 사용 하는 모든 Avere vFXT for Azure 클러스터에 권장 됩니다.
+[서비스 엔드포인트](../virtual-network/virtual-network-service-endpoints-overview.md) 은 Azure Blob 트래픽을 가상 네트워크 외부로 라우팅하는 대신 로컬에 유지 합니다. 백 엔드 데이터 저장소에 Azure Blob을 사용 하는 모든 Avere vFXT for Azure 클러스터에 권장 됩니다.
 
-클러스터를 만드는 동안 새 가상 네트워크를 만들면 끝점이 자동으로 만들어집니다. 기존 가상 네트워크를 제공 하는 경우 클러스터를 만드는 동안 새 Blob 저장소 컨테이너를 만들려는 경우 Microsoft storage 서비스 끝점이 있어야 합니다.<!-- if there is no endpoint in that situation, the cluster creation will fail -->
+클러스터를 만드는 동안 새 가상 네트워크를 만들면 엔드포인트이 자동으로 만들어집니다. 기존 가상 네트워크를 제공 하는 경우 클러스터를 만드는 동안 새 Blob 저장소 컨테이너를 만들려는 경우 Microsoft storage 서비스 엔드포인트이 있어야 합니다.<!-- if there is no endpoint in that situation, the cluster creation will fail -->
 
 > [!TIP]
 >
 >* 클러스터 만들기의 일부로 새 가상 네트워크를 만드는 경우이 단계를 건너뜁니다.
->* 클러스터를 만드는 동안 Blob 저장소를 만들지 않는 경우 끝점은 선택 사항입니다. 이 경우 나중에 Azure Blob을 사용 하기로 결정 한 경우 서비스 끝점을 만들 수 있습니다.
+>* 클러스터를 만드는 동안 Blob 저장소를 만들지 않는 경우 엔드포인트은 선택 사항입니다. 이 경우 나중에 Azure Blob을 사용 하기로 결정 한 경우 서비스 엔드포인트을 만들 수 있습니다.
 
-Azure Portal에서 저장소 서비스 끝점을 만듭니다.
+Azure Portal에서 저장소 서비스 엔드포인트을 만듭니다.
 
 1. 포털에서 가상 네트워크 목록을 엽니다.
-1. 클러스터에 대 한 가상 네트워크를 선택 합니다.
-1. 왼쪽 메뉴에서 **서비스 끝점** 을 클릭 합니다.
+1. 클러스터에 대한 가상 네트워크를 선택 합니다.
+1. 왼쪽 메뉴에서 **서비스 엔드포인트** 을 클릭 합니다.
 1. 위쪽에서 **추가**를 클릭합니다.
 1. 서비스 ``Microsoft.Storage``를 선택 합니다.
 1. 클러스터의 서브넷을 선택 합니다.

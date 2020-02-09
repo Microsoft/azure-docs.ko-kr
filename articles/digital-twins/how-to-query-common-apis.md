@@ -1,6 +1,6 @@
 ---
 title: 일반적인 쿼리 패턴-Azure Digital Twins | Microsoft Docs
-description: Azure Digital Twins 관리 Api에 대 한 몇 가지 일반적인 API 쿼리 패턴을 알아봅니다.
+description: Azure Digital Twins 관리 Api에 대한 몇 가지 일반적인 API 쿼리 패턴을 알아봅니다.
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
@@ -238,4 +238,4 @@ ms.locfileid: "75552188"
 
 관리 API를 사용하여 인증하는 방법을 알아보려면 [API를 사용하여 인증](./security-authenticating-apis.md)을 참고하세요.
 
-API 끝점에 대 한 자세한 내용은 [Digital Twins Swagger를 사용 하는 방법](./how-to-use-swagger.md)을 참조 하세요.
+API 엔드포인트에 대한 자세한 내용은 [Digital Twins Swagger를 사용 하는 방법](./how-to-use-swagger.md)을 참조 하세요.

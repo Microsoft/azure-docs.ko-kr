@@ -17,13 +17,13 @@ ms.locfileid: "73465911"
 ---
 ## <a name="gathering-required-parameters"></a>필수 매개 변수 수집
 
-필요한 모든 Cognitive Services의 컨테이너에 대 한 세 가지 기본 매개 변수가 필요 합니다. EULA (최종 사용자 사용권 계약)는 `accept`값과 함께 제공 되어야 합니다. 또한 끝점 URL과 API 키가 모두 필요 합니다.
+필요한 모든 Cognitive Services의 컨테이너에 대 한 세 가지 기본 매개 변수가 필요 합니다. EULA (최종 사용자 사용권 계약)는 `accept`값과 함께 제공 되어야 합니다. 또한 엔드포인트 URL과 API 키가 모두 필요 합니다.
 
-### <a name="endpoint-uri-endpoint_uri"></a>끝점 URI `{ENDPOINT_URI}`
+### <a name="endpoint-uri-endpoint_uri"></a>엔드포인트 URI `{ENDPOINT_URI}`
 
-**끝점** URI 값은 해당 하는 인지 서비스 리소스의 Azure Portal *개요* 페이지에서 사용할 수 있습니다. *개요* 페이지로 이동 하 여 끝점 위로 마우스를 이동 하면 `Copy to clipboard` <span class="docon docon-edit-copy x-hidden-focus"></span> 아이콘이 표시 됩니다. 필요에 따라 복사 하 여 사용 합니다.
+**엔드포인트** URI 값은 해당 하는 인지 서비스 리소스의 Azure Portal *개요* 페이지에서 사용할 수 있습니다. *개요* 페이지로 이동 하 여 엔드포인트 위로 마우스를 이동 하면 `Copy to clipboard` <span class="docon docon-edit-copy x-hidden-focus"></span> 아이콘이 표시 됩니다. 필요에 따라 복사 하 여 사용 합니다.
 
-![나중에 사용할 끝점 uri 수집](../media/overview-endpoint-uri.png)
+![나중에 사용할 엔드포인트 uri 수집](../media/overview-endpoint-uri.png)
 
 ### <a name="keys-api_key"></a>키 `{API_KEY}`
 

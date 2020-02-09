@@ -252,17 +252,17 @@ HResult | 0-성공<br> 기타-오류| UpdateID "7392acaf-6a85-427c-8a8d-058c25be
 
 코디네이터 서비스의 REST 엔드포인트에는 동적 포트가 있습니다. 정확한 URL을 확인 하려면 Service Fabric Explorer를 참조 하세요. 예를 들어 *http://10.0.0.7:20000/PatchOrchestrationApplication/v1/GetWindowsUpdateResults* 에서 결과를 사용할 수 있습니다.
 
-![REST 끝점의 이미지](media/service-fabric-patch-orchestration-application/Rest_Endpoint.png)
+![REST 엔드포인트의 이미지](media/service-fabric-patch-orchestration-application/Rest_Endpoint.png)
 
 클러스터에서 역방향 프록시를 사용 하는 경우 클러스터 외부에서 URL에도 액세스할 수 있습니다.
 
-적중 해야 하는 끝점은 *http://&lt;SERVERURL&gt;:&lt;REVERSEPROXYPORT&gt;/PatchOrchestrationApplication/CoordinatorService/v1/GetWindowsUpdateResults*입니다.
+적중 해야 하는 엔드포인트은 *http://&lt;SERVERURL&gt;:&lt;REVERSEPROXYPORT&gt;/PatchOrchestrationApplication/CoordinatorService/v1/GetWindowsUpdateResults*입니다.
 
 클러스터에서 역방향 프록시를 사용 하도록 설정 하려면 [Azure의 역방향 프록시 Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-reverseproxy)에 있는 지침을 따르세요. 
 
 > 
 > [!WARNING]
-> 역방향 프록시가 구성 된 후에는 HTTP 끝점을 노출 하는 클러스터의 모든 마이크로 서비스를 클러스터 외부에서 주소를 지정할 수 있습니다.
+> 역방향 프록시가 구성 된 후에는 HTTP 엔드포인트을 노출 하는 클러스터의 모든 마이크로 서비스를 클러스터 외부에서 주소를 지정할 수 있습니다.
 
 ## <a name="diagnostics-and-health-events"></a>진단 및 상태 이벤트
 

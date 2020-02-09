@@ -11,9 +11,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/20/2020
 ms.locfileid: "76280607"
 ---
-Azure 데이터 탐색기는 미사용 저장소 계정의 모든 데이터를 암호화 합니다. 기본적으로 데이터는 Microsoft 관리 키를 사용 하 여 암호화 됩니다. 암호화 키에 대 한 추가 제어를 위해 고객 관리 키를 제공 하 여 데이터 암호화에 사용할 수 있습니다. 고객 관리 키는 [Azure Key Vault](/azure/key-vault/key-vault-overview)에 저장 되어야 합니다. 사용자 고유의 키를 만들어 키 자격 증명 모음에 저장 하거나 Azure Key Vault API를 사용 하 여 키를 생성할 수 있습니다. Azure 데이터 탐색기 클러스터와 key vault는 동일한 지역에 있어야 하지만 다른 구독에 있을 수 있습니다. 고객 관리 키에 대 한 자세한 설명은 [Azure Key Vault를 사용 하 여 고객 관리 키](/azure/storage/common/storage-service-encryption)를 참조 하세요. 이 문서에서는 고객이 관리 하는 키를 구성 하는 방법을 보여 줍니다.
+Azure 데이터 탐색기는 미사용 저장소 계정의 모든 데이터를 암호화 합니다. 기본적으로 데이터는 Microsoft 관리 키를 사용 하 여 암호화 됩니다. 암호화 키에 대한 추가 제어를 위해 고객 관리 키를 제공 하 여 데이터 암호화에 사용할 수 있습니다. 고객 관리 키는 [Azure Key Vault](/azure/key-vault/key-vault-overview)에 저장 되어야 합니다. 사용자 고유의 키를 만들어 키 자격 증명 모음에 저장 하거나 Azure Key Vault API를 사용 하 여 키를 생성할 수 있습니다. Azure 데이터 탐색기 클러스터와 key vault는 동일한 지역에 있어야 하지만 다른 구독에 있을 수 있습니다. 고객 관리 키에 대한 자세한 설명은 [Azure Key Vault를 사용 하 여 고객 관리 키](/azure/storage/common/storage-service-encryption)를 참조 하세요. 이 문서에서는 고객이 관리 하는 키를 구성 하는 방법을 보여 줍니다.
 
-Azure 데이터 탐색기을 사용 하 여 고객 관리 키를 구성 하려면 [키 자격 증명 모음에 대 한 두 가지 속성을 설정](/azure/key-vault/key-vault-ovw-soft-delete)해야 합니다. **일시 삭제** 및 **제거 안 함** 이러한 속성은 기본적으로 사용 되지 않습니다. 이러한 속성을 사용 하도록 설정 하려면 [PowerShell](/azure/key-vault/key-vault-soft-delete-powershell) 또는 [Azure CLI](/azure/key-vault/key-vault-soft-delete-cli)를 사용 합니다. RSA 키와 키 크기 2048만 지원 됩니다.
+Azure 데이터 탐색기을 사용 하 여 고객 관리 키를 구성 하려면 [키 자격 증명 모음에 대한 두 가지 속성을 설정](/azure/key-vault/key-vault-ovw-soft-delete)해야 합니다. **일시 삭제** 및 **제거 안 함** 이러한 속성은 기본적으로 사용 되지 않습니다. 이러한 속성을 사용 하도록 설정 하려면 [PowerShell](/azure/key-vault/key-vault-soft-delete-powershell) 또는 [Azure CLI](/azure/key-vault/key-vault-soft-delete-cli)를 사용 합니다. RSA 키와 키 크기 2048만 지원 됩니다.
 
 > [!NOTE]
 > 고객 관리 키를 사용 하는 데이터 암호화는 [리더 및 종동체 클러스터](/azure/data-explorer/follower)에서 지원 되지 않습니다. 
@@ -36,7 +36,7 @@ $keyVault = New-AzKeyVault -Name <key-vault> `
 
 ## <a name="configure-the-key-vault-access-policy"></a>키 자격 증명 모음 액세스 정책 구성
 
-그런 다음 키 자격 증명 모음에 대 한 액세스 정책을 구성 하 여 클러스터에 액세스할 수 있는 권한을 부여 합니다. 이 단계에서는 이전에 클러스터에 할당 한 시스템 할당 관리 id를 사용 합니다. 키 자격 증명 모음에 대 한 액세스 정책을 설정 하려면 [AzKeyVaultAccessPolicy](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy)를 호출 합니다. 대괄호의 자리 표시자 값을 사용자 고유의 값으로 바꾸고 앞의 예제에 정의 된 변수를 사용 합니다.
+그런 다음 키 자격 증명 모음에 대한 액세스 정책을 구성 하 여 클러스터에 액세스할 수 있는 권한을 부여 합니다. 이 단계에서는 이전에 클러스터에 할당 한 시스템 할당 관리 id를 사용 합니다. 키 자격 증명 모음에 대한 액세스 정책을 설정 하려면 [AzKeyVaultAccessPolicy](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy)를 호출 합니다. 대괄호의 자리 표시자 값을 사용자 고유의 값으로 바꾸고 앞의 예제에 정의 된 변수를 사용 합니다.
 
 ```azurepowershell-interactive
 Set-AzKeyVaultAccessPolicy `

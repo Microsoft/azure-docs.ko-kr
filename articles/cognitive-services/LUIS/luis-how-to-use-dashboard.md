@@ -50,9 +50,9 @@ ms.locfileid: "73888207"
 
 활성 버전이 수정 하려는 버전 인지 확인 합니다. 
 
-![대시보드는 앱의 외부 서비스, 게시 된 지역 및 집계 된 끝점 적중을 표시 합니다.](./media/luis-how-to-use-dashboard/analytics-card-1-shows-app-summary-and-endpoint-hits.png)
+![대시보드는 앱의 외부 서비스, 게시 된 지역 및 집계 된 엔드포인트 적중을 표시 합니다.](./media/luis-how-to-use-dashboard/analytics-card-1-shows-app-summary-and-endpoint-hits.png)
 
-여기에는 외부 서비스, 게시 된 지역 및 집계 된 끝점 적중도 표시 됩니다. 
+여기에는 외부 서비스, 게시 된 지역 및 집계 된 엔드포인트 적중도 표시 됩니다. 
 
 ## <a name="review-training-evaluation"></a>학습 평가 검토
 

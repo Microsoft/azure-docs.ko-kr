@@ -1,6 +1,6 @@
 ---
 title: Azure Firewall FAQ
-description: Azure 방화벽에 대 한 FAQ입니다. Azure Virtual Network 리소스를 보호하는 관리형 클라우드 기반 네트워크 보안 서비스입니다.
+description: Azure 방화벽에 대한 FAQ입니다. Azure Virtual Network 리소스를 보호하는 관리형 클라우드 기반 네트워크 보안 서비스입니다.
 services: firewall
 author: vhorne
 ms.service: firewall
@@ -125,9 +125,9 @@ Azure 방화벽 서비스 제한의 경우 [azure 구독 및 서비스 제한, �
 
 ## <a name="does-azure-firewall-outbound-snat-between-private-networks"></a>개인 네트워크 간에 Azure 방화벽 아웃 바운드 SNAT
 
-Azure 방화벽은 대상 IP 주소가 [IANA RFC 1918](https://tools.ietf.org/html/rfc1918)당 개인 ip 범위인 경우 SNAT 하지 않습니다. 조직에서 개인 네트워크에 대 한 공용 IP 주소 범위를 사용 하는 경우 Azure 방화벽은 AzureFirewallSubnet의 방화벽 개인 IP 주소 중 하나로 트래픽을 SNATs 합니다.
+Azure 방화벽은 대상 IP 주소가 [IANA RFC 1918](https://tools.ietf.org/html/rfc1918)당 개인 ip 범위인 경우 SNAT 하지 않습니다. 조직에서 개인 네트워크에 대한 공용 IP 주소 범위를 사용 하는 경우 Azure 방화벽은 AzureFirewallSubnet의 방화벽 개인 IP 주소 중 하나로 트래픽을 SNATs 합니다.
 
-## <a name="is-forced-tunnelingchaining-to-a-network-virtual-appliance-supported"></a>강제 터널링/네트워크 가상 어플라이언스에 대 한 연결이 지원 되나요?
+## <a name="is-forced-tunnelingchaining-to-a-network-virtual-appliance-supported"></a>강제 터널링/네트워크 가상 어플라이언스에 대한 연결이 지원 되나요?
 
 강제 터널링은 현재 지원 되지 않습니다. Azure Firewall에는 직접 인터넷 연결이 있어야 합니다. AzureFirewallSubnet이 BGP를 통해 온-프레미스 네트워크에 대한 기본 경로를 학습하는 경우 이 경로를 직접 인터넷 연결을 유지하기 위해 **Internet**으로 설정된 **NextHopType** 값을 통해 0.0.0.0/0 UDR로 재정의해야 합니다.
 
@@ -150,9 +150,9 @@ Azure 방화벽은 대상 IP 주소가 [IANA RFC 1918](https://tools.ietf.org/ht
 구성 변경이 적용 될 때마다 Azure 방화벽은 모든 기본 백 엔드 인스턴스를 업데이트 하려고 합니다. 드문 경우 지만 이러한 백 엔드 인스턴스 중 하나가 새 구성으로 업데이트 되지 않고 업데이트 프로세스가 실패 한 프로 비전 상태로 중지 될 수 있습니다. Azure 방화벽은 여전히 작동 하지만 적용 된 구성은 일관 되지 않은 상태일 수 있습니다 .이 경우 일부 인스턴스에는 업데이트 된 규칙 집합이 있는 이전 구성이 있습니다. 이 문제가 발생 하는 경우 작업이 성공 하 고 방화벽이 *성공한* 프로 비전 상태에 도달할 때까지 구성을 한 번 더 업데이트 해 보세요.
 
 ### <a name="how-does-azure-firewall-handle-planned-maintenance-and-unplanned-failures"></a>Azure 방화벽은 계획 된 유지 관리 및 계획 되지 않은 오류를 어떻게 처리 하나요?
-Azure 방화벽은 활성-활성 구성의 여러 백 엔드 노드로 구성 됩니다.  계획 된 유지 관리를 위해 노드를 정상적으로 업데이트 하는 연결 드레이닝 논리가 있습니다.  업무 외 시간에는 각 Azure 지역에 대 한 업무 외 시간에 업데이트를 계획 하 여 중단 위험을 추가로 제한할 수 있습니다.  계획 되지 않은 문제의 경우에는 새 노드를 인스턴스화하여 오류가 발생 한 노드를 대체 합니다.  새 노드에 대 한 연결은 일반적으로 오류가 발생 한 시간부터 10 초 이내에 다시 설정 됩니다.
+Azure 방화벽은 활성-활성 구성의 여러 백 엔드 노드로 구성 됩니다.  계획 된 유지 관리를 위해 노드를 정상적으로 업데이트 하는 연결 드레이닝 논리가 있습니다.  업무 외 시간에는 각 Azure 지역에 대한 업무 외 시간에 업데이트를 계획 하 여 중단 위험을 추가로 제한할 수 있습니다.  계획 되지 않은 문제의 경우에는 새 노드를 인스턴스화하여 오류가 발생 한 노드를 대체 합니다.  새 노드에 대한 연결은 일반적으로 오류가 발생 한 시간부터 10 초 이내에 다시 설정 됩니다.
 
-## <a name="is-there-a-character-limit-for-a-firewall-name"></a>방화벽 이름에 대 한 문자 제한이 있나요?
+## <a name="is-there-a-character-limit-for-a-firewall-name"></a>방화벽 이름에 대한 문자 제한이 있나요?
 
 예. 방화벽 이름에는 50 자 제한이 있습니다.
 
@@ -172,6 +172,6 @@ Azure 방화벽의 초기 처리량 용량은 2.5-3gbps입니다. 현재 scale o
 
 현재 Azure 방화벽을 확장 하는 데 5 ~ 7 분이 걸립니다. 더 빠른 자동 크기 조정을 필요로 하는 버스트가 있는 경우 지원에 문의 하 여 방화벽의 초기 처리량 용량을 늘리세요.
 
-## <a name="does-azure-firewall-allow-access-to-active-directory-by-default"></a>Azure 방화벽에서 기본적으로 Active Directory에 대 한 액세스를 허용 하나요?
+## <a name="does-azure-firewall-allow-access-to-active-directory-by-default"></a>Azure 방화벽에서 기본적으로 Active Directory에 대한 액세스를 허용 하나요?
 
 아닙니다. Azure 방화벽은 기본적으로 Active Directory 액세스를 차단 합니다. 액세스를 허용 하려면 AzureActiveDirectory service 태그를 구성 합니다. 자세한 내용은 [Azure 방화벽 서비스 태그](service-tags.md)를 참조 하세요.

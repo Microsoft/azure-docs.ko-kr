@@ -86,16 +86,16 @@ AKS 클러스터 내의 에이전트 노드에서 태그를 수정했기 때문�
 
 *이 문제 해결 지원은 https://aka.ms/aks-pending-upgrade 에서 전송 됩니다.*
 
-단일 노드 풀 또는 [여러 노드 풀](use-multiple-node-pools.md) 을 포함 하는 클러스터에서 클러스터에 대 한 업그레이드 및 크기 조정 작업은 함께 사용할 수 없습니다. 클러스터 또는 노드 풀을 동시에 업그레이드 하 고 확장할 수 없습니다. 대신, 동일한 리소스에 대 한 다음 요청 전에 대상 리소스에서 각 작업 유형이 완료 되어야 합니다. 따라서 활성 업그레이드 또는 크기 조정 작업이 발생 하거나 시도한 후에 실패 하는 경우 작업이 제한 됩니다. 
+단일 노드 풀 또는 [여러 노드 풀](use-multiple-node-pools.md) 을 포함 하는 클러스터에서 클러스터에 대한 업그레이드 및 크기 조정 작업은 함께 사용할 수 없습니다. 클러스터 또는 노드 풀을 동시에 업그레이드 하 고 확장할 수 없습니다. 대신, 동일한 리소스에 대한 다음 요청 전에 대상 리소스에서 각 작업 유형이 완료 되어야 합니다. 따라서 활성 업그레이드 또는 크기 조정 작업이 발생 하거나 시도한 후에 실패 하는 경우 작업이 제한 됩니다. 
 
 문제를 진단 하는 데 도움이 되도록 `az aks show -g myResourceGroup -n myAKSCluster -o table`를 실행 하 여 클러스터에서 자세한 상태를 검색 합니다. 결과에 따라:
 
 * 클러스터가 적극적으로 업그레이드 되는 경우 작업이 종료 될 때까지 기다립니다. 성공 하면 이전에 실패 한 작업을 다시 시도 합니다.
 * 클러스터가 업그레이드에 실패 한 경우 이전 섹션에 설명 된 단계를 수행 합니다.
 
-## <a name="can-i-move-my-cluster-to-a-different-subscription-or-my-subscription-with-my-cluster-to-a-new-tenant"></a>클러스터를 새 테 넌 트에 대 한 다른 구독 또는 구독으로 이동할 수 있나요?
+## <a name="can-i-move-my-cluster-to-a-different-subscription-or-my-subscription-with-my-cluster-to-a-new-tenant"></a>클러스터를 새 테넌트에 대한 다른 구독 또는 구독으로 이동할 수 있나요?
 
-AKS 클러스터를 다른 구독으로 이동 했거나 클러스터를 새 테 넌 트로 소유 하 고 있는 경우 역할 할당 및 서비스 사용자 권한이 손실 되어 클러스터에서 기능을 잃게 됩니다. AKS는이 제약 조건으로 인해 **구독 또는 테 넌 트 간 클러스터 이동을 지원 하지** 않습니다.
+AKS 클러스터를 다른 구독으로 이동 했거나 클러스터를 새 테넌트로 소유 하 고 있는 경우 역할 할당 및 서비스 사용자 권한이 손실 되어 클러스터에서 기능을 잃게 됩니다. AKS는이 제약 조건으로 인해 **구독 또는 테넌트 간 클러스터 이동을 지원 하지** 않습니다.
 
 ## <a name="im-receiving-errors-trying-to-use-features-that-require-virtual-machine-scale-sets"></a>가상 컴퓨터 크기 집합을 필요로 하는 기능을 사용 하려는 동안 오류가 발생 했습니다.
 
@@ -138,14 +138,14 @@ AKS 클러스터가 다음 예제와 같이 가상 머신 확장 집합에 없�
 
 AKS 클러스터를 만들 때 사용자를 대신 하 여 리소스를 만들어야 하는 서비스 주체가 필요 합니다. AKS은 클러스터를 만들 때 새 서비스 주체를 만들 수 있는 기능을 제공 하지만, 클러스터를 만드는 데 성공 하기 위해 적절 한 시간에 새 서비스 주체를 완전히 전파 하는 Azure Active Directory 필요 합니다. 이 전파 시간이 너무 오래 걸리면 클러스터에서 사용할 수 있는 서비스 주체를 찾을 수 없기 때문에를 만들기 위해 유효성 검사가 실패 합니다. 
 
-이에 대 한 다음 해결 방법을 사용 합니다.
+이에 대한 다음 해결 방법을 사용 합니다.
 1. 지역에 걸쳐 이미 전파 된 기존 서비스 사용자를 사용 하 여 클러스터 만들기 시간에 AKS에 전달 합니다.
 2. 자동화 스크립트를 사용 하는 경우 서비스 주체 만들기와 AKS 클러스터 만들기 사이의 시간 지연을 추가 합니다.
 3. Azure Portal 사용 하는 경우 만드는 동안 클러스터 설정으로 돌아가서 몇 분 후에 유효성 검사 페이지를 다시 시도 합니다.
 
 ## <a name="im-receiving-errors-after-restricting-my-egress-traffic"></a>송신 트래픽을 제한 한 후 오류를 수신 합니다.
 
-AKS 클러스터에서 송신 트래픽을 제한 하는 경우 [필수 및 선택적으로 권장](limit-egress-traffic.md) 되는 아웃 바운드 포트/네트워크 규칙 및 AKS에 대 한 FQDN/응용 프로그램 규칙이 필요 합니다. 설정이 이러한 규칙과 충돌 하는 경우 특정 `kubectl` 명령을 실행 하지 못할 수 있습니다. AKS 클러스터를 만들 때 오류가 표시 될 수도 있습니다.
+AKS 클러스터에서 송신 트래픽을 제한 하는 경우 [필수 및 선택적으로 권장](limit-egress-traffic.md) 되는 아웃 바운드 포트/네트워크 규칙 및 AKS에 대한 FQDN/응용 프로그램 규칙이 필요 합니다. 설정이 이러한 규칙과 충돌 하는 경우 특정 `kubectl` 명령을 실행 하지 못할 수 있습니다. AKS 클러스터를 만들 때 오류가 표시 될 수도 있습니다.
 
 설정이 필수 또는 옵션인 권장 아웃 바운드 포트/네트워크 규칙 및 FQDN/응용 프로그램 규칙과 충돌 하지 않는지 확인 합니다.
 
@@ -169,7 +169,7 @@ AKS 클러스터에서 송신 트래픽을 제한 하는 경우 [필수 및 선�
 | 1.14 | 1.14.0 이상 |
 
 
-### <a name="waitforattach-failed-for-azure-disk-parsing-devdiskazurescsi1lun1-invalid-syntax"></a>Azure 디스크에 대 한 WaitForAttach 실패: 구문 분석 "/dev/disk/azure/scsi1/lun1": 구문이 잘못 되었습니다.
+### <a name="waitforattach-failed-for-azure-disk-parsing-devdiskazurescsi1lun1-invalid-syntax"></a>Azure 디스크에 대한 WaitForAttach 실패: 구문 분석 "/dev/disk/azure/scsi1/lun1": 구문이 잘못 되었습니다.
 
 Kubernetes 버전 1.10에서 MountVolume는 Azure 디스크가 다시 탑재 되어 실패할 수 있습니다.
 
@@ -248,7 +248,7 @@ $ kubectl describe pv pvc-d8eebc1d-74d3-11e8-902b-e22b71bb1c06
 Message:         disk.DisksClient#Delete: Failure responding to request: StatusCode=409 -- Original Error: autorest/azure: Service returned an error. Status=409 Code="OperationNotAllowed" Message="Disk kubernetes-dynamic-pvc-d8eebc1d-74d3-11e8-902b-e22b71bb1c06 is attached to VM /subscriptions/{subs-id}/resourceGroups/MC_markito-aks-pvc_markito-aks-pvc_westus/providers/Microsoft.Compute/virtualMachines/aks-agentpool-25259074-0."
 ```
 
-Kubernetes 버전 1.10 이상에서는이 오류를 방지 하기 위해 기본적으로 PersistentVolumeClaim 보호 기능이 사용 되도록 설정 되어 있습니다. 이 문제에 대 한 수정 사항이 없는 Kubernetes 버전을 사용 하는 경우 PersistentVolumeClaim를 삭제 하기 전에 PersistentVolumeClaim를 사용 하 여 pod를 삭제 하 여이 문제를 완화할 수 있습니다.
+Kubernetes 버전 1.10 이상에서는이 오류를 방지 하기 위해 기본적으로 PersistentVolumeClaim 보호 기능이 사용 되도록 설정 되어 있습니다. 이 문제에 대한 수정 사항이 없는 Kubernetes 버전을 사용 하는 경우 PersistentVolumeClaim를 삭제 하기 전에 PersistentVolumeClaim를 사용 하 여 pod를 삭제 하 여이 문제를 완화할 수 있습니다.
 
 
 ### <a name="error-cannot-find-lun-for-disk-when-attaching-a-disk-to-a-node"></a>노드에 디스크를 연결할 때 "디스크의 Lun을 찾을 수 없음" 오류
@@ -269,7 +269,7 @@ MountVolume.WaitForAttach failed for volume "pvc-12b458f4-c23f-11e8-8d27-46799c2
 | 1.13 | 1.13.0 이상 |
 | 1.14 이상 | N/A |
 
-이 문제에 대 한 해결 방법이 없는 Kubernetes 버전을 사용 하는 경우 몇 분 동안 기다린 후 다시 시도 하 여 문제를 완화할 수 있습니다.
+이 문제에 대한 해결 방법이 없는 Kubernetes 버전을 사용 하는 경우 몇 분 동안 기다린 후 다시 시도 하 여 문제를 완화할 수 있습니다.
 
 ### <a name="azure-disk-attachdetach-failure-mount-issues-or-io-errors-during-multiple-attachdetach-operations"></a>여러 연결/분리 작업을 수행 하는 동안 Azure 디스크 연결/분리 실패, 탑재 문제 또는 i/o 오류
 
@@ -290,7 +290,7 @@ Kubernetes 버전 1.9.2부터 여러 연결/분리 작업을 병렬로 실행 �
 | 1.13 | 1.13.0 이상 |
 | 1.14 이상 | N/A |
 
-이 문제에 대 한 해결 방법이 없는 Kubernetes 버전을 사용 하는 경우 다음을 시도 하 여 문제를 완화할 수 있습니다.
+이 문제에 대한 해결 방법이 없는 Kubernetes 버전을 사용 하는 경우 다음을 시도 하 여 문제를 완화할 수 있습니다.
 
 * 디스크가 오랜 시간 동안 분리 될 때까지 대기 중인 경우 디스크를 수동으로 분리 해 보세요.
 
@@ -311,11 +311,11 @@ Kubernetes 버전 1.9.2부터 여러 연결/분리 작업을 병렬로 실행 �
 | 1.13 | 1.13.4 이상 |
 | 1.14 이상 | N/A |
 
-이 문제에 대 한 해결 방법이 없는 Kubernetes 버전을 사용 하는 경우 디스크를 수동으로 분리 하 여 문제를 완화할 수 있습니다.
+이 문제에 대한 해결 방법이 없는 Kubernetes 버전을 사용 하는 경우 디스크를 수동으로 분리 하 여 문제를 완화할 수 있습니다.
 
-### <a name="azure-disk-detach-failure-leading-to-potential-race-condition-issue-and-invalid-data-disk-list"></a>잠재적인 경합 상태 문제 및 잘못 된 데이터 디스크 목록에 대 한 Azure 디스크 분리 오류
+### <a name="azure-disk-detach-failure-leading-to-potential-race-condition-issue-and-invalid-data-disk-list"></a>잠재적인 경합 상태 문제 및 잘못 된 데이터 디스크 목록에 대한 Azure 디스크 분리 오류
 
-Azure 디스크를 분리 하지 못하면 지 수 백오프를 사용 하 여 디스크를 분리 하는 데 최대 6 회까지 다시 시도 합니다. 또한 약 3 분 동안 데이터 디스크 목록에 대 한 노드 수준 잠금을 유지 합니다. 수동 연결 또는 분리 작업과 같이 해당 기간 동안 디스크 목록이 수동으로 업데이트 되는 경우 노드 수준 잠금이 보유 하 고 있는 디스크 목록이 더 이상 사용 되지 않고 노드 VM에서 불안정 해질 수 있습니다.
+Azure 디스크를 분리 하지 못하면 지 수 백오프를 사용 하 여 디스크를 분리 하는 데 최대 6 회까지 다시 시도 합니다. 또한 약 3 분 동안 데이터 디스크 목록에 대한 노드 수준 잠금을 유지 합니다. 수동 연결 또는 분리 작업과 같이 해당 기간 동안 디스크 목록이 수동으로 업데이트 되는 경우 노드 수준 잠금이 보유 하 고 있는 디스크 목록이 더 이상 사용 되지 않고 노드 VM에서 불안정 해질 수 있습니다.
 
 다음 버전의 Kubernetes에서는이 문제가 해결 되었습니다.
 
@@ -326,7 +326,7 @@ Azure 디스크를 분리 하지 못하면 지 수 백오프를 사용 하 여 �
 | 1.14 | 1.14.2 이상 |
 | 1.15 이상 | N/A |
 
-이 문제에 대 한 해결 방법이 없는 Kubernetes의 버전을 사용 하는 경우 노드 VM에 사용 되지 않는 디스크 목록이 있으면 VM의 모든 비 기존 디스크를 단일 대량 작업으로 분리 하 여 문제를 완화할 수 있습니다. **존재 하지 않는 디스크를 개별적으로 분리 하면 실패할 수 있습니다.**
+이 문제에 대한 해결 방법이 없는 Kubernetes의 버전을 사용 하는 경우 노드 VM에 사용 되지 않는 디스크 목록이 있으면 VM의 모든 비 기존 디스크를 단일 대량 작업으로 분리 하 여 문제를 완화할 수 있습니다. **존재 하지 않는 디스크를 개별적으로 분리 하면 실패할 수 있습니다.**
 
 
 ### <a name="large-number-of-azure-disks-causes-slow-attachdetach"></a>많은 수의 Azure 디스크가 있으면 연결/분리 속도가 느려집니다.
@@ -346,7 +346,7 @@ Azure 디스크를 분리 하지 못하면 지 수 백오프를 사용 하 여 �
 | 1.14 | 1.14.4 이상 |
 | 1.15 이상 | N/A |
 
-이 문제에 대 한 해결 방법이 없는 Kubernetes의 버전을 사용 중이 고 노드 VM이 실패 한 상태 이면 아래 중 하나를 사용 하 여 VM 상태를 수동으로 업데이트 하 여 문제를 완화할 수 있습니다.
+이 문제에 대한 해결 방법이 없는 Kubernetes의 버전을 사용 중이 고 노드 VM이 실패 한 상태 이면 아래 중 하나를 사용 하 여 VM 상태를 수동으로 업데이트 하 여 문제를 완화할 수 있습니다.
 
 * 가용성 집합 기반 클러스터의 경우:
     ```console

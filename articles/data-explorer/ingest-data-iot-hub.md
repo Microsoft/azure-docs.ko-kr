@@ -28,7 +28,7 @@ Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능
 
 * Azure 구독이 아직 없는 경우 시작하기 전에 [Azure 체험 계정](https://azure.microsoft.com/free/)을 만듭니다.
 * 데이터베이스 이름이 *testdb*인 [테스트 클러스터 및 데이터베이스를](create-cluster-database-portal.md) 만듭니다.
-* 장치 시뮬레이션에 대 한 [샘플 앱](https://github.com/Azure-Samples/azure-iot-samples-csharp) 및 설명서입니다.
+* 장치 시뮬레이션에 대한 [샘플 앱](https://github.com/Azure-Samples/azure-iot-samples-csharp) 및 설명서입니다.
 * 샘플 앱을 실행하기 위한 [Visual Studio 2019](https://visualstudio.microsoft.com/vs/).
 
 ## <a name="create-an-iot-hub"></a>Iot Hub 만들기
@@ -82,7 +82,7 @@ Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능
     | 데이터 연결 이름 | Azure 데이터 탐색기에서 만들려는 연결의 이름
     | IoT Hub | IoT Hub 이름 |
     | 공유 액세스 정책 | 공유 액세스 정책의 이름입니다. 읽기 권한이 있어야 합니다. |
-    | 소비자 그룹 |  IoT Hub 기본 제공 끝점에 정의 된 소비자 그룹 |
+    | 소비자 그룹 |  IoT Hub 기본 제공 엔드포인트에 정의 된 소비자 그룹 |
     | 이벤트 시스템 속성 | [IoT Hub 이벤트 시스템 속성](/azure/iot-hub/iot-hub-devguide-messages-construct#system-properties-of-d2c-iot-hub-messages)입니다. 시스템 속성을 추가 하는 경우 선택한 속성을 포함 하도록 테이블 스키마 및 [매핑을](/azure/kusto/management/mappings) [만들거나](/azure/kusto/management/tables#create-table) [업데이트](/azure/kusto/management/tables#alter-table-and-alter-merge-table) 합니다. | | | 
 
     > [!NOTE]
@@ -160,7 +160,7 @@ Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능
     ![수집 데이터 결과 표시](media/ingest-data-iot-hub/show-ingested-data.png)
 
     > [!NOTE]
-    > * Azure Data Explorer에는 데이터 수집을 위한 집계(일괄 처리) 정책이 있으며, 이는 수집 프로세스를 최적화하도록 설계되었습니다. 이 정책은 기본적으로 5 분 또는 500 MB의 데이터로 구성 되므로 대기 시간이 길어질 수 있습니다. 집계 옵션에 대 한 [일괄 처리 정책](/azure/kusto/concepts/batchingpolicy) 을 참조 하세요. 
+    > * Azure Data Explorer에는 데이터 수집을 위한 집계(일괄 처리) 정책이 있으며, 이는 수집 프로세스를 최적화하도록 설계되었습니다. 이 정책은 기본적으로 5 분 또는 500 MB의 데이터로 구성 되므로 대기 시간이 길어질 수 있습니다. 집계 옵션에 대한 [일괄 처리 정책](/azure/kusto/concepts/batchingpolicy) 을 참조 하세요. 
     > * 스트리밍을 지원 하도록 테이블을 구성 하 고 응답 시간에서 지연 시간을 제거 합니다. [스트리밍 정책](/azure/kusto/concepts/streamingingestionpolicy)을 참조 하세요. 
 
 ## <a name="clean-up-resources"></a>리소스 정리

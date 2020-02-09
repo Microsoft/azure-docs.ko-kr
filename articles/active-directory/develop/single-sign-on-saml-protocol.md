@@ -157,7 +157,7 @@ Azure AD는 `AuthnRequest` 요소의 `Subject` 요소를 무시합니다.
 
 ### <a name="issuer"></a>발급자
 
-Azure AD는 Azure AD 테 넌 트의 테 넌 트 ID가 TenantIDGUID > \<`https://login.microsoftonline.com/<TenantIDGUID>/` `Issuer` 요소를 설정 합니다.
+Azure AD는 Azure AD 테넌트의 테넌트 ID가 TenantIDGUID > \<`https://login.microsoftonline.com/<TenantIDGUID>/` `Issuer` 요소를 설정 합니다.
 
 예를 들어 발급자 요소가 포함된 응답은 다음 샘플과 같습니다.
 
@@ -192,7 +192,7 @@ Timestamp: 2013-03-18 08:49:24Z</samlp:StatusMessage>
 
 #### <a name="issuer"></a>발급자
 
-이는 `https://sts.windows.net/<TenantIDGUID>/`로 설정 됩니다. 여기서 \<TenantIDGUID >은 Azure AD 테 넌 트의 테 넌 트 ID입니다.
+이는 `https://sts.windows.net/<TenantIDGUID>/`로 설정 됩니다. 여기서 \<TenantIDGUID >은 Azure AD 테넌트의 테넌트 ID입니다.
 
 ```
 <Issuer>https://login.microsoftonline.com/82869000-6ad1-48f0-8171-272ed18796e9/</Issuer>

@@ -14,7 +14,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/16/2019
 ms.locfileid: "74132882"
 ---
-# <a name="azure-event-grid-event-schema-for-azure-machine-learning"></a>Azure Machine Learning에 대 한 Azure Event Grid 이벤트 스키마
+# <a name="azure-event-grid-event-schema-for-azure-machine-learning"></a>Azure Machine Learning에 대한 Azure Event Grid 이벤트 스키마
 
 이 문서에서는 machine learning 작업 영역 이벤트의 속성과 스키마를 제공 합니다. 이벤트 스키마에 대한 소개는 [Azure Event Grid 이벤트 스키마](event-schema.md)를 참조하세요.
 
@@ -27,15 +27,15 @@ Azure Machine Learning는 다음과 같은 이벤트 유형을 내보냅니다.
 | 이벤트 유형 | 설명 |
 | ---------- | ----------- |
 | MachineLearningServices가 등록 되었습니다. | 새 모델 또는 모델 버전이 성공적으로 등록 되 면 발생 합니다. |
-| MachineLearningServices 배포 | 모델이 끝점에 성공적으로 배포 되 면 발생 합니다. |
+| MachineLearningServices 배포 | 모델이 엔드포인트에 성공적으로 배포 되 면 발생 합니다. |
 | MachineLearningServices | 실행이 성공적으로 완료 되 면 발생 합니다. |
 | MachineLearningServices. DatasetDriftDetected | 데이터 집합 드리프트 모니터가 드리프트를 검색 하는 경우 발생 합니다. |
 
 ## <a name="the-contents-of-an-event-response"></a>이벤트 응답의 내용
 
-이벤트가 트리거될 때 Event Grid 서비스는 해당 이벤트에 대 한 데이터를 구독 끝점으로 보냅니다.
+이벤트가 트리거될 때 Event Grid 서비스는 해당 이벤트에 대한 데이터를 구독 엔드포인트으로 보냅니다.
 
-이 섹션에는 각 이벤트에 대 한 데이터가 어떻게 표시 되는지 예가 포함 되어 있습니다.
+이 섹션에는 각 이벤트에 대한 데이터가 어떻게 표시 되는지 예가 포함 되어 있습니다.
 
 ### <a name="microsoftmachinelearningservicesmodelregistered-event"></a>MachineLearningServices에 등록 된 이벤트
 
@@ -163,7 +163,7 @@ Azure Machine Learning는 다음과 같은 이벤트 유형을 내보냅니다.
 | dataVersion | string | 데이터 개체의 스키마 버전입니다. 게시자가 스키마 버전을 정의합니다. |
 | metadataVersion | string | 이벤트 메타데이터의 스키마 버전입니다. Event Grid는 최상위 속성의 스키마를 정의합니다. Event Grid는 이 값을 제공합니다. |
 
-데이터 개체에는 각 이벤트 유형에 대 한 다음 속성이 있습니다.
+데이터 개체에는 각 이벤트 유형에 대한 다음 속성이 있습니다.
 
 ### <a name="microsoftmachinelearningservicesmodelregistered"></a>MachineLearningServices가 등록 되었습니다.
 
@@ -212,6 +212,6 @@ Azure Machine Learning는 다음과 같은 이벤트 유형을 내보냅니다.
 ## <a name="next-steps"></a>다음 단계
 
 * Azure Event Grid에 대한 소개는 [Event Grid란?](overview.md)을 참조하세요.
-* Azure Event Grid 구독을 만드는 방법에 대 한 자세한 내용은 [Event Grid 구독 스키마](subscription-creation-schema.md) 를 참조 하세요.
-* Azure Machine Learning와 함께 Azure Event Grid를 사용 하는 방법에 대 한 소개는 [Azure Machine Learning 이벤트](/azure/machine-learning/service/concept-event-grid-integration) 사용을 참조 하세요.
+* Azure Event Grid 구독을 만드는 방법에 대한 자세한 내용은 [Event Grid 구독 스키마](subscription-creation-schema.md) 를 참조 하세요.
+* Azure Machine Learning와 함께 Azure Event Grid를 사용 하는 방법에 대한 소개는 [Azure Machine Learning 이벤트](/azure/machine-learning/service/concept-event-grid-integration) 사용을 참조 하세요.
 * Azure Machine Learning와 함께 Azure Event Grid를 사용 하는 예제는 [이벤트 기반 기계 학습 워크플로 만들기](/azure/machine-learning/service/how-to-use-event-grid) 를 참조 하세요.

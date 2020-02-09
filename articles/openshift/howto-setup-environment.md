@@ -20,7 +20,7 @@ Red Hat OpenShift 응용 프로그램 Microsoft Azure를 빌드하고 실행 하
 
 * Azure CLI 버전 (또는 그 이상)을 설치 하거나 Azure Cloud Shell를 사용 2.0.65.
 * `AROGA` 기능 및 연결 된 리소스 공급자에 등록 합니다.
-* Azure Active Directory (Azure AD) 테 넌 트를 만듭니다.
+* Azure Active Directory (Azure AD) 테넌트를 만듭니다.
 * Azure AD 응용 프로그램 개체를 만듭니다.
 * Azure AD 사용자를 만듭니다.
 
@@ -94,11 +94,11 @@ az --version
     az provider register -n Microsoft.ContainerService --wait
     ```
 
-## <a name="create-an-azure-active-directory-azure-ad-tenant"></a>Azure Active Directory (Azure AD) 테 넌 트 만들기
+## <a name="create-an-azure-active-directory-azure-ad-tenant"></a>Azure Active Directory (Azure AD) 테넌트 만들기
 
-Azure Red Hat OpenShift 서비스를 사용 하려면 조직 및 Microsoft와의 관계를 나타내는 연결 된 Azure Active Directory (Azure AD) 테 넌 트가 필요 합니다. Azure AD 테 넌 트를 사용 하 여 앱을 등록, 빌드 및 관리 하 고 다른 Azure 서비스를 사용할 수 있습니다.
+Azure Red Hat OpenShift 서비스를 사용 하려면 조직 및 Microsoft와의 관계를 나타내는 연결 된 Azure Active Directory (Azure AD) 테넌트가 필요 합니다. Azure AD 테넌트를 사용 하 여 앱을 등록, 빌드 및 관리 하 고 다른 Azure 서비스를 사용할 수 있습니다.
 
-Azure Red Hat OpenShift 클러스터에 대 한 테 넌 트로 사용할 Azure AD가 없거나 테스트에 대 한 테 넌 트를 만들려는 경우이 가이드를 계속 하기 전에 [Azure Red Hat openshift 클러스터에 대 한 AZURE ad 테 넌 트 만들기](howto-create-tenant.md) 의 지침을 따르세요.
+Azure Red Hat OpenShift 클러스터에 대 한 테넌트로 사용할 Azure AD가 없거나 테스트에 대 한 테넌트를 만들려는 경우이 가이드를 계속 하기 전에 [Azure Red Hat openshift 클러스터에 대 한 AZURE ad 테넌트 만들기](howto-create-tenant.md) 의 지침을 따르세요.
 
 ## <a name="create-an-azure-ad-user-security-group-and-application-object"></a>Azure AD 사용자, 보안 그룹 및 응용 프로그램 개체 만들기
 

@@ -195,7 +195,7 @@ Azure App Service 또는 활성화된 관리 ID를 사용하는 Azure VM에서 �
 
 - 명시적 서비스 주체를 사용 하 여 인증 하 고 키 자격 증명 모음에서 서비스 주체 자격 증명을 안전 하 게 유지 하려는 로컬 인증. 개발자 계정에는 키 자격 증명 모음에 대 한 액세스 권한이 있어야 합니다.
 
-- 명시적 자격 증명을 사용 하 고 키 자격 증명 모음에서 서비스 주체 자격 증명을 안전 하 게 유지 하려는 Azure의 인증입니다. 이 옵션은 테 넌 트 간 시나리오에 사용할 수 있습니다. 관리 id는 key vault에 대 한 액세스 권한이 있어야 합니다.
+- 명시적 자격 증명을 사용 하 고 키 자격 증명 모음에서 서비스 주체 자격 증명을 안전 하 게 유지 하려는 Azure의 인증입니다. 이 옵션은 테넌트 간 시나리오에 사용할 수 있습니다. 관리 id는 key vault에 대 한 액세스 권한이 있어야 합니다.
 
 관리 id 또는 개발자 id에는 Key Vault에서 클라이언트 인증서를 검색할 수 있는 권한이 있어야 합니다. AppAuthentication 라이브러리는 검색 된 인증서를 서비스 주체의 클라이언트 자격 증명으로 사용 합니다.
 
@@ -263,9 +263,9 @@ Azure App Service 또는 활성화된 관리 ID를 사용하는 Azure VM에서 �
 
 AzureServiceTokenProvider는 기본 설치 위치에서 Azure CLI를 찾습니다. Azure CLI를 찾을 수 없는 경우 환경 변수 **Azureclipath** 를 Azure CLI 설치 폴더로 설정 합니다. AzureServiceTokenProvider는 Path 환경 변수에 환경 변수를 추가 합니다.
 
-#### <a name="youre-logged-into-azure-cli-using-multiple-accounts-the-same-account-has-access-to-subscriptions-in-multiple-tenants-or-you-get-an-access-denied-error-when-trying-to-make-calls-during-local-development"></a>여러 계정을 사용 하 여 Azure CLI에 로그인 했거나, 동일한 계정에서 여러 테 넌 트의 구독에 액세스할 수 있거나, 로컬 개발 중에 호출 하려고 할 때 액세스 거부 오류가 발생 합니다.
+#### <a name="youre-logged-into-azure-cli-using-multiple-accounts-the-same-account-has-access-to-subscriptions-in-multiple-tenants-or-you-get-an-access-denied-error-when-trying-to-make-calls-during-local-development"></a>여러 계정을 사용 하 여 Azure CLI에 로그인 했거나, 동일한 계정에서 여러 테넌트의 구독에 액세스할 수 있거나, 로컬 개발 중에 호출 하려고 할 때 액세스 거부 오류가 발생 합니다.
 
-Azure CLI를 사용 하 여 기본 구독을 사용 하려는 계정을 포함 하는 구독으로 설정 합니다. 구독은 액세스 하려는 리소스와 같은 테 넌 트에 있어야 합니다. **az account set--subscription [subscription-id]** . 출력이 표시 되지 않으면 성공 합니다. 이제 **az account list**를 사용 하 여 올바른 계정이 기본 계정 인지 확인 합니다.
+Azure CLI를 사용 하 여 기본 구독을 사용 하려는 계정을 포함 하는 구독으로 설정 합니다. 구독은 액세스 하려는 리소스와 같은 테넌트에 있어야 합니다. **az account set--subscription [subscription-id]** . 출력이 표시 되지 않으면 성공 합니다. 이제 **az account list**를 사용 하 여 올바른 계정이 기본 계정 인지 확인 합니다.
 
 ### <a name="common-issues-across-environments"></a>환경 간의 일반적인 문제
 

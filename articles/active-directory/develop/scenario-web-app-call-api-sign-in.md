@@ -35,7 +35,7 @@ ms.locfileid: "76758873"
 
 ASP.NET Core의 경우 [WebAppServiceCollectionExtensions # L151](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/db7f74fd7e65bab9d21092ac1b98a00803e5ceb2/Microsoft.Identity.Web/WebAppServiceCollectionExtensions.cs#L151-L157)의 `AddMsal()` 메서드에 가로채기 메커니즘이 설명 되어 있습니다.
 
-이전에 응용 프로그램에 등록 한 로그 아웃 URL을 사용 하 여 single sign-on을 구현할 수 있습니다. Microsoft id 플랫폼 `logout` 끝점은 로그 아웃 URL을 호출 합니다. 이 호출은 웹 앱 또는 다른 웹 앱 또는 브라우저에서 로그 아웃을 시작한 경우에 발생 합니다. 자세한 내용은 [Single sign-on](v2-protocols-oidc.md#single-sign-out)을 참조 하세요.
+이전에 응용 프로그램에 등록 한 로그 아웃 URL을 사용 하 여 single sign-on을 구현할 수 있습니다. Microsoft id 플랫폼 `logout` 엔드포인트은 로그 아웃 URL을 호출 합니다. 이 호출은 웹 앱 또는 다른 웹 앱 또는 브라우저에서 로그 아웃을 시작한 경우에 발생 합니다. 자세한 내용은 [Single sign-on](v2-protocols-oidc.md#single-sign-out)을 참조 하세요.
 
 ```csharp
 public static class WebAppServiceCollectionExtensions

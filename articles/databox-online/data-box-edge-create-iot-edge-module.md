@@ -180,7 +180,7 @@ Azure Container Registry는 프라이빗 Docker 컨테이너 이미지를 저장
     }
     ```
 
-6. **PipeMessage 메서드에** 대 한 코드를 제거 하 고, **FileCopy**에 대 한 코드를 삽입 합니다.
+6. **PipeMessage 메서드에** 대한 코드를 제거 하 고, **FileCopy**에 대한 코드를 삽입 합니다.
 
     ```
         /// <summary>
@@ -238,7 +238,7 @@ Azure Container Registry는 프라이빗 Docker 컨테이너 이미지를 저장
     ```
 
 7. 이 파일을 저장합니다.
-8. 이 프로젝트에 대 한 [기존 코드 샘플을 다운로드할](https://azure.microsoft.com/resources/samples/data-box-edge-csharp-modules/?cdn=disable) 수도 있습니다. 그런 다음이 샘플의 **program.cs** 파일에 대해 저장 한 파일의 유효성을 검사할 수 있습니다.
+8. 이 프로젝트에 대한 [기존 코드 샘플을 다운로드할](https://azure.microsoft.com/resources/samples/data-box-edge-csharp-modules/?cdn=disable) 수도 있습니다. 그런 다음이 샘플의 **program.cs** 파일에 대해 저장 한 파일의 유효성을 검사할 수 있습니다.
 
 ## <a name="build-your-iot-edge-solution"></a>IoT Edge 솔루션 빌드
 

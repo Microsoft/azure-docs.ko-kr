@@ -51,11 +51,11 @@ var helloWorldStoredProc = {
 
 ### <a id="create-an-item"></a>저장 프로시저를 사용하여 항목 만들기
 
-저장 프로시저를 사용 하 여 항목을 만들 때 항목이 Azure Cosmos 컨테이너에 삽입 되 고 새로 만든 항목에 대 한 ID가 반환 됩니다. 항목 만들기는 비동기 작업이고 JavaScript 콜백 함수에 따라 달라집니다. 콜백 함수에는 작업이 실패할 경우의 오류 개체 및 반환 값(이 경우에는 생성된 개체)에 각각 사용되는 두 개의 매개 변수가 있습니다. 콜백 내에서 예외를 처리하거나 오류를 throw할 수 있습니다. 콜백이 제공되지 않았고 오류가 있는 경우, Azure Cosmos DB 런타임에서 오류를 throw합니다. 
+저장 프로시저를 사용 하 여 항목을 만들 때 항목이 Azure Cosmos 컨테이너에 삽입 되 고 새로 만든 항목에 대한 ID가 반환 됩니다. 항목 만들기는 비동기 작업이고 JavaScript 콜백 함수에 따라 달라집니다. 콜백 함수에는 작업이 실패할 경우의 오류 개체 및 반환 값(이 경우에는 생성된 개체)에 각각 사용되는 두 개의 매개 변수가 있습니다. 콜백 내에서 예외를 처리하거나 오류를 throw할 수 있습니다. 콜백이 제공되지 않았고 오류가 있는 경우, Azure Cosmos DB 런타임에서 오류를 throw합니다. 
 
 또한 저장 프로시저에는 설명을 설정하는 매개 변수가 포함되며 부울 값입니다. 매개 변수가 true로 설정되고 설명이 누락된 경우 저장 프로시저는 예외를 throw합니다. 그렇지 않으면 저장 프로시저의 나머지가 계속 실행됩니다.
 
-다음 예의 저장 프로시저는 새 Azure Cosmos 항목을 입력으로 사용 하 고, Azure Cosmos 컨테이너에 삽입 하 고, 새로 만든 항목에 대 한 ID를 반환 합니다. 이 예제에서는 [.NET SQL API 빠른 시작](create-sql-api-dotnet.md)의 ToDoList 샘플을 활용하겠습니다.
+다음 예의 저장 프로시저는 새 Azure Cosmos 항목을 입력으로 사용 하 고, Azure Cosmos 컨테이너에 삽입 하 고, 새로 만든 항목에 대한 ID를 반환 합니다. 이 예제에서는 [.NET SQL API 빠른 시작](create-sql-api-dotnet.md)의 ToDoList 샘플을 활용하겠습니다.
 
 ```javascript
 function createToDoItem(itemToCreate) {

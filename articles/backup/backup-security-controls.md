@@ -10,7 +10,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/19/2019
 ms.locfileid: "74172135"
 ---
-# <a name="security-controls-for-azure-backup"></a>Azure Backup에 대 한 보안 제어
+# <a name="security-controls-for-azure-backup"></a>Azure Backup에 대한 보안 제어
 
 이 문서에서는 Azure Backup에 기본 제공 되는 보안 컨트롤을 설명 합니다.
 

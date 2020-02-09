@@ -18,4 +18,4 @@ ms.locfileid: "75893979"
 
 대부분의 리소스 공급자는 자동으로 등록 되지만 모두는 그렇지 않습니다. 이 메시지가 표시 되 면 언급 된 공급자를 등록 해야 합니다.
 
-리소스 공급자를 등록 하는 방법에 대 한 자세한 내용은 [리소스 공급자 등록에 대 한 오류 해결](../articles/azure-resource-manager/templates/error-register-resource-provider.md)을 참조 하세요.
+리소스 공급자를 등록 하는 방법에 대한 자세한 내용은 [리소스 공급자 등록에 대한 오류 해결](../articles/azure-resource-manager/templates/error-register-resource-provider.md)을 참조 하세요.

@@ -37,7 +37,7 @@ Azure SQL Database 관리 되는 인스턴스에는 온-프레미스 SQL Server 
 - [Azure Data Factory](https://docs.microsoft.com/azure/data-factory/introduction)
 - [Azure-SSIS Integration Runtime](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime)
 - [Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview)
-- [DMS를 사용 하 여 Azure SQL Database 관리 되는 인스턴스 마이그레이션에 대 한 네트워크 토폴로지](https://docs.microsoft.com/azure/dms/resource-network-topologies)
+- [DMS를 사용 하 여 Azure SQL Database 관리 되는 인스턴스 마이그레이션에 대한 네트워크 토폴로지](https://docs.microsoft.com/azure/dms/resource-network-topologies)
 - [SSIS 패키지를 Azure SQL Database 관리 되는 인스턴스로 마이그레이션](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages-managed-instance)
 
 ## <a name="next-steps"></a>다음 단계

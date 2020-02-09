@@ -32,7 +32,7 @@ Azure AD DS(Azure Active Directory Domain Services)는 Windows Server Active Dir
     * [AzAccount][Connect-AzAccount] cmdlet을 사용 하 여 Azure 구독에 로그인 했는지 확인 합니다.
 * Azure AD PowerShell을 설치 하 고 구성 합니다.
     * 필요한 경우 지침에 따라 [AZURE Ad PowerShell 모듈을 설치 하 고 AZURE ad에 연결](/powershell/azure/active-directory/install-adv2)합니다.
-    * [AzureAD][Connect-AzureAD] cmdlet을 사용 하 여 Azure AD 테 넌 트에 로그인 했는지 확인 합니다.
+    * [AzureAD][Connect-AzureAD] cmdlet을 사용 하 여 Azure AD 테넌트에 로그인 했는지 확인 합니다.
 * Azure AD DS를 사용하도록 설정하려면 Azure AD 테넌트에 *글로벌 관리자* 권한이 필요합니다.
 * 필요한 Azure AD DS 리소스를 만들려면 Azure 구독에 *기여자* 권한이 필요합니다.
 
@@ -56,7 +56,7 @@ Azure AD DS 인스턴스를 만드는 경우 DNS 이름을 지정해야 합니�
 다음 DNS 이름 제한도 적용됩니다.
 
 * **도메인 접두사 제한:** 15 자 보다 긴 접두사를 사용 하 여 관리 되는 도메인을 만들 수 없습니다. 지정한 도메인 이름의 접두사(예: *contoso.com* 도메인 이름의 *contoso*)는 15자 이하의 문자여야 합니다.
-* **네트워크 이름 충돌:** 관리 되는 도메인에 대 한 DNS 도메인 이름이 이미 가상 네트워크에 존재 해서는 안 됩니다. 특히 이름 충돌이 발생할 수 있는 다음 시나리오를 확인하세요.
+* **네트워크 이름 충돌:** 관리 되는 도메인에 대한 DNS 도메인 이름이 이미 가상 네트워크에 존재 해서는 안 됩니다. 특히 이름 충돌이 발생할 수 있는 다음 시나리오를 확인하세요.
     * Azure 가상 네트워크에 동일한 DNS 도메인 이름의 Active Directory 도메인이 이미 있는 경우
     * 관리되는 도메인을 사용하도록 설정하려는 가상 네트워크에 온-프레미스 네트워크와의 VPN 연결이 있는 경우. 이 시나리오에서는 온-프레미스 네트워크에 동일한 DNS 도메인 이름을 가진 도메인이 없는지 확인합니다.
     * Azure 가상 네트워크에 해당 이름의 기존 Azure 클라우드 서비스가 있는 경우
@@ -71,7 +71,7 @@ Azure AD DS에는 서비스 주체와 Azure AD 그룹이 필요 합니다. 이�
 Register-AzResourceProvider -ProviderNamespace Microsoft.AAD
 ```
 
-Azure AD DS에 대 한 [get-azureadserviceprincipal][New-AzureADServicePrincipal] cmdlet을 사용 하 여 azure AD 서비스 주체를 만들어 자신을 통신 하 고 인증 합니다. 특정 응용 프로그램 ID는 ID가 *2565bd9d-da50-47d4-8b85-4c97f669dc36*인 명명 된 *도메인 컨트롤러 서비스* 에 사용 됩니다. 이 응용 프로그램 ID를 변경 하지 마세요.
+Azure AD DS에 대한 [get-azureadserviceprincipal][New-AzureADServicePrincipal] cmdlet을 사용 하 여 azure AD 서비스 주체를 만들어 자신을 통신 하 고 인증 합니다. 특정 응용 프로그램 ID는 ID가 *2565bd9d-da50-47d4-8b85-4c97f669dc36*인 명명 된 *도메인 컨트롤러 서비스* 에 사용 됩니다. 이 응용 프로그램 ID를 변경 하지 마세요.
 
 ```powershell
 New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
@@ -115,17 +115,17 @@ New-AzResourceGroup `
 
 가용성 영역을 지원하는 지역을 선택하면 Azure AD DS 리소스가 추가 중복성을 위해 여러 영역에 배포됩니다. 가용성 영역은 Azure 지역 내의 고유한 물리적 위치입니다. 각 영역은 독립된 전원, 냉각 및 네트워킹을 갖춘 하나 이상의 데이터 센터로 구성됩니다. 복원력을 보장하려면 활성화된 모든 지역에서 최소한 세 개의 별도 영역이 필요합니다.
 
-Azure AD DS를 영역 간에 배포하기 위해 구성해야 할 항목은 없습니다. Azure 플랫폼은 리소스의 영역 배포를 자동으로 처리합니다. 자세한 내용 및 지역 가용성에 대 한 자세한 내용은 [Azure의 가용성 영역 무엇 인가요?][availability-zones]를 참조 하세요.
+Azure AD DS를 영역 간에 배포하기 위해 구성해야 할 항목은 없습니다. Azure 플랫폼은 리소스의 영역 배포를 자동으로 처리합니다. 자세한 내용 및 지역 가용성에 대한 자세한 내용은 [Azure의 가용성 영역 무엇 인가요?][availability-zones]를 참조 하세요.
 
-## <a name="resource-definition-for-azure-ad-ds"></a>Azure AD DS에 대 한 리소스 정의
+## <a name="resource-definition-for-azure-ad-ds"></a>Azure AD DS에 대한 리소스 정의
 
 리소스 관리자 리소스 정의의 일부로 다음 구성 매개 변수가 필요 합니다.
 
 | 매개 변수               | 값 |
 |-------------------------|---------|
-| domainName              | 명명 된 접두사 및 충돌에 대 한 이전 점을 고려 하 여 관리 되는 도메인의 DNS 도메인 이름입니다. |
+| domainName              | 명명 된 접두사 및 충돌에 대한 이전 점을 고려 하 여 관리 되는 도메인의 DNS 도메인 이름입니다. |
 | filteredSync            | Azure AD DS를 사용하면 Azure AD에서 사용할 수 있는 사용자와 그룹을 *모두* 동기화하거나 특정 그룹으로만 *범위가 지정된* 동기화를 수행할 수 있습니다. 모든 사용자 및 그룹을 동기화 하도록 선택 하는 경우 나중에 범위 지정 동기화만 수행 하도록 선택할 수 있습니다.<br /> 범위가 지정된 동기화에 대한 자세한 내용은 [Azure AD Domain Services 범위가 지정된 동기화][scoped-sync]를 참조하세요.|
-| notificationSettings    | Azure AD DS 관리 되는 도메인에서 경고가 생성 되 면 전자 메일 알림을 보낼 수 있습니다. <br />Azure 테 넌 트의 *전역 관리자* 와 *AAD DC administrators* 그룹의 구성원은 이러한 알림에 대해 *사용 하도록 설정할* 수 있습니다.<br /> 필요한 경우 주의가 필요한 경고가 있는 경우 알림을 받을 받는 사람을 더 추가할 수 있습니다.|
+| notificationSettings    | Azure AD DS 관리 되는 도메인에서 경고가 생성 되 면 전자 메일 알림을 보낼 수 있습니다. <br />Azure 테넌트의 *전역 관리자* 와 *AAD DC administrators* 그룹의 구성원은 이러한 알림에 대해 *사용 하도록 설정할* 수 있습니다.<br /> 필요한 경우 주의가 필요한 경고가 있는 경우 알림을 받을 받는 사람을 더 추가할 수 있습니다.|
 | domainConfigurationType | 기본적으로 Azure AD DS 관리형 도메인은 *사용자* 포리스트로 생성됩니다. 이 유형의 포리스트는 온-프레미스 AD DS 환경에서 만든 모든 사용자 계정을 포함하여 Azure AD의 모든 개체를 동기화합니다. 사용자 포리스트를 만들기 위해 *Domainconfiguration* 값을 지정할 필요가 없습니다.<br /> *리소스* 포리스트는 Azure AD에서 직접 만든 사용자와 그룹만 동기화합니다. 리소스 포리스트는 현재 미리 보기로 제공됩니다. 리소스 포리스트를 만들려면이 값을 *ResourceTrusting* 로 설정 합니다.<br />온-프레미스 AD DS 도메인을 사용하여 포리스트 트러스트를 만드는 방법 및 사용하는 이유를 비롯하여 *리소스* 포리스트에 대한 자세한 내용은 [Azure AD DS 리소스 포리스트 개요][resource-forests]를 참조하세요.|
 
 다음 압축 매개 변수 정의는 이러한 값을 선언 하는 방법을 보여 줍니다. Azure AD의 모든 사용자가 Azure AD DS 관리 되는 도메인에 동기화 되는 *aadds.contoso.com* 라는 사용자 포리스트가 생성 됩니다.
@@ -325,7 +325,7 @@ Azure AD DS를 영역 간에 배포하기 위해 구성해야 할 항목은 없�
 New-AzResourceGroupDeployment -ResourceGroupName "myResourceGroup" -TemplateFile <path-to-template>
 ```
 
-리소스를 만들고 PowerShell 프롬프트로 제어를 반환 하는 데 몇 분 정도 걸립니다. Azure AD DS 관리 되는 도메인은 백그라운드에서 계속 프로 비전 되 고 배포를 완료 하는 데 최대 한 시간이 걸릴 수 있습니다. Azure Portal에서 Azure AD DS 관리 되는 도메인의 **개요** 페이지에는이 배포 단계 전체에서 현재 상태가 표시 됩니다.
+리소스를 만들고 PowerShell 프롬프트로 제어를 반환 하는 데 몇 분 정도 걸립니다. Azure AD DS 관리 되는 도메인은 백그라운드에서 계속 프로 비전 되 고 배포를 완료 하는 데 최대한 시간이 걸릴 수 있습니다. Azure Portal에서 Azure AD DS 관리 되는 도메인의 **개요** 페이지에는이 배포 단계 전체에서 현재 상태가 표시 됩니다.
 
 Azure Portal Azure AD DS 관리 되는 도메인이 프로 비전을 완료 한 것으로 표시 되는 경우 다음 작업을 완료 해야 합니다.
 

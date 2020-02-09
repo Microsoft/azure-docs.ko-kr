@@ -1,7 +1,7 @@
 ---
-title: 사용자 지정 정책에 대 한 JSON 클레임 변환 예제
+title: 사용자 지정 정책에 대한 JSON 클레임 변환 예제
 titleSuffix: Azure AD B2C
-description: Azure Active Directory B2C의 IEF (Identity Experience Framework) 스키마에 대 한 JSON 클레임 변환 예입니다.
+description: Azure Active Directory B2C의 IEF (Identity Experience Framework) 스키마에 대한 JSON 클레임 변환 예입니다.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg

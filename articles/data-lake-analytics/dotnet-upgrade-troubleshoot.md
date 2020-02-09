@@ -20,21 +20,21 @@ ms.locfileid: "74873236"
 
 Azure Data Lake Analytics 기본 런타임은 .NET Framework v 4.5.2에서 .NET Framework v 4.7.2로 업그레이드 하는 중입니다. 이러한 변경으로 인해 U-SQL 코드에서 사용자 지정 어셈블리를 사용 하 고 해당 사용자 지정 어셈블리가 .NET 라이브러리를 사용 하는 경우 주요 변경 사항이 발생할 위험이 있습니다.
 
-.NET Framework 4.5.2에서 version 4.7.2로 업그레이드 하는 경우, 이제는 U SQL 런타임 (기본 런타임)에 배포 된 .NET Framework 항상 4.7.2 됩니다. .NET Framework 버전에 대 한 side-by-side 옵션이 없습니다.
+.NET Framework 4.5.2에서 version 4.7.2로 업그레이드 하는 경우, 이제는 U SQL 런타임 (기본 런타임)에 배포 된 .NET Framework 항상 4.7.2 됩니다. .NET Framework 버전에 대한 side-by-side 옵션이 없습니다.
 
-이 .NET 4.7.2 업그레이드를 완료 한 후에는 시스템의 관리 코드가 버전 4.7.2으로 실행 되 고, 사용자 지정 어셈블리와 같은 사용자 제공 라이브러리는 어셈블리가 생성 된 버전에 적합 한 이전 버전과 호환 되는 모드에서 실행 됩니다. 에 대 한.
+이 .NET 4.7.2 업그레이드를 완료 한 후에는 시스템의 관리 코드가 버전 4.7.2으로 실행 되 고, 사용자 지정 어셈블리와 같은 사용자 제공 라이브러리는 어셈블리가 생성 된 버전에 적합 한 이전 버전과 호환 되는 모드에서 실행 됩니다. 에 대한.
 
-- 4\.5.2 버전에 대 한 어셈블리 Dll이 생성 된 경우 배포 된 프레임 워크는이를 4.5.2 라이브러리로 처리 하 고 (몇 가지 예외 포함) 4.5.2 의미 체계를 제공 합니다.
+- 4\.5.2 버전에 대한 어셈블리 Dll이 생성 된 경우 배포 된 프레임 워크는이를 4.5.2 라이브러리로 처리 하 고 (몇 가지 예외 포함) 4.5.2 의미 체계를 제공 합니다.
 - 이제 .NET Framework 4.7.2를 대상으로 하는 경우 버전 4.7.2 기능을 활용 하는 U-SQL 사용자 지정 어셈블리를 사용할 수 있습니다.
 
-.NET 4.7.2로 업그레이드 하기 때문에 .NET 사용자 지정 어셈블리를 사용 하는 U-SQL 작업에 대 한 주요 변경 내용이 발생할 수 있습니다. 아래 절차를 사용 하 여 이전 버전과의 호환성 문제를 확인 하는 것이 좋습니다.
+.NET 4.7.2로 업그레이드 하기 때문에 .NET 사용자 지정 어셈블리를 사용 하는 U-SQL 작업에 대한 주요 변경 내용이 발생할 수 있습니다. 아래 절차를 사용 하 여 이전 버전과의 호환성 문제를 확인 하는 것이 좋습니다.
 
 ## <a name="how-to-check-for-backwards-compatibility-issues"></a>이전 버전과의 호환성 문제를 확인 하는 방법
 
-U-SQL 사용자 지정 어셈블리에서 .NET 코드에 대 한 .NET 호환성 검사를 실행 하 여 이전 버전과의 호환성 문제가 발생할 수 있는지 확인 합니다.
+U-SQL 사용자 지정 어셈블리에서 .NET 코드에 대한 .NET 호환성 검사를 실행 하 여 이전 버전과의 호환성 문제가 발생할 수 있는지 확인 합니다.
 
 > [!Note]
-> 이 도구는 실제 주요 변경 내용을 검색 하지 않습니다. 특정 입력에 대해 (특정 입력의 경우) 문제를 일으킬 수 있는 .NET Api를 식별 합니다. 문제에 대 한 알림이 표시 되는 경우에도 코드에 문제가 없을 수 있습니다. 자세한 내용은을 참조 하세요.
+> 이 도구는 실제 주요 변경 내용을 검색 하지 않습니다. 특정 입력에 대해 (특정 입력의 경우) 문제를 일으킬 수 있는 .NET Api를 식별 합니다. 문제에 대한 알림이 표시 되는 경우에도 코드에 문제가 없을 수 있습니다. 자세한 내용은을 참조 하세요.
 
 1. 다음 방법으로 .NET Dll에서 이전 버전과의 호환성 검사를 실행 합니다.
    1. [.Net 이식성 분석기 Visual Studio 확장](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer) 에서 Visual studio 확장 사용
@@ -57,7 +57,7 @@ U-SQL 사용자 지정 어셈블리에서 .NET 코드에 대 한 .NET 호환성 
 
 ### <a name="what-are-the-most-common-backwards-compatibility-issues-you-may-encounter"></a>발생할 수 있는 가장 일반적인 이전 버전과의 호환성 문제
 
-검사기가 식별할 가능성이 가장 높은 가장 일반적인 비 호환성 (이 목록을 생성 했습니다)은 영향을 받는 라이브러리입니다. (참고: 라이브러리를 간접적 으로만 호출할 수 있습니다. 따라서 #1 필요한 작업을 수행 하 여 작업이 영향을 받는지 여부를 확인 하는 것이 중요 하며, 가능한 작업을 해결 하는 것이 중요 합니다. 참고: 거의 모든 경우에 자신의 작업에 대 한 대부분의 주요 변경 내용으로 인해 경고가 가양성으로 natures.
+검사기가 식별할 가능성이 가장 높은 가장 일반적인 비 호환성 (이 목록을 생성 했습니다)은 영향을 받는 라이브러리입니다. (참고: 라이브러리를 간접적 으로만 호출할 수 있습니다. 따라서 #1 필요한 작업을 수행 하 여 작업이 영향을 받는지 여부를 확인 하는 것이 중요 하며, 가능한 작업을 해결 하는 것이 중요 합니다. 참고: 거의 모든 경우에 자신의 작업에 대한 대부분의 주요 변경 내용으로 인해 경고가 가양성으로 natures.
 
 - 결과 작업을 완료하려면 IAsyncResult.CompletedSynchronously 속성이 정확해야 함
   - TaskFactory.FromAsync를 호출할 때 IAsyncResult.CompletedSynchronously 속성이 올바르게 구현되어야 결과 작업을 완료할 수 있습니다. 즉, 이 속성은 구현이 동기적으로 완료된 경우에만 true를 반환해야 합니다. 이전에 속성을 선택하지 않았습니다.
@@ -95,7 +95,7 @@ U-SQL 사용자 지정 어셈블리에서 .NET 코드에 대 한 .NET 호환성 
   - 제안 된 작업:
 
 - ClaimsIdentity 생성자 호출
-  - .NET Framework 4.6.2부터는 `T:System.Security.Principal.IIdentity` 매개 변수로 `T:System.Security.Claims.ClaimsIdentity` 생성자가 `P:System.Security.Claims.ClaimsIdentify.Actor` 속성을 설정하는 방법이 변경되었습니다. `T:System.Security.Principal.IIdentity` 인수가 `T:System.Security.Claims.ClaimsIdentity` 개체이고 해당 `T:System.Security.Claims.ClaimsIdentity` 개체의 `P:System.Security.Claims.ClaimsIdentify.Actor` 속성이 `null`이 아닌 경우 `M:System.Security.Claims.ClaimsIdentity.Clone` 메서드를 사용하여 `P:System.Security.Claims.ClaimsIdentify.Actor` 속성이 연결됩니다. 프레임 워크 4.6.1 이전 버전에서는 `P:System.Security.Claims.ClaimsIdentify.Actor` 속성이 기존 참조로 연결 됩니다. 이러한 변경으로 인해 .NET Framework 4.6.2부터 새 `T:System.Security.Claims.ClaimsIdentity` 개체의 `P:System.Security.Claims.ClaimsIdentify.Actor` 속성은 생성자의 `T:System.Security.Principal.IIdentity` 인수에 대 한 `P:System.Security.Claims.ClaimsIdentify.Actor` 속성과 같지 않습니다. .NET Framework 4.6.1 이전 버전에서는 이 속성이 같습니다.
+  - .NET Framework 4.6.2부터는 `T:System.Security.Principal.IIdentity` 매개 변수로 `T:System.Security.Claims.ClaimsIdentity` 생성자가 `P:System.Security.Claims.ClaimsIdentify.Actor` 속성을 설정하는 방법이 변경되었습니다. `T:System.Security.Principal.IIdentity` 인수가 `T:System.Security.Claims.ClaimsIdentity` 개체이고 해당 `T:System.Security.Claims.ClaimsIdentity` 개체의 `P:System.Security.Claims.ClaimsIdentify.Actor` 속성이 `null`이 아닌 경우 `M:System.Security.Claims.ClaimsIdentity.Clone` 메서드를 사용하여 `P:System.Security.Claims.ClaimsIdentify.Actor` 속성이 연결됩니다. 프레임 워크 4.6.1 이전 버전에서는 `P:System.Security.Claims.ClaimsIdentify.Actor` 속성이 기존 참조로 연결 됩니다. 이러한 변경으로 인해 .NET Framework 4.6.2부터 새 `T:System.Security.Claims.ClaimsIdentity` 개체의 `P:System.Security.Claims.ClaimsIdentify.Actor` 속성은 생성자의 `T:System.Security.Principal.IIdentity` 인수에 대한 `P:System.Security.Claims.ClaimsIdentify.Actor` 속성과 같지 않습니다. .NET Framework 4.6.1 이전 버전에서는 이 속성이 같습니다.
   - 영향을 받는 라이브러리: mscorlib
   - 제안 된 작업: 새 런타임에서 ClaimsIdentity이 예상 대로 작동 하는지 확인 합니다.
 

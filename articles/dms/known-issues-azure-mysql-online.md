@@ -1,7 +1,7 @@
 ---
-title: '알려진 문제: Azure Database for MySQL에 대 한 온라인 마이그레이션'
+title: '알려진 문제: Azure Database for MySQL에 대한 온라인 마이그레이션'
 titleSuffix: Azure Database Migration Service
-description: Azure Database Migration Service 사용 시 Azure Database for MySQL에 대 한 온라인 마이그레이션과의 알려진 문제 및 마이그레이션 제한 사항에 대해 알아봅니다.
+description: Azure Database Migration Service 사용 시 Azure Database for MySQL에 대한 온라인 마이그레이션과의 알려진 문제 및 마이그레이션 제한 사항에 대해 알아봅니다.
 services: database-migration
 author: HJToland3
 ms.author: jtoland
@@ -21,7 +21,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75437852"
 ---
-# <a name="online-migration-issues--limitations-to-azure-db-for-mysql-with-azure-database-migration-service"></a>Azure Database Migration Service에서 MySQL 용 Azure DB에 대 한 제한 사항을 & 온라인 마이그레이션 문제
+# <a name="online-migration-issues--limitations-to-azure-db-for-mysql-with-azure-database-migration-service"></a>Azure Database Migration Service에서 MySQL 용 Azure DB에 대한 제한 사항을 & 온라인 마이그레이션 문제
 
 MySQL에서 Azure Database for MySQL로의 온라인 마이그레이션과 관련된 알려진 문제 및 제한 사항은 다음 섹션에 설명되어 있습니다.
 

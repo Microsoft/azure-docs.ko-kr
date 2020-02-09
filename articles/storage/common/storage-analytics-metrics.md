@@ -60,7 +60,7 @@ ms.locfileid: "72514784"
 |분 메트릭, 보조 위치|-$MetricsMinuteSecondaryTransactionsBlob<br />-$MetricsMinuteSecondaryTransactionsTable<br />-$MetricsMinuteSecondaryTransactionsQueue|모든 버전입니다. 읽기 권한의 지역 중복 복제를 사용하도록 설정해야 합니다.|  
 |용량(Blob service만 해당)|$MetricsCapacityBlob|모든 버전입니다.|  
 
- 이러한 테이블은 저장소 서비스 끝점에 대해 스토리지 분석를 사용 하도록 설정할 때 자동으로 생성 됩니다. 저장소 계정의 네임 스페이스를 통해 액세스할 수 있습니다 (예: `https://<accountname>.table.core.windows.net/Tables("$MetricsTransactionsBlob")`). 메트릭 테이블은 목록 작업에 표시 되지 않으며 테이블 이름을 통해 직접 액세스 해야 합니다.  
+ 이러한 테이블은 저장소 서비스 엔드포인트에 대해 스토리지 분석를 사용 하도록 설정할 때 자동으로 생성 됩니다. 저장소 계정의 네임 스페이스를 통해 액세스할 수 있습니다 (예: `https://<accountname>.table.core.windows.net/Tables("$MetricsTransactionsBlob")`). 메트릭 테이블은 목록 작업에 표시 되지 않으며 테이블 이름을 통해 직접 액세스 해야 합니다.  
 
 ## <a name="enable-metrics-using-the-azure-portal"></a>Azure Portal를 사용 하 여 메트릭 사용
 [Azure Portal](https://portal.azure.com)에서 메트릭을 사용하도록 설정하려면 다음 단계를 따릅니다.

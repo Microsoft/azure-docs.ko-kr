@@ -21,7 +21,7 @@ ms.locfileid: "75862478"
 
 시작하려면 공간 그래프의 루트에서 Azure IoT Hub 리소스를 만듭니다. IoT Hub 리소스는 루트 공간 아래의 모든 디바이스가 메시지를 보낼 수 있도록 허용합니다. IoT Hub가 만들어지면 Azure Digital Twins 내의 센서에 디바이스를 등록합니다. 디바이스는 [Azure IoT 디바이스 SDK](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks)를 통해 Digital Twins 서비스로 데이터를 보낼 수 있습니다.
 
-장치를 등록 하는 방법에 대 한 단계별 가이드는 [디지털 쌍 배포 및 구성 자습서](tutorial-facilities-setup.md)를 참조 하세요. 간략히 보면 단계는 다음과 같습니다.
+장치를 등록 하는 방법에 대한 단계별 가이드는 [디지털 쌍 배포 및 구성 자습서](tutorial-facilities-setup.md)를 참조 하세요. 간략히 보면 단계는 다음과 같습니다.
 
 - [Azure Portal](https://portal.azure.com)에서 Digital Twins 인스턴스를 배포합니다.
 - 그래프에 공간을 만듭니다.

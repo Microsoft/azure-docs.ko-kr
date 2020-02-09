@@ -61,4 +61,4 @@ Data Factory에서 데이터 흐름은 스케일 아웃 Spark 환경에서 실�
 ## <a name="next-steps"></a>다음 단계
 
 * [조인](data-flow-join.md) 및 [존재](data-flow-exists.md) 변환은 ADF 매핑 데이터 흐름에서 유사한 작업을 수행 합니다. 다음으로 이러한 변환을 살펴보세요.
-* ```isMatch()```와 [조건부 분할](data-flow-conditional-split.md) 을 사용 하 여 일치 하는 값 및 일치 하지 않는 값에 대 한 행 분할
+* ```isMatch()```와 [조건부 분할](data-flow-conditional-split.md) 을 사용 하 여 일치 하는 값 및 일치 하지 않는 값에 대한 행 분할

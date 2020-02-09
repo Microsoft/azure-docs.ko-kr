@@ -1,6 +1,6 @@
 ---
-title: 컨테이너 그룹에 대 한 YAML 참조
-description: 컨테이너 그룹을 구성 하는 Azure Container Instances에서 지원 되는 YAML 파일에 대 한 참조
+title: 컨테이너 그룹에 대한 YAML 참조
+description: 컨테이너 그룹을 구성 하는 Azure Container Instances에서 지원 되는 YAML 파일에 대한 참조
 ms.topic: article
 ms.date: 08/12/2019
 ms.openlocfilehash: 8497330a327201c4c64e9f7ae57e6fc4225b52de
@@ -12,16 +12,16 @@ ms.locfileid: "74896565"
 ---
 # <a name="yaml-reference-azure-container-instances"></a>YAML 참조: Azure Container Instances
 
-이 문서에서는 [컨테이너 그룹](container-instances-container-groups.md)을 구성 하는 Azure Container Instances에서 지원 되는 yaml 파일에 대 한 구문 및 속성을 설명 합니다. YAML 파일을 사용 하 여 그룹 구성을 Azure CLI의 [az container create][az-container-create] 명령에 입력 합니다. 
+이 문서에서는 [컨테이너 그룹](container-instances-container-groups.md)을 구성 하는 Azure Container Instances에서 지원 되는 yaml 파일에 대한 구문 및 속성을 설명 합니다. YAML 파일을 사용 하 여 그룹 구성을 Azure CLI의 [az container create][az-container-create] 명령에 입력 합니다. 
 
-YAML 파일은 재현 가능한 배포를 위해 컨테이너 그룹을 구성 하는 편리한 방법입니다. [리소스 관리자 템플릿](/azure/templates/Microsoft.ContainerInstance/2018-10-01/containerGroups) 또는 Azure Container Instances sdk를 사용 하 여 컨테이너 그룹을 만들거나 업데이트 하는 방법에 대 한 간단한 대안입니다.
+YAML 파일은 재현 가능한 배포를 위해 컨테이너 그룹을 구성 하는 편리한 방법입니다. [리소스 관리자 템플릿](/azure/templates/Microsoft.ContainerInstance/2018-10-01/containerGroups) 또는 Azure Container Instances sdk를 사용 하 여 컨테이너 그룹을 만들거나 업데이트 하는 방법에 대한 간단한 대안입니다.
 
 > [!NOTE]
-> 이 참조는 Azure Container Instances REST API 버전 `2018-10-01`에 대 한 YAML 파일에 적용 됩니다.
+> 이 참조는 Azure Container Instances REST API 버전 `2018-10-01`에 대한 YAML 파일에 적용 됩니다.
 
 ## <a name="schema"></a>스키마 
 
-YAML 파일에 대 한 스키마는 키 속성을 강조 표시 하는 주석을 포함 하 여 다음을 수행 합니다. 이 스키마의 속성에 대 한 설명은 [속성 값](#property-values) 섹션을 참조 하십시오.
+YAML 파일에 대한 스키마는 키 속성을 강조 표시 하는 주석을 포함 하 여 다음을 수행 합니다. 이 스키마의 속성에 대한 설명은 [속성 값](#property-values) 섹션을 참조 하십시오.
 
 ```yml
 name: string  # Name of the container group
@@ -165,13 +165,13 @@ properties: # Properties of container group
 |  ---- | ---- | ---- | ---- |
 |  containers | array | yes | 컨테이너 그룹 내의 컨테이너입니다.[컨테이너 개체](#Container)  -  |
 |  imageRegistryCredentials | array | 아닙니다. | 컨테이너 그룹을 만들 때 기준이 되는 이미지 레지스트리 자격 증명입니다. - [ImageRegistryCredential 개체](#ImageRegistryCredential) |
-|  restartPolicy | enum | 아닙니다. | 컨테이너 그룹 내의 모든 컨테이너에 대 한 다시 시작 정책입니다. - `Always` 항상 다시 시작-오류 발생 시 다시 시작 `OnFailure` `Never` 다시 시작 안 함 -Always, OnFailure, Never |
+|  restartPolicy | enum | 아닙니다. | 컨테이너 그룹 내의 모든 컨테이너에 대한 다시 시작 정책입니다. - `Always` 항상 다시 시작-오류 발생 시 다시 시작 `OnFailure` `Never` 다시 시작 안 함 -Always, OnFailure, Never |
 |  \\ | object | 아닙니다. | 컨테이너 그룹의 IP 주소 유형입니다. - [IpAddress 개체](#IpAddress) |
 |  osType | enum | yes | 컨테이너 그룹의 컨테이너에 필요한 운영 체제 유형입니다. -Windows 또는 Linux |
 |  volumes | array | 아닙니다. | 이 컨테이너 그룹의 컨테이너로 탑재할 수 있는 볼륨의 목록입니다.[볼륨 개체](#Volume)  -  |
-|  진단 | object | 아닙니다. | 컨테이너 그룹에 대 한 진단 정보입니다. - [ContainerGroupDiagnostics 개체](#ContainerGroupDiagnostics) |
-|  NetworkProfile | object | 아닙니다. | 컨테이너 그룹에 대 한 네트워크 프로필 정보입니다. - [ContainerGroupNetworkProfile 개체](#ContainerGroupNetworkProfile) |
-|  dnsConfig | object | 아닙니다. | 컨테이너 그룹에 대 한 DNS 구성 정보입니다. - [Dnsconfiguration 개체](#DnsConfiguration) |
+|  진단 | object | 아닙니다. | 컨테이너 그룹에 대한 진단 정보입니다. - [ContainerGroupDiagnostics 개체](#ContainerGroupDiagnostics) |
+|  NetworkProfile | object | 아닙니다. | 컨테이너 그룹에 대한 네트워크 프로필 정보입니다. - [ContainerGroupNetworkProfile 개체](#ContainerGroupNetworkProfile) |
+|  dnsConfig | object | 아닙니다. | 컨테이너 그룹에 대한 DNS 구성 정보입니다. - [Dnsconfiguration 개체](#DnsConfiguration) |
 
 
 <a id="Container" />
@@ -192,7 +192,7 @@ properties: # Properties of container group
 |  ---- | ---- | ---- | ---- |
 |  서버 | 문자열 | yes | 프로토콜이 없는 Docker 이미지 레지스트리 서버 (예: "http" 및 "https") |
 |  username | 문자열 | yes | 개인 레지스트리의 사용자 이름입니다. |
-|  암호 | 문자열 | 아닙니다. | 개인 레지스트리에 대 한 암호입니다. |
+|  암호 | 문자열 | 아닙니다. | 개인 레지스트리에 대한 암호입니다. |
 
 
 <a id="IpAddress" />
@@ -244,9 +244,9 @@ properties: # Properties of container group
 
 |  name | Type | 필수 | Value |
 |  ---- | ---- | ---- | ---- |
-|  이름 서버 | array | yes | 컨테이너 그룹에 대 한 DNS 서버입니다. -문자열 |
-|  searchDomains | 문자열 | 아닙니다. | 컨테이너 그룹에서 호스트 이름 조회에 대 한 DNS 검색 도메인입니다. |
-|  options | 문자열 | 아닙니다. | 컨테이너 그룹에 대 한 DNS 옵션입니다. |
+|  이름 서버 | array | yes | 컨테이너 그룹에 대한 DNS 서버입니다. -문자열 |
+|  searchDomains | 문자열 | 아닙니다. | 컨테이너 그룹에서 호스트 이름 조회에 대한 DNS 검색 도메인입니다. |
+|  options | 문자열 | 아닙니다. | 컨테이너 그룹에 대한 DNS 옵션입니다. |
 
 
 <a id="ContainerProperties" />
@@ -295,7 +295,7 @@ properties: # Properties of container group
 |  ---- | ---- | ---- | ---- |
 |  디렉터리 | 문자열 | 아닙니다. | 대상 디렉터리 이름입니다. '.. '를 포함 하거나 시작 해서는 안 됩니다.  '. '가 제공 되 면 볼륨 디렉터리는 git 리포지토리가 됩니다.  그렇지 않으면 지정 된 경우 볼륨은 지정 된 이름의 하위 디렉터리에 git 리포지토리를 포함 합니다. |
 |  리포지토리 | 문자열 | yes | 리포지토리 URL |
-|  revision | 문자열 | 아닙니다. | 지정 된 수정 버전에 대 한 해시를 커밋합니다. |
+|  revision | 문자열 | 아닙니다. | 지정 된 수정 버전에 대한 해시를 커밋합니다. |
 
 
 <a id="LogAnalytics" />
@@ -304,10 +304,10 @@ properties: # Properties of container group
 
 |  name | Type | 필수 | Value |
 |  ---- | ---- | ---- | ---- |
-|  workspaceId | 문자열 | yes | Log analytics에 대 한 작업 영역 id |
-|  workspaceKey | 문자열 | yes | Log analytics에 대 한 작업 영역 키 |
+|  workspaceId | 문자열 | yes | Log analytics에 대한 작업 영역 id |
+|  workspaceKey | 문자열 | yes | Log analytics에 대한 작업 영역 키 |
 |  logType | enum | 아닙니다. | 사용할 로그 유형입니다. -ContainerInsights 또는 ContainerInstanceLogs |
-|  metadata | object | 아닙니다. | Log analytics에 대 한 메타 데이터입니다. |
+|  metadata | object | 아닙니다. | Log analytics에 대한 메타 데이터입니다. |
 
 
 <a id="ContainerPort" />
@@ -358,8 +358,8 @@ properties: # Properties of container group
 
 |  name | Type | 필수 | Value |
 |  ---- | ---- | ---- | ---- |
-|  exec | object | 아닙니다. | [ContainerExec 개체](#ContainerExec) 에 대 한 실행 명령 |
-|  httpGet | object | 아닙니다. | [ContainerHttpGet 개체](#ContainerHttpGet) 에 대 한 Http 설정 가져오기 |
+|  exec | object | 아닙니다. | [ContainerExec 개체](#ContainerExec) 에 대한 실행 명령 |
+|  httpGet | object | 아닙니다. | [ContainerHttpGet 개체](#ContainerHttpGet) 에 대한 Http 설정 가져오기 |
 |  initialDelaySeconds | 정수 | 아닙니다. | 초기 지연 시간 (초)입니다. |
 |  periodSeconds | 정수 | 아닙니다. | 기간 (초)입니다. |
 |  카운터가 failurethreshold | 정수 | 아닙니다. | 오류 임계값입니다. |

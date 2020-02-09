@@ -58,7 +58,7 @@ https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/images/search
 Custom Search 인스턴스 구성에 대한 자세한 내용은 [사용자 지정 검색 환경 구성](https://docs.microsoft.com/azure/cognitive-services/bing-custom-search/define-your-custom-view)을 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계
-**Bing** API는 해당 유형에 따라 결과를 반환하는 검색 작업을 지원합니다. 모든 검색 끝점은 결과를 JSON 응답 개체로 반환 합니다.  모든 끝점은 경도, 위도 및 검색 반지름을 기준으로 특정 언어 및/또는 위치를 반환 하는 쿼리를 지원 합니다.
+**Bing** API는 해당 유형에 따라 결과를 반환하는 검색 작업을 지원합니다. 모든 검색 엔드포인트은 결과를 JSON 응답 개체로 반환 합니다.  모든 엔드포인트은 경도, 위도 및 검색 반지름을 기준으로 특정 언어 및/또는 위치를 반환 하는 쿼리를 지원 합니다.
 
 각 엔드포인트에서 지원하는 매개 변수에 대한 자세한 내용은 각 유형에 대한 참조 페이지를 참조하세요.
 Custom Search API를 사용하는 기본 요청의 예는 [Custom Search 빠른 시작](https://docs.microsoft.com/azure/cognitive-services/bing-custom-search/)을 참조하세요.

@@ -28,7 +28,7 @@ Azure API Management는 Azure 역할 기반 액세스 제어(RBAC)를 사용하�
 
 ## <a name="built-in-roles"></a>기본 제공 역할
 
-API Management는 현재 3가지 기본 제공 역할을 제공하며 곧 2가지 역할을 추가할 예정입니다. 이러한 역할은 구독, 리소스 그룹 및 개별 API Management 인스턴스를 포함하여 서로 다른 범위에서 할당될 수 있습니다. 예를 들어 리소스 그룹 수준에서 사용자에 게 "API Management 서비스 읽기 권한자" 역할을 할당 하는 경우 사용자는 리소스 그룹 내의 모든 API Management 인스턴스에 대 한 읽기 액세스 권한을 갖습니다. 
+API Management는 현재 3가지 기본 제공 역할을 제공하며 곧 2가지 역할을 추가할 예정입니다. 이러한 역할은 구독, 리소스 그룹 및 개별 API Management 인스턴스를 포함하여 서로 다른 범위에서 할당될 수 있습니다. 예를 들어 리소스 그룹 수준에서 사용자에 게 "API Management 서비스 읽기 권한자" 역할을 할당 하는 경우 사용자는 리소스 그룹 내의 모든 API Management 인스턴스에 대한 읽기 액세스 권한을 갖습니다. 
 
 다음 테이블은 기본 제공 역할을 간략하게 설명합니다. Azure Portal 또는 Azure [PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell), [Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli) 및 [REST API](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-rest)를 비롯한 다른 도구를 사용하여 이러한 역할을 할당할 수 있습니다. 기본 제공 역할을 할당하는 방법에 대한 자세한 내용은 [역할 할당을 사용하여 Azure 구독 리소스에 대한 액세스 관리](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)를 참조하세요.
 

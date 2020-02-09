@@ -48,7 +48,7 @@ Azure AD(Azure Active Directory)의 보고 아키텍처는 다음 구성 요소�
 
 ### <a name="what-azure-ad-license-do-you-need-to-access-provisioning-activities"></a>프로 비전 작업에 액세스 하는 데 필요한 Azure AD 라이선스는 무엇 인가요?
 
-모든 프로 비전 활동 보고서를 보려면 테 넌 트에 연결 된 Azure AD Premium 라이선스가 있어야 합니다. [Azure Active Directory Premium 시작하기](../fundamentals/active-directory-get-started-premium.md)를 참조하여 Azure Active Directory 버전을 업그레이드하세요. 
+모든 프로 비전 활동 보고서를 보려면 테넌트에 연결 된 Azure AD Premium 라이선스가 있어야 합니다. [Azure Active Directory Premium 시작하기](../fundamentals/active-directory-get-started-premium.md)를 참조하여 Azure Active Directory 버전을 업그레이드하세요. 
 
 ## <a name="provisioning-logs"></a>프로비저닝 로그
 
@@ -90,7 +90,7 @@ Azure AD(Azure Active Directory)의 보고 아키텍처는 다음 구성 요소�
 
 ## <a name="filter-provisioning-activities"></a>프로 비전 작업 필터링
 
-보고 된 데이터를 자신에 게 적합 한 수준으로 좁히려면 다음 기본 필드를 사용 하 여 프로 비전 데이터를 필터링 할 수 있습니다. 필터의 값은 테 넌 트에 따라 동적으로 채워집니다. 예를 들어 테 넌 트에 생성 이벤트가 없는 경우 create에 대 한 필터 옵션이 없습니다.
+보고 된 데이터를 자신에 게 적합 한 수준으로 좁히려면 다음 기본 필드를 사용 하 여 프로 비전 데이터를 필터링 할 수 있습니다. 필터의 값은 테넌트에 따라 동적으로 채워집니다. 예를 들어 테넌트에 생성 이벤트가 없는 경우 create에 대 한 필터 옵션이 없습니다.
 
 - ID
 - 액션(Action)
@@ -218,7 +218,7 @@ Azure AD(Azure Active Directory)의 보고 아키텍처는 다음 구성 요소�
 |InsufficientRights, MethodNotAllowed, NotPermitted, 권한 없음| Azure AD가 대상 응용 프로그램을 사용 하 여 인증할 수 있었지만 업데이트를 수행할 수 있는 권한이 없습니다. 대상 응용 프로그램 및 해당 응용 프로그램 [자습서](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list)에서 제공 하는 지침을 검토 하세요.|
 |UnprocessableEntity|대상 응용 프로그램에서 예기치 않은 응답을 반환 했습니다. 대상 응용 프로그램의 구성이 올바르지 않거나, 대상 응용 프로그램에 서비스 문제가 있어이 작업을 수행할 수 없습니다.|
 |WebExceptionProtocolError |대상 응용 프로그램에 연결 하는 동안 HTTP 프로토콜 오류가 발생 했습니다. 수행할 작업이 없습니다. 이 시도는 자동으로 40 분 후에 사용 중지 됩니다.|
-|InvalidAnchor|프로 비전 서비스에서 이전에 만들었거나 일치 한 사용자가 더 이상 존재 하지 않습니다. 사용자가 존재 하는지 확인 합니다. 모든 사용자의 다시 일치를 강제로 수행 하려면 MS Graph API를 사용 하 여 [작업을 다시 시작](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta&tabs=http)합니다. 프로 비전을 다시 시작 하면 초기 주기가 트리거되고이를 완료 하는 데 시간이 걸릴 수 있습니다. 또한 프로 비전 서비스에서 작동 하는 데 사용 하는 캐시를 삭제 합니다. 즉, 테 넌 트의 모든 사용자와 그룹을 다시 평가 하 고 특정 프로 비전 이벤트를 삭제할 수 있습니다.|
+|InvalidAnchor|프로 비전 서비스에서 이전에 만들었거나 일치 한 사용자가 더 이상 존재 하지 않습니다. 사용자가 존재 하는지 확인 합니다. 모든 사용자의 다시 일치를 강제로 수행 하려면 MS Graph API를 사용 하 여 [작업을 다시 시작](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta&tabs=http)합니다. 프로 비전을 다시 시작 하면 초기 주기가 트리거되고이를 완료 하는 데 시간이 걸릴 수 있습니다. 또한 프로 비전 서비스에서 작동 하는 데 사용 하는 캐시를 삭제 합니다. 즉, 테넌트의 모든 사용자와 그룹을 다시 평가 하 고 특정 프로 비전 이벤트를 삭제할 수 있습니다.|
 |NotImplemented | 대상 앱에서 예기치 않은 응답을 반환 했습니다. 앱의 구성이 올바르지 않거나, 대상 앱에 서비스 문제가 있어이 작업을 수행할 수 없습니다. 대상 응용 프로그램 및 해당 응용 프로그램 [자습서](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list)에서 제공 하는 지침을 검토 하세요. |
 |MandatoryFieldsMissing, MissingValues |필요한 값이 없으므로 사용자를 만들 수 없습니다. 원본 레코드에서 누락 된 특성 값을 수정 하거나 일치 하는 특성 구성을 검토 하 여 필수 필드가 생략 되지 않도록 하십시오. 일치 하는 특성 구성에 [대해 자세히 알아보세요](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes) .|
 |SchemaAttributeNotFound |대상 응용 프로그램에 존재 하지 않는 특성이 지정 되었으므로 작업을 수행할 수 없습니다. 특성 사용자 지정에 대 한 [설명서](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes) 를 참조 하 여 구성이 올바른지 확인 합니다.|

@@ -16,7 +16,7 @@ ms.locfileid: "74812734"
 ---
 # <a name="deploy-azure-data-explorer-into-your-virtual-network-preview"></a>Virtual Network (미리 보기)에 Azure 데이터 탐색기 배포
 
-이 문서에서는 Azure 데이터 탐색기 클러스터를 사용자 지정 Azure Virtual Network에 배포할 때 표시 되는 리소스에 대해 설명 합니다. 이 정보는 클러스터를 Virtual Network (VNet)의 서브넷에 배포 하는 데 도움이 됩니다. Azure Virtual Network에 대 한 자세한 내용은 [azure Virtual Network 란?](/azure/virtual-network/virtual-networks-overview) 을 참조 하세요.
+이 문서에서는 Azure 데이터 탐색기 클러스터를 사용자 지정 Azure Virtual Network에 배포할 때 표시 되는 리소스에 대해 설명 합니다. 이 정보는 클러스터를 Virtual Network (VNet)의 서브넷에 배포 하는 데 도움이 됩니다. Azure Virtual Network에 대한 자세한 내용은 [azure Virtual Network 란?](/azure/virtual-network/virtual-networks-overview) 을 참조 하세요.
 
    ![vnet 다이어그램](media/vnet-deployment/vnet-diagram.png)
 
@@ -31,7 +31,7 @@ Azure 데이터 탐색기는 VNet (Virtual Network)의 서브넷에 클러스터
 
 ## <a name="access-your-azure-data-explorer-cluster-in-your-vnet"></a>VNet에서 Azure 데이터 탐색기 클러스터에 액세스
 
-각 서비스에 대 한 다음 IP 주소 (엔진 및 데이터 관리 서비스)를 사용 하 여 Azure 데이터 탐색기 클러스터에 액세스할 수 있습니다.
+각 서비스에 대한 다음 IP 주소 (엔진 및 데이터 관리 서비스)를 사용 하 여 Azure 데이터 탐색기 클러스터에 액세스할 수 있습니다.
 
 * **개인 IP**: VNet 내의 클러스터에 액세스 하는 데 사용 됩니다.
 * **공용 IP**: 관리 및 모니터링을 위해 VNet 외부에서 클러스터에 액세스 하는 데 사용 되며, 클러스터에서 시작 된 아웃 바운드 연결의 원본 주소로 사용 됩니다.
@@ -40,7 +40,7 @@ Azure 데이터 탐색기는 VNet (Virtual Network)의 서브넷에 클러스터
 
 * `[clustername].[geo-region].kusto.windows.net` (엔진) `ingest-[clustername].[geo-region].kusto.windows.net` (데이터 관리)는 각 서비스의 공용 IP에 매핑됩니다. 
 
-* `private-[clustername].[geo-region].kusto.windows.net` (엔진) `private-ingest-[clustername].[geo-region].kusto.windows.net` (데이터 관리)는 각 서비스에 대 한 개인 IP에 매핑됩니다.
+* `private-[clustername].[geo-region].kusto.windows.net` (엔진) `private-ingest-[clustername].[geo-region].kusto.windows.net` (데이터 관리)는 각 서비스에 대한 개인 IP에 매핑됩니다.
 
 ## <a name="plan-subnet-size-in-your-vnet"></a>VNet에서 서브넷 크기를 계획 합니다.
 
@@ -59,19 +59,19 @@ Azure 데이터 탐색기 클러스터를 호스트 하는 데 사용 되는 서
 > [!IMPORTANT]
 > Azure 데이터 탐색기 배포 된 후에는 서브넷 크기를 변경할 수 없으므로 미리 계획 해야 합니다. 따라서 필요에 따라 서브넷 크기를 예약 합니다.
 
-## <a name="service-endpoints-for-connecting-to-azure-data-explorer"></a>Azure 데이터 탐색기에 연결 하기 위한 서비스 끝점
+## <a name="service-endpoints-for-connecting-to-azure-data-explorer"></a>Azure 데이터 탐색기에 연결 하기 위한 서비스 엔드포인트
 
-[Azure 서비스 끝점](/azure/virtual-network/virtual-network-service-endpoints-overview) 을 사용 하면 azure 다중 테 넌 트 리소스를 가상 네트워크로 보호할 수 있습니다.
-Azure 데이터 탐색기 클러스터를 서브넷에 배포 하면 Azure 데이터 탐색기 서브넷에 대 한 기본 리소스를 제한 하는 동시에 [이벤트 허브](/azure/event-hubs/event-hubs-about) 또는 [Event Grid](/azure/event-grid/overview) 를 사용 하 여 데이터 연결을 설정할 수 있습니다.
+[Azure 서비스 엔드포인트](/azure/virtual-network/virtual-network-service-endpoints-overview) 을 사용 하면 azure 다중 테넌트 리소스를 가상 네트워크로 보호할 수 있습니다.
+Azure 데이터 탐색기 클러스터를 서브넷에 배포 하면 Azure 데이터 탐색기 서브넷에 대한 기본 리소스를 제한 하는 동시에 [이벤트 허브](/azure/event-hubs/event-hubs-about) 또는 [Event Grid](/azure/event-grid/overview) 를 사용 하 여 데이터 연결을 설정할 수 있습니다.
 
 > [!NOTE]
-> [저장소](/azure/storage/common/storage-introduction) 및 [이벤트 허브]와 함께 eventgrid 설치 프로그램을 사용 하는 경우 구독에 사용 되는 저장소 계정은 [방화벽 구성](/azure/storage/common/storage-network-security)에서 신뢰할 수 있는 azure platform 서비스를 허용 하는 동시에 azure 데이터 탐색기의 서브넷에 대 한 서비스 끝점을 사용 하 여 잠글 수 있지만 이벤트 허브는 신뢰할 수 있는 [azure 플랫폼 서비스](/azure/event-hubs/event-hubs-service-endpoints)를 지원 하지 않으므로 서비스 끝점을 사용 하도록 설정할 수
+> [저장소](/azure/storage/common/storage-introduction) 및 [이벤트 허브]와 함께 eventgrid 설치 프로그램을 사용 하는 경우 구독에 사용 되는 저장소 계정은 [방화벽 구성](/azure/storage/common/storage-network-security)에서 신뢰할 수 있는 azure platform 서비스를 허용 하는 동시에 azure 데이터 탐색기의 서브넷에 대한 서비스 엔드포인트을 사용 하 여 잠글 수 있지만 이벤트 허브는 신뢰할 수 있는 [azure 플랫폼 서비스](/azure/event-hubs/event-hubs-service-endpoints)를 지원 하지 않으므로 서비스 엔드포인트을 사용 하도록 설정할 수
 
-## <a name="dependencies-for-vnet-deployment"></a>VNet 배포에 대 한 종속성
+## <a name="dependencies-for-vnet-deployment"></a>VNet 배포에 대한 종속성
 
 ### <a name="network-security-groups-configuration"></a>네트워크 보안 그룹 구성
 
-[NSG (네트워크 보안 그룹)](/azure/virtual-network/security-overview) 는 VNet 내에서 네트워크 액세스를 제어 하는 기능을 제공 합니다. Azure 데이터 탐색기는 HTTPs (443) 및 TDS (1433) 라는 두 개의 끝점을 사용 하 여 액세스할 수 있습니다. 클러스터의 관리, 모니터링 및 적절 한 작업을 수행 하기 위해 이러한 끝점에 대 한 액세스를 허용 하도록 다음 NSG 규칙을 구성 해야 합니다.
+[NSG (네트워크 보안 그룹)](/azure/virtual-network/security-overview) 는 VNet 내에서 네트워크 액세스를 제어 하는 기능을 제공 합니다. Azure 데이터 탐색기는 HTTPs (443) 및 TDS (1433) 라는 두 개의 엔드포인트을 사용 하 여 액세스할 수 있습니다. 클러스터의 관리, 모니터링 및 적절 한 작업을 수행 하기 위해 이러한 엔드포인트에 대한 액세스를 허용 하도록 다음 NSG 규칙을 구성 해야 합니다.
 
 #### <a name="inbound-nsg-configuration"></a>인바운드 NSG 구성
 
@@ -86,11 +86,11 @@ Azure 데이터 탐색기 클러스터를 서브넷에 배포 하면 Azure 데�
 
 | **사용**   | **From**   | **To**   | **프로토콜**   |
 | --- | --- | --- | --- |
-| Azure Storage에 대 한 종속성  | ADX 서브넷  | 저장소: 443  | TCP  |
-| Azure Data Lake에 대 한 종속성  | ADX 서브넷  | AzureDataLake: 443  | TCP  |
+| Azure Storage에 대한 종속성  | ADX 서브넷  | 저장소: 443  | TCP  |
+| Azure Data Lake에 대한 종속성  | ADX 서브넷  | AzureDataLake: 443  | TCP  |
 | EventHub 수집 및 서비스 모니터링  | ADX 서브넷  | EventHub: 443, 5671  | TCP  |
 | 메트릭 게시  | ADX 서브넷  | AzureMonitor: 443 | TCP  |
-| Azure Monitor 구성 다운로드  | ADX 서브넷  | [Azure Monitor 구성 끝점 주소](#azure-monitor-configuration-endpoint-addresses): 443 | TCP  |
+| Azure Monitor 구성 다운로드  | ADX 서브넷  | [Azure Monitor 구성 엔드포인트 주소](#azure-monitor-configuration-endpoint-addresses): 443 | TCP  |
 | Active Directory (해당 하는 경우) | ADX 서브넷 | AzureActiveDirectory: 443 | TCP |
 | 인증 기관 | ADX 서브넷 | 인터넷: 80 | TCP |
 | 내부 통신  | ADX 서브넷  | ADX 서브넷: 모든 포트  | 전체  |
@@ -176,7 +176,7 @@ Azure 데이터 탐색기 클러스터를 서브넷에 배포 하면 Azure 데�
 | 미국 서부 | 23.99.5.162 |
 | 미국 서부 2 | 23.99.5.162 | 
 
-#### <a name="azure-monitor-configuration-endpoint-addresses"></a>Azure Monitor 구성 끝점 주소
+#### <a name="azure-monitor-configuration-endpoint-addresses"></a>Azure Monitor 구성 엔드포인트 주소
 
 | 지역 | 주소 |
 | --- | --- |

@@ -20,14 +20,14 @@ ms.locfileid: "73812302"
 이 문서에서는 고객 참여를 위한 Dynamics 365을 설정 하는 방법을 설명 합니다 (이전에 Dynamics CRM Online). marketplace 제품에서 판매 잠재 고객을 처리 하려면 [여기](https://docs.microsoft.com/dynamics365/customerengagement/on-premises/admin/on-prem-server-based-sharepoint-online) 에서 변경 내용에 대해 자세히 알아보세요. 
 
 >[!Note]
->이러한 지침은 고객 참여 환경용 Microsoft 호스트 된 클라우드 Dynamics 365에 적용 됩니다. Dynamics 온-프레미스 환경에 직접 연결 하는 것은 현재 지원 되지 않으며, 잠재 고객을 받기 위해 [https 끝점](./commercial-marketplace-lead-management-instructions-https.md) 또는 [Azure 테이블](./commercial-marketplace-lead-management-instructions-azure-table.md) 을 구성 하는 등의 기타 옵션을 사용할 수 있습니다.
+>이러한 지침은 고객 참여 환경용 Microsoft 호스트 된 클라우드 Dynamics 365에 적용 됩니다. Dynamics 온-프레미스 환경에 직접 연결 하는 것은 현재 지원 되지 않으며, 잠재 고객을 받기 위해 [https 엔드포인트](./commercial-marketplace-lead-management-instructions-https.md) 또는 [Azure 테이블](./commercial-marketplace-lead-management-instructions-azure-table.md) 을 구성 하는 등의 기타 옵션을 사용할 수 있습니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
 이 문서의 단계를 완료 하려면 다음 사용자 권한이 필요 합니다.
 
 * 솔루션을 설치 하 고 다음 지침을 따르려면 Dynamics 365에 대 한 관리자 여야 합니다.
-* Marketplace 제품에서 잠재 고객을 보내는 데 사용 되는 잠재 고객 서비스에 대 한 새 서비스 계정을 만들려면 테 넌 트 관리자 여야 합니다.
+* Marketplace 제품에서 잠재 고객을 보내는 데 사용 되는 잠재 고객 서비스에 대 한 새 서비스 계정을 만들려면 테넌트 관리자 여야 합니다.
 * Office 365 관리 포털에 대 한 액세스 권한이 있어야 합니다.
 * Azure Portal에 대 한 액세스 권한이 있어야 합니다.
 

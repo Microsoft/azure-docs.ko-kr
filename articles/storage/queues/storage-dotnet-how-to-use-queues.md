@@ -96,7 +96,7 @@ NuGet을 사용 하 여 이러한 패키지를 가져올 수 있습니다. 다�
 
 ### <a name="configure-your-storage-connection-string"></a>스토리지 연결 문자열 구성
 
-.NET 용 Azure Storage 클라이언트 라이브러리는 저장소 연결 문자열을 사용 하 여 저장소 서비스에 액세스 하기 위한 끝점 및 자격 증명을 구성 합니다. 스토리지 연결 문자열을 유지하는 가장 좋은 방법은 구성 파일 안에 있습니다.
+.NET 용 Azure Storage 클라이언트 라이브러리는 저장소 연결 문자열을 사용 하 여 저장소 서비스에 액세스 하기 위한 엔드포인트 및 자격 증명을 구성 합니다. 스토리지 연결 문자열을 유지하는 가장 좋은 방법은 구성 파일 안에 있습니다.
 
 연결 문자열에 대한 자세한 내용은 [Azure Storage에 연결 문자열 구성](../common/storage-configure-connection-string.md)을 참조하세요.
 

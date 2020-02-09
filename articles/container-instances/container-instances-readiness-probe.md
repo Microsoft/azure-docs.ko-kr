@@ -117,7 +117,7 @@ Connecting to 192.0.2.1... connected.
 HTTP request sent, awaiting response... 
 ```
 
-240 초 후 준비 명령이 성공 하 고 컨테이너에 대 한 신호가 준비 됩니다. 이제 `wget` 명령을 실행 하면 성공 합니다.
+240 초 후 준비 명령이 성공 하 고 컨테이너에 대한 신호가 준비 됩니다. 이제 `wget` 명령을 실행 하면 성공 합니다.
 
 ```
 $ wget 192.0.2.1
@@ -140,7 +140,7 @@ index.html.1                       100%[========================================
 
 ## <a name="next-steps"></a>다음 단계
 
-준비 프로브는 종속 컨테이너로 구성 된 다중 컨테이너 그룹과 관련 된 시나리오에서 유용할 수 있습니다. 다중 컨테이너 시나리오에 대 한 자세한 내용은 [Azure Container Instances의 컨테이너 그룹](container-instances-container-groups.md)을 참조 하세요.
+준비 프로브는 종속 컨테이너로 구성 된 다중 컨테이너 그룹과 관련 된 시나리오에서 유용할 수 있습니다. 다중 컨테이너 시나리오에 대한 자세한 내용은 [Azure Container Instances의 컨테이너 그룹](container-instances-container-groups.md)을 참조 하세요.
 
 <!-- IMAGES -->
 [portal-unhealthy]: ./media/container-instances-readiness-probe/readiness-probe-failed.png

@@ -55,7 +55,7 @@ Vm (가상 머신)을 확장 하 여 총 Windows 가상 데스크톱 배포 비�
 
 크기 조정 도구를 설정 하기 전에 다음 항목을 준비 해야 합니다.
 
-- [Windows 가상 데스크톱 테 넌 트 및 호스트 풀](create-host-pools-arm-template.md)
+- [Windows 가상 데스크톱 테넌트 및 호스트 풀](create-host-pools-arm-template.md)
 - Windows 가상 데스크톱 서비스를 사용 하 여 구성 하 고 등록 한 세션 호스트 풀 Vm
 - Azure 구독에 대 한 [참가자 액세스 권한이](../role-based-access-control/role-assignments-portal.md) 있는 사용자
 
@@ -120,7 +120,7 @@ Azure 계정에서 실행 계정을 만들려면 다음을 수행 합니다.
 
 5. Azure에서 실행 계정을 만드는 데 몇 분 정도 기다립니다. 알림 아래에 있는 메뉴에서 만들기 진행률을 추적할 수 있습니다.
 
-6. 프로세스가 완료 되 면 지정 된 Automation 계정에 AzureRunAsConnection 이라는 자산이 생성 됩니다. 연결 자산은 응용 프로그램 ID, 테 넌 트 ID, 구독 ID 및 인증서 지문을 보유 합니다. 나중에 사용할 수 있기 때문에 응용 프로그램 ID를 잊지 마세요.
+6. 프로세스가 완료 되 면 지정 된 Automation 계정에 AzureRunAsConnection 이라는 자산이 생성 됩니다. 연결 자산은 응용 프로그램 ID, 테넌트 ID, 구독 ID 및 인증서 지문을 보유 합니다. 나중에 사용할 수 있기 때문에 응용 프로그램 ID를 잊지 마세요.
 
 ### <a name="create-a-role-assignment-in-windows-virtual-desktop"></a>Windows Virtual Desktop에서 역할 할당 수행하기
 
@@ -134,7 +134,7 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 Get-RdsTenant
 ```
 
-크기를 조정 하려는 호스트 풀이 있는 테 넌 트를 찾았으면 다음 cmdlet에서 [Azure Automation 계정 만들기](#create-an-azure-automation-account) 의 지침을 따르고 이전 cmdlet에서 가져온 테 넌 트 이름을 사용 하 여 역할 할당을 만듭니다.
+크기를 조정 하려는 호스트 풀이 있는 테넌트를 찾았으면 다음 cmdlet에서 [Azure Automation 계정 만들기](#create-an-azure-automation-account) 의 지침을 따르고 이전 cmdlet에서 가져온 테넌트 이름을 사용 하 여 역할 할당을 만듭니다.
 
 ```powershell
 New-RdsRoleAssignment -RoleDefinitionName "RDS Contributor" -ApplicationId <applicationid> -TenantName <tenantname>

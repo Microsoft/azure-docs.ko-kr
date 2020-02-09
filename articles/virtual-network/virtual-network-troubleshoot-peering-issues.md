@@ -54,9 +54,9 @@ ms.locfileid: "73796247"
 
 자세한 내용은 전역 피어 링의 [요구 사항 및 제약 조건](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview#requirements-and-constraints) 을 참조 하세요.
 
-### <a name="the-virtual-networks-are-in-different-subscriptions-or-active-directory-tenants"></a>가상 네트워크가 서로 다른 구독 또는 Active Directory 테 넌 트에 있습니다.
+### <a name="the-virtual-networks-are-in-different-subscriptions-or-active-directory-tenants"></a>가상 네트워크가 서로 다른 구독 또는 Active Directory 테넌트에 있습니다.
 
-다른 구독 또는 Active Directory 테 넌 트의 가상 네트워크에 대 한 가상 네트워크 피어 링을 구성 하려면 [Azure CLI에 대 한 다른 구독에서 피어 링 만들기](https://docs.microsoft.com/azure/virtual-network/create-peering-different-subscriptions#cli)를 참조 하세요.
+다른 구독 또는 Active Directory 테넌트의 가상 네트워크에 대 한 가상 네트워크 피어 링을 구성 하려면 [Azure CLI에 대 한 다른 구독에서 피어 링 만들기](https://docs.microsoft.com/azure/virtual-network/create-peering-different-subscriptions#cli)를 참조 하세요.
 
 > [!Note]
 > 네트워크 피어 링을 구성 하려면 두 구독 모두에서 **네트워크 참가자** 권한이 있어야 합니다. 자세한 내용은 [피어 링 권한](virtual-network-manage-peering.md#permissions)을 참조 하세요.
@@ -223,7 +223,7 @@ NVA 장치 설정 및 라우팅 문제를 해결 하는 데 도움이 필요한 
 
 ## <a name="troubleshoot-a-virtual-network-peering-configuration-error-message"></a>가상 네트워크 피어 링 구성 오류 메시지 문제 해결 
 
-### <a name="current-tenant-tenant-id-isnt-authorized-to-access-linked-subscription"></a>현재 테 넌 트 `<TENANT ID>` 연결 된 구독에 액세스할 수 있는 권한이 없습니다.
+### <a name="current-tenant-tenant-id-isnt-authorized-to-access-linked-subscription"></a>현재 테넌트 `<TENANT ID>` 연결 된 구독에 액세스할 수 있는 권한이 없습니다.
 
 이 문제를 해결 하려면 [피어 링-Azure CLI 만들기](https://docs.microsoft.com/azure/virtual-network/create-peering-different-subscriptions#cli)를 참조 하세요.
 

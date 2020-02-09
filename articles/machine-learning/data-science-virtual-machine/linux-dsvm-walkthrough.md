@@ -211,9 +211,9 @@ R을 사용 하 여 데이터를 검토 하 고 몇 가지 기본 기계 학습�
 
         spamWebService <- publishWebService(ws, fun = predictSpam, name="spamWebService", inputSchema = smallTrainSet, data.frame=TRUE)
 
-1. 이 함수는 **Predictspam** 함수를 사용 하 여 입력 및 출력을 정의 하는 **spamwebservice** 라는 웹 서비스를 만든 다음 새 끝점에 대 한 정보를 반환 합니다.
+1. 이 함수는 **Predictspam** 함수를 사용 하 여 입력 및 출력을 정의 하는 **spamwebservice** 라는 웹 서비스를 만든 다음 새 엔드포인트에 대 한 정보를 반환 합니다.
 
-    이 명령을 사용 하 여 API 끝점 및 액세스 키를 비롯 한 최신 게시 된 웹 서비스의 세부 정보를 볼 수 있습니다.
+    이 명령을 사용 하 여 API 엔드포인트 및 액세스 키를 비롯 한 최신 게시 된 웹 서비스의 세부 정보를 볼 수 있습니다.
 
         s<-tail(services(ws, name = "spamWebService"), 1)
         ep <- endpoints(ws,s)
@@ -289,7 +289,7 @@ Spambase 데이터 집합 중 일부를 읽고 Scikit에서 지원 벡터 컴퓨
 
     clf.predict(X.ix[0:20, :])
 
-Azure Machine Learning 끝점을 게시 하는 방법을 보여 주기 위해 더 기본적인 모델을 만들어 보겠습니다. 이전에 R 모델을 게시할 때 사용한 세 가지 변수를 사용 합니다.
+Azure Machine Learning 엔드포인트을 게시 하는 방법을 보여 주기 위해 더 기본적인 모델을 만들어 보겠습니다. 이전에 R 모델을 게시할 때 사용한 세 가지 변수를 사용 합니다.
 
     X = data[["char_freq_dollar", "word_freq_remove", "word_freq_hp"]]
     y = data.ix[:, 57]

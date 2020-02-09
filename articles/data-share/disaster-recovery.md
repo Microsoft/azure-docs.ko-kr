@@ -1,6 +1,6 @@
 ---
-title: Azure 데이터 공유에 대 한 재해 복구
-description: Azure 데이터 공유에 대 한 재해 복구
+title: Azure 데이터 공유에 대한 재해 복구
+description: Azure 데이터 공유에 대한 재해 복구
 author: joannapea
 ms.author: joanpo
 ms.service: data-share
@@ -13,11 +13,11 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75483181"
 ---
-# <a name="disaster-recovery-for-azure-data-share"></a>Azure 데이터 공유에 대 한 재해 복구
+# <a name="disaster-recovery-for-azure-data-share"></a>Azure 데이터 공유에 대한 재해 복구
 
-이 문서에서는 Azure 데이터 공유에 대 한 재해 복구 환경을 구성 하는 방법을 안내 합니다. Azure 데이터 센터 중단이 드물게 발생 하지만 몇 분에서 몇 시간까지 지속 될 수 있습니다. 데이터 센터 중단으로 인해 데이터 공급자가 공유 하는 데이터에 의존 하는 환경이 중단 될 수 있습니다. 이 문서에서 설명 하는 단계에 따라 데이터 공급자는 데이터 공유를 호스트 하는 주 지역에 대 한 데이터 센터 가동 중단 시 데이터 소비자와 데이터를 계속 공유할 수 있습니다. 
+이 문서에서는 Azure 데이터 공유에 대한 재해 복구 환경을 구성 하는 방법을 안내 합니다. Azure 데이터 센터 중단이 드물게 발생 하지만 몇 분에서 몇 시간까지 지속 될 수 있습니다. 데이터 센터 중단으로 인해 데이터 공급자가 공유 하는 데이터에 의존 하는 환경이 중단 될 수 있습니다. 이 문서에서 설명 하는 단계에 따라 데이터 공급자는 데이터 공유를 호스트 하는 주 지역에 대한 데이터 센터 가동 중단 시 데이터 소비자와 데이터를 계속 공유할 수 있습니다. 
 
-## <a name="achieving-business-continuity-for-azure-data-share"></a>Azure 데이터 공유에 대 한 비즈니스 연속성 달성
+## <a name="achieving-business-continuity-for-azure-data-share"></a>Azure 데이터 공유에 대한 비즈니스 연속성 달성
 
 데이터 센터 가동 중단을 준비 하기 위해 데이터 공급자는 보조 지역에 프로 비전 된 데이터 공유 환경을 가질 수 있습니다. 데이터 센터가 중단 되는 경우 원활한 장애 조치 (failover)를 수행할 수 있는 측정값이 있습니다. 
 

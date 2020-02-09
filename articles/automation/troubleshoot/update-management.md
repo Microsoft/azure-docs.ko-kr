@@ -122,11 +122,11 @@ The components for the 'Update Management' solution have been enabled, and now t
    3. `Restart-Service HealthService`를 실행하여 `HealthService`를 다시 시작합니다. 그러면 키가 다시 만들어지고 새 UUID가 생성 됩니다.
    4. 이 방법이 작동 하지 않으면 먼저 이미지에서 sysprep을 실행 한 다음 MMA를 설치 합니다.
 
-## <a name="multi-tenant"></a>시나리오: 다른 Azure 테 넌 트의 컴퓨터에 대 한 업데이트 배포를 만들 때 연결 된 구독 오류가 표시 됨
+## <a name="multi-tenant"></a>시나리오: 다른 Azure 테넌트의 컴퓨터에 대 한 업데이트 배포를 만들 때 연결 된 구독 오류가 표시 됨
 
 ### <a name="issue"></a>문제
 
-다른 Azure 테 넌 트의 컴퓨터에 대 한 업데이트 배포를 만들려고 할 때 다음과 같은 오류가 발생 합니다.
+다른 Azure 테넌트의 컴퓨터에 대 한 업데이트 배포를 만들려고 할 때 다음과 같은 오류가 발생 합니다.
 
 ```error
 The client has permission to perform action 'Microsoft.Compute/virtualMachines/write' on scope '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroupName/providers/Microsoft.Automation/automationAccounts/automationAccountName/softwareUpdateConfigurations/updateDeploymentName', however the current tenant '00000000-0000-0000-0000-000000000000' is not authorized to access linked subscription '00000000-0000-0000-0000-000000000000'.
@@ -134,12 +134,12 @@ The client has permission to perform action 'Microsoft.Compute/virtualMachines/w
 
 ### <a name="cause"></a>원인
 
-이 오류는 업데이트 배포에 포함 된 다른 테 넌 트에 Azure Vm이 있는 업데이트 배포를 만들 때 발생 합니다.
+이 오류는 업데이트 배포에 포함 된 다른 테넌트에 Azure Vm이 있는 업데이트 배포를 만들 때 발생 합니다.
 
 ### <a name="resolution"></a>해상도
 
 다음 해결 방법을 사용 하 여 예약 된 항목을 가져옵니다. `-ForUpdate` 스위치와 함께 [AzureRmAutomationSchedule](/powershell/module/azurerm.automation/new-azurermautomationschedule) cmdlet을 사용 하 여 일정을 만들 수 있습니다. 그런 다음 [AzureRmAutomationSoftwareUpdateConfiguration](/powershell/module/azurerm.automation/new-azurermautomationsoftwareupdateconfiguration
-) cmdlet을 사용 하 여 다른 테 넌 트의 컴퓨터를 `-NonAzureComputer` 매개 변수에 전달 합니다. 다음 예제에 이 작업을 수행하는 방법이 나와 있습니다.
+) cmdlet을 사용 하 여 다른 테넌트의 컴퓨터를 `-NonAzureComputer` 매개 변수에 전달 합니다. 다음 예제에 이 작업을 수행하는 방법이 나와 있습니다.
 
 ```azurepowershell-interactive
 $nonAzurecomputers = @("server-01", "server-02")
@@ -313,9 +313,9 @@ Hybrid Runbook Worker 자체 서명 된 인증서를 생성할 수 없습니다.
 
 이 문제는 네트워크 구성 및 방화벽 문제로 인해 발생 하는 경우가 많습니다. 다음을 시도해 보세요.
 
-* Linux의 경우 적절 한 설명서를 확인 하 여 패키지 리포지토리의 네트워크 끝점에 연결할 수 있는지 확인 합니다.
-* Windows의 경우 [인트라넷 끝점에서 다운로드 하지 않음 (WSUS/SCCM)](/windows/deployment/update/windows-update-troubleshooting#updates-arent-downloading-from-the-intranet-endpoint-wsussccm)에 나열 된 대로 에이전트 구성을 확인 합니다.
-  * 컴퓨터가 Windows 업데이트 하도록 구성 된 경우 [HTTP/프록시와 관련 된 문제](/windows/deployment/update/windows-update-troubleshooting#issues-related-to-httpproxy)에 설명 된 끝점에 연결할 수 있는지 확인 합니다.
+* Linux의 경우 적절 한 설명서를 확인 하 여 패키지 리포지토리의 네트워크 엔드포인트에 연결할 수 있는지 확인 합니다.
+* Windows의 경우 [인트라넷 엔드포인트에서 다운로드 하지 않음 (WSUS/SCCM)](/windows/deployment/update/windows-update-troubleshooting#updates-arent-downloading-from-the-intranet-endpoint-wsussccm)에 나열 된 대로 에이전트 구성을 확인 합니다.
+  * 컴퓨터가 Windows 업데이트 하도록 구성 된 경우 [HTTP/프록시와 관련 된 문제](/windows/deployment/update/windows-update-troubleshooting#issues-related-to-httpproxy)에 설명 된 엔드포인트에 연결할 수 있는지 확인 합니다.
   * Windows Server Update Services (WSUS)에 대해 구성 된 컴퓨터의 경우 [WUServer 레지스트리 키](/windows/deployment/update/waas-wu-settings)로 구성 된 wsus 서버에 연결할 수 있는지 확인 합니다.
 
 HRESULT가 표시 되 면 빨간색으로 표시 된 예외를 두 번 클릭 하 여 전체 예외 메시지를 확인 합니다. 다음 표에서 잠재적 솔루션 또는 권장 조치를 검토 합니다.
@@ -376,7 +376,7 @@ HRESULT가 표시 되 면 빨간색으로 표시 된 예외를 두 번 클릭 �
 
 ### <a name="i-know-updates-are-available-but-they-dont-show-as-available-on-my-machines"></a>업데이트를 사용할 수 있지만 내 컴퓨터에서 사용할 수 있는 것으로 표시 되지 않습니다.
 
-* 이는 컴퓨터에서 WSUS 또는 Microsoft 끝점 Configuration Manager 업데이트를 가져오도록 구성 되었지만 WSUS 및 Configuration Manager 업데이트를 승인 하지 않은 경우에 주로 발생 합니다.
+* 이는 컴퓨터에서 WSUS 또는 Microsoft 엔드포인트 Configuration Manager 업데이트를 가져오도록 구성 되었지만 WSUS 및 Configuration Manager 업데이트를 승인 하지 않은 경우에 주로 발생 합니다.
 * [이 문서의 "레지스트리를 편집 하 여 자동 업데이트 구성" 섹션의 레지스트리 키에 대 한 usewuserver가 레지스트리 키를 상호 참조](https://support.microsoft.com/help/328010/how-to-configure-automatic-updates-by-using-group-policy-or-registry-s)하 여 컴퓨터가 WSUS 및 SCCM에 대해 구성 되었는지 여부를 확인할 수 있습니다.
 * 업데이트가 WSUS에서 승인 되지 않으면 설치 되지 않습니다. 다음 쿼리를 실행 하 여 Log Analytics에서 승인 되지 않은 업데이트를 확인할 수 있습니다.
 

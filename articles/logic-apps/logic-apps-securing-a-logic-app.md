@@ -39,7 +39,7 @@ Azure Logic Apps에서 데이터 액세스 및 보호를 제어 하기 위해 �
 
 ### <a name="generate-shared-access-signatures-sas"></a>SAS (공유 액세스 서명) 생성
 
-논리 앱의 모든 요청 끝점에는 끝점의 URL에 [SAS (공유 액세스 서명)](https://docs.microsoft.com/rest/api/storageservices/constructing-a-service-sas) 가 있으며,이는 다음 형식을 따릅니다.
+논리 앱의 모든 요청 엔드포인트에는 엔드포인트의 URL에 [SAS (공유 액세스 서명)](https://docs.microsoft.com/rest/api/storageservices/constructing-a-service-sas) 가 있으며,이는 다음 형식을 따릅니다.
 
 `https://<request-endpoint-URI>sp=<permissions>sv=<SAS-version>sig=<signature>`
 
@@ -74,7 +74,7 @@ SAS를 사용 하 여 액세스를 보호 하는 방법에 대 한 자세한 내
 
 #### <a name="create-expiring-callback-urls"></a>만료 콜백 Url 만들기
 
-다른 당사자와 요청 기반 트리거의 끝점 URL을 공유 하는 경우 특정 키를 사용 하 고 만료 날짜가 있는 콜백 Url을 생성할 수 있습니다. 이렇게 하면 키를 원활 하 게 롤링 하거나 특정 시간 범위에 따라 논리 앱을 트리거하는 액세스를 제한할 수 있습니다. URL의 만료 날짜를 지정 하려면 [Logic Apps REST API](https://docs.microsoft.com/rest/api/logic/workflowtriggers)를 사용 합니다. 예를 들면 다음과 같습니다.
+다른 당사자와 요청 기반 트리거의 엔드포인트 URL을 공유 하는 경우 특정 키를 사용 하 고 만료 날짜가 있는 콜백 Url을 생성할 수 있습니다. 이렇게 하면 키를 원활 하 게 롤링 하거나 특정 시간 범위에 따라 논리 앱을 트리거하는 액세스를 제한할 수 있습니다. URL의 만료 날짜를 지정 하려면 [Logic Apps REST API](https://docs.microsoft.com/rest/api/logic/workflowtriggers)를 사용 합니다. 예를 들면 다음과 같습니다.
 
 ``` http
 POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group-name>/providers/Microsoft.Logic/workflows/<workflow-name>/triggers/<trigger-name>/listCallbackUrl?api-version=2016-06-01
@@ -98,7 +98,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 ### <a name="restrict-inbound-ip-addresses"></a>인바운드 IP 주소 제한
 
-SAS (공유 액세스 서명)와 함께 논리 앱을 호출할 수 있는 클라이언트를 구체적으로 제한할 수 있습니다. 예를 들어 Azure API Management를 사용 하 여 요청 끝점을 관리 하는 경우 API Management 인스턴스의 IP 주소 에서만 요청을 수락 하도록 논리 앱을 제한할 수 있습니다.
+SAS (공유 액세스 서명)와 함께 논리 앱을 호출할 수 있는 클라이언트를 구체적으로 제한할 수 있습니다. 예를 들어 Azure API Management를 사용 하 여 요청 엔드포인트을 관리 하는 경우 API Management 인스턴스의 IP 주소 에서만 요청을 수락 하도록 논리 앱을 제한할 수 있습니다.
 
 #### <a name="restrict-inbound-ip-ranges-in-azure-portal"></a>Azure Portal에서 인바운드 IP 범위 제한
 
@@ -162,7 +162,7 @@ SAS (공유 액세스 서명)와 함께 논리 앱을 호출할 수 있는 클�
 
 ### <a name="add-azure-active-directory-oauth-or-other-security"></a>Azure Active Directory OAuth 또는 기타 보안 추가
 
-논리 앱에 더 많은 권한 부여 프로토콜을 추가 하려면 [Azure API Management](../api-management/api-management-key-concepts.md) 서비스를 사용 하는 것이 좋습니다. 이 서비스를 사용 하면 논리 앱을 API로 노출 하 고 모든 끝점에 대 한 다양 한 모니터링, 보안, 정책 및 설명서를 제공할 수 있습니다. API Management는 논리 앱에 대 한 공용 또는 개인 끝점을 노출할 수 있습니다. 이 끝점에 대 한 액세스 권한을 부여 하려면 [Azure Active Directory OAuth](#azure-active-directory-oauth-authentication), [클라이언트 인증서](#client-certificate-authentication)또는 다른 보안 표준을 사용 하 여 해당 끝점에 대 한 액세스 권한을 부여할 수 있습니다. API Management는 요청을 받으면 논리 앱에 요청을 보내고 필요한 변환 또는 제한을 수행합니다. 논리 앱만 API Management 트리거할 수 있도록 논리 앱의 인바운드 IP 범위 설정을 사용할 수 있습니다.
+논리 앱에 더 많은 권한 부여 프로토콜을 추가 하려면 [Azure API Management](../api-management/api-management-key-concepts.md) 서비스를 사용 하는 것이 좋습니다. 이 서비스를 사용 하면 논리 앱을 API로 노출 하 고 모든 엔드포인트에 대 한 다양 한 모니터링, 보안, 정책 및 설명서를 제공할 수 있습니다. API Management는 논리 앱에 대 한 공용 또는 개인 엔드포인트을 노출할 수 있습니다. 이 엔드포인트에 대 한 액세스 권한을 부여 하려면 [Azure Active Directory OAuth](#azure-active-directory-oauth-authentication), [클라이언트 인증서](#client-certificate-authentication)또는 다른 보안 표준을 사용 하 여 해당 엔드포인트에 대 한 액세스 권한을 부여할 수 있습니다. API Management는 요청을 받으면 논리 앱에 요청을 보내고 필요한 변환 또는 제한을 수행합니다. 논리 앱만 API Management 트리거할 수 있도록 논리 앱의 인바운드 IP 범위 설정을 사용할 수 있습니다.
 
 <a name="secure-operations"></a>
 
@@ -566,7 +566,7 @@ SAS (공유 액세스 서명)와 함께 논리 앱을 호출할 수 있는 클�
 
 ## <a name="access-to-services-and-systems-called-from-logic-apps"></a>논리 앱에서 호출 되는 서비스 및 시스템에 액세스
 
-논리 앱에서 호출 또는 요청을 수신 하는 끝점을 보호할 수 있는 몇 가지 방법은 다음과 같습니다.
+논리 앱에서 호출 또는 요청을 수신 하는 엔드포인트을 보호할 수 있는 몇 가지 방법은 다음과 같습니다.
 
 * 아웃 바운드 요청에 인증을 추가 합니다.
 
@@ -584,7 +584,7 @@ SAS (공유 액세스 서명)와 함께 논리 앱을 호출할 수 있는 클�
 
 * 논리 앱 IP 주소에서 액세스를 제한 합니다.
 
-  논리 앱의 끝점에 대 한 모든 호출은 논리 앱의 영역을 기반으로 하는 지정 된 특정 IP 주소에서 시작 됩니다. 이러한 IP 주소의 요청만 수락하는 필터링을 추가할 수 있습니다. 이러한 IP 주소를 가져오려면 [Azure Logic Apps에 대 한 제한 및 구성](logic-apps-limits-and-config.md#configuration)을 참조 하세요.
+  논리 앱의 엔드포인트에 대 한 모든 호출은 논리 앱의 영역을 기반으로 하는 지정 된 특정 IP 주소에서 시작 됩니다. 이러한 IP 주소의 요청만 수락하는 필터링을 추가할 수 있습니다. 이러한 IP 주소를 가져오려면 [Azure Logic Apps에 대 한 제한 및 구성](logic-apps-limits-and-config.md#configuration)을 참조 하세요.
 
 * 온-프레미스 시스템에 대 한 연결을 보호 합니다.
 
@@ -602,7 +602,7 @@ SAS (공유 액세스 서명)와 함께 논리 앱을 호출할 수 있는 클�
 
 ## <a name="add-authentication-to-outbound-calls"></a>아웃 바운드 호출에 인증 추가
 
-HTTP 및 HTTPS 끝점은 다양 한 종류의 인증을 지원 합니다. 이러한 끝점에 액세스 하는 아웃 바운드 호출 또는 요청을 만드는 데 사용 하는 트리거 또는 작업에 따라 다양 한 인증 유형 범위에서 선택할 수 있습니다. 논리 앱이 처리 하는 중요 한 정보를 보호 하기 위해 필요에 따라 보안 매개 변수를 사용 하 고 데이터를 인코딩합니다. 매개 변수 사용 및 보안에 대 한 자세한 내용은 [매개 변수 입력에 액세스](#secure-action-parameters)를 참조 하세요.
+HTTP 및 HTTPS 엔드포인트은 다양 한 종류의 인증을 지원 합니다. 이러한 엔드포인트에 액세스 하는 아웃 바운드 호출 또는 요청을 만드는 데 사용 하는 트리거 또는 작업에 따라 다양 한 인증 유형 범위에서 선택할 수 있습니다. 논리 앱이 처리 하는 중요 한 정보를 보호 하기 위해 필요에 따라 보안 매개 변수를 사용 하 고 데이터를 인코딩합니다. 매개 변수 사용 및 보안에 대 한 자세한 내용은 [매개 변수 입력에 액세스](#secure-action-parameters)를 참조 하세요.
 
 | 인증 유형 | 지원 요소 |
 |---------------------|--------------|
@@ -773,7 +773,7 @@ Authorization: OAuth realm="Photos",
 
 ### <a name="managed-identity-authentication"></a>관리 ID 인증
 
-[관리 id](../active-directory/managed-identities-azure-resources/overview.md) 옵션을 사용할 수 있는 경우 논리 앱은 로그인 하지 않고 다른 Azure Active Directory (Azure AD) 테 넌 트의 리소스에 대 한 액세스를 인증 하기 위해 시스템에 할당 된 id를 사용할 수 있습니다. 이 ID는 Azure에서 관리되며, 비밀을 제공하거나 순환할 필요가 없기 때문에 자격 증명을 보호하는 데 도움이 됩니다. [AZURE AD 인증에 대 한 관리 되는 id를 지 원하는 azure 서비스](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication)에 대해 자세히 알아보세요.
+[관리 id](../active-directory/managed-identities-azure-resources/overview.md) 옵션을 사용할 수 있는 경우 논리 앱은 로그인 하지 않고 다른 Azure Active Directory (Azure AD) 테넌트의 리소스에 대 한 액세스를 인증 하기 위해 시스템에 할당 된 id를 사용할 수 있습니다. 이 ID는 Azure에서 관리되며, 비밀을 제공하거나 순환할 필요가 없기 때문에 자격 증명을 보호하는 데 도움이 됩니다. [AZURE AD 인증에 대 한 관리 되는 id를 지 원하는 azure 서비스](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication)에 대해 자세히 알아보세요.
 
 1. 논리 앱이 시스템 할당 id를 사용 하기 전에 [Azure Logic Apps에서 관리 되는 id를 사용 하 여 Azure 리소스에 대 한 액세스 인증](../logic-apps/create-managed-service-identity.md)의 단계를 따릅니다. 이러한 단계는 논리 앱에서 관리 id를 사용 하도록 설정 하 고 대상 Azure 리소스에 대 한 id의 액세스를 설정 합니다.
 

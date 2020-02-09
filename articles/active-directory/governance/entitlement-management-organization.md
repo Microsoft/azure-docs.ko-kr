@@ -36,7 +36,7 @@ Azure AD 자격 관리를 통해 조직 외부 사용자와 공동 작업을 수
 - 그래픽 디자인 협회는 Azure AD를 사용 하 고 해당 사용자에 게는 `graphicdesigninstitute.com`로 끝나는 사용자 계정 이름이 있습니다.
 - Contoso는 아직 Azure AD를 사용 하지 않습니다. Contoso 사용자는 `contoso.com`로 끝나는 사용자 계정 이름을 갖습니다.
 
-이 경우 연결 된 두 조직을 구성할 수 있습니다. 그래픽 디자인 협회와 Contoso 용으로 하나의 연결 된 조직을 만들 수 있습니다. 그런 다음 두 개의 연결 된 조직을 정책에 추가 하면 정책과 일치 하는 사용자 보안 주체 이름을 가진 각 조직의 사용자가 액세스 패키지를 요청할 수 있습니다. Graphicdesigninstitute.com 도메인을 포함 하는 사용자 계정 이름을 가진 사용자는 그래픽 디자인 협회 연결 된 조직과 일치 하 고 요청을 제출할 수 있으며, 사용자 계정 이름이 contoso.com 인 사용자는 일치 합니다. Contoso 연결 된 조직에도 패키지를 요청할 수 있습니다. 또한 그래픽 설계 협회에서는 Azure AD를 사용 하기 때문에 graphicdesigninstitute 등의 테 넌 트에 추가 되는 [확인 된 도메인과](../fundamentals/add-custom-domain.md#verify-your-custom-domain-name) 일치 하는 보안 주체 이름을 가진 사용자도 동일한 정책을 사용 하 여 액세스 패키지를 요청할 수 있습니다.
+이 경우 연결 된 두 조직을 구성할 수 있습니다. 그래픽 디자인 협회와 Contoso 용으로 하나의 연결 된 조직을 만들 수 있습니다. 그런 다음 두 개의 연결 된 조직을 정책에 추가 하면 정책과 일치 하는 사용자 보안 주체 이름을 가진 각 조직의 사용자가 액세스 패키지를 요청할 수 있습니다. Graphicdesigninstitute.com 도메인을 포함 하는 사용자 계정 이름을 가진 사용자는 그래픽 디자인 협회 연결 된 조직과 일치 하 고 요청을 제출할 수 있으며, 사용자 계정 이름이 contoso.com 인 사용자는 일치 합니다. Contoso 연결 된 조직에도 패키지를 요청할 수 있습니다. 또한 그래픽 설계 협회에서는 Azure AD를 사용 하기 때문에 graphicdesigninstitute 등의 테넌트에 추가 되는 [확인 된 도메인과](../fundamentals/add-custom-domain.md#verify-your-custom-domain-name) 일치 하는 보안 주체 이름을 가진 사용자도 동일한 정책을 사용 하 여 액세스 패키지를 요청할 수 있습니다.
 
 ![연결 된 조직 예](./media/entitlement-management-organization/connected-organization-example.png)
 

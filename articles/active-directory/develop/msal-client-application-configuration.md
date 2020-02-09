@@ -25,7 +25,7 @@ ms.locfileid: "77085014"
 코드에서 토큰을 인증 하 고 획득 하기 위해 새 공용 또는 비밀 클라이언트 응용 프로그램 (또는 MSAL의 사용자 에이전트)을 초기화 합니다. MSAL (Microsoft Authentication Library)에서 클라이언트 앱을 초기화할 때 다양 한 구성 옵션을 설정할 수 있습니다. 이러한 옵션은 다음 두 그룹으로 분류 됩니다.
 
 - 등록 옵션 (다음 포함)
-    - [인증 기관](#authority) (id 공급자 [인스턴스와](#cloud-instance) 앱에 대 한 로그인 [대상 그룹](#application-audience) 및 테 넌 트 ID로 구성).
+    - [인증 기관](#authority) (id 공급자 [인스턴스와](#cloud-instance) 앱에 대 한 로그인 [대상 그룹](#application-audience) 및 테넌트 ID로 구성).
     - [클라이언트 ID](#client-id)입니다.
     - [리디렉션 URI](#redirect-uri)입니다.
     - [클라이언트 암호](#client-secret) (기밀 클라이언트 응용 프로그램의 경우).
@@ -35,7 +35,7 @@ ms.locfileid: "77085014"
 
 Authority는 MSAL에서 토큰을 요청할 수 있는 디렉터리를 나타내는 URL입니다. 일반적인 기관은 다음과 같습니다.
 
-- https\://login.microsoftonline.com/\<테 넌 트\>/, &lt;여기서 테 넌 트&gt;은이 Azure ad (Azure AD) 테 넌 트의 테 넌 트 ID 또는이 Azure AD 테 넌 트와 연결 된 도메인입니다. 특정 조직의 사용자를 로그인 하는 데만 사용 됩니다.
+- https\://login.microsoftonline.com/\<테넌트\>/, &lt;여기서 테넌트&gt;은이 Azure ad (Azure AD) 테넌트의 테넌트 ID 또는이 Azure AD 테넌트와 연결 된 도메인입니다. 특정 조직의 사용자를 로그인 하는 데만 사용 됩니다.
 - https\://login.microsoftonline.com/common/. 회사 및 학교 계정이 나 개인 Microsoft 계정으로 사용자를 로그인 하는 데 사용 됩니다.
 - https\://login.microsoftonline.com/organizations/. 회사 및 학교 계정으로 사용자를 로그인 하는 데 사용 됩니다.
 - https\://login.microsoftonline.com/consumers/. 개인 Microsoft 계정 (이전의 Windows Live ID 계정)만 사용 하 여 사용자를 로그인 하는 데 사용 됩니다.
@@ -68,22 +68,22 @@ Azure AD 클라우드 기관에는 두 가지 부분이 있습니다.
 ## <a name="application-audience"></a>응용 프로그램 대상
 
 로그인 대상은 앱에 대 한 비즈니스 요구 사항에 따라 달라 집니다.
-- LOB (기간 업무) 개발자 인 경우 조직 에서만 사용 되는 단일 테 넌 트 응용 프로그램을 생성할 것입니다. 이 경우 테 넌 트 ID (Azure AD 인스턴스의 ID) 또는 Azure AD 인스턴스와 연결 된 도메인 이름으로 조직을 지정 해야 합니다.
-- ISV 인 경우 모든 조직 또는 일부 조직 (다중 테 넌 트 앱)에서 회사 및 학교 계정으로 사용자를 로그인 할 수 있습니다. 그러나 사용자에 게 개인 Microsoft 계정으로 로그인 할 수도 있습니다.
+- LOB (기간 업무) 개발자 인 경우 조직 에서만 사용 되는 단일 테넌트 응용 프로그램을 생성할 것입니다. 이 경우 테넌트 ID (Azure AD 인스턴스의 ID) 또는 Azure AD 인스턴스와 연결 된 도메인 이름으로 조직을 지정 해야 합니다.
+- ISV 인 경우 모든 조직 또는 일부 조직 (다중 테넌트 앱)에서 회사 및 학교 계정으로 사용자를 로그인 할 수 있습니다. 그러나 사용자에 게 개인 Microsoft 계정으로 로그인 할 수도 있습니다.
 
 ### <a name="how-to-specify-the-audience-in-your-codeconfiguration"></a>코드/구성에서 대상 그룹을 지정 하는 방법
 
 코드에서 MSAL을 사용 하 여 다음 값 중 하나를 사용 하 여 대상 그룹을 지정 합니다.
 - Azure AD 기관 대상 그룹 열거
-- 테 넌 트 ID는 다음과 같을 수 있습니다.
-  - 단일 테 넌 트 응용 프로그램에 대 한 GUID (Azure AD 인스턴스의 ID)
-  - Azure AD 인스턴스와 연결 된 도메인 이름 (단일 테 넌 트 응용 프로그램에도 해당)
-- 다음 자리 표시자 중 하나는 Azure AD 기관 대상 그룹 열거 대신 테 넌 트 ID입니다.
-    - 다중 테 넌 트 응용 프로그램에 대 한 `organizations`
+- 테넌트 ID는 다음과 같을 수 있습니다.
+  - 단일 테넌트 응용 프로그램에 대 한 GUID (Azure AD 인스턴스의 ID)
+  - Azure AD 인스턴스와 연결 된 도메인 이름 (단일 테넌트 응용 프로그램에도 해당)
+- 다음 자리 표시자 중 하나는 Azure AD 기관 대상 그룹 열거 대신 테넌트 ID입니다.
+    - 다중 테넌트 응용 프로그램에 대 한 `organizations`
     - 개인 계정으로 사용자 로그인 `consumers`
     - 회사 및 학교 계정이 나 개인 Microsoft 계정으로 사용자를 로그인 `common`
 
-Azure AD 기관 대상과 테 넌 트 ID를 모두 지정 하면 MSAL에서 의미 있는 예외를 throw 합니다.
+Azure AD 기관 대상과 테넌트 ID를 모두 지정 하면 MSAL에서 의미 있는 예외를 throw 합니다.
 
 대상 그룹을 지정 하지 않으면 앱은 Azure AD 및 개인 Microsoft 계정을 대상으로 지정 합니다. 즉 `common`가 지정 된 것 처럼 동작 합니다.
 

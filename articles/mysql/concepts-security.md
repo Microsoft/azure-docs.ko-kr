@@ -35,10 +35,10 @@ Azure Database for MySQL 서버에 대 한 연결은 먼저 지역 게이트웨�
 IP 방화벽 규칙은 각 요청의 원래 IP 주소에 따라 서버에 대 한 액세스 권한을 부여 합니다. 자세한 내용은 [방화벽 규칙 개요](concepts-firewall-rules.md) 를 참조 하세요.
 
 ### <a name="virtual-network-firewall-rules"></a>Virtual Network 방화벽 규칙
-가상 네트워크 서비스 끝점은 Azure 백본을 통해 가상 네트워크 연결을 확장 합니다. 가상 네트워크 규칙을 사용 하 여 가상 네트워크에서 선택한 서브넷의 연결을 허용 하도록 Azure Database for MySQL 서버를 설정할 수 있습니다. 자세한 내용은 [가상 네트워크 서비스 끝점 개요](concepts-data-access-and-security-vnet.md)를 참조 하세요.
+가상 네트워크 서비스 엔드포인트은 Azure 백본을 통해 가상 네트워크 연결을 확장 합니다. 가상 네트워크 규칙을 사용 하 여 가상 네트워크에서 선택한 서브넷의 연결을 허용 하도록 Azure Database for MySQL 서버를 설정할 수 있습니다. 자세한 내용은 [가상 네트워크 서비스 엔드포인트 개요](concepts-data-access-and-security-vnet.md)를 참조 하세요.
 
 ### <a name="private-ip"></a>프라이빗 IP
-개인 링크를 사용 하면 개인 끝점을 통해 Azure의 Azure Database for MySQL에 연결할 수 있습니다. Azure 개인 링크는 기본적으로 VNet (개인 Virtual Network) 내에 Azure 서비스를 제공 합니다. PaaS 리소스는 VNet의 다른 리소스와 마찬가지로 개인 IP 주소를 사용 하 여 액세스할 수 있습니다. 자세한 내용은 [개인 링크 개요](concepts-data-access-security-private-link.md) 를 참조 하세요.
+개인 링크를 사용 하면 개인 엔드포인트을 통해 Azure의 Azure Database for MySQL에 연결할 수 있습니다. Azure 개인 링크는 기본적으로 VNet (개인 Virtual Network) 내에 Azure 서비스를 제공 합니다. PaaS 리소스는 VNet의 다른 리소스와 마찬가지로 개인 IP 주소를 사용 하 여 액세스할 수 있습니다. 자세한 내용은 [개인 링크 개요](concepts-data-access-security-private-link.md) 를 참조 하세요.
 
 ## <a name="access-management"></a>액세스 관리
 

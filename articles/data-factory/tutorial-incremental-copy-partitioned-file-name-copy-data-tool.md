@@ -41,7 +41,7 @@ ms.locfileid: "75982622"
 
 ### <a name="create-two-containers-in-blob-storage"></a>Blob 저장소에 두 개의 컨테이너 만들기
 
-이러한 단계를 수행 하 여 자습서에 대 한 Blob 저장소를 준비 합니다.
+이러한 단계를 수행 하 여 자습서에 대한 Blob 저장소를 준비 합니다.
 
 1. **Source**라는 컨테이너를 만듭니다.  컨테이너에서 **2019/02/26/14** 로 폴더 경로를 만듭니다. 빈 텍스트 파일을 만들고 파일 이름을 **file1 .txt**로 합니다. 저장소 계정에서 폴더 경로 **원본/2019/02/26/14** 로 file1을 업로드 합니다.  [Azure Storage Explorer](https://storageexplorer.com/)와 같은 다양한 도구를 사용하여 이러한 작업을 수행할 수 있습니다.
 

@@ -75,7 +75,7 @@ Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.
 | --------- | -------- | ----------- |
 | CodeExpirationInSeconds | 아닙니다. | 코드 만료 까지의 시간 (초)입니다. 최소: `60`; 최대값: `1200`; 기본값: `600`. |
 | CodeLength | 아닙니다. | 코드의 길이입니다. 기본값은 `6`입니다. |
-| CharacterSet | 아닙니다. | 정규식에서 사용 하기 위해 형식이 지정 된 코드에 대 한 문자 집합입니다. `a-z0-9A-Z`)을 입력합니다. 기본값은 `0-9`입니다. 문자 집합은 지정 된 집합에 최소 10 개의 다른 문자를 포함 해야 합니다. |
+| CharacterSet | 아닙니다. | 정규식에서 사용 하기 위해 형식이 지정 된 코드에 대한 문자 집합입니다. `a-z0-9A-Z`)을 입력합니다. 기본값은 `0-9`입니다. 문자 집합은 지정 된 집합에 최소 10 개의 다른 문자를 포함 해야 합니다. |
 | NumRetryAttempts | 아닙니다. | 코드가 잘못 된 것으로 간주 되기 전의 확인 시도 횟수입니다. 기본값은 `5`입니다. |
 | 작업 | 예 | 수행할 작업입니다. 가능한 값은 `GenerateCode`또는 `VerifyCode`입니다. |
 | ReuseSameCode | 아닙니다. | 지정 된 코드가 만료 되지 않고 여전히 유효한 경우 새 코드를 생성 하는 대신 중복 코드를 지정 해야 하는지 여부입니다. 기본값은 `false`입니다. |
@@ -136,7 +136,7 @@ Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.
 
 | attribute | 필수 | Description |
 | --------- | -------- | ----------- |
-| UserMessageIfSessionDoesNotExist | 아닙니다. | 코드 확인 세션이 만료 된 경우 사용자에 게 표시할 메시지입니다. 코드가 만료 되었거나 지정 된 식별자에 대 한 코드가 생성 되지 않았습니다. |
+| UserMessageIfSessionDoesNotExist | 아닙니다. | 코드 확인 세션이 만료 된 경우 사용자에 게 표시할 메시지입니다. 코드가 만료 되었거나 지정 된 식별자에 대한 코드가 생성 되지 않았습니다. |
 | UserMessageIfMaxRetryAttempted | 아닙니다. | 허용 되는 최대 확인 시도 횟수를 초과 하는 경우 사용자에 게 표시할 메시지입니다. |
 | Usermessageifin유효한 코드 | 아닙니다. | 잘못 된 코드를 제공한 경우 사용자에 게 표시할 메시지입니다. |
 

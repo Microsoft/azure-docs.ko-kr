@@ -12,7 +12,7 @@ ms.locfileid: "74533414"
 ---
 # <a name="set-the-command-line-in-a-container-instance-to-override-the-default-command-line-operation"></a>컨테이너 인스턴스에서 명령줄을 설정 하 여 기본 명령줄 작업을 재정의 합니다.
 
-컨테이너 인스턴스를 만들 때 필요에 따라 기본 명령줄 명령 구운를 컨테이너 이미지로 재정의 하는 명령을 지정 합니다. 이 동작은 `docker run`에 대 한 `--entrypoint` 명령줄 인수와 비슷합니다.
+컨테이너 인스턴스를 만들 때 필요에 따라 기본 명령줄 명령 구운를 컨테이너 이미지로 재정의 하는 명령을 지정 합니다. 이 동작은 `docker run`에 대한 `--entrypoint` 명령줄 인수와 비슷합니다.
 
 컨테이너 인스턴스의 [환경 변수](container-instances-environment-variables.md) 를 설정 하는 것과 같이 시작 명령줄을 지정 하는 것은 작업 관련 구성을 사용 하 여 각 컨테이너를 동적으로 준비 해야 하는 batch 작업에 유용 합니다.
 
@@ -30,11 +30,11 @@ ms.locfileid: "74533414"
 
   셸의 규칙에 따라 여러 명령을 순서 대로 실행 합니다.
 
-* 컨테이너 구성에 따라 명령줄 실행 파일 또는 인수에 대 한 전체 경로를 설정 해야 할 수 있습니다.
+* 컨테이너 구성에 따라 명령줄 실행 파일 또는 인수에 대한 전체 경로를 설정 해야 할 수 있습니다.
 
 * 명령줄에서 장기 실행 태스크를 지정 하는지 아니면 한 번 실행 태스크가 지정 되는지에 따라 컨테이너 인스턴스에 대해 적절 한 [다시 시작 정책을](container-instances-restart-policy.md) 설정 합니다. 예를 들어 `Never` 또는 `OnFailure`의 다시 시작 정책은 한 번 실행 작업에 권장 됩니다. 
 
-* 컨테이너 이미지의 기본 entrypoint 집합에 대 한 정보가 필요한 경우 [docker 이미지 검사](https://docs.docker.com/engine/reference/commandline/image_inspect/) 명령을 사용 합니다.
+* 컨테이너 이미지의 기본 entrypoint 집합에 대한 정보가 필요한 경우 [docker 이미지 검사](https://docs.docker.com/engine/reference/commandline/image_inspect/) 명령을 사용 합니다.
 
 ## <a name="command-line-syntax"></a>명령줄 구문
 
@@ -112,7 +112,7 @@ az container logs --resource-group myResourceGroup --name mycontainer2
 
 ## <a name="next-steps"></a>다음 단계
 
-여러 컨테이너가 있는 큰 데이터 집합을 일괄 처리 하는 등의 작업 기반 시나리오는 런타임에 사용자 지정 명령줄을 사용 하 여 이점을 누릴 수 있습니다. 작업 기반 컨테이너를 실행 하는 방법에 대 한 자세한 내용은 [컨테이너 화 된 작업을 다시 시작 정책으로 실행](container-instances-restart-policy.md)을 참조 하세요.
+여러 컨테이너가 있는 큰 데이터 집합을 일괄 처리 하는 등의 작업 기반 시나리오는 런타임에 사용자 지정 명령줄을 사용 하 여 이점을 누릴 수 있습니다. 작업 기반 컨테이너를 실행 하는 방법에 대한 자세한 내용은 [컨테이너 화 된 작업을 다시 시작 정책으로 실행](container-instances-restart-policy.md)을 참조 하세요.
 
 <!-- LINKS - External -->
 [aci-wordcount]: https://hub.docker.com/_/microsoft-azuredocs-aci-wordcount

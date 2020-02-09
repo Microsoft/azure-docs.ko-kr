@@ -72,7 +72,7 @@ Advisor는 복제된 테이블이 아니지만 변환을 통해 이득을 얻을
 
 ## <a name="design-your-storage-accounts-to-prevent-hitting-the-maximum-subscription-limit"></a>최대 구독 제한에 도달 하지 않도록 저장소 계정 디자인
 
-Azure 지역은 구독 당 최대 250 개의 저장소 계정을 지원할 수 있습니다. 제한에 도달 하면 해당 지역/구독 조합에서 저장소 계정을 더 이상 만들 수 없습니다. Advisor는 최대 한도에 도달 하는 데 가까운 모든 저장소 계정에 대 한 설계를 위해 구독과 surface 권장 사항을 확인 합니다.
+Azure 지역은 구독 당 최대 250 개의 저장소 계정을 지원할 수 있습니다. 제한에 도달 하면 해당 지역/구독 조합에서 저장소 계정을 더 이상 만들 수 없습니다. Advisor는 최대한도에 도달 하는 데 가까운 모든 저장소 계정에 대한 설계를 위해 구독과 surface 권장 사항을 확인 합니다.
 
 ## <a name="optimize-the-performance-of-your-azure-mysql-azure-postgresql-and-azure-mariadb-servers"></a>Azure MySQL, Azure PostgreSQL 및 Azure MariaDB 서버의 성능 최적화 
 
@@ -82,12 +82,12 @@ Azure 지역은 구독 당 최대 250 개의 저장소 계정을 지원할 수 �
 ### <a name="reduce-memory-constraints-on-your-azure-mysql-azure-postgresql-and-azure-mariadb-servers-or-move-to-a-memory-optimized-sku"></a>Azure MySQL, Azure PostgreSQL 및 Azure MariaDB 서버에서 메모리 제약 조건을 줄이고 메모리 액세스에 최적화 된 SKU로 이동 합니다.
 낮은 캐시 적중률으로 인해 쿼리 성능이 느려지고 IOPS가 증가할 수 있습니다. 이는 잘못 된 쿼리 계획 이거나 메모리 집약적 작업 실행으로 인해 발생할 수 있습니다. 쿼리 계획을 수정 하거나 Azure Database for PostgreSQL 데이터베이스 서버, Azure MySQL 데이터베이스 서버 또는 Azure MariaDB 서버의 [메모리를 늘려서](https://docs.microsoft.com/azure/postgresql/concepts-pricing-tiers) 데이터베이스 작업의 실행을 최적화 하는 데 도움이 됩니다. Azure Advisor는이 높은 버퍼 풀 변동으로 인해 영향을 받는 서버를 식별 하 고 쿼리 계획을 수정 하거나 더 많은 메모리를 사용 하 여 상위 SKU로 이동 하거나 저장소 크기를 늘려서 더 많은 IOPS를 가져옵니다.
 
-### <a name="use-a-azure-mysql-or-azure-postgresql-read-replica-to-scale-out-reads-for-read-intensive-workloads"></a>Azure MySQL 또는 Azure PostgreSQL 읽기 복제본을 사용 하 여 읽기 집약적 워크 로드에 대 한 읽기 확장
-Azure Advisor는 지난 7 일간 서버에서 쓰기에 대 한 읽기의 비율과 같은 작업 기반 추론을 활용 하 여 읽기 집약적인 작업을 식별 합니다. 읽기/쓰기 비율이 매우 높은 azure database for PostgreSQL 리소스 또는 Azure database for MySQL 리소스는 CPU 및/또는 메모리 경합이 증가 하 여 쿼리 성능이 저하 될 수 있습니다.  [복제본](https://docs.microsoft.com/azure/postgresql/howto-read-replicas-portal) 을 추가 하면 복제본 서버에 대 한 읽기를 확장 하 여 주 서버에서 CPU 및/또는 메모리 제약 조건을 방지할 수 있습니다. Advisor는 이러한 높은 읽기 집약적인 작업을 사용 하 여 서버를 식별 하 고 읽기 [복제본](https://docs.microsoft.com/azure/postgresql/concepts-read-replicas) 추가 하 여 일부 읽기 작업을 오프 로드 하는 것이 좋습니다.
+### <a name="use-a-azure-mysql-or-azure-postgresql-read-replica-to-scale-out-reads-for-read-intensive-workloads"></a>Azure MySQL 또는 Azure PostgreSQL 읽기 복제본을 사용 하 여 읽기 집약적 워크 로드에 대한 읽기 확장
+Azure Advisor는 지난 7 일간 서버에서 쓰기에 대한 읽기의 비율과 같은 작업 기반 추론을 활용 하 여 읽기 집약적인 작업을 식별 합니다. 읽기/쓰기 비율이 매우 높은 azure database for PostgreSQL 리소스 또는 Azure database for MySQL 리소스는 CPU 및/또는 메모리 경합이 증가 하 여 쿼리 성능이 저하 될 수 있습니다.  [복제본](https://docs.microsoft.com/azure/postgresql/howto-read-replicas-portal) 을 추가 하면 복제본 서버에 대한 읽기를 확장 하 여 주 서버에서 CPU 및/또는 메모리 제약 조건을 방지할 수 있습니다. Advisor는 이러한 높은 읽기 집약적인 작업을 사용 하 여 서버를 식별 하 고 읽기 [복제본](https://docs.microsoft.com/azure/postgresql/concepts-read-replicas) 추가 하 여 일부 읽기 작업을 오프 로드 하는 것이 좋습니다.
 
 
 ### <a name="scale-your-azure-mysql-azure-postgresql-or-azure-mariadb-server-to-a-higher-sku-to-prevent-connection-constraints"></a>연결 제약 조건을 방지 하기 위해 Azure MySQL, Azure PostgreSQL 또는 Azure MariaDB 서버를 상위 SKU로 크기 조정
-데이터베이스 서버에 대 한 새 연결은 일부 메모리를 차지 합니다. 서버에 대 한 연결이 메모리의 [상한](https://docs.microsoft.com/azure/postgresql/concepts-limits) 으로 인해 실패 하는 경우 데이터베이스 서버의 성능이 저하 됩니다. Azure Advisor는 많은 연결 오류가 발생 하 여 실행 되는 서버를 식별 하 고, 계산을 확장 하 여 서버에 더 많은 메모리를 제공 하 고, 코어 당 계산을 많이 사용 하는 메모리 최적화 Sku를 사용 하 여 서버에 더 많은 메모리를 제공
+데이터베이스 서버에 대한 새 연결은 일부 메모리를 차지 합니다. 서버에 대한 연결이 메모리의 [상한](https://docs.microsoft.com/azure/postgresql/concepts-limits) 으로 인해 실패 하는 경우 데이터베이스 서버의 성능이 저하 됩니다. Azure Advisor는 많은 연결 오류가 발생 하 여 실행 되는 서버를 식별 하 고, 계산을 확장 하 여 서버에 더 많은 메모리를 제공 하 고, 코어 당 계산을 많이 사용 하는 메모리 최적화 Sku를 사용 하 여 서버에 더 많은 메모리를 제공
 
 ## <a name="scale-your-cache-to-a-different-size-or-sku-to-improve-cache-and-application-performance"></a>캐시와 응용 프로그램 성능을 개선 하기 위해 다른 크기나 SKU로 캐시 크기 조정
 
@@ -95,15 +95,15 @@ Azure Advisor는 지난 7 일간 서버에서 쓰기에 대 한 읽기의 비율
 
 ## <a name="add-regions-with-traffic-to-your-azure-cosmos-db-account"></a>트래픽이 있는 지역을 Azure Cosmos DB 계정에 추가
 
-Advisor는 현재 구성 되지 않은 지역에서 트래픽을 포함 하는 Azure Cosmos DB 계정을 검색 하 고 해당 지역을 추가 하는 것이 좋습니다. 이렇게 하면 해당 지역에서 들어오는 요청에 대 한 대기 시간이 향상 되 고, 지역 가동 중단이 발생 하는 경우 가용성을 보장 합니다. [Azure Cosmos DB와의 글로벌 데이터 배포에 대 한 자세한 정보](https://aka.ms/cosmos/globaldistribution)
+Advisor는 현재 구성 되지 않은 지역에서 트래픽을 포함 하는 Azure Cosmos DB 계정을 검색 하 고 해당 지역을 추가 하는 것이 좋습니다. 이렇게 하면 해당 지역에서 들어오는 요청에 대한 대기 시간이 향상 되 고, 지역 가동 중단이 발생 하는 경우 가용성을 보장 합니다. [Azure Cosmos DB와의 글로벌 데이터 배포에 대한 자세한 정보](https://aka.ms/cosmos/globaldistribution)
 
 ## <a name="configure-your-azure-cosmos-db-indexing-policy-with-customer-included-or-excluded-paths"></a>고객 포함 또는 제외 경로를 사용 하 여 Azure Cosmos DB 인덱싱 정책 구성
 
-Azure Advisor는 기본 인덱싱 정책을 사용 하는 Cosmos DB 컨테이너를 식별 하지만 워크 로드 패턴을 기반으로 사용자 지정 인덱싱 정책의 이점을 누릴 수 있습니다. 기본 인덱싱 정책은 모든 속성을 인덱싱합니다. 하지만 쿼리 필터에 사용 되는 명시적으로 포함 되거나 제외 된 경로를 사용 하 여 사용자 지정 인덱싱 정책을 사용 하는 경우에는 인덱싱에 사용 된 RUs와 저장소를 줄일 수 [인덱스 정책 수정에 대 한 자세한 정보](https://aka.ms/cosmosdb/modify-index-policy)
+Azure Advisor는 기본 인덱싱 정책을 사용 하는 Cosmos DB 컨테이너를 식별 하지만 워크 로드 패턴을 기반으로 사용자 지정 인덱싱 정책의 이점을 누릴 수 있습니다. 기본 인덱싱 정책은 모든 속성을 인덱싱합니다. 하지만 쿼리 필터에 사용 되는 명시적으로 포함 되거나 제외 된 경로를 사용 하 여 사용자 지정 인덱싱 정책을 사용 하는 경우에는 인덱싱에 사용 된 RUs와 저장소를 줄일 수 [인덱스 정책 수정에 대한 자세한 정보](https://aka.ms/cosmosdb/modify-index-policy)
 
 ## <a name="configure-your-azure-cosmos-db-query-page-size-maxitemcount-to--1"></a>Azure Cosmos DB 쿼리 페이지 크기(MaxItemCount)를 -1로 구성 
 
-Azure Advisor은 쿼리 페이지 크기 100를 사용 하는 Azure Cosmos DB 컨테이너를 식별 하 고, 빠른 검색을 위해 페이지 크기-1을 사용 하는 것이 좋습니다. [최대 항목 수에 대 한 자세한 정보](https://aka.ms/cosmosdb/sql-api-query-metrics-max-item-count)
+Azure Advisor은 쿼리 페이지 크기 100를 사용 하는 Azure Cosmos DB 컨테이너를 식별 하 고, 빠른 검색을 위해 페이지 크기-1을 사용 하는 것이 좋습니다. [최대 항목 수에 대한 자세한 정보](https://aka.ms/cosmosdb/sql-api-query-metrics-max-item-count)
 
 ## <a name="how-to-access-performance-recommendations-in-advisor"></a>Advisor에서 성능 권장 사항에 액세스하는 방법
 

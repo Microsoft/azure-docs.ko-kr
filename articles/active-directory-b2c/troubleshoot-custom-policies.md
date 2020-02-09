@@ -52,7 +52,7 @@ XML 규칙 검토가 도움이 될 수도 있습니다. Azure AD B2C는 검색�
 
 > 오류 코드 조각: `Reason: User is currently logged as a user of 'yourtenant.onmicrosoft.com' tenant. In order to manage 'yourtenant.onmicrosoft.com', please login as a user of 'yourtenant.onmicrosoft.com' tenant`
 
-* `<TrustFrameworkPolicy\>` 및 `<BasePolicy\>` 요소의 TenantId 값이 대상 Azure AD B2C 테 넌 트와 일치 하는지 확인 합니다.
+* `<TrustFrameworkPolicy\>` 및 `<BasePolicy\>` 요소의 TenantId 값이 대상 Azure AD B2C 테넌트와 일치 하는지 확인 합니다.
 
 ## <a name="troubleshoot-the-runtime"></a>런타임 문제 해결
 

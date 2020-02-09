@@ -154,17 +154,17 @@ WamDefaultAuthority: organizations
 - SCP (서비스 연결 지점) 개체가 잘못 구성 되었거나 DC에서 SCP 개체를 읽을 수 없습니다.
    - 유효한 SCP 개체는 Azure AD에서 확인 된 도메인 이름을 가리키는 AD 포리스트에 있어야 합니다.
    - 자세한 내용은 [서비스 연결 지점 구성](hybrid-azuread-join-federated-domains.md#configure-hybrid-azure-ad-join)섹션에서 찾을 수 있습니다.
-- 검색 끝점에서 연결 및 검색 메타 데이터를 가져오지 못했습니다.
-   - 장치는 등록 및 권한 부여 끝점을 검색 하기 위해 시스템 컨텍스트에서 `https://enterpriseregistration.windows.net`에 액세스할 수 있어야 합니다. 
+- 검색 엔드포인트에서 연결 및 검색 메타 데이터를 가져오지 못했습니다.
+   - 장치는 등록 및 권한 부여 엔드포인트을 검색 하기 위해 시스템 컨텍스트에서 `https://enterpriseregistration.windows.net`에 액세스할 수 있어야 합니다. 
    - 온-프레미스 환경에 아웃 바운드 프록시가 필요한 경우 IT 관리자는 장치의 컴퓨터 계정이 아웃 바운드 프록시를 검색 하 고 자동으로 인증할 수 있는지 확인 해야 합니다.
-- 사용자 영역 끝점에 연결 하는 데 실패 하 고 영역 검색을 수행 합니다. (Windows 10 버전 1809 이상에만 해당)
+- 사용자 영역 엔드포인트에 연결 하는 데 실패 하 고 영역 검색을 수행 합니다. (Windows 10 버전 1809 이상에만 해당)
    - 장치는 확인 된 도메인에 대해 영역 검색을 수행 하 고 도메인 유형 (관리/페더레이션)을 결정 하기 위해 시스템 컨텍스트에서 `https://login.microsoftonline.com`에 액세스할 수 있어야 합니다.
    - 온-프레미스 환경에 아웃 바운드 프록시가 필요한 경우 IT 관리자는 장치의 시스템 컨텍스트가 아웃 바운드 프록시를 검색 하 고 자동으로 인증할 수 있는지 확인 해야 합니다.
 
 **일반적인 오류 코드:**
 
 - **DSREG_AUTOJOIN_ADCONFIG_READ_FAILED** (0x801c001d/-2145648611)
-   - 원인: SCP 개체를 읽고 Azure AD 테 넌 트 정보를 가져올 수 없습니다.
+   - 원인: SCP 개체를 읽고 Azure AD 테넌트 정보를 가져올 수 없습니다.
    - 해결 방법: [서비스 연결 지점 구성](hybrid-azuread-join-federated-domains.md#configure-hybrid-azure-ad-join)섹션을 참조 하세요.
 - **DSREG_AUTOJOIN_DISC_FAILED** (0x801c0021/-2145648607)
    - 이유: 일반 검색에 실패 했습니다. DRS에서 검색 메타 데이터를 가져오지 못했습니다.
@@ -226,8 +226,8 @@ WamDefaultAuthority: organizations
 ###### <a name="http-errors"></a>HTTP 오류
 
 - **DSREG_DISCOVERY_TENANT_NOT_FOUND** (0x801c003a/-2145648582)
-   - 원인: SCP 개체가 잘못 된 테 넌 트 ID로 구성 되었습니다. 또는 테 넌 트에서 활성 구독을 찾을 수 없습니다.
-   - 해결 방법: SCP 개체가 올바른 Azure AD 테 넌 트 ID 및 활성 구독으로 구성 되어 있는지 또는 테 넌 트에 있는지 확인 합니다.
+   - 원인: SCP 개체가 잘못 된 테넌트 ID로 구성 되었습니다. 또는 테넌트에서 활성 구독을 찾을 수 없습니다.
+   - 해결 방법: SCP 개체가 올바른 Azure AD 테넌트 ID 및 활성 구독으로 구성 되어 있는지 또는 테넌트에 있는지 확인 합니다.
 - **DSREG_SERVER_BUSY** (0x801c0025/-2145648603)
    - 이유: DRS 서버의 HTTP 503.
    - 해결 방법: 서버를 현재 사용할 수 없습니다. 이후 조인 시도는 서버가 다시 온라인 상태가 되 면 성공할 수 있습니다.
@@ -245,7 +245,7 @@ WamDefaultAuthority: organizations
 실패 이유:
 
 - DRS 리소스에 대 한 액세스 토큰을 자동으로 가져올 수 없습니다.
-   - Windows 10 장치는 활성 WS-TRUST 끝점에 Windows 통합 인증을 사용 하 여 페더레이션 서비스에서 인증 토큰을 가져옵니다. 세부 정보: [페더레이션 서비스 구성](hybrid-azuread-join-manual.md#set-up-issuance-of-claims)
+   - Windows 10 장치는 활성 WS-TRUST 엔드포인트에 Windows 통합 인증을 사용 하 여 페더레이션 서비스에서 인증 토큰을 가져옵니다. 세부 정보: [페더레이션 서비스 구성](hybrid-azuread-join-manual.md#set-up-issuance-of-claims)
 
 **일반적인 오류 코드:**
 
@@ -263,10 +263,10 @@ WamDefaultAuthority: organizations
    - 해결 방법: 온-프레미스 id 공급자는 WS-TRUST를 지원 해야 합니다. 
 - **ERROR_ADAL_FAILED_TO_PARSE_XML** (0xcaa9002c/-894894036)
    - 원인: 온-프레미스 페더레이션 서비스에서 XML 응답을 반환 하지 않았습니다.
-   - 해결 방법: MEX 끝점이 유효한 XML을 반환 하는지 확인 합니다. 프록시가 방해 하지 않고 비 xml 응답을 반환 하는지 확인 합니다.
+   - 해결 방법: MEX 엔드포인트이 유효한 XML을 반환 하는지 확인 합니다. 프록시가 방해 하지 않고 비 xml 응답을 반환 하는지 확인 합니다.
 - **ERROR_ADAL_COULDNOT_DISCOVER_USERNAME_PASSWORD_ENDPOINT** (0xcaa90023/-894894045)
-   - 원인: 사용자 이름/암호 인증에 대 한 끝점을 검색할 수 없습니다.
-   - 해결 방법: 온-프레미스 id 공급자 설정을 확인 합니다. WS-TRUST 끝점을 사용 하도록 설정 하 고 MEX 응답에 이러한 올바른 끝점이 포함 되어 있는지 확인 합니다.
+   - 원인: 사용자 이름/암호 인증에 대 한 엔드포인트을 검색할 수 없습니다.
+   - 해결 방법: 온-프레미스 id 공급자 설정을 확인 합니다. WS-TRUST 엔드포인트을 사용 하도록 설정 하 고 MEX 응답에 이러한 올바른 엔드포인트이 포함 되어 있는지 확인 합니다.
 
 ##### <a name="network-errors"></a>네트워크 오류
 
@@ -274,7 +274,7 @@ WamDefaultAuthority: organizations
    - 이유: 일반 네트워크 시간 제한입니다.
    - 해결 방법: 시스템 컨텍스트에서 `https://login.microsoftonline.com`에 액세스할 수 있는지 확인 합니다. 시스템 컨텍스트에서 온-프레미스 id 공급자에 액세스할 수 있는지 확인 합니다. 자세한 내용은 [네트워크 연결 요구 사항](hybrid-azuread-join-managed-domains.md#prerequisites)을 참조 하세요.
 - **ERROR_ADAL_INTERNET_CONNECTION_ABORTED** (0xcaa82efe/-894947586)
-   - 이유: 인증 끝점에 대 한 연결이 중단 되었습니다.
+   - 이유: 인증 엔드포인트에 대 한 연결이 중단 되었습니다.
    - 해결 방법: 잠시 후 다시 시도 하거나 안정적인 다른 네트워크 위치에서 조인 해 보세요.
 - **ERROR_ADAL_INTERNET_SECURE_FAILURE** (0xcaa82f8f/894947441)
    - 원인: 서버에서 보낸 SSL(Secure Sockets Layer) (SSL) 인증서의 유효성을 검사할 수 없습니다.
@@ -292,7 +292,7 @@ WamDefaultAuthority: organizations
    - 원인: 서버 WS-TRUST 응답이 오류 예외를 보고 했으며 어설션을 가져오지 못했습니다.
    - 해결 방법: 페더레이션 서버 설정을 확인 합니다. 인증 로그에서 서버 오류 코드를 찾습니다.
 - **ERROR_ADAL_WSTRUST_TOKEN_REQUEST_FAIL** (0xcaa90006/-894894074)
-   - 원인: 토큰 끝점에서 액세스 토큰을 가져오려고 할 때 오류가 발생 했습니다.
+   - 원인: 토큰 엔드포인트에서 액세스 토큰을 가져오려고 할 때 오류가 발생 했습니다.
    - 해결 방법: ADAL 로그에서 기본 오류를 찾습니다. 
 - **ERROR_ADAL_OPERATION_PENDING** (0xcaa1002d/-895418323)
    - 이유: 일반 ADAL 오류
@@ -380,7 +380,7 @@ WamDefaultAuthority: organizations
 
 | 서버 오류 코드 | 서버 오류 메시지 | 가능한 원인 | 해상도 |
 | --- | --- | --- | --- |
-| DirectoryError | AADSTS90002: 테 넌 트 <UUID>를 찾을 수 없습니다. 이 오류는 테 넌 트에 대 한 활성 구독이 없는 경우에 발생할 수 있습니다. 구독 관리자에 게 문의 하세요. | SCP 개체의 테 넌 트 ID가 잘못 되었습니다. | SCP 개체가 올바른 Azure AD 테 넌 트 ID 및 활성 구독으로 구성 되 고 테 넌 트에 표시 되는지 확인 합니다. |
+| DirectoryError | AADSTS90002: 테넌트 <UUID>를 찾을 수 없습니다. 이 오류는 테넌트에 대 한 활성 구독이 없는 경우에 발생할 수 있습니다. 구독 관리자에 게 문의 하세요. | SCP 개체의 테넌트 ID가 잘못 되었습니다. | SCP 개체가 올바른 Azure AD 테넌트 ID 및 활성 구독으로 구성 되 고 테넌트에 표시 되는지 확인 합니다. |
 | DirectoryError | 지정 된 ID의 장치 개체를 찾을 수 없습니다. | 동기화 조인에 필요한 오류입니다. 장치 개체가 AD에서 Azure AD로 동기화 되지 않았습니다. | Azure AD Connect 동기화가 완료 될 때까지 기다렸다가 동기화 완료 후 다음 조인 시도가 문제를 해결 합니다. |
 | AuthenticationError | 대상 컴퓨터의 SID를 확인 하는 중입니다. | Azure AD 장치의 인증서가 동기화 조인 중 blob에 서명 하는 데 사용 된 인증서와 일치 하지 않습니다. 이 오류는 일반적으로 동기화가 아직 완료 되지 않았음을 의미 합니다. |  Azure AD Connect 동기화가 완료 될 때까지 기다렸다가 동기화 완료 후 다음 조인 시도가 문제를 해결 합니다. |
 

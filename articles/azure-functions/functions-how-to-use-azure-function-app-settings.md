@@ -91,7 +91,7 @@ App Service 설정을 사용하는 방법에 대한 자세한 내용은 [Azure A
 
 ![App Service 편집기](./media/functions-how-to-use-azure-function-app-settings/configure-function-app-appservice-editor.png)
 
-App Service 편집기는 JSON 구성 파일과 코드 파일을 둘 다 수정하는 데 사용할 수 있는 포털 내 고급 편집기입니다. 이 옵션을 선택하면 기본 편집기와 함께 별도의 브라우저 탭이 실행됩니다. 이를 통해 Git 리포지토리와 통합하고 코드를 실행 및 디버깅하며 함수 앱 설정을 수정할 수 있습니다. 이 편집기는 기본 제공 함수 편집기와 비교 하 여 함수에 대 한 향상 된 개발 환경을 제공 합니다.  
+App Service 편집기는 JSON 구성 파일과 코드 파일을 둘 다 수정하는 데 사용할 수 있는 포털 내 고급 편집기입니다. 이 옵션을 선택하면 기본 편집기와 함께 별도의 브라우저 탭이 실행됩니다. 이를 통해 Git 리포지토리와 통합하고 코드를 실행 및 디버깅하며 함수 앱 설정을 수정할 수 있습니다. 이 편집기는 기본 제공 함수 편집기와 비교 하 여 함수에 대한 향상 된 개발 환경을 제공 합니다.  
 
 로컬 컴퓨터에서 함수를 개발 하는 것이 좋습니다. 로컬로 개발 하 고 Azure에 게시 하는 경우 프로젝트 파일은 포털에서 읽기 전용입니다. 자세히 알아보려면 [로컬에서 코드 및 테스트 Azure Functions](functions-develop-local.md)를 참조 하세요.
 
@@ -116,11 +116,11 @@ App Service용 고급 도구(Kudu라고도 함)를 사용하면 함수 앱의 �
 
 ### <a name="cors"></a>원본 간 리소스 공유
 
-클라이언트에서 악의적인 코드가 실행 되는 것을 방지 하기 위해 최신 브라우저는 웹 응용 프로그램의 요청을 별도의 도메인에서 실행 되는 리소스로 차단 합니다. [CORS (원본 간 리소스 공유)](https://developer.mozilla.org/docs/Web/HTTP/CORS) 를 사용 하면 `Access-Control-Allow-Origin` 헤더가 함수 앱에서 끝점을 호출할 수 있는 원본을 선언할 수 있습니다.
+클라이언트에서 악의적인 코드가 실행 되는 것을 방지 하기 위해 최신 브라우저는 웹 응용 프로그램의 요청을 별도의 도메인에서 실행 되는 리소스로 차단 합니다. [CORS (원본 간 리소스 공유)](https://developer.mozilla.org/docs/Web/HTTP/CORS) 를 사용 하면 `Access-Control-Allow-Origin` 헤더가 함수 앱에서 엔드포인트을 호출할 수 있는 원본을 선언할 수 있습니다.
 
 #### <a name="portal"></a>포털
 
-함수 앱에 대해 **허용 된 원본** 목록을 구성 하면 함수 앱에서 HTTP 끝점의 모든 응답에 `Access-Control-Allow-Origin` 헤더가 자동으로 추가 됩니다. 
+함수 앱에 대해 **허용 된 원본** 목록을 구성 하면 함수 앱에서 HTTP 엔드포인트의 모든 응답에 `Access-Control-Allow-Origin` 헤더가 자동으로 추가 됩니다. 
 
 ![함수 앱의 CORS 목록 구성](./media/functions-how-to-use-azure-function-app-settings/configure-function-app-cors.png)
 

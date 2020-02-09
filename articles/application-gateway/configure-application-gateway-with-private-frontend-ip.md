@@ -1,5 +1,5 @@
 ---
-title: ILB (내부 부하 분산 장치) 끝점 구성
+title: ILB (내부 부하 분산 장치) 엔드포인트 구성
 titleSuffix: Azure Application Gateway
 description: 이 문서에서는 개인 프런트 엔드 IP 주소를 사용 하 여 Application Gateway를 구성 하는 방법을 설명 합니다.
 services: application-gateway
@@ -15,9 +15,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/31/2020
 ms.locfileid: "76899016"
 ---
-# <a name="configure-an-application-gateway-with-an-internal-load-balancer-ilb-endpoint"></a>ILB (내부 부하 분산 장치) 끝점을 사용 하 여 응용 프로그램 게이트웨이 구성
+# <a name="configure-an-application-gateway-with-an-internal-load-balancer-ilb-endpoint"></a>ILB (내부 부하 분산 장치) 엔드포인트을 사용 하 여 응용 프로그램 게이트웨이 구성
 
-Azure 애플리케이션 게이트웨이는 인터넷에 노출 되지 않은 내부 끝점 또는 인터넷 연결 VIP를 사용 하 여 구성할 수 있습니다. 내부 끝점은 *ILB (내부 부하 분산 장치) 끝점이*라고도 하는 프런트 엔드에 대 한 개인 IP 주소를 사용 합니다.
+Azure 애플리케이션 게이트웨이는 인터넷에 노출 되지 않은 내부 엔드포인트 또는 인터넷 연결 VIP를 사용 하 여 구성할 수 있습니다. 내부 엔드포인트은 *ILB (내부 부하 분산 장치) 엔드포인트이*라고도 하는 프런트 엔드에 대한 개인 IP 주소를 사용 합니다.
 
 프런트 엔드 개인 IP 주소를 사용 하 여 게이트웨이를 구성 하는 것은 인터넷에 노출 되지 않는 내부 lob (기간 업무) 응용 프로그램에 유용 합니다. 또한 인터넷에 노출 되지 않은 보안 경계에 있는 다중 계층 응용 프로그램 내 서비스 및 계층에 유용 하지만, 라운드 로빈 부하 분산, 세션 SSL(Secure Sockets Layer) 또는 SSL () 종료가 필요 합니다.
 
@@ -79,7 +79,7 @@ Azure가 사용자가 만든 리소스 간에 통신하려면 가상 네트워�
 
 ## <a name="add-backend-pool"></a>백 엔드 풀 추가
 
-백 엔드 풀은 요청을 처리하는 백 엔드 서버로 요청을 라우팅하는 데 사용됩니다. 백 엔드는 Nic, 가상 머신 확장 집합, 공용 IP 주소, 내부 IP 주소, FQDN (정규화 된 도메인 이름) 및 다중 테 넌 트 백 엔드 (예: Azure App Service)로 구성 될 수 있습니다. 이 예제에서는 가상 머신을 대상 백 엔드로 사용합니다. 기존 가상 머신을 사용해도 되고 새로 만들어도 됩니다. 이 예제에서는 Azure에서 애플리케이션 게이트웨이의 백 엔드 서버로 사용할 두 개의 가상 머신을 만듭니다.
+백 엔드 풀은 요청을 처리하는 백 엔드 서버로 요청을 라우팅하는 데 사용됩니다. 백 엔드는 Nic, 가상 머신 확장 집합, 공용 IP 주소, 내부 IP 주소, FQDN (정규화 된 도메인 이름) 및 다중 테넌트 백 엔드 (예: Azure App Service)로 구성 될 수 있습니다. 이 예제에서는 가상 머신을 대상 백 엔드로 사용합니다. 기존 가상 머신을 사용해도 되고 새로 만들어도 됩니다. 이 예제에서는 Azure에서 애플리케이션 게이트웨이의 백 엔드 서버로 사용할 두 개의 가상 머신을 만듭니다.
 
 이렇게 하려면 다음을 수행합니다.
 
@@ -94,7 +94,7 @@ Azure가 사용자가 만든 리소스 간에 통신하려면 가상 네트워�
 4. 가상 머신에 대해 다음 값을 입력합니다.
    - **리소스 그룹**에 대해 *myResourceGroupAG* 를 선택 합니다.
    - *Myvm* - **가상 머신 이름**
-   - **이미지**에 대 한 **Windows Server 2019 Datacenter** 를 선택 합니다.
+   - **이미지**에 대한 **Windows Server 2019 Datacenter** 를 선택 합니다.
    - *azureadmin* - **사용자 이름**입니다.
    - *Azure123456!* - **암호**의 경우입니다.
 5. 나머지 기본값을 적용 하 고 **다음: 디스크**를 선택 합니다.
@@ -155,4 +155,4 @@ Azure가 사용자가 만든 리소스 간에 통신하려면 가상 네트워�
 
 ## <a name="next-steps"></a>다음 단계
 
-백 엔드의 상태를 모니터링 하려는 경우 [Application Gateway에 대 한 백 엔드 상태 및 진단 로그](application-gateway-diagnostics.md)를 참조 하세요.
+백 엔드의 상태를 모니터링 하려는 경우 [Application Gateway에 대한 백 엔드 상태 및 진단 로그](application-gateway-diagnostics.md)를 참조 하세요.

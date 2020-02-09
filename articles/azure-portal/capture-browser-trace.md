@@ -18,7 +18,7 @@ ms.locfileid: "76310699"
 ---
 # <a name="capture-a-browser-trace-for-troubleshooting"></a>문제 해결을 위한 브라우저 추적 캡처
 
-Azure Portal 문제를 해결 하 고 Microsoft 지원에 문의 해야 하는 경우 먼저 브라우저 추적 및 몇 가지 추가 정보를 캡처하는 것이 좋습니다. 수집 하는 정보는 문제가 발생할 때 포털에 대 한 중요 한 세부 정보를 제공할 수 있습니다. 사용 하는 브라우저의 개발자 도구에 대 한이 문서의 단계에 따라 Google Chrome 또는 Microsoft Edge (Chromium), Microsoft Edge (EdgeHTML) 또는 Apple Safari를 사용 합니다.
+Azure Portal 문제를 해결 하 고 Microsoft 지원에 문의 해야 하는 경우 먼저 브라우저 추적 및 몇 가지 추가 정보를 캡처하는 것이 좋습니다. 수집 하는 정보는 문제가 발생할 때 포털에 대한 중요 한 세부 정보를 제공할 수 있습니다. 사용 하는 브라우저의 개발자 도구에 대한이 문서의 단계에 따라 Google Chrome 또는 Microsoft Edge (Chromium), Microsoft Edge (EdgeHTML) 또는 Apple Safari를 사용 합니다.
 
 ## <a name="google-chrome-and-microsoft-edge-chromium"></a>Google Chrome 및 Microsoft Edge (Chromium)
 

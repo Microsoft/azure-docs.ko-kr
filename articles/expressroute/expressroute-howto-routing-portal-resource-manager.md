@@ -16,7 +16,7 @@ ms.locfileid: "75436964"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit"></a>ExpressRoute 회로의 피어링 만들기 및 수정
 
-이 문서에서는 Azure Portal를 사용 하 여 ARM (Azure Resource Manager) Express 경로 회로에 대 한 라우팅 구성을 만들고 관리 하는 방법을 설명 합니다. ExpressRoute 회로에 대한 피어링의 상태를 확인, 업데이트 또는 삭제 및 프로비전 해제를 수행할 수도 있습니다. 회로를 사용하는 다른 메서드를 사용하려는 경우 다음 목록에서 문서를 선택합니다.
+이 문서에서는 Azure Portal를 사용 하 여 ARM (Azure Resource Manager) Express 경로 회로에 대한 라우팅 구성을 만들고 관리 하는 방법을 설명 합니다. ExpressRoute 회로에 대한 피어링의 상태를 확인, 업데이트 또는 삭제 및 프로비전 해제를 수행할 수도 있습니다. 회로를 사용하는 다른 메서드를 사용하려는 경우 다음 목록에서 문서를 선택합니다.
 
 > [!div class="op_single_selector"]
 > * [Azure Portal](expressroute-howto-routing-portal-resource-manager.md)
@@ -28,7 +28,7 @@ ms.locfileid: "75436964"
 > * [PowerShell(클래식)](expressroute-howto-routing-classic.md)
 > 
 
-Express 경로 회로에 대해 개인 피어 링 및 Microsoft 피어 링을 구성할 수 있습니다 (Azure 공용 피어 링은 새 회로에서 사용 되지 않음). 피어 링은 선택 하는 순서에 관계 없이 구성할 수 있습니다. 그러나 각 피어링의 구성을 한 번에 하나 씩 완료하도록 해야 합니다. 라우팅 도메인 및 피어링에 대한 자세한 내용은 [ExpressRoute 라우팅 도메인](expressroute-circuit-peerings.md)을 참조하세요. 공용 피어 링에 대 한 자세한 내용은 [express 경로 공용 피어 링](about-public-peering.md)을 참조 하세요.
+Express 경로 회로에 대해 개인 피어 링 및 Microsoft 피어 링을 구성할 수 있습니다 (Azure 공용 피어 링은 새 회로에서 사용 되지 않음). 피어 링은 선택 하는 순서에 관계 없이 구성할 수 있습니다. 그러나 각 피어링의 구성을 한 번에 하나 씩 완료하도록 해야 합니다. 라우팅 도메인 및 피어링에 대한 자세한 내용은 [ExpressRoute 라우팅 도메인](expressroute-circuit-peerings.md)을 참조하세요. 공용 피어 링에 대한 자세한 내용은 [express 경로 공용 피어 링](about-public-peering.md)을 참조 하세요.
 
 ## <a name="configuration-prerequisites"></a>필수 구성 요소
 
@@ -98,12 +98,12 @@ Express 경로 회로에 대해 개인 피어 링 및 Microsoft 피어 링을 �
 
 ### <a name="getmsft"></a>Microsoft 피어링 세부 정보를 보려면
 
-피어 링에 대 한 행을 선택 하 여 Microsoft 피어 링의 속성을 볼 수 있습니다.
+피어 링에 대한 행을 선택 하 여 Microsoft 피어 링의 속성을 볼 수 있습니다.
 
 [![Microsoft 피어 링 속성 보기](./media/expressroute-howto-routing-portal-resource-manager/view-peering-m.png "속성 보기")](./media/expressroute-howto-routing-portal-resource-manager/view-peering-m-lightbox.png#lightbox)
 ### <a name="updatemsft"></a>Microsoft 피어링 구성을 업데이트하려면
 
-수정할 피어 링에 대 한 행을 선택 하 고 피어 링 속성을 수정 하 고 수정 내용을 저장할 수 있습니다.
+수정할 피어 링에 대한 행을 선택 하 고 피어 링 속성을 수정 하 고 수정 내용을 저장할 수 있습니다.
 
 ![피어 링 행 선택](./media/expressroute-howto-routing-portal-resource-manager/update-peering-m.png)
 

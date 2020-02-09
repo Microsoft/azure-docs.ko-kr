@@ -1,6 +1,6 @@
 ---
 title: 도메인 및 SSL 인증서 문제 해결
-description: Azure App Service에서 도메인 또는 SSL 인증서를 구성할 때 발생할 수 있는 일반적인 문제에 대 한 해결 방법을 찾습니다.
+description: Azure App Service에서 도메인 또는 SSL 인증서를 구성할 때 발생할 수 있는 일반적인 문제에 대한 해결 방법을 찾습니다.
 author: genlin
 manager: dcscontentpm
 tags: top-support-issue
@@ -71,7 +71,7 @@ Azure Portal에서 [Azure App Service 인증서](./configure-ssl-certificate.md#
 
 - App Service 계획이 무료 또는 공유입니다. 이러한 가격 책정 계층은 SSL을 지원하지 않습니다. 
 
-    **해결**방법: 앱에 대 한 App Service 요금제를 표준으로 업그레이드 합니다.
+    **해결**방법: 앱에 대한 App Service 요금제를 표준으로 업그레이드 합니다.
 
 - 구독에 유효한 신용 카드가 없습니다.
 
@@ -161,7 +161,7 @@ Azure Portal에서 [Azure App Service 인증서](./configure-ssl-certificate.md#
 구독 소유자가 실수로 도메인을 삭제했을 가능성이 있습니다.
 
 #### <a name="solution"></a>솔루션
-도메인이 7일 이내에 삭제된 경우 도메인에서 아직 삭제 프로세스가 시작되지 않았습니다. 이 경우 동일한 구독에서 Azure Portal을 통해 동일한 도메인을 다시 구입할 수 있습니다. 검색 상자에 정확한 도메인 이름을 입력 해야 합니다. 이 도메인에 대 한 요금이 다시 청구 되지 않습니다. 도메인이 7 일 이상 전에 삭제 된 경우 [Azure 지원](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) 에 문의 하 여 도메인 복원에 대 한 도움을 요청 하세요.
+도메인이 7일 이내에 삭제된 경우 도메인에서 아직 삭제 프로세스가 시작되지 않았습니다. 이 경우 동일한 구독에서 Azure Portal을 통해 동일한 도메인을 다시 구입할 수 있습니다. 검색 상자에 정확한 도메인 이름을 입력 해야 합니다. 이 도메인에 대한 요금이 다시 청구 되지 않습니다. 도메인이 7 일 이상 전에 삭제 된 경우 [Azure 지원](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) 에 문의 하 여 도메인 복원에 대한 도움을 요청 하세요.
 
 ## <a name="domain-problems"></a>도메인 문제
 
@@ -184,7 +184,7 @@ Azure Portal에서 [Azure App Service 인증서](./configure-ssl-certificate.md#
 App Service 인증서가 갱신되었지만 App Service 인증서를 사용하는 앱에서 여전히 기존 인증서를 사용합니다. 또한 HTTPS 프로토콜이 필요하다는 경고를 받았습니다.
 
 #### <a name="cause"></a>원인 
-App Service는 48 시간 이내에 인증서를 자동으로 동기화 합니다. 인증서를 회전하거나 업데이트해도 애플리케이션이 새로 업데이트된 인증서가 아닌 기존 인증서를 검색하는 경우가 가끔 있습니다. 인증서 리소스를 동기화하는 작업이 아직 실행되지 않았기 때문입니다. 동기화를 클릭 합니다. 동기화 작업은 앱에 가동 중지 시간을 발생 시 키 지 않고 App Service에서 인증서에 대 한 호스트 이름 바인딩을 자동으로 업데이트 합니다.
+App Service는 48 시간 이내에 인증서를 자동으로 동기화 합니다. 인증서를 회전하거나 업데이트해도 애플리케이션이 새로 업데이트된 인증서가 아닌 기존 인증서를 검색하는 경우가 가끔 있습니다. 인증서 리소스를 동기화하는 작업이 아직 실행되지 않았기 때문입니다. 동기화를 클릭 합니다. 동기화 작업은 앱에 가동 중지 시간을 발생 시 키 지 않고 App Service에서 인증서에 대한 호스트 이름 바인딩을 자동으로 업데이트 합니다.
  
 #### <a name="solution"></a>솔루션
 
@@ -268,41 +268,41 @@ Azure Portal에서 App Service 도메인을 구입할 수 없습니다.
 
 ## <a name="faq"></a>FAQ
 
-**웹 사이트를 구입한 후 내 웹 사이트에 대 한 사용자 지정 도메인을 구성 해야 하나요?**
+**웹 사이트를 구입한 후 내 웹 사이트에 대한 사용자 지정 도메인을 구성 해야 하나요?**
 
 Azure Portal에서 도메인을 구입 하는 경우 App Service 응용 프로그램은 해당 사용자 지정 도메인을 사용 하도록 자동으로 구성 됩니다. 추가 단계를 수행할 필요가 없습니다. 자세한 내용은 Channel9에서 [사용자 지정 도메인 이름 추가](https://channel9.msdn.com/blogs/Azure-App-Service-Self-Help/Add-a-Custom-Domain-Name) 를 참조 Azure App Service.
 
 **Azure Portal 구매한 도메인을 대신 사용 하 여 Azure VM을 가리킬 수 있나요?**
 
-예, VM에 대 한 도메인을 가리킬 수 있습니다. 자세한 내용은 [Azure DNS를 사용하여 Azure 서비스에 대해 사용자 지정 도메인 설정 제공](../dns/dns-custom-domain.md)을 참조하세요.
+예, VM에 대한 도메인을 가리킬 수 있습니다. 자세한 내용은 [Azure DNS를 사용하여 Azure 서비스에 대해 사용자 지정 도메인 설정 제공](../dns/dns-custom-domain.md)을 참조하세요.
 
 **내 도메인이 GoDaddy 또는 Azure DNS에서 호스트 되나요?**
 
 App Service 도메인은 도메인 등록에 GoDaddy를 사용 하 고 도메인을 호스트 하는 Azure DNS 합니다. 
 
-**자동 갱신을 사용 하도록 설정 했지만 여전히 전자 메일을 통해 내 도메인에 대 한 갱신 알림을 받았습니다. 제가 뭘 해야 하나요?**
+**자동 갱신을 사용 하도록 설정 했지만 여전히 전자 메일을 통해 내 도메인에 대한 갱신 알림을 받았습니다. 제가 뭘 해야 하나요?**
 
-자동 갱신을 사용 하도록 설정한 경우에는 아무 작업도 수행할 필요가 없습니다. 자동 갱신을 사용 하도록 설정 하지 않은 경우 도메인의 만료 예정 및 수동으로 갱신에 대 한 알림 전자 메일이 제공 됩니다.
+자동 갱신을 사용 하도록 설정한 경우에는 아무 작업도 수행할 필요가 없습니다. 자동 갱신을 사용 하도록 설정 하지 않은 경우 도메인의 만료 예정 및 수동으로 갱신에 대한 알림 전자 메일이 제공 됩니다.
 
-**도메인을 호스팅하는 Azure DNS에 대 한 요금이 청구 되나요?**
+**도메인을 호스팅하는 Azure DNS에 대한 요금이 청구 되나요?**
 
-도메인 구매의 초기 비용은 도메인 등록에만 적용 됩니다. 등록 비용 외에도 사용량에 따라 Azure DNS에 대 한 요금이 발생 합니다. 자세한 내용은 [가격 책정 Azure DNS](https://azure.microsoft.com/pricing/details/dns/) 를 참조 하세요.
+도메인 구매의 초기 비용은 도메인 등록에만 적용 됩니다. 등록 비용 외에도 사용량에 따라 Azure DNS에 대한 요금이 발생 합니다. 자세한 내용은 [가격 책정 Azure DNS](https://azure.microsoft.com/pricing/details/dns/) 를 참조 하세요.
 
 **Azure Portal에서 이전에 도메인을 구입 하 고 GoDaddy 호스팅에서 Azure DNS 호스팅을 이동 하려고 합니다. 이 작업을 수행 하려면 어떻게 해야 하나요?**
 
-Azure DNS 호스팅을 반드시 마이그레이션해야 하는 것은 아닙니다. Azure DNS로 마이그레이션하려는 경우에는 Azure Portal의 도메인 관리 환경에서 Azure DNS으로 이동 하는 데 필요한 단계에 대 한 정보를 제공 합니다. App Service를 통해 도메인을 구매한 경우 GoDaddy에서 Azure DNS로의 마이그레이션은 비교적 원활한 절차입니다.
+Azure DNS 호스팅을 반드시 마이그레이션해야 하는 것은 아닙니다. Azure DNS로 마이그레이션하려는 경우에는 Azure Portal의 도메인 관리 환경에서 Azure DNS으로 이동 하는 데 필요한 단계에 대한 정보를 제공 합니다. App Service를 통해 도메인을 구매한 경우 GoDaddy에서 Azure DNS로의 마이그레이션은 비교적 원활한 절차입니다.
 
 **App Service 도메인에서 도메인을 구입 하지만 Azure DNS 대신 GoDaddy에서 도메인을 호스트할 수 있나요?**
 
 2017 년 7 월 24 일부 터 포털에서 구매한 App Service 도메인은 Azure DNS에서 호스팅됩니다. 다른 호스팅 공급자를 사용 하려는 경우 해당 웹 사이트로 이동 하 여 도메인 호스팅 솔루션을 가져와야 합니다.
 
-**도메인에 대 한 개인 정보 보호에 대 한 요금을 지불 해야 하나요?**
+**도메인에 대한 개인 정보 보호에 대한 요금을 지불 해야 하나요?**
 
 Azure Portal를 통해 도메인을 구입 하는 경우 추가 비용 없이 개인 정보를 추가 하도록 선택할 수 있습니다. 이는 Azure App Service을 통해 도메인을 구입 하는 경우의 이점 중 하나입니다.
 
 **도메인을 더 이상 원하지 않는 경우에는 돈을 다시 얻을 수 있나요?**
 
-도메인을 구입 하는 경우 5 일 동안 요금이 청구 되지 않으며,이 기간 동안 도메인을 원하지 않도록 결정할 수 있습니다. 5 일 이내에 도메인을 원하지 않는 경우에는 요금이 청구 되지 않습니다. . uk 도메인은이에 대 한 예외입니다. 영국의 도메인을 구입 하는 경우 즉시 청구 되며 환불 수 없습니다.
+도메인을 구입 하는 경우 5 일 동안 요금이 청구 되지 않으며,이 기간 동안 도메인을 원하지 않도록 결정할 수 있습니다. 5 일 이내에 도메인을 원하지 않는 경우에는 요금이 청구 되지 않습니다. . uk 도메인은이에 대한 예외입니다. 영국의 도메인을 구입 하는 경우 즉시 청구 되며 환불 수 없습니다.
 
 **내 구독의 다른 Azure App Service 앱에서 도메인을 사용할 수 있나요?**
 
@@ -318,6 +318,6 @@ App Service 웹 앱이 없는 경우에도 도메인을 관리할 수 있습니�
 
 **사용자 지정 도메인을 사용 하는 웹 앱을 다른 구독으로 이동 하거나 v1에서 V2로 App Service Environment 수 있나요?**
 
-예, 웹 앱을 구독 간에 이동할 수 있습니다. [Azure에서 리소스를 이동 하는 방법](../azure-resource-manager/management/move-resource-group-and-subscription.md)의 지침을 따르세요. 웹 앱을 이동할 때 몇 가지 제한 사항이 있습니다. 자세한 내용은 [App Service 리소스 이동에 대 한 제한 사항](../azure-resource-manager/management/move-limitations/app-service-move-limitations.md)을 참조 하세요.
+예, 웹 앱을 구독 간에 이동할 수 있습니다. [Azure에서 리소스를 이동 하는 방법](../azure-resource-manager/management/move-resource-group-and-subscription.md)의 지침을 따르세요. 웹 앱을 이동할 때 몇 가지 제한 사항이 있습니다. 자세한 내용은 [App Service 리소스 이동에 대한 제한 사항](../azure-resource-manager/management/move-limitations/app-service-move-limitations.md)을 참조 하세요.
 
 웹 앱을 이동한 후에는 사용자 지정 도메인 설정 내에서 도메인의 호스트 이름 바인딩이 동일 하 게 유지 되어야 합니다. 호스트 이름 바인딩을 구성 하는 데 필요한 추가 단계는 없습니다.

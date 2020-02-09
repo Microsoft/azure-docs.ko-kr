@@ -1,6 +1,6 @@
 ---
 title: Azure Data Box Heavy 제한 | Microsoft Docs
-description: Microsoft Azure Data Box Heavy 구성 요소 및 연결에 대 한 시스템 제한 및 권장 크기에 대해 설명 합니다.
+description: Microsoft Azure Data Box Heavy 구성 요소 및 연결에 대한 시스템 제한 및 권장 크기에 대해 설명 합니다.
 services: databox
 author: alkohli
 ms.service: databox

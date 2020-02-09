@@ -76,7 +76,7 @@ Teradata 연결 된 서비스는 다음 속성을 지원 합니다.
 | 자산 | 설명 | 기본값 |
 |:--- |:--- |:--- |
 | CharacterSet | 세션에 사용할 문자 집합입니다. 예: `CharacterSet=UTF16`.<br><br/>이 값은 사용자 정의 문자 집합 또는 미리 정의 된 다음 문자 집합 중 하나일 수 있습니다. <br/>-ASCII<br/>-UTF8<br/>-UTF16<br/>-LATIN1252_0A<br/>-LATIN9_0A<br/>-LATIN1_0A<br/>-Shift-jis (Windows, DOS 호환, KANJISJIS_0S)<br/>-EUC (Unix 호환, KANJIEC_0U)<br/>-IBM 메인프레임 (KANJIEBCDIC5035_0I)<br/>-KANJI932_1S0<br/>-BIG5 (TCHBIG5_1R0)<br/>-GB (SCHGB2312_1T0)<br/>-SCHINESE936_6R0<br/>-TCHINESE950_8R0<br/>-NetworkKorean (HANGULKSC5601_2R4)<br/>-HANGUL949_7R0<br/>-ARABIC1256_6A0<br/>-CYRILLIC1251_2A0<br/>-HEBREW1255_5A0<br/>-LATIN1250_1A0<br/>-LATIN1254_7A0<br/>-LATIN1258_8A0<br/>-THAI874_4A0 | 기본값은 `ASCII`입니다. |
-| MaxRespSize |SQL 요청에 대 한 응답 버퍼의 최대 크기 (kb)입니다 (Kb). 예: `MaxRespSize=‭10485760‬`.<br/><br/>Teradata 데이터베이스 버전 16.00 이상에서는 최대 값이 7361536입니다. 이전 버전을 사용 하는 연결의 경우 최대값은 1048576입니다. | 기본값은 `65536`입니다. |
+| MaxRespSize |SQL 요청에 대한 응답 버퍼의 최대 크기 (kb)입니다 (Kb). 예: `MaxRespSize=‭10485760‬`.<br/><br/>Teradata 데이터베이스 버전 16.00 이상에서는 최대 값이 7361536입니다. 이전 버전을 사용 하는 연결의 경우 최대값은 1048576입니다. | 기본값은 `65536`입니다. |
 
 **기본 인증을 사용 하는 예제**
 
@@ -209,7 +209,7 @@ Teradata에서 데이터를 복사 하려면 복사 작업 **원본** 섹션에�
 | type | 복사 작업 원본의 type 속성을 `TeradataSource`으로 설정 해야 합니다. | yes |
 | 쿼리 | 사용자 지정 SQL 쿼리를 사용하여 데이터를 읽습니다. 예는 `"SELECT * FROM MyTable"`입니다.<br>분할 된 로드를 사용 하도록 설정 하는 경우 쿼리에 해당 하는 기본 제공 파티션 매개 변수를 후크 해야 합니다. 예제는 [Teradata에서 Parallel 복사](#parallel-copy-from-teradata) 섹션을 참조 하세요. | 아니요 (데이터 집합의 테이블이 지정 된 경우) |
 | partitionOptions | Teradata에서 데이터를 로드 하는 데 사용 되는 데이터 분할 옵션을 지정 합니다. <br>허용 값은 **None** (기본값), **Hash** 및 **dynamicrange**입니다.<br>파티션 옵션을 사용 하도록 설정 하는 경우 (즉, `None`) Teradata에서 데이터를 동시에 로드 하는 병렬 처리 수준은 복사 작업의 [`parallelCopies`](copy-activity-performance.md#parallel-copy) 설정에 의해 제어 됩니다. | 아닙니다. |
-| partitionSettings | 데이터 분할에 대 한 설정 그룹을 지정 합니다. <br>Partition 옵션을 `None`하지 않으면 적용 합니다. | 아닙니다. |
+| partitionSettings | 데이터 분할에 대한 설정 그룹을 지정 합니다. <br>Partition 옵션을 `None`하지 않으면 적용 합니다. | 아닙니다. |
 | partitionColumnName | 병렬 복사를 위해 범위 파티션 또는 해시 파티션에서 사용할 원본 열의 이름을 지정 합니다. 지정 하지 않으면 테이블의 주 인덱스가 자동으로 검색 되 고 파티션 열로 사용 됩니다. <br>파티션 옵션이 `Hash` 또는 `DynamicRange`경우 적용 됩니다. 쿼리를 사용 하 여 원본 데이터를 검색 하는 경우 WHERE 절에 `?AdfHashPartitionCondition` 또는 `?AdfRangePartitionColumnName`를 후크합니다. [Teradata의 Parallel copy](#parallel-copy-from-teradata) 섹션에서 예제를 참조 하세요. | 아닙니다. |
 | partitionUpperBound | 데이터를 복사할 파티션 열의 최대값입니다. <br>Partition 옵션을 `DynamicRange`경우 적용 합니다. 쿼리를 사용 하 여 원본 데이터를 검색 하는 경우 WHERE 절에 `?AdfRangePartitionUpbound` 후크 합니다. 예제는 [Teradata에서 Parallel 복사](#parallel-copy-from-teradata) 섹션을 참조 하세요. | 아닙니다. |
 | partitionLowerBound | 데이터를 복사할 파티션 열의 최소값입니다. <br>파티션 옵션이 `DynamicRange`경우에 적용 됩니다. 쿼리를 사용 하 여 원본 데이터를 검색 하는 경우 WHERE 절에 `?AdfRangePartitionLowbound` 후크 됩니다. 예제는 [Teradata에서 Parallel 복사](#parallel-copy-from-teradata) 섹션을 참조 하세요. | 아닙니다. |
@@ -264,7 +264,7 @@ Data Factory Teradata 커넥터는 Teradata에서 병렬로 데이터를 복사 
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 많은 테이블에서 전체 로드                                   | **파티션 옵션**: Hash. <br><br/>실행 중에 Data Factory는 PK 열을 자동으로 검색 하 고, 해시를 적용 하 고, 데이터를 파티션으로 복사 합니다. |
 | 사용자 지정 쿼리를 사용 하 여 많은 양의 데이터를 로드 합니다.                 | **파티션 옵션**: Hash.<br>**쿼리**: `SELECT * FROM <TABLENAME> WHERE ?AdfHashPartitionCondition AND <your_additional_where_clause>`.<br>**파티션 열**: 해시 파티션 적용에 사용 되는 열을 지정 합니다. 지정 하지 않으면 Data Factory는 Teradata 데이터 집합에서 지정한 테이블의 PK 열을 자동으로 검색 합니다.<br><br>실행 중 Data Factory는 `?AdfHashPartitionCondition` 해시 파티션 논리로 바꾸고 Teradata로 보냅니다. |
-| 범위 분할에 대해 균등 하 게 분산 된 값이 있는 정수 열이 있는 사용자 지정 쿼리를 사용 하 여 많은 양의 데이터를 로드 합니다. | **파티션 옵션**: 동적 범위 파티션.<br>**쿼리**: `SELECT * FROM <TABLENAME> WHERE ?AdfRangePartitionColumnName <= ?AdfRangePartitionUpbound AND ?AdfRangePartitionColumnName >= ?AdfRangePartitionLowbound AND <your_additional_where_clause>`.<br>**파티션 열**: 데이터를 분할 하는 데 사용 되는 열을 지정 합니다. 정수 데이터 형식의 열에 대해 분할할 수 있습니다.<br>**분할 상한** 및 **파티션**하 한: 파티션 열에 대해 필터링 하 여 하 한 범위와 상한 사이 에서만 데이터를 검색 하도록 하려면를 지정 합니다.<br><br>실행 하는 동안 Data Factory `?AdfRangePartitionColumnName`, `?AdfRangePartitionUpbound`및 `?AdfRangePartitionLowbound`를 각 파티션에 대 한 실제 열 이름과 값 범위로 바꾸고 Teradata로 보냅니다. <br>예를 들어 하 한으로 설정 된 파티션 열 "ID"가 1로 설정 되 고 상한이 80로 설정 된 경우 병렬 복사를 4로 설정 하면 Data Factory 4 개의 파티션으로 데이터를 검색 합니다. 해당 Id는 [1, 20], [21, 40], [41, 60] 및 [61, 80] 사이에 각각 있습니다. |
+| 범위 분할에 대해 균등 하 게 분산 된 값이 있는 정수 열이 있는 사용자 지정 쿼리를 사용 하 여 많은 양의 데이터를 로드 합니다. | **파티션 옵션**: 동적 범위 파티션.<br>**쿼리**: `SELECT * FROM <TABLENAME> WHERE ?AdfRangePartitionColumnName <= ?AdfRangePartitionUpbound AND ?AdfRangePartitionColumnName >= ?AdfRangePartitionLowbound AND <your_additional_where_clause>`.<br>**파티션 열**: 데이터를 분할 하는 데 사용 되는 열을 지정 합니다. 정수 데이터 형식의 열에 대해 분할할 수 있습니다.<br>**분할 상한** 및 **파티션**하 한: 파티션 열에 대해 필터링 하 여 하 한 범위와 상한 사이 에서만 데이터를 검색 하도록 하려면를 지정 합니다.<br><br>실행 하는 동안 Data Factory `?AdfRangePartitionColumnName`, `?AdfRangePartitionUpbound`및 `?AdfRangePartitionLowbound`를 각 파티션에 대한 실제 열 이름과 값 범위로 바꾸고 Teradata로 보냅니다. <br>예를 들어 하 한으로 설정 된 파티션 열 "ID"가 1로 설정 되 고 상한이 80로 설정 된 경우 병렬 복사를 4로 설정 하면 Data Factory 4 개의 파티션으로 데이터를 검색 합니다. 해당 Id는 [1, 20], [21, 40], [41, 60] 및 [61, 80] 사이에 각각 있습니다. |
 
 **예: 해시 파티션이 있는 쿼리**
 
@@ -343,7 +343,7 @@ Teradata에서 데이터를 복사 하는 경우 다음 매핑이 적용 됩니�
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
+속성에 대한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
 
 
 ## <a name="next-steps"></a>다음 단계

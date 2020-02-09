@@ -1,7 +1,7 @@
 ---
 title: 관리 및 쿼리 api 키를 만들고 관리 하 고 보호 합니다.
 titleSuffix: Azure Cognitive Search
-description: Api 키는 서비스 끝점에 대 한 액세스를 제어 합니다. 관리자 키는 쓰기 액세스를 부여합니다. 쿼리 키는 읽기 전용 액세스에 대해서만 만들 수 있습니다.
+description: Api 키는 서비스 엔드포인트에 대 한 액세스를 제어 합니다. 관리자 키는 쓰기 액세스를 부여합니다. 쿼리 키는 읽기 전용 액세스에 대해서만 만들 수 있습니다.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist

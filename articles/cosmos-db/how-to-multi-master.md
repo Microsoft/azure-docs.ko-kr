@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB에서 다중 마스터를 구성하는 방법
-description: Azure Cosmos DB에서 다른 Sdk를 사용 하 여 응용 프로그램에 대 한 다중 마스터를 구성 하는 방법에 대해 알아봅니다.
+description: Azure Cosmos DB에서 다른 Sdk를 사용 하 여 응용 프로그램에 대한 다중 마스터를 구성 하는 방법에 대해 알아봅니다.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual

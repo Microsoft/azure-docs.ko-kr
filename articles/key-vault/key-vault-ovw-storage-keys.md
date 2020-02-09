@@ -37,9 +37,9 @@ Azure AD는 RBAC (역할 기반 액세스 제어)를 사용 하 여 권한 부�
 
 ## <a name="service-principal-application-id"></a>서비스 사용자 응용 프로그램 ID
 
-Azure AD 테 넌 트는 등록 된 각 응용 프로그램을 [서비스 사용자](/azure/active-directory/develop/developer-glossary#service-principal-object)에 게 제공 합니다. 서비스 주체는 RBAC를 통해 다른 Azure 리소스에 액세스 하기 위해 권한 부여 설정 중에 사용 되는 응용 프로그램 ID로 사용 됩니다.
+Azure AD 테넌트는 등록 된 각 응용 프로그램을 [서비스 사용자](/azure/active-directory/develop/developer-glossary#service-principal-object)에 게 제공 합니다. 서비스 주체는 RBAC를 통해 다른 Azure 리소스에 액세스 하기 위해 권한 부여 설정 중에 사용 되는 응용 프로그램 ID로 사용 됩니다.
 
-Key Vault은 모든 Azure AD 테 넌 트에서 미리 등록 된 Microsoft 응용 프로그램입니다. Key Vault은 각 Azure 클라우드에서 동일한 응용 프로그램 ID로 등록 됩니다.
+Key Vault은 모든 Azure AD 테넌트에서 미리 등록 된 Microsoft 응용 프로그램입니다. Key Vault은 각 Azure 클라우드에서 동일한 응용 프로그램 ID로 등록 됩니다.
 
 | 테넌트 | 클라우드 | 애플리케이션 UI |
 | --- | --- | --- |

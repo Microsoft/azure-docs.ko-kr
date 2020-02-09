@@ -1,6 +1,6 @@
 ---
 title: 기술 자료 쿼리-QnA Maker
-description: 기술 자료가 게시 되어야 합니다. 게시 된 후에는 generateAnswer API를 사용 하 여 런타임 예측 끝점에서 기술 자료가 쿼리 됩니다.
+description: 기술 자료가 게시 되어야 합니다. 게시 된 후에는 generateAnswer API를 사용 하 여 런타임 예측 엔드포인트에서 기술 자료가 쿼리 됩니다.
 ms.topic: conceptual
 ms.date: 01/27/2020
 ms.openlocfilehash: cb777aa16fada50811cce1bbf49f28662c62b49b
@@ -12,7 +12,7 @@ ms.locfileid: "76846347"
 ---
 # <a name="query-the-knowledge-base-for-answers"></a>기술 자료에서 답변을 쿼리 합니다.
 
-기술 자료가 게시 되어야 합니다. 게시 된 후에는 generateAnswer API를 사용 하 여 런타임 예측 끝점에서 기술 자료가 쿼리 됩니다. 쿼리에는 질문 텍스트 및 기타 설정이 포함 되어 QnA Maker 대답에 가장 적합 한 일치 항목을 선택할 수 있습니다.
+기술 자료가 게시 되어야 합니다. 게시 된 후에는 generateAnswer API를 사용 하 여 런타임 예측 엔드포인트에서 기술 자료가 쿼리 됩니다. 쿼리에는 질문 텍스트 및 기타 설정이 포함 되어 QnA Maker 대답에 가장 적합 한 일치 항목을 선택할 수 있습니다.
 
 ## <a name="how-qna-maker-processes-a-user-query-to-select-the-best-answer"></a>QnA Maker에서 사용자 쿼리를 처리 하 여 최상의 답을 선택 하는 방법
 
@@ -37,7 +37,7 @@ ms.locfileid: "76846347"
 
 사용 되는 기능에는 단어 수준 의미 체계, 모음의 용어 수준 중요도 및 두 텍스트 문자열 간의 유사성과 연관성을 확인 하는 심층 학습 의미 체계 모델이 포함 되지만이에 국한 되지 않습니다.
 
-## <a name="http-request-and-response-with-endpoint"></a>끝점을 사용 하 여 HTTP 요청 및 응답
+## <a name="http-request-and-response-with-endpoint"></a>엔드포인트을 사용 하 여 HTTP 요청 및 응답
 기술 자료를 게시할 때 서비스는 응용 프로그램에 통합할 수 있는 REST 기반 HTTP 엔드포인트 (일반적으로 채팅 봇)를 만듭니다.
 
 ### <a name="the-user-query-request-to-generate-an-answer"></a>응답을 생성 하는 사용자 쿼리 요청

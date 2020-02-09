@@ -93,10 +93,10 @@ IoT 플러그 앤 플레이 장치 클라이언트 응용 프로그램을 빌드
 
 ## <a name="connection-string"></a>연결 문자열
 
-연결 문자열은 끝점에 연결 하는 데 필요한 정보를 캡슐화 합니다. 일반적으로 연결 문자열에는 엔드포인트의 주소와 보안 정보가 포함되지만 연결 문자열의 형식은 서비스 간에 다양합니다. IoT Hub 서비스와 연관된 연결 문자열에는 다음 두 종류가 있습니다.
+연결 문자열은 엔드포인트에 연결 하는 데 필요한 정보를 캡슐화 합니다. 일반적으로 연결 문자열에는 엔드포인트의 주소와 보안 정보가 포함되지만 연결 문자열의 형식은 서비스 간에 다양합니다. IoT Hub 서비스와 연관된 연결 문자열에는 다음 두 종류가 있습니다.
 
-- 장치 연결 문자열은 iot [플러그 앤 플레이 장치가](#iot-plug-and-play-device) iot hub의 장치 지향 끝점에 연결 하는 데 사용 됩니다. 장치의 클라이언트 코드는 연결 문자열을 사용 하 여 IoT hub와의 보안 연결을 설정 합니다.
-- 연결 문자열 IoT Hub 백 엔드 솔루션 및 도구를 사용 하 여 IoT Hub의 서비스 지향 끝점에 안전 하 게 연결할 수 있습니다. 이러한 솔루션 및 도구는 IoT hub와 연결 된 장치를 관리 합니다.
+- 장치 연결 문자열은 iot [플러그 앤 플레이 장치가](#iot-plug-and-play-device) iot hub의 장치 지향 엔드포인트에 연결 하는 데 사용 됩니다. 장치의 클라이언트 코드는 연결 문자열을 사용 하 여 IoT hub와의 보안 연결을 설정 합니다.
+- 연결 문자열 IoT Hub 백 엔드 솔루션 및 도구를 사용 하 여 IoT Hub의 서비스 지향 엔드포인트에 안전 하 게 연결할 수 있습니다. 이러한 솔루션 및 도구는 IoT hub와 연결 된 장치를 관리 합니다.
 - 회사 모델 리포지토리 연결 문자열을 사용 하면 백 엔드 솔루션과 도구를 사용 하 여 [회사 모델 리포지토리에](#company-model-repository)안전 하 게 연결할 수 있습니다. 이러한 솔루션 및 도구는 리포지토리에서 [장치 기능 모델](#device-capability-model) 및 [인터페이스](#interface) 를 사용 하거나 관리 합니다.
 
 ## <a name="device-capability-model"></a>디바이스 기능 모델
@@ -133,7 +133,7 @@ IoT 플러그 앤 플레이 장치 클라이언트 응용 프로그램을 빌드
 
 ## <a name="digital-twin-change-events"></a>디지털 쌍 변경 이벤트
 
-[Iot 플러그 앤 플레이 장치가](#iot-plug-and-play-device) [iot hub](#azure-iot-hub)에 연결 된 경우 허브는 해당 라우팅 기능을 사용 하 여 디지털 쌍 변경 내용에 대 한 알림을 보낼 수 있습니다. 예를 들어, 장치에서 [속성](#properties) 값이 변경 될 때마다 Service Bus 큐와 같은 끝점으로 알림을 보낼 수 IoT Hub.
+[Iot 플러그 앤 플레이 장치가](#iot-plug-and-play-device) [iot hub](#azure-iot-hub)에 연결 된 경우 허브는 해당 라우팅 기능을 사용 하 여 디지털 쌍 변경 내용에 대 한 알림을 보낼 수 있습니다. 예를 들어, 장치에서 [속성](#properties) 값이 변경 될 때마다 Service Bus 큐와 같은 엔드포인트으로 알림을 보낼 수 IoT Hub.
 
 ## <a name="digital-twin-definition-language"></a>디지털 쌍 정의 언어
 
@@ -141,7 +141,7 @@ IoT 플러그 앤 플레이 장치 클라이언트 응용 프로그램을 빌드
 
 ## <a name="digital-twin-route"></a>디지털 쌍 경로
 
-[IoT hub](#azure-iot-hub) 에 설정 된 경로를 통해 디지털 쌍 [변경 이벤트](#digital-twin-change-events) 와 끝점 (예: Service Bus 큐)을 전달 합니다.
+[IoT hub](#azure-iot-hub) 에 설정 된 경로를 통해 디지털 쌍 [변경 이벤트](#digital-twin-change-events) 와 엔드포인트 (예: Service Bus 큐)을 전달 합니다.
 
 ## <a name="interface"></a>인터페이스
 

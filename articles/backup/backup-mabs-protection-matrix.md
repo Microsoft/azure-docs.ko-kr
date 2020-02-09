@@ -84,7 +84,7 @@ ms.locfileid: "75449884"
 
 공용 피어 링 (이전 회로에 사용 가능) 및 Microsoft 피어 링을 사용 하 여 Azure Express 경로를 통해 데이터를 백업할 수 있습니다. 개인 피어 링을 통한 백업은 지원 되지 않습니다.
 
-공용 피어 링 사용: 다음 도메인/주소에 대 한 액세스를 확인 합니다.
+공용 피어 링 사용: 다음 도메인/주소에 대한 액세스를 확인 합니다.
 
 * `http://www.msftncsi.com/ncsi.txt`
 * `microsoft.com`
@@ -111,7 +111,7 @@ Azure Backup Server는 다음과 같은 클러스터 된 애플리케이션에�
 
 * SQL Server
 
-* Hyper-v-스케일 아웃 MABS 보호 에이전트를 사용 하 여 Hyper-v 클러스터를 보호 하는 경우 보호 된 Hyper-v 작업에 대 한 보조 보호를 추가할 수 없습니다.
+* Hyper-v-스케일 아웃 MABS 보호 에이전트를 사용 하 여 Hyper-v 클러스터를 보호 하는 경우 보호 된 Hyper-v 작업에 대한 보조 보호를 추가할 수 없습니다.
 
     Windows Server 2008 R2에서 Hyper-V를 실행하는 경우 KB[975354](https://support.microsoft.com/kb/975354)에 설명된 업데이트를 설치해야 합니다.
     클러스터 구성에서 Hyper-V를 Windows Server 2008 R2에서 실행하는 경우 SP2 및 KB[971394](https://support.microsoft.com/kb/971394)를 설치해야 합니다.

@@ -56,7 +56,7 @@ Blitzz의 마이그레이션 솔루션은 복잡 한 운영 워크 로드를 마
 
    ![Blitzz replicant 파일](./media/cassandra-migrate-cosmos-db-blitzz/replicant-files.png)
 
-1. CLI 터미널에서 원본 데이터베이스 구성을 설정 합니다. 명령을 사용 하 여 **`vi conf/conn/cassandra.yml`** 구성 파일을 열고 Cassandra 노드의 IP 주소, 포트 번호, 사용자 이름, 암호 및 기타 필요한 세부 정보를 쉼표로 구분한 목록을 추가 합니다. 다음은 구성 파일의 내용에 대 한 예입니다.
+1. CLI 터미널에서 원본 데이터베이스 구성을 설정 합니다. 명령을 사용 하 여 **`vi conf/conn/cassandra.yml`** 구성 파일을 열고 Cassandra 노드의 IP 주소, 포트 번호, 사용자 이름, 암호 및 기타 필요한 세부 정보를 쉼표로 구분한 목록을 추가 합니다. 다음은 구성 파일의 내용에 대한 예입니다.
 
    ```bash
    type: CASSANDRA
@@ -94,7 +94,7 @@ Blitzz의 마이그레이션 솔루션은 복잡 한 운영 워크 로드를 마
 
    ![Azure Cosmos 컨테이너 전체 확장](./media/cassandra-migrate-cosmos-db-blitzz/scale-throughput.png)
 
-   마이그레이션이 완료 된 후 처리량을 줄입니다. 각 작업에 대해 저장 된 데이터와 RUs의 양에 따라 데이터 마이그레이션 후 필요한 처리량을 예상할 수 있습니다. 필요한 RUs를 추정 하는 방법에 대 한 자세한 내용은 [컨테이너 및 데이터베이스에 대 한 처리량 프로 비전](set-throughput.md) 및 [Azure Cosmos DB capacity planner 문서를 사용 하 여 r u/초 예측](estimate-ru-with-capacity-planner.md) 을 참조 하세요.
+   마이그레이션이 완료 된 후 처리량을 줄입니다. 각 작업에 대해 저장 된 데이터와 RUs의 양에 따라 데이터 마이그레이션 후 필요한 처리량을 예상할 수 있습니다. 필요한 RUs를 추정 하는 방법에 대한 자세한 내용은 [컨테이너 및 데이터베이스에 대한 처리량 프로 비전](set-throughput.md) 및 [Azure Cosmos DB capacity planner 문서를 사용 하 여 r u/초 예측](estimate-ru-with-capacity-planner.md) 을 참조 하세요.
 
 1. **연결 문자열** 창에서 Azure Cosmos 계정의 연결 **지점, 포트, 사용자 이름**및 **기본 암호** 를 가져옵니다. 구성 파일에서 이러한 값을 사용 합니다.
 
@@ -139,7 +139,7 @@ Blitzz의 마이그레이션 솔루션은 복잡 한 운영 워크 로드를 마
    ./bin/replicant full conf/conn/cassandra.yaml conf/conn/cosmosdb.yaml --filter filter/cassandra_filter.yaml --replace-existing --resume
    ```
 
-대상에 대 한 데이터 마이그레이션에 대 한 자세한 내용은 실시간 마이그레이션 [Blitzz replicant 데모](https://www.youtube.com/watch?v=fsUhF9LUZmM)를 참조 하십시오.
+대상에 대한 데이터 마이그레이션에 대한 자세한 내용은 실시간 마이그레이션 [Blitzz replicant 데모](https://www.youtube.com/watch?v=fsUhF9LUZmM)를 참조 하십시오.
 
 ## <a name="next-steps"></a>다음 단계
 

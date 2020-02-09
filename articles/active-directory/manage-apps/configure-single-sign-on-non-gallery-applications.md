@@ -30,7 +30,7 @@ ms.locfileid: "77063512"
 
 ## <a name="before-you-begin"></a>시작하기 전에
 
-응용 프로그램을 Azure AD 테 넌 트에 추가 하지 않은 경우 [비 갤러리 앱 추가](add-non-gallery-app.md)를 참조 하세요.
+응용 프로그램을 Azure AD 테넌트에 추가 하지 않은 경우 [비 갤러리 앱 추가](add-non-gallery-app.md)를 참조 하세요.
 
 ## <a name="step-1-edit-the-basic-saml-configuration"></a>1단계. 기본 SAML 구성 편집
 

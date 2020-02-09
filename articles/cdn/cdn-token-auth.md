@@ -115,7 +115,7 @@ ms.locfileid: "67593384"
       >          <li>`http://www.mydomain.com/picturesnew/city/strasbourgh.png`</li>
       >       </ul></li>
       >       <li>입력 값 `/pictures/`: 포함 된 요청만 `/pictures/` 경로 허용 됩니다. `http://www.mydomain.com/pictures/city/strasbourg.png` )을 입력합니다.</li>
-      >       <li>입력 값 `/pictures/city/strasbourg.png`: 이 특정 경로 및 자산에 대 한 요청만 허용 됩니다.</li>
+      >       <li>입력 값 `/pictures/city/strasbourg.png`: 이 특정 경로 및 자산에 대한 요청만 허용 됩니다.</li>
       >    </ul>
       > </tr>
       > <tr>

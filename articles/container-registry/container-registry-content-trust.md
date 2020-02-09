@@ -1,6 +1,6 @@
 ---
 title: 서명 된 이미지 관리
-description: Azure container registry에 대 한 콘텐츠 신뢰를 사용 하도록 설정 하 고 서명 된 이미지를 푸시하고 풀 하는 방법에 대해 알아봅니다.
+description: Azure container registry에 대한 콘텐츠 신뢰를 사용 하도록 설정 하 고 서명 된 이미지를 푸시하고 풀 하는 방법에 대해 알아봅니다.
 ms.topic: article
 ms.date: 09/06/2019
 ms.openlocfilehash: 0418b13c352dc3b81d34501e7e76be6c54615a83
@@ -112,7 +112,7 @@ az role assignment create --scope $REGISTRY_ID --role AcrImageSigner --assignee 
 `<service principal ID>`는 서비스 사용자의 **appId**, **objectId** 또는 **servicePrincipalNames** 중 하나입니다. 서비스 사용자 및 Azure Container Registry 사용에 대한 자세한 내용은 [서비스 사용자로 Azure Container Registry 인증](container-registry-auth-service-principal.md)을 참조하세요.
 
 > [!IMPORTANT]
-> 역할을 변경한 후, `az acr login`을 실행하여 새 역할이 영향을 받을 수 있도록 Azure CLI에 대한 로컬 ID 토큰을 새로 고칩니다. Id의 역할을 확인 하는 방법에 대 한 자세한 내용은 [rbac를 사용 하 여 azure 리소스에 대 한 액세스 관리 및 Azure CLI](../role-based-access-control/role-assignments-cli.md) 하 고 [azure 리소스에 대 한 rbac 문제 해결](../role-based-access-control/troubleshooting.md)
+> 역할을 변경한 후, `az acr login`을 실행하여 새 역할이 영향을 받을 수 있도록 Azure CLI에 대한 로컬 ID 토큰을 새로 고칩니다. Id의 역할을 확인 하는 방법에 대한 자세한 내용은 [rbac를 사용 하 여 azure 리소스에 대한 액세스 관리 및 Azure CLI](../role-based-access-control/role-assignments-cli.md) 하 고 [azure 리소스에 대한 rbac 문제 해결](../role-based-access-control/troubleshooting.md)
 
 ## <a name="push-a-trusted-image"></a>신뢰할 수 있는 이미지 푸시
 

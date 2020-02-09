@@ -53,7 +53,7 @@ Azure AD로 인증하려면 이 엔드포인트를 테넌트 ID(디렉터리 ID)
 >
 >
 
-Azure AD 끝점에 대 한 자세한 내용은 [AZURE ad에 대 한 인증 시나리오][aad_auth_scenarios]를 참조 하세요.
+Azure AD 엔드포인트에 대한 자세한 내용은 [AZURE ad에 대한 인증 시나리오][aad_auth_scenarios]를 참조 하세요.
 
 ### <a name="batch-resource-endpoint"></a>Batch 리소스 엔드포인트
 
@@ -104,7 +104,7 @@ Azure AD에 애플리케이션을 등록하는 방법에 대한 자세한 내용
 1. Batch API를 찾으면 해당 API를 선택 하 **고 선택을 선택 합니다.**
 1. **권한 선택**에서 **액세스 Azure Batch 서비스** 옆의 확인란을 선택 하 고 **사용 권한 추가**를 선택 합니다.
 
-이제 **API 권한** 섹션에는 Azure AD 응용 프로그램이 Microsoft Graph 및 BATCH 서비스 API 모두에 대 한 액세스 권한이 있음을 보여 줍니다. Azure AD에 앱을 처음 등록할 때 Microsoft Graph에 대 한 권한이 자동으로 부여 됩니다.
+이제 **API 권한** 섹션에는 Azure AD 응용 프로그램이 Microsoft Graph 및 BATCH 서비스 API 모두에 대한 액세스 권한이 있음을 보여 줍니다. Azure AD에 앱을 처음 등록할 때 Microsoft Graph에 대한 권한이 자동으로 부여 됩니다.
 
 ![API 권한 부여](./media/batch-aad-auth/required-permissions-data-plane.png)
 
@@ -112,10 +112,10 @@ Azure AD에 애플리케이션을 등록하는 방법에 대한 자세한 내용
 
 무인으로 실행되는 애플리케이션을 인증하려면 서비스 사용자를 사용합니다. 애플리케이션을 등록했으면 Azure Portal에서 다음 단계에 따라 서비스 주체를 구성합니다.
 
-1. 응용 프로그램에 대 한 암호를 요청 합니다.
+1. 응용 프로그램에 대한 암호를 요청 합니다.
 1. 응용 프로그램에 RBAC (역할 기반 액세스 제어)를 할당 합니다.
 
-### <a name="request-a-secret-for-your-application"></a>응용 프로그램에 대 한 암호 요청
+### <a name="request-a-secret-for-your-application"></a>응용 프로그램에 대한 암호 요청
 
 응용 프로그램은 서비스 주체를 사용 하 여 인증 하는 경우 Azure AD에 응용 프로그램 ID와 암호를 모두 보냅니다. 코드에서 사용할 비밀 키를 만들고 복사해야 합니다.
 
@@ -124,7 +124,7 @@ Azure Portal에서 다음 단계를 따릅니다.
 1. Azure Portal의 왼쪽 탐색 창에서 **모든 서비스**를 선택합니다. **앱 등록**을 선택 합니다.
 1. 앱 등록 목록에서 응용 프로그램을 선택 합니다.
 1. 응용 프로그램을 선택한 다음 **인증서 & 암호**를 선택 합니다. **클라이언트 암호** 섹션에서 **새 클라이언트 암호**를 선택 합니다.
-1. 비밀을 만들려면 비밀에 대 한 설명을 입력 합니다. 그런 다음 1 년, 2 년 또는 만료 없음의 비밀에 대 한 만료를 선택 합니다.
+1. 비밀을 만들려면 비밀에 대한 설명을 입력 합니다. 그런 다음 1 년, 2 년 또는 만료 없음의 비밀에 대한 만료를 선택 합니다.
 1. **추가** 를 선택 하 여 비밀을 만들고 표시 합니다. 비밀 값을 안전한 장소에 복사 합니다 .이 경우 페이지를 나가면 다시 액세스할 수 없습니다.
 
     ![비밀 키 만들기](./media/batch-aad-auth/secret-key.png)
@@ -165,7 +165,7 @@ Azure Portal에서 다음 단계를 따릅니다.
 - Microsoft. Batch/batchAccounts/read (읽기 작업의 경우)
 - Microsoft. Batch/batchAccounts/listKeys/action (모든 작업)
 
-사용자 지정 역할은 Batch 계정 자격 증명 (공유 키)이 아닌 Azure AD에서 인증 된 사용자를 위한 것입니다. Batch 계정 자격 증명은 Batch 계정에 대 한 모든 권한을 부여 합니다. 또한 자동 풀를 사용 하는 작업에는 풀 수준 권한이 필요 합니다.
+사용자 지정 역할은 Batch 계정 자격 증명 (공유 키)이 아닌 Azure AD에서 인증 된 사용자를 위한 것입니다. Batch 계정 자격 증명은 Batch 계정에 대한 모든 권한을 부여 합니다. 또한 자동 풀를 사용 하는 작업에는 풀 수준 권한이 필요 합니다.
 
 사용자 지정 역할 정의의 예는 다음과 같습니다.
 
@@ -203,7 +203,7 @@ Azure Portal에서 다음 단계를 따릅니다.
 }
 ```
 
-사용자 지정 역할을 만드는 방법에 대 한 일반적인 내용은 [Azure 리소스에 대 한 사용자 지정 역할](../role-based-access-control/custom-roles.md)을 참조 하세요.
+사용자 지정 역할을 만드는 방법에 대한 일반적인 내용은 [Azure 리소스에 대한 사용자 지정 역할](../role-based-access-control/custom-roles.md)을 참조 하세요.
 
 ### <a name="get-the-tenant-id-for-your-azure-active-directory"></a>Azure Active Directory에 대한 테넌트 ID 가져오기
 
@@ -223,7 +223,7 @@ Azure Portal에서 다음 단계를 따릅니다.
 > Azure AD 인증 토큰은 1시간 후 만료됩니다. 수명이 긴 **BatchClient** 개체를 사용하는 경우 항상 유효한 토큰을 갖도록 모든 요청에 대해 ADAL에서 토큰을 검색하는 것이 좋습니다. 
 >
 >
-> 이를 위해 .NET에서 Azure AD에서 토큰을 검색하는 메서드를 작성하고 해당 메서드를 대리자로 **BatchTokenCredentials** 개체에 전달합니다. 대리자 메서드는 유효한 토큰이 제공되었는지 확인하도록 Batch 서비스에 대한 모든 요청에서 호출됩니다. 기본적으로 ADAL은 토큰을 캐시하므로 필요한 경우 Azure AD에서 새 토큰이 검색됩니다. Azure AD의 토큰에 대 한 자세한 내용은 [AZURE ad에 대 한 인증 시나리오][aad_auth_scenarios]를 참조 하세요.
+> 이를 위해 .NET에서 Azure AD에서 토큰을 검색하는 메서드를 작성하고 해당 메서드를 대리자로 **BatchTokenCredentials** 개체에 전달합니다. 대리자 메서드는 유효한 토큰이 제공되었는지 확인하도록 Batch 서비스에 대한 모든 요청에서 호출됩니다. 기본적으로 ADAL은 토큰을 캐시하므로 필요한 경우 Azure AD에서 새 토큰이 검색됩니다. Azure AD의 토큰에 대한 자세한 내용은 [AZURE ad에 대한 인증 시나리오][aad_auth_scenarios]를 참조 하세요.
 >
 >
 

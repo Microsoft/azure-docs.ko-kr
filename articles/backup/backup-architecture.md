@@ -27,7 +27,7 @@ Azure Backup은 온-프레미스 컴퓨터 및 Azure VM (가상 컴퓨터) 인�
   - 온-프레미스 컴퓨터를 백업 서버 (System Center Data Protection Manager (DPM) 또는 Microsoft Azure Backup 서버 (MABS)에 백업할 수 있습니다. 그런 다음 백업 서버를 Azure의 Recovery Services 자격 증명 모음에 백업할 수 있습니다.
 
 - **Azure VM 백업**:
-  - Azure VM을 직접 백업할 수 있습니다. Azure Backup VM에서 실행 되는 Azure VM 에이전트에 대 한 백업 확장을 설치 합니다. 이 확장은 전체 VM을 백업합니다.
+  - Azure VM을 직접 백업할 수 있습니다. Azure Backup VM에서 실행 되는 Azure VM 에이전트에 대한 백업 확장을 설치 합니다. 이 확장은 전체 VM을 백업합니다.
   - MARS 에이전트를 실행하여 Azure VM에서 특정 파일 및 폴더를 백업할 수 있습니다.
   - Azure Vm은 Azure에서 실행 되는 MABS에 백업할 수 있으며, 그런 다음, MABS를 Recovery Services 자격 증명 모음에 백업할 수 있습니다.
 
@@ -92,7 +92,7 @@ Azure Backup는 백업 중인 컴퓨터의 유형에 따라 서로 다른 백업
 
 다음 표에는 다양 한 유형의 백업에 대해 지원 되는 기능이 요약 되어 있습니다.
 
-**기능** | **파일 및 폴더에 대 한 직접 백업 (MARS 에이전트 사용)** | **Azure VM 백업** | **DPM/MABS를 사용 하는 컴퓨터 또는 앱**
+**기능** | **파일 및 폴더에 대한 직접 백업 (MARS 에이전트 사용)** | **Azure VM 백업** | **DPM/MABS를 사용 하는 컴퓨터 또는 앱**
 --- | --- | --- | ---
 자격 증명 모음에 백업 | ![예][green] | ![예][green] | ![예][green]
 DPM/MABS 디스크에 백업한 다음 Azure에 백업 | | | ![예][green]
@@ -117,11 +117,11 @@ DPM/MABS 디스크에 백업한 다음 Azure에 백업 | | | ![예][green]
 - "매일", "매주", "매월", "매년" 단위로 백업 지점에 대한 보존을 정의할 수 있습니다.
 - "매주"는 그 주의 특정 날짜의 백업을 참조하고, "매월"은 그 달의 특정 날짜의 백업을 의미하며, "매년"은 그 해의 특정 날짜의 백업을 참조합니다.
 - "매월", "매년" 백업 지점의 보존은 "LongTermRetention"이라고 합니다.
-- 자격 증명 모음을 만들면 "DefaultPolicy" 라는 Azure VM 백업에 대 한 정책도 만들어지고 Azure Vm을 백업 하는 데 사용할 수 있습니다.
+- 자격 증명 모음을 만들면 "DefaultPolicy" 라는 Azure VM 백업에 대한 정책도 만들어지고 Azure Vm을 백업 하는 데 사용할 수 있습니다.
 
 ## <a name="architecture-built-in-azure-vm-backup"></a>아키텍처: 기본 제공 Azure VM 백업
 
-1. Azure VM에 대 한 백업을 사용 하도록 설정 하면 지정한 일정에 따라 백업이 실행 됩니다.
+1. Azure VM에 대한 백업을 사용 하도록 설정 하면 지정한 일정에 따라 백업이 실행 됩니다.
 1. 첫 번째 백업 중에 VM이 실행 되는 경우 백업 확장이 VM에 설치 됩니다.
     - Windows Vm의 경우 VMSnapshot 확장을 설치 합니다.
     - Linux Vm의 경우 VMSnapshot Linux 확장이 설치 됩니다.
@@ -135,7 +135,7 @@ DPM/MABS 디스크에 백업한 다음 Azure에 백업 | | | ![예][green]
     - 스냅샷 데이터가 자격 증명 모음에 즉시 복사되지 않을 수 있습니다. 사용량이 많은 시간에 백업은 약간의 시간이 걸릴 수 있습니다. 일별 백업 정책에서 VM의 총 백업 시간은 24 시간 미만입니다.
 1. 자격 증명 모음에 데이터가 전송 된 후에는 복구 지점이 생성 됩니다. 기본적으로 스냅숏은 삭제 되기 2 일 동안 보존 됩니다. 이 기능을 통해 이러한 스냅숏에서 복원 작업을 수행할 수 있으므로 복원 시간이 줄어듭니다. 자격 증명 모음에서 데이터를 다시 변환 하 고 복사 하는 데 필요한 시간을 줄일 수 있습니다. [Azure Backup 인스턴트 복원 기능](https://docs.microsoft.com/azure/backup/backup-instant-restore-capability)을 참조 하세요.
 
-Azure Vm은 제어 명령에 대 한 인터넷 액세스가 필요 합니다. VM 내에서 워크 로드를 백업 하는 경우 (예: SQL Server 데이터베이스 백업), 백 엔드 데이터도 인터넷에 액세스할 수 있어야 합니다.
+Azure Vm은 제어 명령에 대한 인터넷 액세스가 필요 합니다. VM 내에서 워크 로드를 백업 하는 경우 (예: SQL Server 데이터베이스 백업), 백 엔드 데이터도 인터넷에 액세스할 수 있어야 합니다.
 
 ![Azure VM의 백업](./media/backup-architecture/architecture-azure-vm.png)
 
@@ -146,7 +146,7 @@ Azure Vm은 제어 명령에 대 한 인터넷 액세스가 필요 합니다. VM
 1. MARS 에이전트는 VSS를 사용 하 여 백업을 위해 선택한 볼륨의 특정 시점 스냅숏을 만듭니다.
     - MARS 에이전트는 Windows 시스템 쓰기 작업만 사용 하 여 스냅숏을 캡처합니다.
     - 에이전트는 응용 프로그램 VSS 기록기를 사용 하지 않으므로 앱 일치 스냅숏을 캡처하지 않습니다.
-1. VSS를 사용 하 여 스냅숏을 만든 후 MARS 에이전트는 백업을 구성할 때 지정한 캐시 폴더에 VHD (가상 하드 디스크)를 만듭니다. 에이전트는 또한 각 데이터 블록에 대 한 체크섬을 저장 합니다.
+1. VSS를 사용 하 여 스냅숏을 만든 후 MARS 에이전트는 백업을 구성할 때 지정한 캐시 폴더에 VHD (가상 하드 디스크)를 만듭니다. 에이전트는 또한 각 데이터 블록에 대한 체크섬을 저장 합니다.
 1. 요청 시 백업을 실행 하지 않는 한 증분 백업은 지정한 일정에 따라 실행 됩니다.
 1. 증분 백업에서는 변경된 파일이 식별되고 새 VHD가 만들어집니다. VHD는 압축 되 고 암호화 된 후 자격 증명 모음으로 전송 됩니다.
 1. 증분 백업이 완료 된 후에는 새 VHD가 초기 복제 후 생성 된 VHD와 병합 됩니다. 이 병합 된 VHD는 진행 중인 백업을 비교 하는 데 사용할 최신 상태를 제공 합니다.
@@ -159,7 +159,7 @@ Azure Vm은 제어 명령에 대 한 인터넷 액세스가 필요 합니다. VM
     - 온-프레미스 머신을 보호하려면 DPM 또는 MABS 서버가 온-프레미스에 있어야 합니다.
     - Azure VM을 보호하려면 Azure VM으로 실행되는 MABS 서버가 Azure에 있어야 합니다.
     - DPM/MABS를 사용 하 여 백업 볼륨, 공유, 파일 및 폴더를 보호할 수 있습니다. 또한 컴퓨터의 시스템 상태 (운영 체제 미 설치)를 보호 하 고 앱 인식 백업 설정을 사용 하 여 특정 앱을 보호할 수 있습니다.
-1. DPM/MABS에서 컴퓨터 또는 앱에 대 한 보호를 설정 하는 경우 단기 저장소 및 온라인 보호를 위해 Azure에 대 한 MABS/DPM 로컬 디스크에 백업 하도록 선택 합니다. 또한 로컬 DPM/MABS 저장소에 대 한 백업을 실행 해야 하는 경우와 Azure에 대 한 온라인 백업을 실행 해야 하는 경우를 지정 합니다.
+1. DPM/MABS에서 컴퓨터 또는 앱에 대한 보호를 설정 하는 경우 단기 저장소 및 온라인 보호를 위해 Azure에 대한 MABS/DPM 로컬 디스크에 백업 하도록 선택 합니다. 또한 로컬 DPM/MABS 저장소에 대한 백업을 실행 해야 하는 경우와 Azure에 대한 온라인 백업을 실행 해야 하는 경우를 지정 합니다.
 1. 보호 되는 작업의 디스크는 지정 된 일정에 따라 로컬 MABS/DPM 디스크에 백업 됩니다.
 1. Dpm/MABS 디스크는 DPM/MABS 서버에서 실행 중인 MARS 에이전트에 의해 자격 증명 모음에 백업 됩니다.
 
@@ -167,23 +167,23 @@ Azure Vm은 제어 명령에 대 한 인터넷 액세스가 필요 합니다. VM
 
 ## <a name="azure-vm-storage"></a>Azure VM 스토리지
 
-Azure VM은 디스크를 사용하여 운영 체제, 앱 및 데이터를 저장합니다. 각 Azure VM에는 두 개 이상의 디스크 (운영 체제용 디스크 및 임시 디스크)가 있습니다. Azure Vm에는 앱 데이터에 대 한 데이터 디스크도 있을 수 있습니다. 디스크는 VHD로 저장됩니다.
+Azure VM은 디스크를 사용하여 운영 체제, 앱 및 데이터를 저장합니다. 각 Azure VM에는 두 개 이상의 디스크 (운영 체제용 디스크 및 임시 디스크)가 있습니다. Azure Vm에는 앱 데이터에 대한 데이터 디스크도 있을 수 있습니다. 디스크는 VHD로 저장됩니다.
 
 - Vhd는 Azure의 표준 또는 프리미엄 저장소 계정에 페이지 blob으로 저장 됩니다.
-  - **표준 저장소:** 대기 시간이 중요 하지 않은 워크 로드를 실행 하는 Vm에 대 한 안정적이 고 경제적인 디스크 지원입니다. Standard storage는 표준 SSD (반도체 드라이브) 디스크 또는 표준 HDD (하드 디스크 드라이브) 디스크를 사용할 수 있습니다.
+  - **표준 저장소:** 대기 시간이 중요 하지 않은 워크 로드를 실행 하는 Vm에 대한 안정적이 고 경제적인 디스크 지원입니다. Standard storage는 표준 SSD (반도체 드라이브) 디스크 또는 표준 HDD (하드 디스크 드라이브) 디스크를 사용할 수 있습니다.
   - **Premium storage:** 고성능 디스크 지원. 프리미엄 SSD 디스크를 사용합니다.
 - 디스크에는 다음과 같은 여러 성능 계층이 있습니다.
   - **표준 HDD 디스크:** Hdd에서 지원 되며 비용 효율적인 저장소에 사용 됩니다.
   - **표준 SSD 디스크:** 프리미엄 SSD 디스크와 표준 HDD 디스크의 요소를 결합 합니다. 는 HDD 보다 더 일관 된 성능과 안정성을 제공 하지만 여전히 비용 효율적입니다.
   - **프리미엄 SSD 디스크:** Ssd에서 지원 되며 i/o를 많이 사용 하는 워크 로드를 실행 하는 Vm에 대해 고성능 및 낮은 대기 시간을 제공 합니다.
 - 다음과 같은 관리 또는 비관리 디스크가 있습니다.
-  - **관리 되지 않는 디스크:** Vm에서 사용 하는 기존의 디스크 유형입니다. 이러한 디스크의 경우 사용자 고유의 스토리지 계정을 만든 다음, 디스크를 만들 때 지정합니다. 그런 다음 Vm에 대 한 저장소 리소스를 최대화 하는 방법을 파악 해야 합니다.
+  - **관리 되지 않는 디스크:** Vm에서 사용 하는 기존의 디스크 유형입니다. 이러한 디스크의 경우 사용자 고유의 스토리지 계정을 만든 다음, 디스크를 만들 때 지정합니다. 그런 다음 Vm에 대한 저장소 리소스를 최대화 하는 방법을 파악 해야 합니다.
   - **관리 디스크:** Azure에서 저장소 계정을 만들고 관리 합니다. 디스크 크기와 성능 계층을 지정 하면 Azure에서 관리 디스크를 만듭니다. 디스크를 추가 하 고 Vm을 확장 하면 Azure에서 저장소 계정을 처리 합니다.
 
-디스크 저장소 및 Vm의 사용 가능한 디스크 유형에 대 한 자세한 내용은 다음 문서를 참조 하세요.
+디스크 저장소 및 Vm의 사용 가능한 디스크 유형에 대한 자세한 내용은 다음 문서를 참조 하세요.
 
 - [Windows Vm 용 Azure managed disks](../virtual-machines/windows/managed-disks-overview.md)
-- [Linux Vm에 대 한 Azure managed disks](../virtual-machines/linux/managed-disks-overview.md)
+- [Linux Vm에 대한 Azure managed disks](../virtual-machines/linux/managed-disks-overview.md)
 - [Vm에 사용 가능한 디스크 유형](../virtual-machines/windows/disks-types.md)
 
 ### <a name="back-up-and-restore-azure-vms-with-premium-storage"></a>Premium storage를 사용 하 여 Azure Vm 백업 및 복원
@@ -191,7 +191,7 @@ Azure VM은 디스크를 사용하여 운영 체제, 앱 및 데이터를 저장
 Azure Backup에서 premium storage를 사용 하 여 Azure Vm을 백업할 수 있습니다.
 
 - Premium storage를 사용 하 여 Vm을 백업 하는 과정에서 백업 서비스는 저장소 계정에 *azurebackup-* 이라는 임시 준비 위치를 만듭니다. 준비 위치의 크기는 복구 지점 스냅숏의 크기와 같습니다.
-- Premium Storage 계정에 임시 준비 위치를 수용할 충분한 여유 공간이 있어야 합니다. 자세한 내용은 [프리미엄 페이지 blob storage 계정에 대 한 확장성 목표](../storage/blobs/scalability-targets-premium-page-blobs.md)를 참조 하세요. 준비 위치를 수정하지 마세요.
+- Premium Storage 계정에 임시 준비 위치를 수용할 충분한 여유 공간이 있어야 합니다. 자세한 내용은 [프리미엄 페이지 blob storage 계정에 대한 확장성 목표](../storage/blobs/scalability-targets-premium-page-blobs.md)를 참조 하세요. 준비 위치를 수정하지 마세요.
 - 백업 작업이 완료되면 준비 위치가 삭제됩니다.
 - 준비 위치에 사용되는 스토리지의 가격은 모든 [Premium Storage 가격 책정](../virtual-machines/windows/disks-types.md#billing)과 일관성이 있습니다.
 
@@ -213,7 +213,7 @@ Premium storage를 사용 하 여 Azure Vm을 복원 하는 경우 프리미엄 
 ## <a name="next-steps"></a>다음 단계
 
 - 지원 매트릭스를 검토 하 여 [백업 시나리오에 대해 지원 되는 기능 및 제한 사항에 대해 알아보세요](backup-support-matrix.md).
-- 다음 시나리오 중 하나에 대 한 백업을 설정 합니다.
+- 다음 시나리오 중 하나에 대한 백업을 설정 합니다.
   - [Azure vm을 백업](backup-azure-arm-vms-prepare.md)합니다.
   - 백업 서버를 사용하지 않고 [Windows 머신을 직접 백업](tutorial-backup-windows-server-to-azure.md)합니다.
   - Azure에 백업하도록 [MABS를 설정](backup-azure-microsoft-azure-backup.md)한 다음, 워크로드를 MABS에 백업합니다.

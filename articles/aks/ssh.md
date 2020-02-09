@@ -41,10 +41,10 @@ CLUSTER_RESOURCE_GROUP=$(az aks show --resource-group myResourceGroup --name myA
 SCALE_SET_NAME=$(az vmss list --resource-group $CLUSTER_RESOURCE_GROUP --query [0].name -o tsv)
 ```
 
-위의 예에서는 *CLUSTER_RESOURCE_GROUP*에 *Myresourcegroup* 의 *myAKSCluster* 에 대 한 클러스터 리소스 그룹의 이름을 할당 합니다. 그런 다음이 예제에서는 *CLUSTER_RESOURCE_GROUP* 를 사용 하 여 확장 집합 이름을 나열 하 고 *SCALE_SET_NAME*에 할당 합니다.
+위의 예에서는 *CLUSTER_RESOURCE_GROUP*에 *Myresourcegroup* 의 *myAKSCluster* 에 대한 클러스터 리소스 그룹의 이름을 할당 합니다. 그런 다음이 예제에서는 *CLUSTER_RESOURCE_GROUP* 를 사용 하 여 확장 집합 이름을 나열 하 고 *SCALE_SET_NAME*에 할당 합니다.
 
 > [!IMPORTANT]
-> 이번에는 Azure CLI를 사용 하 여 가상 머신 확장 집합 기반 AKS 클러스터에 대 한 SSH 키만 업데이트 해야 합니다.
+> 이번에는 Azure CLI를 사용 하 여 가상 머신 확장 집합 기반 AKS 클러스터에 대한 SSH 키만 업데이트 해야 합니다.
 > 
 > Linux 노드의 경우 현재 Azure CLI 사용 하 여 SSH 키만 추가할 수 있습니다. SSH를 사용 하 여 Windows Server 노드에 연결 하려면 AKS 클러스터를 만들 때 제공 된 SSH 키를 사용 하 고 SSH 공개 키를 추가 하기 위한 다음 명령 집합을 건너뜁니다. 문제를 해결 하려는 노드의 IP 주소가 여전히 필요 합니다 .이 주소는이 섹션의 마지막 명령에 표시 됩니다. 또는 SSH를 사용 하는 대신 [RDP (원격 데스크톱 프로토콜) 연결을 사용 하 여 Windows Server 노드에 연결할][aks-windows-rdp] 수 있습니다.
 
@@ -93,14 +93,14 @@ SSH를 사용 하 여 노드에 액세스 하려면 [ssh 연결 만들기](#crea
 
 SSH 액세스를 위해 가상 머신 가용성 집합 기반 AKS 클러스터를 구성 하려면 클러스터의 Linux 노드 이름을 찾고 SSH 공개 키를 해당 노드에 추가 합니다.
 
-[Az aks show][az-aks-show] 명령을 사용 하 여 aks 클러스터의 리소스 그룹 이름을 가져온 다음 [az vm list][az-vm-list] 명령을 사용 하 여 클러스터의 Linux 노드에 대 한 가상 컴퓨터 이름을 나열 합니다.
+[Az aks show][az-aks-show] 명령을 사용 하 여 aks 클러스터의 리소스 그룹 이름을 가져온 다음 [az vm list][az-vm-list] 명령을 사용 하 여 클러스터의 Linux 노드에 대한 가상 컴퓨터 이름을 나열 합니다.
 
 ```azurecli-interactive
 CLUSTER_RESOURCE_GROUP=$(az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv)
 az vm list --resource-group $CLUSTER_RESOURCE_GROUP -o table
 ```
 
-위의 예에서는 *CLUSTER_RESOURCE_GROUP*에 *Myresourcegroup* 의 *myAKSCluster* 에 대 한 클러스터 리소스 그룹의 이름을 할당 합니다. 그런 다음이 예제에서는 *CLUSTER_RESOURCE_GROUP* 를 사용 하 여 가상 컴퓨터 이름을 나열 합니다. 예제 출력에는 가상 컴퓨터의 이름이 표시 됩니다.
+위의 예에서는 *CLUSTER_RESOURCE_GROUP*에 *Myresourcegroup* 의 *myAKSCluster* 에 대한 클러스터 리소스 그룹의 이름을 할당 합니다. 그런 다음이 예제에서는 *CLUSTER_RESOURCE_GROUP* 를 사용 하 여 가상 컴퓨터 이름을 나열 합니다. 예제 출력에는 가상 컴퓨터의 이름이 표시 됩니다.
 
 ```
 Name                      ResourceGroup                                  Location
@@ -158,7 +158,7 @@ AKS 노드에 SSH를 연결하려면 AKS 클러스터에서 도우미 Pod를 실
     apt-get update && apt-get install openssh-client -y
     ```
 
-1. 컨테이너에 연결 되지 않은 새 터미널 창을 열고 개인 SSH 키를 도우미 pod에 복사 합니다. 이 개인 키는 AKS 노드에 대 한 SSH를 만드는 데 사용 됩니다. 
+1. 컨테이너에 연결 되지 않은 새 터미널 창을 열고 개인 SSH 키를 도우미 pod에 복사 합니다. 이 개인 키는 AKS 노드에 대한 SSH를 만드는 데 사용 됩니다. 
 
    필요에 따라 *~/.ssh/id_rsa*를 프라이빗 SSH 키의 위치로 변경합니다.
 
@@ -166,13 +166,13 @@ AKS 노드에 SSH를 연결하려면 AKS 클러스터에서 도우미 Pod를 실
     kubectl cp ~/.ssh/id_rsa $(kubectl get pod -l run=aks-ssh -o jsonpath='{.items[0].metadata.name}'):/id_rsa
     ```
 
-1. 컨테이너에 대 한 터미널 세션으로 돌아가서 복사 된 `id_rsa` 개인 SSH 키에 대 한 사용 권한을 사용자 읽기 전용으로 업데이트 합니다.
+1. 컨테이너에 대한 터미널 세션으로 돌아가서 복사 된 `id_rsa` 개인 SSH 키에 대한 사용 권한을 사용자 읽기 전용으로 업데이트 합니다.
 
     ```console
     chmod 0600 id_rsa
     ```
 
-1. AKS 노드에 대 한 SSH 연결을 만듭니다. AKS 노드에 대한 기본 사용자 이름은 *azureuser*입니다. SSH 키를 먼저 신뢰할 수 있다면 계속 연결하기 위한 프롬프트를 수락합니다. 그런 다음, AKS 노드의 bash 프롬프트와 함께 표시됩니다.
+1. AKS 노드에 대한 SSH 연결을 만듭니다. AKS 노드에 대한 기본 사용자 이름은 *azureuser*입니다. SSH 키를 먼저 신뢰할 수 있다면 계속 연결하기 위한 프롬프트를 수락합니다. 그런 다음, AKS 노드의 bash 프롬프트와 함께 표시됩니다.
 
     ```console
     $ ssh -i id_rsa azureuser@10.240.0.4

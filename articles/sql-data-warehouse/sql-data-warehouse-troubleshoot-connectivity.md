@@ -24,7 +24,7 @@ ms.locfileid: "73692414"
 - [서비스 가용성 확인](./sql-data-warehouse-troubleshoot-connectivity.md#check-service-availability)
 - [일시 중지 또는 크기 조정 작업 확인](./sql-data-warehouse-troubleshoot-connectivity.md#check-for-paused-or-scaling-operation)
 - [방화벽 설정 확인](./sql-data-warehouse-troubleshoot-connectivity.md#check-your-firewall-settings)
-- [VNet/서비스 끝점 설정 확인](./sql-data-warehouse-troubleshoot-connectivity.md#check-your-vnetservice-endpoint-settings)
+- [VNet/서비스 엔드포인트 설정 확인](./sql-data-warehouse-troubleshoot-connectivity.md#check-your-vnetservice-endpoint-settings)
 - [최신 드라이버 확인](./sql-data-warehouse-troubleshoot-connectivity.md#check-for-the-latest-drivers)
 - [연결 문자열 확인](./sql-data-warehouse-troubleshoot-connectivity.md#check-your-connection-string)
 - [간헐적 연결 문제](./sql-data-warehouse-troubleshoot-connectivity.md#intermittent-connection-issues)
@@ -60,7 +60,7 @@ SQL Data Warehouse 상태가 여기에 표시 됩니다. 서비스가 **사용 �
 
 SQL Data Warehouse는 포트 1433을 통해 통신합니다.   회사 네트워크 내에서 연결 하려는 경우 1433 포트를 통한 아웃 바운드 트래픽이 네트워크 방화벽에서 허용 되지 않을 수 있습니다. 이 경우 IT 부서에서 1433 포트를 열지 않으면 Azure SQL Database 서버에 연결할 수 없습니다. 방화벽 구성에 대 한 추가 정보는 [여기](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure#create-and-manage-ip-firewall-rules)를 참조 하세요.
 
-## <a name="check-your-vnetservice-endpoint-settings"></a>VNet/서비스 끝점 설정 확인
+## <a name="check-your-vnetservice-endpoint-settings"></a>VNet/서비스 엔드포인트 설정 확인
 
 40914 및 40615 오류를 수신 하는 경우 [여기에서 오류 설명 및 해결](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview?toc=/azure/sql-data-warehouse/toc.json#errors-40914-and-40615)을 참조 하세요.
 

@@ -96,7 +96,7 @@ az group deployment create \
 
 ## <a name="subscribe-to-registry-events"></a>레지스트리 이벤트 구독
 
-Event Grid에서 *항목*을 구독하여 추적하려는 이벤트와 이벤트를 보낼 위치를 알립니다. 다음 [az event grid 이벤트-subscription create][az-eventgrid-event-subscription-create] 명령은 사용자가 만든 컨테이너 레지스트리를 구독 하 고 웹 앱의 URL을 이벤트를 보내야 하는 끝점으로 지정 합니다. 이전 섹션에서 채워진 환경 변수가 여기에 재사용되므로 편집이 필요 없습니다.
+Event Grid에서 *항목*을 구독하여 추적하려는 이벤트와 이벤트를 보낼 위치를 알립니다. 다음 [az event grid 이벤트-subscription create][az-eventgrid-event-subscription-create] 명령은 사용자가 만든 컨테이너 레지스트리를 구독 하 고 웹 앱의 URL을 이벤트를 보내야 하는 엔드포인트으로 지정 합니다. 이전 섹션에서 채워진 환경 변수가 여기에 재사용되므로 편집이 필요 없습니다.
 
 ```azurecli-interactive
 ACR_REGISTRY_ID=$(az acr show --name $ACR_NAME --query id --output tsv)

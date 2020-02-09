@@ -33,7 +33,7 @@ Batch 관리 .NET 라이브러리 및 AccountManagement 샘플을 사용하는 �
 
 ## <a name="register-your-application-with-azure-ad"></a>Azure AD에 애플리케이션 등록
 
-ADAL (Azure [Active Directory 인증 라이브러리][aad_adal] )은 응용 프로그램 내에서 사용할 수 있도록 azure AD에 대 한 프로그래밍 인터페이스를 제공 합니다. 애플리케이션에서 ADAL을 호출하려면 Azure AD 테넌트에 애플리케이션을 등록해야 합니다. 애플리케이션을 등록할 때 Azure AD 테넌트 내에서 이름을 포함하여 애플리케이션에 대한 Azure AD 정보를 제공합니다. 그런 다음, Azure AD는 런타임 시 애플리케이션을 Azure AD와 연결하는 데 사용하는 애플리케이션 ID를 제공합니다. 애플리케이션 ID에 대한 자세한 내용은 [Azure Active Directory의 애플리케이션 및 서비스 주체 개체](../active-directory/develop/app-objects-and-service-principals.md)를 참조하세요.
+ADAL (Azure [Active Directory 인증 라이브러리][aad_adal] )은 응용 프로그램 내에서 사용할 수 있도록 azure AD에 대한 프로그래밍 인터페이스를 제공 합니다. 애플리케이션에서 ADAL을 호출하려면 Azure AD 테넌트에 애플리케이션을 등록해야 합니다. 애플리케이션을 등록할 때 Azure AD 테넌트 내에서 이름을 포함하여 애플리케이션에 대한 Azure AD 정보를 제공합니다. 그런 다음, Azure AD는 런타임 시 애플리케이션을 Azure AD와 연결하는 데 사용하는 애플리케이션 ID를 제공합니다. 애플리케이션 ID에 대한 자세한 내용은 [Azure Active Directory의 애플리케이션 및 서비스 주체 개체](../active-directory/develop/app-objects-and-service-principals.md)를 참조하세요.
 
 AccountManagement 샘플 응용 프로그램을 등록 하려면 [Azure Active Directory와 응용 프로그램 통합][aad_integrate]에서 [응용 프로그램 추가](../active-directory/develop/quickstart-register-app.md) 섹션의 단계를 따르세요. 애플리케이션 유형으로 **네이티브 클라이언트 애플리케이션**을 지정합니다. **리디렉션 URI**의 업계 표준 OAuth 2.0 URI는 `urn:ietf:wg:oauth:2.0:oob`입니다. 그러나 실제 엔드포인트일 필요가 없으므로 `http://myaccountmanagementsample`리디렉션 URI**에 대한 유효한 URI(예:** )를 지정할 수 있습니다.
 
@@ -124,7 +124,7 @@ AuthenticationResult authResult = authContext.AcquireToken(ResourceUri,
 
 ## <a name="next-steps"></a>다음 단계
 
-[Accountmanagement 샘플 응용 프로그램][acct_mgmt_sample]을 실행 하는 방법에 대 한 자세한 내용은 [.Net 용 batch 관리 클라이언트 라이브러리를 사용 하 여 batch 계정 및 할당량 관리](batch-management-dotnet.md)를 참조 하세요.
+[Accountmanagement 샘플 응용 프로그램][acct_mgmt_sample]을 실행 하는 방법에 대한 자세한 내용은 [.Net 용 batch 관리 클라이언트 라이브러리를 사용 하 여 batch 계정 및 할당량 관리](batch-management-dotnet.md)를 참조 하세요.
 
 Azure AD에 대한 자세한 내용은 [Azure Active Directory 설명서](https://docs.microsoft.com/azure/active-directory/)를 참조하세요. ADAL을 사용하는 방법을 보여 주는 자세한 예제는 [Azure 코드 샘플](https://azure.microsoft.com/resources/samples/?service=active-directory) 라이브러리에서 사용할 수 있습니다.
 

@@ -1,6 +1,6 @@
 ---
-title: Azure SQL Database 관리 되는 인스턴스에 대 한 온라인 마이그레이션과 관련 된 알려진 문제 및 제한 사항
-description: 온라인 마이그레이션과 관련 하 여 Azure SQL Database 관리 되는 인스턴스에 대 한 알려진 문제/마이그레이션 제한 사항에 대해 알아봅니다.
+title: Azure SQL Database 관리 되는 인스턴스에 대한 온라인 마이그레이션과 관련 된 알려진 문제 및 제한 사항
+description: 온라인 마이그레이션과 관련 하 여 Azure SQL Database 관리 되는 인스턴스에 대한 알려진 문제/마이그레이션 제한 사항에 대해 알아봅니다.
 services: database-migration
 author: HJToland3
 ms.author: jtoland
@@ -18,12 +18,12 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75483142"
 ---
-# <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-sql-database-managed-instance"></a>Azure SQL Database 관리 되는 인스턴스에 대 한 온라인 마이그레이션과 관련 하 여 알려진 문제/마이그레이션 제한 사항
+# <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-sql-database-managed-instance"></a>Azure SQL Database 관리 되는 인스턴스에 대한 온라인 마이그레이션과 관련 하 여 알려진 문제/마이그레이션 제한 사항
 
 SQL Server에서 Azure SQL Database 관리 되는 인스턴스로의 온라인 마이그레이션과 관련 된 알려진 문제 및 제한 사항은 아래에 설명 되어 있습니다.
 
 > [!IMPORTANT]
-> Azure SQL Database에 대 한 SQL Server의 온라인 마이그레이션을 통해 SQL_variant 데이터 형식 마이그레이션은 지원 되지 않습니다.
+> Azure SQL Database에 대한 SQL Server의 온라인 마이그레이션을 통해 SQL_variant 데이터 형식 마이그레이션은 지원 되지 않습니다.
 
 ## <a name="backup-requirements"></a>백업 요구 사항
 

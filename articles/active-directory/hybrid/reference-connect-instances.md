@@ -51,7 +51,7 @@ Microsoft Cloud 독일에 현재 표시되지 않는 기능은 다음과 같습�
 | --- |
 | \*.microsoftonline.com |
 | \*.microsoftonline.us |
-| \*. windows.net (자동 Azure Government 테 넌 트 검색에 필요) |
+| \*. windows.net (자동 Azure Government 테넌트 검색에 필요) |
 | \*.gov.us.microsoftonline.com |
 | +인증서 해지 목록 |
 
@@ -60,7 +60,7 @@ Microsoft Cloud 독일에 현재 표시되지 않는 기능은 다음과 같습�
 
 ### <a name="manual-configuration"></a>수동 구성
 
-다음 수동 구성 단계는 Azure AD Connect는 Azure Government 동기화 끝점을 사용 하도록 사용 됩니다.
+다음 수동 구성 단계는 Azure AD Connect는 Azure Government 동기화 엔드포인트을 사용 하도록 사용 됩니다.
 
 1. Azure AD Connect 설치를 시작합니다.
 2. EULA를 허용하는 첫 번째 페이지가 표시되면 진행을 멈추고 설치 마법사가 실행되도록 합니다.

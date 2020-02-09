@@ -16,7 +16,7 @@ ms.locfileid: "76277410"
 ---
 # <a name="monitor-azure-data-explorer-performance-health-and-usage-with-metrics"></a>메트릭을 사용 하 여 Azure 데이터 탐색기 성능, 상태 및 사용 현황 모니터링
 
-Azure Data Explorer는 애플리케이션, 웹 사이트, IoT 디바이스 등으로부터 수집된 대규모 데이터 스트리밍에 대한 실시간 분석을 제공하는 속도가 빠른 완전 관리형 데이터 분석 서비스입니다. Azure Data Explorer를 사용하려면 먼저 클러스터를 만들고 이 클러스터에 데이터베이스를 하나 이상 만듭니다. 그런 다음, 데이터베이스에 대해 쿼리를 실행할 수 있도록 데이터베이스에 데이터를 수집(로드)합니다. Azure 데이터 탐색기 메트릭은 클러스터 리소스의 상태 및 성능에 대 한 주요 표시기를 제공 합니다. 이 문서에서 자세히 설명 하는 메트릭을 사용 하 여 특정 시나리오에서 Azure 데이터 탐색기 클러스터 상태 및 성능을 독립형 메트릭으로 모니터링할 수 있습니다. 또한 작업 [Azure 대시보드](/azure/azure-portal/azure-portal-dashboards) 및 [azure 경고](/azure/azure-monitor/platform/alerts-metric-overview)에 대 한 기준으로 메트릭을 사용할 수 있습니다.
+Azure Data Explorer는 애플리케이션, 웹 사이트, IoT 디바이스 등으로부터 수집된 대규모 데이터 스트리밍에 대한 실시간 분석을 제공하는 속도가 빠른 완전 관리형 데이터 분석 서비스입니다. Azure Data Explorer를 사용하려면 먼저 클러스터를 만들고 이 클러스터에 데이터베이스를 하나 이상 만듭니다. 그런 다음, 데이터베이스에 대해 쿼리를 실행할 수 있도록 데이터베이스에 데이터를 수집(로드)합니다. Azure 데이터 탐색기 메트릭은 클러스터 리소스의 상태 및 성능에 대한 주요 표시기를 제공 합니다. 이 문서에서 자세히 설명 하는 메트릭을 사용 하 여 특정 시나리오에서 Azure 데이터 탐색기 클러스터 상태 및 성능을 독립형 메트릭으로 모니터링할 수 있습니다. 또한 작업 [Azure 대시보드](/azure/azure-portal/azure-portal-dashboards) 및 [azure 경고](/azure/azure-monitor/platform/alerts-metric-overview)에 대한 기준으로 메트릭을 사용할 수 있습니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -30,7 +30,7 @@ Azure Data Explorer는 애플리케이션, 웹 사이트, IoT 디바이스 등�
 
 ## <a name="using-metrics"></a>메트릭 사용
 
-Azure 데이터 탐색기 클러스터에서 **메트릭** 을 선택 하 여 메트릭 창을 열고 클러스터에 대 한 분석을 시작 합니다.
+Azure 데이터 탐색기 클러스터에서 **메트릭** 을 선택 하 여 메트릭 창을 열고 클러스터에 대한 분석을 시작 합니다.
 
 ![메트릭 선택](media/using-metrics/select-metrics.png)
 
@@ -38,7 +38,7 @@ Azure 데이터 탐색기 클러스터에서 **메트릭** 을 선택 하 여 �
 
 ![메트릭 창](media/using-metrics/metrics-pane.png)
 
-1. 메트릭 차트를 만들려면 **메트릭 이름 및 메트릭 별** 관련 **집계** 를 선택 합니다. **리소스** 및 **메트릭 네임 스페이스** 선택기는 Azure 데이터 탐색기 클러스터에 대해 미리 선택 됩니다. 다른 메트릭에 대 한 자세한 내용은 [지원 되는 Azure 데이터 탐색기 메트릭](#supported-azure-data-explorer-metrics)을 참조 하세요.
+1. 메트릭 차트를 만들려면 **메트릭 이름 및 메트릭 별** 관련 **집계** 를 선택 합니다. **리소스** 및 **메트릭 네임 스페이스** 선택기는 Azure 데이터 탐색기 클러스터에 대해 미리 선택 됩니다. 다른 메트릭에 대한 자세한 내용은 [지원 되는 Azure 데이터 탐색기 메트릭](#supported-azure-data-explorer-metrics)을 참조 하세요.
 1. **메트릭 추가** 단추를 선택 하 여 동일한 차트에 표시 되는 여러 메트릭을 표시 합니다.
 1. **+ 새 차트** 단추를 선택 하 여 한 뷰에서 여러 차트를 볼 수 있습니다.
 1. 시간 선택을 사용 하 여 시간 범위를 변경 합니다 (기본값: 지난 24 시간).
@@ -46,7 +46,7 @@ Azure 데이터 탐색기 클러스터에서 **메트릭** 을 선택 하 여 �
 1. **대시보드에 고정** 을 선택 하 여 차트 구성을 다시 볼 수 있도록 대시보드에 추가 합니다.
 1. 설정 된 조건을 사용 하 여 메트릭을 시각화 하도록 **새 경고 규칙** 을 설정 합니다. 새 경고 규칙에는 사용자 차트의 대상 리소스, 메트릭, 분할 및 필터 차원이 포함됩니다. [경고 규칙 만들기 창](/azure/azure-monitor/platform/metrics-charts#create-alert-rules)에서 이러한 설정을 수정 합니다.
 
-[메트릭 탐색기](/azure/azure-monitor/platform/metrics-getting-started)사용에 대 한 추가 정보입니다.
+[메트릭 탐색기](/azure/azure-monitor/platform/metrics-getting-started)사용에 대한 추가 정보입니다.
 
 ## <a name="supported-azure-data-explorer-metrics"></a>지원 되는 Azure 데이터 탐색기 메트릭
 
@@ -63,7 +63,7 @@ Azure 데이터 탐색기 클러스터에서 **메트릭** 을 선택 하 여 �
 | 수집 사용률 | 백분율 | 평균, 최대값, 최소값 | 수집을 수행 하기 위해 용량 정책에서 할당 된 총 리소스의 데이터를 수집 하는 데 사용 되는 실제 리소스의 비율입니다. 기본 용량 정책은 수집에 투자 된 클러스터 리소스의 최대 512 동시 수집 작업 또는 75%를 초과 하지 않습니다. 80% 이하의 평균 수집 사용률은 클러스터에 대해 지속 가능한 상태입니다. 수집 사용률의 최대값은 100% 이며,이는 모든 클러스터 수집 기능이 사용 되 고 수집 큐가 발생할 수 있음을 의미 합니다. |
 | 연결 유지 | 카운트 | Avg | 클러스터의 응답성을 추적 합니다. 완전히 응답성이 높은 클러스터는 값 1을 반환 하 고 차단 되거나 연결이 끊어진 클러스터는 0을 반환 합니다. |
 | 제한 된 명령의 총 수 | 카운트 | Avg, Max, Min, Sum | 허용 되는 최대 동시 (병렬) 명령 수에 도달 했으므로 클러스터에서 제한 된 (거부 된) 명령 수입니다. |
-| 총 익스텐트 수 | 카운트 | Avg, Max, Min, Sum | 클러스터에 있는 총 데이터 익스텐트 수입니다. 데이터 익스텐트 병합은 CPU 사용량이 많은 작업 이므로이 메트릭에 대 한 변경으로 클러스터의 대규모 데이터 구조 변경 및 높은 부하가 암시 될 수 있습니다. |
+| 총 익스텐트 수 | 카운트 | Avg, Max, Min, Sum | 클러스터에 있는 총 데이터 익스텐트 수입니다. 데이터 익스텐트 병합은 CPU 사용량이 많은 작업 이므로이 메트릭에 대한 변경으로 클러스터의 대규모 데이터 구조 변경 및 높은 부하가 암시 될 수 있습니다. |
 | | | | |
 
 ### <a name="export-health-and-performance-metrics"></a>상태 및 성능 메트릭 내보내기
@@ -114,7 +114,7 @@ Azure 데이터 탐색기 클러스터에서 **메트릭** 을 선택 하 여 �
 스트리밍 수집 결과 | 카운트 | Avg   | 결과 유형별 총 스트리밍 수집 요청 수입니다. |
 | | | | |
 
-[지원 되는 Azure 데이터 탐색기 클러스터 메트릭에](/azure/azure-monitor/platform/metrics-supported#microsoftkustoclusters) 대 한 추가 정보
+[지원 되는 Azure 데이터 탐색기 클러스터 메트릭에](/azure/azure-monitor/platform/metrics-supported#microsoftkustoclusters) 대한 추가 정보
 
 
 ## <a name="next-steps"></a>다음 단계

@@ -1,5 +1,5 @@
 ---
-title: 클라우드 솔루션 공급자에 대 한 Azure AD Domain Services | Microsoft Docs
+title: 클라우드 솔루션 공급자에 대한 Azure AD Domain Services | Microsoft Docs
 description: Azure 클라우드 솔루션 공급자의 Azure Active Directory Domain Services
 services: active-directory-ds
 documentationcenter: ''
@@ -43,7 +43,7 @@ Azure AD Domain Services는 LDAP, Kerberos/NTLM 인증, 도메인 가입, 그룹
 
 Azure AD Domain Services는 이제 Azure CSP 구독을 지원합니다. 이제 고객의 Azure AD 디렉터리에 연결된 Azure CSP 구독에서 애플리케이션을 배포할 수 있습니다. 결과적으로 직원(지원 스태프)은 해당 조직의 회사 자격 증명을 사용하여 애플리케이션을 배포한 가상 머신을 관리하고 제공할 수 있습니다. 또한 고객의 Azure AD 디렉터리에 Azure AD Domain Services 관리되는 도메인을 제공할 수 있습니다. 애플리케이션은 고객의 관리되는 도메인에 연결됩니다. 따라서 LDAP, Kerberos/NTLM 또는 [System.DirectoryServices API](/dotnet/api/system.directoryservices)를 사용하는 애플리케이션 내의 기능은 고객의 디렉터리에 대해 원활하게 작동합니다. 최종 고객은 애플리케이션이 배포된 인프라를 유지 관리할 방법에 대해 걱정할 필요 없이 애플리케이션을 서비스로 사용하여 큰 이익을 얻습니다.
 
-Azure AD Domain Services를 비롯한 해당 구독에서 사용하는 Azure 리소스에 대한 요금은 다시 사용자에게 청구됩니다. 판매, 청구, 기술 지원 등을 통해 고객과의 관계에 대 한 모든 권한을 유지 합니다. Azure CSP 플랫폼의 유연성을 제공 하는 소규모 지원 에이전트 팀은 응용 프로그램 인스턴스를 배포 하는 여러 고객에 게 서비스를 제공 합니다.
+Azure AD Domain Services를 비롯한 해당 구독에서 사용하는 Azure 리소스에 대한 요금은 다시 사용자에게 청구됩니다. 판매, 청구, 기술 지원 등을 통해 고객과의 관계에 대한 모든 권한을 유지 합니다. Azure CSP 플랫폼의 유연성을 제공 하는 소규모 지원 에이전트 팀은 응용 프로그램 인스턴스를 배포 하는 여러 고객에 게 서비스를 제공 합니다.
 
 
 ## <a name="csp-deployment-models-for-azure-ad-domain-services"></a>Azure AD Domain Services의 CSP 배포 모델

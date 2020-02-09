@@ -37,7 +37,7 @@ Azure Functions Core Tools에는 세 가지 버전이 있습니다. 사용 중�
 
 + [**버전 2.x/** ](#v2)2.x:는 [Azure Functions 런타임의 버전 2.x 또는](functions-versions.md)3.x를 지원 합니다. 이러한 버전은 [Windows](/azure/azure-functions/functions-run-local?tabs=windows#v2), [Macos](/azure/azure-functions/functions-run-local?tabs=macos#v2)및 [Linux](/azure/azure-functions/functions-run-local?tabs=linux#v2) 를 지원 하 고 플랫폼별 패키지 관리자 또는 npm를 사용 하 여 설치 합니다.
 
-별도로 언급 하지 않는 한이 문서의 예는 버전 2.x에 대 한 것입니다.
+별도로 언급 하지 않는 한이 문서의 예는 버전 2.x에 대한 것입니다.
 
 ## <a name="install-the-azure-functions-core-tools"></a>Azure Functions 핵심 도구 설치
 
@@ -113,13 +113,13 @@ Tools의 버전 2.x/2.x는 .NET Core를 기반으로 하는 Azure Functions 런�
 
 1. APT 업데이트를 수행 하기 전에 .NET 개발 원본 목록을 설정 합니다.
 
-   Ubuntu에 대 한 APT 원본 목록을 설정 하려면 다음 명령을 실행 합니다.
+   Ubuntu에 대한 APT 원본 목록을 설정 하려면 다음 명령을 실행 합니다.
 
     ```bash
     sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-$(lsb_release -cs)-prod $(lsb_release -cs) main" > /etc/apt/sources.list.d/dotnetdev.list'
     ```
 
-   Debian에 대 한 APT 원본 목록을 설정 하려면 다음 명령을 실행 합니다.
+   Debian에 대한 APT 원본 목록을 설정 하려면 다음 명령을 실행 합니다.
 
     ```bash
     sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/debian/$(lsb_release -rs | cut -d'.' -f 1)/prod $(lsb_release -cs) main" > /etc/apt/sources.list.d/dotnetdev.list'
@@ -156,7 +156,7 @@ Tools의 버전 2.x/2.x는 .NET Core를 기반으로 하는 Azure Functions 런�
 
 함수 프로젝트 디렉터리에는 개별 함수에 대한 코드가 포함된 하위 폴더와 함께 [host.json](functions-host-json.md) 및 [local.settings.json](#local-settings-file) 파일이 포함됩니다. 이 디렉터리는 Azure의 함수 앱에 해당합니다. Functions 폴더 구조에 대한 자세한 내용은 [Azure Functions 개발자 가이드](functions-reference.md#folder-structure)를 참조하세요.
 
-버전 2.x를 사용 하려면 프로젝트를 초기화할 때 프로젝트에 대 한 기본 언어를 선택 해야 합니다. 버전 2.x에서 추가 된 모든 함수는 기본 언어 템플릿을 사용 합니다. 버전 1.x에서는 함수를 만들 때마다 언어를 지정합니다.
+버전 2.x를 사용 하려면 프로젝트를 초기화할 때 프로젝트에 대한 기본 언어를 선택 해야 합니다. 버전 2.x에서 추가 된 모든 함수는 기본 언어 템플릿을 사용 합니다. 버전 1.x에서는 함수를 만들 때마다 언어를 지정합니다.
 
 터미널 창이나 명령 프롬프트에서 다음 명령을 실행하여 프로젝트 및 로컬 Git 리포지토리를 만듭니다.
 
@@ -195,7 +195,7 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 | **`--csharp`**<br/> **`--dotnet`** | [ C# 클래스 라이브러리 (.cs) 프로젝트](functions-dotnet-class-library.md)를 초기화 합니다. |
 | **`--csx`** | [ C# 스크립트 (csx) 프로젝트](functions-reference-csharp.md)를 초기화 합니다. 후속 명령에서 `--csx`를 지정해야 합니다. |
 | **`--docker`** | 선택한 `--worker-runtime`을 기반으로 하는 기본 이미지를 사용하여 컨테이너용 Docker 파일을 만듭니다. 사용자 지정 Linux 컨테이너에 게시하려는 경우 이 옵션을 사용합니다. |
-| **`--docker-only`** |  Dockerfile을 기존 프로젝트에 추가 합니다. 지정 하지 않거나 로컬. 설정 json에 설정 된 경우 작업자-런타임에 대 한 메시지를 표시 합니다. 사용자 지정 Linux 컨테이너에 기존 프로젝트를 게시할 계획인 경우이 옵션을 사용 합니다. |
+| **`--docker-only`** |  Dockerfile을 기존 프로젝트에 추가 합니다. 지정 하지 않거나 로컬. 설정 json에 설정 된 경우 작업자-런타임에 대한 메시지를 표시 합니다. 사용자 지정 Linux 컨테이너에 기존 프로젝트를 게시할 계획인 경우이 옵션을 사용 합니다. |
 | **`--force`** | 프로젝트에 기존 파일이 있어도 프로젝트를 초기화합니다. 이 설정은 이름이 같은 기존 파일을 덮어씁니다. 프로젝트 폴더의 다른 파일에는 영향이 없습니다. |
 | **`--java`**  | [Java 프로젝트](functions-reference-java.md)를 초기화 합니다. |
 | **`--javascript`**<br/>**`--node`**  | [JavaScript 프로젝트](functions-reference-node.md)를 초기화 합니다. |
@@ -373,7 +373,7 @@ Http Function MyHttpTrigger: http://localhost:7071/api/MyHttpTrigger
 ```
 
 >[!IMPORTANT]
->로컬로 실행 하는 경우 HTTP 끝점에 대 한 권한 부여는 적용 되지 않습니다. 즉, 모든 로컬 HTTP 요청은 `authLevel = "anonymous"`로 처리됩니다. 자세한 내용은 [HTTP 바인딩 문서](functions-bindings-http-webhook.md#authorization-keys)를 참조하세요.
+>로컬로 실행 하는 경우 HTTP 엔드포인트에 대한 권한 부여는 적용 되지 않습니다. 즉, 모든 로컬 HTTP 요청은 `authLevel = "anonymous"`로 처리됩니다. 자세한 내용은 [HTTP 바인딩 문서](functions-bindings-http-webhook.md#authorization-keys)를 참조하세요.
 
 ### <a name="passing-test-data-to-a-function"></a>테스트 데이터를 함수에 전달
 
@@ -531,7 +531,7 @@ Azure에서 함수 앱을 만들 때 Application Insights 통합을 사용 하�
 
 [!INCLUDE [functions-streaming-logs-core-tools](../../includes/functions-streaming-logs-core-tools.md)]
 
-이 유형의 스트리밍 로그에는 함수 앱에 대 한 Application Insights 통합을 사용 하도록 설정 해야 합니다.   
+이 유형의 스트리밍 로그에는 함수 앱에 대한 Application Insights 통합을 사용 하도록 설정 해야 합니다.   
 
 
 ## <a name="next-steps"></a>다음 단계

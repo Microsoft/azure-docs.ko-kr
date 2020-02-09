@@ -20,7 +20,7 @@ ms.locfileid: "75444383"
 ---
 # <a name="copy-data-to-and-from-azure-database-for-postgresql-by-using-azure-data-factory"></a>Azure Data Factory를 사용 하 여 Azure Database for PostgreSQL 간에 데이터 복사
 
-이 문서에서는 Azure Data Factory의 복사 작업 기능을 사용 하 여 Azure Database for PostgreSQL에서 데이터를 복사 하는 방법을 설명 합니다. 복사 작업에 대 한 일반적인 개요를 제공 하는 [Azure Data Factory 아티클의 복사 작업](copy-activity-overview.md) 을 기반으로 합니다.
+이 문서에서는 Azure Data Factory의 복사 작업 기능을 사용 하 여 Azure Database for PostgreSQL에서 데이터를 복사 하는 방법을 설명 합니다. 복사 작업에 대한 일반적인 개요를 제공 하는 [Azure Data Factory 아티클의 복사 작업](copy-activity-overview.md) 을 기반으로 합니다.
 
 이 커넥터는 [Azure Database for PostgreSQL 서비스](../postgresql/overview.md)에 대해 특수화 되어 있습니다. 온-프레미스 또는 클라우드에 있는 일반 PostgreSQL 데이터베이스에서 데이터를 복사 하려면 [PostgreSQL 커넥터](connector-postgresql.md)를 사용 합니다.
 
@@ -175,7 +175,7 @@ Azure Database for PostgreSQL에 데이터를 복사 하려면 복사 작업 **�
 | 속성 | Description | 필수 |
 |:--- |:--- |:--- |
 | type | 복사 작업 싱크의 type 속성은 **AzurePostgreSQLSink**로 설정 해야 합니다. | 예 |
-| preCopyScript | 각 실행에서 Azure Database for PostgreSQL에 데이터를 쓰기 전에 실행할 복사 작업에 대 한 SQL 쿼리를 지정 합니다. 이 속성을 사용하여 미리 로드된 데이터를 정리할 수 있습니다. | 아닙니다. |
+| preCopyScript | 각 실행에서 Azure Database for PostgreSQL에 데이터를 쓰기 전에 실행할 복사 작업에 대한 SQL 쿼리를 지정 합니다. 이 속성을 사용하여 미리 로드된 데이터를 정리할 수 있습니다. | 아닙니다. |
 | writeBatchSize | 버퍼 크기가 writeBatchSize에 도달 하면 Azure Database for PostgreSQL 테이블에 데이터를 삽입 합니다.<br>허용 되는 값은 행 수를 나타내는 정수입니다. | 아니요(기본값: 10,000) |
 | writeBatchTimeout | 시간이 초과되기 전에 완료하려는 배치 삽입 작업을 위한 대기 시간입니다.<br>허용 되는 값은 Timespan 문자열입니다. 예를 들어 "00:30:00"(30분)입니다. | 아니요 (기본값은 00:00:30) |
 
@@ -214,7 +214,7 @@ Azure Database for PostgreSQL에 데이터를 복사 하려면 복사 작업 **�
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용은 [Azure Data Factory에서 조회 작업](control-flow-lookup-activity.md)을 참조 하세요.
+속성에 대한 자세한 내용은 [Azure Data Factory에서 조회 작업](control-flow-lookup-activity.md)을 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 Azure Data Factory에서 복사 작업의 원본 및 싱크로 지원되는 데이터 저장소 목록은 [지원되는 데이터 저장소](copy-activity-overview.md#supported-data-stores-and-formats)를 참조하세요.

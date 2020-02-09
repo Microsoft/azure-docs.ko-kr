@@ -1,7 +1,7 @@
 ---
 title: 제작 및 런타임 키를 사용 하는 방법-LUIS
 titleSuffix: Azure Cognitive Services
-description: Language Understanding (LUIS)를 처음 사용 하는 경우 제작 키를 만들 필요가 없습니다. 앱을 게시 하려는 경우 런타임 끝점을 사용 하 여 앱에 대 한 런타임 키를 만들고 할당 해야 합니다.
+description: Language Understanding (LUIS)를 처음 사용 하는 경우 제작 키를 만들 필요가 없습니다. 앱을 게시 하려는 경우 런타임 엔드포인트을 사용 하 여 앱에 대 한 런타임 키를 만들고 할당 해야 합니다.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -20,14 +20,14 @@ ms.locfileid: "74225554"
 ---
 # <a name="using-authoring-and-runtime-resource-keys"></a>제작 및 런타임 리소스 키 사용
 
-작성 및 런타임 리소스는 LUIS 앱 및 예측 끝점에 대 한 인증을 제공 합니다.
+작성 및 런타임 리소스는 LUIS 앱 및 예측 엔드포인트에 대 한 인증을 제공 합니다.
 
 <a name="create-luis-service"></a>
 <a name="create-language-understanding-endpoint-key-in-the-azure-portal"></a>
 
 LUIS 포털에 로그인 하면 다음 작업을 계속 하도록 선택할 수 있습니다.
 
-* 무료 [평가판 키](#trial-key) -제작 및 몇 가지 예측 끝점 쿼리를 제공 합니다.
+* 무료 [평가판 키](#trial-key) -제작 및 몇 가지 예측 엔드포인트 쿼리를 제공 합니다.
 * Azure [LUIS authoring](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne) 리소스입니다. 
 
 
@@ -44,28 +44,28 @@ LUIS 포털에 로그인 하면 다음 작업을 계속 하도록 선택할 수 
 
 ## <a name="trial-key"></a>평가판 키
 
-평가판 (스타터) 키가 제공 됩니다. 이는 예측 끝점 런타임을 쿼리 하는 인증 키로 사용 되며, 한 달에 최대 1000 개의 쿼리를 쿼리 합니다. 
+평가판 (스타터) 키가 제공 됩니다. 이는 예측 엔드포인트 런타임을 쿼리 하는 인증 키로 사용 되며, 한 달에 최대 1000 개의 쿼리를 쿼리 합니다. 
 
 LUIS 포털의 **사용자 설정** 페이지와 **관리-> Azure 리소스** 페이지 모두에 표시 됩니다. 
 
-예측 끝점을 게시할 준비가 되 면 작성 및 예측 런타임 키를 만들고 할당 하 여 시작 키 기능을 대체 합니다. 
+예측 엔드포인트을 게시할 준비가 되 면 작성 및 예측 런타임 키를 만들고 할당 하 여 시작 키 기능을 대체 합니다. 
 
 ## <a name="create-resources-in-the-azure-portal"></a>Azure Portal에서 리소스 만들기
 
 1. [이 링크](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne) 를 사용 하 여 리소스를 만들 때 Azure Portal를 열 수 있습니다.
-1. **둘 다** 선택 하 여 제작 및 예측 끝점 런타임 키를 만듭니다. 
+1. **둘 다** 선택 하 여 제작 및 예측 엔드포인트 런타임 키를 만듭니다. 
 1. 리소스를 만드는 데 필요한 정보를 입력 하 고 **만들기** 를 선택 하 여 프로세스를 완료 합니다.
 
     ![언어 이해 리소스 만들기](./media/luis-how-to-azure-subscription/create-resource-in-azure.png)
 
     |name|용도|
     |--|--|
-    |리소스 이름| 사용자가 선택한 사용자 지정 이름으로, 작성 및 예측 끝점 쿼리의 URL의 일부로 사용 됩니다.|
+    |리소스 이름| 사용자가 선택한 사용자 지정 이름으로, 작성 및 예측 엔드포인트 쿼리의 URL의 일부로 사용 됩니다.|
     |구독 이름| 리소스에 대해 요금이 청구 되는 구독입니다.|
     |Resource group| 사용자가 선택 하거나 만드는 사용자 지정 리소스 그룹 이름입니다. 리소스 그룹을 사용 하면 동일한 지역에서 액세스 및 관리를 위해 Azure 리소스를 그룹화 할 수 있습니다.|
     |작성 위치|모델과 연결 된 지역입니다.|
     |작성 가격 책정 계층|가격 책정 계층은 초당 최대 트랜잭션 수와 월을 결정 합니다.|
-    |런타임 위치|게시 된 예측 끝점 런타임과 연결 된 지역입니다.|
+    |런타임 위치|게시 된 예측 엔드포인트 런타임과 연결 된 지역입니다.|
     |런타임 가격 책정 계층|가격 책정 계층은 초당 최대 트랜잭션 수와 월을 결정 합니다.|
 
     두 리소스를 모두 만든 후에는 LUIS 포털에서 리소스를 할당 합니다.
@@ -93,7 +93,7 @@ LUIS 포털의 **사용자 설정** 페이지와 **관리-> Azure 리소스** �
     az cognitiveservices account create -n my-luis-authoring-resource -g my-resource-group --kind LUIS.Authoring --sku F0 -l westus --yes
     ```
 
-1. `westus` 영역에 대 한 `my-resource-group` 이라는 _기존_ 리소스 그룹에 `my-luis-prediction-resource` 이라는 종류 `LUIS`의 **LUIS 예측 끝점 리소스**를 만듭니다. 무료 계층 보다 높은 처리량을 원하는 경우 `F0`를 `S0`으로 변경 합니다. [가격 책정 계층 및 처리량](luis-boundaries.md#key-limits)에 대해 자세히 알아보세요.
+1. `westus` 영역에 대 한 `my-resource-group` 이라는 _기존_ 리소스 그룹에 `my-luis-prediction-resource` 이라는 종류 `LUIS`의 **LUIS 예측 엔드포인트 리소스**를 만듭니다. 무료 계층 보다 높은 처리량을 원하는 경우 `F0`를 `S0`으로 변경 합니다. [가격 책정 계층 및 처리량](luis-boundaries.md#key-limits)에 대해 자세히 알아보세요.
 
     ```console
     az cognitiveservices account create -n my-luis-prediction-resource -g my-resource-group --kind LUIS --sku F0 -l westus --yes
@@ -112,7 +112,7 @@ LUIS 포털의 **사용자 설정** 페이지와 **관리-> Azure 리소스** �
 
 ## <a name="assign-a-resource-to-an-app"></a>앱에 리소스 할당
 
-다음 절차를 사용 하 여 단일 리소스 제작 또는 예측 끝점 런타임을 앱에 할당할 수 있습니다.
+다음 절차를 사용 하 여 단일 리소스 제작 또는 예측 엔드포인트 런타임을 앱에 할당할 수 있습니다.
 
 1. [LUIS 포털](https://www.luis.ai)에 로그인 한 다음 **내 앱** 목록에서 앱을 선택 합니다.
 1. **관리-> Azure 리소스** 페이지로 이동 합니다.

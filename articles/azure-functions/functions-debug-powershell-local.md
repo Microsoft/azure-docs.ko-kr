@@ -68,7 +68,7 @@ Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
 
 PowerShell 함수를 디버깅 하려면 디버거를 연결 하기 위해 함수를 중지 해야 합니다. `Wait-Debugger` cmdlet은 실행을 중지 하 고 디버거를 대기 합니다.
 
-다음과 같이 `if` 문 바로 위에 `Wait-Debugger` cmdlet에 대 한 호출을 추가 하기만 하면 됩니다.
+다음과 같이 `if` 문 바로 위에 `Wait-Debugger` cmdlet에 대한 호출을 추가 하기만 하면 됩니다.
 
 ```powershell
 param($Request)
@@ -93,7 +93,7 @@ if($name) {
 
 Visual Studio Code에서 PowerShell 함수를 디버깅 하려면 다음이 설치 되어 있어야 합니다.
 
-* [Visual Studio Code에 대 한 PowerShell 확장](/powershell/scripting/components/vscode/using-vscode)
+* [Visual Studio Code에 대한 PowerShell 확장](/powershell/scripting/components/vscode/using-vscode)
 * [Visual Studio Code용 Azure Functions 확장](functions-create-first-function-vs-code.md)
 * [PowerShell Core 6.2 이상](/powershell/scripting/install/installing-powershell-core-on-windows)
 
@@ -145,7 +145,7 @@ Invoke-RestMethod "http://localhost:7071/api/HttpTrigger?Name=Functions"
 
 응답이 즉시 반환 되지 않는다는 것을 알 수 있습니다. 이는 `Wait-Debugger` 디버거가 연결 되었고 PowerShell 실행이 중단 모드로 전환 되었기 때문입니다. 이는 나중에 설명 하는 [모든 개념 개념](#breakall-might-cause-your-debugger-to-break-in-an-unexpected-place)으로 인해 발생 합니다. `continue` 단추를 누르면 디버거가 `Wait-Debugger`후 오른쪽 줄에서 중단 됩니다.
 
-이 시점에서 디버거가 연결 되 고 모든 일반 디버거 작업을 수행할 수 있습니다. Visual Studio Code에서 디버거를 사용 하는 방법에 대 한 자세한 내용은 [공식 설명서](https://code.visualstudio.com/Docs/editor/debugging#_debug-actions)를 참조 하세요.
+이 시점에서 디버거가 연결 되 고 모든 일반 디버거 작업을 수행할 수 있습니다. Visual Studio Code에서 디버거를 사용 하는 방법에 대한 자세한 내용은 [공식 설명서](https://code.visualstudio.com/Docs/editor/debugging#_debug-actions)를 참조 하세요.
 
 계속 해 서 스크립트를 완전히 호출 하면 다음을 확인할 수 있습니다.
 
@@ -196,7 +196,7 @@ pwsh            32071 None
 pwsh            88785 None
 ```
 
-`ProcessName` 테이블에서 항목에 대 한 `ProcessId`를 `dotnet`로 적어 둡니다. 이 프로세스는 함수 앱입니다.
+`ProcessName` 테이블에서 항목에 대한 `ProcessId`를 `dotnet`로 적어 둡니다. 이 프로세스는 함수 앱입니다.
 
 다음으로 다음 코드 조각을 실행 합니다.
 

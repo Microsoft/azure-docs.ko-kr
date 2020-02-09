@@ -88,13 +88,13 @@ Azure-SSIS IR을 아직 프로비전하지 않은 경우 [자습서](tutorial-cr
    
 2. **작업** 도구 상자에서 **일반** 메뉴를 펼치고, **웹** 작업을 파이프라인 디자이너 화면으로 끌어서 놓습니다. 작업 속성 창의 **일반** 탭에서 작업 이름을 **startMyIR**로 변경합니다. **설정** 탭으로 전환하고, 다음 작업을 수행합니다.
 
-    1. **Url**에 대해 Azure-SSIS IR 시작 하 고, `{subscriptionId}`, `{resourceGroupName}`, `{factoryName}`, `{integrationRuntimeName}`을 ir에 대 한 실제 값으로 대체 하는 REST API에 대해 다음 url을 입력 합니다. `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/start?api-version=2018-06-01` 또는 ADF UI/앱의 모니터링 페이지에서 IR의 리소스 ID를 복사 하 여 복사 & 하 여 위의 URL의 다음 부분을 바꿀 수도 있습니다 `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}`
+    1. **Url**에 대해 Azure-SSIS IR 시작 하 고, `{subscriptionId}`, `{resourceGroupName}`, `{factoryName}`, `{integrationRuntimeName}`을 ir에 대한 실제 값으로 대체 하는 REST API에 대해 다음 url을 입력 합니다. `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/start?api-version=2018-06-01` 또는 ADF UI/앱의 모니터링 페이지에서 IR의 리소스 ID를 복사 하 여 복사 & 하 여 위의 URL의 다음 부분을 바꿀 수도 있습니다 `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}`
     
        ![ADF SSIS IR 리소스 ID](./media/how-to-schedule-azure-ssis-integration-runtime/adf-ssis-ir-resource-id.png)
   
     2. **메서드**로 **POST**를 선택합니다. 
     3. **본문**에 `{"message":"Start my IR"}`를 입력합니다. 
-    4. **인증**의 경우 ADF에 대해 관리 되는 id를 사용 하려면 **MSI** 를 선택 하 고 자세한 내용은 [Data Factory에 대 한 관리 id](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) 문서를 참조 하세요.
+    4. **인증**의 경우 ADF에 대해 관리 되는 id를 사용 하려면 **MSI** 를 선택 하 고 자세한 내용은 [Data Factory에 대한 관리 id](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) 문서를 참조 하세요.
     5. **리소스**에 `https://management.azure.com/`을 입력합니다.
     
        ![ADF 웹 작업 일정 SSIS IR](./media/how-to-schedule-azure-ssis-integration-runtime/adf-web-activity-schedule-ssis-ir.png)

@@ -28,7 +28,7 @@ Bing Statistics는 Bing Search API에 대 한 분석을 제공 합니다. 이러
 > * Bing 통계를 사용 하도록 설정 하면 구독 요금이 약간 늘어납니다. 자세한 내용은 [가격 책정](https://aka.ms/bingstatisticspricing) 을 참조 하세요.
 
 
-다음 이미지는 각 Bing Search API 끝점에 대해 사용 가능한 분석을 보여 줍니다.
+다음 이미지는 각 Bing Search API 엔드포인트에 대해 사용 가능한 분석을 보여 줍니다.
 
 ![엔드포인트 지원 매트릭스별 배포](./media/bing-statistics/bing-statistics-matrix.png)
 
@@ -65,7 +65,7 @@ Bing 업데이트는 24 시간 마다 분석 데이터를 분석 하 고 [분석
 For example, if you don't include the User-Agent header in your calls, the dashboard will not include device-related graphs.
 -->
 
-가능한 메트릭 및 끝점 제한 사항은 다음과 같습니다.
+가능한 메트릭 및 엔드포인트 제한 사항은 다음과 같습니다.
 
 - **호출량**: 보고 기간 동안 수행된 호출 수를 표시합니다. 보고 기간이 하루 동안인 경우 차트에는 시간당 호출 수가 표시됩니다. 그렇지 않은 경우, 차트에는 보고 기간 중 하루당 호출 수가 표시됩니다.  
   

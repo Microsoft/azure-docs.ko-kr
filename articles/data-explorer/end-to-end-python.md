@@ -1,5 +1,5 @@
 ---
-title: Python을 통해 Azure 데이터 탐색기에 대 한 종단 간 blob 수집
+title: Python을 통해 Azure 데이터 탐색기에 대한 종단 간 blob 수집
 description: 이 문서에서는 Python을 사용 하는 종단 간 예제를 사용 하 여 blob을 Azure 데이터 탐색기에 수집 하는 방법을 알아봅니다.
 author: lucygoldbergmicrosoft
 ms.author: lugoldbe
@@ -14,14 +14,14 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 02/02/2020
 ms.locfileid: "76964306"
 ---
-# <a name="end-to-end-blob-ingestion-into-azure-data-explorer-through-python"></a>Python을 통해 Azure 데이터 탐색기에 대 한 종단 간 blob 수집
+# <a name="end-to-end-blob-ingestion-into-azure-data-explorer-through-python"></a>Python을 통해 Azure 데이터 탐색기에 대한 종단 간 blob 수집
 
 > [!div class="op_single_selector"]
 > * [C#](end-to-end-csharp.md)
 > * [Python](end-to-end-python.md)
 >
 
-Azure Data Explorer는 로그 및 원격 분석 데이터에 사용 가능한 빠르고 확장이 가능한 데이터 탐색 서비스로서, 이 문서에서는 azure Blob storage에서 Azure 데이터 탐색기로 데이터를 수집 하는 방법에 대 한 종단 간 예제를 제공 합니다. 
+Azure Data Explorer는 로그 및 원격 분석 데이터에 사용 가능한 빠르고 확장이 가능한 데이터 탐색 서비스로서, 이 문서에서는 azure Blob storage에서 Azure 데이터 탐색기로 데이터를 수집 하는 방법에 대한 종단 간 예제를 제공 합니다. 
 
 프로그래밍 방식으로 리소스 그룹, 저장소 계정 및 컨테이너, 이벤트 허브 및 Azure 데이터 탐색기 클러스터와 데이터베이스를 만드는 방법을 알아봅니다. 또한 Azure 데이터 탐색기를 프로그래밍 방식으로 구성 하 여 새 저장소 계정에서 데이터를 수집 하는 방법을 알아봅니다.
 
@@ -194,8 +194,8 @@ poller.wait()
 |---|---|---|
 | tenant_id | 테넌트 ID 디렉터리 ID 라고도 합니다.|
 | subscription_id | 리소스를 만드는 데 사용 하는 구독 ID입니다.|
-| client_id | 테 넌 트의 리소스에 액세스할 수 있는 응용 프로그램의 클라이언트 ID입니다.|
-| client_secret | 테 넌 트의 리소스에 액세스할 수 있는 응용 프로그램의 클라이언트 암호입니다. |
+| client_id | 테넌트의 리소스에 액세스할 수 있는 응용 프로그램의 클라이언트 ID입니다.|
+| client_secret | 테넌트의 리소스에 액세스할 수 있는 응용 프로그램의 클라이언트 암호입니다. |
 
 ## <a name="test-the-code-example"></a>코드 예제 테스트
 
@@ -236,7 +236,7 @@ poller.wait()
 
 ## <a name="next-steps"></a>다음 단계
 
-*  클러스터 및 데이터베이스를 만드는 다른 방법에 대 한 자세한 내용은 [Azure 데이터 탐색기 클러스터 및 데이터베이스 만들기](create-cluster-database-python.md)를 참조 하세요.
-* 수집 방법에 대 한 자세한 내용은 [Azure 데이터 탐색기 데이터](ingest-data-overview.md)수집을 참조 하세요.
-* 웹 응용 프로그램에 대 한 자세한 내용은 [빠른 시작: Azure 데이터 탐색기 웹 UI에서 데이터 쿼리](web-query-data.md)를 참조 하세요.
+*  클러스터 및 데이터베이스를 만드는 다른 방법에 대한 자세한 내용은 [Azure 데이터 탐색기 클러스터 및 데이터베이스 만들기](create-cluster-database-python.md)를 참조 하세요.
+* 수집 방법에 대한 자세한 내용은 [Azure 데이터 탐색기 데이터](ingest-data-overview.md)수집을 참조 하세요.
+* 웹 응용 프로그램에 대한 자세한 내용은 [빠른 시작: Azure 데이터 탐색기 웹 UI에서 데이터 쿼리](web-query-data.md)를 참조 하세요.
 * Kusto 쿼리 언어를 사용하여 [쿼리를 작성](write-queries.md)합니다.

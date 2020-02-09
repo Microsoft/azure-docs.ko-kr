@@ -30,7 +30,7 @@ ms.locfileid: "76986192"
 |CrlCheckingFlag|uint, 기본값: 0x40000000 |동적| 애플리케이션/서비스 인증서 체인 유효성 검사에 대한 플래그입니다. 예: CRL 확인 0x10000000 CERT_CHAIN_REVOCATION_CHECK_END_CERT 0x20000000 CERT_CHAIN_REVOCATION_CHECK_CHAIN 0x40000000 CERT_CHAIN_REVOCATION_CHECK_CHAIN_EXCLUDE_ROOT 0x80000000 CERT_CHAIN_REVOCATION_CHECK_CACHE_ONLY 0으로 설정하면 CRL 확인이 해제됩니다. 지원되는 전체 값 목록은 CertGetCertificateChain의 dwFlags에서 문서화되어 있습니다(https://msdn.microsoft.com/library/windows/desktop/aa376078(v=vs.85).aspx ).  |
 |DefaultHttpRequestTimeout |시간(초). 기본값은 120입니다. |동적|시간 간격은 초 단위로 지정합니다.  http 앱 게이트웨이에서 처리 중인 http 요청에 대한 기본 요청 시간 제한을 지정합니다. |
 |ForwardClientCertificate|bool, 기본값: FALSE|동적|false로 설정된 경우 역방향 프록시는 클라이언트 인증서에 대해 요청하지 않습니다. true로 설정된 경우 역방향 프록시는 SSL 핸드셰이크 중 클라이언트 인증서에 대해 요청하며 X-Client-Certificate라는 헤더의 서비스에 base64로 인코딩된 PEM 형식의 문자열을 전달합니다. 서비스는 인증서 데이터를 검사한 후 적절한 상태 코드로 요청에 실패할 수 있습니다. true이고 클라이언트가 인증서를 제시하지 않으면 역방향 프록시는 빈 헤더를 전달하고 서비스에서 처리하도록 합니다. 역방향 프록시는 투명한 계층처럼 작동합니다. 자세한 정보는 [클라이언트 인증서 인증 설정](service-fabric-reverseproxy-configure-secure-communication.md#setting-up-client-certificate-authentication-through-the-reverse-proxy)을 참조하세요. |
-|GatewayAuthCredentialType |string, 기본값: "None" |정적| Http 앱 게이트웨이 끝점에서 사용할 보안 자격 증명의 형식을 나타냅니다. 유효한 값은 None/X509입니다. |
+|GatewayAuthCredentialType |string, 기본값: "None" |정적| Http 앱 게이트웨이 엔드포인트에서 사용할 보안 자격 증명의 형식을 나타냅니다. 유효한 값은 None/X509입니다. |
 |GatewayX509CertificateFindType |string, 기본값: "FindByThumbprint" |동적| GatewayX509CertificateStoreName에 지정한 저장소에서 인증서를 검색하는 방법을 나타냅니다. 지원되는 값: FindByThumbprint, FindBySubjectName |
 |GatewayX509CertificateFindValue | string, 기본값: "" |동적| http 앱 게이트웨이 인증서를 찾는 데 사용되는 검색 필터 값. 이 인증서는 https 엔드포인트에서 구성되며, 서비스에서 필요한 경우 앱 ID를 확인하는 데 사용할 수도 있습니다. FindValue를 먼저 조회하고, 이 FindValue가 없으면 FindValueSecondary를 조회합니다. |
 |GatewayX509CertificateFindValueSecondary | string, 기본값: "" |동적|http 앱 게이트웨이 인증서를 찾는 데 사용되는 검색 필터 값. 이 인증서는 https 엔드포인트에서 구성되며, 서비스에서 필요한 경우 앱 ID를 확인하는 데 사용할 수도 있습니다. FindValue를 먼저 조회하고, 이 FindValue가 없으면 FindValueSecondary를 조회합니다.|
@@ -643,14 +643,14 @@ ms.locfileid: "76986192"
 ## <a name="security"></a>보안
 | **매개 변수** | **허용되는 값** |**업그레이드 정책**| **지침 또는 간단한 설명** |
 | --- | --- | --- | --- |
-|AADCertEndpointFormat|string, 기본값: ""|정적|AAD 인증서 끝점 형식, 기본 Azure 상용, Azure Government "https:\//login.microsoftonline.us/{0}/federationmetadata/2007-06/federationmetadata.xml"와 같은 기본 환경이 아닌 환경에 대해 지정 됨 |
+|AADCertEndpointFormat|string, 기본값: ""|정적|AAD 인증서 엔드포인트 형식, 기본 Azure 상용, Azure Government "https:\//login.microsoftonline.us/{0}/federationmetadata/2007-06/federationmetadata.xml"와 같은 기본 환경이 아닌 환경에 대해 지정 됨 |
 |AADClientApplication|string, 기본값: ""|정적|Fabric 클라이언트를 나타내는 Native Client 애플리케이션 이름 또는 ID |
 |AADClusterApplication|string, 기본값: ""|정적|클러스터를 나타내는 Web API 애플리케이션 이름 또는 ID |
-|AADLoginEndpoint|string, 기본값: ""|정적|기본 Azure 상용 인 AAD 로그인 끝점은 기본이 아닌 환경 (예: Azure Government "https:\//login.microsoftonline.us")에 대해 지정 됩니다. |
+|AADLoginEndpoint|string, 기본값: ""|정적|기본 Azure 상용 인 AAD 로그인 엔드포인트은 기본이 아닌 환경 (예: Azure Government "https:\//login.microsoftonline.us")에 대해 지정 됩니다. |
 |AADTenantId|string, 기본값: ""|정적|테넌트 ID(GUID) |
 |AcceptExpiredPinnedClusterCertificate|bool, 기본값: FALSE|동적|지문을 통해 선언 된 만료 된 클러스터 인증서를 수락할지 여부를 나타내는 플래그는 클러스터 인증서에만 적용 됩니다. 따라서 클러스터를 활성 상태로 유지 합니다. |
 |AdminClientCertThumbprints|string, 기본값: ""|동적|관리자 역할의 클라이언트에서 사용하는 인증서의 지문입니다. 쉼표로 구분된 이름 목록입니다. |
-|AADTokenEndpointFormat|string, 기본값: ""|정적|AAD 토큰 끝점, 기본 Azure 상용, Azure Government "https:\//login.microsoftonline.us/{0}"와 같은 기본 환경이 아닌 환경에 대해 지정 됨 |
+|AADTokenEndpointFormat|string, 기본값: ""|정적|AAD 토큰 엔드포인트, 기본 Azure 상용, Azure Government "https:\//login.microsoftonline.us/{0}"와 같은 기본 환경이 아닌 환경에 대해 지정 됨 |
 |AdminClientClaims|string, 기본값: ""|동적|모든 가능한 클레임은 관리자 클라이언트에서 예상되는 모든 가능한 클레임이며, ClientClaims와 동일한 형식입니다. 이 목록은 ClientClaims에 내부적으로 추가되므로 ClientClaims에 동일한 항목을 추가할 필요가 없습니다. |
 |AdminClientIdentities|string, 기본값: ""|동적|관리자 역할의 패브릭 클라이언트에 대한 Windows ID이며, 권한 있는 패브릭 작업에 대한 권한을 부여하는 데 사용됩니다. 쉼표로 구분된 목록이며, 각 항목은 도메인 계정 이름 또는 그룹 이름입니다. 편의상 fabric.exe를 실행하는 계정에 관리자 역할이 자동으로 할당됩니다. ServiceFabricAdministrators 그룹도 마찬가지입니다. |
 |AppRunAsAccountGroupX509Folder|string, 기본값: /home/sfuser/sfusercerts |정적|AppRunAsAccountGroup X509 인증서와 프라이빗 키가 있는 폴더 |

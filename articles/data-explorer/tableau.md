@@ -1,6 +1,6 @@
 ---
-title: Azure 데이터 탐색기에 대 한 ODBC (Open Database Connectivity) 연결을 사용 하 여 Tableau로 데이터 시각화
-description: 이 문서에서는 Azure 데이터 탐색기 연결에 대 한 ODBC (Open Database Connectivity) 연결을 사용 하 여 Tableau로 데이터를 시각화 하는 방법에 대해 알아봅니다.
+title: Azure 데이터 탐색기에 대한 ODBC (Open Database Connectivity) 연결을 사용 하 여 Tableau로 데이터 시각화
+description: 이 문서에서는 Azure 데이터 탐색기 연결에 대한 ODBC (Open Database Connectivity) 연결을 사용 하 여 Tableau로 데이터를 시각화 하는 방법에 대해 알아봅니다.
 author: orspod
 ms.author: orspodek
 ms.reviewer: gabil
@@ -46,7 +46,7 @@ ODBC 구성을 완료 한 후에는 Tableau로 샘플 데이터를 가져올 수
 
     ![데이터베이스 및 테이블 선택](media/tableau/select-database-table.png)
 
-1. 이제 tableau는 샘플 데이터에 대 한 스키마를 표시 합니다. **지금 업데이트** 를 선택 하 여 데이터를 tableau로 가져옵니다.
+1. 이제 tableau는 샘플 데이터에 대한 스키마를 표시 합니다. **지금 업데이트** 를 선택 하 여 데이터를 tableau로 가져옵니다.
 
     ![데이터 업데이트](media/tableau/update-data.png)
 

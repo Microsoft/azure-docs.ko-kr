@@ -102,10 +102,10 @@ ms.locfileid: "76279487"
 |maxQueuePollingInterval|30초|*Hh: mm: ss* 형식의 최대 제어 및 작업 항목 큐 폴링 간격입니다. 값이 높을수록 메시지 처리 대기 시간이 높아질 수 있습니다. 값이 낮을수록 저장소 트랜잭션이 증가 하 여 저장소 비용이 높아질 수 있습니다.|
 |azureStorageConnectionStringName |AzureWebJobsStorage|기본 Azure Storage 리소스를 관리하는 데 사용되는 Azure Storage 연결 문자열이 있는 앱 설정의 이름입니다.|
 |trackingStoreConnectionStringName||기록 및 인스턴스 테이블에 사용할 연결 문자열의 이름입니다. 지정 하지 않으면 `azureStorageConnectionStringName` 연결이 사용 됩니다.|
-|trackingStoreNamePrefix||`trackingStoreConnectionStringName` 지정 된 경우 기록 및 인스턴스 테이블에 사용할 접두사입니다. 설정 하지 않으면 기본 접두사 값이 `DurableTask`됩니다. `trackingStoreConnectionStringName` 지정 하지 않으면 기록 및 인스턴스 테이블은 `hubName` 값을 접두사로 사용 하 고 `trackingStoreNamePrefix`에 대 한 모든 설정은 무시 됩니다.|
-|traceInputsAndOutputs |false|함수 호출의 입출력을 추적할지 여부를 나타내는 값입니다. 함수 실행 이벤트를 추적할 때의 기본 동작은 함수 호출에 대한 직렬화된 입출력에 바이트 수를 포함하는 것입니다. 이 동작은 로그를 블 로트 하거나 실수로 중요 한 정보를 노출 하지 않고 입력 및 출력에 대 한 최소 정보를 제공 합니다. 이 속성을 true로 설정하면 기본 함수 로깅이 함수 입출력의 전체 내용을 기록하게 됩니다.|
+|trackingStoreNamePrefix||`trackingStoreConnectionStringName` 지정 된 경우 기록 및 인스턴스 테이블에 사용할 접두사입니다. 설정 하지 않으면 기본 접두사 값이 `DurableTask`됩니다. `trackingStoreConnectionStringName` 지정 하지 않으면 기록 및 인스턴스 테이블은 `hubName` 값을 접두사로 사용 하 고 `trackingStoreNamePrefix`에 대한 모든 설정은 무시 됩니다.|
+|traceInputsAndOutputs |false|함수 호출의 입출력을 추적할지 여부를 나타내는 값입니다. 함수 실행 이벤트를 추적할 때의 기본 동작은 함수 호출에 대한 직렬화된 입출력에 바이트 수를 포함하는 것입니다. 이 동작은 로그를 블 로트 하거나 실수로 중요 한 정보를 노출 하지 않고 입력 및 출력에 대한 최소 정보를 제공 합니다. 이 속성을 true로 설정하면 기본 함수 로깅이 함수 입출력의 전체 내용을 기록하게 됩니다.|
 |logReplayEvents|false|Application Insights에 이벤트를 재생하는 오케스트레이션을 작성할 것인지 여부를 나타내는 값입니다.|
-|eventGridTopicEndpoint ||Azure Event Grid 사용자 지정 항목 엔드포인트의 URL입니다. 이 속성을 설정 하면 오케스트레이션 수명 주기 알림 이벤트가이 끝점에 게시 됩니다. 이 속성은 앱 설정 해결을 지원합니다.|
+|eventGridTopicEndpoint ||Azure Event Grid 사용자 지정 항목 엔드포인트의 URL입니다. 이 속성을 설정 하면 오케스트레이션 수명 주기 알림 이벤트가이 엔드포인트에 게시 됩니다. 이 속성은 앱 설정 해결을 지원합니다.|
 |eventGridKeySettingName ||`EventGridTopicEndpoint`에서 Azure Event Grid 사용자 지정 항목으로 인증하는 데 사용되는 키를 포함하는 앱 설정의 이름입니다.|
 |eventGridPublishRetryCount|0|Event Grid 항목에 게시가 실패하는 경우 다시 시도 횟수입니다.|
 |eventGridPublishRetryInterval|5분|*hh:mm:ss* 형식의 Event Grid 게시 재시도 간격입니다.|

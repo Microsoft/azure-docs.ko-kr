@@ -1,6 +1,6 @@
 ---
 title: 작업을 백업 하도록 DPM 서버 준비
-description: 이 문서에서는 Azure Backup 서비스를 사용 하 여 Azure에 대 한 System Center Data Protection Manager (DPM) 백업을 준비 하는 방법에 대해 알아봅니다.
+description: 이 문서에서는 Azure Backup 서비스를 사용 하 여 Azure에 대한 System Center Data Protection Manager (DPM) 백업을 준비 하는 방법에 대해 알아봅니다.
 ms.topic: conceptual
 ms.date: 01/30/2019
 ms.openlocfilehash: 2119d46ca6102286ca879777058a49938b501ad6

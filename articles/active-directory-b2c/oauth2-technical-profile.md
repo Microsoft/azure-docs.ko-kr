@@ -22,7 +22,7 @@ ms.locfileid: "76840369"
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Azure Active Directory B2C (Azure AD B2C)는 OAuth2 프로토콜 id 공급자에 대 한 지원을 제공 합니다. OAuth2은 권한 부여 및 위임 된 인증에 대 한 기본 프로토콜입니다. 자세한 내용은 [RFC 6749 OAuth 2.0 권한 부여 프레임워크](https://tools.ietf.org/html/rfc6749)를 참조하세요. OAuth2 기술 프로필을 사용 하 여 OAuth2 기반 id 공급자 (예: Facebook)와 페더레이션 할 수 있습니다. Id 공급자와의 페더레이션을 통해 사용자는 기존 소셜 또는 엔터프라이즈 id로 로그인 할 수 있습니다.
+Azure Active Directory B2C (Azure AD B2C)는 OAuth2 프로토콜 id 공급자에 대한 지원을 제공 합니다. OAuth2은 권한 부여 및 위임 된 인증에 대한 기본 프로토콜입니다. 자세한 내용은 [RFC 6749 OAuth 2.0 권한 부여 프레임워크](https://tools.ietf.org/html/rfc6749)를 참조하세요. OAuth2 기술 프로필을 사용 하 여 OAuth2 기반 id 공급자 (예: Facebook)와 페더레이션 할 수 있습니다. Id 공급자와의 페더레이션을 통해 사용자는 기존 소셜 또는 엔터프라이즈 id로 로그인 할 수 있습니다.
 
 ## <a name="protocol"></a>프로토콜
 

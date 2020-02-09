@@ -27,7 +27,7 @@ ms.locfileid: "75894786"
 > [!IMPORTANT]
 > 이 문서는 **Azure SQL Database Managed Instance**에 적용되지 *않습니다*. 네트워킹 구성에 대 한 자세한 내용은 [Managed Instance에 연결](sql-database-managed-instance-connect-app.md) 을 참조 하세요.
 
-[Azure Portal에서](sql-database-single-database-get-started.md)새 Azure SQL Server를 만들 때 결과는 *yourservername.database.windows.net*형식의 공용 끝점입니다. 설계상 공용 끝점에 대 한 모든 액세스는 거부 됩니다. 그런 다음, 다음 네트워크 액세스 제어를 사용 하 여 공용 끝점을 통해 SQl Database에 대 한 액세스를 선택적으로 허용할 수 있습니다.
+[Azure Portal에서](sql-database-single-database-get-started.md)새 Azure SQL Server를 만들 때 결과는 *yourservername.database.windows.net*형식의 공용 엔드포인트입니다. 설계상 공용 엔드포인트에 대 한 모든 액세스는 거부 됩니다. 그런 다음, 다음 네트워크 액세스 제어를 사용 하 여 공용 엔드포인트을 통해 SQl Database에 대 한 액세스를 선택적으로 허용할 수 있습니다.
 - Azure 서비스 허용: 사용으로 설정 되 면 azure 경계 내의 다른 리소스 (예: Azure Virtual Machine)는에 액세스할 수 있습니다 SQL Database
 
 - IP 방화벽 규칙:-이 기능을 사용 하 여 온-프레미스 컴퓨터 등 특정 IP 주소에서의 연결을 명시적으로 허용 합니다.
@@ -102,7 +102,7 @@ Ip 기반 방화벽은 클라이언트 컴퓨터의 [ip 주소](sql-database-ser
 ## <a name="virtual-network-firewall-rules"></a>Virtual Network 방화벽 규칙
 
 IP 규칙 외에도 Azure SQL Server 방화벽을 사용 하 여 *가상 네트워크 규칙*을 정의할 수 있습니다.  
-자세한 내용은 [Azure SQL Database Virtual Network 서비스 끝점 및 규칙](sql-database-vnet-service-endpoint-rule-overview.md) 을 참조 하거나이 비디오를 시청 하세요.
+자세한 내용은 [Azure SQL Database Virtual Network 서비스 엔드포인트 및 규칙](sql-database-vnet-service-endpoint-rule-overview.md) 을 참조 하거나이 비디오를 시청 하세요.
 
 > [!VIDEO https://channel9.msdn.com/Shows/Data-Exposed/Data-Exposed--Demo--Vnet-Firewall-Rules-for-SQL-Database/player?WT.mc_id=dataexposed-c9-niner]
 
@@ -113,7 +113,7 @@ Virtual Network 방화벽 규칙을 탐색 하면서 다음과 같은 Azure 네�
 
 **서브넷:** 가상 네트워크에 **서브넷**이 포함됩니다. 소유한 Azure VM(가상 머신)은 서브넷에 할당됩니다. 하나의 서브넷에 여러 VM 또는 다른 컴퓨팅 노드가 포함될 수 있습니다. 액세스를 허용하도록 보안을 구성해야 가상 네트워크 외부의 컴퓨팅 노드가 가상 네트워크에 액세스할 수 있습니다.
 
-**Virtual Network 서비스 끝점:** [Virtual Network service endpoint] [vm-가상-네트워크-서비스-끝점-b y d]는 속성 값에 하나 이상의 정식 Azure 서비스 유형 이름이 포함 된 서브넷입니다. 이 문서에서는 SQL Database라는 Azure 서비스를 나타내는 **Microsoft.Sql**의 형식 이름을 살펴봅니다.
+**Virtual Network 서비스 엔드포인트:** [Virtual Network service endpoint] [vm-가상-네트워크-서비스-엔드포인트-b y d]는 속성 값에 하나 이상의 정식 Azure 서비스 유형 이름이 포함 된 서브넷입니다. 이 문서에서는 SQL Database라는 Azure 서비스를 나타내는 **Microsoft.Sql**의 형식 이름을 살펴봅니다.
 
 **가상 네트워크 규칙:** SQL Database 서버에 대한 가상 네트워크 규칙은 SQL Database 서버의 ACL(액세스 제어 목록)에 나열된 서브넷입니다. SQL Database에 대한 ACL에 나열되려면 서브넷에 **Microsoft.Sql** 형식 이름이 있어야 합니다. 가상 네트워크 규칙은 서브넷에 있는 모든 노드에서 보낸 통신을 수락하도록 SQL Database 서버에 지시합니다.
 
@@ -133,7 +133,7 @@ VM에 대 한 *고정* IP 주소를 가져오면 이러한 제한을 해결할 �
 
 - 서버 수준 IP 방화벽 규칙을 만드는 방법에 대 한 빠른 시작은 [AZURE SQL 데이터베이스 만들기](sql-database-single-database-get-started.md)를 참조 하세요.
 
-- 서버 수준 Vnet 방화벽 규칙을 만드는 방법에 대 한 빠른 시작은 [Virtual Network 서비스 끝점 및 Azure SQL Database에 대 한 규칙](sql-database-vnet-service-endpoint-rule-overview.md)을 참조 하세요.
+- 서버 수준 Vnet 방화벽 규칙을 만드는 방법에 대 한 빠른 시작은 [Virtual Network 서비스 엔드포인트 및 Azure SQL Database에 대 한 규칙](sql-database-vnet-service-endpoint-rule-overview.md)을 참조 하세요.
 
 - 오픈 소스 또는 타사 응용 프로그램에서 Azure SQL database에 연결 하는 데 도움이 필요한 경우 [클라이언트 빠른 시작 코드 샘플](https://msdn.microsoft.com/library/azure/ee336282.aspx)을 참조 하 여 SQL Database 합니다.
 

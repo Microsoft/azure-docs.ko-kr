@@ -323,7 +323,7 @@ Direct Reports for "62e19b97-8b3d-4d4a-a106-4ce66896a863"
 ```
 user.objectId -ne null
 ```
-그룹에서 게스트 사용자를 제외 하 고 테 넌 트의 멤버만 포함 하려는 경우 다음 구문을 사용할 수 있습니다.
+그룹에서 게스트 사용자를 제외 하 고 테넌트의 멤버만 포함 하려는 경우 다음 구문을 사용할 수 있습니다.
 
 ```
 (user.objectId -ne null) -and (user.userType -eq “Member”)

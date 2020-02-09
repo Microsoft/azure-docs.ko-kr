@@ -100,7 +100,7 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에서 6 단계에 설명 된 대로 디지털 자격 증명 관리자의 계정 & 사용자의 **테 넌 트 URL** 및 **암호 토큰** 을 입력 합니다.
+5. **관리자 자격 증명** 섹션 아래에서 6 단계에 설명 된 대로 디지털 자격 증명 관리자의 계정 & 사용자의 **테넌트 URL** 및 **암호 토큰** 을 입력 합니다.
 
 6. [키퍼 관리 콘솔](https://keepersecurity.com/console/#login)에 로그인 합니다. **관리자** 를 클릭 하 고 기존 노드를 선택 하거나 새 노드를 만듭니다. **프로 비전** 탭으로 이동 하 고 **메서드 추가**를 선택 합니다.
 
@@ -112,9 +112,9 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
     **프로 비전 토큰 만들기**를 클릭 합니다.
 
-    ![키퍼 끝점 만들기](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-create-endpoint.png)
+    ![키퍼 엔드포인트 만들기](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-create-endpoint.png)
 
-    **URL** 및 **토큰** 의 값을 복사 하 여 Azure AD의 **테 넌 트 URL** 및 **암호 토큰** 에 붙여넣습니다. **저장** 을 클릭 하 여 키퍼에서 프로 비전 설정을 완료 합니다.
+    **URL** 및 **토큰** 의 값을 복사 하 여 Azure AD의 **테넌트 URL** 및 **암호 토큰** 에 붙여넣습니다. **저장** 을 클릭 하 여 키퍼에서 프로 비전 설정을 완료 합니다.
 
     ![키퍼 토큰 만들기](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-create-token.png)
 

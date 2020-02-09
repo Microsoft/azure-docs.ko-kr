@@ -48,9 +48,9 @@ Azure Functions 1.x 실험적 언어는 새 모델을 사용할 수 없으므로
 
 ### <a name="changes-in-triggers-and-bindings-after-version-1x"></a>버전 1.x 이후의 트리거와 바인딩 변경
 
-2\.x 버전부터 앱의 함수에 사용 되는 특정 트리거 및 바인딩에 대 한 확장을 설치 해야 합니다. 유일한 예외는 확장이 필요 없는 이 HTTP 및 타이머 트리거입니다.  자세한 내용은 [바인딩 확장 등록 및 설치](./functions-bindings-register.md)를 참조하세요.
+2\.x 버전부터 앱의 함수에 사용 되는 특정 트리거 및 바인딩에 대한 확장을 설치 해야 합니다. 유일한 예외는 확장이 필요 없는 이 HTTP 및 타이머 트리거입니다.  자세한 내용은 [바인딩 확장 등록 및 설치](./functions-bindings-register.md)를 참조하세요.
 
-또한 함수에는 버전 사이에 함수에 대 한 몇 가지 변경 내용이 있습니다 *.* 예를 들어, 이벤트 허브 `path` 속성은 이제 `eventHubName`입니다. 각 바인딩의 설명서에 대한 링크는 [기존 바인딩 테이블](#bindings)을 참조하세요.
+또한 함수에는 버전 사이에 함수에 대한 몇 가지 변경 내용이 있습니다 *.* 예를 들어, 이벤트 허브 `path` 속성은 이제 `eventHubName`입니다. 각 바인딩의 설명서에 대한 링크는 [기존 바인딩 테이블](#bindings)을 참조하세요.
 
 ### <a name="changes-in-features-and-functionality-after-version-1x"></a>버전 1.x 이후의 기능 변경 내용
 
@@ -72,7 +72,7 @@ Azure Functions 1.x 실험적 언어는 새 모델을 사용할 수 없으므로
 
 * HTTP concurrency 제한는 기본적으로 소비 계획 함수에 대해 구현 되며 인스턴스당 기본값 100을 사용 합니다. 이 설정은 host.json 파일의 [`maxConcurrentRequests`](functions-host-json.md#http) 설정에서 변경할 수 있습니다.
 
-* [.Net Core 제한 사항](https://github.com/Azure/azure-functions-host/issues/3414)때문에 스크립트 ( F# . .fsx) 함수에 대 한 지원이 제거 되었습니다. 컴파일된 F# 함수(.fs)는 계속 지원됩니다.
+* [.Net Core 제한 사항](https://github.com/Azure/azure-functions-host/issues/3414)때문에 스크립트 ( F# . .fsx) 함수에 대한 지원이 제거 되었습니다. 컴파일된 F# 함수(.fs)는 계속 지원됩니다.
 
 * Event Grid 트리거 웹후크의 URL 형식은 `https://{app}/runtime/webhooks/{triggerName}`으로 변경되었습니다.
 

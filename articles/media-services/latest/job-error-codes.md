@@ -34,7 +34,7 @@ ms.locfileid: "65235715"
 
 ## <a name="see-also"></a>참고 항목
 
-- [스트리밍 끝점 오류 코드](streaming-endpoint-error-codes.md)
+- [스트리밍 엔드포인트 오류 코드](streaming-endpoint-error-codes.md)
 - [Azure Media Services 개념](concepts-overview.md)
 - [할당량 및 제한 사항](limits-quotas-constraints.md)
 

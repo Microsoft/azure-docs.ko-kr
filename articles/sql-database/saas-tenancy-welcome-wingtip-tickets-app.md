@@ -21,7 +21,7 @@ ms.locfileid: "73818325"
 ---
 # <a name="the-wingtip-tickets-saas-application"></a>Wingtip Tickets SaaS 애플리케이션
 
-세 개의 샘플 각각에 동일한 *Wingtip Tickets* SaaS 애플리케이션이 구현되어 있습니다. 앱은 small 장소-극장, 클럽 등을 대상으로 하는 간단한 이벤트 목록 및 티켓 SaaS 앱입니다. 각 장소는 앱의 테 넌 트 이며, 장소 세부 정보, 이벤트 목록, 고객, 티켓 주문 등의 고유한 데이터가 있습니다.  앱은 관리 스크립트 및 자습서와 함께 종단 간 SaaS 시나리오를 소개 합니다. 여기에는 테넌트 프로비전, 성능 모니터링 및 관리, 스키마 관리, 테넌트 간 보고 및 분석이 포함됩니다.
+세 개의 샘플 각각에 동일한 *Wingtip Tickets* SaaS 애플리케이션이 구현되어 있습니다. 앱은 small 장소-극장, 클럽 등을 대상으로 하는 간단한 이벤트 목록 및 티켓 SaaS 앱입니다. 각 장소는 앱의 테넌트 이며, 장소 세부 정보, 이벤트 목록, 고객, 티켓 주문 등의 고유한 데이터가 있습니다.  앱은 관리 스크립트 및 자습서와 함께 종단 간 SaaS 시나리오를 소개 합니다. 여기에는 테넌트 프로비전, 성능 모니터링 및 관리, 스키마 관리, 테넌트 간 보고 및 분석이 포함됩니다.
 
 ## <a name="three-saas-application-and-tenancy-patterns"></a>세 개의 SaaS 애플리케이션과 테넌트 패턴
 
@@ -55,7 +55,7 @@ ms.locfileid: "73818325"
 
 #### <a name="conceptual-descriptions"></a>개념적 설명
 
-- [다중 테 넌 트 SaaS 데이터베이스 테 넌 트 패턴][saas-tenancy-app-design-patterns-md] 에서 사용할 수 있는 응용 프로그램 테 넌 트 패턴에 대 한 자세한 설명
+- [다중 테넌트 SaaS 데이터베이스 테넌트 패턴][saas-tenancy-app-design-patterns-md] 에서 사용할 수 있는 응용 프로그램 테넌트 패턴에 대 한 자세한 설명
 
 #### <a name="tutorials-and-code"></a>자습서 및 코드
 
@@ -64,12 +64,12 @@ ms.locfileid: "73818325"
     - [독립 실행형 앱에 대 한 코드, GitHub][github-code-for-wingtip-sa].
 
 - 테넌트당 데이터베이스:
-    - [테 넌 트 별 데이터베이스에 대 한 자습서][docs-tutorials-for-wingtip-dpt]입니다.
-    - [GitHub에 대 한 테 넌 트 별 데이터베이스에 대 한 코드][github-code-for-wingtip-dpt]입니다.
+    - [테넌트 별 데이터베이스에 대 한 자습서][docs-tutorials-for-wingtip-dpt]입니다.
+    - [GitHub에 대 한 테넌트 별 데이터베이스에 대 한 코드][github-code-for-wingtip-dpt]입니다.
 
 - 분할된 다중 테넌트:
-    - [분할 된 다중 테 넌 트에 대 한 자습서][docs-tutorials-for-wingtip-mt]입니다.
-    - [GitHub의 분할 된 다중 테 넌 트에 대 한 코드][github-code-for-wingtip-mt]입니다.
+    - [분할 된 다중 테넌트에 대 한 자습서][docs-tutorials-for-wingtip-mt]입니다.
+    - [GitHub의 분할 된 다중 테넌트에 대 한 코드][github-code-for-wingtip-mt]입니다.
 
 
 

@@ -39,7 +39,7 @@ ms.locfileid: "76898838"
 개발자 포털은 다음과 같은 두 가지 방법으로 빌드할 수 있습니다.
 
 - **관리 되는 버전** -포털을 편집 하 고 사용자 지정 합니다 .이 포털은 API Management 인스턴스에 기본 제공 되며 `<your-api-management-instance-name>.developer.azure-api.net`URL을 통해 액세스할 수 있습니다. 관리 되는 포털에 액세스 하 고 사용자 지정 하는 방법을 알아보려면 [이 설명서 문서](api-management-howto-developer-portal-customize.md) 를 참조 하세요.
-- **자체 호스팅 버전** -API Management 인스턴스 외부에서 포털을 배포 하 고 자체 호스트 합니다. 이 방법을 사용 하면 포털의 코드 베이스를 편집 하 고 제공 된 핵심 기능을 확장할 수 있습니다. 또한 포털을 직접 최신 버전으로 업그레이드 해야 합니다. 세부 정보 및 지침은 [포털의 소스 코드와][1] 위젯을 구현 하는 방법 [에 대 한 자습서][4]를 포함 하는 GitHub 리포지토리를 참조 하세요. [관리 되는 버전에 대 한 자습서](api-management-howto-developer-portal-customize.md) 는 포털의 관리 패널을 안내 하며,이는 자체 호스팅 버전 에서도 제공 됩니다.
+- **자체 호스팅 버전** -API Management 인스턴스 외부에서 포털을 배포 하 고 자체 호스트 합니다. 이 방법을 사용 하면 포털의 코드 베이스를 편집 하 고 제공 된 핵심 기능을 확장할 수 있습니다. 또한 포털을 직접 최신 버전으로 업그레이드 해야 합니다. 세부 정보 및 지침은 [포털의 소스 코드와][1] 위젯을 구현 하는 방법 [에 대한 자습서][4]를 포함 하는 GitHub 리포지토리를 참조 하세요. [관리 되는 버전에 대한 자습서](api-management-howto-developer-portal-customize.md) 는 포털의 관리 패널을 안내 하며,이는 자체 호스팅 버전 에서도 제공 됩니다.
 
 ## <a name="portal-architectural-concepts"></a>포털 아키텍처 개념
 
@@ -66,11 +66,11 @@ ms.locfileid: "76898838"
 
 *API Management 콘텐츠* 는 Api, 작업, 제품, 구독과 같은 엔터티를 포함 합니다.
 
-포털은 [용지 비트 프레임 워크](https://paperbits.io/)의 조정 된 포크를 기반으로 합니다. 원래 용지 비트 기능은 API Management 특정 위젯 (예: Api 목록, 제품 목록) 및 콘텐츠 저장 및 검색을 위한 API Management 서비스에 대 한 커넥터를 제공 하도록 확장 되었습니다.
+포털은 [용지 비트 프레임 워크](https://paperbits.io/)의 조정 된 포크를 기반으로 합니다. 원래 용지 비트 기능은 API Management 특정 위젯 (예: Api 목록, 제품 목록) 및 콘텐츠 저장 및 검색을 위한 API Management 서비스에 대한 커넥터를 제공 하도록 확장 되었습니다.
 
 ## <a name="faq"></a>질문과 대답
 
-이 섹션에서는 일반적인 특성상 새로운 개발자 포털에 대 한 일반적인 질문에 답변 합니다. 자체 호스팅 버전과 관련 된 질문은 [GitHub 리포지토리의 wiki 섹션](https://github.com/Azure/api-management-developer-portal/wiki)을 참조 하세요.
+이 섹션에서는 일반적인 특성상 새로운 개발자 포털에 대한 일반적인 질문에 답변 합니다. 자체 호스팅 버전과 관련 된 질문은 [GitHub 리포지토리의 wiki 섹션](https://github.com/Azure/api-management-developer-portal/wiki)을 참조 하세요.
 
 ### <a name="a-idpreview-to-ga-how-can-i-migrate-from-the-preview-version-of-the-portal"></a>포털의 미리 보기 버전에서 마이그레이션할 수 있는 방법 <a id="preview-to-ga"/>
 
@@ -92,7 +92,7 @@ ms.locfileid: "76898838"
 
 ### <a name="does-the-new-portal-have-all-the-features-of-the-old-portal"></a>새 포털에 이전 포털의 모든 기능이 있나요?
 
-새 개발자 포털은 *응용 프로그램* 및 *문제*를 지원 하지 않습니다. 이전 포털에서 *문제* 를 사용 하 고 새 포털에서이를 필요로 하는 경우 [전용 GitHub 문제](https://github.com/Azure/api-management-developer-portal/issues/122)에 대 한 의견을 게시 합니다.
+새 개발자 포털은 *응용 프로그램* 및 *문제*를 지원 하지 않습니다. 이전 포털에서 *문제* 를 사용 하 고 새 포털에서이를 필요로 하는 경우 [전용 GitHub 문제](https://github.com/Azure/api-management-developer-portal/issues/122)에 대한 의견을 게시 합니다.
 
 대화형 개발자 콘솔에서 OAuth를 사용한 인증은 아직 지원 되지 않습니다. [GitHub 문제](https://github.com/Azure/api-management-developer-portal/issues/208)를 통해 진행률을 추적할 수 있습니다.
 
@@ -110,17 +110,17 @@ ms.locfileid: "76898838"
 
 관리 또는 자체 호스팅 버전을 사용 하는 경우와 관계 없이 REST API를 통해 프로그래밍 방식으로 개발자 포털의 콘텐츠를 액세스 하 고 관리할 수 있습니다.
 
-이 API는 [GitHub 리포지토리의 wiki 섹션][2]에 설명 되어 있습니다. 환경 간의 포털 콘텐츠 (예: 테스트 환경에서 프로덕션 환경으로)의 마이그레이션을 자동화 하는 데에도 사용할 수 있습니다. 이 프로세스에 대 한 자세한 내용은 GitHub의 [이 문서 문서에서](https://aka.ms/apimdocs/migrateportal) 확인할 수 있습니다.
+이 API는 [GitHub 리포지토리의 wiki 섹션][2]에 설명 되어 있습니다. 환경 간의 포털 콘텐츠 (예: 테스트 환경에서 프로덕션 환경으로)의 마이그레이션을 자동화 하는 데에도 사용할 수 있습니다. 이 프로세스에 대한 자세한 내용은 GitHub의 [이 문서 문서에서](https://aka.ms/apimdocs/migrateportal) 확인할 수 있습니다.
 
 ### <a name="does-the-portal-support-azure-resource-manager-templates-andor-is-it-compatible-with-api-management-devops-resource-kit"></a>포털이 Azure Resource Manager 템플릿을 지원 하나요? 아니면 API Management DevOps Resource Kit와 호환 되나요?
 
 아닙니다.
 
-### <a name="do-i-need-to-enable-additional-vnet-connectivity-for-the-new-managed-portal-dependencies"></a>새 관리 되는 포털 종속성에 대 한 추가 VNet 연결을 사용 하도록 설정 해야 하나요?
+### <a name="do-i-need-to-enable-additional-vnet-connectivity-for-the-new-managed-portal-dependencies"></a>새 관리 되는 포털 종속성에 대한 추가 VNet 연결을 사용 하도록 설정 해야 하나요?
 
 대부분의 경우-아니요.
 
-API Management 서비스가 내부 VNet에 있는 경우 개발자 포털은 네트워크 내 에서만 액세스할 수 있습니다. 관리 끝점의 호스트 이름은 포털의 관리 인터페이스에 액세스 하는 데 사용 하는 컴퓨터에서 서비스의 내부 VIP로 확인 되어야 합니다. 관리 끝점이 DNS에 등록 되어 있는지 확인 합니다. 잘못 된 구성의 경우 `Unable to start the portal. See if settings are specified correctly in the configuration (...)`오류가 표시 됩니다.
+API Management 서비스가 내부 VNet에 있는 경우 개발자 포털은 네트워크 내 에서만 액세스할 수 있습니다. 관리 엔드포인트의 호스트 이름은 포털의 관리 인터페이스에 액세스 하는 데 사용 하는 컴퓨터에서 서비스의 내부 VIP로 확인 되어야 합니다. 관리 엔드포인트이 DNS에 등록 되어 있는지 확인 합니다. 잘못 된 구성의 경우 `Unable to start the portal. See if settings are specified correctly in the configuration (...)`오류가 표시 됩니다.
 
 ### <a name="i-have-assigned-a-custom-api-management-domain-and-the-published-portal-doesnt-work"></a>사용자 지정 API Management 도메인을 할당 하 고 게시 된 포털이 작동 하지 않음
 
@@ -178,7 +178,7 @@ Id 공급자 (예: AAD, AAD B2C)를 구성한 후에는 [포털을 다시 게시
 
 관리 모드에서 포털을 열 때 `Oops. Something went wrong. Please try again later.` 오류가 표시 되 면 필요한 권한 (RBAC)이 없을 수 있습니다.
 
-레거시 포털은 서비스 범위 (`/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.ApiManagement/service/<apim-service-name>`)에서 `Microsoft.ApiManagement/service/getssotoken/action` 권한이 있어야 포털에 대 한 사용자 관리자 액세스를 허용 합니다. 새 포털에는 `/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.ApiManagement/service/<apim-service-name>/users/1`범위에서 `Microsoft.ApiManagement/service/users/token/action` 권한이 필요 합니다.
+레거시 포털은 서비스 범위 (`/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.ApiManagement/service/<apim-service-name>`)에서 `Microsoft.ApiManagement/service/getssotoken/action` 권한이 있어야 포털에 대한 사용자 관리자 액세스를 허용 합니다. 새 포털에는 `/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.ApiManagement/service/<apim-service-name>/users/1`범위에서 `Microsoft.ApiManagement/service/users/token/action` 권한이 필요 합니다.
 
 다음 PowerShell 스크립트를 사용 하 여 필요한 권한이 있는 역할을 만들 수 있습니다. `<subscription-id>` 매개 변수를 변경 해야 합니다. 
 
@@ -208,13 +208,13 @@ New-AzRoleAssignment -SignInName "user1@contoso.com" -RoleDefinitionName "APIM N
 
 ### <a name="im-seeing-the-unable-to-start-the-portal-see-if-settings-are-specified-correctly--error"></a>`Unable to start the portal. See if settings are specified correctly (...)` 오류가 표시 됩니다.
 
-`https://<management-endpoint-hostname>/subscriptions/xxx/resourceGroups/xxx/providers/Microsoft.ApiManagement/service/xxx/contentTypes/document/contentItems/configuration?api-version=2018-06-01-preview`에 대 한 `GET` 호출이 실패 하면이 오류가 표시 됩니다. 호출은 포털의 관리 인터페이스에 의해 브라우저에서 실행 됩니다.
+`https://<management-endpoint-hostname>/subscriptions/xxx/resourceGroups/xxx/providers/Microsoft.ApiManagement/service/xxx/contentTypes/document/contentItems/configuration?api-version=2018-06-01-preview`에 대한 `GET` 호출이 실패 하면이 오류가 표시 됩니다. 호출은 포털의 관리 인터페이스에 의해 브라우저에서 실행 됩니다.
 
 API Management 서비스가 VNet에 있는 경우 위의 VNet 연결 질문을 참조 하세요.
 
-또한 사용자 지정 도메인에 할당 되 고 브라우저에서 트러스트 되지 않은 SSL 인증서로 인해 호출 오류가 발생할 수 있습니다. 완화를 위해 관리 끝점 사용자 지정 도메인을 제거할 수 있습니다. 신뢰할 수 있는 인증서가 있는 기본 끝점으로 대체 됩니다 API Management.
+또한 사용자 지정 도메인에 할당 되 고 브라우저에서 트러스트 되지 않은 SSL 인증서로 인해 호출 오류가 발생할 수 있습니다. 완화를 위해 관리 엔드포인트 사용자 지정 도메인을 제거할 수 있습니다. 신뢰할 수 있는 인증서가 있는 기본 엔드포인트으로 대체 됩니다 API Management.
 
-### <a name="whats-the-browser-support-for-the-portal"></a>포털에 대 한 브라우저 지원 이란?
+### <a name="whats-the-browser-support-for-the-portal"></a>포털에 대한 브라우저 지원 이란?
 
 | 브라우저                     | 지원됨       |
 |-----------------------------|-----------------|

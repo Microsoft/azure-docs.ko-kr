@@ -24,7 +24,7 @@ Power BI는 [데이터 모델을 사용하여 보고서를 만들](https://power
 
 ### <a name="alert"></a>경고
 
-이 표에서는 다양 한 경고 관련 필드에 대 한 기본 필드 및 집계를 제공 합니다.
+이 표에서는 다양 한 경고 관련 필드에 대한 기본 필드 및 집계를 제공 합니다.
 
 | 필드 | 데이터 형식 | 설명 |
 | --- | --- | --- |
@@ -55,7 +55,7 @@ Power BI는 [데이터 모델을 사용하여 보고서를 만들](https://power
 | BackupItemType |텍스트 |백업 항목의 유형입니다. 예: VM, FileFolder |
 | EntityState |텍스트 |백업 항목 개체의 현재 상태입니다. 예: 활성, 삭제 됨 |
 | LastBackupDateTime |Date/Time |선택한 백업 항목에 대한 마지막 백업 시간 |
-| LastBackupState |텍스트 |선택한 백업 항목에 대 한 마지막 백업의 상태입니다. 예: 성공, 실패 |
+| LastBackupState |텍스트 |선택한 백업 항목에 대한 마지막 백업의 상태입니다. 예: 성공, 실패 |
 | LastSuccessfulBackupDateTime |Date/Time |선택한 백업 항목에 대한 마지막으로 성공한 백업 시간 |
 | ProtectionState |텍스트 |백업 항목의 현재 보호 상태입니다. 예: Protected, Protectionstopped) |
 
@@ -67,13 +67,13 @@ Power BI는 [데이터 모델을 사용하여 보고서를 만들](https://power
 | --- | --- | --- |
 | Date |Date |데이터 필터링에 대해 선택한 날짜 |
 | DateKey |텍스트 |각 날짜 항목에 대한 고유 키 |
-| DayDiff |10진수 |데이터 필터링의 일별 차이입니다. 예를 들어 0은 현재 날짜의 데이터를 나타내고,-1은 이전 1 일의 데이터를 나타내고, 0은 현재 날짜와 이전 날짜에 대 한 데이터를 나타냅니다.  |
+| DayDiff |10진수 |데이터 필터링의 일별 차이입니다. 예를 들어 0은 현재 날짜의 데이터를 나타내고,-1은 이전 1 일의 데이터를 나타내고, 0은 현재 날짜와 이전 날짜에 대한 데이터를 나타냅니다.  |
 | Month |텍스트 |데이터 필터링에 선택한 연도의 월, 첫째 날짜에 시작하고 31일에 끝나는 월 |
 | MonthDate | Date |데이터 필터링에 대해 선택한 월이 끝날 때 월의 날짜 |
-| MonthDiff |10진수 |데이터 필터링에 대 한 월간 차이입니다. 예를 들어 0은 현재 달의 데이터를 나타내고,-1은 이전 월의 데이터를 나타내고, 0 및-1은 현재와 이전 달의 데이터를 나타냅니다. |
+| MonthDiff |10진수 |데이터 필터링에 대한 월간 차이입니다. 예를 들어 0은 현재 달의 데이터를 나타내고,-1은 이전 월의 데이터를 나타내고, 0 및-1은 현재와 이전 달의 데이터를 나타냅니다. |
 | 주 |텍스트 |데이터 필터링에 대해 선택한 주, 일요일에 시작하고 토요일에 끝나는 주 |
 | WeekDate |Date |데이터 필터링에 대해 선택한 주가 끝날 때 주의 날짜 |
-| WeekDiff |10진수 |데이터 필터링의 주 차이입니다. 예를 들어 0은 현재 주 데이터를 나타내고,-1은 이전 주 데이터를 나타내고, 0 및-1은 현재 및 이전 주에 대 한 데이터를 나타냅니다. |
+| WeekDiff |10진수 |데이터 필터링의 주 차이입니다. 예를 들어 0은 현재 주 데이터를 나타내고,-1은 이전 주 데이터를 나타내고, 0 및-1은 현재 및 이전 주에 대한 데이터를 나타냅니다. |
 | Year |텍스트 |데이터 필터링에 대해 선택한 연도 |
 | YearDate |Date |데이터 필터링에 대해 선택한 연도가 끝날 때 연도의 날짜 |
 
@@ -116,7 +116,7 @@ Power BI는 [데이터 모델을 사용하여 보고서를 만들](https://power
 | MonthlyRetentionDaysOfTheMonth |텍스트 |매월 보존에 대해 선택한 월의 날짜 |
 | MonthlyRetentionDaysOfTheWeek |텍스트 |매월 보존에 대해 선택한 주의 요일 |
 | MonthlyRetentionDuration |10진수 |구성된 백업에 대한 총 보존 기간(월) |
-| MonthlyRetentionFormat |텍스트 |월별 보존에 대 한 구성 유형입니다. 예를 들어 매일, 매주 기준으로 매주 |
+| MonthlyRetentionFormat |텍스트 |월별 보존에 대한 구성 유형입니다. 예를 들어 매일, 매주 기준으로 매주 |
 | MonthlyRetentionTimes |텍스트 |매월 보존이 구성된 날짜 및 시간 |
 | MonthlyRetentionWeeksOfTheMonth |텍스트 |매월 보존이 구성 된 월의 주입니다. 예를 들어, First, Last 등입니다. |
 | PolicyName |텍스트 |지정된 정책의 이름 |
@@ -128,7 +128,7 @@ Power BI는 [데이터 모델을 사용하여 보고서를 만들](https://power
 | YearlyRetentionDaysOfTheMonth |텍스트 |매년 보존에 대해 선택한 월의 날짜 |
 | YearlyRetentionDaysOfTheWeek |텍스트 |매년 보존에 대해 선택한 주의 요일 |
 | YearlyRetentionDuration |10진수 |구성된 백업에 대한 총 보존 기간(연) |
-| YearlyRetentionFormat |텍스트 |매년 보존에 대 한 구성 유형입니다. 예를 들어 매일, 매주 기준으로 매주 |
+| YearlyRetentionFormat |텍스트 |매년 보존에 대한 구성 유형입니다. 예를 들어 매일, 매주 기준으로 매주 |
 | YearlyRetentionMonthsOfTheYear |텍스트 |매년 보존에 대해 선택한 연도의 달 |
 | YearlyRetentionTimes |텍스트 |매년 보존이 구성된 날짜 및 시간 |
 | YearlyRetentionWeeksOfTheMonth |텍스트 |매년 보존이 구성 된 월의 주입니다. 예를 들어, First, Last 등입니다. |
@@ -188,7 +188,7 @@ Power BI는 [데이터 모델을 사용하여 보고서를 만들](https://power
 | AsOnDateTime |Date/Time |선택한 행에 대한 최신 새로 고침 시간 |
 | AzureDataCenter |텍스트 |자격 증명 모음이 위치한 데이터 센터 |
 | EntityState |텍스트 |자격 증명 모음 개체의 현재 상태입니다. 예: 활성, 삭제 됨 |
-| StorageReplicationType |텍스트 |자격 증명 모음에 대 한 저장소 복제 유형입니다. 예: GeoRedundant |
+| StorageReplicationType |텍스트 |자격 증명 모음에 대한 저장소 복제 유형입니다. 예: GeoRedundant |
 | SubscriptionId |텍스트 |보고서를 생성 하기 위해 선택한 고객의 구독 ID |
 | VaultName |텍스트 |자격 증명 모음의 이름 |
 | VaultTags |텍스트 |자격 증명 모음에 연결된 태그 |

@@ -135,7 +135,7 @@ ms.locfileid: "75463259"
 인증서 키를 포함하는 Key Vault를 참조하여 Cluster Resource Manager 템플릿에 Azure AD 구성을 추가합니다. Resource Manager 템플릿 매개 변수 파일(*azuredeploy.parameters.json*)에 해당 Azure AD 매개 변수 및 값을 추가합니다. 
 
 > [!NOTE]
-> Linux에서 클러스터를 만들기 전에 Azure AD 테 넌 트 및 사용자를 만들어야 합니다.  자세한 내용은 [클라이언트를 인증하도록 Azure AD 설정](service-fabric-cluster-creation-setup-aad.md)을 읽어보세요.
+> Linux에서 클러스터를 만들기 전에 Azure AD 테넌트 및 사용자를 만들어야 합니다.  자세한 내용은 [클라이언트를 인증하도록 Azure AD 설정](service-fabric-cluster-creation-setup-aad.md)을 읽어보세요.
 
 ```json
 {

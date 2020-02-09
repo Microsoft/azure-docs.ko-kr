@@ -1,7 +1,7 @@
 ---
 title: Web Search 엔드포인트
 titleSuffix: Azure Cognitive Services
-description: 웹 검색 결과를 가져오려면 다음 끝점으로 `GET` 요청을 보냅니다. 헤더 및 URL 매개 변수는 추가 사양을 정의합니다.
+description: 웹 검색 결과를 가져오려면 다음 엔드포인트으로 `GET` 요청을 보냅니다. 헤더 및 URL 매개 변수는 추가 사양을 정의합니다.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -39,7 +39,7 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/search
 
 ## <a name="next-steps"></a>다음 단계
 
-**Bing** API는 해당 유형에 따라 결과를 반환하는 검색 작업을 지원합니다. 모든 검색 끝점은 결과를 JSON 응답 개체로 반환 합니다.  모든 끝점은 경도, 위도 및 검색 반지름을 기준으로 특정 언어 및 위치를 반환 하는 쿼리를 지원 합니다.
+**Bing** API는 해당 유형에 따라 결과를 반환하는 검색 작업을 지원합니다. 모든 검색 엔드포인트은 결과를 JSON 응답 개체로 반환 합니다.  모든 엔드포인트은 경도, 위도 및 검색 반지름을 기준으로 특정 언어 및 위치를 반환 하는 쿼리를 지원 합니다.
 
 각 엔드포인트에서 지원하는 매개 변수에 대한 자세한 내용은 각 유형에 대한 참조 페이지를 참조하세요.
 Web Search API를 사용하는 기본 요청의 예는 [웹 검색 빠른 시작](https://docs.microsoft.com/azure/cognitive-services/bing-web-search/search-the-web)을 참조하세요.

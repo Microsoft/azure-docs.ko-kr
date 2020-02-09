@@ -1,5 +1,5 @@
 ---
-title: Azure AD 응용 프로그램 갤러리에 다중 테 넌 트 앱 추가 | Microsoft Docs
+title: Azure AD 응용 프로그램 갤러리에 다중 테넌트 앱 추가 | Microsoft Docs
 description: 사용자 지정 개발된 다중 테넌트 애플리케이션을 Azure AD 애플리케이션 갤러리에서 나열하는 방법을 설명합니다.
 services: active-directory
 documentationCenter: na

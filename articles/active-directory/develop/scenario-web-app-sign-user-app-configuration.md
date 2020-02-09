@@ -69,7 +69,7 @@ ms.locfileid: "76701606"
 Microsoft id 플랫폼을 사용 하 여 사용자를 로그인 하는 웹 응용 프로그램은 일반적으로 구성 파일을 통해 구성 됩니다. 입력 해야 하는 설정은 다음과 같습니다.
 
 - 예를 들어 국가 클라우드에서 앱을 실행 하려는 경우 클라우드 인스턴스 (`Instance`)
-- 테 넌 트 ID (`TenantId`)의 대상입니다.
+- 테넌트 ID (`TenantId`)의 대상입니다.
 - Azure Portal에서 복사 된 응용 프로그램의 클라이언트 ID (`ClientId`)
 
 경우에 따라 `Instance` 및 `TenantId`를 연결 하는 `Authority`으로 응용 프로그램을 매개 변수가 있는 수 있습니다.
@@ -205,7 +205,7 @@ SESSION_TYPE = "filesystem"  # So the token cache will be stored in a server-sid
 
 ## <a name="initialization-code"></a>초기화 코드
 
-초기화 코드는 플랫폼에 따라 다릅니다. ASP.NET Core 및 ASP.NET의 경우 로그인 사용자는 Openid connect Connect 미들웨어에 게 위임 됩니다. ASP.NET 또는 ASP.NET Core 템플릿은 Azure Active Directory (Azure AD) v 1.0 끝점에 대 한 웹 응용 프로그램을 생성 합니다. 일부 구성은 v2.0 (Microsoft identity platform) 끝점에 맞게 조정 해야 합니다. Java의 경우 응용 프로그램의 협력을 통해 스프링에 의해 처리 됩니다.
+초기화 코드는 플랫폼에 따라 다릅니다. ASP.NET Core 및 ASP.NET의 경우 로그인 사용자는 Openid connect Connect 미들웨어에 게 위임 됩니다. ASP.NET 또는 ASP.NET Core 템플릿은 Azure Active Directory (Azure AD) v 1.0 엔드포인트에 대 한 웹 응용 프로그램을 생성 합니다. 일부 구성은 v2.0 (Microsoft identity platform) 엔드포인트에 맞게 조정 해야 합니다. Java의 경우 응용 프로그램의 협력을 통해 스프링에 의해 처리 됩니다.
 
 # <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
 
@@ -247,7 +247,7 @@ public class Startup
 
 - 인증 서비스를 추가 합니다.
 - 구성 파일을 읽는 옵션을 구성 합니다.
-- 사용 된 권한이 Microsoft id 플랫폼 (이전의 Azure AD v2.0) 끝점 인 Openid connect Connect 옵션을 구성 합니다.
+- 사용 된 권한이 Microsoft id 플랫폼 (이전의 Azure AD v2.0) 엔드포인트 인 Openid connect Connect 옵션을 구성 합니다.
 - 토큰 발급자의 유효성을 검사 합니다.
 - 이름에 해당 하는 클레임이 ID 토큰의 `preferred_username` 클레임에서 매핑되는지 확인 합니다.
 
@@ -314,7 +314,7 @@ public static IServiceCollection AddMicrosoftIdentityPlatformAuthentication(
   ...
 ```
 
-`AadIssuerValidator` 클래스를 사용 하면 대부분의 경우 토큰 발급자의 유효성을 검사할 수 있습니다. 이 클래스는 v 1.0 또는 v2.0 토큰, 단일 테 넌 트 또는 다중 테 넌 트 응용 프로그램 또는 Azure 공용 클라우드 또는 국가별 클라우드의 개인 Microsoft 계정으로 사용자를 로그인 하는 응용 프로그램에서 작동 합니다. [AadIssuerValidator/Resource/](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/Microsoft.Identity.Web/Resource/AadIssuerValidator.cs)에서 사용할 수 있습니다.
+`AadIssuerValidator` 클래스를 사용 하면 대부분의 경우 토큰 발급자의 유효성을 검사할 수 있습니다. 이 클래스는 v 1.0 또는 v2.0 토큰, 단일 테넌트 또는 다중 테넌트 응용 프로그램 또는 Azure 공용 클라우드 또는 국가별 클라우드의 개인 Microsoft 계정으로 사용자를 로그인 하는 응용 프로그램에서 작동 합니다. [AadIssuerValidator/Resource/](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/Microsoft.Identity.Web/Resource/AadIssuerValidator.cs)에서 사용할 수 있습니다.
 
 # <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)
 
@@ -346,9 +346,9 @@ ASP.NET 웹 앱 및 web Api의 인증과 관련 된 코드는 [App_Start/startup
 
 Java 샘플에서는 스프링 프레임 워크를 사용 합니다. 각 HTTP 응답을 가로채는 필터를 구현 하므로 응용 프로그램은 보호 됩니다. Java 웹 앱에 대 한 빠른 시작에서이 필터는 `src/main/java/com/microsoft/azure/msalwebsample/AuthFilter.java``AuthFilter` 됩니다.
 
-이 필터는 OAuth 2.0 인증 코드 흐름을 처리 하 고 사용자가 인증 되었는지 확인 합니다 (`isAuthenticated()` 방법). 사용자가 인증 되지 않은 경우 Azure AD 권한 부여 끝점의 URL을 계산 하 고 브라우저를이 URI로 리디렉션합니다.
+이 필터는 OAuth 2.0 인증 코드 흐름을 처리 하 고 사용자가 인증 되었는지 확인 합니다 (`isAuthenticated()` 방법). 사용자가 인증 되지 않은 경우 Azure AD 권한 부여 엔드포인트의 URL을 계산 하 고 브라우저를이 URI로 리디렉션합니다.
 
-인증 코드를 포함 하는 응답은 도착 하면 MSAL Java를 사용 하 여 토큰을 획득 합니다. 마지막으로 토큰 끝점에서 토큰을 수신 하면 (리디렉션 URI) 사용자에 게 로그인 됩니다.
+인증 코드를 포함 하는 응답은 도착 하면 MSAL Java를 사용 하 여 토큰을 획득 합니다. 마지막으로 토큰 엔드포인트에서 토큰을 수신 하면 (리디렉션 URI) 사용자에 게 로그인 됩니다.
 
 자세한 내용은 [Authfilter. java](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/master/src/main/java/com/microsoft/azure/msalwebsample/AuthFilter.java)의 `doFilter()` 메서드를 참조 하세요.
 

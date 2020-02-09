@@ -14,7 +14,7 @@ ms.locfileid: "77024656"
 ---
 # <a name="azure-functions-scale-and-hosting"></a>Azure Functions 크기 조정 및 호스팅
 
-Azure에서 함수 앱을 만들 때 앱에 대 한 호스팅 계획을 선택 해야 합니다. Azure Functions는 [소비 계획](#consumption-plan), [프리미엄 계획](#premium-plan)및 [전용 (App Service) 계획](#app-service-plan)의 세 가지 호스팅 계획을 사용할 수 있습니다.
+Azure에서 함수 앱을 만들 때 앱에 대한 호스팅 계획을 선택 해야 합니다. Azure Functions는 [소비 계획](#consumption-plan), [프리미엄 계획](#premium-plan)및 [전용 (App Service) 계획](#app-service-plan)의 세 가지 호스팅 계획을 사용할 수 있습니다.
 
 선택한 호스팅 계획에 따라 다음과 같은 동작이 결정 됩니다.
 
@@ -22,7 +22,7 @@ Azure에서 함수 앱을 만들 때 앱에 대 한 호스팅 계획을 선택 �
 * 각 함수 앱 인스턴스에 사용할 수 있는 리소스입니다.
 * Azure Virtual Network 연결과 같은 고급 기능을 지원 합니다.
 
-코드를 실행할 때 소비 및 프리미엄 계획 모두 자동으로 계산 기능을 추가 합니다. 앱이 로드를 처리 하는 데 필요한 경우 확장 되 고 코드 실행이 중지 되 면에서 크기가 조정 됩니다. 소비 계획의 경우 유휴 Vm에 대 한 비용을 지불할 필요도 없으며 사전에 용량을 예약 하지 않아도 됩니다.  
+코드를 실행할 때 소비 및 프리미엄 계획 모두 자동으로 계산 기능을 추가 합니다. 앱이 로드를 처리 하는 데 필요한 경우 확장 되 고 코드 실행이 중지 되 면에서 크기가 조정 됩니다. 소비 계획의 경우 유휴 Vm에 대한 비용을 지불할 필요도 없으며 사전에 용량을 예약 하지 않아도 됩니다.  
 
 프리미엄 요금제는 프리미엄 계산 인스턴스, 인스턴스를 무기한으로 유지 하는 기능 및 VNet 연결 등의 추가 기능을 제공 합니다.
 
@@ -35,7 +35,7 @@ App Service 계획을 사용 하면 관리 하는 전용 인프라를 활용할 
 * _일반적으로 사용 가능 (GA)_ : 프로덕션 사용을 위해 완전히 지원 되 고 승인 됩니다.
 * _미리 보기_: 아직 완전히 지원 되지 않으며 프로덕션 사용을 위해 승인 되지 않았습니다.
 
-다음 표는 Windows 또는 Linux에서 실행 되는 경우 세 가지 호스팅 계획에 대 한 현재 지원 수준을 나타냅니다.
+다음 표는 Windows 또는 Linux에서 실행 되는 경우 세 가지 호스팅 계획에 대한 현재 지원 수준을 나타냅니다.
 
 | | 사용량 과금 플랜 | 프리미엄 플랜 | 전용 계획 |
 |-|:----------------:|:------------:|:----------------:|
@@ -55,7 +55,7 @@ App Service 계획을 사용 하면 관리 하는 전용 인프라를 활용할 
 
 동일한 지역에 있는 함수 앱은 동일한 소비 계획에 할당할 수 있습니다. 여러 앱을 동일한 소비 계획에서 실행 하는 경우에는 영향을 주지 않습니다. 여러 앱을 동일한 소비 계획에 할당 하면 각 앱의 복원 력, 확장성 또는 안정성에 영향을 주지 않습니다.
 
-소비 계획에서 실행 하는 경우 비용을 계산 하는 방법에 대 한 자세한 내용은 [소비 계획 비용 이해](functions-consumption-costs.md)를 참조 하세요.
+소비 계획에서 실행 하는 경우 비용을 계산 하는 방법에 대한 자세한 내용은 [소비 계획 비용 이해](functions-consumption-costs.md)를 참조 하세요.
 
 ## <a name="premium-plan"></a>프리미엄 요금제
 
@@ -66,11 +66,11 @@ App Service 계획을 사용 하면 관리 하는 전용 인프라를 활용할 
 * 무제한 실행 기간
 * 프리미엄 인스턴스 크기 (1 개 코어, 2 개 코어 및 4 개 코어 인스턴스)
 * 보다 예측 가능한 가격 책정
-* 여러 함수 앱이 포함 된 계획에 대 한 고밀도 앱 할당
+* 여러 함수 앱이 포함 된 계획에 대한 고밀도 앱 할당
 
-이러한 옵션을 구성 하는 방법에 대 한 정보는 [Azure Functions 프리미엄 계획 문서](functions-premium-plan.md)에서 찾을 수 있습니다.
+이러한 옵션을 구성 하는 방법에 대한 정보는 [Azure Functions 프리미엄 계획 문서](functions-premium-plan.md)에서 찾을 수 있습니다.
 
-실행 당 청구 및 사용 되는 메모리 대신 프리미엄 요금제에 대 한 청구는 필요한 코어 초와 준비 인스턴스 수에 사용 되는 메모리에 따라 결정 됩니다. 하나 이상의 인스턴스가 계획 당 항상 웜 되어야 합니다. 즉, 실행 수에 관계 없이 활성 계획 당 최소 월별 비용이 발생 합니다. 프리미엄 계획의 모든 함수 앱은 준비 및 활성 인스턴스를 공유 한다는 점에 유의 하세요.
+실행 당 청구 및 사용 되는 메모리 대신 프리미엄 요금제에 대한 청구는 필요한 코어 초와 준비 인스턴스 수에 사용 되는 메모리에 따라 결정 됩니다. 하나 이상의 인스턴스가 계획 당 항상 웜 되어야 합니다. 즉, 실행 수에 관계 없이 활성 계획 당 최소 월별 비용이 발생 합니다. 프리미엄 계획의 모든 함수 앱은 준비 및 활성 인스턴스를 공유 한다는 점에 유의 하세요.
 
 다음과 같은 경우 Azure Functions 프리미엄 계획을 고려 합니다.
 
@@ -128,7 +128,7 @@ az appservice plan list --query "[?id=='$appServicePlanId'].sku.tier" --output t
 
 함수 앱에서 사용 하는 것과 동일한 저장소 계정을 사용 하 여 응용 프로그램 데이터를 저장할 수 있습니다. 그러나 저장소를 많이 사용 하는 작업의 경우에는 별도의 저장소 계정을 사용 해야 합니다.  
 
-여러 함수 앱에서 문제 없이 동일한 저장소 계정을 공유할 수 있습니다. 이에 대 한 좋은 예는 단일 저장소 계정 처럼 작동 하는 Azure Storage 에뮬레이터를 사용 하 여 로컬 환경에서 여러 앱을 개발 하는 경우입니다. 
+여러 함수 앱에서 문제 없이 동일한 저장소 계정을 공유할 수 있습니다. 이에 대한 좋은 예는 단일 저장소 계정 처럼 작동 하는 Azure Storage 에뮬레이터를 사용 하 여 로컬 환경에서 여러 앱을 개발 하는 경우입니다. 
 
 <!-- JH: Does using a Premium Storage account improve perf? -->
 
@@ -164,16 +164,16 @@ Azure Functions 확장 단위는 함수 앱입니다. 함수 앱을 확장하면
 
 함수 앱에는 호스트 구성, 런타임 공간 및 리소스 효율성을 비롯하여 규모 조정에 영향을 주는 여러 측면이 있습니다.  자세한 내용은 [성능 고려 사항 문서의 확장성 섹션](functions-best-practices.md#scalability-best-practices)을 참조하세요. 또한 함수 앱의 확장에 따라 연결이 어떻게 작동하는지도 알고 있어야 합니다. 자세한 내용은 [Azure Functions에서 연결을 관리하는 방법](manage-connections.md)을 참조하세요.
 
-Python 및 node.js에서 크기를 조정 하는 방법에 대 한 자세한 내용은 [Azure Functions python 개발자 가이드-크기 조정 및 동시성](functions-reference-python.md#scaling-and-concurrency) 및 [Azure Functions node.js 개발자 가이드-크기 조정 및 동시성](functions-reference-node.md#scaling-and-concurrency)을 참조 하세요.
+Python 및 node.js에서 크기를 조정 하는 방법에 대한 자세한 내용은 [Azure Functions python 개발자 가이드-크기 조정 및 동시성](functions-reference-python.md#scaling-and-concurrency) 및 [Azure Functions node.js 개발자 가이드-크기 조정 및 동시성](functions-reference-node.md#scaling-and-concurrency)을 참조 하세요.
 
 ### <a name="billing-model"></a>청구 모델
 
-여러 요금제에 대 한 요금 청구는 [Azure Functions 가격 책정 페이지](https://azure.microsoft.com/pricing/details/functions/)에 자세히 설명 되어 있습니다. 사용량은 함수 앱 수준에서 집계되며 함수 코드가 실행될 때만 계산됩니다. 다음은 요금 청구 단위입니다.
+여러 요금제에 대한 요금 청구는 [Azure Functions 가격 책정 페이지](https://azure.microsoft.com/pricing/details/functions/)에 자세히 설명 되어 있습니다. 사용량은 함수 앱 수준에서 집계되며 함수 코드가 실행될 때만 계산됩니다. 다음은 요금 청구 단위입니다.
 
 * **기가바이트-초 단위의 리소스 소비(GB-s)** . 함수 앱 내 모든 함수의 메모리 크기와 실행 시간 조합으로 계산됩니다. 
 * **실행 횟수**. 이벤트 트리거에 대한 응답으로 함수가 실행될 때마다 계산됩니다.
 
-사용량 청구서를 이해 하는 방법에 대 한 유용한 쿼리와 정보 [는 청구 FAQ에서](https://github.com/Azure/Azure-Functions/wiki/Consumption-Plan-Cost-Billing-FAQ)찾을 수 있습니다.
+사용량 청구서를 이해 하는 방법에 대한 유용한 쿼리와 정보 [는 청구 FAQ에서](https://github.com/Azure/Azure-Functions/wiki/Consumption-Plan-Cost-Billing-FAQ)찾을 수 있습니다.
 
 [Azure Functions pricing page]: https://azure.microsoft.com/pricing/details/functions
 

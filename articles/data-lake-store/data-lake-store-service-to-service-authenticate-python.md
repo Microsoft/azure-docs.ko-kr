@@ -84,7 +84,7 @@ pip install azure-datalake-store
 
 ## <a name="service-to-service-authentication-with-client-secret-for-account-management"></a>계정 관리를 위해 클라이언트 암호로 서비스 간 인증
 
-이 코드 조각을 사용 하 여 Data Lake Storage Gen1 계정 만들기, Data Lake Storage Gen1 계정 삭제 등의 Data Lake Storage Gen1에 대 한 계정 관리 작업을 위해 Azure AD를 사용 하 여 인증 합니다. 다음 코드 조각은 기존 Azure AD "웹 앱" 응용 프로그램의 응용 프로그램/서비스 사용자에 대 한 클라이언트 암호를 사용 하 여 비 대화형으로 응용 프로그램을 인증 하는 데 사용할 수 있습니다.
+이 코드 조각을 사용 하 여 Data Lake Storage Gen1 계정 만들기, Data Lake Storage Gen1 계정 삭제 등의 Data Lake Storage Gen1에 대한 계정 관리 작업을 위해 Azure AD를 사용 하 여 인증 합니다. 다음 코드 조각은 기존 Azure AD "웹 앱" 응용 프로그램의 응용 프로그램/서비스 사용자에 대한 클라이언트 암호를 사용 하 여 비 대화형으로 응용 프로그램을 인증 하는 데 사용할 수 있습니다.
 
     authority_host_uri = 'https://login.microsoftonline.com'
     tenant = '<TENANT>'
@@ -99,7 +99,7 @@ pip install azure-datalake-store
 
 ## <a name="service-to-service-authentication-with-client-secret-for-filesystem-operations"></a>파일 시스템 작업을 위해 클라이언트 암호로 서비스 간 인증
 
-다음 코드 조각을 사용 하 여 폴더 만들기, 파일 업로드 등의 Data Lake Storage Gen1에 대 한 파일 시스템 작업에 대해 Azure AD를 사용 하 여 인증 합니다. 다음 코드 조각은 응용 프로그램/서비스 주체에 대 한 클라이언트 암호를 사용 하 여 비 대화형으로 응용 프로그램을 인증 하는 데 사용할 수 있습니다. 기존 Azure AD "Web App" 애플리케이션과 함께 사용합니다.
+다음 코드 조각을 사용 하 여 폴더 만들기, 파일 업로드 등의 Data Lake Storage Gen1에 대한 파일 시스템 작업에 대해 Azure AD를 사용 하 여 인증 합니다. 다음 코드 조각은 응용 프로그램/서비스 주체에 대한 클라이언트 암호를 사용 하 여 비 대화형으로 응용 프로그램을 인증 하는 데 사용할 수 있습니다. 기존 Azure AD "Web App" 애플리케이션과 함께 사용합니다.
 
     tenant = '<TENANT>'
     RESOURCE = 'https://datalake.azure.net/'

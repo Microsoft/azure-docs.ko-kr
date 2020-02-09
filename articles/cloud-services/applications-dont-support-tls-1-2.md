@@ -30,8 +30,8 @@ ms.locfileid: "77026836"
 > 게스트 OS 제품군 6 릴리스는 1.0/1.0 암호화를 사용 하지 않도록 설정 하 여 TLS 1.2을 적용 합니다. 
 
   
-## <a name="dropping-support-for-tls-10-tls-11-and-older-cipher-suites"></a>TLS 1.0, TLS 1.1 및 이전 암호 그룹에 대 한 지원 삭제 
-최고 수준의 암호화 사용에 대 한 Microsoft의 노력으로 Microsoft는 1.0 2017 년 6 월에 TLS 및 1.1에서 마이그레이션을 시작할 계획을 발표 했습니다.   이러한 최초 발표 이후 Microsoft는 microsoft Edge의 지원 되는 버전 및 Internet Explorer 11의 처음 2020 절반에서 기본적으로 TLS (전송 계층 보안) 1.0 및 1.1을 사용 하지 않도록 설정 하는 것을 발표 했습니다.  Apple, Google 및 Mozilla에서 유사한 공지는 업계를 향하는 방향을 나타내는 것입니다.   
+## <a name="dropping-support-for-tls-10-tls-11-and-older-cipher-suites"></a>TLS 1.0, TLS 1.1 및 이전 암호 그룹에 대한 지원 삭제 
+최고 수준의 암호화 사용에 대한 Microsoft의 노력으로 Microsoft는 1.0 2017 년 6 월에 TLS 및 1.1에서 마이그레이션을 시작할 계획을 발표 했습니다.   이러한 최초 발표 이후 Microsoft는 microsoft Edge의 지원 되는 버전 및 Internet Explorer 11의 처음 2020 절반에서 기본적으로 TLS (전송 계층 보안) 1.0 및 1.1을 사용 하지 않도록 설정 하는 것을 발표 했습니다.  Apple, Google 및 Mozilla에서 유사한 공지는 업계를 향하는 방향을 나타내는 것입니다.   
 
 ## <a name="tls-configuration"></a>TLS 구성  
 Windows Server 2019 클라우드 서버 이미지는 레지스트리 수준에서 TLS 1.0 및 TLS 1.1을 사용 하지 않도록 설정 하 여 구성 됩니다. 즉,이 버전의 Windows에 배포 된 응용 프로그램이 tls 협상을 위해 Windows stack을 사용 하면 TLS 1.0 및 TLS 1.1 통신이 허용 되지 않습니다.   
@@ -250,6 +250,6 @@ EXIT /B 0
 
 ## <a name="step-4-validation"></a>4 단계: 유효성 검사 
 
-[Ssllabs](https://www.ssllabs.com/) 를 사용 하 여 끝점의 TLS 상태를 확인할 수 있습니다. 
+[Ssllabs](https://www.ssllabs.com/) 를 사용 하 여 엔드포인트의 TLS 상태를 확인할 수 있습니다. 
 
  

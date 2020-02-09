@@ -22,7 +22,7 @@ ms.locfileid: "75611069"
 ---
 # <a name="customize-the-sql-information-protection-policy-in-azure-security-center-preview"></a>Azure Security Center에서 SQL 정보 보호 정책 사용자 지정
  
-Azure Security Center에서 전체 Azure 테 넌 트에 대 한 SQL information protection 정책을 정의 하 고 사용자 지정할 수 있습니다.
+Azure Security Center에서 전체 Azure 테넌트에 대 한 SQL information protection 정책을 정의 하 고 사용자 지정할 수 있습니다.
 
 Information protection은 Azure 데이터 리소스에서 중요 한 데이터를 검색, 분류, 레이블 지정 및 보고 하는 고급 보안 기능입니다. 가장 중요 한 데이터 (비즈니스, 재무, 의료, 개인 데이터 등)를 검색 하 고 분류 하면 조직 정보 보호에서 pivotal 역할을 수행할 수 있습니다. 다음에 대한 인프라를 제공할 수 있습니다.
 - 데이터 개인 정보 보호 표준 및 규정 준수 요구 사항 충족 지원

@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB의 FROM 절
-description: SQL 구문 및 Azure Cosmos DB의 FROM 절에 대 한 예제를 알아봅니다. 또한이 문서에서는 결과 범위를 표시 하는 예제를 보여 주고 FROM 절을 사용 하 여 하위 항목을 가져옵니다.
+description: SQL 구문 및 Azure Cosmos DB의 FROM 절에 대한 예제를 알아봅니다. 또한이 문서에서는 결과 범위를 표시 하는 예제를 보여 주고 FROM 절을 사용 하 여 하위 항목을 가져옵니다.
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual

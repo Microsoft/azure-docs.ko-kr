@@ -45,5 +45,5 @@ ms.locfileid: "70073475"
 
 
 ## <a name="next-steps"> </a>다음 단계
-* 백업 및 복원 기능에 대 한 자세한 내용은 [재해 복구를 구현 하는 방법](api-management-howto-disaster-recovery-backup-restore.md)을 참조 하세요.
-* Azure 리소스 마이그레이션에 대 한 자세한 내용은 [azure 지역 간 마이그레이션 지침](https://github.com/Azure/Azure-Migration-Guidance)을 참조 하세요.
+* 백업 및 복원 기능에 대한 자세한 내용은 [재해 복구를 구현 하는 방법](api-management-howto-disaster-recovery-backup-restore.md)을 참조 하세요.
+* Azure 리소스 마이그레이션에 대한 자세한 내용은 [azure 지역 간 마이그레이션 지침](https://github.com/Azure/Azure-Migration-Guidance)을 참조 하세요.

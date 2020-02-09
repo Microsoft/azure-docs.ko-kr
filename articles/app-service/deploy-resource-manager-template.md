@@ -1,6 +1,6 @@
 ---
 title: 템플릿을 사용 하 여 앱 배포
-description: App Service 앱을 프로 비전 하 고 배포 하는 Azure Resource Manager 템플릿을 만드는 방법에 대 한 지침을 찾습니다.
+description: App Service 앱을 프로 비전 하 고 배포 하는 Azure Resource Manager 템플릿을 만드는 방법에 대한 지침을 찾습니다.
 author: tfitzmac
 ms.topic: article
 ms.date: 01/03/2019

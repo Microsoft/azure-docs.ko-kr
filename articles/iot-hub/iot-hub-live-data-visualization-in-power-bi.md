@@ -84,7 +84,7 @@ Stream Analytics 작업을 만들어 시작해 보겠습니다. 작업을 만든
 
    **엔드포인트**: **메시징**을 선택합니다.
 
-   **공유 액세스 정책 이름**: Stream Analytics 작업에서 IoT hub에 사용할 공유 액세스 정책의 이름을 선택 합니다. 이 자습서에서는 *서비스*를 선택할 수 있습니다. *서비스* 정책은 기본적으로 새 iot hub에서 만들어지고 iot hub가 노출 하는 클라우드 쪽 끝점에서 보내고 받을 수 있는 권한을 부여 합니다. 자세히 알아보려면 [액세스 제어 및 권한](iot-hub-devguide-security.md#access-control-and-permissions)을 참조 하세요.
+   **공유 액세스 정책 이름**: Stream Analytics 작업에서 IoT hub에 사용할 공유 액세스 정책의 이름을 선택 합니다. 이 자습서에서는 *서비스*를 선택할 수 있습니다. *서비스* 정책은 기본적으로 새 iot hub에서 만들어지고 iot hub가 노출 하는 클라우드 쪽 엔드포인트에서 보내고 받을 수 있는 권한을 부여 합니다. 자세히 알아보려면 [액세스 제어 및 권한](iot-hub-devguide-security.md#access-control-and-permissions)을 참조 하세요.
 
    **공유 액세스 정책 키**:이 필드는 공유 액세스 정책 이름을 선택 하 여 자동으로 채워집니다.
 

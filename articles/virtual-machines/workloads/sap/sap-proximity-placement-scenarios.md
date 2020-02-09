@@ -69,9 +69,9 @@ Azure에서 대부분의 SAP NetWeaver 및 S/4HANA 시스템 배포는 [HANA 큰
 
 HANA 대량 인스턴스 단위가 수정 버전 4 스탬프 또는 행에 배포 되었는지 확인 하려면 [Azure Portal를 통해 AZURE Hana Large instances 제어](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-li-portal#look-at-attributes-of-single-hli-unit)문서를 확인 합니다. Hana Large Instances 단위의 특성 개요에서 HANA 대량 인스턴스 단위가 배포 될 때 생성 되었으므로 근접 배치 그룹의 이름도 확인할 수 있습니다. 특성 개요에 표시 되는 이름은 응용 프로그램 계층 Vm을 배포 해야 하는 근접 배치 그룹의 이름입니다.
 
-Azure virtual machines만 사용 하는 SAP 시스템에 비해 HANA 큰 인스턴스를 사용 하는 경우 사용할 [Azure 리소스 그룹](https://docs.microsoft.com/azure/azure-resource-manager/manage-resources-portal) 의 수를 유연 하 게 결정할 수 있습니다. [Hana Large instances 테 넌 트](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-know-terms) 의 모든 Hana large instances 단위는 [이 문서](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-li-portal#display-of-hana-large-instance-units-in-the-azure-portal)에 설명 된 대로 단일 리소스 그룹으로 그룹화 됩니다. 프로덕션 및 비프로덕션 시스템이 나 다른 시스템과 분리 하기 위해 다른 테 넌 트에 배포 하는 경우를 제외 하 고 모든 HANA Large instances 유닛은 하나의 HANA Large Instances 테 넌 트에 배포 됩니다. 이 테 넌 트는 리소스 그룹과 일 대 일 관계를 가집니다. 하지만 개별 근접 배치 그룹은 각 단일 단위에 대해 정의 됩니다.
+Azure virtual machines만 사용 하는 SAP 시스템에 비해 HANA 큰 인스턴스를 사용 하는 경우 사용할 [Azure 리소스 그룹](https://docs.microsoft.com/azure/azure-resource-manager/manage-resources-portal) 의 수를 유연 하 게 결정할 수 있습니다. [Hana Large instances 테넌트](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-know-terms) 의 모든 Hana large instances 단위는 [이 문서](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-li-portal#display-of-hana-large-instance-units-in-the-azure-portal)에 설명 된 대로 단일 리소스 그룹으로 그룹화 됩니다. 프로덕션 및 비프로덕션 시스템이 나 다른 시스템과 분리 하기 위해 다른 테넌트에 배포 하는 경우를 제외 하 고 모든 HANA Large instances 유닛은 하나의 HANA Large Instances 테넌트에 배포 됩니다. 이 테넌트는 리소스 그룹과 일 대 일 관계를 가집니다. 하지만 개별 근접 배치 그룹은 각 단일 단위에 대해 정의 됩니다.
 
-결과적으로, 단일 테 넌 트에 대 한 Azure 리소스 그룹 및 근접 배치 그룹 간의 관계는 다음과 같습니다.
+결과적으로, 단일 테넌트에 대 한 Azure 리소스 그룹 및 근접 배치 그룹 간의 관계는 다음과 같습니다.
 
 ![근접 배치 그룹 및 HANA Large Instances](./media/sap-proximity-placement-scenarios/ppg-for-hana-large-instance-units.png)
 

@@ -1,6 +1,6 @@
 ---
 title: Event Grid에 Azure SignalR Service 이벤트를 보내는 방법
-description: SignalR 서비스에 대 한 Event Grid 이벤트를 사용 하도록 설정 하는 방법을 보여 주는 가이드를 표시 한 다음 클라이언트 연결 연결/연결 끊김 이벤트를 샘플 응용 프로그램으로 보냅니다.
+description: SignalR 서비스에 대한 Event Grid 이벤트를 사용 하도록 설정 하는 방법을 보여 주는 가이드를 표시 한 다음 클라이언트 연결 연결/연결 끊김 이벤트를 샘플 응용 프로그램으로 보냅니다.
 services: signalr
 author: chenyl
 ms.service: signalr
@@ -94,7 +94,7 @@ az group deployment create \
 
 ## <a name="subscribe-to-registry-events"></a>레지스트리 이벤트 구독
 
-Event Grid에서 *항목*을 구독하여 추적하려는 이벤트와 이벤트를 보낼 위치를 알립니다. 다음 [az event grid 이벤트 구독 만들기][az-eventgrid-event-subscription-create] 명령은 사용자가 만든 Azure SignalR 서비스를 구독 하 고 웹 앱의 URL을 이벤트를 보내야 하는 끝점으로 지정 합니다. 이전 섹션에서 채워진 환경 변수가 여기에 재사용되므로 편집이 필요 없습니다.
+Event Grid에서 *항목*을 구독하여 추적하려는 이벤트와 이벤트를 보낼 위치를 알립니다. 다음 [az event grid 이벤트 구독 만들기][az-eventgrid-event-subscription-create] 명령은 사용자가 만든 Azure SignalR 서비스를 구독 하 고 웹 앱의 URL을 이벤트를 보내야 하는 엔드포인트으로 지정 합니다. 이전 섹션에서 채워진 환경 변수가 여기에 재사용되므로 편집이 필요 없습니다.
 
 ```azurecli-interactive
 SIGNALR_SERVICE_ID=$(az signalr show --resource-group $RESOURCE_GROUP_NAME --name $SIGNALR_NAME --query id --output tsv)
@@ -141,7 +141,7 @@ az eventgrid event-subscription create \
 
 ## <a name="trigger-registry-events"></a>레지스트리 이벤트 트리거
 
-서비스 모드로 전환 하 여 SignalR 서비스에 대 한 클라이언트 연결을 `Serverless Mode` 하 고 설정 합니다. 서버를 사용 하지 않는 [샘플](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/Serverless) 을 참조로 사용할 수 있습니다.
+서비스 모드로 전환 하 여 SignalR 서비스에 대한 클라이언트 연결을 `Serverless Mode` 하 고 설정 합니다. 서버를 사용 하지 않는 [샘플](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/Serverless) 을 참조로 사용할 수 있습니다.
 
 ```bash
 git clone git@github.com:aspnet/AzureSignalR-samples.git

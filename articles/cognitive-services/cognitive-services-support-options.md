@@ -1,7 +1,7 @@
 ---
 title: 지원 및 도움말 옵션
 titleSuffix: Azure Cognitive Services
-description: Azure Cognitive Services와 통합 되는 응용 프로그램을 만들 때 질문과 문제에 대 한 도움말 및 지원을 얻는 방법
+description: Azure Cognitive Services와 통합 되는 응용 프로그램을 만들 때 질문과 문제에 대한 도움말 및 지원을 얻는 방법
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -63,7 +63,7 @@ Azure Cognitive Services의 기능을 탐색 하는 것을 시작 하 고 있나
     <img alt='UserVoice' src='https://docs.microsoft.com/media/logos/logo-uservoice.svg'>
 </div>
 
-새 기능을 요청 하려면 UserVoice에 게시 하세요. Cognitive Services 만들기에 대 한 아이디어를 공유 하면 함께 제공 되는 Api가 개발 하는 응용 프로그램에 더 잘 작동 합니다.
+새 기능을 요청 하려면 UserVoice에 게시 하세요. Cognitive Services 만들기에 대한 아이디어를 공유 하면 함께 제공 되는 Api가 개발 하는 응용 프로그램에 더 잘 작동 합니다.
 
 | 서비스                       | Cognitive Services UserVoice URL |
 |-------------------------------|---------------|
@@ -104,7 +104,7 @@ Azure Cognitive Services의 기능을 탐색 하는 것을 시작 하 고 있나
     <img alt='Stay informed' src='https://docs.microsoft.com/media/common/i_blog.svg'>
 </div>
 
-Cognitive Services에 대 한 뉴스는 [Azure 블로그에서](https://azure.microsoft.com/blog/topics/cognitive-services/)공유 됩니다.
+Cognitive Services에 대한 뉴스는 [Azure 블로그에서](https://azure.microsoft.com/blog/topics/cognitive-services/)공유 됩니다.
 
 ## <a name="search"></a>검색
 

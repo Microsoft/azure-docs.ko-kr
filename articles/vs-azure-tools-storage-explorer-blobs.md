@@ -46,7 +46,7 @@ Blob Storage를 사용하여 세상에 공개적으로 표시하거나 애플리
 3. 마우스 오른쪽 단추로 **Blob 컨테이너**를 클릭하고, 상황에 맞는 메뉴에서 **Blob 컨테이너 만들기**를 선택합니다.
 
    ![Blob 컨테이너 상황에 맞는 메뉴 만들기][0]
-4. 텍스트 상자가 **Blob 컨테이너** 폴더 아래에 표시됩니다. Blob 컨테이너에 대한 이름을 입력합니다. 참조 [컨테이너를 만드는](storage/blobs/storage-quickstart-blobs-dotnet.md#create-a-container) 규칙 및 blob 컨테이너 이름 명명 제한 사항에 대 한 정보에 대 한 합니다.
+4. 텍스트 상자가 **Blob 컨테이너** 폴더 아래에 표시됩니다. Blob 컨테이너에 대한 이름을 입력합니다. 참조 [컨테이너를 만드는](storage/blobs/storage-quickstart-blobs-dotnet.md#create-a-container) 규칙 및 blob 컨테이너 이름 명명 제한 사항에 대한 정보에 대한 합니다.
 
    ![Blob 컨테이너 텍스트 상자 만들기][1]
 5. Blob 컨테이너 만들기가 끝나면 **Enter** 키를 누르거나 **Esc** 키를 눌러 취소합니다. Blob 컨테이너가 성공적으로 만들어졌다면 선택한 스토리지 계정에 대해 **Blob 컨테이너** 폴더 아래에 표시됩니다.

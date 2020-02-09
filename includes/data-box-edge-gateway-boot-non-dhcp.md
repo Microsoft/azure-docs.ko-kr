@@ -11,7 +11,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 06/18/2019
 ms.locfileid: "67182871"
 ---
-비 DHCP 환경에서 부팅 하는 경우 데이터 상자 게이트웨이에 대 한 가상 컴퓨터를 배포 하려면 다음이 단계를 따릅니다.
+비 DHCP 환경에서 부팅 하는 경우 데이터 상자 게이트웨이에 대한 가상 컴퓨터를 배포 하려면 다음이 단계를 따릅니다.
 
 1. [장치의 Windows PowerShell 인터페이스를 연결할](#connect-to-the-powershell-interface)합니다.
 2. 사용 된 `Get-HcsIpAddress` 가상 장치에서 사용 하도록 설정 하는 네트워크 인터페이스를 나열 하는 cmdlet입니다. 디바이스에 사용하도록 설정된 네트워크 인터페이스가 하나인 경우에는 `Ethernet`이라는 기본 이름이 인터페이스에 할당됩니다.

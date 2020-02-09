@@ -1,6 +1,6 @@
 ---
 title: Azure 앱 구성 FAQ | Microsoft Docs
-description: Azure 앱 구성에 대 한 질문과 대답
+description: Azure 앱 구성에 대한 질문과 대답
 services: azure-app-configuration
 documentationcenter: ''
 author: lisaguthrie
@@ -50,19 +50,19 @@ Key Vault에 저장 된 암호를 참조 하는 앱 구성 값을 만들 수 있
 
 ## <a name="how-is-app-configuration-different-from-azure-app-service-settings"></a>앱 구성이 Azure App Service 설정과 어떻게 다른가?
 
-Azure App Service를 사용 하 여 각 App Service 인스턴스에 대 한 앱 설정을 정의할 수 있습니다. 이러한 설정은 응용 프로그램 코드에 환경 변수로 전달 됩니다. 원하는 경우 특정 배포 슬롯과 설정을 연결할 수 있습니다. 자세한 내용은 [앱 설정 구성](/azure/app-service/configure-common#configure-app-settings)을 참조 하세요.
+Azure App Service를 사용 하 여 각 App Service 인스턴스에 대한 앱 설정을 정의할 수 있습니다. 이러한 설정은 응용 프로그램 코드에 환경 변수로 전달 됩니다. 원하는 경우 특정 배포 슬롯과 설정을 연결할 수 있습니다. 자세한 내용은 [앱 설정 구성](/azure/app-service/configure-common#configure-app-settings)을 참조 하세요.
 
 반면 Azure 앱 구성을 사용 하면 App Service에서 실행 되는 앱을 포함 하 여 여러 앱 간에 공유할 수 있는 설정을 정의할 수 있습니다. 이러한 설정은 응용 프로그램 코드에서 .NET 및 Java의 구성 공급자를 통해, Azure SDK를 통해 또는 REST Api를 통해 직접 액세스할 수 있습니다.
 
 App Service와 앱 구성 간에 설정을 가져오거나 내보낼 수도 있습니다. 이렇게 하면 기존 App Service 설정에 따라 새 앱 구성 저장소를 신속 하 게 설정 하거나 App Service 설정을 사용 하는 기존 앱과 구성을 쉽게 공유할 수 있습니다.
 
-## <a name="are-there-any-size-limitations-on-keys-and-values-stored-in-app-configuration"></a>앱 구성에 저장 된 키와 값에 대 한 크기 제한이 있나요?
+## <a name="are-there-any-size-limitations-on-keys-and-values-stored-in-app-configuration"></a>앱 구성에 저장 된 키와 값에 대한 크기 제한이 있나요?
 
 단일 키-값 항목에 대해 10KB 제한이 있습니다.
 
-## <a name="how-should-i-store-configurations-for-multiple-environments-test-staging-production-and-so-on"></a>여러 환경 (테스트, 스테이징, 프로덕션 등)에 대 한 구성을 저장 하려면 어떻게 해야 하나요?
+## <a name="how-should-i-store-configurations-for-multiple-environments-test-staging-production-and-so-on"></a>여러 환경 (테스트, 스테이징, 프로덕션 등)에 대한 구성을 저장 하려면 어떻게 해야 하나요?
 
-현재는 매장 별 앱 구성에 대 한 액세스 권한이 있는 사용자를 제어할 수 있습니다. 다른 사용 권한이 필요한 각 환경에 대해 별도의 저장소를 사용 합니다. 이 방법은 최상의 보안 격리를 제공 합니다.
+현재는 매장 별 앱 구성에 대한 액세스 권한이 있는 사용자를 제어할 수 있습니다. 다른 사용 권한이 필요한 각 환경에 대해 별도의 저장소를 사용 합니다. 이 방법은 최상의 보안 격리를 제공 합니다.
 
 ## <a name="what-are-the-recommended-ways-to-use-app-configuration"></a>앱 구성을 사용 하기 위해 권장 되는 방법은 무엇 인가요?
 
@@ -72,7 +72,7 @@ App Service와 앱 구성 간에 설정을 가져오거나 내보낼 수도 있�
 
 공개 미리 보기 중에는 서비스를 무료로 사용할 수 있습니다.
 
-## <a name="how-can-i-receive-announcements-on-new-releases-and-other-information-related-to-app-configuration"></a>새 릴리스와 앱 구성과 관련 된 기타 정보에 대 한 공지는 어떻게 받을 수 있나요?
+## <a name="how-can-i-receive-announcements-on-new-releases-and-other-information-related-to-app-configuration"></a>새 릴리스와 앱 구성과 관련 된 기타 정보에 대한 공지는 어떻게 받을 수 있나요?
 
 [GitHub 공지 리포지토리](https://github.com/Azure/AppConfiguration-Announcements)를 구독 합니다.
 

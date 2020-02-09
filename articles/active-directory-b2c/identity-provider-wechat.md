@@ -24,7 +24,7 @@ ms.locfileid: "76849527"
 
 ## <a name="create-a-wechat-application"></a>WeChat 애플리케이션 만들기
 
-Azure Active Directory B2C (Azure AD B2C)에서 WeChat 계정을 id 공급자로 사용 하려면 테 넌 트에서 응용 프로그램을 나타내는 응용 프로그램을 만들어야 합니다. WeChat 계정이 아직 없는 경우 [https://kf.qq.com/faq/161220Brem2Q161220uUjERB.html](https://kf.qq.com/faq/161220Brem2Q161220uUjERB.html)에서 정보를 가져올 수 있습니다.
+Azure Active Directory B2C (Azure AD B2C)에서 WeChat 계정을 id 공급자로 사용 하려면 테넌트에서 응용 프로그램을 나타내는 응용 프로그램을 만들어야 합니다. WeChat 계정이 아직 없는 경우 [https://kf.qq.com/faq/161220Brem2Q161220uUjERB.html](https://kf.qq.com/faq/161220Brem2Q161220uUjERB.html)에서 정보를 가져올 수 있습니다.
 
 ### <a name="register-a-wechat-application"></a>WeChat 애플리케이션 등록
 

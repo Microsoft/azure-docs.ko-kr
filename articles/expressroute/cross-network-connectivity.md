@@ -1,6 +1,6 @@
 ---
 title: Azure 네트워크 간 연결
-description: 이 페이지에서는 Azure 네트워킹 기능을 기반으로 하는 네트워크 간 연결 및 솔루션에 대 한 응용 프로그램 시나리오를 설명 합니다.
+description: 이 페이지에서는 Azure 네트워킹 기능을 기반으로 하는 네트워크 간 연결 및 솔루션에 대한 응용 프로그램 시나리오를 설명 합니다.
 services: expressroute
 author: rambk
 ms.service: expressroute
@@ -24,7 +24,7 @@ Fabrikam Inc. Contoso l t d .를 가져옵니다. 병합기를 따라 Fabrikam�
 
 위 그림의 중간에 있는 파선 화살표는 원하는 네트워크 상호 연결을 표시 합니다. 특히 세 가지 종류의 연결을 사용할 수 있습니다. 1) Fabrikam 및 Contoso Vnet 교차 연결, 2) 교차 지역 온-프레미스와 Vnet 교차 연결 (즉, Fabrikam 온-프레미스 네트워크를 Contoso VNet에 연결 하 고 Contoso에 연결) 온-프레미스 네트워크에서 Fabrikam VNet으로), 3) Fabrikam 및 Contoso 온-프레미스 네트워크 교차 연결 
 
-다음 표에서는 병합 전 Contoso l t d .의 Express 경로에 대 한 개인 피어 링의 경로 테이블을 보여 줍니다.
+다음 표에서는 병합 전 Contoso l t d .의 Express 경로에 대한 개인 피어 링의 경로 테이블을 보여 줍니다.
 
 [![2]][2]
 
@@ -32,7 +32,7 @@ Fabrikam Inc. Contoso l t d .를 가져옵니다. 병합기를 따라 Fabrikam�
 
 [![4]][4]
 
-다음 표에서는 병합 전 Fabrikam Inc.의 Express 경로에 대 한 개인 피어 링의 경로 테이블을 보여 줍니다.
+다음 표에서는 병합 전 Fabrikam Inc.의 Express 경로에 대한 개인 피어 링의 경로 테이블을 보여 줍니다.
 
 [![3]][3]
 
@@ -50,7 +50,7 @@ Fabrikam Inc. Contoso l t d .를 가져옵니다. 병합기를 따라 Fabrikam�
 
 VNet 피어 링 (가상 네트워크 피어 링)은 두 개의 가상 네트워크를 연결할 때 가장 최적의 네트워크 성능을 제공 합니다. VNet 피어 링은 동일한 Azure 지역 (일반적으로 VNet 피어 링 이라고 함)과 서로 다른 두 Azure 지역 (일반적으로 글로벌 VNet 피어 링 이라고 함) 내에서 두 개의 Vnet 피어 링을 지원 합니다. 
 
-Contoso와 Fabrikam Azure 구독의 Vnet 간에 글로벌 VNet 피어 링을 구성 해 보겠습니다. 두 가상 네트워크 간에 가상 네트워크 피어 링을 만드는 방법에 대 한 자세한 내용은 [가상 네트워크 피어 링 만들기][Configure VNet peering] 문서를 참조 하세요.
+Contoso와 Fabrikam Azure 구독의 Vnet 간에 글로벌 VNet 피어 링을 구성 해 보겠습니다. 두 가상 네트워크 간에 가상 네트워크 피어 링을 만드는 방법에 대한 자세한 내용은 [가상 네트워크 피어 링 만들기][Configure VNet peering] 문서를 참조 하세요.
 
 다음 그림은 글로벌 VNet 피어 링을 구성한 후의 네트워크 아키텍처를 보여 줍니다.
 
@@ -64,36 +64,36 @@ Contoso와 Fabrikam Azure 구독의 Vnet 간에 글로벌 VNet 피어 링을 구
 
 [![8]][8]
 
-VNet 피어 링은 두 개의 가상 네트워크를 직접 연결 합니다 (위의 두 테이블에 *Vnetglobalpeering 링* 항목에 대 한 다음 홉이 없음 참조).
+VNet 피어 링은 두 개의 가상 네트워크를 직접 연결 합니다 (위의 두 테이블에 *Vnetglobalpeering 링* 항목에 대한 다음 홉이 없음 참조).
 
 ## <a name="cross-connecting-vnets-to-the-on-premises-networks"></a>Vnet을 온-프레미스 네트워크에 상호 연결
 
-Express 경로 회로를 여러 가상 네트워크에 연결할 수 있습니다. Express 경로 회로에 연결할 수 있는 최대 가상 네트워크 수에 대 한 [구독 및 서비스 제한][Subscription limits] 을 참조 하세요. 
+Express 경로 회로를 여러 가상 네트워크에 연결할 수 있습니다. Express 경로 회로에 연결할 수 있는 최대 가상 네트워크 수에 대한 [구독 및 서비스 제한][Subscription limits] 을 참조 하세요. 
 
 Fabrikam Express 경로 회로를 Contoso 구독 VNet에 연결 하 고, 비슷한 Contoso Express 경로 회로를 Fabrikam 구독 VNet에 연결 하 여 가상 네트워크와 온-프레미스 네트워크 간에 교차 연결을 사용할 수 있도록 합니다. 다른 구독의 Express 경로 회로에 가상 네트워크를 연결 하려면 권한 부여를 만들고 사용 해야 합니다.  [가상 네트워크를 express 경로 회로에 연결][Connect-ER-VNet]문서를 참조 하세요.
 
-다음 그림은 가상 네트워크에 대 한 Express 경로 교차 연결을 구성한 후의 네트워크 아키텍처를 보여 줍니다.
+다음 그림은 가상 네트워크에 대한 Express 경로 교차 연결을 구성한 후의 네트워크 아키텍처를 보여 줍니다.
 
 [![9]][9]
 
-다음 표는 Express 경로를 통해 가상 네트워크를 온-프레미스 네트워크에 교차 연결한 후 Contoso l t d .의 Express 경로에 대 한 개인 피어 링의 경로 테이블을 보여 줍니다. 경로 테이블에 두 가상 네트워크에 속하는 경로가 있는지 확인 합니다.
+다음 표는 Express 경로를 통해 가상 네트워크를 온-프레미스 네트워크에 교차 연결한 후 Contoso l t d .의 Express 경로에 대한 개인 피어 링의 경로 테이블을 보여 줍니다. 경로 테이블에 두 가상 네트워크에 속하는 경로가 있는지 확인 합니다.
 
 [![10]][10]
 
-다음 표에서는 Express 경로를 통해 가상 네트워크를 온-프레미스 네트워크에 교차 연결한 후 Fabrikam Inc.의 Express 경로에 대 한 개인 피어 링의 경로 테이블을 보여 줍니다. 경로 테이블에 두 가상 네트워크에 속하는 경로가 있는지 확인 합니다.
+다음 표에서는 Express 경로를 통해 가상 네트워크를 온-프레미스 네트워크에 교차 연결한 후 Fabrikam Inc.의 Express 경로에 대한 개인 피어 링의 경로 테이블을 보여 줍니다. 경로 테이블에 두 가상 네트워크에 속하는 경로가 있는지 확인 합니다.
 
 [![pt]][11]
 
-다음 표에서는 Contoso 구독 VM에 알려진 경로를 보여 줍니다. 테이블의 *가상 네트워크 게이트웨이* 항목에 주의 합니다. VM은 온-프레미스 네트워크에 대 한 경로를 확인 합니다.
+다음 표에서는 Contoso 구독 VM에 알려진 경로를 보여 줍니다. 테이블의 *가상 네트워크 게이트웨이* 항목에 주의 합니다. VM은 온-프레미스 네트워크에 대한 경로를 확인 합니다.
 
 [![10]][12]
 
-다음 표에서는 Fabrikam 구독 VM에 알려진 경로를 보여 줍니다. 테이블의 *가상 네트워크 게이트웨이* 항목에 주의 합니다. VM은 온-프레미스 네트워크에 대 한 경로를 확인 합니다.
+다음 표에서는 Fabrikam 구독 VM에 알려진 경로를 보여 줍니다. 테이블의 *가상 네트워크 게이트웨이* 항목에 주의 합니다. VM은 온-프레미스 네트워크에 대한 경로를 확인 합니다.
 
 [![/10]][13]
 
 >[!NOTE]
->Fabrikam 및/또는 Contoso 구독에는 해당 허브 VNet에 대 한 스포크 Vnet 있습니다 (이 문서의 아키텍처 다이어그램에는 허브 및 스포크 디자인이 설명 되지 않음). 허브 VNet 게이트웨이와 Express 경로 간 교차 연결을 사용 하는 경우에도 동 및 서 부 허브와 스포크 간의 통신이 가능 합니다.
+>Fabrikam 및/또는 Contoso 구독에는 해당 허브 VNet에 대한 스포크 Vnet 있습니다 (이 문서의 아키텍처 다이어그램에는 허브 및 스포크 디자인이 설명 되지 않음). 허브 VNet 게이트웨이와 Express 경로 간 교차 연결을 사용 하는 경우에도 동 및 서 부 허브와 스포크 간의 통신이 가능 합니다.
 >
 
 ## <a name="cross-connecting-on-premises-networks"></a>온-프레미스 네트워크 교차 연결
@@ -104,17 +104,17 @@ Express 경로 Global Reach는 서로 다른 Express 경로 회로에 연결 된
 
 [![14]][14]
 
-다음 표에서는 Global Reach 구성한 후 Contoso l t i t i o l i d .의 개인 피어 링에 대 한 경로 테이블을 보여 줍니다. 경로 테이블에는 온-프레미스 네트워크에 속하는 경로가 있는지 확인 합니다. 
+다음 표에서는 Global Reach 구성한 후 Contoso l t i t i o l i d .의 개인 피어 링에 대한 경로 테이블을 보여 줍니다. 경로 테이블에는 온-프레미스 네트워크에 속하는 경로가 있는지 확인 합니다. 
 
 [![15]][15]
 
-다음 표에서는 Global Reach 구성한 후 Fabrikam Inc.의 Express 경로에 대 한 개인 피어 링의 경로 테이블을 보여 줍니다. 경로 테이블에는 온-프레미스 네트워크에 속하는 경로가 있는지 확인 합니다.
+다음 표에서는 Global Reach 구성한 후 Fabrikam Inc.의 Express 경로에 대한 개인 피어 링의 경로 테이블을 보여 줍니다. 경로 테이블에는 온-프레미스 네트워크에 속하는 경로가 있는지 확인 합니다.
 
 [![x]][16]
 
 ## <a name="next-steps"></a>다음 단계
 
-VNet 및 VNet 피어 링에 대 한 추가 질문은 [virtual NETWORK FAQ][VNet-FAQ]를 참조 하세요. Express 경로 및 가상 네트워크 연결에 대 한 추가 질문은 [express 경로 FAQ][ER-FAQ] 를 참조 하세요.
+VNet 및 VNet 피어 링에 대한 추가 질문은 [virtual NETWORK FAQ][VNet-FAQ]를 참조 하세요. Express 경로 및 가상 네트워크 연결에 대한 추가 질문은 [express 경로 FAQ][ER-FAQ] 를 참조 하세요.
 
 Global Reach은 국가/지역에 따라 국가/지역에서 롤아웃 됩니다. 원하는 국가/지역에서 Global Reach를 사용할 수 있는지 확인 하려면 [express 경로 Global Reach][Global Reach]를 참조 하세요.
 

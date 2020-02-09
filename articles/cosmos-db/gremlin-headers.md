@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB Gremlin 응답 헤더
-description: 추가 문제 해결을 가능 하 게 하는 서버 응답 메타 데이터에 대 한 참조 설명서
+description: 추가 문제 해결을 가능 하 게 하는 서버 응답 메타 데이터에 대한 참조 설명서
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: reference
@@ -17,18 +17,18 @@ ms.locfileid: "72755090"
 # <a name="azure-cosmos-db-gremlin-server-response-headers"></a>Azure Cosmos DB Gremlin 서버 응답 헤더
 이 문서에서는 Gremlin 서버가 요청 실행 시 호출자에 게 반환 Cosmos DB 하는 헤더에 대해 설명 합니다. 이러한 헤더는 Cosmos DB 서비스에 기본적으로 통합 되 고 고객 지원 서비스를 간소화 하는 응용 프로그램을 구축 하는 요청 성능 문제 해결에 유용 합니다.
 
-이러한 헤더에 대 한 종속성을 유지 하는 것은 응용 프로그램의 이식성을 다른 Gremlin 구현으로 제한 한다는 점에 유의 해야 합니다. 반환 시 Cosmos DB Gremlin와 긴밀 하 게 통합 됩니다. 이러한 헤더는 TinkerPop 표준이 아닙니다.
+이러한 헤더에 대한 종속성을 유지 하는 것은 응용 프로그램의 이식성을 다른 Gremlin 구현으로 제한 한다는 점에 유의 해야 합니다. 반환 시 Cosmos DB Gremlin와 긴밀 하 게 통합 됩니다. 이러한 헤더는 TinkerPop 표준이 아닙니다.
 
 ## <a name="headers"></a>headers
 
 | 헤더 | Type | 샘플 값 | 포함 된 경우 | 설명 |
 | --- | --- | --- | --- | --- |
-| **x-ms-request-charge** | Double | 11.3243 | Success and Failure | 부분 응답 메시지에 대 한 [요청 단위 (o s/s 또는 RUs)](request-units.md) 에서 사용 되는 수집 또는 데이터베이스 처리량입니다. 이 헤더는 여러 청크를 포함 하는 요청에 대 한 모든 연속에 존재 합니다. 특정 응답 청크의 요금을 반영 합니다. 단일 응답 청크로 구성 된 요청에 대해서만이 헤더는 총 순회 비용과 일치 합니다. 그러나 대부분의 복합 순회에서이 값은 부분 비용을 나타냅니다. |
-| **x-ms-total-request-charge** | Double | 423.987 | Success and Failure | 전체 요청에 대 한 [요청 단위 (r u/초 또는 RUs)](request-units.md) 에서 사용 된 수집 또는 데이터베이스 처리량입니다. 이 헤더는 여러 청크를 포함 하는 요청에 대 한 모든 연속에 존재 합니다. 요청 시작 이후 누적 요금을 나타냅니다. 마지막 청크의이 헤더의 값은 전체 요청 요금을 나타냅니다. |
+| **x-ms-request-charge** | Double | 11.3243 | Success and Failure | 부분 응답 메시지에 대한 [요청 단위 (o s/s 또는 RUs)](request-units.md) 에서 사용 되는 수집 또는 데이터베이스 처리량입니다. 이 헤더는 여러 청크를 포함 하는 요청에 대한 모든 연속에 존재 합니다. 특정 응답 청크의 요금을 반영 합니다. 단일 응답 청크로 구성 된 요청에 대해서만이 헤더는 총 순회 비용과 일치 합니다. 그러나 대부분의 복합 순회에서이 값은 부분 비용을 나타냅니다. |
+| **x-ms-total-request-charge** | Double | 423.987 | Success and Failure | 전체 요청에 대한 [요청 단위 (r u/초 또는 RUs)](request-units.md) 에서 사용 된 수집 또는 데이터베이스 처리량입니다. 이 헤더는 여러 청크를 포함 하는 요청에 대한 모든 연속에 존재 합니다. 요청 시작 이후 누적 요금을 나타냅니다. 마지막 청크의이 헤더의 값은 전체 요청 요금을 나타냅니다. |
 | **x-y-시간-ms** | Double | 13.75 | Success and Failure | 이 헤더는 대기 시간 문제 해결을 위해 포함 되었습니다. Cosmos DB Gremlin 서버가 부분 응답 메시지를 실행 하 고 생성 하는 데 걸린 시간 (밀리초)을 나타냅니다. 이 헤더의 값을 사용 하 여 전체 요청 대기 시간 응용 프로그램과 비교 하면 네트워크 대기 시간 오버 헤드를 계산할 수 있습니다. |
 | **x 밀리초-총 서버 시간-ms** | Double | 130.512 | Success and Failure | Cosmos DB Gremlin 서버가 전체 순회를 실행 하는 데 걸린 총 시간 (밀리초)입니다. 이 헤더는 모든 부분 응답에 포함 됩니다. 요청이 시작 된 이후의 누적 실행 시간을 나타냅니다. 마지막 응답은 총 실행 시간을 나타냅니다. 이 헤더는 클라이언트와 서버를 대기 시간 원본으로 구분 하는 데 유용 합니다. 클라이언트의 순회 실행 시간을이 헤더의 값과 비교할 수 있습니다. |
-| **x-ms-status-code** | long | 200 | Success and Failure | 헤더는 요청 완료 또는 종료에 대 한 내부 이유를 나타냅니다. 응용 프로그램은이 헤더의 값을 확인 하 고 수정 작업을 수행 하는 것이 좋습니다. |
-| **x-m-하위 상태 코드** | long | 1003 | 오류만 | Cosmos DB은 통합 저장소 계층을 기반으로 하는 다중 모델 데이터베이스입니다. 이 헤더에는 고가용성 스택의 하위 계층 내에서 오류가 발생 하는 경우의 실패 원인에 대 한 추가 정보가 포함 되어 있습니다. 응용 프로그램은이 헤더를 저장 하 고 고객 지원 Cosmos DB 연락할 때 사용 하는 것이 좋습니다. 이 헤더의 값은 빠른 문제 해결을 위해 Cosmos DB 엔지니어에 게 유용 합니다. |
+| **x-ms-status-code** | long | 200 | Success and Failure | 헤더는 요청 완료 또는 종료에 대한 내부 이유를 나타냅니다. 응용 프로그램은이 헤더의 값을 확인 하 고 수정 작업을 수행 하는 것이 좋습니다. |
+| **x-m-하위 상태 코드** | long | 1003 | 오류만 | Cosmos DB은 통합 저장소 계층을 기반으로 하는 다중 모델 데이터베이스입니다. 이 헤더에는 고가용성 스택의 하위 계층 내에서 오류가 발생 하는 경우의 실패 원인에 대한 추가 정보가 포함 되어 있습니다. 응용 프로그램은이 헤더를 저장 하 고 고객 지원 Cosmos DB 연락할 때 사용 하는 것이 좋습니다. 이 헤더의 값은 빠른 문제 해결을 위해 Cosmos DB 엔지니어에 게 유용 합니다. |
 | **x-ms-retry-after-ms** | 문자열 (TimeSpan) | "00:00:03.9500000" | 오류만 | 이 헤더는 .NET [TimeSpan](https://docs.microsoft.com/dotnet/api/system.timespan) 형식의 문자열 표현입니다. 이 값은 프로 비전 된 처리량 고갈로 인해 실패 한 요청에만 포함 됩니다. 응용 프로그램은 지시 시간 후에 다시 전송 해야 합니다. |
 | **x-ms-activity-id** | 문자열 (Guid) | "A9218E01-3A3A-4716-9636-5BD86B056613" | Success and Failure | 헤더에는 요청의 고유한 서버 쪽 식별자가 포함 되어 있습니다. 각 요청에는 추적을 위해 서버에서 고유 식별자가 할당 됩니다. 응용 프로그램은 고객이 고객 지원 담당자에 게 문의할 수 있는 요청에 대해 서버에서 반환 하는 작업 식별자를 기록해 야 합니다. Cosmos DB 지원 담당자 Cosmos DB 서비스 원격 분석에서 이러한 식별자로 특정 요청을 찾을 수 있습니다. |
 
@@ -40,7 +40,7 @@ ms.locfileid: "72755090"
 | --- | --- |
 | **401** | 인증 암호가 Cosmos DB 계정 키와 일치 하지 않을 경우 오류 메시지 `"Unauthorized: Invalid credentials provided"` 반환 됩니다. Azure Portal에서 Cosmos DB Gremlin 계정으로 이동 하 여 키가 올바른지 확인 합니다.|
 | **404** | 동일한 edge 또는 정점을 동시에 삭제 하 고 업데이트 하려고 하는 동시 작업 `"Owner resource does not exist"` 오류 메시지는 지정된 데이터베이스 또는 컬렉션이 `/dbs/<database name>/colls/<collection or graph name>` 형식의 연결 매개 변수에서 올바르지 않다는 것을 의미합니다.|
-| **408** | `"Server timeout"`는 순회가 **30 초** 이상 걸려서 서버에 의해 취소 되었음을 나타냅니다. 트래버스의 모든 홉에 대 한 꼭 짓 점 또는 가장자리를 필터링 하 여 검색 범위를 좁혀 빠르게 실행 되도록 트래버스를 최적화 합니다.|
+| **408** | `"Server timeout"`는 순회가 **30 초** 이상 걸려서 서버에 의해 취소 되었음을 나타냅니다. 트래버스의 모든 홉에 대한 꼭 짓 점 또는 가장자리를 필터링 하 여 검색 범위를 좁혀 빠르게 실행 되도록 트래버스를 최적화 합니다.|
 | **409** | 이는 대개 그래프에 식별자가 있는 꼭 짓 점 또는 가장자리가 이미 있는 경우에 발생 합니다. `"Conflicting request to resource has been attempted. Retry to avoid conflicts."`| 
 | **412** | 상태 코드는 오류 메시지 `"PreconditionFailedException": One of the specified pre-condition is not met`와 함께 보충 됩니다. 이 오류는에 지 또는 꼭 짓 점 읽기와 수정 후 저장소에 다시 쓰기 간의 낙관적 동시성 제어 위반을 나타냅니다. 이 오류가 발생 하는 가장 일반적인 상황은 속성 수정입니다 (예: `g.V('identifier').property('name','value')`). Gremlin 엔진에서 꼭 짓 점을 읽고, 수정 하 고, 다시 씁니다. 동시에 동일한 꼭 짓 점 또는 가장자리를 쓰려고 하는 다른 트래버스를 실행 하는 경우 그 중 하나에이 오류가 표시 됩니다. 응용 프로그램에서 서버에 다시 트래버스를 제출 해야 합니다.| 
 | **429** | 요청이 제한 되었으며 **x-ms** 의 값 이후 다시 시도 해야 합니다.--ms| 
@@ -107,6 +107,6 @@ try {
 ```
 
 ## <a name="next-steps"></a>다음 단계
-* [Azure Cosmos DB에 대 한 HTTP 상태 코드](https://docs.microsoft.com/rest/api/cosmos-db/http-status-codes-for-cosmosdb) 
+* [Azure Cosmos DB에 대한 HTTP 상태 코드](https://docs.microsoft.com/rest/api/cosmos-db/http-status-codes-for-cosmosdb) 
 * [일반 Azure Cosmos DB REST 응답 헤더](https://docs.microsoft.com/rest/api/cosmos-db/common-cosmosdb-rest-response-headers)
 * [TinkerPop Graph 드라이버 공급자 요구 사항]( http://tinkerpop.apache.org/docs/current/dev/provider/#_graph_driver_provider_requirements)

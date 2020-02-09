@@ -1,5 +1,5 @@
 ---
-title: 같은 입력에 대 한 Azure Functions 디자인
+title: 같은 입력에 대한 Azure Functions 디자인
 description: Idempotent 될 Azure Functions 빌드
 author: craigshoemaker
 ms.author: cshoe
@@ -12,7 +12,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74226868"
 ---
-# <a name="designing-azure-functions-for-identical-input"></a>같은 입력에 대 한 Azure Functions 디자인
+# <a name="designing-azure-functions-for-identical-input"></a>같은 입력에 대한 Azure Functions 디자인
 
 이벤트 기반 및 메시지 기반 아키텍처의 현실에서는 데이터 무결성과 시스템 안정성을 유지 하면서 동일한 요청을 수락 해야 한다는 것을 규정 합니다.
 
@@ -23,10 +23,10 @@ ms.locfileid: "74226868"
 응용 프로그램을 빌드하는 경우 다음 시나리오를 고려 하세요.
 
 - 재고 제어 응용 프로그램이 동일한 제품을 두 번 이상 삭제 하려고 하면 어떻게 되나요?
-- 동일한 사람에 대 한 직원 레코드를 만드는 요청이 둘 이상이 면 인적 자원 응용 프로그램이 어떻게 작동 하나요?
+- 동일한 사람에 대한 직원 레코드를 만드는 요청이 둘 이상이 면 인적 자원 응용 프로그램이 어떻게 작동 하나요?
 - 은행 앱이 동일한 출금를 만들도록 100 요청을 가져오는 경우 비용은 어디에 있나요?
 
-함수에 대 한 요청이 동일한 명령을 받을 수 있는 많은 컨텍스트가 있습니다. 일부 상황에는 다음이 포함 됩니다.
+함수에 대한 요청이 동일한 명령을 받을 수 있는 많은 컨텍스트가 있습니다. 일부 상황에는 다음이 포함 됩니다.
 
 - 동일한 요청을 여러 번 보내는 재시도 정책
 - 응용 프로그램에 재생 된 캐시 된 명령

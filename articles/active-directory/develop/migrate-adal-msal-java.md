@@ -30,7 +30,7 @@ Java 용 Microsoft Authentication Library (MSAL4J) 및 Azure AD 인증 Library f
 
 MSAL은 다음과 같은 이점을 제공 합니다.
 
-- 최신 Microsoft id 플랫폼 끝점을 사용 하기 때문에 azure ad id, Microsoft 계정, 소셜 및 로컬 계정과 같은 광범위 한 Microsoft id 집합을 Azure AD Business to Consumer (B2C)를 통해 인증할 수 있습니다.
+- 최신 Microsoft id 플랫폼 엔드포인트을 사용 하기 때문에 azure ad id, Microsoft 계정, 소셜 및 로컬 계정과 같은 광범위 한 Microsoft id 집합을 Azure AD Business to Consumer (B2C)를 통해 인증할 수 있습니다.
 - 사용자는 최상의 single sign-on 환경을 이용할 수 있습니다.
 - 응용 프로그램에서 증분 동의를 설정할 수 있으며 조건부 액세스를 지 원하는 것이 더 쉽습니다.
 
@@ -38,7 +38,7 @@ Java 용 MSAL은 Microsoft id 플랫폼에서 사용 하는 것이 좋습니다.
 
 ## <a name="differences"></a>차이점
 
-개발자 용 Azure AD () 끝점 (및 ADAL4J)을 사용 하 여 작업 하는 경우 v2.0 ( [Microsoft identity platform) 끝점에 대 한 다른 사항을](https://docs.microsoft.com/azure/active-directory/develop/azure-ad-endpoint-comparison)읽을 수 있습니다.
+개발자 용 Azure AD () 엔드포인트 (및 ADAL4J)을 사용 하 여 작업 하는 경우 v2.0 ( [Microsoft identity platform) 엔드포인트에 대 한 다른 사항을](https://docs.microsoft.com/azure/active-directory/develop/azure-ad-endpoint-comparison)읽을 수 있습니다.
 
 ## <a name="scopes-not-resources"></a>리소스가 아닌 범위
 
@@ -83,7 +83,7 @@ V2.0에서 `https://login.microsoftonline.com/common` 기관을 사용 하는 �
 
 v1.0 엔드포인트(ADAL에서 사용)는 v1.0 토큰만 내보냅니다.
 
-V2.0 끝점 (MSAL에서 사용)은 v1.0 및 v2.0 토큰을 내보낼 수 있습니다. Web API의 애플리케이션 매니페스트 속성을 사용하면 개발자가 허용할 토큰 버전을 선택할 수 있습니다. [응용 프로그램 매니페스트](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest) 참조 설명서의 `accessTokenAcceptedVersion`을 참조 하세요.
+V2.0 엔드포인트 (MSAL에서 사용)은 v1.0 및 v2.0 토큰을 내보낼 수 있습니다. Web API의 애플리케이션 매니페스트 속성을 사용하면 개발자가 허용할 토큰 버전을 선택할 수 있습니다. [응용 프로그램 매니페스트](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest) 참조 설명서의 `accessTokenAcceptedVersion`을 참조 하세요.
 
 V1.0 및 v2.0 토큰에 대 한 자세한 내용은 [Azure Active Directory 액세스 토큰](https://docs.microsoft.com/azure/active-directory/develop/access-tokens)을 참조 하세요.
 

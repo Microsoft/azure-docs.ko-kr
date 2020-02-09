@@ -198,7 +198,7 @@ Azure 함수 내에서 논리 앱을 트리거하려면 논리 앱이 호출 가
 
 ## <a name="enable-authentication-for-azure-functions"></a>Azure 함수에 대 한 인증 사용
 
-로그인 하 고 자격 증명이 나 암호를 제공 하지 않고 다른 Azure Active Directory (Azure AD) 테 넌 트의 리소스에 대 한 액세스를 인증 하기 위해 논리 앱은 [관리 되는 id](../active-directory/managed-identities-azure-resources/overview.md) (이전의 관리 서비스 ID 또는 MSI)를 사용할 수 있습니다. 이 ID는 Azure에서 관리되며, 비밀을 제공하거나 순환할 필요가 없기 때문에 자격 증명을 보호하는 데 도움이 됩니다. [AZURE AD 인증에 대 한 관리 되는 id를 지 원하는 azure 서비스](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication)에 대해 자세히 알아보세요.
+로그인 하 고 자격 증명이 나 암호를 제공 하지 않고 다른 Azure Active Directory (Azure AD) 테넌트의 리소스에 대 한 액세스를 인증 하기 위해 논리 앱은 [관리 되는 id](../active-directory/managed-identities-azure-resources/overview.md) (이전의 관리 서비스 ID 또는 MSI)를 사용할 수 있습니다. 이 ID는 Azure에서 관리되며, 비밀을 제공하거나 순환할 필요가 없기 때문에 자격 증명을 보호하는 데 도움이 됩니다. [AZURE AD 인증에 대 한 관리 되는 id를 지 원하는 azure 서비스](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication)에 대해 자세히 알아보세요.
 
 시스템 할당 관리 id를 사용 하도록 논리 앱을 설정 하는 경우 논리 앱의 Azure 함수는 인증에 동일한 id를 사용할 수도 있습니다. 논리 앱의 Azure 기능에 대 한 인증 지원에 대 한 자세한 내용은 [아웃 바운드 호출에 인증 추가](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)를 참조 하세요.
 
@@ -253,19 +253,19 @@ Azure 함수에서 논리 앱의 시스템 할당 id를 사용 하려면 함수�
 
   * 그렇지 않고이 개체 ID를 찾으려면 논리 앱 디자이너에서 논리 앱을 엽니다. 논리 앱 메뉴의 **설정**에서 **id** > **시스템이 할당 됨**을 선택 합니다.
 
-* Azure Active Directory (Azure AD)에서 테 넌 트의 디렉터리 ID
+* Azure Active Directory (Azure AD)에서 테넌트의 디렉터리 ID
 
-  테 넌 트의 디렉터리 ID를 가져오려면 [`Get-AzureAccount`](https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azureaccount) Powershell 명령을 실행할 수 있습니다. 또는 Azure Portal에서 다음 단계를 수행 합니다.
+  테넌트의 디렉터리 ID를 가져오려면 [`Get-AzureAccount`](https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azureaccount) Powershell 명령을 실행할 수 있습니다. 또는 Azure Portal에서 다음 단계를 수행 합니다.
 
   1. [Azure Portal](https://portal.azure.com)에서 함수 앱을 찾아 선택 합니다.
 
-  1. Azure AD 테 넌 트를 찾아 선택 합니다. 이러한 단계에서는 "Fabrikam"을 예제 테 넌 트로 사용 합니다.
+  1. Azure AD 테넌트를 찾아 선택 합니다. 이러한 단계에서는 "Fabrikam"을 예제 테넌트로 사용 합니다.
 
-  1. 테 넌 트의 메뉴에 있는 **관리**에서 **속성**을 선택 합니다.
+  1. 테넌트의 메뉴에 있는 **관리**에서 **속성**을 선택 합니다.
 
-  1. 예를 들어 테 넌 트의 디렉터리 ID를 복사 하 고 나중에 사용 하기 위해 해당 ID를 저장 합니다.
+  1. 예를 들어 테넌트의 디렉터리 ID를 복사 하 고 나중에 사용 하기 위해 해당 ID를 저장 합니다.
 
-     ![Azure AD 테 넌 트의 디렉터리 ID 찾기 및 복사](./media/logic-apps-azure-functions/azure-active-directory-tenant-id.png)
+     ![Azure AD 테넌트의 디렉터리 ID 찾기 및 복사](./media/logic-apps-azure-functions/azure-active-directory-tenant-id.png)
 
 * 액세스 하려는 대상 리소스의 리소스 ID입니다.
 
@@ -294,7 +294,7 @@ Azure 함수에서 논리 앱의 시스템 할당 id를 사용 하려면 함수�
 
    1. **클라이언트 ID** 속성에 논리 앱의 시스템 할당 id에 대 한 개체 id를 입력 합니다.
 
-   1. **발급자 url** 속성에 `https://sts.windows.net/` url을 입력 하 고 Azure AD 테 넌 트의 디렉터리 ID를 추가 합니다.
+   1. **발급자 url** 속성에 `https://sts.windows.net/` url을 입력 하 고 Azure AD 테넌트의 디렉터리 ID를 추가 합니다.
 
       `https://sts.windows.net/<Azure-AD-tenant-directory-ID>`
 

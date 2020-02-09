@@ -34,7 +34,7 @@ Azure Key Vault는 비밀을 안전하게 저장하고 액세스하기 위한 �
 
 - **서비스 사용자**: azure 서비스 주체는 사용자가 만든 앱, 서비스 및 자동화 도구가 특정 Azure 리소스에 액세스 하는 데 사용 하는 보안 id입니다. 특정 역할을 가진 "사용자 id" (사용자 이름 및 암호 또는 인증서)와 긴밀 하 게 제어 된 사용 권한을 고려해 야 합니다. 일반 사용자 ID와 달리 서비스 주체는 특정 작업만 수행하면 됩니다. 관리 작업을 수행 하는 데 필요한 최소 권한 수준만 부여 하면 보안이 향상 됩니다.
 
-- [Azure Active Directory (AZURE ad)](../active-directory/active-directory-whatis.md): azure ad는 테 넌 트의 Active Directory 서비스입니다. 각 디렉터리에는 하나 이상의 도메인이 있습니다. 디렉터리는 연결된 여러 구독을 가질 수 있지만 오직 하나의 테넌트만을 가질 수 있습니다.
+- [Azure Active Directory (AZURE ad)](../active-directory/active-directory-whatis.md): azure ad는 테넌트의 Active Directory 서비스입니다. 각 디렉터리에는 하나 이상의 도메인이 있습니다. 디렉터리는 연결된 여러 구독을 가질 수 있지만 오직 하나의 테넌트만을 가질 수 있습니다.
 
 - **Azure 테넌트 ID**: Azure 구독 내에서 Azure AD 인스턴스를 식별하는 고유한 방법입니다.
 

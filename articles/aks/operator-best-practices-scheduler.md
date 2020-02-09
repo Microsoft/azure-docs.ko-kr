@@ -29,7 +29,7 @@ AKS(Azure Kubernetes Service)에서 클러스터를 관리할 경우 종종 팀 
 
 **모범 사례 가이드** - 네임스페이스 수준에서 리소스 할당량을 계획하고 적용합니다. Pod가 리소스 요청 및 한도를 정의하지 않는 경우 배포를 거부합니다. 리소스 사용량을 모니터링하고 필요에 따라 할당량을 조정합니다.
 
-리소스 요청 및 한도는 Pod 사양에 배치됩니다. 이러한 한도는 배포 시 Kubernetes 스케줄러가 클러스터에서 사용 가능한 노드를 찾는 데 사용됩니다. 이러한 한도 및 요청은 개별 Pod 수준에서 작동합니다. 이러한 값을 정의 하는 방법에 대 한 자세한 내용은 [pod 리소스 요청 및 제한 정의][resource-limits] 를 참조 하세요.
+리소스 요청 및 한도는 Pod 사양에 배치됩니다. 이러한 한도는 배포 시 Kubernetes 스케줄러가 클러스터에서 사용 가능한 노드를 찾는 데 사용됩니다. 이러한 한도 및 요청은 개별 Pod 수준에서 작동합니다. 이러한 값을 정의 하는 방법에 대한 자세한 내용은 [pod 리소스 요청 및 제한 정의][resource-limits] 를 참조 하세요.
 
 개발 팀 또는 프로젝트에서 리소스를 예약하고 제한하는 방법을 제공하려면 ‘리소스 할당량’을 사용해야 합니다. 이러한 할당량은 네임스페이스에 정의되며 다음 기준으로 할당량을 설정하는 데 사용할 수 있습니다.
 
@@ -39,7 +39,7 @@ AKS(Azure Kubernetes Service)에서 클러스터를 관리할 경우 종종 팀 
 
 Kubernetes는 리소스를 초과 커밋하지 않습니다. 리소스 요청 또는 한도의 누적 총계가 지정된 할당량을 초과하면 추가 배포가 수행되지 않습니다.
 
-리소스 할당량을 정의하는 경우 네임스페이스에 만들어진 모든 Pod는 해당 Pod 사양의 한도 또는 요청을 제공해야 합니다. 이러한 값이 제공되지 않으면 배포를 거부할 수 있습니다. 대신 [네임 스페이스에 대 한 기본 요청 및 제한을 구성할][configure-default-quotas]수 있습니다.
+리소스 할당량을 정의하는 경우 네임스페이스에 만들어진 모든 Pod는 해당 Pod 사양의 한도 또는 요청을 제공해야 합니다. 이러한 값이 제공되지 않으면 배포를 거부할 수 있습니다. 대신 [네임 스페이스에 대한 기본 요청 및 제한을 구성할][configure-default-quotas]수 있습니다.
 
 다음 예제에서는 *dev-app-team-quotas.yaml*이라는 YAML 매니페스트가 엄격한 한도로 총 CPU *10*개, 메모리 *20Gi* 및 Pod *10*개를 설정합니다.
 
@@ -63,7 +63,7 @@ kubectl apply -f dev-app-team-quotas.yaml --namespace dev-apps
 
 애플리케이션 개발자 및 소유자와 협력하여 요구 사항을 이해하고 적절한 리소스 할당량을 적용하세요.
 
-사용 가능한 리소스 개체, 범위 및 우선 순위에 대 한 자세한 내용은 [Kubernetes의 리소스 할당량][k8s-resource-quotas]을 참조 하세요.
+사용 가능한 리소스 개체, 범위 및 우선 순위에 대한 자세한 내용은 [Kubernetes의 리소스 할당량][k8s-resource-quotas]을 참조 하세요.
 
 ## <a name="plan-for-availability-using-pod-disruption-budgets"></a>Pod 중단 예산을 사용하여 가용성 계획
 
@@ -118,7 +118,7 @@ kubectl apply -f nginx-pdb.yaml
 
 애플리케이션 개발자 및 소유자와 협력하여 요구 사항을 이해하고 적절한 Pod 중단 예산을 적용하세요.
 
-Pod 중단 예산을 사용 하는 방법에 대 한 자세한 내용은 [응용 프로그램에 대 한 중단 예산 지정][k8s-pdbs]을 참조 하세요.
+Pod 중단 예산을 사용 하는 방법에 대한 자세한 내용은 [응용 프로그램에 대한 중단 예산 지정][k8s-pdbs]을 참조 하세요.
 
 ## <a name="regularly-check-for-cluster-issues-with-kube-advisor"></a>kube-advisor를 사용하여 클러스터 문제를 정기적으로 확인
 
@@ -134,7 +134,7 @@ Kube-advisor 도구는 Linux 응용 프로그램 뿐만 아니라 Windows 응용
 
 이 문서에서는 기본 Kubernetes 스케줄러 기능을 중점적으로 설명했습니다. AKS의 클러스터 작업에 대한 자세한 내용은 다음 모범 사례를 참조하세요.
 
-* [다중 테 넌 트 및 클러스터 격리][aks-best-practices-cluster-isolation]
+* [다중 테넌트 및 클러스터 격리][aks-best-practices-cluster-isolation]
 * [Advanced Kubernetes scheduler 기능][aks-best-practices-advanced-scheduler]
 * [인증 및 권한 부여][aks-best-practices-identity]
 

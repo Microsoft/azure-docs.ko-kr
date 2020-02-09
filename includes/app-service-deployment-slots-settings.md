@@ -23,7 +23,7 @@ ms.locfileid: "71129688"
 * WebJob 콘텐츠
 * 하이브리드 연결 *
 * 가상 네트워크 통합 *
-* 서비스 끝점 *
+* 서비스 엔드포인트 *
 * Azure Content Delivery Network *
 
 별표 (*)로 표시 된 기능을 교환 하지 않도록 계획 합니다. 

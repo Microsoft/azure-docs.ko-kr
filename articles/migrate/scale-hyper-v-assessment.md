@@ -56,7 +56,7 @@ ms.locfileid: "70279450"
 ## <a name="other-planning-considerations"></a>기타 계획 고려 사항
 
 - 어플라이언스에서 검색을 시작 하려면 각 Hyper-v 호스트를 선택 해야 합니다. 
-- 다중 테 넌 트 환경을 실행 하는 경우 현재 특정 테 넌 트에 속하는 Vm만 검색할 수 없습니다. 
+- 다중 테넌트 환경을 실행 하는 경우 현재 특정 테넌트에 속하는 Vm만 검색할 수 없습니다. 
 
 ## <a name="prepare-for-assessment"></a>평가 준비
 

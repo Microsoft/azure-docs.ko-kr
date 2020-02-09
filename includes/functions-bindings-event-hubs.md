@@ -13,7 +13,7 @@ ms.locfileid: "76748929"
 ---
 ## <a name="trigger"></a>트리거
 
-함수 트리거를 사용 하 여 이벤트 허브 이벤트 스트림으로 전송 된 이벤트에 응답 합니다. 트리거를 설정 하려면 기본 이벤트 허브에 대 한 읽기 권한이 있어야 합니다. 함수가 트리거되면 함수에 전달 된 메시지는 문자열로 형식화 됩니다.
+함수 트리거를 사용 하 여 이벤트 허브 이벤트 스트림으로 전송 된 이벤트에 응답 합니다. 트리거를 설정 하려면 기본 이벤트 허브에 대한 읽기 권한이 있어야 합니다. 함수가 트리거되면 함수에 전달 된 메시지는 문자열로 형식화 됩니다.
 
 ## <a name="trigger---scaling"></a>트리거 - 크기 조정
 
@@ -24,7 +24,7 @@ ms.locfileid: "76748929"
 * 10 개 파티션
 * 1000 각 파티션에 100 메시지를 포함 하 여 모든 파티션에 균등 하 게 분산 된 이벤트
 
-함수를 처음 사용하는 경우 함수 인스턴스가 하나만 있습니다. `Function_0`첫 번째 함수 인스턴스를 호출 해 보겠습니다. `Function_0` 함수에는 10 개의 모든 파티션에 대 한 임대를 보유 하는 [EventProcessorHost](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.processor) 의 단일 인스턴스가 있습니다. 이 인스턴스는 파티션 0-9에서 이벤트를 읽습니다. 이 지점부터 다음 중 하나가 발생합니다.
+함수를 처음 사용하는 경우 함수 인스턴스가 하나만 있습니다. `Function_0`첫 번째 함수 인스턴스를 호출 해 보겠습니다. `Function_0` 함수에는 10 개의 모든 파티션에 대한 임대를 보유 하는 [EventProcessorHost](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.processor) 의 단일 인스턴스가 있습니다. 이 인스턴스는 파티션 0-9에서 이벤트를 읽습니다. 이 지점부터 다음 중 하나가 발생합니다.
 
 * **새 함수 인스턴스가 필요 하지 않음**: 함수 크기 조정 논리가 적용 되기 전에 `Function_0`에서 모든 1000 이벤트를 처리할 수 있습니다. 이 경우 모든 1000 메시지는 `Function_0`에 의해 처리 됩니다.
 
@@ -32,7 +32,7 @@ ms.locfileid: "76748929"
 
 * **N 개 이상의 함수 인스턴스가 추가**됨: 함수 크기 조정 논리에서 처리할 수 있는 것 보다 더 많은 메시지가 `Function_0`와 `Function_1` 모두 있음을 확인 하면 새로운 `Functions_N` 함수 앱 인스턴스가 만들어집니다.  앱은 `N`가 이벤트 허브 파티션 수보다 큰 지점에 생성 됩니다. 이 예에서 Event Hubs는 다시 파티션을 부하 분산합니다(이 경우, 인스턴스 `Function_0`...`Functions_9`로).
 
-크기 조정이 발생 하면 `N` 인스턴스는 이벤트 허브 파티션 수보다 큰 숫자입니다. 이 패턴은 다른 인스턴스에서 사용할 수 있게 되 면 [EventProcessorHost](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.processor) 인스턴스를 사용 하 여 파티션에 대 한 잠금을 가져올 수 있도록 하는 데 사용 됩니다. 함수 인스턴스가 실행 될 때 사용 되는 리소스에 대해서만 요금이 청구 됩니다. 즉, 이러한 오버 프로 비전에 대해 요금이 청구 되지 않습니다.
+크기 조정이 발생 하면 `N` 인스턴스는 이벤트 허브 파티션 수보다 큰 숫자입니다. 이 패턴은 다른 인스턴스에서 사용할 수 있게 되 면 [EventProcessorHost](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.processor) 인스턴스를 사용 하 여 파티션에 대한 잠금을 가져올 수 있도록 하는 데 사용 됩니다. 함수 인스턴스가 실행 될 때 사용 되는 리소스에 대해서만 요금이 청구 됩니다. 즉, 이러한 오버 프로 비전에 대해 요금이 청구 되지 않습니다.
 
 모든 함수 실행이 오류 없이 완료되면 연결된 스토리지 계정에 검사점이 추가됩니다. 확인이 성공 하면 모든 1000 메시지가 다시 검색 되지 않습니다.
 
@@ -436,7 +436,7 @@ public static async Task Run(
 
 다음 예에서는 *function.json* 파일의 이벤트 허브 트리거 바인딩 및 바인딩을 사용하는 [C# 스크립트 함수](../articles/azure-functions/functions-reference-csharp.md)를 보여줍니다. 함수는 이벤트 허브로 메시지를 씁니다.
 
-다음 예제에서는 *function.json* 파일에 있는 Event Hubs 데이터 바인딩을 표시합니다. 첫 번째 예제는 함수 2.x 이상에 대 한 것이 고 두 번째 예제는 함수 1.x에 대 한 것입니다. 
+다음 예제에서는 *function.json* 파일에 있는 Event Hubs 데이터 바인딩을 표시합니다. 첫 번째 예제는 함수 2.x 이상에 대한 것이 고 두 번째 예제는 함수 1.x에 대한 것입니다. 
 
 ```json
 {
@@ -488,7 +488,7 @@ public static void Run(TimerInfo myTimer, ICollector<string> outputEventHubMessa
 
 다음 예에서는 *function.json* 파일의 이벤트 허브 트리거 바인딩 및 바인딩을 사용하는 [JavaScript 함수](../articles/azure-functions/functions-reference-node.md)를 보여줍니다. 함수는 이벤트 허브로 메시지를 씁니다.
 
-다음 예제에서는 *function.json* 파일에 있는 Event Hubs 데이터 바인딩을 표시합니다. 첫 번째 예제는 함수 2.x 이상에 대 한 것이 고 두 번째 예제는 함수 1.x에 대 한 것입니다. 
+다음 예제에서는 *function.json* 파일에 있는 Event Hubs 데이터 바인딩을 표시합니다. 첫 번째 예제는 함수 2.x 이상에 대한 것이 고 두 번째 예제는 함수 1.x에 대한 것입니다. 
 
 ```json
 {
@@ -677,7 +677,7 @@ Python에서 특성을 지원 하지 않습니다.
 
 ## <a name="hostjson-settings"></a>host.json 설정
 
-이 섹션에서는 버전 2.x 이상에서이 바인딩에 사용할 수 있는 전역 구성 설정에 대해 설명 합니다. 아래의 예제 호스트 json 파일에는이 바인딩에 대 한 버전 2.x + 설정만 포함 되어 있습니다. 2\.x 이상 버전의 전역 구성 설정에 대 한 자세한 내용은 [Azure Functions에 대 한 호스트 json 참조](../articles/azure-functions/functions-host-json.md)를 참조 하세요.
+이 섹션에서는 버전 2.x 이상에서이 바인딩에 사용할 수 있는 전역 구성 설정에 대해 설명 합니다. 아래의 예제 호스트 json 파일에는이 바인딩에 대한 버전 2.x + 설정만 포함 되어 있습니다. 2\.x 이상 버전의 전역 구성 설정에 대한 자세한 내용은 [Azure Functions에 대한 호스트 json 참조](../articles/azure-functions/functions-host-json.md)를 참조 하세요.
 
 > [!NOTE]
 > Functions 1.x에서 host.json의 참조는 [Azure Functions 1.x에 대한 host.json 참조](../articles/azure-functions/functions-host-json-v1.md)를 참조하세요.

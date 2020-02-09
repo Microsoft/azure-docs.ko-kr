@@ -1,6 +1,6 @@
 ---
 title: Application Gateway 수신 컨트롤러에 대해 여러 네임 스페이스 지원 사용
-description: 이 문서에서는 Application Gateway 수신 컨트롤러를 사용 하 여 Kubernetes 클러스터에서 여러 네임 스페이스 지원을 사용 하도록 설정 하는 방법에 대 한 정보를 제공 합니다.
+description: 이 문서에서는 Application Gateway 수신 컨트롤러를 사용 하 여 Kubernetes 클러스터에서 여러 네임 스페이스 지원을 사용 하도록 설정 하는 방법에 대한 정보를 제공 합니다.
 services: application-gateway
 author: caya
 ms.service: application-gateway
@@ -44,7 +44,7 @@ AGIC 버전 0.7는이를 투구 구성에서 하나 이상의 다른 네임 스�
 
 반면에 경로, 백 엔드 풀, HTTP 설정 및 TLS 인증서는 하나의 네임 스페이스에 의해서만 생성 될 수 있으며 중복 항목이 제거 됩니다.
 
-예를 들어 다음과 같은 중복 수신 리소스 정의 네임 스페이스는 `www.contoso.com`에 대 한 `staging` 및 `production`을 참조 하세요.
+예를 들어 다음과 같은 중복 수신 리소스 정의 네임 스페이스는 `www.contoso.com`에 대한 `staging` 및 `production`을 참조 하세요.
 ```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -81,7 +81,7 @@ spec:
               servicePort: 80
 ```
 
-`www.contoso.com`에 대 한 두 개의 수신 리소스가 각각의 Kubernetes 네임 스페이스로 라우팅되도록 하기에도 불구 하 고 하나의 백 엔드가 트래픽을 처리 하는 것이 가능 합니다. AGIC는 "먼저 리소스 중 하나에 대해" 처음 제공 되는 "기반 구성을 만듭니다. 동시에 두 개의 조절기 리소스를 만든 경우 해당 리소스의 앞에 있는 하나는 우선적으로 적용 됩니다. 위의 예제에서 `production` 수신에 대 한 설정만 만들 수 있습니다. Application Gateway는 다음 리소스로 구성 됩니다.
+`www.contoso.com`에 대한 두 개의 수신 리소스가 각각의 Kubernetes 네임 스페이스로 라우팅되도록 하기에도 불구 하 고 하나의 백 엔드가 트래픽을 처리 하는 것이 가능 합니다. AGIC는 "먼저 리소스 중 하나에 대해" 처음 제공 되는 "기반 구성을 만듭니다. 동시에 두 개의 조절기 리소스를 만든 경우 해당 리소스의 앞에 있는 하나는 우선적으로 적용 됩니다. 위의 예제에서 `production` 수신에 대한 설정만 만들 수 있습니다. Application Gateway는 다음 리소스로 구성 됩니다.
 
   - 수신기: `fl-www.contoso.com-80`
   - 라우팅 규칙: `rr-www.contoso.com-80`
@@ -95,7 +95,7 @@ spec:
 
 예를 들어 `staging`를 먼저 추가한 경우 AGIC은 준비 백 엔드 풀로 트래픽을 라우팅하는 Application Gateway를 구성 합니다. `production` 수신을 소개 하는 이후 단계에서 `production` 백 엔드 풀로 트래픽 라우팅을 시작 하는 AGIC가 mk-reprogram Application Gateway 발생 합니다.
 
-## <a name="restrict-access-to-namespaces"></a>네임 스페이스에 대 한 액세스 제한
+## <a name="restrict-access-to-namespaces"></a>네임 스페이스에 대한 액세스 제한
 기본적으로 AGIC는 네임 스페이스 내에서 주석이 추가 된 수신에 따라 Application Gateway를 구성 합니다. 이 동작을 제한 하려는 경우 다음 옵션을 선택할 수 있습니다.
   - AGIC에서 YAML 키 `watchNamespace`를 통해 관찰 해야 하는 네임 스페이스를 명시적으로 정의 하 여 네임 스페이스를 제한 [합니다.](#sample-helm-config-file)
   - [Role/RoleBinding](https://docs.microsoft.com/azure/aks/azure-ad-rbac) 을 사용 하 여 AGIC를 특정 네임 스페이스로 제한

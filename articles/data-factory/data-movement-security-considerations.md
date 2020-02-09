@@ -113,7 +113,7 @@ Salesforce는 모든 파일, 첨부 파일 및 사용자 정의 필드의 암호
 
 - **Azure Key Vault에 자격 증명을 저장합니다**. 또한 데이터 저장소의 자격 증명을 [Azure Key Vault](https://azure.microsoft.com/services/key-vault/)에 저장할 수 있습니다. Data Factory는 활동을 실행하는 동안 자격 증명을 검색합니다. 자세한 내용은 [Azure Key Vault에 자격 증명 저장](store-credentials-in-key-vault.md)을 참조하세요.
 
-- **Azure 백 엔드를 통해 자격 증명을 자체 호스팅 통합 런타임으로 이동 하지 않고 자격 증명을 로컬에 저장**합니다. 데이터 팩터리 백 엔드를 통해 자격 증명을 전달 하지 않고 자체 호스팅 통합 런타임에서 로컬로 자격 증명을 암호화 하 고 저장 하려면 [Azure Data Factory에서 온-프레미스 데이터 저장소에 대 한 자격 증명 암호화](encrypt-credentials-self-hosted-integration-runtime.md)의 단계를 따르세요. 모든 커넥터가 이 옵션을 지원합니다. 자체 호스팅 통합 런타임은 Windows [DPAPI](https://msdn.microsoft.com/library/ms995355.aspx)를 사용하여 중요한 데이터 및 자격 증명 정보를 암호화합니다. 
+- **Azure 백 엔드를 통해 자격 증명을 자체 호스팅 통합 런타임으로 이동 하지 않고 자격 증명을 로컬에 저장**합니다. 데이터 팩터리 백 엔드를 통해 자격 증명을 전달 하지 않고 자체 호스팅 통합 런타임에서 로컬로 자격 증명을 암호화 하 고 저장 하려면 [Azure Data Factory에서 온-프레미스 데이터 저장소에 대한 자격 증명 암호화](encrypt-credentials-self-hosted-integration-runtime.md)의 단계를 따르세요. 모든 커넥터가 이 옵션을 지원합니다. 자체 호스팅 통합 런타임은 Windows [DPAPI](https://msdn.microsoft.com/library/ms995355.aspx)를 사용하여 중요한 데이터 및 자격 증명 정보를 암호화합니다. 
 
    **AzDataFactoryV2LinkedServiceEncryptedCredential** cmdlet을 사용 하 여 연결 된 서비스 자격 증명 및 연결 된 서비스의 중요 한 세부 정보를 암호화할 수 있습니다. 그런 다음 반환 된 JSON (연결 문자열의 **Encryptedcredential** 요소 포함)을 사용 하 여 **AzDataFactoryV2LinkedService** cmdlet을 사용 하 여 연결 된 서비스를 만들 수 있습니다.  
 
@@ -151,7 +151,7 @@ Azure Virtual Network는 클라우드의 사용자 네트워크를 논리적으�
 
 ![게이트웨이가 있는 IPSec VPN](media/data-movement-security-considerations/ipsec-vpn-for-gateway.png)
 
-### <a name="firewall-configurations-and-allow-list-setting-up-for-ip-address-of-gateway"></a>IP 주소에 대 한 방화벽 구성 및 허용 목록 설정
+### <a name="firewall-configurations-and-allow-list-setting-up-for-ip-address-of-gateway"></a>IP 주소에 대한 방화벽 구성 및 허용 목록 설정
 
 #### <a name="firewall-requirements-for-on-premisesprivate-network"></a>온-프레미스/개인 네트워크에 대한 방화벽 요구 사항  
 기업에서는 기업 방화벽이 조직의 중앙 라우터에서 실행됩니다. Windows 방화벽은 자체 호스팅 통합 런타임이 설치된 로컬 컴퓨터에서 디먼으로 실행됩니다. 
@@ -161,7 +161,7 @@ Azure Virtual Network는 클라우드의 사용자 네트워크를 논리적으�
 [!INCLUDE [domain-and-outbound-port-requirements](../../includes/domain-and-outbound-port-requirements.md)]
 
 > [!NOTE] 
-> 각 데이터 원본에서 요구 하는 대로 회사 방화벽 수준에서 도메인에 대 한 포트를 관리 하거나 허용 목록을 설정 해야 할 수 있습니다. 이 표는 Azure SQL Database, Azure SQL Data Warehouse 및 Azure Data Lake Store만을 예제로 사용합니다.   
+> 각 데이터 원본에서 요구 하는 대로 회사 방화벽 수준에서 도메인에 대한 포트를 관리 하거나 허용 목록을 설정 해야 할 수 있습니다. 이 표는 Azure SQL Database, Azure SQL Data Warehouse 및 Azure Data Lake Store만을 예제로 사용합니다.   
 
 다음 표에서는 Windows 방화벽에 대한 인바운드 포트 요구 사항을 제공합니다.
 
@@ -190,7 +190,7 @@ Azure Virtual Network는 클라우드의 사용자 네트워크를 논리적으�
 
 **자체 호스팅 통합 런타임 작동에 필요한 포트 요구 사항은 무엇입니까?**
 
-자체 호스팅 통합 런타임은 HTTP 기반 연결을 만들어서 인터넷에 액세스하게 합니다. 자체 호스팅 통합 런타임에서 이 연결을 만들려면 아웃바운드 포트 443이 열려야 합니다. 자격 증명 관리자 응용 프로그램에 대 한 컴퓨터 수준 (회사 방화벽 수준이 아님) 에서만 인바운드 포트 8060을 엽니다. Azure SQL Database 또는 Azure SQL Data Warehouse가 원본 또는 대상으로 사용되는 경우 포트 1433도 열어야 합니다. 자세한 내용은 [방화벽 구성 및 IP 주소에 대 한 허용 목록 설정](#firewall-configurations-and-allow-list-setting-up-for-ip-address-of-gateway) 섹션을 참조 하세요. 
+자체 호스팅 통합 런타임은 HTTP 기반 연결을 만들어서 인터넷에 액세스하게 합니다. 자체 호스팅 통합 런타임에서 이 연결을 만들려면 아웃바운드 포트 443이 열려야 합니다. 자격 증명 관리자 응용 프로그램에 대한 컴퓨터 수준 (회사 방화벽 수준이 아님) 에서만 인바운드 포트 8060을 엽니다. Azure SQL Database 또는 Azure SQL Data Warehouse가 원본 또는 대상으로 사용되는 경우 포트 1433도 열어야 합니다. 자세한 내용은 [방화벽 구성 및 IP 주소에 대한 허용 목록 설정](#firewall-configurations-and-allow-list-setting-up-for-ip-address-of-gateway) 섹션을 참조 하세요. 
 
 
 ## <a name="next-steps"></a>다음 단계

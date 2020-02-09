@@ -1,6 +1,6 @@
 ---
-title: Azure SignalR Service에 대 한 진단 로그
-description: Azure SignalR Service에 대 한 진단 로그를 설정 하는 방법과이를 활용 하 여 자체 문제를 해결 하는 방법에 대해 알아봅니다.
+title: Azure SignalR Service에 대한 진단 로그
+description: Azure SignalR Service에 대한 진단 로그를 설정 하는 방법과이를 활용 하 여 자체 문제를 해결 하는 방법에 대해 알아봅니다.
 author: wanl
 ms.service: signalr
 ms.topic: conceptual
@@ -13,19 +13,19 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/08/2020
 ms.locfileid: "75750272"
 ---
-# <a name="diagnostic-logs-for-azure-signalr-service"></a>Azure SignalR Service에 대 한 진단 로그
+# <a name="diagnostic-logs-for-azure-signalr-service"></a>Azure SignalR Service에 대한 진단 로그
 
-이 자습서에서는 Azure SignalR Service에 대 한 진단 로그 및 진단 로그를 설정 하는 방법 및 진단 로그 문제를 해결 하는 방법을 설명 합니다.
+이 자습서에서는 Azure SignalR Service에 대한 진단 로그 및 진단 로그를 설정 하는 방법 및 진단 로그 문제를 해결 하는 방법을 설명 합니다.
 
 ## <a name="prerequisites"></a>필수 조건
 진단 로그를 사용 하도록 설정 하려면 로그 데이터를 저장 하는 위치에 있어야 합니다. 이 자습서에서는 Azure Storage와 Log Analytics를 사용 합니다.
 
-* [Azure storage](../azure-monitor/platform/resource-logs-collect-storage.md) -정책 감사, 정적 분석 또는 백업에 대 한 진단 로그를 유지 합니다.
+* [Azure storage](../azure-monitor/platform/resource-logs-collect-storage.md) -정책 감사, 정적 분석 또는 백업에 대한 진단 로그를 유지 합니다.
 * [Log Analytics](../azure-monitor/platform/resource-logs-collect-workspace.md) -Azure 리소스에서 생성 된 원시 로그를 분석할 수 있는 유연한 로그 검색 및 분석 도구입니다.
 
-## <a name="set-up-diagnostic-logs-for-an-azure-signalr-service"></a>Azure SignalR 서비스에 대 한 진단 로그 설정
+## <a name="set-up-diagnostic-logs-for-an-azure-signalr-service"></a>Azure SignalR 서비스에 대한 진단 로그 설정
 
-Azure SignalR 서비스에 대 한 진단 로그를 볼 수 있습니다. 이러한 로그는 Azure SignalR 서비스 인스턴스에 대 한 연결을 더욱 잘 보여 주는 뷰를 제공 합니다. 진단 로그는 모든 연결에 대 한 자세한 정보를 제공 합니다. 예를 들어 기본 정보 (사용자 ID, 연결 ID 및 전송 유형 등)와 연결의 이벤트 정보 (연결, 연결 끊기 및 중단 이벤트 등)가 있습니다. 진단 로그는 문제 식별, 연결 추적 및 분석에 사용할 수 있습니다.
+Azure SignalR 서비스에 대한 진단 로그를 볼 수 있습니다. 이러한 로그는 Azure SignalR 서비스 인스턴스에 대한 연결을 더욱 잘 보여 주는 뷰를 제공 합니다. 진단 로그는 모든 연결에 대한 자세한 정보를 제공 합니다. 예를 들어 기본 정보 (사용자 ID, 연결 ID 및 전송 유형 등)와 연결의 이벤트 정보 (연결, 연결 끊기 및 중단 이벤트 등)가 있습니다. 진단 로그는 문제 식별, 연결 추적 및 분석에 사용할 수 있습니다.
 
 ### <a name="enable-diagnostic-logs"></a>진단 로그 활성화
 
@@ -33,13 +33,13 @@ Azure SignalR 서비스에 대 한 진단 로그를 볼 수 있습니다. 이러
 
 1.  [Azure Portal](https://portal.azure.com)의 **모니터링**에서 **진단 설정**을 클릭 합니다.
 
-    ![진단 설정에 대 한 창 탐색](./media/signalr-tutorial-diagnostic-logs/diagnostic-settings-menu-item.png)
+    ![진단 설정에 대한 창 탐색](./media/signalr-tutorial-diagnostic-logs/diagnostic-settings-menu-item.png)
 
 1.  그런 다음 **진단 설정 추가**를 클릭 합니다.
 
     ![진단 로그 추가](./media/signalr-tutorial-diagnostic-logs/add-diagnostic-setting.png)
 
-1.  원하는 보관 대상을 설정 합니다. 현재 **는 저장소 계정에 대 한 보관** 을 지원 하 고 **Log Analytics으로 보냅니다**.
+1.  원하는 보관 대상을 설정 합니다. 현재 **는 저장소 계정에 대한 보관** 을 지원 하 고 **Log Analytics으로 보냅니다**.
 
 1. 보관 하려는 로그를 선택 합니다.
 
@@ -56,7 +56,7 @@ Azure SignalR 서비스에 대 한 진단 로그를 볼 수 있습니다. 이러
 
 Azure SignalR Service는 한 범주에서 진단 로그를 캡처합니다.
 
-* **모든 로그**: Azure SignalR Service에 연결 하는 연결을 추적 합니다. 로그는 연결/연결 끊기, 인증 및 제한에 대 한 정보를 제공 합니다. 자세한 내용은 다음 섹션을 참조하세요.
+* **모든 로그**: Azure SignalR Service에 연결 하는 연결을 추적 합니다. 로그는 연결/연결 끊기, 인증 및 제한에 대한 정보를 제공 합니다. 자세한 내용은 다음 섹션을 참조하세요.
 
 ### <a name="archive-to-a-storage-account"></a>스토리지 계정에 보관
 
@@ -83,7 +83,7 @@ properties | 이 로그 이벤트와 관련 된 자세한 속성입니다. 자�
 
 이름 | Description
 ------- | -------
-type | 로그 이벤트의 유형입니다. 현재 Azure SignalR 서비스에 대 한 연결 정보를 제공 합니다. `ConnectivityLogs` 유형만 사용할 수 있습니다.
+type | 로그 이벤트의 유형입니다. 현재 Azure SignalR 서비스에 대한 연결 정보를 제공 합니다. `ConnectivityLogs` 유형만 사용할 수 있습니다.
 collection | 로그 이벤트의 컬렉션입니다. 허용 되는 값은 `Connection`, `Authorization` 및 `Throttling`입니다.
 connectionId | 연결 id
 transportType | 연결의 전송 유형입니다. 허용 되는 값은 `Websockets` \| `ServerSentEvents` \| `LongPolling`
@@ -114,7 +114,7 @@ message | 로그 이벤트의 세부 메시지
 }
 ```
 
-### <a name="archive-logs-schema-for-log-analytics"></a>Log Analytics에 대 한 보관 로그 스키마
+### <a name="archive-logs-schema-for-log-analytics"></a>Log Analytics에 대한 보관 로그 스키마
 
 진단 로그를 보려면 다음 단계를 수행 합니다.
 
@@ -144,11 +144,11 @@ TransportType | 연결의 전송 유형입니다. 허용 되는 값은 `Websocke
 
 ### <a name="troubleshooting-with-diagnostic-logs"></a>진단 로그 문제 해결
 
-Azure SignalR 서비스에 대 한 문제를 해결 하기 위해 서버/클라이언트 쪽 로그를 사용 하도록 설정 하 여 오류를 캡처할 수 있습니다. 현재 Azure SignalR Service는 진단 로그를 노출 하 고, 서비스 쪽에 대해 로그를 사용 하도록 설정할 수도 있습니다.
+Azure SignalR 서비스에 대한 문제를 해결 하기 위해 서버/클라이언트 쪽 로그를 사용 하도록 설정 하 여 오류를 캡처할 수 있습니다. 현재 Azure SignalR Service는 진단 로그를 노출 하 고, 서비스 쪽에 대해 로그를 사용 하도록 설정할 수도 있습니다.
 
 예기치 않은 연결이 늘어나고 발생 하는 상황이 발생 하면 문제를 해결 하기 위해 진단 로그를 활용할 수 있습니다.
 
-일반적인 문제는 연결의 예기치 않은 수량 변경, 연결 제한 및 권한 부여 오류에 대 한 경우가 많습니다. 문제를 해결 하는 방법에 대 한 다음 섹션을 참조 하세요.
+일반적인 문제는 연결의 예기치 않은 수량 변경, 연결 제한 및 권한 부여 오류에 대한 경우가 많습니다. 문제를 해결 하는 방법에 대한 다음 섹션을 참조 하세요.
 
 #### <a name="unexpected-connection-number-changes"></a>예기치 않은 연결 번호 변경
 
@@ -182,7 +182,7 @@ Azure SignalR 서비스에 대 한 문제를 해결 하기 위해 서버/클라�
 
 #### <a name="throttling"></a>제한
 
-Azure SignalR Service에 대 한 SignalR 클라이언트 연결을 설정할 수 없는 경우 진단 로그를 확인 합니다. 진단 로그에 `Connection count reaches limit` 발생 한 경우 연결 수 제한에 도달 하는 SignalR Service에 대 한 연결을 너무 많이 설정 합니다. SignalR 서비스를 확장 하는 것이 좋습니다. 진단 로그에 `Message count reaches limit` 발생 하는 경우 무료 계층을 사용 하 고 메시지 할당량을 사용 하는 것을 의미 합니다. 더 많은 메시지를 보내려면 SignalR 서비스를 표준 계층으로 변경 하 여 추가 메시지를 전송 하는 것이 좋습니다. 자세한 내용은 [Azure SignalR Service 가격 책정](https://azure.microsoft.com/pricing/details/signalr-service/)을 참조 하세요.
+Azure SignalR Service에 대한 SignalR 클라이언트 연결을 설정할 수 없는 경우 진단 로그를 확인 합니다. 진단 로그에 `Connection count reaches limit` 발생 한 경우 연결 수 제한에 도달 하는 SignalR Service에 대한 연결을 너무 많이 설정 합니다. SignalR 서비스를 확장 하는 것이 좋습니다. 진단 로그에 `Message count reaches limit` 발생 하는 경우 무료 계층을 사용 하 고 메시지 할당량을 사용 하는 것을 의미 합니다. 더 많은 메시지를 보내려면 SignalR 서비스를 표준 계층으로 변경 하 여 추가 메시지를 전송 하는 것이 좋습니다. 자세한 내용은 [Azure SignalR Service 가격 책정](https://azure.microsoft.com/pricing/details/signalr-service/)을 참조 하세요.
 
 ### <a name="get-help"></a>도움 받기
 

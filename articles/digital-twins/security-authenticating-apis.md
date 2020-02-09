@@ -17,7 +17,7 @@ ms.locfileid: "76513005"
 ---
 # <a name="connect-to-and-authenticate-with-apis"></a>Api에 연결 및 인증
 
-Azure Digital Twins는 Azure AD(Azure Active Directory)를 사용하여 사용자를 인증하고 애플리케이션을 보호합니다. Azure AD는 다양한 최신 아키텍처의 인증을 지원합니다. 모두 업계 표준 프로토콜인 OAuth 2.0 또는 OpenID Connect를 기반으로 합니다. 또한 개발자는 Azure AD를 사용하여 단일 테넌트 및 LOB(기간 업무) 애플리케이션을 빌드할 수 있습니다. 개발자는 Azure AD를 사용 하 여 [다중 테 넌 트 응용 프로그램](how-to-multitenant-applications.md)을 개발할 수도 있습니다.
+Azure Digital Twins는 Azure AD(Azure Active Directory)를 사용하여 사용자를 인증하고 애플리케이션을 보호합니다. Azure AD는 다양한 최신 아키텍처의 인증을 지원합니다. 모두 업계 표준 프로토콜인 OAuth 2.0 또는 OpenID Connect를 기반으로 합니다. 또한 개발자는 Azure AD를 사용하여 단일 테넌트 및 LOB(기간 업무) 애플리케이션을 빌드할 수 있습니다. 개발자는 Azure AD를 사용 하 여 [다중 테넌트 응용 프로그램](how-to-multitenant-applications.md)을 개발할 수도 있습니다.
 
 Azure AD 개요의 경우 단계별 가이드, 개념 및 빠른 시작은 [기본 페이지](https://docs.microsoft.com/azure/active-directory/fundamentals/)를 방문하세요.
 
@@ -49,7 +49,7 @@ Azure AD에서 지원되는 [5가지 기본 애플리케이션 시나리오](../
 
 1. 획득한 토큰은 인증을 받거나 On-Behalf-Of 흐름을 사용하여 좀 더 다운스트림되는 API를 호출하는 데 사용됩니다.
 
-Just-in-time 흐름을 오케스트레이션 하는 방법에 대 한 자세한 내용은 [OAuth 2.0 for flow](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)를 참조 하세요. [다운스트림 웹 API 호출](https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof)에서 코드 샘플을 볼 수도 있습니다.
+Just-in-time 흐름을 오케스트레이션 하는 방법에 대한 자세한 내용은 [OAuth 2.0 for flow](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)를 참조 하세요. [다운스트림 웹 API 호출](https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof)에서 코드 샘플을 볼 수도 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

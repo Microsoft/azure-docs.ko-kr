@@ -40,9 +40,9 @@ IoT Hub에 새 소비자 그룹을 추가하려면
 
 1. [Azure Portal](https://portal.azure.com)에서 IoT hub를 찾아서 엽니다.
 
-1. **설정**에서 **기본 제공 끝점**을 선택 하 고 **이벤트** 끝점을 선택 합니다.
+1. **설정**에서 **기본 제공 엔드포인트**을 선택 하 고 **이벤트** 엔드포인트을 선택 합니다.
 
-   [![빌드 끝점 페이지에서 이벤트 단추를 선택 합니다.](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-connect-iot-hub.png)](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-connect-iot-hub.png#lightbox)
+   [![빌드 엔드포인트 페이지에서 이벤트 단추를 선택 합니다.](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-connect-iot-hub.png)](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-connect-iot-hub.png#lightbox)
 
 1. **소비자 그룹**에 소비자 그룹의 고유한 이름을 입력합니다. 새 이벤트 원본을 만들 때 Time Series Insights 환경에서 이 동일한 이름을 사용합니다.
 

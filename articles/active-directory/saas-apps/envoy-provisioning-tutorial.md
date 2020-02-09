@@ -36,7 +36,7 @@ ms.locfileid: "77058028"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [엔보이 테 넌 트](https://envoy.com/pricing/)
+* [엔보이 테넌트](https://envoy.com/pricing/)
 * 관리자 권한이 있는 엔보이의 사용자 계정
 
 ## <a name="add-envoy-from-the-gallery"></a>갤러리에서 엔보이 추가
@@ -100,7 +100,7 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에 있는 **테 넌 트 URL**에 `https://app.envoy.com/scim/v2`을 입력 합니다. 엔보이 계정의 **비밀 토큰** 을 검색 하려면 6 단계에 설명 된 대로 연습을 수행 합니다.
+5. **관리자 자격 증명** 섹션 아래에 있는 **테넌트 URL**에 `https://app.envoy.com/scim/v2`을 입력 합니다. 엔보이 계정의 **비밀 토큰** 을 검색 하려면 6 단계에 설명 된 대로 연습을 수행 합니다.
 
 6. [엔보이 관리 콘솔](https://dashboard.envoy.com/login)에 로그인 합니다. **통합**을 클릭 합니다.
 

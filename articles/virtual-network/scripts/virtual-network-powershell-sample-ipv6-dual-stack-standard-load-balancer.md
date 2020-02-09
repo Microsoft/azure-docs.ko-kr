@@ -1,7 +1,7 @@
 ---
-title: Azure PowerShell 스크립트 샘플-표준 Load Balancer를 사용 하 여 IPv6 가상 네트워크 끝점 구성 (미리 보기)
+title: Azure PowerShell 스크립트 샘플-표준 Load Balancer를 사용 하 여 IPv6 가상 네트워크 엔드포인트 구성 (미리 보기)
 titlesuffix: Azure Virtual Network
-description: Azure Virtual Network에서 Powershell을 사용 하 여 IPv6 끝점 사용
+description: Azure Virtual Network에서 Powershell을 사용 하 여 IPv6 엔드포인트 사용
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -19,7 +19,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 07/16/2019
 ms.locfileid: "68269703"
 ---
-# <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-with-standard-load-balancerpreview"></a>표준 Load Balancer를 사용 하 여 가상 네트워크 스크립트 샘플에서 IPv6 끝점 구성 (미리 보기)
+# <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-with-standard-load-balancerpreview"></a>표준 Load Balancer를 사용 하 여 가상 네트워크 스크립트 샘플에서 IPv6 엔드포인트 구성 (미리 보기)
 
 이 문서에서는 이중 스택 서브넷을 사용 하는 이중 스택 (IPv4 + IPv6) 응용 프로그램을 포함 하는 Azure의 이중 스택 (ipv4 + IPv6) 응용 프로그램을 배포 하는 방법을 보여 줍니다. 이중 IP 구성이 있는 Nic를 사용 하는 Vm과 이중 (IPv4 + IPv6) 프런트 엔드 구성이 포함 된 부하 분산 장치를 포함 합니다. 이중 네트워크 보안 그룹 규칙 및 이중 공용 Ip
 

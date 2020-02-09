@@ -1,7 +1,7 @@
 ---
-title: Azure AD B2C를 응용 프로그램에 대 한 SAML IdP 구성
+title: Azure AD B2C를 응용 프로그램에 대한 SAML IdP 구성
 title-suffix: Azure AD B2C
-description: 응용 프로그램 (서비스 공급자)에 SAML 프로토콜 어설션을 제공 하도록 Azure AD B2C를 구성 하는 방법입니다. Azure AD B2C는 SAML 응용 프로그램에 대 한 단일 id 공급자 (IdP) 역할을 합니다.
+description: 응용 프로그램 (서비스 공급자)에 SAML 프로토콜 어설션을 제공 하도록 Azure AD B2C를 구성 하는 방법입니다. Azure AD B2C는 SAML 응용 프로그램에 대한 단일 id 공급자 (IdP) 역할을 합니다.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -21,7 +21,7 @@ ms.locfileid: "76836663"
 ---
 # <a name="register-a-saml-application-in-azure-ad-b2c"></a>Azure AD B2C에서 SAML 응용 프로그램 등록
 
-이 문서에서는 응용 프로그램에 대 한 SAML (Security Assertion Markup Language) id 공급자 (IdP) 역할을 수행 하도록 Azure Active Directory B2C (Azure AD B2C)를 구성 하는 방법에 대해 알아봅니다.
+이 문서에서는 응용 프로그램에 대한 SAML (Security Assertion Markup Language) id 공급자 (IdP) 역할을 수행 하도록 Azure Active Directory B2C (Azure AD B2C)를 구성 하는 방법에 대해 알아봅니다.
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
@@ -40,13 +40,13 @@ SAML을 사용 하 여 두 가지 비 배타 코어 시나리오 요약:
 
 | 시나리오 | Azure AD B2C 역할 | 방법 |
 | -------- | ----------------- | ------- |
-| 응용 프로그램은 인증을 완료 하는 데 SAML 어설션이 필요 합니다. | **Azure AD B2C는 IdP (id 공급자) 역할을 합니다.**<br />Azure AD B2C는 응용 프로그램에 대 한 SAML IdP 역할을 합니다. | 이 문서의 내용: |
+| 응용 프로그램은 인증을 완료 하는 데 SAML 어설션이 필요 합니다. | **Azure AD B2C는 IdP (id 공급자) 역할을 합니다.**<br />Azure AD B2C는 응용 프로그램에 대한 SAML IdP 역할을 합니다. | 이 문서의 내용: |
 | 내 사용자는 ADFS, Salesforce 또는 Shibboleth와 같은 SAML 호환 id 공급자를 사용 하는 single sign-on이 필요 합니다.  | **Azure AD B2C SP (서비스 공급자) 역할을 합니다.**<br />Azure AD B2C는 SAML id 공급자에 연결할 때 서비스 공급자 역할을 합니다. 응용 프로그램과 SAML id 공급자 간의 페더레이션 프록시입니다.  | <ul><li>[사용자 지정 정책을 사용 하 여 SAML IdP ADFS로 로그인 설정](identity-provider-adfs2016-custom.md)</li><li>[사용자 지정 정책을 사용 하 여 Salesforce SAML 공급자로 로그인 설정](identity-provider-salesforce-custom.md)</li></ul> |
 
 ## <a name="prerequisites"></a>필수 조건
 
 * [Azure AD B2C에서 사용자 지정 정책 시작](custom-policy-get-started.md)의 단계를 완료 합니다. 이 문서에서 설명 하는 사용자 지정 정책 시작 팩의 *Socialandlocalaccounts* 사용자 지정 정책이 필요 합니다.
-* SAML (Security Assertion Markup Language) 프로토콜에 대 한 기본적인 이해
+* SAML (Security Assertion Markup Language) 프로토콜에 대한 기본적인 이해
 * SAML SP (서비스 공급자)로 구성 된 웹 응용 프로그램입니다. 이 자습서에서는 사용자가 제공 하는 [SAML 테스트 응용 프로그램][samltest] 을 사용할 수 있습니다.
 
 ## <a name="components-of-the-solution"></a>솔루션의 구성 요소
@@ -54,10 +54,10 @@ SAML을 사용 하 여 두 가지 비 배타 코어 시나리오 요약:
 이 시나리오에는 다음과 같은 세 가지 주요 구성 요소가 필요 합니다.
 
 * Saml **서비스 공급자** 는 saml 요청을 전송 하 고 Azure AD B2C에서 saml 어설션을 수신, 디코드 및 대응 하는 기능을 제공 합니다. 이를 신뢰 당사자 라고도 합니다.
-* 서비스 공급자에 대해 공개적으로 사용할 수 있는 SAML **메타 데이터 끝점** 입니다.
+* 서비스 공급자에 대해 공개적으로 사용할 수 있는 SAML **메타 데이터 엔드포인트** 입니다.
 * [Azure AD B2C 테넌트](tutorial-create-tenant.md)
 
-SAML 서비스 공급자와 연결 된 메타 데이터 끝점이 아직 없는 경우 테스트에 사용할 수 있도록 만든이 샘플 SAML 응용 프로그램을 사용할 수 있습니다.
+SAML 서비스 공급자와 연결 된 메타 데이터 엔드포인트이 아직 없는 경우 테스트에 사용할 수 있도록 만든이 샘플 SAML 응용 프로그램을 사용할 수 있습니다.
 
 [SAML 테스트 응용 프로그램][samltest]
 
@@ -77,7 +77,7 @@ SAML 서비스 공급자와 연결 된 메타 데이터 끝점이 아직 없는 
 
 인증서가 아직 없는 경우이 자습서에 대해 자체 서명 된 인증서를 사용할 수 있습니다. Windows에서는 PowerShell의 [new-selfsignedcertificate](https://docs.microsoft.com/powershell/module/pkiclient/new-selfsignedcertificate) cmdlet을 사용 하 여 인증서를 생성할 수 있습니다.
 
-1. 이 PowerShell 명령을 실행 하 여 자체 서명 된 인증서를 생성 합니다. 응용 프로그램에 적절 한 `-Subject` 인수를 수정 하 고 테 넌 트 이름을 Azure AD B2C 합니다. `-NotAfter` 날짜를 조정 하 여 인증서에 대해 다른 만료를 지정할 수도 있습니다.
+1. 이 PowerShell 명령을 실행 하 여 자체 서명 된 인증서를 생성 합니다. 응용 프로그램에 적절 한 `-Subject` 인수를 수정 하 고 테넌트 이름을 Azure AD B2C 합니다. `-NotAfter` 날짜를 조정 하 여 인증서에 대해 다른 만료를 지정할 수도 있습니다.
 
     ```PowerShell
     New-SelfSignedCertificate `
@@ -93,14 +93,14 @@ SAML 서비스 공급자와 연결 된 메타 데이터 끝점이 아직 없는 
 1. **사용자 인증서 관리** > **현재 사용자** > **개인** > **인증서** > *yourappname.yourtenant.onmicrosoft.com* 을 엽니다.
 1. **모든 작업** > **내보내기** > 인증서 > **작업** 을 선택 합니다.
 1. **예** > **다음** > **예, 개인 키를 내보냅니다** > **다음** 을 선택 합니다.
-1. **내보내기 파일 형식** 에 대 한 기본값 적용
-1. 인증서에 대 한 암호를 제공 합니다.
+1. **내보내기 파일 형식** 에 대한 기본값 적용
+1. 인증서에 대한 암호를 제공 합니다.
 
 ### <a name="12-upload-the-certificate"></a>1.2 인증서 업로드
 
 그런 다음 Azure AD B2C에 SAML 어설션 및 응답 서명 인증서를 업로드 합니다.
 
-1. [Azure Portal](https://portal.azure.com) 에 로그인 하 여 Azure AD B2C 테 넌 트로 이동 합니다.
+1. [Azure Portal](https://portal.azure.com) 에 로그인 하 여 Azure AD B2C 테넌트로 이동 합니다.
 1. **정책**에서 **Id 경험 프레임 워크** 를 선택 하 고 **정책 키**를 선택 합니다.
 1. **추가**를 선택한 다음 **옵션** > **업로드**를 선택 합니다.
 1. **이름**(예: *SamlIdpCert*)을 입력 합니다. 키의 이름에 *B2C_1A_* 접두사가 자동으로 추가됩니다.
@@ -113,7 +113,7 @@ SAML 서비스 공급자와 연결 된 메타 데이터 끝점이 아직 없는 
 
 ### <a name="21-create-the-saml-token-issuer"></a>2.1 SAML 토큰 발급자 만들기
 
-이제 테 넌 트가 SAML 토큰을 발급 하는 기능을 추가 합니다.
+이제 테넌트가 SAML 토큰을 발급 하는 기능을 추가 합니다.
 
 사용자 지정 정책 시작 팩에서 `SocialAndLocalAccounts\` **`TrustFrameworkExtensions.xml`** 를 엽니다.
 
@@ -157,7 +157,7 @@ SAML 서비스 공급자와 연결 된 메타 데이터 끝점이 아직 없는 
 
 ## <a name="3-add-the-saml-relying-party-policy"></a>3. SAML 신뢰 당사자 정책을 추가 합니다.
 
-이제 테 넌 트가 SAML 어설션을 발급할 수 있으므로 SAML 신뢰 당사자 정책을 만들고 JWT 대신 SAML 어설션을 발급 하도록 사용자 경험을 수정 해야 합니다.
+이제 테넌트가 SAML 어설션을 발급할 수 있으므로 SAML 신뢰 당사자 정책을 만들고 JWT 대신 SAML 어설션을 발급 하도록 사용자 경험을 수정 해야 합니다.
 
 ### <a name="31-create-sign-up-or-sign-in-policy"></a>3.1 등록 또는 로그인 정책 만들기
 
@@ -178,7 +178,7 @@ SAML 서비스 공급자와 연결 된 메타 데이터 끝점이 아직 없는 
     PublicPolicyUri="http://tenant-name.onmicrosoft.com/B2C_1A_signup_signin_saml">
     ```
 
-1. `<RelyingParty>` 요소 바로 앞에 다음 XML 코드 조각을 추가 합니다. 이 XML은 _Signu폰_ 사용자 경험의 오케스트레이션 단계 번호 7을 덮어씁니다. 시작 팩의 다른 폴더에서 시작한 경우 또는 오케스트레이션 단계를 추가 또는 제거 하 여 사용자 경험을 사용자 지정 하는 경우 `order` 요소에 있는 번호는 토큰 발급자 단계에 대 한 사용자 경험에 지정 된 번호와 일치 하는지 확인 합니다. 예를 들어 다른 스타터 팩 폴더에는 `LocalAccounts`에 대 한 4 단계 4, `SocialAccounts`의 경우 6, `SocialAndLocalAccountsWithMfa`9)가 표시 됩니다.
+1. `<RelyingParty>` 요소 바로 앞에 다음 XML 코드 조각을 추가 합니다. 이 XML은 _Signu폰_ 사용자 경험의 오케스트레이션 단계 번호 7을 덮어씁니다. 시작 팩의 다른 폴더에서 시작한 경우 또는 오케스트레이션 단계를 추가 또는 제거 하 여 사용자 경험을 사용자 지정 하는 경우 `order` 요소에 있는 번호는 토큰 발급자 단계에 대한 사용자 경험에 지정 된 번호와 일치 하는지 확인 합니다. 예를 들어 다른 스타터 팩 폴더에는 `LocalAccounts`에 대한 4 단계 4, `SocialAccounts`의 경우 6, `SocialAndLocalAccountsWithMfa`9)가 표시 됩니다.
 
     ```XML
     <UserJourneys>
@@ -208,7 +208,7 @@ SAML 서비스 공급자와 연결 된 메타 데이터 끝점이 아직 없는 
     </TechnicalProfile>
     ```
 
-1. `tenant-name`를 Azure AD B2C 테 넌 트의 이름으로 업데이트 합니다.
+1. `tenant-name`를 Azure AD B2C 테넌트의 이름으로 업데이트 합니다.
 
 최종 신뢰 당사자 정책 파일은 다음과 같습니다.
 
@@ -259,11 +259,11 @@ SAML 서비스 공급자와 연결 된 메타 데이터 끝점이 아직 없는 
 
 변경 내용을 저장 하 고 새 정책 파일을 업로드 합니다. 두 정책 (확장 및 신뢰 당사자 파일)을 업로드 한 후에는 웹 브라우저를 열고 정책 메타 데이터로 이동 합니다.
 
-Azure AD B2C 정책 메타 데이터는 다음 URL에서 사용할 수 있습니다. `tenant-name` `policy-name`를 Azure AD B2C 테 넌 트의 이름으로 바꾸고,을 정책의 이름 (ID)으로 바꿉니다.
+Azure AD B2C 정책 메타 데이터는 다음 URL에서 사용할 수 있습니다. `tenant-name` `policy-name`를 Azure AD B2C 테넌트의 이름으로 바꾸고,을 정책의 이름 (ID)으로 바꿉니다.
 
 `https://tenant-name.b2clogin.com/tenant-name.onmicrosoft.com/policy-name/Samlp/metadata`
 
-이제 사용자 지정 정책 및 Azure AD B2C 테 넌 트가 준비 되었습니다. 다음으로 Azure AD B2C에서 응용 프로그램 등록을 만듭니다.
+이제 사용자 지정 정책 및 Azure AD B2C 테넌트가 준비 되었습니다. 다음으로 Azure AD B2C에서 응용 프로그램 등록을 만듭니다.
 
 ## <a name="4-setup-application-in-the-azure-ad-b2c-directory"></a>4. Azure AD B2C 디렉터리에 응용 프로그램을 설치 합니다.
 
@@ -288,11 +288,11 @@ SAML 앱의 경우 응용 프로그램 등록의 매니페스트에서 구성 �
 
 #### <a name="identifieruris"></a>identifierUris
 
-`identifierUris`은 Azure AD B2C 테 넌 트 내에서 웹 앱을 고유 하 게 식별 하는 사용자 정의 URI를 포함 하는 문자열 컬렉션입니다. 서비스 공급자는 SAML 요청의 `Issuer` 요소에이 값을 설정 해야 합니다.
+`identifierUris`은 Azure AD B2C 테넌트 내에서 웹 앱을 고유 하 게 식별 하는 사용자 정의 URI를 포함 하는 문자열 컬렉션입니다. 서비스 공급자는 SAML 요청의 `Issuer` 요소에이 값을 설정 해야 합니다.
 
 #### <a name="samlmetadataurl"></a>samlMetadataUrl
 
-이 속성은 서비스 공급자가 공개적으로 사용할 수 있는 메타 데이터 URL을 나타냅니다. 메타 데이터 URL은 blob storage와 같이 익명으로 액세스할 수 있는 끝점에 업로드 된 메타 데이터 파일을 가리킬 수 있습니다.
+이 속성은 서비스 공급자가 공개적으로 사용할 수 있는 메타 데이터 URL을 나타냅니다. 메타 데이터 URL은 blob storage와 같이 익명으로 액세스할 수 있는 엔드포인트에 업로드 된 메타 데이터 파일을 가리킬 수 있습니다.
 
 메타 데이터는 saml 프로토콜에서 서비스 공급자와 같은 SAML 파티의 구성을 노출 하는 데 사용 되는 정보입니다. 메타 데이터는 로그인 및 로그 아웃, 인증서, 로그인 방법 등의 서비스 위치를 정의 합니다. Azure AD B2C는 서비스 공급자 메타 데이터를 읽고 그에 따라 동작 합니다. 메타 데이터는 필요 하지 않습니다. 응용 프로그램 매니페스트에서 직접 회신 URI 및 로그 아웃 URI와 같은 일부 특성을 지정할 수도 있습니다.
 
@@ -323,7 +323,7 @@ SAML 테스트 응용 프로그램을 사용 하는이 자습서에서는 `reply
 
 #### <a name="logouturl-optional"></a>LogoutUrl (옵션)
 
-이 선택적 속성은 `Logout` URL (신뢰 당사자 메타 데이터의`SingleLogoutService` URL)을 나타내며이에 대 한 `BindingType` `Http-Redirect`것으로 간주 됩니다.
+이 선택적 속성은 `Logout` URL (신뢰 당사자 메타 데이터의`SingleLogoutService` URL)을 나타내며이에 대한 `BindingType` `Http-Redirect`것으로 간주 됩니다.
 
 SAML 테스트 응용 프로그램을 사용 하는이 자습서의 경우 `logoutUrl`를 `https://samltestapp2.azurewebsites.net/logout`으로 설정 된 상태로 둡니다.
 
@@ -339,7 +339,7 @@ SAML 테스트 응용 프로그램을 사용 하는이 자습서의 경우 `logo
 
 * **메타 데이터**: `https://tenant-name.b2clogin.com/tenant-name.onmicrosoft.com/policy-name/Samlp/metadata`
 * **발급자**: `https://tenant-name.onmicrosoft.com/policy-name`
-* **로그인 Url/saml 끝점/Saml Url**: 메타 데이터 파일에서 값을 확인 합니다.
+* **로그인 Url/saml 엔드포인트/Saml Url**: 메타 데이터 파일에서 값을 확인 합니다.
 * **Certificate**: 개인 키가 없는 *B2C_1A_SamlIdpCert*입니다. 인증서의 공개 키를 가져오려면:
 
     1. 위에서 지정한 메타 데이터 URL로 이동 합니다.
@@ -351,7 +351,7 @@ SAML 테스트 응용 프로그램을 사용 하는이 자습서의 경우 `logo
 
 [SAML 테스트 응용 프로그램][samltest]을 사용 하 여이 자습서를 완료 하려면:
 
-* 테 넌 트 이름 업데이트
+* 테넌트 이름 업데이트
 * 정책 이름 업데이트 (예: *B2C_1A_signup_signin_saml*
 * 이 발급자 URI 지정: `https://contoso.onmicrosoft.com/app-name`
 
@@ -362,21 +362,21 @@ SAML 테스트 응용 프로그램을 사용 하는이 자습서의 경우 `logo
 SAML 테스트 앱을 사용 하 여 테스트 하는 데 사용할 수 있는 전체 샘플 정책을 제공 합니다.
 
 1. [SAML SP 시작 로그인 샘플 정책](https://github.com/azure-ad-b2c/saml-sp/tree/master/policy/SAML-SP-Initiated) 다운로드
-1. 테 넌 트 이름과 일치 하도록 `TenantId`를 업데이트 합니다 (예: *contoso.b2clogin.com* ).
+1. 테넌트 이름과 일치 하도록 `TenantId`를 업데이트 합니다 (예: *contoso.b2clogin.com* ).
 1. *B2C_1A_SAML2_signup_signin* 의 정책 이름을 유지 합니다.
 
 ## <a name="supported-and-unsupported-saml-modalities"></a>지원 되거나 지원 되지 않는 SAML 소프트웨어나
 
-다음 SAML 신뢰 당사자 (RP) 시나리오는 사용자 고유의 메타 데이터 끝점을 통해 지원 됩니다.
+다음 SAML 신뢰 당사자 (RP) 시나리오는 사용자 고유의 메타 데이터 엔드포인트을 통해 지원 됩니다.
 
-* 응용 프로그램/서비스 사용자 개체의 로그 아웃 URL에 대 한 여러 로그 아웃 url 또는 POST 바인딩입니다.
+* 응용 프로그램/서비스 사용자 개체의 로그 아웃 URL에 대한 여러 로그 아웃 url 또는 POST 바인딩입니다.
 * 응용 프로그램/서비스 사용자 개체에서 RP 요청을 확인할 서명 키를 지정 합니다.
 * 응용 프로그램/서비스 사용자 개체에 토큰 암호화 키를 지정 합니다.
 * Id 공급자가 시작한 로그인은 미리 보기 릴리스에서 현재 지원 되지 않습니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-SAML 프로토콜에 대 한 자세한 내용은 [OASIS 웹 사이트에서](https://www.oasis-open.org/)확인할 수 있습니다.
+SAML 프로토콜에 대한 자세한 내용은 [OASIS 웹 사이트에서](https://www.oasis-open.org/)확인할 수 있습니다.
 
 <!-- LINKS - External -->
 [samltest]: https://aka.ms/samltestapp

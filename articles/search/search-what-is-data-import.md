@@ -43,7 +43,7 @@ Azure Cognitive Search에 프로그래밍 방식으로 데이터를 전송 하�
 
 문서를 전체에 업로드 하거나 기존 문서 내용과 병합 하거나 삭제 해야 할지 여부를 지정 하는 문서 별로 인덱싱 동작의 유형을 제어할 수 있습니다.
 
-REST API에서 Azure Cognitive Search 인덱스의 끝점 URL에 대 한 JSON 요청 본문을 사용 하 여 HTTP POST 요청을 실행 합니다. "Value" 배열의 각 JSON 개체에는 문서의 키가 포함 되어 있으며 인덱싱 작업이 문서 콘텐츠를 추가, 업데이트 또는 삭제할지 여부를 지정 합니다. 코드 예제는 [문서 로드](search-get-started-dotnet.md#load-documents)를 참조 하세요.
+REST API에서 Azure Cognitive Search 인덱스의 엔드포인트 URL에 대 한 JSON 요청 본문을 사용 하 여 HTTP POST 요청을 실행 합니다. "Value" 배열의 각 JSON 개체에는 문서의 키가 포함 되어 있으며 인덱싱 작업이 문서 콘텐츠를 추가, 업데이트 또는 삭제할지 여부를 지정 합니다. 코드 예제는 [문서 로드](search-get-started-dotnet.md#load-documents)를 참조 하세요.
 
 .NET SDK에서 데이터를 `IndexBatch` 개체에 패키지 합니다. `IndexBatch`은 각각 문서를 포함 하는 `IndexAction` 개체의 컬렉션과 해당 문서에 대해 수행할 작업을 Azure Cognitive Search에 게 알려 주는 속성을 캡슐화 합니다. 코드 예제는 [ C# 빠른](search-get-started-dotnet.md)시작을 참조 하세요.
 

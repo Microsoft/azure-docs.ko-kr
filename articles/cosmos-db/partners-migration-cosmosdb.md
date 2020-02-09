@@ -1,5 +1,5 @@
 ---
-title: Azure Cosmos DB에 대 한 마이그레이션 및 응용 프로그램 개발 파트너
+title: Azure Cosmos DB에 대한 마이그레이션 및 응용 프로그램 개발 파트너
 description: Azure Cosmos DB를 지원하는 마이그레이션 솔루션이 있는 Microsoft 파트너를 나열합니다.
 author: SnehaGunda
 ms.author: sngun

@@ -20,14 +20,14 @@ ms.locfileid: "77086949"
 >
 > * PowerShell을 설정 하 고 Azure Recovery Services 공급자를 등록 합니다.
 > * Recovery Services 자격 증명 모음을 만듭니다.
-> * Azure 파일 공유에 대 한 백업을 구성 합니다.
+> * Azure 파일 공유에 대한 백업을 구성 합니다.
 > * 백업 작업을 실행 합니다.
 
 ## <a name="before-you-start"></a>시작하기 전에
 
 * Recovery Services 자격 증명 모음에 대해 [자세히 알아보세요](backup-azure-recovery-services-vault-overview.md) .
-* [Azure 파일 공유 백업](backup-afs.md)에 대 한 미리 보기 기능에 대해 알아보세요.
-* Recovery Services에 대 한 PowerShell 개체 계층 구조를 검토 합니다.
+* [Azure 파일 공유 백업](backup-afs.md)에 대한 미리 보기 기능에 대해 알아보세요.
+* Recovery Services에 대한 PowerShell 개체 계층 구조를 검토 합니다.
 
 ## <a name="recovery-services-object-hierarchy"></a>Recovery Services 개체 계층 구조
 
@@ -58,7 +58,7 @@ Install-module -Name Az.RecoveryServices -RequiredVersion 2.6.0
     Get-Command *azrecoveryservices*
     ```
 
-3. Azure Backup 및 Azure Site Recovery에 대 한 별칭 및 cmdlet을 검토 하 고 Recovery Services 자격 증명 모음이 표시 됩니다. 다음은 표시 될 수 있는 항목의 예입니다. Cmdlet의 전체 목록은 아닙니다.
+3. Azure Backup 및 Azure Site Recovery에 대한 별칭 및 cmdlet을 검토 하 고 Recovery Services 자격 증명 모음이 표시 됩니다. 다음은 표시 될 수 있는 항목의 예입니다. Cmdlet의 전체 목록은 아닙니다.
 
     ![Recovery Services cmdlet 목록](./media/backup-azure-afs-automation/list-of-recoveryservices-ps-az.png)
 
@@ -66,7 +66,7 @@ Install-module -Name Az.RecoveryServices -RequiredVersion 2.6.0
 5. 표시 되는 웹 페이지에 계정 자격 증명을 입력 하 라는 메시지가 표시 됩니다.
 
     * 또는 **자격**증명을 사용 하 여 **AzAccount** cmdlet에 계정 자격 증명을 매개 변수로 포함할 수 있습니다.
-    * 테 넌 트를 대신 하 여 작업 중인 CSP 파트너인 경우 tenantID 또는 테 넌 트 주 도메인 이름을 사용 하 여 고객을 테 넌 트로 지정 합니다. 예: **Connect-AzAccount -Tenant** fabrikam.com.
+    * 테넌트를 대신 하 여 작업 중인 CSP 파트너인 경우 tenantID 또는 테넌트 주 도메인 이름을 사용 하 여 고객을 테넌트로 지정 합니다. 예: **Connect-AzAccount -Tenant** fabrikam.com.
 
 6. 계정에 여러 구독이 있을 수 있으므로 사용 하려는 구독을 계정과 연결 합니다.
 
@@ -109,7 +109,7 @@ Recovery Services 자격 증명 모음은 Resource Manager 리소스이므로 �
 3. 자격 증명 모음 저장소에 사용할 중복성 유형을 지정 합니다.
 
    * [로컬 중복 스토리지](../storage/common/storage-redundancy-lrs.md) 또는 [지역 중복 스토리지](../storage/common/storage-redundancy-grs.md)를 사용할 수 있습니다.
-   * 다음 예에서는 **GeoRedundant**로 설정 된 **testvault 된** 에 대 한 **BackupStorageRedundancy** 옵션을[AzRecoveryServicesBackupProperties](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperty) cmd로 설정 합니다.
+   * 다음 예에서는 **GeoRedundant**로 설정 된 **testvault 된** 에 대한 **BackupStorageRedundancy** 옵션을[AzRecoveryServicesBackupProperties](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperty) cmd로 설정 합니다.
 
      ```powershell
      $vault1 = Get-AzRecoveryServicesVault -Name "testvault"
@@ -179,7 +179,7 @@ $schpol.ScheduleRunTimes[0] = $UtcTime
 > [!IMPORTANT]
 > 30 분의 배수로 시작 시간을 제공 해야 합니다. 위의 예제에서 "01:00:00" 또는 "02:30:00"만 가능 합니다. 시작 시간은 "01:15:00" 일 수 없습니다.
 
-다음 예제에서는 일정 정책 및 보존 정책을 변수에 저장합니다. 그런 다음 해당 변수를 새 정책에 대 한 매개 변수로 사용 합니다 (**Newafspolicy**). **NewAFSPolicy**는 매일 백업을 생성하여 30일 동안 보존합니다.
+다음 예제에서는 일정 정책 및 보존 정책을 변수에 저장합니다. 그런 다음 해당 변수를 새 정책에 대한 매개 변수로 사용 합니다 (**Newafspolicy**). **NewAFSPolicy**는 매일 백업을 생성하여 30일 동안 보존합니다.
 
 ```powershell
 $schPol = Get-AzRecoveryServicesBackupSchedulePolicyObject -WorkloadType "AzureFiles"
@@ -197,15 +197,15 @@ NewAFSPolicy           AzureFiles            AzureStorage              10/24/201
 
 ## <a name="enable-backup"></a>백업 사용
 
-백업 정책을 정의한 후에는 정책을 사용 하 여 Azure 파일 공유에 대 한 보호를 사용 하도록 설정할 수 있습니다.
+백업 정책을 정의한 후에는 정책을 사용 하 여 Azure 파일 공유에 대한 보호를 사용 하도록 설정할 수 있습니다.
 
 ### <a name="retrieve-a-backup-policy"></a>백업 정책 검색
 
 [AzRecoveryServicesBackupProtectionPolicy](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupprotectionpolicy?view=azps-1.4.0)를 사용 하 여 관련 정책 개체를 가져옵니다. 이 cmdlet을 사용 하 여 특정 정책을 가져오거나 작업 유형과 연결 된 정책을 볼 수 있습니다.
 
-#### <a name="retrieve-a-policy-for-a-workload-type"></a>작업 유형에 대 한 정책 검색
+#### <a name="retrieve-a-policy-for-a-workload-type"></a>작업 유형에 대한 정책 검색
 
-다음 예에서는 **Azurefiles**작업 유형에 대 한 정책을 검색 합니다.
+다음 예에서는 **Azurefiles**작업 유형에 대한 정책을 검색 합니다.
 
 ```powershell
 Get-AzRecoveryServicesBackupProtectionPolicy -WorkloadType "AzureFiles"
@@ -234,7 +234,7 @@ $afsPol =  Get-AzRecoveryServicesBackupProtectionPolicy -Name "dailyafs"
 
 [AzRecoveryServicesBackupProtection](https://docs.microsoft.com/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection?view=azps-1.4.0)를 사용 하 여 보호를 사용 하도록 설정 합니다. 정책이 자격 증명 모음과 연결 된 후 백업은 정책 일정에 따라 트리거됩니다.
 
-다음 예제에서는 정책 **dailyafs**를 사용 하 여 저장소 계정 **Testazurefileshare**에서 Azure 파일 공유 **testazurefileshare** 공유에 대 한 보호를 사용 하도록 설정 합니다.
+다음 예제에서는 정책 **dailyafs**를 사용 하 여 저장소 계정 **Testazurefileshare**에서 Azure 파일 공유 **testazurefileshare** 공유에 대한 보호를 사용 하도록 설정 합니다.
 
 ```powershell
 Enable-AzRecoveryServicesBackupProtection -StorageAccountName "testStorageAcct" -Name "testAzureFS" -Policy $afsPol
@@ -248,11 +248,11 @@ WorkloadName       Operation            Status                 StartTime        
 testAzureFS       ConfigureBackup      Completed            11/12/2018 2:15:26 PM     11/12/2018 2:16:11 PM     ec7d4f1d-40bd-46a4-9edb-3193c41f6bf6
 ```
 
-## <a name="important-notice---backup-item-identification-for-afs-backups"></a>중요 알림-AFS 백업에 대 한 백업 항목 id
+## <a name="important-notice---backup-item-identification-for-afs-backups"></a>중요 알림-AFS 백업에 대한 백업 항목 id
 
-이 섹션에서는 미리 보기에서 GA로 AFS 백업에 대 한 백업 항목 검색의 변경 내용을 간략하게 설명 합니다.
+이 섹션에서는 미리 보기에서 GA로 AFS 백업에 대한 백업 항목 검색의 변경 내용을 간략하게 설명 합니다.
 
-AFS에 대해 백업을 사용 하도록 설정 하는 동안 사용자는 고객에 게 친숙 한 파일 공유 이름을 엔터티 이름으로 제공 하 고 백업 항목을 만듭니다. 백업 항목의 ' n a s e '는 Azure Backup 서비스에서 만든 고유 식별자입니다. 일반적으로 식별자는 사용자에 게 친숙 한 이름을 포함 합니다. 그러나 Azure 서비스가 내부적으로 azure 파일 공유를 고유 하 게 식별 하는 방식이 변경 되었습니다. 이는 AFS 백업에 대 한 백업 항목의 고유 이름이 GUID 이며 고객에 게 친숙 한 이름에 대 한 관계가 없는 것을 의미 합니다. 각 항목의 고유 이름을 확인 하려면 backupManagementType 및 WorkloadType에 대 한 관련 필터를 사용 하 여 ```Get-AzRecoveryServicesBackupItem``` 명령을 실행 하 여 모든 관련 항목을 가져온 다음 반환 된 PS 개체/응답의 이름 필드를 관찰 하면 됩니다. 항목을 나열 하 고 응답의 ' 이름 ' 필드에서 고유한 이름을 검색 하는 것이 항상 권장 됩니다. ' Name ' 매개 변수를 사용 하 여 항목을 필터링 하려면이 값을 사용 합니다. 그렇지 않으면 FriendlyName 매개 변수를 사용 하 여 고객에 게 친숙 한 이름/식별자로 항목을 검색 합니다.
+AFS에 대해 백업을 사용 하도록 설정 하는 동안 사용자는 고객에 게 친숙 한 파일 공유 이름을 엔터티 이름으로 제공 하 고 백업 항목을 만듭니다. 백업 항목의 ' n a s e '는 Azure Backup 서비스에서 만든 고유 식별자입니다. 일반적으로 식별자는 사용자에 게 친숙 한 이름을 포함 합니다. 그러나 Azure 서비스가 내부적으로 azure 파일 공유를 고유 하 게 식별 하는 방식이 변경 되었습니다. 이는 AFS 백업에 대한 백업 항목의 고유 이름이 GUID 이며 고객에 게 친숙 한 이름에 대한 관계가 없는 것을 의미 합니다. 각 항목의 고유 이름을 확인 하려면 backupManagementType 및 WorkloadType에 대한 관련 필터를 사용 하 여 ```Get-AzRecoveryServicesBackupItem``` 명령을 실행 하 여 모든 관련 항목을 가져온 다음 반환 된 PS 개체/응답의 이름 필드를 관찰 하면 됩니다. 항목을 나열 하 고 응답의 ' 이름 ' 필드에서 고유한 이름을 검색 하는 것이 항상 권장 됩니다. ' Name ' 매개 변수를 사용 하 여 항목을 필터링 하려면이 값을 사용 합니다. 그렇지 않으면 FriendlyName 매개 변수를 사용 하 여 고객에 게 친숙 한 이름/식별자로 항목을 검색 합니다.
 
 > [!WARNING]
 > AFS 백업의 경우 PS 버전이 ' Az. RecoveryServices 2.6.0 '의 최소 버전으로 업그레이드 되었는지 확인 합니다. 이 버전을 사용 하면 ' friendlyName ' 필터를 ```Get-AzRecoveryServicesBackupItem``` 명령에 사용할 수 있습니다. Azure 파일 공유 이름을 friendlyName 매개 변수로 전달 합니다. Azure 파일 공유 이름을 ' Name ' 매개 변수에 전달 하는 경우이 버전은 친근 한 이름을 name 매개 변수에 전달 하는 경고를 throw 합니다. 이 최소 버전을 설치 하지 않으면 기존 스크립트에 오류가 발생할 수 있습니다. 다음 명령을 사용 하 여 PS의 최소 버전을 설치 합니다.
@@ -263,10 +263,10 @@ Install-module -Name Az.RecoveryServices -RequiredVersion 2.6.0
 
 ## <a name="trigger-an-on-demand-backup"></a>주문형 백업 트리거
 
-[AzRecoveryServicesBackupItem](https://docs.microsoft.com/powershell/module/az.recoveryservices/backup-azrecoveryservicesbackupitem?view=azps-1.4.0) 를 사용 하 여 보호 된 Azure 파일 공유에 대 한 주문형 백업을 실행 합니다.
+[AzRecoveryServicesBackupItem](https://docs.microsoft.com/powershell/module/az.recoveryservices/backup-azrecoveryservicesbackupitem?view=azps-1.4.0) 를 사용 하 여 보호 된 Azure 파일 공유에 대한 주문형 백업을 실행 합니다.
 
 1. [AzRecoveryServicesBackupContainer](/powershell/module/az.recoveryservices/get-Azrecoveryservicesbackupcontainer)를 사용 하 여 백업 데이터를 보관 하는 자격 증명 모음의 컨테이너에서 저장소 계정을 검색 합니다.
-2. 백업 작업을 시작 하려면 [AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupItem)를 사용 하 여 Azure 파일 공유에 대 한 정보를 가져옵니다.
+2. 백업 작업을 시작 하려면 [AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupItem)를 사용 하 여 Azure 파일 공유에 대한 정보를 가져옵니다.
 3. [Backup-AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/backup-Azrecoveryservicesbackupitem)을 사용하여 주문형 백업을 실행합니다.
 
 다음과 같이 주문형 백업을 실행 합니다.

@@ -88,6 +88,6 @@ Ordinal은 [Recognizers-text](https://github.com/Microsoft/Recognizers-Text/blob
 
 ## <a name="next-steps"></a>다음 단계
 
-[V3 예측 끝점](luis-migration-api-v3.md)에 대해 자세히 알아보세요.
+[V3 예측 엔드포인트](luis-migration-api-v3.md)에 대해 자세히 알아보세요.
 
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md), [전화 번호](luis-reference-prebuilt-phonenumber.md)및 [온도](luis-reference-prebuilt-temperature.md) 엔터티에 대해 알아보세요. 

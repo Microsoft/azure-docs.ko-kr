@@ -16,7 +16,7 @@ ms.locfileid: "74687106"
 ---
 # <a name="app-service-environment-management-addresses"></a>App Service Environment 관리 주소
 
-ASE (App Service Environment)는 VNet (Azure Virtual Network)에서 실행 되는 Azure App Service의 단일 테 넌 트 배포입니다.  ASE가 VNet에서 실행 되는 동안에는 Azure App Service에서 서비스를 관리 하는 데 사용 하는 많은 전용 IP 주소에서 액세스할 수 있어야 합니다.  ASE의 경우 관리 트래픽은 사용자 제어 네트워크를 통과 합니다. 이 트래픽이 차단되거나 잘못 라우팅된 경우 ASE는 일시 중단 됩니다. ASE 네트워킹 종속성에 대 한 자세한 내용은 [네트워킹 고려 사항 및 App Service Environment][networking]을 참조 하세요. ASE에 대 한 일반 정보는 [App Service Environment 소개][intro]부터 시작할 수 있습니다.
+ASE (App Service Environment)는 VNet (Azure Virtual Network)에서 실행 되는 Azure App Service의 단일 테넌트 배포입니다.  ASE가 VNet에서 실행 되는 동안에는 Azure App Service에서 서비스를 관리 하는 데 사용 하는 많은 전용 IP 주소에서 액세스할 수 있어야 합니다.  ASE의 경우 관리 트래픽은 사용자 제어 네트워크를 통과 합니다. 이 트래픽이 차단되거나 잘못 라우팅된 경우 ASE는 일시 중단 됩니다. ASE 네트워킹 종속성에 대 한 자세한 내용은 [네트워킹 고려 사항 및 App Service Environment][networking]을 참조 하세요. ASE에 대 한 일반 정보는 [App Service Environment 소개][intro]부터 시작할 수 있습니다.
 
 모든 ASE에는 관리 트래픽이 전달되는 공개 VIP가 있습니다. 이러한 주소에서 들어오는 관리 트래픽은 ASE의 공개 VIP에서 포트 454 및 455로 전달됩니다. 이 문서에서는 ASE에 대한 관리 트래픽의 App Service 원본 주소를 나열합니다. 이러한 주소는 이름이 AppServiceManagement 인 IP 서비스 태그에도 있습니다.
 

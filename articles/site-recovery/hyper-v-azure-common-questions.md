@@ -142,16 +142,16 @@ Site Recovery는 ISO 27001:2013, 27018, HIPAA, DPA 인증을 받았으며, SOC2 
 
 ### <a name="can-i-replicate-to-azure-with-a-site-to-site-vpn"></a>사이트 간 VPN을 사용하여 Azure에 복제할 수 있나요?
 
-Site Recovery는 공용 끝점을 사용 하거나 Express 경로 Microsoft 피어 링을 사용 하 여 온-프레미스에서 Azure storage로 데이터를 복제 합니다. 사이트 간 VPN 네트워크를 통한 복제는 지원되지 않습니다.
+Site Recovery는 공용 엔드포인트을 사용 하거나 Express 경로 Microsoft 피어 링을 사용 하 여 온-프레미스에서 Azure storage로 데이터를 복제 합니다. 사이트 간 VPN 네트워크를 통한 복제는 지원되지 않습니다.
 
 ### <a name="can-i-replicate-to-azure-with-expressroute"></a>ExpressRoute를 사용하여 Azure에 복제할 수 있나요?
 
-예, ExpressRoute를 사용하여 VM을 Azure로 복제할 수 있습니다. Site Recovery는 공용 끝점을 통해 Azure Storage 계정에 데이터를 복제 하 고 Site Recovery 복제를 위해 [Microsoft 피어 링](../expressroute/expressroute-circuit-peerings.md#microsoftpeering) 을 설정 해야 합니다. VM에서 Azure 가상 네트워크로 장애 조치한 후에는 [프라이빗 피어링](../expressroute/expressroute-circuit-peerings.md#privatepeering)을 사용하여 해당 VM에 액세스할 수 있습니다.
+예, ExpressRoute를 사용하여 VM을 Azure로 복제할 수 있습니다. Site Recovery는 공용 엔드포인트을 통해 Azure Storage 계정에 데이터를 복제 하 고 Site Recovery 복제를 위해 [Microsoft 피어 링](../expressroute/expressroute-circuit-peerings.md#microsoftpeering) 을 설정 해야 합니다. VM에서 Azure 가상 네트워크로 장애 조치한 후에는 [프라이빗 피어링](../expressroute/expressroute-circuit-peerings.md#privatepeering)을 사용하여 해당 VM에 액세스할 수 있습니다.
 
 
 ### <a name="why-cant-i-replicate-over-vpn"></a>VPN을 통해 복제할 수 없는 이유는 무엇인가요?
 
-Azure에 복제 하는 경우 복제 트래픽은 Azure Storage 계정의 공용 끝점에 도달 합니다. 따라서 Express 경로 (Microsoft 피어 링)를 사용 하 여 공용 인터넷을 통해서만 복제할 수 있으며 VPN은 작동 하지 않습니다. 
+Azure에 복제 하는 경우 복제 트래픽은 Azure Storage 계정의 공용 엔드포인트에 도달 합니다. 따라서 Express 경로 (Microsoft 피어 링)를 사용 하 여 공용 인터넷을 통해서만 복제할 수 있으며 VPN은 작동 하지 않습니다. 
 
 ### <a name="what-are-the-replicated-vm-requirements"></a>복제된 VM에 대한 요구 사항은 무엇인가요?
 

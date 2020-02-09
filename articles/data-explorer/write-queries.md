@@ -631,7 +631,7 @@ FloodDataSet
 
 ### <a name="percentiles"></a>percentiles()
 
-[**percentiles()** ](https://docs.microsoft.com/azure/kusto/query/percentiles-aggfunction): 식으로 정의 된 모집단의 지정 된 [**가장 가까운 순위 백분위**](https://docs.microsoft.com/azure/kusto/query/percentiles-aggfunction) 수에 대 한 예상 값을 반환 합니다. 정확도는 백분위수 지역의 인구 밀도에 따라 달라집니다. [**summarize**](https://docs.microsoft.com/azure/kusto/query/summarizeoperator) 내의 집계 컨텍스트에서만 사용할 수 있습니다.
+[**percentiles()** ](https://docs.microsoft.com/azure/kusto/query/percentiles-aggfunction): 식으로 정의 된 모집단의 지정 된 [**가장 가까운 순위 백분위**](https://docs.microsoft.com/azure/kusto/query/percentiles-aggfunction) 수에 대한 예상 값을 반환 합니다. 정확도는 백분위수 지역의 인구 밀도에 따라 달라집니다. [**summarize**](https://docs.microsoft.com/azure/kusto/query/summarizeoperator) 내의 집계 컨텍스트에서만 사용할 수 있습니다.
 
 다음 쿼리는 태풍 기간에 대한 백분위수를 계산합니다.
 

@@ -51,7 +51,7 @@ ms.locfileid: "76991068"
 
 ## <a name="management-features"></a>관리 기능
 
-+ 관리 REST API [`api-version=2019-10-01-Preview`](https://docs.microsoft.com/rest/api/searchmanagement/index-2019-10-01-preview) 를 통한 [개인 끝점 지원](service-create-private-endpoint.md) . 해당 끝점에 액세스 하는 방법에 대 한 제한이 있는 서비스를 만들 수 있습니다.
++ 관리 REST API [`api-version=2019-10-01-Preview`](https://docs.microsoft.com/rest/api/searchmanagement/index-2019-10-01-preview) 를 통한 [개인 엔드포인트 지원](service-create-private-endpoint.md) . 해당 엔드포인트에 액세스 하는 방법에 대 한 제한이 있는 서비스를 만들 수 있습니다.
 
 ## <a name="earlier-preview-features"></a>이전 미리 보기 기능
 

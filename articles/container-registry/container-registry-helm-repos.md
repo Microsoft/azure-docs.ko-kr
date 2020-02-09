@@ -12,7 +12,7 @@ ms.locfileid: "74456348"
 ---
 # <a name="use-azure-container-registry-as-a-helm-repository-for-your-application-charts"></a>애플리케이션 차트용 Helm 리포지토리로 Azure Container Registry 사용
 
-Kubernetes에 대 한 응용 프로그램을 신속 하 게 관리 하 고 배포 하기 위해 [오픈 소스 투구 패키지 관리자][helm]를 사용할 수 있습니다. Helm 사용 시 애플리케이션은 Helm 차트 리포지토리에 저장되는 *차트*로 정의됩니다. 이러한 차트는 구성 및 종속성을 정의하며, 애플리케이션의 전체 수명 주기에 걸쳐 차트의 버전을 관리할 수 있습니다. Helm 차트 리포지토리용 호스트로 Azure Container Registry를 사용할 수 있습니다.
+Kubernetes에 대한 응용 프로그램을 신속 하 게 관리 하 고 배포 하기 위해 [오픈 소스 투구 패키지 관리자][helm]를 사용할 수 있습니다. Helm 사용 시 애플리케이션은 Helm 차트 리포지토리에 저장되는 *차트*로 정의됩니다. 이러한 차트는 구성 및 종속성을 정의하며, 애플리케이션의 전체 수명 주기에 걸쳐 차트의 버전을 관리할 수 있습니다. Helm 차트 리포지토리용 호스트로 Azure Container Registry를 사용할 수 있습니다.
 
 Azure Container Registry를 사용하는 경우 빌드 파이프라인 또는 기타 Azure 서비스와 통합할 수 있는 프라이빗 보안 Helm 차트 리포지토리가 제공됩니다. Azure Container Registry의 Helm 차트 리포지토리에는 차트를 배포한 응용 프로그램과 가까운 위치에 보관하고 중복성을 유지하기 위한 지역 복제 기능이 포함되어 있습니다. 차트는 모든 Azure Container Registry 기준 가격에서 사용 가능하며, 차트에서 사용한 스토리지 양만큼만 요금을 결제하면 됩니다.
 
@@ -26,7 +26,7 @@ Azure Container Registry를 사용하는 경우 빌드 파이프라인 또는 �
 이 문서의 단계를 완료하려면 다음 필수 구성 요소를 갖춰야 합니다.
 
 - **Azure Container Registry** - Azure 구독 내에서 컨테이너 레지스트리를 만듭니다. 예를 들어 [Azure Portal](container-registry-get-started-portal.md) 또는 [Azure CLI](container-registry-get-started-azure-cli.md)를 사용합니다.
-- **Helm 클라이언트 버전 2.11.0(RC 버전 아님) 이상** - `helm version`을 실행하여 현재 버전을 찾습니다. Kubernetes 클러스터 내에서 Helm 서버(Tiller)도 초기화해야 합니다. 필요한 경우 [Azure Kubernetes 서비스 클러스터를 만들][aks-quickstart]수 있습니다. 투구 설치 및 업그레이드 방법에 대 한 자세한 내용은 [투구 설치][helm-install]를 참조 하세요.
+- **Helm 클라이언트 버전 2.11.0(RC 버전 아님) 이상** - `helm version`을 실행하여 현재 버전을 찾습니다. Kubernetes 클러스터 내에서 Helm 서버(Tiller)도 초기화해야 합니다. 필요한 경우 [Azure Kubernetes 서비스 클러스터를 만들][aks-quickstart]수 있습니다. 투구 설치 및 업그레이드 방법에 대한 자세한 내용은 [투구 설치][helm-install]를 참조 하세요.
 - **Azure CLI 버전 2.0.46 이상** - `az --version`을 실행하여 버전을 확인합니다. 설치 또는 업그레이드해야 하는 경우 [Azure CLI 설치][azure-cli-install]를 참조하세요.
 
 ## <a name="add-a-repository-to-helm-client"></a>Helm 클라이언트에 리포지토리 추가
@@ -55,7 +55,7 @@ az acr helm repo add
 
 ## <a name="add-a-chart-to-the-repository"></a>리포지토리에 차트 추가
 
-이 문서에서는 공용 Helm *stable* 리포지토리에서 기존 Helm 차트를 가져옵니다. *stable* 리포지토리는 일반적인 애플리케이션 차트를 포함하는 큐레이팅된 공용 리포지토리입니다. 패키지 유지 관리자는 Docker Hub에서 일반 컨테이너 이미지용으로 공용 레지스트리를 제공하는 것과 같은 방식으로 *stable* 리포지토리에 차트를 제출할 수 있습니다. 공용 *stable* 리포지토리에서 다운로드한 차트는 프라이빗 Azure Container Registry 리포지토리로 푸시할 수 있습니다. 대부분의 시나리오에서는 개발하는 애플리케이션용으로 차트를 직접 작성하여 업로드합니다. 사용자 고유의 투구 차트를 작성 하는 방법에 대 한 자세한 내용은 [투구 차트 개발][develop-helm-charts]을 참조 하세요.
+이 문서에서는 공용 Helm *stable* 리포지토리에서 기존 Helm 차트를 가져옵니다. *stable* 리포지토리는 일반적인 애플리케이션 차트를 포함하는 큐레이팅된 공용 리포지토리입니다. 패키지 유지 관리자는 Docker Hub에서 일반 컨테이너 이미지용으로 공용 레지스트리를 제공하는 것과 같은 방식으로 *stable* 리포지토리에 차트를 제출할 수 있습니다. 공용 *stable* 리포지토리에서 다운로드한 차트는 프라이빗 Azure Container Registry 리포지토리로 푸시할 수 있습니다. 대부분의 시나리오에서는 개발하는 애플리케이션용으로 차트를 직접 작성하여 업로드합니다. 사용자 고유의 투구 차트를 작성 하는 방법에 대한 자세한 내용은 [투구 차트 개발][develop-helm-charts]을 참조 하세요.
 
 먼저 *~/acr-helm*에 디렉터리를 만든 다음 기존 *stable/wordpress* 차트를 다운로드합니다.
 
@@ -153,7 +153,7 @@ version: 2.1.10
 [...]
 ```
 
-Azure CLI [az acr 투구 show][az-acr-helm-show] 명령을 사용 하 여 차트에 대 한 정보를 표시할 수도 있습니다. 이 명령을 사용하는 경우에도 마찬가지로 차트의 *최신* 버전이 기본적으로 반환됩니다. `--version`을 추가하면 *2.1.10* 등의 특정 차트 버전을 나열할 수 있습니다.
+Azure CLI [az acr 투구 show][az-acr-helm-show] 명령을 사용 하 여 차트에 대한 정보를 표시할 수도 있습니다. 이 명령을 사용하는 경우에도 마찬가지로 차트의 *최신* 버전이 기본적으로 반환됩니다. `--version`을 추가하면 *2.1.10* 등의 특정 차트 버전을 나열할 수 있습니다.
 
 ```azurecli
 az acr helm show wordpress
@@ -212,11 +212,11 @@ az acr helm repo add
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서에서는 공용 *stable* 리포지토리의 기존 Helm 차트를 사용했습니다. 투구 차트를 만들고 배포 하는 방법에 대 한 자세한 내용은 [투구 차트 개발][develop-helm-charts]을 참조 하세요.
+이 문서에서는 공용 *stable* 리포지토리의 기존 Helm 차트를 사용했습니다. 투구 차트를 만들고 배포 하는 방법에 대한 자세한 내용은 [투구 차트 개발][develop-helm-charts]을 참조 하세요.
 
 Helm 차트는 컨테이너 빌드 프로세스의 일부로 사용할 수 있습니다. 자세한 내용은 [Azure Container Registry 작업 사용][acr-tasks]을 참조 하세요.
 
-Azure Container Registry를 사용 하 고 관리 하는 방법에 대 한 자세한 내용은 [모범 사례][acr-bestpractices]를 참조 하세요.
+Azure Container Registry를 사용 하 고 관리 하는 방법에 대한 자세한 내용은 [모범 사례][acr-bestpractices]를 참조 하세요.
 
 <!-- LINKS - external -->
 [helm]: https://helm.sh/

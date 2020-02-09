@@ -67,21 +67,21 @@ HDInsight가 Azure Virtual Network에 배포 될 때 제공 되는 기본 리소
 |네트워크 인터페이스 | 커서나 | 이 값은 각 노드에 고유한 네트워크 인터페이스가 있는 일반 클러스터를 기반으로 합니다. 9 개의 인터페이스는 두 헤드 노드, 3 개의 사육 아웃 노드, 두 개의 작업자 노드 및 위의 표에 언급 된 두 개의 게이트웨이 노드에 대 한 것입니다. |
 |공용 IP 주소 | 2 |    |
 
-## <a name="endpoints-for-connecting-to-hdinsight"></a>HDInsight에 연결 하기 위한 끝점
+## <a name="endpoints-for-connecting-to-hdinsight"></a>HDInsight에 연결 하기 위한 엔드포인트
 
 다음 세 가지 방법으로 HDInsight 클러스터에 액세스할 수 있습니다.
 
-- `CLUSTERNAME.azurehdinsight.net`의 가상 네트워크 외부에 있는 HTTPS 끝점입니다.
-- `CLUSTERNAME-ssh.azurehdinsight.net`에서 헤드 노드에 직접 연결 하기 위한 SSH 끝점입니다.
-- `CLUSTERNAME-int.azurehdinsight.net`가상 네트워크 내의 HTTPS 끝점입니다. 이 URL의 "-int"를 확인 합니다. 이 끝점은 해당 가상 네트워크의 개인 IP로 확인 되 고 공용 인터넷에서 액세스할 수 없습니다.
+- `CLUSTERNAME.azurehdinsight.net`의 가상 네트워크 외부에 있는 HTTPS 엔드포인트입니다.
+- `CLUSTERNAME-ssh.azurehdinsight.net`에서 헤드 노드에 직접 연결 하기 위한 SSH 엔드포인트입니다.
+- `CLUSTERNAME-int.azurehdinsight.net`가상 네트워크 내의 HTTPS 엔드포인트입니다. 이 URL의 "-int"를 확인 합니다. 이 엔드포인트은 해당 가상 네트워크의 개인 IP로 확인 되 고 공용 인터넷에서 액세스할 수 없습니다.
 
-이러한 세 끝점은 각각 부하 분산 장치에 할당 됩니다.
+이러한 세 엔드포인트은 각각 부하 분산 장치에 할당 됩니다.
 
-또한 공용 IP 주소는 가상 네트워크 외부에서 연결할 수 있도록 하는 두 끝점에 제공 됩니다.
+또한 공용 IP 주소는 가상 네트워크 외부에서 연결할 수 있도록 하는 두 엔드포인트에 제공 됩니다.
 
 1. 인터넷 `CLUSTERNAME.azurehdinsight.net`에서 클러스터에 연결할 때 사용할 FQDN (정규화 된 도메인 이름)에 대해 하나의 공용 IP가 부하 분산 장치에 할당 됩니다.
 1. 두 번째 공용 IP 주소는 SSH 전용 도메인 이름 `CLUSTERNAME-ssh.azurehdinsight.net`에 사용 됩니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-- [개인 끝점을 사용 하 여 가상 네트워크에서 HDInsight 클러스터에 들어오는 트래픽 보안](https://azure.microsoft.com/blog/secure-incoming-traffic-to-hdinsight-clusters-in-a-vnet-with-private-endpoint/)
+- [개인 엔드포인트을 사용 하 여 가상 네트워크에서 HDInsight 클러스터에 들어오는 트래픽 보안](https://azure.microsoft.com/blog/secure-incoming-traffic-to-hdinsight-clusters-in-a-vnet-with-private-endpoint/)

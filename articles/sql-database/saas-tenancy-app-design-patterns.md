@@ -1,5 +1,5 @@
 ---
-title: 다중 테 넌 트 SaaS 패턴
+title: 다중 테넌트 SaaS 패턴
 description: Azure 클라우드 환경에서 실행되는 다중 테넌트 SaaS(Software-as-a-Service) 데이터베이스 애플리케이션의 요구 사항 및 일반적인 데이터 아키텍처 패턴에 대해 알아봅니다.
 services: sql-database
 ms.service: sql-database
@@ -20,7 +20,7 @@ ms.locfileid: "73822070"
 ---
 # <a name="multi-tenant-saas-database-tenancy-patterns"></a>다중 테넌트 SaaS 데이터베이스 테넌시 패턴
 
-이 문서에서는 다중 테 넌 트 SaaS 응용 프로그램에 사용할 수 있는 다양 한 테 넌 트 모델을 설명 합니다.
+이 문서에서는 다중 테넌트 SaaS 응용 프로그램에 사용할 수 있는 다양 한 테넌트 모델을 설명 합니다.
 
 다중 테넌트 SaaS 애플리케이션을 디자인할 때 애플리케이션의 요구에 가장 잘 맞는 테넌시 모델을 신중하게 선택해야 합니다.  테넌시 모델은 각 테넌트의 데이터가 스토리지에 매핑되는 방식을 결정합니다.  선택한 테넌시 모델은 애플리케이션 디자인 및 관리에 영향을 줍니다.  나중에 다른 모델로 전환하려고 하면 비용이 많이 들 수도 있습니다.
 
@@ -125,7 +125,7 @@ Azure SQL Database 플랫폼에는 100,000개가 넘는 데이터베이스를 �
 
 #### <a name="tenant-isolation-is-sacrificed"></a>테넌트 격리 효과는 제한됩니다.
 
-*데이터:* &nbsp; 다중 테넌트 데이터베이스를 사용하게 되면 테넌트 격리 효과가 떨어질 수밖에 없습니다.  다중 테넌트의 데이터는 하나의 데이터베이스에 함께 저장됩니다.  개발 중에 쿼리가 둘 이상의 테넌트에 있는 데이터를 절대 노출하지 않는지 확인하세요.  SQL Database는 [행 수준 보안][docu-sql-svr-db-row-level-security-947w]을 지원 하며, 쿼리에서 반환 되는 데이터의 범위를 단일 테 넌 트로 지정할 수 있습니다.
+*데이터:* &nbsp; 다중 테넌트 데이터베이스를 사용하게 되면 테넌트 격리 효과가 떨어질 수밖에 없습니다.  다중 테넌트의 데이터는 하나의 데이터베이스에 함께 저장됩니다.  개발 중에 쿼리가 둘 이상의 테넌트에 있는 데이터를 절대 노출하지 않는지 확인하세요.  SQL Database는 [행 수준 보안][docu-sql-svr-db-row-level-security-947w]을 지원 하며, 쿼리에서 반환 되는 데이터의 범위를 단일 테넌트로 지정할 수 있습니다.
 
 *처리:* &nbsp; 다중 테넌트 데이터베이스는 모든 테넌트에서 컴퓨팅 및 스토리지 리소스를 공유합니다.  데이터베이스을 전반적으로 모니터링하여 만족스러운 성능을 나타내는지 확인할 수 있습니다.  그러나 Azure 시스템에는 이러한 리소스에 대한 개별 테넌트 사용을 모니터링하거나 관리할 수 있는 기본 제공 방법이 없습니다.  따라서 다중 테넌트 데이터베이스는 주변 환경을 혼잡하게 하기 쉽습니다. 즉, 한 테넌트에서 과도한 워크로드가 발생할 경우 같은 데이터베이스에 있는 다른 테넌트의 성능에도 영향을 주게 됩니다.  추가 애플리케이션 수준 모니터링으로 테넌트 수준의 성능을 모니터링할 수 있습니다.
 
@@ -195,9 +195,9 @@ SQL Database는 분할 라이브러리 및 카탈로그 데이터베이스와 �
 
 ## <a name="next-steps"></a>다음 단계
 
-- [테 넌 트 별 데이터베이스 SaaS 모델을 사용 하는 다중 테 넌 트 정문 응용 프로그램 배포 및 탐색-Azure SQL Database][docu-sql-db-saas-tutorial-deploy-wingtip-db-per-tenant-496y]
+- [테넌트 별 데이터베이스 SaaS 모델을 사용 하는 다중 테넌트 정문 응용 프로그램 배포 및 탐색-Azure SQL Database][docu-sql-db-saas-tutorial-deploy-wingtip-db-per-tenant-496y]
 
-- [정문 ticket 샘플 SaaS Azure SQL Database 테 넌 트 앱 시작][docu-saas-tenancy-welcome-wingtip-tickets-app-384w]
+- [정문 ticket 샘플 SaaS Azure SQL Database 테넌트 앱 시작][docu-saas-tenancy-welcome-wingtip-tickets-app-384w]
 
 
 <!--  Article link references.  -->

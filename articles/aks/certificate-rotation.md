@@ -33,14 +33,14 @@ AKS은 다음 인증서, 인증 기관 및 서비스 계정을 생성 하 고 �
 * 또한 각 kubelet는 kubelet에서 API 서버로 통신 하기 위해 클러스터 CA에 의해 서명 된 CSR (인증서 서명 요청)를 만듭니다.
 * Etcd 키 값 저장소에는 etcd에서 API server로 통신 하기 위해 클러스터 CA에서 서명한 인증서가 있습니다.
 * Etcd 키 값 저장소는 인증서를 서명 하는 CA를 만들어 AKS 클러스터의 etcd 복제본 간에 데이터 복제를 인증 하 고 권한을 부여 합니다.
-* API 집계는 클러스터 CA를 사용 하 여 Azure에 대 한 Open Service Broker와 같은 다른 Api와 통신 하기 위한 인증서를 발급 합니다. API 집계에는 해당 인증서를 발급 하기 위한 자체 CA가 있을 수 있지만 현재는 클러스터 CA를 사용 합니다.
+* API 집계는 클러스터 CA를 사용 하 여 Azure에 대한 Open Service Broker와 같은 다른 Api와 통신 하기 위한 인증서를 발급 합니다. API 집계에는 해당 인증서를 발급 하기 위한 자체 CA가 있을 수 있지만 현재는 클러스터 CA를 사용 합니다.
 * 각 노드는 클러스터 CA에서 서명 하는 SA (서비스 계정) 토큰을 사용 합니다.
 * `kubectl` 클라이언트에는 AKS 클러스터와 통신 하기 위한 인증서가 있습니다.
 
 > [!NOTE]
 > 3 월 2019 일 이전에 만든 AKS 클러스터에는 2 년 후에 만료 되는 인증서가 있습니다. 3 월 2019 일 이후에 생성 된 클러스터 또는 해당 인증서가 회전 된 클러스터에는 30 년 후에 만료 되는 인증서가 있습니다. 클러스터가 생성 된 시간을 확인 하려면 `kubectl get nodes`를 사용 하 여 노드 풀의 *기간* 을 확인 합니다.
 > 
-> 또한 클러스터 인증서의 만료 날짜를 확인할 수 있습니다. 예를 들어 다음 명령은 *myAKSCluster* 클러스터에 대 한 인증서 세부 정보를 표시 합니다.
+> 또한 클러스터 인증서의 만료 날짜를 확인할 수 있습니다. 예를 들어 다음 명령은 *myAKSCluster* 클러스터에 대한 인증서 세부 정보를 표시 합니다.
 > ```console
 > kubectl config view --raw -o jsonpath='{.clusters[?(@.name == "myAKSCluster")].cluster.certificate-authority-data}' | base64 -d > my-cert.crt
 > openssl x509 -in my-cert.crt -text
@@ -49,7 +49,7 @@ AKS은 다음 인증서, 인증 기관 및 서비스 계정을 생성 하 고 �
 ## <a name="rotate-your-cluster-certificates"></a>클러스터 인증서 회전
 
 > [!WARNING]
-> `az aks rotate-certs`를 사용 하 여 인증서를 회전 하면 AKS 클러스터에 대 한 최대 30 분의 가동 중지 시간이 발생할 수 있습니다.
+> `az aks rotate-certs`를 사용 하 여 인증서를 회전 하면 AKS 클러스터에 대한 최대 30 분의 가동 중지 시간이 발생할 수 있습니다.
 
 [Az aks get-help][az-aks-get-credentials] 를 사용 하 여 aks 클러스터에 로그인 합니다. 이 명령은 로컬 컴퓨터에 `kubectl` 클라이언트 인증서를 다운로드 하 여 구성 합니다.
 
@@ -87,7 +87,7 @@ kubectl get no
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서에서는 클러스터의 인증서, Ca 및 SAs를 자동으로 회전 하는 방법을 살펴보았습니다. AKS 보안 모범 사례에 대 한 자세한 내용은 [Azure Kubernetes 서비스 (AKS)의 클러스터 보안 및 업그레이드에 대 한 모범 사례][aks-best-practices-security-upgrades] 를 참조 하세요.
+이 문서에서는 클러스터의 인증서, Ca 및 SAs를 자동으로 회전 하는 방법을 살펴보았습니다. AKS 보안 모범 사례에 대한 자세한 내용은 [Azure Kubernetes 서비스 (AKS)의 클러스터 보안 및 업그레이드에 대한 모범 사례][aks-best-practices-security-upgrades] 를 참조 하세요.
 
 
 [azure-cli-install]: /cli/azure/install-azure-cli

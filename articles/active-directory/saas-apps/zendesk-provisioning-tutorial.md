@@ -35,7 +35,7 @@ ms.locfileid: "77062750"
 이 자습서에 설명 된 시나리오에서는 다음과 같은 것으로 가정 합니다.
 
 * Azure AD 테넌트.
-* 전문 요금제 이상을 사용 하도록 설정한 Zendesk 테 넌 트.
+* 전문 요금제 이상을 사용 하도록 설정한 Zendesk 테넌트.
 * 관리자 권한이 있는 Zendesk의 사용자 계정
 
 ## <a name="add-zendesk-from-the-azure-marketplace"></a>Azure Marketplace에서 Zendesk 추가
@@ -68,7 +68,7 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
 ### <a name="important-tips-for-assigning-users-to-zendesk"></a>Zendesk에 사용자를 할당하기 위한 주요 팁
 
-* 현재 Zendesk 역할은 자동으로 Azure Portal UI에 동적으로 채워집니다. 사용자에 게 Zendesk 역할을 할당 하기 전에 zendesk에 대해 초기 동기화가 완료 되었는지 확인 하 여 Zendesk 테 넌 트의 최신 역할을 검색 합니다.
+* 현재 Zendesk 역할은 자동으로 Azure Portal UI에 동적으로 채워집니다. 사용자에 게 Zendesk 역할을 할당 하기 전에 zendesk에 대해 초기 동기화가 완료 되었는지 확인 하 여 Zendesk 테넌트의 최신 역할을 검색 합니다.
 
 * 단일 Azure AD 사용자를 Zendesk에 할당 하 여 초기 자동 사용자 프로 비전 구성을 테스트 하는 것이 좋습니다. 테스트에 성공한 후 나중에 추가 사용자 또는 그룹을 할당할 수 있습니다.
 
@@ -101,11 +101,11 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
 5. **관리자 자격 증명** 섹션 아래에서 Zendesk 계정의 관리자 사용자 이름, 비밀 토큰 및 도메인을 입력 합니다. 이러한 값의 예는 다음과 같습니다.
 
-   * **관리자 사용자 이름** 상자에서 Zendesk 테 넌 트의 관리자 계정에 대 한 사용자 이름을 입력 합니다. 예제는 admin@contoso.com입니다.
+   * **관리자 사용자 이름** 상자에서 Zendesk 테넌트의 관리자 계정에 대 한 사용자 이름을 입력 합니다. 예제는 admin@contoso.com입니다.
 
    * **비밀 토큰** 상자에서 6 단계에 설명 된 대로 비밀 토큰을 입력 합니다.
 
-   * **도메인** 상자에서 Zendesk 테 넌 트의 하위 도메인을 입력 합니다. 예를 들어 테 넌 트 URL이 `https://my-tenant.zendesk.com`계정의 경우 하위 **테 넌 트가 하위 테 넌 트**입니다.
+   * **도메인** 상자에서 Zendesk 테넌트의 하위 도메인을 입력 합니다. 예를 들어 테넌트 URL이 `https://my-tenant.zendesk.com`계정의 경우 하위 **테넌트가 하위 테넌트**입니다.
 
 6. Zendesk 계정에 대 한 비밀 토큰은 **관리** > **API** > **설정**에 있습니다. **토큰 액세스가** **사용**으로 설정 되어 있는지 확인 합니다.
 

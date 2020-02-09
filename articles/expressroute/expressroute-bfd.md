@@ -16,7 +16,7 @@ ms.locfileid: "74080790"
 ---
 # <a name="configure-bfd-over-expressroute"></a>ExpressRoute를 통해 BFD 구성
 
-Express 경로는 개인 및 Microsoft 피어 링을 통해 BFD (양방향 전달 검색)를 지원 합니다. Express 경로를 통해 BFD를 사용 하도록 설정 하면 MSEE (Microsoft Enterprise edge) 장치와 Express 경로 회로 (CE/PE)를 종료 하는 라우터에 대 한 오류 감지를 신속 하 게 연결할 수 있습니다. Customer Edge 라우팅 디바이스 또는 Partner Edge 라우팅 디바이스를 통해 ExpressRoute를 종료할 수 있습니다(관리형 Layer 3 연결 서비스에 동의한 경우). 이 문서에서는 BFD의 필요성과 ExpressRoute를 통해 BFD를 활성화하는 방법을 안내합니다.
+Express 경로는 개인 및 Microsoft 피어 링을 통해 BFD (양방향 전달 검색)를 지원 합니다. Express 경로를 통해 BFD를 사용 하도록 설정 하면 MSEE (Microsoft Enterprise edge) 장치와 Express 경로 회로 (CE/PE)를 종료 하는 라우터에 대한 오류 감지를 신속 하 게 연결할 수 있습니다. Customer Edge 라우팅 디바이스 또는 Partner Edge 라우팅 디바이스를 통해 ExpressRoute를 종료할 수 있습니다(관리형 Layer 3 연결 서비스에 동의한 경우). 이 문서에서는 BFD의 필요성과 ExpressRoute를 통해 BFD를 활성화하는 방법을 안내합니다.
 
 ## <a name="need-for-bfd"></a>BFD의 필요성
 
@@ -71,7 +71,7 @@ BFD 피어 간의 전송 속도는 둘 중 더 느린 쪽을 따릅니다. MSEE 
 자세한 정보 또는 도움말을 보려면 다음 링크를 확인하세요.
 
 - [ExpressRoute 회로 만들기 및 수정][CreateCircuit]
-- [Express 경로 회로에 대 한 라우팅 만들기 및 수정][CreatePeering]
+- [Express 경로 회로에 대한 라우팅 만들기 및 수정][CreatePeering]
 
 <!--Image References-->
 [1]: ./media/expressroute-bfd/BFD_Need.png "연결 오류 추론 시간을 가속화하는 BFD"

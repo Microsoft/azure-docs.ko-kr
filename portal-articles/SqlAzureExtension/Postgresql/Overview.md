@@ -31,7 +31,7 @@ Azure Database for PostgreSQL은 오픈 소스 Postgres 데이터베이스 엔�
 방법 배우기:
 
 - 데이터베이스 설계: [Azure Portal](/azure/postgresql/tutorial-design-database-using-azure-portal) |  [Azure CLI](/azure/postgresql/tutorial-design-database-using-azure-cli)
-- [Python 및 CLI를 사용하여 웹앱 만들기](/azure/app-service/containers/tutorial-python-postgresql-app?toc=%2fazure%2fpostgresql%2ftoc.json)
+- [Python 및 CLI를 사용하여 웹어플리케이션 만들기](/azure/app-service/containers/tutorial-python-postgresql-app?toc=%2fazure%2fpostgresql%2ftoc.json)
 
 ## <a name="samples"></a>샘플 
 

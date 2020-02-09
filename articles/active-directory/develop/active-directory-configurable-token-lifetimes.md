@@ -47,7 +47,7 @@ Azure AD에서 정책 개체는 개별 애플리케이션 또는 조직의 모�
 
 ### <a name="saml-tokens"></a>SAML 토큰
 
-SAML 토큰은 많은 웹 기반 SAAS 응용 프로그램에서 사용 되며 Azure Active Directory의 SAML2 프로토콜 끝점을 사용 하 여 가져옵니다. WS-FEDERATION을 사용 하는 응용 프로그램 에서도 사용 됩니다. 토큰의 기본 수명은 1 시간입니다. 응용 프로그램의 관점에서 토큰의 유효 기간은 토큰의 `<conditions …>` 요소에 대 한 NotOnOrAfter 값으로 지정 됩니다. 토큰의 유효 기간이 끝난 후 클라이언트는 새 인증 요청을 시작 해야 합니다 .이 요청은 SSO (Single Sign On) 세션 토큰의 결과로 대화형 로그인 없이 자주 충족 됩니다.
+SAML 토큰은 많은 웹 기반 SAAS 응용 프로그램에서 사용 되며 Azure Active Directory의 SAML2 프로토콜 엔드포인트을 사용 하 여 가져옵니다. WS-FEDERATION을 사용 하는 응용 프로그램 에서도 사용 됩니다. 토큰의 기본 수명은 1 시간입니다. 응용 프로그램의 관점에서 토큰의 유효 기간은 토큰의 `<conditions …>` 요소에 대 한 NotOnOrAfter 값으로 지정 됩니다. 토큰의 유효 기간이 끝난 후 클라이언트는 새 인증 요청을 시작 해야 합니다 .이 요청은 SSO (Single Sign On) 세션 토큰의 결과로 대화형 로그인 없이 자주 충족 됩니다.
 
 NotOnOrAfter의 값은 `TokenLifetimePolicy`의 `AccessTokenLifetime` 매개 변수를 사용 하 여 변경할 수 있습니다. 정책에 구성 된 수명 및 5 분의 클록 오차 계수로 설정 됩니다.
 

@@ -61,7 +61,7 @@ CSP 재판매인 대상 모듈에는 다음 세 가지 옵션 중에서 선택�
 
 이 옵션을 선택 하면 제품을 재판매 수 있는 CSP 프로그램의 파트너에 게 권한을 부여 합니다.
 
-파트너에 게 권한을 부여 하려면 **Csp 파트너 선택** 을 클릭 합니다. 그러면 파트너 이름 또는 CSP AZURE ACTIVE DIRECTORY (AAD) 테 넌 트 ID로 검색할 수 있는 메뉴가 나타납니다.
+파트너에 게 권한을 부여 하려면 **Csp 파트너 선택** 을 클릭 합니다. 그러면 파트너 이름 또는 CSP AZURE ACTIVE DIRECTORY (AAD) 테넌트 ID로 검색할 수 있는 메뉴가 나타납니다.
 
 ![CSP 메뉴 선택](media/marketplace-publishers-guide/csp-pop-up-module.png)
 

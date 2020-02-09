@@ -38,7 +38,7 @@ AKS를 대상으로 하는 워크플로의 경우 파일에는 다음 세 개의
 az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP> --sdk-auth
 ```
 
-위의 명령에서 자리 표시자를 구독 ID 및 리소스 그룹으로 바꿉니다. 출력은 리소스에 대 한 액세스를 제공 하는 역할 할당 자격 증명입니다. 명령은 다음과 유사한 JSON 개체를 출력 해야 합니다.
+위의 명령에서 자리 표시자를 구독 ID 및 리소스 그룹으로 바꿉니다. 출력은 리소스에 대한 액세스를 제공 하는 역할 할당 자격 증명입니다. 명령은 다음과 유사한 JSON 개체를 출력 해야 합니다.
 
 ```json
   {
@@ -79,7 +79,7 @@ GitHub에서 인증 하는 데 사용할 수 있는이 JSON 개체를 복사 합
 | **공간** | 필드 대상 Kubernetes 네임 스페이스를 선택 합니다. 네임 스페이스를 제공 하지 않으면 명령은 기본 네임 스페이스에서 실행 됩니다. | 
 | **매니페스트** |  하다 배포에 사용 되는 매니페스트 파일의 경로 |
 | **images** | 필드 매니페스트 파일에서 대체 하는 데 사용할 이미지의 정규화 된 리소스 URL입니다. |
-| **imagepullsecrets** | 필드 클러스터 내에서 이미 설정 된 docker 레지스트리 암호의 이름입니다. 이러한 각 암호 이름은 입력 매니페스트 파일에 있는 작업에 대 한 imagePullSecrets 필드 아래에 추가 됩니다. |
+| **imagepullsecrets** | 필드 클러스터 내에서 이미 설정 된 docker 레지스트리 암호의 이름입니다. 이러한 각 암호 이름은 입력 매니페스트 파일에 있는 작업에 대한 imagePullSecrets 필드 아래에 추가 됩니다. |
 | **kubectl-버전** | 필드 Kubectl binary의 특정 버전을 설치 합니다. |
 
 ### <a name="deploy-to-azure-kubernetes-service-cluster"></a>Azure Kubernetes Service 클러스터에 배포

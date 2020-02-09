@@ -18,7 +18,7 @@ Log Analytics 데이터 모델을 사용 하 여 Log Analytics에서 사용자 �
 
 > [!NOTE]
 >
-> 이 데이터 모델은 Log Analytics (LA)로 진단 이벤트를 보내는 Azure 진단 모드를 참조 합니다. 새 리소스 특정 모드의 데이터 모델에 대해 알아보려면 [Azure Backup 진단 이벤트에 대 한 데이터 모델](https://aka.ms/diagnosticsdatamodel) 문서를 참조할 수 있습니다.
+> 이 데이터 모델은 Log Analytics (LA)로 진단 이벤트를 보내는 Azure 진단 모드를 참조 합니다. 새 리소스 특정 모드의 데이터 모델에 대해 알아보려면 [Azure Backup 진단 이벤트에 대한 데이터 모델](https://aka.ms/diagnosticsdatamodel) 문서를 참조할 수 있습니다.
 
 ## <a name="using-azure-backup-data-model"></a>Azure Backup 데이터 모델 사용
 
@@ -82,7 +82,7 @@ Log Analytics 데이터 모델을 사용 하 여 Log Analytics에서 사용자 �
 | Category |텍스트 |Azure Monitor 로그에 푸시되는 진단 데이터의 범주입니다. 항상 AzureBackupReport임 |
 | 리소스 |텍스트 |데이터가 수집되는 리소스(예: Recovery Services 자격 증명 모음 이름) |
 | SourceSystem |텍스트 |현재 데이터의 원본 시스템(Azure) |
-| ResourceId |텍스트 |수집 되는 데이터에 대 한 리소스 ID (예: Recovery Services 자격 증명 모음 리소스 ID) |
+| ResourceId |텍스트 |수집 되는 데이터에 대한 리소스 ID (예: Recovery Services 자격 증명 모음 리소스 ID) |
 | SubscriptionId |텍스트 |데이터가 수집되는 리소스의 구독 식별자(예: Recovery Services 자격 증명 모음) |
 | ResourceGroup |텍스트 |수집되는 데이터에 대한 리소스의 리소스 그룹(예: Recovery Services 자격 증명 모음) |
 | ResourceProvider |텍스트 |수집되는 데이터에 대한 리소스 공급자(예: Microsoft.RecoveryServices) |
@@ -203,12 +203,12 @@ Log Analytics 데이터 모델을 사용 하 여 Log Analytics에서 사용자 �
 | YearlyRetentionFormat_s |텍스트 ||연별 보존에 대한 구성 형식(예: 일 기준 매일, 주 기준 매주) | |
 | YearlyRetentionDaysOfTheMonth_s |텍스트 ||매년 보존에 대해 선택한 월의 날짜 |
 | SynchronisationFrequencyPerDay_s |정수 |v2|SC DPM 및 MABS에 대해 파일 백업이 동기화 된 하루 중 시간 수 |
-| DiffBackupFormat_s |텍스트 |v2|Azure VM 백업에서 SQL에 대 한 차등 백업의 형식 |
-| DiffBackupTime_s |Time |v2|Azure VM 백업에서 SQL에 대 한 차등 백업 시간|
-| DiffBackupRetentionDuration_s |10진수 |v2|Azure VM 백업에서 SQL에 대 한 차등 백업의 보존 기간|
-| LogBackupFrequency_s |10진수 |v2|SQL에 대 한 로그 백업 빈도|
-| LogBackupRetentionDuration_s |10진수 |v2|Azure VM 백업에서 SQL에 대 한 로그 백업의 보존 기간|
-| DiffBackupDaysofTheWeek_s |텍스트 |v2|Azure VM 백업에서 SQL에 대 한 차등 백업의 요일|
+| DiffBackupFormat_s |텍스트 |v2|Azure VM 백업에서 SQL에 대한 차등 백업의 형식 |
+| DiffBackupTime_s |Time |v2|Azure VM 백업에서 SQL에 대한 차등 백업 시간|
+| DiffBackupRetentionDuration_s |10진수 |v2|Azure VM 백업에서 SQL에 대한 차등 백업의 보존 기간|
+| LogBackupFrequency_s |10진수 |v2|SQL에 대한 로그 백업 빈도|
+| LogBackupRetentionDuration_s |10진수 |v2|Azure VM 백업에서 SQL에 대한 로그 백업의 보존 기간|
+| DiffBackupDaysofTheWeek_s |텍스트 |v2|Azure VM 백업에서 SQL에 대한 차등 백업의 요일|
 | SourceSystem |텍스트 ||현재 데이터의 원본 시스템(Azure) |
 | ResourceId |텍스트 ||수집되는 데이터에 대한 리소스 식별자(예: 예를 들어 Recovery Services 자격 증명 모음 리소스 ID |
 | SubscriptionId |텍스트 ||데이터가 수집되는 리소스의 구독 식별자(예: Recovery Services 자격 증명 모음) |
@@ -241,7 +241,7 @@ Log Analytics 데이터 모델을 사용 하 여 Log Analytics에서 사용자 �
 
 ### <a name="protected-container"></a>보호 된 컨테이너
 
-다음 표에서는 보호 된 컨테이너에 대 한 기본 필드를 제공 합니다. (V1에서 ProtectedServer Was)
+다음 표에서는 보호 된 컨테이너에 대한 기본 필드를 제공 합니다. (V1에서 ProtectedServer Was)
 
 | 필드 | 데이터 형식 | 설명 |
 | --- | --- | --- |
@@ -274,7 +274,7 @@ Log Analytics 데이터 모델을 사용 하 여 Log Analytics에서 사용자 �
 | Category |텍스트 |이 필드는 Azure Monitor 로그에 푸시되는 진단 데이터의 범주를 나타냅니다. AzureBackupReport입니다. |
 | 리소스 |텍스트 |데이터가 수집되는 리소스이며, Recovery Services 자격 증명 모음 이름이 표시됩니다. |
 | ProtectedServerUniqueId_s |텍스트 |저장소가 계산 되는 보호 된 서버의 고유 ID |
-| VaultUniqueId_s |텍스트 |저장소에 대 한 자격 증명 모음의 고유 ID가 계산 됩니다. |
+| VaultUniqueId_s |텍스트 |저장소에 대한 자격 증명 모음의 고유 ID가 계산 됩니다. |
 | SourceSystem |텍스트 |현재 데이터의 원본 시스템(Azure) |
 | ResourceId |텍스트 |수집되는 데이터에 대한 리소스 식별자(예: 예를 들어 Recovery Services 자격 증명 모음 리소스 ID |
 | SubscriptionId |텍스트 |데이터가 수집되는 리소스의 구독 식별자(예: Recovery Services 자격 증명 모음) |
@@ -325,7 +325,7 @@ Log Analytics 데이터 모델을 사용 하 여 Log Analytics에서 사용자 �
 
 ### <a name="backup-management-server"></a>백업 관리 서버
 
-다음 표에서는 백업 관리 서버에 대 한 기본 필드를 제공 합니다.
+다음 표에서는 백업 관리 서버에 대한 기본 필드를 제공 합니다.
 
 |필드  |데이터 형식  | 설명  |
 |---------|---------|----------|
@@ -353,7 +353,7 @@ Log Analytics 데이터 모델을 사용 하 여 Log Analytics에서 사용자 �
 | --- | --- | --- | --- |
 | BackupItemUniqueId_s |텍스트 |v2|DPM, MABS를 사용 하 여 백업 된 Vm의 백업 항목을 식별 하는 데 사용 되는 고유 ID|
 | ProtectedContainerUniqueId_s |텍스트 |v2|DPM, MABS를 사용 하 여 백업한 Vm을 제외한 모든 항목에 대해 보호 된 컨테이너를 식별 하는 데 사용 되는 고유 ID|
-| ProtectedInstanceCount_s |텍스트 |v2|해당 날짜/시간에 연결 된 백업 항목 또는 보호 된 컨테이너에 대 한 보호 된 인스턴스 수|
+| ProtectedInstanceCount_s |텍스트 |v2|해당 날짜/시간에 연결 된 백업 항목 또는 보호 된 컨테이너에 대한 보호 된 인스턴스 수|
 
 ### <a name="recoverypoint"></a>RecoveryPoint
 
@@ -362,10 +362,10 @@ Log Analytics 데이터 모델을 사용 하 여 Log Analytics에서 사용자 �
 | 필드 | 데이터 형식 | 설명 |
 | --- | --- | --- |
 | BackupItemUniqueId_s |텍스트 |DPM, MABS를 사용 하 여 백업 된 Vm의 백업 항목을 식별 하는 데 사용 되는 고유 ID|
-| OldestRecoveryPointTime_s |텍스트 |백업 항목에 대 한 가장 오래 된 복구 지점의 날짜 시간|
-| OldestRecoveryPointLocation_s |텍스트 |백업 항목에 대 한 가장 오래 된 복구 지점의 위치|
-| LatestRecoveryPointTime_s |텍스트 |백업 항목에 대 한 최신 복구 지점의 날짜 시간|
-| LatestRecoveryPointLocation_s |텍스트 |백업 항목에 대 한 최신 복구 지점의 위치|
+| OldestRecoveryPointTime_s |텍스트 |백업 항목에 대한 가장 오래 된 복구 지점의 날짜 시간|
+| OldestRecoveryPointLocation_s |텍스트 |백업 항목에 대한 가장 오래 된 복구 지점의 위치|
+| LatestRecoveryPointTime_s |텍스트 |백업 항목에 대한 최신 복구 지점의 날짜 시간|
+| LatestRecoveryPointLocation_s |텍스트 |백업 항목에 대한 최신 복구 지점의 위치|
 
 ## <a name="next-steps"></a>다음 단계
 

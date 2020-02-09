@@ -16,7 +16,7 @@ ms.locfileid: "69639803"
 ---
 # <a name="connect-with-rdp-to-azure-kubernetes-service-aks-cluster-windows-server-nodes-for-maintenance-or-troubleshooting"></a>유지 관리 또는 문제 해결을 위해 RDP를 사용 하 여 AKS (Azure Kubernetes Service) 클러스터 Windows Server 노드에 연결
 
-AKS (Azure Kubernetes Service) 클러스터의 수명 주기 동안 AKS Windows Server 노드에 액세스 해야 할 수 있습니다. 유지 관리, 로그 수집 또는 기타 문제 해결 작업을 위해 이 액세스를 사용할 수 있습니다. RDP를 사용 하 여 AKS Windows Server 노드에 액세스할 수 있습니다. 또는 AKS Windows Server 노드에 액세스 하는 데 SSH를 사용 하 고 클러스터를 만드는 동안 사용 된 것과 동일한 키 쌍에 대 한 액세스 권한이 있는 경우 [AKS (Azure Kubernetes Service) 클러스터 노드에 ssh][ssh-steps]의 단계를 따를 수 있습니다. 보안을 위해 AKS 노드는 인터넷에 노출되지 않습니다.
+AKS (Azure Kubernetes Service) 클러스터의 수명 주기 동안 AKS Windows Server 노드에 액세스 해야 할 수 있습니다. 유지 관리, 로그 수집 또는 기타 문제 해결 작업을 위해 이 액세스를 사용할 수 있습니다. RDP를 사용 하 여 AKS Windows Server 노드에 액세스할 수 있습니다. 또는 AKS Windows Server 노드에 액세스 하는 데 SSH를 사용 하 고 클러스터를 만드는 동안 사용 된 것과 동일한 키 쌍에 대한 액세스 권한이 있는 경우 [AKS (Azure Kubernetes Service) 클러스터 노드에 ssh][ssh-steps]의 단계를 따를 수 있습니다. 보안을 위해 AKS 노드는 인터넷에 노출되지 않습니다.
 
 Windows Server 노드 지원은 현재 AKS에서 미리 보기로 제공 됩니다.
 
@@ -24,7 +24,7 @@ Windows Server 노드 지원은 현재 AKS에서 미리 보기로 제공 됩니�
 
 ## <a name="before-you-begin"></a>시작하기 전 주의 사항
 
-이 문서에서는 Windows Server 노드가 있는 기존 AKS 클러스터가 있다고 가정 합니다. AKS 클러스터가 필요한 경우 [Azure CLI를 사용 하 여 Windows 컨테이너를 사용 하 여 AKS 클러스터 만들기][aks-windows-cli]문서를 참조 하세요. 문제를 해결 하려면 Windows Server 노드에 대 한 Windows 관리자 사용자 이름 및 암호가 필요 합니다. [Microsoft 원격 데스크톱][rdp-mac]와 같은 RDP 클라이언트도 필요 합니다.
+이 문서에서는 Windows Server 노드가 있는 기존 AKS 클러스터가 있다고 가정 합니다. AKS 클러스터가 필요한 경우 [Azure CLI를 사용 하 여 Windows 컨테이너를 사용 하 여 AKS 클러스터 만들기][aks-windows-cli]문서를 참조 하세요. 문제를 해결 하려면 Windows Server 노드에 대한 Windows 관리자 사용자 이름 및 암호가 필요 합니다. [Microsoft 원격 데스크톱][rdp-mac]와 같은 RDP 클라이언트도 필요 합니다.
 
 또한 Azure CLI 버전 2.0.61 이상이 설치 및 구성 되어 있어야 합니다.  `az --version`을 실행하여 버전을 찾습니다. 설치 또는 업그레이드 해야 하는 경우 [Azure CLI 설치][install-azure-cli]를 참조 하세요.
 
@@ -64,12 +64,12 @@ az vm create \
 
 가상 컴퓨터의 공용 IP 주소를 기록 합니다. 이후 단계에서이 주소를 사용 합니다.
 
-## <a name="allow-access-to-the-virtual-machine"></a>가상 컴퓨터에 대 한 액세스 허용
+## <a name="allow-access-to-the-virtual-machine"></a>가상 컴퓨터에 대한 액세스 허용
 
 AKS 노드 풀 서브넷은 기본적으로 NSGs (네트워크 보안 그룹)로 보호 됩니다. 가상 컴퓨터에 액세스 하려면 NSG에서 액세스를 사용 하도록 설정 해야 합니다.
 
 > [!NOTE]
-> NSGs는 AKS 서비스에 의해 제어 됩니다. NSG에 대 한 변경 내용은 언제 든 지 제어 평면에 의해 덮어쓰여집니다.
+> NSGs는 AKS 서비스에 의해 제어 됩니다. NSG에 대한 변경 내용은 언제 든 지 제어 평면에 의해 덮어쓰여집니다.
 >
 
 먼저 규칙을 추가할 nsg의 리소스 그룹 및 nsg 이름을 가져옵니다.
@@ -134,7 +134,7 @@ aksnpwin000000                      Ready    agent   13h   v1.12.7   10.240.0.67
 
 ## <a name="remove-rdp-access"></a>RDP 액세스 제거
 
-완료 되 면 Windows Server 노드에 대 한 RDP 연결을 종료 한 후 가상 머신에 대 한 RDP 세션을 종료 합니다. 두 RDP 세션을 모두 종료 한 후 [az vm delete][az-vm-delete] 명령을 사용 하 여 가상 머신을 삭제 합니다.
+완료 되 면 Windows Server 노드에 대한 RDP 연결을 종료 한 후 가상 머신에 대한 RDP 세션을 종료 합니다. 두 RDP 세션을 모두 종료 한 후 [az vm delete][az-vm-delete] 명령을 사용 하 여 가상 머신을 삭제 합니다.
 
 ```azurecli-interactive
 az vm delete --resource-group myResourceGroup --name myVM

@@ -59,7 +59,7 @@ Power BI Pro 라이선스를 사용 하 여 Office 365 E5를 구매 하는 경�
 
 그러나이 유형의 데이터 카탈로그에는 **관리자 옵션이** 없으며 **Azure Portal**에 표시 되지 않습니다. 이 유형의 데이터 카탈로그는 삭제할 수 없습니다. 마찬가지로, 데이터 카탈로그의 이름을 바꿀 수 없으며 다른 영역으로 이동할 수 없습니다. 
 
-Power BI Pro 라이선스 자동으로 할당 된 사용자 계정은 Power BI Pro 라이선스를 사용 하 여 Office 365 E5에 등록할 때 사용권 계약으로 인해 데이터 카탈로그에 액세스할 수 있습니다. 이 유형의 사용자는 관리자 권한 없이 데이터 카탈로그 자산에 대 한 모든 권한을 가집니다. 이러한 종류의 사용자는 Azure Data Catalog의 **카탈로그 사용자** 역할에 포함 *되지 않습니다* .
+Power BI Pro 라이선스 자동으로 할당 된 사용자 계정은 Power BI Pro 라이선스를 사용 하 여 Office 365 E5에 등록할 때 사용권 계약으로 인해 데이터 카탈로그에 액세스할 수 있습니다. 이 유형의 사용자는 관리자 권한 없이 데이터 카탈로그 자산에 대한 모든 권한을 가집니다. 이러한 종류의 사용자는 Azure Data Catalog의 **카탈로그 사용자** 역할에 포함 *되지 않습니다* .
 
 
 ## <a name="how-do-i-get-started-with-data-catalog"></a>데이터 카탈로그를 시작하려면 어떻게 하나요?
@@ -87,7 +87,7 @@ Power BI Pro 라이선스 자동으로 할당 된 사용자 계정은 Power BI P
 >
 
 > [!NOTE]
-> 최우선 **Description** 속성이 있는 SQL Server Analysis Services와 같은 데이터 원본의 경우, 데이터 카탈로그 데이터 원본 등록 도구가 해당 속성 값을 추출합니다. 첫 번째 클래스 **설명** 속성이 없는 *온-프레미스* SQL Server 관계형 데이터베이스의 경우 Data Catalog 데이터 원본 등록 도구는 개체 및 열에 대 한 **ms_description** 확장 속성에서 값을 추출 합니다. 자세한 내용은 [데이터베이스 개체의 확장 속성 사용](https://technet.microsoft.com/library/ms190243%28v=sql.105%29.aspx)을 참조하세요.
+> 최우선 **Description** 속성이 있는 SQL Server Analysis Services와 같은 데이터 원본의 경우, 데이터 카탈로그 데이터 원본 등록 도구가 해당 속성 값을 추출합니다. 첫 번째 클래스 **설명** 속성이 없는 *온-프레미스* SQL Server 관계형 데이터베이스의 경우 Data Catalog 데이터 원본 등록 도구는 개체 및 열에 대한 **ms_description** 확장 속성에서 값을 추출 합니다. 자세한 내용은 [데이터베이스 개체의 확장 속성 사용](https://technet.microsoft.com/library/ms190243%28v=sql.105%29.aspx)을 참조하세요.
 >
 >
 

@@ -74,7 +74,7 @@ Azure Monitor 로그의 데이터는 [Kusto 쿼리 언어로](../log-query/get-s
 ## <a name="sources-of-azure-monitor-logs"></a>Azure Monitor 로그의 원본
 Azure Monitor는 Azure 내와 온-프레미스 리소스의 다양한 원본에서 로그 데이터를 수집할 수 있습니다. 다음 표에서는 Azure Monitor 로그에 데이터를 쓰는 다양 한 리소스에서 사용할 수 있는 다양 한 데이터 원본을 나열 합니다. 각에는 필요한 모든 구성에 대 한 세부 정보 링크가 있습니다.
 
-### <a name="azure-tenant-and-subscription"></a>Azure 테 넌 트 및 구독
+### <a name="azure-tenant-and-subscription"></a>Azure 테넌트 및 구독
 
 | 데이터 | Description |
 |:---|:---|

@@ -25,14 +25,14 @@ ms.locfileid: "76122613"
 
 ## <a name="prerequisites"></a>필수 조건
 
-이 기능은 데이터 팩터리 관리 id에 의존 합니다. [데이터 팩터리에 대 한 관리 id](data-factory-service-identity.md) 에서 작동 하는 방식에 대해 알아보고 데이터 팩터리에 연결 된 id가 있는지 확인 합니다.
+이 기능은 데이터 팩터리 관리 id에 의존 합니다. [데이터 팩터리에 대한 관리 id](data-factory-service-identity.md) 에서 작동 하는 방식에 대해 알아보고 데이터 팩터리에 연결 된 id가 있는지 확인 합니다.
 
 ## <a name="steps"></a>단계
 
 Azure Key Vault에 저장된 자격 증명을 참조하려면 다음을 수행해야 합니다.
 
 1. 팩터리와 함께 생성 된 "관리 Id 개체 ID"의 값을 복사 하 여 **데이터 팩터리 관리 id를 검색** 합니다. ADF 제작 UI를 사용 하는 경우 관리 id 개체 ID는 Azure Key Vault 연결 된 서비스 만들기 창에 표시 됩니다. Azure Portal에서 검색할 수도 있습니다. [data factory 관리 Id 검색](data-factory-service-identity.md#retrieve-managed-identity)을 참조 하세요.
-2. **관리 id에 Azure Key Vault에 대 한 액세스 권한을 부여 합니다.** 키 자격 증명 모음에서 액세스 정책 >-> 추가->이 관리 되는 id를 검색 하 여 비밀 권한 드롭다운에서 **Get** 권한을 부여 합니다. 그러면 이 지정된 팩터리가 키 자격 증명 모음에 있는 비밀에 액세스할 수 있습니다.
+2. **관리 id에 Azure Key Vault에 대한 액세스 권한을 부여 합니다.** 키 자격 증명 모음에서 액세스 정책 >-> 추가->이 관리 되는 id를 검색 하 여 비밀 권한 드롭다운에서 **Get** 권한을 부여 합니다. 그러면 이 지정된 팩터리가 키 자격 증명 모음에 있는 비밀에 액세스할 수 있습니다.
 3. **Azure Key Vault를 가리키는 연결된 서비스를 만듭니다.** [Azure Key Vault 연결된 서비스](#azure-key-vault-linked-service)를 참조합니다.
 4. **해당 비밀을 키 자격 증명 모음에 저장한 참조 내에서 데이터 저장소 연결된 서비스를 만듭니다.** [키 자격 증명 모음에 저장된 참조 비밀](#reference-secret-stored-in-key-vault)을 참조하세요.
 

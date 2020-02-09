@@ -227,7 +227,7 @@ ClientCertificate 인증을 사용하려면 **authenticationType** 속성을 **C
 | addtionalHeaders         | 추가 HTTP 요청 헤더입니다.                             | 아닙니다.       |
 | requestBody              | HTTP 요청의 본문입니다.                               | 아닙니다.       |
 | httpRequestTimeout           | HTTP 요청이 응답을 받을 시간 제한(**TimeSpan** 값)입니다. 이 값은 응답 데이터를 읽는 시간 제한이 아니라, 응답을 받을 시간 제한입니다. 기본값은 **00:01:40**입니다. | 아닙니다.       |
-| maxConcurrentConnections | 저장소 저장소에 동시에 연결 하기 위한 연결 수입니다. 데이터 저장소에 대 한 동시 연결 수를 제한 하려는 경우에만를 지정 합니다. | 아닙니다.       |
+| maxConcurrentConnections | 저장소 저장소에 동시에 연결 하기 위한 연결 수입니다. 데이터 저장소에 대한 동시 연결 수를 제한 하려는 경우에만를 지정 합니다. | 아닙니다.       |
 
 **예:**
 
@@ -272,7 +272,7 @@ ClientCertificate 인증을 사용하려면 **authenticationType** 속성을 **C
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
+속성에 대한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
 
 ## <a name="legacy-models"></a>레거시 모델
 

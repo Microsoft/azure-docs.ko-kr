@@ -1,5 +1,5 @@
 ---
-title: 서비스 끝점에 액세스 정책 할당
+title: 서비스 엔드포인트에 액세스 정책 할당
 description: Service Fabric 서비스의 HTTP 또는 HTTPS 엔드포인트에 보안 액세스 정책을 할당하는 방법을 알아봅니다.
 ms.topic: conceptual
 ms.date: 03/21/2018

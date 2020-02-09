@@ -12,17 +12,17 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/06/2020
 ms.locfileid: "75681143"
 ---
-# <a name="configure-tls-mutual-authentication-for-azure-app-service"></a>Azure App Service에 대 한 TLS 상호 인증 구성
+# <a name="configure-tls-mutual-authentication-for-azure-app-service"></a>Azure App Service에 대한 TLS 상호 인증 구성
 
 다양한 유형의 인증을 사용하여 Azure App Service 앱에 대한 액세스를 제한할 수 있습니다. 이 작업을 수행 하는 한 가지 방법은 클라이언트 요청이 TLS/SSL을 통해 수행 되는 경우 클라이언트 인증서를 요청 하 고 인증서의 유효성을 검사 하는 것입니다. 이 메커니즘을 TLS 상호 인증 또는 클라이언트 인증서 인증 이라고 합니다. 이 문서에서는 클라이언트 인증서 인증을 사용 하도록 앱을 설정 하는 방법을 보여 줍니다.
 
 > [!NOTE]
-> HTTP를 통해 사이트에 액세스하고 HTTPS를 통해서는 액세스하지 않는 경우 클라이언트 인증서가 제공되지 않습니다. 따라서 응용 프로그램에 클라이언트 인증서가 필요한 경우 HTTP를 통해 응용 프로그램에 대 한 요청을 허용 하지 않아야 합니다.
+> HTTP를 통해 사이트에 액세스하고 HTTPS를 통해서는 액세스하지 않는 경우 클라이언트 인증서가 제공되지 않습니다. 따라서 응용 프로그램에 클라이언트 인증서가 필요한 경우 HTTP를 통해 응용 프로그램에 대한 요청을 허용 하지 않아야 합니다.
 >
 
 ## <a name="enable-client-certificates"></a>클라이언트 인증서 사용
 
-클라이언트 인증서를 요구 하도록 앱을 설정 하려면 앱에 대 한 `clientCertEnabled` 설정을 `true`설정 해야 합니다. 설정을 설정 하려면 [Cloud Shell](https://shell.azure.com)에서 다음 명령을 실행 합니다.
+클라이언트 인증서를 요구 하도록 앱을 설정 하려면 앱에 대한 `clientCertEnabled` 설정을 `true`설정 해야 합니다. 설정을 설정 하려면 [Cloud Shell](https://shell.azure.com)에서 다음 명령을 실행 합니다.
 
 ```azurecli-interactive
 az webapp update --set clientCertEnabled=true --name <app_name> --resource-group <group_name>

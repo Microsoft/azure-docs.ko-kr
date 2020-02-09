@@ -15,22 +15,22 @@ ms.locfileid: "76545622"
 ---
 # <a name="azure-active-directory-integration-for-azure-red-hat-openshift"></a>Azure Red Hat OpenShift에 대 한 Azure Active Directory 통합
 
-Azure Active Directory (Azure AD) 테 넌 트를 아직 만들지 않은 경우 다음 지침을 계속 진행 하기 전에 [Azure Red Hat OpenShift에 대 한 AZURE ad 테 넌 트 만들기](howto-create-tenant.md) 의 지침을 따르세요.
+Azure Active Directory (Azure AD) 테넌트를 아직 만들지 않은 경우 다음 지침을 계속 진행 하기 전에 [Azure Red Hat OpenShift에 대 한 AZURE ad 테넌트 만들기](howto-create-tenant.md) 의 지침을 따르세요.
 
 Red Hat OpenShift Microsoft Azure 클러스터 대신 작업을 수행할 수 있는 권한이 필요 합니다. 조직에 서비스 주체로 사용할 Azure AD 사용자, Azure AD 보안 그룹 또는 Azure AD 앱 등록이 아직 없는 경우 다음 지침에 따라 해당 사용자를 만듭니다.
 
 ## <a name="create-a-new-azure-active-directory-user"></a>새 Azure Active Directory 사용자 만들기
 
-[Azure Portal](https://portal.azure.com)에서 테 넌 트가 포털의 오른쪽 위에 있는 사용자 이름 아래에 표시 되는지 확인 합니다.
+[Azure Portal](https://portal.azure.com)에서 테넌트가 포털의 오른쪽 위에 있는 사용자 이름 아래에 표시 되는지 확인 합니다.
 
-테 넌 트가](./media/howto-create-tenant/tenant-callout.png) 오른쪽 위에 나열 된 포털의 ![잘못 된 테 넌 트가 표시 되 면 오른쪽 위에서 사용자 이름을 클릭 하 고 **디렉터리 전환**을 클릭 한 다음 **모든 디렉터리** 목록에서 올바른 테 넌 트를 선택 합니다.
+테넌트가](./media/howto-create-tenant/tenant-callout.png) 오른쪽 위에 나열 된 포털의 ![잘못 된 테넌트가 표시 되 면 오른쪽 위에서 사용자 이름을 클릭 하 고 **디렉터리 전환**을 클릭 한 다음 **모든 디렉터리** 목록에서 올바른 테넌트를 선택 합니다.
 
 새 Azure Active Directory 전역 관리자 사용자를 만들어 Azure Red Hat OpenShift 클러스터에 로그인 합니다.
 
 1. [사용자-모든 사용자](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/AllUsers) 블레이드로 이동 합니다.
 2. **+ 새 사용자** 를 클릭 하 여 **사용자** 창을 엽니다.
 3. 이 사용자의 **이름을** 입력 합니다.
-4. 만든 테 넌 트의 이름을 기준으로 **사용자 이름을** 만들고, `.onmicrosoft.com` 끝에 추가 합니다. `yourUserName@yourTenantName.onmicrosoft.com`)을 입력합니다. 이 사용자 이름을 적어 씁니다. 클러스터에 로그인 하는 데 필요 합니다.
+4. 만든 테넌트의 이름을 기준으로 **사용자 이름을** 만들고, `.onmicrosoft.com` 끝에 추가 합니다. `yourUserName@yourTenantName.onmicrosoft.com`)을 입력합니다. 이 사용자 이름을 적어 씁니다. 클러스터에 로그인 하는 데 필요 합니다.
 5. 디렉터리 **역할** 을 클릭 하 여 디렉터리 역할 창을 열고 **전역 관리자** 를 선택한 다음 창 맨 아래에서 **확인** 을 클릭 합니다.
 6. **사용자** 창에서 **암호 표시** 를 클릭 하 고 임시 암호를 기록 합니다. 처음 로그인 하면 다시 설정 하 라는 메시지가 표시 됩니다.
 7. 창 맨 아래에서 **만들기** 를 클릭 하 여 사용자를 만듭니다.
@@ -88,7 +88,7 @@ Azure Active Directory에 대 한 앱 인증을 위한 클라이언트 암호를
 
 Azure 애플리케이션 개체에 대 한 자세한 내용은 [Azure Active Directory의 응용 프로그램 및 서비스 주체 개체](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals)를 참조 하세요.
 
-새 Azure AD 응용 프로그램을 만드는 방법에 대 한 자세한 내용은 [Azure Active Directory v 1.0 끝점으로 앱 등록](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v1-add-azure-ad-app)을 참조 하세요.
+새 Azure AD 응용 프로그램을 만드는 방법에 대 한 자세한 내용은 [Azure Active Directory v 1.0 엔드포인트으로 앱 등록](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v1-add-azure-ad-app)을 참조 하세요.
 
 ## <a name="add-api-permissions"></a>API 사용 권한 추가
 
@@ -110,7 +110,7 @@ API 사용 권한 패널의 ![스크린샷 사용자. 읽기 및 디렉터리. �
 ## <a name="resources"></a>리소스
 
 * [Azure Active Directory의 응용 프로그램 및 서비스 주체 개체](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals)
-* [빠른 시작: Azure Active Directory v 1.0 끝점으로 앱 등록](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v1-add-azure-ad-app)
+* [빠른 시작: Azure Active Directory v 1.0 엔드포인트으로 앱 등록](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v1-add-azure-ad-app)
 
 ## <a name="next-steps"></a>다음 단계
 

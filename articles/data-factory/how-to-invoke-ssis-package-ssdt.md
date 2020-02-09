@@ -52,7 +52,7 @@ Azure 사용 프로젝트를 ADF의 SSIS에 연결 하면 패키지를 Azure Fil
 3. **Adf에서 SSIS IR 선택** 페이지에서 기존 ADF를 선택 하 고 패키지를 실행 하려면 Azure-SSIS IR 하 고, 없는 경우 새로 만듭니다.
    - 기존 Azure-SSIS IR을 선택 하려면 먼저 관련 Azure 구독 및 ADF를 선택 합니다.
    - Azure-SSIS IR 없는 기존 ADF를 선택 하는 경우에는 **SSIS IR 만들기** 단추를 클릭 하 여 adf 포털/앱에 새 항목을 만듭니다.
-   - ADF가 없는 기존 Azure 구독을 선택 하는 경우 **SSIS Ir 만들기** 단추를 클릭 하 여 **Integration Runtime 만들기 마법사**를 시작 합니다 .이 마법사에서는 사용자를 대신 하 여 자동으로 새 Azure 리소스 그룹, Data Factory 및 SSIS IR을 만들 수 있습니다 .이에 대 한 자세한 **접두사-RG/DF/IR-YourCreationTime**.
+   - ADF가 없는 기존 Azure 구독을 선택 하는 경우 **SSIS Ir 만들기** 단추를 클릭 하 여 **Integration Runtime 만들기 마법사**를 시작 합니다 .이 마법사에서는 사용자를 대신 하 여 자동으로 새 Azure 리소스 그룹, Data Factory 및 SSIS IR을 만들 수 있습니다 .이에 대한 자세한 **접두사-RG/DF/IR-YourCreationTime**.
    
    ![ADF에서 SSIS IR 선택](media/how-to-invoke-ssis-package-ssdt/ssis-in-adf-connection-wizard2.png)
 
@@ -100,7 +100,7 @@ Azure에서 SSIS 패키지를 실행 하는 것은 **EncryptSensitiveWithUserKey
 
 2. 패키지 실행 태스크의 파일 연결 관리자에 있는 다른 패키지의 파일 경로를 새 UNC 경로로 바꿉니다.
    - SSDT를 실행 하는 컴퓨터에서 새 UNC 경로에 액세스할 수 없는 경우 파일 연결 관리자의 속성 패널에서 파일 경로를 변경할 수 있습니다.
-   - 또는 런타임에 파일 경로에 대 한 변수를 사용 하 여 올바른 값을 할당할 수 있습니다.
+   - 또는 런타임에 파일 경로에 대한 변수를 사용 하 여 올바른 값을 할당할 수 있습니다.
 
 패키지에 동일한 프로젝트의 다른 패키지를 참조 하는 패키지 실행 태스크가 포함 되어 있으면 추가 설정이 필요 하지 않습니다.
 

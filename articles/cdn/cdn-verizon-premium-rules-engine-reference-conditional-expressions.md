@@ -1,6 +1,6 @@
 ---
-title: Azure CDN-Verizon 프리미엄 규칙 엔진에 대 한 조건식
-description: Verizon 프리미엄 규칙 엔진 일치 조건 및 기능 Azure CDN에 대 한 참조 설명서입니다.
+title: Azure CDN-Verizon 프리미엄 규칙 엔진에 대한 조건식
+description: Verizon 프리미엄 규칙 엔진 일치 조건 및 기능 Azure CDN에 대한 참조 설명서입니다.
 services: cdn
 author: mdgattuso
 ms.service: azure-cdn
@@ -16,7 +16,7 @@ ms.locfileid: "74082965"
 ---
 # <a name="azure-cdn-from-verizon-premium-rules-engine-conditional-expressions"></a>Verizon 프리미엄 규칙 엔진 조건 식에서 Azure CDN
 
-이 문서에서는 CDN (Azure Content Delivery Network) [규칙 엔진](cdn-verizon-premium-rules-engine.md)에 대 한 조건부 식에 대 한 자세한 설명을 나열 합니다.
+이 문서에서는 CDN (Azure Content Delivery Network) [규칙 엔진](cdn-verizon-premium-rules-engine.md)에 대한 조건부 식에 대한 자세한 설명을 나열 합니다.
 
 규칙의 첫 번째 부분은 조건식입니다.
 

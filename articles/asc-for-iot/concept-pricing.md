@@ -1,6 +1,6 @@
 ---
-title: IoT 비용에 대 한 Azure Security Center 이해 | Microsoft Docs
-description: IoT에 대 한 Azure Security Center와 관련 된 비용 및 제어 하는 방법에 대해 알아봅니다.
+title: IoT 비용에 대한 Azure Security Center 이해 | Microsoft Docs
+description: IoT에 대한 Azure Security Center와 관련 된 비용 및 제어 하는 방법에 대해 알아봅니다.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -24,11 +24,11 @@ ms.locfileid: "71348514"
 ---
 # <a name="pricing-and-associated-costs"></a>가격 책정 및 관련 비용
 
-이 문서에서는 IoT 가격 책정 모델에 대 한 Azure Security Center 설명 하 고 관련 된 모든 비용을 요약 하 고 관리 하는 방법을 설명 합니다.
+이 문서에서는 IoT 가격 책정 모델에 대한 Azure Security Center 설명 하 고 관련 된 모든 비용을 요약 하 고 관리 하는 방법을 설명 합니다.
 
 ## <a name="pricing"></a>가격 책정
 
-IoT 가격 책정 모델에 대 한 Azure Security Center는 두 부분으로 구성 되며, IoT 용 Azure Security Center에서 IoT Hub [사용 하도록 설정](quickstart-onboard-iot-hub.md) 되 면 요금이 청구 됩니다.
+IoT 가격 책정 모델에 대한 Azure Security Center는 두 부분으로 구성 되며, IoT 용 Azure Security Center에서 IoT Hub [사용 하도록 설정](quickstart-onboard-iot-hub.md) 되 면 요금이 청구 됩니다.
 
 - 장치-IoT Hub 로그 분석을 기반으로 하는 장치 기본 제공 보안 기능입니다.
 
@@ -39,7 +39,7 @@ IoT 가격 책정 모델에 대 한 Azure Security Center는 두 부분으로 �
 
 ## <a name="associated-costs"></a>관련 비용
 
-IoT에 대 한 Azure Security Center에는 직접 가격 책정의 일부가 아닌 연결 된 비용이 있습니다.
+IoT에 대한 Azure Security Center에는 직접 가격 책정의 일부가 아닌 연결 된 비용이 있습니다.
 
 
 - 저장소 비용 Log Analytics
@@ -54,7 +54,7 @@ IoT에 대 한 Azure Security Center에는 직접 가격 책정의 일부가 아
 
 3. **설정**을 클릭합니다.
 
-다음 표에서는 각 옵션의 관련 비용 및 의미에 대 한 요약을 제공 합니다.
+다음 표에서는 각 옵션의 관련 비용 및 의미에 대한 요약을 제공 합니다.
 
 |     | 사용법 | 설명 |
 | --- | --- | --- |
@@ -64,15 +64,15 @@ IoT에 대 한 Azure Security Center에는 직접 가격 책정의 일부가 아
 |
 
 >[!Important]
-> 옵트아웃은 IoT 보안 기능 가용성에 대 한 Azure Security Center에 심각한 영향을 미칩니다. 
+> 옵트아웃은 IoT 보안 기능 가용성에 대한 Azure Security Center에 심각한 영향을 미칩니다. 
   
 | 옵트아웃 | 관련성 |
 | --- | --- |
 | _쌍 메타 데이터 컬렉션_ | [사용자 지정 경고](quickstart-create-custom-alerts.md) 사용 안 함 |
 | | IoT Edge 매니페스트 권장 구성 사용 안 함 |
 | | 장치 id 기반 권장 사항 및 경고 사용 안 함 |
-| _원시 장치 보안 이벤트 저장_ | 장치 OS 기준 권장 사항에 대 한 세부 정보를 사용할 수 없음 |
-| | [경고](concept-security-alerts.md) 및 [권장 사항](concept-recommendations.md) 조사에 대 한 세부 정보를 사용할 수 없음 |
+| _원시 장치 보안 이벤트 저장_ | 장치 OS 기준 권장 사항에 대한 세부 정보를 사용할 수 없음 |
+| | [경고](concept-security-alerts.md) 및 [권장 사항](concept-recommendations.md) 조사에 대한 세부 정보를 사용할 수 없음 |
 |
 
 

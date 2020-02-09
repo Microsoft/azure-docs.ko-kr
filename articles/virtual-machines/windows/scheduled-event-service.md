@@ -26,7 +26,7 @@ ms.locfileid: "74073307"
 
 ## <a name="routing-scheduled-events-to-log-analytics"></a>Log Analytics 예약 된 이벤트 라우팅
 
-Scheduled Events는 azure [Instance Metadata Service](instance-metadata-service.md)의 일부로 제공 되며, 모든 azure 가상 머신에서 사용할 수 있습니다. 고객은 가상 머신의 끝점을 쿼리하여 예약 된 유지 관리 알림을 찾고, 상태를 저장 하 고 가상 머신을 순환에서 제외 하는 등의 완화 작업을 수행할 수 있도록 자동화를 작성할 수 있습니다. Azure 유지 관리 이벤트의 감사 로그를 사용할 수 있도록 Scheduled Events를 기록 하는 자동화를 작성 하는 것이 좋습니다. 
+Scheduled Events는 azure [Instance Metadata Service](instance-metadata-service.md)의 일부로 제공 되며, 모든 azure 가상 머신에서 사용할 수 있습니다. 고객은 가상 머신의 엔드포인트을 쿼리하여 예약 된 유지 관리 알림을 찾고, 상태를 저장 하 고 가상 머신을 순환에서 제외 하는 등의 완화 작업을 수행할 수 있도록 자동화를 작성할 수 있습니다. Azure 유지 관리 이벤트의 감사 로그를 사용할 수 있도록 Scheduled Events를 기록 하는 자동화를 작성 하는 것이 좋습니다. 
 
 이 문서에서는 Log Analytics에 유지 관리 Scheduled Events를 캡처하는 방법을 안내 합니다. 그런 다음 팀에 전자 메일을 보내고 가상 컴퓨터에 영향을 준 모든 이벤트의 기록 보기를 가져오는 등의 몇 가지 기본적인 알림 작업을 트리거합니다. 이벤트 집계 및 자동화를 위해 [Log Analytics](/azure/azure-monitor/learn/quick-create-workspace)를 사용 하지만 모든 모니터링 솔루션을 사용 하 여 이러한 로그를 수집 하 고 자동화를 트리거할 수 있습니다.
 

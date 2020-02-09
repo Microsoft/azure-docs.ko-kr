@@ -45,13 +45,13 @@ azcopy login [flags]
 
 ## <a name="examples"></a>예시
 
-일반으로 설정 된 기본 AAD 테 넌 트 ID로 대화형으로 로그인 합니다.
+일반으로 설정 된 기본 AAD 테넌트 ID로 대화형으로 로그인 합니다.
 
 ```azcopy
 azcopy login
 ```
 
-지정 된 테 넌 트 ID로 대화형으로 로그인 합니다.
+지정 된 테넌트 ID로 대화형으로 로그인 합니다.
 
 ```azcopy
 azcopy login --tenant-id "[TenantID]"
@@ -101,7 +101,7 @@ azcopy login --service-principal --certificate-path /path/to/my/cert
 
 |옵션|Description|
 |--|--|
-|--aad-끝점|사용할 Azure Active Directory 끝점입니다. 기본 (https://login.microsoftonline.com) 는 공용 Azure 클라우드에 대해 올바릅니다. 국가별 클라우드에서 인증할 때이 매개 변수를 설정 합니다. [AZURE AD 인증 끝점](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud#azure-ad-authentication-endpoints)을 참조 하세요.
+|--aad-엔드포인트|사용할 Azure Active Directory 엔드포인트입니다. 기본 (https://login.microsoftonline.com) 는 공용 Azure 클라우드에 대해 올바릅니다. 국가별 클라우드에서 인증할 때이 매개 변수를 설정 합니다. [AZURE AD 인증 엔드포인트](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud#azure-ad-authentication-endpoints)을 참조 하세요.
 관리 서비스 ID에는이 플래그가 필요 하지 않습니다.|
 |--응용 프로그램 id 문자열|사용자 할당 id의 응용 프로그램 ID입니다. 서비스 주체 인증에 필요 합니다.|
 |--certificate-path 문자열|SPN 인증을 위한 인증서의 경로입니다. 인증서 기반 서비스 주체 인증에 필요 합니다.|
@@ -111,7 +111,7 @@ azcopy login --service-principal --certificate-path /path/to/my/cert
 |--id-개체 id 문자열|사용자 할당 id의 개체 ID입니다.|
 |--id-리소스 id 문자열|사용자 할당 id의 리소스 ID입니다.|
 |--서비스 주체|인증서 또는 암호를 사용 하 여 SPN (서비스 사용자 이름)을 통해 로그인 합니다. 클라이언트 암호 또는 인증서 암호는 해당 환경 변수에 배치 되어야 합니다. 환경 변수의 이름 및 설명을 보려면 `AzCopy env`를 입력 합니다.|
-|--테 넌 트-id 문자열| OAuth 장치 대화형 로그인에 사용할 Azure active directory 테 넌 트 ID입니다.|
+|--테넌트-id 문자열| OAuth 장치 대화형 로그인에 사용할 Azure active directory 테넌트 ID입니다.|
 
 ## <a name="options-inherited-from-parent-commands"></a>부모 명령에서 상속 된 옵션
 

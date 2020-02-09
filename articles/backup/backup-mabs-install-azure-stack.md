@@ -335,7 +335,7 @@ Azure 연결 및 Azure 구독 상태를 알고 있다면 아래 표를 사용하
 
 ### <a name="recovering-from-loss-of-connectivity"></a>연결 끊김 복구
 
-방화벽 또는 프록시가 Azure에 대 한 액세스를 차단 하는 경우 방화벽/프록시 프로필 허용 목록에 다음 도메인 주소를 추가 합니다.
+방화벽 또는 프록시가 Azure에 대한 액세스를 차단 하는 경우 방화벽/프록시 프로필 허용 목록에 다음 도메인 주소를 추가 합니다.
 
 - `http://www.msftncsi.com/ncsi.txt`
 - \*.Microsoft.com

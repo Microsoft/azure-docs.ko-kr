@@ -75,7 +75,7 @@ Microsoft id 플랫폼 및 MSAL (Microsoft 인증 라이브러리)에 대해 알
         > [!VIDEO https://www.youtube.com/embed/znSN_3JAuoU]
     :::column-end:::
     :::column:::
-        테 넌 트 설명
+        테넌트 설명
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/mDhT4Zv1fZU]
@@ -116,7 +116,7 @@ Microsoft id 플랫폼 및 MSAL (Microsoft 인증 라이브러리)에 대해 알
 
 :::row:::
     :::column:::
-        V 2.0으로 전환 하는 경우의 이점 및 끝점
+        V 2.0으로 전환 하는 경우의 이점 및 엔드포인트
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/qpdC45tZYDg]

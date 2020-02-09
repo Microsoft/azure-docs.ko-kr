@@ -26,11 +26,11 @@ Azure Dedicated HSM 서비스는 고객이 완벽한 관리 제어 및 관리 �
 
 ## <a name="getting-support"></a>지원 받기
 
-전용 HSM에 대 한 고객 지원은 Microsoft와 Gemalto 간의 공동 작업입니다. 하드웨어 문제나 네트워크 경로 문제는 Microsoft에서 해결 하며, 구성, 소프트웨어, 펌웨어 및 응용 프로그램 개발과 같은 실제 HSM을 사용 하는 모든 작업은 Gemalto에 의해 처리 됩니다. 이 지원 모델은 가장 효율적인 지원으로 가장 빠르게 라우팅할 수 있도록 합니다. 특정 문제를 해결 하는 경우 Microsoft와의 지원 요청을 제기 하 고 적절 하 게 전달 되도록 합니다. Microsoft는 모든 지원 시나리오를 계속 활용 하 고 고객을 위한 최고의 지원 환경을 제공 합니다.
+전용 HSM에 대한 고객 지원은 Microsoft와 Gemalto 간의 공동 작업입니다. 하드웨어 문제나 네트워크 경로 문제는 Microsoft에서 해결 하며, 구성, 소프트웨어, 펌웨어 및 응용 프로그램 개발과 같은 실제 HSM을 사용 하는 모든 작업은 Gemalto에 의해 처리 됩니다. 이 지원 모델은 가장 효율적인 지원으로 가장 빠르게 라우팅할 수 있도록 합니다. 특정 문제를 해결 하는 경우 Microsoft와의 지원 요청을 제기 하 고 적절 하 게 전달 되도록 합니다. Microsoft는 모든 지원 시나리오를 계속 활용 하 고 고객을 위한 최고의 지원 환경을 제공 합니다.
 
 ## <a name="gemalto-support"></a>Gemalto 지원
 
-전용 HSM 서비스를 사용 하는 고객은 Plus 지원 계획에 따라 Gemalto의 지원을 받을 수 있습니다. 이렇게 하려면 Gemalto 지원 포털을 사용 하는 등록 프로세스만 있으면 됩니다. 이에 대 한 고객 ID와 지침은 전용 HSM 서비스에 대 한 액세스 권한을 얻기 위해 Microsoft와 초기 engagement의 일부로 제공 됩니다. Gemalto에서 지원하는 메커니즘은 [고객 지원 포털](https://supportportal.gemalto.com/csm/)을 통해 이루어집니다.
+전용 HSM 서비스를 사용 하는 고객은 Plus 지원 계획에 따라 Gemalto의 지원을 받을 수 있습니다. 이렇게 하려면 Gemalto 지원 포털을 사용 하는 등록 프로세스만 있으면 됩니다. 이에 대한 고객 ID와 지침은 전용 HSM 서비스에 대한 액세스 권한을 얻기 위해 Microsoft와 초기 engagement의 일부로 제공 됩니다. Gemalto에서 지원하는 메커니즘은 [고객 지원 포털](https://supportportal.gemalto.com/csm/)을 통해 이루어집니다.
 핵심은 고객이 지원 포털에서 다운로드를 통해 HSM (예: 클라이언트 액세스 소프트웨어 및 Sdk)을 사용 하는 데 필요한 모든 소프트웨어와 설명서를 Gemalto에서 제공 한다는 점입니다.
 
 ### <a name="software-components"></a>소프트웨어 구성 요소

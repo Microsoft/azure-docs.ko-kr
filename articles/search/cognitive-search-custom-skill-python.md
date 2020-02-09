@@ -52,7 +52,7 @@ Visual Studio Code의 Azure Functions 프로젝트 템플릿은 Azure에서 함�
 1. Python 버전을 선택 합니다 (버전 3.7.5는 Azure Functions에서 지원 됨).
 1. 프로젝트의 첫 번째 함수에 사용할 템플릿을 선택 합니다. **Http 트리거** 를 선택 하 여 새 함수 앱에서 http 트리거 함수를 만듭니다.
 1. 함수 이름을 제공 합니다. 이 경우 **Concatenator** 을 사용 하겠습니다. 
-1. 권한 수준으로 **기능** 을 선택 합니다. 즉, 함수의 HTTP 끝점을 호출 하는 [함수 키](../azure-functions/functions-bindings-http-webhook.md#authorization-keys) 를 제공 합니다. 
+1. 권한 수준으로 **기능** 을 선택 합니다. 즉, 함수의 HTTP 엔드포인트을 호출 하는 [함수 키](../azure-functions/functions-bindings-http-webhook.md#authorization-keys) 를 제공 합니다. 
 1. 프로젝트를 열 방법을 선택 합니다. 이 단계에서는 **작업 영역에 추가** 를 선택 하 여 현재 작업 영역에서 함수 앱을 만듭니다.
 
 Visual Studio Code는 새 작업 영역에서 함수 앱 프로젝트를 만듭니다. 이 프로젝트에는 [host.json](../azure-functions/functions-host-json.md) 및 [local.settings.json](../azure-functions/functions-run-local.md#local-settings-file) 구성 파일과 언어별 프로젝트 파일이 포함됩니다. 
@@ -175,7 +175,7 @@ Visual Studio Code를 사용 하면 코드를 쉽게 디버그할 수 있습니�
 
 관심 있는 줄에서 ' F9 '를 눌러 코드에서 중단점을 설정할 수 있습니다.
 
-디버깅을 시작 하면 함수는 로컬로 실행 됩니다. Postman 또는 Fiddler와 같은 도구를 사용 하 여 localhost에 요청을 실행할 수 있습니다. 터미널 창에서 로컬 끝점의 위치를 확인 합니다. 
+디버깅을 시작 하면 함수는 로컬로 실행 됩니다. Postman 또는 Fiddler와 같은 도구를 사용 하 여 localhost에 요청을 실행할 수 있습니다. 터미널 창에서 로컬 엔드포인트의 위치를 확인 합니다. 
 
 ## <a name="publish-your-function"></a>함수 게시
 

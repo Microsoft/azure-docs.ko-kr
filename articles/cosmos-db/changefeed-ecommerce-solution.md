@@ -43,7 +43,7 @@ Azure Cosmos DB 변경 피드는 해당 레코드가 만들어지거나 수정 �
 
 2. **Cosmos DB:** 생성 된 데이터는 Azure Cosmos 컨테이너에 저장 됩니다.  
 
-3. **변경 피드:** 변경 피드가 Azure Cosmos 컨테이너에 대 한 변경 내용을 수신 대기 합니다. 새 문서가 컬렉션에 추가될 때마다, 즉 사용자가 항목을 조회하거나 자신의 카트에 항목을 추가하거나 항목을 구입하는 것과 같은 이벤트가 발생하면 변경 피드에서 [Azure Function](../azure-functions/functions-overview.md)을 트리거합니다.  
+3. **변경 피드:** 변경 피드가 Azure Cosmos 컨테이너에 대한 변경 내용을 수신 대기 합니다. 새 문서가 컬렉션에 추가될 때마다, 즉 사용자가 항목을 조회하거나 자신의 카트에 항목을 추가하거나 항목을 구입하는 것과 같은 이벤트가 발생하면 변경 피드에서 [Azure Function](../azure-functions/functions-overview.md)을 트리거합니다.  
 
 4. **Azure Function:** 새 데이터를 처리하여 [Azure Event Hub](../event-hubs/event-hubs-about.md)로 보냅니다.  
 
@@ -143,7 +143,7 @@ Azure Event Hub는 이벤트 데이터를 받고, 저장하고, 처리하고, �
 
 ## <a name="set-up-azure-function-to-read-the-change-feed"></a>변경 피드를 읽도록 Azure Function 설정
 
-새 문서를 만들거나 Cosmos 컨테이너에서 현재 문서를 수정 하면 변경 피드는 해당 수정 된 문서를 컬렉션 변경 내용에 대 한 기록에 자동으로 추가 합니다. 이제 변경 피드를 처리하는 Azure Function을 작성하고 실행합니다. 만든 컬렉션에서 문서가 만들어지거나 수정되면 변경 피드에서 Azure Function을 트리거합니다. 그러면 Azure Function에서 수정된 문서를 Event Hub로 보냅니다.
+새 문서를 만들거나 Cosmos 컨테이너에서 현재 문서를 수정 하면 변경 피드는 해당 수정 된 문서를 컬렉션 변경 내용에 대한 기록에 자동으로 추가 합니다. 이제 변경 피드를 처리하는 Azure Function을 작성하고 실행합니다. 만든 컬렉션에서 문서가 만들어지거나 수정되면 변경 피드에서 Azure Function을 트리거합니다. 그러면 Azure Function에서 수정된 문서를 Event Hub로 보냅니다.
 
 1. 디바이스에서 복제한 리포지토리로 돌아갑니다.  
 

@@ -20,9 +20,9 @@ ms.locfileid: "67461602"
 ---
 # <a name="use-managed-identities-in-azure-api-management"></a>Azure API Management에서 관리 되는 id를 사용 합니다.
 
-이 문서에서는 API Management 서비스 인스턴스에 대 한 관리 되는 id를 만드는 방법과 다른 리소스에 액세스 하는 방법을 보여 줍니다. Azure Active Directory (Azure AD)에서 생성 된 관리 되는 id를 쉽고 안전 하 게 Azure Key Vault 처럼 하 다른 Azure AD로 보호 된 리소스에 액세스 하기 위해 API Management 인스턴스를 허용 합니다. 이 id가 Azure에서 관리 및 프로 비전 하거나 암호를 회전 하면 필요가 없습니다. 관리 되는 id에 대 한 자세한 내용은 참조 하세요. [Azure 리소스에 대 한 관리 되는 id 란](../active-directory/managed-identities-azure-resources/overview.md)합니다.
+이 문서에서는 API Management 서비스 인스턴스에 대한 관리 되는 id를 만드는 방법과 다른 리소스에 액세스 하는 방법을 보여 줍니다. Azure Active Directory (Azure AD)에서 생성 된 관리 되는 id를 쉽고 안전 하 게 Azure Key Vault 처럼 하 다른 Azure AD로 보호 된 리소스에 액세스 하기 위해 API Management 인스턴스를 허용 합니다. 이 id가 Azure에서 관리 및 프로 비전 하거나 암호를 회전 하면 필요가 없습니다. 관리 되는 id에 대한 자세한 내용은 참조 하세요. [Azure 리소스에 대한 관리 되는 id 란](../active-directory/managed-identities-azure-resources/overview.md)합니다.
 
-## <a name="create-a-managed-identity-for-an-api-management-instance"></a>API Management 인스턴스에 대 한 관리 되는 id 만들기
+## <a name="create-a-managed-identity-for-an-api-management-instance"></a>API Management 인스턴스에 대한 관리 되는 id 만들기
 
 ### <a name="using-the-azure-portal"></a>Azure Portal 사용
 
@@ -75,7 +75,7 @@ API Management 인스턴스는 ID를 사용하여 리소스 정의에 다음 속
 ## <a name="use-the-managed-service-identity-to-access-other-resources"></a>관리되는 서비스 ID를 사용하여 다른 리소스에 액세스
 
 > [!NOTE]
-> 현재 API Management 사용자 지정 도메인 이름에 대 한 Azure Key Vault에서 인증서를 얻으려면 관리 되는 id는 사용할 수 있습니다. 더 많은 시나리오는 곧 지원될 예정입니다.
+> 현재 API Management 사용자 지정 도메인 이름에 대한 Azure Key Vault에서 인증서를 얻으려면 관리 되는 id는 사용할 수 있습니다. 더 많은 시나리오는 곧 지원될 예정입니다.
 >
 >
 
@@ -233,8 +233,8 @@ Set-AzureKeyVaultSecret -VaultName KEY_VAULT_NAME -Name KEY_VAULT_SECRET_NAME -S
 
 ## <a name="next-steps"></a>다음 단계
 
-Azure 리소스에 대 한 관리 되는 id에 대 한 자세한 정보:
+Azure 리소스에 대한 관리 되는 id에 대한 자세한 정보:
 
-* [Azure 리소스에 대 한 관리 되는 id 란](../active-directory/managed-identities-azure-resources/overview.md)
+* [Azure 리소스에 대한 관리 되는 id 란](../active-directory/managed-identities-azure-resources/overview.md)
 * [Azure 리소스 관리자 템플릿](https://github.com/Azure/azure-quickstart-templates)
 * [정책에서 관리 되는 id를 사용 하 여 인증](./api-management-authentication-policies.md#ManagedIdentity)

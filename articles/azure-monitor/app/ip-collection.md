@@ -22,9 +22,9 @@ ms.locfileid: "75432598"
 
 기본적으로 IP 주소는 임시로 수집 되지만 Application Insights에 저장 되지 않습니다. 기본 프로세스는 다음과 같습니다.
 
-IP 주소는 원격 분석 데이터의 일부로 Application Insights 전송 됩니다. Azure에서 수집 끝점에 도달 하면 IP 주소는 [MaxMind에서 GeoLite2를](https://dev.maxmind.com/geoip/geoip2/geolite2/)사용 하 여 지리적 위치 조회를 수행 하는 데 사용 됩니다. 이 조회 결과는 다음 필드 `client_City`, `client_StateOrProvince``client_CountryOrRegion`를 채우는 데 사용 됩니다. 이 시점에서 IP 주소가 삭제 되 고 `0.0.0.0` `client_IP` 필드에 기록 됩니다.
+IP 주소는 원격 분석 데이터의 일부로 Application Insights 전송 됩니다. Azure에서 수집 엔드포인트에 도달 하면 IP 주소는 [MaxMind에서 GeoLite2를](https://dev.maxmind.com/geoip/geoip2/geolite2/)사용 하 여 지리적 위치 조회를 수행 하는 데 사용 됩니다. 이 조회 결과는 다음 필드 `client_City`, `client_StateOrProvince``client_CountryOrRegion`를 채우는 데 사용 됩니다. 이 시점에서 IP 주소가 삭제 되 고 `0.0.0.0` `client_IP` 필드에 기록 됩니다.
 
-* 브라우저 원격 분석: 보낸 사람의 IP 주소를 일시적으로 수집 합니다. IP 주소는 수집 끝점에서 계산 됩니다.
+* 브라우저 원격 분석: 보낸 사람의 IP 주소를 일시적으로 수집 합니다. IP 주소는 수집 엔드포인트에서 계산 됩니다.
 * 서버 원격 분석: Application Insights 모듈은 클라이언트 IP 주소를 일시적으로 수집 합니다. `X-Forwarded-For`가 설정된 경우에는 수집되지 않습니다.
 
 이 동작은 의도 하지 않은 개인 데이터 컬렉션을 방지 하기 위한 것입니다. 가능 하면 개인 데이터의 수집을 방지 하는 것이 좋습니다. 
@@ -203,9 +203,9 @@ appInsights.defaultClient.addTelemetryProcessor((envelope) => {
 
 ### <a name="client-side-javascript"></a>클라이언트 쪽 JavaScript
 
-서버 쪽 Sdk와 달리 클라이언트 쪽 Javascript SDK는 IP 주소를 계산 하지 않습니다. 기본적으로 클라이언트 쪽 원격 분석에 대 한 IP 주소 계산은 원격 분석 도착 시 Azure의 수집 끝점에서 수행 됩니다. 즉, 클라이언트 쪽 데이터를 프록시로 보낸 다음 수집 끝점으로 전달 하는 경우 IP 주소 계산에는 클라이언트가 아닌 프록시의 IP 주소가 표시 될 수 있습니다. 프록시가 사용 되지 않는 경우에는 문제가 되지 않습니다.
+서버 쪽 Sdk와 달리 클라이언트 쪽 Javascript SDK는 IP 주소를 계산 하지 않습니다. 기본적으로 클라이언트 쪽 원격 분석에 대 한 IP 주소 계산은 원격 분석 도착 시 Azure의 수집 엔드포인트에서 수행 됩니다. 즉, 클라이언트 쪽 데이터를 프록시로 보낸 다음 수집 엔드포인트으로 전달 하는 경우 IP 주소 계산에는 클라이언트가 아닌 프록시의 IP 주소가 표시 될 수 있습니다. 프록시가 사용 되지 않는 경우에는 문제가 되지 않습니다.
 
-클라이언트 쪽에서 직접 IP 주소를 계산 하려는 경우 사용자 지정 논리를 추가 하 여이 계산을 수행 하 고 결과를 사용 하 여 `ai.location.ip` 태그를 설정 해야 합니다. `ai.location.ip` 설정 되 면 수집 끝점에서 IP 주소 계산을 수행 하지 않으며 제공 된 IP 주소를 사용 하 여 지역 조회를 수행 합니다. 이 시나리오에서 IP 주소는 기본적으로 0으로 제한 되어 있습니다. 
+클라이언트 쪽에서 직접 IP 주소를 계산 하려는 경우 사용자 지정 논리를 추가 하 여이 계산을 수행 하 고 결과를 사용 하 여 `ai.location.ip` 태그를 설정 해야 합니다. `ai.location.ip` 설정 되 면 수집 엔드포인트에서 IP 주소 계산을 수행 하지 않으며 제공 된 IP 주소를 사용 하 여 지역 조회를 수행 합니다. 이 시나리오에서 IP 주소는 기본적으로 0으로 제한 되어 있습니다. 
 
 사용자 지정 논리에서 계산 된 전체 IP 주소를 유지 하려면 `ai.location.ip`에서 제공한 IP 주소 데이터를 별도의 사용자 지정 필드에 복사 하는 원격 분석 이니셜라이저를 사용할 수 있습니다. 그러나 타사 라이브러리 또는 고유한 사용자 지정 클라이언트 쪽 IP 컬렉션 논리를 사용 하지 않고 서버 쪽 Sdk와 달리 클라이언트 쪽 SDK는 IP를 계산 하지 않습니다.    
 

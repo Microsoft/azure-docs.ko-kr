@@ -19,7 +19,7 @@ ms.locfileid: "73885329"
 
 현재 azure Kubernetes 서비스 (AKS) 클러스터 (특히 Kubernetes 클라우드 공급자)에는 Azure에서 부하 분산 장치 및 관리 디스크와 같은 추가 리소스를 만들기 위한 *서비스 주체가* 필요 합니다. 서비스 주체를 제공 하거나 사용자를 대신 하 여 AKS를 만들어야 합니다. 서비스 사용자에 게는 일반적으로 만료 날짜가 있습니다. 클러스터는 궁극적으로 클러스터 작동을 유지 하기 위해 서비스 주체를 갱신 해야 하는 상태에 도달 합니다. 서비스 주체를 관리 하면 복잡성이 증가 합니다.
 
-*관리 id* 는 기본적으로 서비스 사용자를 중심으로 하는 래퍼로, 관리를 단순화 합니다. 자세한 내용은 [Azure 리소스에 대 한 관리 되는 id](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)를 참조 하세요.
+*관리 id* 는 기본적으로 서비스 사용자를 중심으로 하는 래퍼로, 관리를 단순화 합니다. 자세한 내용은 [Azure 리소스에 대한 관리 되는 id](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)를 참조 하세요.
 
 AKS은 두 개의 관리 되는 id를 만듭니다.
 

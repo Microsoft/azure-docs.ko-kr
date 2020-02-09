@@ -1,6 +1,6 @@
 ---
 title: Azure Functions를 사용 하 여 사용자 지정 가용성 테스트 만들기 및 실행
-description: 이 문서에서는 동작 트리거 함수에 지정 된 구성에 따라 주기적으로 실행 되는 지 수 ()를 사용 하 여 Azure 함수를 만드는 방법을 설명 합니다. 이 테스트의 결과는 Application Insights 리소스로 전송 되며, 여기서 가용성 결과 데이터를 쿼리하고 경고할 수 있습니다. 사용자 지정 된 테스트를 통해 포털 UI를 사용 하 여 보다 복잡 한 가용성 테스트를 작성 하거나, Azure VNET 내부에서 앱을 모니터링 하거나, 끝점 주소를 변경 하거나, 지역에서 사용할 수 없는 경우 가용성 테스트를 만들 수 있습니다.
+description: 이 문서에서는 동작 트리거 함수에 지정 된 구성에 따라 주기적으로 실행 되는 지 수 ()를 사용 하 여 Azure 함수를 만드는 방법을 설명 합니다. 이 테스트의 결과는 Application Insights 리소스로 전송 되며, 여기서 가용성 결과 데이터를 쿼리하고 경고할 수 있습니다. 사용자 지정 된 테스트를 통해 포털 UI를 사용 하 여 보다 복잡 한 가용성 테스트를 작성 하거나, Azure VNET 내부에서 앱을 모니터링 하거나, 엔드포인트 주소를 변경 하거나, 지역에서 사용할 수 없는 경우 가용성 테스트를 만들 수 있습니다.
 ms.service: azure-monitor
 ms.subservice: application-insights
 ms.topic: conceptual
@@ -16,7 +16,7 @@ ms.locfileid: "74815726"
 ---
 # <a name="create-and-run-custom-availability-tests-using-azure-functions"></a>Azure Functions를 사용 하 여 사용자 지정 가용성 테스트 만들기 및 실행
 
-이 문서에서는 사용자 고유의 비즈니스 논리를 사용 하 여 동작 트리거 함수에 지정 된 구성에 따라 주기적으로 실행 되는 지 수 ()를 사용 하 여 Azure 함수를 만드는 방법을 설명 합니다. 이 테스트의 결과는 Application Insights 리소스로 전송 되며, 여기서 가용성 결과 데이터를 쿼리하고 경고할 수 있습니다. 이를 통해 포털에서 [가용성 모니터링](../../azure-monitor/app/monitor-web-app-availability.md) 을 통해 수행할 수 있는 것과 유사한 사용자 지정 된 테스트를 만들 수 있습니다. 사용자 지정 된 테스트를 통해 포털 UI를 사용 하 여 보다 복잡 한 가용성 테스트를 작성 하거나, Azure VNET 내부에서 앱을 모니터링 하거나, 끝점 주소를 변경 하거나, 지역에서이 기능을 사용할 수 없는 경우에도 가용성 테스트를 만들 수 있습니다.
+이 문서에서는 사용자 고유의 비즈니스 논리를 사용 하 여 동작 트리거 함수에 지정 된 구성에 따라 주기적으로 실행 되는 지 수 ()를 사용 하 여 Azure 함수를 만드는 방법을 설명 합니다. 이 테스트의 결과는 Application Insights 리소스로 전송 되며, 여기서 가용성 결과 데이터를 쿼리하고 경고할 수 있습니다. 이를 통해 포털에서 [가용성 모니터링](../../azure-monitor/app/monitor-web-app-availability.md) 을 통해 수행할 수 있는 것과 유사한 사용자 지정 된 테스트를 만들 수 있습니다. 사용자 지정 된 테스트를 통해 포털 UI를 사용 하 여 보다 복잡 한 가용성 테스트를 작성 하거나, Azure VNET 내부에서 앱을 모니터링 하거나, 엔드포인트 주소를 변경 하거나, 지역에서이 기능을 사용할 수 없는 경우에도 가용성 테스트를 만들 수 있습니다.
 
 > [!NOTE]
 > 이 예제는 Azure Function 내에서 지 수 () API 호출이 작동 하는 방식에 대 한 메커니즘을 보여 주기 위해서만 설계 되었습니다. 이를 완전 한 기능을 갖춘 가용성 테스트로 전환 하는 데 필요한 기본 HTTP 테스트 코드/비즈니스 논리를 작성 하는 방법에 대해서는 설명 하지 않습니다. 기본적으로이 예제를 진행 하는 경우 항상 오류를 생성 하는 가용성 테스트를 만듭니다.
@@ -47,7 +47,7 @@ ms.locfileid: "74815726"
 >Azure Portal에서 Azure 함수를 실행 합니다. csx](media/availability-azure-functions/runcsx.png) ![
 
 > [!NOTE]
-> `EndpointAddress= https://dc.services.visualstudio.com/v2/track`사용 하는 끝점 주소: 리소스가 Azure Government 또는 Azure 중국와 같은 지역에 있는 경우를 제외 하 고 [기본 끝점 재정의](https://docs.microsoft.com/azure/azure-monitor/app/custom-endpoints#regions-that-require-endpoint-modification) 에 대 한이 문서를 참조 하 고 해당 지역에 적절 한 원격 분석 채널 끝점을 선택 합니다.
+> `EndpointAddress= https://dc.services.visualstudio.com/v2/track`사용 하는 엔드포인트 주소: 리소스가 Azure Government 또는 Azure 중국와 같은 지역에 있는 경우를 제외 하 고 [기본 엔드포인트 재정의](https://docs.microsoft.com/azure/azure-monitor/app/custom-endpoints#regions-that-require-endpoint-modification) 에 대 한이 문서를 참조 하 고 해당 지역에 적절 한 원격 분석 채널 엔드포인트을 선택 합니다.
 
 ```C#
 #load "runAvailabilityTest.csx"

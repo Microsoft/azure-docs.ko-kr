@@ -295,7 +295,7 @@ Python에서 특성을 지원 하지 않습니다.
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-`QueueTrigger` 주석은 함수를 트리거하는 큐에 대 한 액세스를 제공 합니다. 다음 예에서는 `message` 매개 변수를 통해 함수에서 큐 메시지를 사용할 수 있도록 합니다.
+`QueueTrigger` 주석은 함수를 트리거하는 큐에 대한 액세스를 제공 합니다. 다음 예에서는 `message` 매개 변수를 통해 함수에서 큐 메시지를 사용할 수 있도록 합니다.
 
 ```java
 package com.function;
@@ -370,7 +370,7 @@ public class QueueTriggerDemo {
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-[QueueTrigger](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.queuetrigger?view=azure-java-stable) 주석은 함수를 트리거한 큐 메시지에 대 한 액세스를 제공 합니다.
+[QueueTrigger](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.queuetrigger?view=azure-java-stable) 주석은 함수를 트리거한 큐 메시지에 대한 액세스를 제공 합니다.
 
 ---
 
@@ -419,7 +419,7 @@ public class QueueTriggerDemo {
 
 ## <a name="trigger---hostjson-properties"></a>트리거 - host.json 속성
 
-[host.json](functions-host-json.md#queues) 파일에는 큐 트리거 동작을 제어하는 설정이 포함됩니다. 사용 가능한 설정에 대 한 자세한 내용은 [host-a 설정](#hostjson-settings) 섹션을 참조 하세요.
+[host.json](functions-host-json.md#queues) 파일에는 큐 트리거 동작을 제어하는 설정이 포함됩니다. 사용 가능한 설정에 대한 자세한 내용은 [host-a 설정](#hostjson-settings) 섹션을 참조 하세요.
 
 ## <a name="output"></a>출력
 
@@ -619,7 +619,7 @@ def main(req: func.HttpRequest, msg: func.Out[typing.List[str]]) -> func.HttpRes
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
- 다음 예제에서는 HTTP 요청에 의해 트리거되는 경우에 대 한 큐 메시지를 만드는 Java 함수를 보여 줍니다.
+ 다음 예제에서는 HTTP 요청에 의해 트리거되는 경우에 대한 큐 메시지를 만드는 Java 함수를 보여 줍니다.
 
 ```java
 @FunctionName("httpToQueue")
@@ -683,7 +683,7 @@ Python에서 특성을 지원 하지 않습니다.
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-`QueueOutput` 주석을 사용 하 여 함수 출력에 대 한 메시지를 기록할 수 있습니다. 다음 예제에서는 큐 메시지를 만드는 HTTP 트리거 함수를 보여 줍니다.
+`QueueOutput` 주석을 사용 하 여 함수 출력에 대한 메시지를 기록할 수 있습니다. 다음 예제에서는 큐 메시지를 만드는 HTTP 트리거 함수를 보여 줍니다.
 
 ```java
 package com.function;
@@ -796,7 +796,7 @@ C# 및 C# 스크립트에서 다음 형식 중 하나를 사용하여 여러 큐
 
 ## <a name="hostjson-settings"></a>host.json 설정
 
-이 섹션에서는 버전 2.x 이상에서이 바인딩에 사용할 수 있는 전역 구성 설정에 대해 설명 합니다. 아래의 예제 호스트 json 파일에는이 바인딩에 대 한 버전 2.x + 설정만 포함 되어 있습니다. 2\.x 이상 버전의 전역 구성 설정에 대 한 자세한 내용은 [Azure Functions에 대 한 호스트 json 참조](functions-host-json.md)를 참조 하세요.
+이 섹션에서는 버전 2.x 이상에서이 바인딩에 사용할 수 있는 전역 구성 설정에 대해 설명 합니다. 아래의 예제 호스트 json 파일에는이 바인딩에 대한 버전 2.x + 설정만 포함 되어 있습니다. 2\.x 이상 버전의 전역 구성 설정에 대한 자세한 내용은 [Azure Functions에 대한 호스트 json 참조](functions-host-json.md)를 참조 하세요.
 
 > [!NOTE]
 > Functions 1.x에서 host.json의 참조는 [Azure Functions 1.x에 대한 host.json 참조](functions-host-json-v1.md)를 참조하세요.

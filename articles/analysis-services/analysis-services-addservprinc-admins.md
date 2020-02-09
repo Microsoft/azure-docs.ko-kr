@@ -41,7 +41,7 @@ ms.locfileid: "73573608"
 
 
 > [!NOTE]
-> Azure PowerShell cmdlet을 사용 하는 서버 작업의 경우 스케줄러를 실행 하는 서비스 주체는 [AZURE RBAC (역할 기반 Access Control)](../role-based-access-control/overview.md)의 리소스에 대 한 **소유자** 역할에도 속해야 합니다. 
+> Azure PowerShell cmdlet을 사용 하는 서버 작업의 경우 스케줄러를 실행 하는 서비스 주체는 [AZURE RBAC (역할 기반 Access Control)](../role-based-access-control/overview.md)의 리소스에 대한 **소유자** 역할에도 속해야 합니다. 
 
 ## <a name="related-information"></a>관련 정보
 

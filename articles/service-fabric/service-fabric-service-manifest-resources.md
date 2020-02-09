@@ -1,5 +1,5 @@
 ---
-title: Service Fabric 서비스 끝점 지정
+title: Service Fabric 서비스 엔드포인트 지정
 description: HTTPS 엔드포인트를 설정하는 방법을 포함하여 서비스 매니페스트에서 엔드포인트 리소스를 설명하는 방법
 ms.topic: conceptual
 ms.date: 2/23/2018

@@ -25,7 +25,7 @@ ms.locfileid: "77067189"
 ---
 # <a name="configure-provisioning-using-microsoft-graph-apis"></a>Microsoft Graph Api를 사용 하 여 프로 비전 구성
 
-Azure Portal은 한 번에 하나씩 개별 앱에 대 한 프로 비전을 구성 하는 편리한 방법입니다. 하지만 응용 프로그램의 인스턴스를 여러 개 또는 수백 개 만들 경우 Microsoft Graph Api를 사용 하 여 앱 만들기 및 구성을 쉽게 자동화할 수 있습니다. 이 문서에서는 Api를 통해 프로 비전 구성을 자동화 하는 방법을 설명 합니다. 이 메서드는 [Amazon Web Services](../saas-apps/amazon-web-service-tutorial.md#configure-azure-ad-sso)같은 응용 프로그램에 일반적으로 사용 됩니다.
+Azure Portal은 한 번에 하나씩 개별 앱에 대한 프로 비전을 구성 하는 편리한 방법입니다. 하지만 응용 프로그램의 인스턴스를 여러 개 또는 수백 개 만들 경우 Microsoft Graph Api를 사용 하 여 앱 만들기 및 구성을 쉽게 자동화할 수 있습니다. 이 문서에서는 Api를 통해 프로 비전 구성을 자동화 하는 방법을 설명 합니다. 이 메서드는 [Amazon Web Services](../saas-apps/amazon-web-service-tutorial.md#configure-azure-ad-sso)같은 응용 프로그램에 일반적으로 사용 됩니다.
 
 **Microsoft Graph Api를 사용 하 여 프로 비전 구성을 자동화 하는 단계 개요**
 
@@ -34,7 +34,7 @@ Azure Portal은 한 번에 하나씩 개별 앱에 대 한 프로 비전을 구�
 |---------|---------|
 |[1 단계. 갤러리 응용 프로그램 만들기](#step-1-create-the-gallery-application)     |API 클라이언트에 로그인 <br> 갤러리 응용 프로그램 템플릿을 검색 합니다. <br> 갤러리 응용 프로그램 만들기         |
 |[2 단계. 템플릿을 기반으로 프로 비전 작업 만들기](#step-2-create-the-provisioning-job-based-on-the-template)     |프로 비전 커넥터용 템플릿 검색 <br> 프로 비전 작업 만들기         |
-|[3 단계. 액세스 권한 부여](#step-3-authorize-access)     |응용 프로그램에 대 한 연결 테스트 <br> 자격 증명 저장         |
+|[3 단계. 액세스 권한 부여](#step-3-authorize-access)     |응용 프로그램에 대한 연결 테스트 <br> 자격 증명 저장         |
 |[4 단계. 프로 비전 작업 시작](#step-4-start-the-provisioning-job)     |작업 시작         |
 |[5 단계. 프로 비전 모니터링](#step-5-monitor-provisioning)     |프로 비전 작업의 상태를 확인 합니다. <br> 프로 비전 로그를 검색 합니다.         |
 
@@ -53,7 +53,7 @@ Azure Portal은 한 번에 하나씩 개별 앱에 대 한 프로 비전을 구�
 1. 로그인이 완료 되 면 왼쪽 창에 사용자 계정 세부 정보가 표시 됩니다.
 
 ### <a name="retrieve-the-gallery-application-template-identifier"></a>갤러리 응용 프로그램 템플릿 식별자를 검색 합니다.
-Azure AD 응용 프로그램 갤러리의 응용 프로그램에는 각 응용 프로그램에 대 한 메타 데이터를 설명 하는 [응용 프로그램 템플릿이](https://docs.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-beta&tabs=http) 있습니다. 이 템플릿을 사용 하 여 테 넌 트에서 관리를 위해 응용 프로그램 및 서비스 사용자의 인스턴스를 만들 수 있습니다.
+Azure AD 응용 프로그램 갤러리의 응용 프로그램에는 각 응용 프로그램에 대한 메타 데이터를 설명 하는 [응용 프로그램 템플릿이](https://docs.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-beta&tabs=http) 있습니다. 이 템플릿을 사용 하 여 테넌트에서 관리를 위해 응용 프로그램 및 서비스 사용자의 인스턴스를 만들 수 있습니다.
 
 #### <a name="request"></a>*요청*
 
@@ -105,7 +105,7 @@ Content-type: application/json
 
 ### <a name="create-the-gallery-application"></a>갤러리 응용 프로그램 만들기
 
-마지막 단계에서 응용 프로그램에 대해 검색 된 템플릿 ID를 사용 하 여 테 넌 트에 응용 프로그램 및 서비스 사용자의 [인스턴스를 만듭니다](https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-beta&tabs=http) .
+마지막 단계에서 응용 프로그램에 대해 검색 된 템플릿 ID를 사용 하 여 테넌트에 응용 프로그램 및 서비스 사용자의 [인스턴스를 만듭니다](https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-beta&tabs=http) .
 
 #### <a name="request"></a>*요청*
 
@@ -174,7 +174,7 @@ Content-type: application/json
 
 ### <a name="retrieve-the-template-for-the-provisioning-connector"></a>프로 비전 커넥터용 템플릿 검색
 
-프로 비전을 사용 하도록 설정 된 갤러리의 응용 프로그램에는 구성을 간소화 하는 템플릿이 있습니다. 아래 요청을 사용 하 여 [프로 비전 구성에 대 한 템플릿을 검색](https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-list?view=graph-rest-beta&tabs=http)합니다.
+프로 비전을 사용 하도록 설정 된 갤러리의 응용 프로그램에는 구성을 간소화 하는 템플릿이 있습니다. 아래 요청을 사용 하 여 [프로 비전 구성에 대한 템플릿을 검색](https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-list?view=graph-rest-beta&tabs=http)합니다.
 
 #### <a name="request"></a>*요청*
 
@@ -264,9 +264,9 @@ Content-type: application/json
 
 ## <a name="step-3-authorize-access"></a>3 단계: 액세스 권한 부여
 
-### <a name="test-the-connection-to-the-application"></a>응용 프로그램에 대 한 연결 테스트
+### <a name="test-the-connection-to-the-application"></a>응용 프로그램에 대한 연결 테스트
 
-타사 응용 프로그램에 대 한 연결을 테스트 합니다. 아래 예제는 clientSecret 및 secretToken가 필요한 응용 프로그램에 대 한 것입니다. 각 응용 프로그램에는 요구 사항이 있습니다. [API 설명서](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta&tabs=http) 를 검토 하 여 사용 가능한 옵션을 확인 합니다. 
+타사 응용 프로그램에 대한 연결을 테스트 합니다. 아래 예제는 clientSecret 및 secretToken가 필요한 응용 프로그램에 대한 것입니다. 각 응용 프로그램에는 요구 사항이 있습니다. [API 설명서](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta&tabs=http) 를 검토 하 여 사용 가능한 옵션을 확인 합니다. 
 
 #### <a name="request"></a>*요청*
 ```http
@@ -290,7 +290,7 @@ HTTP/1.1 204 No Content
 
 ### <a name="save-your-credentials"></a>자격 증명 저장
 
-프로 비전을 구성 하려면 Azure AD와 응용 프로그램 간에 트러스트를 설정 해야 합니다. 타사 응용 프로그램에 대 한 액세스 권한을 부여 합니다. 아래 예제는 clientSecret 및 secretToken가 필요한 응용 프로그램에 대 한 것입니다. 각 응용 프로그램에는 요구 사항이 있습니다. [API 설명서](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta&tabs=http) 를 검토 하 여 사용 가능한 옵션을 확인 합니다. 
+프로 비전을 구성 하려면 Azure AD와 응용 프로그램 간에 트러스트를 설정 해야 합니다. 타사 응용 프로그램에 대한 액세스 권한을 부여 합니다. 아래 예제는 clientSecret 및 secretToken가 필요한 응용 프로그램에 대한 것입니다. 각 응용 프로그램에는 요구 사항이 있습니다. [API 설명서](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta&tabs=http) 를 검토 하 여 사용 가능한 옵션을 확인 합니다. 
 
 #### <a name="request"></a>*요청*
 ```json
@@ -397,7 +397,7 @@ Content-length: 2577
 
 
 ### <a name="monitor-provisioning-events-using-the-provisioning-logs"></a>프로 비전 로그를 사용 하 여 프로 비전 이벤트 모니터링
-프로 비전 작업의 상태를 모니터링 하는 것 외에도 [프로 비전 로그](https://docs.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-beta&tabs=http) 를 사용 하 여 발생 하는 모든 이벤트를 쿼리할 수 있습니다. 예를 들어 특정 사용자에 대 한 쿼리를 수행 하 여 해당 사용자가 성공적으로 프로 비전 되었는지 여부를 확인할 수 있습니다.
+프로 비전 작업의 상태를 모니터링 하는 것 외에도 [프로 비전 로그](https://docs.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-beta&tabs=http) 를 사용 하 여 발생 하는 모든 이벤트를 쿼리할 수 있습니다. 예를 들어 특정 사용자에 대한 쿼리를 수행 하 여 해당 사용자가 성공적으로 프로 비전 되었는지 여부를 확인할 수 있습니다.
 
 #### <a name="request"></a>*요청*
 ```msgraph-interactive

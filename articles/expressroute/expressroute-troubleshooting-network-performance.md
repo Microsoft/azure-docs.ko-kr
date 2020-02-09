@@ -199,7 +199,7 @@ Azure를 사용 하 여 문제를 최대한 자세히 파악 했으면 [Azure �
 
 ## <a name="next-steps"></a>다음 단계
 1. GitHub에서 Azure 연결 도구 키트 다운로드 [https://aka.ms/AzCT][ACT]
-2. [링크 성능 테스트][Performance Doc] 에 대 한 지침을 따릅니다.
+2. [링크 성능 테스트][Performance Doc] 에 대한 지침을 따릅니다.
 
 <!--Image References-->
 [1]: ./media/expressroute-troubleshooting-network-performance/network-components.png "Azure 네트워크 구성 요소"

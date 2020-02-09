@@ -18,7 +18,7 @@ ms.locfileid: "75441845"
 ---
 # <a name="how-to-use-the-execution-profile-step-to-evaluate-your-gremlin-queries"></a>실행 프로필 단계를 사용 하 여 Gremlin 쿼리를 평가 하는 방법
 
-이 문서에서는 Azure Cosmos DB Gremlin API graph 데이터베이스에 대해 실행 프로필 단계를 사용 하는 방법에 대 한 개요를 제공 합니다. 이 단계에서는 문제 해결 및 쿼리 최적화에 대 한 관련 정보를 제공 하며, Cosmos DB Gremlin API 계정에 대해 실행할 수 있는 모든 Gremlin 쿼리와 호환 됩니다.
+이 문서에서는 Azure Cosmos DB Gremlin API graph 데이터베이스에 대해 실행 프로필 단계를 사용 하는 방법에 대한 개요를 제공 합니다. 이 단계에서는 문제 해결 및 쿼리 최적화에 대한 관련 정보를 제공 하며, Cosmos DB Gremlin API 계정에 대해 실행할 수 있는 모든 Gremlin 쿼리와 호환 됩니다.
 
 이 단계를 사용 하려면 Gremlin 쿼리 끝에 `executionProfile()` 함수 호출을 추가 하면 됩니다. **Gremlin 쿼리가 실행** 되 고 작업 결과가 쿼리 실행 프로필을 사용 하 여 JSON 응답 개체를 반환 합니다.
 
@@ -40,7 +40,7 @@ ms.locfileid: "75441845"
 
 ## <a name="response-example"></a>응답 예제
 
-다음은 반환 되는 출력에 대 한 주석이 추가 된 예제입니다.
+다음은 반환 되는 출력에 대한 주석이 추가 된 예제입니다.
 
 > [!NOTE]
 > 이 예제에는 응답의 일반 구조를 설명 하는 주석이 포함 되어 있습니다. 실제 executionProfile 응답에는 설명이 포함 되지 않습니다.
@@ -164,12 +164,12 @@ Cosmos DB Gremlin Runtime 연산자|Description
 `CartesianProductOperator`| 이 단계에서는 두 데이터 집합 간의 데카르트 곱을 계산 합니다. 일반적으로 조건자 `to()` 또는 `from()` 사용 될 때마다 실행 됩니다.
 `ConstantSourceOperator`| 이 단계에서는 상수 값을 생성 하는 식을 계산 합니다.
 `ProjectOperator`| 이 단계에서는 이전 작업의 결과를 사용 하 여 응답을 준비 하 고 직렬화 합니다.
-`ProjectAggregation`| 이 단계에서는 집계 작업에 대 한 응답을 준비 하 고 직렬화 합니다.
+`ProjectAggregation`| 이 단계에서는 집계 작업에 대한 응답을 준비 하 고 직렬화 합니다.
 
 > [!NOTE]
 > 이 목록은 새 운영자가 추가 될 때 계속 업데이트 됩니다.
 
-## <a name="examples-on-how-to-analyze-an-execution-profile-response"></a>실행 프로필 응답을 분석 하는 방법에 대 한 예제
+## <a name="examples-on-how-to-analyze-an-execution-profile-response"></a>실행 프로필 응답을 분석 하는 방법에 대한 예제
 
 다음은 실행 프로필 응답을 사용 하 여 검색할 수 있는 일반적인 최적화의 예입니다.
   - 블라인드 팬 아웃 쿼리입니다.

@@ -1,6 +1,6 @@
 ---
-title: Azure CDN에 대 한 표준 규칙 엔진의 작업 | Microsoft Docs
-description: Azure Content Delivery Network에 대 한 표준 규칙 엔진 (Azure CDN)의 동작에 대 한 참조 설명서입니다.
+title: Azure CDN에 대한 표준 규칙 엔진의 작업 | Microsoft Docs
+description: Azure Content Delivery Network에 대한 표준 규칙 엔진 (Azure CDN)의 동작에 대한 참조 설명서입니다.
 services: cdn
 author: mdgattuso
 ms.service: azure-cdn
@@ -14,19 +14,19 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/26/2019
 ms.locfileid: "74171629"
 ---
-# <a name="actions-in-the-standard-rules-engine-for-azure-cdn"></a>Azure CDN에 대 한 표준 규칙 엔진의 작업
+# <a name="actions-in-the-standard-rules-engine-for-azure-cdn"></a>Azure CDN에 대한 표준 규칙 엔진의 작업
 
-Azure Content Delivery Network (Azure CDN)에 대 한 [표준 규칙 엔진](cdn-standard-rules-engine.md) 에서 규칙은 하나 이상의 일치 조건 및 동작으로 구성 됩니다. 이 문서에서는 Azure CDN에 대 한 표준 규칙 엔진에서 사용할 수 있는 작업에 대해 자세히 설명 합니다.
+Azure Content Delivery Network (Azure CDN)에 대한 [표준 규칙 엔진](cdn-standard-rules-engine.md) 에서 규칙은 하나 이상의 일치 조건 및 동작으로 구성 됩니다. 이 문서에서는 Azure CDN에 대한 표준 규칙 엔진에서 사용할 수 있는 작업에 대해 자세히 설명 합니다.
 
 규칙의 두 번째 부분은 동작입니다. 작업은 일치 조건 또는 일치 조건 집합에서 식별 하는 요청 유형에 적용 되는 동작을 정의 합니다.
 
 ## <a name="actions"></a>작업
 
-Azure CDN에 대 한 표준 규칙 엔진에서 다음 작업을 사용할 수 있습니다. 
+Azure CDN에 대한 표준 규칙 엔진에서 다음 작업을 사용할 수 있습니다. 
 
 ### <a name="cache-expiration"></a>캐시 만료
 
-이 작업을 사용 하 여 규칙 일치 조건에서 지정 하는 요청에 대해 끝점의 TTL (time to live) 값을 덮어씁니다.
+이 작업을 사용 하 여 규칙 일치 조건에서 지정 하는 요청에 대해 엔드포인트의 TTL (time to live) 값을 덮어씁니다.
 
 #### <a name="required-fields"></a>필수 필드
 

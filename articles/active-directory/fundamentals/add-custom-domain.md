@@ -22,7 +22,7 @@ ms.locfileid: "74073512"
 ---
 # <a name="add-your-custom-domain-name-using-the-azure-active-directory-portal"></a>Azure Active Directory 포털을 사용하여 사용자 지정 도메인 이름 추가
 
-모든 새 Azure AD 테 넌 트에는 도메인 이름 *\<domainname >* 와 함께 제공 됩니다. 초기 도메인 이름을 변경 하거나 삭제할 수는 없지만 조직의 이름을 추가할 수는 있습니다. 사용자 지정 도메인 이름을 추가 하면 사용자에 게 친숙 한 사용자 이름 (예: *alain\@contoso.com*)을 만들 수 있습니다.
+모든 새 Azure AD 테넌트에는 도메인 이름 *\<domainname >* 와 함께 제공 됩니다. 초기 도메인 이름을 변경 하거나 삭제할 수는 없지만 조직의 이름을 추가할 수는 있습니다. 사용자 지정 도메인 이름을 추가 하면 사용자에 게 친숙 한 사용자 이름 (예: *alain\@contoso.com*)을 만들 수 있습니다.
 
 ## <a name="before-you-begin"></a>시작하기 전에
 

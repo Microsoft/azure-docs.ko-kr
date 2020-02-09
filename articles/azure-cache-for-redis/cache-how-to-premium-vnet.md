@@ -96,18 +96,18 @@ Azure Cache for Redis가 VNet에 호스팅되는 경우 사용되는 포트는 �
 
 #### <a name="outbound-port-requirements"></a>아웃바운드 포트 요구 사항
 
-아웃 바운드 포트 요구 사항은 9 가지가 있습니다. 이러한 범위의 아웃 바운드 요청은 캐시가 작동 하는 데 필요한 다른 서비스 또는 노드 간 통신용 Redis 서브넷 내부에 대 한 아웃 바운드입니다. 지리적 복제의 경우 기본 캐시와 보조 캐시의 서브넷 간 통신을 위한 추가 아웃 바운드 요구 사항이 있습니다.
+아웃 바운드 포트 요구 사항은 9 가지가 있습니다. 이러한 범위의 아웃 바운드 요청은 캐시가 작동 하는 데 필요한 다른 서비스 또는 노드 간 통신용 Redis 서브넷 내부에 대한 아웃 바운드입니다. 지리적 복제의 경우 기본 캐시와 보조 캐시의 서브넷 간 통신을 위한 추가 아웃 바운드 요구 사항이 있습니다.
 
 | 포트 | Direction | 전송 프로토콜 | 용도 | 로컬 IP | 원격 IP |
 | --- | --- | --- | --- | --- | --- |
 | 80, 443 |아웃바운드 |TCP |Azure Storage/PKI(인터넷)에 대한 Redis 종속성 | (Redis 서브넷) |* |
-| 443 | 아웃바운드 | TCP | Azure Key Vault에 대 한 Redis 종속성 | (Redis 서브넷) | AzureKeyVault <sup>1</sup> |
-| 53 |아웃바운드 |TCP/UDP |DNS(인터넷/VNet)에 대한 Redis 종속성 | (Redis 서브넷) | 168.63.129.16 및 169.254.169.254 <sup>2</sup> 및 서브넷 <sup>3</sup> 에 대 한 모든 사용자 지정 DNS 서버 |
+| 443 | 아웃바운드 | TCP | Azure Key Vault에 대한 Redis 종속성 | (Redis 서브넷) | AzureKeyVault <sup>1</sup> |
+| 53 |아웃바운드 |TCP/UDP |DNS(인터넷/VNet)에 대한 Redis 종속성 | (Redis 서브넷) | 168.63.129.16 및 169.254.169.254 <sup>2</sup> 및 서브넷 <sup>3</sup> 에 대한 모든 사용자 지정 DNS 서버 |
 | 8443 |아웃바운드 |TCP |Redis에 대한 내부 통신 | (Redis 서브넷) | (Redis 서브넷) |
 | 10221-10231 |아웃바운드 |TCP |Redis에 대한 내부 통신 | (Redis 서브넷) | (Redis 서브넷) |
 | 20226 |아웃바운드 |TCP |Redis에 대한 내부 통신 | (Redis 서브넷) |(Redis 서브넷) |
 | 13000-13999 |아웃바운드 |TCP |Redis에 대한 내부 통신 | (Redis 서브넷) |(Redis 서브넷) |
-| 15000-15999 |아웃바운드 |TCP |Redis 및 지역에서 복제에 대 한 내부 통신 | (Redis 서브넷) |(Redis 서브넷) (지역 복제본 피어 서브넷) |
+| 15000-15999 |아웃바운드 |TCP |Redis 및 지역에서 복제에 대한 내부 통신 | (Redis 서브넷) |(Redis 서브넷) (지역 복제본 피어 서브넷) |
 | 6379-6380 |아웃바운드 |TCP |Redis에 대한 내부 통신 | (Redis 서브넷) |(Redis 서브넷) |
 
 <sup>1</sup> 리소스 관리자 네트워크 보안 그룹에서 서비스 태그 ' AzureKeyVault '를 사용할 수 있습니다.
@@ -118,7 +118,7 @@ Azure Cache for Redis가 VNet에 호스팅되는 경우 사용되는 포트는 �
 
 #### <a name="geo-replication-peer-port-requirements"></a>지역에서 복제 피어 포트 요구 사항
 
-Azure 가상 네트워크의 캐시 간에 georeplication를 사용 하는 경우 모든 복제본 구성 요소에 대 한 인바운드 및 아웃 바운드 방향 모두에서 전체 서브넷에 대 한 포트 15000-15999의 차단을 해제 하는 것이 좋습니다. 에서 서브넷은 향후 지역 장애 조치 (failover) 시에도 서로 직접 통신할 수 있습니다.
+Azure 가상 네트워크의 캐시 간에 georeplication를 사용 하는 경우 모든 복제본 구성 요소에 대한 인바운드 및 아웃 바운드 방향 모두에서 전체 서브넷에 대한 포트 15000-15999의 차단을 해제 하는 것이 좋습니다. 에서 서브넷은 향후 지역 장애 조치 (failover) 시에도 서로 직접 통신할 수 있습니다.
 
 #### <a name="inbound-port-requirements"></a>인바운드 포트 요구 사항
 
@@ -131,7 +131,7 @@ Azure 가상 네트워크의 캐시 간에 georeplication를 사용 하는 경�
 | 8500 |인바운드 |TCP/UDP |Azure 부하 분산 | (Redis 서브넷) |Azure Load Balancer |
 | 10221-10231 |인바운드 |TCP |Redis에 대한 내부 통신 | (Redis 서브넷) |(Redis 서브넷), Azure Load Balancer |
 | 13000-13999 |인바운드 |TCP |Redis 클러스터에 대한 클라이언트 통신, Azure 부하 분산 | (Redis 서브넷) |Virtual Network, Azure Load Balancer |
-| 15000-15999 |인바운드 |TCP |Redis 클러스터에 대 한 클라이언트 통신, Azure 부하 분산 및 지역에서 복제 | (Redis 서브넷) |Virtual Network, Azure Load Balancer, (지역 복제본 피어 서브넷) |
+| 15000-15999 |인바운드 |TCP |Redis 클러스터에 대한 클라이언트 통신, Azure 부하 분산 및 지역에서 복제 | (Redis 서브넷) |Virtual Network, Azure Load Balancer, (지역 복제본 피어 서브넷) |
 | 16001 |인바운드 |TCP/UDP |Azure 부하 분산 | (Redis 서브넷) |Azure Load Balancer |
 | 20226 |인바운드 |TCP |Redis에 대한 내부 통신 | (Redis 서브넷) |(Redis 서브넷) |
 
@@ -149,7 +149,7 @@ Azure 가상 네트워크의 캐시 간에 georeplication를 사용 하는 경�
 ### <a name="how-can-i-verify-that-my-cache-is-working-in-a-vnet"></a>캐시가 VNET에서 작동하는지 확인하려면 어떻게 해야 하나요?
 
 >[!IMPORTANT]
->VNET에서 호스트 되는 Redis 인스턴스에 대 한 Azure 캐시에 연결 하는 경우 캐시 클라이언트는 동일한 VNET에 있거나 동일한 Azure 지역 내에서 VNET 피어 링을 사용 하도록 설정 된 VNET에 있어야 합니다. 전역 VNet 피어링 현재 지원 되지 않습니다. 여기에는 모든 테스트 애플리케이션 또는 진단 핑 도구가 포함됩니다. 클라이언트 애플리케이션이 호스트된 위치와 상관없이 네트워크 보안 그룹은 클라이언트의 네트워크 트래픽이 Redis 인스턴스에 도달할 수 있도록 구성되어야 합니다.
+>VNET에서 호스트 되는 Redis 인스턴스에 대한 Azure 캐시에 연결 하는 경우 캐시 클라이언트는 동일한 VNET에 있거나 동일한 Azure 지역 내에서 VNET 피어 링을 사용 하도록 설정 된 VNET에 있어야 합니다. 전역 VNet 피어링 현재 지원 되지 않습니다. 여기에는 모든 테스트 애플리케이션 또는 진단 핑 도구가 포함됩니다. 클라이언트 애플리케이션이 호스트된 위치와 상관없이 네트워크 보안 그룹은 클라이언트의 네트워크 트래픽이 Redis 인스턴스에 도달할 수 있도록 구성되어야 합니다.
 >
 >
 

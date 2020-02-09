@@ -23,9 +23,9 @@ ms.locfileid: "75360721"
 ## <a name="prerequisites"></a>필수 조건
 * [Visual Studio 2013, 2015 또는 2017](https://www.visualstudio.com/)
 * [Visual Studio용 Python Tools][Python Tools for Visual Studio](PTVS)
-* [VS 2013에 대 한 Azure SDK Tools][Azure SDK Tools for VS 2013] 또는  
-[VS 2015에 대 한 Azure SDK Tools][Azure SDK Tools for VS 2015] 또는  
-[VS 2017에 대 한 Azure SDK Tools][Azure SDK Tools for VS 2017]
+* [VS 2013에 대한 Azure SDK Tools][Azure SDK Tools for VS 2013] 또는  
+[VS 2015에 대한 Azure SDK Tools][Azure SDK Tools for VS 2015] 또는  
+[VS 2017에 대한 Azure SDK Tools][Azure SDK Tools for VS 2017]
 * [Python 2.7 32비트][Python 2.7 32-bit] 또는 [Python 3.5 32비트][Python 3.5 32-bit]
 
 [!INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]

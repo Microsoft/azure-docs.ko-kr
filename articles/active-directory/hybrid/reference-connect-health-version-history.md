@@ -39,7 +39,7 @@ Azure Active Directory 팀은 새로운 기능과 성능으로 Azure AD Connect 
    2. AD FS RP 업로드에 대 한 변경 내용
    
 * AD FS에 대 한 Azure AD Connect Health 에이전트 (버전 3.1.56.0) 
-   1. CheckOffice365Endpoints test에서 TestWindowsTransport test 추가 및 WsTrust 끝점 검사 제거
+   1. CheckOffice365Endpoints test에서 TestWindowsTransport test 추가 및 WsTrust 엔드포인트 검사 제거
    2. OS 및 .NET 정보 기록
    3. RP 구성 메시지 업로드 크기를 1MB로 늘립니다.
    4. 버그 수정

@@ -820,7 +820,7 @@ LUIS는 발화에서 검색된 모든 엔터티를 반환합니다. 결과적으
 
 `book me 2 adult business tickets to paris tomorrow on air france`
 
-LUIS 끝점은 서로 다른 엔터티에서 동일한 데이터를 검색할 수 있습니다.
+LUIS 엔드포인트은 서로 다른 엔터티에서 동일한 데이터를 검색할 수 있습니다.
 
 #### <a name="v2-prediction-endpoint-responsetabv2"></a>[V2 예측 엔드포인트 응답](#tab/V2)
 

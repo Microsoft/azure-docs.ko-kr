@@ -94,7 +94,7 @@ reactive_schedule = Schedule.create(ws, name="MyReactiveSchedule", description="
 
 ## <a name="view-your-scheduled-pipelines"></a>예약 된 파이프라인 보기
 
-웹 브라우저에서 Azure Machine Learning로 이동 합니다. 탐색 패널의 **끝점** 섹션에서 **파이프라인 끝점**을 선택 합니다. 그러면 작업 영역에 게시 된 파이프라인의 목록으로 이동 합니다.
+웹 브라우저에서 Azure Machine Learning로 이동 합니다. 탐색 패널의 **엔드포인트** 섹션에서 **파이프라인 엔드포인트**을 선택 합니다. 그러면 작업 영역에 게시 된 파이프라인의 목록으로 이동 합니다.
 
 ![AML의 파이프라인 페이지](./media/how-to-schedule-pipelines/scheduled-pipelines.png)
 

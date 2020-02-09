@@ -63,7 +63,7 @@ catch (ArgumentException ae)
 
 ## <a name="hybrid-connection-stream"></a>하이브리드 연결 스트림
 
-[HybridConnectionStream][HCStream] 클래스는 [HybridConnectionClient][HCClient]또는 [HybridConnectionListener][HCListener]를 사용 하는지에 관계 없이 Azure Relay 끝점에서 데이터를 보내고 받는 데 사용 되는 기본 개체입니다.
+[HybridConnectionStream][HCStream] 클래스는 [HybridConnectionClient][HCClient]또는 [HybridConnectionListener][HCListener]를 사용 하는지에 관계 없이 Azure Relay 엔드포인트에서 데이터를 보내고 받는 데 사용 되는 기본 개체입니다.
 
 ### <a name="getting-a-hybrid-connection-stream"></a>하이브리드 연결 스트림 가져오기
 

@@ -15,7 +15,7 @@ ms.locfileid: "72882398"
 ---
 # <a name="options-to-migrate-your-on-premises-or-cloud-data-to-azure-cosmos-db"></a>온-프레미스 또는 클라우드 데이터를 Azure Cosmos DB으로 마이그레이션하는 옵션
 
-다양 한 데이터 원본에서 Azure Cosmos DB으로 데이터를 로드할 수 있습니다. 또한 Azure Cosmos DB는 여러 Api를 지원 하기 때문에 대상은 기존 Api 중 하나일 수 있습니다. 다양 한 원본에서 다른 Azure Cosmos DB Api로의 마이그레이션 경로를 지원 하기 위해 각 마이그레이션 경로에 대 한 특수 한 처리 기능을 제공 하는 여러 솔루션이 있습니다. 이 문서에서는 사용 가능한 솔루션을 나열 하 고 이점 및 제한 사항에 대해 설명 합니다.
+다양 한 데이터 원본에서 Azure Cosmos DB으로 데이터를 로드할 수 있습니다. 또한 Azure Cosmos DB는 여러 Api를 지원 하기 때문에 대상은 기존 Api 중 하나일 수 있습니다. 다양 한 원본에서 다른 Azure Cosmos DB Api로의 마이그레이션 경로를 지원 하기 위해 각 마이그레이션 경로에 대한 특수 한 처리 기능을 제공 하는 여러 솔루션이 있습니다. 이 문서에서는 사용 가능한 솔루션을 나열 하 고 이점 및 제한 사항에 대해 설명 합니다.
 
 ## <a name="factors-affecting-the-choice-of-migration-tool"></a>마이그레이션 도구 선택에 영향을 주는 요소
 
@@ -24,7 +24,7 @@ ms.locfileid: "72882398"
 
 * **데이터 원본**: 기존 데이터는 Oracle DB2, Datastax Cassanda, Azure SQL Server, PostgreSQL 등과 같은 다양 한 데이터 원본에 있을 수 있습니다. 데이터는 기존 Azure Cosmos DB 계정에 있을 수 있으며 마이그레이션의 의도는 데이터 모델을 변경 하거나 다른 파티션 키를 사용 하 여 컨테이너의 데이터를 다시 분할할 수 있습니다.
 
-* **AZURE COSMOS DB API**: AZURE COSMOS DB의 SQL api에는 여러 마이그레이션 시나리오를 지 원하는 Azure Cosmos DB 팀에서 개발한 여러 도구가 있습니다. 다른 모든 Api에는 커뮤니티에서 개발 하 고 유지 관리 하는 고유의 특수 도구 집합이 있습니다. Azure Cosmos DB는 유선 프로토콜 수준에서 이러한 Api를 지원 하기 때문에 데이터를 Azure Cosmos DB으로 마이그레이션하는 동안 이러한 도구는 그대로 작동 해야 합니다. 그러나이 개념은 Azure Cosmos DB에만 해당 되므로 제한에 대 한 사용자 지정 처리가 필요할 수 있습니다.
+* **AZURE COSMOS DB API**: AZURE COSMOS DB의 SQL api에는 여러 마이그레이션 시나리오를 지 원하는 Azure Cosmos DB 팀에서 개발한 여러 도구가 있습니다. 다른 모든 Api에는 커뮤니티에서 개발 하 고 유지 관리 하는 고유의 특수 도구 집합이 있습니다. Azure Cosmos DB는 유선 프로토콜 수준에서 이러한 Api를 지원 하기 때문에 데이터를 Azure Cosmos DB으로 마이그레이션하는 동안 이러한 도구는 그대로 작동 해야 합니다. 그러나이 개념은 Azure Cosmos DB에만 해당 되므로 제한에 대한 사용자 지정 처리가 필요할 수 있습니다.
 
 * **데이터 크기**: 대부분의 마이그레이션 도구는 작은 데이터 집합에 대해 매우 잘 작동 합니다. 데이터 집합이 수백 기가바이트를 초과 하는 경우 마이그레이션 도구의 선택이 제한 됩니다. 
 
@@ -45,8 +45,8 @@ ms.locfileid: "72882398"
 |**마이그레이션 유형**|**해결 방법**|**고려 사항**|
 |---------|---------|---------|
 |오프라인|[데이터 마이그레이션 도구](https://docs.microsoft.com/azure/cosmos-db/import-data)|&bull; 쉽게 설정 하 고 여러 소스를 지원 합니다. <br/>대량 데이터 집합에 적합 하지 &bull;|
-|오프라인|[Azure Data Factory](https://docs.microsoft.com/azure/data-factory/connector-azure-cosmos-db)|&bull; 쉽게 설정 하 고 여러 소스를 지원 합니다. <br/>&bull;에서 Azure Cosmos DB bulk executor 라이브러리를 사용 합니다. <br/>대량 데이터 집합에 적합 한 &bull; <br/>검사점 부족 &bull; 마이그레이션 과정 중에 발생 하는 모든 문제에 대해 전체 마이그레이션 프로세스를 다시 시작 해야 함을 의미 합니다.<br/>배달 못 한 편지 큐가 없으면 몇 개의 잘못 된 파일이 전체 마이그레이션 프로세스를 중지할 수 있습니다. &bull; <br/>특정 데이터 원본에 대 한 읽기 처리량을 늘리려면 사용자 지정 코드가 필요 &bull;|
-|오프라인|[기존 Mongo 도구 (mongodump, mongorestore, Studio3T)](https://azure.microsoft.com/resources/videos/using-mongodb-tools-with-azure-cosmos-db/)|&bull; 쉽게 설정 하 고 통합할 수 있습니다. <br/>제한에 대 한 사용자 지정 처리를 요구 하 &bull;|
+|오프라인|[Azure Data Factory](https://docs.microsoft.com/azure/data-factory/connector-azure-cosmos-db)|&bull; 쉽게 설정 하 고 여러 소스를 지원 합니다. <br/>&bull;에서 Azure Cosmos DB bulk executor 라이브러리를 사용 합니다. <br/>대량 데이터 집합에 적합 한 &bull; <br/>검사점 부족 &bull; 마이그레이션 과정 중에 발생 하는 모든 문제에 대해 전체 마이그레이션 프로세스를 다시 시작 해야 함을 의미 합니다.<br/>배달 못 한 편지 큐가 없으면 몇 개의 잘못 된 파일이 전체 마이그레이션 프로세스를 중지할 수 있습니다. &bull; <br/>특정 데이터 원본에 대한 읽기 처리량을 늘리려면 사용자 지정 코드가 필요 &bull;|
+|오프라인|[기존 Mongo 도구 (mongodump, mongorestore, Studio3T)](https://azure.microsoft.com/resources/videos/using-mongodb-tools-with-azure-cosmos-db/)|&bull; 쉽게 설정 하 고 통합할 수 있습니다. <br/>제한에 대한 사용자 지정 처리를 요구 하 &bull;|
 |온라인|[Azure Database Migration Service](https://docs.microsoft.com/azure/dms/tutorial-mongodb-cosmos-db-online)|&bull;에서 Azure Cosmos DB bulk executor 라이브러리를 사용 합니다. <br/>대량 데이터 집합에 적합 하며 라이브 변경 내용 복제를 처리 하는 &bull; <br/>&bull;는 다른 MongoDB 원본 에서만 작동 합니다.|
 
 ## <a name="azure-cosmos-db-cassandra-api"></a>Azure Cosmos DB Cassandra API
@@ -72,4 +72,4 @@ SQL API, Mongo API 및 Cassandra API 이외의 Api의 경우 API의 기존 에�
 
 * [.Net](bulk-executor-dot-net.md) 및 [Java](bulk-executor-java.md)에서 대량 실행자 라이브러리를 사용 하는 샘플 응용 프로그램을 사용해 보세요. 
 * 대량 실행자 라이브러리는 Cosmos DB Spark 커넥터에 통합 되어 있습니다. 자세한 내용은 [Azure Cosmos DB spark 커넥터](spark-connector.md) 문서를 참조 하세요.  
-* 대규모 마이그레이션에 대 한 추가 도움말을 보려면 "일반 권고" 문제 유형 및 "대규모 (TB +) 마이그레이션" 문제 하위 유형에 서 지원 티켓을 열어 Azure Cosmos DB 제품 팀에 문의 하세요.
+* 대규모 마이그레이션에 대한 추가 도움말을 보려면 "일반 권고" 문제 유형 및 "대규모 (TB +) 마이그레이션" 문제 하위 유형에 서 지원 티켓을 열어 Azure Cosmos DB 제품 팀에 문의 하세요.

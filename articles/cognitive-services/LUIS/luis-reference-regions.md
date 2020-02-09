@@ -1,7 +1,7 @@
 ---
-title: 영역 & 끝점 게시-LUIS
+title: 영역 & 엔드포인트 게시-LUIS
 titleSuffix: Azure Cognitive Services
-description: Azure Portal에 지정 된 지역은 LUIS 앱을 게시할 때와 동일한 지역에 대해 끝점 URL이 생성 됩니다.
+description: Azure Portal에 지정 된 지역은 LUIS 앱을 게시할 때와 동일한 지역에 대해 엔드포인트 URL이 생성 됩니다.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -102,7 +102,7 @@ https://www.luis.ai 에서 만들어진 LUIS 앱은 [유럽](#publishing-to-euro
 
 ## <a name="endpoints"></a>엔드포인트
 
-현재 LUIS에는 두 개의 끝점이 있습니다. 하나는 제작 용 이며 하나는 쿼리 예측 분석입니다.
+현재 LUIS에는 두 개의 엔드포인트이 있습니다. 하나는 제작 용 이며 하나는 쿼리 예측 분석입니다.
 
 |용도|URL|
 |--|--|

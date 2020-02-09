@@ -34,7 +34,7 @@ ms.locfileid: "77048746"
 
 ![하위 열 추가](media/data-flow/addsubcolumn.png "하위 열 추가")
 
-데이터 흐름의 복합 형식을 처리 하는 방법에 대 한 자세한 내용은 [데이터 흐름 매핑의 JSON 처리](format-json.md#mapping-data-flow-properties)를 참조 하세요.
+데이터 흐름의 복합 형식을 처리 하는 방법에 대한 자세한 내용은 [데이터 흐름 매핑의 JSON 처리](format-json.md#mapping-data-flow-properties)를 참조 하세요.
 
 ![복합 열 추가](media/data-flow/complexcolumn.png "열 추가")
 
@@ -63,7 +63,7 @@ Data Factory UX에서이 변환은 아래 이미지와 같습니다.
 
 ![파생 예제](media/data-flow/derive-script1.png "파생 예제")
 
-이 변환에 대 한 데이터 흐름 스크립트는 아래 코드 조각에 있습니다.
+이 변환에 대한 데이터 흐름 스크립트는 아래 코드 조각에 있습니다.
 
 ```
 MoviesYear derive(

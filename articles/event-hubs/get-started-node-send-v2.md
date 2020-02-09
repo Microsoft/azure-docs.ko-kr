@@ -31,7 +31,7 @@ Azure Event Hubs는 초당 수백만 개의 이벤트를 수신하여 처리할 
 - 활성 Azure 계정. Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)을 만듭니다.
 - Node.js 버전 8.x 이상. [https://nodejs.org](https://nodejs.org)에서 최신 LTS 버전을 다운로드하세요.
 - Visual Studio Code(권장) 또는 다른 IDE
-- **Event Hubs 네임스페이스 및 이벤트 허브 만들기** 첫 번째 단계에서는 [Azure Portal](https://portal.azure.com)을 사용하여 Event Hubs 형식의 네임스페이스를 만들고 애플리케이션에서 Event Hub와 통신하는 데 필요한 관리 자격 증명을 얻습니다. 네임스페이스와 이벤트 허브를 만들려면 [이 문서](event-hubs-create.md)의 절차를 수행한 다음, 이 자습서의 다음 단계를 계속 진행하세요. 그런 다음 문서: [연결 문자열 가져오기](event-hubs-get-connection-string.md#get-connection-string-from-the-portal)의 지침에 따라 이벤트 허브 네임 스페이스에 대 한 연결 문자열을 가져옵니다. 해당 연결 문자열은 이 자습서의 뒷부분에서 사용합니다.
+- **Event Hubs 네임스페이스 및 이벤트 허브 만들기** 첫 번째 단계에서는 [Azure Portal](https://portal.azure.com)을 사용하여 Event Hubs 형식의 네임스페이스를 만들고 애플리케이션에서 Event Hub와 통신하는 데 필요한 관리 자격 증명을 얻습니다. 네임스페이스와 이벤트 허브를 만들려면 [이 문서](event-hubs-create.md)의 절차를 수행한 다음, 이 자습서의 다음 단계를 계속 진행하세요. 그런 다음 문서: [연결 문자열 가져오기](event-hubs-get-connection-string.md#get-connection-string-from-the-portal)의 지침에 따라 이벤트 허브 네임 스페이스에 대한 연결 문자열을 가져옵니다. 해당 연결 문자열은 이 자습서의 뒷부분에서 사용합니다.
 
 
 ### <a name="install-npm-packages"></a>npm 패키지 설치
@@ -108,7 +108,7 @@ npm install @azure/eventhubs-checkpointstore-blob
 
 1. [Azure Storage 계정 만들기](../storage/common/storage-account-create.md?tabs=azure-portal)
 2. [Blob 컨테이너 만들기](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container)
-3. [저장소 계정에 대 한 연결 문자열을 가져옵니다.](../storage/common/storage-configure-connection-string.md?#view-and-copy-a-connection-string)
+3. [저장소 계정에 대한 연결 문자열을 가져옵니다.](../storage/common/storage-configure-connection-string.md?#view-and-copy-a-connection-string)
 
     연결 문자열과 컨테이너 이름을 적어 둡니다. 수신 코드에서 사용 합니다.
 
@@ -166,11 +166,11 @@ npm install @azure/eventhubs-checkpointstore-blob
     });    
     ```
 3. 코드에서 **다음 값** 을 지정 해야 합니다.
-    - Event Hubs 네임 스페이스에 대 한 연결 문자열
+    - Event Hubs 네임 스페이스에 대한 연결 문자열
     - 이벤트 허브의 이름입니다.
-    - Azure Storage 계정에 대 한 연결 문자열
+    - Azure Storage 계정에 대한 연결 문자열
     - Blob 컨테이너의 이름입니다.
-5. 그런 다음, 명령 프롬프트에서 `node receive.js` 명령을 실행하여 이 파일을 실행합니다. 수신 된 이벤트에 대 한 메시지가 창에 표시 됩니다.
+5. 그런 다음, 명령 프롬프트에서 `node receive.js` 명령을 실행하여 이 파일을 실행합니다. 수신 된 이벤트에 대한 메시지가 창에 표시 됩니다.
 
     > [!NOTE]
     > 추가 정보 주석을 포함 하는 전체 소스 코드는 [GitHub에서이 파일](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/receiveEventsUsingCheckpointStore.js)을 참조 하세요.

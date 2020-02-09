@@ -21,8 +21,8 @@ ms.locfileid: "75980094"
 > [!IMPORTANT]
 > 작업 영역을 다른 지역으로 이동할 수 없습니다.
 
-## <a name="verify-active-directory-tenant"></a>Active Directory 테 넌 트 확인
-작업 영역 원본 및 대상 구독은 동일한 Azure Active Directory 테 넌 트 내에 있어야 합니다. Azure PowerShell를 사용 하 여 두 구독의 테 넌 트 ID가 동일한 지 확인 합니다.
+## <a name="verify-active-directory-tenant"></a>Active Directory 테넌트 확인
+작업 영역 원본 및 대상 구독은 동일한 Azure Active Directory 테넌트 내에 있어야 합니다. Azure PowerShell를 사용 하 여 두 구독의 테넌트 ID가 동일한 지 확인 합니다.
 
 ``` PowerShell
 (Get-AzSubscription -SubscriptionName <your-source-subscription>).TenantId

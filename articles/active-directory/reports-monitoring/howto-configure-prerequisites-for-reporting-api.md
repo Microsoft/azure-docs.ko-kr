@@ -208,13 +208,13 @@ Graph 탐색기를 사용하여 로그인에 액세스하는 동안 이 오류 �
 ![권한 수정 UI](./media/troubleshoot-graph-api/modify-permissions.png)
 
 
-### <a name="error-tenant-is-not-b2c-or-tenant-doesnt-have-premium-license"></a>오류: 테 넌 트가 B2C이 아니거나 테 넌 트에 프리미엄 라이선스가 없습니다.
+### <a name="error-tenant-is-not-b2c-or-tenant-doesnt-have-premium-license"></a>오류: 테넌트가 B2C이 아니거나 테넌트에 프리미엄 라이선스가 없습니다.
 
 로그인 보고서에 액세스하려면 Azure Active Directory P1(Premium 1) 라이선스가 필요합니다. 로그인에 액세스하는 동안 이 오류 메시지가 표시되면 Azure AD P1 라이선스를 사용하여 테넌트에게 사용이 허가되었는지 확인합니다.
 
 ### <a name="error-the-allowed-roles-does-not-include-user"></a>오류: 허용 되는 역할에는 사용자가 포함 되지 않습니다. 
 
- API를 사용 하 여 감사 로그에 액세스 하거나 로그인 하는 동안 오류가 발생 하지 않도록 합니다. 계정이 Azure Active Directory 테 넌 트에서 **보안 읽기 권한자** 또는 **보고서 구독자** 역할의 일부 인지 확인 합니다.
+ API를 사용 하 여 감사 로그에 액세스 하거나 로그인 하는 동안 오류가 발생 하지 않도록 합니다. 계정이 Azure Active Directory 테넌트에서 **보안 읽기 권한자** 또는 **보고서 구독자** 역할의 일부 인지 확인 합니다.
 
 ### <a name="error-application-missing-aad-read-directory-data-permission"></a>오류: 애플리케이션에 AAD ‘디렉터리 데이터 읽기’ 권한이 없음 
 

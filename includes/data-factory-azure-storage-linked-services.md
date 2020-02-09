@@ -19,7 +19,7 @@ ms.locfileid: "75468089"
 | type |형식 속성은 **AzureStorage** |예 |
 | connectionString |connectionString 속성에 대한 Azure Storage에 연결하는 데 필요한 정보를 지정합니다. |예 |
 
-저장소 계정 액세스 키를 검색 하는 방법에 대 한 자세한 내용은 [저장소 계정 액세스 키 관리](../articles/storage/common/storage-account-keys-manage.md)를 참조 하세요.
+저장소 계정 액세스 키를 검색 하는 방법에 대한 자세한 내용은 [저장소 계정 액세스 키 관리](../articles/storage/common/storage-account-keys-manage.md)를 참조 하세요.
 
 **예:**  
 

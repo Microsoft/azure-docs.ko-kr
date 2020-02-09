@@ -54,7 +54,7 @@ UAA 명령줄 클라이언트를 설정 하기 전에 RubyGems가 설치 되어 
 
 ### <a name="3-create-a-log-analytics-workspace-in-azure"></a>3. Azure에서 Log Analytics 작업 영역 만들기
 
-수동으로 또는 템플릿을 사용하여 Log Analytics 작업 영역을 만들 수 있습니다. 템플릿은 Azure Monitor 로그 콘솔에 대 한 미리 구성 된 KPI 보기 및 경고의 설정을 배포 합니다. 
+수동으로 또는 템플릿을 사용하여 Log Analytics 작업 영역을 만들 수 있습니다. 템플릿은 Azure Monitor 로그 콘솔에 대한 미리 구성 된 KPI 보기 및 경고의 설정을 배포 합니다. 
 
 #### <a name="to-create-the-workspace-manually"></a>수동으로 작업 영역을 만들려면 다음을 수행합니다.
 

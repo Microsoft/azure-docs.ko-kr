@@ -82,7 +82,7 @@ map.controls.add(new atlas.control.Compass(), {
 <iframe height='500' scrolling='no' title='모든 컨트롤이 있는 지도' src='//codepen.io/azuremaps/embed/qyjbOM/?height=265&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)로 펜 <a href='https://codepen.io/azuremaps/pen/qyjbOM/'>모든 컨트롤이 있는 지도</a>를 참조하세요.
 </iframe>
 
-스타일 선택 컨트롤은 [StyleControl](/javascript/api/azure-maps-control/atlas.control.stylecontrol) 클래스에 의해 정의 됩니다. 스타일 선택 컨트롤을 사용 하는 방법에 대 한 자세한 내용은 [지도 스타일 선택](choose-map-style.md)을 참조 하세요.
+스타일 선택 컨트롤은 [StyleControl](/javascript/api/azure-maps-control/atlas.control.stylecontrol) 클래스에 의해 정의 됩니다. 스타일 선택 컨트롤을 사용 하는 방법에 대한 자세한 내용은 [지도 스타일 선택](choose-map-style.md)을 참조 하세요.
 
 ## <a name="customize-controls"></a>컨트롤 사용자 지정
 

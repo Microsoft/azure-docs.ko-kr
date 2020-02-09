@@ -1,6 +1,6 @@
 ---
 title: Azure Maps Search Service를 사용 하 여 효율적으로 검색 Microsoft Azure 맵
-description: Microsoft Azure Maps를 사용 하 여 Search Service에 대 한 모범 사례를 적용 하는 방법을 알아봅니다.
+description: Microsoft Azure Maps를 사용 하 여 Search Service에 대한 모범 사례를 적용 하는 방법을 알아봅니다.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 01/23/2020
@@ -15,7 +15,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/31/2020
 ms.locfileid: "76899160"
 ---
-# <a name="best-practices-for-azure-maps-search-service"></a>Azure Maps Search Service에 대 한 모범 사례
+# <a name="best-practices-for-azure-maps-search-service"></a>Azure Maps Search Service에 대한 모범 사례
 
 Azure Maps [Search Service](https://docs.microsoft.com/rest/api/maps/search) 에는 다양 한 기능을 제공 하는 api가 포함 되어 있습니다. 예를 들어 검색 주소 API는 특정 위치 주변의 POI (관심 지점) 또는 데이터를 찾을 수 있습니다. 
 
@@ -30,16 +30,16 @@ Azure Maps [Search Service](https://docs.microsoft.com/rest/api/maps/search) 에
 
 Azure Maps 서비스 Api를 호출 하려면 Azure Maps 계정 및 키가 필요 합니다. 자세한 내용은 [계정 만들기](quick-demo-map-app.md#create-an-account-with-azure-maps) 및 [기본 키 가져오기](quick-demo-map-app.md#get-the-primary-key-for-your-account)를 참조 하세요. 
 
-Azure Maps의 인증에 대 한 자세한 내용은 [Azure Maps 인증 관리](./how-to-manage-authentication.md)를 참조 하세요.
+Azure Maps의 인증에 대한 자세한 내용은 [Azure Maps 인증 관리](./how-to-manage-authentication.md)를 참조 하세요.
 
 > [!TIP]
 > Search Service를 쿼리하려면 [Postman 앱](https://www.getpostman.com/apps) 을 사용 하 여 REST 호출을 빌드할 수 있습니다. 또는 선호 하는 모든 API 개발 환경을 사용할 수 있습니다.
 
-## <a name="best-practices-to-geocode-addresses"></a>Geocode 주소에 대 한 모범 사례
+## <a name="best-practices-to-geocode-addresses"></a>Geocode 주소에 대한 모범 사례
 
 Azure Maps Search Service를 사용 하 여 전체 또는 부분 주소를 검색 하는 경우 API는 검색 쿼리에서 키워드를 읽습니다. 그런 다음 주소의 경도 및 위도 좌표를 반환 합니다. 이 프로세스를 *지 오 코딩*라고 합니다. 
 
-한 국가의 지역에서 코드를 사용 하는 기능은 도로의 데이터의 가용성과 지 오 코딩 서비스의 전체 자릿수에 따라 달라 집니다. 국가 또는 지역별 Azure Maps 지 오 코딩 기능에 대 한 자세한 내용은 [지 오 코딩 적용](https://docs.microsoft.com/azure/azure-maps/geocoding-coverage)을 참조 하세요.
+한 국가의 지역에서 코드를 사용 하는 기능은 도로의 데이터의 가용성과 지 오 코딩 서비스의 전체 자릿수에 따라 달라 집니다. 국가 또는 지역별 Azure Maps 지 오 코딩 기능에 대한 자세한 내용은 [지 오 코딩 적용](https://docs.microsoft.com/azure/azure-maps/geocoding-coverage)을 참조 하세요.
 
 ### <a name="limit-search-results"></a>검색 결과 제한
 
@@ -50,7 +50,7 @@ Azure Maps Search Service를 사용 하 여 전체 또는 부분 주소를 검�
 
 #### <a name="geobiased-search-results"></a>Geobiased 검색 결과
 
-사용자에 대 한 관련 영역에 ias 결과를 추가 하려면 항상 가능한 한 많은 위치 정보를 추가 합니다. 일부 입력 유형을 지정 하 여 검색 결과를 제한 하는 것이 좋습니다.
+사용자에 대한 관련 영역에 ias 결과를 추가 하려면 항상 가능한 한 많은 위치 정보를 추가 합니다. 일부 입력 유형을 지정 하 여 검색 결과를 제한 하는 것이 좋습니다.
 
 * `countrySet` 매개 변수를 설정 합니다. 예를 들어 `US,FR`로 설정할 수 있습니다. 기본적으로 API는 전체 세계를 검색 하므로 불필요 한 결과를 반환할 수 있습니다. 쿼리에 `countrySet` 매개 변수가 없으면 검색에서 부정확 한 결과가 반환 될 수 있습니다. 예를 들어 *Bellevue* 이라는 도시를 검색 하면 두 국가에 *Bellevue*라는 도시가 포함 되기 때문에 USA와 프랑스에서 얻은 결과가 반환 됩니다.
 
@@ -61,7 +61,7 @@ Azure Maps Search Service를 사용 하 여 전체 또는 부분 주소를 검�
 
 #### <a name="fuzzy-search-parameters"></a>유사 항목 검색 매개 변수
 
-검색 쿼리에 대 한 사용자 입력을 모를 경우 Azure Maps [검색 유사 항목 API](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) 를 사용 하는 것이 좋습니다. 이 API는 POI 검색 및 지 오 코딩를 정식 *단일 줄 검색*으로 결합 합니다. 
+검색 쿼리에 대한 사용자 입력을 모를 경우 Azure Maps [검색 유사 항목 API](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) 를 사용 하는 것이 좋습니다. 이 API는 POI 검색 및 지 오 코딩를 정식 *단일 줄 검색*으로 결합 합니다. 
 
 * `minFuzzyLevel` 및 `maxFuzzyLevel` 매개 변수는 쿼리 매개 변수가 사용자가 원하는 정보와 정확히 일치 하지 않는 경우에도 관련 일치 항목을 반환 하는 데 도움이 됩니다. 성능을 최대화 하 고 비정상적인 결과를 줄이려면 검색 쿼리를 `minFuzzyLevel=1`의 기본값으로 설정 하 고 `maxFuzzyLevel=2`합니다. 
 
@@ -83,11 +83,11 @@ Azure Maps Search Service를 사용 하 여 전체 또는 부분 주소를 검�
 
 * `idxSet=PAD,Addr`-주소만 검색 합니다. `PAD`는 포인트 주소를 나타내고 `Addr`는 주소 범위를 나타냅니다.
 
-### <a name="reverse-geocode-and-filter-for-a-geography-entity-type"></a>지리 엔터티 형식에 대 한 역방향 geocode 및 필터
+### <a name="reverse-geocode-and-filter-for-a-geography-entity-type"></a>지리 엔터티 형식에 대한 역방향 geocode 및 필터
 
-[검색 주소 역방향 API](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse)에서 역방향 geocode 검색을 수행 하는 경우 서비스는 관리 영역에 대 한 다각형을 반환할 수 있습니다. 특정 지리 엔터티 형식에 대 한 검색 범위를 좁히려면 요청에 `entityType` 매개 변수를 포함 합니다. 
+[검색 주소 역방향 API](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse)에서 역방향 geocode 검색을 수행 하는 경우 서비스는 관리 영역에 대한 다각형을 반환할 수 있습니다. 특정 지리 엔터티 형식에 대한 검색 범위를 좁히려면 요청에 `entityType` 매개 변수를 포함 합니다. 
 
-결과 응답은 지리 ID와 일치 된 엔터티 형식을 포함 합니다. 둘 이상의 엔터티를 제공 하는 경우 끝점은 *사용 가능한 가장 작은 엔터티*를 반환 합니다. 반환 된 geometry ID를 사용 하 여 [검색 Polygon 서비스](https://docs.microsoft.com/rest/api/maps/search/getsearchpolygon)를 통해 지리 기 하 도형을 가져올 수 있습니다.
+결과 응답은 지리 ID와 일치 된 엔터티 형식을 포함 합니다. 둘 이상의 엔터티를 제공 하는 경우 엔드포인트은 *사용 가능한 가장 작은 엔터티*를 반환 합니다. 반환 된 geometry ID를 사용 하 여 [검색 Polygon 서비스](https://docs.microsoft.com/rest/api/maps/search/getsearchpolygon)를 통해 지리 기 하 도형을 가져올 수 있습니다.
 
 #### <a name="sample-request"></a>샘플 요청
 
@@ -131,7 +131,7 @@ https://atlas.microsoft.com/search/address/reverse/json?api-version=1.0&subscrip
 
 ### <a name="set-the-results-language"></a>결과 언어 설정
 
-`language` 매개 변수를 사용 하 여 반환 된 검색 결과에 대 한 언어를 설정 합니다. 요청에서 언어를 설정 하지 않으면 기본적으로 Search Service 국가 또는 지역에서 가장 많이 사용 되는 언어를 사용 합니다. 지정 된 언어로 사용할 수 있는 데이터가 없으면 기본 언어가 사용 됩니다. 
+`language` 매개 변수를 사용 하 여 반환 된 검색 결과에 대한 언어를 설정 합니다. 요청에서 언어를 설정 하지 않으면 기본적으로 Search Service 국가 또는 지역에서 가장 많이 사용 되는 언어를 사용 합니다. 지정 된 언어로 사용할 수 있는 데이터가 없으면 기본 언어가 사용 됩니다. 
 
 자세한 내용은 [지원 되는 언어 Azure Maps](https://docs.microsoft.com/azure/azure-maps/supported-languages)를 참조 하세요.
 
@@ -140,7 +140,7 @@ https://atlas.microsoft.com/search/address/reverse/json?api-version=1.0&subscrip
 
 부분 쿼리와 일치 하는 항목을 더 찾으려면 `typeahead` 매개 변수를 `true`로 설정 합니다. 이 쿼리는 부분 입력으로 해석 되며 검색은 예측 모드로 전환 됩니다. `typeahead` 매개 변수를 `true`로 설정 하지 않으면 서비스에서는 모든 관련 정보가 전달 된 것으로 간주 합니다.
 
-다음 샘플 쿼리에서는 검색 주소 서비스를 *마이크로*로 쿼리 합니다. 여기에서 `typeahead` 매개 변수는 `true`로 설정 됩니다. 응답은 검색 서비스가 쿼리를 부분 쿼리로 해석 함을 보여 줍니다. 응답에는 자동으로 제안 된 쿼리에 대 한 결과가 포함 됩니다.
+다음 샘플 쿼리에서는 검색 주소 서비스를 *마이크로*로 쿼리 합니다. 여기에서 `typeahead` 매개 변수는 `true`로 설정 됩니다. 응답은 검색 서비스가 쿼리를 부분 쿼리로 해석 함을 보여 줍니다. 응답에는 자동으로 제안 된 쿼리에 대한 결과가 포함 됩니다.
 
 #### <a name="sample-query"></a>샘플 쿼리
 
@@ -477,7 +477,7 @@ url.QueryEscape(query)
 ```
 
 
-## <a name="best-practices-for-poi-searching"></a>POI 검색에 대 한 모범 사례
+## <a name="best-practices-for-poi-searching"></a>POI 검색에 대한 모범 사례
 
 POI 검색에서 이름으로 POI 결과를 요청할 수 있습니다. 예를 들어 이름을 기준으로 비즈니스를 검색할 수 있습니다. 
 
@@ -489,7 +489,7 @@ POI 검색에서 이름으로 POI 결과를 요청할 수 있습니다. 예를 �
 
 요청에서 쉼표로 구분 된 브랜드 이름 목록을 제출할 수 있습니다. `brandSet` 매개 변수를 설정 하 여 결과를 특정 브랜드로 제한 하려면 목록을 사용 합니다. 목록에서 항목 순서는 중요 하지 않습니다. 여러 브랜드 목록을 제공 하는 경우 반환 되는 결과는 하나 이상의 목록에 속해야 합니다.
 
-브랜드 검색을 살펴보기 위해 [Poi 범주 검색](https://docs.microsoft.com/rest/api/maps/search/getsearchpoicategory) 요청을 만들어 보겠습니다. 다음 예제에서는 Redmond, 워싱턴의 Microsoft 캠퍼스 근처의 가스를 찾습니다. 응답은 반환 된 각 POI에 대 한 브랜드 정보를 표시 합니다.
+브랜드 검색을 살펴보기 위해 [Poi 범주 검색](https://docs.microsoft.com/rest/api/maps/search/getsearchpoicategory) 요청을 만들어 보겠습니다. 다음 예제에서는 Redmond, 워싱턴의 Microsoft 캠퍼스 근처의 가스를 찾습니다. 응답은 반환 된 각 POI에 대한 브랜드 정보를 표시 합니다.
 
 
 #### <a name="sample-query"></a>샘플 쿼리
@@ -751,7 +751,7 @@ https://atlas.microsoft.com/search/poi/json?subscription-key={subscription-key}&
 
 ### <a name="nearby-search"></a>주변 검색
 
-특정 위치에 대 한 POI 결과를 검색 하려면 [주변 API 검색](https://docs.microsoft.com/rest/api/maps/search/getsearchnearby)을 사용해 볼 수 있습니다. 끝점은 POI 결과만 반환 합니다. 검색 쿼리 매개 변수를 사용 하지 않습니다. 
+특정 위치에 대한 POI 결과를 검색 하려면 [주변 API 검색](https://docs.microsoft.com/rest/api/maps/search/getsearchnearby)을 사용해 볼 수 있습니다. 엔드포인트은 POI 결과만 반환 합니다. 검색 쿼리 매개 변수를 사용 하지 않습니다. 
 
 결과를 제한 하려면 radius를 설정 하는 것이 좋습니다.
 
@@ -789,7 +789,7 @@ https://atlas.microsoft.com/search/address/json?subscription-key={subscription-k
 
 주소 검색에서 Poi를 반환 하지 않습니다.  
 
-각 응답 개체에 대 한 `Score` 매개 변수는 일치 점수가 동일한 응답의 다른 개체의 점수와 어떻게 관련 되는지를 나타냅니다. 응답 개체 매개 변수에 대 한 자세한 내용은 [검색 주소 가져오기](https://docs.microsoft.com/rest/api/maps/search/getsearchaddress)를 참조 하세요.
+각 응답 개체에 대한 `Score` 매개 변수는 일치 점수가 동일한 응답의 다른 개체의 점수와 어떻게 관련 되는지를 나타냅니다. 응답 개체 매개 변수에 대한 자세한 내용은 [검색 주소 가져오기](https://docs.microsoft.com/rest/api/maps/search/getsearchaddress)를 참조 하세요.
 
 ```JSON
 {
@@ -953,10 +953,10 @@ https://atlas.microsoft.com/search/address/json?subscription-key={subscription-k
 
 ### <a name="geometry"></a>geometry
 
-*기 하 도형* 에 대 한 응답 형식에는 `geometry` 및 `id`의 `dataSources` 개체에서 반환 되는 기 하 도형 ID가 포함 될 수 있습니다. 예를 들어, [검색 Polygon 서비스](https://docs.microsoft.com/rest/api/maps/search/getsearchpolygon) 를 사용 하 여 GeoJSON 형식으로 geometry 데이터를 요청할 수 있습니다. 이 형식을 사용 하 여 엔터티 집합에 대 한 도시나 공항 개요를 얻을 수 있습니다. 그런 다음이 경계 데이터를 사용 하 여 지 [오를 설정](https://docs.microsoft.com/azure/azure-maps/tutorial-geofence) 하거나 [기 하 도형 내에서 poi을 검색할](https://docs.microsoft.com/rest/api/maps/search/postsearchinsidegeometry)수 있습니다.
+*기 하 도형* 에 대한 응답 형식에는 `geometry` 및 `id`의 `dataSources` 개체에서 반환 되는 기 하 도형 ID가 포함 될 수 있습니다. 예를 들어, [검색 Polygon 서비스](https://docs.microsoft.com/rest/api/maps/search/getsearchpolygon) 를 사용 하 여 GeoJSON 형식으로 geometry 데이터를 요청할 수 있습니다. 이 형식을 사용 하 여 엔터티 집합에 대한 도시나 공항 개요를 얻을 수 있습니다. 그런 다음이 경계 데이터를 사용 하 여 지 [오를 설정](https://docs.microsoft.com/azure/azure-maps/tutorial-geofence) 하거나 [기 하 도형 내에서 poi을 검색할](https://docs.microsoft.com/rest/api/maps/search/postsearchinsidegeometry)수 있습니다.
 
 
-[검색 주소](https://docs.microsoft.com/rest/api/maps/search/getsearchaddress) Api 또는 [검색 유사 항목](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) api에 대 한 응답에는 `geometry` 및 `id`의 `dataSources` 개체에서 반환 되는 geometry ID가 포함 될 수 있습니다.
+[검색 주소](https://docs.microsoft.com/rest/api/maps/search/getsearchaddress) Api 또는 [검색 유사 항목](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) api에 대한 응답에는 `geometry` 및 `id`의 `dataSources` 개체에서 반환 되는 geometry ID가 포함 될 수 있습니다.
 
 
 ```JSON 

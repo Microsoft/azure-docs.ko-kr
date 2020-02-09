@@ -17,11 +17,11 @@ ms.locfileid: "73811991"
 ---
 # <a name="company-work-accounts-and-partner-center"></a>회사 회사 계정 및 파트너 센터
 
-파트너 센터는 회사 회사 계정 (AD (Azure Active Directory) 테 넌 트 라고도 함)을 사용 하 여 여러 사용자에 대 한 계정 액세스, 제어 권한, 호스트 그룹 및 응용 프로그램을 관리 하 고 프로필 데이터를 유지 관리 합니다. 회사 직원은 회사의 회사 메일 계정 도메인을 파트너 센터 계정에 연결 함으로써 파트너 센터에 로그인 하 여 자신의 회사 계정 사용자 이름 및 암호를 사용 하 여 marketplace 제품을 관리할 수 있습니다.
+파트너 센터는 회사 회사 계정 (AD (Azure Active Directory) 테넌트 라고도 함)을 사용 하 여 여러 사용자에 대 한 계정 액세스, 제어 권한, 호스트 그룹 및 응용 프로그램을 관리 하 고 프로필 데이터를 유지 관리 합니다. 회사 직원은 회사의 회사 메일 계정 도메인을 파트너 센터 계정에 연결 함으로써 파트너 센터에 로그인 하 여 자신의 회사 계정 사용자 이름 및 암호를 사용 하 여 marketplace 제품을 관리할 수 있습니다.
 
 ## <a name="check-whether-your-company-already-has-a-work-account"></a>회사에 회사 계정이 이미 있는지 확인
 
-회사에서 Azure, Microsoft Intune 또는 Office 365와 같은 Microsoft 클라우드 서비스를 구독 한 경우 파트너 센터에서 사용할 수 있는 회사 전자 메일 계정 도메인 (Azure Active Directory 테 넌 트 라고도 함)이 이미 있습니다.
+회사에서 Azure, Microsoft Intune 또는 Office 365와 같은 Microsoft 클라우드 서비스를 구독 한 경우 파트너 센터에서 사용할 수 있는 회사 전자 메일 계정 도메인 (Azure Active Directory 테넌트 라고도 함)이 이미 있습니다.
 
 다음 단계를 수행 하 여 확인 합니다.
 1. https://portal.azure.com에서 Azure 관리 포털에 로그인 합니다.
@@ -49,7 +49,7 @@ Azure Active Directory에서 사용자 지정 도메인을 추가 하는 방법�
 
 ## <a name="troubleshoot-work-email-sign-in"></a>작업 전자 메일 로그인 문제 해결
 
-회사 계정 (Azure AD 테 넌 트 라고도 함)에 로그인 하는 데 문제가 있는 경우 아래 다이어그램에서 해당 상황과 가장 일치 하는 시나리오를 찾아 권장 단계를 따릅니다.
+회사 계정 (Azure AD 테넌트 라고도 함)에 로그인 하는 데 문제가 있는 경우 아래 다이어그램에서 해당 상황과 가장 일치 하는 시나리오를 찾아 권장 단계를 따릅니다.
 
 ![작업 계정 로그인 문제 해결을 위한 다이어그램](./media/onboarding-aad-flow.png)
 

@@ -25,7 +25,7 @@ Azure Functions를 사용 하면 함수 앱의 `FUNCTIONS_EXTENSION_VERSION` 응
 
 새 버전을 공개적으로 사용할 수 있으면 포털에서 메시지를 표시하여 해당 버전으로 업그레이드할 수 있는 기회를 제공합니다. 새 버전으로 변경한 후에 `FUNCTIONS_EXTENSION_VERSION` 애플리케이션 설정을 사용하여 이전 버전으로 다시 변경할 수 있습니다.
 
-다음 표에서는 자동 업데이트를 사용 하도록 설정 하기 위해 각 주 버전에 대 한 `FUNCTIONS_EXTENSION_VERSION` 값을 보여 줍니다.
+다음 표에서는 자동 업데이트를 사용 하도록 설정 하기 위해 각 주 버전에 대한 `FUNCTIONS_EXTENSION_VERSION` 값을 보여 줍니다.
 
 | 주 버전 | `FUNCTIONS_EXTENSION_VERSION` 값 |
 | ------------- | ----------------------------------- |
@@ -47,7 +47,7 @@ Azure Functions를 사용 하면 함수 앱의 `FUNCTIONS_EXTENSION_VERSION` 응
 [!INCLUDE [Set the runtime version in the portal](../../includes/functions-view-update-version-portal.md)]
 
 > [!NOTE]
-> Azure Portal를 사용 하 여 이미 함수가 포함 된 함수 앱에 대 한 런타임 버전을 변경할 수 없습니다.
+> Azure Portal를 사용 하 여 이미 함수가 포함 된 함수 앱에 대한 런타임 버전을 변경할 수 없습니다.
 
 ### <a name="view-and-update-the-runtime-version-using-azure-cli"></a>Azure CLI에서
 

@@ -62,7 +62,7 @@ Azure Digital Twins는 현재 선택한 엔드포인트로 전송될 다음 **Ev
 | EventGrid|               |         X         |     X       |      X       |   X       |
 
 >[!NOTE]  
->끝점과 이벤트 스키마의 예제를 만드는 방법에 대 한 자세한 내용은 [송신 및 끝점](how-to-egress-endpoints.md)을 참조 하세요.
+>엔드포인트과 이벤트 스키마의 예제를 만드는 방법에 대한 자세한 내용은 [송신 및 엔드포인트](how-to-egress-endpoints.md)을 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

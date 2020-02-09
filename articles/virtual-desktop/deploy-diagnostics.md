@@ -198,12 +198,12 @@ Vm의 상태를 볼 수 있으려면 Log Analytics 연결을 사용 하도록 �
 진단 도구를 사용자에 게 제공 하기 전에 다음 권한이 있는지 확인 합니다.
 
 - 사용자는 log analytics에 대 한 읽기 권한이 필요 합니다. 자세한 내용은 Azure Monitor를 사용 하 여 [역할, 권한 및 보안 시작](/azure/azure-monitor/platform/roles-permissions-security)을 참조 하세요.
--  또한 사용자에 게는 Windows 가상 데스크톱 테 넌 트 (RDS Reader 역할)에 대 한 읽기 권한이 필요 합니다. 자세한 내용은 [Windows 가상 데스크톱의 위임 된 액세스](delegated-access-virtual-desktop.md)를 참조 하세요.
+-  또한 사용자에 게는 Windows 가상 데스크톱 테넌트 (RDS Reader 역할)에 대 한 읽기 권한이 필요 합니다. 자세한 내용은 [Windows 가상 데스크톱의 위임 된 액세스](delegated-access-virtual-desktop.md)를 참조 하세요.
 
 또한 사용자에 게 다음 정보를 제공 해야 합니다.
 
 - 앱의 URL
-- 액세스할 수 있는 테 넌 트 그룹 개별 테 넌 트의 이름입니다.
+- 액세스할 수 있는 테넌트 그룹 개별 테넌트의 이름입니다.
 
 ## <a name="use-the-diagnostics-tool"></a>진단 도구 사용
 

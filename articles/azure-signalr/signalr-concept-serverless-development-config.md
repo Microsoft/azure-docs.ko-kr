@@ -1,6 +1,6 @@
 ---
 title: Azure Functions 앱 개발 & 구성-Azure SignalR
-description: Azure Functions 및 Azure SignalR 서비스를 사용 하 여 서버 리스 실시간 응용 프로그램을 개발 하 고 구성 하는 방법에 대 한 세부 정보
+description: Azure Functions 및 Azure SignalR 서비스를 사용 하 여 서버 리스 실시간 응용 프로그램을 개발 하 고 구성 하는 방법에 대한 세부 정보
 author: anthonychu
 ms.service: signalr
 ms.topic: conceptual
@@ -31,18 +31,18 @@ Azure Portal에서 SignalR Service 리소스의 *설정* 페이지를 찾습니�
 
 Azure Functions 및 Azure SignalR 서비스를 사용 하 여 빌드한 서버 리스 실시간 응용 프로그램은 일반적으로 다음 두 가지 Azure Functions 필요 합니다.
 
-* 클라이언트에서 유효한 SignalR 서비스 액세스 토큰 및 서비스 끝점 URL을 얻기 위해 호출 하는 "negotiate" 함수
+* 클라이언트에서 유효한 SignalR 서비스 액세스 토큰 및 서비스 엔드포인트 URL을 얻기 위해 호출 하는 "negotiate" 함수
 * 메시지를 보내거나 그룹 멤버 자격을 관리 하는 하나 이상의 함수
 
 ### <a name="negotiate-function"></a>negotiate 함수
 
-클라이언트 응용 프로그램에는 Azure SignalR Service에 연결 하는 데 유효한 액세스 토큰이 필요 합니다. 액세스 토큰은 지정 된 사용자 ID에 대해 익명 이거나 인증 될 수 있습니다. 서버를 사용 하지 않는 SignalR 서비스 응용 프로그램에는 토큰 및 기타 연결 정보 (예: SignalR Service 끝점 URL)를 가져오기 위해 "negotiate" 라는 HTTP 끝점이 필요 합니다.
+클라이언트 응용 프로그램에는 Azure SignalR Service에 연결 하는 데 유효한 액세스 토큰이 필요 합니다. 액세스 토큰은 지정 된 사용자 ID에 대해 익명 이거나 인증 될 수 있습니다. 서버를 사용 하지 않는 SignalR 서비스 응용 프로그램에는 토큰 및 기타 연결 정보 (예: SignalR Service 엔드포인트 URL)를 가져오기 위해 "negotiate" 라는 HTTP 엔드포인트이 필요 합니다.
 
 HTTP로 트리거된 Azure 함수 및 *SignalRConnectionInfo* 입력 바인딩을 사용 하 여 연결 정보 개체를 생성 합니다. 함수는 `/negotiate`로 끝나는 HTTP 경로를 포함 해야 합니다.
 
-Negotiate 함수를 만드는 방법에 대 한 자세한 내용은 [ *SignalRConnectionInfo* 입력 바인딩 참조](../azure-functions/functions-bindings-signalr-service.md#input)를 참조 하세요.
+Negotiate 함수를 만드는 방법에 대한 자세한 내용은 [ *SignalRConnectionInfo* 입력 바인딩 참조](../azure-functions/functions-bindings-signalr-service.md#input)를 참조 하세요.
 
-인증 된 토큰을 만드는 방법에 대 한 자세한 내용은 [App Service 인증 사용](#using-app-service-authentication)을 참조 하세요.
+인증 된 토큰을 만드는 방법에 대한 자세한 내용은 [App Service 인증 사용](#using-app-service-authentication)을 참조 하세요.
 
 ### <a name="sending-messages-and-managing-group-membership"></a>메시지 보내기 및 그룹 멤버 자격 관리
 
@@ -64,10 +64,10 @@ SignalR client 응용 프로그램은 여러 언어 중 하나에서 SignalR cli
 
 SignalR Service에 연결 하려면 클라이언트는 다음 단계로 구성 된 성공적인 연결 협상을 완료 해야 합니다.
 
-1. 올바른 연결 정보를 얻기 위해 위에서 설명한 *negotiate* HTTP 끝점에 대 한 요청을 수행 합니다.
-1. *Negotiate* 끝점에서 가져온 서비스 끝점 URL 및 액세스 토큰을 사용 하 여 SignalR service에 연결 합니다.
+1. 올바른 연결 정보를 얻기 위해 위에서 설명한 *negotiate* HTTP 엔드포인트에 대한 요청을 수행 합니다.
+1. *Negotiate* 엔드포인트에서 가져온 서비스 엔드포인트 URL 및 액세스 토큰을 사용 하 여 SignalR service에 연결 합니다.
 
-SignalR 클라이언트 Sdk는 협상 핸드셰이크를 수행 하는 데 필요한 논리를 이미 포함 하 고 있습니다. `negotiate` 세그먼트를 제외 하 고 negotiate 끝점의 URL을 SDK의 `HubConnectionBuilder`에 전달 합니다. JavaScript의 예제는 다음과 같습니다.
+SignalR 클라이언트 Sdk는 협상 핸드셰이크를 수행 하는 데 필요한 논리를 이미 포함 하 고 있습니다. `negotiate` 세그먼트를 제외 하 고 negotiate 엔드포인트의 URL을 SDK의 `HubConnectionBuilder`에 전달 합니다. JavaScript의 예제는 다음과 같습니다.
 
 ```javascript
 const connection = new signalR.HubConnectionBuilder()
@@ -80,7 +80,7 @@ const connection = new signalR.HubConnectionBuilder()
 > [!NOTE]
 > 브라우저에서 JavaScript/TypeScript SDK를 사용 하는 경우 함수 앱에서 [CORS (원본 간 리소스 공유)를 사용 하도록 설정](#enabling-cors) 해야 합니다.
 
-SignalR client SDK를 사용 하는 방법에 대 한 자세한 내용은 해당 언어에 대 한 설명서를 참조 하세요.
+SignalR client SDK를 사용 하는 방법에 대한 자세한 내용은 해당 언어에 대한 설명서를 참조 하세요.
 
 * [.NET Standard](https://docs.microsoft.com/aspnet/core/signalr/dotnet-client)
 * [JavaScript](https://docs.microsoft.com/aspnet/core/signalr/javascript-client)
@@ -94,7 +94,7 @@ SignalR SDK를 사용 하면 클라이언트 응용 프로그램에서 SignalR h
 
 Azure SignalR Service와 통합 하는 azure 함수 앱은 [지속적으로 배포](../azure-functions/functions-continuous-deployment.md)하 고, [zip을 배포](../azure-functions/deployment-zip-push.md)하 고, [패키지에서 실행](../azure-functions/run-functions-from-deployment-package.md)하는 등의 기법을 사용 하 여 일반적인 azure 함수 앱 처럼 배포할 수 있습니다.
 
-그러나 SignalR 서비스 바인딩을 사용 하는 앱에 대 한 몇 가지 특별 한 고려 사항이 있습니다. 클라이언트가 브라우저에서 실행 되는 경우 CORS를 사용 하도록 설정 해야 합니다. 응용 프로그램에 인증이 필요한 경우 negotiate 끝점을 App Service 인증과 통합할 수 있습니다.
+그러나 SignalR 서비스 바인딩을 사용 하는 앱에 대한 몇 가지 특별 한 고려 사항이 있습니다. 클라이언트가 브라우저에서 실행 되는 경우 CORS를 사용 하도록 설정 해야 합니다. 응용 프로그램에 인증이 필요한 경우 negotiate 엔드포인트을 App Service 인증과 통합할 수 있습니다.
 
 ### <a name="enabling-cors"></a>CORS 사용
 
@@ -139,7 +139,7 @@ SignalR 클라이언트가 negotiate 함수를 호출 하려면 액세스 제어
 
 Azure API Management는 기존 백 엔드 서비스에 기능을 추가 하는 API 게이트웨이를 제공 합니다. 이를 사용 하 여 함수 앱에 CORS를 추가할 수 있습니다. 작업 단위 가격 책정 및 월간 무료 부여를 사용 하는 소비 계층을 제공 합니다.
 
-[Azure 함수 앱을 가져오는](../api-management/import-function-app-as-api.md)방법에 대 한 자세한 내용은 API Management 설명서를 참조 하세요. 가져온 후에는 인바운드 정책을 추가 하 여 액세스 제어-자격 증명 지원을 통해 CORS를 사용 하도록 설정할 수 있습니다.
+[Azure 함수 앱을 가져오는](../api-management/import-function-app-as-api.md)방법에 대한 자세한 내용은 API Management 설명서를 참조 하세요. 가져온 후에는 인바운드 정책을 추가 하 여 액세스 제어-자격 증명 지원을 통해 CORS를 사용 하도록 설정할 수 있습니다.
 
 ```xml
 <cors allow-credentials="true">
@@ -163,9 +163,9 @@ API Management URL을 사용 하도록 SignalR 클라이언트를 구성 합니�
 
 ### <a name="using-app-service-authentication"></a>App Service 인증 사용
 
-Azure Functions에는 Facebook, Twitter, Microsoft 계정, Google, Azure Active Directory 등 널리 사용 되는 공급자를 지 원하는 기본 제공 인증이 있습니다. 이 기능을 *SignalRConnectionInfo* 바인딩과 통합 하 여 사용자 ID에 인증 된 Azure SignalR Service에 대 한 연결을 만들 수 있습니다. 응용 프로그램은 해당 사용자 ID를 대상으로 하는 *SignalR* 출력 바인딩을 사용 하 여 메시지를 보낼 수 있습니다.
+Azure Functions에는 Facebook, Twitter, Microsoft 계정, Google, Azure Active Directory 등 널리 사용 되는 공급자를 지 원하는 기본 제공 인증이 있습니다. 이 기능을 *SignalRConnectionInfo* 바인딩과 통합 하 여 사용자 ID에 인증 된 Azure SignalR Service에 대한 연결을 만들 수 있습니다. 응용 프로그램은 해당 사용자 ID를 대상으로 하는 *SignalR* 출력 바인딩을 사용 하 여 메시지를 보낼 수 있습니다.
 
-Azure Portal의 함수 앱 *플랫폼 기능* 탭에서 *인증/권한 부여* 설정 창을 엽니다. 사용자가 선택한 id 공급자를 사용 하 여 인증을 구성 하려면 [App Service 인증](../app-service/overview-authentication-authorization.md) 에 대 한 설명서를 따르세요.
+Azure Portal의 함수 앱 *플랫폼 기능* 탭에서 *인증/권한 부여* 설정 창을 엽니다. 사용자가 선택한 id 공급자를 사용 하 여 인증을 구성 하려면 [App Service 인증](../app-service/overview-authentication-authorization.md) 에 대한 설명서를 따르세요.
 
 구성 된 인증 된 HTTP 요청에는 인증 된 id의 사용자 이름 및 사용자 ID를 포함 하는 `x-ms-client-principal-name` 및 `x-ms-client-principal-id` 헤더가 포함 됩니다.
 
@@ -203,7 +203,7 @@ public static Task SendMessage(
 }
 ```
 
-다른 언어에 대 한 자세한 내용은 [Azure SignalR Service bindings](../azure-functions/functions-bindings-signalr-service.md) for Azure Functions 참조를 참조 하세요.
+다른 언어에 대한 자세한 내용은 [Azure SignalR Service bindings](../azure-functions/functions-bindings-signalr-service.md) for Azure Functions 참조를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

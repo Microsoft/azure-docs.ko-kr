@@ -1,5 +1,5 @@
 ---
-title: Azure Functions에 대 한 PowerShell 개발자 참조
+title: Azure Functions에 대한 PowerShell 개발자 참조
 description: PowerShell을 사용 하 여 함수를 개발 하는 방법을 이해 합니다.
 author: eamonoreilly
 ms.topic: conceptual
@@ -17,9 +17,9 @@ ms.locfileid: "74974243"
 
 PowerShell Azure 함수 (함수)는 트리거될 때 실행 되는 PowerShell 스크립트로 표시 됩니다. 각 함수 스크립트에는 함수의 동작 방식 (예: 트리거되는 방법 및 해당 입력 및 출력 매개 변수)을 정의 하는 관련 `function.json` 파일이 있습니다. 자세한 내용은 [트리거 및 바인딩 문서](functions-triggers-bindings.md)를 참조 하세요. 
 
-다른 종류의 함수와 마찬가지로 PowerShell 스크립트 함수는 `function.json` 파일에 정의 된 모든 입력 바인딩의 이름과 일치 하는 매개 변수를 사용 합니다. 함수를 시작한 트리거에 대 한 추가 정보를 포함 하는 `TriggerMetadata` 매개 변수도 전달 됩니다.
+다른 종류의 함수와 마찬가지로 PowerShell 스크립트 함수는 `function.json` 파일에 정의 된 모든 입력 바인딩의 이름과 일치 하는 매개 변수를 사용 합니다. 함수를 시작한 트리거에 대한 추가 정보를 포함 하는 `TriggerMetadata` 매개 변수도 전달 됩니다.
 
-이 문서에서는 [Azure Functions 개발자 참조](functions-reference.md)를 이미 읽은 것으로 가정 합니다. 또한 [powershell에 대 한 빠른 시작 함수](functions-create-first-function-powershell.md) 를 완료 하 여 첫 번째 powershell 함수를 만들었습니다.
+이 문서에서는 [Azure Functions 개발자 참조](functions-reference.md)를 이미 읽은 것으로 가정 합니다. 또한 [powershell에 대한 빠른 시작 함수](functions-create-first-function-powershell.md) 를 완료 하 여 첫 번째 powershell 함수를 만들었습니다.
 
 ## <a name="folder-structure"></a>폴더 구조
 
@@ -67,7 +67,7 @@ param($MyFirstInputBinding, $MySecondInputBinding, $TriggerMetadata)
 
 ### <a name="triggermetadata-parameter"></a>TriggerMetadata 매개 변수
 
-`TriggerMetadata` 매개 변수는 트리거에 대 한 추가 정보를 제공 하는 데 사용 됩니다. 추가 메타 데이터는 바인딩에 대 한 바인딩과 다르지만 모두 다음 데이터를 포함 하는 `sys` 속성을 포함 합니다.
+`TriggerMetadata` 매개 변수는 트리거에 대한 추가 정보를 제공 하는 데 사용 됩니다. 추가 메타 데이터는 바인딩에 대한 바인딩과 다르지만 모두 다음 데이터를 포함 하는 `sys` 속성을 포함 합니다.
 
 ```powershell
 $TriggerMetadata.sys
@@ -77,9 +77,9 @@ $TriggerMetadata.sys
 |------------|-------------------------------------------------|----------|
 | UtcNow     | UTC에서 함수가 트리거된 경우        | Dátum és idő |
 | MethodName | 트리거된 함수의 이름     | sztring   |
-| RandGuid   | 이 함수 실행에 대 한 고유 guid입니다. | sztring   |
+| RandGuid   | 이 함수 실행에 대한 고유 guid입니다. | sztring   |
 
-모든 트리거 형식에는 서로 다른 메타 데이터 집합이 있습니다. 예를 들어 `QueueTrigger`에 대 한 `$TriggerMetadata`에는 `InsertionTime`, `Id`, `DequeueCount`등이 포함 됩니다. 큐 트리거의 메타 데이터에 대 한 자세한 내용은 [큐 트리거의 공식 설명서](functions-bindings-storage-queue.md#trigger---message-metadata)로 이동 하세요. 작업 중인 [트리거에](functions-triggers-bindings.md) 대 한 설명서를 확인 하 여 트리거 메타 데이터 내에 있는 항목을 확인 합니다.
+모든 트리거 형식에는 서로 다른 메타 데이터 집합이 있습니다. 예를 들어 `QueueTrigger`에 대한 `$TriggerMetadata`에는 `InsertionTime`, `Id`, `DequeueCount`등이 포함 됩니다. 큐 트리거의 메타 데이터에 대한 자세한 내용은 [큐 트리거의 공식 설명서](functions-bindings-storage-queue.md#trigger---message-metadata)로 이동 하세요. 작업 중인 [트리거에](functions-triggers-bindings.md) 대한 설명서를 확인 하 여 트리거 메타 데이터 내에 있는 항목을 확인 합니다.
 
 ## <a name="bindings"></a>Kötések
 
@@ -105,7 +105,7 @@ param($MyFirstInputBinding, $MySecondInputBinding)
 Push-OutputBinding -Name myQueue -Value $myValue
 ```
 
-파이프라인을 통해 특정 바인딩에 대 한 값을 전달할 수도 있습니다.
+파이프라인을 통해 특정 바인딩에 대한 값을 전달할 수도 있습니다.
 
 ```powershell
 param($MyFirstInputBinding, $MySecondInputBinding)
@@ -155,7 +155,7 @@ PS >Push-OutputBinding -Name response -Value ([HttpResponseContext]@{
 })
 ```
 
-출력은 단일 값만 허용 하는 HTTP에 대 한 것 이므로 `Push-OutputBinding`를 두 번째로 호출 하면 오류가 발생 합니다.
+출력은 단일 값만 허용 하는 HTTP에 대한 것 이므로 `Push-OutputBinding`를 두 번째로 호출 하면 오류가 발생 합니다.
 
 ```powershell
 PS >Push-OutputBinding -Name response -Value ([HttpResponseContext]@{
@@ -181,7 +181,7 @@ PS >Push-OutputBinding -Name response -Value ([HttpResponseContext]@{
 PS >Push-OutputBinding -Name outQueue -Value "output #1"
 ```
 
-저장소 큐에 대 한 출력 바인딩은 여러 출력 값을 허용 합니다. 이 경우 첫 번째 이후에 다음 예제를 호출 하면 "output #1" 및 "output #2"의 두 항목이 포함 된 목록이 큐에 기록 됩니다.
+저장소 큐에 대한 출력 바인딩은 여러 출력 값을 허용 합니다. 이 경우 첫 번째 이후에 다음 예제를 호출 하면 "output #1" 및 "output #2"의 두 항목이 포함 된 목록이 큐에 기록 됩니다.
 
 ```powershell
 PS >Push-OutputBinding -Name outQueue -Value "output #2"
@@ -245,7 +245,7 @@ PowerShell 함수의 로깅은 일반적인 PowerShell 로깅과 같은 방식�
 
 ### <a name="configure-the-function-app-log-level"></a>함수 앱 로그 수준 구성
 
-Azure Functions를 사용 하면 함수에서 로그에 쓰는 방식을 쉽게 제어할 수 있도록 임계값 수준을 정의할 수 있습니다. 콘솔에 기록 된 모든 추적에 대 한 임계값을 설정 하려면 [`host.json` 파일][호스트 json 참조]의 `logging.logLevel.default` 속성을 사용 합니다. 이 설정은 함수 앱의 모든 함수에 적용 됩니다.
+Azure Functions를 사용 하면 함수에서 로그에 쓰는 방식을 쉽게 제어할 수 있도록 임계값 수준을 정의할 수 있습니다. 콘솔에 기록 된 모든 추적에 대한 임계값을 설정 하려면 [`host.json` 파일][호스트 json 참조]의 `logging.logLevel.default` 속성을 사용 합니다. 이 설정은 함수 앱의 모든 함수에 적용 됩니다.
 
 다음 예에서는 임계값을 설정 하 여 모든 함수에 대해 자세한 정보 로깅을 사용 하도록 설정 하지만 `MyFunction`라는 함수에 대해 디버그 로깅을 사용 하도록 임계값을 설정 합니다.
 
@@ -264,7 +264,7 @@ Azure Functions를 사용 하면 함수에서 로그에 쓰는 방식을 쉽게 
 
 ### <a name="viewing-the-logs"></a>로그 보기
 
-함수 앱 Azure에서 실행 중인 경우 Application Insights를 사용 하 여 모니터링할 수 있습니다. 함수 로그를 보고 쿼리 하는 방법에 대 한 자세한 내용은 [모니터링 Azure Functions](functions-monitoring.md) 를 참조 하세요.
+함수 앱 Azure에서 실행 중인 경우 Application Insights를 사용 하 여 모니터링할 수 있습니다. 함수 로그를 보고 쿼리 하는 방법에 대한 자세한 내용은 [모니터링 Azure Functions](functions-monitoring.md) 를 참조 하세요.
 
 개발을 위해 함수 앱를 로컬로 실행 하는 경우 로그는 기본적으로 파일 시스템에 기록 됩니다. 콘솔에서 로그를 보려면 함수 앱을 시작 하기 전에 `AZURE_FUNCTIONS_ENVIRONMENT` 환경 변수를 `Development`로 설정 합니다.
 
@@ -360,7 +360,7 @@ PS > irm http://localhost:5001?Name=Functions
 Hello Functions!
 ```
 
-### <a name="type-casting-for-triggers-and-bindings"></a>트리거 및 바인딩에 대 한 형식 캐스팅
+### <a name="type-casting-for-triggers-and-bindings"></a>트리거 및 바인딩에 대한 형식 캐스팅
 
 Blob 바인딩과 같은 특정 바인딩의 경우 매개 변수의 형식을 지정할 수 있습니다.
 
@@ -378,7 +378,7 @@ PowerShell 함수에서 프로필 스크립트는 함수 앱이 시작 될 때 �
 
 Visual Studio Code 및 Azure Functions Core Tools와 같은 도구를 사용 하 여 함수 앱을 만들면 기본 `profile.ps1` 만들어집니다. 기본 프로필은 [핵심 도구 GitHub 리포지토리에서](https://github.com/Azure/azure-functions-core-tools/blob/dev/src/Azure.Functions.Cli/StaticResources/profile.ps1) 유지 관리 되며 다음을 포함 합니다.
 
-* Azure에 대 한 자동 MSI 인증.
+* Azure에 대한 자동 MSI 인증.
 * 원하는 경우 PowerShell 별칭 `AzureRM` Azure PowerShell을 켜는 기능입니다.
 
 ## <a name="powershell-version"></a>PowerShell 버전
@@ -422,13 +422,13 @@ Psd1 파일을 업데이트 하는 경우 다시 시작한 후 업데이트 된 
 
 | 함수 앱 설정              | Alapértelmezett érték             | Leírás                                         |
 |   -----------------------------   |   -------------------     |  -----------------------------------------------    |
-| **`MDMaxBackgroundUpgradePeriod`**      | `7.00:00:00` (7 일)     | 각 PowerShell 작업자 프로세스는 프로세스 시작 시와 그 이후의 모든 `MDMaxBackgroundUpgradePeriod`에서 PowerShell 갤러리에 대 한 모듈 업그레이드 검사를 시작 합니다. PowerShell 갤러리에서 새 모듈 버전을 사용할 수 있는 경우이 버전은 파일 시스템에 설치 되며 PowerShell 작업자에 게 제공 됩니다. 이 값을 줄이면 함수 앱에서 최신 모듈 버전을 보다 빨리 가져올 수 있지만, 앱 리소스 사용량 (네트워크 i/o, CPU, 저장소)도 늘어납니다. 이 값을 늘려도 앱의 리소스 사용량이 줄어들지만 앱에 새 모듈 버전을 전달 하는 작업이 지연 될 수도 있습니다. | 
+| **`MDMaxBackgroundUpgradePeriod`**      | `7.00:00:00` (7 일)     | 각 PowerShell 작업자 프로세스는 프로세스 시작 시와 그 이후의 모든 `MDMaxBackgroundUpgradePeriod`에서 PowerShell 갤러리에 대한 모듈 업그레이드 검사를 시작 합니다. PowerShell 갤러리에서 새 모듈 버전을 사용할 수 있는 경우이 버전은 파일 시스템에 설치 되며 PowerShell 작업자에 게 제공 됩니다. 이 값을 줄이면 함수 앱에서 최신 모듈 버전을 보다 빨리 가져올 수 있지만, 앱 리소스 사용량 (네트워크 i/o, CPU, 저장소)도 늘어납니다. 이 값을 늘려도 앱의 리소스 사용량이 줄어들지만 앱에 새 모듈 버전을 전달 하는 작업이 지연 될 수도 있습니다. | 
 | **`MDNewSnapshotCheckPeriod`**         | `01:00:00` (1 시간)       | 새 모듈 버전이 파일 시스템에 설치 된 후에는 모든 PowerShell 작업자 프로세스를 다시 시작 해야 합니다. PowerShell 작업자를 다시 시작 하면 현재 함수 실행을 중단할 수 있으므로 앱 사용 가능성에 영향을 줍니다. 모든 PowerShell 작업자 프로세스가 다시 시작 될 때까지 함수 호출은 이전 또는 새 모듈 버전을 사용할 수 있습니다. `MDNewSnapshotCheckPeriod`내에서 전체 PowerShell 작업자를 다시 시작 합니다. 이 값을 늘리면 중단 빈도가 줄어들지만 함수 호출로 인해 이전 또는 새 모듈 버전이 명확 하지 않은 경우에도 시간이 길어질 수 있습니다. |
 | **`MDMinBackgroundUpgradePeriod`**      | `1.00:00:00` (1 일)     | 자주 실행 하는 작업자를 다시 시작할 때 과도 한 모듈 업그레이드를 방지 하기 위해 작업자 중 마지막 `MDMinBackgroundUpgradePeriod`체크 인을 이미 시작한 경우에는 모듈 업그레이드를 확인 하지 않습니다. |
 
 사용자 고유의 사용자 지정 모듈을 활용 하는 것은 일반적으로 수행 하는 방법과 약간 다릅니다.
 
-로컬 컴퓨터에서 모듈은 `$env:PSModulePath`에서 전역적으로 사용 가능한 폴더 중 하나에 설치 됩니다. Azure에서 실행 하는 경우 컴퓨터에 설치 된 모듈에 액세스할 수 없습니다. 즉, PowerShell 함수 앱에 대 한 `$env:PSModulePath` 일반 PowerShell 스크립트의 `$env:PSModulePath`와 다릅니다.
+로컬 컴퓨터에서 모듈은 `$env:PSModulePath`에서 전역적으로 사용 가능한 폴더 중 하나에 설치 됩니다. Azure에서 실행 하는 경우 컴퓨터에 설치 된 모듈에 액세스할 수 없습니다. 즉, PowerShell 함수 앱에 대한 `$env:PSModulePath` 일반 PowerShell 스크립트의 `$env:PSModulePath`와 다릅니다.
 
 함수에서 `PSModulePath`는 두 개의 경로를 포함 합니다.
 
@@ -509,7 +509,7 @@ PSWorkerInProcConcurrencyUpperBound
 
 함수 앱의 [앱 설정](functions-app-settings.md) 에서이 환경 변수를 설정 합니다.
 
-### <a name="considerations-for-using-concurrency"></a>동시성 사용에 대 한 고려 사항
+### <a name="considerations-for-using-concurrency"></a>동시성 사용에 대한 고려 사항
 
 PowerShell은 기본적으로 _단일 스레드_ 스크립팅 언어입니다. 그러나 동일한 프로세스에서 여러 PowerShell runspace을 사용 하 여 동시성을 추가할 수 있습니다. 만든 runspace의 양은 PSWorkerInProcConcurrencyUpperBound 응용 프로그램 설정과 일치 합니다. 처리량은 선택한 계획에서 사용할 수 있는 CPU 및 메모리의 양에 따라 영향을 받습니다.
 
@@ -532,7 +532,7 @@ FunctionApp
  | | - PSFunction.ps1
 ```
 
-이 경우 `myFunction`에 대 한 `function.json`에는 내보낸 함수가 실행 되는 파일을 참조 하는 `scriptFile` 속성이 포함 됩니다.
+이 경우 `myFunction`에 대한 `function.json`에는 내보낸 함수가 실행 되는 파일을 참조 하는 `scriptFile` 속성이 포함 됩니다.
 
 ```json
 {
@@ -573,7 +573,7 @@ function Invoke-PSTestFunc {
 Export-ModuleMember -Function "Invoke-PSTestFunc"
 ```
 
-이 예제에서 `myFunction`에 대 한 구성에는 다른 폴더의 PowerShell 모듈인 `PSFunction.psm1`를 참조 하는 `scriptFile` 속성이 포함 되어 있습니다.  `entryPoint` 속성은 모듈의 진입점 인 `Invoke-PSTestFunc` 함수를 참조 합니다.
+이 예제에서 `myFunction`에 대한 구성에는 다른 폴더의 PowerShell 모듈인 `PSFunction.psm1`를 참조 하는 `scriptFile` 속성이 포함 되어 있습니다.  `entryPoint` 속성은 모듈의 진입점 인 `Invoke-PSTestFunc` 함수를 참조 합니다.
 
 ```json
 {
@@ -587,7 +587,7 @@ Export-ModuleMember -Function "Invoke-PSTestFunc"
 
 이 구성을 사용 하면 `Invoke-PSTestFunc` `run.ps1`와 똑같이 실행 됩니다.
 
-## <a name="considerations-for-powershell-functions"></a>PowerShell 함수에 대 한 고려 사항
+## <a name="considerations-for-powershell-functions"></a>PowerShell 함수에 대한 고려 사항
 
 PowerShell 함수를 사용 하는 경우 다음 섹션의 고려 사항에 유의 하세요.
 

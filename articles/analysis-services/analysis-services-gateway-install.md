@@ -1,5 +1,5 @@
 ---
-title: Azure Analysis Services에 대 한 온-프레미스 데이터 게이트웨이 설치 | Microsoft Docs
+title: Azure Analysis Services에 대한 온-프레미스 데이터 게이트웨이 설치 | Microsoft Docs
 description: 온-프레미스 데이터 게이트웨이를 설치 및 구성 하 여 Azure Analysis Services 서버에서 온-프레미스 데이터 원본에 연결 하는 방법을 알아봅니다.
 author: minewiskan
 ms.service: azure-analysis-services
@@ -18,7 +18,7 @@ ms.locfileid: "77062152"
 
 동일한 지역에 하나 이상의 Azure Analysis Services 서버를 온-프레미스 데이터 원본에 연결하는 경우 온-프레미스 데이터 게이트웨이가 필요합니다.  설치한 게이트웨이는 Power BI, Power Apps 및 Logic Apps와 같은 다른 서비스에서 사용 하는 것과 동일 하지만 Azure Analysis Services를 설치할 때 몇 가지 추가 단계를 완료 해야 합니다. 이 설치 문서는 **Azure Analysis Services**에만 적용 됩니다. 
 
-Azure Analysis Services 게이트웨이에서 작동 하는 방법에 대해 자세히 알아보려면 [온-프레미스 데이터 원본에 연결](analysis-services-gateway.md)을 참조 하세요. 일반적인 고급 설치 시나리오 및 게이트웨이에 대 한 자세한 내용은 [온-프레미스 데이터 게이트웨이 설명서](/data-integration/gateway/service-gateway-onprem)를 참조 하세요.
+Azure Analysis Services 게이트웨이에서 작동 하는 방법에 대해 자세히 알아보려면 [온-프레미스 데이터 원본에 연결](analysis-services-gateway.md)을 참조 하세요. 일반적인 고급 설치 시나리오 및 게이트웨이에 대한 자세한 내용은 [온-프레미스 데이터 게이트웨이 설명서](/data-integration/gateway/service-gateway-onprem)를 참조 하세요.
 
 ## <a name="prerequisites"></a>필수 조건
 

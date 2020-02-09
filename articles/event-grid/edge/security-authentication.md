@@ -35,7 +35,7 @@ ms.locfileid: "76844516"
 
 ## <a name="tls-configuration-aka-server-authentication"></a>TLS 구성 (a. k a 서버 인증)
 
-Event Grid 모듈은 HTTP 및 HTTPS 끝점을 모두 호스팅합니다. 모든 IoT Edge 모듈에는 IoT Edge 보안 데몬에 의해 서버 인증서가 할당 됩니다. 서버 인증서를 사용 하 여 끝점을 보호 합니다. 만료 시 모듈은 IoT Edge 보안 디먼의 새 인증서를 사용 하 여 자동으로 새로 고쳐집니다.
+Event Grid 모듈은 HTTP 및 HTTPS 엔드포인트을 모두 호스팅합니다. 모든 IoT Edge 모듈에는 IoT Edge 보안 데몬에 의해 서버 인증서가 할당 됩니다. 서버 인증서를 사용 하 여 엔드포인트을 보호 합니다. 만료 시 모듈은 IoT Edge 보안 디먼의 새 인증서를 사용 하 여 자동으로 새로 고쳐집니다.
 
 기본적으로 HTTPS 통신만 허용 됩니다. **Inbound__serverAuth__tlsPolicy** 구성을 통해이 동작을 재정의할 수 있습니다. 다음 표에서는이 속성의 가능한 값을 캡처합니다.
 
@@ -118,14 +118,14 @@ SAS 키 기반 인증을 제어 하는 구성이 **inbound__clientAuth__sasKeys_
 
 ### <a name="outbound-server-authentication"></a>아웃 바운드 서버 인증
 
-Event Grid 구독자의 대상 유형 중 하나는 "Webhook"입니다. 기본적으로 이러한 구독자에 대 한 HTTPS 끝점만 허용 됩니다.
+Event Grid 구독자의 대상 유형 중 하나는 "Webhook"입니다. 기본적으로 이러한 구독자에 대 한 HTTPS 엔드포인트만 허용 됩니다.
 
 Webhook 대상 정책 **outbound__webhook__httpsOnly**을 제어 하기 위한 구성입니다.
 
 | 가능한 값 | Description |
 | ----------------  | ------------ |
-| true | 기본값 HTTPS 끝점을 사용 하는 구독자만 허용 합니다.
-| false | HTTP 또는 HTTPS 끝점을 사용 하 여 구독자를 허용 합니다.
+| true | 기본값 HTTPS 엔드포인트을 사용 하는 구독자만 허용 합니다.
+| false | HTTP 또는 HTTPS 엔드포인트을 사용 하 여 구독자를 허용 합니다.
 
 기본적으로 Event Grid 모듈은 구독자의 서버 인증서의 유효성을 검사 합니다. **Outbound__webhook__skipServerCertValidation**를 재정의 하 여 유효성 검사를 건너뛸 수 있습니다. 가능한 값은 다음과 같습니다.
 

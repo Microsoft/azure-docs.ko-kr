@@ -60,7 +60,7 @@ ms.locfileid: "76515368"
 - Microsoft 사용량과 이벤트
 - Microsoft 사용량과 많은
 - Microsoft. 소비/제품
-- Microsoft 소비/테 넌 트
+- Microsoft 소비/테넌트
 - ContainerInstance/serviceAssociationLinks
 - CostManagement/경고
 - CostManagement/예산

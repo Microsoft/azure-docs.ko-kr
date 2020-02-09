@@ -31,7 +31,7 @@ ms.locfileid: "75446159"
 
 ## <a name="check-permissions-and-get-connection-string"></a>사용 권한 확인 및 연결 문자열 가져오기
 
-논리 앱이 이벤트 허브에 액세스할 수 있는지 확인 하려면 사용 권한을 확인 하 고 Event Hubs 네임 스페이스에 대 한 연결 문자열을 가져옵니다.
+논리 앱이 이벤트 허브에 액세스할 수 있는지 확인 하려면 사용 권한을 확인 하 고 Event Hubs 네임 스페이스에 대한 연결 문자열을 가져옵니다.
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
 
@@ -70,7 +70,7 @@ Azure Logic Apps에서 모든 논리 앱은 특정 이벤트가 발생하거나 
 
 1. 연결 정보를 묻는 메시지가 표시되면 [이제 Event Hubs 연결을 만듭니다](#create-connection). 
 
-1. 트리거에서 모니터링할 이벤트 허브에 대 한 정보를 제공 합니다. 추가 속성을 보려면 **새 매개 변수 추가** 목록을 엽니다. 매개 변수를 선택 하면 해당 속성이 트리거 카드에 추가 됩니다.
+1. 트리거에서 모니터링할 이벤트 허브에 대한 정보를 제공 합니다. 추가 속성을 보려면 **새 매개 변수 추가** 목록을 엽니다. 매개 변수를 선택 하면 해당 속성이 트리거 카드에 추가 됩니다.
 
    ![트리거 속성](./media/connectors-create-api-azure-event-hubs/event-hubs-trigger.png)
 
@@ -126,7 +126,7 @@ Azure Logic Apps에서 [작업](../logic-apps/logic-apps-overview.md#logic-app-c
 
 1. 연결 정보를 묻는 메시지가 표시되면 [이제 Event Hubs 연결을 만듭니다](#create-connection). 
 
-1. 동작에서 전송 하려는 이벤트에 대 한 정보를 제공 합니다. 추가 속성을 보려면 **새 매개 변수 추가** 목록을 엽니다. 매개 변수를 선택 하면 해당 속성이 작업 카드에 추가 됩니다.
+1. 동작에서 전송 하려는 이벤트에 대한 정보를 제공 합니다. 추가 속성을 보려면 **새 매개 변수 추가** 목록을 엽니다. 매개 변수를 선택 하면 해당 속성이 작업 카드에 추가 됩니다.
 
    ![Event Hub 이름을 선택하고 이벤트 콘텐츠를 제공](./media/connectors-create-api-azure-event-hubs/event-hubs-send-event-action.png)
 
@@ -135,7 +135,7 @@ Azure Logic Apps에서 [작업](../logic-apps/logic-apps-overview.md#logic-app-c
    | **이벤트 허브 이름** | 예 | 이벤트를 보낼 이벤트 허브 |
    | **콘텐츠** | 아닙니다. | 전송하려는 이벤트의 콘텐츠 |
    | **속성** | 아닙니다. | 보낼 앱 속성 및 값 |
-   | **파티션 키** | 아닙니다. | 이벤트를 보낼 위치에 대 한 [파티션](../event-hubs/event-hubs-features.md#partitions) ID입니다. |
+   | **파티션 키** | 아닙니다. | 이벤트를 보낼 위치에 대한 [파티션](../event-hubs/event-hubs-features.md#partitions) ID입니다. |
    ||||
 
    예를 들어 Event Hubs 트리거의 출력을 다른 이벤트 허브로 보낼 수 있습니다.

@@ -38,7 +38,7 @@ ms.locfileid: "76907605"
 ## <a name="prerequisites"></a>필수 조건
 
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
-* [Azure AD 테 넌 트](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
+* [Azure AD 테넌트](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
 * 프로 비전을 구성할 수 있는 [권한이](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) 있는 Azure AD의 사용자 계정 (예: 응용 프로그램 관리자, 클라우드 응용 프로그램 관리자, 응용 프로그램 소유자 또는 전역 관리자). 
 * Enterprise level mixpanel 조직
 * 해당 조직에 대 한 관리자 권한이 있는 mixpanel 계정
@@ -90,7 +90,7 @@ Azure AD 프로 비전 서비스를 사용 하면 응용 프로그램에 대 한
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에서 Mixpanel **테 넌 트 URL** 및 **암호 토큰**을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 Mixpanel에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Mixpanel 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
+5. **관리자 자격 증명** 섹션 아래에서 Mixpanel **테넌트 URL** 및 **암호 토큰**을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 Mixpanel에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Mixpanel 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
 
     ![프로비전](./media/mixpanel-provisioning-tutorial/provisioning.png)
 

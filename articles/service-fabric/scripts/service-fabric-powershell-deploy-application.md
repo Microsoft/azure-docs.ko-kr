@@ -41,7 +41,7 @@ ms.locfileid: "75610304"
 
 | 명령 | 메모 |
 |---|---|
-|[Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps)| Service Fabric 클러스터에 대한 끝점을 만듭니다. |
+|[Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps)| Service Fabric 클러스터에 대한 엔드포인트을 만듭니다. |
 |[Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps) | 애플리케이션 패키지를 클러스터 이미지 저장소에 복사합니다.  |
 |[Register-ServiceFabricApplicationType](/powershell/module/servicefabric/register-servicefabricapplicationtype?view=azureservicefabricps)| 애플리케이션 유형 및 버전을 클러스터에 등록합니다. |
 |[New-ServiceFabricApplication](/powershell/module/servicefabric/new-servicefabricapplication?view=azureservicefabricps)| 등록된 애플리케이션 유형에서 애플리케이션을 만듭니다. |

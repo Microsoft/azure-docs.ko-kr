@@ -1,6 +1,6 @@
 ---
 title: Azure Data Box Edge 제한 | Microsoft Docs
-description: Azure Data Box Edge에 대 한 시스템 제한 및 권장 크기를 설명 합니다.
+description: Azure Data Box Edge에 대한 시스템 제한 및 권장 크기를 설명 합니다.
 services: databox
 author: alkohli
 ms.service: databox

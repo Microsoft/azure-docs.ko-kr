@@ -56,7 +56,7 @@ ms.locfileid: "73961883"
 
 > "소 버린 클라우드"는 [Azure Government](../../azure-government/documentation-government-welcome.md), [Azure 독일](../../germany/germany-welcome.md)및 [azure 중국 21vianet](https://docs.microsoft.com/azure/china/overview-operations) 클라우드로 구성 됩니다.
 
-아쉽게도 Cognitive Services 컨테이너는 소 버린 클라우드에서 기본적으로 지원 *되지 않습니다* . 컨테이너는 이러한 클라우드에서 실행할 수 있지만 공용 클라우드에서 끌어온 다음 사용 데이터를 공용 끝점으로 보내야 합니다.
+아쉽게도 Cognitive Services 컨테이너는 소 버린 클라우드에서 기본적으로 지원 *되지 않습니다* . 컨테이너는 이러한 클라우드에서 실행할 수 있지만 공용 클라우드에서 끌어온 다음 사용 데이터를 공용 엔드포인트으로 보내야 합니다.
 
 ### <a name="versioning"></a>버전 관리
 

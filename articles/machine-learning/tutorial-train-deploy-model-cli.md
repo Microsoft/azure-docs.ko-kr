@@ -407,7 +407,7 @@ ACI service creation operation finished, operation "Succeeded"
 
 ### <a name="the-scoring-uri"></a>점수 매기기 URI
 
-배포에서 반환 되는 `scoringUri`는 웹 서비스로 배포 된 모델에 대 한 REST 끝점입니다. 다음 명령을 사용 하 여이 URI를 가져올 수도 있습니다.
+배포에서 반환 되는 `scoringUri`는 웹 서비스로 배포 된 모델에 대 한 REST 엔드포인트입니다. 다음 명령을 사용 하 여이 URI를 가져올 수도 있습니다.
 
 ```azurecli-interactive
 az ml service show -n myservice
@@ -415,11 +415,11 @@ az ml service show -n myservice
 
 이 명령은 `scoringUri`를 포함 하 여 동일한 JSON 문서를 반환 합니다.
 
-REST 끝점을 사용 하 여 데이터를 서비스로 보낼 수 있습니다. 서비스로 데이터를 전송 하는 클라이언트 응용 프로그램을 만드는 방법에 대 한 자세한 내용은 [웹 서비스로 배포 된 Azure Machine Learning 모델 사용](how-to-consume-web-service.md) 을 참조 하세요.
+REST 엔드포인트을 사용 하 여 데이터를 서비스로 보낼 수 있습니다. 서비스로 데이터를 전송 하는 클라이언트 응용 프로그램을 만드는 방법에 대 한 자세한 내용은 [웹 서비스로 배포 된 Azure Machine Learning 모델 사용](how-to-consume-web-service.md) 을 참조 하세요.
 
 ### <a name="send-data-to-the-service"></a>서비스에 데이터 보내기
 
-끝점을 호출 하는 클라이언트 응용 프로그램을 만들 수 있지만 machine learning CLI는 테스트 클라이언트 역할을 할 수 있는 유틸리티를 제공 합니다. 다음 명령을 사용 하 여 `testdata.json` 파일의 데이터를 서비스로 보냅니다.
+엔드포인트을 호출 하는 클라이언트 응용 프로그램을 만들 수 있지만 machine learning CLI는 테스트 클라이언트 역할을 할 수 있는 유틸리티를 제공 합니다. 다음 명령을 사용 하 여 `testdata.json` 파일의 데이터를 서비스로 보냅니다.
 
 ```azurecli-interactive
 az ml service run -n myservice -d @testdata.json

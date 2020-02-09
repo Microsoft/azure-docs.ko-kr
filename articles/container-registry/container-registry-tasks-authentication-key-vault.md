@@ -20,7 +20,7 @@ ms.locfileid: "76842523"
 
 ## <a name="scenario-overview"></a>시나리오 개요
 
-예제 작업은 Azure key vault에 저장 된 Docker 허브 자격 증명을 읽습니다. 자격 증명은 개인 Docker 허브 리포지토리에 대 한 쓰기 (푸시) 권한이 있는 Docker 허브 계정에 대 한 자격 증명입니다. 자격 증명을 읽으려면 관리 되는 id를 사용 하 여 작업을 구성 하 고 적절 한 권한을 할당 합니다. Id와 연결 된 태스크는 이미지를 빌드하고 Docker 허브에 로그인 하 여 이미지를 개인 리포지토리로 푸시합니다. 
+예제 작업은 Azure key vault에 저장 된 Docker 허브 자격 증명을 읽습니다. 자격 증명은 개인 Docker 허브 리포지토리에 대한 쓰기 (푸시) 권한이 있는 Docker 허브 계정에 대한 자격 증명입니다. 자격 증명을 읽으려면 관리 되는 id를 사용 하 여 작업을 구성 하 고 적절 한 권한을 할당 합니다. Id와 연결 된 태스크는 이미지를 빌드하고 Docker 허브에 로그인 하 여 이미지를 개인 리포지토리로 푸시합니다. 
 
 이 예에서는 사용자 할당 또는 시스템 할당 관리 id를 사용 하는 단계를 보여 줍니다. 선택한 id는 조직의 요구 사항에 따라 달라 집니다.
 
@@ -138,7 +138,7 @@ az acr task create \
 
 ## <a name="grant-identity-access-to-key-vault"></a>Key vault에 id 액세스 권한 부여
 
-다음 [az keyvault set-policy][az-keyvault-set-policy] 명령을 실행 하 여 key vault에 대 한 액세스 정책을 설정 합니다. 다음 예에서는 id가 키 자격 증명 모음에서 암호를 읽을 수 있도록 허용 합니다. 
+다음 [az keyvault set-policy][az-keyvault-set-policy] 명령을 실행 하 여 key vault에 대한 액세스 정책을 설정 합니다. 다음 예에서는 id가 키 자격 증명 모음에서 암호를 읽을 수 있도록 허용 합니다. 
 
 ```azurecli
 az keyvault set-policy --name mykeyvault \
@@ -155,7 +155,7 @@ az keyvault set-policy --name mykeyvault \
 az acr task run --name dockerhubtask --registry myregistry --set PrivateRepo=hubuser/hubrepo
 ```
 
-작업이 성공적으로 실행 되 면 출력은 Docker 허브에 대 한 성공적인 인증을 표시 하 고 이미지가 성공적으로 빌드되고 개인 리포지토리로 푸시됩니다.
+작업이 성공적으로 실행 되 면 출력은 Docker 허브에 대한 성공적인 인증을 표시 하 고 이미지가 성공적으로 빌드되고 개인 리포지토리로 푸시됩니다.
 
 ```console
 Queued a run with ID: cf24

@@ -54,7 +54,7 @@ Azure Active Directory를 관리 하려면 롤아웃 프로젝트에 포함 되�
 
 ### <a name="configuration-changes-testing"></a>구성 변경 테스트
 
-사용자의 대상 하위 집합을 롤백하여 병렬 테스트 테 넌 트에 변경 내용을 배포 하는 것과 같은 간단한 기술에서 테스트 하는 경우 특별히 고려해 야 할 사항이 있습니다. 테스트 전략을 구현 하지 않은 경우 다음 표의 지침에 따라 테스트 방법을 정의 해야 합니다.
+사용자의 대상 하위 집합을 롤백하여 병렬 테스트 테넌트에 변경 내용을 배포 하는 것과 같은 간단한 기술에서 테스트 하는 경우 특별히 고려해 야 할 사항이 있습니다. 테스트 전략을 구현 하지 않은 경우 다음 표의 지침에 따라 테스트 방법을 정의 해야 합니다.
 
 | 시나리오| 권장 사항 |
 |-|-|
@@ -62,7 +62,7 @@ Azure Active Directory를 관리 하려면 롤아웃 프로젝트에 포함 되�
 |새 조건부 액세스 (CA) 정책 또는 Id 보호 정책 롤아웃|새 CA 정책을 만들고 테스트 사용자에 게 할당 합니다.|
 |응용 프로그램의 테스트 환경 온 보 딩|응용 프로그램을 프로덕션 환경에 추가 하 고 MyApps 패널에서 숨긴 다음 QA (품질 보증) 단계에서 테스트 사용자에 게 할당 합니다.|
 |동기화 규칙 변경|현재 프로덕션에 있는 동일한 구성 (스테이징 모드 라고도 함)을 사용 하 여 테스트 Azure AD Connect의 변경을 수행 하 고 CSExport 결과를 분석 합니다. 만족 스 러 우면 준비가 되 면 프로덕션으로 바꿉니다.|
-|브랜딩 변경|별도의 테스트 테 넌 트에서 테스트 합니다.|
+|브랜딩 변경|별도의 테스트 테넌트에서 테스트 합니다.|
 |새 기능 롤아웃|기능이 대상 사용자 집합에 대해 롤아웃을 지 원하는 경우 파일럿 사용자를 식별 하 고 빌드합니다. 예를 들어 셀프 서비스 암호 재설정 및 multi-factor authentication은 특정 사용자 또는 그룹을 대상으로 할 수 있습니다.|
 |온-프레미스 IdP (Id 공급자) (예: Active Directory)에서 Azure AD로 응용 프로그램을 시작 합니다.|응용 프로그램에서 Salesforce와 같이 여러 IdP 구성을 지 원하는 경우에는 변경 기간 (응용 프로그램에 HRD 페이지가 도입 되는 경우) 중에 Azure AD와 테스트를 모두 구성 합니다. 응용 프로그램에서 여러 IdPs를 지원 하지 않는 경우 변경 제어 창 및 프로그램 가동 중지 시간 중에 테스트를 예약 합니다.|
 |동적 그룹 규칙 업데이트|새 규칙을 사용 하 여 병렬 동적 그룹을 만듭니다. 계산 된 결과와 비교 합니다. 예를 들어 동일한 조건으로 PowerShell을 실행 합니다.<br>테스트를 통과 하는 경우 이전 그룹이 사용 된 위치 (가능한 경우)를 바꿉니다.|
@@ -109,7 +109,7 @@ Azure Active Directory를 관리 하려면 롤아웃 프로젝트에 포함 되�
 - 인증 인프라의 작동 중단 구성 요소 (AD FS, 온-프레미스 AD, MFA 서비스)
 - 관리 직원 회전율
 
-관리자 권한으로 기존 개인 사용자의 계정을 로그인 하거나 활성화할 수 없어 테 넌 트에서 실수로 잠기는 것을 방지 하기 위해 두 개 이상의 응급 계정을 만들어 [Microsoft의 모범 사례](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-admin-roles-secure) 및 충돌 방지 [절차](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-admin-roles-secure#break-glass-what-to-do-in-an-emergency)에 맞게 구현 및 맞춰야 합니다.
+관리자 권한으로 기존 개인 사용자의 계정을 로그인 하거나 활성화할 수 없어 테넌트에서 실수로 잠기는 것을 방지 하기 위해 두 개 이상의 응급 계정을 만들어 [Microsoft의 모범 사례](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-admin-roles-secure) 및 충돌 방지 [절차](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-admin-roles-secure#break-glass-what-to-do-in-an-emergency)에 맞게 구현 및 맞춰야 합니다.
 
 ### <a name="privileged-access-to-azure-ea-portal"></a>Azure EA 포털에 대 한 권한 있는 액세스
 

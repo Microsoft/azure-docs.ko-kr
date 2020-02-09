@@ -24,9 +24,9 @@ ms.locfileid: "66299223"
 # <a name="register-for-azure-netapp-files"></a>Azure NetApp Files에 등록
 
 > [!IMPORTANT] 
-> Azure NetApp 파일 리소스 공급자를 등록 하기 전에 해야 전자 메일에서에서 받은 Azure NetApp Files 팀은 부여 된 서비스에 대 한 액세스를 확인 합니다. 
+> Azure NetApp 파일 리소스 공급자를 등록 하기 전에 해야 전자 메일에서에서 받은 Azure NetApp Files 팀은 부여 된 서비스에 대한 액세스를 확인 합니다. 
 
-이 문서에서는 서비스를 사용 하기 시작할 수 있도록 Azure NetApp 파일에 대 한 등록 하는 방법에 알아봅니다.
+이 문서에서는 서비스를 사용 하기 시작할 수 있도록 Azure NetApp 파일에 대한 등록 하는 방법에 알아봅니다.
 
 ## <a name="waitlist"></a>서비스에 액세스 하기 위한 대기 요청 제출
 
@@ -41,7 +41,7 @@ ms.locfileid: "66299223"
 서비스를 사용하려면 Azure NetApp Files에 Azure 리소스 공급자를 등록해야 합니다.
 
 > [!NOTE] 
-> 서비스에 대 한 액세스를 부여할 수 없이 NetApp 리소스 공급자를 성공적으로 등록 할 수 있습니다. 그러나 액세스 권한 부여 없이 모든 Azure portal 또는 NetApp 계정 또는 다른 Azure NetApp 파일 리소스를 만들려면 API 요청 거부 됩니다 다음 오류로 인해:  
+> 서비스에 대한 액세스를 부여할 수 없이 NetApp 리소스 공급자를 성공적으로 등록 할 수 있습니다. 그러나 액세스 권한 부여 없이 모든 Azure portal 또는 NetApp 계정 또는 다른 Azure NetApp 파일 리소스를 만들려면 API 요청 거부 됩니다 다음 오류로 인해:  
 >
 > `{"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.","details":[{"code":"NotFound","message":"{\r\n \"error\": {\r\n \"code\": \"InvalidResourceType\",\r\n \"message\": \"The resource type could not be found in the namespace 'Microsoft.NetApp' for api version '2017-08-15'.\"\r\n }\r\n}"}]}`
 
@@ -65,7 +65,7 @@ ms.locfileid: "66299223"
        
    `<SubID>`는 구독 ID입니다.
 
-    기능 이름이 표시 되지 않으면 `Microsoft.NetApp/ANFGA`, 서비스에 대 한 액세스 권한이 없습니다. 이 단계에서 중지 합니다. 지침에 따라 [서비스에 액세스 하기 위한 대기 요청을 제출](#waitlist) 계속 하기 전에 서비스 액세스를 요청 합니다. 
+    기능 이름이 표시 되지 않으면 `Microsoft.NetApp/ANFGA`, 서비스에 대한 액세스 권한이 없습니다. 이 단계에서 중지 합니다. 지침에 따라 [서비스에 액세스 하기 위한 대기 요청을 제출](#waitlist) 계속 하기 전에 서비스 액세스를 요청 합니다. 
 
 4. Azure Cloud Shell 콘솔에서 다음 명령을 입력하여 Azure 리소스 공급자를 등록합니다. 
     

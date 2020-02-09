@@ -1,5 +1,5 @@
 ---
-title: VNet 서비스 끝점-Azure Database for MySQL
+title: VNet 서비스 엔드포인트-Azure Database for MySQL
 description: Azure Database for MySQL 서버에서 VNet 서비스 엔드포인트가 작동하는 방법을 설명합니다.
 author: ajlam
 ms.author: andrela
@@ -17,7 +17,7 @@ ms.locfileid: "75979655"
 
 *가상 네트워크 규칙*은 Azure Database for MySQL 서버가 가상 네트워크의 특정 서브넷에서 보낸 통신을 수락할지 여부를 제어하는 하나의 방화벽 보안 기능입니다. 이 아티클에서는 경우에 따라 가상 네트워크 규칙 기능이 Azure Database for MySQL 서버에 대한 통신을 안전하게 허용하기 위한 가장 좋은 옵션인 이유를 설명합니다.
 
-가상 네트워크 규칙을 만들려면 먼저 VNet ( [가상 네트워크][vm-virtual-network-overview] ) 및 참조할 규칙의 [가상 네트워크 서비스 끝점][vm-virtual-network-service-endpoints-overview-649d] 이 있어야 합니다. 다음 그림에서는 Virtual Network 서비스 엔드포인트가 Azure Database for MySQL에서 작동하는 방법을 보여줍니다.
+가상 네트워크 규칙을 만들려면 먼저 VNet ( [가상 네트워크][vm-virtual-network-overview] ) 및 참조할 규칙의 [가상 네트워크 서비스 엔드포인트][vm-virtual-network-service-endpoints-overview-649d] 이 있어야 합니다. 다음 그림에서는 Virtual Network 서비스 엔드포인트가 Azure Database for MySQL에서 작동하는 방법을 보여줍니다.
 
 ![VNet 서비스 엔드포인트 작동 방식 예제](media/concepts-data-access-and-security-vnet/vnet-concept.png)
 
@@ -89,7 +89,7 @@ VM에 대한 *정적* IP 주소를 가져와서 IP 옵션을 복원할 수 있�
 
 Virtual Network 서비스 엔드포인트 관리에는 보안 역할 분리가 있습니다. 다음과 같은 각 역할의 작업이 필요합니다.
 
-- **네트워크 관리자:** 끝점을 &nbsp; 설정 합니다.
+- **네트워크 관리자:** 엔드포인트을 &nbsp; 설정 합니다.
 - **데이터베이스 관리자:** ACL (액세스 제어 목록)을 업데이트 하 여 지정 된 서브넷을 Azure Database for MySQL 서버에 추가 &nbsp; 합니다.
 
 *RBAC 대체:*
@@ -138,7 +138,7 @@ Azure CLI 또는 Azure Portal을 사용하여 **IgnoreMissingServiceEndpoint** �
 
 ## <a name="related-articles"></a>관련 문서
 - [Azure 가상 네트워크][vm-virtual-network-overview]
-- [Azure 가상 네트워크 서비스 끝점][vm-virtual-network-service-endpoints-overview-649d]
+- [Azure 가상 네트워크 서비스 엔드포인트][vm-virtual-network-service-endpoints-overview-649d]
 
 ## <a name="next-steps"></a>다음 단계
 VNet 규칙 만들기에 대한 아티클은 다음을 참조하세요.

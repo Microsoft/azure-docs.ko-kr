@@ -17,7 +17,7 @@ ms.locfileid: "72264497"
 ---
 # <a name="use-azure-data-factory-command-activity-to-run-azure-data-explorer-control-commands"></a>Azure Data Factory 명령 작업을 사용 하 여 Azure 데이터 탐색기 제어 명령 실행
 
-ADF ( [Azure Data Factory](/azure/data-factory/) )는 데이터에 대 한 작업의 조합을 수행할 수 있도록 하는 클라우드 기반 데이터 통합 서비스입니다. ADF를 사용 하 여 데이터 이동 및 데이터 변환을 오케스트레이션 하 고 자동화 하기 위한 데이터 기반 워크플로를 만듭니다. Azure Data Factory의 **azure 데이터 탐색기 명령** 작업을 사용 하면 ADF 워크플로 내에서 [azure 데이터 탐색기 제어 명령을](/azure/kusto/concepts/#control-commands) 실행할 수 있습니다. 이 문서에서는 Azure 데이터 탐색기 명령 작업을 포함 하는 ForEach 작업 및 조회 작업을 사용 하 여 파이프라인을 만드는 방법을 배웁니다.
+ADF ( [Azure Data Factory](/azure/data-factory/) )는 데이터에 대한 작업의 조합을 수행할 수 있도록 하는 클라우드 기반 데이터 통합 서비스입니다. ADF를 사용 하 여 데이터 이동 및 데이터 변환을 오케스트레이션 하 고 자동화 하기 위한 데이터 기반 워크플로를 만듭니다. Azure Data Factory의 **azure 데이터 탐색기 명령** 작업을 사용 하면 ADF 워크플로 내에서 [azure 데이터 탐색기 제어 명령을](/azure/kusto/concepts/#control-commands) 실행할 수 있습니다. 이 문서에서는 Azure 데이터 탐색기 명령 작업을 포함 하는 ForEach 작업 및 조회 작업을 사용 하 여 파이프라인을 만드는 방법을 배웁니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -77,8 +77,8 @@ ADF ( [Azure Data Factory](/azure/data-factory/) )는 데이터에 대 한 작�
    * **Integration runtime을 통해 연결**에서 필요한 경우 현재 설정을 변경 합니다. 
    * **계정 선택 방법** 에서 다음 두 가지 방법 중 하나를 사용 하 여 클러스터를 선택 합니다. 
         * **Azure 구독에서** 라디오 단추를 선택 하 고 **azure 구독** 계정을 선택 합니다. 그런 다음 **클러스터**를 선택 합니다. 드롭다운은 사용자에 속하는 클러스터만 나열 합니다.
-        * 대신 **수동으로 입력** 라디오 단추를 선택 하 고 **끝점** (클러스터 URL)을 입력 합니다.
-    * **테 넌 트**를 지정 합니다.
+        * 대신 **수동으로 입력** 라디오 단추를 선택 하 고 **엔드포인트** (클러스터 URL)을 입력 합니다.
+    * **테넌트**를 지정 합니다.
     * **서비스 사용자 ID**를 입력 합니다. 사용 중인 명령에 필요한 사용 권한 수준에 따라 보안 주체 ID에 적절 한 권한이 있어야 합니다.
     * **서비스 사용자 키** 단추를 선택 하 고 **서비스 사용자 키**를 입력 합니다.
     * 드롭다운 메뉴에서 **데이터베이스** 를 선택 합니다. 또는 **편집** 확인란을 선택 하 고 데이터베이스 이름을 입력 합니다.
@@ -116,7 +116,7 @@ ADF ( [Azure Data Factory](/azure/data-factory/) )는 데이터에 대 한 작�
 1.  캔버스에서 ForEach 활동을 선택 합니다. **설정** 탭에서 다음을 수행 합니다.
     * **순차** 확인란을 선택 하 여 조회 결과를 순차적으로 처리 하거나 선택 취소 된 상태로 두고 병렬 처리를 만듭니다.
     * **일괄 처리 횟수**를 설정 합니다.
-    * **항목**에서 출력 값 *@activity (' Lookup1 '). 값* 에 대 한 참조를 제공 합니다.
+    * **항목**에서 출력 값 *@activity (' Lookup1 '). 값* 에 대한 참조를 제공 합니다.
 
        ![ForEach 활동 설정](media/data-factory-command-activity/for-each-activity-settings.png)
 

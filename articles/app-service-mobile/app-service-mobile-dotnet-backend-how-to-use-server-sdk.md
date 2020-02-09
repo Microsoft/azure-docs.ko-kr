@@ -26,12 +26,12 @@ ms.locfileid: "74668869"
 이 항목은 주요 Azure App Service Mobile Apps 시나리오에서 .NET 백 엔드 서버 SDK를 사용하는 방법을 보여줍니다. Azure Mobile Apps SDK를 사용하면 ASP.NET 애플리케이션에서 모바일 클라이언트를 사용하여 작업할 수 있습니다.
 
 > [!TIP]
-> [Azure Mobile Apps에 대 한 .net SERVER SDK][2] 는 GitHub에서 오픈 소스입니다. 리포지토리는 전체 서버 SDK 단위 테스트 도구 모음 및 일부 샘플 프로젝트를 포함하는 모든 소스 코드를 포함합니다.
+> [Azure Mobile Apps에 대한 .net SERVER SDK][2] 는 GitHub에서 오픈 소스입니다. 리포지토리는 전체 서버 SDK 단위 테스트 도구 모음 및 일부 샘플 프로젝트를 포함하는 모든 소스 코드를 포함합니다.
 >
 >
 
 ## <a name="reference-documentation"></a>참조 설명서
-서버 SDK에 대 한 참조 설명서는 [Azure Mobile Apps .Net 참조][1]에서 찾을 수 있습니다.
+서버 SDK에 대한 참조 설명서는 [Azure Mobile Apps .Net 참조][1]에서 찾을 수 있습니다.
 
 ## <a name="create-app"></a>방법: .NET 모바일 앱 백 엔드 만들기
 새 프로젝트를 시작하는 경우 [Azure 포털] 과 Visual Studio 중 하나를 사용하여 App Service 애플리케이션을 만들 수 있습니다. App Service 애플리케이션을 로컬로 실행하거나 클라우드 기반 앱 서비스 모바일 앱에 프로젝트를 게시할 수 있습니다.
@@ -424,7 +424,7 @@ Notification Hubs를 사용하면 태그를 사용하여 특정 등록에 대상
     // Send a template notification to the user ID.
     await hub.SendTemplateNotificationAsync(notification, userTag);
 
-인증된 클라이언트의 푸시 알림을 등록할 때 등록을 시도하기 전에 인증이 완료되었는지 확인합니다. 자세한 내용은 .NET 백 엔드에 대 한 App Service Mobile Apps 완료 된 빠른 시작 샘플에서 [사용자에 게 푸시][6] 를 참조 하세요.
+인증된 클라이언트의 푸시 알림을 등록할 때 등록을 시도하기 전에 인증이 완료되었는지 확인합니다. 자세한 내용은 .NET 백 엔드에 대한 App Service Mobile Apps 완료 된 빠른 시작 샘플에서 [사용자에 게 푸시][6] 를 참조 하세요.
 
 ## <a name="how-to-debug-and-troubleshoot-the-net-server-sdk"></a>방법: .NET 서버 SDK 디버그 및 문제 해결
 Azure App Service는 ASP.NET 애플리케이션에 대한 여러 디버깅 및 문제 해결 기술을 제공합니다.
@@ -472,7 +472,7 @@ Azure App Service는 ASP.NET 애플리케이션에 대한 여러 디버깅 및 �
 3. Kudu 관리 사이트에서 **환경**을 클릭합니다.
 4. *WEBSITE\_AUTH\_SIGNING\_KEY*에 대한 값을 찾습니다.
 
-로컬 응용 프로그램 구성에서 *authSigningKey* 매개 변수에 대 한 서명 키를 사용 합니다.  이제 모바일 백 엔드는 로컬에서 실행 될 때 토큰의 유효성을 검사 하 고, 클라이언트는 클라우드 기반 끝점에서 토큰을 가져옵니다.
+로컬 응용 프로그램 구성에서 *authSigningKey* 매개 변수에 대한 서명 키를 사용 합니다.  이제 모바일 백 엔드는 로컬에서 실행 될 때 토큰의 유효성을 검사 하 고, 클라이언트는 클라우드 기반 엔드포인트에서 토큰을 가져옵니다.
 
 [1]: https://msdn.microsoft.com/library/azure/dn961176.aspx
 [2]: https://github.com/Azure/azure-mobile-apps-net-server

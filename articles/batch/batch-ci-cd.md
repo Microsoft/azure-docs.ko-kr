@@ -1,6 +1,6 @@
 ---
 title: Azure Pipelines를 사용 하 여 HPC 솔루션을 빌드 & 배포-Azure Batch
-description: Azure Batch에서 실행 되는 HPC 응용 프로그램에 대 한 빌드/릴리스 파이프라인을 배포 하는 방법을 알아봅니다.
+description: Azure Batch에서 실행 되는 HPC 응용 프로그램에 대한 빌드/릴리스 파이프라인을 배포 하는 방법을 알아봅니다.
 author: christianreddington
 ms.author: chredd
 ms.date: 03/28/2019
@@ -17,7 +17,7 @@ ms.locfileid: "76935131"
 ---
 # <a name="use-azure-pipelines-to-build-and-deploy-hpc-solutions"></a>Azure Pipelines를 사용 하 여 HPC 솔루션 빌드 및 배포
 
-Azure DevOps 서비스는 사용자 지정 응용 프로그램을 빌드할 때 개발 팀에서 사용 하는 다양 한 도구를 제공 합니다. Azure DevOps에서 제공 하는 도구는 고성능 계산 솔루션의 자동화 된 빌드 및 테스트로 변환할 수 있습니다. 이 문서에서는 Azure Batch에 배포 된 고성능 계산 솔루션에 대 한 Azure Pipelines를 사용 하 여 CI (지속적인 통합) 및 CD (연속 배포)를 설정 하는 방법을 보여 줍니다.
+Azure DevOps 서비스는 사용자 지정 응용 프로그램을 빌드할 때 개발 팀에서 사용 하는 다양 한 도구를 제공 합니다. Azure DevOps에서 제공 하는 도구는 고성능 계산 솔루션의 자동화 된 빌드 및 테스트로 변환할 수 있습니다. 이 문서에서는 Azure Batch에 배포 된 고성능 계산 솔루션에 대한 Azure Pipelines를 사용 하 여 CI (지속적인 통합) 및 CD (연속 배포)를 설정 하는 방법을 보여 줍니다.
 
 Azure Pipelines은 소프트웨어 빌드, 배포, 테스트 및 모니터링을 위한 다양 한 최신 CI/CD 프로세스를 제공 합니다. 이러한 프로세스는 소프트웨어 제공을 가속화 하 여 인프라 및 작업을 지원 하지 않고 코드에 집중할 수 있도록 합니다.
 
@@ -34,9 +34,9 @@ Azure Pipelines은 소프트웨어 빌드, 배포, 테스트 및 모니터링을
 * [Azure DevOps 조직 만들기](https://docs.microsoft.com/azure/devops/organizations/accounts/create-organization?view=azure-devops)
 * [Azure DevOps에서 프로젝트 만들기](https://docs.microsoft.com/azure/devops/organizations/projects/create-project?view=azure-devops)
 
-### <a name="source-control-for-your-environment"></a>사용자 환경에 대 한 소스 제어
+### <a name="source-control-for-your-environment"></a>사용자 환경에 대한 소스 제어
 
-소스 제어를 사용 하면 팀에서 코드 베이스에 대 한 변경 내용을 추적 하 고 이전 버전의 코드를 검사할 수 있습니다.
+소스 제어를 사용 하면 팀에서 코드 베이스에 대한 변경 내용을 추적 하 고 이전 버전의 코드를 검사할 수 있습니다.
 
 일반적으로 소스 제어는 소프트웨어 코드와 직접 관련 된 것으로 간주 됩니다. 기본 인프라는 어떻게 되나요? 이렇게 하면 인프라를 코드로 사용 하 여 기본 인프라를 선언적으로 정의 하는 Azure Resource Manager 템플릿 또는 다른 오픈 소스 대안을 사용할 수 있습니다.
 
@@ -65,7 +65,7 @@ Azure Pipelines은 소프트웨어 빌드, 배포, 테스트 및 모니터링을
 
 ![Azure Resource Manager 템플릿을 사용 하는 연결 된 템플릿 구조의 예](media/batch-ci-cd/ARMTemplateHierarchy.png)
 
-표시 되는 첫 번째 템플릿은 Azure Storage 계정에 대 한 것입니다. Microsoft의 솔루션에는 Batch 계정에 응용 프로그램을 배포 하는 저장소 계정이 필요 합니다. 저장소 계정에 대 한 리소스 관리자 템플릿을 빌드할 때 [Microsoft 저장소 리소스 종류에 대 한 리소스 관리자 템플릿 참조 가이드](https://docs.microsoft.com/azure/templates/microsoft.storage/allversions) 를 알고 있어야 합니다.
+표시 되는 첫 번째 템플릿은 Azure Storage 계정에 대한 것입니다. Microsoft의 솔루션에는 Batch 계정에 응용 프로그램을 배포 하는 저장소 계정이 필요 합니다. 저장소 계정에 대한 리소스 관리자 템플릿을 빌드할 때 [Microsoft 저장소 리소스 종류에 대한 리소스 관리자 템플릿 참조 가이드](https://docs.microsoft.com/azure/templates/microsoft.storage/allversions) 를 알고 있어야 합니다.
 
 ```json
 {
@@ -105,7 +105,7 @@ Azure Pipelines은 소프트웨어 빌드, 배포, 테스트 및 모니터링을
 }
 ```
 
-다음으로 Azure Batch 계정 템플릿을 살펴보겠습니다. Azure Batch 계정은 풀 (컴퓨터 그룹)에서 다양 한 응용 프로그램을 실행 하는 플랫폼 역할을 합니다. Batch 계정에 대 한 리소스 관리자 템플릿을 작성할 때 [Microsoft batch 리소스 종류에 대 한 리소스 관리자 템플릿 참조 가이드](https://docs.microsoft.com/azure/templates/microsoft.batch/allversions) 를 알고 있어야 합니다.
+다음으로 Azure Batch 계정 템플릿을 살펴보겠습니다. Azure Batch 계정은 풀 (컴퓨터 그룹)에서 다양 한 응용 프로그램을 실행 하는 플랫폼 역할을 합니다. Batch 계정에 대한 리소스 관리자 템플릿을 작성할 때 [Microsoft batch 리소스 종류에 대한 리소스 관리자 템플릿 참조 가이드](https://docs.microsoft.com/azure/templates/microsoft.batch/allversions) 를 알고 있어야 합니다.
 
 ```json
 {
@@ -144,7 +144,7 @@ Azure Pipelines은 소프트웨어 빌드, 배포, 테스트 및 모니터링을
 }
 ```
 
-다음 템플릿에서는 Azure Batch 풀 (응용 프로그램을 처리 하는 백 엔드 컴퓨터)을 만드는 예제를 보여 줍니다. Batch 계정 풀의 리소스 관리자 템플릿을 작성할 때 [Microsoft batch 리소스 유형에 대 한 리소스 관리자 템플릿 참조 가이드](https://docs.microsoft.com/azure/templates/microsoft.batch/allversions) 를 알고 있어야 합니다.
+다음 템플릿에서는 Azure Batch 풀 (응용 프로그램을 처리 하는 백 엔드 컴퓨터)을 만드는 예제를 보여 줍니다. Batch 계정 풀의 리소스 관리자 템플릿을 작성할 때 [Microsoft batch 리소스 유형에 대한 리소스 관리자 템플릿 참조 가이드](https://docs.microsoft.com/azure/templates/microsoft.batch/allversions) 를 알고 있어야 합니다.
 
 ```json
 {
@@ -302,11 +302,11 @@ Azure Pipelines은 소프트웨어 빌드, 배포, 테스트 및 모니터링을
 
 * 인프라를 코드로 저장 하는 **arm 템플릿** 폴더
 * Ffmpeg의 이진 파일이 포함 된 **hpc 응용 프로그램** 폴더
-* 빌드 파이프라인에 대 한 정의를 포함 하는 **파이프라인** 폴더입니다.
-* **선택 사항**: .net 응용 프로그램에 대 한 코드를 저장 하는 **클라이언트 응용 프로그램** 폴더입니다. 샘플에서는이를 사용 하지 않지만 사용자의 프로젝트에서는 클라이언트 응용 프로그램을 통해 HPC Batch 응용 프로그램의 실행을 실행할 수 있습니다.
+* 빌드 파이프라인에 대한 정의를 포함 하는 **파이프라인** 폴더입니다.
+* **선택 사항**: .net 응용 프로그램에 대한 코드를 저장 하는 **클라이언트 응용 프로그램** 폴더입니다. 샘플에서는이를 사용 하지 않지만 사용자의 프로젝트에서는 클라이언트 응용 프로그램을 통해 HPC Batch 응용 프로그램의 실행을 실행할 수 있습니다.
 
 > [!NOTE]
-> 이는 코드 베이스에 대 한 구조체의 한 예제 일 뿐입니다. 이 방법은 응용 프로그램, 인프라 및 파이프라인 코드가 동일한 리포지토리에 저장 된다는 것을 보여 주는 용도로 사용 됩니다.
+> 이는 코드 베이스에 대한 구조체의 한 예제 일 뿐입니다. 이 방법은 응용 프로그램, 인프라 및 파이프라인 코드가 동일한 리포지토리에 저장 된다는 것을 보여 주는 용도로 사용 됩니다.
 
 이제 소스 코드가 설정 되었으므로 첫 번째 빌드를 시작할 수 있습니다.
 
@@ -351,16 +351,16 @@ Azure DevOps Services 내에서 [Azure Pipelines](https://docs.microsoft.com/azu
         targetPath: '$(Build.ArtifactStagingDirectory)/package'
     ```
 
-1. 빌드를 필요에 따라 구성한 후 **& 큐에 저장**을 선택 합니다. **트리거** 섹션에서 연속 통합을 사용 하도록 설정한 경우 리포지토리에 대 한 새 커밋을 만들 때 빌드가 자동으로 트리거되고 빌드에 설정 된 조건이 충족 됩니다.
+1. 빌드를 필요에 따라 구성한 후 **& 큐에 저장**을 선택 합니다. **트리거** 섹션에서 연속 통합을 사용 하도록 설정한 경우 리포지토리에 대한 새 커밋을 만들 때 빌드가 자동으로 트리거되고 빌드에 설정 된 조건이 충족 됩니다.
 
     ![기존 빌드 파이프라인의 예](media/batch-ci-cd/existing-build-pipeline.jpg)
 
-1. Azure Pipelines의 **빌드** 섹션으로 이동 하 여 Azure devops에서 빌드의 진행 상황에 대 한 실시간 업데이트를 확인 합니다. 빌드 정의에서 적절 한 빌드를 선택 합니다.
+1. Azure Pipelines의 **빌드** 섹션으로 이동 하 여 Azure devops에서 빌드의 진행 상황에 대한 실시간 업데이트를 확인 합니다. 빌드 정의에서 적절 한 빌드를 선택 합니다.
 
     ![빌드에서 라이브 출력 보기](media/batch-ci-cd/Build-1.jpg)
 
 > [!NOTE]
-> 클라이언트 응용 프로그램을 사용 하 여 HPC Batch 응용 프로그램을 실행 하는 경우 해당 응용 프로그램에 대 한 별도의 빌드 정의를 만들어야 합니다. [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/index?view=azure-devops) 설명서에서 다양 한 방법 가이드를 찾을 수 있습니다.
+> 클라이언트 응용 프로그램을 사용 하 여 HPC Batch 응용 프로그램을 실행 하는 경우 해당 응용 프로그램에 대한 별도의 빌드 정의를 만들어야 합니다. [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/index?view=azure-devops) 설명서에서 다양 한 방법 가이드를 찾을 수 있습니다.
 
 ## <a name="continuous-deployment"></a>연속 배포
 
@@ -368,25 +368,25 @@ Azure DevOps Services 내에서 [Azure Pipelines](https://docs.microsoft.com/azu
 
 ### <a name="deploying-your-application-and-underlying-infrastructure"></a>응용 프로그램 및 기본 인프라 배포
 
-인프라 배포와 관련 된 여러 단계가 있습니다. [연결 된 템플릿을](../azure-resource-manager/templates/linked-templates.md)사용할 때 이러한 템플릿은 공용 끝점 (HTTP 또는 HTTPS)에서 액세스할 수 있어야 합니다. GitHub의 리포지토리입니다, Azure Blob Storage 계정 또는 다른 저장소 위치인 것일 수 있습니다. 업로드 된 템플릿 아티팩트는 개인 모드에서 보유할 수 있지만 특정 형식의 SAS (공유 액세스 서명) 토큰을 사용 하 여 액세스할 수 있으므로 안전 하 게 유지할 수 있습니다. 다음 예제에서는 Azure Storage blob에서 템플릿을 사용 하 여 인프라를 배포 하는 방법을 보여 줍니다.
+인프라 배포와 관련 된 여러 단계가 있습니다. [연결 된 템플릿을](../azure-resource-manager/templates/linked-templates.md)사용할 때 이러한 템플릿은 공용 엔드포인트 (HTTP 또는 HTTPS)에서 액세스할 수 있어야 합니다. GitHub의 리포지토리입니다, Azure Blob Storage 계정 또는 다른 저장소 위치인 것일 수 있습니다. 업로드 된 템플릿 아티팩트는 개인 모드에서 보유할 수 있지만 특정 형식의 SAS (공유 액세스 서명) 토큰을 사용 하 여 액세스할 수 있으므로 안전 하 게 유지할 수 있습니다. 다음 예제에서는 Azure Storage blob에서 템플릿을 사용 하 여 인프라를 배포 하는 방법을 보여 줍니다.
 
 1. **새 릴리스 정의**를 만들고 빈 정의를 선택 합니다. 그런 다음 새로 만든 환경의 이름을 파이프라인에 관련 된 항목으로 변경 해야 합니다.
 
     ![초기 릴리스 파이프라인](media/batch-ci-cd/Release-0.jpg)
 
-1. HPC 응용 프로그램에 대 한 출력을 가져오기 위해 빌드 파이프라인에 대 한 종속성을 만듭니다.
+1. HPC 응용 프로그램에 대한 출력을 가져오기 위해 빌드 파이프라인에 대한 종속성을 만듭니다.
 
     > [!NOTE]
     > 다시 한 번, 릴리스 정의 내에서 태스크를 만들 때 필요 하므로 **원본 별칭**을 기록해 둡니다.
 
-    ![적절 한 빌드 파이프라인에서 HPCApplicationPackage에 대 한 아티팩트 링크를 만듭니다.](media/batch-ci-cd/Release-1.jpg)
+    ![적절 한 빌드 파이프라인에서 HPCApplicationPackage에 대한 아티팩트 링크를 만듭니다.](media/batch-ci-cd/Release-1.jpg)
 
-1. 이번에는 Azure 리포지토리의 다른 아티팩트에 대 한 링크를 만듭니다. 이는 리포지토리에 저장 된 리소스 관리자 템플릿에 액세스 하는 데 필요 합니다. 리소스 관리자 템플릿에 컴파일이 필요 하지 않으므로 빌드 파이프라인을 통해 템플릿을 푸시할 필요가 없습니다.
+1. 이번에는 Azure 리포지토리의 다른 아티팩트에 대한 링크를 만듭니다. 이는 리포지토리에 저장 된 리소스 관리자 템플릿에 액세스 하는 데 필요 합니다. 리소스 관리자 템플릿에 컴파일이 필요 하지 않으므로 빌드 파이프라인을 통해 템플릿을 푸시할 필요가 없습니다.
 
     > [!NOTE]
     > 다시 한 번, 릴리스 정의 내에서 태스크를 만들 때 필요 하므로 **원본 별칭**을 기록해 둡니다.
 
-    ![Azure Repos에 대 한 아티팩트 링크 만들기](media/batch-ci-cd/Release-2.jpg)
+    ![Azure Repos에 대한 아티팩트 링크 만들기](media/batch-ci-cd/Release-2.jpg)
 
 1. **변수** 섹션으로 이동 합니다. 파이프라인에서 여러 변수를 만드는 것이 좋습니다. 따라서 여러 작업에 동일한 정보를 입력 하지 않습니다. 이러한 변수는이 예제에서 사용 되는 변수 및 배포에 영향을 주는 방식입니다.
 
@@ -402,7 +402,7 @@ Azure DevOps Services 내에서 [Azure Pipelines](https://docs.microsoft.com/azu
 
     ![Azure Pipelines 릴리스에 대해 설정 된 변수의 예](media/batch-ci-cd/Release-4.jpg)
 
-1. 개발 환경에 대 한 작업으로 이동 합니다. 아래 스냅숏에서 6 개의 작업을 볼 수 있습니다. 이러한 작업은 압축 된 ffmpeg 파일을 다운로드 하 고, 중첩 된 리소스 관리자 템플릿을 호스트 하는 저장소 계정을 배포 하 고, 해당 리소스 관리자 템플릿을 저장소 계정에 복사 하 고, batch 계정 및 필요한 종속성을 배포 하 고,에서 응용 프로그램을 만듭니다. Azure Batch 계정으로 Azure Batch 계정에 응용 프로그램 패키지를 업로드 합니다.
+1. 개발 환경에 대한 작업으로 이동 합니다. 아래 스냅숏에서 6 개의 작업을 볼 수 있습니다. 이러한 작업은 압축 된 ffmpeg 파일을 다운로드 하 고, 중첩 된 리소스 관리자 템플릿을 호스트 하는 저장소 계정을 배포 하 고, 해당 리소스 관리자 템플릿을 저장소 계정에 복사 하 고, batch 계정 및 필요한 종속성을 배포 하 고,에서 응용 프로그램을 만듭니다. Azure Batch 계정으로 Azure Batch 계정에 응용 프로그램 패키지를 업로드 합니다.
 
     ![Azure Batch에 HPC 응용 프로그램을 릴리스 하는 데 사용 되는 작업의 예](media/batch-ci-cd/Release-3.jpg)
 
@@ -411,10 +411,10 @@ Azure DevOps Services 내에서 [Azure Pipelines](https://docs.microsoft.com/azu
     * **다운로드할 아티팩트의 이름:** hpc 응용 프로그램
     * **다운로드할 경로**: $ (system.defaultworkingdirectory)
 
-1. 아티팩트를 저장할 저장소 계정을 만듭니다. 솔루션의 기존 저장소 계정을 사용할 수 있지만 자체 포함 된 샘플 및 콘텐츠 격리의 경우 아티팩트에 대 한 전용 저장소 계정 (특히 리소스 관리자 템플릿)을 만듭니다.
+1. 아티팩트를 저장할 저장소 계정을 만듭니다. 솔루션의 기존 저장소 계정을 사용할 수 있지만 자체 포함 된 샘플 및 콘텐츠 격리의 경우 아티팩트에 대한 전용 저장소 계정 (특히 리소스 관리자 템플릿)을 만듭니다.
 
     **Azure 리소스 그룹 배포** 작업을 추가 하 고 다음 속성을 설정 합니다.
-    * **표시 이름:** 리소스 관리자 템플릿에 대 한 저장소 계정 배포
+    * **표시 이름:** 리소스 관리자 템플릿에 대한 저장소 계정 배포
     * **Azure 구독:** 적절 한 Azure 구독을 선택 합니다.
     * **작업**: 리소스 그룹 만들기 또는 업데이트
     * **리소스 그룹**: $ (resourceGroupName)
@@ -434,7 +434,7 @@ Azure DevOps Services 내에서 [Azure Pipelines](https://docs.microsoft.com/azu
     * **저장소 컨테이너 URI**: templateContainerUri
     * **저장소 컨테이너 SAS 토큰**: templateContainerSasToken
 
-1. Orchestrator 템플릿을 배포 합니다. 이전에서 orchestrator 템플릿을 회수할 때 SAS 토큰과 함께 저장소 계정 컨테이너 URL에 대 한 매개 변수가 있다는 것을 알 수 있습니다. 리소스 관리자 템플릿에 필요한 변수가 릴리스 정의의 변수 섹션에 보관 되어 있거나, 다른 Azure Pipelines 작업 (예: Azure Blob 복사 작업의 일부)에서 설정 되었는지 확인 해야 합니다.
+1. Orchestrator 템플릿을 배포 합니다. 이전에서 orchestrator 템플릿을 회수할 때 SAS 토큰과 함께 저장소 계정 컨테이너 URL에 대한 매개 변수가 있다는 것을 알 수 있습니다. 리소스 관리자 템플릿에 필요한 변수가 릴리스 정의의 변수 섹션에 보관 되어 있거나, 다른 Azure Pipelines 작업 (예: Azure Blob 복사 작업의 일부)에서 설정 되었는지 확인 해야 합니다.
 
     **Azure 리소스 그룹 배포** 작업을 추가 하 고 다음 속성을 설정 합니다.
     * **표시 이름:** Azure Batch 배포
@@ -445,7 +445,7 @@ Azure DevOps Services 내에서 [Azure Pipelines](https://docs.microsoft.com/azu
     * **템플릿**: $ (System.servicemodel sdirectory)/ **{YourAzureRepoArtifactSourceAlias}** /arm-templates/deployment.json
     * **템플릿 매개 변수 재정의**: ```-templateContainerUri $(templateContainerUri) -templateContainerSasToken $(templateContainerSasToken) -batchAccountName $(batchAccountName) -batchAccountPoolName $(batchAccountPoolName) -applicationStorageAccountName $(applicationStorageAccountName)```
 
-일반적인 방법은 Azure Key Vault 작업을 사용 하는 것입니다. 서비스 주체 (Azure 구독에 대 한 연결)에 적절 한 액세스 정책이 설정 된 경우 Azure Key Vault에서 비밀을 다운로드 하 고 파이프라인에서 변수로 사용할 수 있습니다. 암호의 이름은 연결 된 값으로 설정 됩니다. 예를 들어 릴리스 정의에서 $ (sshPassword)를 사용 하 여 sshPassword의 암호를 참조할 수 있습니다.
+일반적인 방법은 Azure Key Vault 작업을 사용 하는 것입니다. 서비스 주체 (Azure 구독에 대한 연결)에 적절 한 액세스 정책이 설정 된 경우 Azure Key Vault에서 비밀을 다운로드 하 고 파이프라인에서 변수로 사용할 수 있습니다. 암호의 이름은 연결 된 값으로 설정 됩니다. 예를 들어 릴리스 정의에서 $ (sshPassword)를 사용 하 여 sshPassword의 암호를 참조할 수 있습니다.
 
 1. 다음 단계는 Azure CLI를 호출 합니다. 첫 번째는 Azure Batch에서 응용 프로그램을 만드는 데 사용 됩니다. 연결 된 패키지를 업로드 합니다.
 
@@ -466,7 +466,7 @@ Azure DevOps Services 내에서 [Azure Pipelines](https://docs.microsoft.com/azu
     > [!NOTE]
     > 응용 프로그램 패키지의 버전 번호는 변수로 설정 됩니다. 이 기능은 이전 버전의 패키지를 덮어쓰는 경우 편리 하며, Azure Batch으로 푸시되는 패키지의 버전 번호를 수동으로 제어 하려는 경우에 편리 합니다.
 
-1. **릴리스 > 새 릴리스를**선택 하 여 새 릴리스를 만듭니다. 트리거된 후 새 릴리스에 대 한 링크를 선택 하 여 상태를 확인 합니다.
+1. **릴리스 > 새 릴리스를**선택 하 여 새 릴리스를 만듭니다. 트리거된 후 새 릴리스에 대한 링크를 선택 하 여 상태를 확인 합니다.
 
 1. 환경 아래에 있는 **로그** 단추를 선택 하 여 에이전트에서 실시간 출력을 볼 수 있습니다.
 
@@ -505,7 +505,7 @@ az batch pool resize --pool-id <poolname> --target-dedicated-nodes 4
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서 외에도 .NET 및 Python을 사용 하 여 ffmpeg를 활용 하는 두 가지 자습서가 있습니다. 간단한 응용 프로그램을 통해 Batch 계정과 상호 작용 하는 방법에 대 한 자세한 내용은 다음 자습서를 참조 하세요.
+이 문서 외에도 .NET 및 Python을 사용 하 여 ffmpeg를 활용 하는 두 가지 자습서가 있습니다. 간단한 응용 프로그램을 통해 Batch 계정과 상호 작용 하는 방법에 대한 자세한 내용은 다음 자습서를 참조 하세요.
 
 * [Python API를 사용 하 여 Azure Batch에서 병렬 워크 로드 실행](tutorial-parallel-python.md)
 * [.NET API를 사용 하 여 Azure Batch에서 병렬 워크 로드 실행](tutorial-parallel-dotnet.md)

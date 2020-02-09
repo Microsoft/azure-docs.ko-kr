@@ -54,4 +54,4 @@ ms.locfileid: "77022225"
 |`startTime`|DateTime|풀 크기 조정이 시작된 시간입니다.|
 |`endTime`|DateTime|풀 크기 조정이 완료된 시간입니다.|
 |`resultCode`|String|크기 조정의 결과입니다.|
-|`resultMessage`|String| 결과에 대 한 자세한 메시지입니다.<br /><br /> 크기 조정이 성공적으로 완료되면 작업에 성공했다고 표시됩니다.|
+|`resultMessage`|String| 결과에 대한 자세한 메시지입니다.<br /><br /> 크기 조정이 성공적으로 완료되면 작업에 성공했다고 표시됩니다.|

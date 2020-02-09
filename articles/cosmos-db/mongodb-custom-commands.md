@@ -1,5 +1,5 @@
 ---
-title: MongoDB에 대 한 Azure Cosmos DB API의 데이터를 관리 하기 위한 MongoDB 확장 명령
+title: MongoDB에 대한 Azure Cosmos DB API의 데이터를 관리 하기 위한 MongoDB 확장 명령
 description: 이 문서에서는 MongoDB 확장 명령을 사용 하 여 Azure Cosmos DB의 MongoDB API에 저장 된 데이터를 관리 하는 방법을 설명 합니다.
 author: SnehaGunda
 ms.service: cosmos-db
@@ -15,13 +15,13 @@ ms.locfileid: "75445215"
 ---
 # <a name="use-mongodb-extension-commands-to-manage-data-stored-in-azure-cosmos-dbs-api-for-mongodb"></a>MongoDB 확장 명령을 사용 하 여 Azure Cosmos DB의 MongoDB API에 저장 된 데이터를 관리 합니다. 
 
-Azure Cosmos DB는 전 세계에 배포된 Microsoft의 다중 모델 데이터베이스 서비스입니다. 오픈 소스 [MongoDB 클라이언트 드라이버](https://docs.mongodb.org/ecosystem/drivers)를 사용 하 여 Azure Cosmos DB의 MongoDB API와 통신할 수 있습니다. MongoDB에 대 한 Azure Cosmos DB API를 사용 하면 [MongoDB 유선 프로토콜](https://docs.mongodb.org/manual/reference/mongodb-wire-protocol)을 준수 함으로써 기존 클라이언트 드라이버를 사용할 수 있습니다.
+Azure Cosmos DB는 전 세계에 배포된 Microsoft의 다중 모델 데이터베이스 서비스입니다. 오픈 소스 [MongoDB 클라이언트 드라이버](https://docs.mongodb.org/ecosystem/drivers)를 사용 하 여 Azure Cosmos DB의 MongoDB API와 통신할 수 있습니다. MongoDB에 대한 Azure Cosmos DB API를 사용 하면 [MongoDB 유선 프로토콜](https://docs.mongodb.org/manual/reference/mongodb-wire-protocol)을 준수 함으로써 기존 클라이언트 드라이버를 사용할 수 있습니다.
 
-MongoDB에 대 한 Azure Cosmos DB API를 사용 하 여 글로벌 배포, 자동 분할, 고가용성, 대기 시간 보장, 자동, 미사용 암호화, 백업 등의 Cosmos DB 혜택을 얻을 수 있을 뿐만 아니라, 투자를 보존할 수 있습니다. MongoDB 앱에서
+MongoDB에 대한 Azure Cosmos DB API를 사용 하 여 글로벌 배포, 자동 분할, 고가용성, 대기 시간 보장, 자동, 미사용 암호화, 백업 등의 Cosmos DB 혜택을 얻을 수 있을 뿐만 아니라, 투자를 보존할 수 있습니다. MongoDB 앱에서
 
 ## <a name="mongodb-protocol-support"></a>MongoDB 프로토콜 지원
 
-기본적으로 MongoDB에 대 한 Azure Cosmos DB API는 MongoDB server 버전 3.2와 호환 됩니다. 자세한 내용은 [지원 되는 기능 및 구문](mongodb-feature-support.md)을 참조 하세요. MongoDB 버전 3.4에 추가 된 기능 또는 쿼리 연산자는 현재 MongoDB API의 미리 Azure Cosmos DB 보기로 제공 됩니다. 다음 확장 명령은 MongoDB 용 Azure Cosmos DB의 API에 저장 된 데이터에 대 한 CRUD 작업을 수행할 때 Azure Cosmos DB 특정 기능을 지원 합니다.
+기본적으로 MongoDB에 대한 Azure Cosmos DB API는 MongoDB server 버전 3.2와 호환 됩니다. 자세한 내용은 [지원 되는 기능 및 구문](mongodb-feature-support.md)을 참조 하세요. MongoDB 버전 3.4에 추가 된 기능 또는 쿼리 연산자는 현재 MongoDB API의 미리 Azure Cosmos DB 보기로 제공 됩니다. 다음 확장 명령은 MongoDB 용 Azure Cosmos DB의 API에 저장 된 데이터에 대한 CRUD 작업을 수행할 때 Azure Cosmos DB 특정 기능을 지원 합니다.
 
 * [데이터베이스 만들기](#create-database)
 * [데이터베이스 업데이트](#update-database)
@@ -50,7 +50,7 @@ Create database extension 명령은 새 MongoDB 데이터베이스를 만듭니�
 
 ### <a name="output"></a>출력
 
-기본 사용자 지정 명령 응답을 반환 합니다. 출력의 매개 변수에 대 한 사용자 지정 명령의 [기본 출력](#default-output) 을 참조 하세요.
+기본 사용자 지정 명령 응답을 반환 합니다. 출력의 매개 변수에 대한 사용자 지정 명령의 [기본 출력](#default-output) 을 참조 하세요.
 
 ### <a name="examples"></a>예시
 
@@ -92,7 +92,7 @@ db.runCommand({customAction: "CreateDatabase", offerThroughput: 1000 });
 
 ### <a name="output"></a>출력
 
-기본 사용자 지정 명령 응답을 반환 합니다. 출력의 매개 변수에 대 한 사용자 지정 명령의 [기본 출력](#default-output) 을 참조 하세요.
+기본 사용자 지정 명령 응답을 반환 합니다. 출력의 매개 변수에 대한 사용자 지정 명령의 [기본 출력](#default-output) 을 참조 하세요.
 
 ### <a name="examples"></a>예시
 
@@ -132,13 +132,13 @@ db.runCommand({customAction: "UpdateDatabase", offerThroughput: 1200 });
 | `database`    |    `string`        |   데이터베이스의 이름입니다.      |
 |   `provisionedThroughput`  |    `int`      |    데이터베이스에 설정 된 프로 비전 된 처리량입니다. 선택적 응답 매개 변수입니다.     |
 
-명령이 실패 하면 기본 사용자 지정 명령 응답이 반환 됩니다. 출력의 매개 변수에 대 한 사용자 지정 명령의 [기본 출력](#default-output) 을 참조 하세요.
+명령이 실패 하면 기본 사용자 지정 명령 응답이 반환 됩니다. 출력의 매개 변수에 대한 사용자 지정 명령의 [기본 출력](#default-output) 을 참조 하세요.
 
 ### <a name="examples"></a>예시
 
 **데이터베이스 가져오기**
 
-"Test" 라는 데이터베이스에 대 한 데이터베이스 개체를 가져오려면 다음 명령을 사용 합니다.
+"Test" 라는 데이터베이스에 대한 데이터베이스 개체를 가져오려면 다음 명령을 사용 합니다.
 
 ```shell
 use test
@@ -169,7 +169,7 @@ db.runCommand({customAction: "GetDatabase"});
 
 ### <a name="output"></a>출력
 
-기본 사용자 지정 명령 응답을 반환 합니다. 출력의 매개 변수에 대 한 사용자 지정 명령의 [기본 출력](#default-output) 을 참조 하세요.
+기본 사용자 지정 명령 응답을 반환 합니다. 출력의 매개 변수에 대한 사용자 지정 명령의 [기본 출력](#default-output) 을 참조 하세요.
 
 ### <a name="examples"></a>예시
 
@@ -213,7 +213,7 @@ db.runCommand({customAction: "CreateCollection", collection: "testCollection", o
 
 ## <a name="output"></a>출력
 
-기본 사용자 지정 명령 응답을 반환 합니다. 출력의 매개 변수에 대 한 사용자 지정 명령의 [기본 출력](#default-output) 을 참조 하세요.
+기본 사용자 지정 명령 응답을 반환 합니다. 출력의 매개 변수에 대한 사용자 지정 명령의 [기본 출력](#default-output) 을 참조 하세요.
 
 ### <a name="examples"></a>예시
 
@@ -258,13 +258,13 @@ db.runCommand({customAction: "UpdateCollection", collection: "testCollection", o
 |  `shardKeyDefinition`   |   `document`      |  분할 키로 사용 되는 인덱스 사양 문서입니다. 선택적 응답 매개 변수입니다.       |
 |  `provisionedThroughput`   |   `int`      |    컬렉션에 설정할 프로 비전 된 처리량입니다. 선택적 응답 매개 변수입니다.     |
 
-명령이 실패 하면 기본 사용자 지정 명령 응답이 반환 됩니다. 출력의 매개 변수에 대 한 사용자 지정 명령의 [기본 출력](#default-output) 을 참조 하세요.
+명령이 실패 하면 기본 사용자 지정 명령 응답이 반환 됩니다. 출력의 매개 변수에 대한 사용자 지정 명령의 [기본 출력](#default-output) 을 참조 하세요.
 
 ### <a name="examples"></a>예시
 
 **컬렉션 가져오기**
 
-"TestCollection" 이라는 컬렉션에 대 한 컬렉션 개체를 가져오려면 다음 명령을 사용 합니다.
+"TestCollection" 이라는 컬렉션에 대한 컬렉션 개체를 가져오려면 다음 명령을 사용 합니다.
 
 ```shell
 use test

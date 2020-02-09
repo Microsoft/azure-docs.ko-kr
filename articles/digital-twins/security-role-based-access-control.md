@@ -17,7 +17,7 @@ ms.locfileid: "76044949"
 ---
 # <a name="role-based-access-control-in-azure-digital-twins"></a>Azure Digital Twins의 역할 기반 액세스 제어
 
-Azure Digital Twins를 사용 하면 공간 그래프의 특정 데이터, 리소스 및 작업에 대 한 정확한 액세스를 제어할 수 있습니다. 이를 위해 [역할 기반 액세스 제어](https://docs.microsoft.com/azure/role-based-access-control/) (RBAC) 라고 하는 세분화 된 역할 및 권한 관리를 통해 수행 됩니다. RBAC는 _역할_ 및 _역할 할당_으로 구성됩니다. 역할은 권한 수준을 식별합니다. 역할 할당은 역할을 사용자나 디바이스와 연결합니다.
+Azure Digital Twins를 사용 하면 공간 그래프의 특정 데이터, 리소스 및 작업에 대한 정확한 액세스를 제어할 수 있습니다. 이를 위해 [역할 기반 액세스 제어](https://docs.microsoft.com/azure/role-based-access-control/) (RBAC) 라고 하는 세분화 된 역할 및 권한 관리를 통해 수행 됩니다. RBAC는 _역할_ 및 _역할 할당_으로 구성됩니다. 역할은 권한 수준을 식별합니다. 역할 할당은 역할을 사용자나 디바이스와 연결합니다.
 
 RBAC를 사용하여 권한을 다음에 부여할 수 있습니다.
 

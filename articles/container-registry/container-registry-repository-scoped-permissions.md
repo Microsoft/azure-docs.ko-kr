@@ -1,5 +1,5 @@
 ---
-title: 리포지토리에 대 한 사용 권한
+title: 리포지토리에 대한 사용 권한
 description: 레지스트리의 특정 리포지토리로 범위가 지정 된 토큰을 만들어 이미지를 끌어오거나 푸시합니다.
 ms.topic: article
 ms.date: 10/31/2019
@@ -12,18 +12,18 @@ ms.locfileid: "74454920"
 ---
 # <a name="repository-scoped-permissions-in-azure-container-registry"></a>Azure Container Registry의 리포지토리 범위 권한 
 
-Azure Container Registry는 전체 레지스트리에 대 한 [역할 기반 액세스](container-registry-roles.md) 권한이 있는 id를 사용 하 여 여러 [인증 옵션](container-registry-authentication.md) 을 지원 합니다. 그러나 특정 시나리오의 경우 레지스트리의 특정 *리포지토리에* 만 액세스를 제공 해야 할 수 있습니다. 
+Azure Container Registry는 전체 레지스트리에 대한 [역할 기반 액세스](container-registry-roles.md) 권한이 있는 id를 사용 하 여 여러 [인증 옵션](container-registry-authentication.md) 을 지원 합니다. 그러나 특정 시나리오의 경우 레지스트리의 특정 *리포지토리에* 만 액세스를 제공 해야 할 수 있습니다. 
 
-이 문서에서는 레지스트리의 특정 리포지토리에 대해서만 작업을 수행할 수 있는 권한이 있는 액세스 토큰을 만들고 사용 하는 방법을 보여 줍니다. 액세스 토큰을 사용 하 여 사용자 또는 서비스에 저장소에 대 한 제한 된 시간 제한 액세스를 제공 하 여 이미지를 끌어오거나 푸시 하거나 다른 작업을 수행할 수 있습니다. 
+이 문서에서는 레지스트리의 특정 리포지토리에 대해서만 작업을 수행할 수 있는 권한이 있는 액세스 토큰을 만들고 사용 하는 방법을 보여 줍니다. 액세스 토큰을 사용 하 여 사용자 또는 서비스에 저장소에 대한 제한 된 시간 제한 액세스를 제공 하 여 이미지를 끌어오거나 푸시 하거나 다른 작업을 수행할 수 있습니다. 
 
-토큰 개념 및 시나리오에 대 한 배경 정보는이 문서의 뒷부분에 나오는 [리포지토리 범위 사용 권한 정보](#about-repository-scoped-permissions)를 참조 하세요.
+토큰 개념 및 시나리오에 대한 배경 정보는이 문서의 뒷부분에 나오는 [리포지토리 범위 사용 권한 정보](#about-repository-scoped-permissions)를 참조 하세요.
 
 > [!IMPORTANT]
 > 이 기능은 현재 미리 보기로 제공되며 일부 [제한 사항이 적용](#preview-limitations)됩니다. [부속 사용 약관][terms-of-use]에 동의하면 미리 보기를 사용할 수 있습니다. 이 기능의 몇 가지 측면은 일반 공급(GA) 전에 변경될 수 있습니다.
 
 ## <a name="preview-limitations"></a>미리 보기 제한 사항
 
-* 이 기능은 **프리미엄** 컨테이너 레지스트리에서만 사용할 수 있습니다. 레지스트리 서비스 계층 및 제한에 대 한 자세한 내용은 [Azure Container Registry sku](container-registry-skus.md)를 참조 하세요.
+* 이 기능은 **프리미엄** 컨테이너 레지스트리에서만 사용할 수 있습니다. 레지스트리 서비스 계층 및 제한에 대한 자세한 내용은 [Azure Container Registry sku](container-registry-skus.md)를 참조 하세요.
 * 현재 서비스 주체 또는 관리 id와 같은 Azure Active Directory 개체에 리포지토리 범위 사용 권한을 할당할 수 없습니다.
 
 ## <a name="prerequisites"></a>선행 조건
@@ -50,7 +50,7 @@ az acr token create --name MyToken --registry myregistry \
   --repository samples/nginx content/read --status enabled
 ```
 
-출력은 생성 된 암호 및 범위 맵을 포함 하 여 토큰에 대 한 세부 정보를 표시 합니다. 나중에 `docker login`사용할 수 있도록 암호를 안전한 장소에 저장 하는 것이 좋습니다. 암호는 다시 검색할 수 없지만 새 암호는 생성할 수 있습니다.
+출력은 생성 된 암호 및 범위 맵을 포함 하 여 토큰에 대한 세부 정보를 표시 합니다. 나중에 `docker login`사용할 수 있도록 암호를 안전한 장소에 저장 하는 것이 좋습니다. 암호는 다시 검색할 수 없지만 새 암호는 생성할 수 있습니다.
 
 출력에는 `MyToken-scope-map`이라는 범위 맵이 자동으로 생성 되는 것도 표시 됩니다. 범위 맵을 사용 하 여 다른 토큰에 동일한 리포지토리 작업을 적용할 수 있습니다. 또는 나중에 범위 맵을 업데이트 하 여 토큰 사용 권한을 변경 합니다.
 
@@ -122,9 +122,9 @@ az acr scope-map create --name MyScopeMap --registry myregistry \
 az acr token create --name MyToken --registry myregistry --scope-map MyScopeMap --status enabled
 ```
 
-출력에는 생성 된 암호와 적용 한 범위 맵을 포함 하 여 토큰에 대 한 세부 정보가 표시 됩니다. 나중에 `docker login`사용할 수 있도록 암호를 안전한 장소에 저장 하는 것이 좋습니다. 암호는 다시 검색할 수 없지만 새 암호는 생성할 수 있습니다.
+출력에는 생성 된 암호와 적용 한 범위 맵을 포함 하 여 토큰에 대한 세부 정보가 표시 됩니다. 나중에 `docker login`사용할 수 있도록 암호를 안전한 장소에 저장 하는 것이 좋습니다. 암호는 다시 검색할 수 없지만 새 암호는 생성할 수 있습니다.
 
-## <a name="generate-passwords-for-token"></a>토큰에 대 한 암호 생성
+## <a name="generate-passwords-for-token"></a>토큰에 대한 암호 생성
 
 토큰을 만들 때 암호가 생성 된 경우에는 [레지스트리 인증](#authenticate-using-token)을 계속 진행 합니다.
 
@@ -209,7 +209,7 @@ az acr token credential generate \
 
 * **액세스 토큰** 은 레지스트리를 인증 하는 데 암호와 함께 사용 되는 자격 증명입니다. 각 토큰과 연결 된 *작업* 범위는 하나 이상의 리포지토리로 허용 됩니다. 각 토큰에 대해 만료 시간을 설정할 수 있습니다. 
 
-* 지정 된 각 리포지토리에 대 한 **작업** 에는 다음 중 하나 이상이 포함 됩니다.
+* 지정 된 각 리포지토리에 대한 **작업** 에는 다음 중 하나 이상이 포함 됩니다.
 
   |작업  |설명  |
   |---------|---------|
@@ -232,8 +232,8 @@ az acr token credential generate \
 액세스 토큰을 사용 하는 시나리오는 다음과 같습니다.
 
 * 저장소에서 이미지를 끌어오는 개별 토큰을 IoT 장치에 제공
-* 외부 조직을 특정 리포지토리에 대 한 사용 권한 제공 
-* 조직의 특정 사용자 그룹에 대 한 리포지토리 액세스를 제한 합니다. 예를 들어 특정 리포지토리를 대상으로 하는 이미지를 작성 하는 개발자에 게 쓰기 및 읽기 액세스를 제공 하 고 해당 리포지토리에서 배포 하는 팀에 대 한 읽기 권한을 제공 합니다.
+* 외부 조직을 특정 리포지토리에 대한 사용 권한 제공 
+* 조직의 특정 사용자 그룹에 대한 리포지토리 액세스를 제한 합니다. 예를 들어 특정 리포지토리를 대상으로 하는 이미지를 작성 하는 개발자에 게 쓰기 및 읽기 액세스를 제공 하 고 해당 리포지토리에서 배포 하는 팀에 대한 읽기 권한을 제공 합니다.
 
 ### <a name="authentication-using-token"></a>토큰을 사용 하 여 인증
 

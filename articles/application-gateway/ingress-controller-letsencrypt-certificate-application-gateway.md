@@ -1,6 +1,6 @@
 ---
 title: Application Gateway에서 LetsEncrypt.org certificate 사용
-description: 이 문서에서는 LetsEncrypt.org에서 인증서를 획득 하 여 AKS 클러스터에 대 한 Application Gateway에서 사용 하는 방법에 대 한 정보를 제공 합니다.
+description: 이 문서에서는 LetsEncrypt.org에서 인증서를 획득 하 여 AKS 클러스터에 대한 Application Gateway에서 사용 하는 방법에 대한 정보를 제공 합니다.
 services: application-gateway
 author: caya
 ms.service: application-gateway
@@ -14,9 +14,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/12/2019
 ms.locfileid: "73957978"
 ---
-# <a name="use-certificates-with-letsencryptorg-on-application-gateway-for-aks-clusters"></a>AKS 클러스터에 대 한 Application Gateway에 LetsEncrypt.org에서 인증서 사용
+# <a name="use-certificates-with-letsencryptorg-on-application-gateway-for-aks-clusters"></a>AKS 클러스터에 대한 Application Gateway에 LetsEncrypt.org에서 인증서 사용
 
-이 섹션에서는 AKS를 구성 하 여 [LetsEncrypt.org](https://letsencrypt.org/) 를 활용 하 고 도메인에 대 한 TLS/SSL 인증서를 자동으로 가져옵니다. AKS 클러스터에 대 한 SSL/TLS 종료를 수행 하는 Application Gateway에 인증서가 설치 됩니다. 여기서 설명 하는 설정은 인증서의 생성 및 관리를 자동화 하는 [cert manager](https://github.com/jetstack/cert-manager) Kubernetes 추가 기능을 사용 합니다.
+이 섹션에서는 AKS를 구성 하 여 [LetsEncrypt.org](https://letsencrypt.org/) 를 활용 하 고 도메인에 대한 TLS/SSL 인증서를 자동으로 가져옵니다. AKS 클러스터에 대한 SSL/TLS 종료를 수행 하는 Application Gateway에 인증서가 설치 됩니다. 여기서 설명 하는 설정은 인증서의 생성 및 관리를 자동화 하는 [cert manager](https://github.com/jetstack/cert-manager) Kubernetes 추가 기능을 사용 합니다.
 
 아래 단계에 따라 기존 AKS 클러스터에 [인증서 관리자](https://docs.cert-manager.io) 를 설치 합니다.
 
@@ -58,7 +58,7 @@ ms.locfileid: "73957978"
 
     `ClusterIssuer` 리소스를 만듭니다. 서명 된 인증서를 가져올 `Lets Encrypt` 인증 기관을 나타내려면 `cert-manager` 필요 합니다.
 
-    Namespaced이 아닌 `ClusterIssuer` 리소스를 사용 하 여 인증서 관리자는 여러 네임 스페이스에서 사용할 수 있는 인증서를 발급 합니다. `Let’s Encrypt`은 ACME 프로토콜을 사용 하 여 지정 된 도메인 이름을 제어 하 고 인증서를 발급 하는지 확인 합니다. `ClusterIssuer` 속성 구성에 대 한 자세한 내용은 [여기](https://docs.cert-manager.io/en/latest/tasks/issuers/index.html)를 참조 하세요. `ClusterIssuer`는 테스트에 사용 되는 `Lets Encrypt` 스테이징 환경 (브라우저/클라이언트 신뢰 저장소에 없는 루트 인증서)을 사용 하 여 인증서를 발급 하도록 `cert-manager`에 지시 합니다.
+    Namespaced이 아닌 `ClusterIssuer` 리소스를 사용 하 여 인증서 관리자는 여러 네임 스페이스에서 사용할 수 있는 인증서를 발급 합니다. `Let’s Encrypt`은 ACME 프로토콜을 사용 하 여 지정 된 도메인 이름을 제어 하 고 인증서를 발급 하는지 확인 합니다. `ClusterIssuer` 속성 구성에 대한 자세한 내용은 [여기](https://docs.cert-manager.io/en/latest/tasks/issuers/index.html)를 참조 하세요. `ClusterIssuer`는 테스트에 사용 되는 `Lets Encrypt` 스테이징 환경 (브라우저/클라이언트 신뢰 저장소에 없는 루트 인증서)을 사용 하 여 인증서를 발급 하도록 `cert-manager`에 지시 합니다.
 
     아래 YAML의 기본 챌린지 형식은 `http01`입니다. 다른 문제는 [letsencrypt.org](https://letsencrypt.org/docs/challenge-types/) 에 설명 되어 있습니다.
 

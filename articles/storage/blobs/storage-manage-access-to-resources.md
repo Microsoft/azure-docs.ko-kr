@@ -82,7 +82,7 @@ private static async Task SetPublicContainerPermissions(CloudBlobContainer conta
 
 ### <a name="create-an-anonymous-client-object"></a>익명 클라이언트 개체 만들기
 
-계정에 대 한 Blob 저장소 끝점을 제공 하 여 익명 액세스를 위한 새 서비스 클라이언트 개체를 만들 수 있습니다. 그러나 익명 액세스에 사용할 수 있는 해당 계정의 컨테이너 이름도 알아야 합니다.
+계정에 대 한 Blob 저장소 엔드포인트을 제공 하 여 익명 액세스를 위한 새 서비스 클라이언트 개체를 만들 수 있습니다. 그러나 익명 액세스에 사용할 수 있는 해당 계정의 컨테이너 이름도 알아야 합니다.
 
 ```csharp
 public static void CreateAnonymousBlobClient()

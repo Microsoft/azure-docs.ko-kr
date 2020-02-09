@@ -34,11 +34,11 @@ Azure AD 암호 보호를 배포한 후 문제를 해결해야 할 수도 있습
 
 1. DC 에이전트가 등록 된 프록시에 대 한 네트워크 연결을 허용 하지 않는 격리 된 네트워크 부분에 있습니다. Azure에서 암호 정책을 다운로드 하기 위해 다른 DC 에이전트가 프록시와 통신할 수 있으면이 문제는 심각 하지 않을 수 있습니다. 다운로드 한 후에는 격리 된 DC에서 sysvol 공유의 정책 파일 복제를 통해 해당 정책을 가져옵니다.
 
-1. 프록시 호스트 컴퓨터가 RPC 끝점 매퍼 끝점 (포트 135)에 대 한 액세스를 차단 하 고 있습니다.
+1. 프록시 호스트 컴퓨터가 RPC 엔드포인트 매퍼 엔드포인트 (포트 135)에 대 한 액세스를 차단 하 고 있습니다.
 
    Azure AD 암호 보호 프록시 설치 관리자는 포트 135에 대 한 액세스를 허용 하는 Windows 방화벽 인바운드 규칙을 자동으로 만듭니다. 이 규칙을 나중에 삭제 하거나 사용 하지 않도록 설정 하면 DC 에이전트는 프록시 서비스와 통신할 수 없습니다. 다른 방화벽 제품 대신 builtin Windows 방화벽을 사용 하지 않도록 설정한 경우 포트 135에 대 한 액세스를 허용 하도록 방화벽을 구성 해야 합니다.
 
-1. 프록시 호스트 컴퓨터가 프록시 서비스에서 수신 하는 RPC 끝점 (동적 또는 정적)에 대 한 액세스를 차단 하 고 있습니다.
+1. 프록시 호스트 컴퓨터가 프록시 서비스에서 수신 하는 RPC 엔드포인트 (동적 또는 정적)에 대 한 액세스를 차단 하 고 있습니다.
 
    Azure AD 암호 보호 프록시 설치 관리자는 Azure AD 암호 보호 프록시 서비스에서 수신 대기 하는 인바운드 포트에 대 한 액세스를 허용 하는 Windows 방화벽 인바운드 규칙을 자동으로 만듭니다. 이 규칙을 나중에 삭제 하거나 사용 하지 않도록 설정 하면 DC 에이전트는 프록시 서비스와 통신할 수 없습니다. 다른 방화벽 제품 대신 builtin Windows 방화벽을 사용 하지 않도록 설정한 경우 Azure AD 암호 보호 프록시 서비스에서 수신 대기 하는 인바운드 포트에 대 한 액세스를 허용 하도록 방화벽을 구성 해야 합니다. 프록시 서비스가 특정 고정 RPC 포트 (`Set-AzureADPasswordProtectionProxyConfiguration` cmdlet 사용)에서 수신 하도록 구성 된 경우이 구성은 더 구체적으로 지정할 수 있습니다.
 
@@ -46,13 +46,13 @@ Azure AD 암호 보호를 배포한 후 문제를 해결해야 할 수도 있습
 
 ## <a name="proxy-service-is-unable-to-communicate-with-azure"></a>프록시 서비스가 Azure와 통신할 수 없습니다.
 
-1. 프록시 컴퓨터가 [배포 요구 사항](howto-password-ban-bad-on-premises-deploy.md)에 나열 된 끝점에 연결 되어 있는지 확인 합니다.
+1. 프록시 컴퓨터가 [배포 요구 사항](howto-password-ban-bad-on-premises-deploy.md)에 나열 된 엔드포인트에 연결 되어 있는지 확인 합니다.
 
-1. 포리스트와 모든 프록시 서버가 동일한 Azure 테 넌 트에 등록 되었는지 확인 합니다.
+1. 포리스트와 모든 프록시 서버가 동일한 Azure 테넌트에 등록 되었는지 확인 합니다.
 
-   `Get-AzureADPasswordProtectionProxy` 및 `Get-AzureADPasswordProtectionDCAgent` PowerShell cmdlet을 실행 하 고 반환 된 각 항목의 `AzureTenant` 속성을 비교 하 여이 요구 사항을 확인할 수 있습니다. 올바른 작업의 경우 보고 된 테 넌 트 이름은 모든 DC 에이전트와 프록시 서버에서 동일 해야 합니다.
+   `Get-AzureADPasswordProtectionProxy` 및 `Get-AzureADPasswordProtectionDCAgent` PowerShell cmdlet을 실행 하 고 반환 된 각 항목의 `AzureTenant` 속성을 비교 하 여이 요구 사항을 확인할 수 있습니다. 올바른 작업의 경우 보고 된 테넌트 이름은 모든 DC 에이전트와 프록시 서버에서 동일 해야 합니다.
 
-   Azure 테 넌 트 등록 불일치 조건이 있는 경우 모든 등록에 대해 동일한 Azure 테 넌 트의 자격 증명을 사용 하 여 필요에 따라 `Register-AzureADPasswordProtectionProxy` 및/또는 `Register-AzureADPasswordProtectionForest` PowerShell cmdlet을 실행 하 여이 문제를 해결할 수 있습니다.
+   Azure 테넌트 등록 불일치 조건이 있는 경우 모든 등록에 대해 동일한 Azure 테넌트의 자격 증명을 사용 하 여 필요에 따라 `Register-AzureADPasswordProtectionProxy` 및/또는 `Register-AzureADPasswordProtectionForest` PowerShell cmdlet을 실행 하 여이 문제를 해결할 수 있습니다.
 
 ## <a name="dc-agent-is-unable-to-encrypt-or-decrypt-password-policy-files"></a>DC 에이전트가 암호 정책 파일을 암호화 하거나 암호 해독할 수 없습니다.
 

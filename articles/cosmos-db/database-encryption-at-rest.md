@@ -59,5 +59,5 @@ A: 에뮬레이터는 독립 실행형 개발/테스트 도구이며 관리되�
 
 ## <a name="next-steps"></a>다음 단계
 
-Cosmos DB 보안 및 최신 개선 사항에 대 한 개요는 [Azure Cosmos database 보안](database-security.md)을 참조 하세요.
+Cosmos DB 보안 및 최신 개선 사항에 대한 개요는 [Azure Cosmos database 보안](database-security.md)을 참조 하세요.
 Microsoft 인증에 대한 자세한 내용은 [Azure 보안 센터](https://azure.microsoft.com/support/trust-center/)를 참조하세요.

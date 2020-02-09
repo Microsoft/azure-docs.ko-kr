@@ -1,6 +1,6 @@
 ---
 title: 권장 되는 성능 벤치 마크 테스트-Azure NetApp Files
-description: Azure NetApp Files 사용 하는 볼륨 성능 및 메트릭에 대 한 벤치 마크 테스트 권장 사항에 대해 알아봅니다.
+description: Azure NetApp Files 사용 하는 볼륨 성능 및 메트릭에 대한 벤치 마크 테스트 권장 사항에 대해 알아봅니다.
 author: b-juche
 ms.author: b-juche
 ms.service: azure-netapp-files
@@ -16,15 +16,15 @@ ms.locfileid: "75551525"
 ---
 # <a name="performance-benchmark-test-recommendations-for-azure-netapp-files"></a>Azure NetApp Files의 성능 벤치마크 테스트 추천 사항
 
-이 문서에서는 Azure NetApp Files를 사용 하 여 볼륨 성능 및 메트릭에 대 한 벤치 마크 테스트 권장 사항을 제공 합니다.
+이 문서에서는 Azure NetApp Files를 사용 하 여 볼륨 성능 및 메트릭에 대한 벤치 마크 테스트 권장 사항을 제공 합니다.
 
 ## <a name="overview"></a>개요
 
-Azure NetApp Files 볼륨의 성능 특징을 이해 하려면 오픈 소스 도구 [Fio](https://github.com/axboe/fio) 를 사용 하 여 다양 한 작업을 시뮬레이트하는 일련의 벤치 마크를 실행할 수 있습니다. FIO는 Linux 및 Windows 기반 운영 체제 모두에 설치할 수 있습니다.  이 도구는 볼륨에 대 한 IOPS 및 처리량의 신속한 스냅숏을 얻기 위한 훌륭한 도구입니다.
+Azure NetApp Files 볼륨의 성능 특징을 이해 하려면 오픈 소스 도구 [Fio](https://github.com/axboe/fio) 를 사용 하 여 다양 한 작업을 시뮬레이트하는 일련의 벤치 마크를 실행할 수 있습니다. FIO는 Linux 및 Windows 기반 운영 체제 모두에 설치할 수 있습니다.  이 도구는 볼륨에 대한 IOPS 및 처리량의 신속한 스냅숏을 얻기 위한 훌륭한 도구입니다.
 
 ### <a name="vm-instance-sizing"></a>VM 인스턴스 크기 조정
 
-최상의 결과를 위해서는 테스트를 수행 하도록 적절 한 크기를 지정 하는 VM (가상 머신) 인스턴스를 사용 하 고 있는지 확인 합니다. 다음 예에서는 Standard_D32s_v3 인스턴스를 사용 합니다. VM 인스턴스 크기에 대 한 자세한 내용은 Windows 기반 Vm에 대 한 [azure의 windows 가상 머신 크기](https://docs.microsoft.com/azure/virtual-machines/windows/sizes?toc=%2fazure%2fvirtual-network%2ftoc.json) 및 Linux 기반 vm에 대 한 [azure의 linux 가상 머신에](https://docs.microsoft.com/azure/virtual-machines/linux/sizes?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) 대 한 크기를 참조 하세요.
+최상의 결과를 위해서는 테스트를 수행 하도록 적절 한 크기를 지정 하는 VM (가상 머신) 인스턴스를 사용 하 고 있는지 확인 합니다. 다음 예에서는 Standard_D32s_v3 인스턴스를 사용 합니다. VM 인스턴스 크기에 대한 자세한 내용은 Windows 기반 Vm에 대한 [azure의 windows 가상 머신 크기](https://docs.microsoft.com/azure/virtual-machines/windows/sizes?toc=%2fazure%2fvirtual-network%2ftoc.json) 및 Linux 기반 vm에 대한 [azure의 linux 가상 머신에](https://docs.microsoft.com/azure/virtual-machines/linux/sizes?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) 대한 크기를 참조 하세요.
 
 ### <a name="azure-netapp-files-volume-sizing"></a>Azure NetApp Files 볼륨 크기 조정
 
@@ -67,7 +67,7 @@ FIO는 Linux 및 Windows 모두에서 이진 형식으로 사용할 수 있습�
 `Starting 4 processes`  
 `Jobs: 4 (f=4): [w(4)][26.7%][r=0KiB/s,w=571MiB/s][r=0,w=73.0k IOPS][eta 00m:22s]`
 
-## <a name="fio-examples-for-bandwidth"></a>대역폭에 대 한 FIO 예제
+## <a name="fio-examples-for-bandwidth"></a>대역폭에 대한 FIO 예제
 
 이 단원의 예제에서는 FIO 순차 읽기 및 쓰기를 보여 줍니다.
 
@@ -93,7 +93,7 @@ FIO는 Linux 및 Windows 모두에서 이진 형식으로 사용할 수 있습�
 
 Azure NetApp Files 성능 데이터는 Azure Monitor 카운터를 통해 사용할 수 있습니다. 카운터는 Azure Portal 및 REST API GET 요청을 통해 사용할 수 있습니다. 
 
-다음 정보에 대 한 기록 데이터를 볼 수 있습니다.
+다음 정보에 대한 기록 데이터를 볼 수 있습니다.
 * 평균 읽기 대기 시간 
 * 평균 쓰기 대기 시간 
 * 읽기 IOPS (평균)
@@ -107,13 +107,13 @@ Azure NetApp Files 성능 데이터는 Azure Monitor 카운터를 통해 사용�
 
 ![Azure Monitor 메트릭](../media/azure-netapp-files/azure-netapp-files-benchmark-monitor-metrics.png)
 
-메트릭 페이지로 이동 하 고, NetApp에 대해 필터링 하 고, 관심 있는 볼륨 카운터를 지정 하 여 Azure NetApp Files에 대 한 Azure Monitor에서 대시보드를 만들 수도 있습니다. 
+메트릭 페이지로 이동 하 고, NetApp에 대해 필터링 하 고, 관심 있는 볼륨 카운터를 지정 하 여 Azure NetApp Files에 대한 Azure Monitor에서 대시보드를 만들 수도 있습니다. 
 
 ![Azure Monitor 대시보드](../media/azure-netapp-files/azure-netapp-files-benchmark-monitor-dashboard.png)
 
 ### <a name="azure-monitor-api-access"></a>Azure Monitor API 액세스
 
-REST API 호출을 사용 하 여 Azure NetApp Files 카운터에 액세스할 수 있습니다. 용량 풀 및 볼륨에 대 한 카운터는 [Azure Monitor에서 지원 되는 메트릭](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftnetappnetappaccountscapacitypoolsvolumes) 을 참조 하세요.
+REST API 호출을 사용 하 여 Azure NetApp Files 카운터에 액세스할 수 있습니다. 용량 풀 및 볼륨에 대한 카운터는 [Azure Monitor에서 지원 되는 메트릭](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftnetappnetappaccountscapacitypoolsvolumes) 을 참조 하세요.
 
 다음 예제에서는 논리 볼륨 크기를 보기 위한 GET URL을 보여 줍니다.
 
@@ -124,4 +124,4 @@ REST API 호출을 사용 하 여 Azure NetApp Files 카운터에 액세스할 �
 ## <a name="next-steps"></a>다음 단계
 
 - [Azure NetApp Files에 대한 서비스 수준](azure-netapp-files-service-levels.md)
-- [Azure NetApp Files에 대 한 성능 벤치 마크](azure-netapp-files-performance-benchmarks.md)
+- [Azure NetApp Files에 대한 성능 벤치 마크](azure-netapp-files-performance-benchmarks.md)

@@ -59,7 +59,7 @@ HttpResponseMessage response = await _httpClient.GetAsync(apiUri);
 ```
 
 > [!IMPORTANT]
-> 클라이언트 응용 프로그램은 *웹 API에 대 한*Microsoft id 플랫폼 끝점에 전달자 토큰을 요청 합니다. 웹 API는 토큰을 확인 하 고 포함 된 클레임을 확인 해야 하는 유일한 응용 프로그램입니다. 클라이언트 앱은 토큰의 클레임을 검사 해 서 사용해 서는 안 됩니다.
+> 클라이언트 응용 프로그램은 *웹 API에 대 한*Microsoft id 플랫폼 엔드포인트에 전달자 토큰을 요청 합니다. 웹 API는 토큰을 확인 하 고 포함 된 클레임을 확인 해야 하는 유일한 응용 프로그램입니다. 클라이언트 앱은 토큰의 클레임을 검사 해 서 사용해 서는 안 됩니다.
 >
 > 이후에 웹 API에서 토큰을 암호화 해야 할 수도 있습니다. 이 요구 사항은 액세스 토큰을 볼 수 있는 클라이언트 앱에 대 한 액세스를 방지 합니다.
 
@@ -111,7 +111,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
  services.AddAzureAdBearer(options => Configuration.Bind("AzureAd", options));
 ```
 
- 현재 ASP.NET Core 템플릿은 조직 또는 조직 내에서 사용자를 로그인 하는 Azure Active Directory (Azure AD) 웹 Api를 만듭니다. 개인 계정으로 사용자를 로그인 하지 않습니다. 그러나 다음 코드를 Startup.cs에 추가 하 여 Microsoft id 플랫폼 끝점을 사용 하도록 템플릿을 변경할 수 있습니다.
+ 현재 ASP.NET Core 템플릿은 조직 또는 조직 내에서 사용자를 로그인 하는 Azure Active Directory (Azure AD) 웹 Api를 만듭니다. 개인 계정으로 사용자를 로그인 하지 않습니다. 그러나 다음 코드를 Startup.cs에 추가 하 여 Microsoft id 플랫폼 엔드포인트을 사용 하도록 템플릿을 변경할 수 있습니다.
 
 ```csharp
 services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationScheme, options =>
@@ -164,7 +164,7 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 
 유효성 검사기는 **Tokenvalidationparameters** 클래스의 속성과 연결 되어 있습니다. 속성은 ASP.NET 및 ASP.NET Core 구성에서 초기화 됩니다.
 
-대부분의 경우 매개 변수를 변경할 필요가 없습니다. 단일 테 넌 트가 아닌 앱은 예외입니다. 이러한 웹 앱은 모든 조직이 나 개인 Microsoft 계정의 사용자를 허용 합니다. 이 경우 발급자의 유효성을 검사 해야 합니다.
+대부분의 경우 매개 변수를 변경할 필요가 없습니다. 단일 테넌트가 아닌 앱은 예외입니다. 이러한 웹 앱은 모든 조직이 나 개인 Microsoft 계정의 사용자를 허용 합니다. 이 경우 발급자의 유효성을 검사 해야 합니다.
 
 ## <a name="token-validation-in-azure-functions"></a>Azure Functions에서 토큰 유효성 검사
 

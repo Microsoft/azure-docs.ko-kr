@@ -316,7 +316,7 @@ CreateUIDefinition에서 제공 하는 기존 네트워크 인터페이스로 �
 
 ## <a name="accessing-the-managed-identity-token"></a>관리 Id 토큰 액세스
 
-이제 게시자 테 넌 트에서 `listTokens` api를 통해 관리 되는 응용 프로그램의 토큰에 액세스할 수 있습니다. 예제 요청은 다음과 같습니다.
+이제 게시자 테넌트에서 `listTokens` api를 통해 관리 되는 응용 프로그램의 토큰에 액세스할 수 있습니다. 예제 요청은 다음과 같습니다.
 
 ``` HTTP
 POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Solutions/applications/{applicationName}/listTokens?api-version=2018-09-01-preview HTTP/1.1

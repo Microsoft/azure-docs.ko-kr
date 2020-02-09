@@ -1,6 +1,6 @@
 ---
-title: Azure 데이터 탐색기 클러스터에 대 한 관리 되는 id를 구성 하는 방법
-description: Azure 데이터 탐색기 클러스터에 대 한 관리 id를 구성 하는 방법을 알아봅니다.
+title: Azure 데이터 탐색기 클러스터에 대한 관리 되는 id를 구성 하는 방법
+description: Azure 데이터 탐색기 클러스터에 대한 관리 id를 구성 하는 방법을 알아봅니다.
 author: saguiitay
 ms.author: itsagui
 ms.reviewer: orspodek
@@ -14,12 +14,12 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/07/2020
 ms.locfileid: "75725976"
 ---
-# <a name="configure-managed-identities-for-your-azure-data-explorer-cluster"></a>Azure 데이터 탐색기 클러스터에 대 한 관리 id 구성
+# <a name="configure-managed-identities-for-your-azure-data-explorer-cluster"></a>Azure 데이터 탐색기 클러스터에 대한 관리 id 구성
 
-[Azure Active Directory에서 관리 되는 id](/azure/active-directory/managed-identities-azure-resources/overview) 를 사용 하면 클러스터에서 AZURE KEY VAULT 같은 AAD로 보호 되는 다른 리소스에 쉽게 액세스할 수 있습니다. Id는 Azure 플랫폼에서 관리 하며, 암호를 프로 비전 하거나 회전할 필요가 없습니다. 이 문서에서는 Azure 데이터 탐색기 클러스터에 대 한 관리 id를 만드는 방법을 보여 줍니다. 
+[Azure Active Directory에서 관리 되는 id](/azure/active-directory/managed-identities-azure-resources/overview) 를 사용 하면 클러스터에서 AZURE KEY VAULT 같은 AAD로 보호 되는 다른 리소스에 쉽게 액세스할 수 있습니다. Id는 Azure 플랫폼에서 관리 하며, 암호를 프로 비전 하거나 회전할 필요가 없습니다. 이 문서에서는 Azure 데이터 탐색기 클러스터에 대한 관리 id를 만드는 방법을 보여 줍니다. 
 
 > [!Note]
-> 앱이 구독 또는 테 넌 트 간에 마이그레이션되는 경우 Azure 데이터 탐색기에 대 한 관리 id가 예상 대로 작동 하지 않습니다. 앱은 [id 제거](#remove-an-identity)를 사용 하 여 기능을 사용 하지 않도록 설정 하 고 다시 사용 하도록 설정 하 여 수행할 수 있는 새 id를 얻어야 합니다. 또한 새 id를 사용 하도록 다운스트림 리소스의 액세스 정책을 업데이트 해야 합니다.
+> 앱이 구독 또는 테넌트 간에 마이그레이션되는 경우 Azure 데이터 탐색기에 대한 관리 id가 예상 대로 작동 하지 않습니다. 앱은 [id 제거](#remove-an-identity)를 사용 하 여 기능을 사용 하지 않도록 설정 하 고 다시 사용 하도록 설정 하 여 수행할 수 있는 새 id를 얻어야 합니다. 또한 새 id를 사용 하도록 다운스트림 리소스의 액세스 정책을 업데이트 해야 합니다.
 
 ## <a name="add-a-system-assigned-identity"></a>시스템 할당 id 추가
 
@@ -78,13 +78,13 @@ Azure 데이터 탐색기 C# 클라이언트를 사용 하 여 관리 id를 설�
     var tenantId = cluster.Identity.TenantId;
     ```
 
-    `PrincipalId` 및 `TenantId`는 Guid로 바뀝니다. `TenantId` 속성은 id가 속하는 AAD 테 넌 트를 식별 합니다. `PrincipalId`은 클러스터의 새 id에 대 한 고유 식별자입니다. AAD 내에서 서비스 주체는 사용자가 App Service 또는 Azure Functions 인스턴스에 지정한 이름과 동일한 이름을 갖습니다.
+    `PrincipalId` 및 `TenantId`는 Guid로 바뀝니다. `TenantId` 속성은 id가 속하는 AAD 테넌트를 식별 합니다. `PrincipalId`은 클러스터의 새 id에 대한 고유 식별자입니다. AAD 내에서 서비스 주체는 사용자가 App Service 또는 Azure Functions 인스턴스에 지정한 이름과 동일한 이름을 갖습니다.
 
 ### <a name="add-a-system-assigned-identity-using-an-azure-resource-manager-template"></a>Azure Resource Manager 템플릿을 사용 하 여 시스템 할당 id 추가
 
 Azure Resource Manager 템플릿을 사용하여 Azure 리소스 배포를 자동화할 수 있습니다. Azure 데이터 탐색기에 배포 하는 방법에 대해 자세히 알아보려면 [Azure Resource Manager 템플릿을 사용 하 여 azure 데이터 탐색기 클러스터 및 데이터베이스 만들기](create-cluster-database-resource-manager.md)를 참조 하세요.
 
-시스템 할당 유형을 추가 하면 Azure에서 클러스터에 대 한 id를 만들고 관리 하 게 됩니다. 모든 `Microsoft.Kusto/clusters` 유형의 리소스는 ID를 사용하여 리소스 정의에 다음 속성을 포함하는 방법으로 만들 수 있습니다. 
+시스템 할당 유형을 추가 하면 Azure에서 클러스터에 대한 id를 만들고 관리 하 게 됩니다. 모든 `Microsoft.Kusto/clusters` 유형의 리소스는 ID를 사용하여 리소스 정의에 다음 속성을 포함하는 방법으로 만들 수 있습니다. 
 
 ```json
 "identity": {
@@ -123,7 +123,7 @@ Azure Resource Manager 템플릿을 사용하여 Azure 리소스 배포를 자�
 }
 ```
 
-`<TENANTID>` 및 `<PRINCIPALID>`는 Guid로 바뀝니다. `TenantId` 속성은 id가 속하는 AAD 테 넌 트를 식별 합니다. `PrincipalId`은 클러스터의 새 id에 대 한 고유 식별자입니다. AAD 내에서 서비스 주체는 사용자가 App Service 또는 Azure Functions 인스턴스에 지정한 이름과 동일한 이름을 갖습니다.
+`<TENANTID>` 및 `<PRINCIPALID>`는 Guid로 바뀝니다. `TenantId` 속성은 id가 속하는 AAD 테넌트를 식별 합니다. `PrincipalId`은 클러스터의 새 id에 대한 고유 식별자입니다. AAD 내에서 서비스 주체는 사용자가 App Service 또는 Azure Functions 인스턴스에 지정한 이름과 동일한 이름을 갖습니다.
 
 ## <a name="remove-an-identity"></a>Id 제거
 

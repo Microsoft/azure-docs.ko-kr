@@ -38,7 +38,7 @@ ms.locfileid: "76705567"
 
 ## <a name="notification-payload-changes"></a>알림 페이로드 변경
 
-알림 페이로드 형식은 [클래식 경고 규칙과](alerts-webhooks.md) [새 메트릭 경고](alerts-metric-near-real-time.md#payload-schema)간에 약간 다릅니다. 기존 경고 규칙에 의해 트리거되는 webhook, 논리 앱 또는 runbook 작업이 있는 경우 새 메트릭 경고의 페이로드 형식을 허용 하도록 해당 알림 끝점을 업데이트 해야 합니다.
+알림 페이로드 형식은 [클래식 경고 규칙과](alerts-webhooks.md) [새 메트릭 경고](alerts-metric-near-real-time.md#payload-schema)간에 약간 다릅니다. 기존 경고 규칙에 의해 트리거되는 webhook, 논리 앱 또는 runbook 작업이 있는 경우 새 메트릭 경고의 페이로드 형식을 허용 하도록 해당 알림 엔드포인트을 업데이트 해야 합니다.
 
 다음 표를 사용 하 여 기본 형식에서 새 형식으로 webhook 페이로드 필드를 매핑합니다.
 

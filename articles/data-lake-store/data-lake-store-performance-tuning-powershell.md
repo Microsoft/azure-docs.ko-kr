@@ -1,6 +1,6 @@
 ---
 title: Azure Data Lake Storage Gen1 성능 조정-PowerShell
-description: Azure Data Lake Storage Gen1에서 Azure PowerShell를 사용할 때 성능을 향상 시키는 방법에 대 한 팁
+description: Azure Data Lake Storage Gen1에서 Azure PowerShell를 사용할 때 성능을 향상 시키는 방법에 대한 팁
 author: stewu
 ms.service: data-lake-store
 ms.topic: conceptual

@@ -23,7 +23,7 @@ ms.locfileid: "68598381"
 
 Azure의 네트워킹 서비스는 함께 또는 별도로 사용할 수 있는 다양 한 네트워킹 기능을 제공 합니다. 다음과 같은 주요 기능에 대해 알아보려면 그 중 하나를 클릭합니다.
 - [**연결 서비스**](#connect): Azure-Virtual Network (VNet), 가상 WAN, Express 경로, VPN Gateway, Azure DNS 또는 Azure 방호에서 이러한 네트워킹 서비스의 조합을 사용 하 여 Azure 리소스 및 온-프레미스 리소스를 연결 합니다.
-- [**응용 프로그램 보호 서비스**](#protect) Azure에서 DDoS 보호, 방화벽, 네트워크 보안 그룹, 웹 응용 프로그램 방화벽 또는 Virtual Network 끝점에서 이러한 네트워킹 서비스의 조합을 사용 하 여 응용 프로그램을 보호 합니다.
+- [**응용 프로그램 보호 서비스**](#protect) Azure에서 DDoS 보호, 방화벽, 네트워크 보안 그룹, 웹 응용 프로그램 방화벽 또는 Virtual Network 엔드포인트에서 이러한 네트워킹 서비스의 조합을 사용 하 여 응용 프로그램을 보호 합니다.
 - [**응용 프로그램 배달 서비스**](#deliver) CDN (Azure-Content Delivery Network), Azure Front 도어 서비스, Traffic Manager, Application Gateway 또는 Load Balancer에서 이러한 네트워킹 서비스의 조합을 사용 하 여 Azure 네트워크에서 응용 프로그램을 제공 합니다.
 - [**네트워크 모니터링**](#monitor) – Azure-Network Watcher, Express 경로 모니터, Azure Monitor 또는 VNet 터미널 액세스 지점 (탭)에서 이러한 네트워킹 서비스의 조합을 사용 하 여 네트워크 리소스를 모니터링 합니다.
 
@@ -81,12 +81,12 @@ Azure Bastion 서비스는 가상 네트워크 내에서 프로비저닝하는 �
 
 ## <a name="protect"></a>응용 프로그램 보호 서비스
 
-이 섹션에서는 네트워크 리소스 DDoS Protection, 웹 응용 프로그램 방화벽, Azure 방화벽, 네트워크 보안 그룹 및 서비스 끝점을 보호 하는 데 도움이 되는 Azure의 네트워킹 서비스에 대해 설명 합니다.
+이 섹션에서는 네트워크 리소스 DDoS Protection, 웹 응용 프로그램 방화벽, Azure 방화벽, 네트워크 보안 그룹 및 서비스 엔드포인트을 보호 하는 데 도움이 되는 Azure의 네트워킹 서비스에 대해 설명 합니다.
 
 |서비스|왜 사용 해야 하나요?|시나리오|
 |---|---|---|
 |[DDoS 보호](#ddosprotection) |과도 한 IP 트래픽 요금을 보호 하는 응용 프로그램에 대 한 고가용성|[Azure DDoS Protection 관리](../virtual-network/manage-ddos-protection.md)|
-|[웹 애플리케이션 방화벽](#waf)|<p>[Azure WAF Application Gateway](../application-gateway/waf-overview.md) 는 공용 및 개인 주소 공간에서 엔터티에 대 한 지역 보호를 제공 합니다.</p><p>[프런트 도어를 사용 하는 Azure WAF](../frontdoor/waf-overview.md) 는 공용 끝점에 대 한 네트워크 경계에서 보호를 제공 합니다.</p>|<p>[Bot 보호 규칙 구성](../frontdoor/waf-front-door-policy-configure-bot-protection.md)</p> <p>[사용자 지정 응답 코드 구성](../frontdoor/waf-front-door-configure-custom-response-code.md)</p> <p>[IP 제한 규칙 구성](../frontdoor/waf-front-door-configure-ip-restriction.md)</p> <p>[Rate limit rule 구성](../frontdoor/waf-front-door-rate-limit-powershell.md)</p> |
+|[웹 애플리케이션 방화벽](#waf)|<p>[Azure WAF Application Gateway](../application-gateway/waf-overview.md) 는 공용 및 개인 주소 공간에서 엔터티에 대 한 지역 보호를 제공 합니다.</p><p>[프런트 도어를 사용 하는 Azure WAF](../frontdoor/waf-overview.md) 는 공용 엔드포인트에 대 한 네트워크 경계에서 보호를 제공 합니다.</p>|<p>[Bot 보호 규칙 구성](../frontdoor/waf-front-door-policy-configure-bot-protection.md)</p> <p>[사용자 지정 응답 코드 구성](../frontdoor/waf-front-door-configure-custom-response-code.md)</p> <p>[IP 제한 규칙 구성](../frontdoor/waf-front-door-configure-ip-restriction.md)</p> <p>[Rate limit rule 구성](../frontdoor/waf-front-door-rate-limit-powershell.md)</p> |
 |[Azure Firewall](#firewall)|Azure Firewall은 Azure Virtual Network 리소스를 보호하는 관리되는 클라우드 기반 네트워크 보안 서비스입니다. 고가용성 및 무제한 클라우드 확장성이 내장되어 있는 서비스 형태의 완전한 상태 저장 방화벽입니다.|<p>[Vnet에서 Azure 방화벽 배포](../firewall/tutorial-firewall-deploy-portal.md)</p> <p>[-하이브리드 네트워크에서 Azure 방화벽 배포](../firewall/tutorial-hybrid-ps.md)</p> <p>[Azure 방화벽 DNAT를 사용 하 여 인바운드 트래픽 필터링](../firewall/tutorial-firewall-dnat.md)</p>|
 |[네트워크 보안 그룹](#nsg)|모든 네트워크 트래픽 흐름에 대 한 v m/서브넷의 완전 한 분산 끝 노드 컨트롤|[네트워크 보안 그룹을 사용 하 여 네트워크 트래픽 필터링](../virtual-network/tutorial-filter-network-traffic.md)|
 |[가상 네트워크 서비스 엔드포인트](#serviceendpoints)|일부 Azure 서비스 리소스에 대 한 네트워크 액세스를 가상 네트워크 서브넷으로 제한할 수 있습니다.|[PaaS 리소스에 대한 네트워크 액세스 제한](../virtual-network/tutorial-restrict-network-access-to-resources-powershell.md)|
@@ -100,7 +100,7 @@ Azure Bastion 서비스는 가상 네트워크 내에서 프로비저닝하는 �
 
 Azure WAF (웹 응용 프로그램 방화벽)는 SQL 삽입, 사이트 간 스크립팅 등의 일반적인 웹 익스플로잇 및 취약성 으로부터 웹 응용 프로그램에 대 한 보호를 제공 합니다. Azure WAF는 관리 되는 규칙을 통해 OWASP 상위 10 개 취약점 으로부터 제공 되는 기본 보호 기능을 제공 합니다. 또한 고객은 사용자 지정 규칙을 구성할 수 있습니다 .이 규칙은 원본 IP 범위에 따라 추가 보호를 제공 하 고 헤더, 쿠키, 양식 데이터 필드 또는 쿼리 문자열 매개 변수와 같은 특성을 요청 하는 고객 관리 규칙입니다.
 
-고객은 공용 및 개인 주소 공간에서 엔터티에 대 한 지역 보호를 제공 하는 [Application Gateway으로 Azure WAF](../application-gateway/waf-overview.md) 를 배포 하도록 선택할 수 있습니다. 또한 고객은 네트워크에 지에서 공용 끝점에 대 한 보호를 제공 하는 [프런트 도어를 사용 하 여 Azure WAF](../frontdoor/waf-overview.md) 를 배포 하도록 선택할 수 있습니다.
+고객은 공용 및 개인 주소 공간에서 엔터티에 대 한 지역 보호를 제공 하는 [Application Gateway으로 Azure WAF](../application-gateway/waf-overview.md) 를 배포 하도록 선택할 수 있습니다. 또한 고객은 네트워크에 지에서 공용 엔드포인트에 대 한 보호를 제공 하는 [프런트 도어를 사용 하 여 Azure WAF](../frontdoor/waf-overview.md) 를 배포 하도록 선택할 수 있습니다.
 
 ![웹 애플리케이션 방화벽](./media/networking-overview/waf-overview.png)
 
@@ -115,7 +115,7 @@ Azure 방화벽에 대 한 자세한 내용은 [Azure 방화벽 설명서](../fi
 ### <a name="nsg"></a>네트워크 보안 그룹
 네트워크 보안 그룹을 사용 하 여 Azure 가상 네트워크에서 Azure 리소스에 대 한 네트워크 트래픽을 필터링 할 수 있습니다. 자세한 내용은 [보안 개요](../virtual-network/security-overview.md)를 참조 하세요.
 
-### <a name="serviceendpoints"></a>서비스 끝점
+### <a name="serviceendpoints"></a>서비스 엔드포인트
 VNet(Virtual Network) 서비스 엔드포인트는 직접 연결을 통해 가상 네트워크 프라이빗 주소 공간 및 Azure 서비스에 대한 VNet의 ID를 확장합니다. 엔드포인트를 사용하면 가상 네트워크에 대해 중요한 Azure 서비스 리소스를 보호할 수 있습니다. VNet에서 Azure 서비스에 대한 트래픽은 Microsoft Azure 백본 네트워크에 항상 유지됩니다. 자세한 내용은 [가상 네트워크 서비스 엔드포인트](../virtual-network/virtual-network-service-endpoints-overview.md)를 참조하세요.
 
 ![가상 네트워크 서비스 엔드포인트](./media/networking-overview/vnet-service-endpoints-overview.png)
@@ -126,9 +126,9 @@ VNet(Virtual Network) 서비스 엔드포인트는 직접 연결을 통해 가�
 
 |서비스|왜 사용 해야 하나요?|시나리오|
 |---|---|---|
-|[Content Delivery Network](#cdn)|사용자에 게 고대역폭 콘텐츠를 제공 합니다. 대기 시간을 최소화 하기 위해 최종 사용자에 게 가까운 POP (지점 위치) 위치에서 캐시 된 콘텐츠를에 지 서버에 저장 합니다.|<p>[웹 앱에 CDN 추가](../cdn/cdn-add-to-web-app.md)</p> <p>[-HTTPS를 통해 Azure CDN 사용자 지정 도메인을 사용 하 여 저장소 blob 액세스](..//cdn/cdn-storage-custom-domain-https.md)</p> <p>[Azure CDN 끝점에 사용자 지정 도메인 추가](../cdn/cdn-map-content-to-custom-domain.md)</p> <p>[Azure CDN 사용자 지정 도메인에서 HTTPS 구성](../cdn/cdn-custom-ssl.md?tabs=option-1-default-enable-https-with-a-cdn-managed-certificate).</p>|
+|[Content Delivery Network](#cdn)|사용자에 게 고대역폭 콘텐츠를 제공 합니다. 대기 시간을 최소화 하기 위해 최종 사용자에 게 가까운 POP (지점 위치) 위치에서 캐시 된 콘텐츠를에 지 서버에 저장 합니다.|<p>[웹 앱에 CDN 추가](../cdn/cdn-add-to-web-app.md)</p> <p>[-HTTPS를 통해 Azure CDN 사용자 지정 도메인을 사용 하 여 저장소 blob 액세스](..//cdn/cdn-storage-custom-domain-https.md)</p> <p>[Azure CDN 엔드포인트에 사용자 지정 도메인 추가](../cdn/cdn-map-content-to-custom-domain.md)</p> <p>[Azure CDN 사용자 지정 도메인에서 HTTPS 구성](../cdn/cdn-custom-ssl.md?tabs=option-1-default-enable-https-with-a-cdn-managed-certificate).</p>|
 |[Azure Front 도어 서비스](#frontdoor)|고가용성을 위한 최상의 성능과 신속한 글로벌 장애 조치를 최적화 하 여 웹 트래픽에 대 한 전역 라우팅을 정의, 관리 및 모니터링할 수 있습니다.|<p>[Azure Front 도어 서비스에 사용자 지정 도메인 추가](../frontdoor/front-door-custom-domain.md)</p> <p>[프런트 도어 사용자 지정 도메인에서 HTTPS 구성](../frontdoor/front-door-custom-domain-https.md)</p><p>[지역 필터링 웹 응용 프로그램 방화벽 정책 설정](../frontdoor/front-door-tutorial-geo-filtering.md)|
-|[Traffic Manager](#trafficmanager)|고가용성 및 응답성을 제공 하는 동시에, 글로벌 Azure 지역에서 서비스에 대 한 DNS 기반 트래픽을 분산 합니다.|<p> [짧은 대기 시간을 위해 트래픽 라우팅](../traffic-manager/tutorial-traffic-manager-improve-website-response.md)</p><p>[우선순위 엔드포인트로 트래픽 라우팅](../traffic-manager/traffic-manager-configure-priority-routing-method.md)</p><p> [가중된 엔드포인트를 사용하여 트래픽 제어](../traffic-manager/tutorial-traffic-manager-weighted-endpoint-routing.md)</p><p>[끝점의 지리적 위치에 따라 트래픽 라우팅](../traffic-manager/traffic-manager-configure-geographic-routing-method.md)</p> <p> [사용자의 서브넷에 따라 트래픽 라우팅](../traffic-manager/tutorial-traffic-manager-subnet-routing.md)</p>|
+|[Traffic Manager](#trafficmanager)|고가용성 및 응답성을 제공 하는 동시에, 글로벌 Azure 지역에서 서비스에 대 한 DNS 기반 트래픽을 분산 합니다.|<p> [짧은 대기 시간을 위해 트래픽 라우팅](../traffic-manager/tutorial-traffic-manager-improve-website-response.md)</p><p>[우선순위 엔드포인트로 트래픽 라우팅](../traffic-manager/traffic-manager-configure-priority-routing-method.md)</p><p> [가중된 엔드포인트를 사용하여 트래픽 제어](../traffic-manager/tutorial-traffic-manager-weighted-endpoint-routing.md)</p><p>[엔드포인트의 지리적 위치에 따라 트래픽 라우팅](../traffic-manager/traffic-manager-configure-geographic-routing-method.md)</p> <p> [사용자의 서브넷에 따라 트래픽 라우팅](../traffic-manager/tutorial-traffic-manager-subnet-routing.md)</p>|
 |[Load Balancer](#loadbalancer)|는 가용성 영역 및 Vnet 트래픽을 라우팅 하 여 지역 부하 분산을 제공 합니다. 리소스 간에 트래픽을 라우팅하고 지역 응용 프로그램을 빌드하기 위해 내부 부하 분산을 제공 합니다.|<p> [VM에 내부 트래픽 부하 분산](../load-balancer/tutorial-load-balancer-standard-manage-portal.md)</p> <p>[가상 네트워크 내의 Vm 간에 트래픽 부하 분산](../load-balancer/tutorial-load-balancer-basic-internal-portal.md)<p>[특정 Vm의 특정 포트에 대 한 포트 전달 트래픽](../load-balancer/tutorial-load-balancer-port-forwarding-portal.md)</p><p> [부하 분산 및 아웃 바운드 규칙 구성](../load-balancer/configure-load-balancer-outbound-cli.md)</p>|
 |[Application Gateway](#applicationgateway)|Azure Application Gateway는 웹 애플리케이션에 대한 트래픽을 관리할 수 있도록 하는 웹 트래픽 부하 분산 장치입니다.|<p>[Azure 애플리케이션 Gateway를 사용 하 여 웹 트래픽 직접 전송](../application-gateway/quick-create-portal.md)</p><p>[SSL 종료를 사용하여 애플리케이션 게이트웨이 구성](../application-gateway/create-ssl-portal.md)</p><p>[URL 경로 기반 리디렉션으로 애플리케이션 게이트웨이 만들기](../application-gateway/create-url-route-portal.md) </p>|
 |
@@ -146,7 +146,7 @@ Azure Front Door Service를 사용하면 최적의 성능과 고가용성을 지
 
 Azure Traffic Manager는 트래픽을 전 세계 Azure 지역의 서비스에 적절하게 분산하는 한편, 고가용성과 빠른 응답성을 제공하는 DNS 기반 트래픽 부하 분산 장치입니다. Traffic Manager은 우선 순위, 가중치가 적용 되는 성능, 지리적 위치, 다중 값 또는 서브넷과 같은 트래픽을 분산 하는 다양 한 트래픽 라우팅 방법을 제공 합니다. 트래픽 라우팅 방법에 대 한 자세한 내용은 [Traffic Manager 라우팅 메서드](../traffic-manager/traffic-manager-routing-methods.md)를 참조 하세요.
 
-다음 다이어그램은 Traffic Manager를 사용한 끝점 우선 순위 기반 라우팅을 보여 줍니다.
+다음 다이어그램은 Traffic Manager를 사용한 엔드포인트 우선 순위 기반 라우팅을 보여 줍니다.
 
 ![Azure Traffic Manager '우선 순위' 트래픽 라우팅 메서드](./media/networking-overview/priority.png)
 

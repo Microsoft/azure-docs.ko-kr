@@ -44,7 +44,7 @@ Lucene 파서는 필드 범위 쿼리, 유사 항목 및 접두사 와일드 카
 
 ### <a name="set-the-request-url"></a>요청 URL 설정
 
-Request는 Azure Cognitive Search 끝점 및 검색 문자열을 포함 하는 URL과 쌍을 이루는 GET 명령입니다.
+Request는 Azure Cognitive Search 엔드포인트 및 검색 문자열을 포함 하는 URL과 쌍을 이루는 GET 명령입니다.
 
   ![Postman 요청 헤더](media/search-query-lucene-examples/postman-basic-url-request-elements.png)
 

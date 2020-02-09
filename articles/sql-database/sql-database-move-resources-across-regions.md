@@ -73,11 +73,11 @@ ms.locfileid: "73821427"
 
 ### <a name="test-synchronization"></a>동기화 테스트
 
-**ReplicationState** 가 `2`되 면 `<fog-name>.secondary.database.windows.net` 보조 끝점을 사용 하 여 각 데이터베이스 또는 데이터베이스의 하위 집합에 연결 하 고 데이터베이스에 대 한 쿼리를 수행 하 여 연결, 적절 한 보안 구성 및 데이터 복제를 보장 합니다. 
+**ReplicationState** 가 `2`되 면 `<fog-name>.secondary.database.windows.net` 보조 엔드포인트을 사용 하 여 각 데이터베이스 또는 데이터베이스의 하위 집합에 연결 하 고 데이터베이스에 대 한 쿼리를 수행 하 여 연결, 적절 한 보안 구성 및 데이터 복제를 보장 합니다. 
 
 ### <a name="initiate-the-move"></a>이동 시작
 
-1. `<fog-name>.secondary.database.windows.net`보조 끝점을 사용 하 여 대상 서버에 연결 합니다.
+1. `<fog-name>.secondary.database.windows.net`보조 엔드포인트을 사용 하 여 대상 서버에 연결 합니다.
 1. [AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/switch-azsqldatabasefailovergroup) 를 사용 하 여 보조 관리 되는 인스턴스를 전체 동기화를 사용 하는 기본으로 전환 합니다. 이 작업은 성공 하거나 롤백될 예정입니다. 
 1. `nslook up <fog-name>.secondary.database.windows.net` 사용 하 여 명령이 성공적으로 완료 되었는지 확인 하 고 DNS CNAME 항목이 대상 지역 IP 주소를 가리키는지 확인 합니다. 스위치 명령이 실패 하면 CNAME은 업데이트 되지 않습니다. 
 
@@ -125,11 +125,11 @@ ms.locfileid: "73821427"
 
 ### <a name="test-synchronization"></a>동기화 테스트
  
-**ReplicationState** 가 `2`되 면 `<fog-name>.secondary.database.windows.net` 보조 끝점을 사용 하 여 각 데이터베이스 또는 데이터베이스의 하위 집합에 연결 하 고 데이터베이스에 대 한 쿼리를 수행 하 여 연결, 적절 한 보안 구성 및 데이터 복제를 보장 합니다. 
+**ReplicationState** 가 `2`되 면 `<fog-name>.secondary.database.windows.net` 보조 엔드포인트을 사용 하 여 각 데이터베이스 또는 데이터베이스의 하위 집합에 연결 하 고 데이터베이스에 대 한 쿼리를 수행 하 여 연결, 적절 한 보안 구성 및 데이터 복제를 보장 합니다. 
 
 ### <a name="initiate-the-move"></a>이동 시작
  
-1. `<fog-name>.secondary.database.windows.net`보조 끝점을 사용 하 여 대상 서버에 연결 합니다.
+1. `<fog-name>.secondary.database.windows.net`보조 엔드포인트을 사용 하 여 대상 서버에 연결 합니다.
 1. [AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/switch-azsqldatabasefailovergroup) 를 사용 하 여 보조 관리 되는 인스턴스를 전체 동기화를 사용 하는 기본으로 전환 합니다. 이 작업은 성공 하거나 롤백될 예정입니다. 
 1. `nslook up <fog-name>.secondary.database.windows.net` 사용 하 여 명령이 성공적으로 완료 되었는지 확인 하 고 DNS CNAME 항목이 대상 지역 IP 주소를 가리키는지 확인 합니다. 스위치 명령이 실패 하면 CNAME은 업데이트 되지 않습니다. 
 
@@ -172,11 +172,11 @@ ms.locfileid: "73821427"
 
 ### <a name="test-synchronization"></a>동기화 테스트
 
-**ReplicationState** 가 `2`되 면 `<fog-name>.secondary.database.windows.net` 보조 끝점을 사용 하 여 각 데이터베이스 또는 데이터베이스의 하위 집합에 연결 하 고 데이터베이스에 대 한 쿼리를 수행 하 여 연결, 적절 한 보안 구성 및 데이터 복제를 보장 합니다. 
+**ReplicationState** 가 `2`되 면 `<fog-name>.secondary.database.windows.net` 보조 엔드포인트을 사용 하 여 각 데이터베이스 또는 데이터베이스의 하위 집합에 연결 하 고 데이터베이스에 대 한 쿼리를 수행 하 여 연결, 적절 한 보안 구성 및 데이터 복제를 보장 합니다. 
 
 ### <a name="initiate-the-move"></a>이동 시작 
 
-1. `<fog-name>.secondary.database.windows.net`보조 끝점을 사용 하 여 대상 서버에 연결 합니다.
+1. `<fog-name>.secondary.database.windows.net`보조 엔드포인트을 사용 하 여 대상 서버에 연결 합니다.
 1. [AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/switch-azsqldatabasefailovergroup?view=azps-2.3.2) 를 사용 하 여 보조 관리 되는 인스턴스를 전체 동기화를 사용 하는 기본으로 전환 합니다. 이 작업은 성공 하거나 롤백될 예정입니다. 
 1. `nslook up <fog-name>.secondary.database.windows.net` 사용 하 여 명령이 성공적으로 완료 되었는지 확인 하 고 DNS CNAME 항목이 대상 지역 IP 주소를 가리키는지 확인 합니다. 스위치 명령이 실패 하면 CNAME은 업데이트 되지 않습니다. 
 

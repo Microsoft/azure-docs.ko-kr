@@ -21,7 +21,7 @@ ms.locfileid: "72882632"
 
  저장소 계정에 대 한 스토리지 분석 로깅은 기본적으로 사용 하도록 설정 되어 있지 않습니다. 이 작업은 [Azure Portal](https://portal.azure.com/)에서 수행할 수 있습니다. 자세한 내용은 [Azure Portal에서 스토리지 계정 모니터링](/azure/storage/storage-monitor-storage-account)을 참조하세요. REST API 또는 클라이언트 라이브러리를 통해 프로그래밍 방식으로 스토리지 분석을 사용하도록 설정할 수도 있습니다. [Blob service](https://docs.microsoft.com/rest/api/storageservices/Blob-Service-REST-API)속성 가져오기, [큐 서비스 속성 가져오기](https://docs.microsoft.com/rest/api/storageservices/Get-Queue-Service-Properties)및 [테이블 서비스 속성 가져오기](https://docs.microsoft.com/rest/api/storageservices/Get-Table-Service-Properties) 작업을 사용 하 여 각 서비스에 대해 스토리지 분석를 사용 하도록 설정할 수 있습니다.
 
- 서비스 엔드포인트에 대한 요청이 있는 경우에만 로그 항목이 만들어집니다. 예를 들어 저장소 계정에 Blob 끝점의 활동이 있지만 테이블 또는 큐 끝점에는 없는 경우 Blob service 관련 된 로그만 생성 됩니다.
+ 서비스 엔드포인트에 대한 요청이 있는 경우에만 로그 항목이 만들어집니다. 예를 들어 저장소 계정에 Blob 엔드포인트의 활동이 있지만 테이블 또는 큐 엔드포인트에는 없는 경우 Blob service 관련 된 로그만 생성 됩니다.
 
 > [!NOTE]
 >  스토리지 분석 로깅은 현재 Blob, Queue 및 Table services에 대해서만 사용할 수 있습니다. 그러나 premium storage 계정은 지원 되지 않습니다.

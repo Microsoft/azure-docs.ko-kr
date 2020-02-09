@@ -1,5 +1,5 @@
 ---
-title: 사용자 지정 정책에 대 한 개발자 정보
+title: 사용자 지정 정책에 대한 개발자 정보
 titleSuffix: Azure AD B2C
 description: 사용자 지정 정책으로 Azure AD B2C를 구성 및 유지 관리하는 개발자를 위한 정보
 services: active-directory-b2c
@@ -18,9 +18,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/29/2020
 ms.locfileid: "76847343"
 ---
-# <a name="developer-notes-for-custom-policies-in-azure-active-directory-b2c"></a>Azure Active Directory B2C의 사용자 지정 정책에 대 한 개발자 정보
+# <a name="developer-notes-for-custom-policies-in-azure-active-directory-b2c"></a>Azure Active Directory B2C의 사용자 지정 정책에 대한 개발자 정보
 
-Azure Active Directory B2C의 사용자 지정 정책 구성이 이제 일반 공급 됩니다. 이 구성 방법은 복잡 한 id 솔루션을 구축 하는 고급 id 개발자를 대상으로 합니다. 사용자 지정 정책은 Azure AD B2C 테 넌 트에서 사용할 수 있는 Id 경험 프레임 워크의 강력한 기능을 만듭니다.
+Azure Active Directory B2C의 사용자 지정 정책 구성이 이제 일반 공급 됩니다. 이 구성 방법은 복잡 한 id 솔루션을 구축 하는 고급 id 개발자를 대상으로 합니다. 사용자 지정 정책은 Azure AD B2C 테넌트에서 사용할 수 있는 Id 경험 프레임 워크의 강력한 기능을 만듭니다.
 사용자 지정 정책을 사용 하는 고급 id 개발자는 연습을 완료 하 고 참조 문서를 읽는 데 약간의 시간을 투자할 계획입니다.
 
 현재 사용할 수 있는 대부분의 사용자 지정 정책 옵션은 일반적으로 사용할 수 있지만 소프트웨어 수명 주기의 다른 단계에 있는 기술 프로필 유형 및 콘텐츠 정의 Api와 같은 기본 기능이 있습니다. 더 많은 정보를 제공 합니다. 아래 표에서는 가용성 수준을 보다 세분화 된 수준으로 지정 합니다.
@@ -36,7 +36,7 @@ Azure Active Directory B2C의 사용자 지정 정책 구성이 이제 일반 �
 
 ## <a name="responsibilities-of-custom-policy-feature-set-developers"></a>사용자 지정 정책 기능 집합 개발자의 책임
 
-수동 정책 구성은 Azure AD B2C의 기본 플랫폼에 대해 낮은 수준의 액세스 권한을 부여 하 고 고유한 신뢰 프레임 워크를 만듭니다. 사용자 지정 id 공급자의 가능한 여러 순열, 트러스트 관계, 외부 서비스와의 통합 및 단계별 워크플로를 사용 하려면 설계 및 구성에 대 한 체계적인 접근 방식이 필요 합니다.
+수동 정책 구성은 Azure AD B2C의 기본 플랫폼에 대해 낮은 수준의 액세스 권한을 부여 하 고 고유한 신뢰 프레임 워크를 만듭니다. 사용자 지정 id 공급자의 가능한 여러 순열, 트러스트 관계, 외부 서비스와의 통합 및 단계별 워크플로를 사용 하려면 설계 및 구성에 대한 체계적인 접근 방식이 필요 합니다.
 
 사용자 지정 정책 기능 집합을 사용 하는 개발자는 다음 지침을 따라야 합니다.
 
@@ -45,15 +45,15 @@ Azure Active Directory B2C의 사용자 지정 정책 구성이 이제 일반 �
 - 체계적인 시나리오 테스트를 수행합니다.
 - 최소 1개의 개발/테스트 환경과 1개의 프로덕션 환경을 구축하여 소프트웨어 개발 및 스테이징 모범 사례를 준수합니다.
 - 사용자와 통합된 ID 공급자 및 서비스에 대한 새로운 개발 정보를 바로 입수합니다. 예를 들어 기밀 변경 내용과 예정되었거나 갑작스럽게 진행되는 서비스 변경 내용을 추적합니다.
-- 활성 모니터링을 설정하고 프로덕션 환경의 응답성을 모니터링합니다. Application Insights와 통합 하는 방법에 대 한 자세한 내용은 [Azure Active Directory B2C: 로그 수집](analytics-with-application-insights.md)을 참조 하세요.
+- 활성 모니터링을 설정하고 프로덕션 환경의 응답성을 모니터링합니다. Application Insights와 통합 하는 방법에 대한 자세한 내용은 [Azure Active Directory B2C: 로그 수집](analytics-with-application-insights.md)을 참조 하세요.
 - Azure 구독에서 연락처 전자 메일 주소를 최신 상태로 유지하고 Microsoft 라이브 사이트 팀 전자 메일에 즉시 응답합니다.
 - Microsoft 라이브 사이트 팀에서 권고할 때 시기 적절하게 조치를 취합니다.
 
-## <a name="terms-for-features-in-public-preview"></a>공개 미리 보기의 기능에 대 한 용어
+## <a name="terms-for-features-in-public-preview"></a>공개 미리 보기의 기능에 대한 용어
 
 - 평가 목적 으로만 공개 미리 보기 기능을 사용 하는 것이 좋습니다.
 - Sla (서비스 수준 계약)는 공개 미리 보기 기능에 적용 되지 않습니다.
-- 공개 미리 보기 기능에 대 한 지원 요청은 일반 지원 채널을 통해 정리할 수 있습니다.
+- 공개 미리 보기 기능에 대한 지원 요청은 일반 지원 채널을 통해 정리할 수 있습니다.
 
 ## <a name="features-by-stage-and-known-issues"></a>단계 및 알려진 문제별 기능
 

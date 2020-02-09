@@ -38,7 +38,7 @@ Azure AD 프로 비전 서비스는 원본 시스템 및 대상 시스템에 대
 - 커넥터 데이터 저장소에 있는 **사용자** 및 **그룹** 의 수입니다. 프로 비전 범위에 개체가 추가 될 때마다 수가 늘어납니다. 사용자가 일시 삭제 되었거나 하드 삭제 된 경우에는 커넥터 데이터 저장소에서 개체가 제거 되지 않으므로 개수가 중단 되지 않습니다. 이 수는 CD를 [다시 설정한](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta&tabs=http) 후 첫 번째 동기화에 recaculated 됩니다. 
 - 개별 사용자에 대 한 [프로 비전 상태](#use-provisioning-logs-to-check-a-users-provisioning-status) 를 포함 하 여 사용자 프로 비전 서비스에서 실행 하는 모든 작업에 대 한 자세한 내용은 Azure AD 프로 비전 로그를 여는 **감사 로그 보기** 링크를 참조 하세요.
 
-프로 비전 주기가 완료 된 후 **날짜 통계** 섹션에는 마지막 주기의 완료 날짜 및 기간과 함께 날짜에 프로 비전 된 사용자 및 그룹의 누적 수가 표시 됩니다. **활동 ID** 는 가장 최근의 프로 비전 주기를 고유 하 게 식별 합니다. **작업 ID** 는 프로 비전 작업의 고유 식별자 이며, 테 넌 트의 앱에만 적용 됩니다.
+프로 비전 주기가 완료 된 후 **날짜 통계** 섹션에는 마지막 주기의 완료 날짜 및 기간과 함께 날짜에 프로 비전 된 사용자 및 그룹의 누적 수가 표시 됩니다. **활동 ID** 는 가장 최근의 프로 비전 주기를 고유 하 게 식별 합니다. **작업 ID** 는 프로 비전 작업의 고유 식별자 이며, 테넌트의 앱에만 적용 됩니다.
 
 프로 비전 진행률은 Azure Portal의 **Azure Active Directory &gt; Enterprise Apps &gt; \[프로 비전 탭\] 응용 프로그램 이름 &gt; 프로 비전** 탭에서 볼 수 있습니다.
 
@@ -102,7 +102,7 @@ Azure Portal에서 프로 비전 로그를 읽는 방법에 대 한 자세한 �
 
 - 할당된 그룹 수 및 크기. 할당된 그룹 동기화가 사용자 동기화보다 시간이 오래 걸립니다. 할당된 그룹 수와 크기는 둘 다 성능에 영향을 줍니다. 애플리케이션에 [그룹 개체 동기화가 사용되는 매핑](customize-application-attributes.md#editing-group-attribute-mappings)이 있는 경우 그룹 이름 및 멤버 자격과 같은 그룹 속성이 사용자와 함께 동기화됩니다. 이러한 추가 동기화 때문에 사용자 객체만 동기화하는 것보다 시간이 오래 걸립니다.
 
-- 성능이 문제가 되 고 테 넌 트에서 대부분의 사용자 및 그룹을 프로 비전 하려는 경우 범위 지정 필터를 사용 합니다. 범위 지정 필터를 사용하면 특정 특성 값에 따라 사용자를 필터링하여 프로비저닝 서비스가 Azure AD에서 추출하는 데이터를 미세 조정할 수 있습니다. 범위 지정 필터에 대한 자세한 내용은 [범위 지정 필터를 사용한 특성 기반 애플리케이션 프로비전](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)을 참조하세요.
+- 성능이 문제가 되 고 테넌트에서 대부분의 사용자 및 그룹을 프로 비전 하려는 경우 범위 지정 필터를 사용 합니다. 범위 지정 필터를 사용하면 특정 특성 값에 따라 사용자를 필터링하여 프로비저닝 서비스가 Azure AD에서 추출하는 데이터를 미세 조정할 수 있습니다. 범위 지정 필터에 대한 자세한 내용은 [범위 지정 필터를 사용한 특성 기반 애플리케이션 프로비전](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)을 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계
 [Azure Active Directory를 사용하여 SaaS 애플리케이션의 사용자를 자동으로 프로비전 및 프로비전 해제](user-provisioning.md)

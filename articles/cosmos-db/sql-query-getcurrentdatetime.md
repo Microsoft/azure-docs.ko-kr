@@ -32,14 +32,14 @@ GetCurrentDateTime ()
   |YYYY|네 자리 연도|
   |MM|두 자리 월 (01 = 1 월 등)|
   |DD|월 (01-31)의 2 자리 숫자 일|
-  |T|시간 요소 시작에 대 한 signifier|
+  |T|시간 요소 시작에 대한 signifier|
   |hh|2 자리 시간 (00-23)|
   |MM|2 자리 분 (00-59)|
   |ss|두 자리 초 (00-59)|
   |. sss|초의 소수 부분 3 자리|
   |Z|UTC (협정 세계시) 지정자||
   
-  ISO 8601 형식에 대 한 자세한 내용은 [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) 를 참조 하세요.
+  ISO 8601 형식에 대한 자세한 내용은 [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) 를 참조 하세요.
 
 ## <a name="remarks"></a>설명
 

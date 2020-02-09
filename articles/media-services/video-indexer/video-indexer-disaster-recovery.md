@@ -40,7 +40,7 @@ BCDR를 구현 하려면 중복성을 처리 하기 위해 두 개의 Video Inde
 > [!TIP]
 > [서비스 알림에 대 한 활동 로그 경고 만들기에](../../service-health/alerts-activity-log-service-notifications.md)따라 서비스 상태 알림에 대 한 활동 로그 경고를 설정 하 여 BCDR를 자동화할 수 있습니다.
 
-다중 테 넌 트 사용에 대 한 자세한 내용은 [다중 테 넌 트 관리](manage-multiple-tenants.md)를 참조 하세요. BCDR를 구현 하려면 [테 넌 트 당 계정](manage-multiple-tenants.md#video-indexer-account-per-tenant) 또는 [테 넌 트 당 Azure 구독](manage-multiple-tenants.md#azure-subscription-per-tenant)의 두 Video Indexer 옵션 중 하나를 선택 합니다.
+다중 테넌트 사용에 대 한 자세한 내용은 [다중 테넌트 관리](manage-multiple-tenants.md)를 참조 하세요. BCDR를 구현 하려면 [테넌트 당 계정](manage-multiple-tenants.md#video-indexer-account-per-tenant) 또는 [테넌트 당 Azure 구독](manage-multiple-tenants.md#azure-subscription-per-tenant)의 두 Video Indexer 옵션 중 하나를 선택 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

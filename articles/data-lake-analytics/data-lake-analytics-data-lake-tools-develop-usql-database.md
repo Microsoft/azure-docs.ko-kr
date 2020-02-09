@@ -100,7 +100,7 @@ Visual Studio에서 U-SQL 데이터베이스 프로젝트 또는 .usqldbpack 패
 U-SQL 프로젝트는 U-SQL 데이터베이스 프로젝트를 참조할 수 있습니다. 이러한 참조는 다음 두 워크로드를 영향을 줍니다.
 
 - *프로젝트 빌드*: U-SQL 스크립트를 빌드하기 전에 참조 된 데이터베이스 환경을 설정 합니다. 
-- 로컬 *프로젝트에 대 한 로컬 실행 계정*: 참조 된 데이터베이스 환경은 U-SQL 스크립트 실행 전에 (로컬 프로젝트) 계정에 배포 됩니다. [여기에서 로컬 실행과 (local-machine) 및 (local-project) 계정 간 차이점에 대해 자세히 알아봅니다](data-lake-analytics-data-lake-tools-local-run.md).
+- 로컬 *프로젝트에 대한 로컬 실행 계정*: 참조 된 데이터베이스 환경은 U-SQL 스크립트 실행 전에 (로컬 프로젝트) 계정에 배포 됩니다. [여기에서 로컬 실행과 (local-machine) 및 (local-project) 계정 간 차이점에 대해 자세히 알아봅니다](data-lake-analytics-data-lake-tools-local-run.md).
 
 ### <a name="how-to-add-a-u-sql-database-reference"></a>U-SQL 데이터베이스 참조를 추가하는 방법
 

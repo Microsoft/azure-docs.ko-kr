@@ -36,7 +36,7 @@ ms.locfileid: "77063359"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [Proxyclick 테 넌 트](https://www.proxyclick.com/pricing)
+* [Proxyclick 테넌트](https://www.proxyclick.com/pricing)
 * Proxyclick 사용자 계정이 관리자 권한으로 클릭 합니다.
 
 ## <a name="add-proxyclick-from-the-gallery"></a>갤러리에서 Proxyclick 추가
@@ -100,7 +100,7 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. Proxyclick 계정의 **테 넌 트 URL** 및 **암호 토큰** 을 검색 하려면 6 단계에 설명 된 대로 연습을 수행 합니다.
+5. Proxyclick 계정의 **테넌트 URL** 및 **암호 토큰** 을 검색 하려면 6 단계에 설명 된 대로 연습을 수행 합니다.
 
 6. [Proxyclick Admin Console](https://app.proxyclick.com/login//?destination=%2Fdefault)에 로그인 합니다. **설정** > **통합** > **Marketplace**로 이동 합니다.
 
@@ -124,7 +124,7 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
     ![Proxyclick 만들기](media/proxyclick-provisioning-tutorial/proxyclick06.png)
 
-    여기에서 **테 넌 트 URL** 및 **암호 토큰** 을 찾을 수 있습니다.
+    여기에서 **테넌트 URL** 및 **암호 토큰** 을 찾을 수 있습니다.
 
     ![Proxyclick 토큰 만들기](media/proxyclick-provisioning-tutorial/proxyclick07.png)
 

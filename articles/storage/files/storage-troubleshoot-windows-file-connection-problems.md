@@ -296,11 +296,11 @@ EFS(파일 시스템 암호화)를 사용하는 경우 이 문제가 발생할 �
  
 예를 들어 0x100000으로 설정하고 성능이 향상되는지 확인할 수 있습니다.
 
-## <a name="error-aaddstenantnotfound-in-enabling-azure-active-directory-domain-service-aad-ds-authentication-for-azure-files-unable-to-locate-active-tenants-with-tenant-id-aad-tenant-id"></a>오류 Aaddsten\notnon Azure Files "에 대해 AAD DS (Azure Active Directory 도메인 서비스) 인증을 사용 하도록 설정 했습니다." 테 넌 트 Id를 사용 하 여 활성 테 넌 트 Id를 찾을 수 없습니다. "
+## <a name="error-aaddstenantnotfound-in-enabling-azure-active-directory-domain-service-aad-ds-authentication-for-azure-files-unable-to-locate-active-tenants-with-tenant-id-aad-tenant-id"></a>오류 Aaddsten\notnon Azure Files "에 대해 AAD DS (Azure Active Directory 도메인 서비스) 인증을 사용 하도록 설정 했습니다." 테넌트 Id를 사용 하 여 활성 테넌트 Id를 찾을 수 없습니다. "
 
 ### <a name="cause"></a>원인
 
-오류 AadDsTenantNotFound는 aad ds (aad [도메인 서비스](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) )가 연결 된 구독의 aad 테 넌 트에서 만들어지지 않는 저장소 계정에서 [AZURE FILES에 대해 aad Ds (Azure Active Directory 도메인 서비스) 인증을 사용 하도록 설정](https://docs.microsoft.com/azure/storage/files/storage-files-active-directory-enable) 하려고 할 때 발생 합니다.  
+오류 AadDsTenantNotFound는 aad ds (aad [도메인 서비스](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) )가 연결 된 구독의 aad 테넌트에서 만들어지지 않는 저장소 계정에서 [AZURE FILES에 대해 aad Ds (Azure Active Directory 도메인 서비스) 인증을 사용 하도록 설정](https://docs.microsoft.com/azure/storage/files/storage-files-active-directory-enable) 하려고 할 때 발생 합니다.  
 
 ### <a name="solution"></a>솔루션
 

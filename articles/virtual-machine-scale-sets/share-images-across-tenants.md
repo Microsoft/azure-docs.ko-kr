@@ -1,6 +1,6 @@
 ---
-title: Azure에서 테 넌 트 간에 갤러리 이미지 공유
-description: 공유 이미지 갤러리를 사용 하 여 Azure 테 넌 트 간에 VM 이미지를 공유 하는 방법을 알아봅니다.
+title: Azure에서 테넌트 간에 갤러리 이미지 공유
+description: 공유 이미지 갤러리를 사용 하 여 Azure 테넌트 간에 VM 이미지를 공유 하는 방법을 알아봅니다.
 author: cynthn
 ms.service: virtual-machine-scale-sets
 ms.workload: infrastructure-services
@@ -15,14 +15,14 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/19/2020
 ms.locfileid: "76276332"
 ---
-# <a name="share-gallery-vm-images-across-azure-tenants"></a>Azure 테 넌 트 간에 갤러리 VM 이미지 공유
+# <a name="share-gallery-vm-images-across-azure-tenants"></a>Azure 테넌트 간에 갤러리 VM 이미지 공유
 
 [!INCLUDE [virtual-machines-share-images-across-tenants](../../includes/virtual-machines-share-images-across-tenants.md)]
 
 
 ## <a name="create-a-scale-set-using-azure-cli"></a>Azure CLI를 사용 하 여 크기 집합 만들기
 
-AppID, 앱 키 및 테 넌 트 1의 ID를 사용 하 여 테 넌 트 1에 대 한 서비스 주체를 로그인 합니다. 필요한 경우 `az account show --query "tenantId"`를 사용 하 여 테 넌 트 Id를 가져올 수 있습니다.
+AppID, 앱 키 및 테넌트 1의 ID를 사용 하 여 테넌트 1에 대 한 서비스 주체를 로그인 합니다. 필요한 경우 `az account show --query "tenantId"`를 사용 하 여 테넌트 Id를 가져올 수 있습니다.
 
 ```azurecli-interactive
 az account clear
@@ -30,7 +30,7 @@ az login --service-principal -u '<app ID>' -p '<Secret>' --tenant '<tenant 1 ID>
 az account get-access-token 
 ```
  
-AppID, 앱 키 및 테 넌 트 2의 ID를 사용 하 여 테 넌 트 2에 대 한 서비스 주체를 로그인 합니다.
+AppID, 앱 키 및 테넌트 2의 ID를 사용 하 여 테넌트 2에 대 한 서비스 주체를 로그인 합니다.
 
 ```azurecli-interactive
 az login --service-principal -u '<app ID>' -p '<Secret>' --tenant '<tenant 2 ID>'

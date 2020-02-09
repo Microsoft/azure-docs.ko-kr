@@ -1,6 +1,6 @@
 ---
 title: 파일 및 폴더 백업-일반적인 질문
-description: Azure Backup를 사용 하 여 파일과 폴더를 백업 하는 방법에 대 한 일반적인 질문을 해결 합니다.
+description: Azure Backup를 사용 하 여 파일과 폴더를 백업 하는 방법에 대한 일반적인 질문을 해결 합니다.
 ms.topic: conceptual
 ms.date: 07/29/2019
 ms.openlocfilehash: 45c01a08151060b60b0f3e3b27b2fcc16ec8e60b
@@ -10,9 +10,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/07/2020
 ms.locfileid: "75720364"
 ---
-# <a name="common-questions-about-backing-up-files-and-folders"></a>파일 및 폴더 백업에 대 한 일반적인 질문
+# <a name="common-questions-about-backing-up-files-and-folders"></a>파일 및 폴더 백업에 대한 일반적인 질문
 
-이 문서에서는 [Azure Backup](backup-overview.md) 서비스에서 MARS (Microsoft Azure Recovery Services) 에이전트로 파일 및 폴더를 백업 하는 일반적인 질문에 대 한 답변을 abound.
+이 문서에서는 [Azure Backup](backup-overview.md) 서비스에서 MARS (Microsoft Azure Recovery Services) 에이전트로 파일 및 폴더를 백업 하는 일반적인 질문에 대한 답변을 abound.
 
 ## <a name="configure-backups"></a>백업 구성
 
@@ -41,7 +41,7 @@ Windows Server 컴퓨터, System Center DPM 및 Microsoft Azure Backup 서버를
 
 ### <a name="can-i-use-the-mars-agent-to-back-up-files-and-folders-on-an-azure-vm"></a>MARS 에이전트를 사용 하 여 Azure VM에서 파일 및 폴더를 백업할 수 있나요?  
 
-예. Azure Backup은 Azure VM 에이전트에 대 한 VM 확장을 사용 하 여 Azure vm에 대 한 VM 수준 백업을 제공 합니다. VM의 게스트 Windows 운영 체제에서 파일과 폴더를 백업 하려는 경우 MARS 에이전트를 설치 하 여이 작업을 수행할 수 있습니다.
+예. Azure Backup은 Azure VM 에이전트에 대한 VM 확장을 사용 하 여 Azure vm에 대한 VM 수준 백업을 제공 합니다. VM의 게스트 Windows 운영 체제에서 파일과 폴더를 백업 하려는 경우 MARS 에이전트를 설치 하 여이 작업을 수행할 수 있습니다.
 
 ### <a name="can-i-use-the-mars-agent-to-back-up-files-and-folders-on-temporary-storage-for-the-azure-vm"></a>MARS 에이전트를 사용 하 여 Azure VM의 임시 저장소에 파일 및 폴더를 백업할 수 있나요?
 
@@ -56,7 +56,7 @@ Windows Server 컴퓨터, System Center DPM 및 Microsoft Azure Backup 서버를
 
 ### <a name="does-the-mars-agent-support-windows-server-2012-deduplication"></a>MARS 에이전트가 Windows Server 2012 중복 제거를 지원 하나요?
 
-예. MARS 에이전트는 백업 작업을 준비할 때 중복 제거 된 데이터를 일반 데이터로 변환 합니다. 그런 다음 백업에 대 한 데이터를 최적화 하 고 데이터를 암호화 한 다음 암호화 된 데이터를 자격 증명 모음에 보냅니다.
+예. MARS 에이전트는 백업 작업을 준비할 때 중복 제거 된 데이터를 일반 데이터로 변환 합니다. 그런 다음 백업에 대한 데이터를 최적화 하 고 데이터를 암호화 한 다음 암호화 된 데이터를 자격 증명 모음에 보냅니다.
 
 ## <a name="manage-backups"></a>백업 관리
 
@@ -130,7 +130,7 @@ MARS 에이전트는 NTFS를 사용 하며 파일 이름/경로에서 [지원 �
 
 ### <a name="where-should-the-cache-folder-be-located"></a>캐시 폴더를 어디에 배치 해야 하나요?
 
-캐시 폴더에 대 한 다음 위치는 권장 되지 않습니다.
+캐시 폴더에 대한 다음 위치는 권장 되지 않습니다.
 
 * 네트워크 공유/이동식 미디어: 캐시 폴더는 온라인 백업을 사용 하 여 백업 해야 하는 서버에 대해 로컬 이어야 합니다. 네트워크 위치 또는 이동식 미디어 (예: USB 드라이브)는 지원 되지 않습니다.
 * 오프 라인 볼륨: 캐시 폴더는 Azure Backup 에이전트를 사용 하는 예상 백업을 위해 온라인 상태 여야 합니다.
@@ -190,7 +190,7 @@ Azure Backup 에이전트에는 복원 중에 백업 된 데이터의 암호를 
 ### <a name="does-the-mars-agent-back-up-and-restore-acls-set-on-files-folders-and-volumes"></a>MARS 에이전트는 파일, 폴더 및 볼륨에 대해 설정 된 Acl을 백업 하 고 복원 합니까?
 
 * MARS 에이전트는 파일, 폴더 및 볼륨에 설정 된 Acl을 백업 합니다.
-* 볼륨 복원 복구 옵션의 경우 MARS 에이전트는 복구 중인 파일이 나 폴더에 대 한 ACL 사용 권한을 복원 하는 옵션을 제공 합니다.
+* 볼륨 복원 복구 옵션의 경우 MARS 에이전트는 복구 중인 파일이 나 폴더에 대한 ACL 사용 권한을 복원 하는 옵션을 제공 합니다.
 * 개별 파일 및 폴더 복구 옵션의 경우 MARS 에이전트는 ACL 사용 권한으로 복원 됩니다 (ACL 복원을 건너뛸 수 있는 옵션은 없음).
 
 ## <a name="next-steps"></a>다음 단계

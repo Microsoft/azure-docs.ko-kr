@@ -39,7 +39,7 @@ Batch에서 컴퓨팅 노드 풀을 만드는 경우 노드 크기와 운영 체
 
 ### <a name="virtual-machine-image-reference"></a>가상 머신 이미지 참조
 
-Batch 서비스는 [가상 머신 확장 집합](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md)을 사용하여 가상 머신 구성에서 컴퓨팅 노드를 제공합니다. [Azure Marketplace][vm_marketplace]에서 이미지를 지정 하거나 준비한 사용자 지정 이미지를 제공할 수 있습니다. 사용자 지정 이미지에 대 한 자세한 내용은 [공유 이미지 갤러리를 사용 하 여 풀 만들기](batch-sig-images.md)를 참조 하세요.
+Batch 서비스는 [가상 머신 확장 집합](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md)을 사용하여 가상 머신 구성에서 컴퓨팅 노드를 제공합니다. [Azure Marketplace][vm_marketplace]에서 이미지를 지정 하거나 준비한 사용자 지정 이미지를 제공할 수 있습니다. 사용자 지정 이미지에 대한 자세한 내용은 [공유 이미지 갤러리를 사용 하 여 풀 만들기](batch-sig-images.md)를 참조 하세요.
 
 가상 머신 이미지 참조를 구성할 때 가상 머신 이미지의 속성을 지정합니다. 가상 머신 이미지 참조를 만들 때 다음 속성이 필요합니다.
 
@@ -68,7 +68,7 @@ Batch 노드 에이전트는 풀의 각 노드에서 실행되고 노드와 Batc
 >
 
 ## <a name="create-a-linux-pool-batch-python"></a>Linux 풀 만들기: Batch Python
-다음 코드 조각은 [Python 용 Microsoft Azure Batch 클라이언트 라이브러리][py_batch_package] 를 사용 하 여 Ubuntu Server 계산 노드의 풀을 만드는 방법의 예를 보여 줍니다. Batch Python 모듈에 대 한 참조 설명서는 azure에서 [batch 패키지][py_batch_docs] 에서 찾을 수 있습니다.
+다음 코드 조각은 [Python 용 Microsoft Azure Batch 클라이언트 라이브러리][py_batch_package] 를 사용 하 여 Ubuntu Server 계산 노드의 풀을 만드는 방법의 예를 보여 줍니다. Batch Python 모듈에 대한 참조 설명서는 azure에서 [batch 패키지][py_batch_docs] 에서 찾을 수 있습니다.
 
 이 코드 조각은 명시적으로 [ImageReference][py_imagereference] 을 만들고 각 속성 (게시자, 제품, SKU, 버전)을 지정 합니다. 그러나 프로덕션 코드에서는 [list_node_agent_skus][py_list_skus] 메서드를 사용 하 여 런타임 시 사용 가능한 이미지 및 노드 에이전트 SKU 조합을 결정 하 고 선택 하는 것이 좋습니다.
 
@@ -326,7 +326,7 @@ Azure Batch는 Azure Cloud Services 및 Azure Virtual Machines 기술을 기반�
 
 ## <a name="next-steps"></a>다음 단계
 
-GitHub의 [azure batch 샘플][github_samples] 리포지토리에 있는 [Python 코드 샘플][github_samples_py] 에는 풀, 작업 및 태스크 작성과 같은 일반적인 배치 작업을 수행 하는 방법을 보여 주는 스크립트가 포함 되어 있습니다. Python 샘플과 함께 제공 되는 [추가][github_py_readme] 정보에는 필요한 패키지를 설치 하는 방법에 대 한 자세한 내용이 있습니다.
+GitHub의 [azure batch 샘플][github_samples] 리포지토리에 있는 [Python 코드 샘플][github_samples_py] 에는 풀, 작업 및 태스크 작성과 같은 일반적인 배치 작업을 수행 하는 방법을 보여 주는 스크립트가 포함 되어 있습니다. Python 샘플과 함께 제공 되는 [추가][github_py_readme] 정보에는 필요한 패키지를 설치 하는 방법에 대한 자세한 내용이 있습니다.
 
 [api_net]: https://msdn.microsoft.com/library/azure/mt348682.aspx
 [api_net_mgmt]: https://msdn.microsoft.com/library/azure/mt463120.aspx

@@ -33,7 +33,7 @@ ms.locfileid: "75496984"
 
     ![Windows Server 백업 예약](./media/backup-configure-vault/schedule-first-backup.png)
 
-2. **정책 항목 선택** 탭에서 **파일 및 폴더에 대 한 백업 일정 수정** 을 선택 하 고 **다음**을 클릭 합니다.
+2. **정책 항목 선택** 탭에서 **파일 및 폴더에 대한 백업 일정 수정** 을 선택 하 고 **다음**을 클릭 합니다.
 
     ![정책 항목 선택](./media/backup-azure-manage-mars/select-policy-items.png)
 
@@ -95,7 +95,7 @@ ms.locfileid: "75496984"
   - 보호를 다시 시작 하기로 결정 한 경우 *백업 일정 다시 사용* 옵션을 사용할 수 있습니다. 그 후에는 데이터가 새 보존 정책에 따라 보존 됩니다.
 - **보호를 중지 하 고 백업 데이터를 삭제**합니다.
   - 이 옵션은 미래의 모든 백업 작업에서 데이터를 보호 하 고 모든 복구 지점이 삭제 되지 않도록 합니다.
-  - *이 백업 항목에 대 한 데이터를 삭제 했습니다. 메시지가 포함 된 백업 데이터 삭제 경고 전자 메일을 받게 됩니다. 이 데이터는 14 일 동안 일시적으로 사용할 수 있으며, 그 이후에는 영구적으로 삭제* 되 고 권장 조치는 *14 일 이내에 백업 항목을 다시 보호 하 여 데이터를 복구 합니다.*
+  - *이 백업 항목에 대한 데이터를 삭제 했습니다. 메시지가 포함 된 백업 데이터 삭제 경고 전자 메일을 받게 됩니다. 이 데이터는 14 일 동안 일시적으로 사용할 수 있으며, 그 이후에는 영구적으로 삭제* 되 고 권장 조치는 *14 일 이내에 백업 항목을 다시 보호 하 여 데이터를 복구 합니다.*
   - 보호를 다시 시작 하려면 삭제 작업 으로부터 14 일 이내에 다시 보호 하십시오.
 
 ### <a name="stop-protection-and-retain-backup-data"></a>보호 중지 및 백업 데이터 보존
@@ -103,7 +103,7 @@ ms.locfileid: "75496984"
 1. MARS 관리 콘솔을 열고 **작업 창**으로 이동 하 여 **Backup 예약을 선택**합니다.
 
     ![예약 된 백업 수정 또는 중지](./media/backup-azure-manage-mars/mars-actions.png)
-1. **정책 항목 선택** 페이지에서 **파일 및 폴더에 대 한 백업 일정 수정** 을 선택 하 고 **다음**을 클릭 합니다.
+1. **정책 항목 선택** 페이지에서 **파일 및 폴더에 대한 백업 일정 수정** 을 선택 하 고 **다음**을 클릭 합니다.
 
     ![예약 된 백업 수정 또는 중지](./media/backup-azure-manage-mars/select-policy-item-retain-data.png)
 1. 예약 된 **백업 수정 또는 중지** 페이지에서 **이 백업 일정 사용 중지를 선택 하지만 일정이 다시 활성화 될 때까지 저장 된 백업 유지**를 선택 합니다. 그다음에 **다음**을 선택합니다.
@@ -162,7 +162,7 @@ ms.locfileid: "75496984"
 - **찾아보기** 를 클릭 하 여 새 암호를 저장 합니다.
 
     ![암호를 생성 합니다.](./media/backup-azure-manage-mars/passphrase.png)
-- **확인**을 클릭하여 변경 내용을 적용합니다.  Recovery Services 자격 증명 모음에 대 한 Azure Portal에서 [보안 기능](https://docs.microsoft.com/azure/backup/backup-azure-security-feature#enable-security-features) 을 사용 하는 경우 보안 PIN을 입력 하 라는 메시지가 표시 됩니다. PIN을 받으려면이 [문서](https://docs.microsoft.com/azure/backup/backup-azure-security-feature#authentication-to-perform-critical-operations)에 나열 된 단계를 따르세요.<br>
+- **확인**을 클릭하여 변경 내용을 적용합니다.  Recovery Services 자격 증명 모음에 대한 Azure Portal에서 [보안 기능](https://docs.microsoft.com/azure/backup/backup-azure-security-feature#enable-security-features) 을 사용 하는 경우 보안 PIN을 입력 하 라는 메시지가 표시 됩니다. PIN을 받으려면이 [문서](https://docs.microsoft.com/azure/backup/backup-azure-security-feature#authentication-to-perform-critical-operations)에 나열 된 단계를 따르세요.<br>
 - 포털에서 보안 PIN을 붙여넣은 다음 **확인** 을 클릭 하 여 변경 내용을 적용 합니다.<br>
 
     ![암호를 생성 합니다.](./media/backup-azure-manage-mars/passphrase2.png)
@@ -171,5 +171,5 @@ ms.locfileid: "75496984"
 
 ## <a name="next-steps"></a>다음 단계
 
-- 지원 되는 시나리오 및 제한 사항에 대 한 자세한 내용은 [MARS 에이전트에 대 한 지원 매트릭스](https://docs.microsoft.com/azure/backup/backup-support-matrix-mars-agent)를 참조 하세요.
+- 지원 되는 시나리오 및 제한 사항에 대한 자세한 내용은 [MARS 에이전트에 대한 지원 매트릭스](https://docs.microsoft.com/azure/backup/backup-support-matrix-mars-agent)를 참조 하세요.
 - [주문형 백업 정책 보존 동작](backup-configure-vault.md#on-demand-backup-policy-retention-behavior)에 대해 자세히 알아보세요.

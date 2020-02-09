@@ -52,7 +52,7 @@ Azure Media Services DRM 보호를 사용 하 여 오프 라인 다운로드/재
 
 프로그레시브 다운로드를 위해 PlayReady로 보호 된 MP4를 호스트 하는 두 가지 옵션이 있습니다.
 
-* 이 MP4을 동일한 컨테이너/미디어 서비스 자산에 배치 하 고 점진적 다운로드를 위해 Azure Media Services 스트리밍 끝점을 활용할 수 있습니다.
+* 이 MP4을 동일한 컨테이너/미디어 서비스 자산에 배치 하 고 점진적 다운로드를 위해 Azure Media Services 스트리밍 엔드포인트을 활용할 수 있습니다.
 * Azure Media Services을 무시 하 고 Azure Storage에서 직접 점진적 다운로드를 위해 SAS 로케이터를 사용할 수 있습니다.
  
 다음 두 가지 유형의 PlayReady 라이선스 배달을 사용할 수 있습니다.

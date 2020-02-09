@@ -337,7 +337,7 @@ Web API에서 _컨트롤러_는 HTTP 요청을 처리하는 개체입니다. 컨
 
 ## <a name="step-7-upload-the-policy-to-your-tenant"></a>7단계: 테넌트에 정책 업로드
 
-1. [Azure Portal](https://portal.azure.com)포털 도구 모음에서 **디렉터리 + 구독** 아이콘을 선택 하 고 Azure AD B2C 테 넌 트가 포함 된 디렉터리를 선택 합니다.
+1. [Azure Portal](https://portal.azure.com)포털 도구 모음에서 **디렉터리 + 구독** 아이콘을 선택 하 고 Azure AD B2C 테넌트가 포함 된 디렉터리를 선택 합니다.
 
 1. Azure Portal에서 **Azure AD B2C**를 검색 하 고 선택 합니다.
 
@@ -406,4 +406,4 @@ Web API에서 _컨트롤러_는 HTTP 요청을 처리하는 개체입니다. 컨
 * [기본 인증(사용자 이름 및 암호)을 사용하여 RESTful API 보호](secure-rest-api-dotnet-basic-auth.md)
 * [클라이언트 인증서를 사용하여 RESTful API 보호](secure-rest-api-dotnet-certificate-auth.md)
 
-RESTful 기술 프로필에서 사용할 수 있는 모든 요소에 대 한 자세한 내용은 [참조: RESTful 기술 프로필](restful-technical-profile.md)을 참조 하세요.
+RESTful 기술 프로필에서 사용할 수 있는 모든 요소에 대한 자세한 내용은 [참조: RESTful 기술 프로필](restful-technical-profile.md)을 참조 하세요.

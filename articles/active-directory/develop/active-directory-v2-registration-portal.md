@@ -27,7 +27,7 @@ ms.locfileid: "76698444"
 
 ## <a name="my-applications-or-converged-applications"></a>내 애플리케이션 또는 수렴된 애플리케이션
 
-이 목록에는 v2.0 (Microsoft identity platform) 끝점과 함께 사용 하도록 등록 된 모든 응용 프로그램이 포함 되어 있습니다. 이러한 애플리케이션은 Azure Active Directory에서 개인 Microsoft 계정 및 회사/학교 계정 모두를 사용하는 사용자를 로그인할 수 있습니다. Id 플랫폼 끝점에 대 한 자세한 내용은 v2.0 [개요](active-directory-appmodel-v2-overview.md)를 참조 하세요. 이러한 애플리케이션을 사용하여 Microsoft 계정 인증 엔드포인트인 `https://login.live.com`과 통합할 수도 있습니다.
+이 목록에는 v2.0 (Microsoft identity platform) 엔드포인트과 함께 사용 하도록 등록 된 모든 응용 프로그램이 포함 되어 있습니다. 이러한 애플리케이션은 Azure Active Directory에서 개인 Microsoft 계정 및 회사/학교 계정 모두를 사용하는 사용자를 로그인할 수 있습니다. Id 플랫폼 엔드포인트에 대 한 자세한 내용은 v2.0 [개요](active-directory-appmodel-v2-overview.md)를 참조 하세요. 이러한 애플리케이션을 사용하여 Microsoft 계정 인증 엔드포인트인 `https://login.live.com`과 통합할 수도 있습니다.
 
 ## <a name="azure-ad-only-applications"></a>Azure AD 전용 애플리케이션
 
@@ -52,8 +52,8 @@ ms.locfileid: "76698444"
 
 ## <a name="live-sdk-support"></a>Live SDK 지원
 
-"Live SDK 지원"을 사용하도록 설정하면 만든 애플리케이션 암호 모두가 Azure AD 및 Microsoft 계정 데이터 저장소 모두에 프로비전됩니다. 이렇게 하면 애플리케이션을 Microsoft 계정 서비스(login.live.com)와 직접 통합할 수 있습니다. V2.0 끝점을 사용 하는 대신 Microsoft 계정을 사용 하 여 앱을 직접 빌드하려면 Live SDK 지원이 사용 하도록 설정 되어 있는지 확인 해야 합니다.
+"Live SDK 지원"을 사용하도록 설정하면 만든 애플리케이션 암호 모두가 Azure AD 및 Microsoft 계정 데이터 저장소 모두에 프로비전됩니다. 이렇게 하면 애플리케이션을 Microsoft 계정 서비스(login.live.com)와 직접 통합할 수 있습니다. V2.0 엔드포인트을 사용 하는 대신 Microsoft 계정을 사용 하 여 앱을 직접 빌드하려면 Live SDK 지원이 사용 하도록 설정 되어 있는지 확인 해야 합니다.
 
 Live SDK 지원을 사용하지 않도록 설정하면 애플리케이션 비밀만 Azure AD 데이터 저장소에 기록됩니다. Azure AD 데이터 저장소는 FISMA 규정 준수 등의 특정 표준을 충족하는 엔터프라이즈급 규정을 포함합니다. Live SDK 지원을 사용하도록 설정하면 애플리케이션이 이러한 일부 표준을 준수하지 못할 수 있습니다.
 
-V2.0 끝점을 사용 하려는 경우에만 라이브 SDK 지원을 안전 하 게 비활성화할 수 있습니다.
+V2.0 엔드포인트을 사용 하려는 경우에만 라이브 SDK 지원을 안전 하 게 비활성화할 수 있습니다.

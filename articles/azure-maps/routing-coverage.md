@@ -1,6 +1,6 @@
 ---
 title: 라우팅 적용 범위 | Microsoft Azure 맵
-description: 이 문서에서는 Microsoft Azure Maps에 대 한 라우팅 범위를 사용 하는 지역에 대해 알아봅니다.
+description: 이 문서에서는 Microsoft Azure Maps에 대한 라우팅 범위를 사용 하는 지역에 대해 알아봅니다.
 author: jingjing-z
 ms.author: jinzh
 ms.date: 04/04/2019
@@ -17,7 +17,7 @@ ms.locfileid: "76988943"
 ---
 # <a name="azure-maps-routing-coverage"></a>Azure Maps 라우팅 적용 범위
 
-이 문서에서는 Azure Maps 라우팅에 대한 적용 범위 정보를 제공합니다. 검색 쿼리를 수행할 때 Azure Maps 위치 A에서 위치 B로의 최적의 경로를 반환 합니다. 정확한 이동 시간, 여행 정보 라이브 업데이트 및 경로 지침이 제공 됩니다. 또한 현재 트래픽, 차량 유형 및 방지할 조건 등의 추가 검색 매개 변수를 추가할 수 있습니다. 경로 최적화는 지역에 따라 다릅니다. 이는 Azure Maps 다양 한 영역에 대 한 다양 한 수준의 정보 및 정확도가 있기 때문입니다. 다음 표에서는 지역 및 해당 지역에 대해 요청할 수 있는 정보의 종류를 나열 합니다.
+이 문서에서는 Azure Maps 라우팅에 대한 적용 범위 정보를 제공합니다. 검색 쿼리를 수행할 때 Azure Maps 위치 A에서 위치 B로의 최적의 경로를 반환 합니다. 정확한 이동 시간, 여행 정보 라이브 업데이트 및 경로 지침이 제공 됩니다. 또한 현재 트래픽, 차량 유형 및 방지할 조건 등의 추가 검색 매개 변수를 추가할 수 있습니다. 경로 최적화는 지역에 따라 다릅니다. 이는 Azure Maps 다양 한 영역에 대한 다양 한 수준의 정보 및 정확도가 있기 때문입니다. 다음 표에서는 지역 및 해당 지역에 대해 요청할 수 있는 정보의 종류를 나열 합니다.
  
 [**지오코딩**](geocoding-coverage.md)에 대한 검사를 확인해 보세요.       
 [**트래픽**](traffic-coverage.md)에 대한 검사를 확인해 보세요.  
@@ -246,4 +246,4 @@ ms.locfileid: "76988943"
 
 ## <a name="next-steps"></a>다음 단계
 
-Azure Maps 라우팅에 대 한 자세한 내용은 [라우팅](https://docs.microsoft.com/rest/api/maps/route) 참조 페이지를 참조 하세요.
+Azure Maps 라우팅에 대한 자세한 내용은 [라우팅](https://docs.microsoft.com/rest/api/maps/route) 참조 페이지를 참조 하세요.

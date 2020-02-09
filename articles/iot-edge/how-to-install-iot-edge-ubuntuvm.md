@@ -102,4 +102,4 @@ IoT Edge 런타임에 제대로 설치 하는 데 문제가 있는 경우 [문�
 
 기존 설치를 최신 버전의 IoT Edge로 업데이트하려면 [IoT Edge 보안 디먼 및 런타임 업데이트](how-to-update-iot-edge.md)를 참조하세요.
 
-SSH 또는 다른 인바운드 연결을 통해 VM에 액세스 하는 포트를 열려면 [LINUX VM에 대 한 포트 및 끝점을 여](../virtual-machines/linux/nsg-quickstart.md) 는 방법에 대 한 Azure 가상 머신 설명서를 참조 하세요.
+SSH 또는 다른 인바운드 연결을 통해 VM에 액세스 하는 포트를 열려면 [LINUX VM에 대 한 포트 및 엔드포인트을 여](../virtual-machines/linux/nsg-quickstart.md) 는 방법에 대 한 Azure 가상 머신 설명서를 참조 하세요.

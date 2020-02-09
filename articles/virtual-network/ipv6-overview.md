@@ -1,7 +1,7 @@
 ---
 title: Azure Virtual Network에 대 한 IPv6 개요 (미리 보기)
 titlesuffix: Azure Virtual Network
-description: Azure 가상 네트워크의 IPv6 끝점 및 데이터 경로에 대 한 IPv6 설명입니다.
+description: Azure 가상 네트워크의 IPv6 엔드포인트 및 데이터 경로에 대 한 IPv6 설명입니다.
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -66,11 +66,11 @@ Azure VNet 용 IPv6에는 다음과 같은 기능이 포함 되어 있습니다.
 - [기존 ipv4 전용 배포에 Ipv6 추가](ipv6-add-to-existing-vnet-powershell.md)-이 기능을 사용 하면 배포를 다시 만들 필요 없이 기존 ipv4 전용 배포에 ipv6 연결을 쉽게 추가할 수 있습니다.  이 프로세스 중에 IPv4 네트워크 트래픽은 영향을 받지 않으므로 응용 프로그램 및 OS에 따라 라이브 서비스에도 IPv6을 추가할 수 있습니다.    
 - 인터넷 클라이언트가 IPv6 (AAAA) 레코드에 대 한 Azure DNS 지원으로 선택 된 프로토콜을 사용 하 여 이중 스택 응용 프로그램에 원활 하 게 액세스할 수 있도록 합니다. 
 - I p v 6를 사용 하 여 가상 머신 확장 집합으로 부하를 자동으로 확장 하는 이중 스택 응용 프로그램을 만듭니다.
-- [Virtual Network (VNET) 피어 링](virtual-network-peering-overview.md) -지역 및 전역 피어 링 둘 다-vnet 연결을 원활 연결할 수 있습니다. 피어 링 네트워크의 vm에 있는 IPv4 및 IPv6 끝점은 모두 서로 통신할 수 있습니다. 배포를 이중 스택으로 전환 하는 동안 IPv4 전용 Vnet를 사용 하 여 이중 스택을 피어 링 할 수도 있습니다. 
+- [Virtual Network (VNET) 피어 링](virtual-network-peering-overview.md) -지역 및 전역 피어 링 둘 다-vnet 연결을 원활 연결할 수 있습니다. 피어 링 네트워크의 vm에 있는 IPv4 및 IPv6 엔드포인트은 모두 서로 통신할 수 있습니다. 배포를 이중 스택으로 전환 하는 동안 IPv4 전용 Vnet를 사용 하 여 이중 스택을 피어 링 할 수도 있습니다. 
 - IPv6 문제 해결 및 진단은 패킷 캡처, NSG 흐름 로그, 연결 문제 해결 및 연결 모니터링과 같은 Network Watcher 기능 및 부하 분산 장치 메트릭/경고와 함께 사용할 수 있습니다.   
 
 ## <a name="scope"></a>범위
-Azure VNET 용 IPv6은 고객이 Azure에서 이중 스택 (IPv4 + IPv6) 응용 프로그램을 호스트할 수 있도록 하는 기본 기능 집합입니다.  시간이 지남에 따라 더 많은 Azure 네트워킹 기능에 IPv6 지원을 추가 하 고 궁극적으로 Azure PaaS 서비스의 이중 스택 버전을 제공 하려고 하지만 모든 Azure PaaS 서비스는 이중 스택 Virtual Machines의 IPv4 끝점을 통해 액세스할 수 있습니다.   
+Azure VNET 용 IPv6은 고객이 Azure에서 이중 스택 (IPv4 + IPv6) 응용 프로그램을 호스트할 수 있도록 하는 기본 기능 집합입니다.  시간이 지남에 따라 더 많은 Azure 네트워킹 기능에 IPv6 지원을 추가 하 고 궁극적으로 Azure PaaS 서비스의 이중 스택 버전을 제공 하려고 하지만 모든 Azure PaaS 서비스는 이중 스택 Virtual Machines의 IPv4 엔드포인트을 통해 액세스할 수 있습니다.   
 
 ## <a name="limitations"></a>제한 사항
 현재 Azure virtual network 릴리스에 대 한 IPv6에는 다음과 같은 제한 사항이 있습니다.

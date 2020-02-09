@@ -1,7 +1,7 @@
 ---
 title: 웹 서비스 엔드포인트 만들기
 titleSuffix: ML Studio (classic) - Azure
-description: Azure Machine Learning Studio (클래식)에서 웹 서비스 끝점을 만듭니다. 웹 서비스의 각 엔드포인트는 독립적으로 처리, 제한 및 관리됩니다.
+description: Azure Machine Learning Studio (클래식)에서 웹 서비스 엔드포인트을 만듭니다. 웹 서비스의 각 엔드포인트는 독립적으로 처리, 제한 및 관리됩니다.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
@@ -17,7 +17,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75454752"
 ---
-# <a name="create-endpoints-for-deployed-azure-machine-learning-studio-classic-web-services"></a>배포 된 Azure Machine Learning Studio (클래식) 웹 서비스에 대 한 끝점 만들기
+# <a name="create-endpoints-for-deployed-azure-machine-learning-studio-classic-web-services"></a>배포 된 Azure Machine Learning Studio (클래식) 웹 서비스에 대 한 엔드포인트 만들기
 
 > [!NOTE]
 > 이 항목에서는 **클래식** Machine Learning 웹 서비스에 적용되는 기술을 설명합니다.
@@ -41,7 +41,7 @@ Azure Machine Learning 웹 서비스 포털을 사용하여 웹 서비스에 엔
 
 기본적으로 게시된 각각의 웹 서비스는 20개의 동시 요청을 지원하고 최대 200개의 동시 요청을 지원할 수 있도록 구성됩니다. Azure Machine Learning Studio (클래식)은 웹 서비스에 대 한 최상의 성능을 제공 하기 위해 설정을 자동으로 최적화 하 고 포털 값은 무시 됩니다.
 
-최대 동시 호출 값인 200에서 지원하는 것보다 많은 부하를 사용하여 API를 호출하려는 경우 동일한 웹 서비스에서 여러 엔드포인트를 만들어야 합니다. 그런 다음 모든 끝점에 부하를 무작위로 분산해야 합니다.
+최대 동시 호출 값인 200에서 지원하는 것보다 많은 부하를 사용하여 API를 호출하려는 경우 동일한 웹 서비스에서 여러 엔드포인트를 만들어야 합니다. 그런 다음 모든 엔드포인트에 부하를 무작위로 분산해야 합니다.
 
 웹 서비스의 크기를 조정하는 것은 일반적인 작업입니다. 크기를 조정하는 몇 가지 이유는 200개 이상의 동시 요청을 지원하거나, 여러 엔드포인트를 통해 가용성을 높이거나, 웹 서비스에 대한 별도의 엔드포인트를 제공하기 위해서 입니다. [Azure Machine Learning 웹 서비스](https://services.azureml.net/) 포털을 통해 동일한 웹 서비스에 대한 추가 엔드포인트를 추가하여 규모를 증가시킬 수 있습니다.
 

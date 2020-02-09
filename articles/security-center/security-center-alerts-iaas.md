@@ -28,7 +28,7 @@ ms.locfileid: "75754315"
 
 Azure Security Center는 Azure 서비스와 통합 되어 Windows 기반 컴퓨터를 모니터링 하 고 보호 합니다. Security Center은 이러한 모든 서비스의 경고 및 수정 제안을 사용 하기 쉬운 형식으로 제공 합니다.
 
-* **Microsoft defender atp** <a name="windows-atp"></a> -Security Center microsoft defender atp (Advanced Threat protection)와 통합 하 여 클라우드 워크 로드 보호 플랫폼을 확장 합니다. 이는 포괄적인 끝점 검색 및 응답 (EDR) 기능을 제공 합니다.
+* **Microsoft defender atp** <a name="windows-atp"></a> -Security Center microsoft defender atp (Advanced Threat protection)와 통합 하 여 클라우드 워크 로드 보호 플랫폼을 확장 합니다. 이는 포괄적인 엔드포인트 검색 및 응답 (EDR) 기능을 제공 합니다.
 
     > [!NOTE]
     > Microsoft Defender ATP 센서는 Security Center를 사용 하는 Windows server에서 자동으로 사용 하도록 설정 됩니다.
@@ -43,7 +43,7 @@ Azure Security Center는 Azure 서비스와 통합 되어 Windows 기반 컴퓨�
 
     크래시 덤프 분석 경고에 대 한 자세한 내용은 [경고의 참조 테이블](alerts-reference.md#alerts-windows)을 참조 하세요.
 
-* **Fileless 공격 감지** <a name="windows-fileless"></a> -끝점을 대상으로 하는 Fileless 공격이 일반적입니다. 검색을 방지 하기 위해 fileless 공격은 악성 페이로드를 메모리에 삽입 합니다. 공격자 페이로드는 손상 된 프로세스의 메모리 내에 유지 되며 다양 한 악의적인 작업을 수행 합니다.
+* **Fileless 공격 감지** <a name="windows-fileless"></a> -엔드포인트을 대상으로 하는 Fileless 공격이 일반적입니다. 검색을 방지 하기 위해 fileless 공격은 악성 페이로드를 메모리에 삽입 합니다. 공격자 페이로드는 손상 된 프로세스의 메모리 내에 유지 되며 다양 한 악의적인 작업을 수행 합니다.
 
     Fileless 공격 감지를 통해 자동화 된 메모리 법적 기술은 fileless 공격 도구 키트, 기술 및 동작을 식별 합니다. 이 솔루션은 런타임에 컴퓨터를 정기적으로 검색 하 고 보안에 중요 한 프로세스의 메모리에서 직접 정보를 추출 합니다.
 

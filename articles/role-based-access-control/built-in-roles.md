@@ -119,7 +119,7 @@ ms.locfileid: "76264257"
 > | [Managed Applications 읽기 권한자](#managed-applications-reader) | 관리 앱 및 요청 JIT 액세스에서 리소스를 읽을 수 있습니다. | b9331d33-8a36-4f8c-b097-4f54124fdb44 |
 > | [관리 ID 기여자](#managed-identity-contributor) | 사용자 할당 ID를 만들고, 읽고, 업데이트하고, 삭제합니다. | e40ec5ca-96e0-45a2-b4ff-59039f2c2b59 |
 > | [관리 ID 운영자](#managed-identity-operator) | 사용자 할당 ID를 읽고 할당합니다. | f1a07417-d97a-45cb-824c-7a7467783830 |
-> | [관리 되는 서비스 등록 할당 삭제 역할](#managed-services-registration-assignment-delete-role) | 관리 되는 서비스 등록 할당 삭제 역할을 통해 테 넌 트 사용자는 테 넌 트에 할당 된 등록 할당을 삭제할 수 있습니다. | 91c1777a-f3dc-4fae-b103-61d183457e46 |
+> | [관리 되는 서비스 등록 할당 삭제 역할](#managed-services-registration-assignment-delete-role) | 관리 되는 서비스 등록 할당 삭제 역할을 통해 테넌트 사용자는 테넌트에 할당 된 등록 할당을 삭제할 수 있습니다. | 91c1777a-f3dc-4fae-b103-61d183457e46 |
 > | [관리 그룹 참가자](#management-group-contributor) | 관리 그룹 참가자 역할 | 5d58bcaf-24a5-4b20-bdb6-eed9f69fbe4c |
 > | [관리 그룹 읽기 권한자](#management-group-reader) | 관리 그룹 읽기 권한자 역할 | ac63b705-f282-497d-ac71-919bf39d939d |
 > | [Monitoring Contributor](#monitoring-contributor) | 모든 모니터링 데이터를 읽고 모니터링 설정을 편집할 수 있음 [Azure Monitor에서의 역할, 권한 및 보안 시작](../azure-monitor/platform/roles-permissions-security.md#built-in-monitoring-roles)도 참조하세요. | 749f88d5-cbae-40b8-bcfc-e573ddc772fa |
@@ -2051,7 +2051,7 @@ ms.locfileid: "76264257"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **설명** | 관리 되는 서비스 등록 할당 삭제 역할을 통해 테 넌 트 사용자는 테 넌 트에 할당 된 등록 할당을 삭제할 수 있습니다. |
+> | **설명** | 관리 되는 서비스 등록 할당 삭제 역할을 통해 테넌트 사용자는 테넌트에 할당 된 등록 할당을 삭제할 수 있습니다. |
 > | **Id** | 91c1777a-f3dc-4fae-b103-61d183457e46 |
 > | **actions** |  |
 > | Microsoft ManagedServices/registrationAssignments/read | 관리 되는 서비스 등록 할당 목록을 검색 합니다. |

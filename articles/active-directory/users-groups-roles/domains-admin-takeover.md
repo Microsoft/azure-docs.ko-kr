@@ -1,6 +1,6 @@
 ---
 title: 관리 되지 않는 디렉터리의 관리자 인수-Azure AD | Microsoft Docs
-description: 관리 되지 않는 Azure AD 조직 (섀도 테 넌 트)에서 DNS 도메인 이름을 사용 하는 방법입니다.
+description: 관리 되지 않는 Azure AD 조직 (섀도 테넌트)에서 DNS 도메인 이름을 사용 하는 방법입니다.
 services: active-directory
 documentationcenter: ''
 author: curtand
@@ -36,7 +36,7 @@ ms.locfileid: "75834178"
 
 Office 365와 같이 SharePoint 및 OneDrive를 포함하는 일부 제품은 외부 인수를 지원하지 않습니다. 그것이 시나리오이거나, 또는 관리자이고 셀프 서비스 등록을 사용한 사용자가 만든 관리되지 않거나 또는 "섀도" 테넌트를 인수하려는 경우, 내부 관리자 인수를 사용하여 이를 수행할 수 있습니다.
 
-1. Power BI에 등록 하 여 관리 되지 않는 테 넌 트에서 사용자 컨텍스트를 만듭니다. 예제의 편의를 위해 이러한 단계는 해당 경로를 가정합니다.
+1. Power BI에 등록 하 여 관리 되지 않는 테넌트에서 사용자 컨텍스트를 만듭니다. 예제의 편의를 위해 이러한 단계는 해당 경로를 가정합니다.
 
 2. [Power BI 사이트](https://powerbi.com)를 열고 **무료로 시작**을 선택합니다. 조직에 대한 도메인 이름을 사용하는 사용자 계정을 입력합니다. 예: `admin@fourthcoffee.xyz`. 확인 코드를 입력한 후 인증 코드에 대한 전자 메일을 확인합니다.
 
@@ -106,7 +106,7 @@ SharePoint, OneDrive 또는 비즈니스용 Skype를 포함 하는 서비스 계
 
 [개인용 RMS](/azure/information-protection/rms-for-individuals)의 경우, 관리되지 않는 테넌트가 사용자 소유의 테넌트와 같은 지역에 있을 경우 자동으로 생성된 [Azure Information Protection 테넌트 키](/azure/information-protection/plan-implement-tenant-key) 및 [기본 보호 템플릿](/azure/information-protection/configure-usage-rights#rights-included-in-the-default-templates)이 도메인 이름과 함께 추가로 이동됩니다.
 
-관리되지 않는 테넌트가 다른 지역에 있을 때는 이 키 및 템플릿이 이동되지 않습니다. 예를 들어 관리 되지 않는 테 넌 트가 유럽에 있고 사용자가 소유 하는 조직은 북아메리카에 있는 경우입니다.
+관리되지 않는 테넌트가 다른 지역에 있을 때는 이 키 및 템플릿이 이동되지 않습니다. 예를 들어 관리 되지 않는 테넌트가 유럽에 있고 사용자가 소유 하는 조직은 북아메리카에 있는 경우입니다.
 
 개인용 RMS는 보호된 콘텐츠를 열기 위한 Azure AD 인증을 지원하도록 디자인되었지만, 사용자의 콘텐츠 보호를 방지하지 못 합니다. 사용자가 개인용 RMS 구독을 사용 하 여 콘텐츠를 보호 하 고 키와 템플릿을 이동 하지 않은 경우 도메인 인수 후 해당 콘텐츠에 액세스할 수 없습니다.
 

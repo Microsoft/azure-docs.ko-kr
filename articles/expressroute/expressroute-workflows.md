@@ -24,7 +24,7 @@ ms.locfileid: "75864369"
 1. PowerShell을 사용하여 ExpressRoute 회로를 구성합니다. 자세한 세부 사항은 [ExpressRoute 회로 만들기](expressroute-howto-circuit-classic.md) 문서의 지침을 수행합니다.
 2. 서비스 공급자에서 연결을 정렬합니다. 이 프로세스는 다양합니다. 연결을 정렬하는 방법에 대한 자세한 내용은 연결 공급자에게 문의합니다.
 3. PowerShell 통해 상태를 프로비전하는 ExpressRoute 회로를 확인하여 회로를 성공적으로 프로비전했는지 확인합니다. 
-4. 라우팅 도메인을 구성합니다. 연결 공급자가 3 계층 구성을 관리 하는 경우 회로에 대 한 라우팅을 구성 합니다. 연결 공급자가 계층 2 서비스만 제공 하는 경우 라우팅 [요구 사항](expressroute-routing.md) 및 [라우팅 구성](expressroute-howto-routing-classic.md) 페이지에 설명 된 지침에 따라 라우팅을 구성 해야 합니다.
+4. 라우팅 도메인을 구성합니다. 연결 공급자가 3 계층 구성을 관리 하는 경우 회로에 대한 라우팅을 구성 합니다. 연결 공급자가 계층 2 서비스만 제공 하는 경우 라우팅 [요구 사항](expressroute-routing.md) 및 [라우팅 구성](expressroute-howto-routing-classic.md) 페이지에 설명 된 지침에 따라 라우팅을 구성 해야 합니다.
    
    * Azure 프라이빗 피어링 사용 - 이 피어링을 사용하여 가상 네트워크 내에 배포된 VM/클라우드 서비스에 연결합니다.
 

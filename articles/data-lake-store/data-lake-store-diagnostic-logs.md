@@ -46,7 +46,7 @@ Azure Data Lake Storage Gen1 계정에 대해 진단 로깅을 사용하도록 �
         
         * Azure Event Hub에 로그 데이터를 스트리밍하려면 **이벤트 허브로 스트리밍** 옵션을 선택합니다. 들어오는 로그를 실시간으로 분석하는 다운스트림 처리 파이프라인을 사용하는 경우 대개 이 옵션을 사용합니다. 이 옵션을 선택하는 경우 사용하려는 Azure 이벤트 허브에 대한 세부 정보를 제공해야 합니다.
 
-        * 옵션을 선택 **Log Analytics에 보내기** 생성 된 로그 데이터를 분석 하려면 Azure Monitor 서비스를 사용 하도록 합니다. 이 옵션을 선택하는 경우 로그 분석을 수행하는 데 사용하는 Log Analytics 작업 영역에 세부 정보를 제공해야 합니다. 참조 [뷰 또는 Azure Monitor의 로그 검색을 사용 하 여 수집 된 데이터를 분석](../azure-monitor/learn/tutorial-viewdata.md) Azure Monitor 사용에 대 한 로그입니다.
+        * 옵션을 선택 **Log Analytics에 보내기** 생성 된 로그 데이터를 분석 하려면 Azure Monitor 서비스를 사용 하도록 합니다. 이 옵션을 선택하는 경우 로그 분석을 수행하는 데 사용하는 Log Analytics 작업 영역에 세부 정보를 제공해야 합니다. 참조 [뷰 또는 Azure Monitor의 로그 검색을 사용 하 여 수집 된 데이터를 분석](../azure-monitor/learn/tutorial-viewdata.md) Azure Monitor 사용에 대한 로그입니다.
      
    * 감사 로그 또는 요청 로그를 가져올지, 혹은 둘 모두를 가져올지를 지정합니다.
    * 데이터를 유지해야 하는 일 수를 지정합니다. Azure Storage 계정을 사용하여 로그 데이터를 보관하는 경우에만 보존 기능이 적용됩니다.
@@ -178,7 +178,7 @@ Azure Data Lake Storage Gen1 계정에 대해 진단 로깅을 사용하도록 �
 | StreamName |String |작업이 수행된 경로 |
 
 ## <a name="samples-to-process-the-log-data"></a>로그 데이터를 처리하는 샘플
-Azure Monitor 로그로 Azure Data Lake 저장소 Gen1에서 로그를 보낼 때 (참조 [뷰 또는 Azure Monitor의 로그 검색을 사용 하 여 수집 된 데이터를 분석](../azure-monitor/learn/tutorial-viewdata.md) Azure Monitor 사용에 대 한 로그), 다음 쿼리가 포함 된 테이블을 반환 합니다를 사용자 목록을 표시 이름, 이벤트의 시간 및 이벤트 수 시각적 차트와 함께 이벤트의 시간에 대 한 합니다. 사용자 GUID 또는 기타 특성을 표시하도록 쉽게 수정할 수 있습니다.
+Azure Monitor 로그로 Azure Data Lake 저장소 Gen1에서 로그를 보낼 때 (참조 [뷰 또는 Azure Monitor의 로그 검색을 사용 하 여 수집 된 데이터를 분석](../azure-monitor/learn/tutorial-viewdata.md) Azure Monitor 사용에 대한 로그), 다음 쿼리가 포함 된 테이블을 반환 합니다를 사용자 목록을 표시 이름, 이벤트의 시간 및 이벤트 수 시각적 차트와 함께 이벤트의 시간에 대한 합니다. 사용자 GUID 또는 기타 특성을 표시하도록 쉽게 수정할 수 있습니다.
 
 ```
 search *

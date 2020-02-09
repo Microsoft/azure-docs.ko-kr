@@ -17,15 +17,15 @@ ms.locfileid: "77086833"
 공유에서 전체 파일 공유 또는 특정 파일을 복원할 수 있습니다. 원본 위치 또는 대체 위치에 복원할 수 있습니다.
 
 > [!WARNING]
-> AFS 백업의 경우 PS 버전이 ' Az. RecoveryServices 2.6.0 '의 최소 버전으로 업그레이드 되었는지 확인 합니다. 자세한 내용은이 변경에 대 한 요구 사항 개요 [섹션](backup-azure-afs-automation.md#important-notice---backup-item-identification-for-afs-backups) 을 참조 하세요.
+> AFS 백업의 경우 PS 버전이 ' Az. RecoveryServices 2.6.0 '의 최소 버전으로 업그레이드 되었는지 확인 합니다. 자세한 내용은이 변경에 대한 요구 사항 개요 [섹션](backup-azure-afs-automation.md#important-notice---backup-item-identification-for-afs-backups) 을 참조 하세요.
 
 ## <a name="fetch-recovery-points"></a>복구 지점 가져오기
 
-[AzRecoveryServicesBackupRecoveryPoint](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackuprecoverypoint?view=azps-1.4.0) 를 사용 하 여 백업 된 항목에 대 한 모든 복구 지점의 목록을 표시 합니다.
+[AzRecoveryServicesBackupRecoveryPoint](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackuprecoverypoint?view=azps-1.4.0) 를 사용 하 여 백업 된 항목에 대한 모든 복구 지점의 목록을 표시 합니다.
 
 다음 스크립트에서:
 
-* **$Rp** 변수는 지난 7 일간 선택한 백업 항목에 대 한 복구 지점의 배열입니다.
+* **$Rp** 변수는 지난 7 일간 선택한 백업 항목에 대한 복구 지점의 배열입니다.
 * 배열은 인덱스 **0**의 가장 최근 복구 지점부터 시간이 역순으로 정렬됩니다.
 * 복구 지점을 선택하려면 표준 PowerShell 배열 인덱싱을 사용합니다.
 * 예에서, **$rp[0]** 은 최신 복구 지점을 선택합니다.

@@ -16,7 +16,7 @@ ms.lasthandoff: 11/21/2019
 ms.locfileid: "74284135"
 ---
 > [!IMPORTANT]
-> 이는 **Verizon의 Azure CDN 프리미엄** 의 기능입니다. **Microsoft의 Azure CDN** 에 대 한 규칙을 구성 하려면 [표준 규칙 엔진](../articles/cdn/cdn-standard-rules-engine-reference.md)을 사용 하세요. **Akamai의 Azure CDN**에는 고급 규칙을 사용할 수 없습니다. CDN 기능에 대 한 전체 비교는 [Azure CDN 제품 기능](../articles/cdn/cdn-features.md)을 참조 하세요. 
+> 이는 **Verizon의 Azure CDN 프리미엄** 의 기능입니다. **Microsoft의 Azure CDN** 에 대한 규칙을 구성 하려면 [표준 규칙 엔진](../articles/cdn/cdn-standard-rules-engine-reference.md)을 사용 하세요. **Akamai의 Azure CDN**에는 고급 규칙을 사용할 수 없습니다. CDN 기능에 대한 전체 비교는 [Azure CDN 제품 기능](../articles/cdn/cdn-features.md)을 참조 하세요. 
 > 
 > 
 

@@ -64,7 +64,7 @@ Azure Blob 커넥터에서 지원하는 인증 유형은 다음과 같습니다.
 - [Azure 리소스 인증용 관리 ID](#managed-identity)
 
 >[!NOTE]
->PolyBase를 사용 하 여 SQL Data Warehouse에 데이터를 로드 하는 경우 원본 또는 스테이징 Blob 저장소가 Virtual Network 끝점으로 구성 된 경우 PolyBase에서 요구 하는 대로 관리 되는 id 인증을 사용 해야 하 고 버전과 함께 자체 호스팅 Integration Runtime를 사용 해야 합니다. 3.18 이상. 추가 구성 필수 구성 요소가 포함 된 [관리 되는 id 인증](#managed-identity) 섹션을 참조 하세요.
+>PolyBase를 사용 하 여 SQL Data Warehouse에 데이터를 로드 하는 경우 원본 또는 스테이징 Blob 저장소가 Virtual Network 엔드포인트으로 구성 된 경우 PolyBase에서 요구 하는 대로 관리 되는 id 인증을 사용 해야 하 고 버전과 함께 자체 호스팅 Integration Runtime를 사용 해야 합니다. 3.18 이상. 추가 구성 필수 구성 요소가 포함 된 [관리 되는 id 인증](#managed-identity) 섹션을 참조 하세요.
 
 >[!NOTE]
 >HDInsights 및 Azure Machine Learning 작업은 Azure Blob 저장소 계정 키 인증만 지원 합니다.
@@ -80,7 +80,7 @@ Azure Blob 커넥터에서 지원하는 인증 유형은 다음과 같습니다.
 | connectVia | 데이터 저장소에 연결하는 데 사용할 [통합 런타임](concepts-integration-runtime.md)입니다. Azure Integration Runtime 또는 자체 호스팅 Integration Runtime(데이터 저장소가 사설망에 있는 경우)을 사용할 수 있습니다. 지정하지 않으면 기본 Azure Integration Runtime을 사용합니다. |아닙니다. |
 
 >[!NOTE]
->계정 키 인증을 사용 하는 경우 보조 Blob Service 끝점이 지원 되지 않습니다. 다른 인증 유형을 사용할 수 있습니다.
+>계정 키 인증을 사용 하는 경우 보조 Blob Service 엔드포인트이 지원 되지 않습니다. 다른 인증 유형을 사용할 수 있습니다.
 
 >[!NOTE]
 >"AzureStorage" 유형의 연결된 서비스를 사용하는 경우에도 있는 그대로 계속 지원되지만, 앞으로 이 새로운 "AzureBlobStorage" 연결된 서비스 유형을 사용하는 것이 좋습니다.
@@ -134,7 +134,7 @@ Azure Blob 커넥터에서 지원하는 인증 유형은 다음과 같습니다.
 공유 액세스 서명은 스토리지 계정의 리소스에 대한 위임된 권한을 제공합니다. 공유 액세스 서명을 사용하여 스토리지 계정의 개체에 대해 지정된 시간 동안 제한된 권한을 클라이언트에 부여할 수 있습니다. 계정 액세스 키를 공유할 필요가 없습니다. 공유 액세스 서명은 스토리지 리소스에 대해 인증된 액세스에 필요한 모든 정보를 쿼리 매개 변수에 포함하는 URI입니다. 공유 액세스 서명을 사용하여 스토리지 리소스에 액세스하려면 클라이언트에서 공유 액세스 서명을 해당 생성자 또는 메서드에 전달하기만 하면 됩니다. 공유 액세스 서명에 대한 자세한 내용은 [공유 액세스 서명: 공유 액세스 서명 모델 이해](../storage/common/storage-dotnet-shared-access-signature-part-1.md)를 참조하세요.
 
 > [!NOTE]
->- Data Factory에서 이제 **서비스 공유 액세스 서명**과 **계정 공유 액세스 서명**이 모두 지원됩니다. 공유 액세스 서명에 대 한 자세한 내용은 [SAS (공유 액세스 서명)를 사용 하 여 Azure Storage 리소스에 대 한 제한 된 액세스 권한 부여](../storage/common/storage-sas-overview.md)를 참조 하세요.
+>- Data Factory에서 이제 **서비스 공유 액세스 서명**과 **계정 공유 액세스 서명**이 모두 지원됩니다. 공유 액세스 서명에 대한 자세한 내용은 [SAS (공유 액세스 서명)를 사용 하 여 Azure Storage 리소스에 대한 제한 된 액세스 권한 부여](../storage/common/storage-sas-overview.md)를 참조 하세요.
 >- 이후 데이터 세트 구성에서 폴더 경로는 컨테이너 수준에서 시작하는 절대 경로입니다. SAS URI의 경로와 일치하는 경로를 구성해야 합니다.
 
 > [!TIP]
@@ -278,7 +278,7 @@ Azure Blob Storage 연결된 서비스에 지원되는 속성은 다음과 같�
     - **싱크의 경우** 액세스 제어(IAM)에서 **Storage Blob 데이터 기여자** 역할 이상을 부여합니다.
 
 >[!IMPORTANT]
->PolyBase를 사용 하 여 Blob (원본 또는 스테이징)에서 SQL Data Warehouse로 데이터를 로드 하는 경우 Blob에 대 한 관리 되는 id 인증을 사용 하는 경우 [이 가이드](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage) 의 1 단계와 2 단계를 수행 해야 합니다. 또한 SQL Database 서버를 Azure Active Directory (Azure AD)에 등록 하 고 2) 저장소 Blob 데이터 참가자 역할을 SQL Database 서버에 할당 합니다. 나머지는 Data Factory에 의해 처리 됩니다. Blob 저장소가 Azure Virtual Network 끝점을 사용 하 여 구성 된 경우 PolyBase를 사용 하 여 데이터를 로드 하려면 PolyBase에서 요구 하는 대로 관리 되는 id 인증을 사용 해야 합니다.
+>PolyBase를 사용 하 여 Blob (원본 또는 스테이징)에서 SQL Data Warehouse로 데이터를 로드 하는 경우 Blob에 대한 관리 되는 id 인증을 사용 하는 경우 [이 가이드](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage) 의 1 단계와 2 단계를 수행 해야 합니다. 또한 SQL Database 서버를 Azure Active Directory (Azure AD)에 등록 하 고 2) 저장소 Blob 데이터 참가자 역할을 SQL Database 서버에 할당 합니다. 나머지는 Data Factory에 의해 처리 됩니다. Blob 저장소가 Azure Virtual Network 엔드포인트을 사용 하 여 구성 된 경우 PolyBase를 사용 하 여 데이터를 로드 하려면 PolyBase에서 요구 하는 대로 관리 되는 id 인증을 사용 해야 합니다.
 
 Azure Blob Storage 연결된 서비스에 지원되는 속성은 다음과 같습니다.
 
@@ -369,7 +369,7 @@ Azure Blob Storage 연결된 서비스에 지원되는 속성은 다음과 같�
 | wildcardFileName         | 소스 파일을 필터링 하는 지정 된 컨테이너 + folderPath/wildcardFolderPath의 와일드 카드 문자를 포함 하는 파일 이름입니다. <br>허용되는 와일드카드는 `*`(0개 이상의 문자 일치) 및 `?`(0-1개의 문자 일치)입니다. 실제 폴더 이름에 와일드카드 또는 이 이스케이프 문자가 있는 경우 `^`을 사용하여 이스케이프합니다.  더 많은 예는 [폴더 및 파일 필터 예제](#folder-and-file-filter-examples)를 참조하세요. | `fileName` 데이터 집합에 지정 되지 않은 경우에는 예입니다. |
 | modifiedDatetimeStart    | 특성을 기반으로 하는 파일 필터: 마지막으로 수정한 날짜입니다. 마지막 수정 시간이 `modifiedDatetimeStart`와 `modifiedDatetimeEnd` 사이의 시간 범위 내에 있으면 파일이 선택됩니다. 시간은 UTC 표준 시간대에 "2018-12-01T05:00:00Z" 형식으로 적용됩니다. <br> 속성은 NULL일 수 있습니다. 이 경우 파일 특성 필터가 데이터 세트에 적용되지 않습니다.  `modifiedDatetimeStart`에 datetime 값이 있지만 `modifiedDatetimeEnd`가 NULL이면, 마지막으로 수정된 특성이 datetime 값보다 크거나 같은 파일이 선택됩니다.  `modifiedDatetimeEnd`에 datetime 값이 있지만 `modifiedDatetimeStart`가 NULL이면, 마지막으로 수정된 특성이 datetime 값보다 작은 파일이 선택됩니다. | 아닙니다.                                            |
 | modifiedDatetimeEnd      | 위와 동일합니다.                                               | 아닙니다.                                            |
-| maxConcurrentConnections | 저장소 저장소에 동시에 연결 하기 위한 연결 수입니다. 데이터 저장소에 대 한 동시 연결 수를 제한 하려는 경우에만를 지정 합니다. | 아닙니다.                                            |
+| maxConcurrentConnections | 저장소 저장소에 동시에 연결 하기 위한 연결 수입니다. 데이터 저장소에 대한 동시 연결 수를 제한 하려는 경우에만를 지정 합니다. | 아닙니다.                                            |
 
 > [!NOTE]
 > Parquet/구분 된 텍스트 형식의 경우 다음 섹션에 언급 된 **blobsource** 형식 복사 작업 원본은 이전 버전과의 호환성을 위해 그대로 계속 지원 됩니다. 앞으로이 새 모델을 사용 하 고 ADF 제작 UI가 이러한 새 유형을 생성 하도록 전환 하는 것이 좋습니다.
@@ -425,7 +425,7 @@ Azure Blob Storage 연결된 서비스에 지원되는 속성은 다음과 같�
 | ------------------------ | ------------------------------------------------------------ | -------- |
 | type                     | `storeSettings` 아래의 type 속성은 **Azureblobstoragewritesettings**로 설정 해야 합니다. | 예      |
 | copyBehavior             | 원본이 파일 기반 데이터 저장소의 파일인 경우 복사 동작을 정의합니다.<br/><br/>허용된 값은<br/><b>- PreserveHierarchy(기본값)</b>: 대상 폴더에서 파일 계층 구조를 유지합니다. 원본 폴더의 원본 파일 상대 경로는 대상 폴더의 대상 파일 상대 경로와 동일합니다.<br/><b>- FlattenHierarchy</b>: 원본 폴더의 모든 파일이 대상 폴더의 첫 번째 수준에 있게 됩니다. 대상 파일은 자동 생성된 이름을 갖습니다. <br/><b>- MergeFiles</b>: 원본 폴더의 모든 파일을 하나의 파일로 병합합니다. 병합되는 파일 이름은 지정된 파일 또는 Blob 이름이 적용됩니다. 그렇지 않으면 자동 생성되는 파일 이름이 적용됩니다. | 아닙니다.       |
-| maxConcurrentConnections | 저장소 저장소에 동시에 연결 하기 위한 연결 수입니다. 데이터 저장소에 대 한 동시 연결 수를 제한 하려는 경우에만를 지정 합니다. | 아닙니다.       |
+| maxConcurrentConnections | 저장소 저장소에 동시에 연결 하기 위한 연결 수입니다. 데이터 저장소에 대한 동시 연결 수를 제한 하려는 경우에만를 지정 합니다. | 아닙니다.       |
 
 **예:**
 
@@ -565,21 +565,21 @@ Amazon S3/Azure Blob/Azure Data Lake Storage Gen2에서 Azure Data Lake Storage 
    * **패턴**: 파티션당 출력 파일을 열거 하는 패턴을 입력 합니다. 예를 들어, **대출 [n] .csv** 는 loans1, loans2 등을 만듭니다.
    * **파티션당**: 파티션당 하나의 파일 이름을 입력 합니다.
    * **열의 데이터로**출력: 출력 파일을 열의 값으로 설정 합니다. 경로는 대상 폴더가 아니라 데이터 집합 컨테이너를 기준으로 합니다.
-   * **단일 파일로 출력**: 분할 된 출력 파일을 단일 명명 된 파일로 결합 합니다. 경로는 데이터 집합 폴더에 대 한 상대 경로입니다. Te merge 작업은 노드 크기에 따라 실패할 수 있습니다. 이 옵션은 대량 데이터 집합에는 권장 되지 않습니다.
+   * **단일 파일로 출력**: 분할 된 출력 파일을 단일 명명 된 파일로 결합 합니다. 경로는 데이터 집합 폴더에 대한 상대 경로입니다. Te merge 작업은 노드 크기에 따라 실패할 수 있습니다. 이 옵션은 대량 데이터 집합에는 권장 되지 않습니다.
 
 **모두 인용:** 모든 값을 따옴표로 묶을 지 여부를 결정 합니다.
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
+속성에 대한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
 
 ## <a name="getmetadata-activity-properties"></a>GetMetadata 활동 속성
 
-속성에 대 한 자세한 내용을 보려면 [GetMetadata 활동](control-flow-get-metadata-activity.md) 을 확인 하세요. 
+속성에 대한 자세한 내용을 보려면 [GetMetadata 활동](control-flow-get-metadata-activity.md) 을 확인 하세요. 
 
 ## <a name="delete-activity-properties"></a>작업 속성 삭제
 
-속성에 대 한 자세한 내용을 보려면 [삭제 작업](delete-activity.md) 을 선택 합니다.
+속성에 대한 자세한 내용을 보려면 [삭제 작업](delete-activity.md) 을 선택 합니다.
 
 ## <a name="legacy-models"></a>레거시 모델
 
@@ -637,7 +637,7 @@ Amazon S3/Azure Blob/Azure Data Lake Storage Gen2에서 Azure Data Lake Storage 
 |:--- |:--- |:--- |
 | type | 복사 활동 source의 type 속성은 **BlobSource**로 설정해야 합니다. |예 |
 | recursive | 하위 폴더 또는 지정된 폴더에서만 데이터를 재귀적으로 읽을지 여부를 나타냅니다. recursive를 true로 설정하고 싱크가 파일 기반 저장소인 경우 빈 폴더 또는 하위 폴더가 싱크에 복사되거나 만들어지지 않습니다.<br/>허용되는 값은 **true**(기본값) 및 **false**입니다. | 아닙니다. |
-| maxConcurrentConnections | 저장소 저장소에 동시에 연결 하기 위한 연결 수입니다. 데이터 저장소에 대 한 동시 연결 수를 제한 하려는 경우에만를 지정 합니다. | 아닙니다. |
+| maxConcurrentConnections | 저장소 저장소에 동시에 연결 하기 위한 연결 수입니다. 데이터 저장소에 대한 동시 연결 수를 제한 하려는 경우에만를 지정 합니다. | 아닙니다. |
 
 **예:**
 
@@ -677,7 +677,7 @@ Amazon S3/Azure Blob/Azure Data Lake Storage Gen2에서 Azure Data Lake Storage 
 |:--- |:--- |:--- |
 | type | 복사 활동 sink의 type 속성은 **BlobSink**로 설정해야 합니다. |예 |
 | copyBehavior | 원본이 파일 기반 데이터 저장소의 파일인 경우 복사 동작을 정의합니다.<br/><br/>허용된 값은<br/><b>- PreserveHierarchy(기본값)</b>: 대상 폴더에서 파일 계층 구조를 유지합니다. 원본 폴더의 원본 파일 상대 경로는 대상 폴더의 대상 파일 상대 경로와 동일합니다.<br/><b>- FlattenHierarchy</b>: 원본 폴더의 모든 파일이 대상 폴더의 첫 번째 수준에 있게 됩니다. 대상 파일은 자동 생성된 이름을 갖습니다. <br/><b>- MergeFiles</b>: 원본 폴더의 모든 파일을 하나의 파일로 병합합니다. 병합되는 파일 이름은 지정된 파일 또는 Blob 이름이 적용됩니다. 그렇지 않으면 자동 생성되는 파일 이름이 적용됩니다. | 아닙니다. |
-| maxConcurrentConnections | 저장소 저장소에 동시에 연결 하기 위한 연결 수입니다. 데이터 저장소에 대 한 동시 연결 수를 제한 하려는 경우에만를 지정 합니다. | 아닙니다. |
+| maxConcurrentConnections | 저장소 저장소에 동시에 연결 하기 위한 연결 수입니다. 데이터 저장소에 대한 동시 연결 수를 제한 하려는 경우에만를 지정 합니다. | 아닙니다. |
 
 **예:**
 

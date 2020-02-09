@@ -23,9 +23,9 @@ ms.locfileid: "76701300"
 
 다음과 같은 옵션이 있습니다.
 
-- *AzureADMyOrg*: 앱이 등록 된 조직 디렉터리의 계정만 (단일 테 넌 트)
-- *AzureADMultipleOrgs*: 모든 조직 디렉터리의 계정 (다중 테 넌 트)
-- *AzureADandPersonalMicrosoftAccount*: 모든 조직 디렉터리의 계정 (다중 테 넌 트) 및 개인 Microsoft 계정 (예: Skype, Xbox 및 Outlook.com)
+- *AzureADMyOrg*: 앱이 등록 된 조직 디렉터리의 계정만 (단일 테넌트)
+- *AzureADMultipleOrgs*: 모든 조직 디렉터리의 계정 (다중 테넌트)
+- *AzureADandPersonalMicrosoftAccount*: 모든 조직 디렉터리의 계정 (다중 테넌트) 및 개인 Microsoft 계정 (예: Skype, Xbox 및 Outlook.com)
 
 등록 된 응용 프로그램의 경우 응용 프로그램의 **인증** 섹션에서 지원 되는 계정 유형 값을 찾을 수 있습니다. **매니페스트의**`signInAudience` 속성 아래에서 찾을 수도 있습니다.
 
@@ -35,7 +35,7 @@ ms.locfileid: "76701300"
 
 | 속성 | `AzureADMyOrg` | `AzureADMultipleOrgs`  | `AzureADandPersonalMicrosoftAccount` |
 |--------------|---------------|----------------|----------------|
-| 응용 프로그램 ID URI (`identifierURIs`)  | 테 넌 트에서 고유 해야 합니다. <br><br> urn://체계가 지원 됩니다. <br><br> 와일드 카드는 지원 되지 않습니다. <br><br> 쿼리 문자열 및 조각이 지원 됩니다. <br><br> 최대 255 문자 길이 <br><br> IdentifierURIs 수에 제한 없음 *  | 전역적으로 고유해야 합니다. <br><br> urn://체계가 지원 됩니다. <br><br> 와일드 카드는 지원 되지 않습니다. <br><br> 쿼리 문자열 및 조각이 지원 됩니다. <br><br> 최대 255 문자 길이 <br><br> IdentifierURIs 수에 제한 없음 * | 전역적으로 고유해야 합니다. <br><br> urn://체계가 지원 되지 않습니다. <br><br> 와일드 카드, 조각 및 쿼리 문자열은 지원 되지 않습니다. <br><br> 최대 120 문자 길이 <br><br> 최대 50 identifierURIs |
+| 응용 프로그램 ID URI (`identifierURIs`)  | 테넌트에서 고유 해야 합니다. <br><br> urn://체계가 지원 됩니다. <br><br> 와일드 카드는 지원 되지 않습니다. <br><br> 쿼리 문자열 및 조각이 지원 됩니다. <br><br> 최대 255 문자 길이 <br><br> IdentifierURIs 수에 제한 없음 *  | 전역적으로 고유해야 합니다. <br><br> urn://체계가 지원 됩니다. <br><br> 와일드 카드는 지원 되지 않습니다. <br><br> 쿼리 문자열 및 조각이 지원 됩니다. <br><br> 최대 255 문자 길이 <br><br> IdentifierURIs 수에 제한 없음 * | 전역적으로 고유해야 합니다. <br><br> urn://체계가 지원 되지 않습니다. <br><br> 와일드 카드, 조각 및 쿼리 문자열은 지원 되지 않습니다. <br><br> 최대 120 문자 길이 <br><br> 최대 50 identifierURIs |
 | 인증서 (`keyCredentials`) | 대칭 서명 키 | 대칭 서명 키 | 암호화 및 비대칭 서명 키 | 
 | 클라이언트 암호 (`passwordCredentials`) | 제한 없음 * | 제한 없음 * | LiveSDK를 사용 하는 경우: 최대 2 개의 클라이언트 암호 | 
 | 리디렉션 Uri (`replyURLs`) | 자세한 정보는 [리디렉션 URI/회신 URL 제한 및 제한 사항](reply-url.md) 을 참조 하세요. | | | 

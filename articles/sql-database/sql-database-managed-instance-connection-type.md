@@ -34,7 +34,7 @@ Azure SQL Database 관리 되는 인스턴스는 다음과 같은 두 가지 연
 ![.png .png](media/sql-database-managed-instance-connection-types/redirect.png)
 
 > [!IMPORTANT]
-> 리디렉션 연결 유형은 현재 개인 끝점에 대해서만 작동 합니다. 연결 형식 설정에 관계 없이 공용 끝점을 통해 들어오는 연결은 프록시를 통해 발생 합니다.
+> 리디렉션 연결 유형은 현재 개인 엔드포인트에 대해서만 작동 합니다. 연결 형식 설정에 관계 없이 공용 엔드포인트을 통해 들어오는 연결은 프록시를 통해 발생 합니다.
 
 ## <a name="proxy-connection-type"></a>프록시 연결 형식
 
@@ -66,5 +66,5 @@ $mi = $mi | Set-AzSqlInstance -ProxyOverride "Redirect" -force
 ## <a name="next-steps"></a>다음 단계
 
 - [데이터베이스를 관리되는 인스턴스로 복원](sql-database-managed-instance-get-started-restore.md)
-- [관리 되는 인스턴스에서 공용 끝점을 구성](sql-database-managed-instance-public-endpoint-configure.md) 하는 방법을 알아봅니다.
+- [관리 되는 인스턴스에서 공용 엔드포인트을 구성](sql-database-managed-instance-public-endpoint-configure.md) 하는 방법을 알아봅니다.
 - [관리 되는 인스턴스 연결 아키텍처](sql-database-managed-instance-connectivity-architecture.md) 에 대 한 자세한 정보

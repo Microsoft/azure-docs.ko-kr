@@ -55,7 +55,7 @@ Azure Active Directory는 할당 이라는 개념을 사용 하 여 선택한 �
 
 Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 Azure AD를 구성 하기 전에, 고 대 수에서 일부 프로 비전 정보를 검색 해야 합니다.
 
-1. 사용자의 사용자 [관리 콘솔](https://www.Figma.com/)에 로그인 합니다. 테 넌 트 옆의 기어 아이콘을 클릭 합니다.
+1. 사용자의 사용자 [관리 콘솔](https://www.Figma.com/)에 로그인 합니다. 테넌트 옆의 기어 아이콘을 클릭 합니다.
 
     ![FigmaFigma-employee-provision](media/Figma-provisioning-tutorial/image0.png)
 
@@ -63,7 +63,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 Azure AD를 
 
     ![FigmaFigma-employee-provision](media/Figma-provisioning-tutorial/figma03.png)
 
-3. **테 넌 트 ID**를 복사 합니다. 이 값은 Azure Portal에 있는 Conma 응용 프로그램의 프로 비전 탭에 있는 **테 넌 트 url** 필드에 입력 될 scim 끝점 url을 생성 하는 데 사용 됩니다.
+3. **테넌트 ID**를 복사 합니다. 이 값은 Azure Portal에 있는 Conma 응용 프로그램의 프로 비전 탭에 있는 **테넌트 url** 필드에 입력 될 scim 엔드포인트 url을 생성 하는 데 사용 됩니다.
 
     ![로 토큰 만들기](media/Figma-provisioning-tutorial/figma-tenantid.png)
 
@@ -120,7 +120,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해에이를 구
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에 있는 **테 넌 트 URL** 에 `https://www.figma.com/scim/v2/<TenantID>`을 입력 합니다. 여기서 **TenantID** 는 이전에에서 검색 한 값입니다. **비밀 토큰**의 **API 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 연결 ma에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 연결 Ma 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
+5. **관리자 자격 증명** 섹션 아래에 있는 **테넌트 URL** 에 `https://www.figma.com/scim/v2/<TenantID>`을 입력 합니다. 여기서 **TenantID** 는 이전에에서 검색 한 값입니다. **비밀 토큰**의 **API 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 연결 ma에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 연결 Ma 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 

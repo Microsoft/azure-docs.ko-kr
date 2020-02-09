@@ -29,9 +29,9 @@ Blob storage는 다양 한 재시도 정책 및 배달 못 한 편지를 통해 
 
 |이 도구를 사용 하려면 다음을 수행 합니다.    |이 문서를 참조 하세요. |
 |--|-|
-|Azure Portal    |[빠른 시작: Azure Portal을 사용 하 여 Blob 저장소 이벤트를 웹 끝점으로 라우팅](https://docs.microsoft.com/azure/event-grid/blob-event-quickstart-portal?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
-|PowerShell    |[빠른 시작: PowerShell을 사용 하 여 웹 끝점에 저장소 이벤트 라우팅](https://docs.microsoft.com/azure/storage/blobs/storage-blob-event-quickstart-powershell?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
-|Azure CLI    |[빠른 시작: Azure CLI 사용 하 여 저장소 이벤트를 웹 끝점으로 라우팅](https://docs.microsoft.com/azure/storage/blobs/storage-blob-event-quickstart?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Azure Portal    |[빠른 시작: Azure Portal을 사용 하 여 Blob 저장소 이벤트를 웹 엔드포인트으로 라우팅](https://docs.microsoft.com/azure/event-grid/blob-event-quickstart-portal?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|PowerShell    |[빠른 시작: PowerShell을 사용 하 여 웹 엔드포인트에 저장소 이벤트 라우팅](https://docs.microsoft.com/azure/storage/blobs/storage-blob-event-quickstart-powershell?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Azure CLI    |[빠른 시작: Azure CLI 사용 하 여 저장소 이벤트를 웹 엔드포인트으로 라우팅](https://docs.microsoft.com/azure/storage/blobs/storage-blob-event-quickstart?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 
 계정에 계층적 네임 스페이스가 있는 경우이 자습서에서는 Azure Databricks에서 Event Grid 구독, Azure 함수 및 [작업](https://docs.azuredatabricks.net/user-guide/jobs.html) 을 함께 연결 하는 방법을 보여 줍니다. [자습서: Azure Data Lake Storage Gen2 이벤트를 사용 하 여 Databricks 델타 테이블을 업데이트](data-lake-storage-events.md)합니다.
 
@@ -44,7 +44,7 @@ Event Grid는 [이벤트 구독](../../event-grid/concepts.md#event-subscription
 
 ![Event Grid 모델](./media/storage-blob-event-overview/event-grid-functional-model.png)
 
-먼저 이벤트에 끝점을 구독 합니다. 그런 다음 이벤트가 트리거되면 Event Grid 서비스에서 해당 이벤트에 대 한 데이터를 끝점으로 보냅니다.
+먼저 이벤트에 엔드포인트을 구독 합니다. 그런 다음 이벤트가 트리거되면 Event Grid 서비스에서 해당 이벤트에 대 한 데이터를 엔드포인트으로 보냅니다.
 
 보려면 [Blob storage 이벤트 스키마](../../event-grid/event-schema-blob-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) 문서를 참조 하세요.
 

@@ -1,6 +1,6 @@
 ---
 title: 오픈 소스 기술 Faq
-description: Azure App Service에서 오픈 소스 기술에 대 한 자주 묻는 질문에 대 한 답변을 확인 하세요.
+description: Azure App Service에서 오픈 소스 기술에 대한 자주 묻는 질문에 대한 답변을 확인 하세요.
 author: genlin
 manager: dcscontentpm
 tags: top-support-issue

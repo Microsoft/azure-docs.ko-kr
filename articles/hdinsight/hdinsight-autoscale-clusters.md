@@ -196,7 +196,7 @@ Resource Manager 템플릿을 사용하여 클러스터를 만드는 방법에 �
 
 #### <a name="using-the-rest-api"></a>REST API 사용
 
-REST API를 사용 하 여 실행 중인 클러스터에서 자동 크기 조정을 사용 하거나 사용 하지 않도록 설정 하려면 아래 코드 조각에 표시 된 것 처럼 자동 크기 조정 끝점에 대 한 POST 요청을 수행 합니다.
+REST API를 사용 하 여 실행 중인 클러스터에서 자동 크기 조정을 사용 하거나 사용 하지 않도록 설정 하려면 아래 코드 조각에 표시 된 것 처럼 자동 크기 조정 엔드포인트에 대 한 POST 요청을 수행 합니다.
 
 ```
 https://management.azure.com/subscriptions/{subscription Id}/resourceGroups/{resourceGroup Name}/providers/Microsoft.HDInsight/clusters/{CLUSTERNAME}/roles/workernode/autoscale?api-version=2018-06-01-preview

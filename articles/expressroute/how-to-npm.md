@@ -1,5 +1,5 @@
 ---
-title: 'Azure Express 경로: 회로에 대 한 NPM 구성'
+title: 'Azure Express 경로: 회로에 대한 NPM 구성'
 description: Azure ExpressRoute 회로에 대해 클라우드 기반 NPM(네트워크 모니터링)을 구성합니다. 여기서는 ExpressRoute 프라이빗 피어링 및 Microsoft 피어링에 대한 모니터링을 다룹니다.
 services: expressroute
 author: cherylmc

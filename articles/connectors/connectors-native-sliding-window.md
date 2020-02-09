@@ -13,9 +13,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/03/2019
 ms.locfileid: "74786914"
 ---
-# <a name="schedule-and-run-tasks-for-contiguous-data-by-using-the-sliding-window-trigger-in-azure-logic-apps"></a>에서 슬라이딩 윈도우 트리거를 사용 하 여 연속 된 데이터에 대 한 작업 예약 및 실행 Azure Logic Apps
+# <a name="schedule-and-run-tasks-for-contiguous-data-by-using-the-sliding-window-trigger-in-azure-logic-apps"></a>에서 슬라이딩 윈도우 트리거를 사용 하 여 연속 된 데이터에 대한 작업 예약 및 실행 Azure Logic Apps
 
-연속 청크의 데이터를 처리 해야 하는 작업, 프로세스 또는 작업을 정기적으로 실행 하려면 **슬라이딩 윈도우** 트리거를 사용 하 여 논리 앱 워크플로를 시작할 수 있습니다. 워크플로를 시작 하기 위한 표준 시간대와 날짜 및 시간을 설정할 수 있으며 해당 워크플로를 반복 하기 위한 되풀이를 설정할 수 있습니다. 어떤 이유로 든 되풀이가 누락 되는 경우이 트리거는 누락 된 되풀이를 처리 합니다. 예를 들어 데이터베이스와 백업 저장소 간에 데이터를 동기화 할 때 데이터의 간격이 발생 하지 않고 동기화 되도록 슬라이딩 윈도우 트리거를 사용 합니다. 기본 제공 일정 트리거 및 작업에 대 한 자세한 내용은 [Azure Logic Apps를 사용 하 여 되풀이 자동화, 작업 및 워크플로 예약 및 실행](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md)을 참조 하세요.
+연속 청크의 데이터를 처리 해야 하는 작업, 프로세스 또는 작업을 정기적으로 실행 하려면 **슬라이딩 윈도우** 트리거를 사용 하 여 논리 앱 워크플로를 시작할 수 있습니다. 워크플로를 시작 하기 위한 표준 시간대와 날짜 및 시간을 설정할 수 있으며 해당 워크플로를 반복 하기 위한 되풀이를 설정할 수 있습니다. 어떤 이유로 든 되풀이가 누락 되는 경우이 트리거는 누락 된 되풀이를 처리 합니다. 예를 들어 데이터베이스와 백업 저장소 간에 데이터를 동기화 할 때 데이터의 간격이 발생 하지 않고 동기화 되도록 슬라이딩 윈도우 트리거를 사용 합니다. 기본 제공 일정 트리거 및 작업에 대한 자세한 내용은 [Azure Logic Apps를 사용 하 여 되풀이 자동화, 작업 및 워크플로 예약 및 실행](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md)을 참조 하세요.
 
 이 트리거가 지 원하는 몇 가지 패턴은 다음과 같습니다.
 
@@ -23,9 +23,9 @@ ms.locfileid: "74786914"
 
 * 특정 날짜 및 시간에 시작한 다음, *n* 초, 분 또는 시간 마다 실행 하 고 반복 합니다. 이 트리거를 사용 하면 과거 되풀이를 모두 실행 하는 과거의 시작 시간을 지정할 수 있습니다.
 
-* 실행 하기 전에 특정 기간에 대 한 각 되풀이를 지연 합니다.
+* 실행 하기 전에 특정 기간에 대한 각 되풀이를 지연 합니다.
 
-이 트리거와 되풀이 트리거 간의 차이점 또는 되풀이 워크플로를 예약 하는 방법에 대 한 자세한 내용은 [Azure Logic Apps를 사용 하 여 되풀이 자동화 된 작업, 프로세스 및 워크플로 예약 및 실행](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md)을 참조 하세요.
+이 트리거와 되풀이 트리거 간의 차이점 또는 되풀이 워크플로를 예약 하는 방법에 대한 자세한 내용은 [Azure Logic Apps를 사용 하 여 되풀이 자동화 된 작업, 프로세스 및 워크플로 예약 및 실행](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md)을 참조 하세요.
 
 > [!TIP]
 > 논리 앱을 트리거하고 나중에 한 번만 실행 하려는 경우 [한 번만 실행 작업](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md#run-once)을 참조 하세요.
@@ -34,7 +34,7 @@ ms.locfileid: "74786914"
 
 * Azure 구독. 구독이 없는 경우 [무료 Azure 계정에 등록할](https://azure.microsoft.com/free/)수 있습니다.
 
-* [논리 앱](../logic-apps/logic-apps-overview.md)에 대 한 기본 지식. 논리 앱을 처음 접하는 경우 [첫 번째 논리 앱을 만드는 방법](../logic-apps/quickstart-create-first-logic-app-workflow.md)에 대해 알아보세요.
+* [논리 앱](../logic-apps/logic-apps-overview.md)에 대한 기본 지식. 논리 앱을 처음 접하는 경우 [첫 번째 논리 앱을 만드는 방법](../logic-apps/quickstart-create-first-logic-app-workflow.md)에 대해 알아보세요.
 
 ## <a name="add-sliding-window-trigger"></a>슬라이딩 윈도우 트리거 추가
 
@@ -66,7 +66,7 @@ ms.locfileid: "74786914"
    | **시작 시간** | 아닙니다. | startTime | string | 시작 날짜와 시간을 다음 형식으로 지정 합니다. <p>표준 시간대를 선택하는 경우 YYYY-MM-DDThh:mm:ss <p>또는 <p>표준 시간대를 선택하지 않은 경우 YYYY-MM-DDThh:mm:ssZ <p>예를 들어 오후 2:00에 2017 년 9 월 18 일을 원하는 경우 "2017-09-18T14:00:00"을 지정 하 고 태평양 표준시와 같은 표준 시간대를 선택 합니다. 또는 표준 시간대 없이 "2017-09-18T14:00:00Z"를 지정합니다. <p>**참고:** 이 시작 시간은 [UTC 오프셋](https://en.wikipedia.org/wiki/UTC_offset) 없이 [UTC 날짜/시간 형식](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)의 [ISO 8601 날짜/시간 사양](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations)을 따라야 합니다. 표준 시간대를 선택하지 않으면 공백 없이 맨 끝에 문자 “Z”를 추가해야 합니다. 이 "Z"는 해당 [항해 시간](https://en.wikipedia.org/wiki/Nautical_time)을 나타냅니다. <p>단순 일정의 경우 시작 시간은 첫 번째 발생이 고, 고급 되풀이의 경우 트리거는 시작 시간 보다 더 일찍 발생 하지 않습니다. [*시작 날짜 및 시간을 사용할 수 있는 방법에는 무엇이 있나요?* ](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md#start-time) |
    |||||
 
-1. 이제 다른 작업을 사용 하 여 나머지 워크플로를 빌드합니다. 추가할 수 있는 작업에 대 한 자세한 내용은 [Azure Logic Apps 커넥터](../connectors/apis-list.md)를 참조 하십시오.
+1. 이제 다른 작업을 사용 하 여 나머지 워크플로를 빌드합니다. 추가할 수 있는 작업에 대한 자세한 내용은 [Azure Logic Apps 커넥터](../connectors/apis-list.md)를 참조 하십시오.
 
 ## <a name="workflow-definition---sliding-window"></a>워크플로 정의-슬라이딩 윈도우
 

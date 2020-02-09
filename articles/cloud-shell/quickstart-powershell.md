@@ -328,7 +328,7 @@ Hello World!
 PowerShell 프로필 `profile.ps1`(또는 `Microsoft.PowerShell_profile.ps1`)을 만들어 PowerShell 환경을 사용자 지정할 수 있습니다.
 그것을 `$profile.CurrentUserAllHosts`(또는 `$profile.CurrentUserAllHosts`)에 저장하여 Cloud Shell 세션의 모든 PowerShell에 로드될 수 있게 합니다.
 
-프로필을 만드는 방법에 대 한 자세한 내용은 [프로필 정보][profile]를 참조 하세요.
+프로필을 만드는 방법에 대한 자세한 내용은 [프로필 정보][profile]를 참조 하세요.
 
 ## <a name="use-git"></a>Git 사용
 

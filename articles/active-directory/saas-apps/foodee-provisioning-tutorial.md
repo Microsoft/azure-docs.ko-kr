@@ -36,7 +36,7 @@ ms.locfileid: "77057828"
 이 자습서에서는 다음과 같은 필수 구성 요소를 충족 한다고 가정 합니다.
 
 * Azure AD 테넌트
-* [Foodee 테 넌 트](https://www.food.ee/about/)
+* [Foodee 테넌트](https://www.food.ee/about/)
 * 관리자 권한이 있는 Foodee의 사용자 계정
 
 ## <a name="assign-users-to-foodee"></a>Foodee에 사용자 할당 
@@ -57,7 +57,7 @@ Azure AD는 *할당* 이라는 개념을 사용 하 여 선택한 앱에 대 한
 
 Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 Foodee를 구성 하기 전에 Foodee에서 SCIM (도메인 간 Id 관리) 프로 비전을 위해 시스템을 사용 하도록 설정 해야 합니다.
 
-1. [Foodee](https://www.food.ee/login/)에 로그인 한 다음 테 넌 트 ID를 선택 합니다.
+1. [Foodee](https://www.food.ee/login/)에 로그인 한 다음 테넌트 ID를 선택 합니다.
 
     ![Foodee](media/Foodee-provisioning-tutorial/tenant.png)
 
@@ -118,7 +118,7 @@ Azure AD 응용 프로그램 갤러리에서 Foodee를 추가 하려면 다음�
 
 1. **관리자 자격 증명**아래에서 다음을 수행 합니다.
 
-   a. **테 넌 트 URL** 상자에 이전에 검색 한 **https:\//concierge.food.ee/scim/v2** 값을 입력 합니다.
+   a. **테넌트 URL** 상자에 이전에 검색 한 **https:\//concierge.food.ee/scim/v2** 값을 입력 합니다.
 
    b. **비밀 토큰** 상자에 이전에 검색 한 **API 토큰** 값을 입력 합니다.
    

@@ -31,7 +31,7 @@ ms.locfileid: "73825551"
 - [Azure Blob](../commercial-marketplace-lead-management-instructions-azure-blob.md) -연락처 전자 메일, 컨테이너 이름 및 저장소 계정 연결 문자열을 제공 합니다. 
 - [Azure 테이블](../commercial-marketplace-lead-management-instructions-azure-table.md) -연락처 전자 메일 및 저장소 계정 연결 문자열을 제공 합니다. 
 - [DYNAMICS CRM Online](../commercial-marketplace-lead-management-instructions-dynamics.md) -연락처 전자 메일, URL 및 인증 모드 (Office 365 또는 Azure Active Directory)를 제공 합니다.
-- [Https 끝점](../commercial-marketplace-lead-management-instructions-https.md) -연락처 전자 메일 및 HTTPS 끝점 URL을 제공 합니다. 
+- [Https 엔드포인트](../commercial-marketplace-lead-management-instructions-https.md) -연락처 전자 메일 및 HTTPS 엔드포인트 URL을 제공 합니다. 
 - [Marketo](../commercial-marketplace-lead-management-instructions-marketo.md) -연락처 전자 메일, 양식 Id, MUNCHKIN 계정 id 및 서버 id를 제공 합니다.
 - [Salesforce](../commercial-marketplace-lead-management-instructions-salesforce.md) -연락처 전자 메일 및 조직 ID를 제공 합니다. 
 

@@ -56,7 +56,7 @@ Microsoft의 [적응 스트리밍](autogen-bitrate-ladder.md) 사전 설정은 �
 다음과 같이이 사전 설정을 사용 하는 변환을 만들 수 있습니다. 
 
 > [!TIP]
-> 변환 출력을 사용 하는 자습서는 [다음 단계](#next-steps) 섹션을 참조 하세요. 출력 자산은 자습서에 표시 된 것 처럼 MPEG-2 및 HLS와 같은 프로토콜의 Media Services 스트리밍 끝점에서 배달할 수 있습니다.
+> 변환 출력을 사용 하는 자습서는 [다음 단계](#next-steps) 섹션을 참조 하세요. 출력 자산은 자습서에 표시 된 것 처럼 MPEG-2 및 HLS와 같은 프로토콜의 Media Services 스트리밍 엔드포인트에서 배달할 수 있습니다.
 
 
 ```csharp

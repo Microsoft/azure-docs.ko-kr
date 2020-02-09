@@ -107,7 +107,7 @@ if ($oauth.access_token -ne $null) {
 
 * **b2cAuthenticationCountSummary** - 지난 30일 동안 일별 및 인증 흐름 유형별 청구 가능한 일일 인증 수의 요약입니다.
 
-* **b2cAuthenticationCount** - 한 기간 내 인증 수입니다. 기본값은 지난 30일입니다.  (선택 사항: 시작 및 종료 `TimeStamp` 매개 변수는 특정 기간을 정의 합니다.) 출력에는 `StartTimeStamp` (이 테 넌 트의 가장 이른 작업 날짜)와 `EndTimeStamp` (최신 업데이트)이 포함 됩니다.
+* **b2cAuthenticationCount** - 한 기간 내 인증 수입니다. 기본값은 지난 30일입니다.  (선택 사항: 시작 및 종료 `TimeStamp` 매개 변수는 특정 기간을 정의 합니다.) 출력에는 `StartTimeStamp` (이 테넌트의 가장 이른 작업 날짜)와 `EndTimeStamp` (최신 업데이트)이 포함 됩니다.
 
 * **b2cMfaRequestCountSummary** - 일별 및 유형별(SMS 또는 음성) 일일 다단계 인증 수의 요약입니다.
 

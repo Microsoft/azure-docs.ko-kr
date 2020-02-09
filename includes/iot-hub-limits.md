@@ -11,7 +11,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74224534"
 ---
-다음 표에서는 다른 서비스 계층 S1, S2, S3 및 F1와 관련 된 제한을 나열 합니다. 각 계층의 각 *단위* 비용에 대 한 자세한 내용은 [Azure IoT Hub 가격 책정](https://azure.microsoft.com/pricing/details/iot-hub/)을 참조 하세요.
+다음 표에서는 다른 서비스 계층 S1, S2, S3 및 F1와 관련 된 제한을 나열 합니다. 각 계층의 각 *단위* 비용에 대한 자세한 내용은 [Azure IoT Hub 가격 책정](https://azure.microsoft.com/pricing/details/iot-hub/)을 참조 하세요.
 
 | 리소스 | S1 표준 | S2 표준 | S3 표준 | F1 무료 |
 | --- | --- | --- | --- | --- |

@@ -18,7 +18,7 @@ ms.locfileid: "76756439"
 
 HTTP 애플리케이션 라우팅 솔루션을 사용하면 AKS(Azure Kubernetes Service) 클러스터에 배포된 애플리케이션에 쉽게 액세스할 수 있습니다. 솔루션을 사용 하도록 설정 하면 AKS 클러스터에서 [수신 컨트롤러](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/) 를 구성 합니다. 애플리케이션이 배포되면 솔루션에서 애플리케이션 엔드포인트에 대해 공개적으로 액세스할 수 있는 DNS 이름도 만듭니다.
 
-추가 기능이 사용하도록 설정되면 구독에 DNS 영역을 만듭니다. DNS 비용에 대 한 자세한 내용은 [dns 가격 책정][dns-pricing]을 참조 하세요.
+추가 기능이 사용하도록 설정되면 구독에 DNS 영역을 만듭니다. DNS 비용에 대한 자세한 내용은 [dns 가격 책정][dns-pricing]을 참조 하세요.
 
 > [!CAUTION]
 > HTTP 애플리케이션 라우팅 추가 기능은 수신 컨트롤러를 빠르게 만들고 애플리케이션에 액세스할 수 있도록 설계되었습니다. 이 추가 기능은 프로덕션 용도로 사용하지 않는 것이 좋습니다. 여러 복제본 및 TLS 지원을 포함하는 프로덕션 준비 수신 배포에 대해서는 [HTTPS 수신 컨트롤러 만들기](https://docs.microsoft.com/azure/aks/ingress-tls)를 참조하세요.
@@ -27,7 +27,7 @@ HTTP 애플리케이션 라우팅 솔루션을 사용하면 AKS(Azure Kubernetes
 
 추가 기능에서는 [Kubernetes 수신 컨트롤러][ingress] 와 [외부 DNS][external-dns] 컨트롤러의 두 구성 요소를 배포 합니다.
 
-- **수신 컨트롤러**: 수신 컨트롤러가 LoadBalancer 유형의 Kubernetes 서비스를 사용하여 인터넷에 노출됩니다. 수신 컨트롤러는 응용 프로그램 끝점에 대 한 경로를 만드는 [Kubernetes 수신 리소스][ingress-resource]를 감시 하 고 구현 합니다.
+- **수신 컨트롤러**: 수신 컨트롤러가 LoadBalancer 유형의 Kubernetes 서비스를 사용하여 인터넷에 노출됩니다. 수신 컨트롤러는 응용 프로그램 엔드포인트에 대한 경로를 만드는 [Kubernetes 수신 리소스][ingress-resource]를 감시 하 고 구현 합니다.
 - **외부 DNS 컨트롤러**: Kubernetes 수신 리소스를 감시하고 클러스터 특정 DNS 영역에 DNS A 레코드를 만듭니다.
 
 ## <a name="deploy-http-routing-cli"></a>HTTP 라우팅 배포: CLI
@@ -222,7 +222,7 @@ Azure Portal의 DNS 영역 리소스에서 이러한 레코드를 볼 수도 있
 
 ![DNS 레코드 가져오기](media/http-routing/clippy.png)
 
-[Kubectl logs][kubectl-logs] 명령을 사용 하 여 Nginx 수신 컨트롤러에 대 한 응용 프로그램 로그를 확인 합니다. 로그에서 수신 리소스 `CREATE` 및 컨트롤러 다시 로드를 확인합니다. 모든 HTTP 작업이 기록됩니다.
+[Kubectl logs][kubectl-logs] 명령을 사용 하 여 Nginx 수신 컨트롤러에 대한 응용 프로그램 로그를 확인 합니다. 로그에서 수신 리소스 `CREATE` 및 컨트롤러 다시 로드를 확인합니다. 모든 HTTP 작업이 기록됩니다.
 
 ```bash
 $ kubectl logs -f deploy/addon-http-application-routing-nginx-ingress-controller -n kube-system
@@ -275,7 +275,7 @@ ingress "party-clippy" deleted
 
 ## <a name="next-steps"></a>다음 단계
 
-AKS에서 HTTPS 보안 수신 컨트롤러를 설치 하는 방법에 대 한 자세한 내용은 [AKS (Azure Kubernetes Service)에서 Https 수신][ingress-https]을 참조 하세요.
+AKS에서 HTTPS 보안 수신 컨트롤러를 설치 하는 방법에 대한 자세한 내용은 [AKS (Azure Kubernetes Service)에서 Https 수신][ingress-https]을 참조 하세요.
 
 <!-- LINKS - internal -->
 [az-aks-create]: /cli/azure/aks?view=azure-cli-latest#az-aks-create

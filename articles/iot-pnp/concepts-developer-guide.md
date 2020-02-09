@@ -117,9 +117,9 @@ DTDL을 사용 하면 인터페이스를 사용 하 여 장치의 기능을 설�
 
 ### <a name="telemetry"></a>원격 분석
 
-기본적으로 IoT Hub는 장치의 모든 원격 분석 메시지를 [Event Hubs](https://azure.microsoft.com/documentation/services/event-hubs/)와 호환 되는 [기본 제공 서비스 연결 끝점 (**메시지/이벤트**)](../iot-hub/iot-hub-devguide-messages-read-builtin.md) 로 라우팅합니다.
+기본적으로 IoT Hub는 장치의 모든 원격 분석 메시지를 [Event Hubs](https://azure.microsoft.com/documentation/services/event-hubs/)와 호환 되는 [기본 제공 서비스 연결 엔드포인트 (**메시지/이벤트**)](../iot-hub/iot-hub-devguide-messages-read-builtin.md) 로 라우팅합니다.
 
-[IoT Hub의 사용자 지정 끝점 및 라우팅 규칙](../iot-hub/iot-hub-devguide-messages-d2c.md) 을 사용 하 여 blob storage 또는 다른 event hubs와 같은 다른 대상에 원격 분석을 보낼 수 있습니다. 라우팅 규칙은 메시지 속성을 사용 하 여 메시지를 선택 합니다.
+[IoT Hub의 사용자 지정 엔드포인트 및 라우팅 규칙](../iot-hub/iot-hub-devguide-messages-d2c.md) 을 사용 하 여 blob storage 또는 다른 event hubs와 같은 다른 대상에 원격 분석을 보낼 수 있습니다. 라우팅 규칙은 메시지 속성을 사용 하 여 메시지를 선택 합니다.
 
 ### <a name="commands"></a>명령
 

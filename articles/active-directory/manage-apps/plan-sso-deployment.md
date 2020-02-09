@@ -29,7 +29,7 @@ SSO (Single sign-on)는 사용자가 Azure Active Directory (Azure AD)에서 응
 
 대부분의 조직에서는 최종 사용자 생산성을 위해 Office 365, Box, Salesforce 등의 SaaS (software as a service) 응용 프로그램을 사용 합니다. 지금까지 IT 담당자는 각 SaaS 응용 프로그램에서 사용자 계정을 개별적으로 만들고 업데이트 해야 했으며, 사용자는 각 SaaS 응용 프로그램에 대 한 암호를 기억할 필요가 있습니다.
 
-Azure Marketplace에는 미리 통합 된 SSO 연결을 사용 하는 3000 이상의 응용 프로그램이 있으므로 테 넌 트에 쉽게 통합할 수 있습니다.
+Azure Marketplace에는 미리 통합 된 SSO 연결을 사용 하는 3000 이상의 응용 프로그램이 있으므로 테넌트에 쉽게 통합할 수 있습니다.
 
 ## <a name="licensing"></a>라이선스
 
@@ -54,7 +54,7 @@ Azure Marketplace에는 미리 통합 된 SSO 연결을 사용 하는 3000 이�
 ### <a name="considerations-for-federation-based-sso"></a>페더레이션 기반 SSO에 대 한 고려 사항
 
 - **Openid connect Connect 및 Oauth 사용** -연결 중인 응용 프로그램에서 지원 되는 경우 oidc/oauth 2.0 메서드를 사용 하 여 해당 응용 프로그램에 SSO를 사용 하도록 설정 합니다. 이 방법을 사용 하는 경우 더 작은 구성이 필요 하며 더 풍부한 사용자 환경을 지원 합니다. 자세한 내용은 [OAuth 2.0](../develop/v2-oauth2-auth-code-flow.md), [openid connect Connect 1.0](../develop/v2-protocols-oidc.md)및 [Azure Active Directory 개발자 가이드](https://docs.microsoft.com/azure/active-directory/develop/active-directory-developers-guide)를 참조 하세요.
-- **Saml 기반 SSO에 대 한 끝점 구성** -saml을 사용 하는 경우 응용 프로그램을 구성 하기 전에 개발자에 게 특정 정보가 필요 합니다. 자세한 내용은 [기본 SAML 구성 편집](configure-single-sign-on-non-gallery-applications.md)을 참조 하세요.
+- **Saml 기반 SSO에 대 한 엔드포인트 구성** -saml을 사용 하는 경우 응용 프로그램을 구성 하기 전에 개발자에 게 특정 정보가 필요 합니다. 자세한 내용은 [기본 SAML 구성 편집](configure-single-sign-on-non-gallery-applications.md)을 참조 하세요.
 - **SAML 기반 sso에 대 한 인증서 관리** -응용 프로그램에 대해 페더레이션된 sso를 사용 하도록 설정 하면 Azure AD에서는 기본적으로 3 년 동안 유효한 인증서를 만듭니다. 필요한 경우 해당 인증서의 만료 날짜를 사용자 지정할 수 있습니다. 만료 되기 전에 인증서를 갱신 하는 프로세스가 준비 되었는지 확인 합니다. 자세히 알아보려면 [AZURE AD 인증서 관리](https://docs.microsoft.com/azure/active-directory/active-directory-sso-certs)를 참조 하세요.
 
 ### <a name="considerations-for-password-based-sso"></a>암호 기반 SSO에 대 한 고려 사항
@@ -150,7 +150,7 @@ MCAS에 대 한 자세한 내용은 [Microsoft Cloud App Security 개요](https:
 
 ## <a name="azure-sso-technical-requirements"></a>Azure SSO 기술 요구 사항
 
-다음 섹션에서는 필요한 환경, 끝점, 클레임 매핑, 필수 특성, 인증서 및 사용 되는 프로토콜을 포함 하 여 특정 응용 프로그램을 구성 하기 위한 요구 사항에 대해 자세히 설명 합니다. [AZURE AD 포털](https://portal.azure.com/)에서 SSO를 구성 하려면이 정보가 필요 합니다.
+다음 섹션에서는 필요한 환경, 엔드포인트, 클레임 매핑, 필수 특성, 인증서 및 사용 되는 프로토콜을 포함 하 여 특정 응용 프로그램을 구성 하기 위한 요구 사항에 대해 자세히 설명 합니다. [AZURE AD 포털](https://portal.azure.com/)에서 SSO를 구성 하려면이 정보가 필요 합니다.
 
 ### <a name="authentication-mechanism-details"></a>인증 메커니즘 세부 정보
 
@@ -256,7 +256,7 @@ Azure AD와 Single Sign-On를 사용 하 여 구성 되는 응용 프로그램 �
 
 ### <a name="rollback-process"></a>롤백 프로세스
 
-테스트 사례를 기반으로 테스트를 완료 한 후에는 응용 프로그램을 사용 하 여 프로덕션으로 전환할 수 있습니다. 프로덕션으로 이동 하는 것은 프로덕션 테 넌 트에서 계획 및 테스트 된 구성을 구현 하 고 사용자에 게 배포 하는 것을 의미 합니다. 그러나 배포가 계획 대로 진행 되지 않는 경우 수행할 작업을 계획 하는 것이 중요 합니다. 배포 하는 동안 SSO 구성이 실패 하는 경우 중단을 완화 하 고 사용자에 대 한 영향을 줄이는 방법을 이해 해야 합니다.
+테스트 사례를 기반으로 테스트를 완료 한 후에는 응용 프로그램을 사용 하 여 프로덕션으로 전환할 수 있습니다. 프로덕션으로 이동 하는 것은 프로덕션 테넌트에서 계획 및 테스트 된 구성을 구현 하 고 사용자에 게 배포 하는 것을 의미 합니다. 그러나 배포가 계획 대로 진행 되지 않는 경우 수행할 작업을 계획 하는 것이 중요 합니다. 배포 하는 동안 SSO 구성이 실패 하는 경우 중단을 완화 하 고 사용자에 대 한 영향을 줄이는 방법을 이해 해야 합니다.
 
 응용 프로그램 내에서 인증 방법의 가용성에 따라 가장 적합 한 전략이 결정 됩니다. 배포에 문제가 발생 하는 경우 언제 든 지 원래 로그인 구성 상태로 다시 전환 하는 방법에 대 한 자세한 내용은 앱 소유자에 게 문의 하세요.
 

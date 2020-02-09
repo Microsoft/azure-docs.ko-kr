@@ -20,7 +20,7 @@ AKS(Azure Kubernetes Service)는 클러스터를 빠르게 배포하고 관리�
 
 이 기능은 현재 미리 보기로 제공됩니다.
 
-![ASP.NET 샘플 응용 프로그램에 대 한 검색 이미지](media/windows-container/asp-net-sample-app.png)
+![ASP.NET 샘플 응용 프로그램에 대한 검색 이미지](media/windows-container/asp-net-sample-app.png)
 
 이 문서에서는 Kubernetes 개념을 기본적으로 이해 하 고 있다고 가정 합니다. 자세한 내용은 [AKS(Azure Kubernetes Service)의 Kubernetes 핵심 개념][kubernetes-concepts]을 참조하세요.
 
@@ -35,7 +35,7 @@ CLI를 로컬로 설치 하 고 사용 하도록 선택 하는 경우이 문서�
 Windows Server 컨테이너를 실행할 수 있는 클러스터를 만든 후 추가 노드 풀을 추가 해야 합니다. 추가 노드 풀 추가는 이후 단계에서 설명 하지만 먼저 몇 가지 미리 보기 기능을 사용 하도록 설정 해야 합니다.
 
 > [!IMPORTANT]
-> AKS 미리 보기 기능은 셀프 서비스 옵트인입니다. 미리 보기는 "있는 그대로" 및 "사용 가능한 상태로" 제공 되며 서비스 수준 계약 및 제한 된 보증에서 제외 됩니다. AKS 미리 보기는 최상의 노력에 대 한 고객 지원에서 부분적으로 다룹니다. 이러한 기능은 프로덕션 용도로는 사용할 수 없습니다. 추가 정보 다음 지원 문서를 참조 하세요.
+> AKS 미리 보기 기능은 셀프 서비스 옵트인입니다. 미리 보기는 "있는 그대로" 및 "사용 가능한 상태로" 제공 되며 서비스 수준 계약 및 제한 된 보증에서 제외 됩니다. AKS 미리 보기는 최상의 노력에 대한 고객 지원에서 부분적으로 다룹니다. 이러한 기능은 프로덕션 용도로는 사용할 수 없습니다. 추가 정보 다음 지원 문서를 참조 하세요.
 >
 > * [AKS 지원 정책][aks-support-policies]
 > * [Azure 지원 FAQ][aks-faq]
@@ -121,7 +121,7 @@ az group create --name myResourceGroup --location eastus
 
 Windows Server 컨테이너의 노드 풀을 지 원하는 AKS 클러스터를 실행 하려면 클러스터에서 [Azure CNI][azure-cni-about] (고급) 네트워크 플러그 인을 사용 하는 네트워크 정책을 사용 해야 합니다. 필요한 서브넷 범위 및 네트워크 고려 사항을 계획 하는 데 도움이 되는 자세한 내용은 [Azure CNI 네트워킹 구성][use-advanced-networking]을 참조 하세요. [Az aks create][az-aks-create] 명령을 사용 하 여 *myAKSCluster*라는 aks 클러스터를 만듭니다. 이 명령은 필요한 네트워크 리소스 (존재 하지 않는 경우)를 만듭니다.
   * 클러스터는 두 개의 노드로 구성 됩니다.
-  * *Windows-admin-password* 및 *windows-admin* 매개 변수는 클러스터에 생성 된 모든 windows Server 컨테이너에 대 한 관리자 자격 증명을 설정 합니다.
+  * *Windows-admin-password* 및 *windows-admin* 매개 변수는 클러스터에 생성 된 모든 windows Server 컨테이너에 대한 관리자 자격 증명을 설정 합니다.
 
 > [!NOTE]
 > 클러스터가 안정적으로 작동 되도록 하려면 기본 노드 풀에서 2 개 이상의 노드를 실행 해야 합니다.
@@ -197,7 +197,7 @@ aksnpwin987654                      Ready    agent   108s   v1.15.7
 
 ## <a name="run-the-application"></a>애플리케이션 실행
 
-Kubernetes 매니페스트 파일은 어떤 컨테이너 이미지가 실행되는지 등과 같은 클러스터에 대해 원하는 상태를 정의합니다. 이 문서에서는 매니페스트를 사용 하 여 Windows Server 컨테이너에서 ASP.NET 샘플 응용 프로그램을 실행 하는 데 필요한 모든 개체를 만듭니다. 이 매니페스트에는 ASP.NET 샘플 응용 프로그램에 대 한 [Kubernetes 배포][kubernetes-deployment] 와 인터넷에서 응용 프로그램에 액세스 하는 외부 [Kubernetes 서비스가][kubernetes-service] 포함 되어 있습니다.
+Kubernetes 매니페스트 파일은 어떤 컨테이너 이미지가 실행되는지 등과 같은 클러스터에 대해 원하는 상태를 정의합니다. 이 문서에서는 매니페스트를 사용 하 여 Windows Server 컨테이너에서 ASP.NET 샘플 응용 프로그램을 실행 하는 데 필요한 모든 개체를 만듭니다. 이 매니페스트에는 ASP.NET 샘플 응용 프로그램에 대한 [Kubernetes 배포][kubernetes-deployment] 와 인터넷에서 응용 프로그램에 액세스 하는 외부 [Kubernetes 서비스가][kubernetes-service] 포함 되어 있습니다.
 
 ASP.NET 샘플 응용 프로그램은 [.NET Framework 샘플][dotnet-samples] 의 일부로 제공 되며 Windows Server 컨테이너에서 실행 됩니다. AKS windows server *2019* 이상 이미지를 기반으로 하는 windows server 컨테이너를 요구 합니다. Kubernetes 매니페스트 파일은 AKS 클러스터에서 Windows Server 컨테이너를 실행할 수 있는 노드에 ASP.NET 샘플 응용 프로그램의 pod를 실행 하도록 지시 하는 [노드 선택기][node-selector] 도 정의 해야 합니다.
 
@@ -287,7 +287,7 @@ sample  LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m
 
 작동 중인 샘플 앱을 보려면 웹 브라우저에서 서비스의 외부 IP 주소를 엽니다.
 
-![ASP.NET 샘플 응용 프로그램에 대 한 검색 이미지](media/windows-container/asp-net-sample-app.png)
+![ASP.NET 샘플 응용 프로그램에 대한 검색 이미지](media/windows-container/asp-net-sample-app.png)
 
 ## <a name="delete-cluster"></a>클러스터 삭제
 
@@ -302,7 +302,7 @@ az group delete --name myResourceGroup --yes --no-wait
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서에서는 Kubernetes 클러스터를 배포 하 고 Windows Server 컨테이너에 ASP.NET 샘플 응용 프로그램을 배포 했습니다. 방금 만든 클러스터에 대 한 [Kubernetes 웹 대시보드에 액세스][kubernetes-dashboard] 합니다.
+이 문서에서는 Kubernetes 클러스터를 배포 하 고 Windows Server 컨테이너에 ASP.NET 샘플 응용 프로그램을 배포 했습니다. 방금 만든 클러스터에 대한 [Kubernetes 웹 대시보드에 액세스][kubernetes-dashboard] 합니다.
 
 AKS에 대해 자세히 알아보고 배포 예제에 대한 전체 코드를 연습해 보려면 Kubernetes 클러스터 자습서를 계속 진행합니다.
 

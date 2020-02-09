@@ -218,7 +218,7 @@ SQL 데이터 동기화를 사용 하 여 데이터의 백업을 만드는 것�
 
 ### <a name="is-federation-supported-in-sql-data-sync"></a>SQL 데이터 동기화는 페더레이션을 지원하나요?
 
-SQL 데이터 동기화 서비스에서는 Federation Root Database를 제한 없이 사용할 수 있습니다. 현재 버전의 SQL 데이터 동기화에는 페더레이션된 데이터베이스 끝점을 추가할 수 없습니다.
+SQL 데이터 동기화 서비스에서는 Federation Root Database를 제한 없이 사용할 수 있습니다. 현재 버전의 SQL 데이터 동기화에는 페더레이션된 데이터베이스 엔드포인트을 추가할 수 없습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

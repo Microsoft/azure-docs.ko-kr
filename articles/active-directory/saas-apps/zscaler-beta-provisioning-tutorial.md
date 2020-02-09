@@ -36,7 +36,7 @@ ms.locfileid: "77062738"
 이 자습서에서 설명한 시나리오에서는 사용자에게 이미 다음 항목이 있다고 가정합니다.
 
 * Azure AD 테넌트
-* Zscaler Beta 테 넌 트
+* Zscaler Beta 테넌트
 * 관리자 권한이 있는 Zscaler Beta의 사용자 계정
 
 > [!NOTE]
@@ -103,9 +103,9 @@ Azure Active Directory는 "할당"이라는 개념을 사용하여 어떤 사용
 
     ![Zscaler Beta 프로 비전](./media/zscaler-beta-provisioning-tutorial/provisioning-credentials.png)
 
-5. **관리자 자격 증명** 섹션 아래에서 6 단계에서 설명한 대로 Zscaler Beta 계정의 **테 넌 트 URL** 및 **암호 토큰** 을 입력 합니다.
+5. **관리자 자격 증명** 섹션 아래에서 6 단계에서 설명한 대로 Zscaler Beta 계정의 **테넌트 URL** 및 **암호 토큰** 을 입력 합니다.
 
-6. **테 넌 트 URL** 및 **암호 토큰**을 가져오려면 Zscaler Beta 포털 사용자 인터페이스에서 **관리 > 인증 설정** 으로 이동 하 고 **인증 유형**아래에서 **SAML** 을 클릭 합니다.
+6. **테넌트 URL** 및 **암호 토큰**을 가져오려면 Zscaler Beta 포털 사용자 인터페이스에서 **관리 > 인증 설정** 으로 이동 하 고 **인증 유형**아래에서 **SAML** 을 클릭 합니다.
 
     ![Zscaler Beta 프로 비전](./media/zscaler-beta-provisioning-tutorial/secret-token-1.png)
 
@@ -113,7 +113,7 @@ Azure Active Directory는 "할당"이라는 개념을 사용하여 어떤 사용
 
     ![Zscaler Beta 프로 비전](./media/zscaler-beta-provisioning-tutorial/secret-token-2.png)
 
-    **SCIM 기반 프로 비전 사용** 을 선택 하 여 **기본 URL** 및 **전달자 토큰**을 검색 한 다음 설정을 저장 합니다. **테 넌 트 url**에 대 한 **기준 Url** 및 **전달자 토큰** 을 Azure Portal의 **비밀 토큰** 에 복사 합니다.
+    **SCIM 기반 프로 비전 사용** 을 선택 하 여 **기본 URL** 및 **전달자 토큰**을 검색 한 다음 설정을 저장 합니다. **테넌트 url**에 대 한 **기준 Url** 및 **전달자 토큰** 을 Azure Portal의 **비밀 토큰** 에 복사 합니다.
 
 7. 5 단계에 표시 된 필드를 채우면 **연결 테스트** 를 클릭 하 여 Azure AD가 Zscaler Beta에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Zscaler 베타 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
 

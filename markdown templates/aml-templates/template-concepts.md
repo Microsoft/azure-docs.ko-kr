@@ -1,6 +1,6 @@
 ---
 title: 개념와 같은 웹 서비스에서 59 자 이하의 Azure Machine Learning 서비스에서. Azure Machine Learning 이름을 포함 합니다. 테스트 제목 https://moz.com/learn/seo/title-tag
-description: 이 문자열 115에 145 문자에서 문서를 설명합니다. 여기 SEO 유형의 작업 동사를 사용 합니다. 예:-하 고이 수행 하는 방법에 알아봅니다 고객 단어를 사용 합니다. 이 정보는 문서 날짜 스탬프를 사용 하 여 인라인 검색 페이지에 표시 됩니다. 다음 단락에 소개 문서의 의도 설명 하는 경우 여기 길이 대 한 편집이 사용할 수 있습니다.
+description: 이 문자열 115에 145 문자에서 문서를 설명합니다. 여기 SEO 유형의 작업 동사를 사용 합니다. 예:-하 고이 수행 하는 방법에 알아봅니다 고객 단어를 사용 합니다. 이 정보는 문서 날짜 스탬프를 사용 하 여 인라인 검색 페이지에 표시 됩니다. 다음 단락에 소개 문서의 의도 설명 하는 경우 여기 길이 대한 편집이 사용할 수 있습니다.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -23,7 +23,7 @@ ms.locfileid: "60481999"
 **굵게 표시 된이 구를**
 *이 문구는 기울임꼴*
 
-이 [아티클에 대 한 하이퍼링크](template-concepts.md)
+이 [아티클에 대한 하이퍼링크](template-concepts.md)
 
 다음은 이미지입니다.
 
@@ -64,4 +64,4 @@ ms.locfileid: "60481999"
 
 
 ## <a name="next-steps"></a>다음 단계
-Machine learning에 대 한 정보를 참조 하세요. [다른 문서](template-concepts.md)
+Machine learning에 대한 정보를 참조 하세요. [다른 문서](template-concepts.md)

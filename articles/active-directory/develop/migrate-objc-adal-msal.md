@@ -22,9 +22,9 @@ ms.locfileid: "77085184"
 ---
 # <a name="migrate-applications-to-msal-for-ios-and-macos"></a>IOS 및 macOS 용 MSAL으로 응용 프로그램 마이그레이션
 
-Azure Active Directory 인증 라이브러리 ([ADAL 목표-C](https://github.com/AzureAD/azure-activedirectory-library-for-objc))는 v2.0 끝점을 통해 Azure Active Directory 계정으로 작업 하기 위해 만들어졌습니다.
+Azure Active Directory 인증 라이브러리 ([ADAL 목표-C](https://github.com/AzureAD/azure-activedirectory-library-for-objc))는 v2.0 엔드포인트을 통해 Azure Active Directory 계정으로 작업 하기 위해 만들어졌습니다.
 
-IOS 및 MSAL (Microsoft Authentication Library for iOS 및 macOS)은 Microsoft id 플랫폼 (Azure AD) 계정, 개인 Microsoft 계정 및 Azure AD B2C 계정과 Azure Active Directory 같은 모든 Microsoft id를 사용 하 여 Microsoft id 플랫폼 (공식적으로 Azure AD v2.0 끝점).
+IOS 및 MSAL (Microsoft Authentication Library for iOS 및 macOS)은 Microsoft id 플랫폼 (Azure AD) 계정, 개인 Microsoft 계정 및 Azure AD B2C 계정과 Azure Active Directory 같은 모든 Microsoft id를 사용 하 여 Microsoft id 플랫폼 (공식적으로 Azure AD v2.0 엔드포인트).
 
 Microsoft id 플랫폼은 Azure Active Directory v 1.0과 몇 가지 중요 한 차이점이 있습니다. 이 문서에서는 이러한 차이를 강조 하 고 앱을 ADAL에서 MSAL으로 마이그레이션하기 위한 지침을 제공 합니다.
 
@@ -38,11 +38,11 @@ Microsoft id 플랫폼은 Azure Active Directory v 1.0과 몇 가지 중요 한 
 
 ### <a name="standards-compliance"></a>표준 준수
 
-* Microsoft id 플랫폼 끝점은 OAuth 2.0 및 Openid connect Connect 표준을 따릅니다.
+* Microsoft id 플랫폼 엔드포인트은 OAuth 2.0 및 Openid connect Connect 표준을 따릅니다.
 
 ### <a name="incremental-and-dynamic-consent"></a>증분 및 동적 동의
 
-* Azure Active Directory v1.0 끝점을 사용 하려면 응용 프로그램 등록 중에 모든 사용 권한을 미리 선언 해야 합니다. 이는 해당 권한이 정적 임을 의미 합니다.
+* Azure Active Directory v1.0 엔드포인트을 사용 하려면 응용 프로그램 등록 중에 모든 사용 권한을 미리 선언 해야 합니다. 이는 해당 권한이 정적 임을 의미 합니다.
 * Microsoft id 플랫폼을 사용 하면 권한을 동적으로 요청할 수 있습니다. 앱은 필요한 경우에만 권한을 요청 하 고 앱에 필요한 것 보다 더 많은 요청을 요청할 수 있습니다.
 
 Azure Active Directory v 1.0과 Microsoft id 플랫폼 간의 차이점에 대 한 자세한 내용은 [microsoft identity platform (v2.0)로 업데이트 하는 이유](https://docs.microsoft.com/azure/active-directory/develop/azure-ad-endpoint-comparison)를 참조 하세요.
@@ -53,13 +53,13 @@ MSAL 공용 API는 Azure AD v 1.0과 Microsoft id 플랫폼 간의 몇 가지 �
 
 ### <a name="msalpublicclientapplication-instead-of-adauthenticationcontext"></a>ADAuthenticationContext 대신 MSALPublicClientApplication
 
-`ADAuthenticationContext`은 ADAL 앱이 만드는 첫 번째 개체입니다. ADAL의 인스턴스화를 나타냅니다. 앱은 각 Azure Active Directory 클라우드 및 테 넌 트 (기관) 조합에 대해 `ADAuthenticationContext`의 새 인스턴스를 만듭니다. 동일한 `ADAuthenticationContext`를 사용 하 여 여러 공용 클라이언트 응용 프로그램에 대 한 토큰을 가져올 수 있습니다.
+`ADAuthenticationContext`은 ADAL 앱이 만드는 첫 번째 개체입니다. ADAL의 인스턴스화를 나타냅니다. 앱은 각 Azure Active Directory 클라우드 및 테넌트 (기관) 조합에 대해 `ADAuthenticationContext`의 새 인스턴스를 만듭니다. 동일한 `ADAuthenticationContext`를 사용 하 여 여러 공용 클라이언트 응용 프로그램에 대 한 토큰을 가져올 수 있습니다.
 
-MSAL에서 기본 상호 작용은 [OAuth 2.0 공용 클라이언트](https://tools.ietf.org/html/rfc6749#section-2.1)를 통해 모델링 되는 `MSALPublicClientApplication` 개체를 통해 진행 됩니다. 각 인증 기관에 대 한 새 인스턴스를 만들 필요 없이 여러 AAD 클라우드 및 테 넌 트와 상호 작용 하는 데 `MSALPublicClientApplication` 인스턴스 하나를 사용할 수 있습니다. 대부분의 앱에서 하나의 `MSALPublicClientApplication` 인스턴스만 있으면 충분 합니다.
+MSAL에서 기본 상호 작용은 [OAuth 2.0 공용 클라이언트](https://tools.ietf.org/html/rfc6749#section-2.1)를 통해 모델링 되는 `MSALPublicClientApplication` 개체를 통해 진행 됩니다. 각 인증 기관에 대 한 새 인스턴스를 만들 필요 없이 여러 AAD 클라우드 및 테넌트와 상호 작용 하는 데 `MSALPublicClientApplication` 인스턴스 하나를 사용할 수 있습니다. 대부분의 앱에서 하나의 `MSALPublicClientApplication` 인스턴스만 있으면 충분 합니다.
 
 ### <a name="scopes-instead-of-resources"></a>리소스 대신 범위
 
-ADAL에서 앱은 Azure Active Directory v1.0 끝점에서 토큰을 획득 하기 위해 `https://graph.microsoft.com`와 같은 *리소스* 식별자를 제공 해야 했습니다. 리소스는 응용 프로그램 매니페스트에서 파악 하는 다양 한 범위 또는 oAuth2Permissions를 정의할 수 있습니다. 이로 인해 클라이언트 앱은 앱 등록 중에 미리 정의 된 특정 범위의 범위에 대해 해당 리소스의 토큰을 요청할 수 있습니다.
+ADAL에서 앱은 Azure Active Directory v1.0 엔드포인트에서 토큰을 획득 하기 위해 `https://graph.microsoft.com`와 같은 *리소스* 식별자를 제공 해야 했습니다. 리소스는 응용 프로그램 매니페스트에서 파악 하는 다양 한 범위 또는 oAuth2Permissions를 정의할 수 있습니다. 이로 인해 클라이언트 앱은 앱 등록 중에 미리 정의 된 특정 범위의 범위에 대해 해당 리소스의 토큰을 요청할 수 있습니다.
 
 MSAL에서 단일 리소스 식별자 대신 앱은 요청당 범위 집합을 제공 합니다. 범위는 리소스 식별자와 리소스/권한 형식의 사용 권한 이름입니다. 예를 들어 `https://graph.microsoft.com/user.read`
 
@@ -184,7 +184,7 @@ V0.3.0 버전부터 MSAL은 Microsoft Authenticator 앱을 사용 하 여 조정
 
 ### <a name="business-to-business-b2b"></a>B2B (business to business)
 
-ADAL에서는 앱에서 토큰을 요청 하는 각 테 넌 트에 대해 별도의 `ADAuthenticationContext` 인스턴스를 만듭니다. 이는 더 이상 MSAL의 요구 사항이 아닙니다. MSAL에서는 acquireToken 및 acquireTokenSilent 호출에 대해 다른 기관을 지정 하 여 `MSALPublicClientApplication` 단일 인스턴스를 만들고 모든 AAD 클라우드 및 조직에 사용할 수 있습니다.
+ADAL에서는 앱에서 토큰을 요청 하는 각 테넌트에 대해 별도의 `ADAuthenticationContext` 인스턴스를 만듭니다. 이는 더 이상 MSAL의 요구 사항이 아닙니다. MSAL에서는 acquireToken 및 acquireTokenSilent 호출에 대해 다른 기관을 지정 하 여 `MSALPublicClientApplication` 단일 인스턴스를 만들고 모든 AAD 클라우드 및 조직에 사용할 수 있습니다.
 
 ## <a name="sso-in-partnership-with-other-sdks"></a>다른 Sdk와 파트너 관계의 SSO
 

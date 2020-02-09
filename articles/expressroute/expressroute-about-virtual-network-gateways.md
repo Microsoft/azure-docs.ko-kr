@@ -53,7 +53,7 @@ Express 경로 게이트웨이를 만들려면 먼저 게이트웨이 서브넷�
 
 게이트웨이 서브넷을 만드는 경우 서브넷이 포함하는 IP 주소의 수를 지정합니다. 게이트웨이 서브넷의 IP 주소는 게이트웨이 VM 및 게이트웨이 서비스에 할당됩니다. 일부 구성에는 다른 구성보다 더 많은 IP 주소가 필요합니다. 
 
-게이트웨이 서브넷 크기를 계획할 때 만들려는 구성에 대 한 설명서를 참조 하세요. 예를 들어 Express 경로/VPN Gateway 공존 구성에는 대부분의 다른 구성 보다 더 큰 게이트웨이 서브넷이 필요 합니다. 또한 이후 추가 구성이 추가될 가능성에 대비하여 게이트웨이 서브넷에 IP 주소가 충분히 포함되어 있는지 확인하려고 할 수 있습니다. 게이트웨이 서브넷을/29만 큼 작게 만들 수 있지만, 사용 가능한 주소 공간이 있는 경우/27 이상의 게이트웨이 서브넷을 만드는 것이 좋습니다 (/27,/26 등). 이렇게 하면 대부분의 구성이 적용 됩니다.
+게이트웨이 서브넷 크기를 계획할 때 만들려는 구성에 대한 설명서를 참조 하세요. 예를 들어 Express 경로/VPN Gateway 공존 구성에는 대부분의 다른 구성 보다 더 큰 게이트웨이 서브넷이 필요 합니다. 또한 이후 추가 구성이 추가될 가능성에 대비하여 게이트웨이 서브넷에 IP 주소가 충분히 포함되어 있는지 확인하려고 할 수 있습니다. 게이트웨이 서브넷을/29만 큼 작게 만들 수 있지만, 사용 가능한 주소 공간이 있는 경우/27 이상의 게이트웨이 서브넷을 만드는 것이 좋습니다 (/27,/26 등). 이렇게 하면 대부분의 구성이 적용 됩니다.
 
 다음 Resource Manager PowerShell 예제에서는 이름이 GatewaySubnet인 게이트웨이 서브넷을 보여 줍니다. CIDR 표기법이 /27을 지정하는 것을 확인할 수 있으며 이는 이번에 존재하는 대부분의 구성에 대한 충분한 IP 주소를 허용합니다.
 
@@ -81,7 +81,7 @@ Azure Availability Zones에 ExpressRoute 게이트웨이를 배포할 수도 있
 
 Express 경로 가상 네트워크 게이트웨이는 네트워크 경로를 교환 하 고 네트워크 트래픽을 라우팅하는 데 적합 합니다. FastPath는 온-프레미스 네트워크와 가상 네트워크 간의 데이터 경로 성능을 향상 시 키도 록 설계 되었습니다. 사용 하도록 설정 하면 FastPath는 게이트웨이를 우회 하 여 가상 네트워크의 가상 머신으로 네트워크 트래픽을 직접 보냅니다.
 
-제한 사항 및 요구 사항을 포함 하 여 FastPath에 대 한 자세한 내용은 [Fastpath 정보](about-fastpath.md)를 참조 하세요.
+제한 사항 및 요구 사항을 포함 하 여 FastPath에 대한 자세한 내용은 [Fastpath 정보](about-fastpath.md)를 참조 하세요.
 
 ## <a name="resources"></a>REST API 및 PowerShell cmdlet
 가상 네트워크 게이트웨이 구성을 위해 REST API와 PowerShell cmdlet을 사용할 경우 추가 기술 리소스 및 특정 구문 요구 사항에 대해서는 다음 페이지를 참조하세요.
@@ -93,10 +93,10 @@ Express 경로 가상 네트워크 게이트웨이는 네트워크 경로를 교
 
 ## <a name="next-steps"></a>다음 단계
 
-사용 가능한 연결 구성에 대 한 자세한 내용은 [express 경로 개요](expressroute-introduction.md)를 참조 하세요.
+사용 가능한 연결 구성에 대한 자세한 내용은 [express 경로 개요](expressroute-introduction.md)를 참조 하세요.
 
-Express 경로 게이트웨이를 만드는 방법에 대 한 자세한 내용은 [express 경로에 대 한 가상 네트워크 게이트웨이 만들기](expressroute-howto-add-gateway-resource-manager.md)를 참조 하세요.
+Express 경로 게이트웨이를 만드는 방법에 대한 자세한 내용은 [express 경로에 대한 가상 네트워크 게이트웨이 만들기](expressroute-howto-add-gateway-resource-manager.md)를 참조 하세요.
 
-영역 중복 게이트웨이를 구성 하는 방법에 대 한 자세한 내용은 [영역 중복 가상 네트워크 게이트웨이 만들기](../../articles/vpn-gateway/create-zone-redundant-vnet-gateway.md)를 참조 하세요.
+영역 중복 게이트웨이를 구성 하는 방법에 대한 자세한 내용은 [영역 중복 가상 네트워크 게이트웨이 만들기](../../articles/vpn-gateway/create-zone-redundant-vnet-gateway.md)를 참조 하세요.
 
-FastPath에 대 한 자세한 내용은 [FastPath 정보](about-fastpath.md)를 참조 하세요.
+FastPath에 대한 자세한 내용은 [FastPath 정보](about-fastpath.md)를 참조 하세요.

@@ -209,7 +209,7 @@ SDL의 확인 단계에서 [공격 노출 영역 검토를 수행](secure-develo
 
 사용자 지정 코드 대신 플랫폼에서 제공하는 인증 및 권한 부여 메커니즘을 사용합니다. 이는 사용자 지정 인증 코드를 개발 하는 데 오류가 발생할 수 있기 때문입니다. 상업적 코드 (예: Microsoft)는 광범위 하 게 보안을 검토 하는 경우가 많습니다. [Azure AD(Azure Active Directory)](../../active-directory/fundamentals/active-directory-whatis.md)는 ID 및 액세스 관리를 위한 Azure 솔루션입니다. 이러한 Azure AD 도구 및 서비스는 보안 개발에 도움이 됩니다.
 
-- 개발자가 사용자를 안전 하 게 로그인 하는 앱을 빌드하는 데 사용 하는 클라우드 id 서비스는 [AZURE ad id 플랫폼 (개발자 용 AZURE ad)](../../active-directory/develop/about-microsoft-identity-platform.md) 입니다. Azure AD는 다중 테 넌 트 앱을 개발 하려고 하는 단일 테 넌 트, LOB (기간 업무) 앱 및 개발자를 빌드하는 개발자를 지원 합니다. 기본 로그인 외에도, Azure AD를 사용 하 여 빌드된 앱은 Azure AD 플랫폼에서 빌드된 Microsoft Api 및 사용자 지정 Api를 호출할 수 있습니다. Azure AD id 플랫폼은 OAuth 2.0 및 Openid connect Connect와 같은 업계 표준 프로토콜을 지원 합니다.
+- 개발자가 사용자를 안전 하 게 로그인 하는 앱을 빌드하는 데 사용 하는 클라우드 id 서비스는 [AZURE ad id 플랫폼 (개발자 용 AZURE ad)](../../active-directory/develop/about-microsoft-identity-platform.md) 입니다. Azure AD는 다중 테넌트 앱을 개발 하려고 하는 단일 테넌트, LOB (기간 업무) 앱 및 개발자를 빌드하는 개발자를 지원 합니다. 기본 로그인 외에도, Azure AD를 사용 하 여 빌드된 앱은 Azure AD 플랫폼에서 빌드된 Microsoft Api 및 사용자 지정 Api를 호출할 수 있습니다. Azure AD id 플랫폼은 OAuth 2.0 및 Openid connect Connect와 같은 업계 표준 프로토콜을 지원 합니다.
 
 - [Azure Active Directory B2C (Azure AD B2C)](../../active-directory-b2c/index.yml) 는 응용 프로그램을 사용할 때 고객이 자신의 프로필을 등록, 로그인 및 관리 하는 방법을 사용자 지정 하 고 제어 하는 데 사용할 수 있는 id 관리 서비스입니다. 여기에는 iOS, Android 및 .NET 용으로 개발 된 응용 프로그램이 포함 됩니다. Azure AD B2C는 고객 id를 보호 하면서 이러한 작업을 수행할 수 있도록 합니다.
 
@@ -267,7 +267,7 @@ JIT ( *just-in-time* ) 액세스를 구현 하 여 권한 노출 시간을 더 �
 #### <a name="use-encryption"></a>암호화 사용
 
 데이터 보호는 보안 전략의 필수적인 부분입니다.
-데이터가 데이터베이스에 저장 되어 있거나 위치 간에 앞뒤로 이동 하는 경우에는 [미사용 데이터](../fundamentals/encryption-atrest.md) 암호화 (데이터베이스에 있는 경우) 및 [전송 중인 데이터](../fundamentals/data-encryption-best-practices.md#protect-data-in-transit) 암호화 (사용자, 데이터베이스, API 또는 서비스 끝점)를 사용 합니다. 항상 SSL/TLS 프로토콜을 사용 하 여 데이터를 교환 하는 것이 좋습니다. 암호화에 최신 버전의 TLS를 사용 하는지 확인 합니다 (현재는 버전 1.2).
+데이터가 데이터베이스에 저장 되어 있거나 위치 간에 앞뒤로 이동 하는 경우에는 [미사용 데이터](../fundamentals/encryption-atrest.md) 암호화 (데이터베이스에 있는 경우) 및 [전송 중인 데이터](../fundamentals/data-encryption-best-practices.md#protect-data-in-transit) 암호화 (사용자, 데이터베이스, API 또는 서비스 엔드포인트)를 사용 합니다. 항상 SSL/TLS 프로토콜을 사용 하 여 데이터를 교환 하는 것이 좋습니다. 암호화에 최신 버전의 TLS를 사용 하는지 확인 합니다 (현재는 버전 1.2).
 
 #### <a name="avoid-hard-coding"></a>하드 코딩 방지
 

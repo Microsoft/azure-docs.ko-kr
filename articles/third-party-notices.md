@@ -1,6 +1,6 @@
 ---
 title: 법적 고 지 사항
-description: Azure 설명서에 대 한 법적 고 지 사항
+description: Azure 설명서에 대한 법적 고 지 사항
 author: SyntaxC4
 ms.author: cfowler
 ms.service: azure

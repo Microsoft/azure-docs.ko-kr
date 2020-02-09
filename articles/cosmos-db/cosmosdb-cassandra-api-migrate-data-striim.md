@@ -36,7 +36,7 @@ Azure marketplace의 Striim 이미지는 데이터 웨어하우스 및 데이터
 
 1. 그런 다음 Striim 인스턴스의 구성 속성을 입력 합니다. Striim 환경은 가상 컴퓨터에 배포 됩니다. **기본 사항** 창에서 vm **사용자 이름**, **vm 암호** 를 입력 합니다 .이 암호는 vm에 SSH를 사용 하는 데 사용 됩니다. Striim를 배포 하려는 **구독**, **리소스 그룹**및 **위치 세부 정보** 를 선택 합니다. 완료 되 면 **확인**을 선택 합니다.
 
-   ![Striim에 대 한 기본 설정 구성](./media/cosmosdb-sql-api-migrate-data-striim/striim-configure-basic-settings.png)
+   ![Striim에 대한 기본 설정 구성](./media/cosmosdb-sql-api-migrate-data-striim/striim-configure-basic-settings.png)
 
 
 1. **Striim 클러스터 설정** 창에서 Striim 배포 유형과 가상 머신 크기를 선택 합니다.
@@ -45,11 +45,11 @@ Azure marketplace의 Striim 이미지는 데이터 웨어하우스 및 데이터
    | ---| ---| ---|
    |Striim 배포 유형 |독립 실행형 | Striim는 **독립 실행형** 또는 **클러스터** 배포 유형에 서 실행할 수 있습니다. 독립 실행형 모드는 단일 가상 컴퓨터에 Striim 서버를 배포 하 고 데이터 볼륨에 따라 Vm의 크기를 선택할 수 있습니다. 클러스터 모드는 선택한 크기를 가진 둘 이상의 Vm에 Striim 서버를 배포 합니다. 노드가 3 개 이상인 클러스터 환경은 자동 고가용성 및 장애 조치 (failover)를 제공 합니다.</br></br> 이 자습서에서는 독립 실행형 옵션을 선택할 수 있습니다. 기본 "Standard_F4s" 크기 VM을 사용 합니다. | 
    | Striim 클러스터의 이름|    < Striim_cluster_Name >|  Striim 클러스터의 이름입니다.|
-   | Striim 클러스터 암호|   < Striim_cluster_password >|  클러스터에 대 한 암호입니다.|
+   | Striim 클러스터 암호|   < Striim_cluster_password >|  클러스터에 대한 암호입니다.|
 
    양식을 채운 후 **확인** 을 선택 하 여 계속 합니다.
 
-1. **Striim access 설정** 창에서 Striim UI에 로그인 하는 데 사용 하려는 **공용 IP 주소** (기본값 선택), **Striim에 대 한 도메인 이름**, **관리자 암호** 를 구성 합니다. VNET 및 서브넷을 구성 합니다 (기본값 선택). 세부 정보를 입력 한 후 **확인** 을 선택 하 여 계속 합니다.
+1. **Striim access 설정** 창에서 Striim UI에 로그인 하는 데 사용 하려는 **공용 IP 주소** (기본값 선택), **Striim에 대한 도메인 이름**, **관리자 암호** 를 구성 합니다. VNET 및 서브넷을 구성 합니다 (기본값 선택). 세부 정보를 입력 한 후 **확인** 을 선택 하 여 계속 합니다.
 
    ![Striim access 설정](./media/cosmosdb-sql-api-migrate-data-striim/striim-access-settings.png)
 
@@ -65,7 +65,7 @@ Azure marketplace의 Striim 이미지는 데이터 웨어하우스 및 데이터
 
 ## <a name="configure-target-database"></a>대상 데이터베이스 구성
 
-이 섹션에서는 Azure Cosmos DB Cassandra API 계정을 데이터 이동에 대 한 대상으로 구성 합니다.
+이 섹션에서는 Azure Cosmos DB Cassandra API 계정을 데이터 이동에 대한 대상으로 구성 합니다.
 
 1. Azure Portal를 사용 하 여 [Azure Cosmos DB Cassandra API 계정을](create-cassandra-dotnet.md#create-a-database-account) 만듭니다.
 
@@ -139,7 +139,7 @@ Azure marketplace의 Striim 이미지는 데이터 웨어하우스 및 데이터
 
    ![앱을 처음부터 시작](./media/cosmosdb-cassandra-api-migrate-data-striim/start-app-from-scratch.png)
 
-1. 응용 프로그램에 대 한 친숙 한 이름 (예: **oraToCosmosDB** )을 지정 하 고 **저장**을 선택 합니다.
+1. 응용 프로그램에 대한 친숙 한 이름 (예: **oraToCosmosDB** )을 지정 하 고 **저장**을 선택 합니다.
 
    ![새 애플리케이션 만들기](./media/cosmosdb-cassandra-api-migrate-data-striim/create-new-application.png)
 
@@ -147,7 +147,7 @@ Azure marketplace의 Striim 이미지는 데이터 웨어하우스 및 데이터
 
    ![Oracle CDC 원본](./media/cosmosdb-cassandra-api-migrate-data-striim/oracle-cdc-source.png)
 
-1. Oracle 인스턴스의 원본 구성 속성을 입력 합니다. 원본 이름은 Striim 응용 프로그램에 대 한 명명 규칙 일 뿐 이며 **src_onPremOracle**와 같은 이름을 사용할 수 있습니다. 또한 어댑터 유형, 연결 URL, 사용자 이름, 암호, 테이블 이름 등의 기타 세부 정보를 입력 합니다. **저장** 을 선택 하 여 계속 합니다.
+1. Oracle 인스턴스의 원본 구성 속성을 입력 합니다. 원본 이름은 Striim 응용 프로그램에 대한 명명 규칙 일 뿐 이며 **src_onPremOracle**와 같은 이름을 사용할 수 있습니다. 또한 어댑터 유형, 연결 URL, 사용자 이름, 암호, 테이블 이름 등의 기타 세부 정보를 입력 합니다. **저장** 을 선택 하 여 계속 합니다.
 
    ![원본 매개 변수 구성](./media/cosmosdb-cassandra-api-migrate-data-striim/configure-source-parameters.png)
 
@@ -182,7 +182,7 @@ Azure marketplace의 Striim 이미지는 데이터 웨어하우스 및 데이터
 
    ![앱 시작](./media/cosmosdb-cassandra-api-migrate-data-striim/start-the-app.png)
 
-1. Striim는 **CDC (변경 데이터 캡처)** 판독기를 사용 하 여 데이터베이스에 대 한 새 변경 내용만 선택 합니다. 원본 테이블을 통해 흐르는 데이터가 있는 경우 해당 데이터를 볼 수 있습니다. 그러나이는 샘플 테이블 이므로 응용 프로그램에 연결 되지 않은 소스입니다. 샘플 데이터 생성기를 사용 하는 경우 Oracle 데이터베이스에 이벤트 체인을 삽입할 수 있습니다.
+1. Striim는 **CDC (변경 데이터 캡처)** 판독기를 사용 하 여 데이터베이스에 대한 새 변경 내용만 선택 합니다. 원본 테이블을 통해 흐르는 데이터가 있는 경우 해당 데이터를 볼 수 있습니다. 그러나이는 샘플 테이블 이므로 응용 프로그램에 연결 되지 않은 소스입니다. 샘플 데이터 생성기를 사용 하는 경우 Oracle 데이터베이스에 이벤트 체인을 삽입할 수 있습니다.
 
 1. Striim 플랫폼을 통해 흐르는 데이터를 볼 수 있습니다. Striim는 테이블과 연결 된 모든 메타 데이터를 선택 합니다. 데이터를 모니터링 하 고 데이터가 올바른 대상에 있는지 확인 하는 데 도움이 됩니다.
 

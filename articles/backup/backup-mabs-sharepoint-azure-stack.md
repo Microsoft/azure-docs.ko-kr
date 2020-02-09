@@ -59,7 +59,7 @@ MABS를 사용하여 SharePoint를 보호할 수 있으려면, **ConfigureShareP
 
 1. WFE 서버의 명령 프롬프트에서 [MABS 설치 위치] \bin\으로 이동
 2. ConfigureSharePoint -EnableSharePointProtection을 입력합니다.
-3. 팜 관리자 자격 증명을 입력 합니다. 이 계정은 WFE 서버에서 로컬 관리자 그룹의 구성원 이어야 합니다. 팜 관리자가 로컬 관리자가 아닌 경우 WFE 서버에 대 한 다음 권한을 부여 합니다.
+3. 팜 관리자 자격 증명을 입력 합니다. 이 계정은 WFE 서버에서 로컬 관리자 그룹의 구성원 이어야 합니다. 팜 관리자가 로컬 관리자가 아닌 경우 WFE 서버에 대한 다음 권한을 부여 합니다.
    * DPM 폴더(%Program Files%\Microsoft Azure Backup\DPM)에 WSS_Admin_WPG 그룹 전체 제어 권한을 부여합니다.
    * DPM 레지스트리 키 (HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Data Protection Manager)에 WSS_Admin_WPG 그룹 읽기 액세스 권한을 부여 합니다.
 

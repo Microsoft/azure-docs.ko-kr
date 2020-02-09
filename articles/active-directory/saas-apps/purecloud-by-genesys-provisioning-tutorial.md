@@ -39,7 +39,7 @@ ms.locfileid: "77087480"
 
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
-* [Azure AD 테 넌 트](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
+* [Azure AD 테넌트](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
 * 프로 비전을 구성할 수 있는 [권한이](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) 있는 Azure AD의 사용자 계정 (예: 응용 프로그램 관리자, 클라우드 응용 프로그램 관리자, 응용 프로그램 소유자 또는 전역 관리자). 
 * PureCloud [조직](https://help.mypurecloud.com/?p=81984)입니다.
 * Oauth 클라이언트를 만들 수 있는 [권한이](https://help.mypurecloud.com/?p=24360) 있는 사용자입니다.
@@ -90,7 +90,7 @@ Azure AD 프로 비전 서비스를 사용 하면 응용 프로그램에 대 한
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에서 PureCloud by를 입력 하 여 **테 넌 트 Url** 및 **비밀 토큰** 필드에 Oauth 토큰을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 PureCloud에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Genesys 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
+5. **관리자 자격 증명** 섹션 아래에서 PureCloud by를 입력 하 여 **테넌트 Url** 및 **비밀 토큰** 필드에 Oauth 토큰을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 PureCloud에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Genesys 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
 
     ![프로비전](./media/purecloud-by-genesys-provisioning-tutorial/provisioning.png)
 

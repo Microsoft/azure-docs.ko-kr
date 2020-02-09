@@ -165,12 +165,12 @@ Azure Machine Learning 외부에서 학습 한 모델을 사용 하는 방법에
 
 [!INCLUDE [aml-compute-target-deploy](../../includes/aml-compute-target-deploy.md)]
 
-## <a name="single-versus-multi-model-endpoints"></a>단일 및 다중 모델 끝점
-Azure ML은 단일 끝점 뒤에 단일 또는 여러 모델을 배포 하도록 지원 합니다.
+## <a name="single-versus-multi-model-endpoints"></a>단일 및 다중 모델 엔드포인트
+Azure ML은 단일 엔드포인트 뒤에 단일 또는 여러 모델을 배포 하도록 지원 합니다.
 
-다중 모델 끝점은 공유 컨테이너를 사용 하 여 여러 모델을 호스팅합니다. 이를 통해 오버 헤드 비용을 줄이고 사용률을 높이고 모듈을 앙상블로 함께 연결할 수 있습니다. 배포 스크립트에서 지정 하는 모델은 서비스 컨테이너의 디스크에서 탑재 되 고 사용할 수 있습니다 .이 모델은 요청 시 메모리에 로드 하 고 점수 매기기 시간에 요청 되는 특정 모델을 기준으로 점수를 매길 수 있습니다.
+다중 모델 엔드포인트은 공유 컨테이너를 사용 하 여 여러 모델을 호스팅합니다. 이를 통해 오버 헤드 비용을 줄이고 사용률을 높이고 모듈을 앙상블로 함께 연결할 수 있습니다. 배포 스크립트에서 지정 하는 모델은 서비스 컨테이너의 디스크에서 탑재 되 고 사용할 수 있습니다 .이 모델은 요청 시 메모리에 로드 하 고 점수 매기기 시간에 요청 되는 특정 모델을 기준으로 점수를 매길 수 있습니다.
 
-단일 컨테이너 화 된 끝점 뒤에 여러 모델을 사용 하는 방법을 보여 주는 E2E 예제는 [다음 예제](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/deploy-multi-model) 를 참조 하세요.
+단일 컨테이너 화 된 엔드포인트 뒤에 여러 모델을 사용 하는 방법을 보여 주는 E2E 예제는 [다음 예제](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/deploy-multi-model) 를 참조 하세요.
 
 ## <a name="prepare-deployment-artifacts"></a>배포 아티팩트 준비
 
@@ -602,7 +602,7 @@ az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.
 
 ## <a name="consume-web-services"></a>웹 서비스 사용
 
-모든 배포 된 웹 서비스는 REST 끝점을 제공 하므로 모든 프로그래밍 언어로 클라이언트 응용 프로그램을 만들 수 있습니다.
+모든 배포 된 웹 서비스는 REST 엔드포인트을 제공 하므로 모든 프로그래밍 언어로 클라이언트 응용 프로그램을 만들 수 있습니다.
 서비스에 대 한 키 기반 인증을 사용 하도록 설정한 경우 서비스 키를 요청 헤더에 토큰으로 제공 해야 합니다.
 서비스에 대 한 토큰 기반 인증을 사용 하도록 설정한 경우 요청 헤더에서 전달자 토큰으로 JWT (Azure Machine Learning JSON Web Token)를 제공 해야 합니다. 
 

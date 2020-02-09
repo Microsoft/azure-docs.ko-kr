@@ -80,7 +80,7 @@ using System.Threading;
 다음 코드를 추가하여 구독에 대한 Content Moderator 클라이언트를 만듭니다.
 
 > [!IMPORTANT]
-> 끝점 URL 및 구독 키의 값으로 **Azureendpoint** 및 **cmsubscriptionkey** 필드를 업데이트 합니다.
+> 엔드포인트 URL 및 구독 키의 값으로 **Azureendpoint** 및 **cmsubscriptionkey** 필드를 업데이트 합니다.
 
 ```csharp
 /// <summary>

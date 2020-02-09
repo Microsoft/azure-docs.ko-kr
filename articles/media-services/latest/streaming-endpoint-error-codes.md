@@ -1,6 +1,6 @@
 ---
 title: Azure Media Services 패키징 및 원본 오류 | Microsoft Docs
-description: 이 항목에서는 Azure Media Services 스트리밍 끝점 (Orgin) 서비스에서 받을 수 있는 오류를 설명 합니다.
+description: 이 항목에서는 Azure Media Services 스트리밍 엔드포인트 (Orgin) 서비스에서 받을 수 있는 오류를 설명 합니다.
 author: Juliako
 manager: femila
 editor: ''
@@ -20,9 +20,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "65411383"
 ---
-# <a name="streaming-endpoint-origin-errors"></a>스트리밍 끝점 (원점) 오류 
+# <a name="streaming-endpoint-origin-errors"></a>스트리밍 엔드포인트 (원점) 오류 
 
-이 항목에서는 Azure Media Services에서 발생할 수 있는 오류를 설명 [스트리밍 끝점 서비스](streaming-endpoint-concept.md)합니다.
+이 항목에서는 Azure Media Services에서 발생할 수 있는 오류를 설명 [스트리밍 엔드포인트 서비스](streaming-endpoint-concept.md)합니다.
 
 ## <a name="400-bad-request"></a>400 잘못된 요청
 

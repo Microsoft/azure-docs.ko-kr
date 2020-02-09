@@ -1,6 +1,6 @@
 ---
 title: 경고 및 보고서 모니터링 FAQ
-description: 이 문서에서는 Azure Backup 모니터링 경고 및 Azure Backup 보고서에 대 한 일반적인 질문에 대 한 대답을 검색 합니다.
+description: 이 문서에서는 Azure Backup 모니터링 경고 및 Azure Backup 보고서에 대한 일반적인 질문에 대한 대답을 검색 합니다.
 ms.reviewer: srinathv
 ms.topic: conceptual
 ms.date: 07/08/2019
@@ -13,7 +13,7 @@ ms.locfileid: "76989572"
 ---
 # <a name="azure-backup-monitoring-alert---faq"></a>Azure Backup 모니터링 경고-FAQ
 
-이 문서에서는 Azure Backup 모니터링 및 보고에 대 한 일반적인 질문에 답변 합니다.
+이 문서에서는 Azure Backup 모니터링 및 보고에 대한 일반적인 질문에 답변 합니다.
 
 ## <a name="configure-azure-backup-reports"></a>Azure Backup 보고서 구성
 
@@ -21,14 +21,14 @@ ms.locfileid: "76989572"
 
 구성 된 LA 작업 영역으로 이동 하 여 **로그** 메뉴 항목으로 이동 하 고 CoreAzureBackup 쿼리를 실행 합니다. 1을 사용 합니다. 반환 되는 레코드가 표시 되는 경우 데이터가 작업 영역으로 이동 하기 시작 했음을 의미 합니다. 초기 데이터 푸시는 최대 24 시간이 걸릴 수 있습니다.
 
-### <a name="what-is-the-frequency-of-data-push-to-an-la-workspace"></a>LA 작업 영역에 대 한 데이터 푸시의 빈도는 어떻게 되나요?
+### <a name="what-is-the-frequency-of-data-push-to-an-la-workspace"></a>LA 작업 영역에 대한 데이터 푸시의 빈도는 어떻게 되나요?
 
-자격 증명 모음의 진단 데이터는 일정 시간 동안 Log Analytics 작업 영역에 펌프 됩니다. 모든 이벤트는 Recovery Services 자격 증명 모음에서 푸시된 후 20 분에서 30 분 Log Analytics 작업 영역에 도착 합니다. 지연에 대 한 자세한 내용은 다음과 같습니다.
+자격 증명 모음의 진단 데이터는 일정 시간 동안 Log Analytics 작업 영역에 펌프 됩니다. 모든 이벤트는 Recovery Services 자격 증명 모음에서 푸시된 후 20 분에서 30 분 Log Analytics 작업 영역에 도착 합니다. 지연에 대한 자세한 내용은 다음과 같습니다.
 
 * 모든 솔루션에서 백업 서비스의 기본 제공 경고는 생성 되는 즉시 푸시됩니다. 따라서 일반적으로 20 분에서 30 분 후에 Log Analytics 작업 영역에 나타납니다.
 * 모든 솔루션에서 주문형 백업 작업 및 복원 작업은 완료 되는 즉시 푸시됩니다.
 * SQL 백업을 제외한 모든 솔루션에 대해 예약 된 백업 작업은 완료 되는 즉시 푸시됩니다.
-* SQL 백업의 경우 로그 백업이 15 분 마다 발생할 수 있으므로 로그를 포함 하 여 완료 된 모든 예약 된 백업 작업에 대 한 정보는 6 시간 마다 일괄 처리 되 고 푸시됩니다.
+* SQL 백업의 경우 로그 백업이 15 분 마다 발생할 수 있으므로 로그를 포함 하 여 완료 된 모든 예약 된 백업 작업에 대한 정보는 6 시간 마다 일괄 처리 되 고 푸시됩니다.
 * 모든 솔루션에서 백업 항목, 정책, 복구 지점, 저장소 등의 기타 정보는 하루에 한 번 이상 푸시됩니다.
 * 백업 구성 변경 (예: 정책 변경 또는 정책 편집)은 관련 된 모든 백업 정보의 푸시를 트리거합니다.
 
@@ -44,9 +44,9 @@ LA 작업 영역을 만든 후에는 데이터를 최대 2 년 동안 보존 하
 
 예, 자격 증명 모음 및 구독 및 지역에서 보고서를 볼 수 있습니다. 데이터는 단일 LA 작업 영역 또는 LA 작업 영역 그룹에 있을 수 있습니다.
 
-### <a name="can-i-view-reports-across-tenants"></a>테 넌 트 간에 보고서를 볼 수 있나요?
+### <a name="can-i-view-reports-across-tenants"></a>테넌트 간에 보고서를 볼 수 있나요?
 
-고객의 구독 또는 LA 작업 영역에 대 한 위임 된 액세스 권한이 있는 [Azure Lighthouse](https://azure.microsoft.com/services/azure-lighthouse/) 사용자 인 경우 백업 보고서를 사용 하 여 모든 테 넌 트의 데이터를 볼 수 있습니다.
+고객의 구독 또는 LA 작업 영역에 대한 위임 된 액세스 권한이 있는 [Azure Lighthouse](https://azure.microsoft.com/services/azure-lighthouse/) 사용자 인 경우 백업 보고서를 사용 하 여 모든 테넌트의 데이터를 볼 수 있습니다.
 
 ### <a name="how-long-does-it-take-for-the-azure-backup-agent-job-status-to-reflect-in-the-portal"></a>Azure 백업 에이전트 작업 상태가 포털에 반영되려면 얼마나 오래 걸리나요?
 

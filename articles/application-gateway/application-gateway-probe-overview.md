@@ -20,8 +20,8 @@ Azure Application Gateway는 기본적으로 백 엔드 풀의 모든 리소스 
 
 상태 프로브에 사용 되는 원본 IP 주소 Application Gateway 백 엔드 풀에 따라 다릅니다.
  
-- 백 엔드 풀이 공용 끝점 인 경우 원본 주소는 application gateway 프런트 엔드 공용 IP 주소입니다.
-- 백 엔드 풀이 개인 끝점 인 경우 원본 IP 주소는 application gateway 서브넷 개인 IP 주소 공간에서 가져온 것입니다.
+- 백 엔드 풀이 공용 엔드포인트 인 경우 원본 주소는 application gateway 프런트 엔드 공용 IP 주소입니다.
+- 백 엔드 풀이 개인 엔드포인트 인 경우 원본 IP 주소는 application gateway 서브넷 개인 IP 주소 공간에서 가져온 것입니다.
 
 
 ![Application Gateway 프로브 예제][1]
@@ -101,7 +101,7 @@ Application Gateway의 모든 인스턴스는 서로 독립적으로 백 엔드�
 
 ## <a name="nsg-considerations"></a>NSG 고려 사항
 
-Application gateway 서브넷에 NSG (네트워크 보안 그룹)가 있는 경우 인바운드 트래픽에 대 한 응용 프로그램 게이트웨이 서브넷에서 포트 범위 65503-65534를 열어야 합니다. 이러한 포트는 백 엔드 상태 API가 제대로 작동하기 위해 필요합니다.
+Application gateway 서브넷에 NSG (네트워크 보안 그룹)가 있는 경우 인바운드 트래픽에 대한 응용 프로그램 게이트웨이 서브넷에서 포트 범위 65503-65534를 열어야 합니다. 이러한 포트는 백 엔드 상태 API가 제대로 작동하기 위해 필요합니다.
 
 또한 아웃바운드 인터넷 연결은 차단될 수 없으며, AzureLoadBalancer 태그에서 오는 인바운드 트래픽은 허용되어야 합니다.
 

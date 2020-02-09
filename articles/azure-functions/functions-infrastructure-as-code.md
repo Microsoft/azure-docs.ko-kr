@@ -36,7 +36,7 @@ Azure Functions 배포는 일반적으로 다음 리소스로 구성 됩니다.
 <sup>1</sup> 호스팅 계획은 [프리미엄 계획](./functions-premium-plan.md) (미리 보기) 또는 [App Service 계획](../app-service/overview-hosting-plans.md)에서 함수 앱을 실행 하도록 선택한 경우에만 필요 합니다.
 
 > [!TIP]
-> 필수는 아니지만 앱에 대 한 Application Insights를 구성 하는 것이 좋습니다.
+> 필수는 아니지만 앱에 대한 Application Insights를 구성 하는 것이 좋습니다.
 
 <a name="storage"></a>
 ### <a name="storage-account"></a>Storage 계정
@@ -139,7 +139,7 @@ Application Insights 함수 앱 모니터링에 권장 됩니다. Application In
 
 | 설정 이름                 | Description                                                                               | 예제 값                        |
 |------------------------------|-------------------------------------------------------------------------------------------|---------------------------------------|
-| AzureWebJobsStorage          | 함수 런타임에서 내부 큐에 사용 하는 저장소 계정에 대 한 연결 문자열입니다. | [저장소 계정](#storage) 을 참조 하세요.       |
+| AzureWebJobsStorage          | 함수 런타임에서 내부 큐에 사용 하는 저장소 계정에 대한 연결 문자열입니다. | [저장소 계정](#storage) 을 참조 하세요.       |
 | FUNCTIONS_EXTENSION_VERSION  | Azure Functions 런타임의 버전입니다.                                                | `~2`                                  |
 | FUNCTIONS_WORKER_RUNTIME     | 이 앱의 함수에 사용할 언어 스택입니다.                                   | `dotnet`, `node`, `java`, `python` 또는 `powershell` |
 | WEBSITE_NODE_DEFAULT_VERSION | `node` 언어 스택을 사용 하는 경우에만 사용할 버전을 지정 합니다.              | `10.14.1`                             |
@@ -175,7 +175,7 @@ Application Insights 함수 앱 모니터링에 권장 됩니다. Application In
 
 ## <a name="deploy-on-consumption-plan"></a>소비 계획에 배포
 
-소비 계획은 코드가 실행 중일 때 계산 능력을 자동으로 할당 하 고, 로드를 처리 하는 데 필요한 만큼 확장 한 다음 코드가 실행 되지 않을 때 확장 됩니다. 유휴 Vm에 대 한 비용을 지불할 필요가 없으며, 용량을 미리 예약할 필요가 없습니다. 자세한 내용은 [Azure Functions 크기 조정 및 호스팅](functions-scale.md#consumption-plan)을 참조하세요.
+소비 계획은 코드가 실행 중일 때 계산 능력을 자동으로 할당 하 고, 로드를 처리 하는 데 필요한 만큼 확장 한 다음 코드가 실행 되지 않을 때 확장 됩니다. 유휴 Vm에 대한 비용을 지불할 필요가 없으며, 용량을 미리 예약할 필요가 없습니다. 자세한 내용은 [Azure Functions 크기 조정 및 호스팅](functions-scale.md#consumption-plan)을 참조하세요.
 
 샘플 Azure Resource Manager 템플릿은 [소비 계획의 함수 앱]을 참조하세요.
 
@@ -208,7 +208,7 @@ Application Insights 함수 앱 모니터링에 권장 됩니다. Application In
 > [!NOTE]
 > Linux에 대해 소비 계획을 명시적으로 정의할 수 없습니다. 자동으로 생성 됩니다.
 
-소비 계획을 명시적으로 정의 하는 경우 계획의 리소스 ID를 가리키도록 앱의 `serverFarmId` 속성을 설정 해야 합니다. 함수 앱에 계획에 대 한 `dependsOn` 설정도 있는지 확인 해야 합니다.
+소비 계획을 명시적으로 정의 하는 경우 계획의 리소스 ID를 가리키도록 앱의 `serverFarmId` 속성을 설정 해야 합니다. 함수 앱에 계획에 대한 `dependsOn` 설정도 있는지 확인 해야 합니다.
 
 ### <a name="create-a-function-app"></a>함수 앱 만들기
 
@@ -679,7 +679,7 @@ $TemplateParams = @{"appName" = "<function-app-name>"}
 New-AzResourceGroupDeployment -ResourceGroupName "MyResourceGroup" -TemplateFile template.json -TemplateParameterObject $TemplateParams -Verbose
 ```
 
-이 배포를 테스트 하려면 소비 계획의 Windows에서 함수 앱을 만드는 것 [과 같은 템플릿을](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-function-app-create-dynamic/azuredeploy.json) 사용할 수 있습니다. `<function-app-name>` 함수 앱에 대 한 고유한 이름으로 바꿉니다.
+이 배포를 테스트 하려면 소비 계획의 Windows에서 함수 앱을 만드는 것 [과 같은 템플릿을](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-function-app-create-dynamic/azuredeploy.json) 사용할 수 있습니다. `<function-app-name>` 함수 앱에 대한 고유한 이름으로 바꿉니다.
 
 ## <a name="next-steps"></a>다음 단계
 

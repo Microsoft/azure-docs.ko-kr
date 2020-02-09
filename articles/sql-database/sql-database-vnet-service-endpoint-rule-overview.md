@@ -1,5 +1,5 @@
 ---
-title: 단일 및 풀링된 데이터베이스에 대 한 VNet 끝점 및 규칙
+title: 단일 및 풀링된 데이터베이스에 대 한 VNet 엔드포인트 및 규칙
 description: 서브넷을 Virtual Network 서비스 엔드포인트로 표시합니다. 그런 다음 해당 엔드포인트를 가상 네트워크 규칙으로 Azure SQL Database의 ACL에 추가합니다. 그러면 SQL Database가 해당 서브넷에 있는 모든 가상 머신과 다른 노드에서 보낸 통신을 수락합니다.
 services: sql-database
 ms.service: sql-database
@@ -25,7 +25,7 @@ ms.locfileid: "75972709"
 > [!IMPORTANT]
 > 이 문서는 Azure SQL 서버 및 Azure SQL 서버에서 생성된 SQL Database와 SQL Data Warehouse 데이터베이스에 적용됩니다. 간단히 하기 위해 SQL Database는 SQL Database와 SQL Data Warehouse를 참조할 때 사용됩니다. Azure SQL Database의 **관리되는 인스턴스** 배포는 서비스 엔드포인트와 연결되지 않으므로 이 문서는 해당 배포에 적용되지 *않습니다*.
 
-가상 네트워크 규칙을 만들려면 먼저 참조할 규칙의 [가상 네트워크 서비스 끝점][vm-virtual-network-service-endpoints-overview-649d] 이 있어야 합니다.
+가상 네트워크 규칙을 만들려면 먼저 참조할 규칙의 [가상 네트워크 서비스 엔드포인트][vm-virtual-network-service-endpoints-overview-649d] 이 있어야 합니다.
 
 ## <a name="how-to-create-a-virtual-network-rule"></a>가상 네트워크 규칙을 만드는 방법
 
@@ -53,7 +53,7 @@ ms.locfileid: "75972709"
 
 Virtual Network 서비스 엔드포인트 관리에는 보안 역할 분리가 있습니다. 다음과 같은 각 역할의 작업이 필요합니다.
 
-- **네트워크 관리자:** 끝점을 &nbsp; 설정 합니다.
+- **네트워크 관리자:** 엔드포인트을 &nbsp; 설정 합니다.
 - **데이터베이스 관리자:** ACL (액세스 제어 목록)을 업데이트 하 여 지정 된 서브넷을 SQL Database 서버에 추가 &nbsp; 합니다.
 
 *RBAC 대체:*
@@ -181,7 +181,7 @@ Blob 감사는 사용자 고유의 스토리지 계정에 감사 로그를 푸�
 
 단순히 방화벽 규칙을 설정하는 것은 서버 보안에 도움이 되지 않습니다. 보안이 효력을 나타내려면 VNet 서비스 엔드포인트도 켜야 합니다. 서비스 엔드포인트를 켜면 전환을 끈 상태에서 켠 상태로 완료할 때까지 VNet 서브넷에서 가동 중지 시간이 발생합니다. 이는 특히 대규모 VNet의 컨텍스트에 적용됩니다. **IgnoreMissingVNetServiceEndpoint** 플래그를 사용하여 전환 시 가동 중지 시간을 줄이거나 없앨 수 있습니다.
 
-PowerShell을 사용하여 **IgnoreMissingVNetServiceEndpoint** 플래그를 설정할 수 있습니다. 자세한 내용은 [PowerShell을 Virtual Network service 끝점 및 Azure SQL Database 규칙 만들기][sql-db-vnet-service-endpoint-rule-powershell-md-52d]를 참조 하세요.
+PowerShell을 사용하여 **IgnoreMissingVNetServiceEndpoint** 플래그를 설정할 수 있습니다. 자세한 내용은 [PowerShell을 Virtual Network service 엔드포인트 및 Azure SQL Database 규칙 만들기][sql-db-vnet-service-endpoint-rule-powershell-md-52d]를 참조 하세요.
 
 ## <a name="errors-40914-and-40615"></a>오류 40914 및 40615
 
@@ -216,7 +216,7 @@ PowerShell을 사용하여 **IgnoreMissingVNetServiceEndpoint** 플래그를 설
 
 ## <a name="powershell-alternative"></a>PowerShell 대체
 
-또한 스크립트는 PowerShell cmdlet **AzSqlServerVirtualNetworkRule** 또는 [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create)를 사용 하 여 가상 네트워크 규칙을 만들 수 있습니다. 관심이 [있는 경우 PowerShell을 참조 하 여 Azure SQL Database에 대 한 Virtual Network 서비스 끝점 및 규칙을 만듭니다][sql-db-vnet-service-endpoint-rule-powershell-md-52d].
+또한 스크립트는 PowerShell cmdlet **AzSqlServerVirtualNetworkRule** 또는 [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create)를 사용 하 여 가상 네트워크 규칙을 만들 수 있습니다. 관심이 [있는 경우 PowerShell을 참조 하 여 Azure SQL Database에 대 한 Virtual Network 서비스 엔드포인트 및 규칙을 만듭니다][sql-db-vnet-service-endpoint-rule-powershell-md-52d].
 
 ## <a name="rest-api-alternative"></a>REST API 대체
 
@@ -229,7 +229,7 @@ PowerShell을 사용하여 **IgnoreMissingVNetServiceEndpoint** 플래그를 설
 Azure SQL Database에 관련된 특정 Virtual Network 서비스 엔드포인트 *형식 이름*으로 태그가 지정된 서브넷이 있어야 합니다.
 
 - 관련 엔드포인트 형식 이름은 **Microsoft.Sql**입니다.
-- 서브넷에 형식 이름으로 태그를 지정 하지 않을 수 있는 경우 [서브넷이 끝점 인지 확인][sql-db-vnet-service-endpoint-rule-powershell-md-a-verify-subnet-is-endpoint-ps-100]을 참조 하세요.
+- 서브넷에 형식 이름으로 태그를 지정 하지 않을 수 있는 경우 [서브넷이 엔드포인트 인지 확인][sql-db-vnet-service-endpoint-rule-powershell-md-a-verify-subnet-is-endpoint-ps-100]을 참조 하세요.
 
 <a name="a-portal-steps-for-vnet-rule-200" />
 
@@ -273,14 +273,14 @@ Azure SQL Database에 관련된 특정 Virtual Network 서비스 엔드포인트
 
 ## <a name="related-articles"></a>관련 문서
 
-- [Azure 가상 네트워크 서비스 끝점][vm-virtual-network-service-endpoints-overview-649d]
+- [Azure 가상 네트워크 서비스 엔드포인트][vm-virtual-network-service-endpoints-overview-649d]
 - [서버 수준 및 데이터베이스 수준 방화벽 규칙 Azure SQL Database][sql-db-firewall-rules-config-715d]
 
 Azure SQL Database에 대한 가상 네트워크 규칙 기능은 2017년 9월 말에 사용할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-- [PowerShell을 사용 하 여 가상 네트워크 서비스 끝점을 만든 다음 Azure SQL Database에 대 한 가상 네트워크 규칙을 만듭니다.][sql-db-vnet-service-endpoint-rule-powershell-md-52d]
+- [PowerShell을 사용 하 여 가상 네트워크 서비스 엔드포인트을 만든 다음 Azure SQL Database에 대 한 가상 네트워크 규칙을 만듭니다.][sql-db-vnet-service-endpoint-rule-powershell-md-52d]
 - [Virtual Network 규칙:][rest-api-virtual-network-rules-operations-862r] REST api를 사용 하는 작업
 
 <!-- Link references, to images. -->

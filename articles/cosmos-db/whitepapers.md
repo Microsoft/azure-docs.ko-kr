@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB 개념을 설명하는 백서
-description: Azure Cosmos DB에 대 한 백서 목록을 가져옵니다. 이러한 백서에서는 개념에 대해 자세히 설명 합니다.
+description: Azure Cosmos DB에 대한 백서 목록을 가져옵니다. 이러한 백서에서는 개념에 대해 자세히 설명 합니다.
 ms.service: cosmos-db
 author: SnehaGunda
 ms.author: sngun

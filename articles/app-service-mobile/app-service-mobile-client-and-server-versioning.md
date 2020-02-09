@@ -1,6 +1,6 @@
 ---
 title: 클라이언트 및 서버 SDK 버전 관리
-description: Mobile Services 및 Azure Mobile Apps에 대 한 클라이언트 Sdk 및 서버 SDK 버전과의 호환성을 나열 합니다.
+description: Mobile Services 및 Azure Mobile Apps에 대한 클라이언트 Sdk 및 서버 SDK 버전과의 호환성을 나열 합니다.
 ms.assetid: 35b19672-c9d6-49b5-b405-a6dcd1107cd5
 ms.tgt_pltfrm: mobile-multiple
 ms.devlang: dotnet

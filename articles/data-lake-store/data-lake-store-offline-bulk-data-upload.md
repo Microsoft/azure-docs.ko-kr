@@ -13,7 +13,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/08/2019
 ms.locfileid: "73839303"
 ---
-# <a name="use-the-azure-importexport-service-for-offline-copy-of-data-to-data-lake-storage-gen1"></a>데이터의 오프 라인 복사본에 대 한 Azure Import/Export 서비스를 사용 하 여 Data Lake Storage Gen1
+# <a name="use-the-azure-importexport-service-for-offline-copy-of-data-to-data-lake-storage-gen1"></a>데이터의 오프 라인 복사본에 대한 Azure Import/Export 서비스를 사용 하 여 Data Lake Storage Gen1
 
 이 문서에서는 [Azure Import/Export 서비스](../storage/common/storage-import-export-service.md)와 같은 오프 라인 복사 방법을 사용 하 여 대용량 데이터 집합 (> 200gb)을 Data Lake Storage Gen1로 복사 하는 방법에 대해 알아봅니다. 특히 이 문서에서 예제로 사용하는 파일의 크기는 디스크에서 339,420,860,416바이트(약 319GB)입니다. 이 파일을 319GB.tsv라고 하겠습니다.
 

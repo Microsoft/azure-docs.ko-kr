@@ -71,7 +71,7 @@ Azure AD는 `LogoutRequest` 요소에 대한 응답에 `LogoutResponse`를 보�
 Azure AD는 `LogoutResponse` 요소에 `ID`, `Version` 및 `IssueInstant` 값을 설정합니다. 또한 `InResponseTo` 요소를 응답을 도출한 `LogoutRequest`의 `ID` 특성 값으로 설정합니다.
 
 ### <a name="issuer"></a>발급자
-Azure AD는이 값을 `https://login.microsoftonline.com/<TenantIdGUID>/`로 설정 합니다. 여기서 \<TenantIdGUID >은 Azure AD 테 넌 트의 테 넌 트 ID입니다.
+Azure AD는이 값을 `https://login.microsoftonline.com/<TenantIdGUID>/`로 설정 합니다. 여기서 \<TenantIdGUID >은 Azure AD 테넌트의 테넌트 ID입니다.
 
 `Issuer` 요소 값을 평가하려면 애플리케이션 등록 중에 제공한 **앱 ID URI** 값을 사용합니다.
 

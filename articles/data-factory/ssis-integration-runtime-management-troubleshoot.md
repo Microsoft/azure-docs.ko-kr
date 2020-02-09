@@ -1,6 +1,6 @@
 ---
 title: SSIS Integration Runtime 관리 문제 해결
-description: 이 문서에서는 ssis Integration Runtime (SSIS IR)의 관리 문제에 대 한 문제 해결 지침을 제공 합니다.
+description: 이 문서에서는 ssis Integration Runtime (SSIS IR)의 관리 문제에 대한 문제 해결 지침을 제공 합니다.
 services: data-factory
 ms.service: data-factory
 ms.workload: data-services
@@ -20,7 +20,7 @@ ms.locfileid: "74941861"
 ---
 # <a name="troubleshoot-ssis-integration-runtime-management-in-azure-data-factory"></a>Azure Data Factory에서 SSIS Integration Runtime 관리 문제 해결
 
-이 문서에서는 ssis IR이 라고도 하는 Azure IR (SQL Server Integration Services) Integration Runtime의 관리 문제에 대 한 문제 해결 지침을 제공 합니다.
+이 문서에서는 ssis IR이 라고도 하는 Azure IR (SQL Server Integration Services) Integration Runtime의 관리 문제에 대한 문제 해결 지침을 제공 합니다.
 
 ## <a name="overview"></a>개요
 
@@ -159,7 +159,7 @@ SSIS IR을 중지하면 모든 Virtual Network 관련 리소스가 삭제됩니�
 
 ## <a name="static-public-ip-addresses-configuration"></a>고정 공용 IP 주소 구성
 
-Azure-SSIS IR를 Azure Virtual Network에 조인 하는 경우 IR이 특정 IP 주소에 대 한 액세스를 제한 하는 데이터 원본에 액세스할 수 있도록 IR에 대 한 고정 공용 IP 주소를 가져올 수도 있습니다. 자세한 내용은 [Azure-SSIS Integration Runtime을 가상 네트워크에 조인](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network)을 참조하세요.
+Azure-SSIS IR를 Azure Virtual Network에 조인 하는 경우 IR이 특정 IP 주소에 대한 액세스를 제한 하는 데이터 원본에 액세스할 수 있도록 IR에 대한 고정 공용 IP 주소를 가져올 수도 있습니다. 자세한 내용은 [Azure-SSIS Integration Runtime을 가상 네트워크에 조인](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network)을 참조하세요.
 
 위의 가상 네트워크 문제 외에도 고정 공용 IP 주소 관련 문제를 충족할 수 있습니다. 도움이 필요 하면 다음 오류를 확인 하십시오.
 
@@ -169,10 +169,10 @@ Azure-SSIS IR를 Azure Virtual Network에 조인 하는 경우 IR이 특정 IP �
 
 | 오류 메시지 | 솔루션|
 |:--- |:--- |
-| 제공 된 고정 공용 IP 주소는 이미 사용 중입니다. Azure-SSIS Integration Runtime에 사용 되지 않는 두 개의 주소를 제공 하세요. | 사용 되지 않는 고정 공용 IP 주소를 두 개 선택 하거나 지정 된 공용 IP 주소에 대 한 현재 참조를 제거한 후 Azure-SSIS IR를 다시 시작 해야 합니다. |
-| 제공 된 고정 공용 IP 주소에 DNS 이름이 없습니다. Azure-SSIS Integration Runtime에 대 한 DNS 이름으로 두 개를 제공 하십시오. | 아래 그림에 나와 있는 것 처럼 Azure Portal에서 공용 IP 주소의 DNS 이름을 설정할 수 있습니다. 특정 단계는 다음과 같습니다. (1) Azure Portal을 열고이 공용 IP 주소의 리소스 페이지로 이동 합니다. (2) **구성** 섹션을 선택 하 고 DNS 이름을 설정한 다음 **저장** 단추를 클릭 합니다. (3) Azure-SSIS IR을 다시 시작 합니다. |
+| 제공 된 고정 공용 IP 주소는 이미 사용 중입니다. Azure-SSIS Integration Runtime에 사용 되지 않는 두 개의 주소를 제공 하세요. | 사용 되지 않는 고정 공용 IP 주소를 두 개 선택 하거나 지정 된 공용 IP 주소에 대한 현재 참조를 제거한 후 Azure-SSIS IR를 다시 시작 해야 합니다. |
+| 제공 된 고정 공용 IP 주소에 DNS 이름이 없습니다. Azure-SSIS Integration Runtime에 대한 DNS 이름으로 두 개를 제공 하십시오. | 아래 그림에 나와 있는 것 처럼 Azure Portal에서 공용 IP 주소의 DNS 이름을 설정할 수 있습니다. 특정 단계는 다음과 같습니다. (1) Azure Portal을 열고이 공용 IP 주소의 리소스 페이지로 이동 합니다. (2) **구성** 섹션을 선택 하 고 DNS 이름을 설정한 다음 **저장** 단추를 클릭 합니다. (3) Azure-SSIS IR을 다시 시작 합니다. |
 | Azure-SSIS Integration Runtime에 대해 제공 된 VNet 및 고정 공용 IP 주소는 동일한 위치에 있어야 합니다. | Azure 네트워크 요구 사항에 따라 고정 공용 IP 주소와 가상 네트워크는 동일한 위치 및 구독에 있어야 합니다. 두 개의 유효한 고정 공용 IP 주소를 제공 하 고 Azure-SSIS IR를 다시 시작 하세요. |
-| 제공 된 고정 공용 IP 주소는 기본 IP 주소입니다. Azure-SSIS Integration Runtime에 대 한 두 가지 표준 이름을 제공 하세요. | 도움말은 [공용 IP 주소의 sku](https://docs.microsoft.com/azure/virtual-network/virtual-network-ip-addresses-overview-arm#sku) 를 참조 하세요. |
+| 제공 된 고정 공용 IP 주소는 기본 IP 주소입니다. Azure-SSIS Integration Runtime에 대한 두 가지 표준 이름을 제공 하세요. | 도움말은 [공용 IP 주소의 sku](https://docs.microsoft.com/azure/virtual-network/virtual-network-ip-addresses-overview-arm#sku) 를 참조 하세요. |
 
 ![Azure-SSIS IR](media/ssis-integration-runtime-management-troubleshoot/setup-publicipdns-name.png)
 
@@ -186,7 +186,7 @@ Azure-SSIS IR를 중지 하면 공용 IP 주소를 포함 하는 리소스 그�
 
 ### <a name="publicipresourcegrouplockedduringupgrade"></a>PublicIPResourceGroupLockedDuringUpgrade
 
-Azure-SSIS IR은 정기적으로 자동으로 업데이트 됩니다. 업그레이드 하는 동안 새 IR 노드가 만들어지고 이전 노드가 삭제 됩니다. 또한 이전 노드에 대 한 생성 된 네트워크 리소스 (예: 부하 분산 장치 및 네트워크 보안 그룹)가 삭제 되 고 새 네트워크 리소스가 구독에 생성 됩니다. 이 오류는 구독 또는 리소스 그룹 (고정 공용 IP 주소 포함)에 대 한 삭제 잠금으로 인해 이전 노드에 대 한 네트워크 리소스를 삭제 하지 못했음을 의미 합니다. 이전 노드를 정리 하 고 이전 노드에 대 한 고정 공용 IP 주소를 해제할 수 있도록 삭제 잠금을 제거 하십시오. 그렇지 않으면 고정 공용 IP 주소를 해제할 수 없으며 IR을 추가로 업그레이드할 수 없게 됩니다.
+Azure-SSIS IR은 정기적으로 자동으로 업데이트 됩니다. 업그레이드 하는 동안 새 IR 노드가 만들어지고 이전 노드가 삭제 됩니다. 또한 이전 노드에 대한 생성 된 네트워크 리소스 (예: 부하 분산 장치 및 네트워크 보안 그룹)가 삭제 되 고 새 네트워크 리소스가 구독에 생성 됩니다. 이 오류는 구독 또는 리소스 그룹 (고정 공용 IP 주소 포함)에 대한 삭제 잠금으로 인해 이전 노드에 대한 네트워크 리소스를 삭제 하지 못했음을 의미 합니다. 이전 노드를 정리 하 고 이전 노드에 대한 고정 공용 IP 주소를 해제할 수 있도록 삭제 잠금을 제거 하십시오. 그렇지 않으면 고정 공용 IP 주소를 해제할 수 없으며 IR을 추가로 업그레이드할 수 없게 됩니다.
 
 ### <a name="publicipnotusableduringupgrade"></a>PublicIPNotUsableDuringUpgrade
 

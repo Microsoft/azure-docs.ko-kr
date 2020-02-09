@@ -24,7 +24,7 @@ ms.locfileid: "76847395"
 
 ## <a name="create-a-weibo-application"></a>Weibo 애플리케이션 만들기
 
-Azure Active Directory B2C (Azure AD B2C)에서 Weibo 계정을 id 공급자로 사용 하려면 테 넌 트에서 응용 프로그램을 나타내는 응용 프로그램을 만들어야 합니다. Weibo 계정이 아직 없는 경우 [https://weibo.com/signup/signup.php?lang=en-us](https://weibo.com/signup/signup.php?lang=en-us)에서 등록할 수 있습니다.
+Azure Active Directory B2C (Azure AD B2C)에서 Weibo 계정을 id 공급자로 사용 하려면 테넌트에서 응용 프로그램을 나타내는 응용 프로그램을 만들어야 합니다. Weibo 계정이 아직 없는 경우 [https://weibo.com/signup/signup.php?lang=en-us](https://weibo.com/signup/signup.php?lang=en-us)에서 등록할 수 있습니다.
 
 1. Weibo 계정 자격 증명을 사용하여 [Weibo 개발자 포털](https://open.weibo.com/)에 로그인합니다.
 1. 로그인한 후 오른쪽 위 모서리의 표시 이름을 선택합니다.

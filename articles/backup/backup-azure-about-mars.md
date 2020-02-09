@@ -58,7 +58,7 @@ MARS 에이전트는 다음 복원 시나리오를 지원 합니다.
 ### <a name="additional-scenarios"></a>추가 시나리오
 -   **Azure 가상 머신 내에서 특정 파일 및 폴더 백업**: azure vm (가상 머신)을 백업 하는 기본 방법은 vm에서 Azure Backup 확장을 사용 하는 것입니다. 확장은 전체 VM을 백업 합니다. VM 내의 특정 파일 및 폴더를 백업 하려면 Azure Vm에 MARS 에이전트를 설치 하면 됩니다. 자세한 내용은 [아키텍처: 기본 제공 AZURE VM 백업](https://docs.microsoft.com/azure/backup/backup-architecture#architecture-built-in-azure-vm-backup)을 참조 하세요.
 
--   **오프 라인 시드**: Azure에 대 한 데이터의 초기 전체 백업은 일반적으로 많은 양의 데이터를 전송 하 고 더 많은 네트워크 대역폭을 요구 합니다. 후속 백업에서는 델타 또는 증분 분량의 데이터만 전송 합니다. Azure Backup은 초기 백업을 압축합니다. *오프 라인 시드*프로세스를 통해 디스크를 사용 하 여 오프 라인으로 압축 된 초기 백업 데이터를 Azure에 업로드할 수 Azure Backup. 자세한 내용은 [Azure Data Box를 사용 하 여 오프 라인 백업 Azure Backup](offline-backup-azure-data-box.md)를 참조 하세요.
+-   **오프 라인 시드**: Azure에 대한 데이터의 초기 전체 백업은 일반적으로 많은 양의 데이터를 전송 하 고 더 많은 네트워크 대역폭을 요구 합니다. 후속 백업에서는 델타 또는 증분 분량의 데이터만 전송 합니다. Azure Backup은 초기 백업을 압축합니다. *오프 라인 시드*프로세스를 통해 디스크를 사용 하 여 오프 라인으로 압축 된 초기 백업 데이터를 Azure에 업로드할 수 Azure Backup. 자세한 내용은 [Azure Data Box를 사용 하 여 오프 라인 백업 Azure Backup](offline-backup-azure-data-box.md)를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 [MARS 에이전트 지원 매트릭스](https://docs.microsoft.com/azure/backup/backup-support-matrix-mars-agent)

@@ -108,7 +108,7 @@ IoT Edge 허브에 대한 모듈 쌍은 `$edgeHub`라고 하며, 디바이스에
 | -------- | ----------- | -------- |
 | schemaVersion | "1.0"이어야 합니다. | 예 |
 | routes.{routeName} | IoT Edge 허브 경로를 나타내는 문자열입니다. 자세한 내용은 [Declare 경로](module-composition.md#declare-routes)를 참조 하세요. | `routes` 요소는 존재하지만 비어 있을 수 있습니다. |
-| storeAndForwardConfiguration.timeToLiveSecs | IoT Hub 또는 로컬 모듈 인지 여부에 관계 없이 라우팅 끝점에서 연결을 끊을 경우 IoT Edge 허브가 메시지를 유지 하는 시간 (초)입니다. 값은 임의의 양의 정수일 수 있습니다. | 예 |
+| storeAndForwardConfiguration.timeToLiveSecs | IoT Hub 또는 로컬 모듈 인지 여부에 관계 없이 라우팅 엔드포인트에서 연결을 끊을 경우 IoT Edge 허브가 메시지를 유지 하는 시간 (초)입니다. 값은 임의의 양의 정수일 수 있습니다. | 예 |
 
 ## <a name="edgehub-reported-properties"></a>Edge 허브 reported 속성
 

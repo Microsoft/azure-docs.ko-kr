@@ -39,7 +39,7 @@ NER (명명 된 엔터티 인식)는 텍스트에서 다양 한 엔터티를 식
 | 단일 및 일괄 처리 요청을 위한 메서드                          | X      | X      |
 | 여러 범주에서 기본 엔터티 인식              | X      | X      |
 | 인식 된 엔터티의 확장 된 분류                 |        | X      |
-| 엔터티 연결 및 NER 요청을 보내기 위한 별도의 끝점입니다. |        | X      |
+| 엔터티 연결 및 NER 요청을 보내기 위한 별도의 엔드포인트입니다. |        | X      |
 | 모델 버전 관리                                                |        | X      |
 
 자세한 내용은 [언어 지원](../language-support.md#sentiment-analysis-key-phrase-extraction-and-named-entity-recognition) 을 참조 하세요.
@@ -77,9 +77,9 @@ NER (명명 된 엔터티 인식)는 텍스트에서 다양 한 엔터티를 식
 
 \* 입력 및 추출된 엔터티에 따라, 특정 엔터티에 `SubType`이 없을 수 있습니다.  나열 된 모든 지원 되는 엔터티 형식은 영어, 중국어 간체, 프랑스어, 독일어 및 스페인어 언어에 대해서만 사용할 수 있습니다.
 
-### <a name="request-endpoints"></a>요청 끝점
+### <a name="request-endpoints"></a>요청 엔드포인트
 
-명명 된 엔터티 인식 v2는 NER 및 엔터티 연결 요청에 대해 단일 끝점을 사용 합니다.
+명명 된 엔터티 인식 v2는 NER 및 엔터티 연결 요청에 대해 단일 엔드포인트을 사용 합니다.
 
 `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/entities`
 
@@ -94,9 +94,9 @@ NER (명명 된 엔터티 인식)는 텍스트에서 다양 한 엔터티를 식
 
 지원 되는 엔터티 및 언어의 자세한 목록은 [NER v3 지원 되는 엔터티 형식](../named-entity-types.md) 문서를 참조 하세요.
 
-### <a name="request-endpoints"></a>요청 끝점
+### <a name="request-endpoints"></a>요청 엔드포인트
 
-명명 된 엔터티 인식 v3은 NER 및 엔터티 연결 요청에 대해 별도의 끝점을 사용 합니다. 요청에 따라 아래 URL 형식을 사용 합니다.
+명명 된 엔터티 인식 v3은 NER 및 엔터티 연결 요청에 대해 별도의 엔드포인트을 사용 합니다. 요청에 따라 아래 URL 형식을 사용 합니다.
 
 NER
 * 일반 엔터티-`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0-preview.1/entities/recognition/general`
@@ -130,7 +130,7 @@ POST 요청을 만듭니다. 다음 링크에서 [Postman](text-analytics-how-to
 
 [NER (명명 된 엔터티 인식) v2 참조](https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
 
-버전 2는 엔터티 링크 및 NER 요청에 대해 다음 끝점을 사용 합니다. 
+버전 2는 엔터티 링크 및 NER 요청에 대해 다음 엔드포인트을 사용 합니다. 
 
 `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/entities`
 
@@ -138,7 +138,7 @@ POST 요청을 만듭니다. 다음 링크에서 [Postman](text-analytics-how-to
 
 [명명 된 엔터티 인식 v3 참조](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesRecognitionGeneral)
 
-버전 3에서는 NER 및 엔터티 연결 요청에 대 한 별도의 끝점을 사용 합니다. 요청에 따라 아래 URL 형식을 사용 합니다.
+버전 3에서는 NER 및 엔터티 연결 요청에 대 한 별도의 엔드포인트을 사용 합니다. 요청에 따라 아래 URL 형식을 사용 합니다.
 
 NER
 * 일반 엔터티-`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0-preview.1/entities/recognition/general`
@@ -221,7 +221,7 @@ Text Analytics API는 상태를 저장하지 않습니다. 계정에 데이터�
 
 ### <a name="example-v3-responses"></a>V3 응답 예
 
-버전 3은 NER 및 엔터티 링크에 대 한 별도의 끝점을 제공 합니다. 두 작업 모두에 대 한 응답은 아래와 같습니다.
+버전 3은 NER 및 엔터티 링크에 대 한 별도의 엔드포인트을 제공 합니다. 두 작업 모두에 대 한 응답은 아래와 같습니다.
 
 #### <a name="example-ner-response"></a>NER 응답 예제
 
@@ -282,7 +282,7 @@ Text Analytics API는 상태를 저장하지 않습니다. 계정에 데이터�
 
 * 명명 된 엔터티 인식은 두 버전에서 선택한 언어로 사용할 수 있습니다.
 * 요청 본문의 JSON 문서에는 ID, 텍스트 및 언어 코드가 포함됩니다.
-* POST 요청은 개인 설정 된 [액세스 키와](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) 구독에 유효한 끝점을 사용 하 여 하나 이상의 끝점으로 전송 됩니다.
+* POST 요청은 개인 설정 된 [액세스 키와](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) 구독에 유효한 엔드포인트을 사용 하 여 하나 이상의 엔드포인트으로 전송 됩니다.
 * 연결된 엔터티(각 문서 ID에 대한 신뢰도 점수, 오프셋 및 웹 링크 포함)로 구성된 응답 출력은 모든 애플리케이션에서 사용할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계

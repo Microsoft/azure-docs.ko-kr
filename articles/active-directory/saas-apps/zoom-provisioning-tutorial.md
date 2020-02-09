@@ -36,7 +36,7 @@ ms.locfileid: "77062782"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [Zoom 테 넌 트](https://zoom.us/pricing)
+* [Zoom 테넌트](https://zoom.us/pricing)
 * 관리자 권한으로 확대/축소의 사용자 계정
 
 ## <a name="add-zoom-from-the-gallery"></a>갤러리에서 확대/축소 추가
@@ -100,7 +100,7 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에 **테 넌 트 URL**에 `https://api.zoom.us/scim`을 입력 합니다. 확대/축소 계정의 **비밀 토큰** 을 검색 하려면 6 단계에서 설명한 대로 연습을 수행 합니다.
+5. **관리자 자격 증명** 섹션 아래에 **테넌트 URL**에 `https://api.zoom.us/scim`을 입력 합니다. 확대/축소 계정의 **비밀 토큰** 을 검색 하려면 6 단계에서 설명한 대로 연습을 수행 합니다.
 
 6. [확대/축소 관리 콘솔](https://zoom.us/signin)에 로그인 합니다. 왼쪽 탐색 창에서 **개발자를 위한 고급 > 확대/축소** 로 이동 합니다.
 

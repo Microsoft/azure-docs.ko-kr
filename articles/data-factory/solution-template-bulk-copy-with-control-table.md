@@ -34,7 +34,7 @@ Oracle Server, Netezza, Teradata 또는 SQL Server 데이터 웨어하우스의 
 - **복사를 복사** 하면 원본 데이터베이스 저장소의 각 파티션이 대상 저장소로 복사 됩니다.
 
 템플릿은 다음 매개 변수를 정의 합니다.
-- *Control_Table_Name* 은 원본 데이터베이스에 대 한 파티션 목록을 저장 하는 외부 제어 테이블입니다.
+- *Control_Table_Name* 은 원본 데이터베이스에 대한 파티션 목록을 저장 하는 외부 제어 테이블입니다.
 - *Control_Table_Schema_PartitionID* 는 외부 제어 테이블에서 각 파티션 ID를 저장 하는 열 이름 이름입니다. 원본 데이터베이스의 각 파티션에 대해 파티션 ID가 고유한 지 확인 합니다.
 - *Control_Table_Schema_SourceTableName* 은 원본 데이터베이스의 각 테이블 이름을 저장 하는 외부 제어 테이블입니다.
 - *Control_Table_Schema_FilterQuery* 은 원본 데이터베이스의 각 파티션에서 데이터를 가져오기 위해 필터 쿼리를 저장 하는 외부 컨트롤 테이블의 열 이름입니다. 예를 들어 데이터를 연도별로 분할 한 경우 각 행에 저장 된 쿼리는 ' select * from datasource where LastModifytime > = ' ' 2015-01-01 00:00:00 ' ' 및 LastModifytime < = ' ' 2015-12-31 23:59:59.999 까지의 ' ' '와 유사할 수 있습니다.
@@ -46,7 +46,7 @@ Oracle Server, Netezza, Teradata 또는 SQL Server 데이터 웨어하우스의 
 
 ## <a name="how-to-use-this-solution-template"></a>이 솔루션 템플릿을 사용하는 방법
 
-1. 대량 복사를 위해 원본 데이터베이스 파티션 목록을 저장할 SQL Server 또는 Azure SQL Database에 컨트롤 테이블을 만듭니다. 다음 예에서는 원본 데이터베이스에 5 개의 파티션이 있습니다. *Datasource_table*에 대 한 파티션 3 개와 *project_table*에 대 한 두 개의 파티션이 있습니다. *LastModifytime* 열은 원본 데이터베이스에서 테이블 *datasource_table* 의 데이터를 분할 하는 데 사용 됩니다. 첫 번째 파티션을 읽는 데 사용 되는 쿼리는 ' select * from datasource_table where LastModifytime > = ' ' 2015-01-01 00:00:00 ' ' 및 LastModifytime < = ' ' 2015-12-31 23:59:59.999 까지의 ' ' '입니다. 유사한 쿼리를 사용 하 여 다른 파티션에서 데이터를 읽을 수 있습니다.
+1. 대량 복사를 위해 원본 데이터베이스 파티션 목록을 저장할 SQL Server 또는 Azure SQL Database에 컨트롤 테이블을 만듭니다. 다음 예에서는 원본 데이터베이스에 5 개의 파티션이 있습니다. *Datasource_table*에 대한 파티션 3 개와 *project_table*에 대한 두 개의 파티션이 있습니다. *LastModifytime* 열은 원본 데이터베이스에서 테이블 *datasource_table* 의 데이터를 분할 하는 데 사용 됩니다. 첫 번째 파티션을 읽는 데 사용 되는 쿼리는 ' select * from datasource_table where LastModifytime > = ' ' 2015-01-01 00:00:00 ' ' 및 LastModifytime < = ' ' 2015-12-31 23:59:59.999 까지의 ' ' '입니다. 유사한 쿼리를 사용 하 여 다른 파티션에서 데이터를 읽을 수 있습니다.
 
      ```sql
             Create table ControlTableForTemplate
@@ -66,15 +66,15 @@ Oracle Server, Netezza, Teradata 또는 SQL Server 데이터 웨어하우스의 
             (5, 'project_table','select * from project_table where ID >= 1000 and ID < 2000');
     ```
 
-2. **데이터베이스 템플릿에서 대량 복사** 로 이동 합니다. 1 단계에서 만든 외부 컨트롤 테이블에 대 한 **새** 연결을 만듭니다.
+2. **데이터베이스 템플릿에서 대량 복사** 로 이동 합니다. 1 단계에서 만든 외부 컨트롤 테이블에 대한 **새** 연결을 만듭니다.
 
     ![제어 테이블에 대한 새 연결 만들기](media/solution-template-bulk-copy-with-control-table/BulkCopyfromDB_with_ControlTable2.png)
 
-3. 데이터를 복사 하는 원본 데이터베이스에 대 한 **새** 연결을 만듭니다.
+3. 데이터를 복사 하는 원본 데이터베이스에 대한 **새** 연결을 만듭니다.
 
     ![원본 데이터베이스에 대한 새 연결 만들기](media/solution-template-bulk-copy-with-control-table/BulkCopyfromDB_with_ControlTable3.png)
     
-4. 데이터를 복사 하는 대상 데이터 저장소에 대 한 **새** 연결을 만듭니다.
+4. 데이터를 복사 하는 대상 데이터 저장소에 대한 **새** 연결을 만듭니다.
 
     ![대상 저장소에 대한 새 연결 만들기](media/solution-template-bulk-copy-with-control-table/BulkCopyfromDB_with_ControlTable4.png)
 
@@ -92,7 +92,7 @@ Oracle Server, Netezza, Teradata 또는 SQL Server 데이터 웨어하우스의 
 
     ![결과 검토](media/solution-template-bulk-copy-with-control-table/BulkCopyfromDB_with_ControlTable8.png)
 
-9. 필드 "Azure Synapse Analytics (이전의 SQL DW)"를 데이터 대상으로 선택한 경우 Polybase SQL Data Warehouse에서 필요에 따라 스테이징을 위해 Azure Blob 저장소에 대 한 연결을 입력 해야 합니다. 템플릿은 Blob 저장소에 대 한 컨테이너 경로를 자동으로 생성 합니다. 파이프라인이 실행 된 후 컨테이너를 만들었는지 확인 합니다.
+9. 필드 "Azure Synapse Analytics (이전의 SQL DW)"를 데이터 대상으로 선택한 경우 Polybase SQL Data Warehouse에서 필요에 따라 스테이징을 위해 Azure Blob 저장소에 대한 연결을 입력 해야 합니다. 템플릿은 Blob 저장소에 대한 컨테이너 경로를 자동으로 생성 합니다. 파이프라인이 실행 된 후 컨테이너를 만들었는지 확인 합니다.
     
     ![Polybase 설정](media/solution-template-bulk-copy-with-control-table/BulkCopyfromDB_with_ControlTable9.png)
        

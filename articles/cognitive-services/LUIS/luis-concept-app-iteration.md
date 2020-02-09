@@ -28,8 +28,8 @@ LUIS (Language Understanding) 앱은 반복을 통해 가장 효율적으로 학
     * 엔터티
     * 기능
 * 학습, 테스트 및 게시
-    * 활성 학습에 대 한 예측 끝점에서 테스트
-* 끝점 쿼리에서 데이터 수집
+    * 활성 학습에 대 한 예측 엔드포인트에서 테스트
+* 엔드포인트 쿼리에서 데이터 수집
 
 ![제작 주기](./media/luis-concept-app-iteration/iteration.png)
 
@@ -81,13 +81,13 @@ LUIS 앱은 utterance를 **없음** 의도에 할당 하 여 앱 도메인과 �
 
 길이 발언에 대 한 15 ~ 30 개의 다른 예제가 있는 경우, 필수 엔터티가 레이블이 지정 되 면 LUIS 앱을 테스트 하 고 [학습](luis-how-to-train.md) 해야 합니다. 
 
-## <a name="publish-to-a-prediction-endpoint"></a>예측 끝점에 게시
+## <a name="publish-to-a-prediction-endpoint"></a>예측 엔드포인트에 게시
 
-LUIS 앱은 목록 [예측 끝점 영역](luis-reference-regions.md)에서 사용할 수 있도록 게시 해야 합니다.
+LUIS 앱은 목록 [예측 엔드포인트 영역](luis-reference-regions.md)에서 사용할 수 있도록 게시 해야 합니다.
 
 ## <a name="test-your-published-app"></a>게시된 앱 테스트
 
-HTTPS 예측 끝점에서 게시 된 LUIS 앱을 테스트할 수 있습니다. 예측 끝점에서 테스트를 통해 LUIS는 [검토](luis-how-to-review-endpoint-utterances.md)를 위해 신뢰도가 낮은 길이 발언를 선택할 수 있습니다.  
+HTTPS 예측 엔드포인트에서 게시 된 LUIS 앱을 테스트할 수 있습니다. 예측 엔드포인트에서 테스트를 통해 LUIS는 [검토](luis-how-to-review-endpoint-utterances.md)를 위해 신뢰도가 낮은 길이 발언를 선택할 수 있습니다.  
 
 ## <a name="create-a-new-version-for-each-cycle"></a>각 주기에 대해 새 버전 만들기
 
@@ -105,7 +105,7 @@ HTTPS 예측 끝점에서 게시 된 LUIS 앱을 테스트할 수 있습니다. 
 
 스테이지 및/또는 프로덕션 슬롯에 게시할 수 있습니다. 각 슬롯에는 다른 버전 또는 동일한 버전이 있을 수 있습니다. 이 기능은 봇 또는 다른 LUIS 앱 호출에서 사용할 수 있는 프로덕션에 게시 하기 전에 변경 사항을 확인 하는 데 유용 합니다. 
 
-LUIS 앱의 [끝점](luis-glossary.md#endpoint)에서는 학습 된 버전을 자동으로 사용할 수 없습니다. LUIS 앱 끝점에서 사용할 수 있도록 버전을 [게시](luis-how-to-publish-app.md) 하거나 다시 게시 해야 합니다. **스테이징** 및 **프로덕션**에 게시 하 여 끝점에서 사용할 수 있는 두 가지 버전의 앱을 제공할 수 있습니다. 응용 프로그램의 더 많은 버전을 끝점에서 사용할 수 있어야 하는 경우 버전을 내보내고 새 앱으로 다시 가져와야 합니다. 새 앱에는 다른 앱 ID가 포함됩니다.
+LUIS 앱의 [엔드포인트](luis-glossary.md#endpoint)에서는 학습 된 버전을 자동으로 사용할 수 없습니다. LUIS 앱 엔드포인트에서 사용할 수 있도록 버전을 [게시](luis-how-to-publish-app.md) 하거나 다시 게시 해야 합니다. **스테이징** 및 **프로덕션**에 게시 하 여 엔드포인트에서 사용할 수 있는 두 가지 버전의 앱을 제공할 수 있습니다. 응용 프로그램의 더 많은 버전을 엔드포인트에서 사용할 수 있어야 하는 경우 버전을 내보내고 새 앱으로 다시 가져와야 합니다. 새 앱에는 다른 앱 ID가 포함됩니다.
 
 ### <a name="import-and-export-a-version"></a>버전 가져오기 및 내보내기
 
@@ -144,9 +144,9 @@ LUIS는 Azure 리소스 수준 권한을 제공 하 여 앱에 대 한 참가자
 
 [공동 작업자](luis-how-to-collaborate.md)의 기여 작성에 대해 자세히 알아보세요.
 
-## <a name="review-endpoint-utterances-to-begin-the-new-iterative-cycle"></a>끝점 길이 발언을 검토 하 여 새 반복 주기 시작
+## <a name="review-endpoint-utterances-to-begin-the-new-iterative-cycle"></a>엔드포인트 길이 발언을 검토 하 여 새 반복 주기 시작
 
-반복 주기를 완료 하면 프로세스를 반복할 수 있습니다. 낮은 신뢰도로 표시 된 [예측 끝점 길이 발언](luis-how-to-review-endpoint-utterances.md) LUIS을 검토 하는 것으로 시작 합니다. 이러한 길이 발언를 확인 하 여 올바른 예측 의도가 있고 올바른 엔터티를 추출 했습니다. 변경 내용을 검토 하 고 적용 한 후에는 검토 목록이 비어 있어야 합니다.  
+반복 주기를 완료 하면 프로세스를 반복할 수 있습니다. 낮은 신뢰도로 표시 된 [예측 엔드포인트 길이 발언](luis-how-to-review-endpoint-utterances.md) LUIS을 검토 하는 것으로 시작 합니다. 이러한 길이 발언를 확인 하 여 올바른 예측 의도가 있고 올바른 엔터티를 추출 했습니다. 변경 내용을 검토 하 고 적용 한 후에는 검토 목록이 비어 있어야 합니다.  
 
 ## <a name="next-steps"></a>다음 단계
 

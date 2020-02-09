@@ -36,5 +36,5 @@ ms.locfileid: "74383429"
 
     |포털의 리소스 탭|설정|Value|
     |--|--|--|
-    |**개요**|엔드포인트|끝점을 복사 합니다. `https://northeurope.api.cognitive.microsoft.com/text/analytics/v2.0`와 유사 하 게 표시 됩니다.|
+    |**개요**|엔드포인트|엔드포인트을 복사 합니다. `https://northeurope.api.cognitive.microsoft.com/text/analytics/v2.0`와 유사 하 게 표시 됩니다.|
     |**키**|API 키|두 키 중 하나를 복사 합니다. <`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`>를 사용 하 여 공백이 나 대시가 없는 32 자리의 영숫자 문자열입니다.|

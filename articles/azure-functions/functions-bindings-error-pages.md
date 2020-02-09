@@ -1,6 +1,6 @@
 ---
 title: Azure Functions 오류 처리 지침
-description: 특정 바인딩 오류에 대 한 링크를 사용 하 여 Azure Functions 오류를 처리 하는 방법을 알아봅니다.
+description: 특정 바인딩 오류에 대한 링크를 사용 하 여 Azure Functions 오류를 처리 하는 방법을 알아봅니다.
 author: craigshoemaker
 ms.topic: conceptual
 ms.date: 09/11/2019
@@ -16,7 +16,7 @@ ms.locfileid: "74227334"
 
 손실 된 데이터, 누락 된 이벤트 및 응용 프로그램의 상태를 모니터링 하는 것을 방지 하기 위해 Azure Functions 오류를 처리 하는 것이 중요 합니다.
 
-이 문서에서는 바인딩 관련 오류에 대 한 링크와 함께 오류 처리에 대 한 일반적인 전략을 설명 합니다.
+이 문서에서는 바인딩 관련 오류에 대한 링크와 함께 오류 처리에 대한 일반적인 전략을 설명 합니다.
 
 ## <a name="handling-errors"></a>오류 처리
 

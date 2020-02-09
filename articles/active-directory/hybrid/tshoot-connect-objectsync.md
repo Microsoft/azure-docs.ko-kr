@@ -43,7 +43,7 @@ ms.locfileid: "64919114"
 다음 입력 매개 변수가 문제 해결 작업에 필요합니다.
 1.  **개체 고유 이름** - 문제 해결이 필요한 개체의 고유 이름입니다.
 2.  **AD 커넥터 이름** - 위의 개체가 있는 AD 포리스트의 이름입니다.
-3.  Azure AD 테 넌 트 전역 관리자 자격 증명 ![전역 관리자 자격 증명](media/tshoot-connect-objectsync/objsynch1.png)
+3.  Azure AD 테넌트 전역 관리자 자격 증명 ![전역 관리자 자격 증명](media/tshoot-connect-objectsync/objsynch1.png)
 
 ### <a name="understand-the-results-of-the-troubleshooting-task"></a>문제 해결 작업의 결과 이해
 문제 해결 작업에서는 다음 검사를 수행합니다.

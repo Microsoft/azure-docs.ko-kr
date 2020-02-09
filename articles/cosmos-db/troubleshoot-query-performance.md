@@ -17,7 +17,7 @@ ms.locfileid: "76264274"
 ---
 # <a name="troubleshoot-query-issues-when-using-azure-cosmos-db"></a>Azure Cosmos DB를 사용 하는 경우 쿼리 문제 해결
 
-이 문서에서는 Azure Cosmos DB의 쿼리 문제를 해결 하기 위한 일반적인 권장 방법을 안내 합니다. 이 문서에 설명 된 단계는 잠재적 쿼리 문제에 대 한 "모두"로 간주 되지 않지만 여기에는 가장 일반적인 성능 팁이 포함 되어 있습니다. 이 문서는 Azure Cosmos DB의 코어 (SQL) API에서 속도가 느리거나 비용이 많이 드는 쿼리 문제를 해결 하기 위한 시작 위치로 사용 해야 합니다. [진단 로그](cosmosdb-monitor-resource-logs.md) 를 사용 하 여 속도가 느리거나 처리량이 많은 쿼리를 식별할 수도 있습니다.
+이 문서에서는 Azure Cosmos DB의 쿼리 문제를 해결 하기 위한 일반적인 권장 방법을 안내 합니다. 이 문서에 설명 된 단계는 잠재적 쿼리 문제에 대한 "모두"로 간주 되지 않지만 여기에는 가장 일반적인 성능 팁이 포함 되어 있습니다. 이 문서는 Azure Cosmos DB의 코어 (SQL) API에서 속도가 느리거나 비용이 많이 드는 쿼리 문제를 해결 하기 위한 시작 위치로 사용 해야 합니다. [진단 로그](cosmosdb-monitor-resource-logs.md) 를 사용 하 여 속도가 느리거나 처리량이 많은 쿼리를 식별할 수도 있습니다.
 
 쿼리 최적화를 광범위 하 게 분류 하 여 쿼리 최적화의 비용을 줄이고 대기 시간을 줄이는 최적화를 Azure Cosmos DB 수 있습니다. 쿼리의 작업량을 줄여 대기 시간을 거의 줄일 수 있습니다.
 
@@ -25,7 +25,7 @@ ms.locfileid: "76264274"
 
 ### <a name="obtaining-query-metrics"></a>쿼리 메트릭 가져오기:
 
-Azure Cosmos DB에서 쿼리를 최적화 하는 경우 첫 번째 단계는 항상 쿼리에 대 한 [쿼리 메트릭을 가져오는](profile-sql-api-query.md) 것입니다. 이러한 항목은 아래와 같이 Azure Portal를 통해서도 사용할 수 있습니다.
+Azure Cosmos DB에서 쿼리를 최적화 하는 경우 첫 번째 단계는 항상 쿼리에 대한 [쿼리 메트릭을 가져오는](profile-sql-api-query.md) 것입니다. 이러한 항목은 아래와 같이 Azure Portal를 통해서도 사용할 수 있습니다.
 
 [쿼리 메트릭을 가져오는 ![](./media/troubleshoot-query-performance/obtain-query-metrics.png)](./media/troubleshoot-query-performance/obtain-query-metrics.png#lightbox)
 
@@ -33,7 +33,7 @@ Azure Cosmos DB에서 쿼리를 최적화 하는 경우 첫 번째 단계는 항
 
 검색 된 문서 수는 쿼리를 로드 하는 데 필요한 문서 수입니다. 출력 문서 수는 쿼리 결과에 필요한 문서 수입니다. 검색 된 문서 수가 출력 문서 수보다 크게 높으면 인덱스를 사용할 수 없고 검색을 수행 하는 데 필요한 쿼리의 일부가 하나 이상 있습니다.
 
-아래 섹션을 참조 하 여 시나리오에 대 한 관련 쿼리 최적화를 이해할 수 있습니다.
+아래 섹션을 참조 하 여 시나리오에 대한 관련 쿼리 최적화를 이해할 수 있습니다.
 
 ### <a name="querys-ru-charge-is-too-high"></a>쿼리의 과도 한 요금이 너무 높음
 
@@ -53,7 +53,7 @@ Azure Cosmos DB에서 쿼리를 최적화 하는 경우 첫 번째 단계는 항
 
 - [파티션 간 쿼리 방지](#avoid-cross-partition-queries)
 
-- [여러 속성에 대 한 필터](#filters-on-multiple-properties)
+- [여러 속성에 대한 필터](#filters-on-multiple-properties)
 
 - [필터 및 ORDER BY 절을 모두 사용 하 여 쿼리](#queries-with-both-a-filter-and-an-order-by-clause)
 
@@ -115,7 +115,7 @@ Client Side Metrics
 
 인덱싱 정책은 `WHERE` 절, `ORDER BY` 절, `JOIN`및 대부분의 시스템 함수에 포함 된 모든 속성을 포함 해야 합니다. 인덱스 정책에 지정 된 경로는 JSON 문서의 속성과 일치 해야 합니다 (대/소문자 구분).
 
-[영양](https://github.com/CosmosDB/labs/blob/master/dotnet/setup/NutritionData.json) 데이터 집합에 대 한 간단한 쿼리를 실행 하는 경우에는 `WHERE` 절의 속성이 인덱싱되는 경우 매우 낮은 요금이 발생 합니다.
+[영양](https://github.com/CosmosDB/labs/blob/master/dotnet/setup/NutritionData.json) 데이터 집합에 대한 간단한 쿼리를 실행 하는 경우에는 `WHERE` 절의 속성이 인덱싱되는 경우 매우 낮은 요금이 발생 합니다.
 
 ### <a name="original"></a>Original
 
@@ -179,7 +179,7 @@ SELECT * FROM c WHERE c.description = "Malabar spinach, cooked"
 
 인덱스를 사용 하지 않고 각 문서를 로드 해야 하는 일반적인 시스템 함수는 다음과 같습니다.
 
-| **시스템 함수**                     | **최적화에 대 한 아이디어**             |
+| **시스템 함수**                     | **최적화에 대한 아이디어**             |
 | --------------------------------------- |------------------------------------------------------------ |
 | CONTAINS                                | 전체 텍스트 검색에 Azure Search 사용                        |
 | 위쪽/아래쪽                             | 비교할 때마다 시스템 함수를 사용 하 여 데이터를 정규화 하는 대신 삽입 시 대/소문자를 정규화 합니다. 그러면 ```SELECT * FROM c WHERE UPPER(c.name) = 'BOB'```와 같은 쿼리가 ```SELECT * FROM c WHERE c.name = 'BOB'``` 됩니다. |
@@ -276,7 +276,7 @@ AND n.nutritionValue < 10) AND s.amount > 1
 
 **작업 요금:** 167.62 r u s
 
-이 쿼리의 경우 인덱스는 "infant formula" 라는 이름의 태그가 있는 모든 문서와 일치 하 고, 0 보다 크고 nutritionValue 1 보다 큰 값을 제공 합니다. 여기에서 `JOIN` 식은 필터를 적용 하기 전에 일치 하는 각 문서에 대 한 태그, nutrients 및 배열 항목의 모든 항목에 대 한 교차곱을 수행 합니다. 그런 다음 `WHERE` 절은 각 `<c, t, n, s>` 튜플에 필터 조건자를 적용 합니다.
+이 쿼리의 경우 인덱스는 "infant formula" 라는 이름의 태그가 있는 모든 문서와 일치 하 고, 0 보다 크고 nutritionValue 1 보다 큰 값을 제공 합니다. 여기에서 `JOIN` 식은 필터를 적용 하기 전에 일치 하는 각 문서에 대한 태그, nutrients 및 배열 항목의 모든 항목에 대한 교차곱을 수행 합니다. 그런 다음 `WHERE` 절은 각 `<c, t, n, s>` 튜플에 필터 조건자를 적용 합니다.
 
 예를 들어, 일치 하는 문서에 각각 3 개의 배열에 10 개의 항목이 있는 경우 1 x 10 x 10 x 10 (즉, 1000) 튜플로 확장 됩니다. 여기서 하위 쿼리를 사용 하면 다음 식으로 조인 하기 전에 조인 된 배열 항목을 필터링 하는 데 도움이 될 수 있습니다.
 
@@ -318,7 +318,7 @@ SELECT * FROM c
 WHERE c.foodGroup IN(“Soups, Sauces, and Gravies”, “"Vegetables and Vegetable Products”) and  c.description = "Mushroom, oyster, raw"
 ```
 
-파티션 키에 대해 범위 필터를 포함 하거나 파티션 키에 필터가 없는 쿼리는 "팬 아웃" 하 고 결과에 대 한 모든 물리적 파티션의 인덱스를 확인 해야 합니다.
+파티션 키에 대해 범위 필터를 포함 하거나 파티션 키에 필터가 없는 쿼리는 "팬 아웃" 하 고 결과에 대한 모든 물리적 파티션의 인덱스를 확인 해야 합니다.
 
 ```sql
 SELECT * FROM c
@@ -330,9 +330,9 @@ SELECT * FROM c
 WHERE c.foodGroup > “Soups, Sauces, and Gravies” and c.description = "Mushroom, oyster, raw"
 ```
 
-## <a name="filters-on-multiple-properties"></a>여러 속성에 대 한 필터
+## <a name="filters-on-multiple-properties"></a>여러 속성에 대한 필터
 
-여러 속성에 대 한 필터를 포함 하는 쿼리는 일반적으로 범위 인덱스를 사용 하지만 복합 인덱스에서 제공 될 수 있는 경우에는 더 효율적입니다. 적은 양의 데이터에 대해 이러한 최적화는 상당한 영향을 주지 않습니다. 그러나 많은 양의 데이터에 대해 유용 하 게 사용할 수 있습니다. 복합 인덱스 당 최대 하나의 일치 하지 않는 필터만 최적화할 수 있습니다. 쿼리에 일치 하지 않는 필터가 여러 개 있는 경우 복합 인덱스를 사용할 하나를 선택 해야 합니다. 나머지는 범위 인덱스를 계속 활용 합니다. 같지 않음 필터는 복합 인덱스에서 마지막으로 정의 되어야 합니다. [복합 인덱스에 대해 자세히 알아보기](index-policy.md#composite-indexes)
+여러 속성에 대한 필터를 포함 하는 쿼리는 일반적으로 범위 인덱스를 사용 하지만 복합 인덱스에서 제공 될 수 있는 경우에는 더 효율적입니다. 적은 양의 데이터에 대해 이러한 최적화는 상당한 영향을 주지 않습니다. 그러나 많은 양의 데이터에 대해 유용 하 게 사용할 수 있습니다. 복합 인덱스 당 최대 하나의 일치 하지 않는 필터만 최적화할 수 있습니다. 쿼리에 일치 하지 않는 필터가 여러 개 있는 경우 복합 인덱스를 사용할 하나를 선택 해야 합니다. 나머지는 범위 인덱스를 계속 활용 합니다. 같지 않음 필터는 복합 인덱스에서 마지막으로 정의 되어야 합니다. [복합 인덱스에 대해 자세히 알아보기](index-policy.md#composite-indexes)
 
 다음은 복합 인덱스를 사용 하 여 최적화할 수 있는 쿼리의 몇 가지 예입니다.
 
@@ -387,7 +387,7 @@ Azure Cosmos DB에서 프로 비전 된 처리량은 (요청 단위)로 측정 �
 
 ## <a name="increase-maxconcurrency"></a>MaxConcurrency 늘리기
 
-병렬 쿼리는 여러 파티션을 병렬로 쿼리하여 작동 합니다. 그러나 개별 분할된 컬렉션의 데이터는 쿼리와 관련하여 순차적으로 가져오기 됩니다. 따라서 파티션 수에 대 한 MaxConcurrency를 조정 하는 것은 다른 모든 시스템 조건을 동일 하 게 유지 하는 경우 가장 성능이 뛰어난 쿼리를 달성할 수 있는 최대 기회를 제공 합니다. 파티션 수를 모르는 경우 MaxConcurrency (또는 이전 sdk 버전의 MaxDegreesOfParallelism)를 높은 숫자로 설정 하면 시스템에서 최소 (파티션 수, 사용자가 제공한 입력)를 최대 병렬 처리 수준으로 선택할 수 있습니다.
+병렬 쿼리는 여러 파티션을 병렬로 쿼리하여 작동 합니다. 그러나 개별 분할된 컬렉션의 데이터는 쿼리와 관련하여 순차적으로 가져오기 됩니다. 따라서 파티션 수에 대한 MaxConcurrency를 조정 하는 것은 다른 모든 시스템 조건을 동일 하 게 유지 하는 경우 가장 성능이 뛰어난 쿼리를 달성할 수 있는 최대 기회를 제공 합니다. 파티션 수를 모르는 경우 MaxConcurrency (또는 이전 sdk 버전의 MaxDegreesOfParallelism)를 높은 숫자로 설정 하면 시스템에서 최소 (파티션 수, 사용자가 제공한 입력)를 최대 병렬 처리 수준으로 선택할 수 있습니다.
 
 ## <a name="increase-maxbuffereditemcount"></a>MaxBufferedItemCount 증가
 

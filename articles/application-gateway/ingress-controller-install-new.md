@@ -1,6 +1,6 @@
 ---
 title: 새 Application Gateway를 사용 하 여 수신 컨트롤러 만들기
-description: 이 문서에서는 새 Application Gateway를 사용 하 여 Application Gateway 수신 컨트롤러를 배포 하는 방법에 대 한 정보를 제공 합니다.
+description: 이 문서에서는 새 Application Gateway를 사용 하 여 Application Gateway 수신 컨트롤러를 배포 하는 방법에 대한 정보를 제공 합니다.
 services: application-gateway
 author: caya
 ms.service: application-gateway
@@ -40,7 +40,7 @@ ms.locfileid: "73795939"
 
 다음 단계를 수행 하 여 AAD (Azure Active Directory) [서비스 주체 개체](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)를 만듭니다. `appId`, `password`및 `objectId` 값을 기록 하세요 .이 값은 다음 단계에서 사용 됩니다.
 
-1. AD 서비스 주체 만들기 ([RBAC에 대 한 자세한 정보](https://docs.microsoft.com/azure/role-based-access-control/overview)):
+1. AD 서비스 주체 만들기 ([RBAC에 대한 자세한 정보](https://docs.microsoft.com/azure/role-based-access-control/overview)):
     ```bash
     az ad sp create-for-rbac --skip-assignment -o json > auth.json
     appId=$(jq -r ".appId" auth.json)
@@ -109,9 +109,9 @@ ms.locfileid: "73795939"
 이전 섹션의 지침을 사용 하 여 새 AKS 클러스터 및 Application Gateway을 만들고 구성 했습니다. 이제 샘플 앱 및 수신 컨트롤러를 새로운 Kubernetes 인프라에 배포할 준비가 되었습니다.
 
 ### <a name="setup-kubernetes-credentials"></a>Kubernetes 자격 증명 설정
-다음 단계에서는 새 Kubernetes 클러스터에 연결 하는 데 사용할 수 있는 setup [kubectl](https://kubectl.docs.kubernetes.io/) 명령이 필요 합니다. [Cloud Shell](https://shell.azure.com/) `kubectl` 이미 설치 되어 있습니다. `az` CLI를 사용 하 여 Kubernetes에 대 한 자격 증명을 가져옵니다.
+다음 단계에서는 새 Kubernetes 클러스터에 연결 하는 데 사용할 수 있는 setup [kubectl](https://kubectl.docs.kubernetes.io/) 명령이 필요 합니다. [Cloud Shell](https://shell.azure.com/) `kubectl` 이미 설치 되어 있습니다. `az` CLI를 사용 하 여 Kubernetes에 대한 자격 증명을 가져옵니다.
 
-새로 배포 된 AKS에 대 한 자격 증명을 가져옵니다 ([자세히 읽기](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough#connect-to-the-cluster)).
+새로 배포 된 AKS에 대한 자격 증명을 가져옵니다 ([자세히 읽기](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough#connect-to-the-cluster)).
 ```bash
 # use the deployment-outputs.json created after deployment to get the cluster name and resource group name
 aksClusterName=$(jq -r ".aksClusterName.value" deployment-outputs.json)
@@ -121,7 +121,7 @@ az aks get-credentials --resource-group $resourceGroupName --name $aksClusterNam
 ```
 
 ### <a name="install-aad-pod-identity"></a>AAD Pod Id 설치
-  Azure Active Directory Pod Id는 [ARM (Azure Resource Manager)](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)에 대 한 토큰 기반 액세스를 제공 합니다.
+  Azure Active Directory Pod Id는 [ARM (Azure Resource Manager)](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)에 대한 토큰 기반 액세스를 제공 합니다.
 
   [AAD Pod id](https://github.com/Azure/aad-pod-identity) 는 다음 구성 요소를 Kubernetes 클러스터에 추가 합니다.
    * Kubernetes [Crds](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/): `AzureIdentity`, `AzureAssignedIdentity`, `AzureIdentityBinding`
@@ -250,7 +250,7 @@ AAD Pod Id를 클러스터에 설치 하려면 다음을 수행 합니다.
     ```
 
    값
-     - `verbosityLevel`: AGIC 로깅 인프라의 자세한 정도 수준을 설정 합니다. 가능한 값에 대 한 [로깅 수준](https://github.com/Azure/application-gateway-kubernetes-ingress/blob/463a87213bbc3106af6fce0f4023477216d2ad78/docs/troubleshooting.md#logging-levels) 을 참조 하세요.
+     - `verbosityLevel`: AGIC 로깅 인프라의 자세한 정도 수준을 설정 합니다. 가능한 값에 대한 [로깅 수준](https://github.com/Azure/application-gateway-kubernetes-ingress/blob/463a87213bbc3106af6fce0f4023477216d2ad78/docs/troubleshooting.md#logging-levels) 을 참조 하세요.
      - `appgw.subscriptionId`: Application Gateway 있는 Azure 구독 ID입니다. 예: `a123b234-a3b4-557d-b2df-a0bc12de1234`
      - `appgw.resourceGroup`: Application Gateway를 만든 Azure 리소스 그룹의 이름입니다. 예: `app-gw-resource-group`
      - `appgw.name`: Application Gateway 이름입니다. 예: `applicationgatewayd0f0`
@@ -258,7 +258,7 @@ AAD Pod Id를 클러스터에 설치 하려면 다음을 수행 합니다.
      - `kubernetes.watchNamespace`: AGIC에서 감시 해야 하는 이름 공간을 지정 합니다. 단일 문자열 값 또는 쉼표로 구분 된 네임 스페이스 목록 일 수 있습니다.
     - `armAuth.type`: `aadPodIdentity` 하거나 `servicePrincipal` 수 있습니다.
     - `armAuth.identityResourceID`: Azure 관리 Id의 리소스 ID
-    - `armAuth.identityClientId`: Id의 클라이언트 ID입니다. Id에 대 한 자세한 내용은 아래를 참조 하세요.
+    - `armAuth.identityClientId`: Id의 클라이언트 ID입니다. Id에 대한 자세한 내용은 아래를 참조 하세요.
     - `armAuth.secretJSON`: 서비스 주체 암호 유형을 선택 하는 경우에만 필요 합니다 (`armAuth.type`를 `servicePrincipal`로 설정한 경우). 
 
 
@@ -267,7 +267,7 @@ AAD Pod Id를 클러스터에 설치 하려면 다음을 수행 합니다.
    > ```bash
    > az identity show -g <resource-group> -n <identity-name>
    > ```
-   > 위의 명령에 `<resource-group>`은 Application Gateway의 리소스 그룹입니다. `<identity-name>`은 생성 된 id의 이름입니다. 다음을 사용 하 여 지정 된 구독에 대 한 모든 id를 나열할 수 있습니다 `az identity list`
+   > 위의 명령에 `<resource-group>`은 Application Gateway의 리소스 그룹입니다. `<identity-name>`은 생성 된 id의 이름입니다. 다음을 사용 하 여 지정 된 구독에 대한 모든 id를 나열할 수 있습니다 `az identity list`
 
 
 1. Application Gateway 수신 컨트롤러 패키지를 설치 합니다.
@@ -344,4 +344,4 @@ kubectl apply -f aspnetapp.yaml
 
 
 ## <a name="other-examples"></a>기타 예
-이 [방법 가이드](ingress-controller-expose-service-over-http-https.md) 에는 HTTP 또는 HTTPS를 통해 AKS 서비스를 Application Gateway 인터넷에 공개 하는 방법에 대 한 더 많은 예제가 포함 되어 있습니다.
+이 [방법 가이드](ingress-controller-expose-service-over-http-https.md) 에는 HTTP 또는 HTTPS를 통해 AKS 서비스를 Application Gateway 인터넷에 공개 하는 방법에 대한 더 많은 예제가 포함 되어 있습니다.

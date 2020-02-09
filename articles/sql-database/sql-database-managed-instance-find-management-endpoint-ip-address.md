@@ -1,5 +1,5 @@
 ---
-title: 관리 되는 인스턴스 관리 끝점 검색
+title: 관리 되는 인스턴스 관리 엔드포인트 검색
 description: Azure SQL Database Managed Instance 관리 엔드포인트 공용 IP 주소를 가져오고 해당 기본 제공 방화벽 보호를 확인하는 방법을 알아봅니다.
 services: sql-database
 ms.service: sql-database

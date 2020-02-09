@@ -66,7 +66,7 @@ HANA Large Instance 배포 요청을 제출 하는 경우 HANA Large Instances�
 
 나열 된 모든 단위는 구독에 배포 된 단일 HANA Large Instance 단위를 나타냅니다. 이 경우 구독에 배포 된 8 개의 다른 HANA 대량 인스턴스 단위를 확인 합니다.
 
-동일한 Azure 구독에 여러 HANA Large Instance 테 넌 트를 배포한 경우 여러 Azure 리소스 그룹을 찾을 수 있습니다. 
+동일한 Azure 구독에 여러 HANA Large Instance 테넌트를 배포한 경우 여러 Azure 리소스 그룹을 찾을 수 있습니다. 
 
 
 ## <a name="look-at-attributes-of-single-hli-unit"></a>단일 HLI 단위의 특성 살펴보기
@@ -117,7 +117,7 @@ HANA Large Instance 유닛에 [태그](https://docs.microsoft.com/azure/azure-re
 
 ![Azure Portal에서 HLI 속성의 위쪽 부분](./media/hana-li-portal/portal-properties-top.png)
 
-개요 화면에서 이미 보았던 처음 몇 개의 데이터 항목입니다. 하지만 데이터의 중요 한 부분은 첫 번째 배포 된 단위가 전달 될 때 가져온 Express 경로 회로 ID입니다. 일부 지원 사례에서는 해당 데이터를 묻는 메시지가 표시 될 수 있습니다. 중요 한 데이터 항목이 스크린샷 아래쪽에 표시 됩니다. 표시 되는 데이터는 저장소를 HANA Large Instance stack의 **테 넌 트** 로 격리 하는 NFS 저장소 헤드의 IP 주소입니다. 이 IP 주소는 [저장소 스냅숏 백업에 대 한 구성 파일](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-backup-restore#set-up-storage-snapshots)을 편집 하는 경우에도 필요 합니다. 
+개요 화면에서 이미 보았던 처음 몇 개의 데이터 항목입니다. 하지만 데이터의 중요 한 부분은 첫 번째 배포 된 단위가 전달 될 때 가져온 Express 경로 회로 ID입니다. 일부 지원 사례에서는 해당 데이터를 묻는 메시지가 표시 될 수 있습니다. 중요 한 데이터 항목이 스크린샷 아래쪽에 표시 됩니다. 표시 되는 데이터는 저장소를 HANA Large Instance stack의 **테넌트** 로 격리 하는 NFS 저장소 헤드의 IP 주소입니다. 이 IP 주소는 [저장소 스냅숏 백업에 대 한 구성 파일](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-backup-restore#set-up-storage-snapshots)을 편집 하는 경우에도 필요 합니다. 
 
 속성 창에서 아래로 스크롤하면 HANA 대량 인스턴스 단위에 대 한 고유 리소스 ID 또는 배포에 할당 된 구독 ID와 같은 추가 데이터를 얻게 됩니다.
 

@@ -82,7 +82,7 @@ Linux Hybrid Runbook Worker에 대한 최소 요구 사항은 다음과 같습�
 1. 명령이 완료되면 Azure Portal의 **Hybrid Worker 그룹** 페이지는 새 그룹 및 멤버 수를 표시합니다. 기존 그룹인 경우 멤버 수가 증가합니다. **Hybrid Worker 그룹** 페이지의 목록에서 그룹을 선택하고 **Hybrid Worker** 타일을 선택합니다. **Hybrid Worker** 페이지에서 나열된 그룹의 각 멤버를 확인합니다.
 
 > [!NOTE]
-> Azure VM에 대 한 Linux 용 Azure Monitor 가상 머신 확장을 사용 하는 경우 자동 업그레이드 버전에서 Hybrid Runbook Worker 문제가 발생할 수 있으므로 `autoUpgradeMinorVersion`을 false로 설정 하는 것이 좋습니다. 확장을 수동으로 업그레이드 하는 방법을 알아보려면 [Azure CLI 배포 ](../virtual-machines/extensions/oms-linux.md#azure-cli-deployment)를 참조 하세요.
+> Azure VM에 대한 Linux 용 Azure Monitor 가상 머신 확장을 사용 하는 경우 자동 업그레이드 버전에서 Hybrid Runbook Worker 문제가 발생할 수 있으므로 `autoUpgradeMinorVersion`을 false로 설정 하는 것이 좋습니다. 확장을 수동으로 업그레이드 하는 방법을 알아보려면 [Azure CLI 배포 ](../virtual-machines/extensions/oms-linux.md#azure-cli-deployment)를 참조 하세요.
 
 ## <a name="turning-off-signature-validation"></a>서명 유효성 검사 끄기
 

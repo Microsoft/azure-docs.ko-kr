@@ -132,7 +132,7 @@ BATCHACCOUNTS/MYBATCHACCOUNT/y=2018/m=03/d=05/h=22/m=00/PT1H.json
 ```
 각 `PT1H.json` blob 파일에는 blob URL에 지정 된 시간 내에 발생 한 JSON 형식 이벤트가 포함 됩니다 (예: `h=12`). 현재 시간 동안 이벤트가 발생 하면 `PT1H.json` 파일에 추가 됩니다. 진단 로그 이벤트는 시간당 개별 blob으로 분할 되므로 분 값 (`m=00`)은 항상 `00`입니다. (모든 시간은 UTC입니다.)
 
-다음은 `PT1H.json` 로그 파일의 `PoolResizeCompleteEvent` 항목에 대 한 예입니다. 여기에는 작업의 시작 시간과 종료 시간 뿐만 아니라 전용 및 우선 순위가 낮은 노드의 현재 및 목표 수에 대 한 정보가 포함 됩니다.
+다음은 `PT1H.json` 로그 파일의 `PoolResizeCompleteEvent` 항목에 대한 예입니다. 여기에는 작업의 시작 시간과 종료 시간 뿐만 아니라 전용 및 우선 순위가 낮은 노드의 현재 및 목표 수에 대한 정보가 포함 됩니다.
 
 ```
 { "Tenant": "65298bc2729a4c93b11c00ad7e660501", "time": "2019-08-22T20:59:13.5698778Z", "resourceId": "/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.BATCH/BATCHACCOUNTS/MYBATCHACCOUNT/", "category": "ServiceLog", "operationName": "PoolResizeCompleteEvent", "operationVersion": "2017-06-01", "properties": {"id":"MYPOOLID","nodeDeallocationOption":"Requeue","currentDedicatedNodes":10,"targetDedicatedNodes":100,"currentLowPriorityNodes":0,"targetLowPriorityNodes":0,"enableAutoScale":false,"isAutoPool":false,"startTime":"2019-08-22 20:50:59.522","endTime":"2019-08-22 20:59:12.489","resultCode":"Success","resultMessage":"The operation succeeded"}}

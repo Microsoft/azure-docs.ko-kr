@@ -1,5 +1,5 @@
 ---
-title: Azure CDN 끝점 문제 해결-404 상태 코드
+title: Azure CDN 엔드포인트 문제 해결-404 상태 코드
 description: Azure CDN 엔드포인트에서 404 응답 코드 문제를 해결합니다.
 services: cdn
 documentationcenter: ''

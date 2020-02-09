@@ -28,7 +28,7 @@ DC/OS는 기본 하드웨어를 추상화하는 동안 클러스터형 워크로
 * [Azure 컨테이너 서비스 클러스터에 연결](../container-service-connect.md)
 
 ## <a name="access-the-dcos-apis"></a>DC/OS API 액세스
-Azure Container Service 클러스터에 연결한 후에는 http:\//tlocals: local-port를 통해 DC/OS 및 관련 REST Api에 액세스할 수 있습니다. 이 문서의 예제에서는 포트 80에서 터널링하는 것을 가정합니다. 예를 들어 http:\//localhost/marathon/v2/.로 시작 하는 Uri에서 Marathon 끝점에 도달할 수 있습니다. 
+Azure Container Service 클러스터에 연결한 후에는 http:\//tlocals: local-port를 통해 DC/OS 및 관련 REST Api에 액세스할 수 있습니다. 이 문서의 예제에서는 포트 80에서 터널링하는 것을 가정합니다. 예를 들어 http:\//localhost/marathon/v2/.로 시작 하는 Uri에서 Marathon 엔드포인트에 도달할 수 있습니다. 
 
 다양한 API에 대한 자세한 내용은 [Marathon API](https://mesosphere.github.io/marathon/docs/rest-api.html) 및 [Chronos API](https://mesos.github.io/chronos/docs/api.html)에 대한 Mesosphere 문서와 [Mesos Scheduler API](https://mesos.apache.org/documentation/latest/scheduler-http-api/)에 대한 Apache 문서를 참조하세요.
 

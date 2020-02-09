@@ -27,7 +27,7 @@ ms.locfileid: "75461458"
 > [!IMPORTANT]
 > 이 문서는 *Azure SQL Database Managed Instance*에 적용되지 *않습니다*. 네트워크 구성에 대 한 자세한 내용은 [Azure SQL Database Managed Instance에 응용 프로그램 연결](sql-database-managed-instance-connect-app.md)을 참조 하세요.
 
-예를 들어 이름이 *mysqlserver*인 새 Azure SQL server를 만들 때 SQL Database 방화벽은 서버에 대 한 공용 끝점 ( *mysqlserver.database.windows.net*에서 액세스할 수 있음)에 대 한 모든 액세스를 차단 합니다.
+예를 들어 이름이 *mysqlserver*인 새 Azure SQL server를 만들 때 SQL Database 방화벽은 서버에 대 한 공용 엔드포인트 ( *mysqlserver.database.windows.net*에서 액세스할 수 있음)에 대 한 모든 액세스를 차단 합니다.
 
 > [!IMPORTANT]
 > SQL Data Warehouse는 서버 수준 IP 방화벽 규칙만 지원 합니다. 데이터베이스 수준 IP 방화벽 규칙은 지원 하지 않습니다.

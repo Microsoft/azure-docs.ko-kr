@@ -53,8 +53,8 @@ ms.locfileid: "76264902"
 > | 실행력 | microsoft.aadiam/diagnosticsettings/read | 진단 설정을 읽습니다. |
 > | 실행력 | microsoft.aadiam/diagnosticsettings/write | 진단 설정을 작성합니다. |
 > | 실행력 | microsoft.aadiam/diagnosticsettingscategories/read | 진단 설정 범주를 읽습니다. |
-> | 실행력 | aadiam/metricDefinitions/읽기 | 테 넌 트 수준 메트릭 정의 읽기 |
-> | 실행력 | aadiam/메트릭/읽기 | 테 넌 트 수준 메트릭 읽기 |
+> | 실행력 | aadiam/metricDefinitions/읽기 | 테넌트 수준 메트릭 정의 읽기 |
+> | 실행력 | aadiam/메트릭/읽기 | 테넌트 수준 메트릭 읽기 |
 
 ## <a name="microsoftaddons"></a>Microsoft.Addons
 
@@ -346,9 +346,9 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.ApiManagement/service/policies/delete | Api Management 서비스의 전역 정책 구성을 삭제 합니다. |
 > | 실행력 | Microsoft.ApiManagement/service/policies/read | Api Management 서비스의 모든 전역 정책 정의를 나열 합니다. 또는 Api Management 서비스의 전역 정책 정의를 가져옵니다. |
 > | 실행력 | Microsoft.ApiManagement/service/policies/write | Api Management 서비스의 전역 정책 구성을 만들거나 업데이트 합니다. |
-> | 실행력 | Microsoft.ApiManagement/service/policy/delete | 테 넌 트 수준에서 정책 구성을 삭제 합니다. |
-> | 실행력 | Microsoft.ApiManagement/service/policy/read | 테 넌 트 수준에서 정책 구성 가져오기 |
-> | 실행력 | Microsoft.ApiManagement/service/policy/write | 테 넌 트 수준에서 정책 구성 만들기 |
+> | 실행력 | Microsoft.ApiManagement/service/policy/delete | 테넌트 수준에서 정책 구성을 삭제 합니다. |
+> | 실행력 | Microsoft.ApiManagement/service/policy/read | 테넌트 수준에서 정책 구성 가져오기 |
+> | 실행력 | Microsoft.ApiManagement/service/policy/write | 테넌트 수준에서 정책 구성 만들기 |
 > | 실행력 | Microsoft.apimanagement/서비스/정책 설명/읽기 | 모든 정책 설명을 나열 합니다. |
 > | 실행력 | Microsoft.ApiManagement/service/policySnippets/read | 모든 정책 코드 조각을 나열 합니다. |
 > | 실행력 | Microsoft.ApiManagement/service/portalsettings/read | 포털 설정의 컬렉션을 나열 합니다. 또는 포털에 대 한 로그인 설정을 가져오거나 포털에 대 한 등록 설정을 가져오거나 포털에 대 한 위임 설정을 가져옵니다. |
@@ -400,9 +400,9 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.ApiManagement/service/templates/write | API Management 이메일 템플릿을 만들거나/업데이트하거나 API Management 이메일 템플릿을 업데이트합니다. |
 > | 실행력 | Microsoft.ApiManagement/service/tenant/delete | 테넌트에 대한 정책 구성을 제거합니다. |
 > | 실행력 | Microsoft.ApiManagement/service/tenant/deploy/action | 배포 작업을 실행하여 지정된 git 분기에서 데이터베이스의 구성에 대해 변경된 내용을 적용합니다. |
-> | 실행력 | Microsoft.apimanagement/서비스/테 넌 트/listSecrets/작업 | 테넌트 액세스 세부 정보를 가져옵니다. |
+> | 실행력 | Microsoft.apimanagement/서비스/테넌트/listSecrets/작업 | 테넌트 액세스 세부 정보를 가져옵니다. |
 > | 실행력 | Microsoft.ApiManagement/service/tenant/operationResults/read | 작업 결과 목록을 가져오거나 특정 작업의 결과를 가져옵니다. |
-> | 실행력 | Microsoft.ApiManagement/service/tenant/read | Api Management 서비스의 전역 정책 정의를 가져옵니다. 또는 테 넌 트 액세스 정보 정보 가져오기 |
+> | 실행력 | Microsoft.ApiManagement/service/tenant/read | Api Management 서비스의 전역 정책 정의를 가져옵니다. 또는 테넌트 액세스 정보 정보 가져오기 |
 > | 실행력 | Microsoft.ApiManagement/service/tenant/regeneratePrimaryKey/action | 기본 액세스 키를 다시 생성합니다. |
 > | 실행력 | Microsoft.ApiManagement/service/tenant/regenerateSecondaryKey/action | 보조 액세스 키를 다시 생성합니다. |
 > | 실행력 | Microsoft.ApiManagement/service/tenant/save/action | 리포지토리의 지정된 분기에 대한 구성 스냅샷을 사용하여 커밋을 만듭니다. |
@@ -440,10 +440,10 @@ ms.locfileid: "76264902"
 > | DataAction | Microsoft AppConfiguration/configurationStores/keyValues/write | 구성 저장소에서 키-값을 만들거나 업데이트 합니다. |
 > | 실행력 | Microsoft AppConfiguration/configurationStores/ListKeys/action | 지정 된 구성 저장소에 대 한 API 키를 나열 합니다. |
 > | 실행력 | Microsoft AppConfiguration/configurationStores/ListKeyValue/action | 지정 된 구성 저장소에 대 한 키 값을 나열 합니다. |
-> | 실행력 | Microsoft AppConfiguration/configurationStores/privateEndpointConnectionProxies/delete | 지정 된 구성 저장소에서 개인 끝점 연결 프록시를 삭제 합니다. |
-> | 실행력 | Microsoft AppConfiguration/configurationStores/privateEndpointConnectionProxies/read | 지정 된 구성 저장소에서 개인 끝점 연결 프록시를 가져옵니다. |
-> | 실행력 | Microsoft AppConfiguration/configurationStores/privateEndpointConnectionProxies/validate/action | 지정 된 구성 저장소에서 개인 끝점 연결 프록시의 유효성을 검사 합니다. |
-> | 실행력 | Microsoft AppConfiguration/configurationStores/privateEndpointConnectionProxies/write | 지정 된 구성 저장소에서 개인 끝점 연결 프록시를 만들거나 업데이트 합니다. |
+> | 실행력 | Microsoft AppConfiguration/configurationStores/privateEndpointConnectionProxies/delete | 지정 된 구성 저장소에서 개인 엔드포인트 연결 프록시를 삭제 합니다. |
+> | 실행력 | Microsoft AppConfiguration/configurationStores/privateEndpointConnectionProxies/read | 지정 된 구성 저장소에서 개인 엔드포인트 연결 프록시를 가져옵니다. |
+> | 실행력 | Microsoft AppConfiguration/configurationStores/privateEndpointConnectionProxies/validate/action | 지정 된 구성 저장소에서 개인 엔드포인트 연결 프록시의 유효성을 검사 합니다. |
+> | 실행력 | Microsoft AppConfiguration/configurationStores/privateEndpointConnectionProxies/write | 지정 된 구성 저장소에서 개인 엔드포인트 연결 프록시를 만들거나 업데이트 합니다. |
 > | 실행력 | Microsoft AppConfiguration/configurationStores/providers/diagnosticSettings/read | 구성 저장소에 대 한 모든 진단 설정 값을 읽습니다. |
 > | 실행력 | Microsoft AppConfiguration/configurationStores/providers/Microsoft. Insights/diagnosticSettings/write | Microsoft 앱 구성에 대 한 진단 설정을 쓰거나 덮어씁니다. |
 > | 실행력 | Microsoft AppConfiguration/configurationStores/providers/metricDefinitions/read | Microsoft 앱 구성에 대 한 모든 메트릭 정의를 검색 합니다. |
@@ -626,7 +626,7 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.AzureActiveDirectory/b2cDirectories/delete | B2C 디렉터리 리소스를 삭제합니다. |
 > | 실행력 | Microsoft.AzureActiveDirectory/b2cDirectories/read | B2C 디렉터리 리소스를 봅니다. |
 > | 실행력 | Microsoft.AzureActiveDirectory/b2cDirectories/write | B2C 디렉터리 리소스를 만들거나 업데이트합니다. |
-> | 실행력 | Microsoft.AzureActiveDirectory/b2ctenants/read | 사용자가 멤버인 모든 B2C 테 넌 트를 나열 합니다. |
+> | 실행력 | Microsoft.AzureActiveDirectory/b2ctenants/read | 사용자가 멤버인 모든 B2C 테넌트를 나열 합니다. |
 > | 실행력 | Microsoft.AzureActiveDirectory/operations/read | Microsoft.AzureActiveDirectory 리소스 공급자에 사용할 수 있는 모든 API 작업을 읽습니다. |
 > | 실행력 | Microsoft.AzureActiveDirectory/register/action | Microsoft.AzureActiveDirectory 리소스 공급자 구독을 등록합니다. |
 
@@ -1264,10 +1264,10 @@ ms.locfileid: "76264902"
 > | DataAction | Cognitiveservices account/accounts/ContentModerator/processimage/ocr/action | 지정 된 언어의 이미지에 있는 모든 텍스트를 반환 합니다. 입력에 언어가 지정 되지 않은 경우 검색의 기본값은 영어입니다. |
 > | DataAction | Cognitiveservices account/accounts/ContentModerator/processtext/detectlanguage/action | 이 작업을 수행 하면 지정 된 입력 콘텐츠의 언어가 검색 됩니다.<br>전송 된 텍스트를 구성 하는 언어에 대 한 ISO 639-3 코드를 반환 합니다.<br>110 이상의 언어가 지원 됩니다. |
 > | DataAction | Cognitiveservices account/accounts/ContentModerator/processtext/화면/작업 | 이 작업은 100개가 넘는 언어의 비속어를 감지하고 사용자 지정 및 공유 블랙리스트와 대조합니다. |
-> | DataAction | Cognitiveservices account/accounts/ContentModerator 사람/팀/작업/작업 | 이 끝점에 게시 된 이미지 콘텐츠에 대 한 작업 Id가 반환 됩니다.  |
+> | DataAction | Cognitiveservices account/accounts/ContentModerator 사람/팀/작업/작업 | 이 엔드포인트에 게시 된 이미지 콘텐츠에 대 한 작업 Id가 반환 됩니다.  |
 > | DataAction | Cognitiveservices account/accounts/ContentModerator 사람/팀/작업/읽기 | 작업 Id에 대 한 작업 세부 정보를 가져옵니다. |
 > | DataAction | Cognitiveservices account/accounts/ContentModerator/팀/리뷰/accesskey/read | 팀에 대 한 콘텐츠 검토 선택 키를 가져옵니다. |
-> | DataAction | Cognitiveservices account/accounts/ContentModerator 사람/팀/리뷰/작업 | 만든 리뷰는 팀의 검토자에 게 표시 됩니다. 검토자가 검토를 완료 하면 지정 된 콜백 끝점에서 검토 결과가 게시 됩니다 (즉, HTTP POST). |
+> | DataAction | Cognitiveservices account/accounts/ContentModerator 사람/팀/리뷰/작업 | 만든 리뷰는 팀의 검토자에 게 표시 됩니다. 검토자가 검토를 완료 하면 지정 된 콜백 엔드포인트에서 검토 결과가 게시 됩니다 (즉, HTTP POST). |
 > | DataAction | Cognitiveservices account/accounts/ContentModerator 사람/팀/리뷰/프레임/읽기 | *NotDefined* |
 > | DataAction | Cognitiveservices account/accounts/ContentModerator 사람/팀/리뷰/프레임/쓰기 | 비디오 검토를 위한 프레임을 추가 하려면이 메서드를 사용 합니다. |
 > | DataAction | Cognitiveservices account/accounts/ContentModerator 사람/팀/리뷰/게시/작업 | 비디오 검토는 게시 되지 않은 상태로 처음 생성 됩니다. 즉, 팀의 검토자가 아직 검토할 수 없습니다. |
@@ -1330,7 +1330,7 @@ ms.locfileid: "76264902"
 > | DataAction | Cognitiveservices account/accounts/CustomVision. 예측/프로젝트/반복/읽기 | 특정 반복을 가져옵니다. 프로젝트에 대 한 반복을 가져옵니다. * |
 > | DataAction | Cognitiveservices account/accounts/CustomVision. 예측/프로젝트/반복/쓰기 | 특정 반복을 업데이트 합니다. |
 > | DataAction | Cognitiveservices account/accounts/CustomVision. 예측/프로젝트/예측/삭제 | 예측 이미지 및 관련 예측 결과 집합을 삭제 합니다. |
-> | DataAction | Cognitiveservices account/accounts/CustomVision. 예측/프로젝트/예측/쿼리/동작 | 예측 끝점으로 전송 된 이미지를 가져옵니다. |
+> | DataAction | Cognitiveservices account/accounts/CustomVision. 예측/프로젝트/예측/쿼리/동작 | 예측 엔드포인트으로 전송 된 이미지를 가져옵니다. |
 > | DataAction | Cognitiveservices account/accounts/CustomVision. 예측/프로젝트/quicktest/image/action | 이미지를 빠르게 테스트 합니다. |
 > | DataAction | Cognitiveservices account/accounts/CustomVision. 예측/프로젝트/quicktest/u r l/작업 | 이미지 url을 빠르게 테스트 합니다. |
 > | DataAction | Cognitiveservices account/accounts/CustomVision. 예측/프로젝트/읽기 | 특정 프로젝트를 가져옵니다. 프로젝트를 가져옵니다. * |
@@ -1418,16 +1418,16 @@ ms.locfileid: "76264902"
 > | DataAction | Cognitiveservices account/accounts/ImmersiveReader/getcontentmodelforreader/action | 몰입 형 판독기 세션을 만듭니다. |
 > | DataAction | Cognitiveservices account/계정/InkRecognizer/인식/동작 | 스트로크 데이터 집합이 지정 된 경우 콘텐츠를 분석 하 고 인식 된 텍스트를 포함 하 여 인식 된 엔터티 목록을 생성 합니다. |
 > | 실행력 | Microsoft.CognitiveServices/accounts/listKeys/action | 키를 나열합니다. |
-> | DataAction | Microsoft.CognitiveServices/accounts/LUIS/predict/action | 지정 된 쿼리에 대 한 게시 된 끝점 예측을 가져옵니다. |
+> | DataAction | Microsoft.CognitiveServices/accounts/LUIS/predict/action | 지정 된 쿼리에 대 한 게시 된 엔드포인트 예측을 가져옵니다. |
 > | DataAction | Cognitiveservices account/accounts/NewsSearch/categorysearch/action | 제공 된 범주에 대 한 뉴스를 반환 합니다. |
 > | DataAction | Cognitiveservices account/계정/NewsSearch/검색/작업 | 지정 된 쿼리와 관련 된 뉴스 기사를 가져옵니다. |
 > | DataAction | Cognitiveservices account/accounts/NewsSearch/trendingtopics/action | Bing에서 식별 하는 추세 항목을 가져옵니다. 이러한 항목은 Bing 홈 페이지의 아래쪽에 있는 배너에 표시 되는 것과 같습니다. |
 > | DataAction | Cognitiveservices account/accounts/QnAMaker/변경/읽기 | 런타임에 변경 사항을 다운로드 합니다. |
 > | DataAction | Cognitiveservices account/accounts/QnAMaker/변경/쓰기 | 변경 데이터를 바꿉니다. |
-> | DataAction | Cognitiveservices account/accounts/QnAMaker/endpointkeys/read | 끝점에 대 한 끝점 키를 가져옵니다. |
-> | DataAction | Cognitiveservices account/accounts/QnAMaker/endpointkeys/refreshkeys/작업 | 끝점 키를 다시 생성 합니다. |
-> | DataAction | Cognitiveservices account/accounts/QnAMaker/endpointsettings/read | 끝점에 대 한 끝점 설정을 가져옵니다. |
-> | DataAction | Cognitiveservices account/accounts/QnAMaker/endpointsettings/write | 끝점에 대 한 seettings 끝점을 업데이트 합니다. |
+> | DataAction | Cognitiveservices account/accounts/QnAMaker/endpointkeys/read | 엔드포인트에 대 한 엔드포인트 키를 가져옵니다. |
+> | DataAction | Cognitiveservices account/accounts/QnAMaker/endpointkeys/refreshkeys/작업 | 엔드포인트 키를 다시 생성 합니다. |
+> | DataAction | Cognitiveservices account/accounts/QnAMaker/endpointsettings/read | 엔드포인트에 대 한 엔드포인트 설정을 가져옵니다. |
+> | DataAction | Cognitiveservices account/accounts/QnAMaker/endpointsettings/write | 엔드포인트에 대 한 seettings 엔드포인트을 업데이트 합니다. |
 > | DataAction | Cognitiveservices account/accounts/QnAMaker/기술 자료/create/write | 새 기술 자료를 만드는 비동기 작업입니다. |
 > | DataAction | Cognitiveservices account/accounts/QnAMaker/기술 자료/delete | 기술 자료 및 모든 해당 데이터를 삭제 합니다. |
 > | DataAction | Cognitiveservices account/accounts/QnAMaker/기술 자료/다운로드/읽기 | 기술 자료를 다운로드 하세요. |
@@ -1647,7 +1647,7 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.Consumption/reservationSummaries/read | 예약된 인스턴스의 사용률 요약 정보를 예약 순서 또는 관리 그룹별로 나열합니다. 요약 데이터는 월별 또는 일별 수준입니다. |
 > | 실행력 | Microsoft.Consumption/reservationTransactions/read | 관리 그룹에서 예약한 인스턴스의 트랜잭션 기록을 나열합니다. |
 > | 실행력 | Microsoft.Consumption/tags/read | EA 및 구독에 대한 태그를 나열합니다. |
-> | 실행력 | Microsoft.Consumption/tenants/read | 테 넌 트 나열 |
+> | 실행력 | Microsoft.Consumption/tenants/read | 테넌트 나열 |
 > | 실행력 | Microsoft.Consumption/tenants/register/action | 테넌트에 의한 Microsoft.Consumption 범위에 대한 작업을 등록합니다. |
 > | 실행력 | Microsoft.Consumption/terms/read | 구독 또는 관리 그룹의 사용 약관을 나열합니다. |
 > | 실행력 | Microsoft.Consumption/usageDetails/read | EA 및 WebDirect 구독의 범위에 대한 사용량 세부 정보를 나열합니다. |
@@ -1779,7 +1779,7 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.ContainerService/managedClusters/listClusterAdminCredential/action | 관리되는 클러스터의 clusterAdmin 자격 증명을 나열합니다. |
 > | 실행력 | ContainerService/managedClusters/listClusterMonitoringUserCredential/작업 | 관리 되는 클러스터의 clusterMonitoringUser 자격 증명 나열 |
 > | 실행력 | Microsoft.ContainerService/managedClusters/listClusterUserCredential/action | 관리되는 클러스터의 clusterUser 자격 증명을 나열합니다. |
-> | 실행력 | ContainerService/managedClusters/privateEndpointConnectionsApproval/작업 | 사용자가 개인 끝점 연결을 승인할 수 있는지 여부를 결정 합니다. |
+> | 실행력 | ContainerService/managedClusters/privateEndpointConnectionsApproval/작업 | 사용자가 개인 엔드포인트 연결을 승인할 수 있는지 여부를 결정 합니다. |
 > | 실행력 | Microsoft.ContainerService/managedClusters/read | 관리되는 클러스터를 가져옵니다. |
 > | 실행력 | Microsoft.ContainerService/managedClusters/resetAADProfile/action | 관리형 클러스터의 AAD 프로필을 다시 설정합니다. |
 > | 실행력 | Microsoft.ContainerService/managedClusters/resetServicePrincipalProfile/action | 관리형 클러스터의 서비스 주체 프로필을 다시 설정합니다. |
@@ -1833,7 +1833,7 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.CostManagement/register/action | 구독에의 한 CostManagement 범위에 대 한 작업을 등록 합니다. |
 > | 실행력 | Microsoft.CostManagement/reports/action | 범위별 사용량 현황 데이터에 관한 보고서를 예약합니다. |
 > | 실행력 | Microsoft.CostManagement/reports/read | 범위별 사용량 현황 데이터에 관한 보고서를 예약합니다. |
-> | 실행력 | Microsoft.CostManagement/tenants/register/action | CostManagement의 범위에 대 한 작업을 테 넌 트에 등록 합니다. |
+> | 실행력 | Microsoft.CostManagement/tenants/register/action | CostManagement의 범위에 대 한 작업을 테넌트에 등록 합니다. |
 > | 실행력 | CostManagement/뷰/작업 | 뷰를 만듭니다. |
 > | 실행력 | CostManagement/views/delete | 저장 된 보기를 삭제 합니다. |
 > | 실행력 | CostManagement/뷰/읽기 | 저장 된 모든 뷰를 나열 합니다. |
@@ -2215,10 +2215,10 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.DBforMariaDB/locations/operationResults/read | ResourceGroup 기반 MariaDB 서버 작업 결과 반환 |
 > | 실행력 | Microsoft.DBforMariaDB/locations/operationResults/read | 서버 작업 결과 반환 (& u) |
 > | 실행력 | Microsoft.DBforMariaDB/locations/performanceTiers/read | 사용할 수 있는 성능 계층 목록을 반환합니다. |
-> | 실행력 | DBforMariaDB/위치/privateEndpointConnectionAzureAsyncOperation/읽기 | 개인 끝점 연결 작업에 대 한 결과를 가져옵니다. |
-> | 실행력 | DBforMariaDB/위치/privateEndpointConnectionOperationResults/읽기 | 개인 끝점 연결 작업에 대 한 결과를 가져옵니다. |
-> | 실행력 | DBforMariaDB/위치/privateEndpointConnectionProxyAzureAsyncOperation/읽기 | 개인 끝점 연결 프록시 작업의 결과를 가져옵니다. |
-> | 실행력 | DBforMariaDB/위치/privateEndpointConnectionProxyOperationResults/읽기 | 개인 끝점 연결 프록시 작업의 결과를 가져옵니다. |
+> | 실행력 | DBforMariaDB/위치/privateEndpointConnectionAzureAsyncOperation/읽기 | 개인 엔드포인트 연결 작업에 대 한 결과를 가져옵니다. |
+> | 실행력 | DBforMariaDB/위치/privateEndpointConnectionOperationResults/읽기 | 개인 엔드포인트 연결 작업에 대 한 결과를 가져옵니다. |
+> | 실행력 | DBforMariaDB/위치/privateEndpointConnectionProxyAzureAsyncOperation/읽기 | 개인 엔드포인트 연결 프록시 작업의 결과를 가져옵니다. |
+> | 실행력 | DBforMariaDB/위치/privateEndpointConnectionProxyOperationResults/읽기 | 개인 엔드포인트 연결 프록시 작업의 결과를 가져옵니다. |
 > | 실행력 | Microsoft.DBforMariaDB/locations/securityAlertPoliciesAzureAsyncOperation/read | 서버 위협 검색 작업 결과의 목록을 반환 합니다. |
 > | 실행력 | Microsoft.DBforMariaDB/locations/securityAlertPoliciesOperationResults/read | 서버 위협 검색 작업 결과의 목록을 반환 합니다. |
 > | 실행력 | DBforMariaDB/위치/serverKeyAzureAsyncOperation/읽기 | 투명 한 데이터 암호화 서버 키에 대 한 진행 중인 작업을 가져옵니다. |
@@ -2248,13 +2248,13 @@ ms.locfileid: "76264902"
 > | 실행력 | DBforMariaDB/서버/키/읽기 | 서버 키 목록을 가져오거나 지정된 서버 키에 대한 속성을 가져옵니다. |
 > | 실행력 | DBforMariaDB/servers/keys/write | 지정된 매개 변수를 사용하여 키를 만들거나 지정된 서버 키에 대한 속성 또는 태그를 업데이트합니다. |
 > | 실행력 | Microsoft.DBforMariaDB/servers/logFiles/read | Aadb LogFiles의 목록을 반환 합니다. |
-> | 실행력 | DBforMariaDB/servers/privateEndpointConnectionProxies/delete | 기존 개인 끝점 연결 프록시를 삭제 합니다. |
-> | 실행력 | DBforMariaDB/servers/privateEndpointConnectionProxies/read | 개인 끝점 연결 프록시의 목록을 반환 하거나, 지정 된 개인 끝점 연결 프록시에 대 한 속성을 가져옵니다. |
-> | 실행력 | DBforMariaDB/servers/privateEndpointConnectionProxies/validate/action | NRP 쪽에서 개인 끝점 연결 만들기 호출의 유효성을 검사 합니다. |
-> | 실행력 | DBforMariaDB/servers/privateEndpointConnectionProxies/write | 지정 된 매개 변수를 사용 하 여 개인 끝점 연결 프록시를 만들거나 지정 된 개인 끝점 연결 프록시에 대 한 속성 또는 태그를 업데이트 합니다. |
-> | 실행력 | DBforMariaDB/servers/privateEndpointConnections/delete | 기존 개인 끝점 연결을 삭제 합니다. |
-> | 실행력 | DBforMariaDB/servers/privateEndpointConnections/read | 개인 끝점 연결의 목록을 반환 하거나, 지정 된 개인 끝점 연결에 대 한 속성을 가져옵니다. |
-> | 실행력 | DBforMariaDB/servers/privateEndpointConnections/write | 기존 개인 끝점 연결을 승인 하거나 거부 합니다. |
+> | 실행력 | DBforMariaDB/servers/privateEndpointConnectionProxies/delete | 기존 개인 엔드포인트 연결 프록시를 삭제 합니다. |
+> | 실행력 | DBforMariaDB/servers/privateEndpointConnectionProxies/read | 개인 엔드포인트 연결 프록시의 목록을 반환 하거나, 지정 된 개인 엔드포인트 연결 프록시에 대 한 속성을 가져옵니다. |
+> | 실행력 | DBforMariaDB/servers/privateEndpointConnectionProxies/validate/action | NRP 쪽에서 개인 엔드포인트 연결 만들기 호출의 유효성을 검사 합니다. |
+> | 실행력 | DBforMariaDB/servers/privateEndpointConnectionProxies/write | 지정 된 매개 변수를 사용 하 여 개인 엔드포인트 연결 프록시를 만들거나 지정 된 개인 엔드포인트 연결 프록시에 대 한 속성 또는 태그를 업데이트 합니다. |
+> | 실행력 | DBforMariaDB/servers/privateEndpointConnections/delete | 기존 개인 엔드포인트 연결을 삭제 합니다. |
+> | 실행력 | DBforMariaDB/servers/privateEndpointConnections/read | 개인 엔드포인트 연결의 목록을 반환 하거나, 지정 된 개인 엔드포인트 연결에 대 한 속성을 가져옵니다. |
+> | 실행력 | DBforMariaDB/servers/privateEndpointConnections/write | 기존 개인 엔드포인트 연결을 승인 하거나 거부 합니다. |
 > | 실행력 | DBforMariaDB/servers/privateLinkResources/read | 해당 하는 Aadb 서버에 대 한 개인 링크 리소스를 가져옵니다. |
 > | 실행력 | Microsoft.DBforMariaDB/servers/providers/Microsoft.Insights/diagnosticSettings/read | 리소스에 대한 진단 설정을 가져옵니다. |
 > | 실행력 | Microsoft.DBforMariaDB/servers/providers/Microsoft.Insights/diagnosticSettings/write | 리소스에 대한 진단 설정을 만들거나 업데이트합니다. |
@@ -2288,10 +2288,10 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.DBforMySQL/locations/operationResults/read | ResourceGroup 기반 MySQL 서버 작업 결과 반환 |
 > | 실행력 | Microsoft.DBforMySQL/locations/operationResults/read | MySQL 서버 작업 결과 반환 |
 > | 실행력 | Microsoft.DBforMySQL/locations/performanceTiers/read | 사용할 수 있는 성능 계층 목록을 반환합니다. |
-> | 실행력 | Microsoft DBforMySQL/위치/privateEndpointConnectionAzureAsyncOperation/읽기 | 개인 끝점 연결 작업에 대 한 결과를 가져옵니다. |
-> | 실행력 | Microsoft DBforMySQL/위치/privateEndpointConnectionOperationResults/읽기 | 개인 끝점 연결 작업에 대 한 결과를 가져옵니다. |
-> | 실행력 | Microsoft DBforMySQL/위치/privateEndpointConnectionProxyAzureAsyncOperation/읽기 | 개인 끝점 연결 프록시 작업의 결과를 가져옵니다. |
-> | 실행력 | Microsoft DBforMySQL/위치/privateEndpointConnectionProxyOperationResults/읽기 | 개인 끝점 연결 프록시 작업의 결과를 가져옵니다. |
+> | 실행력 | Microsoft DBforMySQL/위치/privateEndpointConnectionAzureAsyncOperation/읽기 | 개인 엔드포인트 연결 작업에 대 한 결과를 가져옵니다. |
+> | 실행력 | Microsoft DBforMySQL/위치/privateEndpointConnectionOperationResults/읽기 | 개인 엔드포인트 연결 작업에 대 한 결과를 가져옵니다. |
+> | 실행력 | Microsoft DBforMySQL/위치/privateEndpointConnectionProxyAzureAsyncOperation/읽기 | 개인 엔드포인트 연결 프록시 작업의 결과를 가져옵니다. |
+> | 실행력 | Microsoft DBforMySQL/위치/privateEndpointConnectionProxyOperationResults/읽기 | 개인 엔드포인트 연결 프록시 작업의 결과를 가져옵니다. |
 > | 실행력 | Microsoft.DBforMySQL/locations/securityAlertPoliciesAzureAsyncOperation/read | 서버 위협 검색 작업 결과의 목록을 반환 합니다. |
 > | 실행력 | Microsoft.DBforMySQL/locations/securityAlertPoliciesOperationResults/read | 서버 위협 검색 작업 결과의 목록을 반환 합니다. |
 > | 실행력 | Microsoft DBforMySQL/위치/serverKeyAzureAsyncOperation/읽기 | 투명 한 데이터 암호화 서버 키에 대 한 진행 중인 작업을 가져옵니다. |
@@ -2321,13 +2321,13 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft DBforMySQL/servers/keys/read | 서버 키 목록을 가져오거나 지정된 서버 키에 대한 속성을 가져옵니다. |
 > | 실행력 | Microsoft DBforMySQL/servers/keys/write | 지정된 매개 변수를 사용하여 키를 만들거나 지정된 서버 키에 대한 속성 또는 태그를 업데이트합니다. |
 > | 실행력 | Microsoft.DBforMySQL/servers/logFiles/read | MySQL 로그의 목록을 반환 합니다. |
-> | 실행력 | Microsoft DBforMySQL/servers/privateEndpointConnectionProxies/delete | 기존 개인 끝점 연결 프록시를 삭제 합니다. |
-> | 실행력 | Microsoft DBforMySQL/servers/privateEndpointConnectionProxies/read | 개인 끝점 연결 프록시의 목록을 반환 하거나, 지정 된 개인 끝점 연결 프록시에 대 한 속성을 가져옵니다. |
-> | 실행력 | Microsoft DBforMySQL/servers/privateEndpointConnectionProxies/validate/action | NRP 쪽에서 개인 끝점 연결 만들기 호출의 유효성을 검사 합니다. |
-> | 실행력 | Microsoft DBforMySQL/servers/privateEndpointConnectionProxies/write | 지정 된 매개 변수를 사용 하 여 개인 끝점 연결 프록시를 만들거나 지정 된 개인 끝점 연결 프록시에 대 한 속성 또는 태그를 업데이트 합니다. |
-> | 실행력 | Microsoft DBforMySQL/servers/privateEndpointConnections/delete | 기존 개인 끝점 연결을 삭제 합니다. |
-> | 실행력 | Microsoft DBforMySQL/servers/privateEndpointConnections/read | 개인 끝점 연결의 목록을 반환 하거나, 지정 된 개인 끝점 연결에 대 한 속성을 가져옵니다. |
-> | 실행력 | Microsoft DBforMySQL/servers/privateEndpointConnections/write | 기존 개인 끝점 연결을 승인 하거나 거부 합니다. |
+> | 실행력 | Microsoft DBforMySQL/servers/privateEndpointConnectionProxies/delete | 기존 개인 엔드포인트 연결 프록시를 삭제 합니다. |
+> | 실행력 | Microsoft DBforMySQL/servers/privateEndpointConnectionProxies/read | 개인 엔드포인트 연결 프록시의 목록을 반환 하거나, 지정 된 개인 엔드포인트 연결 프록시에 대 한 속성을 가져옵니다. |
+> | 실행력 | Microsoft DBforMySQL/servers/privateEndpointConnectionProxies/validate/action | NRP 쪽에서 개인 엔드포인트 연결 만들기 호출의 유효성을 검사 합니다. |
+> | 실행력 | Microsoft DBforMySQL/servers/privateEndpointConnectionProxies/write | 지정 된 매개 변수를 사용 하 여 개인 엔드포인트 연결 프록시를 만들거나 지정 된 개인 엔드포인트 연결 프록시에 대 한 속성 또는 태그를 업데이트 합니다. |
+> | 실행력 | Microsoft DBforMySQL/servers/privateEndpointConnections/delete | 기존 개인 엔드포인트 연결을 삭제 합니다. |
+> | 실행력 | Microsoft DBforMySQL/servers/privateEndpointConnections/read | 개인 엔드포인트 연결의 목록을 반환 하거나, 지정 된 개인 엔드포인트 연결에 대 한 속성을 가져옵니다. |
+> | 실행력 | Microsoft DBforMySQL/servers/privateEndpointConnections/write | 기존 개인 엔드포인트 연결을 승인 하거나 거부 합니다. |
 > | 실행력 | Microsoft DBforMySQL/servers/privateLinkResources/read | 해당 MySQL Server에 대 한 개인 링크 리소스 가져오기 |
 > | 실행력 | Microsoft.DBforMySQL/servers/providers/Microsoft.Insights/diagnosticSettings/read | 리소스에 대한 진단 설정을 가져옵니다. |
 > | 실행력 | Microsoft.DBforMySQL/servers/providers/Microsoft.Insights/diagnosticSettings/write | 리소스에 대한 진단 설정을 만들거나 업데이트합니다. |
@@ -2361,10 +2361,10 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.DBforPostgreSQL/locations/operationResults/read | ResourceGroup 기반 PostgreSQL 서버 작업 결과 반환 |
 > | 실행력 | Microsoft.DBforPostgreSQL/locations/operationResults/read | PostgreSQL 서버 작업 결과 반환 |
 > | 실행력 | Microsoft.DBforPostgreSQL/locations/performanceTiers/read | 사용할 수 있는 성능 계층 목록을 반환합니다. |
-> | 실행력 | DBforPostgreSQL/위치/privateEndpointConnectionAzureAsyncOperation/읽기 | 개인 끝점 연결 작업에 대 한 결과를 가져옵니다. |
-> | 실행력 | DBforPostgreSQL/위치/privateEndpointConnectionOperationResults/읽기 | 개인 끝점 연결 작업에 대 한 결과를 가져옵니다. |
-> | 실행력 | DBforPostgreSQL/위치/privateEndpointConnectionProxyAzureAsyncOperation/읽기 | 개인 끝점 연결 프록시 작업의 결과를 가져옵니다. |
-> | 실행력 | DBforPostgreSQL/위치/privateEndpointConnectionProxyOperationResults/읽기 | 개인 끝점 연결 프록시 작업의 결과를 가져옵니다. |
+> | 실행력 | DBforPostgreSQL/위치/privateEndpointConnectionAzureAsyncOperation/읽기 | 개인 엔드포인트 연결 작업에 대 한 결과를 가져옵니다. |
+> | 실행력 | DBforPostgreSQL/위치/privateEndpointConnectionOperationResults/읽기 | 개인 엔드포인트 연결 작업에 대 한 결과를 가져옵니다. |
+> | 실행력 | DBforPostgreSQL/위치/privateEndpointConnectionProxyAzureAsyncOperation/읽기 | 개인 엔드포인트 연결 프록시 작업의 결과를 가져옵니다. |
+> | 실행력 | DBforPostgreSQL/위치/privateEndpointConnectionProxyOperationResults/읽기 | 개인 엔드포인트 연결 프록시 작업의 결과를 가져옵니다. |
 > | 실행력 | Microsoft.DBforPostgreSQL/locations/securityAlertPoliciesAzureAsyncOperation/read | 서버 위협 검색 작업 결과의 목록을 반환 합니다. |
 > | 실행력 | Microsoft.DBforPostgreSQL/locations/securityAlertPoliciesOperationResults/read | 서버 위협 검색 작업 결과의 목록을 반환 합니다. |
 > | 실행력 | DBforPostgreSQL/위치/serverKeyAzureAsyncOperation/읽기 | 투명 한 데이터 암호화 서버 키에 대 한 진행 중인 작업을 가져옵니다. |
@@ -2391,13 +2391,13 @@ ms.locfileid: "76264902"
 > | 실행력 | DBforPostgreSQL/서버/키/읽기 | 서버 키 목록을 가져오거나 지정된 서버 키에 대한 속성을 가져옵니다. |
 > | 실행력 | DBforPostgreSQL/servers/keys/write | 지정된 매개 변수를 사용하여 키를 만들거나 지정된 서버 키에 대한 속성 또는 태그를 업데이트합니다. |
 > | 실행력 | Microsoft.DBforPostgreSQL/servers/logFiles/read | PostgreSQL LogFiles의 목록을 반환 합니다. |
-> | 실행력 | DBforPostgreSQL/servers/privateEndpointConnectionProxies/delete | 기존 개인 끝점 연결 프록시를 삭제 합니다. |
-> | 실행력 | DBforPostgreSQL/servers/privateEndpointConnectionProxies/read | 개인 끝점 연결 프록시의 목록을 반환 하거나, 지정 된 개인 끝점 연결 프록시에 대 한 속성을 가져옵니다. |
-> | 실행력 | DBforPostgreSQL/servers/privateEndpointConnectionProxies/validate/action | NRP 쪽에서 개인 끝점 연결 만들기 호출의 유효성을 검사 합니다. |
-> | 실행력 | DBforPostgreSQL/servers/privateEndpointConnectionProxies/write | 지정 된 매개 변수를 사용 하 여 개인 끝점 연결 프록시를 만들거나 지정 된 개인 끝점 연결 프록시에 대 한 속성 또는 태그를 업데이트 합니다. |
-> | 실행력 | DBforPostgreSQL/servers/privateEndpointConnections/delete | 기존 개인 끝점 연결을 삭제 합니다. |
-> | 실행력 | DBforPostgreSQL/servers/privateEndpointConnections/read | 개인 끝점 연결의 목록을 반환 하거나, 지정 된 개인 끝점 연결에 대 한 속성을 가져옵니다. |
-> | 실행력 | DBforPostgreSQL/servers/privateEndpointConnections/write | 기존 개인 끝점 연결을 승인 하거나 거부 합니다. |
+> | 실행력 | DBforPostgreSQL/servers/privateEndpointConnectionProxies/delete | 기존 개인 엔드포인트 연결 프록시를 삭제 합니다. |
+> | 실행력 | DBforPostgreSQL/servers/privateEndpointConnectionProxies/read | 개인 엔드포인트 연결 프록시의 목록을 반환 하거나, 지정 된 개인 엔드포인트 연결 프록시에 대 한 속성을 가져옵니다. |
+> | 실행력 | DBforPostgreSQL/servers/privateEndpointConnectionProxies/validate/action | NRP 쪽에서 개인 엔드포인트 연결 만들기 호출의 유효성을 검사 합니다. |
+> | 실행력 | DBforPostgreSQL/servers/privateEndpointConnectionProxies/write | 지정 된 매개 변수를 사용 하 여 개인 엔드포인트 연결 프록시를 만들거나 지정 된 개인 엔드포인트 연결 프록시에 대 한 속성 또는 태그를 업데이트 합니다. |
+> | 실행력 | DBforPostgreSQL/servers/privateEndpointConnections/delete | 기존 개인 엔드포인트 연결을 삭제 합니다. |
+> | 실행력 | DBforPostgreSQL/servers/privateEndpointConnections/read | 개인 엔드포인트 연결의 목록을 반환 하거나, 지정 된 개인 엔드포인트 연결에 대 한 속성을 가져옵니다. |
+> | 실행력 | DBforPostgreSQL/servers/privateEndpointConnections/write | 기존 개인 엔드포인트 연결을 승인 하거나 거부 합니다. |
 > | 실행력 | DBforPostgreSQL/servers/privateLinkResources/read | 해당 PostgreSQL 서버에 대 한 개인 링크 리소스를 가져옵니다. |
 > | 실행력 | Microsoft.DBforPostgreSQL/servers/providers/Microsoft.Insights/diagnosticSettings/read | 리소스에 대한 진단 설정을 가져옵니다. |
 > | 실행력 | Microsoft.DBforPostgreSQL/servers/providers/Microsoft.Insights/diagnosticSettings/write | 리소스에 대한 진단 설정을 만들거나 업데이트합니다. |
@@ -2479,9 +2479,9 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.Devices/elasticPools/iotHubTenants/routing/routes/$testall/Action | 모든 기존 경로에 대해 메시지를 테스트합니다. |
 > | 실행력 | Microsoft.Devices/elasticPools/iotHubTenants/routing/routes/$testnew/Action | 제공된 테스트 경로에 대해 메시지를 테스트합니다. |
 > | 실행력 | Microsoft.Devices/elasticPools/iotHubTenants/routingEndpointsHealth/Read | IotHub에 대한 모든 라우팅 엔드포인트의 상태를 가져옵니다. |
-> | 실행력 | Microsoft. Devices/elasticPools/iotHubTenants/securitySettings/operationResults/Read | Iot 테 넌 트 허브 보안 설정에 대 한 비동기 Put 작업의 결과를 가져옵니다. |
-> | 실행력 | Microsoft. Devices/elasticPools/iotHubTenants/securitySettings/Read | Iot 테 넌 트 허브에서 Azure Security Center 설정 가져오기 |
-> | 실행력 | Microsoft. Devices/elasticPools/iotHubTenants/securitySettings/Write | Iot 테 넌 트 허브에서 Azure Security Center 설정 업데이트 |
+> | 실행력 | Microsoft. Devices/elasticPools/iotHubTenants/securitySettings/operationResults/Read | Iot 테넌트 허브 보안 설정에 대 한 비동기 Put 작업의 결과를 가져옵니다. |
+> | 실행력 | Microsoft. Devices/elasticPools/iotHubTenants/securitySettings/Read | Iot 테넌트 허브에서 Azure Security Center 설정 가져오기 |
+> | 실행력 | Microsoft. Devices/elasticPools/iotHubTenants/securitySettings/Write | Iot 테넌트 허브에서 Azure Security Center 설정 업데이트 |
 > | 실행력 | Microsoft.Devices/elasticPools/iotHubTenants/Write | IotHub 테넌트 리소스를 만들거나 업데이트합니다. |
 > | 실행력 | Microsoft.Devices/ElasticPools/metricDefinitions/read | IotHub 서비스에 대해 사용 가능한 메트릭을 가져옵니다. |
 > | 실행력 | Microsoft.Devices/iotHubs/certificates/Delete | 인증서를 삭제합니다. |
@@ -2745,15 +2745,15 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.DocumentDB/databaseAccounts/percentile/read | 복제 대기 시간의 백분위 수를 읽습니다. |
 > | 실행력 | Microsoft.DocumentDB/databaseAccounts/percentile/sourceRegion/targetRegion/metrics/read | 특정 소스 및 대상 지역에 대한 대기 시간 메트릭을 읽습니다. |
 > | 실행력 | Microsoft.DocumentDB/databaseAccounts/percentile/targetRegion/metrics/read | 특정 대상 지역에 대한 대기 시간 메트릭을 읽습니다. |
-> | 실행력 | Microsoft.DocumentDB/databaseAccounts/privateEndpointConnectionProxies/delete | 데이터베이스 계정의 개인 끝점 연결 프록시를 삭제 합니다. |
-> | 실행력 | Microsoft.DocumentDB/databaseAccounts/privateEndpointConnectionProxies/operationResults/read | 개인 끝점 연결 프록시 비동기 작업의 상태를 읽습니다. |
-> | 실행력 | Microsoft.DocumentDB/databaseAccounts/privateEndpointConnectionProxies/read | 데이터베이스 계정의 개인 끝점 연결 프록시 읽기 |
-> | 실행력 | Microsoft.DocumentDB/databaseAccounts/privateEndpointConnectionProxies/validate/action | 데이터베이스 계정의 개인 끝점 연결 프록시 유효성 검사 |
-> | 실행력 | Microsoft.DocumentDB/databaseAccounts/privateEndpointConnectionProxies/write | 데이터베이스 계정의 개인 끝점 연결 프록시를 만들거나 업데이트 합니다. |
-> | 실행력 | Microsoft DocumentDB/databaseAccounts/privateEndpointConnections/delete | 데이터베이스 계정의 개인 끝점 연결 삭제 |
+> | 실행력 | Microsoft.DocumentDB/databaseAccounts/privateEndpointConnectionProxies/delete | 데이터베이스 계정의 개인 엔드포인트 연결 프록시를 삭제 합니다. |
+> | 실행력 | Microsoft.DocumentDB/databaseAccounts/privateEndpointConnectionProxies/operationResults/read | 개인 엔드포인트 연결 프록시 비동기 작업의 상태를 읽습니다. |
+> | 실행력 | Microsoft.DocumentDB/databaseAccounts/privateEndpointConnectionProxies/read | 데이터베이스 계정의 개인 엔드포인트 연결 프록시 읽기 |
+> | 실행력 | Microsoft.DocumentDB/databaseAccounts/privateEndpointConnectionProxies/validate/action | 데이터베이스 계정의 개인 엔드포인트 연결 프록시 유효성 검사 |
+> | 실행력 | Microsoft.DocumentDB/databaseAccounts/privateEndpointConnectionProxies/write | 데이터베이스 계정의 개인 엔드포인트 연결 프록시를 만들거나 업데이트 합니다. |
+> | 실행력 | Microsoft DocumentDB/databaseAccounts/privateEndpointConnections/delete | 데이터베이스 계정의 개인 엔드포인트 연결 삭제 |
 > | 실행력 | Microsoft DocumentDB/databaseAccounts/privateEndpointConnections/operationResults/read | PrivateEndpointConnenctions 비동기 작업의 상태를 읽습니다. |
-> | 실행력 | Microsoft DocumentDB/databaseAccounts/privateEndpointConnections/read | 개인 끝점 연결을 읽거나 데이터베이스 계정의 모든 개인 끝점 연결을 나열 합니다. |
-> | 실행력 | Microsoft DocumentDB/databaseAccounts/privateEndpointConnections/write | 데이터베이스 계정의 개인 끝점 연결을 만들거나 업데이트 합니다. |
+> | 실행력 | Microsoft DocumentDB/databaseAccounts/privateEndpointConnections/read | 개인 엔드포인트 연결을 읽거나 데이터베이스 계정의 모든 개인 엔드포인트 연결을 나열 합니다. |
+> | 실행력 | Microsoft DocumentDB/databaseAccounts/privateEndpointConnections/write | 데이터베이스 계정의 개인 엔드포인트 연결을 만들거나 업데이트 합니다. |
 > | 실행력 | Microsoft DocumentDB/databaseAccounts/privateLinkResources/read | 개인 링크 리소스를 읽거나 데이터베이스 계정의 모든 개인 링크 리소스를 나열 합니다. |
 > | 실행력 | Microsoft.DocumentDB/databaseAccounts/read | 데이터베이스 계정을 읽습니다. |
 > | 실행력 | Microsoft.DocumentDB/databaseAccounts/readonlykeys/action | 데이터베이스 계정 읽기 전용 키를 읽습니다. |
@@ -3700,8 +3700,8 @@ ms.locfileid: "76264902"
 > | DataAction | MachineLearningServices/작업 영역/데이터 저장소/읽기 | Machine Learning Services 작업 영역에서 데이터 저장소를 가져옵니다. |
 > | DataAction | MachineLearningServices/작업 영역/데이터 저장소/쓰기 | Machine Learning Services 작업 영역에서 데이터 저장소를 만들거나 업데이트 합니다. |
 > | 실행력 | Microsoft.MachineLearningServices/workspaces/delete | Machine Learning Services 작업 영역을 삭제합니다. |
-> | DataAction | MachineLearningServices/작업 영역/끝점/파이프라인/읽기 | Machine Learning Services 작업 영역에서 게시 된 파이프라인 및 파이프라인 끝점을 가져옵니다. |
-> | DataAction | MachineLearningServices/작업 영역/끝점/파이프라인/쓰기 | Machine Learning Services 작업 영역에서 게시 된 파이프라인 및 파이프라인 끝점을 만들거나 업데이트 합니다. |
+> | DataAction | MachineLearningServices/작업 영역/엔드포인트/파이프라인/읽기 | Machine Learning Services 작업 영역에서 게시 된 파이프라인 및 파이프라인 엔드포인트을 가져옵니다. |
+> | DataAction | MachineLearningServices/작업 영역/엔드포인트/파이프라인/쓰기 | Machine Learning Services 작업 영역에서 게시 된 파이프라인 및 파이프라인 엔드포인트을 만들거나 업데이트 합니다. |
 > | DataAction | MachineLearningServices/작업 영역/환경/빌드/작업 | Machine Learning Services 작업 영역에서 환경 빌드 |
 > | DataAction | MachineLearningServices/작업 영역/환경/읽기 | Machine Learning Services 작업 영역에서 환경을 가져옵니다. |
 > | DataAction | MachineLearningServices/작업 영역/환경/readSecrets/작업 | Machine Learning Services 작업 영역에서 비밀이 포함 된 환경을 가져옵니다. |
@@ -3733,14 +3733,14 @@ ms.locfileid: "76264902"
 > | DataAction | MachineLearningServices/작업 영역/pipelinedrafts/삭제 | Machine Learning Services 작업 영역에서 파이프라인 초안을 삭제 합니다. |
 > | DataAction | MachineLearningServices/작업 영역/pipelinedrafts/읽기 | Machine Learning Services 작업 영역에서 파이프라인 초안을 가져옵니다. |
 > | DataAction | MachineLearningServices/작업 영역/pipelinedrafts/쓰기 | Machine Learning Services 작업 영역에서 파이프라인 초안을 만들거나 업데이트 합니다. |
-> | 실행력 | MachineLearningServices/작업 영역/privateEndpointConnectionProxies/삭제 | Microsoft. 네트워크 공급자의 개인 끝점 리소스에 대 한 연결 프록시를 삭제 합니다. |
-> | 실행력 | MachineLearningServices/작업 영역/privateEndpointConnectionProxies/읽기 | Microsoft. 네트워크 공급자의 개인 끝점 리소스에 대 한 연결 프록시의 상태를 확인 합니다. |
-> | 실행력 | MachineLearningServices/작업 영역/privateEndpointConnectionProxies/유효성 검사/작업 | Microsoft. 네트워크 공급자의 개인 끝점 리소스에 대 한 연결 프록시의 유효성을 검사 합니다. |
-> | 실행력 | MachineLearningServices/작업 영역/privateEndpointConnectionProxies/쓰기 | 연결 프록시의 상태를 Microsoft 네트워크 공급자의 개인 끝점 리소스로 변경 합니다. |
-> | 실행력 | MachineLearningServices/작업 영역/privateEndpointConnections/삭제 | Microsoft. 네트워크 공급자의 개인 끝점 리소스에 대 한 연결을 삭제 합니다. |
-> | 실행력 | MachineLearningServices/작업 영역/privateEndpointConnections/읽기 | Microsoft. 네트워크 공급자의 개인 끝점 리소스에 대 한 연결 상태를 확인 합니다. |
-> | 실행력 | MachineLearningServices/작업 영역/privateEndpointConnections/쓰기 | Microsoft. 네트워크 공급자의 개인 끝점 리소스에 대 한 연결의 상태를 변경 합니다. |
-> | 실행력 | MachineLearningServices/작업 영역/PrivateEndpointConnectionsApproval/작업 | Microsoft. 네트워크 공급자의 개인 끝점 리소스에 대 한 연결을 승인 하거나 거부 합니다. |
+> | 실행력 | MachineLearningServices/작업 영역/privateEndpointConnectionProxies/삭제 | Microsoft. 네트워크 공급자의 개인 엔드포인트 리소스에 대 한 연결 프록시를 삭제 합니다. |
+> | 실행력 | MachineLearningServices/작업 영역/privateEndpointConnectionProxies/읽기 | Microsoft. 네트워크 공급자의 개인 엔드포인트 리소스에 대 한 연결 프록시의 상태를 확인 합니다. |
+> | 실행력 | MachineLearningServices/작업 영역/privateEndpointConnectionProxies/유효성 검사/작업 | Microsoft. 네트워크 공급자의 개인 엔드포인트 리소스에 대 한 연결 프록시의 유효성을 검사 합니다. |
+> | 실행력 | MachineLearningServices/작업 영역/privateEndpointConnectionProxies/쓰기 | 연결 프록시의 상태를 Microsoft 네트워크 공급자의 개인 엔드포인트 리소스로 변경 합니다. |
+> | 실행력 | MachineLearningServices/작업 영역/privateEndpointConnections/삭제 | Microsoft. 네트워크 공급자의 개인 엔드포인트 리소스에 대 한 연결을 삭제 합니다. |
+> | 실행력 | MachineLearningServices/작업 영역/privateEndpointConnections/읽기 | Microsoft. 네트워크 공급자의 개인 엔드포인트 리소스에 대 한 연결 상태를 확인 합니다. |
+> | 실행력 | MachineLearningServices/작업 영역/privateEndpointConnections/쓰기 | Microsoft. 네트워크 공급자의 개인 엔드포인트 리소스에 대 한 연결의 상태를 변경 합니다. |
+> | 실행력 | MachineLearningServices/작업 영역/PrivateEndpointConnectionsApproval/작업 | Microsoft. 네트워크 공급자의 개인 엔드포인트 리소스에 대 한 연결을 승인 하거나 거부 합니다. |
 > | 실행력 | MachineLearningServices/작업 영역/privateLinkResources/읽기 | Machine Learning Services 작업 영역의 지정 된 인스턴스에 대해 사용 가능한 개인 링크 리소스를 가져옵니다. |
 > | 실행력 | Microsoft.MachineLearningServices/workspaces/read | Machine Learning Services 작업 영역을 가져옵니다. |
 > | DataAction | MachineLearningServices/작업 영역/서비스/aci/삭제 | Machine Learning Services 작업 영역에서 ACI 서비스를 삭제 합니다. |
@@ -4252,7 +4252,7 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.Network/localnetworkgateways/write | LocalNetworkGateway를 만들거나 기존 LocalNetworkGateway를 업데이트합니다. |
 > | 실행력 | Microsoft.Network/locations/autoApprovedPrivateLinkServices/read | 자동 승인 된 개인 링크 서비스를 가져옵니다. |
 > | 실행력 | Microsoft.Network/locations/availableDelegations/read | 사용 가능한 위임을 가져옵니다. |
-> | 실행력 | Microsoft.Network/locations/availablePrivateEndpointTypes/read | 사용 가능한 개인 끝점 리소스를 가져옵니다. |
+> | 실행력 | Microsoft.Network/locations/availablePrivateEndpointTypes/read | 사용 가능한 개인 엔드포인트 리소스를 가져옵니다. |
 > | 실행력 | Microsoft. 네트워크/위치/availableServiceAliases/읽기 | 사용 가능한 서비스 별칭을 가져옵니다. |
 > | 실행력 | Microsoft.Network/locations/bareMetalTenants/action | 운영 체제 미 설치 컴퓨터 테넌트를 할당하거나 유효성을 검사합니다. |
 > | 실행력 | Microsoft.Network/locations/checkAcceleratedNetworkingSupport/action | 가속 네트워킹 지원을 확인합니다. |
@@ -4375,15 +4375,15 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.Network/privateDnsZones/virtualNetworkLinks/read | JSON 형식의 가상 네트워크 속성에 대 한 사설 DNS 영역 링크를 가져옵니다. |
 > | 실행력 | Microsoft.Network/privateDnsZones/virtualNetworkLinks/write | 가상 네트워크에 대 한 사설 DNS 영역 링크를 만들거나 업데이트 합니다. |
 > | 실행력 | Microsoft.Network/privateDnsZones/write | 리소스 그룹 내의 사설 DNS 영역을 만들거나 업데이트 합니다. 이 명령은 영역 내에서 가상 네트워크 링크 또는 레코드 집합을 만들거나 업데이트 하는 데 사용할 수 없습니다. |
-> | 실행력 | Microsoft. Network/privateEndpointRedirectMaps/read | 개인 끝점 RedirectMap을 가져옵니다. |
-> | 실행력 | Microsoft. Network/privateEndpointRedirectMaps/write | 개인 끝점 RedirectMap을 만들거나 기존 개인 끝점 RedirectMap을 업데이트 합니다. |
-> | 실행력 | Microsoft.Network/privateEndpoints/delete | 개인 끝점 리소스를 삭제 합니다. |
-> | 실행력 | Microsoft.Network/privateEndpoints/read | 개인 끝점 리소스를 가져옵니다. |
-> | 실행력 | Microsoft.Network/privateEndpoints/write | 새 개인 끝점을 만들거나 기존 개인 끝점을 업데이트 합니다. |
+> | 실행력 | Microsoft. Network/privateEndpointRedirectMaps/read | 개인 엔드포인트 RedirectMap을 가져옵니다. |
+> | 실행력 | Microsoft. Network/privateEndpointRedirectMaps/write | 개인 엔드포인트 RedirectMap을 만들거나 기존 개인 엔드포인트 RedirectMap을 업데이트 합니다. |
+> | 실행력 | Microsoft.Network/privateEndpoints/delete | 개인 엔드포인트 리소스를 삭제 합니다. |
+> | 실행력 | Microsoft.Network/privateEndpoints/read | 개인 엔드포인트 리소스를 가져옵니다. |
+> | 실행력 | Microsoft.Network/privateEndpoints/write | 새 개인 엔드포인트을 만들거나 기존 개인 엔드포인트을 업데이트 합니다. |
 > | 실행력 | Microsoft.Network/privateLinkServices/delete | 프라이빗 링크 서비스 자원을 삭제합니다. |
-> | 실행력 | Microsoft.Network/privateLinkServices/privateEndpointConnections/delete | 개인 끝점 연결을 삭제 합니다. |
-> | 실행력 | Microsoft.Network/privateLinkServices/privateEndpointConnections/read | 개인 끝점 연결 정의를 가져옵니다. |
-> | 실행력 | Microsoft.Network/privateLinkServices/privateEndpointConnections/write | 새 개인 끝점 연결을 만들거나 기존 개인 끝점 연결을 업데이트 합니다. |
+> | 실행력 | Microsoft.Network/privateLinkServices/privateEndpointConnections/delete | 개인 엔드포인트 연결을 삭제 합니다. |
+> | 실행력 | Microsoft.Network/privateLinkServices/privateEndpointConnections/read | 개인 엔드포인트 연결 정의를 가져옵니다. |
+> | 실행력 | Microsoft.Network/privateLinkServices/privateEndpointConnections/write | 새 개인 엔드포인트 연결을 만들거나 기존 개인 엔드포인트 연결을 업데이트 합니다. |
 > | 실행력 | Microsoft.Network/privateLinkServices/read | 프라이빗 링크 서비스 리소스를 가져옵니다. |
 > | 실행력 | Microsoft.Network/privateLinkServices/write | 새로운 프라이빗 링크 서비스를 만들거나 기존 프라이빗 링크 서비스를 업데이트합니다. |
 > | 실행력 | Microsoft.Network/publicIPAddresses/delete | 공용 IP 주소를 삭제합니다. |
@@ -4410,8 +4410,8 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.Network/routeTables/routes/write | 경로를 만들거나 기존 경로를 업데이트합니다. |
 > | 실행력 | Microsoft.Network/routeTables/write | 경로 테이블을 만들거나 기존 경로 테이블을 업데이트합니다. |
 > | 실행력 | Microsoft.Network/serviceEndpointPolicies/delete | 서비스 엔드포인트 정책을 삭제합니다. |
-> | 실행력 | Microsoft.Network/serviceEndpointPolicies/join/action | 서비스 끝점 정책을 조인 합니다. 했어야 하지 않습니다. |
-> | 실행력 | Microsoft.Network/serviceEndpointPolicies/joinSubnet/action | 서브넷을 서비스 끝점 정책에 조인 합니다. 했어야 하지 않습니다. |
+> | 실행력 | Microsoft.Network/serviceEndpointPolicies/join/action | 서비스 엔드포인트 정책을 조인 합니다. 했어야 하지 않습니다. |
+> | 실행력 | Microsoft.Network/serviceEndpointPolicies/joinSubnet/action | 서브넷을 서비스 엔드포인트 정책에 조인 합니다. 했어야 하지 않습니다. |
 > | 실행력 | Microsoft.Network/serviceEndpointPolicies/read | 서비스 엔드포인트 정책 설명을 가져옵니다. |
 > | 실행력 | Microsoft.Network/serviceEndpointPolicies/serviceEndpointPolicyDefinitions/delete | 서비스 엔드포인트 정책 정의를 삭제합니다. |
 > | 실행력 | Microsoft.Network/serviceEndpointPolicies/serviceEndpointPolicyDefinitions/read | 서비스 엔드포인트 정책 정의 설명을 가져옵니다. |
@@ -4471,9 +4471,9 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft. Network/virtualNetworks/join/action | 가상 네트워크를 조인 합니다. 했어야 하지 않습니다. |
 > | 실행력 | Microsoft.Network/virtualNetworks/peer/action | 가상 네트워크를 다른 가상 네트워크와 피어링합니다. |
 > | 실행력 | Microsoft.Network/virtualNetworks/read | 가상 네트워크 정의를 가져옵니다. |
-> | 실행력 | Microsoft. Network/virtualNetworks/서브넷/contextualServiceEndpointPolicies/delete | 컨텍스트 서비스 끝점 정책을 삭제 합니다. |
-> | 실행력 | Microsoft. Network/virtualNetworks/서브넷/contextualServiceEndpointPolicies/read | 상황별 서비스 끝점 정책을 가져옵니다. |
-> | 실행력 | Microsoft. Network/virtualNetworks/서브넷/contextualServiceEndpointPolicies/write | 컨텍스트 서비스 끝점 정책을 만들거나 기존 컨텍스트 서비스 끝점 정책을 업데이트 합니다. |
+> | 실행력 | Microsoft. Network/virtualNetworks/서브넷/contextualServiceEndpointPolicies/delete | 컨텍스트 서비스 엔드포인트 정책을 삭제 합니다. |
+> | 실행력 | Microsoft. Network/virtualNetworks/서브넷/contextualServiceEndpointPolicies/read | 상황별 서비스 엔드포인트 정책을 가져옵니다. |
+> | 실행력 | Microsoft. Network/virtualNetworks/서브넷/contextualServiceEndpointPolicies/write | 컨텍스트 서비스 엔드포인트 정책을 만들거나 기존 컨텍스트 서비스 엔드포인트 정책을 업데이트 합니다. |
 > | 실행력 | Microsoft.Network/virtualNetworks/subnets/delete | 가상 네트워크 서브넷을 삭제합니다. |
 > | 실행력 | Microsoft.Network/virtualNetworks/subnets/join/action | 가상 네트워크를 조인 합니다. 했어야 하지 않습니다. |
 > | 실행력 | Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action | 스토리지 계정 또는 SQL 데이터베이스 같은 리소스를 서브넷에 조인합니다. 했어야 하지 않습니다. |
@@ -5374,10 +5374,10 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.Search/searchServices/listAdminKeys/action | 관리 키를 읽습니다. |
 > | 실행력 | Microsoft. 검색/searchServices/listQueryKeys/action | 지정된 Azure Search 서비스에 대한 쿼리 API 키 목록을 반환합니다. |
 > | 실행력 | Microsoft.Search/searchServices/listQueryKeys/read | 지정된 Azure Search 서비스에 대한 쿼리 API 키 목록을 반환합니다. |
-> | 실행력 | Microsoft. 검색/searchServices/privateEndpointConnectionProxies/delete | 기존 개인 끝점 연결 프록시를 삭제 합니다. |
-> | 실행력 | Microsoft. 검색/searchServices/privateEndpointConnectionProxies/읽기 | 개인 끝점 연결 프록시의 목록을 반환 하거나, 지정 된 개인 끝점 연결 프록시에 대 한 속성을 가져옵니다. |
-> | 실행력 | Microsoft. 검색/searchServices/privateEndpointConnectionProxies/유효성 검사/작업 | NRP 쪽에서 개인 끝점 연결 만들기 호출의 유효성을 검사 합니다. |
-> | 실행력 | Microsoft. 검색/searchServices/privateEndpointConnectionProxies/write | 지정 된 매개 변수를 사용 하 여 개인 끝점 연결 프록시를 만들거나 지정 된 개인 끝점 연결 프록시에 대 한 속성 또는 태그를 업데이트 합니다. |
+> | 실행력 | Microsoft. 검색/searchServices/privateEndpointConnectionProxies/delete | 기존 개인 엔드포인트 연결 프록시를 삭제 합니다. |
+> | 실행력 | Microsoft. 검색/searchServices/privateEndpointConnectionProxies/읽기 | 개인 엔드포인트 연결 프록시의 목록을 반환 하거나, 지정 된 개인 엔드포인트 연결 프록시에 대 한 속성을 가져옵니다. |
+> | 실행력 | Microsoft. 검색/searchServices/privateEndpointConnectionProxies/유효성 검사/작업 | NRP 쪽에서 개인 엔드포인트 연결 만들기 호출의 유효성을 검사 합니다. |
+> | 실행력 | Microsoft. 검색/searchServices/privateEndpointConnectionProxies/write | 지정 된 매개 변수를 사용 하 여 개인 엔드포인트 연결 프록시를 만들거나 지정 된 개인 엔드포인트 연결 프록시에 대 한 속성 또는 태그를 업데이트 합니다. |
 > | 실행력 | Microsoft.Search/searchServices/read | Search 서비스를 읽습니다. |
 > | 실행력 | Microsoft.Search/searchServices/regenerateAdminKey/action | 관리 키를 다시 생성합니다. |
 > | 실행력 | Microsoft.Search/searchServices/start/action | Search 서비스를 시작합니다. |
@@ -5621,12 +5621,12 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.SignalRService/SignalR/eventGridFilters/read | 지정 된 event grid 필터의 속성을 가져오거나 지정 된 SignalR에 대 한 모든 event grid 필터를 나열 합니다. |
 > | 실행력 | Microsoft.SignalRService/SignalR/eventGridFilters/write | 지정 된 매개 변수를 사용 하 여 SignalR에 대 한 event grid 필터를 만들거나 업데이트 합니다. |
 > | 실행력 | Microsoft.SignalRService/SignalR/listkeys/action | 관리 포털에서 또는 API를 통해 SignalR 액세스 키 값을 봅니다. |
-> | 실행력 | SignalRService/SignalR/privateEndpointConnectionProxies/delete | 개인 끝점 연결 프록시를 삭제 합니다. |
-> | 실행력 | SignalRService/SignalR/privateEndpointConnectionProxies/read | 개인 끝점 연결 프록시 읽기 |
-> | 실행력 | SignalRService/SignalR/privateEndpointConnectionProxies/validate/action | 개인 끝점 연결 프록시 유효성 검사 |
-> | 실행력 | SignalRService/SignalR/privateEndpointConnectionProxies/write | 개인 끝점 연결 프록시 만들기 |
-> | 실행력 | SignalRService/SignalR/privateEndpointConnections/read | 개인 끝점 연결 읽기 |
-> | 실행력 | SignalRService/SignalR/privateEndpointConnections/write | 개인 끝점 연결 승인 또는 거부 |
+> | 실행력 | SignalRService/SignalR/privateEndpointConnectionProxies/delete | 개인 엔드포인트 연결 프록시를 삭제 합니다. |
+> | 실행력 | SignalRService/SignalR/privateEndpointConnectionProxies/read | 개인 엔드포인트 연결 프록시 읽기 |
+> | 실행력 | SignalRService/SignalR/privateEndpointConnectionProxies/validate/action | 개인 엔드포인트 연결 프록시 유효성 검사 |
+> | 실행력 | SignalRService/SignalR/privateEndpointConnectionProxies/write | 개인 엔드포인트 연결 프록시 만들기 |
+> | 실행력 | SignalRService/SignalR/privateEndpointConnections/read | 개인 엔드포인트 연결 읽기 |
+> | 실행력 | SignalRService/SignalR/privateEndpointConnections/write | 개인 엔드포인트 연결 승인 또는 거부 |
 > | 실행력 | SignalRService/SignalR/privateLinkResources/read | 모든 SignalR 개인 링크 리소스 나열 |
 > | 실행력 | Microsoft.SignalRService/SignalR/read | 관리 포털 또는 API를 통해 SignalR의 설정과 구성을 확인합니다. |
 > | 실행력 | Microsoft.SignalRService/SignalR/regeneratekey/action | 관리 포털에서 또는 API를 통해 SignalR 액세스 키 값을 변경합니다. |
@@ -5709,10 +5709,10 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft .Sql/위치/managedShortTermRetentionPolicyOperationResults/읽기 | 단기 보존 정책 작업의 상태를 가져옵니다. |
 > | 실행력 | Microsoft.Sql/locations/managedTransparentDataEncryptionAzureAsyncOperation/read | 관리되는 데이터베이스 투명한 데이터 암호화에 대해 진행 중인 작업을 가져옵니다. |
 > | 실행력 | Microsoft.Sql/locations/managedTransparentDataEncryptionOperationResults/read | 관리되는 데이터베이스 투명한 데이터 암호화에 대해 진행 중인 작업을 가져옵니다. |
-> | 실행력 | Microsoft.Sql/locations/privateEndpointConnectionAzureAsyncOperation/read | 개인 끝점 연결 작업에 대 한 결과를 가져옵니다. |
-> | 실행력 | Microsoft.Sql/locations/privateEndpointConnectionOperationResults/read | 개인 끝점 연결 작업에 대 한 결과를 가져옵니다. |
-> | 실행력 | Microsoft.Sql/locations/privateEndpointConnectionProxyAzureAsyncOperation/read | 개인 끝점 연결 프록시 작업의 결과를 가져옵니다. |
-> | 실행력 | Microsoft.Sql/locations/privateEndpointConnectionProxyOperationResults/read | 개인 끝점 연결 프록시 작업의 결과를 가져옵니다. |
+> | 실행력 | Microsoft.Sql/locations/privateEndpointConnectionAzureAsyncOperation/read | 개인 엔드포인트 연결 작업에 대 한 결과를 가져옵니다. |
+> | 실행력 | Microsoft.Sql/locations/privateEndpointConnectionOperationResults/read | 개인 엔드포인트 연결 작업에 대 한 결과를 가져옵니다. |
+> | 실행력 | Microsoft.Sql/locations/privateEndpointConnectionProxyAzureAsyncOperation/read | 개인 엔드포인트 연결 프록시 작업의 결과를 가져옵니다. |
+> | 실행력 | Microsoft.Sql/locations/privateEndpointConnectionProxyOperationResults/read | 개인 엔드포인트 연결 프록시 작업의 결과를 가져옵니다. |
 > | 실행력 | Microsoft.Sql/locations/read | 지정된 구독에 사용 가능한 위치를 가져옵니다. |
 > | 실행력 | Microsoft .Sql/위치/serverAdministratorAzureAsyncOperation/읽기 | 서버 Azure Active Directory 관리자의 비동기 작업 결과 |
 > | 실행력 | Microsoft .Sql/위치/Server관리자 Operationresults/read | 서버 Azure Active Directory 관리자 작업 결과 |
@@ -5798,7 +5798,7 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.Sql/managedInstances/vulnerabilityAssessments/write | 주어진 관리되는 인스턴스에 대한 취약성 평가를 변경합니다. |
 > | 실행력 | Microsoft.Sql/managedInstances/write | 지정된 매개 변수를 사용하여 관리되는 인스턴스를 만들거나 지정된 관리되는 인스턴스에 대한 속성 또는 태그를 업데이트합니다. |
 > | 실행력 | Microsoft.Sql/operations/read | 사용 가능한 REST 작업을 가져옵니다. |
-> | 실행력 | Microsoft .Sql/privateEndpointConnectionsApproval/action | 사용자가 개인 끝점 연결을 승인할 수 있는지 여부를 결정 합니다. |
+> | 실행력 | Microsoft .Sql/privateEndpointConnectionsApproval/action | 사용자가 개인 엔드포인트 연결을 승인할 수 있는지 여부를 결정 합니다. |
 > | 실행력 | Microsoft.Sql/register/action | Microsoft SQL Database 리소스 공급자에 대한 구독을 등록하고 Microsoft SQL Databases를 만들도록 설정합니다. |
 > | 실행력 | Microsoft.Sql/servers/administratorOperationResults/read | 서버 관리자에 대해 진행 중인 작업을 가져옵니다. |
 > | 실행력 | Microsoft.Sql/servers/administrators/delete | 특정 Azure Active Directory 관리자 개체를 삭제 합니다. |
@@ -6006,14 +6006,14 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.Sql/servers/keys/write | 지정된 매개 변수를 사용하여 키를 만들거나 지정된 서버 키에 대한 속성 또는 태그를 업데이트합니다. |
 > | 실행력 | Microsoft.Sql/servers/operationResults/read | 진행 중인 서버 작업을 가져옵니다. |
 > | 실행력 | Microsoft .Sql/servers/작업/읽기 | 서버에서 수행 된 작업 목록을 반환 합니다. |
-> | 실행력 | Microsoft.Sql/servers/privateEndpointConnectionProxies/delete | 기존 개인 끝점 연결 프록시를 삭제 합니다. |
-> | 실행력 | Microsoft.Sql/servers/privateEndpointConnectionProxies/read | 개인 끝점 연결 프록시의 목록을 반환 하거나, 지정 된 개인 끝점 연결 프록시에 대 한 속성을 가져옵니다. |
-> | 실행력 | Microsoft.Sql/servers/privateEndpointConnectionProxies/validate/action | NRP 쪽에서 개인 끝점 연결 만들기 호출의 유효성을 검사 합니다. |
-> | 실행력 | Microsoft.Sql/servers/privateEndpointConnectionProxies/write | 지정 된 매개 변수를 사용 하 여 개인 끝점 연결 프록시를 만들거나 지정 된 개인 끝점 연결 프록시에 대 한 속성 또는 태그를 업데이트 합니다. |
-> | 실행력 | Microsoft.Sql/servers/privateEndpointConnections/delete | 기존 개인 끝점 연결을 삭제 합니다. |
-> | 실행력 | Microsoft.Sql/servers/privateEndpointConnections/read | 개인 끝점 연결의 목록을 반환 하거나, 지정 된 개인 끝점 연결에 대 한 속성을 가져옵니다. |
-> | 실행력 | Microsoft.Sql/servers/privateEndpointConnections/write | 기존 개인 끝점 연결을 승인 하거나 거부 합니다. |
-> | 실행력 | Microsoft .Sql/servers/privateEndpointConnectionsApproval/action | 사용자가 개인 끝점 연결을 승인할 수 있는지 여부를 결정 합니다. |
+> | 실행력 | Microsoft.Sql/servers/privateEndpointConnectionProxies/delete | 기존 개인 엔드포인트 연결 프록시를 삭제 합니다. |
+> | 실행력 | Microsoft.Sql/servers/privateEndpointConnectionProxies/read | 개인 엔드포인트 연결 프록시의 목록을 반환 하거나, 지정 된 개인 엔드포인트 연결 프록시에 대 한 속성을 가져옵니다. |
+> | 실행력 | Microsoft.Sql/servers/privateEndpointConnectionProxies/validate/action | NRP 쪽에서 개인 엔드포인트 연결 만들기 호출의 유효성을 검사 합니다. |
+> | 실행력 | Microsoft.Sql/servers/privateEndpointConnectionProxies/write | 지정 된 매개 변수를 사용 하 여 개인 엔드포인트 연결 프록시를 만들거나 지정 된 개인 엔드포인트 연결 프록시에 대 한 속성 또는 태그를 업데이트 합니다. |
+> | 실행력 | Microsoft.Sql/servers/privateEndpointConnections/delete | 기존 개인 엔드포인트 연결을 삭제 합니다. |
+> | 실행력 | Microsoft.Sql/servers/privateEndpointConnections/read | 개인 엔드포인트 연결의 목록을 반환 하거나, 지정 된 개인 엔드포인트 연결에 대 한 속성을 가져옵니다. |
+> | 실행력 | Microsoft.Sql/servers/privateEndpointConnections/write | 기존 개인 엔드포인트 연결을 승인 하거나 거부 합니다. |
+> | 실행력 | Microsoft .Sql/servers/privateEndpointConnectionsApproval/action | 사용자가 개인 엔드포인트 연결을 승인할 수 있는지 여부를 결정 합니다. |
 > | 실행력 | Microsoft.Sql/servers/privateLinkResources/read | 해당 sql server에 대 한 개인 링크 리소스 가져오기 |
 > | 실행력 | Microsoft.Sql/servers/providers/Microsoft.Insights/metricDefinitions/read | 서버에 사용할 수 있는 메트릭 형식을 반환합니다. |
 > | 실행력 | Microsoft.Sql/servers/read | 서버 목록을 가져오거나 지정된 서버에 대한 속성을 가져옵니다. |
@@ -6141,13 +6141,13 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft. Storage/storageAccounts/objectReplicationPolicies/read |  |
 > | 실행력 | Microsoft. Storage/storageAccounts/objectReplicationPolicies/read |  |
 > | 실행력 | Microsoft. Storage/storageAccounts/objectReplicationPolicies/write |  |
-> | 실행력 | Microsoft.Storage/storageAccounts/privateEndpointConnectionProxies/delete | 개인 끝점 연결 프록시 삭제 |
-> | 실행력 | Microsoft. Storage/storageAccounts/privateEndpointConnectionProxies/read | 개인 끝점 연결 프록시 가져오기 |
-> | 실행력 | Microsoft.Storage/storageAccounts/privateEndpointConnectionProxies/write | 개인 끝점 연결 프록시를 추가 합니다. |
-> | 실행력 | Microsoft.Storage/storageAccounts/privateEndpointConnections/delete | 개인 끝점 연결 삭제 |
-> | 실행력 | Microsoft.Storage/storageAccounts/privateEndpointConnections/read | 개인 끝점 연결 가져오기 |
-> | 실행력 | Microsoft.Storage/storageAccounts/privateEndpointConnections/write | 개인 끝점 연결 배치 |
-> | 실행력 | Microsoft. Storage/storageAccounts/PrivateEndpointConnectionsApproval/action | 개인 끝점 연결 승인 |
+> | 실행력 | Microsoft.Storage/storageAccounts/privateEndpointConnectionProxies/delete | 개인 엔드포인트 연결 프록시 삭제 |
+> | 실행력 | Microsoft. Storage/storageAccounts/privateEndpointConnectionProxies/read | 개인 엔드포인트 연결 프록시 가져오기 |
+> | 실행력 | Microsoft.Storage/storageAccounts/privateEndpointConnectionProxies/write | 개인 엔드포인트 연결 프록시를 추가 합니다. |
+> | 실행력 | Microsoft.Storage/storageAccounts/privateEndpointConnections/delete | 개인 엔드포인트 연결 삭제 |
+> | 실행력 | Microsoft.Storage/storageAccounts/privateEndpointConnections/read | 개인 엔드포인트 연결 가져오기 |
+> | 실행력 | Microsoft.Storage/storageAccounts/privateEndpointConnections/write | 개인 엔드포인트 연결 배치 |
+> | 실행력 | Microsoft. Storage/storageAccounts/PrivateEndpointConnectionsApproval/action | 개인 엔드포인트 연결 승인 |
 > | 실행력 | Microsoft.Storage/storageAccounts/privateLinkResources/read | StorageAccount groupids 가져오기 |
 > | 실행력 | Microsoft.Storage/storageAccounts/queueServices/queues/delete | 큐 삭제 결과를 반환합니다. |
 > | DataAction | Microsoft.Storage/storageAccounts/queueServices/queues/messages/add/action | 메시지 추가 결과를 반환합니다. |
@@ -6193,7 +6193,7 @@ ms.locfileid: "76264902"
 > | 실행력 | microsoft.storagesync/storageSyncServices/syncGroups/cloudEndpoints/prerestore/action | 복원 전에 이 작업을 호출합니다. |
 > | 실행력 | microsoft.storagesync/storageSyncServices/syncGroups/cloudEndpoints/read | 클라우드 엔드포인트를 준비합니다. |
 > | 실행력 | microsoft.storagesync/storageSyncServices/syncGroups/cloudEndpoints/restoreheartbeat/action | 하트비트를 복원합니다. |
-> | 실행력 | microsoft.storagesync/storageSyncServices/syncGroups/cloudEndpoints/triggerChangeDetection/작업 | 이 작업을 호출 하 여 클라우드 끝점의 파일 공유에 대 한 변경 내용 검색을 트리거합니다. |
+> | 실행력 | microsoft.storagesync/storageSyncServices/syncGroups/cloudEndpoints/triggerChangeDetection/작업 | 이 작업을 호출 하 여 클라우드 엔드포인트의 파일 공유에 대 한 변경 내용 검색을 트리거합니다. |
 > | 실행력 | microsoft.storagesync/storageSyncServices/syncGroups/cloudEndpoints/write | 클라우드 엔드포인트를 만들거나 업데이트합니다. |
 > | 실행력 | microsoft.storagesync/storageSyncServices/syncGroups/delete | 동기화 그룹을 삭제합니다. |
 > | 실행력 | microsoft.storagesync/storageSyncServices/syncGroups/providers/Microsoft.Insights/metricDefinitions/read | 동기화 그룹에 사용 가능한 메트릭을 가져옵니다. |
@@ -6569,7 +6569,7 @@ ms.locfileid: "76264902"
 > | 실행력 | Microsoft.Web/hostingEnvironments/multiRolePools/Write | App Service 환경에 새 FrontEnd 풀을 만들거나 기존 FrontEnd 풀을 업데이트합니다. |
 > | 실행력 | microsoft.web/hostingenvironments/operations/read | 호스팅 환경 작업을 가져옵니다. |
 > | 실행력 | microsoft.web/hostingenvironments/outboundnetworkdependenciesendpoints/read | 모든 아웃바운드 종속성의 네트워크 엔드포인트를 가져옵니다. |
-> | 실행력 | Microsoft.Web/hostingEnvironments/PrivateEndpointConnectionsApproval/action | 개인 끝점 연결 승인 |
+> | 실행력 | Microsoft.Web/hostingEnvironments/PrivateEndpointConnectionsApproval/action | 개인 엔드포인트 연결 승인 |
 > | 실행력 | Microsoft.Web/hostingEnvironments/Read | App Service 환경의 속성을 가져옵니다. |
 > | 실행력 | Microsoft.Web/hostingEnvironments/reboot/Action | App Service 환경의 모든 컴퓨터를 다시 부팅합니다. |
 > | 실행력 | microsoft.web/hostingenvironments/resume/action | 호스팅 환경을 계속합니다. |
@@ -6753,7 +6753,7 @@ ms.locfileid: "76264902"
 > | 실행력 | microsoft.web/sites/premieraddons/read | Web Apps 프리미어 추가 기능을 가져옵니다. |
 > | 실행력 | microsoft.web/sites/premieraddons/write | Web Apps 프리미어 추가 기능을 업데이트합니다. |
 > | 실행력 | microsoft.web/sites/privateaccess/read | 프라이빗 사이트 액세스 사용 및 사이트에 액세스할 수 있는 승인된 Virtual Networks 관련 데이터를 가져옵니다. |
-> | 실행력 | Microsoft.Web/sites/PrivateEndpointConnectionsApproval/action | 개인 끝점 연결 승인 |
+> | 실행력 | Microsoft.Web/sites/PrivateEndpointConnectionsApproval/action | 개인 엔드포인트 연결 승인 |
 > | 실행력 | microsoft.web/sites/processes/modules/read | Web Apps 프로세스 모듈을 가져옵니다. |
 > | 실행력 | microsoft.web/sites/processes/read | Web Apps 프로세스를 가져옵니다. |
 > | 실행력 | microsoft.web/sites/processes/threads/read | 스레드를 가져오기 Web Apps를 처리 합니다. |

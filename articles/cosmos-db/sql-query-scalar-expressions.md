@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB SQL 쿼리의 스칼라 식
-description: Azure Cosmos DB에 대 한 스칼라 식 SQL 구문에 대해 알아봅니다. 이 문서에서는 연산자를 사용 하 여 스칼라 식을 복합 식으로 결합 하는 방법에 대해서도 설명 합니다.
+description: Azure Cosmos DB에 대한 스칼라 식 SQL 구문에 대해 알아봅니다. 이 문서에서는 연산자를 사용 하 여 스칼라 식을 복합 식으로 결합 하는 방법에 대해서도 설명 합니다.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual

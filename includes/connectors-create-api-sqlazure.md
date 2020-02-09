@@ -23,14 +23,14 @@ SQL 트리거 또는 작업에서 연결 정보를 묻는 메시지가 표시 �
 
 1. **연결 이름**에 연결 이름을 만듭니다.
 
-1. **SQL Server 이름**에서 Azure SQL Server를 선택 합니다. **SQL Database 이름** 목록이 표시 되 면 데이터베이스를 선택 합니다. Azure SQL server에 대 한 사용자 이름 및 암호를 제공 합니다.
+1. **SQL Server 이름**에서 Azure SQL Server를 선택 합니다. **SQL Database 이름** 목록이 표시 되 면 데이터베이스를 선택 합니다. Azure SQL server에 대한 사용자 이름 및 암호를 제공 합니다.
 
    SQL database 속성의 Azure Portal 또는 연결 문자열에서이 정보를 찾을 수도 있습니다.
 
    * `User ID=<your-user-name>`
    * `Password=<your-password>`
 
-   ![Azure SQL Database에 대 한 연결 만들기](./media/connectors-create-api-sqlazure/azure-sql-database-create-connection.png)
+   ![Azure SQL Database에 대한 연결 만들기](./media/connectors-create-api-sqlazure/azure-sql-database-create-connection.png)
 
 1. 완료되면 **만들기**를 선택합니다.
 
@@ -48,7 +48,7 @@ SQL 트리거 또는 작업에서 연결 정보를 묻는 메시지가 표시 �
 
 1. 트리거 또는 작업에서 **온-프레미스 데이터 게이트웨이를 통해 연결**을 선택하여 SQL Server 옵션을 표시합니다.
 
-1. Sql **Server 이름** 및 **sql 데이터베이스 이름**에 대해 sql server의 주소와 데이터베이스 이름을 제공 합니다. 사용자 **이름** 및 **암호**에 서버에 대 한 사용자 이름 및 암호를 제공 합니다.
+1. Sql **Server 이름** 및 **sql 데이터베이스 이름**에 대해 sql server의 주소와 데이터베이스 이름을 제공 합니다. 사용자 **이름** 및 **암호**에 서버에 대한 사용자 이름 및 암호를 제공 합니다.
 
    연결 문자열에서이 정보를 찾을 수도 있습니다.
 
@@ -57,7 +57,7 @@ SQL 트리거 또는 작업에서 연결 정보를 묻는 메시지가 표시 �
    * `User ID=<your-user-name>`
    * `Password=<your-password>`
 
-   ![SQL Server에 대 한 연결 만들기](./media/connectors-create-api-sqlazure/sql-server-create-connection.png)
+   ![SQL Server에 대한 연결 만들기](./media/connectors-create-api-sqlazure/sql-server-create-connection.png)
 
 1. SQL server에서 Windows 또는 기본 인증을 사용 하는 경우 **인증 유형을**선택 합니다.
 

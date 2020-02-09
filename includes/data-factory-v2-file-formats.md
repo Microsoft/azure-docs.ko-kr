@@ -14,7 +14,7 @@ ms.locfileid: "72931015"
 <!--
     Common for all ADF file-based connectors
 -->
-Azure Data Factory는 다음 파일 형식을 지원 합니다. 서식 기반 설정에 대 한 각 문서를 참조 하세요.
+Azure Data Factory는 다음 파일 형식을 지원 합니다. 서식 기반 설정에 대한 각 문서를 참조 하세요.
 
 - [Avro 형식](../articles/data-factory/format-avro.md)
 - [이진 형식](../articles/data-factory/format-binary.md)

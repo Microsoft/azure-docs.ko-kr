@@ -16,14 +16,14 @@ ms.locfileid: "73885399"
 ---
 # <a name="install-and-use-consul-in-azure-kubernetes-service-aks"></a>Azure Kubernetes 서비스 (AKS)에서 Consul 설치 및 사용
 
-[Consul][consul-github] 은 Kubernetes 클러스터의 마이크로 서비스에서 주요 기능 집합을 제공 하는 오픈 소스 서비스 메시입니다. 이러한 기능에는 서비스 검색, 상태 검사, 서비스 구분 및 관찰성 포함 됩니다. Consul에 대 한 자세한 내용은 공식 이란 [?][consul-docs-concepts] 설명서를 참조 하세요.
+[Consul][consul-github] 은 Kubernetes 클러스터의 마이크로 서비스에서 주요 기능 집합을 제공 하는 오픈 소스 서비스 메시입니다. 이러한 기능에는 서비스 검색, 상태 검사, 서비스 구분 및 관찰성 포함 됩니다. Consul에 대한 자세한 내용은 공식 이란 [?][consul-docs-concepts] 설명서를 참조 하세요.
 
 이 문서에서는 Consul을 설치 하는 방법을 보여 줍니다. Consul 구성 요소는 AKS의 Kubernetes 클러스터에 설치 됩니다.
 
 > [!NOTE]
 > 이 지침은 Consul 버전 `1.6.0`을 참조 하 고 최소한의 투구 버전 `2.14.2`를 사용 합니다.
 >
-> Kubernetes 버전 `1.13+`에 대해 Consul `1.6.x` 릴리스를 실행할 수 있습니다. [GitHub][consul-github-releases] 에서 추가 기능을 사용할 수 [있습니다. 릴리스][consul-release-notes]정보에서 각 릴리스에 대 한 정보를 찾을 수 있습니다.
+> Kubernetes 버전 `1.13+`에 대해 Consul `1.6.x` 릴리스를 실행할 수 있습니다. [GitHub][consul-github-releases] 에서 추가 기능을 사용할 수 [있습니다. 릴리스][consul-release-notes]정보에서 각 릴리스에 대한 정보를 찾을 수 있습니다.
 
 이 문서에서는 다음 방법을 설명합니다.
 
@@ -34,7 +34,7 @@ ms.locfileid: "73885399"
 
 ## <a name="before-you-begin"></a>시작하기 전에
 
-이 문서에 설명 된 단계에서는 AKS 클러스터 (RBAC를 사용 하 여 Kubernetes `1.13` 이상)를 만들고 클러스터와 `kubectl` 연결을 설정 했다고 가정 합니다. 이러한 항목에 대 한 도움이 필요한 경우 [AKS 빠른][aks-quickstart]시작을 참조 하세요. 클러스터의 Linux 노드 풀에 노드가 3 개 이상 있는지 확인 합니다.
+이 문서에 설명 된 단계에서는 AKS 클러스터 (RBAC를 사용 하 여 Kubernetes `1.13` 이상)를 만들고 클러스터와 `kubectl` 연결을 설정 했다고 가정 합니다. 이러한 항목에 대한 도움이 필요한 경우 [AKS 빠른][aks-quickstart]시작을 참조 하세요. 클러스터의 Linux 노드 풀에 노드가 3 개 이상 있는지 확인 합니다.
 
 이러한 지침을 따르고 Consul을 설치 하는 [투구][helm] 가 필요 합니다. 클러스터에 제대로 설치 되 고 구성 된 안정적인 최신 버전을 설치 하는 것이 좋습니다. 투구 설치와 관련 하 여 도움이 필요한 경우 [AKS 투구 설치 지침][helm-install]을 참조 하세요. 모든 Consul pod는 Linux 노드에서 실행 되도록 예약 되어야 합니다.
 
@@ -133,7 +133,7 @@ consul-consul-tz2t5                                               1/1     Runnin
 
 ## <a name="accessing-the-consul-ui"></a>Consul UI 액세스
 
-Consul UI는 위의 설정에서 설치 되었으며 Consul에 대 한 UI 기반 구성을 제공 합니다. Consul의 UI는 외부 ip 주소를 통해 공개적으로 노출 되지 않습니다. Consul 사용자 인터페이스에 액세스 하려면 [kubectl][kubectl-port-forward] 명령을 사용 합니다. 이 명령은 클라이언트 컴퓨터와 AKS 클러스터의 관련 pod 간에 보안 연결을 만듭니다.
+Consul UI는 위의 설정에서 설치 되었으며 Consul에 대한 UI 기반 구성을 제공 합니다. Consul의 UI는 외부 ip 주소를 통해 공개적으로 노출 되지 않습니다. Consul 사용자 인터페이스에 액세스 하려면 [kubectl][kubectl-port-forward] 명령을 사용 합니다. 이 명령은 클라이언트 컴퓨터와 AKS 클러스터의 관련 pod 간에 보안 연결을 만듭니다.
 
 ```azurecli
 kubectl port-forward -n consul svc/consul-consul-ui 8080:80
@@ -146,7 +146,7 @@ kubectl port-forward -n consul svc/consul-consul-ui 8080:80
 ## <a name="uninstall-consul-from-aks"></a>AKS에서 Consul 제거
 
 > [!WARNING]
-> 실행 중인 시스템에서 Consul을 삭제 하면 서비스 간에 트래픽 관련 문제가 발생할 수 있습니다. 계속 하기 전에 시스템에 대 한 프로 비전을 제대로 작동 하는지 확인 합니다.
+> 실행 중인 시스템에서 Consul을 삭제 하면 서비스 간에 트래픽 관련 문제가 발생할 수 있습니다. 계속 하기 전에 시스템에 대한 프로 비전을 제대로 작동 하는지 확인 합니다.
 
 ### <a name="remove-consul-components-and-namespace"></a>Consul 구성 요소 및 네임 스페이스 제거
 
@@ -159,7 +159,7 @@ kubectl delete namespace consul
 
 ## <a name="next-steps"></a>다음 단계
 
-Consul에 대 한 추가 설치 및 구성 옵션을 살펴보려면 다음 공식 기술 문서를 참조 하세요.
+Consul에 대한 추가 설치 및 구성 옵션을 살펴보려면 다음 공식 기술 문서를 참조 하세요.
 
 - [Consul-투구 설치 가이드][consul-install-k8]
 - [Consul-투구 설치 옵션][consul-install-helm-options]

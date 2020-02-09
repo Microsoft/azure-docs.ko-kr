@@ -15,7 +15,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 09/18/2019
 ms.locfileid: "67182583"
 ---
-스토리지는 디스크 공간이나 인덱스, 문서 또는 기타 고급 리소스의 *최대 수*의 하드 제한 중에서 먼저 충족되는 조건에 따라 제한됩니다. 다음 표에서는 스토리지 제한에 대해 설명합니다. 인덱스, 문서 및 기타 개체에 대 한 최대 제한은 [리소스로 제한](../articles/search/search-limits-quotas-capacity.md#index-limits)을 참조 하세요.
+스토리지는 디스크 공간이나 인덱스, 문서 또는 기타 고급 리소스의 *최대 수*의 하드 제한 중에서 먼저 충족되는 조건에 따라 제한됩니다. 다음 표에서는 스토리지 제한에 대해 설명합니다. 인덱스, 문서 및 기타 개체에 대한 최대 제한은 [리소스로 제한](../articles/search/search-limits-quotas-capacity.md#index-limits)을 참조 하세요.
 
 | 리소스 | Free | Basic<sup>1</sup> | S1 | S2 | S3 | S3&nbsp;HD<sup>2</sup> | L1 | L2 |
 | -------- | --- | --- | --- | --- | --- | --- | --- | --- |

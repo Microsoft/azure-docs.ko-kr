@@ -1,5 +1,5 @@
 ---
-title: 포털을 사용 하 여 역할에 대 한 원격 데스크톱을 사용 하도록 설정
+title: 포털을 사용 하 여 역할에 대한 원격 데스크톱을 사용 하도록 설정
 titleSuffix: Azure Cloud Services
 description: 원격 데스크톱 연결을 허용하기 위해 Azure 클라우드 서비스 애플리케이션을 구성하는 방법
 services: cloud-services
@@ -42,7 +42,7 @@ Azure Portal에서는 애플리케이션이 배포된 후에도 원격 데스크
     ![클라우드 서비스 원격 데스크톱](./media/cloud-services-role-enable-remote-desktop-new-portal/CloudServices_Remote_Desktop_Details.png)
 
    > [!WARNING]
-   > 처음으로 원격 데스크톱을 사용하도록 설정한 후 **확인**(확인 표시)을 선택하면 모든 역할 인스턴스가 다시 시작됩니다. 다시 부팅되지 않도록 하려면 암호를 암호화하는 데 사용되는 인증서가 역할에 설치되어 있어야 합니다. 다시 시작되지 않도록 하려면 [클라우드 서비스에 대 한 인증서를 업로드](cloud-services-configure-ssl-certificate-portal.md#step-3-upload-a-certificate) 하고 이 대화 상자로 돌아옵니다.
+   > 처음으로 원격 데스크톱을 사용하도록 설정한 후 **확인**(확인 표시)을 선택하면 모든 역할 인스턴스가 다시 시작됩니다. 다시 부팅되지 않도록 하려면 암호를 암호화하는 데 사용되는 인증서가 역할에 설치되어 있어야 합니다. 다시 시작되지 않도록 하려면 [클라우드 서비스에 대한 인증서를 업로드](cloud-services-configure-ssl-certificate-portal.md#step-3-upload-a-certificate) 하고 이 대화 상자로 돌아옵니다.
 
 4. **역할**에서 업데이트할 역할을 선택하거나 모든 역할을 선택하려면 **모두**를 선택합니다.
 

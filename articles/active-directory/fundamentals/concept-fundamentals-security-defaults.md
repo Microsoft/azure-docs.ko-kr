@@ -29,13 +29,13 @@ Microsoft는 모든 사용자에 게 보안 기본값을 사용할 수 있도록
 ![보안 기본값을 사용 하도록 설정/해제 하는 Azure Portal의 스크린샷](./media/concept-fundamentals-security-defaults/security-defaults-azure-ad-portal.png)
  
 > [!TIP]
-> 테 넌 트가 2019 년 10 월 22 일 이후에 만들어진 경우 새 기본 보안 동작이 발생 하 고 테 넌 트에서 이미 보안 기본값을 사용 하도록 설정 되어 있을 수 있습니다. 모든 사용자를 보호 하기 위해 보안 기본값은 생성 된 모든 새 테 넌 트로 롤아웃 됩니다.
+> 테넌트가 2019 년 10 월 22 일 이후에 만들어진 경우 새 기본 보안 동작이 발생 하 고 테넌트에서 이미 보안 기본값을 사용 하도록 설정 되어 있을 수 있습니다. 모든 사용자를 보호 하기 위해 보안 기본값은 생성 된 모든 새 테넌트로 롤아웃 됩니다.
 
 보안 기본값을 사용할 수 있는 이유에 대 한 자세한 내용은 Alex Weinert의 블로그 게시물 ( [보안 기본값 소개](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/introducing-security-defaults/ba-p/1061414))에서 찾을 수 있습니다.
 
 ## <a name="unified-multi-factor-authentication-registration"></a>통합 Multi-Factor Authentication 등록
 
-테 넌 트의 모든 사용자는 Azure Multi-Factor Authentication 서비스의 형태로 MFA (multi-factor authentication)에 등록 해야 합니다. 사용자는 Microsoft Authenticator 앱을 사용 하 여 Multi-Factor Authentication에 등록 하는 데 14 일이 있습니다. 14 일이 경과 되 면 사용자는 Multi-Factor Authentication 등록이 완료 될 때까지 로그인 할 수 없습니다.
+테넌트의 모든 사용자는 Azure Multi-Factor Authentication 서비스의 형태로 MFA (multi-factor authentication)에 등록 해야 합니다. 사용자는 Microsoft Authenticator 앱을 사용 하 여 Multi-Factor Authentication에 등록 하는 데 14 일이 있습니다. 14 일이 경과 되 면 사용자는 Multi-Factor Authentication 등록이 완료 될 때까지 로그인 할 수 없습니다.
 
 일부 사용자는 부재 중이거나 보안 기본값을 사용 하도록 설정한 후 14 일 동안 로그인 하지 않을 수 있음을 이해 하 고 있습니다. 모든 사용자가 Multi-Factor Authentication 등록 하는 데 충분 한 시간을 갖도록 하기 위해 14 일의 기간은 각 사용자에 대해 고유 합니다. 사용자의 14 일 기간은 보안 기본값을 사용 하도록 설정한 후 처음 성공한 대화형 로그인 이후에 시작 됩니다.
 
@@ -74,7 +74,7 @@ Multi-Factor Authentication 등록을 완료 한 후에는 다음 9 개의 Azure
 
 현재 대부분의 손상 된 로그인 시도는 레거시 인증에서 제공 됩니다. 레거시 인증은 Multi-Factor Authentication을 지원 하지 않습니다. 디렉터리에서 Multi-Factor Authentication 정책을 사용 하도록 설정한 경우에도 공격자는 이전 프로토콜을 사용 하 여 인증 하 고 Multi-Factor Authentication을 무시할 수 있습니다. 
 
-테 넌 트에서 보안 기본값을 사용 하도록 설정한 후에는 이전 프로토콜을 통해 수행 된 모든 인증 요청이 차단 됩니다. 보안 기본값은 Exchange ActiveSync를 차단 하지 않습니다.
+테넌트에서 보안 기본값을 사용 하도록 설정한 후에는 이전 프로토콜을 통해 수행 된 모든 인증 요청이 차단 됩니다. 보안 기본값은 Exchange ActiveSync를 차단 하지 않습니다.
 
 > [!WARNING]
 > 보안 기본값을 사용 하도록 설정 하기 전에 관리자가 이전 인증 프로토콜을 사용 하지 않는지 확인 합니다. 자세한 내용은 [기존 인증에서 밖으로 이동 하는 방법](concept-fundamentals-block-legacy-authentication.md)을 참조 하세요.
@@ -87,22 +87,22 @@ Multi-Factor Authentication 등록을 완료 한 후에는 다음 9 개의 Azure
 - Azure PowerShell 
 - Azure CLI
 
-Azure Resource Manager를 사용 하 여 서비스를 관리 하는 작업은 매우 특권 수준의 작업입니다. Azure Resource Manager은 서비스 설정 및 구독 청구와 같은 테 넌 트 전체 구성을 변경할 수 있습니다. 단일 단계 인증은 피싱 및 암호 스프레이와 같은 다양 한 공격에 취약 합니다. 
+Azure Resource Manager를 사용 하 여 서비스를 관리 하는 작업은 매우 특권 수준의 작업입니다. Azure Resource Manager은 서비스 설정 및 구독 청구와 같은 테넌트 전체 구성을 변경할 수 있습니다. 단일 단계 인증은 피싱 및 암호 스프레이와 같은 다양 한 공격에 취약 합니다. 
 
 Azure Resource Manager에 액세스 하 고 구성을 업데이트 하려는 사용자의 id를 확인 하는 것이 중요 합니다. 액세스를 허용 하기 전에 추가 인증을 요구 하 여 id를 확인 합니다.
 
-테 넌 트에서 보안 기본값을 사용 하도록 설정한 후 Azure Portal, Azure PowerShell 또는 Azure CLI에 액세스 하는 모든 사용자는 추가 인증을 완료 해야 합니다. 이 정책은 사용자가 관리자 또는 사용자 인지에 관계 없이 Azure Resource Manager에 액세스 하는 모든 사용자에 게 적용 됩니다. 
+테넌트에서 보안 기본값을 사용 하도록 설정한 후 Azure Portal, Azure PowerShell 또는 Azure CLI에 액세스 하는 모든 사용자는 추가 인증을 완료 해야 합니다. 이 정책은 사용자가 관리자 또는 사용자 인지에 관계 없이 Azure Resource Manager에 액세스 하는 모든 사용자에 게 적용 됩니다. 
 
 사용자가 Multi-Factor Authentication 등록 되지 않은 경우 계속 진행 하려면 Microsoft Authenticator 앱을 사용 하 여 등록 해야 합니다. 14 일 Multi-Factor Authentication 등록 기간이 제공 되지 않습니다.
 
-2017 이전 Exchange Online 테 넌 트는 최신 인증을 기본적으로 사용 하지 않도록 설정 합니다. 이러한 테 넌 트를 통해 인증 하는 동안 로그인 루프의 가능성을 방지 하려면 [최신 인증을 사용 하도록 설정](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online)해야 합니다.
+2017 이전 Exchange Online 테넌트는 최신 인증을 기본적으로 사용 하지 않도록 설정 합니다. 이러한 테넌트를 통해 인증 하는 동안 로그인 루프의 가능성을 방지 하려면 [최신 인증을 사용 하도록 설정](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online)해야 합니다.
 
 > [!NOTE]
 > Azure AD Connect 동기화 계정은 보안 기본값에서 제외 되며 등록 하거나 multi-factor authentication을 수행 하 라는 메시지가 표시 되지 않습니다. 조직에서는 다른 용도로이 계정을 사용 하지 않아야 합니다.
 
 ## <a name="deployment-considerations"></a>배포 고려 사항
 
-다음의 추가 고려 사항은 테 넌 트에 대 한 보안 기본값 배포와 관련이 있습니다.
+다음의 추가 고려 사항은 테넌트에 대 한 보안 기본값 배포와 관련이 있습니다.
 
 ### <a name="authentication-methods"></a>인증 방법
 

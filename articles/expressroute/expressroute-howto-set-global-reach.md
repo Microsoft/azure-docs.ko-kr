@@ -45,7 +45,7 @@ ms.locfileid: "74083456"
 
 ## <a name="enable-connectivity"></a>연결 설정
 
-온-프레미스 네트워크 간의 연결을 사용 하도록 설정 합니다. 동일한 Azure 구독에 있는 회로와 다른 구독의 회로에 대 한 별도의 지침 집합이 있습니다.
+온-프레미스 네트워크 간의 연결을 사용 하도록 설정 합니다. 동일한 Azure 구독에 있는 회로와 다른 구독의 회로에 대한 별도의 지침 집합이 있습니다.
 
 ### <a name="expressroute-circuits-in-the-same-azure-subscription"></a>동일한 Azure 구독의 Express 경로 회로
 

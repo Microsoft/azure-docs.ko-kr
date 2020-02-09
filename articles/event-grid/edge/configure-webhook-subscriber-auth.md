@@ -18,7 +18,7 @@ ms.locfileid: "76841733"
 ---
 # <a name="configure-webhook-subscriber-authentication"></a>웹후크 구독자 인증 구성
 
-이 가이드는 Event Grid 모듈에 대해 가능한 webhook 구독자 구성의 예를 제공 합니다. 기본적으로 웹 후크 구독자에 대 한 HTTPS 끝점만 수락 됩니다. 구독자가 자체 서명 된 인증서를 제공 하는 경우 Event Grid 모듈에서 거부 됩니다.
+이 가이드는 Event Grid 모듈에 대해 가능한 webhook 구독자 구성의 예를 제공 합니다. 기본적으로 웹 후크 구독자에 대 한 HTTPS 엔드포인트만 수락 됩니다. 구독자가 자체 서명 된 인증서를 제공 하는 경우 Event Grid 모듈에서 거부 됩니다.
 
 ## <a name="allow-only-https-subscriber"></a>HTTPS 구독자만 허용
 

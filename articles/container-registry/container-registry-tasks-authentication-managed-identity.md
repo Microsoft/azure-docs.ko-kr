@@ -28,7 +28,7 @@ ms.locfileid: "76513419"
 
 ## <a name="why-use-a-managed-identity"></a>관리 ID를 사용하는 이유
 
-Azure 리소스에 대 한 관리 id는 Azure Active Directory에서 자동으로 관리 되는 id를 사용 하 여 선택한 Azure 서비스를 제공 합니다. 작업 단계에서 자격 증명을 전달 하지 않고도 작업에서 다른 보안 된 Azure 리소스에 액세스할 수 있도록 ACR 작업을 관리 되는 id로 구성할 수 있습니다.
+Azure 리소스에 대한 관리 id는 Azure Active Directory에서 자동으로 관리 되는 id를 사용 하 여 선택한 Azure 서비스를 제공 합니다. 작업 단계에서 자격 증명을 전달 하지 않고도 작업에서 다른 보안 된 Azure 리소스에 액세스할 수 있도록 ACR 작업을 관리 되는 id로 구성할 수 있습니다.
 
 관리 ID에는 다음과 같은 두 가지 유형이 있습니다.
 
@@ -36,7 +36,7 @@ Azure 리소스에 대 한 관리 id는 Azure Active Directory에서 자동으�
 
 * ACR 작업과 같이 특정 리소스에 대해 고유 하 고 해당 리소스의 수명 동안 지속 되는 *시스템 할당 id*입니다.
 
-ACR 작업에서 두 유형의 id를 모두 사용 하도록 설정할 수 있습니다. 모든 보안 주체와 마찬가지로 id에 다른 리소스에 대 한 액세스 권한을 부여 합니다. 태스크가 실행 될 때 id를 사용 하 여 액세스 해야 하는 작업 단계에서 리소스에 액세스 합니다.
+ACR 작업에서 두 유형의 id를 모두 사용 하도록 설정할 수 있습니다. 모든 보안 주체와 마찬가지로 id에 다른 리소스에 대한 액세스 권한을 부여 합니다. 태스크가 실행 될 때 id를 사용 하 여 액세스 해야 하는 작업 단계에서 리소스에 액세스 합니다.
 
 ## <a name="steps-to-use-a-managed-identity"></a>관리 id를 사용 하는 단계
 
@@ -76,20 +76,20 @@ az acr task create \
     --assign-identity <resourceID>
 ```
 
-[Az identity show][az-identity-show] 명령을 실행 하 여 id의 리소스 id를 가져올 수 있습니다. 리소스 그룹 *Myresourcegroup* 의 ID *myUserAssignedIdentity* 에 대 한 리소스 id 형식은 다음과 같습니다. 
+[Az identity show][az-identity-show] 명령을 실행 하 여 id의 리소스 id를 가져올 수 있습니다. 리소스 그룹 *Myresourcegroup* 의 ID *myUserAssignedIdentity* 에 대한 리소스 id 형식은 다음과 같습니다. 
 
 ```
 "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myUserAssignedIdentity"
 ```
 
-### <a name="3-grant-the-identity-permissions-to-access-other-azure-resources"></a>3. id에 다른 Azure 리소스에 대 한 액세스 권한을 부여 합니다.
+### <a name="3-grant-the-identity-permissions-to-access-other-azure-resources"></a>3. id에 다른 Azure 리소스에 대한 액세스 권한을 부여 합니다.
 
 작업 요구 사항에 따라 id 권한을 부여 하 여 다른 Azure 리소스에 액세스할 수 있습니다. 예를 들면 다음과 같습니다.
 
 * Azure의 대상 컨테이너 레지스트리에 끌어오기, 푸시 및 끌어오기 또는 기타 권한을 사용 하 여 관리 되는 id 역할을 할당 합니다. 레지스트리 역할의 전체 목록은 [Azure Container Registry 역할 및 사용 권한](container-registry-roles.md)을 참조 하세요. 
 * Azure 주요 자격 증명 모음에서 암호를 읽도록 관리 되는 id를 할당 합니다.
 
-[Azure CLI](../role-based-access-control/role-assignments-cli.md) 또는 다른 Azure 도구를 사용 하 여 리소스에 대 한 역할 기반 액세스를 관리 합니다. 예를 들어 [az role assign create][az-role-assignment-create] 명령을 실행 하 여 리소스에 id 역할을 할당 합니다. 
+[Azure CLI](../role-based-access-control/role-assignments-cli.md) 또는 다른 Azure 도구를 사용 하 여 리소스에 대한 역할 기반 액세스를 관리 합니다. 예를 들어 [az role assign create][az-role-assignment-create] 명령을 실행 하 여 리소스에 id 역할을 할당 합니다. 
 
 다음 예제에서는 관리 되는 id를 컨테이너 레지스트리에서 끌어올 수 있는 권한으로 할당 합니다. 이 명령은 id의 *서비스 사용자 id* 와 대상 레지스트리의 *리소스 id* 를 지정 합니다.
 
@@ -105,7 +105,7 @@ az role assignment create \
 
 작업에 다른 사용자 지정 레지스트리로 이미지를 끌어오거나 푸시하는 자격 증명이 필요 하거나 다른 리소스에 액세스 하려면 작업에 자격 증명을 추가 합니다. [Az acr task credential add][az-acr-task-credential-add] 명령을 실행 하 여 자격 증명을 추가 하 고, `--use-identity` 매개 변수를 전달 하 여 id가 자격 증명에 액세스할 수 있음을 표시 합니다. 
 
-예를 들어, 시스템 할당 id에 대 한 자격 증명을 추가 하 여 Azure container registry *targetregistry*로 인증 하려면 `use-identity [system]`를 전달 합니다.
+예를 들어, 시스템 할당 id에 대한 자격 증명을 추가 하 여 Azure container registry *targetregistry*로 인증 하려면 `use-identity [system]`를 전달 합니다.
 
 ```azurecli
 az acr task credential add \
@@ -115,7 +115,7 @@ az acr task credential add \
     --use-identity [system]
 ```
 
-사용자 할당 id에 대 한 자격 증명을 추가 하 여 레지스트리 *targetregistry*로 인증 하려면 id의 *클라이언트 id* 값으로 `use-identity`를 전달 합니다. 예:
+사용자 할당 id에 대한 자격 증명을 추가 하 여 레지스트리 *targetregistry*로 인증 하려면 id의 *클라이언트 id* 값으로 `use-identity`를 전달 합니다. 예:
 
 ```azurecli
 az acr task credential add \

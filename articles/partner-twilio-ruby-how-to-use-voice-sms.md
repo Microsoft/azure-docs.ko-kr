@@ -28,7 +28,7 @@ Twilio는 기존 웹 언어와 기술을 사용하여 음성 및 SMS 애플리�
 **Twilio 음성**을 통해 애플리케이션에서 전화를 걸고 받을 수 있습니다. **Twilio SMS**를 사용하면 애플리케이션에서 SMS 메시지를 작성하고 받을 수 있습니다. **Twilio 클라이언트**를 사용하면 애플리케이션에서 모바일 연결을 비롯한 기존 인터넷 연결을 통해 음성 통신을 사용할 수 있습니다.
 
 ## <a id="Pricing"></a>Twilio 가격 책정 및 특별 제공
-Twilio 가격 책정에 대 한 정보는 [Twilio 가격][twilio_pricing]으로 제공 됩니다. Azure 고객은 [특별 한 제품][special_offer](1000 텍스트 또는 1000 인바운드 분의 무료 크레딧)을 받습니다. 이 제품에 등록 하거나 자세한 내용을 보려면을 (를) 방문 [https://ahoy.twilio.com/azure][special_offer]하세요.  
+Twilio 가격 책정에 대한 정보는 [Twilio 가격][twilio_pricing]으로 제공 됩니다. Azure 고객은 [특별 한 제품][special_offer](1000 텍스트 또는 1000 인바운드 분의 무료 크레딧)을 받습니다. 이 제품에 등록 하거나 자세한 내용을 보려면을 (를) 방문 [https://ahoy.twilio.com/azure][special_offer]하세요.  
 
 ## <a id="Concepts"></a>개념
 Twilio API는 애플리케이션에 대한 음성 및 SMS 기능을 제공하는 RESTful API입니다. 클라이언트 라이브러리는 여러 언어로 제공 됩니다. 목록은 [TWILIO API 라이브러리][twilio_libraries]를 참조 하세요.
@@ -61,7 +61,7 @@ Twilio 동사는 Twilio에 **수행할 작업**을 알려 주는 XML 태그입�
 * **&lt;통화&gt;** : 통화 시 텍스트를 음성으로 변환합니다.
 * **&lt;Sms&gt;** : SMS 메시지를 보냅니다.
 
-Twilio 동사, 특성 및 TwiML에 대 한 자세한 내용은 [TwiML][twiml]를 참조 하세요. Twilio API에 대 한 자세한 내용은 [TWILIO api][twilio_api]를 참조 하세요.
+Twilio 동사, 특성 및 TwiML에 대한 자세한 내용은 [TwiML][twiml]를 참조 하세요. Twilio API에 대한 자세한 내용은 [TWILIO api][twilio_api]를 참조 하세요.
 
 ## <a id="CreateAccount"></a>Twilio 계정 만들기
 Twilio 계정을 가져올 준비가 되 면 [Twilio 체험][try_twilio]에서 등록 합니다. 무료 계정으로 시작했다가 나중에 계정을 업그레이드할 수 있습니다.
@@ -71,12 +71,12 @@ Twilio 계정을 등록할 때 애플리케이션의 무료 전화 번호를 받
 ### <a id="VerifyPhoneNumbers"></a>전화 번호 확인
 Twilio에서 제공한 번호 외에 애플리케이션에서 사용하기 위해 제어하는 번호(즉, 휴대폰 또는 집 전화 번호)도 확인할 수 있습니다. 
 
-전화 번호를 확인 하는 방법에 대 한 자세한 내용은 [숫자 관리][verify_phone]를 참조 하세요.
+전화 번호를 확인 하는 방법에 대한 자세한 내용은 [숫자 관리][verify_phone]를 참조 하세요.
 
 ## <a id="create_app"></a>Ruby 애플리케이션 만들기
 Twilio 서비스를 사용하고 Azure에서 실행되고 있는 Ruby 애플리케이션은 Twilio 서비스를 사용하는 다른 Ruby 애플리케이션과 차이가 없습니다. Twilio services는 RESTful이 고 여러 가지 방법으로 Ruby에서 호출 될 수 있지만,이 문서에서는 [ruby 용 Twilio 도우미 라이브러리][twilio_ruby]와 함께 Twilio 서비스를 사용 하는 방법을 집중적으로 설명 합니다.
 
-먼저 새 Ruby 웹 응용 프로그램에 대 한 호스트 역할을 하도록 [새 Azure LINUX VM을 설정][azure_vm_setup] 합니다. Rails 앱을 만드는 것과 관련된 단계는 무시하고 VM 설정만 수행하십시오. 외부 포트 80과 내부 포트 5000으로 엔드포인트를 만들어야 합니다.
+먼저 새 Ruby 웹 응용 프로그램에 대한 호스트 역할을 하도록 [새 Azure LINUX VM을 설정][azure_vm_setup] 합니다. Rails 앱을 만드는 것과 관련된 단계는 무시하고 VM 설정만 수행하십시오. 외부 포트 80과 내부 포트 5000으로 엔드포인트를 만들어야 합니다.
 
 아래 예제에서는 매우 간단한 Ruby 용 웹 프레임 워크인 [Sinatra][sinatra]를 사용 합니다. 그러나 Ruby on Rails를 비롯한 다른 웹 프레임워크와 함께 Ruby용 Twilio 도우미 라이브러리를 사용할 수도 있습니다.
 

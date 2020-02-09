@@ -39,11 +39,11 @@ ms.locfileid: "74942096"
 
 ## <a name="how-to-use-this-solution-template"></a>이 솔루션 템플릿을 사용하는 방법
 
-1. 템플릿으로 이동 **LastModifiedDate에서 새 파일만 복사**합니다. 원본 저장소 저장소에 대 한 **새** 연결을 만듭니다. 원본 저장소 저장소는 파일을 복사할 위치입니다.
+1. 템플릿으로 이동 **LastModifiedDate에서 새 파일만 복사**합니다. 원본 저장소 저장소에 대한 **새** 연결을 만듭니다. 원본 저장소 저장소는 파일을 복사할 위치입니다.
 
     ![원본에 대한 새 연결 만들기](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate1.png)
     
-2. 대상 저장소에 대 한 **새** 연결을 만듭니다. 대상 저장소는 파일을 복사할 위치입니다. 
+2. 대상 저장소에 대한 **새** 연결을 만듭니다. 대상 저장소는 파일을 복사할 위치입니다. 
 
     ![대상에 대한 새 연결 만들기](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate3.png)
 
@@ -55,7 +55,7 @@ ms.locfileid: "74942096"
 
     ![파이프라인 표시](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate5.png)
 
-5. **디버그**를 선택 하 고 **매개 변수에** 대 한 값을 작성 한 다음 **마침**을 선택 합니다.  아래 그림에서 다음과 같이 매개 변수를 설정 합니다.
+5. **디버그**를 선택 하 고 **매개 변수에** 대한 값을 작성 한 다음 **마침**을 선택 합니다.  아래 그림에서 다음과 같이 매개 변수를 설정 합니다.
    - **FolderPath_Source** = sourcefolder
    - **Directory_Source** = 하위 폴더
    - **FolderPath_Destination** = destinationfolder

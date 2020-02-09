@@ -114,7 +114,7 @@ Azure Cosmos DB 변경 피드에 대한 자세한 내용은 다음을 참조하�
 
  1. 멀티캐스팅 문제를 방지하기 위해 모든 **데이터**가 Azure Cosmos DB에만 푸시됩니다.
  2. **일괄 처리 계층**에는 Azure Cosmos DB에 저장되는 마스터 데이터 세트(변경 불가능한 추가 전용 원시 데이터 세트)가 있습니다. HDI Spark를 사용하면 집계를 미리 계산하여 계산된 일괄 처리 보기에 저장할 수 있습니다.
- 3. **서비스 계층** 은 마스터 데이터 집합 및 계산 된 일괄 처리 보기에 대 한 컬렉션을 포함 하는 Azure Cosmos 데이터베이스입니다.
+ 3. **서비스 계층** 은 마스터 데이터 집합 및 계산 된 일괄 처리 보기에 대한 컬렉션을 포함 하는 Azure Cosmos 데이터베이스입니다.
  4. **속도 계층**은 이 문서의 뒷부분에서 설명합니다.
  5. 일괄 처리 보기와 실시간 보기의 결과를 병합하거나 개별적으로 ping하여 모든 쿼리에 응답할 수 있습니다.
 
@@ -205,7 +205,7 @@ tweets_bytags.write.mode(SaveMode.Overwrite).cosmosDB(writeConfig)
 
 ![속도 계층을 강조 표시한 람다 아키텍처 다이어그램](./media/lambda-architecture/lambda-architecture-speed.png)
 
-이렇게 하려면 별도의 Azure Cosmos 컨테이너를 만들어 구조화 된 스트리밍 쿼리의 결과를 저장 합니다.  이렇게 하면 Apache Spark뿐 아니라 다른 시스템에서도 이 정보에 액세스할 수 있습니다. Cosmos DB TTL(Time-to-Live) 기능뿐만 아니라 설정된 기간 후에 문서가 자동으로 삭제되도록 구성할 수 있습니다.  Azure Cosmos DB TTL 기능에 대 한 자세한 내용은 [time to live에서 자동으로 Azure Cosmos 컨테이너의 데이터 만료](time-to-live.md) 를 참조 하세요.
+이렇게 하려면 별도의 Azure Cosmos 컨테이너를 만들어 구조화 된 스트리밍 쿼리의 결과를 저장 합니다.  이렇게 하면 Apache Spark뿐 아니라 다른 시스템에서도 이 정보에 액세스할 수 있습니다. Cosmos DB TTL(Time-to-Live) 기능뿐만 아니라 설정된 기간 후에 문서가 자동으로 삭제되도록 구성할 수 있습니다.  Azure Cosmos DB TTL 기능에 대한 자세한 내용은 [time to live에서 자동으로 Azure Cosmos 컨테이너의 데이터 만료](time-to-live.md) 를 참조 하세요.
 
 ```
 // Import Libraries

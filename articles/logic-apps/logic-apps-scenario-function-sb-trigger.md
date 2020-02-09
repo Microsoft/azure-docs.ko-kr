@@ -115,7 +115,7 @@ ms.locfileid: "75428716"
 
 1. **Azure Service Bus 큐 트리거** 창에서 트리거의 이름을 제공 하 고, Azure Service Bus SDK `OnMessageReceive()` 수신기를 사용 하는 큐에 대 한 **Service Bus 연결** 을 설정 하 고, **만들기**를 선택 합니다.
 
-1. 큐 메시지를 트리거로 사용 하 여 이전에 만든 논리 앱 끝점을 호출 하는 기본 함수를 작성 합니다. 함수를 작성 하기 전에 다음 사항을 검토 하십시오.
+1. 큐 메시지를 트리거로 사용 하 여 이전에 만든 논리 앱 엔드포인트을 호출 하는 기본 함수를 작성 합니다. 함수를 작성 하기 전에 다음 사항을 검토 하십시오.
 
    * 이 예제에서는 `application/json` 메시지 콘텐츠 형식을 사용하지만, 필요에 따라 형식을 변경할 수 있습니다.
    
@@ -150,4 +150,4 @@ ms.locfileid: "75428716"
 
 ## <a name="next-steps"></a>다음 단계
 
-* [HTTP 끝점을 사용 하 여 워크플로 호출, 트리거 또는 중첩](../logic-apps/logic-apps-http-endpoint.md)
+* [HTTP 엔드포인트을 사용 하 여 워크플로 호출, 트리거 또는 중첩](../logic-apps/logic-apps-http-endpoint.md)

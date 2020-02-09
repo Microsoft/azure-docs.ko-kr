@@ -34,7 +34,7 @@ OAuth 2.0 OBO(On-Behalf-Of) 흐름은 애플리케이션이 서비스/웹 API를
 
 > [!NOTE]
 >
-> - Microsoft id 플랫폼 끝점은 모든 시나리오 및 기능을 지원 하지 않습니다. Microsoft id 플랫폼 끝점을 사용 해야 하는지 여부를 확인 하려면 [microsoft id 플랫폼 제한 사항](active-directory-v2-limitations.md)을 참조 하세요. 
+> - Microsoft id 플랫폼 엔드포인트은 모든 시나리오 및 기능을 지원 하지 않습니다. Microsoft id 플랫폼 엔드포인트을 사용 해야 하는지 여부를 확인 하려면 [microsoft id 플랫폼 제한 사항](active-directory-v2-limitations.md)을 참조 하세요. 
 > - 2018년 5월을 기준으로 일부 암시적 흐름 파생 `id_token`은 OBO 흐름에 사용할 수 없습니다. SPA(단일 페이지 앱)는 OBO 흐름을 수행하려면, 대신 중간 계층 기밀 클라이언트에 **액세스** 토큰을 전달해야 합니다. OBO 호출을 수행할 수 있는 클라이언트에 대한 자세한 내용은 [제한 사항](#client-limitations)을 참조하세요.
 
 ## <a name="protocol-diagram"></a>프로토콜 다이어그램
@@ -46,8 +46,8 @@ OAuth 2.0 OBO(On-Behalf-Of) 흐름은 애플리케이션이 서비스/웹 API를
 ![OAuth 2.0 for flow를 표시 합니다.](./media/v2-oauth2-on-behalf-of-flow/protocols-oauth-on-behalf-of-flow.png)
 
 1. 클라이언트 애플리케이션은 토큰 A(API A의 `aud` 클레임 포함)를 사용하여 API A에 요청합니다.
-1. API A는 Microsoft id 플랫폼 토큰 발급 끝점을 인증 하 고 API B에 액세스 하기 위한 토큰을 요청 합니다.
-1. Microsoft id 플랫폼 토큰 발급 끝점은 토큰 A와 함께 API A의 자격 증명의 유효성을 검사 하 고 api B (토큰 B)에 대 한 액세스 토큰을 API A에 발급 합니다.
+1. API A는 Microsoft id 플랫폼 토큰 발급 엔드포인트을 인증 하 고 API B에 액세스 하기 위한 토큰을 요청 합니다.
+1. Microsoft id 플랫폼 토큰 발급 엔드포인트은 토큰 A와 함께 API A의 자격 증명의 유효성을 검사 하 고 api B (토큰 B)에 대 한 액세스 토큰을 API A에 발급 합니다.
 1. 토큰 B는 api B에 대 한 요청의 인증 헤더에 있는 API A에 의해 설정 됩니다.
 1. 보안 리소스의 데이터는 API B에서 API A로, 여기에서 클라이언트에 반환 됩니다.
 
@@ -56,7 +56,7 @@ OAuth 2.0 OBO(On-Behalf-Of) 흐름은 애플리케이션이 서비스/웹 API를
 
 ## <a name="service-to-service-access-token-request"></a>서비스 간 액세스 토큰 요청
 
-액세스 토큰을 요청 하려면 다음 매개 변수를 사용 하 여 테 넌 트 별 Microsoft id 플랫폼 토큰 끝점에 HTTP POST를 수행 합니다.
+액세스 토큰을 요청 하려면 다음 매개 변수를 사용 하 여 테넌트 별 Microsoft id 플랫폼 토큰 엔드포인트에 HTTP POST를 수행 합니다.
 
 ```
 https://login.microsoftonline.com/<tenant>/oauth2/v2.0/token
@@ -164,7 +164,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 
 ### <a name="error-response-example"></a>오류 응답 예제
 
-다운스트림 API에 조건부 액세스 정책 (예: multi-factor authentication)이 설정 되어 있는 경우 다운스트림 API에 대 한 액세스 토큰을 획득 하려고 할 때 토큰 끝점에서 오류 응답이 반환 됩니다. 클라이언트 응용 프로그램이 조건부 액세스 정책을 충족 하는 사용자 조작을 제공할 수 있도록 중간 계층 서비스에서이 오류를 클라이언트 응용 프로그램에 노출 해야 합니다.
+다운스트림 API에 조건부 액세스 정책 (예: multi-factor authentication)이 설정 되어 있는 경우 다운스트림 API에 대 한 액세스 토큰을 획득 하려고 할 때 토큰 엔드포인트에서 오류 응답이 반환 됩니다. 클라이언트 응용 프로그램이 조건부 액세스 정책을 충족 하는 사용자 조작을 제공할 수 있도록 중간 계층 서비스에서이 오류를 클라이언트 응용 프로그램에 노출 해야 합니다.
 
 ```
 {
@@ -199,7 +199,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6IkFRQUJBQUFBQUFCbmZpRy1tQTZOVG
 
 ### <a name="default-and-combined-consent"></a>/.default 및 결합된 승인
 
-중간 계층 애플리케이션이 해당 매니페스트의 알려진 클라이언트 애플리케이션 목록에 클라이언트를 추가하면, 클라이언트는 자기 자신과 중간 계층 애플리케이션을 위해 결합된 동의 흐름을 트리거할 수 있습니다. Microsoft id 플랫폼 끝점에서는 [`/.default` 범위](v2-permissions-and-consent.md#the-default-scope)를 사용 하 여이 작업을 수행 합니다. 알려진 클라이언트 응용 프로그램 및 `/.default`를 사용 하 여 동의 화면을 트리거하는 경우 동의 화면에는 클라이언트와 중간 계층 API에 대 한 사용 권한이 **모두** 표시 되 고 중간 계층 api에 필요한 권한도 요청 합니다. 사용자가 두 애플리케이션에 대한 동의를 제공하면 OBO 흐름이 작동합니다.
+중간 계층 애플리케이션이 해당 매니페스트의 알려진 클라이언트 애플리케이션 목록에 클라이언트를 추가하면, 클라이언트는 자기 자신과 중간 계층 애플리케이션을 위해 결합된 동의 흐름을 트리거할 수 있습니다. Microsoft id 플랫폼 엔드포인트에서는 [`/.default` 범위](v2-permissions-and-consent.md#the-default-scope)를 사용 하 여이 작업을 수행 합니다. 알려진 클라이언트 응용 프로그램 및 `/.default`를 사용 하 여 동의 화면을 트리거하는 경우 동의 화면에는 클라이언트와 중간 계층 API에 대 한 사용 권한이 **모두** 표시 되 고 중간 계층 api에 필요한 권한도 요청 합니다. 사용자가 두 애플리케이션에 대한 동의를 제공하면 OBO 흐름이 작동합니다.
 
 ### <a name="pre-authorized-applications"></a>사전 승인된 애플리케이션
 

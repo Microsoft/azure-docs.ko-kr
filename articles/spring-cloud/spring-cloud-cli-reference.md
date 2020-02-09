@@ -71,12 +71,12 @@ ms.locfileid: "76279035"
 | [az 스프링-클라우드 구성 서버 git 리포지토리 목록](#az-spring-cloud-config-server-git-repo-list) | 구성 서버에 대 한 모든 git 리포지토리 configs를 나열 합니다. |
 | [az 스프링-클라우드 구성 서버 git 리포지토리 제거](#az-spring-cloud-config-server-git-repo-remove) | 구성 서버에서 지정 된 git 리포지토리를 제거 합니다. |
 
-| az 스프링-cloud test-엔드포인트 | Azure 스프링 클라우드에서 끝점 테스트를 관리 하는 명령 |
+| az 스프링-cloud test-엔드포인트 | Azure 스프링 클라우드에서 엔드포인트 테스트를 관리 하는 명령 |
 | --- | ---: |
-| [az 스프링-클라우드 테스트-끝점 사용 안 함](#az-spring-cloud-test-endpoint-disable) | 테스트 끝점을 사용 하지 않습니다. |
-| [az 스프링-클라우드 테스트-끝점 사용](#az-spring-cloud-test-endpoint-enable) | 테스트 끝점을 사용 하도록 설정 합니다. |
-| [az 스프링-cloud test-끝점 목록](#az-spring-cloud-test-endpoint-list) | 테스트 끝점 키를 나열 합니다. |
-| [az 스프링-클라우드 테스트-끝점 갱신-키](#az-spring-cloud-test-endpoint-renew-key) | 테스트 끝점 키를 다시 생성 합니다. |
+| [az 스프링-클라우드 테스트-엔드포인트 사용 안 함](#az-spring-cloud-test-endpoint-disable) | 테스트 엔드포인트을 사용 하지 않습니다. |
+| [az 스프링-클라우드 테스트-엔드포인트 사용](#az-spring-cloud-test-endpoint-enable) | 테스트 엔드포인트을 사용 하도록 설정 합니다. |
+| [az 스프링-cloud test-엔드포인트 목록](#az-spring-cloud-test-endpoint-list) | 테스트 엔드포인트 키를 나열 합니다. |
+| [az 스프링-클라우드 테스트-엔드포인트 갱신-키](#az-spring-cloud-test-endpoint-renew-key) | 테스트 엔드포인트 키를 다시 생성 합니다. |
 
 ## <a name="az-spring-cloud-create"></a>az 스프링-cloud create
 
@@ -977,9 +977,9 @@ az spring-cloud config-server git repo remove --name -n
 | --- | ---: |
 | --지연 | Azure에 전송 하는 대신 로컬 캐시에 개체를 임시로 저장 합니다.  `az cache`를 사용 하 여 보거나 지우십시오. |
 
-## <a name="az-spring-cloud-test-endpoint-disable"></a>az 스프링-클라우드 테스트-끝점 사용 안 함
+## <a name="az-spring-cloud-test-endpoint-disable"></a>az 스프링-클라우드 테스트-엔드포인트 사용 안 함
 
-Azure 스프링 클라우드의 테스트 끝점 사용 안 함
+Azure 스프링 클라우드의 테스트 엔드포인트 사용 안 함
 
 ```cli
 az spring-cloud test-endpoint disable --name -n
@@ -991,9 +991,9 @@ az spring-cloud test-endpoint disable --name -n
 | --name | Azure 스프링 클라우드의 이름입니다. |
 | --resource-group -g | 리소스 그룹의 이름입니다.  `az configure --defaults group=<name>`을 사용하여 기본 그룹을 구성할 수 있습니다. |
 
-## <a name="az-spring-cloud-test-endpoint-enable"></a>az 스프링-클라우드 테스트-끝점 사용
+## <a name="az-spring-cloud-test-endpoint-enable"></a>az 스프링-클라우드 테스트-엔드포인트 사용
 
-Azure 스프링 클라우드에 대해 테스트 끝점을 사용 하도록 설정 합니다. 
+Azure 스프링 클라우드에 대해 테스트 엔드포인트을 사용 하도록 설정 합니다. 
 
 ```cli 
 az spring-cloud test-endpoint enable --name -n
@@ -1005,9 +1005,9 @@ az spring-cloud test-endpoint enable --name -n
 | --name | Azure 스프링 클라우드의 이름입니다. |
 | --resource-group -g | 리소스 그룹의 이름입니다.  `az configure --defaults group=<name>`을 사용하여 기본 그룹을 구성할 수 있습니다. |
 
-## <a name="az-spring-cloud-test-endpoint-list"></a>az 스프링-cloud test-끝점 목록 
+## <a name="az-spring-cloud-test-endpoint-list"></a>az 스프링-cloud test-엔드포인트 목록 
 
-Azure 스프링 클라우드에 대해 사용 가능한 테스트 끝점 키를 나열 합니다.
+Azure 스프링 클라우드에 대해 사용 가능한 테스트 엔드포인트 키를 나열 합니다.
 
 ```cli
 az spring-cloud test-endpoint list --name -n
@@ -1026,9 +1026,9 @@ az spring-cloud test-endpoint list --name -n
 | --앱 | 응용 프로그램의 이름입니다. |
 | --배포-d | 기존 앱 배포의 이름입니다.  지정 되지 않은 경우 기본적으로 production로 설정 됩니다. |
 
-## <a name="az-spring-cloud-test-endpoint-renew-key"></a>az 스프링-클라우드 테스트-끝점 갱신-키
+## <a name="az-spring-cloud-test-endpoint-renew-key"></a>az 스프링-클라우드 테스트-엔드포인트 갱신-키
 
-Azure 스프링 클라우드의 테스트 끝점 키를 다시 생성 합니다.
+Azure 스프링 클라우드의 테스트 엔드포인트 키를 다시 생성 합니다.
 
 ```cli
 az spring-cloud test-endpoint renew-key --name -n
@@ -1040,4 +1040,4 @@ az spring-cloud test-endpoint renew-key --name -n
 | --- | ---: |
 | --name | Azure 스프링 클라우드의 이름입니다. |
 | --resource-group -g | 리소스 그룹의 이름입니다.  `az configure --defaults group=<name>`을 사용하여 기본 그룹을 구성할 수 있습니다. |
-| --형식 | 테스트 끝점 키의 형식입니다.  허용 되는 값: Primary, Secondary |
+| --형식 | 테스트 엔드포인트 키의 형식입니다.  허용 되는 값: Primary, Secondary |

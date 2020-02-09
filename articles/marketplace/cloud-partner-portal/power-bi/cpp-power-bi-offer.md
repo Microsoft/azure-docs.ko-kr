@@ -19,7 +19,7 @@ ms.locfileid: "73826081"
 
 |              |                                |
 |--------------|--------------------------------|
-| 이 문서에서는 Power BI 앱을 Microsoft [Appsource marketplace](https://appsource.microsoft.com/)에 게시 하는 방법을 설명 합니다.  Power BI 앱 패키지는 데이터 집합, 보고서 및 대시보드를 포함 하는 Power BI 콘텐츠를 사용자 지정할 수 있습니다. 그런 다음 AppSource를 통해 다른 Power BI 테 넌 트에 앱을 배포 하 고, 개발자가 허용 하는 조정 및 사용자 지정을 수행 하 고, 사용자 고유의 데이터에 연결할 수 있습니다. | ![Power BI 아이콘](./media/powerbi-icon.png) |
+| 이 문서에서는 Power BI 앱을 Microsoft [Appsource marketplace](https://appsource.microsoft.com/)에 게시 하는 방법을 설명 합니다.  Power BI 앱 패키지는 데이터 집합, 보고서 및 대시보드를 포함 하는 Power BI 콘텐츠를 사용자 지정할 수 있습니다. 그런 다음 AppSource를 통해 다른 Power BI 테넌트에 앱을 배포 하 고, 개발자가 허용 하는 조정 및 사용자 지정을 수행 하 고, 사용자 고유의 데이터에 연결할 수 있습니다. | ![Power BI 아이콘](./media/powerbi-icon.png) |
 
 
 이 문서는 세 가지 주요 부분으로 구성 되어 있습니다.

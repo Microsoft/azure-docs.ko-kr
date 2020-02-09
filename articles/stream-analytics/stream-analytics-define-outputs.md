@@ -51,7 +51,7 @@ Stream Analytics의 Azure Data Lake Storage 출력은 현재 Azure 중국 21Vian
 
 관계형 데이터베이스에서 호스팅되는 콘텐츠를 사용 하는 응용 프로그램 또는 본질적으로 관계형 인 데이터에 대 한 출력으로 [Azure SQL Database](https://azure.microsoft.com/services/sql-database/) 를 사용할 수 있습니다. Stream Analytics 작업은 SQL Database의 기존 테이블에 기록 합니다. 테이블 스키마는 작업 출력에서 필드 및 해당 형식과 정확히 일치 해야 합니다. SQL Database 출력 옵션을 통해 [Azure SQL Data Warehouse](https://azure.microsoft.com/documentation/services/sql-data-warehouse/) 를 출력으로 지정할 수도 있습니다. 쓰기 처리량을 개선 하는 방법에 대 한 자세한 내용은 [Azure SQL Database를 사용 하 여 출력](stream-analytics-sql-output-perf.md) 에 대 한 Stream Analytics 문서를 참조 하세요.
 
-[Azure SQL Database Managed Instance](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) 를 출력으로 사용할 수도 있습니다. [Azure SQL Database Managed Instance에서 공용 끝점을 구성](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-public-endpoint-configure) 하 고 Azure Stream Analytics에서 다음 설정을 수동으로 구성 해야 합니다. 아래 설정을 수동으로 구성 하 여 연결 된 데이터베이스와 함께 SQL Server를 실행 하는 Azure 가상 컴퓨터도 지원 됩니다.
+[Azure SQL Database Managed Instance](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) 를 출력으로 사용할 수도 있습니다. [Azure SQL Database Managed Instance에서 공용 엔드포인트을 구성](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-public-endpoint-configure) 하 고 Azure Stream Analytics에서 다음 설정을 수동으로 구성 해야 합니다. 아래 설정을 수동으로 구성 하 여 연결 된 데이터베이스와 함께 SQL Server를 실행 하는 Azure 가상 컴퓨터도 지원 됩니다.
 
 다음 표에서는 SQL Database 출력을 만들기 위한 속성 이름 및 해당 설명을 나열 합니다.
 

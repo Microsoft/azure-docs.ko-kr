@@ -43,13 +43,13 @@ Azure Portal에서 **가상 머신**으로 이동합니다.
 
 온보딩에 사용할 수 있는 리소스 그룹 수는 [Resource Manager 배포 제한](../azure-resource-manager/templates/cross-resource-group-deployment.md)으로 제한됩니다. 업데이트 배포와 혼동 하지 않는 리소스 관리자 배포는 배포 당 리소스 그룹 5 개로 제한 됩니다. 온보딩의 무결성을 보장하기 위해 이러한 리소스 그룹 중 2개는 Log Analytics 작업 영역, Automation 계정 및 관련 리소스를 구성하기 위해 예약되어 있습니다. 그러면 배포를 위해 선택할 리소스 그룹이 3개 남습니다. 이 제한은 자동화 솔루션에서 관리할 수 있는 리소스 그룹의 수가 아니라 동시 온 보 딩에만 적용 됩니다.
 
-Runbook을 온 보 딩에 사용할 수도 있습니다. 자세한 내용은 [Azure Automation에 대 한 업데이트 및 변경 내용 추적 솔루션](automation-onboard-solutions.md)등록을 참조 하세요.
+Runbook을 온 보 딩에 사용할 수도 있습니다. 자세한 내용은 [Azure Automation에 대한 업데이트 및 변경 내용 추적 솔루션](automation-onboard-solutions.md)등록을 참조 하세요.
 
 필터 컨트롤을 사용하여 다른 구독, 위치 및 리소스 그룹의 가상 머신을 선택할 수 있습니다.
 
 ![업데이트 관리 솔루션 등록](media/automation-onboard-solutions-from-browse/onboardsolutions.png)
 
-Log Analytics 작업 영역 및 Automation 계정에 대 한 선택 사항을 검토 합니다. 기존 작업 영역 및 Automation 계정은 기본적으로 선택됩니다. 서로 다른 Log Analytics 작업 영역 및 Automation 계정을 사용하려면 **사용자 지정 구성** 페이지에서 **사용자 지정**을 클릭하여 선택하면 됩니다. Log Analytics 작업 영역을 선택하는 경우 Automation 계정에 연결되는지 확인이 이루어집니다. 연결된 Automation 계정에 있으면 다음과 같은 화면이 표시됩니다. 완료하면 **확인**을 클릭합니다.
+Log Analytics 작업 영역 및 Automation 계정에 대한 선택 사항을 검토 합니다. 기존 작업 영역 및 Automation 계정은 기본적으로 선택됩니다. 서로 다른 Log Analytics 작업 영역 및 Automation 계정을 사용하려면 **사용자 지정 구성** 페이지에서 **사용자 지정**을 클릭하여 선택하면 됩니다. Log Analytics 작업 영역을 선택하는 경우 Automation 계정에 연결되는지 확인이 이루어집니다. 연결된 Automation 계정에 있으면 다음과 같은 화면이 표시됩니다. 완료하면 **확인**을 클릭합니다.
 
 ![작업 영역 및 계정 선택](media/automation-onboard-solutions-from-browse/selectworkspaceandaccount.png)
 
@@ -60,7 +60,7 @@ Log Analytics 작업 영역 및 Automation 계정에 대 한 선택 사항을 �
 > [!NOTE]
 > 솔루션을 사용하도록 설정할 때 특정 Azure 지역에서만 Log Analytics 작업 영역 및 Automation 계정을 연결할 수 있습니다.
 >
-> 지원 되는 매핑 쌍 목록은 [Automation 계정 및 Log Analytics 작업 영역에 대 한 지역 매핑](how-to/region-mappings.md)을 참조 하세요.
+> 지원 되는 매핑 쌍 목록은 [Automation 계정 및 Log Analytics 작업 영역에 대한 지역 매핑](how-to/region-mappings.md)을 참조 하세요.
 
 사용하지 않을 가상 머신 옆에 있는 확인란을 선택 취소합니다. 사용할 수 없는 가상 머신은 이미 선택이 취소되어 있습니다.
 
@@ -152,10 +152,10 @@ Automation 계정을 Log Analytics 작업 영역에 더 이상 통합 하지 않
 
 ## <a name="next-steps"></a>다음 단계
 
-이제 가상 머신에 대 한 솔루션을 사용 하도록 설정 했으므로 업데이트 관리 개요 문서를 방문 하 여 컴퓨터에 대 한 **업데이트 배포** 를 만드는 방법을 알아보세요.
+이제 가상 머신에 대한 솔루션을 사용 하도록 설정 했으므로 업데이트 관리 개요 문서를 방문 하 여 컴퓨터에 대한 **업데이트 배포** 를 만드는 방법을 알아보세요.
 
 > [!div class="nextstepaction"]
-> [업데이트 관리-Azure Vm에 대 한 업데이트 및 패치 관리](./automation-tutorial-update-management.md)
+> [업데이트 관리-Azure Vm에 대한 업데이트 및 패치 관리](./automation-tutorial-update-management.md)
 
 솔루션 및 솔루션 사용 방법에 대한 추가 자습서:
 

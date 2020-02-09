@@ -22,7 +22,7 @@ ms.locfileid: "74206737"
 ---
 # <a name="connect-a-virtual-network-to-hana-large-instances"></a>가상 네트워크를 HANA 대규모 인스턴스에 연결
 
-Azure 가상 네트워크를 만든 후 해당 네트워크를 Azure 대규모 인스턴스의 SAP HANA에 연결합니다. 가상 네트워크에 Azure ExpressRoute 게이트웨이를 만듭니다. 이 게이트웨이를 사용 하면 HANA Large Instance 스탬프에서 고객 테 넌 트에 연결 하는 Express 경로 회로에 가상 네트워크를 연결할 수 있습니다.
+Azure 가상 네트워크를 만든 후 해당 네트워크를 Azure 대규모 인스턴스의 SAP HANA에 연결합니다. 가상 네트워크에 Azure ExpressRoute 게이트웨이를 만듭니다. 이 게이트웨이를 사용 하면 HANA Large Instance 스탬프에서 고객 테넌트에 연결 하는 Express 경로 회로에 가상 네트워크를 연결할 수 있습니다.
 
 > [!NOTE] 
 > 이 단계를 완료하려면 최대 30분이 걸릴 수 있습니다. 새 게이트웨이는 지정된 Azure 구독에 만들어진 다음, 지정된 Azure 가상 네트워크에 연결됩니다.
@@ -147,9 +147,9 @@ Microsoft에서 요청에 대 한 라우팅 및 실행을 위해 사용 해야 �
 - 문제 유형: 구성 및 설정
 - 문제 하위 유형: 문제가 위에 나열 되어 있지 않습니다.
 - ' 내 네트워크 수정-Global Reach 추가 ' 제목
-- 세부 정보: ' hana large instance 테 넌 트에 HANA large instance에 Global Reach 추가 또는 ' 온-프레미스에 hana Large Instance 테 넌 트에 Global Reach 추가 합니다.
-- Hana Large Instance에서 HANA Large Instance 테 넌 트 케이스에 대 한 추가 세부 정보: 연결할 두 개의 테 넌 트를 찾고 **/29 IP 주소 범위** 를 제출 **해야 하는** **두 개의 Azure 지역을** 정의 해야 합니다.
-- 온-프레미스에서 HANA 대량 인스턴스 테 넌 트 사례에 대 한 추가 정보: HANA Large Instance 테 넌 트가 배포 되는 **Azure 영역** 을 정의 하 여 직접 연결 합니다. 또한 온-프레미스와 Azure 간에 Express 경로 회로를 설정할 때 받은 **인증 GUID** 및 **회로 피어 ID** 를 제공 해야 합니다. 또한 **ASN**의 이름을로 해야 합니다. 마지막 결과물은 Express 경로 Global Reach에 대 한 **/29 IP 주소 범위** 입니다.
+- 세부 정보: ' hana large instance 테넌트에 HANA large instance에 Global Reach 추가 또는 ' 온-프레미스에 hana Large Instance 테넌트에 Global Reach 추가 합니다.
+- Hana Large Instance에서 HANA Large Instance 테넌트 케이스에 대 한 추가 세부 정보: 연결할 두 개의 테넌트를 찾고 **/29 IP 주소 범위** 를 제출 **해야 하는** **두 개의 Azure 지역을** 정의 해야 합니다.
+- 온-프레미스에서 HANA 대량 인스턴스 테넌트 사례에 대 한 추가 정보: HANA Large Instance 테넌트가 배포 되는 **Azure 영역** 을 정의 하 여 직접 연결 합니다. 또한 온-프레미스와 Azure 간에 Express 경로 회로를 설정할 때 받은 **인증 GUID** 및 **회로 피어 ID** 를 제공 해야 합니다. 또한 **ASN**의 이름을로 해야 합니다. 마지막 결과물은 Express 경로 Global Reach에 대 한 **/29 IP 주소 범위** 입니다.
 
 > [!NOTE]
 > 두 경우를 모두 처리 하려면 지금까지 사용 되는 다른 IP 주소 범위와 겹치지 않는 두 개의 다른/29 IP 주소 범위를 제공 해야 합니다. 

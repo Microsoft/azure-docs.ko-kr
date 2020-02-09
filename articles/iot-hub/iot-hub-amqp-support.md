@@ -1,6 +1,6 @@
 ---
 title: AMQP 지원 Azure IoT Hub 이해 | Microsoft Docs
-description: 개발자 가이드-AMQP 프로토콜을 사용 하 여 장치 지향 및 서비스 지향 끝점 IoT Hub 연결 하는 장치에 대 한 지원입니다. Azure IoT 장치 Sdk의 기본 제공 AMQP 지원에 대 한 정보를 포함 합니다.
+description: 개발자 가이드-AMQP 프로토콜을 사용 하 여 장치 지향 및 서비스 지향 엔드포인트 IoT Hub 연결 하는 장치에 대 한 지원입니다. Azure IoT 장치 Sdk의 기본 제공 AMQP 지원에 대 한 정보를 포함 합니다.
 author: robinsh
 ms.service: iot-hub
 services: iot-hub
@@ -16,7 +16,7 @@ ms.locfileid: "72286643"
 ---
 # <a name="communicate-with-your-iot-hub-by-using-the-amqp-protocol"></a>AMQP 프로토콜을 사용 하 여 IoT hub와 통신
 
-Azure IoT Hub는 [AMQP (OASIS 고급 메시지 큐 프로토콜) 버전 1.0](https://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf) 을 지원 하 여 장치 지향 및 서비스 지향 끝점을 통해 다양 한 기능을 제공 합니다. 이 문서에서는 AMQP 클라이언트를 사용 하 여 IoT Hub 기능을 사용 하는 IoT hub에 연결 하는 방법을 설명 합니다.
+Azure IoT Hub는 [AMQP (OASIS 고급 메시지 큐 프로토콜) 버전 1.0](https://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf) 을 지원 하 여 장치 지향 및 서비스 지향 엔드포인트을 통해 다양 한 기능을 제공 합니다. 이 문서에서는 AMQP 클라이언트를 사용 하 여 IoT Hub 기능을 사용 하는 IoT hub에 연결 하는 방법을 설명 합니다.
 
 ## <a name="service-client"></a>서비스 클라이언트
 
@@ -138,7 +138,7 @@ for msg in batch:
 
 기본적으로 IoT hub는 수집 장치 원격 분석 메시지를 기본 제공 이벤트 허브에 저장 합니다. 서비스 클라이언트는 AMQP 프로토콜을 사용 하 여 저장 된 이벤트를 받을 수 있습니다.
 
-이러한 목적을 위해 서비스 클라이언트는 먼저 IoT hub 끝점에 연결 하 고 기본 제공 event hubs에 대 한 리디렉션 주소를 수신 해야 합니다. 그러면 서비스 클라이언트는 제공 된 주소를 사용 하 여 기본 제공 이벤트 허브에 연결 합니다.
+이러한 목적을 위해 서비스 클라이언트는 먼저 IoT hub 엔드포인트에 연결 하 고 기본 제공 event hubs에 대 한 리디렉션 주소를 수신 해야 합니다. 그러면 서비스 클라이언트는 제공 된 주소를 사용 하 여 기본 제공 이벤트 허브에 연결 합니다.
 
 각 단계에서 클라이언트는 다음과 같은 정보를 제공 해야 합니다.
 

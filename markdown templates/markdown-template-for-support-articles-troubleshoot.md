@@ -21,10 +21,10 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61215953"
 ---
-# <a name="title-maximum-120-characters-target-the-primary-keyword"></a>제목 (최대 120 자, primary 키워드가 대상)
-*설명에 2 ~ 3 보조 키워드를 사용 합니다.*
+# <a name="title-maximum-120-characters-target-the-primary-keyword"></a>제목 (최대 120자, 주제를 키워드로 설정)
+*설명에는 2 ~ 3개의 보조 키워드를 사용 합니다.*
 
-*시나리오에 따라 다음 배제가 중 하나를 선택 합니다. 문서 배포 모델을 알 수 없는 경우이 무시 합니다.*
+*시나리오에 따라 다음 모델 중 하나를 선택 합니다. 문서 배포 모델을 알 수 없는 경우에는 무시 합니다.*
 
 [!INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] 클래식 배포 모델.
 
@@ -44,7 +44,7 @@ ms.locfileid: "61215953"
 
 * *사용자를 로그인 하지 못했습니다. 암호를 변경 하지 못했습니다.*
 * *암호 유효성 검사에 실패 했습니다.*
-* *지정된 된 구독에 대 한 액세스 권한을 부여 하지 못했습니다.*
+* *지정된 된 구독에 대한 액세스 권한을 부여 하지 못했습니다.*
 
 *이러한 오류가 발생할 수 있는 데이터 원본에 액세스할 권한이 없습니다.*
 
@@ -71,12 +71,12 @@ ms.locfileid: "61215953"
 
 *상황에 적용 되는 버전 중 하나를 선택 합니다.*
 
-| <em>버전 1: 문서는 배포 모델에 독립적</em> | <em>버전 2: 클래식 및 Resource Manager에 대 한 단계는 주로 동일한</em> | <em>버전 3: Resource Manager 및 클래식 단계 대부분 다릅니다. <br />이 경우에 사용 합니다 <a href="https://github.com/Azure/azure-content-pr/blob/master/contributor-guide/custom-markdown-extensions.md#simple-selectors">GitHub에서 단순 선택기 기술은</a>합니다. <br />참고: ARM에 대 한 VM 문서는 예외 및 ARM/클래식 선택기를 사용 하지 않아야 합니다.</em> |
+| <em>버전 1: 문서는 배포 모델에 독립적</em> | <em>버전 2: 클래식 및 Resource Manager에 대한 단계는 주로 동일한</em> | <em>버전 3: Resource Manager 및 클래식 단계 대부분 다릅니다. <br />이 경우에 사용 합니다 <a href="https://github.com/Azure/azure-content-pr/blob/master/contributor-guide/custom-markdown-extensions.md#simple-selectors">GitHub에서 단순 선택기 기술은</a>합니다. <br />참고: ARM에 대한 VM 문서는 예외 및 ARM/클래식 선택기를 사용 하지 않아야 합니다.</em> |
 |:--- |:--- |:--- |
 | <p><h3>[문제 1] \ |[오류 1]</h3><h4>원인</h4>[원인 세부 정보]</p><p><h4>해결 방법 1</h4><em>(간단 하 고 가장 효과적인)</em></p><ol><li>[1 단계]</li><li>[Step 2]</li></ol><p><h4>해결 방법 2</h4><em>(단순 또는 효과적인 덜)</em></p><ol><li>[1 단계]</li><li>[Step 2]</li></ol><p><h3>[문제 2] \ |[오류 2]</h3><h4>원인</h4>[원인 세부 정보]</p><p><h4>해결 방법 1</h4><em>(간단 하 고 가장 효과적인)</em></p><ol><li>[1 단계]</li><li>[Step 2]</li></ol><p><h4>해결 방법 2</h4><em>(간단 하 고 가장 효과적인)</em></p><ol><li>[1 단계]</li><li>[Step 2]</li></ol><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> |
 
 ## <a name="next-steps"></a>다음 단계
-*이 섹션 1-3 구체적인 경우, 사용자가 수행 해야 하는 매우 관련성이 높은 내용 다음 단계를 포함 합니다. 다음 단계가 없는 경우 삭제 합니다. 링크 목록 마련 된이 아닙니다. 다음 단계에 대 한 링크를 포함 하는 경우에 다음 단계는 다음과 관련 / 중요 한 이유를 설명 하는 텍스트를 포함 해야 합니다.*
+*이 섹션 1-3 구체적인 경우, 사용자가 수행 해야 하는 매우 관련성이 높은 내용 다음 단계를 포함 합니다. 다음 단계가 없는 경우 삭제 합니다. 링크 목록 마련 된이 아닙니다. 다음 단계에 대한 링크를 포함 하는 경우에 다음 단계는 다음과 관련 / 중요 한 이유를 설명 하는 텍스트를 포함 해야 합니다.*
 
 *청구 항목에서 아티클을 인 경우 다음과 같은 (아래 참고는 약간 다르므로이 문서의 시작 부분에 하나씩) 다음 참고*
 

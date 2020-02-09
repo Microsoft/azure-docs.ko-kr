@@ -251,7 +251,7 @@ MSAL은 대부분의 플랫폼에 대 한 웹 UI 구현을 제공 하지만 브�
 
 ##### <a name="withcustomwebui-is-an-extensibility-point"></a>WithCustomWebUi는 확장성 지점입니다.
 
-`WithCustomWebUi`는 공용 클라이언트 응용 프로그램에서 사용자 고유의 UI를 제공 하는 데 사용할 수 있는 확장성 지점입니다. 사용자가 id 공급자의/권한 부여 끝점을 통과 하 여 로그인 하 고 동의할 수 있게 할 수도 있습니다. 그런 다음 MSAL.NET는 인증 코드를 교환 하 고 토큰을 가져올 수 있습니다. 예를 들어 Visual Studio에서 파괴 응용 프로그램 (예: Visual Studio 사용자 의견)이 웹 상호 작용을 제공 하는 데 사용 되며 대부분의 작업을 수행 하는 데 MSAL.NET로 유지 됩니다. UI 자동화를 제공 하려는 경우에도 사용할 수 있습니다. 공용 클라이언트 응용 프로그램에서 MSAL.NET는 PKCE (증명 키 교환) 표준을 사용 하 여 보안이 적용 되도록 합니다. MSAL.NET만 코드를 사용할 수 있습니다. 자세한 내용은 [RFC 7636-OAuth 공용 클라이언트의 코드 교환에 대 한 증명 키](https://tools.ietf.org/html/rfc7636)를 참조 하세요.
+`WithCustomWebUi`는 공용 클라이언트 응용 프로그램에서 사용자 고유의 UI를 제공 하는 데 사용할 수 있는 확장성 지점입니다. 사용자가 id 공급자의/권한 부여 엔드포인트을 통과 하 여 로그인 하 고 동의할 수 있게 할 수도 있습니다. 그런 다음 MSAL.NET는 인증 코드를 교환 하 고 토큰을 가져올 수 있습니다. 예를 들어 Visual Studio에서 파괴 응용 프로그램 (예: Visual Studio 사용자 의견)이 웹 상호 작용을 제공 하는 데 사용 되며 대부분의 작업을 수행 하는 데 MSAL.NET로 유지 됩니다. UI 자동화를 제공 하려는 경우에도 사용할 수 있습니다. 공용 클라이언트 응용 프로그램에서 MSAL.NET는 PKCE (증명 키 교환) 표준을 사용 하 여 보안이 적용 되도록 합니다. MSAL.NET만 코드를 사용할 수 있습니다. 자세한 내용은 [RFC 7636-OAuth 공용 클라이언트의 코드 교환에 대 한 증명 키](https://tools.ietf.org/html/rfc7636)를 참조 하세요.
 
   ```csharp
   using Microsoft.Identity.Client.Extensions;
@@ -409,21 +409,21 @@ application.acquireToken(with: interactiveParameters, completionBlock: { (result
 - IWA는 .NET Framework, .NET Core 및 유니버설 Windows 플랫폼 (UWP) 플랫폼용으로 작성 된 앱에 대 한 것입니다.
 - IWA는 MFA (다단계 인증)를 무시 하지 않습니다. Mfa가 구성 된 경우 mfa에 사용자 조작이 필요 하기 때문에 mfa 챌린지가 필요한 경우 IWA가 실패할 수 있습니다.
   > [!NOTE]
-  > 이 방법은 복잡 합니다. IWA는 비 대화형 이지만 MFA를 사용 하려면 사용자의 상호 작용이 필요 합니다. Id 공급자가 MFA를 수행 하도록 요청 하는 시간을 제어 하지 않습니다. 테 넌 트 관리자가 수행 합니다. 이러한 관찰에서 MFA는 VPN을 통해 회사 네트워크에 연결 되어 있지 않은 경우, 때로는 VPN을 통해 연결 된 경우에도 다른 국가에서 로그인 할 때 필요 합니다. 결정적 규칙 집합은 필요 하지 않습니다. Azure AD는 AI를 사용 하 여 MFA가 필요한 경우 지속적으로 학습 합니다. IWA 실패 하는 경우 대화형 인증 또는 장치 코드 흐름과 같은 사용자 프롬프트로 대체 합니다.
+  > 이 방법은 복잡 합니다. IWA는 비 대화형 이지만 MFA를 사용 하려면 사용자의 상호 작용이 필요 합니다. Id 공급자가 MFA를 수행 하도록 요청 하는 시간을 제어 하지 않습니다. 테넌트 관리자가 수행 합니다. 이러한 관찰에서 MFA는 VPN을 통해 회사 네트워크에 연결 되어 있지 않은 경우, 때로는 VPN을 통해 연결 된 경우에도 다른 국가에서 로그인 할 때 필요 합니다. 결정적 규칙 집합은 필요 하지 않습니다. Azure AD는 AI를 사용 하 여 MFA가 필요한 경우 지속적으로 학습 합니다. IWA 실패 하는 경우 대화형 인증 또는 장치 코드 흐름과 같은 사용자 프롬프트로 대체 합니다.
 
 - `PublicClientApplicationBuilder` 전달 된 기관은 다음을 충족 해야 합니다.
-  - 테 넌 트 `https://login.microsoftonline.com/{tenant}/`형식입니다. 여기서 `tenant`은 테 넌 트 ID 또는 테 넌 트와 연결 된 도메인을 나타내는 GUID입니다.
+  - 테넌트 `https://login.microsoftonline.com/{tenant}/`형식입니다. 여기서 `tenant`은 테넌트 ID 또는 테넌트와 연결 된 도메인을 나타내는 GUID입니다.
   - 회사 및 학교 계정의 경우: `https://login.microsoftonline.com/organizations/`합니다.
-  - Microsoft 개인 계정은 지원 되지 않습니다. /Common 또는/소비자 테 넌 트를 사용할 수 없습니다.
+  - Microsoft 개인 계정은 지원 되지 않습니다. /Common 또는/소비자 테넌트를 사용할 수 없습니다.
 
 - Windows 통합 인증은 자동 흐름입니다.
   - 응용 프로그램의 사용자에 게는 응용 프로그램을 사용 하기 위해 이전에 동의한 있어야 합니다.
-  - 또는 테 넌 트 관리자가 응용 프로그램을 사용 하려면 테 넌 트의 모든 사용자에 게 이전에 동의한 해야 합니다.
+  - 또는 테넌트 관리자가 응용 프로그램을 사용 하려면 테넌트의 모든 사용자에 게 이전에 동의한 해야 합니다.
   - 즉, 다음을 수행 합니다.
     - 개발자가 자신에 대 한 Azure Portal에서 **Grant** 단추를 선택 했습니다.
-    - 또는 테 넌 트 관리자가 응용 프로그램 등록의 **API 사용 권한** 탭에 있는 **{테 넌 트 도메인}에 대 한 관리자 동의 허용/취소** 단추를 선택 했습니다. 자세한 내용은 [웹 api에 액세스할 수 있는 권한 추가](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-access-web-apis#add-permissions-to-access-web-apis)를 참조 하세요.
+    - 또는 테넌트 관리자가 응용 프로그램 등록의 **API 사용 권한** 탭에 있는 **{테넌트 도메인}에 대 한 관리자 동의 허용/취소** 단추를 선택 했습니다. 자세한 내용은 [웹 api에 액세스할 수 있는 권한 추가](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-access-web-apis#add-permissions-to-access-web-apis)를 참조 하세요.
     - 또는 사용자가 응용 프로그램에 동의할 수 있는 방법을 제공 했습니다. 자세한 내용은 [개별 사용자 동의 요청](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#requesting-individual-user-consent)을 참조 하세요.
-    - 또는 테 넌 트 관리자가 응용 프로그램에 동의할 수 있는 방법을 제공 했습니다. 자세한 내용은 [관리자 동의](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#requesting-consent-for-an-entire-tenant)를 참조 하세요.
+    - 또는 테넌트 관리자가 응용 프로그램에 동의할 수 있는 방법을 제공 했습니다. 자세한 내용은 [관리자 동의](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#requesting-consent-for-an-entire-tenant)를 참조 하세요.
 
 - 이 흐름은 .NET 데스크톱, .NET Core 및 UWP 앱에 대해 사용 하도록 설정 됩니다.
 
@@ -573,7 +573,7 @@ PublicClientApplication app = PublicClientApplication.builder(TestData.PUBLIC_CL
 
 다음 제약 조건도 적용 됩니다.
 
-- 사용자 이름 및 암호 흐름은 조건부 액세스 및 다단계 인증과 호환 되지 않습니다. 결과적으로 테 넌 트 관리자가 다단계 인증을 필요로 하는 Azure AD 테 넌 트에서 앱이 실행 되는 경우이 흐름을 사용할 수 없습니다. 많은 조직에서이 작업을 수행 합니다.
+- 사용자 이름 및 암호 흐름은 조건부 액세스 및 다단계 인증과 호환 되지 않습니다. 결과적으로 테넌트 관리자가 다단계 인증을 필요로 하는 Azure AD 테넌트에서 앱이 실행 되는 경우이 흐름을 사용할 수 없습니다. 많은 조직에서이 작업을 수행 합니다.
 - 회사 및 학교 계정 (MSA 아님)에 대해서만 작동 합니다.
 - 흐름은 .NET 데스크톱 및 .NET Core에서 사용할 수 있지만 UWP에서는 사용할 수 없습니다.
 

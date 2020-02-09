@@ -74,7 +74,7 @@ Get-AzLocation | select Location, DisplayName
 
 [Get-AzEnvironment](/powershell/module/az.accounts/get-azenvironment)를 사용하여 엔드포인트 접미사를 검색합니다. 엔드포인트는 환경의 *StorageEndpointSuffix* 속성입니다.
 
-다음 코드 조각에서는 끝점 접미사를 검색 하는 방법을 보여 줍니다. 이러한 모든 명령은 "core.cloudapp.net" 또는 "core.cloudapi.de" 등과 같은 항목을 반환 합니다. 저장소 서비스에 접미사를 추가 하 여 해당 서비스에 액세스 합니다. 예를 들어 "queue.core.cloudapi.de"는 독일 클라우드의 큐 서비스에 액세스하게 됩니다.
+다음 코드 조각에서는 엔드포인트 접미사를 검색 하는 방법을 보여 줍니다. 이러한 모든 명령은 "core.cloudapp.net" 또는 "core.cloudapi.de" 등과 같은 항목을 반환 합니다. 저장소 서비스에 접미사를 추가 하 여 해당 서비스에 액세스 합니다. 예를 들어 "queue.core.cloudapi.de"는 독일 클라우드의 큐 서비스에 액세스하게 됩니다.
 
 이 코드 조각은 각각에 대한 모든 환경과 엔드포인트 접미사를 검색합니다.
 
@@ -125,7 +125,7 @@ Write-Host "Storage EndPoint Suffix = " $environment.StorageEndpointSuffix
 
 ### <a name="get-endpoint-from-a-storage-account"></a>스토리지 계정에서 엔드포인트를 가져오기
 
-저장소 계정의 속성을 검토 하 여 끝점을 검색할 수도 있습니다.
+저장소 계정의 속성을 검토 하 여 엔드포인트을 검색할 수도 있습니다.
 
 ```powershell
 # Get a reference to the storage account.

@@ -22,7 +22,7 @@ Azure Maps 웹 SDK는 쿼리 및 렌더링을 위해 데이터를 최적화 하�
 
 **GeoJSON 데이터 원본**
 
-GeoJSON 기반 데이터 원본은 `DataSource` 클래스를 사용 하 여 데이터를 로컬로 로드 하 고 저장할 수 있습니다. GeoJSON 네임은 [atlas.data](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data) 네임스페이스의 도우미 클래스를 사용하여 수동으로 데이터를 만들거나 만들 수 있습니다. `DataSource` 클래스는 로컬 또는 원격 GeoJSON 파일을 가져오기 위한 함수를 제공 합니다. 원격 GeoJSON 파일은 CORs 사용 끝점에서 호스팅되어야 합니다. `DataSource` 클래스는 클러스터링 지점 데이터를 위한 기능을 제공 합니다. `DataSource` 클래스를 사용 하 여 데이터를 쉽게 추가, 제거 및 업데이트할 수 있습니다.
+GeoJSON 기반 데이터 원본은 `DataSource` 클래스를 사용 하 여 데이터를 로컬로 로드 하 고 저장할 수 있습니다. GeoJSON 네임은 [atlas.data](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data) 네임스페이스의 도우미 클래스를 사용하여 수동으로 데이터를 만들거나 만들 수 있습니다. `DataSource` 클래스는 로컬 또는 원격 GeoJSON 파일을 가져오기 위한 함수를 제공 합니다. 원격 GeoJSON 파일은 CORs 사용 엔드포인트에서 호스팅되어야 합니다. `DataSource` 클래스는 클러스터링 지점 데이터를 위한 기능을 제공 합니다. `DataSource` 클래스를 사용 하 여 데이터를 쉽게 추가, 제거 및 업데이트할 수 있습니다.
 
 
 > [!TIP]
@@ -30,7 +30,7 @@ GeoJSON 기반 데이터 원본은 `DataSource` 클래스를 사용 하 여 데�
 
 **벡터 타일 원본**
 
-벡터 타일 소스는 벡터 타일 계층에 액세스 하는 방법을 설명 하며 [VectorTileSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.vectortilesource) 클래스를 사용 하 여 만들 수 있습니다. Azure Maps는 공개 표준인 [Mapbox 벡터 타일 사양](https://github.com/mapbox/vector-tile-spec)에 맞춰집니다. 벡터 타일 계층은 타일 계층과 유사 하지만 각 타일이 래스터 이미지인 것은 아니라 각 계층의 스타일에 따라 클라이언트에서 렌더링 하 고 스타일을 지정할 수 있는 하나 이상의 계층 및 벡터 맵 데이터를 포함 하는 압축 파일 (PF 형식)입니다. 벡터 타일의 데이터에는 요소, 선 및 다각형 형식의 지리적 기능이 포함 되어 있습니다. 래스터 타일 계층에 대 한 벡터 타일 계층의 이점에는 여러 가지가 있습니다.
+벡터 타일 소스는 벡터 타일 계층에 액세스 하는 방법을 설명 하며 [VectorTileSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.vectortilesource) 클래스를 사용 하 여 만들 수 있습니다. Azure Maps는 공개 표준인 [Mapbox 벡터 타일 사양](https://github.com/mapbox/vector-tile-spec)에 맞춰집니다. 벡터 타일 계층은 타일 계층과 유사 하지만 각 타일이 래스터 이미지인 것은 아니라 각 계층의 스타일에 따라 클라이언트에서 렌더링 하 고 스타일을 지정할 수 있는 하나 이상의 계층 및 벡터 맵 데이터를 포함 하는 압축 파일 (PF 형식)입니다. 벡터 타일의 데이터에는 요소, 선 및 다각형 형식의 지리적 기능이 포함 되어 있습니다. 래스터 타일 계층에 대한 벡터 타일 계층의 이점에는 여러 가지가 있습니다.
 
  - 벡터 타일의 파일 크기는 일반적으로 해당 하는 래스터 타일 보다 훨씬 작습니다. 따라서 낮은 대역폭을 사용 합니다. 즉, 낮은 대기 시간과 더 빠른 맵을 의미 합니다. 이렇게 하면 더 나은 사용자 환경이 생성 됩니다.
  - 벡터 타일은 클라이언트에서 렌더링 되므로 표시 되는 장치의 해상도에 맞게 조정 될 수 있습니다. 이렇게 하면 훨씬 잘 정의 된 것으로 표시 되는 렌더링 된 맵과 깨끗 한 레이블을 사용할 수 있습니다. 
@@ -49,7 +49,7 @@ map.sources.add(dataSource);
 
 ## <a name="connecting-a-data-source-to-a-layer"></a>계층에 데이터 원본 연결
 
-데이터는 렌더링 레이어를 사용 하 여 맵에서 렌더링 됩니다. 하나 이상의 렌더링 레이어에서 단일 데이터 원본을 참조할 수 있습니다. 다음 렌더링 계층에는 데이터 원본에 대 한 전력이 필요 합니다.
+데이터는 렌더링 레이어를 사용 하 여 맵에서 렌더링 됩니다. 하나 이상의 렌더링 레이어에서 단일 데이터 원본을 참조할 수 있습니다. 다음 렌더링 계층에는 데이터 원본에 대한 전력이 필요 합니다.
 
 - [거품형 계층](map-add-bubble-layer.md) -지도에서 점 데이터를 크기가 조정 된 원으로 렌더링 합니다.
 - [기호 계층](map-add-pin.md) -지점 데이터를 아이콘 및/또는 텍스트로 렌더링 합니다.

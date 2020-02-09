@@ -115,7 +115,7 @@ DR에서 프로덕션 사이트로 장애 복구(Failback)할 수 있습니다. 
 
 ## <a name="monitor-disaster-recovery-replication"></a>재해 복구 복제 모니터링
 
-저장소 복제 진행 상태를 모니터링 하려면 스크립트 `azure_hana_replication_status`를 실행 합니다. 예상 대로 작동 하려면 재해 복구 위치에서 실행 되는 단위에서이 명령을 실행 해야 합니다. 이 명령은 복제가 활성 상태 인지 여부에 관계 없이 작동 합니다. 재해 복구 위치에서 테 넌 트의 모든 HANA Large Instance 단위에 대해 명령을 실행할 수 있습니다. 부팅 볼륨에 대 한 세부 정보를 가져오는 데 사용할 수 없습니다. 
+저장소 복제 진행 상태를 모니터링 하려면 스크립트 `azure_hana_replication_status`를 실행 합니다. 예상 대로 작동 하려면 재해 복구 위치에서 실행 되는 단위에서이 명령을 실행 해야 합니다. 이 명령은 복제가 활성 상태 인지 여부에 관계 없이 작동 합니다. 재해 복구 위치에서 테넌트의 모든 HANA Large Instance 단위에 대해 명령을 실행할 수 있습니다. 부팅 볼륨에 대 한 세부 정보를 가져오는 데 사용할 수 없습니다. 
 
 명령 및 해당 출력에 대 한 자세한 내용은 [azure의 SAP HANA Microsoft 스냅숏 도구](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.0/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.0.pdf)에서 "DR 복제 상태-azure_hana_replication_status"를 참조 하세요.
 

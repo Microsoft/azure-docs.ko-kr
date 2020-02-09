@@ -1,6 +1,6 @@
 ---
-title: Azure AD Domain Services에 대 한 질문과 대답 Microsoft Docs
-description: Azure Active Directory Domain Services에 대 한 구성, 관리 및 가용성과 관련 된 몇 가지 질문과 대답을 읽고 이해 합니다.
+title: Azure AD Domain Services에 대한 질문과 대답 Microsoft Docs
+description: Azure Active Directory Domain Services에 대한 구성, 관리 및 가용성과 관련 된 몇 가지 질문과 대답을 읽고 이해 합니다.
 services: active-directory-ds
 author: iainfoulds
 manager: daveba
@@ -20,7 +20,7 @@ ms.locfileid: "76509022"
 ---
 # <a name="frequently-asked-questions-faqs"></a>FAQ(질문과 대답)
 
-이 페이지는 Azure Active Directory Domain Services에 대 한 자주 묻는 질문에 답변 합니다.
+이 페이지는 Azure Active Directory Domain Services에 대한 자주 묻는 질문에 답변 합니다.
 
 ## <a name="configuration"></a>구성
 
@@ -65,34 +65,34 @@ ms.locfileid: "76509022"
 예, 리소스 관리자 템플릿을 사용 하 여 Azure AD Domain Services 관리 되는 도메인을 만들 수 있습니다. 템플릿을 배포 하기 전에 Azure Portal 또는 Azure PowerShell를 사용 하 여 관리를 위한 서비스 사용자 및 Azure AD 그룹을 만들어야 합니다. 자세한 내용은 [Azure Resource Manager 템플릿을 사용 하 여 Azure AD DS 관리 되는 도메인 만들기](template-create-instance.md)를 참조 하세요. Azure Portal에서 Azure AD Domain Services 관리 되는 도메인을 만드는 경우 추가 배포와 함께 사용할 템플릿을 내보낼 수도 있습니다.
 
 ### <a name="can-i-add-domain-controllers-to-an-azure-ad-domain-services-managed-domain"></a>Azure AD 도메인 서비스 관리되는 도메인에 도메인 컨트롤러를 추가할 수 있나요?
-아닙니다. Azure AD 도메인 서비스에서 제공하는 도메인은 관리되는 도메인입니다. 이 도메인에 대해 도메인 컨트롤러를 프로 비전, 구성 또는 관리 하지 않아도 됩니다. 이러한 관리 활동은 Microsoft에서 서비스로 제공 됩니다. 따라서 관리 되는 도메인에 대 한 추가 도메인 컨트롤러 (읽기-쓰기 또는 읽기 전용)를 추가할 수 없습니다.
+아닙니다. Azure AD 도메인 서비스에서 제공하는 도메인은 관리되는 도메인입니다. 이 도메인에 대해 도메인 컨트롤러를 프로 비전, 구성 또는 관리 하지 않아도 됩니다. 이러한 관리 활동은 Microsoft에서 서비스로 제공 됩니다. 따라서 관리 되는 도메인에 대한 추가 도메인 컨트롤러 (읽기-쓰기 또는 읽기 전용)를 추가할 수 없습니다.
 
 ### <a name="can-guest-users-invited-to-my-directory-use-azure-ad-domain-services"></a>내 디렉터리에 초대된 게스트 사용자가 Azure AD Domain Services를 사용할 수 있나요?
-아닙니다. [Azure AD B2B](../active-directory/active-directory-b2b-what-is-azure-ad-b2b.md) 초대 프로세스를 사용하여 Azure AD 디렉터리에 초대된 게스트 사용자는 Azure AD Domain Services 관리되는 도메인과 동기화됩니다. 그러나 이러한 사용자에 대 한 암호는 Azure AD 디렉터리에 저장 되지 않습니다. 따라서 Azure AD Domain Services는 이러한 사용자에 대 한 NTLM 및 Kerberos 해시를 관리 되는 도메인으로 동기화 할 방법이 없습니다. 이러한 사용자는 컴퓨터에 로그인 하거나 관리 되는 도메인에 컴퓨터를 가입 시킬 수 없습니다.
+아닙니다. [Azure AD B2B](../active-directory/active-directory-b2b-what-is-azure-ad-b2b.md) 초대 프로세스를 사용하여 Azure AD 디렉터리에 초대된 게스트 사용자는 Azure AD Domain Services 관리되는 도메인과 동기화됩니다. 그러나 이러한 사용자에 대한 암호는 Azure AD 디렉터리에 저장 되지 않습니다. 따라서 Azure AD Domain Services는 이러한 사용자에 대한 NTLM 및 Kerberos 해시를 관리 되는 도메인으로 동기화 할 방법이 없습니다. 이러한 사용자는 컴퓨터에 로그인 하거나 관리 되는 도메인에 컴퓨터를 가입 시킬 수 없습니다.
 
 ### <a name="can-i-move-an-existing-azure-ad-domain-services-managed-domain-to-a-different-subscription-resource-group-region-or-virtual-network"></a>기존 Azure AD Domain Services 관리 되는 도메인을 다른 구독, 리소스 그룹, 지역 또는 가상 네트워크로 이동할 수 있나요?
 아닙니다. 관리 되는 Azure AD Domain Services 도메인을 만든 후에는 인스턴스를 다른 리소스 그룹, 가상 네트워크, 구독 등으로 이동할 수 없습니다. Azure AD DS 인스턴스를 배포할 때 가장 적합 한 구독, 리소스 그룹, 지역 및 가상 네트워크를 선택 합니다.
 
 ## <a name="administration-and-operations"></a>관리 및 운영
 
-* [원격 데스크톱을 사용 하 여 관리 되는 도메인에 대 한 도메인 컨트롤러에 연결할 수 있나요?](#can-i-connect-to-the-domain-controller-for-my-managed-domain-using-remote-desktop)
+* [원격 데스크톱을 사용 하 여 관리 되는 도메인에 대한 도메인 컨트롤러에 연결할 수 있나요?](#can-i-connect-to-the-domain-controller-for-my-managed-domain-using-remote-desktop)
 * [Azure AD Domain Services를 사용 하도록 설정 했습니다. 이 도메인에 컴퓨터를 도메인에 가입 시키는 데 어떤 사용자 계정을 사용 하나요?](#ive-enabled-azure-ad-domain-services-what-user-account-do-i-use-to-domain-join-machines-to-this-domain)
-* [Azure AD Domain Services에서 제공 하는 관리 되는 도메인에 대 한 도메인 관리자 권한이 있나요?](#do-i-have-domain-administrator-privileges-for-the-managed-domain-provided-by-azure-ad-domain-services)
+* [Azure AD Domain Services에서 제공 하는 관리 되는 도메인에 대한 도메인 관리자 권한이 있나요?](#do-i-have-domain-administrator-privileges-for-the-managed-domain-provided-by-azure-ad-domain-services)
 * [관리 되는 도메인에서 LDAP 또는 다른 AD 관리 도구를 사용 하 여 그룹 멤버 자격을 수정할 수 있습니까?](#can-i-modify-group-memberships-using-ldap-or-other-ad-administrative-tools-on-managed-domains)
 * [내 Azure AD 디렉터리에 변경 내용을 적용 하는 데 걸리는 시간을 관리 되는 도메인에 표시 하려면 어떻게 해야 하나요?](#how-long-does-it-take-for-changes-i-make-to-my-azure-ad-directory-to-be-visible-in-my-managed-domain)
 * [Azure AD Domain Services에서 제공 하는 관리 되는 도메인의 스키마를 확장할 수 있나요?](#can-i-extend-the-schema-of-the-managed-domain-provided-by-azure-ad-domain-services)
 * [관리 되는 도메인에서 DNS 레코드를 수정 하거나 추가할 수 있나요?](#can-i-modify-or-add-dns-records-in-my-managed-domain)
-* [관리 되는 도메인에 대 한 암호 수명 정책은 무엇 인가요?](#what-is-the-password-lifetime-policy-on-a-managed-domain)
+* [관리 되는 도메인에 대한 암호 수명 정책은 무엇 인가요?](#what-is-the-password-lifetime-policy-on-a-managed-domain)
 * [AD 계정 잠금 보호를 제공 Azure AD Domain Services 합니까?](#does-azure-ad-domain-services-provide-ad-account-lockout-protection)
 
 ### <a name="can-i-connect-to-the-domain-controller-for-my-managed-domain-using-remote-desktop"></a>원격 데스크톱을 사용하여 관리되는 도메인의 도메인 컨트롤러에 연결할 수 있습니까?
-아닙니다. 원격 데스크톱을 사용 하 여 관리 되는 도메인에 대 한 도메인 컨트롤러에 연결할 수 있는 권한이 없습니다. *AAD DC 관리자* 그룹의 멤버는 adac (Active Directory 관리 센터) 또는 ad PowerShell과 같은 ad 관리 도구를 사용 하 여 관리 되는 도메인을 관리할 수 있습니다. 이러한 도구는 관리 되는 도메인에 가입 된 Windows Server에서 *원격 서버 관리 도구* 기능을 사용 하 여 설치 됩니다. 자세한 내용은 [관리 VM을 만들어 Azure AD Domain Services 관리 되는 도메인 구성 및](tutorial-create-management-vm.md)관리를 참조 하세요.
+아닙니다. 원격 데스크톱을 사용 하 여 관리 되는 도메인에 대한 도메인 컨트롤러에 연결할 수 있는 권한이 없습니다. *AAD DC 관리자* 그룹의 멤버는 adac (Active Directory 관리 센터) 또는 ad PowerShell과 같은 ad 관리 도구를 사용 하 여 관리 되는 도메인을 관리할 수 있습니다. 이러한 도구는 관리 되는 도메인에 가입 된 Windows Server에서 *원격 서버 관리 도구* 기능을 사용 하 여 설치 됩니다. 자세한 내용은 [관리 VM을 만들어 Azure AD Domain Services 관리 되는 도메인 구성 및](tutorial-create-management-vm.md)관리를 참조 하세요.
 
 ### <a name="ive-enabled-azure-ad-domain-services-what-user-account-do-i-use-to-domain-join-machines-to-this-domain"></a>Azure AD Domain Services를 사용 하도록 설정 했습니다. 이 도메인에 도메인 가입 컴퓨터를 사용하려면 사용자 계정은 무엇입니까?
 관리 그룹 *AAD DC 관리자* 의 구성원은 컴퓨터를 도메인에 가입 시킬 수 있습니다. 또한 이 그룹의 멤버에게는 도메인에 가입 된 컴퓨터에 대한 원격 데스크톱 액세스가 부여됩니다.
 
 ### <a name="do-i-have-domain-administrator-privileges-for-the-managed-domain-provided-by-azure-ad-domain-services"></a>Azure AD Domain Services에서 제공하는 관리되는 도메인에 대한 도메인 관리자 권한이 부여됩니까?
-아닙니다. 관리 되는 도메인에 대 한 관리 권한이 부여 되지 않았습니다. 도메인 *관리자* 및 *엔터프라이즈 관리자* 권한은 도메인 내에서 사용할 수 없습니다. 온-프레미스 Active Directory 도메인 관리자 또는 엔터프라이즈 관리자 그룹의 멤버에 게는 관리 되는 도메인에 대 한 도메인/엔터프라이즈 관리자 권한도 부여 되지 않습니다.
+아닙니다. 관리 되는 도메인에 대한 관리 권한이 부여 되지 않았습니다. 도메인 *관리자* 및 *엔터프라이즈 관리자* 권한은 도메인 내에서 사용할 수 없습니다. 온-프레미스 Active Directory 도메인 관리자 또는 엔터프라이즈 관리자 그룹의 멤버에 게는 관리 되는 도메인에 대한 도메인/엔터프라이즈 관리자 권한도 부여 되지 않습니다.
 
 ### <a name="can-i-modify-group-memberships-using-ldap-or-other-ad-administrative-tools-on-managed-domains"></a>관리되는 도메인에서 LDAP 또는 다른 AD 관리 도구를 사용하여 그룹 멤버 자격을 수정할 수 있습니까?
 아닙니다. Azure AD Domain Services에서 서비스 하는 도메인에서는 그룹 멤버 자격을 수정할 수 없습니다. 사용자 특성에 대해서도 동일하게 적용됩니다. Azure AD 또는 온-프레미스 도메인에서 그룹 멤버 자격 또는 사용자 특성을 변경할 수 있습니다. 변경 내용은 Azure AD Domain Services에 자동으로 동기화 됩니다.
@@ -107,15 +107,15 @@ Azure AD UI 또는 PowerShell을 사용 하 여 Azure AD 디렉터리에서 변�
 예. *AAD DC Administrators* 그룹의 구성원에 게는 관리 되는 도메인의 dns 레코드를 수정할 수 있는 *dns 관리자* 권한이 부여 됩니다. 이러한 사용자는 관리 되는 도메인에 가입 된 Windows Server를 실행 하는 컴퓨터에서 DNS 관리자 콘솔을 사용 하 여 DNS를 관리할 수 있습니다. DNS 관리자 콘솔을 사용 하려면 서버에 *원격 서버 관리 도구* 선택적 기능의 일부인 *dns 서버 도구*를 설치 합니다. 자세한 내용은 [관리 되는 Azure AD Domain Services 도메인에서 DNS 관리](manage-dns.md)를 참조 하세요.
 
 ### <a name="what-is-the-password-lifetime-policy-on-a-managed-domain"></a>관리되는 도메인에 대한 암호 수명 정책은 무엇인가요?
-Azure AD Domain Services 관리되는 도메인의 기본 암호 수명은 90일입니다. 이 암호 수명은 Azure AD에 구성된 암호 수명과 동기화되지 않습니다. 따라서 사용자의 암호가 관리되는 도메인에는 만료되지만 Azure AD에서는 여전히 유효한 상황이 발생할 수 있습니다. 이러한 시나리오에서 사용자는 Azure AD에서 자신의 암호를 변경해야 하며, 새 암호는 관리되는 도메인과 동기화됩니다. 또한 사용자 계정에 대 한 *암호-만료* 및 *사용자가 암호를 변경 해야* 합니다. 사용자 계정에 대 한 로그온 특성은 관리 되는 도메인에 동기화 되지 않습니다.
+Azure AD Domain Services 관리되는 도메인의 기본 암호 수명은 90일입니다. 이 암호 수명은 Azure AD에 구성된 암호 수명과 동기화되지 않습니다. 따라서 사용자의 암호가 관리되는 도메인에는 만료되지만 Azure AD에서는 여전히 유효한 상황이 발생할 수 있습니다. 이러한 시나리오에서 사용자는 Azure AD에서 자신의 암호를 변경해야 하며, 새 암호는 관리되는 도메인과 동기화됩니다. 또한 사용자 계정에 대한 *암호-만료* 및 *사용자가 암호를 변경 해야* 합니다. 사용자 계정에 대한 로그온 특성은 관리 되는 도메인에 동기화 되지 않습니다.
 
 ### <a name="does-azure-ad-domain-services-provide-ad-account-lockout-protection"></a>Azure AD Domain Services에서 AD 계정 잠금 보호를 제공하나요?
-예. 관리되는 도메인에서 2분 안에 5차례 암호를 잘못 입력하면 사용자 계정이 30분 동안 잠깁니다. 30분 후 사용자 계정이 자동으로 잠금 해제됩니다. 관리 되는 도메인에 대 한 잘못 된 암호 시도는 Azure AD에서 사용자 계정을 잠그지 않습니다. 사용자 계정은 Azure AD Domain Services 관리되는 도메인 안에서만 잠깁니다. 자세한 내용은 [관리 되는 도메인의 암호 및 계정 잠금 정책](password-policy.md)을 참조 하세요.
+예. 관리되는 도메인에서 2분 안에 5차례 암호를 잘못 입력하면 사용자 계정이 30분 동안 잠깁니다. 30분 후 사용자 계정이 자동으로 잠금 해제됩니다. 관리 되는 도메인에 대한 잘못 된 암호 시도는 Azure AD에서 사용자 계정을 잠그지 않습니다. 사용자 계정은 Azure AD Domain Services 관리되는 도메인 안에서만 잠깁니다. 자세한 내용은 [관리 되는 도메인의 암호 및 계정 잠금 정책](password-policy.md)을 참조 하세요.
 
 ## <a name="billing-and-availability"></a>요금 청구 및 가용성
 
 * [유료 서비스를 Azure AD Domain Services 하 고 있습니까?](#is-azure-ad-domain-services-a-paid-service)
-* [서비스에 대 한 무료 평가판이 있나요?](#is-there-a-free-trial-for-the-service)
+* [서비스에 대한 무료 평가판이 있나요?](#is-there-a-free-trial-for-the-service)
 * [관리 되는 Azure AD Domain Services 도메인을 일시 중지할 수 있나요?](#can-i-pause-an-azure-ad-domain-services-managed-domain)
 * [Azure AD Domain Services DR 이벤트의 다른 지역으로 장애 조치 (failover) 할 수 있나요?](#can-i-pause-an-azure-ad-domain-services-managed-domain)
 * [EMS (Enterprise Mobility Suite)의 일부로 Azure AD Domain Services를 가져올 수 있나요? Azure AD Domain Services을 사용 하는 Azure AD Premium 필요 합니까?](#can-i-failover-azure-ad-domain-services-to-another-region-for-a-dr-event)
@@ -145,6 +145,6 @@ Azure AD Domain Services 구성 또는 관리에서 발생하는 일반적인 �
 
 ## <a name="next-steps"></a>다음 단계
 
-Azure AD Domain Services에 대 한 자세한 내용은 [Azure Active Directory Domain Services 무엇입니까?](overview.md)를 참조 하세요.
+Azure AD Domain Services에 대한 자세한 내용은 [Azure Active Directory Domain Services 무엇입니까?](overview.md)를 참조 하세요.
 
 시작 하려면 [Azure Active Directory Domain Services 인스턴스 만들기 및 구성](tutorial-create-instance.md)을 참조 하세요.

@@ -15,7 +15,7 @@ ms.locfileid: "73641789"
 #### <a name="applicationstabapplications"></a>[애플리케이션](#tab/applications/)
 
 1. **API 액세스**에서 **키**를 선택합니다.
-1. 키에 대한 설명을 **키 설명** 상자에 입력합니다. 예: *clientsecret1*.
+1. 키에 대한 설명을 **키 설명** 입력창에 입력합니다. 예: *clientsecret1*.
 1. 유효성 검사 **기간**을 선택한 다음 **저장**을 선택합니다.
 1. 키의 **VALUE**를 기록합니다. 이후 단계에서 구성에 이 값을 사용합니다.
 

@@ -123,7 +123,7 @@ MirrorMaker를 실행하면, Kafka 클러스터 및 미러된 Kafka 지원 이�
 ## <a name="samples"></a>샘플
 GitHub의 다음 샘플을 참조 하세요.
 
-- [GitHub에 대 한이 자습서의 샘플 코드](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/mirror-maker)
+- [GitHub에 대한이 자습서의 샘플 코드](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/mirror-maker)
 - [Azure Container Instance에서 실행 되는 azure Event Hubs Kafka MirrorMaker](https://github.com/djrosanova/EventHubsMirrorMaker)
 
 ## <a name="next-steps"></a>다음 단계

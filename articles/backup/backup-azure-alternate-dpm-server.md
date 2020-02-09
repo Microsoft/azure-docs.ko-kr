@@ -89,5 +89,5 @@ Azure Backup Server에서 데이터를 복구하려면
 
 다른 FAQ를 읽어보세요.
 
-* Azure VM 백업에 대 한 [일반적인 질문](backup-azure-vm-backup-faq.md)
+* Azure VM 백업에 대한 [일반적인 질문](backup-azure-vm-backup-faq.md)
 * Azure Backup 에이전트에 대한 [일반 질문](backup-azure-file-folder-backup-faq.md)

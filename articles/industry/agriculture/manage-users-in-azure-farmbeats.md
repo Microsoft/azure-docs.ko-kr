@@ -23,10 +23,10 @@ Azure FarmBeats에는 Azure Active Directory (Azure AD) 인스턴스에 속한 �
 
 ## <a name="manage-azure-farmbeats-users"></a>Azure FarmBeats 사용자 관리
 
-Azure FarmBeats는 인증, 액세스 제어 및 역할에 Azure AD를 사용 합니다. Azure FarmBeats의 사용자로 Azure AD 테 넌 트의 사용자를 추가할 수 있습니다.
+Azure FarmBeats는 인증, 액세스 제어 및 역할에 Azure AD를 사용 합니다. Azure FarmBeats의 사용자로 Azure AD 테넌트의 사용자를 추가할 수 있습니다.
 
 > [!NOTE]
-> Azure FarmBeats 사용자로 추가 하려는 사용자가 Azure AD 테 넌 트에 없는 경우 "Azure AD 사용자 추가" 섹션의 지침에 따라 설치를 완료 합니다.
+> Azure FarmBeats 사용자로 추가 하려는 사용자가 Azure AD 테넌트에 없는 경우 "Azure AD 사용자 추가" 섹션의 지침에 따라 설치를 완료 합니다.
 
 Azure FarmBeats는 두 가지 유형의 사용자 역할을 지원 합니다.
 
@@ -63,12 +63,12 @@ Azure FarmBeats 시스템에서 사용자를 제거 하려면 다음을 수행 �
 ## <a name="add-azure-ad-users"></a>Azure AD 사용자 추가
 
 > [!NOTE]
-> Azure FarmBeats 사용자는 Azure AD 테 넌 트에 있어야 응용 프로그램 및 역할에 할당할 수 있습니다. Azure FarmBeats에 추가 하려는 사용자가 Azure AD 테 넌 트에 아직 없는 경우이 섹션의 지침을 따르세요. 사용자가 Azure AD 테 넌 트에 있는 경우 이러한 지침을 건너뛸 수 있습니다.
+> Azure FarmBeats 사용자는 Azure AD 테넌트에 있어야 응용 프로그램 및 역할에 할당할 수 있습니다. Azure FarmBeats에 추가 하려는 사용자가 Azure AD 테넌트에 아직 없는 경우이 섹션의 지침을 따르세요. 사용자가 Azure AD 테넌트에 있는 경우 이러한 지침을 건너뛸 수 있습니다.
 
 Azure AD에 사용자를 추가 하려면 다음을 수행 합니다.
 
 1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
-2. 오른쪽 위에서 계정을 선택 하 고 FarmBeats와 연결 된 Azure AD 테 넌 트로 전환 합니다.
+2. 오른쪽 위에서 계정을 선택 하 고 FarmBeats와 연결 된 Azure AD 테넌트로 전환 합니다.
 3. **Azure Active Directory** > **사용자**를 선택 합니다.
 
     Azure AD 사용자의 목록이 표시 됩니다.

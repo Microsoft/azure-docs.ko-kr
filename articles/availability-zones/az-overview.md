@@ -85,8 +85,8 @@ Azure에서 포괄적인 비즈니스 연속성을 구현하려면 Azure 지역 
 - [Event Hubs 지리적 재해 복구](../event-hubs/event-hubs-geo-dr.md#availability-zones)
 - [Service Bus 지리적 재해 복구](../service-bus-messaging/service-bus-geo-dr.md#availability-zones)
 - [영역 중복 가상 네트워크 게이트웨이 만들기](../vpn-gateway/create-zone-redundant-vnet-gateway.md)
-- [Azure Cosmos DB에 대 한 영역 중복 영역 추가](../cosmos-db/high-availability.md#availability-zone-support)
-- [Redis 가용성 영역에 대 한 Azure 캐시 시작](https://aka.ms/redis/az/getstarted)
+- [Azure Cosmos DB에 대한 영역 중복 영역 추가](../cosmos-db/high-availability.md#availability-zone-support)
+- [Redis 가용성 영역에 대한 Azure 캐시 시작](https://aka.ms/redis/az/getstarted)
 - [Azure Active Directory Domain Services 인스턴스 만들기](../active-directory-domain-services/tutorial-create-instance.md)
 - [가용성 영역를 사용 하는 AKS (Azure Kubernetes Service) 클러스터 만들기](../aks/availability-zones.md)
 

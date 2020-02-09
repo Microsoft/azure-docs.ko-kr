@@ -17,7 +17,7 @@ ms.locfileid: "77029523"
 ---
 # <a name="troubleshoot-data-flows-in-azure-data-factory"></a>Azure Data Factory 데이터 흐름 문제 해결
 
-이 문서에서는 Azure Data Factory의 데이터 흐름에 대 한 일반적인 문제 해결 방법을 살펴봅니다.
+이 문서에서는 Azure Data Factory의 데이터 흐름에 대한 일반적인 문제 해결 방법을 살펴봅니다.
 
 ## <a name="common-errors-and-messages"></a>일반적인 오류 및 메시지
 
@@ -28,8 +28,8 @@ ms.locfileid: "77029523"
 
 ### <a name="error-code-df-executor-systemimplicitcartesian"></a>오류 코드: DF-SystemImplicitCartesian
 
-- **메시지**: 내부 조인에 대 한 암시적 데카르트 제품은 지원 되지 않습니다. 대신 CROSS join을 사용 하십시오. 조인에 사용 되는 열은 행에 대 한 고유 키를 만들어야 합니다.
-- **원인**: 논리 요금제 간의 내부 조인에 대 한 암시적 직교 곱을 지원 하지 않습니다. 조인에 사용 된 열이 고유 키를 만드는 경우
+- **메시지**: 내부 조인에 대한 암시적 데카르트 제품은 지원 되지 않습니다. 대신 CROSS join을 사용 하십시오. 조인에 사용 되는 열은 행에 대한 고유 키를 만들어야 합니다.
+- **원인**: 논리 요금제 간의 내부 조인에 대한 암시적 직교 곱을 지원 하지 않습니다. 조인에 사용 된 열이 고유 키를 만드는 경우
 - **권장 사항**: 같지 않음 기반 조인의 경우 크로스 조인을 사용 하도록 선택 해야 합니다.
 
 ### <a name="error-code-df-executor-systeminvalidjson"></a>오류 코드: DF-SystemInvalidJson
@@ -58,17 +58,17 @@ ms.locfileid: "77029523"
 
 ## <a name="general-troubleshooting-guidance"></a>일반 문제 해결 지침
 
-1. 데이터 집합 연결의 상태를 확인 합니다. 각 원본 및 싱크 변환에서 사용 중인 각 데이터 집합에 대 한 연결 된 서비스를 방문 하 고 연결을 테스트 합니다.
+1. 데이터 집합 연결의 상태를 확인 합니다. 각 원본 및 싱크 변환에서 사용 중인 각 데이터 집합에 대한 연결 된 서비스를 방문 하 고 연결을 테스트 합니다.
 1. 데이터 흐름 디자이너에서 파일 및 테이블 연결의 상태를 확인 합니다. 디버그를 전환 하 고 원본 변환에서 데이터 미리 보기를 클릭 하 여 데이터에 액세스할 수 있는지 확인 합니다.
 1. 모든 항목이 데이터 미리 보기에서 양호 하면 파이프라인 디자이너로 이동 하 여 파이프라인 활동에 데이터 흐름을 배치 합니다. 종단 간 테스트를 위한 파이프라인을 디버깅 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-문제 해결에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
+문제 해결에 대한 자세한 내용은 다음 리소스를 참조 하세요.
 *  [Data Factory 블로그](https://azure.microsoft.com/blog/tag/azure-data-factory/)
 *  [Data Factory 기능 요청](https://feedback.azure.com/forums/270578-data-factory)
 *  [Azure 비디오](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
 *  [MSDN 포럼](https://social.msdn.microsoft.com/Forums/home?sort=relevancedesc&brandIgnore=True&searchTerm=data+factory)
-*  [Data Factory에 대 한 Stack Overflow 포럼](https://stackoverflow.com/questions/tagged/azure-data-factory)
-*  [Data Factory에 대 한 Twitter 정보](https://twitter.com/hashtag/DataFactory)
+*  [Data Factory에 대한 Stack Overflow 포럼](https://stackoverflow.com/questions/tagged/azure-data-factory)
+*  [Data Factory에 대한 Twitter 정보](https://twitter.com/hashtag/DataFactory)
 *  [ADF 매핑 데이터 흐름 성능 가이드](concepts-data-flow-performance.md)

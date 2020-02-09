@@ -73,7 +73,7 @@ SAML 기반 Single Sign-On은 다음과 같은 프로토콜을 사용하는 애�
 
 SAML 기반 Single Sign-On에 대 한 SaaS 응용 프로그램을 구성 하려면 [saml 기반 Single Sign-On 구성](configure-single-sign-on-non-gallery-applications.md)을 참조 하세요. 또한 다양한 SaaS(Software as a Service) 애플리케이션에는 SAML 기반 Single Sign-On에 대한 구성을 단계별로 안내하는 [애플리케이션 관련 자습서](../saas-apps/tutorial-list.md)가 있습니다.
 
-WS 페더레이션을 위한 응용 프로그램을 구성 하려면 동일한 지침에 따라 SAML 기반 Single Sign-On에 대 한 응용 프로그램을 구성 합니다. [saml 기반 Single Sign-On 구성](configure-single-sign-on-non-gallery-applications.md)을 참조 하세요. Azure AD를 사용 하도록 응용 프로그램을 구성 하는 단계에서 WS-FEDERATION 끝점 `https://login.microsoftonline.com/<tenant-ID>/wsfed`의 Azure AD 로그인 URL을 대체 해야 합니다.
+WS 페더레이션을 위한 응용 프로그램을 구성 하려면 동일한 지침에 따라 SAML 기반 Single Sign-On에 대 한 응용 프로그램을 구성 합니다. [saml 기반 Single Sign-On 구성](configure-single-sign-on-non-gallery-applications.md)을 참조 하세요. Azure AD를 사용 하도록 응용 프로그램을 구성 하는 단계에서 WS-FEDERATION 엔드포인트 `https://login.microsoftonline.com/<tenant-ID>/wsfed`의 Azure AD 로그인 URL을 대체 해야 합니다.
 
 SAML 기반 Single Sign-On에 대 한 온-프레미스 응용 프로그램을 구성 하려면 [응용 프로그램 프록시를 사용 하는 온-프레미스 응용 프로그램에 대 한 saml single sign-on](application-proxy-configure-single-sign-on-on-premises-apps.md)을 참조 하세요.
 

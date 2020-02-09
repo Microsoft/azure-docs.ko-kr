@@ -25,12 +25,12 @@ Azure CLI를 사용 하 여 몇 가지 간단한 명령에서 ACR 통합에 AKS�
 
 이러한 예제에는 다음이 필요 합니다.
 
-* **Azure 구독** 에 대 한 **소유자** 또는 **azure 계정 관리자** 역할
+* **Azure 구독** 에 대한 **소유자** 또는 **azure 계정 관리자** 역할
 * Azure CLI 버전 2.0.73 이상
 
 ## <a name="create-a-new-aks-cluster-with-acr-integration"></a>ACR 통합을 사용 하 여 새 AKS 클러스터 만들기
 
-AKS 클러스터를 처음 만들 때 AKS 및 ACR 통합을 설정할 수 있습니다.  AKS 클러스터가 ACR과 상호 작용할 수 있도록 Azure Active Directory **서비스 주체가** 사용 됩니다. 다음 CLI 명령을 사용 하 여 구독에서 기존 ACR에 권한을 부여 하 고 서비스 주체에 대 한 적절 한 **Acrpull** 역할을 구성할 수 있습니다. 아래 매개 변수에 대 한 유효한 값을 제공 합니다. 
+AKS 클러스터를 처음 만들 때 AKS 및 ACR 통합을 설정할 수 있습니다.  AKS 클러스터가 ACR과 상호 작용할 수 있도록 Azure Active Directory **서비스 주체가** 사용 됩니다. 다음 CLI 명령을 사용 하 여 구독에서 기존 ACR에 권한을 부여 하 고 서비스 주체에 대한 적절 한 **Acrpull** 역할을 구성할 수 있습니다. 아래 매개 변수에 대한 유효한 값을 제공 합니다. 
 ```azurecli
 # set this to the name of your Azure Container Registry.  It must be globally unique
 MYACR=myContainerRegistry
@@ -52,9 +52,9 @@ az aks create -n myAKSCluster -g myResourceGroup --generate-ssh-keys --attach-ac
 
 이 단계를 완료 하는 데 몇 분 정도 걸릴 수 있습니다.
 
-## <a name="configure-acr-integration-for-existing-aks-clusters"></a>기존 AKS 클러스터에 대 한 ACR 통합 구성
+## <a name="configure-acr-integration-for-existing-aks-clusters"></a>기존 AKS 클러스터에 대한 ACR 통합 구성
 
-아래와 같이 **acr 이름** 또는 **acr-resource id** 에 대 한 유효한 값을 제공 하 여 기존 acr을 기존 AKS 클러스터와 통합 합니다.
+아래와 같이 **acr 이름** 또는 **acr-resource id** 에 대한 유효한 값을 제공 하 여 기존 acr을 기존 AKS 클러스터와 통합 합니다.
 
 ```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acrName>

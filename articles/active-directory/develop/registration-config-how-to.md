@@ -1,5 +1,5 @@
 ---
-title: 끝점 구성 | Microsoft Docs
+title: 엔드포인트 구성 | Microsoft Docs
 description: 개발 중이거나 Azure AD에 등록 중인 사용자 지정 애플리케이션의 인증 엔드포인트를 찾는 방법입니다.
 services: active-directory
 documentationcenter: ''

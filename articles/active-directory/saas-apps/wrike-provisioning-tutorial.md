@@ -36,7 +36,7 @@ ms.locfileid: "77064193"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [Wrike 테 넌 트](https://www.wrike.com/price/)
+* [Wrike 테넌트](https://www.wrike.com/price/)
 * 관리자 권한이 있는 Wrike의 사용자 계정
 
 ## <a name="assign-users-to-wrike"></a>Wrike에 사용자 할당
@@ -56,7 +56,7 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
 Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 Wrike를 구성 하기 전에 Wrike에서 SCIM (도메인 간 Id 관리) 프로 비전을 위해 시스템을 사용 하도록 설정 해야 합니다.
 
-1. [Wrike 관리 콘솔](https://www.Wrike.com/login/)에 로그인 합니다. 테 넌 트 ID로 이동 합니다. **앱 & 통합**을 선택 합니다.
+1. [Wrike 관리 콘솔](https://www.Wrike.com/login/)에 로그인 합니다. 테넌트 ID로 이동 합니다. **앱 & 통합**을 선택 합니다.
 
     ![앱 & 통합](media/Wrike-provisioning-tutorial/admin.png)
 
@@ -129,9 +129,9 @@ Azure AD 응용 프로그램 갤러리에서 Wrike를 추가 하려면 다음 �
 
     ![프로 비전 모드를 자동으로 설정](common/provisioning-automatic.png)
 
-5. 관리자 자격 증명 섹션 아래에서 **테 넌 트 url** 및 **암호 토큰**에서 각각 검색 된 **기본 URL** 및 **영구 액세스 토큰** 값을 입력 합니다. **연결 테스트** 를 선택 하 여 Azure AD가 Wrike에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Wrike 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
+5. 관리자 자격 증명 섹션 아래에서 **테넌트 url** 및 **암호 토큰**에서 각각 검색 된 **기본 URL** 및 **영구 액세스 토큰** 값을 입력 합니다. **연결 테스트** 를 선택 하 여 Azure AD가 Wrike에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Wrike 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
 
-    ![테 넌 트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
+    ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 
 7. **알림 전자 메일** 상자에 프로 비전 오류 알림을 받을 개인 또는 그룹의 전자 메일 주소를 입력 합니다. **오류가 발생 하면 전자 메일 알림 보내기** 확인란을 선택 합니다.
 

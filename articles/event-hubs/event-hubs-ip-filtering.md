@@ -141,13 +141,13 @@ IP 필터 규칙은 순서대로 적용되며 IP 주소와 일치하는 첫 번�
   }
 ```
 
-템플릿을 배포 하려면 [Azure Resource Manager][lnk-deploy]에 대 한 지침을 따르세요.
+템플릿을 배포 하려면 [Azure Resource Manager][lnk-deploy]에 대한 지침을 따르세요.
 
 ## <a name="next-steps"></a>다음 단계
 
 Event Hubs에 대한 액세스를 Azure 가상 네트워크로 제한하려면 다음 링크를 참조하세요.
 
-- [Event Hubs에 대 한 Virtual Network 서비스 끝점][lnk-vnet]
+- [Event Hubs에 대한 Virtual Network 서비스 엔드포인트][lnk-vnet]
 
 <!-- Links -->
 

@@ -29,7 +29,7 @@ AKS(Azure Kubernetes Service)에서 애플리케이션을 실행할 때 컴퓨�
 
 복제본(Pod) 및 노드의 크기를 수동으로 조정하면서 애플리케이션이 사용 가능한 리소스 및 상태 변화에 대응하는 방식을 테스트할 수 있습니다. 또한 리소스 크기를 수동으로 조정하여 고정 비용을 유지하기 위해 사용할 고정된 리소스 양(예: 노드 수)을 정의할 수도 있습니다. 수동으로 크기를 조정 하려면 복제본 또는 노드 수를 정의 합니다. 그런 다음 Kubernetes API는 해당 복제본 또는 노드 수에 따라 추가 pod 또는 드레이닝 노드 만들기를 예약 합니다.
 
-노드를 축소 하는 경우 Kubernetes API는 클러스터에서 사용 하는 계산 형식에 연결 된 관련 Azure 계산 API를 호출 합니다. 예를 들어 VM Scale Sets 기반으로 하는 클러스터의 경우 제거할 노드를 선택 하는 논리는 VM Scale Sets API에 의해 결정 됩니다. 규모 축소에서 노드를 제거 하기 위해 노드를 선택 하는 방법에 대 한 자세한 내용은 [Vmss FAQ](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-faq#if-i-reduce-my-scale-set-capacity-from-20-to-15-which-vms-are-removed)를 참조 하세요.
+노드를 축소 하는 경우 Kubernetes API는 클러스터에서 사용 하는 계산 형식에 연결 된 관련 Azure 계산 API를 호출 합니다. 예를 들어 VM Scale Sets 기반으로 하는 클러스터의 경우 제거할 노드를 선택 하는 논리는 VM Scale Sets API에 의해 결정 됩니다. 규모 축소에서 노드를 제거 하기 위해 노드를 선택 하는 방법에 대한 자세한 내용은 [Vmss FAQ](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-faq#if-i-reduce-my-scale-set-capacity-from-20-to-15-which-vms-are-removed)를 참조 하세요.
 
 Pod 및 노드를 수동으로 확장 하는 작업을 시작 하려면 [AKS에서 응용 프로그램 크기 조정][aks-scale]을 참조 하세요.
 

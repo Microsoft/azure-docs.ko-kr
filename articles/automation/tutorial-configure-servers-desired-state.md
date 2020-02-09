@@ -135,11 +135,11 @@ Set-AzureRmAutomationDscNode -ResourceGroupName 'MyResourceGroup' -AutomationAcc
 Azure Automation 상태 구성은 [부분 구성](/powershell/scripting/dsc/pull-server/partialconfigs)의 사용을 지원 합니다.
 이 시나리오에서 DSC는 여러 구성을 독립적으로 관리 하도록 구성 되 고 각 구성은 Azure Automation에서 검색 됩니다.
 그러나 automation 계정 마다 하나의 구성만 노드에 할당할 수 있습니다.
-즉, 노드에 대 한 두 가지 구성을 사용 하는 경우 두 개의 automation 계정이 필요 합니다.
+즉, 노드에 대한 두 가지 구성을 사용 하는 경우 두 개의 automation 계정이 필요 합니다.
 
-끌어오기 서비스에서 부분 구성을 등록 하는 방법에 대 한 자세한 내용은 [부분 구성](https://docs.microsoft.com/powershell/scripting/dsc/pull-server/partialconfigs#partial-configurations-in-pull-mode)설명서를 참조 하십시오.
+끌어오기 서비스에서 부분 구성을 등록 하는 방법에 대한 자세한 내용은 [부분 구성](https://docs.microsoft.com/powershell/scripting/dsc/pull-server/partialconfigs#partial-configurations-in-pull-mode)설명서를 참조 하십시오.
 
-팀에서 구성을 사용 하 여 공동으로 서버를 공동 관리 하는 방법에 대 한 자세한 내용은 [CI/CD 파이프라인에서 DSC의 역할 이해](/powershell/scripting/dsc/overview/authoringadvanced)를 참조 하세요.
+팀에서 구성을 사용 하 여 공동으로 서버를 공동 관리 하는 방법에 대한 자세한 내용은 [CI/CD 파이프라인에서 DSC의 역할 이해](/powershell/scripting/dsc/overview/authoringadvanced)를 참조 하세요.
 
 ## <a name="check-the-compliance-status-of-a-managed-node"></a>관리되는 노드에 대한 준수 상태 확인
 
@@ -175,7 +175,7 @@ Azure Automation에서 목차의 **상태 구성 (DSC)** 을 클릭 합니다.
 
 ### <a name="powershell"></a>PowerShell
 
-PowerShell을 사용 하 여 Azure Automation 상태 구성 서비스에서 노드를 등록 취소 하려면 cmdlet [AzAutomationDscNode](https://docs.microsoft.com/powershell/module/az.automation/unregister-azautomationdscnode?view=azps-2.0.0)에 대 한 설명서를 따르세요.
+PowerShell을 사용 하 여 Azure Automation 상태 구성 서비스에서 노드를 등록 취소 하려면 cmdlet [AzAutomationDscNode](https://docs.microsoft.com/powershell/module/az.automation/unregister-azautomationdscnode?view=azps-2.0.0)에 대한 설명서를 따르세요.
 
 ## <a name="next-steps"></a>다음 단계
 

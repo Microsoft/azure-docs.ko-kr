@@ -269,7 +269,7 @@ ms.locfileid: "76543480"
 
 ### <a name="http-trigger"></a>HTTP 트리거
 
-이 트리거는 지정 된 되풀이 일정에 따라 지정 된 HTTP 또는 HTTPS 끝점에 요청을 보냅니다. 그런 다음 트리거는 응답을 확인 하 여 워크플로가 실행 되는지 여부를 확인 합니다.
+이 트리거는 지정 된 되풀이 일정에 따라 지정 된 HTTP 또는 HTTPS 엔드포인트에 요청을 보냅니다. 그런 다음 트리거는 응답을 확인 하 여 워크플로가 실행 되는지 여부를 확인 합니다.
 
 ```json
 "HTTP": {
@@ -304,7 +304,7 @@ ms.locfileid: "76543480"
 | 속성 | 값 | 유형 | Description |
 |----------|-------|------|-------------|
 | `method` | <*method-type*> | String | 보내는 요청을 보내는 데 사용할 방법: "GET", "PUT", "POST", "PATCH" 또는 "DELETE" |
-| `uri` | <*HTTP-or-HTTPS-endpoint-URL*> | String | 보내는 요청을 전송 하려는 HTTP 또는 HTTPS 끝점 URL입니다. 최대 문자열 크기: 2KB <p>Azure 서비스 또는 리소스의 경우이 URI 구문에는 액세스 하려는 리소스 ID와 리소스에 대 한 경로가 포함 됩니다. |
+| `uri` | <*HTTP-or-HTTPS-endpoint-URL*> | String | 보내는 요청을 전송 하려는 HTTP 또는 HTTPS 엔드포인트 URL입니다. 최대 문자열 크기: 2KB <p>Azure 서비스 또는 리소스의 경우이 URI 구문에는 액세스 하려는 리소스 ID와 리소스에 대 한 경로가 포함 됩니다. |
 | `frequency` | <*time-unit*> | String | 트리거가 실행되는 빈도를 설명하는 시간 단위로, “초”, “분”, “시간”, “일”, “주” 또는 “월”이 있습니다. |
 | `interval` | <*number-of-time-units*> | 정수 | 트리거가 다시 실행될 때까지 기다리는 시간 단위 수를 나타내는 빈도에 따라 트리거가 얼마나 자주 발생하는지를 지정하는 값입니다. <p>다음은 최소 및 최대 간격입니다. <p>- 월: 1-16개월 </br>- 일: 1-500일 </br>- 시간: 1-12,000시간 </br>- 분: 1-72,000분 </br>- 초: 1-9,999,999초<p>예를 들어, 간격이 6이고 빈도가 “월”이면 되풀이 간격은 6개월마다입니다. |
 |||||
@@ -339,7 +339,7 @@ ms.locfileid: "76543480"
 | 응답 | 필수 | Description | 
 |----------|----------|-------------| 
 | 상태 코드 | 예 | “200 확인” 상태 코드가 실행을 시작합니다. 다른 상태 코드는 실행을 시작하지 않습니다. | 
-| Retry-after 헤더 | 아닙니다. | 논리 앱이 끝점을 다시 폴링할 때까지 걸리는 시간 (초)입니다. | 
+| Retry-after 헤더 | 아닙니다. | 논리 앱이 엔드포인트을 다시 폴링할 때까지 걸리는 시간 (초)입니다. | 
 | 위치 헤더 | 아닙니다. | 다음 폴링 간격에서 호출할 URL입니다. 지정하지 않으면 원래 URL이 사용됩니다. | 
 |||| 
 
@@ -1201,7 +1201,7 @@ Azure Logic Apps는 각각이 작업의 고유한 동작을 정의하는 다른 
 
 ### <a name="http-action"></a>HTTP 동작
 
-이 작업은 지정 된 HTTP 또는 HTTPS 끝점에 요청을 보내고 응답을 확인 하 여 워크플로가 실행 되는지 여부를 확인 합니다.
+이 작업은 지정 된 HTTP 또는 HTTPS 엔드포인트에 요청을 보내고 응답을 확인 하 여 워크플로가 실행 되는지 여부를 확인 합니다.
 
 ```json
 "HTTP": {
@@ -1226,7 +1226,7 @@ Azure Logic Apps는 각각이 작업의 고유한 동작을 정의하는 다른 
 | 속성 | 값 | 유형 | Description |
 |----------|-------|------|-------------|
 | `method` | <*method-type*> | String | 보내는 요청을 보내는 데 사용할 방법: "GET", "PUT", "POST", "PATCH" 또는 "DELETE" |
-| `uri` | <*HTTP-or-HTTPS-endpoint-URL*> | String | 보내는 요청을 전송 하려는 HTTP 또는 HTTPS 끝점 URL입니다. 최대 문자열 크기: 2KB <p>Azure 서비스 또는 리소스의 경우이 URI 구문에는 액세스 하려는 리소스 ID와 리소스에 대 한 경로가 포함 됩니다. |
+| `uri` | <*HTTP-or-HTTPS-endpoint-URL*> | String | 보내는 요청을 전송 하려는 HTTP 또는 HTTPS 엔드포인트 URL입니다. 최대 문자열 크기: 2KB <p>Azure 서비스 또는 리소스의 경우이 URI 구문에는 액세스 하려는 리소스 ID와 리소스에 대 한 경로가 포함 됩니다. |
 |||||
 
 *선택 사항*
@@ -2688,7 +2688,7 @@ Logic Apps 엔진은 호출하려는 트리거에 대한 액세스 권한을 확
 
 ## <a name="authenticate-triggers-and-actions"></a>트리거 및 작업 인증
 
-HTTP 및 HTTPS 끝점은 서로 다른 종류의 인증을 지원 합니다. 이러한 끝점에 액세스 하는 아웃 바운드 호출 또는 요청을 만드는 데 사용 하는 트리거 또는 작업에 따라 다양 한 인증 유형 범위에서 선택할 수 있습니다. 자세한 내용은 [아웃 바운드 호출에 인증 추가](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)를 참조 하세요.
+HTTP 및 HTTPS 엔드포인트은 서로 다른 종류의 인증을 지원 합니다. 이러한 엔드포인트에 액세스 하는 아웃 바운드 호출 또는 요청을 만드는 데 사용 하는 트리거 또는 작업에 따라 다양 한 인증 유형 범위에서 선택할 수 있습니다. 자세한 내용은 [아웃 바운드 호출에 인증 추가](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

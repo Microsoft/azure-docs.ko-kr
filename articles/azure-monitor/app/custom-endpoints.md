@@ -1,6 +1,6 @@
 ---
-title: Azure 애플리케이션 Insights 기본 SDK 끝점 재정의
-description: Azure Government 같은 영역에 대 한 기본 Azure Monitor Application Insights SDK 끝점을 수정 합니다.
+title: Azure 애플리케이션 Insights 기본 SDK 엔드포인트 재정의
+description: Azure Government 같은 영역에 대 한 기본 Azure Monitor Application Insights SDK 엔드포인트을 수정 합니다.
 ms.service: azure-monitor
 ms.subservice: application-insights
 ms.topic: conceptual
@@ -14,16 +14,16 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75432581"
 ---
-# <a name="application-insights-overriding-default-endpoints"></a>기본 끝점 재정의 Application Insights
+# <a name="application-insights-overriding-default-endpoints"></a>기본 엔드포인트 재정의 Application Insights
 
-Application Insights에서 특정 지역으로 데이터를 보내려면 기본 끝점 주소를 재정의 해야 합니다. 각 SDK에는 약간 다른 수정이 필요 하며,이에 대해서는이 문서에 설명 되어 있습니다. 이러한 변경을 수행 하려면 샘플 코드를 조정 하 고 `QuickPulse_Endpoint_Address`, `TelemetryChannel_Endpoint_Address`및 `Profile_Query_Endpoint_address`에 대 한 자리 표시자 값을 특정 지역의 실제 끝점 주소로 바꾸어야 합니다. 이 문서의 끝에는이 구성이 필요한 지역의 끝점 주소에 대 한 링크가 포함 되어 있습니다.
+Application Insights에서 특정 지역으로 데이터를 보내려면 기본 엔드포인트 주소를 재정의 해야 합니다. 각 SDK에는 약간 다른 수정이 필요 하며,이에 대해서는이 문서에 설명 되어 있습니다. 이러한 변경을 수행 하려면 샘플 코드를 조정 하 고 `QuickPulse_Endpoint_Address`, `TelemetryChannel_Endpoint_Address`및 `Profile_Query_Endpoint_address`에 대 한 자리 표시자 값을 특정 지역의 실제 엔드포인트 주소로 바꾸어야 합니다. 이 문서의 끝에는이 구성이 필요한 지역의 엔드포인트 주소에 대 한 링크가 포함 되어 있습니다.
 
 ## <a name="sdk-code-changes"></a>SDK 코드 변경
 
 ### <a name="net-with-applicationinsightsconfig"></a>Applicationinsights .config를 사용 하는 .NET
 
 > [!NOTE]
-> SDK 업그레이드가 수행 될 때마다 applicationinsights .config 파일을 자동으로 덮어씁니다. SDK 업그레이드를 수행한 후에는 지역별 끝점 값을 다시 입력 해야 합니다.
+> SDK 업그레이드가 수행 될 때마다 applicationinsights .config 파일을 자동으로 덮어씁니다. SDK 업그레이드를 수행한 후에는 지역별 엔드포인트 값을 다시 입력 해야 합니다.
 
 ```xml
 <ApplicationInsights>
@@ -47,7 +47,7 @@ Application Insights에서 특정 지역으로 데이터를 보내려면 기본 
 
 ### <a name="aspnet-core"></a>ASP.NET Core
 
-다음과 같이 프로젝트에서 appsettings 파일을 수정 하 여 기본 끝점을 조정 합니다.
+다음과 같이 프로젝트에서 appsettings 파일을 수정 하 여 기본 엔드포인트을 조정 합니다.
 
 ```json
 "ApplicationInsights": {
@@ -58,7 +58,7 @@ Application Insights에서 특정 지역으로 데이터를 보내려면 기본 
   }
 ```
 
-라이브 메트릭 및 프로필 쿼리 끝점에 대 한 값은 코드를 통해서만 설정할 수 있습니다. 코드를 통해 모든 끝점 값의 기본값을 재정의 하려면 `Startup.cs` 파일의 `ConfigureServices` 메서드에서 다음과 같이 변경 합니다.
+라이브 메트릭 및 프로필 쿼리 엔드포인트에 대 한 값은 코드를 통해서만 설정할 수 있습니다. 코드를 통해 모든 엔드포인트 값의 기본값을 재정의 하려면 `Startup.cs` 파일의 `ConfigureServices` 메서드에서 다음과 같이 변경 합니다.
 
 ```csharp
 using Microsoft.ApplicationInsights.Extensibility.Implementation.ApplicationId;
@@ -126,7 +126,7 @@ namespace Example
 
 ### <a name="java"></a>Java
 
-Applicationinsights .xml 파일을 수정 하 여 기본 끝점 주소를 변경 합니다.
+Applicationinsights .xml 파일을 수정 하 여 기본 엔드포인트 주소를 변경 합니다.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -170,7 +170,7 @@ appInsights.defaultClient.config.quickPulseHost = "QuickPulse_Endpoint_Address";
 appInsights.Configuration.start();
 ```
 
-환경 변수를 통해 끝점을 구성할 수도 있습니다.
+환경 변수를 통해 엔드포인트을 구성할 수도 있습니다.
 
 ```
 Instrumentation Key: "APPINSIGHTS_INSTRUMENTATIONKEY"
@@ -191,9 +191,9 @@ Live Metrics Endpoint: "QuickPulse_Endpoint_Address"
 </script>
 ```
 
-## <a name="regions-that-require-endpoint-modification"></a>끝점을 수정 해야 하는 영역
+## <a name="regions-that-require-endpoint-modification"></a>엔드포인트을 수정 해야 하는 영역
 
-현재는 끝점을 수정 해야 하는 유일한 지역은 [Azure Government](https://docs.microsoft.com/azure/azure-government/documentation-government-services-monitoringandmanagement#application-insights) 및 [Azure 중국](https://docs.microsoft.com/azure/china/resources-developer-guide)입니다.
+현재는 엔드포인트을 수정 해야 하는 유일한 지역은 [Azure Government](https://docs.microsoft.com/azure/azure-government/documentation-government-services-monitoringandmanagement#application-insights) 및 [Azure 중국](https://docs.microsoft.com/azure/china/resources-developer-guide)입니다.
 
 |지역 |  엔드포인트 이름 | 값 |
 |-----------------|:------------|:-------------|
@@ -205,7 +205,7 @@ Live Metrics Endpoint: "QuickPulse_Endpoint_Address"
 | Azure Government | 프로필 쿼리 |`https://dc.applicationinsights.us/api/profiles/{0}/appId` |
 
 현재 ' api.applicationinsights.io '를 통해 액세스 되는 [Application Insights REST API](https://dev.applicationinsights.io/
-) 를 사용 하는 경우 지역에 로컬인 끝점을 사용 해야 합니다.
+) 를 사용 하는 경우 지역에 로컬인 엔드포인트을 사용 해야 합니다.
 
 |지역 |  엔드포인트 이름 | 값 |
 |-----------------|:------------|:-------------|

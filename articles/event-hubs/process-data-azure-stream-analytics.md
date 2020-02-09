@@ -42,7 +42,7 @@ Azure Event Hubs 및 Azure Stream Analytics 통합의 주요 이점은 다음과
         ![쿼리 편집기](./media/process-data-azure-stream-analytics/query-editor.png)
         
         > [!NOTE]
-        >  이 기능을 처음 사용 하는 경우이 페이지에는 들어오는 데이터를 미리 볼 수 있는 이벤트 허브에 대 한 소비자 그룹 및 정책을 만드는 권한을 요청 하는 메시지가 표시 됩니다.
+        >  이 기능을 처음 사용 하는 경우이 페이지에는 들어오는 데이터를 미리 볼 수 있는 이벤트 허브에 대한 소비자 그룹 및 정책을 만드는 권한을 요청 하는 메시지가 표시 됩니다.
 1. 위의 그림에 표시 된 것 처럼 **입력 미리 보기** 창에서 **만들기** 를 선택 합니다. 
 1. 이 탭에서 들어오는 최신 데이터의 스냅숏이 즉시 표시 됩니다.
     - 데이터의 serialization 형식이 자동으로 검색 됩니다 (JSON/CSV). JSON/CSV/AVRO에도 수동으로 변경할 수 있습니다.
@@ -58,12 +58,12 @@ Azure Event Hubs 및 Azure Stream Analytics 통합의 주요 이점은 다음과
 
     ![쿼리 결과 테스트](./media/process-data-azure-stream-analytics/test-results.png)
 1. 사용자 고유의 쿼리를 작성 하 여 데이터를 변환 합니다. [Stream Analytics 쿼리 언어 참조](/stream-analytics-query/stream-analytics-query-language-reference)를 참조 하세요.
-1. 쿼리를 테스트 하 고 프로덕션으로 이동 하려면 **쿼리 배포**를 선택 합니다. 쿼리를 배포 하려면 작업에 대 한 출력을 설정 하 고 작업을 시작할 수 있는 Azure Stream Analytics 작업을 만듭니다. Stream Analytics 작업을 만들려면 작업의 이름을 지정 하 고 **만들기**를 선택 합니다.
+1. 쿼리를 테스트 하 고 프로덕션으로 이동 하려면 **쿼리 배포**를 선택 합니다. 쿼리를 배포 하려면 작업에 대한 출력을 설정 하 고 작업을 시작할 수 있는 Azure Stream Analytics 작업을 만듭니다. Stream Analytics 작업을 만들려면 작업의 이름을 지정 하 고 **만들기**를 선택 합니다.
 
       ![Azure Stream Analytics 작업 만들기](./media/process-data-azure-stream-analytics/create-stream-analytics-job.png)
 
       > [!NOTE] 
-      >  Event Hubs 페이지에서 만드는 새 Azure Stream Analytics 작업 마다 소비자 그룹과 정책을 만드는 것이 좋습니다. 소비자 그룹은 5 명의 동시 판독기만 허용 하므로 각 작업에 대 한 전용 소비자 그룹을 제공 하면 해당 제한을 초과 하 여 발생할 수 있는 오류를 방지할 수 있습니다. 전용 정책을 사용 하면 다른 리소스에 영향을 주지 않고 키를 회전 하거나 사용 권한을 해지할 수 있습니다. 
+      >  Event Hubs 페이지에서 만드는 새 Azure Stream Analytics 작업 마다 소비자 그룹과 정책을 만드는 것이 좋습니다. 소비자 그룹은 5 명의 동시 판독기만 허용 하므로 각 작업에 대한 전용 소비자 그룹을 제공 하면 해당 제한을 초과 하 여 발생할 수 있는 오류를 방지할 수 있습니다. 전용 정책을 사용 하면 다른 리소스에 영향을 주지 않고 키를 회전 하거나 사용 권한을 해지할 수 있습니다. 
 1. 이제 쿼리가 테스트 한 것과 동일한 Stream Analytics 작업이 만들어지고, 입력은 이벤트 허브입니다. 
 
 9.  파이프라인을 완료 하려면 쿼리의 **출력** 을 설정 하 고 **시작** 을 선택 하 여 작업을 시작 합니다.
@@ -83,4 +83,4 @@ Azure Stream Analytics 작업은 기본적으로 3 개의 스트리밍 단위 (S
 ![스트리밍 단위 크기 조정](./media/process-data-azure-stream-analytics/scale.png)
 
 ## <a name="next-steps"></a>다음 단계
-Stream Analytics 쿼리에 대 한 자세한 내용은 [쿼리 언어 Stream Analytics](/stream-analytics-query/built-in-functions-azure-stream-analytics) 를 참조 하세요.
+Stream Analytics 쿼리에 대한 자세한 내용은 [쿼리 언어 Stream Analytics](/stream-analytics-query/built-in-functions-azure-stream-analytics) 를 참조 하세요.

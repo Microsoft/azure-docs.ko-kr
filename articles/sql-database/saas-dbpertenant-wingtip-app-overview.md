@@ -1,5 +1,5 @@
 ---
-title: 다중 테 넌 트 앱 예제-정문 SaaS
+title: 다중 테넌트 앱 예제-정문 SaaS
 description: Azure SQL Database를 사용하는 샘플 다중 테넌트 애플리케이션인 Wingtip SaaS 예제를 통해 방법을 알아봅니다.
 services: sql-database
 ms.service: sql-database
@@ -48,7 +48,7 @@ Wingtip SaaS 앱은 테넌트별 데이터베이스 모델을 사용합니다. S
 |[Azure Monitor 로그를 사용 하 여 모니터링](saas-dbpertenant-log-analytics.md) | [Azure Monitor 로그](../log-analytics/log-analytics-overview.md) 를 사용 하 여 여러 풀에서 많은 양의 리소스를 모니터링 하는 방법을 알아봅니다. |
 |[단일 테넌트 복원](saas-dbpertenant-restore-single-tenant.md)| 테넌트 데이터베이스를 이전 시점으로 복원하는 방법을 알아봅니다. 또한 기존 테넌트 데이터베이스를 온라인 상태로 유지하여 병렬 데이터베이스로 복원하는 방법도 알아봅니다. |
 |[테넌트 데이터베이스 스키마 관리](saas-tenancy-schema-management.md)| 모든 테넌트 데이터베이스를 대상으로 스키마와 참조 데이터를 업데이트하는 방법을 알아봅니다. |
-|[교차 테넌트 분산 쿼리 실행](saas-tenancy-cross-tenant-reporting.md) | 임시 분석 데이터베이스를 만들고 모든 테 넌 트에서 실시간 분산 쿼리를 실행 합니다.  |
+|[교차 테넌트 분산 쿼리 실행](saas-tenancy-cross-tenant-reporting.md) | 임시 분석 데이터베이스를 만들고 모든 테넌트에서 실시간 분산 쿼리를 실행 합니다.  |
 |[추출된 테넌트 데이터를 이용하여 분석 실행](saas-tenancy-tenant-analytics.md) | 오프라인 분석 쿼리를 실행하기 위해 테넌트 데이터를 분석 데이터베이스 또는 데이터 웨어하우스로 추출합니다. |
 
 

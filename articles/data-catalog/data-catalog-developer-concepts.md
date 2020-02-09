@@ -162,13 +162,13 @@ Azure 데이터 카탈로그의 주요 측면은 시스템에서 메타데이터
 </table>
 
 ### <a name="common-types"></a>일반 형식
-일반 형식 속성에 대 한 형식으로 사용할 수 있지만 항목은 없습니다.
+일반 형식 속성에 대한 형식으로 사용할 수 있지만 항목은 없습니다.
 
 <table>
 <tr><td><b>일반 형식</b></td><td><b>Properties</b></td><td><b>데이터 형식</b></td><td><b>설명</b></td></tr>
 <tr><td>DataSourceInfo</td><td></td><td></td><td></td></tr>
 <tr><td></td><td>sourceType</td><td>string</td><td>데이터 원본 형식을 설명합니다.  예: SQL Server, Oracle Database 등  </td></tr>
-<tr><td></td><td>ObjectType</td><td>string</td><td>데이터 원본에서 개체의 형식을 설명합니다. 예: 테이블, SQL Server에 대 한 뷰입니다.</td></tr>
+<tr><td></td><td>ObjectType</td><td>string</td><td>데이터 원본에서 개체의 형식을 설명합니다. 예: 테이블, SQL Server에 대한 뷰입니다.</td></tr>
 
 <tr><td>DataSourceLocation</td><td></td><td></td><td></td></tr>
 <tr><td></td><td>protocol</td><td>string</td><td>필수 요소. 데이터 원본과 통신하는 데 사용되는 프로토콜을 설명합니다. 예: SQl Server의 경우 "tds", Oracle의 경우 "oracle" 등. 현재 지원되는 프로토콜의 목록은 <a href="https://docs.microsoft.com/azure/data-catalog/data-catalog-dsr">데이터 원본 참조 사양 - DSL 구조</a>를 참조하세요.</td></tr>

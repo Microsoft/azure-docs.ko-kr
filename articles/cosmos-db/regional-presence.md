@@ -30,7 +30,7 @@ Cosmos DB는 고객이 사용할 수 있는 5개의 고유한 Azure 클라우드
 
 * **Azure Government**: 미국 4개 지역에서 미국 정부 기관 및 해당 파트너가 사용할 수 있습니다. 
 
-* **DoD (방어 부서)에 대 한 Azure Government** 미국의 방어 부서와 미국의 두 지역에서 사용할 수 있습니다.
+* **DoD (방어 부서)에 대한 Azure Government** 미국의 방어 부서와 미국의 두 지역에서 사용할 수 있습니다.
 
 ## <a name="regional-presence-with-global-distribution"></a>전역 배포가 지원되는 지역 현재 상태
 

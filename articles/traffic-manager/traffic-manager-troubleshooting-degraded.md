@@ -25,7 +25,7 @@ ms.locfileid: "76938376"
 
 ![성능 저하 엔드포인트 상태](./media/traffic-manager-troubleshooting-degraded/traffic-manager-degradedifonedegraded.png)
 
-Traffic Manager의 상태가 **비활성** 상태를 표시하는 경우 두 끝점이 모두 **비활성**일 수 있습니다.
+Traffic Manager의 상태가 **비활성** 상태를 표시하는 경우 두 엔드포인트이 모두 **비활성**일 수 있습니다.
 
 ![비활성 Traffic Manager 상태](./media/traffic-manager-troubleshooting-degraded/traffic-manager-inactive.png)
 

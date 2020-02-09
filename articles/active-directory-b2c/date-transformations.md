@@ -1,6 +1,6 @@
 ---
-title: 사용자 지정 정책에 대 한 날짜 클레임 변환 예제
-description: Azure Active Directory B2C의 IEF (Identity Experience Framework) 스키마에 대 한 날짜 클레임 변환 예입니다.
+title: 사용자 지정 정책에 대한 날짜 클레임 변환 예제
+description: Azure Active Directory B2C의 IEF (Identity Experience Framework) 스키마에 대한 날짜 클레임 변환 예입니다.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg

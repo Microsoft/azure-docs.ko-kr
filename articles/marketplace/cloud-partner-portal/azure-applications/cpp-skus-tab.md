@@ -116,7 +116,7 @@ ms.locfileid: "76543157"
   >[!IMPORTANT] 
   >이 패키지는 이 애플리케이션을 프로비전하는 데 필요한 중첩된 템플릿 또는 스크립트를 포함해야 합니다. 이러한 파일은 Maintemplate.json, Appliancemaintemplate.json 및 Appliancecreateuidefinition.json 루트 폴더에 있어야 합니다.
 
-- **테 넌 트 id\*** -조직의 Azure Active Directory 테 넌 트 id입니다.
+- **테넌트 id\*** -조직의 Azure Active Directory 테넌트 id입니다.
 - **JIT 액세스를 사용 하도록 설정\*** -이 제품을 사용 하 여 고객 배포에 대 한 just-in-time 관리 액세스를 사용 하도록 설정 하려면 **예** 를 선택 합니다.
 
   >[!NOTE] 

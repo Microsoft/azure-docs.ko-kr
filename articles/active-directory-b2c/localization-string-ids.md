@@ -205,7 +205,7 @@ ID가 `api.phonefactor`인 콘텐츠 정의용 ID는 다음과 같습니다.
 
 ## <a name="verification-display-control-user-interface-elements"></a>확인 표시 컨트롤 사용자 인터페이스 요소
 
-[확인 표시 컨트롤](display-control-verification.md) 에 대 한 id는 다음과 같습니다.
+[확인 표시 컨트롤](display-control-verification.md) 에 대한 id는 다음과 같습니다.
 
 | ID | 기본값 |
 | -- | ------------- |

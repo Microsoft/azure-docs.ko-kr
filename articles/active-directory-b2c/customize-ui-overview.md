@@ -1,7 +1,7 @@
 ---
 title: 사용자 인터페이스 사용자 지정
 titleSuffix: Azure AD B2C
-description: Azure Active Directory B2C를 사용 하는 응용 프로그램에 대 한 사용자 인터페이스를 사용자 지정 하는 방법을 알아봅니다.
+description: Azure Active Directory B2C를 사용 하는 응용 프로그램에 대한 사용자 인터페이스를 사용자 지정 하는 방법을 알아봅니다.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -20,7 +20,7 @@ ms.locfileid: "76908945"
 ---
 # <a name="customize-the-user-interface-in-azure-active-directory-b2c"></a>Azure Active Directory B2C에서 사용자 인터페이스 사용자 지정
 
-고객에 게 표시 되 Azure Active Directory B2C는 사용자 인터페이스 (Azure AD B2C)의 브랜딩 및 사용자 지정은 응용 프로그램에서 원활한 사용자 환경을 제공 하는 데 도움이 됩니다. 이러한 환경에는 등록, 로그인, 프로필 편집 및 암호 재설정이 포함 됩니다. 이 문서에서는 사용자 흐름과 사용자 지정 정책에 대 한 UI (사용자 인터페이스) 사용자 지정 방법을 소개 합니다.
+고객에 게 표시 되 Azure Active Directory B2C는 사용자 인터페이스 (Azure AD B2C)의 브랜딩 및 사용자 지정은 응용 프로그램에서 원활한 사용자 환경을 제공 하는 데 도움이 됩니다. 이러한 환경에는 등록, 로그인, 프로필 편집 및 암호 재설정이 포함 됩니다. 이 문서에서는 사용자 흐름과 사용자 지정 정책에 대한 UI (사용자 인터페이스) 사용자 지정 방법을 소개 합니다.
 
 ## <a name="ui-customization-in-different-scenarios"></a>다양 한 시나리오에서 UI 사용자 지정
 
@@ -30,7 +30,7 @@ ms.locfileid: "76908945"
 
 [사용자 흐름](user-flow-overview.md)을 사용 하는 경우 기본 제공 *페이지 레이아웃 템플릿을*사용 하거나 고유한 HTML 및 CSS를 사용 하 여 사용자 흐름 페이지의 모양을 변경할 수 있습니다. 두 방법 모두이 문서의 뒷부분에서 설명 합니다.
 
-[Azure Portal](tutorial-customize-ui.md) 를 사용 하 여 사용자 흐름에 대 한 UI 사용자 지정을 구성할 수 있습니다.
+[Azure Portal](tutorial-customize-ui.md) 를 사용 하 여 사용자 흐름에 대한 UI 사용자 지정을 구성할 수 있습니다.
 
 > [!TIP]
 > 배너 로고, 배경 이미지 및 사용자 흐름 페이지의 배경색만 수정 하려면이 문서의 뒷부분에서 설명 하는 [회사 브랜딩 (미리 보기)](#company-branding-preview) 기능을 사용해 볼 수 있습니다.
@@ -59,7 +59,7 @@ ms.locfileid: "76908945"
 
 ![Azure Portal의 사용자 흐름 페이지에서 템플릿 선택 드롭다운](media/customize-ui-overview/template-selection.png)
 
-그런 다음 목록에서 템플릿을 선택 합니다. 각 템플릿에 대 한 로그인 페이지의 예는 다음과 같습니다.
+그런 다음 목록에서 템플릿을 선택 합니다. 각 템플릿에 대한 로그인 페이지의 예는 다음과 같습니다.
 
 | 바다색 | 슬레이트 회색 | 클래식 |
 |:-:|:-:|:-:|
@@ -78,7 +78,7 @@ Azure AD B2C [CORS (원본 간 리소스 공유)](https://www.w3.org/TR/cors/)�
 사용자 고유의 HTML 및 CSS 파일을 사용 하 여 UI를 사용자 지정 하기 전에 다음 지침을 검토 합니다.
 
 - Azure AD B2C HTML 콘텐츠를 페이지에 **병합** 합니다. Azure AD B2C가 제공하는 기본 콘텐츠를 복사하여 변경하지 마세요. 처음부터 HTML 콘텐츠를 빌드하고 기본 콘텐츠를 참조로 사용하는 것이 가장 좋습니다.
-- [사용자 흐름과](user-flow-javascript-overview.md) 사용자 [지정 정책](javascript-samples.md)모두에 대 한 사용자 지정 콘텐츠에 **JavaScript** 를 포함할 수 있습니다.
+- [사용자 흐름과](user-flow-javascript-overview.md) 사용자 [지정 정책](javascript-samples.md)모두에 대한 사용자 지정 콘텐츠에 **JavaScript** 를 포함할 수 있습니다.
 - 지원 되는 **브라우저 버전** 은 다음과 같습니다.
   - Internet Explorer 11, 10 및 Microsoft Edge
   - Internet Explorer 9 및 8에 대한 제한된 지원
@@ -88,7 +88,7 @@ Azure AD B2C [CORS (원본 간 리소스 공유)](https://www.w3.org/TR/cors/)�
 
 ### <a name="where-do-i-store-ui-content"></a>UI 콘텐츠는 어디에 저장하나요?
 
-고유한 HTML 및 CSS 파일을 사용 하 여 UI를 사용자 지정 하는 경우 CORS를 지 원하는 공개적으로 사용 가능한 HTTPS 끝점에서 UI 콘텐츠를 호스트할 수 있습니다. 예를 들어 [Azure Blob storage](../storage/blobs/storage-blobs-introduction.md), 웹 서버, CDNS, AWS S3 또는 파일 공유 시스템입니다.
+고유한 HTML 및 CSS 파일을 사용 하 여 UI를 사용자 지정 하는 경우 CORS를 지 원하는 공개적으로 사용 가능한 HTTPS 엔드포인트에서 UI 콘텐츠를 호스트할 수 있습니다. 예를 들어 [Azure Blob storage](../storage/blobs/storage-blobs-introduction.md), 웹 서버, CDNS, AWS S3 또는 파일 공유 시스템입니다.
 
 중요한 점은 CORS를 사용하도록 설정한 상태에서 공개적으로 사용 가능한 HTTPS 엔드포인트에서 콘텐츠를 호스팅하는 것입니다. 콘텐츠에 지정하는 경우 절대 URL을 사용해야 합니다.
 
@@ -188,7 +188,7 @@ Azure AD B2C에서 회사 브랜딩을 구성할 때 다음 사항을 염두에 
 1. **페이지 레이아웃 버전 (미리 보기)** 의 경우 버전 **1.2.0** 이상을 선택 합니다.
 1. **저장**을 선택합니다.
 
-사용자 흐름의 모든 페이지를 브랜드 하려면 사용자 흐름에서 각 페이지 레이아웃에 대 한 페이지 레이아웃 버전을 설정 합니다.
+사용자 흐름의 모든 페이지를 브랜드 하려면 사용자 흐름에서 각 페이지 레이아웃에 대한 페이지 레이아웃 버전을 설정 합니다.
 
 ![Azure Portal에서 Azure AD B2C 페이지 레이아웃 선택](media/customize-ui-overview/portal-02-page-layout-select.png)
 
@@ -209,7 +209,7 @@ Azure AD B2C에서 회사 브랜딩을 구성할 때 다음 사항을 염두에 
 
 ## <a name="localize-content"></a>콘텐츠 지역화
 
-Azure AD B2C 테넌트에서 [사용자 언어 지정](user-flow-language-customization.md)을 사용하여 HTML 콘텐츠를 지역화합니다. 이 기능을 사용 하도록 설정 하면 Azure AD B2C Openid connect Connect 매개 변수 `ui-locales`를 끝점으로 전달할 수 있습니다. 콘텐츠 서버는 이 매개 변수를 사용하여 언어별 HTML 페이지를 제공할 수 있습니다.
+Azure AD B2C 테넌트에서 [사용자 언어 지정](user-flow-language-customization.md)을 사용하여 HTML 콘텐츠를 지역화합니다. 이 기능을 사용 하도록 설정 하면 Azure AD B2C Openid connect Connect 매개 변수 `ui-locales`를 엔드포인트으로 전달할 수 있습니다. 콘텐츠 서버는 이 매개 변수를 사용하여 언어별 HTML 페이지를 제공할 수 있습니다.
 
 사용되는 로캘에 따라 다른 위치에서 콘텐츠를 끌어올 수 있습니다. CORS 사용 엔드포인트에서 특정 언어에 대한 콘텐츠를 호스트하도록 폴더 구조를 설정합니다. 와일드 카드 값 `{Culture:RFC5646}`을 사용하는 경우 적합한 구조를 호출합니다.
 

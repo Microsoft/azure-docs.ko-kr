@@ -18,7 +18,7 @@ ms.locfileid: "74482878"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-portal"></a>Azure Portal를 사용 하 여 Cognitive Services 리소스 만들기
 
-이 빠른 시작을 사용 하 여 Azure Cognitive Services 사용을 시작 합니다. Azure Portal에서 인지 서비스 리소스를 만든 후에는 응용 프로그램을 인증 하는 데 사용할 수 있는 끝점 및 키를 가져옵니다.
+이 빠른 시작을 사용 하 여 Azure Cognitive Services 사용을 시작 합니다. Azure Portal에서 인지 서비스 리소스를 만든 후에는 응용 프로그램을 인증 하는 데 사용할 수 있는 엔드포인트 및 키를 가져옵니다.
 
 
 [!INCLUDE [cognitive-services-subscription-types](../../includes/cognitive-services-subscription-types.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "74482878"
     
     #### <a name="single-service-resourcetabsingleservice"></a>[단일 서비스 리소스](#tab/singleservice)
 
-    아래 링크를 사용 하 여 사용 가능한 Cognitive Services에 대 한 리소스를 만듭니다.
+    아래 링크를 사용 하 여 사용 가능한 Cognitive Services에 대한 리소스를 만듭니다.
 
     | 시각                      | Speech                  | 언어                          | 결정             | Search                 |
     |-----------------------------|-------------------------|-----------------------------------|----------------------|------------------------|
@@ -95,9 +95,9 @@ ms.locfileid: "74482878"
 
     ![Cognitive Services 검색](media/cognitive-services-apis-create-account/resource-next-steps.png)
 
-2. 열리는 빠른 시작 창에서 키 및 끝점에 액세스할 수 있습니다.
+2. 열리는 빠른 시작 창에서 키 및 엔드포인트에 액세스할 수 있습니다.
 
-    ![키 및 끝점 가져오기](media/cognitive-services-apis-create-account/get-cog-serv-keys.png)
+    ![키 및 엔드포인트 가져오기](media/cognitive-services-apis-create-account/get-cog-serv-keys.png)
 
 [!INCLUDE [cognitive-services-environment-variables](../../includes/cognitive-services-environment-variables.md)]
 

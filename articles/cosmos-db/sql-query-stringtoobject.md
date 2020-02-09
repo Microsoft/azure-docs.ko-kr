@@ -26,7 +26,7 @@ StringToObject(<str_expr>)
 ## <a name="arguments"></a>인수
   
 *str_expr*  
-   JSON 개체 식으로 구문 분석할 문자열 식입니다. 중첩 된 문자열 값은 큰따옴표를 사용 하 여 유효 하 게 작성 해야 합니다. JSON 형식에 대 한 자세한 내용은 [json.org](https://json.org/) 를 참조 하세요.  
+   JSON 개체 식으로 구문 분석할 문자열 식입니다. 중첩 된 문자열 값은 큰따옴표를 사용 하 여 유효 하 게 작성 해야 합니다. JSON 형식에 대한 자세한 내용은 [json.org](https://json.org/) 를 참조 하세요.  
   
 ## <a name="return-types"></a>반환 유형
   

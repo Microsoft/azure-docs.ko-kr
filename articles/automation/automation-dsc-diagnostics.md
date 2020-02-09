@@ -74,7 +74,7 @@ Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <Workspa
 
 ## <a name="view-the-state-configuration-logs"></a>상태 구성 로그 보기
 
-Automation 상태 구성 데이터에 대 한 Azure Monitor 로그와의 통합을 설정한 후에는 automation 계정의 **DSC 노드** 블레이드에 **로그 검색** 단추가 표시 됩니다. **로그 검색** 단추를 클릭하여 DSC 노드 데이터에 대한 로그를 확인합니다.
+Automation 상태 구성 데이터에 대한 Azure Monitor 로그와의 통합을 설정한 후에는 automation 계정의 **DSC 노드** 블레이드에 **로그 검색** 단추가 표시 됩니다. **로그 검색** 단추를 클릭하여 DSC 노드 데이터에 대한 로그를 확인합니다.
 
 ![로그 검색 단추](media/automation-dsc-diagnostics/log-search-button.png)
 
@@ -101,7 +101,7 @@ Azure Monitor 로그에서 검색 하 여 로그를 볼 수도 있습니다.
 
    둘 이상의 Automation 계정 또는 구독에서 작업 영역으로의 로그를 설정한 경우 구독 또는 Automation 계정별로 경고를 그룹화할 수 있습니다.
    Automation 계정 이름은 DscNodeStatusData 검색의 리소스 필드에서 파생될 수 있습니다.
-1. **규칙 만들기** 화면을 열려면 페이지 위쪽에서 **+ 새 경고 규칙**을 클릭합니다. 경고를 구성 하는 옵션에 대 한 자세한 내용은 [경고 규칙 만들기](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md)를 참조 하세요.
+1. **규칙 만들기** 화면을 열려면 페이지 위쪽에서 **+ 새 경고 규칙**을 클릭합니다. 경고를 구성 하는 옵션에 대한 자세한 내용은 [경고 규칙 만들기](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md)를 참조 하세요.
 
 ### <a name="find-failed-dsc-resources-across-all-nodes"></a>모든 노드에서 실패한 DSC 리소스 찾기
 
@@ -193,7 +193,7 @@ Automation 상태 구성 데이터를 Azure Monitor 로그에 전송 하 여 다
 - 문제가 발생할 때 알리도록 경고 설정
 - 사용자 지정 보기와 검색 쿼리를 사용하여 runbook 결과, runbook 작업 상태 및 기타 관련된 핵심 지표 또는 메트릭 시각화.
 
-Azure Monitor 로그는 자동화 상태 구성 데이터에 대 한 작업 가시성을 개선 하 고 문제를 보다 신속 하 게 해결 하는 데 도움이 됩니다.
+Azure Monitor 로그는 자동화 상태 구성 데이터에 대한 작업 가시성을 개선 하 고 문제를 보다 신속 하 게 해결 하는 데 도움이 됩니다.
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -203,5 +203,5 @@ Azure Monitor 로그는 자동화 상태 구성 데이터에 대 한 작업 가�
 - PowerShell cmdlet 참조는 [Azure Automation 상태 구성 cmdlet](/powershell/module/azurerm.automation/#automation)을 참조하세요.
 - 가격 책정 정보는 [Azure Automation 상태 구성 가격 책정](https://azure.microsoft.com/pricing/details/automation/)을 참조하세요.
 - 지속적인 배포 파이프라인에서 Azure Automation 상태 구성을 사용하는 예제는 [Azure Automation 상태 구성 및 Chocolatey를 사용한 지속적인 배포](automation-dsc-cd-chocolatey.md)를 참조하세요.
-- 다른 검색 쿼리를 생성 하 고 Azure Monitor 로그를 사용 하 여 자동화 상태 구성 로그를 검토 하는 방법에 대 한 자세한 내용은 [Azure Monitor 로그의 로그 검색](../log-analytics/log-analytics-log-searches.md) 을 참조 하세요.
+- 다른 검색 쿼리를 생성 하 고 Azure Monitor 로그를 사용 하 여 자동화 상태 구성 로그를 검토 하는 방법에 대한 자세한 내용은 [Azure Monitor 로그의 로그 검색](../log-analytics/log-analytics-log-searches.md) 을 참조 하세요.
 - Azure Monitor 로그 및 데이터 수집 원본에 대해 자세히 알아보려면 [Azure Monitor 로그에서 Azure storage 데이터 수집 개요](../azure-monitor/platform/collect-azure-metrics-logs.md) 를 참조 하세요.

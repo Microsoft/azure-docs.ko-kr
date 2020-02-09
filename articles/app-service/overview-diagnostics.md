@@ -28,7 +28,7 @@ App Service 진단에 액세스 하려면 App Service 웹 앱으로 이동 하�
 
 Azure Functions의 경우 함수 앱으로 이동 하 고, 상단 탐색에서 **플랫폼 기능**을 클릭 하 고, **리소스 관리** 섹션에서 **문제 진단 및 해결** 을 선택 합니다.
 
-App Service 진단 홈페이지에서 각 홈페이지 타일의 키워드를 사용 하 여 앱에 대 한 문제를 가장 잘 설명 하는 범주를 선택할 수 있습니다. 또한이 페이지에서는 Windows 앱에 대 한 **진단 도구** 를 찾을 수 있습니다. [진단 도구 (Windows 앱에만 해당)](#diagnostic-tools-only-for-windows-app)를 참조 하세요.
+App Service 진단 홈페이지에서 각 홈페이지 타일의 키워드를 사용 하 여 앱에 대한 문제를 가장 잘 설명 하는 범주를 선택할 수 있습니다. 또한이 페이지에서는 Windows 앱에 대한 **진단 도구** 를 찾을 수 있습니다. [진단 도구 (Windows 앱에만 해당)](#diagnostic-tools-only-for-windows-app)를 참조 하세요.
 
 ![홈페이지](./media/app-service-diagnostics/app-service-diagnostics-homepage-1.png)
 
@@ -46,13 +46,13 @@ App Service 진단 홈페이지에서 각 홈페이지 타일의 키워드를 �
 
 ## <a name="diagnostic-report"></a>진단 보고서
 
-항목을 클릭 하 여 문제를 자세히 조사 하도록 선택한 후에는 종종 그래프 및 markmark로 보완 되는 항목에 대 한 자세한 정보를 볼 수 있습니다. 진단 보고서는 앱 문제를 어설션 매크로나 하는 강력한 도구 일 수 있습니다.
+항목을 클릭 하 여 문제를 자세히 조사 하도록 선택한 후에는 종종 그래프 및 markmark로 보완 되는 항목에 대한 자세한 정보를 볼 수 있습니다. 진단 보고서는 앱 문제를 어설션 매크로나 하는 강력한 도구 일 수 있습니다.
 
 ![진단 보고서](./media/app-service-diagnostics/full-diagnostic-report-5.png)
 
 ## <a name="health-checkup"></a>상태 검사
 
-앱에 무엇이 잘못 되었는지 알지 못하거나 문제 해결을 시작할 위치를 모르는 경우 상태 점검을 시작 하는 것이 좋습니다. 상태 점검은 응용 프로그램을 분석 하 여 정상 및 잘못 된 기능을 설명 하는 빠르고 대화형 개요를 제공 하 고 문제를 조사할 위치를 알려 줍니다. 지능적인 대화형 인터페이스는 문제 해결 프로세스를 통해 지침을 제공합니다. 상태 점검은 Windows 앱에 대 한 Genie 환경 및 Linux 앱에 대 한 웹 앱 다운 진단 보고서와 통합 됩니다.
+앱에 무엇이 잘못 되었는지 알지 못하거나 문제 해결을 시작할 위치를 모르는 경우 상태 점검을 시작 하는 것이 좋습니다. 상태 점검은 응용 프로그램을 분석 하 여 정상 및 잘못 된 기능을 설명 하는 빠르고 대화형 개요를 제공 하 고 문제를 조사할 위치를 알려 줍니다. 지능적인 대화형 인터페이스는 문제 해결 프로세스를 통해 지침을 제공합니다. 상태 점검은 Windows 앱에 대한 Genie 환경 및 Linux 앱에 대한 웹 앱 다운 진단 보고서와 통합 됩니다.
 
 ### <a name="health-checkup-graphs"></a>상태 점검 그래프
 
@@ -85,7 +85,7 @@ Application Insights 예외 및 종속성을 보려면 **웹 앱 다운** 또는
 
 ### <a name="proactive-cpu-monitoring"></a>자동 관리 CPU 모니터링
 
-자동 관리 CPU 모니터링을 통해 앱 또는 앱에 대 한 자식 프로세스가 높은 CPU 리소스를 사용 하는 경우 작업을 쉽게 수행할 수 있습니다. 예기치 않은 문제에 대 한 실제 원인이 발견 될 때까지 cpu 임계값 규칙을 일시적으로 완화 하도록 사용자 고유의 CPU 임계값 규칙을 설정할 수 있습니다. 자세한 내용은 [CPU 문제가 발생 하기 전에](https://azure.github.io/AppService/2019/10/07/Mitigate-your-CPU-problems-before-they-even-happen.html)이를 완화 하는 방법을 참조 하세요.
+자동 관리 CPU 모니터링을 통해 앱 또는 앱에 대한 자식 프로세스가 높은 CPU 리소스를 사용 하는 경우 작업을 쉽게 수행할 수 있습니다. 예기치 않은 문제에 대한 실제 원인이 발견 될 때까지 cpu 임계값 규칙을 일시적으로 완화 하도록 사용자 고유의 CPU 임계값 규칙을 설정할 수 있습니다. 자세한 내용은 [CPU 문제가 발생 하기 전에](https://azure.github.io/AppService/2019/10/07/Mitigate-your-CPU-problems-before-they-even-happen.html)이를 완화 하는 방법을 참조 하세요.
 
 ![자동 관리 CPU 모니터링](./media/app-service-diagnostics/proactive-cpu-monitoring-9.png)
 
@@ -99,12 +99,12 @@ Application Insights 예외 및 종속성을 보려면 **웹 앱 다운** 또는
 
 ## <a name="navigator-and-change-analysis-only-for-windows-app"></a>탐색기 및 변경 분석 (Windows 앱에만 해당)
 
-연속 통합을 사용 하 고 앱에 많은 종속성이 있는 규모가 많은 팀에서 비정상 동작을 야기 하는 특정 변경 내용을 정확 하 게 파악 하기 어려울 수 있습니다. 탐색기를 사용 하면 앱의 종속성 맵과 동일한 구독의 모든 리소스를 자동으로 렌더링 하 여 앱의 토폴로지에 대 한 가시성을 얻을 수 있습니다. 탐색기를 사용 하면 앱 및 해당 종속성의 통합 된 변경 내용 목록을 볼 수 있으며 비정상 동작을 야기 하는 변경 내용에 대해 범위를 좁힐 수 있습니다. 홈 페이지 타일 **탐색기** 를 통해 액세스할 수 있으며 처음 사용 하기 전에 활성화 해야 합니다. 자세한 내용은 [탐색기를 사용 하 여 앱의 종속성에 대 한 가시성 가져오기](https://azure.github.io/AppService/2019/08/06/Bring-visibility-to-your-app-and-its-dependencies-with-Navigator.html)를 참조 하세요.
+연속 통합을 사용 하 고 앱에 많은 종속성이 있는 규모가 많은 팀에서 비정상 동작을 야기 하는 특정 변경 내용을 정확 하 게 파악 하기 어려울 수 있습니다. 탐색기를 사용 하면 앱의 종속성 맵과 동일한 구독의 모든 리소스를 자동으로 렌더링 하 여 앱의 토폴로지에 대한 가시성을 얻을 수 있습니다. 탐색기를 사용 하면 앱 및 해당 종속성의 통합 된 변경 내용 목록을 볼 수 있으며 비정상 동작을 야기 하는 변경 내용에 대해 범위를 좁힐 수 있습니다. 홈 페이지 타일 **탐색기** 를 통해 액세스할 수 있으며 처음 사용 하기 전에 활성화 해야 합니다. 자세한 내용은 [탐색기를 사용 하 여 앱의 종속성에 대한 가시성 가져오기](https://azure.github.io/AppService/2019/08/06/Bring-visibility-to-your-app-and-its-dependencies-with-Navigator.html)를 참조 하세요.
 
 ![탐색기 기본 페이지](./media/app-service-diagnostics/navigator-default-page-11.png)
 
 ![Diff 뷰](./media/app-service-diagnostics/diff-view-12.png)
 
-앱 변경 내용에 대 한 변경 분석은 타일 바로 가기를 통해 액세스할 수 있으며, **응용 프로그램 변경** 및 **응용** 프로그램의 **가용성 및 성능 저하** 를 통해 다른 메트릭과 동시에 사용할 수 있습니다. 기능을 사용 하려면 먼저 해당 기능을 사용 하도록 설정 해야 합니다. 자세한 내용은 [App Service 진단에서 새로운 변경 분석 환경 발표](https://azure.github.io/AppService/2019/05/07/Announcing-the-new-change-analysis-experience-in-App-Service-Diagnostics-Analysis.html)를 참조 하세요.
+앱 변경 내용에 대한 변경 분석은 타일 바로 가기를 통해 액세스할 수 있으며, **응용 프로그램 변경** 및 **응용** 프로그램의 **가용성 및 성능 저하** 를 통해 다른 메트릭과 동시에 사용할 수 있습니다. 기능을 사용 하려면 먼저 해당 기능을 사용 하도록 설정 해야 합니다. 자세한 내용은 [App Service 진단에서 새로운 변경 분석 환경 발표](https://azure.github.io/AppService/2019/05/07/Announcing-the-new-change-analysis-experience-in-App-Service-Diagnostics-Analysis.html)를 참조 하세요.
 
 제목에 "[Diag]"를 추가 하 여 [UserVoice](https://feedback.azure.com/forums/169385-web-apps) 에서 질문이 나 의견을 게시 합니다.

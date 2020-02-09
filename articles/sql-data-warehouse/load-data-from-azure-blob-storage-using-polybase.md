@@ -563,7 +563,7 @@ Azure Portal에서 SQL 서버의 정규화된 서버 이름을 확인합니다. 
     ![로드된 테이블 보기](media/load-data-from-azure-blob-storage-using-polybase/view-loaded-tables.png)
 
 ## <a name="authenticate-using-managed-identities-to-load-optional"></a>관리 되는 id를 사용 하 여 인증 (선택 사항)
-PolyBase를 사용 하 여 로드 하 고 관리 되는 id를 통해 인증 하는 것은 가장 안전한 메커니즘 이며 Azure storage에서 VNet 서비스 끝점을 활용할 수 있습니다. 
+PolyBase를 사용 하 여 로드 하 고 관리 되는 id를 통해 인증 하는 것은 가장 안전한 메커니즘 이며 Azure storage에서 VNet 서비스 엔드포인트을 활용할 수 있습니다. 
 
 ### <a name="prerequisites"></a>필수 조건
 1.  [이 가이드](https://docs.microsoft.com/powershell/azure/install-az-ps)를 사용하여 Azure PowerShell을 설치합니다.
@@ -604,7 +604,7 @@ PolyBase를 사용 하 여 로드 하 고 관리 되는 id를 통해 인증 하�
         
    1. [외부 테이블](https://docs.microsoft.com/sql/t-sql/statements/create-external-table-transact-sql)을 사용하여 평소와 같이 쿼리합니다.
 
-SQL Data Warehouse에 대 한 가상 네트워크 서비스 끝점을 설정 하려면 다음 [문서](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview) 를 참조 하세요. 
+SQL Data Warehouse에 대 한 가상 네트워크 서비스 엔드포인트을 설정 하려면 다음 [문서](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview) 를 참조 하세요. 
 
 ## <a name="clean-up-resources"></a>리소스 정리
 

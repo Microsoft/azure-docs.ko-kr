@@ -194,7 +194,7 @@ VM을 만들었으며 이름이 변경 되었고 고정 IP 주소가 있으므�
 
 
 ## <a name="create-an-azure-ad-tenant"></a>Azure AD 테넌트 만들기
-이제 사용자를 클라우드와 동기화 할 수 있도록 Azure AD 테 넌 트를 만들어야 합니다.  새 Azure AD 테넌트를 만들려면 다음 단계를 수행합니다.
+이제 사용자를 클라우드와 동기화 할 수 있도록 Azure AD 테넌트를 만들어야 합니다.  새 Azure AD 테넌트를 만들려면 다음 단계를 수행합니다.
 
 1. [Azure Portal](https://portal.azure.com)로 이동하여 Azure 구독이 있는 계정으로 로그인합니다.
 2. **더하기 아이콘(+)** 을 선택하고 **Azure Active Directory**를 검색합니다.
@@ -205,7 +205,7 @@ VM을 만들었으며 이름이 변경 되었고 고정 IP 주소가 있으므�
 6. 이 작업이 완료되면 **여기** 링크를 클릭하여 디렉터리를 관리합니다.
 
 ## <a name="create-a-global-administrator-in-azure-ad"></a>Azure AD에서 글로벌 관리자 만들기
-이제 Azure AD 테 넌 트가 있으므로 전역 관리자 계정을 만듭니다.  글로벌 관리자 계정을 만들려면 다음을 수행합니다.
+이제 Azure AD 테넌트가 있으므로 전역 관리자 계정을 만듭니다.  글로벌 관리자 계정을 만들려면 다음을 수행합니다.
 
 1.  **관리**에서 **사용자**를 선택합니다.</br>
 ![만들기](media/tutorial-single-forest/administrator1.png)</br>

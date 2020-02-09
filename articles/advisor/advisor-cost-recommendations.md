@@ -16,9 +16,9 @@ Advisor는 유휴 및 사용 미달 리소스를 식별하여 전체적인 Azure
 
 ## <a name="optimize-virtual-machine-spend-by-resizing-or-shutting-down-underutilized-instances"></a>사용량이 낮은 인스턴스의 크기를 조정하거나 종료하여 가상 머신 소비 최적화 
 
-특정 애플리케이션 시나리오에서는 기본적으로 사용률이 낮을 수 있으나 가상 머신의 크기와 수를 관리하여 비용을 절감할 수도 있습니다. Advisor 고급 평가 모델은 최대 CPU 사용률에 대 한 최대 값이 3% 미만이 고 네트워크 사용률이 7 일 동안 2% 미만인 경우 P95th 가상 머신을 종료 하는 것으로 간주 합니다. 가상 컴퓨터는 현재 부하가 사용자 지향 작업을 수행할 때 40%를 초과 하지 않을 때 현재 부하가 80%의 사용률을 초과 하지 않도록 하는 작은 SKU (동일한 SKU 제품군 내) 또는 더 작은 수의 인스턴스로 현재 부하를 수용할 수 있는 경우 올바른 크기를 고려 합니다. 여기에서 워크 로드의 유형은 워크 로드의 CPU 사용률 특성을 분석 하 여 결정 됩니다.
+특정 애플리케이션 시나리오에서는 기본적으로 사용률이 낮을 수 있으나 가상 머신의 크기와 수를 관리하여 비용을 절감할 수도 있습니다. Advisor 고급 평가 모델은 최대 CPU 사용률에 대한 최대 값이 3% 미만이 고 네트워크 사용률이 7 일 동안 2% 미만인 경우 P95th 가상 머신을 종료 하는 것으로 간주 합니다. 가상 컴퓨터는 현재 부하가 사용자 지향 작업을 수행할 때 40%를 초과 하지 않을 때 현재 부하가 80%의 사용률을 초과 하지 않도록 하는 작은 SKU (동일한 SKU 제품군 내) 또는 더 작은 수의 인스턴스로 현재 부하를 수용할 수 있는 경우 올바른 크기를 고려 합니다. 여기에서 워크 로드의 유형은 워크 로드의 CPU 사용률 특성을 분석 하 여 결정 됩니다.
 
-권장 되는 작업은 권장 되는 리소스와 관련 하 여 종료 하거나 크기를 조정 하는 것입니다. Advisor에서는 권장 되는 작업 (크기 조정 또는 종료)에 대 한 예상 비용 절감 액을 보여 줍니다. 또한 크기 조정 권장 작업의 경우 Advisor는 현재 및 대상 SKU 정보를 제공 합니다. 
+권장 되는 작업은 권장 되는 리소스와 관련 하 여 종료 하거나 크기를 조정 하는 것입니다. Advisor에서는 권장 되는 작업 (크기 조정 또는 종료)에 대한 예상 비용 절감 액을 보여 줍니다. 또한 크기 조정 권장 작업의 경우 Advisor는 현재 및 대상 SKU 정보를 제공 합니다. 
 
 미달 사용 가상 컴퓨터를 더 적극적으로 식별 하려면 구독 별로 CPU 사용률 규칙을 조정할 수 있습니다.
 
@@ -42,10 +42,10 @@ Advisor는 부하 분산 장치 또는 Vm과 같은 Azure 리소스에 현재 �
 
 ## <a name="delete-azure-data-factory-pipelines-that-are-failing"></a>실패 하는 Azure Data Factory 파이프라인 삭제
 
-Azure Advisor은 반복적으로 실패 하는 Azure Data Factory 파이프라인을 검색 하 고, 더 이상 필요 하지 않은 경우 실패 한 파이프라인을 삭제 하거나 문제를 해결 하는 것을 권장 합니다. 오류가 발생 하는 동안에는 제공 하지 않더라도 이러한 파이프라인에 대 한 요금이 청구 됩니다. 
+Azure Advisor은 반복적으로 실패 하는 Azure Data Factory 파이프라인을 검색 하 고, 더 이상 필요 하지 않은 경우 실패 한 파이프라인을 삭제 하거나 문제를 해결 하는 것을 권장 합니다. 오류가 발생 하는 동안에는 제공 하지 않더라도 이러한 파이프라인에 대한 요금이 청구 됩니다. 
 
-## <a name="use-standard-snapshots-for-managed-disks"></a>Managed Disks에 대 한 표준 스냅숏 사용
-60%의 비용을 절감하려면 부모 디스크의 스토리지 유형과 관계없이 Standard Storage에 스냅샷을 저장하는 것이 좋습니다. 이 옵션은 Managed Disks 스냅숏의 기본 옵션입니다. Azure Advisor는 Premium Storage 저장 된 스냅숏을 식별 하 고 Premium에서 Standard Storage로 스냅숏을 마이그레이션하는 것이 좋습니다. [관리 디스크 가격 책정에 대 한 자세한 정보](https://aka.ms/aa_manageddisksnapshot_learnmore)
+## <a name="use-standard-snapshots-for-managed-disks"></a>Managed Disks에 대한 표준 스냅숏 사용
+60%의 비용을 절감하려면 부모 디스크의 스토리지 유형과 관계없이 Standard Storage에 스냅샷을 저장하는 것이 좋습니다. 이 옵션은 Managed Disks 스냅숏의 기본 옵션입니다. Azure Advisor는 Premium Storage 저장 된 스냅숏을 식별 하 고 Premium에서 Standard Storage로 스냅숏을 마이그레이션하는 것이 좋습니다. [관리 디스크 가격 책정에 대한 자세한 정보](https://aka.ms/aa_manageddisksnapshot_learnmore)
 
 ## <a name="how-to-access-cost-recommendations-in-azure-advisor"></a>Azure Advisor에서 비용 권장 사항에 액세스하는 방법
 

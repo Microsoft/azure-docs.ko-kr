@@ -1,5 +1,5 @@
 ---
-title: SQL 관리 되는 인스턴스 마이그레이션에 대 한 네트워크 토폴로지
+title: SQL 관리 되는 인스턴스 마이그레이션에 대한 네트워크 토폴로지
 titleSuffix: Azure Database Migration Service
 description: Azure Database Migration Service를 사용 하 여 Azure SQL Database 관리 되는 인스턴스 마이그레이션의 원본 및 대상 구성에 대해 알아봅니다.
 services: database-migration
@@ -19,7 +19,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/08/2020
 ms.locfileid: "75749259"
 ---
-# <a name="network-topologies-for-azure-sql-db-managed-instance-migrations-using-azure-database-migration-service"></a>Azure Database Migration Service를 사용 하 여 Azure SQL DB Managed Instance 마이그레이션에 대 한 네트워크 토폴로지
+# <a name="network-topologies-for-azure-sql-db-managed-instance-migrations-using-azure-database-migration-service"></a>Azure Database Migration Service를 사용 하 여 Azure SQL DB Managed Instance 마이그레이션에 대한 네트워크 토폴로지
 
 이 문서에서는 온-프레미스 SQL Server에서 Azure SQL Database Managed Instance으로 포괄적인 마이그레이션 환경을 제공 하기 위해에서 사용할 수 Azure Database Migration Service 있는 다양 한 네트워크 토폴로지를 설명 합니다.
 
@@ -53,7 +53,7 @@ Azure SQL Database Managed Instance가 온-프레미스 네트워크에 연결�
 
 원본 SQL Server Azure VM에서 호스트 되 고 Azure SQL Database 관리 되는 인스턴스 및 Azure Database Migration Service와 동일한 가상 네트워크를 공유 하는 경우이 토폴로지를 사용 합니다.
 
-![공유 VNet을 사용 하 여 클라우드-클라우드 마이그레이션에 대 한 네트워크 토폴로지](media/resource-network-topologies/cloud-to-cloud.png)
+![공유 VNet을 사용 하 여 클라우드-클라우드 마이그레이션에 대한 네트워크 토폴로지](media/resource-network-topologies/cloud-to-cloud.png)
 
 **요구 사항**
 
@@ -67,7 +67,7 @@ Azure SQL Database Managed Instance가 온-프레미스 네트워크에 연결�
 - RBAC (역할 기반 Access Control) 정책이 적용 되는 경우 Azure SQL Database 관리 되는 인스턴스를 호스트 하는 동일한 구독에 액세스 하도록 사용자를 제한 해야 합니다.
 - Azure SQL Database Managed Instance 및 Azure Database Migration Service에 사용 되는 가상 네트워크가 서로 다른 구독에 있습니다.
 
-![Isolated VNet을 사용 하 여 클라우드-클라우드 마이그레이션에 대 한 네트워크 토폴로지](media/resource-network-topologies/cloud-to-cloud-isolated.png)
+![Isolated VNet을 사용 하 여 클라우드-클라우드 마이그레이션에 대한 네트워크 토폴로지](media/resource-network-topologies/cloud-to-cloud-isolated.png)
 
 **요구 사항**
 
@@ -98,5 +98,5 @@ Azure SQL Database Managed Instance가 온-프레미스 네트워크에 연결�
 
 ## <a name="next-steps"></a>다음 단계
 
-- Azure Database Migration Service에 대 한 개요는 [Azure Database Migration Service 이란?](dms-overview.md)문서를 참조 하세요.
-- Azure Database Migration Service의 지역별 가용성에 대 한 최신 정보는 [지역별 사용 가능한 제품](https://azure.microsoft.com/global-infrastructure/services/?products=database-migration) 페이지를 참조 하세요.
+- Azure Database Migration Service에 대한 개요는 [Azure Database Migration Service 이란?](dms-overview.md)문서를 참조 하세요.
+- Azure Database Migration Service의 지역별 가용성에 대한 최신 정보는 [지역별 사용 가능한 제품](https://azure.microsoft.com/global-infrastructure/services/?products=database-migration) 페이지를 참조 하세요.

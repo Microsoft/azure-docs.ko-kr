@@ -70,5 +70,5 @@ ms.locfileid: "72789873"
 * `position`은 데이터 흐름에서 열의 서 수 위치입니다.
 
 ## <a name="next-steps"></a>다음 단계
-* 데이터 변환에 대 한 매핑 데이터 흐름 [식 언어](data-flow-expression-functions.md) 에 대 한 자세한 정보
+* 데이터 변환에 대한 매핑 데이터 흐름 [식 언어](data-flow-expression-functions.md) 에 대한 자세한 정보
 * [싱크 변환](data-flow-sink.md) 에서 열 패턴을 사용 하 고 규칙 기반 매핑을 사용 하 여 [변환 선택](data-flow-select.md)

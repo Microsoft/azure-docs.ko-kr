@@ -375,7 +375,7 @@ Resource Manager 템플릿을 사용하는 경우 일반적으로 출력을 생�
 
 ![Azure 구독](./media/azure-resource-manager-test-drive/subdetails2.png)
 
-**AZURE AD 테 넌 트 id-** *필수* 테 넌 트 id가 이미 있는 경우 속성-\> Directory id에서 찾을 수 있습니다.
+**AZURE AD 테넌트 id-** *필수* 테넌트 id가 이미 있는 경우 속성-\> Directory id에서 찾을 수 있습니다.
 
 ![Azure Active Directory 속성](./media/azure-resource-manager-test-drive/subdetails3.png)
 
@@ -383,7 +383,7 @@ ID가 없으면 Azure Active Directory에서 새 테넌트를 만듭니다.
 
 ![Azure Active Directory 테넌트 목록](./media/azure-resource-manager-test-drive/subdetails4.png)
 
-![Azure AD 테 넌 트의 조직, 도메인 및 국가/지역 정의](./media/azure-resource-manager-test-drive/subdetails5.png)
+![Azure AD 테넌트의 조직, 도메인 및 국가/지역 정의](./media/azure-resource-manager-test-drive/subdetails5.png)
 
 ![선택 항목을 확인합니다.](./media/azure-resource-manager-test-drive/subdetails6.png)
 

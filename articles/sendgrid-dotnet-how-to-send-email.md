@@ -98,7 +98,7 @@ SendGrid의 .NET 클래스 라이브러리는 **SendGrid**라고 합니다. 다�
 ## <a name="how-to-send-an-email"></a>방법: 전자 메일 보내기
 전자 메일 메시지를 만든 후에 SendGrid의 API를 사용하여 해당 메시지를 보낼 수 있습니다. 또는를 사용할 수 있습니다 [. NET의 기본 제공 라이브러리][NET-library].
 
-메일을 보내려면 SendGrid API 키를 제공해야 합니다. API 키를 구성 하는 방법에 대 한 세부 정보가 필요한 경우 SendGrid의 API 키 [설명서][documentation]를 참조 하세요.
+메일을 보내려면 SendGrid API 키를 제공해야 합니다. API 키를 구성 하는 방법에 대한 세부 정보가 필요한 경우 SendGrid의 API 키 [설명서][documentation]를 참조 하세요.
 
 응용 프로그램 설정을 클릭 하 고 앱 설정 아래에 키/값 쌍을 추가 하 여 Azure Portal 통해 이러한 자격 증명을 저장할 수 있습니다.
 

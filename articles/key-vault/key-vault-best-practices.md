@@ -26,7 +26,7 @@ Azure Key Vault는 암호화 키와 비밀(예: 인증서, 연결 문자열 및 
 1. 구독, 리소스 그룹 및 키 자격 증명 모음에 대 한 액세스 잠금 (RBAC)
 2. 모든 자격 증명 모음에 대 한 액세스 정책 만들기
 3. 최소 권한 액세스 보안 주체를 사용 하 여 액세스 권한 부여
-4. 방화벽 및 [VNET 서비스 끝점](key-vault-overview-vnet-service-endpoints.md) 설정
+4. 방화벽 및 [VNET 서비스 엔드포인트](key-vault-overview-vnet-service-endpoints.md) 설정
 
 ## <a name="use-separate-key-vault"></a>별도의 Key Vault 사용
 

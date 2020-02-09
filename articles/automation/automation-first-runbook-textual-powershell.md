@@ -240,7 +240,7 @@ PowerShell Runbook에는 PowerShell 워크플로 Runbook과 동일한 수명 주
 
 ## <a name="next-steps"></a>다음 단계
 
-* 언어 참조 및 학습 모듈을 비롯 한 PowerShell에 대 한 자세한 내용은 [Powershell 문서](/powershell/scripting/overview)를 참조 하세요.
+* 언어 참조 및 학습 모듈을 비롯 한 PowerShell에 대한 자세한 내용은 [Powershell 문서](/powershell/scripting/overview)를 참조 하세요.
 * 그래픽 Runbook을 시작하려면 [내 첫 번째 그래픽 Runbook](automation-first-runbook-graphical.md)
 * PowerShell 워크플로 Runbook을 시작하려면 [내 첫 번째 PowerShell 워크플로 Runbook](automation-first-runbook-textual.md)
 * Runbook의 형식, 장점 및 제한 사항에 대해 자세히 알아보려면 [Azure Automation Runbook 형식](automation-runbook-types.md)

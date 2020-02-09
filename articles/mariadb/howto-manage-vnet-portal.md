@@ -1,5 +1,5 @@
 ---
-title: VNet 끝점 관리-Azure Portal-Azure Database for MariaDB
+title: VNet 엔드포인트 관리-Azure Portal-Azure Database for MariaDB
 description: Azure Portal을 사용한 Azure Database for MariaDB VNet 서비스 엔드포인트와 규칙 만들기 및 관리
 author: ajlam
 ms.author: andrela

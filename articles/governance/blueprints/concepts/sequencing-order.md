@@ -47,7 +47,7 @@ JSON 예제에는 사용자 고유의 값으로 바꿔야 하는 변수가 있�
 JSON에서 `dependsOn` 속성을 정의하여 순서를 지정할 수 있습니다. 리소스 그룹 및 아티팩트 개체에 대 한 청사진 정의는이 속성을 지원 합니다. `dependsOn`은 특정 아티팩트가 만들어지기 전에 만들어야 하는 아티팩트 이름의 문자열 배열입니다.
 
 > [!NOTE]
-> 청사진 개체를 만들 때 각 아티팩트 리소스는 파일 이름에서 ( [PowerShell](/powershell/module/az.blueprint/new-azblueprintartifact)을 사용 하는 경우) 또는 URL 끝점 ( [REST API](/rest/api/blueprints/artifacts/createorupdate)사용 하는 경우)을 가져옵니다.
+> 청사진 개체를 만들 때 각 아티팩트 리소스는 파일 이름에서 ( [PowerShell](/powershell/module/az.blueprint/new-azblueprintartifact)을 사용 하는 경우) 또는 URL 엔드포인트 ( [REST API](/rest/api/blueprints/artifacts/createorupdate)사용 하는 경우)을 가져옵니다.
 > 아티팩트의 _resourceGroup_ 참조는 청사진 정의에 정의 된 것과 일치 해야 합니다.
 
 ### <a name="example---ordered-resource-group"></a>예제-정렬 된 리소스 그룹

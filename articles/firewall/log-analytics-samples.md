@@ -16,7 +16,7 @@ ms.locfileid: "76705991"
 ---
 # <a name="azure-firewall-log-analytics-samples"></a>Azure 방화벽 로그 분석 샘플
 
-다음 Azure Monitor 로그 예제를 사용 하 여 Azure 방화벽 로그를 분석할 수 있습니다. 이 샘플 파일은 Azure Monitor의 뷰 디자이너에서 작성 되었으며 [Azure Monitor의 뷰 디자이너](https://docs.microsoft.com/azure/log-analytics/log-analytics-view-designer) 에는 뷰 디자인 개념에 대 한 자세한 정보가 있습니다.
+다음 Azure Monitor 로그 예제를 사용 하 여 Azure 방화벽 로그를 분석할 수 있습니다. 이 샘플 파일은 Azure Monitor의 뷰 디자이너에서 작성 되었으며 [Azure Monitor의 뷰 디자이너](https://docs.microsoft.com/azure/log-analytics/log-analytics-view-designer) 에는 뷰 디자인 개념에 대한 자세한 정보가 있습니다.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 

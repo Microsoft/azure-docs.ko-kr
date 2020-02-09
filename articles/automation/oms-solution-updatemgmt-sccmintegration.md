@@ -1,6 +1,6 @@
 ---
 title: Configuration Manager 클라이언트와 함께 Azure 업데이트 관리 사용
-description: 이 문서는이 솔루션을 사용 하 여 Microsoft 끝점 Configuration Manager 구성 하 여 소프트웨어 업데이트를 ConfigMgr 클라이언트에 배포 하는 데 도움을 주기 위한 것입니다.
+description: 이 문서는이 솔루션을 사용 하 여 Microsoft 엔드포인트 Configuration Manager 구성 하 여 소프트웨어 업데이트를 ConfigMgr 클라이언트에 배포 하는 데 도움을 주기 위한 것입니다.
 services: automation
 ms.subservice: update-management
 author: mgoedtel
@@ -14,11 +14,11 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/22/2020
 ms.locfileid: "76513136"
 ---
-# <a name="deploy-updates-to-microsoft-endpoint-configuration-manager-clients-with-update-management"></a>업데이트 관리를 사용 하 여 클라이언트 Configuration Manager Microsoft 끝점에 업데이트 배포
+# <a name="deploy-updates-to-microsoft-endpoint-configuration-manager-clients-with-update-management"></a>업데이트 관리를 사용 하 여 클라이언트 Configuration Manager Microsoft 엔드포인트에 업데이트 배포
 
-Microsoft 끝점에 투자 하 여 Pc, 서버 및 모바일 장치를 관리 하는 고객은 소프트웨어 업데이트 관리 (SUM) 주기의 일부로 소프트웨어 업데이트를 관리 하는 데에도 강도 및 완성도를 Configuration Manager 합니다.
+Microsoft 엔드포인트에 투자 하 여 Pc, 서버 및 모바일 장치를 관리 하는 고객은 소프트웨어 업데이트 관리 (SUM) 주기의 일부로 소프트웨어 업데이트를 관리 하는 데에도 강도 및 완성도를 Configuration Manager 합니다.
 
-Configuration Manager에서 소프트웨어 업데이트 배포를 만들고 미리 준비하여 관리되는 Windows 서버를 보고 및 업데이트하고, [업데이트 관리 솔루션](automation-update-management.md)을 사용하여 완료된 업데이트 배포에 대한 자세한 상태를 확인할 수 있습니다. 업데이트 준수 보고를 위해 Configuration Manager를 사용 하지만 Windows 서버를 사용 하 여 업데이트 배포를 관리 하지 않는 경우 보안 업데이트가 업데이트 관리 솔루션으로 관리 되는 동안 Configuration Manager에 대 한 보고를 계속할 수 있습니다.
+Configuration Manager에서 소프트웨어 업데이트 배포를 만들고 미리 준비하여 관리되는 Windows 서버를 보고 및 업데이트하고, [업데이트 관리 솔루션](automation-update-management.md)을 사용하여 완료된 업데이트 배포에 대한 자세한 상태를 확인할 수 있습니다. 업데이트 준수 보고를 위해 Configuration Manager를 사용 하지만 Windows 서버를 사용 하 여 업데이트 배포를 관리 하지 않는 경우 보안 업데이트가 업데이트 관리 솔루션으로 관리 되는 동안 Configuration Manager에 대한 보고를 계속할 수 있습니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -44,7 +44,7 @@ Azure Automation을 통해 업데이트 배포가 완료되면, 선택한 컴퓨
 
 ### <a name="manage-software-updates-from-azure-automation"></a>Azure Automation에서 소프트웨어 업데이트 관리
 
-Configuration Manager 클라이언트인 Windows Server VM에 대한 업데이트를 관리하려면 이 솔루션에서 관리하는 모든 클라이언트에 대해 소프트웨어 업데이트 관리 기능을 사용하지 않도록 클라이언트 정책을 구성해야 합니다. 기본적으로 클라이언트 설정은 계층의 모든 디바이스를 대상으로 합니다. 이 정책 설정 및 구성 방법에 대 한 자세한 내용은 [Configuration Manager에서 클라이언트 설정을 구성 하는 방법](https://docs.microsoft.com/configmgr/core/clients/deploy/configure-client-settings)을 참조 하세요.
+Configuration Manager 클라이언트인 Windows Server VM에 대한 업데이트를 관리하려면 이 솔루션에서 관리하는 모든 클라이언트에 대해 소프트웨어 업데이트 관리 기능을 사용하지 않도록 클라이언트 정책을 구성해야 합니다. 기본적으로 클라이언트 설정은 계층의 모든 디바이스를 대상으로 합니다. 이 정책 설정 및 구성 방법에 대한 자세한 내용은 [Configuration Manager에서 클라이언트 설정을 구성 하는 방법](https://docs.microsoft.com/configmgr/core/clients/deploy/configure-client-settings)을 참조 하세요.
 
 이 구성 변경을 수행한 후에 [업데이트 배포 만들기](automation-tutorial-update-management.md#schedule-an-update-deployment)에서 설명한 단계에 따라 새 배포를 만들고, **유형** 드롭다운에서 **가져온 그룹**을 선택하여 적절한 Configuration Manager 컬렉션을 선택합니다.
 

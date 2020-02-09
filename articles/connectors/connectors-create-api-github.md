@@ -35,7 +35,7 @@ GitHub 커넥터를 시작하려면 [먼저 논리 앱을 만듭니다](../logic
 
 ## <a name="connector-reference"></a>커넥터 참조
 
-커넥터의 OpenAPI (이전의 Swagger) 설명에서 설명 하는 트리거, 작업 및 제한에 대 한 자세한 기술 정보는 [커넥터의 참조 페이지를 참조](/connectors/github/)하세요.
+커넥터의 OpenAPI (이전의 Swagger) 설명에서 설명 하는 트리거, 작업 및 제한에 대한 자세한 기술 정보는 [커넥터의 참조 페이지를 참조](/connectors/github/)하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

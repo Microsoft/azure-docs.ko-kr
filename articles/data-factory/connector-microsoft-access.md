@@ -36,7 +36,7 @@ Microsoft Access 원본에서 지원 되는 모든 싱크 데이터 저장소로
 이 Microsoft Access connector를 사용 하려면 다음을 수행 해야 합니다.
 
 - 자체 호스팅 Integration Runtime을 설정합니다. 자세한 내용은 [자체 호스팅 Integration Runtime](create-self-hosted-integration-runtime.md)을 참조하세요.
-- Integration Runtime 컴퓨터의 데이터 저장소에 대 한 Microsoft Access ODBC 드라이버를 설치 합니다.
+- Integration Runtime 컴퓨터의 데이터 저장소에 대한 Microsoft Access ODBC 드라이버를 설치 합니다.
 
 >[!NOTE]
 >Microsoft Access 2016 버전의 ODBC 드라이버가이 커넥터에서 작동 하지 않습니다. 드라이버 버전 2013 또는 2010을 대신 사용 합니다.
@@ -161,7 +161,7 @@ Microsoft Access 호환 데이터 저장소에서 데이터를 복사 하기 위
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
+속성에 대한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 Azure Data Factory에서 복사 작업의 원본 및 싱크로 지원되는 데이터 저장소 목록은 [지원되는 데이터 저장소](copy-activity-overview.md#supported-data-stores-and-formats)를 참조하세요.

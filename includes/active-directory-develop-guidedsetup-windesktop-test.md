@@ -27,7 +27,7 @@ ms.locfileid: "67182381"
 
 ![애플리케이션 테스트](./media/active-directory-develop-guidedsetup-windesktop-test/samplescreenshot.png)
 
-처음으로 애플리케이션을 실행하여 **Call Microsoft Graph API** 단추를 선택하는 것이라면 로그인하라는 메시지가 표시됩니다. Azure Active Directory 계정(회사 또는 학교 계정) 또는 Microsoft 계정(live.com, outlook.com)을 사용해 테스트합니다.
+처음으로 애플리케이션을 실행하여 **Call Microsoft Graph API** 단추를 선택하는 것이라면 로그인하라는 메시지가 표시됩니다. Azure Active Directory 계정(회사 또는 학교 계정) 또는 Microsoft 계정(live.com, outlook.com)을 사용하여 테스트합니다.
 
 ![애플리케이션에 로그인합니다.](./media/active-directory-develop-guidedsetup-windesktop-test/signinscreenshot.png)
 
@@ -44,7 +44,7 @@ ms.locfileid: "67182381"
 |자산  |형식  |설명 |
 |---------|---------|---------|
 
-|**사용자 이름** |<span>user@domain.com</span> | 사용자를 식별하는 데 사용되는 사용자 이름입니다.||**토큰 만료** |날짜/시간 |토큰이 만료되는 시간입니다. MSAL은 필요에 따라 토큰을 갱신하여 만료 날짜를 연장합니다.|
+|**사용자 이름** |<span>user@domain.com</span> | 사용자를 식별하는 사용자의 이름입니다.||**토큰 만료** |날짜/시간 |토큰이 만료되는 시간입니다. MSAL은 필요에 따라 토큰을 갱신하여 만료 날짜를 연장합니다.|
 
 
 <!--start-collapse-->

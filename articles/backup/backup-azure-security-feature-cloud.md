@@ -14,19 +14,19 @@ ms.locfileid: "76705499"
 
 맬웨어, 랜섬웨어 및 침입 같은 보안 문제에 대한 우려가 증가하고 있습니다. 이 보안 문제는 비용과 데이터 측면 모두에서 지출이 클 수 있습니다. 이러한 공격 으로부터 보호 하기 위해 Azure Backup는 삭제 후에도 백업 데이터를 보호 하는 데 도움이 되는 보안 기능을 제공 합니다.
 
-이러한 기능 중 하나는 일시 삭제입니다. 일시 삭제를 사용 하는 경우 악성 행위자가 VM의 백업 (또는 실수로 삭제 됨)을 삭제 하더라도 백업 데이터는 14 일 동안 보존 되므로 데이터 손실 없이 해당 백업 항목을 복구할 수 있습니다. "일시 삭제" 상태의 백업 데이터에 대 한 14 일의 추가 보존은 고객에 게 비용을 부과 하지 않습니다. 또한 Azure는 데이터를 더욱 안전 하 게 보호 하기 위해 [저장소 서비스 암호화](https://docs.microsoft.com/azure/storage/common/storage-service-encryption) 를 사용 하 여 미사용 백업 된 데이터를 모두 암호화 합니다.
+이러한 기능 중 하나는 일시 삭제입니다. 일시 삭제를 사용 하는 경우 악성 행위자가 VM의 백업 (또는 실수로 삭제 됨)을 삭제 하더라도 백업 데이터는 14 일 동안 보존 되므로 데이터 손실 없이 해당 백업 항목을 복구할 수 있습니다. "일시 삭제" 상태의 백업 데이터에 대한 14 일의 추가 보존은 고객에 게 비용을 부과 하지 않습니다. 또한 Azure는 데이터를 더욱 안전 하 게 보호 하기 위해 [저장소 서비스 암호화](https://docs.microsoft.com/azure/storage/common/storage-service-encryption) 를 사용 하 여 미사용 백업 된 데이터를 모두 암호화 합니다.
 
-Azure virtual machines에 대 한 일시 삭제 보호는 일반적으로 사용할 수 있습니다.
+Azure virtual machines에 대한 일시 삭제 보호는 일반적으로 사용할 수 있습니다.
 
 >[!NOTE]
->Azure VM의 SQL server에 대 한 일시 삭제 및 Azure VM 워크 로드의 SAP HANA에 대 한 일시 삭제는 이제 미리 보기로 제공 됩니다.<br>
+>Azure VM의 SQL server에 대한 일시 삭제 및 Azure VM 워크 로드의 SAP HANA에 대한 일시 삭제는 이제 미리 보기로 제공 됩니다.<br>
 >미리 보기에 등록 하려면 AskAzureBackupTeam@microsoft.com에 씁니다.
 
 ## <a name="soft-delete"></a>일시 삭제
 
-### <a name="soft-delete-for-vms"></a>Vm에 대 한 일시 삭제
+### <a name="soft-delete-for-vms"></a>Vm에 대한 일시 삭제
 
-Vm에 대 한 일시 삭제는 의도 하지 않은 삭제 로부터 Vm의 백업을 보호 합니다. 백업이 삭제 된 후에도 14 일 동안 일시 삭제 상태로 유지 됩니다.
+Vm에 대한 일시 삭제는 의도 하지 않은 삭제 로부터 Vm의 백업을 보호 합니다. 백업이 삭제 된 후에도 14 일 동안 일시 삭제 상태로 유지 됩니다.
 
 > [!NOTE]
 > 일시 삭제는 삭제 된 백업 데이터만 보호 합니다. 백업을 사용 하지 않고 VM을 삭제 하면 일시 삭제 기능은 데이터를 보존 하지 않습니다. 모든 리소스는 전체 복원 력을 보장 하기 위해 Azure Backup로 보호 되어야 합니다.
@@ -36,13 +36,13 @@ Vm에 대 한 일시 삭제는 의도 하지 않은 삭제 로부터 Vm의 백�
 
 일시 삭제는 현재 미국 서 부, 동아시아, 캐나다 중부, 캐나다 동부, 프랑스 중부, 프랑스 남부, 대한민국 중부, 대한민국, 영국 남부, 영국 서부, 오스트레일리아 동부, 오스트레일리아 남부 동부, 유럽 서 부, 미국 서 부, 미국 서 부, 미국 미국, 미국 서 부에서 지원 됩니다. 동아시아, 미국 중 북부, 미국 중 북부, 일본 동부, 일본 서 부, 인도 남부, 인도 중부, 인도 서 부, 미국 동부 2, 스위스 북부, 스위스 서부, 모든 국가 지역.
 
-### <a name="soft-delete-for-vms-using-azure-portal"></a>Azure Portal를 사용 하는 Vm에 대 한 일시 삭제
+### <a name="soft-delete-for-vms-using-azure-portal"></a>Azure Portal를 사용 하는 Vm에 대한 일시 삭제
 
 1. VM의 백업 데이터를 삭제 하려면 백업을 중지 해야 합니다. Azure Portal 복구 서비스 자격 증명 모음으로 이동 하 여 백업 항목을 마우스 오른쪽 단추로 클릭 하 고 **백업 중지**를 선택 합니다.
 
    ![Azure Portal 백업 항목의 스크린샷](./media/backup-azure-security-feature-cloud/backup-stopped.png)
 
-2. 다음 창에는 백업 데이터를 삭제 하거나 보존할 수 있는 옵션이 제공 됩니다. **백업 데이터 삭제** 를 선택한 다음 **백업 중지**를 선택 하면 VM 백업이 영구적으로 삭제 되지 않습니다. 대신 백업 데이터는 일시 삭제 된 상태에서 14 일 동안 보존 됩니다. **백업 데이터 삭제** 를 선택 하면 사용자에 게 14 일 동안 백업 데이터에 대 한 보존 기간이 남아 있음을 알리는 전자 메일 삭제 경고가 구성 된 전자 메일 ID로 전송 됩니다. 또한 12 일에 전자 메일 경고가 전송 되어 삭제 된 데이터를 부활 시킬 두 일이 남아 있음을 알려 줍니다. 영구적 삭제가 발생 하 고 데이터의 영구 삭제를 알리는 최종 전자 메일 경고가 전송 될 때 15 일이 지연 됩니다.
+2. 다음 창에는 백업 데이터를 삭제 하거나 보존할 수 있는 옵션이 제공 됩니다. **백업 데이터 삭제** 를 선택한 다음 **백업 중지**를 선택 하면 VM 백업이 영구적으로 삭제 되지 않습니다. 대신 백업 데이터는 일시 삭제 된 상태에서 14 일 동안 보존 됩니다. **백업 데이터 삭제** 를 선택 하면 사용자에 게 14 일 동안 백업 데이터에 대한 보존 기간이 남아 있음을 알리는 전자 메일 삭제 경고가 구성 된 전자 메일 ID로 전송 됩니다. 또한 12 일에 전자 메일 경고가 전송 되어 삭제 된 데이터를 부활 시킬 두 일이 남아 있음을 알려 줍니다. 영구적 삭제가 발생 하 고 데이터의 영구 삭제를 알리는 최종 전자 메일 경고가 전송 될 때 15 일이 지연 됩니다.
 
    ![Azure Portal, 백업 중지 화면 스크린샷](./media/backup-azure-security-feature-cloud/delete-backup-data.png)
 
@@ -57,7 +57,7 @@ Vm에 대 한 일시 삭제는 의도 하지 않은 삭제 로부터 Vm의 백�
 
    ![Azure Portal의 스크린샷, VM 삭제 취소](./media/backup-azure-security-feature-cloud/choose-undelete.png)
 
-   삭제 취소를 선택 하면 VM에 대 한 모든 복원 지점이 삭제 취소 되 고 복원 작업을 수행 하는 데 사용할 수 있다는 경고가 표시 됩니다. VM은 백업 정책이 적용 되지 않고 일시 중지 되 고 백업 데이터가 영구적으로 보존 되는 "데이터 보존을 사용 하 여 보호 중지" 상태로 유지 됩니다.
+   삭제 취소를 선택 하면 VM에 대한 모든 복원 지점이 삭제 취소 되 고 복원 작업을 수행 하는 데 사용할 수 있다는 경고가 표시 됩니다. VM은 백업 정책이 적용 되지 않고 일시 중지 되 고 백업 데이터가 영구적으로 보존 되는 "데이터 보존을 사용 하 여 보호 중지" 상태로 유지 됩니다.
 
    ![Azure Portal의 스크린샷, VM 삭제 취소 확인](./media/backup-azure-security-feature-cloud/undelete-vm.png)
 
@@ -78,7 +78,7 @@ Vm에 대 한 일시 삭제는 의도 하지 않은 삭제 로부터 Vm의 백�
 
 자세한 내용은 아래의 질문과 대답 (질문과 [대답](backup-azure-security-feature-cloud.md#frequently-asked-questions) ) 섹션을 참조 하세요.
 
-### <a name="soft-delete-for-vms-using-azure-powershell"></a>Azure Powershell을 사용 하 여 Vm에 대 한 일시 삭제
+### <a name="soft-delete-for-vms-using-azure-powershell"></a>Azure Powershell을 사용 하 여 Vm에 대한 일시 삭제
 
 > [!IMPORTANT]
 > Azure PS를 사용 하 여 일시 삭제를 사용 하는 데 필요한 Az Service 버전은 min 2.2.0입니다. ```Install-Module -Name Az.RecoveryServices -Force```를 사용 하 여 최신 버전을 가져옵니다.
@@ -126,7 +126,7 @@ AppVM1           Undelete             Completed            12/5/2019 12:47:28 PM
 
 백업 항목의 ' DeleteState '는 ' NotDeleted '로 돌아갑니다. 그러나 보호는 계속 중지 됩니다. 보호를 다시 사용 하도록 설정 하려면 [백업을 다시 시작](https://docs.microsoft.com/azure/backup/backup-azure-vms-automation#change-policy-for-backup-items) 해야 합니다.
 
-### <a name="soft-delete-for-vms-using-rest-api"></a>REST API를 사용 하는 Vm에 대 한 일시 삭제
+### <a name="soft-delete-for-vms-using-rest-api"></a>REST API를 사용 하는 Vm에 대한 일시 삭제
 
 - [여기](backup-azure-arm-userestapi-backupazurevms.md#stop-protection-and-delete-data)에 설명 된 대로 REST API를 사용 하 여 백업을 삭제 합니다.
 - 사용자가 이러한 삭제 작업을 실행 취소 하려면 [여기](backup-azure-arm-userestapi-backupazurevms.md#undo-the-stop-protection-and-delete-data)에 언급 된 단계를 참조 하세요.
@@ -197,7 +197,7 @@ REST API를 사용 하 여 일시 삭제 기능을 사용 하지 않도록 설�
 
 ![백업 항목의 이름 입력](https://docs.microsoft.com/azure/backup/media/backup-azure-manage-vms/delete-backup-data1.png)
 
-7. 항목에 대 한 백업 데이터를 삭제 하려면 **삭제**를 선택 합니다. 알림 메시지를 통해 백업 데이터가 삭제 되었음을 알 수 있습니다.
+7. 항목에 대한 백업 데이터를 삭제 하려면 **삭제**를 선택 합니다. 알림 메시지를 통해 백업 데이터가 삭제 되었음을 알 수 있습니다.
 
 ### <a name="using-azure-powershell"></a>Azure Powershell 사용
 
@@ -252,7 +252,7 @@ AppVM1           DeleteBackupData     Completed            12/5/2019 12:44:15 PM
 
 Azure 내에서 Azure storage와 자격 증명 모음 간의 전송 데이터는 HTTPS에 의해 보호 됩니다. 이 데이터는 Azure 백본 네트워크에 남아 있습니다.
 
-자세한 내용은 [미사용 데이터에 대 한 암호화 Azure Storage](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)를 참조 하세요. [AZURE BACKUP FAQ](https://docs.microsoft.com/azure/backup/backup-azure-backup-faq#encryption) 를 참조 하 여 암호화에 대해 발생할 수 있는 질문에 대 한 답변을 받을 수 있습니다.
+자세한 내용은 [미사용 데이터에 대한 암호화 Azure Storage](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)를 참조 하세요. [AZURE BACKUP FAQ](https://docs.microsoft.com/azure/backup/backup-azure-backup-faq#encryption) 를 참조 하 여 암호화에 대해 발생할 수 있는 질문에 대한 답변을 받을 수 있습니다.
 
 ### <a name="encryption-of-backup-data-using-customer-managed-keys"></a>고객 관리 키를 사용 하 여 백업 데이터 암호화
 
@@ -289,7 +289,7 @@ Recovery services 자격 증명 모음에 사용 되는 저장소 계정은 격�
 
 아니요, 삭제 작업 후 14 일 동안 추가 보존 기간이 수정 됩니다.
 
-#### <a name="do-i-need-to-pay-the-cost-for-this-additional-14-day-retention"></a>이 14 일 추가 보존에 대 한 비용을 지불 해야 하나요?
+#### <a name="do-i-need-to-pay-the-cost-for-this-additional-14-day-retention"></a>이 14 일 추가 보존에 대한 비용을 지불 해야 하나요?
 
 아니요,이 14 일 추가 보존은 일시 삭제 기능의 일부로 무료로 제공 됩니다.
 
@@ -323,4 +323,4 @@ Recovery services 자격 증명 모음에 사용 되는 저장소 계정은 격�
 
 ## <a name="next-steps"></a>다음 단계
 
-- [Azure Backup에 대 한 보안 제어를](backup-security-controls.md)참조 하세요.
+- [Azure Backup에 대한 보안 제어를](backup-security-controls.md)참조 하세요.

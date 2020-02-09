@@ -29,9 +29,9 @@ Azure-SSIS IR에서 사용자 지정 설정 작업을 수행 하는 두 가지 �
 
 Express 사용자 지정 설치를 사용 하면 몇 가지 일반적인 시스템 구성/w i n s 명령을 실행 하거나 스크립트를 사용 하지 않고 널리 사용 되는/권장 추가 구성 요소를 설치할 수 있습니다.  
 
-표준 사용자 지정 프로그램을 사용 하는 경우 스크립트 및 관련 파일을 준비 하 고 모두 Azure Storage 계정의 blob 컨테이너에 업로드 해야 합니다. 그런 다음 Azure-SSIS IR를 프로 비전 하거나 다시 구성할 때 컨테이너에 대 한 SAS (공유 액세스 서명) URI (Uniform Resource Identifier)를 제공 합니다. 그러면 Azure-SSIS IR의 각 노드가 컨테이너에서 스크립트 및 관련 파일을 다운로드 하 고 상승 된 권한으로 사용자 지정 설치를 실행 합니다. 사용자 지정 설치가 완료 되 면 각 노드는 실행의 표준 출력과 기타 로그를 컨테이너에 업로드 합니다.
+표준 사용자 지정 프로그램을 사용 하는 경우 스크립트 및 관련 파일을 준비 하 고 모두 Azure Storage 계정의 blob 컨테이너에 업로드 해야 합니다. 그런 다음 Azure-SSIS IR를 프로 비전 하거나 다시 구성할 때 컨테이너에 대한 SAS (공유 액세스 서명) URI (Uniform Resource Identifier)를 제공 합니다. 그러면 Azure-SSIS IR의 각 노드가 컨테이너에서 스크립트 및 관련 파일을 다운로드 하 고 상승 된 권한으로 사용자 지정 설치를 실행 합니다. 사용자 지정 설치가 완료 되 면 각 노드는 실행의 표준 출력과 기타 로그를 컨테이너에 업로드 합니다.
 
-Express/standard 사용자 지정 설치를 사용 하 여 무료/사용 허가 및 유료/라이선스 구성 요소를 모두 설치할 수 있습니다. ISV 인 경우 [Azure-SSIS IR에 대해 유료 또는 라이선스 구성 요소를 개발 하는 방법](how-to-develop-azure-ssis-ir-licensed-components.md)에 대 한 설명서를 참조 하세요.
+Express/standard 사용자 지정 설치를 사용 하 여 무료/사용 허가 및 유료/라이선스 구성 요소를 모두 설치할 수 있습니다. ISV 인 경우 [Azure-SSIS IR에 대해 유료 또는 라이선스 구성 요소를 개발 하는 방법](how-to-develop-azure-ssis-ir-licensed-components.md)에 대한 설명서를 참조 하세요.
 
 > [!IMPORTANT]
 > Azure-SSIS IR의 v2 시리즈 노드는 사용자 지정 설치에 적합하지 않으므로 v3 시리즈 노드를 대신 사용합니다.  이미 v2 시리즈 노드를 사용하고 있으면 가능한 한 빨리 v3 시리즈 노드를 사용하도록 전환하세요.
@@ -90,7 +90,7 @@ Azure SSIS IR을 사용자 지정하려면 다음 항목이 필요합니다.
 
       ![Blob 컨테이너 만들기](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image4.png)
 
-   1. 새 컨테이너를 선택하고 사용자 지정 설정 스크립트와 관련 파일을 업로드합니다. 폴더가 아니라 컨테이너의 최상위 수준에 `main.cmd`를 업로드해야 합니다. 또한 컨테이너에 필요한 사용자 지정 설치 파일만 포함되어 있는지 확인합니다. 그러면 나중에 Azure-SSIS IR에 다운로드하는 데 시간이 오래 걸리지 않습니다. 사용자 지정 설치에 대 한 최대 기간은 현재 45 분 전에 분에 설정 되어 있으며 컨테이너에서 모든 파일을 다운로드 하 여 Azure-SSIS IR에 설치 하는 시간을 포함 합니다. 더 긴 기간이 필요한 경우 지원 티켓을 제기 하세요.
+   1. 새 컨테이너를 선택하고 사용자 지정 설정 스크립트와 관련 파일을 업로드합니다. 폴더가 아니라 컨테이너의 최상위 수준에 `main.cmd`를 업로드해야 합니다. 또한 컨테이너에 필요한 사용자 지정 설치 파일만 포함되어 있는지 확인합니다. 그러면 나중에 Azure-SSIS IR에 다운로드하는 데 시간이 오래 걸리지 않습니다. 사용자 지정 설치에 대한 최대 기간은 현재 45 분 전에 분에 설정 되어 있으며 컨테이너에서 모든 파일을 다운로드 하 여 Azure-SSIS IR에 설치 하는 시간을 포함 합니다. 더 긴 기간이 필요한 경우 지원 티켓을 제기 하세요.
 
       ![Blob 컨테이너에 파일 업로드](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image5.png)
 
@@ -115,7 +115,7 @@ Azure SSIS IR을 사용자 지정하려면 다음 항목이 필요합니다.
    
    Express 사용자 지정 설치를 추가 하려면 **새로 만들기** 를 선택 하 여 **빠른 사용자 지정 설정 추가** 패널을 열고 **express 사용자 지정 설치 유형** 드롭다운 메뉴에서 유형을 선택 합니다.
 
-   1. **Cmdkey 실행 명령** 유형을 선택 하는 경우 **/Pass** **필드에 대상**컴퓨터/도메인 이름, 계정 이름/사용자 이름 및 계정 키/암호를 입력 하 여 Azure-SSIS IR에 대 한 파일 공유/Azure Files에 대 한 액세스 자격 증명을 유지할 수 있습니다. 이는 로컬 컴퓨터에서 Windows [cmdkey](https://docs.microsoft.com/windows-server/administration/windows-commands/cmdkey) 명령을 실행 하는 것과 유사 합니다.
+   1. **Cmdkey 실행 명령** 유형을 선택 하는 경우 **/Pass** **필드에 대상**컴퓨터/도메인 이름, 계정 이름/사용자 이름 및 계정 키/암호를 입력 하 여 Azure-SSIS IR에 대한 파일 공유/Azure Files에 대한 액세스 자격 증명을 유지할 수 있습니다. 이는 로컬 컴퓨터에서 Windows [cmdkey](https://docs.microsoft.com/windows-server/administration/windows-commands/cmdkey) 명령을 실행 하는 것과 유사 합니다.
    
    1. 환경 변수 형식 **추가** 를 선택 하는 경우 **변수 이름** 및 **변수 값** 필드에 각각 환경 변수 이름과 값을 입력 하 여 Azure-SSIS IR에서 실행 되는 패키지에 사용할 Windows 환경 변수를 추가할 수 있습니다. 이는 로컬 컴퓨터에서 Windows [set](https://docs.microsoft.com/windows-server/administration/windows-commands/set_1) 명령을 실행 하는 것과 유사 합니다.
 

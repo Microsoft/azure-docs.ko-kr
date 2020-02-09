@@ -39,10 +39,10 @@ ms.locfileid: "74968797"
 * [Media Services REST API를 사용 하 여 콘텐츠 키 권한 부여 정책 구성](media-services-rest-configure-content-key-auth-policy.md)
 
 ### <a name="some-considerations-apply"></a>몇 가지 고려 사항이 적용 됩니다.
-* A Media Services-fiók létrehozásakor a rendszer hozzáad egy alapértelmezett streamvégpontot a fiókhoz Leállítva állapotban. 콘텐츠 스트리밍을 시작 하 고 동적 패키징 및 동적 암호화를 활용 하려면 스트리밍 끝점이 "실행 중" 상태 여야 합니다. 
+* A Media Services-fiók létrehozásakor a rendszer hozzáad egy alapértelmezett streamvégpontot a fiókhoz Leállítva állapotban. 콘텐츠 스트리밍을 시작 하 고 동적 패키징 및 동적 암호화를 활용 하려면 스트리밍 엔드포인트이 "실행 중" 상태 여야 합니다. 
 * 자산은 적응 비트 전송률 Mp4 또는 적응 비트 전송률 부드러운 스트리밍 파일 집합을 포함 해야 합니다. 자세한 내용은 [자산 인코딩](media-services-encode-asset.md)을 참조 하세요.
 * 키 배달 서비스는 ContentKeyAuthorizationPolicy 및 관련 개체 (정책 옵션 및 제한)를 15 분 동안 캐시 합니다. ContentKeyAuthorizationPolicy를 만들고 토큰 제한을 사용 하도록 지정 하 고, 테스트 한 다음, 정책을 개방형 제한으로 업데이트할 수 있습니다. 이 프로세스는 정책이 오픈 버전으로 전환 될 때까지 약 15 분이 걸립니다.
-* Media Services 스트리밍 끝점은 실행 전 응답의 CORS 액세스 제어 허용-원본 헤더 값을 와일드 카드 "\*"로 설정 합니다. 이 값은 Azure Media Player, Roku 및 JWPlayer 등 대부분의 플레이어에서 잘 작동 합니다. 그러나 자격 증명 모드를 "포함"으로 설정 하 고, 해당 하는 경우에는 "\*" 와일드 카드를 액세스-제어-원본 값으로 허용 하지 않기 때문에 대시가를 사용 하는 일부 플레이어는 작동 하지 않습니다. 이 제한 사항에 대 한 해결 방법으로, 단일 도메인에서 클라이언트를 호스트 하는 경우 실행 전 응답 헤더에서 해당 도메인을 지정할 수 Media Services. 도움이 필요 하면 Azure Portal를 통해 지원 티켓을 여세요.
+* Media Services 스트리밍 엔드포인트은 실행 전 응답의 CORS 액세스 제어 허용-원본 헤더 값을 와일드 카드 "\*"로 설정 합니다. 이 값은 Azure Media Player, Roku 및 JWPlayer 등 대부분의 플레이어에서 잘 작동 합니다. 그러나 자격 증명 모드를 "포함"으로 설정 하 고, 해당 하는 경우에는 "\*" 와일드 카드를 액세스-제어-원본 값으로 허용 하지 않기 때문에 대시가를 사용 하는 일부 플레이어는 작동 하지 않습니다. 이 제한 사항에 대 한 해결 방법으로, 단일 도메인에서 클라이언트를 호스트 하는 경우 실행 전 응답 헤더에서 해당 도메인을 지정할 수 Media Services. 도움이 필요 하면 Azure Portal를 통해 지원 티켓을 여세요.
 
 ## <a name="configure-the-key-authorization-policy"></a>키 권한 부여 정책 구성
 키 권한 부여 정책을 구성 하려면 **콘텐츠 보호** 페이지를 선택 합니다.

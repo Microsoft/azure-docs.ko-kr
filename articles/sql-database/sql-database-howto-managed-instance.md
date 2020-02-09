@@ -35,7 +35,7 @@ ms.locfileid: "73811192"
 - [Managed Instance용 기존 VNet 및 서브넷 구성](sql-database-managed-instance-configure-vnet-subnet.md) - 내부에 Managed Instance를 배포하도록 기존 VNet 및 서브넷을 구성하려는 경우 이 문서에서 [네트워크 요구 사항](sql-database-managed-instance-connectivity-architecture.md#network-requirements)을 확인하고 요구 사항에 따라 서브넷을 구성하는 스크립트를 확인할 수 있습니다.
 - [사용자 지정 DNS 구성](sql-database-managed-instance-custom-dns.md) - db 메일 프로필의 연결된 서버를 통해 Managed Instance에서 사용자 지정 도메인의 외부 리소스에 액세스하려는 경우 사용자 지정 DNS를 구성해야 합니다.
 - [네트워크 구성 동기화](sql-database-managed-instance-sync-network-configuration.md) - [Azure Virtual Network와 앱을 통합](../app-service/web-sites-integrate-with-vnet.md)했는데 Managed Instance로의 연결을 설정할 수 없는 상황이 발생할 수 있습니다. 시도할 수 있는 방법은 서비스 계획에 대한 네트워킹 구성을 새로 고치는 것입니다.
-- 관리 [끝점 IP 주소 찾기](sql-database-managed-instance-find-management-endpoint-ip-address.md) – 관리 되는 인스턴스는 관리 목적으로 공용 끝점을 사용 합니다. 여기에 설명된 스크립트를 사용하여 관리 엔드포인트의 IP 주소를 확인할 수 있습니다.
+- 관리 [엔드포인트 IP 주소 찾기](sql-database-managed-instance-find-management-endpoint-ip-address.md) – 관리 되는 인스턴스는 관리 목적으로 공용 엔드포인트을 사용 합니다. 여기에 설명된 스크립트를 사용하여 관리 엔드포인트의 IP 주소를 확인할 수 있습니다.
 - [기본 제공 방화벽 보호 확인](sql-database-managed-instance-management-endpoint-verify-built-in-firewall.md) - Managed Instance는 필요한 포트에서만 트래픽을 허용하는 기본 제공 방화벽으로 보호됩니다. 이 가이드에 설명된 스크립트를 사용하여 기본 제공 방화벽 규칙을 확인할 수 있습니다.
 - [애플리케이션 연결](sql-database-managed-instance-connect-app.md) - Managed Instance가 개인 IP 주소를 사용하여 고유한 프라이빗 Azure VNet에 배치됩니다. 애플리케이션을 Managed Instance에 연결하는 데 사용할 수 있는 다양한 패턴에 대해 알아보세요.
 

@@ -1,6 +1,6 @@
 ---
 title: Azure 애플리케이션 Gateway를 사용 하 여 HTTP 헤더 재작성 | Microsoft Docs
-description: 이 문서에서는 Azure 애플리케이션 게이트웨이에서 HTTP 헤더를 다시 작성 하는 방법에 대 한 개요를 제공 합니다.
+description: 이 문서에서는 Azure 애플리케이션 게이트웨이에서 HTTP 헤더를 다시 작성 하는 방법에 대한 개요를 제공 합니다.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
@@ -22,7 +22,7 @@ HTTP 헤더를 사용 하면 클라이언트와 서버에서 요청 또는 응�
 
 Application Gateway는 요청 및 응답 패킷이 클라이언트와 백 엔드 풀 사이를 이동하는 동안 HTTP 요청 및 응답 헤더를 추가, 제거 또는 업데이트할 수 있습니다. 뿐만 아니라 특정 조건이 충족되는 경우에만 지정된 헤더를 다시 쓸 수 있도록 조건을 추가할 수 있습니다.
 
-또한 Application Gateway은 요청 및 응답에 대 한 추가 정보를 저장 하는 데 도움이 되는 여러 [서버 변수](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers#server-variables) 를 지원 합니다. 이렇게 하면 더 쉽게 강력한 재작성 규칙을 만들 수 있습니다.
+또한 Application Gateway은 요청 및 응답에 대한 추가 정보를 저장 하는 데 도움이 되는 여러 [서버 변수](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers#server-variables) 를 지원 합니다. 이렇게 하면 더 쉽게 강력한 재작성 규칙을 만들 수 있습니다.
 
 > [!NOTE]
 >
@@ -42,7 +42,7 @@ Application Gateway는 요청 및 응답 패킷이 클라이언트와 백 엔드
 - 응답의 HTTP 헤더입니다.
 - 서버 변수를 Application Gateway 합니다.
 
-조건을 사용 하 여 지정 된 변수가 있는지, 지정 된 변수가 특정 값과 일치 하는지 여부 또는 지정 된 변수가 특정 패턴과 일치 하는지 여부를 평가할 수 있습니다. [Perl 호환 정규식 (PCRE) 라이브러리](https://www.pcre.org/) 를 사용 하 여 조건에서 정규식 패턴 일치를 설정 합니다. 정규식 구문에 대 한 자세한 내용은 [Perl 정규식 기본 페이지](https://perldoc.perl.org/perlre.html)를 참조 하세요.
+조건을 사용 하 여 지정 된 변수가 있는지, 지정 된 변수가 특정 값과 일치 하는지 여부 또는 지정 된 변수가 특정 패턴과 일치 하는지 여부를 평가할 수 있습니다. [Perl 호환 정규식 (PCRE) 라이브러리](https://www.pcre.org/) 를 사용 하 여 조건에서 정규식 패턴 일치를 설정 합니다. 정규식 구문에 대한 자세한 내용은 [Perl 정규식 기본 페이지](https://perldoc.perl.org/perlre.html)를 참조 하세요.
 
 ## <a name="rewrite-actions"></a>작업 다시 작성
 
@@ -56,7 +56,7 @@ Application Gateway는 요청 및 응답 패킷이 클라이언트와 백 엔드
 
 ## <a name="server-variables"></a>서버 변수
 
-Application Gateway 서버 변수를 사용 하 여 서버에 대 한 유용한 정보, 클라이언트에 대 한 연결 및 현재 연결 요청을 저장 합니다. 저장 되는 정보의 예로는 클라이언트의 IP 주소와 웹 브라우저 유형이 있습니다. 서버 변수는 새 페이지가 로드 될 때 또는 양식이 게시 될 때와 같이 동적으로 변경 됩니다. 이러한 변수를 사용 하 여 재작성 조건을 평가 하 고 헤더를 다시 작성할 수 있습니다.
+Application Gateway 서버 변수를 사용 하 여 서버에 대한 유용한 정보, 클라이언트에 대한 연결 및 현재 연결 요청을 저장 합니다. 저장 되는 정보의 예로는 클라이언트의 IP 주소와 웹 브라우저 유형이 있습니다. 서버 변수는 새 페이지가 로드 될 때 또는 양식이 게시 될 때와 같이 동적으로 변경 됩니다. 이러한 변수를 사용 하 여 재작성 조건을 평가 하 고 헤더를 다시 작성할 수 있습니다.
 
 Application gateway는 다음 서버 변수를 지원 합니다.
 
@@ -67,7 +67,7 @@ Application gateway는 다음 서버 변수를 지원 합니다.
 | ciphers_used               | 설정 된 SSL 연결에 사용 되는 암호화 문자열입니다. |
 | client_ip                  | 응용 프로그램 게이트웨이에서 요청을 받은 클라이언트의 IP 주소입니다. 응용 프로그램 게이트웨이와 원래 클라이언트 앞에 역방향 프록시가 있는 경우 *client_ip* 은 역방향 프록시의 ip 주소를 반환 합니다. |
 | client_port                | 클라이언트 포트입니다.                                                  |
-| client_tcp_rtt             | 클라이언트 TCP 연결에 대 한 정보입니다. TCP_INFO 소켓 옵션을 지 원하는 시스템에서 사용할 수 있습니다. |
+| client_tcp_rtt             | 클라이언트 TCP 연결에 대한 정보입니다. TCP_INFO 소켓 옵션을 지 원하는 시스템에서 사용할 수 있습니다. |
 | client_user                | HTTP 인증을 사용 하는 경우 인증을 위해 제공 되는 사용자 이름입니다. |
 | 호스트                       | 이 우선 순위 순서 대로: 요청 줄의 호스트 이름, 호스트 요청 헤더 필드의 호스트 이름 또는 요청과 일치 하는 서버 이름입니다. |
 | cookie_*name*              | *이름* 쿠키입니다.                                            |
@@ -104,13 +104,13 @@ HTTP 헤더 재작성을 구성 하려면 다음 단계를 완료 해야 합니�
 
 2. 재작성 집합 (*rewriteRuleSet*)을 라우팅 규칙에 연결 합니다. 재작성 구성은 라우팅 규칙을 통해 원본 수신기에 연결 됩니다. 기본 라우팅 규칙을 사용 하는 경우 헤더 재작성 구성은 원본 수신기와 연결 되며 전역 헤더 재작성입니다. 경로 기반 라우팅 규칙을 사용 하는 경우 헤더 재작성 구성은 URL 경로 맵에 정의 됩니다. 이 경우 사이트의 특정 경로 영역에만 적용 됩니다.
    > [!NOTE]
-   > URL 다시 쓰기는 헤더를 변경 합니다. 경로에 대 한 URL을 변경 하지 않습니다.
+   > URL 다시 쓰기는 헤더를 변경 합니다. 경로에 대한 URL을 변경 하지 않습니다.
 
 여러 HTTP 헤더 재작성 집합을 만들고 각 재작성 집합을 여러 수신기에 적용할 수 있습니다. 그러나 특정 수신기에 재작성 집합을 하나만 적용할 수 있습니다.
 
 ## <a name="common-scenarios"></a>일반적인 시나리오
 
-헤더 재작성 사용에 대 한 몇 가지 일반적인 시나리오는 다음과 같습니다.
+헤더 재작성 사용에 대한 몇 가지 일반적인 시나리오는 다음과 같습니다.
 
 ### <a name="remove-port-information-from-the-x-forwarded-for-header"></a>X 전달 된 헤더에서 포트 정보를 제거 합니다.
 
@@ -120,9 +120,9 @@ Application Gateway는 백 엔드에 요청을 전달 하기 전에 모든 요�
 
 ### <a name="modify-a-redirection-url"></a>리디렉션 URL 수정
 
-백 엔드 응용 프로그램에서 리디렉션 응답을 보내는 경우 백 엔드 응용 프로그램에서 지정한 URL과 다른 URL로 클라이언트를 리디렉션할 수 있습니다. 예를 들어 app service가 응용 프로그램 게이트웨이 뒤에서 호스트 되는 경우이 작업을 수행 하 고 클라이언트가 상대 경로에 대 한 리디렉션을 수행 해야 할 수 있습니다. 예를 들어 contoso.azurewebsites.net/path1에서 contoso.azurewebsites.net/path2로의 리디렉션이 있습니다.
+백 엔드 응용 프로그램에서 리디렉션 응답을 보내는 경우 백 엔드 응용 프로그램에서 지정한 URL과 다른 URL로 클라이언트를 리디렉션할 수 있습니다. 예를 들어 app service가 응용 프로그램 게이트웨이 뒤에서 호스트 되는 경우이 작업을 수행 하 고 클라이언트가 상대 경로에 대한 리디렉션을 수행 해야 할 수 있습니다. 예를 들어 contoso.azurewebsites.net/path1에서 contoso.azurewebsites.net/path2로의 리디렉션이 있습니다.
 
-App Service은 다중 테 넌 트 서비스 이므로 요청에서 호스트 헤더를 사용 하 여 요청을 올바른 끝점으로 라우팅합니다. App services의 기본 도메인 이름은 application gateway의 도메인 이름과 다른 *. azurewebsites.net (contoso.azurewebsites.net)입니다 (예를 들어 contoso.com). 클라이언트의 원래 요청에는 호스트 이름으로 응용 프로그램 게이트웨이의 도메인 이름 (contoso.com)이 있으므로 application gateway는 호스트 이름을 contoso.azurewebsites.net로 변경 합니다. App service가 요청을 올바른 끝점으로 라우팅할 수 있도록이 변경을 수행 합니다.
+App Service은 다중 테넌트 서비스 이므로 요청에서 호스트 헤더를 사용 하 여 요청을 올바른 엔드포인트으로 라우팅합니다. App services의 기본 도메인 이름은 application gateway의 도메인 이름과 다른 *. azurewebsites.net (contoso.azurewebsites.net)입니다 (예를 들어 contoso.com). 클라이언트의 원래 요청에는 호스트 이름으로 응용 프로그램 게이트웨이의 도메인 이름 (contoso.com)이 있으므로 application gateway는 호스트 이름을 contoso.azurewebsites.net로 변경 합니다. App service가 요청을 올바른 엔드포인트으로 라우팅할 수 있도록이 변경을 수행 합니다.
 
 App service는 리디렉션 응답을 보낼 때 응용 프로그램 게이트웨이에서 수신 하는 요청의 위치 헤더에 있는 것과 동일한 호스트 이름을 사용 합니다. 따라서 클라이언트는 application gateway (contoso.com/path2)를 통하지 않고 contoso.azurewebsites.net/path2에 직접 요청을 만듭니다. Application gateway를 무시 하는 것은 바람직하지 않습니다.
 
@@ -149,7 +149,7 @@ HTTP 응답에서 중요 한 정보를 표시 하는 헤더를 제거 하는 것
 
 ### <a name="check-for-the-presence-of-a-header"></a>헤더가 있는지 확인 합니다.
 
-헤더 또는 서버 변수가 있는지에 대 한 HTTP 요청 또는 응답 헤더를 평가할 수 있습니다. 이 계산은 특정 헤더가 있는 경우에만 헤더 재작성을 수행 하려는 경우에 유용 합니다.
+헤더 또는 서버 변수가 있는지에 대한 HTTP 요청 또는 응답 헤더를 평가할 수 있습니다. 이 계산은 특정 헤더가 있는 경우에만 헤더 재작성을 수행 하려는 경우에 유용 합니다.
 
 ![헤더가 있는지 확인 하는 중](media/rewrite-http-headers/check-presence.png)
 
@@ -163,7 +163,7 @@ HTTP 응답에서 중요 한 정보를 표시 하는 헤더를 제거 하는 것
 
 ## <a name="next-steps"></a>다음 단계
 
-HTTP 헤더를 다시 작성 하는 방법에 대 한 자세한 내용은 다음을 참조 하세요.
+HTTP 헤더를 다시 작성 하는 방법에 대한 자세한 내용은 다음을 참조 하세요.
 
 - [Azure Portal를 사용 하 여 HTTP 헤더 재작성](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers-portal)
 - [Azure PowerShell를 사용 하 여 HTTP 헤더 재작성](add-http-header-rewrite-rule-powershell.md)

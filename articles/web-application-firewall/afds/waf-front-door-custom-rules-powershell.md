@@ -1,6 +1,6 @@
 ---
 title: Azure Front 문에 대 한 기본 규칙 집합 & WAF 사용자 지정 규칙 구성
-description: WAF 정책을 구성 하는 방법에 대 한 자세한 내용은 기존 전방 도어 끝점에 대 한 사용자 지정 및 관리 되는 규칙으로 구성 됩니다.
+description: WAF 정책을 구성 하는 방법에 대 한 자세한 내용은 기존 전방 도어 엔드포인트에 대 한 사용자 지정 및 관리 되는 규칙으로 구성 됩니다.
 services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall

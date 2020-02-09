@@ -18,7 +18,7 @@ ms.locfileid: "76900696"
 ---
 # <a name="get-started-with-the-azure-quickstart-center"></a>Azure 빠른 시작 센터 시작
 
-Azure 빠른 시작 센터는 Azure에 대 한 지식을 개선 하려는 모든 사용자가 사용할 수 있는 Azure Portal의 단계별 경험입니다. Azure를 처음 접하는 조직의 경우 클라우드 환경을 등록 하 고 설정 하는 가장 빠른 방법입니다.
+Azure 빠른 시작 센터는 Azure에 대한 지식을 개선 하려는 모든 사용자가 사용할 수 있는 Azure Portal의 단계별 경험입니다. Azure를 처음 접하는 조직의 경우 클라우드 환경을 등록 하 고 설정 하는 가장 빠른 방법입니다.
 
 ## <a name="overview"></a>개요
 
@@ -38,12 +38,12 @@ Azure 빠른 시작 센터에는 시작 하기 위한 세 가지 옵션이 있�
 
 1. **일반** > **빠른 시작 센터**를 선택 합니다.
 
-Azure 빠른 시작 센터에서 수행할 수 있는 작업에 대 한 자세한 내용은 다음 비디오를 참조 하세요.
+Azure 빠른 시작 센터에서 수행할 수 있는 작업에 대한 자세한 내용은 다음 비디오를 참조 하세요.
 > [!VIDEO https://www.youtube.com/embed/0bSA7RXrbAg]
 
 [Azure 빠른 시작 센터 소개](https://www.youtube.com/watch?v=0bSA7RXrbAg)
 
 ## <a name="next-steps"></a>다음 단계
 
-* Azure [에 대 한 Microsoft 클라우드 채택 프레임 워크](/azure/architecture/cloud-adoption/)에서 azure 설정 및 마이그레이션에 대해 자세히 알아보세요.
+* Azure [에 대한 Microsoft 클라우드 채택 프레임 워크](/azure/architecture/cloud-adoption/)에서 azure 설정 및 마이그레이션에 대해 자세히 알아보세요.
 * [Microsoft Learn](/learn/azure/)에서 더 많은 과정을 통해 클라우드 기술을 활용 하세요.

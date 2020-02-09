@@ -14,14 +14,14 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/02/2019
 ms.locfileid: "74667302"
 ---
-# <a name="create-database-and-table-policies-for-azure-data-explorer-by-using-c"></a>을 사용 하 여 Azure 데이터 탐색기에 대 한 데이터베이스 및 테이블 정책 만들기C#
+# <a name="create-database-and-table-policies-for-azure-data-explorer-by-using-c"></a>을 사용 하 여 Azure 데이터 탐색기에 대한 데이터베이스 및 테이블 정책 만들기C#
 
 > [!div class="op_single_selector"]
 > * [C#](database-table-policies-csharp.md)
 > * [Python](database-table-policies-python.md)
 >
 
-Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능한 빠르고 확장성이 우수한 데이터 탐색 서비스입니다. 이 문서에서는를 사용 C#하 여 Azure 데이터 탐색기에 대 한 데이터베이스 및 테이블 정책을 만듭니다.
+Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능한 빠르고 확장성이 우수한 데이터 탐색 서비스입니다. 이 문서에서는를 사용 C#하 여 Azure 데이터 탐색기에 대한 데이터베이스 및 테이블 정책을 만듭니다.
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -67,7 +67,7 @@ await kustoManagementClient.Databases.UpdateAsync(resourceGroupName, clusterName
 ```
 
 ## <a name="alter-database-cache-policy"></a>Alter database cache 정책
-데이터베이스에 대 한 캐시 정책을 설정 합니다. 이전 5 일간의 데이터는 클러스터 SSD에 있습니다.
+데이터베이스에 대한 캐시 정책을 설정 합니다. 이전 5 일간의 데이터는 클러스터 SSD에 있습니다.
 
 ```csharp
 var tenantId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";//Directory (tenant) ID
@@ -93,7 +93,7 @@ await kustoManagementClient.Databases.UpdateAsync(resourceGroupName, clusterName
 ```
 
 ## <a name="alter-table-cache-policy"></a>Alter table cache 정책
-테이블에 대 한 캐시 정책을 설정 합니다. 이전 5 일간의 데이터는 클러스터 SSD에 있습니다.
+테이블에 대한 캐시 정책을 설정 합니다. 이전 5 일간의 데이터는 클러스터 SSD에 있습니다.
 
 ```csharp
 var kustoUri = "https://<ClusterName>.<Region>.kusto.windows.net:443/";
@@ -124,7 +124,7 @@ using (var kustoClient = KustoClientFactory.CreateCslAdminProvider(kustoConnecti
 }
 ```
 
-## <a name="add-a-new-principal-for-the-database"></a>데이터베이스에 대 한 새 보안 주체 추가
+## <a name="add-a-new-principal-for-the-database"></a>데이터베이스에 대한 새 보안 주체 추가
 새 Azure AD 응용 프로그램을 데이터베이스의 관리 주체로 추가 합니다.
 
 ```csharp

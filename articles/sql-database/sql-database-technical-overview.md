@@ -78,7 +78,7 @@ Azure SQL Database는 다음과 같은 다양 한 유형의 응용 프로그램�
 
 탄력적 풀을 사용하면 리소스에 대한 요구가 변동함에 따라 데이터베이스 성능을 높이거나 낮추는 데 집중할 필요가 없습니다. 풀링된 데이터베이스는 필요에 따라 탄력적 풀의 성능 리소스를 사용합니다. 풀링된 데이터베이스는 풀의 한도를 사용하지만 초과하지 않으므로 개별 데이터베이스 사용량을 예측할 수 없는 경우에도 비용을 계속 예측할 수 있습니다.
 
-[풀에 데이터베이스를 추가 및 제거 하 고](sql-database-elastic-pool-manage-portal.md), 소수의 데이터베이스에서 수천 개의 응용 프로그램을 사용자가 제어 하는 예산에 맞게 확장할 수 있습니다. 풀의 데이터베이스에서 사용할 수 있는 최소 및 최대 리소스를 제어 하 여 풀의 어떤 데이터베이스도 풀 리소스를 모두 사용 하지 않도록 하 고 풀링된 모든 데이터베이스에 최소한의 리소스를 보장할 수 있습니다. 탄력적 풀을 사용 하는 SaaS (software as a service) 응용 프로그램의 디자인 패턴에 대 한 자세한 내용은 [SQL Database를 사용 하 여 다중 테 넌 트 saas 응용 프로그램에 대 한 디자인 패턴](sql-database-design-patterns-multi-tenancy-saas-applications.md)을 참조 하세요.
+[풀에 데이터베이스를 추가 및 제거 하 고](sql-database-elastic-pool-manage-portal.md), 소수의 데이터베이스에서 수천 개의 응용 프로그램을 사용자가 제어 하는 예산에 맞게 확장할 수 있습니다. 풀의 데이터베이스에서 사용할 수 있는 최소 및 최대 리소스를 제어 하 여 풀의 어떤 데이터베이스도 풀 리소스를 모두 사용 하지 않도록 하 고 풀링된 모든 데이터베이스에 최소한의 리소스를 보장할 수 있습니다. 탄력적 풀을 사용 하는 SaaS (software as a service) 응용 프로그램의 디자인 패턴에 대 한 자세한 내용은 [SQL Database를 사용 하 여 다중 테넌트 saas 응용 프로그램에 대 한 디자인 패턴](sql-database-design-patterns-multi-tenancy-saas-applications.md)을 참조 하세요.
 
 스크립트는 탄력적 풀 모니터링 및 크기 조정에 도움을 줄 수 있습니다. 예제를 보려면 [PowerShell을 사용 하 여 Azure SQL Database에서 SQL 탄력적 풀 모니터링 및 크기 조정](scripts/sql-database-monitor-and-scale-pool-powershell.md)을 참조 하세요.
 
@@ -148,7 +148,7 @@ SQL Database는 모니터링해야 하는 쿼리에 대한 자세한 정보를 �
 
 SQL Database 및 Azure에서 제공 하는 모든 사용 가능한 도구 및 보고서를 사용 하 여 엄청난 수의 데이터베이스를 효율적으로 관리할 수 없습니다. 수동으로 데이터베이스를 모니터링 하 고 튜닝 하는 대신 [자동 튜닝](sql-database-automatic-tuning.md)을 사용 하 여 SQL Database에 대 한 일부 모니터링 및 튜닝 작업을 위임 하는 것을 고려할 수 있습니다. SQL Database은 자동으로 권장 사항을 적용 하 고 각 튜닝 작업을 확인 하 여 성능을 향상 시킬 수 있도록 합니다. 이러한 방식으로 SQL Database는 제어 되 고 안전한 방식으로 워크 로드에 자동으로 적응 합니다. 자동 조정은 모든 튜닝 작업 전후에 데이터베이스 성능이 신중 하 게 모니터링 되 고 비교 됨을 의미 합니다. 성능이 개선 되지 않는 경우 튜닝 작업은 되돌려집니다.
 
-SQL Database를 기반으로 [SaaS 다중 테 넌 트 앱](sql-database-design-patterns-multi-tenancy-saas-applications.md) 을 실행 하는 대부분의 파트너는 응용 프로그램이 항상 안정적이 고 예측 가능한 성능을 갖도록 하기 위해 자동 성능 조정에 의존 합니다. 이 기능은 갑자기 성능 인시던트가 발생하는 위험을 크게 줄여 줍니다. 또한 고객 기반의 일부는 SQL Server을 사용 하기 때문에 SQL Database에서 제공 하는 것과 동일한 인덱싱 권장 사항을 사용 하 여 SQL Server 고객에 게 도움을 줍니다.
+SQL Database를 기반으로 [SaaS 다중 테넌트 앱](sql-database-design-patterns-multi-tenancy-saas-applications.md) 을 실행 하는 대부분의 파트너는 응용 프로그램이 항상 안정적이 고 예측 가능한 성능을 갖도록 하기 위해 자동 성능 조정에 의존 합니다. 이 기능은 갑자기 성능 인시던트가 발생하는 위험을 크게 줄여 줍니다. 또한 고객 기반의 일부는 SQL Server을 사용 하기 때문에 SQL Database에서 제공 하는 것과 동일한 인덱싱 권장 사항을 사용 하 여 SQL Server 고객에 게 도움을 줍니다.
 
 [SQL Database에서 사용할 수](sql-database-automatic-tuning.md)있는 두 가지 자동 조정 측면은 다음과 같습니다.
 

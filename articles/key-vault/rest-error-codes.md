@@ -54,7 +54,7 @@ Content-Length: 31
 
 ### <a name="the-token-lacks-the-correct-resource-associated-with-it"></a>토큰에 연결 된 올바른 리소스가 부족 합니다. 
 
-Azure OAUTH 끝점에서 액세스 토큰을 요청 하는 경우 "resource" 라는 매개 변수는 필수입니다. 토큰 공급자는 토큰의 용도에 맞게 토큰의 범위를 사용 하므로이 값은 중요 합니다. Key Vault에 액세스 하는 **모든** 토큰에 대 한 리소스는 *https:\//vault.keyvault.net* (후행 슬래시 없음)입니다.
+Azure OAUTH 엔드포인트에서 액세스 토큰을 요청 하는 경우 "resource" 라는 매개 변수는 필수입니다. 토큰 공급자는 토큰의 용도에 맞게 토큰의 범위를 사용 하므로이 값은 중요 합니다. Key Vault에 액세스 하는 **모든** 토큰에 대 한 리소스는 *https:\//vault.keyvault.net* (후행 슬래시 없음)입니다.
 
 ### <a name="the-token-is-expired"></a>토큰이 만료 되었습니다.
 
@@ -93,7 +93,7 @@ Azure OAUTH 끝점에서 액세스 토큰을 요청 하는 경우 "resource" 라
 - nbf (이전 아님):이 토큰이 유효 해지면 epoch 시작 이후 틱 수입니다.
 - exp (만료):이 토큰이 만료 될 때 epoch가 시작 된 이후의 틱 수입니다.
 - appid (응용 프로그램 ID):이 요청을 수행 하는 응용 프로그램 ID의 GUID입니다.
-- tid (테 넌 트 ID):이 요청을 수행 하는 보안 주체의 테 넌 트 ID의 GUID입니다.
+- tid (테넌트 ID):이 요청을 수행 하는 보안 주체의 테넌트 ID의 GUID입니다.
 
 요청을 처리 하기 위해 토큰에서 모든 값을 올바르게 식별 하는 것이 중요 합니다. 모든 항목이 올바르면 요청에서 401이 발생 하지 않습니다.
 
@@ -113,14 +113,14 @@ resource=https%3A%2F%2Fvault.azure.net&client_id=<registered-app-ID>&client_secr
 
 Mush 사용자 제공 정보는 다음과 같습니다.
 
-- 주요 자격 증명 모음 테 넌 트 ID
+- 주요 자격 증명 모음 테넌트 ID
 - 리소스 값이 https %3 A %2 F %2 F 자격 증명 모음. azure (URL 인코딩)로 설정 되어 있습니다.
 - 클라이언트 ID
 - 클라이언트 암호
 
 나머지 요청은 거의 동일 해야 합니다.
 
-응답 액세스 토큰을 가져올 수 있는 경우에는이 토큰을 디코딩하는 방법 (위에 표시 된 것 처럼)을 통해 테 넌 트 ID, 클라이언트 ID (앱 ID) 및 리소스를 확인할 수 있습니다.
+응답 액세스 토큰을 가져올 수 있는 경우에는이 토큰을 디코딩하는 방법 (위에 표시 된 것 처럼)을 통해 테넌트 ID, 클라이언트 ID (앱 ID) 및 리소스를 확인할 수 있습니다.
 
 ## <a name="http-403-insufficient-permissions"></a>HTTP 403: 권한이 부족 합니다.
 

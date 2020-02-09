@@ -65,7 +65,7 @@ ms.locfileid: "65768363"
 
 - 초대자에게 초대 테넌시의 전자 메일 주소가 없습니다.
 
-  ![초대 자가 초대 테 넌 트에 전자 메일을 없을 때 스크린 샷](media/invitation-email-elements/inviter-no-email.png)
+  ![초대 자가 초대 테넌트에 전자 메일을 없을 때 스크린 샷](media/invitation-email-elements/inviter-no-email.png)
 
 
 - 받는 사람이 초대를 충전할 필요가 없습니다.

@@ -1,6 +1,6 @@
 ---
 title: Azure Cache for Redis 크기를 조정하는 방법
-description: Azure Portal 및 Azure PowerShell, Azure CLI 등의 도구를 사용 하 여 Redis 인스턴스에 대 한 Azure 캐시 크기를 조정 하는 방법에 대해 알아봅니다.
+description: Azure Portal 및 Azure PowerShell, Azure CLI 등의 도구를 사용 하 여 Redis 인스턴스에 대한 Azure 캐시 크기를 조정 하는 방법에 대해 알아봅니다.
 author: yegu-ms
 ms.author: yegu
 ms.service: cache

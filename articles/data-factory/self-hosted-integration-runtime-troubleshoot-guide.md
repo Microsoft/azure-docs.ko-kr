@@ -16,7 +16,7 @@ ms.locfileid: "75439883"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>자체 호스팅 integration runtime 문제 해결
 
-이 문서에서는 Azure Data Factory에서 자체 호스팅 통합 런타임에 대 한 일반적인 문제 해결 방법을 살펴봅니다.
+이 문서에서는 Azure Data Factory에서 자체 호스팅 통합 런타임에 대한 일반적인 문제 해결 방법을 살펴봅니다.
 
 ## <a name="common-errors-and-resolutions"></a>일반적인 오류 및 해결 방법
 
@@ -52,10 +52,10 @@ ms.locfileid: "75439883"
 1. 예상 되는 응답을 받지 못한 경우에는 상황에 따라 다음 방법 중 하나를 사용 합니다.
             
     * "원격 이름을 확인할 수 없습니다." 라는 메시지가 표시 되는 경우 DNS (Domain Name System) 문제가 있습니다. 이 문제를 해결 하려면 네트워크 팀에 문의 하세요.
-    * "Ssl/tls 인증서를 신뢰할 수 없습니다." 라는 메시지가 표시 되 면 컴퓨터에서 https://wu2.frontend.clouddatahub.net/ 에 대 한 인증서를 신뢰할 수 있는지 확인 하 고 인증서 관리자를 사용 하 여 공용 인증서를 설치 합니다. 이 작업을 수행 하면 문제가 완화 됩니다.
+    * "Ssl/tls 인증서를 신뢰할 수 없습니다." 라는 메시지가 표시 되 면 컴퓨터에서 https://wu2.frontend.clouddatahub.net/ 에 대한 인증서를 신뢰할 수 있는지 확인 하 고 인증서 관리자를 사용 하 여 공용 인증서를 설치 합니다. 이 작업을 수행 하면 문제가 완화 됩니다.
     * **Windows** > **이벤트 뷰어 (로그)**  > **응용 프로그램 및 서비스 로그** > **Integration Runtime** 로 이동 하 고 DNS, 방화벽 규칙 또는 회사 네트워크 설정에 따라 발생 한 오류를 확인 합니다. 이러한 오류가 발생 하면 연결을 강제로 닫습니다. 모든 회사에서 네트워크 설정이 사용자 지정 되었으므로 네트워크 팀에 문의 하 여 이러한 문제를 해결 하세요.
 
-1. 자체 호스팅 통합 런타임에 "프록시"가 구성 된 경우 프록시 서버에서 서비스 끝점에 액세스할 수 있는지 확인 합니다. 샘플 명령은 [PowerShell, 웹 요청 및 프록시](https://stackoverflow.com/questions/571429/powershell-web-requests-and-proxies)를 참조 하세요.    
+1. 자체 호스팅 통합 런타임에 "프록시"가 구성 된 경우 프록시 서버에서 서비스 엔드포인트에 액세스할 수 있는지 확인 합니다. 샘플 명령은 [PowerShell, 웹 요청 및 프록시](https://stackoverflow.com/questions/571429/powershell-web-requests-and-proxies)를 참조 하세요.    
                 
     ```powershell
     $user = $env:username

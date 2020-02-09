@@ -69,6 +69,6 @@ Azure 규정 준수 인증에 대한 자세한 내용은 다음 문서를 참조
 
 * Azure Cosmos DB의 최신 규정 준수 인증을 확인하려면 [Azure 규정 준수 개요](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942)를 참조하세요.  
 
-* Azure Cosmos DB 보안 및 최신 개선 사항에 대 한 개요는 [Azure Cosmos database 보안](database-security.md) 문서를 참조 하세요.
+* Azure Cosmos DB 보안 및 최신 개선 사항에 대한 개요는 [Azure Cosmos database 보안](database-security.md) 문서를 참조 하세요.
 
 * Microsoft 인증에 대한 자세한 내용은 [Azure 보안 센터](https://azure.microsoft.com/support/trust-center/)를 참조하세요.

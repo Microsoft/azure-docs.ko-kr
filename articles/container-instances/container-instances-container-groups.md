@@ -36,7 +36,7 @@ Azure Container Instances의 최상위 리소스는 *컨테이너 그룹*입니�
 
 ## <a name="deployment"></a>배포
 
-다중 컨테이너 그룹을 배포 하는 두 가지 일반적인 방법은 [리소스 관리자 템플릿][resource-manager template] 또는 [yaml 파일][yaml-file]을 사용 하는 것입니다. 컨테이너 인스턴스를 배포할 때 추가 Azure 서비스 리소스 (예: [Azure Files 공유][azure-files])를 배포 해야 하는 경우 리소스 관리자 템플릿을 권장 합니다. YAML 형식의 보다 간결한 특성으로 인해 배포에 컨테이너 인스턴스만 포함 된 경우에는 YAML 파일이 권장 됩니다. 설정할 수 있는 속성에 대 한 자세한 내용은 [리소스 관리자 템플릿 참조](/azure/templates/microsoft.containerinstance/containergroups) 또는 [yaml 참조](container-instances-reference-yaml.md) 설명서를 참조 하세요.
+다중 컨테이너 그룹을 배포 하는 두 가지 일반적인 방법은 [리소스 관리자 템플릿][resource-manager template] 또는 [yaml 파일][yaml-file]을 사용 하는 것입니다. 컨테이너 인스턴스를 배포할 때 추가 Azure 서비스 리소스 (예: [Azure Files 공유][azure-files])를 배포 해야 하는 경우 리소스 관리자 템플릿을 권장 합니다. YAML 형식의 보다 간결한 특성으로 인해 배포에 컨테이너 인스턴스만 포함 된 경우에는 YAML 파일이 권장 됩니다. 설정할 수 있는 속성에 대한 자세한 내용은 [리소스 관리자 템플릿 참조](/azure/templates/microsoft.containerinstance/containergroups) 또는 [yaml 참조](container-instances-reference-yaml.md) 설명서를 참조 하세요.
 
 컨테이너 그룹의 구성을 유지 하려면 Azure CLI 명령 [az container export][az-container-export]를 사용 하 여 해당 구성을 yaml 파일로 내보낼 수 있습니다. 내보내기를 사용 하면 컨테이너 그룹 구성을 "코드로 구성"을 위한 버전 제어로 저장할 수 있습니다. 또는 YAML에서 새 구성을 개발할 때 내보낸 파일을 시작점으로 사용할 수 있습니다.
 
@@ -44,7 +44,7 @@ Azure Container Instances의 최상위 리소스는 *컨테이너 그룹*입니�
 
 ## <a name="resource-allocation"></a>리소스 할당
 
-Azure Container Instances는 그룹의 인스턴스에 대 한 [리소스 요청][resource-requests] 을 추가 하 여 cpu, 메모리, 선택적으로 [gpu][gpus] (미리 보기) 등의 리소스를 다중 컨테이너 그룹에 할당 합니다. CPU 리소스를 예로 들어 두 개의 컨테이너 인스턴스를 사용 하 여 1 개의 CPU를 요청 하는 컨테이너 그룹을 만든 경우 컨테이너 그룹에는 2 개의 cpu가 할당 됩니다.
+Azure Container Instances는 그룹의 인스턴스에 대한 [리소스 요청][resource-requests] 을 추가 하 여 cpu, 메모리, 선택적으로 [gpu][gpus] (미리 보기) 등의 리소스를 다중 컨테이너 그룹에 할당 합니다. CPU 리소스를 예로 들어 두 개의 컨테이너 인스턴스를 사용 하 여 1 개의 CPU를 요청 하는 컨테이너 그룹을 만든 경우 컨테이너 그룹에는 2 개의 cpu가 할당 됩니다.
 
 ### <a name="resource-usage-by-container-instances"></a>컨테이너 인스턴스의 리소스 사용량
 
@@ -52,7 +52,7 @@ Azure Container Instances는 그룹의 인스턴스에 대 한 [리소스 요청
 
 * 리소스 제한을 지정 하지 않는 경우 컨테이너 인스턴스의 최대 리소스 사용량은 해당 리소스 요청과 동일 합니다.
 
-* 컨테이너 인스턴스에 대 한 제한을 지정 하는 경우 인스턴스의 최대 사용량은 설정 하는 제한까지 요청 보다 클 수 있습니다. 따라서 그룹에 있는 다른 컨테이너 인스턴스의 리소스 사용이 줄어들 수 있습니다. 컨테이너 인스턴스에 대해 설정할 수 있는 최대 리소스 제한은 그룹에 할당 된 총 리소스입니다.
+* 컨테이너 인스턴스에 대한 제한을 지정 하는 경우 인스턴스의 최대 사용량은 설정 하는 제한까지 요청 보다 클 수 있습니다. 따라서 그룹에 있는 다른 컨테이너 인스턴스의 리소스 사용이 줄어들 수 있습니다. 컨테이너 인스턴스에 대해 설정할 수 있는 최대 리소스 제한은 그룹에 할당 된 총 리소스입니다.
     
 예를 들어 각각 1 개의 CPU를 요청 하는 두 개의 컨테이너 인스턴스가 있는 그룹에서는 컨테이너 중 하나가 다른 작업 보다 더 많은 Cpu를 실행 해야 하는 작업을 실행할 수 있습니다.
 
@@ -62,7 +62,7 @@ Azure Container Instances는 그룹의 인스턴스에 대 한 [리소스 요청
 
 * **최소** 1 개의 CPU 및 1gb의 메모리를 컨테이너 그룹에 할당 합니다. 그룹 내의 개별 컨테이너 인스턴스는 1 개 미만의 CPU와 1gb의 메모리로 프로 비전 할 수 있습니다. 
 
-* 컨테이너 그룹의 **최대** 리소스는 배포 지역에서 Azure Container Instances에 대 한 [리소스 가용성][region-availability] 을 참조 하세요.
+* 컨테이너 그룹의 **최대** 리소스는 배포 지역에서 Azure Container Instances에 대한 [리소스 가용성][region-availability] 을 참조 하세요.
 
 ## <a name="networking"></a>네트워킹
 

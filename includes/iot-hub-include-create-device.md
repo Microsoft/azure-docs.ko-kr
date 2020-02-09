@@ -23,7 +23,7 @@ ms.locfileid: "70049056"
 
     ![포털에서 디바이스 ID 만들기](./media/iot-hub-include-create-device/create-identity-portal-vs2019.png)
 
-1. **장치 만들기**에서 **mydeviceid**와 같은 새 장치의 이름을 입력 하 고 **저장**을 선택 합니다. 이 작업은 IoT hub에 대 한 장치 id를 만듭니다.
+1. **장치 만들기**에서 **mydeviceid**와 같은 새 장치의 이름을 입력 하 고 **저장**을 선택 합니다. 이 작업은 IoT hub에 대한 장치 id를 만듭니다.
 
    ![새 디바이스 추가](./media/iot-hub-include-create-device/create-a-device-vs2019.png)
 

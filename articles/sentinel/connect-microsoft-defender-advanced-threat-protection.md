@@ -35,7 +35,7 @@ ms.locfileid: "72256748"
 ## <a name="prerequisites"></a>사전 요구 사항
 
 - [라이선스 프로 비전 유효성 검사 및 Microsoft Defender Advanced Threat protection에 대 한 전체 설정](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/licensing)에 설명 된 대로 사용 하도록 설정 된 Microsoft Defender Advanced threat protection에 대 한 유효한 라이선스. 
-- Azure 센티널 테 넌 트의 관리자 또는 보안 관리자 여야 합니다.
+- Azure 센티널 테넌트의 관리자 또는 보안 관리자 여야 합니다.
 
 
 ## <a name="connect-to-microsoft-defender-advanced-threat-protection"></a>Microsoft Defender Advanced Threat Protection에 연결

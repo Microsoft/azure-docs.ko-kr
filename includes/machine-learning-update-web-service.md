@@ -11,7 +11,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/11/2020
 ms.locfileid: "75901770"
 ---
-웹 서비스를 업데이트 하려면 `update` 메서드를 사용 합니다. 새 모델, 새 항목 스크립트 또는 유추 구성에서 지정할 수 있는 새 종속성을 사용 하도록 웹 서비스를 업데이트할 수 있습니다. 자세한 내용은 [웹 서비스](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice.webservice?view=azure-ml-py#update--args-)에 대 한 설명서를 참조 하십시오.
+웹 서비스를 업데이트 하려면 `update` 메서드를 사용 합니다. 새 모델, 새 항목 스크립트 또는 유추 구성에서 지정할 수 있는 새 종속성을 사용 하도록 웹 서비스를 업데이트할 수 있습니다. 자세한 내용은 [웹 서비스](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice.webservice?view=azure-ml-py#update--args-)에 대한 설명서를 참조 하십시오.
 
 > [!IMPORTANT]
 > 모델의 새 버전을 만들 때 사용 하려는 각 서비스를 수동으로 업데이트 해야 합니다.
@@ -20,7 +20,7 @@ ms.locfileid: "75901770"
 
 **SDK 사용**
 
-다음 코드에서는 SDK를 사용 하 여 웹 서비스에 대 한 모델, 환경 및 입력 스크립트를 업데이트 하는 방법을 보여 줍니다.
+다음 코드에서는 SDK를 사용 하 여 웹 서비스에 대한 모델, 환경 및 입력 스크립트를 업데이트 하는 방법을 보여 줍니다.
 
 ```python
 from azureml.core import Environment

@@ -26,7 +26,7 @@ Azure Cloud Shell 또는 Azure CLI의 로컬 설치를 사용 하 여이 문서�
 최소한 `az acr pack build`를 실행 하는 경우 다음을 지정 합니다.
 
 * 명령을 실행 하는 Azure container registry
-* 결과 이미지에 대 한 이미지 이름 및 태그
+* 결과 이미지에 대한 이미지 이름 및 태그
 * 로컬 디렉터리, GitHub 리포지토리 또는 원격 tarball 같이 ACR 작업에 대해 [지원 되는 컨텍스트 위치](container-registry-tasks-overview.md#context-locations) 중 하나입니다.
 * 응용 프로그램에 적합 한 Buildpack builder 이미지의 이름입니다. Azure Container Registry는 더 빠른 빌드를 위해 `cloudfoundry/cnb:0.0.34-cflinuxfs3` 등의 작성기 이미지를 캐시 합니다.  
 
@@ -84,7 +84,7 @@ az acr pack build \
 az acr login --name myregistry
 ```
 
-이미지를 실행 하 고 *runid*에 대 한 이미지 태그를 대체 합니다.
+이미지를 실행 하 고 *runid*에 대한 이미지 태그를 대체 합니다.
 
 ```console
 docker run --rm -p 8080:8080 myregistry.azurecr.io/java-app:runid
@@ -97,7 +97,7 @@ docker run --rm -p 8080:8080 myregistry.azurecr.io/java-app:runid
 
 `az acr pack build`를 사용 하 여 컨테이너 이미지를 빌드하고 푸시한 후 원하는 대상에 이미지를 배포할 수 있습니다. Azure 배포 옵션은 [App Service](../app-service/containers/tutorial-custom-docker-image.md) 또는 [azure Kubernetes 서비스](../aks/tutorial-kubernetes-deploy-cluster.md)에서 실행 하는 것을 포함 합니다.
 
-ACR 작업 기능에 대 한 자세한 내용은 [Acr 작업을 사용 하 여 컨테이너 이미지 빌드 및 유지 관리 자동화](container-registry-tasks-overview.md)를 참조 하세요.
+ACR 작업 기능에 대한 자세한 내용은 [Acr 작업을 사용 하 여 컨테이너 이미지 빌드 및 유지 관리 자동화](container-registry-tasks-overview.md)를 참조 하세요.
 
 
 <!-- LINKS - External -->

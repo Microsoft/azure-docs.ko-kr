@@ -35,7 +35,7 @@ AKS (Azure Kubernetes Service) 클러스터의 컨테이너에 대 한 Azure Mon
 
 ## <a name="authentication-model"></a>인증 모델
 
-라이브 데이터 (미리 보기) 기능은 `kubectl` 명령줄 도구와 동일한 Kubernetes API를 활용 합니다. Kubernetes API 끝점은 브라우저에서 유효성을 검사할 수 없는 자체 서명 된 인증서를 활용 합니다. 이 기능은 내부 프록시를 사용 하 여 AKS 서비스에 인증서의 유효성을 검사 하 고 트래픽을 신뢰할 수 있도록 합니다.
+라이브 데이터 (미리 보기) 기능은 `kubectl` 명령줄 도구와 동일한 Kubernetes API를 활용 합니다. Kubernetes API 엔드포인트은 브라우저에서 유효성을 검사할 수 없는 자체 서명 된 인증서를 활용 합니다. 이 기능은 내부 프록시를 사용 하 여 AKS 서비스에 인증서의 유효성을 검사 하 고 트래픽을 신뢰할 수 있도록 합니다.
 
 Azure Portal은 Azure Active Directory 클러스터에 대 한 로그인 자격 증명의 유효성을 검사 하 라는 메시지를 표시 하 고 클러스터를 만드는 동안 클라이언트 등록 설정으로 리디렉션하고이 문서에서 다시 구성 됩니다. 이 동작은 `kubectl`에 필요한 인증 프로세스와 유사 합니다. 
 
@@ -51,7 +51,7 @@ Kubernetes RBAC 인증으로 구성되지 않았거나 Azure AD Single Sign-On�
 
 ## <a name="configure-kubernetes-rbac-authentication"></a>Kubernetes RBAC 인증 구성
 
-Kubernetes RBAC 권한 부여를 사용 하도록 설정 하면 두 명의 사용자 ( **Clusteruser** 및 **Clusteruser** )가 Kubernetes API에 액세스 하는 데 사용 됩니다. 이는 관리 옵션 없이 `az aks get-credentials -n {cluster_name} -g {rg_name}`를 실행 하는 것과 비슷합니다. 즉, **Clusteruser** 에 Kubernetes API의 끝점에 대 한 액세스 권한을 부여 해야 합니다.
+Kubernetes RBAC 권한 부여를 사용 하도록 설정 하면 두 명의 사용자 ( **Clusteruser** 및 **Clusteruser** )가 Kubernetes API에 액세스 하는 데 사용 됩니다. 이는 관리 옵션 없이 `az aks get-credentials -n {cluster_name} -g {rg_name}`를 실행 하는 것과 비슷합니다. 즉, **Clusteruser** 에 Kubernetes API의 엔드포인트에 대 한 액세스 권한을 부여 해야 합니다.
 
 다음 예제 단계에서는 이 yaml 구성 템플릿에서 클러스터 역할 바인딩을 구성하는 방법을 보여 줍니다.
 
@@ -96,7 +96,7 @@ Kubernetes RBAC 권한 부여를 사용 하도록 설정 하면 두 명의 사�
 
 사용자 인증에 AD (Azure Active Directory)를 사용 하도록 구성 된 AKS 클러스터는이 기능에 액세스 하는 사용자의 로그인 자격 증명을 활용 합니다. 이 구성에서는 Azure AD 인증 토큰을 사용 하 여 AKS 클러스터에 로그인 할 수 있습니다.
 
-Azure Portal에서 권한 부여 페이지를 신뢰할 수 있는 리디렉션 URL로 리디렉션할 수 있도록 Azure AD 클라이언트 등록을 다시 구성 해야 합니다. 그런 다음 Azure AD의 사용자는 **Clusterroles** 및 **clusterrolebindings**를 통해 동일한 Kubernetes API 끝점에 대 한 액세스 권한을 직접 부여 합니다. 
+Azure Portal에서 권한 부여 페이지를 신뢰할 수 있는 리디렉션 URL로 리디렉션할 수 있도록 Azure AD 클라이언트 등록을 다시 구성 해야 합니다. 그런 다음 Azure AD의 사용자는 **Clusterroles** 및 **clusterrolebindings**를 통해 동일한 Kubernetes API 엔드포인트에 대 한 액세스 권한을 직접 부여 합니다. 
 
 Kubernetes의 고급 보안 설정에 대 한 자세한 내용은 [Kubernetes 설명서](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)를 참조 하세요. 
 
@@ -127,7 +127,7 @@ Kubernetes의 고급 보안 설정에 대 한 자세한 내용은 [Kubernetes �
 라이브 데이터 (미리 보기) 기능에 액세스 하려면 각 Azure AD 계정에 Kubernetes의 적절 한 Api에 대 한 권한을 부여 해야 합니다. Azure Active Directory 계정을 부여 하는 단계는 [KUBERNETES RBAC 인증](#configure-kubernetes-rbac-authentication) 섹션에 설명 된 단계와 유사 합니다. Yaml 구성 템플릿을 클러스터에 적용 하기 전에 **Clusterrolebinding** 의 **clusteruser** 를 원하는 사용자로 바꿉니다. 
 
 >[!IMPORTANT]
->RBAC 바인딩을 부여한 사용자가 동일한 Azure AD 테 넌 트에 있는 경우 userPrincipalName에 따라 사용 권한을 할당 합니다. 사용자가 다른 Azure AD 테 넌 트에 있는 경우를 쿼리하고 objectId 속성을 사용 합니다.
+>RBAC 바인딩을 부여한 사용자가 동일한 Azure AD 테넌트에 있는 경우 userPrincipalName에 따라 사용 권한을 할당 합니다. 사용자가 다른 Azure AD 테넌트에 있는 경우를 쿼리하고 objectId 속성을 사용 합니다.
 
 AKS cluster **Clusterrolebinding**을 구성 하는 방법에 대 한 추가 도움말은 [RBAC 바인딩 만들기](../../aks/azure-ad-integration-cli.md#create-rbac-binding)를 참조 하세요.
 

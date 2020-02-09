@@ -44,13 +44,13 @@ Cognitive Services 사용 하는 경우:
 
 Machine learning은 데이터와 알고리즘을 함께 가져와서 특정 요구를 해결 하는 개념입니다. 데이터 및 알고리즘을 학습 한 후에는 다른 데이터를 사용 하 여 다시 사용할 수 있는 모델을 출력 합니다. 학습 된 모델은 새 데이터를 기반으로 하는 정보를 제공 합니다. 
 
-기계 학습 시스템을 빌드하는 과정에는 기계 학습 또는 데이터 과학에 대 한 지식이 필요 합니다.
+기계 학습 시스템을 빌드하는 과정에는 기계 학습 또는 데이터 과학에 대한 지식이 필요 합니다.
 
 기계 학습은 [Azure Machine Learning (AML) 제품 및 서비스](https://docs.microsoft.com/azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure/machine-learning/studio/context/ml-context)를 사용 하 여 제공 됩니다.
 
 ## <a name="what-is-a-cognitive-service"></a>인지 서비스는 무엇 인가요?
 
-인식 서비스는 machine learning 솔루션 (데이터, 알고리즘 및 학습 된 모델)의 구성 요소 중 일부 또는 전부를 제공 합니다. 이러한 서비스는 기계 학습 또는 데이터 과학을 사용 하지 않고도 데이터에 대 한 일반적인 지식이 필요 합니다. 이러한 서비스는 REST API 및 언어 기반 Sdk를 모두 제공 합니다. 따라서 서비스를 사용 하려면 프로그래밍 언어 지식이 있어야 합니다.
+인식 서비스는 machine learning 솔루션 (데이터, 알고리즘 및 학습 된 모델)의 구성 요소 중 일부 또는 전부를 제공 합니다. 이러한 서비스는 기계 학습 또는 데이터 과학을 사용 하지 않고도 데이터에 대한 일반적인 지식이 필요 합니다. 이러한 서비스는 REST API 및 언어 기반 Sdk를 모두 제공 합니다. 따라서 서비스를 사용 하려면 프로그래밍 언어 지식이 있어야 합니다.
 
 ## <a name="how-are-cognitive-services-and-azure-machine-learning-aml-similar"></a>Cognitive Services 및 Azure Machine Learning (AML)는 어떻게 유사 합니까?
 
@@ -63,13 +63,13 @@ Machine learning은 데이터와 알고리즘을 함께 가져와서 특정 요�
 
 ## <a name="how-is-a-cognitive-service-different-from-machine-learning"></a>인식 서비스는 machine learning과 어떻게 다르며,
 
-인식 서비스는 학습 된 모델을 제공 합니다. 이를 통해 데이터와 알고리즘을 함께 사용할 수 있습니다 .이는 REST API 또는 SDK에서 사용할 수 있습니다. 시나리오에 따라 몇 분 내에이 서비스를 구현할 수 있습니다.  인지 서비스는 이미지의 텍스트 또는 항목 id의 키 구와 같은 일반적인 문제에 대 한 답변을 제공 합니다. 
+인식 서비스는 학습 된 모델을 제공 합니다. 이를 통해 데이터와 알고리즘을 함께 사용할 수 있습니다 .이는 REST API 또는 SDK에서 사용할 수 있습니다. 시나리오에 따라 몇 분 내에이 서비스를 구현할 수 있습니다.  인지 서비스는 이미지의 텍스트 또는 항목 id의 키 구와 같은 일반적인 문제에 대한 답변을 제공 합니다. 
 
-Machine learning은 성공적으로 구현 하는 데 더 오랜 시간이 걸리는 프로세스입니다. 이 시간은 인식 서비스에서 제공 하는 것과 동일한 수준의 기능을 얻기 위해 데이터 수집, 정리, 변환, 알고리즘 선택, 모델 학습 및 배포에 소요 됩니다. 기계 학습을 사용 하면 매우 특수화 된 및/또는 특정 문제에 대 한 답변을 제공할 수 있습니다. 기계 학습 문제는 고려해 야 하는 문제에 대 한 특정 주제와 데이터 및 데이터 과학의 전문 지식에 잘 알고 있어야 합니다.
+Machine learning은 성공적으로 구현 하는 데 더 오랜 시간이 걸리는 프로세스입니다. 이 시간은 인식 서비스에서 제공 하는 것과 동일한 수준의 기능을 얻기 위해 데이터 수집, 정리, 변환, 알고리즘 선택, 모델 학습 및 배포에 소요 됩니다. 기계 학습을 사용 하면 매우 특수화 된 및/또는 특정 문제에 대한 답변을 제공할 수 있습니다. 기계 학습 문제는 고려해 야 하는 문제에 대한 특정 주제와 데이터 및 데이터 과학의 전문 지식에 잘 알고 있어야 합니다.
 
 ## <a name="what-kind-of-data-do-you-have"></a>어떤 종류의 데이터가 있습니까?
 
-서비스 그룹의 Cognitive Services에는 학습 된 모델에 대 한 모든 사용자 지정 데이터, 일부 또는 모든 사용자 지정 데이터가 필요할 수 있습니다. 
+서비스 그룹의 Cognitive Services에는 학습 된 모델에 대한 모든 사용자 지정 데이터, 일부 또는 모든 사용자 지정 데이터가 필요할 수 있습니다. 
 
 ### <a name="no-additional-training-data-required"></a>추가 학습 데이터가 필요 하지 않음
 
@@ -85,7 +85,7 @@ Machine learning은 성공적으로 구현 하는 데 더 오랜 시간이 걸�
 
 서비스는 효과적인 모델을 만들기 위해 실시간 또는 거의 실시간 데이터를 필요로 할 수 있습니다. 이러한 서비스는 상당한 양의 모델 데이터를 처리 합니다. 
 
-## <a name="service-requirements-for-the-data-model"></a>데이터 모델에 대 한 서비스 요구 사항
+## <a name="service-requirements-for-the-data-model"></a>데이터 모델에 대한 서비스 요구 사항
 
 다음 데이터는 각 서비스에서 허용 하거나 필요로 하는 데이터 종류를 범주화 합니다.
 
@@ -123,13 +123,13 @@ Machine learning은 성공적으로 구현 하는 데 더 오랜 시간이 걸�
 
 ## <a name="how-can-you-use-cognitive-services"></a>Cognitive Services를 어떻게 사용 하나요?
 
-각 서비스는 데이터에 대 한 정보를 제공 합니다. 음성 (오디오)을 텍스트로 변환 하 고 텍스트를 여러 언어로 번역 한 다음 번역 된 언어를 사용 하 여 기술 자료에서 답변을 가져오는 등의 솔루션을 결합 하 여 서비스를 결합할 수 있습니다. Cognitive Services를 사용 하 여 지능적인 솔루션을 만들 수 있지만 모델을 보완 하거나 개발 프로세스를 가속화 하기 위해 기존 machine learning 프로젝트와 결합할 수도 있습니다. 
+각 서비스는 데이터에 대한 정보를 제공 합니다. 음성 (오디오)을 텍스트로 변환 하 고 텍스트를 여러 언어로 번역 한 다음 번역 된 언어를 사용 하 여 기술 자료에서 답변을 가져오는 등의 솔루션을 결합 하 여 서비스를 결합할 수 있습니다. Cognitive Services를 사용 하 여 지능적인 솔루션을 만들 수 있지만 모델을 보완 하거나 개발 프로세스를 가속화 하기 위해 기존 machine learning 프로젝트와 결합할 수도 있습니다. 
 
 다른 기계 학습 도구에 대해 내보낸 모델을 제공 하는 Cognitive Services:
 
 |인식 서비스|모델 정보|
 |--|--|
-|[Custom Vision](./custom-vision-service/home.md)|Android 용 Tensorflow에 대 한 [내보내기](./Custom-Vision-Service/export-model-python.md) , IOS11 용 Coreml, Windows ML 용 onnx|
+|[Custom Vision](./custom-vision-service/home.md)|Android 용 Tensorflow에 대한 [내보내기](./Custom-Vision-Service/export-model-python.md) , IOS11 용 Coreml, Windows ML 용 onnx|
 
 ## <a name="learn-more"></a>자세히 알아보기
 

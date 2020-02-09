@@ -13,7 +13,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/06/2020
 ms.locfileid: "75680956"
 ---
-# <a name="local-git-deployment-to-azure-app-service"></a>Azure App Service에 대 한 로컬 Git 배포
+# <a name="local-git-deployment-to-azure-app-service"></a>Azure App Service에 대한 로컬 Git 배포
 
 이 방법 가이드에서는 로컬 컴퓨터의 Git 리포지토리에서 [Azure App Service](overview.md) 에 앱을 배포 하는 방법을 보여 줍니다.
 
@@ -37,7 +37,7 @@ ms.locfileid: "75680956"
 
 ## <a name="deploy-with-kudu-build-server"></a>Kudu build 서버를 사용 하 여 배포
 
-Kudu App Service 빌드 서버를 사용 하 여 앱에 대 한 로컬 Git 배포를 사용 하도록 설정 하는 가장 쉬운 방법은 Azure Cloud Shell를 사용 하는 것입니다. 
+Kudu App Service 빌드 서버를 사용 하 여 앱에 대한 로컬 Git 배포를 사용 하도록 설정 하는 가장 쉬운 방법은 Azure Cloud Shell를 사용 하는 것입니다. 
 
 ### <a name="configure-a-deployment-user"></a>배포 사용자 구성
 
@@ -45,13 +45,13 @@ Kudu App Service 빌드 서버를 사용 하 여 앱에 대 한 로컬 Git 배�
 
 ### <a name="get-the-deployment-url"></a>배포 URL 가져오기
 
-기존 앱에 대 한 로컬 Git 배포를 사용 하도록 URL을 가져오려면 Cloud Shell에서 [`az webapp deployment source config-local-git`](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-local-git) 를 실행 합니다. \<앱 이름 > 및 \<그룹 이름 >를 앱 및 해당 Azure 리소스 그룹의 이름으로 바꿉니다.
+기존 앱에 대한 로컬 Git 배포를 사용 하도록 URL을 가져오려면 Cloud Shell에서 [`az webapp deployment source config-local-git`](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-local-git) 를 실행 합니다. \<앱 이름 > 및 \<그룹 이름 >를 앱 및 해당 Azure 리소스 그룹의 이름으로 바꿉니다.
 
 ```azurecli-interactive
 az webapp deployment source config-local-git --name <app-name> --resource-group <group-name>
 ```
 
-또는 새 Git 사용 앱을 만들려면 `--deployment-local-git` 매개 변수를 사용 하 여 Cloud Shell에서 [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) 를 실행 합니다. \<앱 이름 >, \<그룹-이름 > 및 \<계획 이름 >를 새 Git 앱, 해당 Azure 리소스 그룹 및 해당 Azure App Service 계획에 대 한 이름으로 바꿉니다.
+또는 새 Git 사용 앱을 만들려면 `--deployment-local-git` 매개 변수를 사용 하 여 Cloud Shell에서 [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) 를 실행 합니다. \<앱 이름 >, \<그룹-이름 > 및 \<계획 이름 >를 새 Git 앱, 해당 Azure 리소스 그룹 및 해당 Azure App Service 계획에 대한 이름으로 바꿉니다.
 
 ```azurecli-interactive
 az webapp create --name <app-name> --resource-group <group-name> --plan <plan-name> --deployment-local-git
@@ -81,21 +81,21 @@ az webapp deployment list-publishing-credentials --name <app-name> --resource-gr
    
 1. **Git 자격 증명 관리자** 창에서 Azure 로그인 암호가 아닌 [배포 사용자 암호](#configure-a-deployment-user)를 입력 합니다.
    
-1. 출력을 검토합니다. ASP.NET에 대 한 MSBuild, node.js에 대 한 `npm install` 및 Python 용 `pip install`와 같은 런타임 관련 자동화가 표시 될 수 있습니다. 
+1. 출력을 검토합니다. ASP.NET에 대한 MSBuild, node.js에 대한 `npm install` 및 Python 용 `pip install`와 같은 런타임 관련 자동화가 표시 될 수 있습니다. 
    
 1. Azure Portal에서 앱으로 이동 하 여 콘텐츠가 배포 되었는지 확인 합니다.
 
 ## <a name="deploy-with-azure-pipelines-builds"></a>Azure Pipelines 빌드를 사용 하 여 배포
 
-계정에 필요한 권한이 있는 경우 앱에 대 한 로컬 Git 배포를 사용 하도록 Azure Pipelines (미리 보기)를 설정할 수 있습니다. 
+계정에 필요한 권한이 있는 경우 앱에 대한 로컬 Git 배포를 사용 하도록 Azure Pipelines (미리 보기)를 설정할 수 있습니다. 
 
-- Azure 계정에는 Azure Active Directory에 대 한 쓰기 권한이 있어야 하 고 서비스를 만들 수 있습니다. 
+- Azure 계정에는 Azure Active Directory에 대한 쓰기 권한이 있어야 하 고 서비스를 만들 수 있습니다. 
   
 - Azure 계정에는 Azure 구독에 **소유자** 역할이 있어야 합니다.
 
 - 사용 하려는 Azure DevOps 프로젝트의 관리자 여야 합니다.
 
-Azure Pipelines (미리 보기)를 사용 하 여 앱에 대 한 로컬 Git 배포를 사용 하도록 설정 하려면
+Azure Pipelines (미리 보기)를 사용 하 여 앱에 대한 로컬 Git 배포를 사용 하도록 설정 하려면
 
 1. [Azure Portal](https://portal.azure.com)에서 **App Services**를 검색 하 고 선택 합니다. 
 
@@ -145,15 +145,15 @@ Git를 사용 하 여 Azure에서 App Service 앱에 게시 하는 경우 다음
 |메시지|원인|해상도
 ---|---|---|
 |`Unable to access '[siteURL]': Failed to connect to [scmAddress]`|앱이 실행 되 고 있지 않습니다.|Azure Portal에서 앱을 시작합니다. 웹 앱이 중지 되 면 Git 배포를 사용할 수 없습니다.|
-|`Couldn't resolve host 'hostname'`|' Azure ' 원격에 대 한 주소 정보가 잘못 되었습니다.|`git remote -v` 명령을 사용 하 여 연결 된 URL과 함께 모든 원격을 나열 합니다. 'azure' 원격의 URL이 올바른지 확인합니다. 필요한 경우 제거하고 올바른 URL을 사용하여 이 원격을 다시 만드세요.|
+|`Couldn't resolve host 'hostname'`|' Azure ' 원격에 대한 주소 정보가 잘못 되었습니다.|`git remote -v` 명령을 사용 하 여 연결 된 URL과 함께 모든 원격을 나열 합니다. 'azure' 원격의 URL이 올바른지 확인합니다. 필요한 경우 제거하고 올바른 URL을 사용하여 이 원격을 다시 만드세요.|
 |`No refs in common and none specified; doing nothing. Perhaps you should specify a branch such as 'master'.`|`git push`중에 분기를 지정 하지 않았거나 `.gitconfig`에서 `push.default` 값을 설정 하지 않았습니다.|Master 분기 `git push azure master`지정 하 여 `git push`를 다시 실행 합니다.|
 |`src refspec [branchname] does not match any.`|' Azure ' 원격의 마스터가 아닌 다른 분기에 푸시 하려고 했습니다.|Master 분기 `git push azure master`지정 하 여 `git push`를 다시 실행 합니다.|
 |`RPC failed; result=22, HTTP code = 5xx.`|이 오류는 HTTPS를 통해 큰 git 리포지토리를 푸시하려고 시도하는 경우 발생할 수 있습니다.|`postBuffer`을 더 크게 만들려면 로컬 컴퓨터의 git 구성을 변경 하십시오. 예: `git config --global http.postBuffer 524288000`|
-|`Error - Changes committed to remote repository but your web app not updated.`|추가 필수 모듈을 지정 하는 _패키지나 json_ 파일을 사용 하 여 node.js 앱을 배포 했습니다.|오류에 대 한 자세한 컨텍스트를 확인 하려면이 오류 이전에 `npm ERR!` 오류 메시지를 검토 하십시오. 다음은이 오류의 알려진 원인과 해당 `npm ERR!` 메시지입니다.<br /><br />**형식이 잘못 된 package. json 파일**: `npm ERR! Couldn't read dependencies.`<br /><br />**네이티브 모듈에는 Windows 용 이진 배포가**없습니다.<br />`npm ERR! \cmd "/c" "node-gyp rebuild"\ failed with 1` <br />또는 <br />`npm ERR! [modulename@version] preinstall: \make || gmake\ `|
+|`Error - Changes committed to remote repository but your web app not updated.`|추가 필수 모듈을 지정 하는 _패키지나 json_ 파일을 사용 하 여 node.js 앱을 배포 했습니다.|오류에 대한 자세한 컨텍스트를 확인 하려면이 오류 이전에 `npm ERR!` 오류 메시지를 검토 하십시오. 다음은이 오류의 알려진 원인과 해당 `npm ERR!` 메시지입니다.<br /><br />**형식이 잘못 된 package. json 파일**: `npm ERR! Couldn't read dependencies.`<br /><br />**네이티브 모듈에는 Windows 용 이진 배포가**없습니다.<br />`npm ERR! \cmd "/c" "node-gyp rebuild"\ failed with 1` <br />또는 <br />`npm ERR! [modulename@version] preinstall: \make || gmake\ `|
 
 ## <a name="additional-resources"></a>추가 리소스
 
 - [프로젝트 Kudu 설명서](https://github.com/projectkudu/kudu/wiki)
-- [Azure App Service에 대 한 연속 배포](deploy-continuous-deployment.md)
+- [Azure App Service에 대한 연속 배포](deploy-continuous-deployment.md)
 - [샘플: 웹 앱 만들기 및 로컬 Git 리포지토리의 코드 배포 (Azure CLI)](./scripts/cli-deploy-local-git.md?toc=%2fcli%2fazure%2ftoc.json)
 - [샘플: 웹 앱 만들기 및 로컬 Git 리포지토리의 코드 배포 (PowerShell)](./scripts/powershell-deploy-local-git.md?toc=%2fpowershell%2fmodule%2ftoc.json)

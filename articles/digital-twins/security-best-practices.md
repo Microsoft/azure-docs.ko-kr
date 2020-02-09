@@ -1,6 +1,6 @@
 ---
 title: 보안 모범 사례 이해-Azure Digital Twins | Microsoft Docs
-description: Azure Digital Twins 및 사물 인터넷에 대 한 보안 모범 사례에 대해 알아봅니다.
+description: Azure Digital Twins 및 사물 인터넷에 대한 보안 모범 사례에 대해 알아봅니다.
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
@@ -27,7 +27,7 @@ Azure Digital Twins는 Azure AD(Azure Active Directory)를 비롯하여 Azure Io
 > IoT 영역에 대해 최대 보안을 보장하려면 추가 보안 리소스를 검토합니다. 디바이스 공급 업체를 포함해야 합니다.
 
 > [!TIP]
-> Iot [에 대 한 Azure Security Center](https://docs.microsoft.com/azure/asc-for-iot/) 를 사용 하 여 iot 보안 위협 및 취약점을 쉽게 검색할 수 있습니다.
+> Iot [에 대한 Azure Security Center](https://docs.microsoft.com/azure/asc-for-iot/) 를 사용 하 여 iot 보안 위협 및 취약점을 쉽게 검색할 수 있습니다.
 
 ## <a name="iot-security-best-practices"></a>IoT 보안 모범 사례
 
@@ -40,7 +40,7 @@ IoT 디바이스를 안전하게 보호하기 위한 몇 가지 주요 사례는
 > * 성능 향상을 위해 I/O 및 디바이스 대역폭을 제한합니다. 속도 제한으로 서비스 거부 공격을 방지하여 보안을 향상시킬 수 있습니다.
 > * 장치 펌웨어, 운영 체제 및 소프트웨어를 최신 상태로 유지 합니다.
 > * 장치, 소프트웨어, 네트워크 및 게이트웨이 보안 모범 사례를 정기적으로 감사 하 고 검토 합니다.
-> * 신뢰할 수 있고 인증 되 고 규정을 준수 하는 보안 시스템, 소프트웨어 및 장치를 사용 합니다. 예를 들어 Azure Cloud에 대 한 [준수 제품](https://azure.microsoft.com/overview/trusted-cloud/compliance/) 을 검토 합니다.
+> * 신뢰할 수 있고 인증 되 고 규정을 준수 하는 보안 시스템, 소프트웨어 및 장치를 사용 합니다. 예를 들어 Azure Cloud에 대한 [준수 제품](https://azure.microsoft.com/overview/trusted-cloud/compliance/) 을 검토 합니다.
 
 IoT 영역을 안전하게 보호하기 위한 몇 가지 주요 사례는 다음과 같습니다.
 
@@ -57,7 +57,7 @@ IoT 리소스를 [모니터링](./how-to-configure-monitoring.md)하여 일반�
 > 포괄적인 IoT 보안 전략을 시작 하려면 Azure [iot 보안 모범 사례](../iot-fundamentals/iot-security-best-practices.md) 를 참조 하세요.
 
 > [!NOTE]
-> 이벤트 처리 및 모니터링에 대 한 자세한 내용은 [Azure Digital Twins를 사용 하 여 경로 이벤트 및 메시지](./concepts-events-routing.md)를 참조 하세요.
+> 이벤트 처리 및 모니터링에 대한 자세한 내용은 [Azure Digital Twins를 사용 하 여 경로 이벤트 및 메시지](./concepts-events-routing.md)를 참조 하세요.
 
 ## <a name="azure-active-directory-best-practices"></a>Azure Active Directory 모범 사례
 

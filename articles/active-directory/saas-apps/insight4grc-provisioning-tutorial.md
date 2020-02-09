@@ -39,7 +39,7 @@ ms.locfileid: "77057484"
 
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
-* [Azure AD 테 넌 트](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
+* [Azure AD 테넌트](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
 * 프로 비전을 구성할 수 있는 [권한이](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) 있는 Azure AD의 사용자 계정 (예: 응용 프로그램 관리자, 클라우드 응용 프로그램 관리자, 응용 프로그램 소유자 또는 전역 관리자). 
 * 관리자 권한이 있는 Insight4GRC의 사용자 계정
 
@@ -53,7 +53,7 @@ ms.locfileid: "77057484"
 Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 Insight4GRC를 구성 하기 전에 Insight4GRC에서 SCIM 프로 비전을 사용 하도록 설정 해야 합니다.
 
 1. 전달자 토큰을 얻으려면 최종 고객이 [지원 팀](mailto:support.ss@rsmuk.com)에 문의 해야 합니다.
-2. SCIM 끝점 URL을 가져오려면 SCIM 끝점 URL을 생성 하는 데 사용 되므로 Insight4GRC 도메인 이름을 준비 해야 합니다. Insight4GRC를 사용 하 여 초기 소프트웨어 구매의 일부로 Insight4GRC 도메인 이름을 검색할 수 있습니다.
+2. SCIM 엔드포인트 URL을 가져오려면 SCIM 엔드포인트 URL을 생성 하는 데 사용 되므로 Insight4GRC 도메인 이름을 준비 해야 합니다. Insight4GRC를 사용 하 여 초기 소프트웨어 구매의 일부로 Insight4GRC 도메인 이름을 검색할 수 있습니다.
 
 ## <a name="step-3-add-insight4grc-from-the-azure-ad-application-gallery"></a>3단계. Azure AD 응용 프로그램 갤러리에서 Insight4GRC 추가
 

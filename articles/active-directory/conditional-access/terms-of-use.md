@@ -378,8 +378,8 @@ A: [이전에 동의한 사용 약관을 검토할](#how-users-can-review-their-
 **Q: Intune 사용 약관도 사용하면 어떻게 되나요?**<br />
 A: Azure AD 사용 약관 및 [Intune](/intune/terms-and-conditions-create)사용 약관을 모두 구성한 경우에는 사용자가 둘 다 수락 해야 합니다. 자세한 내용은 [조직에 적합한 약관 솔루션 선택 블로그 게시물](https://go.microsoft.com/fwlink/?linkid=2010506&clcid=0x409)을 참조하세요.
 
-**Q: 사용 약관 서비스에서 인증에 사용 하는 끝점은 무엇 인가요?**<br />
-A: 사용 약관는 인증을 위해 및 https://tokenprovider.termsofuse.identitygovernance.azure.com https://account.activedirectory.windowsazure.com 의 끝점을 활용 합니다. 조직에서 등록을 위한 Url의 허용 목록을 사용 하는 경우 로그인을 위해 Azure AD 끝점과 함께 이러한 끝점을 허용 목록에 추가 해야 합니다.
+**Q: 사용 약관 서비스에서 인증에 사용 하는 엔드포인트은 무엇 인가요?**<br />
+A: 사용 약관는 인증을 위해 및 https://tokenprovider.termsofuse.identitygovernance.azure.com https://account.activedirectory.windowsazure.com 의 엔드포인트을 활용 합니다. 조직에서 등록을 위한 Url의 허용 목록을 사용 하는 경우 로그인을 위해 Azure AD 엔드포인트과 함께 이러한 엔드포인트을 허용 목록에 추가 해야 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

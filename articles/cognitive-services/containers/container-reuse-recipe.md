@@ -43,14 +43,14 @@ ms.locfileid: "76717212"
 
 * 새 컨테이너에는 원래 컨테이너와 별도의 이름과 태그가 있습니다.
 * 이러한 설정을 변경 하려면 Dockerfile의 값을 변경 하 고, 이미지를 다시 빌드하고, 레지스트리에 다시 게시 해야 합니다.
-* 컨테이너 레지스트리 또는 로컬 호스트에 대 한 액세스 권한이 있는 사용자는 컨테이너를 실행 하 고 Cognitive Services 끝점을 사용할 수 있습니다.
+* 컨테이너 레지스트리 또는 로컬 호스트에 대 한 액세스 권한이 있는 사용자는 컨테이너를 실행 하 고 Cognitive Services 엔드포인트을 사용할 수 있습니다.
 * 인식 서비스에 입력 탑재를 요구 하지 않는 경우 Dockerfile에 `COPY` 줄을 추가 하지 마세요.
 
 Dockerfile을 만들고 사용 하려는 기존 Cognitive Services 컨테이너에서 가져온 다음 Dockerfile의 docker 명령을 사용 하 여 컨테이너에 필요한 정보를 설정 하거나 가져옵니다.
 
 이 예는 다음과 같습니다.
 
-* `ENV`를 사용 하 여 호스트 환경 키에서 `{BILLING_ENDPOINT}` 청구 끝점을 설정 합니다.
+* `ENV`를 사용 하 여 호스트 환경 키에서 `{BILLING_ENDPOINT}` 청구 엔드포인트을 설정 합니다.
 * ' ENV '를 사용 하 여 호스트의 환경 키에서 `{ENDPOINT_KEY}` 청구 API 키를 설정 합니다.
 
 ### <a name="reuse-recipe-store-billing-settings-with-container"></a>조리법 재사용: 컨테이너를 사용 하 여 청구 설정 저장

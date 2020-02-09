@@ -21,7 +21,7 @@ Azure Monitor 로그는 동일한 작업 영역에 있는 여러 리소스의 �
 Azure Monitor는 Azure Data Explorer에서 사용되는 [Kusto 쿼리 언어](/azure/kusto/query/)의 한 버전을 사용합니다. Kusto 쿼리 언어는 단순 로그 쿼리에 적합하지만 집계, 조인, 스마트 분석 등의 고급 기능도 포함합니다. [여러 강좌](../azure-monitor/log-query/get-started-queries.md)를 통해 쿼리 언어를 빠르게 배울 수 있습니다.
 
 > [!NOTE]
-> Azure Monitor 로그와의 통합은 현재 Windows 사용량, 프리미엄 및 전용 호스팅 계획에서 실행 되는 함수 앱에 대 한 공개 미리 보기로 제공 됩니다.
+> Azure Monitor 로그와의 통합은 현재 Windows 사용량, 프리미엄 및 전용 호스팅 계획에서 실행 되는 함수 앱에 대한 공개 미리 보기로 제공 됩니다.
 
 ## <a name="setting-up"></a>설치
 

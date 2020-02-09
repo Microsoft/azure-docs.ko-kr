@@ -25,7 +25,7 @@ ms.locfileid: "70012581"
 NetApp 계정 만들기를 사용하면 용량 풀을 설정하고 이후에 볼륨을 만들 수 있습니다. Azure NetApp Files 블레이드를 사용하여 새 NetApp 계정을 만듭니다.
 
 ## <a name="before-you-begin"></a>시작하기 전에
-Azure NetApp Files 팀에서 서비스에 대 한 액세스 권한이 부여 되었는지 확인 하는 전자 메일을 수신 해야 합니다. [서비스 액세스에 대 한 waitlist 요청 제출](azure-netapp-files-register.md#waitlist)을 참조 하세요.
+Azure NetApp Files 팀에서 서비스에 대한 액세스 권한이 부여 되었는지 확인 하는 전자 메일을 수신 해야 합니다. [서비스 액세스에 대한 waitlist 요청 제출](azure-netapp-files-register.md#waitlist)을 참조 하세요.
 
 또한 NetApp 리소스 공급자를 사용 하기 위해 구독을 등록 해야 합니다. [NetApp 리소스 공급자 등록을](azure-netapp-files-register.md#resource-provider)참조 하세요.
 
@@ -58,7 +58,7 @@ Azure NetApp Files 팀에서 서비스에 대 한 액세스 권한이 부여 되
    이제 사용자가 만든 NetApp 계정이 Azure NetApp Files 블레이드에 나타납니다. 
 
 > [!NOTE] 
-> Azure NetApp Files 서비스에 대 한 액세스 권한이 부여 되지 않은 경우 첫 번째 NetApp 계정을 만들려고 하면 다음과 같은 오류가 표시 됩니다.  
+> Azure NetApp Files 서비스에 대한 액세스 권한이 부여 되지 않은 경우 첫 번째 NetApp 계정을 만들려고 하면 다음과 같은 오류가 표시 됩니다.  
 >
 > `{"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.","details":[{"code":"NotFound","message":"{\r\n \"error\": {\r\n \"code\": \"InvalidResourceType\",\r\n \"message\": \"The resource type could not be found in the namespace 'Microsoft.NetApp' for api version '2017-08-15'.\"\r\n }\r\n}"}]}`
 

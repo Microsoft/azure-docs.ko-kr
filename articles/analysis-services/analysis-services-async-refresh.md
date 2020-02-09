@@ -177,7 +177,7 @@ CommitMode는 partialBatch와 같습니다. 시간까지 걸릴 수 있는 큰 �
 
 ## <a name="post-sync"></a>POST /sync
 
-새로 고침 작업을 수행한 후 쿼리 확장을 위해 새 데이터를 복제본과 동기화 해야 할 수 있습니다. 모델에 대 한 동기화 작업을 수행 하려면/sync 함수에서 POST 동사를 사용 합니다. 응답의 Location 헤더에는 동기화 작업 ID가 포함됩니다.
+새로 고침 작업을 수행한 후 쿼리 확장을 위해 새 데이터를 복제본과 동기화 해야 할 수 있습니다. 모델에 대한 동기화 작업을 수행 하려면/sync 함수에서 POST 동사를 사용 합니다. 응답의 Location 헤더에는 동기화 작업 ID가 포함됩니다.
 
 ## <a name="get-sync-status"></a>GET /sync status
 

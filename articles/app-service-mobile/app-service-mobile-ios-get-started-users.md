@@ -1,5 +1,5 @@
 ---
-title: IOS에 대 한 인증 추가
+title: IOS에 대한 인증 추가
 description: Azure Mobile Apps를 사용 하 여 AAD, Google, Facebook, Twitter, Microsoft 등의 id 공급자를 통해 iOS 앱 사용자를 인증 하는 방법을 알아봅니다.
 ms.assetid: ef3d3cbe-e7ca-45f9-987f-80c44209dc06
 ms.tgt_pltfrm: mobile-ios
@@ -209,7 +209,7 @@ Xcode에서 **실행** 을 눌러 앱을 시작합니다. 앱이 인증되지 �
 
 5. *Run*을 눌러 앱을 시작한 다음 로그인합니다. 로그인할 때 할 일 목록을 보고 업데이트할 수 있어야 합니다.
 
-App Service 인증은 Apples Inter-App Communication을 사용합니다.  이 주제에 대 한 자세한 내용은 [Apple 설명서][2] 를 참조 하세요.
+App Service 인증은 Apples Inter-App Communication을 사용합니다.  이 주제에 대한 자세한 내용은 [Apple 설명서][2] 를 참조 하세요.
 <!-- URLs. -->
 
 [1]: https://developers.facebook.com/docs/ios/ios9#whitelist

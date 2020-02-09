@@ -36,7 +36,7 @@ ms.locfileid: "77057841"
 이 문서에 설명 된 시나리오에서는 사용자에 게 이미 다음과 같은 필수 구성 요소가 있다고 가정 합니다.
 
 * Azure AD 테넌트
-* [하네스 테 넌 트](https://harness.io/pricing/)
+* [하네스 테넌트](https://harness.io/pricing/)
 * *관리자* 권한이 있는 도구의 사용자 계정
 
 ## <a name="assign-users-to-harness"></a>사용자를 도구에 할당
@@ -106,7 +106,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위한 도구를 구성 
 > [도구 Single Sign-On 자습서](https://docs.microsoft.com/azure/active-directory/saas-apps/harness-tutorial)의 지침에 따라 도구에 SAML 기반 Single Sign-On를 사용 하도록 선택할 수도 있습니다. 자동 사용자 프로 비전에 관계 없이 Single Sign-On를 구성할 수 있습니다. 하지만 이러한 두 가지 기능은 서로 보완적입니다.
 
 > [!NOTE]
-> SCIM 끝점에 대 한 자세한 내용은 도구 [API 키](https://docs.harness.io/article/smloyragsm-api-keys) 문서를 참조 하세요.
+> SCIM 엔드포인트에 대 한 자세한 내용은 도구 [API 키](https://docs.harness.io/article/smloyragsm-api-keys) 문서를 참조 하세요.
 
 Azure AD에서 도구에 대 한 자동 사용자 프로비저닝을 구성 하려면 다음을 수행 합니다.
 
@@ -130,7 +130,7 @@ Azure AD에서 도구에 대 한 자동 사용자 프로비저닝을 구성 하�
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
  
-   a. **테 넌 트 URL** 상자에 **`https://app.harness.io/gateway/api/scim/account/XCPzWkCIQ46ypIu2DeT7yw`** 을 입력 합니다.  
+   a. **테넌트 URL** 상자에 **`https://app.harness.io/gateway/api/scim/account/XCPzWkCIQ46ypIu2DeT7yw`** 을 입력 합니다.  
    b. **비밀 토큰** 상자에 "프로 비전을 위한 도구 설정" 섹션의 6 단계에서 저장 한 Scim 인증 토큰 값을 입력 합니다.  
    c. **연결 테스트** 를 선택 하 여 Azure AD가 하네스에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 사용자의 하네스 계정에 *관리자* 권한이 있는지 확인 한 후 다시 시도 하십시오.
 

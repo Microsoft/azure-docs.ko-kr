@@ -16,14 +16,14 @@ ms.locfileid: "76844482"
 ---
 # <a name="azure-event-grid-event-schema-for-blob-storage"></a>Azure Event Grid Blob Storage에 대한 이벤트 스키마
 
-이 문서에서는 Blob Storage 이벤트에 대한 속성 및 스키마를 제공합니다. 이벤트 스키마에 대 한 소개는 [Azure Event Grid 이벤트 스키마](event-schema.md)를 참조 하세요.
+이 문서에서는 Blob Storage 이벤트에 대한 속성 및 스키마를 제공합니다. 이벤트 스키마에 대한 소개는 [Azure Event Grid 이벤트 스키마](event-schema.md)를 참조 하세요.
 
 샘플 스크립트 및 자습서 목록은 [스토리지 이벤트 원본](event-sources.md#storage)을 참조하세요.
 
 >[!NOTE]
 > Kind **StorageV2 (범용 v2)** 및 **blobstorage** 의 저장소 계정만 이벤트 통합을 지원 합니다. **저장소 (genral 용도의 v1)** 는 Event Grid와의 통합을 지원 *하지* 않습니다.
 
-## <a name="list-of-events-for-blob-rest-apis"></a>Blob REST Api에 대 한 이벤트 목록
+## <a name="list-of-events-for-blob-rest-apis"></a>Blob REST Api에 대한 이벤트 목록
 
 이러한 이벤트는 클라이언트가 Blob REST Api를 호출 하 여 blob을 만들거나 바꾸거나 삭제할 때 트리거됩니다.
 
@@ -33,9 +33,9 @@ ms.locfileid: "76844482"
  |**Microsoft.Storage.BlobDeleted** |Blob이 삭제 될 때 트리거됩니다. <br>특히이 이벤트는 클라이언트가 Blob REST API에서 사용할 수 있는 `DeleteBlob` 작업을 호출할 때 트리거됩니다. |
 
 > [!NOTE]
-> 블록 Blob이 완전히 커밋된 경우에만 **Microsoft. 저장소에 생성** 된 이벤트를 트리거하도록 하려면 `CopyBlob`, `PutBlob`및 `PutBlockList` REST API 호출에 대 한 이벤트를 필터링 합니다. 이러한 API 호출은 데이터가 블록 Blob에 완전히 커밋된 후에만 **Microsoft. 저장소로 생성** 된 이벤트를 트리거합니다. 필터를 만드는 방법에 대 한 자세한 내용은 [Event Grid에 대 한 필터 이벤트](https://docs.microsoft.com/azure/event-grid/how-to-filter-events)를 참조 하세요.
+> 블록 Blob이 완전히 커밋된 경우에만 **Microsoft. 저장소에 생성** 된 이벤트를 트리거하도록 하려면 `CopyBlob`, `PutBlob`및 `PutBlockList` REST API 호출에 대한 이벤트를 필터링 합니다. 이러한 API 호출은 데이터가 블록 Blob에 완전히 커밋된 후에만 **Microsoft. 저장소로 생성** 된 이벤트를 트리거합니다. 필터를 만드는 방법에 대한 자세한 내용은 [Event Grid에 대한 필터 이벤트](https://docs.microsoft.com/azure/event-grid/how-to-filter-events)를 참조 하세요.
 
-## <a name="list-of-the-events-for-azure-data-lake-storage-gen-2-rest-apis"></a>Azure Data Lake Storage Gen 2 REST Api에 대 한 이벤트 목록
+## <a name="list-of-the-events-for-azure-data-lake-storage-gen-2-rest-apis"></a>Azure Data Lake Storage Gen 2 REST Api에 대한 이벤트 목록
 
 이러한 이벤트는 저장소 계정에서 계층적 네임 스페이스를 사용 하도록 설정 하 고 클라이언트는 Azure Data Lake Storage Gen2 REST Api를 호출 하는 경우 트리거됩니다.
 
@@ -49,15 +49,15 @@ ms.locfileid: "76844482"
 |**Microsoft.Storage.DirectoryDeleted**|디렉터리가 삭제 되 면 트리거됩니다. <br>특히이 이벤트는 클라이언트가 Azure Data Lake Storage Gen2 REST API에서 사용할 수 있는 `DeleteDirectory` 작업을 사용 하는 경우 트리거됩니다.|
 
 > [!NOTE]
-> 블록 Blob이 완전히 커밋된 경우에만 **Microsoft. 저장소로 생성** 된 이벤트가 트리거되도록 하려면 `FlushWithClose` REST API 호출에 대 한 이벤트를 필터링 합니다. 이 API 호출은 데이터가 블록 Blob에 완전히 커밋된 후에만 **Microsoft. Storage. BlobCreated** 이벤트를 트리거합니다. 필터를 만드는 방법에 대 한 자세한 내용은 [Event Grid에 대 한 필터 이벤트](https://docs.microsoft.com/azure/event-grid/how-to-filter-events)를 참조 하세요.
+> 블록 Blob이 완전히 커밋된 경우에만 **Microsoft. 저장소로 생성** 된 이벤트가 트리거되도록 하려면 `FlushWithClose` REST API 호출에 대한 이벤트를 필터링 합니다. 이 API 호출은 데이터가 블록 Blob에 완전히 커밋된 후에만 **Microsoft. Storage. BlobCreated** 이벤트를 트리거합니다. 필터를 만드는 방법에 대한 자세한 내용은 [Event Grid에 대한 필터 이벤트](https://docs.microsoft.com/azure/event-grid/how-to-filter-events)를 참조 하세요.
 
 <a id="example-event" />
 
 ## <a name="the-contents-of-an-event-response"></a>이벤트 응답의 내용
 
-이벤트가 트리거될 때 Event Grid 서비스는 해당 이벤트에 대 한 데이터를 구독 끝점으로 보냅니다.
+이벤트가 트리거될 때 Event Grid 서비스는 해당 이벤트에 대한 데이터를 구독 엔드포인트으로 보냅니다.
 
-이 섹션에는 각 blob 저장소 이벤트에 대 한 데이터가 어떻게 표시 되는지 예가 포함 되어 있습니다.
+이 섹션에는 각 blob 저장소 이벤트에 대한 데이터가 어떻게 표시 되는지 예가 포함 되어 있습니다.
 
 ### <a name="microsoftstorageblobcreated-event"></a>Microsoft. 저장소. BlobCreated 이벤트
 
@@ -308,7 +308,7 @@ Blob 저장소 계정에 계층 네임 스페이스가 있는 경우 데이터�
 | 속성 | 유형 | Description |
 | -------- | ---- | ----------- |
 | api | 문자열 | 이벤트를 트리거하는 작업입니다. |
-| clientRequestId | 문자열 | 저장소 API 작업에 대 한 클라이언트 제공 요청 id입니다. 이 id는 로그의 "클라이언트-요청 id" 필드를 사용 하 여 Azure Storage 진단 로그와 상호 연결 하는 데 사용할 수 있으며, "x-y-id" 헤더를 사용 하 여 클라이언트 요청에 제공할 수 있습니다. [로그 형식](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-log-format)을 참조하세요. |
+| clientRequestId | 문자열 | 저장소 API 작업에 대한 클라이언트 제공 요청 id입니다. 이 id는 로그의 "클라이언트-요청 id" 필드를 사용 하 여 Azure Storage 진단 로그와 상호 연결 하는 데 사용할 수 있으며, "x-y-id" 헤더를 사용 하 여 클라이언트 요청에 제공할 수 있습니다. [로그 형식](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-log-format)을 참조하세요. |
 | requestId | 문자열 | 스토리지 API 작업에 대한 서비스에서 생성된 요청 ID입니다. 로그의 "request-id-header" 필드를 사용하여 Azure Storage 진단 로그와의 상관 관계를 지정하는 데 사용할 수 있으며, 'x-ms-request-id' 헤더에서 API 호출을 시작하여 반환됩니다. [로그 형식](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-log-format)을 참조하세요. |
 | eTag | 문자열 | 조건부로 작업을 수행하는 데 사용할 수 있는 값입니다. |
 | contentType | 문자열 | Blob에 대해 지정된 콘텐츠 형식입니다. |

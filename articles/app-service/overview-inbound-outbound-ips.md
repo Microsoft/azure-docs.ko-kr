@@ -1,6 +1,6 @@
 ---
 title: 인바운드/아웃 바운드 IP 주소
-description: Azure App Service에서 인바운드 및 아웃 바운드 IP 주소를 사용 하는 방법, 변경 될 때 그리고 앱에 대 한 주소를 찾는 방법을 알아봅니다.
+description: Azure App Service에서 인바운드 및 아웃 바운드 IP 주소를 사용 하는 방법, 변경 될 때 그리고 앱에 대한 주소를 찾는 방법을 알아봅니다.
 ms.topic: article
 ms.date: 06/06/2019
 ms.custom: seodec18

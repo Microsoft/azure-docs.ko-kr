@@ -22,29 +22,29 @@ ms.locfileid: "75979159"
 
 클라우드 응용 프로그램은 복잡 하며 많은 부분을 이동 하 고 있습니다. 모니터는 응용 프로그램이 정상 상태로 유지 되 고 실행 되도록 하는 데 도움이 되는 데이터를 제공 합니다. 모니터는 잠재적인 문제를 방지 하 고 이전 문제를 해결 하는 데도 도움이 됩니다.
 
-모니터링 데이터를 사용 하 여 응용 프로그램에 대 한 깊은 통찰력을 얻을 수 있습니다. 이 정보는 응용 프로그램 성능 및 유지 관리를 개선 하는 데 도움이 됩니다. 또한 수동 개입이 필요한 작업을 자동화 하는 데 도움이 됩니다.
+모니터링 데이터를 사용 하 여 응용 프로그램에 대한 깊은 통찰력을 얻을 수 있습니다. 이 정보는 응용 프로그램 성능 및 유지 관리를 개선 하는 데 도움이 됩니다. 또한 수동 개입이 필요한 작업을 자동화 하는 데 도움이 됩니다.
 
-Azure Monitor는 대부분의 Azure 서비스에 대 한 기본 수준의 인프라 메트릭과 로그를 제공 합니다. Azure 진단 로그는 리소스에서 내보내며, 해당 리소스의 작업에 대 한 풍부 하 고 빈번한 데이터를 제공 합니다. 및 Azure Data Factory 모니터에서 진단 로그를 기록 합니다.
+Azure Monitor는 대부분의 Azure 서비스에 대한 기본 수준의 인프라 메트릭과 로그를 제공 합니다. Azure 진단 로그는 리소스에서 내보내며, 해당 리소스의 작업에 대한 풍부 하 고 빈번한 데이터를 제공 합니다. 및 Azure Data Factory 모니터에서 진단 로그를 기록 합니다.
 
 자세한 내용은 [Azure Monitor 개요](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor)를 참조 하세요.
 
 ## <a name="keeping-azure-data-factory-data"></a>Azure Data Factory 데이터 유지
 
-Data Factory은 파이프라인 실행 데이터를 45 일간만 저장 합니다. 데이터를 더 오랜 시간 동안 유지 하려면 모니터를 사용 합니다. 모니터를 사용 하 여 분석을 위해 진단 로그를 라우팅할 수 있습니다. 선택한 기간에 대 한 팩터리 정보를 갖도록 저장소 계정에 보관할 수도 있습니다.
+Data Factory은 파이프라인 실행 데이터를 45 일간만 저장 합니다. 데이터를 더 오랜 시간 동안 유지 하려면 모니터를 사용 합니다. 모니터를 사용 하 여 분석을 위해 진단 로그를 라우팅할 수 있습니다. 선택한 기간에 대한 팩터리 정보를 갖도록 저장소 계정에 보관할 수도 있습니다.
 
 ## <a name="diagnostic-logs"></a>진단 로그
 
 * 감사 또는 수동 검사를 위해 저장소 계정에 진단 로그를 저장 합니다. 진단 설정을 사용 하 여 보존 기간 (일)을 지정할 수 있습니다.
-* 로그를 Azure Event Hubs로 스트리밍합니다. 로그는 파트너 서비스 또는 Power BI와 같은 사용자 지정 분석 솔루션에 대 한 입력이 됩니다.
+* 로그를 Azure Event Hubs로 스트리밍합니다. 로그는 파트너 서비스 또는 Power BI와 같은 사용자 지정 분석 솔루션에 대한 입력이 됩니다.
 * Log Analytics를 사용 하 여 로그를 분석 합니다.
 
-로그를 내보내는 리소스의 구독에 없는 저장소 계정 또는 이벤트 허브 네임 스페이스를 사용할 수 있습니다. 설정을 구성 하는 사용자에 게 두 구독에 대 한 적절 한 RBAC (역할 기반 액세스 제어) 액세스 권한이 있어야 합니다.
+로그를 내보내는 리소스의 구독에 없는 저장소 계정 또는 이벤트 허브 네임 스페이스를 사용할 수 있습니다. 설정을 구성 하는 사용자에 게 두 구독에 대한 적절 한 RBAC (역할 기반 액세스 제어) 액세스 권한이 있어야 합니다.
 
 ## <a name="set-up-diagnostic-logs"></a>진단 로그 설정
 
 ### <a name="diagnostic-settings"></a>진단 설정
 
-진단 설정을 사용 하 여 비 계산 리소스에 대 한 진단 로그를 구성 합니다. 리소스 컨트롤에 대 한 설정에는 다음과 같은 기능이 있습니다.
+진단 설정을 사용 하 여 비 계산 리소스에 대한 진단 로그를 구성 합니다. 리소스 컨트롤에 대한 설정에는 다음과 같은 기능이 있습니다.
 
 * 진단 로그를 보낼 위치를 지정 합니다. 예를 들면 Azure storage 계정, Azure 이벤트 허브 또는 모니터 로그가 있습니다.
 * 전송 되는 로그 범주를 지정 합니다.
@@ -118,7 +118,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 | **serviceBusRuleId** |String | 진단 로그 스트리밍을 위해 Event Hubs 생성 하려는 service bus 네임 스페이스의 service bus 규칙 ID입니다. 규칙 ID의 형식은 `{service bus resource ID}/authorizationrules/{key name}`입니다.|
 | **workspaceId** | 복합 형식 | 메트릭 시간 조직 및 해당 보존 정책의 배열입니다. 이 속성의 값이 비어 있습니다. |
 |**메트릭**| 호출된 파이프라인에 전달될 파이프라인 실행의 매개 변수 값| 매개 변수 이름을 인수 값에 매핑하는 JSON 개체입니다. |
-| **logs**| 복합 형식| 리소스 종류에 대 한 진단 로그 범주의 이름입니다. 리소스에 대 한 진단 로그 범주의 목록을 가져오려면 진단 설정 가져오기 작업을 수행 합니다. |
+| **logs**| 복합 형식| 리소스 종류에 대한 진단 로그 범주의 이름입니다. 리소스에 대한 진단 로그 범주의 목록을 가져오려면 진단 설정 가져오기 작업을 수행 합니다. |
 | **category**| String| 로그 범주 및 해당 보존 정책의 배열입니다. |
 | **timeGrain** | String | ISO 8601 기간 형식으로 캡처된 메트릭의 세분성입니다. 속성 값은 1 분을 지정 하는 `PT1M`이어야 합니다. |
 | **enabled**| 부울 | 이 리소스에 대해 메트릭 또는 로그 범주의 컬렉션을 사용할 수 있는지 여부를 지정 합니다. |
@@ -176,7 +176,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 }
 ```
 
-#### <a name="get-information-about-diagnostics-settings-in-the-monitor-rest-api"></a>모니터의 진단 설정에 대 한 정보를 가져옵니다 REST API
+#### <a name="get-information-about-diagnostics-settings-in-the-monitor-rest-api"></a>모니터의 진단 설정에 대한 정보를 가져옵니다 REST API
 
 ##### <a name="request"></a>요청
 
@@ -439,7 +439,7 @@ Azure Data Factory 버전 2는 다음 메트릭을 내보냅니다.
 
 모니터와 Data Factory 통합을 사용 하 여 데이터를 모니터로 라우팅할 수 있습니다. 이 통합은 다음과 같은 시나리오에서 유용합니다.
 
-* Data Factory 모니터링을 위해 게시 되는 다양 한 메트릭 집합에 복잡 한 쿼리를 작성 하려고 합니다. 모니터를 통해 이러한 쿼리에 대 한 사용자 지정 경고를 만들 수 있습니다.
+* Data Factory 모니터링을 위해 게시 되는 다양 한 메트릭 집합에 복잡 한 쿼리를 작성 하려고 합니다. 모니터를 통해 이러한 쿼리에 대한 사용자 지정 경고를 만들 수 있습니다.
 
 * 데이터 팩터리를 모니터링하려고 합니다. 여러 데이터 팩터리에서 데이터를 단일 모니터 작업 영역으로 라우팅할 수 있습니다.
 
@@ -449,7 +449,7 @@ Azure Data Factory 버전 2는 다음 메트릭을 내보냅니다.
 
 ### <a name="configure-diagnostic-settings-and-workspace"></a>진단 설정 및 작업 영역 구성
 
-데이터 팩터리에 대 한 진단 설정을 만들거나 추가 합니다.
+데이터 팩터리에 대한 진단 설정을 만들거나 추가 합니다.
 
 1. 포털에서 모니터로 이동 합니다. **설정** > **진단 설정**을 선택 합니다.
 
@@ -469,7 +469,7 @@ Azure Data Factory 버전 2는 다음 메트릭을 내보냅니다.
 
 1. **저장**을 선택합니다.
 
-몇 분 후에이 데이터 팩터리에 대 한 설정 목록에 새 설정이 표시 됩니다. 진단 로그는 새 이벤트 데이터가 생성 되는 즉시 해당 작업 영역으로 스트리밍됩니다. 이벤트가 내보내지는 때와 Log Analytics에 표시 될 때까지 최대 15 분이 경과 될 수 있습니다.
+몇 분 후에이 데이터 팩터리에 대한 설정 목록에 새 설정이 표시 됩니다. 진단 로그는 새 이벤트 데이터가 생성 되는 즉시 해당 작업 영역으로 스트리밍됩니다. 이벤트가 내보내지는 때와 Log Analytics에 표시 될 때까지 최대 15 분이 경과 될 수 있습니다.
 
 * _리소스 특정_ 모드에서 _ADFPipelineRun_, _ADFTriggerRun_및 _adfactivityrun_ 테이블로 Azure Data Factory 흐름의 진단 로그
 * _Azure 진단_ 모드에서 진단 로그는 _AzureDiagnostics_ 테이블로 흐릅니다.
@@ -481,7 +481,7 @@ Azure Data Factory 버전 2는 다음 메트릭을 내보냅니다.
 
 !["Azure Marketplace"으로 이동 하 여 "Analytics 필터"를 입력 하 고 "Azure Data Factory 분석 (미리 보기)"을 선택 합니다.](media/data-factory-monitor-oms/monitor-oms-image3.png)
 
-!["Azure Data Factory 분석 (미리 보기)"에 대 한 세부 정보](media/data-factory-monitor-oms/monitor-oms-image4.png)
+!["Azure Data Factory 분석 (미리 보기)"에 대한 세부 정보](media/data-factory-monitor-oms/monitor-oms-image4.png)
 
 **만들기** 를 선택 하 고 **oms 작업 영역** 및 **oms 작업 영역 설정**을 선택 합니다.
 

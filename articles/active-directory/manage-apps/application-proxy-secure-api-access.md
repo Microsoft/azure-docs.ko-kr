@@ -20,7 +20,7 @@ ms.locfileid: "73063027"
 ---
 # <a name="secure-access-to-on-premises-apis-with-azure-ad-application-proxy"></a>Azure AD 응용 프로그램 프록시를 사용 하 여 온-프레미스 Api에 안전 하 게 액세스
 
-온-프레미스에서 실행 되는 비즈니스 논리 Api가 있거나 클라우드의 가상 컴퓨터에서 호스팅될 수 있습니다. 네이티브 Android, iOS, Mac 또는 Windows 앱은 데이터를 사용 하거나 사용자 조작을 제공 하기 위해 API 끝점과 상호 작용 해야 합니다. Azure AD 응용 프로그램 프록시 및 [ADAL (Azure Active Directory 인증 라이브러리)](/azure/active-directory/develop/active-directory-authentication-libraries) 을 사용 하면 네이티브 앱에서 온-프레미스 api에 안전 하 게 액세스할 수 있습니다. Azure Active Directory 응용 프로그램 프록시는 방화벽 포트를 열고 앱 계층에서 인증 및 권한 부여를 제어 하는 것 보다 더 빠르고 안전한 솔루션입니다. 
+온-프레미스에서 실행 되는 비즈니스 논리 Api가 있거나 클라우드의 가상 컴퓨터에서 호스팅될 수 있습니다. 네이티브 Android, iOS, Mac 또는 Windows 앱은 데이터를 사용 하거나 사용자 조작을 제공 하기 위해 API 엔드포인트과 상호 작용 해야 합니다. Azure AD 응용 프로그램 프록시 및 [ADAL (Azure Active Directory 인증 라이브러리)](/azure/active-directory/develop/active-directory-authentication-libraries) 을 사용 하면 네이티브 앱에서 온-프레미스 api에 안전 하 게 액세스할 수 있습니다. Azure Active Directory 응용 프로그램 프록시는 방화벽 포트를 열고 앱 계층에서 인증 및 권한 부여를 제어 하는 것 보다 더 빠르고 안전한 솔루션입니다. 
 
 이 문서에서는 네이티브 앱이 액세스할 수 있는 web API 서비스를 호스팅하기 위해 Azure AD 응용 프로그램 프록시 솔루션을 설정 하는 과정을 안내 합니다. 
 
@@ -34,7 +34,7 @@ ms.locfileid: "73063027"
 
 ![Azure AD 응용 프로그램 프록시 API 액세스](./media/application-proxy-secure-api-access/overview-publish-api-app-proxy.png)
 
-Azure AD 응용 프로그램 프록시는 솔루션의 백본을 구성 하 고, API 액세스를 위한 공용 끝점으로 작업 하 고, 인증 및 권한 부여를 제공 합니다. [ADAL](/azure/active-directory/develop/active-directory-authentication-libraries) 라이브러리를 사용 하 여 광범위 한 플랫폼에서 api에 액세스할 수 있습니다. 
+Azure AD 응용 프로그램 프록시는 솔루션의 백본을 구성 하 고, API 액세스를 위한 공용 엔드포인트으로 작업 하 고, 인증 및 권한 부여를 제공 합니다. [ADAL](/azure/active-directory/develop/active-directory-authentication-libraries) 라이브러리를 사용 하 여 광범위 한 플랫폼에서 api에 액세스할 수 있습니다. 
 
 Azure AD 응용 프로그램 프록시 인증 및 권한 부여는 Azure AD를 기반으로 구축 되므로 신뢰할 수 있는 장치만 응용 프로그램 프록시를 통해 게시 된 Api에 액세스할 수 있도록 Azure AD 조건부 액세스를 사용할 수 있습니다. Azure AD 조인 또는 데스크톱에 대해 Azure AD 하이브리드 조인 또는 장치에 대 한 Intune 관리를 사용 합니다. Azure Multi-Factor Authentication와 같은 Azure Active Directory Premium 기능과 [Azure Id 보호](/azure/active-directory/active-directory-identityprotection)의 기계 학습 지원 보안을 활용할 수도 있습니다.
 
@@ -157,7 +157,7 @@ AppProxyNativeAppSample 네이티브 앱을 등록 하려면:
    
 Azure Active Directory에 연결 하 고 API 앱 프록시를 호출 하도록 네이티브 앱을 구성 하려면 NativeClient 샘플 앱의 *app.config* 파일에 있는 자리 표시자 값을 Azure AD의 값으로 업데이트 합니다. 
 
-- `<add key="ida:Tenant" value="" />` 필드에 **디렉터리 (테 넌 트) ID** 를 붙여 넣습니다. 앱의 **개요** 페이지에서이 값 (GUID)을 찾아서 복사할 수 있습니다. 
+- `<add key="ida:Tenant" value="" />` 필드에 **디렉터리 (테넌트) ID** 를 붙여 넣습니다. 앱의 **개요** 페이지에서이 값 (GUID)을 찾아서 복사할 수 있습니다. 
   
 - `<add key="ida:ClientId" value="" />` 필드에 AppProxyNativeAppSample **응용 프로그램 (클라이언트) ID** 를 붙여 넣습니다. AppProxyNativeAppSample **개요** 페이지에서이 값 (GUID)을 찾아서 복사할 수 있습니다.
   

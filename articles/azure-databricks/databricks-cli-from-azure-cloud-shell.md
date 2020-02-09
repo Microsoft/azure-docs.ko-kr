@@ -1,6 +1,6 @@
 ---
 title: 'Azure Cloud Shell에서 Databricks CLI 사용 '
-description: Azure Cloud Shell에서 Databricks CLI를 사용 하 여 Azure Databricks에 대 한 작업을 수행 하는 방법에 대해 알아봅니다.
+description: Azure Cloud Shell에서 Databricks CLI를 사용 하 여 Azure Databricks에 대한 작업을 수행 하는 방법에 대해 알아봅니다.
 services: azure-databricks
 author: mamccrea
 ms.reviewer: jasonh

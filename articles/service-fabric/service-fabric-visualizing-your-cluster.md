@@ -37,7 +37,7 @@ Service Fabric Explorer를 데스크톱 애플리케이션으로 다운로드하
 
 ### <a name="running-service-fabric-explorer-from-the-cluster"></a>클러스터에서 Service Fabric Explorer 실행
 
-Service Fabric Explorer는 Service Fabric 클러스터의 HTTP 관리 엔드포인트에도 호스트됩니다. 웹 브라우저에서 SFX를 시작 하려면 브라우저에서 클러스터의 HTTP 관리 끝점 (예: https:\//clusterFQDN: 19080)으로 이동 합니다.
+Service Fabric Explorer는 Service Fabric 클러스터의 HTTP 관리 엔드포인트에도 호스트됩니다. 웹 브라우저에서 SFX를 시작 하려면 브라우저에서 클러스터의 HTTP 관리 엔드포인트 (예: https:\//clusterFQDN: 19080)으로 이동 합니다.
 
 개발자 워크스테이션 설정의 경우 https://localhost:19080/Explorer 로 이동하여 로컬 클러스터에서 Service Fabric Explorer를 시작할 수 있습니다. 이 문서를 참조하여 [개발 환경을 준비](service-fabric-get-started.md)하세요.
 

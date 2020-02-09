@@ -36,8 +36,8 @@ Azure Cloud Shell의 문제 해결에 대해 알려진 해결 방법은 다음�
 
 ### <a name="disabling-cloud-shell-in-a-locked-down-network-environment"></a>잠긴 네트워크 환경에서 Cloud Shell을 사용하지 않도록 설정
 
-- **세부 정보**: 관리자가 사용자를 위해 Cloud Shell에 대한 액세스를 사용하지 않도록 설정할 수 있습니다. Cloud Shell는 거부 될 수 있는 `ux.console.azure.com` 도메인에 대 한 액세스를 활용 하 고, portal.azure.com, shell.azure.com, Visual Studio Code Azure 계정 확장 및 docs.microsoft.com를 비롯 한 Cloud Shell의 진입점에 대 한 액세스를 중지 합니다. 미국 정부 클라우드에서는 entrypoint가 `ux.console.azure.us`됩니다. 해당 하는 shell.azure.us 없습니다.
-- **해결**방법: 네트워크 설정을 통해 사용자 환경으로 `ux.console.azure.com` 또는 `ux.console.azure.us`에 대 한 액세스를 제한 합니다. Cloud Shell 아이콘은 계속 Azure Portal에 있지만 서비스에 성공적으로 연결 되지 않습니다.
+- **세부 정보**: 관리자가 사용자를 위해 Cloud Shell에 대한 액세스를 사용하지 않도록 설정할 수 있습니다. Cloud Shell는 거부 될 수 있는 `ux.console.azure.com` 도메인에 대한 액세스를 활용 하 고, portal.azure.com, shell.azure.com, Visual Studio Code Azure 계정 확장 및 docs.microsoft.com를 비롯 한 Cloud Shell의 진입점에 대한 액세스를 중지 합니다. 미국 정부 클라우드에서는 entrypoint가 `ux.console.azure.us`됩니다. 해당 하는 shell.azure.us 없습니다.
+- **해결**방법: 네트워크 설정을 통해 사용자 환경으로 `ux.console.azure.com` 또는 `ux.console.azure.us`에 대한 액세스를 제한 합니다. Cloud Shell 아이콘은 계속 Azure Portal에 있지만 서비스에 성공적으로 연결 되지 않습니다.
 
 ### <a name="storage-dialog---error-403-requestdisallowedbypolicy"></a>스토리지 대화 상자 - 오류: 403 RequestDisallowedByPolicy
 
@@ -54,7 +54,7 @@ Azure Cloud Shell의 문제 해결에 대해 알려진 해결 방법은 다음�
 - **해결 방법**: *.console.azure.com의 도메인으로 https 요청 및 websocket 요청을 전송할 수 있게 네트워크 설정을 구성했는지 확인합니다.
 
 ### <a name="set-your-cloud-shell-connection-to-support-using-tls-12"></a>TLS 1.2를 사용하여 지원을 위한 Cloud Shell 연결 설정
- - **세부 정보**: Cloud Shell 연결에 대 한 TLS 버전을 정의 하려면 브라우저 관련 설정을 지정 해야 합니다.
+ - **세부 정보**: Cloud Shell 연결에 대한 TLS 버전을 정의 하려면 브라우저 관련 설정을 지정 해야 합니다.
  - **해결 방법**: 브라우저의 보안 설정으로 이동하고 “TLS 1.2 사용” 옆에 있는 확인란을 선택합니다.
 
 ## <a name="bash-troubleshooting"></a>Bash 문제 해결
@@ -89,7 +89,7 @@ Azure Cloud Shell에는 다음과 같이 알려진 제한 사항이 있습니다
 
 ### <a name="quota-limitations"></a>할당량 제한
 
-Azure Cloud Shell는 지역 당 테 넌 트 당 최대 20 명의 동시 사용자 제한이 있습니다. 한도 보다 많은 동시 세션을 열려고 하면 "할당량을 통한 테 넌 트 사용자" 오류가 표시 됩니다. 이 보다 더 많은 세션이 열려 있어야 하는 합법적인 요구 사항이 있는 경우 (예: 교육 세션), 예상 되는 사용량에 앞서 지원에 문의 하 여 할당량 증가를 요청 합니다.
+Azure Cloud Shell는 지역 당 테넌트 당 최대 20 명의 동시 사용자 제한이 있습니다. 한도 보다 많은 동시 세션을 열려고 하면 "할당량을 통한 테넌트 사용자" 오류가 표시 됩니다. 이 보다 더 많은 세션이 열려 있어야 하는 합법적인 요구 사항이 있는 경우 (예: 교육 세션), 예상 되는 사용량에 앞서 지원에 문의 하 여 할당량 증가를 요청 합니다.
 
 Cloud Shell은 무료 서비스로 제공 되며 범용 컴퓨팅 플랫폼이 아닌 Azure 환경을 구성 하는 데 사용 하도록 설계 되었습니다. 과도 한 자동화 된 사용은 Azure 서비스 약관을 위반 하는 것으로 간주 될 수 있으며 Cloud Shell 액세스가 차단 될 수 있습니다.
 

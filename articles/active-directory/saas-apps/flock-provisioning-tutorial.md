@@ -36,7 +36,7 @@ ms.locfileid: "77057889"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트.
-* [Flock 테 넌 트](https://flock.com/pricing/)
+* [Flock 테넌트](https://flock.com/pricing/)
 * 관리자 권한이 있는 Flock의 사용자 계정
 
 ## <a name="assigning-users-to-flock"></a>Flock에 사용자 할당 
@@ -116,7 +116,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위해 Flock를 구성 �
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. 관리자 자격 증명 섹션 아래에서 **테 넌 트 URL** 및 **암호 토큰** 에서 각각 검색 된 `https://api.flock-staging.com/v2/scim` 및 **API 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 Flock에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Flock 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
+5. 관리자 자격 증명 섹션 아래에서 **테넌트 URL** 및 **암호 토큰** 에서 각각 검색 된 `https://api.flock-staging.com/v2/scim` 및 **API 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 Flock에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Flock 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 

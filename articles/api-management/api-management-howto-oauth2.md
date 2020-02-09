@@ -58,7 +58,7 @@ ms.locfileid: "75430686"
 
     원하는 유형을 선택하여 **권한 부여 유형** 을 지정합니다. **인증 코드** 가 지정됩니다.
 
-    **권한 부여 엔드포인트 URL**을 입력합니다. Azure Active Directory의 경우이 URL은 다음 URL과 유사 합니다. 여기서 `<tenant_id>`은 Azure AD 테 넌 트의 ID로 바뀝니다.
+    **권한 부여 엔드포인트 URL**을 입력합니다. Azure Active Directory의 경우이 URL은 다음 URL과 유사 합니다. 여기서 `<tenant_id>`은 Azure AD 테넌트의 ID로 바뀝니다.
 
     `https://login.microsoftonline.com/<tenant_id>/oauth2/authorize`
 

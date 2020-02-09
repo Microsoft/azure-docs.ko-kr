@@ -24,7 +24,7 @@ ms.locfileid: "77016258"
 진단 설정을 사용 하면 현재 방법에 비해 다음과 같은 이점이 있습니다.
 
 - 모든 플랫폼 로그를 수집 하기 위한 일관 된 방법입니다.
-- 여러 구독 및 테 넌 트에 걸쳐 활동 로그를 수집 합니다.
+- 여러 구독 및 테넌트에 걸쳐 활동 로그를 수집 합니다.
 - 컬렉션을 필터링 하 여 특정 범주에 대 한 로그만 수집 합니다.
 - 모든 활동 로그 범주를 수집 합니다. 일부 범주는 레거시 메서드를 사용 하 여 수집 되지 않습니다.
 - 로그 수집에 대 한 대기 시간을 단축 합니다. 진단 설정에 약 1 분만 추가 되는 동안 이전 메서드에는 약 15 분의 대기 시간이 있습니다.
@@ -73,7 +73,7 @@ ms.locfileid: "77016258"
 레거시 컬렉션 메서드를 사용 하는 방법에 대 한 자세한 내용은 다음 문서를 참조 하세요.
 
 - [Azure Monitor의 Log Analytics 작업 영역에서 Azure 활동 로그를 수집 하 고 분석 합니다.](activity-log-collect.md)
-- [Azure Active Directory 테 넌 트에서 Azure 활동 로그를 Azure Monitor으로 수집](activity-log-collect-tenants.md)
+- [Azure Active Directory 테넌트에서 Azure 활동 로그를 Azure Monitor으로 수집](activity-log-collect-tenants.md)
 - [Azure 활동 로그를 storage 또는 Azure Event Hubs로 내보내기](activity-log-export.md)
 
 ## <a name="disable-existing-settings"></a>기존 설정 사용 안 함

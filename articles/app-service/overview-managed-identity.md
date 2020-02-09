@@ -1,6 +1,6 @@
 ---
 title: 관리 ID
-description: Azure App Service 및 Azure Functions에서 관리 id가 작동 하는 방법, 관리 되는 id를 구성 하 고 백 엔드 리소스에 대 한 토큰을 생성 하는 방법에 대해 알아봅니다.
+description: Azure App Service 및 Azure Functions에서 관리 id가 작동 하는 방법, 관리 되는 id를 구성 하 고 백 엔드 리소스에 대한 토큰을 생성 하는 방법에 대해 알아봅니다.
 author: mattchenderson
 ms.topic: article
 ms.date: 10/30/2019
@@ -240,7 +240,7 @@ Azure Resource Manager 템플릿을 사용하여 Azure 리소스 배포를 자�
 > [!IMPORTANT]
 > 애플리케이션의 액세스를 허용하도록 대상 리소스를 구성해야 할 수도 있습니다. 예를 들어 Key Vault에 액세스 하는 토큰을 요청 하는 경우 응용 프로그램의 id를 포함 하는 액세스 정책을 추가 했는지 확인 해야 합니다. 그렇지 않으면 토큰이 포함되어 있더라도 Key Vault 호출이 거부됩니다. Azure Active Directory 토큰을 지원하는 리소스에 대한 자세한 내용은 [Azure AD 인증을 지원하는 Azure 서비스](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication)를 참조하세요.
 
-App Service 및 Azure Functions에서 토큰을 가져오는 간단한 REST 프로토콜이 있습니다. 이는 모든 응용 프로그램 및 언어에 사용할 수 있습니다. .NET 및 Java의 경우 Azure SDK는이 프로토콜에 대 한 추상화를 제공 하 고 로컬 개발 환경을 용이 하 게 합니다.
+App Service 및 Azure Functions에서 토큰을 가져오는 간단한 REST 프로토콜이 있습니다. 이는 모든 응용 프로그램 및 언어에 사용할 수 있습니다. .NET 및 Java의 경우 Azure SDK는이 프로토콜에 대한 추상화를 제공 하 고 로컬 개발 환경을 용이 하 게 합니다.
 
 ### <a name="using-the-rest-protocol"></a>REST 프로토콜 사용
 
@@ -259,7 +259,7 @@ App Service 및 Azure Functions에서 토큰을 가져오는 간단한 REST 프�
 > |clientid|쿼리|(사용자가 할당 되지 않은 경우 선택 사항) 사용할 사용자 할당 id의 ID입니다. 생략하면 시스템 할당 ID가 사용됩니다.|
 
 > [!IMPORTANT]
-> 사용자 할당 id에 대 한 토큰을 가져오려고 시도 하는 경우 `clientid` 속성을 포함 해야 합니다. 그렇지 않으면 토큰 서비스는 시스템 할당 id에 대 한 토큰을 가져오려고 시도 합니다 .이 id는 존재 하지 않을 수도 있고 없을 수도 있습니다.
+> 사용자 할당 id에 대한 토큰을 가져오려고 시도 하는 경우 `clientid` 속성을 포함 해야 합니다. 그렇지 않으면 토큰 서비스는 시스템 할당 id에 대한 토큰을 가져오려고 시도 합니다 .이 id는 존재 하지 않을 수도 있고 없을 수도 있습니다.
 
 성공적인 200 OK 응답에는 다음 속성을 가진 JSON 본문이 포함됩니다.
 
@@ -387,7 +387,7 @@ Microsoft.Azure.Services.AppAuthentication 및 노출하는 작업에 대한 자
 
 Java 응용 프로그램 및 함수의 경우 관리 되는 id를 사용 하는 가장 간단한 방법은 [java 용 AZURE SDK](https://github.com/Azure/azure-sdk-for-java)를 사용 하는 것입니다. 이 섹션에서는 코드에서 이 라이브러리를 시작하는 방법을 보여 줍니다.
 
-1. [AZURE SDK 라이브러리](https://mvnrepository.com/artifact/com.microsoft.azure/azure)에 대 한 참조를 추가 합니다. Maven 프로젝트의 경우 프로젝트 POM 파일의 `dependencies` 섹션에이 코드 조각을 추가할 수 있습니다.
+1. [AZURE SDK 라이브러리](https://mvnrepository.com/artifact/com.microsoft.azure/azure)에 대한 참조를 추가 합니다. Maven 프로젝트의 경우 프로젝트 POM 파일의 `dependencies` 섹션에이 코드 조각을 추가할 수 있습니다.
 
     ```xml
     <dependency>

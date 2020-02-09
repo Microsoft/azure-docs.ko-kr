@@ -36,7 +36,7 @@ ms.locfileid: "77061202"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [Oracle FUSION ERP 테 넌 트](https://www.oracle.com/applications/erp/)입니다.
+* [Oracle FUSION ERP 테넌트](https://www.oracle.com/applications/erp/)입니다.
 * 관리 권한이 있는 Oracle Fusion ERP의 사용자 계정
 
 ## <a name="assign-users-to-oracle-fusion-erp"></a>Oracle Fusion ERP에 사용자 할당 
@@ -98,7 +98,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 Oracle Fusio
 > Oracle fusion erp [single sign-on 자습서](oracle-fusion-erp-tutorial.md)에 제공 된 지침에 따라 ORACLE fusion erp에 대해 SAML 기반 Single Sign-On를 사용 하도록 선택할 수도 있습니다. Single sign-on은 자동 사용자 프로 비전과 독립적으로 구성할 수 있습니다. 단,이 두 가지 기능은 서로 보완적입니다.
 
 > [!NOTE]
-> Oracle Fusion ERP의 SCIM 끝점에 대 한 자세한 내용은 [Oracle 응용 프로그램 클라우드의 일반적인 기능에 대 한 REST API](https://docs.oracle.com/en/cloud/saas/applications-common/18b/farca/index.html)를 참조 하세요.
+> Oracle Fusion ERP의 SCIM 엔드포인트에 대 한 자세한 내용은 [Oracle 응용 프로그램 클라우드의 일반적인 기능에 대 한 REST API](https://docs.oracle.com/en/cloud/saas/applications-common/18b/farca/index.html)를 참조 하세요.
 
 ### <a name="to-configure-automatic-user-provisioning-for-fuze-in-azure-ad"></a>Azure AD에서 Fuze에 대 한 자동 사용자 프로 비전을 구성 하려면:
 
@@ -118,7 +118,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 Oracle Fusio
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에 있는 **테 넌 트 URL**에 `https://ejlv.fa.em2.oraclecloud.com/hcmRestApi/scim/`을 입력 합니다. 이전에 **관리자** 사용자 이름 및 **암호** 필드에 검색 한 관리자 사용자 이름 및 암호를 입력 합니다. Azure AD와 Oracle Fusion ERP 간의 **연결 테스트** 를 클릭 합니다. 
+5. **관리자 자격 증명** 섹션 아래에 있는 **테넌트 URL**에 `https://ejlv.fa.em2.oraclecloud.com/hcmRestApi/scim/`을 입력 합니다. 이전에 **관리자** 사용자 이름 및 **암호** 필드에 검색 한 관리자 사용자 이름 및 암호를 입력 합니다. Azure AD와 Oracle Fusion ERP 간의 **연결 테스트** 를 클릭 합니다. 
 
     ![Oracle Fusion ERP 추가 SCIM](media/oracle-fusion-erp-provisioning-tutorial/admin.png)
 
@@ -164,7 +164,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 Oracle Fusio
 
 ## <a name="connector-limitations"></a>커넥터 제한 사항
 
-* Oracle Fusion ERP는 SCIM 끝점에 대 한 기본 인증만 지원 합니다.
+* Oracle Fusion ERP는 SCIM 엔드포인트에 대 한 기본 인증만 지원 합니다.
 * Oracle Fusion ERP는 그룹 프로 비전을 지원 하지 않습니다.
 * Oracle Fusion ERP의 역할은 Azure AD의 그룹에 매핑됩니다. Azure AD에서 Oracle Fusion ERP의 사용자에 게 역할을 할당 하려면 Oracle Fusion ERP에서 역할 다음에 명명 된 원하는 Azure AD 그룹에 사용자를 할당 해야 합니다.
 

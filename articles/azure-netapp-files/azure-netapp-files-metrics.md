@@ -53,16 +53,16 @@ Azure NetApp Files는 할당된 스토리지, 실제 스토리지 사용량, 볼
 - *볼륨 스냅샷 크기*   
    볼륨의 스냅숏에 사용 되는 증분 논리적 공간  
 
-## <a name="performance-metrics-for-volumes"></a>볼륨에 대 한 성능 메트릭
+## <a name="performance-metrics-for-volumes"></a>볼륨에 대한 성능 메트릭
 
 - *AverageReadLatency*   
     볼륨 읽기의 평균 시간 (밀리초)입니다.
 - *AverageWriteLatency*   
-    볼륨에서 쓰기에 대 한 평균 시간 (밀리초)
+    볼륨에서 쓰기에 대한 평균 시간 (밀리초)
 - *ReadIops*   
     볼륨에서 초당 읽기 수입니다.
 - *WriteIops*   
-    초당 볼륨에 대 한 쓰기 수입니다.
+    초당 볼륨에 대한 쓰기 수입니다.
 
 ## <a name="next-steps"></a>다음 단계
 

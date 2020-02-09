@@ -1,5 +1,5 @@
 ---
-title: 다중 테 넌 트 응용 프로그램에 대해 SSO를 사용 하도록 설정
+title: 다중 테넌트 응용 프로그램에 대해 SSO를 사용 하도록 설정
 description: Azure active Directory와 통합에 독립 소프트웨어 공급 업체에 대 한 지침
 services: active-directory
 author: barbaraselden
@@ -19,9 +19,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 07/11/2019
 ms.locfileid: "67795174"
 ---
-# <a name="enable-single-sign-on-for-your-multi-tenant-application"></a>다중 테 넌 트 응용 프로그램에서 Single Sign-on을 사용 하도록 설정  
+# <a name="enable-single-sign-on-for-your-multi-tenant-application"></a>다중 테넌트 응용 프로그램에서 Single Sign-on을 사용 하도록 설정  
 
-구매 또는 구독을 통해 다른 회사에서 사용 하 여 응용 프로그램을 제공 하는 경우 응용 프로그램이 사용할 수 있도록 자신의 Azure 테 넌 트 내의 고객에 게 합니다. 이 다중 테 넌 트 응용 프로그램 만들기 라고 합니다. 이 개념의 개요를 참조 하세요 [Azure에서 다중 테 넌 트 응용 프로그램](https://docs.microsoft.com/azure/dotnet-develop-multitenant-applications) 하 고 [Azure Active Directory의 테 넌 트](../develop/single-and-multi-tenant-apps.md)합니다.
+구매 또는 구독을 통해 다른 회사에서 사용 하 여 응용 프로그램을 제공 하는 경우 응용 프로그램이 사용할 수 있도록 자신의 Azure 테넌트 내의 고객에 게 합니다. 이 다중 테넌트 응용 프로그램 만들기 라고 합니다. 이 개념의 개요를 참조 하세요 [Azure에서 다중 테넌트 응용 프로그램](https://docs.microsoft.com/azure/dotnet-develop-multitenant-applications) 하 고 [Azure Active Directory의 테넌트](../develop/single-and-multi-tenant-apps.md)합니다.
 
 ## <a name="what-is-single-sign-on"></a>Single Sign-on 이란
 
@@ -29,7 +29,7 @@ single sign-on (SSO) 사용자가 Azure Active Directory 및 다른 id를 사용
 
 ## <a name="why-enable-single-sign-on-in-your-application"></a>응용 프로그램에서 Single Sign-on 사용 이유?
 
-다중 테 넌 트 응용 프로그램에서 SSO를 사용 하도록 설정 하면 많은 장점이 있습니다. 응용 프로그램에 SSO를 사용 하는 경우
+다중 테넌트 응용 프로그램에서 SSO를 사용 하도록 설정 하면 많은 장점이 있습니다. 응용 프로그램에 SSO를 사용 하는 경우
 
 * 앱이 수백만 개 조직 Azure Active Directory를 사용 하 여 검색할 수 있는 Azure Marketplace에서 응용 프로그램을 나열할 수 있습니다.
   * 통해 신속 하 게 Azure AD를 사용 하 여 응용 프로그램을 구성할 수 있습니다.
@@ -54,11 +54,11 @@ single sign-on (SSO) 사용자가 Azure Active Directory 및 다른 id를 사용
 
 ## <a name="how-to-enable-single-sign-on-in-your-published-application"></a>게시 된 응용 프로그램에서 Single Sign-on을 사용 하도록 설정 하는 방법
 
-1. [다중 테 넌 트 응용 프로그램에 대 한 올바른 페더레이션 프로토콜을 선택](isv-choose-multi-tenant-federation.md)합니다.
+1. [다중 테넌트 응용 프로그램에 대 한 올바른 페더레이션 프로토콜을 선택](isv-choose-multi-tenant-federation.md)합니다.
 1. 응용 프로그램에서 SSO 구현
    - 참조 [인증 패턴에 대 한 지침](../develop/v2-app-types.md)
    - 참조 [Azure active Directory 코드 샘플](../develop/sample-v2-code.md) OIDC 및 OAuth 프로토콜에 대 한
-1. [Azure 테 넌 트 만들기](isv-tenant-multi-tenant-app.md) 응용 프로그램 및 테스트
+1. [Azure 테넌트 만들기](isv-tenant-multi-tenant-app.md) 응용 프로그램 및 테스트
 1. [만들기 및 게시 사이트에 대 한 SSO 설명서](isv-create-sso-documentation.md)합니다.
 1. [응용 프로그램 목록을 제출](https://microsoft.sharepoint.com/teams/apponboarding/Apps/SitePages/Default.aspx) 및 Microsoft 사이트에서 문서를 만들려면 Microsoft와 파트너입니다.
 1. [Microsoft 파트너 네트워크 (무료)에 가입으로 서, 마케팅 계획을 만들고](https://partner.microsoft.com/en-us/explore/commercial#gtm)합니다.

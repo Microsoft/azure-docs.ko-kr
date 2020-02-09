@@ -24,7 +24,7 @@ ms.locfileid: "76695350"
 
 MSAL.NET(.NET용 Microsoft 인증 라이브러리) 및 ADAL.NET(.NET용 Azure AD 인증 라이브러리)은 모두 Azure AD 엔터티를 인증하고 Azure AD에서 토큰을 요청하는 데 사용됩니다. 지금까지 대부분의 개발자는 ADAL(Azure AD 인증 라이브러리)을 사용하는 토큰을 요청하여 Azure AD ID(회사 및 학교 계정)를 인증하기 위해 개발자 플랫폼(v1.0)에서 Azure AD를 사용했습니다. MSAL 사용:
 
-- Microsoft id 플랫폼 끝점을 사용 하 여 광범위 한 Microsoft id 집합 (Azure AD id 및 Microsoft 계정, Azure AD B2C을 통해 소셜 및 로컬 계정)을 인증할 수 있습니다.
+- Microsoft id 플랫폼 엔드포인트을 사용 하 여 광범위 한 Microsoft id 집합 (Azure AD id 및 Microsoft 계정, Azure AD B2C을 통해 소셜 및 로컬 계정)을 인증할 수 있습니다.
 - 사용자는 최상의 single sign-on 환경을 이용할 수 있습니다.
 - 응용 프로그램에서 증분 동의를 사용 하 고 조건부 액세스를 보다 쉽게 지원할 수 있습니다.
 - 혁신을 통해 혜택을 누릴 수 있습니다.

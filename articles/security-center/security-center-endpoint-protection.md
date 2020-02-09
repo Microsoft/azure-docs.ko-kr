@@ -137,13 +137,13 @@ Azure Security Center은 [지원 되](security-center-services.md#supported-endp
 
 * 검색 날짜 찾기: **HKLM: \ Software\McAfee\Endpoint\AV\ODS-Value "LastFullScanOdsRunTime" > = 7 일**
 
-## <a name="mcafee-endpoint-security-for-linux-threat-prevention"></a>Linux 위협 방지를 위한 McAfee 끝점 보안 
+## <a name="mcafee-endpoint-security-for-linux-threat-prevention"></a>Linux 위협 방지를 위한 McAfee 엔드포인트 보안 
 
 다음 검사 중 하나가 충족 되지 않으면 **"가상 컴퓨터에 endpoint protection 솔루션 설치"** 를 권장 Security Center.
 
 - 파일 **/opt/isec/ens/threatprevention/bin/isecav** 종료 
 
-- **"/opt/isec/ens/threatprevention/bin/isecav--version"** 출력: **McAfee Name = Mcafee 끝점 보안 Linux 위협 방지 및 mcafee 버전 > = 10**
+- **"/opt/isec/ens/threatprevention/bin/isecav--version"** 출력: **McAfee Name = Mcafee 엔드포인트 보안 Linux 위협 방지 및 mcafee 버전 > = 10**
 
 다음 검사 중 하나라도 충족 되지 않으면 **"컴퓨터에서 endpoint protection 상태 문제 해결"** 을 권장 Security Center.
 

@@ -1,6 +1,6 @@
 ---
 title: Data Factory에 대한 관리 ID
-description: Azure Data Factory에 대 한 관리 id에 대해 알아봅니다.
+description: Azure Data Factory에 대한 관리 id에 대해 알아봅니다.
 services: data-factory
 author: linda33wj
 manager: shwang
@@ -27,7 +27,7 @@ ms.locfileid: "76121780"
 
 데이터 팩터리를 만들 때 팩터리 생성과 함께 관리 되는 id를 만들 수 있습니다. 관리 id는 Azure Active Directory에 등록 된 관리 되는 응용 프로그램으로,이 특정 데이터 팩터리를 나타냅니다.
 
-Data Factory에 대 한 관리 id는 다음과 같은 기능을 제공 합니다.
+Data Factory에 대한 관리 id는 다음과 같은 기능을 제공 합니다.
 
 - [Azure Key Vault에 자격 증명을 저장](store-credentials-in-key-vault.md)합니다 .이 경우 데이터 팩터리 관리 id는 Azure Key Vault 인증에 사용 됩니다.
 - [Azure Blob Storage](connector-azure-blob-storage.md), [Azure Data Lake Storage Gen1](connector-azure-data-lake-store.md), [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage.md), [Azure SQL Database](connector-azure-sql-database.md) 및 [Azure SQL Data Warehouse](connector-azure-sql-data-warehouse.md)를 포함하는 커넥터.
@@ -35,7 +35,7 @@ Data Factory에 대 한 관리 id는 다음과 같은 기능을 제공 합니다
 
 ## <a name="generate-managed-identity"></a>관리 id 생성
 
-Data Factory에 대 한 관리 id는 다음과 같이 생성 됩니다.
+Data Factory에 대한 관리 id는 다음과 같이 생성 됩니다.
 
 - **Azure Portal 또는 PowerShell**을 통해 데이터 팩터리를 만들 때 관리 id는 항상 자동으로 만들어집니다.
 - **SDK**를 통해 데이터 팩터리를 만들 때 관리 id는 생성을 위해 팩터리 개체에 "identity = new FactoryIdentity ()"를 지정 하는 경우에만 생성 됩니다. [.NET 빠른 시작 - 데이터 팩터리 만들기](quickstart-create-data-factory-dot-net.md#create-a-data-factory)에서 예제를 참조하세요.
@@ -158,7 +158,7 @@ Azure Portal에서 또는 프로그래밍 방식으로 관리 되는 id를 검�
 데이터 팩터리 > 속성 > Azure Portal에서 관리 되는 id 정보를 찾을 수 있습니다.
 
 - 관리 Id 개체 ID
-- 관리 Id 테 넌 트
+- 관리 Id 테넌트
 - 관리 Id 응용 프로그램 ID
 
 관리 id 정보는 Azure Blob, Azure Data Lake Storage, Azure Key Vault 등 관리 되는 id 인증을 지 원하는 연결 된 서비스를 만들 때에도 표시 됩니다.
@@ -167,7 +167,7 @@ Azure Portal에서 또는 프로그래밍 방식으로 관리 되는 id를 검�
 
 ### <a name="retrieve-managed-identity-using-powershell"></a>PowerShell을 사용 하 여 관리 되는 id 검색
 
-다음과 같이 특정 데이터 팩터리를 가져올 때 관리 id 보안 주체 ID 및 테 넌 트 ID가 반환 됩니다. **Principalid** 를 사용 하 여 액세스 권한을 부여 합니다.
+다음과 같이 특정 데이터 팩터리를 가져올 때 관리 id 보안 주체 ID 및 테넌트 ID가 반환 됩니다. **Principalid** 를 사용 하 여 액세스 권한을 부여 합니다.
 
 ```powershell
 PS C:\WINDOWS\system32> (Get-AzDataFactoryV2 -ResourceGroupName <resourceGroupName> -Name <dataFactoryName>).Identity
@@ -195,4 +195,4 @@ Type                  : ServicePrincipal
 - [Azure Key Vault에 자격 증명 저장](store-credentials-in-key-vault.md)
 - [Azure 리소스 인증을 위해 관리 ID를 사용하여 Azure Data Lake Store 간에 데이터 복사](connector-azure-data-lake-store.md)
 
-Azure 리소스에 대 한 관리 되는 id에 대 한 자세한 배경 정보는 Azure 리소스에 대 한 [관리 Id 개요](/azure/active-directory/managed-identities-azure-resources/overview) 를 참조 하세요. 
+Azure 리소스에 대한 관리 되는 id에 대한 자세한 배경 정보는 Azure 리소스에 대한 [관리 Id 개요](/azure/active-directory/managed-identities-azure-resources/overview) 를 참조 하세요. 

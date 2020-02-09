@@ -29,7 +29,7 @@ ms.locfileid: "75768506"
 ## <a name="prerequisites"></a>필수 조건
 
 - 다음 빠른 시작 [Azure API Management 인스턴스 만들기](get-started-create-service-instance.md)를 완료합니다.
-- Docker 환경을 만듭니다. [데스크톱에 대 한 Docker](https://www.docker.com/products/docker-desktop) 는 개발 및 평가를 위해 좋은 옵션입니다. Docker 자체에 대 한 모든 Docker 버전, 해당 기능 및 포괄적인 설명서에 대 한 자세한 내용은 [docker 설명서](https://docs.docker.com) 를 참조 하세요.
+- Docker 환경을 만듭니다. [데스크톱에 대한 Docker](https://www.docker.com/products/docker-desktop) 는 개발 및 평가를 위해 좋은 옵션입니다. Docker 자체에 대한 모든 Docker 버전, 해당 기능 및 포괄적인 설명서에 대한 자세한 내용은 [docker 설명서](https://docs.docker.com) 를 참조 하세요.
 - [API Management 인스턴스에서 게이트웨이 리소스 프로 비전](api-management-howto-provision-self-hosted-gateway.md)
 
 > [!NOTE]

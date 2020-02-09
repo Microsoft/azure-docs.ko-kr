@@ -36,7 +36,7 @@ ms.locfileid: "77064158"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [ZPA (Zscaler Private Access) 테 넌 트](https://www.zscaler.com/pricing-and-plans#contact-us)
+* [ZPA (Zscaler Private Access) 테넌트](https://www.zscaler.com/pricing-and-plans#contact-us)
 * 관리자 권한이 있는 ZPA (Zscaler Private Access)의 사용자 계정
 
 ## <a name="assigning-users-to-zscaler-private-access-zpa"></a>ZPA (Zscaler Private Access)에 사용자 할당
@@ -82,11 +82,11 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
     ![ZPA (Zscaler Private Access) 토큰 만들기](media/zscaler-private-access-provisioning-tutorial/token.png)
 
-8.  **테 넌 트 URL** 을 찾으려면 **관리 > IdP 구성**으로 이동 합니다. 페이지에 나열 된 새로 추가 된 IdP 구성의 이름을 클릭 합니다.
+8.  **테넌트 URL** 을 찾으려면 **관리 > IdP 구성**으로 이동 합니다. 페이지에 나열 된 새로 추가 된 IdP 구성의 이름을 클릭 합니다.
 
     ![ZPA (Zscaler Private Access) Idp 이름](media/zscaler-private-access-provisioning-tutorial/idpname.png)
 
-9.  아래로 스크롤하여 페이지 끝에 **Scim 서비스 공급자 끝점** 을 표시 합니다. **Scim 서비스 공급자 끝점**을 복사 합니다. 이 값은 Azure Portal에서 ZPA (Zscaler Private Access) 응용 프로그램의 프로 비전 탭에 있는 테 넌 트 URL 필드에 입력 됩니다.
+9.  아래로 스크롤하여 페이지 끝에 **Scim 서비스 공급자 엔드포인트** 을 표시 합니다. **Scim 서비스 공급자 엔드포인트**을 복사 합니다. 이 값은 Azure Portal에서 ZPA (Zscaler Private Access) 응용 프로그램의 프로 비전 탭에 있는 테넌트 URL 필드에 입력 됩니다.
 
     ![ZPA (Zscaler Private Access) SCIM URL](media/zscaler-private-access-provisioning-tutorial/tenanturl.png)
 
@@ -121,7 +121,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위해 ZPA (Zscaler Priv
 > [ZPA (Zscaler Private access) single sign-on 자습서](https://docs.microsoft.com/azure/active-directory/saas-apps/zscalerprivateaccess-tutorial)에 제공 된 지침에 따라 Zpa (Zscaler private access)에 SAML 기반 Single Sign-On를 사용 하도록 선택할 수도 있습니다. Single sign-on은 자동 사용자 프로 비전과 독립적으로 구성할 수 있습니다. 하지만이 두 가지 기능은 서로 보완적입니다.
 
 > [!NOTE]
-> Zscaler 개인 액세스의 SCIM 끝점에 대 한 자세한 내용은 [다음](https://www.zscaler.com/partners/microsoft)을 참조 하세요.
+> Zscaler 개인 액세스의 SCIM 엔드포인트에 대 한 자세한 내용은 [다음](https://www.zscaler.com/partners/microsoft)을 참조 하세요.
 
 ### <a name="to-configure-automatic-user-provisioning-for-zscaler-private-access-zpa-in-azure-ad"></a>Azure AD에서 ZPA (Zscaler Private Access)에 대 한 자동 사용자 프로 비전을 구성 하려면:
 
@@ -141,7 +141,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위해 ZPA (Zscaler Priv
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에서 이전에 **테 넌 트 URL**에서 검색 된 **scim 서비스 공급자 끝점** 값을 입력 합니다. 이전에 **비밀 토큰**에서 검색 된 **전달자 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 Zpa (Zscaler Private Access)에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 ZPA (Zscaler Private Access) 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
+5. **관리자 자격 증명** 섹션 아래에서 이전에 **테넌트 URL**에서 검색 된 **scim 서비스 공급자 엔드포인트** 값을 입력 합니다. 이전에 **비밀 토큰**에서 검색 된 **전달자 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 Zpa (Zscaler Private Access)에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 ZPA (Zscaler Private Access) 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 

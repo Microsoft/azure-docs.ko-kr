@@ -54,7 +54,7 @@ ms.locfileid: "76962495"
   * 권한 있는 인증 관리자
 
 * 평가판 구독에서 30일이 경과한 경우 또는
-* Azure AD 테 넌 트에 대해 사용자 지정 도메인 (예: *contoso.com*;)이 구성 되었습니다. 디스크나
+* Azure AD 테넌트에 대해 사용자 지정 도메인 (예: *contoso.com*;)이 구성 되었습니다. 디스크나
 * Azure AD Connect가 온-프레미스 디렉터리에서 ID를 동기화하는 경우
 
 ### <a name="exceptions"></a>예외
@@ -62,7 +62,7 @@ ms.locfileid: "76962495"
 한 게이트 정책은 전자 메일 주소 *또는* 전화 번호 등, 한 가지 인증 데이터를 요구합니다. 다음과 같은 경우에 한 게이트 정책이 적용됩니다.
 
 * 평가판 구독의 처음 30일 이내인 경우 또는
-* 사용자 지정 도메인은 Azure AD 테 넌 트에 대해 구성 되지 않았으므로 기본 * *. onmicrosoft.com*을 사용 합니다. 기본 * *. onmicrosoft.com* 도메인은 프로덕션에 사용 하지 않는 것이 좋습니다. 하거나
+* 사용자 지정 도메인은 Azure AD 테넌트에 대해 구성 되지 않았으므로 기본 * *. onmicrosoft.com*을 사용 합니다. 기본 * *. onmicrosoft.com* 도메인은 프로덕션에 사용 하지 않는 것이 좋습니다. 하거나
 * Azure AD Connect가 ID를 동기화하지 않는 경우
 
 ## <a name="userprincipalname-policies-that-apply-to-all-user-accounts"></a>모든 사용자 계정에 적용되는 UserPrincipalName 정책

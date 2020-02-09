@@ -43,7 +43,7 @@ Automation 계정 내에서 **원본 제어** 를 선택 하 고 **+ 추가** �
 
 |속성  |Description  |
 |---------|---------|
-|소스 제어 이름     | 소스 컨트롤에 대 한 친숙 한 이름입니다. *이 이름에는 문자와 숫자만 포함 되어야 합니다.*        |
+|소스 제어 이름     | 소스 컨트롤에 대한 친숙 한 이름입니다. *이 이름에는 문자와 숫자만 포함 되어야 합니다.*        |
 |소스 제어 형식     | 소스 제어 소스의 형식입니다. 사용 가능한 옵션은 다음과 같습니다.</br> GitHub</br>Azure Repos (Git)</br> Azure Repos (TFVC)        |
 |리포지토리     | 리포지토리 또는 프로젝트의 이름입니다. 처음 200 리포지토리가 반환 됩니다. 리포지토리를 검색 하려면 필드에 이름을 입력 하 고 **GitHub에서 검색**을 클릭 합니다.|
 |Branch     | 소스 파일을 끌어올 분기입니다. TFVC 소스 제어 형식에 대해 분기 대상 지정을 사용할 수 없습니다.          |
@@ -87,7 +87,7 @@ New-AzureRmAutomationSourceControl -Name SCGitHub -RepoUrl https://github.com/<a
 
 #### <a name="github"></a>GitHub
 
-GitHub에서 개인용 액세스 토큰을 만드는 방법에 대 한 자세한 내용은 [명령줄에 대 한 개인용 액세스 토큰 만들기](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)를 참조 하세요.
+GitHub에서 개인용 액세스 토큰을 만드는 방법에 대한 자세한 내용은 [명령줄에 대한 개인용 액세스 토큰 만들기](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)를 참조 하세요.
 
 |범위  |Description  |
 |---------|---------|
@@ -101,7 +101,7 @@ GitHub에서 개인용 액세스 토큰을 만드는 방법에 대 한 자세한
 
 #### <a name="azure-repos"></a>Azure Repos
 
-Azure Repos에서 개인용 액세스 토큰을 만드는 방법에 대 한 자세한 내용은 [개인 액세스 토큰을 사용 하 여 액세스 인증](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate)을 참조 하세요.
+Azure Repos에서 개인용 액세스 토큰을 만드는 방법에 대한 자세한 내용은 [개인 액세스 토큰을 사용 하 여 액세스 인증](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate)을 참조 하세요.
 
 |범위  |
 |---------|

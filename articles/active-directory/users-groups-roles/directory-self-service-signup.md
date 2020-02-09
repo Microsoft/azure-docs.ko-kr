@@ -1,6 +1,6 @@
 ---
 title: 전자 메일 확인 사용자에 대 한 셀프 서비스 등록-Azure AD | Microsoft Docs
-description: Azure Active Directory (Azure AD) 테 넌 트에서 셀프 서비스 등록 사용
+description: Azure Active Directory (Azure AD) 테넌트에서 셀프 서비스 등록 사용
 services: active-directory
 documentationcenter: ''
 author: curtand

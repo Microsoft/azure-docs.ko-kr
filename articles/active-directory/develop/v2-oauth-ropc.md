@@ -33,7 +33,7 @@ Microsoft id 플랫폼은 응용 프로그램이 암호를 직접 처리 하 여
 
 > [!IMPORTANT]
 >
-> * Microsoft id 플랫폼 끝점은 개인 계정이 아닌 Azure AD 테 넌 트에 대해 ROPC만 지원 합니다. 이는 테넌트별 엔드포인트(`https://login.microsoftonline.com/{TenantId_or_Name}`) 또는 `organizations` 엔드포인트를 사용해야 함을 의미합니다.
+> * Microsoft id 플랫폼 엔드포인트은 개인 계정이 아닌 Azure AD 테넌트에 대해 ROPC만 지원 합니다. 이는 테넌트별 엔드포인트(`https://login.microsoftonline.com/{TenantId_or_Name}`) 또는 `organizations` 엔드포인트를 사용해야 함을 의미합니다.
 > * Azure AD 테넌트에 초대된 개인 계정은 ROPC를 사용할 수 없습니다.
 > * 암호가 없는 계정은 ROPC를 통해 로그인할 수 없습니다. 이 경우 앱에 다른 흐름을 사용하는 것이 좋습니다.
 > * 사용자가 MFA(Multi-Factor Authentication)를 사용하여 애플리케이션에 로그인해야 하는 경우 사용자가 차단됩니다.
@@ -112,9 +112,9 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 | 오류 | Description | 클라이언트 작업 |
 |------ | ----------- | -------------|
 | `invalid_grant` | 인증에 실패했습니다. | 자격 증명이 올바르지 않거나 클라이언트에 요청된 범위에 대한 동의가 없습니다. 범위가 부여 되지 않은 경우 `consent_required` 오류가 반환 됩니다. 이 오류가 발생하면 클라이언트는 WebView 또는 브라우저를 사용하여 대화형 프롬프트로 사용자를 전송해야 합니다. |
-| `invalid_request` | 요청이 잘못 구성되었습니다. | 권한 부여 형식은 `/common` 또는 `/consumers` 인증 컨텍스트에서 지원 되지 않습니다.  대신 `/organizations` 또는 테 넌 트 ID를 사용 합니다. |
+| `invalid_request` | 요청이 잘못 구성되었습니다. | 권한 부여 형식은 `/common` 또는 `/consumers` 인증 컨텍스트에서 지원 되지 않습니다.  대신 `/organizations` 또는 테넌트 ID를 사용 합니다. |
 
 ## <a name="learn-more"></a>자세히 알아보기
 
 * [샘플 콘솔 애플리케이션](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2)을 사용하여 직접 ROPC를 사용해 보세요.
-* V2.0 끝점을 사용 해야 하는지 여부를 확인 하려면 [Microsoft id 플랫폼 제한 사항](active-directory-v2-limitations.md)을 참조 하세요.
+* V2.0 엔드포인트을 사용 해야 하는지 여부를 확인 하려면 [Microsoft id 플랫폼 제한 사항](active-directory-v2-limitations.md)을 참조 하세요.

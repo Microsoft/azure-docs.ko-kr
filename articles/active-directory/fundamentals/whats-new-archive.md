@@ -70,15 +70,15 @@ Azure Active Directory의 새로운 기능 릴리스 정보는 다음에 대 한
 
 ---
 
-### <a name="app-only-tokens-now-require-the-client-app-to-exist-in-the-resource-tenant"></a>이제 앱 전용 토큰에는 클라이언트 앱이 리소스 테 넌 트에 있어야 합니다.
+### <a name="app-only-tokens-now-require-the-client-app-to-exist-in-the-resource-tenant"></a>이제 앱 전용 토큰에는 클라이언트 앱이 리소스 테넌트에 있어야 합니다.
 
 **유형:** 고정  
 **서비스 범주:** 인증(로그인)  
 **제품 기능:** 사용자 인증
 
-2019 년 7 월 26 일에 [클라이언트 자격 증명 부여](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow)를 통해 앱 전용 토큰을 제공 하는 방법을 변경 했습니다. 이전에는 앱이 테 넌 트에서 클라이언트 앱이 있는지 여부에 관계 없이 다른 앱을 호출 하는 토큰을 가져올 수 있었습니다. 이 동작은 웹 Api 라고도 하는 단일 테 넌 트 리소스를 리소스 테 넌 트에 있는 클라이언트 앱 에서만 호출할 수 있도록 업데이트 되었습니다.
+2019 년 7 월 26 일에 [클라이언트 자격 증명 부여](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow)를 통해 앱 전용 토큰을 제공 하는 방법을 변경 했습니다. 이전에는 앱이 테넌트에서 클라이언트 앱이 있는지 여부에 관계 없이 다른 앱을 호출 하는 토큰을 가져올 수 있었습니다. 이 동작은 웹 Api 라고도 하는 단일 테넌트 리소스를 리소스 테넌트에 있는 클라이언트 앱 에서만 호출할 수 있도록 업데이트 되었습니다.
 
-앱이 리소스 테 `The service principal named <app_name> was not found in the tenant named <tenant_name>. This can happen if the application has not been installed by the administrator of the tenant.` 넌 트에 없는 경우이 문제를 해결 하려면 [관리자 동의 끝점](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#using-the-admin-consent-endpoint) 또는 [PowerShell](https://docs.microsoft.com/azure/active-directory/develop/howto-authenticate-service-principal-powershell)을 사용 하 여 테 넌 트에서 클라이언트 앱 서비스 주체를 만들어야 합니다 .이 경우 테 넌 트가 테 넌 트 내에서 작동 하는 앱 권한을 제공 하도록 보장 합니다.
+앱이 리소스 테 `The service principal named <app_name> was not found in the tenant named <tenant_name>. This can happen if the application has not been installed by the administrator of the tenant.` 넌 트에 없는 경우이 문제를 해결 하려면 [관리자 동의 엔드포인트](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#using-the-admin-consent-endpoint) 또는 [PowerShell](https://docs.microsoft.com/azure/active-directory/develop/howto-authenticate-service-principal-powershell)을 사용 하 여 테넌트에서 클라이언트 앱 서비스 주체를 만들어야 합니다 .이 경우 테넌트가 테넌트 내에서 작동 하는 앱 권한을 제공 하도록 보장 합니다.
 
 자세한 내용은 [인증의 새로운 기능](https://docs.microsoft.com/azure/active-directory/develop/reference-breaking-changes#app-only-tokens-for-single-tenant-applications-are-only-issued-if-the-client-app-exists-in-the-resource-tenant)을 참조 하세요.
 
@@ -273,7 +273,7 @@ Azure AD 도메인 서비스 보안 감사 릴리스를 공개 미리 보기로 
 **서비스 범주:** 보고  
 **제품 기능:** 모니터링 및 보고
 
-Azure ad 활동 로그 (감사 및 로그인 보고서)는 이제 Azure AD PowerShell 모듈을 통해 제공 된다는 것을 기쁘게 생각 합니다. 이전에는 MS Graph API 끝점을 사용 하 여 사용자 고유의 스크립트를 만들 수 있었습니다. 이제 PowerShell cmdlet에 대 한 기능을 확장 했습니다.
+Azure ad 활동 로그 (감사 및 로그인 보고서)는 이제 Azure AD PowerShell 모듈을 통해 제공 된다는 것을 기쁘게 생각 합니다. 이전에는 MS Graph API 엔드포인트을 사용 하 여 사용자 고유의 스크립트를 만들 수 있었습니다. 이제 PowerShell cmdlet에 대 한 기능을 확장 했습니다.
 
 이러한 cmdlet을 사용 하는 방법에 대 한 자세한 내용은 [보고를 위한 AZURE AD PowerShell cmdlet](https://docs.microsoft.com/azure/active-directory/reports-monitoring/reference-powershell-reporting)을 참조 하세요.
 
@@ -529,13 +529,13 @@ Azure AD 포털에서 그룹 관련 환경을 개선 했습니다. 이러한 향
 
 ---
 
-### <a name="microsoft-graph-api-endpoints-are-now-available-for-azure-ad-activity-logs-general-availability"></a>Microsoft Graph API 끝점은 이제 Azure AD 활동 로그 (일반 공급)에서 사용할 수 있습니다.
+### <a name="microsoft-graph-api-endpoints-are-now-available-for-azure-ad-activity-logs-general-availability"></a>Microsoft Graph API 엔드포인트은 이제 Azure AD 활동 로그 (일반 공급)에서 사용할 수 있습니다.
 
 **유형:** 변경된 기능  
 **서비스 범주:** 보고  
 **제품 기능:** 모니터링 및 보고
 
-Azure AD 활동 로그에 대 한 Microsoft Graph API 끝점 지원의 일반 공급을 발표 하 게 되어 기쁘게 생각 합니다. 이 릴리스에서는 이제 Azure AD 감사 로그와 로그인 로그 Api 모두의 버전 1.0을 사용할 수 있습니다.
+Azure AD 활동 로그에 대 한 Microsoft Graph API 엔드포인트 지원의 일반 공급을 발표 하 게 되어 기쁘게 생각 합니다. 이 릴리스에서는 이제 Azure AD 감사 로그와 로그인 로그 Api 모두의 버전 1.0을 사용할 수 있습니다.
 
 자세한 내용은 [AZURE AD audit LOG API 개요](https://docs.microsoft.com/graph/api/resources/azure-ad-auditlog-overview?view=graph-rest-1.0)를 참조 하세요.
 
@@ -725,7 +725,7 @@ Azure AD Single Sign-On 및 조건부 액세스에 대 한 새로운 지원을 �
 
 - 사용자 지정 인증 사용자 경험에서 REST API 사용 서비스를 사용 합니다. 예를 들어 전자 메일 공급자, CRMs 및 독점 권한 부여 시스템이 있습니다.
 
-- OpenIDConnect 프로토콜을 준수 하는 id 공급자와 페더레이션 합니다. 예를 들어 다중 테 넌 트 Azure AD, 소셜 계정 공급자 또는 2 단계 인증 공급자를 사용 합니다.
+- OpenIDConnect 프로토콜을 준수 하는 id 공급자와 페더레이션 합니다. 예를 들어 다중 테넌트 Azure AD, 소셜 계정 공급자 또는 2 단계 인증 공급자를 사용 합니다.
 
 사용자 지정 정책을 만드는 방법에 대 한 자세한 내용은 [Azure Active Directory B2C의 사용자 지정 정책에 대 한 개발자](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-developer-notes-custom) 정보 및 [사례 연구를 비롯 한 Alex Simon의 블로그 게시물을](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Azure-AD-B2C-custom-policies-to-build-your-own-identity-journeys/ba-p/382791)참조 하세요.
 
@@ -813,7 +813,7 @@ Azure AD Single Sign-On 및 조건부 액세스에 대 한 새로운 지원을 �
 **서비스 범주:** 조건부 액세스  
 **제품 기능:** ID 보안 및 보호
 
-잘못 구성 된 조건부 액세스 정책을 통해 관리자가 실수로 자체 테 넌 트를 잠그지 못하도록 방지 하기 위해 Azure Portal에서 새로운 경고 및 업데이트 된 지침을 만들었습니다. 새 지침에 대 한 자세한 내용은 [Azure Active Directory 조건부 액세스의 서비스 종속성 이란?](https://docs.microsoft.com/azure/active-directory/conditional-access/service-dependencies)을 참조 하세요.
+잘못 구성 된 조건부 액세스 정책을 통해 관리자가 실수로 자체 테넌트를 잠그지 못하도록 방지 하기 위해 Azure Portal에서 새로운 경고 및 업데이트 된 지침을 만들었습니다. 새 지침에 대 한 자세한 내용은 [Azure Active Directory 조건부 액세스의 서비스 종속성 이란?](https://docs.microsoft.com/azure/active-directory/conditional-access/service-dependencies)을 참조 하세요.
 
 ---
 
@@ -919,13 +919,13 @@ Azure AD 액세스 검토를 사용 하 여 액세스 검토를 만드는 방법
 
 2. **보안 정보를 등록 하 고 관리 하기 위한 미리 보기 기능을 사용할 수 있는 사용자 – 새로 고침** 옵션에서 **선택한 사용자 그룹** 또는 **모든 사용자**에 대 한 기능을 설정 하도록 선택 합니다.
 
-다음 몇 주 동안 아직 켜져 있지 않은 테 넌 트에 대해 이전에 결합 된 MFA/SSPR 등록 미리 보기 환경을 설정 하는 기능을 제거 합니다.
+다음 몇 주 동안 아직 켜져 있지 않은 테넌트에 대해 이전에 결합 된 MFA/SSPR 등록 미리 보기 환경을 설정 하는 기능을 제거 합니다.
 
-**테 넌 트에서 컨트롤이 제거 되는지 확인 하려면 다음 단계를 수행 합니다.**
+**테넌트에서 컨트롤이 제거 되는지 확인 하려면 다음 단계를 수행 합니다.**
 
 1. 전역 관리자 또는 사용자 관리자는 Azure Portal에 로그인 하 여 **Azure Active Directory > 사용자 설정 > 액세스 패널 미리 보기 기능에 대 한 설정 관리**로 이동 합니다.  
 
-2. **보안 정보를 등록 하 고 관리 하기 위한 미리 보기 기능을 사용할 수 있는 사용자가** **없음**으로 설정 된 경우이 옵션은 테 넌 트에서 제거 됩니다.
+2. **보안 정보를 등록 하 고 관리 하기 위한 미리 보기 기능을 사용할 수 있는 사용자가** **없음**으로 설정 된 경우이 옵션은 테넌트에서 제거 됩니다.
 
 이전에 사용자의 이전에 결합 된 MFA/SSPR 등록 미리 보기 환경을 설정 했는지 여부에 관계 없이 이전 환경은 이후 날짜에 해제 됩니다. 따라서 가능한 한 빨리 새로운 고급 환경으로 전환 하는 것이 좋습니다.
 
@@ -939,7 +939,7 @@ Azure AD 액세스 검토를 사용 하 여 액세스 검토를 만드는 방법
 **서비스 범주:** B2C - 소비자 ID 관리  
 **제품 기능:** B2B/B2C
 
-사용자 흐름 (이전의 기본 제공 정책)에 대 한 정책 만들기 및 관리 프로세스를 보다 쉽게 업데이트 했습니다. 이 새로운 환경은 이제 모든 Azure AD 테 넌 트에 대 한 기본값입니다.
+사용자 흐름 (이전의 기본 제공 정책)에 대 한 정책 만들기 및 관리 프로세스를 보다 쉽게 업데이트 했습니다. 이 새로운 환경은 이제 모든 Azure AD 테넌트에 대 한 기본값입니다.
 
 포털 화면 위쪽의 **사용자 의견 보내기** 영역에서 웃는 얼굴 또는 찡그린 얼굴 보내기 아이콘을 사용 하 여 추가 피드백과 제안을 제공할 수 있습니다.
 
@@ -1096,7 +1096,7 @@ AD DS(Active Directory Domain Services) 개체가 동기화 범위에서 제외�
 
 - **많은 사용자에 대한 동시 대규모 ImmutableID 업데이트**
 
-  예를 들어, Azure AD Connect를 구현하는 동안 실수가 있었기 때문에 이제 SourceAnchor 특성을 변경해야 합니다. 해결 방법: 테 넌 트 수준에서 DirSync를 사용 하지 않도록 설정 하 고 잘못 된 ImmutableID 값을 모두 지웁니다. 자세한 내용은 [Office 365에서 디렉터리 동기화 끄기](/office365/enterprise/turn-off-directory-synchronization)를 참조하세요.
+  예를 들어, Azure AD Connect를 구현하는 동안 실수가 있었기 때문에 이제 SourceAnchor 특성을 변경해야 합니다. 해결 방법: 테넌트 수준에서 DirSync를 사용 하지 않도록 설정 하 고 잘못 된 ImmutableID 값을 모두 지웁니다. 자세한 내용은 [Office 365에서 디렉터리 동기화 끄기](/office365/enterprise/turn-off-directory-synchronization)를 참조하세요.
 
 - **Azure AD에서 기존 사용자와 온-프레미스 사용자 다시 일치** 예를 들어 AD DS에서 다시 생성된 사용자가 기존 Azure AD 계정(분리된 개체)를 사용하여 다시 일치시키는 대신 Azure AD 계정에 중복을 생성합니다. 해결 방법: Azure Portal에서 Azure AD Connect Health를 사용 하 여 원본 앵커/ImmutableID을 다시 매핑합니다. 자세한 내용은 [분리된 개체 시나리오](/azure/active-directory/hybrid/how-to-connect-health-diagnose-sync-errors#orphaned-object-scenario)를 참조하세요.
 
@@ -1198,7 +1198,7 @@ Microsoft 인증자 앱을 사용하여 암호를 재설정하는 방법에 대�
 **서비스 범주:** 사용 약관  
 **제품 기능:** 거버넌스
  
-이제 관리자는 사용자가 테 넌 트에서 사용 하는 모든 장치에서 사용자의 사용 약관에 동의 하도록 요구 하는 **모든 장치에 대 한 사용자 동의 필요** 옵션을 설정할 수 있습니다.
+이제 관리자는 사용자가 테넌트에서 사용 하는 모든 장치에서 사용자의 사용 약관에 동의 하도록 요구 하는 **모든 장치에 대 한 사용자 동의 필요** 옵션을 설정할 수 있습니다.
 
 자세한 내용은 [Azure Active Directory 사용 약관 기능의 장치 단위 사용 약관 섹션](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use#per-device-terms-of-use)을 참조 하세요.
 

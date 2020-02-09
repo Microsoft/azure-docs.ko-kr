@@ -1,5 +1,5 @@
 ---
-title: SQL Database 장애 조치 (failover)에 대 한 Azure-SSIS Integration Runtime 구성
+title: SQL Database 장애 조치 (failover)에 대한 Azure-SSIS Integration Runtime 구성
 description: 이 문서에서는 SSISDB 데이터베이스에 대해 Azure SQL Database 지역에서 복제 및 장애 조치(failover)를 사용하여 Azure SSIS Integration Runtime을 구성하는 방법을 설명합니다.
 services: data-factory
 ms.service: data-factory
@@ -127,7 +127,7 @@ Azure-SSIS IR을 중지하고, IR을 새 지역으로 전환하고, 다시 시�
                          -Location "new region"`
                          -Name "<new_data_factory_name>"
      ```
-    이 PowerShell 명령에 대 한 자세한 내용은 [powershell을 사용 하 여 Azure 데이터 팩터리 만들기](quickstart-create-data-factory-powershell.md) 를 참조 하세요.
+    이 PowerShell 명령에 대한 자세한 내용은 [powershell을 사용 하 여 Azure 데이터 팩터리 만들기](quickstart-create-data-factory-powershell.md) 를 참조 하세요.
 
 3. Azure PowerShell를 사용 하 여 새 지역에 **\<new_integration_runtime_name\>** 이라는 새 Azure-SSIS IR를 만듭니다.
 

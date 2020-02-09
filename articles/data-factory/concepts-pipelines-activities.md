@@ -82,7 +82,7 @@ Azure Data Factory는 개별적 또는 다른 작업과 연계하여 파이프�
 [유효성 검사 작업](control-flow-validation-activity.md) | 참조 데이터 집합이 존재 하거나 지정 된 조건을 충족 하거나 시간 제한에 도달 하는 경우에만 파이프라인이 실행을 계속 하도록 합니다.
 [Wait 작업](control-flow-wait-activity.md) | 파이프라인에서 대기 작업을 사용하는 경우 파이프라인은 후속 작업을 계속 실행하기 전에 지정된 기간 동안 대기합니다.
 [웹 작업](control-flow-web-activity.md) | 웹 작업은 Data Factory 파이프라인에서 사용자 지정 REST 엔드포인트를 호출하는 데 사용할 수 있습니다. 작업에서 사용하고 액세스하도록 데이터 세트 및 연결된 서비스를 전달할 수 있습니다.
-[Webhook 활동](control-flow-webhook-activity.md) | Webhook 활동을 사용 하 여 끝점을 호출 하 고 콜백 URL을 전달 합니다. 파이프라인 실행은 다음 작업을 진행 하기 전에 콜백이 호출 될 때까지 기다립니다.
+[Webhook 활동](control-flow-webhook-activity.md) | Webhook 활동을 사용 하 여 엔드포인트을 호출 하 고 콜백 URL을 전달 합니다. 파이프라인 실행은 다음 작업을 진행 하기 전에 콜백이 호출 될 때까지 기다립니다.
 
 ## <a name="pipeline-json"></a>파이프라인 JSON
 파이프라인은 다음과 같은 방식에 따라 JSON 형식으로 정의됩니다.

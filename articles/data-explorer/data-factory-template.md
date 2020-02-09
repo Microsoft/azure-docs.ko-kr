@@ -17,11 +17,11 @@ ms.locfileid: "76293558"
 ---
 # <a name="copy-in-bulk-from-a-database-to-azure-data-explorer-by-using-the-azure-data-factory-template"></a>Azure Data Factory 템플릿을 사용 하 여 데이터베이스에서 Azure 데이터 탐색기로 대량 복사 
 
-Azure 데이터 탐색기는 빠르고 완전히 관리 되는 데이터 분석 서비스입니다. 응용 프로그램, 웹 사이트 및 IoT 장치와 같은 많은 원본에서 스트리밍하는 대용량 데이터에 대 한 실시간 분석을 제공 합니다. 
+Azure 데이터 탐색기는 빠르고 완전히 관리 되는 데이터 분석 서비스입니다. 응용 프로그램, 웹 사이트 및 IoT 장치와 같은 많은 원본에서 스트리밍하는 대용량 데이터에 대한 실시간 분석을 제공 합니다. 
 
 Oracle Server, Netezza, Teradata 또는 SQL Server의 데이터베이스에서 Azure 데이터 탐색기로 데이터를 복사 하려면 여러 테이블에서 대량의 데이터를 로드 해야 합니다. 일반적으로 단일 테이블에서 여러 스레드가 동시에 행을 로드할 수 있도록 각 테이블에서 데이터를 분할 해야 합니다. 이 문서에서는 이러한 시나리오에서 사용할 템플릿을 설명 합니다.
 
-[Azure Data Factory 템플릿은](/azure/data-factory/solution-templates-introduction) 파이프라인 Data Factory 미리 정의 되어 있습니다. 이러한 템플릿을 통해 신속 하 게 Data Factory를 시작 하 고 데이터 통합 프로젝트에 대 한 개발 시간을 줄일 수 있습니다. 
+[Azure Data Factory 템플릿은](/azure/data-factory/solution-templates-introduction) 파이프라인 Data Factory 미리 정의 되어 있습니다. 이러한 템플릿을 통해 신속 하 게 Data Factory를 시작 하 고 데이터 통합 프로젝트에 대한 개발 시간을 줄일 수 있습니다. 
 
 *조회* 및 *ForEach* 활동을 사용 하 여 *데이터베이스에서 Azure 데이터 탐색기 템플릿으로 대량 복사* 를 만듭니다. 더 빠른 데이터 복사를 위해 템플릿을 사용 하 여 데이터베이스당 또는 테이블당 많은 파이프라인을 만들 수 있습니다. 
 
@@ -59,7 +59,7 @@ ADXTableName varchar(255)
 |SourceQuery   |  파이프라인 런타임 중에 복사할 데이터를 나타내는 쿼리입니다. | <br>`select * from table where lastmodifiedtime  LastModifytime >= ''2015-01-01 00:00:00''>` </br>    
 |ADXTableName  |  대상 테이블 이름입니다. | MyAdxTable       |  
 
-ControlTableDataset의 형식이 다른 경우 형식에 대 한 비교할 수 있는 ControlTableDataset을 만듭니다.
+ControlTableDataset의 형식이 다른 경우 형식에 대한 비교할 수 있는 ControlTableDataset을 만듭니다.
 
 ## <a name="use-the-bulk-copy-from-database-to-azure-data-explorer-template"></a>데이터베이스에서 Azure 데이터 탐색기 템플릿으로 대량 복사를 사용 합니다.
 
@@ -75,7 +75,7 @@ ControlTableDataset의 형식이 다른 경우 형식에 대 한 비교할 수 �
 
     a. **Controltabledataset** 드롭다운 목록에서 원본에서 대상으로 복사 되는 데이터와 대상에 저장 되는 데이터를 나타내는 컨트롤 테이블의 연결 된 서비스를 선택 합니다. 
 
-    b. **Sourcedataset** 드롭다운 목록에서 원본 데이터베이스에 대 한 연결 된 서비스를 선택 합니다. 
+    b. **Sourcedataset** 드롭다운 목록에서 원본 데이터베이스에 대한 연결 된 서비스를 선택 합니다. 
 
     다. **AzureDataExplorerTable** 드롭다운 목록에서 Azure 데이터 탐색기 테이블을 선택 합니다. 데이터 집합이 없는 경우 [Azure 데이터 탐색기 연결 된 서비스를 만들어](data-factory-load-data.md#create-the-azure-data-explorer-linked-service) 데이터 집합을 추가 합니다.
 
@@ -83,7 +83,7 @@ ControlTableDataset의 형식이 다른 경우 형식에 대 한 비교할 수 �
 
     !["데이터베이스에서 Azure 데이터 탐색기로 대량 복사" 창](media/data-factory-template/configure-bulk-copy-adx-template.png)
 
-1. 활동 외부에서 캔버스의 영역을 선택 하 여 템플릿 파이프라인에 액세스 합니다. **이름** (컨트롤 테이블 이름) 및 **기본값** (열 이름)을 포함 하 여 테이블에 대 한 매개 변수를 입력 하려면 **매개 변수** 탭을 선택 합니다.
+1. 활동 외부에서 캔버스의 영역을 선택 하 여 템플릿 파이프라인에 액세스 합니다. **이름** (컨트롤 테이블 이름) 및 **기본값** (열 이름)을 포함 하 여 테이블에 대한 매개 변수를 입력 하려면 **매개 변수** 탭을 선택 합니다.
 
     ![파이프라인 매개 변수](media/data-factory-template/pipeline-parameters.png)
 

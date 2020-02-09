@@ -27,7 +27,7 @@ Azure Logic Apps 및 Azure Container Instance 커넥터를 사용 하 여 [컨�
 * 컨테이너 그룹의 목록 가져오기
 * 컨테이너 인스턴스의 로그 가져오기
 
-Logic Apps 트리거에 대 한 응답으로 컨테이너 작업 실행과 같은 작업을 수행 하려면 논리 앱에서 이러한 작업을 사용 합니다. 컨테이너 인스턴스 작업의 출력을 다른 작업에 사용할 수도 있습니다. 
+Logic Apps 트리거에 대한 응답으로 컨테이너 작업 실행과 같은 작업을 수행 하려면 논리 앱에서 이러한 작업을 사용 합니다. 컨테이너 인스턴스 작업의 출력을 다른 작업에 사용할 수도 있습니다. 
 
 이 커넥터는 작업만 제공 하므로 논리 앱을 시작 하려면 **되풀이** 트리거와 같은 별도의 트리거를 사용 하 여 정기적 일정에 따라 컨테이너 작업을 실행 합니다. 또는 Outlook 전자 메일 도착과 같은 이벤트 후에 컨테이너 그룹 배포를 트리거해야 할 수도 있습니다. 
 
@@ -37,7 +37,7 @@ Logic Apps 트리거에 대 한 응답으로 컨테이너 작업 실행과 같�
 
 * Azure 구독 Azure 구독이 없는 경우 [체험 Azure 계정에 등록](https://azure.microsoft.com/free/)합니다. 
 
-* [논리 앱을 만드는 방법](../logic-apps/quickstart-create-first-logic-app-workflow.md) 및 [컨테이너 인스턴스를 만들고 관리](../container-instances/container-instances-quickstart.md) 하는 방법에 대 한 기본 지식
+* [논리 앱을 만드는 방법](../logic-apps/quickstart-create-first-logic-app-workflow.md) 및 [컨테이너 인스턴스를 만들고 관리](../container-instances/container-instances-quickstart.md) 하는 방법에 대한 기본 지식
 
 * 컨테이너 인스턴스에 액세스 하려는 논리 앱입니다. 작업을 사용 하려면 **되풀이** 트리거와 같은 다른 트리거를 사용 하 여 논리 앱을 시작 합니다.
 
@@ -68,7 +68,7 @@ Logic Apps 트리거에 대 한 응답으로 컨테이너 작업 실행과 같�
 
 ## <a name="connector-reference"></a>커넥터 참조
 
-커넥터의 OpenAPI (이전의 Swagger) 설명에서 설명 하는 트리거, 작업 및 제한에 대 한 기술 세부 정보는 커넥터의 [참조 페이지](/connectors/aci/) 또는 컨테이너 그룹 [yaml 참조](../container-instances/container-instances-reference-yaml.md)를 검토 합니다.
+커넥터의 OpenAPI (이전의 Swagger) 설명에서 설명 하는 트리거, 작업 및 제한에 대한 기술 세부 정보는 커넥터의 [참조 페이지](/connectors/aci/) 또는 컨테이너 그룹 [yaml 참조](../container-instances/container-instances-reference-yaml.md)를 검토 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

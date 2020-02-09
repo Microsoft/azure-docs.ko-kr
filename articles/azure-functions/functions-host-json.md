@@ -10,7 +10,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 02/05/2020
 ms.locfileid: "77024673"
 ---
-# <a name="hostjson-reference-for-azure-functions-2x-and-later"></a>Azure Functions 2.x 이상에 대 한 호스트 json 참조 
+# <a name="hostjson-reference-for-azure-functions-2x-and-later"></a>Azure Functions 2.x 이상에 대한 호스트 json 참조 
 
 > [!div class="op_single_selector" title1="사용 중인 Azure Functions 런타임 버전을 선택 합니다. "]
 > * [버전 1](functions-host-json-v1.md)
@@ -19,7 +19,7 @@ ms.locfileid: "77024673"
 *host.json* 메타데이터 파일에는 함수 앱의 모든 함수에 영향을 주는 전역 구성 옵션이 포함됩니다. 이 문서에서는 Azure Functions 런타임의 버전 2.x부터 사용 가능한 설정을 나열 합니다.  
 
 > [!NOTE]
-> 이 문서는 Azure Functions 2.x 이상 버전에 대 한 것입니다.  Functions 1.x에서 host.json의 참조는 [Azure Functions 1.x에 대한 host.json 참조](functions-host-json-v1.md)를 참조하세요.
+> 이 문서는 Azure Functions 2.x 이상 버전에 대한 것입니다.  Functions 1.x에서 host.json의 참조는 [Azure Functions 1.x에 대한 host.json 참조](functions-host-json-v1.md)를 참조하세요.
 
 기타 함수 앱 구성 옵션은 [앱 설정](functions-app-settings.md)에서 관리합니다.
 
@@ -27,7 +27,7 @@ ms.locfileid: "77024673"
 
 ## <a name="sample-hostjson-file"></a>샘플 host.json 파일
 
-버전 2.x +에 대 한 다음 샘플 *호스트 json* 파일에는 모든 가능한 옵션이 지정 되어 있습니다 (내부용 으로만 사용 되는 경우 제외).
+버전 2.x +에 대한 다음 샘플 *호스트 json* 파일에는 모든 가능한 옵션이 지정 되어 있습니다 (내부용 으로만 사용 되는 경우 제외).
 
 ```json
 {
@@ -136,7 +136,7 @@ ms.locfileid: "77024673"
 
 이 설정은 [logging](#logging)의 자식입니다.
 
-[샘플링 옵션](./functions-monitoring.md#configure-sampling)을 포함 하 여 Application Insights에 대 한 옵션을 제어 합니다.
+[샘플링 옵션](./functions-monitoring.md#configure-sampling)을 포함 하 여 Application Insights에 대한 옵션을 제어 합니다.
 
 전체 JSON 구조는 이전 [예제 호스트. json 파일](#sample-hostjson-file)을 참조 하세요.
 
@@ -173,19 +173,19 @@ ms.locfileid: "77024673"
 
 |속성 | 기본값 | Description |
 | --------- | --------- | --------- | 
-| enableHttpTriggerExtendedInfoCollection | true | HTTP 트리거에 대 한 확장 된 HTTP 요청 정보를 사용 하거나 사용 하지 않도록 설정 합니다. 들어오는 요청 상관 관계 헤더, 다중 계측 키 지원, HTTP 메서드, 경로 및 응답입니다. |
+| enableHttpTriggerExtendedInfoCollection | true | HTTP 트리거에 대한 확장 된 HTTP 요청 정보를 사용 하거나 사용 하지 않도록 설정 합니다. 들어오는 요청 상관 관계 헤더, 다중 계측 키 지원, HTTP 메서드, 경로 및 응답입니다. |
 | enableW3CDistributedTracing | true | W3C 분산 추적 프로토콜을 지원 하거나 사용 하지 않도록 설정 하 고 레거시 상관 관계 스키마를 설정 합니다. `enableHttpTriggerExtendedInfoCollection` true 이면 기본적으로 사용 하도록 설정 됩니다. `enableHttpTriggerExtendedInfoCollection` false 인 경우이 플래그는 들어오는 요청이 아닌 보내는 요청에만 적용 됩니다. |
 | enableResponseHeaderInjection | true | 다중 구성 요소 상관 관계 헤더의 삽입을 응답으로 사용 하거나 사용 하지 않도록 설정 합니다. 주입을 사용 하도록 설정 하면 여러 개의 계측 키를 사용할 때 응용 프로그램을 구성 하 Application Insights 수 있습니다. `enableHttpTriggerExtendedInfoCollection` true 이면 기본적으로 사용 하도록 설정 됩니다. `enableHttpTriggerExtendedInfoCollection` false 인 경우에는이 설정이 적용 되지 않습니다. |
 
 ### <a name="applicationinsightssnapshotconfiguration"></a>snapshotConfiguration
 
-스냅숏에 대 한 자세한 내용은 [.net 앱의 예외에 대 한 스냅숏 디버그](/azure/azure-monitor/app/snapshot-debugger) 및 [Application Insights 스냅숏 디버거 또는 스냅숏 보기를 사용 하도록 설정 하는 문제 해결](/azure/azure-monitor/app/snapshot-debugger-troubleshoot)을 참조 하세요.
+스냅숏에 대한 자세한 내용은 [.net 앱의 예외에 대한 스냅숏 디버그](/azure/azure-monitor/app/snapshot-debugger) 및 [Application Insights 스냅숏 디버거 또는 스냅숏 보기를 사용 하도록 설정 하는 문제 해결](/azure/azure-monitor/app/snapshot-debugger-troubleshoot)을 참조 하세요.
 
 |속성 | 기본값 | Description |
 | --------- | --------- | --------- | 
-| agentEndpoint | null | Application Insights 스냅숏 디버거 서비스에 연결 하는 데 사용 되는 끝점입니다. Null 인 경우 기본 끝점이 사용 됩니다. |
+| agentEndpoint | null | Application Insights 스냅숏 디버거 서비스에 연결 하는 데 사용 되는 엔드포인트입니다. Null 인 경우 기본 엔드포인트이 사용 됩니다. |
 | captureSnapshotMemoryWeight | 0.5 | 스냅숏을 만들기에 충분 한 메모리가 있는지 확인할 때 현재 프로세스 메모리 크기에 지정 된 가중치입니다. 예상 값은 적절 한 소수 부분 (0 < CaptureSnapshotMemoryWeight < 1) 보다 큽니다. |
-| failedRequestLimit | 3 | 원격 분석 프로세서를 사용 하지 않도록 설정 하기 전에 스냅숏을 요청 하는 데 실패 한 요청 수에 대 한 제한입니다.|
+| failedRequestLimit | 3 | 원격 분석 프로세서를 사용 하지 않도록 설정 하기 전에 스냅숏을 요청 하는 데 실패 한 요청 수에 대한 제한입니다.|
 | handleUntrackedExceptions | true | Application Insights 원격 분석에서 추적 하지 않는 예외 추적을 사용 하거나 사용 하지 않도록 설정 합니다. |
 | isEnabled | true | 스냅숏 수집을 사용 하거나 사용 하지 않도록 설정 합니다. | 
 | isEnabledInDeveloperMode | false | 개발자 모드에서 스냅숏 컬렉션을 사용 하거나 사용 하지 않도록 설정 합니다. |
@@ -194,12 +194,12 @@ ms.locfileid: "77024673"
 | isLowPrioritySnapshotUploader | true | SnapshotUploader 프로세스를 보통 우선 순위로 실행할지 여부를 결정 합니다. |
 | Maximumcollection설계도 크기 | 50 | 1에서 9999 사이의 범위에서 언제 든 지 추적할 수 있는 최대 문제 수입니다. |
 | maximumSnapshotsRequired | 3 | 1 ~ 999 범위에서 단일 문제에 대해 수집 된 최대 스냅숏 수입니다. 응용 프로그램에서 개별 throw 문으로 문제를 생각할 수 있습니다. 문제에 대해 수집 된 스냅숏 수가이 값에 도달 하면 문제 카운터가 다시 설정 될 때까지 해당 문제에 대해 더 이상 스냅숏이 수집 되지 않습니다 (`problemCounterResetInterval`참조) `thresholdForSnapshotting` 한도에 다시 도달 합니다. |
-| problemCounterResetInterval | 24:00:00 | 1 분에서 7 일 사이에 문제 카운터를 다시 설정 하는 빈도입니다. 이 간격에 도달 하면 모든 문제 수가 0으로 다시 설정 됩니다. 스냅숏 수행에 대 한 임계값에 이미 도달 했지만 `maximumSnapshotsRequired`의 스냅숏 수를 아직 생성 하지 않은 기존 문제는 활성 상태로 유지 됩니다. |
+| problemCounterResetInterval | 24:00:00 | 1 분에서 7 일 사이에 문제 카운터를 다시 설정 하는 빈도입니다. 이 간격에 도달 하면 모든 문제 수가 0으로 다시 설정 됩니다. 스냅숏 수행에 대한 임계값에 이미 도달 했지만 `maximumSnapshotsRequired`의 스냅숏 수를 아직 생성 하지 않은 기존 문제는 활성 상태로 유지 됩니다. |
 | provideAnonymousTelemetry | true | 익명 사용 및 오류 원격 분석을 Microsoft로 보낼지 여부를 결정 합니다. Microsoft에 문의 하 여 스냅숏 디버거 문제를 해결 하는 데 도움이 되는 경우이 원격 분석을 사용할 수 있습니다. 사용 패턴을 모니터링 하는 데도 사용 됩니다. |
-| reconnectInterval | 00:15:00 | 스냅숏 디버거 끝점에 다시 연결 하는 빈도입니다. 허용 되는 범위는 1 분에서 1 일 사이입니다. |
+| reconnectInterval | 00:15:00 | 스냅숏 디버거 엔드포인트에 다시 연결 하는 빈도입니다. 허용 되는 범위는 1 분에서 1 일 사이입니다. |
 | shadowCopyFolder | null | 이진 파일을 섀도 복사 하는 데 사용할 폴더를 지정 합니다. 설정 하지 않은 경우 다음 환경 변수에 지정 된 폴더는 Fabric_Folder_App_Temp, LOCALAPPDATA, APPDATA, TEMP 순서로 시도 됩니다. |
-| shareUploaderProcess | true | True 이면 SnapshotUploader의 한 인스턴스만 InstrumentationKey을 공유 하는 여러 앱에 대 한 스냅숏을 수집 하 고 업로드 합니다. False로 설정 하면 각 (ProcessName, InstrumentationKey) 튜플에 대해 SnapshotUploader가 고유 합니다. |
-| snapshotInLowPriorityThread | true | 낮은 IO 우선 순위 스레드에서 스냅숏 처리 여부를 결정 합니다. 스냅숏 만들기는 빠른 작업 이지만, 스냅숏을 스냅숏 디버거 서비스에 업로드 하려면 먼저 디스크에 미니 덤프로 써야 합니다. SnapshotUploader 프로세스에서 발생 합니다. 이 값을 true로 설정 하면 우선 순위가 낮은 IO를 사용 하 여 리소스에 대 한 응용 프로그램과 경쟁 하지 않는 미니 덤프를 작성 합니다. 이 값을 false로 설정 하면 응용 프로그램의 속도가 느려지는 대신 미니 덤프 생성 속도가 빨라집니다. |
+| shareUploaderProcess | true | True 이면 SnapshotUploader의 한 인스턴스만 InstrumentationKey을 공유 하는 여러 앱에 대한 스냅숏을 수집 하 고 업로드 합니다. False로 설정 하면 각 (ProcessName, InstrumentationKey) 튜플에 대해 SnapshotUploader가 고유 합니다. |
+| snapshotInLowPriorityThread | true | 낮은 IO 우선 순위 스레드에서 스냅숏 처리 여부를 결정 합니다. 스냅숏 만들기는 빠른 작업 이지만, 스냅숏을 스냅숏 디버거 서비스에 업로드 하려면 먼저 디스크에 미니 덤프로 써야 합니다. SnapshotUploader 프로세스에서 발생 합니다. 이 값을 true로 설정 하면 우선 순위가 낮은 IO를 사용 하 여 리소스에 대한 응용 프로그램과 경쟁 하지 않는 미니 덤프를 작성 합니다. 이 값을 false로 설정 하면 응용 프로그램의 속도가 느려지는 대신 미니 덤프 생성 속도가 빨라집니다. |
 | snapshotsPerDayLimit | 30 | 1 일 (24 시간)에 허용 되는 최대 스냅숏 수입니다. 이 제한은 Application Insights 서비스 쪽에도 적용 됩니다. 업로드는 응용 프로그램 (즉, 계측 키 당) 당 50로 제한 됩니다. 이 값을 사용 하면 업로드 중에 결국 거부 될 추가 스냅숏이 생성 되지 않습니다. 값이 0 이면 제한을 완전히 제거 하지 않는 것이 좋습니다. |
 | snapshotsPerTenMinutesLimit | 1 | 10 분 내에 허용 되는 최대 스냅숏 수입니다. 이 값에 상한이 없지만 응용 프로그램의 성능에 영향을 줄 수 있으므로 프로덕션 워크 로드에 대해 주의를 기울여야 합니다. 스냅숏 만들기는 빠르지만 스냅숏의 미니 덤프를 만들어 스냅숏 디버거 서비스에 업로드 하는 작업은 리소스 (CPU 및 i/o 모두)에 대해 응용 프로그램과 경쟁 하는 훨씬 느린 작업입니다. |
 | t | null | 미니 덤프 및 업 로더 로그 파일을 쓸 폴더를 지정 합니다. 설정 하지 않으면 *%TEMP%\Dumps* 가 사용 됩니다. |
@@ -303,7 +303,7 @@ Application Insights를 포함한 함수 앱의 로깅 동작을 제어합니다
 |속성  |기본값 | Description |
 |---------|---------|---------|
 |fileLoggingMode|debugOnly|활성화할 파일 로깅의 수준을 정의합니다.  옵션은 `never`, `always`, `debugOnly`입니다. |
-|logLevel|n/a|앱의 함수에 대한 로그 범주 필터링을 정의하는 개체입니다. 버전 2.x 이상에서는 로그 범주 필터링을 위한 ASP.NET Core 레이아웃을 따릅니다. 이 설정을 통해 특정 함수에 대 한 로깅을 필터링 할 수 있습니다. 자세한 내용은 ASP.NET Core 설명서의 [로그 필터링](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering)을 참조하세요. |
+|logLevel|n/a|앱의 함수에 대한 로그 범주 필터링을 정의하는 개체입니다. 버전 2.x 이상에서는 로그 범주 필터링을 위한 ASP.NET Core 레이아웃을 따릅니다. 이 설정을 통해 특정 함수에 대한 로깅을 필터링 할 수 있습니다. 자세한 내용은 ASP.NET Core 설명서의 [로그 필터링](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering)을 참조하세요. |
 |console|n/a| [콘솔](#console) 로깅 설정입니다. |
 |applicationInsights|n/a| [applicationInsights](#applicationinsights) 설정입니다. |
 

@@ -103,8 +103,8 @@ HR 중심 IT 프로 비전의이 기능은 다음과 같은 중요 한 비즈니
 
 다음 예제에서는 일반적인 하이브리드 환경에 대 한 종단 간 사용자 프로비저닝 솔루션 아키텍처를 설명 하 고 다음을 포함 합니다.
 
-- **클라우드 HR 앱에서 Active Directory에 대 한 신뢰할 수 있는 HR 데이터 흐름입니다.** 이 흐름에서 HR 이벤트 (Joiners-Leavers 프로세스)는 클라우드 HR 앱 테 넌 트에서 시작 됩니다. Azure AD 프로 비전 서비스 및 Azure AD Connect 프로 비전 에이전트는 클라우드 HR 앱 테 넌 트의 사용자 데이터를 Active Directory으로 프로 비전 합니다. 이벤트에 따라 Active Directory에서 만들기, 업데이트, 사용 및 사용 안 함 작업을 수행할 수 있습니다.
-- **Azure AD와 동기화 하 고 온-프레미스 Active Directory의 전자 메일 및 사용자 이름을 클라우드 HR 앱에 다시 씁니다.** Active Directory에서 계정이 업데이트 된 후에는 Azure AD Connect를 통해 Azure AD와 동기화 됩니다. 이메일 주소 및 사용자 이름 특성은 클라우드 HR 앱 테 넌 트에 다시 쓸 수 있습니다.
+- **클라우드 HR 앱에서 Active Directory에 대 한 신뢰할 수 있는 HR 데이터 흐름입니다.** 이 흐름에서 HR 이벤트 (Joiners-Leavers 프로세스)는 클라우드 HR 앱 테넌트에서 시작 됩니다. Azure AD 프로 비전 서비스 및 Azure AD Connect 프로 비전 에이전트는 클라우드 HR 앱 테넌트의 사용자 데이터를 Active Directory으로 프로 비전 합니다. 이벤트에 따라 Active Directory에서 만들기, 업데이트, 사용 및 사용 안 함 작업을 수행할 수 있습니다.
+- **Azure AD와 동기화 하 고 온-프레미스 Active Directory의 전자 메일 및 사용자 이름을 클라우드 HR 앱에 다시 씁니다.** Active Directory에서 계정이 업데이트 된 후에는 Azure AD Connect를 통해 Azure AD와 동기화 됩니다. 이메일 주소 및 사용자 이름 특성은 클라우드 HR 앱 테넌트에 다시 쓸 수 있습니다.
 
 ![워크플로 다이어그램](media/plan-cloud-hr-provision/plan-cloudhr-provisioning-img1.png)
 
@@ -112,13 +112,13 @@ HR 중심 IT 프로 비전의이 기능은 다음과 같은 중요 한 비즈니
 
 다이어그램에는 다음과 같은 주요 단계가 나와 있습니다.  
 
-1. **Hr 팀** 은 cloud hr 앱 테 넌 트에서 트랜잭션을 수행 합니다.
-2. **AZURE AD 프로 비전 서비스** 는 클라우드 HR 앱 테 넌 트에서 예약 된 주기를 실행 하 고 Active Directory와 동기화 하기 위해 처리 해야 하는 변경 내용을 식별 합니다.
+1. **Hr 팀** 은 cloud hr 앱 테넌트에서 트랜잭션을 수행 합니다.
+2. **AZURE AD 프로 비전 서비스** 는 클라우드 HR 앱 테넌트에서 예약 된 주기를 실행 하 고 Active Directory와 동기화 하기 위해 처리 해야 하는 변경 내용을 식별 합니다.
 3. **AZURE AD 프로 비전 서비스** 는 Active Directory 계정 만들기, 업데이트, 사용 및 사용 안 함 작업을 포함 하는 요청 페이로드를 사용 하 여 Azure AD Connect 프로 비전 에이전트를 호출 합니다.
 4. **Azure AD Connect 프로 비전 에이전트** 는 서비스 계정을 사용 하 여 Active Directory 계정 데이터를 관리 합니다.
 5. **Azure AD Connect** 델타 [동기화](../hybrid/how-to-connect-sync-whatis.md) 를 실행 하 여 Active Directory 업데이트를 가져옵니다.
 6. **Active Directory** 업데이트는 Azure AD와 동기화 됩니다.
-7. **AZURE ad 프로 비전 서비스** 쓰기는 azure ad에서 클라우드 HR 앱 테 넌 트로 메일 특성 및 사용자 이름을 백업 합니다.
+7. **AZURE ad 프로 비전 서비스** 쓰기는 azure ad에서 클라우드 HR 앱 테넌트로 메일 특성 및 사용자 이름을 백업 합니다.
 
 ## <a name="plan-the-deployment-project"></a>배포 프로젝트 계획
 
@@ -145,7 +145,7 @@ HR 비즈니스 프로세스와 id 워크플로를 클라우드 HR 앱에서 대
 클라우드 HR 앱과 Active Directory 간에 Azure AD 프로 비전 워크플로를 용이 하 게 하려면 Azure AD 앱 갤러리에서 여러 프로 비전 커넥터 앱을 추가할 수 있습니다.
 
 - **사용자 프로 비전 Active Directory 클라우드 hr 앱**:이 프로 비전 커넥터 앱은 클라우드 hr 앱에서 단일 Active Directory 도메인으로 사용자 계정 프로 비전을 용이 하 게 합니다. 도메인이 여러 개 있는 경우 프로비전해야 하는 각 Active Directory 도메인에 대해 Azure AD 앱 갤러리에서 이 앱의 하나의 인스턴스를 추가할 수 있습니다.
-- **AZURE ad 사용자 프로 비전에 대 한 클라우드 hr 앱**: Azure AD Connect는 azure ad에 Active Directory 사용자를 동기화 하는 데 사용 되는 도구 이지만,이 프로 비전 커넥터 앱을 사용 하 여 클라우드 HR 앱에서 단일 azure ad 테 넌 트로 클라우드 전용 사용자를 쉽게 프로 비전 할 수 있습니다.
+- **AZURE ad 사용자 프로 비전에 대 한 클라우드 hr 앱**: Azure AD Connect는 azure ad에 Active Directory 사용자를 동기화 하는 데 사용 되는 도구 이지만,이 프로 비전 커넥터 앱을 사용 하 여 클라우드 HR 앱에서 단일 azure ad 테넌트로 클라우드 전용 사용자를 쉽게 프로 비전 할 수 있습니다.
 - **클라우드 hr 앱 쓰기-** 이 프로 비전 커넥터 앱은 사용자의 메일 주소를 Azure AD에서 클라우드 HR 앱으로 다시 쓰기를 용이 하 게 합니다.
 
 예를 들어 다음 이미지는 Azure AD 앱 갤러리에서 사용할 수 있는 Workday 커넥터 앱을 나열 합니다.
@@ -162,19 +162,19 @@ HR 비즈니스 프로세스와 id 워크플로를 클라우드 HR 앱에서 대
 
 클라우드 HR 앱과 Active Directory 간의 프로 비전 통합에는 네 가지 구성 요소가 필요 합니다.
 
-- 클라우드 HR 앱 테 넌 트
+- 클라우드 HR 앱 테넌트
 - 프로 비전 커넥터 앱
 - 프로 비전 에이전트 Azure AD Connect
 - Active Directory 도메인
 
-Azure AD Connect 프로 비전 에이전트 배포 토폴로지는 클라우드 HR 앱 테 넌 트 수 Active Directory 및 통합 하려는 하위 도메인의 수에 따라 달라 집니다. Active Directory 도메인이 여러 개 있는 경우에는 Active Directory 도메인이 연속 되었는지 또는 [비연속](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/disjoint-namespace)인지에 따라 달라 집니다.
+Azure AD Connect 프로 비전 에이전트 배포 토폴로지는 클라우드 HR 앱 테넌트 수 Active Directory 및 통합 하려는 하위 도메인의 수에 따라 달라 집니다. Active Directory 도메인이 여러 개 있는 경우에는 Active Directory 도메인이 연속 되었는지 또는 [비연속](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/disjoint-namespace)인지에 따라 달라 집니다.
 
 결정에 따라 배포 시나리오 중 하나를 선택 합니다.
 
-- 단일 클라우드 HR 앱 테 넌 트-신뢰할 수 있는 포리스트에 있는 단일 또는 여러 Active Directory 하위 도메인 > 대상
-- 단일 클라우드 HR 앱 테 넌 트-연결 되지 않은 Active Directory 포리스트에 여러 자식 도메인 > 대상으로 합니다.
+- 단일 클라우드 HR 앱 테넌트-신뢰할 수 있는 포리스트에 있는 단일 또는 여러 Active Directory 하위 도메인 > 대상
+- 단일 클라우드 HR 앱 테넌트-연결 되지 않은 Active Directory 포리스트에 여러 자식 도메인 > 대상으로 합니다.
 
-### <a name="single-cloud-hr-app-tenant---target-single-or-multiple-active-directory-child-domains-in-a-trusted-forest"></a>단일 클라우드 HR 앱 테 넌 트-신뢰할 수 있는 포리스트에 있는 단일 또는 여러 Active Directory 하위 도메인 > 대상
+### <a name="single-cloud-hr-app-tenant---target-single-or-multiple-active-directory-child-domains-in-a-trusted-forest"></a>단일 클라우드 HR 앱 테넌트-신뢰할 수 있는 포리스트에 있는 단일 또는 여러 Active Directory 하위 도메인 > 대상
 
 다음 프로덕션 구성을 권장 합니다.
 
@@ -186,7 +186,7 @@ Azure AD Connect 프로 비전 에이전트 배포 토폴로지는 클라우드 
 
 ![온-프레미스 에이전트로 이동](media/plan-cloud-hr-provision/plan-cloudhr-provisioning-img4.png)
 
-### <a name="single-cloud-hr-app-tenant---target-multiple-child-domains-in-a-disjoint-active-directory-forest"></a>단일 클라우드 HR 앱 테 넌 트-연결 되지 않은 Active Directory 포리스트에 여러 자식 도메인 > 대상으로 합니다.
+### <a name="single-cloud-hr-app-tenant---target-multiple-child-domains-in-a-disjoint-active-directory-forest"></a>단일 클라우드 HR 앱 테넌트-연결 되지 않은 Active Directory 포리스트에 여러 자식 도메인 > 대상으로 합니다.
 
 이 시나리오에는 클라우드 HR 앱에서 연결 되지 않은 Active Directory 포리스트의 도메인으로 사용자를 프로 비전 하는 작업이 포함 됩니다.
 
@@ -198,13 +198,13 @@ Azure AD Connect 프로 비전 에이전트 배포 토폴로지는 클라우드 
 |구성할 프로 비전 커넥터 앱 수|자식 도메인당 하나의 앱|
 |Azure AD Connect 프로 비전 에이전트에 대 한 서버 호스트|도메인 컨트롤러 Active Directory 찾을 수 있는 배치할의 Windows 2012 R2 +</br>Azure AD Connect 서비스와 함께 사용할 수 있음|
 
-![단일 클라우드 HR 앱 테 넌 트 Active Directory 포리스트 분리](media/plan-cloud-hr-provision/plan-cloudhr-provisioning-img5.png)
+![단일 클라우드 HR 앱 테넌트 Active Directory 포리스트 분리](media/plan-cloud-hr-provision/plan-cloudhr-provisioning-img5.png)
 
 ### <a name="azure-ad-connect-provisioning-agent-requirements"></a>Azure AD Connect 프로 비전 에이전트 요구 사항
 
 사용자 프로 비전 솔루션 Active Directory 클라우드 HR 앱을 사용 하려면 Windows 2012 R2 이상을 실행 하는 서버에서 하나 이상의 Azure AD Connect 프로 비전 에이전트를 배포 해야 합니다. 서버에는 최소 4gb RAM 및 .NET 4.7.1 + runtime이 있어야 합니다. 호스트 서버에 대상 Active Directory 도메인에 대 한 네트워크 액세스 권한이 있는지 확인 합니다.
 
-온-프레미스 환경을 준비 하기 위해 Azure AD Connect 프로 비전 에이전트 구성 마법사는 Azure AD 테 넌 트에 에이전트를 등록 하 고, [포트를 열어](../manage-apps/application-proxy-add-on-premises-application.md#open-ports) [url에](../manage-apps/application-proxy-add-on-premises-application.md#allow-access-to-urls)대 한 액세스를 허용 하 고, [아웃 바운드 HTTPS 프록시 구성을](../saas-apps/workday-inbound-tutorial.md#how-do-i-configure-the-provisioning-agent-to-use-a-proxy-server-for-outbound-http-communication)지원 합니다.
+온-프레미스 환경을 준비 하기 위해 Azure AD Connect 프로 비전 에이전트 구성 마법사는 Azure AD 테넌트에 에이전트를 등록 하 고, [포트를 열어](../manage-apps/application-proxy-add-on-premises-application.md#open-ports) [url에](../manage-apps/application-proxy-add-on-premises-application.md#allow-access-to-urls)대 한 액세스를 허용 하 고, [아웃 바운드 HTTPS 프록시 구성을](../saas-apps/workday-inbound-tutorial.md#how-do-i-configure-the-provisioning-agent-to-use-a-proxy-server-for-outbound-http-communication)지원 합니다.
 
 프로 비전 에이전트는 서비스 계정을 사용 하 여 Active Directory 도메인과 통신 합니다. 에이전트를 설치 하기 전에 다음 요구 사항을 충족 하는 Active Directory 사용자 및 컴퓨터에 서비스 계정을 만듭니다.
 
@@ -319,9 +319,9 @@ SSPR는 IT 관리자가 사용자가 암호를 재설정 하거나 계정의 잠
 
 ## <a name="plan-for-initial-cycle"></a>초기 주기 계획
 
-Azure AD 프로 비전 서비스를 처음 실행 하는 경우 클라우드 HR 앱에 대 한 [초기 주기](../app-provisioning/how-provisioning-works.md#initial-cycle) 를 수행 하 여 cloud hr 앱에 모든 사용자 개체의 스냅숏을 만듭니다. 초기 주기에 소요 되는 시간은 원본 시스템에 있는 사용자 수에 직접적으로 종속 됩니다. 10만 명의 사용자가 있는 일부 클라우드 HR 앱 테 넌 트의 초기 주기는 오랜 시간이 걸릴 수 있습니다.
+Azure AD 프로 비전 서비스를 처음 실행 하는 경우 클라우드 HR 앱에 대 한 [초기 주기](../app-provisioning/how-provisioning-works.md#initial-cycle) 를 수행 하 여 cloud hr 앱에 모든 사용자 개체의 스냅숏을 만듭니다. 초기 주기에 소요 되는 시간은 원본 시스템에 있는 사용자 수에 직접적으로 종속 됩니다. 10만 명의 사용자가 있는 일부 클라우드 HR 앱 테넌트의 초기 주기는 오랜 시간이 걸릴 수 있습니다.
 
-**대량 클라우드 HR 앱 테 넌 트 (> 30000 사용자)의** 경우 점진적 단계에서 초기 주기를 실행 합니다. 다른 사용자 프로 비전 시나리오에 대해 Active Directory에 올바른 특성이 설정 되었는지 확인 한 후에만 증분 업데이트를 시작 합니다. 여기에서 순서를 따르세요.
+**대량 클라우드 HR 앱 테넌트 (> 30000 사용자)의** 경우 점진적 단계에서 초기 주기를 실행 합니다. 다른 사용자 프로 비전 시나리오에 대해 Active Directory에 올바른 특성이 설정 되었는지 확인 한 후에만 증분 업데이트를 시작 합니다. 여기에서 순서를 따르세요.
 
 1. [범위 지정 필터](#plan-scoping-filters-and-attribute-mapping)를 설정 하 여 제한 된 사용자 집합에 대해서만 초기 주기를 실행 합니다.
 2. Active Directory 계정 프로 비전 및 첫 번째 실행에 대해 선택한 사용자에 대해 설정 된 특성 값을 확인 합니다. 결과가 예상과 일치 하는 경우 범위 지정 필터를 확장 하 여 더 많은 사용자를 점차적으로 포함 하 고 두 번째 실행에 대 한 결과를 확인 합니다.

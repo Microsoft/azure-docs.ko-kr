@@ -60,7 +60,7 @@ Kafka 클라이언트에서 Kafka broker와 통신 하려면 네트워크를 통
 
 * 온-프레미스 클라이언트 연결 – VPN 네트워크를 사용 하 고 [Azure HDInsight 용 가상 네트워크 계획](../hdinsight-plan-virtual-network-deployment.md)에 설명 된 대로 사용자 지정 DNS 서버를 설정 합니다.
 
-* Kafka 서비스에 대 한 공용 끝점 만들기 – 엔터프라이즈 보안 요구 사항에 따라 허용 되는 경우 Kafka broker에 대 한 공용 끝점 또는 공용 끝점이 있는 자체 관리 되는 오픈 소스 REST 끝점을 배포할 수 있습니다.
+* Kafka 서비스에 대 한 공용 엔드포인트 만들기 – 엔터프라이즈 보안 요구 사항에 따라 허용 되는 경우 Kafka broker에 대 한 공용 엔드포인트 또는 공용 엔드포인트이 있는 자체 관리 되는 오픈 소스 REST 엔드포인트을 배포할 수 있습니다.
 
 ## <a name="can-i-add-more-disk-space-on-an-existing-cluster"></a>기존 클러스터에 더 많은 디스크 공간을 추가할 수 있나요?
 

@@ -31,7 +31,7 @@ Azure ad 관리 사용자만 Azure AD 기반 인증에 대 한 사용자를 만�
 
 ![azure ad 관리자 설정][2]
 
-3. Azure AD 관리자가 될 고객 테 넌 트의 유효한 Azure AD 사용자를 선택 합니다.
+3. Azure AD 관리자가 될 고객 테넌트의 유효한 Azure AD 사용자를 선택 합니다.
 
 > [!IMPORTANT]
 > 관리자를 설정 하면 모든 관리자 권한으로 Azure Database for PostgreSQL 서버에 새 사용자가 추가 됩니다. Azure Database for PostgreSQL의 Azure AD 관리 사용자에 게 `azure_ad_admin`역할이 있습니다.
@@ -42,7 +42,7 @@ PostgreSQL 서버 마다 하나의 Azure AD 관리자만 만들 수 있으며, �
 
 Azure Database for PostgreSQL 데이터베이스에 Azure AD 사용자를 추가 하려면 연결 후 다음 단계를 수행 합니다 (연결 하는 방법에 대 한 뒷부분 섹션 참조).
 
-1. 먼저 azure ad 사용자 `<user>@yourtenant.onmicrosoft.com`가 Azure AD 테 넌 트의 유효한 사용자 인지 확인 합니다.
+1. 먼저 azure ad 사용자 `<user>@yourtenant.onmicrosoft.com`가 Azure AD 테넌트의 유효한 사용자 인지 확인 합니다.
 2. Azure AD 관리 사용자로 Azure Database for PostgreSQL 인스턴스에 로그인 합니다.
 3. Azure Database for PostgreSQL에서 역할 `<user>@yourtenant.onmicrosoft.com`를 만듭니다.
 4. Azure_ad_user 역할의 멤버 `<user>@yourtenant.onmicrosoft.com` 만듭니다. 이는 Azure AD 사용자 에게만 제공 되어야 합니다.
@@ -173,7 +173,7 @@ psql "host=mydb.postgres... user=user@tenant.onmicrosoft.com@mydb dbname=postgre
 Azure Database for PostgreSQL의 Azure AD 인증은 사용자가 PostgreSQL 서버에 존재 하는지 확인 하 고 토큰 내용의 유효성을 검사 하 여 토큰의 유효성을 검사 합니다. 다음 토큰 유효성 검사 단계를 수행 합니다.
 
 -   토큰이 Azure AD에 의해 서명 되었으며 변조 되지 않았습니다.
--   서버와 연결 된 테 넌 트에 대해 Azure AD에서 토큰을 발급 했습니다.
+-   서버와 연결 된 테넌트에 대해 Azure AD에서 토큰을 발급 했습니다.
 -   토큰이 만료 되지 않았습니다.
 -   토큰은 Azure Database for PostgreSQL 리소스에 대 한 것 이며 다른 Azure 리소스는 아닙니다.
 

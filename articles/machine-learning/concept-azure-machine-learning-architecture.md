@@ -110,11 +110,11 @@ Azure Machine Learning 다음 도구를 사용 합니다.
 
 ### <a name="endpoints"></a>엔드포인트
 
-끝점은 클라우드 또는 통합 장치 배포를 위한 IoT 모듈에서 호스팅될 수 있는 웹 서비스로 모델을 인스턴스화하는 것입니다.
+엔드포인트은 클라우드 또는 통합 장치 배포를 위한 IoT 모듈에서 호스팅될 수 있는 웹 서비스로 모델을 인스턴스화하는 것입니다.
 
-#### <a name="web-service-endpoint"></a>웹 서비스 끝점
+#### <a name="web-service-endpoint"></a>웹 서비스 엔드포인트
 
-모델을 웹 서비스로 배포 하는 경우 끝점을 Azure Container Instances, Azure Kubernetes Service 또는 FPGAs에 배포할 수 있습니다. 모델, 스크립트 및 관련 파일에서 서비스를 만듭니다. 이러한 컨테이너는 모델에 대 한 실행 환경을 포함 하는 기본 컨테이너 이미지에 배치 됩니다. 이미지에는 웹 서비스에 전송된 점수 매기기 요청을 수신하는 부하 분산된 HTTP 엔드포인트가 있습니다.
+모델을 웹 서비스로 배포 하는 경우 엔드포인트을 Azure Container Instances, Azure Kubernetes Service 또는 FPGAs에 배포할 수 있습니다. 모델, 스크립트 및 관련 파일에서 서비스를 만듭니다. 이러한 컨테이너는 모델에 대 한 실행 환경을 포함 하는 기본 컨테이너 이미지에 배치 됩니다. 이미지에는 웹 서비스에 전송된 점수 매기기 요청을 수신하는 부하 분산된 HTTP 엔드포인트가 있습니다.
 
 Azure는이 기능을 사용 하도록 설정한 경우 Application Insights 원격 분석 또는 모델 원격 분석을 수집 하 여 웹 서비스를 모니터링 하는 데 도움이 됩니다. 원격 분석 데이터는 사용자만 액세스할 수 있으며 Application Insights 및 스토리지 계정 인스턴스에 저장됩니다.
 
@@ -122,9 +122,9 @@ Azure는이 기능을 사용 하도록 설정한 경우 Application Insights 원
 
 모델을 웹 서비스로 배포 하는 방법에 대 한 예제는 [Azure Container Instances에서 이미지 분류 모델 배포](tutorial-deploy-models-with-aml.md)를 참조 하세요.
 
-#### <a name="iot-module-endpoints"></a>IoT 모듈 끝점
+#### <a name="iot-module-endpoints"></a>IoT 모듈 엔드포인트
 
-배포 된 IoT 모듈 끝점은 모델 및 관련 스크립트나 응용 프로그램 및 추가 종속성을 포함 하는 Docker 컨테이너입니다. Edge 장치에서 Azure IoT Edge를 사용 하 여 이러한 모듈을 배포 합니다.
+배포 된 IoT 모듈 엔드포인트은 모델 및 관련 스크립트나 응용 프로그램 및 추가 종속성을 포함 하는 Docker 컨테이너입니다. Edge 장치에서 Azure IoT Edge를 사용 하 여 이러한 모듈을 배포 합니다.
 
 모니터링을 사용하도록 설정한 경우 Azure에서는 Azure IoT Edge 모듈 내의 모델에서 원격 분석 데이터를 수집합니다. 원격 분석 데이터는 사용자만 액세스할 수 있으며 스토리지 계정 인스턴스에 저장됩니다.
 

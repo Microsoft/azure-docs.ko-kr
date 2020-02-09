@@ -152,4 +152,4 @@ Microsoft 피어링을 통해 액세스할 수 있는 서비스와 관련된 BGP
 
 * ExpressRoute에 대한 자세한 내용은 [ExpressRoute FAQ](expressroute-faqs.md)를 참조하세요.
 
-* 라우터 구성 샘플에 대 한 자세한 내용은 [라우팅 설정 및 관리를 위한 라우터 구성 샘플](expressroute-config-samples-routing.md)을 참조 하세요. 
+* 라우터 구성 샘플에 대한 자세한 내용은 [라우팅 설정 및 관리를 위한 라우터 구성 샘플](expressroute-config-samples-routing.md)을 참조 하세요. 

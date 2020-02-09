@@ -84,7 +84,7 @@ az acr task create --name purgeTask \
 
 ### <a name="purge-large-numbers-of-tags-and-manifests"></a>많은 개수의 태그 및 매니페스트 제거
 
-많은 수의 태그와 매니페스트를 제거 하는 데 몇 분 이상 걸릴 수 있습니다. 수천 개의 태그 및 매니페스트를 제거 하려면 명령이 요청 시 작업의 기본 시간 제한 시간인 600 초 또는 예약 된 작업에 대 한 3600 초 보다 길게 실행 되어야 할 수 있습니다. 제한 시간을 초과 하는 경우 태그 및 매니페스트의 하위 집합만 삭제 됩니다. 대규모 제거가 완료 되었는지 확인 하려면 `--timeout` 매개 변수를 전달 하 여 값을 늘립니다. 
+많은 수의 태그와 매니페스트를 제거 하는 데 몇 분 이상 걸릴 수 있습니다. 수천 개의 태그 및 매니페스트를 제거 하려면 명령이 요청 시 작업의 기본 시간 제한 시간인 600 초 또는 예약 된 작업에 대한 3600 초 보다 길게 실행 되어야 할 수 있습니다. 제한 시간을 초과 하는 경우 태그 및 매니페스트의 하위 집합만 삭제 됩니다. 대규모 제거가 완료 되었는지 확인 하려면 `--timeout` 매개 변수를 전달 하 여 값을 늘립니다. 
 
 예를 들어 다음 주문형 태스크는 시간 제한 시간을 3600 초 (1 시간)로 설정 합니다.
 
@@ -102,7 +102,7 @@ az acr run \
 
 ## <a name="example-scheduled-purge-of-multiple-repositories-in-a-registry"></a>예: 레지스트리에서 여러 리포지토리의 예약 된 제거
 
-이 예제에서는 `acr purge`를 사용 하 여 레지스트리의 여러 리포지토리를 정기적으로 정리 하는 과정을 안내 합니다. 예를 들어 `samples/devimage1` 및 `samples/devimage2` 리포지토리에 이미지를 푸시하는 개발 파이프라인이 있을 수 있습니다. 개발 이미지는 배포에 대 한 프로덕션 리포지토리로 정기적으로 가져오기 때문에 개발 이미지가 더 이상 필요 하지 않습니다. 주간 작업에 대비 하 여 `samples/devimage1` 및 `samples/devimage2` 리포지토리를 정기적으로 제거 합니다.
+이 예제에서는 `acr purge`를 사용 하 여 레지스트리의 여러 리포지토리를 정기적으로 정리 하는 과정을 안내 합니다. 예를 들어 `samples/devimage1` 및 `samples/devimage2` 리포지토리에 이미지를 푸시하는 개발 파이프라인이 있을 수 있습니다. 개발 이미지는 배포에 대한 프로덕션 리포지토리로 정기적으로 가져오기 때문에 개발 이미지가 더 이상 필요 하지 않습니다. 주간 작업에 대비 하 여 `samples/devimage1` 및 `samples/devimage2` 리포지토리를 정기적으로 제거 합니다.
 
 ### <a name="preview-the-purge"></a>제거 미리 보기
 
@@ -169,7 +169,7 @@ az acr task create --name weeklyPurgeTask \
 
 Azure Container Registry에서 [이미지 데이터를 삭제](container-registry-delete.md) 하는 다른 옵션에 대해 알아봅니다.
 
-이미지 저장소에 대 한 자세한 내용은 [Azure Container Registry 컨테이너 이미지 저장소](container-registry-storage.md)를 참조 하세요.
+이미지 저장소에 대한 자세한 내용은 [Azure Container Registry 컨테이너 이미지 저장소](container-registry-storage.md)를 참조 하세요.
 
 <!-- LINKS - External -->
 

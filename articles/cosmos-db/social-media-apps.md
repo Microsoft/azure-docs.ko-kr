@@ -200,7 +200,7 @@ Azure Cosmos DB를 사용 하 고 있으므로 검색 프로세스 및 UI 이외
 
 Azure Cognitive Search는 [인덱서](https://msdn.microsoft.com/library/azure/dn946891.aspx), 데이터 리포지토리를 연결 하는 백그라운드 프로세스 및 인덱스에서 개체를 추가, 업데이트 또는 제거 하는 자동으로를 구현 합니다. Azure Search는 [Azure SQL Database 인덱서](https://blogs.msdn.microsoft.com/kaevans/2015/03/06/indexing-azure-sql-database-with-azure-search/), [Azure Blob 인덱서](../search/search-howto-indexing-azure-blob-storage.md) 그리고 다행히도 [Azure Cosmos DB 인덱서](../search/search-howto-index-documentdb.md)를 지원합니다. Cosmos DB에서 Azure Cognitive Search로 정보를 전환 하는 것은 간단 합니다. 두 기술은 모두 정보를 JSON 형식으로 저장하므로 [인덱스를 만들고](../search/search-create-index-portal.md) 인덱싱할 문서에서 특성을 매핑하면 됩니다. 끝났습니다. 데이터의 크기에 따라, 모든 콘텐츠는 클라우드 인프라에서 최상의 Search-as-a-Service 솔루션을 통해 몇 분 내에 검색될 수 있습니다.
 
-Azure Cognitive Search에 대 한 자세한 내용은 Hitchhiker 가이드를 방문 [하 여 검색할](https://blogs.msdn.microsoft.com/mvpawardprogram/2016/02/02/a-hitchhikers-guide-to-search/)수 있습니다.
+Azure Cognitive Search에 대한 자세한 내용은 Hitchhiker 가이드를 방문 [하 여 검색할](https://blogs.msdn.microsoft.com/mvpawardprogram/2016/02/02/a-hitchhikers-guide-to-search/)수 있습니다.
 
 ## <a name="the-underlying-knowledge"></a>기본 지식
 
@@ -249,7 +249,7 @@ Cosmos DB를 사용하면 몇 번의 클릭으로 투명하게 [데이터를 전
 
 ![소셜 네트워킹에 대한 Azure 서비스 간 상호 작용의 다이어그램](./media/social-media-apps/social-media-apps-azure-solution.png)
 
-이러한 종류의 시나리오에 대한 묘책은 없습니다. 뛰어난 환경을 구축할 수 있도록 하는 훌륭한 서비스의 조합에 의해 생성 되는 시너지 효과입니다. 뛰어난 소셜 응용 프로그램을 제공 하는 Azure Cosmos DB의 속도 및 자유도, Azure Cognitive Search와 같은 최고 수준의 검색 솔루션의 인텔리전스 Azure 앱 서비스의 유연성은 언어와 무관 한 응용 프로그램은 물론, 강력한 백그라운드 프로세스와 강력한 데이터를 저장 하기 위한 확장 가능한 Azure Storage 및 Azure SQL Database에 대 한 Azure Machine Learning의 분석 능력 프로세스에 대 한 피드백을 제공 하 고 올바른 사용자에 게 적절 한 콘텐츠를 제공 하는 데 도움이 되는 기술 자료 및 인텔리전스를 만드세요.
+이러한 종류의 시나리오에 대한 묘책은 없습니다. 뛰어난 환경을 구축할 수 있도록 하는 훌륭한 서비스의 조합에 의해 생성 되는 시너지 효과입니다. 뛰어난 소셜 응용 프로그램을 제공 하는 Azure Cosmos DB의 속도 및 자유도, Azure Cognitive Search와 같은 최고 수준의 검색 솔루션의 인텔리전스 Azure 앱 서비스의 유연성은 언어와 무관 한 응용 프로그램은 물론, 강력한 백그라운드 프로세스와 강력한 데이터를 저장 하기 위한 확장 가능한 Azure Storage 및 Azure SQL Database에 대한 Azure Machine Learning의 분석 능력 프로세스에 대한 피드백을 제공 하 고 올바른 사용자에 게 적절 한 콘텐츠를 제공 하는 데 도움이 되는 기술 자료 및 인텔리전스를 만드세요.
 
 ## <a name="next-steps"></a>다음 단계
 

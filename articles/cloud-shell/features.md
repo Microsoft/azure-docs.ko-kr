@@ -31,14 +31,14 @@ ms.locfileid: "74969437"
 
 ### <a name="secure-automatic-authentication"></a>보안 자동 인증
 
-Cloud Shell는 Azure CLI 및 Azure PowerShell에 대 한 계정 액세스를 안전 하 고 자동으로 인증 합니다.
+Cloud Shell는 Azure CLI 및 Azure PowerShell에 대한 계정 액세스를 안전 하 고 자동으로 인증 합니다.
 
 ### <a name="home-persistence-across-sessions"></a>세션 간에 지 속성 $HOME
 
 세션 간에 파일을 유지 하기 위해 처음 시작할 때 Azure 파일 공유를 연결 하는 과정을 안내 Cloud Shell 합니다.
-완료 되 면 Cloud Shell는 이후 모든 세션에 대 한 저장소 (`$HOME\clouddrive`으로 탑재 됨)를 자동으로 연결 합니다.
+완료 되 면 Cloud Shell는 이후 모든 세션에 대한 저장소 (`$HOME\clouddrive`으로 탑재 됨)를 자동으로 연결 합니다.
 또한 `$HOME` 디렉터리는 Azure 파일 공유에. i m g로 유지 됩니다.
-`$HOME` 이외의 파일 및 컴퓨터 상태는 세션 간에 지속 되지 않습니다. SSH 키와 같은 암호를 저장할 때 모범 사례를 사용 합니다. Azure Key Vault와 같은 서비스 [에는 설치 프로그램에 대 한 자습서가 있습니다](https://docs.microsoft.com/azure/key-vault/key-vault-manage-with-cli2#prerequisites).
+`$HOME` 이외의 파일 및 컴퓨터 상태는 세션 간에 지속 되지 않습니다. SSH 키와 같은 암호를 저장할 때 모범 사례를 사용 합니다. Azure Key Vault와 같은 서비스 [에는 설치 프로그램에 대한 자습서가 있습니다](https://docs.microsoft.com/azure/key-vault/key-vault-manage-with-cli2#prerequisites).
 
 [Cloud Shell에서 파일 유지에 대해 자세히 알아보세요.](persisting-shell-storage.md)
 
@@ -47,7 +47,7 @@ Cloud Shell는 Azure CLI 및 Azure PowerShell에 대 한 계정 액세스를 안
 Cloud Shell PowerShell은 Azure drive (`Azure:`)에서 시작 합니다.
 Azure 드라이브를 사용 하면 파일 시스템 탐색과 유사 하 게 계산, 네트워크, 저장소 등의 Azure 리소스를 쉽게 검색 하 고 탐색할 수 있습니다.
 사용자의 드라이브에 관계 없이 친숙 한 [Azure PowerShell cmdlet](https://docs.microsoft.com/powershell/azure) 을 사용 하 여 이러한 리소스를 관리할 수 있습니다.
-Azure Portal에서 직접 또는 Azure PowerShell cmdlet을 통해 Azure 리소스에 대 한 모든 변경 내용은 Azure 드라이브에 반영 됩니다.  `dir -Force`를 실행 하 여 리소스를 새로 고칠 수 있습니다.
+Azure Portal에서 직접 또는 Azure PowerShell cmdlet을 통해 Azure 리소스에 대한 모든 변경 내용은 Azure 드라이브에 반영 됩니다.  `dir -Force`를 실행 하 여 리소스를 새로 고칠 수 있습니다.
 
 ![](media/features-powershell/azure-drive.png)
 

@@ -75,7 +75,7 @@ PowerShell을 사용 하 여 앱의 홈 페이지를 구성 하려면 다음을 
 
 ### <a name="install-the-azure-ad-powershell-module"></a>Azure AD PowerShell 모듈 설치
 
-PowerShell을 사용하여 사용자 지정 홈페이지 URL을 정의하기 전에 Azure AD PowerShell 모듈을 설치합니다. Graph API 끝점을 사용 하는 [PowerShell 갤러리](https://www.powershellgallery.com/packages/AzureAD/2.0.2.16)에서 패키지를 다운로드할 수 있습니다.
+PowerShell을 사용하여 사용자 지정 홈페이지 URL을 정의하기 전에 Azure AD PowerShell 모듈을 설치합니다. Graph API 엔드포인트을 사용 하는 [PowerShell 갤러리](https://www.powershellgallery.com/packages/AzureAD/2.0.2.16)에서 패키지를 다운로드할 수 있습니다.
 
 패키지를 설치하려면 다음 단계를 따르세요.
 

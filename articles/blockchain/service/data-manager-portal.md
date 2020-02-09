@@ -45,7 +45,7 @@ Blockchain Data Manager 인스턴스는 Azure Blockchain 서비스 트랜잭션 
     Név | 연결 된 Blockchain Data Manager의 고유 이름을 입력 합니다. Blockchain Data Manager 이름에는 소문자와 숫자가 포함 될 수 있으며 최대 길이는 20 자입니다.
     트랜잭션 노드 | 트랜잭션 노드를 선택 합니다. 읽기 권한이 있는 트랜잭션 노드만 나열 됩니다.
     Kapcsolat neve | Blockchain 트랜잭션 데이터가 전송 되는 아웃 바운드 연결의 고유 이름을 입력 합니다.
-    Event grid 끝점 | Blockchain Data Manager 인스턴스와 동일한 구독에서 event grid 항목을 선택 합니다.
+    Event grid 엔드포인트 | Blockchain Data Manager 인스턴스와 동일한 구독에서 event grid 항목을 선택 합니다.
 
 1. Kattintson az **OK** gombra.
 

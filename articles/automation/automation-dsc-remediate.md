@@ -22,7 +22,7 @@ ms.locfileid: "68614499"
 모드가 자동으로 설정 되지 않은 경우 어떤 이유로 든 호환 상태에서 드리프트 한 서버는 수동으로 수정할 때까지 비규격 상태로 유지 됩니다.
 
 Azure compute는 고객이 가상 머신 내에서 스크립트를 실행할 수 있도록 하는 실행 명령 이라는 기능을 제공 합니다.
-이 문서에서는 구성 드리프트를 수동으로 수정할 때이 기능에 대 한 예제 스크립트를 제공 합니다.
+이 문서에서는 구성 드리프트를 수동으로 수정할 때이 기능에 대한 예제 스크립트를 제공 합니다.
 
 ## <a name="correct-drift-of-windows-virtual-machines-using-powershell"></a>PowerShell을 사용 하 여 Windows 가상 머신의 정확한 드리프트
 
@@ -40,9 +40,9 @@ Update-DscConfiguration -Wait -Verbose
 Linux 서버에는 현재 유사한 기능을 사용할 수 없습니다.
 유일한 옵션은 등록 프로세스를 반복 하는 것입니다.
 Azure 노드의 경우 포털에서 또는 Az Automation cmdlet을 사용 하 여 드리프트 수정 작업을 수행할 수 있습니다.
-이 프로세스에 대 한 세부 정보는 [Azure Automation 상태 구성을 통해 관리할 수 있도록 컴퓨터](/azure/automation/automation-dsc-onboarding#azure-portal)를 등록 하는 페이지에 설명 되어 있습니다.
+이 프로세스에 대한 세부 정보는 [Azure Automation 상태 구성을 통해 관리할 수 있도록 컴퓨터](/azure/automation/automation-dsc-onboarding#azure-portal)를 등록 하는 페이지에 설명 되어 있습니다.
 하이브리드 노드의 경우 포함 된 Python 스크립트를 사용 하 여 드리프트 수정 작업을 수행할 수 있습니다.
-[Linux 리포지토리의 POWERSHELL DSC에 대 한](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer)설명서를 참조 하세요.
+[Linux 리포지토리의 POWERSHELL DSC에 대한](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer)설명서를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

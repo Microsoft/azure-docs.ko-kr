@@ -41,7 +41,7 @@ Azure AD와 통합된 애플리케이션은 소프트웨어 측면을 넘어서�
 
 ## <a name="application-registration"></a>애플리케이션 등록
 
-[Azure Portal][AZURE-Portal]에서 azure ad 응용 프로그램을 등록 하면 azure ad 테 넌 트에서 두 개체가 만들어집니다.
+[Azure Portal][AZURE-Portal]에서 azure ad 응용 프로그램을 등록 하면 azure ad 테넌트에서 두 개체가 만들어집니다.
 
 - 애플리케이션 개체
 - 서비스 주체 개체

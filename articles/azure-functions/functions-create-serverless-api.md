@@ -1,6 +1,6 @@
 ---
-title: Azure Functions에서 HTTP 끝점 사용자 지정
-description: Azure Functions에서 HTTP 트리거 끝점을 사용자 지정 하는 방법을 알아봅니다.
+title: Azure Functions에서 HTTP 엔드포인트 사용자 지정
+description: Azure Functions에서 HTTP 트리거 엔드포인트을 사용자 지정 하는 방법을 알아봅니다.
 author: mattchenderson
 ms.topic: conceptual
 ms.date: 05/04/2017
@@ -13,9 +13,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/09/2020
 ms.locfileid: "75769271"
 ---
-# <a name="customize-an-http-endpoint-in-azure-functions"></a>Azure Functions에서 HTTP 끝점 사용자 지정
+# <a name="customize-an-http-endpoint-in-azure-functions"></a>Azure Functions에서 HTTP 엔드포인트 사용자 지정
 
-이 문서에서는 Azure Functions를 사용 하 여 확장성이 뛰어난 Api를 빌드하는 방법을 알아봅니다. Azure Functions은 node.js, C#등을 비롯 한 다양 한 언어로 끝점을 쉽게 작성할 수 있도록 하는 기본 제공 HTTP 트리거 및 바인딩 컬렉션과 함께 제공 됩니다. 이 문서에서는 API 디자인의 특정 작업을 처리 하도록 HTTP 트리거를 사용자 지정 합니다. 또한 Azure Functions 프록시와 통합하고 모의 API를 설정하여 API를 확장할 준비를 진행합니다. 이러한 모든 작업은 Functions의 서버리스 컴퓨팅 환경에서 수행되므로 리소스 확장 문제를 걱정할 필요가 없으며 API 논리에만 집중하면 됩니다.
+이 문서에서는 Azure Functions를 사용 하 여 확장성이 뛰어난 Api를 빌드하는 방법을 알아봅니다. Azure Functions은 node.js, C#등을 비롯 한 다양 한 언어로 엔드포인트을 쉽게 작성할 수 있도록 하는 기본 제공 HTTP 트리거 및 바인딩 컬렉션과 함께 제공 됩니다. 이 문서에서는 API 디자인의 특정 작업을 처리 하도록 HTTP 트리거를 사용자 지정 합니다. 또한 Azure Functions 프록시와 통합하고 모의 API를 설정하여 API를 확장할 준비를 진행합니다. 이러한 모든 작업은 Functions의 서버리스 컴퓨팅 환경에서 수행되므로 리소스 확장 문제를 걱정할 필요가 없으며 API 논리에만 집중하면 됩니다.
 
 ## <a name="prerequisites"></a>필수 조건 
 

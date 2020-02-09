@@ -30,7 +30,7 @@ ms.locfileid: "76845969"
 | 구독 당 태그<sup>2</sup> |무제한. |무제한. |
 | 구독 당 고유한 태그 계산<sup>2</sup> | 10000 | 10000 |
 | 위치별 [구독 수준 배포](../articles/azure-resource-manager/templates/deploy-to-subscription.md) | 800<sup>4</sup> | 800 |
-| Azure Active Directory 테 넌 트 당 구독 | 무제한. | 무제한. |
+| Azure Active Directory 테넌트 당 구독 | 무제한. | 무제한. |
 | 구독 당 [공동 관리자](../articles/cost-management-billing/manage/add-change-subscription-administrator.md) |무제한. |무제한. |
 
 <sup>1</sup> 기본 제한은 무료 평가판, 종 량 제 및 Dv2, F, G 등의 시리즈와 같은 제품 범주 유형에 따라 달라 집니다. 예를 들어 기업계약 구독의 기본값은 350입니다.
@@ -42,7 +42,7 @@ ms.locfileid: "76845969"
 <sup>4</sup> 800 배포 제한에 도달 하면 더 이상 필요 하지 않은 기록에서 배포를 삭제 합니다. 구독 수준 배포를 삭제 하려면 [AzDeployment](/powershell/module/az.resources/Remove-AzDeployment) 또는 [az deployment delete](/cli/azure/deployment?view=azure-cli-latest#az-deployment-delete)를 사용 합니다.
 
 > [!NOTE]
-> 가상 컴퓨터 코어에는 지역별 총 한도가 있습니다. Dv2 및 F와 같은 지역 크기 계열에 대 한 제한도 있습니다. 이러한 한도는 개별적으로 적용 됩니다. 미국 동부 총 VM 코어 한도가 30이고, A 시리즈 코어 한도 30이며, D 시리즈 코어 한도는 30인 구독을 예로 들 수 있습니다. 이 구독은 30 개의 A1 Vm 또는 30 D1 개의 Vm을 배포할 수 있으며, 총 30 개 코어를 초과 하지 않도록 둘의 조합을 사용할 수 있습니다. 결합의 예는 10 개의 A1 Vm과 20 D1 개의 Vm입니다.  
+> 가상 컴퓨터 코어에는 지역별 총 한도가 있습니다. Dv2 및 F와 같은 지역 크기 계열에 대한 제한도 있습니다. 이러한 한도는 개별적으로 적용 됩니다. 미국 동부 총 VM 코어 한도가 30이고, A 시리즈 코어 한도 30이며, D 시리즈 코어 한도는 30인 구독을 예로 들 수 있습니다. 이 구독은 30 개의 A1 Vm 또는 30 D1 개의 Vm을 배포할 수 있으며, 총 30 개 코어를 초과 하지 않도록 둘의 조합을 사용할 수 있습니다. 결합의 예는 10 개의 A1 Vm과 20 D1 개의 Vm입니다.  
 > <!-- -->
 > 
 > 

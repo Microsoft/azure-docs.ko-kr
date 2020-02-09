@@ -15,7 +15,7 @@ ms.locfileid: "76705448"
 이 문서에서는 [Azure Backup](backup-overview.md) 서비스를 사용하여 Azure VM을 백업하는 방법을 설명합니다. 다음과 같은 몇 가지 방법을 사용하여 Azure VM을 백업할 수 있습니다.
 
 - 단일 Azure VM:이 문서의 지침은 VM 설정에서 직접 Azure VM을 백업 하는 방법을 설명 합니다.
-- 여러 Azure Vm: Recovery Services 자격 증명 모음을 설정 하 고 여러 Azure Vm에 대 한 백업을 구성할 수 있습니다. 이 시나리오에 대해서는 [이 문서](backup-azure-arm-vms-prepare.md)의 지침을 따르세요.
+- 여러 Azure Vm: Recovery Services 자격 증명 모음을 설정 하 고 여러 Azure Vm에 대한 백업을 구성할 수 있습니다. 이 시나리오에 대해서는 [이 문서](backup-azure-arm-vms-prepare.md)의 지침을 따르세요.
 
 ## <a name="before-you-start"></a>시작하기 전에
 

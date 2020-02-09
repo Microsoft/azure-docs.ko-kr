@@ -540,7 +540,7 @@ reference(resourceName or resourceIdentifier, [apiVersion], ['Full'])
 
 [Azure 리소스에 대 한 관리 되는 id](../../active-directory/managed-identities-azure-resources/overview.md) 는 일부 리소스에 대해 암시적으로 생성 된 [확장 리소스 형식](../management/extension-resource-types.md) 입니다. 관리 id가 템플릿에 명시적으로 정의 되어 있지 않기 때문에 id가 적용 되는 리소스를 참조 해야 합니다. `Full`를 사용 하 여 암시적으로 생성 된 id를 비롯 한 모든 속성을 가져옵니다.
 
-예를 들어 가상 머신 확장 집합에 적용 되는 관리 되는 id에 대 한 테 넌 트 ID를 가져오려면 다음을 사용 합니다.
+예를 들어 가상 머신 확장 집합에 적용 되는 관리 되는 id에 대 한 테넌트 ID를 가져오려면 다음을 사용 합니다.
 
 ```json
 "tenantId": "[reference(resourceId('Microsoft.Compute/virtualMachineScaleSets',  variables('vmNodeType0Name')), '2019-03-01', 'Full').Identity.tenantId]"
@@ -1030,7 +1030,7 @@ subscriptionResourceId([subscriptionId], resourceType, resourceName1, [resourceN
 tenantResourceId(resourceType, resourceName1, [resourceName2], ...)
 ```
 
-테 넌 트 수준에서 배포 된 리소스에 대 한 고유 식별자를 반환 합니다.
+테넌트 수준에서 배포 된 리소스에 대 한 고유 식별자를 반환 합니다.
 
 ### <a name="parameters"></a>매개 변수
 
@@ -1052,7 +1052,7 @@ tenantResourceId(resourceType, resourceName1, [resourceName2], ...)
 
 ### <a name="remarks"></a>주의
 
-이 함수를 사용 하 여 테 넌 트에 배포 된 리소스에 대 한 리소스 ID를 가져옵니다. 반환 된 ID는 리소스 그룹 또는 구독 값을 포함 하지 않는 다른 리소스 ID 함수에서 반환 하는 값과 다릅니다.
+이 함수를 사용 하 여 테넌트에 배포 된 리소스에 대 한 리소스 ID를 가져옵니다. 반환 된 ID는 리소스 그룹 또는 구독 값을 포함 하지 않는 다른 리소스 ID 함수에서 반환 하는 값과 다릅니다.
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -28,7 +28,7 @@ Logic Apps는 [수백 개의 커넥터](https://docs.microsoft.com/connectors)�
 
 <a name="built-in"></a>
 
-* [**기본**](#built-ins)제공: 이러한 기본 제공 트리거 및 작업은 사용자 지정 일정에 따라 실행 되 고, 다른 끝점과 통신 하 고, 요청을 수신 및 응답 하 고, azure 함수, azure API Apps (Web Apps)를 호출 하 고, azure API Management를 사용 하 여 관리 및 게시 하는 논리 앱을 만들고, 요청을 받을 수 있는 중첩 된 논리 앱을 만드는 데 도움이 되는 "Azure Logic Apps 기본 제공
+* [**기본**](#built-ins)제공: 이러한 기본 제공 트리거 및 작업은 사용자 지정 일정에 따라 실행 되 고, 다른 엔드포인트과 통신 하 고, 요청을 수신 및 응답 하 고, azure 함수, azure API Apps (Web Apps)를 호출 하 고, azure API Management를 사용 하 여 관리 및 게시 하는 논리 앱을 만들고, 요청을 받을 수 있는 중첩 된 논리 앱을 만드는 데 도움이 되는 "Azure Logic Apps 기본 제공
 또한 논리 앱의 워크플로를 구성 및 제어하고, 데이터를 사용하는 데 도움이 되는 기본 제공 작업을 사용할 수도 있습니다.
 
   > [!NOTE]
@@ -36,8 +36,8 @@ Logic Apps는 [수백 개의 커넥터](https://docs.microsoft.com/connectors)�
   > ISE를 사용 하는 경우 기본 제공 트리거와 **코어** 레이블을 표시 하는 작업은 논리 앱과 동일한 ISE에서 실행 됩니다.
   > 논리 앱, 기본 제공 트리거 및 ISE에서 실행 되는 기본 제공 작업은 사용량 기반 요금제와 다른 가격 책정 계획을 사용 합니다.
   >
-  > ISEs를 만드는 방법에 대 한 자세한 내용은 [Azure Logic Apps에서 Azure virtual network에 연결](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)을 참조 하세요.
-  > 가격 책정에 대 한 자세한 내용은 [Logic Apps 가격 책정 모델](../logic-apps/logic-apps-pricing.md)을 참조 하세요.
+  > ISEs를 만드는 방법에 대한 자세한 내용은 [Azure Logic Apps에서 Azure virtual network에 연결](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)을 참조 하세요.
+  > 가격 책정에 대한 자세한 내용은 [Logic Apps 가격 책정 모델](../logic-apps/logic-apps-pricing.md)을 참조 하세요.
 
 <a name="managed-connectors"></a>
 
@@ -47,7 +47,7 @@ Logic Apps는 [수백 개의 커넥터](https://docs.microsoft.com/connectors)�
   그런 다음, [통합 계정 커넥터](#integration-account-connectors)를 사용하여 논리 앱에서 BizTalk와 비슷한 작업을 확장하거나 수행할 수 있습니다.
 
   커넥터는 Standard 또는 Enterprise 중 하나로 분류 됩니다.
-  [엔터프라이즈 커넥터](#enterprise-connectors) 는 SAP, ibm MQ 및 IBM 3270 같은 엔터프라이즈 시스템에 대 한 액세스를 제공 하 여 추가 비용을 제공 합니다. 커넥터가 Standard 또는 Enterprise 인지 확인 하려면 커넥터 [개요](https://docs.microsoft.com/connectors)에서 각 커넥터의 참조 페이지의 기술 세부 정보를 참조 하세요.
+  [엔터프라이즈 커넥터](#enterprise-connectors) 는 SAP, ibm MQ 및 IBM 3270 같은 엔터프라이즈 시스템에 대한 액세스를 제공 하 여 추가 비용을 제공 합니다. 커넥터가 Standard 또는 Enterprise 인지 확인 하려면 커넥터 [개요](https://docs.microsoft.com/connectors)에서 각 커넥터의 참조 페이지의 기술 세부 정보를 참조 하세요.
 
   이러한 범주를 사용 하 여 커넥터를 식별할 수도 있지만 일부 커넥터는 여러 범주를 교차할 수 있습니다.
   예를 들어 SAP는 엔터프라이즈 커넥터 및 온-프레미스 커넥터입니다.
@@ -66,8 +66,8 @@ Logic Apps는 [수백 개의 커넥터](https://docs.microsoft.com/connectors)�
   >
   > Azure 가상 네트워크에 연결 된 온-프레미스 시스템의 경우, 논리 앱이 **ise** 레이블, HTTP 작업 또는 [사용자 지정 커넥터가](#custom)있는 커넥터를 사용 하 여 해당 시스템에 직접 액세스할 수 있도록 ise를 해당 네트워크에 삽입 합니다. ISE에서 실행 되는 논리 앱 및 커넥터는 사용량 기반 요금제와 다른 가격 책정 계획을 사용 합니다.
   >
-  > ISEs를 만드는 방법에 대 한 자세한 내용은 [Azure Logic Apps에서 Azure virtual network에 연결](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)을 참조 하세요.
-  > 가격 책정에 대 한 자세한 내용은 [Logic Apps 가격 책정 모델](../logic-apps/logic-apps-pricing.md)을 참조 하세요.
+  > ISEs를 만드는 방법에 대한 자세한 내용은 [Azure Logic Apps에서 Azure virtual network에 연결](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)을 참조 하세요.
+  > 가격 책정에 대한 자세한 내용은 [Logic Apps 가격 책정 모델](../logic-apps/logic-apps-pricing.md)을 참조 하세요.
 
   커넥터의 전체 목록과 각 커넥터의 참조 정보 (예: OpenAPI (이전의 Swagger) 설명에 의해 정의 되는 작업 및 트리거) 및 모든 제한에 대해 [커넥터 개요](/connectors/)에서 전체 목록을 찾을 수 있습니다. 가격 책정 정보는 [Logic Apps 가격 책정 모델](../logic-apps/logic-apps-pricing.md)및 [Logic Apps 가격 책정 세부 정보](https://azure.microsoft.com/pricing/details/logic-apps/)를 참조 하세요.
 
@@ -128,7 +128,7 @@ Logic Apps은 이러한 서비스 또는 시스템을 사용 하 여 작업, 프
 ## <a name="on-premises-connectors"></a>온-프레미스 커넥터
 
 다음은 온-프레미스 시스템의 데이터 및 리소스에 액세스 하기 위해 Logic Apps 제공 하는 일반적으로 사용 되는 표준 커넥터입니다.
-온-프레미스 시스템에 대 한 연결을 만들려면 먼저 [온-프레미스 데이터 게이트웨이를 다운로드, 설치 및 설정][gateway-doc]해야 합니다.
+온-프레미스 시스템에 대한 연결을 만들려면 먼저 [온-프레미스 데이터 게이트웨이를 다운로드, 설치 및 설정][gateway-doc]해야 합니다.
 이 게이트웨이는 필요한 네트워크 인프라를 설정하지 않고도 보안 통신 채널을 제공합니다.
 
 |   |   |   |   |   |
@@ -189,8 +189,8 @@ Azure Logic Apps에서 제공 하는 트리거의 일반적인 종류는 다음�
 ## <a name="connector-configuration"></a>커넥터 구성
 
 각 커넥터의 트리거 및 작업은 사용자가 구성할 수 있는 고유한 속성을 제공 합니다.
-또한 대부분의 커넥터에서는 먼저 대상 서비스 또는 시스템에 대 한 *연결* 을 만들고 인증 자격 증명 또는 기타 구성 정보를 제공 해야 논리 앱에서 트리거 또는 동작을 사용할 수 있습니다.
-예를 들어 데이터에 액세스 하거나 사용자 대신 게시 하기 위해 Twitter 계정에 대 한 연결에 권한을 부여 해야 합니다.
+또한 대부분의 커넥터에서는 먼저 대상 서비스 또는 시스템에 대한 *연결* 을 만들고 인증 자격 증명 또는 기타 구성 정보를 제공 해야 논리 앱에서 트리거 또는 동작을 사용할 수 있습니다.
+예를 들어 데이터에 액세스 하거나 사용자 대신 게시 하기 위해 Twitter 계정에 대한 연결에 권한을 부여 해야 합니다.
 
 Azure Active Directory (Azure AD) OAuth를 사용 하는 커넥터의 경우 연결을 만들면 액세스 토큰이 [암호화](../security/fundamentals/encryption-overview.md) 되어 Azure 비밀 저장소에 안전 하 게 저장 되는 Office 365, Salesforce 또는 GitHub와 같은 서비스에 로그인 하는 것을 의미 합니다. FTP 및 SQL과 같은 다른 커넥터에는 서버 주소, 사용자 이름 및 암호와 같은 구성 세부 정보를 포함 하는 연결이 필요 합니다. 이러한 연결 구성 세부 정보 또한 암호화된 후 안전하게 저장됩니다. [Azure의 암호화](../security/fundamentals/encryption-overview.md)에 대해 자세히 알아보세요.
 
@@ -211,7 +211,7 @@ Azure에서 모든 사용자가 사용할 수 있도록 사용자 지정 API 앱
 >
 > ISE 내에서 만든 사용자 지정 커넥터는 온-프레미스 데이터 게이트웨이와 작동 하지 않습니다. 그러나 이러한 커넥터는 ISE를 호스트 하는 Azure 가상 네트워크에 연결 된 온-프레미스 데이터 원본에 직접 액세스할 수 있습니다. 따라서 ISE의 논리 앱은 이러한 리소스와 통신할 때 데이터 게이트웨이가 필요 하지 않을 수 있습니다.
 >
-> ISEs를 만드는 방법에 대 한 자세한 내용은 [Azure Logic Apps에서 Azure virtual network에 연결](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)을 참조 하세요.
+> ISEs를 만드는 방법에 대한 자세한 내용은 [Azure Logic Apps에서 Azure virtual network에 연결](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)을 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -241,7 +241,7 @@ Azure에서 모든 사용자가 사용할 수 있도록 사용자 지정 API 앱
 [query-doc]: ../logic-apps/logic-apps-perform-data-operations.md#filter-array-action "쿼리 작업을 사용하여 배열 선택 및 필터링"
 [recurrence-doc]:  ./connectors-native-recurrence.md "논리 앱에 대한 되풀이 작업 트리거"
 [scope-doc]: ../logic-apps/logic-apps-control-flow-run-steps-group-scopes.md "작업을 그룹으로 구성 하 여 그룹의 작업 실행이 완료 된 후 자신의 상태를 가져옵니다."
-[switch-doc]: ../logic-apps/logic-apps-control-flow-switch-statement.md "고유 값이 할당 된 사례에 대 한 작업을 구성 합니다. 식, 개체 또는 토큰의 결과와 일치 하는 값을 가진 case만 실행 합니다. 일치 하는 항목이 없는 경우 기본 사례를 실행 합니다."
+[switch-doc]: ../logic-apps/logic-apps-control-flow-switch-statement.md "고유 값이 할당 된 사례에 대한 작업을 구성 합니다. 식, 개체 또는 토큰의 결과와 일치 하는 값을 가진 case만 실행 합니다. 일치 하는 항목이 없는 경우 기본 사례를 실행 합니다."
 [terminate-doc]: ../logic-apps/logic-apps-workflow-actions-triggers.md#terminate-action "논리 앱에 대해 활발히 실행되는 워크플로 중지 또는 취소"
 [until-doc]: ../logic-apps/logic-apps-control-flow-loops.md#until-loop "지정된 조건이 true이거나 일부 상태가 변경될 때까지 작업 반복"
 [data-operations-doc]: ../logic-apps/logic-apps-perform-data-operations.md "배열 필터링이나 CSV 및 HTML 테이블 생성과 같은 데이터 작업 수행"

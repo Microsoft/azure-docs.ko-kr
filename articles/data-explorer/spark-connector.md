@@ -18,13 +18,13 @@ ms.locfileid: "76027938"
 
 [Apache Spark](https://spark.apache.org/) 는 대규모 데이터 처리를 위한 통합 분석 엔진입니다. Azure 데이터 탐색기는 대량의 데이터를 실시간으로 분석할 수 있는 빠르고 완전히 관리 되는 데이터 분석 서비스입니다. 
 
-Spark 용 azure 데이터 탐색기 커넥터는 데이터 원본 및 데이터 싱크를 구현 하 여 Azure 데이터 탐색기 및 Spark 클러스터 간에 데이터를 이동 하 여 두 기능을 모두 사용 합니다. Azure Data Explorer와 Apache Spark를 사용하면 ML(기계 학습), ETL(추출-변환-로드) 및 Log Analytics와 같은 데이터 기반 시나리오를 대상으로 빠르고 확장성 있는 애플리케이션을 구축할 수 있습니다. 일괄 처리 및 스트리밍 모드에서 Azure 데이터 탐색기에 대 한 쓰기를 수행할 수 있습니다.
+Spark 용 azure 데이터 탐색기 커넥터는 데이터 원본 및 데이터 싱크를 구현 하 여 Azure 데이터 탐색기 및 Spark 클러스터 간에 데이터를 이동 하 여 두 기능을 모두 사용 합니다. Azure Data Explorer와 Apache Spark를 사용하면 ML(기계 학습), ETL(추출-변환-로드) 및 Log Analytics와 같은 데이터 기반 시나리오를 대상으로 빠르고 확장성 있는 애플리케이션을 구축할 수 있습니다. 일괄 처리 및 스트리밍 모드에서 Azure 데이터 탐색기에 대한 쓰기를 수행할 수 있습니다.
 Azure 데이터 탐색기에서 읽으면 열 정리 및 조건자 푸시 다운이 지원 되므로 Azure 데이터 탐색기에서 데이터를 필터링 하 여 전송 되는 데이터의 양을 줄일 수 있습니다.
 
-Azure 데이터 탐색기 Spark 커넥터는 모든 Spark 클러스터에서 실행할 수 있는 [오픈 소스 프로젝트](https://github.com/Azure/azure-kusto-spark) 입니다. Azure 데이터 탐색기 Spark 커넥터를 사용 하면 Azure 데이터 탐색기는 표준 Spark 원본 및 싱크 작업 (예: write, read 및 writeStream)에 대 한 유효한 데이터 저장소입니다. 
+Azure 데이터 탐색기 Spark 커넥터는 모든 Spark 클러스터에서 실행할 수 있는 [오픈 소스 프로젝트](https://github.com/Azure/azure-kusto-spark) 입니다. Azure 데이터 탐색기 Spark 커넥터를 사용 하면 Azure 데이터 탐색기는 표준 Spark 원본 및 싱크 작업 (예: write, read 및 writeStream)에 대한 유효한 데이터 저장소입니다. 
 
 > [!NOTE]
-> 아래 예제 중 일부는 [Azure Databricks](https://docs.azuredatabricks.net/) spark 클러스터를 참조 하지만, Azure 데이터 탐색기 spark 커넥터는 Databricks 또는 다른 spark 배포에 대 한 직접적인 종속성을 취하지 않습니다.
+> 아래 예제 중 일부는 [Azure Databricks](https://docs.azuredatabricks.net/) spark 클러스터를 참조 하지만, Azure 데이터 탐색기 spark 커넥터는 Databricks 또는 다른 spark 배포에 대한 직접적인 종속성을 취하지 않습니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -105,17 +105,17 @@ Azure 데이터 탐색기 Spark 커넥터를 사용 하면 azure ad [응용 프�
 |속성  |Description  |
 |---------|---------|
 |**KUSTO_AAD_CLIENT_ID**     |   Azure AD 응용 프로그램 (클라이언트) 식별자입니다.      |
-|**KUSTO_AAD_AUTHORITY_ID**     |  Azure AD 인증 기관. Azure AD 디렉터리 (테 넌 트) ID입니다.        |
+|**KUSTO_AAD_AUTHORITY_ID**     |  Azure AD 인증 기관. Azure AD 디렉터리 (테넌트) ID입니다.        |
 |**KUSTO_AAD_CLIENT_PASSWORD**    |    클라이언트의 Azure AD 응용 프로그램 키입니다.     |
 
 ### <a name="azure-data-explorer-privileges"></a>Azure 데이터 탐색기 권한
 
 Azure 데이터 탐색기 클러스터에서 다음 권한을 부여 해야 합니다.
 
-* 읽기 (데이터 원본)의 경우 Azure AD 응용 프로그램에 대상 데이터베이스에 대 한 *뷰어* 권한 또는 대상 테이블에 대 한 *관리자* 권한이 있어야 합니다.
-* 쓰기 (데이터 싱크)의 경우 Azure AD 응용 프로그램에는 대상 데이터베이스에 대 한 *수집기* 권한이 있어야 합니다. 또한 새 테이블을 만들려면 대상 데이터베이스에 대 한 *사용자* 권한이 있어야 합니다. 대상 테이블이 이미 있는 경우 대상 테이블에 대 한 *관리자* 권한을 구성할 수 있습니다.
+* 읽기 (데이터 원본)의 경우 Azure AD 응용 프로그램에 대상 데이터베이스에 대한 *뷰어* 권한 또는 대상 테이블에 대한 *관리자* 권한이 있어야 합니다.
+* 쓰기 (데이터 싱크)의 경우 Azure AD 응용 프로그램에는 대상 데이터베이스에 대한 *수집기* 권한이 있어야 합니다. 또한 새 테이블을 만들려면 대상 데이터베이스에 대한 *사용자* 권한이 있어야 합니다. 대상 테이블이 이미 있는 경우 대상 테이블에 대한 *관리자* 권한을 구성할 수 있습니다.
  
-Azure 데이터 탐색기 주 역할에 대 한 자세한 내용은 [역할 기반 권한 부여](/azure/kusto/management/access-control/role-based-authorization)를 참조 하세요. 보안 역할 관리에 대 한는 [보안 역할 관리](/azure/kusto/management/security-roles)를 참조 하세요.
+Azure 데이터 탐색기 주 역할에 대한 자세한 내용은 [역할 기반 권한 부여](/azure/kusto/management/access-control/role-based-authorization)를 참조 하세요. 보안 역할 관리에 대한는 [보안 역할 관리](/azure/kusto/management/security-roles)를 참조 하세요.
 
 ## <a name="spark-sink-writing-to-azure-data-explorer"></a>Spark 싱크: Azure 데이터 탐색기에 쓰기
 
@@ -247,6 +247,6 @@ Azure 데이터 탐색기 주 역할에 대 한 자세한 내용은 [역할 기�
 
 ## <a name="next-steps"></a>다음 단계
 
-* [Azure 데이터 탐색기 Spark 커넥터](https://github.com/Azure/azure-kusto-spark/tree/master/docs) 에 대 한 자세한 정보
+* [Azure 데이터 탐색기 Spark 커넥터](https://github.com/Azure/azure-kusto-spark/tree/master/docs) 에 대한 자세한 정보
 * [샘플 코드](https://github.com/Azure/azure-kusto-spark/tree/master/samples/src/main)
 

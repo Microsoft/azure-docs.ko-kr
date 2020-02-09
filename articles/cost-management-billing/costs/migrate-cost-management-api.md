@@ -363,7 +363,7 @@ HTTP Status 200
 }
 ```
 
-클라이언트는 `Azure-AsyncOperation`에 대 한 GET 호출을 수행할 수도 있습니다. 끝점은 작업에 대 한 상태를 반환 합니다.
+클라이언트는 `Azure-AsyncOperation`에 대 한 GET 호출을 수행할 수도 있습니다. 엔드포인트은 작업에 대 한 상태를 반환 합니다.
 
 다음 표에서는 이전 Enterprise Get price sheet API의 필드를 보여 줍니다. Microsoft 고객 계약에 대 한 새 가격표에 해당 하는 필드를 포함 합니다.
 
@@ -394,7 +394,7 @@ HTTP Status 200
 | --- | --- |
 | GET | `https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/pricesheets/default?api-version=2018-10-01` |
 
-위의 API 끝점 대신 Microsoft 고객 계약에 대해 다음을 사용 합니다.
+위의 API 엔드포인트 대신 Microsoft 고객 계약에 대해 다음을 사용 합니다.
 
 **Microsoft 고객 계약에 대 한 가격표 API (비동기 REST API)**
 

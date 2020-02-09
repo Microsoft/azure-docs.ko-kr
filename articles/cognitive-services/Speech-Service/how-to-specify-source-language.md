@@ -39,7 +39,7 @@ var sourceLanguageConfig = SourceLanguageConfig.FromLanguage("de-DE");
 var recognizer = new SpeechRecognizer(speechConfig, sourceLanguageConfig, audioConfig);
 ```
 
-이 예제에서는 `SourceLanguageConfig`를 사용 하 여 소스 언어 및 사용자 지정 끝점을 제공 합니다. 그런 다음 `sourceLanguageConfig` `SpeechRecognizer` 생성에 매개 변수로 전달 됩니다.
+이 예제에서는 `SourceLanguageConfig`를 사용 하 여 소스 언어 및 사용자 지정 엔드포인트을 제공 합니다. 그런 다음 `sourceLanguageConfig` `SpeechRecognizer` 생성에 매개 변수로 전달 됩니다.
 
 ```csharp
 var sourceLanguageConfig = SourceLanguageConfig.FromLanguage("de-DE", "The Endpoint ID for your custom model.");
@@ -69,7 +69,7 @@ auto sourceLanguageConfig = SourceLanguageConfig::FromLanguage("de-DE");
 auto recognizer = SpeechRecognizer::FromConfig(speechConfig, sourceLanguageConfig, audioConfig);
 ```
 
-이 예제에서는 `SourceLanguageConfig`를 사용 하 여 소스 언어 및 사용자 지정 끝점을 제공 합니다. `sourceLanguageConfig`는 `recognizer`를 만들 때 `FromConfig`에 매개 변수로 전달 됩니다.
+이 예제에서는 `SourceLanguageConfig`를 사용 하 여 소스 언어 및 사용자 지정 엔드포인트을 제공 합니다. `sourceLanguageConfig`는 `recognizer`를 만들 때 `FromConfig`에 매개 변수로 전달 됩니다.
 
 ```C++
 auto sourceLanguageConfig = SourceLanguageConfig::FromLanguage("de-DE", "The Endpoint ID for your custom model.");
@@ -98,7 +98,7 @@ SourceLanguageConfig sourceLanguageConfig = SourceLanguageConfig.fromLanguage("d
 SpeechRecognizer recognizer = new SpeechRecognizer(speechConfig, sourceLanguageConfig, audioConfig);
 ```
 
-이 예제에서는 `SourceLanguageConfig`를 사용 하 여 소스 언어 및 사용자 지정 끝점을 제공 합니다. 그런 다음 `sourceLanguageConfig` 새 `SpeechRecognizer`을 만들 때 매개 변수로 전달 됩니다.
+이 예제에서는 `SourceLanguageConfig`를 사용 하 여 소스 언어 및 사용자 지정 엔드포인트을 제공 합니다. 그런 다음 `sourceLanguageConfig` 새 `SpeechRecognizer`을 만들 때 매개 변수로 전달 됩니다.
 
 ```Java
 SourceLanguageConfig sourceLanguageConfig = SourceLanguageConfig.fromLanguage("de-DE", "The Endpoint ID for your custom model.");
@@ -127,7 +127,7 @@ speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_r
 speech_config.speech_recognition_language="de-DE"
 ```
 
-사용자 지정 모델을 인식 하기 위해 사용 하는 경우 `endpoint_id`를 사용 하 여 끝점을 지정할 수 있습니다.
+사용자 지정 모델을 인식 하기 위해 사용 하는 경우 `endpoint_id`를 사용 하 여 엔드포인트을 지정할 수 있습니다.
 
 ```Python
 speech_config.endpoint_id = "The Endpoint ID for your custom model."
@@ -151,7 +151,7 @@ var speechConfig = sdk.SpeechConfig.fromSubscription("YourSubscriptionkey", "You
 speechConfig.speechRecognitionLanguage = "de-DE";
 ```
 
-사용자 지정 모델을 인식 하기 위해 사용 하는 경우 `endpointId`를 사용 하 여 끝점을 지정할 수 있습니다.
+사용자 지정 모델을 인식 하기 위해 사용 하는 경우 `endpointId`를 사용 하 여 엔드포인트을 지정할 수 있습니다.
 
 ```Javascript
 speechConfig.endpointId = "The Endpoint ID for your custom model.";
@@ -171,7 +171,7 @@ SPXSpeechConfiguration *speechConfig = [[SPXSpeechConfiguration alloc] initWithS
 speechConfig.speechRecognitionLanguage = @"de-DE";
 ```
 
-사용자 지정 모델을 인식 하기 위해 사용 하는 경우 `endpointId`를 사용 하 여 끝점을 지정할 수 있습니다.
+사용자 지정 모델을 인식 하기 위해 사용 하는 경우 `endpointId`를 사용 하 여 엔드포인트을 지정할 수 있습니다.
 
 ```Objective-C
 speechConfig.endpointId = @"The Endpoint ID for your custom model.";

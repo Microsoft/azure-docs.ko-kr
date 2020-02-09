@@ -34,7 +34,7 @@ Azure Cosmos DB는 보장된 대기 시간 및 처리량으로 매끄럽게 크�
 
    * 게이트웨이 모드
       
-     게이트웨이 모드는 모든 SDK 플랫폼에서 지원 되며 [Microsoft. Azure DOCUMENTDB SDK](sql-api-sdk-dotnet.md)에 대해 구성 된 기본값입니다. 응용 프로그램이 엄격한 방화벽 제한을 사용 하는 회사 네트워크 내에서 실행 되는 경우 표준 HTTPS 포트 및 단일 끝점을 사용 하기 때문에 게이트웨이 모드를 선택 하는 것이 가장 좋습니다. 그러나 성능 향상은 Azure Cosmos DB에 데이터를 읽거나 쓸 때마다 게이트웨이 모드에 추가 네트워크 홉이 포함 된다는 것입니다. 이 때문에 직접 모드는 네트워크 홉이 적기 때문에 더 나은 성능을 제공합니다. 게이트웨이 연결 모드는 연결 수를 제한 하는 환경에서 응용 프로그램을 실행 하는 경우에도 권장 됩니다. 
+     게이트웨이 모드는 모든 SDK 플랫폼에서 지원 되며 [Microsoft. Azure DOCUMENTDB SDK](sql-api-sdk-dotnet.md)에 대해 구성 된 기본값입니다. 응용 프로그램이 엄격한 방화벽 제한을 사용 하는 회사 네트워크 내에서 실행 되는 경우 표준 HTTPS 포트 및 단일 엔드포인트을 사용 하기 때문에 게이트웨이 모드를 선택 하는 것이 가장 좋습니다. 그러나 성능 향상은 Azure Cosmos DB에 데이터를 읽거나 쓸 때마다 게이트웨이 모드에 추가 네트워크 홉이 포함 된다는 것입니다. 이 때문에 직접 모드는 네트워크 홉이 적기 때문에 더 나은 성능을 제공합니다. 게이트웨이 연결 모드는 연결 수를 제한 하는 환경에서 응용 프로그램을 실행 하는 경우에도 권장 됩니다. 
 
      특히 [소비 계획](../azure-functions/functions-scale.md#consumption-plan)에서 Azure Functions SDK를 사용 하는 경우 [연결의 현재 제한](../azure-functions/manage-connections.md)사항에 유의 해야 합니다. 이 경우 Azure Functions 응용 프로그램 내에서 다른 HTTP 기반 클라이언트를 사용 하는 경우에도 게이트웨이 모드를 사용 하는 것이 좋습니다.
 
@@ -87,7 +87,7 @@ Azure Cosmos DB는 보장된 대기 시간 및 처리량으로 매끄럽게 크�
         await client.OpenAsync();
 
     > [!NOTE] 
-    > OpenAsync 메서드는 계정의 모든 컨테이너에 대 한 주소 라우팅 테이블을 가져오기 위해 요청을 생성 합니다. 많은 컨테이너가 있지만 응용 프로그램의 하위 집합에 액세스 하는 계정의 경우 초기화 속도가 느려지는 불필요 한 트래픽 양이 생성 됩니다. 따라서 응용 프로그램 시작 속도가 느려지므로이 시나리오에서는 OpenAsync 메서드를 사용 하는 것이 유용 하지 않을 수 있습니다.
+    > OpenAsync 메서드는 계정의 모든 컨테이너에 대한 주소 라우팅 테이블을 가져오기 위해 요청을 생성 합니다. 많은 컨테이너가 있지만 응용 프로그램의 하위 집합에 액세스 하는 계정의 경우 초기화 속도가 느려지는 불필요 한 트래픽 양이 생성 됩니다. 따라서 응용 프로그램 시작 속도가 느려지므로이 시나리오에서는 OpenAsync 메서드를 사용 하는 것이 유용 하지 않을 수 있습니다.
 
    <a id="same-region"></a>
 3. **성능을 위해 동일한 Azure 지역에 클라이언트 배치**
@@ -114,7 +114,7 @@ Azure Cosmos DB는 보장된 대기 시간 및 처리량으로 매끄럽게 크�
 
     [.NET SDK V3](sql-api-sdk-dotnet-standard.md) 에는 serialize 하지 않고 데이터를 수신 하 고 반환할 수 있는 스트림 api가 포함 되어 있습니다. 
 
-    SDK에서 직접 응답을 사용 하지 않지만 다른 응용 프로그램 계층에 릴레이 하는 중간 계층 응용 프로그램은 stream Api의 이점을 누릴 수 있습니다. 스트림 처리에 대 한 예제는 [항목 관리](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos.Samples/Usage/ItemManagement) 샘플을 참조 하세요.
+    SDK에서 직접 응답을 사용 하지 않지만 다른 응용 프로그램 계층에 릴레이 하는 중간 계층 응용 프로그램은 stream Api의 이점을 누릴 수 있습니다. 스트림 처리에 대한 예제는 [항목 관리](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos.Samples/Usage/ItemManagement) 샘플을 참조 하세요.
 
 3. **애플리케이션 수명 동안 singleton Azure Cosmos DB 클라이언트 사용**
 
@@ -134,7 +134,7 @@ Azure Cosmos DB는 보장된 대기 시간 및 처리량으로 매끄럽게 크�
 
     (b) ***MaxBufferedItemCount 튜닝\:*** 결과의 현재 배치가 클라이언트에서 처리되는 반면 병렬 쿼리는 결과를 프리페치하도록 설계되었습니다. 프리페치는 쿼리의 전체 대기 시간 개선 사항에 도움이 됩니다. MaxBufferedItemCount는 프리페치된 결과의 수를 제한하는 매개 변수입니다. MaxBufferedItemCount를 반환된 결과의 예상 수(또는 더 높은 숫자)로 설정하면 쿼리가 프리페치의 최대 이점을 얻을 수 있습니다.
 
-    사전 인출은 병렬 처리 수준에 관계 없이 동일한 방식으로 작동 하며 모든 파티션의 데이터에 대 한 단일 버퍼가 있습니다.  
+    사전 인출은 병렬 처리 수준에 관계 없이 동일한 방식으로 작동 하며 모든 파티션의 데이터에 대한 단일 버퍼가 있습니다.  
 6. **서버 쪽 GC 켜기**
 
     경우에 따라 가비지 수집의 빈도를 줄이는 것이 도움이 될 수 있습니다. .NET에서 [gcServer](https://msdn.microsoft.com/library/ms229357.aspx) 를 true로 설정합니다.
@@ -215,7 +215,7 @@ Azure Cosmos DB는 보장된 대기 시간 및 처리량으로 매끄럽게 크�
 
     쿼리의 복잡성은 작업에 사용되는 요청 단위의 양에 영향을 줍니다. 조건자의 수, 조건자의 특성, UDF 수 및 원본 데이터 집합의 크기는 모두 쿼리 작업의 비용에 영향을 줍니다.
 
-    모든 작업 (만들기, 업데이트 또는 삭제)에 대 한 오버 헤드를 측정 하려면 >\<ResourceResponse 헤더 (또는 .NET SDK의 FeedResponse\<T >의 해당 RequestCharge 속성)를 검사 하 여 이러한 [작업에 사용](https://docs.microsoft.com/rest/api/cosmos-db/common-cosmosdb-rest-response-headers) 된 요청 단위 수를 측정 합니다.
+    모든 작업 (만들기, 업데이트 또는 삭제)에 대한 오버 헤드를 측정 하려면 >\<ResourceResponse 헤더 (또는 .NET SDK의 FeedResponse\<T >의 해당 RequestCharge 속성)를 검사 하 여 이러한 [작업에 사용](https://docs.microsoft.com/rest/api/cosmos-db/common-cosmosdb-rest-response-headers) 된 요청 단위 수를 측정 합니다.
 
     ```csharp
     // Measure the performance (request units) of writes

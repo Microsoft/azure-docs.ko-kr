@@ -75,7 +75,7 @@ RDS 배포에서 RD 웹 역할 및 RD 게이트웨이 역할은 인터넷 연결
 3. 애플리케이션에 대한 Single Sign-On 방법을 **Azure AD Single Sign-On 사용 안 함**으로 유지합니다. 사용자에게는 Azure AD 및 RD 웹에 대해 한 번씩 인증하도록 요청되지만 RD 게이트웨이에 대한 Single Sign-On이 제공됩니다.
 4. 선택 **Azure Active Directory**를 차례로 **앱 등록**합니다. 목록에서 앱을 선택 합니다.
 5. 아래 **관리**를 선택 **브랜드**합니다.
-6. 업데이트를 **홈 페이지 URL** RD 웹 끝점을 가리키도록 필드 (같은 `https://\<rdhost\>.com/RDWeb`).
+6. 업데이트를 **홈 페이지 URL** RD 웹 엔드포인트을 가리키도록 필드 (같은 `https://\<rdhost\>.com/RDWeb`).
 
 ### <a name="direct-rds-traffic-to-application-proxy"></a>애플리케이션 프록시에 대한 직접 RDS 트래픽
 

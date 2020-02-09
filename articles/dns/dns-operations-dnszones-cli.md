@@ -69,7 +69,7 @@ az account set --subscription "subscription name"
 ```
 
 ### <a name="optional-to-installuse-azure-dns-private-zones-feature"></a>선택 사항: Azure DNS Private Zones 기능을 설치/사용 하려면
-Azure CLI에 대 한 확장을 통해 Azure DNS 개인 영역 기능을 사용할 수 있습니다. “dns” Azure CLI 확장 설치 
+Azure CLI에 대한 확장을 통해 Azure DNS 개인 영역 기능을 사용할 수 있습니다. “dns” Azure CLI 확장 설치 
 ```
 az extension add --name dns
 ``` 

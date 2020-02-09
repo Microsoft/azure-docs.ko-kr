@@ -62,7 +62,7 @@ VM이 실패 상태 여 서 백업 작업이 실패 했습니다. 백업이 성�
 오류 메시지: 파일 시스템 일치 스냅숏을 만들기 위해 VM의 탑재 위치를 하나 이상 고정 하지 못했습니다.
 
 * **분리할** 명령을 사용 하 여 파일 시스템 상태가 정리 되지 않은 장치를 분리 합니다.
-* **Fsck** 명령을 사용 하 여 이러한 장치에 대 한 파일 시스템 일관성 검사를 실행 합니다.
+* **Fsck** 명령을 사용 하 여 이러한 장치에 대한 파일 시스템 일관성 검사를 실행 합니다.
 * 장치를 다시 탑재 하 고 백업 작업을 다시 시도 하세요.</ol>
 
 ## <a name="extensionsnapshotfailedcom--extensioninstallationfailedcom--extensioninstallationfailedmdtc---extension-installationoperation-failed-due-to-a-com-error"></a>ExtensionSnapshotFailedCOM/Extension설치 Failedcom/Extension설치용 Failedmdtc-확장 설치/c + + 오류로 인해 작업이 실패 했습니다.
@@ -98,13 +98,13 @@ Windows 서비스 **Com + 시스템** 응용 프로그램 문제로 인해 백�
 * ```net stop serviceName```
 * ```net start serviceName```
 
-## <a name="extensionconfigparsingfailure--failure-in-parsing-the-config-for-the-backup-extension"></a>ExtensionConfigParsingFailure-백업 확장에 대 한 구성의 구문 분석에 실패 했습니다.
+## <a name="extensionconfigparsingfailure--failure-in-parsing-the-config-for-the-backup-extension"></a>ExtensionConfigParsingFailure-백업 확장에 대한 구성의 구문 분석에 실패 했습니다.
 
 오류 코드: ExtensionConfigParsingFailure<br/>
-오류 메시지: 백업 확장에 대 한 구성의 구문 분석에 실패 했습니다.
+오류 메시지: 백업 확장에 대한 구성의 구문 분석에 실패 했습니다.
 
 이 오류는 **MachineKeys** 디렉터리: **%systemdrive%\programdata\microsoft\crypto\rsa\machinekeys**에 대한 권한 변경으로 인해 발생합니다.
-다음 명령을 실행 하 고 **Machinekeys** 디렉터리에 대 한 사용 권한이 기본값 인지 확인 합니다.**icacls%systemdrive%\programdata\microsoft\crypto\rsa\machinekeys**.
+다음 명령을 실행 하 고 **Machinekeys** 디렉터리에 대한 사용 권한이 기본값 인지 확인 합니다.**icacls%systemdrive%\programdata\microsoft\crypto\rsa\machinekeys**.
 
 기본 권한은 다음과 같습니다.
 
@@ -142,12 +142,12 @@ Windows 서비스 **Com + 시스템** 응용 프로그램 문제로 인해 백�
 * 백업 확장을 삭제 한 후 백업 작업을 다시 시도 하세요.
 * 후속 백업 작업은 새 확장을 원하는 상태로 설치할 것입니다.
 
-## <a name="extensionfailedsnapshotlimitreachederror---snapshot-operation-failed-as-snapshot-limit-is-exceeded-for-some-of-the-disks-attached"></a>ExtensionFailedSnapshotLimitReachedError-연결 된 일부 디스크에 대 한 스냅숏 제한을 초과 하 여 스냅숏 작업이 실패 했습니다.
+## <a name="extensionfailedsnapshotlimitreachederror---snapshot-operation-failed-as-snapshot-limit-is-exceeded-for-some-of-the-disks-attached"></a>ExtensionFailedSnapshotLimitReachedError-연결 된 일부 디스크에 대한 스냅숏 제한을 초과 하 여 스냅숏 작업이 실패 했습니다.
 
 오류 코드: ExtensionFailedSnapshotLimitReachedError  <br/>
-오류 메시지: 연결 된 일부 디스크에 대 한 스냅숏 제한을 초과 하 여 스냅숏 작업에 실패 했습니다.
+오류 메시지: 연결 된 일부 디스크에 대한 스냅숏 제한을 초과 하 여 스냅숏 작업에 실패 했습니다.
 
-연결 된 일부 디스크에 대 한 스냅숏 제한이 초과 되어 스냅숏 작업이 실패 했습니다. 아래 문제 해결 단계를 완료 한 후 작업을 다시 시도 하세요.
+연결 된 일부 디스크에 대한 스냅숏 제한이 초과 되어 스냅숏 작업이 실패 했습니다. 아래 문제 해결 단계를 완료 한 후 작업을 다시 시도 하세요.
 
 * 필요 하지 않은 디스크 blob-스냅숏을 삭제 합니다. 디스크 blob을 삭제 하지 않도록 주의 해야 합니다. 스냅숏 blob만 삭제 해야 합니다.
 * 일시 삭제를 VM 디스크 저장소 계정에서 사용 하도록 설정한 경우에는 기존 스냅숏이 언제 든 지 허용 되는 최대 크기 보다 작은 것으로 소프트 삭제 보존을 구성 합니다.
@@ -161,7 +161,7 @@ Windows 서비스 **Com + 시스템** 응용 프로그램 문제로 인해 백�
 오류 코드: ExtensionFailedTimeoutVMNetworkUnresponsive<br/>
 오류 메시지: VM 리소스가 부족 하 여 스냅숏 작업에 실패 했습니다.
 
-스냅숏 작업을 수행 하는 동안 네트워크 호출의 지연이 발생 하 여 VM에 대 한 백업 작업이 실패 했습니다. 이 문제를 해결하려면 1단계를 수행합니다. 문제가 지속되면 2 및 3단계를 시도합니다.
+스냅숏 작업을 수행 하는 동안 네트워크 호출의 지연이 발생 하 여 VM에 대한 백업 작업이 실패 했습니다. 이 문제를 해결하려면 1단계를 수행합니다. 문제가 지속되면 2 및 3단계를 시도합니다.
 
 **1 단계**: 호스트를 통해 스냅숏 만들기
 
@@ -189,7 +189,7 @@ REG ADD "HKLM\SOFTWARE\Microsoft\BcdrAgentPersistentKeys" /v CalculateSnapshotTi
 | **오류 코드**: VmNotInDesirableState <br/> **오류 메시지**: VM이 백업을 허용 하는 상태가 아닙니다. |<ul><li>VM이 **실행 중**에서 **종료** 상태로 전환되고 있으면 상태가 변경될 때까지 기다립니다. 그런 다음, 백업 작업을 트리거합니다. <li> VM이 Linux 에이전트이고 Security-Enhanced Linux 커널 모듈을 사용하는 경우 보안 정책에서 Azure Linux 에이전트 경로 **/var/lib/waagent**를 제외하여 백업 확장이 설치되도록 합니다.  |
 | VM 에이전트가 가상 머신에 없습니다. <br>모든 필수 구성 요소 및 VM 에이전트를 설치합니다. 그런 다음, 작업을 다시 시작합니다. |[VM 에이전트 설치 및 VM 에이전트 설치의 유효성을 검사하는 방법](#vm-agent)에 대해 자세히 알아보세요. |
 | **오류 코드**: ExtensionSnapshotFailedNoSecureNetwork <br/> **오류 메시지**: 보안 네트워크 통신 채널을 만드는 동안 오류가 발생 하 여 스냅숏 작업이 실패 했습니다. | <ol><li> 관리자 권한 모드에서 **regedit.exe**를 실행하여 레지스트리 편집기를 엽니다. <li> 시스템에 있는 모든 버전의 .NET Framework를 파악합니다. 이러한 버전은 레지스트리 키 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft**의 계층 구조 아래에 있습니다. <li> 레지스트리 키에 있는 각 .NET Framework에 대해 다음 키를 추가합니다. <br> **SchUseStrongCrypto"=dword:00000001** </ol>|
-| **오류 코드**: ExtensionVCRedistInstallationFailure <br/> **오류 메시지**: visual Studio 2012에 대 한 시각적 C++ 재배포 가능 패키지 설치에 실패 하 여 스냅숏 작업에 실패 했습니다. | C:\Packages\Plugins\Microsoft.Azure.RecoveryServices.VMSnapshot\agentVersion으로 이동 하 여 vcredist2013_x64를 설치 합니다.<br/>서비스 설치를 허용 하는 레지스트리 키 값이 올바른 값으로 설정 되어 있는지 확인 합니다. 즉, **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\msiserver** 의 **시작** 값을 **4**가 아닌 **3** 으로 설정 합니다. <br><br>설치하는 데 여전히 문제가 발생할 경우 관리자 권한 명령 프롬프트에서 **MSIEXEC /UNREGISTER**를 실행한 후 **MSIEXEC /REGISTER**를 실행하여 설치 서비스를 다시 시작합니다.  |
+| **오류 코드**: ExtensionVCRedistInstallationFailure <br/> **오류 메시지**: visual Studio 2012에 대한 시각적 C++ 재배포 가능 패키지 설치에 실패 하 여 스냅숏 작업에 실패 했습니다. | C:\Packages\Plugins\Microsoft.Azure.RecoveryServices.VMSnapshot\agentVersion으로 이동 하 여 vcredist2013_x64를 설치 합니다.<br/>서비스 설치를 허용 하는 레지스트리 키 값이 올바른 값으로 설정 되어 있는지 확인 합니다. 즉, **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\msiserver** 의 **시작** 값을 **4**가 아닌 **3** 으로 설정 합니다. <br><br>설치하는 데 여전히 문제가 발생할 경우 관리자 권한 명령 프롬프트에서 **MSIEXEC /UNREGISTER**를 실행한 후 **MSIEXEC /REGISTER**를 실행하여 설치 서비스를 다시 시작합니다.  |
 
 ## <a name="jobs"></a>작업
 

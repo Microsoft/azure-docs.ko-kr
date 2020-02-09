@@ -181,4 +181,4 @@ C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.ApplicationMonitoringWi
 
 ## <a name="next-steps"></a>다음 단계
 * [Azure 가상 머신 확장 집합에 응용 프로그램을 배포](../../virtual-machine-scale-sets/virtual-machine-scale-sets-deploy-app.md)하는 방법을 알아봅니다.
-* 끝점이 종료 된 경우 경고를 표시 하도록 [가용성 웹 테스트를 설정](monitor-web-app-availability.md) 합니다.
+* 엔드포인트이 종료 된 경우 경고를 표시 하도록 [가용성 웹 테스트를 설정](monitor-web-app-availability.md) 합니다.

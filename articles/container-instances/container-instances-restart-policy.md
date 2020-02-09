@@ -1,5 +1,5 @@
 ---
-title: 한 번 실행 태스크에 대 한 정책 다시 시작
+title: 한 번 실행 태스크에 대한 정책 다시 시작
 description: Azure Container Instances를 사용하여 빌드, 테스트 또는 이미지 렌더링 작업에서처럼 완료될 때까지 실행되는 작업을 실행하는 방법에 대해 알아봅니다.
 ms.topic: article
 ms.date: 04/15/2019

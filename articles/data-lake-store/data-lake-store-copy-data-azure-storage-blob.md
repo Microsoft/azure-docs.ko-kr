@@ -38,7 +38,7 @@ Data Lake Storage Gen1는 다음 원본에서 데이터를 복사할 수 있는 
 * **Azure 구독**. [Azure 평가판](https://azure.microsoft.com/pricing/free-trial/)을 참조하세요.
 * 일부 데이터를 사용 하 여 blob 컨테이너를 **Azure Storage** 합니다.
 * **Data Lake Storage Gen1 계정**. 계정을 만드는 방법에 대한 지침은 [Azure Data Lake Storage Gen1 시작](data-lake-store-get-started-portal.md)을 참조하세요.
-* **Data Lake Analytics 계정 (선택 사항)** -Data Lake Analytics 계정을 만드는 방법에 대 한 지침은 [Azure Data Lake Analytics 시작](../data-lake-analytics/data-lake-analytics-get-started-portal.md) 을 참조 하세요.
+* **Data Lake Analytics 계정 (선택 사항)** -Data Lake Analytics 계정을 만드는 방법에 대한 지침은 [Azure Data Lake Analytics 시작](../data-lake-analytics/data-lake-analytics-get-started-portal.md) 을 참조 하세요.
 * **AdlCopy 도구**. [Adlcopy 도구](https://www.microsoft.com/download/details.aspx?id=50358)를 설치 합니다.
 
 ## <a name="syntax-of-the-adlcopy-tool"></a>AdlCopy 도구 구문
@@ -172,7 +172,7 @@ AdlCopy와 함께 Data Lake Analytics 계정을 사용하여 Azure Storage Blob�
 
 ## <a name="considerations-for-using-adlcopy"></a>AdlCopy 사용에 대한 고려 사항
 
-* AdlCopy(버전 1.0.5)는 모두 수천 개가 넘는 파일과 폴더가 있는 원본에서 데이터를 복사하는 작업을 지원합니다. 그러나 많은 데이터 집합을 복사 하는 데 문제가 발생 하는 경우에는 파일/폴더를 다른 하위 폴더로 배포 하 고 대신 해당 하위 폴더에 대 한 경로를 원본으로 사용할 수 있습니다.
+* AdlCopy(버전 1.0.5)는 모두 수천 개가 넘는 파일과 폴더가 있는 원본에서 데이터를 복사하는 작업을 지원합니다. 그러나 많은 데이터 집합을 복사 하는 데 문제가 발생 하는 경우에는 파일/폴더를 다른 하위 폴더로 배포 하 고 대신 해당 하위 폴더에 대한 경로를 원본으로 사용할 수 있습니다.
 
 ## <a name="performance-considerations-for-using-adlcopy"></a>AdlCopy 사용에 대한 성능 고려 사항
 

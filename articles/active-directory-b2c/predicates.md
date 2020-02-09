@@ -1,7 +1,7 @@
 ---
 title: Predicates 및 PredicateValidations
 titleSuffix: Azure AD B2C
-description: Azure Active Directory B2C에서 사용자 지정 정책을 사용 하 여 잘못 된 형식의 데이터를 Azure AD B2C 테 넌 트에 추가 하지 않도록 합니다.
+description: Azure Active Directory B2C에서 사용자 지정 정책을 사용 하 여 잘못 된 형식의 데이터를 Azure AD B2C 테넌트에 추가 하지 않도록 합니다.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -22,7 +22,7 @@ ms.locfileid: "74951023"
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-**조건자** 및 **PredicateValidations** 요소를 사용 하면 올바른 형식의 데이터만 Azure AD B2C (Azure Active Directory B2C) 테 넌 트에 입력 되도록 유효성 검사 프로세스를 수행할 수 있습니다.
+**조건자** 및 **PredicateValidations** 요소를 사용 하면 올바른 형식의 데이터만 Azure AD B2C (Azure Active Directory B2C) 테넌트에 입력 되도록 유효성 검사 프로세스를 수행할 수 있습니다.
 
 아래 다이어그램에서는 요소 간의 관계가 나와 있습니다.
 

@@ -20,7 +20,7 @@ ms.locfileid: "76984764"
 
 작업 영역은 Azure Machine Learning의 최상위 리소스 이며 Azure Machine Learning를 사용할 때 만드는 모든 아티팩트를 사용할 수 있는 중앙 집중식 환경을 제공 합니다.  작업 영역에는 로그, 메트릭, 출력 및 스크립트의 스냅숏을 비롯 하 여 모든 학습 실행의 기록이 유지 됩니다. 이 정보를 사용하여 최고의 모델을 생성하는 학습 실행을 확인합니다.  
 
-원하는 모델이 있으면 작업 영역에 등록 합니다. 그런 다음 등록 된 모델 및 점수 매기기 스크립트를 사용 하 여 Azure Container Instances, Azure Kubernetes Service에 배포 하거나 FPGA (필드 프로그래밍 가능 게이트 배열)에 REST 기반 HTTP 끝점으로 배포 합니다. 모델을 Azure IoT Edge 장치에 모듈로 배포할 수도 있습니다.
+원하는 모델이 있으면 작업 영역에 등록 합니다. 그런 다음 등록 된 모델 및 점수 매기기 스크립트를 사용 하 여 Azure Container Instances, Azure Kubernetes Service에 배포 하거나 FPGA (필드 프로그래밍 가능 게이트 배열)에 REST 기반 HTTP 엔드포인트으로 배포 합니다. 모델을 Azure IoT Edge 장치에 모듈로 배포할 수도 있습니다.
 
 사용할 수 있는 가격 책정 및 기능은 작업 영역에 대해 [Basic 또는 Enterprise edition](overview-what-is-azure-ml.md#sku) 이 선택 되어 있는지 여부에 따라 달라 집니다. [작업 영역을 만들](#create-workspace)때 버전을 선택 합니다.  Basic에서 Enterprise edition으로 [업그레이드할](#upgrade) 수도 있습니다.
 
@@ -41,7 +41,7 @@ ms.locfileid: "76984764"
 + [파이프라인](concept-azure-machine-learning-architecture.md#ml-pipelines) 은 모델을 학습 하 고 재 학습 하는 데 사용할 수 있는 워크플로입니다.
 + 데이터 [집합](concept-azure-machine-learning-architecture.md#datasets-and-datastores) 은 모델 학습 및 파이프라인 생성에 사용 하는 데이터를 관리 하는 데 도움이 됩니다.
 + 배포 하려는 모델이 있으면 등록 된 모델을 만듭니다.
-+ 등록 된 모델 및 점수 매기기 스크립트를 사용 하 여 [배포 끝점](concept-azure-machine-learning-architecture.md#endpoints)을 만듭니다.
++ 등록 된 모델 및 점수 매기기 스크립트를 사용 하 여 [배포 엔드포인트](concept-azure-machine-learning-architecture.md#endpoints)을 만듭니다.
 
 ## <a name="tools-for-workspace-interaction"></a>작업 영역 상호 작용 도구
 

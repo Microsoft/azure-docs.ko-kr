@@ -1,5 +1,5 @@
 ---
-title: Power BI를 사용 하 여 Azure 데이터 탐색기 데이터를 쿼리하고 시각화 하는 방법에 대 한 모범 사례
+title: Power BI를 사용 하 여 Azure 데이터 탐색기 데이터를 쿼리하고 시각화 하는 방법에 대한 모범 사례
 description: 이 문서에서는 Power BI를 사용 하 여 Azure 데이터 탐색기 데이터를 쿼리하고 시각화 하는 모범 사례를 알아봅니다.
 author: orspod
 ms.author: orspodek
@@ -14,17 +14,17 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/13/2019
 ms.locfileid: "74024027"
 ---
-# <a name="best-practices-for-using-power-bi-to-query-and-visualize-azure-data-explorer-data"></a>Power BI를 사용 하 여 Azure 데이터 탐색기 데이터를 쿼리하고 시각화 하는 방법에 대 한 모범 사례
+# <a name="best-practices-for-using-power-bi-to-query-and-visualize-azure-data-explorer-data"></a>Power BI를 사용 하 여 Azure 데이터 탐색기 데이터를 쿼리하고 시각화 하는 방법에 대한 모범 사례
 
 Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능한 빠르고 확장성이 우수한 데이터 탐색 서비스입니다. [Power BI](https://docs.microsoft.com/power-bi/) 은 데이터를 시각화 하 고 조직 전체에서 결과를 공유할 수 있는 비즈니스 분석 솔루션입니다. Azure 데이터 탐색기는 Power BI 데이터에 연결 하기 위한 세 가지 옵션을 제공 합니다. [기본 제공 커넥터](power-bi-connector.md)를 사용 하 여 [Azure 데이터 탐색기에서 Power BI로 쿼리를 가져오거나](power-bi-imported-query.md) [SQL 쿼리](power-bi-sql-query.md)를 사용 합니다. 이 문서에서는 Power BI를 사용 하 여 Azure 데이터 탐색기 데이터를 쿼리하고 시각화 하기 위한 팁을 제공 합니다. 
 
-## <a name="best-practices-for-using-power-bi"></a>Power BI 사용에 대 한 모범 사례 
+## <a name="best-practices-for-using-power-bi"></a>Power BI 사용에 대한 모범 사례 
 
 Tb의 새로운 원시 데이터로 작업 하는 경우 다음 지침에 따라 Power BI 대시보드 및 보고서를 계속 해 서 snappy 하 고 업데이트 합니다.
 
 * **여행 광원** -보고서를 Power BI 하는 데 필요한 데이터만 가져옵니다. 심층 대화형 분석을 위해 Kusto 쿼리 언어를 사용 하 여 임시 탐색에 최적화 된 [Azure 데이터 탐색기 웹 UI](web-query-data.md) 를 사용 합니다.
 
-* **복합 모델** - [복합 모델](https://docs.microsoft.com/power-bi/desktop-composite-models) 을 사용 하 여 최상위 대시보드에 대 한 집계 데이터를 필터링 된 작업 원시 데이터와 결합할 수 있습니다. 원시 데이터를 사용 하는 시기와 집계 뷰를 사용 하는 시기를 명확 하 게 정의할 수 있습니다. 
+* **복합 모델** - [복합 모델](https://docs.microsoft.com/power-bi/desktop-composite-models) 을 사용 하 여 최상위 대시보드에 대한 집계 데이터를 필터링 된 작업 원시 데이터와 결합할 수 있습니다. 원시 데이터를 사용 하는 시기와 집계 뷰를 사용 하는 시기를 명확 하 게 정의할 수 있습니다. 
 
 * **가져오기 모드와 DirectQuery 모드 비교** -더 작은 데이터 집합의 상호 작용을 위해 **가져오기** 모드를 사용 합니다. 자주 업데이트 되는 크고 많은 데이터 집합에는 **DirectQuery** 모드를 사용 합니다. 예를 들어 **가져오기** 모드를 사용 하 여 차원 테이블이 작으며 자주 변경 되지 않으므로이를 사용 하 여 차원 테이블을 만듭니다. 데이터 업데이트의 예상 률에 따라 새로 고침 간격을 설정 합니다. **DirectQuery** 모드를 사용 하 여 팩트 테이블을 만듭니다. 이러한 테이블은 크고 원시 데이터를 포함 하기 때문입니다. Power BI [드릴스루](https://docs.microsoft.com/power-bi/desktop-drillthrough)를 사용 하 여 필터링 된 데이터를 표시 하려면 다음 표를 사용 합니다.
 
@@ -138,7 +138,7 @@ Kusto 쿼리는 [쿼리 제한](/azure/kusto/concepts/querylimits)에 설명 된
 
 ### <a name="dont-use-power-bi-data-refresh-scheduler-to-issue-control-commands-to-kusto"></a>Power BI 데이터 새로 고침 스케줄러를 사용 하 여 Kusto에 제어 명령 실행 안 함
 
-Power BI는 데이터 원본에 대 한 쿼리를 정기적으로 실행할 수 있는 데이터 새로 고침 스케줄러를 포함 합니다. Power BI는 모든 쿼리를 읽기 전용으로 가정 하므로이 메커니즘을 사용 하 여 제어 명령을 Kusto로 예약할 수 없습니다.
+Power BI는 데이터 원본에 대한 쿼리를 정기적으로 실행할 수 있는 데이터 새로 고침 스케줄러를 포함 합니다. Power BI는 모든 쿼리를 읽기 전용으로 가정 하므로이 메커니즘을 사용 하 여 제어 명령을 Kusto로 예약할 수 없습니다.
 
 ### <a name="power-bi-can-send-only-short-lt2000-characters-queries-to-kusto"></a>Power BI 짧은 (&lt;2000 문자) 쿼리만 Kusto에 보낼 수 있습니다.
 
@@ -146,7 +146,7 @@ Power BI에서 쿼리를 실행 하면 _"DataSource. 오류: 웹에서 콘텐츠
 
 ## <a name="next-steps"></a>다음 단계
 
-[Power BI에 대 한 Azure 데이터 탐색기 커넥터를 사용 하 여 데이터 시각화](power-bi-connector.md)
+[Power BI에 대한 Azure 데이터 탐색기 커넥터를 사용 하 여 데이터 시각화](power-bi-connector.md)
 
 
 

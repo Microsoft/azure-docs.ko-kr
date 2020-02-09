@@ -25,7 +25,7 @@ ms.locfileid: "75891946"
 > * [버전 1](v1/data-factory-sqlserver-connector.md)
 > * [현재 버전](connector-sql-server.md)
 
-이 문서에서는 Azure Data Factory의 복사 작업을 사용 하 여 SQL Server 데이터베이스 간에 데이터를 복사 하는 방법을 설명 합니다. 이 문서는 복사 작업에 대 한 일반적인 개요를 제공 하는 [복사 작업 개요](copy-activity-overview.md) 문서를 기반으로 합니다.
+이 문서에서는 Azure Data Factory의 복사 작업을 사용 하 여 SQL Server 데이터베이스 간에 데이터를 복사 하는 방법을 설명 합니다. 이 문서는 복사 작업에 대한 일반적인 개요를 제공 하는 [복사 작업 개요](copy-activity-overview.md) 문서를 기반으로 합니다.
 
 ## <a name="supported-capabilities"></a>지원되는 기능
 
@@ -72,7 +72,7 @@ SQL Server 연결 된 서비스에 대해 지원 되는 속성은 다음과 같�
 | connectVia | 이 [Integration Runtime](concepts-integration-runtime.md)은 데이터 저장소에 연결하는 데 사용됩니다. [전제 조건](#prerequisites) 섹션에서 자세히 알아보세요. 지정 하지 않으면 기본 Azure 통합 런타임이 사용 됩니다. |아닙니다. |
 
 >[!TIP]
->오류 코드 "UserErrorFailedToConnectToSqlServer"와 함께 오류가 발생 하 고 "데이터베이스에 대 한 세션 제한 값이 XXX 이며이에 도달 했습니다" 라는 메시지가 표시 되 면 연결 문자열에 `Pooling=false`을 추가 하 고 다시 시도 합니다.
+>오류 코드 "UserErrorFailedToConnectToSqlServer"와 함께 오류가 발생 하 고 "데이터베이스에 대한 세션 제한 값이 XXX 이며이에 도달 했습니다" 라는 메시지가 표시 되 면 연결 문자열에 `Pooling=false`을 추가 하 고 다시 시도 합니다.
 
 **예제 1: SQL 인증 사용**
 
@@ -294,7 +294,7 @@ SQL Server에 데이터를 복사하려면 복사 작업의 싱크 형식을 **S
 | type | 복사 작업 싱크의 type 속성은 **SqlSink**로 설정해야 합니다. | 예 |
 | writeBatchSize |*일괄*처리당 SQL 테이블에 삽입할 행 수입니다.<br/>허용되는 값은 행 수에 해당하는 정수입니다. 기본적으로 Azure Data Factory는 행 크기에 따라 적절 한 일괄 처리 크기를 동적으로 결정 합니다. |아닙니다. |
 | writeBatchTimeout |이 속성은 시간이 초과되기 전에 완료하려는 배치 삽입 작업의 대기 시간을 지정합니다.<br/>허용 되는 값은 timespan입니다. 예는 30 분 동안 "00:30:00"입니다. 값을 지정 하지 않으면 기본적으로 시간 제한이 "02:00:00"이 됩니다. |아닙니다. |
-| preCopyScript |이 속성은 SQL Server에 데이터를 쓰기 전에 실행할 복사 작업에 대 한 SQL 쿼리를 지정 합니다. 복사 실행당 한 번만 호출됩니다. 이 속성을 사용하여 미리 로드된 데이터를 정리할 수 있습니다. |아닙니다. |
+| preCopyScript |이 속성은 SQL Server에 데이터를 쓰기 전에 실행할 복사 작업에 대한 SQL 쿼리를 지정 합니다. 복사 실행당 한 번만 호출됩니다. 이 속성을 사용하여 미리 로드된 데이터를 정리할 수 있습니다. |아닙니다. |
 | sqlWriterStoredProcedureName | 원본 데이터를 대상 테이블에 적용하는 방법을 정의하는 저장 프로시저의 이름입니다. <br/>이 저장 프로시저는 *배치마다 호출*됩니다. 한 번만 실행 되 고 원본 데이터 (예: 삭제 또는 자르기)와 관련이 없는 작업의 경우에는 `preCopyScript` 속성을 사용 합니다. | 아닙니다. |
 | storedProcedureTableTypeParameterName |저장 프로시저에 지정 된 테이블 형식의 매개 변수 이름입니다.  |아닙니다. |
 | sqlWriterTableType |저장 프로시저에 사용할 테이블 형식 이름입니다. 복사 작업에서는 이동 중인 데이터를 이 테이블 형식의 임시 테이블에서 사용할 수 있습니다. 그러면 저장 프로시저 코드가 복사 중인 데이터를 기존 데이터와 병합할 수 있습니다. |아닙니다. |
@@ -393,7 +393,7 @@ Azure Data Factory 및 모범 사례에서 구성 하는 방법에 대해서는 
 
 **옵션 1:** 복사할 데이터 양이 많은 경우 다음 방법을 사용 하 여 upsert를 수행 합니다. 
 
-- 먼저 [임시 테이블](https://docs.microsoft.com/sql/t-sql/statements/create-table-transact-sql?view=sql-server-2017#temporary-tables) 을 사용 하 여 복사 작업을 통해 모든 레코드를 대량 로드 합니다. 임시 테이블에 대 한 작업이 로깅되지 않으므로 몇 초만에 수백만 개의 레코드를 로드할 수 있습니다.
+- 먼저 [임시 테이블](https://docs.microsoft.com/sql/t-sql/statements/create-table-transact-sql?view=sql-server-2017#temporary-tables) 을 사용 하 여 복사 작업을 통해 모든 레코드를 대량 로드 합니다. 임시 테이블에 대한 작업이 로깅되지 않으므로 몇 초만에 수백만 개의 레코드를 로드할 수 있습니다.
 - Azure Data Factory에서 저장 프로시저 작업을 실행 하 여 [MERGE](https://docs.microsoft.com/sql/t-sql/statements/merge-transact-sql?view=azuresqldb-current) 또는 INSERT/UPDATE 문을 적용 합니다. 임시 테이블을 원본으로 사용 하 여 모든 업데이트나 삽입을 단일 트랜잭션으로 수행 합니다. 이러한 방식으로 라운드트립 및 로그 작업의 수가 줄어듭니다. 저장 프로시저 작업의 끝에서 임시 테이블은 다음 upsert 주기에 대해 준비 되도록 잘릴 수 있습니다.
 
 예를 들어 Azure Data Factory에서 **저장 프로시저 작업과**연결 된 **복사 작업** 을 사용 하 여 파이프라인을 만들 수 있습니다. 이전에는 데이터 집합의 테이블 이름으로 원본 저장소에서 데이터베이스 임시 테이블로 데이터를 복사 합니다 (예: **# #UpsertTempTable**). 그런 다음 후자는 저장 프로시저를 호출 하 여 임시 테이블의 원본 데이터를 대상 테이블에 병합 하 고 임시 테이블을 정리 합니다.
@@ -486,7 +486,7 @@ SQL Server 데이터베이스에 데이터를 복사 하는 경우 추가 매개
     }
     ```
 
-## <a name="data-type-mapping-for-sql-server"></a>SQL Server에 대 한 데이터 형식 매핑
+## <a name="data-type-mapping-for-sql-server"></a>SQL Server에 대한 데이터 형식 매핑
 
 SQL Server에서로 데이터를 복사 하는 경우 SQL Server 데이터 형식에서 중간 데이터 형식을 Azure Data Factory 하는 다음 매핑이 사용 됩니다. 복사 활동에서 원본 스키마와 데이터 형식을 싱크에 매핑하는 방법에 대한 자세한 내용은 [스키마 및 데이터 형식 매핑](copy-activity-schema-and-type-mapping.md)을 참조하세요.
 
@@ -530,15 +530,15 @@ SQL Server에서로 데이터를 복사 하는 경우 SQL Server 데이터 형�
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
+속성에 대한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
 
 ## <a name="getmetadata-activity-properties"></a>GetMetadata 활동 속성
 
-속성에 대 한 자세한 내용을 보려면 [GetMetadata 활동](control-flow-get-metadata-activity.md) 을 확인 하세요. 
+속성에 대한 자세한 내용을 보려면 [GetMetadata 활동](control-flow-get-metadata-activity.md) 을 확인 하세요. 
 
 ## <a name="troubleshoot-connection-issues"></a>연결 문제 해결
 
-1. 원격 연결을 허용 하도록 SQL Server 인스턴스를 구성 합니다. **SQL Server Management Studio**를 시작 하 고 **서버**를 마우스 오른쪽 단추로 클릭 한 다음 **속성**을 선택 합니다. 목록에서 **연결** 을 선택 하 고 **이 서버에 대 한 원격 연결 허용** 확인란을 선택 합니다.
+1. 원격 연결을 허용 하도록 SQL Server 인스턴스를 구성 합니다. **SQL Server Management Studio**를 시작 하 고 **서버**를 마우스 오른쪽 단추로 클릭 한 다음 **속성**을 선택 합니다. 목록에서 **연결** 을 선택 하 고 **이 서버에 대한 원격 연결 허용** 확인란을 선택 합니다.
 
     ![원격 연결 사용](media/copy-data-to-from-sql-server/AllowRemoteConnections.png)
 
@@ -548,7 +548,7 @@ SQL Server에서로 데이터를 복사 하는 경우 SQL Server 데이터 형�
 
     ![TCP/IP 사용](./media/copy-data-to-from-sql-server/EnableTCPProptocol.png)
 
-    TCP/IP 프로토콜을 사용 하도록 설정 하는 방법 및 다른 방법에 대 한 자세한 내용은 [서버 네트워크 프로토콜 설정 또는 해제](https://msdn.microsoft.com/library/ms191294.aspx)를 참조 하세요.
+    TCP/IP 프로토콜을 사용 하도록 설정 하는 방법 및 다른 방법에 대한 자세한 내용은 [서버 네트워크 프로토콜 설정 또는 해제](https://msdn.microsoft.com/library/ms191294.aspx)를 참조 하세요.
 
 3. 동일한 창에서 **tcp/ip** 를 두 번 클릭 하 여 **tcp/ip 속성** 창을 시작 합니다.
 4. **IP 주소** 탭으로 전환 합니다. **ipall** 섹션을 보려면 아래로 스크롤합니다. **TCP 포트**를 기록 합니다. 기본값은 **1433**입니다.

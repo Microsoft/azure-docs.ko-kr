@@ -16,7 +16,7 @@ ms.locfileid: "72928490"
 ---
 # <a name="secure-traffic-between-pods-using-network-policies-in-azure-kubernetes-service-aks"></a>AKS(Azure Kubernetes Service)에서 네트워크 정책을 사용하여 pod 간 트래픽 보호
 
-Kubernetes에서 최신 마이크로 서비스 기반 애플리케이션을 실행할 경우 어느 구성 요소들이 서로 통신할 수 있는지 제어하고 싶을 때가 있습니다. AKS (Azure Kubernetes Service) 클러스터의 pod 간에 트래픽이 흐를 수 있는 방법에는 최소 권한의 원칙을 적용 해야 합니다. 백 엔드 응용 프로그램으로 직접 트래픽을 차단 하려는 경우를 가정해 보겠습니다. Kubernetes의 *네트워크 정책* 기능을 사용 하면 클러스터에서 pod 간의 수신 및 송신 트래픽에 대 한 규칙을 정의할 수 있습니다.
+Kubernetes에서 최신 마이크로 서비스 기반 애플리케이션을 실행할 경우 어느 구성 요소들이 서로 통신할 수 있는지 제어하고 싶을 때가 있습니다. AKS (Azure Kubernetes Service) 클러스터의 pod 간에 트래픽이 흐를 수 있는 방법에는 최소 권한의 원칙을 적용 해야 합니다. 백 엔드 응용 프로그램으로 직접 트래픽을 차단 하려는 경우를 가정해 보겠습니다. Kubernetes의 *네트워크 정책* 기능을 사용 하면 클러스터에서 pod 간의 수신 및 송신 트래픽에 대한 규칙을 정의할 수 있습니다.
 
 이 문서에서는 네트워크 정책 엔진을 설치 하 고 Kubernetes 네트워크 정책을 만들어 AKS에서 pod 간의 트래픽 흐름을 제어 하는 방법을 보여 줍니다. 네트워크 정책은 Linux 기반 노드 및 AKS의 pod에만 사용 해야 합니다.
 
@@ -27,7 +27,7 @@ Azure CLI 버전 2.0.61 이상이 설치 및 구성 되어 있어야 합니다. 
 > [!TIP]
 > 미리 보기 중에 네트워크 정책 기능을 사용한 경우 [새 클러스터를 만드는](#create-an-aks-cluster-and-enable-network-policy)것이 좋습니다.
 > 
-> 미리 보기 중에 네트워크 정책을 사용한 기존 테스트 클러스터를 계속 사용 하려면 클러스터를 최신 GA 릴리스에 대 한 새 Kubernetes 버전으로 업그레이드 한 후 다음 YAML 매니페스트를 배포 하 여 충돌 하는 메트릭 서버 및 Kubernetes를 수정 합니다. 대시보드와. 이 픽스는 Calico 네트워크 정책 엔진을 사용 하는 클러스터에만 필요 합니다.
+> 미리 보기 중에 네트워크 정책을 사용한 기존 테스트 클러스터를 계속 사용 하려면 클러스터를 최신 GA 릴리스에 대한 새 Kubernetes 버전으로 업그레이드 한 후 다음 YAML 매니페스트를 배포 하 여 충돌 하는 메트릭 서버 및 Kubernetes를 수정 합니다. 대시보드와. 이 픽스는 Calico 네트워크 정책 엔진을 사용 하는 클러스터에만 필요 합니다.
 >
 > 보안을 유지 하는 가장 좋은 방법으로 [이 YAML 매니페스트의 콘텐츠를 검토][calico-aks-cleanup] 하 여 AKS 클러스터에 배포 된 항목을 이해 합니다.
 >
@@ -37,7 +37,7 @@ Azure CLI 버전 2.0.61 이상이 설치 및 구성 되어 있어야 합니다. 
 
 AKS 클러스터의 모든 pod는 기본적으로 제한 없이 트래픽을 보내고 받을 수 있습니다. 보안을 강화하기 위해 트래픽의 흐름을 제어하는 규칙을 정의할 수 있습니다. 백 엔드 응용 프로그램은 필요한 프런트 엔드 서비스 (예:)에만 노출 되는 경우가 많습니다. 또는 데이터베이스 구성 요소에 연결 된 응용 프로그램 계층 에서만 데이터베이스 구성 요소에 액세스할 수 있습니다.
 
-네트워크 정책은 Pod 간의 통신에 대 한 액세스 정책을 정의 하는 Kubernetes 사양입니다. 네트워크 정책을 사용 하 여 트래픽을 전송 및 수신 하 고 하나 이상의 레이블 선택기와 일치 하는 pod 컬렉션에 적용 하는 규칙의 정렬 된 집합을 정의 합니다.
+네트워크 정책은 Pod 간의 통신에 대한 액세스 정책을 정의 하는 Kubernetes 사양입니다. 네트워크 정책을 사용 하 여 트래픽을 전송 및 수신 하 고 하나 이상의 레이블 선택기와 일치 하는 pod 컬렉션에 적용 하는 규칙의 정렬 된 집합을 정의 합니다.
 
 이러한 네트워크 정책 규칙은 YAML 매니페스트로 정의 됩니다. 네트워크 정책은 배포 나 서비스를 만드는 더 광범위 한 매니페스트의 일부로 포함 될 수 있습니다.
 
@@ -57,8 +57,8 @@ Azure는 네트워크 정책을 구현 하는 두 가지 방법을 제공 합니
 | 지원되는 플랫폼                      | Linux                      | Linux                       |
 | 지원 되는 네트워킹 옵션             | Azure CNI                  | Azure CNI 및 kubenet       |
 | Kubernetes 사양 준수 | 지원 되는 모든 정책 유형 |  지원 되는 모든 정책 유형 |
-| 추가 기능                      | 없음                       | 글로벌 네트워크 정책, 글로벌 네트워크 집합 및 호스트 끝점으로 구성 된 확장 정책 모델입니다. `calicoctl` CLI를 사용 하 여 이러한 확장 기능을 관리 하는 방법에 대 한 자세한 내용은 [calicoctl user reference][calicoctl]를 참조 하세요. |
-| 지원                                  | Azure 지원 및 엔지니어링 팀에서 지원 | Calico 커뮤니티 지원. 추가 유료 지원에 대 한 자세한 내용은 [프로젝트 Calico 지원 옵션][calico-support]을 참조 하세요. |
+| 추가 기능                      | 없음                       | 글로벌 네트워크 정책, 글로벌 네트워크 집합 및 호스트 엔드포인트으로 구성 된 확장 정책 모델입니다. `calicoctl` CLI를 사용 하 여 이러한 확장 기능을 관리 하는 방법에 대한 자세한 내용은 [calicoctl user reference][calicoctl]를 참조 하세요. |
+| 지원                                  | Azure 지원 및 엔지니어링 팀에서 지원 | Calico 커뮤니티 지원. 추가 유료 지원에 대한 자세한 내용은 [프로젝트 Calico 지원 옵션][calico-support]을 참조 하세요. |
 | 로깅                                  | IPTables에서 추가/삭제 된 규칙은 */var/log/azure-npm.log* 아래의 모든 호스트에 기록 됩니다. | 자세한 내용은 [Calico 구성 요소 로그][calico-logs] 를 참조 하세요. |
 
 ## <a name="create-an-aks-cluster-and-enable-network-policy"></a>AKS 클러스터 만들기 및 네트워크 정책 사용
@@ -75,7 +75,7 @@ Azure는 네트워크 정책을 구현 하는 두 가지 방법을 제공 합니
 >
 > 네트워크 정책 기능은 클러스터를 만들 때만 사용할 수 있습니다. 기존 AKS 클러스터에서는 네트워크 정책을 사용하도록 설정할 수 없습니다.
 
-Azure 네트워크 정책을 사용 하려면 [azure CNI 플러그 인][azure-cni] 을 사용 하 고 고유한 가상 네트워크 및 서브넷을 정의 해야 합니다. 필요한 서브넷 범위를 계획 하는 방법에 대 한 자세한 내용은 [고급 네트워킹 구성][use-advanced-networking]을 참조 하세요. Calico Network 정책은 동일한 Azure CNI 플러그 인 또는 Kubenet CNI 플러그 인과 함께 사용할 수 있습니다.
+Azure 네트워크 정책을 사용 하려면 [azure CNI 플러그 인][azure-cni] 을 사용 하 고 고유한 가상 네트워크 및 서브넷을 정의 해야 합니다. 필요한 서브넷 범위를 계획 하는 방법에 대한 자세한 내용은 [고급 네트워킹 구성][use-advanced-networking]을 참조 하세요. Calico Network 정책은 동일한 Azure CNI 플러그 인 또는 Kubenet CNI 플러그 인과 함께 사용할 수 있습니다.
 
 다음 예제 스크립트는 다음과 같은 작업을 수행합니다.
 
@@ -263,7 +263,7 @@ spec:
 ```
 
 > [!NOTE]
-> 이 네트워크 정책은 수신 규칙에 대해 *namespaceSelector* 및 *podSelector* 요소를 사용합니다. YAML 구문은 수신 규칙을 추가 하는 데 중요 합니다. 이 예제에서 수신 규칙이 적용되려면 두 요소가 모두 일치해야 합니다. *1.12* 이전 버전에서는 이러한 요소를 올바르게 해석 하지 못하고 네트워크 트래픽을 Kubernetes 수 있습니다. 이 동작에 대 한 자세한 내용은 [선택기와의 동작][policy-rules]을 참조 하세요.
+> 이 네트워크 정책은 수신 규칙에 대해 *namespaceSelector* 및 *podSelector* 요소를 사용합니다. YAML 구문은 수신 규칙을 추가 하는 데 중요 합니다. 이 예제에서 수신 규칙이 적용되려면 두 요소가 모두 일치해야 합니다. *1.12* 이전 버전에서는 이러한 요소를 올바르게 해석 하지 못하고 네트워크 트래픽을 Kubernetes 수 있습니다. 이 동작에 대한 자세한 내용은 [선택기와의 동작][policy-rules]을 참조 하세요.
 
 [Kubectl apply][kubectl-apply] 명령을 사용 하 여 업데이트 된 네트워크 정책을 적용 하 고 yaml 매니페스트의 이름을 지정 합니다.
 
@@ -455,7 +455,7 @@ kubectl delete namespace development
 
 ## <a name="next-steps"></a>다음 단계
 
-네트워크 리소스에 대 한 자세한 내용은 [Azure Kubernetes Service의 응용 프로그램에 대 한 네트워크 개념 (AKS) (영문)][concepts-network]을 참조 하세요.
+네트워크 리소스에 대한 자세한 내용은 [Azure Kubernetes Service의 응용 프로그램에 대한 네트워크 개념 (AKS) (영문)][concepts-network]을 참조 하세요.
 
 정책에 대해 자세히 알아보려면 [Kubernetes network 정책][kubernetes-network-policies]을 참조 하세요.
 

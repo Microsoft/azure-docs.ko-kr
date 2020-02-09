@@ -101,4 +101,4 @@ ms.locfileid: "75440349"
 | &nbsp; |[Zoho(미리 보기)](../articles/data-factory/connector-zoho.md) |✓ | |✓ |✓  |
 
 > [!NOTE]
-> 커넥터가 *미리 보기로*표시 된 경우이를 사용해 보고 피드백을 제공할 수 있습니다. 솔루션의 미리 보기 커넥터에 대 한 종속성을 사용 하려면 [Azure 지원](https://azure.microsoft.com/support/)에 문의 하세요.
+> 커넥터가 *미리 보기로*표시 된 경우이를 사용해 보고 피드백을 제공할 수 있습니다. 솔루션의 미리 보기 커넥터에 대한 종속성을 사용 하려면 [Azure 지원](https://azure.microsoft.com/support/)에 문의 하세요.

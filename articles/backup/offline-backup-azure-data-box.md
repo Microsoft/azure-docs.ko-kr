@@ -12,7 +12,7 @@ ms.locfileid: "77027031"
 ---
 # <a name="azure-backup-offline-backup-using-azure-data-box"></a>Azure Data Box를 사용 하 여 오프 라인 백업 Azure Backup
 
-[Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-overview) 서비스를 사용 하 여 Azure Recovery Services 자격 증명 모음에 대 한 대량 초기 MARS 백업 (네트워크를 사용 하지 않고)의 초기값을 지정할 수 있습니다.  이렇게 하면 시간 및 네트워크 대역폭이 절약 되므로 대기 시간이 긴 네트워크를 통해 많은 양의 백업 데이터를 온라인으로 이동 하는 경우에 사용 됩니다. 이 기능은 현재 미리 보기 상태입니다. Azure Data Box 기반 오프 라인 백업에서는 [Azure Import/Export 서비스 기반 오프 라인 백업](https://docs.microsoft.com/azure/backup/backup-azure-backup-import-export)에 비해 두 가지 이점을 제공 합니다.
+[Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-overview) 서비스를 사용 하 여 Azure Recovery Services 자격 증명 모음에 대한 대량 초기 MARS 백업 (네트워크를 사용 하지 않고)의 초기값을 지정할 수 있습니다.  이렇게 하면 시간 및 네트워크 대역폭이 절약 되므로 대기 시간이 긴 네트워크를 통해 많은 양의 백업 데이터를 온라인으로 이동 하는 경우에 사용 됩니다. 이 기능은 현재 미리 보기 상태입니다. Azure Data Box 기반 오프 라인 백업에서는 [Azure Import/Export 서비스 기반 오프 라인 백업](https://docs.microsoft.com/azure/backup/backup-azure-backup-import-export)에 비해 두 가지 이점을 제공 합니다.
 
 1. 사용자 고유의 Azure 호환 디스크 및 커넥터를 조달 하지 않아도 됩니다. Azure Data Box 서비스는 선택한 [DATA BOX SKU](https://azure.microsoft.com/services/databox/data/) 와 연결 된 디스크를 제공 합니다.
 
@@ -125,7 +125,7 @@ Msi 파일을 사용 하 여 설치 된 Azure PowerShell 수도 있습니다. �
 MARS 및 Azure Data Box를 사용 하는 오프 라인 백업 프로세스에서는 MARS 에이전트를 사용 하 여 오프 라인 백업을 트리거하기 전에 필요한 Data Box 장치가 "배달 됨" 상태 여야 합니다. 요구 사항에 가장 적합 한 SKU를 주문 하려면 [백업 데이터 크기 및 지원 되는 Data Box sku](#backup-data-size-and-supported-data-box-skus) 를 참조 하세요. [이 문서의](https://docs.microsoft.com/azure/databox/data-box-disk-deploy-ordered) 단계에 따라 Data Box 장치를 주문 하 고 수신 합니다.
 
 >[!IMPORTANT]
->계정 종류에 대해 BlobStorage를 선택 하지 마세요. MARS 에이전트에는 BlobStorage를 선택할 때 지원 되지 않는 페이지 Blob을 지 원하는 계정이 필요 합니다. Azure Data Box 작업에 대 한 대상 저장소 계정을 만들 때 계정 종류로 *저장소 v2* (*범용 v2*)를 선택 하는 것이 좋습니다.
+>계정 종류에 대해 BlobStorage를 선택 하지 마세요. MARS 에이전트에는 BlobStorage를 선택할 때 지원 되지 않는 페이지 Blob을 지 원하는 계정이 필요 합니다. Azure Data Box 작업에 대한 대상 저장소 계정을 만들 때 계정 종류로 *저장소 v2* (*범용 v2*)를 선택 하는 것이 좋습니다.
 
 ![인스턴스 세부 정보에서 계정 종류를 선택 합니다.](./media/offline-backup-azure-data-box/instance-details.png)
 
@@ -202,13 +202,13 @@ MARS 에이전트는 로컬 시스템 컨텍스트에서 작동 하므로 Azure 
 
     ![초기 백업 유형 선택](./media/offline-backup-azure-data-box/initial-backup-type.png)
 
-* Azure 구독에 대 한 소유자 액세스 권한이 있는 사용자 자격 증명을 사용 하 여 메시지가 표시 되 면 Azure에 로그인 합니다. 작업을 완료 한 후 아래와 같은 화면이 표시 됩니다.
+* Azure 구독에 대한 소유자 액세스 권한이 있는 사용자 자격 증명을 사용 하 여 메시지가 표시 되 면 Azure에 로그인 합니다. 작업을 완료 한 후 아래와 같은 화면이 표시 됩니다.
 
     ![리소스 만들기 및 필요한 권한 적용](./media/offline-backup-azure-data-box/creating-resources.png)
 
 * 그러면 MARS 에이전트는 구독에서 "배달 됨" 상태인 Data Box 작업을 가져옵니다.
 
-    ![구독 ID에 대 한 databox 작업을 가져오는 중](./media/offline-backup-azure-data-box/fetching-databox-jobs.png)
+    ![구독 ID에 대한 databox 작업을 가져오는 중](./media/offline-backup-azure-data-box/fetching-databox-jobs.png)
 
 * Data Box 디스크의 압축을 풀고 연결 하 고 잠금을 해제 한 올바른 데이터 상자 순서를 선택 합니다. **다음**을 클릭합니다.
 
@@ -223,13 +223,13 @@ MARS 에이전트는 로컬 시스템 컨텍스트에서 작동 하므로 Azure 
     ![네트워크 경로를 입력 하십시오.](./media/offline-backup-azure-data-box/enter-network-path.png)
 
     >[!IMPORTANT]
-    > Azure Data Box 디스크의 루트 디렉터리에 대 한 네트워크 경로를 제공 합니다. 이 디렉터리에는 아래와 같이 이름이 *Pageblob* 인 디렉터리가 포함 되어야 합니다.
+    > Azure Data Box 디스크의 루트 디렉터리에 대한 네트워크 경로를 제공 합니다. 이 디렉터리에는 아래와 같이 이름이 *Pageblob* 인 디렉터리가 포함 되어야 합니다.
     >
     >![Azure Data Box 디스크의 루트 디렉터리](./media/offline-backup-azure-data-box/root-directory.png)
     >
     >예를 들어 디스크 경로가 `\\mydomain\myserver\disk1\`이 고 *disk1* 에 *pageblob*이라는 디렉터리가 포함 된 경우 MARS 에이전트 마법사에서 제공 하는 경로는 `\\mydomain\myserver\disk1\`
     >
-    >[Azure Data Box 100 TB 장치를 설치](#setup-azure-data-box)하는 경우 장치에 대 한 네트워크 경로로 다음을 제공 `\\<DeviceIPAddress>\<StorageAccountName>_PageBlob`
+    >[Azure Data Box 100 TB 장치를 설치](#setup-azure-data-box)하는 경우 장치에 대한 네트워크 경로로 다음을 제공 `\\<DeviceIPAddress>\<StorageAccountName>_PageBlob`
 
 * 다음 **을 클릭** 하 고 다음 화면에서 **마침** 을 클릭 하 Azure Data Box를 사용 하 여 오프 라인 백업 구성으로 백업 및 보존 정책을 저장 합니다.
 
@@ -251,7 +251,7 @@ MARS 에이전트는 로컬 시스템 컨텍스트에서 작동 하므로 Azure 
 
 ## <a name="post-backup-steps"></a>백업 후 단계
 
-이 섹션에서는 Azure Data Box Disk에 대 한 데이터 백업이 성공적으로 완료 되 면 수행 하는 단계를 설명 합니다.
+이 섹션에서는 Azure Data Box Disk에 대한 데이터 백업이 성공적으로 완료 되 면 수행 하는 단계를 설명 합니다.
 
 * 이 문서의 단계에 따라 [Azure에 Azure Data Box 디스크를 배송](https://docs.microsoft.com/azure/databox/data-box-disk-deploy-picked-up)합니다. Azure Data Box 100-TB 장치를 사용 하는 경우 다음 단계에 따라 [Azure에 Azure Data Box를 제공](https://docs.microsoft.com/azure/databox/data-box-deploy-picked-up)합니다.
 
@@ -264,11 +264,11 @@ MARS 에이전트는 로컬 시스템 컨텍스트에서 작동 하므로 Azure 
 
 ## <a name="troubleshooting"></a>문제 해결
 
-MAB (Microsoft Azure Backup) 에이전트가 테 넌 트에 Azure AD 응용 프로그램을 만듭니다. 이 응용 프로그램에는 오프 라인 시드 정책을 구성할 때 생성 및 업로드 되는 인증을 위한 인증서가 필요 합니다. Azure AD 응용 프로그램에 인증서를 만들고 업로드 하는 데 Azure PowerShell를 사용 합니다.
+MAB (Microsoft Azure Backup) 에이전트가 테넌트에 Azure AD 응용 프로그램을 만듭니다. 이 응용 프로그램에는 오프 라인 시드 정책을 구성할 때 생성 및 업로드 되는 인증을 위한 인증서가 필요 합니다. Azure AD 응용 프로그램에 인증서를 만들고 업로드 하는 데 Azure PowerShell를 사용 합니다.
 
 ### <a name="issue"></a>문제
 
-오프 라인 백업을 구성할 때 문제가 발생할 수 있습니다. Azure PowerShell cmdlet의 버그로 인해 MAB 에이전트가 만든 동일한 Azure AD 응용 프로그램에 여러 인증서를 추가할 수 없습니다. 이렇게 하면 동일한 서버 또는 다른 서버에 대 한 오프 라인 시드 정책을 구성한 경우에 영향을 줍니다.
+오프 라인 백업을 구성할 때 문제가 발생할 수 있습니다. Azure PowerShell cmdlet의 버그로 인해 MAB 에이전트가 만든 동일한 Azure AD 응용 프로그램에 여러 인증서를 추가할 수 없습니다. 이렇게 하면 동일한 서버 또는 다른 서버에 대한 오프 라인 시드 정책을 구성한 경우에 영향을 줍니다.
 
 ### <a name="how-to-verify-if-the-issue-is-caused-by-this-specific-root-cause"></a>문제가이 특정 근본 원인으로 인 한 것인지 확인 하는 방법
 
@@ -278,7 +278,7 @@ MAB (Microsoft Azure Backup) 에이전트가 테 넌 트에 Azure AD 응용 프�
 
 오프 라인 백업을 구성할 때 MAB 콘솔에 다음 오류 메시지가 표시 되는지 확인 합니다.
 
-![현재 Azure 계정에 대 한 오프 라인 백업 정책을 만들 수 없습니다.](./media/offline-backup-azure-data-box/unable-to-create-policy.png)
+![현재 Azure 계정에 대한 오프 라인 백업 정책을 만들 수 없습니다.](./media/offline-backup-azure-data-box/unable-to-create-policy.png)
 
 #### <a name="step-2"></a>2단계
 
@@ -292,7 +292,7 @@ MAB (Microsoft Azure Backup) 에이전트가 테 넌 트에 Azure AD 응용 프�
 
 #### <a name="first-step"></a>첫 번째 단계
 
-가져오기 내보내기 작업을 만들 구독에 대 한 관리자 액세스 권한이 있는 다른 계정을 사용 하 여 MAB UI에 표시 되는 PowerShell에 로그인 합니다.
+가져오기 내보내기 작업을 만들 구독에 대한 관리자 액세스 권한이 있는 다른 계정을 사용 하 여 MAB UI에 표시 되는 PowerShell에 로그인 합니다.
 
 #### <a name="second-step"></a>두 번째 단계
 
@@ -333,4 +333,4 @@ MAB (Microsoft Azure Backup) 에이전트가 테 넌 트에 Azure AD 응용 프�
 
 ## <a name="questions"></a>문의 사항
 
-질문이 나 설명에 대해 직면 한 문제에 대 한 자세한 내용은을 [AskAzureBackupTeam@microsoft.com](mailto:AskAzureBackupTeam@microsoft.com)
+질문이 나 설명에 대해 직면 한 문제에 대한 자세한 내용은을 [AskAzureBackupTeam@microsoft.com](mailto:AskAzureBackupTeam@microsoft.com)

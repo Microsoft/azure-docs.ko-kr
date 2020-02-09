@@ -40,10 +40,10 @@ ms.locfileid: "75728874"
 수신 컨트롤러도 Linux 노드에서 예약 해야 합니다. Windows Server 노드 (현재 AKS에서 미리 보기 상태)는 수신 컨트롤러를 실행 해서는 안 됩니다. `--set nodeSelector` 매개 변수를 사용 하 여 노드 선택기를 지정 하면 Linux 기반 노드에서 NGINX 수신 컨트롤러를 실행 하도록 Kubernetes scheduler에 지시할 수 있습니다.
 
 > [!TIP]
-> 다음 예에서는 수신 *-기본*이라는 수신 리소스에 대 한 Kubernetes 네임 스페이스를 만듭니다. 필요에 따라 사용자 환경에 대 한 네임 스페이스를 지정 합니다.
+> 다음 예에서는 수신 *-기본*이라는 수신 리소스에 대한 Kubernetes 네임 스페이스를 만듭니다. 필요에 따라 사용자 환경에 대한 네임 스페이스를 지정 합니다.
 
 > [!TIP]
-> 클러스터의 컨테이너에 대 한 요청에 대 한 [클라이언트 원본 IP 유지][client-source-ip] 를 사용 하도록 설정 하려면 `--set controller.service.externalTrafficPolicy=Local`을 투구 install 명령에 추가 합니다. 클라이언트 원본 IP가 *X 전달-에 대 한*요청 헤더에 저장 됩니다. 클라이언트 원본 IP 유지를 사용 하는 수신 컨트롤러를 사용 하는 경우 SSL 통과는 작동 하지 않습니다.
+> 클러스터의 컨테이너에 대한 요청에 대한 [클라이언트 원본 IP 유지][client-source-ip] 를 사용 하도록 설정 하려면 `--set controller.service.externalTrafficPolicy=Local`을 투구 install 명령에 추가 합니다. 클라이언트 원본 IP가 *X 전달-에 대한*요청 헤더에 저장 됩니다. 클라이언트 원본 IP 유지를 사용 하는 수신 컨트롤러를 사용 하는 경우 SSL 통과는 작동 하지 않습니다.
 
 ```console
 # Create a namespace for your ingress resources
@@ -101,7 +101,7 @@ helm install aks-helloworld-two azure-samples/aks-helloworld \
 
 이제 두 애플리케이션이 모두 Kubernetes 클러스터에서 실행됩니다. 트래픽을 각 애플리케이션으로 라우팅하려면 Kubernetes 수신 리소스를 만듭니다. 수신 리소스는 두 애플리케이션 중 하나로 트래픽을 라우팅하는 규칙을 구성합니다.
 
-다음 예제에서 *EXTERNAL_IP* 에 대 한 트래픽은 `aks-helloworld`라는 서비스로 라우팅됩니다. *EXTERNAL_IP/hello-world-two* 에 대 한 트래픽은 `aks-helloworld-two` 서비스로 라우팅됩니다. *EXTERNAL_IP/정적* 으로의 트래픽은 정적 자산에 대 한 `aks-helloworld` 라는 서비스로 라우팅됩니다.
+다음 예제에서 *EXTERNAL_IP* 에 대한 트래픽은 `aks-helloworld`라는 서비스로 라우팅됩니다. *EXTERNAL_IP/hello-world-two* 에 대한 트래픽은 `aks-helloworld-two` 서비스로 라우팅됩니다. *EXTERNAL_IP/정적* 으로의 트래픽은 정적 자산에 대한 `aks-helloworld` 라는 서비스로 라우팅됩니다.
 
 `hello-world-ingress.yaml` 파일을 만들고 다음 예제 YAML을 복사합니다.
 
@@ -158,7 +158,7 @@ ingress.extensions/hello-world-ingress-static created
 
 ## <a name="test-the-ingress-controller"></a>수신 컨트롤러 테스트
 
-수신 컨트롤러의 경로를 테스트하려면 두 개의 애플리케이션으로 이동합니다. NGINX 수신 컨트롤러의 IP 주소 (예: *EXTERNAL_IP*)에 대 한 웹 브라우저를 엽니다. 첫 번째 데모 애플리케이션은 다음 예제와 같이 웹 브라우저에 표시됩니다.
+수신 컨트롤러의 경로를 테스트하려면 두 개의 애플리케이션으로 이동합니다. NGINX 수신 컨트롤러의 IP 주소 (예: *EXTERNAL_IP*)에 대한 웹 브라우저를 엽니다. 첫 번째 데모 애플리케이션은 다음 예제와 같이 웹 브라우저에 표시됩니다.
 
 ![수신 컨트롤러 뒤에서 실행 중인 첫 번째 앱](media/ingress-basic/app-one.png)
 
@@ -178,7 +178,7 @@ ingress.extensions/hello-world-ingress-static created
 kubectl delete namespace ingress-basic
 ```
 
-그런 다음 AKS hello 세계 앱에 대 한 투구 리포지토리를 제거 합니다.
+그런 다음 AKS hello 세계 앱에 대한 투구 리포지토리를 제거 합니다.
 
 ```console
 helm repo remove azure-samples

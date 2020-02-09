@@ -16,7 +16,7 @@ ms.locfileid: "76768012"
 # <a name="enable-notebooks-for-azure-cosmos-db-accounts-preview"></a>Azure Cosmos DB 계정에 대해 노트북 사용 (미리 보기)
 
 > [!IMPORTANT]
-> Azure Cosmos DB에 대 한 기본 제공 노트북은 현재 오스트레일리아 동부, 미국 동부, 미국 동부 2, 서유럽, 미국 동부, 동남 아시아, 영국 남부, 유럽 서부 및 미국 서 부 2와 같은 Azure 지역에서 사용할 수 있습니다. 노트북을 사용 하려면 전자 필기장을 사용 하 [여 새 계정을 만들거나](#enable-notebooks-in-a-new-cosmos-account) 이러한 지역 중 하나에 있는 [기존 계정에서 노트북을 사용 하도록 설정](#enable-notebooks-in-an-existing-cosmos-account) 합니다.
+> Azure Cosmos DB에 대한 기본 제공 노트북은 현재 오스트레일리아 동부, 미국 동부, 미국 동부 2, 서유럽, 미국 동부, 동남 아시아, 영국 남부, 유럽 서부 및 미국 서 부 2와 같은 Azure 지역에서 사용할 수 있습니다. 노트북을 사용 하려면 전자 필기장을 사용 하 [여 새 계정을 만들거나](#enable-notebooks-in-a-new-cosmos-account) 이러한 지역 중 하나에 있는 [기존 계정에서 노트북을 사용 하도록 설정](#enable-notebooks-in-an-existing-cosmos-account) 합니다.
 
 Azure Cosmos DB의 기본 제공 Jupyter 노트북을 사용 하 여 Azure Portal에서 데이터를 분석 하 고 시각화할 수 있습니다. 이 문서에서는 Azure Cosmos DB 계정에 대해 이 기능을 사용하도록 설정하는 방법을 설명합니다.
 

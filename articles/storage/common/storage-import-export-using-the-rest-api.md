@@ -23,7 +23,7 @@ Import/Export 서비스의 개요 및 포털을 사용 하 여 가져오기 및 
 
 ## <a name="service-endpoints"></a>Szolgáltatásvégpontok
 
-Azure Import/Export 서비스는 Azure Resource Manager에 대 한 리소스 공급자 이며 가져오기/내보내기 작업을 관리 하기 위한 다음 HTTPS 끝점에서 REST Api 집합을 제공 합니다.
+Azure Import/Export 서비스는 Azure Resource Manager에 대 한 리소스 공급자 이며 가져오기/내보내기 작업을 관리 하기 위한 다음 HTTPS 엔드포인트에서 REST Api 집합을 제공 합니다.
 
 ```
 https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.ImportExport/jobs/<job-name>

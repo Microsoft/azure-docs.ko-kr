@@ -54,7 +54,7 @@ LUIS는 다음과 같은 세 가지 종류의 키를 사용합니다.
 | Starter   | 텍스트만 사용하여 LUIS 애플리케이션을 테스트할 수 있습니다.   |
 | 엔드포인트  | 특정 LUIS 앱에 대한 액세스 권한 부여            |
 
-이 가이드에서는 끝점 키 형식이 필요 합니다. 이 가이드에서는 미리 작성 된 [홈 자동화 앱 사용](https://docs.microsoft.com/azure/cognitive-services/luis/luis-get-started-create-app) 빠른 시작을 수행 하 여 만들 수 있는 HOME automation LUIS app 예제를 사용 합니다. LUIS 앱을 직접 만든 경우 그 앱을 사용해도 됩니다.
+이 가이드에서는 엔드포인트 키 형식이 필요 합니다. 이 가이드에서는 미리 작성 된 [홈 자동화 앱 사용](https://docs.microsoft.com/azure/cognitive-services/luis/luis-get-started-create-app) 빠른 시작을 수행 하 여 만들 수 있는 HOME automation LUIS app 예제를 사용 합니다. LUIS 앱을 직접 만든 경우 그 앱을 사용해도 됩니다.
 
 LUIS 앱을 만들 때 LUIS에서 텍스트 쿼리를 사용하여 앱을 테스트할 수 있도록 시작 키가 자동으로 생성됩니다. 이 키는 음성 서비스 통합을 사용 하지 않으며이 가이드에서는 작동 하지 않습니다. Azure 대시보드에서 LUIS 리소스를 만들고 LUIS 앱에 할당합니다. 이 가이드의 무료 구독 계층을 사용할 수 있습니다.
 

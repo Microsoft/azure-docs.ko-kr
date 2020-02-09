@@ -250,7 +250,7 @@ Get-AzCdnProfile | Get-AzCdnEndpoint | Stop-AzCdnEndpoint
 Get-AzCdnProfile | Get-AzCdnEndpoint | Start-AzCdnEndpoint
 ```
 
-## <a name="creating-standard-rules-engine-policy-and-applying-to-an-existing-cdn-endpoint"></a>표준 규칙 엔진 정책 만들기 및 기존 CDN 끝점에 적용
+## <a name="creating-standard-rules-engine-policy-and-applying-to-an-existing-cdn-endpoint"></a>표준 규칙 엔진 정책 만들기 및 기존 CDN 엔드포인트에 적용
 `New-AzCdnDeliveryRule`, `New=AzCdnDeliveryRuleCondition`및 `New-AzCdnDeliveryRuleAction`를 사용 하 여 Microsoft 프로필의 Azure CDN에서 Azure CDN 표준 규칙 엔진을 구성할 수 있습니다. 
 
 ```powershell

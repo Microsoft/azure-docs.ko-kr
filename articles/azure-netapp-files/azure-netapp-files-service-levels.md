@@ -30,15 +30,15 @@ Azure NetApp Files은 *Ultra*, *Premium*및 *Standard*의 세 가지 서비스 �
 
 * <a name="Ultra"></a>Ultra storage
 
-    Ultra storage 계층은 할당 된 볼륨 할당량의 TiB 1 개에 대 한 최대 128 MiB/s의 처리량을 제공 합니다. 
+    Ultra storage 계층은 할당 된 볼륨 할당량의 TiB 1 개에 대한 최대 128 MiB/s의 처리량을 제공 합니다. 
 
 * <a name="Premium"></a>Premium Storage
 
-    Premium storage 계층은 할당 된 볼륨 할당량의 TiB 1 개에 대 한 최대 64 MiB/s의 처리량을 제공 합니다. 
+    Premium storage 계층은 할당 된 볼륨 할당량의 TiB 1 개에 대한 최대 64 MiB/s의 처리량을 제공 합니다. 
 
 * <a name="Standard"></a>Standard Storage
 
-    표준 저장소 계층은 할당 된 볼륨 할당량의 TiB 1 개에 대 한 최대 16 개의 MiB/s를 제공 합니다.
+    표준 저장소 계층은 할당 된 볼륨 할당량의 TiB 1 개에 대한 최대 16 개의 MiB/s를 제공 합니다.
 
 ## <a name="throughput-limits"></a>처리량 한도
 

@@ -35,25 +35,25 @@ ms.locfileid: "74793998"
 
 
 
-## <a name="multi-forest-single-azure-ad-tenant"></a>다중 포리스트, 단일 Azure AD 테 넌 트
-![다중 포리스트 및 단일 테 넌 트에 대 한 토폴로지](media/plan-cloud-provisioning-topologies/multi-forest.png)
+## <a name="multi-forest-single-azure-ad-tenant"></a>다중 포리스트, 단일 Azure AD 테넌트
+![다중 포리스트 및 단일 테넌트에 대 한 토폴로지](media/plan-cloud-provisioning-topologies/multi-forest.png)
 
-가장 일반적인 토폴로지는 하나 이상의 도메인 및 단일 Azure AD 테 넌 트를 포함 하는 여러 AD 포리스트입니다.  
+가장 일반적인 토폴로지는 하나 이상의 도메인 및 단일 Azure AD 테넌트를 포함 하는 여러 AD 포리스트입니다.  
 
 ## <a name="existing-forest-with-azure-ad-connect-new-forest-with-cloud-provisioning"></a>Azure AD Connect 있는 기존 포리스트, 클라우드 프로 비전을 사용 하는 새 포리스트
 ![단일 포리스트 및 단일 테넌트에 대한 토폴로지](media/plan-cloud-provisioning-topologies/existing-forest-new-forest.png)
 
-이 시나리오는 토폴로지가 다중 포리스트 시나리오와 유사 하지만이는 기존 Azure AD Connect 환경을 포함 하지만 Azure AD Connect 클라우드 프로 비전을 사용 하 여 새 포리스트를 가져오는 것입니다.  이 시나리오의 예는 [자습서: 단일 AZURE AD 테 넌 트를 포함 하는 기존 포리스트](tutorial-existing-forest.md) 를 참조 하세요.
+이 시나리오는 토폴로지가 다중 포리스트 시나리오와 유사 하지만이는 기존 Azure AD Connect 환경을 포함 하지만 Azure AD Connect 클라우드 프로 비전을 사용 하 여 새 포리스트를 가져오는 것입니다.  이 시나리오의 예는 [자습서: 단일 AZURE AD 테넌트를 포함 하는 기존 포리스트](tutorial-existing-forest.md) 를 참조 하세요.
 
 ## <a name="piloting-azure-ad-connect-cloud-provisioning-in-an-existing-hybrid-ad-forest"></a>기존 하이브리드 AD 포리스트에서 클라우드 프로 비전 Azure AD Connect 파일럿
-단일 포리스트 및 단일 테 넌 트](media/plan-cloud-provisioning-topologies/migrate.png)에 대 한 ![토폴로지는 동일한 포리스트에 Azure AD Connect 및 Azure AD Connect 클라우드 프로 비전을 모두 포함 하 고 그에 따라 사용자 및 그룹의 범위를 지정 합니다. 참고: 개체는 도구 중 하나 에서만 범위 내에 있어야 합니다. 
+단일 포리스트 및 단일 테넌트](media/plan-cloud-provisioning-topologies/migrate.png)에 대 한 ![토폴로지는 동일한 포리스트에 Azure AD Connect 및 Azure AD Connect 클라우드 프로 비전을 모두 포함 하 고 그에 따라 사용자 및 그룹의 범위를 지정 합니다. 참고: 개체는 도구 중 하나 에서만 범위 내에 있어야 합니다. 
 
 이 시나리오에 대 한 예는 [자습서: 기존 동기화 된 AD 포리스트에 Azure AD Connect 클라우드 프로 비전 파일럿](tutorial-pilot-aadc-aadccp.md) 을 참조 하세요.
 
 ## <a name="single-forest-single-azure-ad-tenant"></a>단일 포리스트, 단일 Azure AD 테넌트
 ![단일 포리스트 및 단일 테넌트에 대한 토폴로지](media/plan-cloud-provisioning-topologies/single-forest.png)
 
-가장 간단한 토폴로지는 하나 이상의 도메인 및 단일 Azure AD 테 넌 트를 포함 하는 단일 온-프레미스 포리스트입니다.  이 시나리오의 예는 [자습서: 단일 AZURE AD 테 넌 트를 포함 하는 단일 포리스트](tutorial-single-forest.md) 를 참조 하세요.
+가장 간단한 토폴로지는 하나 이상의 도메인 및 단일 Azure AD 테넌트를 포함 하는 단일 온-프레미스 포리스트입니다.  이 시나리오의 예는 [자습서: 단일 AZURE AD 테넌트를 포함 하는 단일 포리스트](tutorial-single-forest.md) 를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계 
 

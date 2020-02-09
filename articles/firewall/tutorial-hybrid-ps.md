@@ -119,7 +119,7 @@ $SNnameGW = "GatewaySubnet"
 
 ## <a name="create-the-firewall-hub-virtual-network"></a>방화벽 허브 가상 네트워크 만들기
 
-먼저이 아티클에 대 한 리소스를 포함 하는 리소스 그룹을 만듭니다.
+먼저이 아티클에 대한 리소스를 포함 하는 리소스 그룹을 만듭니다.
 
 ```azurepowershell
   New-AzResourceGroup -Name $RG1 -Location $Location1

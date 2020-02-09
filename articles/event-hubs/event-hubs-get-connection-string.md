@@ -68,7 +68,7 @@ Get-AzEventHubKey -ResourceGroupName dummyresourcegroup -NamespaceName dummyname
 az eventhubs namespace authorization-rule keys list --resource-group dummyresourcegroup --namespace-name dummynamespace --name RootManageSharedAccessKey
 ```
 
-또는 다음을 사용 하 여 EventHub 엔터티에 대 한 연결 문자열을 가져올 수 있습니다.
+또는 다음을 사용 하 여 EventHub 엔터티에 대한 연결 문자열을 가져올 수 있습니다.
 
 ```azurecli-interactive
 az eventhubs eventhub authorization-rule keys list --resource-group dummyresourcegroup --namespace-name dummynamespace --eventhub-name dummyeventhub --name RootManageSharedAccessKey

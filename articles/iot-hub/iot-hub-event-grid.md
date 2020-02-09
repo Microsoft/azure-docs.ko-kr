@@ -74,7 +74,7 @@ IoT Hub 이벤트에는 디바이스 수명 주기 변경에 대응하는 데 �
 
 장치 원격 분석 메시지는 메시지 [시스템 속성](iot-hub-devguide-routing-query-syntax.md#system-properties)에서 contentType이 **application/JSON** 으로 설정 되 고 Contentencoding이 **u t f-8** 로 설정 된 유효한 JSON 형식 이어야 합니다. 이러한 속성은 모두 대/소문자를 구분 하지 않습니다. 콘텐츠 인코딩이 설정 되지 않은 경우 IoT Hub는 메시지를 base 64 인코딩 형식으로 씁니다.
 
-Event Grid으로 끝점을 선택 하 여 Event Grid에 게시 되기 전에 장치 원격 분석 이벤트를 보강할 수 있습니다. 자세한 내용은 [메시지 강화 개요](iot-hub-message-enrichments-overview.md)를 참조 하세요.
+Event Grid으로 엔드포인트을 선택 하 여 Event Grid에 게시 되기 전에 장치 원격 분석 이벤트를 보강할 수 있습니다. 자세한 내용은 [메시지 강화 개요](iot-hub-message-enrichments-overview.md)를 참조 하세요.
 
 다음 예제에서는 장치 원격 분석 이벤트의 스키마를 보여 줍니다.
 

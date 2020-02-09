@@ -28,7 +28,7 @@ Azure AD 관리자 역할에 대 한 자세한 내용은 [Azure Active Director
 
 ## <a name="required-permissions"></a>필요한 사용 권한
 
-전역 관리자 계정을 사용 하 여 Azure AD 테 넌 트에 연결 하 여 역할을 할당 하거나 제거 합니다.
+전역 관리자 계정을 사용 하 여 Azure AD 테넌트에 연결 하 여 역할을 할당 하거나 제거 합니다.
 
 ## <a name="prepare-powershell"></a>PowerShell 준비
 

@@ -1,5 +1,5 @@
 ---
-title: IoT에 대 한 Azure Security Center에 대 한 인증 방법 | Microsoft Docs
+title: IoT에 대한 Azure Security Center에 대한 인증 방법 | Microsoft Docs
 description: IoT 서비스에 Azure Security Center를 사용할 때 사용할 수 있는 다양 한 인증 방법에 대해 알아봅니다.
 services: asc-for-iot
 ms.service: asc-for-iot
@@ -26,7 +26,7 @@ ms.locfileid: "68596459"
 
 이 문서에서는 AzureIoTSecurity agent와 함께 사용 하 여 IoT Hub 인증할 수 있는 다양 한 인증 방법을 설명 합니다.
 
-각 장치 등록 IoT Hub에서 IoT에 대해 Azure Security Center 하려면 보안 모듈이 필요 합니다. 장치를 인증 하기 위해 IoT에 대 한 Azure Security Center는 두 가지 방법 중 하나를 사용할 수 있습니다. 기존 IoT 솔루션에 가장 적합 한 방법을 선택 합니다. 
+각 장치 등록 IoT Hub에서 IoT에 대해 Azure Security Center 하려면 보안 모듈이 필요 합니다. 장치를 인증 하기 위해 IoT에 대한 Azure Security Center는 두 가지 방법 중 하나를 사용할 수 있습니다. 기존 IoT 솔루션에 가장 적합 한 방법을 선택 합니다. 
 
 > [!div class="checklist"]
 > * SecurityModule 옵션
@@ -41,7 +41,7 @@ AzureIoTSecurity 에이전트에서 인증을 수행 하는 두 가지 방법은
    보안 에이전트가 보안 모듈 (대칭 키만)을 통해 전용 인증 방법을 사용 하도록 하려면이 인증 유형을 사용 합니다.
         
  - **장치** 인증 모드<br>
-    이 메서드에서 보안 에이전트는 먼저 장치 id를 사용 하 여 인증 합니다. 초기 인증 후에 IoT 에이전트에 대 한 Azure Security Center는 장치의 인증 데이터와 REST API를 사용 하 여 IoT Hub에 대 한 **REST** 호출을 수행 합니다. 그러면 IoT agent에 대 한 Azure Security Center IoT Hub에서 보안 모듈 인증 방법과 데이터를 요청 합니다. 마지막 단계에서 IoT 에이전트에 대 한 Azure Security Center은 IoT 용 Azure Security Center 모듈에 대해 인증을 수행 합니다.
+    이 메서드에서 보안 에이전트는 먼저 장치 id를 사용 하 여 인증 합니다. 초기 인증 후에 IoT 에이전트에 대한 Azure Security Center는 장치의 인증 데이터와 REST API를 사용 하 여 IoT Hub에 대한 **REST** 호출을 수행 합니다. 그러면 IoT agent에 대한 Azure Security Center IoT Hub에서 보안 모듈 인증 방법과 데이터를 요청 합니다. 마지막 단계에서 IoT 에이전트에 대한 Azure Security Center은 IoT 용 Azure Security Center 모듈에 대해 인증을 수행 합니다.
     
     보안 에이전트에서 기존 장치 인증 방법 (자체 서명 된 인증서 또는 대칭 키)을 다시 사용 하려는 경우이 인증 유형을 사용 합니다. 
 

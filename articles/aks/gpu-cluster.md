@@ -16,7 +16,7 @@ ms.locfileid: "76276024"
 ---
 # <a name="use-gpus-for-compute-intensive-workloads-on-azure-kubernetes-service-aks"></a>AKS(Azure Kubernetes Service)에서 계산 집약적 워크로드에 GPU 사용
 
-GPU(그래픽 처리 장치)는 그래픽 및 시각화 워크로드 같은 계산 집약적 워크로드에 자주 사용됩니다. AKS는 Kubernetes에서 이러한 계산 집약적 워크로드를 실행할 수 있도록 GPU 지원 노드 풀 만들기를 지원합니다. 사용 가능한 GPU 사용 Vm에 대 한 자세한 내용은 [Azure에서 gpu 최적화 vm 크기][gpu-skus]를 참조 하세요. AKS 노드의 경우 권장하는 최소 크기는 *Standard_NC6*입니다.
+GPU(그래픽 처리 장치)는 그래픽 및 시각화 워크로드 같은 계산 집약적 워크로드에 자주 사용됩니다. AKS는 Kubernetes에서 이러한 계산 집약적 워크로드를 실행할 수 있도록 GPU 지원 노드 풀 만들기를 지원합니다. 사용 가능한 GPU 사용 Vm에 대한 자세한 내용은 [Azure에서 gpu 최적화 vm 크기][gpu-skus]를 참조 하세요. AKS 노드의 경우 권장하는 최소 크기는 *Standard_NC6*입니다.
 
 > [!NOTE]
 > GPU 지원 VM에는 더 높은 가격 및 지역 가용성에 맞는 특별한 하드웨어가 포함되어 있습니다. 자세한 내용은 [가격 책정][azure-pricing] 도구 및 [지역 가용성][azure-availability]을 참조 하세요.
@@ -33,7 +33,7 @@ GPU(그래픽 처리 장치)는 그래픽 및 시각화 워크로드 같은 계�
 
 최소 요구 사항(GPU 지원 노드 및 Kubernetes 버전 1.10 이상)을 충족하는 AKS 클러스터가 필요한 경우 다음 단계를 완료합니다. 이러한 요구 사항을 충족 하는 AKS 클러스터가 이미 있는 경우 [다음 섹션으로 건너뜁니다](#confirm-that-gpus-are-schedulable).
 
-먼저 [az group create][az-group-create] 명령을 사용 하 여 클러스터에 대 한 리소스 그룹을 만듭니다. 다음 예제는 *eastus* 지역에 *myResourceGroup*이라는 리소스 그룹을 만듭니다.
+먼저 [az group create][az-group-create] 명령을 사용 하 여 클러스터에 대한 리소스 그룹을 만듭니다. 다음 예제는 *eastus* 지역에 *myResourceGroup*이라는 리소스 그룹을 만듭니다.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
@@ -49,7 +49,7 @@ az aks create \
     --node-count 1
 ```
 
-[Az AKS get 자격 증명][az-aks-get-credentials] 명령을 사용 하 여 AKS 클러스터에 대 한 자격 증명을 가져옵니다.
+[Az AKS get 자격 증명][az-aks-get-credentials] 명령을 사용 하 여 AKS 클러스터에 대한 자격 증명을 가져옵니다.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
@@ -57,7 +57,7 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 
 ## <a name="install-nvidia-drivers"></a>NVidia 드라이버 설치
 
-노드의 Gpu를 사용 하려면 먼저 NVIDIA 장치 플러그 인에 대 한 DaemonSet를 배포 해야 합니다. 이 DaemonSet는 각 노드에서 Pod를 실행하여 GPU에 필요한 드라이버를 제공합니다.
+노드의 Gpu를 사용 하려면 먼저 NVIDIA 장치 플러그 인에 대한 DaemonSet를 배포 해야 합니다. 이 DaemonSet는 각 노드에서 Pod를 실행하여 GPU에 필요한 드라이버를 제공합니다.
 
 먼저 [kubectl create namespace][kubectl-create] 명령을 사용 하 여 네임 스페이스를 만듭니다 (예: *gpu 리소스)* .
 
@@ -65,7 +65,7 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 kubectl create namespace gpu-resources
 ```
 
-*nvidia-device-plugin-ds.yaml*이라는 파일을 만들고 다음 YAML 매니페스트를 붙여넣습니다. 이 매니페스트는 [Kubernetes 프로젝트에 대 한 NVIDIA 장치 플러그 인의][nvidia-github]일부로 제공 됩니다.
+*nvidia-device-plugin-ds.yaml*이라는 파일을 만들고 다음 YAML 매니페스트를 붙여넣습니다. 이 매니페스트는 [Kubernetes 프로젝트에 대한 NVIDIA 장치 플러그 인의][nvidia-github]일부로 제공 됩니다.
 
 ```yaml
 apiVersion: extensions/v1beta1
@@ -331,7 +331,7 @@ kubectl delete jobs samples-tf-mnist-demo
 
 Apache Spark 작업을 실행 하려면 [AKS에서 Apache Spark 작업 실행][aks-spark]을 참조 하세요.
 
-Kubernetes에서 기계 학습 (ML) 워크 로드를 실행 하는 방법에 대 한 자세한 내용은 [Kubeflow Labs][kubeflow-labs]를 참조 하세요.
+Kubernetes에서 기계 학습 (ML) 워크 로드를 실행 하는 방법에 대한 자세한 내용은 [Kubeflow Labs][kubeflow-labs]를 참조 하세요.
 
 <!-- LINKS - external -->
 [kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply

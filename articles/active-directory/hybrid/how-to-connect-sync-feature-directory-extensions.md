@@ -53,13 +53,13 @@ Azure AD의 개체에는 최대 100개의 디렉터리 확장 특성이 있을 �
 
 ## <a name="configuration-changes-in-azure-ad-made-by-the-wizard"></a>마법사에서 만든 Azure AD의 구성 변경 내용
 
-Azure AD Connect를 설치하는 동안 이러한 특성을 사용할 수 있는 애플리케이션이 등록됩니다. Azure Portal에서 다음 애플리케이션을 볼 수 있습니다. 해당 이름은 항상 **테 넌 트 스키마 확장 앱**입니다.
+Azure AD Connect를 설치하는 동안 이러한 특성을 사용할 수 있는 애플리케이션이 등록됩니다. Azure Portal에서 다음 애플리케이션을 볼 수 있습니다. 해당 이름은 항상 **테넌트 스키마 확장 앱**입니다.
 
 ![스키마 확장 앱](./media/how-to-connect-sync-feature-directory-extensions/extension3new.png)
 
 이 앱을 보려면 **모든 응용 프로그램** 을 선택 해야 합니다.
 
-특성에는 **확장명이 {ApplicationId}\_\_** 접두사가 붙습니다. ApplicationId는 Azure AD 테 넌 트의 모든 특성에 대해 동일한 값을 갖습니다. 이 항목의 다른 모든 시나리오에는이 값이 필요 합니다.
+특성에는 **확장명이 {ApplicationId}\_\_** 접두사가 붙습니다. ApplicationId는 Azure AD 테넌트의 모든 특성에 대해 동일한 값을 갖습니다. 이 항목의 다른 모든 시나리오에는이 값이 필요 합니다.
 
 ## <a name="viewing-attributes-using-graph"></a>그래프를 사용 하 여 특성 보기
 

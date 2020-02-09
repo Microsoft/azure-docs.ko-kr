@@ -1,7 +1,7 @@
 ---
-title: 사용자 지정 정책에 대 한 일반 클레임 변환 예
+title: 사용자 지정 정책에 대한 일반 클레임 변환 예
 titleSuffix: Azure AD B2C
-description: Azure Active Directory B2C의 IEF (Identity Experience Framework) 스키마에 대 한 일반 클레임 변환 예입니다.
+description: Azure Active Directory B2C의 IEF (Identity Experience Framework) 스키마에 대한 일반 클레임 변환 예입니다.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -90,7 +90,7 @@ ms.locfileid: "76982809"
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | plaintext | 문자열 | 암호화할 입력 클레임입니다. |
 | InputClaim | salt | 문자열 | 솔트 매개 변수입니다. `CreateRandomString` 클레임 변환을 사용하여 임의 값을 만들 수 있습니다. |
-| InputParameter | randomizerSecret | 문자열 | 기존 Azure AD B2C **정책 키**를 가리킵니다. 새 정책 키를 만들려면: Azure AD B2C 테 넌 트에서 **관리**아래에서 **Id 경험 프레임 워크**를 선택 합니다. 테 넌 트에서 사용할 수 있는 키를 보려면 **정책 키** 를 선택 합니다. **추가**를 선택합니다. **옵션**에서 **수동**을 선택합니다. 이름 (접두사 *B2C_1A_* 자동으로 추가 될 수 있음)을 입력 합니다. **비밀** 텍스트 상자에 사용 하려는 비밀 (예: 1234567890)을 입력 합니다. **키 사용**으로는 **서명**을 선택합니다. **만들기**를 선택합니다. |
+| InputParameter | randomizerSecret | 문자열 | 기존 Azure AD B2C **정책 키**를 가리킵니다. 새 정책 키를 만들려면: Azure AD B2C 테넌트에서 **관리**아래에서 **Id 경험 프레임 워크**를 선택 합니다. 테넌트에서 사용할 수 있는 키를 보려면 **정책 키** 를 선택 합니다. **추가**를 선택합니다. **옵션**에서 **수동**을 선택합니다. 이름 (접두사 *B2C_1A_* 자동으로 추가 될 수 있음)을 입력 합니다. **비밀** 텍스트 상자에 사용 하려는 비밀 (예: 1234567890)을 입력 합니다. **키 사용**으로는 **서명**을 선택합니다. **만들기**를 선택합니다. |
 | OutputClaim | hash | 문자열 | 이 클레임 변환을 호출하고 나면 생성되는 ClaimType입니다. `plaintext` inputClaim에구성 된 클레임입니다. |
 
 ```XML

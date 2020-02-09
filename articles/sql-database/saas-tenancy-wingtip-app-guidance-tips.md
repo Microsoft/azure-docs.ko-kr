@@ -1,5 +1,5 @@
 ---
-title: 다중 테 넌 트 앱 예제-정문 SaaS
+title: 다중 테넌트 앱 예제-정문 SaaS
 description: Azure SQL Database를 사용하는 샘플 다중 테넌트 애플리케이션인 Wingtip Tickets SaaS 예제를 설치 및 실행하기 위한 단계와 지침을 제공합니다.
 services: sql-database
 ms.service: sql-database

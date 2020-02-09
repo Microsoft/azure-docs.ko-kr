@@ -84,7 +84,7 @@ Active Directory에 대해 인증 된 후에는 토큰을 검색 합니다. 이 
 - 사용자가 Azure AD에서 삭제 되 면 해당 사용자는 더 이상 Azure AD를 사용 하 여 인증할 수 없으므로 해당 사용자에 대 한 액세스 토큰을 획득할 수 없게 됩니다. 이 경우 일치 하는 사용자가 여전히 데이터베이스에 있더라도 해당 사용자를 사용 하 여 서버에 연결할 수 없게 됩니다.
 > [!NOTE]
 > 삭제 된 Azure AD 사용자에 대 한 로그인은 토큰이 만료 될 때까지 계속 수행할 수 있습니다 (토큰 발급에서 최대 60 분).  Azure Database for MySQL에서 사용자를 제거 하는 경우에도이 액세스 권한이 즉시 해지 됩니다.
-- Azure AD 관리자가 서버에서 제거 되는 경우 서버는 더 이상 Azure AD 테 넌 트와 연결 되지 않으므로 서버에 대해 모든 Azure AD 로그인이 사용 되지 않습니다. 동일한 테 넌 트에서 새 Azure AD 관리자를 추가 하면 Azure AD 로그인이 다시 사용 하도록 설정 됩니다.
+- Azure AD 관리자가 서버에서 제거 되는 경우 서버는 더 이상 Azure AD 테넌트와 연결 되지 않으므로 서버에 대해 모든 Azure AD 로그인이 사용 되지 않습니다. 동일한 테넌트에서 새 Azure AD 관리자를 추가 하면 Azure AD 로그인이 다시 사용 하도록 설정 됩니다.
 - Azure Database for MySQL은 사용자 이름을 사용 하는 대신 사용자의 고유한 Azure AD 사용자 ID를 사용 하 여 액세스 토큰과 Azure Database for MySQL 사용자를 일치 시킵니다. 즉, azure ad 사용자가 Azure AD에서 삭제 되 고 이름이 같은 새 사용자를 만든 경우 Azure Database for MySQL는 다른 사용자를 고려 합니다. 따라서 사용자가 Azure AD에서 삭제 되 고 이름이 같은 새 사용자가 추가 된 경우 새 사용자는 기존 사용자와 연결할 수 없게 됩니다.
 
 ## <a name="next-steps"></a>다음 단계

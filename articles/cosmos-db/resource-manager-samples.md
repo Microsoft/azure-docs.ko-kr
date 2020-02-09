@@ -1,5 +1,5 @@
 ---
-title: Azure Cosmos DB에 대 한 Azure Resource Manager 템플릿
+title: Azure Cosmos DB에 대한 Azure Resource Manager 템플릿
 description: Azure Resource Manager 템플릿을 사용 하 여 Azure Cosmos DB을 만들고 구성 합니다.
 author: TheovanKraay
 ms.service: cosmos-db
@@ -13,16 +13,16 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/12/2019
 ms.locfileid: "73961849"
 ---
-# <a name="azure-resource-manager-templates-for-azure-cosmos-db"></a>Azure Cosmos DB에 대 한 Azure Resource Manager 템플릿
+# <a name="azure-resource-manager-templates-for-azure-cosmos-db"></a>Azure Cosmos DB에 대한 Azure Resource Manager 템플릿
 
-다음 표에는 Azure Cosmos DB에 대 한 Azure Resource Manager 템플릿에 대 한 링크가 포함 되어 있습니다.
+다음 표에는 Azure Cosmos DB에 대한 Azure Resource Manager 템플릿에 대한 링크가 포함 되어 있습니다.
 
 ## <a name="sql-core-api"></a>SQL(Core) API
 
 |**템플릿**|**설명**|
 |---|---|
 |[Azure Cosmos 계정, 데이터베이스, 컨테이너 만들기](manage-sql-with-resource-manager.md#create-resource) | 이 템플릿은 공유 데이터베이스 처리량이 있는 두 개의 컨테이너와 전용 처리량을 가진 컨테이너를 사용 하 여 두 지역에 SQL (Core) API 계정을 만듭니다. 업데이트 된 처리량 속성 값으로 템플릿을 다시 전송 하 여 처리량을 업데이트할 수 있습니다. |
-|[저장 프로시저, 트리거 및 UDF를 사용 하 여 Azure Cosmos 계정, 데이터베이스 및 컨테이너 만들기](manage-sql-with-resource-manager.md#create-sproc) | 이 템플릿에서는 컨테이너에 대 한 저장 프로시저, 트리거 및 UDF를 사용 하 여 두 지역에 SQL (Core) API 계정을 만듭니다. |
+|[저장 프로시저, 트리거 및 UDF를 사용 하 여 Azure Cosmos 계정, 데이터베이스 및 컨테이너 만들기](manage-sql-with-resource-manager.md#create-sproc) | 이 템플릿에서는 컨테이너에 대한 저장 프로시저, 트리거 및 UDF를 사용 하 여 두 지역에 SQL (Core) API 계정을 만듭니다. |
 
 ## <a name="mongodb-api"></a>MongoDB API
 

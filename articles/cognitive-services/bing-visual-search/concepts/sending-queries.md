@@ -23,7 +23,7 @@ ms.locfileid: "75913063"
 
 다음 세 가지 방법으로 이미지에 대한 인사이트를 가져올 수 있습니다.
 
-- [Bing Image Search API](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference) 끝점 중 하나에 대 한 이전 호출의 이미지에서 가져온 정보 토큰을 사용 합니다.
+- [Bing Image Search API](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference) 엔드포인트 중 하나에 대 한 이전 호출의 이미지에서 가져온 정보 토큰을 사용 합니다.
 - 이미지의 URL 보내기
 - 이미지 업로드 (이진 형식)
 

@@ -126,7 +126,7 @@ PSCredentials을 매개 변수로 전달하는 방법에 대한 정보는 아래
 > **복합 리소스** 를 포함 하는 구성이 올바르게 컴파일되도록 하려면 먼저 복합 리소스가 의존 하는 DSC 리소스를에서 Azure Automation로 먼저 가져와야 합니다.
 
 DSC **복합 리소스** 추가는 Azure Automation에 PowerShell 모듈을 추가 하는 것과는 다릅니다.
-이 프로세스에 대 한 단계별 지침은 [Azure Automation의 모듈 관리](/azure/automation/shared-resources/modules)문서에 설명 되어 있습니다.
+이 프로세스에 대한 단계별 지침은 [Azure Automation의 모듈 관리](/azure/automation/shared-resources/modules)문서에 설명 되어 있습니다.
 
 ### <a name="managing-configurationdata-when-compiling-configuration-in-azure-automation"></a>Azure Automation에서 구성을 컴파일할 때 ConfigurationData 관리
 

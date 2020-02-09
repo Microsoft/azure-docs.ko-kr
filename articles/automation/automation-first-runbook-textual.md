@@ -106,12 +106,12 @@ runbook에 직접 코드를 입력하거나 라이브러리 컨트롤에서 cmdl
    ![작업 요약](media/automation-first-runbook-textual/job-pane-status-blade-outputtile.png)
 
 1. 출력 창을 닫습니다.
-1. **모든 로그** 를 클릭하여 Runbook 작업에 대한 스트림 창을 엽니다. 출력 스트림에 *Hello World* 만 표시 되어야 하지만 runbook에서 기록 하는 경우이 보기에는 자세한 정보 표시, 오류와 같은 runbook 작업에 대 한 다른 스트림이 표시 될 수 있습니다.
+1. **모든 로그** 를 클릭하여 Runbook 작업에 대한 스트림 창을 엽니다. 출력 스트림에 *Hello World* 만 표시 되어야 하지만 runbook에서 기록 하는 경우이 보기에는 자세한 정보 표시, 오류와 같은 runbook 작업에 대한 다른 스트림이 표시 될 수 있습니다.
 
    ![작업 요약](media/automation-first-runbook-textual/job-pane-status-blade-alllogstile.png)
 
 1. MyFirstRunbook 페이지로 돌아가려면 스트림 페이지와 작업 페이지를 닫습니다.
-1. **작업** 을 클릭 하 여이 runbook에 대 한 작업 페이지를 엽니다. 이 페이지에는 Runbook에서 만든 모든 작업이 나열됩니다. 작업을 한 번만 실행했으므로 하나의 작업만 표시됩니다.
+1. **작업** 을 클릭 하 여이 runbook에 대한 작업 페이지를 엽니다. 이 페이지에는 Runbook에서 만든 모든 작업이 나열됩니다. 작업을 한 번만 실행했으므로 하나의 작업만 표시됩니다.
 
    ![작업](media/automation-first-runbook-textual/runbook-control-job-tile.png)
 
@@ -138,7 +138,7 @@ runbook에 직접 코드를 입력하거나 라이브러리 컨트롤에서 cmdl
    ```
 
    > [!IMPORTANT]
-   > **AzAccount** 및 **AzAccount** 는 이제 **AzAccount**에 대 한 별칭입니다. **AzAccount** cmdlet이 존재 하지 않는 경우 **AzAccount** 또는 **AzAccount**를 사용 하거나 Automation 계정의 모듈을 최신 버전으로 [업데이트할](automation-update-azure-modules.md) 수 있습니다.
+   > **AzAccount** 및 **AzAccount** 는 이제 **AzAccount**에 대한 별칭입니다. **AzAccount** cmdlet이 존재 하지 않는 경우 **AzAccount** 또는 **AzAccount**를 사용 하거나 Automation 계정의 모듈을 최신 버전으로 [업데이트할](automation-update-azure-modules.md) 수 있습니다.
 
 > [!NOTE]
 > 새 Automation 계정을 만든 경우에도 [모듈을 업데이트](automation-update-azure-modules.md)해야 할 수 있습니다.
@@ -176,7 +176,7 @@ runbook에 직접 코드를 입력하거나 라이브러리 컨트롤에서 cmdl
 
 Runbook은 현재 Runbook에 하드 코딩된 가상 머신을 시작하지만, Runbook이 시작될 때 가상 머신을 지정할 수 있으면 더 유용합니다. Runbook에 입력 매개 변수를 추가하여 해당 기능을 제공합니다.
 
-1. *VMName* 및 *ResourceGroupName* 에 대 한 매개 변수를 runbook에 추가 하 고 아래 예제와 같이 **new-azvm** cmdlet에 이러한 변수를 사용 합니다.
+1. *VMName* 및 *ResourceGroupName* 에 대한 매개 변수를 runbook에 추가 하 고 아래 예제와 같이 **new-azvm** cmdlet에 이러한 변수를 사용 합니다.
 
    ```powershell-interactive
    workflow MyFirstRunbook-Workflow
@@ -206,7 +206,7 @@ Runbook은 현재 Runbook에 하드 코딩된 가상 머신을 시작하지만, 
 
 ## <a name="next-steps"></a>다음 단계
 
-* 언어 참조 및 학습 모듈을 비롯 한 PowerShell에 대 한 자세한 내용은 [Powershell 문서](https://docs.microsoft.com/powershell/scripting/overview)를 참조 하세요.
+* 언어 참조 및 학습 모듈을 비롯 한 PowerShell에 대한 자세한 내용은 [Powershell 문서](https://docs.microsoft.com/powershell/scripting/overview)를 참조 하세요.
 * 그래픽 Runbook을 시작하려면 [내 첫 번째 그래픽 Runbook](automation-first-runbook-graphical.md)
 * PowerShell Runbook을 시작하려면 [내 첫 번째 PowerShell Runbook](automation-first-runbook-textual-powershell.md)
 * Runbook 형식, 해당 장점 및 제한 사항에 대해 자세히 알아보려면 [Azure Automation Runbook 형식](automation-runbook-types.md)

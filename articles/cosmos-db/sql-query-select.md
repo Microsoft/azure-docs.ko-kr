@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB에서 절 선택
-description: Azure Cosmos DB에 대 한 SQL SELECT 절에 대해 알아봅니다. Azure Cosmos DB JSON 쿼리 언어로 SQL을 사용 합니다.
+description: Azure Cosmos DB에 대한 SQL SELECT 절에 대해 알아봅니다. Azure Cosmos DB JSON 쿼리 언어로 SQL을 사용 합니다.
 author: ginarobinson
 ms.service: cosmos-db
 ms.topic: conceptual

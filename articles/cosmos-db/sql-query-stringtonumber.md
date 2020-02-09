@@ -26,7 +26,7 @@ StringToNumber(<str_expr>)
 ## <a name="arguments"></a>인수
   
 *str_expr*  
-   JSON 숫자 식으로 구문 분석할 문자열 식입니다. JSON의 숫자는 정수 이거나 부동 소수점 이어야 합니다. JSON 형식에 대 한 자세한 내용은 [json.org](https://json.org/) 를 참조 하세요.  
+   JSON 숫자 식으로 구문 분석할 문자열 식입니다. JSON의 숫자는 정수 이거나 부동 소수점 이어야 합니다. JSON 형식에 대한 자세한 내용은 [json.org](https://json.org/) 를 참조 하세요.  
   
 ## <a name="return-types"></a>반환 유형
   

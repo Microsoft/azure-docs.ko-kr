@@ -54,7 +54,7 @@ Windows 업데이트 아티팩트가 최근에 적용 되지 않은 모든 Vm에
 ### <a name="step-1-create-a-service-principal"></a>1단계: 서비스 주체 만들기 
 첫 번째 단계는 랩을 포함 하는 구독에 대 한 사용 권한이 있는 서비스 주체를 가져오는 것입니다. 서비스 주체는 암호 기반 인증을 사용 해야 합니다. [Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest), [Azure PowerShell](/powershell/azure/create-azure-service-principal-azureps?view=azps-2.5.0)또는 [Azure Portal](../active-directory/develop/howto-create-service-principal-portal.md)를 사용 하 여이 작업을 수행할 수 있습니다. 사용할 서비스 주체가 이미 있는 경우이 단계를 건너뛸 수 있습니다.
 
-서비스 사용자의 **응용 프로그램 id**, **키**및 **테 넌 트 id** 를 적어둡니다. 이 연습의 뒷부분에서 필요 합니다. 
+서비스 사용자의 **응용 프로그램 id**, **키**및 **테넌트 id** 를 적어둡니다. 이 연습의 뒷부분에서 필요 합니다. 
 
 ### <a name="step-2-download-the-sample-and-open-in-visual-studio-2019"></a>2단계: 샘플을 다운로드 하 고 Visual Studio 2019에서 열기
 리포지토리를 복제 하거나 [여기](https://github.com/Azure/azure-devtestlab/archive/master.zip)에서 리포지토리를 다운로드 하 여 [ C# Azure Functions 샘플](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/AzureFunctions/CSharp) 의 복사본을 로컬로 다운로드 합니다.  
@@ -82,7 +82,7 @@ Visual Studio의 **솔루션 탐색기** 창에서 **AzureFunctions** 프로젝�
     ![Azure 함수 Url](./media/extend-devtest-labs-azure-functions/function-url.png)
 4. URL을 복사하고 저장합니다. 다른 Azure 함수에 대해 이러한 단계를 반복 합니다. 
 
-또한 서비스 주체에 대 한 추가 정보 (예: 응용 프로그램 ID, 키 및 테 넌 트 ID)가 필요 합니다.
+또한 서비스 주체에 대 한 추가 정보 (예: 응용 프로그램 ID, 키 및 테넌트 ID)가 필요 합니다.
 
 
 ### <a name="step-5--update-application-settings"></a>5단계:  응용 프로그램 설정 업데이트

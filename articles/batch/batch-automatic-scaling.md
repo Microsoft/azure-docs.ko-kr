@@ -105,7 +105,7 @@ $NodeDeallocationOption = taskcompletion;
 | 읽기-쓰기 서비스 정의 변수 | Description |
 | --- | --- |
 | $TargetDedicatedNodes |풀에 대한 전용 컴퓨팅 노드의 대상 수입니다. 풀에서 항상 원하는 수의 노드에 도달할 수 없으므로 전용 노드의 수가 목표 수로 지정됩니다. 예를 들어 풀에서 최초 목표에 도달하기 전에 자동 크기 조정 평가에 따라 전용 노드의 목표 수가 수정되는 경우 풀에서 목표에 도달하지 못할 수 있습니다. <br /><br /> 목표가 배치 계정 노드 또는 코어 할당량을 초과하는 경우 Batch 서비스 구성으로 만든 계정의 풀에서 해당 목표에 도달하지 못할 수 있습니다. 목표가 구독의 공유 코어 할당량을 초과하는 경우 사용자 구독 구성으로 만든 계정의 풀에서 해당 목표에 도달하지 못할 수 있습니다.|
-| $TargetLowPriorityNodes |풀에 대한 우선 순위가 낮은 컴퓨팅 노드의 목표 수입니다. 풀에서 항상 원하는 수의 노드에 도달할 수 없으므로 우선 순위가 낮은 노드의 수가 목표 수로 지정됩니다. 예를 들어 풀에서 최초 목표에 도달하기 전에 자동 크기 조정 평가에 따라 우선 순위가 낮은 노드의 목표 수가 수정되는 경우 풀에서 목표에 도달하지 못할 수 있습니다. 목표가 Batch 계정 노드 또는 코어 할당량을 초과하는 경우 풀에서 해당 목표에 도달하지 못할 수도 있습니다. <br /><br /> 우선 순위가 낮은 계산 노드에 대 한 자세한 내용은 Batch를 [사용 하 여 우선 순위가 낮은 Vm 사용](batch-low-pri-vms.md)을 참조 하세요. |
+| $TargetLowPriorityNodes |풀에 대한 우선 순위가 낮은 컴퓨팅 노드의 목표 수입니다. 풀에서 항상 원하는 수의 노드에 도달할 수 없으므로 우선 순위가 낮은 노드의 수가 목표 수로 지정됩니다. 예를 들어 풀에서 최초 목표에 도달하기 전에 자동 크기 조정 평가에 따라 우선 순위가 낮은 노드의 목표 수가 수정되는 경우 풀에서 목표에 도달하지 못할 수 있습니다. 목표가 Batch 계정 노드 또는 코어 할당량을 초과하는 경우 풀에서 해당 목표에 도달하지 못할 수도 있습니다. <br /><br /> 우선 순위가 낮은 계산 노드에 대한 자세한 내용은 Batch를 [사용 하 여 우선 순위가 낮은 Vm 사용](batch-low-pri-vms.md)을 참조 하세요. |
 | $NodeDeallocationOption |풀에서 컴퓨팅 노드가 제거되는 경우 발생하는 작업입니다. 가능한 값은 다음과 같습니다.<ul><li>**다시 대기**--기본값입니다. 작업을 즉시 종료 하 고 다시 예약할 수 있도록 작업 큐에 다시 저장 합니다. 이 작업을 수행 하면 대상 노드의 수가 최대한 빠르게 도달 하지만, 실행 중인 작업이 중단 되 고 다시 시작 해야 하는 작업을 수행 하 여 작업을 다시 시작 해야 하므로 효율성이 떨어질 수 있습니다. <li>**terminate** - 태스크를 즉시 종료하고 작업 큐에서 제거합니다.<li>**taskcompletion** - 현재 실행 중인 태스크가 완료되기를 기다린 다음 풀에서 해당 노드를 제거합니다. 이 옵션을 사용 하 여 작업이 중단 되 고 큐에 대기 하는 것을 방지 하 고 작업이 완료 된 작업을 낭비 합니다. <li>**retaineddata** - 노드의 모든 로컬 태스크 보유 데이터가 정리되기를 기다린 다음 풀에서 해당 노드를 제거합니다.</ul> |
 
 > [!NOTE]
@@ -382,7 +382,7 @@ $TargetDedicatedNodes = min(400, $totalDedicatedNodes)
 
 ## <a name="create-an-autoscale-enabled-pool-with-batch-sdks"></a>Batch Sdk를 사용 하 여 자동 크기 조정 가능한 풀 만들기
 
-Batch [sdk](batch-apis-tools.md#azure-accounts-for-batch-development), batch [REST API](https://docs.microsoft.com/rest/api/batchservice/) [BATCH PowerShell cmdlet](batch-powershell-cmdlets-get-started.md)및 [batch CLI](batch-cli-get-started.md)중 하나를 사용 하 여 풀 자동 크기 조정을 구성할 수 있습니다. 이 섹션에서는 .NET 및 Python에 대 한 예제를 볼 수 있습니다.
+Batch [sdk](batch-apis-tools.md#azure-accounts-for-batch-development), batch [REST API](https://docs.microsoft.com/rest/api/batchservice/) [BATCH PowerShell cmdlet](batch-powershell-cmdlets-get-started.md)및 [batch CLI](batch-cli-get-started.md)중 하나를 사용 하 여 풀 자동 크기 조정을 구성할 수 있습니다. 이 섹션에서는 .NET 및 Python에 대한 예제를 볼 수 있습니다.
 
 ### <a name="net"></a>.NET
 
@@ -466,7 +466,7 @@ response = batch_service_client.pool.enable_auto_scale(pool_id, auto_scale_formu
 ```
 
 > [!TIP]
-> Python SDK 사용에 대 한 추가 예제는 GitHub의 [Batch Python 빠른 시작 리포지토리](https://github.com/Azure-Samples/batch-python-quickstart) 에서 찾을 수 있습니다.
+> Python SDK 사용에 대한 추가 예제는 GitHub의 [Batch Python 빠른 시작 리포지토리](https://github.com/Azure-Samples/batch-python-quickstart) 에서 찾을 수 있습니다.
 >
 >
 

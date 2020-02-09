@@ -81,7 +81,7 @@ az provider operation show --namespace Microsoft.ContainerRegistry
 사용자 지정 역할을 정의 하려면 [사용자 지정 역할을 만드는 단계](../role-based-access-control/custom-roles.md#steps-to-create-a-custom-role)를 참조 하세요.
 
 > [!IMPORTANT]
-> 사용자 지정 역할에서 Azure Container Registry는 현재 모든 일치 작업에 대 한 액세스 권한을 부여 하는 `Microsoft.ContainerRegistry/*` 또는 `Microsoft.ContainerRegistry/registries/*`와 같은 와일드 카드를 지원 하지 않습니다. 역할에서 필수 작업을 개별적으로 지정 합니다.
+> 사용자 지정 역할에서 Azure Container Registry는 현재 모든 일치 작업에 대한 액세스 권한을 부여 하는 `Microsoft.ContainerRegistry/*` 또는 `Microsoft.ContainerRegistry/registries/*`와 같은 와일드 카드를 지원 하지 않습니다. 역할에서 필수 작업을 개별적으로 지정 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

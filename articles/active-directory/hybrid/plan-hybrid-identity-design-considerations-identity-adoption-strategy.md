@@ -140,7 +140,7 @@ Microsoft에는 클라우드 ID, 동기화된 ID 및 페더레이션된 ID는 3�
 
 위의 조건이 충족되지 않고 둘 이상의 활성 계정 또는 둘 이상의 사서함이 있으면 Azure AD Connect는 하나를 선택하고 다른 하나는 무시합니다.  다른 계정이 없고 연결된 사서함만 있는 경우 이러한 계정은 Azure AD로 내보내지 않고 해당 사용자는 그룹의 멤버가 되지 않습니다.  DirSync를 사용과 관련하여 과거와 이러한 점이 다르며 이러한 다중 포리스트 시나리오를 더 지원하려고 합니다. 다중 포리스트 시나리오는 아래 그림에 표시됩니다.
 
-![여러 Azure AD 테 넌 트](./media/plan-hybrid-identity-design-considerations/multiforest-multipleAzureAD.png) 
+![여러 Azure AD 테넌트](./media/plan-hybrid-identity-design-considerations/multiforest-multipleAzureAD.png) 
 
 **다중 포리스트 여러 Azure AD 시나리오**
 

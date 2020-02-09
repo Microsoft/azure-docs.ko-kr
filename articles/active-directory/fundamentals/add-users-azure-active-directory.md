@@ -80,7 +80,7 @@ Azure Active Directory 포털을 사용하여 기존 사용자를 삭제할 수 
 
 1. 모든 페이지에서 *Azure Active Directory* 를 검색 하 고 선택 합니다.
 
-1. Azure AD 테 넌 트에서 삭제할 사용자를 검색 하 고 선택 합니다. _Mary Parker_를 예를 들겠습니다.
+1. Azure AD 테넌트에서 삭제할 사용자를 검색 하 고 선택 합니다. _Mary Parker_를 예를 들겠습니다.
 
 1. **사용자 삭제**를 선택합니다.
 

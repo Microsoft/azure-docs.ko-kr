@@ -25,7 +25,7 @@ ms.locfileid: "75443400"
 
 기본적으로 사용자는 일부 사용 권한에 대해서만 조직의 데이터에 액세스 하는 응용 프로그램에 동의할 수 있습니다. 예를 들어, 기본적으로 사용자는 사용자가 소유 하는 팀에 대 한 사용자의 사서함 또는 팀 대화에 대 한 액세스를 허용 하는 것에 동의할 수 있지만, 조직의 모든 SharePoint 사이트에 대 한 읽기 및 쓰기에 대 한 앱 무인 액세스를 허용 하는 것에 동의할 수 없습니다. 사용자가 자신에 게 동의할 수 있도록 허용 하는 경우에는 사용자가 Microsoft 365, Azure 및 기타 서비스와 통합 하는 유용한 응용 프로그램을 쉽게 획득할 수 있으며, 사용 하지 않거나 모니터링 하는 경우 위험을 나타낼 수 있습니다.
 
-사용자의 노출 영역을 줄이고이 위험을 완화 하기 위해 향후 사용자 동의 작업을 사용 하지 않도록 설정 하는 것이 좋습니다. 사용자 동의가 사용 하지 않도록 설정 된 경우 이전 동의 부여는 여전히 적용 되지만 관리자는 이후의 모든 승인 작업을 수행 해야 합니다. 사용자가 통합 [관리자 동의 요청 워크플로](configure-admin-consent-workflow.md) 를 통하거나 사용자의 지원 프로세스를 통해 테 넌 트 전체 관리자 동의를 요청할 수 있습니다. 자세한 내용은 [id 인프라를 보호 하는 5 단계를](../../security/fundamentals/steps-secure-identity.md) 참조 하세요.
+사용자의 노출 영역을 줄이고이 위험을 완화 하기 위해 향후 사용자 동의 작업을 사용 하지 않도록 설정 하는 것이 좋습니다. 사용자 동의가 사용 하지 않도록 설정 된 경우 이전 동의 부여는 여전히 적용 되지만 관리자는 이후의 모든 승인 작업을 수행 해야 합니다. 사용자가 통합 [관리자 동의 요청 워크플로](configure-admin-consent-workflow.md) 를 통하거나 사용자의 지원 프로세스를 통해 테넌트 전체 관리자 동의를 요청할 수 있습니다. 자세한 내용은 [id 인프라를 보호 하는 5 단계를](../../security/fundamentals/steps-secure-identity.md) 참조 하세요.
 
 ## <a name="configure-user-consent-to-applications"></a>응용 프로그램에 대 한 사용자 동의 구성
 ### <a name="disable-or-enable-user-consent-from-the-azure-portal"></a>Azure Portal에서 사용자 동의 사용 또는 사용 안 함
@@ -89,7 +89,7 @@ Azure AD PowerShell Preview 모듈 ([AzureADPreview](https://docs.microsoft.com/
    Connect-AzureAD
    ```
 
-3. 테 넌 트에서 *동의 정책 설정* 디렉터리 설정에 대 한 현재 값을 검색 합니다. 이 기능을 사용 하려면 해당 디렉터리 설정 템플릿의 값을 사용 하 여이 기능에 대 한 디렉터리 설정이 만들어졌는지 확인 해야 합니다.
+3. 테넌트에서 *동의 정책 설정* 디렉터리 설정에 대 한 현재 값을 검색 합니다. 이 기능을 사용 하려면 해당 디렉터리 설정 템플릿의 값을 사용 하 여이 기능에 대 한 디렉터리 설정이 만들어졌는지 확인 해야 합니다.
 
     ```powershell
     $consentSettingsTemplateId = "dffd5d46-495d-40a9-8e21-954ff55e198a" # Consent Policy Settings
@@ -147,7 +147,7 @@ Azure AD PowerShell Preview 모듈 ([AzureADPreview](https://docs.microsoft.com/
 
 [관리자 동의 워크플로 구성](configure-admin-consent-workflow.md)
 
-[응용 프로그램에 대 한 테 넌 트 전체 관리자 동의 부여](grant-admin-consent.md)
+[응용 프로그램에 대 한 테넌트 전체 관리자 동의 부여](grant-admin-consent.md)
 
 [Microsoft id 플랫폼에서 사용 권한 및 동의](../develop/active-directory-v2-scopes.md)
 

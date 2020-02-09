@@ -36,7 +36,7 @@ ms.locfileid: "77058338"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [Comeet 채용 소프트웨어 테 넌 트](https://www.comeet.co/)
+* [Comeet 채용 소프트웨어 테넌트](https://www.comeet.co/)
 * 관리자 권한이 있는 Comeet 채용 소프트웨어의 사용자 계정
 
 ## <a name="add-comeet-recruiting-software-from-the-gallery"></a>갤러리에서 Comeet 채용 소프트웨어 추가
@@ -100,7 +100,7 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에서 6 단계에 설명 된 대로 Comeet 채용 소프트웨어 계정의 **테 넌 트 URL** 및 **비밀 토큰** 을 입력 합니다.
+5. **관리자 자격 증명** 섹션 아래에서 6 단계에 설명 된 대로 Comeet 채용 소프트웨어 계정의 **테넌트 URL** 및 **비밀 토큰** 을 입력 합니다.
 
 6. [Comeet 채용 소프트웨어 관리 콘솔](https://app.comeet.co/)에서 **comeet > 설정 > 인증 > Microsoft Azure**로 이동 하 고, **회사 값에 대 한 암호 토큰** 을 Azure AD의 **비밀 토큰** 필드에 복사 합니다.
 

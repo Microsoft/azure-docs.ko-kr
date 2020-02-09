@@ -6375,7 +6375,7 @@ Service Fabric 복제된 blockstore를 사용하여 서비스 패키지의 컨�
 |minOccurs|0|
 
 ## <a name="servicemanifestimportpoliciestype-complextype"></a>ServiceManifestImportPoliciesType complexType
-가져온 서비스 매니페스트에 적용할 정책(끝점 바인딩, 패키지 공유, 실행 및 보안 액세스)을 설명합니다.
+가져온 서비스 매니페스트에 적용할 정책(엔드포인트 바인딩, 패키지 공유, 실행 및 보안 액세스)을 설명합니다.
 
 |attribute|값|
 |---|---|

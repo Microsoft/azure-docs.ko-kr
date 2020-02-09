@@ -11,7 +11,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/28/2019
 ms.locfileid: "67704203"
 ---
-컨테이너에 대 한 쿼리는 `<ApiKey>`에 사용 되는 Azure 리소스의 가격 책정 계층에서 청구 됩니다.
+컨테이너에 대한 쿼리는 `<ApiKey>`에 사용 되는 Azure 리소스의 가격 책정 계층에서 청구 됩니다.
 
 Azure Cognitive Services 컨테이너는 측정을 위해 청구 엔드포인트에 연결되지 않은 상태에서 실행할 수 있는 권한이 없습니다. 사용자는 컨테이너가 항상 청구 엔드포인트와 청구 정보를 통신할 수 있도록 설정해야 합니다. Cognitive Services 컨테이너는 고객 데이터(예: 분석 중인 이미지 또는 텍스트)를 Microsoft에 보내지 않습니다. 
 
@@ -25,8 +25,8 @@ Azure Cognitive Services 컨테이너는 측정을 위해 청구 엔드포인트
 
 | 옵션 | Description |
 |--------|-------------|
-| `ApiKey` | 청구 정보를 추적 하는 데 사용 되는 Cognitive Services 리소스의 API 키입니다.<br/>이 옵션의 값은 `Billing`에서 지정 된 프로 비전 된 리소스에 대 한 API 키로 설정 해야 합니다. |
-| `Billing` | 청구 정보를 추적 하는 데 사용 되는 Cognitive Services 리소스의 끝점입니다.<br/>이 옵션의 값은 프로비저닝된 Azure 리소스의 엔드포인트 URI로 설정해야 합니다.|
+| `ApiKey` | 청구 정보를 추적 하는 데 사용 되는 Cognitive Services 리소스의 API 키입니다.<br/>이 옵션의 값은 `Billing`에서 지정 된 프로 비전 된 리소스에 대한 API 키로 설정 해야 합니다. |
+| `Billing` | 청구 정보를 추적 하는 데 사용 되는 Cognitive Services 리소스의 엔드포인트입니다.<br/>이 옵션의 값은 프로비저닝된 Azure 리소스의 엔드포인트 URI로 설정해야 합니다.|
 | `Eula` | 컨테이너에 대한 라이선스에 동의했음을 나타냅니다.<br/>이 옵션의 값은 **accept**로 설정 되어야 합니다. |
 
 

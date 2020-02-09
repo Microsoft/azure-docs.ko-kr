@@ -1,5 +1,5 @@
 ---
-title: Azure Functions에 대 한 Azure IoT Hub 바인딩
+title: Azure Functions에 대한 Azure IoT Hub 바인딩
 description: Azure Functions에서 IoT Hub 바인딩을 사용 하는 방법을 이해 합니다.
 author: craigshoemaker
 ms.topic: reference
@@ -12,9 +12,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/08/2019
 ms.locfileid: "74924444"
 ---
-# <a name="azure-iot-hub-bindings-for-azure-functions"></a>Azure Functions에 대 한 Azure IoT Hub 바인딩
+# <a name="azure-iot-hub-bindings-for-azure-functions"></a>Azure Functions에 대한 Azure IoT Hub 바인딩
 
-이 문서에서는 IoT Hub에 대 한 Azure Functions 바인딩을 사용 하는 방법을 설명 합니다. IoT Hub 지원은 [Azure Event Hubs 바인딩을](functions-bindings-event-hubs.md)기반으로 합니다.
+이 문서에서는 IoT Hub에 대한 Azure Functions 바인딩을 사용 하는 방법을 설명 합니다. IoT Hub 지원은 [Azure Event Hubs 바인딩을](functions-bindings-event-hubs.md)기반으로 합니다.
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 

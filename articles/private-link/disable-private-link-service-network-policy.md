@@ -23,7 +23,7 @@ Azure 클라이언트 (PowerShell, CLI 또는 템플릿)를 사용 하는 경우
 다음 단계를 수행 하 여 *Myresourcegroup*이라는 리소스 그룹에서 호스트 되는 *기본* 서브넷이 있는 *myVirtualNetwork* 이라는 가상 네트워크에 대 한 개인 링크 서비스 네트워크 정책을 사용 하지 않도록 설정 합니다. 
 
 ## <a name="using-azure-powershell"></a>Azure PowerShell 사용
-이 섹션에서는 Azure PowerShell를 사용 하 여 서브넷 개인 끝점 정책을 사용 하지 않도록 설정 하는 방법을 설명 합니다.
+이 섹션에서는 Azure PowerShell를 사용 하 여 서브넷 개인 엔드포인트 정책을 사용 하지 않도록 설정 하는 방법을 설명 합니다.
 
 ```azurepowershell
 $virtualNetwork= Get-AzVirtualNetwork `
@@ -35,7 +35,7 @@ $virtualNetwork= Get-AzVirtualNetwork `
 $virtualNetwork | Set-AzVirtualNetwork 
 ```
 ## <a name="using-azure-cli"></a>Azure CLI 사용
-이 섹션에서는 Azure CLI를 사용 하 여 서브넷 개인 끝점 정책을 사용 하지 않도록 설정 하는 방법을 설명 합니다.
+이 섹션에서는 Azure CLI를 사용 하 여 서브넷 개인 엔드포인트 정책을 사용 하지 않도록 설정 하는 방법을 설명 합니다.
 ```azurecli
 az network vnet subnet update \ 
   --name default \ 
@@ -44,7 +44,7 @@ az network vnet subnet update \
   --disable-private-link-service-network-policies true 
 ```
 ## <a name="using-a-template"></a>템플릿 사용
-이 섹션에서는 Azure Resource Manager 템플릿을 사용 하 여 서브넷 개인 끝점 정책을 사용 하지 않도록 설정 하는 방법을 설명 합니다.
+이 섹션에서는 Azure Resource Manager 템플릿을 사용 하 여 서브넷 개인 엔드포인트 정책을 사용 하지 않도록 설정 하는 방법을 설명 합니다.
 ```json
 { 
     "name": "myVirtualNetwork", 
@@ -71,5 +71,5 @@ az network vnet subnet update \
  
 ```
 ## <a name="next-steps"></a>다음 단계
-- [Azure 개인 끝점](private-endpoint-overview.md) 에 대 한 자세한 정보
+- [Azure 개인 엔드포인트](private-endpoint-overview.md) 에 대 한 자세한 정보
  

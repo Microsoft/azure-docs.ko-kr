@@ -244,7 +244,7 @@ Python에서 특성을 지원 하지 않습니다.
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-[Java 함수 런타임 라이브러리](https://docs.microsoft.com/java/api/overview/azure/functions/runtime)에서 Cosmos DB 데이터를 읽는 매개 변수에 대 한 `@CosmosDBInput` 주석을 사용 합니다.
+[Java 함수 런타임 라이브러리](https://docs.microsoft.com/java/api/overview/azure/functions/runtime)에서 Cosmos DB 데이터를 읽는 매개 변수에 대한 `@CosmosDBInput` 주석을 사용 합니다.
 
 ---
 
@@ -260,13 +260,13 @@ Python에서 특성을 지원 하지 않습니다.
 |**connectionStringSetting**|**ConnectionStringSetting** | 모니터링되는 Azure Cosmos DB 계정에 연결하는 데 사용되는 연결 문자열을 포함하고 있는 앱 설정의 이름입니다. |
 |**databaseName**|**DatabaseName**  | 컬렉션이 모니터링되는 Azure Cosmos DB 데이터베이스의 이름입니다. |
 |**collectionName** |**CollectionName** | 모니터링되는 컬렉션의 이름입니다. |
-|**leaseConnectionStringSetting** | **LeaseConnectionStringSetting** | 필드 임대 컬렉션을 보유 하는 Azure Cosmos DB 계정에 대 한 연결 문자열을 포함 하는 앱 설정의 이름입니다. 설정하지 않으면 `connectionStringSetting` 값이 사용됩니다. 이 매개 변수는 포털에서 바인딩이 생성될 때 자동으로 설정됩니다. 임대 컬렉션에 대한 연결 문자열에 쓰기 권한이 있어야 합니다.|
+|**leaseConnectionStringSetting** | **LeaseConnectionStringSetting** | 필드 임대 컬렉션을 보유 하는 Azure Cosmos DB 계정에 대한 연결 문자열을 포함 하는 앱 설정의 이름입니다. 설정하지 않으면 `connectionStringSetting` 값이 사용됩니다. 이 매개 변수는 포털에서 바인딩이 생성될 때 자동으로 설정됩니다. 임대 컬렉션에 대한 연결 문자열에 쓰기 권한이 있어야 합니다.|
 |**leaseDatabaseName** |**LeaseDatabaseName** | (선택 사항) 임대를 저장하는 데 사용되는 컬렉션을 보유하는 데이터베이스의 이름입니다. 설정하지 않으면 `databaseName` 설정 값이 사용됩니다. 이 매개 변수는 포털에서 바인딩이 생성될 때 자동으로 설정됩니다. |
 |**leaseCollectionName** | **LeaseCollectionName** | (선택 사항) 임대를 저장하는 데 사용되는 컬렉션의 이름입니다. 설정하지 않으면 `leases` 값이 사용됩니다. |
 |**createLeaseCollectionIfNotExists** | **CreateLeaseCollectionIfNotExists** | (선택 사항) `true`로 설정하면 임대 컬렉션이 없는 경우 자동으로 임대 컬렉션이 생성됩니다. 기본값은 `false`입니다. |
 |**leasesCollectionThroughput**| **LeasesCollectionThroughput**| 필드 임대 컬렉션을 만들 때 할당할 요청 단위 수를 정의 합니다. 이 설정은 `createLeaseCollectionIfNotExists`이 `true`으로 설정 된 경우에만 사용 됩니다. 이 매개 변수는 포털을 사용하여 바인딩이 생성될 때 자동으로 설정됩니다.
-|**leaseCollectionPrefix**| **LeaseCollectionPrefix**| 필드 설정 하면이 함수에 대 한 임대 컬렉션에서 만든 임대에 값이 접두사로 추가 됩니다. 접두사를 사용 하면 별도의 두 Azure Functions 서로 다른 접두사를 사용 하 여 동일한 임대 컬렉션을 공유할 수 있습니다.
-|**feedPollDelay**| **FeedPollDelay**| 필드 모든 현재 변경 내용이 끝난 후에 피드의 새 변경 내용에 대 한 파티션 폴링 간의 지연 시간 (밀리초)입니다. 기본값은 5000 밀리초 또는 5 초입니다.
+|**leaseCollectionPrefix**| **LeaseCollectionPrefix**| 필드 설정 하면이 함수에 대한 임대 컬렉션에서 만든 임대에 값이 접두사로 추가 됩니다. 접두사를 사용 하면 별도의 두 Azure Functions 서로 다른 접두사를 사용 하 여 동일한 임대 컬렉션을 공유할 수 있습니다.
+|**feedPollDelay**| **FeedPollDelay**| 필드 모든 현재 변경 내용이 끝난 후에 피드의 새 변경 내용에 대한 파티션 폴링 간의 지연 시간 (밀리초)입니다. 기본값은 5000 밀리초 또는 5 초입니다.
 |**leaseAcquireInterval**| **LeaseAcquireInterval**| (선택 사항) 설정하면 파티션이 알려진 호스트 인스턴스 간에 균등하게 배포되는지를 계산하는 태스크를 시작하는 간격을 밀리초로 정의합니다. 기본값은 13000(13초)입니다.
 |**leaseExpirationInterval**| **LeaseExpirationInterval**| (선택 사항) 설정하면 파티션을 나타내는 임대에 대한 임대 기간인 간격을 밀리초로 정의합니다. 이 간격 내에서 임대를 갱신하지 않으면 기간이 만료되어 다른 인스턴스로 파티션 소유권이 이동합니다. 기본값은 60000(60초)입니다.
 |**leaseRenewInterval**| **LeaseRenewInterval**| (선택 사항) 설정하면 인스턴스가 현재 보유한 파티션의 모든 임대에 대한 갱신 간격을 밀리초로 정의합니다. 기본값은 17000(17초)입니다.
@@ -1715,11 +1715,11 @@ Python에서 특성을 지원 하지 않습니다.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-함수가 성공적으로 종료 되 면 명명 된 입력 매개 변수를 통해 입력 문서에 대 한 모든 변경 내용이 자동으로 유지 됩니다.
+함수가 성공적으로 종료 되 면 명명 된 입력 매개 변수를 통해 입력 문서에 대한 모든 변경 내용이 자동으로 유지 됩니다.
 
 # <a name="c-scripttabcsharp-script"></a>[C#스크립트도](#tab/csharp-script)
 
-함수가 성공적으로 종료 되 면 명명 된 입력 매개 변수를 통해 입력 문서에 대 한 모든 변경 내용이 자동으로 유지 됩니다.
+함수가 성공적으로 종료 되 면 명명 된 입력 매개 변수를 통해 입력 문서에 대한 모든 변경 내용이 자동으로 유지 됩니다.
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
@@ -1727,7 +1727,7 @@ Python에서 특성을 지원 하지 않습니다.
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
-`DocumentList` 매개 변수를 통해 함수에서 데이터를 사용할 수 있습니다. 문서에 대 한 변경 내용은 자동으로 지속 되지 않습니다.
+`DocumentList` 매개 변수를 통해 함수에서 데이터를 사용할 수 있습니다. 문서에 대한 변경 내용은 자동으로 지속 되지 않습니다.
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
@@ -2290,7 +2290,7 @@ Python에서 특성을 지원 하지 않습니다.
 |**databaseName** | **DatabaseName**|문서가 만들어진 컬렉션을 포함하는 데이터베이스입니다.     |
 |**collectionName** |**CollectionName**  | 문서가 만들어진 컬렉션의 이름입니다. |
 |**createIfNotExists**  |**CreateIfNotExists**    | 컬렉션이 존재하지 않는 경우 만들 수 있는지 여부를 나타내는 부울 값입니다. 새 컬렉션이 예약된 처리량으로 만들어져 비용이 부과되기 기본값은 *false*입니다. 자세한 내용은 [가격 책정 페이지](https://azure.microsoft.com/pricing/details/cosmos-db/)를 참조하세요.  |
-|**partitionKey**|**PartitionKey** |`CreateIfNotExists` true 이면 생성 된 컬렉션에 대 한 파티션 키 경로를 정의 합니다.|
+|**partitionKey**|**PartitionKey** |`CreateIfNotExists` true 이면 생성 된 컬렉션에 대한 파티션 키 경로를 정의 합니다.|
 |**collectionThroughput**|**CollectionThroughput**| `CreateIfNotExists` true 이면 생성 된 컬렉션의 [처리량](../cosmos-db/set-throughput.md) 을 정의 합니다.|
 |**connectionStringSetting**    |**ConnectionStringSetting** |Azure Cosmos DB 연결 문자열을 포함하는 앱 설정의 이름입니다.        |
 

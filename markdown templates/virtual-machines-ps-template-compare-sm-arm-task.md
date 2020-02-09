@@ -24,8 +24,8 @@ Pay attention to spacing and indents. They affect formatting.
 ## <a name="prerequisite-install-a-recent-version-of-azure-powershell"></a>필수 조건: 최신 버전의 Azure PowerShell 설치
 아직 수행 하지 않았다면, 이상을 설치 [버전 번호] 버전의 Azure PowerShell 로컬 컴퓨터에 있습니다. 이전 버전을 사용 하는 경우이 문서에 설명 된 Azure Resource Manager cmdlet은 없습니다. 자세한 내용은 다음을 참조하세요.
 
-* [Azure PowerShell 설치 및 구성 하는 방법을](install-configure-powershell.md) Azure PowerShell 설정에 대 한 지침에 대 한 합니다.
-* [Resource Manager를 사용 하 여 Windows PowerShell을 사용 하 여](powershell-azure-resource-manager.md) Resource Manager를 사용 하 여 기본 사항에 대 한 합니다.
+* [Azure PowerShell 설치 및 구성 하는 방법을](install-configure-powershell.md) Azure PowerShell 설정에 대한 지침에 대한 합니다.
+* [Resource Manager를 사용 하 여 Windows PowerShell을 사용 하 여](powershell-azure-resource-manager.md) Resource Manager를 사용 하 여 기본 사항에 대한 합니다.
 
 > [!NOTE]
 > 대부분의 작업을 사용 하면 관리자 수준의 Azure PowerShell 명령 프롬프트를 사용 하도록 해야 합니다.
@@ -54,7 +54,7 @@ $FriendlyName"<Describe value>"
 
 <!--if it makes more sense to present this one command block after the other instead of a table, use this. Otherwise, delete-->
 
-[명령에 대 한 간단한 소개 문장입니다. 이를 전혀 없습니다를 생략 합니다. 그러나 이러한 방법을 사용 하는 경우는 파이프라인을 설명 하는]:
+[명령에 대한 간단한 소개 문장입니다. 이를 전혀 없습니다를 생략 합니다. 그러나 이러한 방법을 사용 하는 경우는 파이프라인을 설명 하는]:
 
     [command string]
 

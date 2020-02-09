@@ -1,6 +1,6 @@
 ---
-title: 전용 영역에 대 한 시나리오-Azure DNS
-description: 이 문서에서는 Azure DNS Private Zones 사용에 대 한 일반적인 시나리오에 대해 알아봅니다.
+title: 전용 영역에 대한 시나리오-Azure DNS
+description: 이 문서에서는 Azure DNS Private Zones 사용에 대한 일반적인 시나리오에 대해 알아봅니다.
 services: dns
 author: rohinkoul
 ms.service: dns

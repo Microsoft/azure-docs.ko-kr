@@ -22,7 +22,7 @@ Azure Automation은 운영 체제 보안 업데이트를 관리하고, 변경 �
 
 ## <a name="enable-the-solutions"></a>솔루션을 사용하도록 설정
 
-기존 가상 머신으로 이동합니다. **작업** 아래에서 **업데이트 관리**, **인벤토리** 또는 **변경 내용 추적**을 선택합니다. 가상 머신은 Automation 계정의 위치와 상관 없이 모든 지역에 있을 수 있습니다. VM에서 솔루션을 온 보 딩 하는 경우 VM이 작업 영역에 등록 여부를 확인 하는 `Microsoft.OperationalInsights/workspaces/read` 권한이 있어야 합니다. 일반적으로 필요한 추가 사용 권한에 대 한 자세한 내용은 [컴퓨터를 등록 하는 데 필요한 권한](automation-role-based-access-control.md#onboarding)을 참조 하세요.
+기존 가상 머신으로 이동합니다. **작업** 아래에서 **업데이트 관리**, **인벤토리** 또는 **변경 내용 추적**을 선택합니다. 가상 머신은 Automation 계정의 위치와 상관 없이 모든 지역에 있을 수 있습니다. VM에서 솔루션을 온 보 딩 하는 경우 VM이 작업 영역에 등록 여부를 확인 하는 `Microsoft.OperationalInsights/workspaces/read` 권한이 있어야 합니다. 일반적으로 필요한 추가 사용 권한에 대한 자세한 내용은 [컴퓨터를 등록 하는 데 필요한 권한](automation-role-based-access-control.md#onboarding)을 참조 하세요.
 
 VM에 대해서만 솔루션을 활성화하려면 **이 VM에 대해 활성화**가 선택되었는지 확인합니다. 솔루션에 여러 컴퓨터를 등록하려면 **이 구독에서 VM에 대해 활성화**를 선택한 다음, **클릭하여 활성화할 컴퓨터 선택**을 선택합니다. 한 번에 여러 컴퓨터를 등록하는 방법에 대해 알아보려면 [업데이트 관리, 변경 내용 추적 및 인벤토리 솔루션 등록](automation-onboard-solutions-from-automation-account.md)을 참조하세요.
 

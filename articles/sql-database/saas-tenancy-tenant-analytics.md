@@ -90,9 +90,9 @@ ms.locfileid: "73826373"
 2. 선택한 분석 저장소에 맞도록 $DemoScenario 값을 설정합니다.
     - 열 저장소가 없는 SQL 데이터베이스를 사용하려면 **$DemoScenario** = **2**로 설정합니다.
     - 열 저장소가 있는 SQL 데이터베이스를 사용하려면 **$DemoScenario** = **3**으로 설정합니다.  
-3. **F5** 키를 눌러 테 넌 트 분석 저장소를 만드는 데모 스크립트 ( *TENANTANALYTICS\<XX >. ps1* 스크립트)를 실행 합니다. 
+3. **F5** 키를 눌러 테넌트 분석 저장소를 만드는 데모 스크립트 ( *TENANTANALYTICS\<XX >. ps1* 스크립트)를 실행 합니다. 
 
-응용 프로그램을 배포 하 고 관심 있는 테 넌 트 데이터로 채운 후에 [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) 를 사용 하 여 **User-&lt;사용자&gt;** 및 **카탈로그-user-&lt;사용자&gt;** 서버에 연결 합니다. Login = *developer*, Password = *P\@ssword1*를 사용 합니다. 자세한 내용은 [입문용 자습서](saas-dbpertenant-wingtip-app-overview.md)를 참조하세요.
+응용 프로그램을 배포 하 고 관심 있는 테넌트 데이터로 채운 후에 [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) 를 사용 하 여 **User-&lt;사용자&gt;** 및 **카탈로그-user-&lt;사용자&gt;** 서버에 연결 합니다. Login = *developer*, Password = *P\@ssword1*를 사용 합니다. 자세한 내용은 [입문용 자습서](saas-dbpertenant-wingtip-app-overview.md)를 참조하세요.
 
 ![architectureOverView](media/saas-tenancy-tenant-analytics/ssmsSignIn.png)
 

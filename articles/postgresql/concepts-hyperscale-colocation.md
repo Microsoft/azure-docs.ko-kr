@@ -26,7 +26,7 @@ Azure Database for PostgreSQL – Hyperscale (Citus)에서 배포 열의 값 해
 
 ## <a name="a-practical-example-of-colocation"></a>공동 위치의 실제 예
 
-다중 테 넌 트 웹 분석 SaaS의 일부가 될 수 있는 다음 표를 참조 하세요.
+다중 테넌트 웹 분석 SaaS의 일부가 될 수 있는 다음 표를 참조 하세요.
 
 ```sql
 CREATE TABLE event (
@@ -45,7 +45,7 @@ CREATE TABLE page (
 );
 ```
 
-이제 고객 지향 대시보드에서 발급 될 수 있는 쿼리에 응답 하려고 합니다. 예제 쿼리는 "테 넌 트 6에서 '/블로그 '로 시작 하는 모든 페이지에 대 한 지난 주의 방문 횟수를 반환 합니다."
+이제 고객 지향 대시보드에서 발급 될 수 있는 쿼리에 응답 하려고 합니다. 예제 쿼리는 "테넌트 6에서 '/블로그 '로 시작 하는 모든 페이지에 대 한 지난 주의 방문 횟수를 반환 합니다."
 
 데이터가 단일 서버 배포 옵션에 있는 경우 SQL에서 제공 하는 다양 한 관계형 작업 집합을 사용 하 여 쿼리를 쉽게 표현할 수 있습니다.
 
@@ -66,7 +66,7 @@ GROUP BY page_id;
 
 ### <a name="distribute-tables-by-id"></a>ID 별로 테이블 배포
 
-단일 서버 쿼리는 테 넌 트의 수와 각 테 넌 트에 대해 저장 된 데이터가 증가 함에 따라 속도가 느려집니다. 작업 집합이 메모리의 맞춤을 중지 하 고 CPU가 병목 상태가 됩니다.
+단일 서버 쿼리는 테넌트의 수와 각 테넌트에 대해 저장 된 데이터가 증가 함에 따라 속도가 느려집니다. 작업 집합이 메모리의 맞춤을 중지 하 고 CPU가 병목 상태가 됩니다.
 
 이 경우 Citus (Hyperscale)를 사용 하 여 여러 노드 간에 데이터를 분할할 수 있습니다. 분할을 결정할 때 가장 중요 한 첫 번째 선택은 배포 열입니다. 이벤트 테이블에 대해 `event_id`를 사용 하 고 `page` 테이블에 대해 `page_id` 하는 naive을 선택 합니다.
 
@@ -107,7 +107,7 @@ GROUP BY page_id ORDER BY count DESC LIMIT 10;
 
 데이터가 분산 되므로 쿼리를 병렬화 할 수 있습니다. 쿼리가 수행 하는 작업 양이 많은 분할를 쿼리 하는 오버 헤드 보다 훨씬 큰 경우에만 유용 합니다.
 
-### <a name="distribute-tables-by-tenant"></a>테 넌 트 별로 테이블 배포
+### <a name="distribute-tables-by-tenant"></a>테넌트 별로 테이블 배포
 
 Citus (Hyperscale)에서 동일한 분포 열 값을 가진 행은 동일한 노드에 있도록 보장 됩니다. 부터 배포 열로 `tenant_id`를 사용 하 여 테이블을 만들 수 있습니다.
 
@@ -132,12 +132,12 @@ WHERE tenant_id = 6 AND path LIKE '/blog%'
 GROUP BY page_id;
 ```
 
-Tenant_id에 대 한 필터 및 조인 때문에 Citus (Hyperscale)는 특정 테 넌 트에 대 한 데이터를 포함 하는 공동 배치 분할 집합을 사용 하 여 전체 쿼리에 대 한 답변을 받을 수 있음을 알고 있습니다. 단일 PostgreSQL 노드는 단일 단계에서 쿼리에 응답할 수 있습니다.
+Tenant_id에 대 한 필터 및 조인 때문에 Citus (Hyperscale)는 특정 테넌트에 대 한 데이터를 포함 하는 공동 배치 분할 집합을 사용 하 여 전체 쿼리에 대 한 답변을 받을 수 있음을 알고 있습니다. 단일 PostgreSQL 노드는 단일 단계에서 쿼리에 응답할 수 있습니다.
 
 ![향상 쿼리](media/concepts-hyperscale-colocation/colocation-better-query.png)
 
-경우에 따라 테 넌 트 ID를 고유한 제약 조건 및 조인 조건에 포함 하도록 쿼리와 테이블 스키마를 변경 해야 합니다. 이 변경은 일반적으로 간단 합니다.
+경우에 따라 테넌트 ID를 고유한 제약 조건 및 조인 조건에 포함 하도록 쿼리와 테이블 스키마를 변경 해야 합니다. 이 변경은 일반적으로 간단 합니다.
 
 ## <a name="next-steps"></a>Következő lépések
 
-- [다중 테 넌 트 자습서](tutorial-design-database-hyperscale-multi-tenant.md)에서 테 넌 트 데이터를 공동 배치 하는 방법을 참조 하세요.
+- [다중 테넌트 자습서](tutorial-design-database-hyperscale-multi-tenant.md)에서 테넌트 데이터를 공동 배치 하는 방법을 참조 하세요.

@@ -23,14 +23,14 @@ ms.locfileid: "74454683"
 작업 예약은 다음과 같은 시나리오에 유용 합니다.
 
 * 예약 된 유지 관리 작업에 대해 컨테이너 워크 로드를 실행 합니다. 예를 들어 컨테이너 화 된 앱을 실행 하 여 레지스트리에서 불필요 한 이미지를 제거 합니다.
-* Workday 동안 프로덕션 이미지에 대 한 테스트 집합을 라이브 사이트 모니터링의 일부로 실행 합니다.
+* Workday 동안 프로덕션 이미지에 대한 테스트 집합을 라이브 사이트 모니터링의 일부로 실행 합니다.
 
 Azure Cloud Shell 또는 Azure CLI의 로컬 설치를 사용 하 여이 문서의 예제를 실행할 수 있습니다. 로컬에서 사용 하려는 경우 버전 2.0.68 이상이 필요 합니다. `az --version`을 실행하여 버전을 찾습니다. 설치 또는 업그레이드해야 하는 경우 [Azure CLI 설치][azure-cli-install]를 참조하세요.
 
 
 ## <a name="about-scheduling-a-task"></a>작업 예약 정보
 
-* **Cron 식을** 사용 하는 트리거-태스크에 대 한 타이머 트리거에서 *cron 식을*사용 합니다. 식은 작업을 트리거할 분, 시간, 일, 월 및 요일을 지정 하는 5 개의 필드가 포함 된 문자열입니다. 분당 최대 1 개의 주파수가 지원 됩니다.
+* **Cron 식을** 사용 하는 트리거-태스크에 대한 타이머 트리거에서 *cron 식을*사용 합니다. 식은 작업을 트리거할 분, 시간, 일, 월 및 요일을 지정 하는 5 개의 필드가 포함 된 문자열입니다. 분당 최대 1 개의 주파수가 지원 됩니다.
 
   예를 들어 식 `"0 12 * * Mon-Fri"` 각 요일의 정오 UTC로 작업을 트리거합니다. 이 문서의 뒷부분에 있는 [세부 정보](#cron-expressions) 를 참조 하세요.
 * **여러 타이머 트리거** -일정의 차이가 있는 한 작업에 여러 타이머를 추가 하는 작업을 수행할 수 있습니다.
@@ -41,7 +41,7 @@ Azure Cloud Shell 또는 Azure CLI의 로컬 설치를 사용 하 여이 문서�
 
 ## <a name="create-a-task-with-a-timer-trigger"></a>타이머 트리거를 사용 하 여 작업 만들기
 
-[Az acr task create][az-acr-task-create] 명령을 사용 하 여 작업을 만드는 경우 필요에 따라 타이머 트리거를 추가할 수 있습니다. `--schedule` 매개 변수를 추가 하 고 타이머에 대 한 cron 식을 전달 합니다.
+[Az acr task create][az-acr-task-create] 명령을 사용 하 여 작업을 만드는 경우 필요에 따라 타이머 트리거를 추가할 수 있습니다. `--schedule` 매개 변수를 추가 하 고 타이머에 대한 cron 식을 전달 합니다.
 
 간단한 예제로, 다음 명령은 매일 21:00 UTC에 Docker 허브에서 `hello-world` 이미지 실행을 트리거합니다. 소스 코드 컨텍스트 없이 태스크가 실행 됩니다.
 
@@ -102,7 +102,7 @@ cf2a      mytask   linux       Succeeded  Manual     2019-06-28T20:53:23Z  00:00
 
 ## <a name="manage-timer-triggers"></a>타이머 트리거 관리
 
-[Az acr task timer][az-acr-task-timer] 명령을 사용 하 여 acr 태스크에 대 한 타이머 트리거를 관리 합니다.
+[Az acr task timer][az-acr-task-timer] 명령을 사용 하 여 acr 태스크에 대한 타이머 트리거를 관리 합니다.
 
 ### <a name="add-or-update-a-timer-trigger"></a>타이머 트리거 추가 또는 업데이트
 

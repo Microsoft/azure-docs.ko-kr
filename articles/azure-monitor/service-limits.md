@@ -1,6 +1,6 @@
 ---
 title: Azure Monitor 서비스 제한 | Microsoft Docs
-description: Azure Monitor의 여러 영역에 대 한 제한을 나열 합니다.
+description: Azure Monitor의 여러 영역에 대한 제한을 나열 합니다.
 ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
@@ -16,7 +16,7 @@ ms.locfileid: "75394248"
 ---
 # <a name="azure-monitor-service-limits"></a>Azure Monitor 서비스 제한
 
-이 문서에서는 Azure Monitor의 여러 영역에 대 한 제한을 나열 합니다.
+이 문서에서는 Azure Monitor의 여러 영역에 대한 제한을 나열 합니다.
 
 ## <a name="alerts"></a>경고
 

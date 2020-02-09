@@ -29,7 +29,7 @@ ms.locfileid: "67721631"
 
 ## <a name="when-to-use-batch-entire-or-latest-last-point-anomaly-detection"></a>일괄 처리 (전체) 또는 최신 버전을 사용 하는 경우 (마지막) 변칙 검색 지점
 
-비정상 탐지기 API 일괄 처리 검색 끝점 전체 시간 시계열 데이터를 통해 문제를 검색할 수 있습니다. 이 검색 모드에서는 단일 통계 모델 생성 되어 데이터 집합의 각 요소에 적용 합니다. 시계열에 있으면는 특성을 아래 일괄 검색을 사용 하 여 단일 API 호출에서 데이터를 미리 보려면 권장 합니다.
+비정상 탐지기 API 일괄 처리 검색 엔드포인트 전체 시간 시계열 데이터를 통해 문제를 검색할 수 있습니다. 이 검색 모드에서는 단일 통계 모델 생성 되어 데이터 집합의 각 요소에 적용 합니다. 시계열에 있으면는 특성을 아래 일괄 검색을 사용 하 여 단일 API 호출에서 데이터를 미리 보려면 권장 합니다.
 
 * 가끔 잘못 된 부분을 사용 하 여 계절성 시계열입니다.
 * 플랫 추세 시계열 간헐적 급증/급락을 사용 하 여 합니다. 
@@ -52,7 +52,7 @@ ms.locfileid: "67721631"
 
 ## <a name="data-preparation"></a>데이터 준비
 
-비정상 탐지기 API는 시계열 허용 데이터 형식이 JSON 요청 개체를 지정 합니다. 시계열에 순차적 시간 동안 기록 된 모든 숫자 데이터를 수 있습니다. 시계열 데이터의 windows API의 성능 향상을 위해 비정상 탐지기 API 끝점에 보낼 수 있습니다. 보낼 수 있습니다 하는 데이터 요소의 최소 수는 12이 고 최대값은 8640 지점입니다. [세분성](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.anomalydetector.models.granularity?view=azure-dotnet-preview) 데이터에서 샘플링 되는 속도로 정의 됩니다. 
+비정상 탐지기 API는 시계열 허용 데이터 형식이 JSON 요청 개체를 지정 합니다. 시계열에 순차적 시간 동안 기록 된 모든 숫자 데이터를 수 있습니다. 시계열 데이터의 windows API의 성능 향상을 위해 비정상 탐지기 API 엔드포인트에 보낼 수 있습니다. 보낼 수 있습니다 하는 데이터 요소의 최소 수는 12이 고 최대값은 8640 지점입니다. [세분성](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.anomalydetector.models.granularity?view=azure-dotnet-preview) 데이터에서 샘플링 되는 속도로 정의 됩니다. 
 
 비정상 탐지기 API로 전송 하는 데이터 요소는 숫자 값을 유효한 utc (협정 세계시) 타임 스탬프 있어야 합니다. 
 

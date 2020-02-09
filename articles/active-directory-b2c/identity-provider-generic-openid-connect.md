@@ -25,7 +25,7 @@ ms.locfileid: "76847603"
 ## <a name="add-the-identity-provider"></a>ID 공급자 추가
 
 1. Azure AD B2C 테넌트의 전역 관리자로 [Azure Portal](https://portal.azure.com/)에 로그인합니다.
-1. 상단 메뉴에서 **디렉터리 + 구독** 필터를 클릭 하 고 테 넌 트가 포함 된 디렉터리를 선택 하 여 Azure AD B2C 테 넌 트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다.
+1. 상단 메뉴에서 **디렉터리 + 구독** 필터를 클릭 하 고 테넌트가 포함 된 디렉터리를 선택 하 여 Azure AD B2C 테넌트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다.
 1. Azure Portal의 왼쪽 상단 모서리에서 **모든 서비스**를 선택하고 **Azure AD B2C**를 검색하여 선택합니다.
 1. **Id 공급자**를 선택한 다음 **New openid connect Connect 공급자**를 선택 합니다.
 
@@ -38,7 +38,7 @@ ms.locfileid: "76847603"
 사용자가 로그인할 수 있도록 허용하기 위해 ID 공급자는 개발자가 해당 서비스에 애플리케이션을 등록하도록 요청합니다. 이 애플리케이션에는 ID(**클라이언트 ID**라고 함) 및 **클라이언트 비밀**이 있습니다. ID 공급자에서 이러한 값을 복사하여 해당하는 필드에 입력합니다.
 
 > [!NOTE]
-> 클라이언트 비밀은 선택 사항입니다. 그러나 암호를 사용 하 여 토큰에 대 한 코드를 교환 하는 [권한 부여 코드 흐름](https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth)을 사용 하려는 경우에는 클라이언트 암호를 입력 해야 합니다.
+> 클라이언트 비밀은 선택 사항입니다. 그러나 암호를 사용 하 여 토큰에 대한 코드를 교환 하는 [권한 부여 코드 흐름](https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth)을 사용 하려는 경우에는 클라이언트 암호를 입력 해야 합니다.
 
 ## <a name="scope"></a>범위
 

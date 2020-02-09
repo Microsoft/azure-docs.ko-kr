@@ -28,7 +28,7 @@ IoT Hub를 사용 하면 기본 제공 Event Hubs에서 최대 7 일 동안 데�
 
 또한 IoT Hub를 사용하면 기본 제공 디바이스-클라우드 수신 엔드포인트에서 소비자 그룹을 관리할 수 있습니다. 각 IoT Hub에 대해 최대 20 개의 소비자 그룹을 포함할 수 있습니다.
 
-[메시지 라우팅을](iot-hub-devguide-messages-d2c.md) 사용 하는 경우 [대체 (fallback) 경로](iot-hub-devguide-messages-d2c.md#fallback-route) 를 사용 하는 경우 모든 경로에서 쿼리와 일치 하지 않는 모든 메시지는 기본 제공 끝점으로 이동 합니다. 이 대체 경로를 사용 하지 않도록 설정 하면 쿼리와 일치 하지 않는 메시지가 삭제 됩니다.
+[메시지 라우팅을](iot-hub-devguide-messages-d2c.md) 사용 하는 경우 [대체 (fallback) 경로](iot-hub-devguide-messages-d2c.md#fallback-route) 를 사용 하는 경우 모든 경로에서 쿼리와 일치 하지 않는 모든 메시지는 기본 제공 엔드포인트으로 이동 합니다. 이 대체 경로를 사용 하지 않도록 설정 하면 쿼리와 일치 하지 않는 메시지가 삭제 됩니다.
 
 [IoT Hub 리소스 공급자 REST API](/rest/api/iothub/iothubresource)를 사용하여 또는 [Azure Portal](https://portal.azure.com)을 사용하여 프로그래밍 방식으로 보존 시간을 수정할 수 있습니다.
 
@@ -36,19 +36,19 @@ IoT Hub는 허브에서 수신한 디바이스-클라우드 메시지를 읽도�
 
 ## <a name="read-from-the-built-in-endpoint"></a>기본 제공 엔드포인트에서 읽기
 
-일부 제품 통합 및 Event Hubs Sdk는 IoT Hub를 인식 하며 IoT Hub 서비스 연결 문자열을 사용 하 여 기본 제공 끝점에 연결할 수 있습니다.
+일부 제품 통합 및 Event Hubs Sdk는 IoT Hub를 인식 하며 IoT Hub 서비스 연결 문자열을 사용 하 여 기본 제공 엔드포인트에 연결할 수 있습니다.
 
-IoT Hub를 인식 하지 않는 Event Hubs Sdk 또는 제품 통합을 사용 하는 경우 Event Hub 호환 끝점 및 Event Hub 호환 이름이 필요 합니다. 다음과 같이 포털에서 이러한 값을 검색할 수 있습니다.
+IoT Hub를 인식 하지 않는 Event Hubs Sdk 또는 제품 통합을 사용 하는 경우 Event Hub 호환 엔드포인트 및 Event Hub 호환 이름이 필요 합니다. 다음과 같이 포털에서 이러한 값을 검색할 수 있습니다.
 
 1. [Azure Portal](https://portal.azure.com)에 로그인하고 IoT Hub로 이동합니다.
 
 2. **기본 제공 엔드포인트**를 클릭합니다.
 
-3. **Events** 섹션에는 다음 값이 포함 됩니다. **파티션**, **event hub 호환 이름**, **event hub 호환 끝점**, **보존 시간**및 **소비자 그룹**입니다.
+3. **Events** 섹션에는 다음 값이 포함 됩니다. **파티션**, **event hub 호환 이름**, **event hub 호환 엔드포인트**, **보존 시간**및 **소비자 그룹**입니다.
 
     ![디바이스-클라우드 설정](./media/iot-hub-devguide-messages-read-builtin/eventhubcompatible.png)
 
-포털에서 Event Hub 호환 끝점 필드는 다음과 같은 전체 Event Hubs 연결 문자열을 포함 합니다. **Endpoint=sb://abcd1234namespace.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=keykeykeykeykeykey=;EntityPath=iothub-ehub-abcd-1234-123456**. 사용 중인 SDK에 다른 값이 필요한 경우에는 다음을 수행 합니다.
+포털에서 Event Hub 호환 엔드포인트 필드는 다음과 같은 전체 Event Hubs 연결 문자열을 포함 합니다. **Endpoint=sb://abcd1234namespace.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=keykeykeykeykeykey=;EntityPath=iothub-ehub-abcd-1234-123456**. 사용 중인 SDK에 다른 값이 필요한 경우에는 다음을 수행 합니다.
 
 | 이름 | 값 |
 | ---- | ----- |
@@ -58,7 +58,7 @@ IoT Hub를 인식 하지 않는 Event Hubs Sdk 또는 제품 통합을 사용 �
 
 지정된 Event Hubs에 연결할 수 있는 **ServiceConnect** 권한이 있는 공유 액세스 정책을 사용할 수 있습니다.
 
-IoT Hub 노출 되는 기본 제공 이벤트 허브 호환 끝점에 연결 하는 데 사용할 수 있는 Sdk는 다음과 같습니다.
+IoT Hub 노출 되는 기본 제공 이벤트 허브 호환 엔드포인트에 연결 하는 데 사용할 수 있는 Sdk는 다음과 같습니다.
 
 | 언어 | SDK | 예제 | 참고 |
 | -------- | --- | ------ | ----- |
@@ -67,7 +67,7 @@ IoT Hub 노출 되는 기본 제공 이벤트 허브 호환 끝점에 연결 하
 | Node.js | https://github.com/Azure/azure-event-hubs-node | [빠른 시작](quickstart-send-telemetry-node.md) | IoT Hub 연결 문자열 사용 |
 | Python | https://github.com/Azure/azure-event-hubs-python | https://github.com/Azure/azure-event-hubs-python/blob/master/examples/iothub_recv.py | IoT Hub 연결 문자열 사용 |
 
-IoT Hub 노출 되는 기본 제공 Event Hub 호환 끝점과 함께 사용할 수 있는 제품 통합은 다음과 같습니다.
+IoT Hub 노출 되는 기본 제공 Event Hub 호환 엔드포인트과 함께 사용할 수 있는 제품 통합은 다음과 같습니다.
 
 * [Azure Functions](https://docs.microsoft.com/azure/azure-functions/). [Azure Functions를 사용 하 여 IoT Hub에서 데이터 처리를](https://azure.microsoft.com/resources/samples/functions-js-iot-hub-processing/)참조 하세요.
 * [Azure Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/) - [데이터를 Stream Analytics에 대 한 입력으로 스트리밍](../stream-analytics/stream-analytics-define-inputs.md#stream-data-from-iot-hub)을 참조 하세요.

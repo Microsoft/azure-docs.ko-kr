@@ -143,7 +143,7 @@ Azure Logic Apps에서 [작업](../logic-apps/logic-apps-overview.md#logic-app-c
 
 ## <a name="access-storage-accounts-behind-firewalls"></a>방화벽 뒤에 저장소 계정 액세스
 
-[방화벽 및 방화벽 규칙](../storage/common/storage-network-security.md)을 사용 하 여 액세스를 제한 하 여 Azure storage 계정에 네트워크 보안을 추가할 수 있습니다. 그러나이 설치 프로그램은 저장소 계정에 액세스 해야 하는 Azure 및 기타 Microsoft 서비스에 대 한 챌린지를 만듭니다. 데이터 센터의 로컬 통신은 내부 IP 주소를 추상화 하므로 IP 제한을 사용 하 여 방화벽 규칙을 설정할 수 없습니다. 자세한 내용은 [Azure Storage 방화벽 및 가상 네트워크 구성](../storage/common/storage-network-security.md)을 참조하세요.
+[방화벽 및 방화벽 규칙](../storage/common/storage-network-security.md)을 사용 하 여 액세스를 제한 하 여 Azure storage 계정에 네트워크 보안을 추가할 수 있습니다. 그러나이 설치 프로그램은 저장소 계정에 액세스 해야 하는 Azure 및 기타 Microsoft 서비스에 대한 챌린지를 만듭니다. 데이터 센터의 로컬 통신은 내부 IP 주소를 추상화 하므로 IP 제한을 사용 하 여 방화벽 규칙을 설정할 수 없습니다. 자세한 내용은 [Azure Storage 방화벽 및 가상 네트워크 구성](../storage/common/storage-network-security.md)을 참조하세요.
 
 Azure Blob Storage 커넥터 또는 다른 솔루션을 사용 하 여 Azure Logic Apps에서 방화벽 뒤에 있는 저장소 계정에 액세스 하기 위한 다양 한 옵션은 다음과 같습니다.
 
@@ -159,21 +159,21 @@ Azure Blob Storage 커넥터 또는 다른 솔루션을 사용 하 여 Azure Log
 
 <a name="access-other-regions"></a>
 
-### <a name="access-to-storage-accounts-in-other-regions"></a>다른 지역의 저장소 계정에 대 한 액세스
+### <a name="access-to-storage-accounts-in-other-regions"></a>다른 지역의 저장소 계정에 대한 액세스
 
-논리 앱은 방화벽 규칙이 있고 동일한 지역에 있는 저장소 계정에 직접 액세스할 수 없습니다. 그러나 [지역에서 관리 되는 커넥터의 아웃 바운드 IP 주소](../logic-apps/logic-apps-limits-and-config.md#outbound)에 대 한 액세스를 허용 하는 경우 azure Table Storage 커넥터 또는 azure Queue Storage 커넥터를 사용 하는 경우를 제외 하 고 논리 앱은 다른 지역의 저장소 계정에 액세스할 수 있습니다. Table Storage 또는 Queue Storage에 액세스 하려면 기본 제공 HTTP 트리거 및 작업을 계속 사용할 수 있습니다.
+논리 앱은 방화벽 규칙이 있고 동일한 지역에 있는 저장소 계정에 직접 액세스할 수 없습니다. 그러나 [지역에서 관리 되는 커넥터의 아웃 바운드 IP 주소](../logic-apps/logic-apps-limits-and-config.md#outbound)에 대한 액세스를 허용 하는 경우 azure Table Storage 커넥터 또는 azure Queue Storage 커넥터를 사용 하는 경우를 제외 하 고 논리 앱은 다른 지역의 저장소 계정에 액세스할 수 있습니다. Table Storage 또는 Queue Storage에 액세스 하려면 기본 제공 HTTP 트리거 및 작업을 계속 사용할 수 있습니다.
 
 <a name="access-trusted-virtual-network"></a>
 
 ### <a name="access-storage-accounts-through-a-trusted-virtual-network"></a>신뢰할 수 있는 가상 네트워크를 통해 저장소 계정 액세스
 
-관리 하는 Azure 가상 네트워크에 저장소 계정을 넣은 다음 해당 가상 네트워크를 신뢰할 수 있는 가상 네트워크 목록에 추가할 수 있습니다. 논리 앱이 신뢰할 수 있는 [가상 네트워크](../virtual-network/virtual-networks-overview.md)를 통해 저장소 계정에 액세스 하도록 하려면 가상 네트워크의 리소스에 연결할 수 있는 [ISE (integration service environment)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)에 해당 논리 앱을 배포 해야 합니다. 그런 다음 해당 ISE의 서브넷을 신뢰할 수 있는 목록에 추가할 수 있습니다. Blob Storage 커넥터와 같은 Azure Storage 커넥터는 저장소 컨테이너에 직접 액세스할 수 있습니다. 이 설정은 ISE에서 서비스 끝점을 사용 하는 것과 동일 합니다.
+관리 하는 Azure 가상 네트워크에 저장소 계정을 넣은 다음 해당 가상 네트워크를 신뢰할 수 있는 가상 네트워크 목록에 추가할 수 있습니다. 논리 앱이 신뢰할 수 있는 [가상 네트워크](../virtual-network/virtual-networks-overview.md)를 통해 저장소 계정에 액세스 하도록 하려면 가상 네트워크의 리소스에 연결할 수 있는 [ISE (integration service environment)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)에 해당 논리 앱을 배포 해야 합니다. 그런 다음 해당 ISE의 서브넷을 신뢰할 수 있는 목록에 추가할 수 있습니다. Blob Storage 커넥터와 같은 Azure Storage 커넥터는 저장소 컨테이너에 직접 액세스할 수 있습니다. 이 설정은 ISE에서 서비스 엔드포인트을 사용 하는 것과 동일 합니다.
 
 <a name="access-trusted-service"></a>
 
 ### <a name="access-storage-accounts-as-a-trusted-service-with-managed-identities"></a>관리 id를 사용 하 여 신뢰할 수 있는 서비스로 저장소 계정 액세스
 
-Microsoft의 신뢰할 수 있는 서비스에 방화벽을 통해 저장소 계정에 대 한 액세스 권한을 부여 하려면 해당 서비스에 대 한 해당 저장소 계정에 예외를 설정 하면 됩니다. 이 솔루션은 [인증을 위해 관리 되는 id](../active-directory/managed-identities-azure-resources/overview.md) 를 지 원하는 Azure 서비스가 방화벽 뒤에 있는 저장소 계정에 신뢰할 수 있는 서비스로 액세스 하도록 허용 합니다. 특히 글로벌 다중 테 넌 트 Azure의 논리 앱에서 이러한 저장소 계정에 액세스 하려면 먼저 논리 앱에서 [관리 되는 id 지원을 사용 하도록 설정](../logic-apps/create-managed-service-identity.md) 합니다. 그런 다음 논리 앱에서 HTTP 작업 또는 트리거를 사용 하 고 [논리 앱의 관리 되는 id를 사용 하도록 해당 인증 유형을 설정](../logic-apps/create-managed-service-identity.md#authenticate-access-with-managed-identity)합니다. 이 시나리오에서는 HTTP 작업 또는 트리거 *만* 사용할 수 있습니다.
+Microsoft의 신뢰할 수 있는 서비스에 방화벽을 통해 저장소 계정에 대한 액세스 권한을 부여 하려면 해당 서비스에 대한 해당 저장소 계정에 예외를 설정 하면 됩니다. 이 솔루션은 [인증을 위해 관리 되는 id](../active-directory/managed-identities-azure-resources/overview.md) 를 지 원하는 Azure 서비스가 방화벽 뒤에 있는 저장소 계정에 신뢰할 수 있는 서비스로 액세스 하도록 허용 합니다. 특히 글로벌 다중 테넌트 Azure의 논리 앱에서 이러한 저장소 계정에 액세스 하려면 먼저 논리 앱에서 [관리 되는 id 지원을 사용 하도록 설정](../logic-apps/create-managed-service-identity.md) 합니다. 그런 다음 논리 앱에서 HTTP 작업 또는 트리거를 사용 하 고 [논리 앱의 관리 되는 id를 사용 하도록 해당 인증 유형을 설정](../logic-apps/create-managed-service-identity.md#authenticate-access-with-managed-identity)합니다. 이 시나리오에서는 HTTP 작업 또는 트리거 *만* 사용할 수 있습니다.
 
 예외 및 관리 되는 id 지원을 설정 하려면 다음과 같은 일반적인 단계를 수행 합니다.
 
@@ -183,12 +183,12 @@ Microsoft의 신뢰할 수 있는 서비스에 방화벽을 통해 저장소 계
 
    ![Microsoft 신뢰할 수 있는 서비스를 허용 하는 예외 선택](./media/connectors-create-api-azureblobstorage/allow-trusted-services-firewall.png)
 
-1. 논리 앱의 설정에서 [관리 되는 id에 대 한 지원을 사용 하도록 설정](../logic-apps/create-managed-service-identity.md)합니다.
+1. 논리 앱의 설정에서 [관리 되는 id에 대한 지원을 사용 하도록 설정](../logic-apps/create-managed-service-identity.md)합니다.
 
 1. 논리 앱의 워크플로에서 저장소 계정 또는 엔터티에 액세스 하는 HTTP 작업 또는 트리거를 추가 하 고 설정 합니다.
 
    > [!IMPORTANT]
-   > 나가는 HTTP 작업 또는 Azure Storage 계정에 대 한 트리거 호출의 경우 요청 헤더에는 저장소 계정에서 실행 하려는 작업의 `x-ms-version` 속성 및 API 버전이 포함 되어 있는지 확인 합니다. 자세한 내용은 [관리 되는 id를 사용 하 여 액세스 인증](../logic-apps/create-managed-service-identity.md#authenticate-access-with-managed-identity) 및 [Azure Storage services에 대 한 버전](https://docs.microsoft.com/rest/api/storageservices/versioning-for-the-azure-storage-services#specifying-service-versions-in-requests)관리를 참조 하세요.
+   > 나가는 HTTP 작업 또는 Azure Storage 계정에 대한 트리거 호출의 경우 요청 헤더에는 저장소 계정에서 실행 하려는 작업의 `x-ms-version` 속성 및 API 버전이 포함 되어 있는지 확인 합니다. 자세한 내용은 [관리 되는 id를 사용 하 여 액세스 인증](../logic-apps/create-managed-service-identity.md#authenticate-access-with-managed-identity) 및 [Azure Storage services에 대한 버전](https://docs.microsoft.com/rest/api/storageservices/versioning-for-the-azure-storage-services#specifying-service-versions-in-requests)관리를 참조 하세요.
 
 1. 해당 작업에서 인증에 사용할 [관리 되는 id를 선택](../logic-apps/create-managed-service-identity.md#authenticate-access-with-managed-identity) 합니다.
 

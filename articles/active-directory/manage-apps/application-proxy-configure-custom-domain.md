@@ -25,7 +25,7 @@ ms.locfileid: "73062516"
 ---
 # <a name="configure-custom-domains-with-azure-ad-application-proxy"></a>Azure AD 응용 프로그램 프록시를 사용 하 여 사용자 지정 도메인 구성
 
-Azure Active Directory 응용 프로그램 프록시를 통해 응용 프로그램을 게시 하는 경우 사용자에 대 한 외부 URL을 만듭니다. 이 URL은 기본 도메인 *yourtenant.msappproxy.net*을 가져옵니다. 예를 들어 *Contoso*라는 테 넌 트에 *지출* 이라는 앱을 게시 하는 경우 외부 URL은 *https: \//expenses-contoso.msappproxy.net*입니다. *Msappproxy.net*대신 고유한 도메인 이름을 사용 하려는 경우 응용 프로그램에 대 한 사용자 지정 도메인을 구성할 수 있습니다. 
+Azure Active Directory 응용 프로그램 프록시를 통해 응용 프로그램을 게시 하는 경우 사용자에 대 한 외부 URL을 만듭니다. 이 URL은 기본 도메인 *yourtenant.msappproxy.net*을 가져옵니다. 예를 들어 *Contoso*라는 테넌트에 *지출* 이라는 앱을 게시 하는 경우 외부 URL은 *https: \//expenses-contoso.msappproxy.net*입니다. *Msappproxy.net*대신 고유한 도메인 이름을 사용 하려는 경우 응용 프로그램에 대 한 사용자 지정 도메인을 구성할 수 있습니다. 
 
 ## <a name="benefits-of-custom-domains"></a>사용자 지정 도메인의 이점
 
@@ -53,7 +53,7 @@ Azure Active Directory 응용 프로그램 프록시를 통해 응용 프로그�
 
 ### <a name="different-internal-and-external-urls"></a>서로 다른 내부 및 외부 Url 
 
-내부 및 외부 Url이 다른 경우 사용자 라우팅은 URL에 의해 결정 되기 때문에 분할 인 두뇌 동작을 구성할 필요가 없습니다. 이 경우 외부 DNS만 변경 하 고 외부 URL을 응용 프로그램 프록시 끝점으로 라우팅합니다. 
+내부 및 외부 Url이 다른 경우 사용자 라우팅은 URL에 의해 결정 되기 때문에 분할 인 두뇌 동작을 구성할 필요가 없습니다. 이 경우 외부 DNS만 변경 하 고 외부 URL을 응용 프로그램 프록시 엔드포인트으로 라우팅합니다. 
 
 외부 URL에 대해 사용자 지정 도메인을 선택 하면 외부 DNS 공급자에 추가 해야 하는 CNAME 항목이 알림 표시줄에 표시 됩니다. 앱의 **응용 프로그램 프록시** 페이지로 이동 하 여 언제 든 지이 정보를 볼 수 있습니다.
 

@@ -94,7 +94,7 @@ MSAL 2.x에서 여러 응용 프로그램에 걸쳐 토큰 캐시를 유지 하�
 응용 프로그램에서 Microsoft Authenticator (broker)를 사용 하 여 다음을 사용할 수 있습니다.
 
 - SSO (Single Sign On). 사용자는 각 응용 프로그램에 로그인 할 필요가 없습니다.
-- 장치 id입니다. 장치 인증서에 액세스 하 여 작업 공간에 연결 된 장치에서 생성 되었습니다. 테 넌 트 관리자가 장치와 관련 된 조건부 액세스를 사용 하도록 설정 하면 응용 프로그램이 준비 됩니다.
+- 장치 id입니다. 장치 인증서에 액세스 하 여 작업 공간에 연결 된 장치에서 생성 되었습니다. 테넌트 관리자가 장치와 관련 된 조건부 액세스를 사용 하도록 설정 하면 응용 프로그램이 준비 됩니다.
 - 응용 프로그램 id 확인. 응용 프로그램은 broker를 호출할 때 리디렉션 url을 전달 하 고 broker는이를 확인 합니다.
 
 Broker를 사용 하도록 설정 하는 방법에 대 한 자세한 내용은 [Xamarin iOS 및 Android 응용 프로그램에서 Microsoft Authenticator 또는 Microsoft Intune 회사 포털 사용](msal-net-use-brokers-with-xamarin-apps.md)을 참조 하세요.
@@ -105,7 +105,7 @@ Broker를 사용 하도록 설정 하는 방법에 대 한 자세한 내용은 [
 
 샘플 | 플랫폼 | Description
 ------ | -------- | -----------
-[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP | 간단한 Xamarin Forms 앱은 MSAL을 사용 하 여 Azure AD v2.0 끝점을 통해 MSA 및 Azure AD를 인증 하 고 결과 토큰을 사용 하 여 Microsoft Graph에 액세스 하는 방법을 보여주는 합니다.
+[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP | 간단한 Xamarin Forms 앱은 MSAL을 사용 하 여 Azure AD v2.0 엔드포인트을 통해 MSA 및 Azure AD를 인증 하 고 결과 토큰을 사용 하 여 Microsoft Graph에 액세스 하는 방법을 보여주는 합니다.
 
 <!--- https://github.com/Azure-Samples/active-directory-xamarin-native-v2/blob/master/ReadmeFiles/Topology.png -->
 

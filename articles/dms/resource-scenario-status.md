@@ -21,7 +21,7 @@ ms.locfileid: "75437684"
 ---
 # <a name="status-of-migration-scenarios-supported-by-azure-database-migration-service"></a>Azure Database Migration Service에서 지 원하는 마이그레이션 시나리오의 상태
 
-Azure Database Migration Service은 오프 라인 (일회성) 및 온라인 (연속 동기화) 마이그레이션 모두에 대해 서로 다른 마이그레이션 시나리오 (원본/대상 쌍)를 지원 하도록 설계 되었습니다. Azure Database Migration Service에서 제공 하는 시나리오 검사가 시간이 지남에 따라 확장 되 고 있습니다. 새로운 시나리오를 정기적으로 추가되고 있습니다. 이 문서에서는 Azure Database Migration Service에서 현재 지원 되는 마이그레이션 시나리오와 각 시나리오에 대 한 상태 (비공개 미리 보기, 공개 미리 보기 또는 일반 공급)를 식별 합니다.
+Azure Database Migration Service은 오프 라인 (일회성) 및 온라인 (연속 동기화) 마이그레이션 모두에 대해 서로 다른 마이그레이션 시나리오 (원본/대상 쌍)를 지원 하도록 설계 되었습니다. Azure Database Migration Service에서 제공 하는 시나리오 검사가 시간이 지남에 따라 확장 되 고 있습니다. 새로운 시나리오를 정기적으로 추가되고 있습니다. 이 문서에서는 Azure Database Migration Service에서 현재 지원 되는 마이그레이션 시나리오와 각 시나리오에 대한 상태 (비공개 미리 보기, 공개 미리 보기 또는 일반 공급)를 식별 합니다.
 
 ## <a name="offline-versus-online-migrations"></a>오프라인 및 온라인 마이그레이션
 
@@ -84,4 +84,4 @@ Azure Database Migration Service에서 지 원하는 마이그레이션 시나�
 
 ## <a name="next-steps"></a>다음 단계
 
-Azure Database Migration Service 및 지역 가용성에 대 한 개요는 [Azure Database Migration Service 이란?](dms-overview.md)문서를 참조 하세요.
+Azure Database Migration Service 및 지역 가용성에 대한 개요는 [Azure Database Migration Service 이란?](dms-overview.md)문서를 참조 하세요.

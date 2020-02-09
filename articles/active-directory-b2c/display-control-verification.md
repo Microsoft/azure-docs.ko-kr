@@ -28,11 +28,11 @@ ms.locfileid: "75479086"
 
 1. 확인 코드를 보내야 하는 전자 메일 주소 또는 전화 번호와 같은 사용자의 대상을 요청 합니다. 사용자가 **코드 보내기** 단추를 선택 하면 확인 표시 컨트롤의 **sendcode 동작이** 실행 됩니다. **Sendcode 작업** 은 코드를 생성 하 고, 전송할 콘텐츠를 생성 하 고, 사용자에 게 보냅니다. 주소 값은 미리 채워질 수 있으며 두 번째 단계 인증으로 사용할 수 있습니다.
 
-    ![코드 보내기 작업에 대 한 예제 페이지](media/display-control-verification/display-control-verification-email-action-01.png)
+    ![코드 보내기 작업에 대한 예제 페이지](media/display-control-verification/display-control-verification-email-action-01.png)
 
 1. 코드를 보낸 후 사용자는 메시지를 읽고, 표시 컨트롤에서 제공 하는 컨트롤에 확인 코드를 입력 하 고, **코드 확인**을 선택 합니다. **코드 확인**을 선택 하면 해당 주소와 연결 된 코드를 확인 하기 위해 **verifycode 작업이** 실행 됩니다. 사용자가 **새 코드 보내기**를 선택 하면 첫 번째 작업이 다시 실행 됩니다.
 
-    ![코드 확인 작업에 대 한 예제 페이지](media/display-control-verification/display-control-verification-email-action-02.png)
+    ![코드 확인 작업에 대한 예제 페이지](media/display-control-verification/display-control-verification-email-action-02.png)
 
 [!INCLUDE [b2c-public-preview-feature](../../includes/active-directory-b2c-public-preview.md)]
 

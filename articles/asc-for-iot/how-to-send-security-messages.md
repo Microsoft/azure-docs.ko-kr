@@ -1,5 +1,5 @@
 ---
-title: IoT에 대 한 Azure Security Center에 보안 메시지 보내기 | Microsoft Docs
+title: IoT에 대한 Azure Security Center에 보안 메시지 보내기 | Microsoft Docs
 description: IoT 용 Azure Security Center를 사용 하 여 보안 메시지를 보내는 방법에 대해 알아봅니다.
 services: asc-for-iot
 ms.service: asc-for-iot
@@ -24,7 +24,7 @@ ms.locfileid: "76963821"
 ---
 # <a name="send-security-messages-sdk"></a>보안 메시지 보내기 SDK
 
-이 방법 가이드에서는 IoT 에이전트 용 Azure Security Center를 사용 하지 않고 장치 보안 메시지를 수집 하 여 전송 하도록 선택할 때 IoT 서비스 기능에 대 한 Azure Security Center 설명 하 고,이 작업을 수행 하는 방법을 설명 합니다.  
+이 방법 가이드에서는 IoT 에이전트 용 Azure Security Center를 사용 하지 않고 장치 보안 메시지를 수집 하 여 전송 하도록 선택할 때 IoT 서비스 기능에 대한 Azure Security Center 설명 하 고,이 작업을 수행 하는 방법을 설명 합니다.  
 
 이 가이드에서는 다음 작업 방법을 배웁니다. 
 > [!div class="checklist"]
@@ -37,11 +37,11 @@ ms.locfileid: "76963821"
 
 ## <a name="azure-security-center-for-iot-capabilities"></a>IoT 기능을 위한 Azure Security Center
 
-IoT 용 Azure Security Center은 전송 된 데이터가 [IoT 스키마에 대 한 Azure Security Center](https://aka.ms/iot-security-schemas) 를 준수 하 고 메시지가 보안 메시지로 설정 되어 있는 한 모든 종류의 보안 메시지 데이터를 처리 하 고 분석할 수 있습니다.
+IoT 용 Azure Security Center은 전송 된 데이터가 [IoT 스키마에 대한 Azure Security Center](https://aka.ms/iot-security-schemas) 를 준수 하 고 메시지가 보안 메시지로 설정 되어 있는 한 모든 종류의 보안 메시지 데이터를 처리 하 고 분석할 수 있습니다.
 
 ## <a name="security-message"></a>보안 메시지
 
-IoT에 대 한 Azure Security Center는 다음 조건을 사용 하 여 보안 메시지를 정의 합니다.
+IoT에 대한 Azure Security Center는 다음 조건을 사용 하 여 보안 메시지를 정의 합니다.
 - Azure IoT SDK를 사용 하 여 메시지를 보낸 경우
 - 메시지가 [보안 메시지 스키마](https://aka.ms/iot-security-schemas) 를 준수 하는 경우
 - 메시지를 보내기 전에 보안 메시지로 설정 된 경우
@@ -53,7 +53,7 @@ IoT에 대 한 Azure Security Center는 다음 조건을 사용 하 여 보안 �
 > 스키마를 준수하지 않은 상태로 보내는 메시지는 무시됩니다. 무시된 메시지는 현재 저장되지 않으므로 데이터 보내기를 시작하기 전에 스키마를 확인해야 합니다. 
 
 >[!Note]
-> Azure IoT SDK를 사용 하 여 보안 메시지로 설정 되지 않은 보낸 메시지는 IoT 파이프라인에 대 한 Azure Security Center 라우팅되지 않습니다.
+> Azure IoT SDK를 사용 하 여 보안 메시지로 설정 되지 않은 보낸 메시지는 IoT 파이프라인에 대한 Azure Security Center 라우팅되지 않습니다.
 
 ## <a name="valid-message-example"></a>유효한 메시지 예
 
@@ -91,9 +91,9 @@ IoT에 대 한 Azure Security Center는 다음 조건을 사용 하 여 보안 �
 
 ## <a name="send-security-messages"></a>보안 메시지 보내기 
 
-[Azure Iot C 장치 sdk](https://github.com/Azure/azure-iot-sdk-c/tree/public-preview), azure IOT [ C# 장치 sdk](https://github.com/Azure/azure-iot-sdk-csharp/tree/preview),, [Azure IOT node.js Sdk](https://github.com/Azure/azure-iot-sdk-node), AZURE [iot Python sdk](https://github.com/Azure/azure-iot-sdk-python)또는 [azure iot Java sdk를](https://github.com/Azure/azure-iot-sdk-java) 사용 하 여 iot 에이전트에 대 한 Azure Security Center를 사용 *하지 않고* 보안 메시지 보내기.
+[Azure Iot C 장치 sdk](https://github.com/Azure/azure-iot-sdk-c/tree/public-preview), azure IOT [ C# 장치 sdk](https://github.com/Azure/azure-iot-sdk-csharp/tree/preview),, [Azure IOT node.js Sdk](https://github.com/Azure/azure-iot-sdk-node), AZURE [iot Python sdk](https://github.com/Azure/azure-iot-sdk-python)또는 [azure iot Java sdk를](https://github.com/Azure/azure-iot-sdk-java) 사용 하 여 iot 에이전트에 대한 Azure Security Center를 사용 *하지 않고* 보안 메시지 보내기.
 
-IoT에 대 한 Azure Security Center에서 처리 하기 위해 장치에서 장치 데이터를 보내려면 다음 Api 중 하나를 사용 하 여 IoT 처리 파이프라인에 대 한 Azure Security Center에 올바른 라우팅에 대 한 메시지를 표시 합니다. 
+IoT에 대한 Azure Security Center에서 처리 하기 위해 장치에서 장치 데이터를 보내려면 다음 Api 중 하나를 사용 하 여 IoT 처리 파이프라인에 대한 Azure Security Center에 올바른 라우팅에 대한 메시지를 표시 합니다. 
 
 올바른 헤더로 표시 된 경우에도 전송 되는 모든 데이터는 [IoT 메시지 스키마의 Azure Security Center](https://aka.ms/iot-security-schemas)준수 해야 합니다. 
 
@@ -226,8 +226,8 @@ public void SendSecurityMessage(string message)
 
 
 ## <a name="next-steps"></a>다음 단계
-- IoT 서비스에 대 한 Azure Security Center [개요](overview.md) 를 참조 하십시오.
-- IoT [아키텍처](architecture.md) 에 대 한 Azure Security Center에 대해 자세히 알아보기
+- IoT 서비스에 대한 Azure Security Center [개요](overview.md) 를 참조 하십시오.
+- IoT [아키텍처](architecture.md) 에 대한 Azure Security Center에 대해 자세히 알아보기
 - [서비스](quickstart-onboard-iot-hub.md)를 사용하도록 설정합니다.
 - [FAQ](resources-frequently-asked-questions.md)를 참조합니다.
 - [원시 보안 데이터](how-to-security-data-access.md)에 액세스하는 방법을 알아봅니다.

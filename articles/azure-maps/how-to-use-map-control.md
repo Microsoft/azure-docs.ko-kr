@@ -78,7 +78,7 @@ b. [NPM 패키지를 사용](https://www.npmjs.com/package/azure-maps-control) �
 
 계정을 만들거나 키를 찾아야 하는 경우 [계정 만들기](quick-demo-map-app.md#create-an-account-with-azure-maps) 및 [기본 키 가져오기](quick-demo-map-app.md#get-the-primary-key-for-your-account) 의 지침을 따르세요. 
 
-**언어** 옵션은 맵 레이블 및 컨트롤에 사용할 언어를 지정합니다. 지원 되는 언어에 대 한 자세한 내용은 [지원 되는 언어](supported-languages.md)를 참조 하세요. 인증에 구독 키를 사용 하는 경우 다음을 사용 합니다.
+**언어** 옵션은 맵 레이블 및 컨트롤에 사용할 언어를 지정합니다. 지원 되는 언어에 대한 자세한 내용은 [지원 되는 언어](supported-languages.md)를 참조 하세요. 인증에 구독 키를 사용 하는 경우 다음을 사용 합니다.
 
 ```HTML
     <script type="text/javascript">
@@ -226,7 +226,7 @@ atlas.setDomain('atlas.azure.us');
 
 지도와 서비스를 인증 하는 경우 Azure Government 클라우드 플랫폼에서 Azure Maps 인증 세부 정보를 사용 해야 합니다.
 
-서비스 모듈을 사용 하는 경우 API URL 끝점의 인스턴스를 만들 때 서비스에 대 한 도메인을 설정 해야 합니다. 예를 들어 다음 코드는 `SearchURL` 클래스의 인스턴스를 만들고 해당 도메인을 Azure Government 클라우드로 가리킵니다.
+서비스 모듈을 사용 하는 경우 API URL 엔드포인트의 인스턴스를 만들 때 서비스에 대한 도메인을 설정 해야 합니다. 예를 들어 다음 코드는 `SearchURL` 클래스의 인스턴스를 만들고 해당 도메인을 Azure Government 클라우드로 가리킵니다.
 
 ```javascript
 var searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');

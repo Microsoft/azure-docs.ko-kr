@@ -27,7 +27,7 @@ ms.locfileid: "72754177"
 
 ## <a name="create-a-workflow"></a>워크플로 만들기
 
-워크플로를 만들거나 업데이트 하려면 **[워크플로-API 참조 만들기 또는 업데이트](https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/5813b46b3f9b0711b43c4c59)** 페이지로 이동 하 고 키 영역에 대 한 단추를 선택 합니다 .이는 [검토 도구의](https://contentmoderator.cognitive.microsoft.com/) **자격 증명** 페이지에 있는 끝점 URL에서 찾을 수 있습니다. 이렇게 하면 REST API 호출을 쉽게 구성 하 고 실행할 수 있는 API 콘솔이 시작 됩니다.
+워크플로를 만들거나 업데이트 하려면 **[워크플로-API 참조 만들기 또는 업데이트](https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/5813b46b3f9b0711b43c4c59)** 페이지로 이동 하 고 키 영역에 대 한 단추를 선택 합니다 .이는 [검토 도구의](https://contentmoderator.cognitive.microsoft.com/) **자격 증명** 페이지에 있는 엔드포인트 URL에서 찾을 수 있습니다. 이렇게 하면 REST API 호출을 쉽게 구성 하 고 실행할 수 있는 API 콘솔이 시작 됩니다.
 
 ![워크플로 - 만들기 또는 업데이트 페이지 영역 선택](images/test-drive-region.png)
 

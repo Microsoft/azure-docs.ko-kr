@@ -43,8 +43,8 @@ Azure Cognitive Search 연결 된 서비스에 대해 지원 되는 속성은 �
 | 속성 | Description | 필수 |
 |:--- |:--- |:--- |
 | type | 형식 속성은 **AzureSearch**로 설정되어야 합니다. | 예 |
-| url | 검색 서비스에 대 한 URL입니다. | 예 |
-| key | 검색 서비스에 대 한 관리 키입니다. 이 필드를 SecureString으로 표시하여 Data Factory에 안전하게 저장하거나 [Azure Key Vault에 저장되는 비밀을 참조](store-credentials-in-key-vault.md)합니다. | 예 |
+| url | 검색 서비스에 대한 URL입니다. | 예 |
+| key | 검색 서비스에 대한 관리 키입니다. 이 필드를 SecureString으로 표시하여 Data Factory에 안전하게 저장하거나 [Azure Key Vault에 저장되는 비밀을 참조](store-credentials-in-key-vault.md)합니다. | 예 |
 | connectVia | 데이터 저장소에 연결하는 데 사용할 [Integration Runtime](concepts-integration-runtime.md)입니다. Azure Integration Runtime 또는 자체 호스팅 Integration Runtime을 사용할 수 있습니다(데이터 저장소가 프라이빗 네트워크에 있는 경우). 지정하지 않으면 기본 Azure Integration Runtime을 사용합니다. |아닙니다. |
 
 > [!IMPORTANT]
@@ -178,7 +178,7 @@ Azure Cognitive Search 서비스는 문서를 일괄 처리로 작성할 수 있
 | 문자열 배열 | N |
 | GeographyPoint | N |
 
-현재 다른 데이터 형식 (예: ComplexType)은 지원 되지 않습니다. Azure Cognitive Search 지원 되는 데이터 형식에 대 한 전체 목록은 [지원 되는 데이터 형식 (Azure Cognitive Search)](https://docs.microsoft.com/rest/api/searchservice/supported-data-types)을 참조 하세요.
+현재 다른 데이터 형식 (예: ComplexType)은 지원 되지 않습니다. Azure Cognitive Search 지원 되는 데이터 형식에 대한 전체 목록은 [지원 되는 데이터 형식 (Azure Cognitive Search)](https://docs.microsoft.com/rest/api/searchservice/supported-data-types)을 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 Azure Data Factory에서 복사 작업의 원본 및 싱크로 지원되는 데이터 저장소 목록은 [지원되는 데이터 저장소](copy-activity-overview.md#supported-data-stores-and-formats)를 참조하세요.

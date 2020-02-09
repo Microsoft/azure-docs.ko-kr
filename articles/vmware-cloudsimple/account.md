@@ -17,7 +17,7 @@ ms.locfileid: "77025370"
 ---
 # <a name="manage-accounts-on-the-azure-vmware-solutions-avs-portal"></a>Azure VMware 솔루션 (AVS) 포털에서 계정 관리
 
-AVS 서비스를 만들면 AVS에서 계정이 만들어집니다. 이 계정은 서비스가 있는 Azure 구독과 연결 됩니다. 구독에서 소유자 및 참가자 역할이 있는 모든 사용자는 AVS 포털에 액세스할 수 있습니다. AVS 서비스와 연결 된 Azure 구독 ID 및 테 넌 트 ID는 계정 페이지에서 찾을 수 있습니다.
+AVS 서비스를 만들면 AVS에서 계정이 만들어집니다. 이 계정은 서비스가 있는 Azure 구독과 연결 됩니다. 구독에서 소유자 및 참가자 역할이 있는 모든 사용자는 AVS 포털에 액세스할 수 있습니다. AVS 서비스와 연결 된 Azure 구독 ID 및 테넌트 ID는 계정 페이지에서 찾을 수 있습니다.
 
 AVS 포털에서 계정을 관리 하려면 [포털에 액세스](access-cloudsimple-portal.md) 하 고 측면 메뉴에서 **계정** 을 선택 합니다.
 

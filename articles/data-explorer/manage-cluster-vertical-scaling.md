@@ -18,7 +18,7 @@ ms.locfileid: "67985475"
 
 클러스터 크기를 적절하게 조정하는 것은 Azure 데이터 탐색기의 성능에 중요합니다. 정적 클러스터 크기는 사용량 미달 또는 사용량 초과로 이어질 수 있으며, 둘 다 이상적인 경우는 아닙니다.
 
-클러스터에 대 한 수요는 절대 정확도로 예측할 수 없기 때문에 클러스터 크기를 *조정* 하 고 수요를 변경 하 여 용량과 CPU 리소스를 추가 하 고 제거 하는 것이 더 나은 방법입니다. 
+클러스터에 대한 수요는 절대 정확도로 예측할 수 없기 때문에 클러스터 크기를 *조정* 하 고 수요를 변경 하 여 용량과 CPU 리소스를 추가 하 고 제거 하는 것이 더 나은 방법입니다. 
 
 Azure 데이터 탐색기 클러스터의 크기를 조정 하는 데는 두 가지 워크플로가 있습니다.
 
@@ -44,7 +44,7 @@ Azure 데이터 탐색기 클러스터의 크기를 조정 하는 데는 두 가
 > * 규모를 축소 하면 클러스터 성능을 저하 시킬 수 있습니다.
 > * 가격은 클러스터의 가상 머신 및 Azure 데이터 탐색기 서비스 비용의 예상 비용입니다. 다른 비용은 포함 되지 않습니다. 전체 가격 정보는 Azure 데이터 탐색기 [cost 평가기](https://dataexplorer.azure.com/AzureDataExplorerCostEstimator.html) 페이지에서 예상 및 azure 데이터 탐색기 [가격 책정 페이지](https://azure.microsoft.com/pricing/details/data-explorer/) 를 참조 하세요.
 
-이제 Azure 데이터 탐색기 클러스터에 대해 수직 크기 조정을 구성 했습니다. 수평 크기 조정을 위한 다른 규칙을 추가 합니다. 클러스터 크기 조정 문제에 대 한 지원이 필요한 경우 Azure Portal에서 [지원 요청을 여세요](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) .
+이제 Azure 데이터 탐색기 클러스터에 대해 수직 크기 조정을 구성 했습니다. 수평 크기 조정을 위한 다른 규칙을 추가 합니다. 클러스터 크기 조정 문제에 대한 지원이 필요한 경우 Azure Portal에서 [지원 요청을 여세요](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) .
 
 ## <a name="next-steps"></a>다음 단계
 

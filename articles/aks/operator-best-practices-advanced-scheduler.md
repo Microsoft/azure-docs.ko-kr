@@ -31,7 +31,7 @@ AKS(Azure Kubernetes Service)에서 클러스터를 관리할 경우 종종 팀 
 
 AKS 클러스터를 만들 경우 GPU 지원 또는 많은 강력한 CPU를 사용하여 노드를 배포할 수 있습니다. 이러한 노드는 ML(기계 학습) 또는 AI와 같은 대규모 데이터 처리 워크로드에 자주 사용됩니다. 이 유형의 하드웨어는 일반적으로 배포에 비용이 많이 드는 노드 리소스이므로 이러한 노드에서 예약할 수 있는 워크로드를 제한하세요. 대신 클러스터의 일부 노드를 수신 서비스 실행에만 사용하도록 하고 다른 워크로드를 차단할 수 있습니다.
 
-여러 노드 풀을 사용 하 여 다양 한 노드에 대 한 지원을 제공 합니다. AKS 클러스터는 하나 이상의 노드 풀을 제공 합니다.
+여러 노드 풀을 사용 하 여 다양 한 노드에 대한 지원을 제공 합니다. AKS 클러스터는 하나 이상의 노드 풀을 제공 합니다.
 
 Kubernetes 스케줄러는 taint 및 toleration을 사용하여 노드에서 실행할 수 있는 워크로드를 제한할 수 있습니다.
 
@@ -73,9 +73,9 @@ spec:
 
 Taint를 적용할 경우 애플리케이션 개발자 및 소유자와 협력하여 해당 배포에서 필요한 toleration을 정의하도록 할 수 있습니다.
 
-Taints 및 tolerations에 대 한 자세한 내용은 [taints 및 tolerations 적용][k8s-taints-tolerations]을 참조 하세요.
+Taints 및 tolerations에 대한 자세한 내용은 [taints 및 tolerations 적용][k8s-taints-tolerations]을 참조 하세요.
 
-AKS에서 여러 노드 풀을 사용 하는 방법에 대 한 자세한 내용은 [AKS에서 클러스터에 대 한 여러 노드 풀 만들기 및 관리][use-multiple-node-pools]를 참조 하세요.
+AKS에서 여러 노드 풀을 사용 하는 방법에 대한 자세한 내용은 [AKS에서 클러스터에 대한 여러 노드 풀 만들기 및 관리][use-multiple-node-pools]를 참조 하세요.
 
 ### <a name="behavior-of-taints-and-tolerations-in-aks"></a>AKS의 taints 및 tolerations 동작
 
@@ -130,7 +130,7 @@ spec:
 
 이러한 스케줄러 옵션을 사용할 경우 애플리케이션 개발자 및 소유자와 협력하여 Pod 사양을 올바르게 정의하도록 할 수 있습니다.
 
-노드 선택기 사용에 대 한 자세한 내용은 [pod를 노드에 할당][k8s-node-selector]을 참조 하세요.
+노드 선택기 사용에 대한 자세한 내용은 [pod를 노드에 할당][k8s-node-selector]을 참조 하세요.
 
 ### <a name="node-affinity"></a>노드 선호도
 
@@ -185,7 +185,7 @@ Kubernetes 스케줄러가 워크로드를 논리적으로 격리하는 한 가�
 
 이 문서에서는 고급 Kubernetes 스케줄러 기능을 중점적으로 설명했습니다. AKS의 클러스터 작업에 대한 자세한 내용은 다음 모범 사례를 참조하세요.
 
-* [다중 테 넌 트 및 클러스터 격리][aks-best-practices-scheduler]
+* [다중 테넌트 및 클러스터 격리][aks-best-practices-scheduler]
 * [기본 Kubernetes scheduler 기능][aks-best-practices-scheduler]
 * [인증 및 권한 부여][aks-best-practices-identity]
 

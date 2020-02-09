@@ -644,11 +644,11 @@ PowerShell을 사용 하 여 장애 조치 그룹의 장애 조치를 테스트 
 
 ---
 
-## <a name="locate-listener-endpoint"></a>수신기 끝점 찾기
+## <a name="locate-listener-endpoint"></a>수신기 엔드포인트 찾기
 
-장애 조치 (failover) 그룹이 구성 되 면 응용 프로그램에 대 한 연결 문자열을 수신기 끝점으로 업데이트 합니다. 이렇게 하면 기본 데이터베이스, 탄력적 풀 또는 관리 되는 인스턴스가 아닌 장애 조치 (failover) 그룹 수신기에 응용 프로그램이 연결 된 상태로 유지 됩니다. 이러한 방식으로 Azure SQL database 엔터티가 장애 조치 (failover) 될 때마다 연결 문자열을 수동으로 업데이트 하지 않아도 되 고, 현재 기본으로 있는 엔터티에 트래픽이 라우팅됩니다. 
+장애 조치 (failover) 그룹이 구성 되 면 응용 프로그램에 대 한 연결 문자열을 수신기 엔드포인트으로 업데이트 합니다. 이렇게 하면 기본 데이터베이스, 탄력적 풀 또는 관리 되는 인스턴스가 아닌 장애 조치 (failover) 그룹 수신기에 응용 프로그램이 연결 된 상태로 유지 됩니다. 이러한 방식으로 Azure SQL database 엔터티가 장애 조치 (failover) 될 때마다 연결 문자열을 수동으로 업데이트 하지 않아도 되 고, 현재 기본으로 있는 엔터티에 트래픽이 라우팅됩니다. 
 
-수신기 끝점은 `fog-name.database.windows.net`형식이 며 장애 조치 (failover) 그룹을 볼 때 Azure Portal에 표시 됩니다.
+수신기 엔드포인트은 `fog-name.database.windows.net`형식이 며 장애 조치 (failover) 그룹을 볼 때 Azure Portal에 표시 됩니다.
 
 ![장애 조치 (Failover) 그룹 연결 문자열](media/sql-database-configure-failover-group/find-failover-group-connection-string.png)
 

@@ -12,7 +12,7 @@ ms.locfileid: "74454367"
 ---
 # <a name="using-azure-container-registry-webhooks"></a>Azure Container Registry 웹후크 사용
 
-Azure Container Registry는 Docker Hub에서 공개 Docker 이미지를 저장하는 것과 유사한 방식으로 프라이빗 Docker 컨테이너 이미지를 저장하고 관리합니다. 또한 Kubernetes에 응용 프로그램을 배포 하는 패키징 형식인 [투구 차트](container-registry-helm-repos.md) (미리 보기)에 대 한 리포지토리를 호스트할 수 있습니다. 레지스트리 리포지토리 중 하나에서 특정 작업이 수행되는 경우 웹후크를 사용하여 이벤트를 트리거할 수 있습니다. 웹후크는 레지스트리 수준에서 이벤트에 응답하거나 특정 리포지토리 태그로 범위를 줄일 수 있습니다. 지리적으로 [복제](container-registry-geo-replication.md) 된 레지스트리를 사용 하 여 특정 지역 복제본의 이벤트에 응답 하도록 각 webhook을 구성 합니다.
+Azure Container Registry는 Docker Hub에서 공개 Docker 이미지를 저장하는 것과 유사한 방식으로 프라이빗 Docker 컨테이너 이미지를 저장하고 관리합니다. 또한 Kubernetes에 응용 프로그램을 배포 하는 패키징 형식인 [투구 차트](container-registry-helm-repos.md) (미리 보기)에 대한 리포지토리를 호스트할 수 있습니다. 레지스트리 리포지토리 중 하나에서 특정 작업이 수행되는 경우 웹후크를 사용하여 이벤트를 트리거할 수 있습니다. 웹후크는 레지스트리 수준에서 이벤트에 응답하거나 특정 리포지토리 태그로 범위를 줄일 수 있습니다. 지리적으로 [복제](container-registry-geo-replication.md) 된 레지스트리를 사용 하 여 특정 지역 복제본의 이벤트에 응답 하도록 각 webhook을 구성 합니다.
 
 Webhook 요청에 대한 세부 정보는 [Azure Container Registry 웹후크 스키마 참조](container-registry-webhook-reference.md)를 참조하세요.
 
@@ -37,7 +37,7 @@ Webhook 요청에 대한 세부 정보는 [Azure Container Registry 웹후크 �
 | 사용자 지정 헤더 | POST 요청과 함께 전달하려는 헤더입니다. "키: 값" 형식이어야 합니다. |
 | 트리거 동작 | 웹후크를 트리거하는 동작입니다. 작업에는 이미지 푸시, 이미지 삭제, 투구 차트 푸시, 투구 차트 삭제, 이미지 격리 등이 있습니다. 하나 이상의 작업을 선택 하 여 webhook를 트리거할 수 있습니다. |
 | 가동 상태 | 웹후크가 만들어진 후의 상태입니다. 기본적으로 사용하도록 설정되어 있습니다. |
-| 범위 | 웹후크가 작동하는 범위입니다. 지정 하지 않으면 레지스트리의 모든 이벤트에 대 한 범위입니다. 리포지토리를 사용 하 여 리포지토리 또는 태그에 대해 지정할 수 있습니다. "repository: tag" 또는 "repository: *" 형식을 사용 하 여 리포지토리 아래의 모든 태그에 대해 지정할 수 있습니다. |
+| 범위 | 웹후크가 작동하는 범위입니다. 지정 하지 않으면 레지스트리의 모든 이벤트에 대한 범위입니다. 리포지토리를 사용 하 여 리포지토리 또는 태그에 대해 지정할 수 있습니다. "repository: tag" 또는 "repository: *" 형식을 사용 하 여 리포지토리 아래의 모든 태그에 대해 지정할 수 있습니다. |
 
 웹후크 양식 예제:
 
@@ -45,7 +45,7 @@ Webhook 요청에 대한 세부 정보는 [Azure Container Registry 웹후크 �
 
 ## <a name="create-webhook---azure-cli"></a>Webhook 만들기-Azure CLI
 
-Azure CLI를 사용하여 웹후크를 만들려면 [az acr webhook create](/cli/azure/acr/webhook#az-acr-webhook-create) 명령을 사용합니다. 다음 명령은 레지스트리 *mycontainerregistry*의 모든 image delete 이벤트에 대 한 webhook을 만듭니다.
+Azure CLI를 사용하여 웹후크를 만들려면 [az acr webhook create](/cli/azure/acr/webhook#az-acr-webhook-create) 명령을 사용합니다. 다음 명령은 레지스트리 *mycontainerregistry*의 모든 image delete 이벤트에 대한 webhook을 만듭니다.
 
 ```azurecli-interactive
 az acr webhook create --registry mycontainerregistry --name myacrwebhook01 --actions delete --uri http://webhookuri.com

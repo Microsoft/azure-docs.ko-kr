@@ -26,7 +26,7 @@ ms.locfileid: "75483220"
 ## <a name="text-format"></a>텍스트 형식 (레거시)
 
 >[!NOTE]
->[구분 기호로 분리 된 텍스트 서식](format-delimited-text.md) 문서에서 새 모델에 대해 알아봅니다. 파일 기반 데이터 저장소 데이터 집합에 대 한 다음 구성은 이전 compabitility의 경우 그대로 계속 지원 됩니다. 앞으로 새 모델을 사용 하는 것이 좋습니다.
+>[구분 기호로 분리 된 텍스트 서식](format-delimited-text.md) 문서에서 새 모델에 대해 알아봅니다. 파일 기반 데이터 저장소 데이터 집합에 대한 다음 구성은 이전 compabitility의 경우 그대로 계속 지원 됩니다. 앞으로 새 모델을 사용 하는 것이 좋습니다.
 
 텍스트 파일을 읽거나 텍스트 파일에 쓰려면 데이터 세트의 `format` 섹션에서 `type` 속성을 **TextFormat**으로 지정합니다. `format` 섹션에서 다음 **선택적** 속성을 지정할 수도 있습니다. 구성 방법은 [TextFormat 예제](#textformat-example) 섹션을 참조하세요.
 
@@ -80,7 +80,7 @@ ms.locfileid: "75483220"
 ## <a name="json-format"></a>JSON 형식 (레거시)
 
 >[!NOTE]
->[JSON 형식의](format-json.md) 새 모델 문서에 대해 알아봅니다. 파일 기반 데이터 저장소 데이터 집합에 대 한 다음 구성은 이전 compabitility의 경우 그대로 계속 지원 됩니다. 앞으로 새 모델을 사용 하는 것이 좋습니다.
+>[JSON 형식의](format-json.md) 새 모델 문서에 대해 알아봅니다. 파일 기반 데이터 저장소 데이터 집합에 대한 다음 구성은 이전 compabitility의 경우 그대로 계속 지원 됩니다. 앞으로 새 모델을 사용 하는 것이 좋습니다.
 
 **Azure Cosmos DB에서 JSON 파일을 그대로 가져오거나 내보내려면**[Azure Cosmos DB 간에 데이터 이동](connector-azure-cosmos-db.md) 문서에서 JSON 문서 가져오기/내보내기 섹션을 참조하세요.
 
@@ -407,7 +407,7 @@ SQL Database에 다음 테이블이 있는 경우:
 ## <a name="parquet-format"></a>Parquet 형식 (레거시)
 
 >[!NOTE]
->[Parquet format](format-parquet.md) 의 새 모델 문서를 알아보세요. 파일 기반 데이터 저장소 데이터 집합에 대 한 다음 구성은 이전 compabitility의 경우 그대로 계속 지원 됩니다. 앞으로 새 모델을 사용 하는 것이 좋습니다.
+>[Parquet format](format-parquet.md) 의 새 모델 문서를 알아보세요. 파일 기반 데이터 저장소 데이터 집합에 대한 다음 구성은 이전 compabitility의 경우 그대로 계속 지원 됩니다. 앞으로 새 모델을 사용 하는 것이 좋습니다.
 
 Parquet 파일을 구문 분석 하거나 데이터를 Parquet 형식으로 기록 하려면 `format` `type` 속성을 **ParquetFormat**로 설정 합니다. typeProperties 섹션 내의 Format 섹션에서는 속성을 지정할 필요가 없습니다. 예:
 
@@ -467,7 +467,7 @@ Parquet 파일을 구문 분석 하거나 데이터를 Parquet 형식으로 기�
 ## <a name="orc-format"></a>ORC 형식 (레거시)
 
 >[!NOTE]
->[ORC format](format-orc.md) 의 새 모델 문서를 알아보세요. 파일 기반 데이터 저장소 데이터 집합에 대 한 다음 구성은 이전 compabitility의 경우 그대로 계속 지원 됩니다. 앞으로 새 모델을 사용 하는 것이 좋습니다.
+>[ORC format](format-orc.md) 의 새 모델 문서를 알아보세요. 파일 기반 데이터 저장소 데이터 집합에 대한 다음 구성은 이전 compabitility의 경우 그대로 계속 지원 됩니다. 앞으로 새 모델을 사용 하는 것이 좋습니다.
 
 ORC 파일을 구문 분석 하거나 데이터를 ORC 형식으로 기록 하려면 `format` `type` 속성을 **Orcformat**으로 설정 합니다. typeProperties 섹션 내의 Format 섹션에서는 속성을 지정할 필요가 없습니다. 예:
 
@@ -519,7 +519,7 @@ ORC 파일을 구문 분석 하거나 데이터를 ORC 형식으로 기록 하�
 ## <a name="avro-format"></a>AVRO 형식 (레거시)
 
 >[!NOTE]
->[Avro 형식의](format-avro.md) 새 모델 문서에 대해 알아봅니다. 파일 기반 데이터 저장소 데이터 집합에 대 한 다음 구성은 이전 compabitility의 경우 그대로 계속 지원 됩니다. 앞으로 새 모델을 사용 하는 것이 좋습니다.
+>[Avro 형식의](format-avro.md) 새 모델 문서에 대해 알아봅니다. 파일 기반 데이터 저장소 데이터 집합에 대한 다음 구성은 이전 compabitility의 경우 그대로 계속 지원 됩니다. 앞으로 새 모델을 사용 하는 것이 좋습니다.
 
 Avro 파일을 구문 분석 하거나 데이터를 Avro 형식으로 작성 하려면 `format` `type` 속성을 **Avroformat**으로 설정 합니다. typeProperties 섹션 내의 Format 섹션에서는 속성을 지정할 필요가 없습니다. 예:
 

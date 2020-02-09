@@ -41,7 +41,7 @@ ms.locfileid: "76710547"
 
 ## <a name="enable-active-learning"></a>활성 학습 사용
 
-활성 학습을 사용 하도록 설정 하려면 사용자 쿼리를 기록해 야 합니다. 이는 `log=true` querystring 매개 변수 및 값을 사용 하 여 [끝점 쿼리](luis-get-started-create-app.md#query-the-v3-api-prediction-endpoint) 를 호출 하 여 수행 됩니다.
+활성 학습을 사용 하도록 설정 하려면 사용자 쿼리를 기록해 야 합니다. 이는 `log=true` querystring 매개 변수 및 값을 사용 하 여 [엔드포인트 쿼리](luis-get-started-create-app.md#query-the-v3-api-prediction-endpoint) 를 호출 하 여 수행 됩니다.
 
 ## <a name="next-steps"></a>다음 단계
 

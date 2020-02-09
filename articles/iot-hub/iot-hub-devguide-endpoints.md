@@ -82,14 +82,14 @@ IoT Hub는 현재 추가 엔드포인트로 다음과 같은 Azure 서비스를 
 
 추가할 수 있는 엔드포인트의 수에 대한 제한은 [할당량 및 제한](iot-hub-devguide-quotas-throttling.md)을 참조하세요.
 
-REST API [가져오기 끝점 상태](https://docs.microsoft.com/rest/api/iothub/iothubresource/getendpointhealth#iothubresource_getendpointhealth) 를 사용 하 여 끝점 상태를 가져올 수 있습니다. 끝점이 이러한 상태 중 하나에 있을 때 대기 시간이 더 길어질 수 있으므로, 메시지 대기 시간과 관련 된 [IoT Hub 메트릭을](iot-hub-metrics.md) 사용 하 여 오류를 식별 하 고 디버그 하는 것이 좋습니다.
+REST API [가져오기 엔드포인트 상태](https://docs.microsoft.com/rest/api/iothub/iothubresource/getendpointhealth#iothubresource_getendpointhealth) 를 사용 하 여 엔드포인트 상태를 가져올 수 있습니다. 엔드포인트이 이러한 상태 중 하나에 있을 때 대기 시간이 더 길어질 수 있으므로, 메시지 대기 시간과 관련 된 [IoT Hub 메트릭을](iot-hub-metrics.md) 사용 하 여 오류를 식별 하 고 디버그 하는 것이 좋습니다.
 
 |상태|Description|
 |---|---|
-|healthy|끝점이 예상 대로 메시지를 수락 합니다.|
-|상태가|끝점이 예상 대로 메시지를 수락 하지 않으며 IoT Hub이 끝점으로 데이터를 보내려고 시도 하는 중입니다. IoT Hub가 궁극적으로 일관 된 상태 상태를 설정 하면 비정상 끝점의 상태가 정상으로 업데이트 됩니다.|
-|알 수 없음|IoT Hub 끝점에 대 한 연결을 설정 하지 않았습니다. 이 끝점에서 전달 되거나 거부 된 메시지가 없습니다.|
-|무반응|IoT Hub에서 retrial 기간 동안 메시지 보내기를 다시 시도한 후에는 끝점에서 메시지를 수락 하지 않습니다.|
+|healthy|엔드포인트이 예상 대로 메시지를 수락 합니다.|
+|상태가|엔드포인트이 예상 대로 메시지를 수락 하지 않으며 IoT Hub이 엔드포인트으로 데이터를 보내려고 시도 하는 중입니다. IoT Hub가 궁극적으로 일관 된 상태 상태를 설정 하면 비정상 엔드포인트의 상태가 정상으로 업데이트 됩니다.|
+|알 수 없음|IoT Hub 엔드포인트에 대 한 연결을 설정 하지 않았습니다. 이 엔드포인트에서 전달 되거나 거부 된 메시지가 없습니다.|
+|무반응|IoT Hub에서 retrial 기간 동안 메시지 보내기를 다시 시도한 후에는 엔드포인트에서 메시지를 수락 하지 않습니다.|
 
 ## <a name="field-gateways"></a>현장 게이트웨이
 

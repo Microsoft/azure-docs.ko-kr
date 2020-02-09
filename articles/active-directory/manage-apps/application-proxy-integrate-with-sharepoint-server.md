@@ -31,8 +31,8 @@ ms.locfileid: "74275457"
 
 구성을 수행 하려면 다음 리소스가 필요 합니다.
 - SharePoint 2013 팜 이상
-- 응용 프로그램 프록시를 포함 하는 계획을 포함 하는 Azure AD 테 넌 트. [AZURE AD 요금제 및 가격 책정](https://azure.microsoft.com/pricing/details/active-directory/)에 대해 자세히 알아보세요.
-- Azure AD 테 넌 트에서 [확인 된 사용자 지정 도메인](../fundamentals/add-custom-domain.md) 입니다.
+- 응용 프로그램 프록시를 포함 하는 계획을 포함 하는 Azure AD 테넌트. [AZURE AD 요금제 및 가격 책정](https://azure.microsoft.com/pricing/details/active-directory/)에 대해 자세히 알아보세요.
+- Azure AD 테넌트에서 [확인 된 사용자 지정 도메인](../fundamentals/add-custom-domain.md) 입니다.
 - 사용자가 [Azure에 로그인](../hybrid/plan-connect-user-signin.md)할 수 있도록 온-프레미스 Active Directory Azure AD Connect와 동기화 됩니다.
 - 회사 도메인 내의 컴퓨터에 설치 되어 실행 되는 응용 프로그램 프록시 커넥터입니다.
 
@@ -53,7 +53,7 @@ ms.locfileid: "74275457"
 
 ## <a name="step-1-configure-an-application-in-azure-ad-that-uses-application-proxy"></a>1 단계: 응용 프로그램 프록시를 사용 하는 Azure AD에서 응용 프로그램 구성
 
-이 단계에서는 응용 프로그램 프록시를 사용 하는 Azure Active Directory 테 넌 트에서 응용 프로그램을 만듭니다. 외부 URL을 설정 하 고 내부 URL을 지정 합니다. 둘 다 SharePoint에서 나중에 사용 됩니다.
+이 단계에서는 응용 프로그램 프록시를 사용 하는 Azure Active Directory 테넌트에서 응용 프로그램을 만듭니다. 외부 URL을 설정 하 고 내부 URL을 지정 합니다. 둘 다 SharePoint에서 나중에 사용 됩니다.
 
 1. 다음 설정에 설명 된 대로 앱을 만듭니다. 단계별 지침은 [Azure AD 애플리케이션 프록시를 사용하여 애플리케이션 게시](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad)를 참조하세요.
    * **내부 url**: sharepoint에서 나중에 설정 되는 SHAREPOINT 내부 url (예: `https://sharepoint`)입니다.

@@ -1,6 +1,6 @@
 ---
 title: 진단 로그를 사용 하 여 Azure 데이터 탐색기 수집 작업 모니터링
-description: 수집 작업을 모니터링 하기 위해 Azure 데이터 탐색기에 대 한 진단 로그를 설정 하는 방법을 알아봅니다.
+description: 수집 작업을 모니터링 하기 위해 Azure 데이터 탐색기에 대한 진단 로그를 설정 하는 방법을 알아봅니다.
 author: orspod
 ms.author: orspodek
 ms.reviewer: gabil
@@ -16,7 +16,7 @@ ms.locfileid: "76277421"
 ---
 # <a name="monitor-azure-data-explorer-ingestion-operations-using-diagnostic-logs-preview"></a>진단 로그를 사용 하 여 Azure 데이터 탐색기 수집 작업 모니터링 (미리 보기)
 
-Azure Data Explorer는 애플리케이션, 웹 사이트, IoT 디바이스 등으로부터 수집된 대규모 데이터 스트리밍에 대한 실시간 분석을 제공하는 속도가 빠른 완전 관리형 데이터 분석 서비스입니다. Azure Data Explorer를 사용하려면 먼저 클러스터를 만들고 이 클러스터에 데이터베이스를 하나 이상 만듭니다. 그런 다음 데이터베이스에 대 한 쿼리를 실행할 수 있도록 데이터를 데이터베이스의 테이블에 수집 (로드) 합니다. [Azure Monitor 진단 로그](/azure/azure-monitor/platform/diagnostic-logs-overview) 는 Azure 리소스의 작동에 대 한 데이터를 제공 합니다. Azure 데이터 탐색기는 수집 성공 및 실패에 대 한 정보를 얻기 위해 진단 로그를 사용 합니다. 작업 로그를 Azure Storage, 이벤트 허브 또는 Log Analytics로 내보내 수집 상태를 모니터링할 수 있습니다. 추가 분석을 위해 Azure Storage 및 Azure Event Hub의 로그를 Azure 데이터 탐색기 클러스터의 테이블로 라우팅할 수 있습니다.
+Azure Data Explorer는 애플리케이션, 웹 사이트, IoT 디바이스 등으로부터 수집된 대규모 데이터 스트리밍에 대한 실시간 분석을 제공하는 속도가 빠른 완전 관리형 데이터 분석 서비스입니다. Azure Data Explorer를 사용하려면 먼저 클러스터를 만들고 이 클러스터에 데이터베이스를 하나 이상 만듭니다. 그런 다음 데이터베이스에 대한 쿼리를 실행할 수 있도록 데이터를 데이터베이스의 테이블에 수집 (로드) 합니다. [Azure Monitor 진단 로그](/azure/azure-monitor/platform/diagnostic-logs-overview) 는 Azure 리소스의 작동에 대한 데이터를 제공 합니다. Azure 데이터 탐색기는 수집 성공 및 실패에 대한 정보를 얻기 위해 진단 로그를 사용 합니다. 작업 로그를 Azure Storage, 이벤트 허브 또는 Log Analytics로 내보내 수집 상태를 모니터링할 수 있습니다. 추가 분석을 위해 Azure Storage 및 Azure Event Hub의 로그를 Azure 데이터 탐색기 클러스터의 테이블로 라우팅할 수 있습니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -27,11 +27,11 @@ Azure Data Explorer는 애플리케이션, 웹 사이트, IoT 디바이스 등�
 
 [Azure Portal](https://portal.azure.com/)에 로그인합니다.
 
-## <a name="set-up-diagnostic-logs-for-an-azure-data-explorer-cluster"></a>Azure 데이터 탐색기 클러스터에 대 한 진단 로그 설정
+## <a name="set-up-diagnostic-logs-for-an-azure-data-explorer-cluster"></a>Azure 데이터 탐색기 클러스터에 대한 진단 로그 설정
 
 진단 로그를 사용 하 여 다음 로그 데이터의 컬렉션을 구성할 수 있습니다.
-* 수집 작업 성공: 이러한 로그에 수집 작업을 성공적으로 완료 하는 방법에 대 한 정보가 있습니다.
-* 실패 한 수집 작업: 이러한 로그는 오류 정보를 포함 하 여 실패 한 수집 작업에 대 한 자세한 정보를 포함 합니다. 
+* 수집 작업 성공: 이러한 로그에 수집 작업을 성공적으로 완료 하는 방법에 대한 정보가 있습니다.
+* 실패 한 수집 작업: 이러한 로그는 오류 정보를 포함 하 여 실패 한 수집 작업에 대한 자세한 정보를 포함 합니다. 
 
 그런 다음 데이터는 사용자의 사양에 따라 저장소 계정에 보관, 이벤트 허브로 스트리밍 또는 Log Analytics으로 전송 됩니다.
 
@@ -60,7 +60,7 @@ Azure Data Explorer는 애플리케이션, 웹 사이트, IoT 디바이스 등�
 
 ## <a name="diagnostic-logs-schema"></a>진단 로그 스키마
 
-모든 [Azure Monitor 진단 로그는 일반적인 최상위 스키마를 공유](/azure/azure-monitor/platform/diagnostic-logs-schema)합니다. Azure 데이터 탐색기에는 고유한 이벤트에 대 한 고유한 속성이 있습니다. 모든 로그는 JSON 형식으로 저장 됩니다.
+모든 [Azure Monitor 진단 로그는 일반적인 최상위 스키마를 공유](/azure/azure-monitor/platform/diagnostic-logs-schema)합니다. Azure 데이터 탐색기에는 고유한 이벤트에 대한 고유한 속성이 있습니다. 모든 로그는 JSON 형식으로 저장 됩니다.
 
 ### <a name="ingestion-logs-schema"></a>수집 로그 스키마
 
@@ -72,8 +72,8 @@ Azure Data Explorer는 애플리케이션, 웹 사이트, IoT 디바이스 등�
 |resourceId         |Azure Resource Manager 리소스 ID
 |operationName      |작업 이름: ' MICROSOFT. KUSTO/클러스터/수집/작업 '
 |operationVersion   |스키마 버전: ' 1.0 ' 
-|category           |작업의 범주입니다. `SucceededIngestion` 또는 `FailedIngestion`입니다. [작업 성공](#successful-ingestion-operation-log) 또는 [실패 한 작업](#failed-ingestion-operation-log)에 대 한 속성이 다릅니다.
-|properties         |작업에 대 한 자세한 정보입니다.
+|category           |작업의 범주입니다. `SucceededIngestion` 또는 `FailedIngestion`입니다. [작업 성공](#successful-ingestion-operation-log) 또는 [실패 한 작업](#failed-ingestion-operation-log)에 대한 속성이 다릅니다.
+|properties         |작업에 대한 자세한 정보입니다.
 
 #### <a name="successful-ingestion-operation-log"></a>수집 작업 로그가 성공 했습니다.
 
@@ -150,7 +150,7 @@ Azure Data Explorer는 애플리케이션, 웹 사이트, IoT 디바이스 등�
 |ingestionSourceId  |수집 데이터 원본의 ID
 |ingestionSourcePath|수집 데이터 원본 또는 blob URI의 경로입니다.
 |rootActivityId     |활동 ID
-|자세히            |오류 및 오류 메시지에 대 한 자세한 설명
+|자세히            |오류 및 오류 메시지에 대한 자세한 설명
 |errorCode          |오류 코드 
 |failureStatus      |`Permanent` 또는 `Transient`입니다. 일시적인 오류를 다시 시도 하면 성공할 수 있습니다.
 |originatesFromUpdatePolicy|업데이트가 업데이트 정책에서 발생 하는 경우 True입니다.

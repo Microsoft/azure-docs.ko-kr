@@ -22,7 +22,7 @@ ms.locfileid: "76840284"
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Azure Active Directory B2C (Azure AD B2C)는 사용자 고유의 RESTful 서비스에 대 한 지원을 제공 합니다. Azure AD B2C는 입력 클레임 컬렉션의 RESTful 서비스로 데이터를 보내고 출력 클레임 컬렉션에 데이터를 다시 수신합니다. RESTful 서비스 통합을 사용하면 다음과 같은 작업을 수행할 수 있습니다.
+Azure Active Directory B2C (Azure AD B2C)는 사용자 고유의 RESTful 서비스에 대한 지원을 제공 합니다. Azure AD B2C는 입력 클레임 컬렉션의 RESTful 서비스로 데이터를 보내고 출력 클레임 컬렉션에 데이터를 다시 수신합니다. RESTful 서비스 통합을 사용하면 다음과 같은 작업을 수행할 수 있습니다.
 
 - **사용자 입력 데이터의 유효성 검사** - 잘못된 형식의 데이터가 Azure AD B2C에 저장되지 않도록 방지합니다. 사용자의 값이 유효하지 않으면 RESTful 서비스는 사용자에게 항목을 제공하도록 지시하는 오류 메시지를 반환합니다. 예를 들어 사용자가 제공한 전자 메일 주소가 고객 데이터베이스에서 종료되었는지 확인할 수 있습니다.
 - **입력 클레임 덮어쓰기** - 입력 클레임의 값 서식을 다시 지정할 수 있습니다. 예를 들어 사용자가 이름을 모두 소문자 또는 대문자로 입력한 경우 이름의 첫 번째 문자만을 대문자로 시작하도록 서식을 지정할 수 있습니다.
@@ -63,16 +63,16 @@ Azure Active Directory B2C (Azure AD B2C)는 사용자 고유의 RESTful 서비�
 
 ## <a name="send-a-json-payload"></a>JSON 페이로드 보내기
 
-REST API 기술 프로필을 사용 하면 복잡 한 JSON 페이로드를 끝점으로 보낼 수 있습니다.
+REST API 기술 프로필을 사용 하면 복잡 한 JSON 페이로드를 엔드포인트으로 보낼 수 있습니다.
 
 복잡 한 JSON 페이로드를 보내려면 다음을 수행 합니다.
 
 1. [Generatejson](json-transformations.md) 클레임 변환을 사용 하 여 json 페이로드를 빌드합니다.
 1. REST API 기술 프로필에서 다음을 수행 합니다.
-    1. `GenerateJson` 클레임 변환에 대 한 참조를 사용 하 여 입력 클레임 변환을 추가 합니다.
+    1. `GenerateJson` 클레임 변환에 대한 참조를 사용 하 여 입력 클레임 변환을 추가 합니다.
     1. 메타 데이터 `SendClaimsIn` 옵션을 `body`로 설정 합니다.
     1. `ClaimUsedForRequestPayload` 메타 데이터 옵션을 JSON 페이로드가 포함 된 클레임의 이름으로 설정 합니다.
-    1. 입력 클레임에서 JSON 페이로드를 포함 하는 입력 클레임에 대 한 참조를 추가 합니다.
+    1. 입력 클레임에서 JSON 페이로드를 포함 하는 입력 클레임에 대한 참조를 추가 합니다.
 
 다음 `TechnicalProfile` 예에서는 타사 전자 메일 서비스 (이 경우 SendGrid)를 사용 하 여 확인 전자 메일을 보냅니다.
 

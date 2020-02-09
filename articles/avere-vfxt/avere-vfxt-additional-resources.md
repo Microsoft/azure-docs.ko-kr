@@ -33,4 +33,4 @@ ms.locfileid: "76153771"
 
 ## <a name="vfxt-creation-and-management-documentation"></a>vFXT 만들기 및 관리 설명서
 
-Vfxt.py 사용에 대 한 전체 가이드 인 스크립트 기반 클라우드 클러스터 만들기 및 관리 유틸리티는 GitHub: [클라우드 클러스터 관리 vfxt.py](https://github.com/Azure/AvereSDK/blob/master/docs/README.md)를 참조 하세요.
+Vfxt.py 사용에 대한 전체 가이드 인 스크립트 기반 클라우드 클러스터 만들기 및 관리 유틸리티는 GitHub: [클라우드 클러스터 관리 vfxt.py](https://github.com/Azure/AvereSDK/blob/master/docs/README.md)를 참조 하세요.

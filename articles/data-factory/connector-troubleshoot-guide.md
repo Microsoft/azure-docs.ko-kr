@@ -17,7 +17,7 @@ ms.locfileid: "75778229"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Azure Data Factory 커넥터 문제 해결
 
-이 문서에서는 Azure Data Factory의 커넥터에 대 한 일반적인 문제 해결 방법을 살펴봅니다.
+이 문서에서는 Azure Data Factory의 커넥터에 대한 일반적인 문제 해결 방법을 살펴봅니다.
   
 
 ## <a name="azure-blob-storage"></a>Azure Blob Storage
@@ -95,7 +95,7 @@ ms.locfileid: "75778229"
 
 ### <a name="column-missing-in-column-mapping"></a>열 매핑의 열이 누락 되었습니다.
 
-- **증상**: 열 매핑에 대 한 Cosmos DB 스키마를 가져올 때 일부 열이 누락 되었습니다. 
+- **증상**: 열 매핑에 대한 Cosmos DB 스키마를 가져올 때 일부 열이 누락 되었습니다. 
 
 - **원인**: ADF는 처음 10 개의 Cosmos DB 문서에서 스키마를 유추 합니다. 일부 열/속성에 해당 문서에 값이 없는 경우 ADF에 의해 검색 되지 않으므로 표시 되지 않습니다.
 
@@ -170,7 +170,7 @@ ms.locfileid: "75778229"
     Response details: {"RemoteException":{"exception":"AccessControlException""message":"CREATE failed with error 0x83090aa2 (Forbidden. ACL verification failed. Either the resource does not exist or the user is not authorized to perform the requested operation.)....
     ```
 
-- **원인**: 사용 하는 서비스 주체 또는 관리 id에 특정 폴더/파일에 대 한 액세스 권한이 없기 때문일 수 있습니다.
+- **원인**: 사용 하는 서비스 주체 또는 관리 id에 특정 폴더/파일에 대한 액세스 권한이 없기 때문일 수 있습니다.
 
 - **해결**방법: 복사 해야 하는 모든 폴더와 하위 폴더에 해당 하는 사용 권한을 부여 합니다. [이 문서](connector-azure-data-lake-store.md#linked-service-properties)를 참조 하세요.
 
@@ -210,7 +210,7 @@ ms.locfileid: "75778229"
 - **원인**: 오류 메시지에 "SqlException"가 포함 되어 있으면 SQL Database 특정 작업이 실패 했음을 나타내는 오류를 throw 합니다.
 
 - **권장 사항**: SQL 오류가 명확 하지 않은 경우 데이터베이스를 최신 호환성 수준 ' 150 '으로 변경 하십시오. 최신 버전의 SQL 오류를 throw 할 수 있습니다. 자세한 문서: https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-ver15#backwardCompat 를 참조 하세요.
-        SQL 문제 해결에 대 한 자세한 내용은이 참조 문서에서 SQL 오류 코드를 기준으로 검색 하십시오. https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors. 추가 도움이 필요한 경우 Azure SQL 지원에 문의 하세요.
+        SQL 문제 해결에 대한 자세한 내용은이 참조 문서에서 SQL 오류 코드를 기준으로 검색 하십시오. https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors. 추가 도움이 필요한 경우 Azure SQL 지원에 문의 하세요.
 
 - **원인**: 오류 메시지에 "PdwManagedToNativeInteropException"가 포함 된 경우 일반적으로 원본 및 싱크 열 크기의 불일치로 인해 발생 합니다.
 
@@ -521,7 +521,7 @@ ms.locfileid: "75778229"
 
 - **원인**: 오류 메시지에 ' OutOfMemory '가 포함 되어 있으면 통합 런타임에는 파일을 처리할 수 있는 충분 한 리소스가 없습니다.
 
-- **권장 사항**: 통합 런타임에 대 한 동시 실행을 제한 합니다. 자체 호스팅 Integration Runtime의 경우 메모리가 8gb 보다 크거나 같은 강력한 컴퓨터로 확장 합니다.
+- **권장 사항**: 통합 런타임에 대한 동시 실행을 제한 합니다. 자체 호스팅 Integration Runtime의 경우 메모리가 8gb 보다 크거나 같은 강력한 컴퓨터로 확장 합니다.
 
 - **원인**: 오류 메시지에 ' NullPointerReference '가 포함 된 경우 일시적인 오류일 수 있습니다.
 
@@ -670,12 +670,12 @@ ms.locfileid: "75778229"
 
 ## <a name="next-steps"></a>다음 단계
 
-문제 해결에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
+문제 해결에 대한 자세한 내용은 다음 리소스를 참조 하세요.
 
 *  [Data Factory 블로그](https://azure.microsoft.com/blog/tag/azure-data-factory/)
 *  [Data Factory 기능 요청](https://feedback.azure.com/forums/270578-data-factory)
 *  [Azure 비디오](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
 *  [MSDN 포럼](https://social.msdn.microsoft.com/Forums/home?sort=relevancedesc&brandIgnore=True&searchTerm=data+factory)
-*  [Data Factory에 대 한 Stack Overflow 포럼](https://stackoverflow.com/questions/tagged/azure-data-factory)
-*  [Data Factory에 대 한 Twitter 정보](https://twitter.com/hashtag/DataFactory)
+*  [Data Factory에 대한 Stack Overflow 포럼](https://stackoverflow.com/questions/tagged/azure-data-factory)
+*  [Data Factory에 대한 Twitter 정보](https://twitter.com/hashtag/DataFactory)
             

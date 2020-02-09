@@ -21,9 +21,9 @@ Azure Functions를 사용 하 여 [소스 제어 통합](functions-deployment-te
 * [GitHub](https://github.com)
 * [Bitbucket](https://bitbucket.org/)
 
-Azure에서 함수에 대 한 배포 단위는 함수 앱입니다. 함수 앱의 모든 함수는 동시에 배포 됩니다. 연속 배포를 사용 하도록 설정한 후에는 Azure Portal의 함수 코드에 대 한 액세스가 다른 곳으로 설정 되어 있기 때문에 *읽기 전용* 으로 구성 됩니다.
+Azure에서 함수에 대한 배포 단위는 함수 앱입니다. 함수 앱의 모든 함수는 동시에 배포 됩니다. 연속 배포를 사용 하도록 설정한 후에는 Azure Portal의 함수 코드에 대한 액세스가 다른 곳으로 설정 되어 있기 때문에 *읽기 전용* 으로 구성 됩니다.
 
-## <a name="requirements-for-continuous-deployment"></a>연속 배포에 대 한 요구 사항
+## <a name="requirements-for-continuous-deployment"></a>연속 배포에 대한 요구 사항
 
 연속 배포를 성공적으로 수행 하려면 디렉터리 구조가 필요한 Azure Functions 기본 폴더 구조와 호환 되어야 합니다.
 
@@ -34,7 +34,7 @@ Azure에서 함수에 대 한 배포 단위는 함수 앱입니다. 함수 앱�
 
 ## <a name="credentials"></a>연속 배포 설정
 
-기존 함수 앱에 대 한 연속 배포를 구성 하려면 다음 단계를 완료 합니다. 이 단계에서는 GitHub 리포지토리와의 통합을 보여 주지만, Azure Repos 또는 다른 소스 코드 리포지토리에 대해 비슷한 단계가 적용 됩니다.
+기존 함수 앱에 대한 연속 배포를 구성 하려면 다음 단계를 완료 합니다. 이 단계에서는 GitHub 리포지토리와의 통합을 보여 주지만, Azure Repos 또는 다른 소스 코드 리포지토리에 대해 비슷한 단계가 적용 됩니다.
 
 1. [Azure Portal](https://portal.azure.com)의 함수 앱에서 **플랫폼 기능** > **Deployment Center**를 선택 합니다.
 
@@ -57,7 +57,7 @@ Azure에서 함수에 대 한 배포 단위는 함수 앱입니다. 함수 앱�
 
     ![빌드 공급자 선택](./media/functions-continuous-deployment/build.png)
 
-5. 지정한 원본 제어 옵션과 관련 된 정보를 구성 합니다. GitHub의 경우 **조직**, **리포지토리**및 **분기**에 대 한 값을 입력 하거나 선택 해야 합니다. 값은 코드의 위치를 기반으로 합니다. 그런 다음, **계속**을 선택합니다.
+5. 지정한 원본 제어 옵션과 관련 된 정보를 구성 합니다. GitHub의 경우 **조직**, **리포지토리**및 **분기**에 대한 값을 입력 하거나 선택 해야 합니다. 값은 코드의 위치를 기반으로 합니다. 그런 다음, **계속**을 선택합니다.
 
     ![GitHub 구성](./media/functions-continuous-deployment/github-specifics.png)
 
@@ -65,7 +65,7 @@ Azure에서 함수에 대 한 배포 단위는 함수 앱입니다. 함수 앱�
 
     ![요약](./media/functions-continuous-deployment/summary.png)
 
-프로세스가 완료 되 면 지정 된 원본의 모든 코드가 앱에 배포 됩니다. 이 시점에서 배포 원본의 변경 내용은 Azure의 함수 앱에 대 한 변경 내용 배포를 트리거합니다.
+프로세스가 완료 되 면 지정 된 원본의 모든 코드가 앱에 배포 됩니다. 이 시점에서 배포 원본의 변경 내용은 Azure의 함수 앱에 대한 변경 내용 배포를 트리거합니다.
 
 ## <a name="deployment-scenarios"></a>배포 시나리오
 

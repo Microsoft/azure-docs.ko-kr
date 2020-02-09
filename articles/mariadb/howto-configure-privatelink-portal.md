@@ -15,7 +15,7 @@ ms.locfileid: "76280835"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mariadb-preview-using-portal"></a>포털을 사용 하 여 Azure Database for MariaDB (미리 보기)에 대 한 개인 링크 만들기 및 관리
 
-프라이빗 엔드포인트는 Azure에서 프라이빗 링크를 만드는 데 사용되는 기본 구성 요소입니다. 프라이빗 엔드포인트는 VM(Virtual Machines) 같은 Azure 리소스가 프라이빗 링크 리소스와 비공개로 통신할 수 있게 해줍니다.  이 문서에서는 azure 개인 끝점을 사용 하 여 Azure Virtual Network 및 Azure Database for MariaDB 서버에서 VM을 만드는 Azure Portal를 사용 하는 방법을 알아봅니다.
+프라이빗 엔드포인트는 Azure에서 프라이빗 링크를 만드는 데 사용되는 기본 구성 요소입니다. 프라이빗 엔드포인트는 VM(Virtual Machines) 같은 Azure 리소스가 프라이빗 링크 리소스와 비공개로 통신할 수 있게 해줍니다.  이 문서에서는 azure 개인 엔드포인트을 사용 하 여 Azure Virtual Network 및 Azure Database for MariaDB 서버에서 VM을 만드는 Azure Portal를 사용 하는 방법을 알아봅니다.
 
 Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 
@@ -124,7 +124,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 ## <a name="create-a-private-endpoint"></a>프라이빗 엔드포인트 만들기
 
-이 섹션에서는이 끝점에 대 한 개인 끝점을 만듭니다. 
+이 섹션에서는이 엔드포인트에 대 한 개인 엔드포인트을 만듭니다. 
 
 1. Azure Portal 화면의 왼쪽 위에서 **리소스 만들기** > **네트워킹** > **Private Link 센터(미리 보기)** 를 선택합니다.
 2. **Private Link 센터 - 개요**의 **서비스에 대한 프라이빗 연결 설정** 옵션에서 **시작**을 선택합니다.

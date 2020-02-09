@@ -78,8 +78,8 @@ ms.locfileid: "74975145"
 - PITR 기능을 사용 하는 경우 새 서버는 기반으로 하는 서버와 동일한 구성으로 만들어집니다.
 - 삭제 된 서버 복원은 지원 되지 않습니다.
 
-### <a name="vnet-service-endpoints"></a>VNet 서비스 끝점
-- VNet 서비스 끝점에 대 한 지원은 범용 및 메모리 액세스에 최적화 된 서버에만 해당 됩니다.
+### <a name="vnet-service-endpoints"></a>VNet 서비스 엔드포인트
+- VNet 서비스 엔드포인트에 대 한 지원은 범용 및 메모리 액세스에 최적화 된 서버에만 해당 됩니다.
 
 ### <a name="storage-size"></a>저장소 크기
 - 가격 계층별 저장소 크기 제한에 대해서는 [가격 책정 계층](concepts-pricing-tiers.md)을 참조하세요.

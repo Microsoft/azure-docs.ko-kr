@@ -52,7 +52,7 @@ MSAL (Microsoft 인증 라이브러리)의 예외는 최종 사용자에 게 표
 | --- | --- | --- |
 | [MsalUiRequiredException](/dotnet/api/microsoft.identity.client.msaluirequiredexception?view=azure-dotnet) | AADSTS65001: 사용자 또는 관리자가 ID가 ' {appName} ' 인 ' {appName} ' (이) 라는 응용 프로그램을 사용 하도록 동의한 하지 않았습니다. 이 사용자 및 리소스에 대한 대화형 권한 부여 요청을 보냅니다.| 먼저 사용자 동의를 받아야 합니다. 웹 UI가 없는 .NET Core를 사용 하지 않는 경우 (한 번만)를 호출 `AcquireTokeninteractive`합니다. .NET core를 사용 하 고 있거나 `AcquireTokenInteractive`하지 않으려는 경우, 사용자는 URL로 이동 하 여 동의를 제공할 수 있습니다. https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id={clientId}&response_type=code&scope=user.read. `AcquireTokenInteractive`를 호출 하려면: `app.AcquireTokenInteractive(scopes).WithAccount(account).WithClaims(ex.Claims).ExecuteAsync();`|
 | [MsalUiRequiredException](/dotnet/api/microsoft.identity.client.msaluirequiredexception?view=azure-dotnet) | AADSTS50079: 사용자는 MFA (multi-factor authentication)를 사용 해야 합니다.| 완화 방법은 없습니다. MFA에 대해 MFA를 구성 하 고 AAD (Azure Active Directory)에서 적용 하기로 결정 한 경우 `AcquireTokenInteractive` 또는 `AcquireTokenByDeviceCode`와 같은 대화형 흐름으로 대체 해야 합니다.|
-| [MsalServiceException](/dotnet/api/microsoft.identity.client.msalserviceexception?view=azure-dotnet) |AADSTS90010: grant 형식은 */common* 또는 */소비자* 끝점에서 지원 되지 않습니다. */organizations* 또는 테넌트 특정 엔드포인트를 사용합니다. */common*을 사용했습니다.| Azure AD의 메시지에서 설명한 대로 인증 기관에 테넌트 또는 */organizations*가 있어야 합니다.|
+| [MsalServiceException](/dotnet/api/microsoft.identity.client.msalserviceexception?view=azure-dotnet) |AADSTS90010: grant 형식은 */common* 또는 */소비자* 엔드포인트에서 지원 되지 않습니다. */organizations* 또는 테넌트 특정 엔드포인트를 사용합니다. */common*을 사용했습니다.| Azure AD의 메시지에서 설명한 대로 인증 기관에 테넌트 또는 */organizations*가 있어야 합니다.|
 | [MsalServiceException](/dotnet/api/microsoft.identity.client.msalserviceexception?view=azure-dotnet) | AADSTS70002: 요청 본문은 `client_secret or client_assertion`매개 변수를 포함 해야 합니다.| 응용 프로그램이 Azure AD에서 공용 클라이언트 응용 프로그램으로 등록 되지 않은 경우이 예외가 throw 될 수 있습니다. Azure Portal에서 응용 프로그램에 대 한 매니페스트를 편집 하 고 `allowPublicClient`을 `true`로 설정 합니다. |
 | [MsalClientException](/dotnet/api/microsoft.identity.client.msalclientexception?view=azure-dotnet)| `unknown_user Message`: 로그인 한 사용자를 확인할 수 없습니다.| 라이브러리가 현재 Windows 로그인 사용자를 쿼리하지 못했습니다. 또는이 사용자가 AD 또는 AAD에 연결 되지 않았습니다 (작업에 참가 한 사용자가 지원 되지 않음). 완화 1: UWP에서 응용 프로그램에 엔터프라이즈 인증, 개인 네트워크 (클라이언트 및 서버), 사용자 계정 정보 등의 기능이 있는지 확인 합니다. 완화 2: 사용자 이름 (예: john@contoso.com)을 가져오고 사용자 이름에 사용 되는 `AcquireTokenByIntegratedWindowsAuth` 양식을 사용 하는 사용자 고유의 논리를 구현 합니다.|
 | [MsalClientException](/dotnet/api/microsoft.identity.client.msalclientexception?view=azure-dotnet)|integrated_windows_auth_not_supported_managed_user| 이 메서드는 AD(Active Directory)에서 공개되는 프로토콜을 사용합니다. 사용자("관리" 사용자)를 AD 지원 없이 Azure Active Directory에서 만든 경우 이 메서드는 실패합니다. AD에서 만들어지고 AAD에서 지원하는 사용자("페더레이션" 사용자)는 이 비대화형 인증 메서드를 활용할 수 있습니다. 완화 방법: 대화형 인증을 사용 합니다.|
@@ -61,7 +61,7 @@ MSAL (Microsoft 인증 라이브러리)의 예외는 최종 사용자에 게 표
 
 `AcquireTokenSilent()`를 호출할 때 MSAL.NET에서 반환 되는 일반적인 상태 코드 중 하나는 `MsalError.InvalidGrantError`입니다. 이 상태 코드는 응용 프로그램이 인증 라이브러리를 다시 호출 하지만 대화형 모드 (공용 클라이언트 응용 프로그램의 경우 AcquireTokenInteractive 또는 AcquireTokenByDeviceCodeFlow)에서 웹 앱에 대 한 문제를 해결 하는 것을 의미 합니다. 인증 토큰을 발급 하려면 추가 사용자 조작이 필요 하기 때문입니다.
 
-`AcquireTokenSilent` 실패 하는 대부분의 경우는 토큰 캐시가 요청과 일치 하는 토큰을 포함 하지 않기 때문입니다. 액세스 토큰은 1 시간 후에 만료 되 고 `AcquireTokenSilent`는 새로 고침 토큰을 기반으로 새 토큰을 인출 하려고 합니다. 즉, OAuth2 용어로 "새로 고침 토큰 ' 흐름입니다. 이 흐름은 여러 가지 이유로 실패할 수도 있습니다. 예를 들어 테 넌 트 관리자가 보다 엄격한 로그인 정책을 구성 하는 경우입니다. 
+`AcquireTokenSilent` 실패 하는 대부분의 경우는 토큰 캐시가 요청과 일치 하는 토큰을 포함 하지 않기 때문입니다. 액세스 토큰은 1 시간 후에 만료 되 고 `AcquireTokenSilent`는 새로 고침 토큰을 기반으로 새 토큰을 인출 하려고 합니다. 즉, OAuth2 용어로 "새로 고침 토큰 ' 흐름입니다. 이 흐름은 여러 가지 이유로 실패할 수도 있습니다. 예를 들어 테넌트 관리자가 보다 엄격한 로그인 정책을 구성 하는 경우입니다. 
 
 상호 작용은 사용자가 작업을 수행 하는 것을 목표로 합니다. 이러한 조건 중 일부는 한 번의 클릭으로 사용 약관에 동의 하는 것과 같이 사용자가 쉽게 해결할 수 있으며 일부는 현재 구성으로 해결할 수 없습니다 (예: 해당 컴퓨터에서 특정 회사 네트워크에 연결 해야 하는 경우). 일부는 사용자가 Multi-factor authentication을 설정 하거나 장치에 Microsoft Authenticator를 설치 하는 데 도움이 됩니다.
 
@@ -258,7 +258,7 @@ Java 용 MSAL에는 `MsalClientException`, `MsalServiceException`및 `MsalIntera
 
 `AcquireTokenSilently()`를 호출할 때 Java 용 MSAL에서 반환 되는 일반적인 상태 코드 중 하나는 `InvalidGrantError`입니다. 즉, 인증 토큰을 발급 하려면 추가 사용자 상호 작용이 필요 합니다. 응용 프로그램은 인증 라이브러리를 다시 호출 하지만 공용 클라이언트 응용 프로그램에 대 한 `AuthorizationCodeParameters` 또는 `DeviceCodeParameters`를 전송 하 여 대화형 모드에서 호출 해야 합니다.
 
-`AcquireTokenSilently` 실패 하면 대부분 토큰 캐시에는 요청과 일치 하는 토큰이 없기 때문입니다. 액세스 토큰은 1 시간 후에 만료 되 고 `AcquireTokenSilently`는 새로 고침 토큰을 기반으로 새 토큰을 가져오려고 시도 합니다. OAuth2 용어로 새로 고침 토큰 흐름입니다. 이 흐름은 테 넌 트 관리자가 보다 엄격한 로그인 정책을 구성 하는 경우와 같은 다양 한 이유로 실패할 수도 있습니다.
+`AcquireTokenSilently` 실패 하면 대부분 토큰 캐시에는 요청과 일치 하는 토큰이 없기 때문입니다. 액세스 토큰은 1 시간 후에 만료 되 고 `AcquireTokenSilently`는 새로 고침 토큰을 기반으로 새 토큰을 가져오려고 시도 합니다. OAuth2 용어로 새로 고침 토큰 흐름입니다. 이 흐름은 테넌트 관리자가 보다 엄격한 로그인 정책을 구성 하는 경우와 같은 다양 한 이유로 실패할 수도 있습니다.
 
 이 오류가 발생 하는 일부 조건은 사용자가 쉽게 해결할 수 있습니다. 예를 들어 사용 약관에 동의 해야 할 수 있습니다. 또는 컴퓨터를 특정 회사 네트워크에 연결 해야 하기 때문에 현재 구성으로 요청을 수행할 수 없는 것일 수도 있습니다.
 

@@ -79,7 +79,7 @@ APNS에 대 한 인증서 자격 증명을 사용 하 여 마이그레이션한 
 * **팀 ID**: "접두사" 또는 "앱 접두사" 라고도 합니다. Apple 개발자 포털의 조직에 대 한 식별자입니다. 예를 들어 `S4V3D7CHJR`합니다.
 * **번들 id**: "앱 id" 라고도 합니다. 응용 프로그램에 대 한 번들 식별자입니다. 예를 들어 `com.microsoft.nhubsample2019`합니다. 많은 앱에 하나의 키를 사용할 수 있습니다. 이 값은 알림을 보낼 때 `apns-topic` HTTP 헤더에 매핑되고 특정 응용 프로그램을 대상으로 지정 하는 데 사용 됩니다.
 * **Token**: "키" 또는 "개인 키" 라고도 합니다. 이는 Apple 개발자 포털에서 생성 된 p8 파일에서 가져옵니다. 키에 APNS를 사용 하도록 설정 되어 있어야 합니다 (키를 생성할 때 Apple 개발자 포털에서 선택 됨). NH 포털/API에 값을 제공 하는 경우 값은 PEM 헤더/바닥글을 제거 해야 합니다.
-* **끝점**: Notification Hubs 포털 블레이드의 토글 이며 API의 문자열 필드입니다. 유효한 값은 `https://api.push.apple.com` 또는 `https://api.sandbox.push.apple.com`입니다. Notification Hubs는 프로덕션 또는 샌드박스 환경에 대해이 값을 사용 하 여 알림을 보냅니다. 이는 앱의 `aps-environment` 자격 조건과 일치 해야 합니다. 그렇지 않으면 생성 된 APNS 장치 토큰이 환경과 일치 하지 않고 알림이 전송 되지 않습니다.
+* **엔드포인트**: Notification Hubs 포털 블레이드의 토글 이며 API의 문자열 필드입니다. 유효한 값은 `https://api.push.apple.com` 또는 `https://api.sandbox.push.apple.com`입니다. Notification Hubs는 프로덕션 또는 샌드박스 환경에 대해이 값을 사용 하 여 알림을 보냅니다. 이는 앱의 `aps-environment` 자격 조건과 일치 해야 합니다. 그렇지 않으면 생성 된 APNS 장치 토큰이 환경과 일치 하지 않고 알림이 전송 되지 않습니다.
 
 올바른 사용법을 보여 주는 코드 샘플은 다음과 같습니다.
 

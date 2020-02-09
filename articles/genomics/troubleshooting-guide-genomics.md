@@ -1,7 +1,7 @@
 ---
 title: 문제 해결 가이드
 titleSuffix: Microsoft Genomics
-description: 오류 메시지 및 문제 해결 방법을 비롯 하 여 Microsoft Genomics 사용에 대 한 문제 해결 전략에 대해 알아봅니다.
+description: 오류 메시지 및 문제 해결 방법을 비롯 하 여 Microsoft Genomics 사용에 대한 문제 해결 전략에 대해 알아봅니다.
 keywords: 문제 해결, 오류, 디버깅
 services: genomics
 author: ruchir

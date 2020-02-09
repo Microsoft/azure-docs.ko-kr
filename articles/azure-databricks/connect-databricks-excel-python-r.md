@@ -86,7 +86,7 @@ DSN(데이터 원본 이름)은 특정 데이터 원본에 대한 정보를 포�
 
 3. 자격 증명을 묻는 메시지가 표시되면 사용자 이름에 대한 **토큰**을 입력합니다. 암호의 경우 Databricks 작업 영역에서 검색한 토큰 값을 제공합니다.
 
-    ![Databricks에 대 한 자격 증명 제공](./media/connect-databricks-excel-python-r/excel-databricks-token.png "DSN 선택")
+    ![Databricks에 대한 자격 증명 제공](./media/connect-databricks-excel-python-r/excel-databricks-token.png "DSN 선택")
 
 4. 탐색기 창에서 Excel에 로드하려는 테이블을 Databricks로 선택한 다음, **로드**를 클릭합니다. 
 

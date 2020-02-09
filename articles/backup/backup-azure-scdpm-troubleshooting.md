@@ -1,6 +1,6 @@
 ---
 title: System Center Data Protection Manager 문제 해결
-description: 이 문서에서는 System Center Data Protection Manager를 사용 하는 동안 발생할 수 있는 문제에 대 한 해결 방법을 알아봅니다.
+description: 이 문서에서는 System Center Data Protection Manager를 사용 하는 동안 발생할 수 있는 문제에 대한 해결 방법을 알아봅니다.
 ms.topic: troubleshooting
 ms.date: 01/30/2019
 ms.openlocfilehash: bcb30fa7eb3e05099761fc751b09a9fb16134e34

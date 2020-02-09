@@ -18,9 +18,9 @@ Azure Functions 런타임은 원하는 위치와 방법을 호스팅할 수 있�
 
 ## <a name="how-kubernetes-based-functions-work"></a>Kubernetes 기반 함수의 작동 방식
 
-Azure Functions 서비스는 런타임 및 크기 조정 컨트롤러의 두 가지 주요 구성 요소로 구성 됩니다.  함수 런타임은 코드를 실행 하 고 실행 합니다.  런타임에는 함수 실행을 트리거, 로그 및 관리 하는 방법에 대 한 논리가 포함 되어 있습니다.  Azure Functions 런타임은 *어디서 나*실행할 수 있습니다.  다른 구성 요소는 크기 조정 컨트롤러입니다.  크기 조정 컨트롤러는 함수를 대상으로 하는 이벤트의 비율을 모니터링 하 고 앱을 실행 하는 인스턴스 수를 사전에 확장 합니다.  자세한 내용은 [Azure Functions 크기 조정 및 호스팅](functions-scale.md)을 참조하세요.
+Azure Functions 서비스는 런타임 및 크기 조정 컨트롤러의 두 가지 주요 구성 요소로 구성 됩니다.  함수 런타임은 코드를 실행 하 고 실행 합니다.  런타임에는 함수 실행을 트리거, 로그 및 관리 하는 방법에 대한 논리가 포함 되어 있습니다.  Azure Functions 런타임은 *어디서 나*실행할 수 있습니다.  다른 구성 요소는 크기 조정 컨트롤러입니다.  크기 조정 컨트롤러는 함수를 대상으로 하는 이벤트의 비율을 모니터링 하 고 앱을 실행 하는 인스턴스 수를 사전에 확장 합니다.  자세한 내용은 [Azure Functions 크기 조정 및 호스팅](functions-scale.md)을 참조하세요.
 
-Kubernetes 기반 함수는 KEDA를 통해 이벤트 기반 크기 조정을 사용 하 여 [Docker 컨테이너](functions-create-function-linux-custom-image.md) 에서 함수 런타임을 제공 합니다.  KEDA는 이벤트가 발생 하지 않는 경우 0 개 인스턴스 및 최대 *n* 개의 인스턴스로 확장할 수 있습니다. Kubernetes autoscaler (수평 Pod Autoscaler)에 대 한 사용자 지정 메트릭을 노출 하 여이를 수행 합니다.  KEDA에서 함수 컨테이너를 사용 하면 Kubernetes 클러스터에서 서버를 사용 하지 않는 함수 기능을 복제할 수 있습니다.  서버 리스 인프라의 [AKS (Azure Kubernetes Services) 가상 노드](../aks/virtual-nodes-cli.md) 기능을 사용 하 여 이러한 함수를 배포할 수도 있습니다.
+Kubernetes 기반 함수는 KEDA를 통해 이벤트 기반 크기 조정을 사용 하 여 [Docker 컨테이너](functions-create-function-linux-custom-image.md) 에서 함수 런타임을 제공 합니다.  KEDA는 이벤트가 발생 하지 않는 경우 0 개 인스턴스 및 최대 *n* 개의 인스턴스로 확장할 수 있습니다. Kubernetes autoscaler (수평 Pod Autoscaler)에 대한 사용자 지정 메트릭을 노출 하 여이를 수행 합니다.  KEDA에서 함수 컨테이너를 사용 하면 Kubernetes 클러스터에서 서버를 사용 하지 않는 함수 기능을 복제할 수 있습니다.  서버 리스 인프라의 [AKS (Azure Kubernetes Services) 가상 노드](../aks/virtual-nodes-cli.md) 기능을 사용 하 여 이러한 함수를 배포할 수도 있습니다.
 
 ## <a name="managing-keda-and-functions-in-kubernetes"></a>Kubernetes에서 KEDA 및 함수 관리
 

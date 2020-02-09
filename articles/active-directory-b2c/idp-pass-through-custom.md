@@ -1,7 +1,7 @@
 ---
 title: 사용자 지정 정책을 통해 액세스 토큰을 앱에 전달
 titleSuffix: Azure AD B2C
-description: Azure Active Directory B2C에서 응용 프로그램에 대 한 사용자 지정 정책을 통해 OAuth 2.0 id 공급자의 액세스 토큰을 클레임으로 전달 하는 방법에 대해 알아봅니다.
+description: Azure Active Directory B2C에서 응용 프로그램에 대한 사용자 지정 정책을 통해 OAuth 2.0 id 공급자의 액세스 토큰을 클레임으로 전달 하는 방법에 대해 알아봅니다.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -85,7 +85,7 @@ Azure AD B2C에서 애플리케이션을 테스트하는 경우 포함된 클레
 ### <a name="upload-the-files"></a>파일 업로드
 
 1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
-2. 상단 메뉴에서 **디렉터리 + 구독** 필터를 클릭 하 고 테 넌 트가 포함 된 디렉터리를 선택 하 여 Azure AD B2C 테 넌 트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다.
+2. 상단 메뉴에서 **디렉터리 + 구독** 필터를 클릭 하 고 테넌트가 포함 된 디렉터리를 선택 하 여 Azure AD B2C 테넌트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다.
 3. Azure Portal의 왼쪽 상단 모서리에서 **모든 서비스**를 선택하고 **Azure AD B2C**를 검색하여 선택합니다.
 4. **ID 경험 프레임워크**를 선택합니다.
 5. 사용자 지정 정책 페이지에서 **정책 업로드**를 클릭합니다.
@@ -105,4 +105,4 @@ Azure AD B2C에서 애플리케이션을 테스트하는 경우 포함된 클레
 
 ## <a name="next-steps"></a>다음 단계
 
-토큰에 대 한 자세한 내용은 [Azure Active Directory B2C 토큰 참조를 참조](tokens-overview.md)하세요.
+토큰에 대한 자세한 내용은 [Azure Active Directory B2C 토큰 참조를 참조](tokens-overview.md)하세요.

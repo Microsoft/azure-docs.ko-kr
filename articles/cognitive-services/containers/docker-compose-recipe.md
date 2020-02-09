@@ -172,13 +172,13 @@ IMAGE ID            REPOSITORY                                                  
 
 ### <a name="test-the-recognize-text-container"></a>텍스트 인식 컨테이너 테스트
 
-호스트 컴퓨터에서 브라우저를 열고 docker에서 지정 된 포트 (예: http://localhost:5021/swagger/index.html)를 사용 하 여 **localhost** 로 이동 합니다. API에서 "사용해 보세요." 기능을 사용 하 여 텍스트 인식 끝점을 테스트할 수 있습니다.
+호스트 컴퓨터에서 브라우저를 열고 docker에서 지정 된 포트 (예: http://localhost:5021/swagger/index.html)를 사용 하 여 **localhost** 로 이동 합니다. API에서 "사용해 보세요." 기능을 사용 하 여 텍스트 인식 엔드포인트을 테스트할 수 있습니다.
 
 ![텍스트 인식 컨테이너](media/recognize-text-swagger-page.png)
 
 ### <a name="test-the-form-recognizer-container"></a>양식 인식기 컨테이너 테스트
 
-호스트 컴퓨터에서 브라우저를 열고 docker에서 지정 된 포트 (예: http://localhost:5010/swagger/index.html)를 사용 하 여 **localhost** 로 이동 합니다. API에서 "사용해 보세요." 기능을 사용 하 여 폼 인식기 끝점을 테스트할 수 있습니다.
+호스트 컴퓨터에서 브라우저를 열고 docker에서 지정 된 포트 (예: http://localhost:5010/swagger/index.html)를 사용 하 여 **localhost** 로 이동 합니다. API에서 "사용해 보세요." 기능을 사용 하 여 폼 인식기 엔드포인트을 테스트할 수 있습니다.
 
 ![양식 인식기 컨테이너](media/form-recognizer-swagger-page.png)
 

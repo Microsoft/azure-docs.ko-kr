@@ -27,7 +27,7 @@ Azure Logic Apps은 Azure Storage를 사용 하 여 [미사용 데이터](../sto
 
 * 이후에는 *ISE를 만들 때만*고객이 관리 하는 키를 지정할 수 있습니다. ISE를 만든 후에는이 키를 사용 하지 않도록 설정할 수 없습니다. 현재 ISE에 대 한 고객 관리 키 회전에 대 한 지원이 없습니다.
 
-* 고객 관리 키를 지원 하려면 ISE에서 [시스템 할당 관리 id](../active-directory/managed-identities-azure-resources/overview.md#how-does-the-managed-identities-for-azure-resources-work) 를 사용 하도록 설정 해야 합니다. 이 id를 사용 하면 ISE가 다른 Azure Active Directory (Azure AD) 테 넌 트의 리소스에 대 한 액세스를 인증 하 여 자격 증명으로 로그인 할 필요가 없습니다.
+* 고객 관리 키를 지원 하려면 ISE에서 [시스템 할당 관리 id](../active-directory/managed-identities-azure-resources/overview.md#how-does-the-managed-identities-for-azure-resources-work) 를 사용 하도록 설정 해야 합니다. 이 id를 사용 하면 ISE가 다른 Azure Active Directory (Azure AD) 테넌트의 리소스에 대 한 액세스를 인증 하 여 자격 증명으로 로그인 할 필요가 없습니다.
 
 * 현재, 고객이 관리 하는 키를 지원 하 고 시스템 할당 id를 사용 하도록 설정 하는 ISE를 만들려면 HTTPS PUT 요청을 사용 하 여 Logic Apps REST API를 호출 해야 합니다.
 

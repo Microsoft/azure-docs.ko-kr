@@ -22,7 +22,7 @@ ms.locfileid: "76840386"
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Azure Active Directory B2C (Azure AD B2C)는 [OAuth 1.0 프로토콜](https://tools.ietf.org/html/rfc5849) id 공급자에 대 한 지원을 제공 합니다. 이 문서에서는 이 표준 프로토콜을 지원하는 클레임 공급자와 상호 작용하기 위한 기술 프로필에 대해 구체적으로 설명합니다. OAuth1 기술 프로필을 사용 하 여 Twitter와 같은 OAuth1 기반 id 공급자와 페더레이션 할 수 있습니다. Id 공급자와의 페더레이션을 통해 사용자는 기존 소셜 또는 엔터프라이즈 id를 사용 하 여 로그인 할 수 있습니다.
+Azure Active Directory B2C (Azure AD B2C)는 [OAuth 1.0 프로토콜](https://tools.ietf.org/html/rfc5849) id 공급자에 대한 지원을 제공 합니다. 이 문서에서는 이 표준 프로토콜을 지원하는 클레임 공급자와 상호 작용하기 위한 기술 프로필에 대해 구체적으로 설명합니다. OAuth1 기술 프로필을 사용 하 여 Twitter와 같은 OAuth1 기반 id 공급자와 페더레이션 할 수 있습니다. Id 공급자와의 페더레이션을 통해 사용자는 기존 소셜 또는 엔터프라이즈 id를 사용 하 여 로그인 할 수 있습니다.
 
 ## <a name="protocol"></a>프로토콜
 
@@ -88,7 +88,7 @@ Azure Active Directory B2C (Azure AD B2C)는 [OAuth 1.0 프로토콜](https://to
 
 ## <a name="redirect-uri"></a>리디렉션 URI
 
-ID 공급자의 리디렉션 URL을 구성할 때 `https://login.microsoftonline.com/te/tenant/policyId/oauth1/authresp`를 입력합니다. **tenant**를 테넌트의 이름(예: contosob2c.onmicrosoft.com)으로 바꾸고 **policyId**를 정책 식별자(예: b2c_1_policy)로 바꿔야 합니다. 리디렉션 URI는 모두 소문자여야 합니다. Id 공급자 로그인을 사용 하는 모든 정책에 대 한 리디렉션 URL을 추가 합니다.
+ID 공급자의 리디렉션 URL을 구성할 때 `https://login.microsoftonline.com/te/tenant/policyId/oauth1/authresp`를 입력합니다. **tenant**를 테넌트의 이름(예: contosob2c.onmicrosoft.com)으로 바꾸고 **policyId**를 정책 식별자(예: b2c_1_policy)로 바꿔야 합니다. 리디렉션 URI는 모두 소문자여야 합니다. Id 공급자 로그인을 사용 하는 모든 정책에 대한 리디렉션 URL을 추가 합니다.
 
 **login.microsoftonline.com** 대신 **b2clogin.com** 도메인을 사용하는 경우 login.microsoftonline.com 대신 b2clogin.com을 사용해야 합니다.
 

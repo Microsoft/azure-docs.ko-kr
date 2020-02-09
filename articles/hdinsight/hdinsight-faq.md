@@ -155,7 +155,7 @@ Hive metastore는 Hive 서버에서 사용 하는 데이터 원본에 대 한 �
 
 - [네트워크 트래픽 제어](https://docs.microsoft.com/azure/hdinsight/hdinsight-plan-virtual-network-deployment#networktraffic)
 
-- [개인 끝점을 사용 하 여 가상 네트워크에서 HDInsight 클러스터에 들어오는 트래픽 보안](https://azure.microsoft.com/blog/secure-incoming-traffic-to-hdinsight-clusters-in-a-vnet-with-private-endpoint/)
+- [개인 엔드포인트을 사용 하 여 가상 네트워크에서 HDInsight 클러스터에 들어오는 트래픽 보안](https://azure.microsoft.com/blog/secure-incoming-traffic-to-hdinsight-clusters-in-a-vnet-with-private-endpoint/)
 
 - [HDInsight 관리 IP 주소](https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses)
 
@@ -165,7 +165,7 @@ Hive metastore는 Hive 서버에서 사용 하는 데이터 원본에 대 한 �
 
 - 에 지 노드: [HDInsight의 Apache Hadoop 클러스터에서 빈에 지 노드 사용](hdinsight-apps-use-edge-node.md)에 설명 된 대로 클러스터에 다른에 지 노드를 추가할 수 있습니다.
 
-- 독립 실행형 노드: 독립 실행형 가상 컴퓨터를 동일한 서브넷에 추가 하 고 개인 끝점 `https://<CLUSTERNAME>-int.azurehdinsight.net`를 사용 하 여 해당 가상 컴퓨터에서 클러스터에 액세스할 수 있습니다. 자세한 내용은 [네트워크 트래픽 제어](hdinsight-plan-virtual-network-deployment.md#networktraffic)를 참조 하세요.
+- 독립 실행형 노드: 독립 실행형 가상 컴퓨터를 동일한 서브넷에 추가 하 고 개인 엔드포인트 `https://<CLUSTERNAME>-int.azurehdinsight.net`를 사용 하 여 해당 가상 컴퓨터에서 클러스터에 액세스할 수 있습니다. 자세한 내용은 [네트워크 트래픽 제어](hdinsight-plan-virtual-network-deployment.md#networktraffic)를 참조 하세요.
 
 ### <a name="should-i-store-data-on-the-local-disk-of-an-edge-node"></a>에 지 노드의 로컬 디스크에 데이터를 저장 해야 하나요?
 
@@ -194,7 +194,7 @@ ktutil: wkt <username>.keytab
 ktutil: q
 ```
 
-### <a name="can-i-use-an-existing-azure-active-directory-tenant-to-create-an-hdinsight-cluster-that-has-the-esp"></a>기존 Azure Active Directory 테 넌 트를 사용 하 여 ESP를 포함 하는 HDInsight 클러스터를 만들 수 있나요?
+### <a name="can-i-use-an-existing-azure-active-directory-tenant-to-create-an-hdinsight-cluster-that-has-the-esp"></a>기존 Azure Active Directory 테넌트를 사용 하 여 ESP를 포함 하는 HDInsight 클러스터를 만들 수 있나요?
 
 ESP를 사용 하 여 HDInsight 클러스터를 만들려면 먼저 Azure Active Directory Domain Services (Azure AD DS)를 사용 하도록 설정 해야 합니다. 오픈 소스 Hadoop은 인증을 위해 Kerberos를 사용 합니다 (OAuth와 반대).
 
@@ -306,7 +306,7 @@ Azure Storage 탐색기를 사용 하 여 사용자의 보안 그룹에 데이�
 
 ### <a name="what-are-the-rest-api-calls-to-pull-a-tez-query-view-from-the-cluster"></a>클러스터에서 Tez 쿼리 뷰를 끌어오기 위한 REST API 호출은 무엇 인가요?
 
-다음 REST 끝점을 사용 하 여 JSON 형식으로 필요한 정보를 가져올 수 있습니다. 기본 인증 헤더를 사용 하 여 요청을 만듭니다.
+다음 REST 엔드포인트을 사용 하 여 JSON 형식으로 필요한 정보를 가져올 수 있습니다. 기본 인증 헤더를 사용 하 여 요청을 만듭니다.
 
 - Tez 쿼리 뷰: *https:\//\<클러스터 이름 >* . m s p s/m s/m a p/타임 라인/HIVE_QUERY_ID/
 - Tez Dag View: *https:\//\<클러스터 이름 >. azurehdinsight/ws/v1/timeline/TEZ_DAG_ID/*

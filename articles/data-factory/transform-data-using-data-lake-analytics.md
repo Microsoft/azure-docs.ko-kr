@@ -162,7 +162,7 @@ OUTPUT @rs1
       USING Outputters.Tsv(quoting:false, dateTimeFormat:null);
 ```
 
-위의 스크립트 예제에서 스크립트에 대 한 입력 및 출력은 **\@** 및 **\@out** 매개 변수에서 정의 됩니다. U-SQL 스크립트의 **\@** 및 **\@out** 매개 변수에 대 한 값은 ' parameters ' 섹션을 사용 하 여 Data Factory 하 여 동적으로 전달 됩니다. 
+위의 스크립트 예제에서 스크립트에 대한 입력 및 출력은 **\@** 및 **\@out** 매개 변수에서 정의 됩니다. U-SQL 스크립트의 **\@** 및 **\@out** 매개 변수에 대한 값은 ' parameters ' 섹션을 사용 하 여 Data Factory 하 여 동적으로 전달 됩니다. 
 
 Azure Data Lake Analytics 서비스에서 실행되는 작업에 대한 파이프라인 정의뿐 아니라 degreeOfParallelism나 우선 순위와 같은 다른 속성을 지정할 수 있습니다.
 

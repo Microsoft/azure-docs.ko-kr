@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB의 GROUP BY 절
-description: Azure Cosmos DB에 대 한 GROUP BY 절에 대해 알아봅니다.
+description: Azure Cosmos DB에 대한 GROUP BY 절에 대해 알아봅니다.
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual

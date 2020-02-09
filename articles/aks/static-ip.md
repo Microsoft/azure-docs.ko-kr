@@ -41,7 +41,7 @@ az network public-ip create \
 ```
 
 > [!NOTE]
-> AKS 클러스터에서 *기본* sku 부하 분산 장치를 사용 하는 경우 공용 IP를 정의할 때 *sku* 매개 변수에 대 한 *기본* 를 사용 합니다. 기본 *Sku ip만* *기본* sku 부하 분산 장치에서 작동 하며 표준 *sku ip만* *표준* sku 부하 분산 장치에서 작동 합니다. 
+> AKS 클러스터에서 *기본* sku 부하 분산 장치를 사용 하는 경우 공용 IP를 정의할 때 *sku* 매개 변수에 대한 *기본* 를 사용 합니다. 기본 *Sku ip만* *기본* sku 부하 분산 장치에서 작동 하며 표준 *sku ip만* *표준* sku 부하 분산 장치에서 작동 합니다. 
 
 IP 주소는 다음 압축 예제 출력과 같이 표시 됩니다.
 
@@ -65,7 +65,7 @@ $ az network public-ip show --resource-group myResourceGroup --name myAKSPublicI
 
 ## <a name="create-a-service-using-the-static-ip-address"></a>고정 IP 주소를 사용하여 서비스 만들기
 
-서비스를 만들기 전에 AKS 클러스터에서 사용 하는 서비스 사용자에 게 다른 리소스 그룹에 대 한 위임 된 권한이 있는지 확인 합니다. 예를 들어 다음과 같은 가치를 제공해야 합니다.
+서비스를 만들기 전에 AKS 클러스터에서 사용 하는 서비스 사용자에 게 다른 리소스 그룹에 대한 위임 된 권한이 있는지 확인 합니다. 예를 들어 다음과 같은 가치를 제공해야 합니다.
 
 ```azurecli-interactive
 az role assignment create \
@@ -132,7 +132,7 @@ Events:
 
 ## <a name="next-steps"></a>다음 단계
 
-응용 프로그램에 대 한 네트워크 트래픽을 추가로 제어 하려면 [수신 컨트롤러][aks-ingress-basic]를 대신 만드는 것이 좋습니다. [고정 공용 IP 주소를 사용 하 여 수신 컨트롤러를 만들][aks-static-ingress]수도 있습니다.
+응용 프로그램에 대한 네트워크 트래픽을 추가로 제어 하려면 [수신 컨트롤러][aks-ingress-basic]를 대신 만드는 것이 좋습니다. [고정 공용 IP 주소를 사용 하 여 수신 컨트롤러를 만들][aks-static-ingress]수도 있습니다.
 
 <!-- LINKS - External -->
 [kubectl-describe]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#describe

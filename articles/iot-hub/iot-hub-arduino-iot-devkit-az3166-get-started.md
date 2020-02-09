@@ -100,7 +100,7 @@ DevKit를 컴퓨터에 연결하려면 다음 단계를 수행합니다.
 
 ### <a name="send-devkit-telemetry"></a>DevKit 원격 분석 보내기
 
-DevKit는 IoT hub의 장치 특정 끝점에 연결 하 여 온도 및 습도 원격 분석을 전송 합니다.
+DevKit는 IoT hub의 장치 특정 엔드포인트에 연결 하 여 온도 및 습도 원격 분석을 전송 합니다.
 
 1. IoT DevKit에 대 한 최신 버전의 [Getstarted](https://aka.ms/devkit/prod/getstarted/latest) 를 다운로드 합니다.
 
@@ -338,7 +338,7 @@ DevKit는 다시 부팅하고 코드를 실행하기 시작합니다.
 
     ![연결 문자열 Azure IoT Hub 설정](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/set-iothub-connection-string.png)
 
-1. 오른쪽의 **AZURE IOT HUB 장치** 창을 확장 하 고, 만든 장치 이름을 마우스 오른쪽 단추로 클릭 하 고, **기본 제공 이벤트 끝점 모니터링 시작**을 선택 합니다.
+1. 오른쪽의 **AZURE IOT HUB 장치** 창을 확장 하 고, 만든 장치 이름을 마우스 오른쪽 단추로 클릭 하 고, **기본 제공 이벤트 엔드포인트 모니터링 시작**을 선택 합니다.
 
     ![D2C 메시지 모니터링](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/monitor-d2c.png)
 

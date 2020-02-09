@@ -40,7 +40,7 @@ Azure Monitor는 포털에서 해당 차트, REST API를 통한 액세스 또는
     합니다 **리소스 선택** 창이를 사용할 수 있는 리소스 목록이 오른쪽에 나타납니다. 이 경우에 표시 
 
     * &lt;Media Services 계정 이름&gt;
-    * &lt;Media Services 계정 이름&gt;/&lt;스트리밍 끝점 이름&gt;
+    * &lt;Media Services 계정 이름&gt;/&lt;스트리밍 엔드포인트 이름&gt;
     * &lt;저장소 계정 이름&gt;
 
     선택 하 고 리소스 키를 눌러 **적용**합니다. 지원 되는 리소스와 메트릭의 하는 방법에 대 한 자세한 내용은 참조 하세요 [Media Services 모니터링 메트릭을](media-services-metrics-diagnostic-logs.md)합니다.

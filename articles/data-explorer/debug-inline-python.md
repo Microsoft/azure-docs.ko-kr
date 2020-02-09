@@ -94,4 +94,4 @@ Kusto 쿼리 언어 도구는 Python 알고리즘을 개발 하 고 디버깅 �
     ![VS 코드 디버그](media/debug-inline-python/debug-vs-code.png)
 
 > [!NOTE]
-> Python sandbox 이미지와 로컬 설치 간에는 차이점이 있을 수 있습니다. [플러그 인을 쿼리하여 특정 패키지에 대 한 샌드박스 이미지를 확인](https://github.com/Azure/azure-kusto-analytics-lib/blob/master/Utils/functions/get_modules_version.csl)합니다.
+> Python sandbox 이미지와 로컬 설치 간에는 차이점이 있을 수 있습니다. [플러그 인을 쿼리하여 특정 패키지에 대한 샌드박스 이미지를 확인](https://github.com/Azure/azure-kusto-analytics-lib/blob/master/Utils/functions/get_modules_version.csl)합니다.

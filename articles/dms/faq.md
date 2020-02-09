@@ -1,6 +1,6 @@
 ---
 title: FAQ-Azure Database Migration Service
-description: Azure Database Migration Service를 사용 하 여 데이터베이스 마이그레이션을 수행 하는 방법에 대 한 질문과 대답입니다.
+description: Azure Database Migration Service를 사용 하 여 데이터베이스 마이그레이션을 수행 하는 방법에 대한 질문과 대답입니다.
 services: database-migration
 author: HJToland3
 ms.author: jtoland
@@ -18,9 +18,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 02/07/2020
 ms.locfileid: "77064838"
 ---
-# <a name="faq-about-using-azure-database-migration-service"></a>Azure Database Migration Service 사용에 대 한 FAQ
+# <a name="faq-about-using-azure-database-migration-service"></a>Azure Database Migration Service 사용에 대한 FAQ
 
-이 문서에서는 관련 응답과 함께 Azure Database Migration Service를 사용 하는 방법에 대 한 일반적인 질문과 대답을 제공 합니다.
+이 문서에서는 관련 응답과 함께 Azure Database Migration Service를 사용 하는 방법에 대한 일반적인 질문과 대답을 제공 합니다.
 
 ## <a name="overview"></a>개요
 
@@ -46,10 +46,10 @@ Azure Database Migration Service를 사용 하 여 오프 라인 및 온라인 �
 > Azure Database Migration Service를 사용하여 온라인 마이그레이션을 수행하려면 프리미엄 가격 책정 계층에 따라 인스턴스를 만들어야 합니다. 자세한 내용은 Azure Database Migration Service [가격 책정](https://azure.microsoft.com/pricing/details/database-migration/) 페이지를 참조하세요.
 
 **Q. Azure Database Migration Service는 데이터베이스 Migration Assistant (DMA) 또는 SQL Server Migration Assistant (SSMA)와 같은 다른 Microsoft 데이터베이스 마이그레이션 도구와 어떻게 비교 되나요?**
-Azure Database Migration Service은 데이터베이스 마이그레이션이 대규모로 Microsoft Azure 되는 기본 방법입니다. Azure Database Migration Service 다른 Microsoft 데이터베이스 마이그레이션 도구와 비교 하는 방법 및 다양 한 시나리오에 서비스 사용에 대 한 권장 사항에 대 한 자세한 내용은 [Microsoft의 데이터베이스 마이그레이션 도구 및 서비스 차별화](https://techcommunity.microsoft.com/t5/microsoft-data-migration/differentiating-microsoft-s-database-migration-tools-and/ba-p/368529)의 블로그 게시물을 참조 하세요.
+Azure Database Migration Service은 데이터베이스 마이그레이션이 대규모로 Microsoft Azure 되는 기본 방법입니다. Azure Database Migration Service 다른 Microsoft 데이터베이스 마이그레이션 도구와 비교 하는 방법 및 다양 한 시나리오에 서비스 사용에 대한 권장 사항에 대한 자세한 내용은 [Microsoft의 데이터베이스 마이그레이션 도구 및 서비스 차별화](https://techcommunity.microsoft.com/t5/microsoft-data-migration/differentiating-microsoft-s-database-migration-tools-and/ba-p/368529)의 블로그 게시물을 참조 하세요.
 
 **Q. Azure Database Migration Service는 Azure Migrate 제품과 어떻게 비교 되나요?**
-Azure Migrate 온-프레미스 가상 머신을 Azure IaaS로 마이그레이션하는 데 도움이 됩니다. 이 서비스는 마이그레이션 적합성 및 성능 기반 크기 조정을 평가하며, Azure에서 온-프레미스 가성 머신을 실행할 때 드는 비용을 예측합니다. Azure Migrate는 온-프레미스 VM 기반 워크로드를 Azure IaaS VM으로 리프트 앤 시프트 마이그레이션하는 데 유용합니다. 그러나 Azure Database Migration Service와 달리 Azure Migrate는 Azure SQL Database 또는 Azure SQL Database Managed Instance 같은 Azure PaaS 관계형 데이터베이스 플랫폼에 대 한 특수화 된 database Migration Service 제품이 아닙니다.
+Azure Migrate 온-프레미스 가상 머신을 Azure IaaS로 마이그레이션하는 데 도움이 됩니다. 이 서비스는 마이그레이션 적합성 및 성능 기반 크기 조정을 평가하며, Azure에서 온-프레미스 가성 머신을 실행할 때 드는 비용을 예측합니다. Azure Migrate는 온-프레미스 VM 기반 워크로드를 Azure IaaS VM으로 리프트 앤 시프트 마이그레이션하는 데 유용합니다. 그러나 Azure Database Migration Service와 달리 Azure Migrate는 Azure SQL Database 또는 Azure SQL Database Managed Instance 같은 Azure PaaS 관계형 데이터베이스 플랫폼에 대한 특수화 된 database Migration Service 제품이 아닙니다.
 
 ## <a name="setup"></a>설치
 
@@ -58,14 +58,14 @@ Azure Migrate 온-프레미스 가상 머신을 Azure IaaS로 마이그레이션
 
 지원되는 모든 마이그레이션 시나리오에 공통적인 Azure Database Migration Service 필구 구성 요소는 다음을 수행해야 합니다.
 
-* [Express](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) 경로 또는 [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways)을 사용 하 여 온-프레미스 원본 서버에 대 한 사이트 간 연결을 제공 하는 Azure Resource Manager 배포 모델을 사용 하 여 Azure Database Migration Service에 대 한 Microsoft Azure Virtual Network를 만듭니다.
-* 가상 네트워크 네트워크 보안 그룹 규칙이 다음 통신 포트 443, 53, 9354, 445, 12000을 차단 하지 않는지 확인 합니다. Virtual network NSG 트래픽 필터링에 대 한 자세한 내용은 [네트워크 보안 그룹을 사용 하 여 네트워크 트래픽 필터링](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg)문서를 참조 하세요.
+* [Express](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) 경로 또는 [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways)을 사용 하 여 온-프레미스 원본 서버에 대한 사이트 간 연결을 제공 하는 Azure Resource Manager 배포 모델을 사용 하 여 Azure Database Migration Service에 대한 Microsoft Azure Virtual Network를 만듭니다.
+* 가상 네트워크 네트워크 보안 그룹 규칙이 다음 통신 포트 443, 53, 9354, 445, 12000을 차단 하지 않는지 확인 합니다. Virtual network NSG 트래픽 필터링에 대한 자세한 내용은 [네트워크 보안 그룹을 사용 하 여 네트워크 트래픽 필터링](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg)문서를 참조 하세요.
 * 원본 데이터베이스 앞에 방화벽 어플라이언스를 사용하는 경우 Azure Database Migration Service에서 원본 데이터베이스에 액세스하여 마이그레이션할 수 있도록 허용하는 방화벽 규칙을 추가해야 합니다.
 
 Azure Database Migration Service를 사용 하 여 특정 마이그레이션 시나리오를 경합 하는 데 필요한 모든 필수 구성 요소 목록은 docs.microsoft.com의 Azure Database Migration Service [설명서](https://docs.microsoft.com/azure/dms/dms-overview) 에서 관련 자습서를 참조 하십시오.
 
-**Q. 마이그레이션을 위해 원본 데이터베이스에 액세스 하는 데 사용 되는 방화벽 규칙에 대 한 허용 목록을 만들 수 있도록 Azure Database Migration Service에 대 한 IP 주소를 찾을 어떻게 할까요??**
-마이그레이션을 위해 원본 데이터베이스에 대 한 액세스 Azure Database Migration Service 허용 하는 방화벽 규칙을 추가 해야 할 수 있습니다. 서비스의 IP 주소는 동적 이지만 Express 경로를 사용 하는 경우이 주소는 회사 네트워크에서 개인적으로 할당 합니다. 적절 한 IP 주소를 식별 하는 가장 쉬운 방법은 프로 비전 된 Azure Database Migration Service 리소스와 동일한 리소스 그룹에서 연결 된 네트워크 인터페이스를 찾는 것입니다. 일반적으로 네트워크 인터페이스 리소스의 이름은 NIC 접두사로 시작되고 그 뒤에 고유한 문자와 숫자 시퀀스가 붙습니다(예 : NIC-jj6tnztnmarpsskr82rbndyp). 이 네트워크 인터페이스 리소스를 선택하면 Azure Portal 리소스 개요 페이지에서 허용 목록에 포함되어야 하는 IP 주소를 볼 수 있습니다.
+**Q. 마이그레이션을 위해 원본 데이터베이스에 액세스 하는 데 사용 되는 방화벽 규칙에 대한 허용 목록을 만들 수 있도록 Azure Database Migration Service에 대한 IP 주소를 찾을 어떻게 할까요??**
+마이그레이션을 위해 원본 데이터베이스에 대한 액세스 Azure Database Migration Service 허용 하는 방화벽 규칙을 추가 해야 할 수 있습니다. 서비스의 IP 주소는 동적 이지만 Express 경로를 사용 하는 경우이 주소는 회사 네트워크에서 개인적으로 할당 합니다. 적절 한 IP 주소를 식별 하는 가장 쉬운 방법은 프로 비전 된 Azure Database Migration Service 리소스와 동일한 리소스 그룹에서 연결 된 네트워크 인터페이스를 찾는 것입니다. 일반적으로 네트워크 인터페이스 리소스의 이름은 NIC 접두사로 시작되고 그 뒤에 고유한 문자와 숫자 시퀀스가 붙습니다(예 : NIC-jj6tnztnmarpsskr82rbndyp). 이 네트워크 인터페이스 리소스를 선택하면 Azure Portal 리소스 개요 페이지에서 허용 목록에 포함되어야 하는 IP 주소를 볼 수 있습니다.
 
 SQL Server가 수신 대기하는 포트 원본을 허용 목록에 포함해야 할 수도 있습니다. 기본적으로 이 포트는 1433이지만 원본 SQL Server는 다른 포트도 수신 대기하도록 구성될 수 있습니다. 이 경우 해당 포트도 허용 목록에 포함시켜야 합니다. 동적 관리 뷰 쿼리를 사용하여 SQL Server가 수신 대기하는 포트를 확인할 수 있습니다.
 
@@ -106,7 +106,7 @@ SQL Server 오류 로그를 쿼리하여 SQL Server가 수신 대기하는 포�
 ## <a name="troubleshooting-and-optimization"></a>문제 해결 및 최적화
 
 **Q. DMS로 마이그레이션 프로젝트를 설정 하 고 있으며 원본 데이터베이스에 연결 하는 데 어려움이 있습니다. 제가 뭘 해야 하나요?**
-마이그레이션 작업을 수행 하는 동안 원본 데이터베이스 시스템에 연결 하는 데 문제가 있는 경우 DMS 인스턴스를 설정 하는 가상 네트워크에 가상 컴퓨터를 만듭니다. 가상 컴퓨터에서 UDL 파일을 사용 하 여 SQL Server에 대 한 연결을 테스트 하거나 MongoDB 연결을 테스트 하기 위해 Robo 3T를 다운로드 하는 등의 연결 테스트를 실행할 수 있어야 합니다. 연결 테스트가 성공 하면 원본 데이터베이스에 연결 하는 데 문제가 없어야 합니다. 연결 테스트에 성공 하지 못한 경우 네트워크 관리자에 게 문의 하십시오.
+마이그레이션 작업을 수행 하는 동안 원본 데이터베이스 시스템에 연결 하는 데 문제가 있는 경우 DMS 인스턴스를 설정 하는 가상 네트워크에 가상 컴퓨터를 만듭니다. 가상 컴퓨터에서 UDL 파일을 사용 하 여 SQL Server에 대한 연결을 테스트 하거나 MongoDB 연결을 테스트 하기 위해 Robo 3T를 다운로드 하는 등의 연결 테스트를 실행할 수 있어야 합니다. 연결 테스트가 성공 하면 원본 데이터베이스에 연결 하는 데 문제가 없어야 합니다. 연결 테스트에 성공 하지 못한 경우 네트워크 관리자에 게 문의 하십시오.
 
 **Q. Azure Database Migration Service를 사용할 수 없거나 중지 된 이유는 무엇 인가요?**
 사용자가 명시적으로 Azure Database Migration Service (DMS)를 중지 하거나 서비스가 24 시간 동안 비활성 상태 이면 서비스는 중지 됨 또는 자동 일시 중지 됨 상태가 됩니다. 각각의 경우에서 서비스는 사용할 수 없으며 중지된 상태에 있게 됩니다.  활성 마이그레이션을 다시 시작하려면 서비스를 다시 시작합니다.

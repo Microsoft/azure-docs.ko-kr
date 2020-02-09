@@ -465,8 +465,8 @@ response = requests.post(published_pipeline1.endpoint,
                                "ParameterAssignments": {"pipeline_arg": 20}})
 ```
 
-## <a name="create-a-versioned-pipeline-endpoint"></a>버전 지정 파이프라인 끝점 만들기
-게시 된 여러 파이프라인이 있는 파이프라인 끝점을 만들 수 있습니다. 이는 게시 된 파이프라인 처럼 사용할 수 있지만 ML 파이프라인을 반복 하 고 업데이트할 때 고정 REST 끝점을 제공 합니다.
+## <a name="create-a-versioned-pipeline-endpoint"></a>버전 지정 파이프라인 엔드포인트 만들기
+게시 된 여러 파이프라인이 있는 파이프라인 엔드포인트을 만들 수 있습니다. 이는 게시 된 파이프라인 처럼 사용할 수 있지만 ML 파이프라인을 반복 하 고 업데이트할 때 고정 REST 엔드포인트을 제공 합니다.
 
 ```python
 from azureml.pipeline.core import PipelineEndpoint
@@ -476,8 +476,8 @@ pipeline_endpoint = PipelineEndpoint.publish(workspace=ws, name="PipelineEndpoin
                                             pipeline=published_pipeline, description="Test description Notebook")
 ```
 
-### <a name="submit-a-job-to-a-pipeline-endpoint"></a>파이프라인 끝점에 작업 제출
-파이프라인 끝점의 기본 버전에 작업을 제출할 수 있습니다.
+### <a name="submit-a-job-to-a-pipeline-endpoint"></a>파이프라인 엔드포인트에 작업 제출
+파이프라인 엔드포인트의 기본 버전에 작업을 제출할 수 있습니다.
 ```python
 pipeline_endpoint_by_name = PipelineEndpoint.get(workspace=ws, name="PipelineEndpointTest")
 run_id = pipeline_endpoint_by_name.submit("PipelineEndpointExperiment")
@@ -507,12 +507,12 @@ response = requests.post(rest_endpoint,
 
 1. [작업 영역을 봅니다](how-to-manage-workspace.md#view).
 
-1. 왼쪽에서 **끝점**을 선택 합니다.
+1. 왼쪽에서 **엔드포인트**을 선택 합니다.
 
-1. 위쪽에서 **파이프라인 끝점**을 선택 합니다.
+1. 위쪽에서 **파이프라인 엔드포인트**을 선택 합니다.
  ![machine learning 게시 된 파이프라인 목록](./media/how-to-create-your-first-pipeline/pipeline-endpoints.png)
 
-1. 파이프라인 끝점의 이전 실행 결과를 실행, 사용 또는 검토 하려면 특정 파이프라인을 선택 합니다.
+1. 파이프라인 엔드포인트의 이전 실행 결과를 실행, 사용 또는 검토 하려면 특정 파이프라인을 선택 합니다.
 
 
 ### <a name="disable-a-published-pipeline"></a>게시 된 파이프라인 사용 안 함

@@ -16,9 +16,9 @@ ms.locfileid: "75452273"
 
 Azure Automation에서 실행되는 Runbook과 Hybrid Runbook Worker에서 실행되는 Runbook은 구조상 차이점이 없습니다. 각 항목에서 사용하는 Runbook은 크게 다를 수 있습니다. Hybrid Runbook Worker를 대상으로 하는 Runbook은 일반적으로 로컬 컴퓨터 자체에서 리소스를 관리하거나 배포된 로컬 환경의 리소스에 맞게 리소스를 관리하기 때문에 이 차이점이 나타납니다. Azure Automation의 Runbook은 일반적으로 Azure 클라우드에서 리소스를 관리합니다.
 
-Hybrid Runbook Worker에서 실행할 Runbook을 작성하는 경우, 하이브리드 작업자를 호스팅하는 컴퓨터 내에서 Runbook을 편집하고 테스트해야 합니다. 호스트 컴퓨터에는 로컬 리소스를 관리하고 액세스하는 데 필요한 모든 PowerShell 모듈과 네트워크 액세스가 있습니다. Hybrid Worker 머신에서 Runbook이 테스트되면 Hybrid Worker에서 실행하는 데 사용할 수 있는 Azure Automation 환경에 업로드할 수 있습니다. Windows용 로컬 시스템 계정 또는 Linux용 특수 사용자 계정 `nxautomation`으로 실행되는 작업을 아는 것이 중요합니다. Linux에서이는 `nxautomation` 계정에 모듈을 저장 하는 위치에 대 한 액세스 권한이 있는지 확인 하는 것을 의미 합니다. [Install-Module](/powershell/module/powershellget/install-module) cmdlet을 사용 하는 경우 `-Scope` 매개 변수에 **AllUsers** 를 지정 하 여 `nxautomation` 계정에 액세스 권한이 있는지 확인 합니다.
+Hybrid Runbook Worker에서 실행할 Runbook을 작성하는 경우, 하이브리드 작업자를 호스팅하는 컴퓨터 내에서 Runbook을 편집하고 테스트해야 합니다. 호스트 컴퓨터에는 로컬 리소스를 관리하고 액세스하는 데 필요한 모든 PowerShell 모듈과 네트워크 액세스가 있습니다. Hybrid Worker 머신에서 Runbook이 테스트되면 Hybrid Worker에서 실행하는 데 사용할 수 있는 Azure Automation 환경에 업로드할 수 있습니다. Windows용 로컬 시스템 계정 또는 Linux용 특수 사용자 계정 `nxautomation`으로 실행되는 작업을 아는 것이 중요합니다. Linux에서이는 `nxautomation` 계정에 모듈을 저장 하는 위치에 대한 액세스 권한이 있는지 확인 하는 것을 의미 합니다. [Install-Module](/powershell/module/powershellget/install-module) cmdlet을 사용 하는 경우 `-Scope` 매개 변수에 **AllUsers** 를 지정 하 여 `nxautomation` 계정에 액세스 권한이 있는지 확인 합니다.
 
-Linux의 PowerShell에 대 한 자세한 내용은 [Windows 이외의 플랫폼에서 powershell에 대 한 알려진 문제](https://docs.microsoft.com/powershell/scripting/whats-new/known-issues-ps6?view=powershell-6#known-issues-for-powershell-on-non-windows-platforms)를 참조 하세요.
+Linux의 PowerShell에 대한 자세한 내용은 [Windows 이외의 플랫폼에서 powershell에 대한 알려진 문제](https://docs.microsoft.com/powershell/scripting/whats-new/known-issues-ps6?view=powershell-6#known-issues-for-powershell-on-non-windows-platforms)를 참조 하세요.
 
 ## <a name="starting-a-runbook-on-hybrid-runbook-worker"></a>Hybrid Runbook Worker에서 Runbook 시작
 
@@ -56,7 +56,7 @@ Restart-Computer -ComputerName $Computer -Credential $Cred
 
 ### <a name="runas-account"></a>실행 계정
 
-기본적으로 Hybrid Runbook Worker는 Windows용 로컬 시스템 및 Linux용 특수 사용자 계정 `nxautomation`을 사용하여 Runbook을 실행합니다. Runbook이 로컬 리소스에 고유한 인증을 제공하는 대신 Hybrid worker 그룹에 **실행** 계정을 지정할 수 있습니다. 인증서 저장소를 비롯 하 여 로컬 리소스에 대 한 액세스 권한이 있는 [자격 증명 자산](automation-credentials.md) 을 지정 하 고, 그룹의 Hybrid Runbook Worker에서 실행 될 때 모든 runbook이 이러한 자격 증명으로 실행 됩니다.
+기본적으로 Hybrid Runbook Worker는 Windows용 로컬 시스템 및 Linux용 특수 사용자 계정 `nxautomation`을 사용하여 Runbook을 실행합니다. Runbook이 로컬 리소스에 고유한 인증을 제공하는 대신 Hybrid worker 그룹에 **실행** 계정을 지정할 수 있습니다. 인증서 저장소를 비롯 하 여 로컬 리소스에 대한 액세스 권한이 있는 [자격 증명 자산](automation-credentials.md) 을 지정 하 고, 그룹의 Hybrid Runbook Worker에서 실행 될 때 모든 runbook이 이러한 자격 증명으로 실행 됩니다.
 
 자격 증명에 대한 사용자 이름은 다음 서식 중 하나여야 합니다.
 
@@ -85,7 +85,7 @@ Hybrid Runbook Worker에서 Azure 리소스에 대한 관리 ID를 사용하려�
 
 1. Azure VM 만들기
 2. [VM에서 Azure 리소스에 대한 관리 ID 구성](../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#enable-system-assigned-managed-identity-on-an-existing-vm)
-3. [리소스 관리자에서 리소스 그룹에 대 한 VM 액세스 권한 부여](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#grant-your-vm-access-to-a-resource-group-in-resource-manager) -windows-vm-액세스-사용---------------------------------------------
+3. [리소스 관리자에서 리소스 그룹에 대한 VM 액세스 권한 부여](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#grant-your-vm-access-to-a-resource-group-in-resource-manager) -windows-vm-액세스-사용---------------------------------------------
 4. 가상 머신에 [Windows Hybrid Runbook Worker를 설치](automation-windows-hrw-install.md#installing-the-windows-hybrid-runbook-worker)합니다.
 
 이전 단계가 완료되면 Runbook에서 `Connect-AzureRmAccount -Identity`를 사용하여 Azure 리소스를 인증할 수 있습니다. 이 구성을 사용하면 실행 계정을 사용하고 실행 계정의 인증서를 관리해야 하는 필요성이 감소합니다.
@@ -310,4 +310,4 @@ gpg –-clear-sign <runbook name>
 * Runbook을 시작하는 데 사용할 수 있는 여러 가지 방법에 대해 자세히 알아보려면 [Azure Automation에서 Runbook 시작](automation-starting-a-runbook.md)을 참조하세요.
 * 텍스트 편집기를 사용하여 Azure Automation에서 PowerShell Runbook을 작업하기 위한 여러 가지 방법을 알아보려면 [Azure Automation에서 Runbook 편집](automation-edit-textual-runbook.md)을 참조하세요.
 * Runbook이 성공적으로 완료되지 않으면 [Runbook 실행 실패](troubleshoot/hybrid-runbook-worker.md#runbook-execution-fails)에 대한 문제 해결 가이드를 검토하세요.
-* 언어 참조 및 학습 모듈을 비롯 한 PowerShell에 대 한 자세한 내용은 [Powershell 문서](https://docs.microsoft.com/powershell/scripting/overview)를 참조 하세요.
+* 언어 참조 및 학습 모듈을 비롯 한 PowerShell에 대한 자세한 내용은 [Powershell 문서](https://docs.microsoft.com/powershell/scripting/overview)를 참조 하세요.

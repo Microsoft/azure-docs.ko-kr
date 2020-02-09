@@ -152,7 +152,7 @@ ms.locfileid: "76717077"
 ## <a name="microsoftnetworkloadbalancers"></a>Microsoft. 네트워크/LoadBalancers 장치
 |실행된 검사|
 |---|
-|<ul><li>부하 분산 끝점을 사용할 수 있나요?</li></ul>|
+|<ul><li>부하 분산 엔드포인트을 사용할 수 있나요?</li></ul>|
 
 ## <a name="microsoftnetworkvirtualnetworkgateways"></a>Microsoft.network/virtualNetworkGateways
 |실행된 검사|

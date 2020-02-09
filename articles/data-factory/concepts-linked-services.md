@@ -95,7 +95,7 @@ connectVia | 데이터 저장소에 연결하는 데 사용할 [Integration Runt
 [커넥터 개요](copy-activity-overview.md#supported-data-stores-and-formats) 문서에서 Data Factory 지원 되는 데이터 저장소 목록을 찾을 수 있습니다. 데이터 저장소를 클릭 하 여 지원 되는 연결 속성을 알아봅니다.
 
 ## <a name="compute-linked-services"></a>연결된 서비스 Compute
-데이터 팩터리에서 다른 구성에 연결할 수 있는 다양 한 계산 환경에 대 한 세부 정보를 위해 [지원 되는 참조 계산 환경](compute-linked-services.md) 입니다.
+데이터 팩터리에서 다른 구성에 연결할 수 있는 다양 한 계산 환경에 대한 세부 정보를 위해 [지원 되는 참조 계산 환경](compute-linked-services.md) 입니다.
 
 ## <a name="next-steps"></a>다음 단계
 다음 도구 또는 SDK 중 하나를 사용하여 파이프라인 및 데이터 세트를 만들기 위한 단계별 지침은 다음 자습서를 참조하세요.

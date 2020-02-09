@@ -15,7 +15,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 07/16/2019
 ms.locfileid: "68253170"
 ---
-# <a name="manage-access-power-and-connectivity-mode-for-your-azure-data-box-gateway"></a>Azure Data Box Gateway에 대 한 액세스, 기능 및 연결 모드 관리
+# <a name="manage-access-power-and-connectivity-mode-for-your-azure-data-box-gateway"></a>Azure Data Box Gateway에 대한 액세스, 기능 및 연결 모드 관리
 
 이 문서에서는 Azure Data Box Gateway에 대한 액세스, 전원 및 연결 모드를 관리하는 방법에 대해 설명합니다. 이러한 작업은 로컬 웹 UI 또는 Azure Portal을 통해 수행합니다.
 
@@ -28,7 +28,7 @@ ms.locfileid: "68253170"
 
 ## <a name="manage-device-access"></a>디바이스 액세스 관리
 
-Data Box Gateway 장치에 대 한 액세스는 장치 암호를 사용 하 여 제어 됩니다. 로컬 웹 UI를 통해 암호를 변경할 수 있습니다. Azure Portal에서 장치 암호를 다시 설정할 수도 있습니다.
+Data Box Gateway 장치에 대한 액세스는 장치 암호를 사용 하 여 제어 됩니다. 로컬 웹 UI를 통해 암호를 변경할 수 있습니다. Azure Portal에서 장치 암호를 다시 설정할 수도 있습니다.
 
 ### <a name="change-device-password"></a>디바이스 암호 변경
 
@@ -60,22 +60,22 @@ Data Box Edge/Data Box Gateway, IoT Hub 및 Azure Storage 리소스를 만들려
 
 ### <a name="manage-microsoft-azure-active-directory-graph-api-permissions"></a>Microsoft Azure Active Directory Graph API 사용 권한 관리
 
-Data Box Edge 장치에 대 한 정품 인증 키를 생성 하거나 자격 증명이 필요한 작업을 수행 하는 경우 Graph API Azure Active Directory 수 있는 권한이 있어야 합니다. 자격 증명을 필요로 하는 작업은 다음과 같습니다.
+Data Box Edge 장치에 대한 정품 인증 키를 생성 하거나 자격 증명이 필요한 작업을 수행 하는 경우 Graph API Azure Active Directory 수 있는 권한이 있어야 합니다. 자격 증명을 필요로 하는 작업은 다음과 같습니다.
 
 -  연결 된 저장소 계정을 사용 하 여 공유 만들기
 -  장치에서 공유에 액세스할 수 있는 사용자 만들기
 
-`User` 가능`Read all directory objects`하면 Active Directory 테 넌 트에 대 한 액세스 권한이 있어야 합니다. 권한이 없는 게스트 사용자는 사용할 수 없습니다 `Read all directory objects`. 게스트인 경우 활성화 키 생성, Data Box Edge 디바이스에 대한 공유 만들기, 사용자 만들기 등의 작업이 모두 실패합니다.
+`User` 가능`Read all directory objects`하면 Active Directory 테넌트에 대한 액세스 권한이 있어야 합니다. 권한이 없는 게스트 사용자는 사용할 수 없습니다 `Read all directory objects`. 게스트인 경우 활성화 키 생성, Data Box Edge 디바이스에 대한 공유 만들기, 사용자 만들기 등의 작업이 모두 실패합니다.
 
-사용자에 게 Graph API Azure Active Directory 대 한 액세스를 제공 하는 방법에 대 한 자세한 내용은 [관리자, 사용자 및 게스트 사용자에 대 한 기본 액세스](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-)를 참조 하세요.
+사용자에 게 Graph API Azure Active Directory 대한 액세스를 제공 하는 방법에 대한 자세한 내용은 [관리자, 사용자 및 게스트 사용자에 대한 기본 액세스](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-)를 참조 하세요.
 
 ### <a name="register-resource-providers"></a>리소스 공급자 등록
 
 Azure에서 리소스를 프로 비전 하려면 (Azure Resource Manager 모델) 해당 리소스 만들기를 지 원하는 리소스 공급자가 필요 합니다. 예를 들어 가상 컴퓨터를 프로 비전 하려면 구독에서 ' Microsoft. Compute ' 리소스 공급자를 사용할 수 있어야 합니다.
  
-리소스 공급자는 구독 수준에서 등록됩니다. 기본적으로 새 Azure 구독은 주로 사용되는 리소스 공급자 목록에 미리 등록됩니다. 이 목록에는 ' DataBoxEdge '에 대 한 리소스 공급자가 포함 되어 있지 않습니다.
+리소스 공급자는 구독 수준에서 등록됩니다. 기본적으로 새 Azure 구독은 주로 사용되는 리소스 공급자 목록에 미리 등록됩니다. 이 목록에는 ' DataBoxEdge '에 대한 리소스 공급자가 포함 되어 있지 않습니다.
 
-사용자가 해당 리소스에 대 한 리소스 공급자가 이미 있는 경우 소유자 권한이 있는 리소스 그룹 내에서 ' DataBoxEdge '과 같은 리소스를 만들 수 있도록 구독 수준에 대 한 액세스 권한을 부여 하지 않아도 됩니다. 등록.
+사용자가 해당 리소스에 대한 리소스 공급자가 이미 있는 경우 소유자 권한이 있는 리소스 그룹 내에서 ' DataBoxEdge '과 같은 리소스를 만들 수 있도록 구독 수준에 대한 액세스 권한을 부여 하지 않아도 됩니다. 등록.
 
 리소스를 만들기 전에 리소스 공급자가 구독에 등록 되어 있는지 확인 합니다. 리소스 공급자가 등록 되지 않은 경우 새 리소스를 만드는 사용자에 게 구독 수준에서 필요한 리소스 공급자를 등록할 수 있는 충분 한 권한이 있는지 확인 해야 합니다. 아직 수행 하지 않은 경우 다음과 같은 오류가 표시 됩니다.
 
@@ -94,7 +94,7 @@ Data Box Edge 장치의 경우을 `Microsoft.DataBoxEdge` 등록 해야 합니�
 Register-AzResourceProvider -ProviderNamespace Microsoft.DataBoxEdge
 ```
 
-리소스 공급자를 등록 하는 방법에 대 한 자세한 내용은 [리소스 공급자 등록에 대 한 오류 해결](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-register-provider-errors)을 참조 하세요.
+리소스 공급자를 등록 하는 방법에 대한 자세한 내용은 [리소스 공급자 등록에 대한 오류 해결](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-register-provider-errors)을 참조 하세요.
 
 ## <a name="manage-connectivity-mode"></a>연결 모드 관리
 

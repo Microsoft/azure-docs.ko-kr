@@ -16,7 +16,7 @@ ms.locfileid: "76932630"
 ---
 # <a name="bring-your-own-keys-byok-with-azure-disks-in-azure-kubernetes-service-aks"></a>Azure Kubernetes 서비스 (AKS)에서 Azure 디스크를 사용 하 여 사용자 고유의 키 (BYOK) 가져오기
 
-Azure Storage는 미사용 저장소 계정의 모든 데이터를 암호화 합니다. 기본적으로 데이터는 Microsoft 관리 키를 사용 하 여 암호화 됩니다. 암호화 키에 대 한 추가 제어를 위해 AKS 클러스터에 대 한 OS 및 데이터 디스크 모두에 대 한 미사용 암호화에 사용할 [고객 관리 키][customer-managed-keys] 를 제공할 수 있습니다.
+Azure Storage는 미사용 저장소 계정의 모든 데이터를 암호화 합니다. 기본적으로 데이터는 Microsoft 관리 키를 사용 하 여 암호화 됩니다. 암호화 키에 대한 추가 제어를 위해 AKS 클러스터에 대한 OS 및 데이터 디스크 모두에 대한 미사용 암호화에 사용할 [고객 관리 키][customer-managed-keys] 를 제공할 수 있습니다.
 
 > [!NOTE]
 > BYOK Linux 및 Windows 기반 AKS 클러스터는 azure 관리 디스크의 서버 쪽 암호화를 지 원하는 [azure 지역][supported-regions] 에서 사용할 수 있습니다.
@@ -30,7 +30,7 @@ Azure Storage는 미사용 저장소 계정의 모든 데이터를 암호화 합
 * Azure CLI 버전 2.0.79 이상 및 aks-preview 0.4.26 확장이 필요 합니다.
 
 > [!IMPORTANT]
-> AKS 미리 보기 기능은 셀프 서비스 옵트인입니다. 미리 보기는 "있는 그대로" 및 "사용 가능한 상태로" 제공 되며 서비스 수준 계약 및 제한 된 보증에서 제외 됩니다. AKS 미리 보기는 최상의 노력에 대 한 고객 지원에서 부분적으로 다룹니다. 이러한 기능은 프로덕션 용도로는 사용할 수 없습니다. 추가 정보 다음 지원 문서를 참조 하세요.
+> AKS 미리 보기 기능은 셀프 서비스 옵트인입니다. 미리 보기는 "있는 그대로" 및 "사용 가능한 상태로" 제공 되며 서비스 수준 계약 및 제한 된 보증에서 제외 됩니다. AKS 미리 보기는 최상의 노력에 대한 고객 지원에서 부분적으로 다룹니다. 이러한 기능은 프로덕션 용도로는 사용할 수 없습니다. 추가 정보 다음 지원 문서를 참조 하세요.
 >
 > * [AKS 지원 정책](support-policies.md)
 > * [Azure 지원 FAQ](faq.md)
@@ -83,7 +83,7 @@ az disk-encryption-set create -n myDiskEncryptionSetName  -l myAzureRegionName  
 
 ## <a name="grant-the-diskencryptionset-access-to-key-vault"></a>키 자격 증명 모음에 DiskEncryptionSet 액세스 권한 부여
 
-이전 단계에서 만든 DiskEncryptionSet 및 리소스 그룹을 사용 하 여 Azure Key Vault에 대 한 DiskEncryptionSet 리소스 액세스 권한을 부여 합니다.
+이전 단계에서 만든 DiskEncryptionSet 및 리소스 그룹을 사용 하 여 Azure Key Vault에 대한 DiskEncryptionSet 리소스 액세스 권한을 부여 합니다.
 
 ```azurecli-interactive
 # Retrieve the DiskEncryptionSet value and set a variable
@@ -101,7 +101,7 @@ az role assignment create --assignee $desIdentity --role Reader --scope $keyVaul
 **새 리소스 그룹** 및 AKS 클러스터를 만든 다음, 키를 사용 하 여 OS 디스크를 암호화 합니다. 고객 관리 키는 1.17 보다 큰 Kubernetes 버전 에서만 지원 됩니다. 
 
 > [!IMPORTANT]
-> AKS 클러스터에 대 한 새 리소스 그룹을 만들어야 합니다.
+> AKS 클러스터에 대한 새 리소스 그룹을 만들어야 합니다.
 
 ```azurecli-interactive
 # Retrieve the DiskEncryptionSet value and set a variable
@@ -121,7 +121,7 @@ az aks create -n myAKSCluster -g myResourceGroup --node-osdisk-diskencryptionset
 사용자 고유의 키로 AKS 데이터 디스크를 암호화할 수도 있습니다.
 
 > [!IMPORTANT]
-> 적절 한 AKS 자격 증명이 있는지 확인 합니다. 서비스 주체에 게 diskencryptionset가 배포 되는 리소스 그룹에 대 한 참가자 액세스 권한이 있어야 합니다. 그렇지 않으면 서비스 주체에 권한이 없다는 것을 제안 하는 오류 메시지가 표시 됩니다.
+> 적절 한 AKS 자격 증명이 있는지 확인 합니다. 서비스 주체에 게 diskencryptionset가 배포 되는 리소스 그룹에 대한 참가자 액세스 권한이 있어야 합니다. 그렇지 않으면 서비스 주체에 권한이 없다는 것을 제안 하는 오류 메시지가 표시 됩니다.
 
 ```azurecli-interactive
 # Retrieve your Azure Subscription Id from id property as shown below
@@ -175,12 +175,12 @@ kubectl apply -f byok-azure-disk.yaml
 * Kubernetes 버전 1.17 이상에서 지원 되는 OS 디스크 암호화   
 * BYOK가 지원 되는 지역 에서만 사용할 수 있습니다.
 * 고객 관리 키를 사용 하는 암호화는 현재 새로운 AKS 클러스터에만 사용 되며 기존 클러스터는 업그레이드할 수 없습니다.
-* Virtual Machine Scale Sets를 사용 하는 AKS 클러스터가 필요 하며, 가상 머신 가용성 집합에 대 한 지원이 없습니다.
+* Virtual Machine Scale Sets를 사용 하는 AKS 클러스터가 필요 하며, 가상 머신 가용성 집합에 대한 지원이 없습니다.
 
 
 ## <a name="next-steps"></a>다음 단계
 
-[AKS 클러스터 보안에 대 한 모범 사례][best-practices-security] 검토
+[AKS 클러스터 보안에 대한 모범 사례][best-practices-security] 검토
 
 <!-- LINKS - external -->
 

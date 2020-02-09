@@ -27,7 +27,7 @@ ms.locfileid: "74280288"
 ### <a name="november-4-2019---ignite"></a>2019 년 11 월 4 일-Ignite
 
 * 개발자 생산성 향상
-    * [예측 끝점 V3](luis-migration-api-v3.md)의 일반 공급입니다. 
+    * [예측 엔드포인트 V3](luis-migration-api-v3.md)의 일반 공급입니다. 
     * . Lu ([Ludown](https://github.com/microsoft/botbuilder-tools/tree/master/packages/Ludown)) 형식을 사용 하 여 앱을 가져오고 내보낼 수 있습니다. 이를 통해 효과적인 CI/CD 프로세스를 마련 수 있습니다. 
 * 언어 확장
     * 공개 미리 보기로 제공 되는 [아랍어 및 힌디어](luis-language-support.md) .

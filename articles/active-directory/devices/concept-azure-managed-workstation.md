@@ -50,7 +50,7 @@ ms.locfileid: "74561963"
 * 장치 설정, 배포 및 새로 고침에 대 한 Autopilot
 * 사용자 관리, 조건부 액세스 및 multi-factor authentication에 대 한 Azure AD
 * 장치 상태 증명 및 사용자 환경에 대 한 Windows 10 (현재 버전)
-* 클라우드 관리 끝점 보호, 검색 및 응답을 위한 Defender ATP
+* 클라우드 관리 엔드포인트 보호, 검색 및 응답을 위한 Defender ATP
 * 리소스에 대 한 권한 부여 및 JIT (just-in-time) 특권 수준의 액세스를 관리 하기 위한 Azure AD PIM
 * 모니터링 및 경고에 대 한 Log Analytics 및 센티널
 

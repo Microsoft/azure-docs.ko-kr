@@ -35,7 +35,7 @@ Azure Management에 대한 정책을 만들려면 정책을 적용할 앱을 선
 
 ![Azure 관리에 대한 조건부 액세스](./media/conditional-access-azure-management/conditional-access-azure-mgmt.png)
 
-만든 정책은 다음을 비롯 한 모든 Azure 관리 끝점에 적용 됩니다.
+만든 정책은 다음을 비롯 한 모든 Azure 관리 엔드포인트에 적용 됩니다.
 
 - Azure Portal
 - Azure Resource Manager 공급자

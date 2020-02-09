@@ -138,7 +138,7 @@ listening on port 80
 ::1 - - [21/Mar/2019:23:17:54 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
 ```
 
-사이드카 컨테이너에 대 한 로그를 보려면 `aci-tutorial-sidecar` 컨테이너를 지정 하는 비슷한 명령을 실행 합니다.
+사이드카 컨테이너에 대한 로그를 보려면 `aci-tutorial-sidecar` 컨테이너를 지정 하는 비슷한 명령을 실행 합니다.
 
 ```azurecli-interactive
 az container logs --resource-group myResourceGroup --name myContainerGroup --container-name aci-tutorial-sidecar
@@ -171,11 +171,11 @@ Connection: keep-alive
 이 자습서에서는 YAML 파일을 사용 하 여 Azure Container Instances에서 다중 컨테이너 그룹을 배포 했습니다. 다음 방법에 대해 알아보았습니다.
 
 > [!div class="checklist"]
-> * 다중 컨테이너 그룹에 대 한 YAML 파일 구성
+> * 다중 컨테이너 그룹에 대한 YAML 파일 구성
 > * 컨테이너 그룹 배포
 > * 컨테이너 로그 보기
 
-[리소스 관리자 템플릿을](container-instances-multi-container-group.md)사용 하 여 다중 컨테이너 그룹을 지정할 수도 있습니다. 컨테이너 그룹을 사용 하 여 추가 Azure 서비스 리소스를 배포 해야 하는 경우 시나리오에 대 한 리소스 관리자 템플릿을 쉽게 수정할 수 있습니다.
+[리소스 관리자 템플릿을](container-instances-multi-container-group.md)사용 하 여 다중 컨테이너 그룹을 지정할 수도 있습니다. 컨테이너 그룹을 사용 하 여 추가 Azure 서비스 리소스를 배포 해야 하는 경우 시나리오에 대한 리소스 관리자 템플릿을 쉽게 수정할 수 있습니다.
 
 <!-- LINKS - External -->
 

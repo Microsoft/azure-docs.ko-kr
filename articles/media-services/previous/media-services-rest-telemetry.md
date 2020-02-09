@@ -34,7 +34,7 @@ ms.locfileid: "76774876"
 - 알림 엔드포인트 가져오기
 - 모니터링을 위한 알림 엔드포인트 만들기 
 
-    알림 끝점을 만들려면 EndPointType을 AzureTable (2)로 설정 하 고 endPontAddress를 storage 테이블로 설정 합니다 (예: https:\//telemetryvalidationstore.table.core.windows.net/).
+    알림 엔드포인트을 만들려면 EndPointType을 AzureTable (2)로 설정 하 고 endPontAddress를 storage 테이블로 설정 합니다 (예: https:\//telemetryvalidationstore.table.core.windows.net/).
   
 - 모니터링 구성 가져오기
 

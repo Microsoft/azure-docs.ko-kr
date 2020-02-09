@@ -38,7 +38,7 @@ ms.locfileid: "76984592"
 
     1. **예** 또는 **아니요**를 선택 하 여 앱이 **공용 클라이언트** 인지 여부를 확인 합니다.
 
-    1. 지원 되는 계정 및 테 넌 트를 확인 합니다.
+    1. 지원 되는 계정 및 테넌트를 확인 합니다.
 
     [암시적 권한 부여 ![구성](media/time-series-insights-aad-registration/active-directory-auth-blade.png)](media/time-series-insights-aad-registration/active-directory-auth-blade.png#lightbox)
 

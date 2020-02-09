@@ -33,7 +33,7 @@ Network Watcher는 세 가지 주요 기능 집합을 제공 합니다.
 * 모니터링
   * [토폴로지 보기](https://docs.microsoft.com/azure/network-watcher/view-network-topology) 에는 가상 네트워크의 리소스와 이러한 리소스 간의 관계가 표시 됩니다.
   * [연결 모니터](https://docs.microsoft.com/azure/network-watcher/connection-monitor) 를 사용 하면 VM과 다른 네트워크 리소스 간의 연결 및 대기 시간을 모니터링할 수 있습니다.
-  * [네트워크 성능 모니터](https://docs.microsoft.com/azure/azure-monitor/insights/network-performance-monitor) 를 사용 하면 하이브리드 네트워크 아키텍처, express 경로 회로 및 서비스/응용 프로그램 끝점에서 연결 및 대기 시간을 모니터링할 수 있습니다.  
+  * [네트워크 성능 모니터](https://docs.microsoft.com/azure/azure-monitor/insights/network-performance-monitor) 를 사용 하면 하이브리드 네트워크 아키텍처, express 경로 회로 및 서비스/응용 프로그램 엔드포인트에서 연결 및 대기 시간을 모니터링할 수 있습니다.  
 * 진단
   * [IP 흐름 확인](https://docs.microsoft.com/azure/network-watcher/network-watcher-ip-flow-verify-overview) 을 사용 하면 VM 수준에서 트래픽 필터링 문제를 검색할 수 있습니다.
   * [다음 홉](https://docs.microsoft.com/azure/network-watcher/network-watcher-next-hop-overview) 은 트래픽 경로를 확인 하 고 라우팅 문제를 검색 하는 데 도움이 됩니다.
@@ -95,9 +95,9 @@ Azure 네트워크 리소스는 [NSGs (네트워크 보안 그룹)](https://docs
 
 몇 분 후에 스토리지 로그를 확인할 수 있습니다. 그러면 업데이트된 타임스탬프 또는 새로 만든 JSON 파일이 표시됩니다.
 
-### <a name="how-do-i-use-nsg-flow-logs-with-a-storage-account-behind-a-service-endpoint"></a>서비스 끝점 뒤의 저장소 계정으로 NSG 흐름 로그를 사용 어떻게 할까요??
+### <a name="how-do-i-use-nsg-flow-logs-with-a-storage-account-behind-a-service-endpoint"></a>서비스 엔드포인트 뒤의 저장소 계정으로 NSG 흐름 로그를 사용 어떻게 할까요??
 
-NSG 흐름 로그는 추가 구성이 필요 없이 서비스 끝점과 호환 됩니다. 가상 네트워크에서 [서비스 끝점을 사용 하도록 설정 하는 방법에 대 한 자습서](https://docs.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources#enable-a-service-endpoint) 를 참조 하세요.
+NSG 흐름 로그는 추가 구성이 필요 없이 서비스 엔드포인트과 호환 됩니다. 가상 네트워크에서 [서비스 엔드포인트을 사용 하도록 설정 하는 방법에 대 한 자습서](https://docs.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources#enable-a-service-endpoint) 를 참조 하세요.
 
 
 ### <a name="what-is-the-difference-between-flow-logs-versions-1--2"></a>흐름 로그 버전 1 & 2의 차이점은 무엇 인가요?

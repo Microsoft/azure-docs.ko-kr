@@ -27,7 +27,7 @@ ms.locfileid: "76290617"
 >
 >
 
-Azure Data Lake Storage Gen1 용 Python SDK를 사용 하 여 Data Lake Storage Gen1 계정 만들기, Data Lake Storage Gen1 계정 나열 등의 기본 계정 관리 작업을 수행 하는 방법에 대해 알아봅니다. Python을 사용 하 여 Data Lake Storage Gen1에서 파일 시스템 작업을 수행 하는 방법에 대 한 지침은 [python을 사용 하 여 Data Lake Storage Gen1에 대 한 파일 시스템 작업](data-lake-store-data-operations-python.md)
+Azure Data Lake Storage Gen1 용 Python SDK를 사용 하 여 Data Lake Storage Gen1 계정 만들기, Data Lake Storage Gen1 계정 나열 등의 기본 계정 관리 작업을 수행 하는 방법에 대해 알아봅니다. Python을 사용 하 여 Data Lake Storage Gen1에서 파일 시스템 작업을 수행 하는 방법에 대한 지침은 [python을 사용 하 여 Data Lake Storage Gen1에 대한 파일 시스템 작업](data-lake-store-data-operations-python.md)
 
 ## <a name="prerequisites"></a>필수 조건
 

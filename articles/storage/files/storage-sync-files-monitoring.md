@@ -54,8 +54,8 @@ Azure Monitor에서 경고를 구성 하려면 Storage 동기화 서비스를 �
 
 | 시나리오 | 경고에 사용할 메트릭입니다. |
 |-|-|
-| 포털의 서버 끝점 상태 = 오류 | 동기화 세션 결과 |
-| 파일이 서버 또는 클라우드 끝점과 동기화 되지 않습니다. | 동기화 상태가 아닌 파일 |
+| 포털의 서버 엔드포인트 상태 = 오류 | 동기화 세션 결과 |
+| 파일이 서버 또는 클라우드 엔드포인트과 동기화 되지 않습니다. | 동기화 상태가 아닌 파일 |
 | 등록 된 서버가 저장소 동기화 서비스와 통신 하지 못함 | 서버 온라인 상태 |
 | 클라우드 계층화 회수 크기가 하루에 500GiB을 초과 했습니다.  | 클라우드 계층화 회수 크기 |
 
@@ -63,14 +63,14 @@ Azure Monitor에서 경고를 구성 하는 방법에 대 한 자세한 내용�
 
 ## <a name="storage-sync-service"></a>스토리지 동기화 서비스
 
-등록 된 서버 상태, 서버 끝점 상태 및 메트릭을 보려면 Azure Portal의 저장소 동기화 서비스로 이동 합니다. 등록 된 **서버 블레이드 및** **동기화 그룹** 블레이드에서 서버 끝점 상태에서 등록 된 서버 상태를 볼 수 있습니다.
+등록 된 서버 상태, 서버 엔드포인트 상태 및 메트릭을 보려면 Azure Portal의 저장소 동기화 서비스로 이동 합니다. 등록 된 **서버 블레이드 및** **동기화 그룹** 블레이드에서 서버 엔드포인트 상태에서 등록 된 서버 상태를 볼 수 있습니다.
 
 ### <a name="registered-server-health"></a>등록 된 서버 상태
 
 - 등록 된 **서버** 상태가 **온라인**인 경우 서버는 서비스와 성공적으로 통신 하 고 있는 것입니다.
 - 등록 된 **서버** 상태가 **오프 라인으로 표시**되는 경우 서버에서 저장소 동기화 모니터 (AzureStorageSyncMonitor .exe) 프로세스가 실행 중인지 확인 합니다. 서버가 방화벽이 나 프록시 뒤에 있는 경우 [이 문서](https://docs.microsoft.com/azure/storage/files/storage-sync-files-firewall-and-proxy) 를 참조 하 여 방화벽 및 프록시를 구성 합니다.
 
-### <a name="server-endpoint-health"></a>서버 끝점 상태
+### <a name="server-endpoint-health"></a>서버 엔드포인트 상태
 
 - 포털의 서버 엔드포인트 상태는 서버의 원격 분석 이벤트 로그에 기록되는 동기화 이벤트(ID 9102 및 9302)를 기준으로 합니다. 오류 취소와 같은 일시적인 오류로 인해 동기화 세션이 실패 한 경우 현재 동기화 세션이 진행 되는 동안에도 여전히 포털에서 동기화가 정상적으로 나타날 수 있습니다. 이벤트 ID 9302은 파일이 적용 되 고 있는지 여부를 확인 하는 데 사용 됩니다. 자세한 내용은 [동기화 상태](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=server%2Cazure-portal#broken-sync) 및 [동기화 진행률](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=server%2Cazure-portal#how-do-i-monitor-the-progress-of-a-current-sync-session)을 참조 하세요.
 - 동기화가 진행 되 고 있지 않으므로 포털에서 동기화 오류가 표시 되는 경우 [문제 해결 설명서](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#common-sync-errors) 에서 지침을 참조 하세요.

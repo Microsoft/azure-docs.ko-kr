@@ -1,6 +1,6 @@
 ---
 title: Azure SignalR 서비스 제한 테이블
-description: Azure SignalR 서비스에 대 한 시스템 제한을 설명 합니다.
+description: Azure SignalR 서비스에 대한 시스템 제한을 설명 합니다.
 services: signalr
 documentationcenter: signalr
 author: sffamily
@@ -22,9 +22,9 @@ ms.locfileid: "67182604"
 ---
 | 리소스 | 기본 제한 | 최대 제한 | 
 | --- | --- | --- |
-| 무료 계층에 대 한 인스턴스당 Azure SignalR 서비스 단위 |1 |1 |
-| 표준 계층에 대 한 인스턴스당 Azure SignalR 서비스 단위 |100 |100 |
-| 무료 계층에 대 한 지역 당 구독 당 Azure SignalR 서비스 단위|5 |5 |
+| 무료 계층에 대한 인스턴스당 Azure SignalR 서비스 단위 |1 |1 |
+| 표준 계층에 대한 인스턴스당 Azure SignalR 서비스 단위 |100 |100 |
+| 무료 계층에 대한 지역 당 구독 당 Azure SignalR 서비스 단위|5 |5 |
 | 지역별 구독 당 총 Azure SignalR 서비스 단위 수 |150 |제한 없음 |
 | 무료 계층의 단위당 일일 연결 수 |20 |20 |
 | 표준 계층의 단위당 일일 연결 수 |1,000 |1,000|

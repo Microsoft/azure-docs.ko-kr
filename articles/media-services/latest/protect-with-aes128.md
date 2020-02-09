@@ -103,7 +103,7 @@ Ahogy korábban említettük, az [átalakítási](https://docs.microsoft.com/res
 
 ## <a name="wait-for-the-job-to-complete"></a>Várakozás a feladat befejeződésére
 
-작업을 완료 하는 데 다소 시간이 걸립니다. 이 경우 알림이 표시 됩니다. Az alábbi kódminta bemutatja, hogyan kérdezheti le a [feladat](https://docs.microsoft.com/rest/api/media/jobs) állapotát a szolgáltatásból. 폴링은 잠재적인 대기 시간으로 인해 프로덕션 앱에 권장 되는 모범 사례가 아닙니다. Túlzott használat esetén a lekérdezés kapacitása korlátozott lehet egy adott fiókban. Fejlesztőknek inkább az Event Grid használata javasolt. 자세한 내용은 [이벤트를 사용자 지정 웹 끝점으로 라우팅](job-state-events-cli-how-to.md)을 참조 하세요.
+작업을 완료 하는 데 다소 시간이 걸립니다. 이 경우 알림이 표시 됩니다. Az alábbi kódminta bemutatja, hogyan kérdezheti le a [feladat](https://docs.microsoft.com/rest/api/media/jobs) állapotát a szolgáltatásból. 폴링은 잠재적인 대기 시간으로 인해 프로덕션 앱에 권장 되는 모범 사례가 아닙니다. Túlzott használat esetén a lekérdezés kapacitása korlátozott lehet egy adott fiókban. Fejlesztőknek inkább az Event Grid használata javasolt. 자세한 내용은 [이벤트를 사용자 지정 웹 엔드포인트으로 라우팅](job-state-events-cli-how-to.md)을 참조 하세요.
 
 A **feladat** a következő állapotokon halad végig: **Ütemezve**, **Várólistán**, **Feldolgozás alatt**, **Befejeződött** (a végső állapot). 작업에 오류가 발생 한 경우 **오류** 상태가 표시 됩니다. 작업이 취소 되 고 있으면 **작업이 취소 되 고** **취소** 됩니다.
 
@@ -143,7 +143,7 @@ ContentKeyIdentifierClaim는 **콘텐츠 키 정책**에 사용 됩니다. 즉, 
 
 ## <a name="build-a-dash-streaming-url"></a>DASH streamelési URL létrehozása
 
-이제 [스트리밍 로케이터](https://docs.microsoft.com/rest/api/media/streaminglocators) 를 만들었으므로 스트리밍 url을 가져올 수 있습니다. URL을 작성 하려면 [Streamingendpoint](https://docs.microsoft.com/rest/api/media/streamingendpoints) 호스트 이름 및 **스트리밍 로케이터** 경로를 연결 해야 합니다. 이 샘플에서는 *기본* **스트리밍 끝점이** 사용 됩니다. 미디어 서비스 계정을 처음 만들 때이 *기본* **스트리밍 끝점** 은 중지 됨 상태가 되므로 **Start**를 호출 해야 합니다.
+이제 [스트리밍 로케이터](https://docs.microsoft.com/rest/api/media/streaminglocators) 를 만들었으므로 스트리밍 url을 가져올 수 있습니다. URL을 작성 하려면 [Streamingendpoint](https://docs.microsoft.com/rest/api/media/streamingendpoints) 호스트 이름 및 **스트리밍 로케이터** 경로를 연결 해야 합니다. 이 샘플에서는 *기본* **스트리밍 엔드포인트이** 사용 됩니다. 미디어 서비스 계정을 처음 만들 때이 *기본* **스트리밍 엔드포인트** 은 중지 됨 상태가 되므로 **Start**를 호출 해야 합니다.
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/EncryptWithAES/Program.cs#GetMPEGStreamingUrl)]
 

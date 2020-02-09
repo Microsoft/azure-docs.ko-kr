@@ -112,15 +112,15 @@ Batch 계정 및 시나리오에 대한 배경은 [기능 개요](batch-api-basi
 
 1. **Key Vault 만들기** 페이지에서 키 자격 증명 모음의 이름을 입력하고, Batch 계정에 사용할 지역에 리소스 그룹을 만듭니다. 나머지 설정은 기본값으로 그대로 두고 **만들기**를 선택합니다.
 
-사용자 구독 모드에서 Batch 계정을 만들 때 키 자격 증명 모음에 대 한 리소스 그룹을 사용 합니다. **사용자 구독** 을 풀 할당 모드로 지정 하 고, 키 자격 증명 모음을 선택 하 고, 키 자격 증명 모음에 대 한 Azure Batch 액세스 권한을 부여 하는 확인란을 선택 합니다. 
+사용자 구독 모드에서 Batch 계정을 만들 때 키 자격 증명 모음에 대한 리소스 그룹을 사용 합니다. **사용자 구독** 을 풀 할당 모드로 지정 하 고, 키 자격 증명 모음을 선택 하 고, 키 자격 증명 모음에 대한 Azure Batch 액세스 권한을 부여 하는 확인란을 선택 합니다. 
 
-키 자격 증명 모음에 대 한 액세스 권한을 수동으로 부여 하려면 키 자격 증명 모음의 **액세스 정책** 섹션으로 이동 하 여 **액세스 정책 추가** 를 선택 하 고 **Microsoft Azure Batch**를 검색 합니다. 선택한 후에는 드롭다운 메뉴를 사용 하 여 **비밀 권한을** 구성 해야 합니다. Azure Batch에는 최소한 **Get**, **List**, **Set**및 **Delete** 권한이 제공 되어야 합니다.
+키 자격 증명 모음에 대한 액세스 권한을 수동으로 부여 하려면 키 자격 증명 모음의 **액세스 정책** 섹션으로 이동 하 여 **액세스 정책 추가** 를 선택 하 고 **Microsoft Azure Batch**를 검색 합니다. 선택한 후에는 드롭다운 메뉴를 사용 하 여 **비밀 권한을** 구성 해야 합니다. Azure Batch에는 최소한 **Get**, **List**, **Set**및 **Delete** 권한이 제공 되어야 합니다.
 
-![Azure Batch에 대 한 보안 권한](./media/batch-account-create-portal/secret-permissions.png)
+![Azure Batch에 대한 보안 권한](./media/batch-account-create-portal/secret-permissions.png)
 
 
 > [!NOTE]
-> 연결 된 **Key Vault** 리소스에 대 한 **액세스 정책** 아래에 Azure Resource Manager 배포 및 **템플릿 배포** 에 대 한 **Azure Virtual Machines** 확인란이 선택 되어 있는지 확인 합니다.
+> 연결 된 **Key Vault** 리소스에 대한 **액세스 정책** 아래에 Azure Resource Manager 배포 및 **템플릿 배포** 에 대한 **Azure Virtual Machines** 확인란이 선택 되어 있는지 확인 합니다.
 > 
 > ![필수 Key Vault 액세스 정책](./media/batch-account-create-portal/key-vault-access-policy.png) Azure Portal에서 Batch 계정을 만들 때 반드시 필요한 것은 아닙니다. 옵션은 기본적으로 선택 되어 있습니다.
 

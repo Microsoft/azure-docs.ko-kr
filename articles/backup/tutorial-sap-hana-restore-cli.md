@@ -56,7 +56,7 @@ DefaultRangeRecoveryPoint                                    AzureWorkload      
 보시는 것처럼, 위의 목록에는 각각 전체, 차등 및 로그 백업용으로 하나씩 총 3개의 복구 지점이 포함되어 있습니다.
 
 >[!NOTE]
->[az backup recoverypoint show-log-chain](https://docs.microsoft.com/cli/azure/backup/recoverypoint?view=azure-cli-latest#az-backup-recoverypoint-show-log-chain) cmdlet을 사용하여 끊어지지 않은 모든 로그 백업 체인의 시작점과 끝점을 볼 수도 있습니다.
+>[az backup recoverypoint show-log-chain](https://docs.microsoft.com/cli/azure/backup/recoverypoint?view=azure-cli-latest#az-backup-recoverypoint-show-log-chain) cmdlet을 사용하여 끊어지지 않은 모든 로그 백업 체인의 시작점과 엔드포인트을 볼 수도 있습니다.
 
 ## <a name="prerequisites-to-restore-a-database"></a>데이터베이스 복원에 필요한 필수 구성 요소
 

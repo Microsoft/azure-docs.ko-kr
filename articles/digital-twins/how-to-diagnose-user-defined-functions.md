@@ -29,13 +29,13 @@ Azure Digital Twins 내에서 문제를 진단 하는 방법을 알면 문제를
 
 이러한 끝에 다양 한 로깅, 분석 및 진단 도구가 제공 됩니다.
 
-### <a name="enable-logging-for-your-instance"></a>인스턴스에 대 한 로깅 사용
+### <a name="enable-logging-for-your-instance"></a>인스턴스에 대한 로깅 사용
 
 Azure Digital Twins는 강력한 로깅, 모니터링 및 분석을 지원합니다. 솔루션 개발자는 Azure Monitor 로그, 진단 로그, 활동 로그 및 기타 서비스를 사용 하 여 IoT 앱의 복잡 한 모니터링 요구를 지원할 수 있습니다. 로깅 옵션을 결합하여 여러 서비스의 레코드를 쿼리 또는 표시하고 여러 서비스에 대한 세밀한 로깅 범위를 제공할 수 있습니다.
 
 * Azure Digital Twins에 특정 한 로깅 구성을 보려면 [모니터링 및 로깅을 구성 하는 방법](./how-to-configure-monitoring.md)을 참조 하세요.
-* Azure Monitor를 통해 사용 하도록 설정 된 강력한 로그 설정에 대 한 자세한 내용은 [Azure Monitor](../azure-monitor/overview.md) 개요를 참조 하세요.
-* Azure Portal, Azure CLI 또는 PowerShell을 통해 Azure Digital Twins에서 진단 로그 설정 구성에 대 한 [azure 리소스에서 로그 데이터 수집 및 사용](../azure-monitor/platform/platform-logs-overview.md) 문서를 검토 합니다.
+* Azure Monitor를 통해 사용 하도록 설정 된 강력한 로그 설정에 대한 자세한 내용은 [Azure Monitor](../azure-monitor/overview.md) 개요를 참조 하세요.
+* Azure Portal, Azure CLI 또는 PowerShell을 통해 Azure Digital Twins에서 진단 로그 설정 구성에 대한 [azure 리소스에서 로그 데이터 수집 및 사용](../azure-monitor/platform/platform-logs-overview.md) 문서를 검토 합니다.
 
 구성 된 후에는 모든 로그 범주 및 메트릭을 선택 하 고 강력한 Azure Monitor log analytics 작업 영역을 사용 하 여 디버깅 활동을 지원할 수 있습니다.
 
@@ -63,7 +63,7 @@ AzureDiagnostics
 | order by CorrelationId desc
 ```
 
-사용자 정의 함수에 대 한 로깅을 사용 하도록 설정 하면 해당 로그는 `UserDefinedFunction`범주를 사용 하 여 log analytics 인스턴스에 표시 됩니다. 이를 검색 하려면 log analytics에서 다음 쿼리 조건을 입력 합니다.
+사용자 정의 함수에 대한 로깅을 사용 하도록 설정 하면 해당 로그는 `UserDefinedFunction`범주를 사용 하 여 log analytics 인스턴스에 표시 됩니다. 이를 검색 하려면 log analytics에서 다음 쿼리 조건을 입력 합니다.
 
 ```Kusto
 AzureDiagnostics

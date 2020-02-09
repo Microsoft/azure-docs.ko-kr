@@ -27,7 +27,7 @@ Azure Front 도어 서비스를 사용 하 여 다음과 같은 방법으로 리
 
 ### <a name="metrics"></a>메트릭
 
-메트릭은 포털에서 성능 카운터를 볼 수 있는 특정 Azure 리소스에 대 한 기능입니다. 다음은 사용 가능한 전방 도어 메트릭입니다.
+메트릭은 포털에서 성능 카운터를 볼 수 있는 특정 Azure 리소스에 대한 기능입니다. 다음은 사용 가능한 전방 도어 메트릭입니다.
 
 | 메트릭 | 메트릭 표시 이름 | 단위 | 차원 | Description |
 | --- | --- | --- | --- | --- |
@@ -42,7 +42,7 @@ Azure Front 도어 서비스를 사용 하 여 다음과 같은 방법으로 리
 
 ## <a name="activity-log"></a>활동 로그
 
-활동 로그는 프런트 도어 서비스에서 수행 된 작업에 대 한 정보를 제공 합니다. 또한 Front 도어 서비스에서 수행 되는 모든 쓰기 작업 (put, post 또는 delete)을 결정 합니다.
+활동 로그는 프런트 도어 서비스에서 수행 된 작업에 대한 정보를 제공 합니다. 또한 Front 도어 서비스에서 수행 되는 모든 쓰기 작업 (put, post 또는 delete)을 결정 합니다.
 
 >[!NOTE]
 >활동 로그에는 읽기 (get) 작업이 포함 되지 않습니다. 또한 Azure Portal 또는 원래 관리 API를 사용 하 여 수행 하는 작업을 포함 하지 않습니다.
@@ -57,13 +57,13 @@ Azure Monitor에서 Azure 리소스의 모든 로그 또는 Front 도어 서비�
 3. 필터링 범위를 선택한 다음 **적용**을 선택 합니다.
 
 ## <a name="diagnostic-logging"></a>진단 로그
-진단 로그는 감사 및 문제 해결에 중요 한 작업 및 오류에 대 한 다양 한 정보를 제공 합니다. 진단 로그는 활동 로그와 다릅니다.
+진단 로그는 감사 및 문제 해결에 중요 한 작업 및 오류에 대한 다양 한 정보를 제공 합니다. 진단 로그는 활동 로그와 다릅니다.
 
-활동 로그는 Azure 리소스에서 수행 된 작업에 대 한 통찰력을 제공 합니다. 진단 로그는 리소스에서 수행한 작업에 대 한 통찰력을 제공 합니다. 자세한 내용은 [Azure Monitor 진단 로그](../azure-monitor/platform/platform-logs-overview.md)를 참조 하세요.
+활동 로그는 Azure 리소스에서 수행 된 작업에 대한 통찰력을 제공 합니다. 진단 로그는 리소스에서 수행한 작업에 대한 통찰력을 제공 합니다. 자세한 내용은 [Azure Monitor 진단 로그](../azure-monitor/platform/platform-logs-overview.md)를 참조 하세요.
 
 ![진단 로그](./media/front-door-diagnostics/diagnostic-log.png)
 
-프런트 도어 서비스에 대 한 진단 로그를 구성 하려면:
+프런트 도어 서비스에 대한 진단 로그를 구성 하려면:
 
 1. Azure Front 도어 서비스를 선택 합니다.
 
@@ -79,7 +79,7 @@ Azure Monitor에서 Azure 리소스의 모든 로그 또는 Front 도어 서비�
 | ClientPort | 요청을 수행한 클라이언트의 IP 포트입니다. |
 | HttpMethod | 요청에서 사용된 HTTP 메서드 |
 | HttpStatusCode | 프록시에서 반환 된 HTTP 상태 코드입니다. |
-| HttpStatusDetails | 요청에 대 한 결과 상태입니다. 이 문자열 값의 의미는 상태 참조 테이블에서 찾을 수 있습니다. |
+| HttpStatusDetails | 요청에 대한 결과 상태입니다. 이 문자열 값의 의미는 상태 참조 테이블에서 찾을 수 있습니다. |
 | HttpVersion | 요청 또는 연결의 유형입니다. |
 | RequestBytes | 요청 헤더 및 요청 본문을 포함 하 여 HTTP 요청 메시지의 크기 (바이트)입니다. |
 | RequestUri | 받은 요청의 URI |
@@ -88,7 +88,7 @@ Azure Monitor에서 Azure 리소스의 모든 로그 또는 Front 도어 서비�
 | SecurityProtocol | 요청에 사용 되는 TLS/SSL 프로토콜 버전 이거나, 암호화가 없는 경우 null입니다. |
 | TimeTaken | 작업에 걸린 시간 (밀리초)입니다. |
 | UserAgent | 클라이언트에서 사용 하는 브라우저 유형입니다. |
-| TrackingReference | 프런트 도어에서 제공 하는 요청을 식별 하는 고유한 참조 문자열로, 클라이언트에 대 한 X-y 헤더로도 전송 됩니다. 특정 요청에 대 한 액세스 로그에서 세부 정보를 검색 하는 데 필요 합니다. |
+| TrackingReference | 프런트 도어에서 제공 하는 요청을 식별 하는 고유한 참조 문자열로, 클라이언트에 대한 X-y 헤더로도 전송 됩니다. 특정 요청에 대한 액세스 로그에서 세부 정보를 검색 하는 데 필요 합니다. |
 
 ## <a name="next-steps"></a>다음 단계
 

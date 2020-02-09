@@ -73,8 +73,8 @@ LUIS 앱을 만드는 몇 가지 방법이 있습니다. LUIS 포털에서 또�
 * 앱 이름 바꾸기
 * `.lu` 또는 `.json`를 사용 하 여 파일에서 가져오기
 * 앱을 `.lu` ( [Ludown](https://github.com/microsoft/botbuilder-tools/tree/master/packages/Ludown)), `.json`또는 `.zip` ( [LUIS 컨테이너](luis-container-howto.md)의 경우)로 내보내기
-* 컨테이너 끝점 로그를 가져와 길이 발언 끝점을 검토 합니다.
-* 오프 라인 분석을 위해 끝점 로그를 `.csv`으로 내보내기
+* 컨테이너 엔드포인트 로그를 가져와 길이 발언 엔드포인트을 검토 합니다.
+* 오프 라인 분석을 위해 엔드포인트 로그를 `.csv`으로 내보내기
 * 앱 삭제
 
 ## <a name="next-steps"></a>다음 단계

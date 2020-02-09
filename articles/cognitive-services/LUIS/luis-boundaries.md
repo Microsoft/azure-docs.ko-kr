@@ -37,7 +37,7 @@ LUIS에는 여러 경계 영역이 있습니다. 첫 번째는 LUIS에서 의도
 | [목록 엔터티](./luis-concept-entity-types.md) | 부모: 50, 자식: 20,000개 항목 정식 이름은 *기본 문자 최댓값입니다. 동의어 값에는 길이 제한이 없습니다. |
 | [컴퓨터에서 학습 한 엔터티 + 역할](./luis-concept-entity-types.md):<br> 합성할<br>쉽게<br>엔터티 역할|100 부모 엔터티 또는 330 엔터티 중 하나는 사용자가 먼저 적중 하는 것을 제한 합니다. 역할은이 경계의 용도에 대 한 엔터티로 계산 됩니다. 예를 들어 두 개의 역할이 있는 복합 엔터티는 1 개의 복합 + 1 단순 + 2 역할 = 4 인 330 엔터티입니다.<br>하위 구성 요소는 최대 5 수준까지 중첩할 수 있습니다.|
 |기능으로 서의 모델| 특정 모델에 대 한 설명자 (기능)로 사용할 수 있는 모델의 최대 수를 10 개 모델로 사용할 수 있습니다. 특정 모델에 대 한 설명자 (기능)로 사용 되는 최대 문구 목록 수를 10 개 구 목록으로 표시 합니다.|
-| [미리 보기-동적 목록 엔터티](https://aka.ms/luis-api-v3-doc#dynamic-lists-passed-in-at-prediction-time)|2-쿼리 예측 끝점 요청당 ~ 1k 목록|
+| [미리 보기-동적 목록 엔터티](https://aka.ms/luis-api-v3-doc#dynamic-lists-passed-in-at-prediction-time)|2-쿼리 예측 엔드포인트 요청당 ~ 1k 목록|
 | [패턴](luis-concept-patterns.md)|애플리케이션당 500개 패턴.<br>패턴의 최대 길이는 400자입니다.<br>패턴당 3개의 Pattern.any 엔터티<br>패턴에 최대 2개의 선택적 중첩 텍스트|
 | [Pattern.any](./luis-concept-entity-types.md)|애플리케이션당 100개, 패턴당 3개의 pattern.any 엔터티 |
 | [구 목록][phrase-list]|500 구 목록. 교환 가능 하지 않은 phraselist에는 최대 5000 구가 있습니다. 교환 가능한 Phraselist에는 최대 5만 구가 있습니다. 50만 구의 응용 프로그램당 최대 총 문구 수입니다.|
@@ -85,7 +85,7 @@ LUIS에는 여러 경계 영역이 있습니다. 첫 번째는 LUIS에서 의도
 
 ## <a name="resource-key-limits"></a>리소스 키 제한
 
-리소스 키에는 제작 및 끝점의 제한이 다릅니다. LUIS 예측 쿼리 끝점 키는 끝점 쿼리에만 유효 합니다. 
+리소스 키에는 제작 및 엔드포인트의 제한이 다릅니다. LUIS 예측 쿼리 엔드포인트 키는 엔드포인트 쿼리에만 유효 합니다. 
 
 * 500 Azure 제작 리소스 당 응용 프로그램 
 
@@ -96,7 +96,7 @@ LUIS에는 여러 경계 영역이 있습니다. 첫 번째는 LUIS에서 의도
 |S0-기본 계층|-|50/초|LUIS 엔드포인트 쿼리|
 |S0-표준 계층|-|50/초|LUIS 엔드포인트 쿼리|
 |[감정 분석 통합](luis-how-to-publish-app.md#enable-sentiment-analysis)|-|-|다른 Azure 리소스를 요구 하지 않고 키 구 데이터 추출을 포함 하 여 감정 정보를 추가 하는 것이 제공 됩니다. |
-|[음성 통합](../speech-service/how-to-recognize-intents-from-speech-csharp.md)|-|1000 단위 비용 당 끝점 요청 수|음성 발화를 텍스트 발화로 변환하고 LUIS 결과 반환|
+|[음성 통합](../speech-service/how-to-recognize-intents-from-speech-csharp.md)|-|1000 단위 비용 당 엔드포인트 요청 수|음성 발화를 텍스트 발화로 변환하고 LUIS 결과 반환|
 
 [가격 책정에 대해 자세히 알아보세요.][pricing]
 

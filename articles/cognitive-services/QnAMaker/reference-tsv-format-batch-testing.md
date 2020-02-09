@@ -28,8 +28,8 @@ batchtesting.exe input.tsv https://YOUR-HOST.azurewebsites.net ENDPOINT-KEY out.
 |매개 변수|예상 값|
 |--|--|
 |1|[tsv 입력 필드](#tsv-input-fields) 를 사용 하 여 형식이 지정 된 tsv 파일의 이름|
-|2|QnA Maker 포털의 게시 페이지에서-호스트를 사용 하는 끝점에 대 한 URI입니다.|
-|3|끝점-키-QnA Maker 포털의 게시 페이지에 있습니다.|
+|2|QnA Maker 포털의 게시 페이지에서-호스트를 사용 하는 엔드포인트에 대 한 URI입니다.|
+|3|엔드포인트-키-QnA Maker 포털의 게시 페이지에 있습니다.|
 |4|결과에 대해 일괄 테스트에서 만든 tsv 파일의 이름입니다.|
 
 일괄 테스트를 위한 TSV 형식을 이해 하 고 구현 하려면 다음 정보를 사용 합니다. 

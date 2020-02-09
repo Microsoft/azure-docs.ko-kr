@@ -206,7 +206,7 @@ Microsoft는 동일한 번호를 통한 일관적인 SMS 또는 음성 기반 Mu
 제공한 전화 번호에 자동으로 음성 전화를 겁니다. 전화를 받고 휴대폰 키패드에서 #을 눌러 인증합니다.
 
 > [!IMPORTANT]
-> 2019 년 3 월부터, 무료/평가판 Azure AD 테 넌 트의 MFA 및 SSPR 사용자가 전화 통화 옵션을 사용할 수 없습니다. SMS 메시지는 이러한 변경의 영향을 받지 않습니다. 전화 통화는 유료 Azure AD 테 넌 트의 사용자가 계속 사용할 수 있습니다. 이 변경 내용은 무료/평가판 Azure AD 테 넌 트에만 영향을 줍니다.
+> 2019 년 3 월부터, 무료/평가판 Azure AD 테넌트의 MFA 및 SSPR 사용자가 전화 통화 옵션을 사용할 수 없습니다. SMS 메시지는 이러한 변경의 영향을 받지 않습니다. 전화 통화는 유료 Azure AD 테넌트의 사용자가 계속 사용할 수 있습니다. 이 변경 내용은 무료/평가판 Azure AD 테넌트에만 영향을 줍니다.
 
 ### <a name="office-phone"></a>사무실 전화
 
@@ -217,7 +217,7 @@ Microsoft는 동일한 번호를 통한 일관적인 SMS 또는 음성 기반 Mu
 사무실 전화 특성은 관리자가 관리합니다.
 
 > [!IMPORTANT]
-> 2019 년 3 월부터, 무료/평가판 Azure AD 테 넌 트의 MFA 및 SSPR 사용자가 전화 통화 옵션을 사용할 수 없습니다. SMS 메시지는 이러한 변경의 영향을 받지 않습니다. 전화 통화는 유료 Azure AD 테 넌 트의 사용자가 계속 사용할 수 있습니다. 이 변경 내용은 무료/평가판 Azure AD 테 넌 트에만 영향을 줍니다.
+> 2019 년 3 월부터, 무료/평가판 Azure AD 테넌트의 MFA 및 SSPR 사용자가 전화 통화 옵션을 사용할 수 없습니다. SMS 메시지는 이러한 변경의 영향을 받지 않습니다. 전화 통화는 유료 Azure AD 테넌트의 사용자가 계속 사용할 수 있습니다. 이 변경 내용은 무료/평가판 Azure AD 테넌트에만 영향을 줍니다.
 
 > [!NOTE]
 > 국가 번호와 전화 번호 사이에 공백이 필요합니다.
@@ -263,6 +263,6 @@ Microsoft는 동일한 번호를 통한 일관적인 SMS 또는 음성 기반 Mu
 
 [조직에 Azure Multi-Factor Authentication을 사용하도록 설정](howto-mfa-getstarted.md)
 
-[테 넌 트에서 결합 된 등록 사용](howto-registration-mfa-sspr-combined.md)
+[테넌트에서 결합 된 등록 사용](howto-registration-mfa-sspr-combined.md)
 
 [최종 사용자 인증 방법 구성 설명서](https://aka.ms/securityinfoguide)

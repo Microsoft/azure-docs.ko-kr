@@ -23,7 +23,7 @@ ms.locfileid: "75834305"
 
 API Management 정책은 구성을 통해 Azure Portal에서 API 동작을 변경하도록 하는 시스템의 강력한 기능입니다. 정책은 API의 요청이나 응답에 따라 순차적으로 실행되는 명령문의 컬렉션입니다. 정책 설명은 리터럴 텍스트 값, 정책 식 및 명명된 값을 사용하여 생성할 수 있습니다.
 
-각 API Management 서비스 인스턴스에는 서비스 인스턴스에 대 한 전역 인 키/값 쌍의 컬렉션 (명명 된 값 이라고 함)이 있습니다. 컬렉션의 항목 수에는 제한이 없습니다. 명명 된 값은 모든 API 구성 및 정책에서 상수 문자열 값을 관리 하는 데 사용할 수 있습니다. 각 명명 된 값에는 다음과 같은 특성이 있을 수 있습니다.
+각 API Management 서비스 인스턴스에는 서비스 인스턴스에 대한 전역 인 키/값 쌍의 컬렉션 (명명 된 값 이라고 함)이 있습니다. 컬렉션의 항목 수에는 제한이 없습니다. 명명 된 값은 모든 API 구성 및 정책에서 상수 문자열 값을 관리 하는 데 사용할 수 있습니다. 각 명명 된 값에는 다음과 같은 특성이 있을 수 있습니다.
 
 | attribute      | 유형            | Description                                                                                                                            |
 | -------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -59,7 +59,7 @@ API Management 정책은 구성을 통해 Azure Portal에서 API 동작을 변�
 
 명명 된 값을 만든 후에는 해당 값을 클릭 하 여 편집할 수 있습니다. 명명 된 값 이름을 변경 하면 해당 명명 된 값을 참조 하는 모든 정책이 새 이름을 사용 하도록 자동으로 업데이트 됩니다.
 
-REST API 사용 하 여 명명 된 값을 편집 하는 방법에 대 한 자세한 내용은 [REST API를 사용 하 여 명명 된 값 편집](/rest/api/apimanagement/2019-01-01/property?patch)을 참조 하세요.
+REST API 사용 하 여 명명 된 값을 편집 하는 방법에 대한 자세한 내용은 [REST API를 사용 하 여 명명 된 값 편집](/rest/api/apimanagement/2019-01-01/property?patch)을 참조 하세요.
 
 ## <a name="to-delete-a-named-value"></a>명명 된 값을 삭제 하려면
 
@@ -68,7 +68,7 @@ REST API 사용 하 여 명명 된 값을 편집 하는 방법에 대 한 자세
 > [!IMPORTANT]
 > 명명 된 값을 정책에서 참조 하는 경우 해당 값을 사용 하는 모든 정책에서 명명 된 값을 제거할 때까지 해당 값을 삭제할 수 없습니다.
 
-REST API 사용 하 여 명명 된 값을 삭제 하는 방법에 대 한 자세한 내용은 [REST API를 사용 하 여 명명 된 값 삭제](/rest/api/apimanagement/2019-01-01/property/delete)를 참조 하세요.
+REST API 사용 하 여 명명 된 값을 삭제 하는 방법에 대한 자세한 내용은 [REST API를 사용 하 여 명명 된 값 삭제](/rest/api/apimanagement/2019-01-01/property/delete)를 참조 하세요.
 
 ## <a name="to-search-and-filter-named-values"></a>명명 된 값을 검색 하 고 필터링 하려면
 
@@ -86,7 +86,7 @@ REST API 사용 하 여 명명 된 값을 삭제 하는 방법에 대 한 자세
 </set-header>
 ```
 
-이 예제에서 `ContosoHeader`는 `set-header` 정책의 헤더 이름으로 사용되고, `ContosoHeaderValue`는 해당 헤더의 값으로 사용됩니다. 이 정책이 API Management 게이트웨이에 대 한 요청 또는 응답 중에 평가 되 면 `{{ContosoHeader}}` 및 `{{ContosoHeaderValue}}` 해당 값으로 대체 됩니다.
+이 예제에서 `ContosoHeader`는 `set-header` 정책의 헤더 이름으로 사용되고, `ContosoHeaderValue`는 해당 헤더의 값으로 사용됩니다. 이 정책이 API Management 게이트웨이에 대한 요청 또는 응답 중에 평가 되 면 `{{ContosoHeader}}` 및 `{{ContosoHeaderValue}}` 해당 값으로 대체 됩니다.
 
 명명된 값은 위 예제에 표시된 대로 전체 특성 또는 요소 값으로 사용될 수 있지만 다음 예제와 같이 리터럴 텍스트 식의 일부로 삽입되거나 결합될 수도 있습니다. `<set-header name = "CustomHeader{{ContosoHeader}}" ...>`
 
@@ -104,7 +104,7 @@ REST API 사용 하 여 명명 된 값을 삭제 하는 방법에 대 한 자세
 
 ![개발자 포털][api-management-send-results]
 
-명명 된 값을 사용 하 여 이전의 두 샘플 정책을 포함 하는 호출에 대 한 [API 검사기 추적](api-management-howto-api-inspector.md) 을 살펴보면 명명 된 값이 삽입 된 두 개의 `set-header` 정책과 정책 식을 포함 하는 명명 된 값에 대 한 정책 식 평가를 확인할 수 있습니다.
+명명 된 값을 사용 하 여 이전의 두 샘플 정책을 포함 하는 호출에 대한 [API 검사기 추적](api-management-howto-api-inspector.md) 을 살펴보면 명명 된 값이 삽입 된 두 개의 `set-header` 정책과 정책 식을 포함 하는 명명 된 값에 대한 정책 식 평가를 확인할 수 있습니다.
 
 ![API 검사기 추적][api-management-api-inspector-trace]
 

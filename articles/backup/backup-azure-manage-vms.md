@@ -15,7 +15,7 @@ ms.locfileid: "76989691"
 
 이 문서에서는 [Azure Backup 서비스](backup-overview.md)를 사용 하 여 백업 된 Azure vm (가상 컴퓨터)을 관리 하는 방법을 설명 합니다. 또한이 문서에서는 자격 증명 모음 대시보드에서 찾을 수 있는 백업 정보를 요약 합니다.
 
-Azure Portal에서 Recovery Services 자격 증명 모음 대시보드는 다음을 비롯 한 자격 증명 모음 정보에 대 한 액세스를 제공 합니다.
+Azure Portal에서 Recovery Services 자격 증명 모음 대시보드는 다음을 비롯 한 자격 증명 모음 정보에 대한 액세스를 제공 합니다.
 
 * 최신 백업(최신 복원 지점이기도 함)
 * 백업 정책입니다.
@@ -52,7 +52,7 @@ Azure Portal에서 Recovery Services 자격 증명 모음 대시보드는 다음
 
     ![백업 항목 대시보드 및 설정 창](./media/backup-azure-manage-vms/item-dashboard-settings.png)
 
-## <a name="manage-backup-policy-for-a-vm"></a>VM에 대 한 백업 정책 관리
+## <a name="manage-backup-policy-for-a-vm"></a>VM에 대한 백업 정책 관리
 
 백업 정책을 관리 하려면 다음을 수행 합니다.
 
@@ -130,11 +130,11 @@ VM의 보호를 중지 하 고 데이터를 삭제 하려면:
 
 VM 보호를 중지 하는 동안 [보호 중지 및 백업 데이터 보존](#stop-protection-and-retain-backup-data) 옵션을 선택한 경우 **백업 다시 시작**을 사용할 수 있습니다. [보호 중지 및 백업 데이터 삭제](#stop-protection-and-delete-backup-data) 옵션을 선택 하거나 [백업 데이터를 삭제](#delete-backup-data)하는 경우에는이 옵션을 사용할 수 없습니다.
 
-VM에 대 한 보호를 다시 시작 하려면:
+VM에 대한 보호를 다시 시작 하려면:
 
 1. [자격 증명 모음 항목의 대시보드에서](#view-vms-on-the-dashboard) **백업 다시 시작**을 선택 합니다.
 
-2. [백업 정책 관리](#manage-backup-policy-for-a-vm) 의 단계에 따라 VM에 대 한 정책을 할당 합니다. VM의 초기 보호 정책을 선택할 필요가 없습니다.
+2. [백업 정책 관리](#manage-backup-policy-for-a-vm) 의 단계에 따라 VM에 대한 정책을 할당 합니다. VM의 초기 보호 정책을 선택할 필요가 없습니다.
 3. VM에 백업 정책을 적용 하면 다음과 같은 메시지가 표시 됩니다.
 
     ![성공적으로 보호 된 VM을 나타내는 메시지](./media/backup-azure-manage-vms/success-message.png)
@@ -143,7 +143,7 @@ VM에 대 한 보호를 다시 시작 하려면:
 
 VM의 백업 데이터를 삭제 하는 방법에는 다음 두 가지가 있습니다.
 
-* 자격 증명 모음 항목 대시보드에서 백업 중지를 선택 하 고 [보호 중지 및 백업 데이터 삭제](#stop-protection-and-delete-backup-data) 에 대 한 지침을 따릅니다.
+* 자격 증명 모음 항목 대시보드에서 백업 중지를 선택 하 고 [보호 중지 및 백업 데이터 삭제](#stop-protection-and-delete-backup-data) 에 대한 지침을 따릅니다.
 
   ![백업 중지 선택](./media/backup-azure-manage-vms/stop-backup-buttom.png)
 
@@ -156,7 +156,7 @@ VM의 백업 데이터를 삭제 하는 방법에는 다음 두 가지가 있습
 
     ![백업 데이터 삭제](./media/backup-azure-manage-vms/delete-backup-data1.png)
 
-  * 항목에 대 한 백업 데이터를 삭제 하려면 **삭제**를 선택 합니다. 알림 메시지를 통해 백업 데이터가 삭제 되었음을 알 수 있습니다.
+  * 항목에 대한 백업 데이터를 삭제 하려면 **삭제**를 선택 합니다. 알림 메시지를 통해 백업 데이터가 삭제 되었음을 알 수 있습니다.
 
 데이터를 보호 하기 위해 Azure Backup에는 일시 삭제 기능이 포함 되어 있습니다. 일시 삭제를 사용 하면 VM의 백업 (모든 복구 시점)이 삭제 된 후에도 백업 데이터는 14 일 동안 보존 됩니다. 자세한 내용은 [일시 삭제 설명서](https://docs.microsoft.com/azure/backup/backup-azure-security-feature-cloud)를 참조 하세요.
 
@@ -166,7 +166,7 @@ VM의 백업 데이터를 삭제 하는 방법에는 다음 두 가지가 있습
 ### <a name="backup-item-where-primary-data-source-no-longer-exists"></a>주 데이터 원본이 더 이상 존재 하지 않는 백업 항목
 
 * Azure backup에 대해 구성 된 Azure Vm이 보호를 중지 하지 않고 삭제 되거나 이동 되 면 예약 된 백업 작업과 주문형 (임시) 백업 작업이 모두 실패 하 고 UserErrorVmNotFoundV2 오류가 발생 합니다. 백업 사전 검사는 실패 한 요청 시 백업 작업에 대해서만 중요 한 것으로 표시 됩니다 (실패 한 예약 작업은 표시 되지 않음).
-* 이러한 백업 항목은 사용자가 설정한 백업 및 보존 정책을 준수 하는 시스템에서 활성 상태로 유지 됩니다. 이러한 Azure Vm에 대 한 백업 된 데이터는 보존 정책에 따라 보존 됩니다. 만료 된 복구 지점 (마지막 복구 지점 제외)은 백업 정책에 설정 된 보존 범위에 따라 정리 됩니다.
+* 이러한 백업 항목은 사용자가 설정한 백업 및 보존 정책을 준수 하는 시스템에서 활성 상태로 유지 됩니다. 이러한 Azure Vm에 대한 백업 된 데이터는 보존 정책에 따라 보존 됩니다. 만료 된 복구 지점 (마지막 복구 지점 제외)은 백업 정책에 설정 된 보존 범위에 따라 정리 됩니다.
 * 사용자는 추가 비용을 방지 하기 위해 주 데이터 원본이 더 이상 존재 하지 않는 백업 항목을 삭제 하는 것이 좋습니다 .이 경우에는 마지막 복구 지점이 영구적으로 유지 되 고 해당 사용자에 게 적용 되는 백업 가격에 따라 요금이 청구 되기 때문에 삭제 리소스의 백업 항목/데이터가 더 이상 필요 하지 않은 경우
 
 ## <a name="next-steps"></a>다음 단계

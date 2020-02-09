@@ -1,6 +1,6 @@
 ---
 title: FAQ-Azure Vm에서 SAP HANA 데이터베이스 백업
-description: 이 문서에서는 Azure Backup 서비스를 사용 하 여 SAP HANA 데이터베이스 백업에 대 한 일반적인 질문에 대 한 대답을 검색 합니다.
+description: 이 문서에서는 Azure Backup 서비스를 사용 하 여 SAP HANA 데이터베이스 백업에 대한 일반적인 질문에 대한 대답을 검색 합니다.
 ms.topic: conceptual
 ms.date: 11/7/2019
 ms.openlocfilehash: e5684024668103ccbe13be4af3d7a9336651df77
@@ -12,7 +12,7 @@ ms.locfileid: "74287841"
 ---
 # <a name="frequently-asked-questions--back-up-sap-hana-databases-on-azure-vms"></a>질문과 대답-Azure Vm에서 SAP HANA 데이터베이스 백업
 
-이 문서에서는 Azure Backup 서비스를 사용 하 여 SAP HANA 데이터베이스 백업에 대 한 일반적인 질문에 답변 합니다.
+이 문서에서는 Azure Backup 서비스를 사용 하 여 SAP HANA 데이터베이스 백업에 대한 일반적인 질문에 답변 합니다.
 
 ## <a name="backup"></a>Backup
 
@@ -22,7 +22,7 @@ ms.locfileid: "74287841"
 
 ### <a name="do-successful-backup-jobs-create-alerts"></a>성공한 백업 작업에 경고가 만들어지나요?
 
-아니요. 성공한 백업 작업에서는 경고가 생성되지 않습니다. 경고는 실패한 백업 작업에 대해서만 전송됩니다. 포털 경고에 대 한 자세한 동작은 [여기](https://docs.microsoft.com/azure/backup/backup-azure-monitoring-built-in-monitor)에 설명 되어 있습니다. 그러나 성공한 작업에 대 한 경고를 포함 하는 경우에는 [Azure Monitor](https://docs.microsoft.com/azure/backup/backup-azure-monitoring-use-azuremonitor)를 사용할 수 있습니다.
+아니요. 성공한 백업 작업에서는 경고가 생성되지 않습니다. 경고는 실패한 백업 작업에 대해서만 전송됩니다. 포털 경고에 대한 자세한 동작은 [여기](https://docs.microsoft.com/azure/backup/backup-azure-monitoring-built-in-monitor)에 설명 되어 있습니다. 그러나 성공한 작업에 대한 경고를 포함 하는 경우에는 [Azure Monitor](https://docs.microsoft.com/azure/backup/backup-azure-monitoring-use-azuremonitor)를 사용할 수 있습니다.
 
 ### <a name="can-i-see-scheduled-backup-jobs-in-the-backup-jobs-menu"></a>백업 작업 메뉴에서 예약 된 백업 작업을 볼 수 있나요?
 
@@ -47,7 +47,7 @@ ms.locfileid: "74287841"
 
 ### <a name="what-permissions-should-be-set-for-azure-to-be-able-to-back-up-sap-hana-databases"></a>SAP HANA 데이터베이스를 백업할 수 있도록 Azure에 대해 설정 해야 하는 권한은 무엇 인가요?
 
-사전 등록 스크립트를 실행 하면 Azure에서 SAP HANA 데이터베이스를 백업 하도록 허용 하는 데 필요한 권한을 설정 합니다. 권한에 대 한 자세한 내용은 [여기](tutorial-backup-sap-hana-db.md#setting-up-permissions)에서 찾을 수 있습니다.
+사전 등록 스크립트를 실행 하면 Azure에서 SAP HANA 데이터베이스를 백업 하도록 허용 하는 데 필요한 권한을 설정 합니다. 권한에 대한 자세한 내용은 [여기](tutorial-backup-sap-hana-db.md#setting-up-permissions)에서 찾을 수 있습니다.
 
 ### <a name="will-backups-work-after-migrating-sap-hana-from-10-to-20"></a>SAP HANA를 1.0에서 2.0로 마이그레이션한 후 백업이 작동 하나요?
 
@@ -59,7 +59,7 @@ ms.locfileid: "74287841"
 
 대상 SAP HANA 인스턴스에 복원 하기 위한 모든 필수 구성 요소가 충족 되는지 확인 합니다. 자세한 내용은 [필수 구성 요소-AZURE VM에서 데이터베이스 SAP HANA 복원](https://docs.microsoft.com/azure/backup/sap-hana-db-restore#prerequisites)을 참조 하세요.
 
-### <a name="why-is-the-overwrite-db-restore-failing-for-my-database"></a>데이터베이스에 대 한 덮어쓰기 DB 복원이 실패 하는 이유는 무엇 인가요?
+### <a name="why-is-the-overwrite-db-restore-failing-for-my-database"></a>데이터베이스에 대한 덮어쓰기 DB 복원이 실패 하는 이유는 무엇 인가요?
 
 복원 하는 동안 **강제 덮어쓰기** 옵션을 선택 했는지 확인 합니다.
 

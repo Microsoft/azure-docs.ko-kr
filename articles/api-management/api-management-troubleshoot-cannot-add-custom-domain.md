@@ -22,13 +22,13 @@ ms.locfileid: "75430589"
 ---
 # <a name="failed-to-update-api-management-service-hostnames"></a>API Management 서비스 호스트 이름을 업데이트 하지 못했습니다.
 
-이 문서에서는 Azure API Management 서비스에 대 한 사용자 지정 도메인을 추가할 때 발생할 수 있는 "API Management 서비스 호스트 이름을 업데이트 하지 못했습니다." 오류에 대해 설명 합니다. 이 문서에서는 문제를 해결 하는 데 도움이 되는 문제 해결 단계를 제공 합니다.
+이 문서에서는 Azure API Management 서비스에 대한 사용자 지정 도메인을 추가할 때 발생할 수 있는 "API Management 서비스 호스트 이름을 업데이트 하지 못했습니다." 오류에 대해 설명 합니다. 이 문서에서는 문제를 해결 하는 데 도움이 되는 문제 해결 단계를 제공 합니다.
 
 ## <a name="symptoms"></a>증상
 
-Azure Key Vault의 인증서를 사용 하 여 API Management 서비스에 대 한 사용자 지정 도메인을 추가 하려고 하면 다음과 같은 오류 메시지가 나타납니다.
+Azure Key Vault의 인증서를 사용 하 여 API Management 서비스에 대한 사용자 지정 도메인을 추가 하려고 하면 다음과 같은 오류 메시지가 나타납니다.
 
-- API Management 서비스 호스트 이름을 업데이트 하지 못했습니다. 'https://vaultname.vault.azure.net/secrets/secretname/?api-version=7.0 ' 리소스에 대 한 요청에 대 한 요청이 실패 했습니다 (RequestId:). 예외 메시지: 작업에서 잘못 된 상태 코드 ' 사용할 수 없음 '이 반환 되었습니다.
+- API Management 서비스 호스트 이름을 업데이트 하지 못했습니다. 'https://vaultname.vault.azure.net/secrets/secretname/?api-version=7.0 ' 리소스에 대한 요청에 대한 요청이 실패 했습니다 (RequestId:). 예외 메시지: 작업에서 잘못 된 상태 코드 ' 사용할 수 없음 '이 반환 되었습니다.
 
 ## <a name="cause"></a>원인
 
@@ -42,7 +42,7 @@ API Management 서비스에 사용자 지정 도메인에 사용 하려는 키 �
     Azure Active Director](./media/api-management-troubleshoot-cannot-add-custom-domain/register-with-aad.png)에 등록 ![
 1. Azure Portal에서 **키 자격 증명 모음** 서비스를 열고 사용자 지정 도메인에 사용 하려는 키 자격 증명 모음을 선택 합니다.
 1. **액세스 정책**을 선택 하 고 API Management 서비스 인스턴스의 이름과 일치 하는 서비스 사용자가 있는지 여부를 확인 합니다. 있는 경우 서비스 주체를 선택 하 고 **비밀 권한**아래에 나열 된 **Get** 권한이 있는지 확인 합니다.  
-    서비스 사용자에 대 한 액세스 정책 추가 ![](./media/api-management-troubleshoot-cannot-add-custom-domain/access-policy.png)
+    서비스 사용자에 대한 액세스 정책 추가 ![](./media/api-management-troubleshoot-cannot-add-custom-domain/access-policy.png)
 1. API Management 서비스가 목록에 없으면 **액세스 정책 추가**를 선택 하 고 다음 액세스 정책을 만듭니다.
     - **템플릿에서 구성**: 없음
     - **계정 선택**: API Management 서비스의 이름을 검색 한 다음 목록에서 선택 합니다.

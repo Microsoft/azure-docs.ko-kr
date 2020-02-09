@@ -1,6 +1,6 @@
 ---
-title: 자체 호스팅 통합 런타임을 SSIS에 대 한 프록시로 구성
-description: 자체 호스팅 Integration Runtime Azure-SSIS Integration Runtime에 대 한 프록시로 구성 하는 방법에 대해 알아봅니다.
+title: 자체 호스팅 통합 런타임을 SSIS에 대한 프록시로 구성
+description: 자체 호스팅 Integration Runtime Azure-SSIS Integration Runtime에 대한 프록시로 구성 하는 방법에 대해 알아봅니다.
 services: data-factory
 documentationcenter: ''
 ms.service: data-factory
@@ -19,7 +19,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 02/06/2020
 ms.locfileid: "77048945"
 ---
-# <a name="configure-self-hosted-ir-as-a-proxy-for-azure-ssis-ir-in-adf"></a>ADF의 Azure-SSIS IR에 대 한 프록시로 자체 호스팅 IR 구성
+# <a name="configure-self-hosted-ir-as-a-proxy-for-azure-ssis-ir-in-adf"></a>ADF의 Azure-SSIS IR에 대한 프록시로 자체 호스팅 IR 구성
 
 이 문서에서는 프록시로 구성 된 자체 호스팅 IR을 사용 하 여 Azure Data Factory (ADF)에서 Azure-SSIS Integration Runtime (IR)에 SQL Server Integration Services (SSIS) 패키지를 실행 하는 방법을 설명 합니다.  이 기능을 사용 하면 [Azure-SSIS IR 가상 네트워크에 가입](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network)하지 않고도 온-프레미스 데이터에 액세스할 수 있습니다.  회사 네트워크에 Azure-SSIS IR를 삽입 하는 데 과도 하 게 복잡 한 구성/제한적인 정책이 있는 경우 유용 합니다.
 
@@ -58,7 +58,7 @@ ms.locfileid: "77048945"
 
 1. **고급 설정** 섹션에서 다음을 수행 합니다.
 
-   1. **Azure-SSIS Integration Runtime에 대 한 프록시로 자체 호스트 된 Integration Runtime 설정** 확인란을 선택 합니다. 
+   1. **Azure-SSIS Integration Runtime에 대한 프록시로 자체 호스트 된 Integration Runtime 설정** 확인란을 선택 합니다. 
 
    1. **자체 호스팅 Integration Runtime**의 경우 Azure-SSIS IR의 프록시로 기존 자체 호스팅 IR을 선택 합니다.
 
@@ -138,10 +138,10 @@ OLEDB/Flat File 원본을 사용 하는 데이터 흐름 태스크가 포함 된
 ## <a name="using-windows-authentication-in-staging-tasks"></a>준비 작업에서 Windows 인증 사용
 
 자체 호스팅 IR에서 준비 작업에 Windows 인증이 필요한 경우 [동일한 windows 인증을 사용 하도록 SSIS 패키지를 구성](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-connect-with-windows-auth?view=sql-server-ver15)해야 합니다. 스테이징 작업은 자체 호스팅 IR 서비스 계정 (기본적으로`NT SERVICE\DIAHostService`)을 사용 하 여 호출 되 고, 데이터 저장소는 Windows 인증 계정을 사용 하 여 액세스 됩니다. 두 계정 모두에 특정 보안 정책을 할당 해야 합니다. 따라서 자체 호스팅 IR 컴퓨터에서 `Local Security Policy` -> `Local Policies` -> `User Rights Assignment`을 열고 다음 단계를 완료 합니다.
-- **프로세스에 대 한 메모리 할당량 조정** 을 할당 하 고 **프로세스 수준 토큰** 정책을 자체 호스팅 IR 서비스 계정으로 바꿉니다. 기본 서비스 계정으로 자체 호스팅 IR을 설치 하는 경우 자동으로 수행 됩니다. 다른 서비스 계정을 사용 하는 경우 동일한 정책을 할당 합니다.
+- **프로세스에 대한 메모리 할당량 조정** 을 할당 하 고 **프로세스 수준 토큰** 정책을 자체 호스팅 IR 서비스 계정으로 바꿉니다. 기본 서비스 계정으로 자체 호스팅 IR을 설치 하는 경우 자동으로 수행 됩니다. 다른 서비스 계정을 사용 하는 경우 동일한 정책을 할당 합니다.
 - Windows 인증 계정에 **서비스로 로그온** 정책을 할당 합니다.
 
-## <a name="billing-for-the-first-and-second-staging-tasks"></a>첫 번째와 두 번째 준비 작업에 대 한 청구
+## <a name="billing-for-the-first-and-second-staging-tasks"></a>첫 번째와 두 번째 준비 작업에 대한 청구
 
 자체 호스팅 IR에서 실행 되는 첫 번째 스테이징 작업은 [ADF 데이터 파이프라인 가격 책정](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/) 문서에 지정 된 대로 자체 호스팅 ir에서 실행 되는 데이터 이동 작업의 요금이 청구 되는 것과 동일한 방식으로 별도로 청구 됩니다.
 
@@ -154,4 +154,4 @@ Azure-SSIS IR에서 실행 되는 두 번째 스테이징 작업은 별도로 �
 
 ## <a name="next-steps"></a>다음 단계
 
-자체 호스팅 IR을 Azure-SSIS IR에 대 한 프록시로 구성 하면 ADF 파이프라인에서 ssis 패키지 실행 작업으로 온-프레미스 데이터에 액세스 하기 위해 패키지를 배포 하 고 실행할 수 있습니다. adf 파이프라인에서 ssis 패키지를 실행 하려면 ssis 패키지 [실행](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity)을 참조 하세요.
+자체 호스팅 IR을 Azure-SSIS IR에 대한 프록시로 구성 하면 ADF 파이프라인에서 ssis 패키지 실행 작업으로 온-프레미스 데이터에 액세스 하기 위해 패키지를 배포 하 고 실행할 수 있습니다. adf 파이프라인에서 ssis 패키지를 실행 하려면 ssis 패키지 [실행](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity)을 참조 하세요.

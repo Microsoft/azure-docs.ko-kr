@@ -98,9 +98,9 @@ Python Runbooks는 [스크립트 센터 갤러리](https://gallery.technet.micro
 
 ## <a name="common-solutions-available-in-the-runbook-gallery"></a>Runbook 갤러리에서 사용할 수 있는 일반 솔루션
 
-아래 목록에는 일반적인 시나리오에 대 한 솔루션을 제공 하는 몇 가지 runbook이 포함 되어 있습니다. Azure Automation 팀에서 만든 runbook의 전체 목록은 [Azureautomationteam profile](https://www.powershellgallery.com/profiles/AzureAutomationTeam)을 참조 하세요.
+아래 목록에는 일반적인 시나리오에 대한 솔루션을 제공 하는 몇 가지 runbook이 포함 되어 있습니다. Azure Automation 팀에서 만든 runbook의 전체 목록은 [Azureautomationteam profile](https://www.powershellgallery.com/profiles/AzureAutomationTeam)을 참조 하세요.
 
-* [ModulesInAutomationToLatestVersion](https://www.powershellgallery.com/packages/Update-ModulesInAutomationToLatestVersion/) -Automation 계정에 있는 모든 모듈의 PowerShell 갤러리에 대 한 최신 버전을 가져옵니다.
+* [ModulesInAutomationToLatestVersion](https://www.powershellgallery.com/packages/Update-ModulesInAutomationToLatestVersion/) -Automation 계정에 있는 모든 모듈의 PowerShell 갤러리에 대한 최신 버전을 가져옵니다.
 * [-AzureDiagnostics 사용](https://www.powershellgallery.com/packages/Enable-AzureDiagnostics/) -이 스크립트는 Azure 진단를 구성 하 고 작업 상태 및 작업 스트림을 포함 하는 Azure Automation 로그를 받도록 Log Analytics 합니다.
 * [ItemFromAzureVM](https://www.powershellgallery.com/packages/Copy-ItemFromAzureVM/) -이 Runbook은 Windows Azure 가상 컴퓨터에서 원격 파일을 복사 합니다.
 * [ItemFromAzureVM](https://www.powershellgallery.com/packages/Copy-ItemToAzureVM/) -이 Runbook은 Azure 가상 컴퓨터에 로컬 파일을 복사 합니다.
@@ -109,4 +109,4 @@ Python Runbooks는 [스크립트 센터 갤러리](https://gallery.technet.micro
 
 * Runbook을 시작하려면 [Azure Automation에서 Runbook 관리](manage-runbooks.md)를 참조하세요.
 * Runbook용 PowerShell 및 PowerShell 워크플로 간의 차이점을 이해하려면 [PowerShell 워크플로 학습](automation-powershell-workflow.md)
-* 언어 참조 및 학습 모듈을 비롯 한 PowerShell에 대 한 자세한 내용은 [Powershell 문서](https://docs.microsoft.com/powershell/scripting/overview)를 참조 하세요.
+* 언어 참조 및 학습 모듈을 비롯 한 PowerShell에 대한 자세한 내용은 [Powershell 문서](https://docs.microsoft.com/powershell/scripting/overview)를 참조 하세요.

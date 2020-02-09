@@ -30,7 +30,7 @@ Azure Compute는 특정 하드웨어 유형에서 격리되고 단일 고객 전
 [여기](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory)에서 사용 가능한 각 격리 된 크기에 대해 자세히 알아볼 수 있습니다.
 
 ## <a name="retiring-d15_v2ds15_v2-isolation-on-february-15-2020"></a>2020 년 2 월 15 일 D15_v2/DS15_v2 격리 사용 중지
-Azure 전용 호스트는 이제 GA로, 단일 테 넌 트 물리적 서버에서 조직의 Linux 및 Windows 가상 머신을 실행할 수 있습니다. 격리 된 Azure Vm을 Azure 전용 호스트로 완전히 바꿀 예정입니다. **2020 년 2 월 15 일** 이후 D15_v2/DS15_v2 Azure vm은 더 이상 하드웨어로 격리 되지 않습니다.
+Azure 전용 호스트는 이제 GA로, 단일 테넌트 물리적 서버에서 조직의 Linux 및 Windows 가상 머신을 실행할 수 있습니다. 격리 된 Azure Vm을 Azure 전용 호스트로 완전히 바꿀 예정입니다. **2020 년 2 월 15 일** 이후 D15_v2/DS15_v2 Azure vm은 더 이상 하드웨어로 격리 되지 않습니다.
 
 ## <a name="how-does-this-affect-me"></a>이 변경 사항은 어떤 영향을 미치나요?
 2020 년 2 월 15 일 이후에는 D15_v2/DS15_v2 Azure virtual machines에 대 한 격리 보증을 더 이상 제공 하지 않습니다. 

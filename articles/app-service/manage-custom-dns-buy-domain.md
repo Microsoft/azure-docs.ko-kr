@@ -1,6 +1,6 @@
 ---
 title: 사용자 지정 도메인 이름 구입
-description: App Service 도메인을 구입 하 고 앱 Azure App Service에 대 한 사용자 지정 도메인으로 사용 하는 방법을 알아봅니다.
+description: App Service 도메인을 구입 하 고 앱 Azure App Service에 대한 사용자 지정 도메인으로 사용 하는 방법을 알아봅니다.
 ms.assetid: 70fb0e6e-8727-4cca-ba82-98a4d21586ff
 ms.topic: article
 ms.date: 11/24/2017
@@ -70,7 +70,7 @@ App Service 계획이 **F1** 계층이 아닌 경우 **스케일업** 페이지�
 ## <a name="buy-the-domain"></a>도메인 구입
 
 ### <a name="pricing-information"></a>가격 정보
-Azure App Service 도메인에 대 한 가격 책정 정보를 보려면 [App Service 가격 책정 페이지](https://azure.microsoft.com/pricing/details/app-service/windows/) 를 방문 하 App Service 도메인으로 스크롤합니다.
+Azure App Service 도메인에 대한 가격 책정 정보를 보려면 [App Service 가격 책정 페이지](https://azure.microsoft.com/pricing/details/app-service/windows/) 를 방문 하 App Service 도메인으로 스크롤합니다.
 
 ### <a name="sign-in-to-azure"></a>Azure에 로그인
 [Azure 포털](https://portal.azure.com/)에서 Azure 계정으로 로그인합니다.
@@ -137,7 +137,7 @@ Azure App Service 도메인에 대 한 가격 책정 정보를 보려면 [App Se
 ![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-hostnames-added.png)
 
 > [!NOTE]
-> 사용자 지정 도메인에 대 한 **보안 되지 않은** 레이블은 아직 SSL 인증서에 바인딩되어 있지 않음을 의미 하 고 브라우저에서 사용자 지정 도메인으로의 HTTPS 요청은 브라우저에 따라 오류 또는 경고를 받게 됩니다. SSL 바인딩을 구성 하려면 [Azure App Service에서 ssl 바인딩을 사용 하 여 사용자 지정 DNS 이름 보호](configure-ssl-bindings.md)를 참조 하세요.
+> 사용자 지정 도메인에 대한 **보안 되지 않은** 레이블은 아직 SSL 인증서에 바인딩되어 있지 않음을 의미 하 고 브라우저에서 사용자 지정 도메인으로의 HTTPS 요청은 브라우저에 따라 오류 또는 경고를 받게 됩니다. SSL 바인딩을 구성 하려면 [Azure App Service에서 ssl 바인딩을 사용 하 여 사용자 지정 DNS 이름 보호](configure-ssl-bindings.md)를 참조 하세요.
 >
 
 호스트 이름을 테스트하려면 브라우저에서 나열된 호스트 이름으로 이동합니다. 위의 스크린 샷에서 예제에서는 _kontoso.net_ 및 _www\.kontoso.net_로 이동 해 봅니다.
@@ -220,7 +220,7 @@ App Service 도메인에서 다른 앱으로 호스트 이름을 할당할 수�
 Azure는 다음과 같이 만료 되거나 만료 된 App Service 도메인을 다룹니다.
 
 * 자동 갱신을 사용 하지 않도록 설정 하는 경우: 90 일 전에 도메인 만료 전 갱신 알림 전자 메일이 전송 되 고 포털에서 **도메인 갱신** 단추가 활성화 됩니다.
-* 자동 갱신을 사용 하도록 설정 하는 경우: 도메인 만료 날짜가 지난 날에 Azure는 도메인 이름 갱신에 대 한 요금을 청구 하려고 합니다.
+* 자동 갱신을 사용 하도록 설정 하는 경우: 도메인 만료 날짜가 지난 날에 Azure는 도메인 이름 갱신에 대한 요금을 청구 하려고 합니다.
 * 자동 갱신 중에 오류가 발생 하는 경우 (예: 파일의 카드가 만료 된 경우) 또는 자동 갱신을 사용 하지 않도록 설정 하 고 도메인 만료를 허용 하는 경우 Azure는 도메인 만료를 알리고 도메인 이름을 파킹 합니다. 도메인을 [수동으로 갱신할](#renew-the-domain) 수 있습니다.
 * 만료 후 4 일 및 12 일에 Azure는 추가 알림 전자 메일을 보냅니다. 도메인을 [수동으로 갱신할](#renew-the-domain) 수 있습니다.
 * 만료 후 19 일 일에 도메인은 보류 상태로 유지 되지만 상환 요금이 적용 됩니다. 고객 지원에 문의 하 여 해당 갱신 및 상환 요금에 따라 도메인 이름을 갱신할 수 있습니다.

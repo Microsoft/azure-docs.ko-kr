@@ -120,7 +120,7 @@ ms.locfileid: "73823524"
 기본 구성에서는 HTTPS 엔드포인트에 대한 모든 액세스가 허용됩니다. 이 설정을 추가로 제한할 수 있습니다.
 
 ### <a name="changing-the-configuration"></a>구성 변경
-및 끝점에 적용 되는 액세스 제어 규칙 그룹은 **서비스 구성 파일**의 **\<endpointacls >** 섹션에서 구성 됩니다.
+및 엔드포인트에 적용 되는 액세스 제어 규칙 그룹은 **서비스 구성 파일**의 **\<endpointacls >** 섹션에서 구성 됩니다.
 
 ```xml
 <EndpointAcls>

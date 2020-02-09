@@ -31,10 +31,10 @@ ms.locfileid: "75390758"
 - 대상 서버를 원본과 동일한 자격 증명 모음에 등록해야 합니다.
 - TDE로 암호화 된 데이터베이스를 다른 SQL Server 복원 하려면 먼저 [대상 서버에 인증서를 복원](https://docs.microsoft.com/sql/relational-databases/security/encryption/move-a-tde-protected-database-to-another-sql-server?view=sql-server-2017)해야 합니다.
 - "Master" 데이터베이스를 복원 하기 전에 시작 옵션인 **-m AzureWorkloadBackup**을 사용 하 여 SQL Server 인스턴스를 단일 사용자 모드로 시작 합니다.
-  - **-M** 에 대 한 값은 클라이언트 이름입니다.
+  - **-M** 에 대한 값은 클라이언트 이름입니다.
   - 지정 된 클라이언트 이름만 연결을 열 수 있습니다.
 - 모든 시스템 데이터베이스 (모델, master, msdb)에 대해 복원을 트리거하기 전에 SQL Server 에이전트 서비스를 중지 합니다.
-- 이러한 데이터베이스에 대 한 연결을 시도할 수 있는 응용 프로그램을 모두 닫습니다.
+- 이러한 데이터베이스에 대한 연결을 시도할 수 있는 응용 프로그램을 모두 닫습니다.
 - 서버에서 여러 인스턴스를 실행 하는 경우 모든 인스턴스를 실행 해야 합니다. 그렇지 않으면 데이터베이스를 복원할 대상 서버 목록에 서버가 나타나지 않습니다.
 
 ## <a name="restore-a-database"></a>데이터베이스 복원
@@ -112,7 +112,7 @@ ms.locfileid: "75390758"
 2. 백업 파일을 복원 하려는 SQL Server 이름을 선택 합니다.
 3. **서버의 대상 경로** 에서 2 단계에서 선택한 서버의 폴더 경로를 입력 합니다. 서비스에서 필요한 모든 백업 파일을 덤프 하는 위치입니다. 일반적으로 대상 경로로 지정 된 경우 네트워크 공유 경로 또는 탑재 된 Azure 파일 공유의 경로를 사용 하면 동일한 네트워크에 있거나 동일한 Azure 파일 공유에 탑재 된 다른 컴퓨터에서 이러한 파일에 쉽게 액세스할 수 있습니다.<BR>
 
->대상으로 등록 된 VM에 탑재 된 Azure 파일 공유에서 데이터베이스 백업 파일을 복원 하려면 NT 권한 없음이 파일 공유에 액세스할 수 있는지 확인 합니다. 아래 지정 된 단계를 수행 하 여 VM에 탑재 된 AFS에 대 한 읽기/쓰기 권한을 부여할 수 있습니다.
+>대상으로 등록 된 VM에 탑재 된 Azure 파일 공유에서 데이터베이스 백업 파일을 복원 하려면 NT 권한 없음이 파일 공유에 액세스할 수 있는지 확인 합니다. 아래 지정 된 단계를 수행 하 여 VM에 탑재 된 AFS에 대한 읽기/쓰기 권한을 부여할 수 있습니다.
 >- `PsExec -s cmd`를 실행 하 여 NT 권한 없는 셸에 입력
 >   - `cmdkey /add:<storageacct>.file.core.windows.net /user:AZURE\<storageacct> /pass:<storagekey>` 실행
 >   - `dir \\<storageacct>.file.core.windows.net\<filesharename>` 사용 하 여 액세스 확인

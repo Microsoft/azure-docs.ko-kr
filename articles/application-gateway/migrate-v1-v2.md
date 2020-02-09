@@ -35,11 +35,11 @@ ms.locfileid: "77046190"
 ### <a name="caveatslimitations"></a>Caveats\Limitations
 
 * 새 v2 게이트웨이에는 새 공용 및 개인 IP 주소가 있습니다. 기존 v1 게이트웨이와 연결 된 IP 주소를 원활 하 게 v2로 이동할 수 없습니다. 그러나 새 v2 게이트웨이에 기존 (할당 되지 않은) 공용 또는 개인 IP 주소를 할당할 수 있습니다.
-* 가상 네트워크 내에서 v1 게이트웨이가 있는 다른 서브넷에 대 한 IP 주소 공간을 제공 해야 합니다. 이 스크립트는 이미 v1 게이트웨이가 있는 기존 서브넷에서 v2 게이트웨이를 만들 수 없습니다. 그러나 기존 서브넷에 이미 v2 게이트웨이가 있는 경우에도 계속 작동할 수 있으며, 충분 한 IP 주소 공간이 있을 수 있습니다.
+* 가상 네트워크 내에서 v1 게이트웨이가 있는 다른 서브넷에 대한 IP 주소 공간을 제공 해야 합니다. 이 스크립트는 이미 v1 게이트웨이가 있는 기존 서브넷에서 v2 게이트웨이를 만들 수 없습니다. 그러나 기존 서브넷에 이미 v2 게이트웨이가 있는 경우에도 계속 작동할 수 있으며, 충분 한 IP 주소 공간이 있을 수 있습니다.
 * SSL 구성을 마이그레이션하려면 v1 게이트웨이에서 사용 되는 모든 SSL 인증서를 지정 해야 합니다.
 * V1 게이트웨이에 대해 FIPS 모드를 사용 하도록 설정한 경우 새 v2 게이트웨이로 마이그레이션되지 않습니다. V 2에서는 FIPS 모드가 지원 되지 않습니다.
 * v2는 i p v 6을 지원 하지 않으므로 IPv6 사용 v1 게이트웨이는 마이그레이션되지 않습니다. 스크립트를 실행 하는 경우 완료 되지 않을 수 있습니다.
-* V1 게이트웨이에 개인 IP 주소만 있는 경우 스크립트는 새 v2 게이트웨이에 대 한 공용 IP 주소 및 개인 IP 주소를 만듭니다. 현재 v2 게이트웨이는 개인 IP 주소만 지원 하지 않습니다.
+* V1 게이트웨이에 개인 IP 주소만 있는 경우 스크립트는 새 v2 게이트웨이에 대한 공용 IP 주소 및 개인 IP 주소를 만듭니다. 현재 v2 게이트웨이는 개인 IP 주소만 지원 하지 않습니다.
 
 ## <a name="download-the-script"></a>스크립트 다운로드
 
@@ -88,8 +88,8 @@ Azure Az 모듈이 설치 되어 있는지 확인 하려면 `Get-InstalledModule
     -validateMigration -enableAutoScale
    ```
 
-   스크립트에 대 한 매개 변수:
-   * **resourceId: [String]: 필수** -기존 표준 V1 또는 waf v1 게이트웨이에 대 한 AZURE 리소스 ID입니다. 이 문자열 값을 찾으려면 Azure Portal로 이동 하 고 응용 프로그램 게이트웨이 또는 WAF 리소스를 선택한 다음 게이트웨이에 대 한 **속성** 링크를 클릭 합니다. 리소스 ID는 해당 페이지에 있습니다.
+   스크립트에 대한 매개 변수:
+   * **resourceId: [String]: 필수** -기존 표준 V1 또는 waf v1 게이트웨이에 대한 AZURE 리소스 ID입니다. 이 문자열 값을 찾으려면 Azure Portal로 이동 하 고 응용 프로그램 게이트웨이 또는 WAF 리소스를 선택한 다음 게이트웨이에 대한 **속성** 링크를 클릭 합니다. 리소스 ID는 해당 페이지에 있습니다.
 
      다음 Azure PowerShell 명령을 실행 하 여 리소스 ID를 가져올 수도 있습니다.
 
@@ -114,7 +114,7 @@ Azure Az 모듈이 설치 되어 있는지 확인 하려면 `Get-InstalledModule
         -Password $password
       ```
 
-     이전 예제의 `$mySslCert1, $mySslCert2` (쉼표로 구분)을 스크립트의이 매개 변수에 대 한 값으로 전달할 수 있습니다.
+     이전 예제의 `$mySslCert1, $mySslCert2` (쉼표로 구분)을 스크립트의이 매개 변수에 대한 값으로 전달할 수 있습니다.
    * 서브넷에 있는 **rootcertificate: [PSApplicationGatewayTrustedRootCertificate]: 선택 사항**입니다. V2 게이트웨이에서 백 엔드 인스턴스를 인증 하기 위해 [신뢰할 수 있는 루트 인증서](ssl-overview.md) 를 나타내기 위해 만드는 PSApplicationGatewayTrustedRootCertificate 개체의 쉼표로 구분 된 목록입니다.
    
       ```azurepowershell
@@ -123,7 +123,7 @@ Azure Az 모듈이 설치 되어 있는지 확인 하려면 `Get-InstalledModule
       ```
 
       PSApplicationGatewayTrustedRootCertificate 개체 목록을 만들려면 [AzApplicationGatewayTrustedRootCertificate](https://docs.microsoft.com/powershell/module/Az.Network/New-AzApplicationGatewayTrustedRootCertificate?view=azps-2.1.0&viewFallbackFrom=azps-2.0.0)를 참조 하세요.
-   * **privateIpAddress: [String]: 선택 사항**입니다. 새 v2 게이트웨이에 연결할 특정 개인 IP 주소입니다.  새 v2 게이트웨이에 할당 하는 것과 동일한 VNet에서 가져와야 합니다. 이를 지정 하지 않으면 스크립트에서 v2 게이트웨이에 대 한 개인 IP 주소를 할당 합니다.
+   * **privateIpAddress: [String]: 선택 사항**입니다. 새 v2 게이트웨이에 연결할 특정 개인 IP 주소입니다.  새 v2 게이트웨이에 할당 하는 것과 동일한 VNet에서 가져와야 합니다. 이를 지정 하지 않으면 스크립트에서 v2 게이트웨이에 대한 개인 IP 주소를 할당 합니다.
    * **publicIpResourceId: [String]: 선택 사항**입니다. 새 v2 게이트웨이에 할당 하려는 구독에 있는 기존 공용 IP 주소 (표준 SKU) 리소스의 resourceId입니다. 이를 지정 하지 않으면 스크립트는 동일한 리소스 그룹에 새 공용 IP를 할당 합니다. 이름은 *-IP* 가 추가 된 v2 게이트웨이의 이름입니다.
    * **validateMigration: [switch]: 선택 사항**입니다. 이 매개 변수를 사용 하 여 스크립트에서 v2 게이트웨이 만들기 및 구성 복사 후에 몇 가지 기본적인 구성 비교 유효성 검사를 수행 하도록 합니다. 기본적으로 유효성 검사는 수행 되지 않습니다.
    * **Enableautoscale 크기 조정: [스위치]: 선택 사항**입니다. 스크립트를 만든 후 새 v2 게이트웨이에서 자동 크기 조정을 사용 하도록 설정 하려면이 매개 변수를 사용 합니다. 기본적으로 자동 크기 조정을 사용 하지 않도록 설정 되어 있습니다. 새로 만든 v2 게이트웨이에서는 나중에 언제 든 지 수동으로 사용 하도록 설정할 수 있습니다.
@@ -150,7 +150,7 @@ Azure Az 모듈이 설치 되어 있는지 확인 하려면 `Get-InstalledModule
 
 또한 v2 게이트웨이를 통해 적은 양의 트래픽을 수동 테스트로 보냅니다.
   
-현재 application gateway (Standard)가 클라이언트 트래픽을 수신 하 고 각각에 대 한 권장 사항을 확인할 수 있는 몇 가지 시나리오는 다음과 같습니다.
+현재 application gateway (Standard)가 클라이언트 트래픽을 수신 하 고 각각에 대한 권장 사항을 확인할 수 있는 몇 가지 시나리오는 다음과 같습니다.
 
 * **표준 v1 또는 WAF v1 게이트웨이와 연결 된 프런트 엔드 IP 주소 (A 레코드 사용)를 가리키는 사용자 지정 DNS 영역 (예: contoso.com)** 입니다.
 

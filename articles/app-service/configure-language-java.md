@@ -16,11 +16,11 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/11/2020
 ms.locfileid: "75889345"
 ---
-# <a name="configure-a-windows-java-app-for-azure-app-service"></a>Azure App Service에 대 한 Windows Java 앱 구성
+# <a name="configure-a-windows-java-app-for-azure-app-service"></a>Azure App Service에 대한 Windows Java 앱 구성
 
 Azure App Service를 통해 Java 개발자는 완전히 관리 되는 Windows 기반 서비스에서 Tomcat 웹 응용 프로그램을 신속 하 게 빌드, 배포 및 확장할 수 있습니다. 명령줄에서 또는 IntelliJ, Eclipse, Visual Studio Code 같은 편집기에서 Maven 플러그 인을 사용하여 애플리케이션을 배포할 수 있습니다.
 
-이 가이드에서는 App Service에서를 사용 하는 Java 개발자를 위한 주요 개념 및 지침을 제공 합니다. Azure App Service 사용한 적이 없는 경우 먼저 [Java 빠른](app-service-web-get-started-java.md) 시작을 참조 하세요. Java 개발과 관련 되지 않은 App Service 사용에 대 한 일반적인 질문에 대 한 답변은 [App Service WINDOWS FAQ](faq-configuration-and-management.md)에서 확인할 수 있습니다.
+이 가이드에서는 App Service에서를 사용 하는 Java 개발자를 위한 주요 개념 및 지침을 제공 합니다. Azure App Service 사용한 적이 없는 경우 먼저 [Java 빠른](app-service-web-get-started-java.md) 시작을 참조 하세요. Java 개발과 관련 되지 않은 App Service 사용에 대한 일반적인 질문에 대한 답변은 [App Service WINDOWS FAQ](faq-configuration-and-management.md)에서 확인할 수 있습니다.
 
 ## <a name="deploying-your-app"></a>앱 배포
 
@@ -51,7 +51,7 @@ Azure Portal 또는 [Azure CLI](/cli/azure/webapp/log#az-webapp-log-config)를 �
 
 ## <a name="customization-and-tuning"></a>사용자 지정 및 튜닝
 
-Azure App Service은 Azure Portal 및 CLI를 통해 기본 튜닝 및 사용자 지정을 지원 합니다. Java와 관련 되지 않은 웹 앱 구성에 대 한 다음 문서를 검토 합니다.
+Azure App Service은 Azure Portal 및 CLI를 통해 기본 튜닝 및 사용자 지정을 지원 합니다. Java와 관련 되지 않은 웹 앱 구성에 대한 다음 문서를 검토 합니다.
 
 - [앱 설정 구성](configure-common.md#configure-app-settings)
 - [사용자 지정 도메인 설정](app-service-web-tutorial-custom-domain.md)
@@ -130,13 +130,13 @@ App Service에서 실행 되는 Java 응용 프로그램에는 다른 응용 프
 
 #### <a name="tomcat-and-wildfly"></a>Tomcat 및 Wildfly
 
-Tomcat 또는 Wildfly 응용 프로그램은 주 개체를 Map 개체로 캐스팅 하 여 서블릿에 사용자의 클레임에 직접 액세스할 수 있습니다. Map 개체는 각 클레임 형식을 해당 형식에 대 한 클레임 컬렉션에 매핑합니다. 아래 코드에서 `request`은 `HttpServletRequest`인스턴스입니다.
+Tomcat 또는 Wildfly 응용 프로그램은 주 개체를 Map 개체로 캐스팅 하 여 서블릿에 사용자의 클레임에 직접 액세스할 수 있습니다. Map 개체는 각 클레임 형식을 해당 형식에 대한 클레임 컬렉션에 매핑합니다. 아래 코드에서 `request`은 `HttpServletRequest`인스턴스입니다.
 
 ```java
 Map<String, Collection<String>> map = (Map<String, Collection<String>>) request.getUserPrincipal();
 ```
 
-이제 특정 클레임에 대 한 `Map` 개체를 검사할 수 있습니다. 예를 들어 다음 코드 조각은 모든 클레임 형식을 반복 하 고 각 컬렉션의 내용을 인쇄 합니다.
+이제 특정 클레임에 대한 `Map` 개체를 검사할 수 있습니다. 예를 들어 다음 코드 조각은 모든 클레임 형식을 반복 하 고 각 컬렉션의 내용을 인쇄 합니다.
 
 ```java
 for (Object key : map.keySet()) {
@@ -150,7 +150,7 @@ for (Object key : map.keySet()) {
     }
 ```
 
-사용자를 로그 아웃 하려면 `/.auth/ext/logout` 경로를 사용 합니다. 다른 작업을 수행 하려면 [App Service 인증 및 권한 부여 사용](https://docs.microsoft.com/azure/app-service/app-service-authentication-how-to)에 대 한 설명서를 참조 하세요. Tomcat [Httpserv request 인터페이스](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) 및 해당 메서드에 대 한 공식 설명서도 있습니다. 다음 서블릿 메서드도 App Service 구성에 따라 하이드레이션 됩니다.
+사용자를 로그 아웃 하려면 `/.auth/ext/logout` 경로를 사용 합니다. 다른 작업을 수행 하려면 [App Service 인증 및 권한 부여 사용](https://docs.microsoft.com/azure/app-service/app-service-authentication-how-to)에 대한 설명서를 참조 하세요. Tomcat [Httpserv request 인터페이스](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) 및 해당 메서드에 대한 공식 설명서도 있습니다. 다음 서블릿 메서드도 App Service 구성에 따라 하이드레이션 됩니다.
 
 ```java
 public boolean isSecure()
@@ -170,9 +170,9 @@ public int getServerPort()
 
 [Azure KeyVault](../key-vault/key-vault-overview.md) 는 액세스 정책 및 감사 기록을 통해 중앙 집중화 된 비밀 관리를 제공 합니다. 키 자격 증명 모음에 암호 또는 연결 문자열과 같은 암호를 저장 하 고 환경 변수를 통해 응용 프로그램에서 이러한 비밀에 액세스할 수 있습니다.
 
-먼저, Key Vault에 대 한 [앱 액세스 권한을 부여](app-service-key-vault-references.md#granting-your-app-access-to-key-vault) 하 고 [응용 프로그램 설정에서 암호에 대 한 keyvault 참조](app-service-key-vault-references.md#reference-syntax)를 설정 하는 지침을 따르세요. App Service 터미널에 원격으로 액세스 하는 동안 환경 변수를 인쇄 하 여 참조가 암호로 확인 되는지 확인할 수 있습니다.
+먼저, Key Vault에 대한 [앱 액세스 권한을 부여](app-service-key-vault-references.md#granting-your-app-access-to-key-vault) 하 고 [응용 프로그램 설정에서 암호에 대한 keyvault 참조](app-service-key-vault-references.md#reference-syntax)를 설정 하는 지침을 따르세요. App Service 터미널에 원격으로 액세스 하는 동안 환경 변수를 인쇄 하 여 참조가 암호로 확인 되는지 확인할 수 있습니다.
 
-이러한 암호를 스프링 또는 Tomcat 구성 파일에 삽입 하려면 환경 변수 삽입 구문 (`${MY_ENV_VAR}`)을 사용 합니다. 스프링 구성 파일은 [표면화 된 구성](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html)에 대 한이 설명서를 참조 하세요.
+이러한 암호를 스프링 또는 Tomcat 구성 파일에 삽입 하려면 환경 변수 삽입 구문 (`${MY_ENV_VAR}`)을 사용 합니다. 스프링 구성 파일은 [표면화 된 구성](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html)에 대한이 설명서를 참조 하세요.
 
 
 ## <a name="configure-apm-platforms"></a>APM 플랫폼 구성
@@ -268,7 +268,7 @@ JDBC (Java Database Connectivity) 또는 JPA (Java 지 속성 API)를 사용 하
     az extension add -–name webapp
     ```
 
-2. 다음 CLI 명령을 실행 하 여 로컬 시스템에서 App Service에 대 한 SSH 터널을 만듭니다.
+2. 다음 CLI 명령을 실행 하 여 로컬 시스템에서 App Service에 대한 SSH 터널을 만듭니다.
 
     ```azurecli-interactive
     az webapp remote-connection create --resource-group <resource-group-name> --name <app-name> --port <port-on-local-machine>
@@ -282,8 +282,8 @@ JDBC (Java Database Connectivity) 또는 JPA (Java 지 속성 API)를 사용 하
 
 Tomcat의 `server.xml` 또는 기타 구성 파일을 편집 하려면 먼저 포털에서 Tomcat 주 버전을 기록해 둡니다.
 
-1. `env` 명령을 실행 하 여 버전에 대 한 Tomcat home 디렉터리를 찾습니다. `AZURE_TOMCAT`시작 하 고 주 버전과 일치 하는 환경 변수를 검색 합니다. 예를 들어 `AZURE_TOMCAT85_HOME`는 Tomcat 8.5에 대 한 Tomcat 디렉터리를 가리킵니다.
-1. 버전에 대 한 Tomcat home 디렉터리를 확인 한 후에는 구성 디렉터리를 `D:\home`에 복사 합니다. 예를 들어 `AZURE_TOMCAT85_HOME` `D:\Program Files (x86)\apache-tomcat-8.5.37`값이 있는 경우 복사한 디렉터리의 새 경로는 `D:\home\apache-tomcat-8.5.37`됩니다.
+1. `env` 명령을 실행 하 여 버전에 대한 Tomcat home 디렉터리를 찾습니다. `AZURE_TOMCAT`시작 하 고 주 버전과 일치 하는 환경 변수를 검색 합니다. 예를 들어 `AZURE_TOMCAT85_HOME`는 Tomcat 8.5에 대한 Tomcat 디렉터리를 가리킵니다.
+1. 버전에 대한 Tomcat home 디렉터리를 확인 한 후에는 구성 디렉터리를 `D:\home`에 복사 합니다. 예를 들어 `AZURE_TOMCAT85_HOME` `D:\Program Files (x86)\apache-tomcat-8.5.37`값이 있는 경우 복사한 디렉터리의 새 경로는 `D:\home\apache-tomcat-8.5.37`됩니다.
 
 마지막으로, App Service를 다시 시작합니다. 배포는 이전과 마찬가지로 `D:\home\site\wwwroot\webapps`로 이동 해야 합니다.
 
@@ -295,7 +295,7 @@ Azure에서 지원되는 JDK(Java Development Kit)는 [Azul Systems](https://www
 
 주 버전 업데이트는 Windows 용 Azure App Service의 새로운 런타임 옵션을 통해 제공 됩니다. 고객은 App Service 배포를 구성하여 최신 버전의 Java로 업데이트해야 하며, 주 업데이트를 테스트하고 요구 사항을 충족하도록 관리할 책임이 있습니다.
 
-지원되는 JDK는 매년 분기마다 1월, 4월, 7월, 10월에 자동으로 패치됩니다. Azure의 Java에 대 한 자세한 내용은 [이 지원 문서](https://docs.microsoft.com/azure/java/jdk/)를 참조 하세요.
+지원되는 JDK는 매년 분기마다 1월, 4월, 7월, 10월에 자동으로 패치됩니다. Azure의 Java에 대한 자세한 내용은 [이 지원 문서](https://docs.microsoft.com/azure/java/jdk/)를 참조 하세요.
 
 ### <a name="security-updates"></a>보안 업데이트
 
@@ -311,7 +311,7 @@ Azul Systems에서 주요 보안 취약점에 대한 패치 및 수정 사항을
 
 ### <a name="development-support"></a>개발 지원
 
-Azure [지원 Azul 줄루어 JDK](https://www.azul.com/downloads/azure-only/zulu/) 에 대 한 제품 지원은 azure 용으로 개발 하거나 [정규화 된 azure 지원 계획](https://azure.microsoft.com/support/plans/)을 사용 하 여 [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) 때 Microsoft를 통해 제공 됩니다.
+Azure [지원 Azul 줄루어 JDK](https://www.azul.com/downloads/azure-only/zulu/) 에 대한 제품 지원은 azure 용으로 개발 하거나 [정규화 된 azure 지원 계획](https://azure.microsoft.com/support/plans/)을 사용 하 여 [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) 때 Microsoft를 통해 제공 됩니다.
 
 ### <a name="runtime-support"></a>런타임 지원
 
@@ -319,7 +319,7 @@ Azure [지원 Azul 줄루어 JDK](https://www.azul.com/downloads/azure-only/zulu
 
 ## <a name="next-steps"></a>다음 단계
 
-이 항목에서는 Windows의 Azure App Service에 대 한 Java 런타임 설명을 제공 합니다.
+이 항목에서는 Windows의 Azure App Service에 대한 Java 런타임 설명을 제공 합니다.
 
-- Azure App Service에서 웹 응용 프로그램을 호스트 하는 방법에 대 한 자세한 내용은 [App Service 개요](overview.md)를 참조 하세요.
-- Azure 개발의 Java에 대 한 자세한 내용은 [Azure Java 개발자 센터를](https://docs.microsoft.com/java/azure/?view=azure-java-stable)참조 하세요.
+- Azure App Service에서 웹 응용 프로그램을 호스트 하는 방법에 대한 자세한 내용은 [App Service 개요](overview.md)를 참조 하세요.
+- Azure 개발의 Java에 대한 자세한 내용은 [Azure Java 개발자 센터를](https://docs.microsoft.com/java/azure/?view=azure-java-stable)참조 하세요.

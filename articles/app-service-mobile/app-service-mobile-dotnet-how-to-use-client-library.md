@@ -22,7 +22,7 @@ ms.locfileid: "74668475"
 > 모바일 애플리케이션에서 클라우드 서비스를 통합하려면 지금 [App Center](https://appcenter.ms/?utm_source=zumo&utm_medium=Azure&utm_campaign=zumo%20doc)에 등록하세요.
 
 ## <a name="overview"></a>개요
-이 가이드에서는 Windows 및 Xamarin 앱용 Azure App Service Mobile Apps에 관리되는 클라이언트 라이브러리를 사용하는 일반적인 시나리오를 수행하는 방법을 보여 줍니다. Mobile Apps를 처음 접하는 경우 먼저 [Azure Mobile Apps 빠른 시작][1] 자습서를 완료하는 것이 좋습니다. 이 가이드에서는 클라이언트 쪽 관리되는 SDK에 초점을 둡니다. Mobile Apps에 대 한 서버 쪽 Sdk에 대해 자세히 알아보려면 [.Net 서버 sdk][2] 또는 [node.js 서버 sdk][3]에 대 한 설명서를 참조 하세요.
+이 가이드에서는 Windows 및 Xamarin 앱용 Azure App Service Mobile Apps에 관리되는 클라이언트 라이브러리를 사용하는 일반적인 시나리오를 수행하는 방법을 보여 줍니다. Mobile Apps를 처음 접하는 경우 먼저 [Azure Mobile Apps 빠른 시작][1] 자습서를 완료하는 것이 좋습니다. 이 가이드에서는 클라이언트 쪽 관리되는 SDK에 초점을 둡니다. Mobile Apps에 대한 서버 쪽 Sdk에 대해 자세히 알아보려면 [.Net 서버 sdk][2] 또는 [node.js 서버 sdk][3]에 대한 설명서를 참조 하세요.
 
 ## <a name="reference-documentation"></a>참조 설명서
 클라이언트 SDK에 대한 참조 설명서는 [Azure Mobile Apps .NET 클라이언트 참조][4]에서 찾을 수 있습니다.

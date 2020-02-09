@@ -15,11 +15,11 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 08/05/2019
 ms.locfileid: "68780845"
 ---
-이 섹션에서는 Azure CLI를 사용 하 여이 문서에 대 한 장치 id를 만듭니다. 디바이스 ID는 대/소문자를 구분합니다.
+이 섹션에서는 Azure CLI를 사용 하 여이 문서에 대한 장치 id를 만듭니다. 디바이스 ID는 대/소문자를 구분합니다.
 
 1. [Azure Cloud Shell](https://shell.azure.com/)을 엽니다.
 
-1. Azure Cloud Shell에서 다음 명령을 실행 하 Azure CLI에 대 한 Microsoft Azure IoT 확장을 설치 합니다.
+1. Azure Cloud Shell에서 다음 명령을 실행 하 Azure CLI에 대한 Microsoft Azure IoT 확장을 설치 합니다.
 
     ```azurecli-interactive
     az extension add --name azure-cli-iot-ext

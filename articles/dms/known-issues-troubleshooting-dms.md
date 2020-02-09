@@ -20,7 +20,7 @@ ms.locfileid: "75437784"
 ---
 # <a name="troubleshoot-common-azure-database-migration-service-issues-and-errors"></a>일반적인 Azure Database Migration Service 문제 및 오류 해결
 
-이 문서에서는 사용자가 수행할 수 Azure Database Migration Service 있는 몇 가지 일반적인 문제 및 오류에 대해 설명 합니다. 이 문서에는 이러한 문제 및 오류를 해결 하는 방법에 대 한 정보도 포함 되어 있습니다.
+이 문서에서는 사용자가 수행할 수 Azure Database Migration Service 있는 몇 가지 일반적인 문제 및 오류에 대해 설명 합니다. 이 문서에는 이러한 문제 및 오류를 해결 하는 방법에 대한 정보도 포함 되어 있습니다.
 
 ## <a name="migration-activity-in-queued-state"></a>대기 상태의 마이그레이션 작업
 
@@ -32,7 +32,7 @@ Azure Database Migration Service 프로젝트에서 새 활동을 만들 때 활
 
 ## <a name="max-number-of-databases-selected-for-migration"></a>마이그레이션을 위해 선택한 최대 데이터베이스 수
 
-Azure SQL Database 또는 Azure SQL Database 관리 되는 인스턴스로 이동 하기 위해 데이터베이스 마이그레이션 프로젝트에 대 한 작업을 만들 때 다음과 같은 오류가 발생 합니다.
+Azure SQL Database 또는 Azure SQL Database 관리 되는 인스턴스로 이동 하기 위해 데이터베이스 마이그레이션 프로젝트에 대한 작업을 만들 때 다음과 같은 오류가 발생 합니다.
 
 * **오류**: 마이그레이션 설정 유효성 검사 오류 "," errordetail ":" ' 데이터베이스 '의 최대 개수 ' 4 ' 개 이상의 개체를 마이그레이션하도록 선택 했습니다. "
 
@@ -40,7 +40,7 @@ Azure SQL Database 또는 Azure SQL Database 관리 되는 인스턴스로 이�
 | ------------- | ------------- |
 | 이 오류는 단일 마이그레이션 작업을 위해 데이터베이스를 4 개 이상 선택한 경우에 표시 됩니다. 현재 각 마이그레이션 작업은 4 개의 데이터베이스로 제한 됩니다. | 마이그레이션 작업당 4 개 이하의 데이터베이스를 선택 합니다. 네 개 이상의 데이터베이스를 병렬로 마이그레이션해야 하는 경우 Azure Database Migration Service의 다른 인스턴스를 프로 비전 해야 합니다. 현재 각 구독은 최대 2 개의 Azure Database Migration Service 인스턴스를 지원 합니다.<br><br> |
 
-## <a name="errors-for-mysql-migration-to-azure-mysql-with-recovery-failures"></a>복구 오류가 발생 하 여 Azure MySQL에 대 한 MySQL 마이그레이션 오류
+## <a name="errors-for-mysql-migration-to-azure-mysql-with-recovery-failures"></a>복구 오류가 발생 하 여 Azure MySQL에 대한 MySQL 마이그레이션 오류
 
 Azure Database Migration Service를 사용 하 여 MySQL에서 Azure Database for MySQL로 마이그레이션하면 마이그레이션 작업이 실패 하 고 다음 오류가 발생 합니다.
 
@@ -48,7 +48,7 @@ Azure Database Migration Service를 사용 하 여 MySQL에서 Azure Database fo
 
 | 원인         | 해상도 |
 | ------------- | ------------- |
-| 이 오류는 마이그레이션을 수행 하는 사용자에 게 게 replicationadmin 역할이 역할 및/또는 복제 클라이언트, 복제 복제본 및 슈퍼 (MySQL 5.6.6 이전 버전)의 권한이 없는 경우에 발생할 수 있습니다.<br><br><br><br><br><br><br><br><br><br><br><br><br> | 사용자 계정에 대 한 필수 구성 요소 [권한이](https://docs.microsoft.com/azure/dms/tutorial-mysql-azure-mysql-online#prerequisites) Azure Database for MySQL 인스턴스에서 정확 하 게 구성 되었는지 확인 합니다. 예를 들어 다음 단계를 수행 하 여 필요한 권한이 있는 ' migrateuser ' 라는 사용자를 만들 수 있습니다.<br>1. ' secret '로 식별 된 사용자 migrateuser@ '% '을 (를) 만듭니다. <br>2. ' migrateuser ' @ '% '에 대 db_name 한 모든 권한을 ' secret '로 식별 된 모든 권한을 부여 합니다. 이 단계를 반복 하 여 더 많은 데이터베이스에 대 한 액세스 권한 부여 <br>3. 복제 종속 *을에 부여 합니다.* ' secret '로 식별 되는 ' migrateuser ' @ '% '<br>4 .에 복제 클라이언트를 *부여 합니다.* ' secret '로 식별 되는 ' migrateuser ' @ '% '<br>5. Flush 권한; |
+| 이 오류는 마이그레이션을 수행 하는 사용자에 게 게 replicationadmin 역할이 역할 및/또는 복제 클라이언트, 복제 복제본 및 슈퍼 (MySQL 5.6.6 이전 버전)의 권한이 없는 경우에 발생할 수 있습니다.<br><br><br><br><br><br><br><br><br><br><br><br><br> | 사용자 계정에 대한 필수 구성 요소 [권한이](https://docs.microsoft.com/azure/dms/tutorial-mysql-azure-mysql-online#prerequisites) Azure Database for MySQL 인스턴스에서 정확 하 게 구성 되었는지 확인 합니다. 예를 들어 다음 단계를 수행 하 여 필요한 권한이 있는 ' migrateuser ' 라는 사용자를 만들 수 있습니다.<br>1. ' secret '로 식별 된 사용자 migrateuser@ '% '을 (를) 만듭니다. <br>2. ' migrateuser ' @ '% '에 대 db_name 한 모든 권한을 ' secret '로 식별 된 모든 권한을 부여 합니다. 이 단계를 반복 하 여 더 많은 데이터베이스에 대한 액세스 권한 부여 <br>3. 복제 종속 *을에 부여 합니다.* ' secret '로 식별 되는 ' migrateuser ' @ '% '<br>4 .에 복제 클라이언트를 *부여 합니다.* ' secret '로 식별 되는 ' migrateuser ' @ '% '<br>5. Flush 권한; |
 
 ## <a name="error-when-attempting-to-stop-azure-database-migration-service"></a>Azure Database Migration Service를 중지 하는 동안 오류 발생
 
@@ -78,7 +78,7 @@ SQL Server에서 관리 되는 Azure SQL Database 인스턴스로 온라인 마�
 
 | 원인         | 해상도    |
 | ------------- | ------------- |
-| 이 오류는 SQL Server에서 관리 되는 Azure SQL Database 인스턴스로의 온라인 마이그레이션에 사용 되는 응용 프로그램 보안 주체에 게 구독에 대 한 참가 권한이 없음을 나타냅니다. 현재 Managed Instance 있는 특정 API 호출에는 복원 작업에 대 한 구독에 대 한이 권한이 필요 합니다. <br><br><br><br><br><br><br><br><br><br><br><br><br><br> | `Get-AzureADServicePrincipal` PowerShell cmdlet을 오류 메시지에서 사용할 수 있는 `-ObjectId`와 함께 사용 하 여 사용 중인 응용 프로그램 ID의 표시 이름을 나열 합니다.<br><br> 이 응용 프로그램에 대 한 사용 권한의 유효성을 검사 하 고 구독 수준에서 [참가자 역할이](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) 있는지 확인 합니다. <br><br> Azure Database Migration Service 엔지니어링 팀에서 구독에 대 한 현재 참가 역할의 필수 액세스를 제한 하기 위해 작업 중입니다. 참가 역할의 사용을 허용 하지 않는 비즈니스 요구 사항이 있는 경우 Azure 지원에 문의 하 여 추가 도움을 요청 합니다. |
+| 이 오류는 SQL Server에서 관리 되는 Azure SQL Database 인스턴스로의 온라인 마이그레이션에 사용 되는 응용 프로그램 보안 주체에 게 구독에 대한 참가 권한이 없음을 나타냅니다. 현재 Managed Instance 있는 특정 API 호출에는 복원 작업에 대한 구독에 대한이 권한이 필요 합니다. <br><br><br><br><br><br><br><br><br><br><br><br><br><br> | `Get-AzureADServicePrincipal` PowerShell cmdlet을 오류 메시지에서 사용할 수 있는 `-ObjectId`와 함께 사용 하 여 사용 중인 응용 프로그램 ID의 표시 이름을 나열 합니다.<br><br> 이 응용 프로그램에 대한 사용 권한의 유효성을 검사 하 고 구독 수준에서 [참가자 역할이](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) 있는지 확인 합니다. <br><br> Azure Database Migration Service 엔지니어링 팀에서 구독에 대한 현재 참가 역할의 필수 액세스를 제한 하기 위해 작업 중입니다. 참가 역할의 사용을 허용 하지 않는 비즈니스 요구 사항이 있는 경우 Azure 지원에 문의 하 여 추가 도움을 요청 합니다. |
 
 ## <a name="error-when-deleting-nic-associated-with-azure-database-migration-service"></a>Azure Database Migration Service와 연결 된 NIC를 삭제 하는 동안 오류 발생
 
@@ -96,13 +96,13 @@ Azure Database Migration 서비스 프로젝트 마법사에서 원본에 연결
 
 | 원인         | 해상도    |
 | ------------- | ------------- |
-| [Express](https://azure.microsoft.com/services/expressroute/)경로를 사용 하는 경우 서비스와 연결 된 Virtual Network 서브넷에서 3 개의 서비스 끝점을 프로 비전 [해야](https://docs.microsoft.com/azure/dms/tutorial-sql-server-azure-sql-online) Azure Database Migration Service.<br> --Service Bus 끝점<br> --저장소 끝점<br> --대상 데이터베이스 끝점 (예: SQL 끝점, Cosmos DB 끝점)<br><br><br><br><br> | 원본 및 Azure Database Migration Service 간 Express 경로 연결에 필요한 서비스 끝점을 [사용 하도록 설정](https://docs.microsoft.com/azure/dms/tutorial-sql-server-azure-sql-online) 합니다. <br><br><br><br><br><br><br><br> |
+| [Express](https://azure.microsoft.com/services/expressroute/)경로를 사용 하는 경우 서비스와 연결 된 Virtual Network 서브넷에서 3 개의 서비스 엔드포인트을 프로 비전 [해야](https://docs.microsoft.com/azure/dms/tutorial-sql-server-azure-sql-online) Azure Database Migration Service.<br> --Service Bus 엔드포인트<br> --저장소 엔드포인트<br> --대상 데이터베이스 엔드포인트 (예: SQL 엔드포인트, Cosmos DB 엔드포인트)<br><br><br><br><br> | 원본 및 Azure Database Migration Service 간 Express 경로 연결에 필요한 서비스 엔드포인트을 [사용 하도록 설정](https://docs.microsoft.com/azure/dms/tutorial-sql-server-azure-sql-online) 합니다. <br><br><br><br><br><br><br><br> |
 
 ## <a name="lock-wait-timeout-error-when-migrating-a-mysql-database-to-azure-db-for-mysql"></a>Mysql 용 Azure DB로 MySQL 데이터베이스를 마이그레이션할 때 잠금 대기 시간 초과 오류가 발생 했습니다.
 
 Azure Database Migration Service를 통해 MySQL 데이터베이스를 Azure Database for MySQL 인스턴스로 마이그레이션하면 다음과 같은 잠금 대기 시간 초과 오류가 발생 하 여 마이그레이션이 실패 합니다.
 
-* **오류**: 데이터베이스 마이그레이션 오류-파일을 로드 하지 못했습니다. 파일 ' n ' RetCode에 대 한 로드 프로세스를 시작 하지 못했습니다.: SQL_ERROR SQLSTATE: HY000 NativeError: 1205 메시지: [MySQL] [ODBC 드라이버] [mysqld] 잠금 대기 시간 초과 트랜잭션을 다시 시작 해 보세요.
+* **오류**: 데이터베이스 마이그레이션 오류-파일을 로드 하지 못했습니다. 파일 ' n ' RetCode에 대한 로드 프로세스를 시작 하지 못했습니다.: SQL_ERROR SQLSTATE: HY000 NativeError: 1205 메시지: [MySQL] [ODBC 드라이버] [mysqld] 잠금 대기 시간 초과 트랜잭션을 다시 시작 해 보세요.
 
 | 원인         | 해상도    |
 | ------------- | ------------- |
@@ -116,17 +116,17 @@ Azure Database Migration Service를 통해 MySQL 데이터베이스를 Azure Dat
 
 | 원인         | 해상도    |
 | ------------- | ------------- |
-| 이 문제는 Azure Database Migration Service 연결 하려고 하는 원본 SQL Server 인스턴스가 동적 포트를가지고 있거나 명명 된 인스턴스를 사용 하는 경우에 발생 합니다. SQL Server Browser 서비스는 명명 된 인스턴스에 대 한 들어오는 연결 또는 동적 포트를 사용할 때 UDP 포트 1434을 수신 합니다. SQL Server 서비스가 다시 시작 될 때마다 동적 포트가 변경 될 수 있습니다. SQL Server 구성 관리자의 네트워크 구성을 통해 인스턴스에 할당 된 동적 포트를 확인할 수 있습니다.<br><br><br> |Azure Database Migration Service이 해당 하는 경우 동적으로 할당 된 TCP 포트를 통해 UDP 포트 1434 및 SQL Server 인스턴스에서 원본 SQL Server Browser 서비스에 연결할 수 있는지 확인 합니다. |
+| 이 문제는 Azure Database Migration Service 연결 하려고 하는 원본 SQL Server 인스턴스가 동적 포트를가지고 있거나 명명 된 인스턴스를 사용 하는 경우에 발생 합니다. SQL Server Browser 서비스는 명명 된 인스턴스에 대한 들어오는 연결 또는 동적 포트를 사용할 때 UDP 포트 1434을 수신 합니다. SQL Server 서비스가 다시 시작 될 때마다 동적 포트가 변경 될 수 있습니다. SQL Server 구성 관리자의 네트워크 구성을 통해 인스턴스에 할당 된 동적 포트를 확인할 수 있습니다.<br><br><br> |Azure Database Migration Service이 해당 하는 경우 동적으로 할당 된 TCP 포트를 통해 UDP 포트 1434 및 SQL Server 인스턴스에서 원본 SQL Server Browser 서비스에 연결할 수 있는지 확인 합니다. |
 
 ## <a name="additional-known-issues"></a>추가 알려진 문제
 
-* [Azure SQL Database에 대 한 온라인 마이그레이션과 관련 하 여 알려진 문제/마이그레이션 제한 사항](https://docs.microsoft.com/azure/dms/known-issues-azure-sql-online)
-* [Azure Database for MySQL에 대 한 온라인 마이그레이션과 관련 하 여 알려진 문제/마이그레이션 제한 사항](https://docs.microsoft.com/azure/dms/known-issues-azure-mysql-online)
-* [Azure Database for PostgreSQL에 대 한 온라인 마이그레이션과 관련 하 여 알려진 문제/마이그레이션 제한 사항](https://docs.microsoft.com/azure/dms/known-issues-azure-postgresql-online)
+* [Azure SQL Database에 대한 온라인 마이그레이션과 관련 하 여 알려진 문제/마이그레이션 제한 사항](https://docs.microsoft.com/azure/dms/known-issues-azure-sql-online)
+* [Azure Database for MySQL에 대한 온라인 마이그레이션과 관련 하 여 알려진 문제/마이그레이션 제한 사항](https://docs.microsoft.com/azure/dms/known-issues-azure-mysql-online)
+* [Azure Database for PostgreSQL에 대한 온라인 마이그레이션과 관련 하 여 알려진 문제/마이그레이션 제한 사항](https://docs.microsoft.com/azure/dms/known-issues-azure-postgresql-online)
 
 ## <a name="next-steps"></a>다음 단계
 
 * [PowerShell Azure Database Migration Service](https://docs.microsoft.com/powershell/module/azurerm.datamigration/?view=azurermps-6.13.0#data_migration)문서를 참조 하세요.
 * [Azure Portal를 사용 하 여 Azure Database for MySQL에서 서버 매개 변수를 구성 하는 방법](https://docs.microsoft.com/azure/mysql/howto-server-parameters)문서를 참조 하세요.
 * [Azure Database Migration Service 사용을 위한 필수 구성 요소 개요](https://docs.microsoft.com/azure/dms/pre-reqs)문서를 참조 하세요.
-* [Azure Database Migration Service 사용에 대 한 FAQ](https://docs.microsoft.com/azure/dms/faq)를 참조 하세요.
+* [Azure Database Migration Service 사용에 대한 FAQ](https://docs.microsoft.com/azure/dms/faq)를 참조 하세요.

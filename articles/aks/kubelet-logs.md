@@ -16,7 +16,7 @@ ms.locfileid: "67615173"
 ---
 # <a name="get-kubelet-logs-from-azure-kubernetes-service-aks-cluster-nodes"></a>AKS(Azure Kubernetes Service) 클러스터 노드에서 kubelet 로그 가져오기
 
-AKS 클러스터를 운영 하는 과정에서 로그를 검토 하 여 문제를 해결 해야 할 수도 있습니다. Azure Portal 기본 제공은 [AKS 클러스터의 컨테이너][azure-container-logs]또는 [AKS 마스터 구성 요소][aks-master-logs] 에 대 한 로그를 볼 수 있는 기능입니다. 경우에 따라 문제 해결을 위해 AKS 노드에서 *kubelet* 로그를 가져와야 할 수 있습니다.
+AKS 클러스터를 운영 하는 과정에서 로그를 검토 하 여 문제를 해결 해야 할 수도 있습니다. Azure Portal 기본 제공은 [AKS 클러스터의 컨테이너][azure-container-logs]또는 [AKS 마스터 구성 요소][aks-master-logs] 에 대한 로그를 볼 수 있는 기능입니다. 경우에 따라 문제 해결을 위해 AKS 노드에서 *kubelet* 로그를 가져와야 할 수 있습니다.
 
 이 문서에서는를 사용 `journalctl` 하 여 AKS 노드에서 *kubelet* 로그를 보는 방법을 보여 줍니다.
 
@@ -26,7 +26,7 @@ AKS 클러스터를 운영 하는 과정에서 로그를 검토 하 여 문제�
 
 ## <a name="create-an-ssh-connection"></a>SSH 연결 만들기
 
-먼저 *kubelet* 로그를 확인해야 하는 노드에 SSH 연결을 만듭니다. 이 작업은 [AKS (Azure Kubernetes Service) 클러스터 노드][aks-ssh] 문서에 대 한 SSH에 자세히 설명 되어 있습니다.
+먼저 *kubelet* 로그를 확인해야 하는 노드에 SSH 연결을 만듭니다. 이 작업은 [AKS (Azure Kubernetes Service) 클러스터 노드][aks-ssh] 문서에 대한 SSH에 자세히 설명 되어 있습니다.
 
 ## <a name="get-kubelet-logs"></a>kubelet 로그 가져오기
 

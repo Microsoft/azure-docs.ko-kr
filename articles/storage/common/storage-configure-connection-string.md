@@ -118,7 +118,7 @@ AccountKey=<account-key>
 
 ### <a name="create-a-connection-string-with-an-endpoint-suffix"></a>엔드포인트 접미사를 사용하여 연결 문자열 만들기
 
-Azure 중국 21Vianet 또는 Azure Government와 같이 다른 끝점 접미사를 사용 하는 지역 또는 인스턴스에 저장소 서비스에 대 한 연결 문자열을 만들려면 다음 연결 문자열 형식을 사용 합니다. HTTPS(권장) 또는 HTTP를 통해 스토리지 계정에 연결할지 여부를 표시하며, `myAccountName`을 스토리지 계정의 이름으로 바꾸고, `myAccountKey`를 계정 액세스 키로 바꾸고, `mySuffix`을 URI 접미사로 바꿉니다.
+Azure 중국 21Vianet 또는 Azure Government와 같이 다른 엔드포인트 접미사를 사용 하는 지역 또는 인스턴스에 저장소 서비스에 대 한 연결 문자열을 만들려면 다음 연결 문자열 형식을 사용 합니다. HTTPS(권장) 또는 HTTP를 통해 스토리지 계정에 연결할지 여부를 표시하며, `myAccountName`을 스토리지 계정의 이름으로 바꾸고, `myAccountKey`를 계정 액세스 키로 바꾸고, `mySuffix`을 URI 접미사로 바꿉니다.
 
 ```
 DefaultEndpointsProtocol=[http|https];

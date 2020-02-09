@@ -27,7 +27,7 @@ Azure에서 관리 되는 Spark 클러스터를 제공 하는 [Azure Databricks]
 
 > [!WARNING]
 > 이 커넥터는 Azure Cosmos DB의 코어 (SQL) API를 지원 합니다.
-> MongoDB API에 대 한 Cosmos DB [MongoDB Spark 커넥터](https://docs.mongodb.com/spark-connector/master/)를 사용 합니다.
+> MongoDB API에 대한 Cosmos DB [MongoDB Spark 커넥터](https://docs.mongodb.com/spark-connector/master/)를 사용 합니다.
 > Cosmos DB Cassandra API의 경우 [Cassandra Spark 커넥터](https://github.com/datastax/spark-cassandra-connector)를 사용 합니다.
 >
 
@@ -35,8 +35,8 @@ Azure에서 관리 되는 Spark 클러스터를 제공 하는 [Azure Databricks]
 
 * [JAVA SDK 시작](sql-api-async-java-get-started.md) 의 단계에 따라 Cosmos DB 계정을 설정 하 고 일부 데이터를 채웁니다.
 * [시작 Azure Databricks](https://docs.azuredatabricks.net/getting-started/index.html) 의 단계에 따라 Azure Databricks 작업 영역 및 클러스터를 설정 합니다.
-* 이제 새 노트북을 만들고 Cosmos DB 커넥터 라이브러리를 가져올 수 있습니다. 작업 영역을 설정 하는 방법에 대 한 자세한 내용은 [Cosmos DB 커넥터 작업](#bk_working_with_connector) 으로 이동 합니다.
-* 다음 섹션에는 커넥터를 사용 하 여 읽고 쓰는 방법에 대 한 조각이 있습니다.
+* 이제 새 노트북을 만들고 Cosmos DB 커넥터 라이브러리를 가져올 수 있습니다. 작업 영역을 설정 하는 방법에 대한 자세한 내용은 [Cosmos DB 커넥터 작업](#bk_working_with_connector) 으로 이동 합니다.
+* 다음 섹션에는 커넥터를 사용 하 여 읽고 쓰는 방법에 대한 조각이 있습니다.
 
 ### <a name="batch-reads-from-cosmos-db"></a>Cosmos DB에서 일괄 읽기
 
@@ -168,7 +168,7 @@ val readConfig = Config(Map(
 val df = spark.readStream.format(classOf[CosmosDBSourceProvider].getName).options(readConfig).load()
 ```
 
-### <a name="streaming-writes-to-cosmos-db"></a>Cosmos DB에 대 한 스트리밍 쓰기
+### <a name="streaming-writes-to-cosmos-db"></a>Cosmos DB에 대한 스트리밍 쓰기
 
 다음 코드 조각에서는 PySpark에서 Cosmos DB에 데이터 프레임을 작성 하는 방법을 보여 줍니다.
 

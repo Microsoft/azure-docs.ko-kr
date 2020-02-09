@@ -39,6 +39,6 @@ Express 경로 다이렉트는 고객에 게 Microsoft 글로벌 백본으로 �
 
 ExpressRoute Direct는 고정 금액으로 포트 쌍에 대한 요금이 청구됩니다. 표준 회로는 추가 시간 없이 포함되며 프리미엄에는 약간의 추가 요금이 포함됩니다. 피어링 위치의 영역에 따라 회로별로 송신에 대한 요금이 청구됩니다.
 
-### <a name="when-does-billing-start-for-the-expressroute-direct-port-pairs"></a>Express 경로 직접 포트 쌍에 대 한 요금은 언제 시작 되나요?
+### <a name="when-does-billing-start-for-the-expressroute-direct-port-pairs"></a>Express 경로 직접 포트 쌍에 대한 요금은 언제 시작 되나요?
 
 ExpressRoute Direct 포트 쌍은 연결 중 하나 또는 둘 다를 사용할 수 있는 날짜나 ExpressRoute Direct 리소스가 생성된 날짜부터 45일 후 중 더 이른 날짜에 청구됩니다. 45일 유예 기간은 고객이 공동 장소 공급자와 연결 간 프로세스를 완료할 수 있도록 하기 위해 제공됩니다.

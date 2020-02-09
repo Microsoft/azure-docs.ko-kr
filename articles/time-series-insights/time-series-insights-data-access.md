@@ -61,7 +61,7 @@ ms.locfileid: "75894798"
 
     [![올바른 사용자 및 역할 확인](media/data-access/data-access-verify-and-confirm-assignments.png)](media/data-access/data-access-verify-and-confirm-assignments.png#lightbox)
 
-## <a name="provide-guest-access-from-another-azure-ad-tenant"></a>다른 Azure AD 테 넌 트에서 게스트 액세스 제공
+## <a name="provide-guest-access-from-another-azure-ad-tenant"></a>다른 Azure AD 테넌트에서 게스트 액세스 제공
 
 `Guest` 역할은 관리 역할이 아닙니다. 특정 테넌트에서 다른 테넌트로 초대된 계정에 사용되는 용어입니다. 게스트 계정을 테넌트의 디렉터리에 초대한 후에는 다른 계정과 동일한 액세스 제어가 적용될 수 있습니다. 액세스 제어(IAM) 블레이드를 사용하여 Time Series Insights 환경에 대한 관리 액세스 권한을 부여할 수 있습니다. 또는 데이터 액세스 정책 블레이드를 통해 환경의 데이터에 대한 액세스 권한을 부여할 수 있습니다. Azure AD(Azure Active Directory) 테넌트 게스트 액세스에 대한 자세한 내용은 [Azure Portal에서 Azure Active Directory B2B 협업 사용자 추가](https://docs.microsoft.com/azure/active-directory/b2b/add-users-administrator)를 참조하세요.
 
@@ -113,16 +113,16 @@ ms.locfileid: "75894798"
 
 1. 이제 게스트가 관리자가 제공한 환경 URL을 사용 하 여 공유 환경에 액세스할 수 있습니다. 이러한 URL을 웹 브라우저에 입력 하 여 즉시 액세스할 수 있습니다.
 
-1. 시계열 탐색기의 오른쪽 위 모서리에서 프로필 아이콘을 선택한 후 관리자의 테 넌 트가 게스트 사용자에 게 표시 됩니다.
+1. 시계열 탐색기의 오른쪽 위 모서리에서 프로필 아이콘을 선택한 후 관리자의 테넌트가 게스트 사용자에 게 표시 됩니다.
 
     [insights.azure.com에서 아바타 선택 ![](media/data-access/data-access-select-tenant-and-instance.png)](media/data-access/data-access-select-tenant-and-instance.png#lightbox)
 
 
-    게스트 사용자가 관리자의 테 넌 트를 선택 하면 공유 Time Series Insights 환경을 선택할 수 있습니다. 
+    게스트 사용자가 관리자의 테넌트를 선택 하면 공유 Time Series Insights 환경을 선택할 수 있습니다. 
     
     이제 **5 단계**에서 제공 하는 역할과 관련 된 모든 기능을 제공 합니다.
 
-    [![게스트 사용자가 드롭다운에서 Azure 테 넌 트를 선택 합니다.](media/data-access/data-access-all-capabilities.png)](media/data-access/data-access-all-capabilities.png#lightbox)
+    [![게스트 사용자가 드롭다운에서 Azure 테넌트를 선택 합니다.](media/data-access/data-access-all-capabilities.png)](media/data-access/data-access-all-capabilities.png#lightbox)
 
 ## <a name="next-steps"></a>다음 단계
 

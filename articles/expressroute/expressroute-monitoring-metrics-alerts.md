@@ -61,7 +61,7 @@ ms.locfileid: "75436907"
 
 ### <a name="bgp-availability---split-by-peer"></a>BGP 가용성-피어로 분할  
 
-피어 링 및 피어 (기본 및 보조 Express 경로 라우터)에서 BGP의 실시간 가용성을 확인할 수 있습니다. 이 대시보드는 개인 피어 링에 대 한 기본 BGP 세션과 개인 피어 링에 대 한 두 번째 BGP 세션을 보여 줍니다. 
+피어 링 및 피어 (기본 및 보조 Express 경로 라우터)에서 BGP의 실시간 가용성을 확인할 수 있습니다. 이 대시보드는 개인 피어 링에 대한 기본 BGP 세션과 개인 피어 링에 대한 두 번째 BGP 세션을 보여 줍니다. 
 
 ![피어 당 BGP 가용성](./media/expressroute-monitoring-metrics-alerts/erBgpAvailabilityMetrics.jpg) 
 
@@ -74,7 +74,7 @@ ms.locfileid: "75436907"
 ## <a name="expressroute-direct-metrics"></a>Express 경로 직접 메트릭
 
 ### <a name="admin-state---split-by-link"></a>상태 관리-링크로 분할
-Express 경로 직접 포트 쌍의 각 링크에 대 한 관리자 상태를 볼 수 있습니다.
+Express 경로 직접 포트 쌍의 각 링크에 대한 관리자 상태를 볼 수 있습니다.
 
 ![er 직접 관리 상태](./media/expressroute-monitoring-metrics-alerts/adminstate-per-link.jpg)
 

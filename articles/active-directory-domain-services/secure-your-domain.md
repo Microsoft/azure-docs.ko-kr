@@ -39,7 +39,7 @@ ms.locfileid: "74546234"
     * [AzAccount][Connect-AzAccount] cmdlet을 사용 하 여 Azure 구독에 로그인 했는지 확인 합니다.
 * Azure AD PowerShell을 설치 하 고 구성 합니다.
     * 필요한 경우 지침에 따라 [AZURE Ad PowerShell 모듈을 설치 하 고 AZURE ad에 연결](/powershell/azure/active-directory/install-adv2)합니다.
-    * [AzureAD][Connect-AzureAD] cmdlet을 사용 하 여 Azure AD 테 넌 트에 로그인 했는지 확인 합니다.
+    * [AzureAD][Connect-AzureAD] cmdlet을 사용 하 여 Azure AD 테넌트에 로그인 했는지 확인 합니다.
 
 ## <a name="disable-weak-ciphers-and-ntlm-password-hash-sync"></a>약한 암호화 및 NTLM 암호 해시 동기화 사용 안 함
 
@@ -77,7 +77,7 @@ Set-AzResource -Id $DomainServicesResource.ResourceId -Properties $securitySetti
 
 ## <a name="next-steps"></a>다음 단계
 
-동기화 프로세스에 대 한 자세한 내용은 [Azure AD DS 관리 되는 도메인에서 개체 및 자격 증명의 동기화 방법][synchronization]을 참조 하세요.
+동기화 프로세스에 대한 자세한 내용은 [Azure AD DS 관리 되는 도메인에서 개체 및 자격 증명의 동기화 방법][synchronization]을 참조 하세요.
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: ../active-directory/fundamentals/sign-up-organization.md

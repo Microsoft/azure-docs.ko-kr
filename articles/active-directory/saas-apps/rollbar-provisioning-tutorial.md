@@ -36,7 +36,7 @@ ms.locfileid: "77063308"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트.
-* 엔터프라이즈 계획이 있는 [Rollbar 테 넌 트](https://rollbar.com/pricing/) .
+* 엔터프라이즈 계획이 있는 [Rollbar 테넌트](https://rollbar.com/pricing/) .
 * 관리자 권한이 있는 Rollbar의 사용자 계정
 
 ## <a name="assigning-users-to-rollbar"></a>Rollbar에 사용자 할당
@@ -60,7 +60,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 Rollbar를 �
 
     ![Rollbar 관리 콘솔](media/rollbar-provisioning-tutorial/image00.png)
 
-2. **Rollbar 테 넌 트 이름 > 계정 액세스 토큰**으로 이동 합니다.
+2. **Rollbar 테넌트 이름 > 계정 액세스 토큰**으로 이동 합니다.
 
     ![Rollbar 관리 콘솔](media/rollbar-provisioning-tutorial/account.png)
 

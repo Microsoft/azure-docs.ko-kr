@@ -354,7 +354,7 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ![애플리케이션 게이트웨이의 기준 URL 테스트](./media/application-gateway-create-url-route-arm-ps/application-gateway-iistest.png)
 
-`<ip-address>`에 대 한 IP 주소를 대체 하 여 URL을 `http://<ip-address>:8080/video/test.htm`로 변경 하면 다음 예제와 같은 내용이 표시 됩니다.
+`<ip-address>`에 대한 IP 주소를 대체 하 여 URL을 `http://<ip-address>:8080/video/test.htm`로 변경 하면 다음 예제와 같은 내용이 표시 됩니다.
 
 ![애플리케이션 게이트웨이의 이미지 URL 테스트](./media/application-gateway-create-url-route-arm-ps/application-gateway-iistest-images.png)
 

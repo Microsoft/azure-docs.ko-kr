@@ -93,6 +93,6 @@ ms.locfileid: "73491264"
 
 ## <a name="next-steps"></a>다음 단계
 
-[V3 예측 끝점](luis-migration-api-v3.md)에 대해 자세히 알아보세요.
+[V3 예측 엔드포인트](luis-migration-api-v3.md)에 대해 자세히 알아보세요.
 
 [백분율](luis-reference-prebuilt-percentage.md), [전화 번호](luis-reference-prebuilt-phonenumber.md)및 [온도](luis-reference-prebuilt-temperature.md) 엔터티에 대해 알아봅니다. 

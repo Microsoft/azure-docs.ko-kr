@@ -33,7 +33,7 @@ ms.locfileid: "75746619"
 
 [!INCLUDE [online-offline](../../includes/database-migration-service-offline-online.md)]
 
-이 문서에는 온라인 및 오프 라인 마이그레이션을 모두 수행 하는 방법에 대 한 세부 정보가 포함 되어 있습니다.
+이 문서에는 온라인 및 오프 라인 마이그레이션을 모두 수행 하는 방법에 대한 세부 정보가 포함 되어 있습니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -46,11 +46,11 @@ ms.locfileid: "75746619"
 * Azure 구독 구독이 없으면 시작하기 전에 [계정을 만드세요](https://azure.microsoft.com/free/).
 * Azure SQL Database 관리 되는 인스턴스입니다. [Azure SQL Database 관리 되는 인스턴스 만들기](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-get-started)문서의 세부 정보를 따라 Azure SQL Database 관리 되는 인스턴스를 만들 수 있습니다.
 * [Data Migration Assistant](https://www.microsoft.com/download/details.aspx?id=53595) v 3.3 이상을 다운로드 하 여 설치 합니다.
-* [Express](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) 경로 또는 [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways)을 사용 하 여 온-프레미스 원본 서버에 대 한 사이트 간 연결을 제공 하는 Azure Database Migration Service를 제공 하는 Azure Resource Manager 배포 모델을 사용 하 여 만든 Microsoft Azure Virtual Network입니다.
+* [Express](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) 경로 또는 [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways)을 사용 하 여 온-프레미스 원본 서버에 대한 사이트 간 연결을 제공 하는 Azure Database Migration Service를 제공 하는 Azure Resource Manager 배포 모델을 사용 하 여 만든 Microsoft Azure Virtual Network입니다.
 * [SQL Server 마이그레이션 평가 수행](https://docs.microsoft.com/sql/dma/dma-assesssqlonprem)문서에 설명 된 대로 Data Migration Assistant를 사용 하 여 온-프레미스 데이터베이스 및 스키마 마이그레이션의 평가를 완료 했습니다.
 * [Install-Module PowerShell cmdlet](https://docs.microsoft.com/powershell/module/powershellget/Install-Module?view=powershell-5.1)을 사용 하 여 PowerShell 갤러리에서 `Az.DataMigration` 모듈 (버전 0.7.2 이상)을 다운로드 하 고 설치 합니다.
 * 원본 SQL Server 인스턴스에 연결 하는 데 사용 되는 자격 증명에 [CONTROL Server](https://docs.microsoft.com/sql/t-sql/statements/grant-server-permissions-transact-sql) 권한이 있는지 확인 합니다.
-* 대상 Azure SQL Database 관리 되는 인스턴스에 연결 하는 데 사용 되는 자격 증명에 대상 Azure SQL Database 관리 되는 인스턴스 데이터베이스에 대 한 CONTROL DATABASE 권한이 있는지 확인 합니다.
+* 대상 Azure SQL Database 관리 되는 인스턴스에 연결 하는 데 사용 되는 자격 증명에 대상 Azure SQL Database 관리 되는 인스턴스 데이터베이스에 대한 CONTROL DATABASE 권한이 있는지 확인 합니다.
 
     > [!IMPORTANT]
     > 온라인 마이그레이션의 경우 이미 Azure Active Directory 자격 증명을 설정 해야 합니다. 자세한 내용은 [포털을 사용 하 여 리소스에 액세스할 수 있는 AZURE AD 응용 프로그램 및 서비스 주체 만들기](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal)문서를 참조 하세요.
@@ -112,7 +112,7 @@ Azure Database Migration Service 인스턴스를 만든 후 마이그레이션 �
 * *AuthType*. 연결에 대한 인증 유형이며 SqlAuthentication 또는 WindowsAuthentication일 수 있습니다.
 * *TrustServerCertificate*. 이 매개 변수는 신뢰의 유효성을 검사 하기 위해 인증서 체인을 우회 하는 동안 채널이 암호화 되는지 여부를 나타내는 값을 설정 합니다. 값은 `$true` 또는 `$false`수 있습니다.
 
-다음 예에서는 SQL 인증을 사용 하 여 *MySourceSQLServer* 라는 원본 SQL Server에 대 한 연결 정보 개체를 만듭니다.
+다음 예에서는 SQL 인증을 사용 하 여 *MySourceSQLServer* 라는 원본 SQL Server에 대한 연결 정보 개체를 만듭니다.
 
 ```powershell
 $sourceConnInfo = New-AzDmsConnInfo -ServerType SQL `
@@ -121,7 +121,7 @@ $sourceConnInfo = New-AzDmsConnInfo -ServerType SQL `
   -TrustServerCertificate:$true
 ```
 
-다음 예제에서는 SQL 인증을 사용 하 여 ' targetmanagedinstance.database.windows.net ' 이라는 Azure SQL Database 관리 되는 인스턴스 서버에 대 한 연결 정보를 만드는 방법을 보여 줍니다.
+다음 예제에서는 SQL 인증을 사용 하 여 ' targetmanagedinstance.database.windows.net ' 이라는 Azure SQL Database 관리 되는 인스턴스 서버에 대한 연결 정보를 만드는 방법을 보여 줍니다.
 
 ```powershell
 $targetConnInfo = New-AzDmsConnInfo -ServerType SQL `
@@ -134,7 +134,7 @@ $targetConnInfo = New-AzDmsConnInfo -ServerType SQL `
 
 프로젝트 만들기를 위한 매개 변수로 제공할 수 있는 Azure Database Migration Service 프로젝트의 일부로 데이터베이스를 지정 하는 `AzDataMigrationDatabaseInfo` 개체 목록을 만듭니다. Cmdlet `New-AzDataMigrationDatabaseInfo`를 사용 하 여 `AzDataMigrationDatabaseInfo`을 만들 수 있습니다.
 
-다음 예에서는 **AdventureWorks2016** 데이터베이스에 대 한 `AzDataMigrationDatabaseInfo` 프로젝트를 만들고 프로젝트를 만들기 위해 매개 변수로 제공할 목록에 추가 합니다.
+다음 예에서는 **AdventureWorks2016** 데이터베이스에 대한 `AzDataMigrationDatabaseInfo` 프로젝트를 만들고 프로젝트를 만들기 위해 매개 변수로 제공할 목록에 추가 합니다.
 
 ```powershell
 $dbInfo1 = New-AzDataMigrationDatabaseInfo -SourceDatabaseName AdventureWorks
@@ -159,13 +159,13 @@ $project = New-AzDataMigrationProject -ResourceGroupName myResourceGroup `
 
 ## <a name="create-and-start-a-migration-task"></a>마이그레이션 작업 만들기 및 시작
 
-다음으로 Azure Database Migration Service 작업을 만들고 시작 합니다. 이 태스크에는 원본 및 대상 모두에 대 한 연결 자격 증명 정보 뿐만 아니라 마이그레이션할 데이터베이스 테이블 목록 및 필수 구성 요소로 만든 프로젝트에 이미 제공 된 정보가 필요 합니다.
+다음으로 Azure Database Migration Service 작업을 만들고 시작 합니다. 이 태스크에는 원본 및 대상 모두에 대한 연결 자격 증명 정보 뿐만 아니라 마이그레이션할 데이터베이스 테이블 목록 및 필수 구성 요소로 만든 프로젝트에 이미 제공 된 정보가 필요 합니다.
 
 ### <a name="create-credential-parameters-for-source-and-target"></a>원본 및 대상에 대한 자격 증명 매개 변수 만들기
 
 연결 보안 자격 증명을 [PSCredential](https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential?redirectedfrom=MSDN&view=powershellsdk-1.1.0) 개체로 만듭니다.
 
-다음 예제에서는 원본 및 대상 연결에 대 한 *PSCredential* 개체를 만드는 방법을 보여 줍니다. *$sourcePassword* 는 암호를 문자열 변수로 제공 하 고 *$targetPassword*합니다.
+다음 예제에서는 원본 및 대상 연결에 대한 *PSCredential* 개체를 만드는 방법을 보여 줍니다. *$sourcePassword* 는 암호를 문자열 변수로 제공 하 고 *$targetPassword*합니다.
 
 ```powershell
 $secpasswd = ConvertTo-SecureString -String $sourcePassword -AsPlainText -Force
@@ -417,7 +417,7 @@ Remove-AzDms -ResourceGroupName myResourceGroup -ServiceName MyDMS
 
 ## <a name="additional-resources"></a>추가 리소스
 
-추가 마이그레이션 시나리오 (원본/대상 쌍)에 대 한 자세한 내용은 Microsoft [데이터베이스 마이그레이션 가이드](https://datamigration.microsoft.com/)를 참조 하십시오.
+추가 마이그레이션 시나리오 (원본/대상 쌍)에 대한 자세한 내용은 Microsoft [데이터베이스 마이그레이션 가이드](https://datamigration.microsoft.com/)를 참조 하십시오.
 
 ## <a name="next-steps"></a>다음 단계
 

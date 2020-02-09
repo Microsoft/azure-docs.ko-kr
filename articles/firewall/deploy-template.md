@@ -18,7 +18,7 @@ ms.locfileid: "74169193"
 
 [AzureFirewall 샌드박스 설정 만들기 템플릿](https://github.com/Azure/azure-quickstart-templates/tree/master/101-azurefirewall-with-zones-sandbox)은 방화벽을 사용하여 테스트 네트워크 환경을 만듭니다. 네트워크에는 세 개의 서브넷 ( *AzureFirewallSubnet*, *ServersSubnet*및 *JumpboxSubnet*)이 있는 하나의 VNet (가상 네트워크)이 있습니다. *ServersSubnet* 및 *JumpboxSubnet* 서브넷에는 각각 하나의 2개 코어 Windows Server 가상 머신이 있습니다.
 
-방화벽은 *AzureFirewallSubnet* 서브넷에 있고 `www.microsoft.com`에 대 한 액세스를 허용 하는 단일 규칙을 포함 하는 응용 프로그램 규칙 컬렉션을 포함 합니다.
+방화벽은 *AzureFirewallSubnet* 서브넷에 있고 `www.microsoft.com`에 대한 액세스를 허용 하는 단일 규칙을 포함 하는 응용 프로그램 규칙 컬렉션을 포함 합니다.
 
 사용자 정의 경로는 방화벽 규칙이 적용된 방화벽을 통해 *ServersSubnet* 서브넷에서의 네트워크 트래픽을 가리킵니다.
 

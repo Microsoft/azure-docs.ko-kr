@@ -1,6 +1,6 @@
 ---
 title: Azure Automation를 사용 하 여 Azure Analysis Services 모델 새로 고침 Microsoft Docs
-description: 이 문서에서는 Azure Automation를 사용 하 여 Azure Analysis Services에 대 한 모델 새로 고침을 코딩 하는 방법을 설명 합니다.
+description: 이 문서에서는 Azure Automation를 사용 하 여 Azure Analysis Services에 대한 모델 새로 고침을 코딩 하는 방법을 설명 합니다.
 author: chrislound
 ms.service: analysis-services
 ms.topic: conceptual
@@ -25,7 +25,7 @@ Azure Automation 및 PowerShell Runbook을 사용 하 여 Azure 분석 테이블
 
 모든 호출은 유효한 Azure Active Directory (OAuth 2) 토큰을 사용 하 여 인증 되어야 합니다.  이 문서의 예제에서는 SPN (서비스 주체)을 사용 하 여 Azure Analysis Services에 인증 합니다.
 
-서비스 주체를 만드는 방법에 대 한 자세한 내용은 [Azure Portal를 사용 하 여 서비스 주체 만들기](../active-directory/develop/howto-create-service-principal-portal.md)를 참조 하세요.
+서비스 주체를 만드는 방법에 대한 자세한 내용은 [Azure Portal를 사용 하 여 서비스 주체 만들기](../active-directory/develop/howto-create-service-principal-portal.md)를 참조 하세요.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -48,11 +48,11 @@ Azure Automation 및 PowerShell Runbook을 사용 하 여 Azure 분석 테이블
  
 ### <a name="create-a-service-principal-spn"></a>SPN (서비스 사용자) 만들기
 
-서비스 주체를 만드는 방법에 대 한 자세한 내용은 [Azure Portal를 사용 하 여 서비스 주체 만들기](../active-directory/develop/howto-create-service-principal-portal.md)를 참조 하세요.
+서비스 주체를 만드는 방법에 대한 자세한 내용은 [Azure Portal를 사용 하 여 서비스 주체 만들기](../active-directory/develop/howto-create-service-principal-portal.md)를 참조 하세요.
 
 ### <a name="configure-permissions-in-azure-analysis-services"></a>Azure Analysis Services에서 사용 권한 구성
  
-사용자가 만드는 서비스 주체에 서버에 대 한 서버 관리자 권한이 있어야 합니다. 자세히 알아보려면 [서버 관리자 역할에 서비스 사용자 추가](analysis-services-addservprinc-admins.md)를 참조하세요.
+사용자가 만드는 서비스 주체에 서버에 대한 서버 관리자 권한이 있어야 합니다. 자세히 알아보려면 [서버 관리자 역할에 서비스 사용자 추가](analysis-services-addservprinc-admins.md)를 참조하세요.
 
 ## <a name="design-the-azure-automation-runbook"></a>Azure Automation Runbook 디자인
 
@@ -60,7 +60,7 @@ Azure Automation 및 PowerShell Runbook을 사용 하 여 Azure 분석 테이블
 
     ![자격 증명 만들기](./media/analysis-services-refresh-azure-automation/6.png)
 
-2. 자격 증명에 대 한 세부 정보를 입력 합니다.  **사용자 이름**에 대해 **spn ClientId**를 입력 하 고 **암호**에 **spn 암호**를 입력 합니다.
+2. 자격 증명에 대한 세부 정보를 입력 합니다.  **사용자 이름**에 대해 **spn ClientId**를 입력 하 고 **암호**에 **spn 암호**를 입력 합니다.
 
     ![자격 증명 만들기](./media/analysis-services-refresh-azure-automation/7.png)
 
@@ -77,7 +77,7 @@ Azure Automation 및 PowerShell Runbook을 사용 하 여 Azure 분석 테이블
     ![Runbook 게시](./media/analysis-services-refresh-azure-automation/10.png)
 
     > [!NOTE]
-    > 이전에 만든 자격 증명 리소스는 **Get AutomationPSCredential** 명령을 사용 하 여 runbook에 의해 검색 됩니다.  그런 다음이 명령은 Azure Analysis Services에 대 한 인증을 수행 하기 위해 **ProcessASADatabase** PowerShell 명령에 전달 됩니다.
+    > 이전에 만든 자격 증명 리소스는 **Get AutomationPSCredential** 명령을 사용 하 여 runbook에 의해 검색 됩니다.  그런 다음이 명령은 Azure Analysis Services에 대한 인증을 수행 하기 위해 **ProcessASADatabase** PowerShell 명령에 전달 됩니다.
 
 6. **시작**을 클릭 하 여 runbook을 테스트 합니다.
 
@@ -107,7 +107,7 @@ Runbook이 성공적으로 실행 되 면 다음과 같은 출력이 표시 됩�
 
 3. **만들기**를 클릭합니다.
 
-4. 일정에 대 한 매개 변수를 입력 합니다. Runbook이 트리거될 때마다 사용 됩니다. **WEBHOOKDATA** 매개 변수는 일정을 통해 실행할 때 비워 두어야 합니다.
+4. 일정에 대한 매개 변수를 입력 합니다. Runbook이 트리거될 때마다 사용 됩니다. **WEBHOOKDATA** 매개 변수는 일정을 통해 실행할 때 비워 두어야 합니다.
 
     ![매개 변수 구성](./media/analysis-services-refresh-azure-automation/16.png)
 
@@ -115,7 +115,7 @@ Runbook이 성공적으로 실행 되 면 다음과 같은 출력이 표시 됩�
 
 ## <a name="consume-with-data-factory"></a>Data Factory 사용
 
-Azure Data Factory를 사용 하 여 runbook을 사용 하려면 먼저 runbook에 대 한 **Webhook** 을 만듭니다. 웹 **후크는 Azure Data Factory 웹 작업을 통해** 호출할 수 있는 URL을 제공 합니다.
+Azure Data Factory를 사용 하 여 runbook을 사용 하려면 먼저 runbook에 대한 **Webhook** 을 만듭니다. 웹 **후크는 Azure Data Factory 웹 작업을 통해** 호출할 수 있는 URL을 제공 합니다.
 
 > [!IMPORTANT]
 > **Webhook**를 만들려면 Runbook의 상태를 **게시**해야 합니다.
@@ -131,7 +131,7 @@ Azure Data Factory를 사용 하 여 runbook을 사용 하려면 먼저 runbook�
     
    ![Webhook 구성](./media/analysis-services-refresh-azure-automation/18.png)
 
-    Webhook에 대 한 매개 변수는 비워 둘 수 있습니다.  Azure Data Factory 웹 작업을 구성 하는 경우 웹 호출의 본문에 매개 변수를 전달할 수 있습니다.
+    Webhook에 대한 매개 변수는 비워 둘 수 있습니다.  Azure Data Factory 웹 작업을 구성 하는 경우 웹 호출의 본문에 매개 변수를 전달할 수 있습니다.
 
 3. Data Factory에서 **웹 활동** 을 구성 합니다.
 
@@ -173,7 +173,7 @@ Azure Data Factory를 사용 하 여 runbook을 사용 하려면 먼저 runbook�
 > [!IMPORTANT]
 > 가상 컴퓨터 공용 IP 주소가 정적으로 구성 되어 있는지 확인 하십시오.
 >
->Azure Automation Hybrid Worker를 구성 하는 방법에 대 한 자세한 내용은 [Hybrid Runbook Worker를 사용 하 여 데이터 센터 또는 클라우드에서 리소스 자동화](../automation/automation-hybrid-runbook-worker.md#install-a-hybrid-runbook-worker)를 참조 하세요.
+>Azure Automation Hybrid Worker를 구성 하는 방법에 대한 자세한 내용은 [Hybrid Runbook Worker를 사용 하 여 데이터 센터 또는 클라우드에서 리소스 자동화](../automation/automation-hybrid-runbook-worker.md#install-a-hybrid-runbook-worker)를 참조 하세요.
 
 Hybrid Worker 구성 되 면 [Data Factory 사용](#consume-with-data-factory)섹션에 설명 된 대로 Webhook를 만듭니다.  여기에서 유일한 차이점은 웹 후크를 구성할 때 > **에서 실행** **Hybrid Worker** 옵션을 선택 하는 것입니다.
 

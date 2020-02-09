@@ -62,7 +62,7 @@ Azure Portal의 **서비스 공급자** 페이지에 액세스하려면 고객�
 페이지 맨 위에 있는 필터를 사용하여 위임 정보를 정렬 및 그룹화하거나 특정 고객, 제품 또는 키워드를 기준으로 필터링할 수 있습니다.
 
 > [!NOTE]
-> Azure Portal 또는 Api를 통해 [위임 된 범위에 대 한 역할 할당 정보를 볼](../../role-based-access-control/role-assignments-list-portal.md#list-role-assignments-at-a-scope) 때 이러한 역할이 부여 된 서비스 공급자 테 넌 트의 사용자 또는 이러한 역할 할당은 고객에 게 표시 되지 않습니다.
+> Azure Portal 또는 Api를 통해 [위임 된 범위에 대 한 역할 할당 정보를 볼](../../role-based-access-control/role-assignments-list-portal.md#list-role-assignments-at-a-scope) 때 이러한 역할이 부여 된 서비스 공급자 테넌트의 사용자 또는 이러한 역할 할당은 고객에 게 표시 되지 않습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

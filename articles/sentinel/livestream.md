@@ -25,7 +25,7 @@ ms.locfileid: "74900448"
 # <a name="use-hunting-livestream-in-azure-sentinel-to-detect-threats"></a>Azure 센티널에서 구하기 라이브 스트림를 사용 하 여 위협 감지
 
 > [!IMPORTANT]
-> Azure 센티널의 구하기 라이브 스트림은 현재 공개 미리 보기로 제공 되며 테 넌 트에 점진적으로 롤아웃 됩니다.
+> Azure 센티널의 구하기 라이브 스트림은 현재 공개 미리 보기로 제공 되며 테넌트에 점진적으로 롤아웃 됩니다.
 > 이 기능은 서비스 수준 계약 없이 제공 되며 프로덕션 워크 로드에는 권장 되지 않습니다. 특정 기능이 지원되지 않거나 기능이 제한될 수 있습니다. 자세한 내용은 [Microsoft Azure Preview에 대한 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조하세요.
 
 

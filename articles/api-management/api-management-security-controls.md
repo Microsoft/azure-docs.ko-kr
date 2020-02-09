@@ -1,5 +1,5 @@
 ---
-title: Azure API Management에 대 한 보안 제어
+title: Azure API Management에 대한 보안 제어
 description: API Management 평가를 위한 보안 컨트롤의 검사 목록
 services: api-management
 author: vladvino
@@ -14,7 +14,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/08/2020
 ms.locfileid: "75751130"
 ---
-# <a name="security-controls-for-api-management"></a>API Management에 대 한 보안 제어
+# <a name="security-controls-for-api-management"></a>API Management에 대한 보안 제어
 
 이 문서에서는 API Management에 기본 제공 되는 보안 컨트롤을 설명 합니다.
 
@@ -68,7 +68,7 @@ ms.locfileid: "75751130"
 
 | 취약점               | Description                                                                                                                                                                                                                                                                                                               |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Ticketbleed (CVE-2016-9244) | Ticketbleed는 일부 F5 제품에서 발견 된 TLS SessionTicket 확장의 구현에 대 한 취약성입니다. 초기화 되지 않은 메모리에서 최대 31 바이트의 데이터를 누출 ("bleeding") 할 수 있습니다. 이는 TLS 스택이 클라이언트에서 전달 된 세션 ID를 32 비트 길이의 데이터로 전달 하기 때문에 발생 합니다. |
+| Ticketbleed (CVE-2016-9244) | Ticketbleed는 일부 F5 제품에서 발견 된 TLS SessionTicket 확장의 구현에 대한 취약성입니다. 초기화 되지 않은 메모리에서 최대 31 바이트의 데이터를 누출 ("bleeding") 할 수 있습니다. 이는 TLS 스택이 클라이언트에서 전달 된 세션 ID를 32 비트 길이의 데이터로 전달 하기 때문에 발생 합니다. |
 
 ## <a name="next-steps"></a>다음 단계
 

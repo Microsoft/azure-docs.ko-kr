@@ -27,7 +27,7 @@ ms.locfileid: "76696561"
 
 ## <a name="difference-highlights"></a>차이점 강조
 
-ADAL은 Azure Active Directory (Azure AD) v 1.0 끝점에서 작동 합니다. MSAL (Microsoft 인증 라이브러리)은 이전에 Azure Active Directory v2.0 끝점 이라고 하는 Microsoft id 플랫폼에서 작동 합니다. Microsoft id 플랫폼은 다음과 같은 점에서 Azure AD v 1.0과 다릅니다.
+ADAL은 Azure Active Directory (Azure AD) v 1.0 엔드포인트에서 작동 합니다. MSAL (Microsoft 인증 라이브러리)은 이전에 Azure Active Directory v2.0 엔드포인트 이라고 하는 Microsoft id 플랫폼에서 작동 합니다. Microsoft id 플랫폼은 다음과 같은 점에서 Azure AD v 1.0과 다릅니다.
 
 지원:
   - 회사 및 학교 계정(Azure AD로 프로비저닝한 계정)
@@ -38,7 +38,7 @@ ADAL은 Azure Active Directory (Azure AD) v 1.0 끝점에서 작동 합니다. M
   - OAuth v2.0
   - OIDC (Openid connect Connect)
 
-자세한 내용은 v2.0 [(Microsoft identity platform) 끝점의 다른 항목](https://docs.microsoft.com/azure/active-directory/develop/azure-ad-endpoint-comparison) 을 참조 하세요.
+자세한 내용은 v2.0 [(Microsoft identity platform) 엔드포인트의 다른 항목](https://docs.microsoft.com/azure/active-directory/develop/azure-ad-endpoint-comparison) 을 참조 하세요.
 
 ### <a name="scopes-not-resources"></a>리소스가 아닌 범위
 

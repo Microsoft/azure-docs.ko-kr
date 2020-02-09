@@ -17,9 +17,9 @@ ms.locfileid: "76293626"
 ---
 # <a name="integrate-azure-data-explorer-with-azure-data-factory"></a>Azure Data Factory와 Azure 데이터 탐색기 통합
 
-ADF ( [Azure Data Factory](/azure/data-factory/) )는 다양 한 데이터 저장소를 통합 하 고 데이터에 대 한 작업을 수행할 수 있는 클라우드 기반 데이터 통합 서비스입니다. ADF를 사용 하면 데이터 이동 및 데이터 변환을 오케스트레이션 하 고 자동화 하기 위한 데이터 기반 워크플로를 만들 수 있습니다. Azure 데이터 탐색기는 Azure Data Factory에서 지원 되는 [데이터 저장소](/azure/data-factory/copy-activity-overview#supported-data-stores-and-formats) 중 하나입니다. 
+ADF ( [Azure Data Factory](/azure/data-factory/) )는 다양 한 데이터 저장소를 통합 하 고 데이터에 대한 작업을 수행할 수 있는 클라우드 기반 데이터 통합 서비스입니다. ADF를 사용 하면 데이터 이동 및 데이터 변환을 오케스트레이션 하 고 자동화 하기 위한 데이터 기반 워크플로를 만들 수 있습니다. Azure 데이터 탐색기는 Azure Data Factory에서 지원 되는 [데이터 저장소](/azure/data-factory/copy-activity-overview#supported-data-stores-and-formats) 중 하나입니다. 
 
-## <a name="azure-data-factory-activities-for-azure-data-explorer"></a>Azure 데이터 탐색기에 대 한 Azure Data Factory 활동
+## <a name="azure-data-factory-activities-for-azure-data-explorer"></a>Azure 데이터 탐색기에 대한 Azure Data Factory 활동
 
 Azure 데이터 탐색기 사용자는 Azure Data Factory와 다양 한 통합을 사용할 수 있습니다.
 
@@ -39,7 +39,7 @@ Azure 데이터 탐색기는 azure 내에서 데이터를 복사할 때 사용 �
 ### <a name="command-activity"></a>명령 작업
 
 명령 작업을 통해 Azure 데이터 탐색기 [제어 명령을](/azure/kusto/concepts/#control-commands)실행할 수 있습니다. 쿼리와 달리 제어 명령은 잠재적으로 데이터 또는 메타 데이터를 수정할 수 있습니다. 일부 제어 명령은 데이터를 Azure 데이터 탐색기에 수집 하거나 `.ingest`또는 `.set-or-append`등의 명령을 사용 하 여 Azure 데이터 탐색기에서 `.export`등의 명령을 사용 하 여 외부 데이터 저장소로 데이터를 복사 하는 것을 목표로 합니다.
-명령 활동에 대 한 자세한 연습을 보려면 [Azure Data Factory 명령 활동을 사용 하 여 Azure 데이터 탐색기 제어 명령 실행](data-factory-command-activity.md)을 참조 하세요.  Ctrl 명령을 사용 하 여 데이터를 복사 하는 작업은 복사 작업 보다 빠르고 저렴 한 옵션 일 수 있습니다. 명령 활동과 복사 활동을 사용할 시기를 결정 하려면 데이터를 복사할 [때 복사 및 명령 활동 중에서 선택](#select-between-copy-and-azure-data-explorer-command-activities-when-copy-data)을 참조 하세요.
+명령 활동에 대한 자세한 연습을 보려면 [Azure Data Factory 명령 활동을 사용 하 여 Azure 데이터 탐색기 제어 명령 실행](data-factory-command-activity.md)을 참조 하세요.  Ctrl 명령을 사용 하 여 데이터를 복사 하는 작업은 복사 작업 보다 빠르고 저렴 한 옵션 일 수 있습니다. 명령 활동과 복사 활동을 사용할 시기를 결정 하려면 데이터를 복사할 [때 복사 및 명령 활동 중에서 선택](#select-between-copy-and-azure-data-explorer-command-activities-when-copy-data)을 참조 하세요.
 
 ### <a name="copy-in-bulk-from-a-database-template"></a>데이터베이스 템플릿에서 대량 복사
 
@@ -101,7 +101,7 @@ Azure 데이터 탐색기로 데이터를 복사 하기 위한 수집 명령과 
 | 단계 | 작업 | 최소 권한 수준 | 메모 |
 |---|---|---|---|
 | **연결 된 서비스 만들기** | 데이터베이스 탐색 | *데이터베이스 뷰어* <br>ADF를 사용 하는 로그인 한 사용자에 게는 데이터베이스 메타 데이터를 읽을 수 있는 권한이 있어야 합니다. | 사용자는 데이터베이스 이름을 수동으로 입력할 수 있습니다. |
-| | 연결을 테스트 | *데이터베이스 모니터* 또는 *테이블 수집기* <br>서비스 주체에는 데이터베이스 수준 `.show` 명령 또는 테이블 수준 수집을 실행할 수 있는 권한이 있어야 합니다. | <ul><li>TestConnection은 데이터베이스가 아니라 클러스터에 대 한 연결을 확인 합니다. 데이터베이스가 존재 하지 않더라도 성공할 수 있습니다.</li><li>테이블 관리자 권한이 충분 하지 않습니다.</li></ul>|
+| | 연결을 테스트 | *데이터베이스 모니터* 또는 *테이블 수집기* <br>서비스 주체에는 데이터베이스 수준 `.show` 명령 또는 테이블 수준 수집을 실행할 수 있는 권한이 있어야 합니다. | <ul><li>TestConnection은 데이터베이스가 아니라 클러스터에 대한 연결을 확인 합니다. 데이터베이스가 존재 하지 않더라도 성공할 수 있습니다.</li><li>테이블 관리자 권한이 충분 하지 않습니다.</li></ul>|
 | **데이터 집합 만들기** | 테이블 탐색 | *데이터베이스 모니터* <br>ADF를 사용 하 여 로그인 한 사용자는 데이터베이스 수준 `.show` 명령을 실행할 수 있는 권한이 있어야 합니다. | 사용자는 테이블 이름을 수동으로 입력할 수 있습니다.|
 | **데이터 집합** 또는 **복사 작업** 만들기 | 데이터 미리 보기 | *데이터베이스 뷰어* <br>서비스 주체는 데이터베이스 메타 데이터를 읽을 수 있는 권한이 있어야 합니다. | | 
 |   | 스키마 가져오기 | *데이터베이스 뷰어* <br>서비스 주체는 데이터베이스 메타 데이터를 읽을 수 있는 권한이 있어야 합니다. | ADX가 테이블 형식에서 테이블 형식 복사의 원본인 경우에는 사용자가 명시적으로 스키마를 가져오지 않더라도 ADF가 자동으로 스키마를 가져옵니다. |
@@ -113,9 +113,9 @@ Azure 데이터 탐색기로 데이터를 복사 하기 위한 수집 명령과 
 
 ## <a name="performance"></a>성능 중심 
 
-Azure 데이터 탐색기가 원본인 경우 쿼리를 포함 하는 조회, 복사 또는 명령 작업을 사용 하는 경우 성능 정보에 대 한 [쿼리 모범 사례](/azure/kusto/query/best-practices) 및 [복사 작업을 위한 ADF 설명서](/azure/data-factory/copy-activity-performance)를 참조 하세요.
+Azure 데이터 탐색기가 원본인 경우 쿼리를 포함 하는 조회, 복사 또는 명령 작업을 사용 하는 경우 성능 정보에 대한 [쿼리 모범 사례](/azure/kusto/query/best-practices) 및 [복사 작업을 위한 ADF 설명서](/azure/data-factory/copy-activity-performance)를 참조 하세요.
   
-이 섹션에서는 Azure 데이터 탐색기 싱크로 복사 작업을 사용 하는 방법을 설명 합니다. Azure 데이터 탐색기 싱크에 대 한 예상 처리량은 11-13 MBps입니다. 다음 표에서는 Azure 데이터 탐색기 싱크의 성능에 영향을 주는 매개 변수를 자세히 설명 합니다.
+이 섹션에서는 Azure 데이터 탐색기 싱크로 복사 작업을 사용 하는 방법을 설명 합니다. Azure 데이터 탐색기 싱크에 대한 예상 처리량은 11-13 MBps입니다. 다음 표에서는 Azure 데이터 탐색기 싱크의 성능에 영향을 주는 매개 변수를 자세히 설명 합니다.
 
 | 매개 변수 | 메모 |
 |---|---|

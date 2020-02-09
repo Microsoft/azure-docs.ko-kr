@@ -47,7 +47,7 @@ az group create --name eventResourceGroup --location westus2
 
 ### <a name="create-a-custom-topic"></a>사용자 지정 토픽 만들기
 
-Event grid 토픽은 이벤트를 게시 하는 사용자 정의 끝점을 제공 합니다. `<topic_name>`을 토픽의 고유한 이름으로 바꿉니다. 토픽 이름은 DNS 항목이 되므로 고유해야 합니다.
+Event grid 토픽은 이벤트를 게시 하는 사용자 정의 엔드포인트을 제공 합니다. `<topic_name>`을 토픽의 고유한 이름으로 바꿉니다. 토픽 이름은 DNS 항목이 되므로 고유해야 합니다.
 
 ```bash
 az eventgrid topic create --name <topic_name> -l westus2 -g eventResourceGroup

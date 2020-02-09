@@ -80,7 +80,7 @@ ms.locfileid: "76845875"
 
 **모범 사례**:
 
-- Azure AD 테 넌 트를 만들고 [사용자를 만들어 사용자](../active-directory/fundamentals/add-users-azure-active-directory.md) 에 게 앱, 서비스 및 자동화 도구를 나타내는 [서비스 주체](../active-directory/develop/app-objects-and-service-principals.md) 를 만듭니다. 서비스 주체는 Windows 및 Linux의 서비스 계정에 해당 합니다. 
+- Azure AD 테넌트를 만들고 [사용자를 만들어 사용자](../active-directory/fundamentals/add-users-azure-active-directory.md) 에 게 앱, 서비스 및 자동화 도구를 나타내는 [서비스 주체](../active-directory/develop/app-objects-and-service-principals.md) 를 만듭니다. 서비스 주체는 Windows 및 Linux의 서비스 계정에 해당 합니다. 
 
 - 그룹 할당을 통해 Azure AD 사용자에 게 리소스에 대 한 액세스 권한 할당: Azure AD 그룹을 만들고, 그룹에 액세스 권한을 부여 하 고, 그룹에 개별 멤버를 추가 합니다. 데이터베이스에서 Azure AD 그룹을 매핑하는 포함 된 데이터베이스 사용자를 만듭니다. 
   - Sql을 사용한 인증에는 SQL을 사용 하 [여 Azure Active Directory 인증 구성 및 관리](sql-database-aad-authentication-configure.md) 및 [sql 인증을 위해 Azure AD 사용](sql-database-aad-authentication.md)문서를 참조 하세요.
@@ -519,7 +519,7 @@ Always Encrypted는 주로 Azure SQL Database (클라우드 연산자, Dba)의 �
 단일 데이터베이스 또는 탄력적 풀을 포함 하는 Azure SQL Database 서버에서 다음을 수행 합니다.
 - Azure 서비스에 대 한 액세스 허용을 OFF로 설정 합니다.
 
-- VNet 서비스 끝점 및 VNet 방화벽 규칙을 사용 합니다.
+- VNet 서비스 엔드포인트 및 VNet 방화벽 규칙을 사용 합니다.
 
 - 개인 링크 (미리 보기)를 사용 합니다.
 
@@ -528,18 +528,18 @@ Always Encrypted는 주로 Azure SQL Database (클라우드 연산자, Dba)의 �
 
 **모범 사례**:
 
-- 개인 끝점 (예: 전용 데이터 경로 사용)에 연결 하 여 Azure SQL Database에 대 한 액세스를 제한 합니다. 
+- 개인 엔드포인트 (예: 전용 데이터 경로 사용)에 연결 하 여 Azure SQL Database에 대 한 액세스를 제한 합니다. 
   - 외부 액세스를 방지 하기 위해 관리 되는 인스턴스를 VNet 내부에 격리할 수 있습니다. 동일한 지역에 있는 동일한 또는 피어 링 VNet에 있는 응용 프로그램 및 도구는 직접 액세스할 수 있습니다. 다른 지역의 응용 프로그램 및 도구는 VNet 간 연결 또는 Express 경로 회로 피어 링을 사용 하 여 연결을 설정할 수 있습니다. 고객은 NSG (네트워크 보안 그룹)를 사용 하 여 관리 되는 인스턴스에 액세스 해야 하는 리소스로만 포트 1433을 통해 액세스를 제한 해야 합니다. 
-  - 단일 데이터베이스 또는 탄력적 풀을 포함 하는 SQL Database 서버의 경우 VNet 내에서 SQL Database 서버에 대 한 전용 개인 IP를 제공 하는 [개인 링크](sql-database-private-endpoint-overview.md) 기능을 사용 합니다. Vnet 방화벽 규칙을 사용 하 여 [Vnet 서비스 끝점](sql-database-vnet-service-endpoint-rule-overview.md) 을 사용 하 여 SQL Database 서버에 대 한 액세스를 제한할 수도 있습니다.
+  - 단일 데이터베이스 또는 탄력적 풀을 포함 하는 SQL Database 서버의 경우 VNet 내에서 SQL Database 서버에 대 한 전용 개인 IP를 제공 하는 [개인 링크](sql-database-private-endpoint-overview.md) 기능을 사용 합니다. Vnet 방화벽 규칙을 사용 하 여 [Vnet 서비스 엔드포인트](sql-database-vnet-service-endpoint-rule-overview.md) 을 사용 하 여 SQL Database 서버에 대 한 액세스를 제한할 수도 있습니다.
   - 모바일 사용자는 지점 및 사이트 간 VPN 연결을 사용 하 여 데이터 경로를 통해 연결 해야 합니다.
   - 온-프레미스 네트워크에 연결 된 사용자는 사이트 간 VPN 연결 또는 Express 경로를 사용 하 여 데이터 경로를 통해 연결 해야 합니다.
 
-- 공용 끝점 (예: 공용 데이터 경로 사용)에 연결 하 여 Azure SQL Database에 액세스할 수 있습니다. 다음 모범 사례를 고려해 야 합니다. 
+- 공용 엔드포인트 (예: 공용 데이터 경로 사용)에 연결 하 여 Azure SQL Database에 액세스할 수 있습니다. 다음 모범 사례를 고려해 야 합니다. 
   - SQL Database 서버의 경우 [ip 방화벽 규칙](sql-database-firewall-configure.md) 을 사용 하 여 권한이 부여 된 ip 주소에만 액세스를 제한 합니다.
-  - 관리 되는 인스턴스의 경우 NSG (네트워크 보안 그룹)를 사용 하 여 포트 3342을 통한 액세스만 필요한 리소스로 제한 합니다. 자세한 내용은 [공용 끝점과 안전 하 게 Azure SQL Database 관리 되는 인스턴스 사용](sql-database-managed-instance-public-endpoint-securely.md)을 참조 하세요. 
+  - 관리 되는 인스턴스의 경우 NSG (네트워크 보안 그룹)를 사용 하 여 포트 3342을 통한 액세스만 필요한 리소스로 제한 합니다. 자세한 내용은 [공용 엔드포인트과 안전 하 게 Azure SQL Database 관리 되는 인스턴스 사용](sql-database-managed-instance-public-endpoint-securely.md)을 참조 하세요. 
 
 > [!NOTE]
-> 관리 되는 인스턴스 공용 끝점은 기본적으로 사용 하도록 설정 되어 있지 않으며 명시적으로 사용 하도록 설정 해야 합니다. 회사 정책에서 공용 끝점 사용을 허용 하지 않는 경우 [Azure Policy](../governance/policy/overview.md) 를 사용 하 여 첫 번째 위치의 공용 끝점 사용을 방지 합니다.
+> 관리 되는 인스턴스 공용 엔드포인트은 기본적으로 사용 하도록 설정 되어 있지 않으며 명시적으로 사용 하도록 설정 해야 합니다. 회사 정책에서 공용 엔드포인트 사용을 허용 하지 않는 경우 [Azure Policy](../governance/policy/overview.md) 를 사용 하 여 첫 번째 위치의 공용 엔드포인트 사용을 방지 합니다.
 
 - Azure 네트워킹 구성 요소를 설정 합니다. 
   - [네트워크 보안에 대 한 Azure 모범 사례를](../security/fundamentals/network-best-practices.md)따릅니다.
@@ -564,11 +564,11 @@ Always Encrypted는 주로 Azure SQL Database (클라우드 연산자, Dba)의 �
 
 **모범 사례**:
 
-- 간단한 웹 앱의 경우 공용 끝점을 통해 연결 하려면 **Azure 서비스 허용** 을 설정 해야 합니다. 
+- 간단한 웹 앱의 경우 공용 엔드포인트을 통해 연결 하려면 **Azure 서비스 허용** 을 설정 해야 합니다. 
 
 - [Azure Virtual Network에 앱을 통합](../app-service/web-sites-integrate-with-vnet.md) 하 여 전용 데이터 경로를 관리 되는 인스턴스에 연결 합니다. 필요에 따라 [ASE (App Service 환경)](../app-service/environment/intro.md)를 사용 하 여 웹 앱을 배포할 수도 있습니다. 
 
-- ASE 또는 VNet 통합 웹 앱이 있는 웹 앱의 경우 SQL Database 서버의 데이터베이스에 연결 하는 경우 [Vnet 서비스 끝점 및 Vnet 방화벽 규칙](sql-database-vnet-service-endpoint-rule-overview.md) 을 사용 하 여 특정 vnet 및 서브넷에서 액세스를 제한할 수 있습니다. 그런 다음 **Azure 서비스 허용** 을 OFF로 설정 합니다. 또한 ASE를 개인 데이터 경로를 통해 관리 되는 인스턴스에 연결할 수 있습니다.  
+- ASE 또는 VNet 통합 웹 앱이 있는 웹 앱의 경우 SQL Database 서버의 데이터베이스에 연결 하는 경우 [Vnet 서비스 엔드포인트 및 Vnet 방화벽 규칙](sql-database-vnet-service-endpoint-rule-overview.md) 을 사용 하 여 특정 vnet 및 서브넷에서 액세스를 제한할 수 있습니다. 그런 다음 **Azure 서비스 허용** 을 OFF로 설정 합니다. 또한 ASE를 개인 데이터 경로를 통해 관리 되는 인스턴스에 연결할 수 있습니다.  
 
 - [Azure App Service를 사용 하 여 PaaS 웹 및 모바일 응용 프로그램을 보호 하는 방법에 대 한](../security/security-paas-applications-using-app-services.md)문서에 따라 웹 앱이 구성 되어 있는지 확인 합니다. 
 
@@ -592,7 +592,7 @@ Always Encrypted는 주로 Azure SQL Database (클라우드 연산자, Dba)의 �
 
 - 패킷 검사를 위해 VNet의 모든 트래픽을 네트워크 가상 어플라이언스로 전송 해야 하는 경우 [사용자 정의 경로](../virtual-network/virtual-networks-udr-overview.md#user-defined) 를 구현 합니다. 
 
-- [VNet 서비스 끝점](sql-database-vnet-service-endpoint-rule-overview.md) 을 사용 하 여 Azure 백본 네트워크를 통해 Azure Storage와 같은 PaaS 서비스에 안전 하 게 액세스할 수 있습니다. 
+- [VNet 서비스 엔드포인트](sql-database-vnet-service-endpoint-rule-overview.md) 을 사용 하 여 Azure 백본 네트워크를 통해 Azure Storage와 같은 PaaS 서비스에 안전 하 게 액세스할 수 있습니다. 
 
 ### <a name="protect-against-distributed-denial-of-service-ddos-attacks"></a>DDoS (분산 서비스 거부) 공격 으로부터 보호
 DDoS (배포 된 서비스 거부) 공격은 악의적인 사용자가 Azure 인프라를 과도 하 게 사용 하 여 유효한 로그인 및 워크 로드를 거부 하는 데 많은 양의 네트워크 Azure SQL Database 트래픽을 전송 하는 데 사용 됩니다.
@@ -601,7 +601,7 @@ DDoS (배포 된 서비스 거부) 공격은 악의적인 사용자가 Azure 인
 
 **구현 방법**:
 
-DDoS 보호는 Azure 플랫폼의 일부로 자동으로 사용 하도록 설정 됩니다. 여기에는 공용 끝점에 대 한 네트워크 수준 공격의 실시간 완화 및 상시 트래픽 모니터링이 포함 됩니다. 
+DDoS 보호는 Azure 플랫폼의 일부로 자동으로 사용 하도록 설정 됩니다. 여기에는 공용 엔드포인트에 대 한 네트워크 수준 공격의 실시간 완화 및 상시 트래픽 모니터링이 포함 됩니다. 
 
 - [Azure DDoS Protection](../virtual-network/ddos-protection-overview.md) 를 사용 하 여 vnet에 배포 된 리소스에 연결 된 공용 IP 주소를 모니터링할 수 있습니다.
 
@@ -614,7 +614,7 @@ DDoS 보호는 Azure 플랫폼의 일부로 자동으로 사용 하도록 설정
 - Advanced Threat Protection **무차별 암호 대입 SQL 자격 증명** 경고는 무차별 암호 대입 공격을 검색 하는 데 도움이 됩니다. 경우에 따라 경고는 침투 테스트 작업을 구분할 수 있습니다. 
 
 - SQL Database에 연결 하는 Azure VM 호스팅 응용 프로그램의 경우: 
-  - 권장 사항에 따라 Azure Security Center에서 인터넷 연결 끝점을 통해 액세스를 제한 합니다. 
+  - 권장 사항에 따라 Azure Security Center에서 인터넷 연결 엔드포인트을 통해 액세스를 제한 합니다. 
   - Virtual machine scale sets를 사용 하 여 Azure Vm에서 응용 프로그램의 여러 인스턴스를 실행 합니다. 
   - 무차별 암호 대입 공격을 방지 하려면 인터넷에서 RDP 및 SSH를 사용 하지 않도록 설정 합니다. 
 
@@ -752,7 +752,7 @@ SQL 데이터베이스를 포함 하 여 데이터 센터의 보안 상태를 �
 
 데이터 반출은 컴퓨터 또는 서버에서 데이터를 복사, 전송 또는 검색 하지 못하도록 합니다. 위키백과의 [데이터 반출](https://en.wikipedia.org/wiki/Data_exfiltration) 에 대 한 정의를 참조 하세요.
 
-공용 끝점을 통해 Azure SQL Database 서버에 연결 하면 고객이 공용 ip에 대 한 방화벽을 열어야 하므로 데이터 반출 위험이 있습니다.  
+공용 엔드포인트을 통해 Azure SQL Database 서버에 연결 하면 고객이 공용 ip에 대 한 방화벽을 열어야 하므로 데이터 반출 위험이 있습니다.  
 
 **시나리오 1**: Azure VM의 응용 프로그램은 Azure SQL Database 서버의 데이터베이스에 연결 합니다. Rogue 행위자는 VM에 대 한 액세스 권한을 가져오고이를 손상 시킵니다. 이 시나리오에서 데이터 반출은 rogue VM을 사용 하는 외부 엔터티가 데이터베이스에 연결 하 고, 개인 데이터를 복사 하 여 다른 구독에 있는 다른 SQL Database blob 저장소에 저장 하는 것을 의미 합니다.
 

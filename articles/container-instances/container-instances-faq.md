@@ -11,9 +11,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/11/2020
 ms.locfileid: "75888025"
 ---
-# <a name="frequently-asked-questions-about-azure-container-instances"></a>Azure Container Instances에 대 한 질문과 대답
+# <a name="frequently-asked-questions-about-azure-container-instances"></a>Azure Container Instances에 대한 질문과 대답
 
-이 문서에서는 Azure Container Instances에 대 한 자주 묻는 질문을 해결 합니다.
+이 문서에서는 Azure Container Instances에 대한 자주 묻는 질문을 해결 합니다.
 
 ## <a name="deployment"></a>배포
 
@@ -27,9 +27,9 @@ Azure Container Instances에서 배포 가능한 컨테이너 이미지의 최�
 
 배포 시간의 주요 택배 중 하나는 이미지 크기 이므로 크기를 줄이는 방법을 찾아보십시오. 필요 하지 않은 계층을 제거 하거나 더 밝은 기본 OS 이미지를 선택 하 여 이미지의 계층 크기를 줄입니다. 예를 들어 Linux 컨테이너를 실행 하는 경우 전체 Ubuntu 서버가 아닌 기본 이미지로 알파인를 사용 하는 것이 좋습니다. 마찬가지로 Windows 컨테이너의 경우 가능 하면 Nano Server 기본 이미지를 사용 합니다. 
 
-또한 [캐시 된 이미지 나열](/rest/api/container-instances/listcachedimages) API를 통해 사용할 수 있는 Azure Container images의 미리 캐시 된 이미지 목록을 확인 해야 합니다. 미리 캐시 된 이미지 중 하나에 대 한 이미지 계층을 전환할 수 있습니다. 
+또한 [캐시 된 이미지 나열](/rest/api/container-instances/listcachedimages) API를 통해 사용할 수 있는 Azure Container images의 미리 캐시 된 이미지 목록을 확인 해야 합니다. 미리 캐시 된 이미지 중 하나에 대한 이미지 계층을 전환할 수 있습니다. 
 
-컨테이너 시작 시간을 줄이는 방법에 대 한 자세한 [지침](container-instances-troubleshooting.md#container-takes-a-long-time-to-start) 을 참조 하세요.
+컨테이너 시작 시간을 줄이는 방법에 대한 자세한 [지침](container-instances-troubleshooting.md#container-takes-a-long-time-to-start) 을 참조 하세요.
 
 ### <a name="what-windows-base-os-images-are-supported"></a>지원 되는 Windows 기반 OS 이미지는 무엇 인가요?
 
@@ -61,25 +61,25 @@ Azure Container Instances에서 배포 가능한 컨테이너 이미지의 최�
 
 ### <a name="what-underlying-infrastructure-does-aci-run-on"></a>ACI를 실행 하는 기본 인프라는 무엇 인가요?
 
-Azure Container Instances는 서버를 사용 하지 않는 컨테이너 주문형 서비스를 목표로 하므로 인프라에 대해 걱정 하지 않고 컨테이너 개발에 집중 하고자 합니다. 성능에 대 한 비교를 수행 하려는 경우 또는 주로 F 및 D 시리즈에서 다양 한 Sku의 Azure Vm 집합에 대해 ACI를 실행 합니다. 이는 서비스를 계속 개발 하 고 최적화 하기 위해 향후 변경 될 예정입니다. 
+Azure Container Instances는 서버를 사용 하지 않는 컨테이너 주문형 서비스를 목표로 하므로 인프라에 대해 걱정 하지 않고 컨테이너 개발에 집중 하고자 합니다. 성능에 대한 비교를 수행 하려는 경우 또는 주로 F 및 D 시리즈에서 다양 한 Sku의 Azure Vm 집합에 대해 ACI를 실행 합니다. 이는 서비스를 계속 개발 하 고 최적화 하기 위해 향후 변경 될 예정입니다. 
 
 ### <a name="i-want-to-deploy-thousand-of-cores-on-aci---can-i-get-my-quota-increased"></a>ACI에 수천 개의 코어를 배포 하려는 경우 할당량을 늘릴 수 있나요?
  
-예 (경우에 따라). 현재 할당량에 대 한 [할당량 및 제한](container-instances-quotas.md) 문서와 요청에 따라 증가할 수 있는 제한을 참조 하세요.
+예 (경우에 따라). 현재 할당량에 대한 [할당량 및 제한](container-instances-quotas.md) 문서와 요청에 따라 증가할 수 있는 제한을 참조 하세요.
 
 ### <a name="can-i-deploy-with-more-than-4-cores-and-16-gb-of-ram"></a>4 개 이상의 코어와 16gb RAM을 사용 하 여 배포할 수 있나요?
 
-아직 없습니다. 현재는 컨테이너 그룹에 대 한 최대값입니다. 특정 요구 사항 또는 요청에 대 한 Azure 지원에 문의 하세요. 
+아직 없습니다. 현재는 컨테이너 그룹에 대한 최대값입니다. 특정 요구 사항 또는 요청에 대한 Azure 지원에 문의 하세요. 
 
 ### <a name="when-will-aci-be-in-a-specific-region"></a>언제 특정 지역에 있나요?
 
-현재 지역 가용성은 [여기](container-instances-region-availability.md#availability---general)에 게시 됩니다. 특정 지역에 대 한 요구 사항이 있는 경우 Azure 지원에 문의 하세요.
+현재 지역 가용성은 [여기](container-instances-region-availability.md#availability---general)에 게시 됩니다. 특정 지역에 대한 요구 사항이 있는 경우 Azure 지원에 문의 하세요.
 
 ## <a name="features-and-scenarios"></a>기능 및 시나리오
 
 ### <a name="how-do-i-scale-a-container-group"></a>컨테이너 그룹의 크기를 조정할 어떻게 할까요? 있나요?
 
-현재 컨테이너 또는 컨테이너 그룹에 대해서는 크기 조정을 사용할 수 없습니다. 더 많은 인스턴스를 실행 해야 하는 경우 API를 사용 하 여 서비스에 대 한 컨테이너 그룹 만들기에 대 한 추가 요청을 자동화 하 고 만듭니다. 
+현재 컨테이너 또는 컨테이너 그룹에 대해서는 크기 조정을 사용할 수 없습니다. 더 많은 인스턴스를 실행 해야 하는 경우 API를 사용 하 여 서비스에 대한 컨테이너 그룹 만들기에 대한 추가 요청을 자동화 하 고 만듭니다. 
 
 ### <a name="what-features-are-available-to-instances-running-in-a-custom-vnet"></a>사용자 지정 VNet에서 실행 되는 인스턴스에 사용할 수 있는 기능은 무엇 인가요?
 

@@ -28,7 +28,7 @@ ms.locfileid: "76548222"
 | 애플리케이션당 동시 [디버거 연결](../articles/app-service/troubleshoot-dotnet-visual-studio.md) |1 |1 |1 |5 |5 |5 |
 | 구독 당 App Service 인증서<sup>9</sup>| 지원하지 않음 | 지원하지 않음 |10 |10 |10 |10 |
 | 앱당 사용자 지정 도메인</a> |0(azurewebsites.net 하위 도메인 전용)|500 |500 |500 |500 |500 |
-| 사용자 지정 도메인 [SSL 지원](../articles/app-service/configure-ssl-certificate.md) |지원 되지 않음 *. azurewebsites.net에 대 한 와일드 카드 인증서를 기본적으로 사용할 수 있습니다.|지원 되지 않음 *. azurewebsites.net에 대 한 와일드 카드 인증서를 기본적으로 사용할 수 있습니다.|무제한 SNI SSL 연결 |무제한 SNI SSL 및 1개의 IP SSL 연결 포함 |무제한 SNI SSL 및 1개의 IP SSL 연결 포함 | 무제한 SNI SSL 및 1개의 IP SSL 연결 포함|
+| 사용자 지정 도메인 [SSL 지원](../articles/app-service/configure-ssl-certificate.md) |지원 되지 않음 *. azurewebsites.net에 대한 와일드 카드 인증서를 기본적으로 사용할 수 있습니다.|지원 되지 않음 *. azurewebsites.net에 대한 와일드 카드 인증서를 기본적으로 사용할 수 있습니다.|무제한 SNI SSL 연결 |무제한 SNI SSL 및 1개의 IP SSL 연결 포함 |무제한 SNI SSL 및 1개의 IP SSL 연결 포함 | 무제한 SNI SSL 및 1개의 IP SSL 연결 포함|
 | 요금제 별 하이브리드 연결 | | | 5 | 25 | 200 | 200 |
 | 통합 부하 분산 장치 | |X |X |X |X |X<sup>10</sup> |
 | [Always On](../articles/app-service/configure-common.md) | | |X |X |X |X |
@@ -44,10 +44,10 @@ ms.locfileid: "76548222"
 <sup>2</sup>이러한 컴퓨터에서 호스트할 수 있는 실제 앱 수는 앱의 활동, 컴퓨터 인스턴스 크기 및 해당 리소스 사용률에 따라 달라집니다.  
 <sup>3</sup>전용 인스턴스의 크기는 다양할 수 있습니다. 자세한 내용은 [App Service 가격 책정](https://azure.microsoft.com/pricing/details/app-service/)을 참조하세요.  
 <sup>4</sup> 요청 시 추가가 허용 됩니다.  
-<sup>5</sup> 저장소 제한은 동일한 App service 계획의 모든 앱에서 전체 콘텐츠 크기입니다. 단일 리소스 그룹 및 지역에 있는 모든 App service 계획의 모든 앱에 대 한 전체 콘텐츠 크기는 500GB를 초과할 수 없습니다.  
+<sup>5</sup> 저장소 제한은 동일한 App service 계획의 모든 앱에서 전체 콘텐츠 크기입니다. 단일 리소스 그룹 및 지역에 있는 모든 App service 계획의 모든 앱에 대한 전체 콘텐츠 크기는 500GB를 초과할 수 없습니다.  
 <sup>6</sup>이러한 리소스는 전용 인스턴스의 실제 리소스(인스턴스 크기 및 인스턴스 수)에 의해 제한됩니다.  
 <sup>7</sup>두 인스턴스의 Basic 계층으로 앱을 조정하면 두 인스턴스 각각에 대해 동시에 350개가 연결됩니다. 표준 계층 이상에서는 웹 소켓에 이론적 제한이 없지만 다른 요소는 웹 소켓 수를 제한할 수 있습니다. 예를 들어 허용 되는 최대 동시 요청 (`maxConcurrentRequestsPerCpu`에 의해 정의 됨)은 작은 VM 당 7500, 중간 VM 당 15000 (7500 x 2 코어) 및 큼 VM 당 75000 (18750 x 4 코어)입니다.  
 <sup>8</sup> 최대 IP 연결은 인스턴스당, 인스턴스 크기: B1/S1/P1V2 instance 당 1920, B2/S2/P2V2 8064 인스턴스당 3968/S3/P3V2가 인스턴스당 인스턴스 크기에 따라 달라 집니다.  
 <sup>9</sup> 지원 요청을 통해 구독 당 App Service Certificate 할당량 한도를 최대 제한인 200로 늘릴 수 있습니다.  
 <sup>10</sup> App Service 격리 Sku는 Azure Load Balancer를 통해 내부적으로 ILB (부하 분산) 될 수 있으므로 인터넷에서 공용 연결이 없습니다. 그 결과, ILB 격리 App Service의 일부 기능은 ILB 네트워크 엔드포인트과 직접 액세스되는 컴퓨터에서 사용해야 합니다.  
-<sup>11</sup> 요청 시, 일정에 따라 또는 App Service 인스턴스 내에서 지속적으로 백그라운드 작업으로 사용자 지정 실행 파일 및/또는 스크립트를 실행 합니다. 연속적인 WebJobs 실행을 위해서는 무중단이 필요합니다. 예약된 WebJobs에는 Azure Scheduler 무료 또는 표준이 필요합니다. App Service 인스턴스에서 실행할 수 있는 WebJobs 수에 대 한 제한은 미리 정의 되어 있지 않습니다. 응용 프로그램 코드에서 수행 하려는 작업에 따라 달라 지는 실용적인 제한이 있습니다.  
+<sup>11</sup> 요청 시, 일정에 따라 또는 App Service 인스턴스 내에서 지속적으로 백그라운드 작업으로 사용자 지정 실행 파일 및/또는 스크립트를 실행 합니다. 연속적인 WebJobs 실행을 위해서는 무중단이 필요합니다. 예약된 WebJobs에는 Azure Scheduler 무료 또는 표준이 필요합니다. App Service 인스턴스에서 실행할 수 있는 WebJobs 수에 대한 제한은 미리 정의 되어 있지 않습니다. 응용 프로그램 코드에서 수행 하려는 작업에 따라 달라 지는 실용적인 제한이 있습니다.  

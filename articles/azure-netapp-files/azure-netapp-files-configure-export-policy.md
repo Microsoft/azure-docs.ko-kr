@@ -1,6 +1,6 @@
 ---
-title: NFS 볼륨에 대 한 내보내기 정책 구성-Azure NetApp Files
-description: Azure NetApp Files를 사용 하 여 NFS 볼륨에 대 한 액세스를 제어 하도록 내보내기 정책을 구성 하는 방법을 설명 합니다.
+title: NFS 볼륨에 대한 내보내기 정책 구성-Azure NetApp Files
+description: Azure NetApp Files를 사용 하 여 NFS 볼륨에 대한 액세스를 제어 하도록 내보내기 정책을 구성 하는 방법을 설명 합니다.
 services: azure-netapp-files
 author: b-juche
 ms.author: b-juche

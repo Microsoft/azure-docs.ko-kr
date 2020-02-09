@@ -24,7 +24,7 @@ ms.locfileid: "74869377"
 
 이 문서에서는 기존 AKS 클러스터가 있다고 가정합니다. AKS 클러스터가 필요한 경우 [Azure CLI를 사용][aks-quickstart-cli] 하거나 [Azure Portal를 사용][aks-quickstart-portal]하 여 AKS 빠른 시작을 참조 하세요.
 
-또한 개발 시스템에서 실행 되는 클라이언트 인 투구 CLI가 설치 되어 있어야 합니다. 이를 통해 투구로 응용 프로그램을 시작, 중지 및 관리할 수 있습니다. Azure Cloud Shell을 사용하는 경우 Helm CLI가 이미 설치되어 있습니다. 로컬 플랫폼에 대 한 설치 지침은 [투구 설치][helm-install]를 참조 하세요.
+또한 개발 시스템에서 실행 되는 클라이언트 인 투구 CLI가 설치 되어 있어야 합니다. 이를 통해 투구로 응용 프로그램을 시작, 중지 및 관리할 수 있습니다. Azure Cloud Shell을 사용하는 경우 Helm CLI가 이미 설치되어 있습니다. 로컬 플랫폼에 대한 설치 지침은 [투구 설치][helm-install]를 참조 하세요.
 
 > [!IMPORTANT]
 > 투구는 Linux 노드에서 실행 하기 위한 것입니다. 클러스터에 Windows Server 노드가 있는 경우에는 투구 pod가 Linux 노드에서 실행 되도록 예약 되어 있는지 확인 해야 합니다. 또한 설치 하는 투구 차트가 올바른 노드에서 실행 되도록 예약 되어 있는지도 확인 해야 합니다. 이 문서의 명령은 [노드][k8s-node-selector] 선택기를 사용 하 여 pod이 올바른 노드에 예약 되어 있는지 확인 하지만 일부 투구 차트는 노드 선택기를 노출할 수 없습니다. [Taints][taints]와 같은 클러스터의 다른 옵션을 사용 하는 것을 고려할 수도 있습니다.
@@ -155,7 +155,7 @@ You can watch the status by running 'kubectl --namespace default get services -o
 ...
 ```
 
-`kubectl get services` 명령을 사용 하 여 서비스의 *외부 IP* 를 가져옵니다. 예를 들어 아래 명령은 *nginx* 서비스에 대 한 *외부 IP* 를 표시 합니다.
+`kubectl get services` 명령을 사용 하 여 서비스의 *외부 IP* 를 가져옵니다. 예를 들어 아래 명령은 *nginx* 서비스에 대한 *외부 IP* 를 표시 합니다.
 
 ```console
 $ kubectl --namespace default get services -o wide -w my-nginx-ingress-controller
@@ -201,7 +201,7 @@ release "my-nginx-ingress" uninstalled
 
 ### <a name="create-a-service-account"></a>서비스 계정 만들기
 
-RBAC 지원 AKS 클러스터에서 Helm을 배포하려면 먼저 서비스 계정과 Tiller 서비스에 대한 역할 바인딩이 필요합니다. RBAC를 사용 하는 클러스터에서 투구/Tiller를 보호 하는 방법에 대 한 자세한 내용은 [Tiller, 네임 스페이스 및 rbac][tiller-rbac]를 참조 하세요. AKS 클러스터가 RBAC를 사용할 수 없는 경우 이 단계를 건너뜁니다.
+RBAC 지원 AKS 클러스터에서 Helm을 배포하려면 먼저 서비스 계정과 Tiller 서비스에 대한 역할 바인딩이 필요합니다. RBAC를 사용 하는 클러스터에서 투구/Tiller를 보호 하는 방법에 대한 자세한 내용은 [Tiller, 네임 스페이스 및 rbac][tiller-rbac]를 참조 하세요. AKS 클러스터가 RBAC를 사용할 수 없는 경우 이 단계를 건너뜁니다.
 
 `helm-rbac.yaml`이라는 파일을 만들고 다음 YAML에 복사합니다.
 

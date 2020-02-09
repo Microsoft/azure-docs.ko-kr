@@ -1,6 +1,6 @@
 ---
 title: 가상 네트워크 규칙 사용-Azure CLI-Azure Database for PostgreSQL-단일 서버
-description: 이 문서에서는 Azure CLI 명령줄을 사용 하 여 Azure Database for PostgreSQL에 대 한 VNet 서비스 끝점 및 규칙을 만들고 관리 하는 방법을 설명 합니다.
+description: 이 문서에서는 Azure CLI 명령줄을 사용 하 여 Azure Database for PostgreSQL에 대 한 VNet 서비스 엔드포인트 및 규칙을 만들고 관리 하는 방법을 설명 합니다.
 author: bolzmj
 ms.author: mbolz
 ms.service: postgresql
@@ -14,7 +14,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/15/2020
 ms.locfileid: "75974115"
 ---
-# <a name="create-and-manage-vnet-service-endpoints-for-azure-database-for-postgresql---single-server-using-azure-cli"></a>Azure CLI를 사용 하 여 Azure Database for PostgreSQL 단일 서버에 대 한 VNet 서비스 끝점 만들기 및 관리
+# <a name="create-and-manage-vnet-service-endpoints-for-azure-database-for-postgresql---single-server-using-azure-cli"></a>Azure CLI를 사용 하 여 Azure Database for PostgreSQL 단일 서버에 대 한 VNet 서비스 엔드포인트 만들기 및 관리
 VNet(가상 네트워크) 서비스 엔드포인트 및 규칙이 가상 네트워크의 프라이빗 주소 공간을 Azure Database for PostgreSQL 서버로 확장합니다. 편리한 Azure CLI(명령줄 인터페이스) 명령을 사용하면 서버를 관리하는 VNet 서비스 엔드포인트 및 규칙을 만들고, 업데이트하고, 삭제하며, 표시할 수 있습니다. 제한을 포함하여 Azure Database for PostgreSQL VNet 서비스 엔드포인트에 대한 개요는 [Azure Database for PostgreSQL 서버 VNet 서비스 엔드포인트](concepts-data-access-and-security-vnet.md)를 참조하세요. VNet 서비스 엔드포인트는 Azure Database for PostgreSQL에 대한 지원되는 모든 지역에서 사용할 수 있습니다.
 
 ## <a name="prerequisites"></a>필수 조건

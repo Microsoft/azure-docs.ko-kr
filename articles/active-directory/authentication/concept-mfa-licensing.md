@@ -57,7 +57,7 @@ Azure Multi-Factor Authentication는 조직의 요구에 따라 몇 가지 방�
 | 온-프레미스 애플리케이션에 대한 MFA | | | | ● |
 
 > [!IMPORTANT]
-> 2019 년 3 월을 기준으로 Azure AD Free/평가판 테 넌 트의 azure Multi-Factor Authentication 및 Azure 셀프 서비스 암호 재설정 사용자가 전화 통화 옵션을 더 이상 사용할 수 없습니다. SMS 메시지는 이러한 변경의 영향을 받지 않습니다. 전화 통화는 Azure AD Premium P1 또는 P2 테 넌 트 또는 사용 또는 Office Premium, E3 또는 E5의 사용자가 계속 사용할 수 있습니다.
+> 2019 년 3 월을 기준으로 Azure AD Free/평가판 테넌트의 azure Multi-Factor Authentication 및 Azure 셀프 서비스 암호 재설정 사용자가 전화 통화 옵션을 더 이상 사용할 수 없습니다. SMS 메시지는 이러한 변경의 영향을 받지 않습니다. 전화 통화는 Azure AD Premium P1 또는 P2 테넌트 또는 사용 또는 Office Premium, E3 또는 E5의 사용자가 계속 사용할 수 있습니다.
 
 ## <a name="purchase-and-enable-azure-multi-factor-authentication"></a>Azure Multi-Factor Authentication 구매 및 사용
 
@@ -74,7 +74,7 @@ Azure AD Premium 버전은 Microsoft 담당자, [오픈 볼륨 라이선스 프�
 
 ### <a name="azure-ad-free-tier"></a>Azure AD Free 계층
 
-Azure AD Free 테 넌 트의 모든 사용자는 보안 기본값을 사용 하 여 Azure Multi-factor authentication을 사용할 수 있습니다. 이러한 보안 기본값은 로그인 할 때마다 모든 사용자에 대해 Azure Multi-factor authentication을 사용 하도록 설정 합니다. 모바일 인증 앱은 Azure AD Free 보안 기본값을 사용 하는 경우 Azure Multi-Factor Authentication에 사용할 수 있는 유일한 방법입니다.
+Azure AD Free 테넌트의 모든 사용자는 보안 기본값을 사용 하 여 Azure Multi-factor authentication을 사용할 수 있습니다. 이러한 보안 기본값은 로그인 할 때마다 모든 사용자에 대해 Azure Multi-factor authentication을 사용 하도록 설정 합니다. 모바일 인증 앱은 Azure AD Free 보안 기본값을 사용 하는 경우 Azure Multi-Factor Authentication에 사용할 수 있는 유일한 방법입니다.
 
 * [Azure AD 보안 기본값에 대 한 자세한 정보](../fundamentals/concept-fundamentals-security-defaults.md)
 * [Azure AD Free의 사용자에 대 한 보안 기본값 사용](../fundamentals/concept-fundamentals-security-defaults.md#enabling-security-defaults)

@@ -38,10 +38,10 @@ ms.locfileid: "76758288"
 초대 전자 메일의 대 안으로 게스트에 앱 또는 포털에 대 한 직접 링크를 제공할 수 있습니다. 먼저 [Azure Portal](https://docs.microsoft.com/azure/active-directory/b2b/b2b-quickstart-add-guest-users-portal) 또는 [PowerShell](https://docs.microsoft.com/azure/active-directory/b2b/b2b-quickstart-invite-powershell)을 통해 게스트 사용자를 디렉터리에 추가 해야 합니다. 그런 다음 [사용자 지정 가능한 방법](https://docs.microsoft.com/azure/active-directory/manage-apps/end-user-experiences)중 하나를 사용 하 여 직접 로그온 링크를 비롯 한 응용 프로그램을 사용자에 게 배포할 수 있습니다. 게스트가 초대 전자 메일 대신 직접 링크를 사용 하는 경우 처음에는 첫 번째 시간 승인 환경에 따라 진행 됩니다.
 
 > [!IMPORTANT]
-> 직접 링크는 테 넌 트와 관련 되어야 합니다. 즉, 테 넌 트 ID 또는 확인 된 도메인을 포함 해야 합니다. 그러면 공유 앱이 있는 테 넌 트에서 게스트를 인증할 수 있습니다. https://myapps.microsoft.com 와 같은 공통 URL은 인증을 위해 해당 홈 테 넌 트로 리디렉션하는 게스트에 대해 작동 하지 않습니다. 다음은 테 넌 트 컨텍스트가 포함 된 직접 링크의 몇 가지 예입니다.
- > - 앱 액세스 패널: https://myapps.microsoft.com/?tenantid=&lt , 테 넌 트 id&gt; 
+> 직접 링크는 테넌트와 관련 되어야 합니다. 즉, 테넌트 ID 또는 확인 된 도메인을 포함 해야 합니다. 그러면 공유 앱이 있는 테넌트에서 게스트를 인증할 수 있습니다. https://myapps.microsoft.com 와 같은 공통 URL은 인증을 위해 해당 홈 테넌트로 리디렉션하는 게스트에 대해 작동 하지 않습니다. 다음은 테넌트 컨텍스트가 포함 된 직접 링크의 몇 가지 예입니다.
+ > - 앱 액세스 패널: https://myapps.microsoft.com/?tenantid=&lt , 테넌트 id&gt; 
  > - 확인 된 도메인에 대 한 앱 액세스 패널: https://myapps.microsoft.com/&lt ; 확인 된 도메인&gt;
- > - Azure Portal: https://portal.azure.com/&lt , 테 넌 트 id&gt;
+ > - Azure Portal: https://portal.azure.com/&lt , 테넌트 id&gt;
  > - 개별 앱: [직접 로그온 링크](../manage-apps/end-user-experiences.md#direct-sign-on-links) 를 사용 하는 방법을 참조 하세요.
 
 직접 링크를 통해 초대 전자 메일을 권장 하는 경우도 있습니다. 이러한 특수 사례가 조직에 중요 한 경우 초대 전자 메일을 계속 보내는 방법을 사용 하 여 사용자를 초대 하는 것이 좋습니다.

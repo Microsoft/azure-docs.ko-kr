@@ -47,7 +47,7 @@ import sys
 %%sql --database RetailDemo --container WebsiteData
 SELECT c.Action, c.Price as ItemRevenue, c.Country, c.Item FROM c
 ```
-셀에서 ```%%sql?```를 실행 하 여 노트북의 sql 매직 명령에 대 한 도움말 설명서를 확인 합니다.
+셀에서 ```%%sql?```를 실행 하 여 노트북의 sql 매직 명령에 대한 도움말 설명서를 확인 합니다.
 
 ## <a name="run-a-sql-query-and-output-to-a-pandas-dataframe"></a>SQL 쿼리를 실행 하 고 Pandas 데이터 프레임에 출력 합니다.
 
@@ -106,7 +106,7 @@ Total RUs consumed : 25022.58
 ```
 출력 통계를 사용 하 여 항목을 업로드 하는 데 사용 되는 유효 r u/s를 계산할 수 있습니다. 예를 들어 38 초를 초과 하 여 25000 RUs를 사용 하는 경우 적용 되는 것은 25000 RUs/38 seconds = 658 r u/초입니다.
 
-## <a name="set-default-database-for-queries"></a>쿼리에 대 한 기본 데이터베이스 설정
+## <a name="set-default-database-for-queries"></a>쿼리에 대한 기본 데이터베이스 설정
 명령에서 노트북에 사용할 기본 데이터베이스 ```%%sql``` 설정할 수 있습니다. ```{database_id}```를 해당 데이터베이스의 이름으로 바꿉니다.
 
 ```bash
@@ -114,7 +114,7 @@ Total RUs consumed : 25022.58
 ```
 셀에서 ```%database?```를 실행 하 여 노트북의 설명서를 확인 합니다.
 
-## <a name="set-default-container-for-queries"></a>쿼리에 대 한 기본 컨테이너 설정
+## <a name="set-default-container-for-queries"></a>쿼리에 대한 기본 컨테이너 설정
 명령에서 노트북에 사용할 기본 컨테이너 ```%%sql``` 설정할 수 있습니다. ```{container_id}```를 컨테이너의 이름으로 바꿉니다.
 
 ```bash
@@ -135,7 +135,7 @@ df_cosmos.groupby("Item").size()
 ![nteract 데이터 탐색기](media/use-notebook-features-and-commands/nteract-built-in-chart.png)
 
 ## <a name="use-the-built-in-python-sdk"></a>기본 제공 Python SDK 사용
-[SQL API 용 Azure Cosmos DB PYTHON SDK](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cosmos/azure-cosmos) 버전 4가 설치 되어 Azure Cosmos 계정에 대 한 노트북 환경에 포함 되어 있습니다.
+[SQL API 용 Azure Cosmos DB PYTHON SDK](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cosmos/azure-cosmos) 버전 4가 설치 되어 Azure Cosmos 계정에 대한 노트북 환경에 포함 되어 있습니다.
 
 기본 제공 ``cosmos_client`` 인스턴스를 사용 하 여 모든 SDK 작업을 실행할 수 있습니다. 
 
@@ -179,7 +179,7 @@ custom_connection_policy.PreferredLocations = [region_1, region_2] # Set the ord
 # Create a new instance of CosmosClient, getting the endpoint and key from the environment variables
 custom_client = cosmos.CosmosClient(url=os.environ["COSMOS_ENDPOINT"], credential=os.environ["COSMOS_KEY"], connection_policy=custom_connection_policy)
 ```
-## <a name="access-the-account-endpoint-and-primary-key-env-variables"></a>계정 끝점 및 기본 키 env 변수에 액세스
+## <a name="access-the-account-endpoint-and-primary-key-env-variables"></a>계정 엔드포인트 및 기본 키 env 변수에 액세스
 ```python
 import os
 
@@ -187,7 +187,7 @@ endpoint = os.environ["COSMOS_ENDPOINT"]
 primary_key = os.environ["COSMOS_KEY"]
 ```
 > [!IMPORTANT]
-> ``COSMOS_ENDPOINT`` 및 ``COSMOS_KEY`` 환경 변수는 SQL API에만 적용 됩니다. 다른 Api의 경우 Azure Cosmos 계정의 **연결 문자열** 또는 **키** 블레이드에서 끝점 및 키를 찾습니다.  
+> ``COSMOS_ENDPOINT`` 및 ``COSMOS_KEY`` 환경 변수는 SQL API에만 적용 됩니다. 다른 Api의 경우 Azure Cosmos 계정의 **연결 문자열** 또는 **키** 블레이드에서 엔드포인트 및 키를 찾습니다.  
 
 ## <a name="reset-notebooks-workspace"></a>전자 필기장 작업 영역 다시 설정
 전자 필기장 작업 영역을 기본 설정으로 다시 설정 하려면 명령 모음에서 **작업 영역 다시 설정** 을 선택 합니다. 그러면 설치 된 모든 사용자 지정 패키지가 제거 되 고 Jupyter 서버가 다시 시작 됩니다. 노트북, 파일 및 Azure Cosmos 리소스는 영향을 받지 않습니다.  

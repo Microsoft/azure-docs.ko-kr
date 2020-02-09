@@ -1,6 +1,6 @@
 ---
 title: 인증서 바인딩
-description: App Service Environment에서 인증서와 관련 된 다양 한 항목을 설명 합니다. 인증서 바인딩이 ASE의 단일 테 넌 트 앱에서 작동 하는 방식에 대해 알아봅니다.
+description: App Service Environment에서 인증서와 관련 된 다양 한 항목을 설명 합니다. 인증서 바인딩이 ASE의 단일 테넌트 앱에서 작동 하는 방식에 대해 알아봅니다.
 author: ccompy
 ms.assetid: 9e21a7e4-2436-4e81-bb05-4a6ba70eeaf7
 ms.topic: article

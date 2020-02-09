@@ -35,7 +35,7 @@ ms.locfileid: "74915225"
 
 ## <a name="prerequisites"></a>전제 조건
 
--   페더레이션된 도메인을 포함 하는 Azure Active Directory (Azure AD) 테 넌 트가 있습니다.
+-   페더레이션된 도메인을 포함 하는 Azure Active Directory (Azure AD) 테넌트가 있습니다.
 
 -   다음 두 옵션 중 하나로 이동 하도록 결정 했습니다.
     - **옵션** - *암호 해시 동기화 (동기화)*  + *Single Sign-On SSO (원활한* )
@@ -43,11 +43,11 @@ ms.locfileid: "74915225"
     
     *원활한 SSO* 는 선택 사항 이지만 회사 네트워크 내부에서 도메인에 가입 된 컴퓨터를 실행 하는 사용자에 게 자동 로그인 환경을 구현 하는 데 사용 하는 것이 좋습니다.
 
--   클라우드 인증으로 마이그레이션되는 사용자에 게 필요한 모든 테 넌 트 브랜딩 및 조건부 액세스 정책을 구성 했습니다.
+-   클라우드 인증으로 마이그레이션되는 사용자에 게 필요한 모든 테넌트 브랜딩 및 조건부 액세스 정책을 구성 했습니다.
 
 -   Azure Multi-Factor Authentication를 사용 하려는 경우 [SSPR (셀프 서비스 암호 재설정)에 수렴 형 등록](../authentication/concept-registration-mfa-sspr-combined.md) 을 사용 하 고 사용자가 인증 방법을 한 번 등록 하도록 Multi-Factor Authentication 하는 것이 좋습니다.
 
--   스테이징 된 롤아웃 기능을 사용 하려면 테 넌 트의 전역 관리자 여야 합니다.
+-   스테이징 된 롤아웃 기능을 사용 하려면 테넌트의 전역 관리자 여야 합니다.
 
 -   특정 Active Directory 포리스트에서 *원활한 SSO* 를 사용 하도록 설정 하려면 도메인 관리자 여야 합니다.
 
@@ -124,9 +124,9 @@ PowerShell을 사용 하 여 Active Directory 포리스트에서 *원활한 SSO
 
    `Import-Module .\AzureADSSO.psd1`
 
-4. PowerShell을 관리자 권한으로 실행합니다. PowerShell에서 `New-AzureADSSOAuthenticationContext`를 호출 합니다. 이 명령은 테 넌 트의 전역 관리자 자격 증명을 입력할 수 있는 창을 엽니다.
+4. PowerShell을 관리자 권한으로 실행합니다. PowerShell에서 `New-AzureADSSOAuthenticationContext`를 호출 합니다. 이 명령은 테넌트의 전역 관리자 자격 증명을 입력할 수 있는 창을 엽니다.
 
-5.  `Get-AzureADSSOStatus | ConvertFrom-Json`를 호출 합니다. 이 명령은이 기능을 사용 하도록 설정 된 Active Directory 포리스트 목록 ("도메인" 목록 참조)을 표시 합니다. 기본적으로 테 넌 트 수준에서 false로 설정 됩니다.
+5.  `Get-AzureADSSOStatus | ConvertFrom-Json`를 호출 합니다. 이 명령은이 기능을 사용 하도록 설정 된 Active Directory 포리스트 목록 ("도메인" 목록 참조)을 표시 합니다. 기본적으로 테넌트 수준에서 false로 설정 됩니다.
 
    ![Windows PowerShell 출력의 예](./media/how-to-connect-staged-rollout/sr3.png)
 
@@ -142,7 +142,7 @@ PowerShell을 사용 하 여 Active Directory 포리스트에서 *원활한 SSO
 
 특정 기능 (*통과 인증*, *암호 해시 동기화*또는 *원활한 SSO*)을 그룹의 선택 된 사용자 집합으로 롤아웃 하려면 다음 섹션의 지침을 따르세요.
 
-### <a name="enable-a-staged-rollout-of-a-specific-feature-on-your-tenant"></a>테 넌 트에서 특정 기능의 스테이징 된 롤아웃 사용
+### <a name="enable-a-staged-rollout-of-a-specific-feature-on-your-tenant"></a>테넌트에서 특정 기능의 스테이징 된 롤아웃 사용
 
 다음 옵션 중 하나를 롤아웃할 수 있습니다.
 
@@ -203,7 +203,7 @@ PowerShell을 사용 하 여 Active Directory 포리스트에서 *원활한 SSO
 
 1. 엑스트라넷에서 개인 브라우저 세션의 [앱 페이지로](https://myapps.microsoft.com) 이동한 후 준비 된 롤아웃에 대해 선택한 사용자 계정의 USERPRINCIPALNAME (UPN)을 입력 합니다.
 
-   준비 된 롤아웃 대상으로 지정 된 사용자는 페더레이션된 로그인 페이지로 리디렉션되지 않습니다. 대신, Azure AD 테 넌 트 브랜드 로그인 페이지에 로그인 하 라는 메시지가 표시 됩니다.
+   준비 된 롤아웃 대상으로 지정 된 사용자는 페더레이션된 로그인 페이지로 리디렉션되지 않습니다. 대신, Azure AD 테넌트 브랜드 로그인 페이지에 로그인 하 라는 메시지가 표시 됩니다.
 
 1. UserPrincipalName를 사용 하 여 필터링 하 여 [AZURE AD 로그인 활동 보고서](../reports-monitoring/concept-sign-ins.md) 에 로그인이 성공적으로 나타나는지 확인 합니다.
 
@@ -225,7 +225,7 @@ PowerShell을 사용 하 여 Active Directory 포리스트에서 *원활한 SSO
 
 **Q: 프로덕션 환경에서이 기능을 사용할 수 있나요?**
 
-A: 예, 프로덕션 테 넌 트에서이 기능을 사용할 수 있지만 먼저 테스트 테 넌 트에서이 기능을 사용해 보는 것이 좋습니다.
+A: 예, 프로덕션 테넌트에서이 기능을 사용할 수 있지만 먼저 테스트 테넌트에서이 기능을 사용해 보는 것이 좋습니다.
 
 **Q:이 기능을 사용 하 여 일부 사용자가 페더레이션된 인증을 사용 하 고 다른 사용자가 클라우드 인증을 사용 하는 영구 "공동 존재"를 유지 관리할 수 있나요?**
 

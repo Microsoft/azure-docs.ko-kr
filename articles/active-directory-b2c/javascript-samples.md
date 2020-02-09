@@ -30,7 +30,7 @@ ms.locfileid: "76841934"
 
 ### <a name="select-a-page-layout"></a>페이지 레이아웃 선택
 
-* 응용 프로그램의 사용자 인터페이스 요소에 대 한 [페이지 레이아웃을 선택](page-layout.md) 합니다.
+* 응용 프로그램의 사용자 인터페이스 요소에 대한 [페이지 레이아웃을 선택](page-layout.md) 합니다.
 
     JavaScript를 사용 하려는 경우 사용자 지정 정책의 *모든* 콘텐츠 정의에 대해 [페이지 레이아웃 버전을 정의](page-layout.md#replace-datauri-values) 해야 합니다.
 

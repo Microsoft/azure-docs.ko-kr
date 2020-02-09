@@ -22,7 +22,7 @@ ms.locfileid: "76847434"
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-이 문서에서는 Azure Active Directory B2C (Azure AD B2C)에서 [사용자 지정 정책을](custom-policy-overview.md) 사용 하 여 LinkedIn 계정의 사용자에 대 한 로그인을 사용 하도록 설정 하는 방법을 보여 줍니다.
+이 문서에서는 Azure Active Directory B2C (Azure AD B2C)에서 [사용자 지정 정책을](custom-policy-overview.md) 사용 하 여 LinkedIn 계정의 사용자에 대한 로그인을 사용 하도록 설정 하는 방법을 보여 줍니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -40,7 +40,7 @@ Azure AD B2C에서 ID 공급자로 LinkedIn을 사용하려면 LinkedIn 애플�
 1. **앱 만들기**를 선택합니다.
 1. **앱 이름을**입력 합니다.
 1. LinkedIn 페이지 이름에 해당 하는 **회사** 이름을 입력 합니다. 아직 없는 경우 LinkedIn 페이지를 만듭니다.
-1. 필드 **개인 정보 취급 방침 URL**을 입력 합니다. 이 URL은 유효한 URL 이어야 하지만 연결할 수 있는 끝점이 될 필요는 없습니다.
+1. 필드 **개인 정보 취급 방침 URL**을 입력 합니다. 이 URL은 유효한 URL 이어야 하지만 연결할 수 있는 엔드포인트이 될 필요는 없습니다.
 1. **비즈니스 전자 메일**을 입력 합니다.
 1. **앱 로고** 이미지를 업로드 합니다. 로고 이미지는 정사각형이 고 해당 크기는 최소 100x100 픽셀 이어야 합니다.
 1. **제품** 섹션에서 기본 설정을 그대로 둡니다.
@@ -52,7 +52,7 @@ Azure AD B2C에서 ID 공급자로 LinkedIn을 사용하려면 LinkedIn 애플�
 1. **인증** 탭을 선택 합니다.
 1. **클라이언트 ID**를 기록 합니다.
 1. **클라이언트 암호**를 표시 하 고 기록 합니다.
-1. **OAuth 2.0 설정**에서 다음 **리디렉션 URL**을 추가 합니다. `your-tenant`을 테넌트 이름으로 바꿉니다. Azure AD B2C에 대문자를 사용 하 여 정의 된 경우에도 **모든 소문자** 를 사용 하 여 테 넌 트 이름입니다.
+1. **OAuth 2.0 설정**에서 다음 **리디렉션 URL**을 추가 합니다. `your-tenant`을 테넌트 이름으로 바꿉니다. Azure AD B2C에 대문자를 사용 하 여 정의 된 경우에도 **모든 소문자** 를 사용 하 여 테넌트 이름입니다.
 
     `https://your-tenant.b2clogin.com/your-tenant.onmicrosoft.com/oauth2/authresp`
 
@@ -61,7 +61,7 @@ Azure AD B2C에서 ID 공급자로 LinkedIn을 사용하려면 LinkedIn 애플�
 이전에 Azure AD B2C 테넌트에서 기록했던 클라이언트 비밀을 저장해야 합니다.
 
 1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
-2. Azure AD B2C 테 넌 트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 테 넌 트가 포함 된 디렉터리를 선택 합니다.
+2. Azure AD B2C 테넌트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 테넌트가 포함 된 디렉터리를 선택 합니다.
 3. Azure Portal의 왼쪽 상단 모서리에서 **모든 서비스**를 선택하고 **Azure AD B2C**를 검색하여 선택합니다.
 4. 개요 페이지에서 **ID 경험 프레임워크**를 선택합니다.
 5. **정책 키** 를 선택 하 고 **추가**를 선택 합니다.
@@ -218,7 +218,7 @@ LinkedIn 기술 프로필을 사용 하려면 **ExtractGivenNameFromLinkedInResp
 
 ## <a name="create-an-azure-ad-b2c-application"></a>Azure AD B2C 애플리케이션 만들기
 
-Azure AD B2C와의 통신은 B2C 테 넌 트에 등록 하는 응용 프로그램을 통해 발생 합니다. 이 섹션에는 아직 만들지 않은 경우 테스트 애플리케이션을 만들기 위해 완료할 수 있는 선택적 단계가 나와 있습니다.
+Azure AD B2C와의 통신은 B2C 테넌트에 등록 하는 응용 프로그램을 통해 발생 합니다. 이 섹션에는 아직 만들지 않은 경우 테스트 애플리케이션을 만들기 위해 완료할 수 있는 선택적 단계가 나와 있습니다.
 
 [!INCLUDE [active-directory-b2c-appreg-idp](../../includes/active-directory-b2c-appreg-idp.md)]
 
@@ -332,9 +332,9 @@ LinkedIn [은 최근에 해당 api를 v1.0에서 v 2.0으로 업데이트 했습
 
 ### <a name="obtain-an-email-address"></a>전자 메일 주소 가져오기
 
-V1.0에서 v 2.0으로 마이그레이션하는 과정의 일환으로, 전자 메일 주소를 가져오려면 다른 API에 대 한 추가 호출이 필요 합니다. 등록 하는 동안 전자 메일 주소를 받아야 하는 경우 다음을 수행 합니다.
+V1.0에서 v 2.0으로 마이그레이션하는 과정의 일환으로, 전자 메일 주소를 가져오려면 다른 API에 대한 추가 호출이 필요 합니다. 등록 하는 동안 전자 메일 주소를 받아야 하는 경우 다음을 수행 합니다.
 
-1. 사용자가 로그인 할 수 있도록 LinkedIn과 페더레이션 할 Azure AD B2C 허용 하려면 위의 단계를 완료 합니다. 페더레이션의 일부로, Azure AD B2C는 LinkedIn에 대 한 액세스 토큰을 받습니다.
+1. 사용자가 로그인 할 수 있도록 LinkedIn과 페더레이션 할 Azure AD B2C 허용 하려면 위의 단계를 완료 합니다. 페더레이션의 일부로, Azure AD B2C는 LinkedIn에 대한 액세스 토큰을 받습니다.
 2. LinkedIn 액세스 토큰을 클레임에 저장 합니다. [여기에서 지침을 참조](idp-pass-through-custom.md)하세요.
 3. LinkedIn의 `/emailAddress` API에 요청을 수행 하는 다음과 같은 클레임 공급자를 추가 합니다. 이 요청에 권한을 부여 하려면 LinkedIn 액세스 토큰이 필요 합니다.
 

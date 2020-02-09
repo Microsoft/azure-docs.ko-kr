@@ -1,6 +1,6 @@
 ---
-title: 다중 테 넌 트 앱을 사용 하 여 로그 Azure Monitor
-description: 다중 테 넌 트 Azure SQL Database SaaS 앱을 사용 하 여 Azure Monitor 로그 설정 및 사용
+title: 다중 테넌트 앱을 사용 하 여 로그 Azure Monitor
+description: 다중 테넌트 Azure SQL Database SaaS 앱을 사용 하 여 Azure Monitor 로그 설정 및 사용
 services: sql-database
 ms.service: sql-database
 ms.subservice: scenario
@@ -18,7 +18,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/08/2019
 ms.locfileid: "73826422"
 ---
-# <a name="set-up-and-use-azure-monitor-logs-with-a-multitenant-sql-database-saas-app"></a>다중 테 넌 트 SQL Database SaaS 앱을 사용 하 여 Azure Monitor 로그 설정 및 사용
+# <a name="set-up-and-use-azure-monitor-logs-with-a-multitenant-sql-database-saas-app"></a>다중 테넌트 SQL Database SaaS 앱을 사용 하 여 Azure Monitor 로그 설정 및 사용
 
 이 자습서에서는 [Azure Monitor 로그](/azure/log-analytics/log-analytics-overview) 를 설정 하 고 사용 하 여 탄력적 풀 및 데이터베이스를 모니터링 합니다. 이 자습서는 [성능 모니터링 및 관리 자습서](saas-dbpertenant-performance-monitoring.md)를 기반으로 합니다. Azure Monitor 로그를 사용 하 여 Azure Portal에서 제공 하는 모니터링 및 경고를 확대 하는 방법을 보여 줍니다. Azure Monitor 로그는 수천 개의 탄력적 풀과 수백 개의 데이터베이스 모니터링을 지원 합니다. Azure Monitor 로그는 여러 Azure 구독에서 다양 한 응용 프로그램과 Azure 서비스의 모니터링을 통합할 수 있는 단일 모니터링 솔루션을 제공 합니다.
 

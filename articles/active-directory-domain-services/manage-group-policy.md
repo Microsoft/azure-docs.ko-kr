@@ -19,9 +19,9 @@ ms.locfileid: "74705091"
 ---
 # <a name="administer-group-policy-in-an-azure-ad-domain-services-managed-domain"></a>Azure AD Domain Services 관리 되는 도메인의 그룹 정책 관리
 
-Azure Active Directory Domain Services (Azure AD DS)의 사용자 및 컴퓨터 개체에 대 한 설정은 Gpo (그룹 정책 개체)를 사용 하 여 관리 되는 경우가 많습니다. Azure AD DS에는 *Aaddc 사용자* 및 *Aaddc 컴퓨터* 컨테이너에 대 한 기본 제공 gpo가 포함 됩니다. 이러한 기본 제공 Gpo를 사용자 지정 하 여 사용자 환경에 필요한 대로 그룹 정책를 구성할 수 있습니다. Azure *AD DC administrators* 그룹의 구성원은 azure AD DS 도메인에서 그룹 정책 관리 권한을 가지 며 사용자 지정 Gpo 및 ou (조직 구성 단위)를 만들 수도 있습니다. 그룹 정책 정의 및 작동 방법에 대 한 자세한 내용은 [그룹 정책 개요][group-policy-overview]를 참조 하세요.
+Azure Active Directory Domain Services (Azure AD DS)의 사용자 및 컴퓨터 개체에 대한 설정은 Gpo (그룹 정책 개체)를 사용 하 여 관리 되는 경우가 많습니다. Azure AD DS에는 *Aaddc 사용자* 및 *Aaddc 컴퓨터* 컨테이너에 대한 기본 제공 gpo가 포함 됩니다. 이러한 기본 제공 Gpo를 사용자 지정 하 여 사용자 환경에 필요한 대로 그룹 정책를 구성할 수 있습니다. Azure *AD DC administrators* 그룹의 구성원은 azure AD DS 도메인에서 그룹 정책 관리 권한을 가지 며 사용자 지정 Gpo 및 ou (조직 구성 단위)를 만들 수도 있습니다. 그룹 정책 정의 및 작동 방법에 대한 자세한 내용은 [그룹 정책 개요][group-policy-overview]를 참조 하세요.
 
-하이브리드 환경에서 온-프레미스 AD DS 환경에 구성 된 그룹 정책은 Azure AD DS와 동기화 되지 않습니다. Azure AD DS에서 사용자 또는 컴퓨터에 대 한 구성 설정을 정의 하려면 기본 Gpo 중 하나를 편집 하거나 사용자 지정 GPO를 만듭니다.
+하이브리드 환경에서 온-프레미스 AD DS 환경에 구성 된 그룹 정책은 Azure AD DS와 동기화 되지 않습니다. Azure AD DS에서 사용자 또는 컴퓨터에 대한 구성 설정을 정의 하려면 기본 Gpo 중 하나를 편집 하거나 사용자 지정 GPO를 만듭니다.
 
 이 문서에서는 그룹 정책 관리 도구를 설치한 다음 기본 제공 Gpo를 편집 하 고 사용자 지정 Gpo를 만드는 방법을 보여 줍니다.
 
@@ -42,13 +42,13 @@ Azure Active Directory Domain Services (Azure AD DS)의 사용자 및 컴퓨터 
 * Azure AD 테넌트의 *Azure AD DC Administrators* 그룹에 속한 멤버인 사용자 계정
 
 > [!NOTE]
-> [Azure AD DS의 도메인 컨트롤러에 대 한 액세스 권한이 없기](faqs.md#can-i-connect-to-the-domain-controller-for-my-managed-domain-using-remote-desktop)때문에 관리 되는 도메인에서 그룹 정책 관리 템플릿에 대 한 중앙 저장소를 만들고 사용할 수 없습니다. [Sysvol은 온-프레미스 Azure AD Connect 동기화에 포함 되지](synchronization.md#what-isnt-synchronized-to-azure-ad-ds)않으므로 azure AD를 통해 온-프레미스 중앙 저장소를 만들고 azure AD DS와 동기화 할 수 없습니다.
+> [Azure AD DS의 도메인 컨트롤러에 대한 액세스 권한이 없기](faqs.md#can-i-connect-to-the-domain-controller-for-my-managed-domain-using-remote-desktop)때문에 관리 되는 도메인에서 그룹 정책 관리 템플릿에 대한 중앙 저장소를 만들고 사용할 수 없습니다. [Sysvol은 온-프레미스 Azure AD Connect 동기화에 포함 되지](synchronization.md#what-isnt-synchronized-to-azure-ad-ds)않으므로 azure AD를 통해 온-프레미스 중앙 저장소를 만들고 azure AD DS와 동기화 할 수 없습니다.
 
 ## <a name="install-group-policy-management-tools"></a>그룹 정책 관리 도구 설치
 
-그룹 정책 개체 (Gpo)를 만들고 구성 하려면 그룹 정책 관리 도구를 설치 해야 합니다. 이러한 도구는 Windows Server의 기능으로 설치할 수 있습니다. Windows 클라이언트에 관리 도구를 설치 하는 방법에 대 한 자세한 내용은 install [원격 서버 관리 도구 (RSAT)][install-rsat]를 참조 하십시오.
+그룹 정책 개체 (Gpo)를 만들고 구성 하려면 그룹 정책 관리 도구를 설치 해야 합니다. 이러한 도구는 Windows Server의 기능으로 설치할 수 있습니다. Windows 클라이언트에 관리 도구를 설치 하는 방법에 대한 자세한 내용은 install [원격 서버 관리 도구 (RSAT)][install-rsat]를 참조 하십시오.
 
-1. 관리 VM에 로그인 합니다. Azure Portal를 사용 하 여 연결 하는 방법에 대 한 단계는 [Windows SERVER VM에 연결][connect-windows-server-vm]을 참조 하세요.
+1. 관리 VM에 로그인 합니다. Azure Portal를 사용 하 여 연결 하는 방법에 대한 단계는 [Windows SERVER VM에 연결][connect-windows-server-vm]을 참조 하세요.
 1. VM에 로그인하면 **서버 관리자**가 기본적으로 열립니다. 그렇지 않은 경우 **시작** 메뉴에서 **서버 관리자**를 선택합니다.
 1. **서버 관리자** 창의 *대시보드* 창에서 **역할 및 기능 추가**를 선택합니다.
 1. *역할 및 기능 추가 마법사*의 **시작하기 전에** 페이지에서 **다음**을 선택합니다.
@@ -64,7 +64,7 @@ Azure Active Directory Domain Services (Azure AD DS)의 사용자 및 컴퓨터 
 
 ## <a name="open-the-group-policy-management-console-and-edit-an-object"></a>그룹 정책 관리 콘솔를 열고 개체를 편집 합니다.
 
-Azure AD DS 관리 되는 도메인의 사용자 및 컴퓨터에 대 한 기본 Gpo (그룹 정책 개체)가 존재 합니다. 이전 섹션에서 설치 된 그룹 정책 관리 기능을 사용 하 여 기존 GPO를 보고 편집 해 보겠습니다. 다음 섹션에서는 사용자 지정 GPO를 만듭니다.
+Azure AD DS 관리 되는 도메인의 사용자 및 컴퓨터에 대한 기본 Gpo (그룹 정책 개체)가 존재 합니다. 이전 섹션에서 설치 된 그룹 정책 관리 기능을 사용 하 여 기존 GPO를 보고 편집 해 보겠습니다. 다음 섹션에서는 사용자 지정 GPO를 만듭니다.
 
 > [!NOTE]
 > Azure AD DS 관리 되는 도메인에서 그룹 정책을 관리 하려면 *AAD DC Administrators* 그룹의 구성원 인 사용자 계정에 로그인 해야 합니다.
@@ -74,11 +74,11 @@ Azure AD DS 관리 되는 도메인의 사용자 및 컴퓨터에 대 한 기본
 
     ![그룹 정책 관리 콘솔를 열어 그룹 정책 개체를 편집할 수 있습니다.](./media/active-directory-domain-services-admin-guide/gp-management-console.png)
 
-Azure AD DS 관리 되는 도메인에는 두 개의 기본 제공 Gpo (그룹 정책 개체)가 있습니다. *Aaddc 컴퓨터* 컨테이너와 *Aaddc 사용자* 컨테이너에 대 한 하나는 1입니다. 이러한 Gpo를 사용자 지정 하 여 Azure AD DS 관리 되는 도메인 내에서 필요에 따라 그룹 정책을 구성할 수 있습니다.
+Azure AD DS 관리 되는 도메인에는 두 개의 기본 제공 Gpo (그룹 정책 개체)가 있습니다. *Aaddc 컴퓨터* 컨테이너와 *Aaddc 사용자* 컨테이너에 대한 하나는 1입니다. 이러한 Gpo를 사용자 지정 하 여 Azure AD DS 관리 되는 도메인 내에서 필요에 따라 그룹 정책을 구성할 수 있습니다.
 
 1. **그룹 정책 관리** 콘솔에서 **포리스트: aadds.contoso.com** 노드를 확장 합니다. 그런 다음 **도메인** 노드를 확장 합니다.
 
-    *Aaddc 컴퓨터* 와 *Aaddc 사용자*에 대 한 두 개의 기본 제공 컨테이너가 있습니다. 이러한 각 컨테이너에는 기본 GPO가 적용 됩니다.
+    *Aaddc 컴퓨터* 와 *Aaddc 사용자*에 대한 두 개의 기본 제공 컨테이너가 있습니다. 이러한 각 컨테이너에는 기본 GPO가 적용 됩니다.
 
     ![기본 제공 Gpo가 기본 ' AADDC 컴퓨터 ' 및 ' AADDC 사용자 ' 컨테이너에 적용 됨](./media/active-directory-domain-services-admin-guide/builtin-gpos.png)
 
@@ -116,7 +116,7 @@ Azure AD DS 관리 되는 도메인에는 두 개의 기본 제공 Gpo (그룹 �
 
 ## <a name="next-steps"></a>다음 단계
 
-그룹 정책 관리 콘솔를 사용 하 여 구성할 수 있는 사용 가능한 그룹 정책 설정에 대 한 자세한 내용은 [그룹 정책 기본 설정 항목 작업][group-policy-console]을 참조 하세요.
+그룹 정책 관리 콘솔를 사용 하 여 구성할 수 있는 사용 가능한 그룹 정책 설정에 대한 자세한 내용은 [그룹 정책 기본 설정 항목 작업][group-policy-console]을 참조 하세요.
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: ../active-directory/fundamentals/sign-up-organization.md

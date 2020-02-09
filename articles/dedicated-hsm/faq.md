@@ -161,7 +161,7 @@ Microsoft에는 HSM에 대한 관리 또는 암호화 제어 권한이 없습니
 
 ### <a name="q-what-is-the-tenantadmin-account-microsoft-uses-i-am-used-to-the-admin-user-being-admin-on-safenet-hsms"></a>Q: Microsoft에서 사용 하는 "tenantadmin" 계정 이란 "관리 사용자가 사용 중입니다.
 
-HSM 장치는 일반적인 기본 암호를 사용 하 여 관리자의 기본 사용자와 함께 제공 됩니다. Microsoft는 고객이 프로 비전을 기다리는 풀에 있는 동안 기본 암호를 사용 하지 않으려고 합니다. 이는 엄격한 보안 요구 사항을 충족 하지 않습니다. 이러한 이유로 프로 비전 시간에 삭제 되는 강력한 암호를 설정 합니다. 또한 프로 비전 시 "tenantadmin" 라는 관리자 역할에 새 사용자를 만듭니다. 이 사용자는 기본 암호를 가지 며, 처음에 새로 프로 비전 된 장치에 로그인 할 때 첫 번째 작업으로이를 변경 합니다. 이 프로세스는 높은 수준의 보안을 보장 하 고 고객에 대 한 관리 제어의 약속을 유지 합니다. 고객이 해당 계정을 사용 하도록 선호 하는 경우 "tenantadmin" 사용자를 사용 하 여 관리자 사용자 암호를 다시 설정할 수 있다는 점에 유의 해야 합니다. 
+HSM 장치는 일반적인 기본 암호를 사용 하 여 관리자의 기본 사용자와 함께 제공 됩니다. Microsoft는 고객이 프로 비전을 기다리는 풀에 있는 동안 기본 암호를 사용 하지 않으려고 합니다. 이는 엄격한 보안 요구 사항을 충족 하지 않습니다. 이러한 이유로 프로 비전 시간에 삭제 되는 강력한 암호를 설정 합니다. 또한 프로 비전 시 "tenantadmin" 라는 관리자 역할에 새 사용자를 만듭니다. 이 사용자는 기본 암호를 가지 며, 처음에 새로 프로 비전 된 장치에 로그인 할 때 첫 번째 작업으로이를 변경 합니다. 이 프로세스는 높은 수준의 보안을 보장 하 고 고객에 대한 관리 제어의 약속을 유지 합니다. 고객이 해당 계정을 사용 하도록 선호 하는 경우 "tenantadmin" 사용자를 사용 하 여 관리자 사용자 암호를 다시 설정할 수 있다는 점에 유의 해야 합니다. 
 
 ### <a name="q-can-microsoft-or-anyone-at-microsoft-access-keys-in-my-dedicated-hsm"></a>Q: Microsoft 또는 Microsoft의 모든 사용자가 Dedicated HSM의 키에 액세스할 수 있나요?
 
@@ -227,7 +227,7 @@ Dedicated HSM 서비스는 SafeNet Network HSM 7 어플라이언스를 사용합
 
 지원은 Microsoft와 Gemalto 모두에서 제공 됩니다.  하드웨어 또는 네트워크 액세스에 문제가 있는 경우 Microsoft와의 지원 요청을 제기 하 고 HSM 구성, 소프트웨어 및 응용 프로그램 개발에 문제가 있는 경우 Gemalto를 사용 하 여 지원 요청을 발생 시킵니다. 결정 되지 않은 문제가 발생 하는 경우 Microsoft를 사용 하 여 지원 요청을 생성 한 다음 필요한 대로 Gemalto를 수행할 수 있습니다. 
 
-### <a name="q-how-do-i-get-the-client-software-documentation-and-access-to-integration-guidance-for-the-safenet-luna-7-hsm"></a>Q: 클라이언트 소프트웨어, 설명서 및 Luna 7 HSM에 대 한 통합 지침에 대 한 액세스를 얻을 어떻게 할까요? 있나요?
+### <a name="q-how-do-i-get-the-client-software-documentation-and-access-to-integration-guidance-for-the-safenet-luna-7-hsm"></a>Q: 클라이언트 소프트웨어, 설명서 및 Luna 7 HSM에 대한 통합 지침에 대한 액세스를 얻을 어떻게 할까요? 있나요?
 
 서비스에 등록 한 후에는 Gemalto 고객 지원 포털에서 등록을 허용 하는 Gemalto 고객 ID가 제공 됩니다. 그러면 모든 소프트웨어 및 설명서에 액세스할 수 있을 뿐만 아니라 Gemalto에서 직접 지원 요청을 사용 하도록 설정할 수 있습니다.
 
@@ -293,7 +293,7 @@ Dedicated HSM은 SafeNet Network HSM 7 어플라이언스(모델 A790)를 프로
 
 ### <a name="q-how-many-partitions-can-be-created-in-dedicated-hsm"></a>Q: Dedicated HSM에 만들 수 있는 파티션의 수는 어떻게 되나요?
 
-사용 된 Luna HSM 7 model A790에는 서비스 비용의 10 개 파티션에 대 한 라이선스가 포함 되어 있습니다. 장치는 파티션 수가 100 개로 제한 되 고이 제한까지 파티션을 추가 하면 추가 라이선스 비용이 발생 하 고 장치에 새 라이선스 파일이 설치 되어야 합니다.
+사용 된 Luna HSM 7 model A790에는 서비스 비용의 10 개 파티션에 대한 라이선스가 포함 되어 있습니다. 장치는 파티션 수가 100 개로 제한 되 고이 제한까지 파티션을 추가 하면 추가 라이선스 비용이 발생 하 고 장치에 새 라이선스 파일이 설치 되어야 합니다.
 
 ### <a name="q-how-many-keys-can-be-supported-in-dedicated-hsm"></a>Q: Dedicated HSM에서 지원할 수 있는 키의 수는 어떻게 되나요?
 

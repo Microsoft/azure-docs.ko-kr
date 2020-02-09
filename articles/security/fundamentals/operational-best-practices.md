@@ -95,7 +95,7 @@ Security Center의 무료 계층은 Azure 리소스에 대 한 제한 된 보안
 
 Security Center를 사용 하 여 모든 Azure 리소스의 보안 상태를 중앙에서 볼 수 있습니다. 적합한 보안 제어 기능이 마련되어 있으며 올바르게 구성되어 있는지를 한눈에 확인하고 주의가 필요한 리소스를 빠르게 확인할 수 있습니다.
 
-또한 Security Center은 포괄적인 끝점 검색 및 응답 (EDR) 기능을 제공 하는 [Microsoft DEFENDER ATP (Advanced Threat Protection)](../../security-center/security-center-wdatp.md)와 통합 됩니다. Microsoft Defender ATP 통합을 사용 하 여 비정상적인 상태를 찾을 수 있습니다. Security Center에서 모니터링 하는 서버 끝점에 대 한 고급 공격을 감지 하 고 대응할 수도 있습니다.
+또한 Security Center은 포괄적인 엔드포인트 검색 및 응답 (EDR) 기능을 제공 하는 [Microsoft DEFENDER ATP (Advanced Threat Protection)](../../security-center/security-center-wdatp.md)와 통합 됩니다. Microsoft Defender ATP 통합을 사용 하 여 비정상적인 상태를 찾을 수 있습니다. Security Center에서 모니터링 하는 서버 엔드포인트에 대 한 고급 공격을 감지 하 고 대응할 수도 있습니다.
 
 거의 모든 엔터프라이즈 조직은 다양 한 신호 수집 장치에서 로그 정보를 통합 하 여 새로운 위협을 식별 하는 데 도움이 되는 SIEM (보안 정보 및 이벤트 관리) 시스템을 보유 하 고 있습니다. 그런 다음 데이터 분석 시스템에서 로그를 분석 하 여 모든 로그 수집 및 분석 솔루션에서 발생 하는 모든 의미의 의미를 파악 하는 데 도움이 됩니다.
 
@@ -120,7 +120,7 @@ Security Center를 사용 하 여 모든 Azure 리소스의 보안 상태를 중
 **모범 사례**: Azure 로그를 SIEM과 통합 합니다.   
 **세부 정보**: [Azure Monitor를 사용 하 여 데이터를 수집 하 고 내보낼 수](/azure/azure-monitor/overview#integrate-and-export-data)있습니다. 이 방법은 보안 인시던트 조사를 사용 하도록 설정 하는 데 중요 하며 온라인 로그 보존은 제한적입니다. Azure 센티널를 사용 하는 경우 [연결 데이터 원본](../../sentinel/connect-data-sources.md)을 참조 하세요.
 
-**모범 사례**: EDR (끝점 검색 및 응답) 기능을 공격 조사에 통합 하 여 조사 및 구하기 프로세스를 가속화 하 고 가양성을 줄입니다.   
+**모범 사례**: EDR (엔드포인트 검색 및 응답) 기능을 공격 조사에 통합 하 여 조사 및 구하기 프로세스를 가속화 하 고 가양성을 줄입니다.   
 **세부 정보**: Security Center 보안 정책을 통해 [Microsoft DEFENDER ATP 통합을 사용 하도록 설정](../../security-center/security-center-wdatp.md#enable-microsoft-defender-atp-integration) 합니다. 위협 구하기 및 인시던트 대응을 위해 Azure 센티널을 사용 하는 것이 좋습니다.
 
 ## <a name="monitor-end-to-end-scenario-based-network-monitoring"></a>엔드투엔드 시나리오 기반 네트워크 모니터링

@@ -79,7 +79,7 @@ HTTP Status 429,
 
 하나 이상의 클라이언트가 누적 작업을 요청 빈도 이상에서 일관 되 게 작동 하는 경우 현재 9로 설정 된 기본 재시도 횟수는 충분 하지 않을 수 있습니다. 이러한 경우 클라이언트는 상태 코드 429을 응용 프로그램에 `RequestRateTooLargeException`을 throw 합니다. 기본 재시도 횟수는 ConnectionPolicy 인스턴스에서 `RetryOptions`를 설정하여 변경할 수 있습니다. 기본적으로 요청이 요청 속도로 계속 작동 하는 경우 누적 대기 시간 30 초 후에 상태 코드 429의 `RequestRateTooLargeException` 반환 됩니다. 현재 재시도 횟수가 최대 재시도 횟수보다 작은 경우에도 이러한 현상이 발생하기 때문에 기본값인 9 또는 사용자 정의 값으로 두세요. 
 
-[MaxRetryAttemptsOnThrottledRequests](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.retryoptions.maxretryattemptsonthrottledrequests?view=azure-dotnet) 은 3으로 설정 되므로이 경우 요청 작업은 컨테이너에 대 한 예약 된 처리량을 초과 하 여 속도가 제한 되는 경우 요청 작업은 응용 프로그램에 예외를 throw 하기 전에 3 번 다시 시도 합니다. [MaxRetryWaitTimeInSeconds](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.retryoptions.maxretrywaittimeinseconds?view=azure-dotnet#Microsoft_Azure_Documents_Client_RetryOptions_MaxRetryWaitTimeInSeconds) 가 60로 설정 되어 있으므로이 경우 첫 번째 요청이 60 초를 초과 하 여 누적 된 재시도 대기 시간 (초)이 초를 초과 하면 예외가 throw 됩니다.
+[MaxRetryAttemptsOnThrottledRequests](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.retryoptions.maxretryattemptsonthrottledrequests?view=azure-dotnet) 은 3으로 설정 되므로이 경우 요청 작업은 컨테이너에 대한 예약 된 처리량을 초과 하 여 속도가 제한 되는 경우 요청 작업은 응용 프로그램에 예외를 throw 하기 전에 3 번 다시 시도 합니다. [MaxRetryWaitTimeInSeconds](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.retryoptions.maxretrywaittimeinseconds?view=azure-dotnet#Microsoft_Azure_Documents_Client_RetryOptions_MaxRetryWaitTimeInSeconds) 가 60로 설정 되어 있으므로이 경우 첫 번째 요청이 60 초를 초과 하 여 누적 된 재시도 대기 시간 (초)이 초를 초과 하면 예외가 throw 됩니다.
 
 ```csharp
 ConnectionPolicy connectionPolicy = new ConnectionPolicy(); 
@@ -157,7 +157,7 @@ Azure Cosmos DB를 사용할 경우 다음 단계를 따르면 가용성이 뛰�
 
 2. 애플리케이션에 필요한 예약된 처리량을 예측하는 한 가지 방법은 애플리케이션에서 사용하는 대표적인 Azure Cosmos 컨테이너 또는 데이터베이스에 대해 실행되는 일반 작업과 연결된 요청 단위 RU 요금을 기록한 다음, 예상되는 초당 수행되는 작업 수를 추정하는 것입니다. 일반 쿼리 및 해당 사용량도 측정하여 포함해야 합니다. 프로그래밍 방식으로 또는 포털을 사용하여 쿼리의 RU 비용을 추정하는 방법을 알아보려면 [쿼리 비용 최적화](online-backup-and-restore.md)를 참조하세요. 
 
-3. RUs에서 작업 및 비용을 가져오는 또 다른 방법은 작업/기간 및 요청 요금에 대 한 분석을 제공 하는 Azure Monitor 로그를 사용 하는 것입니다. Azure Cosmos DB는 모든 작업에 대해 요청 요금을 제공하므로, 모든 작업 요금이 응답에서 다시 저장된 후 분석에 사용될 수 있습니다. 
+3. RUs에서 작업 및 비용을 가져오는 또 다른 방법은 작업/기간 및 요청 요금에 대한 분석을 제공 하는 Azure Monitor 로그를 사용 하는 것입니다. Azure Cosmos DB는 모든 작업에 대해 요청 요금을 제공하므로, 모든 작업 요금이 응답에서 다시 저장된 후 분석에 사용될 수 있습니다. 
 
 4. 프로비전된 처리량 규모를 워크로드 요구에 맞게 필요한 만큼 탄력적으로 확장 및 축소할 수 있습니다. 
 

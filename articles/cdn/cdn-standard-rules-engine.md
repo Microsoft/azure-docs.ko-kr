@@ -1,6 +1,6 @@
 ---
 title: 규칙 엔진을 사용 하 여 표준 Azure CDN에서 HTTPS 적용 | Microsoft Docs
-description: Microsoft Standard Azure Content Delivery Network (Azure CDN)에 대 한 규칙 엔진을 사용 하 여 특정 유형의 콘텐츠 배달 차단을 차단 하 고, 캐싱 정책을 정의 하 고, HTTP 헤더를 수정 하는 등 Azure CDN HTTP 요청을 처리 하는 방법을 사용자 지정할 수 있습니다. 이 문서에서는 사용자를 HTTPS로 리디렉션하는 규칙을 만드는 방법에 대해 알아봅니다.
+description: Microsoft Standard Azure Content Delivery Network (Azure CDN)에 대한 규칙 엔진을 사용 하 여 특정 유형의 콘텐츠 배달 차단을 차단 하 고, 캐싱 정책을 정의 하 고, HTTP 헤더를 수정 하는 등 Azure CDN HTTP 요청을 처리 하는 방법을 사용자 지정할 수 있습니다. 이 문서에서는 사용자를 HTTPS로 리디렉션하는 규칙을 만드는 방법에 대해 알아봅니다.
 services: cdn
 author: mdgattuso
 ms.service: azure-cdn
@@ -14,13 +14,13 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/19/2019
 ms.locfileid: "74171580"
 ---
-# <a name="set-up-the-standard-rules-engine-for-azure-cdn"></a>Azure CDN에 대 한 표준 규칙 엔진 설정
+# <a name="set-up-the-standard-rules-engine-for-azure-cdn"></a>Azure CDN에 대한 표준 규칙 엔진 설정
 
-이 문서에서는 Azure Content Delivery Network (Azure CDN)에 대 한 표준 규칙 엔진을 설정 하 고 사용 하는 방법을 설명 합니다.
+이 문서에서는 Azure Content Delivery Network (Azure CDN)에 대한 표준 규칙 엔진을 설정 하 고 사용 하는 방법을 설명 합니다.
 
 ## <a name="standard-rules-engine"></a>표준 규칙 엔진
 
-Azure CDN에 대 한 표준 규칙 엔진을 사용 하 여 HTTP 요청을 처리 하는 방법을 사용자 지정할 수 있습니다. 예를 들어 규칙 엔진을 사용 하 여 콘텐츠 배달을 적용 하 여 특정 프로토콜을 사용 하거나, 캐싱 정책을 정의 하거나, HTTP 헤더를 수정할 수 있습니다. 이 문서에서는 사용자를 자동으로 HTTPS로 리디렉션하는 규칙을 만드는 방법을 보여 줍니다. 
+Azure CDN에 대한 표준 규칙 엔진을 사용 하 여 HTTP 요청을 처리 하는 방법을 사용자 지정할 수 있습니다. 예를 들어 규칙 엔진을 사용 하 여 콘텐츠 배달을 적용 하 여 특정 프로토콜을 사용 하거나, 캐싱 정책을 정의 하거나, HTTP 헤더를 수정할 수 있습니다. 이 문서에서는 사용자를 자동으로 HTTPS로 리디렉션하는 규칙을 만드는 방법을 보여 줍니다. 
 
 > [!NOTE]
 > 이 문서에서 설명 하는 규칙 엔진은 Microsoft의 표준 Azure CDN에만 사용할 수 있습니다. 
@@ -29,7 +29,7 @@ Azure CDN에 대 한 표준 규칙 엔진을 사용 하 여 HTTP 요청을 처�
 
 1. Microsoft 프로필에서 Azure Content Delivery Network로 이동 합니다.
 
-1. **CDN 프로필** 페이지에서 규칙을 만들 끝점을 선택 합니다.
+1. **CDN 프로필** 페이지에서 규칙을 만들 엔드포인트을 선택 합니다.
   
 1. **규칙 엔진** 탭을 선택 합니다.
    

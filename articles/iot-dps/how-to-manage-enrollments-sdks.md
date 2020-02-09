@@ -34,7 +34,7 @@ ms.locfileid: "74975077"
 ## <a name="create-a-device-enrollment"></a>장치 등록 만들기
 프로 비전 서비스를 사용 하 여 장치를 등록 하는 방법에는 두 가지가 있습니다.
 
-* **등록 그룹** 은 [루트 인증서](https://docs.microsoft.com/azure/iot-dps/concepts-security#root-certificate) 또는 [중간 인증서](https://docs.microsoft.com/azure/iot-dps/concepts-security#intermediate-certificate)로 서명 된 x.509 인증서의 일반적인 증명 메커니즘을 공유 하는 장치 그룹에 대 한 항목입니다. 원하는 초기 구성을 공유 하는 많은 수의 장치 또는 동일한 테 넌 트로 이동 하는 장치에 대해 등록 그룹을 사용 하는 것이 좋습니다. X.509 증명 메커니즘을 사용 하는 장치만 *등록 그룹*으로 등록할 수 있습니다. 
+* **등록 그룹** 은 [루트 인증서](https://docs.microsoft.com/azure/iot-dps/concepts-security#root-certificate) 또는 [중간 인증서](https://docs.microsoft.com/azure/iot-dps/concepts-security#intermediate-certificate)로 서명 된 x.509 인증서의 일반적인 증명 메커니즘을 공유 하는 장치 그룹에 대 한 항목입니다. 원하는 초기 구성을 공유 하는 많은 수의 장치 또는 동일한 테넌트로 이동 하는 장치에 대해 등록 그룹을 사용 하는 것이 좋습니다. X.509 증명 메커니즘을 사용 하는 장치만 *등록 그룹*으로 등록할 수 있습니다. 
 
     이 워크플로를 따르는 Sdk를 사용 하 여 등록 그룹을 만들 수 있습니다.
 

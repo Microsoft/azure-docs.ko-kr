@@ -56,7 +56,7 @@ Dynamics CRM에 대해 Azure Active Directory를 구성하려면 다음 단계�
 
 1.  [Azure Portal](https://portal.azure.com/)에 로그인하고 Azure Active Directory 서비스를 선택합니다.
 
-2.  **속성** 을 선택 하 고 **디렉터리 Id**를 복사 합니다. Cloud 파트너 포털에서 사용 해야 하는 테 넌 트 계정 id입니다.
+2.  **속성** 을 선택 하 고 **디렉터리 Id**를 복사 합니다. Cloud 파트너 포털에서 사용 해야 하는 테넌트 계정 id입니다.
 
     ![디렉터리 ID 가져오기](./media/cloud-partner-portal-lead-management-instructions-dynamics/directoryid.png)
 

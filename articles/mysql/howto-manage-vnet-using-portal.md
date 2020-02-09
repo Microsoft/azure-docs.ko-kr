@@ -1,5 +1,5 @@
 ---
-title: VNet 끝점 관리-Azure Portal-Azure Database for MySQL
+title: VNet 엔드포인트 관리-Azure Portal-Azure Database for MySQL
 description: Azure Portal을 사용한 Azure Database for MySQL VNet 서비스 엔드포인트 만들기 및 관리
 author: bolzmj
 ms.author: mbolz
@@ -28,7 +28,7 @@ VNet(가상 네트워크) 서비스 엔드포인트 및 규칙이 가상 네트�
 2. Azure 서비스 액세스 허용 컨트롤이 **해제**되어 있는지 확인합니다.
 
 > [!Important]
-> 제어를 설정 된 상태로 두면 Azure MySQL 데이터베이스 서버가 모든 서브넷의 통신을 수락 합니다. 제어 집합을 ON으로 유지하면 보안 관점에서 과도하게 액세스할 수도 있습니다. Microsoft Azure Virtual Network 서비스 끝점 기능은 Azure Database for MySQL의 가상 네트워크 규칙 기능을 함께 사용 하 여 보안 노출 영역을 줄일 수 있습니다.
+> 제어를 설정 된 상태로 두면 Azure MySQL 데이터베이스 서버가 모든 서브넷의 통신을 수락 합니다. 제어 집합을 ON으로 유지하면 보안 관점에서 과도하게 액세스할 수도 있습니다. Microsoft Azure Virtual Network 서비스 엔드포인트 기능은 Azure Database for MySQL의 가상 네트워크 규칙 기능을 함께 사용 하 여 보안 노출 영역을 줄일 수 있습니다.
 
 3. 다음으로, **+ 기존 가상 네트워크 추가**를 클릭합니다. 기존 VNet이 없는 경우 **+ 새 가상 네트워크 만들기**를 클릭할 수 있습니다. [빠른 시작: Azure Portal을 사용하여 가상 네트워크 만들기](../virtual-network/quick-create-portal.md) 참조
 

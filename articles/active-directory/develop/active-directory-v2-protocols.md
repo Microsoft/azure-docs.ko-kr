@@ -1,6 +1,6 @@
 ---
 title: OAuth 2.0 및 Openid connect 연결 프로토콜-Microsoft identity platform | Microsoft
-description: Microsoft id 플랫폼 끝점에서 지 원하는 OAuth 2.0 및 Openid connect Connect 프로토콜에 대 한 가이드입니다.
+description: Microsoft id 플랫폼 엔드포인트에서 지 원하는 OAuth 2.0 및 Openid connect Connect 프로토콜에 대 한 가이드입니다.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -22,10 +22,10 @@ ms.locfileid: "76698529"
 ---
 # <a name="oauth-20-and-openid-connect-protocols-on-the-microsoft-identity-platform"></a>Microsoft id 플랫폼의 OAuth 2.0 및 Openid connect Connect 프로토콜
 
-업계 표준 프로토콜, Openid connect Connect 및 OAuth 2.0를 사용 하는 id 인 서비스를 위한 Microsoft id 플랫폼 끝점입니다. 서비스는 표준을 준수하지만 이러한 프로토콜의 두 구현 간에는 약간의 차이가 있을 수 있습니다. 여기에 있는 정보는 [오픈 소스 라이브러리](reference-v2-libraries.md) 중 하나를 사용하는 대신 HTTP 요청을 직접 전송 및 처리하여 코드를 작성하거나 타사 오픈 소스 라이브러리를 사용하도록 선택한 경우에 유용합니다.
+업계 표준 프로토콜, Openid connect Connect 및 OAuth 2.0를 사용 하는 id 인 서비스를 위한 Microsoft id 플랫폼 엔드포인트입니다. 서비스는 표준을 준수하지만 이러한 프로토콜의 두 구현 간에는 약간의 차이가 있을 수 있습니다. 여기에 있는 정보는 [오픈 소스 라이브러리](reference-v2-libraries.md) 중 하나를 사용하는 대신 HTTP 요청을 직접 전송 및 처리하여 코드를 작성하거나 타사 오픈 소스 라이브러리를 사용하도록 선택한 경우에 유용합니다.
 
 > [!NOTE]
-> 모든 Azure AD 시나리오 및 기능이 Microsoft id 플랫폼 끝점에서 지원 되는 것은 아닙니다. Microsoft id 플랫폼 끝점을 사용 해야 하는지 확인 하려면 [microsoft id 플랫폼 제한 사항](active-directory-v2-limitations.md)을 참조 하세요.
+> 모든 Azure AD 시나리오 및 기능이 Microsoft id 플랫폼 엔드포인트에서 지원 되는 것은 아닙니다. Microsoft id 플랫폼 엔드포인트을 사용 해야 하는지 확인 하려면 [microsoft id 플랫폼 제한 사항](active-directory-v2-limitations.md)을 참조 하세요.
 
 ## <a name="the-basics"></a>기본 사항
 
@@ -50,7 +50,7 @@ ms.locfileid: "76698529"
 
 ## <a name="endpoints"></a>엔드포인트
 
-등록 되 면 앱은 끝점에 요청을 전송 하 여 Microsoft id 플랫폼과 통신 합니다.
+등록 되 면 앱은 엔드포인트에 요청을 전송 하 여 Microsoft id 플랫폼과 통신 합니다.
 
 ```
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize
@@ -69,13 +69,13 @@ https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token
 이러한 엔드포인트와 상호 작용하는 방법을 알아보려면 [프로토콜](#protocols) 섹션에서 특정 앱 형식을 선택하고 자세한 정보 링크를 따릅니다.
 
 > [!TIP]
-> Azure AD에 등록 된 모든 앱은 개인 계정에 로그인 하지 않아도 Microsoft id 플랫폼 끝점을 사용할 수 있습니다.  이러한 방식으로 응용 프로그램을 다시 만들지 않고 기존 응용 프로그램을 Microsoft id 플랫폼 및 [Msal](reference-v2-libraries.md) 로 마이그레이션할 수 있습니다.  
+> Azure AD에 등록 된 모든 앱은 개인 계정에 로그인 하지 않아도 Microsoft id 플랫폼 엔드포인트을 사용할 수 있습니다.  이러한 방식으로 응용 프로그램을 다시 만들지 않고 기존 응용 프로그램을 Microsoft id 플랫폼 및 [Msal](reference-v2-libraries.md) 로 마이그레이션할 수 있습니다.  
 
 ## <a name="tokens"></a>토큰
 
 OAuth 2.0 및 Openid connect Connect의 Microsoft id 플랫폼 구현은 JWTs로 표시 되는 전달자 토큰을 포함 하 여 전달자 토큰을 광범위 하 게 사용 합니다. 전달자 토큰은 보호된 리소스에 대한 "전달자" 액세스 권한을 부여하는 간단한 보안 토큰입니다. 이런 의미에서, "전달자"는 토큰을 제공할 수 있는 당사자입니다. 파티는 전달자 토큰을 수신 하기 위해 먼저 Microsoft id 플랫폼에 인증 해야 하지만 전송 및 저장 시 토큰을 보호 하는 데 필요한 단계를 수행 하지 않은 경우 의도 하지 않은 당사자가 가로채서 사용할 수 있습니다. 일부 보안 토큰에는 권한 없는 당사자가 사용하는 것을 방지하는 기본 제공 메커니즘이 있지만, 전달자 토큰에는 이러한 메커니즘이 없으므로 전송 계층 보안(HTTPS)과 같은 보안 채널에서 전달자 토큰을 전송해야 합니다. 전달자 토큰이 보안되지 않은 상태로 전송되는 경우, 악의적 사용자가 메시지 가로채기(man-in-the-middle) 공격으로 토큰을 획득하고 보호된 리소스에 무단으로 액세스하는 데 이 토큰을 사용할 수 있습니다. 나중에 사용하기 위해 전달자 토큰을 저장하거나 캐싱할 때도 동일한 보안 원칙이 적용됩니다. 항상 앱이 안전한 방식으로 전달자 토큰을 전송하고 저장하도록 합니다. 전달자 토큰의 보안 고려 사항을 자세히 알아보려면 [RFC 6750 Section 5](https://tools.ietf.org/html/rfc6750)를 참조하세요.
 
-Microsoft id 플랫폼 끝점에서 사용 되는 다양 한 토큰 형식에 대 한 자세한 내용은 [microsoft id 플랫폼 끝점 토큰 참조](v2-id-and-access-tokens.md)에서 확인할 수 있습니다.
+Microsoft id 플랫폼 엔드포인트에서 사용 되는 다양 한 토큰 형식에 대 한 자세한 내용은 [microsoft id 플랫폼 엔드포인트 토큰 참조](v2-id-and-access-tokens.md)에서 확인할 수 있습니다.
 
 ## <a name="protocols"></a>프로토콜
 

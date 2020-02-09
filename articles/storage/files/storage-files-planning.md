@@ -223,7 +223,7 @@ Azure File Sync를 사용 하 여 여러 Azure 파일 공유를 단일 Windows �
 
 온-프레미스 파일 공유와 같은 기존 파일 공유에서 Azure Files로 데이터를 대량으로 쉽게 전송할 수 있는 여러 옵션이 있습니다. 자주 사용되는 옵션 몇 가지는 다음과 같습니다(비 한정적 목록).
 
-* **[Azure File Sync](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning)** : Azure 파일 공유 ("클라우드 끝점")와 Windows 디렉터리 네임 스페이스 ("서버 끝점") 간의 첫 번째 동기화의 일부로, Azure File Sync는 기존 파일 공유의 모든 데이터를 Azure Files에 복제 합니다.
+* **[Azure File Sync](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning)** : Azure 파일 공유 ("클라우드 엔드포인트")와 Windows 디렉터리 네임 스페이스 ("서버 엔드포인트") 간의 첫 번째 동기화의 일부로, Azure File Sync는 기존 파일 공유의 모든 데이터를 Azure Files에 복제 합니다.
 * **[Azure Import/Export](../common/storage-import-export-service.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)** : Azure Import/Export 서비스를 사용하면 하드 디스크 드라이브를 Azure 데이터 센터에 발송하여 많은 양의 데이터를 안전하게 Azure 파일 공유로 전송할 수 있습니다. 
 * **[Robocopy](https://technet.microsoft.com/library/cc733145.aspx)** : Robocopy는 Windows 및 Windows Server와 함께 제공되는 잘 알려진 복사 도구입니다. 파일 공유를 로컬로 탑재하고 탑재된 위치를 Robocopy 명령의 대상으로 사용하는 방식으로 Robocopy를 사용하여 데이터를 Azure Files로 전송할 수 있습니다.
 * **[AzCopy](../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)** : AzCopy는 간단한 명령과 최적의 성능으로 데이터를 Azure Files 및 Azure Blob Storage에서 복사하도록 디자인된 명령줄 유틸리티입니다.

@@ -74,7 +74,7 @@ Key Vault에 대한 액세스 정책을 설정하려면 [Azure Portal](https://p
 
 방화벽 규칙이 적용 되 면 사용자는 요청이 허용 되는 가상 네트워크 또는 IPv4 주소 범위에서 시작 되는 경우에만 Key Vault에서 데이터를 읽을 수 있습니다. Azure Portal에서 Key Vault에 액세스하는 경우도 마찬가지입니다. 사용자가 Azure Portal에서 키 자격 증명 모음으로 이동할 수 있다고 해도 해당 클라이언트 머신이 허용 목록에 없는 경우 키, 비밀 또는 인증서를 나열하지 못할 수 있습니다. 다른 Azure 서비스의 Key Vault 선택기도 마찬가지입니다. 방화벽 규칙이 사용자의 클라이언트 머신을 금지하는 경우 해당 사용자는 키 자격 증명 모음 목록을 확인할 수 있지만 키를 나열하지는 못합니다.
 
-Azure Key Vault 네트워크 주소에 대 한 자세한 내용은 [Azure Key Vault에 대 한 Virtual network 서비스 끝점](key-vault-overview-vnet-service-endpoints.md) 을 검토 하십시오.
+Azure Key Vault 네트워크 주소에 대 한 자세한 내용은 [Azure Key Vault에 대 한 Virtual network 서비스 엔드포인트](key-vault-overview-vnet-service-endpoints.md) 을 검토 하십시오.
 
 ## <a name="monitoring"></a>모니터링
 
@@ -96,6 +96,6 @@ Key Vault 로깅은 자격 증명 모음에서 수행 된 작업에 대 한 정�
 
 ## <a name="next-steps"></a>다음 단계
 
-- [Azure Key Vault에 대 한 가상 네트워크 서비스 끝점](key-vault-overview-vnet-service-endpoints.md)
+- [Azure Key Vault에 대 한 가상 네트워크 서비스 엔드포인트](key-vault-overview-vnet-service-endpoints.md)
 - [RBAC: 기본 제공 역할](../role-based-access-control/built-in-roles.md)
-- [Azure Key Vault에 대 한 가상 네트워크 서비스 끝점](key-vault-overview-vnet-service-endpoints.md)
+- [Azure Key Vault에 대 한 가상 네트워크 서비스 엔드포인트](key-vault-overview-vnet-service-endpoints.md)

@@ -312,7 +312,7 @@ ms.locfileid: "76760711"
 > | ------------- | ----------- |
 > | cdnwebapplicationfirewallpolicies | 아닙니다. |
 > | 프로필 | 아닙니다. | 
-> | 프로필/끝점 | 아닙니다. | 
+> | 프로필/엔드포인트 | 아닙니다. | 
 
 ## <a name="microsoftcertificateregistration"></a>Microsoft.CertificateRegistration
 

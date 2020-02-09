@@ -57,19 +57,19 @@ Blob/Object storage의 REST Api를 통해 데이터를 Data Box 장치에 복사
 
     !["연결 및 복사" 페이지](media/data-lake-storage-migrate-on-premises-HDFS-cluster/data-box-connect-rest.png)
 
-2. 액세스 저장소 계정 및 데이터 업로드 대화 상자에서 **Blob service 끝점** 및 **저장소 계정 키**를 복사 합니다. Blob service 끝점에서 `https://`와 후행 슬래시를 생략 합니다.
+2. 액세스 저장소 계정 및 데이터 업로드 대화 상자에서 **Blob service 엔드포인트** 및 **저장소 계정 키**를 복사 합니다. Blob service 엔드포인트에서 `https://`와 후행 슬래시를 생략 합니다.
 
-    이 경우 끝점은 `https://mystorageaccount.blob.mydataboxno.microsoftdatabox.com/`입니다. 사용할 URI의 호스트 부분은 `mystorageaccount.blob.mydataboxno.microsoftdatabox.com`입니다. 예제는 [http를 통해 REST에 연결](/azure/databox/data-box-deploy-copy-data-via-rest)하는 방법을 참조 하세요. 
+    이 경우 엔드포인트은 `https://mystorageaccount.blob.mydataboxno.microsoftdatabox.com/`입니다. 사용할 URI의 호스트 부분은 `mystorageaccount.blob.mydataboxno.microsoftdatabox.com`입니다. 예제는 [http를 통해 REST에 연결](/azure/databox/data-box-deploy-copy-data-via-rest)하는 방법을 참조 하세요. 
 
      !["저장소 계정 액세스 및 데이터 업로드" 대화 상자](media/data-lake-storage-migrate-on-premises-HDFS-cluster/data-box-connection-string-http.png)
 
-3. 각 노드에서 끝점 및 Data Box 또는 Data Box Heavy 노드 IP 주소를 `/etc/hosts`에 추가 합니다.
+3. 각 노드에서 엔드포인트 및 Data Box 또는 Data Box Heavy 노드 IP 주소를 `/etc/hosts`에 추가 합니다.
 
     ```    
     10.128.5.42  mystorageaccount.blob.mydataboxno.microsoftdatabox.com
     ```
 
-    DNS에 다른 메커니즘을 사용 하는 경우 Data Box 끝점을 확인할 수 있는지 확인 해야 합니다.
+    DNS에 다른 메커니즘을 사용 하는 경우 Data Box 엔드포인트을 확인할 수 있는지 확인 해야 합니다.
 
 4. 셸 변수 `azjars` `hadoop-azure`의 위치로 설정 하 고 jar 파일을 `azure-storage` 합니다. 이러한 파일은 Hadoop 설치 디렉터리에서 찾을 수 있습니다.
 
@@ -88,7 +88,7 @@ Blob/Object storage의 REST Api를 통해 데이터를 Data Box 장치에 복사
     -mkdir -p  wasb://<container_name>@<blob_service_endpoint>/<destination_directory>
     ```
 
-    * `<blob_service_endpoint>` 자리 표시자를 blob service 끝점의 이름으로 바꿉니다.
+    * `<blob_service_endpoint>` 자리 표시자를 blob service 엔드포인트의 이름으로 바꿉니다.
 
     * `<account_key>` 자리 표시자를 계정의 액세스 키로 바꿉니다.
 
@@ -105,7 +105,7 @@ Blob/Object storage의 REST Api를 통해 데이터를 Data Box 장치에 복사
     -ls -R  wasb://<container_name>@<blob_service_endpoint>/
     ```
 
-   * `<blob_service_endpoint>` 자리 표시자를 blob service 끝점의 이름으로 바꿉니다.
+   * `<blob_service_endpoint>` 자리 표시자를 blob service 엔드포인트의 이름으로 바꿉니다.
 
    * `<account_key>` 자리 표시자를 계정의 액세스 키로 바꿉니다.
 
@@ -123,7 +123,7 @@ Blob/Object storage의 REST Api를 통해 데이터를 Data Box 장치에 복사
            wasb://<container_name>@<blob_service_endpoint>/<destination_directory>
     ```
 
-    * `<blob_service_endpoint>` 자리 표시자를 blob service 끝점의 이름으로 바꿉니다.
+    * `<blob_service_endpoint>` 자리 표시자를 blob service 엔드포인트의 이름으로 바꿉니다.
 
     * `<account_key>` 자리 표시자를 계정의 액세스 키로 바꿉니다.
 

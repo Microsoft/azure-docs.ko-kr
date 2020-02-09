@@ -1,6 +1,6 @@
 ---
 title: SQL 쿼리 성능 & 실행 메트릭 가져오기
-description: SQL 쿼리 실행 메트릭을 검색 하 고 Azure Cosmos DB 요청에 대 한 SQL 쿼리 성능을 프로 파일링 하는 방법에 대해 알아봅니다.
+description: SQL 쿼리 실행 메트릭을 검색 하 고 Azure Cosmos DB 요청에 대한 SQL 쿼리 성능을 프로 파일링 하는 방법에 대해 알아봅니다.
 author: ginamr
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
@@ -16,7 +16,7 @@ ms.locfileid: "70998375"
 ---
 # <a name="get-sql-query-execution-metrics-and-analyze-query-performance-using-net-sdk"></a>.NET SDK를 사용 하 여 SQL 쿼리 실행 메트릭 가져오기 및 쿼리 성능 분석
 
-이 문서에서는 Azure Cosmos DB에서 SQL 쿼리 성능을 프로 파일링 하는 방법을 보여 줍니다. 이 프로 파일링은 .net SDK `QueryMetrics` 에서 검색 된를 사용 하 여 수행할 수 있으며 여기에 자세히 설명 되어 있습니다. [Querymetrics](https://msdn.microsoft.com/library/microsoft.azure.documents.querymetrics.aspx) 백 엔드 쿼리 실행에 대 한 정보를 포함 하는 강력한 형식의 개체입니다. 이러한 메트릭은 [쿼리 성능 조정](https://docs.microsoft.com/azure/cosmos-db/documentdb-sql-query-metrics) 문서에 자세히 설명 되어 있습니다.
+이 문서에서는 Azure Cosmos DB에서 SQL 쿼리 성능을 프로 파일링 하는 방법을 보여 줍니다. 이 프로 파일링은 .net SDK `QueryMetrics` 에서 검색 된를 사용 하 여 수행할 수 있으며 여기에 자세히 설명 되어 있습니다. [Querymetrics](https://msdn.microsoft.com/library/microsoft.azure.documents.querymetrics.aspx) 백 엔드 쿼리 실행에 대한 정보를 포함 하는 강력한 형식의 개체입니다. 이러한 메트릭은 [쿼리 성능 조정](https://docs.microsoft.com/azure/cosmos-db/documentdb-sql-query-metrics) 문서에 자세히 설명 되어 있습니다.
 
 ## <a name="set-the-feedoptions-parameter"></a>FeedOptions 매개 변수 설정
 
@@ -62,7 +62,7 @@ while (documentQuery.HasMoreResults)
 ```
 ## <a name="aggregating-querymetrics"></a>QueryMetrics 집계
 
-이전 섹션에서 [ExecuteNextAsync](https://msdn.microsoft.com/library/azure/dn850294.aspx) 메서드를 여러 번 호출 했습니다. 각 호출은 쿼리를 `FeedResponse` 연속 하는 모든 항목에 `QueryMetrics`대 한 사전을 포함 하는 개체를 반환 했습니다. 다음 예제에서는 LINQ를 `QueryMetrics` 사용 하 여 집계 하는 방법을 보여 줍니다.
+이전 섹션에서 [ExecuteNextAsync](https://msdn.microsoft.com/library/azure/dn850294.aspx) 메서드를 여러 번 호출 했습니다. 각 호출은 쿼리를 `FeedResponse` 연속 하는 모든 항목에 `QueryMetrics`대한 사전을 포함 하는 개체를 반환 했습니다. 다음 예제에서는 LINQ를 `QueryMetrics` 사용 하 여 집계 하는 방법을 보여 줍니다.
 
 ```csharp
 List<QueryMetrics> queryMetricsList = new List<QueryMetrics>();
@@ -129,7 +129,7 @@ IReadOnlyDictionary<string, QueryMetrics> queryMetrics = feedResponse.QueryMetri
 
 ## <a name="expensive-queries"></a>비용이 많이 드는 쿼리
 
-각 쿼리에서 사용 되는 요청 단위를 캡처하여 높은 처리량을 사용 하는 비용이 많이 드는 쿼리나 쿼리를 조사할 수 있습니다. 에서`FeedResponse` [requestcharge](https://msdn.microsoft.com/library/azure/dn948712.aspx) 속성을 사용 하 여 요청 요금을 얻을 수 있습니다. Azure Portal 및 다른 Sdk를 사용 하 여 요청 요금을 얻는 방법에 대 한 자세한 내용은 [요청 단위 요금 청구](find-request-unit-charge.md) 문서를 참조 하세요.
+각 쿼리에서 사용 되는 요청 단위를 캡처하여 높은 처리량을 사용 하는 비용이 많이 드는 쿼리나 쿼리를 조사할 수 있습니다. 에서`FeedResponse` [requestcharge](https://msdn.microsoft.com/library/azure/dn948712.aspx) 속성을 사용 하 여 요청 요금을 얻을 수 있습니다. Azure Portal 및 다른 Sdk를 사용 하 여 요청 요금을 얻는 방법에 대한 자세한 내용은 [요청 단위 요금 청구](find-request-unit-charge.md) 문서를 참조 하세요.
 
 ```csharp
 string query = "SELECT * FROM c";
@@ -231,7 +231,7 @@ WHERE c.description = "BABYFOOD, DESSERT, FRUIT DESSERT, WITHOUT ASCORBIC ACID, 
 
 이제 인덱스에서이 쿼리를 제공할 수 있습니다.
 
-쿼리 성능 튜닝에 대 한 자세한 내용은 [쿼리 성능 조정](https://docs.microsoft.com/azure/cosmos-db/documentdb-sql-query-metrics) 문서를 참조 하세요.
+쿼리 성능 튜닝에 대한 자세한 내용은 [쿼리 성능 조정](https://docs.microsoft.com/azure/cosmos-db/documentdb-sql-query-metrics) 문서를 참조 하세요.
 
 ## <a id="References"></a>참조
 

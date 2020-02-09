@@ -1,5 +1,5 @@
 ---
-title: Apache Cordova에 대 한 인증 추가
+title: Apache Cordova에 대한 인증 추가
 description: Azure App Service에서 Mobile Apps를 사용 하 여 Google, Facebook, Twitter, Microsoft 등의 id 공급자를 사용 하 여 Apache Cordova 앱의 사용자를 인증 하는 방법을 알아봅니다.
 ms.assetid: 10dd6dc9-ddf5-423d-8205-00ad74929f0d
 ms.tgt_pltfrm: mobile-html

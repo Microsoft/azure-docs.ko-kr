@@ -48,11 +48,11 @@ ms.locfileid: "74974515"
 
 HLS
 
-{스트리밍 끝점 이름-media services 계정 이름}. windowsazure.mediaservices/{locator ID}/{filename}.ism/Manifest (format = m3u8-aapl-v3-aapl)
+{스트리밍 엔드포인트 이름-media services 계정 이름}. windowsazure.mediaservices/{locator ID}/{filename}.ism/Manifest (format = m3u8-aapl-v3-aapl)
 
 MPEG DASH
 
-{스트리밍 끝점 이름-media services 계정 이름}. windowsazure.mediaservices/{locator ID}/{filename}.ism/Manifest (format = mpd)
+{스트리밍 엔드포인트 이름-media services 계정 이름}. windowsazure.mediaservices/{locator ID}/{filename}.ism/Manifest (format = mpd)
 
 ## <a name="considerations"></a>Megfontolandó szempontok
 * Asset배달 Ypolicy를 삭제 하기 전에 해당 자산과 연결 된 모든 스트리밍 로케이터를 삭제 해야 합니다. 새 Asset배달 Ypolicy를 사용 하 여 나중에 원하는 경우 새 스트리밍 로케이터를 만들 수 있습니다.

@@ -1,6 +1,6 @@
 ---
 title: Azure Data Catalog 문제를 해결 하는 방법
-description: 이 문서에서는 Azure Data Catalog 리소스에 대 한 일반적인 문제 해결 문제를 설명 합니다.
+description: 이 문서에서는 Azure Data Catalog 리소스에 대한 일반적인 문제 해결 문제를 설명 합니다.
 author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
@@ -15,7 +15,7 @@ ms.locfileid: "68879548"
 ---
 # <a name="troubleshooting-azure-data-catalog"></a>문제 해결 Azure Data Catalog
 
-이 문서에서는 Azure Data Catalog 리소스에 대 한 일반적인 문제 해결 문제를 설명 합니다. 
+이 문서에서는 Azure Data Catalog 리소스에 대한 일반적인 문제 해결 문제를 설명 합니다. 
 
 ## <a name="functionality-limitations"></a>기능 제한 사항
 
@@ -25,7 +25,7 @@ Azure Data Catalog를 사용 하는 경우 다음 기능이 제한 됩니다.
 
 - Azure Resource Manager 템플릿 또는 Azure PowerShell 명령을 사용 하 여 Azure Data Catalog 리소스를 만드는 것은 지원 되지 않습니다.
 
-- Azure 테 넌 트 간에 Azure Data Catalog 리소스를 이동할 수 없습니다.
+- Azure 테넌트 간에 Azure Data Catalog 리소스를 이동할 수 없습니다.
 
 ## <a name="azure-active-directory-policy-configuration"></a>Azure Active Directory 정책 구성
 

@@ -15,7 +15,7 @@ ms.lasthandoff: 12/25/2019
 ms.locfileid: "75454513"
 ---
 # <a name="content-delivery-network-on-azure-with-azure-content-delivery-network"></a>Azure의 Content delivery network Content Delivery Network
-[Azure Content Delivery Network](https://azure.microsoft.com/services/cdn/) 는 전 세계에 있는 수백 개의 점으로 콘텐츠를 캐싱하여 사용자에 게 비디오, 이미지 또는 정적 파일과 같은 고대역폭 콘텐츠를 신속 하 게 제공할 수 있는 글로벌 솔루션을 개발자에 게 제공 합니다. 또한 로드 시간을 줄이고, 대역폭을 절약 하 고, 응답성을 높이기 위해 캐시 될 수 없는 동적 콘텐츠를 가속화할 수 있습니다. Content Delivery Network 웹 사이트 또는 모바일 응용 프로그램을 개발 또는 관리 하거나 스트리밍 미디어, 게임 소프트웨어, 펌웨어 업데이트 또는 IoT 끝점을 인코딩 및 배포 하는 경우 이러한 이점을 누릴 수 있습니다.
+[Azure Content Delivery Network](https://azure.microsoft.com/services/cdn/) 는 전 세계에 있는 수백 개의 점으로 콘텐츠를 캐싱하여 사용자에 게 비디오, 이미지 또는 정적 파일과 같은 고대역폭 콘텐츠를 신속 하 게 제공할 수 있는 글로벌 솔루션을 개발자에 게 제공 합니다. 또한 로드 시간을 줄이고, 대역폭을 절약 하 고, 응답성을 높이기 위해 캐시 될 수 없는 동적 콘텐츠를 가속화할 수 있습니다. Content Delivery Network 웹 사이트 또는 모바일 응용 프로그램을 개발 또는 관리 하거나 스트리밍 미디어, 게임 소프트웨어, 펌웨어 업데이트 또는 IoT 엔드포인트을 인코딩 및 배포 하는 경우 이러한 이점을 누릴 수 있습니다.
 
 ## <a name="azure-content-delivery-network-features"></a>Azure Content Delivery Network 기능
   - 웹 응용 프로그램, 미디어 서비스, 저장소 및 클라우드 서비스와 같은 Azure 서비스와 원활 하 게 작동 합니다.

@@ -32,7 +32,7 @@ Azure Portal에서 Automation 계정을 만드는 경우 이러한 계정이 자
 Automation 계정을 만들거나 업데이트하고 이 문서에서 설명한 작업을 완료하려면 다음과 같은 권한이 있어야 합니다.
 
 * Automation 계정을 만들려면 Azure AD 사용자 계정을 Microsoft의 소유자 역할과 동일한 권한을 가진 역할에 추가 해야 합니다 **. 자동화** 리소스. 자세한 내용은 [Azure Automation의 역할 기반 액세스 제어](automation-role-based-access-control.md)를 참조하세요.
-* Azure Portal의 **Azure Active Directory** > **관리** > **사용자 설정**에서 **앱 등록** 가 **예**로 설정 된 경우 Azure AD 테 넌 트의 관리자가 아닌 사용자가 [응용 프로그램을 Active Directory 등록할](../active-directory/develop/howto-create-service-principal-portal.md#check-azure-subscription-permissions)수 있습니다. **앱 등록 설정**이 **아니요**로 설정된 경우, 이 작업을 수행하는 사용자는 Azure AD의 전역 관리자여야 합니다.
+* Azure Portal의 **Azure Active Directory** > **관리** > **사용자 설정**에서 **앱 등록** 가 **예**로 설정 된 경우 Azure AD 테넌트의 관리자가 아닌 사용자가 [응용 프로그램을 Active Directory 등록할](../active-directory/develop/howto-create-service-principal-portal.md#check-azure-subscription-permissions)수 있습니다. **앱 등록 설정**이 **아니요**로 설정된 경우, 이 작업을 수행하는 사용자는 Azure AD의 전역 관리자여야 합니다.
 
 사용자는 구독의 전역 관리자/공동 관리자 역할에 추가되기 전에 해당 구독의 Active Directory 인스턴스에 속한 멤버가 아닌 경우 Active Directory에 게스트로 추가됩니다. 이 시나리오에서는 **Automation 계정 추가** 페이지에 "만들 수 있는 권한이 없습니다."라는 메시지가 표시됩니다.
 

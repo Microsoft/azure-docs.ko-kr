@@ -35,7 +35,7 @@ ms.locfileid: "77064124"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 항목이 있다고 가정합니다.
 
 * Azure Active Directory 테넌트
-* [Enterprise 계획](https://www.velpic.com/pricing.html) 이상을 사용 하도록 설정한 Velpic 테 넌 트
+* [Enterprise 계획](https://www.velpic.com/pricing.html) 이상을 사용 하도록 설정한 Velpic 테넌트
 * 관리자 권한이 있는 Velpic의 사용자 계정
 
 ## <a name="assigning-users-to-velpic"></a>Velpic에 사용자 할당
@@ -71,7 +71,7 @@ Azure Active Directory는 "할당"이라는 개념을 사용하여 어떤 사용
 
     ![Velpic 프로 비전](./media/velpic-provisioning-tutorial/Velpic1.png)
 
-5. **관리자 자격 증명** 섹션 아래에서 Velpic의 **비밀 토큰 & 테 넌 트 URL** 을 입력 합니다. Velpic 계정에서 이러한 값을 찾을 수 **있습니다. > ** **Integration** > **플러그 인** > **scim**)
+5. **관리자 자격 증명** 섹션 아래에서 Velpic의 **비밀 토큰 & 테넌트 URL** 을 입력 합니다. Velpic 계정에서 이러한 값을 찾을 수 **있습니다. > ** **Integration** > **플러그 인** > **scim**)
 
     ![권한 부여 값](./media/velpic-provisioning-tutorial/Velpic2.png)
 

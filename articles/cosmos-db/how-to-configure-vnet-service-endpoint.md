@@ -1,5 +1,5 @@
 ---
-title: Azure Cosmos 계정에 대 한 가상 네트워크 기반 액세스 구성
+title: Azure Cosmos 계정에 대한 가상 네트워크 기반 액세스 구성
 description: 이 문서에서는 Azure Cosmos DB의 가상 네트워크 서비스 엔드포인트에 필요한 단계를 설명합니다.
 author: markjbrown
 ms.service: cosmos-db
@@ -185,11 +185,11 @@ Azure PowerShell을 사용하여 Azure Cosmos DB 계정에 서비스 엔드포�
 
 ## <a id="configure-using-cli"></a>Azure CLI를 사용하여 서비스 엔드포인트 구성
 
-Azure Cosmos 계정은 나중에 생성 되거나 업데이트 되는 경우 서비스 끝점에 대해 서브넷이 이미 구성 되어 있는 경우 구성할 수 있습니다. 서브넷이 아직 구성 되지 않은 Cosmos 계정에서 서비스 끝점을 사용 하도록 설정 하 고 나중에 서브넷을 구성할 때 작동을 시작할 수도 있습니다. 이러한 유연성을 통해 Cosmos 계정 및 가상 네트워크 리소스 모두에 액세스할 수 없는 관리자가 구성을 서로 독립적으로 만들 수 있습니다.
+Azure Cosmos 계정은 나중에 생성 되거나 업데이트 되는 경우 서비스 엔드포인트에 대해 서브넷이 이미 구성 되어 있는 경우 구성할 수 있습니다. 서브넷이 아직 구성 되지 않은 Cosmos 계정에서 서비스 엔드포인트을 사용 하도록 설정 하 고 나중에 서브넷을 구성할 때 작동을 시작할 수도 있습니다. 이러한 유연성을 통해 Cosmos 계정 및 가상 네트워크 리소스 모두에 액세스할 수 없는 관리자가 구성을 서로 독립적으로 만들 수 있습니다.
 
-### <a name="create-a-new-cosmos-account-and-connect-it-to-a-back-end-subnet-for-a-new-virtual-network"></a>새 Cosmos 계정을 만들고 새 가상 네트워크에 대 한 백 엔드 서브넷에 연결 합니다.
+### <a name="create-a-new-cosmos-account-and-connect-it-to-a-back-end-subnet-for-a-new-virtual-network"></a>새 Cosmos 계정을 만들고 새 가상 네트워크에 대한 백 엔드 서브넷에 연결 합니다.
 
-이 예제에서는 가상 네트워크 및 서브넷이 생성 될 때 둘 다에 대해 서비스 끝점을 사용 하도록 설정 된 상태로 만들어집니다.
+이 예제에서는 가상 네트워크 및 서브넷이 생성 될 때 둘 다에 대해 서비스 엔드포인트을 사용 하도록 설정 된 상태로 만들어집니다.
 
 ```azurecli-interactive
 # Create an Azure Cosmos Account with a service endpoint connected to a backend subnet
@@ -235,7 +235,7 @@ az cosmosdb create \
 
 ### <a name="connect-and-configure-a-cosmos-account-to-a-back-end-subnet-independently"></a>Cosmos 계정을 백 엔드 서브넷에 독립적으로 연결 및 구성
 
-이 샘플은 Azure Cosmos 계정을 서비스 끝점에 대 한 서브넷이 아직 구성 되지 않은 기존 새 가상 네트워크에 연결 하는 방법을 보여 주기 위해 작성 되었습니다. 이 작업은 `--ignore-missing-vnet-service-endpoint` 매개 변수를 사용 하 여 수행 됩니다. 이렇게 하면 가상 네트워크의 서브넷에 대 한 구성이 완료 되기 전에 Cosmos 계정에 대 한 구성이 오류 없이 완료 될 수 있습니다. 서브넷 구성이 완료되면 구성된 서브넷을 통해 Cosmos 계정에 액세스할 수 있게 됩니다.
+이 샘플은 Azure Cosmos 계정을 서비스 엔드포인트에 대한 서브넷이 아직 구성 되지 않은 기존 새 가상 네트워크에 연결 하는 방법을 보여 주기 위해 작성 되었습니다. 이 작업은 `--ignore-missing-vnet-service-endpoint` 매개 변수를 사용 하 여 수행 됩니다. 이렇게 하면 가상 네트워크의 서브넷에 대한 구성이 완료 되기 전에 Cosmos 계정에 대한 구성이 오류 없이 완료 될 수 있습니다. 서브넷 구성이 완료되면 구성된 서브넷을 통해 Cosmos 계정에 액세스할 수 있게 됩니다.
 
 ```azurecli-interactive
 # Create an Azure Cosmos Account with a service endpoint connected to a backend subnet

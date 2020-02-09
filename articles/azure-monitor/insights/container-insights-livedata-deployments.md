@@ -26,7 +26,7 @@ ms.locfileid: "75404766"
 
 라이브 데이터 (미리 보기) 기능은 Kubernetes API에 직접 액세스할 수 있으며 인증 모델에 대 한 추가 정보는 [여기](https://kubernetes.io/docs/concepts/overview/kubernetes-api/)에서 찾을 수 있습니다. 
 
-배포 (미리 보기) 기능은 배포 끝점 `/apis/apps/v1/deployments`에 대해 한 번 (새로 고칠 때) 부하를 수행 합니다. 지정 된 배포를 선택 하 고 배포 끝점 `/apis/apps/v1/namespaces/${nameSpace}/deployments/${deploymentName}`에 대 한 특정 배포에 대 한 설명 세부 정보를 로드할 수 있습니다. 
+배포 (미리 보기) 기능은 배포 엔드포인트 `/apis/apps/v1/deployments`에 대해 한 번 (새로 고칠 때) 부하를 수행 합니다. 지정 된 배포를 선택 하 고 배포 엔드포인트 `/apis/apps/v1/namespaces/${nameSpace}/deployments/${deploymentName}`에 대 한 특정 배포에 대 한 설명 세부 정보를 로드할 수 있습니다. 
 
 페이지의 왼쪽 위에 있는 **새로 고침** 을 선택 하면 배포 목록이 새로 고쳐집니다. 이는 `kubectl` 명령을 다시 실행 하는 것을 시뮬레이션 합니다. 
 

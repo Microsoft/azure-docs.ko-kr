@@ -55,7 +55,7 @@ Azure Database for MariaDB에서 감사 로그는 사용자에 게 제공 됩니
 
 | **Tulajdonság** | **Leírás** |
 |---|---|
-| `TenantId` | 사용자의 테 넌 트 ID |
+| `TenantId` | 사용자의 테넌트 ID |
 | `SourceSystem` | `Azure` |
 | `TimeGenerated [UTC]` | 로그가 UTC로 기록 된 타임 스탬프 |
 | `Type` | 로그의 유형입니다. 항상 `AzureDiagnostics` |
@@ -82,7 +82,7 @@ Azure Database for MariaDB에서 감사 로그는 사용자에 게 제공 됩니
 
 | **Tulajdonság** | **Leírás** |
 |---|---|
-| `TenantId` | 사용자의 테 넌 트 ID |
+| `TenantId` | 사용자의 테넌트 ID |
 | `SourceSystem` | `Azure` |
 | `TimeGenerated [UTC]` | 로그가 UTC로 기록 된 타임 스탬프 |
 | `Type` | 로그의 유형입니다. 항상 `AzureDiagnostics` |
@@ -110,7 +110,7 @@ Azure Database for MariaDB에서 감사 로그는 사용자에 게 제공 됩니
 
 | **Tulajdonság** | **Leírás** |
 |---|---|
-| `TenantId` | 사용자의 테 넌 트 ID |
+| `TenantId` | 사용자의 테넌트 ID |
 | `SourceSystem` | `Azure` |
 | `TimeGenerated [UTC]` | 로그가 UTC로 기록 된 타임 스탬프 |
 | `Type` | 로그의 유형입니다. 항상 `AzureDiagnostics` |

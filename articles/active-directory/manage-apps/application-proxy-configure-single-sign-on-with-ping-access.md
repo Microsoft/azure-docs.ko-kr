@@ -151,7 +151,7 @@ Azure Portal에서 수행해야 하는 두 가지 작업이 있습니다. 먼저
    ![응용 프로그램에 대 한 등록 개요](./media/application-proxy-configure-single-sign-on-with-ping-access/registration-overview-for-an-application.png)
 
 1. **응용 프로그램 (클라이언트) ID** 값 옆에서 **클립보드에 복사** 아이콘을 선택 하 고 복사 하 여 저장 합니다. 나중에이 값을 사용자의 클라이언트 ID로 지정 합니다.
-1. 그런 다음 **디렉터리 (테 넌 트) ID** 값은 **클립보드에 복사**를 선택 하 고 복사 하 여 저장 합니다. 나중에이 값을 지정 하 여 액세스의 발급자로 지정 합니다.
+1. 그런 다음 **디렉터리 (테넌트) ID** 값은 **클립보드에 복사**를 선택 하 고 복사 하 여 저장 합니다. 나중에이 값을 지정 하 여 액세스의 발급자로 지정 합니다.
 1. 응용 프로그램에 대 한 **앱 등록** 의 사이드바에서 **인증서 및 암호** > **새 클라이언트 암호**를 선택 합니다. **클라이언트 암호 추가** 페이지가 나타납니다.
 
    ![클라이언트 암호 추가 페이지를 표시 합니다.](./media/application-proxy-configure-single-sign-on-with-ping-access/add-a-client-secret.png)
@@ -186,7 +186,7 @@ PATCH https://graph.windows.net/myorganization/applications/<object_id_GUID_of_y
 
 ### <a name="use-of-optional-claims-optional"></a>선택적 클레임 사용 (선택 사항)
 
-선택적 클레임을 사용 하 여 모든 사용자와 테 넌 트에 포함 된 기본 제공 클레임을 추가할 수 있습니다. 응용 프로그램 매니페스트를 수정 하 여 응용 프로그램에 대 한 선택적 클레임을 구성할 수 있습니다. 자세한 내용은 [AZURE AD 응용 프로그램 매니페스트 이해 문서](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest/) 를 참조 하세요.
+선택적 클레임을 사용 하 여 모든 사용자와 테넌트에 포함 된 기본 제공 클레임을 추가할 수 있습니다. 응용 프로그램 매니페스트를 수정 하 여 응용 프로그램에 대 한 선택적 클레임을 구성할 수 있습니다. 자세한 내용은 [AZURE AD 응용 프로그램 매니페스트 이해 문서](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest/) 를 참조 하세요.
 
 Access_token에 대 한 전자 메일 주소를 포함 하는 예는 다음과 같습니다.
 ```
@@ -234,7 +234,7 @@ Add-AzureADServicePrincipalPolicy -Id "<<The object Id of the Enterprise Applica
 
 이 시나리오의 연결에 대 한 자세한 단계는 Ping Id 설명서를 참조 하세요. Ping Id 웹 사이트에서 [Microsoft Azure AD 응용 프로그램 프록시를 사용 하 여 게시 된 응용 프로그램을 보호 하려면 AZURE AD에 대 한 연결 액세스 구성](https://support.pingidentity.com/s/document-item?bundleId=pingaccess-52&topicId=agents/azure/pa_c_PAAzureSolutionOverview.html) 의 지침을 따르세요.
 
-이러한 단계를 통해 액세스를 설치 하 고, 연결 액세스 계정 (아직 없는 경우)을 설정할 수 있습니다. 그런 다음 Azure AD Openid connect Connect (OIDC) 연결을 만들려면 Azure AD 포털에서 복사한 **디렉터리 (테 넌 트) ID** 값을 사용 하 여 토큰 공급자를 설정 합니다. 그런 다음, **응용 프로그램 (클라이언트) ID** 및 `PingAccess key` 값을 사용 하 여 웹 세션을 만듭니다. 그런 다음 ID 매핑을 설정하고 가상 호스트, 사이트 및 애플리케이션을 만들 수 있습니다.
+이러한 단계를 통해 액세스를 설치 하 고, 연결 액세스 계정 (아직 없는 경우)을 설정할 수 있습니다. 그런 다음 Azure AD Openid connect Connect (OIDC) 연결을 만들려면 Azure AD 포털에서 복사한 **디렉터리 (테넌트) ID** 값을 사용 하 여 토큰 공급자를 설정 합니다. 그런 다음, **응용 프로그램 (클라이언트) ID** 및 `PingAccess key` 값을 사용 하 여 웹 세션을 만듭니다. 그런 다음 ID 매핑을 설정하고 가상 호스트, 사이트 및 애플리케이션을 만들 수 있습니다.
 
 ### <a name="test-your-application"></a>애플리케이션 테스트
 

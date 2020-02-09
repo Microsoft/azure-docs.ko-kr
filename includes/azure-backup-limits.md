@@ -15,4 +15,4 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/07/2020
 ms.locfileid: "75752384"
 ---
-Azure Backup 지원 설정 및 제한 사항에 대 한 요약은 [Azure Backup 지원 매트릭스](https://docs.microsoft.com/azure/backup/backup-support-matrix)를 참조 하세요.
+Azure Backup 지원 설정 및 제한 사항에 대한 요약은 [Azure Backup 지원 매트릭스](https://docs.microsoft.com/azure/backup/backup-support-matrix)를 참조 하세요.

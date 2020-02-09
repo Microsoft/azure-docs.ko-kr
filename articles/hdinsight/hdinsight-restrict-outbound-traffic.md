@@ -112,7 +112,7 @@ HDInsight 클러스터를 올바르게 구성 하는 네트워크 규칙을 만�
 
     | 이름 | 프로토콜 | 원본 주소 | 서비스 태그 | 대상 포트 | 메모 |
     | --- | --- | --- | --- | --- | --- |
-    | Rule_7 | TCP | * | SQL | 1433 | HDInsight 서브넷에서 SQL Server에 대 한 서비스 끝점을 구성 하지 않은 경우 SQL 트래픽을 기록 하 고 감사할 수 있도록 SQL의 서비스 태그 섹션에서 네트워크 규칙을 구성 합니다 .이 경우 방화벽을 무시 합니다. |
+    | Rule_7 | TCP | * | SQL | 1433 | HDInsight 서브넷에서 SQL Server에 대 한 서비스 엔드포인트을 구성 하지 않은 경우 SQL 트래픽을 기록 하 고 감사할 수 있도록 SQL의 서비스 태그 섹션에서 네트워크 규칙을 구성 합니다 .이 경우 방화벽을 무시 합니다. |
 
    ![제목: 응용 프로그램 규칙 컬렉션 입력](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-network-rule-collection.png)
 
@@ -182,9 +182,9 @@ Azure 방화벽의 규모 제한과 요청이 늘어남에 대 한 자세한 내
 
 ## <a name="access-to-the-cluster"></a>클러스터에 대 한 액세스
 
-방화벽이 성공적으로 설정 되 면 내부 끝점 (`https://CLUSTERNAME-int.azurehdinsight.net`)을 사용 하 여 VNET 내부에서 Ambari에 액세스할 수 있습니다.
+방화벽이 성공적으로 설정 되 면 내부 엔드포인트 (`https://CLUSTERNAME-int.azurehdinsight.net`)을 사용 하 여 VNET 내부에서 Ambari에 액세스할 수 있습니다.
 
-공용 끝점 (`https://CLUSTERNAME.azurehdinsight.net`) 또는 ssh 끝점 (`CLUSTERNAME-ssh.azurehdinsight.net`)을 사용 하려면 [여기](../firewall/integrate-lb.md)에 설명 된 비대칭 라우팅 문제를 방지 하기 위해 경로 테이블 및 nsg 규칙에 올바른 경로가 있는지 확인 합니다. 특히이 경우 인바운드 NSG 규칙의 클라이언트 IP 주소를 허용 하 고 `internet`로 설정 된 다음 홉을 사용 하 여 사용자 정의 경로 테이블에 추가 해야 합니다. 올바르게 설정 되지 않은 경우 시간 초과 오류가 표시 됩니다.
+공용 엔드포인트 (`https://CLUSTERNAME.azurehdinsight.net`) 또는 ssh 엔드포인트 (`CLUSTERNAME-ssh.azurehdinsight.net`)을 사용 하려면 [여기](../firewall/integrate-lb.md)에 설명 된 비대칭 라우팅 문제를 방지 하기 위해 경로 테이블 및 nsg 규칙에 올바른 경로가 있는지 확인 합니다. 특히이 경우 인바운드 NSG 규칙의 클라이언트 IP 주소를 허용 하 고 `internet`로 설정 된 다음 홉을 사용 하 여 사용자 정의 경로 테이블에 추가 해야 합니다. 올바르게 설정 되지 않은 경우 시간 초과 오류가 표시 됩니다.
 
 ## <a name="configure-another-network-virtual-appliance"></a>다른 네트워크 가상 어플라이언스 구성
 
@@ -195,11 +195,11 @@ Azure 방화벽의 규모 제한과 요청이 늘어남에 대 한 자세한 내
 
 * 서비스 엔드포인트 지원 서비스는 서비스 엔드포인트로 구성되어야 합니다.
 * IP 주소 종속성은 비 HTTP/S 트래픽 (TCP 및 UDP 트래픽 모두)을 위한 것입니다.
-* NVA 장치에 FQDN HTTP/HTTPS 끝점을 배치할 수 있습니다.
-* 와일드 카드 HTTP/HTTPS 끝점은 여러 한정자에 따라 달라질 수 있는 종속성입니다.
+* NVA 장치에 FQDN HTTP/HTTPS 엔드포인트을 배치할 수 있습니다.
+* 와일드 카드 HTTP/HTTPS 엔드포인트은 여러 한정자에 따라 달라질 수 있는 종속성입니다.
 * 만든 경로 테이블을 HDInsight 서브넷에 할당 합니다.
 
-### <a name="service-endpoint-capable-dependencies"></a>서비스 끝점 지원 종속성
+### <a name="service-endpoint-capable-dependencies"></a>서비스 엔드포인트 지원 종속성
 
 | **엔드포인트** |
 |---|

@@ -1,5 +1,5 @@
 ---
-title: 단일 테 넌 트 앱에서 스키마 관리
+title: 단일 테넌트 앱에서 스키마 관리
 description: Azure SQL Database를 사용하는 단일 테넌트 앱에서 여러 테넌트의 스키마 관리
 services: sql-database
 ms.service: sql-database
@@ -126,7 +126,7 @@ _OnlineReindex.sql_ 스크립트에서 다음과 같은 요소를 살펴봅니�
 > * 모든 테넌트 데이터베이스에서 참조 데이터 업데이트하기
 > * 모든 테넌트 데이터베이스의 테이블에서 인덱스 만들기
 
-다음으로, [임시 보고 자습서](saas-tenancy-cross-tenant-reporting.md) 를 사용해 서 테 넌 트 데이터베이스에서 분산 쿼리를 실행 하는 방법을 살펴봅니다.
+다음으로, [임시 보고 자습서](saas-tenancy-cross-tenant-reporting.md) 를 사용해 서 테넌트 데이터베이스에서 분산 쿼리를 실행 하는 방법을 살펴봅니다.
 
 
 ## <a name="additional-resources"></a>추가 리소스

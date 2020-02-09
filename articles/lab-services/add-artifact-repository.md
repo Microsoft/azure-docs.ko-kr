@@ -172,7 +172,7 @@ Azure 리소스 관리 (Azure Resource Manager) 템플릿은 만들려는 Azure�
 - [Resource Manager 템플릿과 Azure Portal로 리소스 배포](../azure-resource-manager/templates/deploy-portal.md)
 - [Resource Manager 템플릿과 Resource Manager REST API로 리소스 배포](../azure-resource-manager/templates/deploy-rest.md)
 
-PowerShell에서 템플릿을 배포 하는 방법을 알아보겠습니다. 템플릿을 배포 하는 데 사용 되는 cmdlet은 컨텍스트별 이므로 현재 테 넌 트 및 현재 구독이 사용 됩니다. 필요한 경우 템플릿을 배포 하기 전에 [AzContext](/powershell/module/az.accounts/set-azcontext) 를 사용 하 여 컨텍스트를 변경 합니다.
+PowerShell에서 템플릿을 배포 하는 방법을 알아보겠습니다. 템플릿을 배포 하는 데 사용 되는 cmdlet은 컨텍스트별 이므로 현재 테넌트 및 현재 구독이 사용 됩니다. 필요한 경우 템플릿을 배포 하기 전에 [AzContext](/powershell/module/az.accounts/set-azcontext) 를 사용 하 여 컨텍스트를 변경 합니다.
 
 먼저 [AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup)를 사용 하 여 리소스 그룹을 만듭니다. 사용 하려는 리소스 그룹이 이미 있는 경우이 단계를 건너뜁니다.
 
@@ -375,7 +375,7 @@ if ($ArtifactRepositoryName -eq $null){
 | [Get-AzResource](/powershell/module/az.resources/get-azresource) | 이 명령은 해당 위치와 같은 랩에 대 한 세부 정보를 가져오는 데 사용 됩니다. |
 | [New-AzResource](/powershell/module/az.resources/new-azresource) | 아티팩트 리포지토리를 추가 하기 위한 특정 명령은 없습니다. 일반 [AzResource](/powershell/module/az.resources/new-azresource) cmdlet은 작업을 수행 합니다. 이 cmdlet에는 만들 리소스 유형을 알 수 있도록 **ResourceId** 또는 **context.resourcename** 및 **ResourceType** 쌍이 필요 합니다. 이 샘플 스크립트는 리소스 이름 및 리소스 형식 쌍을 사용 합니다. <br/><br/>아티팩트와 동일한 리소스 그룹 및 동일한 위치에 아티팩트 리포지토리 원본을 만들고 있습니다.|
 
-이 스크립트는 현재 구독에 새 리소스를 추가 합니다. [AzContext](/powershell/module/az.accounts/get-azcontext) 를 사용 하 여이 정보를 확인 합니다. [AzContext](/powershell/module/az.accounts/set-azcontext) 를 사용 하 여 현재 테 넌 트 및 구독을 설정 합니다.
+이 스크립트는 현재 구독에 새 리소스를 추가 합니다. [AzContext](/powershell/module/az.accounts/get-azcontext) 를 사용 하 여이 정보를 확인 합니다. [AzContext](/powershell/module/az.accounts/set-azcontext) 를 사용 하 여 현재 테넌트 및 구독을 설정 합니다.
 
 리소스 이름 및 리소스 종류 정보를 검색 하는 가장 좋은 방법은 [AZURE REST Api 테스트](https://azure.github.io/projects/apis/) 웹 사이트를 사용 하는 것입니다. [DevTest labs – 2016-05-15](https://aka.ms/dtlrestapis) 공급자를 확인 하 여 DevTest labs 공급자에 대해 사용 가능한 REST api를 확인 합니다. 스크립트 사용자는 다음 리소스 ID를 가집니다.
 

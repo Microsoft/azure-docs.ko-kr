@@ -1,5 +1,5 @@
 ---
-title: 다중 테 넌 트 응용 프로그램에 대 한 자동 사용자 프로 비전 사용-Azure AD
+title: 다중 테넌트 응용 프로그램에 대 한 자동 사용자 프로 비전 사용-Azure AD
 description: 자동화 된 프로 비전을 사용 하도록 설정 하는 독립 소프트웨어 공급 업체를 위한 가이드
 services: active-directory
 documentationcenter: azure
@@ -22,7 +22,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 02/07/2020
 ms.locfileid: "77066448"
 ---
-# <a name="enable-automatic-user-provisioning-for-your-multi-tenant-application"></a>다중 테 넌 트 응용 프로그램에 대 한 자동 사용자 프로 비전 사용
+# <a name="enable-automatic-user-provisioning-for-your-multi-tenant-application"></a>다중 테넌트 응용 프로그램에 대 한 자동 사용자 프로 비전 사용
 
 자동 사용자 프로 비전은 software as (software as a service) 응용 프로그램과 같은 대상 시스템에서 사용자 id의 생성, 유지 관리 및 제거를 자동화 하는 프로세스입니다.
 
@@ -56,7 +56,7 @@ ms.locfileid: "77066448"
 
 Azure AD는 응용 프로그램에 대 한 자동 사용자 프로비저닝을 사용할 수 있도록 여러 통합 경로를 제공 합니다.
 
-* [AZURE Ad 프로 비전 서비스](../app-provisioning/user-provisioning.md) 는 azure ad에서 응용 프로그램에 대 한 사용자 프로 비전 및 프로 비전 해제 (아웃 바운드 프로 비전) 및 응용 프로그램에서 azure ad로 (인바운드 프로 비전)를 관리 합니다. 서비스는 응용 프로그램에서 제공 하는 SCIM (도메인 간 Id 관리) 사용자 관리 API 끝점에 대 한 시스템에 연결 합니다.
+* [AZURE Ad 프로 비전 서비스](../app-provisioning/user-provisioning.md) 는 azure ad에서 응용 프로그램에 대 한 사용자 프로 비전 및 프로 비전 해제 (아웃 바운드 프로 비전) 및 응용 프로그램에서 azure ad로 (인바운드 프로 비전)를 관리 합니다. 서비스는 응용 프로그램에서 제공 하는 SCIM (도메인 간 Id 관리) 사용자 관리 API 엔드포인트에 대 한 시스템에 연결 합니다.
 
 * [Microsoft Graph](https://docs.microsoft.com/graph/)사용 하는 경우 응용 프로그램은 Microsoft Graph API를 쿼리하여 Azure AD에서 응용 프로그램에 대 한 사용자 및 그룹의 인바운드 및 아웃 바운드 프로 비전을 관리 합니다.
 
@@ -81,7 +81,7 @@ Azure AD는 응용 프로그램에 대 한 자동 사용자 프로비저닝을 �
 
 ## <a name="azure-ad-provisioning-service-scim"></a>Azure AD 프로 비전 서비스 (SCIM)
 
-Azure AD 프로 비전 서비스는 다양 한 id 공급자 (IdPs) 및 응용 프로그램 (예: 여유 시간, G Suite, Dropbox)에서 지원 되는 프로 비전을 위한 산업 표준인 [Scim](https://aka.ms/SCIMOverview)을 사용 합니다. Scim 호환 IdP SCIM 끝점에 연결할 수 있으므로 Azure AD 외에 IdPs를 지원 하려는 경우 Azure AD 프로 비전 서비스를 사용 하는 것이 좋습니다. 간단한/User 끝점을 빌드하면 사용자의 동기화 엔진을 유지 관리할 필요 없이 프로 비전을 사용 하도록 설정할 수 있습니다. 
+Azure AD 프로 비전 서비스는 다양 한 id 공급자 (IdPs) 및 응용 프로그램 (예: 여유 시간, G Suite, Dropbox)에서 지원 되는 프로 비전을 위한 산업 표준인 [Scim](https://aka.ms/SCIMOverview)을 사용 합니다. Scim 호환 IdP SCIM 엔드포인트에 연결할 수 있으므로 Azure AD 외에 IdPs를 지원 하려는 경우 Azure AD 프로 비전 서비스를 사용 하는 것이 좋습니다. 간단한/User 엔드포인트을 빌드하면 사용자의 동기화 엔진을 유지 관리할 필요 없이 프로 비전을 사용 하도록 설정할 수 있습니다. 
 
 Azure AD 프로 비전 서비스 사용자의 SCIM 방법에 대 한 자세한 내용은 다음을 참조 하세요. 
 

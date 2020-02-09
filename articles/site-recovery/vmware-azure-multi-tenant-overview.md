@@ -1,5 +1,5 @@
 ---
-title: Azure Site Recovery를 사용 하 여 VMware VM 다중 테 넌 트 재해 복구
+title: Azure Site Recovery를 사용 하 여 VMware VM 다중 테넌트 재해 복구
 description: 다중 테넌트 환경(CSP) 프로그램에서 VMWare와 Azure 간 재해 복구를 위해 제공되는 Azure Site Recovery 지원에 대해 간략하게 설명합니다.
 author: mayurigupta13
 manager: rochakm

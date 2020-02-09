@@ -30,11 +30,11 @@ Azure Container Registry은 [OCI (Open Container 이니셔티브) 이미지 형�
 
 Azure Container Registry는 컨테이너 이미지 및 기타 아티팩트 (콘텐츠 형식)를 저장, 공유, 보호 및 배포할 수 있는 공급 업체 중립적인 클라우드 독립적인 사양의 [OCI 배포 사양을](https://github.com/opencontainers/distribution-spec)지원 합니다. 사양을 통해 레지스트리는 컨테이너 이미지 뿐만 아니라 광범위 한 아티팩트를 저장할 수 있습니다. 아티팩트를 푸시하고 풀 하는 데 적합 한 도구를 사용 합니다. 예제는 [Azure container registry를 사용 하 여 OCI 아티팩트 푸시 및 끌어오기](container-registry-oci-artifacts.md)를 참조 하세요.
 
-OCI 아티팩트에 대 한 자세한 내용은 GitHub에서 [저장소 (oras)](https://github.com/deislabs/oras) 리포지토리 및 [oci 아티팩트](https://github.com/opencontainers/artifacts) 리포지토리를 참조 하세요.
+OCI 아티팩트에 대한 자세한 내용은 GitHub에서 [저장소 (oras)](https://github.com/deislabs/oras) 리포지토리 및 [oci 아티팩트](https://github.com/opencontainers/artifacts) 리포지토리를 참조 하세요.
 
 ## <a name="helm-charts"></a>Helm 차트
 
-Kubernetes에 대 한 응용 프로그램을 신속 하 게 관리 하 고 배포 하는 데 사용 되는 패키징 형식인 [투구 차트](https://helm.sh/)의 리포지토리를 호스트할 수 Azure Container Registry. [투구 클라이언트](https://docs.helm.sh/using_helm/#installing-helm) 버전 2 (2.11.0 이상)가 지원 됩니다.
+Kubernetes에 대한 응용 프로그램을 신속 하 게 관리 하 고 배포 하는 데 사용 되는 패키징 형식인 [투구 차트](https://helm.sh/)의 리포지토리를 호스트할 수 Azure Container Registry. [투구 클라이언트](https://docs.helm.sh/using_helm/#installing-helm) 버전 2 (2.11.0 이상)가 지원 됩니다.
 
 ## <a name="next-steps"></a>다음 단계
 

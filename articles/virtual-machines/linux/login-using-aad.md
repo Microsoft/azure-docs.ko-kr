@@ -70,7 +70,7 @@ CLI를 로컬로 설치하고 사용하도록 선택하는 경우 이 자습서�
 
 ## <a name="network-requirements"></a>네트워크 요구 사항
 
-Azure에서 Linux Vm에 대해 Azure AD 인증을 사용 하도록 설정 하려면 Vm 네트워크 구성에서 TCP 포트 443을 통해 다음 끝점에 대 한 아웃 바운드 액세스를 허용 하는지 확인 해야 합니다.
+Azure에서 Linux Vm에 대해 Azure AD 인증을 사용 하도록 설정 하려면 Vm 네트워크 구성에서 TCP 포트 443을 통해 다음 엔드포인트에 대 한 아웃 바운드 액세스를 허용 하는지 확인 해야 합니다.
 
 * https:\//login.microsoftonline.com
 * https:\//device.login.microsoftonline.com

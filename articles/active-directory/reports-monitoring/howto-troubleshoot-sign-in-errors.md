@@ -37,7 +37,7 @@ Azure AD(Azure Active Directory)의 [ 로그인 보고서](concept-sign-ins.md)�
 다음 작업을 수행해야 합니다.
 
 * 프리미엄(P1/P2) 라이선스가 있는 Azure AD 테넌트 [Azure Active Directory Premium 시작하기](../fundamentals/active-directory-get-started-premium.md)를 참조하여 Azure Active Directory 버전을 업그레이드하세요.
-* **전역 관리자**, **보안 관리자**, **보안 읽기 권한자**또는 테 넌 트에 대 한 **보고서 읽기 권한자** 역할을 하는 사용자입니다. 또한 모든 사용자는 고유한 로그인에 액세스할 수 있습니다. 
+* **전역 관리자**, **보안 관리자**, **보안 읽기 권한자**또는 테넌트에 대 한 **보고서 읽기 권한자** 역할을 하는 사용자입니다. 또한 모든 사용자는 고유한 로그인에 액세스할 수 있습니다. 
 
 ## <a name="troubleshoot-sign-in-errors-using-the-sign-ins-report"></a>로그인 보고서를 사용하여 로그인 오류 문제 해결
 

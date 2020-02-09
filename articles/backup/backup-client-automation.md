@@ -593,7 +593,7 @@ ServerName : myserver.microsoft.com
 
 ### <a name="choosing-a-backup-point-from-which-to-restore"></a>복원할 백업 시점 선택
 
-[Get-OBRecoverableItem](https://technet.microsoft.com/library/hh770399.aspx) cmdlet을 적절한 매개 변수와 함께 실행하여 백업 시점 목록을 검색합니다. 이 예제에서는 원본 볼륨 *C:* 에 대 한 최신 백업 지점을 선택 하 고이를 사용 하 여 특정 파일을 복구 합니다.
+[Get-OBRecoverableItem](https://technet.microsoft.com/library/hh770399.aspx) cmdlet을 적절한 매개 변수와 함께 실행하여 백업 시점 목록을 검색합니다. 이 예제에서는 원본 볼륨 *C:* 에 대한 최신 백업 지점을 선택 하 고이를 사용 하 여 특정 파일을 복구 합니다.
 
 ```powershell
 $Rps = Get-OBRecoverableItem $Source[0]
@@ -735,7 +735,7 @@ Invoke-Command -Session $Session -Script { param($D, $A) Start-Process -FilePath
 
 ## <a name="next-steps"></a>다음 단계
 
-Windows Server/Client의 Azure Backup에 대 한 자세한 내용은 다음을 수행 하십시오.
+Windows Server/Client의 Azure Backup에 대한 자세한 내용은 다음을 수행 하십시오.
 
 * [Azure Backup 소개](backup-introduction-to-azure-backup.md)
 * [Windows 서버 백업](backup-configure-vault.md)

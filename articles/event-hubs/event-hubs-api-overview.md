@@ -1,6 +1,6 @@
 ---
 title: Azure Event Hubs API 개요 | Microsoft Docs
-description: 이 문서에서는 Azure Event Hubs 서비스를 사용 하는 데 사용할 수 있는 Api (런타임 및 관리)에 대 한 개요를 제공 합니다.
+description: 이 문서에서는 Azure Event Hubs 서비스를 사용 하는 데 사용할 수 있는 Api (런타임 및 관리)에 대한 개요를 제공 합니다.
 services: event-hubs
 documentationcenter: na
 author: ShubhaVijayasarathy

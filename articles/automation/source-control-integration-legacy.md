@@ -104,7 +104,7 @@ Runbook 체크 인을 사용하면 Azure Automation에서 Runbook에 대한 변�
 
 5. 수정된 Runbook의 이름은 체크 인된 Runbook의 입력 매개 변수로 전송됩니다. **리포지토리 동기화** 페이지에서 Runbook을 펼쳐 [작업 세부 정보를 확인](automation-runbook-execution.md#viewing-job-status-from-the-azure-portal)할 수 있습니다.  
 
-    ![동기화 작업에 대 한 입력을 표시 하는 창](media/source-control-integration-legacy/automation-CheckinInput.png)
+    ![동기화 작업에 대한 입력을 표시 하는 창](media/source-control-integration-legacy/automation-CheckinInput.png)
 6. 변경 내용을 보기 위해 작업이 완료되면 GitHub 리포지토리를 새로 고칩니다.  커밋 메시지(**Azure Automation에서 *Runbook 이름*을 업데이트했습니다**)가 있는 커밋이 리포지토리에 있어야 합니다.  
 
 ### <a name="sync-runbooks-from-source-control-to-azure-automation"></a>원본 제어에서 Azure Automation에 runbook 동기화

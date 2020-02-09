@@ -1,6 +1,6 @@
 ---
-title: Azure 애플리케이션 Gateway에 대 한 SSL 정책 개요
-description: Azure 애플리케이션 Gateway에 대 한 SSL 정책을 구성 하 고 백 엔드 서버 팜에서 암호화 및 암호 해독 오버 헤드를 줄이는 방법에 대해 알아봅니다.
+title: Azure 애플리케이션 Gateway에 대한 SSL 정책 개요
+description: Azure 애플리케이션 Gateway에 대한 SSL 정책을 구성 하 고 백 엔드 서버 팜에서 암호화 및 암호 해독 오버 헤드를 줄이는 방법에 대해 알아봅니다.
 services: application gateway
 author: amsriva
 ms.service: application-gateway
@@ -96,7 +96,7 @@ Application Gateway는 사용자 지정 정책을 선택할 수 있는 다음과
 - TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA
 
 > [!NOTE]
-> 연결에 사용 되는 SSL 암호 그룹은 사용 중인 인증서의 형식에 따라 달라 집니다. 클라이언트에서 응용 프로그램 게이트웨이 연결에 사용 되는 암호 그룹은 application gateway 수신기의 서버 인증서 유형에 따라 달라 집니다. 백 엔드 풀 연결에 대 한 application gateway에서 사용 되는 암호 그룹은 백 엔드 풀 서버에 있는 서버 인증서의 유형을 기반으로 합니다.
+> 연결에 사용 되는 SSL 암호 그룹은 사용 중인 인증서의 형식에 따라 달라 집니다. 클라이언트에서 응용 프로그램 게이트웨이 연결에 사용 되는 암호 그룹은 application gateway 수신기의 서버 인증서 유형에 따라 달라 집니다. 백 엔드 풀 연결에 대한 application gateway에서 사용 되는 암호 그룹은 백 엔드 풀 서버에 있는 서버 인증서의 유형을 기반으로 합니다.
 
 ## <a name="known-issue"></a>알려진 문제
 Application Gateway v2는 현재 다음 암호화를 지원 하지 않습니다.

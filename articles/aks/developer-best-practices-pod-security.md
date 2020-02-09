@@ -25,7 +25,7 @@ AKS(Azure Kubernetes Service)에서 애플리케이션을 개발 및 실행할 �
 > * pod에서 관리되는 ID를 사용하여 다른 Azure 리소스에서 인증
 > * Azure Key Vault와 같은 디지털 자격 증명 모음에서 자격 증명 요청 및 검색
 
-[클러스터 보안][best-practices-cluster-security] 및 [컨테이너 이미지 관리][best-practices-container-image-management]에 대 한 모범 사례를 읽을 수도 있습니다.
+[클러스터 보안][best-practices-cluster-security] 및 [컨테이너 이미지 관리][best-practices-container-image-management]에 대한 모범 사례를 읽을 수도 있습니다.
 
 ## <a name="secure-pod-access-to-resources"></a>리소스에 대한 pod 액세스 보안 유지
 
@@ -64,7 +64,7 @@ spec:
         add: ["NET_ADMIN", "SYS_TIME"]
 ```
 
-클러스터 운영자와 함께 필요한 보안 컨텍스트 설정을 확인합니다. pod에 필요한 추가 권한 및 액세스 권한을 최소화하도록 애플리케이션을 디자인합니다. AppArmor 및 seccomp(보안 컴퓨팅)를 사용하여 액세스를 제한하는 추가 보안 기능이 있습니다. 이러한 보안 기능은 클러스터 운영자가 구현할 수 있습니다. 자세한 내용은 [리소스에 대 한 컨테이너 액세스 보호][apparmor-seccomp]를 참조 하세요.
+클러스터 운영자와 함께 필요한 보안 컨텍스트 설정을 확인합니다. pod에 필요한 추가 권한 및 액세스 권한을 최소화하도록 애플리케이션을 디자인합니다. AppArmor 및 seccomp(보안 컴퓨팅)를 사용하여 액세스를 제한하는 추가 보안 기능이 있습니다. 이러한 보안 기능은 클러스터 운영자가 구현할 수 있습니다. 자세한 내용은 [리소스에 대한 컨테이너 액세스 보호][apparmor-seccomp]를 참조 하세요.
 
 ## <a name="limit-credential-exposure"></a>자격 증명 노출 제한
 
@@ -81,13 +81,13 @@ spec:
 
 ### <a name="use-pod-managed-identities"></a>pod 관리 ID 사용
 
-Azure 리소스에 대 한 관리 되는 id를 통해 pod는 저장소 또는 SQL과 같은 Azure 서비스를 지 원하는 Azure 서비스에 대해 자신을 인증할 수 있습니다. pod에는 Azure Active Directory에서 인증을 받고 디지털 토큰을 받을 수 있도록 하는 Azure ID가 할당됩니다. 이 디지털 토큰은 pod가 서비스에 액세스하고 필요한 작업을 수행할 수 있는 권한이 있는지를 확인하는 다른 Azure 서비스에 제공될 수 있습니다. 이 방식은 예를 들어 데이터베이스 연결 문자열에 필요한 비밀이 없음을 의미합니다. pod 관리 ID의 간소화된 워크플로가 다음 다이어그램에 나와 있습니다.
+Azure 리소스에 대한 관리 되는 id를 통해 pod는 저장소 또는 SQL과 같은 Azure 서비스를 지 원하는 Azure 서비스에 대해 자신을 인증할 수 있습니다. pod에는 Azure Active Directory에서 인증을 받고 디지털 토큰을 받을 수 있도록 하는 Azure ID가 할당됩니다. 이 디지털 토큰은 pod가 서비스에 액세스하고 필요한 작업을 수행할 수 있는 권한이 있는지를 확인하는 다른 Azure 서비스에 제공될 수 있습니다. 이 방식은 예를 들어 데이터베이스 연결 문자열에 필요한 비밀이 없음을 의미합니다. pod 관리 ID의 간소화된 워크플로가 다음 다이어그램에 나와 있습니다.
 
 ![Azure의 pod 관리 ID에 대한 간소화된 워크플로](media/developer-best-practices-pod-security/basic-pod-identity.png)
 
 관리 ID를 사용할 경우 애플리케이션 코드는 Azure Storage와 같은 서비스에 액세스하기 위해 자격 증명을 포함할 필요가 없습니다. 각 pod는 고유한 ID를 사용하여 인증을 받으므로 사용자는 액세스 권한을 감사 및 검토할 수 있습니다. 애플리케이션이 다른 Azure 서비스에 연결되면 관리 ID를 사용하여 자격 증명 재사용 및 노출 위험을 제한합니다.
 
-Pod id에 대 한 자세한 내용은 [응용 프로그램과 함께 pod 관리 되는 id를 사용 하도록 AKS 클러스터 구성][aad-pod-identity] 을 참조 하세요.
+Pod id에 대한 자세한 내용은 [응용 프로그램과 함께 pod 관리 되는 id를 사용 하도록 AKS 클러스터 구성][aad-pod-identity] 을 참조 하세요.
 
 ### <a name="use-azure-key-vault-with-flexvol"></a>FlexVol에서 Azure Key Vault 사용
 
@@ -105,7 +105,7 @@ Pod 및 노드에서 실행 되는 응용 프로그램 및 서비스와 함께 �
 
 이 문서에서는 pod를 보호하는 방법을 중점적으로 설명했습니다. 이러한 일부 영역을 구현하려면 다음 문서를 참조하세요.
 
-* [AKS를 사용 하 여 Azure 리소스에 대 한 관리 id 사용][aad-pod-identity]
+* [AKS를 사용 하 여 Azure 리소스에 대한 관리 id 사용][aad-pod-identity]
 * [AKS와 Azure Key Vault 통합][aks-keyvault-flexvol]
 
 <!-- EXTERNAL LINKS -->

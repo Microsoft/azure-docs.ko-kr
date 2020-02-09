@@ -12,7 +12,7 @@ ms.locfileid: "74173183"
 ---
 # <a name="delete-an-azure-backup-recovery-services-vault"></a>Azure Backup Recovery Services 자격 증명 모음 삭제
 
-이 문서에서는 MARS (Microsoft [Azure Backup](backup-overview.md) Recovery Services) 자격 증명 모음을 삭제 하는 방법을 설명 합니다. 종속성을 제거한 후 자격 증명 모음을 삭제 하는 방법에 대 한 지침이 포함 되어 있습니다.
+이 문서에서는 MARS (Microsoft [Azure Backup](backup-overview.md) Recovery Services) 자격 증명 모음을 삭제 하는 방법을 설명 합니다. 종속성을 제거한 후 자격 증명 모음을 삭제 하는 방법에 대한 지침이 포함 되어 있습니다.
 
 ## <a name="before-you-start"></a>시작하기 전에
 
@@ -94,7 +94,7 @@ MABS (Microsoft Azure Backup 서버) 또는 DPM (System Center Data Protection M
 
 4. 동의 확인란을 선택 하 고 **삭제**를 선택 합니다.
 
-5. **알림** 아이콘을 확인 하 ![백업 데이터](./media/backup-azure-delete-vault/messages.png)삭제 합니다. 작업이 완료 되 면 서비스는 *백업 중지 및 "백업 항목에 대 한 백업 데이터 삭제"* 메시지를 표시 합니다. *작업을 완료 했습니다*.
+5. **알림** 아이콘을 확인 하 ![백업 데이터](./media/backup-azure-delete-vault/messages.png)삭제 합니다. 작업이 완료 되 면 서비스는 *백업 중지 및 "백업 항목에 대한 백업 데이터 삭제"* 메시지를 표시 합니다. *작업을 완료 했습니다*.
 6. **백업 항목 메뉴에서** **새로 고침** 을 선택 하 여 백업 항목이 삭제 되었는지 확인 합니다.
 
 이 프로세스가 완료 되 면 관리 콘솔에서 백업 항목을 삭제할 수 있습니다.
@@ -191,7 +191,7 @@ MABS 관리 콘솔에서 백업 항목을 삭제 하는 데 사용할 수 있는
 
   Azure Backup 보호 된 항목에 대해 보호를 사용 하지 않도록 설정 하는 방법에 대해 [자세히 알아보세요](https://docs.microsoft.com/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupautoprotection?view=azps-2.6.0) .
 
-- 클라우드의 모든 백업 보호 항목에 대 한 보호를 중지 하 고 데이터를 삭제 합니다 (예: laaS VM, Azure 파일 공유 등):
+- 클라우드의 모든 백업 보호 항목에 대한 보호를 중지 하 고 데이터를 삭제 합니다 (예: laaS VM, Azure 파일 공유 등):
 
     ```PowerShell
        Disable-AzRecoveryServicesBackupProtection
@@ -205,7 +205,7 @@ MABS 관리 콘솔에서 백업 항목을 삭제 하는 데 사용할 수 있는
        [<CommonParameters>]
     ```
 
-    에 대 한 [자세한](https://docs.microsoft.com/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection?view=azps-2.6.0&viewFallbackFrom=azps-2.5.0) 내용은 백업 보호 된 항목에 대 한 보호 사용 안 함을 .
+    에 대한 [자세한](https://docs.microsoft.com/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection?view=azps-2.6.0&viewFallbackFrom=azps-2.5.0) 내용은 백업 보호 된 항목에 대한 보호 사용 안 함을 .
 
 - Azure에 백업 하는 MARS (Azure Backup 에이전트)를 사용 하 여 보호 되는 온-프레미스 파일 및 폴더의 경우 다음 PowerShell 명령을 사용 하 여 각 MARS PowerShell 모듈에서 백업 된 데이터를 삭제 합니다.
 
@@ -327,9 +327,9 @@ Recovery Services 자격 증명 모음을 삭제 하는이 옵션은 모든 종�
 
     `ARMClient.exe login [environment name]`
 
-3. Azure Portal에서 삭제 하려는 자격 증명 모음에 대 한 구독 ID 및 리소스 그룹 이름을 수집 합니다.
+3. Azure Portal에서 삭제 하려는 자격 증명 모음에 대한 구독 ID 및 리소스 그룹 이름을 수집 합니다.
 
-ARMClient 명령에 대 한 자세한 내용은 [ARMCLIENT 추가](https://github.com/projectkudu/ARMClient/blob/master/README.md)정보를 참조 하세요.
+ARMClient 명령에 대한 자세한 내용은 [ARMCLIENT 추가](https://github.com/projectkudu/ARMClient/blob/master/README.md)정보를 참조 하세요.
 
 ### <a name="use-the-azure-resource-manager-client-to-delete-a-recovery-services-vault"></a>Azure Resource Manager 클라이언트를 사용 하 여 Recovery Services 자격 증명 모음 삭제
 
@@ -349,5 +349,5 @@ ARMClient 명령에 대 한 자세한 내용은 [ARMCLIENT 추가](https://githu
 
 ## <a name="next-steps"></a>다음 단계
 
-[Recovery Services 자격 증명 모음에 대 한 자세한 정보](backup-azure-recovery-services-vault-overview.md)<br/>
-[Recovery Services 자격 증명 모음 모니터링 및 관리에 대 한 자세한 정보](backup-azure-manage-windows-server.md)
+[Recovery Services 자격 증명 모음에 대한 자세한 정보](backup-azure-recovery-services-vault-overview.md)<br/>
+[Recovery Services 자격 증명 모음 모니터링 및 관리에 대한 자세한 정보](backup-azure-manage-windows-server.md)

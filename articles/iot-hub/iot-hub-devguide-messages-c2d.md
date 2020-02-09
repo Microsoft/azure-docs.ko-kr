@@ -21,7 +21,7 @@ ms.locfileid: "68964126"
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
 
-서비스 지향 끝점 ( */messages/devicebound*)을 통해 클라우드-장치 메시지를 보냅니다. 장치는 장치 특정 끝점 ( */devices/{deviceId}/messages/devicebound*)을 통해 메시지를 받습니다.
+서비스 지향 엔드포인트 ( */messages/devicebound*)을 통해 클라우드-장치 메시지를 보냅니다. 장치는 장치 특정 엔드포인트 ( */devices/{deviceId}/messages/devicebound*)을 통해 메시지를 받습니다.
 
 단일 장치에서 각 클라우드-장치 메시지를 대상으로 하도록 IoT hub는 **to** 속성을 */devices/{deviceId}/messages/devicebound*로 설정 합니다.
 
@@ -82,7 +82,7 @@ IoT hub의 **최대 배달 횟수** 속성은 *큐* 에 대기 중인 상태와 
 
 **Ack** 값이 *full*인 경우 피드백 메시지를 받지 못하면 피드백 메시지가 만료 되었음을 의미 합니다. 서비스는 원본 메시지에서 발생한 상황을 알지 못합니다. 실제로 서비스는 만료되기 전에 피드백을 처리할 수 있는지 확인해야 합니다. 최대 만료 시간은 2 일 이며, 오류가 발생 하는 경우 서비스를 다시 실행 하는 시간을 유지 합니다.
 
-[끝점](iot-hub-devguide-endpoints.md)에 설명 된 대로 IoT hub는 서비스 지향 끝점 ( */messages/servicebound/feedback*)을 통해 피드백을 메시지로 전달 합니다. 피드백 수신을 위한 의미 체계는 클라우드-디바이스 메시지의 경우와 같습니다. 가능한 경우 메시지 피드백은 다음 형식으로 단일 메시지에서 일괄 처리됩니다.
+[엔드포인트](iot-hub-devguide-endpoints.md)에 설명 된 대로 IoT hub는 서비스 지향 엔드포인트 ( */messages/servicebound/feedback*)을 통해 피드백을 메시지로 전달 합니다. 피드백 수신을 위한 의미 체계는 클라우드-디바이스 메시지의 경우와 같습니다. 가능한 경우 메시지 피드백은 다음 형식으로 단일 메시지에서 일괄 처리됩니다.
 
 | 속성     | Description |
 | ------------ | ----------- |

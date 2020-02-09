@@ -20,7 +20,7 @@ ms.locfileid: "76989062"
 
 Azure Maps는 사용자가 다른 서비스로 이벤트 알림을 보내고 다운스트림 프로세스를 트리거할 수 있도록 Azure Event Grid와 통합 됩니다. 이 문서의 목적은 Azure Maps 이벤트를 수신 하도록 비즈니스 응용 프로그램을 구성 하는 데 도움이 됩니다. 이 서비스를 사용 하면 안정적이 고, 확장 가능 하며, 안전한 방식으로 중요 한 이벤트에 대응할 수 있습니다. 예를 들어, 사용자가 응용 프로그램을 빌드하여 데이터베이스를 업데이트 하 고, 티켓을 만들고, 장치를 지 오로 가져갈 때마다 전자 메일 알림을 배달할 수 있습니다.
 
-Azure Event Grid는 게시-구독 모델을 사용 하는 완전히 관리 되는 이벤트 라우팅 서비스입니다. Event Grid에는 [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview) 및 [Azure Logic Apps](https://docs.microsoft.com/azure/azure-functions/functions-overview)와 같은 Azure 서비스에 대 한 지원이 기본적으로 제공 됩니다. 웹 후크를 사용 하 여 비 Azure 서비스에 이벤트 경고를 제공할 수 있습니다. Azure Event Grid가 지원하는 이벤트 처리기의 전체 목록은 [Azure Event Grid 소개](https://docs.microsoft.com/azure/event-grid/overview)를 참조하세요.
+Azure Event Grid는 게시-구독 모델을 사용 하는 완전히 관리 되는 이벤트 라우팅 서비스입니다. Event Grid에는 [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview) 및 [Azure Logic Apps](https://docs.microsoft.com/azure/azure-functions/functions-overview)와 같은 Azure 서비스에 대한 지원이 기본적으로 제공 됩니다. 웹 후크를 사용 하 여 비 Azure 서비스에 이벤트 경고를 제공할 수 있습니다. Azure Event Grid가 지원하는 이벤트 처리기의 전체 목록은 [Azure Event Grid 소개](https://docs.microsoft.com/azure/event-grid/overview)를 참조하세요.
 
 
 ![Azure Event Grid 기능 모델](./media/azure-maps-event-grid-integration/azure-event-grid-functional-model.png)
@@ -38,7 +38,7 @@ Event Grid는 [이벤트 구독](https://docs.microsoft.com/azure/event-grid/con
 
 ## <a name="event-schema"></a>이벤트 스키마
 
-다음 예제에서는 GeofenceResult에 대 한 스키마를 보여 줍니다.
+다음 예제에서는 GeofenceResult에 대한 스키마를 보여 줍니다.
 
 ```JSON
 {   
@@ -81,7 +81,7 @@ Event Grid는 [이벤트 구독](https://docs.microsoft.com/azure/event-grid/con
 Azure Maps 지오펜스 이벤트를 처리하는 애플리케이션은 다음과 같은 몇 가지 권장 지침을 따라야 합니다.
 
 * 이벤트를 동일한 이벤트 처리기로 라우팅하도록 여러 구독을 구성할 수 있습니다. 이벤트가 특정 원본에서 제공되었다고 가정하지 않는 것이 중요합니다. 항상 메시지 항목을 확인하여 예상한 원본에서 제공된 것인지 확인합니다.
-* 메시지는 지연 후 또는 잘못된 순서로 도착할 수 있습니다. 응답 헤더의 `X-Correlation-id` 필드를 사용 하 여 개체에 대 한 정보가 최신 상태 인지 여부를 파악할 수 있습니다.
+* 메시지는 지연 후 또는 잘못된 순서로 도착할 수 있습니다. 응답 헤더의 `X-Correlation-id` 필드를 사용 하 여 개체에 대한 정보가 최신 상태 인지 여부를 파악할 수 있습니다.
 * mode 매개 변수를 `EnterAndExit`로 설정하여 Get 및 POST 지오펜스 API를 호출하는 경우 상태가 이전 지오펜스 API 호출과 다르게 변경된 지오펜스의 각 기하 도형에 대해 Enter 또는 Exit 이벤트가 생성됩니다.
 
 ## <a name="next-steps"></a>다음 단계

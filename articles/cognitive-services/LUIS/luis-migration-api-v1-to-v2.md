@@ -1,7 +1,7 @@
 ---
 title: v1에서 v2 API 마이그레이션
 titleSuffix: Azure Cognitive Services
-description: 버전 1 끝점 및 제작 Language Understanding Api는 더 이상 사용 되지 않습니다. 이 가이드를 사용하여 버전 2 엔드포인트 및 작성 API로 마이그레이션하는 방법을 이해합니다.
+description: 버전 1 엔드포인트 및 제작 Language Understanding Api는 더 이상 사용 되지 않습니다. 이 가이드를 사용하여 버전 2 엔드포인트 및 작성 API로 마이그레이션하는 방법을 이해합니다.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -35,7 +35,7 @@ LUIS에는 LUIS API에 제공된 새로운 [지역](https://aka.ms/LUIS-regions)
 
 
 ## <a name="endpoint-route-changes"></a>엔드포인트 경로 변경 내용
-끝점 API에는 다른 응답 뿐만 아니라 새로운 쿼리 문자열 매개 변수가 있습니다. verbose 플래그가 true이면 점수에 관계없이 모든 의도가 topScoringIntent 외에 intents라는 배열로 반환됩니다.
+엔드포인트 API에는 다른 응답 뿐만 아니라 새로운 쿼리 문자열 매개 변수가 있습니다. verbose 플래그가 true이면 점수에 관계없이 모든 의도가 topScoringIntent 외에 intents라는 배열로 반환됩니다.
 
 | version | GET 경로 |
 |--|--|

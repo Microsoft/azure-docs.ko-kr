@@ -31,7 +31,7 @@ Azure App Service에서 앱을 실수로 삭제 한 경우 [Az PowerShell 모듈
 
 삭제 된 앱의 컬렉션을 가져오기 위해 `Get-AzDeletedWebApp`를 사용할 수 있습니다.
 
-삭제 된 특정 앱에 대 한 자세한 내용은 다음을 사용할 수 있습니다.
+삭제 된 특정 앱에 대한 자세한 내용은 다음을 사용할 수 있습니다.
 
 ```powershell
 Get-AzDeletedWebApp -Name <your_deleted_app> -Location <your_deleted_app_location> 
@@ -55,7 +55,7 @@ Get-AzDeletedWebApp -Name <your_deleted_app> -Location <your_deleted_app_locatio
 Restore-AzDeletedWebApp -ResourceGroupName <my_rg> -Name <my_app> -TargetAppServicePlanName <my_asp>
 ```
 
-명령에 대 한 입력은 다음과 같습니다.
+명령에 대한 입력은 다음과 같습니다.
 
 - **리소스 그룹**: 앱이 복원 되는 대상 리소스 그룹
 - **이름**: 앱의 이름은 전역적으로 고유 해야 합니다.

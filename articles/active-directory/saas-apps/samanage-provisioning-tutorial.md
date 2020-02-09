@@ -35,7 +35,7 @@ ms.locfileid: "77060493"
 이 자습서에 설명 된 시나리오에서는 다음과 같은 것으로 가정 합니다.
 
 * Azure AD 테넌트.
-* 전문 패키지가 포함 된 [Samanage 테 넌 트](https://www.samanage.com/pricing/) .
+* 전문 패키지가 포함 된 [Samanage 테넌트](https://www.samanage.com/pricing/) .
 * 관리자 권한이 있는 Samanage의 사용자 계정
 
 > [!NOTE]
@@ -71,7 +71,7 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
 ### <a name="important-tips-for-assigning-users-to-samanage"></a>Samanage에 사용자를 할당하기 위한 주요 팁
 
-*    오늘날 Samanage 역할은 Azure Portal UI에서 자동으로 자동으로 채워집니다. Samanage 역할을 사용자에 게 할당 하기 전에 Samanage에 대해 초기 동기화가 완료 되었는지 확인 하 여 Samanage 테 넌 트의 최신 역할을 검색 합니다.
+*    오늘날 Samanage 역할은 Azure Portal UI에서 자동으로 자동으로 채워집니다. Samanage 역할을 사용자에 게 할당 하기 전에 Samanage에 대해 초기 동기화가 완료 되었는지 확인 하 여 Samanage 테넌트의 최신 역할을 검색 합니다.
 
 *    초기 자동 사용자 프로 비전 구성을 테스트 하기 위해 단일 Azure AD 사용자를 Samanage에 할당 하는 것이 좋습니다. 테스트에 성공한 후 나중에 추가 사용자 및 그룹을 할당할 수 있습니다.
 
@@ -102,7 +102,7 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에서 Samanage **테 넌 트 URL** 및 **암호 토큰**을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 Samanage에 연결할 수 있는지 확인 합니다. 연결에 실패하면 Samanage 계정에 관리자 권한이 있는지 확인하고 다시 시도합니다.
+5. **관리자 자격 증명** 섹션 아래에서 Samanage **테넌트 URL** 및 **암호 토큰**을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 Samanage에 연결할 수 있는지 확인 합니다. 연결에 실패하면 Samanage 계정에 관리자 권한이 있는지 확인하고 다시 시도합니다.
 
     ![연결 테스트 Samanage](./media/samanage-provisioning-tutorial/provisioning.png)
 

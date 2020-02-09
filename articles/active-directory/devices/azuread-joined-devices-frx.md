@@ -59,7 +59,7 @@ Windows 10 디바이스를 조인하려면 디바이스를 등록할 수 있도�
 
     ![로그인 화면](./media/azuread-joined-devices-frx/03.png)
 
-1. 장치를 Azure AD에서 일치 하는 테 넌 트를 찾습니다. 페더레이션된 도메인의 사용자인 경우 온-프레미스 STS(보안 토큰 서비스)가 서버(예: AD FS(Active Directory Federation Services))로 리디렉션됩니다.
+1. 장치를 Azure AD에서 일치 하는 테넌트를 찾습니다. 페더레이션된 도메인의 사용자인 경우 온-프레미스 STS(보안 토큰 서비스)가 서버(예: AD FS(Active Directory Federation Services))로 리디렉션됩니다.
 1. 페더레이션되지 않은 도메인의 사용자의 경우 Azure AD 호스팅 페이지에 직접 자격 증명을 입력해야 합니다. 
 1. 다단계 인증 질문에 대한 메시지가 표시됩니다. 
 1. Azure AD는 모바일 디바이스 관리에 등록해야 하는지 여부를 확인합니다.

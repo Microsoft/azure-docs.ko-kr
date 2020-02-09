@@ -54,11 +54,11 @@ ms.locfileid: "74025158"
 
 #### <a name="microsoftdirectoryapplicationsdelete"></a>microsoft.directory/applications/delete
 
-하위 형식에 관계 없이 앱 등록을 삭제할 수 있는 기능을 부여 합니다. 즉, 단일 테 넌 트 및 다중 테 넌 트 응용 프로그램입니다.
+하위 형식에 관계 없이 앱 등록을 삭제할 수 있는 기능을 부여 합니다. 즉, 단일 테넌트 및 다중 테넌트 응용 프로그램입니다.
 
 #### <a name="microsoftdirectoryapplicationsmyorganizationdelete"></a>microsoft. directory/응용 프로그램. myOrganization/삭제
 
-조직 또는 단일 테 넌 트 응용 프로그램 (myOrganization 하위 형식)의 계정에만 액세스할 수 있는 앱 등록을 삭제할 수 있는 기능을 부여 합니다.
+조직 또는 단일 테넌트 응용 프로그램 (myOrganization 하위 형식)의 계정에만 액세스할 수 있는 앱 등록을 삭제할 수 있는 기능을 부여 합니다.
 
 ![이러한 권한은 앱 등록 삭제 명령에 대 한 액세스 권한을 부여 합니다.](./media/roles-custom-available-permissions/delete-app-registration.png)
 
@@ -71,15 +71,15 @@ ms.locfileid: "74025158"
 
 #### <a name="microsoftdirectoryapplicationsallpropertiesread"></a>microsoft. directory/applications/allProperties/read
 
-자격 증명과 같은 상황에서 읽을 수 없는 속성 외부에서 단일 테 넌 트 및 다중 테 넌 트 응용 프로그램의 모든 속성을 읽을 수 있습니다.
+자격 증명과 같은 상황에서 읽을 수 없는 속성 외부에서 단일 테넌트 및 다중 테넌트 응용 프로그램의 모든 속성을 읽을 수 있습니다.
 
 #### <a name="microsoftdirectoryapplicationsmyorganizationallpropertiesread"></a>microsoft. directory/응용 프로그램. myOrganization/allProperties/read
 
-는 단일 테 넌 트 응용 프로그램에 대해서만 microsoft. directory/applications/allProperties/read와 동일한 권한을 부여 합니다.
+는 단일 테넌트 응용 프로그램에 대해서만 microsoft. directory/applications/allProperties/read와 동일한 권한을 부여 합니다.
 
 #### <a name="microsoftdirectoryapplicationsownersread"></a>microsoft. 디렉터리/응용 프로그램/소유자/읽기
 
-단일 테 넌 트 및 다중 테 넌 트 응용 프로그램에서 소유자 속성을 읽을 수 있는 기능을 부여 합니다. 응용 프로그램 등록 소유자 페이지의 모든 필드에 대 한 액세스 권한을 부여 합니다.
+단일 테넌트 및 다중 테넌트 응용 프로그램에서 소유자 속성을 읽을 수 있는 기능을 부여 합니다. 응용 프로그램 등록 소유자 페이지의 모든 필드에 대 한 액세스 권한을 부여 합니다.
 
 ![이 사용 권한은 앱 등록 소유자 페이지에 대 한 액세스 권한을 부여 합니다.](./media/roles-custom-available-permissions/app-registration-owners.png)
 
@@ -89,7 +89,7 @@ ms.locfileid: "74025158"
 
 #### <a name="microsoftdirectoryapplicationsmyorganizationstandardread"></a>microsoft. directory/응용 프로그램. myOrganization/표준/읽기
 
-는 단일 테 넌 트 응용 프로그램에 대해서만 microsoft. directory/applications/standard/read와 동일한 사용 권한을 부여 합니다.
+는 단일 테넌트 응용 프로그램에 대해서만 microsoft. directory/applications/standard/read와 동일한 사용 권한을 부여 합니다.
 
 ### <a name="update"></a>업데이트
 
@@ -99,7 +99,7 @@ ms.locfileid: "74025158"
 
 #### <a name="microsoftdirectoryapplicationsmyorganizationallpropertiesupdate"></a>microsoft. directory/응용 프로그램. myOrganization/allProperties/update
 
-는 단일 테 넌 트 응용 프로그램에 대해서만 microsoft. directory/applications/allProperties/update와 동일한 권한을 부여 합니다.
+는 단일 테넌트 응용 프로그램에 대해서만 microsoft. directory/applications/allProperties/update와 동일한 권한을 부여 합니다.
 
 #### <a name="microsoftdirectoryapplicationsaudienceupdate"></a>microsoft.directory/applications/audience/update
 
@@ -109,31 +109,31 @@ ms.locfileid: "74025158"
 
 #### <a name="microsoftdirectoryapplicationsmyorganizationaudienceupdate"></a>microsoft. directory/응용 프로그램. myOrganization/사용자/업데이트
 
-는 단일 테 넌 트 응용 프로그램에 대해서만 microsoft. directory/applications/사용자/업데이트와 동일한 권한을 부여 합니다.
+는 단일 테넌트 응용 프로그램에 대해서만 microsoft. directory/applications/사용자/업데이트와 동일한 권한을 부여 합니다.
 
 #### <a name="microsoftdirectoryapplicationsauthenticationupdate"></a>microsoft.directory/applications/authentication/update
 
-단일 테 넌 트 및 다중 테 넌 트 응용 프로그램에서 회신 URL, 로그 아웃 URL, 암시적 흐름 및 게시자 도메인 속성을 업데이트할 수 있습니다. 지원 되는 계정 유형을 제외한 응용 프로그램 등록 인증 페이지의 모든 필드에 대 한 액세스 권한을 부여 합니다.
+단일 테넌트 및 다중 테넌트 응용 프로그램에서 회신 URL, 로그 아웃 URL, 암시적 흐름 및 게시자 도메인 속성을 업데이트할 수 있습니다. 지원 되는 계정 유형을 제외한 응용 프로그램 등록 인증 페이지의 모든 필드에 대 한 액세스 권한을 부여 합니다.
 
 ![앱 등록 인증에 대 한 액세스 권한을 부여 하지만 지원 되는 계정 유형은 지원 하지 않습니다.](./media/roles-custom-available-permissions/supported-account-types.png)
 
 #### <a name="microsoftdirectoryapplicationsmyorganizationauthenticationupdate"></a>microsoft. directory/응용 프로그램. myOrganization/인증/업데이트
 
-는 단일 테 넌 트 응용 프로그램에 대해서만 microsoft. directory/응용 프로그램/인증/업데이트와 동일한 권한을 부여 합니다.
+는 단일 테넌트 응용 프로그램에 대해서만 microsoft. directory/응용 프로그램/인증/업데이트와 동일한 권한을 부여 합니다.
 
 #### <a name="microsoftdirectoryapplicationsbasicupdate"></a>microsoft.directory/applications/basic/update
 
-단일 테 넌 트 및 다중 테 넌 트 응용 프로그램의 이름, 로고, 홈페이지 URL, 서비스 약관 URL 및 개인정보 처리 방침 URL 속성을 업데이트 하는 기능입니다. 응용 프로그램 등록 브랜딩 페이지의 모든 필드에 대 한 액세스 권한을 부여 합니다.
+단일 테넌트 및 다중 테넌트 응용 프로그램의 이름, 로고, 홈페이지 URL, 서비스 약관 URL 및 개인정보 처리 방침 URL 속성을 업데이트 하는 기능입니다. 응용 프로그램 등록 브랜딩 페이지의 모든 필드에 대 한 액세스 권한을 부여 합니다.
 
 ![이 사용 권한은 앱 등록 브랜딩 페이지에 대 한 액세스 권한을 부여 합니다.](./media/roles-custom-available-permissions/app-registration-branding.png)
 
 #### <a name="microsoftdirectoryapplicationsmyorganizationbasicupdate"></a>microsoft. directory/응용 프로그램. myOrganization/기본/업데이트
 
-는 단일 테 넌 트 응용 프로그램에 대해서만 microsoft. directory/applications/basic/update와 동일한 권한을 부여 합니다.
+는 단일 테넌트 응용 프로그램에 대해서만 microsoft. directory/applications/basic/update와 동일한 권한을 부여 합니다.
 
 #### <a name="microsoftdirectoryapplicationscredentialsupdate"></a>microsoft.directory/applications/credentials/update
 
-단일 테 넌 트 및 다중 테 넌 트 응용 프로그램에서 인증서 및 클라이언트 암호 속성을 업데이트 하는 기능입니다. 응용 프로그램 등록 인증서 & 암호 페이지의 모든 필드에 대 한 액세스 권한을 부여 합니다.
+단일 테넌트 및 다중 테넌트 응용 프로그램에서 인증서 및 클라이언트 암호 속성을 업데이트 하는 기능입니다. 응용 프로그램 등록 인증서 & 암호 페이지의 모든 필드에 대 한 액세스 권한을 부여 합니다.
 
 ![이 권한은 앱 등록 인증서 & 암호 페이지에 대 한 액세스 권한을 부여 합니다.](./media/roles-custom-available-permissions/app-registration-secrets.png)
 
@@ -143,17 +143,17 @@ ms.locfileid: "74025158"
 
 #### <a name="microsoftdirectoryapplicationsownersupdate"></a>microsoft.directory/applications/owners/update
 
-단일 테 넌 트 및 다중 테 넌 트의 owner 속성을 업데이트 하는 기능입니다. 응용 프로그램 등록 소유자 페이지의 모든 필드에 대 한 액세스 권한을 부여 합니다.
+단일 테넌트 및 다중 테넌트의 owner 속성을 업데이트 하는 기능입니다. 응용 프로그램 등록 소유자 페이지의 모든 필드에 대 한 액세스 권한을 부여 합니다.
 
 ![이 사용 권한은 앱 등록 소유자 페이지에 대 한 액세스 권한을 부여 합니다.](./media/roles-custom-available-permissions/app-registration-owners.png)
 
 #### <a name="microsoftdirectoryapplicationsmyorganizationownersupdate"></a>microsoft. directory/응용 프로그램. myOrganization/소유자/업데이트
 
-는 단일 테 넌 트 응용 프로그램에 대해서만 microsoft. directory/응용 프로그램/소유자/업데이트와 동일한 권한을 부여 합니다.
+는 단일 테넌트 응용 프로그램에 대해서만 microsoft. directory/응용 프로그램/소유자/업데이트와 동일한 권한을 부여 합니다.
 
 #### <a name="microsoftdirectoryapplicationspermissionsupdate"></a>microsoft.directory/applications/permissions/update
 
-단일 테 넌 트 및 다중 테 넌 트 응용 프로그램에 대해 위임 된 권한, 응용 프로그램 권한, 권한 있는 클라이언트 응용 프로그램, 필요한 권한 및 승인 속성을 업데이트할 수 있습니다. 는 동의를 수행할 수 있는 기능을 부여 하지 않습니다. 응용 프로그램 등록 API 권한의 모든 필드에 대 한 액세스 권한을 부여 하 고 API 페이지를 표시 합니다.
+단일 테넌트 및 다중 테넌트 응용 프로그램에 대해 위임 된 권한, 응용 프로그램 권한, 권한 있는 클라이언트 응용 프로그램, 필요한 권한 및 승인 속성을 업데이트할 수 있습니다. 는 동의를 수행할 수 있는 기능을 부여 하지 않습니다. 응용 프로그램 등록 API 권한의 모든 필드에 대 한 액세스 권한을 부여 하 고 API 페이지를 표시 합니다.
 
 ![이 사용 권한은 앱 등록 API 사용 권한 페이지에 대 한 액세스 권한을 부여 합니다.](./media/roles-custom-available-permissions/app-registration-api-permissions.png)
 
@@ -161,7 +161,7 @@ ms.locfileid: "74025158"
 
 #### <a name="microsoftdirectoryapplicationsmyorganizationpermissionsupdate"></a>microsoft. directory/응용 프로그램. myOrganization/사용 권한/업데이트
 
-는 단일 테 넌 트 응용 프로그램에 대해서만 microsoft. directory/응용 프로그램/사용 권한/업데이트와 동일한 권한을 부여 합니다.
+는 단일 테넌트 응용 프로그램에 대해서만 microsoft. directory/응용 프로그램/사용 권한/업데이트와 동일한 권한을 부여 합니다.
 
 ## <a name="required-license-plan"></a>필요한 라이선스 계획
 

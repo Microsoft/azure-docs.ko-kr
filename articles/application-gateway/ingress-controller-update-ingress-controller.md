@@ -1,6 +1,6 @@
 ---
 title: 투구로 수신 컨트롤러 업그레이드
-description: 이 문서에서는 투구를 사용 하 여 Application Gateway 수신을 업그레이드 하는 방법에 대 한 정보를 제공 합니다.
+description: 이 문서에서는 투구를 사용 하 여 Application Gateway 수신을 업그레이드 하는 방법에 대한 정보를 제공 합니다.
 services: application-gateway
 author: caya
 ms.service: application-gateway

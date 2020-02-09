@@ -69,25 +69,25 @@ ms.locfileid: "76906596"
 
 ## <a name="impact-of-the-setting-the-public-access-level-of-the-web-container"></a>웹 컨테이너의 공용 액세스 수준을 설정 하는 경우의 영향
 
-**$Web** 컨테이너의 공용 액세스 수준을 수정할 수 있지만 이러한 파일은 익명 액세스 요청을 통해 제공 되므로 기본 정적 웹 사이트 끝점에는 영향을 주지 않습니다. 이는 모든 파일에 대 한 공용 (읽기 전용) 액세스를 의미 합니다.
+**$Web** 컨테이너의 공용 액세스 수준을 수정할 수 있지만 이러한 파일은 익명 액세스 요청을 통해 제공 되므로 기본 정적 웹 사이트 엔드포인트에는 영향을 주지 않습니다. 이는 모든 파일에 대 한 공용 (읽기 전용) 액세스를 의미 합니다.
 
 다음 스크린샷은 Azure Portal의 공용 액세스 수준 설정을 보여 줍니다.
 
 ![포털에서 공용 액세스 수준을 설정 하는 방법을 보여 주는 스크린샷](./media/storage-manage-access-to-resources/storage-manage-access-to-resources-0.png)
 
-기본 정적 웹 사이트 끝점에는 영향을 주지 않지만 공용 액세스 수준에 대 한 변경 내용은 주 blob service 끝점에 영향을 줍니다.
+기본 정적 웹 사이트 엔드포인트에는 영향을 주지 않지만 공용 액세스 수준에 대 한 변경 내용은 주 blob service 엔드포인트에 영향을 줍니다.
 
-예를 들어 **$web** 컨테이너의 공용 액세스 수준을 **Private (익명 액세스 없음)** 에서 **blob (blob에 대 한 익명 읽기 액세스**)로 변경 하는 경우 주 정적 웹 사이트 끝점에 대 한 공용 액세스 수준이 변경 되지 않습니다 `https://contosoblobaccount.z22.web.core.windows.net/index.html`.
+예를 들어 **$web** 컨테이너의 공용 액세스 수준을 **Private (익명 액세스 없음)** 에서 **blob (blob에 대 한 익명 읽기 액세스**)로 변경 하는 경우 주 정적 웹 사이트 엔드포인트에 대 한 공용 액세스 수준이 변경 되지 않습니다 `https://contosoblobaccount.z22.web.core.windows.net/index.html`.
 
-그러나 기본 blob 서비스 끝점에 대 한 공용 액세스 `https://contosoblobaccount.blob.core.windows.net/$web/index.html` 개인에서 공용으로 변경 됩니다. 이제 사용자는 이러한 두 끝점 중 하나를 사용 하 여 해당 파일을 열 수 있습니다.
+그러나 기본 blob 서비스 엔드포인트에 대 한 공용 액세스 `https://contosoblobaccount.blob.core.windows.net/$web/index.html` 개인에서 공용으로 변경 됩니다. 이제 사용자는 이러한 두 엔드포인트 중 하나를 사용 하 여 해당 파일을 열 수 있습니다.
 
 ## <a name="mapping-a-custom-domain-to-a-static-website-url"></a>정적 웹 사이트 URL에 사용자 지정 도메인 매핑
 
 사용자 지정 도메인을 통해 정적 웹 사이트를 사용할 수 있도록 설정할 수 있습니다. 
 
-Azure Storage 기본적으로 지원 하기 때문에 사용자 지정 도메인에 대 한 HTTP 액세스를 사용 하는 것이 더 쉽습니다. Azure Storage에서 기본적으로 사용자 지정 도메인을 사용 하 여 HTTPS를 지원 하지 않기 때문에 HTTPS를 사용 하도록 설정 하려면 Azure CDN를 사용 해야 합니다. 단계별 지침은 [Azure Blob Storage 끝점에 사용자 지정 도메인 매핑](storage-custom-domain-name.md) 을 참조 하세요.
+Azure Storage 기본적으로 지원 하기 때문에 사용자 지정 도메인에 대 한 HTTP 액세스를 사용 하는 것이 더 쉽습니다. Azure Storage에서 기본적으로 사용자 지정 도메인을 사용 하 여 HTTPS를 지원 하지 않기 때문에 HTTPS를 사용 하도록 설정 하려면 Azure CDN를 사용 해야 합니다. 단계별 지침은 [Azure Blob Storage 엔드포인트에 사용자 지정 도메인 매핑](storage-custom-domain-name.md) 을 참조 하세요.
 
-저장소 계정이 HTTPS를 통한 [보안 전송을 요구](../common/storage-require-secure-transfer.md) 하도록 구성 된 경우 사용자는 https 끝점을 사용 해야 합니다. 
+저장소 계정이 HTTPS를 통한 [보안 전송을 요구](../common/storage-require-secure-transfer.md) 하도록 구성 된 경우 사용자는 https 엔드포인트을 사용 해야 합니다. 
 
 > [!TIP]
 > Azure에서 도메인을 호스트 하는 것이 좋습니다. 자세한 내용은 [Azure DNS에서 도메인 호스팅](../../dns/dns-delegate-domain-azure-dns.md)을 참조 하세요.
@@ -105,7 +105,7 @@ Azure Storage 기본적으로 지원 하기 때문에 사용자 지정 도메인
 ## <a name="next-steps"></a>다음 단계
 
 * [Azure Storage에서 정적 웹 사이트를 호스팅합니다.](storage-blob-static-website-how-to.md)
-* [Azure Blob Storage 끝점에 사용자 지정 도메인 매핑](storage-custom-domain-name.md)
+* [Azure Blob Storage 엔드포인트에 사용자 지정 도메인 매핑](storage-custom-domain-name.md)
 * [Azure Functions](/azure/azure-functions/functions-overview)
 * [Azure App Service](/azure/app-service/overview)
 * [첫 번째 서버 없는 웹앱 빌드](https://docs.microsoft.com/azure/functions/tutorial-static-website-serverless-api-with-database)

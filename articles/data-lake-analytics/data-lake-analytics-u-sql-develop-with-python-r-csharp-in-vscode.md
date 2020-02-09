@@ -125,7 +125,7 @@ ADL 계정에 대한 Python 및 R 확장 어셈블리를 등록합니다.
 5. **USQL** 파일에서 마우스 오른쪽 단추로 클릭하면 작업 실행에 대한 **스크립트 컴파일** 또는 **작업 제출**을 클릭할 수 있습니다.
 
 ## <a name="develop-c-file"></a>C# 파일 개발
-코드 숨김 파일은 단일 U-SQL 스크립트와 연결되는 C# 파일입니다. 코드 숨김 파일에서는 UDO, UDA, UDT 및 UDF 전용 스크립트를 정의할 수 있습니다. 먼저 어셈블리를 등록하지 않고도 스크립트에서 UDO, UDA, UDT 및 UDF를 직접 사용할 수 있습니다. 코드 숨김 파일은 피어링 U-SQL 스크립트 파일과 동일한 폴더에 저장됩니다. 스크립트 파일 이름이 xxx.usql이면 코드 숨김 파일 이름은 xxx.usql.cs가 됩니다. 코드 숨김 파일을 수동으로 삭제하면 연결된 U-SQL 스크립트의 코드 숨김 기능을 사용할 수 없게 됩니다. U-sql 스크립트에 대 한 고객 코드를 작성 하는 방법 [에 대 한 자세한 내용은 u-sql에서 사용자 지정 코드 작성 및 사용을 참조 하세요. 사용자 정의 함수]( https://blogs.msdn.microsoft.com/visualstudio/2015/10/28/writing-and-using-custom-code-in-u-sql-user-defined-functions/)
+코드 숨김 파일은 단일 U-SQL 스크립트와 연결되는 C# 파일입니다. 코드 숨김 파일에서는 UDO, UDA, UDT 및 UDF 전용 스크립트를 정의할 수 있습니다. 먼저 어셈블리를 등록하지 않고도 스크립트에서 UDO, UDA, UDT 및 UDF를 직접 사용할 수 있습니다. 코드 숨김 파일은 피어링 U-SQL 스크립트 파일과 동일한 폴더에 저장됩니다. 스크립트 파일 이름이 xxx.usql이면 코드 숨김 파일 이름은 xxx.usql.cs가 됩니다. 코드 숨김 파일을 수동으로 삭제하면 연결된 U-SQL 스크립트의 코드 숨김 기능을 사용할 수 없게 됩니다. U-sql 스크립트에 대한 고객 코드를 작성 하는 방법 [에 대한 자세한 내용은 u-sql에서 사용자 지정 코드 작성 및 사용을 참조 하세요. 사용자 정의 함수]( https://blogs.msdn.microsoft.com/visualstudio/2015/10/28/writing-and-using-custom-code-in-u-sql-user-defined-functions/)
 
 1. 작업 영역에서 **새 파일**을 클릭합니다.
 2. U-SQL 파일에 코드를 작성합니다. 다음은 코드 샘플입니다.

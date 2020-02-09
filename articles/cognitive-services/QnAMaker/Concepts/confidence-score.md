@@ -1,7 +1,7 @@
 ---
 title: 신뢰도 점수-QnA Maker
 titleSuffix: Azure Cognitive Services
-description: 기술 자료가 게시 되어야 합니다. 게시 된 후에는 generateAnswer API를 사용 하 여 런타임 예측 끝점에서 기술 자료가 쿼리 됩니다.
+description: 기술 자료가 게시 되어야 합니다. 게시 된 후에는 generateAnswer API를 사용 하 여 런타임 예측 엔드포인트에서 기술 자료가 쿼리 됩니다.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -86,7 +86,7 @@ Bot 프레임 워크에서 또는 [C#](../how-to/metadata-generateanswer-usage.m
 
 
 ## <a name="no-match-found"></a>일치하는 항목 없음
-순위 지정에서 적절한 일치 항목을 찾지 못하면 신뢰도 점수 0.0 또는 “없음”이 반환되고 기본 응답은 “No good match found in the KB”(KB에 적절한 일치 항목이 없습니다.)입니다. 끝점을 호출 하는 bot 또는 응용 프로그램 코드에서이 [기본 응답](../How-To/metadata-generateanswer-usage.md) 을 재정의할 수 있습니다. 또는 Azure에서 재정의 응답을 설정할 수도 있으며, 이 경우 특정 QnA Maker 서비스에 배포된 모든 기술 자료의 기본값이 변경됩니다.
+순위 지정에서 적절한 일치 항목을 찾지 못하면 신뢰도 점수 0.0 또는 “없음”이 반환되고 기본 응답은 “No good match found in the KB”(KB에 적절한 일치 항목이 없습니다.)입니다. 엔드포인트을 호출 하는 bot 또는 응용 프로그램 코드에서이 [기본 응답](../How-To/metadata-generateanswer-usage.md) 을 재정의할 수 있습니다. 또는 Azure에서 재정의 응답을 설정할 수도 있으며, 이 경우 특정 QnA Maker 서비스에 배포된 모든 기술 자료의 기본값이 변경됩니다.
 
 ## <a name="next-steps"></a>다음 단계
 > [!div class="nextstepaction"]

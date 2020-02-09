@@ -351,7 +351,7 @@ Response:
 
 ### <a name="to-create-and-get-a-token-using-c35"></a>C#을 사용하여 토큰 만들기 및 가져오기
 
-승인 된 응용 프로그램에 대 한 토큰에 대해 좋아하게 되었습니다를 요청 하려면 다음 형식의 페이로드를 사용 하 여 https:\//soamtenant.auth0.com/oauth/token 끝점에 대 한 POST 작업을 수행 합니다.
+승인 된 응용 프로그램에 대 한 토큰에 대해 좋아하게 되었습니다를 요청 하려면 다음 형식의 페이로드를 사용 하 여 https:\//soamtenant.auth0.com/oauth/token 엔드포인트에 대 한 POST 작업을 수행 합니다.
 
 ```csharp
 string clientId = "Your Application Id";
@@ -374,7 +374,7 @@ var token = JObject.Parse(content)["access_token"];
 
 ### <a name="to-create-and-get-a-token-using-powershell"></a>PowerShell을 토큰 만들기 및 가져오기
 
-승인 된 응용 프로그램에 대 한 토큰에 대해 좋아하게 되었습니다를 요청 하려면 다음 형식의 페이로드를 사용 하 여 https:\//soamtenant.auth0.com/oauth/token 끝점에 대 한 POST 작업을 수행 합니다.
+승인 된 응용 프로그램에 대 한 토큰에 대해 좋아하게 되었습니다를 요청 하려면 다음 형식의 페이로드를 사용 하 여 https:\//soamtenant.auth0.com/oauth/token 엔드포인트에 대 한 POST 작업을 수행 합니다.
 
 ```powershell
 $clientId = "Application Id of AD Client APP";

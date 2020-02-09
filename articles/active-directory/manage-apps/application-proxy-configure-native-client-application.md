@@ -95,7 +95,7 @@ HttpResponseMessage response = await httpClient.GetAsync("< Proxy App API Url >"
 
 | 필요한 정보 | Azure AD 포털에서이를 찾는 방법 |
 | --- | --- |
-| \<테 넌 트 ID > | **디렉터리 ID** > **Azure Active Directory** > **속성** |
+| \<테넌트 ID > | **디렉터리 ID** > **Azure Active Directory** > **속성** |
 | 프록시 앱 >의 외부 Url \< | **엔터프라이즈 응용** 프로그램 > *프록시 응용* 프로그램 > **응용 프로그램 프록시** > **외부 Url** |
 | 네이티브 앱의 앱 ID \<> | **엔터프라이즈 응용** 프로그램 > *네이티브 응용* 프로그램 > **속성** > **응용 프로그램 ID** |
 | 네이티브 앱의 리디렉션 URI를 \<> | *기본 응용 프로그램* > **리디렉션 uri** 를 > **앱 등록** > **Azure Active Directory** |

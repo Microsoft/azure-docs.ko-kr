@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB의 WHERE 절
-description: Azure Cosmos DB에 대 한 SQL WHERE 절 알아보기
+description: Azure Cosmos DB에 대한 SQL WHERE 절 알아보기
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual

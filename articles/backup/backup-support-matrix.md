@@ -10,15 +10,15 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 02/01/2020
 ms.locfileid: "76936243"
 ---
-# <a name="support-matrix-for-azure-backup"></a>Azure Backup에 대 한 지원 매트릭스
+# <a name="support-matrix-for-azure-backup"></a>Azure Backup에 대한 지원 매트릭스
 
-[Azure Backup](backup-overview.md) 를 사용 하 여 Microsoft Azure 클라우드 플랫폼으로 데이터를 백업할 수 있습니다. 이 문서에서는 Azure Backup 시나리오 및 배포에 대 한 일반적인 지원 설정 및 제한 사항을 요약 합니다.
+[Azure Backup](backup-overview.md) 를 사용 하 여 Microsoft Azure 클라우드 플랫폼으로 데이터를 백업할 수 있습니다. 이 문서에서는 Azure Backup 시나리오 및 배포에 대한 일반적인 지원 설정 및 제한 사항을 요약 합니다.
 
 기타 지원 매트릭스를 사용할 수 있습니다.
 
-- [AZURE VM (가상 머신) 백업](backup-support-matrix-iaas.md) 에 대 한 지원 매트릭스
+- [AZURE VM (가상 머신) 백업](backup-support-matrix-iaas.md) 에 대한 지원 매트릭스
 - [System Center Data Protection Manager (DPM)/Microsoft Azure Backup Server (MABS)](backup-support-matrix-mabs-dpm.md) 를 사용 하 여 백업을 위한 지원 매트릭스
-- [MARS (Microsoft Azure Recovery Services) 에이전트](backup-support-matrix-mars-agent.md) 를 사용 하 여 백업에 대 한 지원 매트릭스
+- [MARS (Microsoft Azure Recovery Services) 에이전트](backup-support-matrix-mars-agent.md) 를 사용 하 여 백업에 대한 지원 매트릭스
 
 [!INCLUDE [azure-lighthouse-supported-service](../../includes/azure-lighthouse-supported-service.md)]
 
@@ -37,7 +37,7 @@ Azure Backup는 Recovery Services 자격 증명 모음을 사용 하 여 백업�
 **자격 증명 모음 간 백업** | 백업은 한 지역 내에서 수행됩니다.<br/><br/> 백업할 VM이 포함된 각 Azure 지역에 자격 증명 모음이 있어야 합니다. 다른 지역으로 백업할 수 없습니다.
 **자격 증명 모음 이동** | [자격 증명](https://review.docs.microsoft.com/azure/backup/backup-azure-move-recovery-services-vault) 모음은 구독 간에 이동 하거나 동일한 구독의 리소스 그룹 간에 이동할 수 있습니다. 그러나 하위 자격 증명 모음을 지역 간에 이동 하는 것은 지원 되지 않습니다.
 **자격 증명 모음 간 데이터 이동** | 자격 증명 모음 간에 백업 데이터를 이동 하는 것은 지원 되지 않습니다.
-**자격 증명 모음 스토리지 유형 수정** | 백업을 저장 하기 전에 자격 증명 모음에 대 한 저장소 복제 유형 (지역 중복 저장소 또는 로컬 중복 저장소)을 수정할 수 있습니다. 자격 증명 모음에서 백업이 시작되면 복제 유형을 수정할 수 없습니다.
+**자격 증명 모음 스토리지 유형 수정** | 백업을 저장 하기 전에 자격 증명 모음에 대한 저장소 복제 유형 (지역 중복 저장소 또는 로컬 중복 저장소)을 수정할 수 있습니다. 자격 증명 모음에서 백업이 시작되면 복제 유형을 수정할 수 없습니다.
 
 ## <a name="on-premises-backup-support"></a>온-프레미스 백업 지원
 
@@ -47,8 +47,8 @@ Azure Backup는 Recovery Services 자격 증명 모음을 사용 하 여 백업�
 --- | --- | --- | ---
 **MARS 에이전트를 사용한 Windows 머신 직접 백업** | 파일, 폴더, 시스템 상태 | Recovery Services 자격 증명 모음에 백업 합니다. | 하루에 세 번 백업<br/><br/> 앱 인식 백업 없음<br/><br/> 파일, 폴더, 볼륨 복원
 **MARS 에이전트를 사용한 Linux 머신 직접 백업** | 백업이 지원 되지 않음
-**DPM에 백업** | 파일, 폴더, 볼륨, 시스템 상태, 앱 데이터 | 로컬 DPM 스토리지에 백업합니다. 그런 다음, DPM에서 자격 증명 모음에 백업합니다. | 앱 인식 스냅샷<br/><br/> 백업 및 복구에 대 한 전체 세분성<br/><br/> Vm에 대해 지원 되는 Linux (Hyper-v/VMware)<br/><br/> Oracle은 지원 되지 않습니다.
-**MABS에 백업** | 파일, 폴더, 볼륨, 시스템 상태, 앱 데이터 | MABS 로컬 스토리지에 백업합니다. 그런 다음, MABS에서 자격 증명 모음에 백업합니다. | 앱 인식 스냅샷<br/><br/> 백업 및 복구에 대 한 전체 세분성<br/><br/> Vm에 대해 지원 되는 Linux (Hyper-v/VMware)<br/><br/> Oracle은 지원 되지 않습니다.
+**DPM에 백업** | 파일, 폴더, 볼륨, 시스템 상태, 앱 데이터 | 로컬 DPM 스토리지에 백업합니다. 그런 다음, DPM에서 자격 증명 모음에 백업합니다. | 앱 인식 스냅샷<br/><br/> 백업 및 복구에 대한 전체 세분성<br/><br/> Vm에 대해 지원 되는 Linux (Hyper-v/VMware)<br/><br/> Oracle은 지원 되지 않습니다.
+**MABS에 백업** | 파일, 폴더, 볼륨, 시스템 상태, 앱 데이터 | MABS 로컬 스토리지에 백업합니다. 그런 다음, MABS에서 자격 증명 모음에 백업합니다. | 앱 인식 스냅샷<br/><br/> 백업 및 복구에 대한 전체 세분성<br/><br/> Vm에 대해 지원 되는 Linux (Hyper-v/VMware)<br/><br/> Oracle은 지원 되지 않습니다.
 
 ## <a name="azure-vm-backup-support"></a>Azure VM 백업 지원
 
@@ -65,7 +65,7 @@ Azure Vm을 백업 하려는 경우 다음 같습니다 지원 됩니다.
 
 **머신** | **백업 대상** | **위치** | **기능**
 --- | --- | --- | ---
-**VM 확장을 사용 하 여 Azure VM 백업** | 전체 VM | 자격 증명 모음에 백업 합니다. | VM에 백업을 사용하도록 설정할 때 설치된 확장<br/><br/> 하루에 한 번 백업 합니다.<br/><br/> Windows Vm에 대 한 앱 인식 백업 Linux Vm에 대 한 파일 일치 백업 사용자 지정 스크립트를 사용 하 여 Linux 컴퓨터에 대 한 앱 일관성을 구성할 수 있습니다.<br/><br/> VM 또는 디스크를 복원 합니다.<br/><br/> Azure VM을 온-프레미스 위치에 백업할 수 없습니다.
+**VM 확장을 사용 하 여 Azure VM 백업** | 전체 VM | 자격 증명 모음에 백업 합니다. | VM에 백업을 사용하도록 설정할 때 설치된 확장<br/><br/> 하루에 한 번 백업 합니다.<br/><br/> Windows Vm에 대한 앱 인식 백업 Linux Vm에 대한 파일 일치 백업 사용자 지정 스크립트를 사용 하 여 Linux 컴퓨터에 대한 앱 일관성을 구성할 수 있습니다.<br/><br/> VM 또는 디스크를 복원 합니다.<br/><br/> Azure VM을 온-프레미스 위치에 백업할 수 없습니다.
 **MARS 에이전트를 사용 하 여 Azure VM 백업** | 파일, 폴더, 시스템 상태 | 자격 증명 모음에 백업 합니다. | 하루에 세 번 백업 합니다.<br/><br/> 전체 VM이 아닌 특정 파일 또는 폴더를 백업 하려는 경우 MARS 에이전트는 VM 확장과 함께 실행할 수 있습니다.
 **Azure VM(DPM 사용)** | 파일, 폴더, 볼륨, 시스템 상태, 앱 데이터 | DPM을 실행 하는 Azure VM의 로컬 저장소에 백업 합니다. 그런 다음, DPM에서 자격 증명 모음에 백업합니다. | 앱 인식 스냅숏.<br/><br/> 백업 및 복구에 대한 전체 세분성<br/><br/> Linux는 VM(Hyper-V/VMware)에 지원됨<br/><br/> Oracle은 지원되지 않음
 **Azure VM(MABS 사용)** | 파일, 폴더, 볼륨, 시스템 상태, 앱 데이터 | MABS를 실행 하는 Azure VM의 로컬 저장소에 백업 합니다. 그런 다음, MABS에서 자격 증명 모음에 백업합니다. | 앱 인식 스냅숏.<br/><br/> 백업 및 복구에 대한 전체 세분성<br/><br/> Linux는 VM(Hyper-V/VMware)에 지원됨<br/><br/> Oracle은 지원되지 않음
@@ -83,7 +83,7 @@ Linux 컴퓨터를 백업 하려는 경우 다음 같습니다 지원 됩니다.
 
 ## <a name="daylight-saving-time-support"></a>일광 절약 시간 지원
 
-Azure Backup는 Azure VM 백업에 대 한 일광 절약 시간에 대 한 자동 클록 조정을 지원 하지 않습니다. 필요에 따라 수동으로 백업 정책을 수정합니다.
+Azure Backup는 Azure VM 백업에 대한 일광 절약 시간에 대한 자동 클록 조정을 지원 하지 않습니다. 필요에 따라 수동으로 백업 정책을 수정합니다.
 
 ## <a name="disk-deduplication-support"></a>디스크 중복 제거 지원
 
@@ -94,9 +94,9 @@ Azure Backup는 Azure VM 백업에 대 한 일광 절약 시간에 대 한 자�
 
 ## <a name="security-and-encryption-support"></a>보안 및 암호화 지원
 
-Azure Backup은 전송 중 및 미사용 데이터에 대 한 암호화를 지원 합니다.
+Azure Backup은 전송 중 및 미사용 데이터에 대한 암호화를 지원 합니다.
 
-### <a name="network-traffic-to-azure"></a>Azure에 대 한 네트워크 트래픽
+### <a name="network-traffic-to-azure"></a>Azure에 대한 네트워크 트래픽
 
 - AES(Advanced Encryption Standard) 256를 사용 하 여 서버에서 Recovery Services 자격 증명 모음으로의 백업 트래픽을 암호화 합니다.
 - 백업 데이터는 보안 HTTPS 링크를 통해 전송됩니다.
@@ -137,9 +137,9 @@ Backup은 다음 표에 요약 된 것 처럼 백업 트래픽의 압축을 지�
 **설정** | **제한**
 --- | ---
 **보호 된 인스턴스당 최대 복구 위치 (컴퓨터 또는 작업)** | 9999
-**복구 지점에 대 한 최대 만료 시간** | 무제한
-**DPM/MABS에 대 한 최대 백업 빈도** | SQL Server에 대해 15분마다<br/><br/> 다른 작업에 대해 한 시간에 한 번
-**자격 증명 모음에 대 한 최대 백업 빈도** | **MARS를 실행 하는 온-프레미스 Windows 컴퓨터 또는 Azure vm:** 하루 3 개<br/><br/> **DPM/MABS:** 하루에 2 개<br/><br/> **AZURE VM 백업:** 하루에 하나씩
+**복구 지점에 대한 최대 만료 시간** | 무제한
+**DPM/MABS에 대한 최대 백업 빈도** | SQL Server에 대해 15분마다<br/><br/> 다른 작업에 대해 한 시간에 한 번
+**자격 증명 모음에 대한 최대 백업 빈도** | **MARS를 실행 하는 온-프레미스 Windows 컴퓨터 또는 Azure vm:** 하루 3 개<br/><br/> **DPM/MABS:** 하루에 2 개<br/><br/> **AZURE VM 백업:** 하루에 하나씩
 **복구 지점 보존** | 매일, 매주, 매월, 매년
 **최대 보존 기간** | 백업 빈도에 따라 다름
 **DPM/MABS 디스크의 복구 위치** | 파일 서버의 경우 64 448 앱 서버 <br/><br/>온-프레미스 DPM의 무제한 테이프 복구 시점

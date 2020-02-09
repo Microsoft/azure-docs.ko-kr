@@ -33,7 +33,7 @@ SQL DB를 사용하여 데이터베이스를 만들고 관리하며 마이그레
 
 - 빠른 시작 가이드를 사용하여 [단일 데이터베이스](/azure/sql-database/sql-database-single-database-quickstart-guide) 시작
 - [SSMS](/azure/sql-database/sql-database-design-first-database) 또는 [.NET](/azure/sql-database/sql-database-design-first-database-csharp)을 사용하여 새 단일 데이터베이스에 대한 스키마 만들기 및 설계
-- [Database Migration Assistant](/azure/dms/tutorial-sql-server-to-azure-sql)를 사용하거나 [BACPAC 파일을 가져와](/azure/sql-database/sql-database-import) 기존 데이터베이스를 Azure로 마이그레이션
+- [Database Migration Assistant](/azure/dms/tutorial-sql-server-to-azure-sql)를 사용하거나 [BACPAC 파일]을 가져와(/azure/sql-database/sql-database-import) 기존 데이터베이스를 Azure로 마이그레이션
 - [SQL Database 보안 설정](/azure/sql-database/sql-database-security-tutorial)
 - [SQL Database 성능 향상](/azure/sql-database/sql-database-performance-tutorial)
 - [SQL DB를 사용하여 다중 테넌트 SaaS 애플리케이션 구현](/azure/sql-database/sql-database-multi-tenant-application)

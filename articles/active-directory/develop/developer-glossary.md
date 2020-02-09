@@ -44,7 +44,7 @@ Azure AD가 애플리케이션 등록 시 부여하는 고유 식별자로, 해�
 
 ## <a name="application-object"></a>애플리케이션 개체
 
-[Azure Portal][AZURE-portal]에서 응용 프로그램을 등록/업데이트할 때 포털은 응용 프로그램 개체와 해당 테 넌 트에 해당 하는 [서비스 주체 개체](#service-principal-object) 를 만들거나 업데이트 합니다. 애플리케이션 개체는 애플리케이션의 ID 구성을 전역적으로(액세스하는 모든 테넌트에 걸쳐) *정의*하며, 해당 서비스 주체 개체가 런타임 시 로컬로(특정 테넌트에서) 사용되도록 *파생*되는 템플릿을 제공합니다.
+[Azure Portal][AZURE-portal]에서 응용 프로그램을 등록/업데이트할 때 포털은 응용 프로그램 개체와 해당 테넌트에 해당 하는 [서비스 주체 개체](#service-principal-object) 를 만들거나 업데이트 합니다. 애플리케이션 개체는 애플리케이션의 ID 구성을 전역적으로(액세스하는 모든 테넌트에 걸쳐) *정의*하며, 해당 서비스 주체 개체가 런타임 시 로컬로(특정 테넌트에서) 사용되도록 *파생*되는 템플릿을 제공합니다.
 
 자세한 내용은 [응용 프로그램 및 서비스 주체 개체][AAD-App-SP-Objects]를 참조 하세요.
 
@@ -77,7 +77,7 @@ ID 및 액세스 제어에 사용할 보안 주체를 만들기 위한 기반을
 
 [권한 부여 서버](#authorization-server)에서 구현하는 엔드포인트 중 하나로 OAuth2 권한 부여 흐름 중에 [권한 부여](#authorization-grant)를 제공하기 위해 [리소스 소유자](#resource-owner)와 상호 작용하는 데 사용됩니다. 사용된 권한 부여 흐름에 따라 [인증 코드](#authorization-code) 또는 [보안 토큰](#security-token)을 포함하여 제공되는 실제 권한 부여는 다를 수 있습니다.
 
-자세한 내용은 OAuth2 사양의 [권한 부여 형식][OAuth2-AuthZ-Grant-Types] 및 [권한 부여 끝점][OAuth2-AuthZ-Endpoint] 섹션 및 [openidconnect 사양][OpenIDConnect-AuthZ-Endpoint] 을 참조 하세요.
+자세한 내용은 OAuth2 사양의 [권한 부여 형식][OAuth2-AuthZ-Grant-Types] 및 [권한 부여 엔드포인트][OAuth2-AuthZ-Endpoint] 섹션 및 [openidconnect 사양][OpenIDConnect-AuthZ-Endpoint] 을 참조 하세요.
 
 ## <a name="authorization-grant"></a>권한 부여
 
@@ -109,7 +109,7 @@ Microsoft id 플랫폼 응용 프로그램 통합의 경우 Microsoft id 플랫�
 
 ## <a name="id-token"></a>ID 토큰
 
-최종 사용자 [리소스 소유자](#resource-owner)의 인증과 관련 된 [클레임이](#claim) 포함 된 [권한 부여 서버의](#authorization-server) [권한 부여 끝점](#authorization-endpoint)에서 제공 하는 [openid connect Connect][OpenIDConnect-ID-Token] [보안 토큰](#security-token) 입니다. 액세스 토큰과 마찬가지로 ID 토큰도 JWT (디지털 서명 된 [JSON Web Token)][JWT]로 표시 됩니다. 그렇지만 액세스 토큰과는 달리 ID 토큰의 클레임은 리소스 액세스 및 특히 액세스 제어와 관련된 용도로 사용되지 않습니다.
+최종 사용자 [리소스 소유자](#resource-owner)의 인증과 관련 된 [클레임이](#claim) 포함 된 [권한 부여 서버의](#authorization-server) [권한 부여 엔드포인트](#authorization-endpoint)에서 제공 하는 [openid connect Connect][OpenIDConnect-ID-Token] [보안 토큰](#security-token) 입니다. 액세스 토큰과 마찬가지로 ID 토큰도 JWT (디지털 서명 된 [JSON Web Token)][JWT]로 표시 됩니다. 그렇지만 액세스 토큰과는 달리 ID 토큰의 클레임은 리소스 액세스 및 특히 액세스 제어와 관련된 용도로 사용되지 않습니다.
 
 자세한 내용은 [Microsoft id 플랫폼 토큰 참조][AAD-Tokens-Claims] 를 참조 하세요.
 
@@ -121,7 +121,7 @@ Microsoft ID 플랫폼은 Azure AD(Azure Active Directory) ID 서비스와 개�
 
 클라이언트를 등록한 테넌트 이외의 테넌트를 포함하여 Azure AD [테넌트](#tenant)에 프로비전된 사용자가 로그인하고 [동의](#consent)할 수 있도록 하는 애플리케이션의 한 종류입니다. [네이티브 클라이언트](#native-client) 애플리케이션은 기본적으로 다중 테넌트인 반면 [웹 클라이언트](#web-client) 및 [웹 리소스/API](#resource-server) 애플리케이션은 단일 테넌트와 다중 테넌트 중에서 선택하는 기능이 있습니다. 반면 단일 테넌트로 등록된 웹 애플리케이션은 애플리케이션이 등록된 동일한 테넌트에서 프로비전된 사용자 계정에서만 로그인하는 것을 허용합니다.
 
-자세한 내용은 [다중 테 넌 트 응용 프로그램 패턴을 사용 하 여 AZURE AD 사용자를 로그인 하는 방법을][AAD-Multi-Tenant-Overview] 참조 하세요.
+자세한 내용은 [다중 테넌트 응용 프로그램 패턴을 사용 하 여 AZURE AD 사용자를 로그인 하는 방법을][AAD-Multi-Tenant-Overview] 참조 하세요.
 
 ## <a name="native-client"></a>네이티브 클라이언트
 
@@ -146,9 +146,9 @@ Microsoft ID 플랫폼은 Azure AD(Azure Active Directory) ID 서비스와 개�
 
 [OAuth2 권한 부여 프레임 워크][OAuth2-Role-Def]에서 정의한 대로 보호 된 리소스를 호스팅하는 서버로, [액세스 토큰](#access-token)을 제공 하는 [클라이언트 응용 프로그램](#client-application) 에서 보호 된 리소스 요청을 수락 하 고 응답할 수 있습니다. 보호된 리소스 서버 또는 리소스 애플리케이션이라고도 합니다.
 
-리소스 서버는 API를 공개하고 OAuth 2.0 권한 부여 프레임워크를 사용하여 [범위](#scopes) 및 [역할](#roles)을 통해 보호된 리소스에 대한 액세스를 수행합니다. 예제에는 Azure AD 테 넌 트 데이터에 대 한 액세스를 제공 하는 [MICROSOFT GRAPH api][Microsoft-Graph] 와 메일 및 달력과 같은 데이터에 대 한 액세스를 제공 하는 Office 365 api가 포함 됩니다. 
+리소스 서버는 API를 공개하고 OAuth 2.0 권한 부여 프레임워크를 사용하여 [범위](#scopes) 및 [역할](#roles)을 통해 보호된 리소스에 대한 액세스를 수행합니다. 예제에는 Azure AD 테넌트 데이터에 대 한 액세스를 제공 하는 [MICROSOFT GRAPH api][Microsoft-Graph] 와 메일 및 달력과 같은 데이터에 대 한 액세스를 제공 하는 Office 365 api가 포함 됩니다. 
 
-클라이언트 애플리케이션과 마찬가지로 리소스 애플리케이션 ID 구성은 Azure AD 테넌트에서 [등록](#application-registration)을 통해 설정되며 애플리케이션과 서비스 주체 개체를 모두 제공 합니다. Microsoft Graph API와 같은 일부 Microsoft 제공 Api에는 프로 비전 중에 모든 테 넌 트에서 사용할 수 있도록 미리 등록 된 서비스 주체가 있습니다.
+클라이언트 애플리케이션과 마찬가지로 리소스 애플리케이션 ID 구성은 Azure AD 테넌트에서 [등록](#application-registration)을 통해 설정되며 애플리케이션과 서비스 주체 개체를 모두 제공 합니다. Microsoft Graph API와 같은 일부 Microsoft 제공 Api에는 프로 비전 중에 모든 테넌트에서 사용할 수 있도록 미리 등록 된 서비스 주체가 있습니다.
 
 ## <a name="roles"></a>roles
 
@@ -172,7 +172,7 @@ OAuth2 토큰 또는 SAML 2.0 어설션과 같은 클레임을 포함한 서명�
 
 ## <a name="service-principal-object"></a>서비스 주체 개체
 
-[Azure Portal][AZURE-portal]에서 응용 프로그램을 등록/업데이트할 때 포털은 [응용 프로그램 개체](#application-object) 와 해당 테 넌 트에 해당 하는 서비스 주체 개체를 만들거나 업데이트 합니다. 애플리케이션 개체는 애플리케이션의 ID 구성을 전역적으로(액세스 권한이 관련된 애플리케이션에 부여된 모든 테넌트에 걸쳐) *정의*하며, 해당 서비스 주체 개체가 런타임 시 로컬로(특정 테넌트에서) 사용되도록 *파생*되는 템플릿입니다.
+[Azure Portal][AZURE-portal]에서 응용 프로그램을 등록/업데이트할 때 포털은 [응용 프로그램 개체](#application-object) 와 해당 테넌트에 해당 하는 서비스 주체 개체를 만들거나 업데이트 합니다. 애플리케이션 개체는 애플리케이션의 ID 구성을 전역적으로(액세스 권한이 관련된 애플리케이션에 부여된 모든 테넌트에 걸쳐) *정의*하며, 해당 서비스 주체 개체가 런타임 시 로컬로(특정 테넌트에서) 사용되도록 *파생*되는 템플릿입니다.
 
 자세한 내용은 [응용 프로그램 및 서비스 주체 개체][AAD-App-SP-Objects]를 참조 하세요.
 
@@ -194,7 +194,7 @@ Azure AD 디렉터리의 인스턴스는 Azure AD 테넌트라고 합니다. 다
 * 사용자 계정 및 등록된 애플리케이션의 인증
 * OAuth2 및 SAML을 포함한 다양한 프로토콜을 지원하는 데 필요한 REST 엔드포인트([권한 부여 엔드포인트](#authorization-endpoint), [토큰 엔드포인트](#token-endpoint) 및 [다중 테넌트 애플리케이션](#multi-tenant-application)에서 사용하는 "일반" 엔드포인트 포함)
 
-Azure AD 테넌트는 등록 시 Azure 및 Office 365 구독으로 생성/연결되어 구독에 대한 ID 및 액세스 관리 기능을 제공합니다. Azure 구독 관리자는 Azure Portal을 통해 Azure AD 테넌트를 추가로 만들 수도 있습니다. 테 넌 트에 대 한 액세스 권한을 얻을 수 있는 다양 한 방법에 대 한 자세한 내용은 [Azure Active Directory 테 넌 트를 가져오는 방법을][AAD-How-To-Tenant] 참조 하세요. 구독과 Azure AD 테 넌 트 간의 관계에 대 한 자세한 내용은 [azure 구독을 Azure Active Directory와 연결 하는 방법][AAD-How-Subscriptions-Assoc] 을 참조 하세요.
+Azure AD 테넌트는 등록 시 Azure 및 Office 365 구독으로 생성/연결되어 구독에 대한 ID 및 액세스 관리 기능을 제공합니다. Azure 구독 관리자는 Azure Portal을 통해 Azure AD 테넌트를 추가로 만들 수도 있습니다. 테넌트에 대 한 액세스 권한을 얻을 수 있는 다양 한 방법에 대 한 자세한 내용은 [Azure Active Directory 테넌트를 가져오는 방법을][AAD-How-To-Tenant] 참조 하세요. 구독과 Azure AD 테넌트 간의 관계에 대 한 자세한 내용은 [azure 구독을 Azure Active Directory와 연결 하는 방법][AAD-How-Subscriptions-Assoc] 을 참조 하세요.
 
 ## <a name="token-endpoint"></a>토큰 엔드포인트
 

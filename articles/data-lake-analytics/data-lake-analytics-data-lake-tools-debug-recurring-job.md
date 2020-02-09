@@ -31,7 +31,7 @@ Azure Data Lake Tools for Visual Studio의 **관련 작업 보기**는 두 사�
 
 관련 작업 보기를 사용하여 되풀이 작업 문제를 해결하려면 먼저 Visual Studio에서 되풀이 작업을 찾은 후 관련 작업 보기를 열어야 합니다.
 
-### <a name="case-1-you-have-the-url-for-the-recurring-job"></a>사례 1: 되풀이 작업에 대 한 url
+### <a name="case-1-you-have-the-url-for-the-recurring-job"></a>사례 1: 되풀이 작업에 대한 url
 
 **도구** > **Data Lake** > **작업 보기**를 통해 작업 URL을 붙여 넣어 Visual Studio에서 작업 보기를 열 수 있습니다. **관련 작업 보기**를 선택하여 관련 작업 보기를 엽니다.
 

@@ -31,4 +31,4 @@ Azure 스프링 클라우드 응용 프로그램은 특정 지역에서 실행 �
 
 [Azure Traffic Manager](../traffic-manager/traffic-manager-overview.md) 는 DNS 기반 트래픽 부하 분산을 제공 하 고 여러 지역에 걸쳐 네트워크 트래픽을 분산할 수 있습니다.  Azure Traffic Manager을 사용 하 여 고객에 게 가장 가까운 Azure 스프링 클라우드 서비스 인스턴스로 고객을 안내 합니다.  최상의 성능 및 중복성을 위해 azure 스프링 클라우드 서비스로 보내기 전에 Azure Traffic Manager를 통해 모든 응용 프로그램 트래픽을 전달 합니다.
 
-Azure 스프링 클라우드 응용 프로그램이 여러 지역에 있는 경우 Azure Traffic Manager를 사용 하 여 각 지역의 응용 프로그램에 대 한 트래픽 흐름을 제어할 수 있습니다.  서비스 IP를 사용 하 여 각 서비스에 대 한 Azure Traffic Manager 끝점을 정의 합니다. 고객은 Azure 스프링 클라우드 서비스를 가리키는 Azure Traffic Manager DNS 이름에 연결 해야 합니다.  Azure Traffic Manager 정의 된 끝점에서 트래픽 부하를 분산 합니다.  재해가 발생 한 데이터 센터에서 Azure Traffic Manager는 해당 지역에서 해당 쌍으로 트래픽을 전달 하 여 서비스 연속성을 보장 합니다.
+Azure 스프링 클라우드 응용 프로그램이 여러 지역에 있는 경우 Azure Traffic Manager를 사용 하 여 각 지역의 응용 프로그램에 대 한 트래픽 흐름을 제어할 수 있습니다.  서비스 IP를 사용 하 여 각 서비스에 대 한 Azure Traffic Manager 엔드포인트을 정의 합니다. 고객은 Azure 스프링 클라우드 서비스를 가리키는 Azure Traffic Manager DNS 이름에 연결 해야 합니다.  Azure Traffic Manager 정의 된 엔드포인트에서 트래픽 부하를 분산 합니다.  재해가 발생 한 데이터 센터에서 Azure Traffic Manager는 해당 지역에서 해당 쌍으로 트래픽을 전달 하 여 서비스 연속성을 보장 합니다.

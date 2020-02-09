@@ -1,6 +1,6 @@
 ---
 title: Azure DNS를 Azure 리소스와 통합-Azure DNS
-description: 이 문서에서는 Azure 리소스에 대 한 DNS를 제공 하기 위해 Azure DNS를 사용 하는 방법을 알아봅니다.
+description: 이 문서에서는 Azure 리소스에 대한 DNS를 제공 하기 위해 Azure DNS를 사용 하는 방법을 알아봅니다.
 services: dns
 author: rohinkoul
 ms.service: dns
@@ -54,7 +54,7 @@ DNS 영역으로 이동하고 **+ 레코드 집합**을 클릭합니다. **레�
 
 ## <a name="public-ip-address"></a>공용 IP 주소
 
-Application Gateway, Load Balancer, 클라우드 서비스, 리소스 관리자 Vm 및 클래식 Vm과 같은 공용 IP 주소 리소스를 사용 하는 서비스에 대 한 사용자 지정 도메인을 구성 하려면 A 레코드를 사용 합니다.
+Application Gateway, Load Balancer, 클라우드 서비스, 리소스 관리자 Vm 및 클래식 Vm과 같은 공용 IP 주소 리소스를 사용 하는 서비스에 대한 사용자 지정 도메인을 구성 하려면 A 레코드를 사용 합니다.
 
 **네트워킹** > **공용 IP 주소**로 이동하고 공용 IP 리소스를 선택하고 **구성**을 클릭합니다. 표시된 IP 주소를 기록해 둡니다.
 
@@ -111,7 +111,7 @@ DNS 영역으로 이동하고 **+ 레코드 집합**을 클릭합니다. **레�
 
 App Service에 사용자 지정 도메인을 매핑하는 방법에 대한 자세한 내용은 [Azure Web Apps에 기존 사용자 지정 DNS 이름 매핑](../app-service/app-service-web-tutorial-custom-domain.md?toc=%dns%2ftoc.json)을 참조하세요.
 
-활성 DNS 이름을 마이그레이션하는 방법에 대 한 자세한 내용은 [Azure App Service에 활성 dns 이름 마이그레이션](../app-service/manage-custom-dns-migrate-domain.md)을 참조 하세요.
+활성 DNS 이름을 마이그레이션하는 방법에 대한 자세한 내용은 [Azure App Service에 활성 dns 이름 마이그레이션](../app-service/manage-custom-dns-migrate-domain.md)을 참조 하세요.
 
 사용자 지정 도메인을 구매해야 하는 경우 App Service 도메인에 대해 자세히 알아보려면 [Azure Web Apps에 대한 사용자 지정 도메인 이름 구입](../app-service/manage-custom-dns-buy-domain.md)을 참조하세요.
 

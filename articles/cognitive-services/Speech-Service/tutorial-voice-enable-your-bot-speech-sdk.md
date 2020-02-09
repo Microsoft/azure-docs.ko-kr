@@ -242,7 +242,7 @@ ms.locfileid: "75495166"
    * **리소스 그룹**에 대해 **SpeechEchoBotTutorial-ResourceGroup**을 선택 합니다.
    * **위치**에서 **미국 서 부**를 선택 합니다.
      * **가격 책정 계층**에 대해 **F0**를 선택 합니다.
-     * **메시징 끝점**의 경우 끝에 추가 된 `/api/messages` 경로를 사용 하 여 웹 앱에 대 한 URL을 입력 합니다. 예: 전역적으로 고유한 앱 이름이 **EchoBot20190805125647**인 경우 메시징 끝점은 `https://EchoBot20190805125647.azurewebsites.net/api/messages/`입니다.
+     * **메시징 엔드포인트**의 경우 끝에 추가 된 `/api/messages` 경로를 사용 하 여 웹 앱에 대 한 URL을 입력 합니다. 예: 전역적으로 고유한 앱 이름이 **EchoBot20190805125647**인 경우 메시징 엔드포인트은 `https://EchoBot20190805125647.azurewebsites.net/api/messages/`입니다.
      * **Application insights**의 경우이를 **Off**로 설정할 수 있습니다. 자세한 내용은 [봇 분석](https://docs.microsoft.com/azure/bot-service/bot-service-manage-analytics?view=azure-bot-service-4.0)을 참조 하세요.
      * **앱 ID 및 암호 자동 생성을**무시 합니다.
 5. **Bot 채널 등록** 블레이드의 아래쪽에서 **만들기**를 클릭 합니다.
@@ -271,7 +271,7 @@ ms.locfileid: "75495166"
    * **저장**을 클릭합니다.
 
 1. 왼쪽 탐색 영역에서 **설정**을 클릭 합니다.
-   * **스트리밍 끝점 사용**확인란을 선택 합니다. 이는 봇과 직접 선 음성 채널 사이에서 웹 소켓을 기반으로 하는 통신 프로토콜을 사용 하도록 설정 하는 데 필요 합니다.
+   * **스트리밍 엔드포인트 사용**확인란을 선택 합니다. 이는 봇과 직접 선 음성 채널 사이에서 웹 소켓을 기반으로 하는 통신 프로토콜을 사용 하도록 설정 하는 데 필요 합니다.
    * **저장**을 클릭합니다.
 
 > [!TIP]
@@ -298,7 +298,7 @@ Direct Line Speech Client에는 bot에 대 한 연결을 구성 하 고, 텍스�
 | 오류 | 어떻게 해야 하나요? |
 |-------|----------------------|
 |오류 AuthenticationFailure: 인증 오류 (401)로 인해 WebSocket을 업그레이드 하지 못했습니다. 올바른 구독 키 (또는 권한 부여 토큰) 및 지역 이름 확인| 앱의 설정 페이지에서 음성 구독 키와 해당 영역을 올바르게 입력 했는지 확인 합니다.<br>음성 키와 키 영역을 올바르게 입력 했는지 확인 합니다. |
-|오류 ConnectionFailure: 원격 호스트에서 연결을 끊었습니다. 오류 코드: 1011. 오류 세부 정보: 메시지를 보내기 전에 봇에 연결할 수 없습니다. | ["스트리밍 끝점 사용"](#register-the-direct-line-speech-channel) 확인란을 선택 했는지 확인 하 고 [ **웹 소켓** ](#enable-web-sockets) 을 켜기로 전환 합니다.<br>Azure App Service 실행 중인지 확인 합니다. 인 경우 App Service를 다시 시작 하십시오.|
+|오류 ConnectionFailure: 원격 호스트에서 연결을 끊었습니다. 오류 코드: 1011. 오류 세부 정보: 메시지를 보내기 전에 봇에 연결할 수 없습니다. | ["스트리밍 엔드포인트 사용"](#register-the-direct-line-speech-channel) 확인란을 선택 했는지 확인 하 고 [ **웹 소켓** ](#enable-web-sockets) 을 켜기로 전환 합니다.<br>Azure App Service 실행 중인지 확인 합니다. 인 경우 App Service를 다시 시작 하십시오.|
 |오류 ConnectionFailure: 원격 호스트에서 연결을 끊었습니다. 오류 코드: 1011. 오류 세부 정보: 응답 상태 코드는 성공: 500 (InternalServerError)을 나타내지 않습니다.| 봇이 output 활동 [말하기](https://github.com/microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md#speak) 필드에서 신경망을 지정 했지만 음성 구독 키와 연결 된 Azure 지역은 신경망을 지원 하지 않습니다. [표준 및 신경망을](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#standard-and-neural-voices)참조 하세요.|
 |오류 ConnectionFailure: 원격 호스트에서 연결을 끊었습니다. 오류 코드: 1000. 오류 세부 정보: 최대 웹 소켓 연결 유휴 기간 (> 30만 밀리초)을 초과 했습니다.| 이 오류는 채널에 대 한 연결이 열려 있고 5 분 넘게 비활성 상태로 유지 되는 경우 예상 되는 오류입니다. |
 

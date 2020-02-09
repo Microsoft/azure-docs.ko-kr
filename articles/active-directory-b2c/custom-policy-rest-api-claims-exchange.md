@@ -43,9 +43,9 @@ Azure Active Directory B2C (Azure AD B2C)의 [사용자 지정 정책](custom-po
 
 ## <a name="prepare-the-api"></a>API 준비
 
-이 섹션에서는 `email`에 대 한 값을 받도록 Azure 함수를 준비한 다음, Azure AD B2C에서 클레임으로 사용할 수 있는 `city`의 값을 반환 합니다.
+이 섹션에서는 `email`에 대한 값을 받도록 Azure 함수를 준비한 다음, Azure AD B2C에서 클레임으로 사용할 수 있는 `city`의 값을 반환 합니다.
 
-다음 코드를 사용 하기 위해 만든 Azure 함수에 대 한 실행 csx 파일을 변경 합니다.
+다음 코드를 사용 하기 위해 만든 Azure 함수에 대한 실행 csx 파일을 변경 합니다.
 
 ```csharp
 #r "Newtonsoft.Json"
@@ -84,7 +84,7 @@ public class ResponseContent
 
 ## <a name="configure-the-claims-exchange"></a>클레임 교환 구성
 
-기술 프로필은 클레임 교환에 대 한 구성을 제공 합니다.
+기술 프로필은 클레임 교환에 대한 구성을 제공 합니다.
 
 *Trustframeworkextensions.xml* 파일을 열고 **ClaimsProviders** 요소 안에 다음 **ClaimsProvider** xml 요소를 추가 합니다.
 
@@ -121,7 +121,7 @@ public class ResponseContent
 
 ## <a name="add-the-claim-definition"></a>클레임 정의 추가
 
-**BuildingBlocks** 요소 내에 `city`에 대 한 정의를 추가 합니다. 이 요소는 TrustFrameworkExtensions.xml 파일의 시작 부분에서 찾을 수 있습니다.
+**BuildingBlocks** 요소 내에 `city`에 대한 정의를 추가 합니다. 이 요소는 TrustFrameworkExtensions.xml 파일의 시작 부분에서 찾을 수 있습니다.
 
 ```XML
 <BuildingBlocks>
@@ -150,7 +150,7 @@ REST API 호출을 오케스트레이션 단계로 사용할 수 있는 사용 �
 </OrchestrationStep>
 ```
 
-사용자 경험에 대 한 최종 XML은 다음 예제와 같이 표시 됩니다.
+사용자 경험에 대한 최종 XML은 다음 예제와 같이 표시 됩니다.
 
 ```XML
 <UserJourney Id="ProfileEdit">

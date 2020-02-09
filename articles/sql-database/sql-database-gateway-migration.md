@@ -52,7 +52,7 @@ Azure 인프라가 개선 됨에 따라 Microsoft는 최상의 고객 환경을 
 
 ## <a name="what-to-do-you-do-if-youre-affected"></a>영향을 받는 경우 수행할 작업
 
-TCP 포트 1433 및 포트 범위 11000-11999에서 지역의 모든 [Azure SQL Database 게이트웨이 ip 주소](sql-database-connectivity-architecture.md#azure-sql-database-gateway-ip-addresses) 에 대 한 ip 주소에 대 한 아웃 바운드 트래픽을 허용 하는 것이 좋습니다. 이 권장 사항은 온-프레미스에서 연결 하는 클라이언트와 서비스 끝점을 통해 연결 하는 클라이언트에 적용 됩니다. 포트 범위에 대 한 자세한 내용은 [연결 정책](sql-database-connectivity-architecture.md#connection-policy)을 참조 하세요.
+TCP 포트 1433 및 포트 범위 11000-11999에서 지역의 모든 [Azure SQL Database 게이트웨이 ip 주소](sql-database-connectivity-architecture.md#azure-sql-database-gateway-ip-addresses) 에 대 한 ip 주소에 대 한 아웃 바운드 트래픽을 허용 하는 것이 좋습니다. 이 권장 사항은 온-프레미스에서 연결 하는 클라이언트와 서비스 엔드포인트을 통해 연결 하는 클라이언트에 적용 됩니다. 포트 범위에 대 한 자세한 내용은 [연결 정책](sql-database-connectivity-architecture.md#connection-policy)을 참조 하세요.
 
 Microsoft JDBC Driver 버전 4.0을 사용 하 여 응용 프로그램에서 만든 연결은 인증서 유효성 검사에 실패할 수 있습니다. 낮은 버전의 Microsoft JDBC는 인증서의 주체 필드에 CN (일반 이름)을 사용 합니다. 완화 방법은 hostNameInCertificate 속성이 *. database.windows.net로 설정 되어 있는지 확인 하는 것입니다. HostNameInCertificate 속성을 설정 하는 방법에 대 한 자세한 내용은 [SSL 암호화를 사용 하 여 연결](/sql/connect/jdbc/connecting-with-ssl-encryption)을 참조 하세요.
 

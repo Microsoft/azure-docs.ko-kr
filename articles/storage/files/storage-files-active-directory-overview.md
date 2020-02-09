@@ -59,7 +59,7 @@ VM에서 실행 중인 애플리케이션과 연결된 ID가 Azure Files의 데�
 ### <a name="enable-azure-ad-domain-service-authentication-for-smb-access"></a>SMB 액세스를 위해 Azure AD 도메인 서비스 인증 사용
 2018 년 9 월 24 일 이후에 만들어진 새 저장소 계정 및 기존 저장소 계정에 대 한 Azure Files에 대해 Azure AD 도메인 서비스 인증을 사용 하도록 설정할 수 있습니다. 
 
-이 기능을 사용 하도록 설정 하기 전에 저장소 계정이 연결 된 기본 Azure AD 테 넌 트에 대해 Azure AD Domain Services 배포 되었는지 확인 하세요. Azure AD Domain Services를 아직 설정하지 않은 경우 [Azure Portal을 사용하여 Azure Active Directory Domain Services 사용](../../active-directory-domain-services/tutorial-create-instance.md)에 제공된 단계별 지침을 따르세요.
+이 기능을 사용 하도록 설정 하기 전에 저장소 계정이 연결 된 기본 Azure AD 테넌트에 대해 Azure AD Domain Services 배포 되었는지 확인 하세요. Azure AD Domain Services를 아직 설정하지 않은 경우 [Azure Portal을 사용하여 Azure Active Directory Domain Services 사용](../../active-directory-domain-services/tutorial-create-instance.md)에 제공된 단계별 지침을 따르세요.
 
 Azure AD Domain Services 배포에는 일반적으로 10-15분이 소요됩니다. Azure AD Domain Services가 배포되면 Azure Files용 SMB를 통한 Azure AD 인증을 사용하도록 설정할 수 있습니다. 자세한 내용은 [Azure Files에 대해 SMB를 통한 Azure Active Directory 도메인 서비스 인증 사용](storage-files-active-directory-enable.md)을 참조 하세요. 
 

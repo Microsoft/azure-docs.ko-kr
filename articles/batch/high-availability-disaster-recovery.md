@@ -1,6 +1,6 @@
 ---
 title: 고가용성 및 재해 복구-Azure Batch
-description: 지역 가동 중단에 대 한 Batch 응용 프로그램을 디자인 하는 방법을 알아봅니다. 워크 로드는 다른 지역으로 장애 조치 (failover) 하거나 둘 이상의 지역 간에 분할 되어야 합니다.
+description: 지역 가동 중단에 대한 Batch 응용 프로그램을 디자인 하는 방법을 알아봅니다. 워크 로드는 다른 지역으로 장애 조치 (failover) 하거나 둘 이상의 지역 간에 분할 되어야 합니다.
 services: batch
 documentationcenter: ''
 author: LauraBrenner

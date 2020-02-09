@@ -26,7 +26,7 @@ ms.locfileid: "77084062"
 
 ## <a name="difference-highlights"></a>차이점 강조
 
-ADAL은 Azure Active Directory v 1.0 끝점에서 작동 합니다. MSAL (Microsoft 인증 라이브러리)은 이전에 Azure Active Directory v2.0 끝점 이라고 하는 Microsoft id 플랫폼에서 작동 합니다. Microsoft id 플랫폼은 다음과 같은 Azure Active Directory v 1.0과 다릅니다.
+ADAL은 Azure Active Directory v 1.0 엔드포인트에서 작동 합니다. MSAL (Microsoft 인증 라이브러리)은 이전에 Azure Active Directory v2.0 엔드포인트 이라고 하는 Microsoft id 플랫폼에서 작동 합니다. Microsoft id 플랫폼은 다음과 같은 Azure Active Directory v 1.0과 다릅니다.
 
 지원:
   - Azure Active Directory (조직 Id)
@@ -67,7 +67,7 @@ MSAL을 사용 하도록 기존 앱 등록을 변경할 필요가 없습니다. 
 
 ### <a name="user-consent"></a>사용자 승인
 
-ADAL 및 AAD v1 끝점을 사용 하는 경우 자신이 소유한 리소스에 대 한 사용자 동의가 처음 사용 시 부여 되었습니다. MSAL 및 Microsoft id 플랫폼을 사용 하는 경우에는 동의가 점진적으로 요청 될 수 있습니다. 증분 동의는 사용자가 높은 권한을 고려할 수 있는 권한 또는 권한이 필요한 이유를 명확 하 게 설명 하는 경우에는 그렇지 않을 수 있는 경우에 유용 합니다. ADAL에서 이러한 사용 권한은 사용자가 앱에 로그인 하는 것을 중단 한 것일 수 있습니다.
+ADAL 및 AAD v1 엔드포인트을 사용 하는 경우 자신이 소유한 리소스에 대 한 사용자 동의가 처음 사용 시 부여 되었습니다. MSAL 및 Microsoft id 플랫폼을 사용 하는 경우에는 동의가 점진적으로 요청 될 수 있습니다. 증분 동의는 사용자가 높은 권한을 고려할 수 있는 권한 또는 권한이 필요한 이유를 명확 하 게 설명 하는 경우에는 그렇지 않을 수 있는 경우에 유용 합니다. ADAL에서 이러한 사용 권한은 사용자가 앱에 로그인 하는 것을 중단 한 것일 수 있습니다.
 
 > [!TIP]
 > 앱에 권한이 필요한 이유에 대 한 추가 컨텍스트를 사용자에 게 제공 해야 하는 시나리오에서는 증분 동의를 사용 하는 것이 좋습니다.
@@ -156,9 +156,9 @@ Sam의 Contoso.com 계정을 Fabrikam.com의 멤버로 추가 하면 Sam에 대 
 
 ### <a name="imultitenantaccount"></a>IMultiTenantAccount
 
-계정이 표시 되는 각 테 넌 트의 계정에 대 한 클레임에 액세스 하는 앱이 있는 경우 `IAccount` 개체를 `IMultiTenantAccount`으로 캐스팅할 수 있습니다. 이 인터페이스는 테 넌 트 ID로 키가 지정 된 `ITenantProfiles`의 맵을 제공 하 여 현재 계정에 상대적인 토큰을 요청한 각 테 넌 트의 계정에 속하는 클레임에 액세스할 수 있습니다.
+계정이 표시 되는 각 테넌트의 계정에 대 한 클레임에 액세스 하는 앱이 있는 경우 `IAccount` 개체를 `IMultiTenantAccount`으로 캐스팅할 수 있습니다. 이 인터페이스는 테넌트 ID로 키가 지정 된 `ITenantProfiles`의 맵을 제공 하 여 현재 계정에 상대적인 토큰을 요청한 각 테넌트의 계정에 속하는 클레임에 액세스할 수 있습니다.
 
-`IAccount`의 루트에 있는 클레임 및 `IMultiTenantAccount`는 항상 홈 테 넌 트의 클레임을 포함 합니다. 홈 테 넌 트 내에서 토큰에 대 한 요청을 아직 수행 하지 않은 경우이 컬렉션은 비어 있습니다.
+`IAccount`의 루트에 있는 클레임 및 `IMultiTenantAccount`는 항상 홈 테넌트의 클레임을 포함 합니다. 홈 테넌트 내에서 토큰에 대 한 요청을 아직 수행 하지 않은 경우이 컬렉션은 비어 있습니다.
 
 ## <a name="other-changes"></a>기타 변경 내용
 

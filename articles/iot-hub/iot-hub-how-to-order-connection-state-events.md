@@ -270,9 +270,9 @@ Logic Apps Designer를 나가기 전에 논리 앱이 트리거에 대해 수신
 
    ![찾을 이벤트 유형 설정](./media/iot-hub-how-to-order-connection-state-events/set-event-types.png)
 
-6. **끝점 세부 정보**에서 끝점 유형을 **웹 후크에** 선택 하 고 끝점 선택을 클릭 한 다음 논리 앱에서 복사한 URL을 붙여넣고 선택 항목을 확인 합니다.
+6. **엔드포인트 세부 정보**에서 엔드포인트 유형을 **웹 후크에** 선택 하 고 엔드포인트 선택을 클릭 한 다음 논리 앱에서 복사한 URL을 붙여넣고 선택 항목을 확인 합니다.
 
-   ![끝점 url 선택](./media/iot-hub-how-to-order-connection-state-events/endpoint-select.png)
+   ![엔드포인트 url 선택](./media/iot-hub-how-to-order-connection-state-events/endpoint-select.png)
 
 7. 그러면 폼이 다음 예제와 같이 표시 됩니다.
 

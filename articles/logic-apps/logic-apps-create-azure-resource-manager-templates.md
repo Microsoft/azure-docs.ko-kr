@@ -74,7 +74,7 @@ Azure Resource Manager 템플릿에 대 한 자세한 내용은 다음 항목을
 
 ### <a name="install-azure-resource-manager-client"></a>Azure Resource Manager 클라이언트 설치
 
-LogicAppTemplate 모듈에서 모든 Azure 테 넌 트 및 구독 액세스 토큰을 사용 하려면 Azure Resource Manager API를 호출 하는 간단한 명령줄 도구인 [Azure Resource Manager 클라이언트 도구](https://github.com/projectkudu/ARMClient)를 설치 합니다.
+LogicAppTemplate 모듈에서 모든 Azure 테넌트 및 구독 액세스 토큰을 사용 하려면 Azure Resource Manager API를 호출 하는 간단한 명령줄 도구인 [Azure Resource Manager 클라이언트 도구](https://github.com/projectkudu/ARMClient)를 설치 합니다.
 
 이 도구를 사용 하 여 `Get-LogicAppTemplate` 명령을 실행 하면 명령은 먼저 ARMClient 도구를 통해 액세스 토큰을 가져오고, 토큰을 PowerShell 스크립트로 파이프 하 고, 템플릿을 JSON 파일로 만듭니다. 도구에 대 한 자세한 내용은 [Azure Resource Manager 클라이언트 도구에 대 한이 문서](https://blog.davidebbo.com/2015/01/azure-resource-manager-client.html)를 참조 하세요.
 

@@ -88,6 +88,6 @@ Age는 [Recognizers-text](https://github.com/Microsoft/Recognizers-Text/blob/mas
 
 ## <a name="next-steps"></a>다음 단계
 
-[V3 예측 끝점](luis-migration-api-v3.md)에 대해 자세히 알아보세요.
+[V3 예측 엔드포인트](luis-migration-api-v3.md)에 대해 자세히 알아보세요.
 
 [currency](luis-reference-prebuilt-currency.md), [datetimeV2](luis-reference-prebuilt-datetimev2.md) 및 [dimension](luis-reference-prebuilt-dimension.md) 엔터티에 대해 알아봅니다. 

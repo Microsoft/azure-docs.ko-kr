@@ -36,7 +36,7 @@ Azure의 거버넌스는 Azure 관리의 측면 중 하나입니다. 이 문서�
 ## <a name="govern"></a>거버넌스
 
 거버넌스는 Azure에서 애플리케이션 및 리소스에 대한 제어를 유지 관리하는 프로세스와 메커니즘을 제공합니다. 거버넌스에는 이니셔티브 계획과 전략적 우선 순위 설정이 필요합니다.
-Azure에서 거버넌스는 주로 두 서비스를 통해 구현됩니다. [Azure Policy](./policy/overview.md)를 사용하면 정책 정의를 만들고 할당하고 관리하여 리소스에 대 한 규칙을 적용할 수 있습니다. 이 기능은 해당 리소스가 회사 표준을 준수하게 합니다. [Azure Cost Management](../cost-management-billing/cost-management-billing-overview.md)를 사용하면 Azure 리소스 및 기타 클라우드 공급 기업에 대한 클라우드 사용량 및 비용을 추적할 수 있습니다.
+Azure에서 거버넌스는 주로 두 서비스를 통해 구현됩니다. [Azure Policy](./policy/overview.md)를 사용하면 정책 정의를 만들고 할당하고 관리하여 리소스에 대한 규칙을 적용할 수 있습니다. 이 기능은 해당 리소스가 회사 표준을 준수하게 합니다. [Azure Cost Management](../cost-management-billing/cost-management-billing-overview.md)를 사용하면 Azure 리소스 및 기타 클라우드 공급 기업에 대한 클라우드 사용량 및 비용을 추적할 수 있습니다.
 
 ## <a name="secure"></a>보안
 

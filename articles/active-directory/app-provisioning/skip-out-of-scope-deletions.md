@@ -71,9 +71,9 @@ Microsoft Graph Explorer에서 [servicePrincipalId]를 **1단계**에서 추출�
         }
 ```
 
-## <a name="step-4-update-the-secrets-endpoint-with-the-skipoutofscopedeletions-flag"></a>4 단계: SkipOutOfScopeDeletions 플래그를 사용 하 여 비밀 끝점 업데이트
+## <a name="step-4-update-the-secrets-endpoint-with-the-skipoutofscopedeletions-flag"></a>4 단계: SkipOutOfScopeDeletions 플래그를 사용 하 여 비밀 엔드포인트 업데이트
 
-그래프 탐색기에서 아래 명령을 실행 하 여 비밀 끝점을 ***SkipOutOfScopeDeletions*** 플래그로 업데이트 합니다. 
+그래프 탐색기에서 아래 명령을 실행 하 여 비밀 엔드포인트을 ***SkipOutOfScopeDeletions*** 플래그로 업데이트 합니다. 
 
 아래 URL에서 [servicePrincipalId]을 [1 단계](#step-1-retrieve-your-provisioning-app-service-principal-id-object-id)에서 추출한 **servicePrincipalId** 로 바꿉니다. 
 

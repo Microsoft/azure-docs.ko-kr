@@ -66,9 +66,9 @@ Azure DDoS Protection 표준 파트너 기회는 Azure Portal, Api 및 CLI/PS를
 파트너가 Azure DDoS Protection 표준과의 통합을 구성 하려면 다음 단계를 수행 해야 합니다.
 1. 원하는 (파트너) 구독에 DDoS Protection 계획을 만듭니다. 단계별 지침은 [DDoS 표준 보호 계획 만들기](manage-ddos-protection.md#create-a-ddos-protection-plan)를 참조 하세요.
    > [!NOTE]
-   > 지정 된 테 넌 트에 대해 1 개의 DDoS Protection 계획만 만들어야 합니다. 
-2. 부하 분산 장치, 방화벽, 웹 응용 프로그램 방화벽 등의 파트너 구독에 공용 끝점을 사용 하 여 서비스를 배포 합니다. 
-3. 첫 번째 단계에서 만든 DDoS Protection 계획을 사용 하 여 공용 끝점이 있는 서비스의 가상 네트워크에서 Azure DDoS Protection Standard를 사용 하도록 설정 합니다. Stpe 단계별 지침은 [Enable DDoS Standard Protection plan](manage-ddos-protection.md#enable-ddos-for-an-existing-virtual-network) 항목을 참조 하세요.
+   > 지정 된 테넌트에 대해 1 개의 DDoS Protection 계획만 만들어야 합니다. 
+2. 부하 분산 장치, 방화벽, 웹 응용 프로그램 방화벽 등의 파트너 구독에 공용 엔드포인트을 사용 하 여 서비스를 배포 합니다. 
+3. 첫 번째 단계에서 만든 DDoS Protection 계획을 사용 하 여 공용 엔드포인트이 있는 서비스의 가상 네트워크에서 Azure DDoS Protection Standard를 사용 하도록 설정 합니다. Stpe 단계별 지침은 [Enable DDoS Standard Protection plan](manage-ddos-protection.md#enable-ddos-for-an-existing-virtual-network) 항목을 참조 하세요.
    > [!IMPORTANT] 
    > 가상 네트워크에서 Azure DDoS Protection Standard를 사용 하도록 설정 하면 해당 가상 네트워크 내의 모든 공용 Ip가 자동으로 보호 됩니다. 이러한 공용 Ip의 원본은 Azure (클라이언트 구독) 또는 Azure 외부에 있을 수 있습니다. 
 4. 필요에 따라 응용 프로그램별 고객 관련 대시보드의 표준 원격 분석과 공격 분석 Azure DDoS Protection 통합 합니다. 원격 분석 사용에 대 한 자세한 내용은 [DDoS Protection 원격 분석 사용](manage-ddos-protection.md#use-ddos-protection-telemetry)을 참조 하세요. 공격 분석을 구성 하는 방법에 대 한 자세한 내용은 [DDoS 공격 분석 구성](manage-ddos-protection.md#configure-ddos-attack-analytics) 을 참조 하세요.

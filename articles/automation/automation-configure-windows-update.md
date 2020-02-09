@@ -12,7 +12,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75366858"
 ---
-# <a name="configure-windows-update-settings-for-update-management"></a>업데이트 관리에 대 한 Windows 업데이트 설정 구성
+# <a name="configure-windows-update-settings-for-update-management"></a>업데이트 관리에 대한 Windows 업데이트 설정 구성
 
 Azure 업데이트 관리는 Windows 업데이트를 사용 하 여 Windows 업데이트를 다운로드 하 고 설치 합니다. 따라서 업데이트 관리은 Windows 업데이트에서 사용 하는 많은 설정을 합니다. 설정을 사용 하 여 비 Windows 업데이트를 사용 하는 경우에도 업데이트 관리에서 해당 업데이트를 관리 합니다. 업데이트 배포를 수행 하기 전에 업데이트 다운로드를 사용 하도록 설정 하려는 경우 업데이트 배포는 더 빠르고 효율적이 고 유지 관리 기간을 초과할 가능성이 줄어듭니다.
 
@@ -43,7 +43,7 @@ Set-ItemProperty -Path $AutoUpdatePath -Name NoAutoUpdate -Value 1
 
 ## <a name="enable-updates-for-other-microsoft-products"></a>다른 Microsoft 제품에 대한 업데이트 사용
 
-기본적으로 Windows 업데이트는 Windows용 업데이트만 제공합니다. **Windows 업데이트를 업데이트할 때 다른 Microsoft 제품에 대 한 업데이트 제공** 설정을 사용 하도록 설정 하면 Microsoft SQL Server 및 기타 microsoft 소프트웨어에 대 한 보안 패치를 비롯 한 다른 제품에 대 한 업데이트도 수신 됩니다. 이 옵션은 그룹 정책을 통해 구성할 수 없습니다. 다른 Microsoft 업데이트를 사용 하도록 설정 하려는 시스템에서 다음 PowerShell 명령을 실행 합니다. 업데이트 관리는이 설정을 준수 합니다.
+기본적으로 Windows 업데이트는 Windows용 업데이트만 제공합니다. **Windows 업데이트를 업데이트할 때 다른 Microsoft 제품에 대한 업데이트 제공** 설정을 사용 하도록 설정 하면 Microsoft SQL Server 및 기타 microsoft 소프트웨어에 대한 보안 패치를 비롯 한 다른 제품에 대한 업데이트도 수신 됩니다. 이 옵션은 그룹 정책을 통해 구성할 수 없습니다. 다른 Microsoft 업데이트를 사용 하도록 설정 하려는 시스템에서 다음 PowerShell 명령을 실행 합니다. 업데이트 관리는이 설정을 준수 합니다.
 
 ```powershell
 $ServiceManager = (New-Object -com "Microsoft.Update.ServiceManager")
@@ -62,4 +62,4 @@ $ServiceManager.AddService2($ServiceId,7,"")
 
 ## <a name="next-steps"></a>다음 단계
 
-Windows 업데이트 설정을 구성한 후에는 [Azure vm에 대 한 업데이트 및 패치 관리](automation-tutorial-update-management.md)의 지침에 따라 업데이트 배포를 예약할 수 있습니다.
+Windows 업데이트 설정을 구성한 후에는 [Azure vm에 대한 업데이트 및 패치 관리](automation-tutorial-update-management.md)의 지침에 따라 업데이트 배포를 예약할 수 있습니다.

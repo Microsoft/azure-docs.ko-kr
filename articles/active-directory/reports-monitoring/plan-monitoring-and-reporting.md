@@ -57,7 +57,7 @@ Azure AD 로그인 로그에 액세스 하려면 Azure AD premium 라이선스�
 
 자세한 기능 및 라이선스 정보는 [Azure Active Directory 가격 책정 가이드를 참조](https://azure.microsoft.com/pricing/details/active-directory/)하세요.
 
-Azure AD 모니터링 및 보고를 배포 하려면 Azure AD 테 넌 트의 전역 관리자 또는 보안 관리자 인 사용자가 필요 합니다.
+Azure AD 모니터링 및 보고를 배포 하려면 Azure AD 테넌트의 전역 관리자 또는 보안 관리자 인 사용자가 필요 합니다.
 
 로그 데이터의 최종 대상에 따라 다음 중 하나가 필요 합니다.
 

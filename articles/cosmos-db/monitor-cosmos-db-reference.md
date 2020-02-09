@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB 모니터링 데이터 참조 | Microsoft Docs
-description: Azure Cosmos DB의 모니터링 데이터에 대 한 로그 및 메트릭 참조입니다.
+description: Azure Cosmos DB의 모니터링 데이터에 대한 로그 및 메트릭 참조입니다.
 author: bwren
 services: azure-monitor
 ms.service: azure-monitor
@@ -17,7 +17,7 @@ ms.lasthandoff: 11/24/2019
 ms.locfileid: "74456522"
 ---
 # <a name="azure-cosmos-db-monitoring-data-reference"></a>Azure Cosmos DB 모니터링 데이터 참조
-이 문서에서는 Azure Cosmos DB의 성능 및 가용성을 분석 하기 위해 수집 된 로그 및 메트릭 데이터에 대 한 참조를 제공 합니다. Azure Cosmos DB 모니터링 데이터 수집 및 분석에 대 한 자세한 내용은 [Cosmos DB 모니터링](monitor-cosmos-db.md) 을 참조 하세요.
+이 문서에서는 Azure Cosmos DB의 성능 및 가용성을 분석 하기 위해 수집 된 로그 및 메트릭 데이터에 대한 참조를 제공 합니다. Azure Cosmos DB 모니터링 데이터 수집 및 분석에 대한 자세한 내용은 [Cosmos DB 모니터링](monitor-cosmos-db.md) 을 참조 하세요.
 
 
 ## <a name="resource-logs"></a>리소스 로그
@@ -43,7 +43,7 @@ ms.locfileid: "74456522"
 | **responseLength** | **responseLength_s** | 길이 (바이트)에서 응답입니다.|
 | **resourceTokenUserRid** | **resourceTokenUserRid_s** | 이 값은 인증에 [리소스 토큰](https://docs.microsoft.com/azure/cosmos-db/secure-access-to-data#resource-tokens)이 사용될 경우 비어 있지 않습니다. 값은 사용자의 리소스 ID를 가리킵니다. |
 
-모든 Azure Monitor 로그 범주 및 관련 스키마에 대 한 링크 목록은 [Azure Monitor Logs categories and 스키마](../azure-monitor/platform/diagnostic-logs-schema.md)를 참조 하세요. 
+모든 Azure Monitor 로그 범주 및 관련 스키마에 대한 링크 목록은 [Azure Monitor Logs categories and 스키마](../azure-monitor/platform/diagnostic-logs-schema.md)를 참조 하세요. 
 
 ## <a name="metrics"></a>metrics
 다음 표에서는 Azure CosmOS DB에 대해 수집 된 플랫폼 메트릭을 나열 합니다. 모든 메트릭은 **표준 메트릭에 Cosmos DB**네임 스페이스에 저장 됩니다.
@@ -55,7 +55,7 @@ ms.locfileid: "74456522"
 |메트릭 (메트릭 표시 이름)|Unit (집계 형식) |설명|차원| 시간 단위| 레거시 메트릭 매핑 | 사용법 |
 |---|---|---|---| ---| ---| ---|
 | TotalRequests (총 요청) | 개수 (개수) | 요청 수| DatabaseName, CollectionName, 지역, StatusCode| 모두 | TotalRequests, Http 2xx, Http 3xx, Http 400, Http 401, Internal Server error, Service Unavailable, Throttled Requests, Average Requests per Second | 상태 코드의 요청을 분 단위로 모니터링 하는 데 사용 됩니다. 초당 평균 요청 수를 가져오려면 개수 집계(분)를 사용한 후 60으로 나눕니다. |
-| MetadataRequests (메타 데이터 요청) |개수 (개수) | 메타데이터 요청 수. Azure Cosmos DB는 각 계정에 대 한 시스템 메타 데이터 컨테이너를 유지 관리 하며,이를 통해 컬렉션, 데이터베이스 등의 기능 및 해당 구성을 무료로 열거할 수 있습니다. | DatabaseName, CollectionName, 지역, StatusCode| 모두| |메타데이터 요청으로 인한 제한을 모니터링하는 데 사용합니다.|
+| MetadataRequests (메타 데이터 요청) |개수 (개수) | 메타데이터 요청 수. Azure Cosmos DB는 각 계정에 대한 시스템 메타 데이터 컨테이너를 유지 관리 하며,이를 통해 컬렉션, 데이터베이스 등의 기능 및 해당 구성을 무료로 열거할 수 있습니다. | DatabaseName, CollectionName, 지역, StatusCode| 모두| |메타데이터 요청으로 인한 제한을 모니터링하는 데 사용합니다.|
 | MongoRequests (Mongo 요청) | 개수 (개수) | 생성된 Mongo 요청 수 | DatabaseName, CollectionName, 지역, CommandName, ErrorCode| 모두 |Mongo Query Request Rate, Mongo Update Request Rate, Mongo Delete Request Rate, Mongo Insert Request Rate, Mongo Count Request Rate| Mongo 요청 오류, 명령 유형별 사용량을 모니터링하는 데 사용합니다. |
 
 #### <a name="request-unit-metrics"></a>요청 단위 메트릭
@@ -100,5 +100,5 @@ ms.locfileid: "74456522"
 
 ## <a name="see-also"></a>참고 항목
 
-- Azure Cosmos DB 모니터링에 대 한 설명은 [monitoring Azure Cosmos DB](monitor-cosmos-db.md) 를 참조 하세요.
-- Azure 리소스 모니터링에 대 한 자세한 내용은 [Azure Monitor를 사용 하 여 azure 리소스 모니터링](../azure-monitor/insights/monitor-azure-resource.md) 을 참조 하세요.
+- Azure Cosmos DB 모니터링에 대한 설명은 [monitoring Azure Cosmos DB](monitor-cosmos-db.md) 를 참조 하세요.
+- Azure 리소스 모니터링에 대한 자세한 내용은 [Azure Monitor를 사용 하 여 azure 리소스 모니터링](../azure-monitor/insights/monitor-azure-resource.md) 을 참조 하세요.

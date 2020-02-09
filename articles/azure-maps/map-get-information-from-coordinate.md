@@ -1,6 +1,6 @@
 ---
-title: 지도의 좌표에 대 한 정보 표시 | Microsoft Azure 맵
-description: 사용자가 좌표를 선택할 때 맵의 주소에 대 한 정보를 표시 하는 방법에 대해 알아봅니다.
+title: 지도의 좌표에 대한 정보 표시 | Microsoft Azure 맵
+description: 사용자가 좌표를 선택할 때 맵의 주소에 대한 정보를 표시 하는 방법에 대해 알아봅니다.
 author: jingjing-z
 ms.author: jinzh
 ms.date: 07/29/2019
@@ -33,7 +33,7 @@ ms.locfileid: "76988535"
 
 세 번째 코드 블록은 마우스 커서의 스타일을 포인터로 업데이트 하 고 [popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest#open) 개체를 만듭니다. [맵에서 팝업 추가](./map-add-popup.md)에서 지침을 확인할 수 있습니다.
 
-네 번째 코드 블록은 마우스 클릭 [이벤트 수신기](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events)를 추가 합니다. 트리거되면 클릭 한 지점의 좌표를 사용 하 여 검색 쿼리를 만듭니다. 그런 다음 [Getsearchaddressreverse](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.searchurl?view=azure-iot-typescript-latest#searchaddressreverse-aborter--geojson-position--searchaddressreverseoptions-)메서드를 사용 하 여 좌표 주소에 대 한 [Get SEARCH Address 역방향 API](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) 를 쿼리 합니다. 그런 다음 응답에서 `geojson.getFeatures()` 메서드를 사용 하 여 GeoJSON 기능 컬렉션을 추출 합니다.
+네 번째 코드 블록은 마우스 클릭 [이벤트 수신기](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events)를 추가 합니다. 트리거되면 클릭 한 지점의 좌표를 사용 하 여 검색 쿼리를 만듭니다. 그런 다음 [Getsearchaddressreverse](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.searchurl?view=azure-iot-typescript-latest#searchaddressreverse-aborter--geojson-position--searchaddressreverseoptions-)메서드를 사용 하 여 좌표 주소에 대한 [Get SEARCH Address 역방향 API](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) 를 쿼리 합니다. 그런 다음 응답에서 `geojson.getFeatures()` 메서드를 사용 하 여 GeoJSON 기능 컬렉션을 추출 합니다.
 
 다섯 번째 코드 블록은 HTML 팝업 콘텐츠를 설정 하 여 클릭 한 좌표 위치의 응답 주소를 표시 합니다.
 
@@ -41,7 +41,7 @@ ms.locfileid: "76988535"
 
 ## <a name="make-a-reverse-search-request-via-fetch-api"></a>Fetch API를 통해 역방향 검색 요청 만들기
 
-Fetch를 사용 하 여 해당 위치에 대 한 역방향 geocode 요청을 만들려면 맵을 클릭 합니다.
+Fetch를 사용 하 여 해당 위치에 대한 역방향 geocode 요청을 만들려면 맵을 클릭 합니다.
 
 <iframe height='500' scrolling='no' title='좌표에서 정보 가져오기' src='//codepen.io/azuremaps/embed/ddXzoB/?height=516&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)로 펜 <a href='https://codepen.io/azuremaps/pen/ddXzoB/'>좌표에서 정보 가져오기</a>를 참조하세요.
 </iframe>

@@ -36,13 +36,13 @@ ms.locfileid: "75921147"
 
 ## <a name="how-to-use-this-solution-template"></a>이 솔루션 템플릿을 사용하는 방법
 
-1. **파일에서 데이터베이스로 대량 복사** 템플릿으로 이동 합니다. 원본 Gen2 저장소에 대 한 **새** 연결을 만듭니다. "GetMetadataDataset" 및 "SourceDataset"은 원본 파일 저장소의 동일한 연결에 대 한 참조입니다.
+1. **파일에서 데이터베이스로 대량 복사** 템플릿으로 이동 합니다. 원본 Gen2 저장소에 대한 **새** 연결을 만듭니다. "GetMetadataDataset" 및 "SourceDataset"은 원본 파일 저장소의 동일한 연결에 대한 참조입니다.
 
-    ![원본 데이터 저장소에 대 한 새 연결 만들기](media/solution-template-bulk-copy-from-files-to-database/source-connection.png)
+    ![원본 데이터 저장소에 대한 새 연결 만들기](media/solution-template-bulk-copy-from-files-to-database/source-connection.png)
 
-2. 데이터를 복사 하 고 있는 싱크 데이터 저장소에 대 한 **새** 연결을 만듭니다.
+2. 데이터를 복사 하 고 있는 싱크 데이터 저장소에 대한 **새** 연결을 만듭니다.
 
-    ![싱크 데이터 저장소에 대 한 새 연결 만들기](media/solution-template-bulk-copy-from-files-to-database/destination-connection.png)
+    ![싱크 데이터 저장소에 대한 새 연결 만들기](media/solution-template-bulk-copy-from-files-to-database/destination-connection.png)
     
 3. **이 템플릿 사용**을 선택합니다.
 
@@ -53,7 +53,7 @@ ms.locfileid: "75921147"
     ![파이프라인 검토](media/solution-template-bulk-copy-from-files-to-database/new-pipeline.png)
 
     > [!NOTE]
-    > 위에서 설명한 **2 단계** 에서 **azure Synapse ANALYTICS (이전의 SQL DW)** 를 데이터 대상으로 선택한 경우 Polybase SQL Data Warehouse 필요에 따라 스테이징을 위해 azure Blob 저장소에 대 한 연결을 입력 해야 합니다. 다음 스크린샷에 표시 된 것 처럼 템플릿은 Blob 저장소에 대 한 *저장소 경로* 를 자동으로 생성 합니다. 파이프라인이 실행 된 후 컨테이너를 만들었는지 확인 합니다.
+    > 위에서 설명한 **2 단계** 에서 **azure Synapse ANALYTICS (이전의 SQL DW)** 를 데이터 대상으로 선택한 경우 Polybase SQL Data Warehouse 필요에 따라 스테이징을 위해 azure Blob 저장소에 대한 연결을 입력 해야 합니다. 다음 스크린샷에 표시 된 것 처럼 템플릿은 Blob 저장소에 대한 *저장소 경로* 를 자동으로 생성 합니다. 파이프라인이 실행 된 후 컨테이너를 만들었는지 확인 합니다.
         
     ![Polybase 설정](media/solution-template-bulk-copy-from-files-to-database/staging-account.png)
 

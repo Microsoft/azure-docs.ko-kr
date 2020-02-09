@@ -33,16 +33,16 @@ ms.locfileid: "76702065"
 MSAL은 다음 값을 제공 합니다. 
 
 - `AccessToken`: HTTP 전달자 요청에서 보호 된 웹 Api를 호출 하는 데 사용 됩니다.
-- `IdToken`: 로그인 한 사용자에 대 한 유용한 정보 (예: 사용자 이름, 홈 테 넌 트 및 저장소에 대 한 고유 식별자)를 포함 합니다.
+- `IdToken`: 로그인 한 사용자에 대 한 유용한 정보 (예: 사용자 이름, 홈 테넌트 및 저장소에 대 한 고유 식별자)를 포함 합니다.
 - `ExpiresOn`: 토큰의 만료 시간입니다. MSAL은 앱에 대 한 자동 새로 고침을 처리 합니다.
-- `TenantId`: 사용자가 로그인 한 테 넌 트의 식별자입니다. 게스트 사용자 (Azure Active Directory B2B)의 경우이 값은 사용자의 홈 테 넌 트가 아니라 사용자가 로그인 한 테 넌 트를 식별 합니다.  
+- `TenantId`: 사용자가 로그인 한 테넌트의 식별자입니다. 게스트 사용자 (Azure Active Directory B2B)의 경우이 값은 사용자의 홈 테넌트가 아니라 사용자가 로그인 한 테넌트를 식별 합니다.  
 - `Scopes`: 토큰과 함께 부여 된 범위입니다. 부여 된 범위는 요청한 범위의 하위 집합일 수 있습니다.
 
 또한 MSAL은 `Account`에 대 한 추상화를 제공 합니다. `Account`은 현재 사용자의 로그인 된 계정을 나타냅니다.
 
-- `HomeAccountIdentifier`: 사용자의 홈 테 넌 트 식별자입니다.
+- `HomeAccountIdentifier`: 사용자의 홈 테넌트 식별자입니다.
 - `UserName`: 사용자의 기본 설정 된 사용자 이름입니다. Azure Active Directory B2C 사용자에 게는 비어 있을 수 있습니다.
-- `AccountIdentifier`: 로그인 한 사용자의 식별자입니다. 사용자가 다른 테 넌 트의 게스트가 아니면이 값은 대부분의 경우 `HomeAccountIdentifier` 값과 동일 합니다.
+- `AccountIdentifier`: 로그인 한 사용자의 식별자입니다. 사용자가 다른 테넌트의 게스트가 아니면이 값은 대부분의 경우 `HomeAccountIdentifier` 값과 동일 합니다.
 
 ## <a name="call-an-api"></a>API 호출
 

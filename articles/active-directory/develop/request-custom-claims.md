@@ -26,7 +26,7 @@ ms.locfileid: "77085594"
 ---
 # <a name="how-to-request-custom-claims-using-msal-for-ios-and-macos"></a>방법: iOS 및 macOS 용 MSAL을 사용 하 여 사용자 지정 클레임 요청
 
-Openid connect Connect를 사용 하면 필요에 따라 사용자 정보 끝점 및/또는 ID 토큰에서 개별 클레임의 반환을 요청할 수 있습니다. 클레임 요청은 요청 된 클레임 목록을 포함 하는 JSON 개체로 표현 됩니다. 자세한 내용은 [Openid connect Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0-final.html#ClaimsParameter) 을 참조 하세요.
+Openid connect Connect를 사용 하면 필요에 따라 사용자 정보 엔드포인트 및/또는 ID 토큰에서 개별 클레임의 반환을 요청할 수 있습니다. 클레임 요청은 요청 된 클레임 목록을 포함 하는 JSON 개체로 표현 됩니다. 자세한 내용은 [Openid connect Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0-final.html#ClaimsParameter) 을 참조 하세요.
 
 IOS 및 macOS 용 MSAL (Microsoft 인증 라이브러리)을 사용 하면 대화형 토큰 획득 시나리오와 자동 토큰 획득 시나리오에서 특정 클레임을 요청할 수 있습니다. `claimsRequest` 매개 변수를 통해이를 수행 합니다.
 

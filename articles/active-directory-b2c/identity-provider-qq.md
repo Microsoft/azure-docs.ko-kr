@@ -23,7 +23,7 @@ ms.locfileid: "76847408"
 
 ## <a name="create-a-qq-application"></a>QQ 애플리케이션 만들기
 
-Azure Active Directory B2C (Azure AD B2C)에서 QQ 계정을 id 공급자로 사용 하려면 테 넌 트에서 응용 프로그램을 나타내는 응용 프로그램을 만들어야 합니다. 아직 QQ 계정이 없으면 [https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033](https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033)에서 등록할 수 있습니다.
+Azure Active Directory B2C (Azure AD B2C)에서 QQ 계정을 id 공급자로 사용 하려면 테넌트에서 응용 프로그램을 나타내는 응용 프로그램을 만들어야 합니다. 아직 QQ 계정이 없으면 [https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033](https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033)에서 등록할 수 있습니다.
 
 ### <a name="register-for-the-qq-developer-program"></a>QQ 개발자 프로그램 등록
 
@@ -48,7 +48,7 @@ Azure Active Directory B2C (Azure AD B2C)에서 QQ 계정을 id 공급자로 사
 ## <a name="configure-qq-as-an-identity-provider"></a>QQ를 ID 공급자로 구성
 
 1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
-1. 포털 도구 모음에서 **디렉터리 + 구독** 아이콘을 선택 하 고 Azure AD B2C 테 넌 트가 포함 된 디렉터리를 선택 합니다.
+1. 포털 도구 모음에서 **디렉터리 + 구독** 아이콘을 선택 하 고 Azure AD B2C 테넌트가 포함 된 디렉터리를 선택 합니다.
 1. Azure Portal에서 **Azure AD B2C**를 검색 하 고 선택 합니다.
 1. **Id 공급자**를 선택한 다음 **Qq (미리 보기)** 를 선택 합니다.
 1. **이름**을 입력합니다. 예를 들어 *Qq*입니다.

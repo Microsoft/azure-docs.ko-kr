@@ -48,7 +48,7 @@ Azure Cost Management에는 청구 계정 또는 구독에 대 한 읽기 권한
 
 청구 계정의 Azure Cost Management에 대 한 액세스를 설정 하 고 할당 하는 방법에 대 한 자세한 내용은 [사용자 역할 및 사용 권한 할당](/partner-center/permissions-overview)을 참조 하세요. **전역 관리자** 및 **관리 에이전트** 역할은 청구 계정에 대 한 비용을 관리할 수 있습니다.
 
-구독 범위에서 Azure Cost Management 액세스 하기 위해 구독에 대 한 RBAC 액세스 권한이 있는 사용자는 소매점 (종 량 제) 요금으로 비용을 볼 수 있습니다. 그러나 고객 테 넌 트에 대 한 비용 표시 정책은 사용 하도록 설정 해야 합니다. 지원 되는 계정 유형의 전체 목록을 보려면 [데이터 Cost Management 이해](understand-cost-mgt-data.md)를 참조 하세요.
+구독 범위에서 Azure Cost Management 액세스 하기 위해 구독에 대 한 RBAC 액세스 권한이 있는 사용자는 소매점 (종 량 제) 요금으로 비용을 볼 수 있습니다. 그러나 고객 테넌트에 대 한 비용 표시 정책은 사용 하도록 설정 해야 합니다. 지원 되는 계정 유형의 전체 목록을 보려면 [데이터 Cost Management 이해](understand-cost-mgt-data.md)를 참조 하세요.
 
 
 ## <a name="how-cost-management-uses-scopes"></a>Cost Management 범위를 사용 하는 방법
@@ -57,9 +57,9 @@ Azure Cost Management에는 청구 계정 또는 구독에 대 한 읽기 권한
 
 청구 범위 및 RBAC 범위와 비용 관리가 범위에서 작동 하는 방식을 이해 하려면 [범위 이해 및](understand-work-scopes.md)사용을 참조 하세요.
 
-## <a name="manage-costs-with-partner-tenant-billing-scopes"></a>파트너 테 넌 트 요금 청구 범위를 사용 하 여 비용 관리
+## <a name="manage-costs-with-partner-tenant-billing-scopes"></a>파트너 테넌트 요금 청구 범위를 사용 하 여 비용 관리
 
-고객을 Microsoft 고객 계약에 등록 한 후에는 다음 _청구 범위_ 를 테 넌 트에서 사용할 수 있습니다. 범위를 사용 하 여 Cost Management 비용을 관리 합니다.
+고객을 Microsoft 고객 계약에 등록 한 후에는 다음 _청구 범위_ 를 테넌트에서 사용할 수 있습니다. 범위를 사용 하 여 Cost Management 비용을 관리 합니다.
 
 ### <a name="billing-account-scope"></a>청구 계정 범위
 
@@ -106,9 +106,9 @@ Microsoft 고객 계약에 고객을 등록 한 후 Microsoft 고객 계약에 �
 
 ## <a name="partner-access-to-billing-scopes-in-cost-management"></a>Cost Management에서 청구 범위에 대 한 파트너 액세스
 
-**전역 관리자** 및 **관리 에이전트** 역할이 있는 사용자만 파트너의 Azure 테 넌 트에서 직접 청구 계정, 청구 프로필 및 고객에 대 한 비용을 관리 하 고 볼 수 있습니다. 파트너 센터 역할에 대 한 자세한 내용은 [사용자 역할 및 사용 권한 할당](/partner-center/permissions-overview)을 참조 하세요.
+**전역 관리자** 및 **관리 에이전트** 역할이 있는 사용자만 파트너의 Azure 테넌트에서 직접 청구 계정, 청구 프로필 및 고객에 대 한 비용을 관리 하 고 볼 수 있습니다. 파트너 센터 역할에 대 한 자세한 내용은 [사용자 역할 및 사용 권한 할당](/partner-center/permissions-overview)을 참조 하세요.
 
-## <a name="enable-cost-management-in-the-customer-tenant"></a>고객 테 넌 트에서 비용 관리 사용
+## <a name="enable-cost-management-in-the-customer-tenant"></a>고객 테넌트에서 비용 관리 사용
 
 파트너는 고객이 Microsoft 고객 계약에 등록 한 후 Cost Management에 대 한 액세스를 사용할 수 있습니다. 그런 다음 파트너는 고객이 종 량 제 요금으로 계산 된 비용을 볼 수 있도록 하는 정책을 사용 하도록 설정할 수 있습니다. 비용은 RBAC 구독 및 리소스 그룹 범위에서 사용 되는 사용량에 대 한 고객의 청구 통화로 표시 됩니다.
 
@@ -120,7 +120,7 @@ Microsoft 고객 계약에 고객을 등록 한 후 Microsoft 고객 계약에 �
 
 파트너는 다음 정보를 사용 하 여 정책에서 고객에 대 한 Azure 사용 요금을 볼 수 있도록 합니다.
 
-Azure Portal에서 파트너 테 넌 트에 로그인 하 고 **Cost Management + 청구**를 선택 합니다. 관련 Microsoft 파트너 계약 청구 계정을 선택한 다음 **고객**을 선택 합니다. 고객 목록은 청구 계정과 연결 됩니다.
+Azure Portal에서 파트너 테넌트에 로그인 하 고 **Cost Management + 청구**를 선택 합니다. 관련 Microsoft 파트너 계약 청구 계정을 선택한 다음 **고객**을 선택 합니다. 고객 목록은 청구 계정과 연결 됩니다.
 
 고객 목록에서 비용을 볼 수 있도록 허용 하려는 고객을 선택 합니다.
 
@@ -133,11 +133,11 @@ Azure Portal에서 파트너 테 넌 트에 로그인 하 고 **Cost Management 
 
 정책이 **아니요**로 설정 된 경우에는 고객과 연결 된 구독 사용자에 대해 Azure Cost Management를 사용할 수 없습니다. 파트너가 사용 하도록 설정 되지 않은 경우 모든 구독 사용자에 대해 기본적으로 비용 표시 정책이 사용 되지 않습니다.
 
-비용 정책이 **예**로 설정 된 경우 고객 테 넌 트에 연결 된 구독 사용자는 종 량 제 요금으로 사용 요금을 볼 수 있습니다.
+비용 정책이 **예**로 설정 된 경우 고객 테넌트에 연결 된 구독 사용자는 종 량 제 요금으로 사용 요금을 볼 수 있습니다.
 
 비용 표시 정책을 사용 하는 경우 구독 사용이 있는 모든 서비스는 종 량 제 요금으로 비용을 표시 합니다. 예약 사용은 실제 및 분할 상환 비용에 대 한 요금이 0으로 표시 됩니다. 구매 및 자격은 특정 구독에 연결 되지 않습니다. 따라서 구매는 구독 범위에 표시 되지 않습니다.
 
-고객 테 넌 트에 대 한 비용을 보려면 **Cost Management + 청구** 를 열고 관련 Microsoft 파트너 계약 청구 계정을 선택 합니다.
+고객 테넌트에 대 한 비용을 보려면 **Cost Management + 청구** 를 열고 관련 Microsoft 파트너 계약 청구 계정을 선택 합니다.
 
 ![청구 계정 선택](./media/get-started-partners/select-billing-account.png)
 
@@ -154,9 +154,9 @@ RBAC 범위에서 예약 된 인스턴스에 대 한 분할 상환 보기 및 �
 
 ## <a name="analyze-costs-in-cost-analysis"></a>비용 분석에서 비용 분석
 
-파트너 테 넌 트의 청구 범위에 대 한 액세스 권한이 있는 파트너는 특정 고객 또는 청구서에 대해 고객 전체의 비용 분석에서 송장이 발부 된 비용을 탐색 하 고 분석할 수 있습니다. [비용 분석](quick-acm-cost-analysis.md) 보기에서는 [보기를 저장](quick-acm-cost-analysis.md#saving-and-sharing-customized-views) 하 고 데이터를 [CSV 및 PNG 파일로](quick-acm-cost-analysis.md#automation-and-offline-analysis)내보낼 수도 있습니다.
+파트너 테넌트의 청구 범위에 대 한 액세스 권한이 있는 파트너는 특정 고객 또는 청구서에 대해 고객 전체의 비용 분석에서 송장이 발부 된 비용을 탐색 하 고 분석할 수 있습니다. [비용 분석](quick-acm-cost-analysis.md) 보기에서는 [보기를 저장](quick-acm-cost-analysis.md#saving-and-sharing-customized-views) 하 고 데이터를 [CSV 및 PNG 파일로](quick-acm-cost-analysis.md#automation-and-offline-analysis)내보낼 수도 있습니다.
 
-고객 테 넌 트의 구독에 대 한 액세스 권한이 있는 RBAC 사용자는 고객 테 넌 트의 구독에 대 한 소매점 비용을 분석 하 고, 보기를 저장 하 고, 데이터를 CSV 및 PNG 파일로 내보낼 수도 있습니다.
+고객 테넌트의 구독에 대 한 액세스 권한이 있는 RBAC 사용자는 고객 테넌트의 구독에 대 한 소매점 비용을 분석 하 고, 보기를 저장 하 고, 데이터를 CSV 및 PNG 파일로 내보낼 수도 있습니다.
 
 비용 분석에서 필터 및 그룹화 기능을 사용 하 여 여러 필드를 기준으로 비용을 분석할 수 있습니다. 파트너 관련 필드는 다음 섹션에 나와 있습니다.
 
@@ -174,11 +174,11 @@ RBAC 범위에서 예약 된 인스턴스에 대 한 분할 상환 보기 및 �
 | billingProfileName | 청구서에 대 한 비용을 청구 하는 청구 프로필의 이름으로, Microsoft 고객 계약을 등록 하 고, SaaS, Azure Marketplace 및와 같은 권한 부여를 만든 CSP 고객과 예약. | N/A |
 | invoiceSectionName | 청구서에서 청구 되는 프로젝트의 이름입니다. 파트너의 등록 Microsoft 고객 계약에는 적용 되지 않습니다. | N/A |
 | invoiceSectionID | 청구서에서 청구 되는 프로젝트의 식별자입니다. 파트너의 등록 Microsoft 고객 계약에는 적용 되지 않습니다. | N/A |
-| **CustomerTenantID** | 고객 구독의 Azure Active Directory 테 넌 트 식별자입니다. | 고객의 조직 ID-고객의 Azure Active Directory TenantID입니다. |
-| **CustomerName** | 고객 구독에 대 한 Azure Active Directory 테 넌 트의 이름입니다. | 파트너 센터에 표시 된 고객의 조직 이름입니다. 시스템 정보를 사용 하 여 송장을 조정 하는 데 중요 합니다. |
-| **CustomerTenantDomainName** | 고객 구독의 Azure Active Directory 테 넌 트에 대 한 도메인 이름입니다. | 고객 Azure Active Directory 테 넌 트 도메인입니다. |
-| **대 여** | 파트너 Azure Active Directory 테 넌 트의 식별자입니다. | 파트너 Azure Active Directory 테 넌 트 ID는 GUID 형식의 파트너 ID로 호출 됩니다. |
-| **PartnerName** | 파트너 Azure Active Directory 테 넌 트의 이름입니다. | 파트너 이름입니다. |
+| **CustomerTenantID** | 고객 구독의 Azure Active Directory 테넌트 식별자입니다. | 고객의 조직 ID-고객의 Azure Active Directory TenantID입니다. |
+| **CustomerName** | 고객 구독에 대 한 Azure Active Directory 테넌트의 이름입니다. | 파트너 센터에 표시 된 고객의 조직 이름입니다. 시스템 정보를 사용 하 여 송장을 조정 하는 데 중요 합니다. |
+| **CustomerTenantDomainName** | 고객 구독의 Azure Active Directory 테넌트에 대 한 도메인 이름입니다. | 고객 Azure Active Directory 테넌트 도메인입니다. |
+| **대 여** | 파트너 Azure Active Directory 테넌트의 식별자입니다. | 파트너 Azure Active Directory 테넌트 ID는 GUID 형식의 파트너 ID로 호출 됩니다. |
+| **PartnerName** | 파트너 Azure Active Directory 테넌트의 이름입니다. | 파트너 이름입니다. |
 | **ResellerMPNID** | 구독과 연결 된 대리점에 대 한 MPNID입니다. | 구독에 대 한 대리점의 MPN ID입니다. 현재 활동에 사용할 수 없습니다. |
 | costCenter | 구독과 관련 된 비용 센터입니다. | N/A |
 | billingPeriodStartDate | 청구서에 표시 된 청구 기간 시작 날짜입니다. | N/A |
@@ -236,7 +236,7 @@ RBAC 범위에서 예약 된 인스턴스에 대 한 분할 상환 보기 및 �
 
 Azure Cost Management에서 파트너는 비용 분석을 사용 하 여 PEC 혜택을 받은 비용을 볼 수 있습니다.
 
-Azure Portal에서 파트너 테 넌 트에 로그인 하 고 **Cost Management + 청구**를 선택 합니다. **Cost Management**에서 **비용 분석**을 선택 합니다.
+Azure Portal에서 파트너 테넌트에 로그인 하 고 **Cost Management + 청구**를 선택 합니다. **Cost Management**에서 **비용 분석**을 선택 합니다.
 
 비용 분석 보기에는 파트너에 대 한 청구 계정의 비용이 표시 됩니다. 파트너, 특정 고객 또는 청구 프로필에 대 한 필요에 따라 청구서를 조정 하는 **범위** 를 선택 합니다.
 
@@ -257,13 +257,13 @@ Azure Portal에서 파트너 테 넌 트에 로그인 하 고 **Cost Management 
 
 ## <a name="export-cost-data-to-azure-storage"></a>비용 데이터를 Azure Storage으로 내보내기
 
-파트너 테 넌 트의 청구 범위에 대 한 액세스 권한이 있는 파트너는 비용 및 사용 현황 데이터를 Azure Storage blob으로 내보낼 수 있습니다. Blob은 공유 서비스 구독 또는 고객의 구독이 아닌 파트너 테 넌 트의 구독에 있어야 합니다. 비용 데이터 내보내기를 사용 하려면 내보낸 비용 데이터를 호스팅하기 위해 파트너 테 넌 트에 독립적인 종 량 제 구독을 설정 하는 것이 좋습니다. 저장소 저장소 계정은 종 량 제 구독에서 호스트 되는 Azure Storage blob에 생성 됩니다. 파트너가 내보내기를 만드는 범위에 따라 연결 된 데이터를 자동으로 저장소 계정으로 내보냅니다.
+파트너 테넌트의 청구 범위에 대 한 액세스 권한이 있는 파트너는 비용 및 사용 현황 데이터를 Azure Storage blob으로 내보낼 수 있습니다. Blob은 공유 서비스 구독 또는 고객의 구독이 아닌 파트너 테넌트의 구독에 있어야 합니다. 비용 데이터 내보내기를 사용 하려면 내보낸 비용 데이터를 호스팅하기 위해 파트너 테넌트에 독립적인 종 량 제 구독을 설정 하는 것이 좋습니다. 저장소 저장소 계정은 종 량 제 구독에서 호스트 되는 Azure Storage blob에 생성 됩니다. 파트너가 내보내기를 만드는 범위에 따라 연결 된 데이터를 자동으로 저장소 계정으로 내보냅니다.
 
-구독에 대 한 RBAC 액세스 권한이 있는 사용자는 고객 테 넌 트의 모든 구독에서 호스트 되는 Azure storage blob으로 비용 데이터를 내보낼 수도 있습니다.
+구독에 대 한 RBAC 액세스 권한이 있는 사용자는 고객 테넌트의 모든 구독에서 호스트 되는 Azure storage blob으로 비용 데이터를 내보낼 수도 있습니다.
 
-### <a name="create-an-export-in-a-partner-tenant-or-customer-tenant"></a>파트너 테 넌 트 또는 고객 테 넌 트에서 내보내기 만들기
+### <a name="create-an-export-in-a-partner-tenant-or-customer-tenant"></a>파트너 테넌트 또는 고객 테넌트에서 내보내기 만들기
 
-Azure Portal에서 파트너 테 넌 트 또는 고객 테 넌 트에 로그인 하 고 **Cost Management + 청구**를 선택 합니다. 적절 한 범위 (예: Microsoft 파트너 계약 청구 계정)를 선택 하 고 **비용 분석**을 선택 합니다. 페이지가 로드 되 면 **내보내기**를 선택 합니다. 일정 내보내기에서 **모든 내보내기 보기** 를 선택 합니다.
+Azure Portal에서 파트너 테넌트 또는 고객 테넌트에 로그인 하 고 **Cost Management + 청구**를 선택 합니다. 적절 한 범위 (예: Microsoft 파트너 계약 청구 계정)를 선택 하 고 **비용 분석**을 선택 합니다. 페이지가 로드 되 면 **내보내기**를 선택 합니다. 일정 내보내기에서 **모든 내보내기 보기** 를 선택 합니다.
 
 ![내보내기 및 모든 내보내기 보기를 선택 합니다.](./media/get-started-partners/export01.png)
 
@@ -271,9 +271,9 @@ Azure Portal에서 파트너 테 넌 트 또는 고객 테 넌 트에 로그인 
 
 ![새 내보내기 추가 및 저장소 선택 탭](./media/get-started-partners/export02.png)
 
-파트너 테 넌 트에서 내보내기를 만들 때 파트너 테 넌 트에서 종 량 제 구독을 선택 합니다. 해당 구독을 사용 하 여 Azure Storage 계정을 만듭니다.
+파트너 테넌트에서 내보내기를 만들 때 파트너 테넌트에서 종 량 제 구독을 선택 합니다. 해당 구독을 사용 하 여 Azure Storage 계정을 만듭니다.
 
-고객 테 넌 트의 RBAC 사용자의 경우 고객 테 넌 트에서 구독을 선택 합니다. 구독을 사용 하 여 Azure Storage 계정을 만듭니다.
+고객 테넌트의 RBAC 사용자의 경우 고객 테넌트에서 구독을 선택 합니다. 구독을 사용 하 여 Azure Storage 계정을 만듭니다.
 
 콘텐츠를 검토 한 다음 **만들기** 를 선택 하 여 내보내기를 예약 합니다.
 
@@ -287,9 +287,9 @@ Azure Portal에서 파트너 테 넌 트 또는 고객 테 넌 트에 로그인 
 
 ### <a name="azure-cost-management-apis---direct-and-indirect-providers"></a>Azure Cost Management Api-직접 및 간접 공급자
 
-파트너 테 넌 트의 청구 범위에 대 한 액세스 권한이 있는 파트너는 다음 Api를 사용 하 여 송장 발부 된 비용을 볼 수 있습니다.
+파트너 테넌트의 청구 범위에 대 한 액세스 권한이 있는 파트너는 다음 Api를 사용 하 여 송장 발부 된 비용을 볼 수 있습니다.
 
-구독 범위의 Api는 구독에 대 한 액세스 권한이 있는 경우 비용 정책에 관계 없이 파트너에 의해 호출 될 수 있습니다. 고객 또는 재판매인과 같이 구독에 대 한 액세스 권한이 있는 다른 사용자는 파트너가 고객 테 넌 트에 대 한 비용 정책을 사용 하도록 설정한 후에만 Api를 호출할 수 있습니다.
+구독 범위의 Api는 구독에 대 한 액세스 권한이 있는 경우 비용 정책에 관계 없이 파트너에 의해 호출 될 수 있습니다. 고객 또는 재판매인과 같이 구독에 대 한 액세스 권한이 있는 다른 사용자는 파트너가 고객 테넌트에 대 한 비용 정책을 사용 하도록 설정한 후에만 Api를 호출할 수 있습니다.
 
 
 #### <a name="to-get-a-list-of-billing-accounts"></a>청구 계정 목록을 가져오려면

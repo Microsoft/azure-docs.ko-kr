@@ -1,5 +1,5 @@
 ---
-title: Redis 용 Azure 캐시에 대 한 지역에서 복제를 설정 하는 방법 | Microsoft Docs
+title: Redis 용 Azure 캐시에 대한 지역에서 복제를 설정 하는 방법 | Microsoft Docs
 description: 지리적 지역 간에 Azure Cache for Redis 인스턴스를 복제하는 방법을 알아봅니다.
 author: yegu-ms
 ms.service: cache
@@ -13,9 +13,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/16/2019
 ms.locfileid: "74129421"
 ---
-# <a name="how-to-set-up-geo-replication-for-azure-cache-for-redis"></a>Redis 용 Azure 캐시에 대 한 지역에서 복제를 설정 하는 방법
+# <a name="how-to-set-up-geo-replication-for-azure-cache-for-redis"></a>Redis 용 Azure 캐시에 대한 지역에서 복제를 설정 하는 방법
 
-지역 복제는 두 개의 프리미엄 계층 Azure Cache for Redis 인스턴스를 연결하는 메커니즘을 제공합니다. 캐시 하나는 기본 연결 된 캐시로, 다른 하나는 보조 연결 된 캐시로 선택 됩니다. 보조 연결된 캐시는 읽기 전용이 되고 주 캐시에 쓴 데이터는 보조 연결된 캐시에 복제됩니다. 이 기능은 Azure 지역 간에 캐시를 복제하는 데 사용할 수 있습니다. 이 문서에서는 Redis 인스턴스에 대 한 프리미엄 계층 Azure 캐시에 대 한 지역에서 복제를 구성 하는 지침을 제공 합니다.
+지역 복제는 두 개의 프리미엄 계층 Azure Cache for Redis 인스턴스를 연결하는 메커니즘을 제공합니다. 캐시 하나는 기본 연결 된 캐시로, 다른 하나는 보조 연결 된 캐시로 선택 됩니다. 보조 연결된 캐시는 읽기 전용이 되고 주 캐시에 쓴 데이터는 보조 연결된 캐시에 복제됩니다. 이 기능은 Azure 지역 간에 캐시를 복제하는 데 사용할 수 있습니다. 이 문서에서는 Redis 인스턴스에 대한 프리미엄 계층 Azure 캐시에 대한 지역에서 복제를 구성 하는 지침을 제공 합니다.
 
 ## <a name="geo-replication-prerequisites"></a>지역에서 복제 필수 조건
 
@@ -44,7 +44,7 @@ ms.locfileid: "74129421"
 - 보조 연결 된 캐시로 [가져올](cache-how-to-import-export-data.md#import) 수 없습니다.
 - 캐시의 연결을 끊을 때까지 연결 된 캐시 또는 해당 캐시를 포함 하는 리소스 그룹을 삭제할 수 없습니다. 자세한 내용은 [연결된 캐시를 삭제하려고 할 때 작업이 실패한 이유는 무엇인가요?](#why-did-the-operation-fail-when-i-tried-to-delete-my-linked-cache)를 참조하세요.
 - 캐시가 서로 다른 지역에 있는 경우 네트워크 송신 비용이 지역 간에 이동 되는 데이터에 적용 됩니다. 자세한 내용은 [Azure 지역 간에 데이터를 복제하는 비용은 어느 정도인가요?](#how-much-does-it-cost-to-replicate-my-data-across-azure-regions)를 참조하세요.
-- 자동 장애 조치 (failover)는 기본 및 보조 연결 된 캐시 사이에서 발생 하지 않습니다. 클라이언트 응용 프로그램을 장애 조치 (failover) 하는 방법에 대 한 자세한 내용 및 정보는 [보조 연결 된 캐시로](#how-does-failing-over-to-the-secondary-linked-cache-work) 의 장애 조치 (failover) 작동 방식을 참조 하세요.
+- 자동 장애 조치 (failover)는 기본 및 보조 연결 된 캐시 사이에서 발생 하지 않습니다. 클라이언트 응용 프로그램을 장애 조치 (failover) 하는 방법에 대한 자세한 내용 및 정보는 [보조 연결 된 캐시로](#how-does-failing-over-to-the-secondary-linked-cache-work) 의 장애 조치 (failover) 작동 방식을 참조 하세요.
 
 ## <a name="add-a-geo-replication-link"></a>지역에서 복제 링크 추가
 
@@ -52,11 +52,11 @@ ms.locfileid: "74129421"
 
     ![링크 추가](./media/cache-how-to-geo-replication/cache-geo-location-menu.png)
 
-2. **호환 되는 캐시** 목록에서 원하는 보조 캐시의 이름을 클릭 합니다. 보조 캐시가 목록에 표시 되지 않으면 보조 캐시에 대 한 [지역에서 복제 필수 구성 요소가](#geo-replication-prerequisites) 충족 되는지 확인 합니다. 지역별로 캐시를 필터링 하려면 맵의 지역을 클릭 하 여 **호환 되는 캐시** 목록에 해당 캐시만 표시 합니다.
+2. **호환 되는 캐시** 목록에서 원하는 보조 캐시의 이름을 클릭 합니다. 보조 캐시가 목록에 표시 되지 않으면 보조 캐시에 대한 [지역에서 복제 필수 구성 요소가](#geo-replication-prerequisites) 충족 되는지 확인 합니다. 지역별로 캐시를 필터링 하려면 맵의 지역을 클릭 하 여 **호환 되는 캐시** 목록에 해당 캐시만 표시 합니다.
 
     ![지역에서 복제 호환되는 캐시](./media/cache-how-to-geo-replication/cache-geo-location-select-link.png)
     
-    상황에 맞는 메뉴를 사용 하 여 연결 프로세스를 시작 하거나 보조 캐시에 대 한 세부 정보를 볼 수도 있습니다.
+    상황에 맞는 메뉴를 사용 하 여 연결 프로세스를 시작 하거나 보조 캐시에 대한 세부 정보를 볼 수도 있습니다.
 
     ![지역에서 복제 상황에 맞는 메뉴](./media/cache-how-to-geo-replication/cache-geo-location-select-link-context-menu.png)
 
@@ -137,12 +137,12 @@ ms.locfileid: "74129421"
 
 ### <a name="can-i-use-geo-replication-with-my-caches-in-a-vnet"></a>VNET에서 내 캐시에 지역에서 복제를 사용할 수 있나요?
 
-예, Vnet의 캐시에 대 한 지역에서 복제가 지원 됩니다.
+예, Vnet의 캐시에 대한 지역에서 복제가 지원 됩니다.
 
 - 동일한 VNET에 있는 캐시 간의 지역에서 복제가 지원됩니다.
 - 서로 다른 Vnet 캐시 간의 지역에서 복제도 지원 됩니다.
   - Vnet이 동일한 지역에 있는 경우 [vnet 피어 링](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) 또는 [VPN Gateway vnet 간 연결](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways#V2V)을 사용 하 여 연결할 수 있습니다.
-  - Vnet 서로 다른 지역에 있는 경우 기본 내부 부하 분산 장치가 포함 된 제약 조건 때문에 VNET 피어 링을 사용 하는 지역에서 복제가 지원 되지 않습니다. VNET 피어 링 제약 조건에 대 한 자세한 내용은 [Virtual Network-피어 링-요구 사항 및 제약 조건](https://docs.microsoft.com/azure/virtual-network/virtual-network-manage-peering#requirements-and-constraints)을 참조 하세요. VPN Gateway VNET 간 연결을 사용 하는 것이 좋습니다.
+  - Vnet 서로 다른 지역에 있는 경우 기본 내부 부하 분산 장치가 포함 된 제약 조건 때문에 VNET 피어 링을 사용 하는 지역에서 복제가 지원 되지 않습니다. VNET 피어 링 제약 조건에 대한 자세한 내용은 [Virtual Network-피어 링-요구 사항 및 제약 조건](https://docs.microsoft.com/azure/virtual-network/virtual-network-manage-peering#requirements-and-constraints)을 참조 하세요. VPN Gateway VNET 간 연결을 사용 하는 것이 좋습니다.
 
 [이 Azure 템플릿을](https://azure.microsoft.com/resources/templates/201-redis-vnet-geo-replication/)사용 하 여 VPN Gateway vnet 간 연결로 연결 된 vnet에 두 개의 지역에서 복제 된 캐시를 신속 하 게 배포할 수 있습니다.
 
@@ -152,7 +152,7 @@ ms.locfileid: "74129421"
 
 ### <a name="how-long-does-geo-replication-replication-take"></a>지역에서 복제에 걸리는 기간은 얼마나 되나요?
 
-복제는 증분, 비동기 및 연속 이며 소요 되는 시간은 지역 간 대기 시간과 크게 다르지 않습니다. 특정 상황에서는 보조 캐시가 주 데이터베이스의 데이터 전체 동기화를 수행 하는 데 필요할 수 있습니다. 이 경우의 복제 시간은 기본 캐시에 로드, 사용 가능한 네트워크 대역폭 및 지역 간 대기 시간 등의 요소 수에 따라 달라 집니다. 전체 53 지역 복제 쌍에 대 한 복제 시간은 5 분에서 10 분 사이에 있을 수 있습니다.
+복제는 증분, 비동기 및 연속 이며 소요 되는 시간은 지역 간 대기 시간과 크게 다르지 않습니다. 특정 상황에서는 보조 캐시가 주 데이터베이스의 데이터 전체 동기화를 수행 하는 데 필요할 수 있습니다. 이 경우의 복제 시간은 기본 캐시에 로드, 사용 가능한 네트워크 대역폭 및 지역 간 대기 시간 등의 요소 수에 따라 달라 집니다. 전체 53 지역 복제 쌍에 대한 복제 시간은 5 분에서 10 분 사이에 있을 수 있습니다.
 
 ### <a name="is-the-replication-recovery-point-guaranteed"></a>복제 복구 지점이 보장되나요?
 
@@ -166,7 +166,7 @@ ms.locfileid: "74129421"
 
 ### <a name="how-much-does-it-cost-to-replicate-my-data-across-azure-regions"></a>Azure 지역 간에 데이터를 복제하는 비용은 어느 정도인가요?
 
-지역에서 복제를 사용 하는 경우 기본 연결 된 캐시의 데이터는 보조 연결 된 캐시에 복제 됩니다. 두 연결 된 캐시가 동일한 지역에 있는 경우 데이터 전송에 대 한 요금이 부과 되지 않습니다. 두 연결 된 캐시가 서로 다른 지역에 있는 경우 데이터 전송 요금은 어느 지역에서 든 이동 하는 데이터의 네트워크 송신 비용입니다. 자세한 내용은 [대역폭 가격 정보](https://azure.microsoft.com/pricing/details/bandwidth/)를 참조하세요.
+지역에서 복제를 사용 하는 경우 기본 연결 된 캐시의 데이터는 보조 연결 된 캐시에 복제 됩니다. 두 연결 된 캐시가 동일한 지역에 있는 경우 데이터 전송에 대한 요금이 부과 되지 않습니다. 두 연결 된 캐시가 서로 다른 지역에 있는 경우 데이터 전송 요금은 어느 지역에서 든 이동 하는 데이터의 네트워크 송신 비용입니다. 자세한 내용은 [대역폭 가격 정보](https://azure.microsoft.com/pricing/details/bandwidth/)를 참조하세요.
 
 ### <a name="why-did-the-operation-fail-when-i-tried-to-delete-my-linked-cache"></a>연결된 캐시를 삭제하려고 할 때 작업이 실패한 이유는 무엇인가요?
 
@@ -180,7 +180,7 @@ ms.locfileid: "74129421"
 
 Azure 지역 간 자동 장애 조치 (failover)는 지역에서 복제 된 캐시에 대해 지원 되지 않습니다. 재해 복구 시나리오에서 고객은 전체 응용 프로그램 스택을 백업 지역에서 조정 된 방식으로 가져와야 합니다. 개별 응용 프로그램 구성 요소가 자신의 백업으로 전환할 시기를 결정 하도록 허용 하면 성능에 부정적인 영향을 줄 수 있습니다. Redis의 주요 이점 중 하나는 대기 시간이 짧은 저장소 임을 나타내는 것입니다. 고객의 주 응용 프로그램이 캐시와 다른 지역에 있는 경우 추가 된 라운드트립 시간이 성능에 크게 영향을 줄 수 있습니다. 이러한 이유로 일시적인 가용성 문제로 인해 자동으로 장애 조치 (failover) 하지 않습니다.
 
-고객이 시작한 장애 조치 (failover)를 시작 하려면 먼저 캐시의 연결을 해제 합니다. 그런 다음 Redis 클라이언트를 변경 하 여 (이전에 연결 된) 보조 캐시의 연결 끝점을 사용 합니다. 두 캐시의 연결이 끊어지면 보조 캐시는 일반적인 읽기-쓰기 캐시가 다시 되며 Redis 클라이언트에서 직접 요청을 받습니다.
+고객이 시작한 장애 조치 (failover)를 시작 하려면 먼저 캐시의 연결을 해제 합니다. 그런 다음 Redis 클라이언트를 변경 하 여 (이전에 연결 된) 보조 캐시의 연결 엔드포인트을 사용 합니다. 두 캐시의 연결이 끊어지면 보조 캐시는 일반적인 읽기-쓰기 캐시가 다시 되며 Redis 클라이언트에서 직접 요청을 받습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

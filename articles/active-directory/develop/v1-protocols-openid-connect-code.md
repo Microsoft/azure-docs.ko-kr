@@ -45,7 +45,7 @@ OpenID Connect는 앱이 로그인을 수행하는 데 필요한 대부분의 �
 ```
 https://login.microsoftonline.com/{tenant}/.well-known/openid-configuration
 ```
-메타데이터는 간단한 JSON(JavaScript Object Notation) 문서입니다. 예제를 보려면 다음 코드 조각을 참조하세요. 이 조각의 내용은 [OpenID Connect 사양](https://openid.net)에 자세히 설명되어 있습니다. 위의 {tenant} 대신 테 넌 트 `common` ID를 제공 하면 반환 되는 JSON 개체에 테 넌 트 별 Uri가 생성 됩니다.
+메타데이터는 간단한 JSON(JavaScript Object Notation) 문서입니다. 예제를 보려면 다음 코드 조각을 참조하세요. 이 조각의 내용은 [OpenID Connect 사양](https://openid.net)에 자세히 설명되어 있습니다. 위의 {tenant} 대신 테넌트 `common` ID를 제공 하면 반환 되는 JSON 개체에 테넌트 별 Uri가 생성 됩니다.
 
 ```
 {
@@ -93,7 +93,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 | tenant |required |요청의 경로에 있는 `{tenant}` 값을 사용하여 애플리케이션에 로그인할 수 있는 사용자를 제어할 수 있습니다. 허용되는 값은 테넌트 독립 토큰에 대한 테넌트 식별자(예: `8eaef023-2b34-4da1-9baa-8bc8c9d6a490`, `contoso.onmicrosoft.com`, `common`)입니다. |
 | client_id |required |Azure AD에 등록할 때 앱에 할당된 애플리케이션 ID입니다. Azure Portal에서 이러한 값을 확인할 수 있습니다. **Azure Active Directory**을 클릭 하 고 **앱 등록**을 클릭 한 다음 응용 프로그램을 선택 하 고 응용 프로그램 페이지에서 응용 프로그램 ID를 찾습니다. |
 | response_type |required |OpenID Connect 로그인을 위한 `id_token` 이 포함되어야 합니다. `code` 또는 `token`과 같은 다른 response_types을 포함할 수도 있습니다. |
-| scope | 권장 | Openid connect Connect 사양에는 `openid`범위가 필요 하며,이는 동의 UI의 "로그인" 권한으로 변환 됩니다. 이 및 기타 OIDC 범위는 v 1.0 끝점에서 무시 되지만 표준 규격 클라이언트의 경우에는 여전히 모범 사례입니다. |
+| scope | 권장 | Openid connect Connect 사양에는 `openid`범위가 필요 하며,이는 동의 UI의 "로그인" 권한으로 변환 됩니다. 이 및 기타 OIDC 범위는 v 1.0 엔드포인트에서 무시 되지만 표준 규격 클라이언트의 경우에는 여전히 모범 사례입니다. |
 | nonce |required |결과 `id_token`에 클레임으로 포함되는, 앱에서 생성한 요청에 포함되는 값입니다. 그러면 앱이 이 값을 확인하여 토큰 재생 공격을 완화시킬 수 있습니다. 값은 일반적으로 요청의 출처를 식별하는 데 사용할 수 있는 임의의 고유 문자열 또는 GUID입니다. |
 | redirect_uri | 권장 |앱이 인증 응답을 보내고 받을 수 있는 앱의 redirect_uri입니다. URL로 인코드되어야 한다는 점을 제외하고 포털에서 등록한 redirect_uri 중 하나와 정확히 일치해야 합니다. 누락 된 경우 사용자 에이전트가 앱에 대해 등록 된 리디렉션 Uri 중 하나 (임의로)로 다시 전송 됩니다. 최대 길이는 255 바이트입니다. |
 | response_mode |선택 사항 |결과 authorization_code를 앱에 다시 보내는 데 사용해야 하는 방법을 지정합니다. 지원되는 값은 *HTTP 폼 게시*의 경우 `form_post`이고, *URL 조각*의 경우 `fragment`입니다. 웹 애플리케이션의 경우 애플리케이션에 대한 가장 안전한 토큰 전송을 보장하기 위해 `response_mode=form_post`를 사용하는 것이 좋습니다. id_token을 포함하는 모든 흐름의 기본값은 `fragment`입니다.|
@@ -167,7 +167,7 @@ error=access_denied&error_description=the+user+canceled+the+authentication
 
 ## <a name="send-a-sign-out-request"></a>로그아웃 요청 보내기
 
-앱에서 사용자를 로그아웃시키려는 경우 앱의 쿠키를 삭제하거나 그렇지 않은 경우 사용자로 세션을 지우는 것은 충분하지 않습니다. 또한 로그 아웃을 위해 사용자를 `end_session_endpoint`으로 리디렉션해야 합니다. 그렇게 하지 않으면 사용자가 자격 증명을 다시 입력 하지 않고 앱에 다시 인증할 수 있습니다. Azure AD 끝점에 유효한 Single Sign-On 세션이 있기 때문입니다.
+앱에서 사용자를 로그아웃시키려는 경우 앱의 쿠키를 삭제하거나 그렇지 않은 경우 사용자로 세션을 지우는 것은 충분하지 않습니다. 또한 로그 아웃을 위해 사용자를 `end_session_endpoint`으로 리디렉션해야 합니다. 그렇게 하지 않으면 사용자가 자격 증명을 다시 입력 하지 않고 앱에 다시 인증할 수 있습니다. Azure AD 엔드포인트에 유효한 Single Sign-On 세션이 있기 때문입니다.
 
 OpenID Connect 메타데이터 문서에 나열된 `end_session_endpoint` 에 사용자를 단순히 리디렉션할 수 있습니다.
 

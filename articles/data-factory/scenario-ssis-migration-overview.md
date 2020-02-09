@@ -22,7 +22,7 @@ ms.locfileid: "74929798"
 
 ## <a name="overview"></a>개요
 
-데이터베이스 워크 로드를 SQL Server 온-프레미스에서 Azure 데이터베이스 서비스 (Azure SQL Database 또는 Azure SQL Database 관리 되는 인스턴스)로 마이그레이션하는 경우에는 기본 값이 추가 된 SQL Server Integration Services (SSIS)에 대 한 ETL 워크 로드 서비스도 마이그레이션해야 합니다.
+데이터베이스 워크 로드를 SQL Server 온-프레미스에서 Azure 데이터베이스 서비스 (Azure SQL Database 또는 Azure SQL Database 관리 되는 인스턴스)로 마이그레이션하는 경우에는 기본 값이 추가 된 SQL Server Integration Services (SSIS)에 대한 ETL 워크 로드 서비스도 마이그레이션해야 합니다.
 
 Azure Data Factory (ADF)의 IR (Azure-SSIS Integration Runtime)은 SSIS 패키지 실행을 지원 합니다. Azure-SSIS IR 프로 비전 된 후에는 SQL Server Data Tools (SSDT)/SSS (SQL Server Management Studio)와 같은 친숙 한 도구와 dtinstall/dtutil/dtexec와 같은 명령줄 유틸리티를 사용 하 여 Azure에서 패키지를 배포 하 고 실행할 수 있습니다. 자세한 내용은 [AZURE SSIS 리프트 및 시프트 개요](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-lift-shift-ssis-packages-overview)를 참조 하세요.
 
@@ -38,7 +38,7 @@ DMA (Data Migration Assistant)는이 목적을 위해 로컬에서 설치 및 �
 
 - 정보 제공 문제: 소스 패키지에서 사용 되는 부분적으로 지원 되거나 더 이상 사용 되지 않는 기능입니다. DMA는 포괄적인 권장 사항 집합, Azure에서 사용할 수 있는 대체 방법 및 해결을 위한 완화 단계를 제공 합니다.
 
-### <a name="four-storage-types-for-ssis-packages"></a>SSIS 패키지에 대 한 4 가지 저장소 유형
+### <a name="four-storage-types-for-ssis-packages"></a>SSIS 패키지에 대한 4 가지 저장소 유형
 
 - SSIS 카탈로그 (SSISDB). 이는 SQL Server 2012에서 도입 되었으며 SSIS 프로젝트/패키지 작업에 사용 되는 저장 프로시저, 뷰 및 테이블 반환 함수 집합을 포함 합니다.
 - 파일 시스템

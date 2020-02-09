@@ -59,7 +59,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 페더레이
 
     ![페더레이션된 디렉터리 자습서](media/federated-directory-provisioning-tutorial/companyname.png)
 
-2. **디렉터리 > 사용자 디렉터리** 로 이동 하 여 테 넌 트를 선택 합니다. 
+2. **디렉터리 > 사용자 디렉터리** 로 이동 하 여 테넌트를 선택 합니다. 
 
     ![페더레이션된 디렉터리](media/federated-directory-provisioning-tutorial/ad-user-directories.png)
 
@@ -110,7 +110,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위해 페더레이션�
     
     ![페더레이션된 디렉터리](media/federated-directory-provisioning-tutorial/loginpage3.png)
  
-8. 인증에 성공 하면 동의 페이지에 대 한 동의 확인 프롬프트를 수락 합니다. 그러면 응용 프로그램이 테 넌 트에 자동으로 추가 되 고 페더레이션 디렉터리 계정으로 리디렉션됩니다.
+8. 인증에 성공 하면 동의 페이지에 대 한 동의 확인 프롬프트를 수락 합니다. 그러면 응용 프로그램이 테넌트에 자동으로 추가 되 고 페더레이션 디렉터리 계정으로 리디렉션됩니다.
 
     ![페더레이션된 디렉터리 SCIM 추가](media/federated-directory-provisioning-tutorial/premission.png)
 
@@ -138,7 +138,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위해 페더레이션�
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에 있는 테 넌 트 URL에 `https://api.federated.directory/v2/`을 입력 합니다. **암호 토큰**의 페더레이션된 디렉터리에서 이전에 검색 하 고 저장 한 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 페더레이션된 디렉터리에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 페더레이션된 디렉터리 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
+5. **관리자 자격 증명** 섹션 아래에 있는 테넌트 URL에 `https://api.federated.directory/v2/`을 입력 합니다. **암호 토큰**의 페더레이션된 디렉터리에서 이전에 검색 하 고 저장 한 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 페더레이션된 디렉터리에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 페더레이션된 디렉터리 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 

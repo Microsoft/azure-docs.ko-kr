@@ -1,5 +1,5 @@
 ---
-title: HTTPS 끝점 | Azure Marketplace
+title: HTTPS 엔드포인트 | Azure Marketplace
 description: HTTPS 엔드포인트에 대한 잠재 고객 관리 구성
 services: Azure, Marketplace, Cloud Partner Portal,
 author: dan-wesley

@@ -15,9 +15,9 @@ ms.lasthandoff: 01/04/2020
 ms.locfileid: "75658443"
 ---
 # <a name="monitor-apps-in-azure-app-service"></a>Azure App Service에서 앱 모니터링
-[Azure App Service](https://go.microsoft.com/fwlink/?LinkId=529714) 은 [Azure Portal](https://portal.azure.com)에서 웹 앱, 모바일 및 API 앱에 대 한 기본 제공 모니터링 기능을 제공 합니다.
+[Azure App Service](https://go.microsoft.com/fwlink/?LinkId=529714) 은 [Azure Portal](https://portal.azure.com)에서 웹 앱, 모바일 및 API 앱에 대한 기본 제공 모니터링 기능을 제공 합니다.
 
-Azure Portal에서 앱에 대 한 *할당량* 및 *메트릭* 을 검토 하 고, 계획을 App Service 하 고, 기반 메트릭의 *경고* 및 자동 크기 *조정을* 설정할 수 있습니다.
+Azure Portal에서 앱에 대한 *할당량* 및 *메트릭* 을 검토 하 고, 계획을 App Service 하 고, 기반 메트릭의 *경고* 및 자동 크기 *조정을* 설정할 수 있습니다.
 
 ## <a name="understand-quotas"></a>할당량 이해
 

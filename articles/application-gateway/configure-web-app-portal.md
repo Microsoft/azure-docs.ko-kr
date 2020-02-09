@@ -1,7 +1,7 @@
 ---
-title: 포털을 사용 하 여 다중 테 넌 트 앱에 대 한 트래픽 관리
+title: 포털을 사용 하 여 다중 테넌트 앱에 대한 트래픽 관리
 titleSuffix: Azure Application Gateway
-description: 이 문서에서는 기존 또는 새 응용 프로그램 게이트웨이에서 백 엔드 풀의 멤버로 Azure 앱 서비스 웹 앱을 구성 하는 방법에 대 한 지침을 제공 합니다.
+description: 이 문서에서는 기존 또는 새 응용 프로그램 게이트웨이에서 백 엔드 풀의 멤버로 Azure 앱 서비스 웹 앱을 구성 하는 방법에 대한 지침을 제공 합니다.
 services: application-gateway
 author: abshamsft
 ms.service: application-gateway
@@ -17,9 +17,9 @@ ms.locfileid: "74075174"
 ---
 # <a name="configure-app-service-with-application-gateway"></a>Application Gateway를 사용하여 App Service 구성
 
-App service는 전용 배포가 아닌 다중 테 넌 트 서비스 이므로 들어오는 요청의 호스트 헤더를 사용 하 여 올바른 app service 끝점에 대 한 요청을 확인 합니다. 일반적으로 응용 프로그램의 DNS 이름은 app service 앞단에 application gateway와 연결 된 DNS 이름으로, 백엔드 app service의 도메인 이름과 다릅니다. 따라서 application gateway에서 받은 원래 요청의 호스트 헤더는 백 엔드 서비스의 호스트 이름과 동일 하지 않습니다. 이 때문에 응용 프로그램 게이트웨이에서 백 엔드에 대 한 요청에 있는 호스트 헤더를 백 엔드 서비스의 호스트 이름으로 변경 하지 않는 한 다중 테 넌 트 백 엔드는 해당 요청을 올바른 끝점으로 확인할 수 없습니다.
+App service는 전용 배포가 아닌 다중 테넌트 서비스 이므로 들어오는 요청의 호스트 헤더를 사용 하 여 올바른 app service 엔드포인트에 대한 요청을 확인 합니다. 일반적으로 응용 프로그램의 DNS 이름은 app service 앞단에 application gateway와 연결 된 DNS 이름으로, 백엔드 app service의 도메인 이름과 다릅니다. 따라서 application gateway에서 받은 원래 요청의 호스트 헤더는 백 엔드 서비스의 호스트 이름과 동일 하지 않습니다. 이 때문에 응용 프로그램 게이트웨이에서 백 엔드에 대한 요청에 있는 호스트 헤더를 백 엔드 서비스의 호스트 이름으로 변경 하지 않는 한 다중 테넌트 백 엔드는 해당 요청을 올바른 엔드포인트으로 확인할 수 없습니다.
 
-Application Gateway은 요청을 Application Gateway에서 백 엔드로 라우팅하는 경우 요청의 호스트 헤더를 백 엔드의 호스트 이름과 재정의 하는 `Pick host name from backend address` 라는 스위치를 제공 합니다. 이 기능을 사용 하면 Azure app service 및 API management와 같은 다중 테 넌 트 백 엔드를 지원할 수 있습니다. 
+Application Gateway은 요청을 Application Gateway에서 백 엔드로 라우팅하는 경우 요청의 호스트 헤더를 백 엔드의 호스트 이름과 재정의 하는 `Pick host name from backend address` 라는 스위치를 제공 합니다. 이 기능을 사용 하면 Azure app service 및 API management와 같은 다중 테넌트 백 엔드를 지원할 수 있습니다. 
 
 이 문서에서는 다음 방법을 설명합니다.
 
@@ -50,7 +50,7 @@ Application Gateway은 요청을 Application Gateway에서 백 엔드로 라우�
    > [!NOTE]
    > 드롭다운은 Application Gateway와 동일한 구독에 있는 앱 서비스만 채웁니다. Application Gateway 아닌 다른 구독에 있는 앱 서비스를 사용 하려는 경우 **대상** 드롭다운에서 **App Services** 를 선택 하는 대신 **IP 주소 또는 호스트 이름** 옵션을 선택 하 고 호스트 이름 (예:)을 입력 합니다. azurewebsites.net)를 다운로드 합니다.
 
-## <a name="create-http-settings-for-app-service"></a>App service에 대 한 HTTP 설정 만들기
+## <a name="create-http-settings-for-app-service"></a>App service에 대한 HTTP 설정 만들기
 
 1. **Http 설정**에서 **추가** 를 클릭 하 여 새 http 설정을 만듭니다.
 
@@ -79,7 +79,7 @@ Application Gateway은 요청을 Application Gateway에서 백 엔드로 라우�
 
 1. **규칙**에서 **기본** 을 클릭 하 여 새 기본 규칙을 만듭니다.
 
-2. 적절 한 이름을 제공 하 고 App service에 대 한 들어오는 요청을 수락 하는 수신기를 선택 합니다.
+2. 적절 한 이름을 제공 하 고 App service에 대한 들어오는 요청을 수락 하는 수신기를 선택 합니다.
 
 3. **백 엔드 풀** 드롭다운에서 위에서 만든 백 엔드 풀을 선택 합니다.
 
@@ -103,4 +103,4 @@ App service가 상대 경로 (예: contoso.azurewebsites.net/path1에서 contoso
 
 ## <a name="next-steps"></a>다음 단계
 
-Application gateway를 사용 하 여 App service 및 기타 다중 테 넌 트 지원에 대 한 자세한 내용은 [application gateway를 사용 하 여 다중 테 넌 트 서비스 지원](https://docs.microsoft.com/azure/application-gateway/application-gateway-web-app-overview)을 참조 하세요.
+Application gateway를 사용 하 여 App service 및 기타 다중 테넌트 지원에 대한 자세한 내용은 [application gateway를 사용 하 여 다중 테넌트 서비스 지원](https://docs.microsoft.com/azure/application-gateway/application-gateway-web-app-overview)을 참조 하세요.

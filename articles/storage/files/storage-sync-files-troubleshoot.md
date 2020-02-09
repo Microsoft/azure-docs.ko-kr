@@ -42,7 +42,7 @@ PDC 역할 소유자가 Windows Server 2008 R2 이하 OS 버전에 있는 Active
 이 문제를 해결하려면 PDC 역할을 Windows Server 2012 R2 이상을 실행 중인 다른 도메인 컨트롤러로 전송한 다음, 동기화를 설치합니다.
 
 <a id="parameter-is-incorrect"></a>**오류가 발생 하 여 Windows Server 2012 r 2의 볼륨에 액세스 하지 못했습니다. 매개 변수가 잘못 되었습니다.**  
-Windows Server 2012 r 2에서 서버 끝점을 만든 후 볼륨에 액세스할 때 다음 오류가 발생 합니다.
+Windows Server 2012 r 2에서 서버 엔드포인트을 만든 후 볼륨에 액세스할 때 다음 오류가 발생 합니다.
 
 r: \ 에 액세스할 수 없습니다.  
 매개 변수가 잘못되었습니다.
@@ -52,7 +52,7 @@ r: \ 에 액세스할 수 없습니다.
 <a id="server-registration-missing-subscriptions"></a>**서버 등록에 모든 Azure 구독이 나열 되지 않음**  
 ServerRegistration을 사용 하 여 서버를 등록 하는 경우 Azure 구독 드롭다운을 클릭 하면 구독이 누락 됩니다.
 
-이 문제는 현재 ServerRegistration에서 다중 테 넌 트 환경을 지원 하지 않기 때문에 발생 합니다. 이 문제는 향후 Azure File Sync 에이전트 업데이트에서 수정 될 예정입니다.
+이 문제는 현재 ServerRegistration에서 다중 테넌트 환경을 지원 하지 않기 때문에 발생 합니다. 이 문제는 향후 Azure File Sync 에이전트 업데이트에서 수정 될 예정입니다.
 
 이 문제를 해결 하려면 다음 PowerShell 명령을 사용 하 여 서버를 등록 합니다.
 
@@ -115,7 +115,7 @@ Azure 파일 공유가 다른 클라우드 엔드포인트에서 이미 사용�
 3. **SyncService**를 마우스 오른쪽 단추로 클릭하고 **삭제**를 선택합니다.
 
 <a id="cloud-endpoint-authfailed"></a> **"AuthorizationFailed" 오류로 인해 클라우드 엔드포인트를 만드는 데 실패했습니다.**  
-이 오류는 사용자 계정에 클라우드 끝점을 만들 수 있는 충분 한 권한이 없는 경우에 발생 합니다. 
+이 오류는 사용자 계정에 클라우드 엔드포인트을 만들 수 있는 충분 한 권한이 없는 경우에 발생 합니다. 
 
 클라우드 엔드포인트를 만들려면 사용자 계정에 다음과 같은 Microsoft 인증 권한이 있어야 합니다.  
 * 읽기: 역할 정의 가져오기
@@ -136,16 +136,16 @@ Azure 파일 공유가 다른 클라우드 엔드포인트에서 이미 사용�
     * **역할 할당**에 **읽기** 권한과 **쓰기** 권한이 있어야 합니다.
     * **역할 정의**에 **읽기**  권한과 **쓰기** 권한이 있어야 합니다.
 
-<a id="-2134375898"></a>**다음 오류가 발생 하 여 서버 끝점을 만들지 못했습니다. "MgmtServerJobFailed" (오류 코드:-2134375898 또는 0x80c80226)**  
+<a id="-2134375898"></a>**다음 오류가 발생 하 여 서버 엔드포인트을 만들지 못했습니다. "MgmtServerJobFailed" (오류 코드:-2134375898 또는 0x80c80226)**  
 이 오류는 서버 엔드포인트 경로가 시스템 볼륨에 있고 클라우드 계층화를 사용하도록 설정한 경우 발생합니다. 클라우드 계층화는 시스템 볼륨에서 지원되지 않습니다. 시스템 볼륨에 서버 엔드포인트를 만들려면 서버 엔드포인트를 만들 때 클라우드 계층화를 사용하지 않도록 설정합니다.
 
-<a id="-2147024894"></a>**다음 오류가 발생 하 여 서버 끝점을 만들지 못했습니다. "MgmtServerJobFailed" (오류 코드:-2147024894 또는 0x80070002)**  
-지정된 서버 엔드포인트 경로가 잘못된 경우 이 오류가 발생합니다. 지정된 서버 엔드포인트 경로가 로컬로 연결된 NTFS 볼륨인지 확인합니다. Azure File Sync는 매핑된 드라이브를 서버 끝점 경로로 지원 하지 않습니다.
+<a id="-2147024894"></a>**다음 오류가 발생 하 여 서버 엔드포인트을 만들지 못했습니다. "MgmtServerJobFailed" (오류 코드:-2147024894 또는 0x80070002)**  
+지정된 서버 엔드포인트 경로가 잘못된 경우 이 오류가 발생합니다. 지정된 서버 엔드포인트 경로가 로컬로 연결된 NTFS 볼륨인지 확인합니다. Azure File Sync는 매핑된 드라이브를 서버 엔드포인트 경로로 지원 하지 않습니다.
 
-<a id="-2134375640"></a>**다음 오류가 발생 하 여 서버 끝점을 만들지 못했습니다. "MgmtServerJobFailed" (오류 코드:-2134375640 또는 0x80c80328)**  
-이 오류는 지정 된 서버 끝점 경로가 NTFS 볼륨이 아닌 경우에 발생 합니다. 지정된 서버 엔드포인트 경로가 로컬로 연결된 NTFS 볼륨인지 확인합니다. Azure File Sync는 매핑된 드라이브를 서버 끝점 경로로 지원 하지 않습니다.
+<a id="-2134375640"></a>**다음 오류가 발생 하 여 서버 엔드포인트을 만들지 못했습니다. "MgmtServerJobFailed" (오류 코드:-2134375640 또는 0x80c80328)**  
+이 오류는 지정 된 서버 엔드포인트 경로가 NTFS 볼륨이 아닌 경우에 발생 합니다. 지정된 서버 엔드포인트 경로가 로컬로 연결된 NTFS 볼륨인지 확인합니다. Azure File Sync는 매핑된 드라이브를 서버 엔드포인트 경로로 지원 하지 않습니다.
 
-<a id="-2134347507"></a>**다음 오류가 발생 하 여 서버 끝점을 만들지 못했습니다. "MgmtServerJobFailed" (오류 코드:-2134347507 또는 0x80c8710d)**  
+<a id="-2134347507"></a>**다음 오류가 발생 하 여 서버 엔드포인트을 만들지 못했습니다. "MgmtServerJobFailed" (오류 코드:-2134347507 또는 0x80c8710d)**  
 이 오류는 Azure 파일 동기화가 압축된 System Volume Information 폴더가 있는 볼륨의 서버 엔드포인트를 지원하지 않기 때문에 발생합니다. 이 문제를 해결하려면 System Volume Information 폴더의 압축을 해제합니다. System Volume Information 폴더가 볼륨에서 유일하게 압축된 폴더인 경우 다음 단계를 수행합니다.
 
 1. [PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec) 도구를 다운로드 합니다.
@@ -154,16 +154,16 @@ Azure 파일 공유가 다른 클라우드 엔드포인트에서 이미 사용�
     **cd/d "드라이브 문자: \ 시스템 볼륨 정보"**  
     **compact/u/s**
 
-<a id="-2134376345"></a>**다음 오류가 발생 하 여 서버 끝점을 만들지 못했습니다. "MgmtServerJobFailed" (오류 코드:-2134376345 또는 0x80C80067)**  
+<a id="-2134376345"></a>**다음 오류가 발생 하 여 서버 엔드포인트을 만들지 못했습니다. "MgmtServerJobFailed" (오류 코드:-2134376345 또는 0x80C80067)**  
 서버당 서버 엔드포인트 수 제한에 도달한 경우에 이 오류가 발생합니다. Azure 파일 동기화는 현재 서버당 최대 30개의 서버 엔드포인트를 지원합니다. 자세한 내용은 [Azure File Sync 크기 조정 대상](https://docs.microsoft.com/azure/storage/files/storage-files-scale-targets#azure-file-sync-scale-targets)을 참조 하세요.
 
-<a id="-2134376427"></a>**다음 오류가 발생 하 여 서버 끝점을 만들지 못했습니다. "MgmtServerJobFailed" (오류 코드:-2134376427 또는 0x80c80015)**  
+<a id="-2134376427"></a>**다음 오류가 발생 하 여 서버 엔드포인트을 만들지 못했습니다. "MgmtServerJobFailed" (오류 코드:-2134376427 또는 0x80c80015)**  
 이 오류는 다른 서버 엔드포인트에서 지정된 서버 엔드포인트 경로를 이미 동기화하고 있는 경우에 발생합니다. Azure 파일 동기화는 동일한 디렉터리 또는 볼륨을 동기화하는 여러 서버 엔드포인트를 지원하지 않습니다.
 
-<a id="-2160590967"></a>**다음 오류가 발생 하 여 서버 끝점을 만들지 못했습니다. "MgmtServerJobFailed" (오류 코드:-2160590967 또는 0x80c80077)**  
-서버 끝점 경로에 분리 된 계층화 된 파일이 포함 되어 있는 경우이 오류가 발생 합니다. 서버 끝점이 최근에 제거 된 경우 분리 된 계층화 된 파일 정리가 완료 될 때까지 기다립니다. 분리 된 계층화 된 파일 정리가 시작 되 면 이벤트 ID 6662가 원격 분석 이벤트 로그에 기록 됩니다. 분리 된 계층화 된 파일 정리가 완료 되 고 경로를 사용 하 여 서버 끝점을 다시 만들 수 있는 경우 이벤트 ID 6661이 기록 됩니다. 이벤트 ID 6661이 기록 된 후 서버 끝점 만들기가 실패 하는 경우 서버 [끝점을 삭제 한 후 서버에서 계층화 된 파일에 액세스할 수 없음](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tiered-files-are-not-accessible-on-the-server-after-deleting-a-server-endpoint) 섹션에 설명 된 단계를 수행 하 여 분리 된 계층화 된 파일을 제거 합니다.
+<a id="-2160590967"></a>**다음 오류가 발생 하 여 서버 엔드포인트을 만들지 못했습니다. "MgmtServerJobFailed" (오류 코드:-2160590967 또는 0x80c80077)**  
+서버 엔드포인트 경로에 분리 된 계층화 된 파일이 포함 되어 있는 경우이 오류가 발생 합니다. 서버 엔드포인트이 최근에 제거 된 경우 분리 된 계층화 된 파일 정리가 완료 될 때까지 기다립니다. 분리 된 계층화 된 파일 정리가 시작 되 면 이벤트 ID 6662가 원격 분석 이벤트 로그에 기록 됩니다. 분리 된 계층화 된 파일 정리가 완료 되 고 경로를 사용 하 여 서버 엔드포인트을 다시 만들 수 있는 경우 이벤트 ID 6661이 기록 됩니다. 이벤트 ID 6661이 기록 된 후 서버 엔드포인트 만들기가 실패 하는 경우 서버 [엔드포인트을 삭제 한 후 서버에서 계층화 된 파일에 액세스할 수 없음](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tiered-files-are-not-accessible-on-the-server-after-deleting-a-server-endpoint) 섹션에 설명 된 단계를 수행 하 여 분리 된 계층화 된 파일을 제거 합니다.
 
-<a id="-2134347757"></a>**다음 오류가 발생 하 여 서버 끝점을 삭제 하지 못했습니다. "MgmtServerJobExpired" (오류 코드:-2134347757 또는 0x80c87013)**  
+<a id="-2134347757"></a>**다음 오류가 발생 하 여 서버 엔드포인트을 삭제 하지 못했습니다. "MgmtServerJobExpired" (오류 코드:-2134347757 또는 0x80c87013)**  
 이 오류는 서버가 오프라인 상태이거나 네트워크에 연결되어 있지 않은 경우 발생합니다. 서버를 더 이상 사용할 수 없는 경우 Azure Portal에서 서버의 등록을 취소하여 서버 엔드포인트를 삭제합니다. 서버 엔드포인트를 삭제하려면 [Azure 파일 동기화에서 서버 등록 취소](storage-sync-files-server-registration.md#unregister-the-server-with-storage-sync-service)에 설명된 단계를 따릅니다.
 
 <a id="server-endpoint-provisioningfailed"></a>**서버 엔드포인트 속성 페이지를 열거나 클라우드 계층화 정책을 업데이트할 수 없습니다.**  
@@ -195,7 +195,7 @@ Set-AzStorageSyncServerEndpoint `
 - **GetNextJob이 완료 됨 상태:-2134347756** 가 기록 되는 경우 서버는 방화벽 또는 프록시로 인해 Azure File Sync 서비스와 통신할 수 없습니다. 
     - 서버가 방화벽 뒤에 있는 경우 포트 443 아웃 바운드가 허용되는지 확인합니다. 방화벽이 트래픽을 특정 도메인으로 제한하는 경우 방화벽 [설명서](https://docs.microsoft.com/azure/storage/files/storage-sync-files-firewall-and-proxy#firewall)에 나열된 도메인에 액세스할 수 있는지 확인합니다.
     - 서버가 프록시 뒤에 있는 경우 프록시 [설명서](https://docs.microsoft.com/azure/storage/files/storage-sync-files-firewall-and-proxy#proxy)에 있는 단계에 따라 머신 전체 또는 앱 별 프록시 설정을 구성합니다.
-    - 테스트-StorageSyncNetworkConnectivity cmdlet을 사용 하 여 서비스 끝점에 대 한 네트워크 연결을 확인 합니다. 자세히 알아보려면 [서비스 끝점에 대 한 네트워크 연결 테스트](https://docs.microsoft.com/azure/storage/files/storage-sync-files-firewall-and-proxy#test-network-connectivity-to-service-endpoints)를 참조 하세요.
+    - 테스트-StorageSyncNetworkConnectivity cmdlet을 사용 하 여 서비스 엔드포인트에 대 한 네트워크 연결을 확인 합니다. 자세히 알아보려면 [서비스 엔드포인트에 대 한 네트워크 연결 테스트](https://docs.microsoft.com/azure/storage/files/storage-sync-files-firewall-and-proxy#test-network-connectivity-to-service-endpoints)를 참조 하세요.
 
 - **GetNextJob이 완료 됨 상태:-2134347764** 가 기록 되는 경우 서버는 만료 되거나 삭제 된 인증서로 인해 Azure File Sync 서비스와 통신할 수 없습니다.  
     - 서버에서 다음 PowerShell 명령을 실행 하 여 인증에 사용 되는 인증서를 다시 설정 합니다.
@@ -208,7 +208,7 @@ Set-AzStorageSyncServerEndpoint `
 
 서버의 현재 동기화 활동을 확인하려면 [현재 동기화 세션의 진행률을 모니터링 하려면 어떻게 해야 하나요?](#how-do-i-monitor-the-progress-of-a-current-sync-session)를 참조하세요.
 
-서버 끝점은 버그로 인해 또는 시스템 리소스가 부족 하 여 동기화 작업을 몇 시간 동안 로그 하지 못할 수 있습니다. 최신 Azure File Sync [에이전트 버전이](https://docs.microsoft.com/azure/storage/files/storage-files-release-notes) 설치 되어 있는지 확인 하십시오. 문제가 지속 되 면 지원 요청을 엽니다.
+서버 엔드포인트은 버그로 인해 또는 시스템 리소스가 부족 하 여 동기화 작업을 몇 시간 동안 로그 하지 못할 수 있습니다. 최신 Azure File Sync [에이전트 버전이](https://docs.microsoft.com/azure/storage/files/storage-files-release-notes) 설치 되어 있는지 확인 하십시오. 문제가 지속 되 면 지원 요청을 엽니다.
 
 > [!Note]  
 > 등록된 서버 블레이드의 서버 상태가 "오프라인으로 나타남"인 경우 [서버 엔드포인트가 "활동 없음" 또는 "보류 중" 상태이며, 등록된 서버 블레이드의 서버 상태가 "오프라인으로 나타남"](#server-endpoint-noactivity) 섹션에서 설명하는 단계를 수행하세요.
@@ -313,7 +313,7 @@ Azure 파일 공유에서 직접 변경하는 경우 Azure 파일 동기화는 2
 
 | HRESULT | HRESULT(10진) | 오류 문자열 | 문제 | 재구성 |
 |---------|-------------------|--------------|-------|-------------|
-| 0x80070043 | -2147942467 | ERROR_BAD_NET_NAME | 서버에서 계층화 된 파일에 액세스할 수 없습니다. 이 문제는 서버 엔드포인트를 삭제하기 전에 계층화된 파일이 회수되지 않은 경우에 발생합니다. | 이 문제를 해결 하려면 [서버 끝점을 삭제 한 후 서버에서 계층화 된 파일에 액세스할 수 없음](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tiered-files-are-not-accessible-on-the-server-after-deleting-a-server-endpoint)을 참조 하세요. |
+| 0x80070043 | -2147942467 | ERROR_BAD_NET_NAME | 서버에서 계층화 된 파일에 액세스할 수 없습니다. 이 문제는 서버 엔드포인트를 삭제하기 전에 계층화된 파일이 회수되지 않은 경우에 발생합니다. | 이 문제를 해결 하려면 [서버 엔드포인트을 삭제 한 후 서버에서 계층화 된 파일에 액세스할 수 없음](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tiered-files-are-not-accessible-on-the-server-after-deleting-a-server-endpoint)을 참조 하세요. |
 | 0x80c80207 | -2134375929 | ECS_E_SYNC_CONSTRAINT_CONFLICT | 종속 폴더가 아직 동기화 되지 않았으므로 파일 또는 디렉터리 변경을 동기화 할 수 없습니다. 이 항목은 종속 변경 내용이 동기화된 후 동기화됩니다. | 작업이 필요하지 않습니다. 오류가 며칠 동안 지속 되는 경우 FileSyncErrorsReport PowerShell 스크립트를 사용 하 여 종속 폴더가 아직 동기화 되지 않은 이유를 확인 합니다. |
 | 0x80c80284 | -2134375804 | ECS_E_SYNC_CONSTRAINT_CONFLICT_SESSION_FAILED | 종속 폴더가 아직 동기화 되지 않았으므로 동기화 세션이 실패 했으므로 파일 또는 디렉터리 변경 내용을 동기화 할 수 없습니다. 이 항목은 종속 변경 내용이 동기화된 후 동기화됩니다. | 작업이 필요하지 않습니다. 오류가 계속 발생 하면 동기화 세션 오류를 조사 하십시오. |
 | 0x8007007b | -2147024773 | ERROR_INVALID_NAME | 파일 또는 디렉터리 이름이 잘못되었습니다. | 의심스러운 파일 또는 디렉터리 이름을 변경하세요. 자세한 내용은 [지원되지 않는 문자 처리](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#handling-unsupported-characters)를 참조하세요. |
@@ -333,7 +333,7 @@ Azure 파일 공유에서 직접 변경하는 경우 Azure 파일 동기화는 2
 | 0x8000ffff | -2147418113 | E_UNEXPECTED | 예기치 않은 오류로 인해 파일을 동기화 할 수 없습니다. | 오류가 며칠 동안 지속 되 면 지원 사례를 여세요. |
 | 0x80070020 | -2147024864 | ERROR_SHARING_VIOLATION | 파일이 사용 중이기 때문에 동기화 할 수 없습니다. 파일이 더 이상 사용되지 않을 때 동기화됩니다. | 작업이 필요하지 않습니다. |
 | 0x80c80017 | -2134376425 | ECS_E_SYNC_OPLOCK_BROKEN | 동기화 하는 동안 파일이 변경 되었으므로 다시 동기화 해야 합니다. | 작업이 필요하지 않습니다. |
-| 0x80070017 | -2147024873 | ERROR_CRC | CRC 오류로 인해 파일을 동기화 할 수 없습니다. 이 오류는 서버 끝점을 삭제 하기 전에 계층화 된 파일을 회수할 수 없거나 파일이 손상 된 경우에 발생할 수 있습니다. | 이 문제를 해결 하려면 [서버 끝점을 삭제 한 후 서버에서 계층화 된 파일에 액세스할 수 없어](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tiered-files-are-not-accessible-on-the-server-after-deleting-a-server-endpoint) 분리 된 계층화 된 파일을 제거 하는 방법을 참조 하세요. 고아 계층화 된 파일을 제거한 후에도 오류가 계속 발생 하면 볼륨에서 [chkdsk](https://docs.microsoft.com/windows-server/administration/windows-commands/chkdsk) 를 실행 합니다. |
+| 0x80070017 | -2147024873 | ERROR_CRC | CRC 오류로 인해 파일을 동기화 할 수 없습니다. 이 오류는 서버 엔드포인트을 삭제 하기 전에 계층화 된 파일을 회수할 수 없거나 파일이 손상 된 경우에 발생할 수 있습니다. | 이 문제를 해결 하려면 [서버 엔드포인트을 삭제 한 후 서버에서 계층화 된 파일에 액세스할 수 없어](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tiered-files-are-not-accessible-on-the-server-after-deleting-a-server-endpoint) 분리 된 계층화 된 파일을 제거 하는 방법을 참조 하세요. 고아 계층화 된 파일을 제거한 후에도 오류가 계속 발생 하면 볼륨에서 [chkdsk](https://docs.microsoft.com/windows-server/administration/windows-commands/chkdsk) 를 실행 합니다. |
 | 0x80c80200 | -2134375936 | ECS_E_SYNC_CONFLICT_NAME_EXISTS | 충돌 파일의 최대 수에 도달 했으므로 파일을 동기화 할 수 없습니다. Azure File Sync는 파일당 100 충돌 파일을 지원 합니다. 파일 충돌에 대해 자세히 알아보려면 Azure File Sync [FAQ](https://docs.microsoft.com/azure/storage/files/storage-files-faq#afs-conflict-resolution)를 참조 하세요. | 이 문제를 해결 하려면 충돌 파일 수를 줄입니다. 충돌 파일 수가 100 미만이 면 파일이 동기화 됩니다. |
 
 #### <a name="handling-unsupported-characters"></a>지원되지 않는 처리 문자
@@ -392,7 +392,7 @@ Azure 파일 공유에서 직접 변경하는 경우 Azure 파일 동기화는 2
 | **오류 문자열** | ECS_E_SYNC_BLOCKED_ON_CHANGE_DETECTION_POST_RESTORE |
 | **재구성 필요** | 아니요 |
 
-사용자가 조치할 필요는 없습니다. Azure Backup를 사용 하 여 파일 또는 파일 공유 (클라우드 끝점)를 복원 하는 경우 Azure 파일 공유에서 변경 검색이 완료 될 때까지 동기화가 차단 됩니다. 변경 검색은 복원이 완료되는 즉시 실행되며 기간은 파일 공유의 파일 수를 기반으로 합니다
+사용자가 조치할 필요는 없습니다. Azure Backup를 사용 하 여 파일 또는 파일 공유 (클라우드 엔드포인트)를 복원 하는 경우 Azure 파일 공유에서 변경 검색이 완료 될 때까지 동기화가 차단 됩니다. 변경 검색은 복원이 완료되는 즉시 실행되며 기간은 파일 공유의 파일 수를 기반으로 합니다
 
 <a id="-2147216747"></a>**동기화 데이터베이스가 언로드 되었으므로 동기화 하지 못했습니다.**  
 
@@ -706,7 +706,7 @@ Azure 파일 공유가 삭제된 경우 새 파일 공유를 만든 후 동기�
 | **오류 문자열** | ECS_E_REPLICA_NOT_READY |
 | **재구성 필요** | 아니요 |
 
-이 오류는 Azure 파일 공유에 이미 존재 하는 콘텐츠를 사용 하 여 클라우드 끝점을 만들었기 때문에 발생 합니다. 서버 끝점에서 초기 동기화를 진행 하도록 허용 하기 전에 모든 콘텐츠에 대해 Azure 파일 공유를 검사 해야 Azure File Sync.
+이 오류는 Azure 파일 공유에 이미 존재 하는 콘텐츠를 사용 하 여 클라우드 엔드포인트을 만들었기 때문에 발생 합니다. 서버 엔드포인트에서 초기 동기화를 진행 하도록 허용 하기 전에 모든 콘텐츠에 대해 Azure 파일 공유를 검사 해야 Azure File Sync.
 
 <a id="-2134375877"></a><a id="-2134375908"></a><a id="-2134375853"></a>**여러 개별 파일의 문제로 인해 동기화가 실패했습니다.**  
 
@@ -798,7 +798,7 @@ Azure 파일 공유가 삭제된 경우 새 파일 공유를 만든 후 동기�
 
 이 오류는 동기화 데이터베이스에 내부 문제가 있어서 발생합니다. 이 오류는 동기화를 다시 시도하면 자동으로 해결됩니다. 이 문제가 오래 지속되는 경우 지원 요청을 만드시면 이 문제를 해결할 수 있도록 연락을 드리겠습니다.
 
-<a id="-2134364024"></a>**Azure Active Directory 테 넌 트의 변경으로 인해 동기화 하지 못했습니다.**  
+<a id="-2134364024"></a>**Azure Active Directory 테넌트의 변경으로 인해 동기화 하지 못했습니다.**  
 
 | | |
 |-|-|
@@ -811,7 +811,7 @@ Azure 파일 공유가 삭제된 경우 새 파일 공유를 만든 후 동기�
  
 이 문제를 해결하려면 다음 옵션 중 하나를 수행합니다.
 
-- **옵션 1 (권장)** : 구독을 원래 Azure Active Directory 테 넌 트로 다시 이동 합니다.
+- **옵션 1 (권장)** : 구독을 원래 Azure Active Directory 테넌트로 다시 이동 합니다.
 - **옵션 2**: 현재 동기화 그룹을 삭제 하 고 다시 만듭니다. 서버 엔드포인트에서 클라우드 계층화를 사용하도록 설정한 경우, 동기화 그룹을 삭제한 다음 [클라우드 계층화 섹션]( https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tiered-files-are-not-accessible-on-the-server-after-deleting-a-server-endpoint)에 설명된 단계를 수행하여 동기화 그룹을 다시 만들기 전에 분리되고 계층화된 파일을 제거합니다. 
 
 <a id="-2134364010"></a>**방화벽 및 가상 네트워크 예외가 구성 되지 않아 동기화 하지 못했습니다.**  
@@ -857,10 +857,10 @@ Azure 파일 공유가 삭제된 경우 새 파일 공유를 만든 후 동기�
 
 이 문제를 해결하려면 다음 단계를 수행하여 동기화 그룹을 삭제하고 다시 만듭니다.
 
-1. 동기화 그룹의 모든 서버 끝점을 삭제 합니다.
-2. 클라우드 끝점을 삭제 합니다. 
+1. 동기화 그룹의 모든 서버 엔드포인트을 삭제 합니다.
+2. 클라우드 엔드포인트을 삭제 합니다. 
 3. 동기화 그룹을 삭제 합니다.
-4. 서버 끝점에서 클라우드 계층화를 사용 하도록 설정한 경우 서버 [끝점을 삭제 한 후 서버에서 계층화 된 파일에 액세스할 수 없습니다](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tiered-files-are-not-accessible-on-the-server-after-deleting-a-server-endpoint) . 섹션을 수행 하 여 서버에서 분리 된 계층화 된 파일을 삭제 합니다.
+4. 서버 엔드포인트에서 클라우드 계층화를 사용 하도록 설정한 경우 서버 [엔드포인트을 삭제 한 후 서버에서 계층화 된 파일에 액세스할 수 없습니다](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tiered-files-are-not-accessible-on-the-server-after-deleting-a-server-endpoint) . 섹션을 수행 하 여 서버에서 분리 된 계층화 된 파일을 삭제 합니다.
 5. 동기화 그룹을 다시 만듭니다.
 
 <a id="-2145844941"></a>**HTTP 요청이 리디렉션 되어 동기화 하지 못했습니다.**  
@@ -1103,7 +1103,7 @@ New-FsrmFileScreen -Path "E:\AFSdataset" -Description "Filter unsupported charac
 | 0x800703e3 | -2147023901 | ERROR_OPERATION_ABORTED | 파일이 동시에 회수 되었으므로 계층에 오류가 발생 했습니다. | 작업이 필요하지 않습니다. 회수가 완료 되 고 파일이 더 이상 사용 되지 않는 경우 파일이 계층화 됩니다. |
 | 0x80c80264 | -2134375836 | ECS_E_GHOSTING_FILE_NOT_SYNCED | 파일이 Azure 파일 공유와 동기화 되지 않았으므로 계층에 오류가 발생 했습니다. | 작업이 필요하지 않습니다. 이 파일은 Azure 파일 공유와 동기화 된 후 계층에 있습니다. |
 | 0x80070001 | -2147942401 | ERROR_INVALID_FUNCTION | 클라우드 계층화 필터 드라이버 (microsoft.storagesync)가 실행 되 고 있지 않으므로 파일을 계층화 하지 못했습니다. | 이 문제를 해결 하려면 관리자 권한 명령 프롬프트를 열고 다음 명령을 실행 합니다. `fltmc load storagesync`<br>Fltmc 명령을 실행할 때 microsoft.storagesync 필터 드라이버를 로드 하지 못한 경우 Azure File Sync 에이전트를 제거 하 고 서버를 다시 시작한 후 Azure File Sync 에이전트를 다시 설치 하십시오. |
-| 0x80070070 | -2147024784 | ERROR_DISK_FULL | 서버 끝점이 있는 볼륨의 디스크 공간이 부족 하 여 파일을 계층화 하지 못했습니다. | 이 문제를 해결 하려면 서버 끝점이 있는 볼륨에서 100 이상의 디스크 공간을 확보 합니다. |
+| 0x80070070 | -2147024784 | ERROR_DISK_FULL | 서버 엔드포인트이 있는 볼륨의 디스크 공간이 부족 하 여 파일을 계층화 하지 못했습니다. | 이 문제를 해결 하려면 서버 엔드포인트이 있는 볼륨에서 100 이상의 디스크 공간을 확보 합니다. |
 | 0x80070490 | -2147023728 | ERROR_NOT_FOUND | 파일이 Azure 파일 공유와 동기화 되지 않았으므로 계층에 오류가 발생 했습니다. | 작업이 필요하지 않습니다. 이 파일은 Azure 파일 공유와 동기화 된 후 계층에 있습니다. |
 | 0x80c80262 | -2134375838 | ECS_E_GHOSTING_UNSUPPORTED_RP | 지원 되지 않는 재분석 지점 이므로 파일을 계층화 하지 못했습니다. | 파일이 데이터 중복 제거 재분석 지점인 경우 [계획 가이드](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning#data-deduplication) 의 단계에 따라 데이터 중복 제거 지원을 사용 하도록 설정 합니다. 데이터 중복 제거 이외의 재분석 지점이 있는 파일은 지원 되지 않으며 계층화 되지 않습니다.  |
 | 0x80c83052 | -2134364078 | ECS_E_CREATE_SV_STREAM_ID_MISMATCH | 파일이 수정 되었으므로 계층에 오류가 발생 했습니다. | 작업이 필요하지 않습니다. 수정 된 파일이 Azure 파일 공유와 동기화 되 면 파일이 계층에 포함 됩니다. |
@@ -1132,7 +1132,7 @@ New-FsrmFileScreen -Path "E:\AFSdataset" -Description "Filter unsupported charac
 |---------|-------------------|--------------|-------|-------------|
 | 0x80070079 | -2147942521 | ERROR_SEM_TIMEOUT | I/o 시간 제한으로 인해 파일을 회수 하지 못했습니다. 이 문제는 여러 가지 이유로 발생할 수 있습니다. 예를 들어 서버 리소스 제약 조건, 네트워크 연결 불량 또는 Azure storage 문제 (예: 제한)가 발생할 수 있습니다. | 작업이 필요하지 않습니다. 오류가 몇 시간 동안 지속되면 지원 사례를 열어 주세요. |
 | 0x80070036 | -2147024842 | ERROR_NETWORK_BUSY | 네트워크 문제로 인해 파일을 회수 하지 못했습니다.  | 오류가 계속 발생 하면 Azure 파일 공유에 대 한 네트워크 연결을 확인 합니다. |
-| 0x80c80037 | -2134376393 | ECS_E_SYNC_SHARE_NOT_FOUND | 서버 끝점이 삭제 되어 파일을 회수 하지 못했습니다. | 이 문제를 해결 하려면 [서버 끝점을 삭제 한 후 서버에서 계층화 된 파일에 액세스할 수 없음](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tiered-files-are-not-accessible-on-the-server-after-deleting-a-server-endpoint)을 참조 하세요. |
+| 0x80c80037 | -2134376393 | ECS_E_SYNC_SHARE_NOT_FOUND | 서버 엔드포인트이 삭제 되어 파일을 회수 하지 못했습니다. | 이 문제를 해결 하려면 [서버 엔드포인트을 삭제 한 후 서버에서 계층화 된 파일에 액세스할 수 없음](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tiered-files-are-not-accessible-on-the-server-after-deleting-a-server-endpoint)을 참조 하세요. |
 | 0x80070005 | -2147024891 | ERROR_ACCESS_DENIED | 액세스 거부 오류로 인해 파일을 회수 하지 못했습니다. 저장소 계정에 대 한 방화벽 및 가상 네트워크 설정을 사용 하도록 설정 하 고 서버에 저장소 계정에 대 한 액세스 권한이 없는 경우이 문제가 발생할 수 있습니다. | 이 문제를 해결 하려면 배포 가이드의 [방화벽 및 가상 네트워크 설정 구성](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide?tabs=azure-portal#configure-firewall-and-virtual-network-settings) 섹션에 설명 된 단계를 수행 하 여 서버 IP 주소 또는 가상 네트워크를 추가 합니다. |
 | 0x80c86002 | -2134351870 | ECS_E_AZURE_RESOURCE_NOT_FOUND | Azure 파일 공유에서 액세스할 수 없기 때문에 파일을 회수 하지 못했습니다. | 이 문제를 해결 하려면 파일이 Azure 파일 공유에 있는지 확인 합니다. 파일이 Azure 파일 공유에 있으면 최신 Azure File Sync [에이전트 버전](https://docs.microsoft.com/azure/storage/files/storage-files-release-notes#supported-versions)으로 업그레이드 합니다. |
 | 0x80c8305f | -2134364065 | ECS_E_EXTERNAL_STORAGE_ACCOUNT_AUTHORIZATION_FAILED | 저장소 계정에 대 한 권한 부여 실패로 인해 파일을 회수 하지 못했습니다. | 이 문제를 해결 하려면 [저장소 계정에 대 한 액세스 권한이 Azure File Sync](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#troubleshoot-rbac)있는지 확인 하세요. |
@@ -1141,8 +1141,8 @@ New-FsrmFileScreen -Path "E:\AFSdataset" -Description "Filter unsupported charac
 | 0x8007000e | -2147024882 | ERROR_OUTOFMEMORY | Insuffcient 메모리로 인해 파일을 회수 하지 못했습니다. | 오류가 계속 발생 하면 메모리 부족 상태를 발생 시키는 응용 프로그램 또는 커널 모드 드라이버를 조사 하십시오. |
 | 0x80070070 | -2147024784 | ERROR_DISK_FULL | 디스크 공간이 부족 하 여 파일을 회수 하지 못했습니다. | 이 문제를 해결 하려면 파일을 다른 볼륨으로 이동 하 여 볼륨의 공간을 확보 하거나, 볼륨의 크기를 늘리거나, 호출-StorageSyncCloudTiering cmdlet을 사용 하 여 파일을 계층으로 강제 합니다. |
 
-### <a name="tiered-files-are-not-accessible-on-the-server-after-deleting-a-server-endpoint"></a>서버 끝점을 삭제 한 후 서버에서 계층화 된 파일에 액세스할 수 없음
-서버 끝점을 삭제 하기 전에 파일을 회수 하지 않으면 서버의 계층화 된 파일에 액세스할 수 없게 됩니다.
+### <a name="tiered-files-are-not-accessible-on-the-server-after-deleting-a-server-endpoint"></a>서버 엔드포인트을 삭제 한 후 서버에서 계층화 된 파일에 액세스할 수 없음
+서버 엔드포인트을 삭제 하기 전에 파일을 회수 하지 않으면 서버의 계층화 된 파일에 액세스할 수 없게 됩니다.
 
 계층화 된 파일에 액세스할 수 없는 경우 기록 되는 오류
 - 파일을 동기화 할 때 오류 코드-2147942467 (0x80070043-ERROR_BAD_NET_NAME)이 ItemResults 이벤트 로그에 기록 됩니다.
@@ -1160,7 +1160,7 @@ New-FsrmFileScreen -Path "E:\AFSdataset" -Description "Filter unsupported charac
 
 **참고 사항**
 - 서버에서 계층화 된 파일에 액세스할 수 없는 경우 Azure 파일 공유에 직접 액세스 하는 경우에도 전체 파일에 액세스할 수 있어야 합니다.
-- 나중에 분리 된 계층화 된 파일을 방지 하려면 서버 끝점을 삭제할 때 [서버 끝점 제거](https://docs.microsoft.com/azure/storage/files/storage-sync-files-server-endpoint#remove-a-server-endpoint) 에 설명 된 단계를 따르세요.
+- 나중에 분리 된 계층화 된 파일을 방지 하려면 서버 엔드포인트을 삭제할 때 [서버 엔드포인트 제거](https://docs.microsoft.com/azure/storage/files/storage-sync-files-server-endpoint#remove-a-server-endpoint) 에 설명 된 단계를 따르세요.
 
 <a id="get-orphaned"></a>**분리 된 계층화 된 파일 목록을 가져오는 방법** 
 
@@ -1177,14 +1177,14 @@ $orphanFiles.OrphanedTieredFiles > OrphanTieredFiles.txt
 
 *옵션 1: 분리 된 계층화 된 파일 삭제*
 
-이 옵션은 Windows Server에서 분리 된 계층화 된 파일을 삭제 하지만 30 일 후에는 다시 만들기로 인해 존재 하거나 다른 동기화 그룹에 연결 된 경우 서버 끝점을 제거 해야 합니다. 파일 충돌은 서버 끝점을 다시 만들기 전에 Windows Server 또는 Azure 파일 공유에서 파일이 업데이트 되는 경우에 발생 합니다.
+이 옵션은 Windows Server에서 분리 된 계층화 된 파일을 삭제 하지만 30 일 후에는 다시 만들기로 인해 존재 하거나 다른 동기화 그룹에 연결 된 경우 서버 엔드포인트을 제거 해야 합니다. 파일 충돌은 서버 엔드포인트을 다시 만들기 전에 Windows Server 또는 Azure 파일 공유에서 파일이 업데이트 되는 경우에 발생 합니다.
 
 1. 에이전트 버전 v 5.1 이상이 설치 되어 Azure File Sync 확인 합니다.
-2. Azure 파일 공유 및 서버 끝점 위치를 백업 합니다.
-3. [서버 끝점 제거](https://docs.microsoft.com/azure/storage/files/storage-sync-files-server-endpoint#remove-a-server-endpoint)에 설명 된 단계를 수행 하 여 동기화 그룹에서 서버 끝점을 제거 합니다 (있는 경우).
+2. Azure 파일 공유 및 서버 엔드포인트 위치를 백업 합니다.
+3. [서버 엔드포인트 제거](https://docs.microsoft.com/azure/storage/files/storage-sync-files-server-endpoint#remove-a-server-endpoint)에 설명 된 단계를 수행 하 여 동기화 그룹에서 서버 엔드포인트을 제거 합니다 (있는 경우).
 
 > [!Warning]  
-> StorageSyncOrphanedTieredFiles cmdlet을 사용 하기 전에 서버 끝점을 제거 하지 않으면 서버에서 분리 된 계층화 된 파일을 삭제 하면 Azure 파일 공유에서 전체 파일이 삭제 됩니다. 
+> StorageSyncOrphanedTieredFiles cmdlet을 사용 하기 전에 서버 엔드포인트을 제거 하지 않으면 서버에서 분리 된 계층화 된 파일을 삭제 하면 Azure 파일 공유에서 전체 파일이 삭제 됩니다. 
 
 4. 다음 PowerShell 명령을 실행 하 여 분리 된 계층화 된 파일을 나열 합니다.
 
@@ -1206,11 +1206,11 @@ $orphanFilesRemoved.OrphanedTieredFiles > DeletedOrphanFiles.txt
 - 액세스할 수 있는 (고아 아님) 계층화 된 파일은 삭제 되지 않습니다.
 - 계층화 되지 않은 파일은 서버에 유지 됩니다.
 
-7. 선택 사항: 3 단계에서 삭제 한 경우 서버 끝점을 다시 만듭니다.
+7. 선택 사항: 3 단계에서 삭제 한 경우 서버 엔드포인트을 다시 만듭니다.
 
 *옵션 2: Azure 파일 공유를 탑재 하 고 서버에서 분리 된 파일을 로컬로 복사*
 
-이 옵션은 서버 끝점을 제거 하지 않아도 되지만 전체 파일을 로컬로 복사 하는 데 충분 한 디스크 공간이 필요 합니다.
+이 옵션은 서버 엔드포인트을 제거 하지 않아도 되지만 전체 파일을 로컬로 복사 하는 데 충분 한 디스크 공간이 필요 합니다.
 
 1. 분리 된 계층화 파일이 있는 Windows Server에서 Azure 파일 공유를 [탑재](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-windows) 합니다.
 2. 다음 PowerShell 명령을 실행 하 여 분리 된 계층화 된 파일을 나열 합니다.

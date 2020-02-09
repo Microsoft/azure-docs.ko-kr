@@ -178,7 +178,7 @@ Azure Stream Analytics는 ADLS(Azure Data Lake Storage) Gen1 출력을 사용하
 ## <a name="limitations"></a>제한 사항
 이 기능은 다음을 지원 하지 않습니다.
 
-1. **다중 테 넌 트 액세스**: 지정 된 Stream Analytics 작업에 대해 만든 서비스 주체는 작업이 만들어진 Azure Active Directory 테 넌 트에 상주할 수 있으며 다른 Azure Active Directory에 있는 리소스에 대해 사용할 수 없습니다. 넌. 따라서 Azure Stream Analytics 작업과 동일한 Azure Active Directory 테 넌 트 내에 있는 ADLS Gen 1 리소스 에서만 MSI를 사용할 수 있습니다. 
+1. **다중 테넌트 액세스**: 지정 된 Stream Analytics 작업에 대해 만든 서비스 주체는 작업이 만들어진 Azure Active Directory 테넌트에 상주할 수 있으며 다른 Azure Active Directory에 있는 리소스에 대해 사용할 수 없습니다. 넌. 따라서 Azure Stream Analytics 작업과 동일한 Azure Active Directory 테넌트 내에 있는 ADLS Gen 1 리소스 에서만 MSI를 사용할 수 있습니다. 
 
 2. **[사용자 할당 id](../active-directory/managed-identities-azure-resources/overview.md)** :은 지원 되지 않습니다. 즉, 사용자는 자신의 Stream Analytics 작업에서 사용할 자신의 서비스 사용자를 입력할 수 없습니다. 서비스 사용자는 Azure Stream Analytics에서 생성 됩니다.
 

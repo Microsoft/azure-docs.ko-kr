@@ -20,7 +20,7 @@ ms.locfileid: "76705618"
 
 **배포자** 파일을 다운로드 하려면 다음을 수행 합니다.
 
-1. **Azure Portal** 에 로그인 하 고 구독과 Azure AD 테 넌 트를 선택 합니다.
+1. **Azure Portal** 에 로그인 하 고 구독과 Azure AD 테넌트를 선택 합니다.
 2. Azure Portal의 위쪽 탐색 모음에서 Cloud Shell을 시작합니다.
 3. 기본 Cloud Shell 환경으로 **Bash** 를 선택 합니다.
 4. 강조 표시 된 아이콘을 선택 하 고 드롭다운 목록에서 **다운로드**를 선택 합니다.
@@ -304,9 +304,9 @@ ms.locfileid: "76705618"
 
 **의미**: Azure AD 앱 등록 구성이 제대로 완료 되지 않았습니다.  
 
-**정정 작업**: IT 관리자 (테 넌 트 읽기 액세스 권한이 있는 사용자)에 게 Azure AD 앱 등록을 만드는 [스크립트](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect/tree/master/AppCreationScripts) 를 사용 하도록 요청 합니다. 이 스크립트는 구성 단계도 자동으로 처리 합니다.
+**정정 작업**: IT 관리자 (테넌트 읽기 액세스 권한이 있는 사용자)에 게 Azure AD 앱 등록을 만드는 [스크립트](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect/tree/master/AppCreationScripts) 를 사용 하도록 요청 합니다. 이 스크립트는 구성 단계도 자동으로 처리 합니다.
 
-**오류 메시지**: "이 테 넌 트에서 새 Active Directory 응용 프로그램 '\<응용 프로그램 이름\>'을 (를) 만들 수 없습니다. 속성 식별자 uri에 대해 동일한 값을 가진 다른 개체가 이미 있습니다."
+**오류 메시지**: "이 테넌트에서 새 Active Directory 응용 프로그램 '\<응용 프로그램 이름\>'을 (를) 만들 수 없습니다. 속성 식별자 uri에 대해 동일한 값을 가진 다른 개체가 이미 있습니다."
 
 **의미**: 이름이 같은 Azure AD 앱 등록이 이미 있습니다.
 

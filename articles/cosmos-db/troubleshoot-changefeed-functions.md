@@ -1,6 +1,6 @@
 ---
 title: Cosmos DB에 대해 Azure Functions 트리거를 사용할 때 발생 하는 문제 해결
-description: Cosmos DB에 대 한 Azure Functions 트리거를 사용 하는 경우 일반적인 문제, 해결 방법 및 진단 단계
+description: Cosmos DB에 대한 Azure Functions 트리거를 사용 하는 경우 일반적인 문제, 해결 방법 및 진단 단계
 author: ealsur
 ms.service: cosmos-db
 ms.date: 07/17/2019
@@ -16,11 +16,11 @@ ms.locfileid: "75441114"
 ---
 # <a name="diagnose-and-troubleshoot-issues-when-using-azure-functions-trigger-for-cosmos-db"></a>Cosmos DB에 대해 Azure Functions 트리거를 사용 하는 경우 문제 진단 및 해결
 
-이 문서에서는 [Cosmos DB에 대 한 Azure Functions 트리거](change-feed-functions.md)를 사용 하는 경우 일반적인 문제, 해결 방법 및 진단 단계를 다룹니다.
+이 문서에서는 [Cosmos DB에 대한 Azure Functions 트리거](change-feed-functions.md)를 사용 하는 경우 일반적인 문제, 해결 방법 및 진단 단계를 다룹니다.
 
 ## <a name="dependencies"></a>종속성
 
-Cosmos DB에 대 한 Azure Functions 트리거와 바인딩은 기본 Azure Functions 런타임에 대 한 확장 패키지에 종속 됩니다. 발생할 수 있는 잠재적인 문제를 해결할 수 있는 수정 사항 및 새로운 기능을 포함할 수 있으므로 항상 이러한 패키지를 업데이트 된 상태로 유지 합니다.
+Cosmos DB에 대한 Azure Functions 트리거와 바인딩은 기본 Azure Functions 런타임에 대한 확장 패키지에 종속 됩니다. 발생할 수 있는 잠재적인 문제를 해결할 수 있는 수정 사항 및 새로운 기능을 포함할 수 있으므로 항상 이러한 패키지를 업데이트 된 상태로 유지 합니다.
 
 * Azure Functions v 2의 경우 [WebJobs. CosmosDB](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.CosmosDB)를 참조 하세요.
 * Azure Functions V1은 [WebJobs](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DocumentDB)를 참조 하세요.
@@ -29,7 +29,7 @@ Cosmos DB에 대 한 Azure Functions 트리거와 바인딩은 기본 Azure Func
 
 ## <a name="consume-the-azure-cosmos-db-sdk-independently"></a>독립적으로 Azure Cosmos DB SDK 사용
 
-확장 패키지의 핵심 기능은 Cosmos DB에 대 한 Azure Functions 트리거와 바인딩을 지원 하기 위한 것입니다. 여기에는 트리거와 바인딩을 사용 하지 않고 프로그래밍 방식으로 Azure Cosmos DB와 상호 작용 하려는 경우에 유용한 [Azure Cosmos DB .NET SDK](sql-api-sdk-dotnet-core.md)도 포함 되어 있습니다.
+확장 패키지의 핵심 기능은 Cosmos DB에 대한 Azure Functions 트리거와 바인딩을 지원 하기 위한 것입니다. 여기에는 트리거와 바인딩을 사용 하지 않고 프로그래밍 방식으로 Azure Cosmos DB와 상호 작용 하려는 경우에 유용한 [Azure Cosmos DB .NET SDK](sql-api-sdk-dotnet-core.md)도 포함 되어 있습니다.
 
 Azure Cosmos DB SDK를 사용 하려면 다른 NuGet 패키지 참조를 프로젝트에 추가 하지 않아야 합니다. 대신 **Azure Functions의 확장 패키지를 통해 SDK 참조를 확인 하도록**합니다. 트리거 및 바인딩과 별도로 Azure Cosmos DB SDK 사용
 
@@ -78,10 +78,10 @@ Azure 함수는 변경 내용을 받으면 자주 처리 하 고, 선택적으�
 
 대상에 일부 변경 내용이 없는 경우에는 변경 내용이 수신 된 후 Azure 함수를 실행 하는 동안 오류가 발생 하는 것을 의미할 수 있습니다.
 
-이 시나리오에서 가장 좋은 방법은 코드에 `try/catch` 블록을 추가 하 고, 변경 내용을 처리 하는 루프 내에 항목의 특정 하위 집합에 대 한 오류를 검색 하 여 그에 따라 처리 하는 것입니다. 추가 분석을 위해 다른 저장소로 전송 하거나 다시 시도 하는 것이 좋습니다. 
+이 시나리오에서 가장 좋은 방법은 코드에 `try/catch` 블록을 추가 하 고, 변경 내용을 처리 하는 루프 내에 항목의 특정 하위 집합에 대한 오류를 검색 하 여 그에 따라 처리 하는 것입니다. 추가 분석을 위해 다른 저장소로 전송 하거나 다시 시도 하는 것이 좋습니다. 
 
 > [!NOTE]
-> 코드를 실행 하는 동안 처리 되지 않은 예외가 발생 하면 기본적으로 Cosmos DB에 대 한 Azure Functions 트리거가 변경 내용 일괄 처리를 다시 시도 하지 않습니다. 즉, 변경 내용이 대상에 도착 하지 않은 이유는 처리에 실패 하기 때문입니다.
+> 코드를 실행 하는 동안 처리 되지 않은 예외가 발생 하면 기본적으로 Cosmos DB에 대한 Azure Functions 트리거가 변경 내용 일괄 처리를 다시 시도 하지 않습니다. 즉, 변경 내용이 대상에 도착 하지 않은 이유는 처리에 실패 하기 때문입니다.
 
 트리거에서 일부 변경 내용이 수신 되지 않은 경우 가장 일반적인 시나리오는 **다른 Azure 함수가 실행**되 고 있다는 것입니다. Azure에 배포 된 다른 Azure 함수 또는 **정확히 동일한 구성** (동일한 모니터링 및 임대 컨테이너)이 있는 개발자 컴퓨터에서 로컬로 실행 되는 azure 함수 일 수 있으며,이 azure 함수는 azure function에서 처리할 것으로 간주 되는 변경 내용의 하위 집합을 도용 합니다.
 
@@ -100,11 +100,11 @@ Azure 함수는 변경 내용을 받으면 자주 처리 하 고, 선택적으�
 
 ### <a name="binding-can-only-be-done-with-ireadonlylistdocument-or-jarray"></a>Binding은 IReadOnlyList\<Document > 또는 JArray로만 수행할 수 있습니다.
 
-이 오류는 Azure Functions 프로젝트 또는 참조 된 프로젝트에 [Azure Functions Cosmos DB 확장](./troubleshoot-changefeed-functions.md#dependencies)에서 제공 하는 버전과 다른 버전의 Azure Cosmos DB SDK에 대 한 수동 NuGet 참조가 포함 된 경우에 발생 합니다.
+이 오류는 Azure Functions 프로젝트 또는 참조 된 프로젝트에 [Azure Functions Cosmos DB 확장](./troubleshoot-changefeed-functions.md#dependencies)에서 제공 하는 버전과 다른 버전의 Azure Cosmos DB SDK에 대한 수동 NuGet 참조가 포함 된 경우에 발생 합니다.
 
 이러한 상황을 해결 하려면 추가 된 수동 NuGet 참조를 제거 하 고 Azure Functions Cosmos DB 확장 패키지를 통해 Azure Cosmos DB SDK 참조를 확인 하도록 합니다.
 
-### <a name="changing-azure-functions-polling-interval-for-the-detecting-changes"></a>변경 내용 검색에 대 한 Azure 함수의 폴링 간격 변경
+### <a name="changing-azure-functions-polling-interval-for-the-detecting-changes"></a>변경 내용 검색에 대한 Azure 함수의 폴링 간격 변경
 
 이전에 변경 된 [내용을 수신 하는 데 너무 오래 걸리므로](./troubleshoot-changefeed-functions.md#my-changes-take-too-long-to-be-received)Azure function은 새 변경 내용을 확인 하기 전에 구성 가능한 시간 (기본적으로 5 초) 동안 대기 합니다. 트리거의 [구성](../azure-functions/functions-bindings-cosmosdb-v2.md#trigger---configuration)에서 `FeedPollDelay/feedPollDelay` 설정을 통해 이 일시 중지 시간을 구성할 수 있습니다(값은 밀리초 단위여야 함).
 

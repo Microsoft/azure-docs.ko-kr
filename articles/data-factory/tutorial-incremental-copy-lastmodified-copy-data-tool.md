@@ -42,7 +42,7 @@ ms.locfileid: "75982631"
 
 ### <a name="create-two-containers-in-blob-storage"></a>Blob 저장소에 두 개의 컨테이너 만들기
 
-이러한 단계를 수행 하 여 자습서에 대 한 Blob 저장소를 준비 합니다.
+이러한 단계를 수행 하 여 자습서에 대한 Blob 저장소를 준비 합니다.
 
 1. **Source**라는 컨테이너를 만듭니다. [Azure Storage 탐색기](https://storageexplorer.com/)와 같이 다양 한 도구를 사용 하 여이 작업을 수행할 수 있습니다.
 

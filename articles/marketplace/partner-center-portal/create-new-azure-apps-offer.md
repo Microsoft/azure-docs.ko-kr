@@ -294,7 +294,7 @@ Azure 구독 Id를 최대 10 개까지 수동으로 추가 하거나 CSV 파일�
 
 Marketplace 통합을 포함 하는 모든 공용 Azure 지역에서 솔루션을 고객에 게 배포할 수 있도록 **공용 azure** 옵션을 선택 합니다.  [지리적 가용성](https://docs.microsoft.com/azure/marketplace/marketplace-geo-availability-currencies)에 대 한 자세한 정보.
 
-**Azure Government 클라우드** 옵션을 선택 하 여 미국 연방, 주, 지방, 부족 및 파트너가 이러한 엔터티를 제공할 수 있는 고객에 게 액세스를 제어 하는 정부 커뮤니티 클라우드 인 [Azure Government 클라우드에서](https://docs.microsoft.com/azure/azure-government/documentation-government-welcome)솔루션을 배포할 수 있도록 합니다.  게시자는이 클라우드 커뮤니티를 제공 하는 규정 준수 제어, 보안 조치 및 모범 사례를 담당 합니다.  Azure Government는 실제로 격리 된 데이터 센터 및 네트워크 (미국에만 있음)를 사용 합니다.  [Azure Government](https://aka.ms/azuregovpublish)에 게시 하기 전에 특정 끝점이 다를 수 있으므로 환경에서 솔루션을 테스트 하 고 유효성을 검사 하는 것이 좋습니다. 솔루션을 준비 하 고 테스트 하려면이 [링크](https://azure.microsoft.com/global-infrastructure/government/request/)에서 평가판 계정을 요청 합니다.
+**Azure Government 클라우드** 옵션을 선택 하 여 미국 연방, 주, 지방, 부족 및 파트너가 이러한 엔터티를 제공할 수 있는 고객에 게 액세스를 제어 하는 정부 커뮤니티 클라우드 인 [Azure Government 클라우드에서](https://docs.microsoft.com/azure/azure-government/documentation-government-welcome)솔루션을 배포할 수 있도록 합니다.  게시자는이 클라우드 커뮤니티를 제공 하는 규정 준수 제어, 보안 조치 및 모범 사례를 담당 합니다.  Azure Government는 실제로 격리 된 데이터 센터 및 네트워크 (미국에만 있음)를 사용 합니다.  [Azure Government](https://aka.ms/azuregovpublish)에 게시 하기 전에 특정 엔드포인트이 다를 수 있으므로 환경에서 솔루션을 테스트 하 고 유효성을 검사 하는 것이 좋습니다. 솔루션을 준비 하 고 테스트 하려면이 [링크](https://azure.microsoft.com/global-infrastructure/government/request/)에서 평가판 계정을 요청 합니다.
 
 >[!Note]
 >계획이 특정 클라우드에서 사용 가능한 것으로 게시 되 면 해당 클라우드를 제거할 수 없습니다.
@@ -424,9 +424,9 @@ Azure Government 서비스는 FedRAMP, NIST 800.171 (DIB), ITAR, IRS 1075, DoD L
 
 배포 모드에 대해 자세히 알아보려면 [Azure Resource Manager 배포 모드](https://docs.microsoft.com/azure/azure-resource-manager/deployment-modes)를 참조 하세요.
 
-### <a name="notification-endpoint-url"></a>알림 끝점 URL
+### <a name="notification-endpoint-url"></a>알림 엔드포인트 URL
 
-이 계획 버전의 관리 되는 응용 프로그램 인스턴스에 대 한 모든 CRUD 작업에 대 한 알림을 받을 HTTPS Webhook 끝점을 지정 합니다.
+이 계획 버전의 관리 되는 응용 프로그램 인스턴스에 대 한 모든 CRUD 작업에 대 한 알림을 받을 HTTPS Webhook 엔드포인트을 지정 합니다.
 
 ### <a name="customize-allowed-customer-actions"></a>허용 된 고객 작업 사용자 지정
 
@@ -438,7 +438,7 @@ Azure Government 서비스는 FedRAMP, NIST 800.171 (DIB), ITAR, IRS 1075, DoD L
 
 지원 되는 각 클라우드에서 관리 되는 응용 프로그램에 대 한 관리 액세스 권한이 있는 사용자를 표시 합니다.  관리 되는 리소스 그룹에 대 한 사용 권한을 부여 하려는 사용자, 그룹 또는 응용 프로그램은 AAD (Azure Active Directory) id를 사용 하 여 식별 됩니다.
 
-***Azure Active Directory 테 넌 트 id*** -사용 권한을 부여 하려는 사용자, 그룹 또는 응용 프로그램의 id가 포함 된 AAD 테 넌 트 id (디렉터리 ID 라고도 함)입니다.  Azure Portal의 AAD 테 넌 트 ID는 [Azure Active Directory에 대 한 속성](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Properties)에서 찾을 수 있습니다.
+***Azure Active Directory 테넌트 id*** -사용 권한을 부여 하려는 사용자, 그룹 또는 응용 프로그램의 id가 포함 된 AAD 테넌트 id (디렉터리 ID 라고도 함)입니다.  Azure Portal의 AAD 테넌트 ID는 [Azure Active Directory에 대 한 속성](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Properties)에서 찾을 수 있습니다.
 
 ***권한 부여-관리*** 되는 리소스 그룹에 권한을 부여 하려는 사용자, 그룹 또는 응용 프로그램의 AZURE ACTIVE DIRECTORY 개체 ID를 추가 합니다. 사용자를 보안 주체 ID로 식별 합니다 .이 ID는 Azure Portal의 [사용자 Azure Active Directory 블레이드에서](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/AllUsers)찾을 수 있습니다.
 
@@ -471,9 +471,9 @@ Azure 응용 프로그램은 기본적으로 Azure Resource Manager 테스트 �
 
 - **Azure 구독 id** (Azure Resource Manager 및 논리 앱에 필요): 리소스 사용량 보고 및 청구를 위해 azure 계정 서비스에 대 한 액세스 권한을 부여 하는 구독 Id를 입력 합니다. 아직 없는 경우 테스트 드라이브에 사용할 [별도의 Azure 구독을 만드는](https://docs.microsoft.com/azure/billing/billing-create-subscription) 것이 좋습니다. [Azure Portal](https://portal.azure.com/) 에 로그인 하 고 왼쪽 메뉴의 **구독** 탭으로 이동 하 여 Azure 구독 ID를 찾을 수 있습니다. 탭을 선택 하면 구독 ID (예: "a83645ac-1234-5ab6-6789-1h234g764
 
-- **AZURE ad 테 넌 트 id** (필수): AZURE ACTIVE DIRECTORY (AD) [테 넌 트 id](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in)를 입력 합니다. 이 ID를 찾으려면 [Azure Portal](https://portal.azure.com/)에 로그인 하 고 왼쪽 메뉴에서 Active Directory 탭을 선택한 다음 * * 속성을 선택 하 고 나열 된 **디렉터리 ID** 번호 (예: 50c464d3-4930-494c-963c-1e951d15360e)를 찾습니다. [https://www.whatismytenantid.com](https://www.whatismytenantid.com)에서 도메인 이름 URL을 사용 하 여 조직의 테 넌 트 ID를 조회할 수도 있습니다.
+- **AZURE ad 테넌트 id** (필수): AZURE ACTIVE DIRECTORY (AD) [테넌트 id](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in)를 입력 합니다. 이 ID를 찾으려면 [Azure Portal](https://portal.azure.com/)에 로그인 하 고 왼쪽 메뉴에서 Active Directory 탭을 선택한 다음 * * 속성을 선택 하 고 나열 된 **디렉터리 ID** 번호 (예: 50c464d3-4930-494c-963c-1e951d15360e)를 찾습니다. [https://www.whatismytenantid.com](https://www.whatismytenantid.com)에서 도메인 이름 URL을 사용 하 여 조직의 테넌트 ID를 조회할 수도 있습니다.
 
-- **AZURE ad 테 넌 트 이름** (동적 365에 필요): AZURE ACTIVE DIRECTORY (AD) 이름을 입력 합니다. 이 이름을 찾으려면 [Azure Portal](https://portal.azure.com/)에 로그인 하 고, 오른쪽 위 모서리에 있는 테 넌 트 이름이 계정 이름 아래에 나열 됩니다.
+- **AZURE ad 테넌트 이름** (동적 365에 필요): AZURE ACTIVE DIRECTORY (AD) 이름을 입력 합니다. 이 이름을 찾으려면 [Azure Portal](https://portal.azure.com/)에 로그인 하 고, 오른쪽 위 모서리에 있는 테넌트 이름이 계정 이름 아래에 나열 됩니다.
 
 - **AZURE ad 앱 id** (필수): AZURE ACTIVE DIRECTORY (AD) [응용 프로그램 id](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in)를 입력 합니다. 이 ID를 찾으려면 [Azure Portal](https://portal.azure.com/)에 로그인 하 고 왼쪽 메뉴에서 Active Directory 탭을 선택한 다음 **앱 등록**를 선택 하 고 나열 된 **응용 프로그램 ID** 번호 (예: 50c464d3-4930-494c-963c-1e951d15360e)를 확인 합니다.
 

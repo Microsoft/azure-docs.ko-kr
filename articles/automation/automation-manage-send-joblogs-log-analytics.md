@@ -81,7 +81,7 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 
 ## <a name="azure-monitor-log-records"></a>Azure Monitor 로그 레코드
 
-Azure Automation의 진단은 Azure Monitor 로그에 두 가지 유형의 레코드를 만들고 **Azurediagnostics**로 태그가 지정 됩니다. 다음 쿼리에서는 업그레이드 된 쿼리 언어를 사용 하 여 로그를 Azure Monitor 합니다. 레거시 쿼리 언어와 새 Azure Kusto 쿼리 언어 간의 일반적인 쿼리에 대 한 자세한 내용은 [새 Azure Kusto 쿼리 언어 참고 자료 시트를](https://docs.loganalytics.io/docs/Learn/References/Legacy-to-new-to-Azure-Log-Analytics-Language) 참조 하세요.
+Azure Automation의 진단은 Azure Monitor 로그에 두 가지 유형의 레코드를 만들고 **Azurediagnostics**로 태그가 지정 됩니다. 다음 쿼리에서는 업그레이드 된 쿼리 언어를 사용 하 여 로그를 Azure Monitor 합니다. 레거시 쿼리 언어와 새 Azure Kusto 쿼리 언어 간의 일반적인 쿼리에 대한 자세한 내용은 [새 Azure Kusto 쿼리 언어 참고 자료 시트를](https://docs.loganalytics.io/docs/Learn/References/Legacy-to-new-to-Azure-Log-Analytics-Language) 참조 하세요.
 
 ### <a name="job-logs"></a>작업 로그
 
@@ -178,13 +178,13 @@ Automation 작업 상태 및 스트림 데이터를 Azure Monitor 로그에 전�
 + 문제가 발생할 때 알리도록 경고 설정
 + 사용자 지정 보기와 검색 쿼리를 사용하여 runbook 결과, runbook 작업 상태 및 기타 관련된 핵심 지표 또는 메트릭 시각화.
 
-Azure Monitor 로그는 자동화 작업에 대 한 작업 가시성을 개선 하 고 문제를 더 빠르게 해결 하는 데 도움이 됩니다.
+Azure Monitor 로그는 자동화 작업에 대한 작업 가시성을 개선 하 고 문제를 더 빠르게 해결 하는 데 도움이 됩니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-* Log Analytics 문제 해결에 대 한 도움말 [은 Log Analytics 더 이상 데이터를 수집 하지 않는 문제 해결](../azure-monitor/platform/manage-cost-storage.md#troubleshooting-why-log-analytics-is-no-longer-collecting-data)을 참조 하세요.
-* 다른 검색 쿼리를 생성 하 고 Azure Monitor 로그를 사용 하 여 Automation 작업 로그를 검토 하는 방법에 대 한 자세한 내용은 [Azure Monitor 로그의 로그 검색](../log-analytics/log-analytics-log-searches.md)을 참조 하세요.
+* Log Analytics 문제 해결에 대한 도움말 [은 Log Analytics 더 이상 데이터를 수집 하지 않는 문제 해결](../azure-monitor/platform/manage-cost-storage.md#troubleshooting-why-log-analytics-is-no-longer-collecting-data)을 참조 하세요.
+* 다른 검색 쿼리를 생성 하 고 Azure Monitor 로그를 사용 하 여 Automation 작업 로그를 검토 하는 방법에 대한 자세한 내용은 [Azure Monitor 로그의 로그 검색](../log-analytics/log-analytics-log-searches.md)을 참조 하세요.
 * Runbook에서 출력 및 오류 메시지를 만들고 검색하는 방법을 이해하려면 [Runbook 출력 및 메시지](automation-runbook-output-and-messages.md)를 참조하세요.
 * runbook 실행, runbook 작업 모니터링 방법 및 기타 기술 세부 정보를 알아보려면 [runbook 작업 추적](automation-runbook-execution.md)을 참조하세요.
-* Azure Monitor 로그 및 데이터 수집 소스에 대 한 자세한 내용은 [Azure Monitor 로그에서 Azure storage 데이터 수집 개요](../azure-monitor/platform/collect-azure-metrics-logs.md)를 참조 하세요.
+* Azure Monitor 로그 및 데이터 수집 소스에 대한 자세한 내용은 [Azure Monitor 로그에서 Azure storage 데이터 수집 개요](../azure-monitor/platform/collect-azure-metrics-logs.md)를 참조 하세요.
 

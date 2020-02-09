@@ -19,7 +19,7 @@ ms.locfileid: "72757134"
 ---
 # <a name="create-human-reviews-rest"></a>사용자 리뷰 만들기 (REST)
 
-[평가를](./review-api.md#reviews) 위해 인적 중재자의 콘텐츠를 저장 하 고 표시 합니다. 사용자가 검토를 완료 하면 결과가 지정 된 콜백 끝점으로 전송 됩니다. 이 가이드에서는 API 콘솔을 통해 REST Api 검토를 사용 하 여 리뷰를 설정 하는 방법을 알아봅니다. Api의 구조를 이해 하면 이러한 호출을 모든 REST 호환 플랫폼으로 쉽게 이식할 수 있습니다.
+[평가를](./review-api.md#reviews) 위해 인적 중재자의 콘텐츠를 저장 하 고 표시 합니다. 사용자가 검토를 완료 하면 결과가 지정 된 콜백 엔드포인트으로 전송 됩니다. 이 가이드에서는 API 콘솔을 통해 REST Api 검토를 사용 하 여 리뷰를 설정 하는 방법을 알아봅니다. Api의 구조를 이해 하면 이러한 호출을 모든 REST 호환 플랫폼으로 쉽게 이식할 수 있습니다.
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -27,7 +27,7 @@ ms.locfileid: "72757134"
 
 ## <a name="create-a-review"></a>검토 만들기
 
-검토를 만들려면 검토-API 참조 **[만들기](https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c4)** 페이지로 이동 하 고 키 영역에 대 한 단추를 선택 합니다 .이는 [검토 도구의](https://contentmoderator.cognitive.microsoft.com/) **자격 증명** 페이지에 있는 끝점 URL에서 찾을 수 있습니다. 이렇게 하면 REST API 호출을 쉽게 구성 하 고 실행할 수 있는 API 콘솔이 시작 됩니다.
+검토를 만들려면 검토-API 참조 **[만들기](https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c4)** 페이지로 이동 하 고 키 영역에 대 한 단추를 선택 합니다 .이는 [검토 도구의](https://contentmoderator.cognitive.microsoft.com/) **자격 증명** 페이지에 있는 엔드포인트 URL에서 찾을 수 있습니다. 이렇게 하면 REST API 호출을 쉽게 구성 하 고 실행할 수 있는 API 콘솔이 시작 됩니다.
 
 ![검토-지역 선택 가져오기](images/test-drive-region.png)
 
@@ -42,7 +42,7 @@ ms.locfileid: "72757134"
 
 **요청 본문** 상자를 편집 하 여 다음 필드를 포함 하는 JSON 요청을 입력 합니다.
 
-- **메타 데이터**: 콜백 끝점에 반환할 사용자 지정 키-값 쌍입니다. 키가 [검토 도구](https://contentmoderator.cognitive.microsoft.com)에 정의 된 짧은 코드 이면 태그로 표시 됩니다.
+- **메타 데이터**: 콜백 엔드포인트에 반환할 사용자 지정 키-값 쌍입니다. 키가 [검토 도구](https://contentmoderator.cognitive.microsoft.com)에 정의 된 짧은 코드 이면 태그로 표시 됩니다.
 - **콘텐츠**: 이미지 및 비디오 콘텐츠의 경우 콘텐츠를 가리키는 URL 문자열입니다. 텍스트 콘텐츠의 경우 실제 텍스트 문자열입니다.
 - **ContentId**: 사용자 지정 식별자 문자열입니다. 이 문자열은 API로 전달되고 콜백을 통해 반환됩니다. 내부 식별자 또는 메타 데이터를 중재 작업의 결과와 연결 하는 데 유용 합니다.
 - **Callbackendpoint**: (선택 사항) 검토가 완료 되 면 콜백 정보를 수신 하는 URL입니다.

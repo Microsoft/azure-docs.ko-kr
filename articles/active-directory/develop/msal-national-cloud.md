@@ -40,12 +40,12 @@ Microsoft의 전 세계 클라우드 외에도 MSAL (Microsoft 인증 라이브�
 
 ### <a name="choose-the-appropriate-identities"></a>적절 한 id 선택
 
-[Azure Government](https://docs.microsoft.com/azure/azure-government/) 응용 프로그램은 Azure ad 정부 Id 및 Azure ad 공용 id를 사용 하 여 사용자를 인증할 수 있습니다. 이러한 id 중 하나를 사용할 수 있으므로 시나리오에 대해 선택 해야 하는 기관 끝점을 결정 해야 합니다.
+[Azure Government](https://docs.microsoft.com/azure/azure-government/) 응용 프로그램은 Azure ad 정부 Id 및 Azure ad 공용 id를 사용 하 여 사용자를 인증할 수 있습니다. 이러한 id 중 하나를 사용할 수 있으므로 시나리오에 대해 선택 해야 하는 기관 엔드포인트을 결정 해야 합니다.
 
-- Azure AD Public: 조직에 Office 365 (공용 또는 GCC) 또는 다른 응용 프로그램을 지원 하기 위한 Azure AD 공용 테 넌 트가 이미 있는 경우 일반적으로 사용 됩니다.
-- Azure AD 정부: 조직에 이미 Office 365 (GCC High 또는 DoD)를 지원 하기 위한 Azure AD 정부 테 넌 트가 있는 경우 또는 Azure AD 정부에서 새 테 넌 트를 만드는 경우 일반적으로 사용 됩니다.
+- Azure AD Public: 조직에 Office 365 (공용 또는 GCC) 또는 다른 응용 프로그램을 지원 하기 위한 Azure AD 공용 테넌트가 이미 있는 경우 일반적으로 사용 됩니다.
+- Azure AD 정부: 조직에 이미 Office 365 (GCC High 또는 DoD)를 지원 하기 위한 Azure AD 정부 테넌트가 있는 경우 또는 Azure AD 정부에서 새 테넌트를 만드는 경우 일반적으로 사용 됩니다.
 
-결정 한 후에는 앱 등록을 수행 하는 특별 한 고려 사항이 있습니다. Azure Government 응용 프로그램에 대해 Azure AD 공용 id를 선택 하는 경우 Azure AD 공용 테 넌 트에서 응용 프로그램을 등록 해야 합니다.
+결정 한 후에는 앱 등록을 수행 하는 특별 한 고려 사항이 있습니다. Azure Government 응용 프로그램에 대해 Azure AD 공용 id를 선택 하는 경우 Azure AD 공용 테넌트에서 응용 프로그램을 등록 해야 합니다.
 
 ### <a name="get-an-azure-government-subscription"></a>Azure Government 구독 가져오기
 
@@ -72,9 +72,9 @@ MSAL.NET를 사용 하 여 사용자를 로그인 하 고 토큰을 획득 하 �
 
 1. [Azure Portal](https://portal.azure.us/)에 로그인합니다.
     
-   다른 국가별 클라우드의 Azure Portal 끝점을 찾으려면 [앱 등록 끝점](authentication-national-cloud.md#app-registration-endpoints)을 참조 하세요.
+   다른 국가별 클라우드의 Azure Portal 엔드포인트을 찾으려면 [앱 등록 엔드포인트](authentication-national-cloud.md#app-registration-endpoints)을 참조 하세요.
 
-1. 계정이 둘 이상의 테 넌 트에 대 한 액세스를 제공 하는 경우 오른쪽 위 모서리에서 사용자의 계정을 선택 하 고 포털 세션을 원하는 Azure AD 테 넌 트로 설정 합니다.
+1. 계정이 둘 이상의 테넌트에 대 한 액세스를 제공 하는 경우 오른쪽 위 모서리에서 사용자의 계정을 선택 하 고 포털 세션을 원하는 Azure AD 테넌트로 설정 합니다.
 1. 개발자를 위한 Microsoft id 플랫폼의 [앱 등록](https://aka.ms/ra/ff) 페이지로 이동 합니다.
 1. **애플리케이션 등록** 페이지가 나타나면 애플리케이션의 이름을 입력합니다.
 1. **지원 되는 계정 유형**아래에서 **조직 디렉터리의 계정**을 선택 합니다.
@@ -124,25 +124,25 @@ const myMSALObj = new UserAgentApplication(msalConfig);
 
 - `Enter_the_Application_Id_here`은 사용자가 등록 한 응용 프로그램에 대 한 **응용 프로그램 (클라이언트) ID** 값입니다.
 - `Enter_the_Tenant_Info_Here`는 다음 옵션 중 하나로 설정 됩니다.
-    - 응용 프로그램이 **이 조직 디렉터리에서 계정을**지 원하는 경우이 값을 테 넌 트 ID 또는 테 넌 트 이름 (예: contoso.microsoft.com)으로 바꿉니다.
+    - 응용 프로그램이 **이 조직 디렉터리에서 계정을**지 원하는 경우이 값을 테넌트 ID 또는 테넌트 이름 (예: contoso.microsoft.com)으로 바꿉니다.
     - 응용 프로그램에서 **조직 디렉터리의 계정을**지 원하는 경우이 값을 `organizations`바꿉니다.
     
-    모든 국가별 클라우드의 인증 끝점을 찾으려면 [AZURE AD 인증 끝점](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud#azure-ad-authentication-endpoints)을 참조 하세요.
+    모든 국가별 클라우드의 인증 엔드포인트을 찾으려면 [AZURE AD 인증 엔드포인트](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud#azure-ad-authentication-endpoints)을 참조 하세요.
 
     > [!NOTE]
     > 개인 Microsoft 계정은 국가별 클라우드에서 지원 되지 않습니다.
   
-- `graphEndpoint`은 미국 정부용 Microsoft 클라우드의 Microsoft Graph 끝점입니다.
+- `graphEndpoint`은 미국 정부용 Microsoft 클라우드의 Microsoft Graph 엔드포인트입니다.
 
-   모든 국가별 클라우드의 Microsoft Graph 끝점을 찾으려면 [국가별 클라우드의 Microsoft Graph 끝점](https://docs.microsoft.com/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints)을 참조 하세요.
+   모든 국가별 클라우드의 Microsoft Graph 엔드포인트을 찾으려면 [국가별 클라우드의 Microsoft Graph 엔드포인트](https://docs.microsoft.com/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints)을 참조 하세요.
 
 ## <a name="pythontabpython"></a>[Python](#tab/python)
 
 소 버린 클라우드 용 MSAL Python 응용 프로그램을 사용 하도록 설정 하려면:
 
-- 클라우드에 따라 특정 포털에 응용 프로그램을 등록 합니다. 포털을 선택 하는 방법에 대 한 자세한 내용은 [앱 등록 끝점](authentication-national-cloud.md#app-registration-endpoints) 을 참조 하세요.
+- 클라우드에 따라 특정 포털에 응용 프로그램을 등록 합니다. 포털을 선택 하는 방법에 대 한 자세한 내용은 [앱 등록 엔드포인트](authentication-national-cloud.md#app-registration-endpoints) 을 참조 하세요.
 - 다음에 설명 된 클라우드에 따라 구성에 대 한 몇 가지 변경 내용이 포함 된 리포지토리의 [샘플](https://github.com/AzureAD/microsoft-authentication-library-for-python/tree/dev/sample) 을 사용 합니다.
-- 응용 프로그램을 등록 한 클라우드에 따라 특정 권한을 사용 합니다. 다른 클라우드의 기관에 대 한 자세한 내용은 [Azure AD 인증 끝점](authentication-national-cloud.md#azure-ad-authentication-endpoints)을 참조 하세요.
+- 응용 프로그램을 등록 한 클라우드에 따라 특정 권한을 사용 합니다. 다른 클라우드의 기관에 대 한 자세한 내용은 [Azure AD 인증 엔드포인트](authentication-national-cloud.md#azure-ad-authentication-endpoints)을 참조 하세요.
 
     권한 예는 다음과 같습니다.
 
@@ -150,9 +150,9 @@ const myMSALObj = new UserAgentApplication(msalConfig);
     "authority": "https://login.microsoftonline.us/Enter_the_Tenant_Info_Here"
     ```
     
-- Microsoft graph를 호출 하려면 사용 중인 클라우드에 따라 달라 지는 특정 그래프 끝점 URL이 필요 합니다. 모든 국가별 클라우드의 Microsoft Graph 끝점을 찾으려면 [Microsoft Graph 및 그래프 탐색기 서비스 루트 끝점](https://docs.microsoft.com/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints)을 참조 하세요.
+- Microsoft graph를 호출 하려면 사용 중인 클라우드에 따라 달라 지는 특정 그래프 엔드포인트 URL이 필요 합니다. 모든 국가별 클라우드의 Microsoft Graph 엔드포인트을 찾으려면 [Microsoft Graph 및 그래프 탐색기 서비스 루트 엔드포인트](https://docs.microsoft.com/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints)을 참조 하세요.
 
-    다음은 범위를 포함 하는 그래프 끝점의 예입니다.
+    다음은 범위를 포함 하는 그래프 엔드포인트의 예입니다.
     
     ```json
     "endpoint" : "https://graph.microsoft.us/v1.0/me"
@@ -163,9 +163,9 @@ const myMSALObj = new UserAgentApplication(msalConfig);
 
 소 버린 클라우드 용 Java 응용 프로그램에 대해 MSAL을 사용 하도록 설정 하려면 다음을 수행 합니다.
 
-- 클라우드에 따라 특정 포털에 응용 프로그램을 등록 합니다. 포털을 선택 하는 방법에 대 한 자세한 내용은 [앱 등록 끝점](authentication-national-cloud.md#app-registration-endpoints) 을 참조 하세요.
+- 클라우드에 따라 특정 포털에 응용 프로그램을 등록 합니다. 포털을 선택 하는 방법에 대 한 자세한 내용은 [앱 등록 엔드포인트](authentication-national-cloud.md#app-registration-endpoints) 을 참조 하세요.
 - 다음에 언급 된 클라우드에 따라 구성에 대 한 몇 가지 변경 내용이 포함 된 리포지토리의 [샘플](https://github.com/AzureAD/microsoft-authentication-library-for-java/tree/dev/src/samples) 을 사용 합니다.
-- 응용 프로그램을 등록 한 클라우드에 따라 특정 권한을 사용 합니다. 다른 클라우드의 기관에 대 한 자세한 내용은 [Azure AD 인증 끝점](authentication-national-cloud.md#azure-ad-authentication-endpoints)을 참조 하세요.
+- 응용 프로그램을 등록 한 클라우드에 따라 특정 권한을 사용 합니다. 다른 클라우드의 기관에 대 한 자세한 내용은 [Azure AD 인증 엔드포인트](authentication-national-cloud.md#azure-ad-authentication-endpoints)을 참조 하세요.
 
 권한 예는 다음과 같습니다.
 
@@ -173,9 +173,9 @@ const myMSALObj = new UserAgentApplication(msalConfig);
 "authority": "https://login.microsoftonline.us/Enter_the_Tenant_Info_Here"
 ```
 
-- Microsoft graph를 호출 하려면 사용 중인 클라우드에 따라 달라 지는 특정 그래프 끝점 URL이 필요 합니다. 모든 국가별 클라우드의 Microsoft Graph 끝점을 찾으려면 [Microsoft Graph 및 그래프 탐색기 서비스 루트 끝점](https://docs.microsoft.com/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints)을 참조 하세요.
+- Microsoft graph를 호출 하려면 사용 중인 클라우드에 따라 달라 지는 특정 그래프 엔드포인트 URL이 필요 합니다. 모든 국가별 클라우드의 Microsoft Graph 엔드포인트을 찾으려면 [Microsoft Graph 및 그래프 탐색기 서비스 루트 엔드포인트](https://docs.microsoft.com/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints)을 참조 하세요.
 
-다음은 범위를 포함 하는 그래프 끝점의 예입니다.
+다음은 범위를 포함 하는 그래프 엔드포인트의 예입니다.
 
 ```json
 "endpoint" : "https://graph.microsoft.us/v1.0/me"
@@ -186,7 +186,7 @@ const myMSALObj = new UserAgentApplication(msalConfig);
 
 IOS 및 macOS 용 MSAL을 사용 하 여 국가별 클라우드에서 토큰을 가져올 수 있지만 `MSALPublicClientApplication`를 만들 때 추가 구성이 필요 합니다.
 
-예를 들어 응용 프로그램을 국가 클라우드의 다중 테 넌 트 응용 프로그램 (미국 정부 기관)으로 만들려면 다음을 작성할 수 있습니다.
+예를 들어 응용 프로그램을 국가 클라우드의 다중 테넌트 응용 프로그램 (미국 정부 기관)으로 만들려면 다음을 작성할 수 있습니다.
 
 ```objc
 MSALAADAuthority *aadAuthority =
@@ -209,7 +209,7 @@ MSALPublicClientApplication *application =
 
 IOS 및 macOS 용 MSAL을 사용 하 여 국가별 클라우드에서 토큰을 가져올 수 있지만 `MSALPublicClientApplication`를 만들 때 추가 구성이 필요 합니다.
 
-예를 들어 응용 프로그램을 국가 클라우드의 다중 테 넌 트 응용 프로그램 (미국 정부 기관)으로 만들려면 다음을 작성할 수 있습니다.
+예를 들어 응용 프로그램을 국가 클라우드의 다중 테넌트 응용 프로그램 (미국 정부 기관)으로 만들려면 다음을 작성할 수 있습니다.
 
 ```swift
 let authority = try? MSALAADAuthority(cloudInstance: .usGovernmentCloudInstance, audienceType: .azureADMultipleOrgsAudience, rawTenant: nil)

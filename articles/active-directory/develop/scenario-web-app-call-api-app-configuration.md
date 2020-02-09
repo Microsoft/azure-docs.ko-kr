@@ -72,12 +72,12 @@ ASP.NET의 경우 미들웨어 OIDC 이벤트를 구독 합니다.
 # <a name="javatabjava"></a>[Java](#tab/java)
 
 이 문서의 코드 예제 및 다음 코드 예제는 Java 용 MSAL을 사용 하는 웹 앱 샘플 인 [Microsoft Graph를 호출 하는 java 웹 응용 프로그램](https://github.com/Azure-Samples/ms-identity-java-webapp)에서 추출 됩니다.
-이 샘플은 현재 Java 용 MSAL에서 권한 부여 코드 URL을 생성 하 고 Microsoft id 플랫폼에 대 한 권한 부여 끝점 탐색을 처리 합니다. 스 프린트 보안을 사용 하 여에서 사용자에 게 서명할 수도 있습니다. 전체 구현에 대 한 자세한 내용은 샘플을 참조 하는 것이 좋습니다.
+이 샘플은 현재 Java 용 MSAL에서 권한 부여 코드 URL을 생성 하 고 Microsoft id 플랫폼에 대 한 권한 부여 엔드포인트 탐색을 처리 합니다. 스 프린트 보안을 사용 하 여에서 사용자에 게 서명할 수도 있습니다. 전체 구현에 대 한 자세한 내용은 샘플을 참조 하는 것이 좋습니다.
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
 이 문서의 코드 예제 및 다음 예제는 MSAL을 사용 하는 웹 앱 샘플 인 Microsoft Graph를 호출 하는 [Python 웹 응용 프로그램](https://github.com/Azure-Samples/ms-identity-python-webapp)에서 추출 됩니다. Python.
-이 샘플에서는 현재 MSAL을 사용할 수 있습니다. Python은 권한 부여 코드 URL을 생성 하 고 Microsoft id 플랫폼에 대 한 권한 부여 끝점 탐색을 처리 합니다. 전체 구현에 대 한 자세한 내용은 샘플을 참조 하는 것이 좋습니다.
+이 샘플에서는 현재 MSAL을 사용할 수 있습니다. Python은 권한 부여 코드 URL을 생성 하 고 Microsoft id 플랫폼에 대 한 권한 부여 엔드포인트 탐색을 처리 합니다. 전체 구현에 대 한 자세한 내용은 샘플을 참조 하는 것이 좋습니다.
 
 ---
 

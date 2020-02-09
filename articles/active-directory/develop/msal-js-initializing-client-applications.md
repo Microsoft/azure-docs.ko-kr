@@ -28,7 +28,7 @@ ms.locfileid: "77084036"
 
 - 클라이언트 ID (응용 프로그램의 GUID를 나타내는 문자열)
 - 응용 프로그램에 대 한 id 공급자 URL (인스턴스 이름) 및 로그인 대상이 됩니다. 이러한 두 매개 변수를 통칭 하 여 기관 이라고 합니다.
-- 조직 전용 lob (기간 업무) 응용 프로그램을 작성 하는 경우 (단일 테 넌 트 응용 프로그램이 라고도 하는) 테 넌 트 ID입니다.
+- 조직 전용 lob (기간 업무) 응용 프로그램을 작성 하는 경우 (단일 테넌트 응용 프로그램이 라고도 하는) 테넌트 ID입니다.
 - 웹 앱의 경우 id 공급자가 보안 토큰을 사용 하 여 응용 프로그램에 반환 하는 redirectUri도 설정 해야 합니다.
 
 ## <a name="initializing-applications"></a>응용 프로그램 초기화
@@ -111,11 +111,11 @@ export type Configuration = {
 
 - **authority**: 선택 사항입니다. MSAL에서 토큰을 요청할 수 있는 디렉터리를 나타내는 URL입니다. 기본값은 `https://login.microsoftonline.com/common`입니다.
     * Azure AD에서 https://&lt;인스턴스&gt;/&lt;대상&gt;&lt;인스턴스&gt;는 id 공급자 도메인 (예: `https://login.microsoftonline.com`)이 고 &lt;대상 그룹은 로그인 대상을 나타내는 식별자입니다.&gt; 다음 값을 사용할 수 있습니다.
-        * `https://login.microsoftonline.com/<tenant>`은 테 넌 트에 연결 된 도메인 (예: contoso.onmicrosoft.com) 이거나 특정 조직의 사용자 로그인에만 사용 되는 디렉터리의 `TenantID` 속성을 나타내는 GUID입니다.
+        * `https://login.microsoftonline.com/<tenant>`은 테넌트에 연결 된 도메인 (예: contoso.onmicrosoft.com) 이거나 특정 조직의 사용자 로그인에만 사용 되는 디렉터리의 `TenantID` 속성을 나타내는 GUID입니다.
         * `https://login.microsoftonline.com/common`-회사 및 학교 계정이 나 Microsoft 개인 계정으로 사용자를 로그인 하는 데 사용 됩니다.
         * `https://login.microsoftonline.com/organizations/`-회사 및 학교 계정으로 사용자를 로그인 하는 데 사용 됩니다.
         * `https://login.microsoftonline.com/consumers/`-개인 Microsoft 계정 (live)만 사용 하 여 사용자를 로그인 하는 데 사용 됩니다.
-    * Azure AD B2C에서는 `https://<instance>/tfp/<tenant>/<policyName>/`형식입니다. 여기서 인스턴스는 Azure AD B2C 도메인입니다. 예를 들어, {policyName}. b2clogin는 테 넌 트가 Azure AD B2C 테 넌 트의 이름입니다 (예: {}. onmicrosoft,는 적용할 정책의 이름입니다.
+    * Azure AD B2C에서는 `https://<instance>/tfp/<tenant>/<policyName>/`형식입니다. 여기서 인스턴스는 Azure AD B2C 도메인입니다. 예를 들어, {policyName}. b2clogin는 테넌트가 Azure AD B2C 테넌트의 이름입니다 (예: {}. onmicrosoft,는 적용할 정책의 이름입니다.
 
 
 - **Validateauthority**: 선택 사항입니다.  토큰 발급자의 유효성을 검사 합니다. 기본값은 `true`입니다. B2C 응용 프로그램의 경우 기관 값이 알려져 있고 정책 마다 다를 수 있으므로 기관 유효성 검사가 작동 하지 않으며 `false`로 설정 되어야 합니다.

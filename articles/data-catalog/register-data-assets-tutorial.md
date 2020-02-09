@@ -61,7 +61,7 @@ ms.locfileid: "68950242"
 
     ![Azure Data Catalog - 데이터 원본](media/register-data-assets-tutorial/data-catalog-data-sources.png)
 
-5. Azure SQL 데이터베이스 샘플에 대 한 SQL Server 연결 속성을 입력하고 **연결**을 선택합니다.
+5. Azure SQL 데이터베이스 샘플에 대한 SQL Server 연결 속성을 입력하고 **연결**을 선택합니다.
 
    ![Azure Data Catalog - SQL Server 연결 설정](media/register-data-assets-tutorial/data-catalog-sql-server-connection.png)
 

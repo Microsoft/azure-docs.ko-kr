@@ -40,7 +40,7 @@ Edge에서 Event Grid는 토픽 및 이벤트 구독에 대 한 여러 가지 �
         }
  ```    
 
-메트릭은 http에 대 한 모듈의 `5888/metrics` 및 https의 `4438/metrics`에서 사용할 수 있습니다. 예를 들어 http의 `http://<modulename>:5888/metrics?api-version=2019-01-01-preview` 합니다. 이 시점에서 메트릭 모듈은이 [예제 아키텍처](https://github.com/veyalla/ehm)와 같이 메트릭을 수집 하도록 끝점을 폴링할 수 있습니다.
+메트릭은 http에 대 한 모듈의 `5888/metrics` 및 https의 `4438/metrics`에서 사용할 수 있습니다. 예를 들어 http의 `http://<modulename>:5888/metrics?api-version=2019-01-01-preview` 합니다. 이 시점에서 메트릭 모듈은이 [예제 아키텍처](https://github.com/veyalla/ehm)와 같이 메트릭을 수집 하도록 엔드포인트을 폴링할 수 있습니다.
 
 ## <a name="available-metrics"></a>사용 가능한 메트릭
 
@@ -62,10 +62,10 @@ Edge에서 Event Grid는 토픽 및 이벤트 구독에 대 한 여러 가지 �
 
 | 메트릭 | Description |
 | ------ | ----------- |
-| deliverySuccessCounts | 구성 된 끝점에 성공적으로 배달 된 이벤트 수
-| deliveryFailureCounts | 구성 된 끝점에 배달 하지 못한 이벤트의 수입니다.
+| deliverySuccessCounts | 구성 된 엔드포인트에 성공적으로 배달 된 이벤트 수
+| deliveryFailureCounts | 구성 된 엔드포인트에 배달 하지 못한 이벤트의 수입니다.
 | deliverySuccessLatencyMs | 성공적으로 배달 된 이벤트의 대기 시간 (밀리초)
 | deliveryFailureLatencyMs | 이벤트 배달 실패의 대기 시간 (밀리초)
 | systemDelayForFirstAttemptMs | 첫 번째 배달 시도 전 이벤트의 시스템 지연 시간 (밀리초)
 | deliveryAttemptsCount | 이벤트 전달 시도 횟수-성공 및 실패
-| expiredCounts | 구성 된 끝점에 전달 되지 않은 만료 된 이벤트 수
+| expiredCounts | 구성 된 엔드포인트에 전달 되지 않은 만료 된 이벤트 수

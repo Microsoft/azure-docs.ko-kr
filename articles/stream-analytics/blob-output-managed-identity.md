@@ -231,7 +231,7 @@ Stream Analytics 작업을 제공 하기 위해 선택할 수 있는 두 가지 
 
 2. Azure Active Directory 없는 Azure 계정.
 
-3. 다중 테 넌 트 액세스는 지원 되지 않습니다. 지정 된 Stream Analytics 작업에 대해 만든 서비스 주체는 작업이 만들어진 동일한 Azure Active Directory 테 넌 트에 상주해 야 하며, 다른 Azure Active Directory 테 넌 트에 있는 리소스와 함께 사용할 수 없습니다.
+3. 다중 테넌트 액세스는 지원 되지 않습니다. 지정 된 Stream Analytics 작업에 대해 만든 서비스 주체는 작업이 만들어진 동일한 Azure Active Directory 테넌트에 상주해 야 하며, 다른 Azure Active Directory 테넌트에 있는 리소스와 함께 사용할 수 없습니다.
 
 4. [사용자 할당 id](../active-directory/managed-identities-azure-resources/overview.md) 는 지원 되지 않습니다. 즉, 사용자는 자신의 Stream Analytics 작업에서 사용할 자신의 서비스 사용자를 입력할 수 없습니다. Azure Stream Analytics에서 서비스 주체를 생성 해야 합니다.
 

@@ -32,7 +32,7 @@ ms.locfileid: "76900987"
 
 이러한 Api를 사용 하 여 리소스를 보다 쉽게 관리할 수 있습니다. 이러한 각 API 및 도구는 리소스를 만들고 나열하며 검색, 수정 및 삭제하는 방법을 제공합니다. 대시보드는 리소스 이므로 사용할 선호 하는 API 또는 도구를 선택할 수 있습니다.
 
-어떤 도구를 사용 하 든 대시보드 개체의 JSON 표현을 생성 해야 합니다. 이 개체는 대시보드의 타일에 대 한 정보를 포함 합니다. 여기에는 크기, 위치, 바인딩된 리소스 및 사용자 지정이 포함 됩니다.
+어떤 도구를 사용 하 든 대시보드 개체의 JSON 표현을 생성 해야 합니다. 이 개체는 대시보드의 타일에 대한 정보를 포함 합니다. 여기에는 크기, 위치, 바인딩된 리소스 및 사용자 지정이 포함 됩니다.
 
 이 JSON 문서를 작성 하는 가장 실용적인 방법은 Azure Portal를 사용 하는 것입니다. 타일을 대화형으로 추가 하 고 배치할 수 있습니다. 그런 다음 JSON을 내보내고 나중에 스크립트, 프로그램 및 배포 도구에서 사용 하기 위해 결과에서 템플릿을 만듭니다.
 
@@ -56,7 +56,7 @@ ms.locfileid: "76900987"
 
 ![대시보드 공유](./media/azure-portal-dashboards-create-programmatically/share-command.png)
 
-**공유** 를 선택 하면 게시할 구독 및 리소스 그룹을 선택 하 라는 메시지가 표시 됩니다. 선택한 구독 및 리소스 그룹에 대 한 쓰기 권한이 있어야 합니다. 자세한 내용은 [AZURE RBAC 및 Azure Portal를 사용 하 여 역할 할당 추가 또는 제거](../role-based-access-control/role-assignments-portal.md)를 참조 하세요.
+**공유** 를 선택 하면 게시할 구독 및 리소스 그룹을 선택 하 라는 메시지가 표시 됩니다. 선택한 구독 및 리소스 그룹에 대한 쓰기 권한이 있어야 합니다. 자세한 내용은 [AZURE RBAC 및 Azure Portal를 사용 하 여 역할 할당 추가 또는 제거](../role-based-access-control/role-assignments-portal.md)를 참조 하세요.
 
 ![공유 및 액세스 변경](./media/azure-portal-dashboards-create-programmatically/sharing-and-access.png)
 

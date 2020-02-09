@@ -44,7 +44,7 @@ Azure에서 Hyperledger 패브릭 네트워크를 빌드하려면 피어 노드�
 
 - **Azure 키 자격 증명 모음**: 키 자격 증명 모음 인스턴스는 패브릭 CA 자격 증명과 고객이 제공한 루트 인증서를 저장 하기 위해 배포 됩니다 .이 인증서는 템플릿 배포 다시 시도 시 사용 되며 템플릿의 메커니즘을 처리 하는 데 사용 됩니다.
 - **Azure managed disk**: azure 관리 디스크는 원장 및 피어 노드 세계 상태 데이터베이스용 영구 저장소에 대 한 것입니다.
-- **공용 ip**: 클러스터와의 상호 작용을 위해 배포 된 AKS 클러스터의 공용 ip 끝점입니다.
+- **공용 ip**: 클러스터와의 상호 작용을 위해 배포 된 AKS 클러스터의 공용 ip 엔드포인트입니다.
 
 ## <a name="hyperledger-fabric-blockchain-network-setup"></a>Hyperledger 패브릭 Blockchain 네트워크 설정
 

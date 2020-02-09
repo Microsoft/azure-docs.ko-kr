@@ -1,6 +1,6 @@
 ---
 title: Azure CLI 샘플 - Azure SignalR Service
-description: Azure SignalR Service에 대 한 Azure CLI 자세한 내용은 실제 샘플을 참조 하세요. 더 많은 Azure 서비스를 사용 하 여 SignalR 서비스를 만드는 방법을 알아봅니다.
+description: Azure SignalR Service에 대한 Azure CLI 자세한 내용은 실제 샘플을 참조 하세요. 더 많은 Azure 서비스를 사용 하 여 SignalR 서비스를 만드는 방법을 알아봅니다.
 author: sffamily
 ms.service: signalr
 ms.topic: reference

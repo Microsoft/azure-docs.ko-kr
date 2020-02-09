@@ -31,7 +31,7 @@ Azure Backup은 Azure Disk Encryption (ADE)로 암호화 된 OS/데이터 디스
 **관리**  | 예 | 예
 
 - [ADE](../security/azure-security-disk-encryption-overview.md), [Key Vault](../key-vault/key-vault-overview.md)및 [keks](https://blogs.msdn.microsoft.com/cclayton/2017/01/03/creating-a-key-encrypting-key-kek/)에 대해 자세히 알아보세요.
-- Azure VM 디스크 암호화에 대 한 [FAQ](../security/azure-security-disk-encryption-faq.md) 를 참조 하세요.
+- Azure VM 디스크 암호화에 대한 [FAQ](../security/azure-security-disk-encryption-faq.md) 를 참조 하세요.
 
 ### <a name="limitations"></a>제한 사항
 
@@ -46,7 +46,7 @@ Azure Backup은 Azure Disk Encryption (ADE)로 암호화 된 OS/데이터 디스
 시작하기 전에 다음을 수행합니다.
 
 1. ADE를 사용 하는 [Windows](../security/azure-security-disk-encryption-windows.md) 또는 [Linux](../virtual-machines/linux/disk-encryption-overview.md) vm이 하나 이상 있는지 확인 합니다.
-2. Azure VM 백업에 대 한 [지원 매트릭스를 검토 합니다](backup-support-matrix-iaas.md) .
+2. Azure VM 백업에 대한 [지원 매트릭스를 검토 합니다](backup-support-matrix-iaas.md) .
 3. 백업 자격 증명 모음이 없는 경우 Recovery Services 백업 자격 증명 모음을 [만듭니다](backup-azure-arm-vms-prepare.md#create-a-vault) .
 4. 이미 백업을 사용 하도록 설정 된 Vm에 대해 암호화를 사용 하도록 설정 하는 경우 백업을 중단 없이 계속 사용할 수 있도록 Key Vault에 액세스할 수 있는 권한이 있는 백업만 제공 하면 됩니다. 이러한 사용 권한을 할당 하는 방법에 [대해 자세히 알아보세요](#provide-permissions) .
 
@@ -78,7 +78,7 @@ Azure Backup은 Azure Disk Encryption (ADE)로 암호화 된 OS/데이터 디스
 
       ![암호화된 VM 선택](./media/backup-azure-vms-encryption/selected-encrypted-vms.png)
 
-8. Azure Key Vault를 사용 하는 경우 자격 증명 모음 페이지에 Key Vault의 키와 암호에 대 한 읽기 전용 액세스 권한이 필요 Azure Backup 메시지가 표시 됩니다.
+8. Azure Key Vault를 사용 하는 경우 자격 증명 모음 페이지에 Key Vault의 키와 암호에 대한 읽기 전용 액세스 권한이 필요 Azure Backup 메시지가 표시 됩니다.
 
     - 이 메시지가 표시 되 면 아무 조치도 필요 하지 않습니다.
 
@@ -88,7 +88,7 @@ Azure Backup은 Azure Disk Encryption (ADE)로 암호화 된 OS/데이터 디스
 
         ![액세스 경고](./media/backup-azure-vms-encryption/access-warning.png)
 
-9. 백업 **사용** 을 클릭 하 여 자격 증명 모음에 백업 정책을 배포 하 고 선택한 vm에 대 한 백업을 사용 하도록 설정 합니다.
+9. 백업 **사용** 을 클릭 하 여 자격 증명 모음에 백업 정책을 배포 하 고 선택한 vm에 대한 백업을 사용 하도록 설정 합니다.
 
 ## <a name="trigger-a-backup-job"></a>백업 작업 트리거
 
@@ -105,8 +105,8 @@ Azure Backup은 Azure Disk Encryption (ADE)로 암호화 된 OS/데이터 디스
 
 Azure VM에는 연결 된 Vm과 함께 키와 암호를 백업 하기 위한 읽기 전용 액세스 권한이 필요 합니다.
 
-- Key Vault는 Azure 구독의 Azure AD 테 넌 트와 연결 되어 있습니다. **사용자가 멤버 사용자**인 경우 추가 작업 없이 Key Vault에 대 한 액세스 권한을 획득 Azure Backup.
-- **게스트 사용자**인 경우 키 자격 증명 모음에 액세스 하는 Azure Backup에 대 한 권한을 제공 해야 합니다.
+- Key Vault는 Azure 구독의 Azure AD 테넌트와 연결 되어 있습니다. **사용자가 멤버 사용자**인 경우 추가 작업 없이 Key Vault에 대한 액세스 권한을 획득 Azure Backup.
+- **게스트 사용자**인 경우 키 자격 증명 모음에 액세스 하는 Azure Backup에 대한 권한을 제공 해야 합니다.
 
 사용 권한을 설정 하려면:
 
@@ -120,7 +120,7 @@ Azure VM에는 연결 된 Vm과 함께 키와 암호를 백업 하기 위한 읽
 
 6. **액세스 정책 추가** > **템플릿에서 구성 (선택 사항)** 에서 **Azure Backup**를 선택 합니다.
     - **키 권한** 및 **비밀 권한**에서 필요한 권한이 미리 입력됩니다.
-    - VM이 **Bek만**사용 하 여 암호화 된 경우에는 비밀에 대 한 권한만 필요 하므로 **키 사용 권한에** 대 한 선택 항목을 제거 합니다.
+    - VM이 **Bek만**사용 하 여 암호화 된 경우에는 비밀에 대한 권한만 필요 하므로 **키 사용 권한에** 대한 선택 항목을 제거 합니다.
 
     ![Azure Backup 선택](./media/backup-azure-vms-encryption/select-backup-template.png)
 

@@ -1,6 +1,6 @@
 ---
-title: IoT에 대 한 Azure Security Center 사용 시작 | Microsoft Docs
-description: IoT 기능 및 서비스에 대 한 기본 Azure Security Center 워크플로 이해를 시작 하세요.
+title: IoT에 대한 Azure Security Center 사용 시작 | Microsoft Docs
+description: IoT 기능 및 서비스에 대한 기본 Azure Security Center 워크플로 이해를 시작 하세요.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -24,7 +24,7 @@ ms.locfileid: "68596410"
 ---
 # <a name="get-started-with-azure-security-center-for-iot"></a>IoT용 Azure Security Center 시작
 
-이 문서에서는 IoT 서비스에 대 한 Azure Security Center의 다양 한 구성 요소에 대해 설명 하 고 가능한 두 가지 배포 옵션을 사용 하 여 서비스를 시작 하는 방법을 설명 합니다.  
+이 문서에서는 IoT 서비스에 대한 Azure Security Center의 다양 한 구성 요소에 대해 설명 하 고 가능한 두 가지 배포 옵션을 사용 하 여 서비스를 시작 하는 방법을 설명 합니다.  
 
 ## <a name="deployment-options"></a>배포 옵션
 
@@ -37,14 +37,14 @@ IoT Hub 모니터링 및 권장 사항을 제공 하는 [기본 제공 배포](i
     <br>
 
 ### <a name="enhanced-deployment"></a>향상된 배포
-향상 된 보안 기능을 위해 IoT Hub 보안을 사용 하도록 설정 하는 것 외에도 IoT 에이전트에 대 한 Azure Security Center를 배포 하는 것은 IoT 장치에서 주요 보안 데이터의 분석 및 위협 검색 및 포괄적인 기능을 제공 합니다. 보안 상태 관리 기능.
+향상 된 보안 기능을 위해 IoT Hub 보안을 사용 하도록 설정 하는 것 외에도 IoT 에이전트에 대한 Azure Security Center를 배포 하는 것은 IoT 장치에서 주요 보안 데이터의 분석 및 위협 검색 및 포괄적인 기능을 제공 합니다. 보안 상태 관리 기능.
 
 에이전트 기반 포괄적인 위협 방지 및 보안 상태 관리 솔루션을 갖춘 [향상 된 배포](security-agents.md) 를 시작 합니다.
    
 
 ## <a name="next-steps"></a>다음 단계
 
-- [IoT에 대 한 Azure Security Center](quickstart-onboard-iot-hub.md) 사용
+- [IoT에 대한 Azure Security Center](quickstart-onboard-iot-hub.md) 사용
 - [솔루션](quickstart-configure-your-solution.md) 구성
 - [보안 모듈 만들기](quickstart-create-security-twin.md)
 - [사용자 지정 경고](quickstart-create-custom-alerts.md) 구성

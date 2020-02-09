@@ -1,5 +1,5 @@
 ---
-title: Azure Cosmos DB에 대 한 SQL 쿼리 연산자
+title: Azure Cosmos DB에 대한 SQL 쿼리 연산자
 description: Azure Cosmos DB에서 지 원하는 같음, 비교 및 논리 연산자와 같은 SQL 연산자에 대해 알아봅니다.
 author: markjbrown
 ms.service: cosmos-db
@@ -37,7 +37,7 @@ ms.locfileid: "74870941"
 
 ## <a name="logical-and-or-and-not-operators"></a>논리(AND, OR 및 NOT) 연산자
 
-논리 연산자는 부울 값에 작동합니다. 다음 표에서는 이러한 연산자에 대 한 논리적 진위 테이블을 보여 줍니다.
+논리 연산자는 부울 값에 작동합니다. 다음 표에서는 이러한 연산자에 대한 논리적 진위 테이블을 보여 줍니다.
 
 **OR 연산자**
 
@@ -79,7 +79,7 @@ C# 및 JavaScript와 같은 프로그래밍 언어에서와 같이 삼항 (?) �
      FROM Families.children[0] c
 ```
 
-에 대 한 호출을 중첩 시킬 수도 있습니다. 다음 쿼리와 같이 연산자를 적용 합니다. 
+에 대한 호출을 중첩 시킬 수도 있습니다. 다음 쿼리와 같이 연산자를 적용 합니다. 
 
 ```sql
     SELECT (c.grade < 5)? "elementary": ((c.grade < 9)? "junior": "high") AS gradeLevel

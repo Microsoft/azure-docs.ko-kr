@@ -31,6 +31,6 @@ ms.locfileid: "75773013"
     Import-Module "$agentPath\StorageSync.Management.ServerCmdlets.dll"
     Get-StorageSyncProxyConfiguration
     ```
-4. 테스트-StorageSyncNetworkConnectivity cmdlet을 사용 하 여 서비스 끝점에 대 한 네트워크 연결을 확인 합니다. 자세히 알아보려면 [서비스 끝점에 대 한 네트워크 연결 테스트](https://docs.microsoft.com/azure/storage/files/storage-sync-files-firewall-and-proxy#test-network-connectivity-to-service-endpoints)를 참조 하세요.    
+4. 테스트-StorageSyncNetworkConnectivity cmdlet을 사용 하 여 서비스 엔드포인트에 대 한 네트워크 연결을 확인 합니다. 자세히 알아보려면 [서비스 엔드포인트에 대 한 네트워크 연결 테스트](https://docs.microsoft.com/azure/storage/files/storage-sync-files-firewall-and-proxy#test-network-connectivity-to-service-endpoints)를 참조 하세요.    
 
 5. 네트워크 연결 문제와 관련하여 추가적인 도움이 필요하면 네트워크 관리자에게 문의하세요.

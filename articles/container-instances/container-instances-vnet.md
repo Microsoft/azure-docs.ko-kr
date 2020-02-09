@@ -13,7 +13,7 @@ ms.locfileid: "76901874"
 ---
 # <a name="deploy-container-instances-into-an-azure-virtual-network"></a>Azure Virtual Network에 컨테이너 인스턴스 배포
 
-[Azure Virtual Network](../virtual-network/virtual-networks-overview.md) 는 azure 및 온-프레미스 리소스에 대 한 안전한 개인 네트워킹을 제공 합니다. 컨테이너 그룹을 Azure Virtual Network에 배포하면 컨테이너가 가상 네트워크의 다른 리소스와 안전하게 통신할 수 있습니다.
+[Azure Virtual Network](../virtual-network/virtual-networks-overview.md) 는 azure 및 온-프레미스 리소스에 대한 안전한 개인 네트워킹을 제공 합니다. 컨테이너 그룹을 Azure Virtual Network에 배포하면 컨테이너가 가상 네트워크의 다른 리소스와 안전하게 통신할 수 있습니다.
 
 Azure Virtual Network에 컨테이너 그룹을 배포하는 경우 다음과 같은 시나리오를 수행할 수 있습니다.
 
@@ -24,7 +24,7 @@ Azure Virtual Network에 컨테이너 그룹을 배포하는 경우 다음과 �
 * [VPN 게이트웨이](../vpn-gateway/vpn-gateway-about-vpngateways.md) 또는 [ExpressRoute](../expressroute/expressroute-introduction.md)를 통한 온-프레미스 리소스와 컨테이너 간 통신
 
 > [!IMPORTANT]
-> 가상 네트워크에 대 한 컨테이너 그룹 배포는 **미국 동부, 미국 서 부 및 미국 서 부 2**지역 에서만 프로덕션 워크 로드에 대해 일반적으로 사용할 수 있습니다. 이 기능을 사용할 수 있는 다른 지역에서 가상 네트워크 배포는 현재 미리 보기 상태 이며,이는 가까운 장래에 출시 될 예정입니다. [부속 사용 약관][terms-of-use]에 동의하면 미리 보기를 사용할 수 있습니다. 
+> 가상 네트워크에 대한 컨테이너 그룹 배포는 **미국 동부, 미국 서 부 및 미국 서 부 2**지역 에서만 프로덕션 워크 로드에 대해 일반적으로 사용할 수 있습니다. 이 기능을 사용할 수 있는 다른 지역에서 가상 네트워크 배포는 현재 미리 보기 상태 이며,이는 가까운 장래에 출시 될 예정입니다. [부속 사용 약관][terms-of-use]에 동의하면 미리 보기를 사용할 수 있습니다. 
 
 
 ## <a name="virtual-network-deployment-limitations"></a>가상 네트워크 배포 제한 사항
@@ -49,7 +49,7 @@ Azure Virtual Network에 컨테이너 그룹을 배포하는 경우 다음과 �
 * **가상 네트워크 트래픽 라우팅** -공용 ip에 대해 사용자 지정 경로를 설정할 수 없습니다. ACI 리소스가 배포 된 위임 된 서브넷의 개인 IP 공간 내에서 경로를 설정할 수 있습니다. 
 * **네트워크 보안 그룹** -Azure Container Instances에 위임 된 서브넷에 적용 된 nsgs의 아웃 바운드 보안 규칙이 현재 적용 되지 않습니다. 
 * **공용 ip 또는 DNS 레이블** -가상 네트워크에 배포 된 컨테이너 그룹은 현재 공용 ip 주소 또는 정규화 된 도메인 이름으로 컨테이너를 인터넷에 직접 노출 하는 것을 지원 하지 않습니다.
-* **내부 이름 확인** -내부 Azure DNS을 통해 가상 네트워크의 Azure 리소스에 대 한 이름 확인은 지원 되지 않습니다.
+* **내부 이름 확인** -내부 Azure DNS을 통해 가상 네트워크의 Azure 리소스에 대한 이름 확인은 지원 되지 않습니다.
 
 **네트워크 리소스 삭제** 시에는 가상 네트워크에 컨테이너 그룹을 배포한 후 [추가 단계](#delete-network-resources)를 수행해야 합니다.
 
@@ -114,7 +114,7 @@ Resource Manager 템플릿, YAML 파일 또는 프로그래밍 방식을 사용�
 
 먼저 컨테이너 그룹을 배포하고 새 가상 네트워크와 서브넷의 매개 변수를 지정합니다. 이러한 매개 변수를 지정하면 가상 네트워크와 서브넷이 생성되고, Azure Container instances에 서브넷이 위임되며, 네트워크 프로필도 작성됩니다. 리소스를 만들고 나면 컨테이너 그룹이 서브넷에 배포됩니다.
 
-새 가상 네트워크 및 서브넷에 대 한 설정을 지정 하는 다음 [az container create][az-container-create] 명령을 실행 합니다. 가상 네트워크의 컨테이너 그룹 배포를 [사용할 수](#virtual-network-deployment-limitations)있는 지역에서 만든 리소스 그룹의 이름을 제공 해야 합니다. 이 명령은 정적 웹 페이지를 처리 하는 작은 node.js 웹 서버를 실행 하는 공용 Microsoft [aci-helloworld][aci-helloworld] 컨테이너를 배포 합니다. 다음 섹션에서는 같은 서브넷에 두 번째 컨테이너 그룹을 배포하고 두 컨테이너 인스턴스 간의 통신을 테스트합니다.
+새 가상 네트워크 및 서브넷에 대한 설정을 지정 하는 다음 [az container create][az-container-create] 명령을 실행 합니다. 가상 네트워크의 컨테이너 그룹 배포를 [사용할 수](#virtual-network-deployment-limitations)있는 지역에서 만든 리소스 그룹의 이름을 제공 해야 합니다. 이 명령은 정적 웹 페이지를 처리 하는 작은 node.js 웹 서버를 실행 하는 공용 Microsoft [aci-helloworld][aci-helloworld] 컨테이너를 배포 합니다. 다음 섹션에서는 같은 서브넷에 두 번째 컨테이너 그룹을 배포하고 두 컨테이너 인스턴스 간의 통신을 테스트합니다.
 
 ```azurecli
 az container create \
@@ -231,7 +231,7 @@ tags: null
 type: Microsoft.ContainerInstance/containerGroups
 ```
 
-[Az container create][az-container-create] 명령을 사용 하 여 컨테이너 그룹을 배포 하 고 `--file` 매개 변수에 대 한 yaml 파일 이름을 지정 합니다.
+[Az container create][az-container-create] 명령을 사용 하 여 컨테이너 그룹을 배포 하 고 `--file` 매개 변수에 대한 yaml 파일 이름을 지정 합니다.
 
 ```azurecli
 az container create --resource-group myResourceGroup --file vnet-deploy-aci.yaml

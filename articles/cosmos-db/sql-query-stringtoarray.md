@@ -33,7 +33,7 @@ StringToArray(<str_expr>)
   배열 식을 반환 하거나 정의 되지 않은를 반환 합니다. 
   
 ## <a name="remarks"></a>설명
-  중첩 된 문자열 값은 큰따옴표를 사용 하 여 유효한 JSON으로 작성 해야 합니다. JSON 형식에 대 한 자세한 내용은 [json.org](https://json.org/) 를 참조 하세요.
+  중첩 된 문자열 값은 큰따옴표를 사용 하 여 유효한 JSON으로 작성 해야 합니다. JSON 형식에 대한 자세한 내용은 [json.org](https://json.org/) 를 참조 하세요.
   
 ## <a name="examples"></a>예
   

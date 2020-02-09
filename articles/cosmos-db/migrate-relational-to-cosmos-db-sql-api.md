@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB SQL API로 일 대 일 관계형 데이터 마이그레이션
-description: SQL API에 대 한 일 대 일 관계에 대 한 복잡 한 데이터 마이그레이션을 처리 하는 방법을 알아봅니다.
+description: SQL API에 대한 일 대 일 관계에 대한 복잡 한 데이터 마이그레이션을 처리 하는 방법을 알아봅니다.
 author: TheovanKraay
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
@@ -18,7 +18,7 @@ ms.locfileid: "75896637"
 
 관계형 데이터베이스에서 Azure Cosmos DB SQL API로 마이그레이션하려면 최적화를 위해 데이터 모델을 변경 해야 할 수 있습니다.
 
-한 가지 일반적인 변환은 JSON 문서 하나에 관련 하위 항목을 포함 하 여 데이터를 비 정규화는 것입니다. 여기에서는 Azure Data Factory 또는 Azure Databricks를 사용 하 여이에 대 한 몇 가지 옵션을 살펴보겠습니다. Cosmos DB에 대 한 데이터 모델링에 대 한 일반적인 지침은 [Azure Cosmos DB에서 데이터 모델링](modeling-data.md)을 검토 하세요.  
+한 가지 일반적인 변환은 JSON 문서 하나에 관련 하위 항목을 포함 하 여 데이터를 비 정규화는 것입니다. 여기에서는 Azure Data Factory 또는 Azure Databricks를 사용 하 여이에 대한 몇 가지 옵션을 살펴보겠습니다. Cosmos DB에 대한 데이터 모델링에 대한 일반적인 지침은 [Azure Cosmos DB에서 데이터 모델링](modeling-data.md)을 검토 하세요.  
 
 ## <a name="example-scenario"></a>예제 시나리오
 
@@ -51,7 +51,7 @@ FROM Orders o;
 ![주문 세부 정보](./media/migrate-relational-to-cosmos-sql-api/for-json-query-result.png#lightbox)
 
 
-이상적으로는 단일 Azure Data Factory (ADF) 복사 작업을 사용 하 여 SQL 데이터를 원본으로 쿼리하고 Azure Cosmos DB 싱크에 적절 한 JSON 개체로 출력을 직접 작성 하는 것이 좋습니다. 현재는 하나의 복사 작업에서 필요한 JSON 변환을 수행할 수 없습니다. 위의 쿼리 결과를 Azure Cosmos DB SQL API 컨테이너에 복사 하려고 하면 예상 되는 JSON 배열이 아니라 문서에 대 한 문자열 속성으로 OrderDetails 필드가 표시 됩니다.
+이상적으로는 단일 Azure Data Factory (ADF) 복사 작업을 사용 하 여 SQL 데이터를 원본으로 쿼리하고 Azure Cosmos DB 싱크에 적절 한 JSON 개체로 출력을 직접 작성 하는 것이 좋습니다. 현재는 하나의 복사 작업에서 필요한 JSON 변환을 수행할 수 없습니다. 위의 쿼리 결과를 Azure Cosmos DB SQL API 컨테이너에 복사 하려고 하면 예상 되는 JSON 배열이 아니라 문서에 대한 문자열 속성으로 OrderDetails 필드가 표시 됩니다.
 
 다음 방법 중 하나를 사용 하 여이 현재 제한을 해결할 수 있습니다.
 
@@ -130,7 +130,7 @@ Cosmos DB 컬렉션에 올바르게 포함 된 OrderDetails 삽입 된 주문 �
 
 ![Databricks](./media/migrate-relational-to-cosmos-sql-api/databricks1.png)
 
-다음으로 Scala 및 Python에 대 한 두 가지 샘플을 제공 합니다. 
+다음으로 Scala 및 Python에 대한 두 가지 샘플을 제공 합니다. 
 
 ### <a name="scala"></a>스칼라
 여기서는 "FOR JSON" 출력을 사용 하 여 SQL 쿼리 결과를 데이터 프레임로 가져옵니다.
@@ -245,7 +245,7 @@ writeConfig = {
 }
 ```
 
-그런 다음 주문 및 주문 정보 레코드에 대 한 원본 데이터베이스 (이 경우 SQL Server)를 쿼리하여 결과를 Spark 데이터 프레임에 넣습니다. 또한 모든 주문 Id와 병렬 작업용 스레드 풀을 포함 하는 목록을 만듭니다.
+그런 다음 주문 및 주문 정보 레코드에 대한 원본 데이터베이스 (이 경우 SQL Server)를 쿼리하여 결과를 Spark 데이터 프레임에 넣습니다. 또한 모든 주문 Id와 병렬 작업용 스레드 풀을 포함 하는 목록을 만듭니다.
 
 ```python
 import json
@@ -341,5 +341,5 @@ pool.map(writeOrder, orderids)
 ![Databricks](./media/migrate-relational-to-cosmos-sql-api/databricks4.png)
 
 ## <a name="next-steps"></a>다음 단계
-* [Azure Cosmos DB에서 데이터 모델링](https://docs.microsoft.com/azure/cosmos-db/modeling-data) 에 대 한 자세한 정보
+* [Azure Cosmos DB에서 데이터 모델링](https://docs.microsoft.com/azure/cosmos-db/modeling-data) 에 대한 자세한 정보
 * [Azure Cosmos DB에서 데이터를 모델링 하 고 분할 하는 방법을](https://docs.microsoft.com/azure/cosmos-db/how-to-model-partition-example) 알아봅니다.

@@ -27,9 +27,9 @@ ESP (Enterprise Security Package) 클러스터는 Azure HDInsight 클러스터�
 ## <a name="enable-azure-ad-ds"></a>Azure AD DS 사용
 
 > [!NOTE]  
-> 테 넌 트 관리자만 Azure AD DS를 사용 하도록 설정할 수 있습니다. 클러스터 저장소가 Azure Data Lake Storage Gen1 되거나 Gen2 경우에는 기본 Kerberos 인증을 사용 하 여 클러스터에 액세스 해야 하는 사용자에 대해서만 Azure Multi-Factor Authentication를 사용 하지 않도록 설정 해야 합니다. 
+> 테넌트 관리자만 Azure AD DS를 사용 하도록 설정할 수 있습니다. 클러스터 저장소가 Azure Data Lake Storage Gen1 되거나 Gen2 경우에는 기본 Kerberos 인증을 사용 하 여 클러스터에 액세스 해야 하는 사용자에 대해서만 Azure Multi-Factor Authentication를 사용 하지 않도록 설정 해야 합니다. 
 >
-> HDInsight 클러스터의 가상 네트워크에 대 한 IP 범위에 액세스 하는 경우에 *만* [신뢰할 수 있는 Ip](../../active-directory/authentication/howto-mfa-mfasettings.md#trusted-ips) 또는 [조건부 액세스](../../active-directory/conditional-access/overview.md) 를 사용 하 여 특정 사용자에 대해 Multi-Factor Authentication를 사용 하지 않도록 설정할 수 있습니다. 조건부 액세스를 사용 하는 경우의 Active Directory 서비스 끝점이 HDInsight 가상 네트워크에서 사용 하도록 설정 되었는지 확인 합니다.
+> HDInsight 클러스터의 가상 네트워크에 대 한 IP 범위에 액세스 하는 경우에 *만* [신뢰할 수 있는 Ip](../../active-directory/authentication/howto-mfa-mfasettings.md#trusted-ips) 또는 [조건부 액세스](../../active-directory/conditional-access/overview.md) 를 사용 하 여 특정 사용자에 대해 Multi-Factor Authentication를 사용 하지 않도록 설정할 수 있습니다. 조건부 액세스를 사용 하는 경우의 Active Directory 서비스 엔드포인트이 HDInsight 가상 네트워크에서 사용 하도록 설정 되었는지 확인 합니다.
 >
 > 클러스터 저장소가 Azure Blob storage 인 경우 Multi-Factor Authentication를 사용 하지 않도록 설정 하지 마십시오.
 

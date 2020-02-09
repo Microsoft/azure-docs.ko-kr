@@ -65,7 +65,7 @@ Microsoft는 몇 가지 주요 업계 플레이어와 함께 대시 및 CENC의 
 | **Android 장치 (휴대폰, 태블릿, TV)** |Widevine |Chrome/EME |대시, HLS |
 | **iOS (iPhone, iPad), OS X 클라이언트 및 Apple TV** |FairPlay |Safari 8 +/EME |HLS |
 
-각 DRM에 대 한 배포의 현재 상태를 고려 하 여 서비스는 일반적으로 모든 유형의 끝점을 가장 적합 한 방식으로 처리할 수 있도록 2 개 또는 3 개의 DRMs를 구현 하려고 합니다.
+각 DRM에 대 한 배포의 현재 상태를 고려 하 여 서비스는 일반적으로 모든 유형의 엔드포인트을 가장 적합 한 방식으로 처리할 수 있도록 2 개 또는 3 개의 DRMs를 구현 하려고 합니다.
 
 다양 한 클라이언트에서 특정 수준의 사용자 환경에 도달 하기 위해 서비스 논리의 복잡성과 클라이언트 쪽의 복잡성 간에 균형을 유지 합니다.
 
@@ -100,7 +100,7 @@ DRM 하위 시스템은 다음 구성 요소를 포함할 수 있습니다.
 디자인에는 세 가지 기본 계층이 있습니다.
 
 * 백 오피스 계층 (검정)은 외부적으로 노출 되지 않습니다.
-* DMZ 계층 (진한 파랑)에는 공용으로 향하는 모든 끝점이 포함 됩니다.
+* DMZ 계층 (진한 파랑)에는 공용으로 향하는 모든 엔드포인트이 포함 됩니다.
 * 공용 인터넷 계층 (연한 파랑)에는 공용 인터넷을 통해 전송 되는 CDN 및 플레이어가 포함 되어 있습니다.
 
 또한 정적 또는 동적 암호화에 관계 없이 DRM 보호를 제어 하기 위한 콘텐츠 관리 도구가 있어야 합니다. DRM 암호화에 대 한 입력은 다음과 같습니다.
@@ -153,7 +153,7 @@ DRM 하위 시스템은 다음 구성 요소를 포함할 수 있습니다.
 | **STS (보안 토큰 서비스)** |Azure AD |
 | **DRM 보호 워크플로** |Media Services 동적 보호 |
 | **DRM-licenckézbesítés** |* Media Services 라이선스 배달 (PlayReady, Widevine, FairPlay) <br/>* Axinom 라이선스 서버 <br/>* 사용자 지정 PlayReady 라이선스 서버 |
-| **원본** |Media Services 스트리밍 끝점 |
+| **원본** |Media Services 스트리밍 엔드포인트 |
 | **Kulcskezelés** |참조 구현에는 필요 하지 않습니다. |
 | **Tartalomkezelés** |C# 콘솔 응용 프로그램 |
 
@@ -197,11 +197,11 @@ DRM 하위 시스템은 다음 구성 요소를 포함할 수 있습니다.
 
 4. Media Services API를 사용 하 여 테스트 자산에 대 한 자산 배달 정책을 구성 합니다. API 수준 정보 및 샘플 코드는 [PlayReady 및/또는 Widevine 동적 일반 암호화 사용](media-services-protect-with-playready-widevine.md)을 참조 하세요.
 
-5. Azure에서 Azure AD 테 넌 트를 만들고 구성 합니다.
+5. Azure에서 Azure AD 테넌트를 만들고 구성 합니다.
 
-6. Azure AD 테 넌 트에서 몇 가지 사용자 계정 및 그룹을 만듭니다. "자격이 있는 사용자" 그룹을 하나 이상 만들고이 그룹에 사용자를 추가 합니다. 이 그룹의 사용자는 라이선스 획득 시 자격 검사를 통과 합니다. 이 그룹에 없는 사용자는 인증 확인을 통과 하지 못하고 라이선스를 획득할 수 없습니다. 이 "자격이 있는 사용자" 그룹의 멤버 자격은 Azure AD에서 발급 한 JWT의 필수 그룹 클레임입니다. 이 클레임 요구 사항은 다중 DRM 라이선스 배달 서비스를 구성 하는 단계에서 지정 합니다.
+6. Azure AD 테넌트에서 몇 가지 사용자 계정 및 그룹을 만듭니다. "자격이 있는 사용자" 그룹을 하나 이상 만들고이 그룹에 사용자를 추가 합니다. 이 그룹의 사용자는 라이선스 획득 시 자격 검사를 통과 합니다. 이 그룹에 없는 사용자는 인증 확인을 통과 하지 못하고 라이선스를 획득할 수 없습니다. 이 "자격이 있는 사용자" 그룹의 멤버 자격은 Azure AD에서 발급 한 JWT의 필수 그룹 클레임입니다. 이 클레임 요구 사항은 다중 DRM 라이선스 배달 서비스를 구성 하는 단계에서 지정 합니다.
 
-7. ASP.NET MVC 앱을 만들어 비디오 플레이어를 호스팅합니다. 이 ASP.NET 앱은 Azure AD 테 넌 트에 대해 사용자 인증으로 보호 됩니다. 적절 한 클레임은 사용자 인증 후 얻은 액세스 토큰에 포함 됩니다. 이 단계에서는 Openid connect Connect API를 권장 합니다. Telepítse az alábbi NuGet-csomagokat:
+7. ASP.NET MVC 앱을 만들어 비디오 플레이어를 호스팅합니다. 이 ASP.NET 앱은 Azure AD 테넌트에 대해 사용자 인증으로 보호 됩니다. 적절 한 클레임은 사용자 인증 후 얻은 액세스 토큰에 포함 됩니다. 이 단계에서는 Openid connect Connect API를 권장 합니다. Telepítse az alábbi NuGet-csomagokat:
 
    * ActiveDirectory 클라이언트를 설치 합니다.
    * Owin를 설치 합니다.
@@ -227,7 +227,7 @@ ASP.NET MVC player 앱에 대 한 Azure AD를 설정 하는 방법에 대 한 �
 Azure AD에 대 한 정보:
 
 * 개발자 정보는 [Azure Active Directory 개발자 가이드](../../active-directory/develop/v1-overview.md)에서 찾을 수 있습니다.
-* [AZURE AD 테 넌 트 디렉터리 관리](../../active-directory/fundamentals/active-directory-administer.md)에서 관리자 정보를 찾을 수 있습니다.
+* [AZURE AD 테넌트 디렉터리 관리](../../active-directory/fundamentals/active-directory-administer.md)에서 관리자 정보를 찾을 수 있습니다.
 
 ### <a name="some-issues-in-implementation"></a>구현 시 몇 가지 문제
 다음 문제 해결 정보를 사용 하 여 구현 문제에 대 한 도움을 줍니다.
@@ -253,7 +253,7 @@ Azure AD에 대 한 정보:
 
         <add key="ida:issuer" value="https://willzhanad.onmicrosoft.com/" />
 
-    GUID는 Azure AD 테 넌 트 ID입니다. GUID는 Azure Portal의 **끝점** 팝업 메뉴에서 찾을 수 있습니다.
+    GUID는 Azure AD 테넌트 ID입니다. GUID는 Azure Portal의 **엔드포인트** 팝업 메뉴에서 찾을 수 있습니다.
 
 * 그룹 멤버 자격 클레임 권한을 부여 합니다. Azure AD 응용 프로그램 매니페스트 파일에 다음이 있는지 확인 합니다. 
 
@@ -279,14 +279,14 @@ ASP.NET player 응용 프로그램은 https를 사용 하 여 https를 사용 �
 
 * 브라우저에서는 혼합 콘텐츠를 허용 하지 않습니다. 그러나 Silverlight 및 OSMF 플러그인과 같은 플러그 인은 부드러운 및 대시로 사용할 수 있습니다. 혼합 된 콘텐츠는 악의적인 JavaScript를 삽입 하는 기능을 위협 하 여 고객 데이터가 위험 해질 수 있기 때문에 보안 문제가 됩니다. 브라우저는 기본적으로이 기능을 차단 합니다. 이 문제를 해결 하는 유일한 방법은 서버 (원본) 쪽에서 HTTPS 또는 HTTP에 관계 없이 모든 도메인을 허용 하는 것입니다. 이는 바람직하지 않을 수 있습니다.
 * 혼합 콘텐츠를 사용 하지 않습니다. 플레이어 응용 프로그램과 Media Player 모두 HTTP 또는 HTTPS를 사용 해야 합니다. 혼합 콘텐츠를 재생할 때 silverlightSS 기술에서는 혼합 콘텐츠 경고를 지워야 합니다. Flashss 기술은 tech는 혼합 콘텐츠 경고 없이 혼합 된 콘텐츠를 처리 합니다.
-* 스트리밍 끝점이 2014 년 8 월 이전에 만들어진 경우 HTTPS를 지원 하지 않습니다. 이 경우 HTTPS에 대 한 새 스트리밍 끝점을 만들어 사용 합니다.
+* 스트리밍 엔드포인트이 2014 년 8 월 이전에 만들어진 경우 HTTPS를 지원 하지 않습니다. 이 경우 HTTPS에 대 한 새 스트리밍 엔드포인트을 만들어 사용 합니다.
 
 DRM으로 보호 된 콘텐츠에 대 한 참조 구현에서는 응용 프로그램과 스트리밍이 모두 HTTPS로 되어 있습니다. 공개 콘텐츠의 경우 플레이어는 인증 또는 라이선스가 필요 하지 않으므로 HTTP 또는 HTTPS 중 하나를 사용할 수 있습니다.
 
 ### <a name="azure-active-directory-signing-key-rollover"></a>Azure Active Directory 서명 키 롤오버
 서명 키 롤오버는 구현에서 고려해 야 하는 중요 한 요소입니다. 이를 무시 하면 완료 된 시스템은 결국 6 주 이내에 완전히 작동을 중지 합니다.
 
-Azure AD는 업계 표준을 사용 하 여 자체와 Azure AD를 사용 하는 응용 프로그램 간에 신뢰를 설정 합니다. 특히, Azure AD는 공개 키와 개인 키 쌍으로 구성 된 서명 키를 사용 합니다. Azure AD가 사용자에 대 한 정보를 포함 하는 보안 토큰을 만들 때 응용 프로그램으로 다시 전송 되기 전에 개인 키를 사용 하 여 Azure AD에서 서명 됩니다. 토큰이 유효 하 고 Azure AD에서 생성 되었는지 확인 하려면 응용 프로그램에서 토큰의 서명 유효성을 검사 해야 합니다. 응용 프로그램은 테 넌 트의 페더레이션 메타 데이터 문서에 포함 된 Azure AD에 의해 노출 되는 공개 키를 사용 합니다. 이 공개 키와이 키가 파생 되는 서명 키는 Azure AD의 모든 테 넌 트에 사용 되는 것과 동일 합니다.
+Azure AD는 업계 표준을 사용 하 여 자체와 Azure AD를 사용 하는 응용 프로그램 간에 신뢰를 설정 합니다. 특히, Azure AD는 공개 키와 개인 키 쌍으로 구성 된 서명 키를 사용 합니다. Azure AD가 사용자에 대 한 정보를 포함 하는 보안 토큰을 만들 때 응용 프로그램으로 다시 전송 되기 전에 개인 키를 사용 하 여 Azure AD에서 서명 됩니다. 토큰이 유효 하 고 Azure AD에서 생성 되었는지 확인 하려면 응용 프로그램에서 토큰의 서명 유효성을 검사 해야 합니다. 응용 프로그램은 테넌트의 페더레이션 메타 데이터 문서에 포함 된 Azure AD에 의해 노출 되는 공개 키를 사용 합니다. 이 공개 키와이 키가 파생 되는 서명 키는 Azure AD의 모든 테넌트에 사용 되는 것과 동일 합니다.
 
 Azure AD 키 롤오버에 대 한 자세한 내용은 [AZURE ad의 서명 키 롤오버에 대 한 중요 한 정보](../../active-directory/active-directory-signing-key-rollover.md)를 참조 하세요.
 
@@ -316,8 +316,8 @@ Azure AD가 JWT를 생성 한 후 JWT가 유효성 검사를 위해 Media Servic
 웹 앱이 [OAuth 2.0 클라이언트 자격 증명 부여를 사용 하 여 응용 프로그램 id](../../active-directory/develop/web-api.md)에서 API 앱을 호출 하는 방식을 살펴보면 인증 흐름은 다음과 같습니다.
 
 * 사용자가 웹 응용 프로그램에서 Azure AD에 로그인 합니다. 자세한 내용은 웹 [브라우저-웹 응용 프로그램을](../../active-directory/develop/web-app.md)참조 하세요.
-* Azure AD 권한 부여 끝점은 인증 코드를 사용 하 여 사용자 에이전트를 클라이언트 응용 프로그램으로 다시 리디렉션합니다. 사용자 에이전트는 인증 코드를 클라이언트 응용 프로그램의 리디렉션 URI로 반환 합니다.
-* 웹 응용 프로그램은 웹 API에 인증 하 고 원하는 리소스를 검색할 수 있도록 액세스 토큰을 획득 해야 합니다. Azure AD 토큰 끝점에 대 한 요청을 수행 하 고 자격 증명, 클라이언트 ID 및 web API의 응용 프로그램 ID URI를 제공 합니다. 사용자가 동의한 증명 하는 인증 코드를 제공 합니다.
+* Azure AD 권한 부여 엔드포인트은 인증 코드를 사용 하 여 사용자 에이전트를 클라이언트 응용 프로그램으로 다시 리디렉션합니다. 사용자 에이전트는 인증 코드를 클라이언트 응용 프로그램의 리디렉션 URI로 반환 합니다.
+* 웹 응용 프로그램은 웹 API에 인증 하 고 원하는 리소스를 검색할 수 있도록 액세스 토큰을 획득 해야 합니다. Azure AD 토큰 엔드포인트에 대 한 요청을 수행 하 고 자격 증명, 클라이언트 ID 및 web API의 응용 프로그램 ID URI를 제공 합니다. 사용자가 동의한 증명 하는 인증 코드를 제공 합니다.
 * Azure AD는 응용 프로그램을 인증 하 고 web API를 호출 하는 데 사용 되는 JWT 액세스 토큰을 반환 합니다.
 * HTTPS를 통해 웹 응용 프로그램은 반환 된 JWT 액세스 토큰을 사용 하 여 웹 API에 대 한 요청의 "인증" 헤더에 "전달자"로 지정 된 JWT 문자열을 추가 합니다. Web API는 JWT의 유효성을 검사 합니다. 유효성 검사가 성공 하면 원하는 리소스를 반환 합니다.
 
@@ -329,7 +329,7 @@ Azure AD가 JWT를 생성 한 후 JWT가 유효성 검사를 위해 Media Servic
 
 Azure AD에서 포인터 앱을 등록 하 고 구성 하려면 다음 단계를 수행 합니다.
 
-1. Azure AD 테 넌 트에서:
+1. Azure AD 테넌트에서:
 
    * 로그온 URL을 사용 하 여 응용 프로그램 (리소스)을 추가 합니다. https://[resource_name] azurewebsites. net/. 
    * URL https://[aad_tenant_name]. onmicrosoft .com/[resource_name]와 함께 앱 ID를 추가 합니다.
@@ -396,11 +396,11 @@ Azure AD에서 발급 한 JWT는 포인터 리소스에 액세스 하는 데 사
 
 Azure 원래 Microsoft 계정 사용자만 액세스할 수 있지만 이제는 두 시스템의 사용자가 액세스를 허용 합니다. 이제 모든 Azure 속성이 인증을 위해 Azure AD를 신뢰 하며, Azure AD는 조직 사용자를 인증 합니다. Azure AD가 소비자 사용자를 인증 하기 위해 Microsoft 계정 소비자 id 시스템을 신뢰 하는 페더레이션 관계가 생성 되었습니다. 따라서 Azure AD는 기본 Azure AD 계정 뿐만 아니라 게스트 Microsoft 계정도 인증할 수 있습니다.
 
-Azure AD는 Microsoft 계정 도메인을 신뢰 하므로 다음 도메인에서 사용자 지정 Azure AD 테 넌 트에 계정을 추가 하 고 해당 계정을 사용 하 여 로그인 할 수 있습니다.
+Azure AD는 Microsoft 계정 도메인을 신뢰 하므로 다음 도메인에서 사용자 지정 Azure AD 테넌트에 계정을 추가 하 고 해당 계정을 사용 하 여 로그인 할 수 있습니다.
 
 | **도메인 이름** | **도메인** |
 | --- | --- |
-| **사용자 지정 Azure AD 테 넌 트 도메인** |somename.onmicrosoft.com |
+| **사용자 지정 Azure AD 테넌트 도메인** |somename.onmicrosoft.com |
 | **회사 도메인** |microsoft.com |
 | **Microsoft 계정 도메인** |outlook.com, live.com, hotmail.com |
 
@@ -408,17 +408,17 @@ Azure AD는 Microsoft 계정 도메인을 신뢰 하므로 다음 도메인에�
 
 다음 스크린샷에서는 서로 다른 도메인 계정에서 사용 하는 다양 한 로그인 페이지를 보여 줍니다.
 
-**사용자 지정 AZURE ad 테 넌 트 도메인 계정**: 사용자 지정 azure ad 테 넌 트 도메인의 사용자 지정 된 로그인 페이지입니다.
+**사용자 지정 AZURE ad 테넌트 도메인 계정**: 사용자 지정 azure ad 테넌트 도메인의 사용자 지정 된 로그인 페이지입니다.
 
-![사용자 지정 Azure AD 테 넌 트 도메인 계정](./media/media-services-cenc-with-multidrm-access-control/media-services-ad-tenant-domain1.png)
+![사용자 지정 Azure AD 테넌트 도메인 계정](./media/media-services-cenc-with-multidrm-access-control/media-services-ad-tenant-domain1.png)
 
 **스마트 카드를 사용한 microsoft 도메인 계정**: MICROSOFT 회사 IT에서 2 단계 인증을 사용 하 여 사용자 지정 된 로그인 페이지입니다.
 
-![사용자 지정 Azure AD 테 넌 트 도메인 계정](./media/media-services-cenc-with-multidrm-access-control/media-services-ad-tenant-domain2.png)
+![사용자 지정 Azure AD 테넌트 도메인 계정](./media/media-services-cenc-with-multidrm-access-control/media-services-ad-tenant-domain2.png)
 
 **Microsoft 계정**: 소비자에 대 한 Microsoft 계정의 로그인 페이지입니다.
 
-![사용자 지정 Azure AD 테 넌 트 도메인 계정](./media/media-services-cenc-with-multidrm-access-control/media-services-ad-tenant-domain3.png)
+![사용자 지정 Azure AD 테넌트 도메인 계정](./media/media-services-cenc-with-multidrm-access-control/media-services-ad-tenant-domain3.png)
 
 ### <a name="use-encrypted-media-extensions-for-playready"></a>PlayReady에 암호화 된 미디어 확장 사용
 Windows 8.1 이상 및 Windows 10의 Microsoft Edge 브라우저와 같이 PlayReady 지원에 대 한 EME (암호화 된 미디어 확장)를 지 원하는 최신 브라우저에서 PlayReady는 EME에 대 한 기본 DRM입니다.

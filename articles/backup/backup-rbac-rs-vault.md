@@ -58,7 +58,7 @@ Azure Backup는 백업 관리 작업을 제어 하는 세 가지 기본 제공 �
 > [!IMPORTANT]
 > VM 리소스 범위에서 VM 기여자를 지정하고 VM 설정의 일환으로 백업을 클릭하면 VM이 이미 백업되었다 하더라도 ‘백업 사용’ 화면이 열립니다. 백업 상태를 확인하기 위한 호출은 구독 수준에서만 작동하기 때문입니다. 이를 방지하려면 자격 증명 모음으로 이동하여 VM의 백업 항목을 열거나, 구독 수준에서 VM 기여자 역할을 지정합니다.
 
-## <a name="minimum-role-requirements-for-the-azure-file-share-backup"></a>Azure 파일 공유 백업에 대 한 최소 역할 요구 사항
+## <a name="minimum-role-requirements-for-the-azure-file-share-backup"></a>Azure 파일 공유 백업에 대한 최소 역할 요구 사항
 
 다음 표에서는 Azure 파일 공유 작업을 수행 하는 데 필요한 백업 관리 작업 및 해당 역할을 캡처합니다.
 

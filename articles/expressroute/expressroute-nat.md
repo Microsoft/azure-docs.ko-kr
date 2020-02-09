@@ -1,5 +1,5 @@
 ---
-title: 'Azure Express 경로: 회로에 대 한 NAT 요구 사항'
+title: 'Azure Express 경로: 회로에 대한 NAT 요구 사항'
 description: 이 페이지는 ExpressRoute 회로에 NAT를 구성하고 관리하는 자세한 요구 사항을 제공합니다.
 services: expressroute
 author: cherylmc

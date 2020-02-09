@@ -36,9 +36,9 @@ LUIS(Language Understanding)에서는 미리 빌드된 엔터티를 제공합니
 |스페인어|[es-ES(스페인)](#spanish-spain-entity-support), [es-MX(멕시코)](#spanish-mexico-entity-support)||
 |터키어|[터키어](#turkish-entity-support)|터키어에서 지원 되는 미리 빌드된 엔터티가 없습니다.|
 
-## <a name="prediction-endpoint-runtime"></a>예측 끝점 런타임
+## <a name="prediction-endpoint-runtime"></a>예측 엔드포인트 런타임
 
-특정 언어로 작성 된 엔터티의 가용성은 예측 끝점 런타임 버전에 따라 결정 됩니다. 
+특정 언어로 작성 된 엔터티의 가용성은 예측 엔드포인트 런타임 버전에 따라 결정 됩니다. 
 
 ## <a name="chinese-entity-support"></a>중국어 엔터티 지원
 

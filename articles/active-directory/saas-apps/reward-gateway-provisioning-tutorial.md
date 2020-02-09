@@ -36,7 +36,7 @@ ms.locfileid: "77061002"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트.
-* [보상 게이트웨이 테 넌 트](https://www.rewardgateway.com/).
+* [보상 게이트웨이 테넌트](https://www.rewardgateway.com/).
 * 관리자 권한이 있는 보상 게이트웨이의 사용자 계정
 
 ## <a name="assigning-users-to-reward-gateway"></a>사용자를 보상 게이트웨이에 할당 
@@ -63,7 +63,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위한 보상 게�
 
     ![보상 게이트웨이 관리 콘솔](media/reward-gateway-provisioning-tutorial/image001.png)
 
-3.  **Scim URL (v2)** 및 **OAuth 전달자 토큰**의 값을 복사 합니다. 이러한 값은 Azure Portal에서 보상 게이트웨이 응용 프로그램의 프로 비전 탭에 있는 테 넌 트 URL 및 비밀 토큰 필드에 입력 됩니다.
+3.  **Scim URL (v2)** 및 **OAuth 전달자 토큰**의 값을 복사 합니다. 이러한 값은 Azure Portal에서 보상 게이트웨이 응용 프로그램의 프로 비전 탭에 있는 테넌트 URL 및 비밀 토큰 필드에 입력 됩니다.
 
     ![보상 게이트웨이 관리 콘솔](media/reward-gateway-provisioning-tutorial/image03.png)
 
@@ -114,7 +114,7 @@ Azure AD를 사용 하 여 자동 사용자 프로비저닝을 위한 보상 게
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에서 먼저 **테 넌 트 Url** 및 **암호 토큰** 에서 검색 된 **Scim Url (v2)** 및 **OAuth 전달자 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 보상 게이트웨이에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 보상 게이트웨이 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
+5. **관리자 자격 증명** 섹션 아래에서 먼저 **테넌트 Url** 및 **암호 토큰** 에서 검색 된 **Scim Url (v2)** 및 **OAuth 전달자 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 보상 게이트웨이에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 보상 게이트웨이 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 

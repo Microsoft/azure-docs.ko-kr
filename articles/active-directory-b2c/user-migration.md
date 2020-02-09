@@ -50,7 +50,7 @@ Azure AD B2C를 사용 하 여 [AZURE AD Graph API][B2C-GraphQuickStart]를 통�
 
 ### <a name="step-11-register-your-application-in-your-tenant"></a>1\.1단계: 테넌트에서 애플리케이션 등록
 
-Graph API와 통신하려면 먼저 관리자 권한이 있는 서비스 계정이 있어야 합니다. Azure AD에서 응용 프로그램을 등록 하 고 디렉터리에 대 한 쓰기 액세스를 사용 하도록 설정 합니다. 응용 프로그램 자격 증명은 응용 프로그램 **ID** 및 **응용 프로그램 암호**입니다. 애플리케이션은 사용자로서가 아닌 자체로서 Graph API를 호출합니다.
+Graph API와 통신하려면 먼저 관리자 권한이 있는 서비스 계정이 있어야 합니다. Azure AD에서 응용 프로그램을 등록 하 고 디렉터리에 대한 쓰기 액세스를 사용 하도록 설정 합니다. 응용 프로그램 자격 증명은 응용 프로그램 **ID** 및 **응용 프로그램 암호**입니다. 애플리케이션은 사용자로서가 아닌 자체로서 Graph API를 호출합니다.
 
 먼저 사용자 마이그레이션과 같은 관리 작업에 사용할 수 있는 응용 프로그램을 등록 합니다.
 
@@ -68,7 +68,7 @@ Graph API와 통신하려면 먼저 관리자 권한이 있는 서비스 계정�
 
 [!INCLUDE [active-directory-b2c-client-secret](../../includes/active-directory-b2c-client-secret.md)]
 
-이제 Azure AD B2C 테 넌 트에서 사용자를 만들고, 읽고, 업데이트할 수 있는 권한을 가진 응용 프로그램이 있습니다.
+이제 Azure AD B2C 테넌트에서 사용자를 만들고, 읽고, 업데이트할 수 있는 권한을 가진 응용 프로그램이 있습니다.
 
 ### <a name="step-14-optional-environment-cleanup"></a>1\.4단계: (선택 사항) 환경 정리
 
@@ -209,20 +209,20 @@ Azure AD 테넌트를 정리하고 Azure AD 디렉터리에서 사용자를 제�
 
 임의의 암호로 사용자를 마이그레이션하는 경우 사용자는 자신의 암호를 다시 설정해야 합니다. 암호를 다시 설정하도록 도우려면 링크가 있는 환영 전자 메일을 보내서 암호를 재설정하도록 합니다.
 
-암호 재설정 정책에 대 한 링크를 가져오려면 다음 단계를 수행 합니다. 이 절차에서는 이전에 암호 재설정 [사용자 지정 정책을](custom-policy-get-started.md)만든 것으로 가정 합니다.
+암호 재설정 정책에 대한 링크를 가져오려면 다음 단계를 수행 합니다. 이 절차에서는 이전에 암호 재설정 [사용자 지정 정책을](custom-policy-get-started.md)만든 것으로 가정 합니다.
 
-1. [Azure Portal](https://portal.azure.com)의 오른쪽 위 섹션에서 **디렉터리 + 구독** 필터를 사용 하 여 Azure AD B2C 테 넌 트가 포함 된 디렉터리를 선택 합니다.
+1. [Azure Portal](https://portal.azure.com)의 오른쪽 위 섹션에서 **디렉터리 + 구독** 필터를 사용 하 여 Azure AD B2C 테넌트가 포함 된 디렉터리를 선택 합니다.
 1. 왼쪽 메뉴 (또는 **모든 서비스**내)에서 **Azure AD B2C** 를 선택 합니다.
 1. **정책**에서 **Id 경험 프레임 워크**를 선택 합니다.
 1. 암호 재설정 정책을 선택 합니다. 예를 들어 *B2C_1A_PasswordReset*합니다.
 1. **응용 프로그램 선택** 드롭다운에서 응용 프로그램을 선택 합니다.
 
     > [!NOTE]
-    > **이제를 실행** 하려면 하나 이상의 응용 프로그램을 테 넌 트에 등록 해야 합니다. 응용 프로그램을 등록 하는 방법에 대 한 자세한 내용은 [자습서: 응용 프로그램을 Azure Active Directory B2C에 등록][B2C-AppRegister]을 참조 하세요.
+    > **이제를 실행** 하려면 하나 이상의 응용 프로그램을 테넌트에 등록 해야 합니다. 응용 프로그램을 등록 하는 방법에 대한 자세한 내용은 [자습서: 응용 프로그램을 Azure Active Directory B2C에 등록][B2C-AppRegister]을 참조 하세요.
 
-1. **지금 실행 끝점** 텍스트 상자에 표시 된 URL을 복사 하 여 사용자에 게 보냅니다.
+1. **지금 실행 엔드포인트** 텍스트 상자에 표시 된 URL을 복사 하 여 사용자에 게 보냅니다.
 
-    ![지금 실행 끝점이 강조 표시 된 암호 재설정 정책 페이지](./media/user-migration/pre-migration-policy-uri.png)
+    ![지금 실행 엔드포인트이 강조 표시 된 암호 재설정 정책 페이지](./media/user-migration/pre-migration-policy-uri.png)
 
 ## <a name="step-4-optional-change-your-policy-to-check-and-set-the-user-migration-status"></a>4단계: (선택 사항) 정책을 변경하여 사용자 마이그레이션 상태 확인 및 설정
 
@@ -307,7 +307,7 @@ Azure AD 테넌트를 정리하고 Azure AD 디렉터리에서 사용자를 제�
 
 앞의 기술 프로필은 하나의 `signInName` 입력 클레임을 정의합니다(전자 메일로 보내기). 로그인 시 클레임은 RESTful 엔드포인트에 전송됩니다.
 
-RESTful API에 대 한 기술 프로필을 정의한 후 *trustframeworkextensions.xml* 파일 내에서 재정의 하 여 REST API 기술 프로필을 추가로 호출 하도록 기존 `SelfAsserted-LocalAccountSignin-Email` 기술 프로필을 구성 합니다.
+RESTful API에 대한 기술 프로필을 정의한 후 *trustframeworkextensions.xml* 파일 내에서 재정의 하 여 REST API 기술 프로필을 추가로 호출 하도록 기존 `SelfAsserted-LocalAccountSignin-Email` 기술 프로필을 구성 합니다.
 
 ```XML
 <TechnicalProfile Id="SelfAsserted-LocalAccountSignin-Email">

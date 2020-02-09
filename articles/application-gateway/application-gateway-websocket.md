@@ -26,7 +26,7 @@ Application Gateway는 모든 게이트웨이 크기에 WebSocket에 대한 네�
 
 ## <a name="how-does-websocket-work"></a>WebSocket 작동 방식
 
-WebSocket 연결을 설정 하기 위해 특정 HTTP 기반 핸드셰이크는 클라이언트와 서버 간에 교환 됩니다. 성공 하면 응용 프로그램 계층 프로토콜이 이전에 설정 된 TCP 연결을 사용 하 여 HTTP에서 Websocket으로 "업그레이드" 됩니다. 이 경우 HTTP는 완전히 그림에서 제외 됩니다. WebSocket 연결이 닫힐 때까지 두 끝점에서 WebSocket 프로토콜을 사용 하 여 데이터를 보내거나 받을 수 있습니다. 
+WebSocket 연결을 설정 하기 위해 특정 HTTP 기반 핸드셰이크는 클라이언트와 서버 간에 교환 됩니다. 성공 하면 응용 프로그램 계층 프로토콜이 이전에 설정 된 TCP 연결을 사용 하 여 HTTP에서 Websocket으로 "업그레이드" 됩니다. 이 경우 HTTP는 완전히 그림에서 제외 됩니다. WebSocket 연결이 닫힐 때까지 두 엔드포인트에서 WebSocket 프로토콜을 사용 하 여 데이터를 보내거나 받을 수 있습니다. 
 
 ![서버당](./media/application-gateway-websocket/websocket.png)
 

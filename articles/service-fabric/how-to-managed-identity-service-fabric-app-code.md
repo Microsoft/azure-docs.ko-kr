@@ -15,16 +15,16 @@ ms.locfileid: "75610321"
 Service Fabric 응용 프로그램은 관리 되는 id를 활용 하 여 Azure Active Directory 기반 인증을 지 원하는 다른 Azure 리소스에 액세스할 수 있습니다. 응용 프로그램은 시스템 할당 또는 사용자 할당 일 수 있는 id를 나타내는 [액세스 토큰](../active-directory/develop/developer-glossary.md#access-token) 을 가져올 수 있으며,이 토큰을 ' 전달자 ' 토큰으로 사용 하 여 다른 서비스 ( [보호 된 리소스 서버](../active-directory/develop/developer-glossary.md#resource-server)라고도 함)에 인증할 수 있습니다. 토큰은 Service Fabric 응용 프로그램에 할당 된 id를 나타내며, 해당 id를 공유 하는 Azure 리소스 (SF 응용 프로그램 포함)에만 발급 됩니다. 관리 되는 id에 대 한 자세한 설명 및 시스템 할당 id와 사용자 할당 id를 구분 하는 방법은 [관리 id 개요](../active-directory/managed-identities-azure-resources/overview.md) 설명서를 참조 하세요. 이 문서 전체에서 관리 되는 id 사용 Service Fabric 응용 프로그램을 [클라이언트 응용 프로그램](../active-directory/develop/developer-glossary.md#client-application) 으로 참조 합니다.
 
 > [!IMPORTANT]
-> 관리 id는 리소스를 포함 하는 구독과 연결 된 해당 Azure AD 테 넌 트의 Azure 리소스와 서비스 주체 간의 연결을 나타냅니다. 따라서 Service Fabric 컨텍스트에서 관리 id는 Azure 리소스로 배포 된 응용 프로그램에 대해서만 지원 됩니다. 
+> 관리 id는 리소스를 포함 하는 구독과 연결 된 해당 Azure AD 테넌트의 Azure 리소스와 서비스 주체 간의 연결을 나타냅니다. 따라서 Service Fabric 컨텍스트에서 관리 id는 Azure 리소스로 배포 된 응용 프로그램에 대해서만 지원 됩니다. 
 
 > [!IMPORTANT]
 > Service Fabric 응용 프로그램의 관리 되는 id를 사용 하기 전에 클라이언트 응용 프로그램에 보호 된 리소스에 대 한 액세스 권한을 부여 해야 합니다. [AZURE AD 인증을 지 원하는 azure 서비스](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-managed-identities-for-azure-resources) 목록을 참조 하 여 지원 여부를 확인 한 다음 특정 단계에 대 한 특정 단계에 대 한 자세한 내용을 확인 하 여 관심 있는 리소스에 대 한 id 액세스 권한을 부여 하세요. 
 
 ## <a name="acquiring-an-access-token-using-rest-api"></a>REST API를 사용 하 여 액세스 토큰 가져오기
-관리 id에 대해 사용 하도록 설정 된 클러스터에서 Service Fabric 런타임은 응용 프로그램이 액세스 토큰을 가져오는 데 사용할 수 있는 localhost 끝점을 노출 합니다. 끝점은 클러스터의 모든 노드에서 사용할 수 있으며 해당 노드의 모든 엔터티에 액세스할 수 있습니다. 권한 있는 호출자는이 끝점을 호출 하 고 인증 코드를 제공 하 여 액세스 토큰을 가져올 수 있습니다. 코드는 각각의 개별 서비스 코드 패키지 활성화에 대해 Service Fabric 런타임에 의해 생성 되며 해당 서비스 코드 패키지를 호스팅하는 프로세스의 수명에 바인딩됩니다.
+관리 id에 대해 사용 하도록 설정 된 클러스터에서 Service Fabric 런타임은 응용 프로그램이 액세스 토큰을 가져오는 데 사용할 수 있는 localhost 엔드포인트을 노출 합니다. 엔드포인트은 클러스터의 모든 노드에서 사용할 수 있으며 해당 노드의 모든 엔터티에 액세스할 수 있습니다. 권한 있는 호출자는이 엔드포인트을 호출 하 고 인증 코드를 제공 하 여 액세스 토큰을 가져올 수 있습니다. 코드는 각각의 개별 서비스 코드 패키지 활성화에 대해 Service Fabric 런타임에 의해 생성 되며 해당 서비스 코드 패키지를 호스팅하는 프로세스의 수명에 바인딩됩니다.
 
 특히 관리 되는 id 사용 Service Fabric 서비스 환경은 다음 변수로 시드 됩니다.
-- ' MSI_ENDPOINT ': localhost 끝점, 전체 경로, API 버전 및 해당 서비스의 관리 되는 id에 해당 하는 매개 변수
+- ' MSI_ENDPOINT ': localhost 엔드포인트, 전체 경로, API 버전 및 해당 서비스의 관리 되는 id에 해당 하는 매개 변수
 - ' MSI_SECRET ': 불투명 문자열 이며 현재 노드의 서비스를 고유 하 게 나타내는 인증 코드입니다.
 
 > [!NOTE]
@@ -34,7 +34,7 @@ Service Fabric 응용 프로그램은 관리 되는 id를 활용 하 여 Azure A
 > 응용 프로그램 코드는 ' MSI_SECRET ' 환경 변수의 값을 중요 한 데이터로 간주 해야 합니다 .이는 로깅되지 않으며 그렇지 않은 경우에는 disseminated 합니다. 인증 코드에는 로컬 노드 외부의 값이 없지만 서비스를 호스팅하는 프로세스는 종료 된 후에는 Service Fabric 서비스의 id를 나타내므로 액세스 토큰 자체와 동일한 예방 조치를 사용 하 여 처리 해야 합니다.
 
 클라이언트는 토큰을 가져오기 위해 다음 단계를 수행 합니다.
-- 관리 되는 id 끝점 (MSI_ENDPOINT 값)을 API 버전 및 토큰에 필요한 리소스 (대상 사용자)와 연결 하 여 URI를 형성 합니다.
+- 관리 되는 id 엔드포인트 (MSI_ENDPOINT 값)을 API 버전 및 토큰에 필요한 리소스 (대상 사용자)와 연결 하 여 URI를 형성 합니다.
 - 지정 된 URI에 대 한 GET http 요청을 만듭니다.
 - 요청에 인증 코드 (MSI_SECRET 값)를 헤더로 추가 합니다.
 - 요청을 제출 합니다.
@@ -53,7 +53,7 @@ GET 'http://localhost:2377/metadata/identity/oauth2/token?api-version=2019-07-01
 | 요소 | Description |
 | ------- | ----------- |
 | `GET` | HTTP 동사는 엔드포인트에서 데이터를 검색한다는 것을 나타냅니다. 이 경우에는 OAuth 액세스 토큰입니다. | 
-| `http://localhost:2377/metadata/identity/oauth2/token` | MSI_ENDPOINT 환경 변수를 통해 제공 되는 Service Fabric 응용 프로그램에 대 한 관리 id 끝점입니다. |
+| `http://localhost:2377/metadata/identity/oauth2/token` | MSI_ENDPOINT 환경 변수를 통해 제공 되는 Service Fabric 응용 프로그램에 대 한 관리 id 엔드포인트입니다. |
 | `api-version` | 관리 되는 Id 토큰 서비스의 API 버전을 지정 하는 쿼리 문자열 매개 변수 현재 유일 하 게 허용 되는 값은 `2019-07-01-preview`이며 변경 될 수 있습니다. |
 | `resource` | 쿼리 문자열 매개 변수는 대상 리소스의 앱 ID URI를 나타냅니다. 발급 된 토큰의 `aud` (대상) 클레임으로 반영 됩니다. 이 예제에서는 앱 ID URI가 https:\//keyvault.azure.com/인 Azure Key Vault에 액세스 하기 위한 토큰을 요청 합니다. |
 | `Secret` | Service Fabric 서비스가 호출자를 인증 하기 위해 관리 되는 Service Fabric Id 토큰 서비스에서 요구 하는 HTTP 요청 헤더 필드입니다. 이 값은 MSI_SECRET 환경 변수를 통해 SF 런타임에서 제공 됩니다. |

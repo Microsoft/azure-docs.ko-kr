@@ -1,6 +1,6 @@
 ---
 title: Azure Firewall 샘플
-description: 이 문서에는 Azure 방화벽을 만드는 Azure PowerShell 스크립트 샘플에 대 한 링크가 포함 되어 있습니다.
+description: 이 문서에는 Azure 방화벽을 만드는 Azure PowerShell 스크립트 샘플에 대한 링크가 포함 되어 있습니다.
 services: firewall
 author: vhorne
 ms.service: firewall

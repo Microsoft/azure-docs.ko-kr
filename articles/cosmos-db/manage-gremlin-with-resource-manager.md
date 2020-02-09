@@ -1,5 +1,5 @@
 ---
-title: Azure Cosmos DB Gremlin API에 대 한 리소스 관리자 템플릿
+title: Azure Cosmos DB Gremlin API에 대한 리소스 관리자 템플릿
 description: Azure Resource Manager 템플릿을 사용 하 여 Azure Cosmos DB Gremlin API를 만들고 구성 합니다.
 author: TheovanKraay
 ms.service: cosmos-db
@@ -15,9 +15,9 @@ ms.locfileid: "75980599"
 ---
 # <a name="manage-azure-cosmos-db-gremlin-api-resources-using-azure-resource-manager-templates"></a>Azure Resource Manager 템플릿을 사용 하 여 Azure Cosmos DB Gremlin API 리소스 관리
 
-이 문서에서는 Azure Resource Manager 템플릿을 사용 하 여 Azure Cosmos DB 계정, 데이터베이스 및 컨테이너의 관리를 자동화 하는 다양 한 작업을 수행 하는 방법을 설명 합니다. 이 문서에는 Gremlin API 계정에 대 한 예제만 포함 되어 있습니다. 다른 API 형식 계정에 대 한 예제를 보려면 [Cassandra](manage-cassandra-with-resource-manager.md), [SQL](manage-sql-with-resource-manager.md), [MongoDB](manage-mongodb-with-resource-manager.md), [테이블](manage-table-with-resource-manager.md) 아티클에 대 한 Azure Cosmos DB api를 사용 하 여 Azure Resource Manager 템플릿 사용을 참조 하세요.
+이 문서에서는 Azure Resource Manager 템플릿을 사용 하 여 Azure Cosmos DB 계정, 데이터베이스 및 컨테이너의 관리를 자동화 하는 다양 한 작업을 수행 하는 방법을 설명 합니다. 이 문서에는 Gremlin API 계정에 대한 예제만 포함 되어 있습니다. 다른 API 형식 계정에 대한 예제를 보려면 [Cassandra](manage-cassandra-with-resource-manager.md), [SQL](manage-sql-with-resource-manager.md), [MongoDB](manage-mongodb-with-resource-manager.md), [테이블](manage-table-with-resource-manager.md) 아티클에 대한 Azure Cosmos DB api를 사용 하 여 Azure Resource Manager 템플릿 사용을 참조 하세요.
 
-## MongoDB 계정, 데이터베이스 및 컬렉션에 대 한 Azure Cosmos DB API 만들기<a id="create-resource"></a>
+## MongoDB 계정, 데이터베이스 및 컬렉션에 대한 Azure Cosmos DB API 만들기<a id="create-resource"></a>
 
 Azure Resource Manager 템플릿을 사용 하 여 Azure Cosmos DB 리소스를 만듭니다. 이 템플릿은 데이터베이스 수준에서 400 r u/s 처리량을 공유 하는 두 개의 그래프가 있는 Gremlin API 용 Azure Cosmos 계정을 만듭니다. 템플릿을 복사 하 고 아래와 같이 배포 하거나 [Azure 빠른 시작 갤러리](https://azure.microsoft.com/resources/templates/101-cosmosdb-gremlin/) 를 방문 하 여 Azure Portal에서 배포 합니다. 로컬 컴퓨터에 템플릿을 다운로드 하거나 새 템플릿을 만들고 `--template-file` 매개 변수를 사용 하 여 로컬 경로를 지정할 수도 있습니다.
 

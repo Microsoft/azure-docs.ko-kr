@@ -49,7 +49,7 @@ Event Hubs 캡처를 사용하면 기간을 설정하여 캡처를 제어할 수
 https://mystorageaccount.blob.core.windows.net/mycontainer/mynamespace/myeventhub/0/2017/12/08/03/03/17.avro
 ```
 
-Azure storage blob을 일시적으로 사용할 수 없는 경우 Event Hubs 캡처는 이벤트 허브에 구성 된 데이터 보존 기간에 대 한 데이터를 보존 하 고 저장소 계정을 다시 사용할 수 있게 되 면 데이터를 다시 채웁니다.
+Azure storage blob을 일시적으로 사용할 수 없는 경우 Event Hubs 캡처는 이벤트 허브에 구성 된 데이터 보존 기간에 대한 데이터를 보존 하 고 저장소 계정을 다시 사용할 수 있게 되 면 데이터를 다시 채웁니다.
 
 ### <a name="scaling-to-throughput-units"></a>처리량 단위로 크기 조정
 
@@ -73,7 +73,7 @@ Event Hubs 캡처에서 생성된 파일에는 다음과 같은 Avro 스키마�
 
 ![Avro 스키마][3]
 
-Avro 파일을 쉽게 탐색하는 방법은 Apache에서 [Avro 도구][Avro Tools] jar을 사용하는 것입니다. 경량 SQL 기반 환경 또는 [Apache Spark][Apache Spark] 에 대해 [Apache 드릴][Apache Drill] 을 사용 하 여 수집 데이터에 대 한 복잡 한 분산 처리를 수행할 수도 있습니다. 
+Avro 파일을 쉽게 탐색하는 방법은 Apache에서 [Avro 도구][Avro Tools] jar을 사용하는 것입니다. 경량 SQL 기반 환경 또는 [Apache Spark][Apache Spark] 에 대해 [Apache 드릴][Apache Drill] 을 사용 하 여 수집 데이터에 대한 복잡 한 분산 처리를 수행할 수도 있습니다. 
 
 ### <a name="use-apache-drill"></a>Apache Drill 사용
 
@@ -129,7 +129,7 @@ java -jar avro-tools-1.9.1.jar getschema <name of capture file>
 
 고급 처리를 수행하려면 선택한 플랫폼에 대한 Avro를 다운로드하고 설치합니다. 이 문서 작성 시점에는 C, C++, C\#, Java, NodeJS, Perl, PHP, Python 및 Ruby에 사용 가능한 구현이 있습니다.
 
-Apache Avro에는 [Java][Java] 및 [Python][Python]에 대 한 전체 시작 가이드가 있습니다. [Event Hubs 캡처 시작](event-hubs-capture-python.md) 문서를 참조할 수도 있습니다.
+Apache Avro에는 [Java][Java] 및 [Python][Python]에 대한 전체 시작 가이드가 있습니다. [Event Hubs 캡처 시작](event-hubs-capture-python.md) 문서를 참조할 수도 있습니다.
 
 ## <a name="how-event-hubs-capture-is-charged"></a>Event Hubs 캡처의 요금 부과 방식
 

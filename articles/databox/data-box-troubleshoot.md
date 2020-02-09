@@ -1,5 +1,5 @@
 ---
-title: Azure Data Box에 대 한 문제 해결 Azure Data Box Heavy | Microsoft Docs
+title: Azure Data Box에 대한 문제 해결 Azure Data Box Heavy | Microsoft Docs
 description: 이러한 장치에 데이터를 복사할 때 Azure Data Box 및 Azure Data Box Heavy에 표시 되는 문제를 해결 하는 방법을 설명 합니다.
 services: databox
 author: alkohli
@@ -17,7 +17,7 @@ ms.locfileid: "68848504"
 ---
 # <a name="troubleshoot-issues-related-to-azure-data-box-and-azure-data-box-heavy"></a>Azure Data Box 및 Azure Data Box Heavy 관련 된 문제 해결
 
-이 문서에서는 Azure Data Box 또는 Azure Data Box Heavy를 사용할 때 나타날 수 있는 문제를 해결 하는 방법에 대 한 정보를 자세히 설명 합니다. 이 문서에는 데이터를 Data Box 복사 하거나 Data Box에서 데이터를 업로드할 때 표시 되는 가능한 오류 목록이 포함 되어 있습니다.
+이 문서에서는 Azure Data Box 또는 Azure Data Box Heavy를 사용할 때 나타날 수 있는 문제를 해결 하는 방법에 대한 정보를 자세히 설명 합니다. 이 문서에는 데이터를 Data Box 복사 하거나 Data Box에서 데이터를 업로드할 때 표시 되는 가능한 오류 목록이 포함 되어 있습니다.
 
 ## <a name="error-classes"></a>오류 클래스
 
@@ -54,7 +54,7 @@ Data Box 및 Data Box Heavy의 오류는 다음과 같이 요약 됩니다.
     - 유효한 이름 예: `my-folder-1`,`my-really-extra-long-folder-111`
     - 잘못 된 이름의 `my-folder_1`예: `--myfolder`, `my`,, `myfolder--`,`myfolder!`
 
-    자세한 내용은 [컨테이너 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) 및 [공유 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names)에 대 한 Azure 명명 규칙을 참조 하세요.
+    자세한 내용은 [컨테이너 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) 및 [공유 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names)에 대한 Azure 명명 규칙을 참조 하세요.
 
 
 ### <a name="error_container_or_share_name_alpha_numeric_dash"></a>ERROR_CONTAINER_OR_SHARE_NAME_ALPHA_NUMERIC_DASH
@@ -73,7 +73,7 @@ Data Box 및 Data Box Heavy의 오류는 다음과 같이 요약 됩니다.
     - 유효한 이름 예: `my-folder-1`,`my-really-extra-long-folder-111`
     - 잘못 된 이름의 `my-folder_1`예: `--myfolder`, `my`,, `myfolder--`,`myfolder!`
 
-    자세한 내용은 [컨테이너 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) 및 [공유 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names)에 대 한 Azure 명명 규칙을 참조 하세요.
+    자세한 내용은 [컨테이너 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) 및 [공유 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names)에 대한 Azure 명명 규칙을 참조 하세요.
 
 ### <a name="error_container_or_share_name_improper_dash"></a>ERROR_CONTAINER_OR_SHARE_NAME_IMPROPER_DASH
 
@@ -91,7 +91,7 @@ Data Box 및 Data Box Heavy의 오류는 다음과 같이 요약 됩니다.
     - 유효한 이름 예: `my-folder-1`,`my-really-extra-long-folder-111`
     - 잘못 된 이름의 `my-folder_1`예: `--myfolder`, `my`,, `myfolder--`,`myfolder!`
 
-    자세한 내용은 [컨테이너 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) 및 [공유 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names)에 대 한 Azure 명명 규칙을 참조 하세요.
+    자세한 내용은 [컨테이너 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) 및 [공유 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names)에 대한 Azure 명명 규칙을 참조 하세요.
 
 ## <a name="container-or-share-size-limit-errors"></a>컨테이너 또는 공유 크기 제한 오류
 
@@ -114,7 +114,7 @@ Data Box 및 Data Box Heavy의 오류는 다음과 같이 요약 됩니다.
 
 **오류 설명:** 파일 크기가 업로드할 수 있는 최대 파일 크기를 초과합니다.
 
-**권장 해결 방법:** Blob 또는 파일 크기가 업로드에 허용 된 최대 한도를 초과 합니다.
+**권장 해결 방법:** Blob 또는 파일 크기가 업로드에 허용 된 최대한도를 초과 합니다.
 
 - 로컬 웹 UI의 **연결 및 복사** 페이지에서 오류 파일을 다운로드 하 고 검토 합니다.
 - Blob 및 파일 크기가 Azure 개체 크기 제한을 초과 하지 않는지 확인 합니다.
@@ -129,7 +129,7 @@ Data Box 및 Data Box Heavy의 오류는 다음과 같이 요약 됩니다.
 
 **권장 해결 방법:** Data Box 또는 Data Box Heavy의 페이지 blob 공유는 512 바이트 정렬 된 파일만 지원 합니다 (예: VHD/VHDX). 페이지 blob 공유에 복사 된 데이터는 페이지 blob으로 Azure에 업로드 됩니다.
 
-페이지 blob 공유에서 비 VHD/VHDX 데이터를 제거 합니다. 블록 blob 또는 Azure files for generic data에 대 한 공유를 사용할 수 있습니다.
+페이지 blob 공유에서 비 VHD/VHDX 데이터를 제거 합니다. 블록 blob 또는 Azure files for generic data에 대한 공유를 사용할 수 있습니다.
 
 자세한 내용은 [페이지 Blob 개요](../storage/blobs/storage-blob-pageblob-overview.md)를 참조 하세요.
 
@@ -144,7 +144,7 @@ Data Box 및 Data Box Heavy의 오류는 다음과 같이 요약 됩니다.
 
 ### <a name="error_directory_disallowed_for_type"></a>ERROR_DIRECTORY_DISALLOWED_FOR_TYPE
 
-**오류 설명:** 디렉터리는 관리 디스크에 대 한 기존 폴더에는 허용 되지 않습니다. 이러한 폴더에는 고정 Vhd만 사용할 수 있습니다.
+**오류 설명:** 디렉터리는 관리 디스크에 대한 기존 폴더에는 허용 되지 않습니다. 이러한 폴더에는 고정 Vhd만 사용할 수 있습니다.
 
 **권장 해결 방법:** 관리 디스크의 경우 각 공유 내에서 저장소 계정의 컨테이너에 해당 하는 다음 3 개의 폴더가 만들어집니다. 프리미엄 SSD, 표준 HDD 및 표준 SSD. 이러한 폴더는 관리 디스크의 성능 계층에 해당 합니다.
 
@@ -162,7 +162,7 @@ Data Box 및 Data Box Heavy의 오류는 다음과 같이 요약 됩니다.
 
 ## <a name="non-critical-blob-or-file-errors"></a>중요 하지 않은 blob 또는 파일 오류
 
-다음 섹션에서는 데이터 복사 중에 표시 되는 blob, 파일 또는 컨테이너의 이름과 관련 된 모든 중요 하지 않은 오류를 요약 하 여 설명 합니다. 이러한 오류가 발생 하는 경우 Azure 명명 규칙을 준수 하도록 이름이 수정 됩니다. 데이터 업로드에 대 한 해당 주문 상태가 **경고와 함께 완료**됩니다.  
+다음 섹션에서는 데이터 복사 중에 표시 되는 blob, 파일 또는 컨테이너의 이름과 관련 된 모든 중요 하지 않은 오류를 요약 하 여 설명 합니다. 이러한 오류가 발생 하는 경우 Azure 명명 규칙을 준수 하도록 이름이 수정 됩니다. 데이터 업로드에 대한 해당 주문 상태가 **경고와 함께 완료**됩니다.  
 
 ### <a name="error_blob_or_file_name_character_control"></a>ERROR_BLOB_OR_FILE_NAME_CHARACTER_CONTROL
 
@@ -173,7 +173,7 @@ Data Box 및 Data Box Heavy의 오류는 다음과 같이 요약 됩니다.
 로컬 웹 UI의 **연결 및 복사** 페이지에서 오류 파일을 다운로드 하 고 검토 합니다.
 파일을 제거 하거나 이름을 변경 하 여 지원 되지 않는 문자를 제거 합니다.
 
-자세한 내용은 [blob 이름](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata#blob-names) 및 [파일 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names)에 대 한 Azure 명명 규칙을 참조 하세요.
+자세한 내용은 [blob 이름](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata#blob-names) 및 [파일 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names)에 대한 Azure 명명 규칙을 참조 하세요.
 
 ### <a name="error_blob_or_file_name_character_illegal"></a>ERROR_BLOB_OR_FILE_NAME_CHARACTER_ILLEGAL
 
@@ -184,7 +184,7 @@ Data Box 및 Data Box Heavy의 오류는 다음과 같이 요약 됩니다.
 로컬 웹 UI의 **연결 및 복사** 페이지에서 오류 파일을 다운로드 하 고 검토 합니다.
 파일을 제거 하거나 이름을 변경 하 여 지원 되지 않는 문자를 제거 합니다.
 
-자세한 내용은 [blob 이름](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata#blob-names) 및 [파일 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names)에 대 한 Azure 명명 규칙을 참조 하세요.
+자세한 내용은 [blob 이름](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata#blob-names) 및 [파일 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names)에 대한 Azure 명명 규칙을 참조 하세요.
 
 
 ### <a name="error_blob_or_file_name_ending"></a>ERROR_BLOB_OR_FILE_NAME_ENDING
@@ -196,7 +196,7 @@ Data Box 및 Data Box Heavy의 오류는 다음과 같이 요약 됩니다.
 로컬 웹 UI의 **연결 및 복사** 페이지에서 오류 파일을 다운로드 하 고 검토 합니다.
 파일을 제거 하거나 이름을 변경 하 여 지원 되지 않는 문자를 제거 합니다.
 
-자세한 내용은 [blob 이름](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata#blob-names) 및 [파일 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names)에 대 한 Azure 명명 규칙을 참조 하세요.
+자세한 내용은 [blob 이름](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata#blob-names) 및 [파일 이름](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names)에 대한 Azure 명명 규칙을 참조 하세요.
 
 
 ### <a name="error_blob_or_file_name_segment_count"></a>ERROR_BLOB_OR_FILE_NAME_SEGMENT_COUNT
@@ -218,7 +218,7 @@ Data Box 및 Data Box Heavy의 오류는 다음과 같이 요약 됩니다.
 - Blob 이름은 1024 자를 초과 하면 안 됩니다.
 - 이름이 1024 자를 초과 하지 않도록 blob 또는 파일을 제거 하거나 이름을 바꿉니다.
 
-자세한 내용은 blob 이름 및 파일 이름에 대 한 Azure 명명 규칙을 참조 하세요.
+자세한 내용은 blob 이름 및 파일 이름에 대한 Azure 명명 규칙을 참조 하세요.
 
 ### <a name="error_blob_or_file_name_component_length"></a>ERROR_BLOB_OR_FILE_NAME_COMPONENT_LENGTH
 

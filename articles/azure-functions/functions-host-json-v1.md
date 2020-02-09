@@ -19,7 +19,7 @@ ms.locfileid: "75769611"
 *host.json* 메타데이터 파일에는 함수 앱의 모든 함수에 영향을 주는 전역 구성 옵션이 포함됩니다. 이 문서에는 v1 런타임에 사용 가능한 설정이 나열되어 있습니다. JSON 스키마는 http://json.schemastore.org/host 에 있습니다.
 
 > [!NOTE]
-> 이 문서는 Azure Functions 1.x에 대한 것입니다.  함수 2.x의 호스트나에 대 한 참조는 [Azure Functions 2.x에 대 한 호스트 json 참조](functions-host-json.md)를 참조 하세요.
+> 이 문서는 Azure Functions 1.x에 대한 것입니다.  함수 2.x의 호스트나에 대한 참조는 [Azure Functions 2.x에 대한 호스트 json 참조](functions-host-json.md)를 참조 하세요.
 
 기타 함수 앱 구성 옵션은 [앱 설정](functions-app-settings.md)에서 관리합니다.
 
@@ -122,7 +122,7 @@ ms.locfileid: "75769611"
 
 ## <a name="documentdb"></a>DocumentDB
 
-[Azure Cosmos DB 트리거 및 바인딩에](functions-bindings-cosmosdb.md)대 한 구성 설정입니다.
+[Azure Cosmos DB 트리거 및 바인딩에](functions-bindings-cosmosdb.md)대한 구성 설정입니다.
 
 ```json
 {
@@ -281,7 +281,7 @@ ms.locfileid: "75769611"
 
 ## <a name="sendgrid"></a>SendGrid
 
-[SendGrind 출력 바인딩에](functions-bindings-sendgrid.md) 대 한 구성 설정
+[SendGrind 출력 바인딩에](functions-bindings-sendgrid.md) 대한 구성 설정
 
 ```json
 {

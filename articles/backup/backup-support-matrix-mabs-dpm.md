@@ -10,7 +10,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/05/2019
 ms.locfileid: "74841170"
 ---
-# <a name="support-matrix-for-backup-with-microsoft-azure-backup-server-or-system-center-dpm"></a>Microsoft Azure Backup Server 또는 System Center DPM을 사용 하 여 백업에 대 한 지원 매트릭스
+# <a name="support-matrix-for-backup-with-microsoft-azure-backup-server-or-system-center-dpm"></a>Microsoft Azure Backup Server 또는 System Center DPM을 사용 하 여 백업에 대한 지원 매트릭스
 
 [Azure Backup 서비스](backup-overview.md) 를 사용 하 여 온-프레미스 컴퓨터 및 워크 로드와 Azure vm (가상 머신)을 백업할 수 있습니다. 이 문서에는 Microsoft Azure Backup 서버 (MABS) 또는 System Center Data Protection Manager (DPM) 및 Azure Backup를 사용 하 여 컴퓨터를 백업 하는 데 필요한 설정 및 제한 사항이 요약 되어 있습니다.
 
@@ -92,7 +92,7 @@ Azure Backup는 다음 운영 체제 중 하나를 실행 하는 DPM/MABS 인스
 **구성 요소** | **세부 정보**
 --- | ---
 **Azure Stack VM의 MABS** | 크기 A2 이상 Azure Marketplace에서 Windows Server 2012 R2 또는 Windows Server 2016 이미지를 사용 하 여 시작 하는 것이 좋습니다.<br/><br/> MABS VM에 다른 항목을 설치 하지 마세요.
-**MABS 스토리지** | MABS VM에 별도의 저장소 계정을 사용 합니다. MABS에서 실행 되는 MARS 에이전트에는 캐시 위치에 대 한 임시 저장소가 필요 하며 클라우드에서 복원 된 데이터를 보관 해야 합니다.
+**MABS 스토리지** | MABS VM에 별도의 저장소 계정을 사용 합니다. MABS에서 실행 되는 MARS 에이전트에는 캐시 위치에 대한 임시 저장소가 필요 하며 클라우드에서 복원 된 데이터를 보관 해야 합니다.
 **MABS 스토리지 풀** | MABS 저장소 풀의 크기는 MABS VM에 연결 된 디스크의 수와 크기에 따라 결정 됩니다. 각 Azure Stack VM 크기는 최대 디스크 수를 갖습니다. 예를 들어 A2는 4개의 디스크입니다.
 **MABS 보존** | 5 일 넘게 로컬 MABS 디스크에 백업 된 데이터를 보존 하지 않습니다.
 **MABS 강화** | 배포를 강화하기 위해 MABS VM의 크기를 늘릴 수 있습니다. 예를 들어 A에서 D 시리즈로 변경할 수 있습니다.<br/><br/> 정기적으로 백업을 사용 하 여 데이터를 오프 로드 하 고 있는지도 확인할 수 있습니다. 필요한 경우 추가 MABS 서버를 배포할 수 있습니다.
@@ -100,7 +100,7 @@ Azure Backup는 다음 운영 체제 중 하나를 실행 하는 DPM/MABS 인스
 **MABS 도메인** | MABS VM은 도메인에 가입되어 있어야 합니다. 관리자 권한이 있는 도메인 사용자는 VM에 MABS를 설치해야 합니다.
 **Azure Stack VM 데이터 백업** | 파일, 폴더 및 앱을 백업할 수 있습니다.
 **지원되는 백업** | 이러한 운영 체제는 백업 하려는 Vm에 대해 지원 됩니다.<br/><br/> Windows Server 반기 채널 (Datacenter, Enterprise, Standard)<br/><br/> Windows Server 2016, Windows Server 2012 R2, Windows Server 2008 R2
-**Azure Stack Vm에 대 한 SQL Server 지원** | SQL Server 2016, SQL Server 2014 SQL Server 2012 SP1을 백업 합니다.<br/><br/> 데이터베이스 백업 및 복구
+**Azure Stack Vm에 대한 SQL Server 지원** | SQL Server 2016, SQL Server 2014 SQL Server 2012 SP1을 백업 합니다.<br/><br/> 데이터베이스 백업 및 복구
 **Azure Stack VM에 대한 SharePoint 지원** | SharePoint 2016, SharePoint 2013, SharePoint 2010.<br/><br/> 팜, 데이터베이스, 프런트 엔드 및 웹 서버를 백업 하 고 복구 합니다.
 **백업한 VM에 대한 네트워크 요구 사항** | Azure Stack 워크 로드의 모든 Vm은 동일한 가상 네트워크에 속해야 하며 동일한 구독에 속해야 합니다.
 
@@ -144,15 +144,15 @@ DPM 2016/MABS v2 (Windows Server 2016에서 실행) 이상에서 최신 백업 �
 - MBS 백업은 ReFS(Resilient File System) 디스크에 저장됩니다.
 - MB는 ReFS 블록 복제를 사용 하 여 백업 속도를 향상 하 고 저장소 공간을 보다 효율적으로 사용 합니다.
 - 로컬 DPM/MABS 저장소 풀에 볼륨을 추가 하는 경우 드라이브 문자를 사용 하 여 구성 합니다. 그런 후 여러 다른 볼륨에 워크로드 스토리지를 구성할 수 있습니다.
-- DPM/MABS로 데이터를 백업하기 위해 보호 그룹을 만드는 경우 사용할 드라이브를 선택합니다. 예를 들어, SQL 또는 기타 높은 IOPS 워크 로드에 대 한 백업을 고성능 드라이브에 저장 하 고 더 적은 수의 백업 작업을 낮은 성능 드라이브에 저장 하는 경우가 있습니다.
+- DPM/MABS로 데이터를 백업하기 위해 보호 그룹을 만드는 경우 사용할 드라이브를 선택합니다. 예를 들어, SQL 또는 기타 높은 IOPS 워크 로드에 대한 백업을 고성능 드라이브에 저장 하 고 더 적은 수의 백업 작업을 낮은 성능 드라이브에 저장 하는 경우가 있습니다.
 
 ## <a name="supported-backups-to-mabs"></a>MABS에 대해 지원되는 백업
 
-Azure Backup Server로 보호할 수 있는 다양 한 서버 및 작업에 대 한 자세한 내용은 [Azure Backup Server Protection 매트릭스](https://docs.microsoft.com/azure/backup/backup-mabs-protection-matrix#protection-support-matrix)를 참조 하세요.
+Azure Backup Server로 보호할 수 있는 다양 한 서버 및 작업에 대한 자세한 내용은 [Azure Backup Server Protection 매트릭스](https://docs.microsoft.com/azure/backup/backup-mabs-protection-matrix#protection-support-matrix)를 참조 하세요.
 
 ## <a name="supported-backups-to-dpm"></a>DPM에 대해 지원되는 백업
 
-Data Protection Manager를 사용 하 여 보호할 수 있는 다양 한 서버 및 작업에 대 한 자세한 내용은 [DPM이 백업할 수 있는 항목](https://docs.microsoft.com/system-center/dpm/dpm-protection-matrix?view=sc-dpm-2019)을 참조 하세요.
+Data Protection Manager를 사용 하 여 보호할 수 있는 다양 한 서버 및 작업에 대한 자세한 내용은 [DPM이 백업할 수 있는 항목](https://docs.microsoft.com/system-center/dpm/dpm-protection-matrix?view=sc-dpm-2019)을 참조 하세요.
 
 - DPM/MABS에 의해 백업 된 클러스터형 작업은 DPM/MABS와 동일한 도메인 또는 자식/트러스트 된 도메인에 있어야 합니다.
 - 신뢰할 수 없는 도메인 또는 작업 그룹의 데이터를 백업하려면 NTLM/인증서 인증을 사용할 수 있습니다.

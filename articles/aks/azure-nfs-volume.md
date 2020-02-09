@@ -18,7 +18,7 @@ ms.locfileid: "77063818"
 컨테이너 간에 데이터를 공유 하는 것은 종종 컨테이너 기반 서비스 및 응용 프로그램의 필수 구성 요소입니다. 일반적으로 외부 영구 볼륨에서 동일한 정보에 액세스 해야 하는 다양 한 pod 있습니다.    
 Azure files는 옵션 이지만 Azure VM에서 NFS 서버를 만드는 것은 또 다른 형태의 영구 공유 저장소입니다. 
 
-이 문서에서는 Ubuntu 가상 머신에서 NFS 서버를 만드는 방법을 보여 줍니다. 또한 AKS 컨테이너에이 공유 파일 시스템에 대 한 액세스 권한을 부여 합니다.
+이 문서에서는 Ubuntu 가상 머신에서 NFS 서버를 만드는 방법을 보여 줍니다. 또한 AKS 컨테이너에이 공유 파일 시스템에 대한 액세스 권한을 부여 합니다.
 
 ## <a name="before-you-begin"></a>시작하기 전에
 이 문서에서는 기존 AKS 클러스터가 있다고 가정 합니다. AKS 클러스터가 필요한 경우 [Azure CLI를 사용][aks-quickstart-cli] 하거나 [Azure Portal를 사용][aks-quickstart-portal]하 여 AKS 빠른 시작을 참조 하세요.
@@ -95,11 +95,11 @@ chmod +x ~/nfs-server-setup.sh
 ## <a name="connecting-aks-cluster-to-nfs-server"></a>NFS 서버에 AKS 클러스터 연결
 볼륨에 액세스 하는 방법을 지정 하는 영구 볼륨 및 영구적 볼륨 클레임을 프로 비전 하 여 NFS 서버를 클러스터에 연결할 수 있습니다.
 
-동일한 가상 네트워크 또는 피어 링 가상 네트워크에서 두 서비스를 연결 해야 합니다. 동일한 VNET에서 클러스터를 설정 하는 방법에 대 한 지침은 [기존 vnet에서 AKS 클러스터 만들기][aks-virtual-network] 를 참조 하세요.
+동일한 가상 네트워크 또는 피어 링 가상 네트워크에서 두 서비스를 연결 해야 합니다. 동일한 VNET에서 클러스터를 설정 하는 방법에 대한 지침은 [기존 vnet에서 AKS 클러스터 만들기][aks-virtual-network] 를 참조 하세요.
 
 동일한 가상 네트워크 (또는 피어 링)에 있으면 AKS 클러스터에서 영구적 볼륨 및 영구 볼륨 클레임을 프로 비전 해야 합니다. 그런 다음 컨테이너는 NFS 드라이브를 로컬 디렉터리에 탑재할 수 있습니다.
 
-다음은 영구 볼륨에 대 한 예제 Kubernetes 정의입니다 (이 정의는 클러스터와 VM이 동일한 VNET에 있다고 가정).
+다음은 영구 볼륨에 대한 예제 Kubernetes 정의입니다 (이 정의는 클러스터와 VM이 동일한 VNET에 있다고 가정).
 
 ```yaml
 apiVersion: v1
@@ -157,7 +157,7 @@ ls -l
 
 ## <a name="next-steps"></a>다음 단계
 
-관련 모범 사례는 [AKS의 저장소 및 백업에 대 한 모범 사례][operator-best-practices-storage]를 참조 하세요.
+관련 모범 사례는 [AKS의 저장소 및 백업에 대한 모범 사례][operator-best-practices-storage]를 참조 하세요.
 
 <!-- LINKS - external -->
 [kubernetes-volumes]: https://kubernetes.io/docs/concepts/storage/volumes/

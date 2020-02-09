@@ -1,6 +1,6 @@
 ---
 title: Azure Function에서 반환 값 사용
-description: Azure Functions에 대 한 반환 값을 관리 하는 방법 알아보기
+description: Azure Functions에 대한 반환 값을 관리 하는 방법 알아보기
 author: craigshoemaker
 ms.topic: reference
 ms.date: 01/14/2019
@@ -155,7 +155,7 @@ def main(input: azure.functions.InputStream) -> str:
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-출력 바인딩에 대 한 반환 값을 사용 하는 Java 코드는 다음과 같습니다.
+출력 바인딩에 대한 반환 값을 사용 하는 Java 코드는 다음과 같습니다.
 
 ```java
 @FunctionName("QueueTrigger")

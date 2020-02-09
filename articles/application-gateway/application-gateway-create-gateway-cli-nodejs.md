@@ -104,7 +104,7 @@ azure network vnet subnet create \
 
 ## <a name="create-the-application-gateway"></a>Application Gateway 만들기
 
-가상 네트워크와 서브넷을 만들면 Application Gateway에 대한 필수 구성 요소가 완료됩니다. 또한 이전에 내보낸된.pfx 인증서 및 인증서에 대 한 암호는 다음 단계에 대 한 필요 합니다. 백 엔드에 사용되는 IP 주소는 백 엔드 서버에 대한 IP 주소입니다. 이 값은 가상 네트워크의 프라이빗 IP, 공용 IP 또는 백 엔드 서버의 정규화된 도메인 이름일 수 있습니다.
+가상 네트워크와 서브넷을 만들면 Application Gateway에 대한 필수 구성 요소가 완료됩니다. 또한 이전에 내보낸된.pfx 인증서 및 인증서에 대한 암호는 다음 단계에 대한 필요 합니다. 백 엔드에 사용되는 IP 주소는 백 엔드 서버에 대한 IP 주소입니다. 이 값은 가상 네트워크의 프라이빗 IP, 공용 IP 또는 백 엔드 서버의 정규화된 도메인 이름일 수 있습니다.
 
 ```azurecli-interactive
 azure network application-gateway create \

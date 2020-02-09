@@ -172,7 +172,7 @@ Microsoft 고객 계약을 체결 한 고객의 Csp에 대해 지원 되는 범�
 
 - **고객** -파트너에 의해 Microsoft 고객 계약에 등록 특정 고객에 연결 된 구독 그룹을 나타냅니다.
 
-*전역 관리자* 및 *관리 에이전트* 역할이 있는 사용자만 파트너의 Azure 테 넌 트에서 직접 청구 계정, 청구 프로필 및 고객에 대 한 비용을 관리 하 고 볼 수 있습니다. 파트너 센터 역할에 대 한 자세한 내용은 [사용자 역할 및 사용 권한 할당](/partner-center/permissions-overview)을 참조 하세요.
+*전역 관리자* 및 *관리 에이전트* 역할이 있는 사용자만 파트너의 Azure 테넌트에서 직접 청구 계정, 청구 프로필 및 고객에 대 한 비용을 관리 하 고 볼 수 있습니다. 파트너 센터 역할에 대 한 자세한 내용은 [사용자 역할 및 사용 권한 할당](/partner-center/permissions-overview)을 참조 하세요.
 
 Azure Cost Management는 고객이 Microsoft 고객 계약을 체결 한 경우에만 CSP 파트너 고객만 지원 합니다. 아직 Microsoft 고객 계약에 없는 CSP 지원 고객은 [파트너 센터](https://docs.microsoft.com/azure/cloud-solution-provider/overview/partner-center-overview)를 참조 하세요.
 
@@ -248,7 +248,7 @@ Cost Management Api를 사용 하는 경우 범위를 아는 것이 중요 합�
 4. 리소스 ID 필드 값을 복사 합니다.
 5. 범위: `"/subscriptions/{id}/resourceGroups/{name}"`
 
-Cost Management는 현재 [Azure Global](https://management.azure.com) 및 [Azure Government](https://management.usgovcloudapi.net)에서 지원 됩니다. Azure Government에 대 한 자세한 내용은 [Azure 전역 및 정부 API 끝점](../../azure-government/documentation-government-developer-guide.md#endpoint-mapping)을 참조 하세요.
+Cost Management는 현재 [Azure Global](https://management.azure.com) 및 [Azure Government](https://management.usgovcloudapi.net)에서 지원 됩니다. Azure Government에 대 한 자세한 내용은 [Azure 전역 및 정부 API 엔드포인트](../../azure-government/documentation-government-developer-guide.md#endpoint-mapping)을 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

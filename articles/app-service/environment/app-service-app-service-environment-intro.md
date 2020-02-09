@@ -66,7 +66,7 @@ App Service Environment는 공개 IP 주소가 있는 인터넷 연결이거나 
 
 [네트워크 보안 그룹][NetworkSecurityGroups] 을 사용 하 여 App Service Environment 있는 서브넷에 대 한 인바운드 네트워크 통신을 제한할 수 있습니다.  이 옵션을 통해 웹 애플리케이션 방화벽 및 SaaS 공급자와 같은 업스트림 디바이스 및 서비스 뒤에서 앱을 실행할 수 있습니다.
 
-또한 앱에서는 내부 데이터베이스 및 웹 서비스와 같은 회사 리소스에 자주 액세스해야 합니다.  일반적인 접근 방법은 Azure 가상 네트워크 내에서 이동하는 내부 네트워크 트래픽에만 이러한 엔드포인트를 사용할 수 있도록 하는 것입니다.  App Service Environment 내부 서비스와 동일한 가상 네트워크에 조인 되 면 환경에서 실행 중인 앱은 [사이트 간][SiteToSite] 및 [Azure express][ExpressRoute] 경로 연결을 통해 도달할 수 있는 끝점을 포함 하 여 액세스할 수 있습니다.
+또한 앱에서는 내부 데이터베이스 및 웹 서비스와 같은 회사 리소스에 자주 액세스해야 합니다.  일반적인 접근 방법은 Azure 가상 네트워크 내에서 이동하는 내부 네트워크 트래픽에만 이러한 엔드포인트를 사용할 수 있도록 하는 것입니다.  App Service Environment 내부 서비스와 동일한 가상 네트워크에 조인 되 면 환경에서 실행 중인 앱은 [사이트 간][SiteToSite] 및 [Azure express][ExpressRoute] 경로 연결을 통해 도달할 수 있는 엔드포인트을 포함 하 여 액세스할 수 있습니다.
 
 App Service 환경이 가상 네트워크와 온-프레미스 네트워크에서 작동 하는 방식에 대 한 자세한 내용은 [네트워크 아키텍처][NetworkArchitectureOverview]에서 [인바운드 트래픽 제어][ControllingInboundTraffic], [백 엔드에 안전 하 게 연결][SecurelyConnectingToBackends]에 대 한 다음 문서를 참조 하세요. 
 

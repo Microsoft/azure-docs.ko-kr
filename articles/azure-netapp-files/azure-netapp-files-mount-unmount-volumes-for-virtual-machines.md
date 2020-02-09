@@ -1,6 +1,6 @@
 ---
-title: 가상 컴퓨터에 대 한 Azure NetApp Files 볼륨 탑재
-description: Azure에서 Windows 가상 머신 또는 Linux 가상 머신에 대 한 볼륨을 탑재 또는 분리 하는 방법에 대해 알아봅니다.
+title: 가상 컴퓨터에 대한 Azure NetApp Files 볼륨 탑재
+description: Azure에서 Windows 가상 머신 또는 Linux 가상 머신에 대한 볼륨을 탑재 또는 분리 하는 방법에 대해 알아봅니다.
 author: b-juche
 ms.author: b-juche
 ms.service: azure-netapp-files
@@ -43,5 +43,5 @@ ms.locfileid: "75551542"
 
 ## <a name="next-steps"></a>다음 단계
 
-* [Azure NetApp Files에 대 한 NFSv 4.1 기본 도메인 구성](azure-netapp-files-configure-nfsv41-domain.md)
+* [Azure NetApp Files에 대한 NFSv 4.1 기본 도메인 구성](azure-netapp-files-configure-nfsv41-domain.md)
 * [NFS Faq](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-faqs#nfs-faqs)

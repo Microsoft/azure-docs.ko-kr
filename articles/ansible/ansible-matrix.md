@@ -1,5 +1,5 @@
 ---
-title: Azure에 대 한 Ansible 모듈 및 버전 매트릭스 | Microsoft Docs
+title: Azure에 대한 Ansible 모듈 및 버전 매트릭스 | Microsoft Docs
 description: Azure용 Ansible 모듈 및 버전 매트릭스
 keywords: Ansible, 역할, 매트릭스, 버전, Azure, DevOps
 ms.topic: reference
@@ -13,7 +13,7 @@ ms.locfileid: "74155978"
 ---
 # <a name="ansible-module-and-version-matrix"></a>Ansible 모듈 및 버전 매트릭스
 
-Ansible에는 Azure 리소스 프로비저닝 및 구성에 사용할 모듈 모음이 포함되어 있습니다. 이러한 리소스에는 가상 머신포함, 확장 집합, 네트워킹 서비스 및 컨테이너 서비스가 포함됩니다. 이 문서에는 Azure에 대 한 다양 한 Ansible 모듈과 이러한 모듈이 제공 되는 Ansible 버전이 나열 되어 있습니다.
+Ansible에는 Azure 리소스 프로비저닝 및 구성에 사용할 모듈 모음이 포함되어 있습니다. 이러한 리소스에는 가상 머신포함, 확장 집합, 네트워킹 서비스 및 컨테이너 서비스가 포함됩니다. 이 문서에는 Azure에 대한 다양 한 Ansible 모듈과 이러한 모듈이 제공 되는 Ansible 버전이 나열 되어 있습니다.
 
 ## <a name="ansible-modules-for-azure"></a>Azure용 Ansible 모듈
 
@@ -223,4 +223,4 @@ Ansible에는 Azure 리소스 프로비저닝 및 구성에 사용할 모듈 모
 
 ## <a name="next-steps"></a>다음 단계
 
-플레이 북 역할에 대 한 자세한 내용은 [재사용 가능한 플레이 북 만들기](https://docs.ansible.com/ansible/latest/playbooks_reuse.html)를 참조 하세요. 
+플레이 북 역할에 대한 자세한 내용은 [재사용 가능한 플레이 북 만들기](https://docs.ansible.com/ansible/latest/playbooks_reuse.html)를 참조 하세요. 

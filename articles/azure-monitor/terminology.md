@@ -17,7 +17,7 @@ ms.locfileid: "74894358"
 # <a name="azure-monitor-naming-and-terminology-changes"></a>Azure Monitor 이름 지정 및 용어 변경
 Azure 고객을 위한 모니터링 간소화를 위해 다양한 서비스가 통합되면서 Azure Monitor가 최근 상당히 변화되었습니다. 이 문서에서는 Azure Monitor 설명서의 이름 및 용어 변경 내용을 설명합니다.
 
-## <a name="october-2019---diagnostic-log-to-resource-log"></a>10 월 2019-리소스 로그에 대 한 진단 로그
+## <a name="october-2019---diagnostic-log-to-resource-log"></a>10 월 2019-리소스 로그에 대한 진단 로그
 실제로 수집 되는 항목에 맞게 "진단 로그"가 "리소스 로그"로 변경 되었습니다. "진단 설정" 이라는 용어는 동일 하 게 유지 됩니다.  
 
 ## <a name="february-2019---log-analytics-terminology"></a>2019년 2월 - Log Analytics 용어

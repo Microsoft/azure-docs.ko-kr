@@ -14,14 +14,14 @@ ms.lasthandoff: 01/04/2020
 ms.locfileid: "75659290"
 ---
 # <a name="how-to-scale-an-azure-signalr-service-instance"></a>Azure SignalR 서비스 인스턴스의 크기를 조정 하는 방법
-이 문서에서는 Azure SignalR 서비스의 인스턴스 크기를 조정 하는 방법을 보여 줍니다. 크기 조정, 강화 및 규모 확장에 대 한 두 가지 시나리오가 있습니다.
+이 문서에서는 Azure SignalR 서비스의 인스턴스 크기를 조정 하는 방법을 보여 줍니다. 크기 조정, 강화 및 규모 확장에 대한 두 가지 시나리오가 있습니다.
 
 * 강화: 더 많은 단위, 연결, 메시지 등을 [가져옵니다.](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling) 가격 책정 계층을 무료에서 표준으로 변경 하 여 확장 합니다.
 * [규모 확장](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling): SignalR 단위 수를 늘립니다. 최대 100 단위까지 확장할 수 있습니다.
 
 크기 조정 설정을 적용 하는 데 몇 분 정도 걸립니다. 드문 경우 지만 적용 하는 데 약 30 분이 걸릴 수 있습니다. 코드를 변경 하거나 서버 응용 프로그램을 다시 배포할 필요는 없습니다.
 
-개별 SignalR 서비스의 가격 책정 및 용량에 대 한 자세한 내용은 [Azure SignalR Service 가격 책정 정보](https://azure.microsoft.com/pricing/details/signalr-service/)를 참조 하세요.  
+개별 SignalR 서비스의 가격 책정 및 용량에 대한 자세한 내용은 [Azure SignalR Service 가격 책정 정보](https://azure.microsoft.com/pricing/details/signalr-service/)를 참조 하세요.  
 
 > [!NOTE]
 > SignalR 서비스를 **무료** 계층에서 **표준** 계층으로 변경 하거나 그 반대로 변경 하면 공용 서비스 IP가 변경 되 고, 전체 인터넷을 통해 DNS 서버에 변경 내용을 전파 하는 데 일반적으로 30-60 분이 걸립니다. DNS를 업데이트 하기 전에 서비스에 연결할 수 없습니다. 일반적으로 가격 책정 계층을 너무 자주 변경 하지 않는 것이 좋습니다.
@@ -79,15 +79,15 @@ az signalr update \
 
 ## <a name="compare-pricing-tiers"></a>가격 책정 계층 비교
 
-각 가격 책정 계층에 대 한 포함 된 메시지 및 연결과 같은 자세한 정보는 [SignalR Service 가격 정보](https://azure.microsoft.com/pricing/details/signalr-service/)를 참조 하세요.
+각 가격 책정 계층에 대한 포함 된 메시지 및 연결과 같은 자세한 정보는 [SignalR Service 가격 정보](https://azure.microsoft.com/pricing/details/signalr-service/)를 참조 하세요.
 
-각 계층의 서비스 한도, 할당량 및 제약 조건에 대 한 테이블은 [SignalR service 제한](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-signalr-service-limits)을 참조 하세요.
+각 계층의 서비스 한도, 할당량 및 제약 조건에 대한 테이블은 [SignalR service 제한](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-signalr-service-limits)을 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 
 이 가이드에서는 단일 SignalR 서비스 인스턴스 크기를 조정 하는 방법을 배웠습니다.
 
-여러 끝점은 크기 조정, 분할 및 지역 간 시나리오에 대해서도 지원 됩니다.
+여러 엔드포인트은 크기 조정, 분할 및 지역 간 시나리오에 대해서도 지원 됩니다.
 
 > [!div class="nextstepaction"]
 > [여러 인스턴스를 사용 하 여 SignalR 서비스 크기 조정](./signalr-howto-scale-multi-instances.md)

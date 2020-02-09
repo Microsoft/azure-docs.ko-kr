@@ -23,7 +23,7 @@ ms.locfileid: "74931182"
 이 문서에서는 Azure Data Factory의 복사 작업을 사용 하 여 SAP Enterprise Central Component (ECC)에서 데이터를 복사 하는 방법을 설명 합니다. 자세한 내용은 [복사 작업 개요](copy-activity-overview.md)를 참조 하세요.
 
 >[!TIP]
->SAP 데이터 통합 시나리오에 대 한 ADF의 전반적인 지원에 대 한 자세한 내용은 [Azure Data Factory 백서를 사용 하 여 sap 데이터 통합](https://github.com/Azure/Azure-DataFactory/blob/master/whitepaper/SAP%20Data%20Integration%20using%20Azure%20Data%20Factory.pdf) 에서 자세한 소개, comparsion 및 지침을 참조 하세요.
+>SAP 데이터 통합 시나리오에 대한 ADF의 전반적인 지원에 대한 자세한 내용은 [Azure Data Factory 백서를 사용 하 여 sap 데이터 통합](https://github.com/Azure/Azure-DataFactory/blob/master/whitepaper/SAP%20Data%20Integration%20using%20Azure%20Data%20Factory.pdf) 에서 자세한 소개, comparsion 및 지침을 참조 하세요.
 
 ## <a name="supported-capabilities"></a>지원되는 기능
 
@@ -180,7 +180,7 @@ SAP ECC에서 데이터를 복사 하려면 복사 작업의 `source` 섹션에�
 ]
 ```
 
-## <a name="data-type-mappings-for-sap-ecc"></a>SAP ECC에 대 한 데이터 형식 매핑
+## <a name="data-type-mappings-for-sap-ecc"></a>SAP ECC에 대한 데이터 형식 매핑
 
 SAP ECC에서 데이터를 복사 하는 경우 SAP ECC 데이터의 OData 데이터 형식에서 중간 데이터 형식을 Azure Data Factory 하기 위해 다음 매핑이 사용 됩니다. 복사 활동에서 원본 스키마와 데이터 형식을 싱크에 매핑하는 방법에 대한 자세한 내용은 [스키마 및 데이터 형식 매핑](copy-activity-schema-and-type-mapping.md)을 참조하세요.
 
@@ -207,7 +207,7 @@ SAP ECC에서 데이터를 복사 하는 경우 SAP ECC 데이터의 OData 데�
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
+속성에 대한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -247,11 +247,11 @@ JavaScript 앱이 Windows 네이티브 모듈에 의존 하는 경우 에이전�
 
 ## <a name="create-a-build-pipeline-by-using-the-azure-cli"></a>Azure CLI를 사용 하 여 빌드 파이프라인 만들기
 
-Azure에서 빌드 파이프라인을 만들려면 `az functionapp devops-pipeline create` [명령을](/cli/azure/functionapp/devops-pipeline#az-functionapp-devops-pipeline-create)사용 합니다. 빌드 파이프라인이 만들어져 리포지토리에 적용 되는 모든 코드 변경 내용을 빌드하고 릴리스 합니다. 이 명령은 빌드 및 릴리스 파이프라인을 정의 하는 새 YAML 파일을 생성 한 다음 리포지토리에 커밋합니다. 이 명령에 대 한 필수 구성 요소는 코드의 위치에 따라 달라 집니다.
+Azure에서 빌드 파이프라인을 만들려면 `az functionapp devops-pipeline create` [명령을](/cli/azure/functionapp/devops-pipeline#az-functionapp-devops-pipeline-create)사용 합니다. 빌드 파이프라인이 만들어져 리포지토리에 적용 되는 모든 코드 변경 내용을 빌드하고 릴리스 합니다. 이 명령은 빌드 및 릴리스 파이프라인을 정의 하는 새 YAML 파일을 생성 한 다음 리포지토리에 커밋합니다. 이 명령에 대한 필수 구성 요소는 코드의 위치에 따라 달라 집니다.
 
 - 코드가 GitHub에 있는 경우:
 
-    - 구독에 대 한 **쓰기** 권한이 있어야 합니다.
+    - 구독에 대한 **쓰기** 권한이 있어야 합니다.
 
     - Azure DevOps의 프로젝트 관리자 여야 합니다.
 
@@ -261,7 +261,7 @@ Azure에서 빌드 파이프라인을 만들려면 `az functionapp devops-pipeli
 
 - 코드가 Azure Repos에 있는 경우:
 
-    - 구독에 대 한 **쓰기** 권한이 있어야 합니다.
+    - 구독에 대한 **쓰기** 권한이 있어야 합니다.
 
     - Azure DevOps의 프로젝트 관리자 여야 합니다.
 

@@ -49,7 +49,7 @@ ms.locfileid: "76261622"
 
 1. Service Bus *네임스페이스*로 이동합니다. 네임스페이스 페이지의 **설정**에서 **공유 액세스 정책**을 선택합니다. **클레임** 아래에서 해당 네임스페이스에 대한 **관리** 권한이 있는지 확인합니다.
 
-   ![Service Bus 네임 스페이스에 대 한 사용 권한 관리](./media/connectors-create-api-azure-service-bus/azure-service-bus-namespace.png)
+   ![Service Bus 네임 스페이스에 대한 사용 권한 관리](./media/connectors-create-api-azure-service-bus/azure-service-bus-namespace.png)
 
 1. Service Bus 네임스페이스에 대한 연결 문자열을 가져옵니다. 논리 앱에서 연결 정보를 제공 하는 경우이 문자열이 필요 합니다.
 
@@ -100,7 +100,7 @@ ms.locfileid: "76261622"
 
    ![폴링 간격 설정](./media/connectors-create-api-azure-service-bus/service-bus-trigger-details.png)
 
-   사용 가능한 트리거 및 속성에 대 한 자세한 내용은 커넥터의 [참조 페이지](/connectors/servicebus/)를 참조 하세요.
+   사용 가능한 트리거 및 속성에 대한 자세한 내용은 커넥터의 [참조 페이지](/connectors/servicebus/)를 참조 하세요.
 
 1. 원하는 작업을 추가 하 여 논리 앱을 계속 빌드합니다.
 
@@ -144,7 +144,7 @@ ms.locfileid: "76261622"
 
    ![메시지 콘텐츠 및 세부 정보를 입력합니다.](./media/connectors-create-api-azure-service-bus/service-bus-send-message-details.png)
 
-   사용 가능한 작업 및 해당 속성에 대 한 자세한 내용은 커넥터의 [참조 페이지](/connectors/servicebus/)를 참조 하세요.
+   사용 가능한 작업 및 해당 속성에 대한 자세한 내용은 커넥터의 [참조 페이지](/connectors/servicebus/)를 참조 하세요.
 
 1. 원하는 다른 작업을 추가 하 여 논리 앱을 계속 빌드합니다.
 
@@ -156,7 +156,7 @@ ms.locfileid: "76261622"
 
 Service Bus 커넥터는 Service Bus에서 커넥터 캐시로 최대 1500 개의 고유 세션을 저장할 수 있습니다. 세션 수가이 한도를 초과 하면 이전 세션이 캐시에서 제거 됩니다. 자세한 내용은 [메시지 세션](../service-bus-messaging/message-sessions.md)을 참조 하세요.
 
-커넥터의 OpenAPI (이전의 Swagger) 설명에서 설명 하는 트리거, 작업 및 제한에 대 한 기타 기술 정보는 커넥터의 [참조 페이지를 참조](/connectors/servicebus/)하세요. Azure Service Bus 메시징에 대 한 자세한 내용은 [Azure Service Bus 정의](../service-bus-messaging/service-bus-messaging-overview.md)를 참조 하세요.
+커넥터의 OpenAPI (이전의 Swagger) 설명에서 설명 하는 트리거, 작업 및 제한에 대한 기타 기술 정보는 커넥터의 [참조 페이지를 참조](/connectors/servicebus/)하세요. Azure Service Bus 메시징에 대한 자세한 내용은 [Azure Service Bus 정의](../service-bus-messaging/service-bus-messaging-overview.md)를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

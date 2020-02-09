@@ -64,7 +64,7 @@ az provider register --namespace Microsoft.ContainerInstance
 가상 노드 기능은 ACI의 기능 집합에 따라 크게 달라 집니다. 다음 시나리오는 가상 노드에서 아직 지원 되지 않습니다.
 
 * 서비스 주체를 사용 하 여 ACR 이미지를 끌어옵니다. [해결 방법은](https://github.com/virtual-kubelet/virtual-kubelet/blob/master/providers/azure/README.md#Private-registry) [Kubernetes 암호](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#create-a-secret-by-providing-credentials-on-the-command-line) 를 사용 하는 것입니다.
-* 네트워크 보안 그룹을 사용 하 여 VNet 피어 링, Kubernetes 네트워크 정책 및 인터넷에 대 한 아웃 바운드 트래픽을 비롯 한 [제한 사항](../container-instances/container-instances-vnet.md) 입니다. Virtual Network
+* 네트워크 보안 그룹을 사용 하 여 VNet 피어 링, Kubernetes 네트워크 정책 및 인터넷에 대한 아웃 바운드 트래픽을 비롯 한 [제한 사항](../container-instances/container-instances-vnet.md) 입니다. Virtual Network
 * 초기화 컨테이너
 * [호스트 별칭](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/)
 * ACI의 exec [인수](../container-instances/container-instances-exec.md#restrictions)
@@ -100,7 +100,7 @@ az network vnet create \
     --subnet-prefix 10.240.0.0/16
 ```
 
-이제 [az network vnet subnet create][az-network-vnet-subnet-create] 명령을 사용 하 여 가상 노드에 대 한 추가 서브넷을 만듭니다. 다음 예제에서는 주소 접두사 *10.241.0.0/16*을 사용하여 *myVirtualNodeSubnet*이라는 서브넷을 만듭니다.
+이제 [az network vnet subnet create][az-network-vnet-subnet-create] 명령을 사용 하 여 가상 노드에 대한 추가 서브넷을 만듭니다. 다음 예제에서는 주소 접두사 *10.241.0.0/16*을 사용하여 *myVirtualNodeSubnet*이라는 서브넷을 만듭니다.
 
 ```azurecli-interactive
 az network vnet subnet create \
@@ -144,7 +144,7 @@ az ad sp create-for-rbac --skip-assignment
 az network vnet show --resource-group myResourceGroup --name myVnet --query id -o tsv
 ```
 
-가상 네트워크를 사용 하는 AKS 클러스터에 대 한 올바른 액세스 권한을 부여 하려면 [az role 대입문 create][az-role-assignment-create] 명령을 사용 하 여 역할 할당을 만듭니다. `<appId`> 및 `<vnetId>`를 이전 두 단계에서 수집한 값으로 바꿉니다.
+가상 네트워크를 사용 하는 AKS 클러스터에 대한 올바른 액세스 권한을 부여 하려면 [az role 대입문 create][az-role-assignment-create] 명령을 사용 하 여 역할 할당을 만듭니다. `<appId`> 및 `<vnetId>`를 이전 두 단계에서 수집한 값으로 바꿉니다.
 
 ```azurecli-interactive
 az role assignment create --assignee <appId> --scope <vnetId> --role Contributor
@@ -347,7 +347,7 @@ az network vnet subnet update --resource-group $RES_GROUP --vnet-name $AKS_VNET 
 
 - [Kubernetes 수평 pod autoscaler 사용][aks-hpa]
 - [Kubernetes cluster autoscaler 사용][aks-cluster-autoscaler]
-- [가상 노드에 대 한 자동 크기 조정 샘플 체크 아웃][virtual-node-autoscale]
+- [가상 노드에 대한 자동 크기 조정 샘플 체크 아웃][virtual-node-autoscale]
 - [가상 Kubelet 오픈 소스 라이브러리에 대해 자세히 알아보세요.][virtual-kubelet-repo]
 
 <!-- LINKS - external -->

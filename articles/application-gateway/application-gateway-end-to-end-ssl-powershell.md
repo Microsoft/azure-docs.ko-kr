@@ -265,7 +265,7 @@ $appgw = New-AzApplicationGateway -Name appgateway -SSLCertificates $cert -Resou
    $out= Set-AzApplicationGatewayBackendHttpSetting -ApplicationGateway $gw -Name "HTTP1" -Port 443 -Protocol "Https" -CookieBasedAffinity Disabled -AuthenticationCertificates $Authcert
    ```
     
- 5. 응용 프로그램 게이트웨이에 대 한 변경 내용을 커밋하고 $out 변수에 포함 된 새 구성을 전달 합니다.
+ 5. 응용 프로그램 게이트웨이에 대한 변경 내용을 커밋하고 $out 변수에 포함 된 새 구성을 전달 합니다.
  
    ```powershell
    Set-AzApplicationGateway -ApplicationGateway $gw  

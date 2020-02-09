@@ -28,7 +28,7 @@ ms.locfileid: "76775250"
 
 ## <a name="scopes-to-request"></a>요청할 범위
 
-클라이언트 자격 증명 흐름에 대해 요청할 범위는 리소스 이름 뒤에 `/.default`입니다. 이 표기법은 응용 프로그램을 등록 하는 동안 정적으로 선언 된 *응용 프로그램 수준 권한을* 사용 하도록 Azure Active Directory (Azure AD)에 지시 합니다. 또한 이러한 API 권한은 테 넌 트 관리자가 부여 해야 합니다.
+클라이언트 자격 증명 흐름에 대해 요청할 범위는 리소스 이름 뒤에 `/.default`입니다. 이 표기법은 응용 프로그램을 등록 하는 동안 정적으로 선언 된 *응용 프로그램 수준 권한을* 사용 하도록 Azure Active Directory (Azure AD)에 지시 합니다. 또한 이러한 API 권한은 테넌트 관리자가 부여 해야 합니다.
 
 # <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
@@ -192,7 +192,7 @@ MSAL.NET에서 `AcquireTokenForClient`는 응용 프로그램 토큰 캐시를 �
 
 ### <a name="did-you-forget-to-provide-admin-consent-daemon-apps-need-it"></a>관리자 동의를 제공 해야 하나요? 디먼 앱에 필요 합니다!
 
-API를 호출할 때 **작업 오류를 완료할 수 있는 권한이** 없는 경우 테 넌 트 관리자는 응용 프로그램에 권한을 부여 해야 합니다. 위의 클라이언트 앱 등록 6 단계를 참조 하세요.
+API를 호출할 때 **작업 오류를 완료할 수 있는 권한이** 없는 경우 테넌트 관리자는 응용 프로그램에 권한을 부여 해야 합니다. 위의 클라이언트 앱 등록 6 단계를 참조 하세요.
 일반적으로 다음과 같은 오류가 표시 됩니다.
 
 ```JSon

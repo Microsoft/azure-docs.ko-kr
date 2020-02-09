@@ -19,15 +19,15 @@ ms.locfileid: "75390548"
 
 보호 된 항목의 백업 삭제는 모니터링 해야 하는 중요 한 작업입니다. 실수로 인 한 삭제를 방지 하기 위해 Azure Recovery Services 자격 증명 모음에는 일시 삭제 기능이 있습니다. 이 기능을 통해 고객은 삭제 후 일정 기간 내에 삭제 된 백업 (필요한 경우)을 복원할 수 있습니다.
 
-그러나이 기능이 필요 하지 않은 시나리오는 있습니다. Azure Recovery Services 자격 증명 모음에는 일시 삭제 된 백업 항목이 있는 경우 삭제할 수 없습니다. 자격 증명 모음을 즉시 삭제 해야 하는 경우 문제가 발생할 수 있습니다. 예를 들어의 경우 배포 작업은 동일한 워크플로에서 생성 된 리소스를 정리 하는 경우가 많습니다. 배포는 자격 증명 모음을 만들고, 항목에 대 한 백업을 구성 하 고, 테스트 복원을 수행한 후 백업 항목과 자격 증명 모음을 계속 해 서 삭제할 수 있습니다. 자격 증명 모음을 삭제 하지 못하면 전체 배포가 실패할 수 있습니다. 즉시 삭제를 보장 하는 유일한 방법은 일시 삭제를 사용 하지 않도록 설정 하는 것입니다.
+그러나이 기능이 필요 하지 않은 시나리오는 있습니다. Azure Recovery Services 자격 증명 모음에는 일시 삭제 된 백업 항목이 있는 경우 삭제할 수 없습니다. 자격 증명 모음을 즉시 삭제 해야 하는 경우 문제가 발생할 수 있습니다. 예를 들어의 경우 배포 작업은 동일한 워크플로에서 생성 된 리소스를 정리 하는 경우가 많습니다. 배포는 자격 증명 모음을 만들고, 항목에 대한 백업을 구성 하 고, 테스트 복원을 수행한 후 백업 항목과 자격 증명 모음을 계속 해 서 삭제할 수 있습니다. 자격 증명 모음을 삭제 하지 못하면 전체 배포가 실패할 수 있습니다. 즉시 삭제를 보장 하는 유일한 방법은 일시 삭제를 사용 하지 않도록 설정 하는 것입니다.
 
 따라서 고객은 시나리오에 따라 특정 자격 증명 모음에 대해 일시 삭제를 사용 하지 않도록 설정할지 여부를 신중 하 게 선택 해야 합니다. 자세한 내용은 [일시 삭제 문서](backup-azure-security-feature-cloud.md#soft-delete)를 참조 하세요.
 
 ### <a name="fetch-soft-delete-state-using-rest-api"></a>REST API를 사용 하 여 일시 삭제 상태 페치
 
-기본적으로 새로 만든 Recovery Services 자격 증명 모음에 대해 일시 삭제 상태가 사용 됩니다. 자격 증명 모음에 대 한 일시 삭제 상태를 인출/업데이트 하려면 백업 자격 증명 모음 관련 [REST API 문서](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs) 를 사용 합니다.
+기본적으로 새로 만든 Recovery Services 자격 증명 모음에 대해 일시 삭제 상태가 사용 됩니다. 자격 증명 모음에 대한 일시 삭제 상태를 인출/업데이트 하려면 백업 자격 증명 모음 관련 [REST API 문서](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs) 를 사용 합니다.
 
-자격 증명 모음에 대 한 일시 삭제의 현재 상태를 인출 하려면 다음 *가져오기* 작업을 사용 합니다.
+자격 증명 모음에 대한 일시 삭제의 현재 상태를 인출 하려면 다음 *가져오기* 작업을 사용 합니다.
 
 ```http
 GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupconfig/vaultconfig?api-version=2019-05-13
@@ -41,7 +41,7 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 #### <a name="responses"></a>응답
 
-' GET ' 작업에 대 한 성공적인 응답은 다음과 같습니다.
+' GET ' 작업에 대한 성공적인 응답은 다음과 같습니다.
 
 |이름  |유형  |Description  |
 |---------|---------|---------|
@@ -105,7 +105,7 @@ PATCH https://management.azure.com/Subscriptions/00000000-0000-0000-0000-0000000
 
 #### <a name="responses"></a>응답
 
-' PATCH ' 작업에 대 한 성공적인 응답은 다음과 같습니다.
+' PATCH ' 작업에 대한 성공적인 응답은 다음과 같습니다.
 
 |이름  |유형  |Description  |
 |---------|---------|---------|

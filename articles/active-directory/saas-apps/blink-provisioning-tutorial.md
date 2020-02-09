@@ -36,7 +36,7 @@ ms.locfileid: "77059133"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [깜박임 테 넌 트](https://joinblink.com/pricing)
+* [깜박임 테넌트](https://joinblink.com/pricing)
 * 관리자 권한으로 깜박이는의 사용자 계정
 
 ## <a name="assigning-users-to-blink"></a>사용자를 Blink에 할당
@@ -105,7 +105,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 Blink를 구
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에 있는 **테 넌 트 URL**에 `https://api.joinblink.com/scim`을 입력 합니다. 이전에 **비밀 토큰**에서 검색 된 **Scim 인증 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 Blink에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Blink 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
+5. **관리자 자격 증명** 섹션 아래에 있는 **테넌트 URL**에 `https://api.joinblink.com/scim`을 입력 합니다. 이전에 **비밀 토큰**에서 검색 된 **Scim 인증 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 Blink에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Blink 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 

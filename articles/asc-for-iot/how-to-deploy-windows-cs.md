@@ -1,5 +1,5 @@
 ---
-title: IoT 에이전트에 대 한 Azure Security Center의 Windows 설치 | Microsoft Docs
+title: IoT 에이전트에 대한 Azure Security Center의 Windows 설치 | Microsoft Docs
 description: 32 비트 또는 64 비트 Windows 장치에 IoT 에이전트 Azure Security Center를 설치 하는 방법에 대해 알아봅니다.
 services: asc-for-iot
 ms.service: asc-for-iot
@@ -22,9 +22,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 07/29/2019
 ms.locfileid: "68597218"
 ---
-# <a name="deploy-an-azure-security-center-for-iot-c-based-security-agent-for-windows"></a>Windows 용 IoT C#기반 보안 에이전트에 대 한 Azure Security Center 배포
+# <a name="deploy-an-azure-security-center-for-iot-c-based-security-agent-for-windows"></a>Windows 용 IoT C#기반 보안 에이전트에 대한 Azure Security Center 배포
 
-이 가이드에서는 Windows에서 IoT C#기반 보안 에이전트에 대 한 Azure Security Center를 설치 하는 방법을 설명 합니다.
+이 가이드에서는 Windows에서 IoT C#기반 보안 에이전트에 대한 Azure Security Center를 설치 하는 방법을 설명 합니다.
 
 이 가이드에서는 다음 작업 방법을 배웁니다. 
 > [!div class="checklist"]
@@ -37,7 +37,7 @@ ms.locfileid: "68597218"
 
 다른 플랫폼 및 에이전트 버전의 경우 [올바른 보안 에이전트 선택](how-to-deploy-agent.md)을 참조 하세요.
 
-1. 설치 하려는 컴퓨터에 대 한 로컬 관리자 권한 
+1. 설치 하려는 컴퓨터에 대한 로컬 관리자 권한 
 
 1. 디바이스에 대한 [보안 모듈을 만듭니다](quickstart-create-security-twin.md).
 
@@ -45,7 +45,7 @@ ms.locfileid: "68597218"
 
 보안 에이전트를 설치 하려면 다음 워크플로를 사용 합니다.
 
-1. 장치에 IoT Windows C# 에이전트에 대 한 Azure Security Center를 설치 합니다. IoT [GitHub 리포지토리의](https://github.com/Azure/Azure-IoT-Security-Agent-CS)Azure Security Center에서 최신 버전을 컴퓨터에 다운로드 합니다.
+1. 장치에 IoT Windows C# 에이전트에 대한 Azure Security Center를 설치 합니다. IoT [GitHub 리포지토리의](https://github.com/Azure/Azure-IoT-Security-Agent-CS)Azure Security Center에서 최신 버전을 컴퓨터에 다운로드 합니다.
 
 1. 패키지의 콘텐츠를 추출하고 /Install 폴더로 이동합니다.
 
@@ -67,7 +67,7 @@ ms.locfileid: "68597218"
     .\InstallSecurityAgent.ps1 -Install -aui Device -aum SymmetricKey -f c:\Temp\Key.txt -hn MyIotHub.azure-devices.net -di Mydevice1 -cl store
     ```
     
-    인증 매개 변수에 대 한 자세한 내용은 [인증을 구성 하는 방법](concept-security-agent-authentication-methods.md)을 참조 하세요.
+    인증 매개 변수에 대한 자세한 내용은 [인증을 구성 하는 방법](concept-security-agent-authentication-methods.md)을 참조 하세요.
 
 이 스크립트는 다음 작업을 수행 합니다.
 
@@ -139,8 +139,8 @@ ms.locfileid: "68597218"
 
 
 ## <a name="next-steps"></a>다음 단계
-- IoT 서비스에 대 한 Azure Security Center [개요](overview.md) 를 참조 하십시오.
-- IoT [아키텍처](architecture.md) 에 대 한 Azure Security Center에 대해 자세히 알아보기
+- IoT 서비스에 대한 Azure Security Center [개요](overview.md) 를 참조 하십시오.
+- IoT [아키텍처](architecture.md) 에 대한 Azure Security Center에 대해 자세히 알아보기
 - [서비스](quickstart-onboard-iot-hub.md)를 사용하도록 설정합니다.
 - [FAQ](resources-frequently-asked-questions.md)를 참조합니다.
 - [경고](concept-security-alerts.md)를 살펴봅니다.

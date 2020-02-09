@@ -34,7 +34,7 @@ ms.locfileid: "77054928"
 | 구성 리디렉션 |100<sup>1</sup>| |
 | 동시 WebSocket 연결 |중간 게이트웨이 20k<br> 대량 게이트웨이 50k| |
 | 최대 URL 길이|32KB| |
-| HTTP/2에 대 한 최대 헤더 크기 |4KB| |
+| HTTP/2에 대한 최대 헤더 크기 |4KB| |
 | 최대 파일 업로드 크기, 표준 |2GB | |
 | 최대 파일 업로드 크기 WAF |v1 Medium WAF 게이트웨이, 100 m b<br>v1 Large WAF 게이트웨이, 500 MB<br>v2 WAF, 750 m b| |
 | 파일이 없는 WAF 본문 크기 제한|128KB||

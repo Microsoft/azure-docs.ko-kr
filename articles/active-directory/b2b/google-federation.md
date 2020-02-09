@@ -37,16 +37,16 @@ Google Gmail 사용자에게 초대를 보낼 때 게스트 사용자는 테넌�
 
 ## <a name="limitations"></a>제한 사항
 
-팀은 모든 장치에서 Google 게스트 사용자를 완전히 지원 합니다. Google 사용자는 `https://teams.microsoft.com`같은 공통 끝점에서 팀에 로그인 할 수 있습니다.
+팀은 모든 장치에서 Google 게스트 사용자를 완전히 지원 합니다. Google 사용자는 `https://teams.microsoft.com`같은 공통 엔드포인트에서 팀에 로그인 할 수 있습니다.
 
-다른 응용 프로그램의 일반 끝점은 Google 사용자를 지원 하지 않을 수 있습니다. Google 게스트 사용자는 테 넌 트 정보를 포함 하는 링크를 사용 하 여 로그인 해야 합니다. 예를 들면 다음과 같습니다.
+다른 응용 프로그램의 일반 엔드포인트은 Google 사용자를 지원 하지 않을 수 있습니다. Google 게스트 사용자는 테넌트 정보를 포함 하는 링크를 사용 하 여 로그인 해야 합니다. 예를 들면 다음과 같습니다.
   * `https://myapps.microsoft.com/?tenantid=<your tenant id>`
   * `https://portal.azure.com/<your tenant id>`
   * `https://myapps.microsoft.com/<your verified domain>.onmicrosoft.com`
 
    Google 게스트 사용자가 `https://myapps.microsoft.com` 또는 `https://portal.azure.com`와 같은 링크를 사용 하려고 하면 오류가 발생 합니다.
 
-Google 게스트 사용자에 게 응용 프로그램 또는 리소스에 대 한 직접 링크를 제공할 수도 있습니다 .이 링크에는 `https://myapps.microsoft.com/signin/Twitter/<application ID?tenantId=<your tenant ID>`와 같은 테 넌 트 정보가 포함 되어 있으면 됩니다. 
+Google 게스트 사용자에 게 응용 프로그램 또는 리소스에 대 한 직접 링크를 제공할 수도 있습니다 .이 링크에는 `https://myapps.microsoft.com/signin/Twitter/<application ID?tenantId=<your tenant ID>`와 같은 테넌트 정보가 포함 되어 있으면 됩니다. 
 
 ## <a name="step-1-configure-a-google-developer-project"></a>1단계: Google 개발자 프로젝트 구성
 먼저 Google 개발자 콘솔에서 새 프로젝트를 만들어 나중에 Azure AD에 추가할 수 있는 클라이언트 ID 및 클라이언트 비밀을 가져옵니다. 

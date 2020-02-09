@@ -16,7 +16,7 @@ ms.locfileid: "73606853"
 ---
 # <a name="identify-and-diagnose-issues"></a>문제 식별 및 진단
 
-Windows 가상 데스크톱은 관리자가 단일 인터페이스를 통해 문제를 식별할 수 있도록 하는 진단 기능을 제공 합니다. Windows 가상 데스크톱 역할은 사용자가 시스템과 상호 작용할 때마다 진단 활동을 기록 합니다. 각 로그에는 트랜잭션과 관련 된 Windows 가상 데스크톱 역할, 오류 메시지, 테 넌 트 정보 및 사용자 정보와 같은 관련 정보가 포함 되어 있습니다. 진단 작업은 최종 사용자 및 관리 작업에 의해 생성 되며 세 가지 주요 버킷으로 분류할 수 있습니다.
+Windows 가상 데스크톱은 관리자가 단일 인터페이스를 통해 문제를 식별할 수 있도록 하는 진단 기능을 제공 합니다. Windows 가상 데스크톱 역할은 사용자가 시스템과 상호 작용할 때마다 진단 활동을 기록 합니다. 각 로그에는 트랜잭션과 관련 된 Windows 가상 데스크톱 역할, 오류 메시지, 테넌트 정보 및 사용자 정보와 같은 관련 정보가 포함 되어 있습니다. 진단 작업은 최종 사용자 및 관리 작업에 의해 생성 되며 세 가지 주요 버킷으로 분류할 수 있습니다.
 
 * 피드 구독 활동: 최종 사용자가 Microsoft 원격 데스크톱 응용 프로그램을 통해 피드에 연결 하려고 할 때마다 이러한 활동을 트리거합니다.
 * 연결 작업: 최종 사용자가 Microsoft 원격 데스크톱 응용 프로그램을 통해 데스크톱 또는 RemoteApp에 연결 하려고 할 때마다 이러한 작업을 트리거합니다.
@@ -34,7 +34,7 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 
 Windows 가상 데스크톱 진단은 하나의 PowerShell cmdlet만 사용 하 고 여러 개의 선택적 매개 변수를 포함 하 여 문제를 축소 하 고 격리할 수 있도록 합니다. 다음 섹션에는 문제를 진단 하기 위해 실행할 수 있는 cmdlet이 나열 되어 있습니다. 대부분의 필터는 함께 적용할 수 있습니다. 괄호 안에 표시 되는 값 (예: `<tenantName>`)은 사용자의 상황에 적용 되는 값으로 바꾸어야 합니다.
 
-### <a name="retrieve-diagnostic-activities-in-your-tenant"></a>테 넌 트에서 진단 활동을 검색 합니다.
+### <a name="retrieve-diagnostic-activities-in-your-tenant"></a>테넌트에서 진단 활동을 검색 합니다.
 
 **RdsDiagnosticActivities** cmdlet을 입력 하 여 진단 활동을 검색할 수 있습니다. 다음 예제 cmdlet은 가장 최근부터 최소까지 정렬 된 진단 활동 목록을 반환 합니다.
 
@@ -42,7 +42,7 @@ Windows 가상 데스크톱 진단은 하나의 PowerShell cmdlet만 사용 하 
 Get-RdsDiagnosticActivities -TenantName <tenantName>
 ```
 
-다른 Windows 가상 데스크톱 PowerShell cmdlet과 마찬가지로 **-tenantname** 매개 변수를 사용 하 여 쿼리에 사용 하려는 테 넌 트의 이름을 지정 해야 합니다. 테 넌 트 이름은 거의 모든 진단 활동 쿼리에 적용 됩니다.
+다른 Windows 가상 데스크톱 PowerShell cmdlet과 마찬가지로 **-tenantname** 매개 변수를 사용 하 여 쿼리에 사용 하려는 테넌트의 이름을 지정 해야 합니다. 테넌트 이름은 거의 모든 진단 활동 쿼리에 적용 됩니다.
 
 ### <a name="retrieve-detailed-diagnostic-activities"></a>자세한 진단 작업 검색
 
@@ -130,7 +130,7 @@ Get-RdsDiagnosticActivities -TenantName <tenantName> -Outcome Failure
 
 오류 시나리오는 서비스 내부와 Windows 가상 데스크톱 외부에서 분류 됩니다.
 
-* 내부 문제: 테 넌 트 관리자가 완화할 수 없고 지원 문제를 해결 해야 하는 시나리오를 지정 합니다. [Windows 가상 데스크톱 기술 커뮤니티](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop)를 통해 피드백을 제공할 때 문제가 발생 했을 때의 작업 ID와 대략적인 시간 프레임을 포함 합니다.
+* 내부 문제: 테넌트 관리자가 완화할 수 없고 지원 문제를 해결 해야 하는 시나리오를 지정 합니다. [Windows 가상 데스크톱 기술 커뮤니티](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop)를 통해 피드백을 제공할 때 문제가 발생 했을 때의 작업 ID와 대략적인 시간 프레임을 포함 합니다.
 * 외부 문제: 시스템 관리자가 완화할 수 있는 시나리오와 관련이 있습니다. 이러한 가상 데스크톱은 Windows 가상 데스크톱의 외부에 있습니다.
 
 다음 표에는 관리자가 실행할 수 있는 일반적인 오류가 정리 되어 있습니다.
@@ -143,8 +143,8 @@ Get-RdsDiagnosticActivities -TenantName <tenantName> -Outcome Failure
 |숫자 코드|오류 코드|제안 된 솔루션|
 |---|---|---|
 |3|UnauthorizedAccess|관리 PowerShell cmdlet을 실행 하려는 사용자에 게 해당 사용자 이름을 잘못 입력 하거나 이름을 잘못 입력 한 권한이 없습니다.|
-|1000|TenantNotFound|입력 한 테 넌 트 이름이 기존 테 넌 트와 일치 하지 않습니다. 오타가 있는지 테 넌 트 이름을 검토 하 고 다시 시도 하세요.|
-|1006|TenantCannotBeRemovedHasSessionHostPools|개체를 포함 하는 경우 테 넌 트를 삭제할 수 없습니다. 먼저 세션 호스트 풀을 삭제 한 후 다시 시도 하십시오.|
+|1000|TenantNotFound|입력 한 테넌트 이름이 기존 테넌트와 일치 하지 않습니다. 오타가 있는지 테넌트 이름을 검토 하 고 다시 시도 하세요.|
+|1006|TenantCannotBeRemovedHasSessionHostPools|개체를 포함 하는 경우 테넌트를 삭제할 수 없습니다. 먼저 세션 호스트 풀을 삭제 한 후 다시 시도 하십시오.|
 |2000|HostPoolNotFound|입력 한 호스트 풀 이름이 기존 호스트 풀과 일치 하지 않습니다. 오타가 있는지 호스트 풀 이름을 검토 하 고 다시 시도 하세요.|
 |2005|HostPoolCannotBeRemovedHasApplicationGroups|개체를 포함 하는 경우에는 호스트 풀을 삭제할 수 없습니다. 먼저 호스트 풀의 모든 앱 그룹을 제거 합니다.|
 |2004|HostPoolCannotBeRemovedHasSessionHosts|세션 호스트 풀을 삭제 하기 전에 먼저 모든 세션 호스트를 제거 하십시오.|
@@ -157,7 +157,7 @@ Get-RdsDiagnosticActivities -TenantName <tenantName> -Outcome Failure
 |8000|InvalidAuthorizationRoleScope|입력 한 역할 이름이 기존 역할 이름과 일치 하지 않습니다. 오타가 있는지 역할 이름을 검토 하 고 다시 시도 하세요. |
 |8001|UserNotFound |입력 한 사용자 이름이 기존 사용자 이름과 일치 하지 않습니다. 오타가 있는지 확인 하 고 다시 시도 하세요.|
 |8005|UserNotFoundInAAD |입력 한 사용자 이름이 기존 사용자 이름과 일치 하지 않습니다. 오타가 있는지 확인 하 고 다시 시도 하세요.|
-|8008|TenantConsentRequired|테 넌 트에 대 한 동의를 제공 하려면 [여기](tenant-setup-azure-active-directory.md#grant-permissions-to-windows-virtual-desktop) 의 지침을 따르세요.|
+|8008|TenantConsentRequired|테넌트에 대 한 동의를 제공 하려면 [여기](tenant-setup-azure-active-directory.md#grant-permissions-to-windows-virtual-desktop) 의 지침을 따르세요.|
 
 ### <a name="external-connection-error-codes"></a>외부 연결 오류 코드
 

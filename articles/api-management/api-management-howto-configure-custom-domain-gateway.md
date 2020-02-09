@@ -1,6 +1,6 @@
 ---
-title: 자체 호스팅 Azure API Management gateway에 대 한 사용자 지정 도메인 이름 구성 | Microsoft Docs
-description: 이 항목에서는 자체 호스팅 Azure API Management gateway에 대 한 사용자 지정 도메인 이름을 구성 하는 단계에 대해 설명 합니다.
+title: 자체 호스팅 Azure API Management gateway에 대한 사용자 지정 도메인 이름 구성 | Microsoft Docs
+description: 이 항목에서는 자체 호스팅 Azure API Management gateway에 대한 사용자 지정 도메인 이름을 구성 하는 단계에 대해 설명 합니다.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -35,8 +35,8 @@ ms.locfileid: "73513810"
 
 -   API Management 인스턴스입니다. 자세한 내용은 [Azure API Management 인스턴스 만들기](get-started-create-service-instance.md)를 참조하세요.
 - 자체 호스팅 게이트웨이입니다. 자세한 내용은 [자체 호스팅 게이트웨이를 프로 비전 하는 방법](api-management-howto-provision-self-hosted-gateway.md) 을 참조 하세요.
--   사용자 또는 조직에서 소유 하 고 있는 사용자 지정 도메인 이름입니다. 이 항목에서는 사용자 지정 도메인 이름을 지정 하는 방법에 대 한 지침을 제공 하지 않습니다.
--   사용자 지정 도메인 이름을 자체 호스팅 게이트웨이의 IP 주소에 매핑하는 DNS 서버에서 호스트 되는 DNS 레코드입니다. 이 항목에서는 DNS 레코드를 호스트 하는 방법에 대 한 지침을 제공 하지 않습니다.
+-   사용자 또는 조직에서 소유 하 고 있는 사용자 지정 도메인 이름입니다. 이 항목에서는 사용자 지정 도메인 이름을 지정 하는 방법에 대한 지침을 제공 하지 않습니다.
+-   사용자 지정 도메인 이름을 자체 호스팅 게이트웨이의 IP 주소에 매핑하는 DNS 서버에서 호스트 되는 DNS 레코드입니다. 이 항목에서는 DNS 레코드를 호스트 하는 방법에 대한 지침을 제공 하지 않습니다.
 -   공개 및 프라이빗 키(.PFX)가 있는 유효한 인증서가 있어야 합니다. 주체 또는 SAN (주체 대체 이름)은 도메인 이름과 일치 해야 합니다. 이렇게 하면 API Management 인스턴스가 SSL을 통해 Url을 안전 하 게 노출할 수 있습니다.
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
@@ -56,7 +56,7 @@ ms.locfileid: "73513810"
 2. 도메인 이름을 구성 하려는 자체 호스팅 게이트웨이를 선택 합니다.
 3. **설정**에서 **호스트 이름** 을 선택 합니다.
 4. **+ 추가** 를 선택 합니다.
-5. **이름** 필드에 호스트 이름에 대 한 리소스 이름을 입력 합니다.
+5. **이름** 필드에 호스트 이름에 대한 리소스 이름을 입력 합니다.
 6. **호스트** 이름 필드에 도메인 이름을 입력 합니다.
 7. **인증서** 드롭다운에서 인증서를 선택 합니다.
 8. 이 게이트웨이를 통해 노출 되는 Api가 클라이언트 인증서 인증을 사용 하는 경우 **클라이언트 인증서 협상** 확인란을 선택 합니다.

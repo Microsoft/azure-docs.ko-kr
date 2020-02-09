@@ -19,7 +19,7 @@ ms.locfileid: "74926404"
 AKS 클러스터의 보안을 향상 시키기 위해 예약할 수 있는 pod을 제한할 수 있습니다. 허용 하지 않는 리소스를 요청 하는 pod는 AKS 클러스터에서 실행할 수 없습니다. Pod 보안 정책을 사용 하 여이 액세스를 정의 합니다. 이 문서에서는 pod 보안 정책을 사용 하 여 AKS에서 pod의 배포를 제한 하는 방법을 보여 줍니다.
 
 > [!IMPORTANT]
-> AKS 미리 보기 기능은 셀프 서비스 옵트인입니다. 미리 보기는 "있는 그대로" 및 "사용 가능한 상태로" 제공 되며 서비스 수준 계약 및 제한 된 보증에서 제외 됩니다. AKS 미리 보기는 최상의 노력에 대 한 고객 지원에서 부분적으로 다룹니다. 이러한 기능은 프로덕션 용도로는 사용할 수 없습니다. 추가 정보 다음 지원 문서를 참조 하세요.
+> AKS 미리 보기 기능은 셀프 서비스 옵트인입니다. 미리 보기는 "있는 그대로" 및 "사용 가능한 상태로" 제공 되며 서비스 수준 계약 및 제한 된 보증에서 제외 됩니다. AKS 미리 보기는 최상의 노력에 대한 고객 지원에서 부분적으로 다룹니다. 이러한 기능은 프로덕션 용도로는 사용할 수 없습니다. 추가 정보 다음 지원 문서를 참조 하세요.
 >
 > * [AKS 지원 정책][aks-support-policies]
 > * [Azure 지원 FAQ][aks-faq]
@@ -47,7 +47,7 @@ az extension update --name aks-preview
 Pod 보안 정책을 사용 하도록 AKS 클러스터를 만들거나 업데이트 하려면 먼저 구독에서 기능 플래그를 사용 하도록 설정 합니다. *PodSecurityPolicyPreview* 기능 플래그를 등록 하려면 다음 예제와 같이 [az feature register][az-feature-register] 명령을 사용 합니다.
 
 > [!CAUTION]
-> 구독에 기능을 등록 하면 현재 해당 기능을 등록 취소할 수 없습니다. 일부 미리 보기 기능을 사용 하도록 설정한 후에는 구독에서 만든 모든 AKS 클러스터에 대 한 기본값을 사용할 수 있습니다. 프로덕션 구독에서 미리 보기 기능을 사용 하도록 설정 하지 마세요. 별도의 구독을 사용 하 여 미리 보기 기능을 테스트 하 고 피드백을 수집 합니다.
+> 구독에 기능을 등록 하면 현재 해당 기능을 등록 취소할 수 없습니다. 일부 미리 보기 기능을 사용 하도록 설정한 후에는 구독에서 만든 모든 AKS 클러스터에 대한 기본값을 사용할 수 있습니다. 프로덕션 구독에서 미리 보기 기능을 사용 하도록 설정 하지 마세요. 별도의 구독을 사용 하 여 미리 보기 기능을 테스트 하 고 피드백을 수집 합니다.
 
 ```azurecli-interactive
 az feature register --name PodSecurityPolicyPreview --namespace Microsoft.ContainerService
@@ -67,9 +67,9 @@ az provider register --namespace Microsoft.ContainerService
 
 ## <a name="overview-of-pod-security-policies"></a>Pod 보안 정책 개요
 
-Kubernetes 클러스터에서 허용 컨트롤러는 리소스를 만들 때 API 서버에 대 한 요청을 가로채는 데 사용 됩니다. 그러면 허용 컨트롤러는 규칙 집합에 대해 리소스 요청의 *유효성을 검사* 하거나 배포 매개 변수를 변경 하도록 *리소스를 변경할* 수 있습니다.
+Kubernetes 클러스터에서 허용 컨트롤러는 리소스를 만들 때 API 서버에 대한 요청을 가로채는 데 사용 됩니다. 그러면 허용 컨트롤러는 규칙 집합에 대해 리소스 요청의 *유효성을 검사* 하거나 배포 매개 변수를 변경 하도록 *리소스를 변경할* 수 있습니다.
 
-*PodSecurityPolicy* 는 pod 사양이 정의 된 요구 사항을 충족 하는지 확인 하는 허용 컨트롤러입니다. 이러한 요구 사항에 따라 권한 있는 컨테이너의 사용, 특정 유형의 저장소에 대 한 액세스 또는 컨테이너를 실행할 수 있는 사용자 또는 그룹을 제한할 수 있습니다. Pod 사양이 pod 보안 정책에 설명 된 요구 사항을 충족 하지 않는 리소스를 배포 하려고 하면 요청이 거부 됩니다. AKS 클러스터에서 예약할 수 있는 pod을 제어 하는이 기능은 몇 가지 가능한 보안 취약점 또는 권한 에스컬레이션을 방지 합니다.
+*PodSecurityPolicy* 는 pod 사양이 정의 된 요구 사항을 충족 하는지 확인 하는 허용 컨트롤러입니다. 이러한 요구 사항에 따라 권한 있는 컨테이너의 사용, 특정 유형의 저장소에 대한 액세스 또는 컨테이너를 실행할 수 있는 사용자 또는 그룹을 제한할 수 있습니다. Pod 사양이 pod 보안 정책에 설명 된 요구 사항을 충족 하지 않는 리소스를 배포 하려고 하면 요청이 거부 됩니다. AKS 클러스터에서 예약할 수 있는 pod을 제어 하는이 기능은 몇 가지 가능한 보안 취약점 또는 권한 에스컬레이션을 방지 합니다.
 
 AKS 클러스터에서 pod 보안 정책을 사용 하도록 설정 하면 일부 기본 정책이 적용 됩니다. 이러한 기본 정책은 예약할 수 있는 pod를 정의 하는 기본 경험을 제공 합니다. 그러나 사용자 고유의 정책을 정의할 때까지 클러스터 사용자가 pod를 배포 하는 데 문제가 발생할 수 있습니다. 권장 되는 방법은 다음과 같습니다.
 
@@ -135,7 +135,7 @@ subjects:
 
 ## <a name="create-a-test-user-in-an-aks-cluster"></a>AKS 클러스터에서 테스트 사용자 만들기
 
-기본적으로 [az aks][az-aks-get-credentials] 명령을 사용 하는 경우 aks 클러스터에 대 한 *관리자* 자격 증명이 `kubectl` 구성에 추가 됩니다. 관리 사용자는 pod 보안 정책의 적용을 무시 합니다. AKS 클러스터에 Azure Active Directory 통합을 사용 하는 경우 관리자가 아닌 사용자의 자격 증명을 사용 하 여 로그인 하 여 정책 적용을 확인할 수 있습니다. 이 문서에서는 AKS 클러스터에서 사용할 수 있는 테스트 사용자 계정을 만들어 보겠습니다.
+기본적으로 [az aks][az-aks-get-credentials] 명령을 사용 하는 경우 aks 클러스터에 대한 *관리자* 자격 증명이 `kubectl` 구성에 추가 됩니다. 관리 사용자는 pod 보안 정책의 적용을 무시 합니다. AKS 클러스터에 Azure Active Directory 통합을 사용 하는 경우 관리자가 아닌 사용자의 자격 증명을 사용 하 여 로그인 하 여 정책 적용을 확인할 수 있습니다. 이 문서에서는 AKS 클러스터에서 사용할 수 있는 테스트 사용자 계정을 만들어 보겠습니다.
 
 [Kubectl create namespace][kubectl-create] 명령을 사용 하 여 테스트 리소스에 대해 *psp-aks* 라는 샘플 네임 스페이스를 만듭니다. 그런 다음 [kubectl create serviceaccount][kubectl-create] 명령을 사용 하 여 *nonadmin-user* 라는 서비스 계정을 만듭니다.
 
@@ -144,7 +144,7 @@ kubectl create namespace psp-aks
 kubectl create serviceaccount --namespace psp-aks nonadmin-user
 ```
 
-그런 다음 [kubectl create rolebinding][kubectl-create] 명령을 사용 하 여 네임 스페이스에서 기본 작업을 수행 하기 위해 *nonadmin-사용자* 에 대 한 rolebinding을 만듭니다.
+그런 다음 [kubectl create rolebinding][kubectl-create] 명령을 사용 하 여 네임 스페이스에서 기본 작업을 수행 하기 위해 *nonadmin-사용자* 에 대한 rolebinding을 만듭니다.
 
 ```console
 kubectl create rolebinding \
@@ -154,7 +154,7 @@ kubectl create rolebinding \
     --serviceaccount=psp-aks:nonadmin-user
 ```
 
-### <a name="create-alias-commands-for-admin-and-non-admin-user"></a>관리자 및 관리자가 아닌 사용자에 대 한 별칭 만들기 명령
+### <a name="create-alias-commands-for-admin-and-non-admin-user"></a>관리자 및 관리자가 아닌 사용자에 대한 별칭 만들기 명령
 
 이전 단계에서 만든 `kubectl` 및 비관리자 사용자를 사용할 때 일반 관리자 사용자 간의 차이점을 강조 표시 하려면 다음 두 명령줄 별칭을 만듭니다.
 
@@ -235,7 +235,7 @@ NAME                 READY   STATUS                       RESTARTS   AGE
 nginx-unprivileged   0/1     CreateContainerConfigError   0          26s
 ```
 
-[Kubectl 설명 pod][kubectl-describe] 명령을 사용 하 여 pod에 대 한 이벤트를 확인 합니다. 다음 압축 예제에서는 요청 하지 않았더라도 컨테이너와 이미지에 루트 권한이 필요 합니다.
+[Kubectl 설명 pod][kubectl-describe] 명령을 사용 하 여 pod에 대한 이벤트를 확인 합니다. 다음 압축 예제에서는 요청 하지 않았더라도 컨테이너와 이미지에 루트 권한이 필요 합니다.
 
 ```console
 $ kubectl-nonadminuser describe pod nginx-unprivileged
@@ -255,7 +255,7 @@ Events:
   Normal   Pulled     2m10s (x25 over 7m13s)  kubelet, aks-agentpool-34777077-0  Container image "nginx:1.14.2" already present on machine
 ```
 
-권한 있는 액세스를 요청 하지 않은 경우에도 NGINX의 컨테이너 이미지는 포트 *80*에 대 한 바인딩을 만들어야 합니다. 포트 *1024* 를 바인딩하려면 *루트* 사용자가 필요 합니다. Pod가 시작 되려고 할 때 *제한* 된 pod 보안 정책은이 요청을 거부 합니다.
+권한 있는 액세스를 요청 하지 않은 경우에도 NGINX의 컨테이너 이미지는 포트 *80*에 대한 바인딩을 만들어야 합니다. 포트 *1024* 를 바인딩하려면 *루트* 사용자가 필요 합니다. Pod가 시작 되려고 할 때 *제한* 된 pod 보안 정책은이 요청을 거부 합니다.
 
 이 예에서는 AKS에서 만든 기본 pod 보안 정책이 적용 되 고 사용자가 수행할 수 있는 작업을 제한 하는 방법을 보여 줍니다. 기본 NGINX pod를 거부 하지 않을 수 있으므로 이러한 기본 정책의 동작을 이해 하는 것이 중요 합니다.
 
@@ -299,7 +299,7 @@ NAME                         READY   STATUS              RESTARTS   AGE
 nginx-unprivileged-nonroot   0/1     CrashLoopBackOff    1          3s
 ```
 
-[Kubectl 설명 pod][kubectl-describe] 명령을 사용 하 여 pod에 대 한 이벤트를 확인 합니다. 다음 압축 예제에서는 pod 이벤트를 보여 줍니다.
+[Kubectl 설명 pod][kubectl-describe] 명령을 사용 하 여 pod에 대한 이벤트를 확인 합니다. 다음 압축 예제에서는 pod 이벤트를 보여 줍니다.
 
 ```console
 $ kubectl-nonadminuser describe pods nginx-unprivileged
@@ -350,7 +350,7 @@ kubectl-nonadminuser delete -f nginx-unprivileged-nonroot.yaml
 
 이제 기본 pod 보안 정책의 동작을 살펴보았으므로 *관리자가 아닌 사용자* 가 pod를 예약 하는 방법을 제공 하겠습니다.
 
-권한 있는 액세스를 요청 하는 pod를 거부 하는 정책을 만들어 보겠습니다. *RunAsUser* 또는 허용 된 *볼륨과*같은 기타 옵션은 명시적으로 제한 되지 않습니다. 이 유형의 정책은 권한 있는 액세스에 대 한 요청을 거부 하지만, 그렇지 않으면 클러스터에서 요청 된 pod을 실행할 수 있습니다.
+권한 있는 액세스를 요청 하는 pod를 거부 하는 정책을 만들어 보겠습니다. *RunAsUser* 또는 허용 된 *볼륨과*같은 기타 옵션은 명시적으로 제한 되지 않습니다. 이 유형의 정책은 권한 있는 액세스에 대한 요청을 거부 하지만, 그렇지 않으면 클러스터에서 요청 된 pod을 실행할 수 있습니다.
 
 `psp-deny-privileged.yaml` 라는 파일을 만들고 다음 YAML 매니페스트를 붙여 넣습니다.
 
@@ -379,7 +379,7 @@ spec:
 kubectl apply -f psp-deny-privileged.yaml
 ```
 
-사용 가능한 정책을 보려면 다음 예제와 같이 [kubectl get psp][kubectl-get] 명령을 사용 합니다. 이전 예제에서 적용 된 기본 *제한* 정책과 함께 *psp-거부 권한* 정책을 비교 하 여 pod를 만듭니다. 정책에 따라 *PRIV* 에스컬레이션 사용만 거부 됩니다. *Psp-거부 권한* 정책에 대 한 사용자 또는 그룹에는 제한이 없습니다.
+사용 가능한 정책을 보려면 다음 예제와 같이 [kubectl get psp][kubectl-get] 명령을 사용 합니다. 이전 예제에서 적용 된 기본 *제한* 정책과 함께 *psp-거부 권한* 정책을 비교 하 여 pod를 만듭니다. 정책에 따라 *PRIV* 에스컬레이션 사용만 거부 됩니다. *Psp-거부 권한* 정책에 대한 사용자 또는 그룹에는 제한이 없습니다.
 
 ```console
 $ kubectl get psp
@@ -445,7 +445,7 @@ kubectl apply -f psp-deny-privileged-clusterrolebinding.yaml
 
 ## <a name="test-the-creation-of-an-unprivileged-pod-again"></a>권한 없는 pod 생성을 다시 테스트 합니다.
 
-사용자 지정 pod 보안 정책이 적용 되 고 정책을 사용 하기 위한 사용자 계정에 대 한 바인딩이 있으면 권한 없는 pod를 다시 만들려고 시도 합니다. [Kubectl apply][kubectl-apply] 명령을 사용 하 여 pod를 만들려면 동일한 `nginx-privileged.yaml` 매니페스트를 사용 합니다.
+사용자 지정 pod 보안 정책이 적용 되 고 정책을 사용 하기 위한 사용자 계정에 대한 바인딩이 있으면 권한 없는 pod를 다시 만들려고 시도 합니다. [Kubectl apply][kubectl-apply] 명령을 사용 하 여 pod를 만들려면 동일한 `nginx-privileged.yaml` 매니페스트를 사용 합니다.
 
 ```console
 kubectl-nonadminuser apply -f nginx-unprivileged.yaml
@@ -460,7 +460,7 @@ NAME                 READY   STATUS    RESTARTS   AGE
 nginx-unprivileged   1/1     Running   0          7m14s
 ```
 
-이 예제에서는 여러 사용자 또는 그룹에 대 한 AKS 클러스터에 대 한 액세스를 정의 하는 사용자 지정 pod 보안 정책을 만드는 방법을 보여 줍니다. 기본 AKS 정책은 pod가 실행할 수 있는 작업에 대 한 긴밀 한 제어를 제공 하므로 사용자 지정 정책을 만들어 필요한 제한 사항을 올바르게 정의 합니다.
+이 예제에서는 여러 사용자 또는 그룹에 대한 AKS 클러스터에 대한 액세스를 정의 하는 사용자 지정 pod 보안 정책을 만드는 방법을 보여 줍니다. 기본 AKS 정책은 pod가 실행할 수 있는 작업에 대한 긴밀 한 제어를 제공 하므로 사용자 지정 정책을 만들어 필요한 제한 사항을 올바르게 정의 합니다.
 
 [Kubectl delete][kubectl-delete] 명령을 사용 하 여 NGINX 권한 없는 pod를 삭제 하 고 yaml 매니페스트의 이름을 지정 합니다.
 
@@ -500,9 +500,9 @@ kubectl delete namespace psp-aks
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서에서는 권한 있는 액세스 사용을 방지 하기 위해 pod 보안 정책을 만드는 방법을 살펴보았습니다. 볼륨이 나 RunAs 사용자와 같은 정책에서 적용할 수 있는 많은 기능이 있습니다. 사용할 수 있는 옵션에 대 한 자세한 내용은 [Kubernetes pod 보안 정책 참조 문서][kubernetes-policy-reference]를 참조 하세요.
+이 문서에서는 권한 있는 액세스 사용을 방지 하기 위해 pod 보안 정책을 만드는 방법을 살펴보았습니다. 볼륨이 나 RunAs 사용자와 같은 정책에서 적용할 수 있는 많은 기능이 있습니다. 사용할 수 있는 옵션에 대한 자세한 내용은 [Kubernetes pod 보안 정책 참조 문서][kubernetes-policy-reference]를 참조 하세요.
 
-Pod 네트워크 트래픽을 제한 하는 방법에 대 한 자세한 내용은 [AKS에서 네트워크 정책을 사용 하 여 pod 간의 트래픽 보호][network-policies]를 참조 하세요.
+Pod 네트워크 트래픽을 제한 하는 방법에 대한 자세한 내용은 [AKS에서 네트워크 정책을 사용 하 여 pod 간의 트래픽 보호][network-policies]를 참조 하세요.
 
 <!-- LINKS - external -->
 [kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply

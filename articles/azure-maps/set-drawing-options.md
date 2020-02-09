@@ -23,7 +23,7 @@ Azure Maps 웹 SDK는 *그리기 도구 모듈*을 제공 합니다. 이 모듈�
 
 1. 새 HTML 파일을 만들고 [평소와 같이 맵을 구현](https://docs.microsoft.com/azure/azure-maps/how-to-use-map-control)합니다.
 2. Azure Maps 그리기 도구 모듈을 로드 합니다. 다음 두 가지 방법 중 하나로 로드할 수 있습니다.
-    - Azure Maps services 모듈의 전역적으로 호스팅된 Azure Content Delivery Network 버전을 사용 합니다. 파일의 `<head>` 요소에 JavaScript 및 CSS 스타일 시트에 대 한 참조를 추가 합니다.
+    - Azure Maps services 모듈의 전역적으로 호스팅된 Azure Content Delivery Network 버전을 사용 합니다. 파일의 `<head>` 요소에 JavaScript 및 CSS 스타일 시트에 대한 참조를 추가 합니다.
 
         ```html
         <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/drawing/0.1/atlas-drawing.min.css" type="text/css" />
@@ -34,7 +34,7 @@ Azure Maps 웹 SDK는 *그리기 도구 모듈*을 제공 합니다. 이 모듈�
     
         > **npm 설치-맵-그리기-도구**
     
-        그런 다음 파일의 `<head>` 요소에 JavaScript 및 CSS 스타일 시트에 대 한 참조를 추가 합니다.
+        그런 다음 파일의 `<head>` 요소에 JavaScript 및 CSS 스타일 시트에 대한 참조를 추가 합니다.
 
          ```html
         <link rel="stylesheet" href="node_modules/azure-maps-drawing-tools/dist/atlas-drawing.min.css" type="text/css" />
@@ -43,7 +43,7 @@ Azure Maps 웹 SDK는 *그리기 도구 모듈*을 제공 합니다. 이 모듈�
 
 ## <a name="use-the-drawing-manager-directly"></a>드로잉 관리자 직접 사용
 
-그리기 도구 모듈이 응용 프로그램에 로드 되 면 그리기 [관리자](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest#setoptions-drawingmanageroptions-)를 사용 하 여 그리기 및 편집 기능을 사용 하도록 설정할 수 있습니다. 드로잉 관리자에 대 한 옵션을 인스턴스화하거나 또는 `drawingManager.setOptions()` 함수를 사용 하 여 지정할 수 있습니다.
+그리기 도구 모듈이 응용 프로그램에 로드 되 면 그리기 [관리자](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest#setoptions-drawingmanageroptions-)를 사용 하 여 그리기 및 편집 기능을 사용 하도록 설정할 수 있습니다. 드로잉 관리자에 대한 옵션을 인스턴스화하거나 또는 `drawingManager.setOptions()` 함수를 사용 하 여 지정할 수 있습니다.
 
 ### <a name="set-the-drawing-mode"></a>그리기 모드 설정
 
@@ -94,7 +94,7 @@ drawingManager = new atlas.drawing.DrawingManager(map,{
 
 ### <a name="customizing-drawing-options"></a>그리기 옵션 사용자 지정
 
-이전 예제에서는 드로잉 관리자를 인스턴스화하는 동안 그리기 옵션을 사용자 지정 하는 방법을 보여 주었습니다. `drawingManager.setOptions()` 함수를 사용 하 여 그리기 관리자 옵션을 설정할 수도 있습니다. 다음은 setOptions 함수를 사용 하 여 드로잉 관리자에 대 한 모든 옵션의 사용자 지정을 테스트 하는 도구입니다.
+이전 예제에서는 드로잉 관리자를 인스턴스화하는 동안 그리기 옵션을 사용자 지정 하는 방법을 보여 주었습니다. `drawingManager.setOptions()` 함수를 사용 하 여 그리기 관리자 옵션을 설정할 수도 있습니다. 다음은 setOptions 함수를 사용 하 여 드로잉 관리자에 대한 모든 옵션의 사용자 지정을 테스트 하는 도구입니다.
 
 <br/>
 

@@ -51,7 +51,7 @@ ms.locfileid: "75406147"
 ##  <a name="combine-resources-in-azure-resource-groups"></a>Azure 리소스 그룹의 리소스 결합
 현재 Azure의 일반적인 애플리케이션에는 VM 및 App Services나 Cloud Services, AKS 클러스터 또는 Service Fabric에 호스트된 마이크로서비스와 같은 다양한 리소스가 포함됩니다. 이러한 애플리케이션은 Event Hubs, Storage, SQL 및 Service Bus와 같은 종속성을 자주 사용합니다.
 
-- Azure 리소스 그룹의 리소스를 결합 하 여 다양 한 응용 프로그램을 구성 하는 모든 리소스에 대 한 완전 한 가시성을 얻을 수 있습니다. [리소스 그룹용 Azure Monitor](../azure-monitor/insights/resource-group-insights.md)는 전체 스택 애플리케이션의 상태 및 성능을 추적하고 조사 또는 디버깅을 위해 개별 구성 요소로 드릴다운할 수 있는 간단한 방법을 제공합니다.
+- Azure 리소스 그룹의 리소스를 결합 하 여 다양 한 응용 프로그램을 구성 하는 모든 리소스에 대한 완전 한 가시성을 얻을 수 있습니다. [리소스 그룹용 Azure Monitor](../azure-monitor/insights/resource-group-insights.md)는 전체 스택 애플리케이션의 상태 및 성능을 추적하고 조사 또는 디버깅을 위해 개별 구성 요소로 드릴다운할 수 있는 간단한 방법을 제공합니다.
 
 ## <a name="ensure-quality-through-continuous-deployment"></a>지속적인 배포를 통해 품질 보장
 연속 통합/지속적인 배포를 사용하면 자동화된 테스트의 결과에 따라 코드 변경 내용을 애플리케이션에 자동으로 통합하고 배포할 수 있습니다. 배포 프로세스를 간소화하고 프로덕션으로 이동하기 전에 변경 내용의 품질을 보장합니다.

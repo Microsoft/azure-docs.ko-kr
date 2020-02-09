@@ -26,7 +26,7 @@ ms.locfileid: "74926199"
 이 문서에서는 Azure Data Factory의 복사 작업을 사용하여 SAP HANA 데이터베이스에서 데이터를 복사하는 방법을 설명합니다. 이 문서는 복사 작업에 대한 일반적인 개요를 제공하는 [복사 작업 개요](copy-activity-overview.md) 문서를 기반으로 합니다.
 
 >[!TIP]
->SAP 데이터 통합 시나리오에 대 한 ADF의 전반적인 지원에 대 한 자세한 내용은 [Azure Data Factory 백서를 사용 하 여 sap 데이터 통합](https://github.com/Azure/Azure-DataFactory/blob/master/whitepaper/SAP%20Data%20Integration%20using%20Azure%20Data%20Factory.pdf) 에서 자세한 소개, comparsion 및 지침을 참조 하세요.
+>SAP 데이터 통합 시나리오에 대한 ADF의 전반적인 지원에 대한 자세한 내용은 [Azure Data Factory 백서를 사용 하 여 sap 데이터 통합](https://github.com/Azure/Azure-DataFactory/blob/master/whitepaper/SAP%20Data%20Integration%20using%20Azure%20Data%20Factory.pdf) 에서 자세한 소개, comparsion 및 지침을 참조 하세요.
 
 ## <a name="supported-capabilities"></a>지원되는 기능
 
@@ -66,7 +66,7 @@ SAP HANA 연결된 서비스에 다음 속성이 지원됩니다.
 | 자산 | 설명 | 필수 |
 |:--- |:--- |:--- |
 | type | 형식 속성은 **SapHana**로 설정해야 합니다. | yes |
-| connectionString | **기본 인증** 또는 **Windows 인증**을 사용 하 여 SAP HANA에 연결 하는 데 필요한 정보를 지정 합니다. 다음 샘플을 참조하세요.<br>연결 문자열에서 서버/포트는 필수 (기본 포트는 30015)이 고, 기본 인증을 사용 하는 경우 사용자 이름 및 암호는 필수입니다. 고급 설정에 대 한 자세한 내용은 [SAP HANA ODBC 연결 속성](<https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/7cab593774474f2f8db335710b2f5c50.html>) 을 참조 하세요.<br/>Azure Key Vault에 암호를 입력 하 고 연결 문자열에서 암호 구성을 끌어올 수도 있습니다. 자세한 내용은 [Azure Key Vault 문서의 자격 증명 저장](store-credentials-in-key-vault.md) 을 참조 하세요. | yes |
+| connectionString | **기본 인증** 또는 **Windows 인증**을 사용 하 여 SAP HANA에 연결 하는 데 필요한 정보를 지정 합니다. 다음 샘플을 참조하세요.<br>연결 문자열에서 서버/포트는 필수 (기본 포트는 30015)이 고, 기본 인증을 사용 하는 경우 사용자 이름 및 암호는 필수입니다. 고급 설정에 대한 자세한 내용은 [SAP HANA ODBC 연결 속성](<https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/7cab593774474f2f8db335710b2f5c50.html>) 을 참조 하세요.<br/>Azure Key Vault에 암호를 입력 하 고 연결 문자열에서 암호 구성을 끌어올 수도 있습니다. 자세한 내용은 [Azure Key Vault 문서의 자격 증명 저장](store-credentials-in-key-vault.md) 을 참조 하세요. | yes |
 | userName | Windows 인증을 사용 하는 경우 사용자 이름을 지정 합니다. 예: `user@domain.com` | 아닙니다. |
 | 암호 | 사용자 계정으로 password를 지정합니다. 이 필드를 SecureString으로 표시하여 Data Factory에 안전하게 저장하거나 [Azure Key Vault에 저장되는 비밀을 참조](store-credentials-in-key-vault.md)합니다. | 아닙니다. |
 | connectVia | 데이터 저장소에 연결하는 데 사용할 [Integration Runtime](concepts-integration-runtime.md)입니다. [필수 조건](#prerequisites)에 설명된 대로 자체 호스팅 Integration Runtime이 필요합니다. |yes |
@@ -256,7 +256,7 @@ SAP HANA에서 데이터를 복사하는 경우 SAP HANA 데이터 형식에서 
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
+속성에 대한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 Azure Data Factory에서 복사 작업의 원본 및 싱크로 지원되는 데이터 저장소 목록은 [지원되는 데이터 저장소](copy-activity-overview.md#supported-data-stores-and-formats)를 참조하세요.

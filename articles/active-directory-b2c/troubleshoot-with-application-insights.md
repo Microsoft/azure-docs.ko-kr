@@ -58,7 +58,7 @@ ms.locfileid: "76848149"
     ```
 
     * `DeveloperMode="true"`는 ApplicationInsights에서 처리 파이프라인을 통해 원격 분석을 신속 하 게 처리 하도록 지시 합니다. 개발에 좋지만 고용량으로 제한 됩니다.
-    * `ClientEnabled="true"`는 추적 페이지 보기 및 클라이언트 쪽 오류에 대 한 ApplicationInsights 클라이언트 쪽 스크립트를 보냅니다. Application Insights 포털의 **Browsertimings** 테이블에서 볼 수 있습니다. `ClientEnabled= "true"`를 설정 하 여 페이지 스크립트에 Application Insights를 추가 하 고 페이지 로드 및 AJAX 호출의 타이밍, 브라우저 예외 및 AJAX 오류에 대 한 세부 정보, 사용자 및 세션 수를 가져옵니다. 이 필드는 **선택 사항이**며 기본적으로 `false`로 설정 됩니다.
+    * `ClientEnabled="true"`는 추적 페이지 보기 및 클라이언트 쪽 오류에 대한 ApplicationInsights 클라이언트 쪽 스크립트를 보냅니다. Application Insights 포털의 **Browsertimings** 테이블에서 볼 수 있습니다. `ClientEnabled= "true"`를 설정 하 여 페이지 스크립트에 Application Insights를 추가 하 고 페이지 로드 및 AJAX 호출의 타이밍, 브라우저 예외 및 AJAX 오류에 대한 세부 정보, 사용자 및 세션 수를 가져옵니다. 이 필드는 **선택 사항이**며 기본적으로 `false`로 설정 됩니다.
     * `ServerEnabled="true"`는 Application Insights에 기존 UserJourneyRecorder JSON을 사용자 지정 이벤트로 보냅니다.
 
     예:
@@ -100,7 +100,7 @@ Application Insights에서 새 로그를 볼 수 있으려면 일반적으로 5 
 
 항목이 길어질 수 있습니다. 자세히 보기 위해 CSV로 내보냅니다.
 
-쿼리에 대 한 자세한 내용은 Azure Monitor의 [로그 쿼리 개요](../azure-monitor/log-query/log-query-overview.md)를 참조 하세요.
+쿼리에 대한 자세한 내용은 Azure Monitor의 [로그 쿼리 개요](../azure-monitor/log-query/log-query-overview.md)를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

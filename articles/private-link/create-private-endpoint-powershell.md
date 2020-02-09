@@ -1,5 +1,5 @@
 ---
-title: Azure PowerShell를 사용 하 여 Azure 개인 끝점 만들기 Microsoft Docs
+title: Azure PowerShell를 사용 하 여 Azure 개인 엔드포인트 만들기 Microsoft Docs
 description: Azure 개인 링크에 대 한 자세한 정보
 services: private-link
 author: malopMSFT
@@ -14,7 +14,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75430332"
 ---
-# <a name="create-a-private-endpoint-using-azure-powershell"></a>Azure PowerShell를 사용 하 여 개인 끝점 만들기
+# <a name="create-a-private-endpoint-using-azure-powershell"></a>Azure PowerShell를 사용 하 여 개인 엔드포인트 만들기
 프라이빗 엔드포인트는 Azure에서 프라이빗 링크를 만드는 데 사용되는 기본 구성 요소입니다. 프라이빗 엔드포인트는 VM(Virtual Machines) 같은 Azure 리소스가 프라이빗 링크 리소스와 비공개로 통신할 수 있게 해줍니다. 
 
 이 빠른 시작에서는 Azure PowerShell을 통해 Azure Virtual Network에 VM을 만들고, Azure 프라이빗 엔드포인트를 사용하는 SQL Database Server를 만드는 방법에 대해 알아봅니다. 그러면 VM에서 SQL Database Server에 안전하게 액세스할 수 있습니다.
@@ -23,7 +23,7 @@ ms.locfileid: "75430332"
 
 ## <a name="create-a-resource-group"></a>리소스 그룹 만들기
 
-리소스를 만들기 전에 Virtual Network 및 개인 끝점 ( [AzResourceGroup)](/powershell/module/az.resources/new-azresourcegroup)을 호스팅하는 리소스 그룹을 만들어야 합니다. 다음 예제에서는 *WestUS* 위치에 *myresourcegroup* 이라는 리소스 그룹을 만듭니다.
+리소스를 만들기 전에 Virtual Network 및 개인 엔드포인트 ( [AzResourceGroup)](/powershell/module/az.resources/new-azresourcegroup)을 호스팅하는 리소스 그룹을 만들어야 합니다. 다음 예제에서는 *WestUS* 위치에 *myresourcegroup* 이라는 리소스 그룹을 만듭니다.
 
 ```azurepowershell
 
@@ -37,7 +37,7 @@ New-AzResourceGroup `
 
 ### <a name="create-a-virtual-network"></a>Virtual Network 만들기
 
-[AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork)를 사용 하 여 개인 끝점에 대 한 가상 네트워크를 만듭니다. 다음 예에서는 *MyVirtualNetwork*라는 Virtual Network를 만듭니다.
+[AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork)를 사용 하 여 개인 엔드포인트에 대 한 가상 네트워크를 만듭니다. 다음 예에서는 *MyVirtualNetwork*라는 Virtual Network를 만듭니다.
  
 ```azurepowershell
 
@@ -50,7 +50,7 @@ $virtualNetwork = New-AzVirtualNetwork `
 
 ### <a name="add-a-subnet"></a>서브넷 추가
 
-Azure는 Virtual Network 내의 서브넷에 리소스를 배포 하므로 서브넷을 만들어야 합니다. [AzVirtualNetworkSubnetConfig](/powershell/module/az.network/add-azvirtualnetworksubnetconfig)를 사용 하 여 *mysubnet* 이라는 서브넷 구성을 만듭니다. 다음 예제에서는 개인 끝점 네트워크 정책 플래그가 **사용 안 함으로**설정 된 *mysubnet* 이라는 서브넷을 만듭니다.
+Azure는 Virtual Network 내의 서브넷에 리소스를 배포 하므로 서브넷을 만들어야 합니다. [AzVirtualNetworkSubnetConfig](/powershell/module/az.network/add-azvirtualnetworksubnetconfig)를 사용 하 여 *mysubnet* 이라는 서브넷 구성을 만듭니다. 다음 예제에서는 개인 엔드포인트 네트워크 정책 플래그가 **사용 안 함으로**설정 된 *mysubnet* 이라는 서브넷을 만듭니다.
 
 ```azurepowershell
 $subnetConfig = Add-AzVirtualNetworkSubnetConfig `
@@ -120,7 +120,7 @@ New-AzSqlDatabase  -ResourceGroupName "myResourceGroup" `
 
 ## <a name="create-a-private-endpoint"></a>Private Endpoint 만들기
 
-Virtual Network에서 SQL Database 서버에 대 한 개인 끝점 ( [AzPrivateLinkServiceConnection 사용)](/powershell/module/az.network/New-AzPrivateLinkServiceConnection): 
+Virtual Network에서 SQL Database 서버에 대 한 개인 엔드포인트 ( [AzPrivateLinkServiceConnection 사용)](/powershell/module/az.network/New-AzPrivateLinkServiceConnection): 
 
 ```azurepowershell
 
@@ -220,7 +220,7 @@ mstsc /v:<publicIpAddress>
 8. *Myvm*에 대 한 원격 데스크톱 연결을 닫습니다. 
 
 ## <a name="clean-up-resources"></a>리소스 정리 
-개인 끝점, SQL Database 서버 및 VM을 사용 하 여 완료 한 경우 [AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) 를 사용 하 여 리소스 그룹 및 해당 그룹에 포함 된 모든 리소스를 제거 합니다.
+개인 엔드포인트, SQL Database 서버 및 VM을 사용 하 여 완료 한 경우 [AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) 를 사용 하 여 리소스 그룹 및 해당 그룹에 포함 된 모든 리소스를 제거 합니다.
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name myResourceGroup -Force

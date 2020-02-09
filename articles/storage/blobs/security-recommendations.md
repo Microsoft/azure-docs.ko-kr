@@ -55,7 +55,7 @@ Azure Security Center는 Azure 리소스의 보안 상태를 주기적으로 분
 |-|----|--|
 | 방화벽 규칙 사용 | 저장소 계정에 대 한 액세스를 지정 된 IP 주소 또는 범위에서 시작 되는 요청 또는 Azure Virtual Network (VNet)의 서브넷 목록에서 제한 하도록 방화벽 규칙을 구성 합니다. 방화벽 규칙을 구성 하는 방법에 대 한 자세한 내용은 [프록시 및 방화벽 설정 Azure File Sync](../files/storage-sync-files-firewall-and-proxy.md)을 참조 하세요. | - |
 | 신뢰할 수 있는 Microsoft 서비스에서 저장소 계정에 액세스 하도록 허용 | 저장소 계정에 대 한 방화벽 규칙을 켜면 요청이 Azure Virtual Network (VNet) 내에서 또는 허용 되는 공용 IP 주소에서 시작 하는 서비스에서 시작 되는 경우를 제외 하 고 기본적으로 들어오는 데이터에 대 한 요청이 차단 됩니다. 차단되는 요청에는 다른 Azure 서비스, Azure Portal, 로깅 및 메트릭 서비스 등이 포함됩니다. 신뢰할 수 있는 Microsoft 서비스에서 저장소 계정에 액세스할 수 있도록 허용 하는 예외를 추가 하 여 다른 Azure 서비스의 요청을 허용할 수 있습니다. 신뢰할 수 있는 Microsoft 서비스에 대 한 예외를 추가 하는 방법에 대 한 자세한 내용은 [프록시 및 방화벽 설정 Azure File Sync](../files/storage-sync-files-firewall-and-proxy.md)을 참조 하세요.| - |
-| 전용 끝점 사용 | 개인 끝점은 Azure Virtual Network (VNet)에서 저장소 계정으로 개인 IP 주소를 할당 합니다. 개인 링크를 통해 VNet과 저장소 계정 간의 모든 트래픽을 보호 합니다. 개인 끝점에 대 한 자세한 내용은 [Azure 개인 끝점을 사용 하 여 전용으로 저장소 계정에 연결](../../private-link/create-private-endpoint-storage-portal.md)을 참조 하세요. | - |
+| 전용 엔드포인트 사용 | 개인 엔드포인트은 Azure Virtual Network (VNet)에서 저장소 계정으로 개인 IP 주소를 할당 합니다. 개인 링크를 통해 VNet과 저장소 계정 간의 모든 트래픽을 보호 합니다. 개인 엔드포인트에 대 한 자세한 내용은 [Azure 개인 엔드포인트을 사용 하 여 전용으로 저장소 계정에 연결](../../private-link/create-private-endpoint-storage-portal.md)을 참조 하세요. | - |
 | 특정 네트워크에 대 한 네트워크 액세스 제한 | 액세스를 요구 하는 클라이언트를 호스팅하는 네트워크에 대 한 네트워크 액세스를 제한 하면 네트워크 공격에 대 한 리소스 노출을 줄일 수 있습니다. | [예](../../security-center/security-center-sql-service-recommendations.md) |
 
 ## <a name="loggingmonitoring"></a>로깅/모니터링

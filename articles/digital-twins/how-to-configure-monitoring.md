@@ -109,7 +109,7 @@ Azure Monitor에는 한 위치에서 로깅 원본을 보고 분석할 수 있�
 
    [![로그 관리](media/how-to-configure-monitoring/log-analytics-management.png)](media/how-to-configure-monitoring/log-analytics-management.png#lightbox)
 
-강력한 쿼리 작업에 대 한 자세한 내용은 [쿼리 시작](../azure-monitor/log-query/get-started-queries.md)하기를 참조 하세요.
+강력한 쿼리 작업에 대한 자세한 내용은 [쿼리 시작](../azure-monitor/log-query/get-started-queries.md)하기를 참조 하세요.
 
 > [!NOTE]
 > **Log Analytics 작업 영역** 에 처음으로 이벤트를 보낼 때 5 분의 지연이 발생할 수 있습니다.
@@ -119,11 +119,11 @@ Azure Monitor에는 한 위치에서 로깅 원본을 보고 분석할 수 있�
    [![경고 및 오류 알림](media/how-to-configure-monitoring/log-analytics-notifications.png)](media/how-to-configure-monitoring/log-analytics-notifications.png#lightbox)
 
 >[!TIP]
->**Log Analytics 작업 영역** 을 사용 하 여 여러 앱 기능, 구독 또는 서비스에 대 한 로그 기록을 쿼리할 수 있습니다.
+>**Log Analytics 작업 영역** 을 사용 하 여 여러 앱 기능, 구독 또는 서비스에 대한 로그 기록을 쿼리할 수 있습니다.
 
 ## <a name="other-options"></a>기타 옵션
 
-Azure Digital Twins는 애플리케이션별 로깅 및 보안 감사도 지원합니다. Azure Digital Twins 인스턴스에 사용할 수 있는 모든 Azure 로깅 옵션에 대 한 자세한 개요는 [azure 로그 감사](../security/fundamentals/log-audit.md) 문서를 참조 하세요.
+Azure Digital Twins는 애플리케이션별 로깅 및 보안 감사도 지원합니다. Azure Digital Twins 인스턴스에 사용할 수 있는 모든 Azure 로깅 옵션에 대한 자세한 개요는 [azure 로그 감사](../security/fundamentals/log-audit.md) 문서를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

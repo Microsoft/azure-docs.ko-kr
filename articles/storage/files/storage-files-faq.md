@@ -138,7 +138,7 @@ ms.locfileid: "75665387"
     Azure 파일 동기화 에이전트 버전 3 이전에 Azure 파일 동기화는 서버 엔드포인트인 동일한 볼륨이 아닌 서버 엔드포인트 외부에서 계층화된 파일의 이동을 차단합니다. 복사 작업, 계층화되지 않은 파일의 이동 및 다른 볼륨에 계층화된 파일의 이동은 영향을 받지 않았습니다. 이 동작의 이유는 파일 탐색기 및 다른 Windows API에서 동일한 볼륨에서의 이동 작업이 거의 순간적인 이름 바꾸기 작업이라는 암시적 가정 때문이었습니다. 즉, 이동하면 Azure 파일 동기화가 클라우드의 데이터를 다시 호출하는 동안 파일 탐색기 또는 다른 이동 방법(예: 명령줄 또는 PowerShell)이 응답하지 않는다고 표시됩니다. [Azure 파일 동기화 에이전트 버전 3.0.12.0](storage-files-release-notes.md#supported-versions)부터 Azure 파일 동기화를 사용하면 외부 서버 엔드포인트에서 계층화된 파일을 이동할 수 있습니다. 계층화된 파일을 서버 엔드포인트 외부에서 계층화된 파일로 유지한 다음, 백그라운드에서 파일을 회수하여 앞에서 언급한 부정적인 영향을 방지합니다. 즉, 동일한 볼륨에서의 이동은 즉각적이고, 이동이 완료되면 파일을 디스크로 회수하는 모든 작업을 수행합니다. 
 
 * <a id="afs-do-not-delete-server-endpoint"></a>
-  **서버 (동기화, 클라우드 계층화 등)의 Azure File Sync에 문제가 있습니다. 서버 끝점을 제거 하 고 다시 만들어야 하나요?**  
+  **서버 (동기화, 클라우드 계층화 등)의 Azure File Sync에 문제가 있습니다. 서버 엔드포인트을 제거 하 고 다시 만들어야 하나요?**  
     [!INCLUDE [storage-sync-files-remove-server-endpoint](../../../includes/storage-sync-files-remove-server-endpoint.md)]
     
 * <a id="afs-resource-move"></a>
@@ -182,10 +182,10 @@ id 기반 인증 및 액세스 제어를 지원 하나요?**
 
     파일 공유가 배포된 구독과 VM이 도메인에 조인된 Azure AD Domain Services 배포와 동일한 Azure AD 테넌트가 연결되어 있는 경우 동일한 Azure AD 자격 증명을 사용하여 Azure Files에 액세스할 수 있습니다. 제한 사항은 연결된 Azure AD 테넌트가 아닌 구독에만 적용됩니다.    
     
-* <a id="ad-support-subscription"></a>**파일 공유와 연결 된 기본 테 넌 트와 다른 AZURE AD 테 넌 트를 사용 하 여 azure AD DS 인증 Azure Files를 사용할 수 
+* <a id="ad-support-subscription"></a>**파일 공유와 연결 된 기본 테넌트와 다른 AZURE AD 테넌트를 사용 하 여 azure AD DS 인증 Azure Files를 사용할 수 
 있나요?**
 
-    아니요, Azure Files는 azure AD 테 넌 트와 파일 공유와 동일한 구독에 있는 azure AD DS 통합만 지원 합니다. 하나의 구독만 Azure AD 테넌트와 연결할 수 있습니다.
+    아니요, Azure Files는 azure AD 테넌트와 파일 공유와 동일한 구독에 있는 azure AD DS 통합만 지원 합니다. 하나의 구독만 Azure AD 테넌트와 연결할 수 있습니다.
 
 * <a id="ad-linux-vms"></a>
 **Azure AD DS 인증 지원 Linux vm을 Azure Files 하나요?**

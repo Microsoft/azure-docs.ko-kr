@@ -144,7 +144,7 @@ Get-AzureApplicationGateway AppGwTest
 |---|---|
 |**이름** |사용자 지정 프로브에 대한 참조 이름입니다. |
 | **프로토콜** | 사용되는 프로토콜입니다(가능한 값: HTTP 또는 HTTPS).|
-| **Host** 및 **Path** | 애플리케이션 게이트웨이에서 인스턴스 상태를 확인하기 위해 호출하는 완전한 URL 경로입니다. 예를 들어 http:\//contoso.com/웹 사이트가 있는 경우 프로브 검사에 대 한 사용자 지정 프로브를 "http:\//contoso.com/path/custompath.htm"로 구성 하 여 성공적인 HTTP 응답을 받을 수 있습니다.|
+| **Host** 및 **Path** | 애플리케이션 게이트웨이에서 인스턴스 상태를 확인하기 위해 호출하는 완전한 URL 경로입니다. 예를 들어 http:\//contoso.com/웹 사이트가 있는 경우 프로브 검사에 대한 사용자 지정 프로브를 "http:\//contoso.com/path/custompath.htm"로 구성 하 여 성공적인 HTTP 응답을 받을 수 있습니다.|
 | **간격** | 프로브 간격 확인을 구성합니다(단위: 초).|
 | **Timeout** | HTTP 응답 확인에 대한 프로브 시간 제한을 정의합니다.|
 | **UnhealthyThreshold** | 백 엔드 인스턴스를 *unhealthy*(비정상) 플래그로 지정하는 데 필요한 실패한 HTTP 응답 수입니다.|

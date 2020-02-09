@@ -1,6 +1,6 @@
 ---
-title: Azure NetApp Files에 대 한 NFS 볼륨 만들기 | Microsoft Docs
-description: Azure NetApp Files에 대 한 NFS 볼륨을 만드는 방법을 설명 합니다.
+title: Azure NetApp Files에 대한 NFS 볼륨 만들기 | Microsoft Docs
+description: Azure NetApp Files에 대한 NFS 볼륨을 만드는 방법을 설명 합니다.
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -23,7 +23,7 @@ ms.locfileid: "74773554"
 ---
 # <a name="create-an-nfs-volume-for-azure-netapp-files"></a>Azure NetApp Files에 대한 NFS 볼륨 만들기
 
-Azure NetApp Files는 NFS (NFSv3 및 NFSv 4.1) 및 SMBv3 볼륨을 지원 합니다. 볼륨의 용량 소비는 해당 풀의 프로비전된 용량에 대해 계산됩니다. 이 문서에서는 NFS 볼륨을 만드는 방법을 보여 줍니다. SMB 볼륨을 만들려면 [Azure NetApp Files에 대 한 smb 볼륨 만들기](azure-netapp-files-create-volumes-smb.md)를 참조 하세요. 
+Azure NetApp Files는 NFS (NFSv3 및 NFSv 4.1) 및 SMBv3 볼륨을 지원 합니다. 볼륨의 용량 소비는 해당 풀의 프로비전된 용량에 대해 계산됩니다. 이 문서에서는 NFS 볼륨을 만드는 방법을 보여 줍니다. SMB 볼륨을 만들려면 [Azure NetApp Files에 대한 smb 볼륨 만들기](azure-netapp-files-create-volumes-smb.md)를 참조 하세요. 
 
 ## <a name="before-you-begin"></a>시작하기 전에 
 용량 풀을 설정해야 합니다.   
@@ -37,18 +37,18 @@ Azure NetApp Files에 서브넷을 위임해야 합니다.
   NFSv3는 다양 한 사용 사례를 처리할 수 있으며 대부분의 엔터프라이즈 응용 프로그램에 일반적으로 배포 됩니다. 응용 프로그램에 필요한 버전 (NFSv3 또는 NFSv 4.1)의 유효성을 검사 하 고 적절 한 버전을 사용 하 여 볼륨을 만들어야 합니다. 예를 들어 [Apache ActiveMQ](https://activemq.apache.org/shared-file-system-master-slave)를 사용 하는 경우 NFSv3를 통해 nfsv 4.1의 파일 잠금이 권장 됩니다. 
 
 * 보안  
-  NFSv3 및 NFSv 4.1에는 UNIX 모드 비트 (읽기, 쓰기 및 실행)에 대 한 지원이 제공 됩니다. Nfs 볼륨을 탑재 하려면 NFS 클라이언트에서 루트 수준 액세스 권한이 필요 합니다.
+  NFSv3 및 NFSv 4.1에는 UNIX 모드 비트 (읽기, 쓰기 및 실행)에 대한 지원이 제공 됩니다. Nfs 볼륨을 탑재 하려면 NFS 클라이언트에서 루트 수준 액세스 권한이 필요 합니다.
 
-* NFSv 4.1에 대 한 로컬 사용자/그룹 및 LDAP 지원  
-  현재 NFSv 4.1에서는 볼륨에 대 한 루트 액세스만 지원 합니다. [Azure NetApp Files에 대 한 nfsv 4.1 기본 도메인 구성을](azure-netapp-files-configure-nfsv41-domain.md)참조 하세요. 
+* NFSv 4.1에 대한 로컬 사용자/그룹 및 LDAP 지원  
+  현재 NFSv 4.1에서는 볼륨에 대한 루트 액세스만 지원 합니다. [Azure NetApp Files에 대한 nfsv 4.1 기본 도메인 구성을](azure-netapp-files-configure-nfsv41-domain.md)참조 하세요. 
 
 ## <a name="best-practice"></a>모범 사례
 
-* 볼륨에 대 한 적절 한 탑재 명령을 사용 하 고 있는지 확인 해야 합니다.  [Windows 또는 Linux 가상 머신에 대 한 볼륨 탑재 또는 분리](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)를 참조 하세요.
+* 볼륨에 대한 적절 한 탑재 명령을 사용 하 고 있는지 확인 해야 합니다.  [Windows 또는 Linux 가상 머신에 대한 볼륨 탑재 또는 분리](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)를 참조 하세요.
 
 * NFS 클라이언트는 Azure NetApp Files 볼륨과 동일한 VNet 또는 피어 링 VNet에 있어야 합니다. VNet 외부에서의 연결은 지원 됩니다. 그러나 추가 대기 시간이 발생 하 고 전반적인 성능이 저하 됩니다.
 
-* NFS 클라이언트가 최신 상태 이며 운영 체제에 대 한 최신 업데이트를 실행 하 고 있는지 확인 해야 합니다.
+* NFS 클라이언트가 최신 상태 이며 운영 체제에 대한 최신 업데이트를 실행 하 고 있는지 확인 해야 합니다.
 
 ## <a name="create-an-nfs-volume"></a>NFS 볼륨 만들기
 
@@ -59,7 +59,7 @@ Azure NetApp Files에 서브넷을 위임해야 합니다.
 2.  **+ 볼륨 추가**를 클릭하여 볼륨을 만듭니다.  
     볼륨 만들기 창이 나타납니다.
 
-3.  볼륨 만들기 창에서 **만들기** 를 클릭 하 고 다음 필드에 대 한 정보를 제공 합니다.   
+3.  볼륨 만들기 창에서 **만들기** 를 클릭 하 고 다음 필드에 대한 정보를 제공 합니다.   
     * **볼륨 이름**      
         만들고 있는 볼륨의 이름을 지정합니다.   
 
@@ -99,7 +99,7 @@ Azure NetApp Files에 서브넷을 위임해야 합니다.
         파일 경로는 각 구독 및 각 지역 내에서 고유 해야 합니다. 
 
     * 볼륨의 NFS 버전(**NFSv3** 또는 **NFSv4.1**)을 선택합니다.  
-    * 필요에 따라 [NFS 볼륨에 대 한 내보내기 정책을 구성](azure-netapp-files-configure-export-policy.md)합니다.
+    * 필요에 따라 [NFS 볼륨에 대한 내보내기 정책을 구성](azure-netapp-files-configure-export-policy.md)합니다.
 
     ![NFS 프로토콜 지정](../media/azure-netapp-files/azure-netapp-files-protocol-nfs.png)
 
@@ -112,8 +112,8 @@ Azure NetApp Files에 서브넷을 위임해야 합니다.
 
 ## <a name="next-steps"></a>다음 단계  
 
-* [Azure NetApp Files에 대 한 NFSv 4.1 기본 도메인 구성](azure-netapp-files-configure-nfsv41-domain.md)
-* [Windows 또는 Linux 가상 머신에 대 한 볼륨 탑재 또는 분리](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
+* [Azure NetApp Files에 대한 NFSv 4.1 기본 도메인 구성](azure-netapp-files-configure-nfsv41-domain.md)
+* [Windows 또는 Linux 가상 머신에 대한 볼륨 탑재 또는 분리](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
 * [NFS 볼륨에 대한 내보내기 정책 구성](azure-netapp-files-configure-export-policy.md)
 * [Azure NetApp Files에 대한 리소스 제한](azure-netapp-files-resource-limits.md)
 * [Azure 서비스에 대한 가상 네트워크 통합에 대해 알아보기](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)

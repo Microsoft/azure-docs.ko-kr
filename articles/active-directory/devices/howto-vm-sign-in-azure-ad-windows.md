@@ -38,7 +38,7 @@ Azure AD 인증을 사용 하 여 Azure에서 Windows Vm에 로그인 하는 경
 - VDI 배포에 포함 되는 Azure Windows Vm의 Azure AD 조인을 자동화 하 고 크기를 조정 합니다.
 
 > [!NOTE]
-> 이 기능을 사용 하도록 설정 하면 azure의 Windows Vm이 Azure AD에 조인 됩니다. 프레미스 AD 또는 Azure AD DS와 같은 다른 도메인에 조인할 수 없습니다. 이 작업을 수행 해야 하는 경우 확장을 제거 하 여 Azure AD 테 넌 트에서 VM의 연결을 끊어야 합니다.
+> 이 기능을 사용 하도록 설정 하면 azure의 Windows Vm이 Azure AD에 조인 됩니다. 프레미스 AD 또는 Azure AD DS와 같은 다른 도메인에 조인할 수 없습니다. 이 작업을 수행 해야 하는 경우 확장을 제거 하 여 Azure AD 테넌트에서 VM의 연결을 끊어야 합니다.
 
 ## <a name="requirements"></a>요구 사항
 
@@ -61,7 +61,7 @@ Azure AD 인증을 사용 하 여 Azure에서 Windows Vm에 로그인 하는 경
 
 ### <a name="network-requirements"></a>네트워크 요구 사항
 
-Azure에서 Windows Vm에 대해 Azure AD 인증을 사용 하도록 설정 하려면 Vm 네트워크 구성에서 TCP 포트 443을 통해 다음 끝점에 대 한 아웃 바운드 액세스를 허용 하는지 확인 해야 합니다.
+Azure에서 Windows Vm에 대해 Azure AD 인증을 사용 하도록 설정 하려면 Vm 네트워크 구성에서 TCP 포트 443을 통해 다음 엔드포인트에 대 한 아웃 바운드 액세스를 허용 하는지 확인 해야 합니다.
 
 - https:\//enterpriseregistration.windows.net
 - https:\//login.microsoftonline.com
@@ -235,24 +235,24 @@ VM이 Azure AD 조인 프로세스를 완료 하려면 AADLoginForWindows 확장
    > [!NOTE]
    > 초기 실패 후 확장이 다시 시작 되 면 배포 오류가 발생 한 로그가 CommandExecution_YYYYMMDDHHMMSSSSS로 저장 됩니다. 
 
-1. VM에서 명령 프롬프트를 열고 Azure 호스트에서 실행 되는 Instance Metadata Service (IMDS) 끝점에 대해 이러한 쿼리가 반환 되는지 확인 합니다.
+1. VM에서 명령 프롬프트를 열고 Azure 호스트에서 실행 되는 Instance Metadata Service (IMDS) 엔드포인트에 대해 이러한 쿼리가 반환 되는지 확인 합니다.
 
    | 실행할 명령 | 예상 출력 |
    | --- | --- |
    | `curl -H @{"Metadata"="true"} "http://169.254.169.254/metadata/instance?api-version=2017-08-01"` | Azure VM에 대 한 올바른 정보 |
-   | `curl -H @{"Metadata"="true"} "http://169.254.169.254/metadata/identity/info?api-version=2018-02-01"` | Azure 구독과 연결 된 유효한 테 넌 트 ID |
+   | `curl -H @{"Metadata"="true"} "http://169.254.169.254/metadata/identity/info?api-version=2018-02-01"` | Azure 구독과 연결 된 유효한 테넌트 ID |
    | `curl -H @{"Metadata"="true"} "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01"` | 이 VM에 할당 된 관리 id에 대해 Azure Active Directory에서 발급 한 유효한 액세스 토큰 |
 
    > [!NOTE]
    > [http://calebb.net/](http://calebb.net/)와 같은 도구를 사용 하 여 액세스 토큰을 디코딩할 수 있습니다. 액세스 토큰의 "appid"가 VM에 할당 된 관리 id와 일치 하는지 확인 합니다.
 
-1. 명령줄을 사용 하 여 VM에서 필요한 끝점에 액세스할 수 있는지 확인 합니다.
+1. 명령줄을 사용 하 여 VM에서 필요한 엔드포인트에 액세스할 수 있는지 확인 합니다.
    
    - 말아 https:\//login.microsoftonline.com/-D –
    - 말아 https:\//login.microsoftonline.com/`<TenantID>`/-D –
 
    > [!NOTE]
-   > `<TenantID>`를 Azure 구독과 연결 된 Azure AD 테 넌 트 ID로 바꿉니다.
+   > `<TenantID>`를 Azure 구독과 연결 된 Azure AD 테넌트 ID로 바꿉니다.
 
    - 말아 https:\//enterpriseregistration.windows.net/-D-
    - 말아 https:\//device.login.microsoftonline.com/-D-
@@ -267,11 +267,11 @@ AADLoginForWindows extension이 특정 오류 코드와 함께 실패 하는 경
 
 #### <a name="issue-1-aadloginforwindows-extension-fails-to-install-with-terminal-error-code-1007-and-exit-code--2145648574"></a>문제 1: AADLoginForWindows 확장을 설치 하지 못했습니다 (터미널 오류 코드 ' 1007 ' 및 종료 코드:-2145648574).
 
-확장에서 Azure AD 테 넌 트 정보를 쿼리할 수 없기 때문에이 종료 코드는 DSREG_E_MSI_TENANTID_UNAVAILABLE로 변환 됩니다.
+확장에서 Azure AD 테넌트 정보를 쿼리할 수 없기 때문에이 종료 코드는 DSREG_E_MSI_TENANTID_UNAVAILABLE로 변환 됩니다.
 
 1. Azure VM이 Instance Metadata Service에서 TenantID를 검색할 수 있는지 확인 합니다.
 
-   - 로컬 관리자로 VM에 RDP를 실행 하 고 VM의 관리자 권한 명령줄에서이 명령을 실행 하 여 끝점이 유효한 테 넌 트 ID를 반환 하는지 확인 합니다.
+   - 로컬 관리자로 VM에 RDP를 실행 하 고 VM의 관리자 권한 명령줄에서이 명령을 실행 하 여 엔드포인트이 유효한 테넌트 ID를 반환 하는지 확인 합니다.
       
       - 말아-H 메타 데이터: true http://169.254.169.254/metadata/identity/info?api-version=2018-02-01
 
@@ -279,15 +279,15 @@ AADLoginForWindows extension이 특정 오류 코드와 함께 실패 하는 경
 
 #### <a name="issue-2-aadloginforwindows-extension-fails-to-install-with-exit-code--2145648607"></a>문제 2: AADLoginForWindows 확장을 설치 하지 못하고 종료 코드:-2145648607
 
-이 종료 코드는 확장이 https://enterpriseregistration.windows.net 끝점에 연결할 수 없기 때문에 DSREG_AUTOJOIN_DISC_FAILED로 변환 됩니다.
+이 종료 코드는 확장이 https://enterpriseregistration.windows.net 엔드포인트에 연결할 수 없기 때문에 DSREG_AUTOJOIN_DISC_FAILED로 변환 됩니다.
 
-1. 명령줄을 사용 하 여 VM에서 필요한 끝점에 액세스할 수 있는지 확인 합니다.
+1. 명령줄을 사용 하 여 VM에서 필요한 엔드포인트에 액세스할 수 있는지 확인 합니다.
 
    - 말아 https:\//login.microsoftonline.com/-D –
    - 말아 https:\//login.microsoftonline.com/`<TenantID>`/-D –
    
    > [!NOTE]
-   > `<TenantID>`를 Azure 구독과 연결 된 Azure AD 테 넌 트 ID로 바꿉니다. 테 넌 트 ID를 찾아야 하는 경우 계정 이름 위로 마우스를 이동 하 여 디렉터리/테 넌 트 ID를 가져오거나 Azure Portal에서 디렉터리 ID > Azure Active Directory > 속성을 선택할 수 있습니다.
+   > `<TenantID>`를 Azure 구독과 연결 된 Azure AD 테넌트 ID로 바꿉니다. 테넌트 ID를 찾아야 하는 경우 계정 이름 위로 마우스를 이동 하 여 디렉터리/테넌트 ID를 가져오거나 Azure Portal에서 디렉터리 ID > Azure Active Directory > 속성을 선택할 수 있습니다.
 
    - 말아 https:\//enterpriseregistration.windows.net/-D-
    - 말아 https:\//device.login.microsoftonline.com/-D-
@@ -298,7 +298,7 @@ AADLoginForWindows extension이 특정 오류 코드와 함께 실패 하는 경
    `nslookup <URL>`
 
    > [!NOTE] 
-   > `<URL>`를 끝점에서 사용 하는 정규화 된 도메인 이름 (예: "login.microsoftonline.com")으로 바꿉니다.
+   > `<URL>`를 엔드포인트에서 사용 하는 정규화 된 도메인 이름 (예: "login.microsoftonline.com")으로 바꿉니다.
 
 1. 다음으로, 공용 DNS 서버를 지정 하면 명령이 성공 하도록 허용 하는 경우를 참조 하세요.
 

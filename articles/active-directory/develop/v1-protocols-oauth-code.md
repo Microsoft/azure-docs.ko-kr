@@ -351,4 +351,4 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 오류 코드 및 권장되는 클라이언트 작업에 대한 설명은 [토큰 엔드포인트 오류에 대한 오류 코드](#error-codes-for-token-endpoint-errors)를 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계
-Azure AD v2.0 끝점에 대 한 자세한 내용과 웹 응용 프로그램 및 웹 Api에 인증 및 권한 부여를 추가 하는 방법에 대 한 자세한 내용은 [샘플 응용 프로그램](sample-v1-code.md)을 참조 하세요.
+Azure AD v2.0 엔드포인트에 대 한 자세한 내용과 웹 응용 프로그램 및 웹 Api에 인증 및 권한 부여를 추가 하는 방법에 대 한 자세한 내용은 [샘플 응용 프로그램](sample-v1-code.md)을 참조 하세요.

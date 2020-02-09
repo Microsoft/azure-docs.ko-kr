@@ -35,7 +35,7 @@ ms.locfileid: "75866992"
 
 - Windows 컨테이너의 Azure Storage는 **미리 보기** 상태 이며 **프로덕션 시나리오**에서 **지원 되지 않습니다** .
 - Windows 컨테이너의 Azure Storage는 컨테이너 (읽기/쓰기)의 탑재 **Azure Files** 지원 합니다.
-- Windows App Service 계획에 대 한 고유한 코드 시나리오를 가져오기 위해 Windows 컨테이너의 Azure Storage 현재 **지원 되지 않습니다** .
+- Windows App Service 계획에 대한 고유한 코드 시나리오를 가져오기 위해 Windows 컨테이너의 Azure Storage 현재 **지원 되지 않습니다** .
 - Windows 컨테이너의 Azure Storage는 인프라 제한으로 인해 **저장소 방화벽** 구성 사용을 **지원 하지 않습니다** .
 - Windows 컨테이너의 Azure Storage를 사용 하 여 앱 당 **최대 5 개의** 탑재 시점을 지정할 수 있습니다.
 - Azure Storage은 독립적으로 청구 되며 웹 앱에 **포함 되지 않습니다** . [Azure Storage 가격 책정](https://azure.microsoft.com/pricing/details/storage)에 대해 자세히 알아보세요.

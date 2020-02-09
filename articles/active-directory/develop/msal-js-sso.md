@@ -103,7 +103,7 @@ userAgentApplication.loginRedirect(request);
 
 * **loginHint** 는 ID 토큰의 `preferred_username` 클레임으로 설정 해야 합니다.
 
-* **domain_hint** 는/ss 인증 기관을 사용 하는 경우에만 전달 해야 합니다. 도메인 힌트는 tid (테 넌 트 ID)에 의해 결정 됩니다.  ID 토큰의 `tid` 클레임이 `9188040d-6c67-4c5b-b112-36a304b66dad` 인 경우 소비자입니다. 그렇지 않으면 조직입니다.
+* **domain_hint** 는/ss 인증 기관을 사용 하는 경우에만 전달 해야 합니다. 도메인 힌트는 tid (테넌트 ID)에 의해 결정 됩니다.  ID 토큰의 `tid` 클레임이 `9188040d-6c67-4c5b-b112-36a304b66dad` 인 경우 소비자입니다. 그렇지 않으면 조직입니다.
 
 로그인 힌트 및 도메인 힌트에 대 한 값에 대 한 자세한 내용은 [여기](v2-oauth2-implicit-grant-flow.md) 를 참조 하세요.
 

@@ -43,7 +43,7 @@ ms.locfileid: "76938868"
 Azure DNS .NET SDK를 사용하려면 **Azure DNS 관리 라이브러리** NuGet 패키지 및 기타 필수 Azure 패키지를 설치해야 합니다.
 
 1. **Visual Studio**에서 프로젝트 또는 새 프로젝트를 엽니다.
-2. **도구** **>** **nuget 패키지 관리자** **>** **솔루션에 대 한 nuget 패키지 관리**...로 이동 합니다.
+2. **도구** **>** **nuget 패키지 관리자** **>** **솔루션에 대한 nuget 패키지 관리**...로 이동 합니다.
 3. **찾아보기**를 클릭하고 **시험판 포함** 확인란을 사용하도록 설정한 후, 검색 상자에 **Microsoft.Azure.Management.Dns**를 입력합니다.
 4. 패키지를 선택하고 **설치** 를 클릭하여 Visual Studio 프로젝트에 추가합니다.
 5. 또한 위의 프로세스를 반복하여 **Microsoft.Rest.ClientRuntime.Azure.Authentication** 및 **Microsoft.Azure.Management.ResourceManager** 패키지를 설치합니다.

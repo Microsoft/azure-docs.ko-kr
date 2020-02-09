@@ -1,6 +1,6 @@
 ---
 title: Grafana를 사용 하 여 Azure 데이터 탐색기에서 데이터 시각화
-description: 이 문서에서는 Grafana에 대 한 데이터 원본으로 Azure 데이터 탐색기를 설정 하 고 샘플 클러스터에서 데이터를 시각화 하는 방법을 알아봅니다.
+description: 이 문서에서는 Grafana에 대한 데이터 원본으로 Azure 데이터 탐색기를 설정 하 고 샘플 클러스터에서 데이터를 시각화 하는 방법을 알아봅니다.
 author: orspod
 ms.author: orspodek
 ms.reviewer: gabil
@@ -16,9 +16,9 @@ ms.locfileid: "74037981"
 ---
 # <a name="visualize-data-from-azure-data-explorer-in-grafana"></a>Grafana의 Azure Data Explorer에서 데이터 시각화
 
-Grafana는 데이터를 쿼리하고 시각화한 다음, 시각화에 따라 대시보드를 만들고 공유할 수 있도록 해주는 분석 플랫폼입니다. Grafana는 Azure Data Explorer *플러그 인*을 제공하여 Azure Data Explorer에서 데이터에 연결하고 데이터를 시각화할 수 있습니다. 이 문서에서는 Grafana에 대 한 데이터 원본으로 Azure 데이터 탐색기를 설정 하 고 샘플 클러스터에서 데이터를 시각화 하는 방법을 알아봅니다.
+Grafana는 데이터를 쿼리하고 시각화한 다음, 시각화에 따라 대시보드를 만들고 공유할 수 있도록 해주는 분석 플랫폼입니다. Grafana는 Azure Data Explorer *플러그 인*을 제공하여 Azure Data Explorer에서 데이터에 연결하고 데이터를 시각화할 수 있습니다. 이 문서에서는 Grafana에 대한 데이터 원본으로 Azure 데이터 탐색기를 설정 하 고 샘플 클러스터에서 데이터를 시각화 하는 방법을 알아봅니다.
 
-다음 비디오를 사용 하 여 Grafana의 Azure 데이터 탐색기 플러그 인을 사용 하 고, Grafana에 대 한 데이터 원본으로 Azure 데이터 탐색기를 설정한 다음, 데이터를 시각화 하는 방법을 알아보세요. 
+다음 비디오를 사용 하 여 Grafana의 Azure 데이터 탐색기 플러그 인을 사용 하 고, Grafana에 대한 데이터 원본으로 Azure 데이터 탐색기를 설정한 다음, 데이터를 시각화 하는 방법을 알아보세요. 
 
 > [!VIDEO https://www.youtube.com/embed/fSR_qCIFZSA]
 

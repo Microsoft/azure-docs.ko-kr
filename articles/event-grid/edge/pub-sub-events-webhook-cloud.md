@@ -65,7 +65,7 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
 
 ## <a name="create-a-topic"></a>토픽 만들기
 
-이벤트의 게시자는 event grid 토픽을 만들어야 합니다. 항목은 게시자가 이벤트를 보낼 수 있는 끝점을 가리킵니다.
+이벤트의 게시자는 event grid 토픽을 만들어야 합니다. 항목은 게시자가 이벤트를 보낼 수 있는 엔드포인트을 가리킵니다.
 
 1. 다음 콘텐츠를 사용 하 여 topic2를 만듭니다. 페이로드에 대 한 자세한 내용은 [API 설명서](api.md) 를 참조 하세요.
 

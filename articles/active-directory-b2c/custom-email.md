@@ -34,10 +34,10 @@ Azure Active Directory B2C (Azure AD B2C)의 사용자 지정 전자 메일을 �
 
 ## <a name="create-azure-ad-b2c-policy-key"></a>Azure AD B2C 정책 키 만들기
 
-그런 다음 참조할 정책에 대 한 Azure AD B2C 정책 키에 SendGrid API 키를 저장 합니다.
+그런 다음 참조할 정책에 대한 Azure AD B2C 정책 키에 SendGrid API 키를 저장 합니다.
 
 1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
-1. Azure AD B2C 테 넌 트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 Azure AD B2C 디렉터리를 선택 합니다.
+1. Azure AD B2C 테넌트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 Azure AD B2C 디렉터리를 선택 합니다.
 1. Azure Portal의 왼쪽 상단 모서리에서 **모든 서비스**를 선택하고 **Azure AD B2C**를 검색하여 선택합니다.
 1. 개요 페이지에서 **ID 경험 프레임워크**를 선택합니다.
 1. **정책 키**, **추가**를 차례로 선택합니다.
@@ -183,9 +183,9 @@ SendGrid 계정을 만들고 Azure AD B2C 정책 키에 SendGrid API 키를 저�
 
 그런 다음 SendGrid로 전송 되는 요청의 본문으로 사용할 JSON 문자열 클레임을 출력 하는 클레임 변환이 필요 합니다.
 
-JSON 개체의 구조는 InputParameters의 점 표기법과 InputClaims의 TransformationClaimTypes Id로 정의 됩니다. 점 표기법의 숫자는 배열을 의미 합니다. 값은 InputClaims의 값과 InputParameters ' "Value" 속성에서 제공 됩니다. JSON 클레임 변환에 대 한 자세한 내용은 [json 클레임 변환](json-transformations.md)을 참조 하세요.
+JSON 개체의 구조는 InputParameters의 점 표기법과 InputClaims의 TransformationClaimTypes Id로 정의 됩니다. 점 표기법의 숫자는 배열을 의미 합니다. 값은 InputClaims의 값과 InputParameters ' "Value" 속성에서 제공 됩니다. JSON 클레임 변환에 대한 자세한 내용은 [json 클레임 변환](json-transformations.md)을 참조 하세요.
 
-`<BuildingBlocks>`내의 `<ClaimsTransformations>` 요소에 다음 클레임 변환을 추가 합니다. 클레임 변환 XML에 대 한 다음 업데이트를 수행 합니다.
+`<BuildingBlocks>`내의 `<ClaimsTransformations>` 요소에 다음 클레임 변환을 추가 합니다. 클레임 변환 XML에 대한 다음 업데이트를 수행 합니다.
 
 * `template_id` InputParameter 값을 [Create SendGrid template](#create-sendgrid-template)의 이전에 만든 SendGrid 트랜잭션 템플릿의 ID로 업데이트 합니다.
 * `from.email` 주소 값을 업데이트 합니다. 유효한 전자 메일 주소를 사용 하 여 확인 전자 메일이 스팸으로 표시 되는 것을 방지할 수 있습니다.
@@ -231,7 +231,7 @@ JSON 개체의 구조는 InputParameters의 점 표기법과 InputClaims의 Tran
 
 1. 사용자 로부터 `email` 주소 클레임 유형을 수집 합니다.
 1. 사용자가 사용자에 게 보낸 코드를 사용 하 여 `verificationCode` 클레임 형식을 제공할 때까지 기다립니다.
-1. 이 표시 컨트롤에 대 한 참조를 포함 하는 자체 어설션된 기술 프로필에 `email`를 다시 반환 합니다.
+1. 이 표시 컨트롤에 대한 참조를 포함 하는 자체 어설션된 기술 프로필에 `email`를 다시 반환 합니다.
 1. `SendCode` 작업을 사용 하 여 OTP 코드를 생성 하 고 OTP 코드가 포함 된 전자 메일을 사용자에 게 보냅니다.
 
 ![확인 코드 전자 메일 보내기 작업](media/custom-email/display-control-verification-email-action-01.png)
@@ -267,7 +267,7 @@ JSON 개체의 구조는 InputParameters의 점 표기법과 InputClaims의 Tran
 
 ## <a name="add-otp-technical-profiles"></a>OTP 기술 프로필 추가
 
-`GenerateOtp` 기술 프로필은 전자 메일 주소에 대 한 코드를 생성 합니다. `VerifyOtp` 기술 프로필은 전자 메일 주소와 연결 된 코드를 확인 합니다. 형식의 구성과 일회용 암호의 만료를 변경할 수 있습니다. OTP 기술 프로필에 대 한 자세한 내용은 [일회용 암호 기술 프로필 정의](one-time-password-technical-profile.md)를 참조 하세요.
+`GenerateOtp` 기술 프로필은 전자 메일 주소에 대한 코드를 생성 합니다. `VerifyOtp` 기술 프로필은 전자 메일 주소와 연결 된 코드를 확인 합니다. 형식의 구성과 일회용 암호의 만료를 변경할 수 있습니다. OTP 기술 프로필에 대한 자세한 내용은 [일회용 암호 기술 프로필 정의](one-time-password-technical-profile.md)를 참조 하세요.
 
 `<ClaimsProviders>` 요소에 다음 기술 프로필을 추가 합니다.
 
@@ -315,7 +315,7 @@ JSON 개체의 구조는 InputParameters의 점 표기법과 InputClaims의 Tran
 
 ## <a name="add-a-rest-api-technical-profile"></a>REST API 기술 프로필 추가
 
-이 REST API 기술 프로필은 SendGrid 형식을 사용 하 여 전자 메일 콘텐츠를 생성 합니다. RESTful 기술 프로필에 대 한 자세한 내용은 [RESTful 기술 프로필 정의](restful-technical-profile.md)를 참조 하세요.
+이 REST API 기술 프로필은 SendGrid 형식을 사용 하 여 전자 메일 콘텐츠를 생성 합니다. RESTful 기술 프로필에 대한 자세한 내용은 [RESTful 기술 프로필 정의](restful-technical-profile.md)를 참조 하세요.
 
 OTP 기술 프로필과 마찬가지로 다음 기술 프로필을 `<ClaimsProviders>` 요소에 추가 합니다.
 
@@ -346,9 +346,9 @@ OTP 기술 프로필과 마찬가지로 다음 기술 프로필을 `<ClaimsProvi
 </ClaimsProvider>
 ```
 
-## <a name="make-a-reference-to-the-displaycontrol"></a>DisplayControl에 대 한 참조 만들기
+## <a name="make-a-reference-to-the-displaycontrol"></a>DisplayControl에 대한 참조 만들기
 
-마지막 단계에서 사용자가 만든 DisplayControl에 대 한 참조를 추가 합니다. 이전 버전의 Azure AD B2C 정책을 사용한 경우 기존 `LocalAccountSignUpWithLogonEmail` 자체 어설션된 기술 프로필을 다음으로 바꿉니다. 이 기술 프로필은 DisplayControl에 대 한 참조와 함께 `DisplayClaims`를 사용 합니다.
+마지막 단계에서 사용자가 만든 DisplayControl에 대한 참조를 추가 합니다. 이전 버전의 Azure AD B2C 정책을 사용한 경우 기존 `LocalAccountSignUpWithLogonEmail` 자체 어설션된 기술 프로필을 다음으로 바꿉니다. 이 기술 프로필은 DisplayControl에 대한 참조와 함께 `DisplayClaims`를 사용 합니다.
 
 자세한 내용은 [자체 어설션된 기술 프로필](restful-technical-profile.md) 및 [DisplayControl](display-controls.md)를 참조 하세요.
 
@@ -423,8 +423,8 @@ OTP 기술 프로필과 마찬가지로 다음 기술 프로필을 `<ClaimsProvi
 
 ## <a name="next-steps"></a>다음 단계
 
-GitHub에 대 한 사용자 지정 전자 메일 확인 정책의 예를 찾을 수 있습니다.
+GitHub에 대한 사용자 지정 전자 메일 확인 정책의 예를 찾을 수 있습니다.
 
 [사용자 지정 전자 메일 확인-DisplayControls](https://github.com/azure-ad-b2c/samples/tree/master/policies/custom-email-verifcation-displaycontrol)
 
-사용자 지정 REST API 또는 HTTP 기반 SMTP 전자 메일 공급자를 사용 하는 방법에 대 한 자세한 내용은 [Azure AD B2C 사용자 지정 정책에서 RESTful 기술 프로필 정의](restful-technical-profile.md)를 참조 하세요.
+사용자 지정 REST API 또는 HTTP 기반 SMTP 전자 메일 공급자를 사용 하는 방법에 대한 자세한 내용은 [Azure AD B2C 사용자 지정 정책에서 RESTful 기술 프로필 정의](restful-technical-profile.md)를 참조 하세요.

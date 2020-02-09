@@ -58,7 +58,7 @@ Azure Security Center에 대 한 일반 정보 [는 Azure Security Center 무엇
 | 권장 사항 | 설명 | 보안 센터 |
 |-|----|--|
 | 관리 포트에 대 한 액세스를 제한 합니다. | 공격자는 개방형 관리 포트의 공용 클라우드 IP 범위를 검색 하 고 일반 암호 및 알려진 패치가 적용 되지 않은 취약점과 같은 "쉬운" 공격을 시도 합니다. [JIT (just-in-time) vm 액세스](../articles/security-center/security-center-just-in-time.md) 를 사용 하 여 Azure vm에 대 한 인바운드 트래픽을 잠글 수 있으며, 필요할 때 vm에 대 한 쉬운 연결을 제공 하는 동시에 공격에 대 한 노출을 줄일 수 있습니다. | - |
-| 네트워크 액세스를 제한 합니다. | 네트워크 보안 그룹을 사용 하면 네트워크 액세스를 제한 하 고 노출 된 끝점의 수를 제어할 수 있습니다. 자세한 내용은 [네트워크 보안 그룹 만들기, 변경 또는 삭제](../articles/virtual-network/manage-network-security-group.md)를 참조 하세요. | - |
+| 네트워크 액세스를 제한 합니다. | 네트워크 보안 그룹을 사용 하면 네트워크 액세스를 제한 하 고 노출 된 엔드포인트의 수를 제어할 수 있습니다. 자세한 내용은 [네트워크 보안 그룹 만들기, 변경 또는 삭제](../articles/virtual-network/manage-network-security-group.md)를 참조 하세요. | - |
 
 ## <a name="next-steps"></a>다음 단계
 

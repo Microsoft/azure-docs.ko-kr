@@ -17,8 +17,8 @@ Azure CLI (명령줄 인터페이스)는 Azure 리소스를 관리 하기 위한
 이 자습서의 끝 부분에서는 Azure CLI 사용 하 여 아래와 같은 작업을 수행 하는 방법을 설명 합니다.
 
 * 복구 서비스 자격 증명 모음 만들기
-* Azure 파일 공유에 대 한 백업 사용
-* 파일 공유에 대 한 주문형 백업 트리거
+* Azure 파일 공유에 대한 백업 사용
+* 파일 공유에 대한 주문형 백업 트리거
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -58,13 +58,13 @@ Recovery services 자격 증명 모음을 만들려면 다음 단계를 따르�
 
 3. 자격 증명 모음 저장소에 사용할 중복성 유형을 지정 합니다. [로컬 중복 스토리지](https://docs.microsoft.com/azure/storage/common/storage-redundancy-lrs) 또는 [지역 중복 스토리지](https://docs.microsoft.com/azure/storage/common/storage-redundancy-grs)를 사용할 수 있습니다.
 
-    다음 예에서는 [az backup vault backup-properties set](https://docs.microsoft.com/cli/azure/backup/vault/backup-properties?view=azure-cli-latest#az-backup-vault-backup-properties-set) cmdlet을 사용 하 여 *azurefilesvault* 에 대 한 저장소 중복성 옵션을 **Georedundant** 로 설정 합니다.
+    다음 예에서는 [az backup vault backup-properties set](https://docs.microsoft.com/cli/azure/backup/vault/backup-properties?view=azure-cli-latest#az-backup-vault-backup-properties-set) cmdlet을 사용 하 여 *azurefilesvault* 에 대한 저장소 중복성 옵션을 **Georedundant** 로 설정 합니다.
 
     ```azurecli-interactive
     az backup vault backup-properties set --name azurefilesvault --resource-group azurefiles --backup-storage-redundancy Georedundant
     ```
 
-    자격 증명 모음이 성공적으로 만들어졌는지 확인 하려면 [az backup vault show](https://docs.microsoft.com/cli/azure/backup/vault?view=azure-cli-latest#az-backup-vault-show) cmdlet을 사용 하 여 자격 증명 모음에 대 한 세부 정보를 가져올 수 있습니다. 다음 예에서는 위의 단계에서 만든 *azurefilesvault* 의 세부 정보를 표시 합니다.
+    자격 증명 모음이 성공적으로 만들어졌는지 확인 하려면 [az backup vault show](https://docs.microsoft.com/cli/azure/backup/vault?view=azure-cli-latest#az-backup-vault-show) cmdlet을 사용 하 여 자격 증명 모음에 대한 세부 정보를 가져올 수 있습니다. 다음 예에서는 위의 단계에서 만든 *azurefilesvault* 의 세부 정보를 표시 합니다.
 
     ```azurecli-interactive
     az backup vault show --name azurefilesvault --resource-group azurefiles --output table
@@ -78,13 +78,13 @@ Recovery services 자격 증명 모음을 만들려면 다음 단계를 따르�
     eastus       azurefilesvault    azurefiles
     ```
 
-## <a name="enable-backup-for-azure-file-shares"></a>Azure 파일 공유에 대 한 백업 사용
+## <a name="enable-backup-for-azure-file-shares"></a>Azure 파일 공유에 대한 백업 사용
 
 이 섹션에서는 백업을 구성 하려는 Azure 파일 공유가 이미 있다고 가정 합니다. 없는 경우 [az storage share create](https://docs.microsoft.com/cli/azure/storage/share?view=azure-cli-latest#az-storage-share-create) 명령을 사용 하 여 Azure 파일 공유를 만듭니다.
 
-파일 공유에 대 한 백업을 사용 하도록 설정 하려면 백업 작업이 실행 되는 시기와 복구 지점이 저장 되는 기간을 정의 하는 보호 정책을 만들어야 합니다. [Az backup policy create](https://docs.microsoft.com/cli/azure/backup/policy?view=azure-cli-latest#az-backup-policy-create) cmdlet을 사용 하 여 백업 정책을 만들 수 있습니다.
+파일 공유에 대한 백업을 사용 하도록 설정 하려면 백업 작업이 실행 되는 시기와 복구 지점이 저장 되는 기간을 정의 하는 보호 정책을 만들어야 합니다. [Az backup policy create](https://docs.microsoft.com/cli/azure/backup/policy?view=azure-cli-latest#az-backup-policy-create) cmdlet을 사용 하 여 백업 정책을 만들 수 있습니다.
 
-다음 예제에서는 [az backup protection enable](https://docs.microsoft.com/cli/azure/backup/protection?view=azure-cli-latest#az-backup-protection-enable-for-azurefileshare) -azurefilefilecmdlet을 사용 하 여 *schedule 1* 백업 정책을 사용 하 여 *afsaccount* 저장소 계정에서 *azurefileshare* 파일 공유에 대 한 백업을 사용 하도록 설정 합니다.
+다음 예제에서는 [az backup protection enable](https://docs.microsoft.com/cli/azure/backup/protection?view=azure-cli-latest#az-backup-protection-enable-for-azurefileshare) -azurefilefilecmdlet을 사용 하 여 *schedule 1* 백업 정책을 사용 하 여 *afsaccount* 저장소 계정에서 *azurefileshare* 파일 공유에 대한 백업을 사용 하도록 설정 합니다.
 
 ```azurecli-interactive
 az backup protection enable-for-azurefileshare --vault-name azurefilesvault --resource-group  azurefiles --policy-name schedule1 --storage-account afsaccount --azure-file-share azurefiles  --output table
@@ -98,9 +98,9 @@ Name                                  ResourceGroup
 
 출력의 **이름** 특성은 백업 **사용** 작업을 위해 백업 서비스에서 만든 작업의 이름에 해당 합니다. 작업 상태를 추적 하려면 [az backup job show](https://docs.microsoft.com/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-show) cmdlet을 사용 합니다.
 
-## <a name="trigger-an-on-demand-backup-for-file-share"></a>파일 공유에 대 한 주문형 백업 트리거
+## <a name="trigger-an-on-demand-backup-for-file-share"></a>파일 공유에 대한 주문형 백업 트리거
 
-예약 된 시간에 백업 정책이 작업을 실행 하기를 기다리는 대신 파일 공유에 대 한 요청 시 백업을 트리거하려면 [az backup protection backup-now](https://docs.microsoft.com/cli/azure/backup/protection?view=azure-cli-latest#az-backup-protection-backup-now) cmdlet을 사용 합니다.
+예약 된 시간에 백업 정책이 작업을 실행 하기를 기다리는 대신 파일 공유에 대한 요청 시 백업을 트리거하려면 [az backup protection backup-now](https://docs.microsoft.com/cli/azure/backup/protection?view=azure-cli-latest#az-backup-protection-backup-now) cmdlet을 사용 합니다.
 
 요청 시 백업을 트리거하기 위해 다음 매개 변수를 정의 해야 합니다.
 
@@ -108,7 +108,7 @@ Name                                  ResourceGroup
 * **--name** 은 요청 시 백업을 트리거할 파일 공유의 이름입니다. 백업 된 항목 의 이름 **또는 이름을** 검색 하려면 [az backup item list](https://docs.microsoft.com/cli/azure/backup/item?view=azure-cli-latest#az-backup-item-list) 명령을 사용 합니다.
 * **--유지-** 복구 지점을 보존할 시점까지 날짜를 지정 합니다. 값은 UTC 시간 형식 (dd-mm-yyyy)으로 설정 해야 합니다.
 
-다음 예제에서는 azuresfiles에 대 한 *20-01-2020*보존이 있는 *afsaccount* 저장소 계정에서 파일 공유에 대 한 요청 시 백업을 트리거합니다.
+다음 예제에서는 azuresfiles에 대한 *20-01-2020*보존이 있는 *afsaccount* 저장소 계정에서 파일 공유에 대한 요청 시 백업을 트리거합니다.
 
 ```azurecli-interactive
 az backup protection backup-now --vault-name azurefilesvault --resource-group azurefiles --container-name "StorageContainer;Storage;AzureFiles;afsaccount" --item-name "AzureFileShare;azurefiles" --retain-until 20-01-2020 --output table

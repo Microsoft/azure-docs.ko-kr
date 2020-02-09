@@ -34,7 +34,7 @@ Azure Application Gateway는 일반적인 악용 및 취약성으로부터 웹 �
 
 DDoS (분산 서비스 거부) 공격을 쉽게 실행 하는 것으로 알려져 있습니다. 특히 응용 프로그램을 클라우드로 이동 하는 경우 매우 중요 한 보안 문제가 됩니다. 
 
-DDoS 공격은 애플리케이션의 리소스를 소진시켜서 정상적인 사용자가 애플리케이션을 사용할 수 없게 만듭니다. DDoS 공격은 인터넷을 통해 도달할 수 있는 모든 끝점을 대상으로 지정할 수 있습니다.
+DDoS 공격은 애플리케이션의 리소스를 소진시켜서 정상적인 사용자가 애플리케이션을 사용할 수 없게 만듭니다. DDoS 공격은 인터넷을 통해 도달할 수 있는 모든 엔드포인트을 대상으로 지정할 수 있습니다.
 
 응용 프로그램 설계 모범 사례와 결합 된 Azure DDoS Protection는 DDoS 공격에 대 한 방어를 제공 합니다. DDoS Protection는 서로 다른 서비스 계층을 제공 합니다. 자세한 내용은 [Azure DDoS Protection 개요](https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview)를 참조 하세요.
 

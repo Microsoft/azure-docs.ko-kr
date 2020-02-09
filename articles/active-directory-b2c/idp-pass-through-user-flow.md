@@ -1,7 +1,7 @@
 ---
 title: 사용자 흐름을 통해 액세스 토큰을 앱에 전달
 titleSuffix: Azure AD B2C
-description: Azure Active Directory B2C의 사용자 흐름에서 OAuth 2.0 id 공급자에 대 한 액세스 토큰을 클레임으로 전달 하는 방법에 대해 알아봅니다.
+description: Azure Active Directory B2C의 사용자 흐름에서 OAuth 2.0 id 공급자에 대한 액세스 토큰을 클레임으로 전달 하는 방법에 대해 알아봅니다.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -32,7 +32,7 @@ Azure AD B2C는 현재 [Facebook](identity-provider-facebook.md) 및 [Google](id
 ## <a name="enable-the-claim"></a>클레임 사용
 
 1. Azure AD B2C 테넌트의 전역 관리자로 [Azure Portal](https://portal.azure.com/)에 로그인합니다.
-2. Azure AD B2C 테 넌 트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 테 넌 트가 포함 된 디렉터리를 선택 합니다.
+2. Azure AD B2C 테넌트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 테넌트가 포함 된 디렉터리를 선택 합니다.
 3. Azure Portal의 왼쪽 상단 모서리에서 **모든 서비스**를 선택하고 **Azure AD B2C**를 검색하여 선택합니다.
 4. **사용자 흐름 (정책)** 을 선택 하 고 사용자 흐름을 선택 합니다. 예를 들어 **B2C_1_signupsignin1**합니다.
 5. **애플리케이션 클레임**을 선택합니다.

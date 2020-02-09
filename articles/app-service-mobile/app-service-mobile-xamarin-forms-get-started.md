@@ -33,7 +33,7 @@ ms.locfileid: "74668658"
 
 * 활성 Azure 계정. 계정이 없는 경우 Azure 평가판을 등록하고 최대 10개의 무료 모바일 앱을 가져올 수 있습니다. 이러한 앱은 평가판 사용 기간이 끝난 후에도 계속 사용할 수 있습니다. 자세한 내용은 [Azure 평가판](https://azure.microsoft.com/pricing/free-trial/)을 참조하세요.
 
-* Xamarin에 대 한 Visual Studio Tools Visual Studio 2017 이상 또는 Mac용 Visual Studio. 자세한 내용은 [Xamarin 설치 페이지][Install Xamarin] 를 참조 하세요.
+* Xamarin에 대한 Visual Studio Tools Visual Studio 2017 이상 또는 Mac용 Visual Studio. 자세한 내용은 [Xamarin 설치 페이지][Install Xamarin] 를 참조 하세요.
 
 * (선택 사항) iOS 앱을 빌드하려면 Xcode 9.0 이상이 있는 Mac이 필요합니다. IOS 앱을 개발 하는 데 사용할 수 Mac용 Visual Studio 또는 Mac을 네트워크에서 사용할 수 있는 경우 Visual Studio 2017 이상을 사용할 수 있습니다.
 
@@ -45,15 +45,15 @@ ms.locfileid: "74668658"
 
 ## <a name="run-the-xamarinforms-solution"></a>Xamarin Forms 솔루션 실행
 
-Xamarin에 대 한 Visual Studio Tools는 솔루션을 여는 데 필요 합니다. [xamarin 설치 지침][Install Xamarin]을 참조 하세요. 도구를 이미 설치한 경우 다음 단계에 따라 솔루션을 다운로드하고 엽니다.
+Xamarin에 대한 Visual Studio Tools는 솔루션을 여는 데 필요 합니다. [xamarin 설치 지침][Install Xamarin]을 참조 하세요. 도구를 이미 설치한 경우 다음 단계에 따라 솔루션을 다운로드하고 엽니다.
 
 ### <a name="visual-studio-windows-and-mac"></a>Visual Studio (Windows 및 Mac)
 
-1. [Azure Portal](https://portal.azure.com/) 로 이동 하 여 만든 모바일 앱으로 이동 합니다. `Overview` 블레이드에서 모바일 앱에 대 한 공용 끝점 인 URL을 찾습니다. 예-내 앱 이름 "test123"에 대 한 sitename이 https://test123.azurewebsites.net 됩니다.
+1. [Azure Portal](https://portal.azure.com/) 로 이동 하 여 만든 모바일 앱으로 이동 합니다. `Overview` 블레이드에서 모바일 앱에 대한 공용 엔드포인트 인 URL을 찾습니다. 예-내 앱 이름 "test123"에 대한 sitename이 https://test123.azurewebsites.net 됩니다.
 
 2. 이 폴더에서 파일 `Constants.cs` (xamarin.ios/ZUMOAPPNAME)를 엽니다. 응용 프로그램 이름이 `ZUMOAPPNAME`입니다.
 
-3. `Constants.cs` 클래스에서 `ZUMOAPPURL` 변수를 위의 공용 끝점으로 바꿉니다.
+3. `Constants.cs` 클래스에서 `ZUMOAPPURL` 변수를 위의 공용 엔드포인트으로 바꿉니다.
 
     `public static string ApplicationURL = @"ZUMOAPPURL";`
 

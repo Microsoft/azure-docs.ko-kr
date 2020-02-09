@@ -28,7 +28,7 @@ ms.locfileid: "75404942"
 
 라이브 데이터 (미리 보기) 기능은 Kubernetes API에 직접 액세스할 수 있으며 인증 모델에 대 한 추가 정보는 [여기](https://kubernetes.io/docs/concepts/overview/kubernetes-api/)에서 찾을 수 있습니다. 
 
-이 기능은 메트릭 끝점 (`/api/v1/nodes`, `/apis/metrics.k8s.io/v1beta1/nodes`및 `/api/v1/pods`포함)에 대해 폴링 작업을 수행 합니다 .이 작업은 기본적으로 5 초 마다 수행 됩니다. 이 데이터는 브라우저에 캐시 되 고 **클러스터** 탭의 컨테이너에 대 한 Azure Monitor에 포함 된 4 개의 성능 차트에서 **라이브 이동 (미리 보기)** 을 선택 하 여 차트에 포함 됩니다. 각 후속 폴링은 5 분의 롤링 시각화 창에 차트로 작성 됩니다. 
+이 기능은 메트릭 엔드포인트 (`/api/v1/nodes`, `/apis/metrics.k8s.io/v1beta1/nodes`및 `/api/v1/pods`포함)에 대해 폴링 작업을 수행 합니다 .이 작업은 기본적으로 5 초 마다 수행 됩니다. 이 데이터는 브라우저에 캐시 되 고 **클러스터** 탭의 컨테이너에 대 한 Azure Monitor에 포함 된 4 개의 성능 차트에서 **라이브 이동 (미리 보기)** 을 선택 하 여 차트에 포함 됩니다. 각 후속 폴링은 5 분의 롤링 시각화 창에 차트로 작성 됩니다. 
 
 ![클러스터 뷰에서 라이브로 전환 옵션](./media/container-insights-livedata-metrics/cluster-view-go-live-example-01.png)
 

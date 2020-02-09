@@ -33,7 +33,7 @@ ms.locfileid: "76984679"
 
 세 번째 코드 블록에서는[DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) 클래스를 사용하여 데이터 원본 개체를 만들고 검색 결과를 추가합니다. [기호 계층](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer?view=azure-iot-typescript-latest)은 텍스트 또는 아이콘을 사용하여 [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest)에 래핑된 점 기반 데이터를 지도에 기호로 렌더링합니다.  그런 다음 기호 계층이 만들어집니다. 데이터 원본이 기호 계층에 추가된 다음, 맵에 추가됩니다.
 
-네 번째 코드 블록은 [서비스 모듈](how-to-use-services-module.md)에서 [searchfuzzy 항목](/javascript/api/azure-maps-rest/atlas.service.models.searchgetsearchfuzzyoptionalparams) 메서드를 사용 합니다. 이를 통해 [검색 유사 항목 가져오기 API](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) 를 통해 무료 양식 텍스트 검색을 수행 하 여 관심 지점을 검색할 수 있습니다. 유사 항목 검색 API에 대 한 Get 요청은 유사 항목 입력의 조합을 처리할 수 있습니다. 그런 다음, `geojson.getFeatures()` 메서드를 사용하여 응답의 GeoJSON 기능 컬렉션을 추출하고 데이터 원본에 추가하면, 기호 레이어를 통해 데이터가 맵에 자동으로 렌더링됩니다.
+네 번째 코드 블록은 [서비스 모듈](how-to-use-services-module.md)에서 [searchfuzzy 항목](/javascript/api/azure-maps-rest/atlas.service.models.searchgetsearchfuzzyoptionalparams) 메서드를 사용 합니다. 이를 통해 [검색 유사 항목 가져오기 API](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) 를 통해 무료 양식 텍스트 검색을 수행 하 여 관심 지점을 검색할 수 있습니다. 유사 항목 검색 API에 대한 Get 요청은 유사 항목 입력의 조합을 처리할 수 있습니다. 그런 다음, `geojson.getFeatures()` 메서드를 사용하여 응답의 GeoJSON 기능 컬렉션을 추출하고 데이터 원본에 추가하면, 기호 레이어를 통해 데이터가 맵에 자동으로 렌더링됩니다.
 
 마지막 코드 블록은 지도의 [setcamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#setcamera-cameraoptions---cameraboundsoptions---animationoptions-) 속성을 사용 하 여 지도의 카메라 경계를 조정 합니다.
 
@@ -47,9 +47,9 @@ ms.locfileid: "76984679"
 
 위의 코드에서 첫 번째 코드 블록은 지도 개체를 만듭니다. 액세스 토큰을 사용 하는 인증 메커니즘을 설정 합니다. 지침은 [지도 만들기](./map-create.md)를 참조하세요.
 
-두 번째 코드 블록은 검색 요청을 수행할 URL을 만듭니다. 또한 검색 결과에 대 한 범위 및 pin을 저장할 두 배열을 만듭니다.
+두 번째 코드 블록은 검색 요청을 수행할 URL을 만듭니다. 또한 검색 결과에 대한 범위 및 pin을 저장할 두 배열을 만듭니다.
 
-세 번째 코드 블록은 [FETCH API](https://fetch.spec.whatwg.org/)를 사용 합니다. [FETCH api](https://fetch.spec.whatwg.org/) 를 사용 하 여 관심 영역을 검색 하 [Azure Maps 유사 항목 검색 api](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) 에 대 한 요청을 수행할 수 있습니다. 유사 항목 검색 API는 모든 조합의 유사 항목 입력을 처리할 수 있습니다. 그런 다음 검색 응답을 처리 하 고 구문 분석 하 여 searchPins 배열에 결과 pin을 추가 합니다.
+세 번째 코드 블록은 [FETCH API](https://fetch.spec.whatwg.org/)를 사용 합니다. [FETCH api](https://fetch.spec.whatwg.org/) 를 사용 하 여 관심 영역을 검색 하 [Azure Maps 유사 항목 검색 api](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) 에 대한 요청을 수행할 수 있습니다. 유사 항목 검색 API는 모든 조합의 유사 항목 입력을 처리할 수 있습니다. 그런 다음 검색 응답을 처리 하 고 구문 분석 하 여 searchPins 배열에 결과 pin을 추가 합니다.
 
 네 번째 코드 블록은 [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) 클래스를 사용 하 여 데이터 소스 개체를 만듭니다. 코드에서 원본 개체에 검색 결과를 추가 합니다. [기호 계층](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer?view=azure-iot-typescript-latest)은 텍스트 또는 아이콘을 사용하여 [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest)에 래핑된 점 기반 데이터를 지도에 기호로 렌더링합니다. 그런 다음 기호 계층이 만들어집니다. 데이터 원본이 기호 계층에 추가된 다음, 맵에 추가됩니다.
 

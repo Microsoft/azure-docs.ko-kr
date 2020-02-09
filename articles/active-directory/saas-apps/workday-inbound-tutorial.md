@@ -112,7 +112,7 @@ Workday와 Active Directory 간에 프로비전 워크플로를 용이하게 하
 
 * **Workday-Active Directory 사용자 프로비저닝** - 이 앱은 Workday에서 단일 Active Directory 도메인으로 사용자 계정 프로비전을 가능하게 합니다. 도메인이 여러 개 있는 경우 프로비전해야 하는 각 Active Directory 도메인에 대해 Azure AD 앱 갤러리에서 이 앱의 하나의 인스턴스를 추가할 수 있습니다.
 
-* **Workday에서 AZURE AD 사용자 프로 비전** -Azure AD Connect는 Azure Active Directory에 Active Directory 사용자를 동기화 하는 데 사용 되는 도구입니다 .이 앱을 사용 하 여 Workday에서 단일 Azure Active Directory 테 넌 트로 클라우드 전용 사용자를 쉽게 프로 비전 할 수 있습니다.
+* **Workday에서 AZURE AD 사용자 프로 비전** -Azure AD Connect는 Azure Active Directory에 Active Directory 사용자를 동기화 하는 데 사용 되는 도구입니다 .이 앱을 사용 하 여 Workday에서 단일 Azure Active Directory 테넌트로 클라우드 전용 사용자를 쉽게 프로 비전 할 수 있습니다.
 
 * **Workday 쓰기 저장** - 이 앱은 사용자 이메일 주소를 Azure Active Directory에서 Workday로 쓰기 저장할 수 있습니다.
 
@@ -147,7 +147,7 @@ Workday-AD 사용자 프로비저닝 솔루션을 사용하려면 최소 4GB RAM
 
 Active Directory 토폴로지에 따라 구성할 사용자 프로비저닝 커넥터 앱 수와 프로비전 에이전트 수를 결정해야 합니다. 배포를 계획할 때 참조할 수 있는 몇 가지 일반적인 배포 패턴은 다음과 같습니다.
 
-#### <a name="deployment-scenario-1--single-workday-tenant---single-ad-domain"></a>배포 시나리오 #1: 단일 Workday 테 넌 트-> 단일 AD 도메인
+#### <a name="deployment-scenario-1--single-workday-tenant---single-ad-domain"></a>배포 시나리오 #1: 단일 Workday 테넌트-> 단일 AD 도메인
 
 이 시나리오에서는 하나의 Workday 테넌트가 있고 사용자를 단일 대상 AD 도메인에 프로비전하려고 합니다. 이 배포의 권장 프로덕션 구성은 다음과 같습니다.
 
@@ -158,7 +158,7 @@ Active Directory 토폴로지에 따라 구성할 사용자 프로비저닝 커�
 
   ![시나리오 1](./media/workday-inbound-tutorial/dep_scenario1.png)
 
-#### <a name="deployment-scenario-2--single-workday-tenant---multiple-child-ad-domains"></a>배포 시나리오 #2: 단일 Workday 테 넌 트-> 여러 자식 AD 도메인
+#### <a name="deployment-scenario-2--single-workday-tenant---multiple-child-ad-domains"></a>배포 시나리오 #2: 단일 Workday 테넌트-> 여러 자식 AD 도메인
 
 이 시나리오에서는 Workday에서 포리스트의 여러 대상 AD 자식 도메인으로 사용자를 프로비전합니다. 이 배포의 권장 프로덕션 구성은 다음과 같습니다.
 
@@ -169,7 +169,7 @@ Active Directory 토폴로지에 따라 구성할 사용자 프로비저닝 커�
 
   ![시나리오 2](./media/workday-inbound-tutorial/dep_scenario2.png)
 
-#### <a name="deployment-scenario-3--single-workday-tenant---disjoint-ad-forests"></a>배포 시나리오 #3: 단일 Workday 테 넌 트-> 분리형 AD 포리스트
+#### <a name="deployment-scenario-3--single-workday-tenant---disjoint-ad-forests"></a>배포 시나리오 #3: 단일 Workday 테넌트-> 분리형 AD 포리스트
 
 이 시나리오에서는 Workday에서 분리된 AD 포리스트의 도메인으로 사용자를 프로비전합니다. 이 배포의 권장 프로덕션 구성은 다음과 같습니다.
 
@@ -236,7 +236,7 @@ Active Directory 도메인으로 사용자 프로비전을 구성하기 전에 �
 
 **통합 시스템 사용자를 만들려면**
 
-1. 관리자 계정을 사용 하 여 Workday 테 넌 트에 로그인 합니다. **Workday 애플리케이션**의 검색 상자에서 사용자 만들기를 입력하고 **통합 시스템 사용자 만들기**를 클릭합니다.
+1. 관리자 계정을 사용 하 여 Workday 테넌트에 로그인 합니다. **Workday 애플리케이션**의 검색 상자에서 사용자 만들기를 입력하고 **통합 시스템 사용자 만들기**를 클릭합니다.
 
    ![사용자 만들기](./media/workday-inbound-tutorial/wd_isu_01.png "사용자 만들기")
 2. 새 통합 시스템 사용자에 대한 사용자 이름과 암호를 입력하여 **통합 시스템 사용자 만들기** 작업을 완료합니다.  
@@ -1253,7 +1253,7 @@ Azure AD 프로비저닝 서비스는 인사 API의[Get_Workers](https://communi
 
 7. **작업**을 **Get_Workers**로 설정합니다.
 
-8.  요청/응답 창 아래의 작은 **구성** 링크를 클릭하여 Workday 자격 증명을 설정합니다. **인증**을 선택하고 Workday 통합 시스템 계정의 사용자 이름 및 암호를 입력합니다. \@테 넌 트 이름으로 사용자 이름을 지정 하 고 **Ws-security UsernameToken** 옵션을 선택 된 상태로 둡니다.
+8.  요청/응답 창 아래의 작은 **구성** 링크를 클릭하여 Workday 자격 증명을 설정합니다. **인증**을 선택하고 Workday 통합 시스템 계정의 사용자 이름 및 암호를 입력합니다. \@테넌트 이름으로 사용자 이름을 지정 하 고 **Ws-security UsernameToken** 옵션을 선택 된 상태로 둡니다.
 
     ![Workday Studio](./media/workday-inbound-tutorial/wdstudio2.png)
 

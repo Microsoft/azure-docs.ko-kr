@@ -1,5 +1,5 @@
 ---
-title: Azure AD의 단일 및 다중 테 넌 트 앱
+title: Azure AD의 단일 및 다중 테넌트 앱
 titleSuffix: Microsoft identity platform
 description: Azure AD에서 단일 테넌트와 다중 테넌트 앱의 기능 및 차이점에 대해 알아봅니다.
 services: active-directory
@@ -46,7 +46,7 @@ Azure Portal에서 대상 그룹을 다음과 같이 설정하여 앱을 단일 
 
 IT 관리자가 해당 테넌트에서 설정할 수 있는 다양한 정책 수로 인해 우수한 다중 테넌트 앱을 빌드하는 작업은 어려울 수 있습니다. 다중 테넌트 앱을 빌드하려는 경우 다음과 같은 모범 사례를 따르세요.
 
-* [조건부 액세스 정책이](conditional-access-dev-guide.md)구성 된 테 넌 트에서 앱을 테스트 합니다.
+* [조건부 액세스 정책이](conditional-access-dev-guide.md)구성 된 테넌트에서 앱을 테스트 합니다.
 * 앱이 실제로 필요한 사용 권한만 요청하도록 하기 위해 최소 사용자 액세스 원칙을 따릅니다. 사용자가 일부 조직에서 앱을 사용하지 못할 수 있으므로 관리자 동의가 필요한 권한을 요청하지 않는 것이 좋습니다. 
 * 앱의 일부로 노출한 사용 권한에 대해 적절한 이름 및 설명을 입력합니다. 이렇게 하면 사용자 및 관리자가 앱의 API를 사용하려고 할 때 동의하는 내용을 알 수 있습니다. 자세한 내용은 [사용 권한 가이드](v1-permissions-and-consent.md)에서 모범 사례 섹션을 참조하세요.
 

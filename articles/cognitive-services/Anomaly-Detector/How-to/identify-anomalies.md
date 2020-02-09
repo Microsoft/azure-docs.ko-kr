@@ -26,7 +26,7 @@ ms.locfileid: "71840217"
 변칙 탐지기 API는 검색 모드 (일괄 처리 및 스트리밍)를 제공 합니다.
 
 > [!NOTE]
-> 다음 요청 Url은 구독에 적합 한 끝점과 결합 되어야 합니다. 예: `https://<your-custom-subdomain>.api.cognitive.microsoft.com/anomalydetector/v1.0/timeseries/entire/detect`
+> 다음 요청 Url은 구독에 적합 한 엔드포인트과 결합 되어야 합니다. 예: `https://<your-custom-subdomain>.api.cognitive.microsoft.com/anomalydetector/v1.0/timeseries/entire/detect`
 
 
 ### <a name="batch-detection"></a>일괄 검색

@@ -130,7 +130,7 @@ v-Center Server/ESXi 호스트에 액세스할 수 있는 권한을 가진 사�
 
 ### <a name="role-permissions"></a>역할 권한
 
-| **VCenter 6.5 이상 사용자 계정에 대 한 권한**        | **VCenter 6.0 사용자 계정에 대 한 권한**               | **VCenter 5.5 사용자 계정에 대 한 권한** |
+| **VCenter 6.5 이상 사용자 계정에 대한 권한**        | **VCenter 6.0 사용자 계정에 대한 권한**               | **VCenter 5.5 사용자 계정에 대한 권한** |
 | ------------------------------------------------------------ | --------------------------------------------------------- | ------------------------------------------- |
 | Datastore.AllocateSpace                                      |                                                           |                                             |
 | 데이터 저장소 찾아보기                                   | Datastore.AllocateSpace                                   | Network.Assign                              |
@@ -214,7 +214,7 @@ v-Center Server/ESXi 호스트에 액세스할 수 있는 권한을 가진 사�
 
     ![Azure Backup Server 자격 증명 관리 대화 상자](./media/backup-azure-backup-server-vmware/mabs-manage-credentials-dialog.png)
 
-4. **자격 증명 추가**에서 새 자격 증명에 대 한 이름 및 설명을 입력 하 고 VMware 서버에서 정의한 사용자 이름 및 암호를 지정 합니다. Contoso Vcenter 자격 증명이란 이름은 이 절차에서 자격 증명을 식별하는 데 사용됩니다. VMware 서버와 Azure Backup Server가 있는 도메인이 동일하지 않으면 사용자 이름에 도메인을 지정합니다.
+4. **자격 증명 추가**에서 새 자격 증명에 대한 이름 및 설명을 입력 하 고 VMware 서버에서 정의한 사용자 이름 및 암호를 지정 합니다. Contoso Vcenter 자격 증명이란 이름은 이 절차에서 자격 증명을 식별하는 데 사용됩니다. VMware 서버와 Azure Backup Server가 있는 도메인이 동일하지 않으면 사용자 이름에 도메인을 지정합니다.
 
     ![Azure Backup Server 자격 증명 추가 대화 상자](./media/backup-azure-backup-server-vmware/mabs-add-credential-dialog2.png)
 

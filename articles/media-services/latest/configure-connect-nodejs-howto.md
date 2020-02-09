@@ -70,7 +70,7 @@ npm install azure-arm-mediaservices
 
 1. 즐겨 사용 하는 편집기를 사용 하 여 .js 파일을 만듭니다.
 1. 파일을 열고 다음 코드를 붙여넣습니다.
-1. "끝점 구성" 섹션의 값을 [액세스 api](access-api-cli-how-to.md)에서 가져온 값으로 설정 합니다.
+1. "엔드포인트 구성" 섹션의 값을 [액세스 api](access-api-cli-how-to.md)에서 가져온 값으로 설정 합니다.
 
 ```js
 'use strict';

@@ -1,5 +1,5 @@
 ---
-title: 다중 테 넌 트 SaaS 앱에서 데이터베이스 복원
+title: 다중 테넌트 SaaS 앱에서 데이터베이스 복원
 description: 실수로 데이터를 삭제한 후 단일 테넌트 SQL 데이터베이스를 복원하는 방법을 알아봅니다.
 services: sql-database
 ms.service: sql-database

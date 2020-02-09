@@ -19,7 +19,7 @@ ms.locfileid: "71839197"
 | 고가용성을 위한 Azure Cache for Redis 복제본 |1 |
 | 클러스터링을 사용하여 프리미엄 캐시 분할 |10 |
 
-Azure Cache for Redis 제한 및 크기는 각 가격 책정 계층에 따라 다릅니다. 가격 책정 계층 및 해당 크기를 확인 하려면 [Redis 가격 책정에 대 한 Azure Cache](https://azure.microsoft.com/pricing/details/cache/)를 참조 하세요.
+Azure Cache for Redis 제한 및 크기는 각 가격 책정 계층에 따라 다릅니다. 가격 책정 계층 및 해당 크기를 확인 하려면 [Redis 가격 책정에 대한 Azure Cache](https://azure.microsoft.com/pricing/details/cache/)를 참조 하세요.
 
 Azure Cache for Redis 구성 제한에 대한 자세한 내용은 [기본 Redis 서버 구성](../articles/azure-cache-for-redis/cache-configure.md#default-redis-server-configuration)을 참조하세요.
 

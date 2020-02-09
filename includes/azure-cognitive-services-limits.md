@@ -11,7 +11,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/04/2019
 ms.locfileid: "73591131"
 ---
-Azure 구독 당 Cognitive Services 리소스의 수에 대 한 제한은 다음과 같습니다. 각 Cognitive Services에는 추가 제한이 있을 수 있습니다. 자세한 내용은 [Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/)를 참조 하세요.
+Azure 구독 당 Cognitive Services 리소스의 수에 대한 제한은 다음과 같습니다. 각 Cognitive Services에는 추가 제한이 있을 수 있습니다. 자세한 내용은 [Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/)를 참조 하세요.
 
 | 형식 | 제한 | 예제 |
 |------|-------|---------|

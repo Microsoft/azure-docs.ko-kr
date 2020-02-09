@@ -227,7 +227,7 @@ Azure 위치와 구독별로 만들 수 있는 경로 테이블당 경로 수에
 1. **다음 홉**을 선택합니다.
 1. 잠시 후 다음 홉 유형 및 트랙픽을 라우트한 경로 ID를 나타내는 정보가 반환됩니다. 반환되는 다음 홉 유형에 대한 자세한 내용은 [라우팅 개요](virtual-networks-udr-overview.md)를 참조하세요.
 
-### <a name="validate-routing-between-two-endpoints---commands"></a>두 끝점 간의 라우팅 유효성 검사-명령
+### <a name="validate-routing-between-two-endpoints---commands"></a>두 엔드포인트 간의 라우팅 유효성 검사-명령
 
 * Azure CLI: [az network watcher show-next-hop](/cli/azure/network/watcher?view=azure-cli-latest)<br>
 * PowerShell: [AzNetworkWatcherNextHop](/powershell/module/az.network/get-aznetworkwatchernexthop)

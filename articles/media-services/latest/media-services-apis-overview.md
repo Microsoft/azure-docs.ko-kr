@@ -39,7 +39,7 @@ Media Services API를 사용 하려면 REST API 요청 하는 사용자 또는 �
 
 ### <a name="azure-ad-service-principal"></a>Azure AD 서비스 주체
 
-Azure AD 앱 및 서비스 주체를 만드는 경우 앱은 자체 테 넌 트에 있어야 합니다. 앱을 만든 후 앱 **참가자** 또는 **소유자** 역할에 Media Services 계정에 대 한 액세스 권한을 부여 합니다.
+Azure AD 앱 및 서비스 주체를 만드는 경우 앱은 자체 테넌트에 있어야 합니다. 앱을 만든 후 앱 **참가자** 또는 **소유자** 역할에 Media Services 계정에 대 한 액세스 권한을 부여 합니다.
 
 Azure AD 앱을 만들 수 있는 권한이 있는지 확실 하지 않은 경우 [필요한 권한](../../active-directory/develop/howto-create-service-principal-portal.md#required-permissions)을 참조 하세요.
 

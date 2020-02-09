@@ -53,8 +53,8 @@ Seamless SSO는 [암호 해시 동기화](how-to-connect-password-hash-synchroni
 
 - 로그인 사용자 이름은 온-프레미스 기본 사용자 이름(`userPrincipalName`) 또는 Azure AD Connect에 구성된 다른 특성(`Alternate ID`) 중 하나일 수 있습니다. Seamless SSO는 Kerberos 티켓에서 `securityIdentifier` 클레임을 사용하여 Azure AD에서 해당하는 사용자 개체를 조회하기 때문에 두 사용 사례가 작동합니다.
 - Seamless SSO는 편의적인 기능입니다. 어떤 이유로든 실패하면 사용자 로그인 환경은 일반 동작으로 돌아갑니다. 즉 사용자가 로그인 페이지에 자신의 암호를 입력해야 합니다.
-- 응용 프로그램 (예: `https://myapps.microsoft.com/contoso.com`)이 테 넌 트를 식별 하는 `domain_hint` (Openid connect Connect) 또는 `whr` (SAML) 매개 변수를 전달 하거나, Azure AD 로그인 요청에서 사용자를 식별 하는 `login_hint` 매개 변수를 전달 하는 경우 사용자는 사용자 이름 또는 암호를 입력 하지 않고 자동으로 로그인 됩니다.
-- 응용 프로그램 (예: `https://contoso.sharepoint.com`) `https://login.microsoftonline.com/<tenant_ID>/<..>` `https://login.microsoftonline.com/contoso.com/<..>`이 azure ad의 공통 끝점 (즉, `https://login.microsoftonline.com/common/<...>`) 대신 테 넌 트로 설정 된 Azure AD의 끝점에 로그인 요청을 전송 하는 경우에도 사용자가 자동 로그온 환경을 사용할 수 있습니다.
+- 응용 프로그램 (예: `https://myapps.microsoft.com/contoso.com`)이 테넌트를 식별 하는 `domain_hint` (Openid connect Connect) 또는 `whr` (SAML) 매개 변수를 전달 하거나, Azure AD 로그인 요청에서 사용자를 식별 하는 `login_hint` 매개 변수를 전달 하는 경우 사용자는 사용자 이름 또는 암호를 입력 하지 않고 자동으로 로그인 됩니다.
+- 응용 프로그램 (예: `https://contoso.sharepoint.com`) `https://login.microsoftonline.com/<tenant_ID>/<..>` `https://login.microsoftonline.com/contoso.com/<..>`이 azure ad의 공통 엔드포인트 (즉, `https://login.microsoftonline.com/common/<...>`) 대신 테넌트로 설정 된 Azure AD의 엔드포인트에 로그인 요청을 전송 하는 경우에도 사용자가 자동 로그온 환경을 사용할 수 있습니다.
 - 로그아웃이 지원됩니다. 따라서 사용자는 Seamless SSO를 사용하여 자동으로 로그인되는 대신, 로그인하는 데 사용할 다른 Azure AD 계정을 선택할 수 있습니다.
 - 버전 16.0.8730.xxxx 이상의 Office 365 Win32 클라이언트(Outlook, Word, Excel 등)는 비대화형 흐름을 사용하여 지원됩니다. OneDrive의 경우 자동 로그온 환경에 대해 [OneDrive 자동 구성 기능](https://techcommunity.microsoft.com/t5/Microsoft-OneDrive-Blog/Previews-for-Silent-Sync-Account-Configuration-and-Bandwidth/ba-p/120894)을 활성화해야 합니다.
 - Azure AD Connect를 통해 사용하도록 설정할 수 있습니다.

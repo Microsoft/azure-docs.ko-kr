@@ -39,7 +39,7 @@ ms.locfileid: "76512966"
 * [Microsoft Enterprise Mobility 블로그](https://cloudblogs.microsoft.com/ENTERPRISEMOBILITY/)
 * [Microsoft In The Cloud 블로그](https://blogs.technet.com/b/in_the_cloud/)
 * [Microsoft Intune 블로그](https://blogs.technet.com/b/microsoftintune/)
-* [Microsoft 끝점 Configuration Manager 블로그](https://techcommunity.microsoft.com/t5/Configuration-Manager-Blog/bg-p/ConfigurationManagerBlog)
+* [Microsoft 엔드포인트 Configuration Manager 블로그](https://techcommunity.microsoft.com/t5/Configuration-Manager-Blog/bg-p/ConfigurationManagerBlog)
 
 ## <a name="see-also"></a>참고 항목
 [설계 고려 사항 개요](plan-hybrid-identity-design-considerations-overview.md)

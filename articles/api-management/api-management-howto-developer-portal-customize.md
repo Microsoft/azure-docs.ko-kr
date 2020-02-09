@@ -32,7 +32,7 @@ ms.locfileid: "74454427"
 > * 변경 내용 게시
 > * 게시 된 포털 보기
 
-개발자 포털에 대 한 자세한 내용은 [Azure API Management 개발자 포털 개요](api-management-howto-developer-portal.md)에서 찾을 수 있습니다.
+개발자 포털에 대한 자세한 내용은 [Azure API Management 개발자 포털 개요](api-management-howto-developer-portal.md)에서 찾을 수 있습니다.
 
 ![API Management 개발자 포털-관리자 모드](media/api-management-howto-developer-portal-customize/cover.png)
 

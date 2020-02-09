@@ -21,10 +21,10 @@ Azure Backup은 VM을 복원하는 다양한 방법을 제공합니다.
 
 **복원 옵션** | **세부 정보**
 --- | ---
-**새 VM 만들기** | 복원 지점에서 기본 VM을 빠르게 만들고, 준비하고, 실행할 수 있습니다.<br/><br/> VM의 이름을 지정 하 고, 리소스 그룹 및 가상 네트워크 (VNet)를 선택 하 고, 복원 된 VM에 대 한 저장소 계정을 지정할 수 있습니다. 새 VM은 원본 VM과 동일한 지역에 만들어야 합니다.
+**새 VM 만들기** | 복원 지점에서 기본 VM을 빠르게 만들고, 준비하고, 실행할 수 있습니다.<br/><br/> VM의 이름을 지정 하 고, 리소스 그룹 및 가상 네트워크 (VNet)를 선택 하 고, 복원 된 VM에 대한 저장소 계정을 지정할 수 있습니다. 새 VM은 원본 VM과 동일한 지역에 만들어야 합니다.
 **디스크 복원** | 새 VM을 만드는 데 사용할 수 있는 VM 디스크를 복원 합니다.<br/><br/> Azure Backup은 VM을 사용자 지정하고 만드는 데 도움이 되는 템플릿을 제공합니다. <br/><br> 복원 작업은 다운로드하여 사용자 지정 VM 설정을 지정하고 VM을 만드는 데 사용할 수 있는 템플릿을 생성합니다.<br/><br/> 지정한 리소스 그룹에 디스크가 복사 됩니다.<br/><br/> 또는 디스크를 기존 VM에 연결하거나 PowerShell을 사용하여 새 VM을 만들 수 있습니다.<br/><br/> 이 옵션은 VM을 사용자 지정하거나, 백업 시 존재하지 않았던 구성 설정을 추가하거나, 템플릿 또는 PowerShell을 사용하여 구성해야 하는 설정을 추가하려는 경우에 유용합니다.
 **기존 항목 바꾸기** | 디스크를 복원하고 이 디스크를 사용하여 기존 VM의 디스크를 바꿀 수 있습니다.<br/><br/> 현재 VM이 있어야 합니다. 삭제 된 경우에는이 옵션을 사용할 수 없습니다.<br/><br/> Azure Backup는 디스크를 교체 하기 전에 기존 VM의 스냅숏을 만들어 지정한 스테이징 위치에 저장 합니다. VM에 연결 된 기존 디스크는 선택한 복원 지점으로 대체 됩니다.<br/><br/> 스냅숏은 자격 증명 모음에 복사 되 고 보존 정책에 따라 보존 됩니다. <br/><br/> 디스크 바꾸기 작업 후에는 원래 디스크가 리소스 그룹에 유지 됩니다. 필요 하지 않은 경우 원본 디스크를 수동으로 삭제 하도록 선택할 수 있습니다. <br/><br/>기존 항목 바꾸기는 암호화되지 않은 관리 VM에 대해 지원됩니다. 관리되지 않는 디스크, [일반화된 VM](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource) 또는 [사용자 지정 이미지를 사용하여 만든](https://azure.microsoft.com/resources/videos/create-a-custom-virtual-machine-image-in-azure-resource-manager-with-powershell/) VM에 대해서는 지원되지 않습니다.<br/><br/> 현재 VM보다 많거나 적은 디스크가 복원 지점에 있는 경우 복원 지점의 디스크 수에는 VM 구성만 반영됩니다.
-**지역 간 (보조 지역)** | 지역 간 복원은 [azure 쌍을 이루는 지역](https://docs.microsoft.com/azure/best-practices-availability-paired-regions#what-are-paired-regions)인 보조 지역에서 azure vm을 복원 하는 데 사용할 수 있습니다.<br><br> 백업이 보조 지역에서 수행 되는 경우 선택한 복구 지점에 대 한 모든 Azure Vm을 복원할 수 있습니다.<br><br> 이 기능은 아래 옵션에 사용할 수 있습니다.<br> [VM을 만드는](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#create-a-vm) *  <br> * [복원 디스크](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#restore-disks) <br><br> 현재 [기존 디스크 바꾸기](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#replace-existing-disks) 옵션을 지원 하지 않습니다.<br><br> 권한<br> 보조 지역에 대 한 복원 작업은 Backup Admins 및 App Admins를 통해 수행할 수 있습니다.
+**지역 간 (보조 지역)** | 지역 간 복원은 [azure 쌍을 이루는 지역](https://docs.microsoft.com/azure/best-practices-availability-paired-regions#what-are-paired-regions)인 보조 지역에서 azure vm을 복원 하는 데 사용할 수 있습니다.<br><br> 백업이 보조 지역에서 수행 되는 경우 선택한 복구 지점에 대한 모든 Azure Vm을 복원할 수 있습니다.<br><br> 이 기능은 아래 옵션에 사용할 수 있습니다.<br> [VM을 만드는](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#create-a-vm) *  <br> * [복원 디스크](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#restore-disks) <br><br> 현재 [기존 디스크 바꾸기](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#replace-existing-disks) 옵션을 지원 하지 않습니다.<br><br> 권한<br> 보조 지역에 대한 복원 작업은 Backup Admins 및 App Admins를 통해 수행할 수 있습니다.
 
 > [!NOTE]
 > Azure VM에서 특정 파일과 폴더를 복구할 수도 있습니다. [자세히 알아보기](backup-azure-restore-files-from-vm.md).
@@ -33,21 +33,21 @@ Azure Backup은 VM을 복원하는 다양한 방법을 제공합니다.
 
 ## <a name="storage-accounts"></a>Storage 계정
 
-저장소 계정에 대 한 몇 가지 세부 정보:
+저장소 계정에 대한 몇 가지 세부 정보:
 
 - **Vm 만들기**: 새 vm을 만들 때 지정 하는 저장소 계정에 vm이 배치 됩니다.
 - 디스크 **복원**: 디스크를 복원 하면 지정한 저장소 계정에 디스크가 복사 됩니다. 복원 작업은 다운로드 하 여 사용자 지정 VM 설정을 지정 하는 데 사용할 수 있는 템플릿을 생성 합니다. 이 템플릿은 지정 된 저장소 계정에 배치 됩니다.
 - **디스크 바꾸기**: 기존 vm에서 디스크를 교체 하는 경우 Azure Backup는 디스크를 교체 하기 전에 기존 vm의 스냅숏을 만듭니다. 스냅숏은 지정한 스테이징 위치 (저장소 계정)에 저장 됩니다. 이 저장소 계정은 복원 프로세스 중에 스냅숏을 일시적으로 저장 하는 데 사용 되며, 나중에 쉽게 제거할 수 있는 새 계정을 만드는 것이 좋습니다.
 - **저장소 계정 위치**: 저장소 계정은 자격 증명 모음과 동일한 지역에 있어야 합니다. 이러한 계정만 표시 됩니다. 위치에 저장소 계정이 없는 경우 새로 만들어야 합니다.
 - **저장소 유형**: Blob 저장소는 지원 되지 않습니다.
-- **저장소 중복성**: ZRS (영역 중복 저장소)는 지원 되지 않습니다. 계정에 대 한 복제 및 중복성 정보는 계정 이름 뒤에 괄호 안에 표시 됩니다.
+- **저장소 중복성**: ZRS (영역 중복 저장소)는 지원 되지 않습니다. 계정에 대한 복제 및 중복성 정보는 계정 이름 뒤에 괄호 안에 표시 됩니다.
 - **Premium storage**:
   - Premium이 아닌 Vm을 복원 하는 경우 premium storage 계정은 지원 되지 않습니다.
   - 관리 Vm을 복원 하는 경우 네트워크 규칙으로 구성 된 premium storage 계정은 지원 되지 않습니다.
 
 ## <a name="before-you-start"></a>시작하기 전에
 
-Vm을 복원 하려면 (새 VM 만들기) VM 복원 작업에 대 한 올바른 RBAC (역할 기반 액세스 제어) [권한이](backup-rbac-rs-vault.md#mapping-backup-built-in-roles-to-backup-management-actions) 있는지 확인 합니다.
+Vm을 복원 하려면 (새 VM 만들기) VM 복원 작업에 대한 올바른 RBAC (역할 기반 액세스 제어) [권한이](backup-rbac-rs-vault.md#mapping-backup-built-in-roles-to-backup-management-actions) 있는지 확인 합니다.
 
 사용 권한이 없는 경우 [디스크를 복원한](#restore-disks)다음 디스크가 복원 된 후 복원 작업의 일부로 생성 된 [템플릿을 사용](#use-templates-to-customize-a-restored-vm) 하 여 새 VM을 만들 수 있습니다.
 
@@ -79,7 +79,7 @@ Vm을 복원 하려면 (새 VM 만들기) VM 복원 작업에 대 한 올바른 
 2. **가상 컴퓨터 이름**에 구독에 존재 하지 않는 VM을 지정 합니다.
 3. **리소스 그룹**에서 새 VM에 대해 기존 리소스 그룹을 선택하거나, 새 리소스 그룹을 전역 고유 이름으로 만듭니다. 이미 있는 이름을 할당하면 Azure에서 VM과 동일한 이름을 그룹에 할당합니다.
 4. **가상 네트워크**에서 VM을 배치할 VNet를 선택합니다. 구독과 연관된 모든 VNet가 표시됩니다. 서브넷을 선택합니다. 기본적으로 첫 번째 서브넷이 선택됩니다.
-5. **저장소 위치**에서 VM에 대 한 저장소 계정을 지정 합니다. [자세히 알아보기](#storage-accounts).
+5. **저장소 위치**에서 VM에 대한 저장소 계정을 지정 합니다. [자세히 알아보기](#storage-accounts).
 
     ![복원 구성 마법사](./media/backup-azure-arm-restore-vms/recovery-configuration-wizard1.png)
 
@@ -203,7 +203,7 @@ VM을 복원해야 하는 일반적인 시나리오는 여러 가지가 있습�
 
     ![자격 증명 모음의 VM 목록](./media/backup-azure-arm-restore-vms/restore-job-in-progress1.png)
 
-2. 복원 진행 상황을 모니터링하려면 상태가 **진행 중**인 복원 작업을 클릭합니다. 그러면 복원 진행률에 대 한 정보가 표시 되는 진행률 표시줄이 표시 됩니다.
+2. 복원 진행 상황을 모니터링하려면 상태가 **진행 중**인 복원 작업을 클릭합니다. 그러면 복원 진행률에 대한 정보가 표시 되는 진행률 표시줄이 표시 됩니다.
 
     - **예상 복원 시간**: 초기에 복원 작업을 완료 하는 데 걸린 시간을 제공 합니다. 작업이 진행됨에 따라 소요 시간이 감소하고, 복원 작업이 완료되면 0에 도달합니다.
     - **복원 비율**: 수행되는 복원 작업에 대한 백분율을 표시합니다.
@@ -220,7 +220,7 @@ VM이 복원되면 주의해야 할 몇 가지 사항이 있습니다.
 - VM이 도메인 컨트롤러와의 관계로 인해 복원 된 후 VM에 액세스할 수 없는 경우 다음 단계에 따라 VM을 가져옵니다.
   - 복구 된 VM에 OS 디스크를 데이터 디스크로 연결 합니다.
   - 이 [링크](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/install-vm-agent-offline)를 따라 Azure 에이전트가 응답 하지 않는 경우 수동으로 VM 에이전트를 설치 합니다.
-  - Vm에 대 한 직렬 콘솔 액세스를 사용 하도록 설정 하 여 VM에 대 한 명령줄 액세스 허용
+  - Vm에 대한 직렬 콘솔 액세스를 사용 하도록 설정 하 여 VM에 대한 명령줄 액세스 허용
 
   ```cmd
     bcdedit /store <drive letter>:\boot\bcd /enum

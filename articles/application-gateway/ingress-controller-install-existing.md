@@ -1,6 +1,6 @@
 ---
 title: 기존 Application Gateway를 사용 하 여 수신 컨트롤러 만들기
-description: 이 문서에서는 기존 Application Gateway를 사용 하 여 Application Gateway 수신 컨트롤러를 배포 하는 방법에 대 한 정보를 제공 합니다.
+description: 이 문서에서는 기존 Application Gateway를 사용 하 여 Application Gateway 수신 컨트롤러를 배포 하는 방법에 대한 정보를 제공 합니다.
 services: application-gateway
 author: caya
 ms.service: application-gateway
@@ -72,7 +72,7 @@ AGIC는 Kubernetes API 서버 및 Azure Resource Manager와 통신 합니다. �
 
 ## <a name="set-up-aad-pod-identity"></a>AAD Pod Id 설정
 
-[AAD Pod id](https://github.com/Azure/aad-pod-identity) 는 AGIC와 비슷하며 AKS 에서도 실행 되는 컨트롤러입니다. Azure Active Directory id를 Kubernetes pod에 바인딩합니다. Kubernetes pod의 응용 프로그램은 다른 Azure 구성 요소와 통신할 수 있도록 id가 필요 합니다. 여기의 특정 사례에서 [ARM](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)에 대 한 HTTP 요청을 만들기 위해 AGIC pod에 대 한 권한 부여가 필요 합니다.
+[AAD Pod id](https://github.com/Azure/aad-pod-identity) 는 AGIC와 비슷하며 AKS 에서도 실행 되는 컨트롤러입니다. Azure Active Directory id를 Kubernetes pod에 바인딩합니다. Kubernetes pod의 응용 프로그램은 다른 Azure 구성 요소와 통신할 수 있도록 id가 필요 합니다. 여기의 특정 사례에서 [ARM](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)에 대한 HTTP 요청을 만들기 위해 AGIC pod에 대한 권한 부여가 필요 합니다.
 
 [AAD Pod id 설치 지침](https://github.com/Azure/aad-pod-identity#deploy-the-azure-aad-identity-infra) 에 따라이 구성 요소를 AKS에 추가 합니다.
 
@@ -85,7 +85,7 @@ AGIC는 Kubernetes API 서버 및 Azure Resource Manager와 통신 합니다. �
     az identity create -g <agent-pool-resource-group> -n <identity-name>
     ```
 
-1. 아래의 역할 할당 명령에 대해 새로 만든 id에 대 한 `principalId`를 가져와야 합니다.
+1. 아래의 역할 할당 명령에 대해 새로 만든 id에 대한 `principalId`를 가져와야 합니다.
 
     ```bash
     az identity show -g <resourcegroup> -n <identity-name>
@@ -102,7 +102,7 @@ AGIC는 Kubernetes API 서버 및 Azure Resource Manager와 통신 합니다. �
         --scope <App-Gateway-ID>
     ```
 
-1. Id `Reader` Application Gateway 리소스 그룹에 대 한 액세스 권한을 부여 합니다. 리소스 그룹 ID는 `/subscriptions/A/resourceGroups/B`와 같습니다. 다음을 사용 하 여 모든 리소스 그룹을 가져올 수 있습니다 `az group list --query '[].id'`
+1. Id `Reader` Application Gateway 리소스 그룹에 대한 액세스 권한을 부여 합니다. 리소스 그룹 ID는 `/subscriptions/A/resourceGroups/B`와 같습니다. 다음을 사용 하 여 모든 리소스 그룹을 가져올 수 있습니다 `az group list --query '[].id'`
 
     ```bash
     az role assignment create \
@@ -120,7 +120,7 @@ Kubernetes 암호를 통해 ARM에 AGIC 액세스를 제공할 수도 있습니�
 az ad sp create-for-rbac --subscription <subscription-uuid> --sdk-auth | base64 -w0
 ```
 
-2. `helm-config.yaml` 파일에 base64 인코딩 JSON blob을 추가 합니다. `helm-config.yaml`에 대 한 자세한 내용은 다음 섹션에 있습니다.
+2. `helm-config.yaml` 파일에 base64 인코딩 JSON blob을 추가 합니다. `helm-config.yaml`에 대한 자세한 내용은 다음 섹션에 있습니다.
 ```yaml
 armAuth:
     type: servicePrincipal
@@ -196,7 +196,7 @@ armAuth:
         apiServerAddress: <aks-api-server-address>
     ```
 
-1. 투구를 편집 하 고 `appgw` 및 `armAuth`에 대 한 값을 입력 합니다.
+1. 투구를 편집 하 고 `appgw` 및 `armAuth`에 대한 값을 입력 합니다.
     ```bash
     nano helm-config.yaml
     ```
@@ -235,7 +235,7 @@ Azure 애플리케이션 Gateway를 사용 하 여 HTTP 또는 HTTPS를 통해 A
 
 
 ## <a name="multi-cluster--shared-application-gateway"></a>다중 클러스터/공유 Application Gateway
-기본적으로 AGIC는 연결 된 Application Gateway에 대 한 전체 소유권을 가정 합니다. AGIC 버전 0.8.0부터 이상에서는 다른 Azure 구성 요소와 단일 Application Gateway를 공유할 수 있습니다. 예를 들어 가상 머신 확장 집합에서 호스트 되는 앱 및 AKS 클러스터에 동일한 Application Gateway를 사용할 수 있습니다.
+기본적으로 AGIC는 연결 된 Application Gateway에 대한 전체 소유권을 가정 합니다. AGIC 버전 0.8.0부터 이상에서는 다른 Azure 구성 요소와 단일 Application Gateway를 공유할 수 있습니다. 예를 들어 가상 머신 확장 집합에서 호스트 되는 앱 및 AKS 클러스터에 동일한 Application Gateway를 사용할 수 있습니다.
 
 이 설정을 사용 하도록 설정 하기 전에 __Application Gateway의 구성을 백업__ 하십시오.
   1. [Azure Portal](https://portal.azure.com/) 사용 하 여 `Application Gateway` 인스턴스로 이동
@@ -244,11 +244,11 @@ Azure 애플리케이션 Gateway를 사용 하 여 HTTP 또는 HTTPS를 통해 A
 다운로드 한 zip 파일에는 Application Gateway을 복원 하는 데 사용할 수 있는 JSON 템플릿, bash 및 PowerShell 스크립트가 포함 됩니다.
 
 ### <a name="example-scenario"></a>예제 시나리오
-두 웹 사이트에 대 한 트래픽을 관리 하는 가상의 Application Gateway 살펴보겠습니다.
+두 웹 사이트에 대한 트래픽을 관리 하는 가상의 Application Gateway 살펴보겠습니다.
   - `dev.contoso.com`-Application Gateway 및 AGIC를 사용 하 여 새 AKS에서 호스트 됩니다.
   - [Azure 가상 머신 확장 집합](https://azure.microsoft.com/services/virtual-machine-scale-sets/) 에서 호스트 되는 `prod.contoso.com`
 
-AGIC는 기본 설정을 사용 하 여 가리키는 Application Gateway의 100% 소유권을 가정 합니다. AGIC는 모든 App Gateway의 구성을 덮어씁니다. Kubernetes 수신에서 정의 하지 않고 Application Gateway에서 `prod.contoso.com`에 대 한 수신기를 수동으로 만드는 경우 AGIC은 몇 초 내에 `prod.contoso.com` 구성을 삭제 합니다.
+AGIC는 기본 설정을 사용 하 여 가리키는 Application Gateway의 100% 소유권을 가정 합니다. AGIC는 모든 App Gateway의 구성을 덮어씁니다. Kubernetes 수신에서 정의 하지 않고 Application Gateway에서 `prod.contoso.com`에 대한 수신기를 수동으로 만드는 경우 AGIC은 몇 초 내에 `prod.contoso.com` 구성을 삭제 합니다.
 
 AGIC를 설치 하 고 가상 머신 확장 집합 컴퓨터의 `prod.contoso.com`도 제공 하려면 `dev.contoso.com`만 구성 하도록 AGIC를 제한 해야 합니다. 다음 [CRD](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/)를 인스턴스화하여이 작업을 쉽게 수행 합니다.
 
@@ -263,7 +263,7 @@ spec:
 EOF
 ```
 
-위의 명령은 `AzureIngressProhibitedTarget` 개체를 만듭니다. 이렇게 하면 AGIC (버전 0.8.0부터 이상)에서 `prod.contoso.com`에 대 한 Application Gateway 구성이 있는지 인식 하 고 해당 호스트 이름과 관련 된 구성을 변경 하지 않도록 명시적으로 지시 합니다.
+위의 명령은 `AzureIngressProhibitedTarget` 개체를 만듭니다. 이렇게 하면 AGIC (버전 0.8.0부터 이상)에서 `prod.contoso.com`에 대한 Application Gateway 구성이 있는지 인식 하 고 해당 호스트 이름과 관련 된 구성을 변경 하지 않도록 명시적으로 지시 합니다.
 
 
 ### <a name="enable-with-new-agic-installation"></a>새 AGIC 설치를 사용 하도록 설정
@@ -296,7 +296,7 @@ appgw:
 kubectl get AzureIngressProhibitedTargets prohibit-all-targets -o yaml
 ```
 
-이름이 암시 하는 개체 *`prohibit-all-targets`는 AGIC에서 호스트 및* 경로에 대 한 구성을 변경 하는 것을 금지 합니다.
+이름이 암시 하는 개체 *`prohibit-all-targets`는 AGIC에서 호스트 및* 경로에 대한 구성을 변경 하는 것을 금지 합니다.
 `appgw.shared=true`를 사용 하는 투구 설치는 AGIC를 배포 하지만 Application Gateway를 변경 하지는 않습니다.
 
 
@@ -323,7 +323,7 @@ kubectl get AzureIngressProhibitedTargets prohibit-all-targets -o yaml
     ```
 
 ### <a name="enable-for-an-existing-agic-installation"></a>기존 AGIC 설치를 사용 하도록 설정
-클러스터에 이미 작동 중인 AKS, Application Gateway 및 구성 된 AGIC 있다고 가정해 보겠습니다. `prod.contosor.com`에 대 한 수신이 있으며 AKS에서이에 대 한 트래픽을 성공적으로 처리 하 고 있습니다. 기존 Application Gateway에 `staging.contoso.com`를 추가 하려고 하지만 [VM](https://azure.microsoft.com/services/virtual-machines/)에서 호스트 해야 합니다. 기존 Application Gateway를 다시 사용 하 고 `staging.contoso.com`에 대 한 수신기 및 백 엔드 풀을 수동으로 구성 하겠습니다. 그러나 Application Gateway 구성 ( [포털](https://portal.azure.com), [ARM Api](https://docs.microsoft.com/rest/api/resources/) 또는 [terraform](https://www.terraform.io/)을 통해)을 수동으로 조정 하는 것은 AGIC의 전체 소유권 가정과 충돌 합니다. 변경 내용을 적용 하 고 나면 잠시 후 AGIC에서 덮어쓰거나 삭제 합니다.
+클러스터에 이미 작동 중인 AKS, Application Gateway 및 구성 된 AGIC 있다고 가정해 보겠습니다. `prod.contosor.com`에 대한 수신이 있으며 AKS에서이에 대한 트래픽을 성공적으로 처리 하 고 있습니다. 기존 Application Gateway에 `staging.contoso.com`를 추가 하려고 하지만 [VM](https://azure.microsoft.com/services/virtual-machines/)에서 호스트 해야 합니다. 기존 Application Gateway를 다시 사용 하 고 `staging.contoso.com`에 대한 수신기 및 백 엔드 풀을 수동으로 구성 하겠습니다. 그러나 Application Gateway 구성 ( [포털](https://portal.azure.com), [ARM Api](https://docs.microsoft.com/rest/api/resources/) 또는 [terraform](https://www.terraform.io/)을 통해)을 수동으로 조정 하는 것은 AGIC의 전체 소유권 가정과 충돌 합니다. 변경 내용을 적용 하 고 나면 잠시 후 AGIC에서 덮어쓰거나 삭제 합니다.
 
 AGIC 구성의 하위 집합을 변경 하지 못하도록 방지할 수 있습니다.
 

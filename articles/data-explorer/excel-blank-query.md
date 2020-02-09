@@ -16,7 +16,7 @@ ms.locfileid: "74849091"
 ---
 # <a name="visualize-data-using-an-azure-data-explorer-kusto-query-imported-into-microsoft-excel"></a>Microsoft Excel로 가져온 Azure 데이터 탐색기 Kusto 쿼리를 사용 하 여 데이터 시각화
 
-Azure 데이터 탐색기는 Excel에서 데이터에 연결 하는 두 가지 옵션을 제공 합니다. 기본 커넥터를 사용 하거나 Azure 데이터 탐색기에서 쿼리를 가져옵니다. 이 문서에서는 Azure 데이터 탐색기에서 Excel로 쿼리를 가져와서 데이터를 시각화 하는 방법을 보여 줍니다. 데이터에 대 한 추가 계산 또는 시각화를 수행 하려면 Kusto query를 Excel 데이터 원본으로 추가 합니다.
+Azure 데이터 탐색기는 Excel에서 데이터에 연결 하는 두 가지 옵션을 제공 합니다. 기본 커넥터를 사용 하거나 Azure 데이터 탐색기에서 쿼리를 가져옵니다. 이 문서에서는 Azure 데이터 탐색기에서 Excel로 쿼리를 가져와서 데이터를 시각화 하는 방법을 보여 줍니다. 데이터에 대한 추가 계산 또는 시각화를 수행 하려면 Kusto query를 Excel 데이터 원본으로 추가 합니다.
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -31,7 +31,7 @@ Azure 데이터 탐색기는 Excel에서 데이터에 연결 하는 두 가지 �
 
 1. **공유** 탭을 선택 하 고 **Power BI 쿼리를**선택 합니다.
 
-    ![Power BI에 대 한 웹 UI 쿼리](media/excel-blank-query/web-ui-query-to-powerbi.png)
+    ![Power BI에 대한 웹 UI 쿼리](media/excel-blank-query/web-ui-query-to-powerbi.png)
 
 1. 다음 알림과 함께 창이 표시 됩니다.
 

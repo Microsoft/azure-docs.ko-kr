@@ -49,14 +49,14 @@ Queue Storage를 사용하는 Media Services 애플리케이션을 개발할 때
 1. 알림 메시지 형식에 매핑되는 **EncodingJobMessage** 클래스를 정의합니다. 코드는 큐에서 수신한 메시지를 **EncodingJobMessage** 유형의 개체로 deserialize합니다.
 2. app.config 파일에서 Media Services 및 Storage 계정 정보를 로드합니다. 코드 예제에서는 이 정보를 사용하여 **CloudMediaContext** 및 **CloudQueue** 개체를 만듭니다.
 3. 인코딩 작업에 대한 알림 메시지를 받는 큐를 만듭니다.
-4. 큐에 매핑되는 알림 끝점을 만듭니다.
-5. 알림 끝점 작업에 연결하고 인코딩 작업을 제출합니다. 작업에 연결하는 여러 알림 끝점이 있을 수 있습니다.
+4. 큐에 매핑되는 알림 엔드포인트을 만듭니다.
+5. 알림 엔드포인트 작업에 연결하고 인코딩 작업을 제출합니다. 작업에 연결하는 여러 알림 엔드포인트이 있을 수 있습니다.
 6. **NotificationJobState.FinalStatesOnly**를 **AddNew** 메서드에 전달합니다. 이 예제에서는 작업 처리의 최종 상태만 확인합니다.
 
         job.JobNotificationSubscriptions.AddNew(NotificationJobState.FinalStatesOnly, _notificationEndPoint);
 7. **NotificationJobState.All**을 전달하는 경우 모든 상태 변경 알림(큐에 대기, 예약됨, 처리 중, 완료됨)을 가져와야 합니다. 그러나 앞에서 설명한 대로 Queue Storage가 순차적 전달을 보장하지 않습니다. 메시지의 순서를 지정하려면 **Timestamp** 속성(아래 예제에서는 **EncodingJobMessage** 형식에서 정의됨)을 사용합니다. 중복된 메시지도 허용됩니다. 중복을 확인하려면 **ETag 속성**(**EncodingJobMessage** 형식에서 정의됨)을 사용합니다. 또한 일부 상태 변경 알림을 건너뛸 수 있습니다.
 8. 10초마다 큐를 검사하여 작업이 완성된 상태가 될 때를 기다립니다. 처리된 후 메시지를 삭제합니다.
-9. 큐와 알림 끝점을 삭제합니다.
+9. 큐와 알림 엔드포인트을 삭제합니다.
 
 > [!NOTE]
 > 작업 상태 모니터링 방법으로 다음 예제와 같이 알림 메시지 수신을 권장합니다.

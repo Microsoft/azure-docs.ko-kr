@@ -1,5 +1,5 @@
 ---
-title: MongoDB에 대 한 Azure Cosmos DB API에서 읽기 기본 설정을 사용 합니다.
+title: MongoDB에 대한 Azure Cosmos DB API에서 읽기 기본 설정을 사용 합니다.
 description: Azure Cosmos DB의 MongoDB용 API에서 MongoDB 읽기 기본 설정을 사용하는 방법에 대한 자세한 정보
 author: sivethe
 ms.author: sivethe

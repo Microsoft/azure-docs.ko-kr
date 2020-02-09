@@ -1,6 +1,6 @@
 ---
 title: Azure AD DS을 사용 하 여 SharePoint 사용자 프로필 서비스 사용 | Microsoft Docs
-description: SharePoint Server에 대 한 프로필 동기화를 지원 하도록 Azure Active Directory Domain Services 관리 되는 도메인을 구성 하는 방법에 대해 알아봅니다.
+description: SharePoint Server에 대한 프로필 동기화를 지원 하도록 Azure Active Directory Domain Services 관리 되는 도메인을 구성 하는 방법에 대해 알아봅니다.
 services: active-directory-ds
 author: iainfoulds
 manager: daveba
@@ -18,7 +18,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/22/2020
 ms.locfileid: "76509056"
 ---
-# <a name="configure-azure-active-directory-domain-services-to-support-user-profile-synchronization-for-sharepoint-server"></a>SharePoint Server에 대 한 사용자 프로필 동기화를 지원 하도록 Azure Active Directory Domain Services 구성
+# <a name="configure-azure-active-directory-domain-services-to-support-user-profile-synchronization-for-sharepoint-server"></a>SharePoint Server에 대한 사용자 프로필 동기화를 지원 하도록 Azure Active Directory Domain Services 구성
 
 SharePoint Server에는 사용자 프로필을 동기화 하는 서비스가 포함 되어 있습니다. 이 기능을 통해 사용자 프로필을 중앙 위치에 저장 하 고 여러 SharePoint 사이트 및 팜에서 액세스할 수 있습니다. SharePoint Server 사용자 프로필 서비스를 구성 하려면 Azure Active Directory Domain Services (Azure AD DS) 관리 되는 도메인에서 적절 한 사용 권한을 부여 해야 합니다. 자세한 내용은 [SharePoint Server의 사용자 프로필 동기화](https://technet.microsoft.com/library/hh296982.aspx)를 참조 하세요.
 
@@ -37,21 +37,21 @@ SharePoint Server에는 사용자 프로필을 동기화 하는 서비스가 포
 * Azure AD DS 관리 되는 도메인에 가입 된 Windows Server 관리 VM입니다.
     * 필요한 경우 자습서를 완료 하 여 [관리 VM을 만듭니다][tutorial-create-management-vm].
 * Azure AD 테넌트의 *Azure AD DC Administrators* 그룹에 속한 멤버인 사용자 계정
-* 사용자 프로필 동기화 서비스에 대 한 SharePoint 서비스 계정입니다.
+* 사용자 프로필 동기화 서비스에 대한 SharePoint 서비스 계정입니다.
     * 필요한 경우 [SharePoint 서버에서 관리 및 서비스 계정 계획][sharepoint-service-account]을 참조 하세요.
 
 ## <a name="service-accounts-overview"></a>서비스 계정 개요
 
 Azure AD DS 관리 되는 도메인에서 **AAD DC 서비스 계정** 이라는 보안 그룹이 *사용자* OU (조직 구성 단위)의 일부로 존재 합니다. 이 보안 그룹의 구성원에게 다음 권한이 위임됩니다.
 
-- 루트 DSE에 대 한 **디렉터리 변경 내용 복제** 권한
+- 루트 DSE에 대한 **디렉터리 변경 내용 복제** 권한
 - *구성* 명명 컨텍스트 (`cn=configuration` 컨테이너)의 **디렉터리 변경 내용 복제** 권한입니다.
 
 또한 **AAD DC 서비스 계정** 보안 그룹은 기본 제공 그룹인 **Windows 이전 2000 호환 액세스**의 멤버입니다.
 
-이 보안 그룹에 추가 하는 경우 SharePoint Server 사용자 프로필 동기화 서비스에 대 한 서비스 계정에는 제대로 작동 하는 데 필요한 권한이 부여 됩니다.
+이 보안 그룹에 추가 하는 경우 SharePoint Server 사용자 프로필 동기화 서비스에 대한 서비스 계정에는 제대로 작동 하는 데 필요한 권한이 부여 됩니다.
 
-## <a name="enable-support-for-sharepoint-server-user-profile-sync"></a>SharePoint Server 사용자 프로필 동기화에 대 한 지원 사용
+## <a name="enable-support-for-sharepoint-server-user-profile-sync"></a>SharePoint Server 사용자 프로필 동기화에 대한 지원 사용
 
 SharePoint Server의 서비스 계정에는 디렉터리에 변경 내용을 복제 하 고 SharePoint Server 사용자 프로필 동기화가 제대로 작동 하도록 하는 데 적절 한 권한이 필요 합니다. 이러한 권한을 제공 하려면 SharePoint 사용자 프로필 동기화에 사용 되는 서비스 계정을 **AAD DC 서비스 계정** 그룹에 추가 합니다.
 
@@ -71,7 +71,7 @@ Azure AD DS management VM에서 다음 단계를 완료 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-자세한 내용은 [SharePoint 서버에서 프로필 동기화에 대 한 Active Directory Domain Services 권한 부여](https://technet.microsoft.com/library/hh296982.aspx) 를 참조 하세요.
+자세한 내용은 [SharePoint 서버에서 프로필 동기화에 대한 Active Directory Domain Services 권한 부여](https://technet.microsoft.com/library/hh296982.aspx) 를 참조 하세요.
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: ../active-directory/fundamentals/sign-up-organization.md

@@ -83,7 +83,7 @@ Data Box Blob Storage에는 특정 클라이언트 라이브러리 및 특정 �
 
 ### <a name="endpoint-declaration"></a>엔드포인트 선언
 
-Azure Data Box Blob Storage 엔드포인트에는 지역 이름과 Data Box 도메인의 두 부분이 포함됩니다. 데이터 상자 Blob storage SDK에 기본 끝점은 `\<serial no. of the device>.microsoftdatabox.com`합니다.  Blob 서비스 엔드포인트에 대한 자세한 내용은 [Data Box Blob Storage를 통해 연결](data-box-deploy-copy-data-via-rest.md)을 참조하세요.
+Azure Data Box Blob Storage 엔드포인트에는 지역 이름과 Data Box 도메인의 두 부분이 포함됩니다. 데이터 상자 Blob storage SDK에 기본 엔드포인트은 `\<serial no. of the device>.microsoftdatabox.com`합니다.  Blob 서비스 엔드포인트에 대한 자세한 내용은 [Data Box Blob Storage를 통해 연결](data-box-deploy-copy-data-via-rest.md)을 참조하세요.
  
 ## <a name="examples"></a>예
 

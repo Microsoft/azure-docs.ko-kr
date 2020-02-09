@@ -119,7 +119,7 @@ PHP 5.4.0           http://nodertncu.blob.core...   False
 3. 필드 PHP 런타임이 [Microsoft Drivers FOR php for SQL Server][sqlsrv drivers]를 사용 하는 경우 프로 비전 될 때 [SQL Server Native Client 2012][sql native client] 를 설치 하도록 웹 역할을 구성 해야 합니다. 이렇게 하려면 [sqlncli.msi x64 설치 관리자]를 웹 역할의 루트 디렉터리에 있는 `bin` 폴더에 추가합니다. 다음 단계에 설명되어 있는 시작 스크립트는 역할이 프로비전될 때 설치 관리자를 자동으로 실행합니다. PHP 런타임이 Microsoft Drivers for PHP for SQL Server를 사용하지 않으면 다음 단계의 스크립트에서 다음 줄을 제거할 수 있습니다.
 
         msiexec /i sqlncli.msi /qn IACCEPTSQLNCLILICENSETERMS=YES
-4. PHP 런타임을 사용 하 여 페이지에 대 한 `.php` 요청을 처리 하도록 [인터넷 정보 서비스 (IIS)][iis.net] 를 구성 하는 시작 작업을 정의 합니다. 이렇게 하려면 텍스트 편집기에서 `setup_web.cmd` 파일(웹 역할 루트 디렉터리의 `bin` 파일에 있음)을 열고 그 내용을 다음 스크립트로 바꿉니다.
+4. PHP 런타임을 사용 하 여 페이지에 대한 `.php` 요청을 처리 하도록 [인터넷 정보 서비스 (IIS)][iis.net] 를 구성 하는 시작 작업을 정의 합니다. 이렇게 하려면 텍스트 편집기에서 `setup_web.cmd` 파일(웹 역할 루트 디렉터리의 `bin` 파일에 있음)을 열고 그 내용을 다음 스크립트로 바꿉니다.
 
     ```cmd
     @ECHO ON

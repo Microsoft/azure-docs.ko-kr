@@ -42,7 +42,7 @@ ms.locfileid: "76908164"
 
 ## <a name="verify"></a>확인
 
-1. 배포가 완료 되 면 응용 프로그램 끝점을 테스트 하 여 응용 프로그램의 기능을 확인 합니다.
+1. 배포가 완료 되 면 응용 프로그램 엔드포인트을 테스트 하 여 응용 프로그램의 기능을 확인 합니다.
 
 2. 응용 프로그램 상태 ([az 메시 app show](https://docs.microsoft.com/cli/azure/ext/mesh/mesh/app?view=azure-cli-latest#ext-mesh-az-mesh-app-show))를 확인 하 고 [AZURE Service Fabric 메시 CLI](https://docs.microsoft.com/azure/service-fabric-mesh/service-fabric-mesh-quickstart-deploy-container#set-up-service-fabric-mesh-cli)를 사용 하 여 응용 프로그램 로그 및 ([az 메시 code-package](https://docs.microsoft.com/cli/azure/ext/mesh/mesh/code-package-log?view=azure-cli-latest)) 명령을 검토 하 여 응용 프로그램의 상태를 확인할 수도 있습니다.
 

@@ -17,7 +17,7 @@ ms.locfileid: "75680983"
 
 [Azure App Service](overview.md) 는 최신 업데이트를 끌어와 GitHub, BitBucket 및 [Azure Repos](https://azure.microsoft.com/services/devops/repos/) 리포지토리에서 지속적인 배포를 가능 하 게 합니다. 이 문서에서는 Azure Portal를 사용 하 여 Kudu 빌드 서비스 또는 [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/)를 통해 앱을 지속적으로 배포 하는 방법을 보여 줍니다. 
 
-원본 제어 서비스에 대 한 자세한 내용은 [리포지토리 만들기(GitHub)], [리포지토리 만들기(BitBucket)]또는 [새 Git 리포지토리 만들기 (Azure Repos)]를 참조 하세요.
+원본 제어 서비스에 대한 자세한 내용은 [리포지토리 만들기(GitHub)], [리포지토리 만들기(BitBucket)]또는 [새 Git 리포지토리 만들기 (Azure Repos)]를 참조 하세요.
 
 [!INCLUDE [Prepare repository](../../includes/app-service-deploy-prepare-repo.md)]
 
@@ -90,11 +90,11 @@ Bitbucket 또는 GitHub의 경우 리포지토리에 연결할 Azure App Service
 
 ### <a name="option-2-use-azure-pipelines"></a>옵션 2: Azure Pipelines 사용 
 
-계정에 필요한 권한이 있는 경우 GitHub 또는 Azure Repos 리포지토리에서 지속적으로 배포 하도록 Azure Pipelines를 설정할 수 있습니다. Azure Pipelines를 통해 배포 하는 방법에 대 한 자세한 내용은 [Azure 앱 서비스에 웹 앱 배포](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps)를 참조 하세요.
+계정에 필요한 권한이 있는 경우 GitHub 또는 Azure Repos 리포지토리에서 지속적으로 배포 하도록 Azure Pipelines를 설정할 수 있습니다. Azure Pipelines를 통해 배포 하는 방법에 대한 자세한 내용은 [Azure 앱 서비스에 웹 앱 배포](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps)를 참조 하세요.
 
 Azure DevOps 조직에서 지속적인 업데이트 Azure Pipelines를 만드는 Azure App Service: 
 
-- Azure 계정에는 Azure Active Directory에 대 한 쓰기 권한이 있어야 하 고 서비스를 만들 수 있습니다. 
+- Azure 계정에는 Azure Active Directory에 대한 쓰기 권한이 있어야 하 고 서비스를 만들 수 있습니다. 
   
 - Azure 계정에는 Azure 구독에 **소유자** 역할이 있어야 합니다.
 
@@ -129,7 +129,7 @@ Azure Pipelines (미리 보기)를 구성 하려면:
 1. App Service 계획 [가격 책정 계층](https://azure.microsoft.com/pricing/details/app-service/plans/)에 따라 **스테이징에 배포** 페이지가 표시 될 수 있습니다. [배포 슬롯을 사용 하도록](deploy-staging-slots.md)설정할지 여부를 선택 하 고 **계속**을 선택 합니다.
    
    > [!NOTE]
-   > Azure Pipelines 프로덕션 슬롯에 대 한 지속적인 업데이트를 허용 하지 않습니다. 이러한 제한으로 인해 프로덕션에 대 한 실수로 인 한 배포를 방지할 수 있습니다 스테이징 슬롯에 대 한 지속적인 업데이트를 설정 하 고, 변경 내용을 확인 한 다음 준비가 되 면 슬롯을 교환 합니다.
+   > Azure Pipelines 프로덕션 슬롯에 대한 지속적인 업데이트를 허용 하지 않습니다. 이러한 제한으로 인해 프로덕션에 대한 실수로 인 한 배포를 방지할 수 있습니다 스테이징 슬롯에 대한 지속적인 업데이트를 설정 하 고, 변경 내용을 확인 한 다음 준비가 되 면 슬롯을 교환 합니다.
    
 1. 빌드 공급자를 구성한 후 **요약** 페이지에서 설정을 검토 한 다음 **마침**을 선택 합니다.
    
@@ -151,7 +151,7 @@ Windows 앱의 경우 포털이 직접 지원 하지 않는 클라우드 Git 또
 
 ## <a name="additional-resources"></a>추가 리소스
 
-* [연속 배포에 대 한 일반적인 문제 조사](https://github.com/projectkudu/kudu/wiki/Investigating-continuous-deployment)
+* [연속 배포에 대한 일반적인 문제 조사](https://github.com/projectkudu/kudu/wiki/Investigating-continuous-deployment)
 * [Azure PowerShell 사용](/powershell/azureps-cmdlets-docs)
 * [Git 설명서](https://git-scm.com/documentation)
 * [Project Kudu](https://github.com/projectkudu/kudu/wiki)

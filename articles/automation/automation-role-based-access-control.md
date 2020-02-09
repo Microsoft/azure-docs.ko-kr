@@ -96,7 +96,7 @@ Automation 연산자 역할은 작업을 만들고 관리할 수 있으며, Auto
 
 ### <a name="automation-job-operator"></a>Automation 작업 연산자
 
-Automation 작업 연산자 역할은 Automation 계정 범위에서 부여됩니다. 이를 통해 운영자 권한은 계정의 모든 runbook에 대 한 작업을 만들고 관리할 수 있습니다. 다음 표에서는 역할에 부여된 사용 권한을 보여줍니다.
+Automation 작업 연산자 역할은 Automation 계정 범위에서 부여됩니다. 이를 통해 운영자 권한은 계정의 모든 runbook에 대한 작업을 만들고 관리할 수 있습니다. 다음 표에서는 역할에 부여된 사용 권한을 보여줍니다.
 
 |**actions**  |**설명**  |
 |---------|---------|
@@ -114,7 +114,7 @@ Automation 작업 연산자 역할은 Automation 계정 범위에서 부여됩�
 
 ### <a name="automation-runbook-operator"></a>Automation Runbook 연산자
 
-Automation Runbook 운영자 역할은 Runbook 범위에서 부여됩니다. Automation Runbook 연산자 역할은 Runbook의 이름 및 속성을 볼 수 있습니다.  이 역할을 ' Automation 작업 Operator ' 역할과 결합 하면 운영자가 runbook에 대 한 작업을 만들고 관리할 수도 있습니다. 다음 표에서는 역할에 부여된 사용 권한을 보여줍니다.
+Automation Runbook 운영자 역할은 Runbook 범위에서 부여됩니다. Automation Runbook 연산자 역할은 Runbook의 이름 및 속성을 볼 수 있습니다.  이 역할을 ' Automation 작업 Operator ' 역할과 결합 하면 운영자가 runbook에 대한 작업을 만들고 관리할 수도 있습니다. 다음 표에서는 역할에 부여된 사용 권한을 보여줍니다.
 
 |**actions**  |**설명**  |
 |---------|---------|
@@ -227,7 +227,7 @@ Monitoring Reader는 모든 모니터링 데이터를 읽을 수 있습니다. �
 |온보딩 상태 확인 - 솔루션 읽기      | Microsoft.OperationalInsights/workspaces/intelligencepacks/read          | 솔루션         |
 |온보딩 상태 확인 - VM 읽기      | Microsoft.Compute/virtualMachines/read         | 가상 머신         |
 |온보딩 상태 확인 - 계정 읽기      | Microsoft.Automation/automationAccounts/read  |  Automation 계정   |
-| VM에 대 한 온 보 딩 작업 영역 확인<sup>1</sup>       | Microsoft.OperationalInsights/workspaces/read         | Subscription         |
+| VM에 대한 온 보 딩 작업 영역 확인<sup>1</sup>       | Microsoft.OperationalInsights/workspaces/read         | Subscription         |
 | Log Analytics 공급자 등록 |Microsoft.Insights/register/action | Subscription|
 
 <sup>1</sup> 이 권한은 VM 포털 환경을 통해 등록 하는 데 필요 합니다.

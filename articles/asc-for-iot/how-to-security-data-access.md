@@ -1,5 +1,5 @@
 ---
-title: IoT에 대 한 Azure Security Center를 사용 하 여 데이터 액세스 | Microsoft Docs
+title: IoT에 대한 Azure Security Center를 사용 하 여 데이터 액세스 | Microsoft Docs
 description: IoT에 Azure Security Center를 사용 하는 경우 보안 경고 및 권장 사항 데이터에 액세스 하는 방법에 대해 알아봅니다.
 services: asc-for-iot
 ms.service: asc-for-iot
@@ -24,7 +24,7 @@ ms.locfileid: "68597188"
 ---
 # <a name="access-your-security-data"></a>보안 데이터 액세스 
 
-IoT에 대 한 Azure Security Center에는 보안 경고, 권장 사항 및 원시 보안 데이터 (저장 하도록 선택한 경우)가 Log Analytics 작업 영역에 저장 됩니다.
+IoT에 대한 Azure Security Center에는 보안 경고, 권장 사항 및 원시 보안 데이터 (저장 하도록 선택한 경우)가 Log Analytics 작업 영역에 저장 됩니다.
 
 ## <a name="log-analytics"></a>Log Analytics
 
@@ -36,10 +36,10 @@ IoT에 대 한 Azure Security Center에는 보안 경고, 권장 사항 및 원�
 
 구성 후 Log Analytics 작업 영역에서 경고 및 권장 사항에 액세스 하려면 다음을 수행 합니다.
 
-1. IoT에 대 한 Azure Security Center에서 경고 또는 권장 사항을 선택 합니다. 
+1. IoT에 대한 Azure Security Center에서 경고 또는 권장 사항을 선택 합니다. 
 2. **추가 조사**를 클릭 한 다음 **이 경고가 있는 장치를 보려면 여기를 클릭 하 여 DeviceId 열을 확인**합니다.
 
-Log Analytics에서 데이터를 쿼리 하는 방법에 대 한 자세한 내용은 [Log Analytics에서 쿼리 시작](https://docs.microsoft.com//azure/log-analytics/query-language/get-started-queries)을 참조 하세요.
+Log Analytics에서 데이터를 쿼리 하는 방법에 대한 자세한 내용은 [Log Analytics에서 쿼리 시작](https://docs.microsoft.com//azure/log-analytics/query-language/get-started-queries)을 참조 하세요.
 
 ## <a name="security-alerts"></a>보안 경고
 
@@ -69,8 +69,8 @@ SecurityAlert
 | TimeGenerated           | IoTHubId                                                                                                       | DeviceID      | AlertSeverity | DisplayName                           | 설명                                             | ExtendedProperties                                                                                                                                                             |
 |-------------------------|----------------------------------------------------------------------------------------------------------------|---------------|---------------|---------------------------------------|---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2018-11-18T18:10:29.000 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | 높음          | 무차별 암호 대입 공격 성공           | 장치에서 무차별 암호 대입 공격 성공        |    {"전체 원본 주소": "[\"10.165.12.18:\"]", "사용자 이름": "[\"\"]", "DeviceId": "IoT-Device-Linux" }                                                                       |
-| 2018-11-19T12:40:31.000 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | 높음          | 장치에서 로컬 로그인 성공      | 장치에 대 한 로컬 로그인에 성공 했습니다.     | { "Remote Address": "?", "Remote Port": "", "Local Port": "", "Login Shell": "/bin/su", "Login Process Id": "28207", "사용자 이름": "공격자", "DeviceId": "IoT-Device-Linux" } |
-| 2018-11-19T12:40:31.000 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | 높음          | 장치에서 로컬 로그인 시도 실패  | 장치에 대 한 로컬 로그인 시도가 실패 했습니다. |  { "Remote Address": "?", "Remote Port": "", "Local Port": "", "Login Shell": "/bin/su", "Login Process Id": "22644", "사용자 이름": "공격자", "DeviceId": "IoT-Device-Linux" } |
+| 2018-11-19T12:40:31.000 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | 높음          | 장치에서 로컬 로그인 성공      | 장치에 대한 로컬 로그인에 성공 했습니다.     | { "Remote Address": "?", "Remote Port": "", "Local Port": "", "Login Shell": "/bin/su", "Login Process Id": "28207", "사용자 이름": "공격자", "DeviceId": "IoT-Device-Linux" } |
+| 2018-11-19T12:40:31.000 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | 높음          | 장치에서 로컬 로그인 시도 실패  | 장치에 대한 로컬 로그인 시도가 실패 했습니다. |  { "Remote Address": "?", "Remote Port": "", "Local Port": "", "Login Shell": "/bin/su", "Login Process Id": "22644", "사용자 이름": "공격자", "DeviceId": "IoT-Device-Linux" } |
 
 ### <a name="device-summary"></a>장치 요약
 
@@ -176,7 +176,7 @@ SecurityRecommendation
 
 ## <a name="next-steps"></a>다음 단계
 
-- IoT에 대 한 Azure Security Center [개요](overview.md) 를 참조 하십시오.
-- IoT [아키텍처](architecture.md) 에 대 한 Azure Security Center에 대해 알아보기
-- [IoT 경고에 대 한 Azure Security Center](concept-security-alerts.md) 이해 및 탐색
-- [IoT 권장 사항에 대 한 Azure Security Center](concept-recommendations.md) 이해 및 탐색
+- IoT에 대한 Azure Security Center [개요](overview.md) 를 참조 하십시오.
+- IoT [아키텍처](architecture.md) 에 대한 Azure Security Center에 대해 알아보기
+- [IoT 경고에 대한 Azure Security Center](concept-security-alerts.md) 이해 및 탐색
+- [IoT 권장 사항에 대한 Azure Security Center](concept-recommendations.md) 이해 및 탐색

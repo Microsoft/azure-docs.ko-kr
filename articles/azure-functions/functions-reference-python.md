@@ -111,7 +111,7 @@ Python 함수 프로젝트에 권장 되는 폴더 구조는 다음 예제와 �
 from __app__.SharedCode import myFirstHelperFunction
 ```
 
-함수에 대 한 로컬 모듈을 참조 하려면 다음과 같이 상대 가져오기 구문을 사용할 수 있습니다.
+함수에 대한 로컬 모듈을 참조 하려면 다음과 같이 상대 가져오기 구문을 사용할 수 있습니다.
 
 ```python
 from . import example
@@ -121,7 +121,7 @@ Azure에서 함수 앱에 프로젝트를 배포할 때 *Functionapp* 폴더의 
 
 ## <a name="triggers-and-inputs"></a>트리거 및 입력
 
-입력은 Azure Functions에서 트리거 입력과 추가 입력의 두 가지 범주로 나뉩니다. `function.json` 파일에서는 다르지만 사용은 Python 코드에서 동일 합니다.  트리거 및 입력 소스에 대 한 연결 문자열 또는 암호는 로컬로 실행할 때 `local.settings.json` 파일의 값에 매핑되고, Azure에서 실행할 때 응용 프로그램 설정에 매핑됩니다. 
+입력은 Azure Functions에서 트리거 입력과 추가 입력의 두 가지 범주로 나뉩니다. `function.json` 파일에서는 다르지만 사용은 Python 코드에서 동일 합니다.  트리거 및 입력 소스에 대한 연결 문자열 또는 암호는 로컬로 실행할 때 `local.settings.json` 파일의 값에 매핑되고, Azure에서 실행할 때 응용 프로그램 설정에 매핑됩니다. 
 
 예를 들어 다음 코드는 두 가지 간의 차이점을 보여 줍니다.
 
@@ -278,11 +278,11 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 이 함수에서 `name` 쿼리 매개 변수의 값은 [HttpRequest] 개체의 `params` 매개 변수에서 가져옵니다. JSON으로 인코딩된 메시지 본문은 `get_json` 메서드를 사용 하 여 읽습니다. 
 
-마찬가지로 반환 된 [HttpResponse] 개체의 응답 메시지에 대 한 `status_code` 및 `headers`를 설정할 수 있습니다.
+마찬가지로 반환 된 [HttpResponse] 개체의 응답 메시지에 대한 `status_code` 및 `headers`를 설정할 수 있습니다.
 
 ## <a name="scaling-and-concurrency"></a>크기 조정 및 동시성
 
-기본적으로 Azure Functions는 응용 프로그램의 부하를 자동으로 모니터링 하 고 필요에 따라 Python의 추가 호스트 인스턴스를 만듭니다. 함수는 다양 한 트리거 유형에 대해 기본 제공 (사용자 구성 불가능) 임계값을 사용 하 여 QueueTrigger에 대 한 메시지의 보존 기간 및 큐 크기와 같은 인스턴스를 추가할 시기를 결정 합니다. 자세한 내용은 [소비 및 프리미엄 계획의 작동 방식](functions-scale.md#how-the-consumption-and-premium-plans-work)을 참조 하세요.
+기본적으로 Azure Functions는 응용 프로그램의 부하를 자동으로 모니터링 하 고 필요에 따라 Python의 추가 호스트 인스턴스를 만듭니다. 함수는 다양 한 트리거 유형에 대해 기본 제공 (사용자 구성 불가능) 임계값을 사용 하 여 QueueTrigger에 대한 메시지의 보존 기간 및 큐 크기와 같은 인스턴스를 추가할 시기를 결정 합니다. 자세한 내용은 [소비 및 프리미엄 계획의 작동 방식](functions-scale.md#how-the-consumption-and-premium-plans-work)을 참조 하세요.
 
 이러한 크기 조정 동작은 많은 응용 프로그램에서 충분 합니다. 그러나 다음과 같은 특징을 가진 응용 프로그램은 효과적으로 확장 되지 않을 수 있습니다.
 

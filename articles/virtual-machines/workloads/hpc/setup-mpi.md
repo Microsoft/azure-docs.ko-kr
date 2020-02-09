@@ -23,7 +23,7 @@ ms.locfileid: "77023993"
 
 MPI (메시지 전달 인터페이스) 작업은 기존 HPC 워크 로드의 중요 한 부분입니다. Azure에서 SR-IOV 사용 VM 크기를 사용 하면 MPI의 거의 모든 버전을 사용할 수 있습니다. 
 
-Vm에서 MPI 작업을 실행 하려면 테 넌 트 전체에서 파티션 키 (p-키)를 설정 해야 합니다. P 키 값을 확인 하는 방법에 대 한 자세한 내용은 [파티션 키 검색](#discover-partition-keys) 섹션의 단계를 따르세요.
+Vm에서 MPI 작업을 실행 하려면 테넌트 전체에서 파티션 키 (p-키)를 설정 해야 합니다. P 키 값을 확인 하는 방법에 대 한 자세한 내용은 [파티션 키 검색](#discover-partition-keys) 섹션의 단계를 따르세요.
 
 ## <a name="ucx"></a>함께 x
 
@@ -146,14 +146,14 @@ MPI 벤치 마크는 `mpi/` 폴더에 있습니다.
 
 ## <a name="discover-partition-keys"></a>파티션 키 검색
 
-동일한 테 넌 트 내의 다른 Vm (가용성 집합 또는 VM 확장 집합)과 통신 하기 위한 파티션 키 (p 키)를 검색 합니다.
+동일한 테넌트 내의 다른 Vm (가용성 집합 또는 VM 확장 집합)과 통신 하기 위한 파티션 키 (p 키)를 검색 합니다.
 
 ```bash
 /sys/class/infiniband/mlx5_0/ports/1/pkeys/0
 /sys/class/infiniband/mlx5_0/ports/1/pkeys/1
 ```
 
-둘 중 더 큰 값은 MPI에서 사용 해야 하는 테 넌 트 키입니다. 예: 다음은 p 키입니다. 0x800b는 MPI와 함께 사용 해야 합니다.
+둘 중 더 큰 값은 MPI에서 사용 해야 하는 테넌트 키입니다. 예: 다음은 p 키입니다. 0x800b는 MPI와 함께 사용 해야 합니다.
 
 ```bash
 cat /sys/class/infiniband/mlx5_0/ports/1/pkeys/0
@@ -164,7 +164,7 @@ cat /sys/class/infiniband/mlx5_0/ports/1/pkeys/1
 
 기본 (0x7fff) 파티션 키가 아닌 다른 파티션을 사용 합니다. 키를 사용 하려면 MSB의 키를 지워야 합니다. 예를 들어 0x800b에 대해 UCX_IB_PKEY를 0x000b로 설정 합니다.
 
-또한 테 넌 트 (AVSet 또는 VMSS)가 있는 한 PKEYs는 동일 하 게 유지 됩니다. 노드가 추가 되거나 삭제 되는 경우에도 마찬가지입니다. 새 테 넌 트가 서로 다른 PKEYs를 가져옵니다.
+또한 테넌트 (AVSet 또는 VMSS)가 있는 한 PKEYs는 동일 하 게 유지 됩니다. 노드가 추가 되거나 삭제 되는 경우에도 마찬가지입니다. 새 테넌트가 서로 다른 PKEYs를 가져옵니다.
 
 
 ## <a name="set-up-user-limits-for-mpi"></a>MPI에 대 한 사용자 제한 설정

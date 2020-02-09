@@ -57,15 +57,15 @@ beeline -u 'jdbc:hive2://<headnode-FQDN>:10001/default;principal=hive/_HOST@<AAD
 
 ---
 
-### <a name="over-public-or-private-endpoints"></a>공용 또는 개인 끝점을 통해
+### <a name="over-public-or-private-endpoints"></a>공용 또는 개인 엔드포인트을 통해
 
-공용 또는 개인 끝점을 사용 하 여 클러스터에 연결 하는 경우 클러스터 로그인 계정 이름 (기본값 `admin`) 및 암호를 제공 해야 합니다. 예를 들어 클라이언트 시스템에서 Beeline을 사용하여 `clustername.azurehdinsight.net` 주소에 연결합니다. 이 연결은 `443` 포트를 통해 이루어지며 SSL을 사용하여 암호화됩니다.
+공용 또는 개인 엔드포인트을 사용 하 여 클러스터에 연결 하는 경우 클러스터 로그인 계정 이름 (기본값 `admin`) 및 암호를 제공 해야 합니다. 예를 들어 클라이언트 시스템에서 Beeline을 사용하여 `clustername.azurehdinsight.net` 주소에 연결합니다. 이 연결은 `443` 포트를 통해 이루어지며 SSL을 사용하여 암호화됩니다.
 
 ```bash
 beeline -u 'jdbc:hive2://clustername.azurehdinsight.net:443/;ssl=true;transportMode=http;httpPath=/hive2' -n admin -p 'password'
 ```
 
-또는 개인 끝점의 경우:
+또는 개인 엔드포인트의 경우:
 
 ```bash
 beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transportMode=http;httpPath=/hive2' -n admin -p 'password'
@@ -73,7 +73,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
 `clustername`을 HDInsight 클러스터 이름으로 바꿉니다. `admin`을 클러스터의 클러스터 로그인 계정으로 바꿉니다. ESP 클러스터의 경우 전체 UPN을 사용 합니다 (예: user@domain.com). `password`를 클러스터 로그인 계정의 암호로 바꿉니다.
 
-개인 끝점은 동일한 지역의 Vnet 피어 링 에서만 액세스할 수 있는 기본 부하 분산 장치를 가리킵니다. 자세한 정보는 [글로벌 VNet 피어 링 및 부하 분산 장치에 대 한 제약 조건](../../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) 을 참조 하세요. Beeline를 사용 하기 전에 `-v` 옵션과 함께 `curl` 명령을 사용 하 여 공용 또는 개인 끝점의 연결 문제를 해결할 수 있습니다.
+개인 엔드포인트은 동일한 지역의 Vnet 피어 링 에서만 액세스할 수 있는 기본 부하 분산 장치를 가리킵니다. 자세한 정보는 [글로벌 VNet 피어 링 및 부하 분산 장치에 대 한 제약 조건](../../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) 을 참조 하세요. Beeline를 사용 하기 전에 `-v` 옵션과 함께 `curl` 명령을 사용 하 여 공용 또는 개인 엔드포인트의 연결 문제를 해결할 수 있습니다.
 
 ---
 
@@ -81,7 +81,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
 Apache Spark는 자체적으로 HiveServer2를 구현하며, HiveServer2는 종종 Spark Thrift 서버라고 합니다. 이 서비스는 Hive 대신 Spark SQL을 사용하여 쿼리를 해결하고, 쿼리에 따라 더 나은 성능을 제공할 수 있습니다.
 
-#### <a name="through-public-or-private-endpoints"></a>공용 또는 개인 끝점을 통해
+#### <a name="through-public-or-private-endpoints"></a>공용 또는 개인 엔드포인트을 통해
 
 사용 된 연결 문자열은 약간 다릅니다. `httpPath=/hive2`를 포함 하는 대신 `httpPath/sparkhive2`합니다.
 
@@ -89,7 +89,7 @@ Apache Spark는 자체적으로 HiveServer2를 구현하며, HiveServer2는 종�
 beeline -u 'jdbc:hive2://clustername.azurehdinsight.net:443/;ssl=true;transportMode=http;httpPath=/sparkhive2' -n admin -p 'password'
 ```
 
-또는 개인 끝점의 경우:
+또는 개인 엔드포인트의 경우:
 
 ```bash
 beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transportMode=http;httpPath=/sparkhive2' -n admin -p 'password'
@@ -97,7 +97,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
 `clustername`을 HDInsight 클러스터 이름으로 바꿉니다. `admin`을 클러스터의 클러스터 로그인 계정으로 바꿉니다. ESP 클러스터의 경우 전체 UPN (예: user@domain.com)을 사용 합니다. `password`를 클러스터 로그인 계정의 암호로 바꿉니다.
 
-개인 끝점은 동일한 지역의 Vnet 피어 링 에서만 액세스할 수 있는 기본 부하 분산 장치를 가리킵니다. 자세한 정보는 [글로벌 VNet 피어 링 및 부하 분산 장치에 대 한 제약 조건](../../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) 을 참조 하세요. Beeline를 사용 하기 전에 `-v` 옵션과 함께 `curl` 명령을 사용 하 여 공용 또는 개인 끝점의 연결 문제를 해결할 수 있습니다.
+개인 엔드포인트은 동일한 지역의 Vnet 피어 링 에서만 액세스할 수 있는 기본 부하 분산 장치를 가리킵니다. 자세한 정보는 [글로벌 VNet 피어 링 및 부하 분산 장치에 대 한 제약 조건](../../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) 을 참조 하세요. Beeline를 사용 하기 전에 `-v` 옵션과 함께 `curl` 명령을 사용 하 여 공용 또는 개인 엔드포인트의 연결 문제를 해결할 수 있습니다.
 
 ---
 
@@ -347,7 +347,7 @@ Beeline는 HDInsight 클러스터의 헤드 노드에 포함 되지만 로컬 �
 
 1. Bash 세션을 닫았다가 다시 엽니다.
 
-1. 연결을 테스트 합니다. 위의 [공용 또는 개인 끝점](#over-public-or-private-endpoints)에서 연결 형식을 사용 합니다.
+1. 연결을 테스트 합니다. 위의 [공용 또는 개인 엔드포인트](#over-public-or-private-endpoints)에서 연결 형식을 사용 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

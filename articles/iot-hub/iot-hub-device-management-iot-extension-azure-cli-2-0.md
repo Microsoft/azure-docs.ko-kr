@@ -23,7 +23,7 @@ ms.locfileid: "68640562"
 
 [!INCLUDE [iot-hub-get-started-note](../../includes/iot-hub-get-started-note.md)]
 
-[Azure CLI에 대 한 IoT 확장](https://github.com/Azure/azure-iot-cli-extension) 은 [Azure CLI](https://docs.microsoft.com/cli/azure/overview?view=azure-cli-latest)의 기능에 추가 되는 새로운 오픈 소스 IoT 확장입니다. Azure CLI에는 Azure Resource Manager 및 관리 끝점과 상호 작용 하기 위한 명령이 포함 되어 있습니다. 예를 들어 Azure CLI를 사용하여 Azure VM 또는 IoT 허브를 만들 수 있습니다. CLI 확장을 사용하면 Azure 서비스는 Azure CLI를 확대하여, 사용자에게 추가적인 서비스별 기능에 대한 액세스 권한을 부여할 수 있습니다. IoT 확장은 IoT 개발자에 게 모든 IoT Hub, IoT Edge 및 IoT Hub Device Provisioning Service 기능에 대 한 명령줄 액세스를 제공 합니다.
+[Azure CLI에 대 한 IoT 확장](https://github.com/Azure/azure-iot-cli-extension) 은 [Azure CLI](https://docs.microsoft.com/cli/azure/overview?view=azure-cli-latest)의 기능에 추가 되는 새로운 오픈 소스 IoT 확장입니다. Azure CLI에는 Azure Resource Manager 및 관리 엔드포인트과 상호 작용 하기 위한 명령이 포함 되어 있습니다. 예를 들어 Azure CLI를 사용하여 Azure VM 또는 IoT 허브를 만들 수 있습니다. CLI 확장을 사용하면 Azure 서비스는 Azure CLI를 확대하여, 사용자에게 추가적인 서비스별 기능에 대한 액세스 권한을 부여할 수 있습니다. IoT 확장은 IoT 개발자에 게 모든 IoT Hub, IoT Edge 및 IoT Hub Device Provisioning Service 기능에 대 한 명령줄 액세스를 제공 합니다.
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
 

@@ -57,7 +57,7 @@ Azure Event Hubs는 지원되는 모든 Azure 지역에서 사용할 수 있습�
 
 Event Hubs 표준 계층은 현재 최대 7일의 보존 기간을 지원합니다. Event hubs는 영구 데이터 저장소로 사용 되지 않습니다. 24 시간 보다 큰 보존 기간은 이벤트 스트림을 동일한 시스템으로 재생 하는 데 편리한 시나리오를 위한 것입니다. 예를 들어 기존 데이터에서 새로운 기계 학습 모델을 학습 하거나 확인 합니다. 7일을 초과하여 메시지를 보존해야 하는 경우 Event Hubs에서 [Event Hubs 캡처](event-hubs-capture-overview.md)를 사용하도록 설정하면 Event Hubs의 데이터를 선택한 Storage 계정 또는 Azure Data Lake 서비스 계정으로 가져옵니다. 캡처를 사용하도록 설정하면 구매한 처리량 단위에 따라 요금이 부과됩니다.
 
-저장소 계정에서 캡처된 데이터의 보존 기간을 구성할 수 있습니다. Azure Storage의 **수명 주기 관리** 기능은 범용 v2 및 blob Storage 계정에 대 한 다양 한 규칙 기반 정책을 제공 합니다. 정책을 사용하여 데이터를 적절한 액세스 계층으로 전환하거나 데이터의 수명 주기 후에 만료합니다. 자세한 내용은 [Azure Blob 저장소 수명 주기 관리](../storage/blobs/storage-lifecycle-management-concepts.md)를 참조 하세요. 
+저장소 계정에서 캡처된 데이터의 보존 기간을 구성할 수 있습니다. Azure Storage의 **수명 주기 관리** 기능은 범용 v2 및 blob Storage 계정에 대한 다양 한 규칙 기반 정책을 제공 합니다. 정책을 사용하여 데이터를 적절한 액세스 계층으로 전환하거나 데이터의 수명 주기 후에 만료합니다. 자세한 내용은 [Azure Blob 저장소 수명 주기 관리](../storage/blobs/storage-lifecycle-management-concepts.md)를 참조 하세요. 
 
 ### <a name="how-do-i-monitor-my-event-hubs"></a>내 Event Hubs를 모니터링하려면 어떻게 할까요?
 Event Hubs는 [Azure Monitor](../azure-monitor/overview.md)에 리소스 상태를 제공하는 자세한 메트릭을 내보냅니다. 또한 네임스페이스 수준뿐만 아니라 엔터티 수준에서도 Event Hubs 서비스의 전반적인 상태를 평가할 수 있습니다. [Azure Event Hubs](event-hubs-metrics-azure-monitor.md)에 제공되는 모니터링에 대해 알아보세요.
@@ -78,7 +78,7 @@ Azure Service Bus에서 다음 프로토콜을 사용 하 여 메시지를 보�
 | Kafka | 9093 | [Kafka 응용 프로그램에서 Event Hubs 사용을](event-hubs-for-kafka-ecosystem-overview.md) 참조 하세요.
 
 ### <a name="what-ip-addresses-do-i-need-to-whitelist"></a>허용 목록 하는 데 필요한 IP 주소는 무엇 인가요?
-연결에 대 한 적절 한 IP 주소 목록을 찾으려면 다음 단계를 수행 합니다.
+연결에 대한 적절 한 IP 주소 목록을 찾으려면 다음 단계를 수행 합니다.
 
 1. 명령 프롬프트에서 다음 명령을 실행 합니다. 
 
@@ -109,7 +109,7 @@ Azure Service Bus에서 다음 프로토콜을 사용 하 여 메시지를 보�
 Event Hubs는 기존 Apache Kafka 기반 애플리케이션에서 사용할 수 있는 Kafka 엔트포인트를 제공합니다. PaaS Kafka 환경을 갖추려면 구성만 변경하면 됩니다. 이 구성은 사용자 고유의 Kafka 클러스터를 실행하기 위한 대안을 제공합니다. Event Hubs는 Apache Kafka 1.0 및 최신 클라이언트 버전을 지원하고, 기존 Kafka 애플리케이션, 도구 및 프레임워크와 작동합니다. 자세한 내용은 [Kafka용 Event Hubs 리포지토리](https://github.com/Azure/azure-event-hubs-for-kafka)를 참조하세요.
 
 ### <a name="what-configuration-changes-need-to-be-done-for-my-existing-application-to-talk-to-event-hubs"></a>기존 애플리케이션에서 Event Hubs와 통신하려면 어떤 구성을 변경해야 하나요?
-Kafka 사용 Event Hub에 연결하려면 Kafka 클라이언트 구성을 업데이트해야 합니다. 이 작업을 수행 하려면 Event Hubs 네임 스페이스를 만들고 [연결 문자열](event-hubs-get-connection-string.md)을 가져옵니다. Event Hubs FQDN과 포트에서 9093을 가리키도록 bootstrap.servers를 변경합니다. 다음과 같이 올바른 인증을 사용 하 여 Kafka 클라이언트를 Kafka 사용 Event Hubs 끝점 (가져온 연결 문자열)으로 보내도록 sasl을 업데이트 합니다.
+Kafka 사용 Event Hub에 연결하려면 Kafka 클라이언트 구성을 업데이트해야 합니다. 이 작업을 수행 하려면 Event Hubs 네임 스페이스를 만들고 [연결 문자열](event-hubs-get-connection-string.md)을 가져옵니다. Event Hubs FQDN과 포트에서 9093을 가리키도록 bootstrap.servers를 변경합니다. 다음과 같이 올바른 인증을 사용 하 여 Kafka 클라이언트를 Kafka 사용 Event Hubs 엔드포인트 (가져온 연결 문자열)으로 보내도록 sasl을 업데이트 합니다.
 
 bootstrap.servers={YOUR.EVENTHUBS.FQDN}:9093 request.timeout.ms=60000 security.protocol=SASL_SSL sasl.mechanism=PLAIN sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.EVENTHUBS.CONNECTION.STRING}";
 
@@ -187,9 +187,9 @@ Event Hubs Dedicated 클러스터는 요구 사항이 가장 까다로운 고객
 ## <a name="best-practices"></a>모범 사례
 
 ### <a name="how-many-partitions-do-i-need"></a>얼마나 많은 파티션이 필요한가요?
-파티션 수는 만들 때 지정되며 2와 32 사이여야 합니다. 파티션 수는 변경할 수 없으므로 파티션 수를 설정할 때 장기적인 규모를 고려해 야 합니다. 파티션은 애플리케이션을 사용하는 데 필요한 다운스트림 병렬 처리와 관련된 데이터 구성 메커니즘입니다. Event Hub의 파티션 수는 예상되는 동시 판독기의 수와 직접적으로 관련이 있습니다. 파티션에 대 한 자세한 내용은 [파티션](event-hubs-features.md#partitions)을 참조 하세요.
+파티션 수는 만들 때 지정되며 2와 32 사이여야 합니다. 파티션 수는 변경할 수 없으므로 파티션 수를 설정할 때 장기적인 규모를 고려해 야 합니다. 파티션은 애플리케이션을 사용하는 데 필요한 다운스트림 병렬 처리와 관련된 데이터 구성 메커니즘입니다. Event Hub의 파티션 수는 예상되는 동시 판독기의 수와 직접적으로 관련이 있습니다. 파티션에 대한 자세한 내용은 [파티션](event-hubs-features.md#partitions)을 참조 하세요.
 
-만들 때 가장 높은 값 (32)으로 설정 해야 할 수 있습니다. 두 개 이상의 파티션이 있는 경우에는 두 개 이상의 파티션이 중복 된 상태를 유지 32 하도록 발신자를 구성 하지 않는 한, 순서를 유지 하지 않고 여러 파티션으로 이벤트를 보냅니다. 이전 경우에는 모든 32 파티션에서 이벤트를 읽어야 합니다. 후자의 경우에는 이벤트 프로세서 호스트에서 수행 해야 하는 추가 구성에 대 한 명확한 추가 비용이 없습니다.
+만들 때 가장 높은 값 (32)으로 설정 해야 할 수 있습니다. 두 개 이상의 파티션이 있는 경우에는 두 개 이상의 파티션이 중복 된 상태를 유지 32 하도록 발신자를 구성 하지 않는 한, 순서를 유지 하지 않고 여러 파티션으로 이벤트를 보냅니다. 이전 경우에는 모든 32 파티션에서 이벤트를 읽어야 합니다. 후자의 경우에는 이벤트 프로세서 호스트에서 수행 해야 하는 추가 구성에 대한 명확한 추가 비용이 없습니다.
 
 Event Hubs는 소비자 그룹당 단일 파티션 판독기를 허용하도록 설계되었습니다. 대부분의 경우 기본 설정인 4개의 파티션만으로도 충분합니다. 이벤트 처리 크기를 조정 하려는 경우 추가 파티션을 추가 하는 것이 좋습니다. 파티션에는 특정 처리량 제한이 없지만 네임 스페이스의 집계 처리량은 처리량 단위 수로 제한 됩니다. 네임스페이스에서 처리량 단위 수를 늘리면 추가 파티션을 통해 동시 판독기가 고유한 최대 처리량을 달성하도록 할 수 있습니다.
 

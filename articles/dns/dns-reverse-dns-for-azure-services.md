@@ -1,6 +1,6 @@
 ---
-title: Azure 서비스에 대 한 역방향 DNS-Azure DNS
-description: 이 학습 경로를 사용 하 여 Azure에서 호스트 되는 서비스에 대 한 역방향 DNS 조회 구성을 시작 합니다.
+title: Azure 서비스에 대한 역방향 DNS-Azure DNS
+description: 이 학습 경로를 사용 하 여 Azure에서 호스트 되는 서비스에 대한 역방향 DNS 조회 구성을 시작 합니다.
 services: dns
 documentationcenter: na
 author: rohinkoul

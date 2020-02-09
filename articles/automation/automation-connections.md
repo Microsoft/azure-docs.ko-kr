@@ -16,7 +16,7 @@ ms.locfileid: "75940824"
 
 Automation 연결 자산은 외부 서비스 또는 runbook의 애플리케이션이나 DSC 구성 연결에 필요한 정보를 포함합니다. 여기에는 URL 또는 포트와 같은 연결 정보 외에 사용자 이름 및 암호와 같은 인증에 필요한 정보가 포함될 수 있습니다. 연결 값은 여러 변수를 만드는 대신, 특정 애플리케이션에 연결하기 위한 모든 속성을 하나의 자산에 유지합니다. 사용자는 한 위치의 연결에 대한 값을 편집할 수 있고 단일 매개 변수에서 연결 이름을 runbook 이나 DSC구성에 전달할 수 있습니다. 연결에 대한 속성은 **Get-AutomationConnection** 활동을 사용하여 runbook 또는 DSC 구성에 액세스할 수 있습니다.
 
-연결을 만들 때 *연결 형식*을 지정해야 합니다. 연결 형식은 속성 집합을 정의하는 템플릿입니다. 연결은 해당 연결 형식에 정의된 각 속성의 값을 정의합니다. 연결 형식은 통합 모듈의 Azure Automation에 추가되어 있거나 통합 모듈에 연결 형식이 포함되어 있고 이 유형을 Automation 계정으로 가져올 경우 [Azure Automation API](/previous-versions/azure/reference/mt163818(v=azure.100))를 사용하여 만들어집니다. 그렇지 않으면 Automation 연결 형식을 지정하기 위해 메타데이터 파일을 만들어야 합니다. 이에 대 한 자세한 내용은 [통합 모듈](automation-integration-modules.md)을 참조 하세요.
+연결을 만들 때 *연결 형식*을 지정해야 합니다. 연결 형식은 속성 집합을 정의하는 템플릿입니다. 연결은 해당 연결 형식에 정의된 각 속성의 값을 정의합니다. 연결 형식은 통합 모듈의 Azure Automation에 추가되어 있거나 통합 모듈에 연결 형식이 포함되어 있고 이 유형을 Automation 계정으로 가져올 경우 [Azure Automation API](/previous-versions/azure/reference/mt163818(v=azure.100))를 사용하여 만들어집니다. 그렇지 않으면 Automation 연결 형식을 지정하기 위해 메타데이터 파일을 만들어야 합니다. 이에 대한 자세한 내용은 [통합 모듈](automation-integration-modules.md)을 참조 하세요.
 
 >[!NOTE]
 >Azure Automation의 안전한 자산에는 자격 증명, 인증서, 연결, 암호화된 변수 등이 있습니다. 이러한 자산은 각 Automation 계정에 대해 생성되는 고유 키를 사용하여 암호화되고 Azure Automation에 저장됩니다. 이 키는 시스템에서 관리하는 Key Vault에 저장됩니다. 보안 자산을 저장하기 전에 Key Vault에서 키가 로드된 다음, 자산을 암호화하는 데 사용됩니다. Azure Automation에서 이 프로세스를 관리합니다.
@@ -87,7 +87,7 @@ $ConnectionFieldValues = @{"ApplicationId" = $Application.ApplicationId; "Tenant
 New-AzureRmAutomationConnection -ResourceGroupName $ResourceGroup -AutomationAccountName $AutomationAccountName -Name $ConnectionAssetName -ConnectionTypeName AzureServicePrincipal -ConnectionFieldValues $ConnectionFieldValues
 ```
 
-Automation 계정을 만들 때 기본적으로 **AzureServicePrincipal** 연결 형식과 함께 여러 전역 모듈이 자동으로 포함되어 **AzureRunAsConnection** 연결 자산을 만들 수 있기 때문에 스크립트를 사용하여 연결 자산을 만들 수 있습니다. 새 연결 자산을 만들어 다른 인증 방법으로 서비스 또는 애플리케이션에 연결하려는 경우 아직 연결 형식이 Automation 계정에 정의되어 있지 않기 때문에 실패하게 된다는 것을 명심해야 합니다. [PowerShell 갤러리](https://www.powershellgallery.com)에서 사용자 지정 또는 모듈에 대 한 사용자 고유의 연결 형식을 만드는 방법에 대 한 자세한 내용은 [통합 모듈](automation-integration-modules.md) 을 참조 하세요.
+Automation 계정을 만들 때 기본적으로 **AzureServicePrincipal** 연결 형식과 함께 여러 전역 모듈이 자동으로 포함되어 **AzureRunAsConnection** 연결 자산을 만들 수 있기 때문에 스크립트를 사용하여 연결 자산을 만들 수 있습니다. 새 연결 자산을 만들어 다른 인증 방법으로 서비스 또는 애플리케이션에 연결하려는 경우 아직 연결 형식이 Automation 계정에 정의되어 있지 않기 때문에 실패하게 된다는 것을 명심해야 합니다. [PowerShell 갤러리](https://www.powershellgallery.com)에서 사용자 지정 또는 모듈에 대한 사용자 고유의 연결 형식을 만드는 방법에 대한 자세한 내용은 [통합 모듈](automation-integration-modules.md) 을 참조 하세요.
 
 ## <a name="using-a-connection-in-a-runbook-or-dsc-configuration"></a>runbook 또는 DSC 구성에서 연결 사용하기
 

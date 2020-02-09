@@ -23,8 +23,8 @@ Azure AD B2C 테넌트에 애플리케이션을 등록하기 위해 현재 **애
 1. 애플리케이션의 이름을 입력합니다. 예를 들어 *nativeapp1*과 같습니다.
 1. **원시 클라이언트**에 대해 **예**를 선택합니다.
 1. 고유 구성표가 있는 **사용자 지정 리디렉션 URI**를 입력합니다. 예: `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect` 리디렉션 URI를 선택하는 경우 다음과 같은 두 가지 중요한 고려 사항이 있습니다.
-    * **고유**: 리디렉션 URI의 구성표는 모든 애플리케이션에 대해 고유해야 합니다. 보기 `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`에서 `com.onmicrosoft.contosob2c.exampleapp`은 구성표입니다. 이 패턴을 따라야 합니다. 두 애플리케이션이 동일한 체계를 공유하는 경우 애플리케이션을 선택하기 위한 옵션이 제공됩니다. 사용자가 잘못 선택하면 로그인이 실패합니다.
-    * **전체**: 리디렉션 URI에는 구성표 및 경로가 있어야 합니다. 경로는 도메인 다음에 하나 이상의 포워드 슬래시를 포함해야 합니다. 예를 들어 `//oauth/`는 실행되고 `//oauth`는 실행되지 않습니다. URI에 밑줄과 같은 특수 문자를 사용하지 마세요.
+    * **고유**: 리디렉션 URI의 구성표는 모든 애플리케이션에 대해 고유값을 가져야 합니다. 보기 `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`에서 `com.onmicrosoft.contosob2c.exampleapp`은 구성표입니다. 이 패턴을 따라야 합니다. 두 애플리케이션이 동일한 체계를 공유하는 경우 애플리케이션을 선택하기 위한 옵션이 제공됩니다. 사용자가 잘못 선택하면 로그인이 실패합니다.
+    * **전체**: 리디렉션 URI에는 구성표 및 경로가 있어야 합니다. 경로는 도메인 다음에 하나 이상의 포워드 슬래시를 포함해야 합니다. 예를 들어 `//oauth/`는 실행되고 `//oauth`는 실행되지 않습니다. URI에 언더바(_)와 같은 특수 문자를 사용하지 마세요.
 1. **만들기**를 선택합니다.
 
 #### <a name="app-registrations-previewtabapp-reg-preview"></a>[앱 등록(미리 보기)](#tab/app-reg-preview/)
@@ -37,7 +37,7 @@ Azure AD B2C 테넌트에 애플리케이션을 등록하기 위해 현재 **애
 1. **지원되는 계정 유형** 아래에서 **모든 조직 디렉터리 또는 ID 공급자의 계정**을 선택합니다.
 1. **리디렉션 URI** 아래에서 드롭다운을 사용하여 **퍼블릭 클라이언트/네이티브(모바일 및 데스크톱)** 를 선택합니다.
 1. 고유 구성표가 있는 리디렉션 URI를 입력합니다. 예: `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect` 리디렉션 URI를 선택하는 경우 다음과 같은 두 가지 중요한 고려 사항이 있습니다.
-    * **고유**: 리디렉션 URI의 구성표는 모든 애플리케이션에 대해 고유해야 합니다. 보기 `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`에서 `com.onmicrosoft.contosob2c.exampleapp`은 구성표입니다. 이 패턴을 따라야 합니다. 두 애플리케이션이 동일한 체계를 공유하는 경우 애플리케이션을 선택하기 위한 옵션이 제공됩니다. 사용자가 잘못 선택하면 로그인이 실패합니다.
+    * **고유**: 리디렉션 URI의 구성표는 모든 애플리케이션에 대해 고유값을 가져야 합니다. 보기 `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`에서 `com.onmicrosoft.contosob2c.exampleapp`은 구성표입니다. 이 패턴을 따라야 합니다. 두 애플리케이션이 동일한 체계를 공유하는 경우 애플리케이션을 선택하기 위한 옵션이 제공됩니다. 사용자가 잘못 선택하면 로그인이 실패합니다.
     * **전체**: 리디렉션 URI에는 구성표 및 경로가 있어야 합니다. 경로는 도메인 다음에 하나 이상의 포워드 슬래시를 포함해야 합니다. 예를 들어 `//oauth/`는 실행되고 `//oauth`는 실행되지 않습니다. URI에 밑줄과 같은 특수 문자를 사용하지 마세요.
 1. **사용 권한** 아래에서 *openid 및 offline_access 권한에 대한 관리자 동의 허용* 확인란을 선택합니다.
 1. **등록**을 선택합니다.

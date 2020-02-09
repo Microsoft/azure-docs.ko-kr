@@ -142,7 +142,7 @@ Azure 에뮬레이터에서 애플리케이션을 테스트하기 전에 몇 가
 > 
 
 ## <a name="next-steps"></a>다음 단계
-이 자습서에서는 Azure 클라우드 서비스에 호스팅된 기본 채팅 애플리케이션을 만드는 방법을 학습했습니다. Azure 웹 사이트에서이 응용 프로그램을 호스트 하는 방법에 대 한 자세한 내용은 [Azure 웹 사이트에서 Socket.IO를 사용 하 여 Node.js 채팅 응용 프로그램 빌드][chatwebsite]를 참조 하세요.
+이 자습서에서는 Azure 클라우드 서비스에 호스팅된 기본 채팅 애플리케이션을 만드는 방법을 학습했습니다. Azure 웹 사이트에서이 응용 프로그램을 호스트 하는 방법에 대한 자세한 내용은 [Azure 웹 사이트에서 Socket.IO를 사용 하 여 Node.js 채팅 응용 프로그램 빌드][chatwebsite]를 참조 하세요.
 
 자세한 내용은 [Node.js 개발자 센터](https://docs.microsoft.com/azure/javascript/)도 참조하세요.
 

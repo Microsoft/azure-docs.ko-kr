@@ -1,5 +1,5 @@
 ---
-title: 테 넌 트 별 데이터베이스 SaaS 자습서
+title: 테넌트 별 데이터베이스 SaaS 자습서
 description: Azure SQL Database를 사용하는 테넌트 패턴당 데이터베이스 및 기타 SaaS 패턴을 보여주는 Wingtip Tickets SaaS 다중 테넌트 애플리케이션을 배포하고 탐색합니다.
 services: sql-database
 ms.service: sql-database

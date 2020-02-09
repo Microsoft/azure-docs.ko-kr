@@ -323,6 +323,6 @@ Azure 배포에는 여러 계층의 네트워크 격리가 있습니다. 다음 
 
 ## <a name="next-steps"></a>다음 단계
 
-- [Microsoft Azure 가상 네트워크의 컴퓨터에 대 한 네트워크 격리 옵션](https://azure.microsoft.com/blog/network-isolation-options-for-machines-in-windows-azure-virtual-networks/)에 대해 알아봅니다. 여기에는 특정 백 엔드 네트워크 또는 하위 네트워크의 컴퓨터에서 허용 되는 IP 주소 목록에 따라 특정 끝점에 연결 하는 특정 클라이언트 또는 다른 컴퓨터에만 허용할 수 있는 클래식 프런트 엔드 및 백 엔드 시나리오가 포함 됩니다.
+- [Microsoft Azure 가상 네트워크의 컴퓨터에 대 한 네트워크 격리 옵션](https://azure.microsoft.com/blog/network-isolation-options-for-machines-in-windows-azure-virtual-networks/)에 대해 알아봅니다. 여기에는 특정 백 엔드 네트워크 또는 하위 네트워크의 컴퓨터에서 허용 되는 IP 주소 목록에 따라 특정 엔드포인트에 연결 하는 특정 클라이언트 또는 다른 컴퓨터에만 허용할 수 있는 클래식 프런트 엔드 및 백 엔드 시나리오가 포함 됩니다.
 
 - [Azure의 가상 머신 격리](../../virtual-machines/windows/isolation.md)에 대해 알아봅니다. Azure Compute는 특정 하드웨어 종류에 격리 되 고 단일 고객 전용으로 제공 되는 가상 머신 크기를 제공 합니다.

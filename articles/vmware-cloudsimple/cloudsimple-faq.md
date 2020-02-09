@@ -157,7 +157,7 @@ AVS는 azure에서 구독에 대 한 Azure Express 경로 연결을 제공 합�
 * 공용 및 AVS 사설 클라우드에 걸쳐 있는 응용 프로그램 아키텍처를 사용 하는 **하이브리드 응용 프로그램** 예를 들어 Azure에서 AVS 사설 클라우드의 응용 프로그램 및 데이터베이스 서버에 액세스 하는 webservers를 만들 수 있습니다.
 * VMware 지원 로깅, 성능 메트릭 및 보안 관리에서 실행 되는 워크 로드에 대 한 **azure monitor** 및 **azure security center**
 
-**VMware 테 넌 트를 Azure에 매핑할 어떻게 할까요? 있나요?**
+**VMware 테넌트를 Azure에 매핑할 어떻게 할까요? 있나요?**
 
 AVS는 Azure Portal에서 AVS 사설 클라우드의 VMware Vm을 관리 하는 고유한 기능을 제공 합니다. 원하는 리소스 제약 조건으로 구성 된 vCenter 리소스 풀을 전역 관리자가 구독에 매핑할 수 있습니다. 
 

@@ -107,7 +107,7 @@ Content-Length: 83
 
 HTTP 응답은 *폴링 소비자 패턴과*호환 되도록 설계 되었습니다. 또한 다음과 같은 주목할 만한 응답 헤더를 포함 합니다.
 
-* **Location**: 상태 끝점의 URL입니다. 이 URL에는 `statusQueryGetUri` 필드와 동일한 값이 포함 됩니다.
+* **Location**: 상태 엔드포인트의 URL입니다. 이 URL에는 `statusQueryGetUri` 필드와 동일한 값이 포함 됩니다.
 * **다시 시도-후**: 폴링 작업 사이에 대기 하는 시간 (초)입니다. 기본값은 `10`입니다.
 
 비동기 HTTP 폴링 패턴에 대 한 자세한 내용은 [http 비동기 작업 추적](durable-functions-http-features.md#async-operation-tracking) 설명서를 참조 하세요.

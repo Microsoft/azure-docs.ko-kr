@@ -1,6 +1,6 @@
 ---
-title: Azure NetApp Files에 대 한 성능 벤치 마크 테스트 결과 | Microsoft Docs
-description: 볼륨 수준에서 Azure NetApp Files에 대 한 성능 벤치 마크 테스트 결과를 설명 합니다.
+title: Azure NetApp Files에 대한 성능 벤치 마크 테스트 결과 | Microsoft Docs
+description: 볼륨 수준에서 Azure NetApp Files에 대한 성능 벤치 마크 테스트 결과를 설명 합니다.
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -21,9 +21,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 08/09/2019
 ms.locfileid: "68881748"
 ---
-# <a name="performance-benchmark-test-results-for-azure-netapp-files"></a>Azure NetApp Files에 대 한 성능 벤치 마크 테스트 결과
+# <a name="performance-benchmark-test-results-for-azure-netapp-files"></a>Azure NetApp Files에 대한 성능 벤치 마크 테스트 결과
 
-이 문서에서는 볼륨 수준에서 Azure NetApp Files에 대 한 성능 벤치 마크 테스트 결과를 설명 합니다. 
+이 문서에서는 볼륨 수준에서 Azure NetApp Files에 대한 성능 벤치 마크 테스트 결과를 설명 합니다. 
 
 ## <a name="sample-application-used-for-the-tests"></a>테스트에 사용 되는 샘플 응용 프로그램
 
@@ -77,7 +77,7 @@ I/o 테스트에서는 Vdbench 및 12xD32s V3 저장소 Vm의 조합을 사용 �
 
 ## <a name="latency"></a>대기 시간
 
-테스트 Vm과 Azure NetApp Files 볼륨 간의 거리가 i/o 성능에 영향을 줍니다.  아래 차트에서는 두 개의 서로 다른 Vm 집합에 대 한 IOPS 및 대기 시간 응답 곡선을 비교 합니다.  한 Vm 집합은 Azure NetApp Files 근처에 있고 다른 집합은 더 멀리 떨어져 있습니다.  추가 Vm 집합의 대기 시간이 증가 하면 지정 된 병렬 처리 수준에서 달성 된 IOPS의 양에 영향을 줍니다.  상관 없이 볼륨에 대 한 읽기는 아래 그림과 같이 30만 IOPS를 초과할 수 있습니다. 
+테스트 Vm과 Azure NetApp Files 볼륨 간의 거리가 i/o 성능에 영향을 줍니다.  아래 차트에서는 두 개의 서로 다른 Vm 집합에 대한 IOPS 및 대기 시간 응답 곡선을 비교 합니다.  한 Vm 집합은 Azure NetApp Files 근처에 있고 다른 집합은 더 멀리 떨어져 있습니다.  추가 Vm 집합의 대기 시간이 증가 하면 지정 된 병렬 처리 수준에서 달성 된 IOPS의 양에 영향을 줍니다.  상관 없이 볼륨에 대한 읽기는 아래 그림과 같이 30만 IOPS를 초과할 수 있습니다. 
 
 ![대기 시간 연구](../media/azure-netapp-files/azure-netapp-files-latency-study.png)
 
@@ -85,7 +85,7 @@ I/o 테스트에서는 Vdbench 및 12xD32s V3 저장소 Vm의 조합을 사용 �
 
 대기 시간에 민감한 작업 (데이터베이스)에는 1 밀리초의 응답 시간이 있을 수 있습니다. 트랜잭션 성능은 단일 볼륨에 대해 제한은 30만 개의 IOPS를 초과할 수 있습니다.
 
-스트리밍 및 이미징에 대 한 처리량 관련 응용 프로그램은 4.5 GiB/s 처리량을 가질 수 있습니다.
+스트리밍 및 이미징에 대한 처리량 관련 응용 프로그램은 4.5 GiB/s 처리량을 가질 수 있습니다.
 
 ## <a name="example-scripts"></a>예제 스크립트
 

@@ -1,6 +1,6 @@
 ---
-title: 새 권장 사항에 대 한 Azure Advisor 경고 만들기
-description: 새 권장 사항에 대 한 Azure Advisor 경고 만들기
+title: 새 권장 사항에 대한 Azure Advisor 경고 만들기
+description: 새 권장 사항에 대한 Azure Advisor 경고 만들기
 ms.topic: article
 ms.date: 09/09/2019
 ms.openlocfilehash: 07cbc57ef718b6cac104d2b5238ff4e3196f197a
@@ -10,11 +10,11 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75443164"
 ---
-# <a name="create-azure-advisor-alerts-on-new-recommendations"></a>새 권장 사항에 대 한 Azure Advisor 경고 만들기 
+# <a name="create-azure-advisor-alerts-on-new-recommendations"></a>새 권장 사항에 대한 Azure Advisor 경고 만들기 
 
-이 문서에서는 Azure Portal 및 Azure Resource Manager 템플릿을 사용 하 여 Azure Advisor에서 새로운 권장 사항에 대 한 경고를 설정 하는 방법을 보여 줍니다. 
+이 문서에서는 Azure Portal 및 Azure Resource Manager 템플릿을 사용 하 여 Azure Advisor에서 새로운 권장 사항에 대한 경고를 설정 하는 방법을 보여 줍니다. 
 
-Azure Advisor에서 리소스 중 하나에 대 한 새로운 권장 사항을 발견할 때마다 이벤트는 [Azure 활동 로그](https://docs.microsoft.com/azure/azure-monitor/platform/activity-logs-overview)에 저장 됩니다. 권장 사항 별 경고 생성 환경을 사용 하 여 Azure Advisor에서 이러한 이벤트에 대 한 경고를 설정할 수 있습니다. 구독을 선택 하 고 필요에 따라 리소스 그룹을 선택 하 여 경고를 수신 하려는 리소스를 지정할 수 있습니다. 
+Azure Advisor에서 리소스 중 하나에 대한 새로운 권장 사항을 발견할 때마다 이벤트는 [Azure 활동 로그](https://docs.microsoft.com/azure/azure-monitor/platform/activity-logs-overview)에 저장 됩니다. 권장 사항 별 경고 생성 환경을 사용 하 여 Azure Advisor에서 이러한 이벤트에 대한 경고를 설정할 수 있습니다. 구독을 선택 하 고 필요에 따라 리소스 그룹을 선택 하 여 경고를 수신 하려는 리소스를 지정할 수 있습니다. 
 
 이러한 속성을 사용 하 여 권장 구성 유형을 확인할 수도 있습니다.
 
@@ -49,7 +49,7 @@ Azure Advisor에서 리소스 중 하나에 대 한 새로운 권장 사항을 �
 
     ![Advisor 경고 범위](./media/advisor-alerts/create4.png)
 
-5. **조건** 섹션에서 경고를 구성 하는 데 사용할 방법을 선택 합니다. 특정 범주 및/또는 영향 수준에 대 한 모든 권장 사항에 대 한 경고를 표시 하려면 **범주 및 영향 수준**을 선택 합니다. 특정 유형의 모든 권장 사항에 대 한 경고를 표시 하려면 **권장 사항 유형**을 선택 합니다.
+5. **조건** 섹션에서 경고를 구성 하는 데 사용할 방법을 선택 합니다. 특정 범주 및/또는 영향 수준에 대한 모든 권장 사항에 대한 경고를 표시 하려면 **범주 및 영향 수준**을 선택 합니다. 특정 유형의 모든 권장 사항에 대한 경고를 표시 하려면 **권장 사항 유형**을 선택 합니다.
 
     ![Azure Advisor 경고 조건](./media/advisor-alerts/create5.png)
 
@@ -166,7 +166,7 @@ Azure Advisor에서 리소스 중 하나에 대 한 새로운 권장 사항을 �
   ```
 
 ## <a name="configure-recommendation-alerts-to-use-a-webhook"></a>Webhook를 사용 하도록 권장 구성 경고 구성
-이 섹션에서는 기존 시스템에 대 한 웹 후크를 통해 권장 사항 데이터를 보내도록 Azure Advisor 경고를 구성 하는 방법을 보여 줍니다. 
+이 섹션에서는 기존 시스템에 대한 웹 후크를 통해 권장 사항 데이터를 보내도록 Azure Advisor 경고를 구성 하는 방법을 보여 줍니다. 
 
 리소스 중 하나에 새 Advisor 권장 사항이 있는 경우 알림을 받도록 경고를 설정할 수 있습니다. 이러한 경고는 전자 메일 또는 문자 메시지를 통해 알림을 받을 수 있지만 webhook를 통해 기존 시스템과 통합 하는 데 사용할 수도 있습니다. 
 
@@ -174,7 +174,7 @@ Azure Advisor에서 리소스 중 하나에 대 한 새로운 권장 사항을 �
 ### <a name="using-the-advisor-recommendation-alert-payload"></a>Advisor 권장 사항 경고 페이로드 사용
 웹 후크를 사용 하 여 사용자 고유의 시스템에 Advisor 경고를 통합 하려면 알림에서 전송 되는 JSON 페이로드를 구문 분석 해야 합니다. 
 
-이 경고에 대 한 작업 그룹을 설정할 때 일반적인 경고 스키마를 사용할지 여부를 선택 합니다. 일반적인 경고 스키마를 선택 하는 경우 페이로드는 다음과 같습니다. 
+이 경고에 대한 작업 그룹을 설정할 때 일반적인 경고 스키마를 사용할지 여부를 선택 합니다. 일반적인 경고 스키마를 선택 하는 경우 페이로드는 다음과 같습니다. 
 
 ```json
 {  

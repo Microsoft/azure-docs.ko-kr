@@ -59,7 +59,7 @@ Traffic Manager 프로필이 지리적 라우팅에 대해 구성된 경우 트�
 
 ## <a name="configure-your-vpn-gateway-to-active-active-for-connection-resiliency"></a>연결 복원을 위해 VPN 게이트웨이를 활성-활성으로 구성
 
-활성-활성 구성에서 VPN 게이트웨이의 두 인스턴스는 모두 온-프레미스 VPN 장치에 대 한 S2S VPN 터널을 설정 합니다. 게이트웨이 인스턴스 하나에서 계획된 유지 관리 이벤트 또는 계획되지 않은 이벤트가 발생하면 트래픽이 다른 활성 IPsec 터널로 전송되도록 자동 전환됩니다. Azure Advisor는 활성-활성으로 구성되지 않은 VPN 게이트웨이를 식별하여 고가용성을 유지할 수 있도록 해당 게이트웨이를 구성하라는 제안 메시지를 표시합니다.
+활성-활성 구성에서 VPN 게이트웨이의 두 인스턴스는 모두 온-프레미스 VPN 장치에 대한 S2S VPN 터널을 설정 합니다. 게이트웨이 인스턴스 하나에서 계획된 유지 관리 이벤트 또는 계획되지 않은 이벤트가 발생하면 트래픽이 다른 활성 IPsec 터널로 전송되도록 자동 전환됩니다. Azure Advisor는 활성-활성으로 구성되지 않은 VPN 게이트웨이를 식별하여 고가용성을 유지할 수 있도록 해당 게이트웨이를 구성하라는 제안 메시지를 표시합니다.
 
 ## <a name="use-production-vpn-gateways-to-run-your-production-workloads"></a>프로덕션 VPN gateway를 사용 하 여 프로덕션 워크 로드 실행
 
@@ -67,7 +67,7 @@ Azure Advisor는 기본 SKU 인 VPN gateway를 확인 하 고 대신 프로덕�
 
 ## <a name="repair-invalid-log-alert-rules"></a>잘못 된 로그 경고 규칙 복구
 
-Azure Advisor는 해당 조건 섹션에 잘못 된 쿼리가 지정 된 경고 규칙을 검색 합니다. 로그 경고 규칙은 Azure Monitor에서 생성되며 지정된 간격으로 분석 쿼리를 실행하는 데 사용됩니다. 쿼리 결과에 따라 경고를 트리거할 것인지 여부가 결정됩니다. 시간이 지나 참조되는 리소스, 테이블 또는 명령이 변경되면 분석 쿼리가 유효하지 않게 될 수 있습니다. Advisor는 자동 사용 하지 않도록 설정 하 고 Azure에서 리소스의 모니터링 범위를 확인 하는 것을 방지 하기 위해 경고 규칙의 쿼리를 수정 하는 것을 권장 합니다. [경고 규칙 문제 해결에 대 한 자세한 정보](https://aka.ms/aa_logalerts_queryrepair)
+Azure Advisor는 해당 조건 섹션에 잘못 된 쿼리가 지정 된 경고 규칙을 검색 합니다. 로그 경고 규칙은 Azure Monitor에서 생성되며 지정된 간격으로 분석 쿼리를 실행하는 데 사용됩니다. 쿼리 결과에 따라 경고를 트리거할 것인지 여부가 결정됩니다. 시간이 지나 참조되는 리소스, 테이블 또는 명령이 변경되면 분석 쿼리가 유효하지 않게 될 수 있습니다. Advisor는 자동 사용 하지 않도록 설정 하 고 Azure에서 리소스의 모니터링 범위를 확인 하는 것을 방지 하기 위해 경고 규칙의 쿼리를 수정 하는 것을 권장 합니다. [경고 규칙 문제 해결에 대한 자세한 정보](https://aka.ms/aa_logalerts_queryrepair)
 
 ## <a name="configure-consistent-indexing-mode-on-your-cosmos-db-collection"></a>Cosmos DB 컬렉션에서 일관 된 인덱싱 모드 구성
 
@@ -75,7 +75,7 @@ Azure Advisor는 해당 조건 섹션에 잘못 된 쿼리가 지정 된 경고 
 
 ## <a name="configure-your-azure-cosmos-db-containers-with-a-partition-key"></a>파티션 키를 사용하여 Azure Cosmos DB 컨테이너 구성
 
-Azure Advisor는 프로 비전 된 저장소 할당량에 근접 하는 분할 되지 않은 컬렉션 Azure Cosmos DB를 식별 합니다. 이러한 컬렉션은 서비스에 의해 자동으로 확장 될 수 있도록 파티션 키 정의를 사용 하 여 새 컬렉션으로 마이그레이션하는 것이 좋습니다. [파티션 키를 선택 하는 방법에 대 한 자세한 정보](https://aka.ms/cosmosdb/choose-partitionkey)
+Azure Advisor는 프로 비전 된 저장소 할당량에 근접 하는 분할 되지 않은 컬렉션 Azure Cosmos DB를 식별 합니다. 이러한 컬렉션은 서비스에 의해 자동으로 확장 될 수 있도록 파티션 키 정의를 사용 하 여 새 컬렉션으로 마이그레이션하는 것이 좋습니다. [파티션 키를 선택 하는 방법에 대한 자세한 정보](https://aka.ms/cosmosdb/choose-partitionkey)
 
 ## <a name="upgrade-your-azure-cosmos-db-net-sdk-to-the-latest-version-from-nuget"></a>Azure Cosmos DB .NET SDK를 최신 버전의 Nuget으로 업그레이드
 
@@ -83,14 +83,14 @@ Azure Advisor는 이전 버전의 .NET SDK를 사용 하는 Azure Cosmos DB 계�
 
 ## <a name="upgrade-your-azure-cosmos-db-java-sdk-to-the-latest-version-from-maven"></a>Azure Cosmos DB Java SDK를 최신 버전의 Maven으로 업그레이드
 
-Azure Advisor는 이전 버전의 Java SDK를 사용 하는 Azure Cosmos DB 계정을 식별 하 고 최신 수정, 성능 향상 및 새로운 기능 기능을 위해 Maven에서 최신 버전으로 업그레이드 하는 것이 좋습니다. [Cosmos DB Java SDK에 대 한 자세한 정보](https://aka.ms/cosmosdb/sql-api-sdk-dotnet)
+Azure Advisor는 이전 버전의 Java SDK를 사용 하는 Azure Cosmos DB 계정을 식별 하 고 최신 수정, 성능 향상 및 새로운 기능 기능을 위해 Maven에서 최신 버전으로 업그레이드 하는 것이 좋습니다. [Cosmos DB Java SDK에 대한 자세한 정보](https://aka.ms/cosmosdb/sql-api-sdk-dotnet)
 
 ## <a name="upgrade-your-azure-cosmos-db-spark-connector-to-the-latest-version-from-maven"></a>Azure Cosmos DB Spark Connector를 최신 버전의 Maven으로 업그레이드
 
-Azure Advisor는 이전 버전의 Cosmos DB Spark 커넥터를 사용 하는 Azure Cosmos DB 계정을 식별 하 고 최신 수정, 성능 향상 및 새로운 기능 기능을 위해 Maven에서 최신 버전으로 업그레이드 하는 것이 좋습니다. [Cosmos DB Spark 커넥터에 대 한 자세한 정보](https://aka.ms/cosmosdb/spark-connector)
+Azure Advisor는 이전 버전의 Cosmos DB Spark 커넥터를 사용 하는 Azure Cosmos DB 계정을 식별 하 고 최신 수정, 성능 향상 및 새로운 기능 기능을 위해 Maven에서 최신 버전으로 업그레이드 하는 것이 좋습니다. [Cosmos DB Spark 커넥터에 대한 자세한 정보](https://aka.ms/cosmosdb/spark-connector)
 
 ## <a name="enable-virtual-machine-replication"></a>가상 머신 복제 사용
-다른 지역에 복제를 사용 하도록 설정 하지 않은 가상 컴퓨터는 지역 가동 중단으로 복원 되지 않습니다. 가상 컴퓨터를 복제 하면 Azure 지역 가동 중단 시 부정적인 비즈니스 영향을 줄일 수가 줄어듭니다. Advisor는 복제를 사용 하도록 설정 되지 않은 Vm을 검색 하 고, 가동 중단이 발생할 경우 원격 Azure 지역에서 가상 컴퓨터를 신속 하 게 가져올 수 있도록 복제를 사용 하도록 설정 하는 것이 좋습니다. [가상 컴퓨터 복제에 대 한 자세한 정보](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-quickstart)
+다른 지역에 복제를 사용 하도록 설정 하지 않은 가상 컴퓨터는 지역 가동 중단으로 복원 되지 않습니다. 가상 컴퓨터를 복제 하면 Azure 지역 가동 중단 시 부정적인 비즈니스 영향을 줄일 수가 줄어듭니다. Advisor는 복제를 사용 하도록 설정 되지 않은 Vm을 검색 하 고, 가동 중단이 발생할 경우 원격 Azure 지역에서 가상 컴퓨터를 신속 하 게 가져올 수 있도록 복제를 사용 하도록 설정 하는 것이 좋습니다. [가상 컴퓨터 복제에 대한 자세한 정보](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-quickstart)
 
 ## <a name="how-to-access-high-availability-recommendations-in-advisor"></a>Advisor의 고가용성 권장 사항에 액세스하는 방법
 

@@ -16,9 +16,9 @@ ms.locfileid: "74769934"
 ---
 # <a name="machine-learning-capability-in-azure-data-explorer"></a>Azure 데이터 탐색기의 기계 학습 기능
 
-빅 데이터 분석 플랫폼인 Azure 데이터 탐색기는 기본 제공 [변칙 검색 및 예측](/azure/data-explorer/anomaly-detection) 함수를 사용 하 여 비정상적인 동작에 대 한 서비스 상태, QoS 또는 작동 하지 않는 장치를 모니터링 하는 데 사용 됩니다. 비정상 패턴을 감지 하면 변칙을 완화 하거나 해결 하기 위해 RCA (근본 원인 분석)가 수행 됩니다.
+빅 데이터 분석 플랫폼인 Azure 데이터 탐색기는 기본 제공 [변칙 검색 및 예측](/azure/data-explorer/anomaly-detection) 함수를 사용 하 여 비정상적인 동작에 대한 서비스 상태, QoS 또는 작동 하지 않는 장치를 모니터링 하는 데 사용 됩니다. 비정상 패턴을 감지 하면 변칙을 완화 하거나 해결 하기 위해 RCA (근본 원인 분석)가 수행 됩니다.
 
-진단 프로세스는 복잡 하 고 길고 도메인 전문가에 의해 수행 됩니다. 이 프로세스에는 동일한 시간 프레임에 대 한 여러 원본의 추가 데이터를 가져오고 조인 하 여 여러 차원에 대 한 값의 분포를 찾고, 추가 변수를 차트로 작성 하 고, 도메인 정보를 기반으로 하는 기타 기술을 제공 합니다. intuition. 이러한 진단 시나리오는 Azure 데이터 탐색기에서 일반적 이므로 진단 단계를 더 쉽게 수행 하 고 RCA의 지속 시간을 단축 하기 위해 machine learning 플러그 인을 사용할 수 있습니다.
+진단 프로세스는 복잡 하 고 길고 도메인 전문가에 의해 수행 됩니다. 이 프로세스에는 동일한 시간 프레임에 대한 여러 원본의 추가 데이터를 가져오고 조인 하 여 여러 차원에 대한 값의 분포를 찾고, 추가 변수를 차트로 작성 하 고, 도메인 정보를 기반으로 하는 기타 기술을 제공 합니다. intuition. 이러한 진단 시나리오는 Azure 데이터 탐색기에서 일반적 이므로 진단 단계를 더 쉽게 수행 하 고 RCA의 지속 시간을 단축 하기 위해 machine learning 플러그 인을 사용할 수 있습니다.
 
 Azure 데이터 탐색기에는 [`autocluster`](/azure/kusto/query/autoclusterplugin), [`basket`](/azure/kusto/query/basketplugin)및 [`diffpatterns`](/azure/kusto/query/diffpatternsplugin)의 세 가지 Machine Learning 플러그 인이 있습니다. 모든 플러그 인은 클러스터링 알고리즘을 구현 합니다. `autocluster` 및 `basket` 플러그 인 클러스터는 단일 레코드 집합을 클러스터 하 고 `diffpatterns` 플러그 인은 두 레코드 집합 간의 차이점을 클러스터링 합니다.
 
@@ -195,7 +195,7 @@ demo_clustering1
 | 5 | 55 | 252 | 5.66 | 20.45 | 14.8 | weu | su4 | be1d6d7ac9574cbc9a22cb8ee20f16fc |  |
 | 6 | 57 | 204 | 5.86 | 16.56 | 10.69 |  |  |  |  |
 
-가장 기준 세그먼트는 `autocluster`추출 된 것과 동일한 세그먼트 이며 2 분의 비정상 기간에 대 한 검사는 65.74% 이기도 합니다. 그러나 8 분 기준 기간의 적용 범위는 1.7%입니다. 차이점은 64.04%입니다. 이러한 차이는 비정상 스파이크와 관련 된 것으로 보입니다. 아래 쿼리에 표시 된 것 처럼 원본 차트를이 문제가 있는 세그먼트에 속하는 레코드 및 다른 세그먼트로 분할 하 여이 가정을 확인할 수 있습니다.
+가장 기준 세그먼트는 `autocluster`추출 된 것과 동일한 세그먼트 이며 2 분의 비정상 기간에 대한 검사는 65.74% 이기도 합니다. 그러나 8 분 기준 기간의 적용 범위는 1.7%입니다. 차이점은 64.04%입니다. 이러한 차이는 비정상 스파이크와 관련 된 것으로 보입니다. 아래 쿼리에 표시 된 것 처럼 원본 차트를이 문제가 있는 세그먼트에 속하는 레코드 및 다른 세그먼트로 분할 하 여이 가정을 확인할 수 있습니다.
 
 **\[** [**쿼리를 실행하려면 클릭**](https://dataexplorer.azure.com/clusters/help/databases/Samples?query=H4sIAAAAAAAAA5WRsWrDMBCG9zzF4cmGGuJUjh2Ktw7tUkLTzuEsnRNRnRQkuSQlD185yRTo0EWIO913/J8MRWBttxE6iC5INOhzRey20owhktd2V8EZwsiMXv/Q9Dpfe5I60Idm2kTkQ1E8AczMxMLjf1h4/IN1PzY7Ax0jWQWBdomvhyF/p512FroOMsIxA0zdTdpKn1bHSzmMzbX8TAfjTkw2vqpLp69VpYQaatEogXOBsqrbtl5WDake6yabXWjkv7WkFxeuPGqG5VzWqhQrIUqx6B/L1WKB6aBViy01imT2ANnau94QT9c35xlNVqQAjF9UhpSHAtiRO+lGG/MCUoZ7CTB4x7ePie5mNbk4QDVn6E+ThUT0SQh5iGlM7tHHX4WFgLHOAQAA) **\]**
 
@@ -215,6 +215,6 @@ and ServiceHost == "e7f60c5d-4944-42b3-922a-92e98a8e7dec", "Problem", "Normal")
 
 ## <a name="summary"></a>요약
 
-Azure 데이터 탐색기 Machine Learning 플러그 인은 많은 시나리오에서 유용 합니다. `autocluster` 및 `basket`는 자율 학습 알고리즘을 구현 하 고 사용 하기 쉽습니다. `Diffpatterns`는 감독 된 학습 알고리즘을 구현 하 고 더 복잡 하지만 RCA에 대 한 차별화 세그먼트를 추출 하는 것이 더 강력 합니다.
+Azure 데이터 탐색기 Machine Learning 플러그 인은 많은 시나리오에서 유용 합니다. `autocluster` 및 `basket`는 자율 학습 알고리즘을 구현 하 고 사용 하기 쉽습니다. `Diffpatterns`는 감독 된 학습 알고리즘을 구현 하 고 더 복잡 하지만 RCA에 대한 차별화 세그먼트를 추출 하는 것이 더 강력 합니다.
 
 이러한 플러그 인은 임시 시나리오 및 자동 거의 실시간 모니터링 서비스에서 대화형으로 사용 됩니다. Azure 데이터 탐색기에서 시계열 변칙 검색 후에는 필요한 성능 표준을 충족 하도록 최적화 된 진단 프로세스가 수행 됩니다.

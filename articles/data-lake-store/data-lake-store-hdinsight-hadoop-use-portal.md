@@ -23,7 +23,7 @@ ms.locfileid: "73838188"
 >
 >
 
-Azure Portal을 사용해 기본 스토리지나 추가 스토리지로 Azure Data Lake Storage Gen1 계정을 사용하는 HDInsight 클러스터를 만드는 방법에 대해 알아봅니다. 추가 저장소는 HDInsight 클러스터에 대 한 선택 사항 이지만 추가 저장소 계정에 비즈니스 데이터를 저장 하는 것이 좋습니다.
+Azure Portal을 사용해 기본 스토리지나 추가 스토리지로 Azure Data Lake Storage Gen1 계정을 사용하는 HDInsight 클러스터를 만드는 방법에 대해 알아봅니다. 추가 저장소는 HDInsight 클러스터에 대한 선택 사항 이지만 추가 저장소 계정에 비즈니스 데이터를 저장 하는 것이 좋습니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -31,7 +31,7 @@ Azure Portal을 사용해 기본 스토리지나 추가 스토리지로 Azure Da
 
 * **Azure 구독**. [Azure 무료 평가판](https://azure.microsoft.com/pricing/free-trial/)으로 이동합니다.
 * **Data Lake Storage Gen1 계정**. [Azure Portal을 사용하여 Azure Data Lake Storage Gen1 시작](data-lake-store-get-started-portal.md)의 지침을 따릅니다. 또한 계정에서 루트 폴더를 만들어야 합니다.  이 문서에서는 __/ks__ 라는 루트 폴더가 사용 됩니다.
-* **Azure Active Directory 서비스 주체** 이 방법 가이드에서는 Azure Active Directory (Azure AD)에서 서비스 주체를 만드는 방법에 대 한 지침을 제공 합니다. 그러나 서비스 주체를 만들려면 Azure AD 관리자여야 합니다. 관리자 인 경우이 필수 구성 요소를 건너뛰고 계속 진행할 수 있습니다.
+* **Azure Active Directory 서비스 주체** 이 방법 가이드에서는 Azure Active Directory (Azure AD)에서 서비스 주체를 만드는 방법에 대한 지침을 제공 합니다. 그러나 서비스 주체를 만들려면 Azure AD 관리자여야 합니다. 관리자 인 경우이 필수 구성 요소를 건너뛰고 계속 진행할 수 있습니다.
 
 >[!NOTE]
 >Azure AD 관리자 인 경우에만 서비스 주체를 만들 수 있습니다. Azure AD 관리자가 서비스 주체를 만들어야 Data Lake Storage Gen1을 사용하는 HDInsight 클러스터를 만들 수 있습니다. 또한 [인증서를 사용하여 서비스 주체 만들기](../active-directory/develop/howto-authenticate-service-principal-powershell.md#create-service-principal-with-self-signed-certificate)에 설명된 대로 인증서를 사용하여 서비스 주체를 만들어야 합니다.
@@ -150,7 +150,7 @@ Data Lake Storage Gen1을 추가 스토리지로 사용하는 경우 HDInsight �
 
 클러스터 설정을 완료한 후에 클러스터 블레이드에서 다음 단계 중 하나 또는 모두를 수행하여 결과를 확인합니다.
 
-* 클러스터에 대 한 연결 된 저장소가 지정한 Data Lake Storage Gen1 계정 인지 확인 하려면 왼쪽 창에서 **저장소 계정** 을 선택 합니다.
+* 클러스터에 대한 연결 된 저장소가 지정한 Data Lake Storage Gen1 계정 인지 확인 하려면 왼쪽 창에서 **저장소 계정** 을 선택 합니다.
 
     ![HDInsight 클러스터에 서비스 주체 추가](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.6-1.png "HDInsight 클러스터에 서비스 주체 추가")
 
@@ -160,7 +160,7 @@ Data Lake Storage Gen1을 추가 스토리지로 사용하는 경우 HDInsight �
 
 ## <a name="examples"></a>예시
 
-저장소로 Data Lake Storage Gen1를 사용 하 여 클러스터를 설정한 후에는 HDInsight 클러스터를 사용 하 여 Data Lake Storage Gen1에 저장 된 데이터를 분석 하는 방법에 대 한 다음 예제를 참조 하세요.
+저장소로 Data Lake Storage Gen1를 사용 하 여 클러스터를 설정한 후에는 HDInsight 클러스터를 사용 하 여 Data Lake Storage Gen1에 저장 된 데이터를 분석 하는 방법에 대한 다음 예제를 참조 하세요.
 
 ### <a name="run-a-hive-query-against-data-in-a-data-lake-storage-gen1-account-as-primary-storage"></a>기본 스토리지인 Data Lake Storage Gen1에서 데이터에 대한 Hive 쿼리 실행
 

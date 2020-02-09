@@ -27,7 +27,7 @@ ms.locfileid: "77064651"
 
 서비스 태그를 사용 하 여 [네트워크 보안 그룹](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) 또는 [Azure 방화벽](https://docs.microsoft.com/azure/firewall/service-tags)에서 네트워크 액세스 제어를 정의할 수 있습니다. 보안 규칙을 만들 때 특정 IP 주소 대신 서비스 태그를 사용 합니다. 규칙의 적절 한 *원본* 또는 *대상* 필드에 서비스 태그 이름 (예: **microsoft.apimanagement**)을 지정 하 여 해당 서비스에 대 한 트래픽을 허용 하거나 거부할 수 있습니다. 
 
-공용 끝점이 있는 Azure 서비스에 액세스 하는 동안 서비스 태그를 사용 하 여 네트워크 격리를 수행 하 고 일반 인터넷에서 Azure 리소스를 보호할 수 있습니다. 인바운드/아웃 바운드 네트워크 보안 그룹 규칙을 만들어 **인터넷** 에서 트래픽을 거부 하 고 **azurecloud** 또는 특정 Azure 서비스의 다른 [사용 가능한 서비스 태그로](#available-service-tags) 들어오고 나가는 트래픽을 허용 합니다. 
+공용 엔드포인트이 있는 Azure 서비스에 액세스 하는 동안 서비스 태그를 사용 하 여 네트워크 격리를 수행 하 고 일반 인터넷에서 Azure 리소스를 보호할 수 있습니다. 인바운드/아웃 바운드 네트워크 보안 그룹 규칙을 만들어 **인터넷** 에서 트래픽을 거부 하 고 **azurecloud** 또는 특정 Azure 서비스의 다른 [사용 가능한 서비스 태그로](#available-service-tags) 들어오고 나가는 트래픽을 허용 합니다. 
 
 ## <a name="available-service-tags"></a>사용 가능한 서비스 태그
 다음 표에는 [네트워크 보안 그룹](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) 규칙에서 사용할 수 있는 모든 서비스 태그가 나와 있습니다.
@@ -59,14 +59,14 @@ ms.locfileid: "77064651"
 | **AzureDatabricks** | Azure Databricks. | 모두 | 아니요 | 아니요 |
 | **AzureDataExplorerManagement** | Azure 데이터 탐색기 관리. | 인바운드 | 아니요 | 아니요 |
 | **AzureDataLake** | Azure Data Lake. | 아웃바운드 | 아니요 | 예 |
-| **AzureEventGrid** | Azure Event Grid. <br/><br/>*참고:* 이 태그는 미국 남부 중부, 미국 동부, 미국 동부 2, 미국 서 부 2 및 미국 중부 전용의 Azure Event Grid 끝점을 포함 합니다. | 모두 | 아니요 | 아니요 |
+| **AzureEventGrid** | Azure Event Grid. <br/><br/>*참고:* 이 태그는 미국 남부 중부, 미국 동부, 미국 동부 2, 미국 서 부 2 및 미국 중부 전용의 Azure Event Grid 엔드포인트을 포함 합니다. | 모두 | 아니요 | 아니요 |
 | **AzureFrontDoor** | Azure 전면 도어. | 모두 | 아니요 | 아니요 |
 | **AzureInformationProtection** | Azure Information Protection.<br/><br/>*참고:* 이 태그는 **AzureActiveDirectory** 및 **AzureFrontDoor** 태그에 종속 됩니다. 다음 Ip (이 종속성이 곧 제거 될 예정)를 허용 목록. 13.107.6.181 & 13.107.9.181. | 아웃바운드 | 아니요 | 아니요 |
 | **AzureIoTHub** | Azure IoT Hub. | 아웃바운드 | 아니요 | 아니요 |
 | **AzureKeyVault** | Azure Key Vault.<br/><br/>*참고:* 이 태그는 **AzureActiveDirectory** 태그에 종속 됩니다. | 아웃바운드 | 예 | 예 |
 | **AzureLoadBalancer** | Azure 인프라 부하 분산 장치. 태그는 Azure 상태 검색이 시작 되는 [호스트의 가상 IP 주소](security-overview.md#azure-platform-considerations) (168.63.129.16)로 변환 됩니다. 여기에는 Azure Load Balancer 리소스에 대 한 트래픽이 포함 되지 않습니다. Azure Load Balancer 사용 하지 않는 경우이 규칙을 재정의할 수 있습니다. | 모두 | 아니요 | 아니요 |
 | **AzureMachineLearning** | Azure Machine Learning입니다. | 모두 | 아니요 | 예 |
-| **AzureMonitor** | Log Analytics, Application Insights, AzMon 및 사용자 지정 메트릭 (4Gb 끝점)을 지정 합니다.<br/><br/>*참고:* Log Analytics의 경우이 태그는 **저장소** 태그에 종속 됩니다. | 아웃바운드 | 아니요 | 예 |
+| **AzureMonitor** | Log Analytics, Application Insights, AzMon 및 사용자 지정 메트릭 (4Gb 엔드포인트)을 지정 합니다.<br/><br/>*참고:* Log Analytics의 경우이 태그는 **저장소** 태그에 종속 됩니다. | 아웃바운드 | 아니요 | 예 |
 | **AzurePlatformDNS** | 기본 인프라 (기본) DNS 서비스입니다.<br/><br>이 태그를 사용 하 여 기본 DNS를 사용 하지 않도록 설정할 수 있습니다. 이 태그를 사용 하는 경우 주의 해야 합니다. [Azure 플랫폼 고려 사항을](https://docs.microsoft.com/azure/virtual-network/security-overview#azure-platform-considerations)참조 하는 것이 좋습니다. 또한이 태그를 사용 하기 전에 테스트를 수행 하는 것이 좋습니다. | 아웃바운드 | 아니요 | 아니요 |
 | **AzurePlatformIMDS** | Azure Instance Metadata Service (IMDS)-기본 인프라 서비스입니다.<br/><br/>이 태그를 사용 하 여 기본 IMDS를 사용 하지 않도록 설정할 수 있습니다. 이 태그를 사용 하는 경우 주의 해야 합니다. [Azure 플랫폼 고려 사항을](https://docs.microsoft.com/azure/virtual-network/security-overview#azure-platform-considerations)참조 하는 것이 좋습니다. 또한이 태그를 사용 하기 전에 테스트를 수행 하는 것이 좋습니다. | 아웃바운드 | 아니요 | 아니요 |
 | **AzurePlatformLKM** | Windows 라이선스 또는 키 관리 서비스입니다.<br/><br/>이 태그를 사용 하 여 라이선스에 대 한 기본값을 사용 하지 않도록 설정할 수 있습니다. 이 태그를 사용 하는 경우 주의 해야 합니다. [Azure 플랫폼 고려 사항을](https://docs.microsoft.com/azure/virtual-network/security-overview#azure-platform-considerations)참조 하는 것이 좋습니다.  또한이 태그를 사용 하기 전에 테스트를 수행 하는 것이 좋습니다. | 아웃바운드 | 아니요 | 아니요 |
@@ -85,7 +85,7 @@ ms.locfileid: "77064651"
 | **MicrosoftCloudAppSecurity** | Microsoft Cloud App Security. | 아웃바운드 | 아니요 | 아니요 |
 | **MicrosoftContainerRegistry** | Microsoft 컨테이너 이미지용 컨테이너 레지스트리 <br/><br/>*참고:* 다음 IP를 허용 목록 하세요 (이 종속성은 곧 제거 될 예정). 204.79.197.219. | 아웃바운드 | 예 | 예 |
 | **Service Bus** | 프리미엄 서비스 계층을 사용 하는 Azure Service Bus 트래픽 | 아웃바운드 | 예 | 예 |
-| **ServiceFabric** | Azure Service Fabric.<br/><br/>*참고:* 이 태그는 지역별 컨트롤 평면에 대 한 Service Fabric 서비스 끝점을 나타냅니다. 이를 통해 고객은 자신의 VNET에서 Service Fabric 클러스터에 대 한 관리 작업을 수행할 수 있습니다 (예: https://westus.servicefabric.azure.com) | 모두 | 아니요 | 아니요 |
+| **ServiceFabric** | Azure Service Fabric.<br/><br/>*참고:* 이 태그는 지역별 컨트롤 평면에 대 한 Service Fabric 서비스 엔드포인트을 나타냅니다. 이를 통해 고객은 자신의 VNET에서 Service Fabric 클러스터에 대 한 관리 작업을 수행할 수 있습니다 (예: https://westus.servicefabric.azure.com) | 모두 | 아니요 | 아니요 |
 | **Sql** | Azure SQL Database, Azure Database for MySQL, Azure Database for PostgreSQL 및 Azure SQL Data Warehouse.<br/><br/>*참고:* 이 태그는 서비스의 특정 인스턴스가 아니라 서비스를 나타냅니다. 예를 들어 태그는 특정 SQL 데이터베이스 또는 서버가 아닌 Azure SQL Database 서비스를 나타냅니다. | 아웃바운드 | 예 | 예 |
 | **SqlManagement** | SQL 전용 배포에 대 한 관리 트래픽 | 모두 | 아니요 | 예 |
 | **스토리지** | Azure Storage 형식 연결된 서비스의 JSON 속성에 대해 설명합니다. <br/><br/>*참고:* 이 태그는 서비스의 특정 인스턴스가 아니라 서비스를 나타냅니다. 예를 들어 태그는 특정 Azure Storage 계정이 아닌 Azure Storage 서비스를 나타냅니다. | 아웃바운드 | 예 | 예 |

@@ -27,7 +27,7 @@ Azure 서비스를 Azure 가상 네트워크에 통합하면 가상 네트워크
 - 서비스의 전용 인스턴스를 가상 네트워크에 배포합니다. 이렇게 하면 가상 네트워크 내에서 그리고 온-프레미스에서 서비스에 비공개적으로 액세스할 수 있습니다.
 - [개인 링크](../private-link/private-link-overview.md) 를 사용 하 여 가상 네트워크 및 온-프레미스 네트워크에서 서비스의 개인용 특정 인스턴스에 액세스할 수 있습니다.
 
-서비스 [끝점](virtual-network-service-endpoints-overview.md)을 통해 가상 네트워크를 서비스로 확장 하 여 공용 끝점을 사용 하 여 서비스에 액세스할 수도 있습니다. 서비스 끝점을 사용 하면 가상 네트워크에 대 한 서비스 리소스의 보안을 유지할 수 있습니다.
+서비스 [엔드포인트](virtual-network-service-endpoints-overview.md)을 통해 가상 네트워크를 서비스로 확장 하 여 공용 엔드포인트을 사용 하 여 서비스에 액세스할 수도 있습니다. 서비스 엔드포인트을 사용 하면 가상 네트워크에 대 한 서비스 리소스의 보안을 유지할 수 있습니다.
  
 ## <a name="deploy-azure-services-into-virtual-networks"></a>가상 네트워크에 Azure 서비스 배포
 

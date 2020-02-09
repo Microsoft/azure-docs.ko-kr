@@ -73,7 +73,7 @@ Azure Files에 대한 SMB를 통한 Azure AD를 사용하도록 설정하기 전
 
 Azure Files에 대해 SMB를 통해 Azure AD DS 인증을 사용 하도록 설정 하려면 Azure Portal, Azure PowerShell 또는 Azure CLI를 사용 하 여 2018 년 9 월 24 일 이후에 만들어진 저장소 계정에 대 한 속성을 설정할 수 있습니다. 이 속성을 설정 하면 연결 된 Azure AD DS 배포에 저장소 계정이 등록 됩니다. 그러면 저장소 계정의 모든 신규 및 기존 파일 공유에 대해 SMB를 통한 Azure AD DS 인증을 사용할 수 있습니다.
 
-Azure AD DS를 Azure AD 테 넌 트에 성공적으로 배포한 후에만 SMB를 통해 Azure AD DS 인증을 사용 하도록 설정할 수 있습니다. 자세한 내용은 [전제 조건](#prerequisites)을 참조하세요.
+Azure AD DS를 Azure AD 테넌트에 성공적으로 배포한 후에만 SMB를 통해 Azure AD DS 인증을 사용 하도록 설정할 수 있습니다. 자세한 내용은 [전제 조건](#prerequisites)을 참조하세요.
 
 ### <a name="azure-portal"></a>Azure Portal
 

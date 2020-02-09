@@ -20,7 +20,7 @@ ms.locfileid: "76122647"
 ---
 # <a name="use-azure-data-factory-to-migrate-data-from-amazon-s3-to-azure-storage"></a>Azure Data Factory를 사용 하 여 Amazon s 3에서 Azure Storage로 데이터를 마이그레이션합니다. 
 
-Azure Data Factory는 Amazon s 3에서 Azure Blob Storage 또는 Azure Data Lake Storage Gen2으로 대규모로 데이터를 마이그레이션하는 데 성능과 강력 하 고 비용 효율적인 메커니즘을 제공 합니다.  이 문서에서는 데이터 엔지니어와 개발자에 대 한 다음 정보를 제공 합니다. 
+Azure Data Factory는 Amazon s 3에서 Azure Blob Storage 또는 Azure Data Lake Storage Gen2으로 대규모로 데이터를 마이그레이션하는 데 성능과 강력 하 고 비용 효율적인 메커니즘을 제공 합니다.  이 문서에서는 데이터 엔지니어와 개발자에 대한 다음 정보를 제공 합니다. 
 
 > [!div class="checklist"]
 > * 성능 중심 
@@ -31,7 +31,7 @@ Azure Data Factory는 Amazon s 3에서 Azure Blob Storage 또는 Azure Data Lake
 
 ## <a name="performance"></a>성능 중심
 
-ADF는 서로 다른 수준에서 병렬 처리를 허용 하는 서버 리스 아키텍처를 제공 합니다 .이 아키텍처를 통해 개발자는 네트워크 대역폭과 저장소 IOPS 및 대역폭을 완벽 하 게 활용 하 여 환경에 대 한 데이터 이동 처리량을 최대화할 수 있습니다. 
+ADF는 서로 다른 수준에서 병렬 처리를 허용 하는 서버 리스 아키텍처를 제공 합니다 .이 아키텍처를 통해 개발자는 네트워크 대역폭과 저장소 IOPS 및 대역폭을 완벽 하 게 활용 하 여 환경에 대한 데이터 이동 처리량을 최대화할 수 있습니다. 
 
 고객은 Amazon s 3에서 Azure Blob Storage로 구성 된 수백 개의 파일로 구성 된 데이터를 페타바이트 하 고 처리량이 2gbps 이상인 데이터를 지속적으로 마이그레이션 했습니다. 
 
@@ -62,7 +62,7 @@ S 3에서 Blob으로 이진 복사를 수행 하 고 s 3에서 ADLS Gen2로 복�
 ![솔루션-아키텍처-공용-네트워크](media/data-migration-guidance-s3-to-azure-storage/solution-architecture-public-network.png)
 
 - 이 아키텍처에서 데이터는 공용 인터넷을 통해 HTTPS를 사용 하 여 안전 하 게 전송 됩니다. 
-- 원본 Amazon S3 뿐만 아니라 대상 Azure Blob Storage 또는 Azure Data Lake Storage Gen2 모두 모든 네트워크 IP 주소의 트래픽을 허용 하도록 구성 되어 있습니다.  특정 IP 범위에 대 한 네트워크 액세스를 제한 하는 방법에 대 한 아래의 두 번째 아키텍처를 참조 하세요. 
+- 원본 Amazon S3 뿐만 아니라 대상 Azure Blob Storage 또는 Azure Data Lake Storage Gen2 모두 모든 네트워크 IP 주소의 트래픽을 허용 하도록 구성 되어 있습니다.  특정 IP 범위에 대한 네트워크 액세스를 제한 하는 방법에 대한 아래의 두 번째 아키텍처를 참조 하세요. 
 - 사용자 환경에 가장 적합 한 처리량을 얻을 수 있도록 네트워크 및 저장소 대역폭을 완벽 하 게 활용 하기 위해 서버 리스 방식의 처리량을 쉽게 확장할 수 있습니다. 
 - 초기 스냅숏 마이그레이션과 델타 데이터 마이그레이션은 모두이 아키텍처를 사용 하 여 달성할 수 있습니다. 
 
@@ -72,17 +72,17 @@ S 3에서 Blob으로 이진 복사를 수행 하 고 s 3에서 ADLS Gen2로 복�
 
 - 이 아키텍처에서 데이터 마이그레이션은 공용 인터넷을 통해 통과 하지 않도록 AWS Direct Connect와 Azure Express 경로 간의 개인 피어 링 링크를 통해 수행 됩니다.  AWS VPC 및 Azure Virtual network를 사용 해야 합니다. 
 - 이 아키텍처를 구현 하려면 Azure virtual network 내의 Windows VM에 ADF 자체 호스팅 통합 런타임을 설치 해야 합니다.  자체 호스팅 IR Vm을 수동으로 확장 하거나 여러 Vm (최대 4 개 노드)으로 확장 하 여 네트워크 및 저장소 IOPS/대역폭을 완벽 하 게 활용할 수 있습니다. 
-- HTTPS를 통해 데이터를 전송 하는 것이 허용 되지만, 원본 s 3에 대 한 네트워크 액세스를 특정 IP 범위로 잠가야 하는 경우 AWS VPC를 제거 하 고 개인 링크를 HTTPS로 대체 하 여이 아키텍처의 변형을 채택할 수 있습니다.  Azure VM에서 Azure 가상 및 자체 호스팅 IR을 유지 하 여 허용 목록 목적의 정적 공용 라우팅할 수 있는 IP를 사용할 수 있습니다. 
+- HTTPS를 통해 데이터를 전송 하는 것이 허용 되지만, 원본 s 3에 대한 네트워크 액세스를 특정 IP 범위로 잠가야 하는 경우 AWS VPC를 제거 하 고 개인 링크를 HTTPS로 대체 하 여이 아키텍처의 변형을 채택할 수 있습니다.  Azure VM에서 Azure 가상 및 자체 호스팅 IR을 유지 하 여 허용 목록 목적의 정적 공용 라우팅할 수 있는 IP를 사용할 수 있습니다. 
 - 초기 스냅숏 데이터 마이그레이션과 델타 데이터 마이그레이션은 모두이 아키텍처를 사용 하 여 달성할 수 있습니다. 
 
 ## <a name="implementation-best-practices"></a>구현 모범 사례 
 
 ### <a name="authentication-and-credential-management"></a>인증 및 자격 증명 관리 
 
-- Amazon S3 계정에 인증 하려면 [IAM 계정에 대 한 액세스 키](https://docs.microsoft.com/azure/data-factory/connector-amazon-simple-storage-service#linked-service-properties)를 사용 해야 합니다. 
+- Amazon S3 계정에 인증 하려면 [IAM 계정에 대한 액세스 키](https://docs.microsoft.com/azure/data-factory/connector-amazon-simple-storage-service#linked-service-properties)를 사용 해야 합니다. 
 - Azure Blob Storage에 연결 하기 위해 여러 인증 유형이 지원 됩니다.  [Azure 리소스에 관리](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#managed-identity) 되는 id를 사용 하는 것이 좋습니다. azure AD에서 자동으로 관리 되는 ADF 식별을 기반으로 구축 된 연결 된 서비스 정의에서 자격 증명을 제공 하지 않고 파이프라인을 구성할 수 있습니다.  또는 [서비스 주체](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#service-principal-authentication), [공유 액세스 서명](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication)또는 [저장소 계정 키](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#account-key-authentication)를 사용 하 여 Azure Blob Storage에 인증할 수 있습니다. 
 - Azure Data Lake Storage Gen2에 연결 하는 데에도 여러 인증 형식이 지원 됩니다.  [서비스 주체](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication) 또는 [저장소 계정 키](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#account-key-authentication) 를 사용할 수도 있지만 [Azure 리소스에 관리](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#managed-identity) 되는 id를 사용 하는 것이 좋습니다. 
-- Azure 리소스에 관리 되는 id를 사용 하지 않는 경우 [에는 Azure Key Vault에 자격 증명을 저장](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault) 하는 것이 좋습니다. ADF 연결 된 서비스를 수정 하지 않고도 키를 중앙에서 중앙에서 관리 하 고 회전할 수 있습니다.  [CI/CD에 대 한 모범 사례](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#best-practices-for-cicd)중 하나 이기도 합니다. 
+- Azure 리소스에 관리 되는 id를 사용 하지 않는 경우 [에는 Azure Key Vault에 자격 증명을 저장](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault) 하는 것이 좋습니다. ADF 연결 된 서비스를 수정 하지 않고도 키를 중앙에서 중앙에서 관리 하 고 회전할 수 있습니다.  [CI/CD에 대한 모범 사례](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#best-practices-for-cicd)중 하나 이기도 합니다. 
 
 ### <a name="initial-snapshot-data-migration"></a>초기 스냅숏 데이터 마이그레이션 
 

@@ -1,6 +1,6 @@
 ---
 title: REST API를 사용 하 여 Azure Vm 백업
-description: 이 문서에서는 REST API를 사용 하 여 Azure VM 백업에 대 한 백업 작업을 구성, 시작 및 관리 하는 방법을 알아봅니다.
+description: 이 문서에서는 REST API를 사용 하 여 Azure VM 백업에 대한 백업 작업을 구성, 시작 및 관리 하는 방법을 알아봅니다.
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
@@ -13,7 +13,7 @@ ms.locfileid: "75450155"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>REST API를 통해 Azure Backup을 사용하여 Azure VM 백업
 
-이 문서에서는 REST API를 통해 Azure Backup을 사용하여 Azure VM의 백업을 관리하는 방법을 설명합니다. 이전에 보호 되지 않은 Azure VM에 대해 처음으로 보호를 구성 하 고, 보호 된 Azure VM에 대 한 주문형 백업을 트리거하고 여기에 설명 된 대로 REST API를 통해 백업 된 VM의 백업 속성을 수정 합니다.
+이 문서에서는 REST API를 통해 Azure Backup을 사용하여 Azure VM의 백업을 관리하는 방법을 설명합니다. 이전에 보호 되지 않은 Azure VM에 대해 처음으로 보호를 구성 하 고, 보호 된 Azure VM에 대한 주문형 백업을 트리거하고 여기에 설명 된 대로 REST API를 통해 백업 된 VM의 백업 속성을 수정 합니다.
 
 새 자격 증명 모음 및 정책 만들기는 [자격 증명 모음 만들기](backup-azure-arm-userestapi-createorupdatevault.md) 및 [정책 만들기](backup-azure-arm-userestapi-createorupdatepolicy.md) REST API 자습서를 참조하세요.
 
@@ -92,7 +92,7 @@ X-Powered-By: ASP.NET
 
 ### <a name="selecting-the-relevant-azure-vm"></a>관련 Azure VM 선택
 
- 구독에서 [모든 보호 가능한 항목 나열하기](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list)에서 "캐싱"을 수행했는지 확인하고 응답에서 원하는 VM을 찾을 수 있습니다. [이 작업의 응답으로](#example-responses-1) VM Recovery Services 식별 하는 방법에 대 한 정보도 제공 됩니다.  패턴에 친숙해지면 이 단계를 건너뛰고 직접 [보호 활성화](#enabling-protection-for-the-azure-vm)를 진행할 수 있습니다.
+ 구독에서 [모든 보호 가능한 항목 나열하기](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list)에서 "캐싱"을 수행했는지 확인하고 응답에서 원하는 VM을 찾을 수 있습니다. [이 작업의 응답으로](#example-responses-1) VM Recovery Services 식별 하는 방법에 대한 정보도 제공 됩니다.  패턴에 친숙해지면 이 단계를 건너뛰고 직접 [보호 활성화](#enabling-protection-for-the-azure-vm)를 진행할 수 있습니다.
 
 이 작업은 *GET* 작업입니다.
 
@@ -451,7 +451,7 @@ DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-00000
 
 실수로 삭제를 실행 취소 하는 것은 백업 항목을 만드는 것과 비슷합니다. 삭제를 취소 한 후에는 항목이 유지 되지만 이후의 백업은 트리거되지 않습니다.
 
-삭제 취소는 [정책을 변경](#changing-the-policy-of-protection) 하거나 [보호를 사용 하도록 설정](#enabling-protection-for-the-azure-vm)하는 것과 매우 유사한 *PUT* 작업입니다. [요청 본문](#example-request-body) 에서 *isRehydrate* 변수를 사용 하 여 삭제를 취소 하 고 요청을 제출 하는 의도를 제공 하기만 하면 됩니다. 예: testVM에 대 한 삭제를 실행 취소 하려면 다음 요청 본문을 사용 해야 합니다.
+삭제 취소는 [정책을 변경](#changing-the-policy-of-protection) 하거나 [보호를 사용 하도록 설정](#enabling-protection-for-the-azure-vm)하는 것과 매우 유사한 *PUT* 작업입니다. [요청 본문](#example-request-body) 에서 *isRehydrate* 변수를 사용 하 여 삭제를 취소 하 고 요청을 제출 하는 의도를 제공 하기만 하면 됩니다. 예: testVM에 대한 삭제를 실행 취소 하려면 다음 요청 본문을 사용 해야 합니다.
 
 ```http
 {

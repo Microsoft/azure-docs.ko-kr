@@ -211,4 +211,4 @@ Azure AD 계정의 경우 다음 중 하나를 사용하여 관리자가 암호�
 ---
 **Q: Azure AD에서 보안 LDAP 연결을 설정할 수 있나요?**
 
-**A:** 아니요. Azure AD는 LDAP (Lightweight Directory Access Protocol) 프로토콜 또는 보안 LDAP을 직접 지원 하지 않습니다. 그러나 LDAP 연결을 구현 하기 위해 Azure 네트워킹을 통해 적절히 구성 된 네트워크 보안 그룹을 사용 하 여 Azure AD 테 넌 트에서 Azure AD Domain Services (Azure AD DS) 인스턴스를 사용 하도록 설정할 수 있습니다. 자세한 내용은 https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-admin-guide-configure-secure-ldap을 참조하세요.
+**A:** 아니요. Azure AD는 LDAP (Lightweight Directory Access Protocol) 프로토콜 또는 보안 LDAP을 직접 지원 하지 않습니다. 그러나 LDAP 연결을 구현 하기 위해 Azure 네트워킹을 통해 적절히 구성 된 네트워크 보안 그룹을 사용 하 여 Azure AD 테넌트에서 Azure AD Domain Services (Azure AD DS) 인스턴스를 사용 하도록 설정할 수 있습니다. 자세한 내용은 https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-admin-guide-configure-secure-ldap을 참조하세요.

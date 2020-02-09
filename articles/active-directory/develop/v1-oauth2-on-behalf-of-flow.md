@@ -212,7 +212,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 
 ### <a name="error-response-example"></a>오류 응답 예제
 
-Azure AD 토큰 끝점은 조건부 액세스 정책 (예: multi-factor authentication)을 사용 하 여 설정 된 다운스트림 API에 대 한 액세스 토큰을 획득 하려고 할 때 오류 응답을 반환 합니다. 클라이언트 응용 프로그램이 조건부 액세스 정책을 충족 하는 사용자 조작을 제공할 수 있도록 중간 계층 서비스에서이 오류를 클라이언트 응용 프로그램에 노출 해야 합니다.
+Azure AD 토큰 엔드포인트은 조건부 액세스 정책 (예: multi-factor authentication)을 사용 하 여 설정 된 다운스트림 API에 대 한 액세스 토큰을 획득 하려고 할 때 오류 응답을 반환 합니다. 클라이언트 응용 프로그램이 조건부 액세스 정책을 충족 하는 사용자 조작을 제공할 수 있도록 중간 계층 서비스에서이 오류를 클라이언트 응용 프로그램에 노출 해야 합니다.
 
 ```json
 {

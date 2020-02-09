@@ -1,6 +1,6 @@
 ---
 title: Azure Monitor FAQ | Microsoft Docs
-description: Azure Monitor에 대 한 자주 묻는 질문에 대 한 대답입니다.
+description: Azure Monitor에 대한 자주 묻는 질문에 대한 대답입니다.
 services: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
@@ -16,30 +16,30 @@ ms.locfileid: "76986821"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor 질문과 대답
 
-이 Microsoft FAQ는 Azure Monitor에 대 한 자주 묻는 질문의 목록입니다.
+이 Microsoft FAQ는 Azure Monitor에 대한 자주 묻는 질문의 목록입니다.
 
 ## <a name="general"></a>일반
 
 ### <a name="what-is-azure-monitor"></a>Azure Monitor란?
-[Azure Monitor](overview.md) 는 azure, 다른 클라우드 환경 또는 온-프레미스의 응용 프로그램 및 서비스에 대 한 성능 및 가용성 모니터링을 제공 하는 azure의 서비스입니다. Azure Monitor는 여러 원본의 데이터를 일반적인 데이터 플랫폼으로 수집 하 여 추세 및 비정상을 분석할 수 있습니다. Azure Monitor의 다양 한 기능을 통해 응용 프로그램에 영향을 줄 수 있는 중요 한 상황을 신속 하 게 식별 하 고 대응할 수 있습니다.
+[Azure Monitor](overview.md) 는 azure, 다른 클라우드 환경 또는 온-프레미스의 응용 프로그램 및 서비스에 대한 성능 및 가용성 모니터링을 제공 하는 azure의 서비스입니다. Azure Monitor는 여러 원본의 데이터를 일반적인 데이터 플랫폼으로 수집 하 여 추세 및 비정상을 분석할 수 있습니다. Azure Monitor의 다양 한 기능을 통해 응용 프로그램에 영향을 줄 수 있는 중요 한 상황을 신속 하 게 식별 하 고 대응할 수 있습니다.
 
 ### <a name="whats-the-difference-between-azure-monitor-log-analytics-and-application-insights"></a>Azure Monitor, Log Analytics 및 Application Insights 간의 차이점은 무엇 인가요?
-2018 년 9 월에 Microsoft는 Azure Monitor, Log Analytics 및 Application Insights를 단일 서비스로 결합 하 여 응용 프로그램 및 응용 프로그램에서 사용 하는 구성 요소에 대 한 강력한 종단 간 모니터링 기능을 제공 합니다. Log Analytics 및 Application Insights의 기능은 변경 되지 않습니다. 그러나 새로운 범위를 더 잘 반영 하기 위해 일부 기능을 Azure Monitor 하는 것이 더 나을 수 있습니다. 이제 Log Analytics의 로그 데이터 엔진과 쿼리 언어를 Azure Monitor 로그 라고 합니다. [Azure Monitor 용어 업데이트](terminology.md)를 참조 하세요.
+2018 년 9 월에 Microsoft는 Azure Monitor, Log Analytics 및 Application Insights를 단일 서비스로 결합 하 여 응용 프로그램 및 응용 프로그램에서 사용 하는 구성 요소에 대한 강력한 종단 간 모니터링 기능을 제공 합니다. Log Analytics 및 Application Insights의 기능은 변경 되지 않습니다. 그러나 새로운 범위를 더 잘 반영 하기 위해 일부 기능을 Azure Monitor 하는 것이 더 나을 수 있습니다. 이제 Log Analytics의 로그 데이터 엔진과 쿼리 언어를 Azure Monitor 로그 라고 합니다. [Azure Monitor 용어 업데이트](terminology.md)를 참조 하세요.
 
 ### <a name="what-does-azure-monitor-cost"></a>Azure Monitor 비용은 무엇 인가요?
 메트릭 및 활동 로그 컬렉션과 같이 자동으로 설정 되는 Azure Monitor 기능은 무료로 제공 됩니다. 로그 쿼리 및 경고와 같은 다른 기능과 관련 된 비용이 있습니다. 자세한 가격 정보는 [Azure Monitor 가격 책정 페이지](https://azure.microsoft.com/pricing/details/monitor/) 를 참조 하세요.
 
 ### <a name="how-do-i-enable-azure-monitor"></a>Azure Monitor 사용 어떻게 할까요??
-Azure Monitor는 새 Azure 구독을 만들 때 사용 하도록 설정 되며 [활동 로그](platform/activity-logs-overview.md) 및 플랫폼 [메트릭이](platform/data-platform-metrics.md) 자동으로 수집 됩니다. [진단 설정을](platform/diagnostic-settings.md) 만들어 Azure 리소스 작업에 대 한 자세한 정보를 수집 하 고 [모니터링 솔루션](insights/solutions.md) 및 [정보](insights/insights-overview.md) 를 추가 하 여 특정 서비스에 대해 수집 된 데이터에 대 한 추가 분석을 제공 합니다. 
+Azure Monitor는 새 Azure 구독을 만들 때 사용 하도록 설정 되며 [활동 로그](platform/activity-logs-overview.md) 및 플랫폼 [메트릭이](platform/data-platform-metrics.md) 자동으로 수집 됩니다. [진단 설정을](platform/diagnostic-settings.md) 만들어 Azure 리소스 작업에 대한 자세한 정보를 수집 하 고 [모니터링 솔루션](insights/solutions.md) 및 [정보](insights/insights-overview.md) 를 추가 하 여 특정 서비스에 대해 수집 된 데이터에 대한 추가 분석을 제공 합니다. 
 
 ### <a name="how-do-i-access-azure-monitor"></a>Azure Monitor 액세스를 어떻게 할까요? 하 시겠습니까?
-Azure Portal의 **모니터** 메뉴에서 모든 Azure Monitor 기능 및 데이터에 액세스 합니다. 서로 다른 Azure 서비스에 대 한 메뉴의 **모니터링** 섹션에서는 특정 리소스로 필터링 된 데이터를 사용 하 여 동일한 도구에 대 한 액세스를 제공 합니다. Azure Monitor 데이터는 CLI, PowerShell 및 REST API를 사용 하는 다양 한 시나리오에도 액세스할 수 있습니다.
+Azure Portal의 **모니터** 메뉴에서 모든 Azure Monitor 기능 및 데이터에 액세스 합니다. 서로 다른 Azure 서비스에 대한 메뉴의 **모니터링** 섹션에서는 특정 리소스로 필터링 된 데이터를 사용 하 여 동일한 도구에 대한 액세스를 제공 합니다. Azure Monitor 데이터는 CLI, PowerShell 및 REST API를 사용 하는 다양 한 시나리오에도 액세스할 수 있습니다.
 
 ### <a name="is-there-an-on-premises-version-of-azure-monitor"></a>Azure Monitor 온-프레미스 버전이 있나요?
 아닙니다. Azure Monitor은 많은 양의 데이터를 처리 하 고 저장 하는 확장 가능한 클라우드 서비스 이며, Azure Monitor 온-프레미스 및 다른 클라우드의 리소스를 모니터링할 수 있습니다.
 
 ### <a name="can-azure-monitor-monitor-on-premises-resources"></a>온-프레미스 리소스를 Azure Monitor 모니터링할 수 있나요?
-예, Azure 리소스의 모니터링 데이터를 수집 하는 것 외에도 다른 클라우드 및 온-프레미스의 가상 컴퓨터 및 응용 프로그램에서 데이터를 수집할 수 Azure Monitor. [Azure Monitor에 대 한 모니터링 데이터 원본](platform/data-sources.md)을 참조 하세요.
+예, Azure 리소스의 모니터링 데이터를 수집 하는 것 외에도 다른 클라우드 및 온-프레미스의 가상 컴퓨터 및 응용 프로그램에서 데이터를 수집할 수 Azure Monitor. [Azure Monitor에 대한 모니터링 데이터 원본](platform/data-sources.md)을 참조 하세요.
 
 ### <a name="does-azure-monitor-integrate-with-system-center-operations-manager"></a>System Center Operations Manager와 통합 Azure Monitor?
 기존 System Center Operations Manager 관리 그룹을 Azure Monitor에 연결 하 여 에이전트에서 Azure Monitor 로그로 데이터를 수집할 수 있습니다. 이를 통해 로그 쿼리 및 솔루션을 사용 하 여 에이전트에서 수집 된 데이터를 분석할 수 있습니다. 또한 Azure Monitor에 직접 데이터를 보내도록 기존 System Center Operations Manager 에이전트를 구성할 수 있습니다. [Azure Monitor에 Operations Manager 연결을](platform/om-agents.md)참조 하세요.
@@ -50,10 +50,10 @@ Azure Monitor 액세스 하기 위해 에이전트 및 기타 외부 리소스�
 ## <a name="monitoring-data"></a>데이터 모니터링
 
 ### <a name="where-does-azure-monitor-get-its-data"></a>어디에서 데이터를 가져올 Azure Monitor 있나요?
-Azure Monitor는 Azure 플랫폼과 리소스, 사용자 지정 응용 프로그램 및 가상 머신에서 실행 되는 에이전트의 로그 및 메트릭을 포함 하 여 다양 한 원본에서 데이터를 수집 합니다. Azure Security Center 및 Network Watcher와 같은 기타 서비스는 데이터를 Azure Monitor 데이터를 사용 하 여 분석할 수 있도록 Log Analytics 작업 영역으로 수집 합니다. 로그 나 메트릭에 대 한 REST API를 사용 하 여 Azure Monitor에 사용자 지정 데이터를 보낼 수도 있습니다. [Azure Monitor에 대 한 모니터링 데이터 원본](platform/data-sources.md)을 참조 하세요.
+Azure Monitor는 Azure 플랫폼과 리소스, 사용자 지정 응용 프로그램 및 가상 머신에서 실행 되는 에이전트의 로그 및 메트릭을 포함 하 여 다양 한 원본에서 데이터를 수집 합니다. Azure Security Center 및 Network Watcher와 같은 기타 서비스는 데이터를 Azure Monitor 데이터를 사용 하 여 분석할 수 있도록 Log Analytics 작업 영역으로 수집 합니다. 로그 나 메트릭에 대한 REST API를 사용 하 여 Azure Monitor에 사용자 지정 데이터를 보낼 수도 있습니다. [Azure Monitor에 대한 모니터링 데이터 원본](platform/data-sources.md)을 참조 하세요.
 
 ### <a name="what-data-is-collected-by-azure-monitor"></a>Azure Monitor에서 수집 되는 데이터는 무엇 인가요? 
-Azure Monitor는 다양 한 원본의 데이터를 [로그](platform/data-platform-logs.md) 나 [메트릭에](platform/data-platform-metrics.md)수집 합니다. 각 데이터 형식에는 자체의 상대적인 장점이 있으며, 각각은 Azure Monitor의 특정 기능 집합을 지원 합니다. 각 Azure 구독에 대 한 단일 메트릭 데이터베이스가 있으며 요구 사항에 따라 로그를 수집 하는 여러 Log Analytics 작업 영역을 만들 수 있습니다. [Azure Monitor 데이터 플랫폼](platform/data-platform.md)을 참조 하세요.
+Azure Monitor는 다양 한 원본의 데이터를 [로그](platform/data-platform-logs.md) 나 [메트릭에](platform/data-platform-metrics.md)수집 합니다. 각 데이터 형식에는 자체의 상대적인 장점이 있으며, 각각은 Azure Monitor의 특정 기능 집합을 지원 합니다. 각 Azure 구독에 대한 단일 메트릭 데이터베이스가 있으며 요구 사항에 따라 로그를 수집 하는 여러 Log Analytics 작업 영역을 만들 수 있습니다. [Azure Monitor 데이터 플랫폼](platform/data-platform.md)을 참조 하세요.
 
 ### <a name="is-there-a-maximum-amount-of-data-that-i-can-collect-in-azure-monitor"></a>Azure Monitor에서 수집할 수 있는 최대 데이터 양이 있나요?
 수집할 수 있는 메트릭 데이터의 양에는 제한이 없지만이 데이터는 최대 93 일 동안 저장 됩니다. [메트릭 보존을](platform/data-platform-metrics.md#retention-of-metrics)참조 하세요. 수집할 수 있는 로그 데이터의 양에는 제한이 없지만 Log Analytics 작업 영역에 대해 선택한 가격 책정 계층의 영향을 받을 수 있습니다. [가격 책정 세부 정보](https://azure.microsoft.com/pricing/details/monitor/)를 참조하세요.
@@ -68,12 +68,12 @@ Azure Monitor는 다양 한 원본의 데이터를 [로그](platform/data-platfo
 ## <a name="solutions-and-insights"></a>솔루션 및 정보
 
 ### <a name="what-is-an-insight-in-azure-monitor"></a>Azure Monitor의 정보는 무엇 인가요?
-Insights는 특정 Azure 서비스에 대 한 사용자 지정 모니터링 환경을 제공 합니다. Azure Monitor의 다른 기능과 동일한 메트릭과 로그를 사용 하지만 추가 데이터를 수집 하 고 Azure Portal에서 고유한 환경을 제공할 수 있습니다. [Azure Monitor의 정보를](insights/insights-overview.md)참조 하세요.
+Insights는 특정 Azure 서비스에 대한 사용자 지정 모니터링 환경을 제공 합니다. Azure Monitor의 다른 기능과 동일한 메트릭과 로그를 사용 하지만 추가 데이터를 수집 하 고 Azure Portal에서 고유한 환경을 제공할 수 있습니다. [Azure Monitor의 정보를](insights/insights-overview.md)참조 하세요.
 
 Azure Portal에서 정보를 보려면 **모니터** 메뉴의 **insights** 섹션 또는 서비스 메뉴의 **모니터링** 섹션을 참조 하세요.
 
 ### <a name="what-is-a-solution-in-azure-monitor"></a>Azure Monitor 솔루션 이란?
-모니터링 솔루션은 Azure Monitor 기능에 따라 특정 응용 프로그램 또는 서비스를 모니터링 하는 논리 집합으로 패키지 됩니다. Azure Monitor에서 로그 데이터를 수집 하 고 Azure Portal에서 일반적인 환경을 사용 하 여 분석에 대 한 로그 쿼리 및 보기를 제공 합니다. [Azure Monitor에서 솔루션 모니터링을](insights/solutions.md)참조 하세요.
+모니터링 솔루션은 Azure Monitor 기능에 따라 특정 응용 프로그램 또는 서비스를 모니터링 하는 논리 집합으로 패키지 됩니다. Azure Monitor에서 로그 데이터를 수집 하 고 Azure Portal에서 일반적인 환경을 사용 하 여 분석에 대한 로그 쿼리 및 보기를 제공 합니다. [Azure Monitor에서 솔루션 모니터링을](insights/solutions.md)참조 하세요.
 
 Azure Portal에서 솔루션을 보려면 **모니터** 메뉴의 **Insights** 섹션에서 **자세히** 를 클릭 합니다. **추가** 를 클릭 하 여 작업 영역에 솔루션을 추가 합니다.
 
@@ -88,10 +88,10 @@ Azure Portal에서 솔루션을 보려면 **모니터** 메뉴의 **Insights** �
 Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능한 빠르고 확장성이 우수한 데이터 탐색 서비스입니다. Azure Monitor 로그는 Azure 데이터 탐색기를 기반으로 구축 되며 약간의 차이가 있는 동일한 Kusto 쿼리 언어 (KQL)를 사용 합니다. [Azure Monitor 로그 쿼리 언어 차이점](log-query/data-explorer-difference.md)을 참조 하세요.
 
 ### <a name="how-do-i-retrieve-log-data"></a>로그 데이터를 검색 어떻게 할까요??
-KQL (Kusto Query Language)를 사용 하 여 작성 된 로그 쿼리를 사용 하 여 Log Analytics 작업 영역에서 모든 데이터를 검색 합니다. 사용자 고유의 쿼리를 작성 하거나 특정 응용 프로그램 또는 서비스에 대 한 로그 쿼리를 포함 하는 솔루션 및 정보를 사용할 수 있습니다. [Azure Monitor의 로그 쿼리 개요](log-query/log-query-overview.md)를 참조 하세요.
+KQL (Kusto Query Language)를 사용 하 여 작성 된 로그 쿼리를 사용 하 여 Log Analytics 작업 영역에서 모든 데이터를 검색 합니다. 사용자 고유의 쿼리를 작성 하거나 특정 응용 프로그램 또는 서비스에 대한 로그 쿼리를 포함 하는 솔루션 및 정보를 사용할 수 있습니다. [Azure Monitor의 로그 쿼리 개요](log-query/log-query-overview.md)를 참조 하세요.
 
 ### <a name="what-is-a-log-analytics-workspace"></a>Log Analytics 작업 영역이란 무엇인가요?
-Azure Monitor에 의해 수집 된 모든 로그 데이터는 Log Analytics 작업 영역에 저장 됩니다. 작업 영역은 기본적으로 다양 한 원본에서 로그 데이터를 수집 하는 컨테이너입니다. 모든 모니터링 데이터에 대 한 단일 Log Analytics 작업 영역이 있거나 여러 작업 영역에 대 한 요구 사항이 있을 수 있습니다. [Azure Monitor 로그 배포 디자인](platform/design-logs-deployment.md)을 참조 하세요.
+Azure Monitor에 의해 수집 된 모든 로그 데이터는 Log Analytics 작업 영역에 저장 됩니다. 작업 영역은 기본적으로 다양 한 원본에서 로그 데이터를 수집 하는 컨테이너입니다. 모든 모니터링 데이터에 대한 단일 Log Analytics 작업 영역이 있거나 여러 작업 영역에 대한 요구 사항이 있을 수 있습니다. [Azure Monitor 로그 배포 디자인](platform/design-logs-deployment.md)을 참조 하세요.
 
 ### <a name="can-you-move-an-existing-log-analytics-workspace-to-another-azure-subscription"></a>기존 Log Analytics 작업 영역을 다른 Azure 구독으로 이동할 수 있나요?
 리소스 그룹 또는 구독 간에 작업 영역을 이동할 수 있지만 다른 지역으로 이동할 수는 없습니다. [Log Analytics 작업 영역을 다른 구독 또는 리소스 그룹으로 이동을](platform/move-workspace.md)참조 하세요.
@@ -100,7 +100,7 @@ Azure Monitor에 의해 수집 된 모든 로그 데이터는 Log Analytics 작�
 
 쿼리 [범위가](log-query/scope.md) 특정 리소스로 설정 된 경우 **쿼리 탐색기**, **저장** 및 **새 경고 규칙** 단추를 사용할 수 없습니다. 경고를 만들고 쿼리를 저장 하거나 로드 하려면 Log Analytics 작업 영역으로 범위가 지정 되어야 합니다. 작업 영역 컨텍스트에서 Log Analytics를 열려면 **Azure Monitor** 메뉴에서 **로그** 를 선택 합니다. 마지막으로 사용한 작업 영역이 선택되지만 다른 작업 영역을 선택할 수 있습니다. [Azure Monitor의 로그 쿼리 범위 및 시간 범위](log-query/scope.md) 를 참조 하세요 Log Analytics
 
-### <a name="why-am-i-getting-the-error-register-resource-provider-microsoftinsights-for-this-subscription-to-enable-this-query-when-opening-log-analytics-from-a-vm"></a>오류가 발생 하는 이유는 다음과 같습니다. VM에서 Log Analytics를 열 때 "이 구독에 대 한 리소스 공급자 '를 등록 하 여이 쿼리를 사용 하도록 설정 하십시오." 
+### <a name="why-am-i-getting-the-error-register-resource-provider-microsoftinsights-for-this-subscription-to-enable-this-query-when-opening-log-analytics-from-a-vm"></a>오류가 발생 하는 이유는 다음과 같습니다. VM에서 Log Analytics를 열 때 "이 구독에 대한 리소스 공급자 '를 등록 하 여이 쿼리를 사용 하도록 설정 하십시오." 
 많은 리소스 공급자가 자동으로 등록 되지만 일부 리소스 공급자를 수동으로 등록 해야 할 수도 있습니다. 등록 범위는 항상 해당 구독입니다. 자세한 내용은 [리소스 공급자 및 형식](../azure-resource-manager/management/resource-providers-and-types.md#azure-portal)을 참조하세요.
 
 ### <a name="why-am-i-am-getting-no-access-error-message-when-opening-log-analytics-from-a-vm"></a>VM에서 Log Analytics를 열 때 액세스 권한 없음 오류 메시지가 표시 되는 이유는 무엇 인가요? 
@@ -138,11 +138,11 @@ VM 로그를 보려면 VM 로그를 저장하는 작업 영역에 대한 읽기 
 
 
 ### <a name="whats-the-difference-between-the-azure-monitor-agents"></a>Azure Monitor 에이전트의 차이점은 무엇 인가요?
-Azure 진단 확장은 Azure virtual machines 용 이며 Azure Monitor 메트릭, Azure Storage, Azure Event Hubs에 대 한 데이터를 수집 합니다. Log Analytics 에이전트는 Azure, 다른 클라우드 환경 또는 온-프레미스의 가상 컴퓨터용 이며 Azure Monitor 로그에 데이터를 수집 합니다. 종속성 에이전트에 Log Analytics 에이전트와 수집 된 프로세스 세부 정보 및 종속성이 필요 합니다. [Azure Monitor 에이전트 개요](platform/agents-overview.md)를 참조 하세요.
+Azure 진단 확장은 Azure virtual machines 용 이며 Azure Monitor 메트릭, Azure Storage, Azure Event Hubs에 대한 데이터를 수집 합니다. Log Analytics 에이전트는 Azure, 다른 클라우드 환경 또는 온-프레미스의 가상 컴퓨터용 이며 Azure Monitor 로그에 데이터를 수집 합니다. 종속성 에이전트에 Log Analytics 에이전트와 수집 된 프로세스 세부 정보 및 종속성이 필요 합니다. [Azure Monitor 에이전트 개요](platform/agents-overview.md)를 참조 하세요.
 
 
 ### <a name="does-my-agent-traffic-use-my-expressroute-connection"></a>내 에이전트 트래픽이 Express 경로 연결을 사용 하나요?
-Azure Monitor에 대 한 트래픽은 Microsoft 피어 링 Express 경로 회로를 사용 합니다. 여러 유형의 Express 경로 트래픽에 대 한 설명은 [express 경로 설명서](../expressroute/expressroute-faqs.md#supported-services) 를 참조 하세요. 
+Azure Monitor에 대한 트래픽은 Microsoft 피어 링 Express 경로 회로를 사용 합니다. 여러 유형의 Express 경로 트래픽에 대한 설명은 [express 경로 설명서](../expressroute/expressroute-faqs.md#supported-services) 를 참조 하세요. 
 
 ### <a name="how-can-i-confirm-that-the-log-analytics-agent-is-able-to-communicate-with-azure-monitor"></a>Log Analytics 에이전트가 Azure Monitor와 통신할 수 있는지 확인 하려면 어떻게 해야 하나요?
 에이전트 컴퓨터의 제어판에서 **보안 & 설정** **Microsoft Monitoring Agent** 를 선택 합니다. **Azure Log Analytics (OMS)** 탭에서 녹색 확인 표시 아이콘은 에이전트가 Azure Monitor와 통신할 수 있는지 확인 합니다. 노란색 경고 아이콘은 에이전트에 문제가 있음을 의미 합니다. 한 가지 일반적인 이유는 **Microsoft Monitoring Agent** 서비스가 중지 된 것입니다. 서비스 제어 관리자를 사용하여 서비스를 다시 시작합니다.
@@ -189,8 +189,8 @@ WireData
 로그 경고가 조건과 일치 하는 경우 15 분 넘게 하트 비트가 누락 된 경우 알림이 표시 되도록 기존 또는 새 [작업 그룹](platform/action-groups.md) 을 지정 합니다.
 
 
-### <a name="what-are-the-firewall-requirements-for-azure-monitor-agents"></a>Azure Monitor 에이전트에 대 한 방화벽 요구 사항은 무엇 인가요?
-방화벽 요구 사항에 대 한 자세한 내용은 [네트워크 방화벽 요구 사항](platform/log-analytics-agent.md#network-firewall-requirements)을 참조 하세요.
+### <a name="what-are-the-firewall-requirements-for-azure-monitor-agents"></a>Azure Monitor 에이전트에 대한 방화벽 요구 사항은 무엇 인가요?
+방화벽 요구 사항에 대한 자세한 내용은 [네트워크 방화벽 요구 사항](platform/log-analytics-agent.md#network-firewall-requirements)을 참조 하세요.
 
 
 ## <a name="visualizations"></a>시각화
@@ -282,7 +282,7 @@ WireData
 * HTTP 요청
 * [종속성](app/asp-net-dependencies.md). 호출: SQL Database, 외부 서비스(Azure Cosmos DB, 테이블, Blob Storage 및 큐)에 대한 HTTP 호출. 
 * [예외](app/asp-net-exceptions.md) 및 스택 추적.
-* [성능 카운터](app/performance-counters.md) - [상태 모니터](app/monitor-performance-live-website-now.md)를 사용 하는 경우 [App Services에 대 한 azure 모니터링](app/azure-web-apps.md), [VM 또는 가상 머신 확장 집합에 대 한 azure 모니터링](app/azure-vm-vmss-apps.md)또는 [Application Insights collectd writer](app/java-collectd.md)를 사용 합니다.
+* [성능 카운터](app/performance-counters.md) - [상태 모니터](app/monitor-performance-live-website-now.md)를 사용 하는 경우 [App Services에 대한 azure 모니터링](app/azure-web-apps.md), [VM 또는 가상 머신 확장 집합에 대한 azure 모니터링](app/azure-vm-vmss-apps.md)또는 [Application Insights collectd writer](app/java-collectd.md)를 사용 합니다.
 * 코딩하는 [사용자 지정 이벤트 및 메트릭](app/api-custom-events-metrics.md).
 * 적절한 수집기를 구성한 경우 [추적 로그](app/asp-net-trace-logs.md).
 
@@ -316,7 +316,7 @@ WireData
 
 * 브라우저 원격 분석: 보낸 사람의 IP 주소를 수집합니다.
 * 서버 원격 분석: Application Insights 모듈에서 클라이언트 IP 주소를 수집합니다. `X-Forwarded-For`가 설정된 경우에는 수집되지 않습니다.
-* IP 주소 및 지리적 위치 데이터를 수집 하는 방법에 대 한 자세한 내용은이 [문서](https://docs.microsoft.com/azure/azure-monitor/app/ip-collection)를 참조 Application Insights.
+* IP 주소 및 지리적 위치 데이터를 수집 하는 방법에 대한 자세한 내용은이 [문서](https://docs.microsoft.com/azure/azure-monitor/app/ip-collection)를 참조 Application Insights.
 
 
 `ClientIpHeaderTelemetryInitializer`를 구성하여 다른 헤더에서 IP 주소를 가져올 수 있습니다. 예를 들어 일부 시스템에서는 프록시, 부하 분산 장치 또는 CDN에 의해 `X-Originating-IP`로 이동됩니다. [자세히 알아보기](https://apmtips.com/blog/2016/07/05/client-ip-address/).
@@ -555,19 +555,19 @@ ContainerLog
 쿼리 변경 내용으로 인해 첫 번째 옵션이 편리 하지 않을 경우 [데이터 컬렉션 구성 설정](insights/container-insights-agent-config.md)에 설명 된 대로 에이전트 구성 맵에서 ```log_collection_settings.enrich_container_logs``` 설정을 사용 하도록 설정 하 여 이러한 필드 수집을 다시 사용 하도록 설정할 수 있습니다.
 
 > [!NOTE]
-> 클러스터의 모든 노드에서 API 서버 호출을 생성 하 여이 보강를 수행 하기 때문에 두 번째 옵션은 노드가 50 이상인 대량 클러스터에는 권장 되지 않습니다. 이 옵션은 수집 된 모든 로그 줄에 대 한 데이터 크기도 늘립니다.
+> 클러스터의 모든 노드에서 API 서버 호출을 생성 하 여이 보강를 수행 하기 때문에 두 번째 옵션은 노드가 50 이상인 대량 클러스터에는 권장 되지 않습니다. 이 옵션은 수집 된 모든 로그 줄에 대한 데이터 크기도 늘립니다.
 
 ### <a name="can-i-view-metrics-collected-in-grafana"></a>Grafana에서 수집 된 메트릭을 볼 수 있나요?
 
 컨테이너 Azure Monitor는 Grafana 대시보드의 Log Analytics 작업 영역에 저장 된 메트릭 보기를 지원 합니다. 사용자 지정 Grafana 대시보드를 시각화 하기 위해 모니터링 되는 클러스터의 추가 데이터를 쿼리 하는 방법을 배우는 데 도움이 되는 Grafana의 [대시보드 리포지토리에서](https://grafana.com/grafana/dashboards?dataSource=grafana-azure-monitor-datasource&category=docker) 다운로드할 수 있는 템플릿을 제공 했습니다. 
 
-### <a name="can-i-monitor-my-aks-engine-cluster-with-azure-monitor-for-containers"></a>컨테이너에 대 한 Azure Monitor를 사용 하 여 AKS-engine 클러스터를 모니터링할 수 있나요?
+### <a name="can-i-monitor-my-aks-engine-cluster-with-azure-monitor-for-containers"></a>컨테이너에 대한 Azure Monitor를 사용 하 여 AKS-engine 클러스터를 모니터링할 수 있나요?
 
-컨테이너 Azure Monitor는 Azure에서 호스트 되는 AKS (이전의 ACS 엔진) 클러스터에 배포 된 컨테이너 작업을 모니터링 하도록 지원 합니다. 이 시나리오에 대 한 모니터링을 사용 하도록 설정 하는 데 필요한 단계에 대 한 자세한 내용과 개요는 [AKS의 컨테이너에 Azure Monitor 사용](https://github.com/microsoft/OMS-docker/tree/aks-engine)을 참조 하세요.
+컨테이너 Azure Monitor는 Azure에서 호스트 되는 AKS (이전의 ACS 엔진) 클러스터에 배포 된 컨테이너 작업을 모니터링 하도록 지원 합니다. 이 시나리오에 대한 모니터링을 사용 하도록 설정 하는 데 필요한 단계에 대한 자세한 내용과 개요는 [AKS의 컨테이너에 Azure Monitor 사용](https://github.com/microsoft/OMS-docker/tree/aks-engine)을 참조 하세요.
 
 ### <a name="why-dont-i-see-data-in-my-log-analytics-workspace"></a>내 Log Analytics 작업 영역에 데이터가 표시 되지 않는 이유는 무엇 인가요?
 
-매일 특정 시간에 Log Analytics 작업 영역에서 데이터를 볼 수 없는 경우 매일 수집할 데이터의 양을 제어 하기 위해 지정 된 기본 500 MB 제한 또는 일일 상한에 도달 했을 수 있습니다. 해당 일에 대 한 제한이 충족 되 면 데이터 수집은 다음 날에만 중지 하 고 다시 시작 합니다. 예상 사용 패턴을 기준으로 데이터 사용량을 검토 하 고 다른 가격 책정 계층으로 업데이트 하려면 [로그 데이터 사용량 및 비용](platform/manage-cost-storage.md)을 참조 하세요. 
+매일 특정 시간에 Log Analytics 작업 영역에서 데이터를 볼 수 없는 경우 매일 수집할 데이터의 양을 제어 하기 위해 지정 된 기본 500 MB 제한 또는 일일 상한에 도달 했을 수 있습니다. 해당 일에 대한 제한이 충족 되 면 데이터 수집은 다음 날에만 중지 하 고 다시 시작 합니다. 예상 사용 패턴을 기준으로 데이터 사용량을 검토 하 고 다른 가격 책정 계층으로 업데이트 하려면 [로그 데이터 사용량 및 비용](platform/manage-cost-storage.md)을 참조 하세요. 
 
 ### <a name="what-are-the-container-states-specified-in-the-containerinventory-table"></a>ContainerInventory 테이블에 지정 된 컨테이너 상태는 무엇 인가요?
 
@@ -575,15 +575,15 @@ ContainerInventory 테이블에는 중지된 컨테이너와 실행 중인 컨�
  
 ### <a name="how-do-i-resolve-missing-subscription-registration-error"></a>누락 된 *구독 등록* 오류를 해결 어떻게 할까요? 있습니까?
 
-**Microsoft.operationsmanagement에 대 한 구독 등록 누락**오류가 표시 되 면 작업 영역이 정의 된 구독에서 리소스 공급자 **microsoft.operationsmanagement** 를 등록 하 여 해결할 수 있습니다. 이 작업을 수행하는 방법에 대한 설명서는 [여기](../azure-resource-manager/templates/error-register-resource-provider.md)에서 찾을 수 있습니다.
+**Microsoft.operationsmanagement에 대한 구독 등록 누락**오류가 표시 되 면 작업 영역이 정의 된 구독에서 리소스 공급자 **microsoft.operationsmanagement** 를 등록 하 여 해결할 수 있습니다. 이 작업을 수행하는 방법에 대한 설명서는 [여기](../azure-resource-manager/templates/error-register-resource-provider.md)에서 찾을 수 있습니다.
 
-### <a name="is-there-support-for-rbac-enabled-aks-clusters"></a>RBAC 사용 AKS 클러스터에 대 한 지원이 있나요?
+### <a name="is-there-support-for-rbac-enabled-aks-clusters"></a>RBAC 사용 AKS 클러스터에 대한 지원이 있나요?
 
-컨테이너 모니터링 솔루션은 RBAC를 지원 하지 않지만 컨테이너에 대 한 Azure Monitor에서 지원 됩니다. 솔루션 세부 정보 페이지에 이러한 클러스터에 대한 데이터를 표시하는 블레이드에 올바른 정보가 표시되지 않을 수 있습니다.
+컨테이너 모니터링 솔루션은 RBAC를 지원 하지 않지만 컨테이너에 대한 Azure Monitor에서 지원 됩니다. 솔루션 세부 정보 페이지에 이러한 클러스터에 대한 데이터를 표시하는 블레이드에 올바른 정보가 표시되지 않을 수 있습니다.
 
 ### <a name="how-do-i-enable-log-collection-for-containers-in-the-kube-system-namespace-through-helm"></a>Helm을 통해 kube-system 네임스페이스의 컨테이너에 대해 로그 수집을 사용하도록 설정하려면 어떻게 하나요?
 
-kube-system 네임스페이스에 포함된 컨테이너의 로그 수집은 기본적으로 사용하지 않도록 설정됩니다. omsagent에 환경 변수를 설정하여 로그 수집을 사용하도록 설정할 수 있습니다. 자세한 내용은 [컨테이너 GitHub에 대 한 Azure Monitor](https://github.com/helm/charts/tree/master/incubator/azuremonitor-containers) 페이지를 참조 하세요. 
+kube-system 네임스페이스에 포함된 컨테이너의 로그 수집은 기본적으로 사용하지 않도록 설정됩니다. omsagent에 환경 변수를 설정하여 로그 수집을 사용하도록 설정할 수 있습니다. 자세한 내용은 [컨테이너 GitHub에 대한 Azure Monitor](https://github.com/helm/charts/tree/master/incubator/azuremonitor-containers) 페이지를 참조 하세요. 
 
 ### <a name="how-do-i-update-the-omsagent-to-the-latest-released-version"></a>omsagent를 최신 릴리스 버전으로 업데이트하려면 어떻게 하나요?
 
@@ -604,22 +604,22 @@ console.log(json.stringify({
       }));
 ```
 
-이 데이터는 쿼리를 수행 하는 경우 로그에 대 한 Azure Monitor에서 다음 예제와 같이 표시 됩니다.
+이 데이터는 쿼리를 수행 하는 경우 로그에 대한 Azure Monitor에서 다음 예제와 같이 표시 됩니다.
 
 ```
 LogEntry : ({“Hello": "This example has multiple lines:","Docker/Moby": "will not break this into multiple lines", "and you will receive":"all of them in log analytics", "as one": "log entry"}
 
 ```
 
-문제에 대 한 자세한 내용을 보려면 다음 [GitHub 링크](https://github.com/moby/moby/issues/22920)를 검토 하세요.
+문제에 대한 자세한 내용을 보려면 다음 [GitHub 링크](https://github.com/moby/moby/issues/22920)를 검토 하세요.
 
 ### <a name="how-do-i-resolve-azure-ad-errors-when-i-enable-live-logs"></a>라이브 로그를 사용 하도록 설정할 때 Azure AD 오류를 해결할 어떻게 할까요? 있나요? 
 
-다음 오류가 표시 될 수 있습니다. **요청에 지정 된 회신 url이 응용 프로그램에 대해 구성 된 회신 url (' < 응용 프로그램 ID\>')과 일치 하지**않습니다. 이 문제를 해결 하는 [방법은 컨테이너에 대 한 Azure Monitor를 사용 하 여 실시간으로 컨테이너 데이터를 보는 방법](insights/container-insights-livedata-setup.md#configure-ad-integrated-authentication)문서에서 찾을 수 있습니다. 
+다음 오류가 표시 될 수 있습니다. **요청에 지정 된 회신 url이 응용 프로그램에 대해 구성 된 회신 url (' < 응용 프로그램 ID\>')과 일치 하지**않습니다. 이 문제를 해결 하는 [방법은 컨테이너에 대한 Azure Monitor를 사용 하 여 실시간으로 컨테이너 데이터를 보는 방법](insights/container-insights-livedata-setup.md#configure-ad-integrated-authentication)문서에서 찾을 수 있습니다. 
 
 ### <a name="why-cant-i-upgrade-cluster-after-onboarding"></a>온 보 딩 후 클러스터를 업그레이드할 수 없는 이유는 무엇입니까?
 
-AKS 클러스터의 컨테이너에 대 한 Azure Monitor를 사용 하도록 설정한 후 클러스터를 업그레이드 하려고 할 때 클러스터가 데이터를 전송 하는 Log Analytics 작업 영역을 삭제 하면 오류가 발생 합니다. 이 문제를 해결 하려면 모니터링을 사용 하지 않도록 설정한 다음 구독에서 다른 유효한 작업 영역을 참조 하 여 다시 사용 하도록 설정 해야 합니다. 클러스터 업그레이드를 다시 수행 하려고 하면 성공적으로 처리 되 고 완료 됩니다.  
+AKS 클러스터의 컨테이너에 대한 Azure Monitor를 사용 하도록 설정한 후 클러스터를 업그레이드 하려고 할 때 클러스터가 데이터를 전송 하는 Log Analytics 작업 영역을 삭제 하면 오류가 발생 합니다. 이 문제를 해결 하려면 모니터링을 사용 하지 않도록 설정한 다음 구독에서 다른 유효한 작업 영역을 참조 하 여 다시 사용 하도록 설정 해야 합니다. 클러스터 업그레이드를 다시 수행 하려고 하면 성공적으로 처리 되 고 완료 됩니다.  
 
 ### <a name="which-ports-and-domains-do-i-need-to-openwhitelist-for-the-agent"></a>에이전트에 대해 열기/허용 목록 해야 하는 포트 및 도메인은 무엇 인가요?
 
@@ -633,7 +633,7 @@ Microsoft FAQ는 VM용 Azure Monitor에 대한 질문과 대답 목록입니다.
 
 온보딩하면 VM용 Azure Monitor에서 표시하고 분석할 이 정보의 수집을 시작하기 위해 모든 VM이 작업 영역에 데이터를 보고하게 되는 작업 영역에 대한 성능 카운터를 구성합니다.  결과적으로, 선택된 작업 영역에 연결된 VM의 모든 성능 데이터가 표시됩니다.  상태 및 맵 기능은 온보딩하도록 지정된 VM에 대해서만 활성화됩니다.
 
-사용 가능한 성능 카운터에 대 한 자세한 내용은 [사용 개요](insights/vminsights-enable-overview.md#performance-counters-enabled) 문서를 참조 하세요.
+사용 가능한 성능 카운터에 대한 자세한 내용은 [사용 개요](insights/vminsights-enable-overview.md#performance-counters-enabled) 문서를 참조 하세요.
 
 ### <a name="can-i-onboard-to-a-new-workspace"></a>새 작업 영역에 온보딩할 수 있나요? 
 현재 VM이 기존 Log Analytics 작업 영역에 연결되지 않은 경우 데이터를 저장할 새 작업 영역을 만들어야 합니다. Azure Portal을 통해 VM용 Azure Monitor에 대해 단일 Azure VM을 구성한 경우 새 기본 작업 영역을 만드는 작업이 자동으로 수행됩니다.
@@ -644,7 +644,7 @@ Microsoft FAQ는 VM용 Azure Monitor에 대한 질문과 대답 목록입니다.
 이미 가상 머신의 데이터를 수집하는 경우 기존 Log Analytics 작업 영역에 데이터를 보고하도록 이미 구성되었을 수 있습니다.  해당 작업 영역이 지원되는 지역 중 하나라면 기존 작업 영역에 VM용 Azure Monitor를 사용하도록 설정할 수 있습니다.  이미 사용 중인 작업 영역이 지원되는 지역 중 하나가 아닌 경우 이번에는 VM용 Azure Monitor에 온보딩할 수 없습니다.  본사에서는 추가 지역을 지원하기 위해 적극적으로 노력하고 있습니다.
 
 >[!NOTE]
->VM용 Azure Monitor에 온보딩하도록 선택했는지 여부와 상관 없이 작업 영역에 보고는 모든 VM에 영향을 주는 작업 영역에 대한 성능 카운터를 구성합니다. 작업 영역에 대해 성능 카운터를 구성하는 방법에 대한 자세한 내용은 [설명서](platform/data-sources-performance-counters.md)를 참조하세요. VM용 Azure Monitor에 대해 구성 된 카운터에 대 한 자세한 내용은 [VM용 Azure Monitor 사용](insights/vminsights-enable-overview.md#performance-counters-enabled) 문서를 참조 하세요.  
+>VM용 Azure Monitor에 온보딩하도록 선택했는지 여부와 상관 없이 작업 영역에 보고는 모든 VM에 영향을 주는 작업 영역에 대한 성능 카운터를 구성합니다. 작업 영역에 대해 성능 카운터를 구성하는 방법에 대한 자세한 내용은 [설명서](platform/data-sources-performance-counters.md)를 참조하세요. VM용 Azure Monitor에 대해 구성 된 카운터에 대한 자세한 내용은 [VM용 Azure Monitor 사용](insights/vminsights-enable-overview.md#performance-counters-enabled) 문서를 참조 하세요.  
 
 ### <a name="why-did-my-vm-fail-to-onboard"></a>내 VM이 온보딩하지 못한 이유는?
 Azure Portal에서 Azure VM을 온보딩한 경우 다음 단계가 수행됩니다.
@@ -732,9 +732,9 @@ VM용 Azure Monitor 맵 기능은 서비스 맵을 기반으로 하지만 다음
 
 ### <a name="why-does-the-network-chart-on-the-performance-tab-look-different-than-the-network-chart-on-the-azure-vm-overview-page"></a>성능 탭의 네트워크 차트가 Azure VM 개요 페이지의 네트워크 차트와 다르게 보이는 이유는?
 
-Azure VM의 개요 페이지에는 게스트 VM에서 작업의 호스트 측정값에 따라 차트가 표시됩니다.  Azure VM 개요에 대한 네트워크 차트의 경우 청구되는 네트워크 트래픽만 표시합니다.  여기에는 가상 네트워크 간 트래픽이 포함 되지 않습니다.  VM용 Azure Monitor에 대해 표시 되는 데이터와 차트는 게스트 VM의 데이터를 기반으로 하며, 네트워크 차트는 가상 네트워크 간을 포함 하 여 해당 VM에 대 한 인바운드 및 아웃 바운드 인 모든 TCP/IP 트래픽을 표시 합니다.
+Azure VM의 개요 페이지에는 게스트 VM에서 작업의 호스트 측정값에 따라 차트가 표시됩니다.  Azure VM 개요에 대한 네트워크 차트의 경우 청구되는 네트워크 트래픽만 표시합니다.  여기에는 가상 네트워크 간 트래픽이 포함 되지 않습니다.  VM용 Azure Monitor에 대해 표시 되는 데이터와 차트는 게스트 VM의 데이터를 기반으로 하며, 네트워크 차트는 가상 네트워크 간을 포함 하 여 해당 VM에 대한 인바운드 및 아웃 바운드 인 모든 TCP/IP 트래픽을 표시 합니다.
 
-### <a name="how-is-response-time-measured-for-data-stored-in-vmconnection-and-displayed-in-the-connection-panel-and-workbooks"></a>VMConnection에 저장 되 고 연결 패널 및 통합 문서에 표시 되는 데이터에 대 한 응답 시간은 어떻게 측정 되나요?
+### <a name="how-is-response-time-measured-for-data-stored-in-vmconnection-and-displayed-in-the-connection-panel-and-workbooks"></a>VMConnection에 저장 되 고 연결 패널 및 통합 문서에 표시 되는 데이터에 대한 응답 시간은 어떻게 측정 되나요?
 
 응답 시간은 근사값입니다. 응용 프로그램 코드를 계측 하지 않으므로 요청이 시작 되는 시기와 응답이 도착할 때를 알 수 없습니다. 대신 연결에서 전송 되는 데이터를 관찰 한 다음 해당 연결에서 데이터를 다시 가져올 것입니다. 에이전트는 이러한 송신 및 수신을 추적 하 고 쌍으로 연결을 시도 합니다. 즉, 일련의 전송 후 일련의 수신이 요청/응답 쌍으로 해석 됩니다. 이러한 작업 간의 타이밍은 응답 시간입니다. 여기에는 네트워크 대기 시간 및 서버 처리 시간이 포함 됩니다.
 
@@ -752,4 +752,4 @@ Azure VM의 개요 페이지에는 게스트 VM에서 작업의 호스트 측정
 - [Log Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=opinsights)
 - [Application Insights](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=ApplicationInsights)
 
-Azure Monitor에 대 한 일반적인 피드백은 [사용자 의견 포럼](https://feedback.azure.com/forums/34192--general-feedback)을 참조 하세요.
+Azure Monitor에 대한 일반적인 피드백은 [사용자 의견 포럼](https://feedback.azure.com/forums/34192--general-feedback)을 참조 하세요.

@@ -1,6 +1,6 @@
 ---
 title: Azure Data Factory 식 및 함수
-description: 이 문서에서는 데이터 팩터리 엔터티를 만드는 데 사용할 수 있는 식 및 함수에 대 한 정보를 제공 합니다.
+description: 이 문서에서는 데이터 팩터리 엔터티를 만드는 데 사용할 수 있는 식 및 함수에 대한 정보를 제공 합니다.
 services: data-factory
 documentationcenter: ''
 author: djpmsft

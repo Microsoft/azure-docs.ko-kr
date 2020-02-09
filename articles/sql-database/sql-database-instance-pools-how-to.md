@@ -206,14 +206,14 @@ $instance | Set-AzSqlInstance -StorageSizeInGB 1024 -InstancePoolName "mi-pool-n
 
 풀의 관리 되는 인스턴스에 연결 하려면 다음 두 단계가 필요 합니다.
 
-1. [인스턴스에 대 한 공용 끝점을 사용 하도록 설정](#enable-the-public-endpoint-for-the-instance)합니다.
+1. [인스턴스에 대 한 공용 엔드포인트을 사용 하도록 설정](#enable-the-public-endpoint-for-the-instance)합니다.
 2. [네트워크 보안 그룹 (NSG)에 인바운드 규칙을 추가](#add-an-inbound-rule-to-the-network-security-group)합니다.
 
-두 단계가 모두 완료 된 후에는 인스턴스를 만드는 동안 제공 된 공용 끝점 주소, 포트 및 자격 증명을 사용 하 여 인스턴스에 연결할 수 있습니다. 
+두 단계가 모두 완료 된 후에는 인스턴스를 만드는 동안 제공 된 공용 엔드포인트 주소, 포트 및 자격 증명을 사용 하 여 인스턴스에 연결할 수 있습니다. 
 
-### <a name="enable-the-public-endpoint-for-the-instance"></a>인스턴스에 대 한 공용 끝점 사용
+### <a name="enable-the-public-endpoint-for-the-instance"></a>인스턴스에 대 한 공용 엔드포인트 사용
 
-인스턴스에 대 한 공용 끝점을 사용 하도록 설정 하는 작업은 Azure Portal 또는 다음 PowerShell 명령을 사용 하 여 수행할 수 있습니다.
+인스턴스에 대 한 공용 엔드포인트을 사용 하도록 설정 하는 작업은 Azure Portal 또는 다음 PowerShell 명령을 사용 하 여 수행할 수 있습니다.
 
 
 ```powershell
@@ -226,7 +226,7 @@ $instanceOne | Set-AzSqlInstance -InstancePoolName "pool-mi-001" -PublicDataEndp
 
 이 단계는 Azure Portal 또는 PowerShell 명령을 사용 하 여 수행할 수 있으며, 관리 되는 인스턴스에 대해 서브넷이 준비 된 후 언제 든 지 수행할 수 있습니다.
 
-자세한 내용은 [네트워크 보안 그룹에서 공용 끝점 트래픽 허용](sql-database-managed-instance-public-endpoint-configure.md#allow-public-endpoint-traffic-on-the-network-security-group)을 참조 하세요.
+자세한 내용은 [네트워크 보안 그룹에서 공용 엔드포인트 트래픽 허용](sql-database-managed-instance-public-endpoint-configure.md#allow-public-endpoint-traffic-on-the-network-security-group)을 참조 하세요.
 
 
 ## <a name="move-an-existing-single-instance-inside-an-instance-pool"></a>인스턴스 풀 내에서 기존 단일 인스턴스 이동 

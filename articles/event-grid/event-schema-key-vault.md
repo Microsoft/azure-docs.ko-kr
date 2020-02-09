@@ -1,5 +1,5 @@
 ---
-title: Azure Key Vault에 대 한 Azure Event Grid 이벤트 스키마
+title: Azure Key Vault에 대한 Azure Event Grid 이벤트 스키마
 description: Azure Key Vault 이벤트에 제공 되는 속성 및 스키마에 대해 설명 Azure Event Grid
 services: event-grid
 author: msmbaldwin
@@ -14,9 +14,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/14/2019
 ms.locfileid: "74082861"
 ---
-# <a name="azure-event-grid-event-schema-for-azure-key-vault-preview"></a>Azure Key Vault에 대 한 Azure Event Grid 이벤트 스키마 (미리 보기)
+# <a name="azure-event-grid-event-schema-for-azure-key-vault-preview"></a>Azure Key Vault에 대한 Azure Event Grid 이벤트 스키마 (미리 보기)
 
-이 문서는 현재 미리 보기로 제공 되는 [Azure Key Vault](../key-vault/index.yml)이벤트에 대 한 속성 및 스키마를 제공 합니다. 이벤트 스키마에 대한 소개는 [Azure Event Grid 이벤트 스키마](event-schema.md)를 참조하세요.
+이 문서는 현재 미리 보기로 제공 되는 [Azure Key Vault](../key-vault/index.yml)이벤트에 대한 속성 및 스키마를 제공 합니다. 이벤트 스키마에 대한 소개는 [Azure Event Grid 이벤트 스키마](event-schema.md)를 참조하세요.
 
 ## <a name="available-event-types"></a>사용할 수 있는 이벤트 유형
 
@@ -36,7 +36,7 @@ Azure Key Vault 계정은 다음과 같은 이벤트 유형을 생성 합니다.
 
 ## <a name="event-examples"></a>이벤트 예제
 
-다음 예제에서는 **SecretNewVersionCreated**에 대 한 스키마를 보여 줍니다.
+다음 예제에서는 **SecretNewVersionCreated**에 대한 스키마를 보여 줍니다.
 
 ```JSON
 [
@@ -79,10 +79,10 @@ Azure Key Vault 계정은 다음과 같은 이벤트 유형을 생성 합니다.
 ## <a name="next-steps"></a>다음 단계
 
 * Azure Event Grid에 대한 소개는 [Event Grid란?](overview.md)을 참조하세요.
-* Azure Event Grid 구독을 만드는 방법에 대 한 자세한 내용은 [Event Grid 구독 스키마](subscription-creation-schema.md)를 참조 하세요.
+* Azure Event Grid 구독을 만드는 방법에 대한 자세한 내용은 [Event Grid 구독 스키마](subscription-creation-schema.md)를 참조 하세요.
 * Event Grid와 Key Vault 통합에 대해 자세히 알아보려면 Azure Event Grid를 [사용 하 여 Key Vault 모니터링 (미리 보기)](../key-vault/event-grid-overview.md)을 참조 하세요.
-* Event Grid와 Key Vault 통합에 대 한 자습서는 [Azure Event Grid를 사용 하 여 주요 자격 증명 모음 알림 받기 및 응답 (미리 보기)](../key-vault/event-grid-tutorial.md)을 참조 하세요.
-* Key Vault 및 Azure Automation에 대 한 추가 지침을 보려면 다음을 참조 하세요.
+* Event Grid와 Key Vault 통합에 대한 자습서는 [Azure Event Grid를 사용 하 여 주요 자격 증명 모음 알림 받기 및 응답 (미리 보기)](../key-vault/event-grid-tutorial.md)을 참조 하세요.
+* Key Vault 및 Azure Automation에 대한 추가 지침을 보려면 다음을 참조 하세요.
     - [Azure 키 자격 증명 모음이란?](../key-vault/key-vault-overview.md)
     - [Azure Event Grid를 사용하여 Key Vault 모니터링(미리 보기)](../key-vault/event-grid-overview.md)
     - [Azure Event Grid (미리 보기)를 사용 하 여 주요 자격 증명 모음 알림 받기 및 응답](../key-vault/event-grid-tutorial.md)

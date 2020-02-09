@@ -111,7 +111,7 @@ def index():
 
 ASP.NET에서 웹 앱의 **로그인** 단추를 선택 하면 `AccountController` 컨트롤러에서 `SignIn` 작업이 트리거됩니다. 이전 버전의 ASP.NET core 템플릿에서 `Account` 컨트롤러는 웹 앱에 포함 되었습니다. 이제 컨트롤러가 ASP.NET Core 프레임 워크의 일부 이기 때문에 더 이상 그렇지 않습니다.
 
-`AccountController`에 대 한 코드는 [AccountController.cs](https://github.com/aspnet/AspNetCore/blob/master/src/Azure/AzureAD/Authentication.AzureAD.UI/src/Areas/AzureAD/Controllers/AccountController.cs)의 ASP.NET Core 리포지토리에서 사용할 수 있습니다. 계정 컨트롤은 Microsoft id 플랫폼 끝점으로 리디렉션하여 사용자에 게 문제를 해결 합니다. 자세한 내용은 ASP.NET Core의 일부로 제공 된 [SignIn](https://github.com/aspnet/AspNetCore/blob/f3e6b74623d42d5164fd5f97a288792c8ad877b6/src/Azure/AzureAD/Authentication.AzureAD.UI/src/Areas/AzureAD/Controllers/AccountController.cs#L23-L31) 메서드를 참조 하세요.
+`AccountController`에 대 한 코드는 [AccountController.cs](https://github.com/aspnet/AspNetCore/blob/master/src/Azure/AzureAD/Authentication.AzureAD.UI/src/Areas/AzureAD/Controllers/AccountController.cs)의 ASP.NET Core 리포지토리에서 사용할 수 있습니다. 계정 컨트롤은 Microsoft id 플랫폼 엔드포인트으로 리디렉션하여 사용자에 게 문제를 해결 합니다. 자세한 내용은 ASP.NET Core의 일부로 제공 된 [SignIn](https://github.com/aspnet/AspNetCore/blob/f3e6b74623d42d5164fd5f97a288792c8ad877b6/src/Azure/AzureAD/Authentication.AzureAD.UI/src/Areas/AzureAD/Controllers/AccountController.cs#L23-L31) 메서드를 참조 하세요.
 
 # <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)
 
@@ -130,7 +130,7 @@ public void SignIn()
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-Java에서 로그 아웃은 Microsoft id 플랫폼 `logout` 끝점을 직접 호출 하 고 `post_logout_redirect_uri` 값을 제공 하 여 처리 됩니다. 자세한 내용은 [AuthPageController # L30-L48](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthPageController.java#L30-L48)를 참조 하세요.
+Java에서 로그 아웃은 Microsoft id 플랫폼 `logout` 엔드포인트을 직접 호출 하 고 `post_logout_redirect_uri` 값을 제공 하 여 처리 됩니다. 자세한 내용은 [AuthPageController # L30-L48](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthPageController.java#L30-L48)를 참조 하세요.
 
 ```Java
 @Controller
@@ -208,9 +208,9 @@ def _get_token_from_cache(scope=None):
 ## <a name="sign-out"></a>로그아웃
 
 웹 앱에서 로그 아웃 하려면 웹 앱의 상태에서 로그인 한 계정에 대 한 정보를 제거 해야 합니다.
-또한 웹 앱은 사용자를 Microsoft id 플랫폼 `logout` 끝점으로 리디렉션하여 로그 아웃 해야 합니다. 
+또한 웹 앱은 사용자를 Microsoft id 플랫폼 `logout` 엔드포인트으로 리디렉션하여 로그 아웃 해야 합니다. 
 
-웹 앱이 사용자를 `logout` 끝점으로 리디렉션하는 경우이 끝점은 브라우저에서 사용자의 세션을 지웁니다. 앱이 `logout` 끝점으로 이동 하지 않은 경우 사용자는 자격 증명을 다시 입력 하지 않고 앱에 다시 인증 합니다. 그 이유는 Microsoft id 플랫폼 끝점과의 유효한 단일 로그인 세션이 있기 때문입니다.
+웹 앱이 사용자를 `logout` 엔드포인트으로 리디렉션하는 경우이 엔드포인트은 브라우저에서 사용자의 세션을 지웁니다. 앱이 `logout` 엔드포인트으로 이동 하지 않은 경우 사용자는 자격 증명을 다시 입력 하지 않고 앱에 다시 인증 합니다. 그 이유는 Microsoft id 플랫폼 엔드포인트과의 유효한 단일 로그인 세션이 있기 때문입니다.
 
 자세히 알아보려면 [Microsoft id 플랫폼 및 Openid connect Connect 프로토콜](v2-protocols-oidc.md) 설명서에서 [로그 아웃 요청 보내기](v2-protocols-oidc.md#send-a-sign-out-request) 섹션을 참조 하세요.
 
@@ -328,7 +328,7 @@ ASP.NET에서 웹 앱의 **로그 아웃** 단추를 선택 하면 `AccountContr
 `AccountController`에 대 한 코드는 [AccountController.cs](https://github.com/aspnet/AspNetCore/blob/master/src/Azure/AzureAD/Authentication.AzureAD.UI/src/Areas/AzureAD/Controllers/AccountController.cs)의 ASP.NET core 리포지토리에서 사용할 수 있습니다. 계정 컨트롤:
 
 - Openid connect 리디렉션 URI를 `/Account/SignedOut` 설정 하 여 Azure AD에서 로그 아웃을 완료 하면 컨트롤러가 다시 호출 되도록 합니다.
-- Openid connect 연결 미들웨어가 Microsoft id 플랫폼 `logout` 끝점에 연결할 수 있도록 하는 `Signout()`를 호출 합니다. 그러면 끝점은 다음과 같습니다.
+- Openid connect 연결 미들웨어가 Microsoft id 플랫폼 `logout` 엔드포인트에 연결할 수 있도록 하는 `Signout()`를 호출 합니다. 그러면 엔드포인트은 다음과 같습니다.
 
   - 브라우저에서 세션 쿠키를 지웁니다.
   - 로그 아웃 URL을 다시 호출 합니다. 기본적으로 로그 아웃 URL은 로그 아웃 된 보기 페이지를 표시 합니다 [. html](https://github.com/aspnet/AspNetCore/blob/master/src/Azure/AzureAD/Authentication.AzureAD.UI/src/Areas/AzureAD/Pages/Account/SignedOut.cshtml). 이 페이지는 ASP.NET Core의 일부로도 제공 됩니다.
@@ -356,7 +356,7 @@ public void SignOut()
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-Java에서 로그 아웃은 Microsoft id 플랫폼 `logout` 끝점을 직접 호출 하 고 `post_logout_redirect_uri` 값을 제공 하 여 처리 됩니다. 자세한 내용은 [AuthPageController # L50-L60](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthPageController.java#L50-L60)를 참조 하세요.
+Java에서 로그 아웃은 Microsoft id 플랫폼 `logout` 엔드포인트을 직접 호출 하 고 `post_logout_redirect_uri` 값을 제공 하 여 처리 됩니다. 자세한 내용은 [AuthPageController # L50-L60](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthPageController.java#L50-L60)를 참조 하세요.
 
 ```Java
 @RequestMapping("/msal4jsample/sign_out")
@@ -387,13 +387,13 @@ def logout():
 
 ---
 
-### <a name="intercepting-the-call-to-the-logout-endpoint"></a>`logout` 끝점에 대 한 호출 가로채기
+### <a name="intercepting-the-call-to-the-logout-endpoint"></a>`logout` 엔드포인트에 대 한 호출 가로채기
 
 사후 로그 아웃 URI를 사용 하면 응용 프로그램이 전역 로그 아웃에 참여할 수 있습니다.
 
 # <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
 
-ASP.NET Core Openid connect 연결 미들웨어를 사용 하면 앱이 `OnRedirectToIdentityProviderForSignOut`라는 Openid connect Connect 이벤트를 제공 하 여 Microsoft id 플랫폼 `logout` 끝점에 대 한 호출을 가로챌 수 있습니다. 이 이벤트를 구독 하는 방법에 대 한 예는 토큰 캐시를 지우는 방법에 대 한 예는 [WebAppServiceCollectionExtensions/L151 # L156](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/faa94fd49c2da46b22d6694c4f5c5895795af26d/Microsoft.Identity.Web/WebAppServiceCollectionExtensions.cs#L151-L156)를 참조 하세요.
+ASP.NET Core Openid connect 연결 미들웨어를 사용 하면 앱이 `OnRedirectToIdentityProviderForSignOut`라는 Openid connect Connect 이벤트를 제공 하 여 Microsoft id 플랫폼 `logout` 엔드포인트에 대 한 호출을 가로챌 수 있습니다. 이 이벤트를 구독 하는 방법에 대 한 예는 토큰 캐시를 지우는 방법에 대 한 예는 [WebAppServiceCollectionExtensions/L151 # L156](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/faa94fd49c2da46b22d6694c4f5c5895795af26d/Microsoft.Identity.Web/WebAppServiceCollectionExtensions.cs#L151-L156)를 참조 하세요.
 
 ```csharp
     // Handling the global sign-out

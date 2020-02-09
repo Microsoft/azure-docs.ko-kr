@@ -1,6 +1,6 @@
 ---
 title: Azure Analysis Services 관리 | Microsoft Docs
-description: 이 문서에서는 Azure Analysis Services 서버에 대 한 관리 및 관리 작업을 관리 하는 데 사용 되는 도구에 대해 설명 합니다.
+description: 이 문서에서는 Azure Analysis Services 서버에 대한 관리 및 관리 작업을 관리 하는 데 사용 되는 도구에 대해 설명 합니다.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual

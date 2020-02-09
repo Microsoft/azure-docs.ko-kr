@@ -1,5 +1,5 @@
 ---
-title: 자습서-단일 포리스트를 단일 Azure AD 테 넌 트와 통합
+title: 자습서-단일 포리스트를 단일 Azure AD 테넌트와 통합
 description: 이 항목에서는 필수 구성 요소 및 하드웨어 요구 사항 클라우드 프로 비전에 대해 설명 합니다.
 services: active-directory
 author: billmath
@@ -18,7 +18,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/20/2020
 ms.locfileid: "76280971"
 ---
-# <a name="tutorial-integrate-a-single-forest-with-a-single-azure-ad-tenant"></a>자습서: 단일 포리스트를 단일 Azure AD 테 넌 트와 통합
+# <a name="tutorial-integrate-a-single-forest-with-a-single-azure-ad-tenant"></a>자습서: 단일 포리스트를 단일 Azure AD 테넌트와 통합
 
 이 자습서에서는 Azure Active Directory (Azure AD) Connect cloud 프로 비전을 사용 하 여 하이브리드 id 환경을 만드는 과정을 안내 합니다.
 

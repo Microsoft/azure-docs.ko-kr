@@ -41,7 +41,7 @@ ADAL 2.7. x는 MSAL 캐시 형식을 읽을 수 있습니다. 버전 ADAL 2.7. x
 
 ### <a name="account-identifier-differences"></a>계정 식별자 차이
 
-MSAL 및 ADAL은 다른 계정 식별자를 사용 합니다. ADAL은 기본 계정 식별자로 UPN을 사용 합니다. MSAL은 개체 ID와 AAD 계정에 대 한 테 넌 트 ID를 기반으로 하는 표시할 수 없는 계정 식별자와 다른 유형의 계정에 대 한 `sub` 클레임을 사용 합니다.
+MSAL 및 ADAL은 다른 계정 식별자를 사용 합니다. ADAL은 기본 계정 식별자로 UPN을 사용 합니다. MSAL은 개체 ID와 AAD 계정에 대 한 테넌트 ID를 기반으로 하는 표시할 수 없는 계정 식별자와 다른 유형의 계정에 대 한 `sub` 클레임을 사용 합니다.
 
 MSAL 결과에서 `MSALAccount` 개체를 받으면 `identifier` 속성에 계정 식별자가 포함 됩니다. 응용 프로그램은 후속 자동 요청에이 식별자를 사용 해야 합니다.
 

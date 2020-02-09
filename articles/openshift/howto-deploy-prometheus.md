@@ -78,9 +78,9 @@ scrape_configs:
 oc create secret generic prom --from-file=prometheus.yml -n prometheus-project
 ```
 
-프로메테우스. yml 파일은 기본 프로메테우스 구성 파일입니다. 간격을 설정 하 고 자동 검색을 세 가지 프로젝트 (project1, project2)로 구성 합니다. 이전 구성 파일에서 자동 검색 된 끝점은 인증 없이 HTTP를 통해 스크랩 됩니다.
+프로메테우스. yml 파일은 기본 프로메테우스 구성 파일입니다. 간격을 설정 하 고 자동 검색을 세 가지 프로젝트 (project1, project2)로 구성 합니다. 이전 구성 파일에서 자동 검색 된 엔드포인트은 인증 없이 HTTP를 통해 스크랩 됩니다.
 
-스크랩 끝점에 대 한 자세한 내용은 [프로메테우스 scape config](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config)를 참조 하세요.
+스크랩 엔드포인트에 대 한 자세한 내용은 [프로메테우스 scape config](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config)를 참조 하세요.
 
 
 ## <a name="prepare-the-alertmanager-config-file"></a>Alertmanager 구성 파일 준비
@@ -192,7 +192,7 @@ oc get route prom -n prometheus-project
 
 **상태 > 서비스 검색** 페이지에 0/0 활성 대상이 표시 됩니다.
 
-/Whe 끝점에서 기본 Python 메트릭을 노출 하는 예제 응용 프로그램을 배포 하려면 다음 명령을 실행 합니다.
+/Whe 엔드포인트에서 기본 Python 메트릭을 노출 하는 예제 응용 프로그램을 배포 하려면 다음 명령을 실행 합니다.
 ```
 oc new-app python:3.6~https://github.com/Makdaam/prometheus-example --name=example1 -n app-project1
 

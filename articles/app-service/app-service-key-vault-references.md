@@ -13,7 +13,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/08/2020
 ms.locfileid: "75728755"
 ---
-# <a name="use-key-vault-references-for-app-service-and-azure-functions"></a>App Service 및 Azure Functions에 대 한 Key Vault 참조를 사용 합니다.
+# <a name="use-key-vault-references-for-app-service-and-azure-functions"></a>App Service 및 Azure Functions에 대한 Key Vault 참조를 사용 합니다.
 
 이 항목에서는 코드 변경 없이도 App Service 또는 Azure Functions 애플리케이션에서 Azure Key Vault의 비밀을 사용하는 방법을 보여 줍니다. [Azure Key Vault](../key-vault/key-vault-overview.md)는 액세스 정책 및 감사 기록에 대한 전체 제어와 함께 중앙 집중식 비밀 관리를 제공하는 서비스입니다.
 
@@ -43,7 +43,7 @@ Key Vault 참조는 `@Microsoft.KeyVault({referenceString})` 형식이며, 여�
 > | SecretUri=_secretUri_                                                       | **SecretUri**는 버전을 포함하여 Key Vault에 있는 비밀의 전체 데이터 평면 URI여야 합니다(예: https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931 ).  |
 > | VaultName=_vaultName_;SecretName=_secretName_;SecretVersion=_secretVersion_ | **VaultName**은 Key Vault 리소스의 이름이어야 합니다. **SecretName**은 대상 비밀의 이름이어야 합니다. **SecretVersion**은 사용할 비밀의 버전이어야 합니다. |
 
-예를 들어 버전에 대 한 전체 참조는 다음과 같습니다.
+예를 들어 버전에 대한 전체 참조는 다음과 같습니다.
 
 ```
 @Microsoft.KeyVault(SecretUri=https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931)
@@ -57,7 +57,7 @@ Key Vault 참조는 `@Microsoft.KeyVault({referenceString})` 형식이며, 여�
 
 ## <a name="source-application-settings-from-key-vault"></a>Key Vault의 원본 애플리케이션 설정
 
-Key Vault 참조를 [응용 프로그램 설정](configure-common.md#configure-app-settings)에 대 한 값으로 사용할 수 있으므로 사이트 구성 대신 Key Vault에서 비밀을 유지할 수 있습니다. 응용 프로그램 설정은 안전 하 게 안전 하 게 암호화 되지만 비밀 관리 기능이 필요한 경우에는 Key Vault으로 이동 해야 합니다.
+Key Vault 참조를 [응용 프로그램 설정](configure-common.md#configure-app-settings)에 대한 값으로 사용할 수 있으므로 사이트 구성 대신 Key Vault에서 비밀을 유지할 수 있습니다. 응용 프로그램 설정은 안전 하 게 안전 하 게 암호화 되지만 비밀 관리 기능이 필요한 경우에는 Key Vault으로 이동 해야 합니다.
 
 애플리케이션 설정에 Key Vault 참조를 사용하려면 참조를 설정 값으로 설정합니다. 앱은 키를 사용하여 비밀을 정상적으로 참조할 수 있습니다. 코드 변경은 필요하지 않습니다.
 
@@ -184,7 +184,7 @@ Azure Resource Manager 템플릿을 통해 리소스 배포를 자동화할 때 
 
 기본 제공 감지기 중 하나를 사용 하 여 추가 정보를 얻을 수도 있습니다.
 
-### <a name="using-the-detector-for-app-service"></a>App Service에 대 한 탐지기 사용
+### <a name="using-the-detector-for-app-service"></a>App Service에 대한 탐지기 사용
 
 1. 포털에서 앱으로 이동 합니다.
 2. **문제 진단 및 해결**을 선택합니다.
@@ -192,7 +192,7 @@ Azure Resource Manager 템플릿을 통해 리소스 배포를 자동화할 때 
 4. **Key Vault 응용 프로그램 설정 진단을** 찾고 **추가 정보**를 클릭 합니다.
 
 
-### <a name="using-the-detector-for-azure-functions"></a>Azure Functions에 대 한 탐지기 사용
+### <a name="using-the-detector-for-azure-functions"></a>Azure Functions에 대한 탐지기 사용
 
 1. 포털에서 앱으로 이동 합니다.
 2. **플랫폼 기능으로 이동 합니다.**

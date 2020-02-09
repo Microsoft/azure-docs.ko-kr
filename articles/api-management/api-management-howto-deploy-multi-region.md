@@ -115,8 +115,8 @@ API Management는 [가장 짧은 대기 시간](../traffic-manager/traffic-manag
 
 1. 사용자 고유의 [Azure Traffic Manager](https://azure.microsoft.com/services/traffic-manager/)를 만듭니다.
 1. 사용자 지정 도메인을 사용 하는 경우 API Management 서비스 대신 [Traffic Manager와 함께 사용](../traffic-manager/traffic-manager-point-internet-domain.md) 합니다.
-1. [Traffic Manager에서 API Management 국가별 끝점을 구성](../traffic-manager/traffic-manager-manage-endpoints.md)합니다. 지역 끝점은 `https://<service-name>-<region>-01.regional.azure-api.net`의 URL 패턴을 따릅니다 (예: `https://contoso-westus2-01.regional.azure-api.net`).
-1. [Traffic Manager에서 API Management 지역별 상태 끝점을 구성](../traffic-manager/traffic-manager-monitoring.md)합니다. 지역별 상태 끝점은 `https://<service-name>-<region>-01.regional.azure-api.net/status-0123456789abcdef`의 URL 패턴을 따릅니다 (예: `https://contoso-westus2-01.regional.azure-api.net/status-0123456789abcdef`).
+1. [Traffic Manager에서 API Management 국가별 엔드포인트을 구성](../traffic-manager/traffic-manager-manage-endpoints.md)합니다. 지역 엔드포인트은 `https://<service-name>-<region>-01.regional.azure-api.net`의 URL 패턴을 따릅니다 (예: `https://contoso-westus2-01.regional.azure-api.net`).
+1. [Traffic Manager에서 API Management 지역별 상태 엔드포인트을 구성](../traffic-manager/traffic-manager-monitoring.md)합니다. 지역별 상태 엔드포인트은 `https://<service-name>-<region>-01.regional.azure-api.net/status-0123456789abcdef`의 URL 패턴을 따릅니다 (예: `https://contoso-westus2-01.regional.azure-api.net/status-0123456789abcdef`).
 1. Traffic Manager의 [라우팅 메서드를](../traffic-manager/traffic-manager-routing-methods.md) 지정 합니다.
 
 [api-management-management-console]: ./media/api-management-howto-deploy-multi-region/api-management-management-console.png

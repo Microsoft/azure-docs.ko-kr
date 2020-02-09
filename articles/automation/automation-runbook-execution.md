@@ -18,7 +18,7 @@ Azure Automation에서 Runbook을 시작하면 작업이 생성됩니다. 작업
 
 [!INCLUDE [GDPR-related guidance](../../includes/gdpr-dsr-and-stp-note.md)]
 
-다음 다이어그램은 [powershell runbook](automation-runbook-types.md#powershell-runbooks), [그래픽 Runbook](automation-runbook-types.md#graphical-runbooks) 및 [powershell 워크플로 runbook](automation-runbook-types.md#powershell-workflow-runbooks)에 대 한 runbook 작업의 수명 주기를 보여 줍니다.
+다음 다이어그램은 [powershell runbook](automation-runbook-types.md#powershell-runbooks), [그래픽 Runbook](automation-runbook-types.md#graphical-runbooks) 및 [powershell 워크플로 runbook](automation-runbook-types.md#powershell-workflow-runbooks)에 대한 runbook 작업의 수명 주기를 보여 줍니다.
 
 ![작업 상태 - PowerShell 워크플로](./media/automation-runbook-execution/job-statuses.png)
 
@@ -39,16 +39,16 @@ Azure Automation의 Runbook은 Azure의 샌드박스 또는 [Hybrid Runbook Work
 |Runbook으로 파일 또는 폴더 모니터링|Hybrid Runbook Worker|Hybrid Runbook Worker에서 [감시자 작업](automation-watchers-tutorial.md)을 사용합니다.|
 |리소스 사용량이 많은 스크립트|Hybrid Runbook Worker| Azure 샌드박스는 [리소스에 제한](../azure-resource-manager/management/azure-subscription-service-limits.md#automation-limits)이 있습니다.|
 |특정 요구 사항이 있는 모듈 사용| Hybrid Runbook Worker|예는 다음과 같습니다.</br> **WinSCP** - winscp.exe에 대한 종속성 </br> **IISAdministration** - IIS를 사용하도록 설정해야 함|
-|설치 관리자가 필요한 모듈 설치|Hybrid Runbook Worker|샌드박스에 대 한 모듈은 copiable 이어야 합니다.|
+|설치 관리자가 필요한 모듈 설치|Hybrid Runbook Worker|샌드박스에 대한 모듈은 copiable 이어야 합니다.|
 |4\.7.2와 다른 .NET 프레임워크가 필요한 Runbook 또는 모듈 사용|Hybrid Runbook Worker|Automation 샌드박스에는 NET Framework 4.7.2가 있으며, 업그레이드할 수 있는 방법이 없습니다.|
 |권한 상승이 필요한 스크립트|Hybrid Runbook Worker|샌드박스에서 권한 상승을 허용 하지 않습니다. 이 문제를 해결 하려면 Hybrid Runbook Worker를 사용 하 고 권한 상승이 필요한 명령을 실행할 때 UAC를 끄고 `Invoke-Command`를 사용할 수 있습니다.|
-|WMI에 액세스 해야 하는 스크립트|Hybrid Runbook Worker|클라우드의 샌드박스에서 실행 되는 작업에 [는 WMI에 대 한 액세스 권한이 없습니다](#device-and-application-characteristics) .|
+|WMI에 액세스 해야 하는 스크립트|Hybrid Runbook Worker|클라우드의 샌드박스에서 실행 되는 작업에 [는 WMI에 대한 액세스 권한이 없습니다](#device-and-application-characteristics) .|
 
 ## <a name="runbook-behavior"></a>Runbook 동작
 
 Runbook은 내부에 정의된 논리에 따라 실행됩니다. Runbook이 중단되면 해당 Runbook이 처음부터 다시 시작됩니다. 일시적인 문제가 있는 경우 이 동작을 수행하려면 다시 시작을 지원하는 방식으로 Runbook을 작성해야 합니다.
 
-Azure 샌드박스에서 실행 된 Runbook에서 시작 된 PowerShell 작업은 전체 언어 모드에서 실행 되지 않을 수 있습니다. PowerShell 언어 모드에 대해 자세히 알아보려면 [powershell 언어 모드](/powershell/module/microsoft.powershell.core/about/about_language_modes)를 참조 하세요. Azure Automation에서 작업과 상호 작용 하는 방법에 대 한 자세한 내용은 [PowerShell을 사용 하 여 작업 상태 검색](#retrieving-job-status-using-powershell) 을 참조 하세요.
+Azure 샌드박스에서 실행 된 Runbook에서 시작 된 PowerShell 작업은 전체 언어 모드에서 실행 되지 않을 수 있습니다. PowerShell 언어 모드에 대해 자세히 알아보려면 [powershell 언어 모드](/powershell/module/microsoft.powershell.core/about/about_language_modes)를 참조 하세요. Azure Automation에서 작업과 상호 작용 하는 방법에 대한 자세한 내용은 [PowerShell을 사용 하 여 작업 상태 검색](#retrieving-job-status-using-powershell) 을 참조 하세요.
 
 ### <a name="creating-resources"></a>리소스 만들기
 
@@ -76,7 +76,7 @@ else
 Runbook을 작성할 때는 신중하게 고려해야 합니다. 앞에서 설명한 대로 Runbook은 강력하고 Runbook이 다시 시작되거나 실패할 수 있는 일시적인 오류를 처리할 수 있는 방식으로 작성되어야 합니다. Runbook이 실패 하면 다시 시도 됩니다. Runbook이 시간 제약 조건 내에서 정상적으로 실행 되는 경우 runbook에서 실행 시간을 확인 하는 논리를 구현 하 여 시작, 종료 또는 규모 확장 등의 작업이 특정 시간 동안만 실행 되도록 해야 합니다.
 
 > [!NOTE]
-> Azure sandbox 프로세스의 현지 시간은 UTC 시간으로 설정 됩니다. Runbook의 날짜 및 시간에 대 한 계산을 고려해 야 합니다.
+> Azure sandbox 프로세스의 현지 시간은 UTC 시간으로 설정 됩니다. Runbook의 날짜 및 시간에 대한 계산을 고려해 야 합니다.
 
 ### <a name="tracking-progress"></a>진행률 추적
 
@@ -187,11 +187,11 @@ function Get-ContosoFiles
 
 ### <a name="using-executables-or-calling-processes"></a>실행 파일 또는 호출 프로세스 사용
 
-Azure 샌드박스에서 실행 되는 runbook은 호출 프로세스 (예: .exe 또는 하위 프로세스)를 지원 하지 않습니다. 이는 Azure 샌드박스에서 모든 기본 Api에 대 한 액세스 권한이 없을 수 있는 컨테이너에서 실행 되는 공유 프로세스 이기 때문입니다. 타사 소프트웨어 또는 하위 프로세스의 호출이 필요한 시나리오의 경우 [Hybrid Runbook Worker](automation-hybrid-runbook-worker.md)에서 Runbook을 실행하는 것이 좋습니다.
+Azure 샌드박스에서 실행 되는 runbook은 호출 프로세스 (예: .exe 또는 하위 프로세스)를 지원 하지 않습니다. 이는 Azure 샌드박스에서 모든 기본 Api에 대한 액세스 권한이 없을 수 있는 컨테이너에서 실행 되는 공유 프로세스 이기 때문입니다. 타사 소프트웨어 또는 하위 프로세스의 호출이 필요한 시나리오의 경우 [Hybrid Runbook Worker](automation-hybrid-runbook-worker.md)에서 Runbook을 실행하는 것이 좋습니다.
 
 ### <a name="device-and-application-characteristics"></a>장치 및 응용 프로그램 특성
 
-Azure 샌드박스에서 실행 되는 Runbook 작업은 장치나 응용 프로그램 특성에 액세스할 수 없습니다. Windows에서 성능 메트릭을 쿼리 하는 데 사용 되는 가장 일반적인 API는 WMI입니다. 이러한 일반적인 메트릭 중 일부는 메모리 및 CPU 사용량입니다. 그러나 어떤 API를 사용 하는지에 관계 없이 사용 됩니다. 클라우드에서 실행 되는 작업은 장치 및 응용 프로그램 특징을 정의 하는 산업 표준인 CIM(Common Information Model) (CIM)를 기반으로 하는 Microsoft의 Microsoft 구현에 대 한 액세스 권한이 없습니다.
+Azure 샌드박스에서 실행 되는 Runbook 작업은 장치나 응용 프로그램 특성에 액세스할 수 없습니다. Windows에서 성능 메트릭을 쿼리 하는 데 사용 되는 가장 일반적인 API는 WMI입니다. 이러한 일반적인 메트릭 중 일부는 메모리 및 CPU 사용량입니다. 그러나 어떤 API를 사용 하는지에 관계 없이 사용 됩니다. 클라우드에서 실행 되는 작업은 장치 및 응용 프로그램 특징을 정의 하는 산업 표준인 CIM(Common Information Model) (CIM)를 기반으로 하는 Microsoft의 Microsoft 구현에 대한 액세스 권한이 없습니다.
 
 ## <a name="job-statuses"></a>작업 상태
 
@@ -214,7 +214,7 @@ Azure 샌드박스에서 실행 되는 Runbook 작업은 장치나 응용 프로
 
 ## <a name="viewing-job-status-from-the-azure-portal"></a>Azure Portal에서 작업 상태 보기
 
-모든 Runbook 작업의 요약 상태를 보거나 Azure Portal에서 특정 Runbook 작업의 세부 정보로 드릴할 수 있습니다. 또한 Runbook의 작업 상태와 작업 스트림을 전달하기 위해 Log Analytics 작업 영역과 통합하도록 구성할 수도 있습니다. Azure Monitor 로그와 통합 하는 방법에 대 한 자세한 내용은 [자동화에서 작업 상태 및 작업 스트림을 Azure Monitor 로그로 전달](automation-manage-send-joblogs-log-analytics.md)을 참조 하세요.
+모든 Runbook 작업의 요약 상태를 보거나 Azure Portal에서 특정 Runbook 작업의 세부 정보로 드릴할 수 있습니다. 또한 Runbook의 작업 상태와 작업 스트림을 전달하기 위해 Log Analytics 작업 영역과 통합하도록 구성할 수도 있습니다. Azure Monitor 로그와 통합 하는 방법에 대한 자세한 내용은 [자동화에서 작업 상태 및 작업 스트림을 Azure Monitor 로그로 전달](automation-manage-send-joblogs-log-analytics.md)을 참조 하세요.
 
 ### <a name="automation-runbook-jobs-summary"></a>Automation runbook 작업 요약
 
@@ -323,4 +323,4 @@ $JobInfo.GetEnumerator() | sort key -Descending | Select-Object -First 1
 ## <a name="next-steps"></a>다음 단계
 
 * Azure Automation에서 runbook을 시작하는 데 사용할 수 있는 여러 가지 방법에 대해 자세히 알아보려면 [Azure Automation에서 Runbook 시작](automation-starting-a-runbook.md)을 참조하세요.
-* 언어 참조 및 학습 모듈을 비롯 한 PowerShell에 대 한 자세한 내용은 [Powershell 문서](https://docs.microsoft.com/powershell/scripting/overview)를 참조 하세요.
+* 언어 참조 및 학습 모듈을 비롯 한 PowerShell에 대한 자세한 내용은 [Powershell 문서](https://docs.microsoft.com/powershell/scripting/overview)를 참조 하세요.

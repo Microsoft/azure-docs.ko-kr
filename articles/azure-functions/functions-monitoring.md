@@ -21,7 +21,7 @@ ms.locfileid: "76292929"
 
 ## <a name="application-insights-pricing-and-limits"></a>Application Insights 가격 책정 및 제한
 
-무료로 함수 앱과 Application Insights 통합을 사용해 볼 수 있습니다. 무료로 처리할 수 있는 데이터의 양에 대 한 일일 제한이 있습니다. 테스트 하는 동안이 제한에 도달할 수 있습니다. Azure는 일일 한도에 가까워지면 포털 및 이메일 알림을 제공합니다. 이러한 경고를 놓친 후 한도에 도달 하면 Application Insights 쿼리에 새 로그가 표시 되지 않습니다. 불필요 한 문제 해결 시간을 방지 하기 위해 제한 사항을 알고 있어야 합니다. 자세한 내용은 [Application Insights에서 가격 책정 및 데이터 볼륨 관리](../azure-monitor/app/pricing.md)를 참조하세요.
+무료로 함수 앱과 Application Insights 통합을 사용해 볼 수 있습니다. 무료로 처리할 수 있는 데이터의 양에 대한 일일 제한이 있습니다. 테스트 하는 동안이 제한에 도달할 수 있습니다. Azure는 일일 한도에 가까워지면 포털 및 이메일 알림을 제공합니다. 이러한 경고를 놓친 후 한도에 도달 하면 Application Insights 쿼리에 새 로그가 표시 되지 않습니다. 불필요 한 문제 해결 시간을 방지 하기 위해 제한 사항을 알고 있어야 합니다. 자세한 내용은 [Application Insights에서 가격 책정 및 데이터 볼륨 관리](../azure-monitor/app/pricing.md)를 참조하세요.
 
 함수 앱에 사용할 수 있는 Application Insights 기능의 전체 목록은 [지원 되는 Azure Functions 기능에 대해 Application Insights](../azure-monitor/app/azure-functions-supported-features.md)에 자세히 설명 되어 있습니다.
 
@@ -46,7 +46,7 @@ ms.locfileid: "76292929"
 
 [!INCLUDE [functions-connect-new-app-insights.md](../../includes/functions-connect-new-app-insights.md)]
 
-초기 버전의 함수에서는 기본 제공 모니터링을 사용 했으며이는 더 이상 권장 되지 않습니다. 이러한 함수 앱에 대 한 Application Insights 통합을 사용 하도록 설정 하는 경우 [기본 제공 로깅도 사용 하지 않도록 설정](#disable-built-in-logging)해야 합니다.  
+초기 버전의 함수에서는 기본 제공 모니터링을 사용 했으며이는 더 이상 권장 되지 않습니다. 이러한 함수 앱에 대한 Application Insights 통합을 사용 하도록 설정 하는 경우 [기본 제공 로깅도 사용 하지 않도록 설정](#disable-built-in-logging)해야 합니다.  
 
 ## <a name="view-telemetry-in-monitor-tab"></a>모니터 탭에서 원격 분석 보기
 
@@ -70,11 +70,11 @@ ms.locfileid: "76292929"
 
    ![호출 정보](media/functions-monitoring/invocation-details-ai.png)
 
-두 페이지에 데이터를 검색 하는 Application Insights Analytics 쿼리에 대 한 **실행 Application Insights** 링크가 있음을 볼 수 있습니다.
+두 페이지에 데이터를 검색 하는 Application Insights Analytics 쿼리에 대한 **실행 Application Insights** 링크가 있음을 볼 수 있습니다.
 
 ![Application Insights에서 실행](media/functions-monitoring/run-in-ai.png)
 
-다음 쿼리가 표시 됩니다. 쿼리 결과가 최근 30 일 (`where timestamp > ago(30d)`)으로 제한 되는 것을 볼 수 있습니다. 또한 결과에 20 개 이하의 행 (`take 20`)이 표시 됩니다. 이와 대조적으로 함수에 대 한 호출 세부 정보 목록은 지난 30 일 동안 제한 없이 사용할 수 있습니다.
+다음 쿼리가 표시 됩니다. 쿼리 결과가 최근 30 일 (`where timestamp > ago(30d)`)으로 제한 되는 것을 볼 수 있습니다. 또한 결과에 20 개 이하의 행 (`take 20`)이 표시 됩니다. 이와 대조적으로 함수에 대한 호출 세부 정보 목록은 지난 30 일 동안 제한 없이 사용할 수 있습니다.
 
 ![Application Insights 분석 호출 목록](media/functions-monitoring/ai-analytics-invocation-list.png)
 
@@ -86,7 +86,7 @@ Azure Portal의 함수 앱에서 Application Insights를 열려면 함수 앱의
 
 ![함수 앱 개요 페이지에서 Application Insights를 엽니다.](media/functions-monitoring/ai-link.png)
 
-Application Insights 사용 방법에 대한 자세한 내용은 [Application Insights 설명서](https://docs.microsoft.com/azure/application-insights/)를 참조하세요. 이 섹션에서는 Application Insights에서 데이터를 보는 방법에 대한 몇 가지 예를 보여줍니다. Application Insights에 이미 익숙한 경우 [원격 분석 데이터를 구성 하 고 사용자 지정 하는 방법에 대 한 섹션](#configure-categories-and-log-levels)으로 바로 이동할 수 있습니다.
+Application Insights 사용 방법에 대한 자세한 내용은 [Application Insights 설명서](https://docs.microsoft.com/azure/application-insights/)를 참조하세요. 이 섹션에서는 Application Insights에서 데이터를 보는 방법에 대한 몇 가지 예를 보여줍니다. Application Insights에 이미 익숙한 경우 [원격 분석 데이터를 구성 하 고 사용자 지정 하는 방법에 대한 섹션](#configure-categories-and-log-levels)으로 바로 이동할 수 있습니다.
 
 ![Application Insights 개요 탭](media/functions-monitoring/metrics-explorer.png)
 
@@ -94,7 +94,7 @@ Application Insights 사용 방법에 대한 자세한 내용은 [Application In
 
 | 탭 | Description |
 | ---- | ----------- |
-| **[있어](../azure-monitor/app/asp-net-exceptions.md)** |  함수 오류 및 서버 예외를 기반으로 차트와 경고를 만듭니다. **작업 이름**은 함수 이름입니다. 종속성에 대 한 사용자 지정 원격 분석을 구현 하지 않으면 종속성의 실패가 표시 되지 않습니다. |
+| **[있어](../azure-monitor/app/asp-net-exceptions.md)** |  함수 오류 및 서버 예외를 기반으로 차트와 경고를 만듭니다. **작업 이름**은 함수 이름입니다. 종속성에 대한 사용자 지정 원격 분석을 구현 하지 않으면 종속성의 실패가 표시 되지 않습니다. |
 | **[성능도](../azure-monitor/app/performance-counters.md)** | 성능 문제를 분석 합니다. |
 | **서버** | 서버당 리소스 사용률 및 처리량을 확인 합니다. 이 데이터는 함수 때문에 기본 리소스가 정체되는 시나리오를 디버깅하는 데 유용할 수 있습니다. 서버를 **클라우드 역할 인스턴스**라고도 합니다. |
 | **[메트릭](../azure-monitor/app/metrics-explorer.md)** | 메트릭을 기반으로 하는 차트 및 경고를 만듭니다. 메트릭에는 함수 호출 수, 실행 시간 및 성공률이 포함 됩니다. |
@@ -126,9 +126,9 @@ requests
 | **exceptions** | 런타임에 의해 throw 되는 예외입니다. |
 | **customMetrics** | 성공 및 실패 한 호출 수, 성공률 및 기간입니다. |
 | **customEvents** | 런타임에 의해 추적 되는 이벤트 (예: 함수를 트리거하는 HTTP 요청)입니다. |
-| **performanceCounters** | 함수가 실행 되 고 있는 서버의 성능에 대 한 정보입니다. |
+| **performanceCounters** | 함수가 실행 되 고 있는 서버의 성능에 대한 정보입니다. |
 
-다른 테이블은 가용성 테스트와 클라이언트 및 브라우저 원격 분석에 대 한 것입니다. 사용자 지정 원격 분석을 구현하여 테이블에 데이터를 추가할 수 있습니다.
+다른 테이블은 가용성 테스트와 클라이언트 및 브라우저 원격 분석에 대한 것입니다. 사용자 지정 원격 분석을 구현하여 테이블에 데이터를 추가할 수 있습니다.
 
 각 테이블 내에서 일부 Functions 관련 데이터는 `customDimensions` 필드에 있습니다.  예를 들어 다음 쿼리는 로그 수준이 `Error`인 모든 추적을 검색합니다.
 
@@ -169,7 +169,7 @@ Azure Functions 로거에는 모든 로그에 대한 *범주*가 포함되어 �
 
 ### <a name="log-configuration-in-hostjson"></a>호스트의 로그 구성
 
-[호스트 json] 파일은 함수 앱이 Application Insights로 보내는 로깅의 양을 구성합니다. 각 범주에 대해 보낼 최소 로그 수준을 나타낼 수 있습니다. 두 가지 예를 들면, 첫 번째 예제에서는 버전 2.x를 대상으로 [하](functions-versions.md#version-2x) 고 .net Core를 사용 하 여 .net Core를 사용 하 고 두 번째 예제는 버전 1.x 런타임에 대 한 것입니다.
+[호스트 json] 파일은 함수 앱이 Application Insights로 보내는 로깅의 양을 구성합니다. 각 범주에 대해 보낼 최소 로그 수준을 나타낼 수 있습니다. 두 가지 예를 들면, 첫 번째 예제에서는 버전 2.x를 대상으로 [하](functions-versions.md#version-2x) 고 .net Core를 사용 하 여 .net Core를 사용 하 고 두 번째 예제는 버전 1.x 런타임에 대한 것입니다.
 
 ### <a name="version-2x-and-higher"></a>2\.x 이상 버전
 
@@ -212,7 +212,7 @@ Azure Functions 로거에는 모든 로그에 대한 *범주*가 포함되어 �
 * `Host.Aggregator` 범주의 로그는 모든 로그를 Application Insights로 보냅니다. `Trace` 로그 수준은 `Verbose`를 호출하는 일부 로거와 동일하지만, [호스트 json] 파일의 `Trace`를 사용합니다.
 * 그 외의 로그는 `Information` 수준 이상만 Application Insights로 보냅니다.
 
-[호스트 json]의 범주 값은 같은 값으로 시작하는 모든 범주에 대한 로깅을 제어합니다. 호스트의 `Host` `Host.General`, `Host.Executor`, `Host.Results`등에 대 한 로깅을 제어 합니다 [호스트 json]
+[호스트 json]의 범주 값은 같은 값으로 시작하는 모든 범주에 대한 로깅을 제어합니다. 호스트의 `Host` `Host.General`, `Host.Executor`, `Host.Results`등에 대한 로깅을 제어 합니다 [호스트 json]
 
 [호스트 json]에 동일한 문자열로 시작되는 여러 범주가 포함된 경우 길이가 더 긴 범주가 먼저 일치합니다. `Host.Aggregator`를 제외 하 고 런타임에서 모든 항목을 `Error` 수준으로 기록 하려고 하지만 `Host.Aggregator` `Information` 수준으로 기록 하려는 경우를 가정해 보겠습니다.
 
@@ -296,7 +296,7 @@ Azure Functions 로거에는 모든 로그에 대한 *범주*가 포함되어 �
 
 ## <a name="configure-sampling"></a>샘플링 구성
 
-Application Insights에는 최대 부하가 발생 했을 때 완료 된 실행에 너무 많은 원격 분석 데이터를 생성 하는 것을 방지할 수 있는 [샘플링](../azure-monitor/app/sampling.md) 기능이 있습니다. 들어오는 실행의 비율이 지정 된 임계값을 초과 하는 경우 Application Insights는 들어오는 실행의 일부를 임의로 무시 하기 시작 합니다. 초당 최대 실행 수에 대 한 기본 설정은 20 (버전 1.x의 5 개)입니다. [호스트 json]에서 샘플링을 구성할 수 있습니다.  예를 들면 다음과 같습니다.
+Application Insights에는 최대 부하가 발생 했을 때 완료 된 실행에 너무 많은 원격 분석 데이터를 생성 하는 것을 방지할 수 있는 [샘플링](../azure-monitor/app/sampling.md) 기능이 있습니다. 들어오는 실행의 비율이 지정 된 임계값을 초과 하는 경우 Application Insights는 들어오는 실행의 일부를 임의로 무시 하기 시작 합니다. 초당 최대 실행 수에 대한 기본 설정은 20 (버전 1.x의 5 개)입니다. [호스트 json]에서 샘플링을 구성할 수 있습니다.  예를 들면 다음과 같습니다.
 
 ### <a name="version-2x-and-later"></a>버전 2.x 이상
 
@@ -559,9 +559,9 @@ namespace functionapp0915
 }
 ```
 
-함수 호출에 대 한 중복 요청이 표시 되므로 `TrackRequest` 또는 `StartOperation<RequestTelemetry>`를 호출 하지 마세요.  Functions 런타임에서 자동으로 요청을 추적합니다.
+함수 호출에 대한 중복 요청이 표시 되므로 `TrackRequest` 또는 `StartOperation<RequestTelemetry>`를 호출 하지 마세요.  Functions 런타임에서 자동으로 요청을 추적합니다.
 
-`telemetryClient.Context.Operation.Id`를 설정하지 마십시오. 여러 함수가 동시에 실행 되는 경우이 전역 설정으로 인해 잘못 된 상관 관계가 발생 합니다. 대신 새로운 원격 분석 인스턴스(`DependencyTelemetry`, `EventTelemetry`)를 만들고 해당하는 `Context` 속성을 수정합니다. 그런 다음 `TelemetryClient` (`TrackDependency()`, `TrackEvent()`, `TrackMetric()`)의 해당 `Track` 메서드에 원격 분석 인스턴스를 전달 합니다. 이 메서드는 원격 분석에 현재 함수 호출에 대 한 올바른 상관 관계 정보가 있는지 확인 합니다.
+`telemetryClient.Context.Operation.Id`를 설정하지 마십시오. 여러 함수가 동시에 실행 되는 경우이 전역 설정으로 인해 잘못 된 상관 관계가 발생 합니다. 대신 새로운 원격 분석 인스턴스(`DependencyTelemetry`, `EventTelemetry`)를 만들고 해당하는 `Context` 속성을 수정합니다. 그런 다음 `TelemetryClient` (`TrackDependency()`, `TrackEvent()`, `TrackMetric()`)의 해당 `Track` 메서드에 원격 분석 인스턴스를 전달 합니다. 이 메서드는 원격 분석에 현재 함수 호출에 대한 올바른 상관 관계 정보가 있는지 확인 합니다.
 
 ## <a name="log-custom-telemetry-in-javascript-functions"></a>JavaScript 함수에서 사용자 지정 원격 분석 로깅
 
@@ -590,7 +590,7 @@ module.exports = function (context, req) {
 
 ## <a name="dependencies"></a>종속성
 
-함수 v2는 HTTP 요청, ServiceBus, EventHub 및 SQL에 대 한 종속성을 자동으로 수집 합니다.
+함수 v2는 HTTP 요청, ServiceBus, EventHub 및 SQL에 대한 종속성을 자동으로 수집 합니다.
 
 종속성을 표시 하는 사용자 지정 코드를 작성할 수 있습니다. 예제는 [ C# 사용자 지정 원격 분석 섹션](#log-custom-telemetry-in-c-functions)의 샘플 코드를 참조 하세요. 샘플 코드는 다음 이미지와 같은 Application Insights의 *응용 프로그램 맵을* 생성 합니다.
 
@@ -628,7 +628,7 @@ Application Insights의 Functions 통합 문제를 보고하거나 제안 사항
 
 #### <a name="live-metrics-stream"></a>라이브 메트릭 스트림
 
-앱에 대 한 라이브 메트릭 스트림를 보려면 함수 앱의 **개요** 탭을 선택 합니다. Application Insights 사용 하도록 설정 하면 **구성 된 기능**아래에 **Application Insights** 링크가 표시 됩니다. 이 링크를 누르면 앱에 대 한 Application Insights 페이지로 이동 합니다.
+앱에 대한 라이브 메트릭 스트림를 보려면 함수 앱의 **개요** 탭을 선택 합니다. Application Insights 사용 하도록 설정 하면 **구성 된 기능**아래에 **Application Insights** 링크가 표시 됩니다. 이 링크를 누르면 앱에 대한 Application Insights 페이지로 이동 합니다.
 
 Application Insights에서 **라이브 메트릭 스트림**를 선택 합니다. [샘플링 된 로그 항목](#configure-sampling) 은 **샘플 원격 분석**아래에 표시 됩니다.
 

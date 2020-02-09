@@ -1,6 +1,6 @@
 ---
 title: Verizon 프리미엄 규칙 엔진 일치 조건의 Azure CDN | Microsoft Docs
-description: Verizon 프리미엄 규칙 엔진 일치 조건의 Azure Content Delivery Network에 대 한 참조 설명서입니다.
+description: Verizon 프리미엄 규칙 엔진 일치 조건의 Azure Content Delivery Network에 대한 참조 설명서입니다.
 services: cdn
 author: mdgattuso
 ms.service: azure-cdn
@@ -16,7 +16,7 @@ ms.locfileid: "67593212"
 ---
 # <a name="azure-cdn-from-verizon-premium-rules-engine-match-conditions"></a>Verizon 프리미엄 규칙 엔진 일치 조건의 Azure CDN
 
-이 문서에서는 Verizon Premium [규칙 엔진](cdn-verizon-premium-rules-engine.md)의 Azure CONTENT DELIVERY NETWORK (CDN)에 대해 사용 가능한 일치 조건에 대 한 자세한 설명을 나열 합니다.
+이 문서에서는 Verizon Premium [규칙 엔진](cdn-verizon-premium-rules-engine.md)의 Azure CONTENT DELIVERY NETWORK (CDN)에 대해 사용 가능한 일치 조건에 대한 자세한 설명을 나열 합니다.
 
 규칙의 두 번째 부분이 일치 조건입니다. 일치 조건은 기능 집합에 대해 수행할 특정 요청 유형을 식별합니다.
 

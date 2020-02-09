@@ -50,7 +50,7 @@ TestConfiguration.ps1 -ClusterConfigFilePath <Path to the new Configuration File
 TestConfiguration.ps1 -ClusterConfigFilePath <Path to the new Configuration File> -OldClusterConfigFilePath <Path to the old Configuration File> -FabricRuntimePackagePath <Path to the .cab file which you want to test the configuration against>
 ```
 
-일부 구성 (예: 끝점, 클러스터 이름, 노드 IP 등)을 업그레이드할 수 없습니다. 새 클러스터 구성 JSON은 이전 구성에 대해 테스트 되 고 문제가 있는 경우 PowerShell 창에서 오류를 throw 합니다.
+일부 구성 (예: 엔드포인트, 클러스터 이름, 노드 IP 등)을 업그레이드할 수 없습니다. 새 클러스터 구성 JSON은 이전 구성에 대해 테스트 되 고 문제가 있는 경우 PowerShell 창에서 오류를 throw 합니다.
 
 ## <a name="upgrade-the-cluster-configuration"></a>클러스터 구성 업그레이드
 클러스터 구성을 업그레이드하려면 [Start-ServiceFabricClusterConfigurationUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/start-servicefabricclusterconfigurationupgrade)를 실행합니다. 업그레이드 도메인으로 구성 업그레이드가 처리됩니다.

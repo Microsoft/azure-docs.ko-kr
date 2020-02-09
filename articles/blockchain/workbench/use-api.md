@@ -23,18 +23,18 @@ Azure Blockchain 워크 벤치 미리 보기 REST API 개발자 및 정보 근�
 
 시나리오에서 사용되는 예제 블록체인 애플리케이션은 [GitHub에서 다운로드](https://github.com/Azure-Samples/blockchain)할 수 있습니다.
 
-## <a name="blockchain-workbench-api-endpoint"></a>블록 체인 워크 벤치 API 끝점
+## <a name="blockchain-workbench-api-endpoint"></a>블록 체인 워크 벤치 API 엔드포인트
 
-Blockchain 워크 벤치 Api는 배포에 대 한 끝점을 통해 액세스 됩니다. 배포에 대 한 API 끝점 URL을 가져오려면 다음을 수행 합니다.
+Blockchain 워크 벤치 Api는 배포에 대 한 엔드포인트을 통해 액세스 됩니다. 배포에 대 한 API 엔드포인트 URL을 가져오려면 다음을 수행 합니다.
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
 1. 왼쪽 탐색 창에서 **리소스 그룹**을 선택 합니다.
 1. 배포 된 블록 체인 워크 벤치의 리소스 그룹 이름을 선택 합니다.
 1. 목록을 형식 기준으로 사전순으로 정렬하려면 **형식** 열 제목을 선택합니다.
 1. 형식이 **App Service**인 리소스가 두 개 있습니다. "-Api" 접미사를 *사용 하 여* **App Service** 유형의 리소스를 선택 합니다.
-1. App Service **개요**에서 배포 된 블록 체인 워크 벤치에 대 한 API 끝점 url을 나타내는 **url** 값을 복사 합니다.
+1. App Service **개요**에서 배포 된 블록 체인 워크 벤치에 대 한 API 엔드포인트 url을 나타내는 **url** 값을 복사 합니다.
 
-    ![App service API 끝점 URL](media/use-api/app-service-api.png)
+    ![App service API 엔드포인트 URL](media/use-api/app-service-api.png)
 
 ## <a name="list-applications"></a>애플리케이션 나열
 

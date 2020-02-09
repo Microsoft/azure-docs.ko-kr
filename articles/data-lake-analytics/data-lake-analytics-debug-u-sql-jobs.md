@@ -1,5 +1,5 @@
 ---
-title: Azure Data Lake C# U-SQL 작업에 대 한 코드 디버그
+title: Azure Data Lake C# U-SQL 작업에 대한 코드 디버그
 description: 이 문서에서는 Azure Data Lake Tools for Visual Studio를 사용하여 U-SQL의 실패한 꼭짓점을 디버그하는 방법을 설명합니다.
 services: data-lake-analytics
 ms.service: data-lake-analytics

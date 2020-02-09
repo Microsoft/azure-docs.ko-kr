@@ -14,10 +14,10 @@ ms.locfileid: "74226930"
 ---
 # <a name="managing-hybrid-environments-with-powershell-in-azure-functions-and-app-service-hybrid-connections"></a>Azure Functions 및 App Service 하이브리드 연결에서 PowerShell을 사용 하 여 하이브리드 환경 관리
 
-Azure App Service 하이브리드 연결 기능을 사용 하면 다른 네트워크의 리소스에 액세스할 수 있습니다. 이 기능에 대 한 자세한 내용은 [하이브리드 연결](../app-service/app-service-hybrid-connections.md) 설명서에서 확인할 수 있습니다. 이 문서에서는이 기능을 사용 하 여 온-프레미스 서버를 대상으로 하는 PowerShell 함수를 실행 하는 방법을 설명 합니다. 그런 다음이 서버를 사용 하 여 Azure PowerShell 함수에서 온-프레미스 환경의 모든 리소스를 관리할 수 있습니다.
+Azure App Service 하이브리드 연결 기능을 사용 하면 다른 네트워크의 리소스에 액세스할 수 있습니다. 이 기능에 대한 자세한 내용은 [하이브리드 연결](../app-service/app-service-hybrid-connections.md) 설명서에서 확인할 수 있습니다. 이 문서에서는이 기능을 사용 하 여 온-프레미스 서버를 대상으로 하는 PowerShell 함수를 실행 하는 방법을 설명 합니다. 그런 다음이 서버를 사용 하 여 Azure PowerShell 함수에서 온-프레미스 환경의 모든 리소스를 관리할 수 있습니다.
 
 
-## <a name="configure-an-on-premises-server-for-powershell-remoting"></a>PowerShell 원격에 대 한 온-프레미스 서버 구성
+## <a name="configure-an-on-premises-server-for-powershell-remoting"></a>PowerShell 원격에 대한 온-프레미스 서버 구성
 
 다음 스크립트는 PowerShell 원격을 사용 하도록 설정 하 고 새 방화벽 규칙 및 WinRM https 수신기를 만듭니다. 테스트 목적으로 자체 서명 된 인증서가 사용 됩니다. 프로덕션 환경에서는 서명 된 인증서를 사용 하는 것이 좋습니다.
 
@@ -54,7 +54,7 @@ App Service 하이브리드 연결 기능은 Basic, Standard 및 격리 요금�
 
 1. **호스팅 계획**의 경우 **App Service 계획**을 선택한 다음 **App Service 계획/위치**를 선택 합니다.
 
-1. **새로 만들기**를 선택 하 고, **App Service 계획** 이름을 입력 하 고, 사용자의 함수 액세스에 가까운 [지역](https://azure.microsoft.com/regions/) 또는 다른 서비스에 대 한 **위치** 를 선택 하 고 **가격 책정 계층**을 선택 합니다.
+1. **새로 만들기**를 선택 하 고, **App Service 계획** 이름을 입력 하 고, 사용자의 함수 액세스에 가까운 [지역](https://azure.microsoft.com/regions/) 또는 다른 서비스에 대한 **위치** 를 선택 하 고 **가격 책정 계층**을 선택 합니다.
 
 1. S1 표준 요금제를 선택 하 고 **적용**을 선택 합니다.
 
@@ -78,24 +78,24 @@ App Service 하이브리드 연결 기능은 Basic, Standard 및 격리 요금�
 
 1. **리소스로 이동**을 선택하여 함수 앱을 봅니다. **대시보드에 고정**을 선택할 수도 있습니다. 고정하면 대시보드에서 이 함수 앱 리소스로 쉽게 돌아올 수 있습니다.
 
-## <a name="create-a-hybrid-connection-for-the-function-app"></a>함수 앱에 대 한 하이브리드 연결 만들기
+## <a name="create-a-hybrid-connection-for-the-function-app"></a>함수 앱에 대한 하이브리드 연결 만들기
 
 하이브리드 연결은 함수 앱의 네트워킹 섹션에서 구성 됩니다.
 
 1. 함수 앱에서 **플랫폼 기능** 탭을 선택 하 고 **네트워킹**을 선택 합니다. 
-   플랫폼 네트워킹](./media/functions-hybrid-powershell/app-overview-platform-networking.png)에 대 한 ![앱 개요  
-1. **하이브리드 연결 끝점 구성**을 선택 합니다.
+   플랫폼 네트워킹](./media/functions-hybrid-powershell/app-overview-platform-networking.png)에 대한 ![앱 개요  
+1. **하이브리드 연결 엔드포인트 구성**을 선택 합니다.
    ![네트워킹](./media/functions-hybrid-powershell/select-network-feature.png)  
 1. **하이브리드 연결 추가**를 선택 합니다.
    하이브리드 연결을](./media/functions-hybrid-powershell/hybrid-connection-overview.png) ![  
-1. 다음 스크린샷 후와 같이 하이브리드 연결에 대 한 정보를 입력 합니다. **끝점 호스트** 설정을 온-프레미스 서버의 호스트 이름과 일치 시키고 나중에 원격 명령을 실행 하는 경우 서버를 쉽게 기억할 수 있도록 하는 옵션이 있습니다. 포트는 이전에 서버에 정의 된 기본 Windows 원격 관리 서비스 포트와 일치 합니다.
+1. 다음 스크린샷 후와 같이 하이브리드 연결에 대한 정보를 입력 합니다. **엔드포인트 호스트** 설정을 온-프레미스 서버의 호스트 이름과 일치 시키고 나중에 원격 명령을 실행 하는 경우 서버를 쉽게 기억할 수 있도록 하는 옵션이 있습니다. 포트는 이전에 서버에 정의 된 기본 Windows 원격 관리 서비스 포트와 일치 합니다.
   하이브리드 연결 추가 ![](./media/functions-hybrid-powershell/add-hybrid-connection.png)  
 
     **하이브리드 연결 이름**: ContosoHybridOnPremisesServer
     
-    **끝점 호스트**: finance1
+    **엔드포인트 호스트**: finance1
     
-    **끝점 포트**: 5986
+    **엔드포인트 포트**: 5986
     
     **Servicebus 네임 스페이스**: 새로 만들기
     
@@ -123,15 +123,15 @@ App Service 하이브리드 연결 기능은 Basic, Standard 및 격리 요금�
     Restart-Service HybridConnectionManager
     ```
 
-## <a name="create-an-app-setting-for-the-password-of-an-administrator-account"></a>관리자 계정의 암호에 대 한 앱 설정 만들기
+## <a name="create-an-app-setting-for-the-password-of-an-administrator-account"></a>관리자 계정의 암호에 대한 앱 설정 만들기
 
 1. 함수 앱에서 **플랫폼 기능** 탭을 선택 합니다.
 1. **일반 설정**에서 **구성**을 선택 합니다.
 플랫폼 구성 ![선택](./media/functions-hybrid-powershell/select-configuration.png)  
-1. **새 응용 프로그램 설정** 을 확장 하 여 암호에 대 한 새 설정을 만듭니다.
+1. **새 응용 프로그램 설정** 을 확장 하 여 암호에 대한 새 설정을 만듭니다.
 1. _ContosoUserPassword_설정의 이름을로 설정 하 고 암호를 입력 합니다.
 1. **확인** 을 선택 하 고 저장을 선택 하 여 함수 응용 프로그램에 암호를 저장 합니다.
-암호에 대 한 앱 설정 추가 ![](./media/functions-hybrid-powershell/add-appsetting-password.png)  
+암호에 대한 앱 설정 추가 ![](./media/functions-hybrid-powershell/add-appsetting-password.png)  
 
 ## <a name="create-a-function-http-trigger-to-test"></a>테스트할 함수 http 트리거를 만듭니다.
 
@@ -177,7 +177,7 @@ App Service 하이브리드 연결 기능은 Basic, Standard 및 격리 요금�
 
 ## <a name="managing-other-systems-on-premises"></a>온-프레미스에서 다른 시스템 관리
 
-연결 된 온-프레미스 서버를 사용 하 여 로컬 환경의 다른 서버 및 관리 시스템에 연결할 수 있습니다. 이렇게 하면 PowerShell 함수를 사용 하 여 Azure에서 데이터 센터 작업을 관리할 수 있습니다. 다음 스크립트는 제공 된 자격 증명으로 실행 되는 PowerShell 구성 세션을 등록 합니다. 이러한 자격 증명은 원격 서버의 관리자를 위한 자격 증명 이어야 합니다. 그런 다음이 구성을 사용 하 여 로컬 서버 또는 데이터 센터의 다른 끝점에 액세스할 수 있습니다.
+연결 된 온-프레미스 서버를 사용 하 여 로컬 환경의 다른 서버 및 관리 시스템에 연결할 수 있습니다. 이렇게 하면 PowerShell 함수를 사용 하 여 Azure에서 데이터 센터 작업을 관리할 수 있습니다. 다음 스크립트는 제공 된 자격 증명으로 실행 되는 PowerShell 구성 세션을 등록 합니다. 이러한 자격 증명은 원격 서버의 관리자를 위한 자격 증명 이어야 합니다. 그런 다음이 구성을 사용 하 여 로컬 서버 또는 데이터 센터의 다른 엔드포인트에 액세스할 수 있습니다.
 
 ```powershell
 # Input bindings are passed in via param block.
@@ -255,4 +255,4 @@ Azure [virtual network](./functions-create-vnet.md) 를 사용 하 여 Azure Fun
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"] 
-> [PowerShell 함수 사용에 대 한 자세한 정보](functions-reference-powershell.md)
+> [PowerShell 함수 사용에 대한 자세한 정보](functions-reference-powershell.md)

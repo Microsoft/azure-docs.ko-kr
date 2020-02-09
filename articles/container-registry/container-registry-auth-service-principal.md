@@ -22,7 +22,7 @@ Azure Container Registry 컨텍스트에서, Azure의 프라이빗 레지스트�
 
 ## <a name="why-use-a-service-principal"></a>서비스 주체를 사용하는 이유
 
-Azure AD 서비스 주체를 사용하면 프라이빗 컨테이너 레지스트리에 대해 범위가 지정된 액세스를 제공할 수 있습니다. 각 응용 프로그램 또는 서비스에 대 한 다양 한 서비스 주체를 만듭니다. 각 응용 프로그램에는 레지스트리에 대 한 맞춤형 액세스 권한이 있습니다. 또한 서비스와 애플리케이션 사이에 자격 증명을 공유하지 않아도 되기 때문에, 선택한 서비스 주체(및 애플리케이션)에 대해서만 자격 증명을 순환하거나 액세스 권한을 철회할 수 있습니다.
+Azure AD 서비스 주체를 사용하면 프라이빗 컨테이너 레지스트리에 대해 범위가 지정된 액세스를 제공할 수 있습니다. 각 응용 프로그램 또는 서비스에 대한 다양 한 서비스 주체를 만듭니다. 각 응용 프로그램에는 레지스트리에 대한 맞춤형 액세스 권한이 있습니다. 또한 서비스와 애플리케이션 사이에 자격 증명을 공유하지 않아도 되기 때문에, 선택한 서비스 주체(및 애플리케이션)에 대해서만 자격 증명을 순환하거나 액세스 권한을 철회할 수 있습니다.
 
 예를 들어, 빌드 시스템은 `push` 및 `pull` 액세스를 모두 제공 하는 서비스 주체를 사용 하는 반면, 이미지 `pull` 액세스만 제공 하는 서비스 주체를 사용 하도록 웹 응용 프로그램을 구성 합니다. 응용 프로그램 개발이 변경 되 면 빌드 시스템에 영향을 주지 않고 서비스 주체 자격 증명을 회전할 수 있습니다.
 
@@ -34,20 +34,20 @@ Azure AD 서비스 주체를 사용하면 프라이빗 컨테이너 레지스트
 
   * *Push*: 컨테이너 이미지를 빌드하고 Azure Pipelines 또는 Jenkins와 같은 연속 통합 및 배포 솔루션을 사용 하 여 레지스트리에 푸시합니다.
 
-수동으로 컨테이너 이미지를 개발 워크스테이션으로 끌어올 때와 같이 레지스트리에 대 한 개별 액세스의 경우 레지스트리 액세스에 대신 사용자 고유의 [AZURE AD id](container-registry-authentication.md#individual-login-with-azure-ad) 를 사용 하는 것이 좋습니다 (예: [az acr login][az-acr-login]사용).
+수동으로 컨테이너 이미지를 개발 워크스테이션으로 끌어올 때와 같이 레지스트리에 대한 개별 액세스의 경우 레지스트리 액세스에 대신 사용자 고유의 [AZURE AD id](container-registry-authentication.md#individual-login-with-azure-ad) 를 사용 하는 것이 좋습니다 (예: [az acr login][az-acr-login]사용).
 
 [!INCLUDE [container-registry-service-principal](../../includes/container-registry-service-principal.md)]
 
 ### <a name="sample-scripts"></a>샘플 스크립트
 
-GitHub에서 Azure CLI에 대 한 앞의 샘플 스크립트와 Azure PowerShell의 버전을 찾을 수 있습니다.
+GitHub에서 Azure CLI에 대한 앞의 샘플 스크립트와 Azure PowerShell의 버전을 찾을 수 있습니다.
 
 * [Azure CLI][acr-scripts-cli]
 * [Azure PowerShell][acr-scripts-psh]
 
 ## <a name="authenticate-with-the-service-principal"></a>서비스 주체를 사용 하 여 인증
 
-컨테이너 레지스트리에 대 한 액세스 권한이 부여 된 서비스 주체가 있으면 "헤드리스" 서비스 및 응용 프로그램에 액세스 하기 위한 자격 증명을 구성 하거나 `docker login` 명령을 사용 하 여 해당 자격 증명을 입력할 수 있습니다. 다음 값을 사용합니다.
+컨테이너 레지스트리에 대한 액세스 권한이 부여 된 서비스 주체가 있으면 "헤드리스" 서비스 및 응용 프로그램에 액세스 하기 위한 자격 증명을 구성 하거나 `docker login` 명령을 사용 하 여 해당 자격 증명을 입력할 수 있습니다. 다음 값을 사용합니다.
 
 * **사용자 이름** -서비스 사용자 응용 프로그램 id ( *클라이언트 id*라고도 함)
 * **암호** 서비스 주체 암호 ( *클라이언트 암호*라고도 함)
@@ -81,7 +81,7 @@ docker login myregistry.azurecr.io --username $SP_APP_ID --password $SP_PASSWD
 
 [서비스 주체를 만들](/cli/azure/create-an-azure-service-principal-azure-cli)때 자체 서명 된 인증서를 만들 수 있습니다. 또는 기존 서비스 주체에 하나 이상의 인증서를 추가 합니다. 예를 들어이 문서의 스크립트 중 하나를 사용 하 여 레지스트리에서 이미지를 끌어오거나 푸시할 수 있는 권한이 있는 서비스 주체를 만들거나 업데이트 하는 경우 [az ad sp credential reset][az-ad-sp-credential-reset] 명령을 사용 하 여 인증서를 추가 합니다.
 
-인증서가 있는 서비스 주체를 사용 하 여 [Azure CLI에 로그인](/cli/azure/authenticate-azure-cli#sign-in-with-a-service-principal)하려면 인증서가 PEM 형식 이어야 하며 개인 키를 포함 해야 합니다. 인증서가 필요한 형식이 아닌 경우 `openssl`와 같은 도구를 사용 하 여 변환 합니다. [Az login][az-login] 을 실행 하 여 서비스 주체를 사용 하 여 CLI에 로그인 하는 경우 서비스 주체의 응용 프로그램 id와 Active Directory 테 넌 트 id도 제공 합니다. 다음 예제에서는 이러한 값을 환경 변수로 보여 줍니다.
+인증서가 있는 서비스 주체를 사용 하 여 [Azure CLI에 로그인](/cli/azure/authenticate-azure-cli#sign-in-with-a-service-principal)하려면 인증서가 PEM 형식 이어야 하며 개인 키를 포함 해야 합니다. 인증서가 필요한 형식이 아닌 경우 `openssl`와 같은 도구를 사용 하 여 변환 합니다. [Az login][az-login] 을 실행 하 여 서비스 주체를 사용 하 여 CLI에 로그인 하는 경우 서비스 주체의 응용 프로그램 id와 Active Directory 테넌트 id도 제공 합니다. 다음 예제에서는 이러한 값을 환경 변수로 보여 줍니다.
 
 ```azurecli
 az login --service-principal --username $SP_APP_ID --tenant $SP_TENANT_ID  --password /path/to/cert/pem/file
@@ -99,7 +99,7 @@ CLI는 `az login` 실행 될 때 생성 된 토큰을 사용 하 여 레지스�
 
 * Azure container registry를 사용 하 여 인증 하는 다른 시나리오는 [인증 개요](container-registry-authentication.md) 를 참조 하세요.
 
-* Azure key vault를 사용 하 여 컨테이너 레지스트리에 대 한 서비스 주체 자격 증명을 저장 하 고 검색 하는 예제는 [ACR 작업을 사용 하 여 컨테이너 이미지를 빌드하고 배포](container-registry-tutorial-quick-task.md)하는 자습서를 참조 하세요.
+* Azure key vault를 사용 하 여 컨테이너 레지스트리에 대한 서비스 주체 자격 증명을 저장 하 고 검색 하는 예제는 [ACR 작업을 사용 하 여 컨테이너 이미지를 빌드하고 배포](container-registry-tutorial-quick-task.md)하는 자습서를 참조 하세요.
 
 <!-- LINKS - External -->
 [acr-scripts-cli]: https://github.com/Azure/azure-docs-cli-python-samples/tree/master/container-registry

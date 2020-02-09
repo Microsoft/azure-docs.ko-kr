@@ -34,4 +34,4 @@ Azure Firewall에는 NAT 규칙, 네트워크 규칙 및 애플리케이션 규�
 
 ## <a name="next-steps"></a>다음 단계
 
-- [Azure 방화벽 관리자 미리 보기에 대 한 자세한 정보](overview.md)
+- [Azure 방화벽 관리자 미리 보기에 대한 자세한 정보](overview.md)

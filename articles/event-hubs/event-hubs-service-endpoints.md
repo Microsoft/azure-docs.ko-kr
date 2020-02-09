@@ -1,6 +1,6 @@
 ---
 title: Virtual Network 서비스 엔드포인트 - Azure Event Hubs | Microsoft Docs
-description: 이 문서에서는 가상 네트워크에 Microsoft EventHub 서비스 끝점을 추가 하는 방법에 대 한 정보를 제공 합니다.
+description: 이 문서에서는 가상 네트워크에 Microsoft EventHub 서비스 엔드포인트을 추가 하는 방법에 대한 정보를 제공 합니다.
 services: event-hubs
 documentationcenter: ''
 author: ShubhaVijayasarathy
@@ -20,11 +20,11 @@ ms.locfileid: "75966008"
 ---
 # <a name="use-virtual-network-service-endpoints-with-azure-event-hubs"></a>Azure Event Hubs에서 Virtual Network 서비스 엔드포인트 사용
 
-Event Hubs와 [VNet (Virtual Network) 서비스 끝점][vnet-sep] 을 통합 하면 가상 네트워크에 바인딩된 가상 컴퓨터와 같은 작업에서 메시징 기능에 안전 하 게 액세스할 수 있으며, 두 쪽 모두에서 네트워크 트래픽 경로를 안전 하 게 보호할 수 있습니다.
+Event Hubs와 [VNet (Virtual Network) 서비스 엔드포인트][vnet-sep] 을 통합 하면 가상 네트워크에 바인딩된 가상 컴퓨터와 같은 작업에서 메시징 기능에 안전 하 게 액세스할 수 있으며, 두 쪽 모두에서 네트워크 트래픽 경로를 안전 하 게 보호할 수 있습니다.
 
-하나 이상의 가상 네트워크 서브넷 서비스 끝점에 바인딩하기 위해 구성 된 경우 해당 Event Hubs 네임 스페이스는 더 이상 가상 네트워크에서 권한이 있는 모든 서브넷의 트래픽을 허용 하지 않습니다. 가상 네트워크 큐브 뷰에서 Event Hubs 네임스페이스를 서비스 엔드포인트에 바인딩하면 가상 네트워크 서브넷에서 메시징 서비스로 격리된 네트워킹 터널을 구성합니다. 
+하나 이상의 가상 네트워크 서브넷 서비스 엔드포인트에 바인딩하기 위해 구성 된 경우 해당 Event Hubs 네임 스페이스는 더 이상 가상 네트워크에서 권한이 있는 모든 서브넷의 트래픽을 허용 하지 않습니다. 가상 네트워크 큐브 뷰에서 Event Hubs 네임스페이스를 서비스 엔드포인트에 바인딩하면 가상 네트워크 서브넷에서 메시징 서비스로 격리된 네트워킹 터널을 구성합니다. 
 
-메시징 서비스 엔드포인트의 관찰 가능한 네트워크 주소가 공용 IP 범위에 있음에도 서브넷에 바인딩된 워크로드와 해당하는 Event Hubs 네임스페이스 간에 격리된 프라이빗 관계가 생성됩니다. 이 동작에 대 한 예외는 없습니다. 기본적으로 서비스 끝점을 사용 하도록 설정 하면 가상 네트워크와 연결 된 IP 방화벽에서 denyall 규칙이 사용 됩니다. IP 방화벽의 특정 IP 주소를 추가 하 여 이벤트 허브 공용 끝점에 대 한 액세스를 사용할 수 있습니다. 
+메시징 서비스 엔드포인트의 관찰 가능한 네트워크 주소가 공용 IP 범위에 있음에도 서브넷에 바인딩된 워크로드와 해당하는 Event Hubs 네임스페이스 간에 격리된 프라이빗 관계가 생성됩니다. 이 동작에 대한 예외는 없습니다. 기본적으로 서비스 엔드포인트을 사용 하도록 설정 하면 가상 네트워크와 연결 된 IP 방화벽에서 denyall 규칙이 사용 됩니다. IP 방화벽의 특정 IP 주소를 추가 하 여 이벤트 허브 공용 엔드포인트에 대한 액세스를 사용할 수 있습니다. 
 
 
 >[!WARNING]
@@ -58,7 +58,7 @@ TCP/IP에서 HTTPS를 수행하는 경로를 비롯한 구획 간의 즉시 IP �
 
 *가상 네트워크 규칙*은 Azure Event Hubs 네임스페이스가 특정 가상 네트워크 서브넷의 연결을 수락할지 여부를 제어하는 방화벽 보안 기능입니다.
 
-Virtual Networks에 Event Hubs를 바인딩하는 작업은 2단계 프로세스입니다. 먼저 Virtual Network 서브넷에 **Virtual Network 서비스 끝점** 을 만들고 [서비스 끝점 개요][vnet-sep]에 설명 된 대로 "Microsoft EventHub"에 대해 사용 하도록 설정 해야 합니다. 서비스 엔드포인트를 추가했다면 여기에 *가상 네트워크 규칙*을 사용하여 Event Hubs 네임스페이스를 바인딩합니다.
+Virtual Networks에 Event Hubs를 바인딩하는 작업은 2단계 프로세스입니다. 먼저 Virtual Network 서브넷에 **Virtual Network 서비스 엔드포인트** 을 만들고 [서비스 엔드포인트 개요][vnet-sep]에 설명 된 대로 "Microsoft EventHub"에 대해 사용 하도록 설정 해야 합니다. 서비스 엔드포인트를 추가했다면 여기에 *가상 네트워크 규칙*을 사용하여 Event Hubs 네임스페이스를 바인딩합니다.
 
 가상 네트워크 규칙은 가상 네트워크 서브넷을 사용하는 Event Hubs 네임스페이스의 연결입니다. 규칙이 있는 한 서브넷에 바인딩된 모든 워크로드는 Event Hubs 네임스페이스에 대한 액세스 권한이 부여됩니다. Event Hubs 자체는 아웃바운드 연결을 설정하지 않고, 액세스 권한을 가져올 필요도 없습니다. 따라서 이 규칙을 사용하여 서브넷에 대한 액세스 권한이 부여되지 않습니다.
 
@@ -184,13 +184,13 @@ Virtual Networks에 Event Hubs를 바인딩하는 작업은 2단계 프로세스
   }
 ```
 
-템플릿을 배포 하려면 [Azure Resource Manager][lnk-deploy]에 대 한 지침을 따르세요.
+템플릿을 배포 하려면 [Azure Resource Manager][lnk-deploy]에 대한 지침을 따르세요.
 
 ## <a name="next-steps"></a>다음 단계
 
 가상 네트워크에 대한 자세한 내용은 다음 링크를 참조하세요.
 
-- [Azure 가상 네트워크 서비스 끝점][vnet-sep]
+- [Azure 가상 네트워크 서비스 엔드포인트][vnet-sep]
 - [Azure Event Hubs IP 필터링][ip-filtering]
 
 [vnet-sep]: ../virtual-network/virtual-network-service-endpoints-overview.md

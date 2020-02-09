@@ -1328,7 +1328,7 @@ Azure Monitor에서는 포털에서의 차트 작성, REST API를 통한 액세�
 |---|---|---|---|---|---|
 |송신|송신|바이트|합계|송신 데이터의 양 (바이트)입니다.|OutputFormat|
 |SuccessE2ELatency|성공 종단 간 대기 시간|밀리초|평균|성공한 요청의 평균 대기 시간 (밀리초)입니다.|OutputFormat|
-|요청|요청|카운트|합계|스트리밍 끝점에 대 한 요청입니다.|OutputFormat, HttpStatusCode, ErrorCode|
+|요청|요청|카운트|합계|스트리밍 엔드포인트에 대 한 요청입니다.|OutputFormat, HttpStatusCode, ErrorCode|
 
 
 ## <a name="microsoftmediamediaservices"></a>Microsoft. Media/windowsazure.mediaservices
@@ -2035,11 +2035,11 @@ Azure Monitor에서는 포털에서의 차트 작성, REST API를 통한 액세�
 
 |메트릭|메트릭 표시 이름|단위|집계 형식|Description|차원|
 |---|---|---|---|---|---|
-|ServerSyncSessionResult|동기화 세션 결과|카운트|평균|서버 끝점이 클라우드 끝점과 동기화 세션을 성공적으로 완료할 때마다 1 값을 기록 하는 메트릭입니다.|SyncGroupName, ServerEndpointName, Syncgroupname|
+|ServerSyncSessionResult|동기화 세션 결과|카운트|평균|서버 엔드포인트이 클라우드 엔드포인트과 동기화 세션을 성공적으로 완료할 때마다 1 값을 기록 하는 메트릭입니다.|SyncGroupName, ServerEndpointName, Syncgroupname|
 |StorageSyncSyncSessionAppliedFilesCount|동기화 된 파일|카운트|합계|동기화 된 파일 수|SyncGroupName, ServerEndpointName, Syncgroupname|
 |StorageSyncSyncSessionPerItemErrorsCount|동기화 상태가 아닌 파일|카운트|합계|동기화 하지 못한 파일 수|SyncGroupName, ServerEndpointName, Syncgroupname|
 |StorageSyncBatchTransferredFileBytes|동기화되는 바이트 수|바이트|합계|동기화 세션에 대해 전송 된 총 파일 크기|SyncGroupName, ServerEndpointName, Syncgroupname|
-|StorageSyncServerHeartbeat|서버 온라인 상태|카운트|최대|Resigtered 서버가 클라우드 끝점과 하트 비트를 성공적으로 기록할 때마다 값 1을 기록 하는 메트릭입니다.|ServerName|
+|StorageSyncServerHeartbeat|서버 온라인 상태|카운트|최대|Resigtered 서버가 클라우드 엔드포인트과 하트 비트를 성공적으로 기록할 때마다 값 1을 기록 하는 메트릭입니다.|ServerName|
 |StorageSyncRecallIOTotalSizeBytes|클라우드 계층화 회수|바이트|합계|서버에서 회수 한 데이터의 총 크기|ServerName|
 |StorageSyncRecalledTotalNetworkBytes|클라우드 계층화 회수 크기|바이트|합계|회수되는 데이터 크기|SyncGroupName, ServerName|
 |StorageSyncRecallThroughputBytesPerSecond|클라우드 계층화 회수 처리량|초당 바이트 수|평균|데이터 회수 처리량 크기|SyncGroupName, ServerName|
@@ -2065,7 +2065,7 @@ Azure Monitor에서는 포털에서의 차트 작성, REST API를 통한 액세�
 
 |메트릭|메트릭 표시 이름|단위|집계 형식|Description|차원|
 |---|---|---|---|---|---|
-|ServerHeartbeat 비트|서버 온라인 상태|카운트|최대|Resigtered 서버가 클라우드 끝점과 하트 비트를 성공적으로 기록할 때마다 값 1을 기록 하는 메트릭입니다.|ServerResourceId, ServerName|
+|ServerHeartbeat 비트|서버 온라인 상태|카운트|최대|Resigtered 서버가 클라우드 엔드포인트과 하트 비트를 성공적으로 기록할 때마다 값 1을 기록 하는 메트릭입니다.|ServerResourceId, ServerName|
 |ServerRecallIOTotalSizeBytes|클라우드 계층화 회수|바이트|합계|서버에서 회수 한 데이터의 총 크기|ServerResourceId, ServerName|
 
 

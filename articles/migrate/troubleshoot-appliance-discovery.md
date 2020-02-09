@@ -53,7 +53,7 @@ ms.locfileid: "77048698"
 
 ## <a name="unabletoconnecttoserver"></a>UnableToConnectToServer
 
-이 연결 오류가 발생 하는 경우 vCenter Server *Servername*: 9443에 연결 하지 못할 수 있습니다. 오류 세부 정보는 메시지를 수락할 수*있는 https://:* 9443/sdk에서 수신 대기 하는 끝점이 없음을 표시 합니다.
+이 연결 오류가 발생 하는 경우 vCenter Server *Servername*: 9443에 연결 하지 못할 수 있습니다. 오류 세부 정보는 메시지를 수락할 수*있는 https://:* 9443/sdk에서 수신 대기 하는 엔드포인트이 없음을 표시 합니다.
 
 - 최신 버전의 어플라이언스를 실행 하 고 있는지 확인 합니다. 그렇지 않은 경우 어플라이언스를 [최신 버전](https://docs.microsoft.com/azure/migrate/concepts-collector)으로 업그레이드 하세요.
 - 최신 버전에서 문제가 계속 발생 하는 경우 기기가 지정 된 vCenter Server 이름을 확인할 수 없거나 지정 된 포트가 잘못 되었을 수 있습니다. 기본적으로 포트를 지정 하지 않으면 수집기가 포트 번호 443에 연결을 시도 합니다.

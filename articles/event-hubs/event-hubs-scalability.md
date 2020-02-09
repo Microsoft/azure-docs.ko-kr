@@ -1,6 +1,6 @@
 ---
 title: 확장성-Azure Event Hubs | Microsoft Docs
-description: 이 문서에서는 파티션 및 처리량 단위를 사용 하 여 Azure Event Hubs 크기를 조정 하는 방법에 대 한 정보를 제공 합니다.
+description: 이 문서에서는 파티션 및 처리량 단위를 사용 하 여 Azure Event Hubs 크기를 조정 하는 방법에 대한 정보를 제공 합니다.
 services: event-hubs
 documentationcenter: na
 author: ShubhaVijayasarathy
@@ -45,7 +45,7 @@ Event Hubs의 **자동 확장** 기능은 필요한 사용량에 맞게 처리�
 
 ServerBusy 오류로 인한 요청 실패 없이 부하가 최소 임계값을 초과하면 Event Hubs 서비스는 처리량을 높입니다. 
 
-자동 확장 기능에 대 한 자세한 내용은 [처리량 단위 자동 조정](event-hubs-auto-inflate.md)을 참조 하세요.
+자동 확장 기능에 대한 자세한 내용은 [처리량 단위 자동 조정](event-hubs-auto-inflate.md)을 참조 하세요.
 
 ## <a name="partitions"></a>파티션
 [!INCLUDE [event-hubs-partitions](../../includes/event-hubs-partitions.md)]

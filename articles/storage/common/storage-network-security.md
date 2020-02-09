@@ -20,7 +20,7 @@ ms.locfileid: "76514734"
 
 Azure Storage는 계층화된 보안 모델을 제공합니다. 이 모델을 사용 하면 사용 하는 네트워크의 유형 및 하위 집합에 따라 응용 프로그램 및 엔터프라이즈 환경에서 요구 하는 저장소 계정에 대 한 액세스 수준을 보호 하 고 제어할 수 있습니다. 네트워크 규칙이 구성 된 경우 지정 된 네트워크 집합을 통해 데이터를 요청 하는 응용 프로그램만 저장소 계정에 액세스할 수 있습니다. 저장소 계정에 대 한 액세스를 지정 된 IP 주소, IP 범위 또는 Azure Virtual Network (VNet)의 서브넷 목록에서 시작 되는 요청으로 제한할 수 있습니다.
 
-저장소 계정에는 인터넷을 통해 액세스할 수 있는 공용 끝점이 있습니다. [저장소 계정에 대 한 개인 끝점](storage-private-endpoints.md)을 만들어 vnet에서 저장소 계정으로 개인 IP 주소를 할당 하 고 개인 링크를 통해 vnet과 저장소 계정 간의 모든 트래픽을 보호할 수도 있습니다. Azure storage 방화벽은 저장소 계정의 공용 끝점에 대 한 액세스 제어 액세스를 제공 합니다. 또한 개인 끝점을 사용 하는 경우 방화벽을 사용 하 여 공용 끝점을 통해 모든 액세스를 차단할 수 있습니다. 저장소 방화벽 구성을 사용 하면 신뢰할 수 있는 Azure 플랫폼 서비스를 선택 하 여 저장소 계정에 안전 하 게 액세스할 수도 있습니다.
+저장소 계정에는 인터넷을 통해 액세스할 수 있는 공용 엔드포인트이 있습니다. [저장소 계정에 대 한 개인 엔드포인트](storage-private-endpoints.md)을 만들어 vnet에서 저장소 계정으로 개인 IP 주소를 할당 하 고 개인 링크를 통해 vnet과 저장소 계정 간의 모든 트래픽을 보호할 수도 있습니다. Azure storage 방화벽은 저장소 계정의 공용 엔드포인트에 대 한 액세스 제어 액세스를 제공 합니다. 또한 개인 엔드포인트을 사용 하는 경우 방화벽을 사용 하 여 공용 엔드포인트을 통해 모든 액세스를 차단할 수 있습니다. 저장소 방화벽 구성을 사용 하면 신뢰할 수 있는 Azure 플랫폼 서비스를 선택 하 여 저장소 계정에 안전 하 게 액세스할 수도 있습니다.
 
 네트워크 규칙이 적용 되는 경우 저장소 계정에 액세스 하는 응용 프로그램은 여전히 요청에 대 한 적절 한 권한 부여가 필요 합니다. 권한 부여는 blob 및 큐에 대 한 Azure Active Directory (Azure AD) 자격 증명, 유효한 계정 액세스 키 또는 SAS 토큰을 사용 하 여 지원 됩니다.
 
@@ -33,11 +33,11 @@ Azure Storage는 계층화된 보안 모델을 제공합니다. 이 모델을 �
 
 ## <a name="scenarios"></a>시나리오
 
-저장소 계정을 보호 하려면 먼저 공용 끝점에서 모든 네트워크 (인터넷 트래픽 포함)의 트래픽에 대 한 액세스를 거부 하는 규칙을 먼저 구성 해야 합니다. 그런 다음 특정 Vnet 트래픽에 대 한 액세스 권한을 부여 하는 규칙을 구성 해야 합니다. 또한 특정 인터넷 또는 온-프레미스 클라이언트에서 연결을 사용 하도록 설정 하 여 공용 인터넷 IP 주소 범위 선택에서 트래픽에 대 한 액세스를 허용 하도록 규칙을 구성할 수 있습니다. 이 구성을 사용하면 애플리케이션에 대한 보안 네트워크 경계를 구축할 수 있습니다.
+저장소 계정을 보호 하려면 먼저 공용 엔드포인트에서 모든 네트워크 (인터넷 트래픽 포함)의 트래픽에 대 한 액세스를 거부 하는 규칙을 먼저 구성 해야 합니다. 그런 다음 특정 Vnet 트래픽에 대 한 액세스 권한을 부여 하는 규칙을 구성 해야 합니다. 또한 특정 인터넷 또는 온-프레미스 클라이언트에서 연결을 사용 하도록 설정 하 여 공용 인터넷 IP 주소 범위 선택에서 트래픽에 대 한 액세스를 허용 하도록 규칙을 구성할 수 있습니다. 이 구성을 사용하면 애플리케이션에 대한 보안 네트워크 경계를 구축할 수 있습니다.
 
 특정 가상 네트워크 및 공용 IP 주소 범위에서 동일한 저장소 계정에 대 한 액세스를 허용 하는 방화벽 규칙을 결합할 수 있습니다. 저장소 방화벽 규칙은 기존 저장소 계정에 적용 하거나 새 저장소 계정을 만들 때 적용할 수 있습니다.
 
-저장소 방화벽 규칙은 저장소 계정의 공용 끝점에 적용 됩니다. 저장소 계정의 개인 끝점에 대 한 트래픽을 허용 하는 방화벽 액세스 규칙은 필요 하지 않습니다. 개인 끝점의 생성을 승인 하는 프로세스는 개인 끝점을 호스트 하는 서브넷의 트래픽에 대 한 암시적 액세스를 부여 합니다.
+저장소 방화벽 규칙은 저장소 계정의 공용 엔드포인트에 적용 됩니다. 저장소 계정의 개인 엔드포인트에 대 한 트래픽을 허용 하는 방화벽 액세스 규칙은 필요 하지 않습니다. 개인 엔드포인트의 생성을 승인 하는 프로세스는 개인 엔드포인트을 호스트 하는 서브넷의 트래픽에 대 한 암시적 액세스를 부여 합니다.
 
 네트워크 규칙은 REST 및 SMB를 포함하여 Azure Storage에 대한 모든 네트워크 프로토콜에 적용됩니다. Azure Portal, Storage 탐색기 및 AZCopy와 같은 도구를 사용 하 여 데이터에 액세스 하려면 명시적 네트워크 규칙을 구성 해야 합니다.
 
@@ -116,9 +116,9 @@ Azure Storage는 계층화된 보안 모델을 제공합니다. 이 모델을 �
 
 ## <a name="grant-access-from-a-virtual-network"></a>가상 네트워크의 액세스 허가
 
-특정 서브넷 에서만 액세스를 허용 하도록 저장소 계정을 구성할 수 있습니다. 허용 되는 서브넷은 동일한 구독의 VNet 또는 다른 Azure Active Directory 테 넌 트에 속한 구독을 포함 하 여 다른 구독의 VNet에 속할 수 있습니다.
+특정 서브넷 에서만 액세스를 허용 하도록 저장소 계정을 구성할 수 있습니다. 허용 되는 서브넷은 동일한 구독의 VNet 또는 다른 Azure Active Directory 테넌트에 속한 구독을 포함 하 여 다른 구독의 VNet에 속할 수 있습니다.
 
-VNet 내의 Azure Storage에 대해 [서비스 엔드포인트](/azure/virtual-network/virtual-network-service-endpoints-overview)를 사용하도록 설정합니다. 서비스 끝점은 VNet에서 Azure Storage 서비스에 대 한 최적의 경로를 통해 트래픽을 라우팅합니다. 서브넷 및 가상 네트워크의 id도 각 요청과 함께 전송 됩니다. 그런 다음 관리자는 VNet의 특정 서브넷에서 요청을 받을 수 있도록 저장소 계정에 대 한 네트워크 규칙을 구성할 수 있습니다. 이러한 네트워크 규칙을 통해 액세스가 허용되는 클라이언트에서 데이터에 액세스하려면 스토리지 계정의 권한 부여 요구 사항을 계속 충족해야 합니다.
+VNet 내의 Azure Storage에 대해 [서비스 엔드포인트](/azure/virtual-network/virtual-network-service-endpoints-overview)를 사용하도록 설정합니다. 서비스 엔드포인트은 VNet에서 Azure Storage 서비스에 대 한 최적의 경로를 통해 트래픽을 라우팅합니다. 서브넷 및 가상 네트워크의 id도 각 요청과 함께 전송 됩니다. 그런 다음 관리자는 VNet의 특정 서브넷에서 요청을 받을 수 있도록 저장소 계정에 대 한 네트워크 규칙을 구성할 수 있습니다. 이러한 네트워크 규칙을 통해 액세스가 허용되는 클라이언트에서 데이터에 액세스하려면 스토리지 계정의 권한 부여 요구 사항을 계속 충족해야 합니다.
 
 각 스토리지 계정은 [IP 네트워크 규칙](#grant-access-from-an-internet-ip-range)과 결합될 수 있는 최대 100개의 가상 네트워크 규칙을 지원합니다.
 
@@ -135,10 +135,10 @@ VNet 내의 Azure Storage에 대해 [서비스 엔드포인트](/azure/virtual-n
 
 가상 네트워크 규칙을 스토리지 계정에 적용하려면 추가되는 서브넷에 대한 적절한 권한이 사용자에게 있어야 합니다. 필요한 권한은 *서브넷에 서비스 조인*이며, *스토리지 계정 기여자* 기본 제공 역할에 포함됩니다. 사용자 지정 역할 정의에 추가할 수도 있습니다.
 
-액세스 권한이 부여 된 저장소 계정 및 가상 네트워크는 다른 Azure AD 테 넌 트의 일부인 구독을 포함 하 여 다른 구독에 있을 수 있습니다.
+액세스 권한이 부여 된 저장소 계정 및 가상 네트워크는 다른 Azure AD 테넌트의 일부인 구독을 포함 하 여 다른 구독에 있을 수 있습니다.
 
 > [!NOTE]
-> 다른 Azure Active Directory 테 넌 트에 속한 가상 네트워크의 서브넷에 대 한 액세스 권한을 부여 하는 규칙 구성은 현재 Powershell, CLI 및 REST Api를 통해서만 지원 됩니다. 이러한 규칙은 포털에서 볼 수 있지만 Azure Portal를 통해 구성할 수 없습니다.
+> 다른 Azure Active Directory 테넌트에 속한 가상 네트워크의 서브넷에 대 한 액세스 권한을 부여 하는 규칙 구성은 현재 Powershell, CLI 및 REST Api를 통해서만 지원 됩니다. 이러한 규칙은 포털에서 볼 수 있지만 Azure Portal를 통해 구성할 수 없습니다.
 
 ### <a name="managing-virtual-network-rules"></a>가상 네트워크 규칙 관리
 
@@ -157,7 +157,7 @@ Azure Portal, PowerShell 또는 CLIv2를 통해 스토리지 계정에 대한 �
     > [!NOTE]
     > 이전에 Azure Storage에 대한 서비스 엔드포인트가 선택한 가상 네트워크 및 서브넷에 구성되지 않은 경우 이 작업의 일환으로 구성할 수 있습니다.
     >
-    > 현재는 규칙을 만드는 동안 동일한 Azure Active Directory 테 넌 트에 속한 가상 네트워크만 선택할 수 있도록 표시 됩니다. 다른 테 넌 트에 속한 가상 네트워크의 서브넷에 대 한 액세스 권한을 부여 하려면 Powershell, CLI 또는 REST Api를 사용 하세요.
+    > 현재는 규칙을 만드는 동안 동일한 Azure Active Directory 테넌트에 속한 가상 네트워크만 선택할 수 있도록 표시 됩니다. 다른 테넌트에 속한 가상 네트워크의 서브넷에 대 한 액세스 권한을 부여 하려면 Powershell, CLI 또는 REST Api를 사용 하세요.
 
 1. 가상 네트워크 또는 서브넷 규칙을 제거하려면 **...** 를 클릭하여 가상 네트워크 또는 서브넷에 대한 상황에 맞는 메뉴를 열고 **제거**를 클릭합니다.
 
@@ -187,7 +187,7 @@ Azure Portal, PowerShell 또는 CLIv2를 통해 스토리지 계정에 대한 �
     ```
 
     > [!TIP]
-    > 다른 Azure AD 테 넌 트에 속한 VNet의 서브넷에 대 한 네트워크 규칙을 추가 하려면 "/subscriptions/subscription-ID/resourceGroups/resourceGroup-Name/providers/Microsoft.Network/virtualNetworks/vNet-name/subnets/subnet-name" 형식으로 정규화 된 **VirtualNetworkResourceId** 매개 변수를 사용 합니다.
+    > 다른 Azure AD 테넌트에 속한 VNet의 서브넷에 대 한 네트워크 규칙을 추가 하려면 "/subscriptions/subscription-ID/resourceGroups/resourceGroup-Name/providers/Microsoft.Network/virtualNetworks/vNet-name/subnets/subnet-name" 형식으로 정규화 된 **VirtualNetworkResourceId** 매개 변수를 사용 합니다.
 
 1. 가상 네트워크 및 서브넷에 대한 네트워크 규칙을 제거합니다.
 
@@ -223,9 +223,9 @@ Azure Portal, PowerShell 또는 CLIv2를 통해 스토리지 계정에 대한 �
     ```
 
     > [!TIP]
-    > 다른 Azure AD 테 넌 트에 속한 VNet의 서브넷에 대 한 규칙을 추가 하려면 "/subscriptions/\<subscription-ID\>/Wsourceg/\<resourceGroup-Name\>/providers/Microsoft.Network/virtualNetworks/\<vNet-name\>/subnets/\<" 형식으로 정규화 된 서브넷 ID를 사용 합니다.
+    > 다른 Azure AD 테넌트에 속한 VNet의 서브넷에 대 한 규칙을 추가 하려면 "/subscriptions/\<subscription-ID\>/Wsourceg/\<resourceGroup-Name\>/providers/Microsoft.Network/virtualNetworks/\<vNet-name\>/subnets/\<" 형식으로 정규화 된 서브넷 ID를 사용 합니다.
     >
-    > **Subscription** 매개 변수를 사용 하 여 다른 Azure AD 테 넌 트에 속한 VNet의 서브넷 ID를 검색할 수 있습니다.
+    > **Subscription** 매개 변수를 사용 하 여 다른 Azure AD 테넌트에 속한 VNet의 서브넷 ID를 검색할 수 있습니다.
 
 1. 가상 네트워크 및 서브넷에 대한 네트워크 규칙을 제거합니다.
 

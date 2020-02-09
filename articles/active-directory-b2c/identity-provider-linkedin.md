@@ -22,7 +22,7 @@ ms.locfileid: "76847720"
 
 ## <a name="create-a-linkedin-application"></a>LinkedIn 애플리케이션 만들기
 
-LinkedIn 계정을 Azure Active Directory B2C (Azure AD B2C)에서 [id 공급자로](authorization-code-flow.md) 사용 하려면 테 넌 트에서 응용 프로그램을 나타내는 응용 프로그램을 만들어야 합니다. LinkedIn 계정이 아직 없는 경우 [https://www.linkedin.com/](https://www.linkedin.com/)에서 등록할 수 있습니다.
+LinkedIn 계정을 Azure Active Directory B2C (Azure AD B2C)에서 [id 공급자로](authorization-code-flow.md) 사용 하려면 테넌트에서 응용 프로그램을 나타내는 응용 프로그램을 만들어야 합니다. LinkedIn 계정이 아직 없는 경우 [https://www.linkedin.com/](https://www.linkedin.com/)에서 등록할 수 있습니다.
 
 1. LinkedIn 계정 자격 증명을 사용하여 [LinkedIn 개발자 웹 사이트](https://www.developer.linkedin.com/)에 로그인합니다.
 1. **내 앱**을 선택하고 **애플리케이션 만들기**를 클릭합니다.

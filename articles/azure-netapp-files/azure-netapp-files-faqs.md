@@ -1,6 +1,6 @@
 ---
-title: Azure NetApp Files에 대 한 Faq | Microsoft Docs
-description: Azure NetApp Files에 대 한 질문과 대답입니다.
+title: Azure NetApp Files에 대한 Faq | Microsoft Docs
+description: Azure NetApp Files에 대한 질문과 대답입니다.
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -21,9 +21,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 02/06/2020
 ms.locfileid: "77048821"
 ---
-# <a name="faqs-about-azure-netapp-files"></a>Azure NetApp Files에 대 한 Faq
+# <a name="faqs-about-azure-netapp-files"></a>Azure NetApp Files에 대한 Faq
 
-이 문서에서는 Azure NetApp Files에 대 한 Faq (질문과 대답)에 답변 합니다. 
+이 문서에서는 Azure NetApp Files에 대한 Faq (질문과 대답)에 답변 합니다. 
 
 ## <a name="networking-faqs"></a>네트워킹 Faq
 
@@ -31,26 +31,26 @@ ms.locfileid: "77048821"
 
 No. NFS 데이터 경로는 인터넷을 통해 이동 하지 않습니다. Azure NetApp Files은 서비스를 사용할 수 있는 Azure Virtual Network (VNet)에 배포 되는 Azure native service입니다. Azure NetApp Files는 위임 된 서브넷을 사용 하 고 VNet에서 직접 네트워크 인터페이스를 프로 비전 합니다. 
 
-자세한 내용은 [Azure NetApp Files 네트워크 계획에 대 한 지침](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-network-topologies) 을 참조 하세요.  
+자세한 내용은 [Azure NetApp Files 네트워크 계획에 대한 지침](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-network-topologies) 을 참조 하세요.  
 
 ### <a name="can-i-connect-a-vnet-that-i-already-created-to-the-azure-netapp-files-service"></a>이미 만든 VNet을 Azure NetApp Files 서비스에 연결할 수 있나요?
 
 예, 만든 Vnet을 서비스에 연결할 수 있습니다. 
 
-자세한 내용은 [Azure NetApp Files 네트워크 계획에 대 한 지침](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-network-topologies) 을 참조 하세요.  
+자세한 내용은 [Azure NetApp Files 네트워크 계획에 대한 지침](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-network-topologies) 을 참조 하세요.  
 
 ### <a name="can-i-mount-an-nfs-volume-of-azure-netapp-files-using-dns-fqdn-name"></a>DNS FQDN 이름을 사용 하 여 Azure NetApp Files의 NFS 볼륨을 탑재할 수 있나요?
 
-예, 필요한 DNS 항목을 만드는 경우 수행할 수 있습니다. Azure NetApp Files는 프로 비전 된 볼륨에 대 한 서비스 IP를 제공 합니다. 
+예, 필요한 DNS 항목을 만드는 경우 수행할 수 있습니다. Azure NetApp Files는 프로 비전 된 볼륨에 대한 서비스 IP를 제공 합니다. 
 
 > [!NOTE] 
-> 필요에 따라 서비스에 대 한 추가 Ip를 배포할 수 Azure NetApp Files.  DNS 항목을 정기적으로 업데이트 해야 할 수 있습니다.
+> 필요에 따라 서비스에 대한 추가 Ip를 배포할 수 Azure NetApp Files.  DNS 항목을 정기적으로 업데이트 해야 할 수 있습니다.
 
 ## <a name="security-faqs"></a>보안 FAQ
 
 ### <a name="can-the-network-traffic-between-the-azure-vm-and-the-storage-be-encrypted"></a>Azure VM과 저장소 간의 네트워크 트래픽이 암호화 될 수 있나요?
 
-데이터 트래픽 (NFSv3, NFSv 4.1 또는 SMBv3 client에서 Azure NetApp Files 볼륨으로의 트래픽)은 암호화 되지 않습니다. 그러나 Azure VM (NFS 또는 SMB 클라이언트를 실행 하는)에서 Azure NetApp Files로의 트래픽은 다른 Azure VM 간 트래픽과도 안전 합니다. 이 트래픽은 Azure 데이터 센터 네트워크에 대 한 로컬 트래픽입니다. 
+데이터 트래픽 (NFSv3, NFSv 4.1 또는 SMBv3 client에서 Azure NetApp Files 볼륨으로의 트래픽)은 암호화 되지 않습니다. 그러나 Azure VM (NFS 또는 SMB 클라이언트를 실행 하는)에서 Azure NetApp Files로의 트래픽은 다른 Azure VM 간 트래픽과도 안전 합니다. 이 트래픽은 Azure 데이터 센터 네트워크에 대한 로컬 트래픽입니다. 
 
 ### <a name="can-the-storage-be-encrypted-at-rest"></a>미사용 저장소를 암호화할 수 있나요?
 
@@ -58,11 +58,11 @@ No. NFS 데이터 경로는 인터넷을 통해 이동 하지 않습니다. Azur
 
 ### <a name="how-are-encryption-keys-managed"></a>암호화 키는 어떻게 관리 되나요? 
 
-Azure NetApp Files에 대 한 키 관리는 서비스에 의해 처리 됩니다. 각 볼륨에 대해 고유한 XTS-256 데이터 암호화 키가 생성 됩니다. 암호화 키 계층은 모든 볼륨 키를 암호화 하 고 보호 하는 데 사용 됩니다. 이러한 암호화 키는 암호화 되지 않은 형식으로 표시 되거나 보고 되지 않습니다. 볼륨을 삭제 하면 암호화 키가 즉시 삭제 됩니다.
+Azure NetApp Files에 대한 키 관리는 서비스에 의해 처리 됩니다. 각 볼륨에 대해 고유한 XTS-256 데이터 암호화 키가 생성 됩니다. 암호화 키 계층은 모든 볼륨 키를 암호화 하 고 보호 하는 데 사용 됩니다. 이러한 암호화 키는 암호화 되지 않은 형식으로 표시 되거나 보고 되지 않습니다. 볼륨을 삭제 하면 암호화 키가 즉시 삭제 됩니다.
 
 현재 사용자가 관리 하는 키 (사용자 고유의 키로 가져오기)는 지원 되지 않습니다.
 
-### <a name="can-i-configure-the-nfs-export-policy-rules-to-control-access-to-the-azure-netapp-files-service-mount-target"></a>Azure NetApp Files service mount 대상에 대 한 액세스를 제어 하도록 NFS 내보내기 정책 규칙을 구성할 수 있나요?
+### <a name="can-i-configure-the-nfs-export-policy-rules-to-control-access-to-the-azure-netapp-files-service-mount-target"></a>Azure NetApp Files service mount 대상에 대한 액세스를 제어 하도록 NFS 내보내기 정책 규칙을 구성할 수 있나요?
 
 
 예, 단일 NFS 내보내기 정책에서 최대 5 개의 규칙을 구성할 수 있습니다.
@@ -97,7 +97,7 @@ Azure NetApp Files에 대 한 키 관리는 서비스에 의해 처리 됩니다
 
 ### <a name="how-do-i-monitor-azure-netapp-files-performance"></a>어떻게 할까요? Azure NetApp Files 성능 모니터링
 
-Azure NetApp Files는 볼륨 성능 메트릭을 제공 합니다. Azure NetApp Files에 대 한 사용 메트릭을 모니터링 하는 Azure Monitor 사용할 수도 있습니다.  Azure NetApp Files에 대 한 성능 메트릭 목록은 [Azure NetApp Files 메트릭](azure-netapp-files-metrics.md) 을 참조 하세요.
+Azure NetApp Files는 볼륨 성능 메트릭을 제공 합니다. Azure NetApp Files에 대한 사용 메트릭을 모니터링 하는 Azure Monitor 사용할 수도 있습니다.  Azure NetApp Files에 대한 성능 메트릭 목록은 [Azure NetApp Files 메트릭](azure-netapp-files-metrics.md) 을 참조 하세요.
 
 ## <a name="nfs-faqs"></a>NFS Faq
 
@@ -105,7 +105,7 @@ Azure NetApp Files는 볼륨 성능 메트릭을 제공 합니다. Azure NetApp 
 
 VM 시작 또는 다시 부팅 시 NFS 볼륨이 자동으로 탑재 되도록 하려면 호스트의 `/etc/fstab` 파일에 항목을 추가 합니다. 
 
-자세한 내용은 [Windows 또는 Linux 가상 머신에 대 한 볼륨 탑재 또는 분리](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md) 를 참조 하세요.  
+자세한 내용은 [Windows 또는 Linux 가상 머신에 대한 볼륨 탑재 또는 분리](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md) 를 참조 하세요.  
 
 ### <a name="why-does-the-df-command-on-nfs-client-not-show-the-provisioned-volume-size"></a>NFS 클라이언트의 DF 명령이 프로 비전 된 볼륨 크기를 표시 하지 않는 이유는 무엇 인가요?
 
@@ -137,9 +137,9 @@ AD 연결은 NetApp 계정에 따라 구성 됩니다. AD 연결은 생성 된 N
 
 ### <a name="does-azure-netapp-files-support-azure-active-directory"></a>Azure Active Directory 지원 Azure NetApp Files? 
 
-[AD (Azure Active Directory) 도메인 서비스](https://docs.microsoft.com/azure/active-directory-domain-services/overview) 와 [Active Directory Domain Services (AD DS)](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) 이 둘 다 지원 됩니다. Azure NetApp Files에서 기존 Active Directory 도메인 컨트롤러를 사용할 수 있습니다. 도메인 컨트롤러는 Azure에서 가상 머신으로 또는 Express 경로 또는 S2S VPN을 통해 온-프레미스에 상주할 수 있습니다. Azure NetApp Files은 현재 [Azure Active Directory](https://azure.microsoft.com/resources/videos/azure-active-directory-overview/) 에 대 한 AD 조인을 지원 하지 않습니다.
+[AD (Azure Active Directory) 도메인 서비스](https://docs.microsoft.com/azure/active-directory-domain-services/overview) 와 [Active Directory Domain Services (AD DS)](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) 이 둘 다 지원 됩니다. Azure NetApp Files에서 기존 Active Directory 도메인 컨트롤러를 사용할 수 있습니다. 도메인 컨트롤러는 Azure에서 가상 머신으로 또는 Express 경로 또는 S2S VPN을 통해 온-프레미스에 상주할 수 있습니다. Azure NetApp Files은 현재 [Azure Active Directory](https://azure.microsoft.com/resources/videos/azure-active-directory-overview/) 에 대한 AD 조인을 지원 하지 않습니다.
 
-Azure Active Directory Domain Services에서 Azure NetApp Files를 사용 하는 경우 NetApp 계정에 대 한 Active Directory를 구성할 때 조직 구성 단위 경로가 `OU=AADDC Computers` 됩니다.
+Azure Active Directory Domain Services에서 Azure NetApp Files를 사용 하는 경우 NetApp 계정에 대한 Active Directory를 구성할 때 조직 구성 단위 경로가 `OU=AADDC Computers` 됩니다.
 
 ### <a name="what-versions-of-windows-server-active-directory-are-supported"></a>지원 되는 Windows Server Active Directory 버전은 무엇 인가요?
 
@@ -151,9 +151,9 @@ SMB 클라이언트에서 보고 하는 볼륨 크기는 Azure NetApp Files 볼�
 
 ## <a name="capacity-management-faqs"></a>용량 관리 Faq
 
-### <a name="how-do-i-monitor-usage-for-capacity-pool-and-volume-of-azure-netapp-files"></a>용량 풀 및 Azure NetApp Files 볼륨에 대 한 사용량을 모니터링 어떻게 할까요?? 
+### <a name="how-do-i-monitor-usage-for-capacity-pool-and-volume-of-azure-netapp-files"></a>용량 풀 및 Azure NetApp Files 볼륨에 대한 사용량을 모니터링 어떻게 할까요?? 
 
-Azure NetApp Files는 용량 풀 및 볼륨 사용 메트릭을 제공 합니다. Azure Monitor를 사용 하 여 Azure NetApp Files에 대 한 사용량을 모니터링할 수도 있습니다. 자세한 내용은 [Azure NetApp Files에 대 한 메트릭](azure-netapp-files-metrics.md) 을 참조 하세요. 
+Azure NetApp Files는 용량 풀 및 볼륨 사용 메트릭을 제공 합니다. Azure Monitor를 사용 하 여 Azure NetApp Files에 대한 사용량을 모니터링할 수도 있습니다. 자세한 내용은 [Azure NetApp Files에 대한 메트릭](azure-netapp-files-metrics.md) 을 참조 하세요. 
 
 ### <a name="can-i-manage-azure-netapp-files-through-azure-storage-explorer"></a>Azure Storage 탐색기를 통해 Azure NetApp Files를 관리할 수 있나요?
 
@@ -168,7 +168,7 @@ NetApp은 SaaS 기반 솔루션인 [Netapp Cloud Sync](https://cloud.netapp.com/
 
 광범위 한 무료 도구를 사용 하 여 데이터를 복사할 수도 있습니다. NFS의 경우 [rsync](https://rsync.samba.org/examples.html) 와 같은 작업 도구를 사용 하 여 원본 데이터를 Azure NetApp Files 볼륨에 복사 하 고 동기화 할 수 있습니다. SMB의 경우 동일한 방식으로 워크 로드 [robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy) 를 사용할 수 있습니다.  이러한 도구는 파일 또는 폴더 사용 권한을 복제할 수도 있습니다. 
 
-온-프레미스에서 Azure NetApp Files로 데이터 마이그레이션에 대 한 요구 사항은 다음과 같습니다. 
+온-프레미스에서 Azure NetApp Files로 데이터 마이그레이션에 대한 요구 사항은 다음과 같습니다. 
 
 - 대상 Azure 지역에서 Azure NetApp Files를 사용할 수 있는지 확인 합니다.
 - 원본 및 Azure NetApp Files 대상 볼륨 IP 주소 간의 네트워크 연결을 확인 합니다. 온-프레미스와 Azure NetApp Files 서비스 간의 데이터 전송은 Express 경로를 통해 지원 됩니다.
@@ -203,4 +203,4 @@ No. Azure Import/Export 서비스는 현재 Azure NetApp Files을 지원 하지 
 - [Microsoft Azure Virtual Network FAQ](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq)
 - [Azure 지원 요청을 만드는 방법](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)
 - [Azure Data Box](https://docs.microsoft.com/azure/databox-family/)
-- [Azure NetApp Files의 SMB 성능에 대 한 Faq](azure-netapp-files-smb-performance.md)
+- [Azure NetApp Files의 SMB 성능에 대한 Faq](azure-netapp-files-smb-performance.md)

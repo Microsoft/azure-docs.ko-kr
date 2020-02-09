@@ -1,6 +1,6 @@
 ---
 title: 컨테이너 그룹에서 SSL 사용
-description: Azure Container Instances에서 실행 되는 컨테이너 그룹에 대 한 SSL 또는 TLS 끝점을 만듭니다.
+description: Azure Container Instances에서 실행 되는 컨테이너 그룹에 대한 SSL 또는 TLS 엔드포인트을 만듭니다.
 ms.topic: article
 ms.date: 04/03/2019
 ms.openlocfilehash: 541d53a9a9530f7ac80227dbae598b3da2691301
@@ -10,15 +10,15 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/28/2020
 ms.locfileid: "76773068"
 ---
-# <a name="enable-an-ssl-endpoint-in-a-container-group"></a>컨테이너 그룹에서 SSL 끝점 사용
+# <a name="enable-an-ssl-endpoint-in-a-container-group"></a>컨테이너 그룹에서 SSL 엔드포인트 사용
 
-이 문서에서는 응용 프로그램 컨테이너와 SSL 공급자를 실행 하는 사이드카 컨테이너를 사용 하 여 [컨테이너 그룹](container-instances-container-groups.md) 을 만드는 방법을 보여 줍니다. 별도의 SSL 끝점을 사용 하 여 컨테이너 그룹을 설정 하 여 응용 프로그램 코드를 변경 하지 않고 응용 프로그램에 대 한 SSL 연결을 사용 하도록 설정 합니다.
+이 문서에서는 응용 프로그램 컨테이너와 SSL 공급자를 실행 하는 사이드카 컨테이너를 사용 하 여 [컨테이너 그룹](container-instances-container-groups.md) 을 만드는 방법을 보여 줍니다. 별도의 SSL 엔드포인트을 사용 하 여 컨테이너 그룹을 설정 하 여 응용 프로그램 코드를 변경 하지 않고 응용 프로그램에 대한 SSL 연결을 사용 하도록 설정 합니다.
 
 두 개의 컨테이너로 구성 된 예제 컨테이너 그룹을 설정 합니다.
 * 공용 Microsoft [aci-helloworld](https://hub.docker.com/_/microsoft-azuredocs-aci-helloworld) 이미지를 사용 하 여 간단한 웹 앱을 실행 하는 응용 프로그램 컨테이너입니다. 
 * SSL을 사용 하도록 구성 된 public [Nginx](https://hub.docker.com/_/nginx) 이미지를 실행 하는 사이드카 컨테이너 
 
-이 예제에서 컨테이너 그룹은 공용 IP 주소를 사용 하 여 Nginx에 대 한 포트 443만 노출 합니다. Nginx는 포트 80에서 내부적으로 수신 대기 하는 도우미 웹 앱에 대 한 HTTPS 요청을 라우팅합니다. 다른 포트에서 수신 대기 하는 컨테이너 앱에 대 한 예제를 적용할 수 있습니다. 컨테이너 그룹에서 SSL을 사용 하도록 설정 하는 다른 방법은 [다음 단계](#next-steps) 를 참조 하세요.
+이 예제에서 컨테이너 그룹은 공용 IP 주소를 사용 하 여 Nginx에 대한 포트 443만 노출 합니다. Nginx는 포트 80에서 내부적으로 수신 대기 하는 도우미 웹 앱에 대한 HTTPS 요청을 라우팅합니다. 다른 포트에서 수신 대기 하는 컨테이너 앱에 대한 예제를 적용할 수 있습니다. 컨테이너 그룹에서 SSL을 사용 하도록 설정 하는 다른 방법은 [다음 단계](#next-steps) 를 참조 하세요.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -50,13 +50,13 @@ openssl x509 -req -days 365 -in ssl.csr -signkey ssl.key -out ssl.crt
 
 ### <a name="create-nginx-configuration-file"></a>Nginx 구성 파일 만들기
 
-이 섹션에서는 SSL을 사용 하기 위해 Nginx에 대 한 구성 파일을 만듭니다. `nginx.conf`이라는 새 파일에 다음 텍스트를 복사 하 여 시작 합니다. Azure Cloud Shell에서 Visual Studio Code를 사용 하 여 작업 디렉터리에 파일을 만들 수 있습니다.
+이 섹션에서는 SSL을 사용 하기 위해 Nginx에 대한 구성 파일을 만듭니다. `nginx.conf`이라는 새 파일에 다음 텍스트를 복사 하 여 시작 합니다. Azure Cloud Shell에서 Visual Studio Code를 사용 하 여 작업 디렉터리에 파일을 만들 수 있습니다.
 
 ```console
 code nginx.conf
 ```
 
-`location`에서 `proxy_pass`를 앱에 대 한 올바른 포트로 설정 해야 합니다. 이 예제에서는 `aci-helloworld` 컨테이너에 대해 포트 80을 설정 합니다.
+`location`에서 `proxy_pass`를 앱에 대한 올바른 포트로 설정 해야 합니다. 이 예제에서는 `aci-helloworld` 컨테이너에 대해 포트 80을 설정 합니다.
 
 ```console
 # nginx Configuration File
@@ -231,11 +231,11 @@ app-with-ssl  myresourcegroup  Running   mcr.microsoft.com/azuredocs/nginx, aci-
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서에서는 컨테이너 그룹에서 실행 되는 웹 앱에 대 한 SSL 연결을 사용 하도록 Nginx 컨테이너를 설정 하는 방법을 살펴보았습니다. 포트 80 이외의 포트에서 수신 대기 하는 앱에 대해이 예제를 적용할 수 있습니다. HTTPS를 사용 하도록 Nginx 구성 파일을 업데이트 하 여 포트 80 (HTTP)에서 서버 연결을 자동으로 리디렉션할 수도 있습니다.
+이 문서에서는 컨테이너 그룹에서 실행 되는 웹 앱에 대한 SSL 연결을 사용 하도록 Nginx 컨테이너를 설정 하는 방법을 살펴보았습니다. 포트 80 이외의 포트에서 수신 대기 하는 앱에 대해이 예제를 적용할 수 있습니다. HTTPS를 사용 하도록 Nginx 구성 파일을 업데이트 하 여 포트 80 (HTTP)에서 서버 연결을 자동으로 리디렉션할 수도 있습니다.
 
 이 문서에서는 사이드카의 Nginx를 사용 하지만 [Caddy](https://caddyserver.com/)와 같은 다른 SSL 공급자를 사용할 수 있습니다.
 
-[Azure 가상 네트워크](container-instances-vnet.md)에 컨테이너 그룹을 배포 하는 경우 다음을 포함 하 여 백 엔드 컨테이너 인스턴스에 대해 SSL 끝점을 사용 하도록 설정 하는 다른 옵션을 고려할 수 있습니다.
+[Azure 가상 네트워크](container-instances-vnet.md)에 컨테이너 그룹을 배포 하는 경우 다음을 포함 하 여 백 엔드 컨테이너 인스턴스에 대해 SSL 엔드포인트을 사용 하도록 설정 하는 다른 옵션을 고려할 수 있습니다.
 
 * [Azure Functions 프록시](../azure-functions/functions-proxies.md)
 * [Azure API Management](../api-management/api-management-key-concepts.md)

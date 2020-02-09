@@ -1,5 +1,5 @@
 ---
-title: Azure AD 테 넌 트 앱 클레임 사용자 지정 (Powershell)
+title: Azure AD 테넌트 앱 클레임 사용자 지정 (Powershell)
 titleSuffix: Microsoft identity platform
 description: 이 페이지에서는 Azure Active Directory 클레임 매핑을 설명합니다.
 services: active-directory

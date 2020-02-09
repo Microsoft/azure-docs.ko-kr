@@ -62,7 +62,7 @@ map.layers.add(new atlas.layer.ImageLayer({
 
 ## <a name="import-a-kml-file-as-ground-overlay"></a>KML 파일을 그라운드 오버레이로 가져오기
 
-다음 샘플에서는 KML 그라운드 오버레이 정보를 지도에 이미지 계층으로 오버레이 하는 방법을 보여 줍니다. KML 접지 오버레이는 북쪽, 남쪽, 동쪽 및 서쪽 좌표를 제공 하는 반면, 이미지 계층에는 이미지의 각 모퉁이에 대 한 좌표가 필요 합니다. 이 샘플의 KML 그라운드 오버레이는 Chartres cathedral이 고 [Wikimedia](https://commons.wikimedia.org/wiki/File:Chartres.svg/overlay.kml)의 원본입니다.
+다음 샘플에서는 KML 그라운드 오버레이 정보를 지도에 이미지 계층으로 오버레이 하는 방법을 보여 줍니다. KML 접지 오버레이는 북쪽, 남쪽, 동쪽 및 서쪽 좌표를 제공 하는 반면, 이미지 계층에는 이미지의 각 모퉁이에 대한 좌표가 필요 합니다. 이 샘플의 KML 그라운드 오버레이는 Chartres cathedral이 고 [Wikimedia](https://commons.wikimedia.org/wiki/File:Chartres.svg/overlay.kml)의 원본입니다.
 
 다음 코드에서는 [ImageLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer?view=azure-iot-typescript-latest) 클래스의 정적 `getCoordinatesFromEdges` 함수를 사용 합니다. KML 접지 오버레이의 북쪽, 남부, 동부, 서 부 및 회전 정보에서 이미지의 네 모퉁이를 계산 합니다.
 

@@ -36,7 +36,7 @@ ms.locfileid: "77063169"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [Visitly 테 넌 트](https://www.visitly.io/pricing/)
+* [Visitly 테넌트](https://www.visitly.io/pricing/)
 * 관리자 권한이 있는 Visitly의 사용자 계정
 
 ## <a name="assign-users-to-visitly"></a>Visitly에 사용자 할당 
@@ -116,9 +116,9 @@ Azure AD 응용 프로그램 갤러리에서 Visitly를 추가 하려면 다음 
 
     ![프로 비전 모드를 자동으로 설정](common/provisioning-automatic.png)
 
-5. 관리자 자격 증명 섹션 아래에서 **테 넌 트 URL** 및 **암호 토큰**에서 각각 검색 된 `https://api.visitly.io/v1/usersync/SCIM` 및 **API 키** 값을 입력 합니다. **연결 테스트** 를 선택 하 여 Azure AD가 Visitly에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Visitly 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
+5. 관리자 자격 증명 섹션 아래에서 **테넌트 URL** 및 **암호 토큰**에서 각각 검색 된 `https://api.visitly.io/v1/usersync/SCIM` 및 **API 키** 값을 입력 합니다. **연결 테스트** 를 선택 하 여 Azure AD가 Visitly에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Visitly 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 합니다.
 
-    ![테 넌 트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
+    ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 
 6. **알림 전자 메일** 상자에 프로 비전 오류 알림을 받을 개인 또는 그룹의 전자 메일 주소를 입력 합니다. **오류가 발생 하면 전자 메일 알림 보내기** 확인란을 선택 합니다.
 

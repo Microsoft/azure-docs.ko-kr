@@ -33,7 +33,7 @@ ms.locfileid: "77020049"
 * [Azure SQL Database](connector-azure-sql-database.md#mapping-data-flow-properties)
 * [Azure CosmosDB](connector-azure-cosmos-db.md#mapping-data-flow-properties)
 
-이러한 커넥터에 해당 하는 설정은 **설정** 탭에 있습니다. 이러한 설정에 대 한 정보는 커넥터 설명서에 있습니다. 
+이러한 커넥터에 해당 하는 설정은 **설정** 탭에 있습니다. 이러한 설정에 대한 정보는 커넥터 설명서에 있습니다. 
 
 Azure Data Factory는 [90 개의 기본 커넥터](connector-overview.md)에 액세스할 수 있습니다. 데이터 흐름의 다른 원본에 데이터를 쓰려면 복사 작업을 사용 하 여 데이터 흐름이 완료 된 후 지원 되는 준비 영역 중 하나에서 해당 데이터를 로드 합니다.
 
@@ -51,7 +51,7 @@ Azure Data Factory는 [90 개의 기본 커넥터](connector-overview.md)에 액
 
 선택 변환과 마찬가지로 싱크의 **매핑** 탭에서 들어오는 열 중 어떤 열을 쓸지 결정할 수 있습니다. 기본적으로 데이터베이스가 드리프트 열을 포함 하 여 모든 입력 열이 매핑됩니다. 이를 **자동 매핑**이라고 합니다.
 
-자동 매핑을 해제할 때 고정 열 기반 매핑 또는 규칙 기반 매핑을 추가 하는 옵션이 제공 됩니다. 규칙 기반 매핑을 사용 하면 패턴 일치를 포함 하는 식을 작성할 수 있으며 고정 매핑은 논리적 및 물리적 열 이름을 매핑합니다. 규칙 기반 매핑에 대 한 자세한 내용은 [데이터 흐름 매핑의 열 패턴](concepts-data-flow-column-pattern.md#rule-based-mapping-in-select-and-sink)을 참조 하세요.
+자동 매핑을 해제할 때 고정 열 기반 매핑 또는 규칙 기반 매핑을 추가 하는 옵션이 제공 됩니다. 규칙 기반 매핑을 사용 하면 패턴 일치를 포함 하는 식을 작성할 수 있으며 고정 매핑은 논리적 및 물리적 열 이름을 매핑합니다. 규칙 기반 매핑에 대한 자세한 내용은 [데이터 흐름 매핑의 열 패턴](concepts-data-flow-column-pattern.md#rule-based-mapping-in-select-and-sink)을 참조 하세요.
 
 ## <a name="custom-sink-ordering"></a>사용자 지정 싱크 순서 지정
 
@@ -61,7 +61,7 @@ Azure Data Factory는 [90 개의 기본 커넥터](connector-overview.md)에 액
 
 ## <a name="data-preview-in-sink"></a>싱크의 데이터 미리 보기
 
-디버그 클러스터에서 데이터 미리 보기를 가져오는 경우 싱크에 데이터가 기록 되지 않습니다. 데이터의 모양에 대 한 스냅숏은 반환 되지만 대상에는 아무것도 기록 되지 않습니다. 싱크에 대 한 데이터 쓰기를 테스트 하려면 파이프라인 캔버스에서 파이프라인 디버그를 실행 합니다.
+디버그 클러스터에서 데이터 미리 보기를 가져오는 경우 싱크에 데이터가 기록 되지 않습니다. 데이터의 모양에 대한 스냅숏은 반환 되지만 대상에는 아무것도 기록 되지 않습니다. 싱크에 대한 데이터 쓰기를 테스트 하려면 파이프라인 캔버스에서 파이프라인 디버그를 실행 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 이제 데이터 흐름을 만들었으므로 [파이프라인에 데이터 흐름 활동](concepts-data-flow-overview.md)을 추가 합니다.

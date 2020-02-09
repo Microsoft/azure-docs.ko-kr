@@ -128,7 +128,7 @@ Microsoft Authenticator 앱을 사용 하 여 Azure AD에 암호 없는 로그�
 
 * 앱 배포를 용이 하 게 하려면 Microsoft Intune 또는 타사 MDM (모바일 장치 관리) 솔루션을 사용 하 여 장치를 등록 하는 것이 좋습니다.
 
-관리자는 이러한 요구 사항을 충족 한다고 가정 하 고 [Windows PowerShell](../../active-directory/authentication/howto-authentication-passwordless-phone.md) 을 사용 하 여 테 넌 트에서 암호 없는 휴대폰 로그인을 사용 하도록 설정 합니다. 테 넌 트에서 휴대폰 로그인을 사용 하도록 설정 하면 최종 사용자가 앱의 **계정** 화면에서 회사 또는 학교 계정을 선택한 다음 **휴대폰 로그인 사용**을 선택 하 여 휴대폰을 사용 하 여 로그인 하도록 선택할 수 있습니다.
+관리자는 이러한 요구 사항을 충족 한다고 가정 하 고 [Windows PowerShell](../../active-directory/authentication/howto-authentication-passwordless-phone.md) 을 사용 하 여 테넌트에서 암호 없는 휴대폰 로그인을 사용 하도록 설정 합니다. 테넌트에서 휴대폰 로그인을 사용 하도록 설정 하면 최종 사용자가 앱의 **계정** 화면에서 회사 또는 학교 계정을 선택한 다음 **휴대폰 로그인 사용**을 선택 하 여 휴대폰을 사용 하 여 로그인 하도록 선택할 수 있습니다.
 
 관리자가 암호 없는 로그인을 사용 하도록 설정한 경우 최종 사용자는 다음 요구 사항을 충족 해야 합니다.
 
@@ -151,7 +151,7 @@ Microsoft Authenticator 앱을 사용 하 여 Azure AD에 암호 없는 로그�
 
 Azure AD 계정에 로그인 하는 데 Microsoft Authenticator 앱을 암호 없는 솔루션으로 사용 하려면 먼저 관리자와 최종 사용자 모두에 게 단계를 수행 해야 합니다.
 
-먼저 관리자가 Windows PowerShell을 사용 하 여 테 넌 트에서 [앱을 자격 증명으로 사용 하도록 설정](../../active-directory/authentication/howto-authentication-passwordless-phone.md) 해야 합니다. 또한 관리자는 azure MFA (azure Multi-Factor Authentication)에 대 한 최종 사용자를 사용 하도록 설정 하 고 [확인 방법](../../active-directory/authentication/howto-mfa-mfasettings.md#verification-methods)중 하나로 Microsoft Authenticator 앱을 구성 해야 합니다.
+먼저 관리자가 Windows PowerShell을 사용 하 여 테넌트에서 [앱을 자격 증명으로 사용 하도록 설정](../../active-directory/authentication/howto-authentication-passwordless-phone.md) 해야 합니다. 또한 관리자는 azure MFA (azure Multi-Factor Authentication)에 대 한 최종 사용자를 사용 하도록 설정 하 고 [확인 방법](../../active-directory/authentication/howto-mfa-mfasettings.md#verification-methods)중 하나로 Microsoft Authenticator 앱을 구성 해야 합니다.
 
 최종 사용자는 Microsoft Authenticator 앱을 다운로드 하 여 [설치](../../active-directory/user-help/user-help-auth-app-download-install.md) 하 고 Microsoft Authenticator 앱을 확인 방법 중 하나로 사용 하도록 [계정을 설정](../../active-directory/user-help/security-info-setup-auth-app.md) 해야 합니다.
 

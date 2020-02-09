@@ -23,7 +23,7 @@ Azure Key Vault에 자격 증명 또는 암호 값을 저장 하 고 파이프�
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-이 기능은 데이터 팩터리 관리 id에 의존 합니다.  [Data Factory에 대 한 관리 id](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) 에서 작동 하는 방식에 대해 알아보고 데이터 팩터리가 연결 된 것이 있는지 확인 합니다.
+이 기능은 데이터 팩터리 관리 id에 의존 합니다.  [Data Factory에 대한 관리 id](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) 에서 작동 하는 방식에 대해 알아보고 데이터 팩터리가 연결 된 것이 있는지 확인 합니다.
 
 ## <a name="steps"></a>단계
 

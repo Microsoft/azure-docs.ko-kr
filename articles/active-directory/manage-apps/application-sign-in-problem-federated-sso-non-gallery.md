@@ -164,7 +164,7 @@ Azure AD에서는 Single Sign-On의 애플리케이션에서 보낸 SAML 요청�
 
 ## <a name="misconfigured-application"></a>잘못 구성 되는 응용 프로그램
 
-*오류 AADSTS650056: 잘못 구성 되었습니다. 클라이언트의 응용 프로그램 등록에서 요청 된 사용 권한의 ' AAD Graph '에 대 한 사용 권한이 클라이언트에 나열 되지 않았기 때문일 수 있습니다. 또는 관리자가 테 넌 트에서 동의한 하지 않았습니다. 또는 요청에서 응용 프로그램 식별자가 구성 된 클라이언트 응용 프로그램 식별자와 일치 하는지 확인 합니다. 관리자에 게 문의 하 여 테 넌 트를 대신 하 여 구성을 수정 하거나 동의 하세요*.
+*오류 AADSTS650056: 잘못 구성 되었습니다. 클라이언트의 응용 프로그램 등록에서 요청 된 사용 권한의 ' AAD Graph '에 대 한 사용 권한이 클라이언트에 나열 되지 않았기 때문일 수 있습니다. 또는 관리자가 테넌트에서 동의한 하지 않았습니다. 또는 요청에서 응용 프로그램 식별자가 구성 된 클라이언트 응용 프로그램 식별자와 일치 하는지 확인 합니다. 관리자에 게 문의 하 여 테넌트를 대신 하 여 구성을 수정 하거나 동의 하세요*.
 
 **가능한 원인**
 
@@ -238,7 +238,7 @@ Azure AD가 HTTP 요청의 URL 매개 변수 내에서 SAML 요청을 식별할 
 
 응용 프로그램은 HTTP 리디렉션 바인딩을 사용 하 여 location 헤더로 인코드된 SAML 요청을 보내야 합니다. 구현 방법에 대한 자세한 내용은 [SAML 프로토콜 사양 문서](https://docs.oasis-open.org/security/saml/v2.0/saml-bindings-2.0-os.pdf)의 HTTP 리디렉션 바인딩 섹션을 참조하세요.
 
-## <a name="azure-ad-is-sending-the-token-to-an-incorrect-endpoint"></a>Azure AD가 토큰을 잘못 된 끝점으로 보내고 있습니다.
+## <a name="azure-ad-is-sending-the-token-to-an-incorrect-endpoint"></a>Azure AD가 토큰을 잘못 된 엔드포인트으로 보내고 있습니다.
 
 **가능한 원인**
 

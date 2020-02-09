@@ -21,7 +21,7 @@ ms.locfileid: "73847325"
 > [!NOTE]
 > Azure 디스크는 *액세스 모드* 형식 *ReadWriteOnce*만 사용하여 탑재할 수 있으며, 이렇게 탑재한 디스크는 AKS의 한 Pod에서만 사용 가능합니다. 여러 pod에서 영구적 볼륨을 공유 해야 하는 경우 [Azure Files][azure-files-pvc]를 사용 합니다.
 
-Kubernetes 볼륨에 대 한 자세한 내용은 [AKS의 응용 프로그램에 대 한 저장소 옵션][concepts-storage]을 참조 하세요.
+Kubernetes 볼륨에 대한 자세한 내용은 [AKS의 응용 프로그램에 대한 저장소 옵션][concepts-storage]을 참조 하세요.
 
 ## <a name="before-you-begin"></a>시작하기 전에
 
@@ -31,7 +31,7 @@ Kubernetes 볼륨에 대 한 자세한 내용은 [AKS의 응용 프로그램에 
 
 ## <a name="built-in-storage-classes"></a>기본 제공 스토리지 클래스
 
-스토리지 클래스를 사용하여 영구적 볼륨에서 스토리지 단위를 동적으로 생성되는 방법을 정의합니다. Kubernetes 저장소 클래스에 대 한 자세한 내용은 [Kubernetes 저장소 클래스][kubernetes-storage-classes]를 참조 하세요.
+스토리지 클래스를 사용하여 영구적 볼륨에서 스토리지 단위를 동적으로 생성되는 방법을 정의합니다. Kubernetes 저장소 클래스에 대한 자세한 내용은 [Kubernetes 저장소 클래스][kubernetes-storage-classes]를 참조 하세요.
 
 모든 AKS 클러스터에는 Azure 디스크에서 작동하도록 구성된 2개의 미리 만들어진 스토리지 클래스가 포함되어 있습니다.
 
@@ -40,7 +40,7 @@ Kubernetes 볼륨에 대 한 자세한 내용은 [AKS의 응용 프로그램에 
 * *managed-premium* 스토리지 클래스는 프리미엄 Azure 디스크를 프로비전합니다.
     * 프리미엄 디스크는 SSD 기반 고성능의 대기 시간이 짧은 디스크에서 지원합니다. 프로덕션 워크로드를 실행하는 VM에 완벽한 디스크입니다. 클러스터의 AKS 노드가 Premium Storage를 사용하는 경우 *managed-premium* 클래스를 선택합니다.
     
-이러한 기본 저장소 클래스를 사용 하면 만든 볼륨 크기를 업데이트할 수 없습니다. 이 기능을 사용 하도록 설정 하려면 기본 저장소 클래스 중 하나에 *allowVolumeExpansion: true* 줄을 추가 하거나 사용자 지정 저장소 클래스를 직접 만듭니다. `kubectl edit sc` 명령을 사용 하 여 기존 저장소 클래스를 편집할 수 있습니다. 저장소 클래스에 대 한 자세한 내용 및 직접 만들기에 대 한 자세한 내용은 [AKS의 응용 프로그램에 대 한 저장소 옵션][storage-class-concepts]을 참조 하세요.
+이러한 기본 저장소 클래스를 사용 하면 만든 볼륨 크기를 업데이트할 수 없습니다. 이 기능을 사용 하도록 설정 하려면 기본 저장소 클래스 중 하나에 *allowVolumeExpansion: true* 줄을 추가 하거나 사용자 지정 저장소 클래스를 직접 만듭니다. `kubectl edit sc` 명령을 사용 하 여 기존 저장소 클래스를 편집할 수 있습니다. 저장소 클래스에 대한 자세한 내용 및 직접 만들기에 대한 자세한 내용은 [AKS의 응용 프로그램에 대한 저장소 옵션][storage-class-concepts]을 참조 하세요.
 
 [Kubectl get sc][kubectl-get] 명령을 사용 하 여 미리 만든 저장소 클래스를 확인 합니다. 다음 예제에서는 AKS 클러스터 내에서 사용할 수 있는 미리 생성된 스토리지 클래스를 보여 줍니다.
 
@@ -253,12 +253,12 @@ Volumes:
 
 ## <a name="next-steps"></a>다음 단계
 
-관련 모범 사례는 [AKS의 저장소 및 백업에 대 한 모범 사례][operator-best-practices-storage]를 참조 하세요.
+관련 모범 사례는 [AKS의 저장소 및 백업에 대한 모범 사례][operator-best-practices-storage]를 참조 하세요.
 
 Azure 디스크를 사용하는 Kubernetes 영구적 볼륨에 대해 자세히 알아봅니다.
 
 > [!div class="nextstepaction"]
-> [Azure 디스크에 대 한 Kubernetes 플러그 인][azure-disk-volume]
+> [Azure 디스크에 대한 Kubernetes 플러그 인][azure-disk-volume]
 
 <!-- LINKS - external -->
 [access-modes]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes

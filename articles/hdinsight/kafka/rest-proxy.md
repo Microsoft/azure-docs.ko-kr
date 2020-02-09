@@ -22,7 +22,7 @@ Kafka REST 프록시를 사용 하면 HTTP를 통해 REST API를 통해 Kafka �
 
 ### <a name="architecture"></a>Architecture
 
-REST 프록시가 없으면 Kafka 클라이언트는 Kafka 클러스터 또는 피어 링 VNet과 동일한 VNet에 있어야 합니다. REST 프록시를 사용 하면 어디에 있든 데이터 생산자 나 소비자를 연결할 수 있습니다. REST 프록시를 배포 하면 클러스터에 대 한 새 공용 끝점이 생성 되어 포털 설정에서 찾을 수 있습니다.
+REST 프록시가 없으면 Kafka 클라이언트는 Kafka 클러스터 또는 피어 링 VNet과 동일한 VNet에 있어야 합니다. REST 프록시를 사용 하면 어디에 있든 데이터 생산자 나 소비자를 연결할 수 있습니다. REST 프록시를 배포 하면 클러스터에 대 한 새 공용 엔드포인트이 생성 되어 포털 설정에서 찾을 수 있습니다.
 
 API에서 지원 되는 작업의 전체 사양은 [APACHE KAFKA REST 프록시 API](https://docs.microsoft.com/rest/api/hdinsight-kafka-rest-proxy)를 참조 하세요.
 
@@ -30,9 +30,9 @@ API에서 지원 되는 작업의 전체 사양은 [APACHE KAFKA REST 프록시 
 
 Kafka REST 프록시에 대 한 액세스는 Azure Active Directory 보안 그룹을 사용 하 여 관리 됩니다. 자세한 내용은 [Azure Active Directory 그룹을 사용 하 여 앱 및 리소스 액세스 관리](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-manage-groups)를 참조 하세요.
 
-REST 프록시를 사용 하도록 설정 하 고 Kafka 클러스터를 만들 때 REST 끝점에 대 한 액세스 권한이 있어야 하는 AAD 보안 그룹을 제공 합니다. REST 프록시에 액세스 해야 하는 Kafka 클라이언트 (응용 프로그램)는 그룹 소유자가이 그룹에 등록 해야 합니다. 그룹 소유자는 포털을 통해 또는 Powershell을 통해이 작업을 수행할 수 있습니다.
+REST 프록시를 사용 하도록 설정 하 고 Kafka 클러스터를 만들 때 REST 엔드포인트에 대 한 액세스 권한이 있어야 하는 AAD 보안 그룹을 제공 합니다. REST 프록시에 액세스 해야 하는 Kafka 클라이언트 (응용 프로그램)는 그룹 소유자가이 그룹에 등록 해야 합니다. 그룹 소유자는 포털을 통해 또는 Powershell을 통해이 작업을 수행할 수 있습니다.
 
-REST 프록시 끝점에 요청을 하기 전에 클라이언트 응용 프로그램은 적절 한 보안 그룹의 멤버 자격을 확인 하기 위해 OAuth 토큰을 가져와야 합니다. OAuth 토큰의 작동 방식에 대 한 자세한 내용은 [oauth 2.0 코드 부여 흐름을 사용 하 여 Azure Active Directory 웹 응용 프로그램에 대 한 액세스 권한 부여](../../active-directory/develop/v1-protocols-oauth-code.md)를 참조 하세요. Python에서 OAuth 토큰을 가져오는 예제는 [클라이언트 응용 프로그램 샘플](#client-application-sample) 을 참조 하세요.
+REST 프록시 엔드포인트에 요청을 하기 전에 클라이언트 응용 프로그램은 적절 한 보안 그룹의 멤버 자격을 확인 하기 위해 OAuth 토큰을 가져와야 합니다. OAuth 토큰의 작동 방식에 대 한 자세한 내용은 [oauth 2.0 코드 부여 흐름을 사용 하 여 Azure Active Directory 웹 응용 프로그램에 대 한 액세스 권한 부여](../../active-directory/develop/v1-protocols-oauth-code.md)를 참조 하세요. Python에서 OAuth 토큰을 가져오는 예제는 [클라이언트 응용 프로그램 샘플](#client-application-sample) 을 참조 하세요.
 
 클라이언트 응용 프로그램에 OAuth 토큰이 있으면 REST 프록시에 대 한 HTTP 요청에서 해당 토큰을 전달 해야 합니다.
 
@@ -117,7 +117,7 @@ print(response.content)
 1. Python이 설치 된 컴퓨터에 샘플 코드를 저장 합니다.
 1. `pip3 install adal` 및 `pip install msrestazure`를 실행 하 여 필요한 python 종속성을 설치 합니다.
 1. 코드를 수정 하 고 사용자 환경에 대 한 다음 속성을 업데이트 합니다.
-    1.  *테 넌 트 ID* – 구독이 인 Azure 테 넌 트입니다.
+    1.  *테넌트 ID* – 구독이 인 Azure 테넌트입니다.
     1.  *클라이언트 id* – 보안 그룹에 등록 한 응용 프로그램의 id입니다.
     1.  *클라이언트 암호* -보안 그룹에 등록 한 응용 프로그램에 대 한 암호입니다.
     1.  *Kafkarest_endpoint* – [배포 섹션](#create-a-kafka-cluster-with-rest-proxy-enabled)에 설명 된 대로 클러스터 개요의 "속성" 탭에서이 값을 가져옵니다. 다음 형식 이어야 합니다.-`https://<clustername>-kafkarest.azurehdinsight.net`

@@ -150,7 +150,7 @@ Azure Storage 계정 및 컨테이너를 만든 다음, 기본 HTML 및 CSS 파�
 2. 페이지 맨 위에서 **사용자 흐름 실행**을 클릭합니다.
 3. **사용자 흐름 실행** 단추를 클릭합니다.
 
-    ![등록 또는 로그인 사용자 흐름에 대 한 사용자 흐름 페이지를 실행 합니다.](./media/tutorial-customize-ui/run-user-flow.png)
+    ![등록 또는 로그인 사용자 흐름에 대한 사용자 흐름 페이지를 실행 합니다.](./media/tutorial-customize-ui/run-user-flow.png)
 
     생성한 CSS 파일에 따라 요소가 중심에 있는 다음 예제와 유사한 페이지가 표시됩니다.
 

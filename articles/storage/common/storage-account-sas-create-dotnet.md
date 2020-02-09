@@ -53,7 +53,7 @@ static string GetAccountSASToken()
 
 ## <a name="use-an-account-sas-from-a-client"></a>클라이언트에서 계정 SAS 사용
 
-계정 SAS를 사용 하 여 Blob service에 대 한 서비스 수준 Api에 액세스 하려면 SAS 및 저장소 계정에 대 한 Blob storage 끝점을 사용 하 여 Blob service client 개체를 생성 합니다. 꺾쇠 괄호로 묶인 자리 표시자 값을 사용자 고유의 값으로 바꿔야 합니다.
+계정 SAS를 사용 하 여 Blob service에 대 한 서비스 수준 Api에 액세스 하려면 SAS 및 저장소 계정에 대 한 Blob storage 엔드포인트을 사용 하 여 Blob service client 개체를 생성 합니다. 꺾쇠 괄호로 묶인 자리 표시자 값을 사용자 고유의 값으로 바꿔야 합니다.
 
 ```csharp
 static void UseAccountSAS(string sasToken)

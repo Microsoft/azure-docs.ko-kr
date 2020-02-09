@@ -64,7 +64,7 @@ ms.locfileid: "73826127"
 | **드라이브 ARM 템플릿 테스트\***     | 앱용 Azure Resource Manager 템플릿을 포함하는 압축(.zip) 파일을 업로드합니다. 자세한 내용은 [Azure Resource Manager 시험 사용](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/test-drive/azure-resource-manager-test-drive)을 참조하세요. |
 | **액세스 정보\***          | 고객이 시험 사용을 가져오면 액세스 정보를 제공합니다. 예를 들어 시험 사용에 액세스하기 위한 URL, 로그인 정보가 여기에 해당합니다. 에서 수집된 앱의 원격 분석을 통해 유용한 쿼리를 실행할 수 있습니다. 기본 HTML 태그를 사용하여 이 설명의 서식을 지정할 수 있습니다. 예: &lt;p&gt;, &lt;em&gt;, &lt;ul&gt;, &lt;li&gt;, &lt;ol&gt; 및 제목 |
 | **Azure 구독 Id\***       | Azure 서비스 및 Azure Portal 액세스 권한을 부여합니다. 해당 구독에서 리소스 사용량이 보고되며 서비스 대금이 청구됩니다. 테스트 드라이브만을 위한 별도의 Azure 구독이 아직 없는 경우 구독을 만듭니다.  |
-| **Azure AD 테 넌 트 Id\***          | Azure Active Directory의 기존 테넌트를 제공하거나 이 시험 사용을 위한 테넌트를 만듭니다.  |
+| **Azure AD 테넌트 Id\***          | Azure Active Directory의 기존 테넌트를 제공하거나 이 시험 사용을 위한 테넌트를 만듭니다.  |
 | **Azure AD 앱 Id\***             | 새 애플리케이션을 만들고 등록합니다. Microsoft는 이 애플리케이션을 사용하여 시험 사용 인스턴스에 대한 작업을 수행합니다.  |
 | **Azure AD 앱 키\***            | 앱에 대한 인증 키를 만들고 이 필드에 붙여 넣습니다.   |
 |  |  |

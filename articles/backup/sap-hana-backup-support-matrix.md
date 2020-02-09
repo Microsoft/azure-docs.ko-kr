@@ -12,7 +12,7 @@ ms.locfileid: "76842634"
 ---
 # <a name="support-matrix-for-backup-of-sap-hana-databases-on-azure-vms"></a>Azure VM의 SAP HANA 데이터베이스 백업에 대한 지원 매트릭스
 
-Azure Backup는 Azure에 대 한 SAP HANA 데이터베이스의 백업을 지원 합니다. 이 문서에서는 Azure Backup를 사용 하 여 Azure Vm에서 SAP HANA 데이터베이스를 백업 하는 경우 제공 되는 시나리오 및 제한 사항을 요약 합니다.
+Azure Backup는 Azure에 대한 SAP HANA 데이터베이스의 백업을 지원 합니다. 이 문서에서는 Azure Backup를 사용 하 여 Azure Vm에서 SAP HANA 데이터베이스를 백업 하는 경우 제공 되는 시나리오 및 제한 사항을 요약 합니다.
 
 ## <a name="onboard-to-the-public-preview"></a>공개 미리 보기에 온보딩
 
@@ -26,7 +26,7 @@ Register-AzProviderFeature -FeatureName "HanaBackup" –ProviderNamespace Micros
 ```
 
 > [!NOTE]
-> 이제 로그 백업 빈도를 최소 15 분으로 설정할 수 있습니다. 로그 백업은 데이터베이스에 대 한 전체 백업이 성공적으로 완료 된 후에만 흐름을 시작 합니다.
+> 이제 로그 백업 빈도를 최소 15 분으로 설정할 수 있습니다. 로그 백업은 데이터베이스에 대한 전체 백업이 성공적으로 완료 된 후에만 흐름을 시작 합니다.
 
 ## <a name="scenario-support"></a>시나리오 지원
 
@@ -41,7 +41,7 @@ Register-AzProviderFeature -FeatureName "HanaBackup" –ProviderNamespace Micros
 | **HANA 데이터베이스 형식**    | 1\.x의 1.x (Single Database 컨테이너 (SDC), 2.x의 다중 데이터베이스 컨테이너 (MDC) | HANA 1.x의 MDC                                              |
 | **HANA 데이터베이스 크기**     | 2tb 전체 백업 크기가 HANA에 의해 보고 됨)                   |                                                              |
 | **백업 유형**           | 전체, 차등 및 로그 백업                          | 증분, 스냅숏                                       |
-| **복원 유형**          | 지원 되는 복원 유형에 대 한 자세한 내용은 SAP HANA Note [1642148](https://launchpad.support.sap.com/#/notes/1642148) 을 참조 하세요. |                                                              |
+| **복원 유형**          | 지원 되는 복원 유형에 대한 자세한 내용은 SAP HANA Note [1642148](https://launchpad.support.sap.com/#/notes/1642148) 을 참조 하세요. |                                                              |
 | **백업 제한**          | SAP HANA 인스턴스당 최대 2tb의 전체 백업 크기         |                                                              |
 | **특수 구성** |                                                              | SAP HANA + 동적 계층화 <br>  LaMa를 통한 복제        |
 

@@ -120,7 +120,7 @@ Azure Cache for Redis 설정은 **리소스 메뉴**를 사용하여 **Azure Cac
 비 SSL 액세스는 기본적으로 새 캐시에 대해 사용하지 않도록 설정됩니다. 비 SSL 포트를 사용하도록 설정하려면 **고급 설정 블레이드**의 **SSL을 통해서만 액세스 허용**에서 **아니요**를 클릭한 다음 **저장**을 클릭합니다.
 
 > [!NOTE]
-> Redis 용 Azure Cache에 대 한 SSL 액세스는 현재 TLS 1.0, 1.1 및 1.2을 지원 하지만, 버전 1.0 및 1.1은 곧 사용 중지 될 예정입니다.  자세한 내용은 [TLS 1.0 및 1.1 제거 페이지](cache-remove-tls-10-11.md) 를 참조 하세요.
+> Redis 용 Azure Cache에 대한 SSL 액세스는 현재 TLS 1.0, 1.1 및 1.2을 지원 하지만, 버전 1.0 및 1.1은 곧 사용 중지 될 예정입니다.  자세한 내용은 [TLS 1.0 및 1.1 제거 페이지](cache-remove-tls-10-11.md) 를 참조 하세요.
 
 ![Azure Cache for Redis 액세스 포트](./media/cache-configure/redis-cache-access-ports.png)
 
@@ -214,7 +214,7 @@ Redis keyspace 알림은 **고급 설정** 블레이드에서 구성됩니다. K
 
 
 ### <a name="redis-data-persistence"></a>Redis 데이터 지속성
-**데이터 지 속성** 을 클릭 하 여 프리미엄 캐시에 대 한 데이터 지 속성을 사용, 사용 안 함 또는 구성 합니다. Azure Cache for Redis는 [RDB 지속성](cache-how-to-premium-persistence.md#configure-rdb-persistence) 또는 [AOF 지속성](cache-how-to-premium-persistence.md#configure-aof-persistence)을 사용하여 Redis 지속성을 제공합니다.
+**데이터 지 속성** 을 클릭 하 여 프리미엄 캐시에 대한 데이터 지 속성을 사용, 사용 안 함 또는 구성 합니다. Azure Cache for Redis는 [RDB 지속성](cache-how-to-premium-persistence.md#configure-rdb-persistence) 또는 [AOF 지속성](cache-how-to-premium-persistence.md#configure-aof-persistence)을 사용하여 Redis 지속성을 제공합니다.
 
 자세한 내용은 [프리미엄 Azure Redis Cache에 대한 지속성을 구성하는 방법](cache-how-to-premium-persistence.md)을 참조하세요.
 

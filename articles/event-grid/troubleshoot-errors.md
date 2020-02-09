@@ -29,7 +29,7 @@ ms.locfileid: "75645075"
 | ---------- | ------------- | ----------- | -------------- | 
 | HttpStatusCode <br/>409 | 지정 된 이름의 항목이 이미 있습니다. 다른 항목 이름을 선택 하십시오.   | 올바른 게시 작업을 위해 단일 Azure 지역에서 사용자 지정 토픽 이름이 고유 해야 합니다. 동일한 이름을 다른 Azure 지역에서 사용할 수 있습니다. | 항목에 대해 다른 이름을 선택 합니다. |
 | HttpStatusCode <br/> 409 | 지정 된이 있는 도메인이 이미 있습니다. 다른 도메인 이름을 선택 하십시오. | 도메인 이름은 올바른 게시 작업을 보장 하기 위해 단일 Azure 지역에서 고유 해야 합니다. 동일한 이름을 다른 Azure 지역에서 사용할 수 있습니다. | 도메인에 대해 다른 이름을 선택 하십시오. |
-| HttpStatusCode<br/>409 | 할당량 한도에 도달 했습니다. 이러한 제한에 대 한 자세한 내용은 [Azure Event Grid 제한](../azure-resource-manager/management/azure-subscription-service-limits.md#event-grid-limits)을 참조 하세요.  | 각 Azure 구독에는 사용할 수 있는 Azure Event Grid 리소스 수가 제한 되어 있습니다. 이 할당량의 일부 또는 전부를 초과 하 여 리소스를 더 이상 만들 수 없습니다. |    현재 리소스 사용량을 확인 하 고 필요 하지 않은 모든 리소스를 삭제 합니다. 할당량을 늘려야 하는 경우 필요한 정확한 리소스 수와 함께 [aeg@microsoft.com](mailto:aeg@microsoft.com) 에 전자 메일을 보냅니다. |
+| HttpStatusCode<br/>409 | 할당량 한도에 도달 했습니다. 이러한 제한에 대한 자세한 내용은 [Azure Event Grid 제한](../azure-resource-manager/management/azure-subscription-service-limits.md#event-grid-limits)을 참조 하세요.  | 각 Azure 구독에는 사용할 수 있는 Azure Event Grid 리소스 수가 제한 되어 있습니다. 이 할당량의 일부 또는 전부를 초과 하 여 리소스를 더 이상 만들 수 없습니다. |    현재 리소스 사용량을 확인 하 고 필요 하지 않은 모든 리소스를 삭제 합니다. 할당량을 늘려야 하는 경우 필요한 정확한 리소스 수와 함께 [aeg@microsoft.com](mailto:aeg@microsoft.com) 에 전자 메일을 보냅니다. |
 
 
 ## <a name="next-steps"></a>다음 단계

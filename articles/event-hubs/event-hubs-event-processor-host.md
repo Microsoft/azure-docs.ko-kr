@@ -23,7 +23,7 @@ ms.locfileid: "76899979"
 ---
 # <a name="event-processor-host"></a>이벤트 프로세서 호스트
 > [!NOTE]
-> 이 문서는 Azure Event Hubs SDK의 이전 버전에 적용 됩니다. 최신 버전의 SDK로 코드를 마이그레이션하는 방법에 대 한 자세한 내용은 이러한 마이그레이션 가이드를 참조 하세요. 
+> 이 문서는 Azure Event Hubs SDK의 이전 버전에 적용 됩니다. 최신 버전의 SDK로 코드를 마이그레이션하는 방법에 대한 자세한 내용은 이러한 마이그레이션 가이드를 참조 하세요. 
 > - [.NET](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MIGRATIONGUIDE.md)
 > - [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs/migration-guide.md)
 > - [Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/migration_guide.md)
@@ -91,7 +91,7 @@ public class SimpleEventProcessor : IEventProcessor
 
 다음으로, [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost) 인스턴스를 인스턴스화합니다. 오버로드에 따라 생성자에서 [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost) 인스턴스를 만들 때 다음 매개 변수가 사용됩니다.
 
-- **hostName:** 각 소비자 인스턴스의 이름입니다. **EventProcessorHost** 의 각 인스턴스에는 소비자 그룹 내에서이 변수에 대 한 고유 값이 있어야 하므로이 값을 하드 코딩 하지 마십시오.
+- **hostName:** 각 소비자 인스턴스의 이름입니다. **EventProcessorHost** 의 각 인스턴스에는 소비자 그룹 내에서이 변수에 대한 고유 값이 있어야 하므로이 값을 하드 코딩 하지 마십시오.
 - **eventHubPath:** 이벤트 허브의 이름입니다.
 - **consumerGroupName:** Event Hubs는 **$Default**를 기본 소비자 그룹의 이름으로 사용하지만 처리의 특정 측면에 대한 소비자 그룹을 만드는 것이 좋습니다.
 - **eventHubConnectionString:** Azure Portal에서 검색할 수 있는 이벤트 허브에 대한 연결 문자열입니다. 이 연결 문자열에는 이벤트 허브에 대한 **수신** 권한이 있어야 합니다.

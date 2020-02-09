@@ -24,7 +24,7 @@ Windows, Linux 및 macOS를 포함하여 Visual Studio Code에서 지원되는 �
 
 이 문서의 단계를 완료하려면 다음 항목이 필요합니다.
 
-- Azure HDInsight 클러스터를 만듭니다. 클러스터를 만들려면 [HDInsight 시작](hadoop/apache-hadoop-linux-create-cluster-get-started-portal.md)을 참조하세요. 또는 Apache Livy 끝점을 지 원하는 Spark 및 Hive 클러스터를 사용 합니다.
+- Azure HDInsight 클러스터를 만듭니다. 클러스터를 만들려면 [HDInsight 시작](hadoop/apache-hadoop-linux-create-cluster-get-started-portal.md)을 참조하세요. 또는 Apache Livy 엔드포인트을 지 원하는 Spark 및 Hive 클러스터를 사용 합니다.
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Mono](https://www.mono-project.com/docs/getting-started/install/). Mono는 Linux 및 macOS에만 필요 합니다.
 - [Visual Studio Code에 대 한 PySpark 대화형 환경](set-up-pyspark-interactive-environment.md)입니다.
@@ -105,13 +105,13 @@ Visual Studio Code에서 클러스터에 스크립트를 제출 하려면 먼저
    > [!NOTE]  
    > 클러스터가 Azure 구독에 로그인 하 고 클러스터에 연결 된 경우 연결 된 사용자 이름 및 암호가 사용 됩니다.  
 
-### <a name="link-generic-livy-endpoint"></a>링크: 제네릭 Livy 끝점
+### <a name="link-generic-livy-endpoint"></a>링크: 제네릭 Livy 엔드포인트
 
 1. 메뉴 모음에서 **보기** > **명령 팔레트 ...** 로 이동 하 고 **Spark/Hive: 클러스터 연결**을 입력 합니다.
 
 2. 연결된 클러스터 유형 **일반 Livy 엔드포인트**를 선택합니다.
 
-3. 제네릭 Livy 끝점을 입력 합니다. 예: http\://10.172.41.42:18080.
+3. 제네릭 Livy 엔드포인트을 입력 합니다. 예: http\://10.172.41.42:18080.
 
 4. 인증 형식 **기본** 또는 **없음**을 선택합니다.  **기본**을 선택 하는 경우:  
     &emsp;a. Ambari 사용자 이름을 입력 합니다. 기본값은 **admin**입니다.  

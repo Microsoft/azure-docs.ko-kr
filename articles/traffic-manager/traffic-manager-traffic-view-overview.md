@@ -82,7 +82,7 @@ Azure Portal에서 테이블 형식으로 트래픽 보기 데이터를 볼 수 
 
 * [트래픽 보기 사용 하는 데이터의 수는 몇 개입니까?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-many-days-of-data-does-traffic-view-use)
 
-* [트래픽 보기는 외부 끝점을 어떻게 처리 하나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-view-handle-external-endpoints)
+* [트래픽 보기는 외부 엔드포인트을 어떻게 처리 하나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-view-handle-external-endpoints)
 
 * [내 구독의 각 프로필에 대해 트래픽 보기를 사용 하도록 설정 해야 하나요?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#do-i-need-to-enable-traffic-view-for-each-profile-in-my-subscription)
 

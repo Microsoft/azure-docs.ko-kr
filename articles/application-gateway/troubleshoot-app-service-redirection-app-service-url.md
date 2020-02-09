@@ -1,7 +1,7 @@
 ---
 title: App Service URL로 리디렉션 문제 해결
 titleSuffix: Azure Application Gateway
-description: 이 문서에서는 Azure 애플리케이션 Gateway를 사용할 때 리디렉션 문제를 해결 하는 방법에 대 한 정보를 제공 Azure App Service
+description: 이 문서에서는 Azure 애플리케이션 Gateway를 사용할 때 리디렉션 문제를 해결 하는 방법에 대한 정보를 제공 Azure App Service
 services: application-gateway
 author: abshamsft
 ms.service: application-gateway
@@ -27,7 +27,7 @@ Azure 애플리케이션 게이트웨이의 백 엔드 대상으로 Azure App Se
 > * 리디렉션 시 app service URL은 브라우저에 노출 됩니다.
 > * App service ARRAffinity cookie 도메인은 원래 호스트 대신 app service 호스트 이름인 example.azurewebsites.net로 설정 됩니다.
 
-백 엔드 응용 프로그램에서 리디렉션 응답을 보내는 경우 백 엔드 응용 프로그램에서 지정한 URL과 다른 URL로 클라이언트를 리디렉션할 수 있습니다. App service가 응용 프로그램 게이트웨이 뒤에서 호스트 되는 경우이 작업을 수행할 수 있으며, 클라이언트가 상대 경로에 대 한 리디렉션을 수행 해야 할 수 있습니다. 예를 들어 contoso.azurewebsites.net/path1에서 contoso.azurewebsites.net/path2로의 리디렉션이 있습니다. 
+백 엔드 응용 프로그램에서 리디렉션 응답을 보내는 경우 백 엔드 응용 프로그램에서 지정한 URL과 다른 URL로 클라이언트를 리디렉션할 수 있습니다. App service가 응용 프로그램 게이트웨이 뒤에서 호스트 되는 경우이 작업을 수행할 수 있으며, 클라이언트가 상대 경로에 대한 리디렉션을 수행 해야 할 수 있습니다. 예를 들어 contoso.azurewebsites.net/path1에서 contoso.azurewebsites.net/path2로의 리디렉션이 있습니다. 
 
 App service는 리디렉션 응답을 보낼 때 응용 프로그램 게이트웨이에서 수신 하는 요청의 응답 위치 헤더에 있는 것과 동일한 호스트 이름을 사용 합니다. 예를 들어 클라이언트는 application gateway contoso.com/path2를 통하지 않고 contoso.azurewebsites.net/path2에 직접 요청을 만듭니다. 응용 프로그램 게이트웨이를 무시 하지 않으려고 합니다.
 
@@ -47,7 +47,7 @@ App service는 리디렉션 응답을 보낼 때 응용 프로그램 게이트�
 
 ## <a name="cause"></a>원인
 
-App Service은 다중 테 넌 트 서비스 이므로 요청에서 호스트 헤더를 사용 하 여 요청을 올바른 끝점으로 라우팅합니다. App Services *. azurewebsites.net (contoso.azurewebsites.net)의 기본 도메인 이름은 application gateway의 도메인 이름 (예를 들어 contoso.com)과 다릅니다. 
+App Service은 다중 테넌트 서비스 이므로 요청에서 호스트 헤더를 사용 하 여 요청을 올바른 엔드포인트으로 라우팅합니다. App Services *. azurewebsites.net (contoso.azurewebsites.net)의 기본 도메인 이름은 application gateway의 도메인 이름 (예를 들어 contoso.com)과 다릅니다. 
 
 클라이언트의 원래 요청에는 호스트 이름으로 응용 프로그램 게이트웨이의 도메인 이름 contoso.com이 있습니다. 앱 서비스 백 엔드에 요청을 라우팅하는 경우 원래 요청의 호스트 이름을 app service의 호스트 이름으로 변경 하도록 응용 프로그램 게이트웨이를 구성 해야 합니다. Application gateway의 HTTP 설정 구성에서 **백 엔드 주소의 백 호스트 선택** 스위치를 사용 합니다. 상태 프로브 구성의 **백 엔드에서 호스트 선택 HTTP 설정** 스위치를 사용 합니다.
 
@@ -81,7 +81,7 @@ X-Powered-By: ASP.NET
 
 ## <a name="solution-rewrite-the-location-header"></a>해결 방법: 위치 헤더 다시 작성
 
-Location 헤더의 호스트 이름을 application gateway의 도메인 이름으로 설정 합니다. 이렇게 하려면 응답의 location 헤더에 azurewebsites.net가 포함 되어 있는지 여부를 평가 하는 [다시 쓰기 규칙](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers) 을 만듭니다. 또한 응용 프로그램 게이트웨이의 호스트 이름을 갖도록 location 헤더를 다시 작성 하는 작업을 수행 해야 합니다. 자세한 내용은 [location 헤더를 다시 작성 하는 방법](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers#modify-a-redirection-url)에 대 한 지침을 참조 하세요.
+Location 헤더의 호스트 이름을 application gateway의 도메인 이름으로 설정 합니다. 이렇게 하려면 응답의 location 헤더에 azurewebsites.net가 포함 되어 있는지 여부를 평가 하는 [다시 쓰기 규칙](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers) 을 만듭니다. 또한 응용 프로그램 게이트웨이의 호스트 이름을 갖도록 location 헤더를 다시 작성 하는 작업을 수행 해야 합니다. 자세한 내용은 [location 헤더를 다시 작성 하는 방법](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers#modify-a-redirection-url)에 대한 지침을 참조 하세요.
 
 > [!NOTE]
 > HTTP 헤더 재작성 지원은 Application Gateway의 [Standard_v2 및 WAF_V2 SKU](https://docs.microsoft.com/azure/application-gateway/application-gateway-autoscaling-zone-redundant) 에서만 사용할 수 있습니다. V1 SKU를 사용 하는 경우 v 1에서 v 2 [로 마이그레이션하](https://docs.microsoft.com/azure/application-gateway/migrate-v1-v2)는 것이 좋습니다. V2 SKU에서 사용할 수 있는 재작성 및 기타 [고급 기능](https://docs.microsoft.com/azure/application-gateway/application-gateway-autoscaling-zone-redundant#feature-comparison-between-v1-sku-and-v2-sku) 을 사용 하려고 합니다.
@@ -90,7 +90,7 @@ Location 헤더의 호스트 이름을 application gateway의 도메인 이름�
 
 V1 SKU를 사용 하는 경우에는 location 헤더를 다시 작성할 수 없습니다. 이 기능은 v2 SKU에만 사용할 수 있습니다. 리디렉션 문제를 해결 하려면 호스트 재정의를 수행 하는 대신 응용 프로그램 게이트웨이에서 수신 하는 것과 동일한 호스트 이름을 app service에 전달 합니다.
 
-이제 app service는 동일한 원래 호스트 헤더에 대 한 리디렉션 (있는 경우)을 수행 합니다 .이는 응용 프로그램 게이트웨이를 가리키지만 자체는 그렇지 않습니다.
+이제 app service는 동일한 원래 호스트 헤더에 대한 리디렉션 (있는 경우)을 수행 합니다 .이는 응용 프로그램 게이트웨이를 가리키지만 자체는 그렇지 않습니다.
 
 사용자 지정 도메인을 소유 하 고이 프로세스를 수행 해야 합니다.
 

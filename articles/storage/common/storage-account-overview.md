@@ -137,9 +137,9 @@ Azure Storage는 사용 패턴에 따라 블록 Blob 데이터 액세스를 위�
 - Azure Files: `https://*mystorageaccount*.file.core.windows.net`
 
 > [!NOTE]
-> 블록 blob 및 blob 저장소 계정은 Blob service 끝점만 노출 합니다.
+> 블록 blob 및 blob 저장소 계정은 Blob service 엔드포인트만 노출 합니다.
 
-저장소 계정의 개체 위치를 끝점에 추가 하 여 저장소 계정의 개체에 액세스 하기 위한 URL을 생성 합니다. 예를 들어 Blob 주소의 형식은 다음과 같습니다. http://*mystorageaccount*.blob.core.windows.net/*mycontainer*/*myblob*
+저장소 계정의 개체 위치를 엔드포인트에 추가 하 여 저장소 계정의 개체에 액세스 하기 위한 URL을 생성 합니다. 예를 들어 Blob 주소의 형식은 다음과 같습니다. http://*mystorageaccount*.blob.core.windows.net/*mycontainer*/*myblob*
 
 Blob에 사용자 지정 도메인 이름을 사용하도록 스토리지 계정을 구성할 수도 있습니다. 자세한 내용은 [Azure Storage 계정에 대한 사용자 지정 도메인 이름 구성](../blobs/storage-custom-domain-name.md)을 참조하세요.  
 

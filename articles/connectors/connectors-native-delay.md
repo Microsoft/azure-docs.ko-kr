@@ -16,7 +16,7 @@ ms.locfileid: "74787339"
 ---
 # <a name="delay-running-the-next-action-in-azure-logic-apps"></a>Azure Logic Apps에서 다음 작업 실행 지연
 
-논리 앱이 다음 작업을 실행 하기 전에 일정 시간 동안 대기 하도록 하려면 논리 앱의 워크플로에서 동작 전에 기본 제공 **지연 일정** 작업을 추가 하면 됩니다. 또는 다음 작업을 실행 하기 전에 기본 제공 **지연** 시간을 추가 하 여 특정 날짜 및 시간까지 기다릴 수 있습니다. 기본 제공 일정 작업 및 트리거에 대 한 자세한 내용은 [Azure Logic Apps를 사용 하 여 반복 되는 자동, 작업 및 워크플로 예약 및 실행](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md)을 참조 하세요.
+논리 앱이 다음 작업을 실행 하기 전에 일정 시간 동안 대기 하도록 하려면 논리 앱의 워크플로에서 동작 전에 기본 제공 **지연 일정** 작업을 추가 하면 됩니다. 또는 다음 작업을 실행 하기 전에 기본 제공 **지연** 시간을 추가 하 여 특정 날짜 및 시간까지 기다릴 수 있습니다. 기본 제공 일정 작업 및 트리거에 대한 자세한 내용은 [Azure Logic Apps를 사용 하 여 반복 되는 자동, 작업 및 워크플로 예약 및 실행](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md)을 참조 하세요.
 
 * **Delay**: 다음 작업을 실행 하기 전에 지정 된 시간 단위 (예: 초, 분, 시간, 일, 주 또는 월)를 대기 합니다.
 
@@ -32,7 +32,7 @@ ms.locfileid: "74787339"
 
 * Azure 구독. 구독이 없는 경우 [무료 Azure 계정에 등록할](https://azure.microsoft.com/free/)수 있습니다.
 
-* [논리 앱](../logic-apps/logic-apps-overview.md)에 대 한 기본 지식. 작업을 사용 하려면 먼저 논리 앱이 트리거로 시작 해야 합니다. 지연 동작을 추가 하기 전에 원하는 트리거를 사용 하 고 다른 작업을 추가할 수 있습니다. 이 항목에서는 Office 365 Outlook 트리거를 사용 합니다. 논리 앱을 처음 접하는 경우 [첫 번째 논리 앱을 만드는 방법](../logic-apps/quickstart-create-first-logic-app-workflow.md)에 대해 알아보세요.
+* [논리 앱](../logic-apps/logic-apps-overview.md)에 대한 기본 지식. 작업을 사용 하려면 먼저 논리 앱이 트리거로 시작 해야 합니다. 지연 동작을 추가 하기 전에 원하는 트리거를 사용 하 고 다른 작업을 추가할 수 있습니다. 이 항목에서는 Office 365 Outlook 트리거를 사용 합니다. 논리 앱을 처음 접하는 경우 [첫 번째 논리 앱을 만드는 방법](../logic-apps/quickstart-create-first-logic-app-workflow.md)에 대해 알아보세요.
 
 <a name="add-delay"></a>
 
@@ -74,7 +74,7 @@ ms.locfileid: "74787339"
 
 1. 워크플로를 다시 시작 하려는 경우의 종료 날짜 및 시간을 제공 합니다.
 
-   ![지연 시간을 종료 하는 시간에 대 한 타임 스탬프를 지정 합니다.](./media/connectors-native-delay/delay-until-timestamp.png)
+   ![지연 시간을 종료 하는 시간에 대한 타임 스탬프를 지정 합니다.](./media/connectors-native-delay/delay-until-timestamp.png)
 
    | 자산 | JSON 이름 | 필수 | Type | 설명 |
    |----------|-----------|----------|------|-------------|

@@ -67,7 +67,7 @@ TwiML은 Twilio에 통화 또는 SMS 처리 방법을 알려 주는 Twilio 동�
 
 애플리케이션에서 Twilio API를 호출할 때 API 매개 변수 중 하나는 TwiML 응답을 반환하는 URL입니다. 개발을 위해서 Twilio 제공 URL을 사용하여 애플리케이션에 사용되는 TwiML 응답을 제공할 수 있습니다. 또한 TwiML 응답을 생성하는 고유한 URL을 호스트할 수도 있고, **TwiMLResponse** 개체를 사용할 수도 있습니다.
 
-Twilio 동사, 특성 및 TwiML에 대 한 자세한 내용은 [TwiML][twiml]를 참조 하세요. Twilio API에 대 한 자세한 내용은 [TWILIO api][twilio_api]를 참조 하세요.
+Twilio 동사, 특성 및 TwiML에 대한 자세한 내용은 [TwiML][twiml]를 참조 하세요. Twilio API에 대한 자세한 내용은 [TWILIO api][twilio_api]를 참조 하세요.
 
 ## <a id="CreateAccount"></a>Twilio 계정 만들기
 Twilio 계정을 가져올 준비가 되 면 [Twilio 체험][try_twilio]에서 등록 합니다. 무료 계정으로 시작했다가 나중에 계정을 업그레이드할 수 있습니다.
@@ -76,7 +76,7 @@ Twilio 계정을 등록하면 계정 ID 및 인증 토큰을 받게 됩니다. �
 
 ## <a id="create_app"></a>Azure 애플리케이션 만들기
 Twilio 사용 애플리케이션을 호스트하는 Azure 애플리케이션도 다른 Azure 애플리케이션과 동일합니다. Twilio .NET 라이브러리를 추가하고 Twilio .NET 라이브러리를 사용하도록 역할을 구성하면 됩니다.
-초기 Azure 프로젝트를 만드는 방법에 대 한 자세한 내용은 [Visual Studio를 사용 하 여 azure 프로젝트 만들기][vs_project]를 참조 하세요.
+초기 Azure 프로젝트를 만드는 방법에 대한 자세한 내용은 [Visual Studio를 사용 하 여 azure 프로젝트 만들기][vs_project]를 참조 하세요.
 
 ## <a id="configure_app"></a>Twilio 라이브러리를 사용하도록 애플리케이션 구성
 Twilio는 .NET 도우미 라이브러리 집합을 제공하며, 이 라이브러리 집합은 Twilio의 여러 가지 요소를 래핑함으로써 Twilio REST API 및 Twilio 클라이언트를 간단하고 쉽게 조작해서 TwiML 응답을 생성하는 방법을 제공합니다.
@@ -96,9 +96,9 @@ Twilio는 다음과 같이 .NET 개발자를 위한 5가지 라이브러리를 �
 
 이 가이드에 제공된 샘플에서는 Twilio.API 라이브러리를 사용합니다.
 
-라이브러리를 Visual Studio 2010에서 2015까지의 [NuGet 패키지 관리자 확장명을 사용하여 설치](https://www.twilio.com/docs/csharp/install) 할 수 있습니다.  소스 코드는 [GitHub][twilio_github_repo]에서 호스트 되며, 라이브러리 사용에 대 한 전체 설명서가 포함 된 Wiki를 포함 합니다.
+라이브러리를 Visual Studio 2010에서 2015까지의 [NuGet 패키지 관리자 확장명을 사용하여 설치](https://www.twilio.com/docs/csharp/install) 할 수 있습니다.  소스 코드는 [GitHub][twilio_github_repo]에서 호스트 되며, 라이브러리 사용에 대한 전체 설명서가 포함 된 Wiki를 포함 합니다.
 
-기본적으로, Microsoft Visual Studio 2010은 버전 1.2의 NuGet을 설치합니다. Twilio 라이브러리를 설치하려면 버전 1.6 이상의 NuGet이 필요합니다. NuGet 설치 또는 업데이트에 대 한 자세한 내용은 [https://nuget.org/][nuget]을 참조 하십시오.
+기본적으로, Microsoft Visual Studio 2010은 버전 1.2의 NuGet을 설치합니다. Twilio 라이브러리를 설치하려면 버전 1.6 이상의 NuGet이 필요합니다. NuGet 설치 또는 업데이트에 대한 자세한 내용은 [https://nuget.org/][nuget]을 참조 하십시오.
 
 > [!NOTE]
 > 최신 버전의 NuGet을 설치하려면 먼저 Visual Studio 확장 관리자를 사용하여 로드된 버전을 제거해야 합니다. 이를 위해서는 Visual Studio를 관리자 권한으로 실행해야 합니다. 관리자 권한으로 실행하지 않으면 제거 단추를 사용할 수 없습니다.
@@ -139,7 +139,7 @@ var call = CallResource.Create(
     }
 ```
 
-**Callresource** 에 전달 된 매개 변수에 대 한 자세한 내용은을 참조 [https://www.twilio.com/docs/api/rest/making-calls][twilio_rest_making_calls]하십시오.
+**Callresource** 에 전달 된 매개 변수에 대한 자세한 내용은을 참조 [https://www.twilio.com/docs/api/rest/making-calls][twilio_rest_making_calls]하십시오.
 
 언급한 대로 이 코드는 Twilio 제공 사이트를 사용하여 TwiML 응답을 반환합니다. 이 사이트 대신 고유한 사이트를 사용하여 TwiML 응답을 제공할 수 있습니다. 자세한 내용은 [방법: 고유한 웹 사이트에서 TwiML 응답 제공](#howto_provide_twiml_responses)을 참조하세요.
 
@@ -265,7 +265,7 @@ var call = CallResource.Create(
     }
 ```
 
-ASP.NET를 사용 하 여 Azure에서 Twilio를 사용 하는 방법에 대 한 자세한 내용은 [azure의 웹 역할에서 Twilio를 사용 하 여 전화를 거는 방법][howto_phonecall_dotnet]을 참조 하세요.
+ASP.NET를 사용 하 여 Azure에서 Twilio를 사용 하는 방법에 대한 자세한 내용은 [azure의 웹 역할에서 Twilio를 사용 하 여 전화를 거는 방법][howto_phonecall_dotnet]을 참조 하세요.
 
 [!INCLUDE [twilio-additional-services-and-next-steps](../includes/twilio-additional-services-and-next-steps.md)]
 

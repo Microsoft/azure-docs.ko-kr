@@ -31,7 +31,7 @@ Azure의 인프라 및 플랫폼 보안에 대한 자세한 내용은 [Azure 보
 
 ## <a name="https-and-certificates"></a>HTTPS 및 인증서
 
-App Service를 사용하면 [HTTPS](https://wikipedia.org/wiki/HTTPS)를 통해 앱을 보호할 수 있습니다. 앱을 만들 때 기본 도메인 이름(\<app_name>.azurewebsites.net)은 이미 HTTPS를 사용하여 액세스할 수 있습니다. [앱에 대 한 사용자 지정 도메인을 구성](app-service-web-tutorial-custom-domain.md)하는 경우 클라이언트 브라우저가 사용자 지정 도메인에 대 한 보안 HTTPS 연결을 설정할 수 있도록 [SSL 인증서를 사용 하 여 보안](configure-ssl-bindings.md) 을 설정 해야 합니다. App Service에서 지 원하는 여러 유형의 인증서가 있습니다.
+App Service를 사용하면 [HTTPS](https://wikipedia.org/wiki/HTTPS)를 통해 앱을 보호할 수 있습니다. 앱을 만들 때 기본 도메인 이름(\<app_name>.azurewebsites.net)은 이미 HTTPS를 사용하여 액세스할 수 있습니다. [앱에 대한 사용자 지정 도메인을 구성](app-service-web-tutorial-custom-domain.md)하는 경우 클라이언트 브라우저가 사용자 지정 도메인에 대한 보안 HTTPS 연결을 설정할 수 있도록 [SSL 인증서를 사용 하 여 보안](configure-ssl-bindings.md) 을 설정 해야 합니다. App Service에서 지 원하는 여러 유형의 인증서가 있습니다.
 
 - 무료 App Service 관리 되는 인증서
 - 인증서 App Service

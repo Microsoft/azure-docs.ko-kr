@@ -26,7 +26,7 @@ ms.locfileid: "75659902"
 개별 App Service 계획의 가격 책정 및 기능에 대한 자세한 내용은 [App Service 가격 정보](https://azure.microsoft.com/pricing/details/web-sites/)를 참조하세요.  
 
 > [!NOTE]
-> **무료** 계층에서 App Service 계획을 전환하기 전에 먼저 Azure 구독에 대한 [지출 한도](https://azure.microsoft.com/pricing/spending-limits/) 를 제거해야 합니다. Microsoft Azure App Service 구독에 대 한 옵션을 보거나 변경 하려면 [구독 Microsoft Azure][azuresubscriptions]를 참조 하세요.
+> **무료** 계층에서 App Service 계획을 전환하기 전에 먼저 Azure 구독에 대한 [지출 한도](https://azure.microsoft.com/pricing/spending-limits/) 를 제거해야 합니다. Microsoft Azure App Service 구독에 대한 옵션을 보거나 변경 하려면 [구독 Microsoft Azure][azuresubscriptions]를 참조 하세요.
 > 
 > 
 
@@ -54,7 +54,7 @@ ms.locfileid: "75659902"
 ## <a name="scale-related-resources"></a>규모 관련 리소스
 앱이 Azure SQL Database, Azure Storage 등의 다른 서비스에 종속된 경우 요구에 따라 해당 리소스를 개별적으로 강화할 수도 있습니다. 이러한 리소스는 App Service 계획에서 관리되지 않습니다.
 
-1. 앱에 대 한 **개요** 페이지에서 **리소스 그룹** 링크를 선택 합니다.
+1. 앱에 대한 **개요** 페이지에서 **리소스 그룹** 링크를 선택 합니다.
    
     ![Azure 앱의 관련 리소스를 강화합니다.](./media/web-sites-scale/RGEssentialsLink.png)
 
@@ -62,7 +62,7 @@ ms.locfileid: "75659902"
    
     ![리소스 그룹 페이지로 이동하여 Azure 앱을 강화합니다.](./media/web-sites-scale/ResourceGroup.png)
 
-    관련 리소스를 확장 하려면 특정 리소스 종류에 대 한 설명서를 참조 하세요. 예를 들어 단일 SQL Database 확장 하려면 [Azure SQL Database에서 단일 데이터베이스 리소스 크기 조정](../sql-database/sql-database-single-database-scale.md)을 참조 하세요. Azure Database for MySQL 리소스를 확장 하려면 [MySQL 리소스 크기 조정](../mysql/concepts-pricing-tiers.md#scale-resources)을 참조 하세요.
+    관련 리소스를 확장 하려면 특정 리소스 종류에 대한 설명서를 참조 하세요. 예를 들어 단일 SQL Database 확장 하려면 [Azure SQL Database에서 단일 데이터베이스 리소스 크기 조정](../sql-database/sql-database-single-database-scale.md)을 참조 하세요. Azure Database for MySQL 리소스를 확장 하려면 [MySQL 리소스 크기 조정](../mysql/concepts-pricing-tiers.md#scale-resources)을 참조 하세요.
 
 <a name="OtherFeatures"></a>
 <a name="devfeatures"></a>
@@ -78,7 +78,7 @@ ms.locfileid: "75659902"
 ## <a name="more-resources"></a>추가 리소스
 
 [수동 또는 자동으로 인스턴스 개수 조정](../monitoring-and-diagnostics/insights-how-to-scale.md)  
-[App Service에 대 한 PremiumV2 계층 구성](app-service-configure-premium-tier.md)
+[App Service에 대한 PremiumV2 계층 구성](app-service-configure-premium-tier.md)
 
 <!-- LINKS -->
 [vmsizes]:https://azure.microsoft.com/pricing/details/app-service/

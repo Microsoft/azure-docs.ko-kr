@@ -19,12 +19,12 @@ ms.locfileid: "76848071"
 ---
 # <a name="define-custom-attributes-in-azure-active-directory-b2c"></a>Azure Active Directory B2C에서 사용자 지정 특성 정의
 
- 모든 고객 대상 애플리케이션은 수집해야 하는 정보에 대한 특정 요구 사항이 있습니다. Azure Active Directory B2C (Azure AD B2C) 테 넌 트에는 지정 된 이름, 성, 구/군/시 및 우편 번호와 같은 특성에 저장 되는 기본 제공 정보 집합이 제공 됩니다. Azure AD B2C를 사용하면 각 고객 계정에 저장된 특성 집합을 확장할 수 있습니다.
+ 모든 고객 대상 애플리케이션은 수집해야 하는 정보에 대한 특정 요구 사항이 있습니다. Azure Active Directory B2C (Azure AD B2C) 테넌트에는 지정 된 이름, 성, 구/군/시 및 우편 번호와 같은 특성에 저장 되는 기본 제공 정보 집합이 제공 됩니다. Azure AD B2C를 사용하면 각 고객 계정에 저장된 특성 집합을 확장할 수 있습니다.
 
  [Azure Portal](https://portal.azure.com/)에서 사용자 지정 특성을 만든 후 등록 사용자 흐름, 등록 또는 로그인 사용자 흐름 또는 프로필 편집 사용자 흐름에서 사용할 수 있습니다. 또한 [Azure AD Graph API](manage-user-accounts-graph-api.md)를 사용하여 이러한 특성을 읽고 쓸 수 있습니다. Azure AD B2C의 사용자 지정 특성은 [Azure AD Graph API 디렉터리 스키마 확장](/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-directory-schema-extensions)을 사용합니다.
 
 > [!NOTE]
-> Azure AD B2C 테 넌 트 쿼리를 위한 최신 [MICROSOFT GRAPH API](https://docs.microsoft.com/graph/overview?view=graph-rest-1.0) 에 대 한 지원은 아직 개발 중입니다.
+> Azure AD B2C 테넌트 쿼리를 위한 최신 [MICROSOFT GRAPH API](https://docs.microsoft.com/graph/overview?view=graph-rest-1.0) 에 대한 지원은 아직 개발 중입니다.
 >
 
 ## <a name="create-a-custom-attribute"></a>사용자 지정 특성 만들기
@@ -36,7 +36,7 @@ ms.locfileid: "76848071"
 
     테넌트를 포함하는 디렉터리를 선택합니다.
 
-    ![디렉터리 및 구독 필터에 강조 표시 된 B2C 테 넌 트](./media/user-flow-custom-attributes/select-directory.PNG)
+    ![디렉터리 및 구독 필터에 강조 표시 된 B2C 테넌트](./media/user-flow-custom-attributes/select-directory.PNG)
 
 3. Azure Portal의 왼쪽 상단 모서리에서 **모든 서비스**를 선택하고 **Azure AD B2C**를 검색하여 선택합니다.
 4. **사용자 특성**을 선택한 후 **추가**를 선택합니다.

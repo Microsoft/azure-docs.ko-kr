@@ -26,7 +26,7 @@ ms.locfileid: "75911958"
 
 Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능한 빠르고 확장성이 우수한 데이터 탐색 서비스입니다. Azure Data Explorer를 사용하려면 먼저 클러스터를 만들고 이 클러스터에 데이터베이스를 하나 이상 만듭니다. 그런 다음, 데이터베이스에 대해 쿼리를 실행할 수 있도록 데이터베이스에 데이터를 수집(로드)합니다. 
 
-이 문서에서는 [Azure Resource Manager 템플릿을](../azure-resource-manager/management/overview.md)사용 하 여 Azure 데이터 탐색기 클러스터와 데이터베이스를 만듭니다. 또한 어떤 리소스를 배포할지 정의하는 방법 및 배포를 실행할 때 매개 변수를 지정하는 방법을 설명합니다. 배포를 위해 이 템플릿을 사용하거나 요구 사항에 맞게 사용자 지정을 할 수 있습니다. 템플릿을 만드는 방법에 대 한 자세한 내용은 [Azure Resource Manager 템플릿 작성](/azure/azure-resource-manager/resource-group-authoring-templates)을 참조 하세요. 템플릿에 사용할 JSON 구문 및 속성은 [Microsoft. Kusto 리소스 유형](/azure/templates/microsoft.kusto/allversions)을 참조 하세요.
+이 문서에서는 [Azure Resource Manager 템플릿을](../azure-resource-manager/management/overview.md)사용 하 여 Azure 데이터 탐색기 클러스터와 데이터베이스를 만듭니다. 또한 어떤 리소스를 배포할지 정의하는 방법 및 배포를 실행할 때 매개 변수를 지정하는 방법을 설명합니다. 배포를 위해 이 템플릿을 사용하거나 요구 사항에 맞게 사용자 지정을 할 수 있습니다. 템플릿을 만드는 방법에 대한 자세한 내용은 [Azure Resource Manager 템플릿 작성](/azure/azure-resource-manager/resource-group-authoring-templates)을 참조 하세요. 템플릿에 사용할 JSON 구문 및 속성은 [Microsoft. Kusto 리소스 유형](/azure/templates/microsoft.kusto/allversions)을 참조 하세요.
 
 Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.microsoft.com/free/) 계정을 만듭니다.
 
@@ -142,7 +142,7 @@ Azure 데이터 탐색기 클러스터와 데이터베이스를 만드는 데 �
 
 #### <a name="verify-the-deployment-using-powershell"></a>PowerShell을 사용 하 여 배포 확인
 
-배포를 확인 하려면 다음 Azure PowerShell 스크립트를 사용 합니다.  Cloud Shell 아직 열려 있으면 첫 번째 줄 (읽기-호스트)을 복사/실행할 필요가 없습니다. PowerShell에서 Azure 데이터 탐색기 리소스를 관리 하는 방법에 대 한 자세한 내용은 [Az. Kusto를](/powershell/module/az.kusto/?view=azps-2.7.0)참조 하세요. 
+배포를 확인 하려면 다음 Azure PowerShell 스크립트를 사용 합니다.  Cloud Shell 아직 열려 있으면 첫 번째 줄 (읽기-호스트)을 복사/실행할 필요가 없습니다. PowerShell에서 Azure 데이터 탐색기 리소스를 관리 하는 방법에 대한 자세한 내용은 [Az. Kusto를](/powershell/module/az.kusto/?view=azps-2.7.0)참조 하세요. 
 
 ```azurepowershell-interactive
 $projectName = Read-Host -Prompt "Enter the same project name that you used in the last procedure"

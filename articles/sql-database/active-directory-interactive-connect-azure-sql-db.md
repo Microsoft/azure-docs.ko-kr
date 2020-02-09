@@ -139,7 +139,7 @@ C# 프로그램을 실행하려는 같은 컴퓨터, 같은 건물에서 SSMS를
 자세한 내용은 [SSMS 및 AZURE AD에 대 한 Multi-Factor Authentication 구성](sql-database-ssms-mfa-authentication-configure.md)을 참조 하세요.
 
 > [!NOTE]
-> 데이터베이스의 게스트 사용자 인 경우 데이터베이스에 대 한 Azure AD 도메인 이름을 제공 해야 합니다. **옵션** > **AD 도메인 이름 또는 테 넌 트 ID**를 선택 합니다. Azure Portal에서 도메인 이름을 찾으려면 **Azure Active Directory** > **사용자 지정 도메인 이름**을 선택합니다. C# 예제 프로그램에서는 도메인 이름을 지정하지 않아도 됩니다.
+> 데이터베이스의 게스트 사용자 인 경우 데이터베이스에 대 한 Azure AD 도메인 이름을 제공 해야 합니다. **옵션** > **AD 도메인 이름 또는 테넌트 ID**를 선택 합니다. Azure Portal에서 도메인 이름을 찾으려면 **Azure Active Directory** > **사용자 지정 도메인 이름**을 선택합니다. C# 예제 프로그램에서는 도메인 이름을 지정하지 않아도 됩니다.
 
 ## <a name="c-code-example"></a>C# 코드 예제
 

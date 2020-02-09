@@ -1,5 +1,5 @@
 ---
-title: Azure Backup 진단 이벤트에 대 한 데이터 모델
+title: Azure Backup 진단 이벤트에 대한 데이터 모델
 description: 이 데이터 모델은 Log Analytics (LA)로 진단 이벤트를 보내는 리소스 특정 모드를 참조 합니다.
 ms.topic: conceptual
 ms.date: 10/30/2019
@@ -10,11 +10,11 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/21/2019
 ms.locfileid: "74281078"
 ---
-# <a name="data-model-for-azure-backup-diagnostics-events"></a>Azure Backup 진단 이벤트에 대 한 데이터 모델
+# <a name="data-model-for-azure-backup-diagnostics-events"></a>Azure Backup 진단 이벤트에 대한 데이터 모델
 
 ## <a name="coreazurebackup"></a>CoreAzureBackup
 
-이 표에서는 자격 증명 모음 및 백업 항목과 같은 핵심 백업 엔터티에 대 한 정보를 제공 합니다.
+이 표에서는 자격 증명 모음 및 백업 항목과 같은 핵심 백업 엔터티에 대한 정보를 제공 합니다.
 
 | **필드**                         | **데이터 형식** | **설명**                                              |
 | --------------------------------- | ------------- | ------------------------------------------------------------ |
@@ -33,14 +33,14 @@ ms.locfileid: "74281078"
 | BackupItemUniqueId                | 텍스트          | 백업 항목의 고유 식별자                         |
 | BackupManagementServerType        | 텍스트          | MABS, SC DPM에서와 같이 백업 관리 서버의 유형     |
 | BackupManagementServerUniqueId    | 텍스트          | 백업 관리 서버를 고유 하 게 식별 하는 필드      |
-| BackupManagementType              | 텍스트          | 백업 작업을 수행 하는 서버에 대 한 공급자 유형입니다. 예: 예 iaasvm, FileFolder |
+| BackupManagementType              | 텍스트          | 백업 작업을 수행 하는 서버에 대한 공급자 유형입니다. 예: 예 iaasvm, FileFolder |
 | BackupManagementServerName        | 텍스트          | 백업 관리 서버의 이름                         |
 | BackupManagementServerOSVersion   | 텍스트          | 백업 관리 서버의 OS 버전                   |
 | BackupManagementServerVersion     | 텍스트          | 백업 관리 서버의 버전                      |
-| LatestRecoveryPointLocation       | 텍스트          | 백업 항목에 대 한 최신 복구 지점의 위치    |
-| LatestRecoveryPointTime           | DateTime      | 백업 항목에 대 한 최신 복구 지점의 날짜 시간   |
-| OldestRecoveryPointLocation       | 텍스트          | 백업 항목에 대 한 가장 오래 된 복구 지점의 위치    |
-| OldestRecoveryPointTime           | DateTime      | 백업 항목에 대 한 최신 복구 지점의 날짜 시간   |
+| LatestRecoveryPointLocation       | 텍스트          | 백업 항목에 대한 최신 복구 지점의 위치    |
+| LatestRecoveryPointTime           | DateTime      | 백업 항목에 대한 최신 복구 지점의 날짜 시간   |
+| OldestRecoveryPointLocation       | 텍스트          | 백업 항목에 대한 가장 오래 된 복구 지점의 위치    |
+| OldestRecoveryPointTime           | DateTime      | 백업 항목에 대한 최신 복구 지점의 날짜 시간   |
 | PolicyUniqueId                    | 텍스트          | 정책을 식별 하는 고유 ID                             |
 | ProtectedContainerFriendlyName    | 텍스트          | 보호 된 서버의 이름                        |
 | ProtectedContainerLocation        | 텍스트          | 보호 된 컨테이너가 온-프레미스 또는 Azure에 있는지 여부 |
@@ -52,15 +52,15 @@ ms.locfileid: "74281078"
 | ProtectedContainerUniqueId        | 텍스트          | DPM, MABS를 사용 하 여 백업한 Vm을 제외한 모든 항목에 대해 보호 된 컨테이너를 식별 하는 데 사용 되는 고유 ID |
 | ProtectedContainerWorkloadType    | 텍스트          | 백업 된 보호 된 컨테이너의 유형입니다. 예: IaaSVMContainer |
 | ProtectionGroupName               | 텍스트          | 해당 하는 경우 백업 항목이 보호 되는 보호 그룹 이름, SC DPM 및 MABS (해당 하는 경우) |
-| ResourceGroupName                 | 텍스트          | 수집 되는 데이터에 대 한 리소스의 리소스 그룹 (예: Recovery Services 자격 증명 모음) |
+| ResourceGroupName                 | 텍스트          | 수집 되는 데이터에 대한 리소스의 리소스 그룹 (예: Recovery Services 자격 증명 모음) |
 | SchemaVersion                     | 텍스트          | 이 필드는 스키마의 현재 버전을 나타내며, **V2** 입니다. |
 | SecondaryBackupProtectionState    | 텍스트          | 백업 항목에 대해 보조 보호를 사용 하도록 설정할지 여부  |
 | State                             | 텍스트          | 백업 항목 개체의 상태입니다. 예: 활성, 삭제 됨 |
-| StorageReplicationType            | 텍스트          | 자격 증명 모음에 대 한 저장소 복제 유형입니다. 예: GeoRedundant |
+| StorageReplicationType            | 텍스트          | 자격 증명 모음에 대한 저장소 복제 유형입니다. 예: GeoRedundant |
 | SubscriptionId                    | 텍스트          | 데이터가 수집 되는 리소스의 구독 식별자 (예: Recovery Services 자격 증명 모음) |
 | VaultName                         | 텍스트          | 자격 증명 모음의 이름                                            |
 | VaultTags                         | 텍스트          | 자격 증명 모음 리소스와 연결 된 태그                    |
-| VaultUniqueId                     | 텍스트          | 자격 증명 모음에 대 한 고유 식별자                             |
+| VaultUniqueId                     | 텍스트          | 자격 증명 모음에 대한 고유 식별자                             |
 | SourceSystem                      | 텍스트          | 현재 데이터의 원본 시스템-Azure                  |
 
 ## <a name="addonazurebackupalerts"></a>AddonAzureBackupAlerts
@@ -83,7 +83,7 @@ ms.locfileid: "74281078"
 | AlertUniqueId                  | 텍스트          | 생성 된 경고의 고유 식별자                    |
 | BackupItemUniqueId             | 텍스트          | 경고와 연결 된 백업 항목의 고유 식별자 |
 | BackupManagementServerUniqueId | 텍스트          | 해당 하는 경우 백업 항목을 보호 하는 백업 관리 서버를 고유 하 게 식별 하는 필드입니다. |
-| BackupManagementType           | 텍스트          | 백업 작업을 수행 하는 서버에 대 한 공급자 유형 (예: 예 iaasvm, FileFolder) |
+| BackupManagementType           | 텍스트          | 백업 작업을 수행 하는 서버에 대한 공급자 유형 (예: 예 iaasvm, FileFolder) |
 | CountOfAlertsConsolidated      | NUMBER        | 통합 된 경고 인 경우 통합 된 경고 수  |
 | ProtectedContainerUniqueId     | 텍스트          | 경고와 연결 된 보호 된 서버의 고유 식별자입니다. |
 | RecommendedAction              | 텍스트          | 경고를 해결 하기 위한 권장 작업                      |
@@ -99,14 +99,14 @@ ms.locfileid: "74281078"
 
 | **필드**                      | **데이터 형식** | **설명**                                              |
 | ------------------------------ | ------------- | ------------------------------------------------------------ |
-| ResourceId                     | 텍스트          | 수집 되는 데이터에 대 한 리소스의 고유 식별자입니다. 예를 들어 Recovery Services 자격 증명 모음 리소스 ID |
+| ResourceId                     | 텍스트          | 수집 되는 데이터에 대한 리소스의 고유 식별자입니다. 예를 들어 Recovery Services 자격 증명 모음 리소스 ID |
 | OperationName                  | 텍스트          | 작업 이름 (예: ProtectedInstance)         |
 | Category                       | 텍스트          | Azure Monitor 로그에 푸시되는 진단 데이터의 범주-AddonAzureBackupProtectedInstance |
 | BackupItemUniqueId             | 텍스트          | 백업 항목의 고유 ID                                 |
 | BackupManagementServerUniqueId | 텍스트          | 해당 하는 경우 백업 항목을 보호 하는 백업 관리 서버를 고유 하 게 식별 하는 필드입니다. |
-| BackupManagementType           | 텍스트          | 백업 작업을 수행 하는 서버에 대 한 공급자 유형 (예: 예 iaasvm, FileFolder) |
+| BackupManagementType           | 텍스트          | 백업 작업을 수행 하는 서버에 대한 공급자 유형 (예: 예 iaasvm, FileFolder) |
 | ProtectedContainerUniqueId     | 텍스트          | 작업이 실행 되는 보호 된 컨테이너를 식별 하기 위한 고유 ID |
-| ProtectedInstanceCount         | 텍스트          | 해당 날짜/시간에 연결 된 백업 항목 또는 보호 된 컨테이너에 대 한 보호 된 인스턴스 수 |
+| ProtectedInstanceCount         | 텍스트          | 해당 날짜/시간에 연결 된 백업 항목 또는 보호 된 컨테이너에 대한 보호 된 인스턴스 수 |
 | SchemaVersion                  | 텍스트          | 스키마의 현재 버전 (예: **V2** )            |
 | State                          | 텍스트          | 백업 항목 개체의 상태 (예: Active, Deleted) |
 | VaultUniqueId                  | 텍스트          | 보호 된 인스턴스와 연결 된 보호 된 자격 증명 모음의 고유 식별자 |
@@ -149,26 +149,26 @@ ms.locfileid: "74281078"
 
 | **필드**                       | **데이터 형식**  | **설명**                                              |
 | ------------------------------- | -------------- | ------------------------------------------------------------ |
-| ResourceId                      | 텍스트           | 수집 되는 데이터에 대 한 리소스의 고유 식별자입니다. 예를 들어 Recovery Services 자격 증명 모음 리소스 ID |
+| ResourceId                      | 텍스트           | 수집 되는 데이터에 대한 리소스의 고유 식별자입니다. 예를 들어 Recovery Services 자격 증명 모음 리소스 ID |
 | OperationName                   | 텍스트           | 작업 이름 (예: Policy 또는 PolicyAssociation) |
 | Category                        | 텍스트           | Azure Monitor 로그에 푸시되는 진단 데이터의 범주-AddonAzureBackupPolicy |
 | BackupDaysOfTheWeek             | 텍스트           | 백업이 예약된 주의 요일            |
 | BackupFrequency                 | 텍스트           | 백업이 실행 되는 빈도입니다. 예: 매일, 매주 |
-| BackupManagementType            | 텍스트           | 백업 작업을 수행 하는 서버에 대 한 공급자 유형입니다. 예: 예 iaasvm, FileFolder |
+| BackupManagementType            | 텍스트           | 백업 작업을 수행 하는 서버에 대한 공급자 유형입니다. 예: 예 iaasvm, FileFolder |
 | BackupManagementServerUniqueId  | 텍스트           | 해당 하는 경우 백업 항목을 보호 하는 백업 관리 서버를 고유 하 게 식별 하는 필드입니다. |
 | BackupTimes                     | 텍스트           | 백업이 예약된 날짜 및 시간                     |
 | DailyRetentionDuration          | 정수   | 구성된 백업에 대한 총 보존 기간(일)      |
 | DailyRetentionTimes             | 텍스트           | 매일 보존이 구성된 날짜 및 시간            |
-| DiffBackupDaysOfTheWeek         | 텍스트           | Azure VM 백업에서 SQL에 대 한 차등 백업의 요일 |
-| DiffBackupFormat                | 텍스트           | Azure VM 백업에서 SQL에 대 한 차등 백업의 형식   |
-| Diffbackup보존 기간     | 10진수 | Azure VM 백업에서 SQL에 대 한 차등 백업의 보존 기간 |
-| DiffBackupTime 시간                  | Time           | Azure VM 백업에서 SQL에 대 한 차등 백업 시간     |
-| LogBackupFrequency              | 10진수 | SQL에 대 한 로그 백업 빈도                            |
-| Logbackup보존 기간      | 10진수 | Azure VM 백업에서 SQL에 대 한 로그 백업의 보존 기간 |
+| DiffBackupDaysOfTheWeek         | 텍스트           | Azure VM 백업에서 SQL에 대한 차등 백업의 요일 |
+| DiffBackupFormat                | 텍스트           | Azure VM 백업에서 SQL에 대한 차등 백업의 형식   |
+| Diffbackup보존 기간     | 10진수 | Azure VM 백업에서 SQL에 대한 차등 백업의 보존 기간 |
+| DiffBackupTime 시간                  | Time           | Azure VM 백업에서 SQL에 대한 차등 백업 시간     |
+| LogBackupFrequency              | 10진수 | SQL에 대한 로그 백업 빈도                            |
+| Logbackup보존 기간      | 10진수 | Azure VM 백업에서 SQL에 대한 로그 백업의 보존 기간 |
 | MonthlyRetentionDaysOfTheMonth  | 텍스트           | 매월 보존이 구성 된 월의 주입니다.  예를 들어, First, Last 등입니다. |
 | MonthlyRetentionDaysOfTheWeek   | 텍스트           | 매월 보존에 대해 선택한 주의 요일              |
 | MonthlyRetentionDuration        | 텍스트           | 구성된 백업에 대한 총 보존 기간(월)    |
-| MonthlyRetentionFormat          | 텍스트           | 월별 보존에 대 한 구성 유형입니다. 예를 들어 매일, 매주 기준으로 매주 |
+| MonthlyRetentionFormat          | 텍스트           | 월별 보존에 대한 구성 유형입니다. 예를 들어 매일, 매주 기준으로 매주 |
 | MonthlyRetentionTimes           | 텍스트           | 매월 보존이 구성된 날짜 및 시간           |
 | MonthlyRetentionWeeksOfTheMonth | 텍스트           | 매월 보존이 구성 된 월의 주입니다.   예를 들어, First, Last 등입니다. |
 | PolicyName                      | 텍스트           | 지정된 정책의 이름                                   |
@@ -181,12 +181,12 @@ ms.locfileid: "74281078"
 | SynchronisationFrequencyPerDay  | 정수   | SC DPM 및 MABS에 대해 파일 백업이 동기화 된 하루 중 시간 수 |
 | VaultUniqueId                   | 텍스트           | 이 정책이 속한 자격 증명 모음의 고유 ID          |
 | WeeklyRetentionDaysOfTheWeek    | 텍스트           | 매주 보존에 대해 선택한 주의 요일               |
-| WeeklyRetentionDuration         | 10진수 | 구성 된 백업에 대 한 총 주간 보존 기간 (주) |
+| WeeklyRetentionDuration         | 10진수 | 구성 된 백업에 대한 총 주간 보존 기간 (주) |
 | WeeklyRetentionTimes            | 텍스트           | 매주 보존이 구성된 날짜 및 시간            |
 | YearlyRetentionDaysOfTheMonth   | 텍스트           | 매년 보존에 대해 선택한 월의 날짜             |
 | YearlyRetentionDaysOfTheWeek    | 텍스트           | 매년 보존에 대해 선택한 주의 요일               |
 | YearlyRetentionDuration         | 10진수 | 구성된 백업에 대한 총 보존 기간(연)     |
-| YearlyRetentionFormat           | 텍스트           | 매년 보존에 대 한 구성 유형 (예: 일 기준 매일, 주 기준 매주) |
+| YearlyRetentionFormat           | 텍스트           | 매년 보존에 대한 구성 유형 (예: 일 기준 매일, 주 기준 매주) |
 | YearlyRetentionMonthsOfTheYear  | 텍스트           | 매년 보존에 대해 선택한 연도의 달             |
 | YearlyRetentionTimes            | 텍스트           | 매년 보존이 구성된 날짜 및 시간            |
 | YearlyRetentionWeeksOfTheMonth  | 텍스트           | 매년 보존에 대해 선택한 월의 주             |
@@ -203,7 +203,7 @@ ms.locfileid: "74281078"
 | Category                       | 텍스트          | 이 필드는 Azure Monitor 로그에 푸시되는 진단 데이터의 범주를 나타냅니다. AddonAzureBackupStorage |
 | BackupItemUniqueId             | 텍스트          | DPM, MABS를 사용 하 여 백업 된 Vm의 백업 항목을 식별 하는 데 사용 되는 고유 ID |
 | BackupManagementServerUniqueId | 텍스트          | 해당 하는 경우 백업 항목을 보호 하는 백업 관리 서버를 고유 하 게 식별 하는 필드입니다. |
-| BackupManagementType           | 텍스트          | 백업 작업을 수행 하는 서버에 대 한 공급자 유형입니다. 예: 예 iaasvm, FileFolder |
+| BackupManagementType           | 텍스트          | 백업 작업을 수행 하는 서버에 대한 공급자 유형입니다. 예: 예 iaasvm, FileFolder |
 | PreferredWorkloadOnVolume      | 텍스트          | 이 볼륨이 기본 설정 저장소 인 작업      |
 | ProtectedContainerUniqueId     | 텍스트          | 경고와 연결 된 보호 된 서버의 고유 식별자입니다. |
 | SchemaVersion                  | 텍스트          | 스키마의 버전입니다. 예: **V2**                   |

@@ -17,7 +17,7 @@ Azure Backup은 Recovery Services 자격 증명 모음에 [기본 제공 모니�
 
 - 여러 구독에서 여러 Recovery Services 자격 증명 모음의 데이터를 모니터링 하는 경우
 - 기본 알림 채널이 전자 메일이 *아닌* 경우
-- 사용자가 더 많은 시나리오에 대 한 경고를 원하는 경우
+- 사용자가 더 많은 시나리오에 대한 경고를 원하는 경우
 - Azure의 System Center Data Protection Manager와 같은 온-프레미스 구성 요소의 정보를 보려는 경우 포털이 [**백업 작업**](backup-azure-monitoring-built-in-monitor.md#backup-jobs-in-recovery-services-vault) 또는 [**백업 경고**](backup-azure-monitoring-built-in-monitor.md#backup-alerts-in-recovery-services-vault) 에 표시 되지 않는 경우
 
 ## <a name="using-log-analytics-workspace"></a>Log Analytics 작업 영역 사용
@@ -27,9 +27,9 @@ Azure Backup은 Recovery Services 자격 증명 모음에 [기본 제공 모니�
 Azure Monitor에서 Log Analytics 작업 영역에 경고를 직접 만들 수 있습니다. 작업 영역에서 *Azure 작업 그룹* 을 사용 하 여 기본 설정 된 알림 메커니즘을 선택 합니다.
 
 > [!IMPORTANT]
-> 이 쿼리를 만드는 데 드는 비용에 대 한 자세한 내용은 [Azure Monitor 가격 책정](https://azure.microsoft.com/pricing/details/monitor/)을 참조 하세요.
+> 이 쿼리를 만드는 데 드는 비용에 대한 자세한 내용은 [Azure Monitor 가격 책정](https://azure.microsoft.com/pricing/details/monitor/)을 참조 하세요.
 
-그래프 중 하나를 선택 하 여 Log Analytics 작업 영역의 **로그** 섹션을 엽니다. **로그** 섹션에서 쿼리를 편집 하 고이에 대 한 경고를 만듭니다.
+그래프 중 하나를 선택 하 여 Log Analytics 작업 영역의 **로그** 섹션을 엽니다. **로그** 섹션에서 쿼리를 편집 하 고이에 대한 경고를 만듭니다.
 
 ![Log Analytics 작업 영역에서 경고 만들기](media/backup-azure-monitoring-laworkspace/la-azurebackup-customalerts.png)
 
@@ -57,7 +57,7 @@ Log Analytics의 모든 경고 및 모니터링 요구 사항을 충족 하거�
 
 ### <a name="sample-kusto-queries"></a>샘플 Kusto 쿼리
 
-기본 그래프는 경고를 작성할 수 있는 기본 시나리오에 대 한 Kusto 쿼리를 제공 합니다. 또한 경고를 발생 시킬 데이터를 가져오도록 쿼리를 수정할 수 있습니다. **로그** 페이지에서 다음 샘플 Kusto 쿼리를 붙여넣은 다음 쿼리에 대 한 경고를 만듭니다.
+기본 그래프는 경고를 작성할 수 있는 기본 시나리오에 대한 Kusto 쿼리를 제공 합니다. 또한 경고를 발생 시킬 데이터를 가져오도록 쿼리를 수정할 수 있습니다. **로그** 페이지에서 다음 샘플 Kusto 쿼리를 붙여넣은 다음 쿼리에 대한 경고를 만듭니다.
 
 - 성공한 모든 백업 작업
 
@@ -125,12 +125,12 @@ on BackupItemUniqueId
 
 ### <a name="diagnostic-data-update-frequency"></a>진단 데이터 업데이트 빈도
 
-자격 증명 모음의 진단 데이터는 일정 시간 동안 Log Analytics 작업 영역에 펌프 됩니다. 모든 이벤트는 Recovery Services 자격 증명 모음에서 푸시된 후 *20 분에서 30 분* Log Analytics 작업 영역에 도착 합니다. 지연에 대 한 자세한 내용은 다음과 같습니다.
+자격 증명 모음의 진단 데이터는 일정 시간 동안 Log Analytics 작업 영역에 펌프 됩니다. 모든 이벤트는 Recovery Services 자격 증명 모음에서 푸시된 후 *20 분에서 30 분* Log Analytics 작업 영역에 도착 합니다. 지연에 대한 자세한 내용은 다음과 같습니다.
 
 - 모든 솔루션에서 백업 서비스의 기본 제공 경고는 생성 되는 즉시 푸시됩니다. 따라서 일반적으로 20 분에서 30 분 후에 Log Analytics 작업 영역에 나타납니다.
 - 모든 솔루션에서 주문형 백업 작업 및 복원 작업은 *완료*되는 즉시 푸시됩니다.
 - SQL 백업을 제외한 모든 솔루션에 대해 예약 된 백업 작업은 *완료*되는 즉시 푸시됩니다.
-- SQL 백업의 경우 로그 백업이 15 분 마다 발생할 수 있으므로 로그를 포함 하 여 완료 된 모든 예약 된 백업 작업에 대 한 정보는 6 시간 마다 일괄 처리 되 고 푸시됩니다.
+- SQL 백업의 경우 로그 백업이 15 분 마다 발생할 수 있으므로 로그를 포함 하 여 완료 된 모든 예약 된 백업 작업에 대한 정보는 6 시간 마다 일괄 처리 되 고 푸시됩니다.
 - 모든 솔루션에서 백업 항목, 정책, 복구 지점, 저장소 등의 기타 정보는 *하루에 한 번* 이상 푸시됩니다.
 - 백업 구성 변경 (예: 정책 변경 또는 정책 편집)은 관련 된 모든 백업 정보의 푸시를 트리거합니다.
 
@@ -139,7 +139,7 @@ on BackupItemUniqueId
 > [!CAUTION]
 > 다음 단계는 *AZURE VM 백업* 에만 적용 됩니다. Azure Backup 에이전트, Azure 내의 SQL 백업 또는 Azure Files와 같은 솔루션에는 이러한 단계를 사용할 수 없습니다.
 
-활동 로그를 사용 하 여 백업 성공 같은 이벤트에 대 한 알림을 받을 수도 있습니다. 시작 하려면 다음 단계를 수행 합니다.
+활동 로그를 사용 하 여 백업 성공 같은 이벤트에 대한 알림을 받을 수도 있습니다. 시작 하려면 다음 단계를 수행 합니다.
 
 1. Azure Portal에 로그인합니다.
 1. 관련 Recovery Services 자격 증명 모음을 엽니다.
@@ -147,9 +147,9 @@ on BackupItemUniqueId
 
 적절 한 로그를 확인 하 고 경고를 만들려면 다음을 수행 합니다.
 
-1. 다음 이미지에 표시 된 필터를 적용 하 여 성공적인 백업에 대 한 활동 로그를 수신 하 고 있는지 확인 합니다. 레코드를 보려면 필요에 따라 **Timespan** 값을 변경 합니다.
+1. 다음 이미지에 표시 된 필터를 적용 하 여 성공적인 백업에 대한 활동 로그를 수신 하 고 있는지 확인 합니다. 레코드를 보려면 필요에 따라 **Timespan** 값을 변경 합니다.
 
-   ![Azure VM 백업에 대 한 활동 로그를 검색 하는 필터링](media/backup-azure-monitoring-laworkspace/activitylogs-azurebackup-vmbackups.png)
+   ![Azure VM 백업에 대한 활동 로그를 검색 하는 필터링](media/backup-azure-monitoring-laworkspace/activitylogs-azurebackup-vmbackups.png)
 
 1. 작업 이름을 선택 하 여 관련 세부 정보를 확인 합니다.
 1. **새 경고 규칙** 을 선택 하 여 **규칙 만들기** 페이지를 엽니다.

@@ -1,5 +1,5 @@
 ---
-title: MARS 에이전트에 대 한 지원 매트릭스
+title: MARS 에이전트에 대한 지원 매트릭스
 description: 이 문서에서는 MARS (Microsoft Azure Recovery Services) 에이전트를 실행 하는 컴퓨터를 백업할 때 지원 Azure Backup를 요약 합니다.
 ms.date: 08/30/2019
 ms.topic: conceptual
@@ -25,7 +25,7 @@ Azure Backup MARS 에이전트를 사용 하 여 온-프레미스 컴퓨터 및 
 > [!NOTE]
 >Azure Backup는 DST (일광 절약 시간제)의 클록 자동 조정을 지원 하지 않습니다. 실제 시간과 예약 된 백업 시간 간의 불일치를 방지 하기 위해 일광 절약 액을 고려 하도록 정책을 수정 합니다.
 
-백업 옵션은 에이전트가 설치 된 위치에 따라 달라 집니다. 자세한 내용은 [MARS 에이전트를 사용 하는 Azure Backup 아키텍처](backup-architecture.md#architecture-direct-backup-of-on-premises-windows-server-machines-or-azure-vm-files-or-folders)를 참조 하세요. MABS 및 DPM 백업 아키텍처에 대 한 자세한 내용은 [dpm 또는 MABS에 백업](backup-architecture.md#architecture-back-up-to-dpmmabs)을 참조 하세요. 백업 아키텍처에 대 한 [요구](backup-support-matrix-mabs-dpm.md) 사항도 참조 하세요.
+백업 옵션은 에이전트가 설치 된 위치에 따라 달라 집니다. 자세한 내용은 [MARS 에이전트를 사용 하는 Azure Backup 아키텍처](backup-architecture.md#architecture-direct-backup-of-on-premises-windows-server-machines-or-azure-vm-files-or-folders)를 참조 하세요. MABS 및 DPM 백업 아키텍처에 대한 자세한 내용은 [dpm 또는 MABS에 백업](backup-architecture.md#architecture-back-up-to-dpmmabs)을 참조 하세요. 백업 아키텍처에 대한 [요구](backup-support-matrix-mabs-dpm.md) 사항도 참조 하세요.
 
 **설치** | **세부 정보**
 --- | ---
@@ -65,7 +65,7 @@ MARS 에이전트에서 액세스해야 하는 URL은 다음과 같습니다.
 - 20.190.128.0/18
 - 40.126.0.0/18
 
-위에 나열 된 모든 Url 및 IP 주소에 대 한 액세스는 포트 443에서 HTTPS 프로토콜을 사용 합니다.
+위에 나열 된 모든 Url 및 IP 주소에 대한 액세스는 포트 443에서 HTTPS 프로토콜을 사용 합니다.
 
 ### <a name="throttling-support"></a>제한 지원
 
@@ -116,7 +116,7 @@ Windows 7| 1700 GB
 
 ### <a name="other-limitations"></a>기타 제한 사항
 
-- MARS는 단일 자격 증명 모음에 대해 동일한 이름의 여러 컴퓨터에 대 한 보호를 지원 하지 않습니다.
+- MARS는 단일 자격 증명 모음에 대해 동일한 이름의 여러 컴퓨터에 대한 보호를 지원 하지 않습니다.
 
 ## <a name="supported-file-types-for-backup"></a>백업에 지원되는 파일 형식
 
@@ -149,7 +149,7 @@ BitLocker 잠김 볼륨| 지원하지 않음 |백업을 시작 하기 전에 볼
 
 Azure Backup는 디스크를 사용 하 여 초기 백업 데이터를 Azure로 전송 하는 *오프 라인 시드에* 지원 합니다. 이 지원은 초기 백업이 tb (테라바이트) 크기 범위에 있을 가능성이 있는 경우에 유용 합니다. 오프라인 백업이 지원되는 대상은 다음과 같습니다.
 
-- MARS 에이전트를 실행 하는 온-프레미스 컴퓨터의 파일 및 폴더에 대 한 직접 백업
+- MARS 에이전트를 실행 하는 온-프레미스 컴퓨터의 파일 및 폴더에 대한 직접 백업
 - DPM 서버 또는 MABS에서 파일 및 워크로드 백업
 
 시스템 상태 파일에는 오프 라인 백업을 사용할 수 없습니다.

@@ -14,7 +14,7 @@ ms.locfileid: "76030164"
 ---
 # <a name="startstop-vms-during-off-hours-solution-in-azure-automation"></a>Automation의 작업 시간 외 VM 시작/중지 솔루션
 
-작업 시간 외 VM 시작/중지 솔루션은 사용자 정의 일정에 따라 Azure virtual machines를 시작 및 중지 하 고, Azure Monitor 로그를 통해 정보를 제공 하 고, [작업 그룹](../azure-monitor/platform/action-groups.md)을 사용 하 여 선택적 전자 메일을 보냅니다. 대부분의 시나리오에서 Azure Resource Manager 및 클래식 VM이 둘 다 지원됩니다. 클래식 Vm에서이 솔루션을 사용 하려면 기본적으로 생성 되지 않는 클래식 실행 계정이 필요 합니다. 클래식 실행 계정을 만드는 방법에 대 한 지침은 [클래식 실행 계정](automation-create-standalone-account.md#classic-run-as-accounts)을 참조 하세요.
+작업 시간 외 VM 시작/중지 솔루션은 사용자 정의 일정에 따라 Azure virtual machines를 시작 및 중지 하 고, Azure Monitor 로그를 통해 정보를 제공 하 고, [작업 그룹](../azure-monitor/platform/action-groups.md)을 사용 하 여 선택적 전자 메일을 보냅니다. 대부분의 시나리오에서 Azure Resource Manager 및 클래식 VM이 둘 다 지원됩니다. 클래식 Vm에서이 솔루션을 사용 하려면 기본적으로 생성 되지 않는 클래식 실행 계정이 필요 합니다. 클래식 실행 계정을 만드는 방법에 대한 지침은 [클래식 실행 계정](automation-create-standalone-account.md#classic-run-as-accounts)을 참조 하세요.
 
 > [!NOTE]
 > 작업 시간 외 VM 시작/중지 솔루션은 솔루션을 배포할 때 Automation 계정으로 가져온 Azure 모듈을 사용 하 여 테스트 되었습니다. 솔루션은 현재 최신 버전의 Azure 모듈에서 작동 하지 않습니다. 작업 시간 외 VM 시작/중지 솔루션을 실행 하는 데 사용 하는 Automation 계정에만 영향을 줍니다. [에서 Azure PowerShell 모듈을 업데이트 하는 방법](automation-update-azure-modules.md) 에 설명 된 대로 다른 Automation 계정에서 최신 버전의 Azure 모듈을 계속 사용할 수 있습니다 Azure Automation
@@ -25,13 +25,13 @@ ms.locfileid: "76030164"
 - Azure Tags(클래식 VM에서는 지원되지 않음)를 사용하여 VM 시작/중지를 오름차순으로 예약
 - 낮은 CPU 사용량을 기준으로 VM 자동 중지
 
-현재 솔루션에 대 한 제한 사항은 다음과 같습니다.
+현재 솔루션에 대한 제한 사항은 다음과 같습니다.
 
 - 이 솔루션은 모든 지역의 VM을 관리하지만 Azure Automation 계정과 동일한 구독에서만 사용할 수 있습니다.
 - 이 솔루션은 Log Analytics 작업 영역, Azure Automation 계정 및 Alerts를 지원하는 Azure 및 AzureGov의 모든 지역에서 사용할 수 있습니다. AzureGov 지역은 현재 이메일 기능을 지원하지 않습니다.
 
 > [!NOTE]
-> 클래식 VM용 솔루션을 사용하는 경우 모든 VM이 클라우드 서비스마다 순차적으로 처리됩니다. 가상 머신은 다른 클라우드 서비스에서 여전히 병렬로 처리됩니다. 클라우드 서비스 당 Vm이 20 개를 초과 하는 경우에는 부모 runbook **ScheduledStartStop_Parent** 를 사용 하 여 여러 일정을 만들고 일정 당 20 개의 vm을 지정 하는 것이 좋습니다. 일정 속성에서를 쉼표로 구분 된 목록으로 지정 하 고 **vmlist** 매개 변수에서 VM 이름을 지정 합니다. 그렇지 않고이 솔루션에 대 한 자동화 작업이 3 시간 이상 실행 되 면 공평 하 게 [공유](automation-runbook-execution.md#fair-share) 한도에 따라 일시적으로 언로드되고 중지 됩니다.
+> 클래식 VM용 솔루션을 사용하는 경우 모든 VM이 클라우드 서비스마다 순차적으로 처리됩니다. 가상 머신은 다른 클라우드 서비스에서 여전히 병렬로 처리됩니다. 클라우드 서비스 당 Vm이 20 개를 초과 하는 경우에는 부모 runbook **ScheduledStartStop_Parent** 를 사용 하 여 여러 일정을 만들고 일정 당 20 개의 vm을 지정 하는 것이 좋습니다. 일정 속성에서를 쉼표로 구분 된 목록으로 지정 하 고 **vmlist** 매개 변수에서 VM 이름을 지정 합니다. 그렇지 않고이 솔루션에 대한 자동화 작업이 3 시간 이상 실행 되 면 공평 하 게 [공유](automation-runbook-execution.md#fair-share) 한도에 따라 일시적으로 언로드되고 중지 됩니다.
 >
 > Azure CSP(Cloud Solution Provider) 구독은 Azure Resource Manager 모델만 지원하므로 Azure Resource Manager 이외의 서비스는 프로그램에서 사용할 수 없습니다. 시작/중지 솔루션을 실행하면 클래식 리소스를 관리하기 위한 cmdlet에 발생하는 오류가 발생할 수 있습니다. CSP에 대해 자세히 알아보려면 [CSP 구독에서 사용 가능한 서비스](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services)를 참조하세요. CSP 구독을 사용하는 경우 배포 후에 [**External_EnableClassicVMs**](#variables) 변수를 **False**로 수정해야 합니다.
 
@@ -45,11 +45,11 @@ VM 시작/중지 솔루션에 별도의 Automation 계정을 사용 하는 것�
 
 ### <a name="permissions-needed-to-deploy"></a>배포 하는 데 필요한 권한
 
-사용자가 휴가 시간 동안 Vm 시작/중지 솔루션을 배포 해야 하는 특정 권한이 있습니다. 이러한 권한은 미리 만든 Automation 계정 및 Log Analytics 작업 영역을 사용 하거나 배포 중에 새 작업 영역을 만드는 경우에 다릅니다. Azure Active Directory 테 넌 트의 구독 및 전역 관리자에 대 한 참가자 인 경우 다음 사용 권한을 구성할 필요가 없습니다. 이러한 권한이 없거나 사용자 지정 역할을 구성 해야 하는 경우 아래에 필요한 사용 권한을 참조 하세요.
+사용자가 휴가 시간 동안 Vm 시작/중지 솔루션을 배포 해야 하는 특정 권한이 있습니다. 이러한 권한은 미리 만든 Automation 계정 및 Log Analytics 작업 영역을 사용 하거나 배포 중에 새 작업 영역을 만드는 경우에 다릅니다. Azure Active Directory 테넌트의 구독 및 전역 관리자에 대한 참가자 인 경우 다음 사용 권한을 구성할 필요가 없습니다. 이러한 권한이 없거나 사용자 지정 역할을 구성 해야 하는 경우 아래에 필요한 사용 권한을 참조 하세요.
 
 #### <a name="pre-existing-automation-account-and-log-analytics-workspace"></a>기존 Automation 계정 및 Log Analytics 작업 영역
 
-업무 시간 외 Vm 시작/중지 솔루션을 기존 Automation 계정 및 Log Analytics 작업 영역에 배포 하려면 솔루션을 배포 하는 사용자에 게 **리소스 그룹**에 대 한 다음 권한이 필요 합니다. 역할에 대 한 자세한 내용은 [Azure 리소스에 대 한 사용자 지정 역할](../role-based-access-control/custom-roles.md)을 참조 하세요.
+업무 시간 외 Vm 시작/중지 솔루션을 기존 Automation 계정 및 Log Analytics 작업 영역에 배포 하려면 솔루션을 배포 하는 사용자에 게 **리소스 그룹**에 대한 다음 권한이 필요 합니다. 역할에 대한 자세한 내용은 [Azure 리소스에 대한 사용자 지정 역할](../role-based-access-control/custom-roles.md)을 참조 하세요.
 
 | 사용 권한 | 범위|
 | --- | --- |
@@ -76,9 +76,9 @@ VM 시작/중지 솔루션에 별도의 Automation 계정을 사용 하는 것�
 
 업무 시간 외 Vm 시작/중지 솔루션을 새 Automation 계정 및 Log Analytics 작업 영역에 배포 하려면 솔루션을 배포 하는 사용자에 게 이전 섹션에 정의 된 권한과 다음 사용 권한이 필요 합니다.
 
-- 구독에 대 한 공동 관리자-클래식 Vm을 관리 하려는 경우 클래식 실행 계정을 만드는 데만 필요 합니다. [클래식 실행 계정은](automation-create-standalone-account.md#classic-run-as-accounts) 더 이상 기본적으로 생성 되지 않습니다.
-- [Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md) **응용 프로그램 개발자** 역할의 멤버입니다. 실행 계정을 구성 하는 방법에 대 한 자세한 내용은 [실행 계정을 구성할 수 있는 권한](manage-runas-account.md#permissions)을 참조 하세요.
-- 구독에 대 한 참가자 또는 다음 사용 권한.
+- 구독에 대한 공동 관리자-클래식 Vm을 관리 하려는 경우 클래식 실행 계정을 만드는 데만 필요 합니다. [클래식 실행 계정은](automation-create-standalone-account.md#classic-run-as-accounts) 더 이상 기본적으로 생성 되지 않습니다.
+- [Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md) **응용 프로그램 개발자** 역할의 멤버입니다. 실행 계정을 구성 하는 방법에 대한 자세한 내용은 [실행 계정을 구성할 수 있는 권한](manage-runas-account.md#permissions)을 참조 하세요.
+- 구독에 대한 참가자 또는 다음 사용 권한.
 
 | 사용 권한 |범위|
 | --- | --- |
@@ -112,7 +112,7 @@ VM 시작/중지 솔루션에 별도의 Automation 계정을 사용 하는 것�
    ![VM 관리 솔루션 추가 페이지](media/automation-solution-vm-management/azure-portal-add-solution-01.png)
 
 4. **솔루션 추가** 페이지에서 **작업 영역**을 선택합니다. Automation 계정이 속하는 동일한 Azure 구독에 연결된 Log Analytics 작업 영역을 선택합니다. 작업 영역이 없으면 **새 작업 영역 만들기**를 선택합니다. **Log Analytics 작업 영역** 페이지에서 다음 단계를 수행 합니다.
-   - 새 **Log Analytics 작업 영역**에 대 한 이름 (예: "ContosoLAWorkspace")을 지정 합니다.
+   - 새 **Log Analytics 작업 영역**에 대한 이름 (예: "ContosoLAWorkspace")을 지정 합니다.
    - 기본으로 선택된 값이 적절하지 않으면 드롭다운 목록에서 선택하여 연결할 **구독**을 선택합니다.
    - **리소스 그룹**의 경우, 새 리소스 그룹을 만들거나 기존 리소스 그룹을 선택할 수 있습니다.
    - **위치**를 선택합니다.
@@ -121,7 +121,7 @@ VM 시작/중지 솔루션에 별도의 Automation 계정을 사용 하는 것�
    > [!NOTE]
    > 솔루션을 사용하도록 설정할 때 특정 Azure 지역에서만 Log Analytics 작업 영역 및 Automation 계정을 연결할 수 있습니다.
    >
-   > 지원 되는 매핑 쌍 목록은 [Automation 계정 및 Log Analytics 작업 영역에 대 한 지역 매핑](how-to/region-mappings.md)을 참조 하세요.
+   > 지원 되는 매핑 쌍 목록은 [Automation 계정 및 Log Analytics 작업 영역에 대한 지역 매핑](how-to/region-mappings.md)을 참조 하세요.
 
 5. **Log Analytics 작업 영역** 페이지에서 필수 정보를 입력한 후 **만들기**를 클릭합니다. 메뉴의 **알림**에서 진행률을 추적할 수 있습니다. 완료한 후에는 **솔루션 추가** 페이지로 돌아갑니다.
 6. **솔루션 추가** 페이지에서 **Automation 계정**을 선택합니다. 새 Log Analytics 작업 영역을 만드는 경우 연결될 새 Automation 계정을 만들거나 아직 Log Analytics 작업 영역에 연결되지 않은 기존 Automation 계정을 선택할 수 있습니다. 기존 Automation 계정을 선택하거나 **Automation 계정 만들기**를 클릭하고, **Automation 계정 추가** 페이지에서 다음 정보를 제공합니다.
@@ -432,6 +432,6 @@ Azure Automation 계정 구성 요소를 유지하지 않으려면 각각을 수
 
 ## <a name="next-steps"></a>다음 단계
 
-- 다른 검색 쿼리를 생성 하 고 Azure Monitor 로그를 사용 하 여 Automation 작업 로그를 검토 하는 방법에 대 한 자세한 내용은 [Azure Monitor 로그의 로그 검색](../log-analytics/log-analytics-log-searches.md)을 참조 하세요.
+- 다른 검색 쿼리를 생성 하 고 Azure Monitor 로그를 사용 하 여 Automation 작업 로그를 검토 하는 방법에 대한 자세한 내용은 [Azure Monitor 로그의 로그 검색](../log-analytics/log-analytics-log-searches.md)을 참조 하세요.
 - runbook 실행, runbook 작업 모니터링 방법 및 기타 기술 세부 정보를 알아보려면 [runbook 작업 추적](automation-runbook-execution.md)을 참조하세요.
-- Azure Monitor 로그 및 데이터 수집 소스에 대 한 자세한 내용은 [Azure Monitor 로그에서 Azure storage 데이터 수집 개요](../azure-monitor/platform/collect-azure-metrics-logs.md)를 참조 하세요.
+- Azure Monitor 로그 및 데이터 수집 소스에 대한 자세한 내용은 [Azure Monitor 로그에서 Azure storage 데이터 수집 개요](../azure-monitor/platform/collect-azure-metrics-logs.md)를 참조 하세요.

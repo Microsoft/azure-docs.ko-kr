@@ -32,7 +32,7 @@ ms.locfileid: "70932551"
 
 이 문서의 [일반적인 문제 및 해결 방법](#common-issues-workarounds) 섹션을 살펴봅니다.
 
-적극적으로 모니터링 되는 [GitHub 문제 섹션](https://github.com/Azure/azure-cosmos-dotnet-v2/issues) 을 확인 합니다. 해결 방법이 있는 유사한 문제가 이미 제출되었는지 확인합니다. 솔루션을 찾지 못한 경우 GitHub 문제를 파일에 표시 합니다. 긴급 한 문제에 대 한 지원 틱을 열 수 있습니다.
+적극적으로 모니터링 되는 [GitHub 문제 섹션](https://github.com/Azure/azure-cosmos-dotnet-v2/issues) 을 확인 합니다. 해결 방법이 있는 유사한 문제가 이미 제출되었는지 확인합니다. 솔루션을 찾지 못한 경우 GitHub 문제를 파일에 표시 합니다. 긴급 한 문제에 대한 지원 틱을 열 수 있습니다.
 
 
 ## <a name="common-issues-workarounds"></a>일반적인 문제 및 해결 방법
@@ -45,7 +45,7 @@ ms.locfileid: "70932551"
 [포털 메트릭을](monitor-accounts.md) 확인 하면 클라이언트 쪽 문제 인지 또는 서비스에 문제가 있는지 확인 하는 데 도움이 됩니다. 예를 들어 메트릭에 처리율이 제한 된 요청 (HTTP 상태 코드 429)이 포함 된 경우 요청을 제한 하는 것을 의미 하는 요청 [빈도 너무 큼] 섹션을 확인 합니다. 
 
 ### <a name="request-timeouts"></a>요청 시간 제한
-RequestTimeout은 일반적으로 Direct/TCP를 사용할 때 발생 하지만 게이트웨이 모드에서 발생할 수 있습니다. 이는 일반적인 알려진 원인과 문제를 해결 하는 방법에 대 한 제안입니다.
+RequestTimeout은 일반적으로 Direct/TCP를 사용할 때 발생 하지만 게이트웨이 모드에서 발생할 수 있습니다. 이는 일반적인 알려진 원인과 문제를 해결 하는 방법에 대한 제안입니다.
 
 * CPU 사용률이 높으면 대기 시간 및/또는 요청 시간 제한이 발생 합니다. 고객은 호스트 컴퓨터를 확장 하 여 더 많은 리소스를 제공 하거나 부하가 더 많은 컴퓨터에 분산 될 수 있습니다.
 * 소켓/포트 가용성이 낮을 수 있습니다. Azure에서 실행 하는 경우 .NET SDK를 사용 하는 클라이언트는 Azure SNAT (PAT) 포트 고갈에 도달할 수 있습니다. 이 문제가 발생할 가능성을 줄이려면 .NET SDK의 최신 버전인 2.x 또는 3.x를 사용 합니다. 이 예는 항상 최신 SDK 버전을 실행 하는 것이 좋습니다.
@@ -78,7 +78,7 @@ HTTP 프록시를 사용하는 경우 SDK `ConnectionPolicy`에서 구성된 연
 그렇지 않으면 연결 문제가 발생할 수 있습니다.
 
 ### 요청 비율이 너무 큼<a name="request-rate-too-large"></a>
-' 요청 속도 너무 큼 ' 또는 오류 코드 429은 사용 된 처리량 (r u/초)이 프로 비전 된 처리량을 초과 하 여 요청을 제한 하 고 있음을 나타냅니다. SDK는 지정 된 [재시도 정책](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.connectionpolicy.retryoptions?view=azure-dotnet)에 따라 요청을 자동으로 다시 시도 합니다. 이 오류가 자주 발생 하는 경우 컬렉션에 대 한 처리량을 높이는 것이 좋습니다. 429 오류를 받고 있는지 확인 하려면 [포털의 메트릭을](use-metrics.md) 확인 하세요. [파티션 키](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview#choose-partitionkey) 를 검토 하 여 저장소 및 요청 볼륨의 균등 한 배포가 발생 하는지 확인 합니다. 
+' 요청 속도 너무 큼 ' 또는 오류 코드 429은 사용 된 처리량 (r u/초)이 프로 비전 된 처리량을 초과 하 여 요청을 제한 하 고 있음을 나타냅니다. SDK는 지정 된 [재시도 정책](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.connectionpolicy.retryoptions?view=azure-dotnet)에 따라 요청을 자동으로 다시 시도 합니다. 이 오류가 자주 발생 하는 경우 컬렉션에 대한 처리량을 높이는 것이 좋습니다. 429 오류를 받고 있는지 확인 하려면 [포털의 메트릭을](use-metrics.md) 확인 하세요. [파티션 키](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview#choose-partitionkey) 를 검토 하 여 저장소 및 요청 볼륨의 균등 한 배포가 발생 하는지 확인 합니다. 
 
 ### <a name="slow-query-performance"></a>쿼리 성능 저하
 쿼리 [메트릭은](sql-api-query-metrics.md) 쿼리가 가장 많은 시간을 소비 하는 위치를 확인 하는 데 도움이 됩니다. 쿼리 메트릭에 따라 백 엔드 및 클라이언트에서 얼마나 많은 시간이 소요 되는지 확인할 수 있습니다.

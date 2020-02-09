@@ -29,7 +29,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.
 
 [!code-json[iothub-creation](~/quickstart-templates/101-iothub-with-consumergroup-create/azuredeploy.json)]
 
-템플릿은 세 개의 끝점 (eventhub, 클라우드-장치 및 메시징)과 소비자 그룹을 사용 하 여 Azure Iot hub를 만듭니다. 더 많은 템플릿 샘플은 [Azure 빠른 시작 템플릿](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Devices&pageNumber=1&sort=Popular)을 참조 하세요. Iot Hub 템플릿 스키마는 [여기](https://docs.microsoft.com/azure/templates/microsoft.devices/iothub-allversions)에서 찾을 수 있습니다.
+템플릿은 세 개의 엔드포인트 (eventhub, 클라우드-장치 및 메시징)과 소비자 그룹을 사용 하 여 Azure Iot hub를 만듭니다. 더 많은 템플릿 샘플은 [Azure 빠른 시작 템플릿](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Devices&pageNumber=1&sort=Popular)을 참조 하세요. Iot Hub 템플릿 스키마는 [여기](https://docs.microsoft.com/azure/templates/microsoft.devices/iothub-allversions)에서 찾을 수 있습니다.
 
 템플릿을 배포 하는 방법에는 여러 가지가 있습니다.  이 자습서에서는 Azure PowerShell을 사용 합니다.
 

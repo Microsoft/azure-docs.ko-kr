@@ -28,7 +28,7 @@ ms.locfileid: "75771311"
 Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 ```
 
-그런 다음이 cmdlet을 실행 하 여 Windows 가상 데스크톱 테 넌 트에 새 호스트 풀을 만듭니다.
+그런 다음이 cmdlet을 실행 하 여 Windows 가상 데스크톱 테넌트에 새 호스트 풀을 만듭니다.
 
 ```powershell
 New-RdsHostPool -TenantName <tenantname> -Name <hostpoolname>

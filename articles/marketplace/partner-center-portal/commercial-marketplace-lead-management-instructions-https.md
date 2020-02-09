@@ -1,5 +1,5 @@
 ---
-title: HTTPS 끝점 | Azure Marketplace
+title: HTTPS 엔드포인트 | Azure Marketplace
 description: HTTPS 엔드포인트에 대한 잠재 고객 관리 구성
 services: Azure, Marketplace, commercial marketplace, Partner Center
 author: qianw211
@@ -17,7 +17,7 @@ ms.locfileid: "73812281"
 ---
 # <a name="configure-lead-management-using-an-https-endpoint"></a>HTTPS 엔드포인트를 사용하여 잠개 고객 관리 구성
 
-파트너 센터에서 Azure Marketplace 및 AppSource 리드를 받기 위해 CRM (고객 관계 관리) 시스템을 명시적으로 지원 하지 않는 경우 MS Flow에서 HTTPS 끝점을 사용 하 여 이러한 잠재 고객을 처리할 수 있습니다. HTTPS 끝점을 사용 하 여 이러한 잠재 고객을 전자 메일 알림으로 전송 하거나 MS Flow에서 지 원하는 CRM (고객 관계 관리) 시스템에 기록할 수 있습니다. 이 문서의 지침에서는 Microsoft Flow를 사용 하 여 새 흐름을 만드는 기본 프로세스를 안내 하 고,이를 통해 잠재 고객 관리 > **HTTPS 끝점 url** 필드에 대 한 게시 포털에 입력 하는 HTTP 게시 url이 생성 됩니다. 또한 온라인에서 찾을 수 있는 [Postman](https://www.getpostman.com/downloads/) 이라는 도구를 사용 하 여 흐름을 테스트 하는 방법에 대 한 지침도 포함 되어 있습니다.
+파트너 센터에서 Azure Marketplace 및 AppSource 리드를 받기 위해 CRM (고객 관계 관리) 시스템을 명시적으로 지원 하지 않는 경우 MS Flow에서 HTTPS 엔드포인트을 사용 하 여 이러한 잠재 고객을 처리할 수 있습니다. HTTPS 엔드포인트을 사용 하 여 이러한 잠재 고객을 전자 메일 알림으로 전송 하거나 MS Flow에서 지 원하는 CRM (고객 관계 관리) 시스템에 기록할 수 있습니다. 이 문서의 지침에서는 Microsoft Flow를 사용 하 여 새 흐름을 만드는 기본 프로세스를 안내 하 고,이를 통해 잠재 고객 관리 > **HTTPS 엔드포인트 url** 필드에 대 한 게시 포털에 입력 하는 HTTP 게시 url이 생성 됩니다. 또한 온라인에서 찾을 수 있는 [Postman](https://www.getpostman.com/downloads/) 이라는 도구를 사용 하 여 흐름을 테스트 하는 방법에 대 한 지침도 포함 되어 있습니다.
 
 ## <a name="create-a-flow-using-microsoft-flow"></a>Microsoft Flow를 사용하여 흐름 만들기
 
@@ -202,7 +202,7 @@ ms.locfileid: "73812281"
 
 1. 제품에 대 한 **제품 설치** 페이지로 이동 합니다.
 2. 리드 관리 섹션에서 **연결** 을 선택 합니다.
-3. 연결 정보 팝업 창에서 **리드 대상** 에 대해 **https 끝점** 을 선택 하 고 이전 단계를 수행 하 여 만든 흐름의 HTTP POST URL을 **HTTPS 끝점 url** 필드에 붙여넣습니다.
+3. 연결 정보 팝업 창에서 **리드 대상** 에 대해 **https 엔드포인트** 을 선택 하 고 이전 단계를 수행 하 여 만든 흐름의 HTTP POST URL을 **HTTPS 엔드포인트 url** 필드에 붙여넣습니다.
 4. **저장**을 선택합니다. 
 
 >[!Note] 

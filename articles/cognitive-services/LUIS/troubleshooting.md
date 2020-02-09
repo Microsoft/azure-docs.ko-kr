@@ -92,7 +92,7 @@ LUIS 포털에서 추출 하려는 정확한 엔터티의 텍스트에 레이블
 
 가격 책정 계층에 대 한 초당 트랜잭션 수 또는 월별 트랜잭션을 초과 하는 경우 403 및 429 오류 상태 코드를 받게 됩니다. 가격 책정 계층을 늘리거나 Language Understanding [컨테이너](luis-container-howto.md)를 사용 합니다.
 
-이러한 무료 1000 끝점 쿼리를 모두 사용 하거나 가격 책정 계층의 월간 트랜잭션 할당량을 초과 하는 경우 HTTP 403 오류 상태 코드를 받게 됩니다. 
+이러한 무료 1000 엔드포인트 쿼리를 모두 사용 하거나 가격 책정 계층의 월간 트랜잭션 할당량을 초과 하는 경우 HTTP 403 오류 상태 코드를 받게 됩니다. 
 
 이 오류를 해결 하려면 [가격 책정 계층](luis-how-to-azure-subscription.md#change-pricing-tier) 을 상위 계층으로 변경 하거나 [새 리소스를 만들어](get-started-portal-deploy-app.md#create-the-endpoint-resource) [앱에 할당](get-started-portal-deploy-app.md#assign-the-resource-key-to-the-luis-app-in-the-luis-portal)해야 합니다.
 
@@ -148,7 +148,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 ``` 
 
 ### <a name="my-luis-app-was-working-yesterday-but-today-im-getting-403-errors-i-didnt-change-the-app-how-do-i-fix-it"></a>내 LUIS 앱이 어제도 작동했으나 오늘 403 오류가 발생하고 있습니다. 앱을 변경한 적도 없었습니다. 이 문제를 어떻게 해결하나요?
-다음 [지침](#how-do-i-create-and-assign-a-luis-endpoint-key) 에 따라 LUIS 끝점 키를 만들고 앱에 할당 합니다. 그런 다음 [새 끝점 키를 사용](luis-concept-keys.md)하도록 클라이언트 응용 프로그램의 HTTP 요청을 끝점으로 변경 해야 합니다. 다른 지역에서 새 리소스를 만든 경우 HTTP 클라이언트 요청 영역도 변경 합니다.
+다음 [지침](#how-do-i-create-and-assign-a-luis-endpoint-key) 에 따라 LUIS 엔드포인트 키를 만들고 앱에 할당 합니다. 그런 다음 [새 엔드포인트 키를 사용](luis-concept-keys.md)하도록 클라이언트 응용 프로그램의 HTTP 요청을 엔드포인트으로 변경 해야 합니다. 다른 지역에서 새 리소스를 만든 경우 HTTP 클라이언트 요청 영역도 변경 합니다.
 
 ### <a name="how-do-i-secure-my-luis-endpoint"></a>내 LUIS 엔드포인트를 어떻게 보호하나요?
 [엔드포인트 보안](luis-concept-keys.md#securing-the-endpoint)을 참조하세요.
@@ -210,7 +210,7 @@ Azure에서 테넌트는 서비스와 연결된 클라이언트 또는 조직을
 
 ### <a name="how-do-i-know-what-key-i-need-where-i-get-it-and-what-i-do-with-it"></a>어떤 키가 필요한지, 어디서 얻을 수 있는지, 얻은 키로 무엇을 해야 하는지 알아보려면 어떻게 할까요?? 
 
-제작 키와 예측 런타임 키의 차이점에 대해 알아보려면 [LUIS에서 예측 끝점 키 작성 및 쿼리](luis-concept-keys.md) 를 참조 하세요. 
+제작 키와 예측 런타임 키의 차이점에 대해 알아보려면 [LUIS에서 예측 엔드포인트 키 작성 및 쿼리](luis-concept-keys.md) 를 참조 하세요. 
 
 ### <a name="i-got-an-error-about-being-out-of-quota-how-do-i-fix-it"></a>할당량 초과 오류가 발생합니다. 이 문제를 어떻게 해결하나요? 
 

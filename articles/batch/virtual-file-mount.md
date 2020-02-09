@@ -85,7 +85,7 @@ new PoolAddParameter
 
 ### <a name="azure-blob-file-system"></a>Azure Blob 파일 시스템
 
-또 다른 옵션은 [blobfuse](../storage/blobs/storage-how-to-mount-container-linux.md)를 통해 Azure Blob storage를 사용 하는 것입니다. Blob 파일 시스템을 탑재 하려면 저장소 계정에 대 한 `AccountKey` 또는 `SasKey` 필요 합니다. 이러한 키를 가져오는 방법에 대 한 자세한 내용은 [저장소 계정 액세스 키 관리](../storage/common/storage-account-keys-manage.md)또는 [SAS (공유 액세스 서명) 사용](../storage/common/storage-dotnet-shared-access-signature-part-1.md)을 참조 하세요. Blobfuse를 사용 하는 방법에 대 한 자세한 내용은 blobfuse [문제 해결 FAQ](https://github.com/Azure/azure-storage-fuse/wiki/3.-Troubleshoot-FAQ)를 참조 하세요. Blobfuse 탑재 된 디렉터리에 대 한 기본 액세스 권한을 얻으려면 **관리자 권한**으로 작업을 실행 합니다. Blobfuse는 사용자 공간에서 디렉터리를 탑재 하 고 풀을 만들 때 루트로 탑재 됩니다. Linux에서는 모든 **관리자** 작업이 루트입니다. 퓨즈 모듈의 모든 옵션은 [퓨즈 참조 페이지](https://manpages.ubuntu.com/manpages/xenial/man8/mount.fuse.8.html)에 설명 되어 있습니다.
+또 다른 옵션은 [blobfuse](../storage/blobs/storage-how-to-mount-container-linux.md)를 통해 Azure Blob storage를 사용 하는 것입니다. Blob 파일 시스템을 탑재 하려면 저장소 계정에 대한 `AccountKey` 또는 `SasKey` 필요 합니다. 이러한 키를 가져오는 방법에 대한 자세한 내용은 [저장소 계정 액세스 키 관리](../storage/common/storage-account-keys-manage.md)또는 [SAS (공유 액세스 서명) 사용](../storage/common/storage-dotnet-shared-access-signature-part-1.md)을 참조 하세요. Blobfuse를 사용 하는 방법에 대한 자세한 내용은 blobfuse [문제 해결 FAQ](https://github.com/Azure/azure-storage-fuse/wiki/3.-Troubleshoot-FAQ)를 참조 하세요. Blobfuse 탑재 된 디렉터리에 대한 기본 액세스 권한을 얻으려면 **관리자 권한**으로 작업을 실행 합니다. Blobfuse는 사용자 공간에서 디렉터리를 탑재 하 고 풀을 만들 때 루트로 탑재 됩니다. Linux에서는 모든 **관리자** 작업이 루트입니다. 퓨즈 모듈의 모든 옵션은 [퓨즈 참조 페이지](https://manpages.ubuntu.com/manpages/xenial/man8/mount.fuse.8.html)에 설명 되어 있습니다.
 
 문제 해결 가이드 외에도 blobfuse 리포지토리의 GitHub 문제는 현재 blobfuse 문제 및 해결 방법을 확인 하는 데 유용한 방법입니다. 자세한 내용은 [blobfuse 문제](https://github.com/Azure/azure-storage-fuse/issues)를 참조 하세요.
 
@@ -139,7 +139,7 @@ new PoolAddParameter
 
 ### <a name="common-internet-file-system"></a>일반 인터넷 파일 시스템
 
-CIFS (Common Internet File system)를 풀 노드에 탑재할 수도 있으므로 기존 파일 시스템을 Azure Batch 노드에서 쉽게 액세스할 수 있습니다. CIFS는 네트워크 서버 파일 및 서비스를 요청 하는 데 사용할 수 있는 개방형 플랫폼 간 메커니즘을 제공 하는 파일 공유 프로토콜입니다. CIFS는 인터넷 및 인트라넷 파일 공유에 대 한 Microsoft SMB (서버 메시지 블록) 프로토콜의 향상 된 버전을 기반으로 하며, Windows 노드에 외부 파일 시스템을 탑재 하는 데 사용 됩니다. SMB에 대해 자세히 알아보려면 [파일 서버 및 smb](https://docs.microsoft.com/windows-server/storage/file-server/file-server-smb-overview)를 참조 하세요.
+CIFS (Common Internet File system)를 풀 노드에 탑재할 수도 있으므로 기존 파일 시스템을 Azure Batch 노드에서 쉽게 액세스할 수 있습니다. CIFS는 네트워크 서버 파일 및 서비스를 요청 하는 데 사용할 수 있는 개방형 플랫폼 간 메커니즘을 제공 하는 파일 공유 프로토콜입니다. CIFS는 인터넷 및 인트라넷 파일 공유에 대한 Microsoft SMB (서버 메시지 블록) 프로토콜의 향상 된 버전을 기반으로 하며, Windows 노드에 외부 파일 시스템을 탑재 하는 데 사용 됩니다. SMB에 대해 자세히 알아보려면 [파일 서버 및 smb](https://docs.microsoft.com/windows-server/storage/file-server/file-server-smb-overview)를 참조 하세요.
 
 ```csharp
 new PoolAddParameter
@@ -164,9 +164,9 @@ new PoolAddParameter
 
 ## <a name="diagnose-mount-errors"></a>탑재 오류 진단
 
-탑재 구성에 실패 하면 풀의 계산 노드가 실패 하 고 노드 상태를 사용할 수 없게 됩니다. 탑재 구성 오류를 진단 하려면 오류에 대 한 자세한 내용은 [`ComputeNodeError`](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) 속성을 검사 합니다.
+탑재 구성에 실패 하면 풀의 계산 노드가 실패 하 고 노드 상태를 사용할 수 없게 됩니다. 탑재 구성 오류를 진단 하려면 오류에 대한 자세한 내용은 [`ComputeNodeError`](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) 속성을 검사 합니다.
 
-디버그할 로그 파일을 가져오려면 [Outputfiles](batch-task-output-files.md) 를 사용 하 여 `*.log` 파일을 업로드 합니다. `*.log` 파일에는 `AZ_BATCH_NODE_MOUNTS_DIR` 위치의 파일 시스템 탑재에 대 한 정보가 포함 되어 있습니다. 탑재 로그 파일은 각 탑재에 대 한 `<type>-<mountDirOrDrive>.log` 형식입니다. 예를 들어 `test` 이라는 탑재 디렉터리에 탑재 된 `cifs` 탑재 로그 파일은 `cifs-test.log`됩니다.
+디버그할 로그 파일을 가져오려면 [Outputfiles](batch-task-output-files.md) 를 사용 하 여 `*.log` 파일을 업로드 합니다. `*.log` 파일에는 `AZ_BATCH_NODE_MOUNTS_DIR` 위치의 파일 시스템 탑재에 대한 정보가 포함 되어 있습니다. 탑재 로그 파일은 각 탑재에 대한 `<type>-<mountDirOrDrive>.log` 형식입니다. 예를 들어 `test` 이라는 탑재 디렉터리에 탑재 된 `cifs` 탑재 로그 파일은 `cifs-test.log`됩니다.
 
 ## <a name="supported-skus"></a>지원되는 SKU
 

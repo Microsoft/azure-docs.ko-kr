@@ -31,9 +31,9 @@ HTTP 헤더 다시 쓰기를 구성 하려면 다음이 단계를 완료 해야 
 
 1. HTTP 헤더 다시 쓰기에 필요한 개체를 만듭니다.
 
-   - **RequestHeaderConfiguration**: 다시 작성 하려는 요청 헤더 필드와 헤더에 대 한 새 값을 지정 하는 데 사용 합니다.
+   - **RequestHeaderConfiguration**: 다시 작성 하려는 요청 헤더 필드와 헤더에 대한 새 값을 지정 하는 데 사용 합니다.
 
-   - **ResponseHeaderConfiguration**: 다시 작성 하려는 응답 헤더 필드와 헤더에 대 한 새 값을 지정 하는 데 사용 합니다.
+   - **ResponseHeaderConfiguration**: 다시 작성 하려는 응답 헤더 필드와 헤더에 대한 새 값을 지정 하는 데 사용 합니다.
 
    - **ActionSet**: 이전에 지정 된 요청 및 응답 헤더의 구성을 포함 합니다.
 
@@ -62,7 +62,7 @@ Select-AzSubscription -Subscription "<sub name>"
 
 ## <a name="specify-the-http-header-rewrite-rule-configuration"></a>HTTP 헤더를 재작성 규칙 구성을 지정 합니다.
 
-이 예제에서는 azurewebsites.net에 대 한 참조를 포함 하는 location 헤더 때마다 HTTP 응답의 location 헤더를 다시 작성 하 여 리디렉션 URL을 수정 합니다. 이 위해 응답의 location 헤더 azurewebsites.net 포함 되는지 여부를 평가 하는 조건을 추가 합니다. 패턴을 사용 하 여 `(https?):\/\/.*azurewebsites\.net(.*)$`입니다. 사용 및 `{http_resp_Location_1}://contoso.com{http_resp_Location_2}` 헤더 값으로. 이 값으로 대체 됩니다 *azurewebsites.net* 사용 하 여 *contoso.com* location 헤더에 있습니다.
+이 예제에서는 azurewebsites.net에 대한 참조를 포함 하는 location 헤더 때마다 HTTP 응답의 location 헤더를 다시 작성 하 여 리디렉션 URL을 수정 합니다. 이 위해 응답의 location 헤더 azurewebsites.net 포함 되는지 여부를 평가 하는 조건을 추가 합니다. 패턴을 사용 하 여 `(https?):\/\/.*azurewebsites\.net(.*)$`입니다. 사용 및 `{http_resp_Location_1}://contoso.com{http_resp_Location_2}` 헤더 값으로. 이 값으로 대체 됩니다 *azurewebsites.net* 사용 하 여 *contoso.com* location 헤더에 있습니다.
 
 ```azurepowershell
 $responseHeaderConfiguration = New-AzApplicationGatewayRewriteRuleHeaderConfiguration -HeaderName "Location" -HeaderValue "{http_resp_Location_1}://contoso.com{http_resp_Location_2}"
@@ -104,4 +104,4 @@ set-AzApplicationGateway -ApplicationGateway $appgw
 
 ## <a name="next-steps"></a>다음 단계
 
-몇 가지 일반적인 사용 사례를 설정 하는 방법에 대 한 자세한 내용은 참조 하세요 [공용 헤더 시나리오를 다시 작성](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers)합니다.
+몇 가지 일반적인 사용 사례를 설정 하는 방법에 대한 자세한 내용은 참조 하세요 [공용 헤더 시나리오를 다시 작성](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers)합니다.

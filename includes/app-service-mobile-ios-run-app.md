@@ -13,11 +13,11 @@ ms.locfileid: "66240263"
 ---
 1. Xcode를 사용 하 여 다운로드 한 클라이언트 프로젝트를 엽니다.
 
-2. 로 이동 합니다 [Azure portal](https://portal.azure.com/) 만든 모바일 앱으로 이동 합니다. 에 `Overview` 블레이드에서 모바일 앱에 대 한 공용 엔드포인트 URL 찾습니다. 예제-내 앱 이름 "test123"에 대 한 sitename 됩니다 https://test123.azurewebsites.net 합니다.
+2. 로 이동 합니다 [Azure portal](https://portal.azure.com/) 만든 모바일 앱으로 이동 합니다. 에 `Overview` 블레이드에서 모바일 앱에 대한 공용 엔드포인트 URL 찾습니다. 예제-내 앱 이름 "test123"에 대한 sitename 됩니다 https://test123.azurewebsites.net 합니다.
 
 3. Swift 프로젝트 파일을 열고 `ToDoTableViewController.swift` ZUMOAPPNAME/ZUMOAPPNAME/ToDoTableViewController.swift-이 폴더에 있습니다. 응용 프로그램 이름이 `ZUMOAPPNAME`합니다.
 
-4. `viewDidLoad()` 메서드를 대체 `ZUMOAPPURL` 위의 공용 끝점을 사용 하 여 매개 변수입니다.
+4. `viewDidLoad()` 메서드를 대체 `ZUMOAPPURL` 위의 공용 엔드포인트을 사용 하 여 매개 변수입니다.
 
     `let client = MSClient(applicationURLString: "ZUMOAPPURL")`
 
@@ -27,7 +27,7 @@ ms.locfileid: "66240263"
     
 5. Objective C 프로젝트 파일을 열고 `QSTodoService.m` ZUMOAPPNAME/ZUMOAPPNAME-이 폴더에 있습니다. 응용 프로그램 이름이 `ZUMOAPPNAME`합니다.
 
-6. `init` 메서드를 대체 `ZUMOAPPURL` 위의 공용 끝점을 사용 하 여 매개 변수입니다.
+6. `init` 메서드를 대체 `ZUMOAPPURL` 위의 공용 엔드포인트을 사용 하 여 매개 변수입니다.
 
     `self.client = [MSClient clientWithApplicationURLString:@"ZUMOAPPURL"];`
 

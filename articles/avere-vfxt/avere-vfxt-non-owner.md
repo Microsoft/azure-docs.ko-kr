@@ -72,7 +72,7 @@ ms.locfileid: "76153278"
 
    `az role assignment create --assignee <USERNAME> --scope /subscriptions/<SUBSCRIPTION_ID> --role 'avere-create-cluster'`
 
-이 프로세스를 완료 하면 역할은 사용자에 게 구독에 대 한 다음 사용 권한을 할당 합니다.
+이 프로세스를 완료 하면 역할은 사용자에 게 구독에 대한 다음 사용 권한을 할당 합니다.
 
 * 네트워크 인프라 만들기 및 구성
 * 클러스터 컨트롤러 만들기

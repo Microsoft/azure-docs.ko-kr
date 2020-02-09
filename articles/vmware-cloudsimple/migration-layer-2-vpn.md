@@ -30,7 +30,7 @@ L2VPN를 사용 하 여 온-프레미스 네트워크를 확장 하려면 L2VPN 
 
 이 배포 시나리오에서 AVS 사설 클라우드는 온-프레미스 관리 및 vMotion 서브넷이 AVS 사설 클라우드 관리 및 vMotion 서브넷과 통신할 수 있도록 하는 사이트 간 VPN 터널을 통해 온-프레미스 환경에 연결 됩니다. 이 정렬은 Cross vCenter vMotion (xVC-vMotion)에 필요 합니다. NSX-T Tier0 라우터는 AVS 사설 클라우드에 L2VPN 서버로 배포 됩니다.
 
-독립 실행형 NSX Edge는 온-프레미스 환경에서 L2VPN 클라이언트로 배포 된 후 L2VPN 서버와 쌍으로 연결 됩니다. GRE 터널 끝점은 각 쪽에 생성 되며, 온-프레미스 계층 2 네트워크를 AVS 사설 클라우드에 ' 스트레치 ' 하도록 구성 됩니다. 이 구성은 다음 그림에 나와 있습니다.
+독립 실행형 NSX Edge는 온-프레미스 환경에서 L2VPN 클라이언트로 배포 된 후 L2VPN 서버와 쌍으로 연결 됩니다. GRE 터널 엔드포인트은 각 쪽에 생성 되며, 온-프레미스 계층 2 네트워크를 AVS 사설 클라우드에 ' 스트레치 ' 하도록 구성 됩니다. 이 구성은 다음 그림에 나와 있습니다.
 
 ![배포 시나리오](media/l2vpn-deployment-scenario.png)
 
@@ -259,7 +259,7 @@ POST  https://192.168.110.201/api/v1/vpn/ipsec/tunnel-profiles
 }
 ```
 
-### <a name="create-a-local-endpoint"></a>로컬 끝점 만들기
+### <a name="create-a-local-endpoint"></a>로컬 엔드포인트 만들기
 
 ``` 
 POST https://192.168.110.201/api/v1/vpn/ipsec/local-endpoints
@@ -277,7 +277,7 @@ POST https://192.168.110.201/api/v1/vpn/ipsec/local-endpoints
 }
 ```
 
-### <a name="create-a-peer-endpoint"></a>피어 끝점 만들기
+### <a name="create-a-peer-endpoint"></a>피어 엔드포인트 만들기
 
 ```
 POST https://192.168.110.201/api/v1/vpn/ipsec/peer-endpoints
@@ -368,7 +368,7 @@ POST: https://192.168.110.201/api/v1/vpn/l2vpn/sessions
 }
 ```
 
-이러한 호출은 GRE 터널 끝점을 만듭니다. 상태를 확인 하려면 다음 명령을 실행 합니다.
+이러한 호출은 GRE 터널 엔드포인트을 만듭니다. 상태를 확인 하려면 다음 명령을 실행 합니다.
 
 ```
 edge-2> get tunnel-port
@@ -414,7 +414,7 @@ ENCAP       : GENEVE
 
 ## <a name="obtain-the-peer-code-for-l2vpn-on-the-nsx-t-side"></a>NSX 쪽에서 L2VPN에 대 한 피어 코드 가져오기
 
-NSX-T 끝점의 피어 코드를 가져옵니다. 원격 끝점을 구성 하는 경우 피어 코드가 필요 합니다. 이전 섹션에서 L2VPN < 세션 id >를 가져올 수 있습니다. 자세한 내용은 [NSX-T 2.3 API 가이드](https://www.vmware.com/support/nsxt/doc/nsxt_23_api.html)를 참조 하세요.
+NSX-T 엔드포인트의 피어 코드를 가져옵니다. 원격 엔드포인트을 구성 하는 경우 피어 코드가 필요 합니다. 이전 섹션에서 L2VPN < 세션 id >를 가져올 수 있습니다. 자세한 내용은 [NSX-T 2.3 API 가이드](https://www.vmware.com/support/nsxt/doc/nsxt_23_api.html)를 참조 하세요.
 
 ```
 GET https://192.168.110.201/api/v1/vpn/l2vpn/sessions/<session-id>/peer-codes

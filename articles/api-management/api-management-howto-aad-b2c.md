@@ -80,7 +80,7 @@ Azure Active Directory B2C는 소비자 지향 웹 및 모바일 애플리케이
 
 1.  API Management **ID 공급자 추가** 창으로 다시 전환하고 키를 **클라이언트 비밀** 텍스트 상자에 붙여 넣습니다.
     
-1.  **Signin 테 넌 트**에 Azure Active Directory B2C 테 넌 트의 도메인 이름을 지정 합니다.
+1.  **Signin 테넌트**에 Azure Active Directory B2C 테넌트의 도메인 이름을 지정 합니다.
 
 1.  **권한** 필드를 사용 하 여 사용할 AZURE AD B2C 로그인 URL을 제어할 수 있습니다. 값을 **< your_b2c_tenant_name > b2clogin**로 설정 합니다.
 

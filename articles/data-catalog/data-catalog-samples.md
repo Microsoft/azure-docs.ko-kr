@@ -27,7 +27,7 @@ Data Catalog REST API를 사용 하 여 Azure Data Catalog 앱 개발을 시작 
 
    이 샘플에서는 Data Catalog REST API를 사용 하 여 데이터 자산을 등록, 검색 및 삭제 하는 방법을 보여 줍니다. 이 샘플에서는 서비스 주체 인증을 사용 합니다.
 
-* [Azure Data Catalog에 대 한 Import/Export 도구](https://github.com/Azure-Samples/data-catalog-dotnet-import-export/)
+* [Azure Data Catalog에 대한 Import/Export 도구](https://github.com/Azure-Samples/data-catalog-dotnet-import-export/)
 
    이 샘플에서는 Data Catalog REST API를 사용 하 여 Azure Data Catalog에서 자산을 가져오고 파일에 serialize 하는 방법을 보여 줍니다. 또한 JSON으로 직렬화된 자산 집합을 가져오고 카탈로그에 게시하는 방법을 보여 줍니다. 검색 쿼리를 사용하여 카탈로그의 하위 집합 내보내기를 지원합니다.
 

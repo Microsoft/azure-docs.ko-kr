@@ -49,7 +49,7 @@ Seamless SSO는 [암호 해시 동기화](how-to-connect-password-hash-synchroni
 | 웹용 Outlook | https:\//outlook.office365.com/contoso.com |
 | Office 365 포털 | https:\//portal.office.com?domain_hint=contoso.com, https:\//www.office.com?domain_hint=contoso.com |
 
-또한 응용 프로그램이 테 넌 트 (즉, https:\//login.microsoftonline.com/contoso.com/<)로 설정 된 Azure AD의 끝점에 로그인 요청을 전송 하는 경우 사용자는 자동 로그온 환경을 이용할 수 있습니다. > 또는 https:\//login.microsoftonline.com/<tenant_ID>/<.. >-Azure AD의 공통 끝점 (즉, https:\//login.microsoftonline.com/common/<) 대신 ... >. 이러한 형식의 로그인을 요청하는 애플리케이션의 부분 목록이 아래에 나열됩니다.
+또한 응용 프로그램이 테넌트 (즉, https:\//login.microsoftonline.com/contoso.com/<)로 설정 된 Azure AD의 엔드포인트에 로그인 요청을 전송 하는 경우 사용자는 자동 로그온 환경을 이용할 수 있습니다. > 또는 https:\//login.microsoftonline.com/<tenant_ID>/<.. >-Azure AD의 공통 엔드포인트 (즉, https:\//login.microsoftonline.com/common/<) 대신 ... >. 이러한 형식의 로그인을 요청하는 애플리케이션의 부분 목록이 아래에 나열됩니다.
 
 | 애플리케이션 이름 | 사용할 애플리케이션 URL |
 | -- | -- |
@@ -109,7 +109,7 @@ Azure AD Connect를 실행 중인 온-프레미스 서버에서 다음 단계를
 
 **Q: 원활한 SSO를 사용 하지 않도록 설정 하려면 어떻게 해야 하나요?**
 
-   **1 단계. 테 넌 트에서 기능을 사용 하지 않도록 설정**
+   **1 단계. 테넌트에서 기능을 사용 하지 않도록 설정**
 
    **옵션 A: Azure AD Connect 사용 안 함**
     

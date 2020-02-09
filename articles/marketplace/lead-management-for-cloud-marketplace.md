@@ -41,7 +41,7 @@ ms.locfileid: "73813287"
 
 Azure **테이블** - azure 테이블에서 리드를 얻기 위해 azure storage 계정을 설정 하는 방법에 대 한 지침을 보려면 [여기를 클릭](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-azure-table) 하세요.
 
-**Https 끝점** - [여기를 클릭](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-https) 하 여 잠재 고객을 얻기 위해 https 끝점을 설정 하는 방법에 대 한 지침을 확인 하세요.
+**Https 엔드포인트** - [여기를 클릭](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-https) 하 여 잠재 고객을 얻기 위해 https 엔드포인트을 설정 하는 방법에 대 한 지침을 확인 하세요.
 
 리드 대상을 적절하게 구성하고 제품에서 게시를 눌렀으면 연결이 유효한지 확인하고 테스트 리드를 보냅니다. 제품을 라이브로 전환하기 전에 확인할 때 미리보기 환경에서 직접 제품을 구매하여 리드 연결을 테스트할 수도 있습니다. 잠재 고객 이탈을 방지하려면 잠재 고객 설정을 최신 상태로 유지해야 하므로, 파트너 정보가 변경될 때마다 이러한 연결을 업데이트해야 합니다.
 
@@ -63,7 +63,7 @@ Azure **테이블** - azure 테이블에서 리드를 얻기 위해 azure storag
 
 > 애플리케이션/사용자에게 Microsoft Marketplace 리드 작성기에 대한 보안 역할이 없습니다. Azure Active Directory를 사용하는 경우 11-15단계를 따르고, Office 사용자를 사용하는 경우 [여기](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics)에서 보안 설정을 사용합니다.
 
-**AAD를 사용 하 여 잠재 고객을 Dynamics CRM에 저장할 수 없습니다. 예외:: 테 넌 트를 찾을 수 없습니다. 이 인스턴스는 테 넌 트에 대 한 활성 구독이 없는 경우에 발생할 수 있습니다.**  
+**AAD를 사용 하 여 잠재 고객을 Dynamics CRM에 저장할 수 없습니다. 예외:: 테넌트를 찾을 수 없습니다. 이 인스턴스는 테넌트에 대 한 활성 구독이 없는 경우에 발생할 수 있습니다.**  
 
 > 리드 관리 섹션에 제공된 디렉터리 ID가 유효한 디렉터리가 아닙니다. [여기](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics)에서 2단계(Azure Active Directory 아래)의 지침에 따라 디렉터리 ID를 가져오세요. 
 
@@ -75,7 +75,7 @@ Azure **테이블** - azure 테이블에서 리드를 얻기 위해 azure storag
 
 > 리드 관리 섹션에 제공된 애플리케이션 ID가 유효한 디렉터리가 아닙니다. [여기](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics)에서 8단계(Azure Active Directory 아래)의 지침에 따라 디렉터리 ID를 가져오세요. 
 
-**AAD를 사용 하 여 잠재 고객을 Dynamics CRM에 저장할 수 없습니다. 예외:: 요청 된 테 넌 트 식별자가 잘못 되었으며 외부 도메인 형식이 잘못 되었습니다.** 
+**AAD를 사용 하 여 잠재 고객을 Dynamics CRM에 저장할 수 없습니다. 예외:: 요청 된 테넌트 식별자가 잘못 되었으며 외부 도메인 형식이 잘못 되었습니다.** 
 
 > 리드 관리 섹션에 제공된 디렉터리 ID가 유효한 디렉터리가 아닙니다. [여기](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics)에서 2단계(Azure Active Directory 아래)의 지침에 따라 디렉터리 ID를 가져오세요. 
 

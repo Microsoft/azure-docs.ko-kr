@@ -17,4 +17,4 @@ ms.locfileid: "68966377"
 데이터 저장소가 다음 방법 중 하나로 구성 된 경우이 데이터 저장소에 연결 하기 위해 [자체 호스팅 Integration Runtime](../articles/data-factory/create-self-hosted-integration-runtime.md) 를 설정 해야 합니다.
 
 - 데이터 저장소는 온-프레미스 네트워크, Azure Virtual Network 내부 또는 Amazon 가상 사설 클라우드 내에 있습니다.
-- 데이터 저장소는 방화벽 규칙의 Ip 허용 목록에 대 한 액세스를 제한 하는 관리 되는 클라우드 데이터 서비스입니다.
+- 데이터 저장소는 방화벽 규칙의 Ip 허용 목록에 대한 액세스를 제한 하는 관리 되는 클라우드 데이터 서비스입니다.

@@ -63,7 +63,7 @@ Azure Portal에서 인증 세부 정보를 볼 수 있습니다. 계정에서 **
 
 ## <a name="grant-role-based-access-control-to-azure-maps"></a>Azure Maps에 역할 기반 액세스 제어 권한 부여
 
-Azure AD 테 넌 트에 Azure Maps 계정을 연결한 후 액세스 제어를 허용할 수 있습니다. 사용자, 그룹 또는 응용 프로그램을 하나 이상의 Azure Maps 액세스 제어 역할에 할당 하 여 RBAC ( *역할 기반 액세스 제어* )를 부여 합니다. 
+Azure AD 테넌트에 Azure Maps 계정을 연결한 후 액세스 제어를 허용할 수 있습니다. 사용자, 그룹 또는 응용 프로그램을 하나 이상의 Azure Maps 액세스 제어 역할에 할당 하 여 RBAC ( *역할 기반 액세스 제어* )를 부여 합니다. 
 
 1. **Azure Maps 계정**으로 이동 합니다. **액세스 제어 (IAM)**  > **역할 할당**을 선택 합니다.
 
@@ -95,26 +95,26 @@ Azure Maps에 RBAC가 부여 된 사용자 및 앱을 보려면 **Access Control
 
 응용 프로그램에서 Azure Maps 웹 SDK를 사용 하 여 사용자 토큰 인증을 사용 하는 경우 Azure Maps 클라이언트 ID 및 Azure AD 앱 ID를 사용 하 여 HTML 페이지를 구성 합니다.
 
-응용 프로그램에서 서버 또는 응용 프로그램 인증을 사용 하는 경우 `https://login.microsoftonline.com`Azure AD 토큰 끝점에서 토큰을 요청 합니다. 요청에서 다음 정보를 사용 합니다. 
+응용 프로그램에서 서버 또는 응용 프로그램 인증을 사용 하는 경우 `https://login.microsoftonline.com`Azure AD 토큰 엔드포인트에서 토큰을 요청 합니다. 요청에서 다음 정보를 사용 합니다. 
 
 * Azure AD 리소스 ID `https://atlas.microsoft.com/`
 * Azure Maps 클라이언트 ID
 * Azure AD 앱 ID
 * Azure AD 앱 등록 암호 또는 인증서
 
-| Azure 환경   | Azure AD 토큰 끝점 | Azure 리소스 ID |
+| Azure 환경   | Azure AD 토큰 엔드포인트 | Azure 리소스 ID |
 | --------------------|-------------------------|-------------------|
 | Azure 공용 클라우드        | `https://login.microsoftonline.com` | `https://atlas.microsoft.com/` |
 | Azure Government 클라우드   | `https://login.microsoftonline.us`  | `https://atlas.microsoft.com/` | 
 
-Azure AD에서 사용자 및 서비스 사용자에 대 한 액세스 토큰을 요청 하는 방법에 대 한 자세한 내용은 [AZURE ad에 대 한 인증 시나리오](https://docs.microsoft.com/azure/active-directory/develop/authentication-scenarios)를 참조 하세요.
+Azure AD에서 사용자 및 서비스 사용자에 대한 액세스 토큰을 요청 하는 방법에 대한 자세한 내용은 [AZURE ad에 대한 인증 시나리오](https://docs.microsoft.com/azure/active-directory/develop/authentication-scenarios)를 참조 하세요.
 
 
 ## <a name="next-steps"></a>다음 단계
 
 자세한 내용은 [AZURE AD 및 Azure Maps 웹 SDK](https://docs.microsoft.com/azure/azure-maps/how-to-use-map-control)를 참조 하세요.
 
-Azure Maps 계정에 대 한 API 사용 메트릭을 찾습니다.
+Azure Maps 계정에 대한 API 사용 메트릭을 찾습니다.
 > [!div class="nextstepaction"] 
 > [사용 메트릭 보기](how-to-view-api-usage.md)
 

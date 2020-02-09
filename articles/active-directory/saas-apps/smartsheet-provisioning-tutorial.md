@@ -36,7 +36,7 @@ ms.locfileid: "77063206"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [Smartsheet 테 넌 트](https://www.smartsheet.com/pricing)
+* [Smartsheet 테넌트](https://www.smartsheet.com/pricing)
 * 시스템 관리자 권한이 있는 Smartsheet Enterprise 또는 Enterprise 프리미어 계획의 사용자 계정
 
 ## <a name="assign-users-to-smartsheet"></a>Smartsheet에 사용자 할당
@@ -123,7 +123,7 @@ Azure AD를 사용 하 여 자동 사용자 프로비저닝을 위한 Smartsheet
 
     ![Smartsheet OIDC 로그인](media/smartsheet-provisioning-tutorial/smartsheet-OIDC-login.png)
 
-7. 인증에 성공 하면 동의 페이지에 대 한 동의 확인 프롬프트를 수락 합니다. 그러면 응용 프로그램이 테 넌 트에 자동으로 추가 되 고 Smartsheet 계정으로 리디렉션됩니다.
+7. 인증에 성공 하면 동의 페이지에 대 한 동의 확인 프롬프트를 수락 합니다. 그러면 응용 프로그램이 테넌트에 자동으로 추가 되 고 Smartsheet 계정으로 리디렉션됩니다.
 
     ![Smartsheet OIDc 동의](media/smartsheet-provisioning-tutorial/smartsheet-OIDC-consent.png)
 
@@ -149,7 +149,7 @@ Azure AD를 사용 하 여 자동 사용자 프로비저닝을 위한 Smartsheet
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에 있는 **테 넌 트 URL**에 `https://scim.smartsheet.com/v2/`을 입력 합니다. **비밀 토큰**의 smartsheet에서 이전에 검색 하 고 저장 한 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 smartsheet에 연결할 수 있는지 확인 합니다. 연결에 실패 하는 경우 Smartsheet 계정에 SysAdmin 권한이 있는지 확인 한 후 다시 시도 하십시오.
+5. **관리자 자격 증명** 섹션 아래에 있는 **테넌트 URL**에 `https://scim.smartsheet.com/v2/`을 입력 합니다. **비밀 토큰**의 smartsheet에서 이전에 검색 하 고 저장 한 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 smartsheet에 연결할 수 있는지 확인 합니다. 연결에 실패 하는 경우 Smartsheet 계정에 SysAdmin 권한이 있는지 확인 한 후 다시 시도 하십시오.
 
     ![토큰](common/provisioning-testconnection-tenanturltoken.png)
 

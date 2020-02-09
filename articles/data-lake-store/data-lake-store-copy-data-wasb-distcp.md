@@ -21,7 +21,7 @@ ms.locfileid: "75638836"
 >
 >
 
-Azure Data Lake Storage Gen1에 대 한 액세스 권한이 있는 HDInsight 클러스터가 있는 경우 DistCp 같은 Hadoop 에코 시스템 도구를 사용 하 여 HDInsight 클러스터 저장소 (WASB) 간에 데이터를 Data Lake Storage Gen1 계정으로 복사할 수 있습니다. 이 문서에서는 DistCp 도구를 사용 하는 방법을 보여 줍니다.
+Azure Data Lake Storage Gen1에 대한 액세스 권한이 있는 HDInsight 클러스터가 있는 경우 DistCp 같은 Hadoop 에코 시스템 도구를 사용 하 여 HDInsight 클러스터 저장소 (WASB) 간에 데이터를 Data Lake Storage Gen1 계정으로 복사할 수 있습니다. 이 문서에서는 DistCp 도구를 사용 하는 방법을 보여 줍니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -113,7 +113,7 @@ DistCp 도구의 가장 낮은 세분성은 단일 파일이 기 때문에 Data 
 
 * 적은 수의 용량이 있는 경우 더 많은 잠재적 동시성을 제공 하기 위해 256 MB 파일 청크로 분할 합니다.
 
-* Azure Blob storage 계정에서 복사 하는 경우 복사 작업은 Blob storage 쪽에서 제한 될 수 있습니다. 따라서 복사 작업의 성능이 저하됩니다. Azure Blob storage의 제한에 대 한 자세한 내용은 [azure 구독 및 서비스 제한](../azure-resource-manager/management/azure-subscription-service-limits.md)에서 Azure Storage 제한을 참조 하세요.
+* Azure Blob storage 계정에서 복사 하는 경우 복사 작업은 Blob storage 쪽에서 제한 될 수 있습니다. 따라서 복사 작업의 성능이 저하됩니다. Azure Blob storage의 제한에 대한 자세한 내용은 [azure 구독 및 서비스 제한](../azure-resource-manager/management/azure-subscription-service-limits.md)에서 Azure Storage 제한을 참조 하세요.
 
 ## <a name="see-also"></a>참고 항목
 

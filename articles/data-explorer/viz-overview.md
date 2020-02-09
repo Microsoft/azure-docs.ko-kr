@@ -17,7 +17,7 @@ ms.locfileid: "77064566"
 ---
 # <a name="data-visualization-with-azure-data-explorer"></a>Azure 데이터 탐색기를 사용 하 여 데이터 시각화 
 
-Azure 데이터 탐색기은 방대한 양의 데이터에 대 한 복잡 한 분석 솔루션을 빌드하는 데 사용 되는 로그 및 원격 분석 데이터에 대 한 빠르고 확장성이 뛰어난 데이터 탐색 서비스입니다. Azure 데이터 탐색기는 다양 한 시각화 도구와 통합 되므로 데이터를 시각화 하 고 조직 전체에서 결과를 공유할 수 있습니다. 이 데이터를 실행 가능한 정보로 변환 하 여 비즈니스에 영향을 줄 수 있습니다.
+Azure 데이터 탐색기은 방대한 양의 데이터에 대한 복잡 한 분석 솔루션을 빌드하는 데 사용 되는 로그 및 원격 분석 데이터에 대한 빠르고 확장성이 뛰어난 데이터 탐색 서비스입니다. Azure 데이터 탐색기는 다양 한 시각화 도구와 통합 되므로 데이터를 시각화 하 고 조직 전체에서 결과를 공유할 수 있습니다. 이 데이터를 실행 가능한 정보로 변환 하 여 비즈니스에 영향을 줄 수 있습니다.
 
 데이터 시각화 및 보고는 데이터 분석 프로세스에서 매우 중요 한 단계입니다. Azure 데이터 탐색기는 시나리오 및 예산에 가장 적합 한 서비스를 사용할 수 있도록 많은 BI 서비스를 지원 합니다.
 
@@ -41,7 +41,7 @@ Azure 데이터 탐색기는 [기본 제공 기본 Excel 커넥터](excel-connec
 
 ## <a name="grafana"></a>Grafana
 
-[Grafana](https://grafana.com) 는 azure 데이터 탐색기에서 데이터를 시각화할 수 있도록 하는 azure 데이터 탐색기 플러그 인을 제공 합니다. [Grafana에 대 한 데이터 원본으로 Azure 데이터 탐색기를 설정 하 고 데이터를 시각화](/azure/data-explorer/grafana)합니다. 
+[Grafana](https://grafana.com) 는 azure 데이터 탐색기에서 데이터를 시각화할 수 있도록 하는 azure 데이터 탐색기 플러그 인을 제공 합니다. [Grafana에 대한 데이터 원본으로 Azure 데이터 탐색기를 설정 하 고 데이터를 시각화](/azure/data-explorer/grafana)합니다. 
 
 ## <a name="odbc-connector"></a>ODBC 커넥터
 
@@ -63,4 +63,4 @@ Azure 데이터 탐색기는 JDBC 커넥터를 사용 하 여 [Sisense](https://
 
 ## <a name="redash"></a>Redash
 
-[Redash](https://redash.io/) 를 사용 하 여 대시보드를 작성 하 고 데이터를 시각화할 수 있습니다. [Redash에 대 한 데이터 원본으로 Azure 데이터 탐색기를 설정 하 고 데이터를 시각화](/azure/data-explorer/redash)합니다.
+[Redash](https://redash.io/) 를 사용 하 여 대시보드를 작성 하 고 데이터를 시각화할 수 있습니다. [Redash에 대한 데이터 원본으로 Azure 데이터 탐색기를 설정 하 고 데이터를 시각화](/azure/data-explorer/redash)합니다.

@@ -28,7 +28,7 @@ Azure에 대 한 관리 되는 id는 다음과 같은 몇 가지 주요 개념�
 
 - **보안 주체 id** -Azure 리소스에 대 한 역할 기반 액세스 권한을 부여 하는 데 사용 되는 관리 id의 서비스 주체 개체에 대 한 개체 id입니다.
 
-- **서비스 사용자** -지정 된 테 넌 트에서 AAD 응용 프로그램의 프로젝션을 나타내는 Azure Active Directory 개체입니다 ( [서비스 주체](../active-directory/develop/developer-glossary.md#service-principal-object)도 참조).
+- **서비스 사용자** -지정 된 테넌트에서 AAD 응용 프로그램의 프로젝션을 나타내는 Azure Active Directory 개체입니다 ( [서비스 주체](../active-directory/develop/developer-glossary.md#service-principal-object)도 참조).
 
 두 가지 종류의 관리 ID가 있습니다.
 

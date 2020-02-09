@@ -71,7 +71,7 @@ ms.locfileid: "70207952"
 * 브라우저에서 Cosmos을 보다 쉽게 사용할 수 있도록 합니다.
 * 새 Azure JS SDK 지침에 맞게 조정
 
-#### <a name="migration-guide-for-breaking-changes"></a>주요 변경 내용에 대 한 마이그레이션 가이드
+#### <a name="migration-guide-for-breaking-changes"></a>주요 변경 내용에 대한 마이그레이션 가이드
 ##### <a name="improved-client-constructor-options"></a>향상 된 클라이언트 생성자 옵션
 
 생성자 옵션이 간소화 되었습니다.
@@ -120,9 +120,9 @@ for await(const { result: item } in client.databases.readAll().getAsyncIterator(
 ```
 
 ##### <a name="fixed-containers-are-now-partitioned"></a>이제 고정 컨테이너가 분할 됩니다.
-이제 Cosmos 서비스는 이전에 고정 컨테이너로 만든 컨테이너를 포함 하 여 모든 컨테이너의 파티션 키를 지원 합니다. V3 SDK는이 변경 내용을 구현 하는 최신 API 버전으로 업데이트 되지만 중단 되지 않습니다. 작업에 대 한 파티션 키를 제공 하지 않으면 기존 컨테이너와 문서 모두에서 작동 하는 시스템 키가 기본값으로 사용 됩니다.
+이제 Cosmos 서비스는 이전에 고정 컨테이너로 만든 컨테이너를 포함 하 여 모든 컨테이너의 파티션 키를 지원 합니다. V3 SDK는이 변경 내용을 구현 하는 최신 API 버전으로 업데이트 되지만 중단 되지 않습니다. 작업에 대한 파티션 키를 제공 하지 않으면 기존 컨테이너와 문서 모두에서 작동 하는 시스템 키가 기본값으로 사용 됩니다.
 
-##### <a name="upsert-removed-for-stored-procedures"></a>저장 프로시저에 대 한 Upsert 제거 됨
+##### <a name="upsert-removed-for-stored-procedures"></a>저장 프로시저에 대한 Upsert 제거 됨
 이전에는 분할 되지 않은 컬렉션에 대해 upsert를 허용 했지만 API 버전 업데이트를 사용 하는 경우 모든 컬렉션이 분할 되므로 완전히 제거 되었습니다.
 
 ##### <a name="item-reads-will-not-throw-on-404"></a>항목 읽기는 404에서 throw 되지 않습니다.
@@ -149,7 +149,7 @@ if (item === undefined) { console.log('item not found') }
 
 #### <a name="new-features"></a>새 기능
 ##### <a name="user-cancelable-requests"></a>사용자가 취소할 때 요청
-내부적으로 fetch로 이동 하면 browser AbortController API를 사용 하 여 사용자가 취소할 수 있는 작업을 지원할 수 있습니다. 여러 요청이 잠재적으로 진행 중인 작업 (예: 파티션 간 쿼리)의 경우 작업에 대 한 모든 요청이 취소 됩니다. 최신 브라우저 사용자는 이미 AbortController을가지고 있습니다. Node.js 사용자가 safehtml 라이브러리를 사용 해야 합니다.
+내부적으로 fetch로 이동 하면 browser AbortController API를 사용 하 여 사용자가 취소할 수 있는 작업을 지원할 수 있습니다. 여러 요청이 잠재적으로 진행 중인 작업 (예: 파티션 간 쿼리)의 경우 작업에 대한 모든 요청이 취소 됩니다. 최신 브라우저 사용자는 이미 AbortController을가지고 있습니다. Node.js 사용자가 safehtml 라이브러리를 사용 해야 합니다.
 
 ``` js
  const controller = new AbortController()
@@ -208,7 +208,7 @@ Add DISTINCT and LIMIT/OFFSET queries (#306)
 * Typescript 3.5로 업데이트 (#327)
 * TS 프로젝트 참조로 변환 합니다. 테스트 폴더 추출 (#270)
 * NoUnusedLocals 및 noUnusedParameters (#275) 사용
-* CI 빌드에 대 한 Azure Pipelines YAML (#298)
+* CI 빌드에 대한 Azure Pipelines YAML (#298)
 
 ### <a name="2.1.5"/>2.1.5</a>
 * 코드는 변경 되지 않습니다. 2\.1.4 패키지에 추가 파일이 포함 된 문제를 해결 합니다.
@@ -236,14 +236,14 @@ Add DISTINCT and LIMIT/OFFSET queries (#306)
 ### <a name="2.1.0"/>2.1.0</a>
 #### <a name="new-features"></a>새 기능
 * 추가 된 ChangeFeed 지원 (#196)
-* 인덱싱에 대 한 MultiPolygon 데이터 형식을 추가 했습니다 (#191).
-* MasterKey (#202)에 대 한 별칭으로 생성자에 "key" 속성을 추가 합니다.
+* 인덱싱에 대한 MultiPolygon 데이터 형식을 추가 했습니다 (#191).
+* MasterKey (#202)에 대한 별칭으로 생성자에 "key" 속성을 추가 합니다.
 
 #### <a name="fixes"></a>수정 프로그램
 * Next ()가 반복기에서 잘못 된 값을 반환 하는 버그를 수정 합니다.
 
 #### <a name="engineering-improvements"></a>엔지니어링 기능 향상
-* Typescript 소비에 대 한 통합 테스트 추가 (#199)
+* Typescript 소비에 대한 통합 테스트 추가 (#199)
 * GitHub에서 직접 설치 (#194) 사용
 
 ### <a name="2.0.5"/>2.0.5</a>

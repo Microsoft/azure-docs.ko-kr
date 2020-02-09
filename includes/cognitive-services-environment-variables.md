@@ -13,7 +13,7 @@ ms.locfileid: "70274629"
 ---
 ## <a name="configure-an-environment-variable-for-authentication"></a>인증을 위한 환경 변수 구성
 
-응용 프로그램은 사용 하는 Cognitive Services에 대 한 액세스를 인증 해야 합니다. 인증 하려면 Azure 리소스에 대 한 키를 저장 하는 환경 변수를 만드는 것이 좋습니다. 
+응용 프로그램은 사용 하는 Cognitive Services에 대한 액세스를 인증 해야 합니다. 인증 하려면 Azure 리소스에 대한 키를 저장 하는 환경 변수를 만드는 것이 좋습니다. 
 
 키가 있으면 응용 프로그램을 실행 하는 로컬 컴퓨터의 새 환경 변수에 씁니다. 환경 변수를 설정하려면 콘솔 창을 열고 사용 중인 운영 체제의 지침을 따릅니다. 리소스 `your-key` 의 키 중 하나로 대체 합니다.
 

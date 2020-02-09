@@ -121,7 +121,7 @@ nodeSelector:
 
 ## <a name="performance-charts-dont-show-cpu-or-memory-of-nodes-and-containers-on-a-non-azure-cluster"></a>Azure가 아닌 클러스터에 있는 노드 및 컨테이너의 CPU 또는 메모리는 성능 차트에 표시 되지 않습니다.
 
-컨테이너 에이전트 Pod Azure Monitor는 노드 에이전트의 cAdvisor 끝점을 사용 하 여 성능 메트릭을 수집 합니다. 노드의 컨테이너 화 된 에이전트가 클러스터의 모든 노드에서 `cAdvisor port: 10255` 열 수 있도록 구성 되어 있는지 확인 하 여 성능 메트릭을 수집 합니다.
+컨테이너 에이전트 Pod Azure Monitor는 노드 에이전트의 cAdvisor 엔드포인트을 사용 하 여 성능 메트릭을 수집 합니다. 노드의 컨테이너 화 된 에이전트가 클러스터의 모든 노드에서 `cAdvisor port: 10255` 열 수 있도록 구성 되어 있는지 확인 하 여 성능 메트릭을 수집 합니다.
 
 ## <a name="non-azure-kubernetes-cluster-are-not-showing-in-azure-monitor-for-containers"></a>비 Azure Kubernetes 클러스터는 컨테이너에 대 한 Azure Monitor에 표시 되지 않습니다.
 

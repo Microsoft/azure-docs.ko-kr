@@ -228,7 +228,7 @@ Runbook은 Azure 포털, webhook, PowerShell cmdlet, REST API 또는 SDK 등 여
 요청 URI에서 다음 매개 변수를 바꿉니다.
 
 * **subscriptionId:** Azure 구독 ID입니다.  
-* **resourceGroupName:** Automation 계정에 대 한 리소스 그룹의 이름입니다.
+* **resourceGroupName:** Automation 계정에 대한 리소스 그룹의 이름입니다.
 * **Automationaccountname:** 지정 된 클라우드 서비스 내에서 호스트 되는 automation 계정의 이름입니다.  
 * **jobName:** 작업의 GUID입니다. **[GUID]::NewGuid().ToString()** 명령을 사용하여 PowerShell에서 GUID를 만들 수 있습니다.
 

@@ -71,7 +71,7 @@ git clone https://github.com/Microsoft/azure-blockchain-connector.git
 
 1. Azure AD에서 자격 증명을 묻는 메시지를 표시 합니다.
 1. 사용자 이름 및 암호를 사용 하 여 로그인 합니다.
-1. 인증에 성공 하면 로컬 프록시가 blockchain 노드에 연결 됩니다. 이제 지역 끝점을 사용 하 여 Geth 클라이언트를 연결할 수 있습니다.
+1. 인증에 성공 하면 로컬 프록시가 blockchain 노드에 연결 됩니다. 이제 지역 엔드포인트을 사용 하 여 Geth 클라이언트를 연결할 수 있습니다.
 
     ```bash
     geth attach http://127.0.0.1:3100
@@ -89,7 +89,7 @@ connector.exe -remote <myBlockchainEndpoint>  -method aadclient -client-id <myCl
 
 | 매개 변수 | 설명 |
 |-----------|-------------|
-| 테 넌 트-id | 예를 들어 Azure AD 도메인 `yourdomain.onmicrosoft.com`
+| 테넌트-id | 예를 들어 Azure AD 도메인 `yourdomain.onmicrosoft.com`
 | 클라이언트 id | Azure AD에서 등록 된 응용 프로그램의 클라이언트 ID
 | 클라이언트-비밀 | Azure AD에서 등록 된 응용 프로그램의 클라이언트 암호
 

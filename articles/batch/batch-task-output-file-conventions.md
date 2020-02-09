@@ -68,7 +68,7 @@ Azure Batch는 태스크 출력을 유지하는 한 가지 이상의 방법을 �
 Azure Storage의 컨테이너와 Blob 사용에 대한 자세한 내용은 [.NET을 사용하여 Azure Blob 스토리지 시작](../storage/blobs/storage-dotnet-how-to-use-blobs.md)을 참조하세요.
 
 > [!WARNING]
-> 파일 규칙 라이브러리를 사용하여 유지되는 모든 작업 및 태스크 출력은 동일한 컨테이너에 저장됩니다. 많은 수의 태스크에서 동시에 파일을 유지 하려는 경우 Azure Storage 제한 한도가 적용 될 수 있습니다. 제한 제한에 대 한 자세한 내용은 [Blob 저장소에 대 한 성능 및 확장성 검사 목록](../storage/blobs/storage-performance-checklist.md)을 참조 하세요.
+> 파일 규칙 라이브러리를 사용하여 유지되는 모든 작업 및 태스크 출력은 동일한 컨테이너에 저장됩니다. 많은 수의 태스크에서 동시에 파일을 유지 하려는 경우 Azure Storage 제한 한도가 적용 될 수 있습니다. 제한 제한에 대한 자세한 내용은 [Blob 저장소에 대한 성능 및 확장성 검사 목록](../storage/blobs/storage-performance-checklist.md)을 참조 하세요.
 
 ### <a name="create-storage-container"></a>스토리지 컨테이너 만들기
 
@@ -130,11 +130,11 @@ await jobOutputStorage.SaveAsync(JobOutputKind.JobOutput, "mymovie.mp4");
 await jobOutputStorage.SaveAsync(JobOutputKind.JobPreview, "mymovie_preview.mp4");
 ```
 
-작업 출력에 대 한 **Taskoutputkind** 유형과 마찬가지로 [joboutputkind][net_joboutputkind] 유형을 사용 하 여 작업의 지속형 파일을 범주화 합니다. 이 매개 변수를 통해 나중에 특정 출력 형식(목록)을 쿼리할 수 있습니다. **JobOutputKind** 형식은 출력 및 미리 보기 형식을 모두 포함하며, 사용자 지정 범주를 만들도록 지원합니다.
+작업 출력에 대한 **Taskoutputkind** 유형과 마찬가지로 [joboutputkind][net_joboutputkind] 유형을 사용 하 여 작업의 지속형 파일을 범주화 합니다. 이 매개 변수를 통해 나중에 특정 출력 형식(목록)을 쿼리할 수 있습니다. **JobOutputKind** 형식은 출력 및 미리 보기 형식을 모두 포함하며, 사용자 지정 범주를 만들도록 지원합니다.
 
 ### <a name="store-task-logs"></a>태스크 로그 저장
 
-태스크 또는 작업이 완료될 때 영구 스토리지에 파일을 유지하는 것 외에도 태스크를 실행하는 동안 업데이트된 파일(로그 파일 또는 `stdout.txt` 및 `stderr.txt`)을 유지해야 할 수도 있습니다. 이러한 목적을 위해 Azure Batch 파일 규칙 라이브러리에서는 [Taskoutputstorage][net_taskoutputstorage]를 제공 합니다. [SaveTrackedAsync][net_savetrackedasync] 메서드입니다. [SaveTrackedAsync][net_savetrackedasync]를 사용 하면 지정 된 간격으로 노드의 파일에 대 한 업데이트를 추적 하 여 Azure Storage에 대 한 업데이트를 유지할 수 있습니다.
+태스크 또는 작업이 완료될 때 영구 스토리지에 파일을 유지하는 것 외에도 태스크를 실행하는 동안 업데이트된 파일(로그 파일 또는 `stdout.txt` 및 `stderr.txt`)을 유지해야 할 수도 있습니다. 이러한 목적을 위해 Azure Batch 파일 규칙 라이브러리에서는 [Taskoutputstorage][net_taskoutputstorage]를 제공 합니다. [SaveTrackedAsync][net_savetrackedasync] 메서드입니다. [SaveTrackedAsync][net_savetrackedasync]를 사용 하면 지정 된 간격으로 노드의 파일에 대한 업데이트를 추적 하 여 Azure Storage에 대한 업데이트를 유지할 수 있습니다.
 
 다음 코드 조각에서는 [SaveTrackedAsync][net_savetrackedasync] 를 사용 하 여 작업을 실행 하는 동안 15 초 마다 Azure Storage `stdout.txt`를 업데이트 합니다.
 

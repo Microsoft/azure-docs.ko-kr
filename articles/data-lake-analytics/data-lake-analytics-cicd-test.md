@@ -19,7 +19,7 @@ ms.locfileid: "70913954"
 ---
 # <a name="test-your-azure-data-lake-analytics-code"></a>Azure Data Lake Analytics 코드 테스트
 
-Azure Data Lake는 [U-SQL](data-lake-analytics-u-sql-get-started.md) 언어를 제공 합니다. U-SQL은 선언적 SQL을 명령적 C# 으로 결합 하 여 모든 규모의 데이터를 처리 합니다. 이 문서에서는 U-SQL 및 확장 C# udo (사용자 정의 연산자) 코드에 대 한 테스트 사례를 만드는 방법에 대해 알아봅니다.
+Azure Data Lake는 [U-SQL](data-lake-analytics-u-sql-get-started.md) 언어를 제공 합니다. U-SQL은 선언적 SQL을 명령적 C# 으로 결합 하 여 모든 규모의 데이터를 처리 합니다. 이 문서에서는 U-SQL 및 확장 C# udo (사용자 정의 연산자) 코드에 대한 테스트 사례를 만드는 방법에 대해 알아봅니다.
 
 ## <a name="test-u-sql-scripts"></a>U-SQL 스크립트 테스트
 
@@ -47,7 +47,7 @@ U-SQL 테스트 `Initialize()` SDK에서 인터페이스를 호출 하면 테스
 
 U sql 스크립트를 사용 하거나 U-SQL database 개체를 사용 하 여 쿼리 하는 경우에는 T-SQL 테스트 사례를 실행 하기 전에 데이터베이스 환경을 초기화 해야 합니다. 저장 프로시저를 호출할 때이 방법이 필요할 수 있습니다. U-SQL 테스트 SDK의 `Initialize()` 인터페이스는 U-SQL 프로젝트에서 참조하는 모든 데이터베이스를 테스트 프로젝트의 작업 디렉터리에 있는 임시 로컬 데이터 루트 폴더에 배포하도록 도와줍니다.
 
-T-sql 프로젝트에 대 한 U-SQL 데이터베이스 프로젝트 참조를 관리 하는 방법에 대 한 자세한 내용은 [참조는 u-sql 데이터베이스 프로젝트](data-lake-analytics-data-lake-tools-develop-usql-database.md#reference-a-u-sql-database-project)를 참조 하세요.
+T-sql 프로젝트에 대한 U-SQL 데이터베이스 프로젝트 참조를 관리 하는 방법에 대한 자세한 내용은 [참조는 u-sql 데이터베이스 프로젝트](data-lake-analytics-data-lake-tools-develop-usql-database.md#reference-a-u-sql-database-project)를 참조 하세요.
 
 ### <a name="verify-test-results"></a>테스트 결과 확인
 
@@ -116,7 +116,7 @@ UDO 함수를 호출한 후 C# 어설션 함수를 사용하여 스키마 및 �
 
 ### <a name="run-u-sql-test-cases-in-azure-pipelines"></a>Azure Pipelines에서 U-SQL 테스트 사례 실행
 
-T-sql 테스트의 경우 빌드 컴퓨터에서 로드 `CPPSDK` 한 다음에 `USqlScriptTestRunner(cppSdkFolderFullPath: @"")`대 한 `CPPSDK` 경로를 전달 해야 합니다.
+T-sql 테스트의 경우 빌드 컴퓨터에서 로드 `CPPSDK` 한 다음에 `USqlScriptTestRunner(cppSdkFolderFullPath: @"")`대한 `CPPSDK` 경로를 전달 해야 합니다.
 
 #### <a name="what-is-cppsdk"></a>CPPSDK 란?
 

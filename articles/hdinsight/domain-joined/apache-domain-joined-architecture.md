@@ -69,7 +69,7 @@ Azure AD 및 Azure AD DS 없이 온-프레미스 Active Directory 또는 IaaS VM
    Install-Module AzureAD
    ```
 
-2. 전역 관리자 (테 넌 트 관리자) 자격 증명을 사용 하 여 연결 합니다.
+2. 전역 관리자 (테넌트 관리자) 자격 증명을 사용 하 여 연결 합니다.
    
    ```powershell
    Connect-AzureAD

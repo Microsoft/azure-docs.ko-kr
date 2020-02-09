@@ -1,6 +1,6 @@
 ---
 title: Azure Maps Search services를 사용 하 여 위치 검색 | Microsoft Azure 맵
-description: 이 문서에서는 지 오 코딩 및 역방향 지 오 코딩에 대 한 Microsoft Azure Maps Search Service를 사용 하 여 위치를 검색 하는 방법을 알아봅니다.
+description: 이 문서에서는 지 오 코딩 및 역방향 지 오 코딩에 대한 Microsoft Azure Maps Search Service를 사용 하 여 위치를 검색 하는 방법을 알아봅니다.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 01/15/2020
@@ -21,7 +21,7 @@ Azure Maps [Search Service](https://docs.microsoft.com/rest/api/maps/search) 는
 
 이 문서에서는 다음 방법에 대해 알아봅니다.
 
-* [검색 주소 API]( https://docs.microsoft.com/rest/api/maps/search/getsearchaddress) 를 사용 하 여 주소 (geocode 주소 위치)에 대 한 위도 및 경도 좌표 요청
+* [검색 주소 API]( https://docs.microsoft.com/rest/api/maps/search/getsearchaddress) 를 사용 하 여 주소 (geocode 주소 위치)에 대한 위도 및 경도 좌표 요청
 * [유사 항목 검색 API](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) 를 사용 하 여 주소나 관심 지점 (poi) 검색
 * 속성 및 좌표와 함께 주소 검색
 * [역 주소 검색](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) 을 통해 좌표 위치를 주소로 변환 합니다.
@@ -29,15 +29,15 @@ Azure Maps [Search Service](https://docs.microsoft.com/rest/api/maps/search) 는
 
 ## <a name="prerequisites"></a>필수 조건
 
-이 문서의 단계를 완료 하려면 먼저 Azure Maps 계정을 만들고이 계정 구독 키로 매핑 하세요. 계정 [만들기](quick-demo-map-app.md#create-an-account-with-azure-maps) 의 지침에 따라 Azure Maps 계정 구독을 만들고 [기본 키 가져오기](quick-demo-map-app.md#get-the-primary-key-for-your-account) 의 단계에 따라 계정에 대 한 기본 키를 가져옵니다. Azure Maps의 인증에 대한 자세한 내용은 [Azure Maps의 인증 관리](./how-to-manage-authentication.md)를 참조하세요.
+이 문서의 단계를 완료 하려면 먼저 Azure Maps 계정을 만들고이 계정 구독 키로 매핑 하세요. 계정 [만들기](quick-demo-map-app.md#create-an-account-with-azure-maps) 의 지침에 따라 Azure Maps 계정 구독을 만들고 [기본 키 가져오기](quick-demo-map-app.md#get-the-primary-key-for-your-account) 의 단계에 따라 계정에 대한 기본 키를 가져옵니다. Azure Maps의 인증에 대한 자세한 내용은 [Azure Maps의 인증 관리](./how-to-manage-authentication.md)를 참조하세요.
 
 이 문서에서는 [우체부 앱](https://www.getpostman.com/apps)을 사용하여 REST 호출을 빌드합니다. 선호하는 모든 API 개발 환경을 사용할 수 있습니다.
 
-## <a name="request-latitude-and-longitude-for-an-address-geocoding"></a>주소에 대 한 위도 및 경도 요청 (지 오 코딩)
+## <a name="request-latitude-and-longitude-for-an-address-geocoding"></a>주소에 대한 위도 및 경도 요청 (지 오 코딩)
 
 이 예제에서는 Azure Maps [가져오기 검색 주소 API](https://docs.microsoft.com/rest/api/maps/search/getsearchaddress) 를 사용 하 여 주소를 위도 및 경도 좌표로 변환 합니다. 전체 또는 부분으로 된 주소를 API에 전달 하 고, 주소, 우편 번호, 국가/지역 등의 상세 주소 속성 뿐만 아니라 위도 및 경도의 위치 값을 포함 하는 응답을 받을 수 있습니다.
 
-Geocode에 대 한 주소 집합이 있는 경우 [사후 검색 주소 일괄 처리 api](https://docs.microsoft.com/rest/api/maps/search/postsearchaddressbatch) 를 사용 하 여 단일 API 호출로 쿼리 일괄 처리를 보낼 수 있습니다.
+Geocode에 대한 주소 집합이 있는 경우 [사후 검색 주소 일괄 처리 api](https://docs.microsoft.com/rest/api/maps/search/postsearchaddressbatch) 를 사용 하 여 단일 API 호출로 쿼리 일괄 처리를 보낼 수 있습니다.
 
 1. Postman에서 **새 요청** | **GET 요청**을 클릭하고 이름을 **주소 검색**으로 지정합니다.
 
@@ -81,7 +81,7 @@ Geocode에 대 한 주소 집합이 있는 경우 [사후 검색 주소 일괄 �
 
 ## <a name="using-fuzzy-search-api"></a>유사 항목 검색 API 사용
 
-검색 쿼리에 대 한 사용자 입력 정보를 모를 경우에는[ 유사 항목 검색 API](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) 를 사용 하 여 사용 하는 것이 좋습니다. Azure Maps 이 API는 POI (Point Point) 검색 및 지 오 코딩을 정식 ' 한 줄 검색 '로 결합 합니다. 예를 들어 API는 모든 주소 또는 POI 토큰 조합의 입력을 처리할 수 있습니다. 또한 API는 컨텍스트 위치(위도/경도 쌍)에 가중치를 부여하거나, 좌표와 반경으로 완전히 제한하거나, 지리적으로 편향된(geo biasing) 앵커 지점 없이 더 일반적으로 실행할 수도 있습니다.
+검색 쿼리에 대한 사용자 입력 정보를 모를 경우에는[ 유사 항목 검색 API](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) 를 사용 하 여 사용 하는 것이 좋습니다. Azure Maps 이 API는 POI (Point Point) 검색 및 지 오 코딩을 정식 ' 한 줄 검색 '로 결합 합니다. 예를 들어 API는 모든 주소 또는 POI 토큰 조합의 입력을 처리할 수 있습니다. 또한 API는 컨텍스트 위치(위도/경도 쌍)에 가중치를 부여하거나, 좌표와 반경으로 완전히 제한하거나, 지리적으로 편향된(geo biasing) 앵커 지점 없이 더 일반적으로 실행할 수도 있습니다.
 
 대부분의 검색 쿼리는 성능을 달성하고 비정상적인 결과를 줄이기 위해 기본적으로 `maxFuzzyLevel=1`로 설정됩니다. 이 기본값은 요청에 따라 필요한 경우 쿼리 매개 변수에 `maxFuzzyLevel=2` 또는 `3`을 전달하여 재정의할 수 있습니다.
 
@@ -113,7 +113,7 @@ Geocode에 대 한 주소 집합이 있는 경우 [사후 검색 주소 일괄 �
 
 4. **보내기**를 클릭하고 응답 본문을 검토합니다.
 
-    "피자"의 모호한 쿼리 문자열은 "피자" 및 "식당" 범주에서 10 개의 [이율 결과](https://docs.microsoft.com/rest/api/maps/search/getsearchpoi#searchpoiresponse) (poi)를 반환 했습니다. 각 결과는 해당 위치에 대 한 주소, 위도 및 경도 값, 뷰 포트 및 진입점을 반환 합니다.
+    "피자"의 모호한 쿼리 문자열은 "피자" 및 "식당" 범주에서 10 개의 [이율 결과](https://docs.microsoft.com/rest/api/maps/search/getsearchpoi#searchpoiresponse) (poi)를 반환 했습니다. 각 결과는 해당 위치에 대한 주소, 위도 및 경도 값, 뷰 포트 및 진입점을 반환 합니다.
   
     결과는 특정 기준 위치에 연결되지 않고 이 쿼리에 대해 변화됩니다. **CountrySet** 매개 변수를 사용 하 여 응용 프로그램에 적용 해야 하는 국가/지역만 지정할 수 있습니다. 기본 동작은 전체 세계를 검색 하 여 불필요 한 결과를 반환 하는 것입니다.
 

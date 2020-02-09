@@ -1,6 +1,6 @@
 ---
-title: 송신 및 끝점-Azure Digital Twins | Microsoft Docs
-description: Azure Digital Twins에서 이벤트 끝점을 만들고 수신 하는 방법에 대해 알아봅니다.
+title: 송신 및 엔드포인트-Azure Digital Twins | Microsoft Docs
+description: Azure Digital Twins에서 이벤트 엔드포인트을 만들고 수신 하는 방법에 대해 알아봅니다.
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
@@ -15,7 +15,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/22/2020
 ms.locfileid: "76511572"
 ---
-# <a name="egress-and-endpoints-in-azure-digital-twins"></a>Azure Digital Twins의 송신 및 끝점
+# <a name="egress-and-endpoints-in-azure-digital-twins"></a>Azure Digital Twins의 송신 및 엔드포인트
 
 Azure Digital Twins *엔드포인트*는 사용자의 Azure 구독 내 메시지 또는 이벤트 브로커를 나타냅니다. 이벤트 및 메시지를 Azure Event Hubs, Azure Event Grid 및 Azure Service Bus 토픽으로 전송할 수 있습니다.
 
@@ -246,7 +246,7 @@ Event Grid 이벤트 스키마에 대한 자세한 내용은 다음을 참조하
 >[!IMPORTANT]
 > **eventTypes** 특성에 유의합니다. 이 특성은 엔드포인트가 처리하는 이벤트 유형을 정의하고 해당 라우팅을 결정합니다.
 
-다음에 대 한 인증 된 HTTP POST 요청:
+다음에 대한 인증 된 HTTP POST 요청:
 
 ```URL
 YOUR_MANAGEMENT_API_URL/endpoints

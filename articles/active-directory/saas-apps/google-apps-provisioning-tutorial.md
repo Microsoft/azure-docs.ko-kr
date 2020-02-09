@@ -39,7 +39,7 @@ ms.locfileid: "77057722"
 G Suite와 Azure AD 통합을 구성하려면 다음 항목이 필요합니다.
 
 - Azure AD 테넌트
-- [G Suite 테 넌 트](https://gsuite.google.com/pricing.html)
+- [G Suite 테넌트](https://gsuite.google.com/pricing.html)
 - 관리자 권한이 있는 G Suite의 사용자 계정
 
 ## <a name="assign-users-to-g-suite"></a>G Suite에 사용자 할당
@@ -129,7 +129,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위한 G Suite를 �
 > G [Suite single sign-on 자습서](https://docs.microsoft.com/azure/active-directory/saas-apps/google-apps-tutorial)에 제공 된 지침에 따라 g SUITE에 SAML 기반 Single Sign-On를 사용 하도록 선택할 수도 있습니다. Single Sign-On과 자동 사용자 프로비저닝은 서로 보완적이지만, 별개로 구성할 수 있습니다.
 
 > [!NOTE]
-> G Suite의 디렉터리 API 끝점에 대 한 자세한 내용은 [디렉터리 api](https://developers.google.com/admin-sdk/directory)를 참조 하세요.
+> G Suite의 디렉터리 API 엔드포인트에 대 한 자세한 내용은 [디렉터리 api](https://developers.google.com/admin-sdk/directory)를 참조 하세요.
 
 ### <a name="to-configure-automatic-user-provisioning-for-g-suite-in-azure-ad"></a>Azure AD에서 G Suite에 대 한 자동 사용자 프로 비전을 구성 하려면:
 
@@ -153,7 +153,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위한 G Suite를 �
 
     ![G Suite 권한 부여](media/google-apps-provisioning-tutorial/authorize.png)
 
-1. Azure AD 사용 권한을 부여 하 여 G Suite 테 넌 트를 변경할 것인지 확인 합니다. **수락**을 선택합니다.
+1. Azure AD 사용 권한을 부여 하 여 G Suite 테넌트를 변경할 것인지 확인 합니다. **수락**을 선택합니다.
 
     ![사용 권한을 확인합니다.][28]
 

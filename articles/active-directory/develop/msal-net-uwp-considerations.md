@@ -24,7 +24,7 @@ ms.locfileid: "77083669"
 UWP에는 MSAL.NET을 사용할 때 고려해 야 할 몇 가지 고려 사항이 있습니다.
 
 ## <a name="the-usecorporatenetwork-property"></a>UseCorporateNetwork 속성
-WinRT 플랫폼에서 `PublicClientApplication`에는 다음과 같은 부울 속성 ``UseCorporateNetwork``있습니다. 이 속성을 사용 하면 Win 8.1 및 UWP 응용 프로그램에서 사용자가 페더레이션된 Azure AD 테 넌 트의 계정으로 로그인 하는 경우 Windows 통합 인증 (즉, 운영 체제를 사용 하 여 로그인 한 사용자로 SSO)을 이용할 수 있습니다. 이 속성을 설정 하면 MSAL.NET는 WAB (웹 인증 브로커)를 활용 합니다.
+WinRT 플랫폼에서 `PublicClientApplication`에는 다음과 같은 부울 속성 ``UseCorporateNetwork``있습니다. 이 속성을 사용 하면 Win 8.1 및 UWP 응용 프로그램에서 사용자가 페더레이션된 Azure AD 테넌트의 계정으로 로그인 하는 경우 Windows 통합 인증 (즉, 운영 체제를 사용 하 여 로그인 한 사용자로 SSO)을 이용할 수 있습니다. 이 속성을 설정 하면 MSAL.NET는 WAB (웹 인증 브로커)를 활용 합니다.
 
 > [!IMPORTANT]
 > 이 속성을 true로 설정 하면 응용 프로그램 개발자가 응용 프로그램에서 IWA (Windows 통합 인증)를 사용 하도록 설정 했다고 가정 합니다. 이렇게 하려면 다음을 수행 합니다.
@@ -65,5 +65,5 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execu
 
 샘플 | 플랫폼 | Description 
 |------ | -------- | -----------|
-|[활성-디렉터리-dotnet-v2-v2](https://github.com/azure-samples/active-directory-dotnet-native-uwp-v2) | UWP | Msal.net를 사용 하는 유니버설 Windows 플랫폼 클라이언트 응용 프로그램으로, Azure AD v2.0 끝점을 사용 하 여 인증 하는 사용자에 대 한 Microsoft Graph에 액세스 합니다. <br>![토폴로지](media/msal-net-uwp-considerations/topology-native-uwp.png)|
-|[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/Azure-Samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP | 간단한 Xamarin Forms 앱은 MSAL을 사용 하 여 AAD v2.0 끝점을 통해 MSA 및 Azure AD를 인증 하 고 결과 토큰을 사용 하 여 Microsoft Graph에 액세스 하는 방법을 보여주는 합니다. <br>![토폴로지](media/msal-net-uwp-considerations/topology-xamarin-native.png)|
+|[활성-디렉터리-dotnet-v2-v2](https://github.com/azure-samples/active-directory-dotnet-native-uwp-v2) | UWP | Msal.net를 사용 하는 유니버설 Windows 플랫폼 클라이언트 응용 프로그램으로, Azure AD v2.0 엔드포인트을 사용 하 여 인증 하는 사용자에 대 한 Microsoft Graph에 액세스 합니다. <br>![토폴로지](media/msal-net-uwp-considerations/topology-native-uwp.png)|
+|[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/Azure-Samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP | 간단한 Xamarin Forms 앱은 MSAL을 사용 하 여 AAD v2.0 엔드포인트을 통해 MSA 및 Azure AD를 인증 하 고 결과 토큰을 사용 하 여 Microsoft Graph에 액세스 하는 방법을 보여주는 합니다. <br>![토폴로지](media/msal-net-uwp-considerations/topology-xamarin-native.png)|

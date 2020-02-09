@@ -44,7 +44,7 @@ ms.locfileid: "73053352"
 
 * 기본 보안 경계로 ID 처리
 * ID 관리 중앙 집중화
-* 연결 된 테 넌 트 관리
+* 연결 된 테넌트 관리
 * Single Sign-On 사용
 * 조건부 액세스 설정
 * 정기 보안 강화 계획
@@ -101,7 +101,7 @@ AD FS(Active Directory Federation Service) 또는 다른 ID 공급자에서 페�
 > [!Note]
 > 중요 한 계정이 상주할 디렉터리와 사용 되는 관리자 워크스테이션이 새 클라우드 서비스 또는 기존 프로세스에서 관리 되는지 여부를 선택 해야 합니다. 기존 관리 및 id 프로 비전 프로세스를 사용 하면 일부 위험을 줄일 수 있지만 공격자가 온-프레미스 계정을 손상 하 고 클라우드로 피벗 하는 위험을 만들 수도 있습니다. 다른 역할에 대해 다른 전략을 사용 하는 것이 좋습니다 (예: IT 관리자 및 비즈니스 단위 관리자). 다음 두 가지 옵션을 사용할 수 있습니다. 첫 번째 옵션은 온-프레미스 Active Directory 인스턴스와 동기화 되지 않은 Azure AD 계정을 만드는 것입니다. 관리자 워크스테이션을 Azure AD에 조인 합니다 .이는 Microsoft Intune을 사용 하 여 관리 하 고 패치할 수 있습니다. 두 번째 옵션은 온-프레미스 Active Directory 인스턴스와 동기화 하 여 기존 관리자 계정을 사용 하는 것입니다. 관리 및 보안을 위해 Active Directory 도메인에서 기존 워크스테이션을 사용 합니다.
 
-## <a name="manage-connected-tenants"></a>연결 된 테 넌 트 관리
+## <a name="manage-connected-tenants"></a>연결 된 테넌트 관리
 보안 조직에서는 위험을 평가 하 고 조직의 정책 및 규정 요구 사항을 준수 하는지 여부를 확인 하기 위한 가시성을 요구 합니다. [Azure express](../../expressroute/expressroute-introduction.md) 경로 또는 [사이트 간 VPN](../../vpn-gateway/vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md)을 통해 프로덕션 환경 및 네트워크에 연결 된 모든 구독을 보안 조직에서 볼 수 있는지 확인 해야 합니다. Azure AD의 [전역 관리자/회사 관리자](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#company-administrator-permissions) 는 [사용자 액세스 관리자](../../role-based-access-control/built-in-roles.md#user-access-administrator) 역할에 대 한 액세스 권한을 상승 시키고 사용자 환경에 연결 된 모든 구독 및 관리 그룹을 볼 수 있습니다.
 
 사용자 및 보안 그룹이 사용자 환경에 연결 된 모든 구독 또는 관리 그룹을 볼 수 있도록 [액세스 권한 상승을 참조 하 여 모든 Azure 구독 및 관리 그룹을 관리](../../role-based-access-control/elevate-access-global-admin.md) 합니다. 위험을 평가한 후이 상승 된 액세스 권한을 제거 해야 합니다.

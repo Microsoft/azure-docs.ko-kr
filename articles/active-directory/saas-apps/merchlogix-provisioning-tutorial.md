@@ -35,8 +35,8 @@ ms.locfileid: "77061318"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* MerchLogix 테 넌 트
-* 사용자 프로 비전에 필요한 SCIM 끝점 URL 및 암호 토큰을 제공할 수 있는 MerchLogix의 기술 담당자
+* MerchLogix 테넌트
+* 사용자 프로 비전에 필요한 SCIM 엔드포인트 URL 및 암호 토큰을 제공할 수 있는 MerchLogix의 기술 담당자
 
 ## <a name="adding-merchlogix-from-the-gallery"></a>갤러리에서 MerchLogix 추가
 
@@ -97,7 +97,7 @@ Azure Active Directory는 "할당"이라는 개념을 사용하여 어떤 사용
 
 5. **관리자 자격 증명** 섹션에서 다음을 수행 합니다.
 
-    * **테 넌 트 URL** 필드에 MerchLogix 기술 담당자가 제공한 scim 끝점 url을 입력 합니다.
+    * **테넌트 URL** 필드에 MerchLogix 기술 담당자가 제공한 scim 엔드포인트 url을 입력 합니다.
 
     * **비밀 토큰** 필드에 MerchLogix 기술 담당자가 제공한 비밀 토큰을 입력 합니다.
 

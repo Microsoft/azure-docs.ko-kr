@@ -1,6 +1,6 @@
 ---
 title: SQL Server 또는 Azure SQL Database에 연결
-description: Azure Logic Apps를 사용 하 여 온-프레미스 또는 클라우드에서 SQL database에 대 한 작업 자동화
+description: Azure Logic Apps를 사용 하 여 온-프레미스 또는 클라우드에서 SQL database에 대한 작업 자동화
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam; logicappspm
@@ -14,11 +14,11 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/03/2019
 ms.locfileid: "74789201"
 ---
-# <a name="automate-workflows-for-sql-server-or-azure-sql-database-by-using-azure-logic-apps"></a>Azure Logic Apps를 사용 하 여 SQL Server 또는 Azure SQL Database에 대 한 워크플로 자동화
+# <a name="automate-workflows-for-sql-server-or-azure-sql-database-by-using-azure-logic-apps"></a>Azure Logic Apps를 사용 하 여 SQL Server 또는 Azure SQL Database에 대한 워크플로 자동화
 
 이 문서에서는 SQL Server 커넥터가 있는 논리 앱 내에서 SQL 데이터베이스의 데이터에 액세스하는 방법에 대해 설명합니다. 이렇게 하면 논리 앱을 만들어 SQL 데이터 및 리소스를 관리 하는 작업, 프로세스 또는 워크플로를 자동화할 수 있습니다. SQL Server 커넥터는 [온-프레미스 SQL Server](https://docs.microsoft.com/sql/sql-server/sql-server-technical-documentation) 와 [클라우드 기반 Azure SQL Database](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview)모두에 대해 작동 합니다.
 
-SQL 데이터베이스 또는 다른 시스템(예: Dynamics CRM Online)의 이벤트로 트리거될 때 실행할 수 있는 논리 앱을 만들 수 있습니다. 논리 앱은 SQL 쿼리 및 저장 프로시저 실행과 함께 데이터를 가져오고 삽입 하 고 삭제할 수도 있습니다. 예를 들어 Dynamics CRM Online에서 새 레코드를 자동으로 확인 하는 논리 앱을 빌드하고, 새 레코드의 SQL 데이터베이스에 항목을 추가한 다음, 추가 된 항목에 대 한 전자 메일 경고를 보낼 수 있습니다.
+SQL 데이터베이스 또는 다른 시스템(예: Dynamics CRM Online)의 이벤트로 트리거될 때 실행할 수 있는 논리 앱을 만들 수 있습니다. 논리 앱은 SQL 쿼리 및 저장 프로시저 실행과 함께 데이터를 가져오고 삽입 하 고 삭제할 수도 있습니다. 예를 들어 Dynamics CRM Online에서 새 레코드를 자동으로 확인 하는 논리 앱을 빌드하고, 새 레코드의 SQL 데이터베이스에 항목을 추가한 다음, 추가 된 항목에 대한 전자 메일 경고를 보낼 수 있습니다.
 
 논리 앱을 처음 사용하는 경우 [Azure Logic Apps](../logic-apps/logic-apps-overview.md) 및 [빠른 시작: 첫 번째 논리 앱 만들기](../logic-apps/quickstart-create-first-logic-app-workflow.md)를 검토합니다. 커넥터 관련 기술 정보, 제한 사항 및 알려진 문제에 대해서는 [SQL Server 커넥터 참조 페이지](https://docs.microsoft.com/connectors/sql/)를 참조 하세요.
 
@@ -120,7 +120,7 @@ Azure Logic Apps에서 [작업](../logic-apps/logic-apps-overview.md#logic-app-c
 
 * 원하는 방식으로 결과를 구성 하는 저장 프로시저를 만듭니다.
 
-  여러 행을 가져오거나 삽입할 때 논리 앱은 이러한 [제한](../logic-apps/logic-apps-limits-and-config.md)내에서 [*until 루프*](../logic-apps/logic-apps-control-flow-loops.md#until-loop) 를 사용 하 여 이러한 행을 반복할 수 있습니다. 그러나 논리 앱에서 레코드 집합을 사용 하 여 대량으로 작업 해야 하는 경우 (예: 수천 또는 수백만 개의 행) 데이터베이스에 대 한 호출로 인해 발생 하는 비용을 최소화 하려고 합니다.
+  여러 행을 가져오거나 삽입할 때 논리 앱은 이러한 [제한](../logic-apps/logic-apps-limits-and-config.md)내에서 [*until 루프*](../logic-apps/logic-apps-control-flow-loops.md#until-loop) 를 사용 하 여 이러한 행을 반복할 수 있습니다. 그러나 논리 앱에서 레코드 집합을 사용 하 여 대량으로 작업 해야 하는 경우 (예: 수천 또는 수백만 개의 행) 데이터베이스에 대한 호출로 인해 발생 하는 비용을 최소화 하려고 합니다.
 
   결과를 원하는 방식으로 구성 하기 위해 SQL 인스턴스에서 실행 되는 [*저장 프로시저*](https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine) 를 만들고 **select ORDER by** 문을 사용할 수 있습니다. 이 솔루션을 사용하면 결과의 크기와 구조를 더 많이 제어할 수 있습니다. 논리 앱은 SQL Server 커넥터의 **저장 프로시저 실행** 작업을 사용하여 저장 프로시저를 호출합니다.
 
@@ -132,8 +132,8 @@ Azure Logic Apps에서 [작업](../logic-apps/logic-apps-overview.md#logic-app-c
 
 ## <a name="connector-specific-details"></a>커넥터 관련 세부 정보
 
-이 커넥터의 트리거, 작업 및 제한에 대 한 기술 정보는 [커넥터의 참조 페이지](https://docs.microsoft.com/connectors/sql/)를 참조 하세요.
+이 커넥터의 트리거, 작업 및 제한에 대한 기술 정보는 [커넥터의 참조 페이지](https://docs.microsoft.com/connectors/sql/)를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 
-* [Azure Logic Apps에 대 한 다른 커넥터](../connectors/apis-list.md) 에 대해 알아보기
+* [Azure Logic Apps에 대한 다른 커넥터](../connectors/apis-list.md) 에 대해 알아보기

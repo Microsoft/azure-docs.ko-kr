@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB의 ORDER BY 절
-description: Azure Cosmos DB에 대 한 SQL ORDER BY 절에 대해 알아봅니다. Azure Cosmos DB JSON 쿼리 언어로 SQL을 사용 합니다.
+description: Azure Cosmos DB에 대한 SQL ORDER BY 절에 대해 알아봅니다. Azure Cosmos DB JSON 쿼리 언어로 SQL을 사용 합니다.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -15,7 +15,7 @@ ms.locfileid: "75929593"
 ---
 # <a name="order-by-clause-in-azure-cosmos-db"></a>Azure Cosmos DB의 ORDER BY 절
 
-선택적인 ORDER BY 절은 쿼리에서 반환 되는 결과에 대 한 정렬 순서를 지정 합니다.
+선택적인 ORDER BY 절은 쿼리에서 반환 되는 결과에 대한 정렬 순서를 지정 합니다.
 
 ## <a name="syntax"></a>구문
   
@@ -49,10 +49,10 @@ ORDER BY <sort_specification>
   
 ## <a name="remarks"></a>설명  
   
-   ORDER BY 절을 사용 하려면 정렬 중인 필드에 대 한 인덱스를 인덱싱 정책에 포함 해야 합니다. Azure Cosmos DB 쿼리 런타임은 계산 된 속성이 아닌 속성 이름에 대 한 정렬을 지원 합니다. Azure Cosmos DB는 여러 ORDER BY 속성을 지원 합니다. 여러 ORDER BY 속성을 사용 하 여 쿼리를 실행 하려면 정렬할 필드에 [복합 인덱스](index-policy.md#composite-indexes) 를 정의 해야 합니다.
+   ORDER BY 절을 사용 하려면 정렬 중인 필드에 대한 인덱스를 인덱싱 정책에 포함 해야 합니다. Azure Cosmos DB 쿼리 런타임은 계산 된 속성이 아닌 속성 이름에 대한 정렬을 지원 합니다. Azure Cosmos DB는 여러 ORDER BY 속성을 지원 합니다. 여러 ORDER BY 속성을 사용 하 여 쿼리를 실행 하려면 정렬할 필드에 [복합 인덱스](index-policy.md#composite-indexes) 를 정의 해야 합니다.
    
 > [!Note] 
-> 정렬 되는 속성이 일부 문서에 대해 정의 되지 않은 경우이를 ORDER BY 쿼리로 검색 하려면 해당 속성에 대 한 인덱스를 명시적으로 만들어야 합니다. 기본 인덱싱 정책은 sort 속성이 정의 되지 않은 문서를 검색 하는 것을 허용 하지 않습니다.
+> 정렬 되는 속성이 일부 문서에 대해 정의 되지 않은 경우이를 ORDER BY 쿼리로 검색 하려면 해당 속성에 대한 인덱스를 명시적으로 만들어야 합니다. 기본 인덱싱 정책은 sort 속성이 정의 되지 않은 문서를 검색 하는 것을 허용 하지 않습니다.
 
 ## <a name="examples"></a>예시
 

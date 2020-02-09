@@ -26,7 +26,7 @@ CLI를 로컬로 설치하고 사용하려는 경우 Azure CLI 버전 2.0.18 이
 
 ## <a name="prerequisites"></a>필수 조건
 
-이 문서에서는 Azure Backup에 의해 백업 되는 Azure 파일 공유가 이미 있다고 가정 합니다. 없으면 [CLI를 사용 하 여 Azure 파일 공유](backup-afs-cli.md) 백업을 참조 하 여 파일 공유에 대 한 백업을 구성 합니다. 이 문서에서는 다음 리소스를 사용 합니다.
+이 문서에서는 Azure Backup에 의해 백업 되는 Azure 파일 공유가 이미 있다고 가정 합니다. 없으면 [CLI를 사용 하 여 Azure 파일 공유](backup-afs-cli.md) 백업을 참조 하 여 파일 공유에 대한 백업을 구성 합니다. 이 문서에서는 다음 리소스를 사용 합니다.
 
 | 파일 공유  | Storage 계정 | 지역 | 세부 정보                                                      |
 | ----------- | --------------- | ------ | ------------------------------------------------------------ |
@@ -35,17 +35,17 @@ CLI를 로컬로 설치하고 사용하려는 경우 Azure CLI 버전 2.0.18 이
 
 파일 공유에 비슷한 구조를 사용 하 여이 문서에서 설명 하는 다양 한 유형의 복원을 사용해 볼 수 있습니다.
 
-## <a name="fetch-recovery-points-for-the-azure-file-share"></a>Azure 파일 공유에 대 한 복구 지점의 페치
+## <a name="fetch-recovery-points-for-the-azure-file-share"></a>Azure 파일 공유에 대한 복구 지점의 페치
 
-[Az backup recoverypoint list](https://docs.microsoft.com/cli/azure/backup/recoverypoint?view=azure-cli-latest#az-backup-recoverypoint-list) cmdlet을 사용 하 여 백업 된 파일 공유에 대 한 모든 복구 지점의 목록을 표시 합니다.
+[Az backup recoverypoint list](https://docs.microsoft.com/cli/azure/backup/recoverypoint?view=azure-cli-latest#az-backup-recoverypoint-list) cmdlet을 사용 하 여 백업 된 파일 공유에 대한 모든 복구 지점의 목록을 표시 합니다.
 
-다음 예에서는 *afsaccount* 저장소 계정의 *azurefiles* 파일 공유에 대 한 복구 지점의 목록을 페치합니다.
+다음 예에서는 *afsaccount* 저장소 계정의 *azurefiles* 파일 공유에 대한 복구 지점의 목록을 페치합니다.
 
 ```azurecli-interactive
 az backup recoverypoint list --vault-name azurefilesvault --resource-group azurefiles --container-name "StorageContainer;Storage;AzureFiles;afsaccount” --backup-management-type azurestorage --item-name “AzureFileShare;azurefiles” --workload-type azurefileshare --out table
 ```
 
-다음과 같은 두 개의 추가 매개 변수를 제공 하 여 컨테이너 및 항목에 대 한 친숙 한 이름을 사용 하 여 이전 cmdlet을 실행할 수도 있습니다.
+다음과 같은 두 개의 추가 매개 변수를 제공 하 여 컨테이너 및 항목에 대한 친숙 한 이름을 사용 하 여 이전 cmdlet을 실행할 수도 있습니다.
 
 * **--백업 관리-유형**: *azurestorage*
 * **--워크 로드 유형**: *azurefileshare 공유*
@@ -54,7 +54,7 @@ az backup recoverypoint list --vault-name azurefilesvault --resource-group azure
 az backup recoverypoint list --vault-name azurefilesvault --resource-group azurefiles --container-name afsaccount --backup-management-type azurestorage --item-name azurefiles --workload-type azurefileshare --out table
 ```
 
-결과 집합은 각 복원 지점에 대 한 시간 및 일관성 정보를 포함 하는 복구 지점 목록입니다.
+결과 집합은 각 복원 지점에 대한 시간 및 일관성 정보를 포함 하는 복구 지점 목록입니다.
 
 ```output
 Name                Time                        Consistency
@@ -64,7 +64,7 @@ Name                Time                        Consistency
 932879614553967772  2020-01-04T21:33:04+00:00   FileSystemConsistent
 ```
 
-출력의 **이름** 특성은 복구 작업의 **--rp-Name** 매개 변수에 대 한 값으로 사용할 수 있는 복구 지점 이름에 해당 합니다.
+출력의 **이름** 특성은 복구 작업의 **--rp-Name** 매개 변수에 대한 값으로 사용할 수 있는 복구 지점 이름에 해당 합니다.
 
 ## <a name="full-share-recovery-by-using-the-azure-cli"></a>Azure CLI를 사용 하 여 전체 공유 복구
 
@@ -79,7 +79,7 @@ Name                Time                        Consistency
 
 원래 위치로 복원 하는 경우 대상 관련 매개 변수를 지정할 필요가 없습니다. **충돌 해결** 만 제공 해야 합니다.
 
-다음 예에서는 복원 모드가 *originallocation* 로 설정 된 [az backup restore restore-azurefilefilecmdlet](https://docs.microsoft.com/cli/azure/backup/restore?view=azure-cli-latest#az-backup-restore-restore-azurefileshare) 을 사용 하 여 원래 위치에 *azurefileshare* 파일 공유를 복원 합니다. [Azure 파일 공유에 대 한 복구 지점 페치](#fetch-recovery-points-for-the-azure-file-share)에서 얻은 복구 지점 932883129628959823을 사용 합니다.
+다음 예에서는 복원 모드가 *originallocation* 로 설정 된 [az backup restore restore-azurefilefilecmdlet](https://docs.microsoft.com/cli/azure/backup/restore?view=azure-cli-latest#az-backup-restore-restore-azurefileshare) 을 사용 하 여 원래 위치에 *azurefileshare* 파일 공유를 복원 합니다. [Azure 파일 공유에 대한 복구 지점 페치](#fetch-recovery-points-for-the-azure-file-share)에서 얻은 복구 지점 932883129628959823을 사용 합니다.
 
 ```azurecli-interactive
 az backup restore restore-azurefileshare --vault-name azurefilesvault --resource-group azurefiles --rp-name 932887541532871865   --container-name "StorageContainer;Storage;AzureFiles;afsaccount” --item-name “AzureFileShare;azurefiles” --restore-mode originallocation --resolve-conflict overwrite --out table

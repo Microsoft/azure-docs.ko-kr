@@ -24,7 +24,7 @@ Azure SignalR Service 이벤트는 풍부한 재시도 정책 및 배달 못 한
 ![Event Grid 모델](https://docs.microsoft.com/azure/event-grid/media/overview/functional-model.png)
 
 ## <a name="serverless-state"></a>서버 리스 상태
-Azure SignalR Service 이벤트는 클라이언트 연결이 서버를 사용 하지 않는 상태인 경우에만 활성화 됩니다. 일반적으로 클라이언트는 허브 서버로 라우팅되지 않는 경우 서버를 사용 하지 않는 상태로 전환 됩니다. 클래식 모드는 클라이언트 연결에 연결 된 허브에 허브 서버가 없는 경우에만 작동 합니다. 그러나 일부 문제를 방지 하려면 서버를 사용 하지 않는 모드를 사용 하는 것이 좋습니다. 서비스 모드에 대 한 자세한 정보 [는 서비스 모드를 선택 하는 방법](https://github.com/Azure/azure-signalr/blob/dev/docs/faq.md#what-is-the-meaning-of-service-mode-defaultserverlessclassic-how-can-i-choose)을 참조 하세요.
+Azure SignalR Service 이벤트는 클라이언트 연결이 서버를 사용 하지 않는 상태인 경우에만 활성화 됩니다. 일반적으로 클라이언트는 허브 서버로 라우팅되지 않는 경우 서버를 사용 하지 않는 상태로 전환 됩니다. 클래식 모드는 클라이언트 연결에 연결 된 허브에 허브 서버가 없는 경우에만 작동 합니다. 그러나 일부 문제를 방지 하려면 서버를 사용 하지 않는 모드를 사용 하는 것이 좋습니다. 서비스 모드에 대한 자세한 정보 [는 서비스 모드를 선택 하는 방법](https://github.com/Azure/azure-signalr/blob/dev/docs/faq.md#what-is-the-meaning-of-service-mode-defaultserverlessclassic-how-can-i-choose)을 참조 하세요.
 
 ## <a name="available-azure-signalr-service-events"></a>사용 가능한 Azure SignalR 서비스 이벤트
 Event Grid는 [이벤트 구독](../event-grid/concepts.md#event-subscriptions)을 사용하여 이벤트 메시지를 구독자에게 라우팅합니다. Azure SignalR Service 이벤트 구독은 다음과 같은 두 가지 유형의 이벤트를 지원 합니다.  
@@ -35,7 +35,7 @@ Event Grid는 [이벤트 구독](../event-grid/concepts.md#event-subscriptions)�
 |`Microsoft.SignalRService.ClientConnectionDisconnected`|클라이언트 연결의 연결이 끊어질 때 발생 합니다.|
 
 ## <a name="event-schema"></a>이벤트 스키마
-Azure SignalR Service 이벤트는 데이터의 변경 내용에 응답 하는 데 필요한 모든 정보를 포함 합니다. "SignalRService"로 시작 하는 eventType 속성을 사용 하 여 Azure SignalR Service 이벤트를 식별할 수 있습니다. Event Grid 이벤트 속성 사용에 대 한 추가 정보는 [Event Grid 이벤트 스키마](../event-grid/event-schema.md)에 설명 되어 있습니다.  
+Azure SignalR Service 이벤트는 데이터의 변경 내용에 응답 하는 데 필요한 모든 정보를 포함 합니다. "SignalRService"로 시작 하는 eventType 속성을 사용 하 여 Azure SignalR Service 이벤트를 식별할 수 있습니다. Event Grid 이벤트 속성 사용에 대한 추가 정보는 [Event Grid 이벤트 스키마](../event-grid/event-schema.md)에 설명 되어 있습니다.  
 
 클라이언트 연결 연결 이벤트의 예는 다음과 같습니다.
 ```json

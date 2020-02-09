@@ -20,7 +20,7 @@ ms.locfileid: "76021170"
 - 이미지의 관리 되는 전역 복제
 - 보다 쉽게 관리할 수 있도록 이미지의 버전 관리 및 그룹화
 - 가용성 영역를 지 원하는 지역에서 ZRS (영역 중복 저장소) 계정을 포함 하는 항상 사용 가능한 이미지 ZRS는 영역 오류에 대해 향상된 복원력을 제공합니다.
-- RBAC를 사용 하 여 구독 간 및 AD (Active Directory) 테 넌 트 간에 공유
+- RBAC를 사용 하 여 구독 간 및 AD (Active Directory) 테넌트 간에 공유
 - 각 지역에서 이미지 복제본으로 배포를 확장 합니다.
 
 공유 이미지 갤러리를 사용하면 조직 내의 여러 사용자, 서비스 주체 또는 AD 그룹에게 이미지를 공유할 수 있습니다. 배포의 크기를 더 빠르게 조정하기 위해 여러 지역에 공유 이미지를 복제할 수 있습니다.
@@ -146,7 +146,7 @@ ms.locfileid: "76021170"
 
 ## <a name="access"></a>액세스
 
-공유 이미지 갤러리, 이미지 정의 및 이미지 버전은 모든 리소스 이므로 기본 제공 되는 네이티브 Azure RBAC 컨트롤을 사용 하 여 공유할 수 있습니다. RBAC를 사용 하 여 이러한 리소스를 다른 사용자, 서비스 사용자 및 그룹과 공유할 수 있습니다. 내에서 만든 테 넌 트 외부의 개별 사용자에 대 한 액세스를 공유할 수도 있습니다. 사용자가 공유 이미지 버전에 액세스할 수 있게 되 면 VM 또는 가상 머신 확장 집합을 배포할 수 있습니다.  사용자가 액세스할 수 있는 항목을 이해하는 데 도움이 되는 공유 행렬은 다음과 같습니다.
+공유 이미지 갤러리, 이미지 정의 및 이미지 버전은 모든 리소스 이므로 기본 제공 되는 네이티브 Azure RBAC 컨트롤을 사용 하 여 공유할 수 있습니다. RBAC를 사용 하 여 이러한 리소스를 다른 사용자, 서비스 사용자 및 그룹과 공유할 수 있습니다. 내에서 만든 테넌트 외부의 개별 사용자에 대 한 액세스를 공유할 수도 있습니다. 사용자가 공유 이미지 버전에 액세스할 수 있게 되 면 VM 또는 가상 머신 확장 집합을 배포할 수 있습니다.  사용자가 액세스할 수 있는 항목을 이해하는 데 도움이 되는 공유 행렬은 다음과 같습니다.
 
 | 공유한 항목     | 공유 이미지 갤러리 | 이미지 정의 | 이미지 버전 |
 |----------------------|----------------------|--------------|----------------------|
@@ -155,7 +155,7 @@ ms.locfileid: "76021170"
 
 최상의 환경을 위해 갤러리 수준에서 공유 하는 것이 좋습니다. 개별 이미지 버전을 공유 하지 않는 것이 좋습니다. RBAC에 대 한 자세한 내용은 [rbac를 사용 하 여 Azure 리소스에 대 한 액세스 관리](../articles/role-based-access-control/role-assignments-portal.md)를 참조 하세요.
 
-다중 테 넌 트 앱 등록을 사용 하 여 테 넌 트 간에도 이미지를 대규모로 공유할 수 있습니다. 테 넌 트 간에 이미지를 공유 하는 방법에 대 한 자세한 내용은 [Azure 테 넌 트 간에 갤러리 VM 이미지 공유](../articles/virtual-machines/linux/share-images-across-tenants.md)를 참조 하세요.
+다중 테넌트 앱 등록을 사용 하 여 테넌트 간에도 이미지를 대규모로 공유할 수 있습니다. 테넌트 간에 이미지를 공유 하는 방법에 대 한 자세한 내용은 [Azure 테넌트 간에 갤러리 VM 이미지 공유](../articles/virtual-machines/linux/share-images-across-tenants.md)를 참조 하세요.
 
 ## <a name="billing"></a>청구
 추가 비용 없이 공유 이미지 갤러리 서비스를 이용할 수 있습니다. 다음 리소스에 대한 비용이 청구됩니다.
@@ -208,7 +208,7 @@ ms.locfileid: "76021170"
 * [공유 이미지 갤러리 리소스를 만든 후 다른 구독으로 이동할 수 있나요?](#can-i-move-the-shared-image-gallery-resource-to-a-different-subscription-after-it-has-been-created)
 * [Azure 중국 21Vianet 또는 Azure 독일 또는 Azure Government Cloud와 같은 클라우드 간에 이미지 버전을 복제할 수 있나요?](#can-i-replicate-my-image-versions-across-clouds-such-as-azure-china-21vianet-or-azure-germany-or-azure-government-cloud)
 * [구독 간에 이미지 버전을 복제할 수 있나요?](#can-i-replicate-my-image-versions-across-subscriptions)
-* [Azure AD 테 넌 트 간에 이미지 버전을 공유할 수 있나요?](#can-i-share-image-versions-across-azure-ad-tenants)
+* [Azure AD 테넌트 간에 이미지 버전을 공유할 수 있나요?](#can-i-share-image-versions-across-azure-ad-tenants)
 * [대상 지역에서 이미지 버전을 복제 하는 데 소요 되는 시간](#how-long-does-it-take-to-replicate-image-versions-across-the-target-regions)
 * [원본 지역과 대상 지역 간의 차이점은 무엇 인가요?](#what-is-the-difference-between-source-region-and-target-region)
 * [이미지 버전을 만드는 동안 원본 지역을 지정 어떻게 할까요??](#how-do-i-specify-the-source-region-while-creating-the-image-version)
@@ -266,7 +266,7 @@ Azure Portal에 대 한 액세스 권한이 있는 모든 구독에서 공유 �
 
 ### <a name="can-i-share-image-versions-across-azure-ad-tenants"></a>Azure AD 테넌트 간에 이미지 버전을 공유할 수 있나요? 
 
-예, RBAC를 사용 하 여 테 넌 트의 개인에 게 공유할 수 있습니다. 그러나 대규모에서 공유 하려면 [PowerShell](../articles/virtual-machines/windows/share-images-across-tenants.md) 또는 [CLI](../articles/virtual-machines/linux/share-images-across-tenants.md)를 사용 하 여 "Azure 테 넌 트에서 갤러리 이미지 공유"를 참조 하세요.
+예, RBAC를 사용 하 여 테넌트의 개인에 게 공유할 수 있습니다. 그러나 대규모에서 공유 하려면 [PowerShell](../articles/virtual-machines/windows/share-images-across-tenants.md) 또는 [CLI](../articles/virtual-machines/linux/share-images-across-tenants.md)를 사용 하 여 "Azure 테넌트에서 갤러리 이미지 공유"를 참조 하세요.
 
 ### <a name="how-long-does-it-take-to-replicate-image-versions-across-the-target-regions"></a>대상 지역 간에 이미지 버전을 복제하려면 얼마나 걸리나요?
 

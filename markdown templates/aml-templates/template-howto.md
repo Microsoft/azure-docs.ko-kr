@@ -1,6 +1,6 @@
 ---
-title: 59 자가 내의 Azure Machine Learning 서비스에 대 한 동사 동작입니다. Azure Machine Learning 이름을 포함 합니다. 여기에 제목을 테스트 https://moz.com/learn/seo/title-tag (예:-Azure Machine Learning 서비스를 사용 하 여 Python에서 웹 서비스 배포)
-description: 이 작업을 수행 하는 방법과 Azure Machine Learning에는 고객을 사용 하 여 단어에 대해 알아봅니다. 이 문자열 115에 145 문자에서 문서를 설명합니다. 여기 SEO 유형의 작업 동사를 사용 합니다. 이 정보는 문서 날짜 스탬프를 사용 하 여 인라인 검색 페이지에 표시 됩니다. 다음 단락에 소개 문서의 의도 설명 하는 경우 여기 길이 대 한 편집이 사용할 수 있습니다.
+title: 59 자가 내의 Azure Machine Learning 서비스에 대한 동사 동작입니다. Azure Machine Learning 이름을 포함 합니다. 여기에 제목을 테스트 https://moz.com/learn/seo/title-tag (예:-Azure Machine Learning 서비스를 사용 하 여 Python에서 웹 서비스 배포)
+description: 이 작업을 수행 하는 방법과 Azure Machine Learning에는 고객을 사용 하 여 단어에 대해 알아봅니다. 이 문자열 115에 145 문자에서 문서를 설명합니다. 여기 SEO 유형의 작업 동사를 사용 합니다. 이 정보는 문서 날짜 스탬프를 사용 하 여 인라인 검색 페이지에 표시 됩니다. 다음 단락에 소개 문서의 의도 설명 하는 경우 여기 길이 대한 편집이 사용할 수 있습니다.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -32,11 +32,11 @@ ms.locfileid: "61487801"
 **이 구를 굵게 표시 됩니다. ** 
  *이 구는 기울임꼴입니다.*
 
-이 [아티클에 대 한 하이퍼링크](./template-concepts.md)
+이 [아티클에 대한 하이퍼링크](./template-concepts.md)
 
 다음은 이미지입니다.
 
-![에 대 한 이미지 설명을 이것이](media/overview-what-is-azure-ml/aml-concepts.png) 이미지 문서 및 파일의 이름과 일치 하는 하위 디렉터리를 사용 하 여 미디어 폴더에 저장 해야 합니다.
+![에 대한 이미지 설명을 이것이](media/overview-what-is-azure-ml/aml-concepts.png) 이미지 문서 및 파일의 이름과 일치 하는 하위 디렉터리를 사용 하 여 미디어 폴더에 저장 해야 합니다.
 
 ## <a name="section-here-h2"></a>H2 섹션
 이 테이블에 머리글을 포함 합니다.
@@ -74,4 +74,4 @@ ms.locfileid: "61487801"
 
 ## <a name="next-steps"></a>다음 단계
 
-Machine learning에 대 한 정보를 참조 하세요. [다른 문서](template-howto.md)
+Machine learning에 대한 정보를 참조 하세요. [다른 문서](template-howto.md)

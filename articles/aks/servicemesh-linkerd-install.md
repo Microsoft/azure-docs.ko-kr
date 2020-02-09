@@ -16,7 +16,7 @@ ms.locfileid: "73747717"
 ---
 # <a name="install-linkerd-in-azure-kubernetes-service-aks"></a>Azure Kubernetes 서비스 (AKS)에 Linkerd 설치
 
-[Linkerd][linkerd-github] 는 오픈 소스 서비스 메시 및 [cncf incubating 프로젝트][linkerd-cncf]입니다. Linkerd는 트래픽 관리, 서비스 id 및 보안, 안정성 및 관찰성를 포함 하는 기능을 제공 하는 ultralight service 메시입니다. Linkerd에 대 한 자세한 내용은 공식 [LINKERD FAQ][linkerd-faq] 및 [Linkerd 아키텍처][linkerd-architecture] 설명서를 참조 하세요.
+[Linkerd][linkerd-github] 는 오픈 소스 서비스 메시 및 [cncf incubating 프로젝트][linkerd-cncf]입니다. Linkerd는 트래픽 관리, 서비스 id 및 보안, 안정성 및 관찰성를 포함 하는 기능을 제공 하는 ultralight service 메시입니다. Linkerd에 대한 자세한 내용은 공식 [LINKERD FAQ][linkerd-faq] 및 [Linkerd 아키텍처][linkerd-architecture] 설명서를 참조 하세요.
 
 이 문서에서는 Linkerd를 설치 하는 방법을 보여 줍니다. Linkerd `linkerd` 클라이언트 이진 파일은 클라이언트 컴퓨터에 설치 되 고 Linkerd 구성 요소는 AKS의 Kubernetes 클러스터에 설치 됩니다.
 
@@ -36,7 +36,7 @@ ms.locfileid: "73747717"
 
 ## <a name="before-you-begin"></a>시작하기 전에
 
-이 문서에 설명 된 단계에서는 AKS 클러스터 (RBAC를 사용 하 여 Kubernetes `1.13` 이상)를 만들고 클러스터와 `kubectl` 연결을 설정 했다고 가정 합니다. 이러한 항목에 대 한 도움이 필요한 경우 [AKS 빠른][aks-quickstart]시작을 참조 하세요.
+이 문서에 설명 된 단계에서는 AKS 클러스터 (RBAC를 사용 하 여 Kubernetes `1.13` 이상)를 만들고 클러스터와 `kubectl` 연결을 설정 했다고 가정 합니다. 이러한 항목에 대한 도움이 필요한 경우 [AKS 빠른][aks-quickstart]시작을 참조 하세요.
 
 모든 Linkerd pod는 Linux 노드에서 실행 되도록 예약 되어야 합니다 .이 설정은 아래에 자세히 설명 된 설치 방법의 기본값입니다. 추가 구성은 필요 하지 않습니다.
 
@@ -68,7 +68,7 @@ Linkerd를 설치 하기 전에 사전 설치 검사를 실행 하 여 AKS 클�
 linkerd check --pre
 ```
 
-AKS 클러스터가 Linkerd에 대 한 올바른 설치 대상 임을 나타내려면 다음과 유사한 내용이 표시 되어야 합니다.
+AKS 클러스터가 Linkerd에 대한 올바른 설치 대상 임을 나타내려면 다음과 유사한 내용이 표시 되어야 합니다.
 
 ```console
 kubernetes-api
@@ -227,13 +227,13 @@ Status check results are √
 
 ## <a name="access-the-dashboard"></a>대시보드 액세스
 
-Linkerd는 서비스 메시 및 워크 로드에 대 한 통찰력을 제공 하는 대시보드와 함께 제공 됩니다. 대시보드에 액세스 하려면 `linkerd dashboard` 명령을 사용 합니다. 이 명령은 [kubectl 포트][kubectl-port-forward] 를 활용 하 여 클라이언트 컴퓨터와 AKS 클러스터의 관련 pod 간에 보안 연결을 만듭니다. 그런 다음 기본 브라우저에서 자동으로 대시보드를 엽니다.
+Linkerd는 서비스 메시 및 워크 로드에 대한 통찰력을 제공 하는 대시보드와 함께 제공 됩니다. 대시보드에 액세스 하려면 `linkerd dashboard` 명령을 사용 합니다. 이 명령은 [kubectl 포트][kubectl-port-forward] 를 활용 하 여 클라이언트 컴퓨터와 AKS 클러스터의 관련 pod 간에 보안 연결을 만듭니다. 그런 다음 기본 브라우저에서 자동으로 대시보드를 엽니다.
 
 ```console
 linkerd dashboard
 ```
 
-또한이 명령은 Grafana 대시보드에 대 한 포트 전달을 만들고 링크를 반환 합니다.
+또한이 명령은 Grafana 대시보드에 대한 포트 전달을 만들고 링크를 반환 합니다.
 
 ```console
 Linkerd dashboard available at:
@@ -246,7 +246,7 @@ Opening Linkerd dashboard in the default browser
 ## <a name="uninstall-linkerd-from-aks"></a>AKS에서 Linkerd 제거
 
 > [!WARNING]
-> 실행 중인 시스템에서 Linkerd를 삭제 하면 서비스 간에 트래픽 관련 문제가 발생할 수 있습니다. 계속 하기 전에 시스템에 대 한 규정이 Linkerd 없이 제대로 작동 하는지 확인 합니다.
+> 실행 중인 시스템에서 Linkerd를 삭제 하면 서비스 간에 트래픽 관련 문제가 발생할 수 있습니다. 계속 하기 전에 시스템에 대한 규정이 Linkerd 없이 제대로 작동 하는지 확인 합니다.
 
 먼저 데이터 평면 프록시를 제거 해야 합니다. 작업 네임 스페이스에서 자동 프록시 삽입 [주석을][linkerd-automatic-proxy-injection] 제거 하 고 워크 로드 배포를 롤아웃 합니다. 워크 로드에 연결 된 데이터 평면 구성 요소가 더 이상 없어야 합니다.
 
@@ -258,7 +258,7 @@ linkerd install --ignore-cluster | kubectl delete -f -
 
 ## <a name="next-steps"></a>다음 단계
 
-Linkerd에 대 한 추가 설치 및 구성 옵션을 살펴보려면 다음 공식 Linkerd 지침을 참조 하세요.
+Linkerd에 대한 추가 설치 및 구성 옵션을 살펴보려면 다음 공식 Linkerd 지침을 참조 하세요.
 
 - [Linkerd-투구 설치][linkerd-install-with-helm]
 - [Linkerd-역할 권한으로 사용할 수 있는 다중 단계 설치][linkerd-multi-stage-installation]

@@ -31,14 +31,14 @@ ms.locfileid: "71329332"
 Azure NetApp Files 사용 하는 경우 다음 제한 사항이 적용 됩니다.
 
 * Azure NetApp Files는 [선택한 Azure 지역][anf-regions]에서만 사용할 수 있습니다.
-* Azure NetApp Files를 사용 하려면 먼저 Azure NetApp Files 서비스에 대 한 액세스 권한이 있어야 합니다. 액세스를 위해를 적용 하려면 [Azure NetApp Files waitlist 제출 양식을][anf-waitlist]사용할 수 있습니다. Azure NetApp Files 팀에서 공식 확인 전자 메일을 받을 때까지 Azure NetApp Files 서비스에 액세스할 수 없습니다.
+* Azure NetApp Files를 사용 하려면 먼저 Azure NetApp Files 서비스에 대한 액세스 권한이 있어야 합니다. 액세스를 위해를 적용 하려면 [Azure NetApp Files waitlist 제출 양식을][anf-waitlist]사용할 수 있습니다. Azure NetApp Files 팀에서 공식 확인 전자 메일을 받을 때까지 Azure NetApp Files 서비스에 액세스할 수 없습니다.
 * Azure NetApp Files 서비스는 AKS 클러스터와 동일한 가상 네트워크에 만들어야 합니다.
-* Azure NetApp Files에 대 한 정적 프로 비전은 AKS에서 지원 됩니다.
+* Azure NetApp Files에 대한 정적 프로 비전은 AKS에서 지원 됩니다.
 
 ## <a name="configure-azure-netapp-files"></a>Azure NetApp Files 구성
 
 > [!IMPORTANT]
-> *Microsoft NetApp* 리소스 공급자를 등록 하려면 먼저 구독에 대 한 [Azure NetApp Files waitlist 제출 양식을][anf-waitlist] 작성 해야 합니다. Azure NetApp Files 팀에서 공식 확인 전자 메일을 받을 때까지 리소스를 등록할 수 없습니다.
+> *Microsoft NetApp* 리소스 공급자를 등록 하려면 먼저 구독에 대한 [Azure NetApp Files waitlist 제출 양식을][anf-waitlist] 작성 해야 합니다. Azure NetApp Files 팀에서 공식 확인 전자 메일을 받을 때까지 리소스를 등록할 수 없습니다.
 
 *Microsoft NetApp* 리소스 공급자를 등록 합니다.
 
@@ -49,7 +49,7 @@ az provider register --namespace Microsoft.NetApp --wait
 > [!NOTE]
 > 이 작업을 완료하는 데 약간의 시간이 걸릴 수 있습니다.
 
-AKS와 함께 사용할 Azure NetApp 계정을 만들 때 **노드** 리소스 그룹에서 계정을 만들어야 합니다. 먼저 [az aks show][az-aks-show] 명령을 사용 하 여 리소스 그룹 이름을 가져오고 `--query nodeResourceGroup` 쿼리 매개 변수를 추가 합니다. 다음 예제에서는 리소스 그룹 이름 *Myresourcegroup*에서 *myAKSCluster* 이라는 AKS 클러스터에 대 한 노드 리소스 그룹을 가져옵니다.
+AKS와 함께 사용할 Azure NetApp 계정을 만들 때 **노드** 리소스 그룹에서 계정을 만들어야 합니다. 먼저 [az aks show][az-aks-show] 명령을 사용 하 여 리소스 그룹 이름을 가져오고 `--query nodeResourceGroup` 쿼리 매개 변수를 추가 합니다. 다음 예제에서는 리소스 그룹 이름 *Myresourcegroup*에서 *myAKSCluster* 이라는 AKS 클러스터에 대한 노드 리소스 그룹을 가져옵니다.
 
 ```azurecli-interactive
 $ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
@@ -255,7 +255,7 @@ Filesystem             Size  Used Avail Use% Mounted on
 
 ## <a name="next-steps"></a>다음 단계
 
-Azure NetApp Files에 대 한 자세한 내용은 [Azure NetApp Files 항목][anf]을 참조 하세요. AKS에서 NFS를 사용 하는 방법에 대 한 자세한 내용은 [AKS (Azure Kubernetes Service)를 사용 하 여 nfs (네트워크 파일 시스템) Linux 서버 볼륨 수동 만들기 및 사용 (영문)][aks-nfs]을 참조 하세요.
+Azure NetApp Files에 대한 자세한 내용은 [Azure NetApp Files 항목][anf]을 참조 하세요. AKS에서 NFS를 사용 하는 방법에 대한 자세한 내용은 [AKS (Azure Kubernetes Service)를 사용 하 여 nfs (네트워크 파일 시스템) Linux 서버 볼륨 수동 만들기 및 사용 (영문)][aks-nfs]을 참조 하세요.
 
 
 [aks-quickstart-cli]: kubernetes-walkthrough.md

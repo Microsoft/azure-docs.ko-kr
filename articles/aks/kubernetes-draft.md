@@ -16,7 +16,7 @@ ms.locfileid: "76292965"
 ---
 # <a name="quickstart-develop-on-azure-kubernetes-service-aks-with-draft"></a>빠른 시작: 초안을 사용 하 여 AKS (Azure Kubernetes Service)에서 개발
 
-Draft는 Kubernetes 클러스터에서 응용 프로그램 컨테이너를 패키지 하 고 실행 하는 데 도움이 되는 오픈 소스 도구입니다. 초안을 사용 하면 변경 내용을 버전 제어에 커밋하지 않고도 코드 변경이 발생할 때 응용 프로그램을 Kubernetes에 신속 하 게 다시 배포할 수 있습니다. 초안에 대 한 자세한 내용은 [GitHub의 초안 설명서][draft-documentation]를 참조 하세요.
+Draft는 Kubernetes 클러스터에서 응용 프로그램 컨테이너를 패키지 하 고 실행 하는 데 도움이 되는 오픈 소스 도구입니다. 초안을 사용 하면 변경 내용을 버전 제어에 커밋하지 않고도 코드 변경이 발생할 때 응용 프로그램을 Kubernetes에 신속 하 게 다시 배포할 수 있습니다. 초안에 대한 자세한 내용은 [GitHub의 초안 설명서][draft-documentation]를 참조 하세요.
 
 이 문서에서는 Draft를 사용 하 여 AKS에서 응용 프로그램을 패키지 하 고 실행 하는 방법을 보여 줍니다.
 
@@ -45,7 +45,7 @@ Draft를 사용 하 여 AKS 클러스터에서 응용 프로그램을 실행 하
 az acr create --resource-group MyResourceGroup --name MyDraftACR --sku Basic
 ```
 
-다음 예제와 유사하게 출력됩니다. ACR에 대 한 *loginServer* 값은 이후 단계에서 사용 되므로 기록해 둡니다. 아래 예제에서 *mydraftacr.azurecr.io* 는 *mydraftacr*에 대 한 *loginServer* 입니다.
+다음 예제와 유사하게 출력됩니다. ACR에 대한 *loginServer* 값은 이후 단계에서 사용 되므로 기록해 둡니다. 아래 예제에서 *mydraftacr.azurecr.io* 는 *mydraftacr*에 대한 *loginServer* 입니다.
 
 ```console
 {
@@ -80,7 +80,7 @@ az acr login --name MyDraftACR
 
 ## <a name="create-trust-between-aks-cluster-and-acr"></a>AKS 클러스터와 ACR 사이의 트러스트 만들기
 
-또한 AKS 클러스터는 컨테이너 이미지를 끌어와 실행 하기 위해 ACR에 액세스 해야 합니다. 트러스트를 설정 하 여 AKS에서 ACR에 대 한 액세스를 허용 합니다. AKS 클러스터와 ACR 레지스트리 간에 트러스트를 설정하려면 AKS 클러스터에서 ACR 레지스트리에 액세스하는 데 사용하는 Azure Active Directory 서비스 주체에 대한 권한을 부여합니다. 다음 명령은 *Myresourcegroup* 의 *MyAKS* 클러스터에 대 한 서비스 사용자에 게 *myresourcegroup*의 *MyDraftACR* ACR에 대 한 권한을 부여 합니다.
+또한 AKS 클러스터는 컨테이너 이미지를 끌어와 실행 하기 위해 ACR에 액세스 해야 합니다. 트러스트를 설정 하 여 AKS에서 ACR에 대한 액세스를 허용 합니다. AKS 클러스터와 ACR 레지스트리 간에 트러스트를 설정하려면 AKS 클러스터에서 ACR 레지스트리에 액세스하는 데 사용하는 Azure Active Directory 서비스 주체에 대한 권한을 부여합니다. 다음 명령은 *Myresourcegroup* 의 *MyAKS* 클러스터에 대한 서비스 사용자에 게 *myresourcegroup*의 *MyDraftACR* ACR에 대한 권한을 부여 합니다.
 
 ```azurecli
 # Get the service principal ID of your AKS cluster
@@ -103,15 +103,15 @@ Azure Cloud Shell을 사용하는 경우 `kubectl`이 이미 설치되어 있습
 az aks install-cli
 ```
 
-Kubernetes 클러스터에 연결하도록 `kubectl`을 구성하려면 [az aks get-credentials][] 명령을 사용합니다. 다음 예제에서는 *Myresourcegroup*에서 *MyAKS* 라는 AKS 클러스터에 대 한 자격 증명을 가져옵니다.
+Kubernetes 클러스터에 연결하도록 `kubectl`을 구성하려면 [az aks get-credentials][] 명령을 사용합니다. 다음 예제에서는 *Myresourcegroup*에서 *MyAKS* 라는 AKS 클러스터에 대한 자격 증명을 가져옵니다.
 
 ```azurecli
 az aks get-credentials --resource-group MyResourceGroup --name MyAKS
 ```
 
-## <a name="create-a-service-account-for-helm"></a>투구에 대 한 서비스 계정 만들기
+## <a name="create-a-service-account-for-helm"></a>투구에 대한 서비스 계정 만들기
 
-RBAC 지원 AKS 클러스터에서 Helm을 배포하려면 먼저 서비스 계정과 Tiller 서비스에 대한 역할 바인딩이 필요합니다. RBAC를 사용 하는 클러스터에서 투구/Tiller를 보호 하는 방법에 대 한 자세한 내용은 [Tiller, 네임 스페이스 및 rbac][tiller-rbac]를 참조 하세요. AKS 클러스터가 RBAC를 사용 하도록 설정 되지 않은 경우이 단계를 건너뜁니다.
+RBAC 지원 AKS 클러스터에서 Helm을 배포하려면 먼저 서비스 계정과 Tiller 서비스에 대한 역할 바인딩이 필요합니다. RBAC를 사용 하는 클러스터에서 투구/Tiller를 보호 하는 방법에 대한 자세한 내용은 [Tiller, 네임 스페이스 및 rbac][tiller-rbac]를 참조 하세요. AKS 클러스터가 RBAC를 사용 하도록 설정 되지 않은 경우이 단계를 건너뜁니다.
 
 `helm-rbac.yaml`이라는 파일을 만들고 다음 YAML에 복사합니다.
 

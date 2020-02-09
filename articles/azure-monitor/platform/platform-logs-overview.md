@@ -25,7 +25,7 @@ ms.locfileid: "75530887"
 |:---|:---|:---|
 | 리소스 로그 | Azure 리소스 | Azure 리소스 ( *데이터 평면*) 내에서 수행 된 작업에 대 한 통찰력을 제공 합니다. 예를 들어 Key Vault에서 비밀을 가져오거나 데이터베이스를 요청 하는 등의 작업을 수행할 수 있습니다. 리소스 로그의 콘텐츠는 Azure 서비스 및 리소스 유형에 따라 달라 집니다.<br><br>*리소스 로그는 이전에 진단 로그 라고 합니다.*  |
 | 활동 로그 | Azure 구독 | Service Health 이벤트에 대 한 업데이트 외에도 외부 (*관리 평면*)에서 구독의 각 Azure 리소스에 대 한 작업에 대 한 통찰력을 제공 합니다. 활동 로그를 사용 하 여 구독의 리소스에 대해 수행 되는 쓰기 작업 (PUT, POST, DELETE)에 대 한 _내용_, 대상 및 _시기_ _를 결정_합니다. 또한 작업 및 기타 관련 속성의 상태도 이해할 수 있습니다.  각 Azure 구독에 대 한 단일 활동 로그가 있습니다. |
-| Azure Active Directory 로그 | Azure 테넌트 |  특정 테 넌 트에 대해 Azure Active Directory의 로그인 활동 기록과 변경 내용의 감사 내역을 포함 합니다. Azure Active Directory 로그에 대 한 전체 설명은 [Azure Active Directory 보고서 란?](../../active-directory/reports-monitoring/overview-reports.md) 을 참조 하세요.   |
+| Azure Active Directory 로그 | Azure 테넌트 |  특정 테넌트에 대해 Azure Active Directory의 로그인 활동 기록과 변경 내용의 감사 내역을 포함 합니다. Azure Active Directory 로그에 대 한 전체 설명은 [Azure Active Directory 보고서 란?](../../active-directory/reports-monitoring/overview-reports.md) 을 참조 하세요.   |
 
 > [!NOTE]
 > Azure 활동 로그는 주로 Azure Resource Manager에서 발생하는 활동을 대상으로 합니다. 클래식/RDFE 모델을 사용하여 리소스를 추적하지 않습니다. 일부 클래식 리소스 유형(예: Microsoft.ClassicCompute)에는 Azure Resource Manager의 프록시 리소스 공급자가 있습니다. 이러한 프록시 리소스 공급자를 사용하는 Azure Resource Manager를 통해 클래식 리소스 유형과 상호 작용하면 작업이 활동 로그에 표시됩니다. Azure Resource Manager 프록시 외부의 클래식 리소스 유형과 상호 작용할 경우 사용자 작업은 작업 로그에만 기록됩니다. 작업 로그는 포털의 별도 섹션에서 탐색할 수 있습니다.

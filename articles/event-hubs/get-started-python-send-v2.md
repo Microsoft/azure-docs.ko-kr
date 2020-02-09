@@ -90,7 +90,7 @@ Azure Event Hubs는 초당 수백만 개의 이벤트를 수신하여 처리할 
 
 1. [Azure Storage 계정 만들기](../storage/common/storage-account-create.md?tabs=azure-portal)
 2. [Blob 컨테이너 만들기](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container)
-3. [저장소 계정에 대 한 연결 문자열을 가져옵니다.](../storage/common/storage-configure-connection-string.md?#view-and-copy-a-connection-string)
+3. [저장소 계정에 대한 연결 문자열을 가져옵니다.](../storage/common/storage-configure-connection-string.md?#view-and-copy-a-connection-string)
 
     연결 문자열과 컨테이너 이름을 적어 둡니다. 수신 코드에서 사용 합니다.
 
@@ -157,6 +157,6 @@ python send.py
 
 
 ## <a name="next-steps"></a>다음 단계
-이 빠른 시작에서는 이벤트를 비동기적으로 보내고 받습니다. 이벤트를 동기적으로 보내고 받는 방법에 대 한 자세한 내용은 [이 위치](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/eventhub/azure-eventhub/samples/sync_samples)에 있는 샘플을 참조 하세요.
+이 빠른 시작에서는 이벤트를 비동기적으로 보내고 받습니다. 이벤트를 동기적으로 보내고 받는 방법에 대한 자세한 내용은 [이 위치](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/eventhub/azure-eventhub/samples/sync_samples)에 있는 샘플을 참조 하세요.
 
 [여기](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/eventhub/azure-eventhub/samples)에서 GitHub의 모든 샘플 (동기화와 비동기 모두)을 찾을 수 있습니다.

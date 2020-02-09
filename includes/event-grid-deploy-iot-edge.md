@@ -20,10 +20,10 @@ ms.locfileid: "76844594"
 IoT Edge 장치에 모듈을 배포 하는 방법에는 여러 가지가 있으며 모든 장치는 IoT Edge에서 Azure Event Grid에 대해 작동 합니다. 이 문서에서는 Azure Portal에서 IoT Edge에 Event Grid를 배포 하는 단계를 설명 합니다.
 
 >[!NOTE]
-> 이 자습서에서는 지 속성 없이 Event Grid 모듈을 배포 합니다. 이는 모듈을 다시 배포할 때이 자습서에서 만든 토픽 및 구독이 삭제 됨을 의미 합니다. 지 속성을 설정 하는 방법에 대 한 자세한 내용은 [Linux에서 상태 유지](../articles/event-grid/edge/persist-state-linux.md) 또는 [Windows에서 지속 상태](../articles/event-grid/edge/persist-state-windows.md)문서를 참조 하세요. 프로덕션 워크 로드의 경우 지 속성을 사용 하 여 Event Grid 모듈을 설치 하는 것이 좋습니다.
+> 이 자습서에서는 지 속성 없이 Event Grid 모듈을 배포 합니다. 이는 모듈을 다시 배포할 때이 자습서에서 만든 토픽 및 구독이 삭제 됨을 의미 합니다. 지 속성을 설정 하는 방법에 대한 자세한 내용은 [Linux에서 상태 유지](../articles/event-grid/edge/persist-state-linux.md) 또는 [Windows에서 지속 상태](../articles/event-grid/edge/persist-state-windows.md)문서를 참조 하세요. 프로덕션 워크 로드의 경우 지 속성을 사용 하 여 Event Grid 모듈을 설치 하는 것이 좋습니다.
 
 >[!IMPORTANT]
-> 이 자습서에서는 클라이언트 인증 기능이 해제 된 상태에서 Event Grid 모듈이 배포 되며 HTTP 구독자가 허용 됩니다. 프로덕션 워크 로드의 경우 클라이언트 인증을 사용 하는 HTTPS 요청 및 구독자만 사용 하도록 설정 하는 것이 좋습니다. Event Grid 모듈을 안전 하 게 구성 하는 방법에 대 한 자세한 내용은 [보안 및 인증](../articles/event-grid/edge/security-authentication.md)을 참조 하세요.
+> 이 자습서에서는 클라이언트 인증 기능이 해제 된 상태에서 Event Grid 모듈이 배포 되며 HTTP 구독자가 허용 됩니다. 프로덕션 워크 로드의 경우 클라이언트 인증을 사용 하는 HTTPS 요청 및 구독자만 사용 하도록 설정 하는 것이 좋습니다. Event Grid 모듈을 안전 하 게 구성 하는 방법에 대한 자세한 내용은 [보안 및 인증](../articles/event-grid/edge/security-authentication.md)을 참조 하세요.
  
 ### <a name="select-your-iot-edge-device"></a>IoT Edge 장치 선택
 
@@ -71,7 +71,7 @@ IoT Edge 장치에 모듈을 배포 하는 방법에는 여러 가지가 있으�
  1. **다음** 을 클릭 하 여 경로 섹션으로 이동 합니다.
 
     > [!NOTE]
-    > Azure VM을에 지 장치로 사용 하는 경우 포트 4438에서 인바운드 트래픽을 허용 하는 인바운드 포트 규칙을 추가 합니다. 규칙을 추가 하는 방법에 대 한 지침은 [VM에 포트를 여는 방법](../articles/virtual-machines/windows/nsg-quickstart-portal.md)을 참조 하세요.
+    > Azure VM을에 지 장치로 사용 하는 경우 포트 4438에서 인바운드 트래픽을 허용 하는 인바운드 포트 규칙을 추가 합니다. 규칙을 추가 하는 방법에 대한 지침은 [VM에 포트를 여는 방법](../articles/virtual-machines/windows/nsg-quickstart-portal.md)을 참조 하세요.
 
 
 ### <a name="setup-routes"></a>설정 경로

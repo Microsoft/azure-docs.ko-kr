@@ -107,7 +107,7 @@ session.Execute("CREATE TABLE myKeySpace.myTable(
     lastName text) WITH cosmosdb_provisioned_throughput=400");
 
 ```
-### <a name="alter-or-change-throughput-for-cassandra-table"></a>Cassandra 테이블에 대 한 처리량 변경 또는 변경
+### <a name="alter-or-change-throughput-for-cassandra-table"></a>Cassandra 테이블에 대한 처리량 변경 또는 변경
 
 ```csharp
 // Altering the throughput too can be done through code by issuing following command

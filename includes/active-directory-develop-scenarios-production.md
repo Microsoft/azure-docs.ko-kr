@@ -29,4 +29,4 @@ ms.locfileid: "76758950"
 
 통합 테스트:
 
-- [Microsoft id 플랫폼에 대 한 통합 검사 목록을](../articles/active-directory/develop/identity-platform-integration-checklist.md)사용 합니다.
+- [Microsoft id 플랫폼에 대한 통합 검사 목록을](../articles/active-directory/develop/identity-platform-integration-checklist.md)사용 합니다.

@@ -474,7 +474,7 @@ Azure Vm의 재해 복구는 VM 라이선스 비용, 네트워크 및 저장소 
 --- | ---
 **Linux 지원** | RedHat Enterprise Linux 6.10에 대해 지원 됨 CentOS 6.10.<br/><br/>
 **클라우드 지원** | 독일 클라우드의 Azure Vm에 대해 지원 되는 재해 복구.
-**구독 간 재해 복구** | 동일한 Azure Active Directory 테 넌 트 내에서 다른 구독의 Azure Vm을 다른 지역으로 복제 하는 기능을 지원 합니다. [자세히 알아봅니다](https://aka.ms/cross-sub-blog).
+**구독 간 재해 복구** | 동일한 Azure Active Directory 테넌트 내에서 다른 구독의 Azure Vm을 다른 지역으로 복제 하는 기능을 지원 합니다. [자세히 알아봅니다](https://aka.ms/cross-sub-blog).
 
 ### <a name="vmware-vmphysical-server-disaster-recovery"></a>VMware v m/물리적 서버 재해 복구
 이번 달에 추가 된 기능은 표에 요약 되어 있습니다.

@@ -30,7 +30,7 @@ VMware 관리자가 vCenter에 액세스할 수 있도록 Azure AD (Azure Active
 
 ## <a name="about-azure-ad"></a>Azure AD 정보
 
-Azure AD는 Microsoft 다중 테 넌 트, 클라우드 기반 디렉터리 및 id 관리 서비스입니다. Azure AD는 사용자가 Azure에서 다양 한 서비스를 인증 하 고 액세스 하는 데 사용할 수 있는 확장 가능 하 고 일관 되며 안정적인 인증 메커니즘을 제공 합니다. 또한 모든 타사 서비스에 대 한 보안 LDAP 서비스를 제공 하 여 Azure AD를 인증/id 원본으로 사용 합니다. Azure AD는 핵심 디렉터리 서비스, 고급 id 관리 및 응용 프로그램 액세스 관리를 결합 하 여, AVS 사설 클라우드를 관리 하는 사용자를 위해 AVS 사설 클라우드에 액세스를 제공 하는 데 사용할 수 있습니다.
+Azure AD는 Microsoft 다중 테넌트, 클라우드 기반 디렉터리 및 id 관리 서비스입니다. Azure AD는 사용자가 Azure에서 다양 한 서비스를 인증 하 고 액세스 하는 데 사용할 수 있는 확장 가능 하 고 일관 되며 안정적인 인증 메커니즘을 제공 합니다. 또한 모든 타사 서비스에 대 한 보안 LDAP 서비스를 제공 하 여 Azure AD를 인증/id 원본으로 사용 합니다. Azure AD는 핵심 디렉터리 서비스, 고급 id 관리 및 응용 프로그램 액세스 관리를 결합 하 여, AVS 사설 클라우드를 관리 하는 사용자를 위해 AVS 사설 클라우드에 액세스를 제공 하는 데 사용할 수 있습니다.
 
 VCenter를 사용 하 여 Azure AD를 id 원본으로 사용 하려면 Azure ad 및 Azure AD domain services를 설정 해야 합니다. 다음 지침을 따릅니다.
 
@@ -90,7 +90,7 @@ VCenter를 사용 하 여 Azure AD를 id 원본으로 사용 하려면 Azure ad 
     | **도메인 이름** | 도메인의 FQDN (예: example.com)입니다. 이 텍스트 상자에 IP 주소를 제공 하지 마십시오. |
     | **도메인 별칭** | *(선택 사항)* 도메인 NetBIOS 이름입니다. SSPI 인증을 사용 하는 경우 Active Directory 도메인의 NetBIOS 이름을 id 원본의 별칭으로 추가 합니다. |
     | **그룹의 기본 DN** | 그룹에 대 한 기본 고유 이름입니다. Azure AD의 경우 다음을 사용 합니다. `OU=AADDC Users,DC=<domain>,DC=<domain suffix>` 예: `OU=AADDC Users,DC=cloudsimplecustomer,DC=com`|
-    | **주 서버 URL** | 도메인에 대 한 주 도메인 컨트롤러 LDAP 서버입니다.<br><br> `ldaps://hostname:port`형식을 사용 합니다. 포트는 일반적으로 LDAPS 연결의 636입니다. <br><br>주 또는 보조 LDAP URL에서 `ldaps://` 를 사용 하는 경우 Active Directory 서버의 LDAPS 끝점에 대 한 신뢰를 설정 하는 인증서가 필요 합니다. |
+    | **주 서버 URL** | 도메인에 대 한 주 도메인 컨트롤러 LDAP 서버입니다.<br><br> `ldaps://hostname:port`형식을 사용 합니다. 포트는 일반적으로 LDAPS 연결의 636입니다. <br><br>주 또는 보조 LDAP URL에서 `ldaps://` 를 사용 하는 경우 Active Directory 서버의 LDAPS 엔드포인트에 대 한 신뢰를 설정 하는 인증서가 필요 합니다. |
     | **보조 서버 URL** | 장애 조치 (failover)에 사용 되는 보조 도메인 컨트롤러 LDAP 서버의 주소입니다. |
     | **인증서 선택** | Active Directory LDAP 서버 또는 OpenLDAP 서버 id 원본에서 LDAPS를 사용 하려는 경우 URL 텍스트 상자에 `ldaps://` 를 입력 하면 **인증서 선택** 단추가 나타납니다. 보조 URL은 필요 하지 않습니다. |
     | **사용자 이름** | 도메인에서 사용자 및 그룹의 기본 DN에 대 한 읽기 전용 액세스 권한이 있는 사용자의 ID입니다. |

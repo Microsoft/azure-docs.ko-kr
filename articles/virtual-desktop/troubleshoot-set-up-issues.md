@@ -1,6 +1,6 @@
 ---
-title: Windows 가상 데스크톱 테 넌 트 호스트 풀 만들기-Azure
-description: Windows 가상 데스크톱 테 넌 트 환경을 설치 하는 동안 테 넌 트 및 호스트 풀 문제를 해결 하는 방법입니다.
+title: Windows 가상 데스크톱 테넌트 호스트 풀 만들기-Azure
+description: Windows 가상 데스크톱 테넌트 환경을 설치 하는 동안 테넌트 및 호스트 풀 문제를 해결 하는 방법입니다.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -16,7 +16,7 @@ ms.locfileid: "75965736"
 ---
 # <a name="tenant-and-host-pool-creation"></a>테넌트 및 호스트 풀 만들기
 
-이 문서에서는 Windows 가상 데스크톱 테 넌 트 및 관련 세션 호스트 풀 인프라의 초기 설정 중에 발생 하는 문제에 대해 설명 합니다.
+이 문서에서는 Windows 가상 데스크톱 테넌트 및 관련 세션 호스트 풀 인프라의 초기 설정 중에 발생 하는 문제에 대해 설명 합니다.
 
 ## <a name="provide-feedback"></a>피드백 제공하기
 
@@ -28,9 +28,9 @@ Windows 10 Enterprise 다중 세션 이미지를 사용 하려면 Azure Marketpl
 
 ![가상 데스크톱에 대 한 Windows 10 Enterprise 버전 1809을 선택 하는 스크린샷](media/AzureMarketPlace.png)
 
-## <a name="creating-windows-virtual-desktop-tenant"></a>Windows 가상 데스크톱 테 넌 트 만들기
+## <a name="creating-windows-virtual-desktop-tenant"></a>Windows 가상 데스크톱 테넌트 만들기
 
-이 섹션에서는 Windows 가상 데스크톱 테 넌 트를 만들 때 발생할 수 있는 문제에 대해 설명 합니다.
+이 섹션에서는 Windows 가상 데스크톱 테넌트를 만들 때 발생할 수 있는 문제에 대해 설명 합니다.
 
 ### <a name="error-the-user-isnt-authorized-to-query-the-management-service"></a>오류: 사용자에 게 관리 서비스를 쿼리할 수 있는 권한이 없습니다.
 
@@ -53,7 +53,7 @@ Windows 10 Enterprise 다중 세션 이미지를 사용 하려면 Azure Marketpl
 
 **원인:** 로그인 한 사용자에 게 Azure Active Directory에 TenantCreator 역할이 할당 되지 않았습니다.
 
-**해결 방법:** [Azure Active Directory 테 넌 트의 사용자에 게 TenantCreator 응용 프로그램 역할 할당](https://docs.microsoft.com/azure/virtual-desktop/tenant-setup-azure-active-directory#assign-the-tenantcreator-application-role)의 지침을 따릅니다. 이 지침을 수행 하면 사용자가 TenantCreator 역할에 할당 됩니다.
+**해결 방법:** [Azure Active Directory 테넌트의 사용자에 게 TenantCreator 응용 프로그램 역할 할당](https://docs.microsoft.com/azure/virtual-desktop/tenant-setup-azure-active-directory#assign-the-tenantcreator-application-role)의 지침을 따릅니다. 이 지침을 수행 하면 사용자가 TenantCreator 역할에 할당 됩니다.
 
 ![지정 된 TenantCreator 역할의 스크린샷](media/TenantCreatorRoleAssigned.png)
 
@@ -73,13 +73,13 @@ Windows 가상 데스크톱 – 호스트 풀 템플릿 프로 비전 Azure Mark
 
 **수정 1:** 참가자 액세스 권한이 있는 계정 (최소)으로 세션 호스트 Vm을 배포할 구독에 로그인 합니다.
 
-**원인 2:** 사용 중인 구독은 CSP (Microsoft 클라우드 서비스 공급자) 테 넌 트의 일부입니다.
+**원인 2:** 사용 중인 구독은 CSP (Microsoft 클라우드 서비스 공급자) 테넌트의 일부입니다.
 
 **수정 2:** **새 Windows 가상 데스크톱 호스트 풀 만들기 및 프로 비전** 을 위한 GitHub 위치로 이동 하 고 다음 지침을 따릅니다.
 
 1. **Azure에 배포** 를 마우스 오른쪽 단추로 클릭 하 고 **링크 주소 복사**를 선택 합니다.
 2. **메모장** 을 열고 링크를 붙여 넣습니다.
-3. # 문자 앞에 CSP 최종 고객 테 넌 트 이름을 삽입 합니다.
+3. # 문자 앞에 CSP 최종 고객 테넌트 이름을 삽입 합니다.
 4. 브라우저에서 새 링크를 열면 Azure Portal 템플릿이 로드 됩니다.
 
     ```Example
@@ -334,9 +334,9 @@ Following are the first few: PowerShell DSC resource MSFT_ScriptResource failed 
 The SendConfigurationApply function did not succeed.\"." }, "name": "2c3272ec-d25b-47e5-8d70-a7493e9dc473" } } }}
 ```
 
-**원인:** 지정 된 Windows Virtual Desktop 테 넌 트 관리자에 올바른 역할 할당이 없습니다.
+**원인:** 지정 된 Windows Virtual Desktop 테넌트 관리자에 올바른 역할 할당이 없습니다.
 
-**해결 방법:** Windows Virtual Desktop 테 넌 트를 만든 사용자는 Windows 가상 데스크톱 PowerShell에 로그인 하 여 시도 된 사용자에 게 역할 할당을 할당 해야 합니다. GitHub Azure Resource Manager 템플릿 매개 변수를 실행 하는 경우 PowerShell 명령을 사용 하 여 다음 지침을 따르세요.
+**해결 방법:** Windows Virtual Desktop 테넌트를 만든 사용자는 Windows 가상 데스크톱 PowerShell에 로그인 하 여 시도 된 사용자에 게 역할 할당을 할당 해야 합니다. GitHub Azure Resource Manager 템플릿 매개 변수를 실행 하는 경우 PowerShell 명령을 사용 하 여 다음 지침을 따르세요.
 
 ```PowerShell
 Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
@@ -353,23 +353,23 @@ New-RdsRoleAssignment -TenantName <Windows Virtual Desktop tenant name> -RoleDef
 "message": "{\r\n  \"status\": \"Failed\",\r\n  \"error\": {\r\n    \"code\": \"ResourceDeploymentFailure\",\r\n    \"message\": \"The resource operation completed with terminal provisioning state 'Failed'.\",\r\n    \"details\": [\r\n      {\r\n        \"code\": \"VMExtensionProvisioningError\",\r\n        \"message\": \"VM has reported a failure when processing extension 'dscextension'. Error message: \\\"DSC Configuration 'FirstSessionHost' completed with error(s). Following are the first few: PowerShell DSC resource MSFT_ScriptResource  failed to execute Set-TargetResource functionality with error message: One or more errors occurred.  The SendConfigurationApply function did not succeed.\\\".\"\r\n      }\r\n    ]\r\n  }\r\n}"
 ```
 
-**원인:** 지정 된 Windows Virtual Desktop 테 넌 트 관리자에 게 로그인 하려면 MFA (Azure Multi-Factor Authentication)가 필요 합니다.
+**원인:** 지정 된 Windows Virtual Desktop 테넌트 관리자에 게 로그인 하려면 MFA (Azure Multi-Factor Authentication)가 필요 합니다.
 
-**해결 방법:** [자습서: PowerShell을 사용 하 여 서비스 사용자 및 역할 할당 만들기](create-service-principal-role-powershell.md)의 단계에 따라 서비스 주체를 만들고 Windows 가상 데스크톱 테 넌 트의 역할을 할당 합니다. 서비스 주체를 사용 하 여 Windows 가상 데스크톱에 로그인 할 수 있는지 확인 한 후에는 사용 중인 방법에 따라 Azure Marketplace 제공 또는 GitHub Azure Resource Manager 템플릿을 다시 실행 합니다. 메서드에 대 한 올바른 매개 변수를 입력 하려면 아래 지침을 따르세요.
+**해결 방법:** [자습서: PowerShell을 사용 하 여 서비스 사용자 및 역할 할당 만들기](create-service-principal-role-powershell.md)의 단계에 따라 서비스 주체를 만들고 Windows 가상 데스크톱 테넌트의 역할을 할당 합니다. 서비스 주체를 사용 하 여 Windows 가상 데스크톱에 로그인 할 수 있는지 확인 한 후에는 사용 중인 방법에 따라 Azure Marketplace 제공 또는 GitHub Azure Resource Manager 템플릿을 다시 실행 합니다. 메서드에 대 한 올바른 매개 변수를 입력 하려면 아래 지침을 따르세요.
 
 Azure Marketplace 제공을 실행 하는 경우 다음 매개 변수에 대 한 값을 제공 하 여 Windows 가상 데스크톱에 올바르게 인증 합니다.
 
-- Windows 가상 데스크톱 테 넌 트 RDS 소유자: 서비스 사용자
+- Windows 가상 데스크톱 테넌트 RDS 소유자: 서비스 사용자
 - 응용 프로그램 ID: 만든 새 서비스 주체의 응용 프로그램 id입니다.
 - 암호/암호 확인: 서비스 사용자에 대해 생성 한 암호 암호입니다.
-- Azure AD 테 넌 트 ID: 만든 서비스 사용자의 Azure AD 테 넌 트 ID입니다.
+- Azure AD 테넌트 ID: 만든 서비스 사용자의 Azure AD 테넌트 ID입니다.
 
 GitHub Azure Resource Manager 템플릿을 실행 하는 경우 다음 매개 변수에 대 한 값을 제공 하 여 Windows 가상 데스크톱에 올바르게 인증 합니다.
 
-- 테 넌 트 관리자 UPN (사용자 계정 이름) 또는 응용 프로그램 ID: 만든 새 서비스 주체의 응용 프로그램 id
-- 테 넌 트 관리자 암호: 서비스 사용자에 대해 생성 된 암호 암호입니다.
+- 테넌트 관리자 UPN (사용자 계정 이름) 또는 응용 프로그램 ID: 만든 새 서비스 주체의 응용 프로그램 id
+- 테넌트 관리자 암호: 서비스 사용자에 대해 생성 된 암호 암호입니다.
 - IsServicePrincipal: **true**
-- AadTenantId: 만든 서비스 사용자의 Azure AD 테 넌 트 ID
+- AadTenantId: 만든 서비스 사용자의 Azure AD 테넌트 ID
 
 ## <a name="next-steps"></a>다음 단계
 

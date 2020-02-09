@@ -1,7 +1,7 @@
 ---
-title: Azure Blob Storage 끝점에 사용자 지정 도메인 매핑
+title: Azure Blob Storage 엔드포인트에 사용자 지정 도메인 매핑
 titleSuffix: Azure Storage
-description: Azure Storage 계정의 Blob Storage 또는 웹 끝점에 사용자 지정 도메인을 매핑합니다.
+description: Azure Storage 계정의 Blob Storage 또는 웹 엔드포인트에 사용자 지정 도메인을 매핑합니다.
 author: normesta
 ms.service: storage
 ms.topic: conceptual
@@ -16,12 +16,12 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/31/2020
 ms.locfileid: "76906548"
 ---
-# <a name="map-a-custom-domain-to-an-azure-blob-storage-endpoint"></a>Azure Blob Storage 끝점에 사용자 지정 도메인 매핑
+# <a name="map-a-custom-domain-to-an-azure-blob-storage-endpoint"></a>Azure Blob Storage 엔드포인트에 사용자 지정 도메인 매핑
 
-사용자 지정 도메인을 blob service 끝점 또는 [정적 웹 사이트](storage-blob-static-website.md) 끝점에 매핑할 수 있습니다. 
+사용자 지정 도메인을 blob service 엔드포인트 또는 [정적 웹 사이트](storage-blob-static-website.md) 엔드포인트에 매핑할 수 있습니다. 
 
 > [!NOTE] 
-> 이 매핑은 하위 도메인에 대해서만 작동 합니다 (예: `www.contoso.com`). 웹 끝점을 루트 도메인 (예: `contoso.com`)에서 사용할 수 있도록 하려면 Azure CDN를 사용 해야 합니다. 지침은이 문서의 HTTPS를 [사용 하 여 사용자 지정 도메인 매핑](#enable-https) 섹션을 참조 하세요. 이 문서의 해당 섹션으로 이동 하 여 사용자 지정 도메인의 루트 도메인을 사용 하도록 설정 했기 때문에 HTTPS를 사용 하도록 설정 하는 단계는 선택 사항입니다. 
+> 이 매핑은 하위 도메인에 대해서만 작동 합니다 (예: `www.contoso.com`). 웹 엔드포인트을 루트 도메인 (예: `contoso.com`)에서 사용할 수 있도록 하려면 Azure CDN를 사용 해야 합니다. 지침은이 문서의 HTTPS를 [사용 하 여 사용자 지정 도메인 매핑](#enable-https) 섹션을 참조 하세요. 이 문서의 해당 섹션으로 이동 하 여 사용자 지정 도메인의 루트 도메인을 사용 하도록 설정 했기 때문에 HTTPS를 사용 하도록 설정 하는 단계는 선택 사항입니다. 
 
 <a id="enable-http" />
 
@@ -40,7 +40,7 @@ HTTPS 액세스를 사용 하도록 설정 하려면이 문서의 [https를 사�
 
 사용자가 도메인을 일시적으로 사용할 수 없는 경우 다음 단계를 수행 합니다.
 
-: heavy_check_mark: 1 단계: 저장소 끝점의 호스트 이름을 가져옵니다.
+: heavy_check_mark: 1 단계: 저장소 엔드포인트의 호스트 이름을 가져옵니다.
 
 : heavy_check_mark: 2 단계: 도메인 공급자를 사용 하 여 CNAME (정식 이름) 레코드를 만듭니다.
 
@@ -50,19 +50,19 @@ HTTPS 액세스를 사용 하도록 설정 하려면이 문서의 [https를 사�
 
 <a id="endpoint" />
 
-#### <a name="step-1-get-the-host-name-of-your-storage-endpoint"></a>1 단계: 저장소 끝점의 호스트 이름 가져오기 
+#### <a name="step-1-get-the-host-name-of-your-storage-endpoint"></a>1 단계: 저장소 엔드포인트의 호스트 이름 가져오기 
 
-호스트 이름은 프로토콜 식별자 및 후행 슬래시가 없는 저장소 끝점 URL입니다. 
+호스트 이름은 프로토콜 식별자 및 후행 슬래시가 없는 저장소 엔드포인트 URL입니다. 
 
 1. [Azure Portal](https://portal.azure.com)에서 스토리지 계정으로 이동합니다.
 
 2. 메뉴 창의 **설정**에서 **속성**을 선택 합니다.  
 
-3. **주 Blob Service 끝점** 또는 **기본 정적 웹 사이트 끝점** 의 값을 텍스트 파일에 복사 합니다. 
+3. **주 Blob Service 엔드포인트** 또는 **기본 정적 웹 사이트 엔드포인트** 의 값을 텍스트 파일에 복사 합니다. 
 
 4. 해당 문자열에서 프로토콜 식별자 (*예:* HTTPS)와 후행 슬래시를 제거 합니다. 다음 표에는 예제가 나와 있습니다.
 
-   | 끝점의 유형입니다. |  엔드포인트(endpoint) | 호스트 이름 |
+   | 엔드포인트의 유형입니다. |  엔드포인트(endpoint) | 호스트 이름 |
    |------------|-----------------|-------------------|
    |blob 서비스  | `https://mystorageaccount.blob.core.windows.net/` | `mystorageaccount.blob.core.windows.net` |
    |정적 웹 사이트  | `https://mystorageaccount.z5.web.core.windows.net/` | `mystorageaccount.z5.web.core.windows.net` |
@@ -87,7 +87,7 @@ HTTPS 액세스를 사용 하도록 설정 하려면이 문서의 [https를 사�
 
    - `www` 또는 `photos`와 같은 하위 도메인 별칭입니다. 하위 도메인은 필수 이며 루트 도메인은 지원 되지 않습니다. 
       
-   - 이 문서 앞부분의 [저장소 끝점의 호스트 이름 가져오기](#endpoint) 섹션에서 가져온 호스트 이름 
+   - 이 문서 앞부분의 [저장소 엔드포인트의 호스트 이름 가져오기](#endpoint) 섹션에서 가져온 호스트 이름 
 
 <a id="register" />
 
@@ -124,7 +124,7 @@ HTTPS 액세스를 사용 하도록 설정 하려면이 문서의 [https를 사�
 
 현재 도메인에서 가동 중지 시간이 0 인 SLA (서비스 수준 계약)를 사용 하는 응용 프로그램을 지 원하는 경우 DNS 매핑이 수행 되는 동안 사용자가 도메인에 액세스할 수 있는지 확인 하려면 다음 단계를 수행 합니다. 
 
-: heavy_check_mark: 1 단계: 저장소 끝점의 호스트 이름을 가져옵니다.
+: heavy_check_mark: 1 단계: 저장소 엔드포인트의 호스트 이름을 가져옵니다.
 
 : heavy_check_mark: 2 단계: 도메인 공급자를 사용 하 여 중간 정식 이름 (CNAME) 레코드를 만듭니다.
 
@@ -136,19 +136,19 @@ HTTPS 액세스를 사용 하도록 설정 하려면이 문서의 [https를 사�
 
 <a id="endpoint-2" />
 
-#### <a name="step-1-get-the-host-name-of-your-storage-endpoint"></a>1 단계: 저장소 끝점의 호스트 이름 가져오기 
+#### <a name="step-1-get-the-host-name-of-your-storage-endpoint"></a>1 단계: 저장소 엔드포인트의 호스트 이름 가져오기 
 
-호스트 이름은 프로토콜 식별자 및 후행 슬래시가 없는 저장소 끝점 URL입니다. 
+호스트 이름은 프로토콜 식별자 및 후행 슬래시가 없는 저장소 엔드포인트 URL입니다. 
 
 1. [Azure Portal](https://portal.azure.com)에서 스토리지 계정으로 이동합니다.
 
 2. 메뉴 창의 **설정**에서 **속성**을 선택 합니다.  
 
-3. **주 Blob Service 끝점** 또는 **기본 정적 웹 사이트 끝점** 의 값을 텍스트 파일에 복사 합니다. 
+3. **주 Blob Service 엔드포인트** 또는 **기본 정적 웹 사이트 엔드포인트** 의 값을 텍스트 파일에 복사 합니다. 
 
 4. 해당 문자열에서 프로토콜 식별자 (*예:* HTTPS)와 후행 슬래시를 제거 합니다. 다음 표에는 예제가 나와 있습니다.
 
-   | 끝점의 유형입니다. |  엔드포인트(endpoint) | 호스트 이름 |
+   | 엔드포인트의 유형입니다. |  엔드포인트(endpoint) | 호스트 이름 |
    |------------|-----------------|-------------------|
    |blob 서비스  | `https://mystorageaccount.blob.core.windows.net/` | `mystorageaccount.blob.core.windows.net` |
    |정적 웹 사이트  | `https://mystorageaccount.z5.web.core.windows.net/` | `mystorageaccount.z5.web.core.windows.net` |
@@ -173,7 +173,7 @@ HTTPS 액세스를 사용 하도록 설정 하려면이 문서의 [https를 사�
 
      `asverify` 하위 도메인을 별칭에 추가 합니다. 예를 들어 `asverify.www` 또는 `asverify.photos`입니다.
        
-   - 이 문서 앞부분의 [저장소 끝점의 호스트 이름 가져오기](#endpoint) 섹션에서 가져온 호스트 이름 
+   - 이 문서 앞부분의 [저장소 엔드포인트의 호스트 이름 가져오기](#endpoint) 섹션에서 가져온 호스트 이름 
 
      호스트 이름에 하위 도메인 `asverify`를 추가 합니다. 예: `asverify.mystorageaccount.blob.core.windows.net`
 
@@ -183,7 +183,7 @@ HTTPS 액세스를 사용 하도록 설정 하려면이 문서의 [https를 사�
 
 #### <a name="step-3-pre-register-your-custom-domain-with-azure"></a>3 단계: Azure를 사용 하 여 사용자 지정 도메인 미리 등록
 
-Azure에 사용자 지정 도메인을 미리 등록 하는 경우 도메인에 대 한 DNS 레코드를 수정 하지 않고도 Azure에서 사용자 지정 도메인을 인식할 수 있도록 허용 합니다. 이런 방식으로 도메인에 대 한 DNS 레코드를 수정 하면 가동 중지 시간 없이 blob 끝점에 매핑됩니다.
+Azure에 사용자 지정 도메인을 미리 등록 하는 경우 도메인에 대 한 DNS 레코드를 수정 하지 않고도 Azure에서 사용자 지정 도메인을 인식할 수 있도록 허용 합니다. 이런 방식으로 도메인에 대 한 DNS 레코드를 수정 하면 가동 중지 시간 없이 blob 엔드포인트에 매핑됩니다.
 
 1. [Azure Portal](https://portal.azure.com)에서 스토리지 계정으로 이동합니다.
 
@@ -219,7 +219,7 @@ Azure에 사용자 지정 도메인을 미리 등록 하는 경우 도메인에 
 
    - `www` 또는 `photos`와 같은 하위 도메인 별칭입니다. 하위 도메인은 필수 이며 루트 도메인은 지원 되지 않습니다.
       
-   - 이 문서 앞부분의 [저장소 끝점의 호스트 이름 가져오기](#endpoint-2) 섹션에서 가져온 호스트 이름 
+   - 이 문서 앞부분의 [저장소 엔드포인트의 호스트 이름 가져오기](#endpoint-2) 섹션에서 가져온 호스트 이름 
 
 #### <a name="step-5-test-your-custom-domain"></a>5 단계: 사용자 지정 도메인 테스트
 
@@ -303,18 +303,18 @@ Azure에 사용자 지정 도메인을 미리 등록 하는 경우 도메인에 
 
 사용자 지정 도메인을 매핑하고 HTTPS 액세스를 사용 하도록 설정 하려면 다음을 수행 합니다.
 
-1. Blob 또는 웹 끝점에서 [Azure CDN](../../cdn/cdn-overview.md) 를 사용 하도록 설정 합니다. 
+1. Blob 또는 웹 엔드포인트에서 [Azure CDN](../../cdn/cdn-overview.md) 를 사용 하도록 설정 합니다. 
 
-   Blob Storage 끝점은 [Azure CDN와 Azure Storage 계정 통합](../../cdn/cdn-create-a-storage-account-with-cdn.md)을 참조 하세요. 
+   Blob Storage 엔드포인트은 [Azure CDN와 Azure Storage 계정 통합](../../cdn/cdn-create-a-storage-account-with-cdn.md)을 참조 하세요. 
 
-   정적 웹 사이트 끝점의 경우 [Azure CDN와 정적 웹 사이트 통합](static-website-content-delivery-network.md)을 참조 하세요.
+   정적 웹 사이트 엔드포인트의 경우 [Azure CDN와 정적 웹 사이트 통합](static-website-content-delivery-network.md)을 참조 하세요.
 
 2. [Azure CDN 콘텐츠를 사용자 지정 도메인에 매핑합니다](../../cdn/cdn-map-content-to-custom-domain.md).
 
 3. [Azure CDN 사용자 지정 도메인에서 HTTPS를 사용하도록 설정합니다](../../cdn/cdn-custom-ssl.md).
 
    > [!NOTE] 
-   > 정적 웹 사이트를 업데이트 하는 경우 CDN 끝점을 제거 하 여 CDN에 지 서버에서 캐시 된 콘텐츠를 지워야 합니다. 자세한 내용은 [Azure CDN 엔드포인트 제거](../../cdn/cdn-purge-endpoint.md)를 참조하세요.
+   > 정적 웹 사이트를 업데이트 하는 경우 CDN 엔드포인트을 제거 하 여 CDN에 지 서버에서 캐시 된 콘텐츠를 지워야 합니다. 자세한 내용은 [Azure CDN 엔드포인트 제거](../../cdn/cdn-purge-endpoint.md)를 참조하세요.
 
 4. 필드 다음 지침을 검토 합니다.
 

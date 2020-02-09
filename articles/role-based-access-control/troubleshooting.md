@@ -36,14 +36,14 @@ ms.locfileid: "75980982"
 - 사용자 지정 역할을 만드는 방법에 대 한 단계가 필요한 경우 [Azure PowerShell](tutorial-custom-role-powershell.md) 또는 [Azure CLI](tutorial-custom-role-cli.md)를 사용 하 여 사용자 지정 역할 자습서를 참조 하세요.
 - 기존 사용자 지정 역할을 업데이트할 수 없는 경우 [소유자](built-in-roles.md#owner) 또는 [사용자 액세스 관리자](built-in-roles.md#user-access-administrator)와 같은 `Microsoft.Authorization/roleDefinition/write` 권한이 있는 역할이 할당 된 사용자로 현재 로그인 했는지 확인 합니다.
 - 사용자 지정 역할을 삭제할 수 없고 "역할을 참조 하는 기존 역할 할당이 있습니다 (코드: RoleDefinitionHasAssignments)" 라는 오류 메시지가 표시 되는 경우 사용자 지정 역할을 사용 하는 역할 할당도 있습니다. 이 경우 해당 역할 할당을 제거하고 다시 삭제해 봅니다.
-- 새 사용자 지정 역할을 만들려고 할 때 "역할 정의 제한을 초과했습니다. 더 이상 역할 정의를 만들 수 없습니다. (코드: Roledefinition한계가 초과 됨) "새 사용자 지정 역할을 만들려고 하면 사용 되지 않는 모든 사용자 지정 역할을 삭제 합니다. Azure는 테 넌 트에서 최대 **5000** 개의 사용자 지정 역할을 지원 합니다. (Azure Government, Azure 독일, Azure 중국 21Vianet 같은 특수 클라우드는 사용자 지정 역할 2000개로 제한됩니다.)
-- "클라이언트에 '/subscriptions/{subscriptionid} ' 범위에서 ' Microsoft. Authorization/roleDefinitions/write ' 작업을 수행할 수 있는 권한이 있지만 연결 된 구독을 찾을 수 없습니다." 라는 오류 메시지가 표시 되 면, 사용자 지정 역할을 업데이트 하려고 할 때 테 넌 트에서 [할당 가능한 범위가](role-definitions.md#assignablescopes) 하나 이상 삭제 되었는지 확인 합니다. 범위가 삭제되었으면 지원 티켓을 만듭니다. 현재는 사용 가능한 셀프 서비스 솔루션이 없기 때문입니다.
+- 새 사용자 지정 역할을 만들려고 할 때 "역할 정의 제한을 초과했습니다. 더 이상 역할 정의를 만들 수 없습니다. (코드: Roledefinition한계가 초과 됨) "새 사용자 지정 역할을 만들려고 하면 사용 되지 않는 모든 사용자 지정 역할을 삭제 합니다. Azure는 테넌트에서 최대 **5000** 개의 사용자 지정 역할을 지원 합니다. (Azure Government, Azure 독일, Azure 중국 21Vianet 같은 특수 클라우드는 사용자 지정 역할 2000개로 제한됩니다.)
+- "클라이언트에 '/subscriptions/{subscriptionid} ' 범위에서 ' Microsoft. Authorization/roleDefinitions/write ' 작업을 수행할 수 있는 권한이 있지만 연결 된 구독을 찾을 수 없습니다." 라는 오류 메시지가 표시 되 면, 사용자 지정 역할을 업데이트 하려고 할 때 테넌트에서 [할당 가능한 범위가](role-definitions.md#assignablescopes) 하나 이상 삭제 되었는지 확인 합니다. 범위가 삭제되었으면 지원 티켓을 만듭니다. 현재는 사용 가능한 셀프 서비스 솔루션이 없기 때문입니다.
 
 ## <a name="recover-rbac-when-subscriptions-are-moved-across-tenants"></a>테넌트에서 구독이 이동될 때 RBAC 복구
 
-- 다른 Azure AD 테 넌 트에 구독을 전송 하는 방법에 대 한 단계가 필요한 경우 [Azure 구독의 소유권을 다른 계정으로 이전](../cost-management-billing/manage/billing-subscription-transfer.md)을 참조 하세요.
+- 다른 Azure AD 테넌트에 구독을 전송 하는 방법에 대 한 단계가 필요한 경우 [Azure 구독의 소유권을 다른 계정으로 이전](../cost-management-billing/manage/billing-subscription-transfer.md)을 참조 하세요.
 - 구독을 다른 Azure AD 테넌트로 전송하는 경우 모든 역할 할당이 원본 Azure AD 테넌트에서 영구적으로 삭제되고 대상 Azure AD 테넌트로 마이그레이션되지 않습니다. 대상 테넌트에서 역할 할당을 다시 만들어야 합니다. 또한 Azure 리소스에 대 한 관리 되는 id를 수동으로 다시 만들어야 합니다. 자세한 내용은 [관리 id의 faq 및 알려진 문제](../active-directory/managed-identities-azure-resources/known-issues.md)를 참조 하세요.
-- Azure AD 전역 관리자이 고 테 넌 트 간에 이동 된 후 구독에 대 한 액세스 권한이 없는 경우 **azure 리소스에 대 한 액세스 관리** 를 사용 하 여 구독에 대 한 액세스 권한을 일시적으로 [상승](elevate-access-global-admin.md) 시킬 수 있습니다.
+- Azure AD 전역 관리자이 고 테넌트 간에 이동 된 후 구독에 대 한 액세스 권한이 없는 경우 **azure 리소스에 대 한 액세스 관리** 를 사용 하 여 구독에 대 한 액세스 권한을 일시적으로 [상승](elevate-access-global-admin.md) 시킬 수 있습니다.
 
 ## <a name="issues-with-service-admins-or-co-admins"></a>서비스 관리자 또는 공동 관리자 관련 문제
 

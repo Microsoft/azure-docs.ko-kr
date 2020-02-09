@@ -1,6 +1,6 @@
 ---
 title: Azure Application Gateway URL 기반 콘텐츠 라우팅 개요
-description: 이 문서에서는 Azure 애플리케이션 게이트웨이 URL 기반 콘텐츠 라우팅, UrlPathMap 구성 및 PathBasedRouting 규칙에 대 한 개요를 제공 합니다.
+description: 이 문서에서는 Azure 애플리케이션 게이트웨이 URL 기반 콘텐츠 라우팅, UrlPathMap 구성 및 PathBasedRouting 규칙에 대한 개요를 제공 합니다.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway

@@ -15,14 +15,14 @@ ms.lasthandoff: 12/25/2019
 ms.locfileid: "75426195"
 ---
 # <a name="azure-machine-learning-studio-classic-integration-in-stream-analytics-preview"></a>Stream Analytics에서 Azure Machine Learning Studio (클래식) 통합 (미리 보기)
-Stream Analytics은 Azure Machine Learning Studio (클래식) 끝점을 호출 하는 사용자 정의 함수를 지원 합니다. 이 기능에 대한 REST API 지원은 [Stream Analytics REST API 라이브러리](https://msdn.microsoft.com/library/azure/dn835031.aspx)에 자세히 설명되어 있습니다. 이 문서에서는 Stream Analytics에서 이 기능을 성공적으로 구현하기 위해 필요한 추가 정보를 제공합니다. 자습서도 게시되어 있으며 [여기](stream-analytics-machine-learning-integration-tutorial.md)서 확인할 수 있습니다.
+Stream Analytics은 Azure Machine Learning Studio (클래식) 엔드포인트을 호출 하는 사용자 정의 함수를 지원 합니다. 이 기능에 대한 REST API 지원은 [Stream Analytics REST API 라이브러리](https://msdn.microsoft.com/library/azure/dn835031.aspx)에 자세히 설명되어 있습니다. 이 문서에서는 Stream Analytics에서 이 기능을 성공적으로 구현하기 위해 필요한 추가 정보를 제공합니다. 자습서도 게시되어 있으며 [여기](stream-analytics-machine-learning-integration-tutorial.md)서 확인할 수 있습니다.
 
 ## <a name="overview-azure-machine-learning-studio-classic-terminology"></a>개요: Azure Machine Learning Studio (클래식) 용어
 Microsoft Azure Machine Learning Studio (클래식)은 데이터에 대 한 예측 분석 솔루션을 빌드, 테스트 및 배포 하는 데 사용할 수 있는 공동 끌어서 놓기 도구를 제공 합니다. 이 도구를 *Azure Machine Learning Studio (클래식)* 이라고 합니다. 이 스튜디오는 Machine Learning 리소스와 상호 작용하고 설계를 간편하게 빌드, 테스트 및 반복하는 데 사용됩니다. 이러한 리소스 및 해당 정의는 다음과 같습니다.
 
 * **작업 영역**: *작업 영역* 은 관리 및 제어를 위해 다른 모든 Machine Learning 리소스를 함께 보관하는 컨테이너입니다.
 * **실험**: 데이터 과학자가 데이터 세트를 활용하고 기계 학습 모델을 교육하기 위해 *실험* 을 만듭니다.
-* **끝점**: *끝점* 은 기능을 입력으로 사용 하 고 지정 된 Machine Learning 모델을 적용 하 고 점수가 매겨진 출력을 반환 하는 데 사용 되는 Azure Machine Learning Studio (클래식) 개체입니다.
+* **엔드포인트**: *엔드포인트* 은 기능을 입력으로 사용 하 고 지정 된 Machine Learning 모델을 적용 하 고 점수가 매겨진 출력을 반환 하는 데 사용 되는 Azure Machine Learning Studio (클래식) 개체입니다.
 * **점수 매기기 웹 서비스**: *점수 매기기 웹 서비스* 는 위에서 언급한 대로 엔드포인트 컬렉션입니다.
 
 각 엔드포인트에는 배치 실행 및 동기 실행을 위한 API가 있습니다. Stream Analytics은 동기 실행을 사용합니다. 특정 서비스의 이름은 Azure Machine Learning Studio (클래식)의 [요청/응답 서비스](../machine-learning/studio/consume-web-services.md) 입니다.
@@ -41,7 +41,7 @@ REST API를 사용하여 Azure 기계 언어 함수를 호출하는 작업을 �
 6. 작업 시작
 
 ## <a name="creating-a-udf-with-basic-properties"></a>기본 속성을 사용하여 UDF 만들기
-예를 들어 다음 샘플 코드는 Azure Machine Learning Studio (클래식) 끝점에 바인딩되는 *newudf* 라는 스칼라 udf를 만듭니다. *엔드포인트*(서비스 URI)는 선택한 서비스에 대한 API 도움말 페이지에서 찾을 수 있고 *apiKey*는 서비스 기본 페이지에서 찾을 수 있습니다.
+예를 들어 다음 샘플 코드는 Azure Machine Learning Studio (클래식) 엔드포인트에 바인딩되는 *newudf* 라는 스칼라 udf를 만듭니다. *엔드포인트*(서비스 URI)는 선택한 서비스에 대한 API 도움말 페이지에서 찾을 수 있고 *apiKey*는 서비스 기본 페이지에서 찾을 수 있습니다.
 
 ```
     PUT : /subscriptions/<subscriptionId>/resourceGroups/<resourceGroup>/providers/Microsoft.StreamAnalytics/streamingjobs/<streamingjobName>/functions/<udfName>?api-version=<apiVersion>
@@ -68,7 +68,7 @@ REST API를 사용하여 Azure 기계 언어 함수를 호출하는 작업을 �
 ```
 
 ## <a name="call-retrievedefaultdefinition-endpoint-for-default-udf"></a>기본 UDF에 대한 RetrieveDefaultDefinition 엔드포인트 호출
-기초 UDF를 만든 후에는 완전한 UDF 정의가 필요합니다. RetrieveDefaultDefinition 끝점을 사용 하면 Azure Machine Learning Studio (클래식) 끝점에 바인딩된 스칼라 함수의 기본 정의를 얻을 수 있습니다. 아래 페이로드는 Azure Machine Learning 엔드포인트에 바인딩된 스칼라 함수의 기본 UDF 정의를 필요로 합니다. PUT 요청 동안 이미 엔드포인트가 제공되었기 때문에 실제 엔드포인트를 지정하지 않습니다. 엔드포인트가 명시적으로 제공되면 Stream Analytics는 요청에 제공된 엔드포인트를 호출합니다. 그렇지 않으면 원래 참조하던 끝점을 사용합니다. 다음 UDF는 단일 문자열 매개 변수(문장)를 가져와서 해당 문장에 대한 “sentiment” 레이블의 단일 문자열 형식을 반환합니다.
+기초 UDF를 만든 후에는 완전한 UDF 정의가 필요합니다. RetrieveDefaultDefinition 엔드포인트을 사용 하면 Azure Machine Learning Studio (클래식) 엔드포인트에 바인딩된 스칼라 함수의 기본 정의를 얻을 수 있습니다. 아래 페이로드는 Azure Machine Learning 엔드포인트에 바인딩된 스칼라 함수의 기본 UDF 정의를 필요로 합니다. PUT 요청 동안 이미 엔드포인트가 제공되었기 때문에 실제 엔드포인트를 지정하지 않습니다. 엔드포인트가 명시적으로 제공되면 Stream Analytics는 요청에 제공된 엔드포인트를 호출합니다. 그렇지 않으면 원래 참조하던 엔드포인트을 사용합니다. 다음 UDF는 단일 문자열 매개 변수(문장)를 가져와서 해당 문장에 대한 “sentiment” 레이블의 단일 문자열 형식을 반환합니다.
 
 ```
 POST : /subscriptions/<subscriptionId>/resourceGroups/<resourceGroup>/providers/Microsoft.StreamAnalytics/streamingjobs/<streamingjobName>/functions/<udfName>/RetrieveDefaultDefinition?api-version=<apiVersion>

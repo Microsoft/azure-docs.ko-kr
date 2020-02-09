@@ -1,7 +1,7 @@
 ---
-title: '알려진 문제: SQL Database에 대 한 온라인 마이그레이션'
+title: '알려진 문제: SQL Database에 대한 온라인 마이그레이션'
 titleSuffix: Azure Database Migration Service
-description: Azure Database Migration Service를 사용 하 여 Azure SQL Database에 대 한 온라인 마이그레이션과의 알려진 문제/마이그레이션 제한 사항에 대해 알아봅니다.
+description: Azure Database Migration Service를 사용 하 여 Azure SQL Database에 대한 온라인 마이그레이션과의 알려진 문제/마이그레이션 제한 사항에 대해 알아봅니다.
 services: database-migration
 author: HJToland3
 ms.author: jtoland
@@ -19,12 +19,12 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75437838"
 ---
-# <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-sql-database"></a>Azure SQL Database에 대 한 온라인 마이그레이션과 관련 하 여 알려진 문제/마이그레이션 제한 사항
+# <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-sql-database"></a>Azure SQL Database에 대한 온라인 마이그레이션과 관련 하 여 알려진 문제/마이그레이션 제한 사항
 
 SQL Server에서 Azure SQL Database로의 온라인 마이그레이션과 관련된 알려진 문제 및 제한 사항은 아래에 설명되어 있습니다.
 
 > [!IMPORTANT]
-> Azure SQL Database에 대 한 SQL Server의 온라인 마이그레이션을 통해 SQL_variant 데이터 형식 마이그레이션은 지원 되지 않습니다.
+> Azure SQL Database에 대한 SQL Server의 온라인 마이그레이션을 통해 SQL_variant 데이터 형식 마이그레이션은 지원 되지 않습니다.
 
 ### <a name="migration-of-temporal-tables-not-supported"></a>임시 테이블의 마이그레이션은 지원되지 않음
 
@@ -118,7 +118,7 @@ Azure Database Migration Service은 원본 타임 스탬프 값을 마이그레�
 
 원본 테이블에 저장 된 정확한 타임 스탬프 값을 마이그레이션하기 위해 Azure Database Migration Service 필요한 경우 [Azure 데이터베이스 마이그레이션 요청](mailto:AskAzureDatabaseMigrations@service.microsoft.com)에서 엔지니어링 팀에 문의 하세요.
 
-### <a name="data-migration-errors-dont-provide-additional-details-on-the-database-detailed-status-blade"></a>데이터 마이그레이션 오류는 데이터베이스 상세 상태 블레이드에 대 한 추가 세부 정보를 제공 하지 않습니다.
+### <a name="data-migration-errors-dont-provide-additional-details-on-the-database-detailed-status-blade"></a>데이터 마이그레이션 오류는 데이터베이스 상세 상태 블레이드에 대한 추가 세부 정보를 제공 하지 않습니다.
 
 **증상**
 
@@ -158,4 +158,4 @@ Azure Database Migration Service는 오프 라인 Azure SQL Database 마이그�
 
 **해결 방법**
 
-Azure Database Migration Service를 사용 하 Azure SQL Database에 대 한 온라인 마이그레이션 지원은 Enterprise, Standard 및 Developer edition 으로만 확장 됩니다. 마이그레이션 프로세스를 시작 하기 전에 지원 되는 버전을 사용 해야 합니다.
+Azure Database Migration Service를 사용 하 Azure SQL Database에 대한 온라인 마이그레이션 지원은 Enterprise, Standard 및 Developer edition 으로만 확장 됩니다. 마이그레이션 프로세스를 시작 하기 전에 지원 되는 버전을 사용 해야 합니다.

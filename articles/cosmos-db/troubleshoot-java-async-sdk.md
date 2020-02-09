@@ -169,7 +169,7 @@ Exception in thread "main" java.lang.NoSuchMethodError: rx.Observable.toSingle()
 
 위의 예외 RxJava lib (예: 1.2.2)의 이전 버전에 종속성이 있는 것을 제안 합니다. SDK RxJava 1.3.8 RxJava의 이전 버전에서 사용할 수 없는 Api에 의존 합니다. 
 
-RxJava 1.2.2에는 이러한 issuses 다른 종속성을 식별 하는 것에 대 한 해결 방법은 RxJava-1.2.2 종속 전이 제외 하 고 CosmosDB SDK 허용 최신 버전을 표시 합니다.
+RxJava 1.2.2에는 이러한 issuses 다른 종속성을 식별 하는 것에 대한 해결 방법은 RxJava-1.2.2 종속 전이 제외 하 고 CosmosDB SDK 허용 최신 버전을 표시 합니다.
 
 RxJava 1.2.2 옆에 있는 프로젝트 pom.xml 파일에 다음 명령을 실행 하는 라이브러리는 식별:
 ```bash
@@ -177,7 +177,7 @@ mvn dependency:tree
 ```
 자세한 내용은 참조는 [maven 종속성 트리 가이드](https://maven.apache.org/plugins/maven-dependency-plugin/examples/resolving-conflicts-using-the-dependency-tree.html)합니다.
 
-1\.2.2 RxJava 식별 한 후은 pom 파일에 제외 RxJava 전이적 종속성 lib는 전이적 종속성은 다른 프로젝트의 종속성에 대 한 종속성을 수정할 수 있습니다.
+1\.2.2 RxJava 식별 한 후은 pom 파일에 제외 RxJava 전이적 종속성 lib는 전이적 종속성은 다른 프로젝트의 종속성에 대한 종속성을 수정할 수 있습니다.
 
 ```xml
 <dependency>

@@ -49,7 +49,7 @@ ms.locfileid: "74873712"
    * 프로비저닝할 처리량을 입력합니다(예: 1000RU).
    * **확인**을 선택합니다.
 
-    ![MongoDB API에 대 한 Azure Cosmos DB API, 컨테이너 추가 대화 상자 스크린샷](./media/how-to-create-container/partitioned-collection-create-mongodb.png)
+    ![MongoDB API에 대한 Azure Cosmos DB API, 컨테이너 추가 대화 상자 스크린샷](./media/how-to-create-container/partitioned-collection-create-mongodb.png)
 
 ### <a id="portal-cassandra"></a>Cassandra API
 
@@ -106,24 +106,24 @@ ms.locfileid: "74873712"
 
 ## Azure CLI를 사용 하 여 컨테이너 만들기<a id="cli-sql"></a><a id="cli-mongodb"></a><a id="cli-cassandra"></a><a id="cli-gremlin"></a><a id="cli-table"></a>
 
-아래 링크는 Azure CLI를 사용 하 여 Azure Cosmos DB에 대 한 컨테이너 리소스를 만드는 방법을 보여 줍니다.
+아래 링크는 Azure CLI를 사용 하 여 Azure Cosmos DB에 대한 컨테이너 리소스를 만드는 방법을 보여 줍니다.
 
-모든 Azure Cosmos DB Api에 대 한 모든 Azure CLI 샘플 목록은 [SQL api](cli-samples.md), [CASSANDRA API](cli-samples-cassandra.md), [MongoDB api](cli-samples-mongodb.md), [Gremlin api](cli-samples-gremlin.md)및 [Table API](cli-samples-table.md) 를 참조 하세요.
+모든 Azure Cosmos DB Api에 대한 모든 Azure CLI 샘플 목록은 [SQL api](cli-samples.md), [CASSANDRA API](cli-samples-cassandra.md), [MongoDB api](cli-samples-mongodb.md), [Gremlin api](cli-samples-gremlin.md)및 [Table API](cli-samples-table.md) 를 참조 하세요.
 
 * [Azure CLI를 사용 하 여 컨테이너 만들기](manage-with-cli.md#create-a-container)
-* [Azure CLI를 사용 하 여 MongoDB API에 대 한 Azure Cosmos DB 컬렉션 만들기](./scripts/cli/mongodb/create.md)
+* [Azure CLI를 사용 하 여 MongoDB API에 대한 Azure Cosmos DB 컬렉션 만들기](./scripts/cli/mongodb/create.md)
 * [Azure CLI를 사용 하 여 Cassandra 테이블 만들기](./scripts/cli/cassandra/create.md)
 * [Azure CLI를 사용 하 여 Gremlin 그래프 만들기](./scripts/cli/gremlin/create.md)
 * [Azure CLI를 사용 하 여 Table API 테이블 만들기](./scripts/cli/table/create.md)
 
 ## PowerShell<a id="ps-sql"> </a><a id="ps-mongodb"><a id="ps-cassandra"></a><a id="ps-gremlin">를 사용 하 여 컨테이너 만들기<a id="ps-table"></a>
 
-아래 링크는 PowerShell을 사용 하 여 Azure Cosmos DB에 대 한 컨테이너 리소스를 만드는 방법을 보여 줍니다.
+아래 링크는 PowerShell을 사용 하 여 Azure Cosmos DB에 대한 컨테이너 리소스를 만드는 방법을 보여 줍니다.
 
-모든 Azure Cosmos DB Api에 대 한 모든 Azure CLI 샘플 목록은 [SQL api](powershell-samples-sql.md), [CASSANDRA API](powershell-samples-cassandra.md), [MongoDB api](powershell-samples-mongodb.md), [Gremlin api](powershell-samples-gremlin.md)및 [Table API](powershell-samples-table.md) 를 참조 하세요.
+모든 Azure Cosmos DB Api에 대한 모든 Azure CLI 샘플 목록은 [SQL api](powershell-samples-sql.md), [CASSANDRA API](powershell-samples-cassandra.md), [MongoDB api](powershell-samples-mongodb.md), [Gremlin api](powershell-samples-gremlin.md)및 [Table API](powershell-samples-table.md) 를 참조 하세요.
 
 * [Powershell을 사용 하 여 컨테이너 만들기](manage-with-powershell.md#create-container)
-* [Powershell을 사용 하 여 MongoDB API에 대 한 Azure Cosmos DB 컬렉션 만들기](./scripts/powershell/mongodb/ps-mongodb-create.md)
+* [Powershell을 사용 하 여 MongoDB API에 대한 Azure Cosmos DB 컬렉션 만들기](./scripts/powershell/mongodb/ps-mongodb-create.md)
 * [Powershell을 사용 하 여 Cassandra 테이블 만들기](./scripts/powershell/cassandra/ps-cassandra-create.md)
 * [Powershell을 사용 하 여 Gremlin 그래프 만들기](./scripts/powershell/gremlin/ps-gremlin-create.md)
 * [Powershell을 사용 하 여 Table API 테이블 만들기](./scripts/powershell/table/ps-table-create.md)

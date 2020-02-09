@@ -37,7 +37,7 @@ ms.locfileid: "76702082"
 
 ### <a name="audience-for-integrated-authentication-usernamepassword-and-b2c"></a>통합 인증, 사용자 이름/암호 및 B2C에 대 한 대상
 
-- Windows 통합 인증 (UWP 앱에서 가능) 또는 사용자 이름/암호를 사용 하려는 경우 응용 프로그램에서 사용자 고유의 테 넌 트 (LOB 개발자) 또는 Azure Active directory 조직 (ISV 시나리오)에 로그인 해야 합니다. 이러한 인증 흐름은 Microsoft 개인 계정에 대해 지원 되지 않습니다.
+- Windows 통합 인증 (UWP 앱에서 가능) 또는 사용자 이름/암호를 사용 하려는 경우 응용 프로그램에서 사용자 고유의 테넌트 (LOB 개발자) 또는 Azure Active directory 조직 (ISV 시나리오)에 로그인 해야 합니다. 이러한 인증 흐름은 Microsoft 개인 계정에 대해 지원 되지 않습니다.
 - B2C 인증 기관 및 정책을 전달 하는 소셜 id를 사용 하 여 사용자를 로그인 하는 경우에는 대화형 및 사용자 이름 암호만 사용할 수 있습니다. 사용자 이름-현재 Xamarin.ios, Xamarin Android 및 UWP 에서만 지원 됩니다.
 
 큰 그림은 [시나리오 및 지원 되는 인증 흐름](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows) 및 [시나리오, 지원 되는 플랫폼 및 언어](authentication-flows-app-scenarios.md#scenarios-and-supported-platforms-and-languages) 를 참조 하세요.
@@ -75,7 +75,7 @@ ms.locfileid: "76702082"
 
 ### <a name="username-password"></a>사용자 이름 암호
 
-앱이 사용자 이름/암호를 사용 하는 경우에는 응용 프로그램에 대 한 리디렉션 URI를 등록할 필요가 없습니다. 실제로이 흐름은 Microsoft identity platform v2.0 끝점으로의 왕복을 수행 하며 응용 프로그램은 특정 URI에서 다시 호출 되지 않습니다. 그러나 응용 프로그램이 공용 클라이언트 응용 프로그램 임을 표현 해야 합니다. 응용 프로그램에 대 한 **인증** 섹션으로 이동 하 여이 구성을 수행 하 고, **고급 설정** 하위 섹션에서 **예**를 선택 하 고, 질문 및 답변 **응용 프로그램을 공용 클라이언트로** ( **기본 클라이언트 유형** 단락)
+앱이 사용자 이름/암호를 사용 하는 경우에는 응용 프로그램에 대 한 리디렉션 URI를 등록할 필요가 없습니다. 실제로이 흐름은 Microsoft identity platform v2.0 엔드포인트으로의 왕복을 수행 하며 응용 프로그램은 특정 URI에서 다시 호출 되지 않습니다. 그러나 응용 프로그램이 공용 클라이언트 응용 프로그램 임을 표현 해야 합니다. 응용 프로그램에 대 한 **인증** 섹션으로 이동 하 여이 구성을 수행 하 고, **고급 설정** 하위 섹션에서 **예**를 선택 하 고, 질문 및 답변 **응용 프로그램을 공용 클라이언트로** ( **기본 클라이언트 유형** 단락)
 
 ## <a name="api-permissions"></a>API 사용 권한
 

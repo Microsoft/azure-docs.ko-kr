@@ -1,6 +1,6 @@
 ---
-title: 구성을 상태 구성에 대 한 복합 리소스로 변환-Azure Automation
-description: Azure Automation에서 상태 구성에 대 한 구성을 복합 리소스로 변환 하는 방법에 대해 알아봅니다.
+title: 구성을 상태 구성에 대한 복합 리소스로 변환-Azure Automation
+description: Azure Automation에서 상태 구성에 대한 구성을 복합 리소스로 변환 하는 방법에 대해 알아봅니다.
 keywords: dsc,powershell,configuration,setup
 services: automation
 ms.service: automation
@@ -51,9 +51,9 @@ Cmdlet은 구성의 콘텐츠를 로드 하 고, 매개 변수 목록을 가져�
 
 구성 (또는 여러 구성)을 포함 하는 복합 리소스 모듈을 만든 후에는 Azure의 구성 가능한 [작성 환경](/azure/automation/compose-configurationwithcompositeresources) 에서 사용 하거나, [DSC 구성 스크립트](/powershell/scripting/dsc/configurations/configurations) 에 추가 하 여 mof 파일을 생성 하 고 [mof 파일을 Azure Automation로 업로드할](/azure/automation/tutorial-configure-servers-desired-state#create-and-upload-a-configuration-to-azure-automation)수 있습니다.
 그런 다음 [온-프레미스](/azure/automation/automation-dsc-onboarding#physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure-including-aws-ec2-instances) 또는 [Azure](/azure/automation/automation-dsc-onboarding#azure-virtual-machines) 에서 서버를 등록 하 여 구성을 가져옵니다.
-프로젝트에 대 한 최신 업데이트에는 PowerShell 갤러리에서 구성 가져오기 프로세스를 자동화 하는 Azure Automation에 대 한 [runbook](https://www.powershellgallery.com/packages?q=DscGallerySamples) 도 게시 되어 있습니다.
+프로젝트에 대한 최신 업데이트에는 PowerShell 갤러리에서 구성 가져오기 프로세스를 자동화 하는 Azure Automation에 대한 [runbook](https://www.powershellgallery.com/packages?q=DscGallerySamples) 도 게시 되어 있습니다.
 
-DSC에 대 한 복합 리소스 만들기를 자동화 하려면 [PowerShell 갤러리](https://www.powershellgallery.com/packages/compositeresource/) 방문 하 여 솔루션을 다운로드 하거나 "프로젝트 사이트"를 클릭 하 여 [설명서](https://github.com/microsoft/compositeresource)를 확인 하세요.
+DSC에 대한 복합 리소스 만들기를 자동화 하려면 [PowerShell 갤러리](https://www.powershellgallery.com/packages/compositeresource/) 방문 하 여 솔루션을 다운로드 하거나 "프로젝트 사이트"를 클릭 하 여 [설명서](https://github.com/microsoft/compositeresource)를 확인 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

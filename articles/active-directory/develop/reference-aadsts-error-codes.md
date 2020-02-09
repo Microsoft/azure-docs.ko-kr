@@ -200,7 +200,7 @@ Azure AD STS(보안 토큰 서비스)에서 반환된 AADSTS 오류 코드에 �
 | AADSTS90019 | MissingTenantRealm - Azure AD가 요청에서 테넌트 식별자를 확인할 수 없습니다. |
 | AADSTS90022 | AuthenticatedInvalidPrincipalNameFormat - 주체 이름 형식이 유효하지 않거나 예상된 `name[/host][@realm]` 형식에 맞지 않습니다. 주체 이름이 필요하고 호스트 및 영역은 선택 사항이며 null로 설정할 수 있습니다. |
 | AADSTS90023 | InvalidRequest - 인증 서비스 요청이 잘못되었습니다. |
-| AADSTS9002313 | InvalidRequest-요청의 형식이 잘못 되었거나 잘못 되었습니다. -특정 끝점에 대 한 요청에 잘못 된 문제가 있기 때문입니다. 이 문제에 대 한 제안 사항은 발생 한 오류에 대 한 fiddler 추적을 가져오고 요청이 실제로 올바른 형식 인지 여부를 확인 하는 것입니다. |
+| AADSTS9002313 | InvalidRequest-요청의 형식이 잘못 되었거나 잘못 되었습니다. -특정 엔드포인트에 대 한 요청에 잘못 된 문제가 있기 때문입니다. 이 문제에 대 한 제안 사항은 발생 한 오류에 대 한 fiddler 추적을 가져오고 요청이 실제로 올바른 형식 인지 여부를 확인 하는 것입니다. |
 | AADSTS90024 | RequestBudgetExceededError - 일시적인 오류가 발생했습니다. 다시 시도하세요. |
 | AADSTS90033 | MsodsServiceUnavailable - MSODS(Microsoft Online Directory Service)를 사용할 수 없습니다. |
 | AADSTS90036 | MsodsServiceUnretryableFailure - MSODS가 호스트하는 WCF 서비스에서 다시 시도할 수 없는 예기치 않은 오류가 발생했습니다. 오류에 대한 자세한 내용을 확인하려면 [지원 티켓을 여세요](../fundamentals/active-directory-troubleshooting-support-howto.md). |
@@ -266,7 +266,7 @@ Azure AD STS(보안 토큰 서비스)에서 반환된 AADSTS 오류 코드에 �
 | AADSTS221000 | DeviceOnlyTokensNotSupportedByResource - 디바이스 전용 토큰을 수락하도록 리소스가 구성되어 있지 않습니다. |
 | AADSTS240001 | BulkAADJTokenUnauthorized - 사용자에게 Azure AD에 디바이스를 등록할 수 있는 권한이 없습니다. |
 | AADSTS240002 | RequiredClaimIsMissing - id_token을 `urn:ietf:params:oauth:grant-type:jwt-bearer` 권한 부여로 사용할 수 없습니다.|
-| AADSTS530032 | BlockedByConditionalAccessOnSecurityPolicy-테 넌 트 관리자가이 요청을 차단 하는 보안 정책을 구성 했습니다. 테 넌 트 수준에 정의 된 보안 정책을 확인 하 여 요청이 정책 요구 사항을 충족 하는지 확인 합니다. |
+| AADSTS530032 | BlockedByConditionalAccessOnSecurityPolicy-테넌트 관리자가이 요청을 차단 하는 보안 정책을 구성 했습니다. 테넌트 수준에 정의 된 보안 정책을 확인 하 여 요청이 정책 요구 사항을 충족 하는지 확인 합니다. |
 | AADSTS700016 | UnauthorizedClient_DoesNotMatchRequest - 디렉터리/테넌트에서 애플리케이션을 찾지 못했습니다. 이 오류는 테넌트의 관리자가 애플리케이션을 설치하지 않았거나 테넌트의 사용자가 동의하지 않은 경우에 발생할 수 있습니다. 애플리케이션에 대한 식별자 값을 잘못 구성했거나 잘못된 테넌트에 인증 요청을 보낸 것일 수 있습니다. |
 | AADSTS700020 | InteractionRequired - 액세스 권한 부여에는 상호 작용이 필요합니다. |
 | AADSTS700022 | InvalidMultipleResourcesScope - 입력 매개 변수 범위에 대해 제공한 값이 둘 이상의 리소스를 포함하므로 잘못되었습니다. |

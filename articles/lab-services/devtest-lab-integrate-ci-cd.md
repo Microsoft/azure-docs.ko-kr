@@ -140,7 +140,7 @@ ms.locfileid: "76293218"
    
    |필드|값|
    |---|---|
-   |**Azure RM 구독**|드롭다운 목록에서 **사용 가능한 Azure 서비스 연결** 또는 **사용 가능한 azure 구독** 에서 서비스 연결 또는 구독을 선택 하 고 필요한 경우 **권한 부여** 를 선택 합니다.<br /><br />**참고:** Azure 구독에 대 한 제한 된 권한 연결을 만드는 방법에 대 한 자세한 내용은 [Azure Resource Manager 서비스 끝점](/azure/devops/pipelines/library/service-endpoints#sep-azure-resource-manager)을 참조 하세요.|
+   |**Azure RM 구독**|드롭다운 목록에서 **사용 가능한 Azure 서비스 연결** 또는 **사용 가능한 azure 구독** 에서 서비스 연결 또는 구독을 선택 하 고 필요한 경우 **권한 부여** 를 선택 합니다.<br /><br />**참고:** Azure 구독에 대 한 제한 된 권한 연결을 만드는 방법에 대 한 자세한 내용은 [Azure Resource Manager 서비스 엔드포인트](/azure/devops/pipelines/library/service-endpoints#sep-azure-resource-manager)을 참조 하세요.|
    |**랩 이름**|랩 VM을 만들 기존 랩의 이름을 선택 합니다.|
    |**템플릿 이름**|소스 코드 리포지토리에 저장 한 템플릿 파일의 전체 경로 및 이름을 입력 합니다. 기본 제공 속성을 사용 하 여 경로를 단순화할 수 있습니다. 예를 들면 다음과 같습니다.<br /><br />`$(System.DefaultWorkingDirectory)/Templates/CreateVMTemplate.json`|
    |**템플릿 매개 변수**|앞에서 정의한 변수에 대 한 매개 변수를 입력 합니다.<br /><br />`-newVMName '$(vmName)' -userName '$(userName)' -password (ConvertTo-SecureString -String '$(password)' -AsPlainText -Force)`|

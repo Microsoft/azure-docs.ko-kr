@@ -1,5 +1,5 @@
 ---
-title: 다중 테 넌 트 앱에서 새 테 넌 트 프로 비전
+title: 다중 테넌트 앱에서 새 테넌트 프로 비전
 description: Azure SQL Database 다중 테넌트 SaaS 앱에서 새 테넌트를 프로비전하고 분류하는 방법 알아보기
 services: sql-database
 ms.service: sql-database
@@ -45,7 +45,7 @@ ms.locfileid: "74132116"
 
 또한 카탈로그는 테넌트에 제공된 스키마 버전, 서비스 계획 또는 SLA와 같은 추가 테넌트 또는 데이터베이스 메타데이터를 저장할 수도 있습니다. 카탈로그는 애플리케이션 관리, 고객 지원 또는 DevOps를 사용할 수 있도록 하는 기타 정보를 저장할 수 있습니다.
 
-SaaS 애플리케이션 이외에도 카탈로그는 데이터베이스 도구를 활성화할 수 있습니다. 정문 ticket SaaS 테 넌 트 별 데이터베이스 샘플에서 카탈로그는 테 넌 트 간 쿼리를 활성화 하는 데 사용 됩니다 .이 쿼리는 [임시 보고 자습서](saas-tenancy-cross-tenant-reporting.md)에서 살펴봅니다. 데이터베이스 간 작업 관리는 [스키마 관리](saas-tenancy-schema-management.md) 및 [테넌트 분석](saas-tenancy-tenant-analytics.md) 자습서에서 살펴봅니다.
+SaaS 애플리케이션 이외에도 카탈로그는 데이터베이스 도구를 활성화할 수 있습니다. 정문 ticket SaaS 테넌트 별 데이터베이스 샘플에서 카탈로그는 테넌트 간 쿼리를 활성화 하는 데 사용 됩니다 .이 쿼리는 [임시 보고 자습서](saas-tenancy-cross-tenant-reporting.md)에서 살펴봅니다. 데이터베이스 간 작업 관리는 [스키마 관리](saas-tenancy-schema-management.md) 및 [테넌트 분석](saas-tenancy-tenant-analytics.md) 자습서에서 살펴봅니다.
 
 Wingtip Tickets SaaS 샘플에서 카탈로그는 [EDCL(Elastic Database 클라이언트 라이브러리)](sql-database-elastic-database-client-library.md)의 분할 관리 기능을 사용하여 구현됩니다. EDCL은 Java 및 .NET Framework에서 사용할 수 있습니다. EDCL을 통해 애플리케이션은 데이터베이스 기반 분할 맵을 만들고, 관리하고 사용할 수 있습니다.
 

@@ -29,7 +29,7 @@ login.microsoftonline.com | Site Recovery 서비스 URL에 대한 권한 부여 
 
 ## <a name="issue-1-failed-to-register-azure-virtual-machine-with-site-recovery-151195-br"></a>문제 1: Site Recovery (151195)를 사용 하 여 Azure 가상 머신을 등록 하지 못했습니다. </br>
 - **가능한 원인** </br>
-  - DNS 확인 오류로 인해 Site Recovery 끝점에 대 한 연결을 설정할 수 없습니다.
+  - DNS 확인 오류로 인해 Site Recovery 엔드포인트에 대 한 연결을 설정할 수 없습니다.
   - 가상 머신을 장애 조치(failover)했지만 DR 지역에서 DNS 서버에 도달할 수 없는 경우 재보호 기간에 자주 발생합니다.
 
 - **해결 방법**

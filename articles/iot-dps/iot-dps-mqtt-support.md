@@ -1,6 +1,6 @@
 ---
 title: Azure IoT 장치 프로 비전 서비스 MQTT 지원 이해 | Microsoft Docs
-description: 개발자 가이드-MQTT 프로토콜을 사용 하 여 Azure IoT 장치 프로 비전 서비스 (DPS) 장치 지향 끝점에 연결 하는 장치에 대 한 지원.
+description: 개발자 가이드-MQTT 프로토콜을 사용 하 여 Azure IoT 장치 프로 비전 서비스 (DPS) 장치 지향 엔드포인트에 연결 하는 장치에 대 한 지원.
 author: rajeevmv
 ms.service: iot-dps
 services: iot-dps
@@ -16,7 +16,7 @@ ms.locfileid: "74973376"
 ---
 # <a name="communicate-with-your-dps-using-the-mqtt-protocol"></a>MQTT 프로토콜을 사용 하 여 DPS와 통신
 
-DPS를 사용 하면 다음을 사용 하 여 장치에서 DPS 장치 끝점과 통신할 수 있습니다.
+DPS를 사용 하면 다음을 사용 하 여 장치에서 DPS 장치 엔드포인트과 통신할 수 있습니다.
 
 * 포트 8883의 [Mqtt v 3.1.1](https://mqtt.org/)
 * 포트 443의 WebSocket을 통한 [Mqtt v 3.1.1](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127)

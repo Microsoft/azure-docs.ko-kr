@@ -24,11 +24,11 @@ SignalR 서비스 바인딩은 [WebJobs SignalRService](https://www.nuget.org/pa
 
 [!INCLUDE [functions-package-v2](../../includes/functions-package-v2-manual-portal.md)]
 
-SignalR 서비스와 Azure Functions를 함께 구성 하 고 사용 하는 방법에 대 한 자세한 내용은 [Azure SignalR service를 사용 하 여 개발 및 구성 Azure Functions](../azure-signalr/signalr-concept-serverless-development-config.md)을 참조 하세요.
+SignalR 서비스와 Azure Functions를 함께 구성 하 고 사용 하는 방법에 대한 자세한 내용은 [Azure SignalR service를 사용 하 여 개발 및 구성 Azure Functions](../azure-signalr/signalr-concept-serverless-development-config.md)을 참조 하세요.
 
 ### <a name="annotations-library-java-only"></a>주석 라이브러리 (Java 전용)
 
-Java 함수에서 SignalR 서비스 주석을 사용 하려면 pom .xml에 *SignalR* 아티팩트 (버전 1.0 이상)에 대 한 종속성을 추가 해야 합니다.
+Java 함수에서 SignalR 서비스 주석을 사용 하려면 pom .xml에 *SignalR* 아티팩트 (버전 1.0 이상)에 대한 종속성을 추가 해야 합니다.
 
 ```xml
 <dependency>
@@ -42,7 +42,7 @@ Java 함수에서 SignalR 서비스 주석을 사용 하려면 pom .xml에 *Sign
 
 클라이언트를 Azure SignalR Service에 연결할 수 있기 전에 서비스 엔드포인트 URL 및 유효한 액세스 토큰을 검색해야 합니다. *SignalRConnectionInfo* 입력 바인딩은 서비스에 연결하는 데 사용되는 SignalR Service 엔드포인트 URL 및 유효한 토큰을 생성합니다. 토큰은 시간 제한적이고 연결에 대해 특정 사용자를 인증하는 데 사용될 수 있으므로 토큰을 캐시하거나 클라이언트 간에 공유해서는 안 됩니다. 이 바인딩을 사용하는 HTTP 트리거는 연결 정보를 검색하기 위해 클라이언트에서 사용할 수 있습니다.
 
-이 바인딩을 사용 하 여 SignalR 클라이언트 SDK에서 사용할 수 있는 "negotiate" 함수를 만드는 방법에 대 한 자세한 내용은 SignalR 서비스 개념 설명서의 [Azure Functions 개발 및 구성 문서](../azure-signalr/signalr-concept-serverless-development-config.md) 를 참조 하세요.
+이 바인딩을 사용 하 여 SignalR 클라이언트 SDK에서 사용할 수 있는 "negotiate" 함수를 만드는 방법에 대한 자세한 내용은 SignalR 서비스 개념 설명서의 [Azure Functions 개발 및 구성 문서](../azure-signalr/signalr-concept-serverless-development-config.md) 를 참조 하세요.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
@@ -307,7 +307,7 @@ Azure SignalR Service를 사용하여 하나 이상의 메시지를 보내려면
 
 ### <a name="broadcast-to-all-clients"></a>모든 클라이언트에 브로드캐스트
 
-다음 예제에서는 모든 연결 된 클라이언트에 대 한 출력 바인딩을 사용 하 여 메시지를 보내는 함수를 보여 줍니다. *대상은* 각 클라이언트에서 호출할 메서드의 이름입니다. *인수* 는 클라이언트 메서드에 전달할 0 개 이상의 개체 배열입니다.
+다음 예제에서는 모든 연결 된 클라이언트에 대한 출력 바인딩을 사용 하 여 메시지를 보내는 함수를 보여 줍니다. *대상은* 각 클라이언트에서 호출할 메서드의 이름입니다. *인수* 는 클라이언트 메서드에 전달할 0 개 이상의 개체 배열입니다.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 

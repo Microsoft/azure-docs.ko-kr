@@ -37,7 +37,7 @@ Azure AD 조인은 클라우드 우선 또는 클라우드 전용으로 사용 �
 |   | 비즈니스용 Windows Hello |
 |   | FIDO 2.0 보안 키 (미리 보기) |
 | **디바이스 관리** | 모바일 장치 관리 (예: Microsoft Intune) |
-|   | Microsoft Intune 및 Microsoft 끝점을 사용 하 여 공동 관리 Configuration Manager |
+|   | Microsoft Intune 및 Microsoft 엔드포인트을 사용 하 여 공동 관리 Configuration Manager |
 | **주요 기능** | 클라우드 및 온-프레미스 리소스 모두에 SSO |
 |   | MDM 등록 및 MDM 준수 평가를 통한 조건부 액세스 |
 |   | 잠금 화면에서 셀프 서비스 암호 재설정 및 Windows Hello PIN 다시 설정 |
@@ -45,7 +45,7 @@ Azure AD 조인은 클라우드 우선 또는 클라우드 전용으로 사용 �
 
 Azure AD 조인 장치는 조직의 Azure AD 계정을 사용 하 여 로그인 됩니다. 조직의 리소스에 대 한 액세스는 해당 Azure AD 계정 및 장치 id에 적용 되는 [조건부 액세스 정책](../conditional-access/overview.md) 에 따라 추가로 제한할 수 있습니다.
 
-관리자는 Microsoft Intune와 같은 MDM (모바일 장치 관리) 도구를 사용 하 여 Azure AD 조인 장치를 안전 하 게 제어 하거나 Microsoft 끝점 Configuration Manager를 사용 하는 공동 관리 시나리오를 수행할 수 있습니다. 이러한 도구는 저장소 암호화, 암호 복잡성, 소프트웨어 설치 및 소프트웨어 업데이트와 같은 조직에서 필요한 구성을 적용 하는 수단을 제공 합니다. 관리자는 Configuration Manager를 사용 하 여 Azure AD 조인 장치에서 조직 응용 프로그램을 사용할 수 있도록 하 여 [비즈니스 및 교육용 Microsoft Store에서 앱을 관리할](https://docs.microsoft.com/configmgr/apps/deploy-use/manage-apps-from-the-windows-store-for-business)수 있습니다.
+관리자는 Microsoft Intune와 같은 MDM (모바일 장치 관리) 도구를 사용 하 여 Azure AD 조인 장치를 안전 하 게 제어 하거나 Microsoft 엔드포인트 Configuration Manager를 사용 하는 공동 관리 시나리오를 수행할 수 있습니다. 이러한 도구는 저장소 암호화, 암호 복잡성, 소프트웨어 설치 및 소프트웨어 업데이트와 같은 조직에서 필요한 구성을 적용 하는 수단을 제공 합니다. 관리자는 Configuration Manager를 사용 하 여 Azure AD 조인 장치에서 조직 응용 프로그램을 사용할 수 있도록 하 여 [비즈니스 및 교육용 Microsoft Store에서 앱을 관리할](https://docs.microsoft.com/configmgr/apps/deploy-use/manage-apps-from-the-windows-store-for-business)수 있습니다.
 
 OOBE (기본 제공 경험), 대량 등록 또는 [Windows Autopilot](https://docs.microsoft.com/intune/enrollment-autopilot)와 같은 셀프 서비스 옵션을 사용 하 여 Azure AD 조인을 수행할 수 있습니다.
 

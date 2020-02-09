@@ -50,7 +50,7 @@ Azure 전용 호스트에 SQL Server VM를 추가할 때 두 가지 다른 라�
       - SQL Server Enterprise edition에는 호스트 수준 및 VM 별 라이선스 옵션이 모두 있습니다. 
       - SQL Server Standard edition에는 VM 별 라이선스 옵션만 사용할 수 있습니다. 
           - 자세한 내용은 [Microsoft 제품 용어](https://www.microsoft.com/licensing/product-licensing/products)를 참조 하세요. 
-  - SQL Server 전용 호스트 수준 옵션을 선택 하지 않으면 다중 테 넌 트 Vm과 마찬가지로 개별 Vm 수준에서 SQL Server AHB를 선택할 수 있습니다.
+  - SQL Server 전용 호스트 수준 옵션을 선택 하지 않으면 다중 테넌트 Vm과 마찬가지로 개별 Vm 수준에서 SQL Server AHB를 선택할 수 있습니다.
 
 
 

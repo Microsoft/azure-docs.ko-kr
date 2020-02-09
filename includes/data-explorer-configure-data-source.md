@@ -31,7 +31,7 @@ ms.locfileid: "73581902"
 
     1. [역할에 애플리케이션 할당](/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) 섹션에서 **Reader** 역할 유형을 Azure Data Explorer 클러스터에 할당합니다.
 
-    1. 로그인에 [사용할 값 가져오기](/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) 섹션에서 **디렉터리 ID** (테 넌 트 Id), **응용 프로그램 id**및 **암호**단계에서 설명 하는 세 가지 속성 값을 복사 합니다.
+    1. 로그인에 [사용할 값 가져오기](/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) 섹션에서 **디렉터리 ID** (테넌트 Id), **응용 프로그램 id**및 **암호**단계에서 설명 하는 세 가지 속성 값을 복사 합니다.
 
 1. Azure Portal에서 **구독**을 선택한 다음, 서비스 주체를 만든 구독에 대한 ID를 복사합니다.
 

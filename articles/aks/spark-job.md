@@ -22,7 +22,7 @@ ms.locfileid: "76274659"
 
 이 아티클 내의 단계를 완료하기 위해 다음 항목이 필요합니다.
 
-* Kubernetes 및 [Apache Spark][spark-quickstart]에 대 한 기본적인 이해
+* Kubernetes 및 [Apache Spark][spark-quickstart]에 대한 기본적인 이해
 * [Docker 허브][docker-hub] 계정 또는 [Azure Container Registry][acr-create]입니다.
 * Azure CLI 개발 시스템에 [설치][azure-cli] 됩니다.
 * [JDK 8][java-install] 이 시스템에 설치 되어 있어야 합니다.
@@ -41,7 +41,7 @@ Spark는 대규모 데이터 처리에 사용되며 Kubernetes 노드의 크기�
 az group create --name mySparkCluster --location eastus
 ```
 
-클러스터에 대 한 서비스 주체를 만듭니다. 만든 후에는 다음 명령에 대 한 서비스 사용자 appId 및 암호가 필요 합니다.
+클러스터에 대한 서비스 주체를 만듭니다. 만든 후에는 다음 명령에 대한 서비스 사용자 appId 및 암호가 필요 합니다.
 
 ```azurecli
 az ad sp create-for-rbac --name SparkSP

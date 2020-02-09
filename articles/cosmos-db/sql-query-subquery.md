@@ -1,5 +1,5 @@
 ---
-title: Azure Cosmos DB에 대 한 SQL 하위 쿼리
+title: Azure Cosmos DB에 대한 SQL 하위 쿼리
 description: 에서 SQL 하위 쿼리 및 일반적인 사용 사례와 다양 한 하위 쿼리 형식에 대해 알아보세요 Azure Cosmos DB
 author: timsander1
 ms.service: cosmos-db
@@ -13,7 +13,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/05/2019
 ms.locfileid: "74870567"
 ---
-# <a name="sql-subquery-examples-for-azure-cosmos-db"></a>Azure Cosmos DB에 대 한 SQL 하위 쿼리 예제
+# <a name="sql-subquery-examples-for-azure-cosmos-db"></a>Azure Cosmos DB에 대한 SQL 하위 쿼리 예제
 
 하위 쿼리는 다른 쿼리 내에 중첩 된 쿼리입니다. 하위 쿼리를 내부 쿼리 또는 내부 선택이 라고도 합니다. 하위 쿼리를 포함 하는 문을 일반적으로 외부 쿼리 라고 합니다.
 
@@ -59,7 +59,7 @@ WHERE t.name = 'infant formula' AND (n.nutritionValue > 0
 AND n.nutritionValue < 10) AND s.amount > 1
 ```
 
-이 쿼리의 경우 인덱스는 이름이 "infant formula" 인 태그가 있는 모든 문서와 일치 합니다. 0에서 10 사이의 값을 가진 nutrient 항목 이며, 1 보다 큰 양의 서비스 항목입니다. 여기서 조인 식은 필터를 적용 하기 전에 일치 하는 각 문서에 대 한 태그, nutrients 및 배열 항목의 모든 항목에 대 한 교차곱을 수행 합니다. 
+이 쿼리의 경우 인덱스는 이름이 "infant formula" 인 태그가 있는 모든 문서와 일치 합니다. 0에서 10 사이의 값을 가진 nutrient 항목 이며, 1 보다 큰 양의 서비스 항목입니다. 여기서 조인 식은 필터를 적용 하기 전에 일치 하는 각 문서에 대한 태그, nutrients 및 배열 항목의 모든 항목에 대한 교차곱을 수행 합니다. 
 
 그런 다음 WHERE 절은 각 < c, t, n, s > 튜플에 필터 조건자를 적용 합니다. 예를 들어, 일치 하는 문서에 각각 3 개의 배열에 10 개의 항목이 있는 경우 1 x 10 x 10 x 10 (즉, 1000) 튜플로 확장 됩니다. 여기서 하위 쿼리를 사용 하면 다음 식으로 조인 하기 전에 조인 된 배열 항목을 필터링 하는 데 도움이 될 수 있습니다.
 

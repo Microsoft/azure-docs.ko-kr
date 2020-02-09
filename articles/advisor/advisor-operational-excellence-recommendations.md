@@ -1,6 +1,6 @@
 ---
-title: Azure Advisor를 사용 하 여 Azure 구독에 대 한 운영 excellency 개선
-description: Advisor를 사용 하 여 Azure 구독에 대 한 운영 편의성을 최적화 하 고 최대한 활용 하세요.
+title: Azure Advisor를 사용 하 여 Azure 구독에 대한 운영 excellency 개선
+description: Advisor를 사용 하 여 Azure 구독에 대한 운영 편의성을 최적화 하 고 최대한 활용 하세요.
 ms.topic: article
 ms.date: 10/24/2019
 ms.openlocfilehash: f34284ba62bd5dea98345ebe73365b332d38ee78
@@ -20,7 +20,7 @@ Azure 문제가 영향을 미칠 때 알림을 받도록 Azure Service Health �
 
 ## <a name="design-your-storage-accounts-to-prevent-hitting-the-maximum-subscription-limit"></a>최대 구독 제한에 도달 하지 않도록 저장소 계정 디자인
 
-Azure 지역은 구독 당 최대 250 개의 저장소 계정을 지원할 수 있습니다. 제한에 도달 하면 해당 지역/구독 조합에서 저장소 계정을 더 이상 만들 수 없습니다. Advisor는 최대 한도에 도달 하는 데 가까운 모든 저장소 계정에 대 한 설계를 위해 구독과 surface 권장 사항을 확인 합니다.
+Azure 지역은 구독 당 최대 250 개의 저장소 계정을 지원할 수 있습니다. 제한에 도달 하면 해당 지역/구독 조합에서 저장소 계정을 더 이상 만들 수 없습니다. Advisor는 최대한도에 도달 하는 데 가까운 모든 저장소 계정에 대한 설계를 위해 구독과 surface 권장 사항을 확인 합니다.
 
 ## <a name="ensure-you-have-access-to-azure-cloud-experts-when-you-need-it"></a>필요할 때 Azure 클라우드 전문가에 대한 액세스 권한이 있는지 확인
 
@@ -28,7 +28,7 @@ Azure 지역은 구독 당 최대 250 개의 저장소 계정을 지원할 수 �
 
 ## <a name="repair-invalid-log-alert-rules"></a>잘못 된 로그 경고 규칙 복구
 
-Azure Advisor는 해당 조건 섹션에 잘못 된 쿼리가 지정 된 경고 규칙을 검색 합니다. 로그 경고 규칙은 Azure Monitor에서 생성되며 지정된 간격으로 분석 쿼리를 실행하는 데 사용됩니다. 쿼리 결과에 따라 경고를 트리거할 것인지 여부가 결정됩니다. 시간이 지나 참조되는 리소스, 테이블 또는 명령이 변경되면 분석 쿼리가 유효하지 않게 될 수 있습니다. Advisor는 자동 사용 하지 않도록 설정 하 고 Azure에서 리소스의 모니터링 범위를 확인 하는 것을 방지 하기 위해 경고 규칙의 쿼리를 수정 하는 것을 권장 합니다. [경고 규칙 문제 해결에 대 한 자세한 정보](https://aka.ms/aa_logalerts_queryrepair)
+Azure Advisor는 해당 조건 섹션에 잘못 된 쿼리가 지정 된 경고 규칙을 검색 합니다. 로그 경고 규칙은 Azure Monitor에서 생성되며 지정된 간격으로 분석 쿼리를 실행하는 데 사용됩니다. 쿼리 결과에 따라 경고를 트리거할 것인지 여부가 결정됩니다. 시간이 지나 참조되는 리소스, 테이블 또는 명령이 변경되면 분석 쿼리가 유효하지 않게 될 수 있습니다. Advisor는 자동 사용 하지 않도록 설정 하 고 Azure에서 리소스의 모니터링 범위를 확인 하는 것을 방지 하기 위해 경고 규칙의 쿼리를 수정 하는 것을 권장 합니다. [경고 규칙 문제 해결에 대한 자세한 정보](https://aka.ms/aa_logalerts_queryrepair)
 
 ## <a name="follow-best-practices-using-azure-policy"></a>Azure Policy 사용 모범 사례 준수
 

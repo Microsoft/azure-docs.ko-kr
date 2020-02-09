@@ -1,6 +1,6 @@
 ---
 title: Windows 가상 데스크톱 PowerShell-Azure
-description: Windows 가상 데스크톱 테 넌 트 환경을 설정할 때 PowerShell 관련 문제를 해결 하는 방법입니다.
+description: Windows 가상 데스크톱 테넌트 환경을 설정할 때 PowerShell 관련 문제를 해결 하는 방법입니다.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -36,19 +36,19 @@ Add-RdsAppGroupUser -TenantName <TenantName> -HostPoolName <HostPoolName> -AppGr
 
 **해결 방법:** 사용자가 원격 앱과 원격 데스크톱이 모두 필요한 경우 다른 호스트 풀을 만들거나 원격 데스크톱에 대 한 사용자 액세스 권한을 부여 하 여 세션 호스트 VM에서 모든 응용 프로그램을 사용 하도록 허용 합니다.
 
-### <a name="error-add-rdsappgroupuser-command----the-specified-userprincipalname-doesnt-exist-in-the-azure-active-directory-associated-with-the-remote-desktop-tenant"></a>오류: RdsAppGroupUser 명령--지정 된 UserPrincipalName가 원격 데스크톱 테 넌 트와 연결 된 Azure Active Directory에 없습니다.
+### <a name="error-add-rdsappgroupuser-command----the-specified-userprincipalname-doesnt-exist-in-the-azure-active-directory-associated-with-the-remote-desktop-tenant"></a>오류: RdsAppGroupUser 명령--지정 된 UserPrincipalName가 원격 데스크톱 테넌트와 연결 된 Azure Active Directory에 없습니다.
 
 ```PowerShell
 Add-RdsAppGroupUser -TenantName <TenantName> -HostPoolName <HostPoolName> -AppGroupName "Desktop Application Group" -UserPrincipalName <UserPrincipalName>
 ```
 
-**원인:** -UserPrincipalName로 지정 된 사용자는 Windows 가상 데스크톱 테 넌 트에 연결 된 Azure Active Directory에서 찾을 수 없습니다.
+**원인:** -UserPrincipalName로 지정 된 사용자는 Windows 가상 데스크톱 테넌트에 연결 된 Azure Active Directory에서 찾을 수 없습니다.
 
 **해결 방법:** 다음 목록에서 항목을 확인 합니다.
 
 - 사용자가 Azure Active Directory와 동기화 됩니다.
 - 사용자가 B2C (business to consumer) 또는 B2B (기업 간) 상거래에 연결 되지 않았습니다.
-- Windows 가상 데스크톱 테 넌 트가 올바른 Azure Active Directory 연결 되어 있습니다.
+- Windows 가상 데스크톱 테넌트가 올바른 Azure Active Directory 연결 되어 있습니다.
 
 ### <a name="error-get-rdsdiagnosticactivities----user-isnt-authorized-to-query-the-management-service"></a>오류: RdsDiagnosticActivities--사용자에 게 관리 서비스를 쿼리할 수 있는 권한이 없습니다.
 
@@ -72,11 +72,11 @@ Get-RdsDiagnosticActivities -Deployment -username <username>
 
 ### <a name="error-new-rdsroleassignment----the-user-isnt-authorized-to-query-the-management-service"></a>오류: RdsRoleAssignment--사용자에 게 관리 서비스를 쿼리할 수 있는 권한이 없습니다.
 
-**원인 1:** 사용 중인 계정에 테 넌 트에 대 한 원격 데스크톱 서비스 소유자 권한이 없습니다.
+**원인 1:** 사용 중인 계정에 테넌트에 대 한 원격 데스크톱 서비스 소유자 권한이 없습니다.
 
 **수정 1:** 원격 데스크톱 서비스 소유자 권한이 있는 사용자는 역할 할당을 실행 해야 합니다.
 
-**원인 2:** 사용 중인 계정에 원격 데스크톱 서비스 소유자 권한이 있지만 테 넌 트의 Azure Active Directory에 속하지 않거나 사용자가 있는 Azure Active Directory를 쿼리할 수 있는 권한이 없습니다.
+**원인 2:** 사용 중인 계정에 원격 데스크톱 서비스 소유자 권한이 있지만 테넌트의 Azure Active Directory에 속하지 않거나 사용자가 있는 Azure Active Directory를 쿼리할 수 있는 권한이 없습니다.
 
 **수정 2:** Active Directory 권한이 있는 사용자는 역할 할당을 실행 해야 합니다.
 
@@ -86,7 +86,7 @@ Get-RdsDiagnosticActivities -Deployment -username <username>
 ## <a name="next-steps"></a>다음 단계
 
 - Windows 가상 데스크톱 및 에스컬레이션 트랙 문제 해결에 대 한 개요는 [문제 해결 개요, 사용자 의견 및 지원](troubleshoot-set-up-overview.md)을 참조 하세요.
-- Windows 가상 데스크톱 환경에서 테 넌 트 및 호스트 풀을 만드는 동안 발생 하는 문제를 해결 하려면 [테 넌 트 및 호스트 풀 만들기](troubleshoot-set-up-issues.md)를 참조 하세요.
+- Windows 가상 데스크톱 환경에서 테넌트 및 호스트 풀을 만드는 동안 발생 하는 문제를 해결 하려면 [테넌트 및 호스트 풀 만들기](troubleshoot-set-up-issues.md)를 참조 하세요.
 - Windows 가상 데스크톱에서 VM (가상 컴퓨터)을 구성 하는 동안 발생 하는 문제를 해결 하려면 [세션 호스트 가상 컴퓨터 구성](troubleshoot-vm-configuration.md)을 참조 하세요.
 - Windows 가상 데스크톱 클라이언트 연결 문제를 해결 하려면 [Windows 가상 데스크톱 서비스 연결](troubleshoot-service-connection.md)을 참조 하세요.
 - 원격 데스크톱 클라이언트와 관련 된 문제를 해결 하려면 [원격 데스크톱 클라이언트 문제 해결](troubleshoot-client.md) 을 참조 하세요.

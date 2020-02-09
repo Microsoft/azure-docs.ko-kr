@@ -15,20 +15,20 @@ ms.locfileid: "76549090"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>이벤트 중심 백그라운드 처리를 위한 Azure WebJobs SDK 사용 방법
 
-이 문서에서는 Azure WebJobs SDK를 사용 하는 방법에 대 한 지침을 제공 합니다. WebJobs를 즉시 시작 하려면 [이벤트 기반 백그라운드 처리를 위해 AZURE WEBJOBS SDK 시작](webjobs-sdk-get-started.md)을 참조 하세요. 
+이 문서에서는 Azure WebJobs SDK를 사용 하는 방법에 대한 지침을 제공 합니다. WebJobs를 즉시 시작 하려면 [이벤트 기반 백그라운드 처리를 위해 AZURE WEBJOBS SDK 시작](webjobs-sdk-get-started.md)을 참조 하세요. 
 
 ## <a name="webjobs-sdk-versions"></a>WebJobs SDK 버전
 
 버전 3의 주요 차이점은 다음과 같습니다. *x* 및 버전 2. WebJobs SDK의 *x* :
 
-* 버전 3. *x* 는 .net Core에 대 한 지원을 추가 합니다.
+* 버전 3. *x* 는 .net Core에 대한 지원을 추가 합니다.
 * 버전 3 *x*, WebJobs SDK에 필요한 저장소 바인딩 확장을 명시적으로 설치 해야 합니다. 버전 2에서 *x*, 저장소 바인딩이 SDK에 포함 되었습니다.
-* .NET Core 용 Visual Studio 도구 (3. *x*) 프로젝트는 .NET Framework에 대 한 도구 (2)와 다릅니다. *x*) 프로젝트. 자세히 알아보려면 [Visual Studio를 사용 하 여 WebJobs 개발 및 배포-Azure App Service](webjobs-dotnet-deploy-vs.md)를 참조 하세요.
+* .NET Core 용 Visual Studio 도구 (3. *x*) 프로젝트는 .NET Framework에 대한 도구 (2)와 다릅니다. *x*) 프로젝트. 자세히 알아보려면 [Visual Studio를 사용 하 여 WebJobs 개발 및 배포-Azure App Service](webjobs-dotnet-deploy-vs.md)를 참조 하세요.
 
 가능 하면 예제가 버전 3에 제공 됩니다. *x* 및 버전 2. *x*.
 
 > [!NOTE]
-> [Azure Functions](../azure-functions/functions-overview.md) 는 WebJobs SDK를 기반으로 하며,이 문서에서는 일부 항목의 Azure Functions 설명서에 대 한 링크를 제공 합니다. 함수와 WebJobs SDK의 차이점은 다음과 같습니다.
+> [Azure Functions](../azure-functions/functions-overview.md) 는 WebJobs SDK를 기반으로 하며,이 문서에서는 일부 항목의 Azure Functions 설명서에 대한 링크를 제공 합니다. 함수와 WebJobs SDK의 차이점은 다음과 같습니다.
 > * Azure Functions 버전 2. *x* 는 WebJobs SDK 버전 3에 해당 합니다. *x*및 Azure Functions 1. *x* 는 WebJobs SDK 2에 해당 합니다. *x*. 소스 코드 리포지토리는 WebJobs SDK 번호 매기기를 사용 합니다.
 > * Azure Functions C# 클래스 라이브러리의 샘플 코드는 WebJobs sdk 프로젝트에 `FunctionName` 특성이 필요 하지 않은 경우를 제외 하 고는 WebJobs sdk 코드와 비슷합니다.
 > * 일부 바인딩 형식은 http (Webhooks)와 같은 함수 에서만 지원 되며 HTTP를 기반으로 하는 Event Grid 지원 됩니다.
@@ -123,7 +123,7 @@ static void Main()
 
 버전 3 *기본적으로*연결 제한은 무한 연결로 설정 됩니다. 어떤 이유로이 제한을 변경 해야 하는 경우 [`WinHttpHandler`](/dotnet/api/system.net.http.winhttphandler) 클래스의 [`MaxConnectionsPerServer`](/dotnet/api/system.net.http.winhttphandler.maxconnectionsperserver) 속성을 사용할 수 있습니다.
 
-버전 2에서 *x*는 Servicepointmanager를 사용 하 여 호스트에 대 한 동시 연결 수를 제어 합니다 [. defaultconnectionlimit](/dotnet/api/system.net.servicepointmanager.defaultconnectionlimit#System_Net_ServicePointManager_DefaultConnectionLimit) API. 2\. *x*에서는 WebJobs 호스트를 시작 하기 전에이 값을 기본값인 2에서 늘려야 합니다.
+버전 2에서 *x*는 Servicepointmanager를 사용 하 여 호스트에 대한 동시 연결 수를 제어 합니다 [. defaultconnectionlimit](/dotnet/api/system.net.servicepointmanager.defaultconnectionlimit#System_Net_ServicePointManager_DefaultConnectionLimit) API. 2\. *x*에서는 WebJobs 호스트를 시작 하기 전에이 값을 기본값인 2에서 늘려야 합니다.
 
 `HttpClient`를 사용 하 여 함수에서 수행 하는 모든 나가는 HTTP 요청은 `ServicePointManager`를 통해 흐릅니다. `DefaultConnectionLimit`설정 된 값에 도달 하면 큐에서 요청을 보내기 전에 큐에서 요청을 시작 `ServicePointManager`. `DefaultConnectionLimit`가 2로 설정되었고 코드에서 HTTP 요청 1,000개를 만든다고 가정해 봅시다. 처음에는 OS까지 전달되는 요청이 2개밖에 없습니다. 나머지 998개는 공간이 생길 때까지 큐에서 대기합니다. 즉, 요청이 발생 한 것 처럼 보이지만 OS에서 대상 서버로 요청을 보내지 않았기 때문에 `HttpClient` 시간이 초과 될 수 있습니다. 이와 같은 이유로 로컬 `HttpClient`가 요청을 완료하는 데 10초가 걸리지만 서비스가 200ms 후에 모든 요청을 반환하는 이상한 동작이 관찰될 수 있습니다. 
 
@@ -229,7 +229,7 @@ static void Main(string[] args)
 
 ## <a name="binding-types"></a>바인딩 형식
 
-바인딩 유형을 설치 하 고 관리 하는 프로세스는 버전 3을 사용 중인지 여부에 따라 달라 집니다. *x* 또는 버전 2. SDK의 *x* 입니다. 특정 바인딩 유형에 대 한 설치 패키지는 해당 바인딩 유형의 Azure Functions [참조 문서](#binding-reference-information)에 있는 "패키지" 섹션에서 찾을 수 있습니다. 예외는 Azure Functions에서 지원 하지 않는 파일 트리거 및 바인딩 (로컬 파일 시스템의 경우)입니다.
+바인딩 유형을 설치 하 고 관리 하는 프로세스는 버전 3을 사용 중인지 여부에 따라 달라 집니다. *x* 또는 버전 2. SDK의 *x* 입니다. 특정 바인딩 유형에 대한 설치 패키지는 해당 바인딩 유형의 Azure Functions [참조 문서](#binding-reference-information)에 있는 "패키지" 섹션에서 찾을 수 있습니다. 예외는 Azure Functions에서 지원 하지 않는 파일 트리거 및 바인딩 (로컬 파일 시스템의 경우)입니다.
 
 #### <a name="version-3x"></a>버전 3. *x*
 
@@ -620,7 +620,7 @@ public class CustomNameResolver : INameResolver
 using Microsoft.Extensions.DependencyInjection;
 ```
 
-다음 예제와 같이 [`HostBuilder`](/dotnet/api/microsoft.extensions.hosting.hostbuilder)에 대 한 [`ConfigureServices`] 확장 메서드를 호출 하 여 해결 프로그램을 추가 합니다.
+다음 예제와 같이 [`HostBuilder`](/dotnet/api/microsoft.extensions.hosting.hostbuilder)에 대한 [`ConfigureServices`] 확장 메서드를 호출 하 여 해결 프로그램을 추가 합니다.
 
 ```cs
 static async Task Main(string[] args)
@@ -678,13 +678,13 @@ public static void CreateQueueMessage(
 
 ## <a name="binding-reference-information"></a>바인딩 참조 정보
 
-Azure Functions 설명서에서는 각 바인딩 형식에 대 한 참조 정보를 제공 합니다. 각 바인딩 참조 문서에서 다음 정보를 찾을 수 있습니다. 이 예제는 저장소 큐를 기반으로 합니다.
+Azure Functions 설명서에서는 각 바인딩 형식에 대한 참조 정보를 제공 합니다. 각 바인딩 참조 문서에서 다음 정보를 찾을 수 있습니다. 이 예제는 저장소 큐를 기반으로 합니다.
 
-* [패키지](../azure-functions/functions-bindings-storage-queue.md#packages---functions-1x). WebJobs SDK 프로젝트에서 바인딩에 대 한 지원을 포함 하기 위해 설치 해야 하는 패키지입니다.
+* [패키지](../azure-functions/functions-bindings-storage-queue.md#packages---functions-1x). WebJobs SDK 프로젝트에서 바인딩에 대한 지원을 포함 하기 위해 설치 해야 하는 패키지입니다.
 * [예](../azure-functions/functions-bindings-storage-queue.md#trigger). 코드 샘플. 클래스 C# 라이브러리 예제는 WebJobs SDK에 적용 됩니다. `FunctionName` 특성만 생략 하면 됩니다.
 * [특성](../azure-functions/functions-bindings-storage-queue.md#trigger---attributes-and-annotations). 바인딩 형식에 사용할 특성입니다.
-* [구성](../azure-functions/functions-bindings-storage-queue.md#trigger---configuration). 특성 속성 및 생성자 매개 변수에 대 한 설명입니다.
-* [사용 현황](../azure-functions/functions-bindings-storage-queue.md#trigger---usage). 바인딩할 수 있는 형식과 바인딩의 작동 방식에 대 한 정보입니다. 예: 폴링 알고리즘, 포이즌 큐 처리.
+* [구성](../azure-functions/functions-bindings-storage-queue.md#trigger---configuration). 특성 속성 및 생성자 매개 변수에 대한 설명입니다.
+* [사용 현황](../azure-functions/functions-bindings-storage-queue.md#trigger---usage). 바인딩할 수 있는 형식과 바인딩의 작동 방식에 대한 정보입니다. 예: 폴링 알고리즘, 포이즌 큐 처리.
   
 바인딩 참조 문서 목록은 Azure Functions의 [트리거 및 바인딩](../azure-functions/functions-triggers-bindings.md#supported-bindings) 문서에서 "지원 되는 바인딩"을 참조 하세요. 이 목록에서 HTTP, Webhook 및 Event Grid 바인딩은 WebJobs SDK가 아닌 Azure Functions 에서만 지원 됩니다.
 
@@ -771,7 +771,7 @@ public class WorkItem
 
 ### <a name="singletonscopehost"></a>SingletonScope.Host
 
-잠금에 대 한 기본 범위는 `SingletonScope.Function`입니다. 즉, 잠금 범위 (blob 임대 경로)가 정규화 된 함수 이름에 연결 됩니다. 함수 간에 잠그려면 `SingletonScope.Host`를 지정 하 고 동시에 실행 하지 않으려는 모든 함수에서 동일한 범위 ID 이름을 사용 합니다. 다음 예제에서는 `AddItem` 또는 `RemoveItem`의 인스턴스가 한 번에 하나씩 실행됩니다.
+잠금에 대한 기본 범위는 `SingletonScope.Function`입니다. 즉, 잠금 범위 (blob 임대 경로)가 정규화 된 함수 이름에 연결 됩니다. 함수 간에 잠그려면 `SingletonScope.Host`를 지정 하 고 동시에 실행 하지 않으려는 모든 함수에서 동일한 범위 ID 이름을 사용 합니다. 다음 예제에서는 `AddItem` 또는 `RemoveItem`의 인스턴스가 한 번에 하나씩 실행됩니다.
 
 ```csharp
 [Singleton("ItemsLock", SingletonScope.Host)]
@@ -793,7 +793,7 @@ WebJobs SDK는 분산 잠금을 구현하기 위해 백그라운드에서 [Azure
 
 ## <a name="async-functions"></a>비동기 함수
 
-비동기 함수를 코딩 하는 방법에 대 한 자세한 내용은 [Azure Functions 설명서](../azure-functions/functions-dotnet-class-library.md#async)를 참조 하세요.
+비동기 함수를 코딩 하는 방법에 대한 자세한 내용은 [Azure Functions 설명서](../azure-functions/functions-dotnet-class-library.md#async)를 참조 하세요.
 
 ## <a name="cancellation-tokens"></a>취소 토큰
 
@@ -835,7 +835,7 @@ ASP.NET 용으로 개발 된 로깅 프레임 워크를 권장 합니다. [시�
 
 #### <a name="version-3x"></a>버전 3. *x*
 
-버전 3. SDK의 *x* 는 .net Core에 기본 제공 되는 필터링에 의존 합니다. `LogCategories` 클래스를 사용하여 특정 함수, 트리거 또는 사용자의 범주를 정의할 수 있습니다. 또한 `Startup` 및 `Results`와 같은 특정 호스트 상태에 대 한 필터를 정의 합니다. 이를 통해 로깅 출력을 미세 조정할 수 있습니다. 정의된 범주 내에 일치 항목이 없는 경우 메시지를 필터링할 것인지 결정할 때 필터가 `Default` 값으로 대체됩니다.
+버전 3. SDK의 *x* 는 .net Core에 기본 제공 되는 필터링에 의존 합니다. `LogCategories` 클래스를 사용하여 특정 함수, 트리거 또는 사용자의 범주를 정의할 수 있습니다. 또한 `Startup` 및 `Results`와 같은 특정 호스트 상태에 대한 필터를 정의 합니다. 이를 통해 로깅 출력을 미세 조정할 수 있습니다. 정의된 범주 내에 일치 항목이 없는 경우 메시지를 필터링할 것인지 결정할 때 필터가 `Default` 값으로 대체됩니다.
 
 `LogCategories`에는 다음 using 문이 필요합니다.
 
@@ -874,7 +874,7 @@ static async Task Main(string[] args)
 
 버전 2에서 *x* SDK의 경우 `LogCategoryFilter` 클래스를 사용 하 여 필터링을 제어할 수 있습니다. `LogCategoryFilter`에는 초기 값이 `Information`인 `Default` 속성이 있습니다. 즉, `Information`, `Warning`, `Error`또는 `Critical` 수준의 모든 메시지가 기록 되지만 `Debug` 또는 `Trace` 수준의 모든 메시지는 필터링 됩니다.
 
-버전 3의 `LogCategories`와 동일 합니다. `CategoryLevels` *속성을 사용*하 여 로깅 출력을 세밀 하 게 조정할 수 있도록 특정 범주에 대 한 로그 수준을 지정할 수 있습니다. `CategoryLevels` 디렉터리 내에 일치 항목이 없는 경우 메시지를 필터링할 것인지 결정할 때 필터가 `Default` 값으로 대체됩니다.
+버전 3의 `LogCategories`와 동일 합니다. `CategoryLevels` *속성을 사용*하 여 로깅 출력을 세밀 하 게 조정할 수 있도록 특정 범주에 대한 로그 수준을 지정할 수 있습니다. `CategoryLevels` 디렉터리 내에 일치 항목이 없는 경우 메시지를 필터링할 것인지 결정할 때 필터가 `Default` 값으로 대체됩니다.
 
 다음 예제는 기본적으로 `Warning` 수준에서 모든 로그를 필터링하는 필터를 작성합니다. `Function` 및 `Host.Results` 범주는 `Error` 수준에서 필터링 됩니다. `LogCategoryFilter`는 현재 범주를 모든 등록된 `CategoryLevels`와 비교하여 가장 긴 일치 항목을 선택합니다. 따라서 `Host.Triggers`에 대해 등록 된 `Debug` 수준이 `Host.Triggers.Queue` 또는 `Host.Triggers.Blob`와 일치 합니다. 따라서 각각을 추가하지 않고도 더 광범위한 범주를 제어할 수 있습니다.
 
@@ -892,7 +892,7 @@ config.LoggerFactory = new LoggerFactory()
 
 ### <a name="custom-telemetry-for-application-insights"></a>Application Insights에 대한 사용자 지정 원격 분석​
 
-[Application Insights](../azure-monitor/app/app-insights-overview.md) 에 대 한 사용자 지정 원격 분석을 구현 하는 프로세스는 SDK 버전에 따라 달라 집니다. Application Insights를 구성하는 방법을 알아보려면 [Application Insights 로깅 추가](webjobs-sdk-get-started.md#add-application-insights-logging)를 참조하세요.
+[Application Insights](../azure-monitor/app/app-insights-overview.md) 에 대한 사용자 지정 원격 분석을 구현 하는 프로세스는 SDK 버전에 따라 달라 집니다. Application Insights를 구성하는 방법을 알아보려면 [Application Insights 로깅 추가](webjobs-sdk-get-started.md#add-application-insights-logging)를 참조하세요.
 
 #### <a name="version-3x"></a>버전 3. *x*
 
@@ -950,13 +950,13 @@ static async Task Main()
 }
 ```
 
-[`TelemetryConfiguration`]이 생성되면 등록된 모든 [`ITelemetryInitializer`] 유형이 포함됩니다. 자세히 알아보려면 [사용자 지정 이벤트 및 메트릭에 대 한 APPLICATION INSIGHTS API](../azure-monitor/app/api-custom-events-metrics.md)를 참조 하세요.
+[`TelemetryConfiguration`]이 생성되면 등록된 모든 [`ITelemetryInitializer`] 유형이 포함됩니다. 자세히 알아보려면 [사용자 지정 이벤트 및 메트릭에 대한 APPLICATION INSIGHTS API](../azure-monitor/app/api-custom-events-metrics.md)를 참조 하세요.
 
 버전 3 *x*에서는 호스트가 중지 될 때 더 이상 [`TelemetryClient`] 를 플러시할 필요가 없습니다. .NET Core 종속성 주입 시스템은 [`TelemetryClient`]를 플러시하는 등록된 `ApplicationInsightsLoggerProvider`를 자동으로 제거합니다.
 
 #### <a name="version-2x"></a>버전 2. *x*
 
-버전 2에서 *x*에서 WebJobs SDK에 대 한 Application Insights 공급자에 의해 내부적으로 생성 된 [`TelemetryClient`] 는 [`ServerTelemetryChannel`](https://github.com/Microsoft/ApplicationInsights-dotnet/blob/develop/src/ServerTelemetryChannel/ServerTelemetryChannel.cs)를 사용 합니다. Application Insights 엔드포인트를 사용할 수 없거나 들어오는 요청을 제한하는 경우 이 채널은 [웹앱의 파일 시스템에 요청을 저장해 두었다가 나중에 다시 전송](https://apmtips.com/blog/2015/09/03/more-telemetry-channels)합니다.
+버전 2에서 *x*에서 WebJobs SDK에 대한 Application Insights 공급자에 의해 내부적으로 생성 된 [`TelemetryClient`] 는 [`ServerTelemetryChannel`](https://github.com/Microsoft/ApplicationInsights-dotnet/blob/develop/src/ServerTelemetryChannel/ServerTelemetryChannel.cs)를 사용 합니다. Application Insights 엔드포인트를 사용할 수 없거나 들어오는 요청을 제한하는 경우 이 채널은 [웹앱의 파일 시스템에 요청을 저장해 두었다가 나중에 다시 전송](https://apmtips.com/blog/2015/09/03/more-telemetry-channels)합니다.
 
 [`TelemetryClient`]는 `ITelemetryClientFactory`를 구현하는 클래스에서 생성합니다. 기본적으로 [`DefaultTelemetryClientFactory`](https://github.com/Azure/azure-webjobs-sdk/blob/dev/src/Microsoft.Azure.WebJobs.Logging.ApplicationInsights/DefaultTelemetryClientFactory.cs)입니다.
 
@@ -995,7 +995,7 @@ config.LoggerFactory = new LoggerFactory()
 
 ## <a id="nextsteps"></a> 다음 단계
 
-이 문서에서는 WebJobs SDK 작업에 대 한 일반적인 시나리오를 처리 하는 방법을 보여 주는 코드 조각을 제공 했습니다. 전체 샘플은 [azure-webjobs-sdk-samples](https://github.com/Azure/azure-webjobs-sdk/tree/dev/sample/SampleHost)를 참조하세요.
+이 문서에서는 WebJobs SDK 작업에 대한 일반적인 시나리오를 처리 하는 방법을 보여 주는 코드 조각을 제공 했습니다. 전체 샘플은 [azure-webjobs-sdk-samples](https://github.com/Azure/azure-webjobs-sdk/tree/dev/sample/SampleHost)를 참조하세요.
 
 [`ExecutionContext`]: https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions/Extensions/Core/ExecutionContext.cs
 [`TelemetryClient`]: /dotnet/api/microsoft.applicationinsights.telemetryclient

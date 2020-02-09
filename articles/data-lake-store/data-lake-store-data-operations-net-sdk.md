@@ -1,6 +1,6 @@
 ---
-title: '.NET SDK: Azure Data Lake Storage Gen1에 대 한 파일 시스템 작업'
-description: 폴더 만들기 등의 Data Lake Storage Gen1에 대 한 파일 시스템 작업에 Azure Data Lake Storage Gen1 .NET SDK를 사용 합니다.
+title: '.NET SDK: Azure Data Lake Storage Gen1에 대한 파일 시스템 작업'
+description: 폴더 만들기 등의 Data Lake Storage Gen1에 대한 파일 시스템 작업에 Azure Data Lake Storage Gen1 .NET SDK를 사용 합니다.
 author: twooley
 ms.service: data-lake-store
 ms.topic: conceptual
@@ -13,7 +13,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/03/2020
 ms.locfileid: "75638904"
 ---
-# <a name="filesystem-operations-on-data-lake-storage-gen1-using-the-net-sdk"></a>.NET SDK를 사용 하 여 Data Lake Storage Gen1에 대 한 파일 시스템 작업
+# <a name="filesystem-operations-on-data-lake-storage-gen1-using-the-net-sdk"></a>.NET SDK를 사용 하 여 Data Lake Storage Gen1에 대한 파일 시스템 작업
 
 > [!div class="op_single_selector"]
 > * [.NET SDK](data-lake-store-data-operations-net-sdk.md)
@@ -25,7 +25,7 @@ ms.locfileid: "75638904"
 
 이 문서에서는 .NET SDK를 사용 하 여 Data Lake Storage Gen1에서 파일 시스템 작업을 수행 하는 방법에 대해 알아봅니다. 파일 시스템 작업에는 Data Lake Storage Gen1 계정에 폴더 만들기, 파일 업로드, 파일 다운로드 등이 포함됩니다.
 
-.NET SDK를 사용 하 여 Data Lake Storage Gen1에 대 한 계정 관리 작업을 수행 하는 방법에 대 한 지침은 [.NET sdk를 사용 하 여 Data Lake Storage Gen1의 계정 관리 작업](data-lake-store-get-started-net-sdk.md)을 참조 하세요.
+.NET SDK를 사용 하 여 Data Lake Storage Gen1에 대한 계정 관리 작업을 수행 하는 방법에 대한 지침은 [.NET sdk를 사용 하 여 Data Lake Storage Gen1의 계정 관리 작업](data-lake-store-get-started-net-sdk.md)을 참조 하세요.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -33,7 +33,7 @@ ms.locfileid: "75638904"
 
 * **Azure 구독**. [Azure 평가판](https://azure.microsoft.com/pricing/free-trial/)을 참조하세요.
 
-* **Azure Data Lake Storage Gen1 계정**. 계정을 만드는 방법에 대 한 지침은 [Azure Data Lake Storage Gen1 시작](data-lake-store-get-started-portal.md)을 참조 하세요.
+* **Azure Data Lake Storage Gen1 계정**. 계정을 만드는 방법에 대한 지침은 [Azure Data Lake Storage Gen1 시작](data-lake-store-get-started-portal.md)을 참조 하세요.
 
 ## <a name="create-a-net-application"></a>.NET 애플리케이션 만들기
 

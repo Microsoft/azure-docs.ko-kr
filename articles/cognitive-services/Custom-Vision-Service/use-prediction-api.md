@@ -19,7 +19,7 @@ ms.locfileid: "76169944"
 ---
 # <a name="use-your-model-with-the-prediction-api"></a>예측 API와 함께 모델 사용
 
-모델을 학습시킨 후에 예측 API 끝점에 제출하여 프로그래밍 방식으로 이미지를 테스트할 수 있습니다.
+모델을 학습시킨 후에 예측 API 엔드포인트에 제출하여 프로그래밍 방식으로 이미지를 테스트할 수 있습니다.
 
 > [!NOTE]
 > 이 문서에서는 C#을 사용하여 예측 API에 이미지를 제출하는 방법을 보여 줍니다. 자세한 내용 및 예제에 대해서는 [예측 API 참조](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.0/operations/5c82db60bf6a2b11a8247c15)를 확인합니다.

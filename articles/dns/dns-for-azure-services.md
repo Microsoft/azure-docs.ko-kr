@@ -1,6 +1,6 @@
 ---
 title: 다른 Azure 서비스와 Azure DNS 사용
-description: 이 학습 경로에서 Azure DNS 사용 하 여 다른 Azure 서비스에 대 한 이름을 확인 하는 방법을 시작 하세요.
+description: 이 학습 경로에서 Azure DNS 사용 하 여 다른 Azure 서비스에 대한 이름을 확인 하는 방법을 시작 하세요.
 services: dns
 documentationcenter: na
 author: rohinkoul

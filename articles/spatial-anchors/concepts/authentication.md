@@ -95,7 +95,7 @@ configuration.AccountKey(LR"(MyAccountKey)");
 Azure Active Directory 사용자를 대상으로 하는 응용 프로그램의 경우 권장 되는 방법은 다음 설명서에 설명 된 대로 ADAL 라이브러리를 사용 하 여 얻을 수 있는 사용자에 대 한 Azure AD 토큰을 사용 하는 것입니다 [https://docs.microsoft.com/azure/active-directory/develop/v1-overview](../../active-directory/develop/v1-overview.md). 다음을 포함 하는 "빠른 시작"에 나열 된 단계를 수행 해야 합니다.
 
 1. Azure Portal 구성
-    1.  응용 프로그램을 **네이티브 응용 프로그램**으로 Azure AD에 등록 합니다. 등록 하는 과정에서 응용 프로그램이 다중 테 넌 트 인지 여부를 확인 하 고 응용 프로그램에 허용 되는 리디렉션 Url을 제공 해야 합니다.
+    1.  응용 프로그램을 **네이티브 응용 프로그램**으로 Azure AD에 등록 합니다. 등록 하는 과정에서 응용 프로그램이 다중 테넌트 인지 여부를 확인 하 고 응용 프로그램에 허용 되는 리디렉션 Url을 제공 해야 합니다.
     2.  응용 프로그램 또는 사용자에 게 리소스에 대 한 액세스 권한을 부여 합니다.
         1.  Azure Portal의 공간 앵커 리소스로 이동 합니다.
         2.  **액세스 제어 (IAM)** 탭으로 전환 합니다.
@@ -105,8 +105,8 @@ Azure Active Directory 사용자를 대상으로 하는 응용 프로그램의 �
             3.  **저장**을 누릅니다.
 2. 코드에서 다음을 수행 합니다.
     1.  사용자 고유의 Azure AD 응용 프로그램의 **응용 프로그램 ID** 및 **리디렉션 uri** 를 ADAL의 **클라이언트 ID** 및 **redirecturi** 매개 변수로 사용 해야 합니다.
-    2.  테 넌 트 정보 설정:
-        1.  응용 프로그램에서 **내 조직만**지 원하는 경우이 값을 **테 넌 트 ID** 또는 **테 넌 트 이름** (예: contoso.microsoft.com)으로 바꿉니다.
+    2.  테넌트 정보 설정:
+        1.  응용 프로그램에서 **내 조직만**지 원하는 경우이 값을 **테넌트 ID** 또는 **테넌트 이름** (예: contoso.microsoft.com)으로 바꿉니다.
         2.  응용 프로그램에서 **조직 디렉터리의 계정을**지 원하는 경우이 값을 **조직** 으로 바꿉니다.
         3.  응용 프로그램에서 **모든 Microsoft 계정 사용자**를 지 원하는 경우이 값을 **일반** 값으로 바꿉니다.
     3.  토큰 요청에서 **리소스** 를 "https://sts.mixedreality.azure.com"로 설정 합니다. 이 "리소스"는 응용 프로그램이 Azure 공간 앵커 서비스에 대 한 토큰을 요청 하 고 있음을 Azure AD에 표시 합니다.
@@ -178,7 +178,7 @@ configuration.AuthenticationToken(LR"(MyAuthenticationToken)");
     3.  **저장**을 누릅니다.
 2.  코드에서 (참고: GitHub에 포함 된 서비스 샘플을 사용할 수 있음):
     1.  사용자 고유의 Azure AD 응용 프로그램의 응용 프로그램 ID, 응용 프로그램 비밀 및 리디렉션 Uri를 ADAL의 클라이언트 ID, 비밀 및 RedirectUri 매개 변수로 사용 해야 합니다.
-    2.  사용자 고유의 AAAzure 테 넌 트 id를 ADAL의 authority 매개 변수에 추가 테 넌 트 id로 설정 합니다.
+    2.  사용자 고유의 AAAzure 테넌트 id를 ADAL의 authority 매개 변수에 추가 테넌트 id로 설정 합니다.
     3.  토큰 요청에서 **리소스** 를 "https://sts.mixedreality.azure.com"로 설정 합니다.
 
 이를 통해 백 엔드 서비스는 Azure AD 토큰을 검색할 수 있습니다. 그런 다음 클라이언트에 다시 반환 될 MR 토큰에 대해이를 교환할 수 있습니다. Azure AD 토큰을 사용 하 여 MR 토큰을 검색 하는 작업은 REST 호출을 통해 수행 됩니다. 다음은 샘플 호출입니다.

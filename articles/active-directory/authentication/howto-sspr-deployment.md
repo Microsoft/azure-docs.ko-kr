@@ -263,7 +263,7 @@ SSPR는 일반적으로 사용자 문제를 만들지 않지만, 발생할 수 �
 
 * 그룹의 경우 SSPR 구성에서 그룹을 제거 합니다.
 
-* Everyone의 경우 Azure AD 테 넌 트에 대해 SSPR를 사용 하지 않도록 설정 합니다.
+* Everyone의 경우 Azure AD 테넌트에 대해 SSPR를 사용 하지 않도록 설정 합니다.
 
 ## <a name="deploy-sspr"></a>SSPR 배포
 

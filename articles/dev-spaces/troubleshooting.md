@@ -94,11 +94,11 @@ azure-cli                         2.0.60 *
 
 Azure Dev Spaces에서 AKS 클러스터의 API 서버에 연결할 수 없는 경우이 오류가 표시 될 수 있습니다. 
 
-AKS cluster API 서버에 대 한 액세스가 잠겨 있거나 AKS 클러스터에 대해 [API server 권한 있는 IP 주소 범위](../aks/api-server-authorized-ip-ranges.md) 를 사용 하도록 설정한 경우에는 [해당 지역에 따라 추가 범위를 허용](https://github.com/Azure/dev-spaces/tree/master/public-ips)하도록 클러스터도 [만들거나](../aks/api-server-authorized-ip-ranges.md#create-an-aks-cluster-with-api-server-authorized-ip-ranges-enabled) [업데이트](../aks/api-server-authorized-ip-ranges.md#update-a-clusters-api-server-authorized-ip-ranges) 해야 합니다.
+AKS cluster API 서버에 대한 액세스가 잠겨 있거나 AKS 클러스터에 대해 [API server 권한 있는 IP 주소 범위](../aks/api-server-authorized-ip-ranges.md) 를 사용 하도록 설정한 경우에는 [해당 지역에 따라 추가 범위를 허용](https://github.com/Azure/dev-spaces/tree/master/public-ips)하도록 클러스터도 [만들거나](../aks/api-server-authorized-ip-ranges.md#create-an-aks-cluster-with-api-server-authorized-ip-ranges-enabled) [업데이트](../aks/api-server-authorized-ip-ranges.md#update-a-clusters-api-server-authorized-ip-ranges) 해야 합니다.
 
 Kubectl 명령을 실행 하 여 API 서버를 사용할 수 있는지 확인 합니다. API 서버를 사용할 수 없는 경우 AKS 지원에 문의 하 고 API 서버가 작동 하 고 있는 경우 다시 시도 하세요.
 
-## <a name="common-issues-when-preparing-your-project-for-azure-dev-spaces"></a>Azure Dev Spaces에 대 한 프로젝트를 준비할 때 발생 하는 일반적인 문제
+## <a name="common-issues-when-preparing-your-project-for-azure-dev-spaces"></a>Azure Dev Spaces에 대한 프로젝트를 준비할 때 발생 하는 일반적인 문제
 
 ### <a name="warning-dockerfile-could-not-be-generated-due-to-unsupported-language"></a>경고 "Dockerfile은 지원 되지 않는 언어 때문에 생성할 수 없습니다."
 Azure Dev Spaces는 C# 및 Node.js에 대해 네이티브 지원을 제공합니다. 이러한 언어 중 하나로 작성 된 코드를 사용 하 여 디렉터리에서 `azds prep`를 실행 하면 Azure Dev Spaces 자동으로 적절 한 Dockerfile을 만듭니다.
@@ -137,7 +137,7 @@ Container image build failed
 
 위의 명령은 서비스의 pod가 가상 노드인 *가상 노드 aci-linux*에 할당 되었음을 보여 줍니다.
 
-이 문제를 해결 하려면 서비스에 대 한 투구 차트를 업데이트 하 여 가상 노드에서 서비스를 실행할 수 있도록 하는 *Nodeselector* 또는 *tolerations* 값을 제거 합니다. 이러한 값은 일반적으로 차트의 `values.yaml` 파일에서 정의됩니다.
+이 문제를 해결 하려면 서비스에 대한 투구 차트를 업데이트 하 여 가상 노드에서 서비스를 실행할 수 있도록 하는 *Nodeselector* 또는 *tolerations* 값을 제거 합니다. 이러한 값은 일반적으로 차트의 `values.yaml` 파일에서 정의됩니다.
 
 개발 공간을 통해 빌드 또는 디버그 하려는 서비스가 VM 노드에서 실행 되는 경우 가상 노드 기능이 활성화 된 AKS 클러스터를 계속 사용할 수 있습니다. VM 노드에서 Dev Spaces를 사용 하 여 서비스를 실행 하는 것은 기본 구성입니다.
 
@@ -147,7 +147,7 @@ Container image build failed
 
 이 문제를 해결 하려면 클러스터의 에이전트 노드를 다시 시작 합니다.
 
-### <a name="error-release-azds-identifier-spacename-servicename-failed-services-servicename-already-exists-or-pull-access-denied-for-servicename-repository-does-not-exist-or-may-require-docker-login"></a>오류 "release azds-\<identifier\>-\<spacename\>-\<servicename\> failed: 서비스 '\<servicename\>'이 (가) 이미 존재 합니다." 또는 "\<servicename\>에 대 한 끌어오기 액세스가 거부 되었습니다. 리포지토리가 없거나 ' docker 로그인 ' '이 필요할 수 있습니다.
+### <a name="error-release-azds-identifier-spacename-servicename-failed-services-servicename-already-exists-or-pull-access-denied-for-servicename-repository-does-not-exist-or-may-require-docker-login"></a>오류 "release azds-\<identifier\>-\<spacename\>-\<servicename\> failed: 서비스 '\<servicename\>'이 (가) 이미 존재 합니다." 또는 "\<servicename\>에 대한 끌어오기 액세스가 거부 되었습니다. 리포지토리가 없거나 ' docker 로그인 ' '이 필요할 수 있습니다.
 
 이러한 오류는 동일한 개발 공간 내에서 개발 공간 명령 (예: `azds up` 및 `azds down`)과 함께 직접 투구 명령 (예: `helm install`, `helm upgrade`또는 `helm delete`)을 함께 사용 하는 경우 발생할 수 있습니다. 개발자 공간에는 동일한 개발 공간에서 실행 되는 고유한 Tiller 인스턴스와 충돌 하는 자체 Tiller 인스턴스가 있기 때문에 발생 합니다.
 
@@ -258,7 +258,7 @@ Service cannot be started.
 
 Azure Dev Spaces를 사용 하 여 [AKS 클러스터를 개발 컴퓨터에 연결 하](how-to/connect.md)는 경우 개발 컴퓨터와 AKS 클러스터 간에 네트워크 트래픽이 전달 되지 않는 문제가 발생할 수 있습니다.
 
-개발 컴퓨터를 AKS 클러스터에 연결 하는 경우 개발 컴퓨터의 `hosts` 파일을 수정 하 여 AKS 클러스터와 개발 컴퓨터 간에 네트워크 트래픽을 전달 Azure Dev Spaces. Azure Dev Spaces 호스트 이름으로 대체 하는 Kubernetes 서비스의 주소를 사용 하 여 `hosts`에 항목을 만듭니다. 이 항목은 개발 컴퓨터와 AKS 클러스터 간에 네트워크 트래픽을 전송 하기 위해 포트 전달과 함께 사용 됩니다. 개발 컴퓨터의 서비스가 교체할 Kubernetes 서비스의 포트와 충돌 하는 경우에는 Azure Dev Spaces Kubernetes 서비스에 대 한 네트워크 트래픽을 전달할 수 없습니다. 예를 들어 *Windows BranchCache* 서비스는 일반적으로 *0.0.0.0:80*에 바인딩되고,이로 인해 모든 로컬 ip의 포트 80에 대 한 충돌이 발생 합니다.
+개발 컴퓨터를 AKS 클러스터에 연결 하는 경우 개발 컴퓨터의 `hosts` 파일을 수정 하 여 AKS 클러스터와 개발 컴퓨터 간에 네트워크 트래픽을 전달 Azure Dev Spaces. Azure Dev Spaces 호스트 이름으로 대체 하는 Kubernetes 서비스의 주소를 사용 하 여 `hosts`에 항목을 만듭니다. 이 항목은 개발 컴퓨터와 AKS 클러스터 간에 네트워크 트래픽을 전송 하기 위해 포트 전달과 함께 사용 됩니다. 개발 컴퓨터의 서비스가 교체할 Kubernetes 서비스의 포트와 충돌 하는 경우에는 Azure Dev Spaces Kubernetes 서비스에 대한 네트워크 트래픽을 전달할 수 없습니다. 예를 들어 *Windows BranchCache* 서비스는 일반적으로 *0.0.0.0:80*에 바인딩되고,이로 인해 모든 로컬 ip의 포트 80에 대한 충돌이 발생 합니다.
 
 이 문제를 해결 하려면 바꾸려는 Kubernetes 서비스의 포트와 충돌 하는 서비스나 프로세스를 중지 해야 합니다. *Netstat*와 같은 도구를 사용 하 여 개발 컴퓨터에서 충돌 하는 서비스 또는 프로세스를 검사할 수 있습니다.
 
@@ -288,17 +288,17 @@ Azure Dev Spaces용 VS Code 확장은 최신 버전이지만 Azure Dev Spaces CL
 * [Mac](https://aka.ms/get-azds-mac)
 * [Linux](https://aka.ms/get-azds-linux)
 
-### <a name="error-failed-to-find-debugger-extension-for-typecoreclr"></a>오류: "형식에 대 한 디버거 확장을 찾지 못했습니다: coreclr"
+### <a name="error-failed-to-find-debugger-extension-for-typecoreclr"></a>오류: "형식에 대한 디버거 확장을 찾지 못했습니다: coreclr"
 
-Visual Studio Code 디버거를 실행할 때이 오류가 표시 될 수 있습니다. 개발 컴퓨터에 VS Code 확장 프로그램이 C# 설치 되어 있지 않을 수 있습니다. 확장 C# 에는 CoreCLR (.net Core)에 대 한 디버깅 지원이 포함 됩니다.
+Visual Studio Code 디버거를 실행할 때이 오류가 표시 될 수 있습니다. 개발 컴퓨터에 VS Code 확장 프로그램이 C# 설치 되어 있지 않을 수 있습니다. 확장 C# 에는 CoreCLR (.net Core)에 대한 디버깅 지원이 포함 됩니다.
 
 이 문제를 해결 하려면 [ C#용 VS Code 확장 ](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)을 설치 합니다.
 
 ### <a name="error-configured-debug-type-coreclr-is-not-supported"></a>"구성 된 디버그 형식 ' coreclr '은 지원 되지 않습니다." 오류
 
-Visual Studio Code 디버거를 실행할 때이 오류가 표시 될 수 있습니다. 개발 컴퓨터에 설치 된 Azure Dev Spaces에 대 한 VS Code 확장이 없을 수 있습니다.
+Visual Studio Code 디버거를 실행할 때이 오류가 표시 될 수 있습니다. 개발 컴퓨터에 설치 된 Azure Dev Spaces에 대한 VS Code 확장이 없을 수 있습니다.
 
-이 문제를 해결 하려면 [Azure Dev Spaces에 대 한 VS Code 확장](get-started-netcore.md)을 설치 합니다.
+이 문제를 해결 하려면 [Azure Dev Spaces에 대한 VS Code 확장](get-started-netcore.md)을 설치 합니다.
 
 ### <a name="error-invalid-cwd-value-src-the-system-cannot-find-the-file-specified-or-launch-program-srcpath-to-project-binary-does-not-exist"></a>"Cwd ' 값 '/src ' 값이 잘못 되었습니다. 시스템은 지정된 파일을 찾을 수 없습니다." 또는 "launch: program '/src/[프로젝트 이진 경로]'이(가) 존재하지 않습니다."가 발생합니다.
 
@@ -316,7 +316,7 @@ Visual Studio Code 디버거를 실행할 때이 오류가 표시 될 수 있습
 
 이 오류는 디버거를 사용 하 여 연결 하려고 하는 node.js 응용 프로그램과 함께 pod를 실행 하는 노드가 *max_user_watches inotify* 값을 초과 하는 경우에 발생 합니다. 경우에 따라 [ *max_user_watches inotify* 의 기본값이 너무 작아 pod에 직접 디버거를 연결 하](https://github.com/Azure/AKS/issues/772)는 것을 처리할 수 없는 경우도 있습니다.
 
-이 문제에 대 한 임시 해결 방법은 클러스터의 각 노드에서 *max_user_watches inotify* 의 값을 늘리고 해당 노드를 다시 시작 하 여 변경 내용을 적용 하는 것입니다.
+이 문제에 대한 임시 해결 방법은 클러스터의 각 노드에서 *max_user_watches inotify* 의 값을 늘리고 해당 노드를 다시 시작 하 여 변경 내용을 적용 하는 것입니다.
 
 ## <a name="other-common-issues"></a>그 외 일반적인 문제
 
@@ -326,7 +326,7 @@ Visual Studio Code 디버거를 실행할 때이 오류가 표시 될 수 있습
 
 이 문제를 해결하려면
 
-1. `azds.exe`에 대 한% ProgramFiles%/Microsoft SDKs\Azure\Azure Dev Spaces CLI 위치를 확인 합니다. 위치가 있는 경우 해당 위치를 PATH 환경 변수에 추가합니다.
+1. `azds.exe`에 대한% ProgramFiles%/Microsoft SDKs\Azure\Azure Dev Spaces CLI 위치를 확인 합니다. 위치가 있는 경우 해당 위치를 PATH 환경 변수에 추가합니다.
 2. `azds.exe` 설치 되지 않은 경우 다음 명령을 실행 합니다.
 
     ```cmd
@@ -335,13 +335,13 @@ Visual Studio Code 디버거를 실행할 때이 오류가 표시 될 수 있습
 
 ### <a name="authorization-error-microsoftdevspacesregisteraction"></a>"Microsoft DevSpaces/register/action" 권한 부여 오류
 
-Azure Dev Spaces를 관리하려면 Azure 구독에서 ‘owner’ 또는 ‘contributor’ 액세스 권한이 있어야 합니다. Dev 공간을 관리 하려는 경우 연결 된 Azure 구독에 대 한 *소유자* 또는 *참가자* 액세스 권한이 없으면 권한 부여 오류가 표시 될 수 있습니다. 예:
+Azure Dev Spaces를 관리하려면 Azure 구독에서 ‘owner’ 또는 ‘contributor’ 액세스 권한이 있어야 합니다. Dev 공간을 관리 하려는 경우 연결 된 Azure 구독에 대한 *소유자* 또는 *참가자* 액세스 권한이 없으면 권한 부여 오류가 표시 될 수 있습니다. 예:
 
 ```console
 The client '<User email/Id>' with object id '<Guid>' does not have authorization to perform action 'Microsoft.DevSpaces/register/action' over scope '/subscriptions/<Subscription Id>'.
 ```
 
-이 문제를 해결 하려면 Azure 구독에 대 한 *소유자* 또는 *참가자* 액세스 권한이 있는 계정을 사용 하 여 `Microsoft.DevSpaces` 네임 스페이스를 수동으로 등록 합니다.
+이 문제를 해결 하려면 Azure 구독에 대한 *소유자* 또는 *참가자* 액세스 권한이 있는 계정을 사용 하 여 `Microsoft.DevSpaces` 네임 스페이스를 수동으로 등록 합니다.
 
 ```console
 az provider register --namespace Microsoft.DevSpaces
@@ -349,7 +349,7 @@ az provider register --namespace Microsoft.DevSpaces
 
 ### <a name="new-pods-arent-starting"></a>새 pod 시작 되지 않음
 
-Kubernetes 이니셜라이저는 클러스터의 *클러스터 관리자* 역할에 대 한 RBAC 권한 변경으로 인해 new Pod에 PodSpec을 적용할 수 없습니다. 또한 새 pod에 잘못 된 PodSpec 있을 수 있습니다. 예를 들어 pod와 연결 된 서비스 계정이 더 이상 존재 하지 않습니다. 이니셜라이저 문제로 인해 *보류* 상태에 있는 pod을 보려면 `kubectl get pods` 명령을 사용 합니다.
+Kubernetes 이니셜라이저는 클러스터의 *클러스터 관리자* 역할에 대한 RBAC 권한 변경으로 인해 new Pod에 PodSpec을 적용할 수 없습니다. 또한 새 pod에 잘못 된 PodSpec 있을 수 있습니다. 예를 들어 pod와 연결 된 서비스 계정이 더 이상 존재 하지 않습니다. 이니셜라이저 문제로 인해 *보류* 상태에 있는 pod을 보려면 `kubectl get pods` 명령을 사용 합니다.
 
 ```bash
 kubectl get pods --all-namespaces --include-uninitialized
@@ -375,11 +375,11 @@ azds controller create --name <cluster name> -g <resource group name> -tn <clust
 
 컨트롤러를 다시 설치한 후 pod를 다시 배포 합니다.
 
-### <a name="incorrect-rbac-permissions-for-calling-dev-spaces-controller-and-apis"></a>Dev Spaces 컨트롤러 및 Api 호출에 대 한 RBAC 권한이 잘못 되었습니다.
+### <a name="incorrect-rbac-permissions-for-calling-dev-spaces-controller-and-apis"></a>Dev Spaces 컨트롤러 및 Api 호출에 대한 RBAC 권한이 잘못 되었습니다.
 
-Azure Dev Spaces 컨트롤러에 액세스 하는 사용자는 AKS 클러스터에서 admin *kubeconfig* 를 읽을 수 있는 권한이 있어야 합니다. 예를 들어이 권한은 [기본 제공 Azure Kubernetes Service 클러스터 관리자 역할](../aks/control-kubeconfig-access.md#available-cluster-roles-permissions)에서 사용할 수 있습니다. 또한 Azure Dev Spaces 컨트롤러에 액세스 하는 사용자에 게는 컨트롤러에 대 한 *참가자* 또는 *소유자* RBAC 역할이 있어야 합니다. AKS 클러스터에 대 한 사용자 권한 업데이트에 대 한 자세한 내용은 [여기](../aks/control-kubeconfig-access.md#assign-role-permissions-to-a-user-or-group)에서 제공 됩니다.
+Azure Dev Spaces 컨트롤러에 액세스 하는 사용자는 AKS 클러스터에서 admin *kubeconfig* 를 읽을 수 있는 권한이 있어야 합니다. 예를 들어이 권한은 [기본 제공 Azure Kubernetes Service 클러스터 관리자 역할](../aks/control-kubeconfig-access.md#available-cluster-roles-permissions)에서 사용할 수 있습니다. 또한 Azure Dev Spaces 컨트롤러에 액세스 하는 사용자에 게는 컨트롤러에 대한 *참가자* 또는 *소유자* RBAC 역할이 있어야 합니다. AKS 클러스터에 대한 사용자 권한 업데이트에 대한 자세한 내용은 [여기](../aks/control-kubeconfig-access.md#assign-role-permissions-to-a-user-or-group)에서 제공 됩니다.
 
-컨트롤러에 대 한 사용자의 RBAC 역할을 업데이트 하려면:
+컨트롤러에 대한 사용자의 RBAC 역할을 업데이트 하려면:
 
 1. [https://portal.azure.com](https://portal.azure.com ) 에서 Azure Portal에 로그인합니다.
 1. 일반적으로 AKS 클러스터와 동일한 컨트롤러를 포함 하는 리소스 그룹으로 이동 합니다.
@@ -444,7 +444,7 @@ Azure Dev Spaces 컨트롤러에 액세스 하는 사용자는 AKS 클러스터�
 
 개발 공간에서 서비스를 실행 하는 경우 해당 서비스의 pod가 [계측을 위한 추가 컨테이너와 함께 삽입](how-dev-spaces-works.md#prepare-your-aks-cluster) 되며 pod의 모든 컨테이너에는 수평 pod 자동 크기 조정에 대해 설정 된 리소스 제한 및 요청이 있어야 합니다.
 
-이 문제를 해결 하려면 리소스 요청을 적용 하 고 삽입 된 Dev Spaces 컨테이너에 제한을 적용 합니다. Pod 사양에 `azds.io/proxy-resources` 주석을 추가 하 여 삽입 된 컨테이너에 대 한 리소스 요청 및 제한을 적용할 수 있습니다. 프록시에 대 한 컨테이너 사양의 리소스 섹션을 나타내는 JSON 개체로 값을 설정 해야 합니다.
+이 문제를 해결 하려면 리소스 요청을 적용 하 고 삽입 된 Dev Spaces 컨테이너에 제한을 적용 합니다. Pod 사양에 `azds.io/proxy-resources` 주석을 추가 하 여 삽입 된 컨테이너에 대한 리소스 요청 및 제한을 적용할 수 있습니다. 프록시에 대한 컨테이너 사양의 리소스 섹션을 나타내는 JSON 개체로 값을 설정 해야 합니다.
 
 다음은 pod 사양에 적용 되는 프록시 리소스 주석의 예입니다.
 ```
@@ -455,7 +455,7 @@ azds.io/proxy-resources: "{\"Limits\": {\"cpu\": \"300m\",\"memory\": \"400Mi\"}
 
 Azure Dev Spaces를 사용 하도록 설정 하려는 pod를 실행 하는 기존 AKS 클러스터 및 네임 스페이스가 있을 수 있습니다.
 
-AKS 클러스터에서 기존 네임 스페이스에 대 한 Azure Dev Spaces를 사용 하도록 설정 하려면 `use-dev-spaces`를 실행 하 고 `kubectl`를 사용 하 여 해당 네임 스페이스의 모든 pod를 다시 시작 합니다.
+AKS 클러스터에서 기존 네임 스페이스에 대한 Azure Dev Spaces를 사용 하도록 설정 하려면 `use-dev-spaces`를 실행 하 고 `kubectl`를 사용 하 여 해당 네임 스페이스의 모든 pod를 다시 시작 합니다.
 
 ```console
 az aks get-credentials --resource-group MyResourceGroup --name MyAKS
@@ -467,14 +467,14 @@ Pod가 다시 시작 되 면 Azure Dev Spaces에서 기존 네임 스페이스 �
 
 ### <a name="enable-azure-dev-spaces-on-aks-cluster-with-restricted-egress-traffic-for-cluster-nodes"></a>클러스터 노드에 대해 제한 된 송신 트래픽으로 AKS 클러스터에서 Azure Dev Spaces 사용
 
-클러스터 노드의 송신 트래픽이 제한 되는 AKS 클러스터에 대 한 Azure Dev Spaces를 사용 하도록 설정 하려면 다음 Fqdn을 허용 해야 합니다.
+클러스터 노드의 송신 트래픽이 제한 되는 AKS 클러스터에 대한 Azure Dev Spaces를 사용 하도록 설정 하려면 다음 Fqdn을 허용 해야 합니다.
 
 | FQDN                                    | Port      | 사용      |
 |-----------------------------------------|-----------|----------|
 | cloudflare.docker.com | HTTPS:443 | Linux 알파인 및 기타 Azure Dev Spaces 이미지를 꺼내려면 |
 | gcr.io | HTTP: 443 | 투구/tiller 이미지를 꺼내려면|
 | storage.googleapis.com | HTTP: 443 | 투구/tiller 이미지를 꺼내려면|
-| azds-<guid>.<location>azds.io | HTTPS:443 | 컨트롤러에 대 한 Azure Dev Spaces 백 엔드 서비스와 통신 하는 데 사용 됩니다. 정확한 FQDN 은% USERPROFILE%\.azds\settings.json의 "dataplaneFqdn"에서 찾을 수 있습니다.|
+| azds-<guid>.<location>azds.io | HTTPS:443 | 컨트롤러에 대한 Azure Dev Spaces 백 엔드 서비스와 통신 하는 데 사용 됩니다. 정확한 FQDN 은% USERPROFILE%\.azds\settings.json의 "dataplaneFqdn"에서 찾을 수 있습니다.|
 
 ### <a name="error-could-not-find-the-cluster-cluster-in-subscription-subscriptionid"></a>"구독 \<subscriptionId\>에서 클러스터\> 클러스터 \<를 찾을 수 없습니다." 오류가 발생 했습니다.
 
@@ -482,5 +482,5 @@ Kubeconfig 파일이 Azure Dev Spaces 클라이언트 쪽 도구에서 사용 �
 
 이 문제를 해결하려면
 
-* `az aks use-dev-spaces -g <resource group name> -n <cluster name>`를 사용 하 여 현재 컨텍스트를 업데이트 합니다. 이 명령을 사용 하도록 설정 하지 않은 경우에도 AKS 클러스터에 대 한 Azure Dev Spaces를 사용할 수 있습니다. 또는 `kubectl config use-context <cluster name>`를 사용 하 여 현재 컨텍스트를 업데이트할 수 있습니다.
+* `az aks use-dev-spaces -g <resource group name> -n <cluster name>`를 사용 하 여 현재 컨텍스트를 업데이트 합니다. 이 명령을 사용 하도록 설정 하지 않은 경우에도 AKS 클러스터에 대한 Azure Dev Spaces를 사용할 수 있습니다. 또는 `kubectl config use-context <cluster name>`를 사용 하 여 현재 컨텍스트를 업데이트할 수 있습니다.
 * `az account show`를 사용 하 여 대상으로 지정 하는 현재 Azure 구독을 표시 하 고 올바른지 확인 합니다. `az account set`를 사용 하 여 대상으로 지정 하는 구독을 변경할 수 있습니다.

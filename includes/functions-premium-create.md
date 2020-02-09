@@ -48,7 +48,7 @@ ms.locfileid: "76021088"
     | ------------ | ---------------- | ----------- |
     | **[Storage 계정](../articles/storage/common/storage-account-create.md)** |  전역적으로 고유한 이름 |  함수 앱에서 사용하는 스토리지 계정을 만듭니다. Storage 계정 이름은 3자에서 24자 사이여야 하고 숫자 및 소문자만 포함할 수 있습니다. 기존 계정을 사용할 수도 있습니다. 여기서는 [스토리지 계정 요구 사항](../articles/azure-functions/functions-scale.md#storage-account-requirements)을 충족해야 합니다. |
     |**운영 체제**| 기본 설정 운영 체제 | 운영 체제는 런타임 스택 선택에 따라 미리 선택되지만 필요한 경우 설정을 변경할 수 있습니다. |
-    | **[계획](../articles/azure-functions/functions-scale.md)** | 프리미엄 | 계획 유형에 대해 **프리미엄 (미리 보기)** 을 선택 하 고 *Windows 요금제* 및 *Sku 및 크기* 선택에 대 한 기본값을 선택 합니다. |
+    | **[계획](../articles/azure-functions/functions-scale.md)** | 프리미엄 | 계획 유형에 대해 **프리미엄 (미리 보기)** 을 선택 하 고 *Windows 요금제* 및 *Sku 및 크기* 선택에 대한 기본값을 선택 합니다. |
 
     **다음: 모니터링 >** 단추를 선택 합니다.
 

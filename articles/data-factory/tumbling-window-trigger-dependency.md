@@ -121,7 +121,7 @@ ms.locfileid: "74926686"
 ```
 ## <a name="usage-scenarios-and-examples"></a>사용 시나리오 및 예제
 
-다음은 연속 window 종속성 속성의 시나리오 및 사용에 대 한 그림입니다.
+다음은 연속 window 종속성 속성의 시나리오 및 사용에 대한 그림입니다.
 
 ### <a name="dependency-offset"></a>종속성 오프셋
 

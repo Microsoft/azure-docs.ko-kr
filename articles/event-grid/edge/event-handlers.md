@@ -23,9 +23,9 @@ ms.locfileid: "76849748"
 
 ## <a name="webhook"></a>WebHook
 
-WebHook 끝점에 게시 하려면 `endpointType` `WebHook`으로 설정 하 고 다음을 제공 합니다.
+WebHook 엔드포인트에 게시 하려면 `endpointType` `WebHook`으로 설정 하 고 다음을 제공 합니다.
 
-* endpointUrl: WebHook 끝점 URL
+* endpointUrl: WebHook 엔드포인트 URL
 
     ```json
         {
@@ -42,7 +42,7 @@ WebHook 끝점에 게시 하려면 `endpointType` `WebHook`으로 설정 하 고
 
 ## <a name="azure-event-grid"></a>Azure Event Grid
 
-Azure Event Grid 클라우드 끝점에 게시 하려면 `endpointType`를 `eventGrid`로 설정 하 고 다음을 제공 합니다.
+Azure Event Grid 클라우드 엔드포인트에 게시 하려면 `endpointType`를 `eventGrid`로 설정 하 고 다음을 제공 합니다.
 
 * endpointUrl: 클라우드의 Event Grid 토픽 URL
 * sasKey: Event Grid 토픽의 SAS 키

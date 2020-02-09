@@ -16,9 +16,9 @@ ms.locfileid: "74548334"
 ---
 # <a name="streaming-ingestion-preview"></a>스트리밍 수집 (미리 보기)
 
-스트리밍 수집은 가변 볼륨 데이터의 수집 시간이 10 초 미만인 낮은 대기 시간이 필요한 시나리오를 대상으로 합니다. 각 테이블에 대 한 데이터 스트림이 상대적으로 작고 (초당 몇 개의 레코드), 전체 데이터 수집 볼륨이 많은 경우 (초당 수천 개의 레코드) 하나 이상의 데이터베이스에서 많은 테이블의 작업 처리를 최적화 하는 데 사용 됩니다.
+스트리밍 수집은 가변 볼륨 데이터의 수집 시간이 10 초 미만인 낮은 대기 시간이 필요한 시나리오를 대상으로 합니다. 각 테이블에 대한 데이터 스트림이 상대적으로 작고 (초당 몇 개의 레코드), 전체 데이터 수집 볼륨이 많은 경우 (초당 수천 개의 레코드) 하나 이상의 데이터베이스에서 많은 테이블의 작업 처리를 최적화 하는 데 사용 됩니다.
 
-데이터 양이 테이블당 초당 1mb 이상 증가 하는 경우 스트리밍 수집 대신 클래식 (bulk) 수집을 사용 합니다. 수집의 다양 한 방법에 대 한 자세한 내용은 [데이터 수집 개요](/azure/data-explorer/ingest-data-overview) 를 참조 하세요.
+데이터 양이 테이블당 초당 1mb 이상 증가 하는 경우 스트리밍 수집 대신 클래식 (bulk) 수집을 사용 합니다. 수집의 다양 한 방법에 대한 자세한 내용은 [데이터 수집 개요](/azure/data-explorer/ingest-data-overview) 를 참조 하세요.
 
 > [!NOTE]
 > 스트리밍 수집은 다음 기능을 지원 하지 않습니다.
@@ -39,7 +39,7 @@ ms.locfileid: "74548334"
  
     ![스트리밍 수집](media/ingest-data-streaming/streaming-ingestion-on.png)
  
-1. [웹 UI](https://dataexplorer.azure.com/)에서 스트리밍 데이터를 수신 하는 테이블 또는 데이터베이스에 대 한 [스트리밍 수집 정책을](/azure/kusto/concepts/streamingingestionpolicy) 정의 합니다. 
+1. [웹 UI](https://dataexplorer.azure.com/)에서 스트리밍 데이터를 수신 하는 테이블 또는 데이터베이스에 대한 [스트리밍 수집 정책을](/azure/kusto/concepts/streamingingestionpolicy) 정의 합니다. 
 
     > [!NOTE]
     > * 정책이 데이터베이스 수준에서 정의 된 경우 데이터베이스의 모든 테이블에 대해 스트리밍 수집을 사용할 수 있습니다.
@@ -50,7 +50,7 @@ ms.locfileid: "74548334"
 지원 되는 스트리밍 수집 형식은 다음 두 가지입니다.
 
 * 데이터 원본으로 사용 되는 [이벤트 허브](/azure/data-explorer/ingest-data-event-hub)
-* 사용자 지정 수집을 사용 하려면 Azure 데이터 탐색기 클라이언트 라이브러리 중 하나를 사용 하는 응용 프로그램을 작성 해야 합니다. 샘플 응용 프로그램에 대 한 [스트리밍 수집 샘플](https://github.com/Azure/azure-kusto-samples-dotnet/tree/master/client/StreamingIngestionSample) 을 참조 하세요.
+* 사용자 지정 수집을 사용 하려면 Azure 데이터 탐색기 클라이언트 라이브러리 중 하나를 사용 하는 응용 프로그램을 작성 해야 합니다. 샘플 응용 프로그램에 대한 [스트리밍 수집 샘플](https://github.com/Azure/azure-kusto-samples-dotnet/tree/master/client/StreamingIngestionSample) 을 참조 하세요.
 
 ### <a name="choose-the-appropriate-streaming-ingestion-type"></a>적절 한 스트리밍 수집 유형 선택
 

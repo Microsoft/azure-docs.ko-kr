@@ -1,6 +1,6 @@
 ---
-title: IoT 에이전트에 대 한 Linux C 에이전트 Azure Security Center 설치 및 배포 가이드 | Microsoft Docs
-description: 32 비트 및 64 비트 Linux에서 IoT 에이전트에 대 한 Azure Security Center를 설치 하는 방법에 대해 알아봅니다.
+title: IoT 에이전트에 대한 Linux C 에이전트 Azure Security Center 설치 및 배포 가이드 | Microsoft Docs
+description: 32 비트 및 64 비트 Linux에서 IoT 에이전트에 대한 Azure Security Center를 설치 하는 방법에 대해 알아봅니다.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -22,9 +22,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 08/06/2019
 ms.locfileid: "68812738"
 ---
-# <a name="deploy-azure-security-center-for-iot-c-based-security-agent-for-linux"></a>Linux 용 IoT C 기반 보안 에이전트에 대 한 Azure Security Center 배포
+# <a name="deploy-azure-security-center-for-iot-c-based-security-agent-for-linux"></a>Linux 용 IoT C 기반 보안 에이전트에 대한 Azure Security Center 배포
 
-이 가이드에서는 Linux에서 IoT C 기반 보안 에이전트에 대 한 Azure Security Center를 설치 하 고 배포 하는 방법을 설명 합니다.
+이 가이드에서는 Linux에서 IoT C 기반 보안 에이전트에 대한 Azure Security Center를 설치 하 고 배포 하는 방법을 설명 합니다.
 
 이 가이드에서는 다음 작업 방법을 배웁니다. 
 > [!div class="checklist"]
@@ -91,8 +91,8 @@ ms.locfileid: "68812738"
 
 
 ## <a name="next-steps"></a>다음 단계
-- IoT 서비스에 대 한 Azure Security Center [개요](overview.md) 를 참조 하십시오.
-- IoT [아키텍처](architecture.md) 에 대 한 Azure Security Center에 대해 자세히 알아보기
+- IoT 서비스에 대한 Azure Security Center [개요](overview.md) 를 참조 하십시오.
+- IoT [아키텍처](architecture.md) 에 대한 Azure Security Center에 대해 자세히 알아보기
 - [서비스](quickstart-onboard-iot-hub.md)를 사용하도록 설정합니다.
 - [FAQ](resources-frequently-asked-questions.md)를 참조합니다.
 - [보안 경고](concept-security-alerts.md)를 살펴봅니다.

@@ -15,7 +15,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 09/18/2019
 ms.locfileid: "67080917"
 ---
-| **Resource** | **기본 제한** | **최대 한도** |
+| **Resource** | **기본 제한** | **최대한도** |
 | --- | --- | --- |
 | 구독 당 지역별 Azure Batch 계정 | 1-3 |50 |
 | Batch 계정당 전용 코어 | 90-900 | 지원 문의 |

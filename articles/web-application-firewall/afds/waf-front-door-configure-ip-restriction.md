@@ -1,6 +1,6 @@
 ---
 title: Azure Front 도어 서비스에 대 한 IP 제한 WAF 규칙 구성
-description: 기존 Azure Front 도어 서비스 끝점에 대 한 IP 주소를 제한 하도록 웹 응용 프로그램 방화벽 규칙을 구성 하는 방법을 알아봅니다.
+description: 기존 Azure Front 도어 서비스 엔드포인트에 대 한 IP 주소를 제한 하도록 웹 응용 프로그램 방화벽 규칙을 구성 하는 방법을 알아봅니다.
 services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall

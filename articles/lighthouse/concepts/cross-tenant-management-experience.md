@@ -15,7 +15,7 @@ ms.locfileid: "75706991"
 서비스 공급자는 [Azure 위임 리소스 관리](../concepts/azure-delegated-resource-management.md)를 사용하여 [Azure Portal](https://portal.azure.com)의 고유한 테넌트 내에서 여러 고객에 대한 Azure 리소스를 관리할 수 있습니다. 대부분의 작업 및 서비스는 관리형 테넌트의 위임된 Azure 리소스에서 수행할 수 있습니다. 이 문서에서는 Azure 위임 리소스 관리를 효과적으로 수행할 수 있는 고급 시나리오 중 일부에 대해 설명합니다.
 
 > [!NOTE]
-> Azure 위임 된 리소스 관리는 [여러 AZURE AD 테 넌 트가 있는 엔터프라이즈 내에서](enterprise.md) 사용 하 여 테 넌 트 간 관리를 간소화할 수도 있습니다.
+> Azure 위임 된 리소스 관리는 [여러 AZURE AD 테넌트가 있는 엔터프라이즈 내에서](enterprise.md) 사용 하 여 테넌트 간 관리를 간소화할 수도 있습니다.
 
 ## <a name="understanding-customer-tenants"></a>고객 테넌트 이해
 
@@ -64,7 +64,7 @@ Azure 위임 리소스 관리를 사용하면 다른 테넌트의 다른 계정�
 
 - 모든 구독에서 경고를 볼 수 있는 기능을 사용하여 위임된 구독에 대한 경고를 봅니다.
 - 위임된 구독의 활동 로그 세부 정보를 봅니다.
-- Log analytics: 여러 테 넌 트의 원격 고객 작업 영역에서 데이터 쿼리
+- Log analytics: 여러 테넌트의 원격 고객 작업 영역에서 데이터 쿼리
 - 웹 후크를 통해 서비스 공급자 테넌트에서 Azure Automation Runbook 또는 Azure Functions와 같은 자동화를 트리거하는 고객 테넌트에서 경고를 만듭니다.
 
 [Azure Policy](../../governance/policy/index.yml):
@@ -99,7 +99,7 @@ Azure 위임 리소스 관리를 사용하면 다른 테넌트의 다른 계정�
 [Azure Sentinel](../../sentinel/multiple-tenants-service-providers.md):
 
 - [고객 테 넌](../../sentinel/multiple-tenants-service-providers.md) 트에서 Azure 센티널 리소스 관리
-- [여러 고객 테 넌 트에서 공격을 추적 하 고 보안 경고 확인](https://techcommunity.microsoft.com/t5/azure-sentinel/using-azure-lighthouse-and-azure-sentinel-to-monitor-across/ba-p/1043899)
+- [여러 고객 테넌트에서 공격을 추적 하 고 보안 경고 확인](https://techcommunity.microsoft.com/t5/azure-sentinel/using-azure-lighthouse-and-azure-sentinel-to-monitor-across/ba-p/1043899)
 
 [Azure Service Health](../../service-health/index.yml):
 

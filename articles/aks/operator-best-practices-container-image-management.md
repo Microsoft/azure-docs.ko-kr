@@ -24,7 +24,7 @@ AKS(Azure Kubernetes Service)에서 애플리케이션을 개발 및 실행할 �
 > * 이미지 취약성 검색 및 해결
 > * 기본 이미지가 업데이트될 때 컨테이너 이미지를 자동으로 트리거하고 다시 배포
 
-[클러스터 보안][best-practices-cluster-security] 및 [pod 보안][best-practices-pod-security]에 대 한 모범 사례를 읽을 수도 있습니다.
+[클러스터 보안][best-practices-cluster-security] 및 [pod 보안][best-practices-pod-security]에 대한 모범 사례를 읽을 수도 있습니다.
 
 [Security Center의 컨테이너 보안][security-center-containers] 을 사용 하 여 컨테이너에서 취약점을 검색 하는 데 도움이 될 수도 있습니다.  또한 취약점 으로부터 이미지 및 레지스트리를 보호 하는 데 도움이 되는 Security Center와 [통합 Azure Container Registry][security-center-acr] 있습니다.
 
@@ -46,7 +46,7 @@ AKS(Azure Kubernetes Service)에서 애플리케이션을 개발 및 실행할 �
 
 또한 기본 이미지가 업데이트되면 Azure Container Registry 작업도 컨테이너 이미지를 자동으로 업데이트할 수 있습니다. 이 기능을 사용하여 적은 수의 기본 이미지를 빌드하고, 버그 및 보안 수정 사항으로 정기적으로 업데이트할 수 있습니다.
 
-기본 이미지 업데이트에 대 한 자세한 내용은 [Azure Container Registry 작업을 사용 하 여 기본 이미지 업데이트 시 이미지 빌드 자동화][acr-base-image-update]를 참조 하세요.
+기본 이미지 업데이트에 대한 자세한 내용은 [Azure Container Registry 작업을 사용 하 여 기본 이미지 업데이트 시 이미지 빌드 자동화][acr-base-image-update]를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

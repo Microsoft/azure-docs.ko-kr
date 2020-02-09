@@ -1,6 +1,6 @@
 ---
-title: Azure Data Box Edge, Azure Data Box Gateway에 대 한 지원 티켓을 기록 합니다. Microsoft Docs
-description: Data Box Edge 또는 Data Box Gateway 주문과 관련 된 문제에 대 한 지원 요청을 기록 하는 방법에 대해 알아봅니다.
+title: Azure Data Box Edge, Azure Data Box Gateway에 대한 지원 티켓을 기록 합니다. Microsoft Docs
+description: Data Box Edge 또는 Data Box Gateway 주문과 관련 된 문제에 대한 지원 요청을 기록 하는 방법에 대해 알아봅니다.
 services: databox
 author: alkohli
 ms.service: databox
@@ -15,7 +15,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 07/19/2019
 ms.locfileid: "68361740"
 ---
-# <a name="open-a-support-ticket-for-azure-data-box-edge-and-azure-data-box-gateway"></a>Azure Data Box Edge 및 Azure Data Box Gateway에 대 한 지원 티켓을 엽니다.
+# <a name="open-a-support-ticket-for-azure-data-box-edge-and-azure-data-box-gateway"></a>Azure Data Box Edge 및 Azure Data Box Gateway에 대한 지원 티켓을 엽니다.
 
 이 문서는 Azure Data Box Edge/Azure Data Box Gateway 서비스에 의해 관리 되는 Azure Data Box Edge 및 Azure Data Box Gateway에 적용 됩니다. 서비스에 문제가 발생 하는 경우 기술 지원을 요청 하는 서비스를 만들 수 있습니다. 이 문서에서는 다음을 안내합니다.
 
@@ -34,7 +34,7 @@ ms.locfileid: "68361740"
     2. **구독**을 선택합니다.
     3. **서비스**에서 **내 서비스**를 확인합니다. 드롭다운 목록에서 **Data Box Edge을 선택 하 고 Data Box Gateway**합니다.
     4. **리소스**를 선택 합니다. 이는 주문의 이름에 해당 합니다.
-    5. 발생 한 문제에 대 한 간략 한 **요약** 을 제공 합니다. 
+    5. 발생 한 문제에 대한 간략 한 **요약** 을 제공 합니다. 
     6. **문제 유형**을 선택 합니다.
     7. 선택한 문제 유형에 따라 해당 하는 **문제 하위 유형을**선택 합니다.
     8. 완료되면 **다음: 솔루션 > >** .
@@ -44,7 +44,7 @@ ms.locfileid: "68361740"
 3. **세부 정보** 탭에서 다음 단계를 수행 합니다.
     
     1. 문제의 시작 날짜 및 시간을 제공합니다.
-    2. 문제에 대 한 **설명을** 입력 합니다.
+    2. 문제에 대한 **설명을** 입력 합니다.
     3. **파일 업로드**에서 폴더 아이콘을 선택 하 여 업로드 하려는 다른 모든 파일을 검색 합니다.
     4. **진단 정보 공유**를 선택합니다.
     5. 구독에 따라 **지원 계획이** 자동으로 채워집니다.
@@ -67,7 +67,7 @@ ms.locfileid: "68361740"
 
 이 정보는 Data Box Edge 장치에만 적용 됩니다. 하드웨어 문제를 보고 하는 프로세스는 다음과 같습니다.
 
-1. 하드웨어 문제에 대 한 Azure Portal에서 지원 티켓을 엽니다. **문제 유형**에서 **Data Box Edge 하드웨어**를 선택 합니다. **하드웨어 오류로** **문제 하위 유형을** 선택 합니다. 
+1. 하드웨어 문제에 대한 Azure Portal에서 지원 티켓을 엽니다. **문제 유형**에서 **Data Box Edge 하드웨어**를 선택 합니다. **하드웨어 오류로** **문제 하위 유형을** 선택 합니다. 
 
     ![하드웨어 문제](./media/data-box-edge-contact-microsoft-support/data-box-edge-hardware-issue-1.png)
 
@@ -75,7 +75,7 @@ ms.locfileid: "68361740"
 
 2. 하드웨어 문제인 것 Microsoft 지원 확인 하는 경우 다음 동작 중 하나가 발생 합니다. 
 
-    - 오류가 발생 한 하드웨어 파트에 대 한 FRU (필드 교체 단위)가 전송 됩니다. 현재 전원 공급 장치는 유일 하 게 지원 되는 FRU입니다. 
+    - 오류가 발생 한 하드웨어 파트에 대한 FRU (필드 교체 단위)가 전송 됩니다. 현재 전원 공급 장치는 유일 하 게 지원 되는 FRU입니다. 
     - 다른 모든 부분에서 오류가 발생 하는 경우 Microsoft는 전체 시스템 교체 (FSR) 또는 장치 교환을 수행 합니다.
 
 3. 4:30 pm 현지 시간 (월요일부터 금요일까지) 전에 지원 티켓이 발생 하는 경우 온사이트 기술자는 FRU 또는 전체 장치 교체를 수행할 수 있도록 다음 영업일의 위치에 발송 됩니다.

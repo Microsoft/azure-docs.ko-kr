@@ -37,7 +37,7 @@ ms.locfileid: "74280897"
 를 정의 하는 것 외에도 미리 작성 된 [도메인](luis-how-to-use-prebuilt-domains.md)중 하나에서 미리 작성 된 의도를 사용할 수 있습니다. 
 
 ## <a name="return-all-intents-scores"></a>모든 의도의 점수 반환
-단일 의도에 하나의 발화를 할당합니다. LUIS에서 끝점에 대 한 utterance를 수신 하면 기본적으로 해당 utterance의 최상위 의도를 반환 합니다. 
+단일 의도에 하나의 발화를 할당합니다. LUIS에서 엔드포인트에 대 한 utterance를 수신 하면 기본적으로 해당 utterance의 최상위 의도를 반환 합니다. 
 
 Utterance에 대 한 모든 의도의 점수를 원하는 경우 예측 API의 쿼리 문자열에 플래그를 제공할 수 있습니다. 
 

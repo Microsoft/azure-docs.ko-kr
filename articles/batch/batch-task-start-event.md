@@ -1,6 +1,6 @@
 ---
 title: Azure Batch 작업 시작 이벤트
-description: Batch 태스크 시작 이벤트에 대 한 참조 정보입니다. 이 이벤트는 Scheduler가 컴퓨팅 노드에서 태스크를 시작하도록 예약하면 내보내집니다.
+description: Batch 태스크 시작 이벤트에 대한 참조 정보입니다. 이 이벤트는 Scheduler가 컴퓨팅 노드에서 태스크를 시작하도록 예약하면 내보내집니다.
 services: batch
 author: LauraBrenner
 manager: evansma

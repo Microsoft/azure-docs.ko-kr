@@ -1,6 +1,6 @@
 ---
 title: Microsoft id 플랫폼 ID 토큰 참조 | Microsoft Docs
-description: Azure AD v1.0 및 v2.0 (Microsoft identity platform) 끝점에서 내보낸 id_tokens를 사용 하는 방법에 대해 알아봅니다.
+description: Azure AD v1.0 및 v2.0 (Microsoft identity platform) 엔드포인트에서 내보낸 id_tokens를 사용 하는 방법에 대해 알아봅니다.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -76,7 +76,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjFMVE16YWtpaGlSbGFfOHoyQkVKVlhlV01x
 |`email` | String | `email` 클레임은 이메일 주소가 있는 게스트 계정에 대해 기본적으로 제공됩니다.  사용자 앱은 `email` [선택적 클레임](active-directory-optional-claims.md)을 사용하여 관리되는 사용자(리소스와 동일한 테넌트의 사용자)에 대한 이메일 클레임을 요청할 수 있습니다.  v2.0 엔드포인트에서 사용자 앱은 `email` OpenID Connect 범위를 요청할 수도 있지만, 클레임을 가져오기 위해 선택적 클레임 및 범위를 모두 요청할 필요는 없습니다.  이메일 클레임은 사용자의 프로필 정보에서 주소 지정이 가능한 메일만 지원합니다. |
 |`name` | String | `name` 클레임은 토큰의 주체를 식별하는, 사람이 읽을 수 있는 값을 제공합니다. 값은 고유 하지 않을 수 있으며, 변경 가능 하 고, 표시 용도로만 사용 하도록 설계 되었습니다. 이 클레임을 받으려면 `profile` 범위가 필요 합니다. |
 |`nonce`| String | Nonce는 원본에 포함된 매개 변수와 일치하며 IDP에 대한 요청을 인증합니다. 일치하지 않는 경우 애플리케이션이 토큰을 거부해야 합니다. |
-|`oid` | 문자열, GUID | 이 경우에 Microsoft ID 시스템에 있는 개체의 변경할 수 없는 식별자는 사용자 계정입니다. 이 ID는 애플리케이션에서 사용자를 고유하게 식별합니다. 동일한 사용자가 로그인한 두 개의 다른 애플리케이션은 `oid` 클레임에서 동일한 값을 받습니다. Microsoft Graph는 이 ID를 지정된 사용자 계정에 대한 `id` 속성으로 반환합니다. `oid` 여러 앱에서 사용자의 상관 관계를 지정할 수 있으므로이 클레임을 받으려면 `profile` 범위가 필요 합니다. 단일 사용자가 여러 테 넌 트에 있는 경우 사용자는 각 테 넌 트에 다른 개체 ID를 포함 합니다. 사용자가 동일한 자격 증명을 사용 하는 각 계정에 로그인 하더라도 다른 계정으로 간주 됩니다. `oid` 클레임은 GUID 이며 다시 사용할 수 없습니다. |
+|`oid` | 문자열, GUID | 이 경우에 Microsoft ID 시스템에 있는 개체의 변경할 수 없는 식별자는 사용자 계정입니다. 이 ID는 애플리케이션에서 사용자를 고유하게 식별합니다. 동일한 사용자가 로그인한 두 개의 다른 애플리케이션은 `oid` 클레임에서 동일한 값을 받습니다. Microsoft Graph는 이 ID를 지정된 사용자 계정에 대한 `id` 속성으로 반환합니다. `oid` 여러 앱에서 사용자의 상관 관계를 지정할 수 있으므로이 클레임을 받으려면 `profile` 범위가 필요 합니다. 단일 사용자가 여러 테넌트에 있는 경우 사용자는 각 테넌트에 다른 개체 ID를 포함 합니다. 사용자가 동일한 자격 증명을 사용 하는 각 계정에 로그인 하더라도 다른 계정으로 간주 됩니다. `oid` 클레임은 GUID 이며 다시 사용할 수 없습니다. |
 |`roles`| 문자열 배열 | 로그인 하는 사용자에 게 할당 된 역할 집합입니다. |
 |`rh` | 불투명 문자열 |Azure에서 토큰의 유효성을 다시 검사하기 위해 사용하는 내부 클레임입니다. 무시됩니다. |
 |`sub` | 문자열, GUID | 앱 사용자 등 토큰에서 정보를 어설션하는 보안 주체입니다. 이 값은 변경할 수 없으며 재할당 또는 재사용할 수 없습니다. 주체는 쌍으로 된 식별자이며 특정 애플리케이션 ID에 고유합니다. 단일 사용자가 두 개의 다른 클라이언트 Id를 사용 하 여 두 개의 다른 앱에 로그인 하는 경우 해당 앱은 주체 클레임에 대해 두 개의 다른 값을 받게 됩니다. 이는 아키텍처 및 개인 정보 요구 사항에 따라 필요 하거나 필요 하지 않을 수 있습니다. |
@@ -87,9 +87,9 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjFMVE16YWtpaGlSbGFfOHoyQkVKVlhlV01x
 
 
 > [!NOTE]
-> V1 및 v2 id_token 위의 예제에서 볼 수 있는 것 처럼 전달 되는 정보의 양에 차이가 있습니다. 버전은 기본적으로 발급 된 위치에서 Azure AD 플랫폼 끝점을 지정 합니다. [AZURE AD Oauth 구현은](https://docs.microsoft.com/azure/active-directory/develop/about-microsoft-identity-platform) 몇 년 동안 진화 했습니다. 현재 AzureAD 응용 프로그램에 대해 서로 다른 두 개의 oAuth 끝점이 있습니다. V 2로 분류 된 새 끝점 또는 v1 이라고 하는 기존 끝점 중 하나를 사용할 수 있습니다. 둘 다에 대 한 Oauth 끝점은 서로 다릅니다. V2 끝점은 v1 끝점의 모든 기능을 마이그레이션하려는 새로운 기능으로, 새 개발자에 게 v2 끝점을 사용 하는 것이 좋습니다. 
-> - V1: Azure Active Directory 끝점: `https://login.microsoftonline.com/common/oauth2/authorize`
-> - V2: Microsoft Id 플랫폼 끝점: `https://login.microsoftonline.com/common/oauth2/v2.0/authorize`
+> V1 및 v2 id_token 위의 예제에서 볼 수 있는 것 처럼 전달 되는 정보의 양에 차이가 있습니다. 버전은 기본적으로 발급 된 위치에서 Azure AD 플랫폼 엔드포인트을 지정 합니다. [AZURE AD Oauth 구현은](https://docs.microsoft.com/azure/active-directory/develop/about-microsoft-identity-platform) 몇 년 동안 진화 했습니다. 현재 AzureAD 응용 프로그램에 대해 서로 다른 두 개의 oAuth 엔드포인트이 있습니다. V 2로 분류 된 새 엔드포인트 또는 v1 이라고 하는 기존 엔드포인트 중 하나를 사용할 수 있습니다. 둘 다에 대 한 Oauth 엔드포인트은 서로 다릅니다. V2 엔드포인트은 v1 엔드포인트의 모든 기능을 마이그레이션하려는 새로운 기능으로, 새 개발자에 게 v2 엔드포인트을 사용 하는 것이 좋습니다. 
+> - V1: Azure Active Directory 엔드포인트: `https://login.microsoftonline.com/common/oauth2/authorize`
+> - V2: Microsoft Id 플랫폼 엔드포인트: `https://login.microsoftonline.com/common/oauth2/v2.0/authorize`
 
 ## <a name="validating-an-id_token"></a>id_token을 유효성 검사하는 중
 

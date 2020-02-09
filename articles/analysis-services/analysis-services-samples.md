@@ -1,6 +1,6 @@
 ---
 title: Azure Analysis Services 코드, 프로젝트 및 데이터베이스 샘플 | Microsoft Docs
-description: 이 문서에서는 Azure Analysis Services에 대 한 코드, 프로젝트 및 데이터베이스 샘플에 대해 자세히 알아볼 수 있는 리소스를 설명 합니다.
+description: 이 문서에서는 Azure Analysis Services에 대한 코드, 프로젝트 및 데이터베이스 샘플에 대해 자세히 알아볼 수 있는 리소스를 설명 합니다.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual

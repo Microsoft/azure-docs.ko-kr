@@ -35,9 +35,9 @@ HANA Large Instances를 Azure 데이터 센터 네트워크 패브릭에 통합 
 
 
 > [!NOTE] 
-> 하나의 Azure 구독만 특정 Azure 지역에 있는 HANA Large Instance 스탬프의 한 테 넌 트에만 연결할 수 있습니다. 반대로 단일 HANA Large Instance 스탬프 테 넌 트는 하나의 Azure 구독에만 연결할 수 있습니다. 이 요구 사항은 Azure에서 청구 가능한 다른 개체와 일치합니다.
+> 하나의 Azure 구독만 특정 Azure 지역에 있는 HANA Large Instance 스탬프의 한 테넌트에만 연결할 수 있습니다. 반대로 단일 HANA Large Instance 스탬프 테넌트는 하나의 Azure 구독에만 연결할 수 있습니다. 이 요구 사항은 Azure에서 청구 가능한 다른 개체와 일치합니다.
 
-Azure (Large Instances)에서 SAP HANA 여러 Azure 지역에 배포 되는 경우 별도의 테 넌 트가 HANA Large Instance 스탬프에 배포 됩니다. 이러한 인스턴스가 동일한 SAP 자산에 포함되면 둘 다 동일한 Azure 구독에서 실행할 수 있습니다. 
+Azure (Large Instances)에서 SAP HANA 여러 Azure 지역에 배포 되는 경우 별도의 테넌트가 HANA Large Instance 스탬프에 배포 됩니다. 이러한 인스턴스가 동일한 SAP 자산에 포함되면 둘 다 동일한 Azure 구독에서 실행할 수 있습니다. 
 
 > [!IMPORTANT] 
 > Azure (Large Instances)의 SAP HANA에서는 Azure Resource Manager 배포 메서드만 지원 됩니다.
@@ -170,10 +170,10 @@ Global Reach 제공 되는 Azure 지역에서 HANA Large Instance 장치에 연�
 > HANA Large Instance 단위와 온-프레미스 자산 간의 직접 액세스를 사용 하도록 Global Reach를 사용 하는 경우 네트워크 데이터 및 제어 흐름은 **Azure virtual network를 통해 라우팅되지**않지만 Microsoft enterprise exchange 라우터 간에 직접 연결 됩니다. 결과적으로 NSG 또는 ASG 규칙 또는 Azure 가상 네트워크에 배포 된 모든 유형의 방화벽, NVA 또는 프록시는 작업을 수행 하지 않습니다. **Express 경로 Global Reach를 사용 하 여 온-프레미스에서 HANA 대량 인스턴스 단위로 직접 액세스할 수 있도록 설정 하는 경우 HANA large Instance 장치에 액세스할 수 있는 권한이 온-프레미스 쪽의 방화벽에서 정의 되어야 합니다.** 
 
 ##### <a name="connecting-hana-large-instances-in-different-azure-regions"></a>다른 Azure 지역에서 HANA Large Instances 연결
-동일한 방식으로 온-프레미스를 HANA Large Instance 장치에 연결 하는 데 사용할 수 있는 Global Reach Express 경로를 사용 하 여 두 개의 다른 지역에 배포 된 2 HANA Large Instance 테 넌 트를 연결할 수 있습니다. 격리는 HANA Large Instance 테 넌 트가 두 지역에서 Azure에 연결 하는 데 사용 하는 Express 경로 회로입니다. 두 개의 서로 다른 지역에 배포 된 두 개의 HANA Large Instance 테 넌 트를 연결 하는 데에는 추가 요금이 부과 되지 않습니다. 
+동일한 방식으로 온-프레미스를 HANA Large Instance 장치에 연결 하는 데 사용할 수 있는 Global Reach Express 경로를 사용 하 여 두 개의 다른 지역에 배포 된 2 HANA Large Instance 테넌트를 연결할 수 있습니다. 격리는 HANA Large Instance 테넌트가 두 지역에서 Azure에 연결 하는 데 사용 하는 Express 경로 회로입니다. 두 개의 서로 다른 지역에 배포 된 두 개의 HANA Large Instance 테넌트를 연결 하는 데에는 추가 요금이 부과 되지 않습니다. 
 
 > [!IMPORTANT]  
-> 서로 다른 HANA Large instance 테 넌 트 간의 네트워크 트래픽 제어 흐름 및 데이터 흐름은 azure 네트워크를 통해 라우팅되지 않습니다. 따라서 Azure 기능 또는 Nva를 사용 하 여 두 HANA Large Instances 테 넌 트 간에 통신 제한을 적용할 수 없습니다. 
+> 서로 다른 HANA Large instance 테넌트 간의 네트워크 트래픽 제어 흐름 및 데이터 흐름은 azure 네트워크를 통해 라우팅되지 않습니다. 따라서 Azure 기능 또는 Nva를 사용 하 여 두 HANA Large Instances 테넌트 간에 통신 제한을 적용할 수 없습니다. 
 
 Global Reach Express 경로를 사용 하도록 설정 하는 방법에 대 한 자세한 내용은 문서에서 [가상 네트워크를 HANA large instances에 연결](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-connect-vnet-express-route)문서를 참조 하세요.
 
@@ -186,7 +186,7 @@ HANA 대규모 인스턴스 및 VM 간에 전송되는 데이터는 암호화되
 
 ## <a name="use-hana-large-instance-units-in-multiple-regions"></a>여러 지역에서 HANA 대규모 인스턴스 장치 사용
 
-재해 복구 설정을 실현 하려면 여러 Azure 지역에 SHANA Large Instance 단위가 있어야 합니다. Azure [글로벌 Vnet 피어 링]을 사용 하는 경우에도 기본적으로 전이적 라우팅은 서로 다른 두 지역의 HANA Large Instance 테 넌 트 간에 작동 하지 않습니다. 그러나 Global Reach는 두 개의 서로 다른 지역에서 프로 비전 한 HANA Large Instance 장치 간의 통신 경로를 엽니다. Express 경로 Global Reach의 이러한 사용 시나리오에서는 다음을 수행할 수 있습니다.
+재해 복구 설정을 실현 하려면 여러 Azure 지역에 SHANA Large Instance 단위가 있어야 합니다. Azure [글로벌 Vnet 피어 링]을 사용 하는 경우에도 기본적으로 전이적 라우팅은 서로 다른 두 지역의 HANA Large Instance 테넌트 간에 작동 하지 않습니다. 그러나 Global Reach는 두 개의 서로 다른 지역에서 프로 비전 한 HANA Large Instance 장치 간의 통신 경로를 엽니다. Express 경로 Global Reach의 이러한 사용 시나리오에서는 다음을 수행할 수 있습니다.
 
  - 추가 프록시 또는 방화벽이 없는 HANA 시스템 복제
  - 시스템 복사본 또는 시스템 새로 고침을 수행 하기 위해 서로 다른 두 지역의 HANA 대량 인스턴스 단위 간 백업 복사
@@ -194,7 +194,7 @@ HANA 대규모 인스턴스 및 VM 간에 전송되는 데이터는 암호화되
 
 ![다른 Azure 지역의 Azure 대규모 인스턴스 스탬프에 연결된 가상 네트워크](./media/hana-overview-architecture/image8-multiple-regions.png)
 
-이 그림에서는 두 지역에 있는 서로 다른 가상 네트워크가 두 Azure 지역 (회색 선)의 Azure (Large Instances)에서 SAP HANA에 연결 하는 데 사용 되는 서로 다른 두 Express 경로 회로에 연결 되는 방법을 보여 줍니다. 이러한 두 개의 교차 연결에 대 한 이유는 한쪽에서 MSEEs 중단 으로부터 보호 하는 것입니다. 두 Azure 지역에 있는 두 가상 네트워크 간의 통신 흐름은 두 개의 서로 다른 지역에 있는 두 가상 네트워크의 [글로벌 피어 링](https://blogs.msdn.microsoft.com/azureedu/2018/04/24/how-to-setup-global-vnet-peering-in-azure/) (파란색 점선)을 통해 처리 되어야 합니다. 굵은 빨간색 선은 두 개의 서로 다른 지역에 있는 테 넌 트의 HANA Large Instance 단위가 서로 통신할 수 있도록 하는 Express 경로 Global Reach 연결을 설명 합니다. 
+이 그림에서는 두 지역에 있는 서로 다른 가상 네트워크가 두 Azure 지역 (회색 선)의 Azure (Large Instances)에서 SAP HANA에 연결 하는 데 사용 되는 서로 다른 두 Express 경로 회로에 연결 되는 방법을 보여 줍니다. 이러한 두 개의 교차 연결에 대 한 이유는 한쪽에서 MSEEs 중단 으로부터 보호 하는 것입니다. 두 Azure 지역에 있는 두 가상 네트워크 간의 통신 흐름은 두 개의 서로 다른 지역에 있는 두 가상 네트워크의 [글로벌 피어 링](https://blogs.msdn.microsoft.com/azureedu/2018/04/24/how-to-setup-global-vnet-peering-in-azure/) (파란색 점선)을 통해 처리 되어야 합니다. 굵은 빨간색 선은 두 개의 서로 다른 지역에 있는 테넌트의 HANA Large Instance 단위가 서로 통신할 수 있도록 하는 Express 경로 Global Reach 연결을 설명 합니다. 
 
 > [!IMPORTANT] 
 > 여러 개의 ExpressRoute 회로를 사용한 경우 트래픽을 적절하게 라우팅할 수 있도록 선행 AS 경로 추가 및 로컬 기본 BGP 설정을 사용해야 합니다.

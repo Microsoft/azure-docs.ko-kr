@@ -81,12 +81,12 @@ Azure DevOps를 사용 하 여 소스 코드를 저장 하 고 Azure PowerShell�
 | 변수 이름 | 값 | 메모 |
 | ------------- | ----- | ----- |
 | ConfigurationLocation | /Scripts/ImageFactory/Configuration | **구성** 폴더에 대 한 리포지토리의 전체 경로입니다. 위의 전체 리포지토리를 가져온 경우 왼쪽에 있는 값이 올바릅니다. 그렇지 않으면 업데이트는 구성 위치를 가리킵니다. |
-| DevTestLabName | MyImageFactory | 이미지를 생성 하기 위해 팩터리에서 사용 되는 Azure DevTest Labs의 랩 이름입니다. 없는 경우 하나 만듭니다. 랩이 서비스 끝점에서 액세스할 수 있는 것과 동일한 구독에 있는지 확인 합니다. |
+| DevTestLabName | MyImageFactory | 이미지를 생성 하기 위해 팩터리에서 사용 되는 Azure DevTest Labs의 랩 이름입니다. 없는 경우 하나 만듭니다. 랩이 서비스 엔드포인트에서 액세스할 수 있는 것과 동일한 구독에 있는지 확인 합니다. |
 | ImageRetention | 1 | 각 형식에 대해 저장 하려는 이미지 수입니다. 기본값을 1로 설정 합니다. |
 | MachinePassword | ******* | 가상 컴퓨터에 대 한 기본 제공 관리자 계정 암호입니다. 이 계정은 임시 계정 이므로 보안을 유지 해야 합니다. 오른쪽의 작은 잠금 아이콘을 선택 하 여 보안 문자열 인지 확인 합니다. |
 | MachineUserName | ImageFactoryUser | 가상 컴퓨터에 대 한 기본 제공 관리자 계정 사용자 이름입니다. 임시 계정입니다. |
 | StandardTimeoutMinutes | 30 | 정기 Azure 작업에 대해 기다려야 하는 시간 제한입니다. |
-| SubscriptionId |  0000000000-0000-0000-0000-0000000000000 | 랩이 존재 하 고 서비스 끝점이 액세스할 수 있는 구독의 ID입니다. |
+| SubscriptionId |  0000000000-0000-0000-0000-0000000000000 | 랩이 존재 하 고 서비스 엔드포인트이 액세스할 수 있는 구독의 ID입니다. |
 | VMSize | Standard_A3 | **만들기** 단계에 사용할 가상 머신의 크기입니다. 생성 된 Vm은 일시적입니다. 크기는 [랩에 사용할](devtest-lab-set-lab-policy.md)수 있는 크기 여야 합니다. [구독 코어 할당량이](../azure-resource-manager/management/azure-subscription-service-limits.md)충분 한지 확인 합니다.
 
 ![빌드 변수](./media/set-up-devops-lab/configure-build-variables.png)
@@ -106,14 +106,14 @@ Azure DevOps를 사용 하 여 소스 코드를 저장 하 고 Azure PowerShell�
 2. **Azure 연결 형식**에 대해 **Azure Resource Manager**를 선택 합니다.
 3. **관리** 링크를 선택 하 여 서비스 주체를 설정 합니다.
 
-자세한 내용은이 [블로그 게시물](https://devblogs.microsoft.com/devops/automating-azure-resource-group-deployment-using-a-service-principal-in-visual-studio-online-buildrelease-management/)을 참조 하세요. **관리** 링크를 선택 하면 Azure에 대 한 연결을 설정 하는 devops (블로그 게시물의 두 번째 스크린샷)의 올바른 위치가 됩니다. 설정 하는 경우 **서비스 끝점 Azure Resource Manager** 선택 해야 합니다.
+자세한 내용은이 [블로그 게시물](https://devblogs.microsoft.com/devops/automating-azure-resource-group-deployment-using-a-service-principal-in-visual-studio-online-buildrelease-management/)을 참조 하세요. **관리** 링크를 선택 하면 Azure에 대 한 연결을 설정 하는 devops (블로그 게시물의 두 번째 스크린샷)의 올바른 위치가 됩니다. 설정 하는 경우 **서비스 엔드포인트 Azure Resource Manager** 선택 해야 합니다.
 
 ## <a name="complete-the-build-task"></a>빌드 작업 완료
 빌드 작업을 선택 하면 오른쪽 창에 입력 해야 하는 모든 세부 정보가 표시 됩니다.
 
 1. 먼저 빌드 작업의 이름을 **Virtual Machines 만듭니다**.
 2. **Azure Resource Manager** 를 선택 하 여 만든 **서비스 주체** 를 선택 합니다.
-3. **서비스 끝점**을 선택 합니다.
+3. **서비스 엔드포인트**을 선택 합니다.
 4. **스크립트 경로**에 **대해 ...를 선택 합니다. (줄임표)** 오른쪽에 있습니다.
 5. **MakeGoldenImageVMs** 스크립트로 이동 합니다.
 6. 스크립트 매개 변수는 다음과 같습니다. `-ConfigurationLocation $(System.DefaultWorkingDirectory)$(ConfigurationLocation) -DevTestLabName $(DevTestLabName) -vmSize $(VMSize) -machineUserName $(MachineUserName) -machinePassword (ConvertTo-SecureString -string '$(MachinePassword)' -AsPlainText -Force) -StandardTimeoutMinutes $(StandardTimeoutMinutes)`

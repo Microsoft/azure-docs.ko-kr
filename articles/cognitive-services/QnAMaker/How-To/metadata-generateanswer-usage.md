@@ -19,7 +19,7 @@ ms.locfileid: "75945308"
 ---
 # <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>GenerateAnswer API 및 메타 데이터를 사용 하 여 답변 받기
 
-사용자의 질문에 대 한 예측 답변을 얻으려면 GenerateAnswer API를 사용 합니다. 기술 자료를 게시할 때 **게시** 페이지에서이 API를 사용 하는 방법에 대 한 정보를 볼 수 있습니다. 메타 데이터 태그를 기준으로 응답을 필터링 하도록 API를 구성 하 고 테스트 쿼리 문자열 매개 변수를 사용 하 여 끝점에서 기술 자료를 테스트할 수도 있습니다.
+사용자의 질문에 대 한 예측 답변을 얻으려면 GenerateAnswer API를 사용 합니다. 기술 자료를 게시할 때 **게시** 페이지에서이 API를 사용 하는 방법에 대 한 정보를 볼 수 있습니다. 메타 데이터 태그를 기준으로 응답을 필터링 하도록 API를 구성 하 고 테스트 쿼리 문자열 매개 변수를 사용 하 여 엔드포인트에서 기술 자료를 테스트할 수도 있습니다.
 
 QnA Maker를 사용 하면 질문 및 답변 집합에 키 및 값 쌍의 형태로 메타 데이터를 추가할 수 있습니다. 그런 다음이 정보를 사용 하 여 사용자 쿼리에 대 한 결과를 필터링 하 고 추가 정보를 저장할 수 있습니다. 자세한 내용은 [기술 자료](../Concepts/knowledge-base.md)를 참조하세요.
 
@@ -41,9 +41,9 @@ QnA 엔터티마다 고유한 영구 ID가 있습니다. ID를 사용 하 여 �
 
 <a name="generateanswer-endpoint"></a>
 
-## <a name="publish-to-get-generateanswer-endpoint"></a>GenerateAnswer 끝점 가져오기에 게시
+## <a name="publish-to-get-generateanswer-endpoint"></a>GenerateAnswer 엔드포인트 가져오기에 게시
 
-[QnA Maker 포털](https://www.qnamaker.ai)에서 또는 [API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/publish)를 사용 하 여 기술 자료를 게시 한 후에는 generateanswer 끝점의 세부 정보를 가져올 수 있습니다.
+[QnA Maker 포털](https://www.qnamaker.ai)에서 또는 [API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/publish)를 사용 하 여 기술 자료를 게시 한 후에는 generateanswer 엔드포인트의 세부 정보를 가져올 수 있습니다.
 
 엔드포인트 세부 정보를 가져오려면 다음을 수행합니다.
 1. [https://www.qnamaker.ai](https://www.qnamaker.ai)에 로그인합니다.
@@ -51,7 +51,7 @@ QnA 엔터티마다 고유한 영구 ID가 있습니다. ID를 사용 하 여 �
     내 기술 자료의 스크린샷 ![](../media/qnamaker-how-to-metadata-usage/my-knowledge-bases.png)
 1. GenerateAnswer 엔드포인트 세부 정보를 가져옵니다.
 
-    ![끝점 세부 정보 스크린샷](../media/qnamaker-how-to-metadata-usage/view-code.png)
+    ![엔드포인트 세부 정보 스크린샷](../media/qnamaker-how-to-metadata-usage/view-code.png)
 
 기술 자료의 **설정** 탭에서 엔드포인트 세부 정보를 가져올 수도 있습니다.
 
@@ -73,7 +73,7 @@ GenerateAnswer URL의 형식은 다음과 같습니다.
 https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer
 ```
 
-후행 공백이 있는 문자열 `EndpointKey`의 값과 **설정** 페이지에 있는 끝점 키를 사용 하 여 `Authorization`의 HTTP 헤더 속성을 설정 해야 합니다.
+후행 공백이 있는 문자열 `EndpointKey`의 값과 **설정** 페이지에 있는 엔드포인트 키를 사용 하 여 `Authorization`의 HTTP 헤더 속성을 설정 해야 합니다.
 
 예제 JSON 본문은 다음과 같습니다.
 

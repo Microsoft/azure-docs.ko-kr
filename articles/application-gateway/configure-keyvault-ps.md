@@ -1,7 +1,7 @@
 ---
 title: Key Vault 인증서를 사용 하 여 SSL 종료 구성-PowerShell
 titleSuffix: Azure Application Gateway
-description: HTTPS 사용 수신기에 연결 된 서버 인증서에 대 한 Key Vault Azure 애플리케이션 Gateway를 통합 하는 방법에 대해 알아봅니다.
+description: HTTPS 사용 수신기에 연결 된 서버 인증서에 대한 Key Vault Azure 애플리케이션 Gateway를 통합 하는 방법에 대해 알아봅니다.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
@@ -17,7 +17,7 @@ ms.locfileid: "75640553"
 ---
 # <a name="configure-ssl-termination-with-key-vault-certificates-by-using-azure-powershell"></a>Azure PowerShell를 사용 하 여 Key Vault 인증서로 SSL 종료 구성
 
-[Azure Key Vault](../key-vault/key-vault-overview.md) 는 암호, 키 및 SSL 인증서를 보호 하는 데 사용할 수 있는 플랫폼 관리 암호 저장소입니다. Azure 애플리케이션 Gateway는 HTTPS 사용 수신기에 연결 된 서버 인증서에 대 한 Key Vault (공개 미리 보기)와의 통합을 지원 합니다. 이 지원은 Application Gateway의 v2 SKU로 제한 됩니다.
+[Azure Key Vault](../key-vault/key-vault-overview.md) 는 암호, 키 및 SSL 인증서를 보호 하는 데 사용할 수 있는 플랫폼 관리 암호 저장소입니다. Azure 애플리케이션 Gateway는 HTTPS 사용 수신기에 연결 된 서버 인증서에 대한 Key Vault (공개 미리 보기)와의 통합을 지원 합니다. 이 지원은 Application Gateway의 v2 SKU로 제한 됩니다.
 
 자세한 내용은 [Key Vault 인증서를 사용 하는 SSL 종료](key-vault-certs.md)를 참조 하십시오.
 
@@ -102,7 +102,7 @@ $fp01 = New-AzApplicationGatewayFrontendPort -Name "port1" -Port 443
 $fp02 = New-AzApplicationGatewayFrontendPort -Name "port2" -Port 80
 ```
 
-### <a name="point-the-ssl-certificate-to-your-key-vault"></a>키 자격 증명 모음에 대 한 SSL 인증서를 가리킵니다.
+### <a name="point-the-ssl-certificate-to-your-key-vault"></a>키 자격 증명 모음에 대한 SSL 인증서를 가리킵니다.
 
 ```azurepowershell
 $sslCert01 = New-AzApplicationGatewaySslCertificate -Name "SSLCert1" -KeyVaultSecretId $secretId
@@ -144,4 +144,4 @@ $appgw = New-AzApplicationGateway -Name $appgwName -Identity $appgwIdentity -Res
 
 ## <a name="next-steps"></a>다음 단계
 
-[SSL 종료에 대 한 자세한 정보](ssl-overview.md)
+[SSL 종료에 대한 자세한 정보](ssl-overview.md)

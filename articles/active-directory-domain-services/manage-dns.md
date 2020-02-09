@@ -1,6 +1,6 @@
 ---
-title: Azure AD Domain Services에 대 한 DNS 관리 | Microsoft Docs
-description: DNS 서버 도구를 설치 하 여 Azure Active Directory Domain Services 관리 되는 도메인에 대 한 DNS를 관리 하는 방법을 알아봅니다.
+title: Azure AD Domain Services에 대한 DNS 관리 | Microsoft Docs
+description: DNS 서버 도구를 설치 하 여 Azure Active Directory Domain Services 관리 되는 도메인에 대한 DNS를 관리 하는 방법을 알아봅니다.
 author: iainfoulds
 manager: daveba
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
@@ -19,9 +19,9 @@ ms.locfileid: "74704940"
 ---
 # <a name="administer-dns-in-an-azure-ad-domain-services-managed-domain"></a>Azure AD Domain Services 관리 되는 도메인에서 DNS 관리
 
-Azure Active Directory Domain Services (Azure AD DS)에서 키 구성 요소는 DNS (도메인 이름 확인)입니다. Azure AD DS에는 관리 되는 도메인에 대 한 이름 확인을 제공 하는 DNS 서버가 포함 되어 있습니다. 이 DNS 서버에는 기본 제공 DNS 레코드와 서비스를 실행 하는 데 사용할 수 있는 주요 구성 요소에 대 한 업데이트가 포함 되어 있습니다.
+Azure Active Directory Domain Services (Azure AD DS)에서 키 구성 요소는 DNS (도메인 이름 확인)입니다. Azure AD DS에는 관리 되는 도메인에 대한 이름 확인을 제공 하는 DNS 서버가 포함 되어 있습니다. 이 DNS 서버에는 기본 제공 DNS 레코드와 서비스를 실행 하는 데 사용할 수 있는 주요 구성 요소에 대한 업데이트가 포함 되어 있습니다.
 
-사용자 고유의 응용 프로그램 및 서비스를 실행 하는 경우 도메인에 가입 되지 않은 컴퓨터에 대 한 DNS 레코드를 만들고, 부하 분산 장치에 대 한 가상 IP 주소를 구성 하거나, 외부 DNS 전달자를 설정 해야 할 수 있습니다. *AAD DC 관리자* 그룹에 속한 사용자에 게는 Azure AD DS 관리 되는 도메인에 대 한 dns 관리 권한이 부여 되 고 사용자 지정 dns 레코드를 만들고 편집할 수 있습니다.
+사용자 고유의 응용 프로그램 및 서비스를 실행 하는 경우 도메인에 가입 되지 않은 컴퓨터에 대한 DNS 레코드를 만들고, 부하 분산 장치에 대한 가상 IP 주소를 구성 하거나, 외부 DNS 전달자를 설정 해야 할 수 있습니다. *AAD DC 관리자* 그룹에 속한 사용자에 게는 Azure AD DS 관리 되는 도메인에 대한 dns 관리 권한이 부여 되 고 사용자 지정 dns 레코드를 만들고 편집할 수 있습니다.
 
 하이브리드 환경에서 온-프레미스 AD DS 환경에 구성 된 DNS 영역 및 레코드는 Azure AD DS와 동기화 되지 않습니다. 사용자 고유의 DNS 항목을 정의 하 고 사용 하려면 Azure AD DS DNS 서버에 레코드를 만들거나 사용자 환경의 기존 DNS 서버를 가리키는 조건부 전달자를 사용 합니다.
 
@@ -45,9 +45,9 @@ Azure Active Directory Domain Services (Azure AD DS)에서 키 구성 요소는 
 
 ## <a name="install-dns-server-tools"></a>DNS 서버 도구 설치
 
-Azure AD DS에서 DNS 레코드를 만들고 수정 하려면 DNS 서버 도구를 설치 해야 합니다. 이러한 도구는 Windows Server의 기능으로 설치할 수 있습니다. Windows 클라이언트에 관리 도구를 설치 하는 방법에 대 한 자세한 내용은 install [원격 서버 관리 도구 (RSAT)][install-rsat]를 참조 하십시오.
+Azure AD DS에서 DNS 레코드를 만들고 수정 하려면 DNS 서버 도구를 설치 해야 합니다. 이러한 도구는 Windows Server의 기능으로 설치할 수 있습니다. Windows 클라이언트에 관리 도구를 설치 하는 방법에 대한 자세한 내용은 install [원격 서버 관리 도구 (RSAT)][install-rsat]를 참조 하십시오.
 
-1. 관리 VM에 로그인 합니다. Azure Portal를 사용 하 여 연결 하는 방법에 대 한 단계는 [Windows SERVER VM에 연결][connect-windows-server-vm]을 참조 하세요.
+1. 관리 VM에 로그인 합니다. Azure Portal를 사용 하 여 연결 하는 방법에 대한 단계는 [Windows SERVER VM에 연결][connect-windows-server-vm]을 참조 하세요.
 1. VM에 로그인할 때 **서버 관리자**가 기본적으로 열리지 않는 경우 **시작** 메뉴를 선택한 다음, **서버 관리자**를 선택합니다.
 1. **서버 관리자** 창의 *대시보드* 창에서 **역할 및 기능 추가**를 선택합니다.
 1. *역할 및 기능 추가 마법사*의 **시작하기 전에** 페이지에서 **다음**을 선택합니다.

@@ -68,7 +68,7 @@ ms.locfileid: "76990507"
 
 ## <a name="azure-subscription-per-tenant"></a>테넌트당 Azure 구독 사용 
 
-이 아키텍처를 사용 하는 경우 각 테 넌 트에는 자체 Azure 구독이 있습니다. 테넌트 구독에서 각 사용자에 대한 새 Video Indexer 계정을 만듭니다.
+이 아키텍처를 사용 하는 경우 각 테넌트에는 자체 Azure 구독이 있습니다. 테넌트 구독에서 각 사용자에 대한 새 Video Indexer 계정을 만듭니다.
 
 ![테넌트당 Azure 구독 사용](./media/manage-multiple-tenants/azure-subscription-per-tenant.png)
 

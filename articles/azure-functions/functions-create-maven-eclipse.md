@@ -44,7 +44,7 @@ Azure Functions를 실행 및 디버그하기 위한 로컬 환경을 제공하�
     - Archetype Artifact ID: azure-functions-archetype
     - 버전: ![Eclipse Maven create](media/functions-create-first-java-eclipse/functions-create-eclipse.png)
     [중앙 리포지토리에서](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype) 최신 버전 **1.22** 을 사용 합니다.  
-1. **확인** 을 클릭 한 후 **다음**을 클릭 합니다.  `resourceGroup`, `appName`및 `appRegion`를 포함 하 여 모든 필드에 대 한 값을 입력 해야 합니다. ( **fabrikam-함수-20170920120101928**이외의 다른 appName을 사용 하세요.) 결국 **완료**됩니다.
+1. **확인** 을 클릭 한 후 **다음**을 클릭 합니다.  `resourceGroup`, `appName`및 `appRegion`를 포함 하 여 모든 필드에 대한 값을 입력 해야 합니다. ( **fabrikam-함수-20170920120101928**이외의 다른 appName을 사용 하세요.) 결국 **완료**됩니다.
     ![Eclipse Maven create2](media/functions-create-first-java-eclipse/functions-create-eclipse2.png)  
 
 Maven은 이름이 _artifactId_인 새 폴더에 프로젝트 파일을 만듭니다. 프로젝트에서 생성된 코드는 HTTP 트리거 요청의 본문을 에코하는 간단한 [HTTP 트리거](/azure/azure-functions/functions-bindings-http-webhook) 함수입니다.

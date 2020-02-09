@@ -1,7 +1,7 @@
 ---
 title: Bing News Search 엔드포인트
 titleSuffix: Azure Cognitive Services
-description: 이 문서에서는 News search API 끝점에 대 한 요약을 제공 합니다. 뉴스, 인기 뉴스 및 추세 뉴스.
+description: 이 문서에서는 News search API 엔드포인트에 대 한 요약을 제공 합니다. 뉴스, 인기 뉴스 및 추세 뉴스.
 services: cognitive-services
 author: aahill
 manager: nitinme

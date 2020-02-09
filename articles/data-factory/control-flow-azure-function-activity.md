@@ -54,7 +54,7 @@ Azure 함수의 반환 형식은 유효한 `JObject`여야 합니다. [Jarray](h
 
 ## <a name="routing-and-queries"></a>라우팅 및 쿼리
 
-Azure 함수 작업은 **라우팅**을 지원합니다. 예를 들어 Azure 함수에 `https://functionAPP.azurewebsites.net/api/<functionName>/<value>?code=<secret>`끝점이 있는 경우 Azure Function 활동에서 사용할 `functionName` `<functionName>/<value>`됩니다. 런타임에이 함수를 매개 변수화 하 여 원하는 `functionName`를 제공할 수 있습니다.
+Azure 함수 작업은 **라우팅**을 지원합니다. 예를 들어 Azure 함수에 `https://functionAPP.azurewebsites.net/api/<functionName>/<value>?code=<secret>`엔드포인트이 있는 경우 Azure Function 활동에서 사용할 `functionName` `<functionName>/<value>`됩니다. 런타임에이 함수를 매개 변수화 하 여 원하는 `functionName`를 제공할 수 있습니다.
 
 또한 Azure 함수 작업은 **쿼리**를 지원합니다. 쿼리는 `functionName`의 일부로 포함 되어야 합니다. 예를 들어 함수 이름이 `HttpTriggerCSharp` 되 고 포함 하려는 쿼리가 `name=hello`되는 경우 Azure Function 활동에서 `HttpTriggerCSharp?name=hello`로 `functionName`를 생성할 수 있습니다. 이 함수는 매개 변수화 할 수 있으므로 런타임에 값을 결정할 수 있습니다.
 

@@ -20,7 +20,7 @@ ms.locfileid: "74912408"
 ---
 # <a name="copy-data-from-office-365-into-azure-using-azure-data-factory"></a>Azure Data Factory를 사용 하 여 Office 365에서 Azure로 데이터 복사
 
-Azure Data Factory는 [Microsoft Graph 데이터 연결과](https://docs.microsoft.com/graph/data-connect-concept-overview)통합 되어 Office 365 테 넌 트의 리치 조직 데이터를 확장 가능한 방식으로 Azure에 가져와 분석 응용 프로그램을 작성 하 고 이러한 중요 한 데이터 자산을 기반으로 통찰력을 추출할 수 있습니다. Privileged Access Management와 통합하면 Office 365의 큐레이팅된 중요한 데이터에 대한 보안 액세스 제어가 가능합니다.  Microsoft Graph 데이터 연결에 대 한 개요는 [이 링크](https://docs.microsoft.com/graph/data-connect-concept-overview) 를 참조 하 고, 라이선스 정보는 [이 링크](https://docs.microsoft.com/graph/data-connect-policies#licensing) 를 참조 하세요.
+Azure Data Factory는 [Microsoft Graph 데이터 연결과](https://docs.microsoft.com/graph/data-connect-concept-overview)통합 되어 Office 365 테넌트의 리치 조직 데이터를 확장 가능한 방식으로 Azure에 가져와 분석 응용 프로그램을 작성 하 고 이러한 중요 한 데이터 자산을 기반으로 통찰력을 추출할 수 있습니다. Privileged Access Management와 통합하면 Office 365의 큐레이팅된 중요한 데이터에 대한 보안 액세스 제어가 가능합니다.  Microsoft Graph 데이터 연결에 대한 개요는 [이 링크](https://docs.microsoft.com/graph/data-connect-concept-overview) 를 참조 하 고, 라이선스 정보는 [이 링크](https://docs.microsoft.com/graph/data-connect-policies#licensing) 를 참조 하세요.
 
 이 문서에서는 Azure Data Factory의 복사 작업을 사용하여 Office 365에서 데이터를 복사하는 방법에 대해 설명합니다. 이 문서는 복사 작업에 대한 일반적인 개요를 제공하는 [복사 작업 개요](copy-activity-overview.md) 문서를 기반으로 합니다.
 
@@ -153,8 +153,8 @@ Office 365에서 데이터를 복사 하려면 복사 작업 **원본** 섹션�
 | 자산 | 설명 | 필수 |
 |:--- |:--- |:--- |
 | type | 복사 작업 원본의 type 속성은 **Office365Source** 로 설정 해야 합니다. | yes |
-| allowedGroups | 그룹 선택 조건자입니다.  이 속성을 사용 하 여 데이터를 검색할 사용자 그룹을 최대 10 개까지 선택할 수 있습니다.  그룹이 지정 되지 않은 경우 전체 조직에 대 한 데이터가 반환 됩니다. | 아닙니다. |
-| userScopeFilterUri | `allowedGroups` 속성이 지정 되지 않은 경우 전체 테 넌 트에 적용 되는 조건자 식을 사용 하 여 Office 365에서 추출할 특정 행을 필터링 할 수 있습니다. 조건자 형식은 Microsoft Graph Api의 쿼리 형식 (예: `https://graph.microsoft.com/v1.0/users?$filter=Department eq 'Finance'`)과 일치 해야 합니다. | 아닙니다. |
+| allowedGroups | 그룹 선택 조건자입니다.  이 속성을 사용 하 여 데이터를 검색할 사용자 그룹을 최대 10 개까지 선택할 수 있습니다.  그룹이 지정 되지 않은 경우 전체 조직에 대한 데이터가 반환 됩니다. | 아닙니다. |
+| userScopeFilterUri | `allowedGroups` 속성이 지정 되지 않은 경우 전체 테넌트에 적용 되는 조건자 식을 사용 하 여 Office 365에서 추출할 특정 행을 필터링 할 수 있습니다. 조건자 형식은 Microsoft Graph Api의 쿼리 형식 (예: `https://graph.microsoft.com/v1.0/users?$filter=Department eq 'Finance'`)과 일치 해야 합니다. | 아닙니다. |
 | dateFilterColumn | DateTime 필터 열의 이름입니다. 이 속성을 사용 하 여 Office 365 데이터가 추출 되는 시간 범위를 제한할 수 있습니다. | 데이터 집합에 하나 이상의 DateTime 열이 있는 경우 예입니다. 이 날짜/시간 필터를 필요로 하는 데이터 집합 목록을 [보려면 여기](https://docs.microsoft.com/graph/data-connect-filtering#filtering) 를 참조 하세요. |
 | startTime | 필터링 할 시작 날짜/시간 값입니다. | `dateFilterColumn` 지정 된 경우 예 |
 | endTime | 필터링 할 끝 날짜/시간 값입니다. | `dateFilterColumn` 지정 된 경우 예 |

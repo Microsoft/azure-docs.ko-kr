@@ -1,5 +1,5 @@
 ---
-title: Spark에서 Azure Cosmos DB Cassandra API에 대 한 삭제 작업
+title: Spark에서 Azure Cosmos DB Cassandra API에 대한 삭제 작업
 description: 이 문서에서는 Spark에서 Azure Cosmos DB Cassandra API의 테이블 데이터를 삭제하는 방법을 자세히 설명합니다.
 author: kanshiG
 ms.author: govindk

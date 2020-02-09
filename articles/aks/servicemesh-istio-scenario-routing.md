@@ -16,7 +16,7 @@ ms.locfileid: "72530291"
 ---
 # <a name="use-intelligent-routing-and-canary-releases-with-istio-in-azure-kubernetes-service-aks"></a>Azure Kubernetes Service(AKS)에서 Istio를 사용하여 인텔리전트 라우팅 및 카나리 릴리스 사용
 
-[Istio][istio-github] 는 Kubernetes 클러스터의 마이크로 서비스에서 주요 기능 집합을 제공 하는 오픈 소스 서비스 메시입니다. 이 기능에는 트래픽 관리, 서비스 ID 및 보안, 정책 적용 및 관찰성을 포함됩니다. Istio에 대 한 자세한 내용은 [Istio 란 공식 이란?][istio-docs-concepts] 설명서를 참조 하세요.
+[Istio][istio-github] 는 Kubernetes 클러스터의 마이크로 서비스에서 주요 기능 집합을 제공 하는 오픈 소스 서비스 메시입니다. 이 기능에는 트래픽 관리, 서비스 ID 및 보안, 정책 적용 및 관찰성을 포함됩니다. Istio에 대한 자세한 내용은 [Istio 란 공식 이란?][istio-docs-concepts] 설명서를 참조 하세요.
 
 이 문서에서는 Istio의 트래픽 관리 기능을 사용하는 방법을 보여줍니다. 샘플 AKS 투표 앱은 인텔리전트 라우팅 및 카나리아 릴리스를 탐색하는 데 사용됩니다.
 
@@ -35,7 +35,7 @@ ms.locfileid: "72530291"
 
 이 문서에 설명 된 단계에서는 AKS 클러스터 (RBAC를 사용 하 여 Kubernetes `1.13` 이상)를 만들고 클러스터와 `kubectl` 연결을 설정 했다고 가정 합니다. 또한 Istio가 클러스터에 설치 되어 있어야 합니다.
 
-이러한 항목에 대 한 도움이 필요한 경우 [AKS 빠른][aks-quickstart] 시작을 참조 하 고 [AKS 지침에 Istio를 설치][istio-install] 합니다.
+이러한 항목에 대한 도움이 필요한 경우 [AKS 빠른][aks-quickstart] 시작을 참조 하 고 [AKS 지침에 Istio를 설치][istio-install] 합니다.
 
 ## <a name="about-this-application-scenario"></a>이 애플리케이션 시나리오에 대한 정보
 
@@ -97,7 +97,7 @@ service/voting-app created
 ```
 
 > [!NOTE]
-> Istio에는 Pod 및 서비스에 대한 몇 가지 요구 사항이 있습니다. 자세한 내용은 [pod 및 서비스에 대 한 Istio 요구 사항 설명서][istio-requirements-pods-and-services]를 참조 하세요.
+> Istio에는 Pod 및 서비스에 대한 몇 가지 요구 사항이 있습니다. 자세한 내용은 [pod 및 서비스에 대한 Istio 요구 사항 설명서][istio-requirements-pods-and-services]를 참조 하세요.
 
 만든 pod을 보려면 다음과 같이 [kubectl get pod][kubectl-get] 명령을 사용 합니다.
 
@@ -116,7 +116,7 @@ voting-app-1-0-956756fd-wsxvt           2/2       Running   0          39s   app
 voting-storage-1-0-5d8fcc89c4-2jhms     2/2       Running   0          39s   app=voting-storage,pod-template-hash=5d8fcc89c4,version=1.0
 ```
 
-Pod에 대 한 정보를 보려면 [kubectl 설명 pod][kubectl-describe] 명령을 레이블 선택기와 함께 사용 하 여 `voting-analytics` pod를 선택 합니다. 출력을 필터링 하 여 pod에 있는 두 컨테이너의 세부 정보를 표시 합니다.
+Pod에 대한 정보를 보려면 [kubectl 설명 pod][kubectl-describe] 명령을 레이블 선택기와 함께 사용 하 여 `voting-analytics` pod를 선택 합니다. 출력을 필터링 하 여 pod에 있는 두 컨테이너의 세부 정보를 표시 합니다.
 
 ::: zone pivot="client-operating-system-linux"
 
@@ -141,7 +141,7 @@ Istio [게이트웨이][istio-reference-gateway] 및 [가상 서비스][istio-re
 > [!NOTE]
 > **게이트웨이**는 인바운드 또는 아웃 바운드 HTTP 및 TCP 트래픽을 수신하는 서비스 메시의 가장자리에 있는 구성 요소입니다.
 > 
-> **가상 서비스**는 하나 이상의 대상 서비스에 대 한 라우팅 규칙 세트를 정의합니다.
+> **가상 서비스**는 하나 이상의 대상 서비스에 대한 라우팅 규칙 세트를 정의합니다.
 
 @No__t_0 명령을 사용 하 여 게이트웨이 및 Virtual Service yaml을 배포 합니다. 이러한 리소스가 배포 되는 네임 스페이스를 지정 해야 합니다.
 
@@ -176,7 +176,7 @@ kubectl get service istio-ingressgateway --namespace istio-system -o jsonpath='{
 
 ## <a name="update-the-application"></a>애플리케이션 업데이트
 
-새 버전의 분석 구성 요소를 배포 해 보겠습니다. 이 새 버전 `1.1`에는 각 범주에 대 한 개수 외에도 합계와 백분율이 표시 됩니다.
+새 버전의 분석 구성 요소를 배포 해 보겠습니다. 이 새 버전 `1.1`에는 각 범주에 대한 개수 외에도 합계와 백분율이 표시 됩니다.
 
 다음 다이어그램에서는이 섹션 전용 버전의 끝에서 실행 되는 항목을 보여 줍니다. `voting-analytics` 구성 요소의 `1.1` `voting-app` 구성 요소에서 라우팅되는 트래픽입니다. @No__t_1 구성 요소의 버전 `1.0` 실행 되 고 `voting-analytics` 서비스에서 참조 되는 경우에도 Istio 프록시는 트래픽을 허용 하지 않습니다.
 
@@ -236,11 +236,11 @@ deployment.apps/voting-analytics-1-1 created
 
 이제 `voting-analytics` 구성 요소의 버전 `1.1` 및 `voting-storage` 구성 요소의 버전 `1.0`으로 트래픽을 잠급니다. 그런 다음, 모든 다른 구성 요소에 대한 라우팅 규칙을 정의합니다.
 
-> * **가상 서비스**는 하나 이상의 대상 서비스에 대 한 라우팅 규칙 세트를 정의합니다.
+> * **가상 서비스**는 하나 이상의 대상 서비스에 대한 라우팅 규칙 세트를 정의합니다.
 > * **대상 규칙**은 트래픽 정책 및 특정 정책 버전을 정의합니다.
 > * **정책**은 어떤 인증 방법이 워크 로드에 승인될지 있는 지를 정의합니다.
 
-@No__t_0 명령을 사용 하 여 `voting-app` 가상 서비스 정의를 바꾸고 다른 구성 요소에 대 한 [대상 규칙][istio-reference-destinationrule] 및 [가상 서비스][istio-reference-virtualservice] 를 추가 합니다. @No__t_1 네임 스페이스에 [정책을][istio-reference-policy] 추가 하 여 서비스 간 모든 통신이 상호 TLS 및 클라이언트 인증서를 사용 하 여 보호 되도록 합니다.
+@No__t_0 명령을 사용 하 여 `voting-app` 가상 서비스 정의를 바꾸고 다른 구성 요소에 대한 [대상 규칙][istio-reference-destinationrule] 및 [가상 서비스][istio-reference-virtualservice] 를 추가 합니다. @No__t_1 네임 스페이스에 [정책을][istio-reference-policy] 추가 하 여 서비스 간 모든 통신이 상호 TLS 및 클라이언트 인증서를 사용 하 여 보호 되도록 합니다.
 
 * 이 정책은 `voting` 네임 스페이스 내에서 서비스 간에 상호 TLS가 적용 되도록 `STRICT`로 설정 `peers.mtls.mode` 합니다.
 * 또한 모든 대상 규칙에서 `trafficPolicy.tls.mode`를 `ISTIO_MUTUAL`로 설정 합니다. Istio는 강력한 ID의 서비스를 제공하고 Istio가 투명하게 관리하는 상호 TLS와 클라이언트 인증서를 사용하여 서비스 간 통신을 보호합니다.
@@ -295,13 +295,13 @@ virtualservice.networking.istio.io/voting-storage created
   <div id="results"> Cats: 2/6 (33%) | Dogs: 4/6 (67%) </div>
 ```
 
-이제 Istio가 상호 TLS를 사용 하 여 각 서비스 간의 통신을 보호 하 고 있는지 확인 하겠습니다. 이를 위해 다음 형식을 사용 하는 `istioctl` 클라이언트 이진 파일에 대 한 [인증 tls-check][istioctl-authn-tls-check] 명령을 사용 합니다.
+이제 Istio가 상호 TLS를 사용 하 여 각 서비스 간의 통신을 보호 하 고 있는지 확인 하겠습니다. 이를 위해 다음 형식을 사용 하는 `istioctl` 클라이언트 이진 파일에 대한 [인증 tls-check][istioctl-authn-tls-check] 명령을 사용 합니다.
 
 ```console
 istioctl authn tls-check <pod-name[.namespace]> [<service>]
 ```
 
-이 명령 집합은 네임 스페이스에 있고 레이블 집합과 일치 하는 모든 pod에서 지정 된 서비스에 대 한 액세스 정보를 제공 합니다.
+이 명령 집합은 네임 스페이스에 있고 레이블 집합과 일치 하는 모든 pod에서 지정 된 서비스에 대한 액세스 정보를 제공 합니다.
 
 ::: zone pivot="client-operating-system-linux"
 
@@ -380,7 +380,7 @@ destinationrule.networking.istio.io/voting-storage configured
 virtualservice.networking.istio.io/voting-storage configured
 ```
 
-다음으로 새 버전 `2.0` 구성 요소에 대 한 Kubernetes 개체를 추가 해 보겠습니다. 또한 MySQL에 대 한 `3306` 포트를 포함 하도록 `voting-storage` 서비스를 업데이트 합니다.
+다음으로 새 버전 `2.0` 구성 요소에 대한 Kubernetes 개체를 추가 해 보겠습니다. 또한 MySQL에 대한 `3306` 포트를 포함 하도록 `voting-storage` 서비스를 업데이트 합니다.
 
 ```azurecli
 kubectl apply -f kubernetes/step-3-update-voting-app-with-new-storage.yaml --namespace voting
@@ -397,7 +397,7 @@ deployment.apps/voting-analytics-2-0 created
 deployment.apps/voting-app-2-0 created
 ```
 
-모든 버전 `2.0` pod가 실행 될 때까지 기다립니다. [Kubectl get pod][kubectl-get] 명령과 `-w` watch 스위치를 사용 하 여 `voting` 네임 스페이스의 모든 pod에 대 한 변경 내용을 감시 합니다.
+모든 버전 `2.0` pod가 실행 될 때까지 기다립니다. [Kubectl get pod][kubectl-get] 명령과 `-w` watch 스위치를 사용 하 여 `voting` 네임 스페이스의 모든 pod에 대한 변경 내용을 감시 합니다.
 
 ```azurecli
 kubectl get pods --namespace voting -w

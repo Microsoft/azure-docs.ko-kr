@@ -18,7 +18,7 @@ ms.locfileid: "70996957"
 
 Kubernetes에는 기본 관리 작업에 사용할 수 있는 웹 대시보드가 포함됩니다. 이 대시보드를 사용하면 애플리케이션의 기본 상태와 메트릭을 보고 서비스를 작성 및 배포하며 기존 애플리케이션을 편집할 수 있습니다. 이 문서에서는 Azure CLI를 사용하여 Kubernetes 대시보드에 액세스하는 방법을 보여준 후 일부 기본적인 대시보드 작업 과정을 안내합니다.
 
-Kubernetes 대시보드에 대 한 자세한 내용은 [Kubernetes 웹 UI 대시보드][kubernetes-dashboard]를 참조 하세요.
+Kubernetes 대시보드에 대한 자세한 내용은 [Kubernetes 웹 UI 대시보드][kubernetes-dashboard]를 참조 하세요.
 
 ## <a name="before-you-begin"></a>시작하기 전에
 
@@ -76,7 +76,7 @@ After you choose a method to sign in, the Kubernetes dashboard is displayed. If 
 > kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
 > ```
 > 
-> 다른 인증 방법을 사용 하는 방법에 대 한 자세한 내용은 [액세스 제어][dashboard-authentication]의 Kubernetes 대시보드 wiki를 참조 하세요.
+> 다른 인증 방법을 사용 하는 방법에 대한 자세한 내용은 [액세스 제어][dashboard-authentication]의 Kubernetes 대시보드 wiki를 참조 하세요.
 
 ![Kubernetes 웹 대시보드의 개요 페이지](./media/kubernetes-dashboard/dashboard-overview.png)
 
@@ -130,7 +130,7 @@ Kubernetes 대시보드는 애플리케이션을 만들고 보는 것 외에도 
 
 ## <a name="next-steps"></a>다음 단계
 
-Kubernetes 대시보드에 대 한 자세한 내용은 [Kubernetes 웹 UI 대시보드][kubernetes-dashboard]를 참조 하세요.
+Kubernetes 대시보드에 대한 자세한 내용은 [Kubernetes 웹 UI 대시보드][kubernetes-dashboard]를 참조 하세요.
 
 <!-- LINKS - external -->
 [dashboard-authentication]: https://github.com/kubernetes/dashboard/wiki/Access-control

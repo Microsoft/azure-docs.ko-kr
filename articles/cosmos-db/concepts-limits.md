@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB 서비스 할당량
-description: 다른 리소스 유형에 대 한 기본 제한 및 서비스 할당량을 Azure Cosmos DB 합니다.
+description: 다른 리소스 유형에 대한 기본 제한 및 서비스 할당량을 Azure Cosmos DB 합니다.
 author: abhijitpai
 ms.author: abpai
 ms.service: cosmos-db
@@ -19,14 +19,14 @@ ms.locfileid: "76759775"
 
 ## <a name="storage-and-throughput"></a>저장소 및 처리량
 
-구독에서 Azure Cosmos 계정을 만든 후 [데이터베이스, 컨테이너 및 항목을 만들어](databases-containers-items.md)계정에서 데이터를 관리할 수 있습니다. [요청 단위 (o s/s 또는 RUs)](request-units.md)측면에서 컨테이너 수준 또는 데이터베이스 수준으로 처리량을 프로 비전 할 수 있습니다. 다음 표에서는 컨테이너/데이터베이스당 저장소 및 처리량에 대 한 제한을 보여 줍니다.
+구독에서 Azure Cosmos 계정을 만든 후 [데이터베이스, 컨테이너 및 항목을 만들어](databases-containers-items.md)계정에서 데이터를 관리할 수 있습니다. [요청 단위 (o s/s 또는 RUs)](request-units.md)측면에서 컨테이너 수준 또는 데이터베이스 수준으로 처리량을 프로 비전 할 수 있습니다. 다음 표에서는 컨테이너/데이터베이스당 저장소 및 처리량에 대한 제한을 보여 줍니다.
 
 | 리소스 | 기본 제한 |
 | --- | --- |
 | 컨테이너 당 최대 RUs ([프로 비전 된 전용 처리량 모드](databases-containers-items.md#azure-cosmos-containers)) | 기본적으로 100만입니다. [Azure 지원 티켓](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) 을 작성 하 여이를 늘릴 수 있습니다. |
 | 데이터베이스당 최대 RUs ([공유 처리량 프로 비전 된 모드](databases-containers-items.md#azure-cosmos-containers)) | 기본적으로 100만입니다. [Azure 지원 티켓](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) 을 작성 하 여이를 늘릴 수 있습니다. |
 | (논리적) 파티션 키 당 최대 RUs | 10000 |
-| (논리적) 파티션 키 당 모든 항목에 대 한 최대 저장소| 10GB |
+| (논리적) 파티션 키 당 모든 항목에 대한 최대 저장소| 10GB |
 | 고유 (논리적) 파티션 키의 최대 수 | 제한 없음 |
 | 컨테이너 당 최대 저장소 | 제한 없음 |
 | 데이터베이스당 최대 저장소 | 제한 없음 |
@@ -42,7 +42,7 @@ Cosmos 컨테이너 (또는 공유 처리량 데이터베이스)의 최소 처�
 * 컨테이너에 대해 설정할 수 있는 최소 처리량은 컨테이너에서 프로 비전 된 최대 처리량에 따라 달라 집니다. 예를 들어 처리량이 1만 RUs로 증가 한 경우 프로 비전 된 가장 낮은 처리량은 1000 RUs가 될 수 있습니다.
 * 공유 처리량 데이터베이스의 최소 처리량은 공유 처리량 데이터베이스에서 만든 컨테이너의 총 수에 따라 달라 지 며,이는 컨테이너 당 100 RUs로 측정 됩니다. 예를 들어 공유 처리량 데이터베이스 내에 5 개의 컨테이너를 만든 경우 처리량은 500 RUs 이상 이어야 합니다.
 
-컨테이너 또는 데이터베이스의 현재 및 최소 처리량은 Azure Portal 또는 Sdk에서 검색할 수 있습니다. 자세한 내용은 [컨테이너 및 데이터베이스에 대 한 처리량 프로 비전](set-throughput.md)을 참조 하세요. 
+컨테이너 또는 데이터베이스의 현재 및 최소 처리량은 Azure Portal 또는 Sdk에서 검색할 수 있습니다. 자세한 내용은 [컨테이너 및 데이터베이스에 대한 처리량 프로 비전](set-throughput.md)을 참조 하세요. 
 
 > [!NOTE]
 > 경우에 따라 처리량을 10% 미만으로 낮출 수 있습니다. API를 사용 하 여 컨테이너 당 정확한 최소 RUs를 가져옵니다.
@@ -70,7 +70,7 @@ Azure Portal, Azure PowerShell, Azure CLI 및 Azure Resource Manager 템플릿�
 > [!NOTE]
 > 지역 장애 조치 (failover)는 단일 지역 쓰기 계정에만 적용 됩니다. 다중 지역 쓰기 계정에는 쓰기 영역을 변경할 필요가 없거나 제한이 없습니다.
 
-Cosmos DB는 일정 한 간격으로 데이터의 백업을 자동으로 수행 합니다. 백업 보존 간격 및 windows에 대 한 자세한 내용은 [Azure Cosmos DB의 온라인 백업 및 주문형 데이터 복원](online-backup-and-restore.md)을 참조 하세요.
+Cosmos DB는 일정 한 간격으로 데이터의 백업을 자동으로 수행 합니다. 백업 보존 간격 및 windows에 대한 자세한 내용은 [Azure Cosmos DB의 온라인 백업 및 주문형 데이터 복원](online-backup-and-restore.md)을 참조 하세요.
 
 ## <a name="per-account-limits"></a>계정 당 제한
 
@@ -82,7 +82,7 @@ Cosmos DB는 일정 한 간격으로 데이터의 백업을 자동으로 수행 
 
 ## <a name="per-container-limits"></a>컨테이너 당 제한
 
-사용 하는 API에 따라 Azure Cosmos 컨테이너는 컬렉션, 테이블 또는 그래프를 나타낼 수 있습니다. 컨테이너는 [고유 키 제약 조건](unique-keys.md), [저장 프로시저, 트리거, udf](stored-procedures-triggers-udfs.md)및 [인덱싱 정책](how-to-manage-indexing-policy.md)에 대 한 구성을 지원 합니다. 다음 표에서는 컨테이너 내의 구성과 관련 된 제한을 나열 합니다. 
+사용 하는 API에 따라 Azure Cosmos 컨테이너는 컬렉션, 테이블 또는 그래프를 나타낼 수 있습니다. 컨테이너는 [고유 키 제약 조건](unique-keys.md), [저장 프로시저, 트리거, udf](stored-procedures-triggers-udfs.md)및 [인덱싱 정책](how-to-manage-indexing-policy.md)에 대한 구성을 지원 합니다. 다음 표에서는 컨테이너 내의 구성과 관련 된 제한을 나열 합니다. 
 
 | 리소스 | 기본 제한 |
 | --- | --- |
@@ -111,11 +111,11 @@ Cosmos DB는 일정 한 간격으로 데이터의 백업을 자동으로 수행 
 | 문자열 속성 값의 최대 길이입니다. | 실제적인 제한 없음 |
 | 숫자 속성 값의 최대 길이입니다. | IEEE754 이중 정밀도 64 비트 |
 
-파티션 키와 id 값의 길이 제한과 2mb의 전체 크기 제한은 제외 하 고 속성 및 중첩 깊이와 같은 항목 페이로드에는 제한이 없습니다. 매우 복잡 한 항목 구조를 포함 하는 컨테이너에 대 한 인덱싱 정책을 구성 하 여 많은 소비를 줄일 수 있습니다. 실제 예제는 [Cosmos DB의 항목 모델링](how-to-model-partition-example.md) 및 큰 항목을 관리 하는 패턴을 참조 하세요.
+파티션 키와 id 값의 길이 제한과 2mb의 전체 크기 제한은 제외 하 고 속성 및 중첩 깊이와 같은 항목 페이로드에는 제한이 없습니다. 매우 복잡 한 항목 구조를 포함 하는 컨테이너에 대한 인덱싱 정책을 구성 하 여 많은 소비를 줄일 수 있습니다. 실제 예제는 [Cosmos DB의 항목 모델링](how-to-model-partition-example.md) 및 큰 항목을 관리 하는 패턴을 참조 하세요.
 
 ## <a name="per-request-limits"></a>요청당 제한
 
-Azure Cosmos DB는 컨테이너, 항목 및 데이터베이스와 같은 리소스에 대해 [CRUD 및 쿼리 작업](https://docs.microsoft.com/rest/api/cosmos-db/) 을 지원 합니다. 또한 컨테이너에서 동일한 파티션 키를 가진 여러 항목에 대 한 [트랜잭션 일괄 처리 요청](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.transactionalbatch) 을 지원 합니다.
+Azure Cosmos DB는 컨테이너, 항목 및 데이터베이스와 같은 리소스에 대해 [CRUD 및 쿼리 작업](https://docs.microsoft.com/rest/api/cosmos-db/) 을 지원 합니다. 또한 컨테이너에서 동일한 파티션 키를 가진 여러 항목에 대한 [트랜잭션 일괄 처리 요청](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.transactionalbatch) 을 지원 합니다.
 
 | 리소스 | 기본 제한 |
 | --- | --- |
@@ -124,16 +124,16 @@ Azure Cosmos DB는 컨테이너, 항목 및 데이터베이스와 같은 리소�
 | 최대 응답 크기 (예: 페이지를 매긴 쿼리) | 4MB |
 | 트랜잭션 일괄 처리의 최대 작업 수 | 100 |
 
-쿼리와 같은 작업이 실행 제한 시간 또는 응답 크기 제한에 도달 하면 실행을 다시 시작 하기 위해 결과 페이지와 클라이언트에 연속 토큰이 반환 됩니다. 단일 쿼리가 페이지/연속에서 실행 될 수 있는 시간에 대 한 실질적인 제한은 없습니다.
+쿼리와 같은 작업이 실행 제한 시간 또는 응답 크기 제한에 도달 하면 실행을 다시 시작 하기 위해 결과 페이지와 클라이언트에 연속 토큰이 반환 됩니다. 단일 쿼리가 페이지/연속에서 실행 될 수 있는 시간에 대한 실질적인 제한은 없습니다.
 
-Cosmos DB은 권한 부여에 HMAC를 사용 합니다. 컨테이너, 파티션 키 또는 항목과 같은 리소스에 대 한 세분화 된 액세스 제어를 위해 마스터 키 또는 [리소스 토큰](secure-access-to-data.md) 을 사용할 수 있습니다. 다음 표에서는 Cosmos DB 권한 부여 토큰에 대 한 제한을 나열 합니다.
+Cosmos DB은 권한 부여에 HMAC를 사용 합니다. 컨테이너, 파티션 키 또는 항목과 같은 리소스에 대한 세분화 된 액세스 제어를 위해 마스터 키 또는 [리소스 토큰](secure-access-to-data.md) 을 사용할 수 있습니다. 다음 표에서는 Cosmos DB 권한 부여 토큰에 대한 제한을 나열 합니다.
 
 | 리소스 | 기본 제한 |
 | --- | --- |
 | 최대 마스터 토큰 만료 시간 | 15분  |
 | 최소 리소스 토큰 만료 시간 | 10 분  |
 | 최대 리소스 토큰 만료 시간 | 기본적으로 24 h입니다. [Azure 지원 티켓](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) 을 작성 하 여이를 늘릴 수 있습니다.|
-| 토큰 권한 부여에 대 한 최대 클럭 오차| 15분 |
+| 토큰 권한 부여에 대한 최대 클럭 오차| 15분 |
 
 Cosmos DB는 쓰기 중 트리거의 실행을 지원 합니다. 서비스는 쓰기 작업당 최대 하나의 사전 트리거와 하나의 사후 트리거를 지원 합니다. 
 
@@ -159,18 +159,18 @@ Cosmos DB는 [SQL](how-to-sql-query.md)을 사용한 항목 쿼리를 지원 합
 
 ## <a name="mongodb-api-specific-limits"></a>MongoDB API 특정 제한
 
-Cosmos DB은 MongoDB에 대해 작성 된 응용 프로그램에 대 한 MongoDB 유선 프로토콜을 지원 합니다. 지원 되는 명령 및 프로토콜 버전은 [지원 되는 MongoDB 기능 및 구문](mongodb-feature-support.md)에서 찾을 수 있습니다.
+Cosmos DB은 MongoDB에 대해 작성 된 응용 프로그램에 대한 MongoDB 유선 프로토콜을 지원 합니다. 지원 되는 명령 및 프로토콜 버전은 [지원 되는 MongoDB 기능 및 구문](mongodb-feature-support.md)에서 찾을 수 있습니다.
 
 다음 표에서는 MongoDB 기능 지원과 관련 된 제한을 나열 합니다. SQL (코어) API에 대해 언급 된 다른 서비스 제한은 MongoDB API에도 적용 됩니다.
 
 | 리소스 | 기본 제한 |
 | --- | --- |
 | 최대 MongoDB 쿼리 메모리 크기 | 40 M B |
-| MongoDB 작업에 대 한 최대 실행 시간| 30초 |
+| MongoDB 작업에 대한 최대 실행 시간| 30초 |
 
 ## <a name="try-cosmos-db-free-limits"></a>무료 제한을 Cosmos DB 사용해 보세요.
 
-다음 표에서는 평가판 [에 대 한 Azure Cosmos DB 시도](https://azure.microsoft.com/try/cosmosdb/) 의 제한을 나열 합니다.
+다음 표에서는 평가판 [에 대한 Azure Cosmos DB 시도](https://azure.microsoft.com/try/cosmosdb/) 의 제한을 나열 합니다.
 
 | 리소스 | 기본 제한 |
 | --- | --- |
@@ -181,11 +181,11 @@ Cosmos DB은 MongoDB에 대해 작성 된 응용 프로그램에 대 한 MongoDB
 | 공유 처리량 데이터베이스당 최대 처리량 | 20000 |
 | 계정 당 최대 총 저장소 | 10GB |
 
-Cosmos DB는 미국 중부, 서유럽, 동남 아시아 지역 에서만 글로벌 배포를 지원 합니다. 시도 Azure Cosmos DB 계정에 대해 Azure 지원 티켓을 만들 수 없습니다. 그러나 기존 지원 계획이 있는 구독자에 대 한 지원이 제공 됩니다.
+Cosmos DB는 미국 중부, 서유럽, 동남 아시아 지역 에서만 글로벌 배포를 지원 합니다. 시도 Azure Cosmos DB 계정에 대해 Azure 지원 티켓을 만들 수 없습니다. 그러나 기존 지원 계획이 있는 구독자에 대한 지원이 제공 됩니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-Cosmos DB의 핵심 개념에 대 한 자세한 내용은 [전역 배포](distribute-data-globally.md) 및 [분할](partitioning-overview.md) 및 [프로 비전 된 처리량](request-units.md)을 참조 하세요.
+Cosmos DB의 핵심 개념에 대한 자세한 내용은 [전역 배포](distribute-data-globally.md) 및 [분할](partitioning-overview.md) 및 [프로 비전 된 처리량](request-units.md)을 참조 하세요.
 
 다음 요약 설명서를 통해 Azure Cosmos DB를 시작해 보세요.
 

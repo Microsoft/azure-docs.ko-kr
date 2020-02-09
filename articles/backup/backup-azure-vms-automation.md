@@ -26,8 +26,8 @@ ms.locfileid: "75527997"
 ## <a name="before-you-start"></a>시작하기 전에
 
 * Recovery Services 자격 증명 모음에 대해 [자세히 알아보세요](backup-azure-recovery-services-vault-overview.md) .
-* Azure VM 백업에 대 한 아키텍처를 [검토](backup-architecture.md#architecture-built-in-azure-vm-backup) 하 고, 백업 프로세스 [에 대해 알아보고](backup-azure-vms-introduction.md) , 지원, 제한 사항 및 필수 구성 요소를 [검토](backup-support-matrix-iaas.md) 합니다.
-* Recovery Services에 대 한 PowerShell 개체 계층 구조를 검토 합니다.
+* Azure VM 백업에 대한 아키텍처를 [검토](backup-architecture.md#architecture-built-in-azure-vm-backup) 하 고, 백업 프로세스 [에 대해 알아보고](backup-azure-vms-introduction.md) , 지원, 제한 사항 및 필수 구성 요소를 [검토](backup-support-matrix-iaas.md) 합니다.
+* Recovery Services에 대한 PowerShell 개체 계층 구조를 검토 합니다.
 
 ## <a name="recovery-services-object-hierarchy"></a>Recovery Services 개체 계층 구조
 
@@ -134,7 +134,7 @@ Recovery Services 자격 증명 모음을 사용하여 가상 머신을 보호�
 
 ### <a name="set-vault-context"></a>자격 증명 모음 컨텍스트 설정
 
-VM에 대 한 보호를 사용 하도록 설정 하기 전에 [AzRecoveryServicesVaultContext](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesvaultcontext?view=azps-1.4.0) 를 사용 하 여 자격 증명 모음 컨텍스트를 설정 합니다. 자격 증명 모음 컨텍스트가 설정되면 모든 후속 cmdlet에 적용됩니다. 다음 예제에서는 자격 증명 모음, *testvault*에 대한 자격 증명 모음 컨텍스트를 설정합니다.
+VM에 대한 보호를 사용 하도록 설정 하기 전에 [AzRecoveryServicesVaultContext](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesvaultcontext?view=azps-1.4.0) 를 사용 하 여 자격 증명 모음 컨텍스트를 설정 합니다. 자격 증명 모음 컨텍스트가 설정되면 모든 후속 cmdlet에 적용됩니다. 다음 예제에서는 자격 증명 모음, *testvault*에 대한 자격 증명 모음 컨텍스트를 설정합니다.
 
 ```powershell
 Get-AzRecoveryServicesVault -Name "testvault" -ResourceGroupName "Contoso-docs-rg" | Set-AzRecoveryServicesVaultContext
@@ -157,7 +157,7 @@ $targetVaultID = Get-AzRecoveryServicesVault -ResourceGroupName "Contoso-docs-rg
 
 ### <a name="modifying-storage-replication-settings"></a>저장소 복제 설정 수정
 
-[AzRecoveryServicesBackupProperty](https://docs.microsoft.com/powershell/module/az.recoveryservices/Set-AzRecoveryServicesBackupProperty) 명령을 사용 하 여 자격 증명 모음에 대 한 저장소 복제 구성을 LRS/GRS로 설정 합니다.
+[AzRecoveryServicesBackupProperty](https://docs.microsoft.com/powershell/module/az.recoveryservices/Set-AzRecoveryServicesBackupProperty) 명령을 사용 하 여 자격 증명 모음에 대한 저장소 복제 구성을 LRS/GRS로 설정 합니다.
 
 ```powershell
 Set-AzRecoveryServicesBackupProperty -Vault $targetVault -BackupStorageRedundancy GeoRedundant/LocallyRedundant
@@ -194,7 +194,7 @@ DefaultPolicy        AzureVM            AzureVM              4/14/2016 5:00:00 P
 * 기본 보존 정책을 보려면 [Get-AzRecoveryServicesBackupRetentionPolicyObject](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupretentionpolicyobject)를 사용합니다.
 * 마찬가지로 [Get-AzRecoveryServicesBackupSchedulePolicyObject](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupschedulepolicyobject)를 사용하여 기본 일정 정책을 볼 수 있습니다.
 * [New-AzRecoveryServicesBackupProtectionPolicy](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupprotectionpolicy) cmdlet은 백업 정책 정보를 보유하는 PowerShell 개체를 만듭니다.
-* 일정 및 보존 정책 개체는 AzRecoveryServicesBackupProtectionPolicy cmdlet에 대 한 입력으로 사용 됩니다.
+* 일정 및 보존 정책 개체는 AzRecoveryServicesBackupProtectionPolicy cmdlet에 대한 입력으로 사용 됩니다.
 
 기본적으로 시작 시간은 일정 정책 개체에 정의 되어 있습니다. 다음 예를 사용 하 여 시작 시간을 원하는 시작 시간으로 변경할 수 있습니다. 원하는 시작 시간은 UTC로도 지정 해야 합니다. 아래 예제에서는 원하는 시작 시간이 매일 백업의 경우 01:00 AM UTC 라고 가정 합니다.
 
@@ -228,7 +228,7 @@ NewPolicy           AzureVM            AzureVM              4/24/2016 1:30:00 AM
 보호 정책을 정의한 후에는 항목에 대한 정책을 계속 사용해야 합니다. [AzRecoveryServicesBackupProtection](https://docs.microsoft.com/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection) 를 사용 하 여 보호를 사용 하도록 설정 합니다. 보호를 사용하도록 설정하는 데에는 항목 및 정책이라는 두 가지 개체가 필요합니다. 정책이 자격 증명 모음과 연결되고 나면, 백업 워크플로가 정책 일정에 정의된 시간에 트리거됩니다.
 
 > [!IMPORTANT]
-> PS를 사용 하 여 한 번에 여러 Vm에 대 한 백업을 사용 하도록 설정 하는 동안 단일 정책에 연결 된 Vm이 100 이상 인지 확인 합니다. 이는 [권장 모범 사례](https://docs.microsoft.com/azure/backup/backup-azure-vm-backup-faq#is-there-a-limit-on-number-of-vms-that-can-beassociated-with-a-same-backup-policy)입니다. VM이 100개를 넘는 경우 지금은 PS 클라이언트가 명시적으로 차단하고 있진 않지만 향후 확인 절차를 추가하고자 합니다.
+> PS를 사용 하 여 한 번에 여러 Vm에 대한 백업을 사용 하도록 설정 하는 동안 단일 정책에 연결 된 Vm이 100 이상 인지 확인 합니다. 이는 [권장 모범 사례](https://docs.microsoft.com/azure/backup/backup-azure-vm-backup-faq#is-there-a-limit-on-number-of-vms-that-can-beassociated-with-a-same-backup-policy)입니다. VM이 100개를 넘는 경우 지금은 PS 클라이언트가 명시적으로 차단하고 있진 않지만 향후 확인 절차를 추가하고자 합니다.
 
 다음 예제에서는 NewPolicy 정책을 사용하여 V2VM 항목에 대해 보호를 활성화합니다. 예제는 VM이 암호화되었는지 여부와 암호화 유형에 따라 다릅니다.
 
@@ -239,7 +239,7 @@ $pol = Get-AzRecoveryServicesBackupProtectionPolicy -Name "NewPolicy" -VaultId $
 Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGroupName "RGName1" -VaultId $targetVault.ID
 ```
 
-암호화 된 Vm (BEK 및 KEK를 사용 하 여 암호화 됨)에 대 한 보호를 사용 하도록 설정 하려면 키 자격 증명 모음에서 키 및 암호를 읽을 수 있는 권한을 Azure Backup 서비스에 부여 해야 합니다.
+암호화 된 Vm (BEK 및 KEK를 사용 하 여 암호화 됨)에 대한 보호를 사용 하도록 설정 하려면 키 자격 증명 모음에서 키 및 암호를 읽을 수 있는 권한을 Azure Backup 서비스에 부여 해야 합니다.
 
 ```powershell
 Set-AzKeyVaultAccessPolicy -VaultName "KeyVaultName" -ResourceGroupName "RGNameOfKeyVault" -PermissionsToKeys backup,get,list -PermissionsToSecrets get,list -ServicePrincipalName 262044b1-e2ce-469f-a196-69ab7ada62d3
@@ -349,9 +349,9 @@ V2VM              Backup              InProgress          4/23/2016             
 >
 >
 
-### <a name="change-policy-for-backup-items"></a>백업 항목에 대 한 정책 변경
+### <a name="change-policy-for-backup-items"></a>백업 항목에 대한 정책 변경
 
-사용자는 기존 정책을 수정 하거나 백업 된 항목의 정책을 Policy1에서 Policy2로 변경할 수 있습니다. 백업 항목에 대 한 정책을 전환 하려면 관련 정책을 페치하고 항목을 백업 하 고 백업 항목과 함께 [AzRecoveryServices](https://docs.microsoft.com/powershell/module/az.recoveryservices/Enable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) 명령을 매개 변수로 사용 합니다.
+사용자는 기존 정책을 수정 하거나 백업 된 항목의 정책을 Policy1에서 Policy2로 변경할 수 있습니다. 백업 항목에 대한 정책을 전환 하려면 관련 정책을 페치하고 항목을 백업 하 고 백업 항목과 함께 [AzRecoveryServices](https://docs.microsoft.com/powershell/module/az.recoveryservices/Enable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) 명령을 매개 변수로 사용 합니다.
 
 ````powershell
 $TargetPol1 = Get-AzRecoveryServicesBackupProtectionPolicy -Name <PolicyName> -VaultId $targetVault.ID

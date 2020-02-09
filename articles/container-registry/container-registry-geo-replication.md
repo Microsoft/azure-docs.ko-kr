@@ -98,7 +98,7 @@ ACR이 구성된 복제본 사이의 이미지 동기화를 시작합니다. 동
 
 ## <a name="delete-a-replica"></a>복제본 삭제
 
-레지스트리에 대 한 복제본을 구성한 후에는 언제 든 지 더 이상 필요 하지 않은 복제본을 삭제할 수 있습니다. Azure Portal 또는 Azure CLI의 [az acr replication delete](/cli/azure/acr/replication#az-acr-replication-delete) 명령과 같은 기타 도구를 사용 하 여 복제본을 삭제 합니다.
+레지스트리에 대한 복제본을 구성한 후에는 언제 든 지 더 이상 필요 하지 않은 복제본을 삭제할 수 있습니다. Azure Portal 또는 Azure CLI의 [az acr replication delete](/cli/azure/acr/replication#az-acr-replication-delete) 명령과 같은 기타 도구를 사용 하 여 복제본을 삭제 합니다.
 
 Azure Portal에서 복제본을 삭제 하려면 다음을 수행 합니다.
 

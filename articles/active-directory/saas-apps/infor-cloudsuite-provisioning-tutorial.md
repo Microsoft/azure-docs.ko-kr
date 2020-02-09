@@ -36,7 +36,7 @@ ms.locfileid: "77057546"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [Infor CloudSuite 테 넌 트](https://www.infor.com/products/infor-os)
+* [Infor CloudSuite 테넌트](https://www.infor.com/products/infor-os)
 * 관리자 권한이 있는 Infor CloudSuite의 사용자 계정
 
 ## <a name="assigning-users-to-infor-cloudsuite"></a>Infor CloudSuite에 사용자 할당
@@ -110,7 +110,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 CloudSuite�
 > [Infor Cloudsuite single sign-on 자습서](https://docs.microsoft.com/azure/active-directory/saas-apps/infor-cloud-suite-tutorial)에 제공 된 지침에 따라 Infor cloudsuite에 대해 SAML 기반 Single Sign-On를 사용 하도록 선택할 수도 있습니다. Single Sign-On과 자동 사용자 프로비저닝은 서로 보완적이지만, 별개로 구성할 수 있습니다.
 
 > [!NOTE]
-> Infor CloudSuite의 SCIM 끝점에 대 한 자세한 내용은 [이](https://docs.infor.com/mingle/12.0.x/en-us/minceolh/jho1449382121585.html#)을 참조 하세요.
+> Infor CloudSuite의 SCIM 엔드포인트에 대 한 자세한 내용은 [이](https://docs.infor.com/mingle/12.0.x/en-us/minceolh/jho1449382121585.html#)을 참조 하세요.
 
 ### <a name="to-configure-automatic-user-provisioning-for-infor-cloudsuite-in-azure-ad"></a>Azure AD에서 Infor CloudSuite에 대해 자동 사용자 프로 비전을 구성 하려면:
 
@@ -130,7 +130,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 CloudSuite�
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에 있는 **테 넌 트 URL**에 `https://mingle-t20b-scim.mingle.awsdev.infor.com/INFORSTS_TST/v2/scim`을 입력 합니다. 이전에 **비밀 토큰**에서 검색 된 전달자 토큰 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 Infor cloudsuite에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Infor CloudSuite 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
+5. **관리자 자격 증명** 섹션 아래에 있는 **테넌트 URL**에 `https://mingle-t20b-scim.mingle.awsdev.infor.com/INFORSTS_TST/v2/scim`을 입력 합니다. 이전에 **비밀 토큰**에서 검색 된 전달자 토큰 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 Infor cloudsuite에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 Infor CloudSuite 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 

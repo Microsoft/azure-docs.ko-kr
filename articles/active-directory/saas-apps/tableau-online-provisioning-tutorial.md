@@ -35,7 +35,7 @@ ms.locfileid: "77064220"
 이 자습서에 설명 된 시나리오에서는 다음과 같은 것으로 가정 합니다.
 
 *   Azure AD 테넌트.
-*   [Tableau Online 테 넌 트](https://www.tableau.com/).
+*   [Tableau Online 테넌트](https://www.tableau.com/).
 *   관리자 권한이 있는 Tableau Online의 사용자 계정
 
 > [!NOTE]
@@ -103,7 +103,7 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
    * **도메인** 상자에서 6 단계에 따라 하위 도메인을 입력 합니다.
 
-   * **관리자 사용자 이름** 상자에서 Clarizen 테 넌 트의 관리자 계정에 대 한 사용자 이름을 입력 합니다. 예제는 admin@contoso.com입니다.
+   * **관리자 사용자 이름** 상자에서 Clarizen 테넌트의 관리자 계정에 대 한 사용자 이름을 입력 합니다. 예제는 admin@contoso.com입니다.
 
    * 관리자 **암호** 상자에 관리자 사용자 이름에 해당 하는 관리자 계정의 암호를 입력 합니다.
 

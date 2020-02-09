@@ -79,7 +79,7 @@ public async Task<IActionResult> Profile()
 
 ASP.NET에 대 한 코드는 ASP.NET Core에 대해 표시 되는 코드와 비슷합니다.
 
-- [권한 부여] 특성으로 보호 되는 컨트롤러 작업은 컨트롤러의 `ClaimsPrincipal` 멤버에 대 한 테 넌 트 ID 및 사용자 ID를 추출 합니다. (ASP.NET은 `HttpContext.User`를 사용 합니다.)
+- [권한 부여] 특성으로 보호 되는 컨트롤러 작업은 컨트롤러의 `ClaimsPrincipal` 멤버에 대 한 테넌트 ID 및 사용자 ID를 추출 합니다. (ASP.NET은 `HttpContext.User`를 사용 합니다.)
 - 여기에서 MSAL.NET `IConfidentialClientApplication` 개체를 빌드합니다.
 - 마지막으로 기밀 클라이언트 응용 프로그램의 `AcquireTokenSilent` 메서드를 호출 합니다.
 

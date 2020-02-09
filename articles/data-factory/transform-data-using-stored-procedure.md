@@ -76,7 +76,7 @@ Data Factory [파이프라인](concepts-pipelines-activities.md)의 데이터 �
 | storedProcedureParameters | 저장 프로시저 매개 변수의 값을 지정합니다. 매개 변수 값 및 데이터 원본에서 지원하는 해당 형식을 전달하기 위해 `"param1": { "value": "param1Value","type":"param1Type" }`를 사용합니다. 매개 변수에 null을 전달해야 하는 경우 `"param1": { "value": null }`(모두 소문자)을 사용합니다. | 아닙니다.       |
 
 ## <a name="parameter-data-type-mapping"></a>매개 변수 데이터 형식 매핑
-매개 변수에 지정 하는 데이터 형식은 사용 하는 데이터 원본의 데이터 형식에 매핑되는 Azure Data Factory 유형입니다. 커넥터 영역에서 데이터 원본에 대 한 데이터 형식 매핑을 찾을 수 있습니다. 몇 가지 예는 다음과 같습니다.
+매개 변수에 지정 하는 데이터 형식은 사용 하는 데이터 원본의 데이터 형식에 매핑되는 Azure Data Factory 유형입니다. 커넥터 영역에서 데이터 원본에 대한 데이터 형식 매핑을 찾을 수 있습니다. 몇 가지 예는 다음과 같습니다.
 
 | 데이터 원본          | 데이터 형식 매핑 |
 | ---------------------|-------------------|

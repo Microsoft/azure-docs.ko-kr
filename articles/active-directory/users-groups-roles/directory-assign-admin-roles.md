@@ -99,11 +99,11 @@ Azure Active Directory에서 사용자에게 관리 역할을 할당하는 방�
 
 ### <a name="b2c-user-flow-administratorb2c-user-flow-administrator-permissions"></a>[B2C 사용자 흐름 관리자](#b2c-user-flow-administrator-permissions)
 
-이 역할을 가진 사용자는 Azure Portal에서 B2C 사용자 흐름 ("기본 제공" 정책이 라고도 함)를 만들고 관리할 수 있습니다. 사용자 흐름을 만들거나 편집 하 여 이러한 사용자는 사용자 환경의 html/CSS/javascript 콘텐츠를 변경 하 고, 사용자 흐름 별로 MFA 요구 사항을 변경 하 고, 토큰에서 클레임을 변경 하 고, 테 넌 트의 모든 정책에 대 한 세션 설정을 조정할 수 있습니다. 반면,이 역할에는 사용자 데이터를 검토 하거나 테 넌 트 스키마에 포함 된 특성을 변경할 수 있는 기능이 포함 되지 않습니다. Id 경험 프레임 워크 (또한 사용자 지정) 정책은이 역할의 범위 밖에 있습니다.
+이 역할을 가진 사용자는 Azure Portal에서 B2C 사용자 흐름 ("기본 제공" 정책이 라고도 함)를 만들고 관리할 수 있습니다. 사용자 흐름을 만들거나 편집 하 여 이러한 사용자는 사용자 환경의 html/CSS/javascript 콘텐츠를 변경 하 고, 사용자 흐름 별로 MFA 요구 사항을 변경 하 고, 토큰에서 클레임을 변경 하 고, 테넌트의 모든 정책에 대 한 세션 설정을 조정할 수 있습니다. 반면,이 역할에는 사용자 데이터를 검토 하거나 테넌트 스키마에 포함 된 특성을 변경할 수 있는 기능이 포함 되지 않습니다. Id 경험 프레임 워크 (또한 사용자 지정) 정책은이 역할의 범위 밖에 있습니다.
 
 ### <a name="b2c-user-flow-attribute-administratorb2c-user-flow-attribute-administrator-permissions"></a>[B2C 사용자 흐름 특성 관리자](#b2c-user-flow-attribute-administrator-permissions)
 
-이 역할을 가진 사용자는 테 넌 트의 모든 사용자 흐름에서 사용할 수 있는 사용자 지정 특성을 추가 하거나 삭제 합니다. 이와 같이이 역할을 가진 사용자는 최종 사용자 스키마에 새 요소를 변경 하거나 추가 하 고, 모든 사용자 흐름의 동작에 영향을 줄 수 있으며 최종 사용자에 게 요청 될 수 있으며 궁극적으로 응용 프로그램에 대 한 클레임으로 전송 되는 데이터에 대 한 변경을 간접적으로 수행할 수 있습니다 이 역할은 사용자 흐름을 편집할 수 없습니다.
+이 역할을 가진 사용자는 테넌트의 모든 사용자 흐름에서 사용할 수 있는 사용자 지정 특성을 추가 하거나 삭제 합니다. 이와 같이이 역할을 가진 사용자는 최종 사용자 스키마에 새 요소를 변경 하거나 추가 하 고, 모든 사용자 흐름의 동작에 영향을 줄 수 있으며 최종 사용자에 게 요청 될 수 있으며 궁극적으로 응용 프로그램에 대 한 클레임으로 전송 되는 데이터에 대 한 변경을 간접적으로 수행할 수 있습니다 이 역할은 사용자 흐름을 편집할 수 없습니다.
 
 ### <a name="b2c-ief-keyset-administratorb2c-ief-keyset-administrator-permissions"></a>[B2C IEF 키 집합 관리자](#b2c-ief-keyset-administrator-permissions)
 
@@ -114,10 +114,10 @@ Azure Active Directory에서 사용자에게 관리 역할을 할당하는 방�
 
 ### <a name="b2c-ief-policy-administratorb2c-ief-policy-administrator-permissions"></a>[B2C IEF 정책 관리자](#b2c-ief-policy-administrator-permissions)
 
-이 역할의 사용자는 Azure AD B2C에서 모든 사용자 지정 정책을 만들고, 읽고, 업데이트 하 고, 삭제할 수 있으므로 관련 Azure AD B2C 테 넌 트에서 Id 경험 프레임 워크를 완전히 제어할 수 있습니다. 이 사용자는 정책을 편집 하 여 외부 id 공급자와 직접 페더레이션을 설정 하 고, 디렉터리 스키마를 변경 하 고, 모든 사용자 관련 콘텐츠 (HTML, CSS, JavaScript)를 변경 하 고, 요구 사항을 변경 하 여 인증을 완료 하 고, 새 사용자를 만들고, 보낼 수 있습니다. 전체 마이그레이션을 포함 하는 외부 시스템에 대 한 사용자 데이터 및 암호 및 전화 번호와 같은 중요 한 필드를 비롯 한 모든 사용자 정보를 편집 합니다. 반대로이 역할은 테 넌 트에서 페더레이션에 사용 되는 암호를 편집 하거나 암호화 키를 변경할 수 없습니다.
+이 역할의 사용자는 Azure AD B2C에서 모든 사용자 지정 정책을 만들고, 읽고, 업데이트 하 고, 삭제할 수 있으므로 관련 Azure AD B2C 테넌트에서 Id 경험 프레임 워크를 완전히 제어할 수 있습니다. 이 사용자는 정책을 편집 하 여 외부 id 공급자와 직접 페더레이션을 설정 하 고, 디렉터리 스키마를 변경 하 고, 모든 사용자 관련 콘텐츠 (HTML, CSS, JavaScript)를 변경 하 고, 요구 사항을 변경 하 여 인증을 완료 하 고, 새 사용자를 만들고, 보낼 수 있습니다. 전체 마이그레이션을 포함 하는 외부 시스템에 대 한 사용자 데이터 및 암호 및 전화 번호와 같은 중요 한 필드를 비롯 한 모든 사용자 정보를 편집 합니다. 반대로이 역할은 테넌트에서 페더레이션에 사용 되는 암호를 편집 하거나 암호화 키를 변경할 수 없습니다.
 
 > [!IMPORTANT]
-> B2 IEF 정책 관리자는 프로덕션에서 테 넌 트에 대해 매우 제한 된 방식으로 할당 되어야 하는 매우 중요 한 역할입니다. 특히 프로덕션 테 넌 트의 경우 이러한 사용자의 활동을 면밀 하 게 감사 해야 합니다.
+> B2 IEF 정책 관리자는 프로덕션에서 테넌트에 대해 매우 제한 된 방식으로 할당 되어야 하는 매우 중요 한 역할입니다. 특히 프로덕션 테넌트의 경우 이러한 사용자의 활동을 면밀 하 게 감사 해야 합니다.
 
 ### <a name="billing-administratorbilling-administrator-permissions"></a>[대금 청구 관리자](#billing-administrator-permissions)
 
@@ -212,10 +212,10 @@ Azure Active Directory에서 사용자에게 관리 역할을 할당하는 방�
 
 ### <a name="external-identity-provider-administratorexternal-identity-provider-administrator-permissions"></a>[외부 Id 공급자 관리자](#external-identity-provider-administrator-permissions)
 
-이 관리자는 Azure Active Directory 테 넌 트와 외부 id 공급자 간의 페더레이션을 관리 합니다. 이 역할을 통해 사용자는 새 id 공급자를 추가 하 고 사용 가능한 모든 설정 (예: 인증 경로, 서비스 ID, 할당 된 키 컨테이너)을 구성할 수 있습니다. 이 사용자는 테 넌 트가 외부 id 공급자의 인증을 신뢰할 수 있도록 설정할 수 있습니다. 최종 사용자 환경에 미치는 영향은 테 넌 트의 유형에 따라 달라 집니다.
+이 관리자는 Azure Active Directory 테넌트와 외부 id 공급자 간의 페더레이션을 관리 합니다. 이 역할을 통해 사용자는 새 id 공급자를 추가 하 고 사용 가능한 모든 설정 (예: 인증 경로, 서비스 ID, 할당 된 키 컨테이너)을 구성할 수 있습니다. 이 사용자는 테넌트가 외부 id 공급자의 인증을 신뢰할 수 있도록 설정할 수 있습니다. 최종 사용자 환경에 미치는 영향은 테넌트의 유형에 따라 달라 집니다.
 
-* 직원 및 파트너에 대 한 Azure Active Directory 테 넌 트: 페더레이션 (예: Gmail) 추가는 아직 사용 되지 않은 모든 게스트 초대에 즉시 영향을 줍니다. [B2B 게스트 사용자에 대 한 id 공급자로 Google 추가](https://docs.microsoft.com/azure/active-directory/b2b/google-federation)를 참조 하세요.
-* Azure Active Directory B2C 테 넌 트: 페더레이션 (예: Facebook 또는 다른 Azure AD 조직)을 추가 하는 것은 사용자 흐름에서 id 공급자가 옵션으로 추가 될 때까지 최종 사용자 흐름에 즉시 영향을 주지 않습니다 (기본 제공이 라고도 함). 정책). 예는 [id 공급자로 Microsoft 계정 구성을](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-setup-msa-app) 참조 하세요. 사용자 흐름을 변경 하려면 "B2C 사용자 흐름 관리자"의 제한 된 역할이 필요 합니다.
+* 직원 및 파트너에 대 한 Azure Active Directory 테넌트: 페더레이션 (예: Gmail) 추가는 아직 사용 되지 않은 모든 게스트 초대에 즉시 영향을 줍니다. [B2B 게스트 사용자에 대 한 id 공급자로 Google 추가](https://docs.microsoft.com/azure/active-directory/b2b/google-federation)를 참조 하세요.
+* Azure Active Directory B2C 테넌트: 페더레이션 (예: Facebook 또는 다른 Azure AD 조직)을 추가 하는 것은 사용자 흐름에서 id 공급자가 옵션으로 추가 될 때까지 최종 사용자 흐름에 즉시 영향을 주지 않습니다 (기본 제공이 라고도 함). 정책). 예는 [id 공급자로 Microsoft 계정 구성을](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-setup-msa-app) 참조 하세요. 사용자 흐름을 변경 하려면 "B2C 사용자 흐름 관리자"의 제한 된 역할이 필요 합니다.
 
 ### <a name="global-administrator--company-administratorcompany-administrator-permissions"></a>[전역 관리자/회사 관리자](#company-administrator-permissions)
 
@@ -248,7 +248,7 @@ Azure Active Directory에서 사용자에게 관리 역할을 할당하는 방�
 
 ### <a name="group-administratorgroup-administrator-permissions"></a>[그룹 관리자](#group-administrator-permissions)
 
-이 역할의 사용자는 이름 및 만료 정책 같은 그룹 및 설정을 만들고 관리할 수 있습니다. 이 역할에 사용자를 할당 하면 팀, SharePoint, Yammer와 같은 다양 한 워크 로드에서 Outlook 외에도 테 넌 트의 모든 그룹을 관리 하는 기능을 이해 하는 것이 중요 합니다. 또한 사용자는 Microsoft 관리 센터, Azure Portal 등의 다양 한 관리 포털에서 다양 한 그룹 설정을 관리할 수 있을 뿐만 아니라 팀 및 SharePoint 관리 센터와 같은 워크 로드 관련 작업을 관리할 수도 있습니다.
+이 역할의 사용자는 이름 및 만료 정책 같은 그룹 및 설정을 만들고 관리할 수 있습니다. 이 역할에 사용자를 할당 하면 팀, SharePoint, Yammer와 같은 다양 한 워크 로드에서 Outlook 외에도 테넌트의 모든 그룹을 관리 하는 기능을 이해 하는 것이 중요 합니다. 또한 사용자는 Microsoft 관리 센터, Azure Portal 등의 다양 한 관리 포털에서 다양 한 그룹 설정을 관리할 수 있을 뿐만 아니라 팀 및 SharePoint 관리 센터와 같은 워크 로드 관련 작업을 관리할 수도 있습니다.
 
 ### <a name="guest-inviterguest-inviter-permissions"></a>[게스트 초대자](#guest-inviter-permissions)
 
@@ -281,7 +281,7 @@ Azure Active Directory에서 사용자에게 관리 역할을 할당하는 방�
 
 이 역할을 가진 사용자는 해당 서비스가 있는 경우 Microsoft Intune Online 내에서 글로벌 사용 권한을 갖습니다. 또한 이 역할은 정책을 연결하고 그룹을 만들고 관리하기 위해 사용자와 디바이스를 관리하는 기능을 포함합니다. [Microsoft Intune를 사용 하는 RBAC (역할 기반 관리 제어)](https://docs.microsoft.com/intune/role-based-access-control)에 대 한 자세한 정보.
 
-이 역할은 모든 보안 그룹을 만들고 관리할 수 있습니다. 그러나 Intune 관리자는 Office 그룹에 대 한 관리자 권한이 없습니다. 즉, 관리자는 테 넌 트에 있는 모든 Office 그룹의 소유자 또는 구성원 자격을 업데이트할 수 없습니다. 그러나 자신이 만든 Office 그룹을 관리할 수 있습니다 .이 그룹은 최종 사용자 권한의 일부로 제공 됩니다. 따라서 자신이 만든 모든 Office 그룹 (보안 그룹 아님)은 250의 할당량을 기준으로 계산 되어야 합니다.
+이 역할은 모든 보안 그룹을 만들고 관리할 수 있습니다. 그러나 Intune 관리자는 Office 그룹에 대 한 관리자 권한이 없습니다. 즉, 관리자는 테넌트에 있는 모든 Office 그룹의 소유자 또는 구성원 자격을 업데이트할 수 없습니다. 그러나 자신이 만든 Office 그룹을 관리할 수 있습니다 .이 그룹은 최종 사용자 권한의 일부로 제공 됩니다. 따라서 자신이 만든 모든 Office 그룹 (보안 그룹 아님)은 250의 할당량을 기준으로 계산 되어야 합니다.
 
 > [!NOTE]
 > Microsoft Graph API, Azure AD Graph API 및 Azure AD PowerShell에서 이 역할은 “Intune 서비스 관리자”로 식별됩니다. [Azure Portal](https://portal.azure.com)에서 이 역할은 "Intune 관리자"입니다.

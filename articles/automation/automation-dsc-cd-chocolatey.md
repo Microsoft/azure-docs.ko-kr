@@ -14,7 +14,7 @@ ms.locfileid: "75966734"
 ---
 # <a name="usage-example-continuous-deployment-to-virtual-machines-using-automation-state-configuration-and-chocolatey"></a>사용 예: Automation State Configuration 및 Chocolatey를 사용하여 Virtual Machines에 연속 배포
 
-DevOps 업계에는 연속 통합 파이프라인의 여러 시점에서 개발자를 지원하는 여러 도구가 있습니다. Azure Automation State Configuration이 DevOps 팀이 채택할 수 있는 새로운 옵션으로 추가되었습니다. 이 문서에서는 Windows 컴퓨터에 대 한 CD(연속 배포)를 보여줍니다. 이 방법을 간편하게 확장하여 역할(예: 웹 사이트)에서 필요한 만큼의 Windows 컴퓨터를 포함하고 추가적인 역할도 구성할 수 있습니다.
+DevOps 업계에는 연속 통합 파이프라인의 여러 시점에서 개발자를 지원하는 여러 도구가 있습니다. Azure Automation State Configuration이 DevOps 팀이 채택할 수 있는 새로운 옵션으로 추가되었습니다. 이 문서에서는 Windows 컴퓨터에 대한 CD(연속 배포)를 보여줍니다. 이 방법을 간편하게 확장하여 역할(예: 웹 사이트)에서 필요한 만큼의 Windows 컴퓨터를 포함하고 추가적인 역할도 구성할 수 있습니다.
 
 ![IaaS VM에 대한 연속 배포](./media/automation-dsc-cd-chocolatey/cdforiaasvm.png)
 
@@ -82,7 +82,7 @@ Azure Automation 계정에 DSC 리소스를 설치하기 위해 PowerShell 갤�
 Azure Portal에 최근에 추가된 또 다른 방법을 사용하면 새 모듈을 당겨오거나 기존 모듈을 업데이트할 수 있습니다. Automation 계정 리소스, 자산 타일 및 모듈 타일을 차례로 클릭합니다. 갤러리 찾아보기 아이콘을 사용하면 갤러리에서 모듈의 목록을 보고 세부 정보로 드릴다운하고 궁극적으로 Automation 계정으로 가져올 수 있습니다. 이는 모듈을 최신 상태로 유지할 수 있는 좋은 방법입니다. 그리고 가져오기 기능은 다른 모듈의 종속성을 확인하여 동기화에서 빠져 나가지 않도록 합니다.
 
 또는 수동 방법이 있습니다. Windows 컴퓨터용 PowerShell 통합 모듈의 폴더 구조는 Azure Automation에서의 예상 폴더 구조와 다소 차이가 있습니다.
-여기에는 약간의 사용자 조정 작업이 필요합니다. 그러나이 작업은 어려울 수 있으며 나중에 업그레이드 하려고 하지 않는 한 리소스 당 한 번만 수행 됩니다. PowerShell 통합 모듈을 제작 하는 방법에 대 한 자세한 내용은 [Azure Automation에 대 한 통합 모듈 제작](https://azure.microsoft.com/blog/authoring-integration-modules-for-azure-automation/) 문서를 참조 하세요.
+여기에는 약간의 사용자 조정 작업이 필요합니다. 그러나이 작업은 어려울 수 있으며 나중에 업그레이드 하려고 하지 않는 한 리소스 당 한 번만 수행 됩니다. PowerShell 통합 모듈을 제작 하는 방법에 대한 자세한 내용은 [Azure Automation에 대한 통합 모듈 제작](https://azure.microsoft.com/blog/authoring-integration-modules-for-azure-automation/) 문서를 참조 하세요.
 
 - 다음과 같이 사용자 워크스테이션에 필요한 모듈을 설치합니다.
   - [Windows Management Framework, v5](https://aka.ms/wmf5latest) 설치(Windows 10에는 필요 없음)
@@ -174,7 +174,7 @@ Get-AzureRmAutomationDscCompilationJob `
 ## <a name="step-5-creating-and-maintaining-package-metadata"></a>5단계: 패키지 메타데이터 만들기 및 유지 관리
 
 패키지 리포지토리에 넣는 각 패키지에 대해 이를 설명하는 nuspec이 필요합니다.
-해당 nuspec은 NuGet 서버에서 컴파일 및 저장해야 합니다. 이 프로세스는 [여기](https://docs.nuget.org/create/creating-and-publishing-a-package)에서 설명합니다. MyGet.org를 NuGet 서버로 사용할 수 있습니다. 이 서비스를 판매하고 있지만 스타터 SKU는 무료입니다. NuGet.org에서 프라이빗 패키지에 대 한 자체 NuGet 서버 설치 관련 지침을 찾을 수 있습니다.
+해당 nuspec은 NuGet 서버에서 컴파일 및 저장해야 합니다. 이 프로세스는 [여기](https://docs.nuget.org/create/creating-and-publishing-a-package)에서 설명합니다. MyGet.org를 NuGet 서버로 사용할 수 있습니다. 이 서비스를 판매하고 있지만 스타터 SKU는 무료입니다. NuGet.org에서 프라이빗 패키지에 대한 자체 NuGet 서버 설치 관련 지침을 찾을 수 있습니다.
 
 ## <a name="step-6-tying-it-all-together"></a>6단계: 모든 항목 요약
 

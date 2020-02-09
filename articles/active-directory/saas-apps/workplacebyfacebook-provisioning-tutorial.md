@@ -45,11 +45,11 @@ https://portal.azure.com/?Microsoft_AAD_IAM_userProvisioningEnableCredentialsOve
 
  
 #### <a name="the-admin-credentials-section-is-greyed-out-on-my-application-and-i-cant-save-why"></a>응용 프로그램에서 관리자 자격 증명 섹션이 회색으로 표시 되 고 저장할 수 없습니다. 이유
-기존 작업 공간 고객에 대 한 관리자 자격 증명 섹션을 잠 궜 습니다. 새 작업 공간 응용 프로그램으로 테 넌 트가 마이그레이션된 경우에는 관리자 자격 증명 섹션을 다시 업데이트할 수 있습니다. 기다릴 수 없으면 위의 URL을 사용 하 여 응용 프로그램을 편집할 수 있습니다. 
+기존 작업 공간 고객에 대 한 관리자 자격 증명 섹션을 잠 궜 습니다. 새 작업 공간 응용 프로그램으로 테넌트가 마이그레이션된 경우에는 관리자 자격 증명 섹션을 다시 업데이트할 수 있습니다. 기다릴 수 없으면 위의 URL을 사용 하 여 응용 프로그램을 편집할 수 있습니다. 
 
  
 #### <a name="when-will-these-changes-happen"></a>이러한 변경 내용은 언제 발생 하나요?
-작업 공간의 모든 새 인스턴스는 이미 새 통합/권한 부여 방법을 사용 하 고 있습니다. 기존 통합은 2 월에 점차적으로 마이그레이션됩니다. 해당 월의 끝까지 모든 테 넌 트에 대해 마이그레이션이 완료 됩니다. 
+작업 공간의 모든 새 인스턴스는 이미 새 통합/권한 부여 방법을 사용 하 고 있습니다. 기존 통합은 2 월에 점차적으로 마이그레이션됩니다. 해당 월의 끝까지 모든 테넌트에 대해 마이그레이션이 완료 됩니다. 
 
 ## <a name="capabilities-supported"></a>지원 되는 기능
 > [!div class="checklist"]
@@ -62,7 +62,7 @@ https://portal.azure.com/?Microsoft_AAD_IAM_userProvisioningEnableCredentialsOve
 
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
-* [Azure AD 테 넌 트](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
+* [Azure AD 테넌트](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
 * 프로 비전을 구성할 수 있는 [권한이](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) 있는 Azure AD의 사용자 계정 (예: 응용 프로그램 관리자, 클라우드 응용 프로그램 관리자, 응용 프로그램 소유자 또는 전역 관리자)
 * Workplace by Facebook Single Sign-On이 설정된 구독
 

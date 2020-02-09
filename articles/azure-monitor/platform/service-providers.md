@@ -27,7 +27,7 @@ Log Analytics 작업 영역에서는 관리자가 [로그](data-platform-logs.md
 
 Log Analytics 작업 영역에 관련된 서비스 공급자에 대해 세 가지 아키텍처를 사용할 수 있습니다.
 
-### <a name="1-distributed---logs-are-stored-in-workspaces-located-in-the-customers-tenant"></a>1. 분산 로그는 고객의 테 넌 트에 있는 작업 영역에 저장 됩니다. 
+### <a name="1-distributed---logs-are-stored-in-workspaces-located-in-the-customers-tenant"></a>1. 분산 로그는 고객의 테넌트에 있는 작업 영역에 저장 됩니다. 
 
 이 아키텍처에서 작업 영역은 해당 고객의 모든 로그에 사용되는 고객의 테넌트에 배포됩니다. 서비스 공급자 관리자는 [Azure Active Directory 게스트 사용자(B2B)](https://docs.microsoft.com/azure/active-directory/b2b/what-is-b2b)를 사용하여 이 작업 영역에 대한 액세스 권한이 부여되었습니다. 서비스 공급자 관리자는 Azure Portal에서 고객 디렉터리로 전환해야 이러한 작업 영역에 액세스할 수 있습니다.
 
@@ -43,7 +43,7 @@ Log Analytics 작업 영역에 관련된 서비스 공급자에 대해 세 가�
 * 서비스 공급자 관리자는 고객 디렉터리에서 프로비전되어야 합니다.
 * 서비스 공급자는 해당 고객 간에 데이터를 분석할 수 없습니다.
 
-### <a name="2-central---logs-are-stored-in-a-workspace-located-in-the-service-provider-tenant"></a>2. 중앙 로그는 서비스 공급자 테 넌 트에 있는 작업 영역에 저장 됩니다.
+### <a name="2-central---logs-are-stored-in-a-workspace-located-in-the-service-provider-tenant"></a>2. 중앙 로그는 서비스 공급자 테넌트에 있는 작업 영역에 저장 됩니다.
 
 이 아키텍처에서 로그는 고객의 테넌트에 저장되지 않고 서비스 공급자의 구독 내의 중앙 위치에만 저장됩니다. 고객의 VM에 설치된 에이전트는 작업 영역 ID 및 비밀 키를 사용하여 이 작업 영역에 해당 로그를 보내도록 구성됩니다.
 
@@ -65,7 +65,7 @@ Log Analytics 작업 영역에 관련된 서비스 공급자에 대해 세 가�
 
 * 모든 고객의 모든 VM 에이전트는 동일한 작업 영역 ID 및 키를 사용하여 중앙 작업 영역에 인증됩니다. 다른 고객을 방해하지 않고 특정 고객의 로그를 차단하는 방법은 없습니다.
 
-### <a name="3-hybrid---logs-are-stored-in-workspace-located-in-the-customers-tenant-and-some-of-them-are-pulled-to-a-central-location"></a>3. 하이브리드 로그는 고객의 테 넌 트에 있는 작업 영역에 저장 되 고 그 중 일부는 중앙 위치로 끌어옵니다.
+### <a name="3-hybrid---logs-are-stored-in-workspace-located-in-the-customers-tenant-and-some-of-them-are-pulled-to-a-central-location"></a>3. 하이브리드 로그는 고객의 테넌트에 있는 작업 영역에 저장 되 고 그 중 일부는 중앙 위치로 끌어옵니다.
 
 두 가지 옵션 중 세 번째 아키텍처 조합입니다. 로그가 각 고객에게 로컬인 첫 번째 분산 아키텍처에 기반하지만 로그의 중앙 리포지토리를 만드는 일부 메커니즘을 사용합니다. 보고 및 분석을 위해 중앙 위치로 로그의 일부를 끌어옵니다. 이 부분은 적은 수의 데이터 형식 또는 일별 통계와 같은 작업 요약일 수 있습니다.
 

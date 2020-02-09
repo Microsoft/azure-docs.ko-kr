@@ -70,7 +70,7 @@ Key vault 관리자는 [키 자격 증명 모음 감사 이벤트에 대 한 로
 
 ### <a name="requirements-for-configuring-akv"></a>AKV 구성에 대 한 요구 사항
 
-- Key vault 및 SQL Database/관리 되는 인스턴스는 동일한 Azure Active Directory 테 넌 트에 속해야 합니다. 교차 테넌트 키 자격 증명 모음 및 서버 상호 작용은 지원되지 않습니다. 나중에 리소스를 이동 하려면 AKV를 사용 하는 TDE를 다시 구성 해야 합니다. [리소스 이동](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources)에 대해 자세히 알아보세요.
+- Key vault 및 SQL Database/관리 되는 인스턴스는 동일한 Azure Active Directory 테넌트에 속해야 합니다. 교차 테넌트 키 자격 증명 모음 및 서버 상호 작용은 지원되지 않습니다. 나중에 리소스를 이동 하려면 AKV를 사용 하는 TDE를 다시 구성 해야 합니다. [리소스 이동](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources)에 대해 자세히 알아보세요.
 
 - 데이터 손실 실수로 인 한 키 (또는 키 자격 증명 모음) 삭제가 발생 하지 않도록 보호 하기 위해 키 자격 증명 모음에서 [일시 삭제](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete) 기능을 사용 하도록 설정 해야 합니다. 일시 삭제 된 리소스는 고객이 복구 하거나 제거 하지 않는 한 90 일간 보존 됩니다. *복구* 및 *제거* 작업에는 키 자격 증명 모음 액세스 정책과 연결된 고유 권한이 있습니다. 일시 삭제 기능은 기본적으로 해제 되어 있으며 [Powershell](https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-powershell#enabling-soft-delete) 또는 [CLI](https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-cli#enabling-soft-delete)를 통해 사용 하도록 설정할 수 있습니다. Azure Portal를 통해 사용 하도록 설정할 수 없습니다.  
 

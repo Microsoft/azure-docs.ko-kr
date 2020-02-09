@@ -19,7 +19,7 @@ ms.locfileid: "77029472"
 
 Azure Cosmos DB의 API for MongoDB는 Cosmos DB의 자동 인덱스 관리 기능을 활용합니다. 결과적으로, 사용자는 Cosmos DB의 기본 인덱싱 정책에 액세스할 수 있습니다. 따라서 사용자에 의해 정의된 인덱스가 없거나 삭제된 인덱스가 없는 경우 모든 필드는 컬렉션에 삽입될 때 기본적으로 자동으로 인덱싱됩니다. 대부분의 시나리오의 경우 계정에서 설정된 기본 인덱싱 정책을 사용하는 것이 좋습니다.
 
-## <a name="indexing-for-version-36"></a>버전 3.6에 대 한 인덱싱
+## <a name="indexing-for-version-36"></a>버전 3.6에 대한 인덱싱
 
 유선 프로토콜 버전 3.6을 처리 하는 계정은 이전 버전에서 제공 하는 정책과는 다른 기본 인덱싱 정책을 제공 합니다. 기본적으로 _id 필드만 인덱싱됩니다. 추가 필드를 인덱싱 하려면 사용자가 MongoDB 인덱스 관리 명령을 적용 해야 합니다. 쿼리에 정렬을 적용 하려면 정렬 작업에 사용 되는 필드에 현재 인덱스를 만들어야 합니다.
 
@@ -35,7 +35,7 @@ Azure Cosmos DB의 API for MongoDB는 Cosmos DB의 자동 인덱스 관리 기�
 
 ### <a name="track-the-index-progress"></a>인덱스 진행률 추적
 
-MongoDB 계정에 대 한 Azure Cosmos DB의 API 3.6 버전은 데이터베이스 인스턴스의 인덱스 진행률을 추적 하는 `currentOp()` 명령을 지원 합니다. 이 명령은 데이터베이스 인스턴스의 진행 중인 작업에 대 한 정보가 포함 된 문서를 반환 합니다. `currentOp` 명령은 기본 MongoDB의 모든 진행 중인 작업을 추적 하는 데 사용 되는 반면, MongoDB에 대 한 Azure Cosmos DB의 API에서이 명령은 인덱스 작업 추적만 지원 합니다.
+MongoDB 계정에 대한 Azure Cosmos DB의 API 3.6 버전은 데이터베이스 인스턴스의 인덱스 진행률을 추적 하는 `currentOp()` 명령을 지원 합니다. 이 명령은 데이터베이스 인스턴스의 진행 중인 작업에 대한 정보가 포함 된 문서를 반환 합니다. `currentOp` 명령은 기본 MongoDB의 모든 진행 중인 작업을 추적 하는 데 사용 되는 반면, MongoDB에 대한 Azure Cosmos DB의 API에서이 명령은 인덱스 작업 추적만 지원 합니다.
 
 `currentOp` 명령을 사용 하 여 인덱스 진행률을 추적 하는 방법을 보여 주는 몇 가지 예는 다음과 같습니다.
 
@@ -45,21 +45,21 @@ MongoDB 계정에 대 한 Azure Cosmos DB의 API 3.6 버전은 데이터베이�
    db.currentOp({"command.createIndexes": <collectionName>, "command.$db": <databaseName>})
    ```
 
-• 데이터베이스의 모든 컬렉션에 대 한 인덱스 진행률을 가져옵니다.
+• 데이터베이스의 모든 컬렉션에 대한 인덱스 진행률을 가져옵니다.
 
   ```shell
   db.currentOp({"command.$db": <databaseName>})
   ```
 
-• Azure Cosmos 계정에 있는 모든 데이터베이스 및 컬렉션에 대 한 인덱스 진행률을 가져옵니다.
+• Azure Cosmos 계정에 있는 모든 데이터베이스 및 컬렉션에 대한 인덱스 진행률을 가져옵니다.
 
   ```shell
   db.currentOp({"command.createIndexes": { $exists : true } })
   ```
 
-인덱스 진행률 세부 정보에는 현재 인덱스 작업에 대 한 진행률 비율이 포함 됩니다. 다음 예에서는 다양 한 인덱스 진행률 단계에 대 한 출력 문서 형식을 보여 줍니다.
+인덱스 진행률 세부 정보에는 현재 인덱스 작업에 대한 진행률 비율이 포함 됩니다. 다음 예에서는 다양 한 인덱스 진행률 단계에 대한 출력 문서 형식을 보여 줍니다.
 
-1. 60% 인덱싱이 완료 된 ' foo ' 컬렉션과 ' bar ' 데이터베이스에 대 한 인덱스 작업이 다음 출력 문서를 포함 하는 경우 `Inprog[0].progress.total`는 대상 완료로 100를 표시 합니다.
+1. 60% 인덱싱이 완료 된 ' foo ' 컬렉션과 ' bar ' 데이터베이스에 대한 인덱스 작업이 다음 출력 문서를 포함 하는 경우 `Inprog[0].progress.total`는 대상 완료로 100를 표시 합니다.
 
    ```json
    {
@@ -116,7 +116,7 @@ MongoDB 계정에 대 한 Azure Cosmos DB의 API 3.6 버전은 데이터베이�
    }
    ```
 
-## <a name="indexing-for-version-32"></a>버전 3.2에 대 한 인덱싱
+## <a name="indexing-for-version-32"></a>버전 3.2에 대한 인덱싱
 
 ### <a name="dropping-the-default-indexes-32"></a>기본 인덱스 삭제 (3.2)
 

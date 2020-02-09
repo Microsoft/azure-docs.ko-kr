@@ -29,7 +29,7 @@ Azure Active Directory B2C (Azure AD B2C) 디렉터리에 로컬 계정이 있�
 
 ## <a name="prerequisites"></a>필수 조건
 
-로컬 계정 로그인을 허용 하도록 구성 된 Azure AD B2C 테 넌 트입니다. 외부 id 공급자 계정에는 KMSI가 지원 되지 않습니다.
+로컬 계정 로그인을 허용 하도록 구성 된 Azure AD B2C 테넌트입니다. 외부 id 공급자 계정에는 KMSI가 지원 되지 않습니다.
 
 테넌트가 없으면 [자습서: Azure Active Directory B2C 테넌트 만들기](tutorial-create-tenant.md)의 단계를 사용하여 테넌트를 만들 수 있습니다.
 

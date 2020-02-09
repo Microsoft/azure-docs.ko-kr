@@ -21,4 +21,4 @@ ms.locfileid: "75980197"
 
 [게스트 기반 자동 크기 조정을 사용 하 여 Linux 확장 집합을 배포](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-guest-based-autoscale-linux.md)하도록 [기본 확장 집합 템플릿을](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md) 수정 하는 방법을 볼 수 있습니다.
 
-크기 집합에 대 한 자세한 내용은 [크기 집합 개요 페이지](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md)를 참조 하세요.
+크기 집합에 대한 자세한 내용은 [크기 집합 개요 페이지](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md)를 참조 하세요.

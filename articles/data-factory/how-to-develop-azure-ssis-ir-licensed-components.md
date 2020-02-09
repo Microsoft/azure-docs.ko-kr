@@ -1,5 +1,5 @@
 ---
-title: Azure에 대 한 사용이 허가 된 구성 요소 설치-SSIS 통합 런타임
+title: Azure에 대한 사용이 허가 된 구성 요소 설치-SSIS 통합 런타임
 description: ISV가 Azure-SSIS 통합 런타임에 대한 유료 또는 라이선스 사용자 지정 구성 요소를 개발하고 설치하는 방법을 알아봄
 services: data-factory
 ms.service: data-factory

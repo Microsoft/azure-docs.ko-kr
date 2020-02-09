@@ -1,6 +1,6 @@
 ---
 title: Azure Policy를 사용하여 VM 생성 시 백업 자동 활성화
-description: Azure Policy를 사용 하 여 지정 된 범위에서 만든 모든 Vm에 대 한 백업을 자동으로 활성화 하는 방법을 설명 하는 문서입니다.
+description: Azure Policy를 사용 하 여 지정 된 범위에서 만든 모든 Vm에 대한 백업을 자동으로 활성화 하는 방법을 설명 하는 문서입니다.
 ms.topic: conceptual
 ms.date: 11/08/2019
 ms.openlocfilehash: 7a3b526d654936d4e7ec89127a9074146c1b0179
@@ -20,7 +20,7 @@ ms.locfileid: "75450129"
 
 * 기본 제공 정책은 현재 Azure Vm에 대해서만 지원 됩니다. 사용자는 할당 중에 지정 된 보존 정책이 VM 보존 정책 인지 확인 해야 합니다. 이 정책에서 지 원하는 모든 VM Sku를 보려면 [이](https://aka.ms/PolicySupportedSKUs) 문서를 참조 하세요.
 
-* 정책은 한 번에 하나의 위치 및 구독에 할당 될 수 있습니다. 위치 및 구독의 Vm에 대 한 백업을 사용 하도록 설정 하려면 각 위치 및 구독의 조합에 대해 하나씩, 정책 할당의 여러 인스턴스를 만들어야 합니다.
+* 정책은 한 번에 하나의 위치 및 구독에 할당 될 수 있습니다. 위치 및 구독의 Vm에 대한 백업을 사용 하도록 설정 하려면 각 위치 및 구독의 조합에 대해 하나씩, 정책 할당의 여러 인스턴스를 만들어야 합니다.
 
 * 지정 된 자격 증명 모음 및 백업용으로 구성 된 Vm은 다른 리소스 그룹에 있을 수 있습니다.
 
@@ -34,9 +34,9 @@ ms.locfileid: "75450129"
 
 1. Azure Portal에 로그인 하 고 **정책** 대시보드로 이동 합니다.
 2. 왼쪽 메뉴에서 **정의** 를 선택 하 여 Azure 리소스의 모든 기본 제공 정책 목록을 가져옵니다.
-3. **Category = Backup**의 목록을 필터링 합니다. ' 동일한 위치의 기존 중앙 자격 증명 모음에 대 한 위치의 Vm에 백업 구성 ' 이라는 단일 정책으로 필터링 된 목록이 표시 됩니다.
+3. **Category = Backup**의 목록을 필터링 합니다. ' 동일한 위치의 기존 중앙 자격 증명 모음에 대한 위치의 Vm에 백업 구성 ' 이라는 단일 정책으로 필터링 된 목록이 표시 됩니다.
 ![정책 대시보드](./media/backup-azure-auto-enable-backup/policy-dashboard.png)
-4. 정책의 이름을 클릭 합니다. 이 정책에 대 한 세부 정의로 리디렉션됩니다.
+4. 정책의 이름을 클릭 합니다. 이 정책에 대한 세부 정의로 리디렉션됩니다.
 ![정책 정의 블레이드](./media/backup-azure-auto-enable-backup/policy-definition-blade.png)
 5. 블레이드 맨 위에 있는 **할당** 단추를 클릭 합니다. 그러면 **정책 할당** 블레이드에 리디렉션됩니다.
 6. **기본**에서 **범위** 필드 옆에 있는 세 개의 점을 클릭 합니다. 그러면 적용할 정책의 구독을 선택할 수 있는 올바른 컨텍스트 블레이드가 열립니다. 또한 필요에 따라 리소스 그룹을 선택 하 여 특정 리소스 그룹의 Vm에 대해서만 정책이 적용 되도록 할 수 있습니다.
@@ -56,4 +56,4 @@ ms.locfileid: "75450129"
 
 ## <a name="next-steps"></a>다음 단계
 
-[Azure Policy에 대 한 자세한 정보](https://docs.microsoft.com/azure/governance/policy/overview)
+[Azure Policy에 대한 자세한 정보](https://docs.microsoft.com/azure/governance/policy/overview)

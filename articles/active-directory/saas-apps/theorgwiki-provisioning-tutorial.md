@@ -36,7 +36,7 @@ ms.locfileid: "77063149"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트.
-* [OrgWiki 테 넌 트](https://www.theorgwiki.com/welcome/)입니다.
+* [OrgWiki 테넌트](https://www.theorgwiki.com/welcome/)입니다.
 * 관리자 권한이 있는 TheOrgWiki의 사용자 계정
 
 ## <a name="assign-users-to-theorgwiki"></a>TheOrgWiki에 사용자 할당
@@ -109,7 +109,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위해 TheOrgWiki를 구
 
     ![TheOrgWiki SCIM 추가](media/theorgwiki-provisioning-tutorial/image03.png)
     
-8. 인증에 성공 하면 응용 프로그램이 테 넌 트에 자동으로 추가 되 고 TheOrgWiki 계정으로 리디렉션됩니다.
+8. 인증에 성공 하면 응용 프로그램이 테넌트에 자동으로 추가 되 고 TheOrgWiki 계정으로 리디렉션됩니다.
 
     ![OrgWiki SCIM 추가](media/theorgwiki-provisioning-tutorial/image04.png)
 
@@ -136,7 +136,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위해 TheOrgWiki를 구
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에 있는 **테 넌 트 URL**에 `https://<TheOrgWiki Subdomain        value>.theorgwiki.com/api/v2/scim/v2/`을 입력 합니다. 
+5. **관리자 자격 증명** 섹션 아래에 있는 **테넌트 URL**에 `https://<TheOrgWiki Subdomain        value>.theorgwiki.com/api/v2/scim/v2/`을 입력 합니다. 
 
     예: `https://test1.theorgwiki.com/api/v2/scim/v2/`
 

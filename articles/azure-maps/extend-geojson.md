@@ -32,7 +32,7 @@ Azure Maps에는 지리적 특징의 안팎을 검색할 수 있는 강력한 AP
 
 일부 Azure Maps Api (예: [기하학 내부 검색](https://docs.microsoft.com/rest/api/maps/search/postsearchinsidegeometry))는 [GeoJSON 사양의][1]일부가 아닌 "Circle"과 같은 기 하 도형을 허용 합니다.
 
-이 문서에서는 Azure Maps 특정 기 하 도형을 나타내는 [GeoJSON 사양을][1] 확장 하는 방법에 대 한 자세한 설명을 제공 합니다.
+이 문서에서는 Azure Maps 특정 기 하 도형을 나타내는 [GeoJSON 사양을][1] 확장 하는 방법에 대한 자세한 설명을 제공 합니다.
 
 ## <a name="circle"></a>Circle
 

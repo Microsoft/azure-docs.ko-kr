@@ -85,7 +85,7 @@ Azure Multi-Factor Authentication 서버를 배포 하 고 실행 하는 경우 
 
 ## <a name="organizational-data-stored-by-azure-multi-factor-authentication"></a>Azure Multi-Factor Authentication에서 저장 한 조직 데이터
 
-조직 데이터는 구성 또는 환경 설치를 노출할 수 있는 테 넌 트 수준 정보입니다. 다음 Azure Portal Multi-Factor Authentication 페이지에서 테 넌 트 설정은 수신 전화 인증 요청에 대 한 잠금 임계값 또는 호출자 ID 정보와 같은 조직 데이터를 저장할 수 있습니다.
+조직 데이터는 구성 또는 환경 설치를 노출할 수 있는 테넌트 수준 정보입니다. 다음 Azure Portal Multi-Factor Authentication 페이지에서 테넌트 설정은 수신 전화 인증 요청에 대 한 잠금 임계값 또는 호출자 ID 정보와 같은 조직 데이터를 저장할 수 있습니다.
 
 * 계정 잠금
 * 사기 경고

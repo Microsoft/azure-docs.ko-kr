@@ -17,11 +17,11 @@ ms.locfileid: "76989606"
 ---
 # <a name="azure-maps-weather-coverage"></a>Azure Maps 날씨 범위
 
-이 문서에서는 [날씨 서비스](https://aka.ms/AzureMapsWeatherService)Azure Maps에 대 한 검사 정보를 제공 합니다. Azure Maps 날씨 데이터 서비스는 경로를 따라 레이더 타일, 현재 날씨 조건, 날씨 예측 및 날씨와 같은 세부 정보를 반환 합니다.
+이 문서에서는 [날씨 서비스](https://aka.ms/AzureMapsWeatherService)Azure Maps에 대한 검사 정보를 제공 합니다. Azure Maps 날씨 데이터 서비스는 경로를 따라 레이더 타일, 현재 날씨 조건, 날씨 예측 및 날씨와 같은 세부 정보를 반환 합니다.
 
 Azure Maps은 모든 국가 및 지역에 대해 동일한 수준의 정보 및 정확도를 갖지 않습니다.
 
-다음 표에서는 각 국가/지역에서 요청할 수 있는 날씨 정보 종류에 대 한 정보를 제공 합니다.
+다음 표에서는 각 국가/지역에서 요청할 수 있는 날씨 정보 종류에 대한 정보를 제공 합니다.
 
 | 기호 | 의미 |
 |--------|---------|

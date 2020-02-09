@@ -81,7 +81,7 @@ Azure 계정을 사용하여 [Azure Portal](https://portal.azure.com/) 에 로�
 
      ![재작성 규칙 이름 추가](media/rewrite-http-headers-portal/rule-name.png)
 
-6. 이 예제에서는 azurewebsites.net에 대 한 참조를 포함 하는 경우에만 위치 헤더를 다시 작성 합니다. 이렇게 하려면 응답의 location 헤더에 azurewebsites.net가 포함 되어 있는지 여부를 평가 하는 조건을 추가 합니다.
+6. 이 예제에서는 azurewebsites.net에 대한 참조를 포함 하는 경우에만 위치 헤더를 다시 작성 합니다. 이렇게 하려면 응답의 location 헤더에 azurewebsites.net가 포함 되어 있는지 여부를 평가 하는 조건을 추가 합니다.
 
    - **조건 추가** 를 선택한 다음, **If** 명령이 포함 된 상자를 선택 하 여 확장 합니다.
 
@@ -131,4 +131,4 @@ Azure 계정을 사용하여 [Azure Portal](https://portal.azure.com/) 에 로�
 
 ## <a name="next-steps"></a>다음 단계
 
-몇 가지 일반적인 사용 사례를 설정 하는 방법에 대 한 자세한 내용은 [common header 재작성 시나리오](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers)를 참조 하십시오.
+몇 가지 일반적인 사용 사례를 설정 하는 방법에 대한 자세한 내용은 [common header 재작성 시나리오](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers)를 참조 하십시오.

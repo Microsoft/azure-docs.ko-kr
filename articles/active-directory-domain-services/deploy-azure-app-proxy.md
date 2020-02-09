@@ -1,6 +1,6 @@
 ---
-title: Azure AD Domain Services에 대 한 Azure AD 응용 프로그램 프록시 배포 | Microsoft Docs
-description: Azure Active Directory Domain Services 관리 되는 도메인에서 Azure Active Directory 응용 프로그램 프록시를 배포 및 구성 하 여 원격 작업자를 위한 내부 응용 프로그램에 대 한 보안 액세스를 제공 하는 방법을 알아봅니다.
+title: Azure AD Domain Services에 대한 Azure AD 응용 프로그램 프록시 배포 | Microsoft Docs
+description: Azure Active Directory Domain Services 관리 되는 도메인에서 Azure Active Directory 응용 프로그램 프록시를 배포 및 구성 하 여 원격 작업자를 위한 내부 응용 프로그램에 대한 보안 액세스를 제공 하는 방법을 알아봅니다.
 services: active-directory-ds
 author: iainfoulds
 manager: daveba
@@ -24,7 +24,7 @@ Azure AD Domain Services (Azure AD DS)를 사용 하 여 온-프레미스에서 
 
 Azure AD 응용 프로그램 프록시를 처음 사용 하 고 자세히 알아보려면 [내부 응용 프로그램에 보안 원격 액세스를 제공 하는 방법](../active-directory/manage-apps/application-proxy.md)을 참조 하세요.
 
-이 문서에서는 azure AD DS 관리 되는 도메인의 응용 프로그램에 대 한 보안 액세스를 제공 하기 위해 Azure AD 응용 프로그램 프록시 커넥터를 만들고 구성 하는 방법을 보여 줍니다.
+이 문서에서는 azure AD DS 관리 되는 도메인의 응용 프로그램에 대한 보안 액세스를 제공 하기 위해 Azure AD 응용 프로그램 프록시 커넥터를 만들고 구성 하는 방법을 보여 줍니다.
 
 [!INCLUDE [active-directory-ds-prerequisites.md](../../includes/active-directory-ds-prerequisites.md)]
 
@@ -49,7 +49,7 @@ Azure AD 응용 프로그램 프록시 커넥터를 실행 하는 VM은 Azure AD
 Azure AD 응용 프로그램 프록시 커넥터용 VM을 만들려면 다음 단계를 완료 합니다.
 
 1. [사용자 지정 OU를 만듭니다](create-ou.md). Azure AD DS 관리 되는 도메인 내에서 사용자에 게이 사용자 지정 OU를 관리 하는 권한을 위임할 수 있습니다. Azure AD 응용 프로그램 프록시 및 응용 프로그램을 실행 하는 Vm은 기본 *AAD DC 컴퓨터* ou가 아닌 사용자 지정 OU의 일부 여야 합니다.
-1. Azure AD 응용 프로그램 프록시 커넥터를 실행 하는 가상 컴퓨터와 응용 프로그램을 실행 하는 가상 컴퓨터 모두에 대 한 [도메인 가입][create-join-windows-vm]을 azure AD DS 관리 되는 도메인에 연결 합니다. 이전 단계에서 사용자 지정 OU에 이러한 컴퓨터 계정을 만듭니다.
+1. Azure AD 응용 프로그램 프록시 커넥터를 실행 하는 가상 컴퓨터와 응용 프로그램을 실행 하는 가상 컴퓨터 모두에 대한 [도메인 가입][create-join-windows-vm]을 azure AD DS 관리 되는 도메인에 연결 합니다. 이전 단계에서 사용자 지정 OU에 이러한 컴퓨터 계정을 만듭니다.
 
 ## <a name="download-the-azure-ad-application-proxy-connector"></a>Azure AD 응용 프로그램 프록시 커넥터 다운로드
 
@@ -69,7 +69,7 @@ Azure AD 응용 프로그램 프록시 커넥터로 VM을 사용할 준비가 �
 1. Azure AD 응용 프로그램 프록시 connector 설치 파일을 VM에 복사 합니다.
 1. *Aadapplicationproxyconnectorinstaller.exe*와 같은 설치 파일을 실행 합니다. 소프트웨어 사용 조건에 동의합니다.
 1. 설치 하는 동안 Azure AD 디렉터리의 응용 프로그램 프록시를 사용 하 여 커넥터를 등록 하 라는 메시지가 표시 됩니다.
-   * Azure AD 디렉터리의 전역 관리자에 대 한 자격 증명을 제공 합니다. Azure AD 전역 관리자 자격 증명은 포털의 Azure 자격 증명과 다를 수 있습니다.
+   * Azure AD 디렉터리의 전역 관리자에 대한 자격 증명을 제공 합니다. Azure AD 전역 관리자 자격 증명은 포털의 Azure 자격 증명과 다를 수 있습니다.
 
         > [!NOTE]
         > 커넥터를 등록 하는 데 사용 되는 전역 관리자 계정은 응용 프로그램 프록시 서비스를 사용 하도록 설정 하는 동일한 디렉터리에 속해야 합니다.
@@ -78,7 +78,7 @@ Azure AD 응용 프로그램 프록시 커넥터로 VM을 사용할 준비가 �
 
    * 커넥터를 설치 하는 VM에 대해 Internet Explorer 보안 강화 구성이 설정 된 경우 등록 화면이 차단 될 수 있습니다. 액세스를 허용 하려면 오류 메시지의 지침에 따라 설치 하는 동안 Internet Explorer 보안 강화를 해제 합니다.
    * 커넥터 등록이 실패 하는 경우 [응용 프로그램 프록시 문제 해결](../active-directory/manage-apps/application-proxy-troubleshoot.md)을 참조 하세요.
-1. 설정이 끝나면 아웃 바운드 프록시를 사용 하는 환경에 대 한 노트가 표시 됩니다. 아웃 바운드 프록시를 통해 작동 하도록 Azure AD 응용 프로그램 프록시 커넥터를 구성 하려면 제공 된 스크립트 (예: `C:\Program Files\Microsoft AAD App Proxy connector\ConfigureOutBoundProxy.ps1`)를 실행 합니다.
+1. 설정이 끝나면 아웃 바운드 프록시를 사용 하는 환경에 대한 노트가 표시 됩니다. 아웃 바운드 프록시를 통해 작동 하도록 Azure AD 응용 프로그램 프록시 커넥터를 구성 하려면 제공 된 스크립트 (예: `C:\Program Files\Microsoft AAD App Proxy connector\ConfigureOutBoundProxy.ps1`)를 실행 합니다.
 1. 다음 예제와 같이 Azure Portal의 응용 프로그램 프록시 페이지에 새 커넥터가 *활성*상태로 나열 됩니다.
 
     ![Azure Portal에서 활성으로 표시 된 새 Azure AD 응용 프로그램 프록시 커넥터](./media/app-proxy/connected-app-proxy.png)
@@ -88,18 +88,18 @@ Azure AD 응용 프로그램 프록시 커넥터로 VM을 사용할 준비가 �
 
 ## <a name="enable-resource-based-kerberos-constrained-delegation"></a>리소스 기반 Kerberos 제한 위임 사용
 
-IWA (Windows 통합 인증)를 사용 하 여 응용 프로그램에 Single Sign-On를 사용 하려는 경우 Azure AD 응용 프로그램 프록시 커넥터에 사용자를 가장할 수 있는 권한을 부여 하 고 토큰을 대신 보내고 받을 수 있습니다. 이러한 권한을 부여 하려면 커넥터에 대 한 KCD (Kerberos 제한 위임)를 구성 하 여 Azure AD DS 관리 되는 도메인의 리소스에 액세스 합니다. Azure AD DS 관리 되는 도메인에서 도메인 관리자 권한이 없기 때문에 관리 되는 도메인에서는 기존 계정 수준 KCD를 구성할 수 없습니다. 대신 리소스 기반 KCD를 사용 합니다.
+IWA (Windows 통합 인증)를 사용 하 여 응용 프로그램에 Single Sign-On를 사용 하려는 경우 Azure AD 응용 프로그램 프록시 커넥터에 사용자를 가장할 수 있는 권한을 부여 하 고 토큰을 대신 보내고 받을 수 있습니다. 이러한 권한을 부여 하려면 커넥터에 대한 KCD (Kerberos 제한 위임)를 구성 하 여 Azure AD DS 관리 되는 도메인의 리소스에 액세스 합니다. Azure AD DS 관리 되는 도메인에서 도메인 관리자 권한이 없기 때문에 관리 되는 도메인에서는 기존 계정 수준 KCD를 구성할 수 없습니다. 대신 리소스 기반 KCD를 사용 합니다.
 
 자세한 내용은 [Azure Active Directory Domain Services에서 Kerberos 제한 위임 (KCD) 구성](deploy-kcd.md)을 참조 하세요.
 
 > [!NOTE]
-> 다음 PowerShell cmdlet을 실행 하려면 Azure AD 테 넌 트에서 *AZURE AD DC administrators* 그룹의 구성원 인 사용자 계정에 로그인 해야 합니다.
+> 다음 PowerShell cmdlet을 실행 하려면 Azure AD 테넌트에서 *AZURE AD DC administrators* 그룹의 구성원 인 사용자 계정에 로그인 해야 합니다.
 >
 > 앱 프록시 커넥터 VM 및 응용 프로그램 Vm의 컴퓨터 계정은 리소스 기반 KCD를 구성할 수 있는 권한이 있는 사용자 지정 OU에 있어야 합니다. 기본 제공 *AAD DC 컴퓨터* 컨테이너의 컴퓨터 계정에 대해서는 리소스 기반 kcd를 구성할 수 없습니다.
 
-[Get ADComputer][Get-ADComputer] 를 사용 하 여 Azure AD 응용 프로그램 프록시 커넥터가 설치 된 컴퓨터에 대 한 설정을 검색 합니다. 도메인에 가입 된 관리 VM에서 *AZURE AD DC administrators* 그룹의 구성원 인 사용자 계정으로 로그인 한 후 다음 cmdlet을 실행 합니다.
+[Get ADComputer][Get-ADComputer] 를 사용 하 여 Azure AD 응용 프로그램 프록시 커넥터가 설치 된 컴퓨터에 대한 설정을 검색 합니다. 도메인에 가입 된 관리 VM에서 *AZURE AD DC administrators* 그룹의 구성원 인 사용자 계정으로 로그인 한 후 다음 cmdlet을 실행 합니다.
 
-다음 예에서는 *appproxy.contoso.com*라는 컴퓨터 계정에 대 한 정보를 가져옵니다. 이전 단계에서 구성 된 Azure AD 응용 프로그램 프록시 VM에 대 한 고유한 컴퓨터 이름을 제공 합니다.
+다음 예에서는 *appproxy.contoso.com*라는 컴퓨터 계정에 대한 정보를 가져옵니다. 이전 단계에서 구성 된 Azure AD 응용 프로그램 프록시 VM에 대한 고유한 컴퓨터 이름을 제공 합니다.
 
 ```powershell
 $ImpersonatingAccount = Get-ADComputer -Identity appproxy.contoso.com

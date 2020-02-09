@@ -1,6 +1,6 @@
 ---
-title: Azure Functions에 대 한 저장소 고려 사항
-description: Azure Functions 및 저장 된 데이터 암호화에 대 한 저장소 요구 사항을 알아봅니다.
+title: Azure Functions에 대한 저장소 고려 사항
+description: Azure Functions 및 저장 된 데이터 암호화에 대한 저장소 요구 사항을 알아봅니다.
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.openlocfilehash: 353fdd3bf7775e3bc7a9d017a9e8dd8238b09830
@@ -10,7 +10,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 02/02/2020
 ms.locfileid: "76964983"
 ---
-# <a name="storage-considerations-for-azure-functions"></a>Azure Functions에 대 한 저장소 고려 사항
+# <a name="storage-considerations-for-azure-functions"></a>Azure Functions에 대한 저장소 고려 사항
 
 Azure Functions 함수 앱 인스턴스를 만들 때 Azure Storage 계정이 필요 합니다. 함수 앱에서 사용할 수 있는 저장소 서비스는 다음과 같습니다.
 
@@ -41,7 +41,7 @@ Azure Functions 함수 앱 인스턴스를 만들 때 Azure Storage 계정이 �
 
 저장소 계정 연결은 [Azurewebjobsstorage 응용 프로그램 설정](./functions-app-settings.md#azurewebjobsstorage)에서 유지 관리 됩니다. 
 
-저장소 키를 다시 생성할 때 저장소 계정 연결 문자열을 업데이트 해야 합니다. [저장소 키 관리에 대 한 자세한 내용은 여기를 참조](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account)하세요.
+저장소 키를 다시 생성할 때 저장소 계정 연결 문자열을 업데이트 해야 합니다. [저장소 키 관리에 대한 자세한 내용은 여기를 참조](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account)하세요.
 
 ### <a name="shared-storage-accounts"></a>공유 저장소 계정
 
@@ -53,9 +53,9 @@ Azure Functions 함수 앱 인스턴스를 만들 때 Azure Storage 계정이 �
 
 ## <a name="storage-data-encryption"></a>저장소 데이터 암호화
 
-Azure Storage는 미사용 저장소 계정의 모든 데이터를 암호화 합니다. 자세한 내용은 [미사용 데이터에 대 한 암호화 Azure Storage](../storage/common/storage-service-encryption.md)를 참조 하세요.
+Azure Storage는 미사용 저장소 계정의 모든 데이터를 암호화 합니다. 자세한 내용은 [미사용 데이터에 대한 암호화 Azure Storage](../storage/common/storage-service-encryption.md)를 참조 하세요.
 
-기본적으로 데이터는 Microsoft 관리 키를 사용 하 여 암호화 됩니다. 암호화 키에 대 한 추가 제어를 위해 blob 및 파일 데이터의 암호화에 사용할 고객 관리 키를 제공할 수 있습니다. 이러한 키는 저장소 계정에 액세스할 수 있는 함수에 대 한 Azure Key Vault에 있어야 합니다. 자세한 내용은 [Azure Portal를 사용 하 여 Azure Key Vault를 사용 하 여 고객 관리 키 구성](../storage/common/storage-encryption-keys-portal.md)을 참조 하세요.  
+기본적으로 데이터는 Microsoft 관리 키를 사용 하 여 암호화 됩니다. 암호화 키에 대한 추가 제어를 위해 blob 및 파일 데이터의 암호화에 사용할 고객 관리 키를 제공할 수 있습니다. 이러한 키는 저장소 계정에 액세스할 수 있는 함수에 대한 Azure Key Vault에 있어야 합니다. 자세한 내용은 [Azure Portal를 사용 하 여 Azure Key Vault를 사용 하 여 고객 관리 키 구성](../storage/common/storage-encryption-keys-portal.md)을 참조 하세요.  
 
 ## <a name="next-steps"></a>다음 단계
 

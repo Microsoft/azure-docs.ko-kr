@@ -21,18 +21,18 @@ ms.locfileid: "76847629"
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-[사용자 지정 정책은](custom-policy-overview.md) Azure Active Directory B2C (Azure AD B2C) 테 넌 트의 동작을 정의 하는 구성 파일입니다. 이 문서에서는 전자 메일 주소와 암호를 사용한 로콜 계정 등록 또는 로그인을 지원하는 사용자 지정 정책을 만듭니다. ID 공급자를 추가하기 위한 환경도 준비합니다.
+[사용자 지정 정책은](custom-policy-overview.md) Azure Active Directory B2C (Azure AD B2C) 테넌트의 동작을 정의 하는 구성 파일입니다. 이 문서에서는 전자 메일 주소와 암호를 사용한 로콜 계정 등록 또는 로그인을 지원하는 사용자 지정 정책을 만듭니다. ID 공급자를 추가하기 위한 환경도 준비합니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
-- 아직 없는 경우 Azure 구독에 연결 된 [Azure AD B2C 테 넌 트를 만듭니다](tutorial-create-tenant.md) .
-- Azure AD B2C와 통신할 수 있도록 만든 테 넌 트에 [응용 프로그램을 등록](tutorial-register-applications.md) 합니다.
+- 아직 없는 경우 Azure 구독에 연결 된 [Azure AD B2C 테넌트를 만듭니다](tutorial-create-tenant.md) .
+- Azure AD B2C와 통신할 수 있도록 만든 테넌트에 [응용 프로그램을 등록](tutorial-register-applications.md) 합니다.
 - Facebook [계정을 사용 하 여 등록 및 로그인 설정](identity-provider-facebook.md) 의 단계를 완료 하 여 facebook 응용 프로그램을 구성 합니다.
 
 ## <a name="add-signing-and-encryption-keys"></a>서명 및 암호화 키 추가
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
-1. 포털 도구 모음에서 **디렉터리 + 구독** 아이콘을 선택 하 고 Azure AD B2C 테 넌 트가 포함 된 디렉터리를 선택 합니다.
+1. 포털 도구 모음에서 **디렉터리 + 구독** 아이콘을 선택 하 고 Azure AD B2C 테넌트가 포함 된 디렉터리를 선택 합니다.
 1. Azure Portal에서 **Azure AD B2C**를 검색 하 고 선택 합니다.
 1. 개요 페이지의 **정책**에서 **Id 경험 프레임 워크**를 선택 합니다.
 
@@ -67,9 +67,9 @@ Facebook 응용 프로그램의 [앱 암호](identity-provider-facebook.md) 를 
 
 ## <a name="register-identity-experience-framework-applications"></a>Identity Experience Framework 애플리케이션 등록
 
-Azure AD B2C를 사용 하려면 로컬 계정 ( *IdentityExperienceFramework*, web API 및 *ProxyIdentityExperienceFramework*)을 사용 하 여 사용자를 등록 하 고 로그인 하는 데 사용 하는 두 개의 응용 프로그램을 등록 하 고 IdentityExperienceFramework 앱에 대 한 위임 된 권한이 있는 네이티브 앱을 등록 해야 합니다. 사용자는 전자 메일 주소 또는 사용자 이름과 암호를 사용 하 여 등록 하 여 테 넌 트에 등록 된 응용 프로그램에 액세스 하 여 "로컬 계정"을 만들 수 있습니다. 로컬 계정은 Azure AD B2C 테 넌 트에만 존재 합니다.
+Azure AD B2C를 사용 하려면 로컬 계정 ( *IdentityExperienceFramework*, web API 및 *ProxyIdentityExperienceFramework*)을 사용 하 여 사용자를 등록 하 고 로그인 하는 데 사용 하는 두 개의 응용 프로그램을 등록 하 고 IdentityExperienceFramework 앱에 대한 위임 된 권한이 있는 네이티브 앱을 등록 해야 합니다. 사용자는 전자 메일 주소 또는 사용자 이름과 암호를 사용 하 여 등록 하 여 테넌트에 등록 된 응용 프로그램에 액세스 하 여 "로컬 계정"을 만들 수 있습니다. 로컬 계정은 Azure AD B2C 테넌트에만 존재 합니다.
 
-Azure AD B2C 테 넌 트에서 이러한 두 응용 프로그램을 한 번만 등록 해야 합니다.
+Azure AD B2C 테넌트에서 이러한 두 응용 프로그램을 한 번만 등록 해야 합니다.
 
 ### <a name="register-the-identityexperienceframework-application"></a>IdentityExperienceFramework 애플리케이션 등록
 
@@ -91,7 +91,7 @@ Azure AD B2C 테넌트에 애플리케이션을 등록하기 위해 현재 **애
 1. **앱 등록(미리 보기)** 을 선택한 다음, **새 등록**을 선택합니다.
 1. **이름**에 `IdentityExperienceFramework`를 입력합니다.
 1. **지원 되는 계정 유형**에서 **이 조직 디렉터리의 계정만**을 선택 합니다.
-1. **URI 리디렉션**에서 **웹**을 선택 하 고 `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com`를 입력 합니다. 여기서 `your-tenant-name`는 Azure AD B2C 테 넌 트 도메인 이름입니다.
+1. **URI 리디렉션**에서 **웹**을 선택 하 고 `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com`를 입력 합니다. 여기서 `your-tenant-name`는 Azure AD B2C 테넌트 도메인 이름입니다.
 1. **사용 권한** 아래에서 *openid 및 offline_access 권한에 대한 관리자 동의 허용* 확인란을 선택합니다.
 1. **등록**을 선택합니다.
 1. 이후 단계에서 사용할 수 있게 **애플리케이션(클라이언트) ID**를 기록합니다.
@@ -100,7 +100,7 @@ Azure AD B2C 테넌트에 애플리케이션을 등록하기 위해 현재 **애
 
 1. **관리**에서 **API 표시**를 선택합니다.
 1. **범위 추가**를 선택한 다음, **저장을 선택 하 고 계속** 을 선택 하 여 기본 응용 프로그램 ID URI를 적용 합니다.
-1. Azure AD B2C 테 넌 트에서 사용자 지정 정책을 실행 하도록 허용 하는 범위를 만들려면 다음 값을 입력 합니다.
+1. Azure AD B2C 테넌트에서 사용자 지정 정책을 실행 하도록 허용 하는 범위를 만들려면 다음 값을 입력 합니다.
     * **범위 이름**: `user_impersonation`
     * **관리자 동의 표시 이름**: `Access IdentityExperienceFramework`
     * **관리자 동의 설명**: `Allow the application to access IdentityExperienceFramework on behalf of the signed-in user.`
@@ -156,7 +156,7 @@ Azure AD B2C 테넌트에 애플리케이션을 등록하기 위해 현재 **애
 
 ## <a name="custom-policy-starter-pack"></a>사용자 지정 정책 시작 팩
 
-사용자 지정 정책은 기술 프로필 및 사용자 경험를 정의 하기 위해 Azure AD B2C 테 넌 트에 업로드 하는 XML 파일 집합입니다. 신속 하 게 진행 하기 위해 몇 가지 미리 작성 된 정책과 함께 시작 팩을 제공 합니다. 이러한 각 시작 팩에는 설명 된 시나리오를 수행 하는 데 필요한 최소 수의 기술 프로필 및 사용자 경험 포함 되어 있습니다.
+사용자 지정 정책은 기술 프로필 및 사용자 경험를 정의 하기 위해 Azure AD B2C 테넌트에 업로드 하는 XML 파일 집합입니다. 신속 하 게 진행 하기 위해 몇 가지 미리 작성 된 정책과 함께 시작 팩을 제공 합니다. 이러한 각 시작 팩에는 설명 된 시나리오를 수행 하는 데 필요한 최소 수의 기술 프로필 및 사용자 경험 포함 되어 있습니다.
 
 - **Localaccounts** -로컬 계정만 사용 하도록 설정 합니다.
 - 사회 보장 **계정** -소셜 (또는 페더레이션) 계정만 사용할 수 있습니다.
@@ -173,7 +173,7 @@ Azure AD B2C 테넌트에 애플리케이션을 등록하기 위해 현재 **애
 
 ### <a name="get-the-starter-pack"></a>시작 팩 가져오기
 
-GitHub에서 사용자 지정 정책 시작 팩을 가져온 다음, Azure AD B2C 테 넌 트 이름으로 SocialAndLocalAccounts 스타터 pack의 XML 파일을 업데이트 합니다.
+GitHub에서 사용자 지정 정책 시작 팩을 가져온 다음, Azure AD B2C 테넌트 이름으로 SocialAndLocalAccounts 스타터 pack의 XML 파일을 업데이트 합니다.
 
 1. [.Zip 파일을 다운로드](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/archive/master.zip) 하거나 리포지토리를 복제 합니다.
 
@@ -181,9 +181,9 @@ GitHub에서 사용자 지정 정책 시작 팩을 가져온 다음, Azure AD B2
     git clone https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack
     ```
 
-1. 모든 파일의 **Socialandlocalaccounts** 디렉터리에서 `yourtenant` 문자열을 Azure AD B2C 테 넌 트의 이름으로 바꿉니다.
+1. 모든 파일의 **Socialandlocalaccounts** 디렉터리에서 `yourtenant` 문자열을 Azure AD B2C 테넌트의 이름으로 바꿉니다.
 
-    예를 들어 B2C 테 넌 트의 이름이 *contosotenant*인 경우 `yourtenant.onmicrosoft.com`의 모든 인스턴스가 `contosotenant.onmicrosoft.com`됩니다.
+    예를 들어 B2C 테넌트의 이름이 *contosotenant*인 경우 `yourtenant.onmicrosoft.com`의 모든 인스턴스가 `contosotenant.onmicrosoft.com`됩니다.
 
 ### <a name="add-application-ids-to-the-custom-policy"></a>사용자 지정 정책에 애플리케이션 ID 추가
 
@@ -196,7 +196,7 @@ GitHub에서 사용자 지정 정책 시작 팩을 가져온 다음, Azure AD B2
 
 ## <a name="upload-the-policies"></a>정책 업로드
 
-1. Azure Portal에서 B2C 테 넌 트에서 **Id 경험 프레임 워크** 메뉴 항목을 선택 합니다.
+1. Azure Portal에서 B2C 테넌트에서 **Id 경험 프레임 워크** 메뉴 항목을 선택 합니다.
 1. **사용자 지정 정책 업로드**를 선택 합니다.
 1. 이 순서로 정책 파일을 업로드 합니다.
     1. *Trustframeworkbase.xml*
@@ -239,4 +239,4 @@ GitHub에서 사용자 지정 정책 시작 팩을 가져온 다음, Azure AD B2
 
 다음으로, id 공급자로 Azure Active Directory (Azure AD)를 추가 해 봅니다. 이 시작 가이드에 사용 된 기본 파일에는 Azure AD와 같은 다른 id 공급자를 추가 하는 데 필요한 일부 콘텐츠가 이미 포함 되어 있습니다.
 
-및 id 공급자로 Azure AD를 설정 하는 방법에 대 한 자세한 내용은 [Active Directory B2C 사용자 지정 정책을 사용 하 여 Azure Active Directory 계정으로 등록 및 로그인 설정](identity-provider-azure-ad-single-tenant-custom.md)을 참조 하세요.
+및 id 공급자로 Azure AD를 설정 하는 방법에 대한 자세한 내용은 [Active Directory B2C 사용자 지정 정책을 사용 하 여 Azure Active Directory 계정으로 등록 및 로그인 설정](identity-provider-azure-ad-single-tenant-custom.md)을 참조 하세요.

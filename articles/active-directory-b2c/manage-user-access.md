@@ -19,7 +19,7 @@ ms.locfileid: "76840437"
 ---
 # <a name="manage-user-access-in-azure-active-directory-b2c"></a>Azure Active Directory B2C에서 사용자 액세스 관리
 
-이 문서에서는 Azure Active Directory B2C (Azure AD B2C)를 사용 하 여 응용 프로그램에 대 한 사용자 액세스를 관리 하는 방법을 설명 합니다. 애플리케이션의 액세스 관리에는 다음 항목이 포함됩니다.
+이 문서에서는 Azure Active Directory B2C (Azure AD B2C)를 사용 하 여 응용 프로그램에 대한 사용자 액세스를 관리 하는 방법을 설명 합니다. 애플리케이션의 액세스 관리에는 다음 항목이 포함됩니다.
 
 - 미성년자 식별 및 애플리케이션에 대한 사용자 액세스 제어
 - 애플리케이션을 사용하는 미성년자에 대한 보호자의 동의 요구
@@ -176,4 +176,4 @@ DOB 데이터 수집에 대한 자세한 내용은 [Azure AD B2C에서 나이 �
 ## <a name="next-steps"></a>다음 단계
 
 - 사용자 데이터를 삭제하고 내보내는 방법을 알아보려면 [사용자 데이터 관리](manage-user-data.md)를 참조하세요.
-- 사용 약관 프롬프트를 구현 하는 예제 사용자 지정 정책에 대 한 자세한 내용은 [B2C IEF 사용자 지정 정책-등록 하 고 ' 사용 약관 ' 프롬프트를 사용 하 여 로그인](https://github.com/azure-ad-b2c/samples/tree/master/policies/sign-in-sign-up-versioned-tou)을 참조 하세요.
+- 사용 약관 프롬프트를 구현 하는 예제 사용자 지정 정책에 대한 자세한 내용은 [B2C IEF 사용자 지정 정책-등록 하 고 ' 사용 약관 ' 프롬프트를 사용 하 여 로그인](https://github.com/azure-ad-b2c/samples/tree/master/policies/sign-in-sign-up-versioned-tou)을 참조 하세요.

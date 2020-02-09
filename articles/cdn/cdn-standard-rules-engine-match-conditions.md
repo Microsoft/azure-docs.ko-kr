@@ -1,6 +1,6 @@
 ---
-title: Azure CDN에 대 한 표준 규칙 엔진의 일치 조건 | Microsoft Docs
-description: Azure Content Delivery Network (Azure CDN)에 대 한 표준 규칙 엔진의 일치 조건에 대 한 참조 설명서입니다.
+title: Azure CDN에 대한 표준 규칙 엔진의 일치 조건 | Microsoft Docs
+description: Azure Content Delivery Network (Azure CDN)에 대한 표준 규칙 엔진의 일치 조건에 대한 참조 설명서입니다.
 services: cdn
 author: mdgattuso
 ms.service: azure-cdn
@@ -14,11 +14,11 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/06/2019
 ms.locfileid: "74900188"
 ---
-# <a name="match-conditions-in-the-standard-rules-engine-for-azure-cdn"></a>Azure CDN에 대 한 표준 규칙 엔진의 일치 조건
+# <a name="match-conditions-in-the-standard-rules-engine-for-azure-cdn"></a>Azure CDN에 대한 표준 규칙 엔진의 일치 조건
 
-Azure Content Delivery Network (Azure CDN)에 대 한 [표준 규칙 엔진](cdn-standard-rules-engine.md) 에서 규칙은 하나 이상의 일치 조건 및 동작으로 구성 됩니다. 이 문서에서는 Azure CDN에 대 한 표준 규칙 엔진에서 사용할 수 있는 일치 조건에 대해 자세히 설명 합니다.
+Azure Content Delivery Network (Azure CDN)에 대한 [표준 규칙 엔진](cdn-standard-rules-engine.md) 에서 규칙은 하나 이상의 일치 조건 및 동작으로 구성 됩니다. 이 문서에서는 Azure CDN에 대한 표준 규칙 엔진에서 사용할 수 있는 일치 조건에 대해 자세히 설명 합니다.
 
-규칙의 첫 번째 부분은 일치 조건 또는 일치 조건 집합입니다. Azure CDN에 대 한 표준 규칙 엔진에서 각 규칙에는 최대 4 개의 일치 조건이 있을 수 있습니다. 일치 조건은 정의 된 작업이 수행 되는 특정 유형의 요청을 식별 합니다. 여러 일치 조건을 사용 하는 경우 및 논리를 사용 하 여 일치 조건을 그룹화 합니다.
+규칙의 첫 번째 부분은 일치 조건 또는 일치 조건 집합입니다. Azure CDN에 대한 표준 규칙 엔진에서 각 규칙에는 최대 4 개의 일치 조건이 있을 수 있습니다. 일치 조건은 정의 된 작업이 수행 되는 특정 유형의 요청을 식별 합니다. 여러 일치 조건을 사용 하는 경우 및 논리를 사용 하 여 일치 조건을 그룹화 합니다.
 
 예를 들어 다음을 수행하는 데 일치 조건을 사용할 수 있습니다.
 
@@ -28,7 +28,7 @@ Azure Content Delivery Network (Azure CDN)에 대 한 [표준 규칙 엔진](cdn
 
 ## <a name="match-conditions"></a>일치 조건
 
-Azure CDN에 대 한 표준 규칙 엔진에서 다음 일치 조건을 사용할 수 있습니다. 
+Azure CDN에 대한 표준 규칙 엔진에서 다음 일치 조건을 사용할 수 있습니다. 
 
 ### <a name="device-type"></a>디바이스 유형 
 

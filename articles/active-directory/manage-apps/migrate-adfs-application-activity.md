@@ -35,7 +35,7 @@ Azure Portal의 AD FS 응용 프로그램 작업 보고서 (미리 보기)를 �
 ## <a name="prerequisites"></a>필수 조건
 
 * 조직에서 응용 프로그램에 액세스 하려면 현재 AD FS를 사용 해야 합니다.
-* Azure AD 테 넌 트에서 Azure AD Connect Health를 사용 하도록 설정 해야 합니다.
+* Azure AD 테넌트에서 Azure AD Connect Health를 사용 하도록 설정 해야 합니다.
    * [Azure AD Connect Health에 대 한 자세한 정보](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs)
    * [Azure AD Connect Health 설정 시작](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-agent-install)
 
@@ -76,7 +76,7 @@ AD FS 응용 프로그램 작업 보고서는 Azure AD **사용량 & insights** 
 |결과  |성공/경고/실패  |Description  |
 |---------|---------|---------|
 |ADFSRPAdditionalAuthenticationRules <br> AdditionalAuthentication에 대해 마이그레이션할 수 있고 규칙이 하나 이상 검색 되지 않았습니다.       | 통과/경고          | 신뢰 당사자에 게 MFA (multi-factor authentication)를 요구 하는 규칙이 있습니다. Azure AD로 이동 하려면 이러한 규칙을 조건부 액세스 정책으로 변환 합니다. 온-프레미스 MFA를 사용 하는 경우 Azure MFA로 이동 하는 것이 좋습니다. [조건부 액세스에 대해 자세히 알아보세요](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks).        |
-|ADFSRPAdditionalWSFedEndpoint <br> 신뢰 당사자가 AdditionalWSFedEndpoint를 true로 설정 했습니다.       | 성공/실패          | AD FS 신뢰 당사자는 여러 개의 WS 급지됨 어설션 끝점을 허용 합니다. 현재 Azure AD는 하나만 지원 합니다. 이 결과가 마이그레이션을 차단 하는 시나리오를 [사용](https://feedback.azure.com/forums/169401-azure-active-directory/suggestions/38695621-allow-multiple-ws-fed-assertion-endpoints)하는 경우 알려주세요.     |
+|ADFSRPAdditionalWSFedEndpoint <br> 신뢰 당사자가 AdditionalWSFedEndpoint를 true로 설정 했습니다.       | 성공/실패          | AD FS 신뢰 당사자는 여러 개의 WS 급지됨 어설션 엔드포인트을 허용 합니다. 현재 Azure AD는 하나만 지원 합니다. 이 결과가 마이그레이션을 차단 하는 시나리오를 [사용](https://feedback.azure.com/forums/169401-azure-active-directory/suggestions/38695621-allow-multiple-ws-fed-assertion-endpoints)하는 경우 알려주세요.     |
 |ADFSRPAllowedAuthenticationClassReferences <br> 신뢰 당사자가 AllowedAuthenticationClassReferences를 설정 했습니다.       | 성공/실패          | AD FS에서이 설정을 사용 하면 응용 프로그램이 특정 인증 유형만 허용 하도록 구성 되어 있는지 여부를 지정할 수 있습니다. 조건부 액세스를 사용 하 여이 기능을 구현 하는 것이 좋습니다.  이 결과가 마이그레이션을 차단 하는 시나리오를 [사용](https://feedback.azure.com/forums/169401-azure-active-directory/suggestions/38695672-allow-in-azure-ad-to-specify-certain-authentication)하는 경우 알려주세요.  [조건부 액세스에 대해 자세히 알아보세요](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks).          |
 |ADFSRPAlwaysRequireAuthentication <br> AlwaysRequireAuthenticationCheckResult      | 성공/실패          | AD FS에서이 설정을 사용 하면 응용 프로그램이 SSO 쿠키를 무시 하도록 구성 되었는지 여부를 지정 하 고 **항상 인증 메시지를 표시**하도록 구성할 수 있습니다. Azure AD에서 조건부 액세스 정책을 사용 하 여 인증 세션을 관리 하 여 유사한 동작을 달성할 수 있습니다. [조건부 액세스를 사용 하 여 인증 세션 관리를 구성 하는 방법에 대해 자세히 알아보세요](https://docs.microsoft.com/azure/active-directory/conditional-access/howto-conditional-access-session-lifetime).          |
 |테스트-ADFSRPAutoUpdateEnabled <br> 신뢰 당사자가 AutoUpdateEnabled를 true로 설정 했습니다.       | 통과/경고          | AD FS에서이 설정을 사용 하면 AD FS 페더레이션 메타 데이터 내의 변경 내용에 따라 응용 프로그램을 자동으로 업데이트 하도록 구성할 지 여부를 지정할 수 있습니다. Azure AD는 현재이를 지원 하지 않지만 응용 프로그램을 Azure AD로 마이그레이션하지 못하도록 차단 해서는 안 됩니다.           |

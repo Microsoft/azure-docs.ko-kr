@@ -23,7 +23,7 @@ ms.locfileid: "75444550"
 * Azure 구독이 아직 없는 경우 시작하기 전에 [Azure 체험 계정](https://azure.microsoft.com/free/)을 만듭니다.
 * [애플리케이션](https://dataexplorer.azure.com/)에 로그인합니다.
 * [Azure 데이터 탐색기 클러스터와 데이터베이스](create-cluster-database-portal.md)를 만듭니다.
-* [웹 UI](https://dataexplorer.azure.com/) 에 로그인 하 고 [클러스터에 대 한 연결을 추가](/azure/data-explorer/web-query-data#add-clusters)합니다.
+* [웹 UI](https://dataexplorer.azure.com/) 에 로그인 하 고 [클러스터에 대한 연결을 추가](/azure/data-explorer/web-query-data#add-clusters)합니다.
 
 ## <a name="ingest-new-data"></a>새 데이터 수집
 
@@ -81,7 +81,7 @@ ms.locfileid: "75444550"
 
 1. 오른쪽의 메뉴에는 **빠른 쿼리** 및 **도구** 옵션이 포함 되어 있습니다. 
 
-    * **빠른 쿼리** 는 예제 쿼리를 사용 하 여 웹 UI에 대 한 링크를 포함 합니다.
+    * **빠른 쿼리** 는 예제 쿼리를 사용 하 여 웹 UI에 대한 링크를 포함 합니다.
     * **도구** 에는 관련 된 `.drop` 명령을 실행 하 여 문제를 해결할 수 있는 웹 UI의 **명령을 놓는** 링크가 포함 됩니다.
 
     > [!TIP]
@@ -90,4 +90,4 @@ ms.locfileid: "75444550"
 ## <a name="next-steps"></a>다음 단계
 
 * [Azure 데이터 탐색기 웹 UI에서 데이터 쿼리](web-query-data.md)
-* [Kusto 쿼리 언어를 사용 하 여 Azure 데이터 탐색기에 대 한 쿼리 작성](write-queries.md)
+* [Kusto 쿼리 언어를 사용 하 여 Azure 데이터 탐색기에 대한 쿼리 작성](write-queries.md)

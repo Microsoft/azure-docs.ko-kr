@@ -24,7 +24,7 @@ Azure 리소스 그래프를 사용 하 여 Azure 리소스를 쿼리할 때 오
 
 #### <a name="issue"></a>문제
 
-[Azure Lighthouse](../../../lighthouse/overview.md)를 사용 하 여 교차 테 넌 트 구독을 포함 하 여 1000 개 이상의 구독에 액세스할 수 있는 고객은 Azure 리소스 그래프에 대 한 단일 호출로 모든 구독에서 데이터를 가져올 수 없습니다.
+[Azure Lighthouse](../../../lighthouse/overview.md)를 사용 하 여 교차 테넌트 구독을 포함 하 여 1000 개 이상의 구독에 액세스할 수 있는 고객은 Azure 리소스 그래프에 대 한 단일 호출로 모든 구독에서 데이터를 가져올 수 없습니다.
 
 #### <a name="cause"></a>원인
 

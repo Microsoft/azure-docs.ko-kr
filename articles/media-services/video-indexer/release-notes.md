@@ -76,9 +76,9 @@ Video Indexer 포털을 사용 하 여 유료 계정에서 사용자 지정 비�
 
 비디오 이름이 80 자 보다 길면 Video Indexer 업로드 시 설명 오류를 표시 합니다.
 
-### <a name="streaming-endpoint-is-disabled-notification"></a>스트리밍 끝점을 사용할 수 없습니다. 알림
+### <a name="streaming-endpoint-is-disabled-notification"></a>스트리밍 엔드포인트을 사용할 수 없습니다. 알림
 
-스트리밍 끝점이 사용 하지 않도록 설정 된 경우 플레이어 페이지에 설명 오류가 Video Indexer 표시 됩니다.
+스트리밍 엔드포인트이 사용 하지 않도록 설정 된 경우 플레이어 페이지에 설명 오류가 Video Indexer 표시 됩니다.
 
 ### <a name="error-handling-improvement"></a>오류 처리 향상
 
@@ -176,7 +176,7 @@ Video Indexer에 의해 추출 된 키프레임은 비디오의 원래 해상도
 
 ### <a name="create-and-repair-account-api-preview"></a>계정 API 만들기 및 복구 (미리 보기)
 
-[Azure Media Service 연결 끝점 또는 키를 업데이트할](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Update-Paid-Account-Azure-Media-Services?&groupBy=tag)수 있는 새 API가 추가 되었습니다.
+[Azure Media Service 연결 엔드포인트 또는 키를 업데이트할](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Update-Paid-Account-Azure-Media-Services?&groupBy=tag)수 있는 새 API가 추가 되었습니다.
 
 ### <a name="improve-error-handling-on-upload"></a>업로드 시 오류 처리 향상 
 

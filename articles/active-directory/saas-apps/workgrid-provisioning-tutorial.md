@@ -36,7 +36,7 @@ ms.locfileid: "77062812"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트.
-* [근무 그리드 테 넌 트](https://www.workgrid.com/)
+* [근무 그리드 테넌트](https://www.workgrid.com/)
 * 관리자 권한이 있는 회사 그리드의 사용자 계정
 
 ## <a name="assigning-users-to-workgrid"></a>사용자를 워크 표에 할당 
@@ -64,7 +64,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위한 워크 그�
 
     ![Workgrid](media/Workgrid-provisioning-tutorial/scim.png)
 
-3. **Scim 끝점** 및 **액세스 토큰** 값을 복사 합니다. 이러한 정보는 Azure Portal에서 업무 그리드 응용 프로그램의 프로 비전 탭에 있는 **테 넌 트 URL** 및 **비밀 토큰** 필드에 입력 됩니다.
+3. **Scim 엔드포인트** 및 **액세스 토큰** 값을 복사 합니다. 이러한 정보는 Azure Portal에서 업무 그리드 응용 프로그램의 프로 비전 탭에 있는 **테넌트 URL** 및 **비밀 토큰** 필드에 입력 됩니다.
 
     ![Workgrid](media/Workgrid-provisioning-tutorial/token.png)
 
@@ -116,7 +116,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위한 워크 그�
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. 관리자 자격 증명 섹션 아래에서 먼저 **테 넌 트 URL** 및 **암호 토큰** 에서 검색 된 **scim 끝점** 및 **액세스 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 근무 그리드에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 업무 그리드 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
+5. 관리자 자격 증명 섹션 아래에서 먼저 **테넌트 URL** 및 **암호 토큰** 에서 검색 된 **scim 엔드포인트** 및 **액세스 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 근무 그리드에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 업무 그리드 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 

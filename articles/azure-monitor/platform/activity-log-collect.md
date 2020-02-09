@@ -29,7 +29,7 @@ Azure [활동 로그](platform-logs-overview.md) 는 azure 구독에서 발생 �
 - [로그 쿼리](../log-query/log-query-overview.md) 를 사용 하 여 복잡 한 분석을 수행 하 고 활동 로그 항목에 대 한 심층 통찰력을 얻습니다.
 
 ## <a name="connect-to-log-analytics-workspace"></a>Log Analytics 작업 영역에 연결
-단일 작업 영역을 동일한 Azure 테 넌 트의 여러 구독에 대 한 활동 로그에 연결할 수 있습니다. 여러 테 넌 트에 걸친 컬렉션의 경우 [다른 Azure Active Directory 테 넌 트의 구독에서 Log Analytics 작업 영역으로 Azure 활동 로그 수집](activity-log-collect-tenants.md)을 참조 하세요.
+단일 작업 영역을 동일한 Azure 테넌트의 여러 구독에 대 한 활동 로그에 연결할 수 있습니다. 여러 테넌트에 걸친 컬렉션의 경우 [다른 Azure Active Directory 테넌트의 구독에서 Log Analytics 작업 영역으로 Azure 활동 로그 수집](activity-log-collect-tenants.md)을 참조 하세요.
 
 > [!IMPORTANT]
 > OperationalInsights 및 Microsoft.operationsmanagement 리소스 공급자가 구독에 등록 되지 않은 경우 다음 절차에 따라 오류가 발생할 수 있습니다. 이러한 공급자를 등록 하려면 [Azure 리소스 공급자 및 형식](../../azure-resource-manager/management/resource-providers-and-types.md) 을 참조 하세요.

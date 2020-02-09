@@ -1,6 +1,6 @@
 ---
 title: AKS(Azure Kubernetes Service)에 대한 질문과 대답
-description: Azure Kubernetes 서비스 (AKS)에 대 한 일반적인 질문에 대 한 답변을 찾습니다.
+description: Azure Kubernetes 서비스 (AKS)에 대한 일반적인 질문에 대한 답변을 찾습니다.
 author: mlearned
 ms.service: container-service
 ms.topic: conceptual
@@ -19,7 +19,7 @@ ms.locfileid: "77086469"
 
 ## <a name="which-azure-regions-currently-provide-aks"></a>현재 AKS를 제공 하는 Azure 지역은 무엇 인가요?
 
-사용 가능한 지역에 대 한 전체 목록은 [AKS 지역 및 가용성][aks-regions]을 참조 하세요.
+사용 가능한 지역에 대한 전체 목록은 [AKS 지역 및 가용성][aks-regions]을 참조 하세요.
 
 ## <a name="does-aks-support-node-autoscaling"></a>AKS는 노드 자동 크기 조정 기능을 지원하나요?
 
@@ -29,9 +29,9 @@ ms.locfileid: "77086469"
 
 예, [고급 네트워킹 기능][aks-advanced-networking]을 사용 하 여 기존 가상 네트워크에 AKS 클러스터를 배포할 수 있습니다.
 
-## <a name="can-i-limit-who-has-access-to-the-kubernetes-api-server"></a>Kubernetes API 서버에 대 한 액세스 권한이 있는 사용자를 제한할 수 있나요?
+## <a name="can-i-limit-who-has-access-to-the-kubernetes-api-server"></a>Kubernetes API 서버에 대한 액세스 권한이 있는 사용자를 제한할 수 있나요?
 
-예, [Api 서버 권한 있는 IP 범위][api-server-authorized-ip-ranges]를 사용 하 여 Kubernetes api 서버에 대 한 액세스를 제한할 수 있습니다.
+예, [Api 서버 권한 있는 IP 범위][api-server-authorized-ip-ranges]를 사용 하 여 Kubernetes api 서버에 대한 액세스를 제한할 수 있습니다.
 
 ## <a name="can-i-make-the-kubernetes-api-server-accessible-only-within-my-virtual-network"></a>Kubernetes API 서버를 가상 네트워크 내 에서만 액세스할 수 있나요?
 
@@ -47,24 +47,24 @@ Azure는 야간 일정에 따라 클러스터의 Linux 노드에 보안 패치�
 
 - Azure Portal 또는 Azure CLI를 통해 수동으로.
 - AKS 클러스터를 업그레이드하여. 클러스터는 [cordon 및 드레이닝 노드][cordon-drain] 를 자동으로 업그레이드 한 다음 최신 Ubuntu 이미지 및 새 패치 버전 또는 부 Kubernetes 버전으로 새 노드를 온라인으로 전환 합니다. 자세한 내용은 [Upgrade a AKS cluster][aks-upgrade]를 참조 하세요.
-- [Kured](https://github.com/weaveworks/kured)를 사용 하 여 Kubernetes에 대 한 오픈 소스 다시 부팅 디먼을 사용 합니다. Kured는 [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) 로 실행 되며 각 노드에서 다시 부팅 해야 함을 나타내는 파일이 있는지 모니터링 합니다. 클러스터 전체에서 OS 다시 부팅은 클러스터 업그레이드와 동일한 [cordon 및 드레이닝 프로세스][cordon-drain] 를 통해 관리 됩니다.
+- [Kured](https://github.com/weaveworks/kured)를 사용 하 여 Kubernetes에 대한 오픈 소스 다시 부팅 디먼을 사용 합니다. Kured는 [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) 로 실행 되며 각 노드에서 다시 부팅 해야 함을 나타내는 파일이 있는지 모니터링 합니다. 클러스터 전체에서 OS 다시 부팅은 클러스터 업그레이드와 동일한 [cordon 및 드레이닝 프로세스][cordon-drain] 를 통해 관리 됩니다.
 
-Kured를 사용 하는 방법에 대 한 자세한 내용은 [AKS에서 노드에 보안 및 커널 업데이트 적용][node-updates-kured]을 참조 하세요.
+Kured를 사용 하는 방법에 대한 자세한 내용은 [AKS에서 노드에 보안 및 커널 업데이트 적용][node-updates-kured]을 참조 하세요.
 
 ### <a name="windows-server-nodes"></a>Windows Server 노드
 
-Windows Server 노드(현재 AKS에서 프리뷰)에 대한 Windows Update는 최신 업데이트를 자동으로 실행 및 적용하지 않습니다. Windows 업데이트 릴리스 주기와 사용자 고유의 유효성 검사 프로세스를 정기적으로 수행 하는 일정에 따라 클러스터에서 업그레이드를 수행 하 고 AKS 클러스터에서 Windows Server 노드 풀을 업그레이드 해야 합니다. 이 업그레이드 프로세스는 최신 Windows Server 이미지 및 패치를 실행하는 노드를 생성하고 이전 노드를 제거합니다. 이 프로세스에 대 한 자세한 내용은 [AKS에서 노드 풀 업그레이드][nodepool-upgrade]를 참조 하세요.
+Windows Server 노드(현재 AKS에서 프리뷰)에 대한 Windows Update는 최신 업데이트를 자동으로 실행 및 적용하지 않습니다. Windows 업데이트 릴리스 주기와 사용자 고유의 유효성 검사 프로세스를 정기적으로 수행 하는 일정에 따라 클러스터에서 업그레이드를 수행 하 고 AKS 클러스터에서 Windows Server 노드 풀을 업그레이드 해야 합니다. 이 업그레이드 프로세스는 최신 Windows Server 이미지 및 패치를 실행하는 노드를 생성하고 이전 노드를 제거합니다. 이 프로세스에 대한 자세한 내용은 [AKS에서 노드 풀 업그레이드][nodepool-upgrade]를 참조 하세요.
 
 ## <a name="why-are-two-resource-groups-created-with-aks"></a>AKS를 통해 2개의 리소스 그룹이 생성되는 이유는 무엇인가요?
 
-AKS는 가상 머신 확장 집합, 가상 네트워크 및 관리 디스크를 포함 하 여 다양 한 Azure 인프라 리소스를 기반으로 합니다. 이렇게 하면 AKS에서 제공 하는 관리 되는 Kubernetes 환경 내에서 Azure platform의 많은 핵심 기능을 활용할 수 있습니다. 예를 들어 대부분의 Azure virtual machine 유형은 AKS에서 직접 사용할 수 있으며, 이러한 리소스에 대 한 할인을 자동으로 수신 하는 데 사용할 수 Azure Reservations.
+AKS는 가상 머신 확장 집합, 가상 네트워크 및 관리 디스크를 포함 하 여 다양 한 Azure 인프라 리소스를 기반으로 합니다. 이렇게 하면 AKS에서 제공 하는 관리 되는 Kubernetes 환경 내에서 Azure platform의 많은 핵심 기능을 활용할 수 있습니다. 예를 들어 대부분의 Azure virtual machine 유형은 AKS에서 직접 사용할 수 있으며, 이러한 리소스에 대한 할인을 자동으로 수신 하는 데 사용할 수 Azure Reservations.
 
 이 아키텍처를 사용 하도록 설정 하기 위해 각 AKS 배포는 다음 두 리소스 그룹에 걸쳐 있습니다.
 
-1. 첫 번째 리소스 그룹을 만듭니다. 이 그룹에는 Kubernetes service 리소스만 포함 됩니다. AKS 리소스 공급자는 배포 하는 동안 두 번째 리소스 그룹을 자동으로 만듭니다. 두 번째 리소스 그룹의 예는 *MC_myResourceGroup_myAKSCluster_eastus*합니다. 이 두 번째 리소스 그룹의 이름을 지정 하는 방법에 대 한 자세한 내용은 다음 섹션을 참조 하세요.
+1. 첫 번째 리소스 그룹을 만듭니다. 이 그룹에는 Kubernetes service 리소스만 포함 됩니다. AKS 리소스 공급자는 배포 하는 동안 두 번째 리소스 그룹을 자동으로 만듭니다. 두 번째 리소스 그룹의 예는 *MC_myResourceGroup_myAKSCluster_eastus*합니다. 이 두 번째 리소스 그룹의 이름을 지정 하는 방법에 대한 자세한 내용은 다음 섹션을 참조 하세요.
 1. *노드 리소스 그룹*이라고 하는 두 번째 리소스 그룹에는 클러스터와 연결 된 모든 인프라 리소스가 포함 되어 있습니다. 이러한 리소스에는 Kubernetes 노드 VM, 가상 네트워킹 및 스토리지가 포함됩니다. 기본적으로 노드 리소스 그룹은 *MC_myResourceGroup_myAKSCluster_eastus*와 같은 이름을 갖습니다. AKS는 클러스터가 삭제 될 때마다 노드 리소스를 자동으로 삭제 하므로 클러스터의 수명 주기를 공유 하는 리소스에 대해서만 사용 해야 합니다.
 
-## <a name="can-i-provide-my-own-name-for-the-aks-node-resource-group"></a>AKS node 리소스 그룹에 대 한 고유한 이름을 제공할 수 있나요?
+## <a name="can-i-provide-my-own-name-for-the-aks-node-resource-group"></a>AKS node 리소스 그룹에 대한 고유한 이름을 제공할 수 있나요?
 
 예. 기본적으로 AKS는 노드 리소스 그룹의 이름을 *MC_resourcegroupname_clustername_location*하지만 사용자 고유의 이름을 제공할 수도 있습니다.
 
@@ -75,7 +75,7 @@ AKS는 가상 머신 확장 집합, 가상 네트워크 및 관리 디스크를 
 
 노드 리소스 그룹으로 작업할 때 다음을 수행할 수 없다는 점에 유의 하세요.
 
-* 노드 리소스 그룹에 대 한 기존 리소스 그룹을 지정 합니다.
+* 노드 리소스 그룹에 대한 기존 리소스 그룹을 지정 합니다.
 * 노드 리소스 그룹에 대해 다른 구독을 지정 하십시오.
 * 클러스터를 만든 후 노드 리소스 그룹 이름을 변경 합니다.
 * 노드 리소스 그룹 내에서 관리 되는 리소스의 이름을 지정 합니다.
@@ -102,19 +102,19 @@ AKS는 다음과 같은 [허용 컨트롤러][admission-controllers]를 지원 �
 
 ## <a name="is-azure-key-vault-integrated-with-aks"></a>Azure Key Vault는 AKS와 통합되나요?
 
-AKS는 현재 기본적으로 Azure Key Vault와 통합 되지 않습니다. 그러나 [Kubernetes 프로젝트의 Azure Key Vault에 대 한 볼륨][keyvault-flexvolume] 을 사용 하면 Kubernetes pod에서 Key Vault 비밀으로 직접 통합할 수 있습니다.
+AKS는 현재 기본적으로 Azure Key Vault와 통합 되지 않습니다. 그러나 [Kubernetes 프로젝트의 Azure Key Vault에 대한 볼륨][keyvault-flexvolume] 을 사용 하면 Kubernetes pod에서 Key Vault 비밀으로 직접 통합할 수 있습니다.
 
 ## <a name="can-i-run-windows-server-containers-on-aks"></a>Windows Server 컨테이너를 AKS에서 실행할 수 있습니까?
 
 예, Windows Server 컨테이너는 미리 보기에서 사용할 수 있습니다. AKS에서 Windows Server 컨테이너를 실행 하려면 게스트 OS로 Windows Server를 실행 하는 노드 풀을 만듭니다. Windows Server 컨테이너는 Windows Server 2019만 사용할 수 있습니다. 시작 하려면 [Windows Server 노드 풀을 사용 하 여 AKS 클러스터 만들기][aks-windows-cli]를 참조 하세요.
 
-노드 풀에 대 한 Windows Server 지원에는 Kubernetes 프로젝트의 업스트림 Windows Server에 포함 되는 몇 가지 제한 사항이 포함 되어 있습니다. 이러한 제한 사항에 대 한 자세한 내용은 [Windows Server 컨테이너의 AKS 제한 사항][aks-windows-limitations]을 참조 하세요.
+노드 풀에 대한 Windows Server 지원에는 Kubernetes 프로젝트의 업스트림 Windows Server에 포함 되는 몇 가지 제한 사항이 포함 되어 있습니다. 이러한 제한 사항에 대한 자세한 내용은 [Windows Server 컨테이너의 AKS 제한 사항][aks-windows-limitations]을 참조 하세요.
 
 ## <a name="does-aks-offer-a-service-level-agreement"></a>AKS는 서비스 수준 계약을 제공 하나요?
 
 SLA (서비스 수준 계약)에서 공급자는 게시 된 서비스 수준이 충족 되지 않는 경우 고객에 게 서비스 비용을 상환에 동의 합니다. AKS는 무료 이므로 상환에는 비용을 사용할 수 없으므로 AKS에는 공식적인 SLA가 없습니다. 그러나 AKS는 Kubernetes API 서버에 대해 최소 99.5%의 가용성을 유지 하려고 합니다.
 
-Kubernetes 제어 평면의 작동 시간 및 Azure Virtual Machines에서 실행 되는 특정 워크 로드의 가용성을 나타내는 AKS 서비스 가용성 간의 차이점을 인식 하는 것이 중요 합니다. 제어 평면이 준비 되지 않은 경우 제어 평면을 사용할 수 없는 경우에도 Azure Vm에서 실행 되는 클러스터 워크 로드가 계속 작동할 수 있습니다. 지정 된 Azure Vm은 유료 리소스 이며 재무 SLA를 통해 지원 됩니다. Azure VM SLA에 대 한 자세한 내용 및 [가용성 영역][availability-zones]같은 기능을 사용 하 여 가용성을 높이는 방법에 [대 한 자세한 내용은 여기를](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/) 참조 하세요.
+Kubernetes 제어 평면의 작동 시간 및 Azure Virtual Machines에서 실행 되는 특정 워크 로드의 가용성을 나타내는 AKS 서비스 가용성 간의 차이점을 인식 하는 것이 중요 합니다. 제어 평면이 준비 되지 않은 경우 제어 평면을 사용할 수 없는 경우에도 Azure Vm에서 실행 되는 클러스터 워크 로드가 계속 작동할 수 있습니다. 지정 된 Azure Vm은 유료 리소스 이며 재무 SLA를 통해 지원 됩니다. Azure VM SLA에 대한 자세한 내용 및 [가용성 영역][availability-zones]같은 기능을 사용 하 여 가용성을 높이는 방법에 [대한 자세한 내용은 여기를](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/) 참조 하세요.
 
 ## <a name="why-cant-i-set-maxpods-below-30"></a>MaxPods를 30 미만으로 설정할 수 없는 이유는 무엇입니까?
 
@@ -131,11 +131,11 @@ AKS는 관리 되는 서비스 이므로 클러스터의 일부로 추가 기능
 
 ## <a name="can-i-apply-azure-reservation-discounts-to-my-aks-agent-nodes"></a>AKS agent 노드에 Azure 예약 할인을 적용할 수 있나요?
 
-AKS 에이전트 노드는 표준 Azure virtual machines로 청구 되므로 AKS에서 사용 하는 VM 크기에 대 한 [Azure 예약][reservation-discounts] 을 구매한 경우 해당 할인이 자동으로 적용 됩니다.
+AKS 에이전트 노드는 표준 Azure virtual machines로 청구 되므로 AKS에서 사용 하는 VM 크기에 대한 [Azure 예약][reservation-discounts] 을 구매한 경우 해당 할인이 자동으로 적용 됩니다.
 
-## <a name="can-i-movemigrate-my-cluster-between-azure-tenants"></a>Azure 테 넌 트 간에 클러스터를 이동/마이그레이션할 수 있나요?
+## <a name="can-i-movemigrate-my-cluster-between-azure-tenants"></a>Azure 테넌트 간에 클러스터를 이동/마이그레이션할 수 있나요?
 
-`az aks update-credentials` 명령을 사용 하 여 Azure 테 넌 트 간에 AKS 클러스터를 이동할 수 있습니다. 선택의 지침에 따라 [서비스 주체를 업데이트 하거나 만든](https://docs.microsoft.com/azure/aks/update-credentials) 다음 [새 자격 증명으로 aks cluster를 업데이트](https://docs.microsoft.com/azure/aks/update-credentials#update-aks-cluster-with-new-credentials)합니다.
+`az aks update-credentials` 명령을 사용 하 여 Azure 테넌트 간에 AKS 클러스터를 이동할 수 있습니다. 선택의 지침에 따라 [서비스 주체를 업데이트 하거나 만든](https://docs.microsoft.com/azure/aks/update-credentials) 다음 [새 자격 증명으로 aks cluster를 업데이트](https://docs.microsoft.com/azure/aks/update-credentials#update-aks-cluster-with-new-credentials)합니다.
 
 ## <a name="can-i-movemigrate-my-cluster-between-subscriptions"></a>내 클러스터를 구독 간에 이동/마이그레이션할 수 있나요?
 

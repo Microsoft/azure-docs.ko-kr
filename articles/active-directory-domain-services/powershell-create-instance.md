@@ -35,7 +35,7 @@ Azure AD DS(Azure Active Directory Domain Services)는 Windows Server Active Dir
     * [AzAccount][Connect-AzAccount] cmdlet을 사용 하 여 Azure 구독에 로그인 했는지 확인 합니다.
 * Azure AD PowerShell을 설치 하 고 구성 합니다.
     * 필요한 경우 지침에 따라 [AZURE Ad PowerShell 모듈을 설치 하 고 AZURE ad에 연결](/powershell/azure/active-directory/install-adv2)합니다.
-    * [AzureAD][Connect-AzureAD] cmdlet을 사용 하 여 Azure AD 테 넌 트에 로그인 했는지 확인 합니다.
+    * [AzureAD][Connect-AzureAD] cmdlet을 사용 하 여 Azure AD 테넌트에 로그인 했는지 확인 합니다.
 * Azure AD DS를 사용하도록 설정하려면 Azure AD 테넌트에 *글로벌 관리자* 권한이 필요합니다.
 * 필요한 Azure AD DS 리소스를 만들려면 Azure 구독에 *기여자* 권한이 필요합니다.
 
@@ -43,7 +43,7 @@ Azure AD DS(Azure Active Directory Domain Services)는 Windows Server Active Dir
 
 Azure AD DS에는 서비스 주체와 Azure AD 그룹이 필요 합니다. 이러한 리소스를 통해 Azure AD DS 관리 되는 도메인에서 데이터를 동기화 하 고 관리 되는 도메인에서 관리 권한이 있는 사용자를 정의할 수 있습니다.
 
-먼저 Azure AD DS에 대 한 Azure AD 서비스 주체를 만들어 자신을 통신 하 고 인증 합니다. 특정 응용 프로그램 ID는 ID가 *2565bd9d-da50-47d4-8b85-4c97f669dc36*인 명명 된 *도메인 컨트롤러 서비스* 에 사용 됩니다. 이 응용 프로그램 ID를 변경 하지 마세요.
+먼저 Azure AD DS에 대한 Azure AD 서비스 주체를 만들어 자신을 통신 하 고 인증 합니다. 특정 응용 프로그램 ID는 ID가 *2565bd9d-da50-47d4-8b85-4c97f669dc36*인 명명 된 *도메인 컨트롤러 서비스* 에 사용 됩니다. 이 응용 프로그램 ID를 변경 하지 마세요.
 
 [Get-azureadserviceprincipal][New-AzureADServicePrincipal] cmdlet을 사용 하 여 Azure AD 서비스 주체를 만듭니다.
 
@@ -101,7 +101,7 @@ New-AzResourceGroup `
   -Location $AzureLocation
 ```
 
-Azure AD Domain Services에 대 한 가상 네트워크 및 서브넷을 만듭니다. 두 개의 서브넷이 생성 됩니다. 하나는 *Domainservices*이 고 다른 하나는 *워크 로드*용입니다. Azure AD DS는 전용 *Domainservices* 서브넷에 배포 됩니다. 다른 응용 프로그램 또는 워크 로드를이 서브넷에 배포 하지 마세요. Vm의 나머지 부분에 별도의 *작업* 또는 다른 서브넷을 사용 합니다.
+Azure AD Domain Services에 대한 가상 네트워크 및 서브넷을 만듭니다. 두 개의 서브넷이 생성 됩니다. 하나는 *Domainservices*이 고 다른 하나는 *워크 로드*용입니다. Azure AD DS는 전용 *Domainservices* 서브넷에 배포 됩니다. 다른 응용 프로그램 또는 워크 로드를이 서브넷에 배포 하지 마세요. Vm의 나머지 부분에 별도의 *작업* 또는 다른 서브넷을 사용 합니다.
 
 [AzVirtualNetworkSubnetConfig][New-AzVirtualNetworkSubnetConfig] cmdlet을 사용 하 여 서브넷을 만든 다음 [AzVirtualNetwork][New-AzVirtualNetwork] cmdlet을 사용 하 여 가상 네트워크를 만듭니다.
 
@@ -134,7 +134,7 @@ $Vnet= New-AzVirtualNetwork `
 
 가용성 영역은 Azure 지역 내의 고유한 물리적 위치입니다. 각 영역은 독립된 전원, 냉각 및 네트워킹을 갖춘 하나 이상의 데이터 센터로 구성됩니다. 복원력을 보장하려면 활성화된 모든 지역에서 최소한 세 개의 별도 영역이 필요합니다.
 
-Azure AD DS를 영역 간에 배포하기 위해 구성해야 할 항목은 없습니다. Azure 플랫폼은 리소스의 영역 배포를 자동으로 처리합니다. 자세한 내용 및 지역 가용성에 대 한 자세한 내용은 [Azure의 가용성 영역 무엇 인가요?][availability-zones]를 참조 하세요.
+Azure AD DS를 영역 간에 배포하기 위해 구성해야 할 항목은 없습니다. Azure 플랫폼은 리소스의 영역 배포를 자동으로 처리합니다. 자세한 내용 및 지역 가용성에 대한 자세한 내용은 [Azure의 가용성 영역 무엇 인가요?][availability-zones]를 참조 하세요.
 
 ```powershell
 $AzureSubscriptionId = "YOUR_AZURE_SUBSCRIPTION_ID"
@@ -148,13 +148,13 @@ New-AzResource -ResourceId "/subscriptions/$AzureSubscriptionId/resourceGroups/$
   -Force -Verbose
 ```
 
-리소스를 만들고 PowerShell 프롬프트로 제어를 반환 하는 데 몇 분 정도 걸립니다. Azure AD DS 관리 되는 도메인은 백그라운드에서 계속 프로 비전 되 고 배포를 완료 하는 데 최대 한 시간이 걸릴 수 있습니다. Azure Portal에서 Azure AD DS 관리 되는 도메인의 **개요** 페이지에는이 배포 단계 전체에서 현재 상태가 표시 됩니다.
+리소스를 만들고 PowerShell 프롬프트로 제어를 반환 하는 데 몇 분 정도 걸립니다. Azure AD DS 관리 되는 도메인은 백그라운드에서 계속 프로 비전 되 고 배포를 완료 하는 데 최대한 시간이 걸릴 수 있습니다. Azure Portal에서 Azure AD DS 관리 되는 도메인의 **개요** 페이지에는이 배포 단계 전체에서 현재 상태가 표시 됩니다.
 
 Azure Portal Azure AD DS 관리 되는 도메인이 프로 비전을 완료 한 것으로 표시 되는 경우 다음 작업을 완료 해야 합니다.
 
 * 가상 머신이 도메인 가입 또는 인증을 위해 관리되는 도메인을 찾을 수 있도록 가상 네트워크에 대한 DNS 설정을 업데이트합니다.
     * DNS를 구성 하려면 포털에서 Azure AD DS 관리 되는 도메인을 선택 합니다. **개요** 창에서 자동으로 이러한 DNS 설정을 구성 하 라는 메시지가 표시 됩니다.
-* 가용성 영역를 지 원하는 지역에서 Azure AD DS 관리 되는 도메인을 만든 경우 네트워크 보안 그룹을 만들어 가상 네트워크에서 Azure AD DS 관리 되는 도메인에 대 한 트래픽을 제한 합니다. 이러한 규칙을 적용 해야 하는 Azure 표준 부하 분산 장치가 생성 됩니다. 이 네트워크 보안 그룹은 Azure AD DS를 보호 하며 관리 되는 도메인이 제대로 작동 하는 데 필요 합니다.
+* 가용성 영역를 지 원하는 지역에서 Azure AD DS 관리 되는 도메인을 만든 경우 네트워크 보안 그룹을 만들어 가상 네트워크에서 Azure AD DS 관리 되는 도메인에 대한 트래픽을 제한 합니다. 이러한 규칙을 적용 해야 하는 Azure 표준 부하 분산 장치가 생성 됩니다. 이 네트워크 보안 그룹은 Azure AD DS를 보호 하며 관리 되는 도메인이 제대로 작동 하는 데 필요 합니다.
     * 네트워크 보안 그룹 및 필요한 규칙을 만들려면 포털에서 Azure AD DS 관리 되는 도메인을 선택 합니다. **개요** 창에 네트워크 보안 그룹을 자동으로 만들고 구성 하 라는 메시지가 표시 됩니다.
 * 최종 사용자가 회사 자격 증명을 사용 하 여 관리 되는 도메인에 로그인 할 수 있도록 [Azure AD Domain Services에 대해 암호 동기화를 사용 하도록 설정](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds) 합니다.
 
@@ -163,7 +163,7 @@ Azure Portal Azure AD DS 관리 되는 도메인이 프로 비전을 완료 한 
 다음 전체 PowerShell 스크립트는이 문서에 표시 된 모든 작업을 결합 합니다. 스크립트를 복사 하 고 `.ps1` 확장명을 사용 하 여 파일에 저장 합니다. 로컬 PowerShell 콘솔 또는 [Azure Cloud Shell][cloud-shell]에서 스크립트를 실행 합니다.
 
 > [!NOTE]
-> Azure AD DS을 사용 하도록 설정 하려면 Azure AD 테 넌 트의 전역 관리자 여야 합니다. 또한 Azure 구독에서 *참가자* 권한 이상이 필요 합니다.
+> Azure AD DS을 사용 하도록 설정 하려면 Azure AD 테넌트의 전역 관리자 여야 합니다. 또한 Azure 구독에서 *참가자* 권한 이상이 필요 합니다.
 
 ```powershell
 # Change the following values to match your deployment.
@@ -235,13 +235,13 @@ New-AzResource -ResourceId "/subscriptions/$AzureSubscriptionId/resourceGroups/$
   -Force -Verbose
 ```
 
-리소스를 만들고 PowerShell 프롬프트로 제어를 반환 하는 데 몇 분 정도 걸립니다. Azure AD DS 관리 되는 도메인은 백그라운드에서 계속 프로 비전 되 고 배포를 완료 하는 데 최대 한 시간이 걸릴 수 있습니다. Azure Portal에서 Azure AD DS 관리 되는 도메인의 **개요** 페이지에는이 배포 단계 전체에서 현재 상태가 표시 됩니다.
+리소스를 만들고 PowerShell 프롬프트로 제어를 반환 하는 데 몇 분 정도 걸립니다. Azure AD DS 관리 되는 도메인은 백그라운드에서 계속 프로 비전 되 고 배포를 완료 하는 데 최대한 시간이 걸릴 수 있습니다. Azure Portal에서 Azure AD DS 관리 되는 도메인의 **개요** 페이지에는이 배포 단계 전체에서 현재 상태가 표시 됩니다.
 
 Azure Portal Azure AD DS 관리 되는 도메인이 프로 비전을 완료 한 것으로 표시 되는 경우 다음 작업을 완료 해야 합니다.
 
 * 가상 머신이 도메인 가입 또는 인증을 위해 관리되는 도메인을 찾을 수 있도록 가상 네트워크에 대한 DNS 설정을 업데이트합니다.
     * DNS를 구성 하려면 포털에서 Azure AD DS 관리 되는 도메인을 선택 합니다. **개요** 창에서 자동으로 이러한 DNS 설정을 구성 하 라는 메시지가 표시 됩니다.
-* 가용성 영역를 지 원하는 지역에서 Azure AD DS 관리 되는 도메인을 만든 경우 네트워크 보안 그룹을 만들어 가상 네트워크에서 Azure AD DS 관리 되는 도메인에 대 한 트래픽을 제한 합니다. 이러한 규칙을 적용 해야 하는 Azure 표준 부하 분산 장치가 생성 됩니다. 이 네트워크 보안 그룹은 Azure AD DS를 보호 하며 관리 되는 도메인이 제대로 작동 하는 데 필요 합니다.
+* 가용성 영역를 지 원하는 지역에서 Azure AD DS 관리 되는 도메인을 만든 경우 네트워크 보안 그룹을 만들어 가상 네트워크에서 Azure AD DS 관리 되는 도메인에 대한 트래픽을 제한 합니다. 이러한 규칙을 적용 해야 하는 Azure 표준 부하 분산 장치가 생성 됩니다. 이 네트워크 보안 그룹은 Azure AD DS를 보호 하며 관리 되는 도메인이 제대로 작동 하는 데 필요 합니다.
     * 네트워크 보안 그룹 및 필요한 규칙을 만들려면 포털에서 Azure AD DS 관리 되는 도메인을 선택 합니다. **개요** 창에 네트워크 보안 그룹을 자동으로 만들고 구성 하 라는 메시지가 표시 됩니다.
 * 최종 사용자가 회사 자격 증명을 사용 하 여 관리 되는 도메인에 로그인 할 수 있도록 [Azure AD Domain Services에 대해 암호 동기화를 사용 하도록 설정](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds) 합니다.
 

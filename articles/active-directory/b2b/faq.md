@@ -114,7 +114,7 @@ UI, PowerShell 스크립트 또는 API를 사용하여 파트너 조직의 다�
 지원되는 ID라는 측면에서 B2B 및 B2C(business-to-consumer) 협업 간의 차이점을 제거하고 있습니다. 사용되는 ID로 B2B를 사용할지 아니면 B2C를 사용할지 결정하는 것은 좋은 기준이 아닙니다. 협업 옵션을 선택하는 방법에 대한 정보는 [Azure Active Directory에서 B2B 협업과 B2C 비교](compare-with-b2c.md)를 참조하세요.
 
 ### <a name="what-applications-and-services-support-azure-b2b-guest-users"></a>어떤 애플리케이션 및 서비스에서 Azure B2B 게스트 사용자를 지원하나요?
-모든 Azure AD 통합 응용 프로그램은 Azure B2B 게스트 사용자를 지원할 수 있지만, 게스트 사용자를 인증 하려면 테 넌 트로 설정 된 끝점을 사용 해야 합니다. 게스트 사용자가 앱을 인증할 때 발행되는 SAML 토큰에서 [클레임을 사용자 지정](claims-mapping.md)해야 할 수도 있습니다. 
+모든 Azure AD 통합 응용 프로그램은 Azure B2B 게스트 사용자를 지원할 수 있지만, 게스트 사용자를 인증 하려면 테넌트로 설정 된 엔드포인트을 사용 해야 합니다. 게스트 사용자가 앱을 인증할 때 발행되는 SAML 토큰에서 [클레임을 사용자 지정](claims-mapping.md)해야 할 수도 있습니다. 
 
 ### <a name="can-we-force-multi-factor-authentication-for-b2b-guest-users-if-our-partners-dont-have-multi-factor-authentication"></a>파트너가 Multi-Factor Authentication을 설치하지 않은 경우 B2B 게스트 사용자에 대해 Multi-Factor Authentication을 강제할 수 있나요?
 예. 자세한 내용은 [B2B 공동 작업 사용자에 대 한 조건부 액세스](conditional-access.md)를 참조 하세요.

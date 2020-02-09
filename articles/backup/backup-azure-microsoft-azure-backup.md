@@ -28,7 +28,7 @@ ms.locfileid: "75979877"
 >
 >
 
-Azure VM에 배포 된 MABS는 Azure에서 Vm을 백업할 수 있지만 백업 작업을 사용 하려면 동일한 도메인에 있어야 합니다. Azure VM을 백업 하는 프로세스는 온-프레미스에서 Vm을 백업 하는 것과 동일 하지만 Azure에서 MABS를 배포 하는 경우 몇 가지 제한 사항이 있습니다. 제한 사항에 대 한 자세한 내용은 [DPM을 Azure 가상 머신으로](https://docs.microsoft.com/system-center/dpm/install-dpm?view=sc-dpm-1807#setup-prerequisites) 참조 하세요.
+Azure VM에 배포 된 MABS는 Azure에서 Vm을 백업할 수 있지만 백업 작업을 사용 하려면 동일한 도메인에 있어야 합니다. Azure VM을 백업 하는 프로세스는 온-프레미스에서 Vm을 백업 하는 것과 동일 하지만 Azure에서 MABS를 배포 하는 경우 몇 가지 제한 사항이 있습니다. 제한 사항에 대한 자세한 내용은 [DPM을 Azure 가상 머신으로](https://docs.microsoft.com/system-center/dpm/install-dpm?view=sc-dpm-1807#setup-prerequisites) 참조 하세요.
 
 > [!NOTE]
 > Azure에는 리소스를 만들고 작업하기 위한 두 가지 배포 모델인 [리소스 관리자와 클래식](../azure-resource-manager/management/deployment-models.md)모델이 있습니다. 이 문서에서는 리소스 관리자 모델을 사용하여 배포된 VM을 복원하기 위한 정보 및 절차를 제공합니다.
@@ -43,7 +43,7 @@ Azure Backup 서버를 작동하고 실행하는 첫 번째 단계는 Windows Se
 
 ### <a name="using-a-server-in-azure"></a>Azure에서 서버 사용
 
-Azure Backup Server를 실행 하기 위한 서버를 선택할 때 Windows Server 2016 Datacenter 또는 Windows Server 2019 Datacenter의 갤러리 이미지로 시작 하는 것이 좋습니다. [Azure 포털에서 첫 번째 Windows 가상 머신 만들기](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)문서는 Azure를 사용한 경험이 없는 경우 Azure에서 권장된 가상 머신 시작에 대한 자습서를 제공합니다. 서버 VM (가상 컴퓨터)에 대 한 권장 최소 요구 사항은 4 개의 코어와 8gb RAM이 있는 Standard_A4_v2 이어야 합니다.
+Azure Backup Server를 실행 하기 위한 서버를 선택할 때 Windows Server 2016 Datacenter 또는 Windows Server 2019 Datacenter의 갤러리 이미지로 시작 하는 것이 좋습니다. [Azure 포털에서 첫 번째 Windows 가상 머신 만들기](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)문서는 Azure를 사용한 경험이 없는 경우 Azure에서 권장된 가상 머신 시작에 대한 자습서를 제공합니다. 서버 VM (가상 컴퓨터)에 대한 권장 최소 요구 사항은 4 개의 코어와 8gb RAM이 있는 Standard_A4_v2 이어야 합니다.
 
 Azure Backup 서버를 사용하여 워크로드를 보호하는 데는 미묘한 많은 차이가 있습니다. [Azure 가상 머신으로 DPM 설치](https://technet.microsoft.com/library/jj852163.aspx)문서는 이러한 미묘한 차이를 설명하는 데 도움이 됩니다. 컴퓨터를 배포하기 전에 이 문서를 완전히 읽어보세요.
 
@@ -187,7 +187,7 @@ Windows Server 중복 제거를 사용하여 DPM 스토리지를 중복 제거�
     SSRS 구성에 대해 [자세히 알아봅니다](https://docs.microsoft.com/sql/reporting-services/report-server/configure-and-administer-a-report-server-ssrs-native-mode?view=sql-server-2017).
 
     > [!NOTE]
-    > MABS의 데이터베이스로 사용 되는 SQL Server에 대 한 라이선스는 [Microsoft Online Services 약관](https://www.microsoft.com/licensing/product-licensing/products) (OST)의 적용을 받습니다. OST에 따라 MABS와 함께 제공 되는 SQL Server는 MABS의 데이터베이스로만 사용할 수 있습니다.
+    > MABS의 데이터베이스로 사용 되는 SQL Server에 대한 라이선스는 [Microsoft Online Services 약관](https://www.microsoft.com/licensing/product-licensing/products) (OST)의 적용을 받습니다. OST에 따라 MABS와 함께 제공 되는 SQL Server는 MABS의 데이터베이스로만 사용할 수 있습니다.
 
 4. Microsoft Azure Backup 서버 파일을 설치할 위치를 입력하고 **다음**을 클릭합니다.
 
@@ -294,7 +294,7 @@ Azure 연결 및 Azure 구독 상태를 알고 있다면 아래 표를 사용하
 
 ### <a name="recovering-from-loss-of-connectivity"></a>연결 끊김 복구
 
-Azure에 대 한 액세스를 차단 하는 방화벽이 나 프록시가 있는 경우 방화벽/프록시 프로필에서 다음과 같은 도메인 주소를 허용 해야 합니다.
+Azure에 대한 액세스를 차단 하는 방화벽이 나 프록시가 있는 경우 방화벽/프록시 프로필에서 다음과 같은 도메인 주소를 허용 해야 합니다.
 
 * `http://www.msftncsi.com/ncsi.txt`
 * \*.Microsoft.com

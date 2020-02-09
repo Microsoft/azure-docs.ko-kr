@@ -240,10 +240,10 @@ Automation에서는 Log Analytics 작업 영역으로 Runbook 작업 상태 및 
 * Automation 계정 간에 작업 상호 연결
 * 시간별 작업 기록 시각화
 
-Azure Monitor 로그와의 통합을 구성 하 여 작업 데이터를 수집 하 고 상관 관계를 설정 하는 방법에 대 한 자세한 내용은 [자동화에서 작업 상태 및 작업 스트림을 Azure Monitor 로그로 전달](automation-manage-send-joblogs-log-analytics.md)을 참조 하세요.
+Azure Monitor 로그와의 통합을 구성 하 여 작업 데이터를 수집 하 고 상관 관계를 설정 하는 방법에 대한 자세한 내용은 [자동화에서 작업 상태 및 작업 스트림을 Azure Monitor 로그로 전달](automation-manage-send-joblogs-log-analytics.md)을 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 
 * Runbook 실행, Runbook 작업 모니터링 방법 및 기타 기술 세부 정보를 알아보려면 [Runbook 작업 추적](automation-runbook-execution.md)
 * 자식 Runbook을 디자인하고 사용하는 방법을 이해하려면 [Azure Automation의 자식 Runbook](automation-child-runbooks.md)
-* 언어 참조 및 학습 모듈을 비롯 한 PowerShell에 대 한 자세한 내용은 [Powershell 문서](/powershell/scripting/overview)를 참조 하세요.
+* 언어 참조 및 학습 모듈을 비롯 한 PowerShell에 대한 자세한 내용은 [Powershell 문서](/powershell/scripting/overview)를 참조 하세요.

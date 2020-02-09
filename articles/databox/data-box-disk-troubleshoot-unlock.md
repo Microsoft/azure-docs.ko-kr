@@ -41,9 +41,9 @@ To figure out who accessed the **Device credentials** blade, you can query the A
 | 심각한 오류: 잘못된 매개 변수<br>매개 변수 이름: invalid_arg<br>사용량:<br>DataBoxDiskUnlock /PassKeys:<passkey_list_separated_by_semicolon><br><br>예제: DataBoxDiskUnlock /PassKeys:passkey1;passkey2;passkey3<br>예제: DataBoxDiskUnlock /SystemCheck<br>예제: DataBoxDiskUnlock /Help<br><br>/PassKeys:       Azure DataBox Disk 순서에서 이 암호를 가져옵니다. 암호는 디스크를 잠금 해제합니다.<br>/Help:           이 옵션은 cmdlet 사용량 및 예제에 대한 도움말을 제공합니다.<br>/SystemCheck:    이 옵션은 시스템이 도구를 실행하기 위한 요구 사항을 충족하는지 확인합니다.<br><br>종료하려면 아무 키나 누르세요. | 잘못된 매개 변수가 입력되었습니다. 허용 된 매개 변수만 /SystemCheck, /PassKey, 및 /Help입니다.|
 
 
-## <a name="unlock-issues-for-disks-when-using-a-windows-client"></a>Windows 클라이언트를 사용 하는 경우에 디스크에 대 한 문제를 잠금 해제
+## <a name="unlock-issues-for-disks-when-using-a-windows-client"></a>Windows 클라이언트를 사용 하는 경우에 디스크에 대한 문제를 잠금 해제
 
-이 섹션에서는 데이터 복사본에 대 한 Windows 클라이언트를 사용 하는 경우 Data Box 디스크의 배포 하는 동안 직면 한 주요 문제 중 일부를 자세히 설명 합니다.
+이 섹션에서는 데이터 복사본에 대한 Windows 클라이언트를 사용 하는 경우 Data Box 디스크의 배포 하는 동안 직면 한 주요 문제 중 일부를 자세히 설명 합니다.
 
 ### <a name="issue-could-not-unlock-drive-from-bitlocker"></a>문제: BitLocker에서 드라이브의 잠금을 해제할 수 없습니다.
  

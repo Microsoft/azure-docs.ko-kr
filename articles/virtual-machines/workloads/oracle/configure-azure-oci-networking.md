@@ -33,7 +33,7 @@ ms.locfileid: "71802204"
 
 ## <a name="prerequisites"></a>선행 조건
 
-* Azure와 OCI 간에 연결을 설정 하려면 활성 Azure 구독 및 활성 OCI 테 넌 트가 있어야 합니다.
+* Azure와 OCI 간에 연결을 설정 하려면 활성 Azure 구독 및 활성 OCI 테넌트가 있어야 합니다.
 
 * Azure Express 경로 피어 링 위치가 OCI FastConnect와 동일한 피어 링 위치에 있는 경우에만 연결을 사용할 수 있습니다. [미리 보기 제한 사항](oracle-oci-overview.md#preview-limitations)을 참조 하세요.
 
@@ -55,7 +55,7 @@ ms.locfileid: "71802204"
 
 1. Azure virtual network 또는 OCI 가상 클라우드 네트워크 IP 주소 공간과 겹치지 않는/30의 두 개인 IP 주소 공간을 일정 합니다. 첫 번째 IP 주소 공간은 기본 주소 공간으로, 두 번째 IP 주소 공간은 보조 주소 공간으로 참조 합니다. FastConnect 회로를 구성할 때 필요한 주소를 적어둡니다.
 1. DRG (동적 라우팅 게이트웨이)를 만듭니다. FastConnect 회로를 만들 때 필요 합니다. 자세한 내용은 [동적 라우팅 게이트웨이](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm) 설명서를 참조 하세요.
-1. Oracle 테 넌 트에서 FastConnect 회로를 만듭니다. 자세한 내용은 [Oracle 설명서](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/azure.htm)를 참조 하십시오.
+1. Oracle 테넌트에서 FastConnect 회로를 만듭니다. 자세한 내용은 [Oracle 설명서](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/azure.htm)를 참조 하십시오.
   
     * FastConnect 구성에서 공급자로 **Microsoft Azure: express** 경로를 선택 합니다.
     * 이전 단계에서 프로 비전 한 동적 라우팅 게이트웨이를 선택 합니다.
@@ -64,7 +64,7 @@ ms.locfileid: "71802204"
     * 이전 단계에서 **주 BGP ip** 주소에 대 한 첫 번째/30 개인 ip 주소 공간을 사용 하 고 **보조 bgp ip** 주소에 대해 두 번째/30 개인 ip 주소 공간을 공백을 만들.
         * Oracle BGP IP 주소 (기본 및 보조)에 대해 두 범위의 첫 번째 가능한 주소를 할당 하 고 두 번째 주소를 FastConnect 관점에서 고객 BGP IP 주소에 할당 합니다. 첫 번째 가능한 IP 주소는/30 주소 공간의 두 번째 IP 주소입니다 (첫 번째 IP 주소는 Microsoft에서 예약 함).
     * **만들기**를 클릭합니다.
-1. 경로 테이블을 사용 하 여 동적 라우팅 게이트웨이를 통해 Oracle 테 넌 트의 가상 클라우드 네트워크에 FastConnect 연결을 완료 합니다.
+1. 경로 테이블을 사용 하 여 동적 라우팅 게이트웨이를 통해 Oracle 테넌트의 가상 클라우드 네트워크에 FastConnect 연결을 완료 합니다.
 1. Azure로 이동 하 여 Express 경로 회로에 대 한 **공급자 상태가** **프로 비전** 됨으로 변경 되 고 **azure private** 형식의 피어 링이 프로 비전 되었는지 확인 합니다. 다음 단계를 수행 하기 위한 필수 구성 요소입니다.
 
     ![Express 경로 공급자 상태](media/configure-azure-oci-networking/exr-provider-status.png)

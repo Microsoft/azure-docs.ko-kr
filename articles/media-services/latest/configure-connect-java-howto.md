@@ -35,7 +35,7 @@ ms.locfileid: "74888498"
    - Java 확장 팩
 - `JAVA_HOME` 및 `PATH` 환경 변수를 설정 해야 합니다.
 - [Media Services 계정 만들기](create-account-cli-how-to.md) 리소스 그룹 이름 및 Media Services 계정 이름을 명심 해야 합니다.
-- [Api 액세스](access-api-cli-how-to.md) 항목의 단계를 따릅니다. 이후 단계에서 필요한 구독 ID, 응용 프로그램 ID (클라이언트 ID), 인증 키 (비밀) 및 테 넌 트 ID를 기록 합니다.
+- [Api 액세스](access-api-cli-how-to.md) 항목의 단계를 따릅니다. 이후 단계에서 필요한 구독 ID, 응용 프로그램 ID (클라이언트 ID), 인증 키 (비밀) 및 테넌트 ID를 기록 합니다.
 
 또한 다음을 검토 합니다.
 

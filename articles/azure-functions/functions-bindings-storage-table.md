@@ -248,7 +248,7 @@ public class Person : TableEntity
 
 ### <a name="cloudtable"></a>CloudTable
 
-`IQueryable` [버전 2.x 이상](functions-versions.md)에 대 한 함수 런타임에서 지원 되지 않습니다. 대신 Azure Storage SDK를 사용하여 테이블을 읽는 `CloudTable` 메서드 매개 변수를 사용합니다. Azure Functions 로그 테이블을 쿼리 하는 함수의 예는 다음과 같습니다.
+`IQueryable` [버전 2.x 이상](functions-versions.md)에 대한 함수 런타임에서 지원 되지 않습니다. 대신 Azure Storage SDK를 사용하여 테이블을 읽는 `CloudTable` 메서드 매개 변수를 사용합니다. Azure Functions 로그 테이블을 쿼리 하는 함수의 예는 다음과 같습니다.
 
 ```json
 {
@@ -555,7 +555,7 @@ Python에서 특성을 지원 하지 않습니다.
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-[Tableinput](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.tableinput) 특성은 함수를 트리거한 테이블 행에 대 한 액세스를 제공 합니다.
+[Tableinput](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.tableinput) 특성은 함수를 트리거한 테이블 행에 대한 액세스를 제공 합니다.
 
 ---
 
@@ -727,7 +727,7 @@ module.exports = function (context) {
 }
 ```
 
-다음 함수는 `rowKey` 값에 대 한 고유 UUI를 생성 하 고 테이블 저장소에 메시지를 유지 합니다.
+다음 함수는 `rowKey` 값에 대한 고유 UUI를 생성 하 고 테이블 저장소에 메시지를 유지 합니다.
 
 ```python
 import logging
@@ -879,7 +879,7 @@ Python에서 특성을 지원 하지 않습니다.
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-[Java 함수 런타임 라이브러리](/java/api/overview/azure/functions/runtime)에서 매개 변수에 대 한 [tableoutput](https://github.com/Azure/azure-functions-java-library/blob/master/src/main/java/com/microsoft/azure/functions/annotation/TableOutput.java/) 주석을 사용 하 여 테이블 저장소에 값을 씁니다.
+[Java 함수 런타임 라이브러리](/java/api/overview/azure/functions/runtime)에서 매개 변수에 대한 [tableoutput](https://github.com/Azure/azure-functions-java-library/blob/master/src/main/java/com/microsoft/azure/functions/annotation/TableOutput.java/) 주석을 사용 하 여 테이블 저장소에 값을 씁니다.
 
 자세한 내용은 [예제](#output)를 참조 하세요.
 

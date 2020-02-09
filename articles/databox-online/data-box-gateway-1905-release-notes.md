@@ -1,6 +1,6 @@
 ---
 title: Azure 데이터 상자 게이트웨이 1905 릴리스 정보 | Microsoft Docs
-description: 일반 공급 릴리스를 실행 하는 Azure 데이터 상자 게이트웨이에 대 한 중요 한 미해결 문제 및 해결책을 설명 합니다.
+description: 일반 공급 릴리스를 실행 하는 Azure 데이터 상자 게이트웨이에 대한 중요 한 미해결 문제 및 해결책을 설명 합니다.
 services: databox
 author: alkohli
 ms.service: databox
@@ -19,7 +19,7 @@ ms.locfileid: "67078613"
 
 ## <a name="overview"></a>개요
 
-다음 릴리스 정보는 중요 한 미해결 문제 및 Azure 데이터 상자 가장자리와 Azure 데이터 상자 게이트웨이 용 1905 릴리스에 대 한 해결된 된 문제를 식별합니다.
+다음 릴리스 정보는 중요 한 미해결 문제 및 Azure 데이터 상자 가장자리와 Azure 데이터 상자 게이트웨이 용 1905 릴리스에 대한 해결된 된 문제를 식별합니다.
 
 릴리스 정보는 계속 업데이트되며, 해결 방법이 필요한 중대한 문제가 발견되면 해당 내용이 추가됩니다. 데이터 상자 Edge/데이터 상자 게이트웨이 배포 하기 전에 릴리스 정보에 포함 된 정보를 주의 깊게 검토 합니다.
 
@@ -33,7 +33,7 @@ ms.locfileid: "67078613"
 
 ## <a name="whats-new"></a>새로운 기능
 
-- **필드, 프로그래밍 가능한 게이트 배열 (FPGA) 로깅 개선 사항** -로깅이 릴리스에서 만들었습니다 및 향상 된 경고와 관련 된 FPGA 합니다. FPGA를 사용 하 여 Edge 계산 기능을 사용 하는 경우 데이터 상자의 가장자리에 대 한 필수 업데이트입니다. 자세한 내용은 참조 하는 방법 [데이터 상자의 가장자리에 대 한 Edge 계산을 사용 하 여 데이터 변환](data-box-edge-deploy-configure-compute-advanced.md)합니다.
+- **필드, 프로그래밍 가능한 게이트 배열 (FPGA) 로깅 개선 사항** -로깅이 릴리스에서 만들었습니다 및 향상 된 경고와 관련 된 FPGA 합니다. FPGA를 사용 하 여 Edge 계산 기능을 사용 하는 경우 데이터 상자의 가장자리에 대한 필수 업데이트입니다. 자세한 내용은 참조 하는 방법 [데이터 상자의 가장자리에 대한 Edge 계산을 사용 하 여 데이터 변환](data-box-edge-deploy-configure-compute-advanced.md)합니다.
 
 ## <a name="known-issues-in-ga-release"></a>GA 릴리스의 알려진된 문제
 

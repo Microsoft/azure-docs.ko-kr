@@ -18,13 +18,13 @@ ms.locfileid: "74978784"
 
 이 문서에서는 스크립트 (*csx*)를 사용 C# 하 여 Azure Functions를 개발 하는 방법을 소개 합니다.
 
-Azure Functions는 C# 및 C# 스크립트 프로그래밍 언어를 지원 합니다. [Visual Studio 클래스 라이브러리 프로젝트에서를 사용 C# 하는 방법](functions-develop-vs.md)에 대 한 지침을 찾고 있는 경우 [ C# 개발자 참조](functions-dotnet-class-library.md)를 참조 하세요.
+Azure Functions는 C# 및 C# 스크립트 프로그래밍 언어를 지원 합니다. [Visual Studio 클래스 라이브러리 프로젝트에서를 사용 C# 하는 방법](functions-develop-vs.md)에 대한 지침을 찾고 있는 경우 [ C# 개발자 참조](functions-dotnet-class-library.md)를 참조 하세요.
 
 이 문서에서는 [Azure Functions 개발자 가이드](functions-reference.md)를 이미 알고 있다고 가정 합니다.
 
 ## <a name="how-csx-works"></a>. Csx 작동 방법
 
-Azure Functions C# 에 대 한 스크립트 환경은 [Azure WebJobs SDK](https://github.com/Azure/azure-webjobs-sdk/wiki/Introduction)를 기반으로 합니다. 데이터는 메서드 인수 C# 를 통해 함수로 흐릅니다. 인수 이름은 `function.json` 파일에 지정 되며 함수로 거 및 취소 토큰과 같은 항목에 액세스 하기 위한 미리 정의 된 이름이 있습니다.
+Azure Functions C# 에 대한 스크립트 환경은 [Azure WebJobs SDK](https://github.com/Azure/azure-webjobs-sdk/wiki/Introduction)를 기반으로 합니다. 데이터는 메서드 인수 C# 를 통해 함수로 흐릅니다. 인수 이름은 `function.json` 파일에 지정 되며 함수로 거 및 취소 토큰과 같은 항목에 액세스 하기 위한 미리 정의 된 이름이 있습니다.
 
 *. Csx* 형식을 사용 하면 "상용구"를 적고 함수를 작성 하는 C# 데 집중할 수 있습니다. 네임 스페이스 및 클래스에 모든 항목을 래핑하는 대신 `Run` 메서드만 정의 하면 됩니다. 평소 처럼 파일의 시작 부분에 모든 어셈블리 참조와 네임 스페이스를 포함 합니다.
 
@@ -55,7 +55,7 @@ FunctionsProject
 
 ## <a name="binding-to-arguments"></a>인수에 바인딩
 
-입력 또는 출력 데이터는 *함수 json* 구성 C# 파일의 `name` 속성을 통해 스크립트 함수 매개 변수에 바인딩됩니다. 다음 예제에서는 큐 트리거 함수에 대 한 *함수 json* 파일 및 *실행. csx* 파일을 보여 줍니다. 큐 메시지에서 데이터를 수신 하는 매개 변수는 `name` 속성의 값 이므로 `myQueueItem` 이름이 지정 됩니다.
+입력 또는 출력 데이터는 *함수 json* 구성 C# 파일의 `name` 속성을 통해 스크립트 함수 매개 변수에 바인딩됩니다. 다음 예제에서는 큐 트리거 함수에 대한 *함수 json* 파일 및 *실행. csx* 파일을 보여 줍니다. 큐 메시지에서 데이터를 수신 하는 매개 변수는 `name` 속성의 값 이므로 `myQueueItem` 이름이 지정 됩니다.
 
 ```json
 {
@@ -89,7 +89,7 @@ public static void Run(CloudQueueMessage myQueueItem, ILogger log)
 
 ## <a name="supported-types-for-bindings"></a>바인딩에 대해 지원 되는 형식
 
-각 바인딩에는 자체 지원 형식이 있습니다. 예를 들어 blob 트리거는 문자열 매개 변수, POCO 매개 변수, `CloudBlockBlob` 매개 변수 또는 지원 되는 다른 여러 형식에 사용할 수 있습니다. Blob [바인딩에 대 한 바인딩 참조 문서](functions-bindings-storage-blob.md#trigger---usage) 는 blob 트리거에 대해 지원 되는 모든 매개 변수 유형을 나열 합니다. 자세한 내용은 [트리거 및](functions-triggers-bindings.md) 바인딩 및 [각 바인딩 형식에 대 한 바인딩 참조 문서](functions-triggers-bindings.md#next-steps)를 참조 하세요.
+각 바인딩에는 자체 지원 형식이 있습니다. 예를 들어 blob 트리거는 문자열 매개 변수, POCO 매개 변수, `CloudBlockBlob` 매개 변수 또는 지원 되는 다른 여러 형식에 사용할 수 있습니다. Blob [바인딩에 대한 바인딩 참조 문서](functions-bindings-storage-blob.md#trigger---usage) 는 blob 트리거에 대해 지원 되는 모든 매개 변수 유형을 나열 합니다. 자세한 내용은 [트리거 및](functions-triggers-bindings.md) 바인딩 및 [각 바인딩 형식에 대한 바인딩 참조 문서](functions-triggers-bindings.md#next-steps)를 참조 하세요.
 
 [!INCLUDE [HTTP client best practices](../../includes/functions-http-client-best-practices.md)]
 
@@ -143,7 +143,7 @@ public static void MyLogger(ILogger log, string logtext)
 
 POCO 개체를 사용 하 여 함수 간에 전달 되는 데이터를 강력한 형식으로 하려는 경우에는 공유 *csx* 파일을 사용 하는 것이 일반적인 패턴입니다. 다음 단순화 된 예제에서 HTTP 트리거 및 큐 트리거는 `Order` 라는 POCO 개체를 공유 하 여 주문 데이터를 강력한 형식으로 만듭니다.
 
-HTTP 트리거에 대 한 다음 예제를 *실행 합니다.*
+HTTP 트리거에 대한 다음 예제를 *실행 합니다.*
 
 ```cs
 #load "..\shared\order.csx"
@@ -169,7 +169,7 @@ public static async Task<HttpResponseMessage> Run(Order req, IAsyncCollector<Ord
 }
 ```
 
-큐 트리거에 대 한 *csx* 예:
+큐 트리거에 대한 *csx* 예:
 
 ```cs
 #load "..\shared\order.csx"
@@ -238,7 +238,7 @@ public static void Run(ICollector<string> myQueue, ILogger log)
 
 ## <a name="logging"></a>Naplózás
 
-에서 C#스트리밍 로그에 대 한 출력을 기록 하려면 [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger)형식의 인수를 포함 합니다. 이름을 `log`하는 것이 좋습니다. Azure Functions에서 `Console.Write` 사용 하지 마십시오.
+에서 C#스트리밍 로그에 대한 출력을 기록 하려면 [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger)형식의 인수를 포함 합니다. 이름을 `log`하는 것이 좋습니다. Azure Functions에서 `Console.Write` 사용 하지 마십시오.
 
 ```csharp
 public static void Run(string myBlob, ILogger log)
@@ -248,7 +248,7 @@ public static void Run(string myBlob, ILogger log)
 ```
 
 > [!NOTE]
-> `TraceWriter`대신 사용할 수 있는 최신 로깅 프레임 워크에 대 한 자세한 내용은 **Monitor Azure Functions** 문서의 [함수에서 C# 로그 쓰기](functions-monitoring.md#write-logs-in-c-functions) 를 참조 하세요.
+> `TraceWriter`대신 사용할 수 있는 최신 로깅 프레임 워크에 대한 자세한 내용은 **Monitor Azure Functions** 문서의 [함수에서 C# 로그 쓰기](functions-monitoring.md#write-logs-in-c-functions) 를 참조 하세요.
 
 ## <a name="async"></a>Async
 
@@ -363,14 +363,14 @@ public static Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger log)
 
 * 전용 어셈블리는 지정 된 함수의 컨텍스트에 포함 되 고 다른 버전의 테스트용 로드를 지원 합니다. 전용 어셈블리는 함수 디렉터리의 `bin` 폴더에 업로드 해야 합니다. `#r "MyAssembly.dll"`와 같이 파일 이름을 사용 하 여 어셈블리를 참조 합니다.
 
-함수 폴더에 파일을 업로드 하는 방법에 대 한 자세한 내용은 [패키지 관리](#using-nuget-packages)에 대 한 섹션을 참조 하세요.
+함수 폴더에 파일을 업로드 하는 방법에 대한 자세한 내용은 [패키지 관리](#using-nuget-packages)에 대한 섹션을 참조 하세요.
 
 ### <a name="watched-directories"></a>감시 디렉터리
 
-함수 스크립트 파일을 포함 하는 디렉터리는 어셈블리에 대 한 변경 내용을 자동으로 감시 합니다. 다른 디렉터리의 어셈블리 변경 내용을 확인 하려면이를 [호스트 json](functions-host-json.md)의 `watchDirectories` 목록에 추가 합니다.
+함수 스크립트 파일을 포함 하는 디렉터리는 어셈블리에 대한 변경 내용을 자동으로 감시 합니다. 다른 디렉터리의 어셈블리 변경 내용을 확인 하려면이를 [호스트 json](functions-host-json.md)의 `watchDirectories` 목록에 추가 합니다.
 
 ## <a name="using-nuget-packages"></a>NuGet 패키지 사용
-2\.x 이상 C# 함수에서 NuGet 패키지를 사용 하려면 함수 앱의 파일 시스템에 있는 함수의 폴더에 *함수 proj* 파일을 업로드 합니다. *ProjectOxford* 버전 *1.1.0*에 대 한 참조를 추가 하는 예제 *함수인 proj* 파일은 다음과 같습니다.
+2\.x 이상 C# 함수에서 NuGet 패키지를 사용 하려면 함수 앱의 파일 시스템에 있는 함수의 폴더에 *함수 proj* 파일을 업로드 합니다. *ProjectOxford* 버전 *1.1.0*에 대한 참조를 추가 하는 예제 *함수인 proj* 파일은 다음과 같습니다.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -448,7 +448,7 @@ C# 및 기타 .net 언어에서는 *함수 json*의 [*선언적*](https://en.wik
 
 명령적 바인딩을 다음과 같이 정의 합니다.
 
-- 원하는 명령적 바인딩에 대 한 *함수 json* 에 항목을 포함 **하지 마세요** .
+- 원하는 명령적 바인딩에 대한 *함수 json* 에 항목을 포함 **하지 마세요** .
 - 입력 매개 변수 [`Binder binder`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.Host/Bindings/Runtime/Binder.cs) 또는 [`IBinder binder`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IBinder.cs)를 전달 합니다.
 - 다음 C# 패턴을 사용 하 여 데이터 바인딩을 수행 합니다.
 
@@ -482,7 +482,7 @@ public static async Task Run(string input, Binder binder)
 
 ### <a name="multiple-attribute-example"></a>여러 특성 예제
 
-앞의 예제에서는 함수 앱의 기본 저장소 계정 연결 문자열 (`AzureWebJobsStorage`)에 대 한 앱 설정을 가져옵니다. [Storageaccountattribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/StorageAccountAttribute.cs) 를 추가 하 고 특성 배열을 `BindAsync<T>()`에 전달 하 여 저장소 계정에 사용할 사용자 지정 앱 설정을 지정할 수 있습니다. `IBinder`아닌 `Binder` 매개 변수를 사용 합니다.  Példa:
+앞의 예제에서는 함수 앱의 기본 저장소 계정 연결 문자열 (`AzureWebJobsStorage`)에 대한 앱 설정을 가져옵니다. [Storageaccountattribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/StorageAccountAttribute.cs) 를 추가 하 고 특성 배열을 `BindAsync<T>()`에 전달 하 여 저장소 계정에 사용할 사용자 지정 앱 설정을 지정할 수 있습니다. `IBinder`아닌 `Binder` 매개 변수를 사용 합니다.  Példa:
 
 ```cs
 using Microsoft.Azure.WebJobs;
@@ -503,7 +503,7 @@ public static async Task Run(string input, Binder binder)
 }
 ```
 
-다음 표에서는 각 바인딩 형식에 대 한 .NET 특성과 해당 특성이 정의 된 패키지를 나열 합니다.
+다음 표에서는 각 바인딩 형식에 대한 .NET 특성과 해당 특성이 정의 된 패키지를 나열 합니다.
 
 > [!div class="mx-codeBreakAll"]
 > | 바인딩 | Attribútum | Hivatkozás hozzáadása |
@@ -521,7 +521,7 @@ public static async Task Run(string input, Binder binder)
 ## <a name="next-steps"></a>Következő lépések
 
 > [!div class="nextstepaction"]
-> [트리거 및 바인딩에 대 한 자세한 정보](functions-triggers-bindings.md)
+> [트리거 및 바인딩에 대한 자세한 정보](functions-triggers-bindings.md)
 
 > [!div class="nextstepaction"]
-> [모범 사례에 대 한 자세한 정보 Azure Functions](functions-best-practices.md)
+> [모범 사례에 대한 자세한 정보 Azure Functions](functions-best-practices.md)

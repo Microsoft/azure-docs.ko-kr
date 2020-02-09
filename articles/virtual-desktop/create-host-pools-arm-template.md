@@ -16,9 +16,9 @@ ms.locfileid: "73605760"
 ---
 # <a name="create-a-host-pool-with-an-azure-resource-manager-template"></a>Azure Resource Manager 템플릿으로 호스트 풀 만들기
 
-호스트 풀은 Windows 가상 데스크톱 테 넌 트 환경 내에 있는 하나 이상의 동일한 가상 컴퓨터의 컬렉션입니다. 각 호스트 풀은 사용자가 물리적 데스크톱에서처럼 상호 작용할 수 있는 앱 그룹을 포함할 수 있습니다.
+호스트 풀은 Windows 가상 데스크톱 테넌트 환경 내에 있는 하나 이상의 동일한 가상 컴퓨터의 컬렉션입니다. 각 호스트 풀은 사용자가 물리적 데스크톱에서처럼 상호 작용할 수 있는 앱 그룹을 포함할 수 있습니다.
 
-이 섹션의 지침에 따라 Microsoft에서 제공 하는 Azure Resource Manager 템플릿을 사용 하 여 Windows 가상 데스크톱 테 넌 트의 호스트 풀을 만듭니다. 이 문서에서는 Windows 가상 데스크톱에서 호스트 풀을 만들고, Azure 구독의 Vm을 사용 하 여 리소스 그룹을 만들고, 해당 Vm을 AD 도메인에 조인 하 고, Windows 가상 데스크톱에 Vm을 등록 하는 방법을 설명 합니다.
+이 섹션의 지침에 따라 Microsoft에서 제공 하는 Azure Resource Manager 템플릿을 사용 하 여 Windows 가상 데스크톱 테넌트의 호스트 풀을 만듭니다. 이 문서에서는 Windows 가상 데스크톱에서 호스트 풀을 만들고, Azure 구독의 Vm을 사용 하 여 리소스 그룹을 만들고, 해당 Vm을 AD 도메인에 조인 하 고, Windows 가상 데스크톱에 Vm을 등록 하는 방법을 설명 합니다.
 
 ## <a name="what-you-need-to-run-the-azure-resource-manager-template"></a>Azure Resource Manager 템플릿을 실행하기 위해 필요한 것
 
@@ -42,7 +42,7 @@ Azure Resource Manager 템플릿을 사용 하 여 Windows 가상 데스크톱 �
 
 1. 아래로 스크롤하여 **Azure에 배포**를 마우스 오른쪽 단추로 클릭한 다음, **링크 위치 복사**를 선택합니다.
 2. 메모장 같은 텍스트 편집기를 열고 링크를 붙여넣습니다.
-3. "https://portal.azure.com/" 바로 뒤와 해시 태그 (#) 앞에 @ 기호를 입력 하 고 그 다음에 테 넌 트 도메인 이름을 입력 합니다. 다음은 사용 해야 하는 형식의 예입니다. https://portal.azure.com/@Contoso.onmicrosoft.com#create/.
+3. "https://portal.azure.com/" 바로 뒤와 해시 태그 (#) 앞에 @ 기호를 입력 하 고 그 다음에 테넌트 도메인 이름을 입력 합니다. 다음은 사용 해야 하는 형식의 예입니다. https://portal.azure.com/@Contoso.onmicrosoft.com#create/.
 4. 클라우드 솔루션 공급자 구독에 대한 관리자/기여자 권한이 있는 사용자로 Azure Portal에 로그인합니다.
 5. 텍스트 편집기에 복사한 링크를 주소 표시줄에 붙여넣습니다.
 

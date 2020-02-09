@@ -16,7 +16,7 @@ ms.locfileid: "76964729"
 ---
 # <a name="enable-azure-multi-factor-authentication-mfa-for-vpn-users"></a>VPN 사용자에 대해 MFA (Azure Multi-Factor Authentication) 사용
 
-액세스 권한을 부여 하기 전에 사용자에 게 두 번째 인증 단계를 묻는 메시지가 표시 되도록 하려면 사용자별로 Azure Multi-Factor Authentication (MFA)를 구성 하거나 [조건부 액세스](../active-directory/conditional-access/overview.md) 를 통해 mfa (Multi-Factor Authentication)를 활용 하 여 보다 세분화 된 제어를 수행할 수 있습니다. 사용자 당 Multi-Factor Authentication 구성은 추가 비용 없이 사용 하도록 설정할 수 있지만 사용자 당 MFA를 사용 하도록 설정 하는 경우 사용자에 게 Azure AD 테 넌 트에 연결 된 모든 응용 프로그램에 대 한 두 번째 단계 인증을 요구 하는 메시지가 표시 됩니다. 조건부 액세스를 사용 하면 두 번째 단계를 승격 하는 방법을 보다 세밀 하 게 제어할 수 있으며, Azure AD 테 넌 트에 연결 된 다른 응용 프로그램이 아닌 VPN에만 MFA 할당을 허용할 수 있습니다.
+액세스 권한을 부여 하기 전에 사용자에 게 두 번째 인증 단계를 묻는 메시지가 표시 되도록 하려면 사용자별로 Azure Multi-Factor Authentication (MFA)를 구성 하거나 [조건부 액세스](../active-directory/conditional-access/overview.md) 를 통해 mfa (Multi-Factor Authentication)를 활용 하 여 보다 세분화 된 제어를 수행할 수 있습니다. 사용자 당 Multi-Factor Authentication 구성은 추가 비용 없이 사용 하도록 설정할 수 있지만 사용자 당 MFA를 사용 하도록 설정 하는 경우 사용자에 게 Azure AD 테넌트에 연결 된 모든 응용 프로그램에 대 한 두 번째 단계 인증을 요구 하는 메시지가 표시 됩니다. 조건부 액세스를 사용 하면 두 번째 단계를 승격 하는 방법을 보다 세밀 하 게 제어할 수 있으며, Azure AD 테넌트에 연결 된 다른 응용 프로그램이 아닌 VPN에만 MFA 할당을 허용할 수 있습니다.
 
 ## <a name="enableauth"></a>인증 사용
 
@@ -29,7 +29,7 @@ ms.locfileid: "76964729"
 
 **AZURE VPN-속성** 페이지에서 로그인 설정을 구성 합니다.
 
-1. **사용자가 로그인 할** 수 있도록 설정 하 시겠습니까? **예**로 설정 합니다. 이렇게 하면 AD 테 넌 트의 모든 사용자가 VPN에 성공적으로 연결할 수 있습니다.
+1. **사용자가 로그인 할** 수 있도록 설정 하 시겠습니까? **예**로 설정 합니다. 이렇게 하면 AD 테넌트의 모든 사용자가 VPN에 성공적으로 연결할 수 있습니다.
 2. Azure VPN에 대 한 권한이 있는 사용자로만 로그인을 제한 하려면 **사용자 할당 필요?** 를 **예** 로 설정 합니다.
 3. 변경 내용을 저장합니다.
 

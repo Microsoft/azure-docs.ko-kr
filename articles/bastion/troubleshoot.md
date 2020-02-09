@@ -20,16 +20,16 @@ ms.locfileid: "73512952"
 
 ## <a name="nsg"></a>AzureBastionSubnet에서 NSG를 만들 수 없음
 
-**Q:** Azure 방호 서브넷에 NSG를 만들려고 하면 다음과 같은 오류가 발생 합니다. *' 네트워크 보안 그룹 <NSG name>에는 Azure 방호 서브넷 AzureBastionSubnet에 대 한 필수 규칙이 없습니다. "라는*오류가 표시 됩니다.
+**Q:** Azure 방호 서브넷에 NSG를 만들려고 하면 다음과 같은 오류가 발생 합니다. *' 네트워크 보안 그룹 <NSG name>에는 Azure 방호 서브넷 AzureBastionSubnet에 대한 필수 규칙이 없습니다. "라는*오류가 표시 됩니다.
 
 **A:** *AzureBastionSubnet*에 nsg를 만들고 적용 하는 경우 nsg에서 다음 규칙을 추가 했는지 확인 합니다. 이러한 규칙을 추가 하지 않으면 NSG 생성/업데이트가 실패 합니다.
 
-1. 제어 평면 연결-Gmanager의 443에 대 한 인바운드
-2. 진단 로깅 및 기타 – AzureCloud에서 443에 대 한 아웃 바운드 (이 서비스 태그 내의 지역 태그는 아직 지원 되지 않음)
+1. 제어 평면 연결-Gmanager의 443에 대한 인바운드
+2. 진단 로깅 및 기타 – AzureCloud에서 443에 대한 아웃 바운드 (이 서비스 태그 내의 지역 태그는 아직 지원 되지 않음)
 3. 대상 VM – 아웃 바운드 3389 및 22 to VirtualNetwork
 
 NSG 규칙의 예제는 [빠른 시작 템플릿에서](https://github.com/Azure/azure-quickstart-templates/tree/master/101-azure-bastion)참조할 수 있습니다.
-자세한 내용은 [Azure 방호에 대 한 Nsg 지침](bastion-nsg.md)을 참조 하세요.
+자세한 내용은 [Azure 방호에 대한 Nsg 지침](bastion-nsg.md)을 참조 하세요.
 
 ## <a name="sshkey"></a>Azure 방호에서 내 SSH 키를 사용할 수 없음
 

@@ -23,7 +23,7 @@ ms.locfileid: "75440191"
 이 문서에서는 Azure Data Factory를 사용 하 여 개방형 허브를 통해 SAP Business Warehouse (BW)에서 Azure Data Lake Storage Gen2로 데이터를 복사 하는 방법을 보여 줍니다. 유사한 프로세스를 사용 하 여 다른 [지원 되는 싱크 데이터 저장소](copy-activity-overview.md#supported-data-stores-and-formats)로 데이터를 복사할 수 있습니다.
 
 > [!TIP]
-> SAP BW에서 데이터를 복사 하는 방법에 대 한 일반적인 내용은 SAP BW Open Hub 통합 및 델타 추출 흐름을 참조 하세요. [Azure Data Factory를 사용 하 여 개방형 허브를 통해 SAP Business Warehouse에서 데이터 복사](connector-sap-business-warehouse-open-hub.md)를 참조 하세요.
+> SAP BW에서 데이터를 복사 하는 방법에 대한 일반적인 내용은 SAP BW Open Hub 통합 및 델타 추출 흐름을 참조 하세요. [Azure Data Factory를 사용 하 여 개방형 허브를 통해 SAP Business Warehouse에서 데이터 복사](connector-sap-business-warehouse-open-hub.md)를 참조 하세요.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -33,8 +33,8 @@ ms.locfileid: "75440191"
 
 - **SAP BW 사용자에 게 다음 권한이 필요**합니다.
 
-  - RFC (원격 함수 호출) 및 SAP BW에 대 한 권한 부여입니다.
-  - **S_SDSAUTH** 권한 부여 개체의 "실행" 작업에 대 한 사용 권한
+  - RFC (원격 함수 호출) 및 SAP BW에 대한 권한 부여입니다.
+  - **S_SDSAUTH** 권한 부여 개체의 "실행" 작업에 대한 사용 권한
 
 - **SAP .net connector 3.0를 사용 하는 [자체 호스팅 IR (통합 런타임)](concepts-integration-runtime.md#self-hosted-integration-runtime)** 다음 설정 단계를 따르세요.
 
@@ -76,7 +76,7 @@ Azure Portal에서 데이터 팩터리로 이동합니다. **작성자 & 모니�
 
 6. 필요한 경우 필터를 지정 합니다. OHD에 단일 요청 ID를 사용 하는 단일 DTP (데이터 전송 프로세스) 실행의 데이터만 포함 하거나 DTP이 완료 되 고 데이터를 복사 하려면 **마지막 요청 제외** 확인란의 선택을 취소 합니다.
 
-   이러한 설정에 대 한 자세한 내용은이 문서의 [SAP BW 열린 허브 대상 구성](#sap-bw-open-hub-destination-configurations) 섹션을 참조 하세요. **유효성 검사** 를 선택 하 여 반환할 데이터를 두 번 선택 합니다. 그런 후 **다음**을 선택합니다.
+   이러한 설정에 대한 자세한 내용은이 문서의 [SAP BW 열린 허브 대상 구성](#sap-bw-open-hub-destination-configurations) 섹션을 참조 하세요. **유효성 검사** 를 선택 하 여 반환할 데이터를 두 번 선택 합니다. 그런 후 **다음**을 선택합니다.
 
    ![SAP BW 열린 허브 필터 구성](media/load-sap-bw-data/configure-sap-bw-open-hub-filter.png)
 
@@ -97,7 +97,7 @@ Azure Portal에서 데이터 팩터리로 이동합니다. **작성자 & 모니�
 
     ![싱크 형식 지정 페이지](media/load-sap-bw-data/specify-sink-format.png)
 
-11. **설정** 페이지에서 **성능 설정**을 확장 합니다. 5와 같은 **복사 병렬 처리 수준** 에 대 한 값을 입력 하 여 동시에 SAP BW에서 로드 합니다. 그런 후 **다음**을 선택합니다.
+11. **설정** 페이지에서 **성능 설정**을 확장 합니다. 5와 같은 **복사 병렬 처리 수준** 에 대한 값을 입력 하 여 동시에 SAP BW에서 로드 합니다. 그런 후 **다음**을 선택합니다.
 
     ![복사 설정 구성](media/load-sap-bw-data/configure-copy-settings.png)
 
@@ -128,7 +128,7 @@ Azure Portal에서 데이터 팩터리로 이동합니다. **작성자 & 모니�
 ## <a name="incremental-copy-from-sap-bw-open-hub"></a>SAP BW 열린 허브의 증분 복사
 
 > [!TIP]
-> Data Factory에서 열린 허브 커넥터가 SAP BW에서 증분 데이터를 복사 하 SAP BW는 방법에 대 한 자세한 내용은 [SAP BW 열린 허브 커넥터 델타 추출 흐름](connector-sap-business-warehouse-open-hub.md#delta-extraction-flow) 을 참조 하세요. 이 문서는 기본 커넥터 구성을 이해 하는 데에도 도움이 됩니다.
+> Data Factory에서 열린 허브 커넥터가 SAP BW에서 증분 데이터를 복사 하 SAP BW는 방법에 대한 자세한 내용은 [SAP BW 열린 허브 커넥터 델타 추출 흐름](connector-sap-business-warehouse-open-hub.md#delta-extraction-flow) 을 참조 하세요. 이 문서는 기본 커넥터 구성을 이해 하는 데에도 도움이 됩니다.
 
 이제 SAP BW 열려 있는 허브에서 증분 복사를 계속 구성 하겠습니다.
 
@@ -242,13 +242,13 @@ Azure Portal에서 데이터 팩터리로 이동합니다. **작성자 & 모니�
 
 - Data Factory의 BW Open Hub 커넥터에서 **마지막 요청 제외**를 해제 합니다. 그렇지 않으면 아무 것도 추출 되지 않습니다.
 
-일반적으로 전체 DTP를 수동으로 실행 합니다. 또는 전체 DTP에 대 한 프로세스 체인을 만들 수 있습니다. 일반적으로 기존 프로세스 체인과 독립적인 별도의 체인입니다. 두 경우 모두 *Data Factory 복사를 사용 하 여 추출을 시작 하기 전에 DTP이 완료 되었는지 확인*합니다. 그렇지 않으면 부분 데이터만 복사 됩니다.
+일반적으로 전체 DTP를 수동으로 실행 합니다. 또는 전체 DTP에 대한 프로세스 체인을 만들 수 있습니다. 일반적으로 기존 프로세스 체인과 독립적인 별도의 체인입니다. 두 경우 모두 *Data Factory 복사를 사용 하 여 추출을 시작 하기 전에 DTP이 완료 되었는지 확인*합니다. 그렇지 않으면 부분 데이터만 복사 됩니다.
 
 ### <a name="run-delta-extraction-the-first-time"></a>처음으로 델타 추출 실행
 
 첫 번째 델타 추출은 기술적으로 *전체 추출*입니다. 기본적으로 SAP BW 열린 허브 커넥터는 데이터를 복사할 때 마지막 요청을 제외 합니다. 첫 번째 델타 추출의 경우 후속 DTP가 별도의 요청 ID를 사용 하 여 테이블에서 델타 데이터를 생성할 때까지 Data Factory 복사 작업에 의해 데이터가 추출 되지 않습니다. 이 시나리오를 방지 하는 방법에는 두 가지가 있습니다.
 
-- 첫 번째 델타 추출에 대 한 **마지막 요청 제외** 옵션을 해제 합니다. 델타 추출을 처음 시작 하기 전에 첫 번째 델타 DTP이 완료 되었는지 확인 합니다.
+- 첫 번째 델타 추출에 대한 **마지막 요청 제외** 옵션을 해제 합니다. 델타 추출을 처음 시작 하기 전에 첫 번째 델타 DTP이 완료 되었는지 확인 합니다.
 -  다음 섹션에 설명 된 대로 델타 추출을 다시 동기화 하는 절차를 사용 합니다.
 
 ### <a name="resync-delta-extraction"></a>델타 추출 다시 동기화

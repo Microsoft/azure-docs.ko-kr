@@ -18,7 +18,7 @@ ms.locfileid: "69984356"
 
 Azure Cosmos DB Cassandra API는 다음과 같은 다양 한 이유로 Oracle에서 실행 되는 엔터프라이즈 워크 로드에 적합 한 선택이 됩니다.
 
-* **확장성 및 가용성 향상:** 응용 프로그램에 대 한 단일 실패 지점이 나 향상 된 확장성 및 가용성을 제거 합니다.
+* **확장성 및 가용성 향상:** 응용 프로그램에 대한 단일 실패 지점이 나 향상 된 확장성 및 가용성을 제거 합니다.
 
 * **상당한 비용 절감:** Azure Cosmos DB를 사용 하 여 비용을 절감할 수 있습니다. 여기에는 VM, 대역폭 및 해당 하는 모든 Oracle 라이선스의 비용이 포함 됩니다. 또한 데이터 센터, 서버, SSD 저장소, 네트워킹 및 전기 비용을 관리할 필요가 없습니다.
 
@@ -98,11 +98,11 @@ Blitzz의 마이그레이션 솔루션은 복잡 한 운영 워크 로드를 마
 
    ![Azure Cosmos 컨테이너 전체 확장](./media/oracle-migrate-cosmos-db-blitzz/scale-throughput.png)
 
-   마이그레이션이 완료 된 후 처리량을 줄여야 합니다. 각 작업에 대해 저장 된 데이터와 RUs의 양에 따라 데이터 마이그레이션 후 필요한 처리량을 예상할 수 있습니다. 필요한 RUs를 추정 하는 방법에 대 한 자세한 내용은 [컨테이너 및 데이터베이스에 대 한 처리량 프로 비전](set-throughput.md) 및 [Azure Cosmos DB capacity planner 문서를 사용 하 여 r u/초 예측](estimate-ru-with-capacity-planner.md) 을 참조 하세요.
+   마이그레이션이 완료 된 후 처리량을 줄여야 합니다. 각 작업에 대해 저장 된 데이터와 RUs의 양에 따라 데이터 마이그레이션 후 필요한 처리량을 예상할 수 있습니다. 필요한 RUs를 추정 하는 방법에 대한 자세한 내용은 [컨테이너 및 데이터베이스에 대한 처리량 프로 비전](set-throughput.md) 및 [Azure Cosmos DB capacity planner 문서를 사용 하 여 r u/초 예측](estimate-ru-with-capacity-planner.md) 을 참조 하세요.
 
 1. **연결 문자열** 창에서 Azure Cosmos 계정의 연결 **지점, 포트, 사용자 이름**및 **기본 암호** 를 가져옵니다. 구성 파일에서 이러한 값을 사용 합니다.
 
-1. CLI 터미널에서 대상 데이터베이스 구성을 설정 합니다. 명령을 사용 하 여 **`vi conf/conn/cosmosdb.yml`** 구성 파일을 열고 호스트 URI, 포트 번호, 사용자 이름, 암호 및 기타 필수 매개 변수의 쉼표로 구분 된 목록을 추가 합니다. 다음은 구성 파일의 내용에 대 한 예입니다.
+1. CLI 터미널에서 대상 데이터베이스 구성을 설정 합니다. 명령을 사용 하 여 **`vi conf/conn/cosmosdb.yml`** 구성 파일을 열고 호스트 URI, 포트 번호, 사용자 이름, 암호 및 기타 필수 매개 변수의 쉼표로 구분 된 목록을 추가 합니다. 다음은 구성 파일의 내용에 대한 예입니다.
 
    ```bash
    type: COSMOSDB
@@ -119,7 +119,7 @@ Blitzz의 마이그레이션 솔루션은 복잡 한 운영 워크 로드를 마
 
 1. 그런 다음 Blitzz를 사용 하 여 데이터를 마이그레이션합니다. Blizz replicant를 **전체** 또는 **스냅숏** 모드에서 실행할 수 있습니다.
 
-   * **전체 모드** –이 모드에서 replicant는 마이그레이션 후에도 계속 실행 되 고 원본 Oracle 시스템에 대 한 변경 내용을 수신 대기 합니다. 변경 내용이 검색 되 면 대상 Azure Cosmos 계정에 실시간으로 복제 됩니다.
+   * **전체 모드** –이 모드에서 replicant는 마이그레이션 후에도 계속 실행 되 고 원본 Oracle 시스템에 대한 변경 내용을 수신 대기 합니다. 변경 내용이 검색 되 면 대상 Azure Cosmos 계정에 실시간으로 복제 됩니다.
 
    * **스냅숏 모드** –이 모드에서는 스키마 마이그레이션과 일회성 데이터 복제를 수행할 수 있습니다. 이 옵션에서는 실시간 복제가 지원 되지 않습니다.
 
@@ -144,7 +144,7 @@ Blitzz의 마이그레이션 솔루션은 복잡 한 운영 워크 로드를 마
    ./bin/replicant full conf/conn/oracle.yaml conf/conn/cosmosdb.yaml --filter filter/oracle_filter.yaml --replace-existing --resume
    ```
 
-대상에 대 한 데이터 마이그레이션에 대 한 자세한 내용은 실시간 마이그레이션 [Blitzz replicant 데모](https://www.youtube.com/watch?v=y5ZeRK5A-MI)를 참조 하십시오.
+대상에 대한 데이터 마이그레이션에 대한 자세한 내용은 실시간 마이그레이션 [Blitzz replicant 데모](https://www.youtube.com/watch?v=y5ZeRK5A-MI)를 참조 하십시오.
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -27,7 +27,7 @@ Azure 사용자 지정 공급자 리소스 온 보 딩은 Azure 리소스 종류
 
 ## <a name="what-can-resource-onboarding-do"></a>리소스 온 보 딩은 무엇을 할 수 있나요?
 
-[Azure 사용자 지정 공급자 사용자 지정 리소스](./custom-providers-resources-endpoint-how-to.md)와 마찬가지로, 리소스 온 보 딩은 끝점에 대 한 "온 보 딩" 요청을 프록시 하는 계약을 정의 합니다. 사용자 지정 리소스와 달리 리소스 온 보 딩은 새 리소스 종류를 만들지 않습니다. 대신 기존 리소스 종류의 확장을 허용 합니다. 및 리소스 온 보 딩은 Azure Policy에서 작동 하므로 리소스의 관리 및 구성이 대규모로 수행 될 수 있습니다. 리소스 온 보 딩 워크플로의 몇 가지 예:
+[Azure 사용자 지정 공급자 사용자 지정 리소스](./custom-providers-resources-endpoint-how-to.md)와 마찬가지로, 리소스 온 보 딩은 엔드포인트에 대 한 "온 보 딩" 요청을 프록시 하는 계약을 정의 합니다. 사용자 지정 리소스와 달리 리소스 온 보 딩은 새 리소스 종류를 만들지 않습니다. 대신 기존 리소스 종류의 확장을 허용 합니다. 및 리소스 온 보 딩은 Azure Policy에서 작동 하므로 리소스의 관리 및 구성이 대규모로 수행 될 수 있습니다. 리소스 온 보 딩 워크플로의 몇 가지 예:
 
 - 가상 머신 확장을 설치 하 고 관리 합니다.
 - Azure storage 계정에 대 한 기본값을 업로드 하 고 구성 합니다.
@@ -57,7 +57,7 @@ Microsoft. CustomProviders/resourceProviders 및 Microsoft. CustomProviders/asso
 속성 | 필수 여부 | Description
 ---|---|---
 name | 예 | 엔드포인트 정의의 이름입니다. 리소스 온 보 딩의 경우 이름은 "연결" 이어야 합니다.
-routingType | 예 | 끝점을 사용 하 여 계약 유형을 결정 합니다. 리소스 온 보 딩의 경우 유효한 **Routingtypes** 는 "프록시, 캐시, 확장" 및 "Webhook, 캐시, 확장"입니다.
+routingType | 예 | 엔드포인트을 사용 하 여 계약 유형을 결정 합니다. 리소스 온 보 딩의 경우 유효한 **Routingtypes** 는 "프록시, 캐시, 확장" 및 "Webhook, 캐시, 확장"입니다.
 엔드포인트(endpoint) | 예 | 요청을 라우팅하는 엔드포인트입니다. 이렇게 하면 응답 및 요청의 부작용이 처리 됩니다.
 
 연결 리소스 형식을 사용 하 여 사용자 지정 공급자를 만든 후에는 Microsoft. CustomProviders/association을 사용 하 여 대상으로 지정할 수 있습니다. Microsoft. CustomProviders/association은 다른 Azure 리소스를 확장할 수 있는 확장 리소스입니다. Microsoft. CustomProviders/association의 인스턴스를 만든 경우에는 **targetResourceId**속성을 사용 합니다 .이 속성은 유효한 Microsoft Customproviders/resourceproviders 또는 Microsoft. Solutions/APPLICATIONS 리소스 ID 여야 합니다. 이러한 경우, 사용자가 만든 Microsoft CustomProviders/resourceProviders 인스턴스의 연결 리소스 형식으로 요청이 전달 됩니다.
@@ -127,7 +127,7 @@ Content-Type: application/json
 }
 ```
 
-그런 다음이 요청은 사용자가 만든 사용자 지정 공급자에 지정 된 끝점으로 전달 됩니다 .이는 **targetResourceId** 에서이 폼에 의해 참조 됩니다.
+그런 다음이 요청은 사용자가 만든 사용자 지정 공급자에 지정 된 엔드포인트으로 전달 됩니다 .이는 **targetResourceId** 에서이 폼에 의해 참조 됩니다.
 
 ``` HTTP
 PUT https://{endpointURL}/?api-version=2018-09-01-preview
@@ -146,7 +146,7 @@ X-MS-CustomProviders-ExtendedResource: /subscriptions/{subscriptionId}/resourceG
 }
 ```
 
-끝점은 application/json `Content-Type` 및 유효한 JSON 응답 본문으로 응답 해야 합니다. JSON의 **properties** 개체 아래에서 반환 되는 필드는 연결 반환 응답에 추가 됩니다.
+엔드포인트은 application/json `Content-Type` 및 유효한 JSON 응답 본문으로 응답 해야 합니다. JSON의 **properties** 개체 아래에서 반환 되는 필드는 연결 반환 응답에 추가 됩니다.
 
 ## <a name="getting-help"></a>도움말 보기
 

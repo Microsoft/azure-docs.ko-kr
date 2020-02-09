@@ -1,6 +1,6 @@
 ---
 title: Microsoft 인증 구성
-description: App Service 앱에 대 한 id 공급자로 Microsoft 계정 인증을 구성 하는 방법에 대해 알아봅니다.
+description: App Service 앱에 대한 id 공급자로 Microsoft 계정 인증을 구성 하는 방법에 대해 알아봅니다.
 ms.assetid: ffbc6064-edf6-474d-971c-695598fd08bf
 ms.topic: article
 ms.date: 08/08/2019
@@ -25,7 +25,7 @@ ms.locfileid: "76842336"
 
 1. Azure Portal [**앱 등록**](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) 으로 이동 합니다. 필요한 경우 Microsoft 계정를 사용 하 여 로그인 합니다.
 1. **새 등록**을 선택 하 고 응용 프로그램 이름을 입력 합니다.
-1. **지원 되는 계정 유형**에서 **모든 조직 디렉터리 (임의의 Azure AD 디렉터리-다중 테 넌 트) 및 개인 Microsoft 계정 (예: Skype, Xbox)의 계정을 선택 합니다.**
+1. **지원 되는 계정 유형**에서 **모든 조직 디렉터리 (임의의 Azure AD 디렉터리-다중 테넌트) 및 개인 Microsoft 계정 (예: Skype, Xbox)의 계정을 선택 합니다.**
 1. **리디렉션 uri**에서 **웹**을 선택한 다음 `https://<app-domain-name>/.auth/login/aad/callback`를 입력 합니다. *\<앱 도메인 이름 >* 를 앱의 도메인 이름으로 바꿉니다.  `https://contoso.azurewebsites.net/.auth/login/aad/callback`)을 입력합니다. URL에서 HTTPS 체계를 사용 해야 합니다.
 
 1. **등록**을 선택합니다.
@@ -43,12 +43,12 @@ ms.locfileid: "76842336"
 1. **인증 공급자**에서 **Azure Active Directory**를 선택합니다. **관리 모드**에서 **고급** 을 선택 합니다. 이전에 얻은 응용 프로그램 (클라이언트) ID와 클라이언트 암호를 붙여넣습니다. **발급자 Url** 필드에 **https://login.microsoftonline.com/9188040d-6c67-4c5b-b112-36a304b66dad/v2.0** 를 사용 합니다.
 1. **확인**을 선택합니다.
 
-   App Service는 인증을 제공 하지만 사이트 콘텐츠 및 Api에 대 한 권한 있는 액세스를 제한 하지 않습니다. 앱 코드에서 사용자 권한을 부여해야 합니다.
+   App Service는 인증을 제공 하지만 사이트 콘텐츠 및 Api에 대한 권한 있는 액세스를 제한 하지 않습니다. 앱 코드에서 사용자 권한을 부여해야 합니다.
 
-1. 필드 Microsoft 계정 사용자에 대 한 액세스를 제한 하려면 **요청이 인증 되지 않은 경우** **Azure Active Directory를 사용 하 여 로그인**하도록 작업을 설정 합니다. 이 기능을 설정 하면 앱에서 모든 요청을 인증 해야 합니다. 또한 인증을 위해 AAD를 사용 하도록 인증 되지 않은 모든 요청을 리디렉션합니다. Microsoft 계정 테 넌 트를 사용 하도록 **발급자 Url** 을 구성 했으므로 개인 play만 성공적으로 인증 됩니다.
+1. 필드 Microsoft 계정 사용자에 대한 액세스를 제한 하려면 **요청이 인증 되지 않은 경우** **Azure Active Directory를 사용 하 여 로그인**하도록 작업을 설정 합니다. 이 기능을 설정 하면 앱에서 모든 요청을 인증 해야 합니다. 또한 인증을 위해 AAD를 사용 하도록 인증 되지 않은 모든 요청을 리디렉션합니다. Microsoft 계정 테넌트를 사용 하도록 **발급자 Url** 을 구성 했으므로 개인 play만 성공적으로 인증 됩니다.
 
    > [!CAUTION]
-   > 이러한 방식으로 액세스를 제한 하는 것은 앱에 대 한 모든 호출에 적용 됩니다 .이는 여러 단일 페이지 응용 프로그램과 마찬가지로 공개적으로 사용 가능한 홈 페이지가 있는 앱에는 바람직하지 않을 수 있습니다. 이러한 응용 프로그램의 경우 앱이 수동으로 인증을 시작 하도록 **익명 요청 허용 (작업 없음)을 사용** 하는 것이 좋습니다. 자세한 내용은 [인증 흐름](overview-authentication-authorization.md#authentication-flow)을 참조 하세요.
+   > 이러한 방식으로 액세스를 제한 하는 것은 앱에 대한 모든 호출에 적용 됩니다 .이는 여러 단일 페이지 응용 프로그램과 마찬가지로 공개적으로 사용 가능한 홈 페이지가 있는 앱에는 바람직하지 않을 수 있습니다. 이러한 응용 프로그램의 경우 앱이 수동으로 인증을 시작 하도록 **익명 요청 허용 (작업 없음)을 사용** 하는 것이 좋습니다. 자세한 내용은 [인증 흐름](overview-authentication-authorization.md#authentication-flow)을 참조 하세요.
 
 1. **저장**을 선택합니다.
 

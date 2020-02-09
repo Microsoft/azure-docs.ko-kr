@@ -32,7 +32,7 @@ Azure Storage GPv2 계정의 컨테이너에서 직접 정적 콘텐츠 (HTML, C
 
 ### <a name="find-the-website-url-by-using-the-azure-portal"></a>Azure Portal를 사용 하 여 웹 사이트 URL을 찾습니다.
 
-저장소 계정의 계정 개요 페이지 옆에 표시 되는 창에서 **정적 웹 사이트**를 선택 합니다. 사이트의 URL이 **기본 끝점** 필드에 표시 됩니다.
+저장소 계정의 계정 개요 페이지 옆에 표시 되는 창에서 **정적 웹 사이트**를 선택 합니다. 사이트의 URL이 **기본 엔드포인트** 필드에 표시 됩니다.
 
 ![Azure Storage 정적 웹 사이트 메트릭](./media/storage-blob-static-website/storage-blob-static-website-url.png)
 
@@ -221,5 +221,5 @@ Write-Output $storageAccount.PrimaryEndpoints.Web
 
 ## <a name="next-steps"></a>다음 단계
 
-* 정적 웹 사이트를 사용 하 여 사용자 지정 도메인을 구성 하는 방법을 알아봅니다. [Azure Blob Storage 끝점에 사용자 지정 도메인 매핑을](storage-custom-domain-name.md)참조 하세요.
+* 정적 웹 사이트를 사용 하 여 사용자 지정 도메인을 구성 하는 방법을 알아봅니다. [Azure Blob Storage 엔드포인트에 사용자 지정 도메인 매핑을](storage-custom-domain-name.md)참조 하세요.
 

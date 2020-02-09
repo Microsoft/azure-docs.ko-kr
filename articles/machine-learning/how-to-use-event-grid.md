@@ -26,12 +26,12 @@ ms.locfileid: "76904273"
 Event Grid를 사용 하 여 다음과 같은 일반적인 시나리오를 사용할 수 있습니다.
 
 * 재 학습을 위한 파이프라인 트리거
-* Azure Machine Learning에서 다양 한 끝점으로 이벤트 스트리밍
+* Azure Machine Learning에서 다양 한 엔드포인트으로 이벤트 스트리밍
 
 ## <a name="prerequisites"></a>필수 조건
 
 * Azure Machine Learning 작업 영역에 대 한 참가자 또는 소유자 액세스는 이벤트를 만들 수 있습니다.
-* 웹 후크 또는 이벤트 허브와 같은 이벤트 처리기 끝점을 선택 합니다. 자세한 내용은 [이벤트 처리기](https://docs.microsoft.com/azure/event-grid/event-handlers)를 참조 하세요. 
+* 웹 후크 또는 이벤트 허브와 같은 이벤트 처리기 엔드포인트을 선택 합니다. 자세한 내용은 [이벤트 처리기](https://docs.microsoft.com/azure/event-grid/event-handlers)를 참조 하세요. 
 
 ## <a name="configure-machine-learning-events-using-the-azure-portal"></a>Azure Portal를 사용 하 여 machine learning 이벤트 구성
 
@@ -45,11 +45,11 @@ Event Grid를 사용 하 여 다음과 같은 일반적인 시나리오를 사�
 
     ![-이벤트 유형 추가](./media/how-to-use-event-grid/add-event-type.png)
 
-1. 이벤트를 게시할 끝점을 선택 합니다. 다음 스크린샷에서 __이벤트 허브__ 는 선택 된 끝점입니다.
+1. 이벤트를 게시할 엔드포인트을 선택 합니다. 다음 스크린샷에서 __이벤트 허브__ 는 선택 된 엔드포인트입니다.
 
     ![select-이벤트 처리기](./media/how-to-use-event-grid/select-event-handler.png)
 
-선택 항목을 확인 한 후 __만들기__를 클릭 합니다. 구성 후 이러한 이벤트는 끝점으로 푸시됩니다.
+선택 항목을 확인 한 후 __만들기__를 클릭 합니다. 구성 후 이러한 이벤트는 엔드포인트으로 푸시됩니다.
 
 ## <a name="set-up-azure-event-grid-using-cli"></a>CLI를 사용 하 여 Azure Event Grid 설정
 
@@ -161,7 +161,7 @@ az eventgrid event-subscription create \
 
 ### <a name="use-azure-functions-to-deploy-a-model-based-on-tags"></a>Azure Functions를 사용 하 여 태그를 기반으로 모델 배포
 
-Azure Machine Learning 모델 개체에는 모델 이름, 버전, 태그 및 속성과 같이 배포를 피벗할 수 있는 매개 변수가 포함 되어 있습니다. 모델 등록 이벤트는 끝점을 트리거할 수 있으며 Azure 함수를 사용 하 여 해당 매개 변수의 값을 기반으로 모델을 배포할 수 있습니다.
+Azure Machine Learning 모델 개체에는 모델 이름, 버전, 태그 및 속성과 같이 배포를 피벗할 수 있는 매개 변수가 포함 되어 있습니다. 모델 등록 이벤트는 엔드포인트을 트리거할 수 있으며 Azure 함수를 사용 하 여 해당 매개 변수의 값을 기반으로 모델을 배포할 수 있습니다.
 
 예제는 [https://github.com/Azure-Samples/MachineLearningSamples-NoCodeDeploymentTriggeredByEventGrid](https://github.com/Azure-Samples/MachineLearningSamples-NoCodeDeploymentTriggeredByEventGrid) 리포지토리를 참조 하 고 **추가 정보** 파일의 단계를 따릅니다.
 

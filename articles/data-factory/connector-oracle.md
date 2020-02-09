@@ -79,11 +79,11 @@ Oracle 연결 된 서비스는 다음 속성을 지원 합니다.
 
 | 속성 | Description | 허용되는 값 |
 |:--- |:--- |:--- |
-| ArraySize |단일 네트워크 왕복에서 커넥터가 인출할 수 있는 바이트 수입니다. 예: `ArraySize=‭10485760‬`.<br/><br/>값이 클수록 네트워크를 통해 데이터를 인출 하는 횟수가 줄어들어 처리량이 증가 합니다. 값이 작을수록 서버에서 데이터를 전송할 때까지 대기 하는 지연 시간이 줄어들기 때문에 응답 시간이 증가 합니다. | 1에서 4294967296 사이의 정수입니다 (4gb). 기본값은 `60000`입니다. 값 1은 바이트 수를 정의 하지 않지만 정확히 하나의 데이터 행에 대 한 공간 할당을 나타냅니다. |
+| ArraySize |단일 네트워크 왕복에서 커넥터가 인출할 수 있는 바이트 수입니다. 예: `ArraySize=‭10485760‬`.<br/><br/>값이 클수록 네트워크를 통해 데이터를 인출 하는 횟수가 줄어들어 처리량이 증가 합니다. 값이 작을수록 서버에서 데이터를 전송할 때까지 대기 하는 지연 시간이 줄어들기 때문에 응답 시간이 증가 합니다. | 1에서 4294967296 사이의 정수입니다 (4gb). 기본값은 `60000`입니다. 값 1은 바이트 수를 정의 하지 않지만 정확히 하나의 데이터 행에 대한 공간 할당을 나타냅니다. |
 
 Oracle 연결에서 암호화를 사용하도록 설정하려면 다음 두 가지 옵션이 있습니다.
 
--   3DES ( **TRIPLE DES) 및 AES(Advanced Encryption Standard) (AES)** 를 사용 하려면 oracle 서버 쪽에서 Oracle Advanced SECURITY (OAS)로 이동 하 여 암호화 설정을 구성 합니다. 자세한 내용은이 [Oracle 설명서](https://docs.oracle.com/cd/E11882_01/network.112/e40393/asointro.htm#i1008759)를 참조 하세요. Oracle ADF (응용 프로그램 개발 프레임 워크) 커넥터는 Oracle에 대 한 연결을 설정할 때 OAS에서 구성한 암호화 방법을 자동으로 협상 합니다.
+-   3DES ( **TRIPLE DES) 및 AES(Advanced Encryption Standard) (AES)** 를 사용 하려면 oracle 서버 쪽에서 Oracle Advanced SECURITY (OAS)로 이동 하 여 암호화 설정을 구성 합니다. 자세한 내용은이 [Oracle 설명서](https://docs.oracle.com/cd/E11882_01/network.112/e40393/asointro.htm#i1008759)를 참조 하세요. Oracle ADF (응용 프로그램 개발 프레임 워크) 커넥터는 Oracle에 대한 연결을 설정할 때 OAS에서 구성한 암호화 방법을 자동으로 협상 합니다.
 
 -   **SSL**을 사용 하려면:
 
@@ -215,7 +215,7 @@ Oracle에서 데이터를 복사 하려면 복사 작업의 원본 형식을 `Or
 | type | 복사 작업 원본의 type 속성을 `OracleSource`으로 설정 해야 합니다. | 예 |
 | oracleReaderQuery | 사용자 지정 SQL 쿼리를 사용하여 데이터를 읽습니다. 예제는 `"SELECT * FROM MyTable"`입니다.<br>분할 된 로드를 사용 하도록 설정 하는 경우 쿼리에 해당 하는 기본 제공 파티션 매개 변수를 후크 해야 합니다. 예제는 [Oracle에서 병렬 복사](#parallel-copy-from-oracle) 섹션을 참조 하세요. | 아닙니다. |
 | partitionOptions | Oracle에서 데이터를 로드 하는 데 사용 되는 데이터 분할 옵션을 지정 합니다. <br>허용 되는 값은 **None** (기본값), **PhysicalPartitionsOfTable** 및 **dynamicrange**입니다.<br>파티션 옵션을 사용 하도록 설정 하는 경우 (즉, `None`), Oracle 데이터베이스에서 데이터를 동시에 로드 하는 병렬 처리 수준은 복사 작업의 [`parallelCopies`](copy-activity-performance.md#parallel-copy) 설정에 의해 제어 됩니다. | 아닙니다. |
-| partitionSettings | 데이터 분할에 대 한 설정 그룹을 지정 합니다. <br>파티션 옵션이 `None`되지 않은 경우에 적용 됩니다. | 아닙니다. |
+| partitionSettings | 데이터 분할에 대한 설정 그룹을 지정 합니다. <br>파티션 옵션이 `None`되지 않은 경우에 적용 됩니다. | 아닙니다. |
 | partitionNames | 복사 해야 하는 실제 파티션 목록입니다. <br>파티션 옵션이 `PhysicalPartitionsOfTable`경우에 적용 됩니다. 쿼리를 사용 하 여 원본 데이터를 검색 하는 경우 WHERE 절에 `?AdfTabularPartitionName` 후크 됩니다. 예제는 [Oracle에서 병렬 복사](#parallel-copy-from-oracle) 섹션을 참조 하세요. | 아닙니다. |
 | partitionColumnName | 병렬 복사를 위해 범위 분할에서 사용할 원본 열의 이름을 **정수 형식으로** 지정 합니다. 지정 하지 않으면 테이블의 기본 키가 자동으로 검색 되 고 파티션 열로 사용 됩니다. <br>파티션 옵션이 `DynamicRange`경우에 적용 됩니다. 쿼리를 사용 하 여 원본 데이터를 검색 하는 경우 WHERE 절에 `?AdfRangePartitionColumnName` 후크 됩니다. 예제는 [Oracle에서 병렬 복사](#parallel-copy-from-oracle) 섹션을 참조 하세요. | 아닙니다. |
 | partitionUpperBound | 데이터를 복사할 파티션 열의 최대값입니다. <br>파티션 옵션이 `DynamicRange`경우에 적용 됩니다. 쿼리를 사용 하 여 원본 데이터를 검색 하는 경우 WHERE 절에 `?AdfRangePartitionUpbound` 후크 됩니다. 예제는 [Oracle에서 병렬 복사](#parallel-copy-from-oracle) 섹션을 참조 하세요. | 아닙니다. |
@@ -262,7 +262,7 @@ Oracle에 데이터를 복사 하려면 복사 작업의 싱크 형식을 `Oracl
 | type | 복사 작업 싱크의 type 속성을 `OracleSink`설정 해야 합니다. | 예 |
 | writeBatchSize | 버퍼 크기가 `writeBatchSize`에 도달 하면 SQL 테이블에 데이터를 삽입 합니다.<br/>허용되는 값은 정수(행 수)입니다. |아니요(기본값: 10,000) |
 | writeBatchTimeout | 시간이 초과되기 전에 완료하려는 배치 삽입 작업을 위한 대기 시간입니다.<br/>허용되는 값은 시간 범위입니다. 예를 들어 "00:30:00"(30분)입니다. | 아닙니다. |
-| preCopyScript | 각 실행 시 Oracle에 데이터를 쓰기 전에 실행할 복사 작업에 대 한 SQL 쿼리를 지정 합니다. 이 속성을 사용하여 미리 로드된 데이터를 정리할 수 있습니다. | 아닙니다. |
+| preCopyScript | 각 실행 시 Oracle에 데이터를 쓰기 전에 실행할 복사 작업에 대한 SQL 쿼리를 지정 합니다. 이 속성을 사용하여 미리 로드된 데이터를 정리할 수 있습니다. | 아닙니다. |
 
 **예:**
 
@@ -310,7 +310,7 @@ Data Factory Oracle 커넥터는 Oracle의 데이터를 병렬로 복사 하기 
 | 실제 파티션이 있는 초대형 테이블에서 전체 로드          | **파티션 옵션**: 테이블의 실제 파티션입니다. <br><br/>실행 중에는 Data Factory에서 실제 파티션을 자동으로 검색 하 고 파티션으로 데이터를 복사 합니다. |
 | 데이터 분할을 위한 정수 열을 포함 하는 동시에 실제 파티션이 없는 많은 테이블에서 전체 로드 | **파티션 옵션**: 동적 범위 파티션.<br>**파티션 열**: 데이터를 분할 하는 데 사용 되는 열을 지정 합니다. 지정 하지 않으면 기본 키 열이 사용 됩니다. |
 | 실제 파티션에 사용자 지정 쿼리를 사용 하 여 많은 양의 데이터를 로드 합니다. | **파티션 옵션**: 테이블의 실제 파티션입니다.<br>**쿼리**: `SELECT * FROM <TABLENAME> PARTITION("?AdfTabularPartitionName") WHERE <your_additional_where_clause>`.<br>**파티션 이름**: 데이터를 복사할 파티션 이름을 지정 합니다. 지정 하지 않으면 Data Factory Oracle 데이터 집합에서 지정한 테이블의 실제 파티션을 자동으로 검색 합니다.<br><br>실행 중 Data Factory는 `?AdfTabularPartitionName`를 실제 파티션 이름으로 바꾸고 Oracle로 보냅니다. |
-| 데이터 분할을 위한 정수 열을 포함 하 여 실제 파티션이 없는 사용자 지정 쿼리를 사용 하 여 많은 양의 데이터를 로드 합니다. | **파티션 옵션**: 동적 범위 파티션.<br>**쿼리**: `SELECT * FROM <TABLENAME> WHERE ?AdfRangePartitionColumnName <= ?AdfRangePartitionUpbound AND ?AdfRangePartitionColumnName >= ?AdfRangePartitionLowbound AND <your_additional_where_clause>`.<br>**파티션 열**: 데이터를 분할 하는 데 사용 되는 열을 지정 합니다. 정수 데이터 형식의 열에 대해 분할할 수 있습니다.<br>**분할 상한** 및 **파티션**하 한: 파티션 열에 대해 필터링 하 여 하 한 및 상한 간에만 데이터를 검색 하도록 지정 합니다.<br><br>실행 하는 동안 Data Factory `?AdfRangePartitionColumnName`, `?AdfRangePartitionUpbound`및 `?AdfRangePartitionLowbound`를 각 파티션에 대 한 실제 열 이름과 값 범위로 바꾸고 Oracle로 보냅니다. <br>예를 들어 파티션 열 "ID"가 하한값을 1로 설정 하 고 상한이 80로 설정 된 경우 병렬 복사를 4로 설정 하면 Data Factory 4 개의 파티션으로 데이터를 검색 합니다. 해당 Id는 [1, 20], [21, 40], [41, 60] 및 [61, 80] 사이에 각각 있습니다. |
+| 데이터 분할을 위한 정수 열을 포함 하 여 실제 파티션이 없는 사용자 지정 쿼리를 사용 하 여 많은 양의 데이터를 로드 합니다. | **파티션 옵션**: 동적 범위 파티션.<br>**쿼리**: `SELECT * FROM <TABLENAME> WHERE ?AdfRangePartitionColumnName <= ?AdfRangePartitionUpbound AND ?AdfRangePartitionColumnName >= ?AdfRangePartitionLowbound AND <your_additional_where_clause>`.<br>**파티션 열**: 데이터를 분할 하는 데 사용 되는 열을 지정 합니다. 정수 데이터 형식의 열에 대해 분할할 수 있습니다.<br>**분할 상한** 및 **파티션**하 한: 파티션 열에 대해 필터링 하 여 하 한 및 상한 간에만 데이터를 검색 하도록 지정 합니다.<br><br>실행 하는 동안 Data Factory `?AdfRangePartitionColumnName`, `?AdfRangePartitionUpbound`및 `?AdfRangePartitionLowbound`를 각 파티션에 대한 실제 열 이름과 값 범위로 바꾸고 Oracle로 보냅니다. <br>예를 들어 파티션 열 "ID"가 하한값을 1로 설정 하 고 상한이 80로 설정 된 경우 병렬 복사를 4로 설정 하면 Data Factory 4 개의 파티션으로 데이터를 검색 합니다. 해당 Id는 [1, 20], [21, 40], [41, 60] 및 [61, 80] 사이에 각각 있습니다. |
 
 **예: 실제 파티션이 있는 쿼리**
 
@@ -376,7 +376,7 @@ Oracle에서 Oracle로 데이터를 복사 하는 경우 다음 매핑이 적용
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
+속성에 대한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 Data Factory에서 복사 활동을 통해 원본 및 싱크로 지원되는 데이터 저장소의 목록은 [지원되는 데이터 저장소](copy-activity-overview.md#supported-data-stores-and-formats)를 참조하세요.

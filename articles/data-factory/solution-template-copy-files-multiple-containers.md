@@ -23,7 +23,7 @@ ms.locfileid: "75439816"
 이 문서에서는 파일 저장소 간에 여러 컨테이너의 파일을 복사 하는 데 사용할 수 있는 솔루션 템플릿에 대해 설명 합니다. 예를 들어이 파일을 사용 하 여 data lake를 AWS S3에서 Azure Data Lake Store로 마이그레이션할 수 있습니다. 또는 템플릿을 사용 하 여 Azure Blob 저장소 계정 간에 모든 항목을 복제할 수 있습니다.
 
 > [!NOTE]
-> 단일 컨테이너에서 파일을 복사 하려면 [데이터 복사 도구](copy-data-tool.md) 를 사용 하 여 단일 복사 작업으로 파이프라인을 만드는 것이 더 효율적입니다. 이 문서에서는 이러한 간단한 시나리오에 대 한 템플릿이 필요 합니다.
+> 단일 컨테이너에서 파일을 복사 하려면 [데이터 복사 도구](copy-data-tool.md) 를 사용 하 여 단일 복사 작업으로 파이프라인을 만드는 것이 더 효율적입니다. 이 문서에서는 이러한 간단한 시나리오에 대한 템플릿이 필요 합니다.
 
 ## <a name="about-this-solution-template"></a>이 솔루션 템플릿 정보
 
@@ -42,11 +42,11 @@ ms.locfileid: "75439816"
 
 ## <a name="how-to-use-this-solution-template"></a>이 솔루션 템플릿을 사용하는 방법
 
-1. **파일 저장 템플릿 간에 여러 파일 복사 컨테이너** 로 이동 합니다. 원본 저장소 저장소에 대 한 **새** 연결을 만듭니다. 원본 저장소 저장소는에서 여러 컨테이너의 파일을 복사 하려는 위치입니다.
+1. **파일 저장 템플릿 간에 여러 파일 복사 컨테이너** 로 이동 합니다. 원본 저장소 저장소에 대한 **새** 연결을 만듭니다. 원본 저장소 저장소는에서 여러 컨테이너의 파일을 복사 하려는 위치입니다.
 
     ![원본에 대한 새 연결 만들기](media/solution-template-copy-files-multiple-containers/copy-files-multiple-containers-image1.png)
 
-2. 대상 저장소 저장소에 대 한 **새** 연결을 만듭니다.
+2. 대상 저장소 저장소에 대한 **새** 연결을 만듭니다.
 
     ![대상에 대한 새 연결 만들기](media/solution-template-copy-files-multiple-containers/copy-files-multiple-containers-image2.png)
 

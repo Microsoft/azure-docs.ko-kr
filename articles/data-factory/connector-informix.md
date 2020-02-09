@@ -36,7 +36,7 @@ Informix 원본에서 지원 되는 모든 싱크 데이터 저장소로 데이�
 이 Informix 커넥터를 사용 하려면 다음을 수행 해야 합니다.
 
 - 자체 호스팅 Integration Runtime을 설정합니다. 자세한 내용은 [자체 호스팅 Integration Runtime](create-self-hosted-integration-runtime.md)을 참조하세요.
-- Integration Runtime 컴퓨터에서 데이터 저장소에 대 한 Informix ODBC 드라이버를 설치 합니다. 예를 들어 "IBM INFORMIX Informix DRIVER (64 비트)" 드라이버를 사용할 수 있습니다.
+- Integration Runtime 컴퓨터에서 데이터 저장소에 대한 Informix ODBC 드라이버를 설치 합니다. 예를 들어 "IBM INFORMIX Informix DRIVER (64 비트)" 드라이버를 사용할 수 있습니다.
 
 ## <a name="getting-started"></a>시작
 
@@ -158,7 +158,7 @@ Informix에서 데이터를 복사 하기 위해 복사 작업 **원본** 섹션
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
+속성에 대한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
 
 
 ## <a name="next-steps"></a>다음 단계

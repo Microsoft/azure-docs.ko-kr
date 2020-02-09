@@ -17,14 +17,14 @@ ms.locfileid: "71300593"
 ---
 # <a name="copy-data-to-azure-data-explorer-by-using-azure-data-factory"></a>Azure Data Factory를 사용 하 여 Azure 데이터 탐색기에 데이터 복사 
 
-Azure 데이터 탐색기는 빠르고 완전히 관리 되는 데이터 분석 서비스입니다. 응용 프로그램, 웹 사이트 및 IoT 장치와 같은 많은 원본에서 스트리밍하는 대용량 데이터에 대 한 실시간 분석을 제공 합니다. Azure 데이터 탐색기를 통해 데이터를 반복적으로 탐색 하 고 패턴 및 비정상을 식별 하 여 제품을 개선 하 고, 고객 환경을 개선 하 고, 장치를 모니터링 하 고, 작업을 향상 시킬 수 새 질문을 탐색 하 고 몇 분 안에 답변을 얻을 수 있습니다. 
+Azure 데이터 탐색기는 빠르고 완전히 관리 되는 데이터 분석 서비스입니다. 응용 프로그램, 웹 사이트 및 IoT 장치와 같은 많은 원본에서 스트리밍하는 대용량 데이터에 대한 실시간 분석을 제공 합니다. Azure 데이터 탐색기를 통해 데이터를 반복적으로 탐색 하 고 패턴 및 비정상을 식별 하 여 제품을 개선 하 고, 고객 환경을 개선 하 고, 장치를 모니터링 하 고, 작업을 향상 시킬 수 새 질문을 탐색 하 고 몇 분 안에 답변을 얻을 수 있습니다. 
 
 Azure Data Factory는 완전히 관리 되는 클라우드 기반 데이터 통합 서비스입니다. 이를 사용 하 여 Azure 데이터 탐색기 데이터베이스를 기존 시스템의 데이터로 채울 수 있습니다. 분석 솔루션을 빌드할 때 시간을 절약 하는 데 도움이 될 수 있습니다.
 
 Azure 데이터 탐색기에 데이터를 로드 하는 경우 Data Factory는 다음과 같은 이점을 제공 합니다.
 
 * **간편한 설치**: 스크립팅이 필요 없는 직관적인 5 단계 마법사를 다운로드 합니다.
-* **다양한 데이터 저장소 지원**: 다양 한 온-프레미스 및 클라우드 기반 데이터 저장소 집합에 대 한 기본 제공 지원을 받으세요. 자세한 목록은 [지원되는 데이터 저장소](/azure/data-factory/copy-activity-overview#supported-data-stores-and-formats) 표를 참조하세요.
+* **다양한 데이터 저장소 지원**: 다양 한 온-프레미스 및 클라우드 기반 데이터 저장소 집합에 대한 기본 제공 지원을 받으세요. 자세한 목록은 [지원되는 데이터 저장소](/azure/data-factory/copy-activity-overview#supported-data-stores-and-formats) 표를 참조하세요.
 * **보안 및 규정 준수**: 데이터는 HTTPS 또는 Azure Express 경로를 통해 전송 됩니다. 글로벌 서비스가 제공되므로 데이터가 지리적 경계를 벗어나지 않습니다.
 * **고성능**: 데이터 로드 속도는 Azure 데이터 탐색기 최대 1Gbps (초당 기가바이트)입니다. 자세한 내용은 [복사 작업 성능](/azure/data-factory/copy-activity-performance)을 참조 하세요.
 
@@ -50,13 +50,13 @@ Azure 데이터 탐색기에 데이터를 로드 하는 경우 Data Factory는 �
 
    ![Azure Portal에서 데이터 팩터리 만들기](media/data-factory-load-data/create-adf.png)
 
-1. **새 데이터 팩터리** 창에서 다음 테이블의 필드에 대 한 값을 제공 합니다.
+1. **새 데이터 팩터리** 창에서 다음 테이블의 필드에 대한 값을 제공 합니다.
 
    !["새 데이터 팩터리" 창](media/data-factory-load-data/my-new-data-factory.png)  
 
    | 설정  | 입력할 값  |
    |---|---|
-   | **이름** | 상자에 데이터 팩터리에 대 한 전역적으로 고유한 이름을 입력 합니다. 오류가 발생 하는 경우 *data factory 이름 \"\" loadadxdemo를 사용할 수 없습니다*. 데이터 팩터리에 대해 다른 이름을 입력 합니다. Data Factory 아티팩트 명명에 대 한 규칙은 [Data Factory 명명 규칙](/azure/data-factory/naming-rules)을 참조 하세요.|
+   | **이름** | 상자에 데이터 팩터리에 대한 전역적으로 고유한 이름을 입력 합니다. 오류가 발생 하는 경우 *data factory 이름 \"\" loadadxdemo를 사용할 수 없습니다*. 데이터 팩터리에 대해 다른 이름을 입력 합니다. Data Factory 아티팩트 명명에 대한 규칙은 [Data Factory 명명 규칙](/azure/data-factory/naming-rules)을 참조 하세요.|
    | **구독** | 드롭다운 목록에서 데이터 팩터리를 만들 Azure 구독을 선택 합니다. |
    | **리소스 그룹** | **새로 만들기**를 선택한 다음 새 리소스 그룹의 이름을 입력 합니다. 리소스 그룹이 이미 있는 경우 **기존 사용**을 선택 합니다. |
    | **버전(Version)** | 드롭다운 목록에서 **V2**를 선택 합니다. |  
@@ -134,7 +134,7 @@ Azure 데이터 탐색기에 데이터를 로드 하는 경우 Data Factory는 �
 
     ![입력 파일 또는 폴더 선택](media/data-factory-load-data/source-choose-input-file.png)
 
-1. **파일 형식 설정** 창에서 파일에 대 한 관련 설정을 선택 합니다. 그리고 **다음을 선택 합니다**.
+1. **파일 형식 설정** 창에서 파일에 대한 관련 설정을 선택 합니다. 그리고 **다음을 선택 합니다**.
 
    !["파일 형식 설정" 창](media/data-factory-load-data/source-file-format-settings.png)
 
@@ -167,9 +167,9 @@ Azure 데이터 탐색기 연결 된 서비스를 만들려면 다음을 수행 
         > [!NOTE]
         > **클러스터** 드롭다운 컨트롤은 구독과 연결 된 클러스터만 나열 합니다.
 
-    * **수동으로 입력**을 선택 하 고 **끝점**을 입력 합니다.
+    * **수동으로 입력**을 선택 하 고 **엔드포인트**을 입력 합니다.
 
-   c. **테 넌 트** 상자에 테 넌 트 이름을 입력 합니다.
+   c. **테넌트** 상자에 테넌트 이름을 입력 합니다.
 
    d. **서비스 사용자 id** 상자에 서비스 사용자 id를 입력 합니다.
 
@@ -200,7 +200,7 @@ Azure 데이터 탐색기 연결 된 서비스를 만들려면 다음을 수행 
 
     a. 첫 번째 매핑은 [Azure Data Factory 스키마 매핑에](/azure/data-factory/copy-activity-schema-and-type-mapping)따라 Azure Data Factory에 의해 수행 됩니다. 다음을 수행합니다.
 
-    * Azure Data Factory 대상 테이블에 대 한 **열 매핑을** 설정 합니다. 기본 매핑은 원본에서 Azure Data Factory 대상 테이블에 표시 됩니다.
+    * Azure Data Factory 대상 테이블에 대한 **열 매핑을** 설정 합니다. 기본 매핑은 원본에서 Azure Data Factory 대상 테이블에 표시 됩니다.
 
     * 열 매핑을 정의 하지 않아도 되는 열 선택을 취소 합니다.
 

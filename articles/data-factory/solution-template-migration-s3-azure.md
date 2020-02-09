@@ -43,7 +43,7 @@ ms.locfileid: "74927320"
 - **SqlServerStoredProcedure** 컨트롤 테이블의 각 파티션 복사 상태를 업데이트 합니다.
 
 템플릿에는 두 개의 매개 변수가 포함 되어 있습니다.
-- **AWS_S3_bucketName** 은 데이터를 마이그레이션할 AWS s 3의 버킷 이름입니다. AWS s 3에서 여러 버킷의 데이터를 마이그레이션하려면 외부 제어 테이블에 열을 하나 더 추가 하 여 각 파티션에 대 한 버킷 이름을 저장 하 고 파이프라인을 업데이트 하 여 그에 따라 해당 열에서 데이터를 검색할 수도 있습니다.
+- **AWS_S3_bucketName** 은 데이터를 마이그레이션할 AWS s 3의 버킷 이름입니다. AWS s 3에서 여러 버킷의 데이터를 마이그레이션하려면 외부 제어 테이블에 열을 하나 더 추가 하 여 각 파티션에 대한 버킷 이름을 저장 하 고 파이프라인을 업데이트 하 여 그에 따라 해당 열에서 데이터를 검색할 수도 있습니다.
 - **Azure_Storage_fileSystem** 은 데이터를 마이그레이션할 대상 Azure Data Lake Storage Gen2의 파일 시스템 이름입니다.
 
 ### <a name="for-the-template-to-copy-changed-files-only-from-amazon-s3-to-azure-data-lake-storage-gen2"></a>이 템플릿이 Amazon s 3에서 변경 된 파일만 복사 하려면 Azure Data Lake Storage Gen2
@@ -55,12 +55,12 @@ ms.locfileid: "74927320"
 - **ForEach** 는 *조회* 활동에서 파티션 목록을 가져오고 각 파티션을 *TriggerDeltaCopy* 활동으로 반복 합니다. 여러 ADF 복사 작업을 동시에 실행 하도록 *Batchcount* 를 설정할 수 있습니다. 이 템플릿에는 2가 설정 되어 있습니다.
 - **ExecutePipeline** 는 *DeltaCopyFolderPartitionFromS3* 파이프라인을 실행 합니다. 각 복사 작업에서 파티션을 복사 하도록 다른 파이프라인을 만드는 이유는 실패 한 복사 작업을 다시 실행 하 여 AWS S3에서 특정 파티션을 다시 다시 로드 하는 것 이기 때문입니다. 다른 파티션을 로드 하는 다른 모든 복사 작업에는 영향을 주지 않습니다.
 - **Lookup** 은 LastModifiedTime를 통해 새 파일 또는 업데이트 된 파일을 식별할 수 있도록 외부 컨트롤 테이블에서 마지막 복사 작업 실행 시간을 검색 합니다. 테이블 이름은 *s3_partition_delta_control_table* 이 고 테이블에서 데이터를 로드 하는 쿼리는 *"Select Max (jobruntime) From s3_partition_delta_control_table from LastModifiedTime (여기서 파티션 = ' @ {Pipeline () prefixStr} ' 및 SuccessOrFailure = 1")* 입니다.
-- **Copy** 는 AWS s 3의 각 파티션에 대 한 새 파일 또는 변경 된 파일을 Azure Data Lake Storage Gen2로 복사 합니다. *ModifiedDatetimeStart* 의 속성은 마지막 복사 작업 실행 시간으로 설정 됩니다. *ModifiedDatetimeEnd* 의 속성은 현재 복사 작업 실행 시간으로 설정 됩니다. 시간은 UTC 표준 시간대에 적용 됩니다.
+- **Copy** 는 AWS s 3의 각 파티션에 대한 새 파일 또는 변경 된 파일을 Azure Data Lake Storage Gen2로 복사 합니다. *ModifiedDatetimeStart* 의 속성은 마지막 복사 작업 실행 시간으로 설정 됩니다. *ModifiedDatetimeEnd* 의 속성은 현재 복사 작업 실행 시간으로 설정 됩니다. 시간은 UTC 표준 시간대에 적용 됩니다.
 - **SqlServerStoredProcedure** 각 파티션 복사 상태와 컨트롤 테이블이 성공할 때 실행 시간을 업데이트 합니다. SuccessOrFailure의 열은 1로 설정 됩니다.
 - **SqlServerStoredProcedure** 실패할 경우 각 파티션 및 복사 실행 시간을 제어 테이블에 업데이트 합니다. SuccessOrFailure의 열은 0으로 설정 됩니다.
 
 템플릿에는 두 개의 매개 변수가 포함 되어 있습니다.
-- **AWS_S3_bucketName** 은 데이터를 마이그레이션할 AWS s 3의 버킷 이름입니다. AWS s 3에서 여러 버킷의 데이터를 마이그레이션하려면 외부 제어 테이블에 열을 하나 더 추가 하 여 각 파티션에 대 한 버킷 이름을 저장 하 고 파이프라인을 업데이트 하 여 그에 따라 해당 열에서 데이터를 검색할 수도 있습니다.
+- **AWS_S3_bucketName** 은 데이터를 마이그레이션할 AWS s 3의 버킷 이름입니다. AWS s 3에서 여러 버킷의 데이터를 마이그레이션하려면 외부 제어 테이블에 열을 하나 더 추가 하 여 각 파티션에 대한 버킷 이름을 저장 하 고 파이프라인을 업데이트 하 여 그에 따라 해당 열에서 데이터를 검색할 수도 있습니다.
 - **Azure_Storage_fileSystem** 은 데이터를 마이그레이션할 대상 Azure Data Lake Storage Gen2의 파일 시스템 이름입니다.
 
 ## <a name="how-to-use-these-two-solution-templates"></a>이러한 두 솔루션 템플릿을 사용 하는 방법
@@ -105,7 +105,7 @@ ms.locfileid: "74927320"
     GO
     ```
 
-3. **AWS S3에서 기록 데이터 마이그레이션 Azure Data Lake Storage Gen2** 템플릿으로 이동 합니다. 외부 컨트롤 테이블에 대 한 연결을 입력 하 고, 데이터 원본 저장소로 S3을 AWS 하 고, 대상 저장소로 Azure Data Lake Storage Gen2 합니다. 외부 제어 테이블 및 저장 프로시저는 동일한 연결에 대 한 참조입니다.
+3. **AWS S3에서 기록 데이터 마이그레이션 Azure Data Lake Storage Gen2** 템플릿으로 이동 합니다. 외부 컨트롤 테이블에 대한 연결을 입력 하 고, 데이터 원본 저장소로 S3을 AWS 하 고, 대상 저장소로 Azure Data Lake Storage Gen2 합니다. 외부 제어 테이블 및 저장 프로시저는 동일한 연결에 대한 참조입니다.
 
     ![새 연결 만들기](media/solution-template-migration-s3-azure/historical-migration-s3-azure1.png)
 
@@ -168,7 +168,7 @@ ms.locfileid: "74927320"
     ```
 
 
-3. **AWS S3에서 델타 데이터 복사 Azure Data Lake Storage Gen2** 템플릿으로 이동 합니다. 외부 컨트롤 테이블에 대 한 연결을 입력 하 고, 데이터 원본 저장소로 S3을 AWS 하 고, 대상 저장소로 Azure Data Lake Storage Gen2 합니다. 외부 제어 테이블 및 저장 프로시저는 동일한 연결에 대 한 참조입니다.
+3. **AWS S3에서 델타 데이터 복사 Azure Data Lake Storage Gen2** 템플릿으로 이동 합니다. 외부 컨트롤 테이블에 대한 연결을 입력 하 고, 데이터 원본 저장소로 S3을 AWS 하 고, 대상 저장소로 Azure Data Lake Storage Gen2 합니다. 외부 제어 테이블 및 저장 프로시저는 동일한 연결에 대한 참조입니다.
 
     ![새 연결 만들기](media/solution-template-migration-s3-azure/delta-migration-s3-azure1.png)
 

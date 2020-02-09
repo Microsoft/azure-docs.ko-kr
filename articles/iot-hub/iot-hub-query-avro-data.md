@@ -18,9 +18,9 @@ ms.locfileid: "73605612"
 
 이 아티클에서는 Azure IoT Hub에서 Azure 서비스로 메시지를 효율적으로 라우팅하기 위해 Avro 데이터를 쿼리하는 방법을 설명합니다. [메시지 라우팅](iot-hub-devguide-messages-d2c.md)을 통해 메시지 속성, 메시지 본문, 디바이스 쌍 태그 및 디바이스 쌍 속성 기반의 풍부한 쿼리를 사용하여 데이터를 필터링할 수 있습니다. 메시지 라우팅의 쿼리 기능에 대해 자세히 알아보려면 [메시지 라우팅 쿼리 구문](iot-hub-devguide-routing-query-syntax.md)에 대 한 문서를 참조 하세요.
 
-이러한 문제는 Azure IoT Hub에서 Azure Blob storage로 메시지를 라우팅하는 경우 기본적으로 IoT Hub는 메시지 본문 속성과 메시지 속성을 모두 포함 하는 Avro 형식으로 콘텐츠를 기록 하는 것입니다. Avro 형식은 다른 끝점에는 사용 되지 않습니다. Avro 형식은 데이터와 메시지 보존에 적합하지만 이를 사용하여 데이터를 쿼리하기에 어렵습니다. 반면 JSON 또는 CSV 형식은 데이터를 쿼리하기에 훨씬 용이합니다. 이제 IoT Hub는 AVRO 뿐만 아니라 JSON의 Blob storage에 데이터를 쓸 수 있습니다.
+이러한 문제는 Azure IoT Hub에서 Azure Blob storage로 메시지를 라우팅하는 경우 기본적으로 IoT Hub는 메시지 본문 속성과 메시지 속성을 모두 포함 하는 Avro 형식으로 콘텐츠를 기록 하는 것입니다. Avro 형식은 다른 엔드포인트에는 사용 되지 않습니다. Avro 형식은 데이터와 메시지 보존에 적합하지만 이를 사용하여 데이터를 쿼리하기에 어렵습니다. 반면 JSON 또는 CSV 형식은 데이터를 쿼리하기에 훨씬 용이합니다. 이제 IoT Hub는 AVRO 뿐만 아니라 JSON의 Blob storage에 데이터를 쓸 수 있습니다.
 
-자세한 내용은 [Azure Storage를 라우팅 끝점으로 사용](iot-hub-devguide-messages-d2c.md#azure-storage)을 참조 하세요.
+자세한 내용은 [Azure Storage를 라우팅 엔드포인트으로 사용](iot-hub-devguide-messages-d2c.md#azure-storage)을 참조 하세요.
 
 비관계형 빅 데이터 요구 사항 및 형식을 해결하고 이 어려움을 이겨내려면 데이터 변환 및 크기 조정 모두에 대해 여러 빅 데이터 패턴을 사용할 수 있습니다. 이런 패턴 중 하나인 "쿼리당 지불"은 Azure Data Lake Analytics이며, 이 문서의 핵심 내용입니다. Hadoop 또는 기타 솔루션에서 쿼리를 쉽게 실행할 수 있지만 Data Lake Analytics는 이 "쿼리당 지불" 방법에 더 적합합니다.
 

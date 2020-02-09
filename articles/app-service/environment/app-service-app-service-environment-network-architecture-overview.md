@@ -15,7 +15,7 @@ ms.lasthandoff: 12/02/2019
 ms.locfileid: "74687343"
 ---
 # <a name="network-architecture-overview-of-app-service-environments"></a>App Service Environment의 네트워크 아키텍처 개요
-App Service 환경은 항상 [가상 네트워크][virtualnetwork] 의 서브넷 내에 생성 됩니다. App Service Environment에서 실행 되는 앱은 동일한 가상 네트워크 토폴로지 내에 위치한 개인 끝점과 통신할 수 있습니다.  고객은 그들의 가상 네트워크 일부를 잠글 수 있기 때문에 App Service Environment에서 일어나는 네트워크 통신 흐름의 유형을 이해하는 것은 중요합니다.
+App Service 환경은 항상 [가상 네트워크][virtualnetwork] 의 서브넷 내에 생성 됩니다. App Service Environment에서 실행 되는 앱은 동일한 가상 네트워크 토폴로지 내에 위치한 개인 엔드포인트과 통신할 수 있습니다.  고객은 그들의 가상 네트워크 일부를 잠글 수 있기 때문에 App Service Environment에서 일어나는 네트워크 통신 흐름의 유형을 이해하는 것은 중요합니다.
 
 ## <a name="general-network-flow"></a>일반 네트워크 흐름
 ASE(App Service Environment)가 앱에 공용 VIP(가상 IP 주소)를 사용하는 경우 모든 인바운드 트래픽이 해당 공용 VIP에 도착합니다.  여기에는 FTP에 대한 다른 트래픽, 원격 디버깅 기능, Azure 관리 작업과 마찬가지로 앱의 HTTP와 HTTPS 트래픽이 포함됩니다.  공용 VIP에서 사용할 수 있는 특정 포트 (필수 및 선택적)의 전체 목록은 App Service Environment [인바운드 트래픽 제어][controllinginboundtraffic] 문서를 참조 하세요. 

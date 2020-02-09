@@ -1,6 +1,6 @@
 ---
 title: 전방 도어에 대해 WAF rate limit rule 구성-Azure PowerShell
-description: 기존 전방 도어 끝점에 대 한 요율 제한 규칙을 구성 하는 방법에 대해 알아봅니다.
+description: 기존 전방 도어 엔드포인트에 대 한 요율 제한 규칙을 구성 하는 방법에 대해 알아봅니다.
 author: vhorne
 ms.service: web-application-firewall
 ms.topic: article

@@ -34,11 +34,11 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ### <a name="cause"></a>원인
 
-Azure AD 오류 코드 50126은 테 넌 트에서 `AllowCloudPasswordValidation` 정책이 설정 되지 않았음을 의미 합니다.
+Azure AD 오류 코드 50126은 테넌트에서 `AllowCloudPasswordValidation` 정책이 설정 되지 않았음을 의미 합니다.
 
 ### <a name="resolution"></a>해상도
 
-Azure AD 테 넌 트의 회사 관리자는 Azure AD에서 ADFS 지원 사용자에 대 한 암호 해시를 사용 하도록 설정 해야 합니다.  [HDInsight에서 Enterprise Security Package 사용](../domain-joined/apache-domain-joined-architecture.md)문서에 표시 된 대로 `AllowCloudPasswordValidationPolicy` 적용 합니다.
+Azure AD 테넌트의 회사 관리자는 Azure AD에서 ADFS 지원 사용자에 대 한 암호 해시를 사용 하도록 설정 해야 합니다.  [HDInsight에서 Enterprise Security Package 사용](../domain-joined/apache-domain-joined-architecture.md)문서에 표시 된 대로 `AllowCloudPasswordValidationPolicy` 적용 합니다.
 
 ---
 

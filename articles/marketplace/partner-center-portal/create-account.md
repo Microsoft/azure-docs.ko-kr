@@ -163,7 +163,7 @@ Microsoft 파트너 센터 계정으로 [파트너 센터](https://partner.micro
 >[!NOTE]
 >새 게시자를 추가 하기 전에 파트너 센터에 로그인 하 고 **게시자** > **계정 설정** 을 선택 하 여 기존 게시자를 검토 하 고 기존 게시자의 목록을 확인 합니다.
 
-동일한 Azure Active Directory 테 넌 트의 다른 사용자가 다음 단계를 수행 하 여 새 게시자를 추가할 수 있습니다.
+동일한 Azure Active Directory 테넌트의 다른 사용자가 다음 단계를 수행 하 여 새 게시자를 추가할 수 있습니다.
 
 1. [Microsoft 파트너 센터](https://partner.microsoft.com/en-us/dashboard/account/v3/enrollment/introduction/azureisv)에서 등록 흐름을 시작 합니다.
 2. **회사 계정으로 로그인** 을 선택 하 고 회사 메일 주소를 입력 합니다.

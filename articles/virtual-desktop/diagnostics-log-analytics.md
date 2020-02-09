@@ -16,7 +16,7 @@ ms.locfileid: "75479229"
 ---
 # <a name="use-log-analytics-for-the-diagnostics-feature"></a>진단 기능에 Log Analytics 사용
 
-Windows 가상 데스크톱은 관리자가 단일 인터페이스를 통해 문제를 식별할 수 있도록 하는 진단 기능을 제공 합니다. 이 기능은 Windows 가상 데스크톱 역할에 할당 된 사용자가 서비스를 사용할 때마다 진단 정보를 기록 합니다. 각 로그에는 작업에 관련 된 Windows 가상 데스크톱 역할, 세션 중에 표시 되는 오류 메시지, 테 넌 트 정보 및 사용자 정보에 대 한 정보가 포함 되어 있습니다. 진단 기능은 사용자 및 관리 작업 모두에 대 한 활동 로그를 만듭니다. 각 활동 로그는 세 가지 주요 범주로 구분 됩니다. 
+Windows 가상 데스크톱은 관리자가 단일 인터페이스를 통해 문제를 식별할 수 있도록 하는 진단 기능을 제공 합니다. 이 기능은 Windows 가상 데스크톱 역할에 할당 된 사용자가 서비스를 사용할 때마다 진단 정보를 기록 합니다. 각 로그에는 작업에 관련 된 Windows 가상 데스크톱 역할, 세션 중에 표시 되는 오류 메시지, 테넌트 정보 및 사용자 정보에 대 한 정보가 포함 되어 있습니다. 진단 기능은 사용자 및 관리 작업 모두에 대 한 활동 로그를 만듭니다. 각 활동 로그는 세 가지 주요 범주로 구분 됩니다. 
 
 - 피드 구독 활동: 사용자가 Microsoft 원격 데스크톱 응용 프로그램을 통해 피드에 연결 하려고 시도 하는 경우입니다.
 - 연결 작업: 사용자가 Microsoft 원격 데스크톱 응용 프로그램을 통해 데스크톱 또는 RemoteApp에 연결 하려고 시도 하는 경우
@@ -41,24 +41,24 @@ Windows 가상 데스크톱은 관리자가 단일 인터페이스를 통해 문
 
 ## <a name="push-diagnostics-data-to-your-workspace"></a>작업 영역에 진단 데이터 푸시 
 
-Windows 가상 데스크톱 테 넌 트의 진단 데이터를 작업 영역에 대 한 Log Analytics에 푸시할 수 있습니다. 작업 영역을 테 넌 트에 연결 하 여 테 넌 트를 처음 만들 때이 기능을 즉시 설정 하거나 나중에 기존 테 넌 트를 사용 하 여 설정할 수 있습니다.
+Windows 가상 데스크톱 테넌트의 진단 데이터를 작업 영역에 대 한 Log Analytics에 푸시할 수 있습니다. 작업 영역을 테넌트에 연결 하 여 테넌트를 처음 만들 때이 기능을 즉시 설정 하거나 나중에 기존 테넌트를 사용 하 여 설정할 수 있습니다.
 
-새 테 넌 트를 설정 하는 동안 Log Analytics 작업 영역에 테 넌 트를 연결 하려면 다음 cmdlet을 실행 하 여 TenantCreator 사용자 계정을 사용 하 여 Windows 가상 데스크톱에 로그인 합니다. 
+새 테넌트를 설정 하는 동안 Log Analytics 작업 영역에 테넌트를 연결 하려면 다음 cmdlet을 실행 하 여 TenantCreator 사용자 계정을 사용 하 여 Windows 가상 데스크톱에 로그인 합니다. 
 
 ```powershell
 Add-RdsAccount -DeploymentUrl https://rdbroker.wvd.microsoft.com 
 ```
 
-새 테 넌 트 대신 기존 테 넌 트를 연결 하려는 경우 대신이 cmdlet을 실행 합니다. 
+새 테넌트 대신 기존 테넌트를 연결 하려는 경우 대신이 cmdlet을 실행 합니다. 
 
 ```powershell
 Set-RdsTenant -Name <TenantName> -AzureSubscriptionId <SubscriptionID> -LogAnalyticsWorkspaceId <String> -LogAnalyticsPrimaryKey <String> 
 ```
 
-Log Analytics에 연결 하려는 모든 테 넌 트에 대해 이러한 cmdlet을 실행 해야 합니다. 
+Log Analytics에 연결 하려는 모든 테넌트에 대해 이러한 cmdlet을 실행 해야 합니다. 
 
 >[!NOTE]
->테 넌 트를 만들 때 Log Analytics 작업 영역을 연결 하지 않으려면 `New-RdsTenant` cmdlet을 대신 실행 합니다. 
+>테넌트를 만들 때 Log Analytics 작업 영역을 연결 하지 않으려면 `New-RdsTenant` cmdlet을 대신 실행 합니다. 
 
 ## <a name="cadence-for-sending-diagnostic-events"></a>진단 이벤트를 보내기 위한 흐름
 
@@ -94,7 +94,7 @@ WVDActivityV1_CL
 |project-away ActivityId_g, ActivityId_g1 
 ```
 
-다음 예제 쿼리는 테 넌 트의 관리자에의 한 관리 활동을 보여 줍니다.
+다음 예제 쿼리는 테넌트의 관리자에의 한 관리 활동을 보여 줍니다.
 
 ```powershell
 WVDActivityV1_CL 
@@ -122,13 +122,13 @@ WVDActivityV1_CL
  
 ## <a name="stop-sending-data-to-log-analytics"></a>Log Analytics에 대 한 데이터 전송을 중지 합니다. 
 
-기존 테 넌 트에서 Log Analytics로의 데이터 전송을 중지 하려면 다음 cmdlet을 실행 하 고 빈 문자열을 설정 합니다.
+기존 테넌트에서 Log Analytics로의 데이터 전송을 중지 하려면 다음 cmdlet을 실행 하 고 빈 문자열을 설정 합니다.
 
 ```powershell
 Set-RdsTenant -Name <TenantName> -AzureSubscriptionId <SubscriptionID> -LogAnalyticsWorkspaceId <String> -LogAnalyticsPrimaryKey <String> 
 ```
 
-데이터 보내기를 중지 하려는 모든 테 넌 트에 대해이 cmdlet을 실행 해야 합니다. 
+데이터 보내기를 중지 하려는 모든 테넌트에 대해이 cmdlet을 실행 해야 합니다. 
 
 ## <a name="next-steps"></a>다음 단계 
 

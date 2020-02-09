@@ -25,7 +25,7 @@ ms.locfileid: "76930860"
 
 ### <a name="select-the-file-share-to-restore"></a>복원할 파일 공유를 선택 하십시오.
 
-1. [Azure Portal](https://portal.azure.com/)에서 파일 공유에 대 한 백업을 구성 하는 데 사용한 Recovery Services 자격 증명 모음을 엽니다.
+1. [Azure Portal](https://portal.azure.com/)에서 파일 공유에 대한 백업을 구성 하는 데 사용한 Recovery Services 자격 증명 모음을 엽니다.
 
 1. 개요 창의 **보호 된 항목** 섹션에서 **백업 항목** 을 선택 합니다.
 
@@ -154,7 +154,7 @@ ms.locfileid: "76930860"
 
 ## <a name="track-a-restore-operation"></a>복원 작업 추적
 
-복원 작업이 트리거되면 백업 서비스에서 추적 작업을 만듭니다. Azure Backup에서 작업에 대한 알림을 포털에 표시합니다. 작업에 대 한 작업을 보려면 알림 하이퍼링크를 선택 합니다.
+복원 작업이 트리거되면 백업 서비스에서 추적 작업을 만듭니다. Azure Backup에서 작업에 대한 알림을 포털에 표시합니다. 작업에 대한 작업을 보려면 알림 하이퍼링크를 선택 합니다.
 
 ![알림 선택 하이퍼링크](./media/restore-afs/notifications-link.png)
 
@@ -165,7 +165,7 @@ Recovery Services 자격 증명 모음에서 복원 진행률을 모니터링할
 
     ![백업 작업 선택](./media/restore-afs/backup-jobs.png)
 
-1. 파일 공유에 해당 하는 작업 이름을 선택 하 여 **전송 된 데이터** 및 복원 **된 파일 수**와 같이 복원 작업에 대 한 자세한 정보를 확인 합니다.
+1. 파일 공유에 해당 하는 작업 이름을 선택 하 여 **전송 된 데이터** 및 복원 **된 파일 수**와 같이 복원 작업에 대한 자세한 정보를 확인 합니다.
 
     ![복원 된 세부 정보 보기](./media/restore-afs/restore-details.png)
 

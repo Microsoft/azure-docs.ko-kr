@@ -49,7 +49,7 @@ ms.locfileid: "73171335"
 
 | 권장 사항 | 의견 | Security Center |
 |-|----|--|
-|네트워크 노출 제한 | 네트워크 액세스는 자격 증명 모음 액세스를 요구 하는 솔루션에서 사용 하는 가상 네트워크로 제한 되어야 합니다. [Azure Key Vault에 대 한 Virtual network 서비스 끝점](key-vault-overview-vnet-service-endpoints.md) 에 대 한 정보 검토 | - |
+|네트워크 노출 제한 | 네트워크 액세스는 자격 증명 모음 액세스를 요구 하는 솔루션에서 사용 하는 가상 네트워크로 제한 되어야 합니다. [Azure Key Vault에 대 한 Virtual network 서비스 엔드포인트](key-vault-overview-vnet-service-endpoints.md) 에 대 한 정보 검토 | - |
 
 ## <a name="next-steps"></a>다음 단계
 

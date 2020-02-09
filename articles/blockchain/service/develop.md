@@ -17,7 +17,7 @@ Azure Blockchain 서비스를 사용 하면 컨소시엄 Blockchain 네트워크
 
 ## <a name="connecting-to-azure-blockchain-service"></a>Azure Blockchain 서비스에 연결 하는 중
 
-블록 체인 네트워크에는 전체 노드, 밝은 노드 및 원격 클라이언트를 비롯 한 다양 한 유형의 클라이언트가 있습니다. Azure Blockchain 서비스는 노드를 포함 하는 블록 체인 네트워크를 구축 합니다. 블록 체인 개발을 위해 Azure Blockchain 서비스에 대 한 게이트웨이로 다른 클라이언트를 사용할 수 있습니다. Azure Blockchain 서비스는 기본 인증 또는 액세스 키를 개발 끝점으로 제공 합니다. 다음은 연결을 사용할 수 있는 인기 있는 클라이언트입니다.
+블록 체인 네트워크에는 전체 노드, 밝은 노드 및 원격 클라이언트를 비롯 한 다양 한 유형의 클라이언트가 있습니다. Azure Blockchain 서비스는 노드를 포함 하는 블록 체인 네트워크를 구축 합니다. 블록 체인 개발을 위해 Azure Blockchain 서비스에 대 한 게이트웨이로 다른 클라이언트를 사용할 수 있습니다. Azure Blockchain 서비스는 기본 인증 또는 액세스 키를 개발 엔드포인트으로 제공 합니다. 다음은 연결을 사용할 수 있는 인기 있는 클라이언트입니다.
 
 ### <a name="visual-studio-code"></a>Visual Studio Code
 

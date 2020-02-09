@@ -33,7 +33,7 @@ Azure Active Directory B2C (Azure AD B2C) 디렉터리에서 수동으로 소비
 * 게스트
 * 소비자
 
-이 문서에서는 Azure Portal에서 **소비자 계정** 으로 작업 하는 방법을 집중적으로 설명 합니다. 작업 및 게스트 계정을 만들고 삭제 하는 방법에 대 한 자세한 내용은 [Azure Active Directory를 사용 하 여 사용자 추가 또는 삭제](../active-directory/fundamentals/add-users-azure-active-directory.md)를 참조 하세요.
+이 문서에서는 Azure Portal에서 **소비자 계정** 으로 작업 하는 방법을 집중적으로 설명 합니다. 작업 및 게스트 계정을 만들고 삭제 하는 방법에 대한 자세한 내용은 [Azure Active Directory를 사용 하 여 사용자 추가 또는 삭제](../active-directory/fundamentals/add-users-azure-active-directory.md)를 참조 하세요.
 
 ## <a name="create-a-consumer-user"></a>소비자 사용자 만들기
 
@@ -43,7 +43,7 @@ Azure Active Directory B2C (Azure AD B2C) 디렉터리에서 수동으로 소비
 1. **관리**에서 **사용자**를 선택합니다.
 1. **새 사용자**를 선택합니다.
 1. **사용자 Azure AD B2C 만들기**를 선택 합니다.
-1. **로그인 방법을** 선택 하 고 새 사용자에 대 한 **전자 메일** 주소 또는 **사용자 이름을** 입력 합니다. 여기에서 선택 하는 로그인 방법은 Azure AD B2C 테 넌 트의 *로컬 계정* id 공급자에 대해 지정한 설정과 일치 해야 합니다 (Azure AD B2C 테 넌 트에서 > **id 공급자** **관리** 참조).
+1. **로그인 방법을** 선택 하 고 새 사용자에 대한 **전자 메일** 주소 또는 **사용자 이름을** 입력 합니다. 여기에서 선택 하는 로그인 방법은 Azure AD B2C 테넌트의 *로컬 계정* id 공급자에 대해 지정한 설정과 일치 해야 합니다 (Azure AD B2C 테넌트에서 > **id 공급자** **관리** 참조).
 1. 사용자의 **이름을** 입력 합니다. 일반적으로 사용자의 전체 이름 (지정 된 및 성)입니다.
 1. 필드 사용자가 로그인 할 수 있는 기능을 지연 시키려는 경우 **로그인을 차단할** 수 있습니다. 나중에 Azure Portal에서 사용자의 **프로필** 을 편집 하 여 로그인을 사용 하도록 설정할 수 있습니다.
 1. **암호 자동 생성** 을 선택 하거나 **암호를 만듭니다**.를 선택 합니다.
@@ -57,7 +57,7 @@ Azure Active Directory B2C (Azure AD B2C) 디렉터리에서 수동으로 소비
 1. Azure AD B2C 디렉터리에서 **사용자**를 선택 하 고 삭제 하려는 사용자를 선택 합니다.
 1. **삭제**를 선택한 다음 **예** 를 선택 하 여 삭제를 확인 합니다.
 
-삭제 후 처음 30 일 이내에 사용자를 복원 하거나 사용자를 영구적으로 삭제 하는 방법에 대 한 자세한 내용은 [Azure Active Directory를 사용 하 여 최근에 삭제 된 사용자 복원 또는 제거](../active-directory/fundamentals/active-directory-users-restore.md)를 참조 하세요.
+삭제 후 처음 30 일 이내에 사용자를 복원 하거나 사용자를 영구적으로 삭제 하는 방법에 대한 자세한 내용은 [Azure Active Directory를 사용 하 여 최근에 삭제 된 사용자 복원 또는 제거](../active-directory/fundamentals/active-directory-users-restore.md)를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

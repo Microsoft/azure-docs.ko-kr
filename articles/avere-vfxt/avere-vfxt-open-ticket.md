@@ -15,7 +15,7 @@ ms.locfileid: "76153325"
 ---
 # <a name="get-help-with-your-system"></a>시스템 지원 받기
 
-Avere vFXT for Azure system에 대 한 도움말은 다음을 참조 하세요.
+Avere vFXT for Azure system에 대한 도움말은 다음을 참조 하세요.
 
 * **Avere vFXT 문제** - [아래](#open-a-support-ticket-for-your-avere-vfxt)에서 설명한 대로 Azure Portal을 사용하여 Avere vFXT에 대한 지원 티켓을 엽니다.
 * **할당량** - 할당량 관련 문제가 있으면 [할당량 증가를 요청](#request-a-quota-increase)합니다.
@@ -49,7 +49,7 @@ Avere vFXT를 배포하거나 사용하는 동안 문제가 발생하면 Azure P
 
    ![솔루션 탭이 선택 된 새 지원 요청 화면의 스크린샷 중간의 텍스트 필드는 ' 권장 솔루션 ' 제목을 가지 며 가능한 해결 방법을 설명 합니다.](media/ticket-solutions.png)
 
-1. 세 번째 페이지에서 세부 정보를 제공 합니다. 여기에는 클러스터에 대 한 정보, 문제가 발생 한 시간, 심각도 및 사용자에 게 연락 하는 방법이 포함 됩니다. 정보를 입력 하 고 맨 아래에 있는 **다음** 단추를 클릭 합니다.
+1. 세 번째 페이지에서 세부 정보를 제공 합니다. 여기에는 클러스터에 대한 정보, 문제가 발생 한 시간, 심각도 및 사용자에 게 연락 하는 방법이 포함 됩니다. 정보를 입력 하 고 맨 아래에 있는 **다음** 단추를 클릭 합니다.
 
    ![세부 정보 탭이 선택 된 새 지원 요청 화면의 스크린샷 정보 필드는 ' 문제 세부 정보 ', ' 지원 방법 ' 및 "연락처 정보 ' 범주로 구성 됩니다.](media/ticket-details.png)
 

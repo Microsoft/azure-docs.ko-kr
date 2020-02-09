@@ -27,11 +27,11 @@ ms.locfileid: "74183949"
 
 관리 id에 대 한 가상 머신 확장은 가상 머신 내에서 관리 되는 id에 대 한 토큰을 요청 하는 데 사용 됩니다. 워크플로는 다음 단계로 구성 됩니다.
 
-1. 먼저 리소스 내의 작업에서 액세스 토큰을 요청 하는 `http://localhost/oauth2/token` 로컬 끝점을 호출 합니다.
+1. 먼저 리소스 내의 작업에서 액세스 토큰을 요청 하는 `http://localhost/oauth2/token` 로컬 엔드포인트을 호출 합니다.
 2. 그런 다음 가상 머신 확장은 관리 되는 id에 대 한 자격 증명을 사용 하 여 Azure AD에서 액세스 토큰을 요청 합니다. 
 3. 액세스 토큰은 호출자에 게 반환 되며, Azure Key Vault 또는 Azure Storage와 같이 Azure AD 인증을 지 원하는 서비스에 인증 하는 데 사용할 수 있습니다.
 
-다음 섹션에서 설명 하는 몇 가지 제한 사항으로 인해 관리 되는 id VM 확장은 IMDS (Azure Instance Metadata Service)에서 동일한 끝점을 사용 하기 위해 더 이상 사용 되지 않습니다.
+다음 섹션에서 설명 하는 몇 가지 제한 사항으로 인해 관리 되는 id VM 확장은 IMDS (Azure Instance Metadata Service)에서 동일한 엔드포인트을 사용 하기 위해 더 이상 사용 되지 않습니다.
 
 ### <a name="provision-the-extension"></a>확장 프로 비전 
 
@@ -112,7 +112,7 @@ Remove-AzVMExtension -ResourceGroupName myResourceGroup -Name "ManagedIdentityEx
 
 ### <a name="acquire-a-token-using-the-virtual-machine-extension"></a>가상 머신 확장을 사용 하 여 토큰 획득
 
-다음은 Azure 리소스 VM 확장 끝점에 대 한 관리 되는 id를 사용 하는 샘플 요청입니다.
+다음은 Azure 리소스 VM 확장 엔드포인트에 대 한 관리 되는 id를 사용 하는 샘플 요청입니다.
 
 ```
 GET http://localhost:50342/oauth2/token?resource=https%3A%2F%2Fmanagement.azure.com%2F HTTP/1.1
@@ -196,14 +196,14 @@ Azure 리소스에 대 한 관리 되는 id 가상 머신 확장에 스키마 �
 
 ## <a name="azure-instance-metadata-service"></a>Azure Instance Metadata Service
 
-[IMDS (Azure Instance Metadata Service)](/azure/virtual-machines/windows/instance-metadata-service) 는 가상 머신을 관리 하 고 구성 하는 데 사용할 수 있는 실행 중인 가상 머신 인스턴스에 대 한 정보를 제공 하는 REST 끝점입니다. 끝점은 가상 머신 내 에서만 액세스할 수 있는 잘 알려진 라우팅할 수 없는 IP 주소 (`169.254.169.254`)에서 사용할 수 있습니다.
+[IMDS (Azure Instance Metadata Service)](/azure/virtual-machines/windows/instance-metadata-service) 는 가상 머신을 관리 하 고 구성 하는 데 사용할 수 있는 실행 중인 가상 머신 인스턴스에 대 한 정보를 제공 하는 REST 엔드포인트입니다. 엔드포인트은 가상 머신 내 에서만 액세스할 수 있는 잘 알려진 라우팅할 수 없는 IP 주소 (`169.254.169.254`)에서 사용할 수 있습니다.
 
 Azure IMDS를 사용 하 여 토큰을 요청 하는 경우 몇 가지 이점이 있습니다. 
 
 1. 서비스가 가상 컴퓨터 외부에 있으므로 관리 되는 id에 사용 되는 자격 증명이 더 이상 가상 컴퓨터에 존재 하지 않습니다. 대신, Azure 가상 머신의 호스트 컴퓨터에서 호스트 되 고 보호 됩니다.   
 2. Azure IaaS에서 지원 되는 모든 Windows 및 Linux 운영 체제는 관리 되는 id를 사용할 수 있습니다.
 3. VM 확장을 더 이상 프로 비전 할 필요가 없으므로 배포는 더 빠르고 간편 합니다.
-4. IMDS 끝점을 사용 하면 최대 1000 사용자 할당 관리 id를 단일 가상 머신에 할당할 수 있습니다.
+4. IMDS 엔드포인트을 사용 하면 최대 1000 사용자 할당 관리 id를 단일 가상 머신에 할당할 수 있습니다.
 5. 가상 머신 확장을 사용 하는 것과는 반대로 IMDS를 사용 하는 요청에 대 한 중요 한 변경 내용이 없으므로 현재 가상 머신 확장을 사용 하는 기존 배포를 통해 매우 간단 하 게 포트를 사용할 수 있습니다.
 
 이러한 이유로 가상 머신 확장이 사용 되지 않는 경우 Azure IMDS 서비스는 토큰을 요청 하는 서 실제로 방법이 됩니다. 

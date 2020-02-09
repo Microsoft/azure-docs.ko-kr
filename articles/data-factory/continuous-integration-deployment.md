@@ -22,13 +22,13 @@ ms.locfileid: "77061576"
 
 ## <a name="overview"></a>개요
 
-연속 통합은 코드 베이스에 대 한 각 변경을 자동으로 가능한 한 빨리 테스트 하는 방법입니다. 연속 전달은 연속 통합 중에 발생 하는 테스트를 따르고 스테이징 또는 프로덕션 시스템에 변경 내용을 푸시합니다.
+연속 통합은 코드 베이스에 대한 각 변경을 자동으로 가능한 한 빨리 테스트 하는 방법입니다. 연속 전달은 연속 통합 중에 발생 하는 테스트를 따르고 스테이징 또는 프로덕션 시스템에 변경 내용을 푸시합니다.
 
 Azure Data Factory에서 CI/CD (지속적인 통합 및 배달)는 한 환경 (개발, 테스트, 프로덕션)에서 다른 환경으로 Data Factory 파이프라인을 이동 하는 것을 의미 합니다. Azure Resource Manager 템플릿과 Data Factory UX 통합을 사용 하 여 CI/CD를 수행할 수 있습니다.
 
-Data Factory UX의 **ARM 템플릿** 드롭다운 메뉴에서 리소스 관리자 템플릿을 생성할 수 있습니다. **ARM 템플릿 내보내기**를 선택 하면 포털에서 데이터 팩터리에 대 한 리소스 관리자 템플릿과 모든 연결 문자열 및 기타 매개 변수를 포함 하는 구성 파일을 생성 합니다. 그런 다음 각 환경 (개발, 테스트, 프로덕션)에 대해 하나의 구성 파일을 만듭니다. 주 Resource Manager 템플릿 파일은 모든 환경에서 동일하게 유지됩니다.
+Data Factory UX의 **ARM 템플릿** 드롭다운 메뉴에서 리소스 관리자 템플릿을 생성할 수 있습니다. **ARM 템플릿 내보내기**를 선택 하면 포털에서 데이터 팩터리에 대한 리소스 관리자 템플릿과 모든 연결 문자열 및 기타 매개 변수를 포함 하는 구성 파일을 생성 합니다. 그런 다음 각 환경 (개발, 테스트, 프로덕션)에 대해 하나의 구성 파일을 만듭니다. 주 Resource Manager 템플릿 파일은 모든 환경에서 동일하게 유지됩니다.
 
-이 기능에 대 한 9 분의 소개와 데모를 보려면 다음 비디오를 시청 하세요.
+이 기능에 대한 9 분의 소개와 데모를 보려면 다음 비디오를 시청 하세요.
 
 > [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Continuous-integration-and-deployment-using-Azure-Data-Factory/player]
 
@@ -36,11 +36,11 @@ Data Factory UX의 **ARM 템플릿** 드롭다운 메뉴에서 리소스 관리�
 
 ## <a name="cicd-lifecycle"></a>CI/CD 수명 주기
 
-다음은 Azure Repos Git로 구성 된 Azure data factory의 CI/CD 수명 주기에 대 한 샘플 개요입니다. Git 리포지토리를 구성 하는 방법에 대 한 자세한 내용은 [Azure Data Factory에서 소스 제어](source-control.md)를 참조 하세요.
+다음은 Azure Repos Git로 구성 된 Azure data factory의 CI/CD 수명 주기에 대한 샘플 개요입니다. Git 리포지토리를 구성 하는 방법에 대한 자세한 내용은 [Azure Data Factory에서 소스 제어](source-control.md)를 참조 하세요.
 
 1.  Azure Repos Git를 사용 하 여 개발 데이터 팩터리가 생성 및 구성 됩니다. 모든 개발자는 파이프라인 및 데이터 집합과 같은 Data Factory 리소스를 작성할 수 있는 권한이 있어야 합니다.
 
-1.  개발자는 해당 기능 분기를 변경할 때 가장 최근의 변경 내용으로 파이프라인 실행을 디버그 합니다. 파이프라인 실행을 디버그 하는 방법에 대 한 자세한 내용은 [Azure Data Factory를 사용 하 여 반복 개발 및 디버깅](iterative-development-debugging.md)을 참조 하세요.
+1.  개발자는 해당 기능 분기를 변경할 때 가장 최근의 변경 내용으로 파이프라인 실행을 디버그 합니다. 파이프라인 실행을 디버그 하는 방법에 대한 자세한 내용은 [Azure Data Factory를 사용 하 여 반복 개발 및 디버깅](iterative-development-debugging.md)을 참조 하세요.
 
 1.  개발자는 변경 내용을 충족 하 고 나면 해당 기능 분기에서 마스터 또는 공동 작업 분기로 끌어오기 요청을 만들어 해당 변경 내용을 피어로 검토할 수 있습니다.
 
@@ -52,7 +52,7 @@ Data Factory UX의 **ARM 템플릿** 드롭다운 메뉴에서 리소스 관리�
 
 ## <a name="create-a-resource-manager-template-for-each-environment"></a>각 환경에 Resource Manager 템플릿 만들기
 
-1. **Arm 템플릿** 목록에서 **arm 템플릿 내보내기** 를 선택 하 여 개발 환경에서 데이터 팩터리에 대 한 리소스 관리자 템플릿을 내보냅니다.
+1. **Arm 템플릿** 목록에서 **arm 템플릿 내보내기** 를 선택 하 여 개발 환경에서 데이터 팩터리에 대한 리소스 관리자 템플릿을 내보냅니다.
 
    ![리소스 관리자 템플릿 내보내기](media/continuous-integration-deployment/continuous-integration-image1.png)
 
@@ -70,7 +70,7 @@ Data Factory UX의 **ARM 템플릿** 드롭다운 메뉴에서 리소스 관리�
 
 ### <a name="connection-strings"></a>연결 문자열
 
-연결 문자열을 구성 하는 방법에 대 한 자세한 내용은 커넥터의 문서를 참조 하세요. 예를 들어 Azure SQL Database의 경우 [Azure Data Factory를 사용하여 Azure SQL Database 간 데이터 복사](connector-azure-sql-database.md)를 참조하세요. 연결 문자열을 확인 하려면 Data Factory UX에서 리소스에 대 한 코드 보기를 열 수 있습니다. 코드 보기에서 연결 문자열의 암호 또는 계정 키 부분이 제거 됩니다. 코드 보기를 열려면 여기에 강조 표시 된 아이콘을 선택 합니다.
+연결 문자열을 구성 하는 방법에 대한 자세한 내용은 커넥터의 문서를 참조 하세요. 예를 들어 Azure SQL Database의 경우 [Azure Data Factory를 사용하여 Azure SQL Database 간 데이터 복사](connector-azure-sql-database.md)를 참조하세요. 연결 문자열을 확인 하려면 Data Factory UX에서 리소스에 대한 코드 보기를 열 수 있습니다. 코드 보기에서 연결 문자열의 암호 또는 계정 키 부분이 제거 됩니다. 코드 보기를 열려면 여기에 강조 표시 된 아이콘을 선택 합니다.
 
 ![코드 보기를 열어 연결 문자열 확인](media/continuous-integration-deployment/continuous-integration-codeview.png)
 
@@ -82,11 +82,11 @@ Data Factory UX의 **ARM 템플릿** 드롭다운 메뉴에서 리소스 관리�
 
 ### <a name="requirements"></a>요구 사항
 
--    [Azure Resource Manager 서비스 끝점](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-resource-manager)을 사용 하는 Visual Studio Team Foundation Server 또는 Azure Repos에 연결 된 Azure 구독입니다.
+-    [Azure Resource Manager 서비스 엔드포인트](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-resource-manager)을 사용 하는 Visual Studio Team Foundation Server 또는 Azure Repos에 연결 된 Azure 구독입니다.
 
 -   Azure Repos Git 통합을 사용 하 여 구성 된 데이터 팩터리입니다.
 
--   각 환경에 대 한 암호를 포함 하는 [Azure key vault](https://azure.microsoft.com/services/key-vault/) .
+-   각 환경에 대한 암호를 포함 하는 [Azure key vault](https://azure.microsoft.com/services/key-vault/) .
 
 ### <a name="set-up-an-azure-pipelines-release"></a>Azure Pipelines 릴리스 설정
 
@@ -116,15 +116,15 @@ Data Factory UX의 **ARM 템플릿** 드롭다운 메뉴에서 리소스 관리�
 
     b.  새 태스크를 만듭니다. **Azure 리소스 그룹 배포**를 검색 한 다음 **추가**를 선택 합니다.
 
-    c.  배포 작업에서 대상 데이터 팩터리에 대 한 구독, 리소스 그룹 및 위치를 선택 합니다. 필요한 경우 자격 증명을 제공 합니다.
+    c.  배포 작업에서 대상 데이터 팩터리에 대한 구독, 리소스 그룹 및 위치를 선택 합니다. 필요한 경우 자격 증명을 제공 합니다.
 
     .  **작업** 목록에서 **리소스 그룹 만들기 또는 업데이트**를 선택 합니다.
 
-    e.  **템플릿** 상자 옆의 줄임표 단추 ( **...** )를 선택 합니다. 이 문서의 [각 환경에 대 한 리소스 관리자 템플릿 만들기](continuous-integration-deployment.md#create-a-resource-manager-template-for-each-environment) 섹션에서 **ARM 템플릿 가져오기** 를 사용 하 여 만든 Azure Resource Manager 템플릿을 찾아봅니다. Adf_publish 분기의 <FactoryName> 폴더에서이 파일을 찾습니다.
+    e.  **템플릿** 상자 옆의 줄임표 단추 ( **...** )를 선택 합니다. 이 문서의 [각 환경에 대한 리소스 관리자 템플릿 만들기](continuous-integration-deployment.md#create-a-resource-manager-template-for-each-environment) 섹션에서 **ARM 템플릿 가져오기** 를 사용 하 여 만든 Azure Resource Manager 템플릿을 찾아봅니다. Adf_publish 분기의 <FactoryName> 폴더에서이 파일을 찾습니다.
 
     f.  **템플릿 매개 변수 재정의** 필드 를 클릭 하 **여 매개** 변수 파일을 선택 합니다. 사용자가 선택한 파일은 복사본을 만들었는지 아니면 기본 파일 ARMTemplateParametersForFactory를 사용 하는지에 따라 달라 집니다.
 
-    g.  **템플릿 매개 변수 재정의** 필드 **템플릿 매개 변수 재정의** 상자 옆에 대상 데이터 팩터리에 대 한 정보를 입력 합니다. Azure Key Vault에서 제공 하는 자격 증명의 경우 큰따옴표 사이에 암호의 이름을 입력 합니다. 예를 들어 비밀의 이름이 cred1 인 경우이 값으로 **"$ (cred1)"** 를 입력 합니다.
+    g.  **템플릿 매개 변수 재정의** 필드 **템플릿 매개 변수 재정의** 상자 옆에 대상 데이터 팩터리에 대한 정보를 입력 합니다. Azure Key Vault에서 제공 하는 자격 증명의 경우 큰따옴표 사이에 암호의 이름을 입력 합니다. 예를 들어 비밀의 이름이 cred1 인 경우이 값으로 **"$ (cred1)"** 를 입력 합니다.
 
     h. **배포 모드**에 대해 **증분** 을 선택 합니다.
 
@@ -178,7 +178,7 @@ Azure Resource Manager 템플릿에 전달 해야 하는 암호가 있는 경우
 
    #### <a name="grant-permissions-to-the-azure-pipelines-agent"></a>Azure Pipelines 에이전트에 권한 부여
 
-   올바른 사용 권한이 설정 되어 있지 않으면 액세스 거부 오류가 발생 하 여 Azure Key Vault 태스크가 실패할 수 있습니다. 릴리스에 대 한 로그를 다운로드 하 고 명령을 포함 하는 ps1 파일을 찾아 Azure Pipelines 에이전트에 대 한 권한을 부여 합니다. 명령을 직접 실행할 수 있습니다. 또는 파일에서 보안 주체 ID를 복사 하 고 Azure Portal에 직접 액세스 정책을 추가할 수 있습니다. `Get` 및 `List`는 필요한 최소 권한입니다.
+   올바른 사용 권한이 설정 되어 있지 않으면 액세스 거부 오류가 발생 하 여 Azure Key Vault 태스크가 실패할 수 있습니다. 릴리스에 대한 로그를 다운로드 하 고 명령을 포함 하는 ps1 파일을 찾아 Azure Pipelines 에이전트에 대한 권한을 부여 합니다. 명령을 직접 실행할 수 있습니다. 또는 파일에서 보안 주체 ID를 복사 하 고 Azure Portal에 직접 액세스 정책을 추가할 수 있습니다. `Get` 및 `List`는 필요한 최소 권한입니다.
 
 ### <a name="update-active-triggers"></a>활성 트리거 업데이트
 
@@ -461,18 +461,18 @@ GIT 모드의 경우 템플릿 및 하드 코드 된 속성에서 매개 변수�
 * 자동화 된 CI/CD를 사용 하 고 리소스 관리자 배포 중에 일부 속성을 변경 하려고 하지만 속성은 기본적으로 매개 변수화 되지 않습니다.
 * 팩터리는 기본 리소스 관리자 템플릿이 허용 되는 최대 매개 변수 (256)를 초과 하기 때문에 잘못 되었습니다.
 
-이러한 조건에서 기본 매개 변수화 템플릿을 재정의 하려면 data factory git 통합에 대 한 루트 폴더로 지정 된 폴더에 이름이 arm 인 파일을 만듭니다. 정확한 파일 이름을 사용 해야 합니다. Data Factory는 현재 공동 작업 분기 뿐만 아니라 Azure Data Factory 포털에 있는 분기에서이 파일을 읽습니다. UI에서 **ARM 템플릿 내보내기** 를 선택 하 여 변경 내용을 테스트할 수 있는 private 분기에서 파일을 만들거나 편집할 수 있습니다. 그런 다음 공동 작업 분기에 파일을 병합할 수 있습니다. 파일이 없는 경우 기본 템플릿이 사용 됩니다.
+이러한 조건에서 기본 매개 변수화 템플릿을 재정의 하려면 data factory git 통합에 대한 루트 폴더로 지정 된 폴더에 이름이 arm 인 파일을 만듭니다. 정확한 파일 이름을 사용 해야 합니다. Data Factory는 현재 공동 작업 분기 뿐만 아니라 Azure Data Factory 포털에 있는 분기에서이 파일을 읽습니다. UI에서 **ARM 템플릿 내보내기** 를 선택 하 여 변경 내용을 테스트할 수 있는 private 분기에서 파일을 만들거나 편집할 수 있습니다. 그런 다음 공동 작업 분기에 파일을 병합할 수 있습니다. 파일이 없는 경우 기본 템플릿이 사용 됩니다.
 
 ### <a name="syntax-of-a-custom-parameters-file"></a>사용자 지정 매개 변수 파일의 구문
 
-다음은 사용자 지정 매개 변수 파일을 만들 때 따라야 할 몇 가지 지침입니다. 이 파일은 트리거, 파이프라인, 연결 된 서비스, 데이터 집합, 통합 런타임 등의 각 엔터티 형식에 대 한 섹션으로 구성 됩니다.
+다음은 사용자 지정 매개 변수 파일을 만들 때 따라야 할 몇 가지 지침입니다. 이 파일은 트리거, 파이프라인, 연결 된 서비스, 데이터 집합, 통합 런타임 등의 각 엔터티 형식에 대한 섹션으로 구성 됩니다.
 * 관련 엔터티 형식 아래에 속성 경로를 입력 합니다.
-* 속성 이름을 `*`로 설정 하면 그 아래에 있는 모든 속성을 매개 변수화 하는 것을 알 수 있습니다 (재귀적이 아닌 첫 번째 수준 까지만). 이 구성에 대 한 예외를 제공할 수도 있습니다.
+* 속성 이름을 `*`로 설정 하면 그 아래에 있는 모든 속성을 매개 변수화 하는 것을 알 수 있습니다 (재귀적이 아닌 첫 번째 수준 까지만). 이 구성에 대한 예외를 제공할 수도 있습니다.
 * 속성의 값을 문자열로 설정 하면 속성을 매개 변수화 하는 것을 알 수 있습니다.  `<action>:<name>:<stype>`형식을 사용 합니다.
    *  `<action>` 는 다음 문자 중 하나를 사용할 수 있습니다.
       * `=` 는 현재 값을 매개 변수의 기본값으로 유지 한다는 의미입니다.
       * `-` 는 매개 변수의 기본값을 유지 하지 않음을 의미 합니다.
-      * `|` 는 연결 문자열이 나 키에 대 한 Azure Key Vault의 비밀에 대 한 특별 한 사례입니다.
+      * `|` 는 연결 문자열이 나 키에 대한 Azure Key Vault의 비밀에 대한 특별 한 사례입니다.
    * `<name>` 는 매개 변수의 이름입니다. 비어 있는 경우 속성의 이름을 사용 합니다. 값이 `-` 문자로 시작 하는 경우에는 이름이 짧아집니다. 예를 들어 `AzureStorage1_properties_typeProperties_connectionString` `AzureStorage1_connectionString`으로 줄어듭니다.
    * `<stype>` 는 매개 변수의 형식입니다.  `<stype>` 비어 있는 경우 기본 유형은 `string`입니다. 지원 되는 값: `string`, `bool`, `number`, `object`및 `securestring`.
 * 정의 파일에 배열을 지정 하면 템플릿의 일치 하는 속성이 배열 임을 나타냅니다. Data Factory 배열의 integration runtime 개체에 지정 된 정의를 사용 하 여 배열의 모든 개체를 반복 합니다. 두 번째 개체, 문자열은 각 반복에 대한 매개 변수의 이름으로 사용되는 속성의 이름이 됩니다.
@@ -542,7 +542,7 @@ GIT 모드의 경우 템플릿 및 하드 코드 된 속성에서 매개 변수�
     }
 }
 ```
-다음은 리소스 유형별로 분할 된 이전 템플릿의 구성 방법에 대 한 설명입니다.
+다음은 리소스 유형별로 분할 된 이전 템플릿의 구성 방법에 대한 설명입니다.
 
 #### <a name="pipelines"></a>파이프라인
     
@@ -680,7 +680,7 @@ GIT 모드의 경우 템플릿 및 하드 코드 된 속성에서 매개 변수�
 }
 ```
 
-다음 예제에서는 기본 매개 변수화 템플릿에 단일 값을 추가 하는 방법을 보여 줍니다. Databricks 연결 된 서비스에 대 한 기존 Azure Databricks 대화형 클러스터 ID를 매개 변수 파일에 추가 하려고 합니다. 이 파일은 `Microsoft.DataFactory/factories/linkedServices`의 속성 필드에 `existingClusterId`을 추가 하는 것을 제외 하 고 이전 파일과 동일 합니다.
+다음 예제에서는 기본 매개 변수화 템플릿에 단일 값을 추가 하는 방법을 보여 줍니다. Databricks 연결 된 서비스에 대한 기존 Azure Databricks 대화형 클러스터 ID를 매개 변수 파일에 추가 하려고 합니다. 이 파일은 `Microsoft.DataFactory/factories/linkedServices`의 속성 필드에 `existingClusterId`을 추가 하는 것을 제외 하 고 이전 파일과 동일 합니다.
 
 ```json
 {
@@ -793,7 +793,7 @@ GIT 모드의 경우 템플릿 및 하드 코드 된 속성에서 매개 변수�
 
 ## <a name="linked-resource-manager-templates"></a>연결된 Resource Manager 템플릿
 
-데이터 팩터리에 대해 CI/CD를 설정한 경우 팩터리가 증가 함에 따라 Azure Resource Manager 템플릿 제한을 초과할 수 있습니다. 예를 들어 한 한도는 리소스 관리자 템플릿에서 최대 리소스 수입니다. 팩터리에 대 한 전체 리소스 관리자 템플릿을 생성 하는 동안 많은 팩터리를 수용 하기 위해 이제 Data Factory 연결 된 리소스 관리자 템플릿을 생성 합니다. 이 기능을 사용 하면 전체 팩터리 페이로드가 여러 파일로 분할 되어 제한에 의해 제한 되지 않습니다.
+데이터 팩터리에 대해 CI/CD를 설정한 경우 팩터리가 증가 함에 따라 Azure Resource Manager 템플릿 제한을 초과할 수 있습니다. 예를 들어 한 한도는 리소스 관리자 템플릿에서 최대 리소스 수입니다. 팩터리에 대한 전체 리소스 관리자 템플릿을 생성 하는 동안 많은 팩터리를 수용 하기 위해 이제 Data Factory 연결 된 리소스 관리자 템플릿을 생성 합니다. 이 기능을 사용 하면 전체 팩터리 페이로드가 여러 파일로 분할 되어 제한에 의해 제한 되지 않습니다.
 
 Git를 구성한 경우에는 연결 된 템플릿이 생성 되어 linkedTemplates 이라는 새 폴더의 adf_publish 분기에 전체 리소스 관리자 템플릿과 함께 저장 됩니다.
 
@@ -835,17 +835,17 @@ Git이 구성 되지 않은 경우 **Arm 템플릿** 목록에서 **arm 템플�
 
 데이터 팩터리에 Git 통합을 사용 하 고 변경 내용을 개발에서 테스트로 이동 하는 CI/CD 파이프라인을 사용 하는 경우 다음 모범 사례를 따르는 것이 좋습니다.
 
--   **Git 통합**. Git 통합을 사용 하 여 개발 데이터 팩터리만 구성 해야 합니다. 테스트 및 프로덕션에 대 한 변경 사항은 CI/CD를 통해 배포 되며 Git 통합이 필요 하지 않습니다.
+-   **Git 통합**. Git 통합을 사용 하 여 개발 데이터 팩터리만 구성 해야 합니다. 테스트 및 프로덕션에 대한 변경 사항은 CI/CD를 통해 배포 되며 Git 통합이 필요 하지 않습니다.
 
 -   **Data Factory CI/CD 스크립트**. CI/CD의 리소스 관리자 배포 단계 전에 트리거를 중지 하 고 다시 시작 하 고 정리를 수행 하는 등의 특정 작업을 완료 해야 합니다. 배포 전후에 PowerShell 스크립트를 사용 하는 것이 좋습니다. 자세한 내용은 [활성 트리거 업데이트](#update-active-triggers)를 참조 하세요.
 
 -   **통합 런타임 및 공유**. 통합 런타임은 자주 변경 되지 않으며 CI/CD의 모든 단계에서 유사 합니다. 따라서 Data Factory는 CI/CD의 모든 단계에서 동일한 이름 및 유형의 통합 런타임을 사용할 것으로 예상 합니다. 모든 단계에서 통합 런타임을 공유 하려면 공유 통합 런타임을 포함 하기 위해 삼항 팩터리를 사용 하는 것이 좋습니다. 모든 환경에서이 공유 팩터리를 연결 된 통합 런타임 형식으로 사용할 수 있습니다.
 
--   **Key Vault**. Azure Key Vault에 따라 연결 된 서비스를 사용 하는 경우 다른 환경에 대해 별도의 키 자격 증명 모음을 유지 하 여이를 활용할 수 있습니다. 각 키 자격 증명 모음에 대 한 별도의 권한 수준을 구성할 수도 있습니다. 예를 들어 팀 멤버에 게 프로덕션 암호에 대 한 사용 권한을 부여 하지 않으려고 할 수 있습니다. 이 접근 방식을 따를 경우 모든 단계에서 동일한 비밀 이름을 유지 하는 것이 좋습니다. 동일한 이름을 유지 하는 경우 리소스 관리자 템플릿 매개 변수 중 하나인 키 자격 증명 모음 이름만 변경 되므로 CI/CD 환경에서 리소스 관리자 템플릿을 변경할 필요가 없습니다.
+-   **Key Vault**. Azure Key Vault에 따라 연결 된 서비스를 사용 하는 경우 다른 환경에 대해 별도의 키 자격 증명 모음을 유지 하 여이를 활용할 수 있습니다. 각 키 자격 증명 모음에 대한 별도의 권한 수준을 구성할 수도 있습니다. 예를 들어 팀 멤버에 게 프로덕션 암호에 대한 사용 권한을 부여 하지 않으려고 할 수 있습니다. 이 접근 방식을 따를 경우 모든 단계에서 동일한 비밀 이름을 유지 하는 것이 좋습니다. 동일한 이름을 유지 하는 경우 리소스 관리자 템플릿 매개 변수 중 하나인 키 자격 증명 모음 이름만 변경 되므로 CI/CD 환경에서 리소스 관리자 템플릿을 변경할 필요가 없습니다.
 
 ## <a name="unsupported-features"></a>지원되지 않는 기능
 
-- 기본적으로 Data Factory는 커밋 또는 리소스의 선택적 게시를 cherry-pick 수 없습니다. 게시에는 데이터 팩터리에 대 한 모든 변경 내용이 포함 됩니다.
+- 기본적으로 Data Factory는 커밋 또는 리소스의 선택적 게시를 cherry-pick 수 없습니다. 게시에는 데이터 팩터리에 대한 모든 변경 내용이 포함 됩니다.
 
     - 데이터 팩터리 엔터티는 서로 종속 됩니다. 예를 들어 트리거는 파이프라인에 따라 다르며 파이프라인은 데이터 집합 및 기타 파이프라인에 종속 됩니다. 리소스 하위 집합을 선택적으로 게시 하면 예기치 않은 동작 및 오류가 발생할 수 있습니다.
     - 드물지만 선택적 게시를 사용 해야 하는 경우 핫픽스를 사용 하는 것이 좋습니다. 자세한 내용은 [핫픽스 프로덕션 분기](#hotfix-production-branch)를 참조 하세요.

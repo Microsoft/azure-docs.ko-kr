@@ -66,7 +66,7 @@ SignalR Service를 사용하면 모든 클라이언트 또는 클라이언트의
 
 이 문서에서는 Azure Functions를 SignalR Service와 함께 사용하여 다양한 실시간 메시징 시나리오를 사용하는 방법에 대한 개요를 살펴봤습니다.
 
-Azure Functions 및 SignalR Service를 함께 사용 하는 방법에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
+Azure Functions 및 SignalR Service를 함께 사용 하는 방법에 대한 자세한 내용은 다음 리소스를 참조 하세요.
 
 * [SignalR Service를 사용 하 여 개발 및 구성 Azure Functions](signalr-concept-serverless-development-config.md)
 * [Azure Functions 및 SignalR 서비스를 사용 하 여 웹 응용 프로그램에서 자동 업데이트 사용](https://docs.microsoft.com/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr)

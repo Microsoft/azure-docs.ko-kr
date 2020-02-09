@@ -138,7 +138,7 @@ Azure AD에서 동기화 된 사용자에 대 한 임시 암호를 지원 하려
 > 사용자가 다음에 로그온 할 때 자신의 암호를 변경 하도록 강제 하려면 암호를 변경 해야 합니다.  AD Connect는 강제로 암호 변경 플래그를 선택 하지 않습니다. 암호 해시 동기화 중에 발생 하는 검색 된 암호 변경을 보완 합니다.
 
 > [!CAUTION]
-> Azure AD에서 SSPR (셀프 서비스 암호 재설정)를 사용 하도록 설정 하지 않은 경우 Azure AD에서 암호를 재설정 한 후 새 암호를 사용 하 여 Active Directory 로그인을 시도 하는 경우에는 새 암호가 유효 하지 않기 때문에 azure ad에서 사용자의 암호 재설정을 사용 하도록 설정 하는 것이 좋습니다 Active Directory . 테 넌 트에서 SSPR 및 비밀 번호 쓰기 저장을 사용 하도록 설정한 경우에만이 기능을 사용 해야 합니다.
+> Azure AD에서 SSPR (셀프 서비스 암호 재설정)를 사용 하도록 설정 하지 않은 경우 Azure AD에서 암호를 재설정 한 후 새 암호를 사용 하 여 Active Directory 로그인을 시도 하는 경우에는 새 암호가 유효 하지 않기 때문에 azure ad에서 사용자의 암호 재설정을 사용 하도록 설정 하는 것이 좋습니다 Active Directory . 테넌트에서 SSPR 및 비밀 번호 쓰기 저장을 사용 하도록 설정한 경우에만이 기능을 사용 해야 합니다.
 
 > [!NOTE]
 > 이 기능은 현재 공개 미리 보기 상태입니다.
@@ -169,11 +169,11 @@ Azure AD Domain Services를 사용 하 여 Kerberos, LDAP 또는 NTLM을 사용 
 > [!IMPORTANT]
 > Azure AD Connect는 온-프레미스 AD DS 환경과의 동기화를 위해서만 설치되고 구성되어야 합니다. 개체를 Azure AD로 개체를 다시 동기화하기 위해 Azure AD DS 관리형 도메인에 Azure AD Connect를 설치하는 것은 지원되지 않습니다.
 >
-> Azure AD Connect는 azure AD 테 넌 트에 대해 Azure AD DS를 사용 하도록 설정 하는 경우에만 레거시 암호 해시를 동기화 합니다. Azure AD Connect를 사용 하 여 온-프레미스 AD DS 환경을 Azure AD와 동기화 하는 경우에는 다음 단계가 사용 되지 않습니다.
+> Azure AD Connect는 azure AD 테넌트에 대해 Azure AD DS를 사용 하도록 설정 하는 경우에만 레거시 암호 해시를 동기화 합니다. Azure AD Connect를 사용 하 여 온-프레미스 AD DS 환경을 Azure AD와 동기화 하는 경우에는 다음 단계가 사용 되지 않습니다.
 >
 > 레거시 응용 프로그램이 NTLM 인증 또는 LDAP 단순 바인딩을 사용 하지 않는 경우 Azure AD DS에 대해 NTLM 암호 해시 동기화를 사용 하지 않도록 설정 하는 것이 좋습니다. 자세한 내용은 [약한 암호 그룹 및 NTLM 자격 증명 해시 동기화 사용 안 함](../../active-directory-domain-services/secure-your-domain.md)을 참조 하세요.
 
-1. Azure AD Connect은 테 넌 트의 Azure AD Domain Services 인스턴스에 대 한 공개 키를 검색 합니다.
+1. Azure AD Connect은 테넌트의 Azure AD Domain Services 인스턴스에 대 한 공개 키를 검색 합니다.
 1. 사용자가 암호를 변경 하는 경우 온-프레미스 도메인 컨트롤러는 다음과 같은 두 가지 특성에 암호 변경 (해시)의 결과를 저장 합니다.
     * NTLM 암호 해시에 대 한 *unicodePwd* 입니다.
     * Kerberos 암호 해시에 대 한 *supplementalCredentials* 입니다.
@@ -186,11 +186,11 @@ Azure AD Domain Services를 사용 하 여 Kerberos, LDAP 또는 NTLM을 사용 
         * 이 설정을 사용 하지 않도록 설정 하면에서 사용자의 암호와 다른 임의의 높은 엔트로피 NTLM 해시를 생성 합니다. 그런 다음이 해시는 *supplementalCrendetials* 특성에서 하나의 데이터 구조로 Exacted 된 Kerberos 암호 해시와 결합 됩니다.
         * 사용 하도록 설정 하면 *unicodePwd* 특성의 값을 *supplementalCredentials* 특성에서 추출 된 Kerberos 암호 해시와 결합 하 여 하나의 데이터 구조로 결합 합니다.
     * AES 대칭 키를 사용 하 여 단일 데이터 구조를 암호화 합니다.
-    * 테 넌 트의 Azure AD Domain Services 공개 키를 사용 하 여 AES 대칭 키를 암호화 합니다.
+    * 테넌트의 Azure AD Domain Services 공개 키를 사용 하 여 AES 대칭 키를 암호화 합니다.
 1. Azure AD Connect는 암호화 된 AES 대칭 키, 암호 해시가 포함 된 암호화 된 데이터 구조 및 Azure AD에 대 한 초기화 벡터를 전송 합니다.
 1. Azure AD는 암호화 된 AES 대칭 키, 암호화 된 데이터 구조 및 사용자에 대 한 초기화 벡터를 저장 합니다.
 1. Azure AD는 암호화 된 AES 대칭 키, 암호화 된 데이터 구조 및 Azure AD Domain Services에 대 한 암호화 된 HTTP 세션을 통해 내부 동기화 메커니즘을 사용 하 여 초기화 벡터를 푸시합니다.
-1. Azure AD Domain Services는 Azure 주요 자격 증명 모음에서 테 넌 트 인스턴스의 개인 키를 검색 합니다.
+1. Azure AD Domain Services는 Azure 주요 자격 증명 모음에서 테넌트 인스턴스의 개인 키를 검색 합니다.
 1. 암호화 된 각 데이터 집합 (단일 사용자의 암호 변경을 나타냄)에 대해 Azure AD Domain Services 다음 단계를 수행 합니다.
     * 는 개인 키를 사용 하 여 AES 대칭 키를 해독 합니다.
     * 는 AES 대칭 키와 초기화 벡터를 사용 하 여 암호 해시가 포함 된 암호화 된 데이터 구조의 암호를 해독 합니다.

@@ -16,7 +16,7 @@ ms.locfileid: "75658511"
 ---
 # <a name="quotas-virtual-machine-size-restrictions-and-region-availability-in-azure-kubernetes-service-aks"></a>Azure Kubernetes 서비스 (AKS)의 할당량, 가상 머신 크기 제한 및 지역 가용성
 
-모든 Azure 서비스는 리소스 및 기능에 대 한 기본 제한 및 할당량을 설정 합니다. 특정 VM (가상 머신) Sku도 사용할 수 있도록 제한 됩니다.
+모든 Azure 서비스는 리소스 및 기능에 대한 기본 제한 및 할당량을 설정 합니다. 특정 VM (가상 머신) Sku도 사용할 수 있도록 제한 됩니다.
 
 이 문서에서는 AKS (Azure Kubernetes Service) 리소스의 기본 리소스 제한과 Azure 지역에서 AKS의 가용성에 대해 자세히 설명 합니다.
 
@@ -29,7 +29,7 @@ ms.locfileid: "75658511"
 다른 모든 네트워크, 컴퓨팅 및 스토리지 제한은 프로비전된 인프라에 적용됩니다. 관련 한도는 [Azure 구독 및 서비스 제한](../azure-resource-manager/management/azure-subscription-service-limits.md)을 참조 하세요.
 
 > [!IMPORTANT]
-> AKS 클러스터를 업그레이드 하는 경우 추가 리소스가 일시적으로 사용 됩니다. 이러한 리소스에는 가상 네트워크 서브넷 또는 가상 머신 vCPU 할당량에서 사용 가능한 IP 주소가 포함 됩니다. Windows Server 컨테이너 (현재 AKS에서 미리 보기 상태)를 사용 하는 경우 노드에 최신 업데이트를 적용 하는 유일한 보증 방법은 업그레이드 작업을 수행 하는 것입니다. 실패 한 클러스터 업그레이드 프로세스는 이러한 임시 리소스를 처리 하는 데 사용할 수 있는 IP 주소 공간 또는 vCPU 할당량이 없음을 나타낼 수 있습니다. Windows Server 노드 업그레이드 프로세스에 대 한 자세한 내용은 [AKS에서 노드 풀 업그레이드][nodepool-upgrade]를 참조 하세요.
+> AKS 클러스터를 업그레이드 하는 경우 추가 리소스가 일시적으로 사용 됩니다. 이러한 리소스에는 가상 네트워크 서브넷 또는 가상 머신 vCPU 할당량에서 사용 가능한 IP 주소가 포함 됩니다. Windows Server 컨테이너 (현재 AKS에서 미리 보기 상태)를 사용 하는 경우 노드에 최신 업데이트를 적용 하는 유일한 보증 방법은 업그레이드 작업을 수행 하는 것입니다. 실패 한 클러스터 업그레이드 프로세스는 이러한 임시 리소스를 처리 하는 데 사용할 수 있는 IP 주소 공간 또는 vCPU 할당량이 없음을 나타낼 수 있습니다. Windows Server 노드 업그레이드 프로세스에 대한 자세한 내용은 [AKS에서 노드 풀 업그레이드][nodepool-upgrade]를 참조 하세요.
 
 ## <a name="restricted-vm-sizes"></a>제한 된 VM 크기
 
@@ -43,7 +43,7 @@ AKS 클러스터의 각 노드에는 vCPU 및 메모리와 같은 고정 된 양
 - Standard_F1
 - Standard_F1s
 
-VM 유형 및 해당 계산 리소스에 대 한 자세한 내용은 [Azure의 가상 머신 크기][vm-skus]를 참조 하세요.
+VM 유형 및 해당 계산 리소스에 대한 자세한 내용은 [Azure의 가상 머신 크기][vm-skus]를 참조 하세요.
 
 ## <a name="region-availability"></a>리전 가용성
 

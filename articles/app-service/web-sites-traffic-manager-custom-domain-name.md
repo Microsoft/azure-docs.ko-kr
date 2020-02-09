@@ -1,6 +1,6 @@
 ---
 title: Traffic Manager를 사용 하 여 DNS 이름 구성
-description: 부하 분산을 위해 Traffic Manager와 통합 되는 Azure App Service 앱에 대 한 사용자 지정 도메인을 구성 하는 방법에 대해 알아봅니다.
+description: 부하 분산을 위해 Traffic Manager와 통합 되는 Azure App Service 앱에 대한 사용자 지정 도메인을 구성 하는 방법에 대해 알아봅니다.
 ms.assetid: 0f96c0e7-0901-489b-a95a-e3b66ca0a1c2
 ms.topic: article
 ms.date: 08/17/2016
@@ -48,7 +48,7 @@ ms.locfileid: "74689285"
 각각 도메인 공급자에 대한 구체적인 설명은 다르지만 사용자 지정 도메인 이름(예: **contoso.com**)*에서* 웹앱과 통합된 Traffic Manager 도메인 이름(**contoso.trafficmanager.net**)*으로* 매핑합니다.
 
 > [!NOTE]
-> 레코드를 이미 사용 중이고 앱을 우선적으로 바인딩해야 하는 경우 추가 CNAME 레코드를 만들 수 있습니다. 예를 들어 미리 **www\.contoso.com** 를 웹 앱에 바인딩하려면 **awverify** 에서 **contoso.trafficmanager.net**로 CNAME 레코드를 만듭니다. 그런 다음 "www" CNAME 레코드를 변경 하지 않고 "www\.contoso.com"를 웹 앱에 추가할 수 있습니다. 자세한 내용은 [사용자 지정 도메인에서 웹 앱에 대 한 DNS 레코드 만들기][CREATEDNS]를 참조 하세요.
+> 레코드를 이미 사용 중이고 앱을 우선적으로 바인딩해야 하는 경우 추가 CNAME 레코드를 만들 수 있습니다. 예를 들어 미리 **www\.contoso.com** 를 웹 앱에 바인딩하려면 **awverify** 에서 **contoso.trafficmanager.net**로 CNAME 레코드를 만듭니다. 그런 다음 "www" CNAME 레코드를 변경 하지 않고 "www\.contoso.com"를 웹 앱에 추가할 수 있습니다. 자세한 내용은 [사용자 지정 도메인에서 웹 앱에 대한 DNS 레코드 만들기][CREATEDNS]를 참조 하세요.
 
 도메인 공급자에서 DNS 레코드를 추가하거나 수정했다면 변경 내용을 저장합니다.
 

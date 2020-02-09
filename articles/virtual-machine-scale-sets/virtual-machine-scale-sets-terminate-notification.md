@@ -93,14 +93,14 @@ Update-AzVmss `
 
 종료 알림은 Azure Metadata Service [Scheduled Events](../virtual-machines/windows/scheduled-events.md)을 통해 전달 됩니다. Azure 메타데이터 서비스는 VM 내에서 액세스할 수 있는 REST 엔드포인트를 사용하여 Virtual Machines 실행에 대한 정보를 공개합니다. 이 정보는 VM 외부에 노출 되지 않도록 라우팅할 수 없는 IP를 통해 사용할 수 있습니다.
 
-이벤트에 대 한 요청을 처음으로 수행할 때 확장 집합에 대 한 Scheduled Events를 사용할 수 있습니다. 최대 2 분의 첫 번째 호출에서 지연 된 응답을 받을 수 있습니다. 정기적으로 끝점을 쿼리하여 예정 된 유지 관리 이벤트와 진행 중인 유지 관리 작업의 상태를 검색 합니다.
+이벤트에 대 한 요청을 처음으로 수행할 때 확장 집합에 대 한 Scheduled Events를 사용할 수 있습니다. 최대 2 분의 첫 번째 호출에서 지연 된 응답을 받을 수 있습니다. 정기적으로 엔드포인트을 쿼리하여 예정 된 유지 관리 이벤트와 진행 중인 유지 관리 작업의 상태를 검색 합니다.
 
 확장 집합 인스턴스가 24 시간 동안 요청 하지 않는 경우 확장 집합에 대해 Scheduled Events를 사용할 수 없습니다.
 
-### <a name="endpoint-discovery"></a>끝점 검색
+### <a name="endpoint-discovery"></a>엔드포인트 검색
 VNET 사용 Vm의 경우 Metadata Service는 라우팅 불가능 한 고정 IP 169.254.169.254에서 사용할 수 있습니다.
 
-이 미리 보기에 대 한 최신 버전의 Scheduled Events에 대 한 전체 끝점은 다음과 같습니다.
+이 미리 보기에 대 한 최신 버전의 Scheduled Events에 대 한 전체 엔드포인트은 다음과 같습니다.
 > 'http://169.254.169.254/metadata/scheduledevents?api-version=2019-01-01 '
 
 ### <a name="query-response"></a>쿼리 응답

@@ -20,7 +20,7 @@ ms.locfileid: "77046225"
 
 ## <a name="why-manage-machines-with-azure-automation-state-configuration"></a>Azure Automation 상태 구성으로 머신을 관리하는 이유는?
 
-Azure Automation 상태 구성은 모든 클라우드 또는 온-프레미스 데이터 센터에서 DSC (Desired State Configuration) 노드에 대 한 구성 관리 서비스입니다.
+Azure Automation 상태 구성은 모든 클라우드 또는 온-프레미스 데이터 센터에서 DSC (Desired State Configuration) 노드에 대한 구성 관리 서비스입니다.
 안전한 중앙 위치에서 수천 대의 컴퓨터를 빠르고 간편하게 확장할 수 있습니다.
 컴퓨터를 쉽게 온보드하고, 컴퓨터에 선언적 구성을 할당하고, 사용자가 지정한 필요 상태에 대한 각 컴퓨터의 규정 준수를 나타내는 보고서를 확인할 수 있습니다.
 Azure Automation 상태 구성 서비스는 PowerShell 스크립트에 Azure Automation runbook이 무엇 인지를 DSC에 제공 합니다.
@@ -43,7 +43,7 @@ Azure Automation 상태 구성을 다양한 머신의 관리에 사용할 수 �
 다음 섹션에서는 Azure Automation 상태 구성에 대해 각 머신 형식을 온보드하는 방법을 간략히 설명합니다.
 
 > [!NOTE]
->Linux 노드에 DSC를 배포 하면 `/tmp` 폴더 및 **Nxautomation** 과 같은 모듈이 사용 됩니다 .이를 적절 한 위치에 설치 하기 전에 확인을 위해 임시로 다운로드 됩니다. 모듈이 제대로 설치 되도록 하려면 Linux 용 Log Analytics 에이전트에 `/tmp` 폴더에 대 한 읽기/쓰기 권한이 있어야 합니다. Linux 용 Log Analytics 에이전트는 `omsagent` 사용자로 실행 됩니다. 
+>Linux 노드에 DSC를 배포 하면 `/tmp` 폴더 및 **Nxautomation** 과 같은 모듈이 사용 됩니다 .이를 적절 한 위치에 설치 하기 전에 확인을 위해 임시로 다운로드 됩니다. 모듈이 제대로 설치 되도록 하려면 Linux 용 Log Analytics 에이전트에 `/tmp` 폴더에 대한 읽기/쓰기 권한이 있어야 합니다. Linux 용 Log Analytics 에이전트는 `omsagent` 사용자로 실행 됩니다. 
 >
 >`omsagent` 사용자에 게 쓰기 권한을 부여 하려면 다음 명령을 실행 합니다. `setfacl -m u:omsagent:rwx /tmp`
 >
@@ -83,7 +83,7 @@ AzAutomationDscNode cmdlet은 PowerShell을 사용 하 여 Azure에서 가상 �
 
 ## <a name="physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure-including-aws-ec2-instances"></a>온-프레미스에 있는 실제/가상 Windows 컴퓨터 (AWS EC2 인스턴스 포함) 또는 Azure 이외의 클라우드
 
-온-프레미스 또는 다른 클라우드 환경에서 실행 되는 Windows 서버는 [Azure에 대 한 아웃 바운드 액세스](automation-dsc-overview.md#network-planning)권한이 있는 한 Azure Automation 상태 구성으로 등록 될 수도 있습니다.
+온-프레미스 또는 다른 클라우드 환경에서 실행 되는 Windows 서버는 [Azure에 대한 아웃 바운드 액세스](automation-dsc-overview.md#network-planning)권한이 있는 한 Azure Automation 상태 구성으로 등록 될 수도 있습니다.
 
 1. 최신 버전의 [WMF 5](https://aka.ms/wmf5latest)가 Azure Automation 상태 구성에 온보드하려는 머신에 설치되었는지 확인합니다.
 1. 뒤에 나오는 [**DSC 메타 구성 생성**](#generating-dsc-metaconfigurations) 섹션의 지침에 따라 필요한 DSC 메타 구성이 포함된 폴더를 생성합니다.
@@ -98,7 +98,7 @@ AzAutomationDscNode cmdlet은 PowerShell을 사용 하 여 Azure에서 가상 �
 
 ## <a name="physicalvirtual-linux-machines-on-premises-or-in-a-cloud-other-than-azure"></a>온-프레미스 또는 Azure 이외의 클라우드에서 온-프레미스의 물리적/가상 Linux 컴퓨터
 
-온-프레미스 또는 다른 클라우드 환경에서 실행 되는 Linux 서버는 [Azure에 대 한 아웃 바운드 액세스](automation-dsc-overview.md#network-planning)권한이 있는 한 Azure Automation 상태 구성으로 등록 될 수도 있습니다.
+온-프레미스 또는 다른 클라우드 환경에서 실행 되는 Linux 서버는 [Azure에 대한 아웃 바운드 액세스](automation-dsc-overview.md#network-planning)권한이 있는 한 Azure Automation 상태 구성으로 등록 될 수도 있습니다.
 
 1. 최신 버전의 [Linux용 PowerShell 필요한 상태 구성](https://github.com/Microsoft/PowerShell-DSC-for-Linux)이 Azure Automation 상태 구성에 온보드하려는 머신에 설치되어 있는지 확인합니다.
 2. [PowerShell DSC 로컬 구성 관리자 기본값](/powershell/scripting/dsc/managing-nodes/metaConfig4)이 사용자 사용 사례와 일치하는 경우 Azure Automation 상태 구성에서 끌어오고 보고하는 **모든** 머신을 온보드하려 합니다.
@@ -310,7 +310,7 @@ Azure Portal의 **계정 설정** 아래에 있는 **키**에서 상태 구성 �
 
 Azure Automation 상태 구성에서 DSC 노드로 컴퓨터를 등록 한 후 나중에 해당 노드를 다시 등록 해야 하는 여러 가지 이유가 있습니다.
 
-- Windows Server 2019 이전의 Windows Server 버전에서는 각 노드가 1 년 후에 만료 되는 인증에 대해 고유한 인증서를 자동으로 협상 합니다. 현재 PowerShell DSC 등록 프로토콜은 만료가 임박 하면 인증서를 자동으로 갱신할 수 없으므로 1 년 후에 노드를 다시 등록 해야 합니다. 다시 등록 하기 전에 각 노드에서 Windows Management Framework 5.0 RTM을 실행 하 고 있는지 확인 합니다. 노드의 인증 인증서가 만료 되 고 노드가 다시 등록 되지 않으면 노드가 Azure Automation와 통신할 수 없으며 ' 응답 없음 '으로 표시 됩니다. 다시 등록 하면 인증서 만료 시간에서 90 일을 뺀 후 또는 인증서 만료 시간 이후에 발생 한 모든 시점에서 새 인증서를 생성 하 고 사용 하 게 됩니다.  이 문제에 대 한 해결 방법은 Windows Server 2019 이상에 포함 되어 있습니다.
+- Windows Server 2019 이전의 Windows Server 버전에서는 각 노드가 1 년 후에 만료 되는 인증에 대해 고유한 인증서를 자동으로 협상 합니다. 현재 PowerShell DSC 등록 프로토콜은 만료가 임박 하면 인증서를 자동으로 갱신할 수 없으므로 1 년 후에 노드를 다시 등록 해야 합니다. 다시 등록 하기 전에 각 노드에서 Windows Management Framework 5.0 RTM을 실행 하 고 있는지 확인 합니다. 노드의 인증 인증서가 만료 되 고 노드가 다시 등록 되지 않으면 노드가 Azure Automation와 통신할 수 없으며 ' 응답 없음 '으로 표시 됩니다. 다시 등록 하면 인증서 만료 시간에서 90 일을 뺀 후 또는 인증서 만료 시간 이후에 발생 한 모든 시점에서 새 인증서를 생성 하 고 사용 하 게 됩니다.  이 문제에 대한 해결 방법은 Windows Server 2019 이상에 포함 되어 있습니다.
 - ConfigurationMode와 같은 노드의 초기 등록 중에 설정된 [PowerShell DSC 로컬 구성 관리자 값](/powershell/scripting/dsc/managing-nodes/metaConfig4)을 변경하려면 현재 이러한 DSC 에이전트 값은 다시 등록을 통해서만 변경할 수 있습니다. 한 가지 예외는 노드에 할당된 노드 구성입니다. 이는 직접 Azure Automation DSC에서 변경될 수 있습니다.
 
 다시 등록은이 문서에 설명 된 온 보 딩 방법 중 하나를 사용 하 여 처음에 노드를 등록 한 것과 같은 방식으로 수행할 수 있습니다. 다시 등록 하기 전에 Azure Automation 상태 구성에서 노드를 등록 취소할 필요가 없습니다.
@@ -324,7 +324,7 @@ Azure Automation 상태 구성을 사용하면 구성 관리를 위해 간편하
 
 Azure VM DSC(Desired State Configuration) 확장의 상태를 확인하거나 문제를 해결하려면, Azure Portal에서 등록될 VM으로 이동한 다음, **설정** 아래에서 **확장**을 클릭합니다. 그런 다음, 운영 체제에 따라 **DSC** 또는 **DSCForLinux**를 클릭합니다. 자세한 내용을 보려면 **자세한 상태 보기**를 클릭합니다.
 
-문제 해결에 대 한 자세한 내용은 [Azure Automation 필요한 상태 구성 (DSC)의 문제 해결](./troubleshoot/desired-state-configuration.md)을 참조 하세요.
+문제 해결에 대한 자세한 내용은 [Azure Automation 필요한 상태 구성 (DSC)의 문제 해결](./troubleshoot/desired-state-configuration.md)을 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

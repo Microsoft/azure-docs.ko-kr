@@ -26,7 +26,7 @@ ms.locfileid: "74668907"
 
 이 자습서에서는 푸시 알림을 [Apache Cordova 빠른][5] 시작 프로젝트에 추가 하 여 레코드가 삽입 될 때마다 장치에 푸시 알림이 전송 됩니다.
 
-다운로드한 빠른 시작 서버 프로젝트를 사용하지 않는 경우 푸시 알림 확장 패키지가 필요합니다. 자세한 내용은 [Mobile Apps에 대 한 .net 백 엔드 서버 SDK 사용][1]을 참조 하세요.
+다운로드한 빠른 시작 서버 프로젝트를 사용하지 않는 경우 푸시 알림 확장 패키지가 필요합니다. 자세한 내용은 [Mobile Apps에 대한 .net 백 엔드 서버 SDK 사용][1]을 참조 하세요.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -174,7 +174,7 @@ Apache Cordova 애플리케이션에서는 기본적으로 디바이스 또는 �
     pushRegistration.on('error', handleError);
     }
     ```
-3. 용 위의 코드에서 `Your_Project_ID`를 [Google 개발자 콘솔][18]의 앱에 대 한 숫자 프로젝트 ID로 바꿉니다.
+3. 용 위의 코드에서 `Your_Project_ID`를 [Google 개발자 콘솔][18]의 앱에 대한 숫자 프로젝트 ID로 바꿉니다.
 
 ## <a name="optional-configure-and-run-the-app-on-android"></a>(선택 사항) Android에서 앱 구성 및 실행
 
@@ -192,7 +192,7 @@ Apache Cordova 애플리케이션에서는 기본적으로 디바이스 또는 �
 
 #### <a name="configure-your-cordova-app-for-android"></a>Android용 Cordova 앱 구성
 
-Cordova 앱에서 **config.xml**을 엽니다. 그런 다음 `Your_Project_ID`를 [Google 개발자 콘솔][18]의 앱에 대 한 숫자 프로젝트 ID로 바꿉니다.
+Cordova 앱에서 **config.xml**을 엽니다. 그런 다음 `Your_Project_ID`를 [Google 개발자 콘솔][18]의 앱에 대한 숫자 프로젝트 ID로 바꿉니다.
 
 ```xml
 <plugin name="phonegap-plugin-push" version="1.7.1" src="https://github.com/phonegap/phonegap-plugin-push.git">

@@ -15,9 +15,9 @@ ms.locfileid: "66240335"
 
 2. 파일을 열고 `ToDoActivity.java` ZUMOAPPNAME/app/src/main/java/com/예제/zumoappname-이 폴더에 있습니다. 응용 프로그램 이름이 `ZUMOAPPNAME`합니다.
 
-3. 로 이동 합니다 [Azure portal](https://portal.azure.com/) 만든 모바일 앱으로 이동 합니다. 에 `Overview` 블레이드에서 모바일 앱에 대 한 공용 엔드포인트 URL 찾습니다. 예제-내 앱 이름 "test123"에 대 한 sitename 됩니다 https://test123.azurewebsites.net 합니다.
+3. 로 이동 합니다 [Azure portal](https://portal.azure.com/) 만든 모바일 앱으로 이동 합니다. 에 `Overview` 블레이드에서 모바일 앱에 대한 공용 엔드포인트 URL 찾습니다. 예제-내 앱 이름 "test123"에 대한 sitename 됩니다 https://test123.azurewebsites.net 합니다.
 
-4. `onCreate()` 메서드를 대체 `ZUMOAPPURL` 위의 공용 끝점을 사용 하 여 매개 변수입니다.
+4. `onCreate()` 메서드를 대체 `ZUMOAPPURL` 위의 공용 엔드포인트을 사용 하 여 매개 변수입니다.
     
     `new MobileServiceClient("ZUMOAPPURL", this).withFilter(new ProgressFilter());` 
     

@@ -23,7 +23,7 @@ ms.locfileid: "74278129"
 # <a name="control-azure-cdn-caching-behavior-with-caching-rules"></a>캐싱 규칙을 사용하여 Azure CDN 캐싱 동작 제어
 
 > [!NOTE] 
-> 캐싱 규칙은 **Verizon의 Azure CDN 표준** 및 **Akamai의 Azure CDN 표준** 프로필에만 사용할 수 있습니다. **Microsoft 프로필의 Azure CDN** 의 경우 **Verizon의 Azure CDN 프리미엄** 프로필에 대 한 [표준 규칙 엔진](cdn-standard-rules-engine-reference.md) 을 사용 해야 합니다. 유사한 기능을 위해 **관리** 포털에서 [Verizon 프리미엄 규칙 엔진](cdn-rules-engine.md) 을 사용 해야 합니다.
+> 캐싱 규칙은 **Verizon의 Azure CDN 표준** 및 **Akamai의 Azure CDN 표준** 프로필에만 사용할 수 있습니다. **Microsoft 프로필의 Azure CDN** 의 경우 **Verizon의 Azure CDN 프리미엄** 프로필에 대한 [표준 규칙 엔진](cdn-standard-rules-engine-reference.md) 을 사용 해야 합니다. 유사한 기능을 위해 **관리** 포털에서 [Verizon 프리미엄 규칙 엔진](cdn-rules-engine.md) 을 사용 해야 합니다.
  
 Azure CDN(콘텐츠 전송 네트워크)에는 파일을 캐시하는 방법을 제어하는 방법이 두 가지입니다. 
 

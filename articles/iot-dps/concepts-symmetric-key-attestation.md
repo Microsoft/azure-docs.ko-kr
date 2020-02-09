@@ -49,7 +49,7 @@ SAS 토큰의 형식은 다음과 같습니다.
 | Value (Díj) | Leírás |
 | --- | --- |
 | 서명과 |HMAC-SHA256 서명 문자열입니다. 개별 등록의 경우이 서명은 대칭 키 (기본 또는 보조)를 사용 하 여 해시를 수행 하 여 생성 됩니다. 등록 그룹의 경우 등록 그룹 키에서 파생 된 키를 사용 하 여 해시를 수행 합니다. 해시는 `URL-encoded-resourceURI + "\n" + expiry`형식의 메시지에 대해 수행 됩니다. **중요**: HMAC-SHA256 계산을 수행 하는 데 사용 하기 전에 base64에서 키를 디코딩해야 합니다. 또한 서명 결과는 URL로 인코딩해야 합니다. |
-| ResourceURI |장치 프로 비전 서비스 인스턴스의 범위 ID부터 시작 하 여이 토큰을 사용 하 여 액세스할 수 있는 등록 끝점의 URI입니다. Például: `{Scope ID}/registrations/{Registration ID}` |
+| ResourceURI |장치 프로 비전 서비스 인스턴스의 범위 ID부터 시작 하 여이 토큰을 사용 하 여 액세스할 수 있는 등록 엔드포인트의 URI입니다. Például: `{Scope ID}/registrations/{Registration ID}` |
 | 만료 |1 월 1970 일에 epoch 00:00:00 UTC 이후의 시간 (초)에 대 한 UTF8 문자열입니다. |
 | {URL 인코딩-resourceURI} |소문자 URL-소문자 리소스 URI의 인코딩입니다. |
 | PolicyName |이 토큰이 참조 하는 공유 액세스 정책의 이름입니다. 대칭 키 증명을 사용 하 여 프로 비전 할 때 사용 **되는 정책 이름입니다.** |

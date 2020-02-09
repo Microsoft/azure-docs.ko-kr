@@ -18,7 +18,7 @@ ms.locfileid: "76715380"
 ---
 # <a name="saas-fulfillment-apis-version-1-deprecated"></a>SaaS 행 Api 버전 1 (사용 되지 않음)
 
-이 문서에서는 API를 사용하여 SaaS 제안을 만드는 방법을 설명합니다. Azure를 통해 판매 하는 경우 SaaS 제품에 대 한 구독을 허용 하기 위해 REST 메서드 및 끝점으로 구성 된 Api가 필요 합니다.  
+이 문서에서는 API를 사용하여 SaaS 제안을 만드는 방법을 설명합니다. Azure를 통해 판매 하는 경우 SaaS 제품에 대 한 구독을 허용 하기 위해 REST 메서드 및 엔드포인트으로 구성 된 Api가 필요 합니다.  
 
 > [!WARNING]
 > 이 초기 버전의 SaaS 처리 API는 더 이상 사용 되지 않습니다. 대신 SaaS를 사용 하는 [API V2](./pc-saas-fulfillment-api-v2.md)를 사용 합니다.  이 초기 버전의 API는 현재 기존 게시자를 제공 하기 위해서만 유지 되 고 있습니다. 
@@ -31,7 +31,7 @@ ms.locfileid: "76715380"
 -   구독 취소
 
 
-## <a name="api-methods-and-endpoints"></a>API 메서드 및 끝점
+## <a name="api-methods-and-endpoints"></a>API 메서드 및 엔드포인트
 
 다음 섹션에서는 SaaS 제안 구독을 사용하도록 설정하는 데 사용할 수 있는 API 메서드 및 엔드포인트에 대해 설명합니다.
 

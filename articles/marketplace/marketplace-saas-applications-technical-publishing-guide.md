@@ -105,7 +105,7 @@ Azure AD를 사용하면 다음과 같이 앱 또는 평가판에 대한 원클�
 
 ## <a name="certifying-your-azure-ad-integration-for-marketplace"></a>Marketplace에 대한 Azure AD 통합 인증  
 
-응용 프로그램이 단일 테 넌 트 인지 다중 테 넌 트 인지 여부, Azure AD 페더레이션된 Single Sign-On (SSO)를 처음 사용할 때 또는 이미 지원 하는지 여부에 따라 몇 가지 방법으로 Azure AD 통합을 인증 합니다.  
+응용 프로그램이 단일 테넌트 인지 다중 테넌트 인지 여부, Azure AD 페더레이션된 Single Sign-On (SSO)를 처음 사용할 때 또는 이미 지원 하는지 여부에 따라 몇 가지 방법으로 Azure AD 통합을 인증 합니다.  
 
 **다중 테넌트 애플리케이션의 경우:**  
 

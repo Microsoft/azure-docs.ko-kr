@@ -273,7 +273,7 @@ cspack [DirectoryName]\[ServiceDefinition]
 ## <a name="next-steps"></a>다음 단계
 클라우드 서비스 패키지를 만들고 있으며 다음 작업을 수행하려고 합니다.
 
-* [클라우드 서비스 인스턴스에 대 한 원격 데스크톱 설정][remotedesktop]
+* [클라우드 서비스 인스턴스에 대한 원격 데스크톱 설정][remotedesktop]
 * [클라우드 서비스 프로젝트 배포][deploy]
 
 Visual Studio를 사용하여 다음 작업을 수행하려고 합니다.
@@ -281,7 +281,7 @@ Visual Studio를 사용하여 다음 작업을 수행하려고 합니다.
 * [새 클라우드 서비스 만들기][vs_create]
 * [기존 클라우드 서비스 다시 구성][vs_reconfigure]
 * [클라우드 서비스 프로젝트 배포][vs_deploy]
-* [클라우드 서비스 인스턴스에 대 한 원격 데스크톱 설정][vs_remote]
+* [클라우드 서비스 인스턴스에 대한 원격 데스크톱 설정][vs_remote]
 
 [deploy]: cloud-services-how-to-create-deploy-portal.md
 [remotedesktop]: cloud-services-role-enable-remote-desktop-new-portal.md

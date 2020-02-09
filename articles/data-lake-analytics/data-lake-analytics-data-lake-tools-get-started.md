@@ -20,7 +20,7 @@ ms.locfileid: "71315782"
 
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
 
-Azure Data Lake 및 Stream Analytics Tools는 두 가지 Azure 서비스, Azure Data Lake Analytics 및 Azure Stream Analytics와 관련된 기능을 포함합니다. Azure Stream Analytics 시나리오에 대 한 자세한 내용은 [Azure Stream Analytics tools For Visual Studio](../stream-analytics/stream-analytics-tools-for-visual-studio-install.md)를 참조 하세요.
+Azure Data Lake 및 Stream Analytics Tools는 두 가지 Azure 서비스, Azure Data Lake Analytics 및 Azure Stream Analytics와 관련된 기능을 포함합니다. Azure Stream Analytics 시나리오에 대한 자세한 내용은 [Azure Stream Analytics tools For Visual Studio](../stream-analytics/stream-analytics-tools-for-visual-studio-install.md)를 참조 하세요.
 
 이 문서에서는 Visual Studio를 사용 하 여 Azure Data Lake Analytics 계정을 만드는 방법을 설명 합니다. [U-SQL](data-lake-analytics-u-sql-get-started.md)에서 작업을 정의 하 고 Data Lake Analytics 서비스에 작업을 제출할 수 있습니다. 데이터 레이크 분석에 대한 자세한 내용은 [Azure 데이터 레이크 분석 개요](data-lake-analytics-overview.md)를 참조하세요.
 

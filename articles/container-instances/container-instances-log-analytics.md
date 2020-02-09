@@ -13,7 +13,7 @@ ms.locfileid: "75770546"
 ---
 # <a name="container-group-and-instance-logging-with-azure-monitor-logs"></a>Azure Monitor 로그가 포함 된 컨테이너 그룹 및 인스턴스 로깅
 
-Log Analytics 작업 영역은 Azure 리소스 뿐만 아니라 다른 클라우드의 온-프레미스 리소스와 리소스에 대 한 로그 데이터를 저장 하 고 쿼리 하는 중앙 위치를 제공 합니다. Azure Container Instances는 Azure Monitor 로그로 로그 및 이벤트 데이터를 전송할 수 있는 기능을 기본 제공합니다.
+Log Analytics 작업 영역은 Azure 리소스 뿐만 아니라 다른 클라우드의 온-프레미스 리소스와 리소스에 대한 로그 데이터를 저장 하 고 쿼리 하는 중앙 위치를 제공 합니다. Azure Container Instances는 Azure Monitor 로그로 로그 및 이벤트 데이터를 전송할 수 있는 기능을 기본 제공합니다.
 
 컨테이너 그룹 로그 및 이벤트 데이터를 Azure Monitor 로그에 보내려면 컨테이너 그룹을 만들 때 기존 Log Analytics 작업 영역 ID 및 작업 영역 키를 지정 합니다. 다음 섹션에서는 로깅 사용 컨테이너 그룹을 만드는 방법과 로그를 쿼리 하는 방법에 대해 설명 합니다.
 

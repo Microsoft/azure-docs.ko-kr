@@ -1,6 +1,6 @@
 ---
-title: IoT에 대 한 Azure Security Center에 대 한 사용자 지정 가능한 보안 경고 가이드 | Microsoft Docs
-description: IoT 기능 및 서비스에 대 한 Azure Security Center를 사용 하 여 사용자 지정 가능한 보안 경고 및 권장 수정 사항에 대해 알아봅니다.
+title: IoT에 대한 Azure Security Center에 대한 사용자 지정 가능한 보안 경고 가이드 | Microsoft Docs
+description: IoT 기능 및 서비스에 대한 Azure Security Center를 사용 하 여 사용자 지정 가능한 보안 경고 및 권장 수정 사항에 대해 알아봅니다.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -21,15 +21,15 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 01/28/2020
 ms.locfileid: "76776275"
 ---
-# <a name="azure-security-center-for-iot-security-alerts"></a>IoT 보안 경고에 대 한 Azure Security Center
+# <a name="azure-security-center-for-iot-security-alerts"></a>IoT 보안 경고에 대한 Azure Security Center
 
-IoT에 대 한 Azure Security Center는 고급 분석 및 위협 인텔리전스를 사용 하 여 IoT 솔루션을 지속적으로 분석 하 여 악의적인 활동을 경고 합니다.
+IoT에 대한 Azure Security Center는 고급 분석 및 위협 인텔리전스를 사용 하 여 IoT 솔루션을 지속적으로 분석 하 여 악의적인 활동을 경고 합니다.
 
-사용자가 고유한 조직 배포 및 환경에서 잠재적인 손상에 대 한 가장 효율적인 지표로 경고를 제공 하도록 예상 되는 장치 동작에 대 한 지식을 바탕으로 사용자 지정 경고를 만드는 것이 좋습니다. 
+사용자가 고유한 조직 배포 및 환경에서 잠재적인 손상에 대한 가장 효율적인 지표로 경고를 제공 하도록 예상 되는 장치 동작에 대한 지식을 바탕으로 사용자 지정 경고를 만드는 것이 좋습니다. 
 
-IoT 경고에 대 한 다음 Azure Security Center 목록은 예상 IoT Hub 및/또는 장치 동작에 따라 사용자가 정의할 수 있습니다. 각 경고를 사용자 지정 하는 방법에 대 한 자세한 내용은 [사용자 지정 경고 만들기](quickstart-create-custom-alerts.md)를 참조 하세요.
+IoT 경고에 대한 다음 Azure Security Center 목록은 예상 IoT Hub 및/또는 장치 동작에 따라 사용자가 정의할 수 있습니다. 각 경고를 사용자 지정 하는 방법에 대한 자세한 내용은 [사용자 지정 경고 만들기](quickstart-create-custom-alerts.md)를 참조 하세요.
 
-## <a name="azure-security-center-for-iot-alerts-available-for-customization"></a>사용자 지정에 사용할 수 있는 IoT 경고에 대 한 Azure Security Center 
+## <a name="azure-security-center-for-iot-alerts-available-for-customization"></a>사용자 지정에 사용할 수 있는 IoT 경고에 대한 Azure Security Center 
 
 
 
@@ -60,6 +60,6 @@ IoT 경고에 대 한 다음 Azure Security Center 목록은 예상 IoT Hub 및/
 ## <a name="next-steps"></a>다음 단계
 
 - [경고를 사용자 지정](quickstart-create-custom-alerts.md) 하는 방법 알아보기
-- IoT 서비스에 대 한 Azure Security Center [개요](overview.md)
+- IoT 서비스에 대한 Azure Security Center [개요](overview.md)
 - [보안 데이터에 액세스](how-to-security-data-access.md) 하는 방법 알아보기
-- [장치 조사](how-to-investigate-device.md) 에 대 한 자세한 정보
+- [장치 조사](how-to-investigate-device.md) 에 대한 자세한 정보

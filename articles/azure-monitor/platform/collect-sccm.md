@@ -15,7 +15,7 @@ ms.lasthandoff: 01/22/2020
 ms.locfileid: "76513666"
 ---
 # <a name="connect-configuration-manager-to-azure-monitor"></a>Azure Monitor에 Configuration Manager 연결
-Microsoft 끝점 Configuration Manager 환경을 Azure Monitor에 연결 하 여 장치 컬렉션 데이터를 동기화 하 고 Azure Monitor 및 Azure Automation에서 이러한 컬렉션을 참조할 수 있습니다.  
+Microsoft 엔드포인트 Configuration Manager 환경을 Azure Monitor에 연결 하 여 장치 컬렉션 데이터를 동기화 하 고 Azure Monitor 및 Azure Automation에서 이러한 컬렉션을 참조할 수 있습니다.  
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -93,9 +93,9 @@ Configuration Manager 서비스 연결 지점 사이트 시스템 역할을 호�
 
 7. **앱 가져오기** 페이지에서 다음 정보를 지정 합니다.
 
-    1. 앱에 대 한 **AZURE AD 테 넌 트 이름을** 지정 합니다.
+    1. 앱에 대 한 **AZURE AD 테넌트 이름을** 지정 합니다.
 
-    2. Azure ad 테 **넌 트 ID** 에 azure ad 테 넌 트를 지정 합니다. 이 정보는 Azure Active Directory **속성** 페이지에서 찾을 수 있습니다. 
+    2. Azure ad 테 **넌 트 ID** 에 azure ad 테넌트를 지정 합니다. 이 정보는 Azure Active Directory **속성** 페이지에서 찾을 수 있습니다. 
 
     3. 응용 프로그램 **이름** 에 응용 프로그램 이름을 지정 합니다.
 

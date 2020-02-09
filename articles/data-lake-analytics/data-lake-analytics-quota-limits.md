@@ -18,7 +18,7 @@ ms.locfileid: "75644718"
 ---
 # <a name="adjust-quotas-and-limits-in-azure-data-lake-analytics"></a>Azure Data Lake Analytics에서 할당량 및 한도 조정
 
-ADLA(Azure Data Lake Analytics) 계정에서 할당량 및 한도를 조정하고 늘리는 방법을 알아봅니다. 이러한 제한을 알면 사용자의 U-SQL 작업 동작을 이해 하는 데 도움이 됩니다. 모든 할당량 한도는 소프트 한도이며, Azure Support에 문의하면 최대 한도를 늘릴 수 있습니다.
+ADLA(Azure Data Lake Analytics) 계정에서 할당량 및 한도를 조정하고 늘리는 방법을 알아봅니다. 이러한 제한을 알면 사용자의 U-SQL 작업 동작을 이해 하는 데 도움이 됩니다. 모든 할당량 한도는 소프트 한도이며, Azure Support에 문의하면 최대한도를 늘릴 수 있습니다.
 
 ## <a name="azure-subscriptions-limits"></a>Azure 구독 한도
 

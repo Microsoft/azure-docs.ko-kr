@@ -23,7 +23,7 @@ ms.locfileid: "74688126"
 
 ## <a name="using-azure-functions"></a>Azure Functions 사용
 
-Azure Functions는 가장 간단하고 권장되는 옵션입니다. Cosmos DB에 대 한 Azure Functions 트리거를 만들 때 연결할 컨테이너를 선택할 수 있으며, 컨테이너가 변경 될 때마다 Azure Function이 트리거됩니다. 트리거는 Azure Functions 포털, Azure Cosmos DB 포털을 사용하거나 SDK를 사용하여 프로그래밍 방식으로 만들 수 있습니다. Visual Studio 및 VS Code는 Azure Functions를 작성하는 지원을 제공하며 플랫폼 간 개발을 위해 Azure Functions CLI를 사용할 수도 있습니다. 데스크톱에서 코드를 작성하고 디버그한 다음, 클릭 한 번으로 함수를 배포할 수 있습니다. 자세한 내용은 [Azure Functions를 사용한 서버리스 데이터베이스 컴퓨팅](serverless-computing-database.md) 및 [Azure Functions와 함께 변경 피드 사용](change-feed-functions.md)) 문서를 참조하세요.
+Azure Functions는 가장 간단하고 권장되는 옵션입니다. Cosmos DB에 대한 Azure Functions 트리거를 만들 때 연결할 컨테이너를 선택할 수 있으며, 컨테이너가 변경 될 때마다 Azure Function이 트리거됩니다. 트리거는 Azure Functions 포털, Azure Cosmos DB 포털을 사용하거나 SDK를 사용하여 프로그래밍 방식으로 만들 수 있습니다. Visual Studio 및 VS Code는 Azure Functions를 작성하는 지원을 제공하며 플랫폼 간 개발을 위해 Azure Functions CLI를 사용할 수도 있습니다. 데스크톱에서 코드를 작성하고 디버그한 다음, 클릭 한 번으로 함수를 배포할 수 있습니다. 자세한 내용은 [Azure Functions를 사용한 서버리스 데이터베이스 컴퓨팅](serverless-computing-database.md) 및 [Azure Functions와 함께 변경 피드 사용](change-feed-functions.md)) 문서를 참조하세요.
 
 ## <a name="using-the-change-feed-processor-library"></a>변경 피드 프로세서 라이브러리 사용
 
@@ -33,11 +33,11 @@ Azure Functions는 가장 간단하고 권장되는 옵션입니다. Cosmos DB�
 
 SDK를 사용하면 변경 피드의 하위 수준 컨트롤을 가져올 수 있습니다. 검사점을 관리 하 고 특정 논리적 파티션 키 등에 액세스할 수 있습니다. 여러 판독기가 있는 경우 `ChangeFeedOptions`를 사용 하 여 읽기 부하를 다른 스레드나 다른 클라이언트에 배포할 수 있습니다.
 
-## <a name="change-feed-in-apis-for-cassandra-and-mongodb"></a>Cassandra 및 MongoDB에 대 한 Api의 변경 피드
+## <a name="change-feed-in-apis-for-cassandra-and-mongodb"></a>Cassandra 및 MongoDB에 대한 Api의 변경 피드
 
-변경 피드 기능은 MongoDB API에서 변경 스트림으로 표시 되 고 Cassandra API 조건자를 사용 하 여 쿼리 됩니다. MongoDB API에 대 한 구현 세부 정보에 대 한 자세한 내용은 [MongoDB에 대 한 AZURE COSMOS DB api의 변경 스트림](mongodb-change-streams.md)을 참조 하세요.
+변경 피드 기능은 MongoDB API에서 변경 스트림으로 표시 되 고 Cassandra API 조건자를 사용 하 여 쿼리 됩니다. MongoDB API에 대한 구현 세부 정보에 대한 자세한 내용은 [MongoDB에 대한 AZURE COSMOS DB api의 변경 스트림](mongodb-change-streams.md)을 참조 하세요.
 
-기본 Apache Cassandra는 cdc (변경 데이터 캡처)를 제공 합니다 .이 메커니즘은 보관을 위해 특정 테이블에 플래그를 지정 하 고 CDC 로그의 구성 가능한 크기에 도달 하면 해당 테이블에 대 한 쓰기를 거부 하는 메커니즘입니다. Cassandra에 대 한 Azure Cosmos DB API의 변경 피드 기능은 CQL을 통해 조건자를 사용 하 여 변경 내용을 쿼리 하는 기능을 향상 시킵니다. 구현 세부 정보에 대 한 자세한 내용은 [Cassandra에 대 한 AZURE COSMOS DB API에서 변경 피드](cassandra-change-feed.md)를 참조 하세요.
+기본 Apache Cassandra는 cdc (변경 데이터 캡처)를 제공 합니다 .이 메커니즘은 보관을 위해 특정 테이블에 플래그를 지정 하 고 CDC 로그의 구성 가능한 크기에 도달 하면 해당 테이블에 대한 쓰기를 거부 하는 메커니즘입니다. Cassandra에 대한 Azure Cosmos DB API의 변경 피드 기능은 CQL을 통해 조건자를 사용 하 여 변경 내용을 쿼리 하는 기능을 향상 시킵니다. 구현 세부 정보에 대한 자세한 내용은 [Cassandra에 대한 AZURE COSMOS DB API에서 변경 피드](cassandra-change-feed.md)를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

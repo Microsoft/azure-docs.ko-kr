@@ -1,5 +1,5 @@
 ---
-title: Redis 서버 쪽 문제에 대 한 Azure 캐시 문제 해결
+title: Redis 서버 쪽 문제에 대한 Azure 캐시 문제 해결
 description: 메모리 부족, 높은 CPU, 장기 실행 명령 또는 대역폭 제한과 같은 Redis 용 Azure Cache를 사용 하 여 일반적인 서버 쪽 문제를 해결 하는 방법에 대해 알아봅니다.
 author: yegu-ms
 ms.author: yegu
@@ -13,9 +13,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75433346"
 ---
-# <a name="troubleshoot-azure-cache-for-redis-server-side-issues"></a>Redis 서버 쪽 문제에 대 한 Azure 캐시 문제 해결
+# <a name="troubleshoot-azure-cache-for-redis-server-side-issues"></a>Redis 서버 쪽 문제에 대한 Azure 캐시 문제 해결
 
-이 섹션에서는 Redis에 대 한 Azure 캐시 또는이를 호스팅하는 가상 컴퓨터에 대 한 조건으로 인해 발생 하는 문제를 해결 하는 방법을 설명 합니다.
+이 섹션에서는 Redis에 대한 Azure 캐시 또는이를 호스팅하는 가상 컴퓨터에 대한 조건으로 인해 발생 하는 문제를 해결 하는 방법을 설명 합니다.
 
 - [Redis 서버의 메모리 부족](#memory-pressure-on-redis-server)
 - [높은 CPU 사용량 또는 서버 부하](#high-cpu-usage-or-server-load)
@@ -40,7 +40,7 @@ Redis는이 문제를 식별 하는 데 도움이 될 수 있는 [INFO](https://
 - [메모리 정책을 구성](cache-configure.md#maxmemory-policy-and-maxmemory-reserved) 하고 키에 만료 시간을 설정합니다. 조각화가 있는 경우이 정책은 충분 하지 않을 수 있습니다.
 - [maxmemory-reserved 값을 구성합니다](cache-configure.md#maxmemory-policy-and-maxmemory-reserved) .
 - 크게 캐시된 개체를 더 작은 관련 개체로 분할합니다.
-- 사용 중인 메모리와 같은 메트릭에 대 한 [경고를 만들어](cache-how-to-monitor.md#alerts) 잠재적 영향에 대해 조기에 알려 줍니다.
+- 사용 중인 메모리와 같은 메트릭에 대한 [경고를 만들어](cache-how-to-monitor.md#alerts) 잠재적 영향에 대해 조기에 알려 줍니다.
 - 메모리 용량이 더 큰 캐시 크기로 [확장](cache-how-to-scale.md) 합니다.
 
 ## <a name="high-cpu-usage-or-server-load"></a>높은 CPU 사용량 또는 서버 부하
@@ -52,7 +52,7 @@ CPU 또는 서버 부하와 같은 [메트릭을 모니터링](cache-how-to-moni
 높은 서버 부하를 완화 하기 위해 수행할 수 있는 몇 가지 변경 사항은 다음과 같습니다.
 
 - 낮은 메모리 압력으로 인해 아래에 명시 된 [장기 실행 명령](#long-running-commands) 또는 페이지 오류와 같은 CPU 급증 원인을 조사 하십시오.
-- CPU 또는 서버 부하와 같은 메트릭에 대 한 [경고를 만들어](cache-how-to-monitor.md#alerts) 잠재적 영향을 조기에 알립니다.
+- CPU 또는 서버 부하와 같은 메트릭에 대한 [경고를 만들어](cache-how-to-monitor.md#alerts) 잠재적 영향을 조기에 알립니다.
 - 더 많은 CPU 용량을 포함 하는 더 큰 캐시 크기로 [확장](cache-how-to-scale.md) 합니다.
 
 ## <a name="long-running-commands"></a>장기 실행 명령
@@ -70,7 +70,7 @@ CPU 또는 서버 부하와 같은 [메트릭을 모니터링](cache-how-to-moni
 네트워크 대역폭 사용량이 최대 용량에 근접 한 경우를 줄이려면 다음을 수행 합니다.
 
 - 네트워크 수요를 줄이기 위해 클라이언트 호출 동작을 변경 합니다.
-- 잠재적 영향에 대해 조기에 알리도록 캐시 읽기 또는 캐시 쓰기와 같은 메트릭에 대 한 [경고를 만듭니다](cache-how-to-monitor.md#alerts) .
+- 잠재적 영향에 대해 조기에 알리도록 캐시 읽기 또는 캐시 쓰기와 같은 메트릭에 대한 [경고를 만듭니다](cache-how-to-monitor.md#alerts) .
 - 더 많은 네트워크 대역폭 용량을 사용 하 여 더 큰 캐시 크기로 [확장](cache-how-to-scale.md) 합니다.
 
 ## <a name="additional-information"></a>추가 정보

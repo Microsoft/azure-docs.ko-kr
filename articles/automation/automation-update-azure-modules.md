@@ -34,7 +34,7 @@ Automation 계정에서 Azure 모듈을 업데이트 하려면 오픈 소스로 
 
 다음은 이 프로세스를 사용하여 Azure 모듈을 업데이트할 때 고려해야 하는 몇 가지 사항입니다.
 
-* 이 runbook은 기본적으로 **Azure** 및 **AzureRm** 모듈의 업데이트를 지원 합니다. 이 runbook은 **Az** modules의 업데이트도 지원 합니다. 이 runbook을 사용 하 여 `Az` 모듈을 업데이트 하는 방법에 대 한 자세한 내용은 [Azure 모듈 Runbook 업데이트 추가](https://github.com/microsoft/AzureAutomation-Account-Modules-Update/blob/master/README.md) 정보를 검토 하세요. Automation 계정에서 `Az` 모듈을 사용할 때 고려해 야 하는 추가 중요 요소가 있습니다. 자세한 내용은 [Automation 계정에서 Az Modules 사용](az-modules.md)을 참조 하세요.
+* 이 runbook은 기본적으로 **Azure** 및 **AzureRm** 모듈의 업데이트를 지원 합니다. 이 runbook은 **Az** modules의 업데이트도 지원 합니다. 이 runbook을 사용 하 여 `Az` 모듈을 업데이트 하는 방법에 대한 자세한 내용은 [Azure 모듈 Runbook 업데이트 추가](https://github.com/microsoft/AzureAutomation-Account-Modules-Update/blob/master/README.md) 정보를 검토 하세요. Automation 계정에서 `Az` 모듈을 사용할 때 고려해 야 하는 추가 중요 요소가 있습니다. 자세한 내용은 [Automation 계정에서 Az Modules 사용](az-modules.md)을 참조 하세요.
 
 * 이 Runbook을 시작하기 전에 Automation 계정에 [Azure 실행 계정 자격 증명](manage-runas-account.md)이 만들어져 있는지 확인합니다.
 

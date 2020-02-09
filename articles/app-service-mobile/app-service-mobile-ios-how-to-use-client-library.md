@@ -27,7 +27,7 @@ ms.locfileid: "74668438"
 
 ## <a name="reference-documentation"></a>참조 설명서
 
-IOS 클라이언트 SDK에 대 한 참조 설명서는 [Azure Mobile Apps Ios 클라이언트 참조][2]에서 찾을 수 있습니다.
+IOS 클라이언트 SDK에 대한 참조 설명서는 [Azure Mobile Apps Ios 클라이언트 참조][2]에서 찾을 수 있습니다.
 
 ## <a name="supported-platforms"></a>지원되는 플랫폼
 
@@ -634,7 +634,7 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
 
 Facebook을 사용하여 애플리케이션에 사용자를 로그인하도록 iOS용 Facebook SDK를 사용할 수 있습니다.  클라이언트 흐름 인증이 `loginWithProvider:completion:` 메서드보다 선호도가 높습니다.  클라이언트 흐름 인증은 UX 느낌을 그대로 제공하고 추가 사용자 지정을 허용하기 때문입니다.
 
-1. Facebook [로그인에 대 한 App Service를 구성 하는 방법][9] 자습서를 수행 하 여 facebook 로그인을 위한 모바일 앱 백 엔드를 구성 합니다.
+1. Facebook [로그인에 대한 App Service를 구성 하는 방법][9] 자습서를 수행 하 여 facebook 로그인을 위한 모바일 앱 백 엔드를 구성 합니다.
 2. [Ios 용 FACEBOOK sdk-시작][10] 설명서에 따라 Ios 용 facebook sdk를 설치 합니다. 앱을 만드는 대신 기존 등록에 iOS 플랫폼을 추가할 수 있습니다.
 3. Facebook의 설명서는 앱 대리자에서 일부 Objective-C 코드를 포함합니다. **Swift**를 사용 중인 경우 AppDelegate.swift에 다음 번역을 사용할 수 있습니다.
 

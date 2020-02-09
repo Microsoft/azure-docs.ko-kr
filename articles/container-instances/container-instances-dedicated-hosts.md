@@ -1,6 +1,6 @@
 ---
 title: 전용 호스트에 배포
-description: 전용 호스트를 사용 하 여 Azure Container Instances 작업에 대 한 실제 호스트 수준 격리 얻기
+description: 전용 호스트를 사용 하 여 Azure Container Instances 작업에 대한 실제 호스트 수준 격리 얻기
 ms.topic: article
 ms.date: 01/17/2020
 author: dkkapur
@@ -20,7 +20,7 @@ ms.locfileid: "76934141"
 
 ## <a name="prerequisites"></a>필수 조건
 
-* 전용 sku를 사용 하는 모든 구독에 대 한 기본 제한은 0입니다. 프로덕션 컨테이너 배포에이 sku를 사용 하려는 경우 [Azure 지원 요청][azure-support] 를 만들어 제한을 늘립니다.
+* 전용 sku를 사용 하는 모든 구독에 대한 기본 제한은 0입니다. 프로덕션 컨테이너 배포에이 sku를 사용 하려는 경우 [Azure 지원 요청][azure-support] 를 만들어 제한을 늘립니다.
 
 ## <a name="use-the-dedicated-sku"></a>전용 sku 사용
 
@@ -40,7 +40,7 @@ API 버전 2019-12-01부터 ACI 배포에 필요한 배포 템플릿의 컨테�
 * `resources`에서 `apiVersion`를 `2012-12-01`로 설정 합니다.
 * 컨테이너 그룹 속성에서 값 `Dedicated`를 사용 하 여 `sku` 속성을 추가 합니다.
 
-다음은 전용 sku를 사용 하는 컨테이너 그룹 배포 템플릿의 리소스 섹션에 대 한 예제 코드 조각입니다.
+다음은 전용 sku를 사용 하는 컨테이너 그룹 배포 템플릿의 리소스 섹션에 대한 예제 코드 조각입니다.
 
 ```json
 [...]

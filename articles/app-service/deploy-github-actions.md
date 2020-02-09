@@ -15,7 +15,7 @@ ms.locfileid: "74670185"
 ---
 # <a name="deploy-to-app-service-using-github-actions"></a>GitHub 작업을 사용 하 여 App Service에 배포
 
-[GitHub 작업](https://help.github.com/en/articles/about-github-actions) 을 통해 자동화 된 소프트웨어 개발 수명 주기 워크플로를 유연 하 게 빌드할 수 있습니다. GitHub에 대 한 Azure App Service 작업을 사용 하 여 GitHub 작업을 통해 [Azure App Service](overview.md) 에 배포할 워크플로를 자동화할 수 있습니다.
+[GitHub 작업](https://help.github.com/en/articles/about-github-actions) 을 통해 자동화 된 소프트웨어 개발 수명 주기 워크플로를 유연 하 게 빌드할 수 있습니다. GitHub에 대한 Azure App Service 작업을 사용 하 여 GitHub 작업을 통해 [Azure App Service](overview.md) 에 배포할 워크플로를 자동화할 수 있습니다.
 
 > [!IMPORTANT]
 > GitHub 동작은 현재 베타 버전입니다. 먼저 GitHub 계정을 사용 하 여 [미리 보기에 참여 하려면 등록](https://github.com/features/actions) 해야 합니다.
@@ -39,7 +39,7 @@ Azure App Service 워크플로의 경우 파일에는 다음과 같은 세 개�
 az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptions/<subscription-id>/resourceGroups/<group-name>/providers/Microsoft.Web/sites/<app-name> --sdk-auth
 ```
 
-이 예제에서는 리소스의 자리 표시자를 구독 ID, 리소스 그룹 이름 및 앱 이름으로 바꿉니다. 출력은 App Service 앱에 대 한 액세스를 제공 하는 역할 할당 자격 증명입니다. GitHub에서 인증 하는 데 사용할 수 있는이 JSON 개체를 복사 합니다.
+이 예제에서는 리소스의 자리 표시자를 구독 ID, 리소스 그룹 이름 및 앱 이름으로 바꿉니다. 출력은 App Service 앱에 대한 액세스를 제공 하는 역할 할당 자격 증명입니다. GitHub에서 인증 하는 데 사용할 수 있는이 JSON 개체를 복사 합니다.
 
 > [!NOTE]
 > 인증을 위해 게시 프로필을 사용 하기로 결정 한 경우에는 서비스 주체를 만들 필요가 없습니다.
@@ -51,7 +51,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 또한 앱 수준 자격 증명 (예: 배포용 프로필 게시)을 사용할 수 있습니다. 암호를 구성 하는 단계를 수행 합니다.
 
-1. **게시 프로필 가져오기** 옵션을 사용 하 여 포털에서 App Service 앱에 대 한 게시 프로필을 다운로드 합니다.
+1. **게시 프로필 가져오기** 옵션을 사용 하 여 포털에서 App Service 앱에 대한 게시 프로필을 다운로드 합니다.
 
 2. [GitHub](https://github.com/)에서 리포지토리를 찾아보고, **설정 > 비밀을 선택 하 > 새 비밀을 추가 합니다** .
 
@@ -59,7 +59,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 3. 다운로드 한 게시 프로필 파일의 내용을 비밀의 값 필드에 붙여넣습니다.
 
-4. 이제 분기의 워크플로 파일: `.github/workflows/workflow.yml` Azure 웹 앱 배포 작업의 입력 `publish-profile`에 대 한 암호를 바꿉니다.
+4. 이제 분기의 워크플로 파일: `.github/workflows/workflow.yml` Azure 웹 앱 배포 작업의 입력 `publish-profile`에 대한 암호를 바꿉니다.
     
     ```yaml
         - uses: azure/webapps-deploy@v1
@@ -278,7 +278,7 @@ GitHub에서 다양 한 리포지토리로 그룹화 된 일련의 작업을 찾
 
 - [Azure WebApp](https://github.com/Azure/webapps-deploy)
 
-- [컨테이너에 대 한 Azure WebApp](https://github.com/Azure/webapps-container-deploy)
+- [컨테이너에 대한 Azure WebApp](https://github.com/Azure/webapps-container-deploy)
 
 - [Docker 로그인/로그 아웃](https://github.com/Azure/docker-login)
 

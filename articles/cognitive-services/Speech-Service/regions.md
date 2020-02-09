@@ -1,7 +1,7 @@
 ---
 title: 지역-음성 서비스
 titleSuffix: Azure Cognitive Services
-description: 음성 텍스트, 텍스트 음성 변환, 음성 번역을 비롯 하 여 음성 서비스에 사용할 수 있는 지역 및 끝점의 목록입니다.
+description: 음성 텍스트, 텍스트 음성 변환, 음성 번역을 비롯 하 여 음성 서비스에 사용할 수 있는 지역 및 엔드포인트의 목록입니다.
 services: cognitive-services
 author: mahilleb-msft
 manager: nitinme

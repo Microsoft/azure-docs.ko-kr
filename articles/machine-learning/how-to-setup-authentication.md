@@ -57,7 +57,7 @@ ws = Workspace(subscription_id="your-sub-id",
               )
 ```
 
-여러 테 넌 트에 액세스할 수 있는 경우 클래스를 가져오고 대상 테 넌 트를 명시적으로 정의 해야 합니다. `InteractiveLoginAuthentication`에 대 한 생성자를 호출 하면 위의 호출과 비슷하게 로그인 하 라는 메시지가 표시 됩니다.
+여러 테넌트에 액세스할 수 있는 경우 클래스를 가져오고 대상 테넌트를 명시적으로 정의 해야 합니다. `InteractiveLoginAuthentication`에 대 한 생성자를 호출 하면 위의 호출과 비슷하게 로그인 하 라는 메시지가 표시 됩니다.
 
 ```python
 from azureml.core.authentication import InteractiveLoginAuthentication

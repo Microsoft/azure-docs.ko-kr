@@ -12,7 +12,7 @@ ms.locfileid: "75664601"
 ---
 # <a name="troubleshoot-backup-of-sap-hana-databases-on-azure"></a>Azure에서 SAP HANA 데이터베이스의 백업 문제 해결
 
-이 문서에서는 Azure virtual machines의 SAP HANA 데이터베이스 백업에 대 한 문제 해결 정보를 제공 합니다. 현재 지원 되는 SAP HANA 백업 시나리오에 대 한 자세한 내용은 [시나리오 지원](sap-hana-backup-support-matrix.md#scenario-support)을 참조 하세요.
+이 문서에서는 Azure virtual machines의 SAP HANA 데이터베이스 백업에 대한 문제 해결 정보를 제공 합니다. 현재 지원 되는 SAP HANA 백업 시나리오에 대한 자세한 내용은 [시나리오 지원](sap-hana-backup-support-matrix.md#scenario-support)을 참조 하세요.
 
 ## <a name="prerequisites-and-permissions"></a>필수 조건 및 권한
 
@@ -60,7 +60,7 @@ ms.locfileid: "75664601"
 | 오류 메시지      | <span style="font-weight:normal">복원에 사용할 원본 및 대상 시스템이 호환 되지 않습니다.</span>    |
 | ------------------ | ------------------------------------------------------------ |
 | **가능한 원인**    | 복원 대상 시스템이 원본과 호환 되지 않습니다. |
-| **권장 작업** | 지금 지원 되는 복원 유형에 대 한 자세한 내용은 SAP Note [1642148](https://launchpad.support.sap.com/#/notes/1642148) 을 참조 하세요. |
+| **권장 작업** | 지금 지원 되는 복원 유형에 대한 자세한 내용은 SAP Note [1642148](https://launchpad.support.sap.com/#/notes/1642148) 을 참조 하세요. |
 
 ### <a name="usererrorsdctomdcupgradedetected"></a>UserErrorSDCtoMDCUpgradeDetected 됨
 
@@ -95,28 +95,28 @@ SDC HANA 인스턴스 "H21"이 백업 된 것으로 가정 합니다. 백업 항
 
 ### <a name="multiple-container-database-mdc-restore"></a>여러 컨테이너 데이터베이스 (MDC) 복원
 
-HANA에 대 한 여러 컨테이너 데이터베이스에서 표준 구성은 SYSTEMDB + 1 이상의 테 넌 트 DB입니다. 전체 SAP HANA 인스턴스를 복원 하는 것은 SYSTEMDB와 테 넌 트 DB를 모두 복원 하는 것입니다. 하나는 먼저 SYSTEMDB를 복원한 다음 테 넌 트 DB를 진행 합니다. 시스템 DB는 기본적으로 선택한 대상의 시스템 정보를 재정의 합니다. 또한이 복원은 대상 인스턴스의 BackInt 관련 정보를 재정의 합니다. 따라서 시스템 DB가 대상 인스턴스로 복원 된 후 등록 전 스크립트를 다시 실행 합니다. 이후 테 넌 트 DB 복원 작업이 성공 합니다.
+HANA에 대한 여러 컨테이너 데이터베이스에서 표준 구성은 SYSTEMDB + 1 이상의 테넌트 DB입니다. 전체 SAP HANA 인스턴스를 복원 하는 것은 SYSTEMDB와 테넌트 DB를 모두 복원 하는 것입니다. 하나는 먼저 SYSTEMDB를 복원한 다음 테넌트 DB를 진행 합니다. 시스템 DB는 기본적으로 선택한 대상의 시스템 정보를 재정의 합니다. 또한이 복원은 대상 인스턴스의 BackInt 관련 정보를 재정의 합니다. 따라서 시스템 DB가 대상 인스턴스로 복원 된 후 등록 전 스크립트를 다시 실행 합니다. 이후 테넌트 DB 복원 작업이 성공 합니다.
 
 ## <a name="upgrading-from-sap-hana-10-to-20"></a>SAP HANA 1.0에서 2.0로 업그레이드
 
 SAP HANA 1.0 데이터베이스를 보호 하 고 2.0로 업그레이드 하려는 경우 다음 단계를 수행 합니다.
 
-- 이전 SDC 데이터베이스에 대 한 데이터 보존을 사용 하 여 [보호를 중지](sap-hana-db-manage.md#stop-protection-for-an-sap-hana-database) 합니다.
-- 업그레이드를 수행 합니다. 완료 후 HANA는 이제 시스템 DB 및 테 넌 트 DB를 사용 하 여 MDC를 사용 합니다.
+- 이전 SDC 데이터베이스에 대한 데이터 보존을 사용 하 여 [보호를 중지](sap-hana-db-manage.md#stop-protection-for-an-sap-hana-database) 합니다.
+- 업그레이드를 수행 합니다. 완료 후 HANA는 이제 시스템 DB 및 테넌트 DB를 사용 하 여 MDC를 사용 합니다.
 - (Sid 및 mdc)의 올바른 세부 정보를 사용 하 여 [등록 전 스크립트](https://aka.ms/scriptforpermsonhana) 를 다시 실행 합니다.
-- Azure Portal에서 동일한 컴퓨터에 대 한 확장을 다시 등록 합니다 (백업 > 보기 세부 정보-> 관련 Azure VM 선택-> 다시 등록).
-- 동일한 VM에 대해 Db 다시 검색을 클릭 합니다. 이 작업은 2 단계에서 새 Db를 표시 하 고, 올바른 세부 정보 (SYSTEMDB 및 SDC가 아닌 테 넌 트 DB)를 표시 합니다.
-- 이러한 새 데이터베이스에 대 한 백업을 구성 합니다.
+- Azure Portal에서 동일한 컴퓨터에 대한 확장을 다시 등록 합니다 (백업 > 보기 세부 정보-> 관련 Azure VM 선택-> 다시 등록).
+- 동일한 VM에 대해 Db 다시 검색을 클릭 합니다. 이 작업은 2 단계에서 새 Db를 표시 하 고, 올바른 세부 정보 (SYSTEMDB 및 SDC가 아닌 테넌트 DB)를 표시 합니다.
+- 이러한 새 데이터베이스에 대한 백업을 구성 합니다.
 
 ## <a name="upgrading-without-an-sid-change"></a>SID 변경 없이 업그레이드
 
 다음에 설명 된 대로 SID 변경을 발생 시 키 지 않는 OS 또는 SAP HANA로의 업그레이드가 처리 될 수 있습니다.
 
-- 데이터베이스에 대 한 데이터 보관을 사용 하 여 [보호 중지](sap-hana-db-manage.md#stop-protection-for-an-sap-hana-database)
+- 데이터베이스에 대한 데이터 보관을 사용 하 여 [보호 중지](sap-hana-db-manage.md#stop-protection-for-an-sap-hana-database)
 - 업그레이드를 수행 합니다.
 - [사전 등록 스크립트](https://aka.ms/scriptforpermsonhana)를 다시 실행 합니다. 일반적으로 업그레이드 프로세스가 필요한 역할을 제거 하는 것을 볼 수 있습니다. 사전 등록 스크립트를 실행 하면 필요한 모든 역할을 확인 하는 데 도움이 됩니다.
-- 데이터베이스에 대 한 [보호 다시 시작](sap-hana-db-manage.md#resume-protection-for-an-sap-hana-database)
+- 데이터베이스에 대한 [보호 다시 시작](sap-hana-db-manage.md#resume-protection-for-an-sap-hana-database)
 
 ## <a name="next-steps"></a>다음 단계
 
-- Azure Vm에서 SAP HANA 데이터베이스 백업에 대 한 질문과 [대답](https://docs.microsoft.com/azure/backup/sap-hana-faq-backup-azure-vm) 검토
+- Azure Vm에서 SAP HANA 데이터베이스 백업에 대한 질문과 [대답](https://docs.microsoft.com/azure/backup/sap-hana-faq-backup-azure-vm) 검토

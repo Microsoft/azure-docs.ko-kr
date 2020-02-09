@@ -91,9 +91,9 @@ ms.locfileid: "73822139"
 2. 선택한 분석 저장소에 맞도록 $DemoScenario 값을 설정합니다. 학습 목적에 맞게 columnstore 없는 SQL Database가 권장됩니다.
     - columnstore가 없는 SQL Database를 사용하려면 **$DemoScenario** = **2**로 설정합니다.
     - columnstore가 있는 SQL Database를 사용하려면 **$DemoScenario** = **3**으로 설정합니다.  
-3. **F5** 키를 눌러 테 넌 트 분석 저장소를 만드는 데모 스크립트 ( *TENANTANALYTICS\<XX >. ps1* 스크립트)를 실행 합니다. 
+3. **F5** 키를 눌러 테넌트 분석 저장소를 만드는 데모 스크립트 ( *TENANTANALYTICS\<XX >. ps1* 스크립트)를 실행 합니다. 
 
-응용 프로그램을 배포 하 고 관심 있는 테 넌 트 데이터로 채운 후에 [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) 를 사용 하 여 **Tenants1-\<사용자\>** 및 **카탈로그-mt-\<사용자\>** 서버에 연결 합니다. Login = *developer*, Password = *P\@ssword1*.
+응용 프로그램을 배포 하 고 관심 있는 테넌트 데이터로 채운 후에 [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) 를 사용 하 여 **Tenants1-\<사용자\>** 및 **카탈로그-mt-\<사용자\>** 서버에 연결 합니다. Login = *developer*, Password = *P\@ssword1*.
 
 ![architectureOverView](media/saas-multitenantdb-tenant-analytics/ssmsSignIn.png)
 

@@ -1,6 +1,6 @@
 ---
 title: 오프 라인 백업 개요
-description: 오프 라인 백업에 대 한 Azure Data Box 기반 오프 라인 백업 및 Azure Import/Export를 사용 하 여 오프 라인 백업의 다양 한 구성 요소에 대해 알아봅니다.
+description: 오프 라인 백업에 대한 Azure Data Box 기반 오프 라인 백업 및 Azure Import/Export를 사용 하 여 오프 라인 백업의 다양 한 구성 요소에 대해 알아봅니다.
 ms.topic: conceptual
 ms.date: 1/28/2020
 ms.openlocfilehash: 35bc15488624f3648bdc765a36d10607b4ca2de9
@@ -12,9 +12,9 @@ ms.locfileid: "77027018"
 ---
 # <a name="overview-of-offline-backup"></a>오프 라인 백업 개요
 
-이 문서는 오프 라인 백업에 대 한 개요를 제공 합니다.
+이 문서는 오프 라인 백업에 대한 개요를 제공 합니다.
 
-Azure에 대 한 초기 전체 백업은 일반적으로 많은 양의 데이터를 온라인으로 전송 하며 증분 변경 내용만 전송 하는 후속 백업과 비교할 때 더 많은 네트워크 대역폭이 필요 합니다. 특정 지역의 원격 사무실 또는 데이터 센터에는 항상 네트워크 대역폭이 충분 하지 않습니다. 따라서 이러한 초기 백업은 며칠 정도 걸리며,이 시간 동안에는 온-프레미스 데이터 센터에서 실행 되는 응용 프로그램에 대해 프로 비전 된 동일한 네트워크를 계속 사용 합니다.
+Azure에 대한 초기 전체 백업은 일반적으로 많은 양의 데이터를 온라인으로 전송 하며 증분 변경 내용만 전송 하는 후속 백업과 비교할 때 더 많은 네트워크 대역폭이 필요 합니다. 특정 지역의 원격 사무실 또는 데이터 센터에는 항상 네트워크 대역폭이 충분 하지 않습니다. 따라서 이러한 초기 백업은 며칠 정도 걸리며,이 시간 동안에는 온-프레미스 데이터 센터에서 실행 되는 응용 프로그램에 대해 프로 비전 된 동일한 네트워크를 계속 사용 합니다.
 
 Azure Backup는 네트워크 대역폭을 사용 하지 않고 오프 라인으로 초기 백업 데이터를 전송할 수 있도록 하는 "오프 라인 백업"을 지원 합니다. 또한 백업 데이터를 실제 저장소 장치에 복사 하는 메커니즘을 제공 합니다 .이 장치는 가까운 Azure 데이터 센터에 배송 되어 Recovery Services 자격 증명 모음에 업로드 됩니다. 이 프로세스를 통해 네트워크 대역폭을 사용 하지 않고 백업 데이터를 강력 하 게 전송할 있습니다.
 
@@ -31,7 +31,7 @@ Azure Backup는 네트워크 대역폭을 사용 하지 않고 오프 라인으�
 
 ![Azure Backup Data Box 아키텍처](./media/offline-backup-overview/azure-backup-databox-architecture.png)
 
-아키텍처에 대 한 요약은 다음과 같습니다.
+아키텍처에 대한 요약은 다음과 같습니다.
 
 1. Azure Backup은 이러한 미리 구성 된 장치에 백업 데이터를 직접 복사 합니다.
 2. 그런 다음 이러한 장치를 Azure 데이터 센터에 다시 제공할 수 있습니다.
@@ -46,7 +46,7 @@ Azure Data Box 기반 오프 라인 백업을 사용 하려면 [이 문서](offl
 
 ![Azure Backup 가져오기/내보내기 아키텍처](./media/offline-backup-overview/azure-backup-import-export.png)
 
-아키텍처에 대 한 요약은 다음과 같습니다.
+아키텍처에 대한 요약은 다음과 같습니다.
 
 1. Azure Backup는 네트워크를 통해 백업 데이터를 전송 하는 대신 백업 데이터를 준비 위치에 기록 합니다.
 2. 준비 위치의 데이터는 사용자 지정 유틸리티를 사용 하 여 하나 이상의 SATA 디스크에 기록 됩니다.
@@ -77,6 +77,6 @@ MABS/DPM-A와 함께 동일한를 사용 하려면 [이 문서](https://docs.mic
 
 ## <a name="next-steps"></a>다음 단계
 
-* [MARS 에이전트에 대 한 Azure Data Box 기반 오프 라인 백업](offline-backup-azure-data-box.md#backup-data-size-and-supported-data-box-skus)
-* [MARS 에이전트에 대 한 Azure Import/Export 기반 오프 라인 백업](backup-azure-backup-import-export.md)  
-* [MABS/DPM에 대 한 Azure Import/Export 기반 오프 라인 백업-A](backup-azure-backup-server-import-export-.md)
+* [MARS 에이전트에 대한 Azure Data Box 기반 오프 라인 백업](offline-backup-azure-data-box.md#backup-data-size-and-supported-data-box-skus)
+* [MARS 에이전트에 대한 Azure Import/Export 기반 오프 라인 백업](backup-azure-backup-import-export.md)  
+* [MABS/DPM에 대한 Azure Import/Export 기반 오프 라인 백업-A](backup-azure-backup-server-import-export-.md)

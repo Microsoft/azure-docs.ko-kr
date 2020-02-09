@@ -24,7 +24,7 @@ ms.locfileid: "76900255"
 긴 오디오 API의 추가 이점은 다음과 같습니다.
 
 * 서비스에서 반환 되는 합성 음성은 고화질 오디오 출력을 보장 하는 신경망을 사용 합니다.
-* 실시간 응답은 지원 되지 않으므로 음성 끝점을 배포할 필요가 없습니다.
+* 실시간 응답은 지원 되지 않으므로 음성 엔드포인트을 배포할 필요가 없습니다.
 
 > [!NOTE]
 > 긴 오디오 API는 이제 [사용자 지정 신경망](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-custom-voice#custom-neural-voices)만 지원 합니다.

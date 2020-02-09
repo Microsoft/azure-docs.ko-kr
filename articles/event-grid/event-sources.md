@@ -91,8 +91,8 @@ Event Grid와 Key Vault 통합은 현재 미리 보기로 제공됩니다.
 
 |제목  |Description  |
 |---------|---------|
-| [Azure Event Grid를 사용 하 여 Key Vault 이벤트 모니터링](../key-vault/event-grid-overview.md) | Event Grid와 Key Vault 통합에 대 한 개요입니다. |
-| [자습서: Event Grid를 사용 하 여 Key Vault 이벤트 만들기 및 모니터링](../key-vault/event-grid-tutorial.md) | Key Vault에 대 한 Event Grid 알림을 설정 하는 방법을 알아봅니다. |
+| [Azure Event Grid를 사용 하 여 Key Vault 이벤트 모니터링](../key-vault/event-grid-overview.md) | Event Grid와 Key Vault 통합에 대한 개요입니다. |
+| [자습서: Event Grid를 사용 하 여 Key Vault 이벤트 만들기 및 모니터링](../key-vault/event-grid-tutorial.md) | Key Vault에 대한 Event Grid 알림을 설정 하는 방법을 알아봅니다. |
 | [이벤트 스키마](event-schema-key-vault.md) | Key Vault 이벤트의 필드를 표시 합니다. |
 
 ## <a name="media-services"></a>Media Services
@@ -161,8 +161,8 @@ Azure 앱 구성 이벤트를 구독 하 여 키-값 수정 이벤트에 응답 
 
 |제목 | Description |
 |---------|---------|
-| [Event Grid를 사용 하 여 Azure 앱 구성 이벤트에 대응](../azure-app-configuration/concept-app-configuration-event.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Event Grid와 Azure 앱 구성을 통합 하는 방법에 대 한 개요입니다. |
-| [빠른 시작: Azure CLI를 사용 하 여 Azure 앱 구성 이벤트를 사용자 지정 웹 끝점으로 라우팅](../azure-app-configuration/howto-app-configuration-event.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Azure CLI를 사용 하 여 웹 후크로 Azure 앱 구성 이벤트를 보내는 방법을 보여 줍니다. |
+| [Event Grid를 사용 하 여 Azure 앱 구성 이벤트에 대응](../azure-app-configuration/concept-app-configuration-event.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Event Grid와 Azure 앱 구성을 통합 하는 방법에 대한 개요입니다. |
+| [빠른 시작: Azure CLI를 사용 하 여 Azure 앱 구성 이벤트를 사용자 지정 웹 엔드포인트으로 라우팅](../azure-app-configuration/howto-app-configuration-event.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Azure CLI를 사용 하 여 웹 후크로 Azure 앱 구성 이벤트를 보내는 방법을 보여 줍니다. |
 | [이벤트 스키마](event-schema-app-configuration.md) | Azure 앱 구성 이벤트의 필드를 표시 합니다. |
 
 ## <a name="azure-signalr"></a>Azure SignalR
@@ -170,7 +170,7 @@ Azure SignalR Service 이벤트를 구독 하 여 클라이언트 연결 이벤�
 
 |제목 | Description |
 |---------|---------|
-| [Event Grid를 사용 하 여 Azure SignalR Service 이벤트에 대응](../azure-signalr/signalr-concept-event-grid-integration.md) | Azure SignalR Service를 Event Grid와 통합 하는 방법에 대 한 개요입니다. |
+| [Event Grid를 사용 하 여 Azure SignalR Service 이벤트에 대응](../azure-signalr/signalr-concept-event-grid-integration.md) | Azure SignalR Service를 Event Grid와 통합 하는 방법에 대한 개요입니다. |
 | [Event Grid에 Azure SignalR Service 이벤트를 보내는 방법](../azure-signalr/signalr-howto-event-grid-integration.md) | Event Grid를 통해 Azure SignalR Service 이벤트를 응용 프로그램에 보내는 방법을 보여 줍니다. |
 | [이벤트 스키마](event-schema-azure-signalr.md) | Azure SignalR Service 이벤트의 필드를 표시 합니다. |
 
@@ -180,8 +180,8 @@ Azure Machine Learning 작업 영역 이벤트를 구독 하 여 모델 등록�
 
 | 제목 | Description |
 | ----- | ----- |
-| [Azure Machine Learning 이벤트 사용](../machine-learning/concept-event-grid-integration.md) | Event Grid와 Azure Machine Learning 통합에 대 한 개요입니다. |
-| [Azure Machine Learning에 대 한 Azure Event Grid 이벤트 스키마](event-schema-machine-learning.md) | Azure Machine Learning 이벤트의 필드를 표시 합니다. |
+| [Azure Machine Learning 이벤트 사용](../machine-learning/concept-event-grid-integration.md) | Event Grid와 Azure Machine Learning 통합에 대한 개요입니다. |
+| [Azure Machine Learning에 대한 Azure Event Grid 이벤트 스키마](event-schema-machine-learning.md) | Azure Machine Learning 이벤트의 필드를 표시 합니다. |
 
 ## <a name="next-steps"></a>다음 단계
 

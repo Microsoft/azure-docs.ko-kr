@@ -18,17 +18,17 @@ ms.locfileid: "75911770"
 ---
 # <a name="data-driven-style-expressions-web-sdk"></a>데이터 기반 스타일 식 (웹 SDK)
 
-식을 사용 하면 데이터 원본의 각 셰이프에 정의 된 속성을 관찰 하는 옵션에 대 한 스타일 지정 옵션에 비즈니스 논리를 적용할 수 있습니다. 식을 사용 하 여 데이터 원본 또는 계층의 데이터를 필터링 할 수도 있습니다. 식은 if 문과 같은 조건부 논리로 구성 될 수 있으며,를 사용 하 여 데이터를 조작할 수도 있습니다. 문자열, 논리 및 수학적 연산자 
+식을 사용 하면 데이터 원본의 각 셰이프에 정의 된 속성을 관찰 하는 옵션에 대한 스타일 지정 옵션에 비즈니스 논리를 적용할 수 있습니다. 식을 사용 하 여 데이터 원본 또는 계층의 데이터를 필터링 할 수도 있습니다. 식은 if 문과 같은 조건부 논리로 구성 될 수 있으며,를 사용 하 여 데이터를 조작할 수도 있습니다. 문자열, 논리 및 수학적 연산자 
 
-데이터 기반 스타일은 스타일 지정에 대 한 비즈니스 논리를 구현 하는 데 필요한 코드의 양을 줄일 수 있습니다. 레이어를 사용 하는 경우 UI 스레드에서 비즈니스 논리를 평가 하는 것과 비교할 때 향상 된 성능을 제공 하는 별도의 스레드에서 렌더링 시 식이 계산 됩니다.
+데이터 기반 스타일은 스타일 지정에 대한 비즈니스 논리를 구현 하는 데 필요한 코드의 양을 줄일 수 있습니다. 레이어를 사용 하는 경우 UI 스레드에서 비즈니스 논리를 평가 하는 것과 비교할 때 향상 된 성능을 제공 하는 별도의 스레드에서 렌더링 시 식이 계산 됩니다.
 
-다음 비디오는 Azure Maps 웹 SDK의 데이터 기반 스타일에 대 한 개요를 제공 합니다.
+다음 비디오는 Azure Maps 웹 SDK의 데이터 기반 스타일에 대한 개요를 제공 합니다.
 
 <br/>
 
 <iframe src="https://channel9.msdn.com/Shows/Internet-of-Things-Show/Data-Driven-Styling-with-Azure-Maps/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
-식은 JSON 배열로 표시 됩니다. 배열에서 식의 첫 번째 요소는 식 연산자의 이름을 지정 하는 문자열입니다. 예를 들어 "+" 또는 "case"입니다. 다음 요소 (있는 경우)는 식에 대 한 인수입니다. 각 인수는 리터럴 값 (문자열, 숫자, 부울 또는 `null`) 이거나 다른 식 배열입니다. 다음 의사 코드에서는 식의 기본 구조를 정의 합니다. 
+식은 JSON 배열로 표시 됩니다. 배열에서 식의 첫 번째 요소는 식 연산자의 이름을 지정 하는 문자열입니다. 예를 들어 "+" 또는 "case"입니다. 다음 요소 (있는 경우)는 식에 대한 인수입니다. 각 인수는 리터럴 값 (문자열, 숫자, 부울 또는 `null`) 이거나 다른 식 배열입니다. 다음 의사 코드에서는 식의 기본 구조를 정의 합니다. 
 
 ```javascript
 [ 
@@ -47,7 +47,7 @@ Azure Maps 웹 SDK는 자체 또는 다른 식과 함께 사용할 수 있는 �
 | [부울 식](#boolean-expressions) | 부울 식은 부울 비교를 평가 하기 위한 부울 연산자 식 집합을 제공 합니다. |
 | [색 식](#color-expressions) | 색 식을 사용 하면 색 값을 보다 쉽게 만들고 조작할 수 있습니다. |
 | [조건식](#conditional-expressions) | 조건식은 if 문과 같은 논리 연산을 제공 합니다. |
-| [데이터 식](#data-expressions) | 기능에서 속성 데이터에 대 한 액세스를 제공 합니다. |
+| [데이터 식](#data-expressions) | 기능에서 속성 데이터에 대한 액세스를 제공 합니다. |
 | [보간 및 단계 식](#interpolate-and-step-expressions) | 보간 및 단계 식은 보간된 곡선이 나 step 함수를 따라 값을 계산 하는 데 사용할 수 있습니다. |
 | [계층 관련 식](#layer-specific-expressions) | 단일 계층에만 적용 되는 특수 식입니다. |
 | [수학 식](#math-expressions) | 식 프레임 워크 내에서 데이터 기반 계산을 수행 하는 수치 연산자를 제공 합니다. |
@@ -79,7 +79,7 @@ Azure Maps 웹 SDK는 자체 또는 다른 식과 함께 사용할 수 있는 �
 
 ## <a name="data-expressions"></a>데이터 식
 
-데이터 식은 기능에서 속성 데이터에 대 한 액세스를 제공 합니다. 
+데이터 식은 기능에서 속성 데이터에 대한 액세스를 제공 합니다. 
 
 | Expression | 반환 형식 | Description |
 |------------|-------------|-------------|
@@ -186,7 +186,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 
 **예**
 
-데이터 집합의 모든 기능에 숫자 `revenue` 속성이 있는 경우 데이터 집합에서 만든 클러스터의 모든 요소에 대 한 총 수익을 계산 하려면 다음 집계 식을 사용 합니다. `['+', 0, ['get', 'revenue']]`
+데이터 집합의 모든 기능에 숫자 `revenue` 속성이 있는 경우 데이터 집합에서 만든 클러스터의 모든 요소에 대한 총 수익을 계산 하려면 다음 집계 식을 사용 합니다. `['+', 0, ['get', 'revenue']]`
 
 ## <a name="boolean-expressions"></a>부울 식
 
@@ -408,7 +408,7 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 | `['typeof', value]` | 문자열 | 지정 된 값의 형식을 설명 하는 문자열을 반환 합니다. |
 
 > [!TIP]
-> `Expression name must be a string, but found number instead. If you wanted a literal array, use ["literal", [...]].`와 유사한 오류 메시지가 브라우저 콘솔에 표시 되는 경우 코드에 첫 번째 값에 대 한 문자열이 없는 배열이 있는 식이 있음을 의미 합니다. 식이 배열을 반환 하도록 하려면 배열을 `literal` 식으로 래핑합니다. 다음 예에서는 `match` 식을 사용 하 여 두 개의 숫자를 포함 하는 배열인 기호 계층의 아이콘 `offset` 옵션을 설정 합니다 .이 옵션은 point 기능의 `entityType` 속성 값을 기반으로 두 오프셋 값 중 하나를 선택 하는 데 사용 됩니다.
+> `Expression name must be a string, but found number instead. If you wanted a literal array, use ["literal", [...]].`와 유사한 오류 메시지가 브라우저 콘솔에 표시 되는 경우 코드에 첫 번째 값에 대한 문자열이 없는 배열이 있는 식이 있음을 의미 합니다. 식이 배열을 반환 하도록 하려면 배열을 `literal` 식으로 래핑합니다. 다음 예에서는 `match` 식을 사용 하 여 두 개의 숫자를 포함 하는 배열인 기호 계층의 아이콘 `offset` 옵션을 설정 합니다 .이 옵션은 point 기능의 `entityType` 속성 값을 기반으로 두 오프셋 값 중 하나를 선택 하는 데 사용 됩니다.
 >
 > ```javascript
 > var layer = new atlas.layer.SymbolLayer(datasource, null, {
@@ -607,7 +607,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 
 ### <a name="heat-map-density-expression"></a>열 지도 밀도 식
 
-열 지도 밀도 식은 열 지도 계층의 각 픽셀에 대 한 열 지도 밀도 값을 검색 하 고 `['heatmap-density']`으로 정의 됩니다. 이 값은 `0`와 `1` 사이의 숫자 이며 열 지도를 색으로 표시 하는 데 사용 되는 색 그라데이션을 정의 하기 위해 `interpolation` 또는 `step` 식과 함께 사용 됩니다. 이 식은 열 지도 계층의 [색 옵션](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.heatmaplayeroptions?view=azure-iot-typescript-latest#color) 에만 사용할 수 있습니다.
+열 지도 밀도 식은 열 지도 계층의 각 픽셀에 대한 열 지도 밀도 값을 검색 하 고 `['heatmap-density']`으로 정의 됩니다. 이 값은 `0`와 `1` 사이의 숫자 이며 열 지도를 색으로 표시 하는 데 사용 되는 색 그라데이션을 정의 하기 위해 `interpolation` 또는 `step` 식과 함께 사용 됩니다. 이 식은 열 지도 계층의 [색 옵션](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.heatmaplayeroptions?view=azure-iot-typescript-latest#color) 에만 사용할 수 있습니다.
 
 > [!TIP]
 > 보간 식의 인덱스 0에 있는 색 또는 단계 색의 기본 색은 데이터가 없고 배경색을 정의 하는 데 사용할 수 있는 영역의 색을 정의 합니다. 대부분 이 값을 투명 또는 반투명 검은색으로 설정하는 것을 선호합니다. 
@@ -797,7 +797,7 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 
 **예제**
 
-기본적으로 열 지도 계층에 렌더링 되는 데이터 요소의 반지름에는 모든 확대/축소 수준에 대 한 고정 픽셀 반지름이 있습니다. 지도를 확대 하면 데이터 집계가 함께 표시 되 고 열 지도 계층이 다르게 보입니다. 각 데이터 요소가 지도의 동일한 실제 영역을 포함 하도록 각 확대/축소 수준에 대 한 반지름의 크기를 조정 하는 데 `zoom` 식을 사용할 수 있습니다. 이렇게 하면 열 지도 계층이 더 정적이 고 일관 되 게 보입니다. 지도의 각 확대/축소 수준에는 이전 확대/축소 수준과 가로 및 세로로 두 배의 픽셀이 있습니다. 각 확대/축소 수준에서 두 배가 되도록 반지름의 크기를 조정 하면 모든 확대/축소 수준에서 일치 하는 열 지도를 만듭니다. 이렇게 하려면 아래와 같이 `base 2 exponential interpolation` 식에 `zoom` 식을 사용 합니다. 
+기본적으로 열 지도 계층에 렌더링 되는 데이터 요소의 반지름에는 모든 확대/축소 수준에 대한 고정 픽셀 반지름이 있습니다. 지도를 확대 하면 데이터 집계가 함께 표시 되 고 열 지도 계층이 다르게 보입니다. 각 데이터 요소가 지도의 동일한 실제 영역을 포함 하도록 각 확대/축소 수준에 대한 반지름의 크기를 조정 하는 데 `zoom` 식을 사용할 수 있습니다. 이렇게 하면 열 지도 계층이 더 정적이 고 일관 되 게 보입니다. 지도의 각 확대/축소 수준에는 이전 확대/축소 수준과 가로 및 세로로 두 배의 픽셀이 있습니다. 각 확대/축소 수준에서 두 배가 되도록 반지름의 크기를 조정 하면 모든 확대/축소 수준에서 일치 하는 열 지도를 만듭니다. 이렇게 하려면 아래와 같이 `base 2 exponential interpolation` 식에 `zoom` 식을 사용 합니다. 
 
 ```javascript 
 var layer = new atlas.layer.HeatMapLayer(datasource, null, {
@@ -819,7 +819,7 @@ var layer = new atlas.layer.HeatMapLayer(datasource, null, {
 
 ## <a name="variable-binding-expressions"></a>변수 바인딩 식
 
-변수 바인딩 식은 계산 결과를 변수에 저장 하 여 계산 결과를 식의 다른 위치에서 다시 계산 하지 않고 여러 번 참조할 수 있도록 합니다. 이는 많은 계산을 포함 하는 식에 대 한 유용한 최적화입니다.
+변수 바인딩 식은 계산 결과를 변수에 저장 하 여 계산 결과를 식의 다른 위치에서 다시 계산 하지 않고 여러 번 참조할 수 있도록 합니다. 이는 많은 계산을 포함 하는 식에 대한 유용한 최적화입니다.
 
 | Expression | 반환 형식 | Description |
 |--------------|---------------|--------------|
@@ -828,7 +828,7 @@ var layer = new atlas.layer.HeatMapLayer(datasource, null, {
 
 **예제**
 
-이 예에서는 온도 비율에 상대적인 수익을 계산 하는 식을 사용한 다음 `case` 식을 사용 하 여이 값에 대 한 다양 한 부울 연산을 계산 합니다. `let` 식은 한 번만 계산 하면 되 고 `var` 식이이 변수를 다시 계산할 필요 없이 자주 참조 하도록 온도 비율에 상대적인 수익을 저장 하는 데 사용 됩니다.
+이 예에서는 온도 비율에 상대적인 수익을 계산 하는 식을 사용한 다음 `case` 식을 사용 하 여이 값에 대한 다양 한 부울 연산을 계산 합니다. `let` 식은 한 번만 계산 하면 되 고 `var` 식이이 변수를 다시 계산할 필요 없이 자주 참조 하도록 온도 비율에 상대적인 수익을 저장 하는 데 사용 됩니다.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {

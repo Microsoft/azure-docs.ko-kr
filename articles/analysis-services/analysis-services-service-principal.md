@@ -20,7 +20,7 @@ ms.locfileid: "73572598"
 
 Analysis Services에서 서비스 사용자는 일반적인 작업을 자동화하는 Azure Automation, PowerShell 무인 모드, 사용자 지정 클라이언트 애플리케이션 및 웹앱에 사용됩니다. 예를 들어 서버 프로비전, 모델 배포, 데이터 새로 고침, 규모 확대/축소 및 일시 중지/다시 시작은 모두 서비스 사용자를 사용하여 자동화될 수 있습니다. 일반 Azure AD UPN 계정과 매우 유사하게 권한은 역할 멤버 자격을 통해 서비스 사용자에게 할당됩니다.
 
-또한 Analysis Services은 서비스 주체를 사용 하 여 관리 id에서 수행 하는 작업도 지원 합니다. 자세한 내용은 azure [리소스에 대 한 관리 되는 id](../active-directory/managed-identities-azure-resources/overview.md) 및 azure [AD 인증을 지 원하는 azure 서비스](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-analysis-services)를 참조 하세요.
+또한 Analysis Services은 서비스 주체를 사용 하 여 관리 id에서 수행 하는 작업도 지원 합니다. 자세한 내용은 azure [리소스에 대한 관리 되는 id](../active-directory/managed-identities-azure-resources/overview.md) 및 azure [AD 인증을 지 원하는 azure 서비스](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-analysis-services)를 참조 하세요.
 
 ## <a name="create-service-principals"></a>서비스 주체 만들기
  
@@ -52,7 +52,7 @@ UPN과 거의 동일하게 서비스 사용자 appID 및 암호 또는 인증서
 
 [Microsoft.analysisservices.sharepoint.integration.dll](/powershell/module/az.analysisservices) 모듈을 사용 하 여 리소스 관리 작업에 서비스 주체를 사용 하는 경우 `Connect-AzAccount` cmdlet을 사용 합니다. 
 
-다음 예에서는 appID와 암호를 사용 하 여 읽기 전용 복제본과의 동기화에 대 한 제어 평면 작업을 수행 하 고 규모를 확장/축소 합니다.
+다음 예에서는 appID와 암호를 사용 하 여 읽기 전용 복제본과의 동기화에 대한 제어 평면 작업을 수행 하 고 규모를 확장/축소 합니다.
 
 ```powershell
 Param (

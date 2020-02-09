@@ -24,16 +24,16 @@ Visual Studio Code 및 [Azure Dev Spaces 확장][azds-extension] 을 사용 하 
 
 Visual Studio Code 및 Azure Dev Spaces 확장은 프로젝트에 대해 다음과 같은 자산을 생성 합니다.
 
-* Maven, node.js 응용 프로그램 및 .NET Core 응용 프로그램을 사용 하는 Java 응용 프로그램에 대 한 dockerfiles
-* Dockerfile을 사용 하는 거의 모든 언어에 대 한 투구 차트
-* 프로젝트에 대 한 [Azure Dev Spaces 구성 파일인][azds-yaml] `azds.yaml` 파일
-* Maven, node.js 응용 프로그램 및 .NET Core 응용 프로그램을 사용 하 여 Java 응용 프로그램에 대 한 프로젝트의 Visual Studio Code 시작 구성이 포함 된 `.vscode` 폴더
+* Maven, node.js 응용 프로그램 및 .NET Core 응용 프로그램을 사용 하는 Java 응용 프로그램에 대한 dockerfiles
+* Dockerfile을 사용 하는 거의 모든 언어에 대한 투구 차트
+* 프로젝트에 대한 [Azure Dev Spaces 구성 파일인][azds-yaml] `azds.yaml` 파일
+* Maven, node.js 응용 프로그램 및 .NET Core 응용 프로그램을 사용 하 여 Java 응용 프로그램에 대한 프로젝트의 Visual Studio Code 시작 구성이 포함 된 `.vscode` 폴더
 
 Dockerfile, 투구 차트 및 `azds.yaml` 파일은 `azds prep`를 실행할 때 생성 되는 것과 동일한 자산입니다. 이러한 파일을 Visual Studio code 외부에서 사용 하 여 `azds up`를 실행 하는 것과 같은 AKS에서 프로젝트를 실행할 수도 있습니다. `.vscode` 폴더는 Visual Studio code에서 Visual Studio Code의 AKS에서 프로젝트를 실행 하는 데만 사용 됩니다.
 
 ## <a name="run-your-service-in-aks"></a>AKS에서 서비스를 실행 합니다.
 
-프로젝트에 대 한 자산을 생성 한 후 Visual Studio Code의 기존 개발 공간에서 Java, node.js 및 .NET Core 서비스를 실행할 수 있습니다. Visual Studio Code의 *디버그* 페이지에서 `.vscode` 디렉터리의 시작 구성을 호출 하 여 프로젝트를 실행할 수 있습니다.
+프로젝트에 대한 자산을 생성 한 후 Visual Studio Code의 기존 개발 공간에서 Java, node.js 및 .NET Core 서비스를 실행할 수 있습니다. Visual Studio Code의 *디버그* 페이지에서 `.vscode` 디렉터리의 시작 구성을 호출 하 여 프로젝트를 실행할 수 있습니다.
 
 AKS 클러스터를 만들고 Visual Studio Code 외부에서 클러스터의 Azure Dev Spaces를 사용 하도록 설정 해야 합니다. 예를 들어 Azure CLI 또는 Azure Portal를 사용 하 여이 설치를 수행할 수 있습니다. `azds prep`를 실행 하 여 생성 된 자산과 같이 기존 Dockerfiles, 투구 차트 및 Visual Studio Code 외부에서 만든 `azds.yaml` 파일을 다시 사용할 수 있습니다. Visual Studio Code 외부로 생성 된 자산을 다시 사용 하는 경우에도 `.vscode` 디렉터리가 있어야 합니다. 이 `.vscode` 디렉터리는 Visual Studio code 및 Azure Dev Spaces 확장에 의해 다시 생성 될 수 있으며 기존 자산을 덮어쓰지 않습니다.
 

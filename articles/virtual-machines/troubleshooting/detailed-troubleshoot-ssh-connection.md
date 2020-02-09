@@ -90,7 +90,7 @@ SSH 클라이언트가 VM의 SSH 서비스에 도달할 수 없는 데에는 여
 
 네트워크 관리자와 협력하여 인터넷에서 SSH 트래픽을 허용하도록 조직 에지 디바이스 설정을 수정합니다.
 
-## <a name="source-3-cloud-service-endpoint-and-acl"></a>원본 3: 클라우드 서비스 끝점 및 ACL
+## <a name="source-3-cloud-service-endpoint-and-acl"></a>원본 3: 클라우드 서비스 엔드포인트 및 ACL
 > [!NOTE]
 > 이 발생지는 클래식 배포 모델을 사용하여 만든 VM에만 적용됩니다. 리소스 관리자를 사용 하 여 만든 vm의 경우 원본 4 [로 건너뜁니다. 네트워크 보안 그룹](#nsg).
 

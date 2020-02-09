@@ -1,6 +1,6 @@
 ---
 title: Redis 용 Azure Cache의 데이터 손실 문제 해결
-description: 'Redis에 대 한 Azure Cache의 데이터 손실 문제를 해결 하는 방법 (예: 키의 부분 손실, 키 만료 또는 키의 완전 한 손실)을 알아봅니다.'
+description: 'Redis에 대한 Azure Cache의 데이터 손실 문제를 해결 하는 방법 (예: 키의 부분 손실, 키 만료 또는 키의 완전 한 손실)을 알아봅니다.'
 author: yegu-ms
 ms.author: yegu
 ms.service: cache
@@ -23,7 +23,7 @@ ms.locfileid: "75530904"
 
 ## <a name="partial-loss-of-keys"></a>키의 부분 손실
 
-Redis 용 Azure Cache는 메모리에 저장 된 키를 임의로 삭제 하지 않습니다. 그러나 만료 또는 제거 정책에 대 한 응답 및 명시적인 키 삭제 명령에 대 한 키를 제거 합니다. 프리미엄 또는 표준 Azure Cache for Redis 인스턴스에 대 한 마스터 노드에 기록 된 키를 복제본에서 바로 사용할 수 없을 수도 있습니다. 데이터는 비동기 및 비 블로킹 방식으로 마스터에서 복제본으로 복제 됩니다.
+Redis 용 Azure Cache는 메모리에 저장 된 키를 임의로 삭제 하지 않습니다. 그러나 만료 또는 제거 정책에 대한 응답 및 명시적인 키 삭제 명령에 대한 키를 제거 합니다. 프리미엄 또는 표준 Azure Cache for Redis 인스턴스에 대한 마스터 노드에 기록 된 키를 복제본에서 바로 사용할 수 없을 수도 있습니다. 데이터는 비동기 및 비 블로킹 방식으로 마스터에서 복제본으로 복제 됩니다.
 
 키가 캐시에서 사라진 경우 다음과 같은 가능한 원인을 확인 합니다.
 
@@ -36,9 +36,9 @@ Redis 용 Azure Cache는 메모리에 저장 된 키를 임의로 삭제 하지 
 
 ### <a name="key-expiration"></a>키 만료
 
-Redis에 대 한 Azure Cache는 키에 제한 시간이 할당 되 고 해당 기간이 경과 하면 자동으로 키를 제거 합니다. 키 만료 Redis에 대 한 자세한 내용은 [만료](https://redis.io/commands/expire) 명령 설명서를 참조 하세요. 제한 시간 값은 [set](https://redis.io/commands/set), [setex](https://redis.io/commands/setex), [GETSET](https://redis.io/commands/getset)및 기타 **\*저장** 명령을 사용 하 여 설정할 수도 있습니다.
+Redis에 대한 Azure Cache는 키에 제한 시간이 할당 되 고 해당 기간이 경과 하면 자동으로 키를 제거 합니다. 키 만료 Redis에 대한 자세한 내용은 [만료](https://redis.io/commands/expire) 명령 설명서를 참조 하세요. 제한 시간 값은 [set](https://redis.io/commands/set), [setex](https://redis.io/commands/setex), [GETSET](https://redis.io/commands/getset)및 기타 **\*저장** 명령을 사용 하 여 설정할 수도 있습니다.
 
-만료 된 키 수에 대 한 통계를 얻으려면 [INFO](https://redis.io/commands/info) 명령을 사용 합니다. `Stats` 섹션에는 만료 된 키의 총 수가 표시 됩니다. `Keyspace` 섹션에서는 시간 제한이 있는 키 수와 평균 시간 제한 값에 대 한 자세한 정보를 제공 합니다.
+만료 된 키 수에 대한 통계를 얻으려면 [INFO](https://redis.io/commands/info) 명령을 사용 합니다. `Stats` 섹션에는 만료 된 키의 총 수가 표시 됩니다. `Keyspace` 섹션에서는 시간 제한이 있는 키 수와 평균 시간 제한 값에 대한 자세한 정보를 제공 합니다.
 
 ```
 # Stats
@@ -50,11 +50,11 @@ expired_keys:46583
 db0:keys=3450,expires=2,avg_ttl=91861015336
 ```
 
-캐시에 대 한 진단 메트릭을 확인 하 여 키가 누락 된 시간과 만료 된 키의 스파이크 사이에 상관 관계가 있는지 확인할 수도 있습니다. Keyspace 알림 또는 **모니터** 를 사용 하 여 이러한 유형의 문제를 디버깅 하는 방법에 대 한 자세한 내용은 [Redis Keyspace 누락 디버깅](https://gist.github.com/JonCole/4a249477142be839b904f7426ccccf82#appendix) 의 부록을 참조 하세요.
+캐시에 대한 진단 메트릭을 확인 하 여 키가 누락 된 시간과 만료 된 키의 스파이크 사이에 상관 관계가 있는지 확인할 수도 있습니다. Keyspace 알림 또는 **모니터** 를 사용 하 여 이러한 유형의 문제를 디버깅 하는 방법에 대한 자세한 내용은 [Redis Keyspace 누락 디버깅](https://gist.github.com/JonCole/4a249477142be839b904f7426ccccf82#appendix) 의 부록을 참조 하세요.
 
 ### <a name="key-eviction"></a>키 제거
 
-Redis 용 Azure Cache에는 데이터를 저장 하기 위한 메모리 공간이 필요 합니다. 필요한 경우 사용 가능한 메모리를 확보 하기 위해 키를 제거 합니다. [INFO](https://redis.io/commands/info) 명령의 **used_memory** 또는 **used_memory_rss** 값이 구성 된 **Maxmemory** 설정에 해당 하는 경우 Redis에 대 한 Azure cache는 [캐시 정책을](https://redis.io/topics/lru-cache)기반으로 메모리에서 키를 제거 하기 시작 합니다.
+Redis 용 Azure Cache에는 데이터를 저장 하기 위한 메모리 공간이 필요 합니다. 필요한 경우 사용 가능한 메모리를 확보 하기 위해 키를 제거 합니다. [INFO](https://redis.io/commands/info) 명령의 **used_memory** 또는 **used_memory_rss** 값이 구성 된 **Maxmemory** 설정에 해당 하는 경우 Redis에 대한 Azure cache는 [캐시 정책을](https://redis.io/topics/lru-cache)기반으로 메모리에서 키를 제거 하기 시작 합니다.
 
 [INFO](https://redis.io/commands/info) 명령을 사용 하 여 제거 된 키 수를 모니터링할 수 있습니다.
 
@@ -64,7 +64,7 @@ Redis 용 Azure Cache에는 데이터를 저장 하기 위한 메모리 공간�
 evicted_keys:13224
 ```
 
-캐시에 대 한 진단 메트릭을 확인 하 여 키가 누락 된 시간과 제거 된 키의 스파이크 사이에 상관 관계가 있는지 확인할 수도 있습니다. Keyspace 알림 또는 **모니터** 를 사용 하 여 이러한 유형의 문제를 디버깅 하는 방법에 대 한 자세한 내용은 [Redis Keyspace 누락 디버깅](https://gist.github.com/JonCole/4a249477142be839b904f7426ccccf82#appendix) 의 부록을 참조 하세요.
+캐시에 대한 진단 메트릭을 확인 하 여 키가 누락 된 시간과 제거 된 키의 스파이크 사이에 상관 관계가 있는지 확인할 수도 있습니다. Keyspace 알림 또는 **모니터** 를 사용 하 여 이러한 유형의 문제를 디버깅 하는 방법에 대한 자세한 내용은 [Redis Keyspace 누락 디버깅](https://gist.github.com/JonCole/4a249477142be839b904f7426ccccf82#appendix) 의 부록을 참조 하세요.
 
 ### <a name="key-deletion"></a>키 삭제
 
@@ -89,7 +89,7 @@ Standard 또는 Premium 계층의 Redis 용 Azure Cache 인스턴스는 마스�
 | 원인 | Description |
 |---|---|
 | [키 플러시](#key-flushing) | 키가 수동으로 제거 되었습니다. |
-| [잘못 된 데이터베이스 선택](#incorrect-database-selection) | Redis에 대 한 Azure Cache가 기본이 아닌 데이터베이스를 사용 하도록 설정 되어 있습니다. |
+| [잘못 된 데이터베이스 선택](#incorrect-database-selection) | Redis에 대한 Azure Cache가 기본이 아닌 데이터베이스를 사용 하도록 설정 되어 있습니다. |
 | [Redis 인스턴스 오류](#redis-instance-failure) | Redis 서버를 사용할 수 없습니다. |
 
 ### <a name="key-flushing"></a>키 플러시
@@ -106,7 +106,7 @@ cmdstat_flushdb:calls=1,usec=110,usec_per_call=52.00
 
 ### <a name="incorrect-database-selection"></a>잘못 된 데이터베이스 선택
 
-Azure Cache for Redis는 기본적으로 **d b 0** 데이터베이스를 사용 합니다. 다른 데이터베이스 (예: **db1**)로 전환 하 고 키를 읽으려고 하는 경우 Redis에 대 한 Azure Cache에서 해당 파일을 찾지 못합니다. 모든 데이터베이스는 논리적으로 분리 된 단위 이며 다른 데이터 집합을 보유 합니다. [SELECT](https://redis.io/commands/select) 명령을 사용 하 여 사용 가능한 다른 데이터베이스를 사용 하 고 각 데이터베이스에서 키를 찾습니다.
+Azure Cache for Redis는 기본적으로 **d b 0** 데이터베이스를 사용 합니다. 다른 데이터베이스 (예: **db1**)로 전환 하 고 키를 읽으려고 하는 경우 Redis에 대한 Azure Cache에서 해당 파일을 찾지 못합니다. 모든 데이터베이스는 논리적으로 분리 된 단위 이며 다른 데이터 집합을 보유 합니다. [SELECT](https://redis.io/commands/select) 명령을 사용 하 여 사용 가능한 다른 데이터베이스를 사용 하 고 각 데이터베이스에서 키를 찾습니다.
 
 ### <a name="redis-instance-failure"></a>Redis 인스턴스 오류
 

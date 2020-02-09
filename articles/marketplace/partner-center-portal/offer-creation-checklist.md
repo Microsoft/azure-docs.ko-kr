@@ -28,7 +28,7 @@ SaaS 제품 만들기 프로세스에서는 여러 페이지를 사용 합니다
 | [속성 페이지](#properties-page) | 마켓플레이스에서 제품을 그룹화 하는 데 사용 되는 범주와 산업, 제품을 지 원하는 법적 계약 및 앱 버전을 정의 합니다. |
 | [제공 목록 페이지](#offer-listing-page) | 제품 및 마케팅 자산에 대 한 설명을 포함 하 여 marketplace에 표시 될 제품 세부 정보를 정의 합니다. |
 | [미리 보기 페이지](#preview-page) | 제품을 더 광범위 한 marketplace 대상에 게시 하기 전에 제품 릴리스를 위한 제한 된 미리 보기 대상을 정의 합니다. |
-| [제품 기술 구성 페이지](#technical-configuration-page)  | Microsoft를 통해 제품을 판매 하도록 선택한 경우에만 사용할 수 있습니다. 제품에 연결 하는 데 사용 되는 기술 세부 정보 (URL 경로, webhook, 테 넌 트 ID 및 앱 ID)를 정의 합니다. |
+| [제품 기술 구성 페이지](#technical-configuration-page)  | Microsoft를 통해 제품을 판매 하도록 선택한 경우에만 사용할 수 있습니다. 제품에 연결 하는 데 사용 되는 기술 세부 정보 (URL 경로, webhook, 테넌트 ID 및 앱 ID)를 정의 합니다. |
 | [**새 계획 모달**](#plan-identity-modal) | 계획 id 정보를 수집 합니다.  |
 | [계획 목록 페이지](#plan-listing-page)  | Microsoft를 통해 제품을 판매 하도록 선택한 경우에만 사용할 수 있습니다. Marketplace의 계획을 나열 하는 데 사용 되는 세부 정보를 정의 합니다.  |
 | [가격 책정 & 가용성 페이지 계획](#plan-pricing--availability-page)  | Microsoft를 통해 제품을 판매 하도록 선택한 경우에만 사용할 수 있습니다.  제품의 각 계획 (버전)에 대 한 비즈니스 특성 (가격 책정 모델), 대상 및 시장 가용성을 수집 합니다.  |
@@ -59,7 +59,7 @@ SaaS 제품 만들기 프로세스에서는 여러 페이지를 사용 합니다
 | 채널  | (선택 사항) 기본값: CSP (대리점) 채널에 옵트인 (opt in) 하지 않습니다.  |
 | 시험 사용 | (선택 사항) 기본값: 테스트 드라이브를 사용할 수 없습니다.  |
 | 시험 사용 유형 | 테스트 드라이브를 사용 하도록 설정한 경우 필수입니다. 기본값: 아무것도 선택 하지 않습니다. 옵션: Azure Resource Manager, dynamics 365 for Business Central, dynamics 365 for Customer Engagement, Dynamics 365 for Operations, 논리 앱 Power BI.  |
-| 리드 관리-CRM 시스템에 연결 | Microsoft를 통해 판매 하거나 제품을 "연락처"로 나열 하는 경우에 필요 합니다. 기본값: CRM 시스템이 연결 되어 있지 않습니다. CRM 옵션: Azure 테이블, Azure blob, Dynamics CRM online, HTTPs ' 끝점, Marketo, Salesforce  |
+| 리드 관리-CRM 시스템에 연결 | Microsoft를 통해 판매 하거나 제품을 "연락처"로 나열 하는 경우에 필요 합니다. 기본값: CRM 시스템이 연결 되어 있지 않습니다. CRM 옵션: Azure 테이블, Azure blob, Dynamics CRM online, HTTPs ' 엔드포인트, Marketo, Salesforce  |
 
 ## <a name="properties-page"></a>속성 페이지
 
@@ -142,8 +142,8 @@ SaaS 제품 만들기 프로세스에서는 여러 페이지를 사용 합니다
 | 최소 및 최대 좌석  | 선택 사항으로, 사용자 기반 가격 책정 모델을 선택한 경우에만 사용할 수 있습니다. |
 | 청구 기간  | 필수 사항입니다. 기본값: 매월 옵션: 월별, 연간 |
 | 가격  | 월간 청구 기간을 선택한 경우 매월 필수 USD 연간 청구 기간을 선택한 경우에는 연간 USD입니다. |
-| 대상 계획  | (선택 사항) 기본값: 공개 계획. 옵션: 공용, 테 넌 트 ID 별 개인 |
-| 제한 된 계획 대상 사용자 (테 넌 트 ID + 설명)  | 비공개 요금제를 선택 하는 경우 필수입니다. 수동으로 입력 한 경우 최소 1 및 최대 10 개의 테 넌 트 Id입니다. CSV 파일을 가져오는 경우 최대 2만입니다. |
+| 대상 계획  | (선택 사항) 기본값: 공개 계획. 옵션: 공용, 테넌트 ID 별 개인 |
+| 제한 된 계획 대상 사용자 (테넌트 ID + 설명)  | 비공개 요금제를 선택 하는 경우 필수입니다. 수동으로 입력 한 경우 최소 1 및 최대 10 개의 테넌트 Id입니다. CSV 파일을 가져오는 경우 최대 2만입니다. |
 
 ## <a name="test-drive-listing-page"></a>테스트 드라이브 목록 페이지
 

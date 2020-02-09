@@ -26,7 +26,7 @@ SQL Server 데이터베이스는 낮은 RPO (복구 지점 목표) 및 장기 �
 > * 데이터베이스에 대한 자동 보호를 설정합니다.
 
 >[!NOTE]
->Azure **vm의 SQL server에 대 한 일시 삭제 및 AZURE vm 워크 로드의 SAP HANA에 대 한 일시** 삭제는 이제 미리 보기로 제공 됩니다.<br>
+>Azure **vm의 SQL server에 대한 일시 삭제 및 AZURE vm 워크 로드의 SAP HANA에 대한 일시** 삭제는 이제 미리 보기로 제공 됩니다.<br>
 >미리 보기에 등록 하려면 AskAzureBackupTeam@microsoft.com에 씁니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
@@ -35,7 +35,7 @@ SQL Server 데이터베이스를 백업 하기 전에 다음 조건을 확인 �
 
 1. SQL Server 인스턴스를 호스트 하는 VM과 동일한 지역 및 구독에서 [Recovery Services 자격 증명 모음](backup-sql-server-database-azure-vms.md#create-a-recovery-services-vault) 을 식별 하거나 만듭니다.
 2. VM이 [네트워크에 연결](backup-sql-server-database-azure-vms.md#establish-network-connectivity)되어 있는지 확인 합니다.
-3. SQL Server 데이터베이스가 [Azure Backup에 대 한 데이터베이스 명명 지침](#database-naming-guidelines-for-azure-backup)을 따르는지 확인 합니다.
+3. SQL Server 데이터베이스가 [Azure Backup에 대한 데이터베이스 명명 지침](#database-naming-guidelines-for-azure-backup)을 따르는지 확인 합니다.
 4. 데이터베이스에 대해 다른 백업 솔루션을 사용 하도록 설정 하지 않았는지 확인 합니다. 데이터베이스를 백업 하기 전에 다른 모든 SQL Server 백업을 사용 하지 않도록 설정 합니다.
 
 > [!NOTE]
@@ -43,7 +43,7 @@ SQL Server 데이터베이스를 백업 하기 전에 다음 조건을 확인 �
 
 ### <a name="establish-network-connectivity"></a>네트워크 연결 설정
 
-모든 작업에 대해 SQL Server VM는 Azure 공용 IP 주소에 대 한 연결이 필요 합니다. Azure 공용 IP 주소에 연결되지 않으면 VM 작업(데이터베이스 검색, 백업 구성, 백업 예약, 복구 지점 복원 등)이 실패합니다.
+모든 작업에 대해 SQL Server VM는 Azure 공용 IP 주소에 대한 연결이 필요 합니다. Azure 공용 IP 주소에 연결되지 않으면 VM 작업(데이터베이스 검색, 백업 구성, 백업 예약, 복구 지점 복원 등)이 실패합니다.
 
 다음 옵션 중 하나를 사용하여 연결을 설정합니다.
 
@@ -87,7 +87,7 @@ PowerShell을 사용하여 규칙을 만들려면 다음을 수행합니다.
 
 **Azure Firewall 태그를 사용하여 액세스를 허용합니다.** Azure Firewall을 사용하는 경우 AzureBackup [FQDN 태그](https://docs.microsoft.com/azure/firewall/fqdn-tags)를 사용하여 애플리케이션 규칙을 만듭니다. 이는 Azure Backup에 대한 아웃바운드 액세스를 허용합니다.
 
-**트래픽을 라우팅하는 HTTP 프록시 서버를 배포합니다**. Azure VM에서 SQL Server 데이터베이스를 백업 하면 VM의 백업 확장이 HTTPS Api를 사용 하 여 Azure Backup 및 데이터에 대 한 관리 명령을 Azure Storage 보냅니다. 백업 확장도 인증에 Azure AD를 사용합니다. HTTP 프록시를 통해 이 세 가지 서비스에 대한 백업 확장 트래픽을 라우팅합니다. 확장의 공용 인터넷에 액세스하도록 구성된 유일한 구성 요소입니다.
+**트래픽을 라우팅하는 HTTP 프록시 서버를 배포합니다**. Azure VM에서 SQL Server 데이터베이스를 백업 하면 VM의 백업 확장이 HTTPS Api를 사용 하 여 Azure Backup 및 데이터에 대한 관리 명령을 Azure Storage 보냅니다. 백업 확장도 인증에 Azure AD를 사용합니다. HTTP 프록시를 통해 이 세 가지 서비스에 대한 백업 확장 트래픽을 라우팅합니다. 확장의 공용 인터넷에 액세스하도록 구성된 유일한 구성 요소입니다.
 
 연결 옵션에는 다음과 같은 장점과 단점이 있습니다.
 
@@ -98,7 +98,7 @@ NSG 서비스 태그 사용 | 범위 변경이 자동으로 병합되어 관리�
 Azure Firewall FQDN 태그 사용 | 필요한 FQDN이 자동으로 관리되어 관리가 더 쉬움 | Azure Firewall하고만 함께 사용할 수 있음
 HTTP 프록시 사용 | 스토리지 URL에 대한 프록시의 세부적인 제어가 허용됨 <br/><br/> VM에 대한 인터넷 액세스의 단일 지점 <br/><br/> Azure IP 주소 변경이 적용되지 않음 | 프록시 소프트웨어로 VM을 실행하기 위해 추가 비용이 있음
 
-### <a name="database-naming-guidelines-for-azure-backup"></a>Azure Backup에 대 한 데이터베이스 명명 지침
+### <a name="database-naming-guidelines-for-azure-backup"></a>Azure Backup에 대한 데이터베이스 명명 지침
 
 데이터베이스 이름에는 다음 요소를 사용 하지 마십시오.
 
@@ -111,7 +111,7 @@ HTTP 프록시 사용 | 스토리지 URL에 대한 프록시의 세부적인 제
 별칭은 지원 되지 않는 문자에 사용할 수 있지만이를 방지 하는 것이 좋습니다. 자세한 내용은 [테이블 서비스 데이터 모델 이해](https://docs.microsoft.com/rest/api/storageservices/Understanding-the-Table-Service-Data-Model?redirectedfrom=MSDN)를 참조하세요.
 
 >[!NOTE]
->이름에 "+" 또는 "&"와 같은 특수 문자가 포함 된 데이터베이스에 대 한 **보호 구성** 작업은 지원 되지 않습니다. 데이터베이스 이름을 변경 하거나 **자동 보호**를 사용 하도록 설정 하 여 이러한 데이터베이스를 성공적으로 보호할 수 있습니다.
+>이름에 "+" 또는 "&"와 같은 특수 문자가 포함 된 데이터베이스에 대한 **보호 구성** 작업은 지원 되지 않습니다. 데이터베이스 이름을 변경 하거나 **자동 보호**를 사용 하도록 설정 하 여 이러한 데이터베이스를 성공적으로 보호할 수 있습니다.
 
 [!INCLUDE [How to create a Recovery Services vault](../../includes/backup-create-rs-vault.md)]
 
@@ -149,7 +149,7 @@ VM에서 실행 되는 데이터베이스를 검색 하는 방법:
 
     * Azure Backup는 워크 로드 백업용 자격 증명 모음에 VM을 등록 합니다. 등록 된 VM의 모든 데이터베이스는이 자격 증명 모음에만 백업할 수 있습니다.
     * Azure Backup VM에 AzureBackupWindowsWorkload 로드 확장을 설치 합니다. SQL 데이터베이스에 에이전트가 설치 되어 있지 않습니다.
-    * Azure Backup VM에 대 한 서비스 계정 NT Service\AzureWLBackupPluginSvc를 만듭니다.
+    * Azure Backup VM에 대한 서비스 계정 NT Service\AzureWLBackupPluginSvc를 만듭니다.
       * 모든 백업 및 복원 작업에는 서비스 계정이 사용됩니다.
       * NT Service\AzureWLBackupPluginSvc에는 SQL sysadmin 권한이 필요 합니다. Marketplace에서 만든 모든 SQL Server Vm은 SqlIaaSExtension가 설치 된 상태로 제공 됩니다. AzureBackupWindowsWorkload 로드 확장은 SQLIaaSExtension를 사용 하 여 필요한 권한을 자동으로 가져옵니다.
     * Marketplace에서 VM을 만들지 않았거나 SQL 2008 및 2008 r 2를 사용 하는 경우 VM에 SqlIaaSExtension이 설치 되어 있지 않을 수 있으며, 오류 메시지 UserErrorSQLNoSysAdminMembership과 함께 검색 작업이 실패 합니다. 이 문제를 해결 하려면 [VM 권한 설정](backup-azure-sql-database.md#set-vm-permissions)의 지침을 따르세요.
@@ -180,7 +180,7 @@ VM에서 실행 되는 데이터베이스를 검색 하는 방법:
 
 4. **확인** 을 선택 하 여 **백업 정책을**엽니다.
 
-    ![Always On 가용성 그룹에 대 한 자동 보호 사용](./media/backup-azure-sql-database/enable-auto-protection.png)
+    ![Always On 가용성 그룹에 대한 자동 보호 사용](./media/backup-azure-sql-database/enable-auto-protection.png)
 
 5. **백업 정책**에서 정책을 선택 하 고 **확인**을 선택 합니다.
 
@@ -228,9 +228,9 @@ VM에서 실행 되는 데이터베이스를 검색 하는 방법:
 
 5. **보존 범위**에서 모든 옵션이 기본적으로 선택 됩니다. 원하지 않는 보존 범위 제한을 모두 지우고 사용할 간격을 설정 합니다.
 
-    * 모든 백업 유형에 대 한 최소 보존 기간 (전체, 차등 및 로그)은 7 일입니다.
+    * 모든 백업 유형에 대한 최소 보존 기간 (전체, 차등 및 로그)은 7 일입니다.
     * 복구 지점은 보존 범위를 기반으로 보존 태그가 지정됩니다. 예를 들어, 매일, 전체 백업을 선택하면 매일 하나의 전체 백업만 트리거됩니다.
-    * 주간 보존 범위와 주간 보존 설정에 따라 특정 날짜에 대 한 백업 태그가 지정 되 고 보존 됩니다.
+    * 주간 보존 범위와 주간 보존 설정에 따라 특정 날짜에 대한 백업 태그가 지정 되 고 보존 됩니다.
     * 매월 및 매년 보존 범위는 비슷한 방식으로 작동 합니다.
 
        ![보존 범위 간격 설정](./media/backup-azure-sql-database/retention-range-interval.png)
@@ -259,7 +259,7 @@ VM에서 실행 되는 데이터베이스를 검색 하는 방법:
 14. 백업 정책 편집을 완료 한 후, **확인**을 선택합니다.
 
 > [!NOTE]
-> 각 로그 백업은 이전 전체 백업에 연결 되어 복구 체인을 형성 합니다. 이 전체 백업은 마지막 로그 백업이 만료 될 때까지 보존 됩니다. 이는 모든 로그를 복구할 수 있도록 전체 백업이 추가 기간 동안 보존 됨을 의미할 수 있습니다. 사용자에 게 주간 전체 백업, 일별 차등 및 2 시간 로그가 있다고 가정해 보겠습니다. 모든 항목은 30 일 동안 보존 됩니다. 그러나 매주 전체 백업을 사용할 수 있는 경우 (예: 30 + 7 일 후)에만 매주 전체를 정리/삭제할 수 있습니다. 예를 들어 매주 전체 백업은 11 월 16 일에 발생 합니다. 보존 정책에 따라 10 월 16 일까지 유지 됩니다. 이 전체에 대 한 마지막 로그 백업은 11 월 26 일에 다음에 예약 된 전체 시간 이전에 발생 합니다. 이 로그를 Dec 2 초까지 사용할 수 있을 때까지 11 월 16 일 전체를 삭제할 수 없습니다. 따라서 11 월 16 일은 12 월 2 일부 터까지 유지 됩니다.
+> 각 로그 백업은 이전 전체 백업에 연결 되어 복구 체인을 형성 합니다. 이 전체 백업은 마지막 로그 백업이 만료 될 때까지 보존 됩니다. 이는 모든 로그를 복구할 수 있도록 전체 백업이 추가 기간 동안 보존 됨을 의미할 수 있습니다. 사용자에 게 주간 전체 백업, 일별 차등 및 2 시간 로그가 있다고 가정해 보겠습니다. 모든 항목은 30 일 동안 보존 됩니다. 그러나 매주 전체 백업을 사용할 수 있는 경우 (예: 30 + 7 일 후)에만 매주 전체를 정리/삭제할 수 있습니다. 예를 들어 매주 전체 백업은 11 월 16 일에 발생 합니다. 보존 정책에 따라 10 월 16 일까지 유지 됩니다. 이 전체에 대한 마지막 로그 백업은 11 월 26 일에 다음에 예약 된 전체 시간 이전에 발생 합니다. 이 로그를 Dec 2 초까지 사용할 수 있을 때까지 11 월 16 일 전체를 삭제할 수 없습니다. 따라서 11 월 16 일은 12 월 2 일부 터까지 유지 됩니다.
 
 ## <a name="enable-auto-protection"></a>자동 보호 사용  
 

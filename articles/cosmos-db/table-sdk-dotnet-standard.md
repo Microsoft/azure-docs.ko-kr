@@ -33,14 +33,14 @@ ms.locfileid: "76771584"
 |**현재 지원되는 프레임워크**|[Microsoft .NET Standard 2.0](https://www.nuget.org/packages/NETStandard.Library)|
 |**문제 보고**|[문제 보고](https://github.com/Azure/azure-cosmos-table-dotnet/issues)|
 
-## <a name="release-notes-for-200-series"></a>2\.0.0 시리즈에 대 한 릴리스 정보
-2.0.0 시리즈는 성능 향상 및 Cosmos DB 끝점에 대 한 네임 스페이스 통합으로 [Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)에 대 한 종속성을 가져옵니다.
+## <a name="release-notes-for-200-series"></a>2\.0.0 시리즈에 대한 릴리스 정보
+2.0.0 시리즈는 성능 향상 및 Cosmos DB 엔드포인트에 대한 네임 스페이스 통합으로 [Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)에 대한 종속성을 가져옵니다.
 
 ### <a name="a-name200-preview200-preview"></a><a name="2.0.0-preview"/>2.0.0-preview
-* Cosmos DB 끝점에 대 한 성능 향상 및 네임 스페이스 통합이 포함 된 [Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)에 대 한 종속성을 사용 하는 2.0.0 Table SDK의 초기 미리 보기입니다. 공용 API는 동일 하 게 유지 됩니다.
+* Cosmos DB 엔드포인트에 대한 성능 향상 및 네임 스페이스 통합이 포함 된 [Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)에 대한 종속성을 사용 하는 2.0.0 Table SDK의 초기 미리 보기입니다. 공용 API는 동일 하 게 유지 됩니다.
 
-## <a name="release-notes-for-100-series"></a>1\.0.0 시리즈에 대 한 릴리스 정보
-1.0.0 시리즈는 [Microsoft. Azure DocumentDB](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/)에 대 한 종속성을 사용 합니다.
+## <a name="release-notes-for-100-series"></a>1\.0.0 시리즈에 대한 릴리스 정보
+1.0.0 시리즈는 [Microsoft. Azure DocumentDB](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/)에 대한 종속성을 사용 합니다.
 
 ### <a name="a-name105105"></a><a name="1.0.5"/>1.0.5
 * TableClientConfiguration 아래에 새 구성을 도입 하 여 Rest 실행자를 사용 하 여 Cosmos DB와 통신 Table API
@@ -50,11 +50,11 @@ ms.locfileid: "76771584"
 
 ### <a name="a-name104104"></a><a name="1.0.4"/>1.0.4
 * 버그 수정
-* RestExecutorConfiguration에 대 한 HttpClientTimeout 옵션을 제공 하세요.
+* RestExecutorConfiguration에 대한 HttpClientTimeout 옵션을 제공 하세요.
 
 ### <a name="a-name104-preview104-preview"></a><a name="1.0.4-preview"/>1.0.4-미리 보기
 * 버그 수정
-* RestExecutorConfiguration에 대 한 HttpClientTimeout 옵션을 제공 하세요.
+* RestExecutorConfiguration에 대한 HttpClientTimeout 옵션을 제공 하세요.
 
 ### <a name="a-name101101"></a><a name="1.0.1"/>1.0.1
 * 버그 수정
@@ -63,9 +63,9 @@ ms.locfileid: "76771584"
 * 일반 공급 릴리스
 
 ### <a name="a-name0110-preview0110-preview"></a><a name="0.11.0-preview"/>0.11.0-미리 보기
-* CloudTableClient를 구성 하는 방법이 변경 되었습니다. 이제 생성 하는 동안 TableClientConfiguration 개체를 사용 합니다. TableClientConfiguration는 대상 끝점 Cosmos DB Table API 또는 Azure Storage Table API에 따라 클라이언트 동작을 구성 하는 다양 한 속성을 제공 합니다.
-* 사용자 지정 열에 정렬 된 순서로 결과를 반환 하도록 TableQuery에 대 한 지원이 추가 되었습니다. 이 기능은 Cosmos DB 테이블 끝점 에서만 지원 됩니다.
-* 다양 한 결과 형식에 대 한 RequestCharges을 노출 하는 지원이 추가 되었습니다. 이 기능은 Cosmos DB 테이블 끝점 에서만 지원 됩니다.
+* CloudTableClient를 구성 하는 방법이 변경 되었습니다. 이제 생성 하는 동안 TableClientConfiguration 개체를 사용 합니다. TableClientConfiguration는 대상 엔드포인트 Cosmos DB Table API 또는 Azure Storage Table API에 따라 클라이언트 동작을 구성 하는 다양 한 속성을 제공 합니다.
+* 사용자 지정 열에 정렬 된 순서로 결과를 반환 하도록 TableQuery에 대한 지원이 추가 되었습니다. 이 기능은 Cosmos DB 테이블 엔드포인트 에서만 지원 됩니다.
+* 다양 한 결과 형식에 대한 RequestCharges을 노출 하는 지원이 추가 되었습니다. 이 기능은 Cosmos DB 테이블 엔드포인트 에서만 지원 됩니다.
 
 ### <a name="a-name0101-preview0101-preview"></a><a name="0.10.1-preview"/>0.10.1-preview
 * Azure Storage Table 엔드포인트에 대한 TablePermissions, ServiceProperties 및 ServiceStats 작업, SAS 토큰 지원을 추가합니다. 

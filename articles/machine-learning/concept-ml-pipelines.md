@@ -61,7 +61,7 @@ Azure Machine Learning 파이프라인은 전체 기계 학습 작업에 대해 
 
 Azure Machine Learning를 사용 하 여 파이프라인의 각 단계에 대 한 다양 한 도구 키트와 프레임 워크 (예: PyTorch 또는 TensorFlow)를 사용할 수 있습니다. Azure는 사용 하는 다양 한 [계산 대상을](concept-azure-machine-learning-architecture.md) 조정 하므로 다운스트림 계산 대상과 중간 데이터를 공유할 수 있습니다.
 
-Azure Portal 또는 [작업 영역 방문 페이지 (미리 보기)](https://ml.azure.com)에서 직접 [파이프라인 실험의 메트릭을 추적할](https://docs.microsoft.com/azure/machine-learning/how-to-track-experiments) 수 있습니다. 파이프라인이 게시 된 후에는 모든 플랫폼 또는 스택에서 파이프라인을 다시 실행할 수 있는 REST 끝점을 구성할 수 있습니다.
+Azure Portal 또는 [작업 영역 방문 페이지 (미리 보기)](https://ml.azure.com)에서 직접 [파이프라인 실험의 메트릭을 추적할](https://docs.microsoft.com/azure/machine-learning/how-to-track-experiments) 수 있습니다. 파이프라인이 게시 된 후에는 모든 플랫폼 또는 스택에서 파이프라인을 다시 실행할 수 있는 REST 엔드포인트을 구성할 수 있습니다.
 
 간단히 말해서, 기계 학습 수명 주기의 모든 복잡 한 작업은 파이프라인에 도움이 될 수 있습니다. 다른 Azure 파이프라인 기술에는 데이터 작업을 위한 [파이프라인 Azure Data Factory](https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities) , 연속 통합 및 배포를 위한 [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/) 등의 고유한 강도가 있습니다. 그러나 사용자의 포커스가 machine learning 인 경우 Azure Machine Learning 파이프라인이 워크플로 요구에 가장 적합 한 선택이 될 수 있습니다. 
 

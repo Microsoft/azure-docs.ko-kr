@@ -17,7 +17,7 @@ ms.locfileid: "75768924"
 ---
 ## <a name="timeout"></a>함수 앱 시간 제한 기간 
 
-함수 앱의 제한 시간은 [호스트 json](../articles/azure-functions/functions-host-json.md#functiontimeout) 프로젝트 파일의 `functionTimeout` 속성에 의해 정의 됩니다. 다음 표에서는 계획 및 다양 한 런타임 버전에 대 한 기본 및 최대 값 (분)을 보여 줍니다.
+함수 앱의 제한 시간은 [호스트 json](../articles/azure-functions/functions-host-json.md#functiontimeout) 프로젝트 파일의 `functionTimeout` 속성에 의해 정의 됩니다. 다음 표에서는 계획 및 다양 한 런타임 버전에 대한 기본 및 최대 값 (분)을 보여 줍니다.
 
 | 요금제 | 런타임 버전 | 기본값 | 최대 |
 |------|---------|---------|---------|

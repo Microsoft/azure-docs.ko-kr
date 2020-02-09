@@ -1,5 +1,5 @@
 ---
-title: Azure Data Factory에 대 한 Azure PowerShell 샘플
+title: Azure Data Factory에 대한 Azure PowerShell 샘플
 description: Azure PowerShell 샘플 - 데이터 팩터리를 만들고 관리할 수 있도록 하는 스크립트입니다.
 services: data-factory
 ms.service: data-factory

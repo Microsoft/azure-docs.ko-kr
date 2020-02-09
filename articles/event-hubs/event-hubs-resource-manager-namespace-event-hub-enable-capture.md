@@ -29,7 +29,7 @@ ms.locfileid: "75437172"
 
 템플릿을 만드는 더 자세한 내용은 [Azure Resource Manager 템플릿 작성하기][Authoring Azure Resource Manager templates]를 참조하십시오. 템플릿에서 사용할 JSON 구문 및 속성은 [Microsoft.EventHub 리소스 종류](/azure/templates/microsoft.eventhub/allversions)를 참조하세요.
 
-Azure 리소스 명명 규칙의 패턴 및 방법에 대 한 자세한 내용은 [Azure 리소스 명명 규칙][Azure Resources naming conventions]을 참조 하세요.
+Azure 리소스 명명 규칙의 패턴 및 방법에 대한 자세한 내용은 [Azure 리소스 명명 규칙][Azure Resources naming conventions]을 참조 하세요.
 
 전체 템플릿은 다음 GitHub 링크를 클릭합니다.
 

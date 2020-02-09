@@ -71,7 +71,7 @@ ms.locfileid: "76988586"
 
 ### <a name="animate-map-view"></a>맵 보기 애니메이션
 
-다음 코드에서 첫 번째 코드 블록은 지도를 만들고 입력 및 확대/축소 맵 스타일을 설정 합니다. 두 번째 코드 블록에서 애니메이션 효과에 대 한 click 이벤트 처리기가 만들어집니다. 이 단추를 클릭 하면 [CameraOptions 및](/javascript/api/azure-maps-control/atlas.cameraoptions) [옵션](/javascript/api/azure-maps-control/atlas.animationoptions)에 대 한 임의 값을 사용 하 여 `setCamera` 함수가 호출 됩니다.
+다음 코드에서 첫 번째 코드 블록은 지도를 만들고 입력 및 확대/축소 맵 스타일을 설정 합니다. 두 번째 코드 블록에서 애니메이션 효과에 대한 click 이벤트 처리기가 만들어집니다. 이 단추를 클릭 하면 [CameraOptions 및](/javascript/api/azure-maps-control/atlas.cameraoptions) [옵션](/javascript/api/azure-maps-control/atlas.animationoptions)에 대한 임의 값을 사용 하 여 `setCamera` 함수가 호출 됩니다.
 
 <br/>
 

@@ -79,7 +79,7 @@ Azure Portal 또는 PowerShell을 사용 하 여 Azure Resource Manager 템플�
 ## <a name="next-steps"></a>다음 단계
 
 * [Azure에서 Azure 데이터 탐색기 클러스터 보호](security.md)
-* [Azure 데이터 탐색기 클러스터에 대 한 관리 id 구성](managed-identities.md)
+* [Azure 데이터 탐색기 클러스터에 대한 관리 id 구성](managed-identities.md)
 * 미사용 암호화를 사용 하도록 설정 하 여 [Azure 데이터 탐색기-Azure Portal에서 클러스터를 보호](manage-cluster-security.md) 합니다.
 * [을 사용 하 여 고객이 관리 하는 키 구성C#](customer-managed-keys-csharp.md)
 

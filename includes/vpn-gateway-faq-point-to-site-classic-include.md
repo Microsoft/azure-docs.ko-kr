@@ -35,7 +35,7 @@ ms.locfileid: "76308910"
 
 ### <a name="how-many-vpn-client-endpoints-can-exist-in-my-point-to-site-configuration"></a>지점 및 사이트 간 구성에 존재할 수 있는 VPN 클라이언트 엔드포인트의 수는 어떻게 됩니까?
 
-VPN 클라이언트 끝점의 양은 게이트웨이 sku 및 프로토콜에 따라 달라 집니다.
+VPN 클라이언트 엔드포인트의 양은 게이트웨이 sku 및 프로토콜에 따라 달라 집니다.
 [!INCLUDE [Aggregated throughput by SKU](./vpn-gateway-table-gwtype-aggtput-include.md)]
 
 ### <a name="can-i-use-my-own-internal-pki-root-ca-for-point-to-site-connectivity"></a>지점 및 사이트 간 연결에 내부 PKI 루트 CA를 사용할 수 있습니까?

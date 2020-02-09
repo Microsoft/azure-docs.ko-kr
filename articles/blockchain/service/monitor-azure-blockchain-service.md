@@ -115,7 +115,7 @@ Azure 로그에서 사용 가능한 시간 필터를 사용 하 여 특정 시�
 | NodeLocation  | Blockchain 멤버가 배포 되는 Azure 지역입니다.  |
 | BlockchainNodeName  | 작업이 수행 되는 Azure Blockchain 서비스 멤버의 노드 이름입니다.   |
 | BlockchainMessage    | 이 필드에는 데이터 일반 로그 인 Blockchain 응용 프로그램 로그가 포함 됩니다. ABS 쿼럼의 경우 쿼럼 로그가 있습니다. 정보, 오류, 경고 및 실행 된 작업에 대 한 자세한 정보를 제공 하는 문자열에 해당 하는 로그 항목의 유형에 대 한 정보를 제공 합니다.   |
-| TenantID    | Azure Blockchain 서비스의 지역별 테 넌 트입니다. 이 필드의 형식은 https://westlake-rp-prod. cloudapp.azure.com 여기서 region은 배포 된 멤버의 Azure 지역을 지정 합니다.<region>       |
+| TenantID    | Azure Blockchain 서비스의 지역별 테넌트입니다. 이 필드의 형식은 https://westlake-rp-prod. cloudapp.azure.com 여기서 region은 배포 된 멤버의 Azure 지역을 지정 합니다.<region>       |
 | SourceSystem   | 시스템이 로그를 채웁니다 (이 경우에는 **Azure**).    |
 
 

@@ -1,6 +1,6 @@
 ---
 title: Azure Backup 보호 된 워크 로드 모니터링
-description: 이 문서에서는 Azure Portal를 사용 하 여 Azure Backup 작업에 대 한 모니터링 및 알림 기능에 대해 알아봅니다.
+description: 이 문서에서는 Azure Portal를 사용 하 여 Azure Backup 작업에 대한 모니터링 및 알림 기능에 대해 알아봅니다.
 ms.topic: conceptual
 ms.date: 03/05/2019
 ms.assetid: 86ebeb03-f5fa-4794-8a5f-aa5cbbf68a81
@@ -17,7 +17,7 @@ Azure Backup는 백업 요구 사항 및 인프라 토폴로지 (온-프레미�
 
 ## <a name="backup-jobs-in-recovery-services-vault"></a>Recovery Services 자격 증명 모음의 백업 작업
 
-Azure Backup은 Azure Backup으로 보호 되는 워크 로드에 대 한 기본 제공 모니터링 및 경고 기능을 제공 합니다. Recovery Services 자격 증명 모음 설정에서 **모니터링** 섹션은 작성 된 작업 및 경고를 제공 합니다.
+Azure Backup은 Azure Backup으로 보호 되는 워크 로드에 대한 기본 제공 모니터링 및 경고 기능을 제공 합니다. Recovery Services 자격 증명 모음 설정에서 **모니터링** 섹션은 작성 된 작업 및 경고를 제공 합니다.
 
 ![RS 자격 증명 모음 내장 모니터링](media/backup-azure-monitoring-laworkspace/rs-vault-inbuiltmonitoring.png)
 
@@ -75,17 +75,17 @@ System Center Data Protection Manager (SC-DPM), Microsoft Azure Backup 서버 (M
 - **경고**: 백업 작업이 성공 하지만 경고가 거의 없으면 경고 경고로 표시 됩니다.
 - **정보**: 현재는 Azure Backup 서비스에서 어떠한 정보 경고도 생성 하지 않습니다.
 
-## <a name="notification-for-backup-alerts"></a>백업 경고에 대 한 알림
+## <a name="notification-for-backup-alerts"></a>백업 경고에 대한 알림
 
 > [!NOTE]
 > 알림 구성은 Azure Portal을 통해서만 수행할 수 있습니다. PS/CLI/REST API/Azure Resource Manager 템플릿 지원은 지원 되지 않습니다.
 
-경고가 발생 하면 사용자에 게 알림이 제공 됩니다. Azure Backup는 전자 메일을 통해 기본 제공 알림 메커니즘을 제공 합니다. 경고가 생성 될 때 알림을 받을 개별 메일 주소 또는 메일 그룹을 지정할 수 있습니다. 각 경고에 대 한 알림을 받을지 또는 매시간 다이제스트로 그룹화 한 다음 알림을 받을 지를 선택할 수도 있습니다.
+경고가 발생 하면 사용자에 게 알림이 제공 됩니다. Azure Backup는 전자 메일을 통해 기본 제공 알림 메커니즘을 제공 합니다. 경고가 생성 될 때 알림을 받을 개별 메일 주소 또는 메일 그룹을 지정할 수 있습니다. 각 경고에 대한 알림을 받을지 또는 매시간 다이제스트로 그룹화 한 다음 알림을 받을 지를 선택할 수도 있습니다.
 
 ![RS Vault 내장 전자 메일 알림](media/backup-azure-monitoring-laworkspace/rs-vault-inbuiltnotification.png)
 
 > [!NOTE]
-> SQL 백업에 대 한 경고는 통합 되 고 전자 메일은 처음 발생 한 경우에만 전송 됩니다. 그러나 사용자가 경고를 비활성화 하는 경우 다음에 발생 하면 다른 전자 메일이 트리거됩니다.
+> SQL 백업에 대한 경고는 통합 되 고 전자 메일은 처음 발생 한 경우에만 전송 됩니다. 그러나 사용자가 경고를 비활성화 하는 경우 다음에 발생 하면 다른 전자 메일이 트리거됩니다.
 
 알림이 구성 되 면 환영 또는 소개 전자 메일을 받게 됩니다. 이렇게 하면 경고가 발생할 때 Azure Backup이 주소로 전자 메일을 보낼 수 있습니다.<br>
 
@@ -94,11 +94,11 @@ System Center Data Protection Manager (SC-DPM), Microsoft Azure Backup 서버 (M
 > [!NOTE]
 >
 > - **데이터 삭제로 보호 중지** 와 같은 파괴적인 작업을 수행 하면 경고가 발생 하 고 복구 서비스 자격 증명 모음에 대해 알림이 구성 되지 않은 경우에도 전자 메일이 구독 소유자, 관리자 및 공동 관리자에 게 전송 됩니다.
-> - 성공한 작업에 대 한 알림을 구성 하려면 [Log Analytics](backup-azure-monitoring-use-azuremonitor.md#using-log-analytics-workspace)을 사용 합니다.
+> - 성공한 작업에 대한 알림을 구성 하려면 [Log Analytics](backup-azure-monitoring-use-azuremonitor.md#using-log-analytics-workspace)을 사용 합니다.
 
 ## <a name="inactivating-alerts"></a>비활성화 경고
 
-활성 경고를 비활성화/해결 하려면 비활성화할 경고에 해당 하는 목록 항목을 클릭 하면 됩니다. 이렇게 하면 경고에 대 한 자세한 정보를 표시 하는 화면이 열리고 맨 위에 ' 비활성화 ' 단추가 표시 됩니다. 이 단추를 클릭 하면 경고 상태가 ' 비활성 '으로 변경 됩니다. 해당 경고에 해당 하는 목록 항목을 마우스 오른쪽 단추로 클릭 하 고 ' 비활성화 '를 선택 하 여 경고를 비활성화할 수도 있습니다.
+활성 경고를 비활성화/해결 하려면 비활성화할 경고에 해당 하는 목록 항목을 클릭 하면 됩니다. 이렇게 하면 경고에 대한 자세한 정보를 표시 하는 화면이 열리고 맨 위에 ' 비활성화 ' 단추가 표시 됩니다. 이 단추를 클릭 하면 경고 상태가 ' 비활성 '으로 변경 됩니다. 해당 경고에 해당 하는 목록 항목을 마우스 오른쪽 단추로 클릭 하 고 ' 비활성화 '를 선택 하 여 경고를 비활성화할 수도 있습니다.
 
 ![RS Vault 경고 비활성화](media/backup-azure-monitoring-laworkspace/vault-alert-inactivation.png)
 

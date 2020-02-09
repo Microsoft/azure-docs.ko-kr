@@ -21,7 +21,7 @@ ms.locfileid: "67616130"
 > [!NOTE]
 > Azure 디스크는 한 번에 한 Pod에만 탑재할 수 있습니다. 여러 pod에서 영구적 볼륨을 공유 해야 하는 경우 [Azure Files][azure-files-volume]를 사용 합니다.
 
-Kubernetes 볼륨에 대 한 자세한 내용은 [AKS의 응용 프로그램에 대 한 저장소 옵션][concepts-storage]을 참조 하세요.
+Kubernetes 볼륨에 대한 자세한 내용은 [AKS의 응용 프로그램에 대한 저장소 옵션][concepts-storage]을 참조 하세요.
 
 ## <a name="before-you-begin"></a>시작하기 전 주의 사항
 
@@ -126,9 +126,9 @@ Events:
 
 ## <a name="next-steps"></a>다음 단계
 
-관련 모범 사례는 [AKS의 저장소 및 백업에 대 한 모범 사례][operator-best-practices-storage]를 참조 하세요.
+관련 모범 사례는 [AKS의 저장소 및 백업에 대한 모범 사례][operator-best-practices-storage]를 참조 하세요.
 
-Azure 디스크와 상호 작용 하는 AKS 클러스터에 대 한 자세한 내용은 [Azure 디스크용 Kubernetes 플러그 인][kubernetes-disks]을 참조 하세요.
+Azure 디스크와 상호 작용 하는 AKS 클러스터에 대한 자세한 내용은 [Azure 디스크용 Kubernetes 플러그 인][kubernetes-disks]을 참조 하세요.
 
 <!-- LINKS - external -->
 [kubernetes-disks]: https://github.com/kubernetes/examples/blob/master/staging/volumes/azure_disk/README.md

@@ -31,7 +31,7 @@ ms.locfileid: "76698767"
 
 표준 클레임 목록은 [액세스 토큰](access-tokens.md) 및 [id_token](id-tokens.md) 클레임 설명서를 참조 하세요. 
 
-선택적 클레임은 v 1.0 및 v2.0 형식 토큰 뿐만 아니라 SAML 토큰 에서도 지원 되지만, v 1.0에서 v 2.0으로 이동할 때 대부분의 값을 제공 합니다. V2.0 [Microsoft identity platform 끝점](active-directory-appmodel-v2-overview.md) 의 목표 중 하나는 클라이언트에서 최적의 성능을 보장 하기 위해 더 작은 토큰 크기입니다. 따라서, 이전에 액세스 및 ID 토큰에 포함되어 있던 일부 클레임이 v 2.0 토큰에는 더 이상 존재하지 않으며, 애플리케이션 기준으로 특수하게 요청되어야 합니다.
+선택적 클레임은 v 1.0 및 v2.0 형식 토큰 뿐만 아니라 SAML 토큰 에서도 지원 되지만, v 1.0에서 v 2.0으로 이동할 때 대부분의 값을 제공 합니다. V2.0 [Microsoft identity platform 엔드포인트](active-directory-appmodel-v2-overview.md) 의 목표 중 하나는 클라이언트에서 최적의 성능을 보장 하기 위해 더 작은 토큰 크기입니다. 따라서, 이전에 액세스 및 ID 토큰에 포함되어 있던 일부 클레임이 v 2.0 토큰에는 더 이상 존재하지 않으며, 애플리케이션 기준으로 특수하게 요청되어야 합니다.
 
 **표 1: 적용 가능성**
 
@@ -45,7 +45,7 @@ ms.locfileid: "76698767"
 기본적으로 애플리케이션에서 사용할 수 있는 선택적 클레임의 집합은 아래와 같습니다. 애플리케이션에 대한 선택적 사용자 지정 클레임을 추가하려면 아래의 [디렉터리 확장](#configuring-directory-extension-optional-claims)을 참조하세요. **액세스 토큰**에 클레임을 추가 하는 경우 응용 프로그램 *에서* 요청 하는 클레임이 아닌 응용 프로그램 (웹 API) *에 대해* 요청 된 액세스 토큰에 클레임이 적용 됩니다. 클라이언트에서 API에 액세스 하는 방법에 관계 없이 API에 대 한 인증에 사용 되는 액세스 토큰에 올바른 데이터가 표시 됩니다.
 
 > [!NOTE]
-> 이러한 클레임 대부분은 토큰 유형 열에 명시된 경우를 제외하고 SAML 토큰이 아닌 v1.0 및 v2.0 토큰에 대한 JWT에 포함될 수 있습니다. 소비자 계정은 "사용자 유형" 열에 표시 된 이러한 클레임의 하위 집합을 지원 합니다.  나열 된 많은 클레임은 소비자 사용자에 게 적용 되지 않습니다 (테 넌 트가 없으므로 `tenant_ctry`에 값이 없음).  
+> 이러한 클레임 대부분은 토큰 유형 열에 명시된 경우를 제외하고 SAML 토큰이 아닌 v1.0 및 v2.0 토큰에 대한 JWT에 포함될 수 있습니다. 소비자 계정은 "사용자 유형" 열에 표시 된 이러한 클레임의 하위 집합을 지원 합니다.  나열 된 많은 클레임은 소비자 사용자에 게 적용 되지 않습니다 (테넌트가 없으므로 `tenant_ctry`에 값이 없음).  
 
 **표 2: v1.0 및 v2.0 선택적 클레임 집합**
 
@@ -63,11 +63,11 @@ ms.locfileid: "76698767"
 | `fwd`                      | IP 주소입니다.| JWT    |   | 요청 클라이언트의 원래 IPv4 주소를 추가합니다(VNET 내에 있는 경우). |
 | `ctry`                     | 사용자의 국가입니다. | JWT |  | Azure AD는 표시되고 클레임의 값이 FR, JP, SZ 등과 같은 표준 두 글자 국가 번호인 경우 `ctry` 선택적 클레임을 반환합니다. |
 | `tenant_ctry`              | 리소스의 테넌트 국가입니다. | JWT | | |
-| `xms_pdl`          | 기본 설정 데이터 위치   | JWT | | 다중 지역 테 넌 트의 경우 기본 데이터 위치는 사용자가 거주 하는 지리적 지역을 나타내는 세 문자로 된 코드입니다. 자세한 내용은 [기본 데이터 위치에 대 한 Azure AD Connect 설명서](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-feature-preferreddatalocation)를 참조 하세요.<br/>예를 들어 아시아 태평양의 경우 `APC`입니다. |
+| `xms_pdl`          | 기본 설정 데이터 위치   | JWT | | 다중 지역 테넌트의 경우 기본 데이터 위치는 사용자가 거주 하는 지리적 지역을 나타내는 세 문자로 된 코드입니다. 자세한 내용은 [기본 데이터 위치에 대 한 Azure AD Connect 설명서](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-feature-preferreddatalocation)를 참조 하세요.<br/>예를 들어 아시아 태평양의 경우 `APC`입니다. |
 | `xms_pl`                   | 사용자 기본 설정 언어  | JWT ||설정되는 경우 사용자의 기본 설정 언어입니다. 게스트 액세스 시나리오에서 해당 홈 테넌트의 원본 위치입니다. 형식이 지정된 LL-CC("en-us"). |
 | `xms_tpl`                  | 테넌트 기본 설정 언어| JWT | | 설정된 경우 리소스 테넌트의 기본 설정 언어입니다. 형식이 지정된 LL("en"). |
 | `ztdid`                    | 무인 배포 ID | JWT | | [Windows AutoPilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot)에 사용된 디바이스 ID |
-| `email`                    | 사용자가 있는 경우 이 사용자에 대한 이메일 주소를 지정할 수 있습니다.  | JWT, SAML | MSA, Azure AD | 이 값은 사용자가 테넌트의 게스트인 경우 기본적으로 포함됩니다.  관리 되는 사용자 (테 넌 트 내의 사용자)의 경우이 옵션 클레임을 통해 요청 하거나 Openid connect 범위를 사용 하 여 v2.0 에서만 요청 해야 합니다.  관리되는 사용자의 경우 이메일 주소는 [Office 관리 포털](https://portal.office.com/adminportal/home#/users)에서 설정해야 합니다.| 
+| `email`                    | 사용자가 있는 경우 이 사용자에 대한 이메일 주소를 지정할 수 있습니다.  | JWT, SAML | MSA, Azure AD | 이 값은 사용자가 테넌트의 게스트인 경우 기본적으로 포함됩니다.  관리 되는 사용자 (테넌트 내의 사용자)의 경우이 옵션 클레임을 통해 요청 하거나 Openid connect 범위를 사용 하 여 v2.0 에서만 요청 해야 합니다.  관리되는 사용자의 경우 이메일 주소는 [Office 관리 포털](https://portal.office.com/adminportal/home#/users)에서 설정해야 합니다.| 
 | `groups`| 그룹 클레임에 대 한 선택적 서식 지정 |JWT, SAML| |[응용 프로그램 매니페스트에서](reference-app-manifest.md)설정 해야 하는 GroupMembershipClaims 설정과 함께 사용 됩니다. 자세한 내용은 아래에 있는 [그룹 클레임](#configuring-groups-optional-claims) 을 참조 하세요. 그룹 클레임에 대 한 자세한 내용은 [그룹 클레임을 구성 하는 방법](../hybrid/how-to-connect-fed-group-claims.md) 을 참조 하세요.
 | `acct`             | 테넌트의 사용자 계정 상태입니다. | JWT, SAML | | 사용자가 테넌트의 구성원인 경우 값은 `0`입니다. 게스트인 경우 값은 `1`입니다. |
 | `upn`                      | UserPrincipalName 클레임입니다. | JWT, SAML  |           | 이 클레임은 자동으로 포함되지만, 추가 속성을 연결하여 게스트 사용자 사례에서 해당 동작을 수정하기 위해 선택적 클레임으로 지정할 수 있습니다.  |
@@ -117,7 +117,7 @@ ms.locfileid: "76698767"
         }
     ```
 
-이 OptionalClaims 개체를 통해 ID 토큰이 클라이언트에 반환되어 추가 홈 테넌트 및 리소스 테넌트 정보와 함께 다른 UPN을 포함하게 됩니다. 사용자가 테 넌 트의 게스트 (인증에 다른 IDP를 사용) 인 경우에만 토큰에서 `upn` 클레임이 변경 됩니다. 
+이 OptionalClaims 개체를 통해 ID 토큰이 클라이언트에 반환되어 추가 홈 테넌트 및 리소스 테넌트 정보와 함께 다른 UPN을 포함하게 됩니다. 사용자가 테넌트의 게스트 (인증에 다른 IDP를 사용) 인 경우에만 토큰에서 `upn` 클레임이 변경 됩니다. 
 
 ## <a name="configuring-optional-claims"></a>선택적 클레임 구성
 
@@ -232,7 +232,7 @@ SAML 토큰 내에서 이러한 클레임은 `http://schemas.microsoft.com/ident
 
 **UI를 통해 그룹 구성 옵션 클레임:**
 1. [Azure 포털](https://portal.azure.com)
-1. 인증 된 후에는 페이지의 오른쪽 위 모서리에서 Azure AD 테 넌 트를 선택 하 여 선택 합니다.
+1. 인증 된 후에는 페이지의 오른쪽 위 모서리에서 Azure AD 테넌트를 선택 하 여 선택 합니다.
 1. 왼쪽 메뉴에서 **Azure Active Directory** 선택
 1. **관리** 섹션에서 **앱 등록** 을 선택 합니다.
 1. 목록에서 선택적 클레임을 구성 하려는 응용 프로그램을 선택 합니다.
@@ -244,7 +244,7 @@ SAML 토큰 내에서 이러한 클레임은 `http://schemas.microsoft.com/ident
 
 **응용 프로그램 매니페스트를 통해 그룹 구성 (선택 사항):**
 1. [Azure 포털](https://portal.azure.com)
-1. 인증 된 후에는 페이지의 오른쪽 위 모서리에서 Azure AD 테 넌 트를 선택 하 여 선택 합니다.
+1. 인증 된 후에는 페이지의 오른쪽 위 모서리에서 Azure AD 테넌트를 선택 하 여 선택 합니다.
 1. 왼쪽 메뉴에서 **Azure Active Directory** 선택
 1. 목록에서 선택적 클레임을 구성 하려는 응용 프로그램을 선택 합니다.
 1. **관리** 섹션 아래에서 **매니페스트** 를 선택 합니다.
@@ -360,7 +360,7 @@ SAML 토큰 내에서 이러한 클레임은 `http://schemas.microsoft.com/ident
 
 1. [Azure 포털](https://portal.azure.com)
 
-1. 인증 한 후에는 페이지의 오른쪽 위 모서리에서 Azure AD 테 넌 트를 선택 하 여 선택 합니다.
+1. 인증 한 후에는 페이지의 오른쪽 위 모서리에서 Azure AD 테넌트를 선택 하 여 선택 합니다.
 
 1. 왼쪽 메뉴에서 **Azure Active Directory** 를 선택 합니다.
 
@@ -382,7 +382,7 @@ SAML 토큰 내에서 이러한 클레임은 `http://schemas.microsoft.com/ident
 
 **매니페스트 구성:**
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
-1. 인증 한 후에는 페이지의 오른쪽 위 모서리에서 Azure AD 테 넌 트를 선택 하 여 선택 합니다.
+1. 인증 한 후에는 페이지의 오른쪽 위 모서리에서 Azure AD 테넌트를 선택 하 여 선택 합니다.
 1. 왼쪽 메뉴에서 **Azure Active Directory** 를 선택 합니다.
 1. 목록에서 선택적 클레임을 구성하려는 애플리케이션을 찾아서 클릭합니다.
 1. **관리** 섹션에서 **매니페스트** 를 클릭 하 여 인라인 매니페스트 편집기를 엽니다.

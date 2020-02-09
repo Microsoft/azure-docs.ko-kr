@@ -27,7 +27,7 @@ Azure Cognitive Service에 대한 각 요청은 인증 헤더를 포함해야 �
 
 ## <a name="prerequisites"></a>전제 조건
 
-요청을 수행하기 전에 Azure 계정과 Azure Cognitive Services 구독이 필요합니다. 계정이 이미 있는 경우 다음 섹션으로 건너뜁니다. 계정이 없는 경우 몇 분 내에 [Azure에 대 한 Cognitive Services 계정 만들기](cognitive-services-apis-create-account.md)를 설정 하는 방법을 안내 합니다.
+요청을 수행하기 전에 Azure 계정과 Azure Cognitive Services 구독이 필요합니다. 계정이 이미 있는 경우 다음 섹션으로 건너뜁니다. 계정이 없는 경우 몇 분 내에 [Azure에 대한 Cognitive Services 계정 만들기](cognitive-services-apis-create-account.md)를 설정 하는 방법을 안내 합니다.
 
 계정을 만들거나 [무료 평가판](https://azure.microsoft.com/try/cognitive-services/my-apis)을 활성화 한 후 [Azure Portal](cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) 에서 구독 키를 가져올 수 있습니다.
 

@@ -1,6 +1,6 @@
 ---
 title: Azure AD Domain Services에서 서비스 사용자 경고 해결 Microsoft Docs
-description: Azure Active Directory Domain Services에 대 한 서비스 주체 구성 경고 문제를 해결 하는 방법을 알아봅니다.
+description: Azure Active Directory Domain Services에 대한 서비스 주체 구성 경고 문제를 해결 하는 방법을 알아봅니다.
 services: active-directory-ds
 author: iainfoulds
 manager: daveba

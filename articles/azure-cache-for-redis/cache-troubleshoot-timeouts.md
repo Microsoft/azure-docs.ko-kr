@@ -1,5 +1,5 @@
 ---
-title: Redis 시간 초과에 대 한 Azure 캐시 문제 해결
+title: Redis 시간 초과에 대한 Azure 캐시 문제 해결
 description: Redis 서버 패치 및 StackExchange Redis timeout 예외와 같이 Azure Cache for Redis의 일반적인 시간 제한 문제를 해결 하는 방법에 대해 알아봅니다.
 author: yegu-ms
 ms.author: yegu
@@ -13,7 +13,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75412083"
 ---
-# <a name="troubleshoot-azure-cache-for-redis-timeouts"></a>Redis 시간 초과에 대 한 Azure 캐시 문제 해결
+# <a name="troubleshoot-azure-cache-for-redis-timeouts"></a>Redis 시간 초과에 대한 Azure 캐시 문제 해결
 
 이 섹션에서는 Redis 용 Azure 캐시에 연결할 때 발생 하는 시간 제한 문제를 해결 하는 방법을 설명 합니다.
 
@@ -26,7 +26,7 @@ ms.locfileid: "75412083"
 
 ## <a name="redis-server-patching"></a>Redis 서버 패치
 
-Redis 용 Azure Cache는 서버 소프트웨어를 제공 하는 관리 되는 서비스 기능의 일부로 정기적으로 업데이트 합니다. 이 [패치](cache-failover.md) 작업은 주로 장면 뒤에 발생 합니다. Redis 서버 노드를 패치 하는 동안 장애 조치 (failover) 중에 이러한 노드에 연결 된 Redis 클라이언트는 이러한 노드 간에 연결이 전환 될 때 임시 시간 초과가 발생할 수 있습니다. 응용 프로그램에 어떤 부작용이 발생할 수 있는지에 대 한 자세한 내용 및 패치 이벤트의 처리를 개선 하는 방법에 대 한 자세한 내용은 [장애 조치 (failover)가 클라이언트 응용 프로그램에 미치는 영향](cache-failover.md#how-does-a-failover-affect-my-client-application) 을 참조 하세요.
+Redis 용 Azure Cache는 서버 소프트웨어를 제공 하는 관리 되는 서비스 기능의 일부로 정기적으로 업데이트 합니다. 이 [패치](cache-failover.md) 작업은 주로 장면 뒤에 발생 합니다. Redis 서버 노드를 패치 하는 동안 장애 조치 (failover) 중에 이러한 노드에 연결 된 Redis 클라이언트는 이러한 노드 간에 연결이 전환 될 때 임시 시간 초과가 발생할 수 있습니다. 응용 프로그램에 어떤 부작용이 발생할 수 있는지에 대한 자세한 내용 및 패치 이벤트의 처리를 개선 하는 방법에 대한 자세한 내용은 [장애 조치 (failover)가 클라이언트 응용 프로그램에 미치는 영향](cache-failover.md#how-does-a-failover-affect-my-client-application) 을 참조 하세요.
 
 ## <a name="stackexchangeredis-timeout-exceptions"></a>StackExchange.Redis 시간 제한 예외 조사
 
@@ -71,7 +71,7 @@ Redis는 동기 작업에 `synctimeout` 이라는 구성 설정을 사용 하며
 
 1. 서버와 클라이언트 응용 프로그램이 Azure의 동일한 지역에 있는지 확인 합니다. 예를 들어 캐시가 미국 동부에 있지만 클라이언트는 미국 서 부에 있고 요청이 `synctimeout` 간격 내에 완료 되지 않은 경우 또는 로컬 개발 컴퓨터에서 디버그할 때 시간 초과가 발생할 수 있는 경우 시간 제한이 발생할 수 있습니다. 
 
-    동일한 Azure 지역에 캐시와 클라이언트를 두도록 하는 것이 좋습니다. 지역 간 호출을 포함하는 시나리오가 있다면, `synctimeout` 속성을 연결 문자열에 포함함으로써 `synctimeout` 간격을 기본값인 1000ms 간격보다 높은 값에 설정해야 합니다. 다음 예제에서는 Redis에 대 한 연결 문자열의 코드 조각을 보여 줍니다. Redis에 대 한 Azure Cache에서 제공 되는의 `synctimeout`는 2000 밀리초입니다.
+    동일한 Azure 지역에 캐시와 클라이언트를 두도록 하는 것이 좋습니다. 지역 간 호출을 포함하는 시나리오가 있다면, `synctimeout` 속성을 연결 문자열에 포함함으로써 `synctimeout` 간격을 기본값인 1000ms 간격보다 높은 값에 설정해야 합니다. 다음 예제에서는 Redis에 대한 연결 문자열의 코드 조각을 보여 줍니다. Redis에 대한 Azure Cache에서 제공 되는의 `synctimeout`는 2000 밀리초입니다.
 
         synctimeout=2000,cachename.redis.cache.windows.net,abortConnect=false,ssl=true,password=...
 1. [StackExchange.Redis NuGet 패키지](https://www.nuget.org/packages/StackExchange.Redis/)최신 버전을 사용 중인지 확인합니다. 제한 시간에 더욱 견고하도록 만들기 위해 코드 속의 버그를 지속적으로 수정하고 있으므로 최신 버전을 갖는 것이 중요합니다.
@@ -80,12 +80,12 @@ Redis는 동기 작업에 `synctimeout` 이라는 구성 설정을 사용 하며
 
    - 클라이언트에서 CPU에 의해 바인딩되는 지 확인 합니다. 높은 CPU로 인해 요청이 `synctimeout` 간격 내에서 처리 되지 않아 요청 시간이 초과 될 수 있습니다. 더 큰 클라이언트 크기로 이동 하거나 부하를 분산 하면이 문제를 쉽게 제어할 수 있습니다.
    - CPU [캐시 성능 메트릭을](cache-how-to-monitor.md#available-metrics-and-reporting-intervals)모니터링 하 여 서버에 cpu가 바인딩되어 있는지 확인 합니다. Redis가 CPU 바인딩될 때 들어오는 요청은 이러한 요청이 시간 초과 될 수 있습니다. 이 문제를 해결 하기 위해 부하를 프리미엄 캐시에서 여러 분할 분산 하거나 더 큰 크기나 가격 책정 계층으로 업그레이드할 수 있습니다. 자세한 내용은 [서버 쪽 대역폭 제한](cache-troubleshoot-server.md#server-side-bandwidth-limitation)을 참조 하세요.
-1. 서버에서 처리하는데 시간이 오래 걸리는 명령이 있습니까? Redis 서버에서 처리 하는 데 시간이 오래 걸리는 장기 실행 명령은 시간 초과가 발생할 수 있습니다. 장기 실행 명령에 대 한 자세한 내용은 [장기 실행 명령](cache-troubleshoot-server.md#long-running-commands)을 참조 하세요. Redis-cli 클라이언트 또는 [Redis 콘솔](cache-configure.md#redis-console)을 사용 하 여 Redis 용 Azure Cache 인스턴스에 연결할 수 있습니다. 그런 다음 [SLOWLOG](https://redis.io/commands/slowlog) 명령을 실행 하 여 예상 보다 느린 요청이 있는지 확인 합니다. Redis 서버와 StackExchange.Redis는 작은 수의 큰 요청보다 많은 수의 작은 요청을 위해 최적화되어 있습니다. 데이터를 더 작은 청크로 분할한다면 다음을 향상시킵니다.
+1. 서버에서 처리하는데 시간이 오래 걸리는 명령이 있습니까? Redis 서버에서 처리 하는 데 시간이 오래 걸리는 장기 실행 명령은 시간 초과가 발생할 수 있습니다. 장기 실행 명령에 대한 자세한 내용은 [장기 실행 명령](cache-troubleshoot-server.md#long-running-commands)을 참조 하세요. Redis-cli 클라이언트 또는 [Redis 콘솔](cache-configure.md#redis-console)을 사용 하 여 Redis 용 Azure Cache 인스턴스에 연결할 수 있습니다. 그런 다음 [SLOWLOG](https://redis.io/commands/slowlog) 명령을 실행 하 여 예상 보다 느린 요청이 있는지 확인 합니다. Redis 서버와 StackExchange.Redis는 작은 수의 큰 요청보다 많은 수의 작은 요청을 위해 최적화되어 있습니다. 데이터를 더 작은 청크로 분할한다면 다음을 향상시킵니다.
 
-    Redis 및 stunnel를 사용 하 여 캐시의 SSL 끝점에 연결 하는 방법에 대 한 자세한 내용은 [ASP.NET Session State Provider For Redis Preview 릴리스 발표](https://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx)블로그 게시물을 참조 하세요.
+    Redis 및 stunnel를 사용 하 여 캐시의 SSL 엔드포인트에 연결 하는 방법에 대한 자세한 내용은 [ASP.NET Session State Provider For Redis Preview 릴리스 발표](https://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx)블로그 게시물을 참조 하세요.
 1. 높은 Redis 서버 부하로 시간 초과가 발생할 수 있습니다. `Redis Server Load` [cache 성능 메트릭을](cache-how-to-monitor.md#available-metrics-and-reporting-intervals)모니터링 하 여 서버 부하를 모니터링할 수 있습니다. 100(최대 값)이란 서버 부하는 redis 서버가 요청을 처리하느라 유휴 시간이 전혀 없이 사용 중이었음을 나타냅니다. 특정 요청이 서버 기능의 전부를 차지하는지 확인하려면 이전 단락에서 설명한 대로 SlowLog 명령을 실행합니다. 자세한 내용은 높은 CPU 사용량/서버 로드를 참조하세요.
 1. 클라이언트 쪽에서 네트워크 문제를 일으킬 만한 이벤트가 있었습니까? 일반적인 이벤트에는 클라이언트 인스턴스 수를 확장 또는 축소 하거나 새 버전의 클라이언트를 배포 하거나 자동 크기 조정을 사용 하도록 설정 하는 작업이 포함 됩니다. 이 테스트에서는 자동 크기 조정 또는 확장/축소로 인해 아웃 바운드 네트워크 연결이 몇 초 동안 손실 될 수 있음을 알게 되었습니다. StackExchange.Redis 코드는 이러한 이벤트에 복원력이 있어 다시 연결합니다. 다시 연결 하는 동안 큐에 있는 모든 요청은 시간 초과 될 수 있습니다.
-1. 시간이 초과 된 캐시에 대 한 몇 개의 작은 요청 앞에 대량 요청이 있나요? 오류 메시지에 `qs` 매개 변수는 클라이언트에서 서버로 전송 된 요청 수를 알려 주지만 응답을 처리 하지 않았습니다. StackExchange.Redis는 하나의 TCP 연결을 사용하고 한 번에 하나의 응답만 읽을 수 있기 때문에 이 값은 계속 증가할 수 있습니다. 첫 번째 작업이 시간 초과 되더라도 서버에 전송 되는 데이터를 더 이상 중지 하지 않습니다. 다른 요청은 대량 요청이 완료 될 때까지 차단 되 고 시간 초과가 발생할 수 있습니다. 하나의 솔루션은 워크로드를 감당할 수 있게 캐시를 충분히 크게 하고 큰 값을 작은 청크로 분할하여 시간 초과의 가능성을 최소화하는 것입니다. 또 다른 가능한 솔루션은 클라이언트에서 `ConnectionMultiplexer` 개체 풀을 사용하고, 새 요청을 보낼 때 부하가 최소인 `ConnectionMultiplexer`을 선택합니다, 여러 연결 개체에서 로드 하는 경우에는 한 번의 시간 제한으로 인해 다른 요청이 시간 초과 되지 않도록 해야 합니다.
+1. 시간이 초과 된 캐시에 대한 몇 개의 작은 요청 앞에 대량 요청이 있나요? 오류 메시지에 `qs` 매개 변수는 클라이언트에서 서버로 전송 된 요청 수를 알려 주지만 응답을 처리 하지 않았습니다. StackExchange.Redis는 하나의 TCP 연결을 사용하고 한 번에 하나의 응답만 읽을 수 있기 때문에 이 값은 계속 증가할 수 있습니다. 첫 번째 작업이 시간 초과 되더라도 서버에 전송 되는 데이터를 더 이상 중지 하지 않습니다. 다른 요청은 대량 요청이 완료 될 때까지 차단 되 고 시간 초과가 발생할 수 있습니다. 하나의 솔루션은 워크로드를 감당할 수 있게 캐시를 충분히 크게 하고 큰 값을 작은 청크로 분할하여 시간 초과의 가능성을 최소화하는 것입니다. 또 다른 가능한 솔루션은 클라이언트에서 `ConnectionMultiplexer` 개체 풀을 사용하고, 새 요청을 보낼 때 부하가 최소인 `ConnectionMultiplexer`을 선택합니다, 여러 연결 개체에서 로드 하는 경우에는 한 번의 시간 제한으로 인해 다른 요청이 시간 초과 되지 않도록 해야 합니다.
 1. `RedisSessionStateProvider`를 사용 하는 경우 다시 시도 시간 제한을 올바르게 설정 했는지 확인 합니다. `retryTimeoutInMilliseconds`는 `operationTimeoutInMilliseconds`보다 높아야 합니다. 그렇지 않으면 재시도가 발생하지 않습니다. 다음 예제에서 `retryTimeoutInMilliseconds` 가 3000으로 설정됩니다. 자세한 내용은 [Azure Cache for Redis에 대한 ASP.NET 세션 상태 제공자](cache-aspnet-session-state-provider.md) 및 [세션 상태 제공자 및 출력 캐시 공급자의 구성 매개 변수를 사용하는 방법](https://github.com/Azure/aspnet-redis-providers/wiki/Configuration)을 참조하세요.
 
     ```xml

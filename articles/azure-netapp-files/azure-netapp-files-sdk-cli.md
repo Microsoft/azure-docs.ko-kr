@@ -27,7 +27,7 @@ ms.locfileid: "73887178"
 
 ## <a name="supported-sdks"></a>지원되는 SDK 
 
-다음 표에서는 지원 되는 Sdk를 나열 합니다.  지원 되는 Sdk에 대 한 자세한 내용은 GitHub의 게시 된 위치에서 찾을 수 있습니다.  
+다음 표에서는 지원 되는 Sdk를 나열 합니다.  지원 되는 Sdk에 대한 자세한 내용은 GitHub의 게시 된 위치에서 찾을 수 있습니다.  
 
 |    언어    |    GitHub의 SDK 게시 위치    |
 |------------------|--------------------------------------------------------------|
@@ -45,15 +45,15 @@ ms.locfileid: "73887178"
 |    도구    |    명령 참조    |
 |------------------|--------------------------------------------|
 |    Azure CLI  |    [az netappfiles](https://docs.microsoft.com/cli/azure/netappfiles?view=azure-cli-latest)    |
-|    PowerShell   |    [Azure NetApp Files에 대 한 Azure PowerShell](https://docs.microsoft.com/powershell/module/az.netappfiles/?view=azps-2.5.0#netapp_files)    |
+|    PowerShell   |    [Azure NetApp Files에 대한 Azure PowerShell](https://docs.microsoft.com/powershell/module/az.netappfiles/?view=azps-2.5.0#netapp_files)    |
 
 ## <a name="code-samples"></a>코드 샘플
 
-다음 표에서는 참조에 대 한 코드 샘플을 나열 합니다.   
+다음 표에서는 참조에 대한 코드 샘플을 나열 합니다.   
 
 |    언어/도구    |    코드 샘플 설명서    |
 |------------------|--------------------------------------------|
-|    .NET   |    [에 대 한 Azure NetApp Files SDK 샘플입니다. Microsoft.netcore.portable.compatibility](https://docs.microsoft.com/samples/azure-samples/netappfiles-dotnetcore-sdk-sample/azure-netappfiles-sdk-sample-for-net-core/) |    
+|    .NET   |    [에 대한 Azure NetApp Files SDK 샘플입니다. Microsoft.netcore.portable.compatibility](https://docs.microsoft.com/samples/azure-samples/netappfiles-dotnetcore-sdk-sample/azure-netappfiles-sdk-sample-for-net-core/) |    
 |    Python    |    [Python 용 Azure NetApp Files SDK 샘플](https://docs.microsoft.com/samples/azure-samples/netappfiles-python-sdk-sample/azure-netappfiles-sdk-sample-for-python/)    |
 
 ## <a name="next-steps"></a>다음 단계   

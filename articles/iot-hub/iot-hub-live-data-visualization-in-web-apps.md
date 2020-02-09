@@ -57,9 +57,9 @@ az extension add --name azure-cli-iot-ext
 
 ## <a name="add-a-consumer-group-to-your-iot-hub"></a>IoT Hub에 소비자 그룹 추가
 
-[소비자 그룹](https://docs.microsoft.com/azure/event-hubs/event-hubs-features#event-consumers) 은 앱과 Azure 서비스가 동일한 이벤트 허브 끝점의 데이터를 독립적으로 사용할 수 있도록 하는 이벤트 스트림에 독립적인 뷰를 제공 합니다. 이 섹션에서는 웹 앱에서 데이터를 읽는 데 사용 하는 IoT hub의 기본 제공 끝점에 소비자 그룹을 추가 합니다.
+[소비자 그룹](https://docs.microsoft.com/azure/event-hubs/event-hubs-features#event-consumers) 은 앱과 Azure 서비스가 동일한 이벤트 허브 엔드포인트의 데이터를 독립적으로 사용할 수 있도록 하는 이벤트 스트림에 독립적인 뷰를 제공 합니다. 이 섹션에서는 웹 앱에서 데이터를 읽는 데 사용 하는 IoT hub의 기본 제공 엔드포인트에 소비자 그룹을 추가 합니다.
 
-다음 명령을 실행 하 여 IoT hub의 기본 제공 끝점에 소비자 그룹을 추가 합니다.
+다음 명령을 실행 하 여 IoT hub의 기본 제공 엔드포인트에 소비자 그룹을 추가 합니다.
 
 ```azurecli-interactive
 az iot hub consumer-group create --hub-name YourIoTHubName --name YourConsumerGroupName
@@ -69,7 +69,7 @@ az iot hub consumer-group create --hub-name YourIoTHubName --name YourConsumerGr
 
 ## <a name="get-a-service-connection-string-for-your-iot-hub"></a>IoT hub에 대 한 서비스 연결 문자열 가져오기
 
-IoT hub는 몇 가지 기본 액세스 정책을 사용 하 여 생성 됩니다. 이러한 정책 중 하나는 서비스에서 IoT hub의 끝점을 읽고 쓸 수 있는 충분 한 권한을 제공 하는 **서비스** 정책입니다. 다음 명령을 실행 하 여 서비스 정책을 준수 하는 IoT hub에 대 한 연결 문자열을 가져옵니다.
+IoT hub는 몇 가지 기본 액세스 정책을 사용 하 여 생성 됩니다. 이러한 정책 중 하나는 서비스에서 IoT hub의 엔드포인트을 읽고 쓸 수 있는 충분 한 권한을 제공 하는 **서비스** 정책입니다. 다음 명령을 실행 하 여 서비스 정책을 준수 하는 IoT hub에 대 한 연결 문자열을 가져옵니다.
 
 ```azurecli-interactive
 az iot hub show-connection-string --hub-name YourIotHub --policy-name service
@@ -102,7 +102,7 @@ cd web-apps-node-iot-hub-data-visualization
 
 * **Node.js** 는 웹 소켓과 이벤트 허브 래퍼 클래스를 초기화 하는 서비스 쪽 스크립트입니다. 클래스가 들어오는 메시지를 웹 소켓에 브로드캐스트하는 데 사용 하는 이벤트 허브 래퍼 클래스에 대 한 콜백을 제공 합니다.
 
-* **Event-hub-reader** 는 지정 된 연결 문자열 및 소비자 그룹을 사용 하 여 IoT hub의 기본 제공 끝점에 연결 하는 서비스 쪽 스크립트입니다. 들어오는 메시지에 대 한 메타 데이터에서 DeviceId 및 EnqueuedTimeUtc를 추출한 다음 node.js에서 등록 한 콜백 메서드를 사용 하 여 메시지를 릴레이 합니다.
+* **Event-hub-reader** 는 지정 된 연결 문자열 및 소비자 그룹을 사용 하 여 IoT hub의 기본 제공 엔드포인트에 연결 하는 서비스 쪽 스크립트입니다. 들어오는 메시지에 대 한 메타 데이터에서 DeviceId 및 EnqueuedTimeUtc를 추출한 다음 node.js에서 등록 한 콜백 메서드를 사용 하 여 메시지를 릴레이 합니다.
 
 * **Chart-device-data** 는 웹 소켓에서 수신 대기 하 고, 각 DeviceId를 추적 하 고, 각 장치에 대해 들어오는 데이터의 마지막 50 위치를 저장 하는 클라이언트 쪽 스크립트입니다. 그런 다음 선택한 장치 데이터를 차트 개체에 바인딩합니다.
 

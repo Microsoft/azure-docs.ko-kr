@@ -18,7 +18,7 @@ ACR(Azure Container Registry)은 다중 서비스 계층(즉, SKU)에서 사용 
 | --- | ----------- |
 | **Basic** | 개발자가 Azure Container Registry에 대해 배울 수 있는 비용 최적화된 진입점입니다. 기본 레지스트리는 Standard 및 Premium과 동일한 프로그래밍 기능을 제공 합니다 (예: Azure Active Directory [인증 통합](container-registry-authentication.md#individual-login-with-azure-ad), [이미지 삭제][container-registry-delete]및 [웹 후크][container-registry-webhook]). 그렇지만 포함된 스토리지 및 이미지 처리량은 더 낮은 사용량 시나리오에 가장 적합합니다. |
 | **Standard** | Standard 레지스트리는 Basic과 동일한 성능을 제공하되, 포함된 스토리지 제한과 이미지 처리량은 더 높습니다. Standard 레지스트리는 대부분의 프로덕션 시나리오 요구를 충족합니다. |
-| **Premium** | Premium 레지스트리는 포함된 스토리지 및 동시 작업 수가 가장 높으며 고용량 시나리오를 지원합니다. Premium은 더 높은 이미지 처리량 외에도, 여러 지역에서 단일 레지스트리를 관리 하기 위한 [지역 복제][container-registry-geo-replication] , 이미지 태그 서명에 대 한 [콘텐츠 신뢰](container-registry-content-trust.md) , [방화벽 및 가상 네트워크 (미리 보기)](container-registry-vnet.md) 와 같은 기능을 추가 합니다. 레지스트리에 대 한 액세스를 제한 합니다. |
+| **Premium** | Premium 레지스트리는 포함된 스토리지 및 동시 작업 수가 가장 높으며 고용량 시나리오를 지원합니다. Premium은 더 높은 이미지 처리량 외에도, 여러 지역에서 단일 레지스트리를 관리 하기 위한 [지역 복제][container-registry-geo-replication] , 이미지 태그 서명에 대한 [콘텐츠 신뢰](container-registry-content-trust.md) , [방화벽 및 가상 네트워크 (미리 보기)](container-registry-vnet.md) 와 같은 기능을 추가 합니다. 레지스트리에 대한 액세스를 제한 합니다. |
 
 Basic, Standard 및 Premium Sku는 모두 동일한 프로그래밍 기능을 제공 합니다. 또한 Azure에서 완전히 관리 하는 [이미지 저장소][container-registry-storage] 를 활용 합니다. 더 높은 수준의 SKU를 선택하면 향상된 성능과 규모를 제공합니다. 여러 서비스 계층을 사용하여 Basic로 시작한 다음, 레지스트리 사용량 증가에 따라 Standard 및 Premium으로 변환할 수 있습니다.
 

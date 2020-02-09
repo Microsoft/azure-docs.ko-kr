@@ -27,7 +27,7 @@ Azure Blockchain 서비스 리소스는 개인 가상 네트워크에서 격리 
 
 ## <a name="authentication"></a>인증
 
-트랜잭션은 RPC 끝점을 통해 blockchain 노드로 전송 될 수 있습니다. 클라이언트는 사용자 인증을 처리 하 고 SSL을 통해 데이터를 암호화 하는 역방향 프록시 서버를 사용 하 여 트랜잭션 노드와 통신 합니다.
+트랜잭션은 RPC 엔드포인트을 통해 blockchain 노드로 전송 될 수 있습니다. 클라이언트는 사용자 인증을 처리 하 고 SSL을 통해 데이터를 암호화 하는 역방향 프록시 서버를 사용 하 여 트랜잭션 노드와 통신 합니다.
 
 ![인증 다이어그램](./media/data-security/authentication.png)
 
@@ -39,13 +39,13 @@ RPC 액세스에는 세 가지 인증 모드가 있습니다.
 
 ### <a name="access-keys"></a>액세스 키
 
-액세스 키는 끝점 URL에 포함 된 임의로 생성 된 문자열을 사용 합니다. 키 회전을 사용 하는 데 도움이 되는 두 가지 선택키가 있습니다. Azure Portal 및 CLI에서 키를 다시 생성할 수 있습니다.
+액세스 키는 엔드포인트 URL에 포함 된 임의로 생성 된 문자열을 사용 합니다. 키 회전을 사용 하는 데 도움이 되는 두 가지 선택키가 있습니다. Azure Portal 및 CLI에서 키를 다시 생성할 수 있습니다.
 
 ### <a name="azure-active-directory"></a>Azure Active Directory
 
 Azure ad (Azure Active Directory)는 azure ad 사용자 자격 증명을 사용 하 여 Azure AD에서 사용자를 인증 하는 클레임 기반 인증 메커니즘을 사용 합니다. Azure AD는 클라우드 기반 id 관리를 제공 하며, 고객이 전체 기업에서 단일 id를 사용 하 고 클라우드의 응용 프로그램에 액세스할 수 있도록 합니다. Azure Blockchain 서비스는 ID 페더레이션, Single Sign-On 및 multi-factor authentication을 사용 하도록 설정 하는 Azure AD와 통합 됩니다. 사용자, 그룹 및 응용 프로그램 역할을 조직에서 blockchain 구성원 및 노드 액세스에 할당할 수 있습니다.
 
-Azure AD 클라이언트 프록시는 [GitHub](https://github.com/Microsoft/azure-blockchain-connector/releases)에서 사용할 수 있습니다. 클라이언트 프록시는 사용자를 Azure AD 로그인 페이지로 안내 하 고 인증에 성공 하면 전달자 토큰을 가져옵니다. 그런 다음 사용자는 Geth 또는 Truffle와 같은 Ethereum 클라이언트 응용 프로그램을 클라이언트 프록시의 끝점에 연결 합니다. 마지막으로 트랜잭션이 제출 되 면 클라이언트 프록시는 http 헤더에 전달자 토큰을 삽입 하 고 역방향 프록시는 OAuth 프로토콜을 사용 하 여 토큰의 유효성을 검사 합니다.
+Azure AD 클라이언트 프록시는 [GitHub](https://github.com/Microsoft/azure-blockchain-connector/releases)에서 사용할 수 있습니다. 클라이언트 프록시는 사용자를 Azure AD 로그인 페이지로 안내 하 고 인증에 성공 하면 전달자 토큰을 가져옵니다. 그런 다음 사용자는 Geth 또는 Truffle와 같은 Ethereum 클라이언트 응용 프로그램을 클라이언트 프록시의 엔드포인트에 연결 합니다. 마지막으로 트랜잭션이 제출 되 면 클라이언트 프록시는 http 헤더에 전달자 토큰을 삽입 하 고 역방향 프록시는 OAuth 프로토콜을 사용 하 여 토큰의 유효성을 검사 합니다.
 
 ## <a name="keys-and-ethereum-accounts"></a>키 및 Ethereum 계정
 

@@ -104,7 +104,7 @@ API Management 서비스가 VNET에 연결된 후에는 공용 서비스에 액�
 > [!IMPORTANT]
 > VNET에 사용자 지정 DNS 서버를 사용하려는 경우에는 API Management 서비스를 배포하기 **전에** 설정해야 합니다. 그렇지 않으면 DNS 서버를 변경할 때마다 [네트워크 구성 작업 적용](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/ApiManagementService/ApplyNetworkConfigurationUpdates)을 실행하여 API Management 서비스를 업데이트해야 합니다.
 
-* **API Management에 필요한 포트**: API Management 배포 되는 서브넷에 대 한 인바운드 및 아웃 바운드 트래픽은 [네트워크 보안 그룹][Network Security Group]을 사용 하 여 제어할 수 있습니다. 이러한 포트를 사용할 수 없는 경우 API Management가 정상적으로 작동하지 않고 액세스하지 못하게 될 수 있습니다. 이러한 포트가 하나 이상 차단되는 것은 VNET에서 API Management를 사용하는 경우 가장 일반적인 잘못된 구성 문제입니다.
+* **API Management에 필요한 포트**: API Management 배포 되는 서브넷에 대한 인바운드 및 아웃 바운드 트래픽은 [네트워크 보안 그룹][Network Security Group]을 사용 하 여 제어할 수 있습니다. 이러한 포트를 사용할 수 없는 경우 API Management가 정상적으로 작동하지 않고 액세스하지 못하게 될 수 있습니다. 이러한 포트가 하나 이상 차단되는 것은 VNET에서 API Management를 사용하는 경우 가장 일반적인 잘못된 구성 문제입니다.
 
 <a name="required-ports"></a> API Management 서비스 인스턴스가 VNET에서 호스트 되는 경우 다음 표의 포트가 사용 됩니다.
 
@@ -140,7 +140,7 @@ API Management 서비스가 VNET에 연결된 후에는 공용 서비스에 액�
     | Azure Government  | <ul><li>fairfax.warmpath.usgovcloudapi.net</li><li>shoebox2.metrics.nsatc.net</li><li>prod3.metrics.nsatc.net</li></ul>                                                                                                                                                                                                                                                |
     | Azure China 21Vianet     | <ul><li>mooncake.warmpath.chinacloudapi.cn</li><li>shoebox2.metrics.nsatc.net</li><li>prod3.metrics.nsatc.net</li></ul>                                                                                                                                                                                                                                                |
 
-+ **Smtp 릴레이**: 호스트 `smtpi-co1.msn.com`, `smtpi-ch1.msn.com`, `smtpi-db3.msn.com`, `smtpi-sin.msn.com` 및 `ies.global.microsoft.com`에서 확인 되는 smtp 릴레이에 대 한 아웃 바운드 네트워크 연결
++ **Smtp 릴레이**: 호스트 `smtpi-co1.msn.com`, `smtpi-ch1.msn.com`, `smtpi-db3.msn.com`, `smtpi-sin.msn.com` 및 `ies.global.microsoft.com`에서 확인 되는 smtp 릴레이에 대한 아웃 바운드 네트워크 연결
 
 + **개발자 포털 CAPTCHA**: 호스트 `client.hip.live.com` 및 `partner.hip.live.com`에서 확인 되는 개발자 포털의 CAPTCHA 아웃 바운드 네트워크 연결입니다.
 
@@ -148,11 +148,11 @@ API Management 서비스가 VNET에 연결된 후에는 공용 서비스에 액�
 
 + **Express 경로 또는 네트워크 가상 어플라이언스를 사용 하 여 온-프레미스 방화벽에 트래픽 강제 터널링**: 일반적인 고객 구성은 자체 기본 경로 (0.0.0.0/0)를 정의 하 여 위임 된 서브넷의 모든 API Management 트래픽을 온-프레미스 방화벽 또는 네트워크 가상 어플라이언스를 통해 이동 하도록 강제 하는 것입니다. 이 트래픽 흐름은 변함없이 Azure API Management와의 연결을 끊습니다. 그 이유는 아웃바운드 트래픽이 온-프레미스에서 막히거나 다양한 Azure 엔드포인트에서 더 이상 작동하지 않는 인식 불가능한 주소 집합으로 NAT되기 때문입니다. 이 솔루션을 사용 하려면 다음 몇 가지 작업을 수행 해야 합니다.
 
-  * API Management 서비스가 배포 된 서브넷에서 서비스 끝점을 사용 하도록 설정 합니다. Azure Sql, Azure Storage, Azure EventHub 및 Azure ServiceBus에 대해 [서비스 끝점][ServiceEndpoints] 을 사용 하도록 설정 해야 합니다. 이러한 서비스에 대 한 API Management 위임 된 서브넷에서 직접 끝점을 사용 하도록 설정 하면 서비스 트래픽에 대 한 최적의 라우팅을 제공 하는 Microsoft Azure 백본 네트워크를 사용할 수 있습니다. 강제 터널링 된 Api Management를 사용 하 여 서비스 끝점을 사용 하는 경우 위의 Azure 서비스 트래픽은 강제 터널링 되지 않습니다. 다른 API Management 서비스 종속성 트래픽은 강제 터널링 되어 손실 되거나 API Management 서비스가 제대로 작동 하지 않습니다.
+  * API Management 서비스가 배포 된 서브넷에서 서비스 엔드포인트을 사용 하도록 설정 합니다. Azure Sql, Azure Storage, Azure EventHub 및 Azure ServiceBus에 대해 [서비스 엔드포인트][ServiceEndpoints] 을 사용 하도록 설정 해야 합니다. 이러한 서비스에 대한 API Management 위임 된 서브넷에서 직접 엔드포인트을 사용 하도록 설정 하면 서비스 트래픽에 대한 최적의 라우팅을 제공 하는 Microsoft Azure 백본 네트워크를 사용할 수 있습니다. 강제 터널링 된 Api Management를 사용 하 여 서비스 엔드포인트을 사용 하는 경우 위의 Azure 서비스 트래픽은 강제 터널링 되지 않습니다. 다른 API Management 서비스 종속성 트래픽은 강제 터널링 되어 손실 되거나 API Management 서비스가 제대로 작동 하지 않습니다.
     
-  * 인터넷의 모든 제어 평면 트래픽은 API Management 서비스의 관리 끝점으로 API Management에서 호스트 되는 특정 인바운드 Ip 집합을 통해 라우팅됩니다. 트래픽이 강제로 터널링 되 면 응답은 이러한 인바운드 원본 Ip에 대칭으로 다시 매핑되지 않습니다. 제한을 극복 하려면 다음[Udrs][UDRs](사용자 정의 경로)를 추가 하 여 이러한 호스트 경로의 대상을 "Internet"로 설정 하 여 트래픽을 Azure로 다시 전달 해야 합니다. 제어 평면 트래픽에 대 한 인바운드 Ip 집합은 문서화 된 [제어 평면 IP 주소](#control-plane-ips) 입니다.
+  * 인터넷의 모든 제어 평면 트래픽은 API Management 서비스의 관리 엔드포인트으로 API Management에서 호스트 되는 특정 인바운드 Ip 집합을 통해 라우팅됩니다. 트래픽이 강제로 터널링 되 면 응답은 이러한 인바운드 원본 Ip에 대칭으로 다시 매핑되지 않습니다. 제한을 극복 하려면 다음[Udrs][UDRs](사용자 정의 경로)를 추가 하 여 이러한 호스트 경로의 대상을 "Internet"로 설정 하 여 트래픽을 Azure로 다시 전달 해야 합니다. 제어 평면 트래픽에 대한 인바운드 Ip 집합은 문서화 된 [제어 평면 IP 주소](#control-plane-ips) 입니다.
 
-  * 강제로 터널링 되는 다른 API Management 서비스 종속성의 경우 호스트 이름을 확인 하 고 끝점에 도달 하는 방법이 있어야 합니다. 다음이 포함 됩니다.
+  * 강제로 터널링 되는 다른 API Management 서비스 종속성의 경우 호스트 이름을 확인 하 고 엔드포인트에 도달 하는 방법이 있어야 합니다. 다음이 포함 됩니다.
       - 메트릭 및 상태 모니터링
       - Azure Portal 진단
       - SMTP 릴레이
@@ -167,7 +167,7 @@ API Management 서비스가 VNET에 연결된 후에는 공용 서비스에 액�
   > [!IMPORTANT]
   > 연결을 검증한 후에는 서브넷에 배포된 리소스를 모두 제거한 다음 API Management를 서비넷으로 배포합니다.
 
-* **증분 업데이트**: 네트워크를 변경할 때 [networkstatus API](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/networkstatus)를 참조 하 여 API Management 서비스에서 사용 하는 중요 한 리소스에 대 한 액세스 권한이 손실 되지 않았는지 확인 합니다. 연결 상태는 15분마다 업데이트되어야 합니다.
+* **증분 업데이트**: 네트워크를 변경할 때 [networkstatus API](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/networkstatus)를 참조 하 여 API Management 서비스에서 사용 하는 중요 한 리소스에 대한 액세스 권한이 손실 되지 않았는지 확인 합니다. 연결 상태는 15분마다 업데이트되어야 합니다.
 
 * **리소스 탐색 링크**: 리소스 관리자 스타일 Vnet 서브넷으로 배포할 경우 API Management는 리소스 탐색 링크를 만들어 서브넷을 보유합니다. 서브넷에 니미 다른 공급자의 리소스가 포함된 경우에는 배포가 **실패**합니다. 마찬가지로 API Management 서비스를 다른 서브넷으로 이동하거나 삭제할 경우에는 해당 리소스 탐색 링크가 삭제됩니다.
 

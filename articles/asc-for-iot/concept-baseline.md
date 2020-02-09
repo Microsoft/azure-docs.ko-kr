@@ -1,6 +1,6 @@
 ---
-title: IoT 기준에 대 한 Azure Security Center 이해 | Microsoft Docs
-description: IoT 기준에 대 한 Azure Security Center 개념에 대해 알아봅니다.
+title: IoT 기준에 대한 Azure Security Center 이해 | Microsoft Docs
+description: IoT 기준에 대한 Azure Security Center 개념에 대해 알아봅니다.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -22,17 +22,17 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 10/09/2019
 ms.locfileid: "72176611"
 ---
-# <a name="azure-security-center-for-iot-baseline-and-custom-checks"></a>IoT 기준 및 사용자 지정 검사에 대 한 Azure Security Center
+# <a name="azure-security-center-for-iot-baseline-and-custom-checks"></a>IoT 기준 및 사용자 지정 검사에 대한 Azure Security Center
 
-이 문서에서는 IoT 기준에 대 한 Azure Security Center 설명 하 고 기준 사용자 지정 검사의 모든 관련 속성을 요약 합니다.
+이 문서에서는 IoT 기준에 대한 Azure Security Center 설명 하 고 기준 사용자 지정 검사의 모든 관련 속성을 요약 합니다.
 
 ## <a name="baseline"></a>기초
 
-기준은 각 장치에 대 한 표준 동작을 설정 하 고 예상 되는 표준의 비정상적인 동작 또는 편차를 보다 쉽게 설정할 수 있습니다.  
+기준은 각 장치에 대한 표준 동작을 설정 하 고 예상 되는 표준의 비정상적인 동작 또는 편차를 보다 쉽게 설정할 수 있습니다.  
 
 ## <a name="baseline-custom-checks"></a>기준 사용자 지정 검사
 
-기준 사용자 지정 검사는 장치의 **모듈 id** 쌍을 사용 하 여 각 장치 기준에 대 한 검사의 사용자 지정 목록을 설정 합니다. 
+기준 사용자 지정 검사는 장치의 **모듈 id** 쌍을 사용 하 여 각 장치 기준에 대한 검사의 사용자 지정 목록을 설정 합니다. 
 
 ## <a name="setting-baseline-properties"></a>기준 속성 설정
 

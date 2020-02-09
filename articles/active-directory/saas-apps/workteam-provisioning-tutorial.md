@@ -36,7 +36,7 @@ ms.locfileid: "77062799"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트.
-* [근무 팀 테 넌 트](https://workte.am/pricing.html)
+* [근무 팀 테넌트](https://workte.am/pricing.html)
 * 관리자 권한이 있는 근무 팀의 사용자 계정
 
 ## <a name="assigning-users-to-workteam"></a>사용자를 근무 팀에 할당 
@@ -64,7 +64,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 회사 팀�
 
     ![Workteam](media/workteam-provisioning-tutorial/icon.png)
 
-3. **기준 Url** 및 **전달자 토큰**을 복사 합니다. 이러한 값은 Azure Portal에서 근무 팀 응용 프로그램의 프로 비전 탭에 있는 **테 넌 트 URL**및 **비밀 토큰** 필드에 입력 됩니다.
+3. **기준 Url** 및 **전달자 토큰**을 복사 합니다. 이러한 값은 Azure Portal에서 근무 팀 응용 프로그램의 프로 비전 탭에 있는 **테넌트 URL**및 **비밀 토큰** 필드에 입력 됩니다.
 
     ![Workteam](media/workteam-provisioning-tutorial/scim.png)
 
@@ -116,7 +116,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위해 회사 팀을 구
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. 관리자 자격 증명 섹션 아래에서 **테 넌 트 url** 및 **암호 토큰** 에서 각각 검색 된 **기준 url** 및 **전달자 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 근무 팀에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 업무 팀 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
+5. 관리자 자격 증명 섹션 아래에서 **테넌트 url** 및 **암호 토큰** 에서 각각 검색 된 **기준 url** 및 **전달자 토큰** 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 근무 팀에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 업무 팀 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 

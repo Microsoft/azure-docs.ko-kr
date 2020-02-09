@@ -12,15 +12,15 @@ ms.locfileid: "74226493"
 ---
 # <a name="manage-connections-in-azure-functions"></a>Azure Functions에서 연결 관리
 
-함수 앱의 함수는 리소스를 공유 합니다. 이러한 공유 리소스 중에는 연결: HTTP 연결, 데이터베이스 연결 및 서비스에 대 한 연결 (예: Azure Storage)이 있습니다. 많은 함수가 동시에 실행되면 사용 가능한 연결이 부족해질 수 있습니다. 이 문서에서는 필요한 것 보다 더 많은 연결을 사용 하지 않도록 함수를 코딩 하는 방법을 설명 합니다.
+함수 앱의 함수는 리소스를 공유 합니다. 이러한 공유 리소스 중에는 연결: HTTP 연결, 데이터베이스 연결 및 서비스에 대한 연결 (예: Azure Storage)이 있습니다. 많은 함수가 동시에 실행되면 사용 가능한 연결이 부족해질 수 있습니다. 이 문서에서는 필요한 것 보다 더 많은 연결을 사용 하지 않도록 함수를 코딩 하는 방법을 설명 합니다.
 
 ## <a name="connection-limit"></a>연결 제한
 
-함수 앱은 [샌드박스 환경](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)에서 실행 되므로 사용 가능한 연결 수는 부분적으로 제한 됩니다. 샌드박스에서 코드에 적용 하는 제한 사항 중 하나는 현재 인스턴스당 600 활성 (총 1200) 연결 인 아웃 바운드 연결 수에 대 한 제한입니다. 이 한도에 도달 하면 함수 런타임에서는 `Host thresholds exceeded: Connections`로그에 다음 메시지를 기록 합니다. 자세한 내용은 [함수 서비스 제한](functions-scale.md#service-limits)을 참조 하세요.
+함수 앱은 [샌드박스 환경](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)에서 실행 되므로 사용 가능한 연결 수는 부분적으로 제한 됩니다. 샌드박스에서 코드에 적용 하는 제한 사항 중 하나는 현재 인스턴스당 600 활성 (총 1200) 연결 인 아웃 바운드 연결 수에 대한 제한입니다. 이 한도에 도달 하면 함수 런타임에서는 `Host thresholds exceeded: Connections`로그에 다음 메시지를 기록 합니다. 자세한 내용은 [함수 서비스 제한](functions-scale.md#service-limits)을 참조 하세요.
 
 이 제한은 인스턴스당입니다. [크기 조정 컨트롤러에서 함수 앱 인스턴스를 추가](functions-scale.md#how-the-consumption-and-premium-plans-work) 하 여 더 많은 요청을 처리 하면 각 인스턴스에 독립적인 연결 제한이 있습니다. 즉, 전역 연결 제한이 없으며 모든 활성 인스턴스에서 600 개가 넘는 활성 연결을 가질 수 있습니다.
 
-문제를 해결 하려면 함수 앱에 대 한 Application Insights를 사용 하도록 설정 했는지 확인 합니다. Application Insights를 사용 하 여 실행 같은 함수 앱에 대 한 메트릭을 볼 수 있습니다. 자세한 내용은 [Application Insights에서 원격 분석 보기](functions-monitoring.md#view-telemetry-in-application-insights)를 참조 하세요.  
+문제를 해결 하려면 함수 앱에 대한 Application Insights를 사용 하도록 설정 했는지 확인 합니다. Application Insights를 사용 하 여 실행 같은 함수 앱에 대한 메트릭을 볼 수 있습니다. 자세한 내용은 [Application Insights에서 원격 분석 보기](functions-monitoring.md#view-telemetry-in-application-insights)를 참조 하세요.  
 
 ## <a name="static-clients"></a>정적 클라이언트
 
@@ -52,7 +52,7 @@ public static async Task Run(string input)
 }
 ```
 
-.NET의 [Httpclient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) 에 대 한 일반적인 질문은 "클라이언트를 삭제 해야 하나요?"입니다. 일반적으로 `IDisposable`를 구현 하는 개체를 사용 하 여 작업을 완료 하면 삭제 합니다. 그러나 정적 클라이언트는 함수가 종료 될 때 사용 하지 않으므로 삭제 하지 않습니다. 정적 클라이언트가 애플리케이션 기간 동안 지속되도록 합니다.
+.NET의 [Httpclient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) 에 대한 일반적인 질문은 "클라이언트를 삭제 해야 하나요?"입니다. 일반적으로 `IDisposable`를 구현 하는 개체를 사용 하 여 작업을 완료 하면 삭제 합니다. 그러나 정적 클라이언트는 함수가 종료 될 때 사용 하지 않으므로 삭제 하지 않습니다. 정적 클라이언트가 애플리케이션 기간 동안 지속되도록 합니다.
 
 ### <a name="http-agent-examples-javascript"></a>HTTP 에이전트 예제 (JavaScript)
 
@@ -126,14 +126,14 @@ module.exports = async function (context) {
 
 ## <a name="sqlclient-connections"></a>SqlClient 연결
 
-함수 코드는 SQL Server에 대 한 .NET Framework Data Provider ([SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient(v=vs.110).aspx))를 사용 하 여 SQL 관계형 데이터베이스에 연결할 수 있습니다. [Entity Framework](https://msdn.microsoft.com/library/aa937723(v=vs.113).aspx)와 같이 ADO.NET를 사용 하는 데이터 프레임 워크의 기본 공급자 이기도 합니다. [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) 및 [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient
-)와 달리, ADO.NET은 기본적으로 연결 풀링을 구현합니다. 그러나 계속 해 서 연결을 실행할 수 있기 때문에 데이터베이스에 대 한 연결을 최적화 해야 합니다. 자세한 내용은 [SQL Server 연결 풀링(ADO.NET)](https://docs.microsoft.com/dotnet/framework/data/adonet/sql-server-connection-pooling)을 참조하세요.
+함수 코드는 SQL Server에 대한 .NET Framework Data Provider ([SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient(v=vs.110).aspx))를 사용 하 여 SQL 관계형 데이터베이스에 연결할 수 있습니다. [Entity Framework](https://msdn.microsoft.com/library/aa937723(v=vs.113).aspx)와 같이 ADO.NET를 사용 하는 데이터 프레임 워크의 기본 공급자 이기도 합니다. [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) 및 [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient
+)와 달리, ADO.NET은 기본적으로 연결 풀링을 구현합니다. 그러나 계속 해 서 연결을 실행할 수 있기 때문에 데이터베이스에 대한 연결을 최적화 해야 합니다. 자세한 내용은 [SQL Server 연결 풀링(ADO.NET)](https://docs.microsoft.com/dotnet/framework/data/adonet/sql-server-connection-pooling)을 참조하세요.
 
 > [!TIP]
 > Entity Framework와 같은 일부 데이터 프레임 워크는 일반적으로 구성 파일의 **ConnectionStrings** 섹션에서 연결 문자열을 가져옵니다. 이 경우, 함수 앱 설정의 **연결 문자열** 컬렉션과 로컬 프로젝트의 [local.settings.json 파일](functions-run-local.md#local-settings-file)에 SQL 데이터베이스 연결 문자열을 명시적으로 추가해야 합니다. 함수 코드에 [SqlConnection](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(v=vs.110).aspx) 의 인스턴스를 만드는 경우 **응용 프로그램 설정** 에 연결 문자열 값을 다른 연결과 함께 저장 해야 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-정적 클라이언트를 권장 하는 이유에 대 한 자세한 내용은 [부적절 한 인스턴스화 방지 패턴](https://docs.microsoft.com/azure/architecture/antipatterns/improper-instantiation/)을 참조 하세요.
+정적 클라이언트를 권장 하는 이유에 대한 자세한 내용은 [부적절 한 인스턴스화 방지 패턴](https://docs.microsoft.com/azure/architecture/antipatterns/improper-instantiation/)을 참조 하세요.
 
 Azure Functions 성능 팁에 대한 자세한 내용은 [Azure 함수의 성능 및 안정성 최적화](functions-best-practices.md)를 참조하세요.

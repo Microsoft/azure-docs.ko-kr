@@ -45,7 +45,7 @@ ms.locfileid: "76988569"
 
 ## <a name="add-a-circle-to-the-map"></a>지도에 원 추가
 
-Azure Maps에는 [여기](https://docs.microsoft.com/azure/azure-maps/extend-geojson#circle)에 나와 있는 것 처럼 원에 대 한 정의를 제공 하는 GeoJSON 스키마의 확장 된 버전이 사용 됩니다. `Circle`의 `subType` 속성을 사용 하 여 `point` 기능을 만들고 **미터**단위를 나타내는 번호가 매겨진 `Radius` 속성을 만들어 표에서 돌출 원을 렌더링할 수 있습니다. 예:
+Azure Maps에는 [여기](https://docs.microsoft.com/azure/azure-maps/extend-geojson#circle)에 나와 있는 것 처럼 원에 대한 정의를 제공 하는 GeoJSON 스키마의 확장 된 버전이 사용 됩니다. `Circle`의 `subType` 속성을 사용 하 여 `point` 기능을 만들고 **미터**단위를 나타내는 번호가 매겨진 `Radius` 속성을 만들어 표에서 돌출 원을 렌더링할 수 있습니다. 예:
 
 ```Javascript
 {

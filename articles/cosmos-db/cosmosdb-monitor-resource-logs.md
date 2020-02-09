@@ -16,9 +16,9 @@ ms.locfileid: "75483285"
 ---
 # <a name="monitor-azure-cosmos-db-data-by-using-diagnostic-settings-in-azure"></a>Azure에서 진단 설정을 사용 하 여 Azure Cosmos DB 데이터 모니터링
 
-Azure의 진단 설정은 리소스 로그를 수집 하는 데 사용 됩니다. Azure 리소스 로그는 리소스에서 내보내며, 해당 리소스의 작업에 대 한 풍부 하 고 빈번한 데이터를 제공 합니다. 이러한 로그는 요청당 캡처되고 "데이터 평면 로그" 라고도 합니다. 데이터 평면 작업의 몇 가지 예로는 delete, insert 및 readFeed 있습니다. 이러한 로그의 내용은 리소스 종류에 따라 달라집니다.
+Azure의 진단 설정은 리소스 로그를 수집 하는 데 사용 됩니다. Azure 리소스 로그는 리소스에서 내보내며, 해당 리소스의 작업에 대한 풍부 하 고 빈번한 데이터를 제공 합니다. 이러한 로그는 요청당 캡처되고 "데이터 평면 로그" 라고도 합니다. 데이터 평면 작업의 몇 가지 예로는 delete, insert 및 readFeed 있습니다. 이러한 로그의 내용은 리소스 종류에 따라 달라집니다.
 
-플랫폼 메트릭과 활동 로그는 자동으로 수집 되지만 리소스 로그를 수집 하거나 Azure Monitor 외부로 전달 하려면 진단 설정을 만들어야 합니다. 다음 단계를 사용 하 여 Azure Cosmos 계정에 대 한 진단 설정을 켤 수 있습니다.
+플랫폼 메트릭과 활동 로그는 자동으로 수집 되지만 리소스 로그를 수집 하거나 Azure Monitor 외부로 전달 하려면 진단 설정을 만들어야 합니다. 다음 단계를 사용 하 여 Azure Cosmos 계정에 대한 진단 설정을 켤 수 있습니다.
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
 
@@ -38,7 +38,7 @@ Azure의 진단 설정은 리소스 로그를 수집 하는 데 사용 됩니다
     { "time": "2019-04-23T23:12:52.3814846Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "DataPlaneRequests", "operationName": "ReadFeed", "properties": {"activityId": "66a0c647-af38-4b8d-a92a-c48a805d6460","requestResourceType": "Database","requestResourceId": "","collectionRid": "","statusCode": "200","duration": "0","userAgent": "Microsoft.Azure.Documents.Common/2.2.0.0","clientIpAddress": "10.0.0.24","requestCharge": "1.000000","requestLength": "0","responseLength": "372","resourceTokenUserRid": "","region": "East US","partitionId": "062abe3e-de63-4aa5-b9de-4a77119c59f8","keyType": "PrimaryReadOnlyMasterKey","databaseName": "","collectionName": ""}}
     ```
 
-* **MongoRequests**: MongoDB에 대 한 AZURE COSMOS DB의 api에 대 한 요청을 처리 하기 위해 프런트 엔드에서 사용자가 시작한 요청을 기록 하려면이 로그 유형을 다른 API 계정에 사용할 수 없습니다. MongoDB 요청은 MongoRequests 및 DataPlaneRequests에도 표시 됩니다. 주의 해야 할 주요 속성은 `Requestcharge`, `opCode`입니다.
+* **MongoRequests**: MongoDB에 대한 AZURE COSMOS DB의 api에 대한 요청을 처리 하기 위해 프런트 엔드에서 사용자가 시작한 요청을 기록 하려면이 로그 유형을 다른 API 계정에 사용할 수 없습니다. MongoDB 요청은 MongoRequests 및 DataPlaneRequests에도 표시 됩니다. 주의 해야 할 주요 속성은 `Requestcharge`, `opCode`입니다.
 
     ```
     { "time": "2019-04-10T15:10:46.7820998Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "MongoRequests", "operationName": "ping", "properties": {"activityId": "823cae64-0000-0000-0000-000000000000","opCode": "MongoOpCode_OP_QUERY","errorCode": "0","duration": "0","requestCharge": "0.000000","databaseName": "admin","collectionName": "$cmd","retryCount": "0"}}
@@ -56,18 +56,18 @@ Azure의 진단 설정은 리소스 로그를 수집 하는 데 사용 됩니다
     { "time": "2019-10-11T02:33:24.2018744Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "PartitionKeyStatistics", "properties": {"subscriptionId": "<your_subscription_ID>","regionName": "West US 2","databaseName": "KustoQueryResults","collectionname": "CapacityMetrics","partitionkey": "["CapacityMetricsPartition.136"]","sizeKb": "2048270"}}
     ```
 
-* 분할:이 로그는 파티션 키의 초당 집계 된 사용량을 보고 **합니다.** 현재 Azure Cosmos DB은 SQL API 계정에 대 한 파티션 키와 지점 읽기/쓰기 및 저장 프로시저 작업에 대 한 파티션 키를 보고 합니다. 다른 Api 및 작업 유형은 지원 되지 않습니다. 다른 Api의 경우 진단 로그 테이블의 파티션 키 열이 비어 있게 됩니다. 이 로그에는 구독 ID, 지역 이름, 데이터베이스 이름, 컬렉션 이름, 파티션 키, 작업 유형, 요청 요금 등의 데이터가 포함 됩니다. 이 문서의 [Azure 진단 쿼리를 사용 하 여 문제 해결](#diagnostic-queries) 섹션을 참조 하세요. 예를 들어 "파티션"을 사용 하는 쿼리를 사용 합니다. 
+* 분할:이 로그는 파티션 키의 초당 집계 된 사용량을 보고 **합니다.** 현재 Azure Cosmos DB은 SQL API 계정에 대한 파티션 키와 지점 읽기/쓰기 및 저장 프로시저 작업에 대한 파티션 키를 보고 합니다. 다른 Api 및 작업 유형은 지원 되지 않습니다. 다른 Api의 경우 진단 로그 테이블의 파티션 키 열이 비어 있게 됩니다. 이 로그에는 구독 ID, 지역 이름, 데이터베이스 이름, 컬렉션 이름, 파티션 키, 작업 유형, 요청 요금 등의 데이터가 포함 됩니다. 이 문서의 [Azure 진단 쿼리를 사용 하 여 문제 해결](#diagnostic-queries) 섹션을 참조 하세요. 예를 들어 "파티션"을 사용 하는 쿼리를 사용 합니다. 
 
-* **ControlPlaneRequests**:이 로그에는 계정 만들기, 지역 추가 또는 제거, 계정 복제 설정 업데이트 등의 제어 평면 작업에 대 한 세부 정보가 포함 됩니다. 이 로그 유형은 SQL (Core), MongoDB, Gremlin, Cassandra, Table API를 포함 하는 모든 API 유형에 사용할 수 있습니다.
+* **ControlPlaneRequests**:이 로그에는 계정 만들기, 지역 추가 또는 제거, 계정 복제 설정 업데이트 등의 제어 평면 작업에 대한 세부 정보가 포함 됩니다. 이 로그 유형은 SQL (Core), MongoDB, Gremlin, Cassandra, Table API를 포함 하는 모든 API 유형에 사용할 수 있습니다.
 
 * **요청**: Azure Cosmos DB에서 진단 설정의 대상으로 메트릭 데이터를 수집 하려면이 옵션을 선택 합니다. Azure 메트릭에 의해 자동으로 수집 되는 동일한 데이터입니다. 리소스 로그를 사용 하 여 메트릭 데이터를 수집 하 여 두 종류의 데이터를 함께 분석 하 고 Azure Monitor 외부에서 메트릭 데이터를 보냅니다.
 
-Azure Portal, CLI 또는 PowerShell을 사용 하 여 진단 설정을 만드는 방법에 대 한 자세한 내용은 [Azure에서 플랫폼 로그 및 메트릭을 수집 하는 진단 설정 만들기](../azure-monitor/platform/diagnostic-settings.md) 문서를 참조 하세요.
+Azure Portal, CLI 또는 PowerShell을 사용 하 여 진단 설정을 만드는 방법에 대한 자세한 내용은 [Azure에서 플랫폼 로그 및 메트릭을 수집 하는 진단 설정 만들기](../azure-monitor/platform/diagnostic-settings.md) 문서를 참조 하세요.
 
 
 ## <a id="diagnostic-queries"></a>진단 쿼리와 관련 된 문제 해결
 
-1. 비용이 많이 드는 쿼리에 대 한 요청 요금을 가져오는 방법
+1. 비용이 많이 드는 쿼리에 대한 요청 요금을 가져오는 방법
 
    ```Kusto
    AzureDiagnostics
@@ -90,7 +90,7 @@ Azure Portal, CLI 또는 PowerShell을 사용 하 여 진단 설정을 만드는
    | where TimeGenerated >= ago(2h) 
    | summarize max(responseLength_s), max(requestLength_s), max(requestCharge_s), count = count() by OperationName, requestResourceType_s, userAgent_s, collectionRid_s, bin(TimeGenerated, 1h)
    ```
-1. 여러 작업에 대 한 배포를 가져오는 방법
+1. 여러 작업에 대한 배포를 가져오는 방법
 
    ```Kusto
    AzureDiagnostics
@@ -108,7 +108,7 @@ Azure Portal, CLI 또는 PowerShell을 사용 하 여 진단 설정을 만드는
    | summarize max(requestCharge_s) by bin(TimeGenerated, 1h), partitionId_g
    ```
 
-1. 초당 파티션 키/s 사용에 대 한 정보를 가져오는 방법
+1. 초당 파티션 키/s 사용에 대한 정보를 가져오는 방법
 
    ```Kusto
    AzureDiagnostics 
@@ -117,7 +117,7 @@ Azure Portal, CLI 또는 PowerShell을 사용 하 여 진단 설정을 만드는
    | order by TimeGenerated asc 
    ```
 
-1. 특정 파티션 키에 대 한 요청 요금을 가져오는 방법
+1. 특정 파티션 키에 대한 요청 요금을 가져오는 방법
 
    ```Kusto
    AzureDiagnostics 
@@ -135,7 +135,7 @@ Azure Portal, CLI 또는 PowerShell을 사용 하 여 진단 설정을 만드는
    | order by total desc
     ```
 
-1. 저장소 크기가 8gb 보다 큰 파티션 키에 대 한 로그를 가져오는 방법
+1. 저장소 크기가 8gb 보다 큰 파티션 키에 대한 로그를 가져오는 방법
 
    ```Kusto
    AzureDiagnostics
@@ -143,7 +143,7 @@ Azure Portal, CLI 또는 PowerShell을 사용 하 여 진단 설정을 만드는
    | where todouble(sizeKb_d) > 800000
    ```
 
-1. 데이터베이스 계정에 대 한 상위 3 개 파티션 간의 기울기를 평가 하는 파티션 키 통계를 가져오는 방법
+1. 데이터베이스 계정에 대한 상위 3 개 파티션 간의 기울기를 평가 하는 파티션 키 통계를 가져오는 방법
 
     ```Kusto
     AzureDiagnostics 
@@ -153,5 +153,5 @@ Azure Portal, CLI 또는 PowerShell을 사용 하 여 진단 설정을 만드는
 
 ## <a name="next-steps"></a>다음 단계
 
-* [Azure Cosmos DB에 대 한 Azure Monitor](../azure-monitor/insights/cosmosdb-insights-overview.md?toc=/azure/cosmos-db/toc.json)
+* [Azure Cosmos DB에 대한 Azure Monitor](../azure-monitor/insights/cosmosdb-insights-overview.md?toc=/azure/cosmos-db/toc.json)
 * [Azure Cosmos DB에서 메트릭을 사용하여 모니터링 및 디버그](use-metrics.md)

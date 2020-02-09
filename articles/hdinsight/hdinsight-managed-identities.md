@@ -25,7 +25,7 @@ ms.locfileid: "76905610"
 
 ## <a name="hdinsight-managed-identity-implementation"></a>HDInsight 관리 id 구현
 
-Azure HDInsight에서 관리 id는 클러스터의 각 노드에 프로 비전 됩니다. 그러나 이러한 id 구성 요소는 HDInsight 서비스 에서만 사용할 수 있습니다. 현재 HDInsight 클러스터 노드에 설치 된 관리 되는 id를 사용 하 여 액세스 토큰을 생성 하는 데 지원 되는 방법은 없습니다. 일부 Azure 서비스의 경우 관리 되는 id는 다른 Azure 서비스와 상호 작용 하기 위해 액세스 토큰을 획득 하는 데 사용할 수 있는 끝점을 사용 하 여 구현 됩니다.
+Azure HDInsight에서 관리 id는 클러스터의 각 노드에 프로 비전 됩니다. 그러나 이러한 id 구성 요소는 HDInsight 서비스 에서만 사용할 수 있습니다. 현재 HDInsight 클러스터 노드에 설치 된 관리 되는 id를 사용 하 여 액세스 토큰을 생성 하는 데 지원 되는 방법은 없습니다. 일부 Azure 서비스의 경우 관리 되는 id는 다른 Azure 서비스와 상호 작용 하기 위해 액세스 토큰을 획득 하는 데 사용할 수 있는 엔드포인트을 사용 하 여 구현 됩니다.
 
 ## <a name="create-a-managed-identity"></a>관리 id 만들기
 

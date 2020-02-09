@@ -15,7 +15,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 06/28/2019
 ms.locfileid: "67440200"
 ---
-1. 다음 플랫폼에 대 한 SDK 퀵 스타트 클라이언트를 다운로드 합니다.
+1. 다음 플랫폼에 대한 SDK 퀵 스타트 클라이언트를 다운로드 합니다.
     
     [iOS (Objective-c)](https://github.com/Azure/azure-mobile-apps-quickstarts/tree/master/client/iOS)  
     [iOS(Swift)](https://github.com/Azure/azure-mobile-apps-quickstarts/tree/master/client/iOS-Swift)  
@@ -40,7 +40,7 @@ ms.locfileid: "67440200"
 
         1. SQL 데이터베이스 연결 문자열 형식 `Data Source=tcp:{your_SQLServer},{port};Initial Catalog={your_catalogue};User ID={your_username};Password={your_password}`
 
-           **{your_SQLServer}**  이름 서버를이 데이터베이스에 대 한 개요 페이지에서 찾을 수 있습니다 이며 일반적으로 "server_name.database.windows.net"의 형식입니다.
+           **{your_SQLServer}**  이름 서버를이 데이터베이스에 대한 개요 페이지에서 찾을 수 있습니다 이며 일반적으로 "server_name.database.windows.net"의 형식입니다.
             **{port}** usually 1433.
             **{your_catalogue}**  데이터베이스의 이름입니다.
             **{your_username}**  데이터베이스에 액세스할 사용자 이름입니다.
@@ -56,7 +56,7 @@ ms.locfileid: "67440200"
 
             2. 클릭할 **새 연결 문자열 [+]** 합니다.
 
-            3. 제공 해야 합니다 **이름을**, **값** 하 고 **형식** 연결 문자열에 대 한 합니다.
+            3. 제공 해야 합니다 **이름을**, **값** 하 고 **형식** 연결 문자열에 대한 합니다.
 
             4. 형식 **이름을** 으로 `MS_TableConnectionString`
 

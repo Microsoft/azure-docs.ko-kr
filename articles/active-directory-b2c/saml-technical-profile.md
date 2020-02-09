@@ -22,7 +22,7 @@ ms.locfileid: "76840250"
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Azure Active Directory B2C (Azure AD B2C)는 SAML 2.0 id 공급자에 대 한 지원을 제공 합니다. 이 문서에서는 이 표준 프로토콜을 지원하는 클레임 공급자와 상호 작용하기 위한 기술 프로필에 대해 구체적으로 설명합니다. SAML 기술 프로필을 사용하여 [ADFS](identity-provider-adfs2016-custom.md) 및 [Salesforce](identity-provider-salesforce-custom.md)와 같은 SAML 기반 ID 공급자를 페더레이션할 수 있습니다. 이 페더레이션을 사용하여 기존 소셜 또는 엔터프라이즈 ID로 로그인할 수 있습니다.
+Azure Active Directory B2C (Azure AD B2C)는 SAML 2.0 id 공급자에 대한 지원을 제공 합니다. 이 문서에서는 이 표준 프로토콜을 지원하는 클레임 공급자와 상호 작용하기 위한 기술 프로필에 대해 구체적으로 설명합니다. SAML 기술 프로필을 사용하여 [ADFS](identity-provider-adfs2016-custom.md) 및 [Salesforce](identity-provider-salesforce-custom.md)와 같은 SAML 기반 ID 공급자를 페더레이션할 수 있습니다. 이 페더레이션을 사용하여 기존 소셜 또는 엔터프라이즈 ID로 로그인할 수 있습니다.
 
 ## <a name="metadata-exchange"></a>메타데이터 교환
 

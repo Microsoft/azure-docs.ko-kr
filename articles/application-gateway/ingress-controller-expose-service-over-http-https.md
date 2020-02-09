@@ -1,6 +1,6 @@
 ---
 title: Application Gateway를 사용 하 여 HTTP 또는 HTTPS를 통해 AKS 서비스 노출
-description: 이 문서에서는 Application Gateway를 사용 하 여 HTTP 또는 HTTPS를 통해 AKS 서비스를 노출 하는 방법에 대 한 정보를 제공 합니다.
+description: 이 문서에서는 Application Gateway를 사용 하 여 HTTP 또는 HTTPS를 통해 AKS 서비스를 노출 하는 방법에 대한 정보를 제공 합니다.
 services: application-gateway
 author: caya
 ms.service: application-gateway
@@ -70,7 +70,7 @@ spec:
     kubectl apply -f ing-guestbook.yaml
     ```
 
-1. 배포 상태에 대 한 수신 컨트롤러의 로그를 확인 합니다.
+1. 배포 상태에 대한 수신 컨트롤러의 로그를 확인 합니다.
 
 이제 `guestbook` 응용 프로그램을 사용할 수 있습니다. Application Gateway의 공용 주소를 방문 하 여이를 확인할 수 있습니다.
 
@@ -115,13 +115,13 @@ Hostname을 지정 하지 않으면 응용 프로그램 게이트웨이를 가�
     kubectl apply -f ing-guestbook-tls.yaml
     ```
 
-1. 배포 상태에 대 한 수신 컨트롤러의 로그를 확인 합니다.
+1. 배포 상태에 대한 수신 컨트롤러의 로그를 확인 합니다.
 
 이제 HTTP와 HTTPS 모두에서 `guestbook` 응용 프로그램을 사용할 수 있습니다.
 
 ### <a name="with-specified-hostname"></a>지정 된 호스트 이름 사용
 
-또한 TLS 구성 및 서비스를 멀티플렉싱 위해 수신에 대 한 호스트 이름을 지정할 수 있습니다.
+또한 TLS 구성 및 서비스를 멀티플렉싱 위해 수신에 대한 호스트 이름을 지정할 수 있습니다.
 호스트 이름을 지정 하면 지정 된 호스트 에서만 방명록 서비스를 사용할 수 있습니다.
 
 1. 다음 수신을 정의 합니다.
@@ -154,7 +154,7 @@ Hostname을 지정 하지 않으면 응용 프로그램 게이트웨이를 가�
     kubectl apply -f ing-guestbook-tls-sni.yaml
     ```
 
-1. 배포 상태에 대 한 수신 컨트롤러의 로그를 확인 합니다.
+1. 배포 상태에 대한 수신 컨트롤러의 로그를 확인 합니다.
 
 이제 지정 된 호스트 에서만 `guestbook` 응용 프로그램을 HTTP와 HTTPS 모두에서 사용할 수 있습니다 (이 예제에서는`<guestbook.contoso.com>`).
 

@@ -31,7 +31,7 @@ B2B 협업 흐름에서 해당 디렉터리에 사용자를 추가하고 초대 
 Azure AD B2B에는 Azure AD 서비스 디렉터리 제한이 적용됩니다. 사용자가 만들 수 있는 디렉터리 수와 사용자 또는 게스트 사용자가 속할 수 있는 디렉터리 수에 대한 자세한 내용은 [Azure AD 서비스 한도 및 제한](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-service-limits-restrictions)을 참조하세요.
 
 ## <a name="national-clouds"></a>내셔널 클라우드
-[내셔널 클라우드](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud) Azure의 물리적으로 격리 된 인스턴스입니다. 국가별 클라우드 경계를 넘어 B2B 공동 작업 지원 되지 않습니다. 예를 들어 Azure 테 넌 트 공용, 글로벌 클라우드의 경우 해당 계정을 national 클라우드에서 사용자를 초대할 수 없습니다. 사용자와 공동 작업 하는 또 다른 전자 메일 주소에 대 한 요청 또는 디렉터리에서 해당 멤버 사용자 계정을 만듭니다.
+[내셔널 클라우드](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud) Azure의 물리적으로 격리 된 인스턴스입니다. 국가별 클라우드 경계를 넘어 B2B 공동 작업 지원 되지 않습니다. 예를 들어 Azure 테넌트 공용, 글로벌 클라우드의 경우 해당 계정을 national 클라우드에서 사용자를 초대할 수 없습니다. 사용자와 공동 작업 하는 또 다른 전자 메일 주소에 대 한 요청 또는 디렉터리에서 해당 멤버 사용자 계정을 만듭니다.
 
 ## <a name="next-steps"></a>다음 단계
 

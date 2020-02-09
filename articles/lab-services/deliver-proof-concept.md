@@ -48,7 +48,7 @@ Azure DevTest Labs에 대 한 주요 시나리오 중 하나는 클라우드에�
 DevTest Labs를 사용 하 여 파일럿 또는 개념 증명을 성공적으로 완료 하려면 몇 가지 필수 구성 요소가 있습니다. 
 
 * **Azure 구독**: 기업은 azure에 대 한 액세스를 가능 하 게 하는 기존 [기업계약](https://azure.microsoft.com/pricing/purchase-options/enterprise-agreement/) 을 보유 하 고 있으며, DevTest Labs에 대 한 기존 또는 새로운 구독을 사용할 수 있습니다. 또는 기업에서 파일럿 중에 [Visual Studio 구독](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/) 을 사용할 수 있습니다 (무료 Azure 크레딧 활용). 이러한 옵션을 모두 사용할 수 없는 경우 기업은 [무료 Azure 계정을](https://azure.microsoft.com/free/search/?&OCID=AID719825_SEM_g4lyBqgB&lnkd=Bing_Azure_Brand&msclkid=ecc4275a31b61375749e7a5322c20de8&dclid=CMGW5-m78-ICFaLt4QodmUwGtQ)만들고 사용할 수 있습니다. 기업계약 있는 경우 [Enterprise 개발/테스트 구독](https://azure.microsoft.com/offers/ms-azr-0148p/) 을 사용 하면 Windows 10/Windows 8.1 클라이언트 운영 체제에 액세스 하 고 개발 및 테스트 작업에 대 한 할인 된 요금을 얻을 수 있습니다. 
-* **Azure Active Directory 테 넌 트**: 사용자를 추가 하거나 랩 소유자를 추가 하는 등의 사용자 관리를 사용 하도록 설정 하려면 해당 사용자가 파일럿을 위해 Azure 구독에 사용 되는 [Azure Active Directory 테 넌 트](https://azure.microsoft.com/services/active-directory/) 의 일부 여야 합니다. 기업에서는 사용자가 클라우드에서 온-프레미스 id를 사용할 수 있도록 [하이브리드 id](../active-directory/hybrid/whatis-hybrid-identity.md) 를 설정 하지만, DevTest Labs 파일럿에는이 작업이 필요 하지 않습니다. 
+* **Azure Active Directory 테넌트**: 사용자를 추가 하거나 랩 소유자를 추가 하는 등의 사용자 관리를 사용 하도록 설정 하려면 해당 사용자가 파일럿을 위해 Azure 구독에 사용 되는 [Azure Active Directory 테넌트](https://azure.microsoft.com/services/active-directory/) 의 일부 여야 합니다. 기업에서는 사용자가 클라우드에서 온-프레미스 id를 사용할 수 있도록 [하이브리드 id](../active-directory/hybrid/whatis-hybrid-identity.md) 를 설정 하지만, DevTest Labs 파일럿에는이 작업이 필요 하지 않습니다. 
 
 ## <a name="scoping-of-the-pilot"></a>파일럿의 범위 지정 
 
@@ -96,7 +96,7 @@ Microsoft는 공급 업체가 회사 네트워크에서 격리 된 환경으로 
 ### <a name="open-questions-and-prerequisites"></a>질문 및 필수 구성 요소 열기 
 
 * 이 프로젝트에 사용할 수 있는 구독을 만들었는지 확인 합니다. 
-* Azure ad 테 넌 트와 azure ad와 관련 된 질문에 대 한 도움말을 제공할 수 있는 사용자를 식별 하는 azure AD 전역 관리자가 있나요? 
+* Azure ad 테넌트와 azure ad와 관련 된 질문에 대 한 도움말을 제공할 수 있는 사용자를 식별 하는 azure AD 전역 관리자가 있나요? 
 * 프로젝트에서 작업 하는 개인에 대해 공동 작업을 수행 하는 장소가 있나요? 
 
    * 소스 코드 및 스크립트 (예: Azure Repos) 

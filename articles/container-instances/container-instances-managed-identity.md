@@ -18,7 +18,7 @@ ms.locfileid: "76901937"
 
 > [!div class="checklist"]
 > * 컨테이너 그룹에서 사용자 할당 또는 시스템 할당 ID를 사용하도록 설정
-> * Azure key vault에 대 한 id 액세스 권한 부여
+> * Azure key vault에 대한 id 액세스 권한 부여
 > * 관리 id를 사용 하 여 실행 중인 컨테이너에서 키 자격 증명 모음에 액세스
 
 다른 Azure 서비스에 액세스하려면 예제를 조정하여 Azure Container Instances에서 ID를 사용하도록 설정하고 사용합니다. 이러한 예제는 대화형입니다. 그러나 실제로 컨테이너 이미지는 Azure 서비스에 액세스하는 코드를 실행합니다.
@@ -46,7 +46,7 @@ Azure Container Instances는 두 가지 유형의 Azure 관리 ID인 사용자 �
 
 ### <a name="use-a-managed-identity"></a>관리 ID 사용
 
-관리 id를 사용 하려면 id에 초기에 구독에서 하나 이상의 Azure 서비스 리소스 (예: 웹 앱, 주요 자격 증명 모음 또는 저장소 계정)에 대 한 액세스 권한이 부여 되어야 합니다. 실행 중인 컨테이너에서 Azure 리소스에 액세스하려면 코드는 Azure AD 엔드포인트에서 *액세스 토큰*을 획득해야 합니다. 그런 후에 코드는 Azure AD 인증을 지원하는 서비스에 대한 호출에서 액세스 토큰을 전송합니다. 
+관리 id를 사용 하려면 id에 초기에 구독에서 하나 이상의 Azure 서비스 리소스 (예: 웹 앱, 주요 자격 증명 모음 또는 저장소 계정)에 대한 액세스 권한이 부여 되어야 합니다. 실행 중인 컨테이너에서 Azure 리소스에 액세스하려면 코드는 Azure AD 엔드포인트에서 *액세스 토큰*을 획득해야 합니다. 그런 후에 코드는 Azure AD 인증을 지원하는 서비스에 대한 호출에서 액세스 토큰을 전송합니다. 
 
 실행 중인 컨테이너에서 관리 ID를 사용하는 것은 Azure VM에서 ID를 사용하는 것과 기본적으로 동일합니다. [토큰](../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md), [Azure PowerShell 또는 Azure CLI](../active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in.md) 또는 [Azure SDK](../active-directory/managed-identities-azure-resources/how-to-use-vm-sdk.md)를 사용하기 위한 VM 지침을 참조하세요.
 
@@ -147,9 +147,9 @@ az container show \
 [...]
 ```
 
-### <a name="grant-user-assigned-identity-access-to-the-key-vault"></a>사용자 할당 id에 키 자격 증명 모음에 대 한 액세스 권한 부여
+### <a name="grant-user-assigned-identity-access-to-the-key-vault"></a>사용자 할당 id에 키 자격 증명 모음에 대한 액세스 권한 부여
 
-다음 [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest) 명령을 실행 하 여 key vault에 대 한 액세스 정책을 설정 합니다. 다음 예에서는 사용자 할당 id를 사용 하 여 키 자격 증명 모음에서 암호를 가져올 수 있습니다.
+다음 [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest) 명령을 실행 하 여 key vault에 대한 액세스 정책을 설정 합니다. 다음 예에서는 사용자 할당 id를 사용 하 여 키 자격 증명 모음에서 암호를 가져올 수 있습니다.
 
 ```azurecli-interactive
  az keyvault set-policy \
@@ -249,9 +249,9 @@ az container show \
 spID=$(az container show --resource-group myResourceGroup --name mycontainer --query identity.principalId --out tsv)
 ```
 
-### <a name="grant-container-group-access-to-the-key-vault"></a>컨테이너 그룹에 키 자격 증명 모음에 대 한 액세스 권한 부여
+### <a name="grant-container-group-access-to-the-key-vault"></a>컨테이너 그룹에 키 자격 증명 모음에 대한 액세스 권한 부여
 
-다음 [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest) 명령을 실행 하 여 key vault에 대 한 액세스 정책을 설정 합니다. 다음 예에서는 시스템 관리 id를 사용 하 여 키 자격 증명 모음에서 암호를 가져올 수 있습니다.
+다음 [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest) 명령을 실행 하 여 key vault에 대한 액세스 정책을 설정 합니다. 다음 예에서는 시스템 관리 id를 사용 하 여 키 자격 증명 모음에서 암호를 가져올 수 있습니다.
 
 ```azurecli-interactive
  az keyvault set-policy \
@@ -385,7 +385,7 @@ identity:
 
 > [!div class="checklist"]
 > * 컨테이너 그룹에서 사용자 할당 또는 시스템 할당 ID를 사용하도록 설정
-> * Azure key vault에 대 한 id 액세스 권한 부여
+> * Azure key vault에 대한 id 액세스 권한 부여
 > * 관리 id를 사용 하 여 실행 중인 컨테이너에서 키 자격 증명 모음에 액세스
 
 * [Azure 리소스에 대한 관리 ID](/azure/active-directory/managed-identities-azure-resources/)에 대해 자세히 알아보세요.

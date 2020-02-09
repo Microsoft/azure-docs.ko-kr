@@ -22,7 +22,7 @@ ms.locfileid: "74922129"
 
 Azure Data Factory은 온-프레미스 Netezza 서버에서 Azure storage 계정 또는 Azure SQL Data Warehouse 데이터베이스로 대규모로 데이터를 마이그레이션하는 데 성능과 강력 하 고 비용 효율적인 메커니즘을 제공 합니다. 
 
-이 문서에서는 데이터 엔지니어와 개발자에 대 한 다음 정보를 제공 합니다.
+이 문서에서는 데이터 엔지니어와 개발자에 대한 다음 정보를 제공 합니다.
 
 > [!div class="checklist"]
 > * 성능 중심 
@@ -33,7 +33,7 @@ Azure Data Factory은 온-프레미스 Netezza 서버에서 Azure storage 계정
 
 ## <a name="performance"></a>성능 중심
 
-Azure Data Factory은 다양 한 수준에서 병렬 처리를 허용 하는 서버 리스 아키텍처를 제공 합니다. 개발자 라면 파이프라인을 빌드하여 네트워크와 데이터베이스 대역폭을 모두 사용 하 여 사용자 환경에 대 한 데이터 이동 처리량을 최대화할 수 있습니다.
+Azure Data Factory은 다양 한 수준에서 병렬 처리를 허용 하는 서버 리스 아키텍처를 제공 합니다. 개발자 라면 파이프라인을 빌드하여 네트워크와 데이터베이스 대역폭을 모두 사용 하 여 사용자 환경에 대한 데이터 이동 처리량을 최대화할 수 있습니다.
 
 ![성능 다이어그램](media/data-migration-guidance-netezza-azure-sqldw/performance.png)
 
@@ -113,7 +113,7 @@ Azure Data Factory 복사 작업을 사용 하 여 원본 및 싱크 데이터 �
    
    - 또한 [서비스 주체](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse#service-principal-authentication) 또는 [SQL 인증](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse#sql-authentication)을 사용할 수 있습니다.
 
-- Azure 리소스에 관리 되는 id를 사용 하지 않는 경우 [Azure Key Vault에 자격 증명을 저장 하는](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault) 것이 좋습니다. Azure Data Factory 연결 된 서비스를 수정할 필요 없이 중앙에서 키를 중앙에서 관리 하 고 회전할 수 있습니다. [CI/CD에 대 한 모범 사례](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#best-practices-for-cicd)중 하나 이기도 합니다. 
+- Azure 리소스에 관리 되는 id를 사용 하지 않는 경우 [Azure Key Vault에 자격 증명을 저장 하는](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault) 것이 좋습니다. Azure Data Factory 연결 된 서비스를 수정할 필요 없이 중앙에서 키를 중앙에서 관리 하 고 회전할 수 있습니다. [CI/CD에 대한 모범 사례](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#best-practices-for-cicd)중 하나 이기도 합니다. 
 
 ### <a name="migrate-initial-snapshot-data"></a>초기 스냅숏 데이터 마이그레이션 
 

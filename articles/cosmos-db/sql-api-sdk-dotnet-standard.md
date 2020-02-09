@@ -1,6 +1,6 @@
 ---
 title: 'Azure Cosmos DB: SQL .NET Standard API, SDK & 리소스'
-description: 릴리스 날짜, 사용 중지 날짜 및 Azure Cosmos DB .NET SDK의 각 버전 간의 변경 내용을 포함 하 여 SQL API 및 .NET SDK에 대 한 모든 것을 알아봅니다.
+description: 릴리스 날짜, 사용 중지 날짜 및 Azure Cosmos DB .NET SDK의 각 버전 간의 변경 내용을 포함 하 여 SQL API 및 .NET SDK에 대한 모든 것을 알아봅니다.
 author: deborahc
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql

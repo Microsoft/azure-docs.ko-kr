@@ -22,7 +22,7 @@ ms.locfileid: "76120578"
 이 문서에서는 Azure Functions에서 [Azure Cosmos DB](../cosmos-db/serverless-computing-database.md) 바인딩을 사용하는 방법을 설명합니다. Azure Functions는 Azure Cosmos DB에 대한 트리거, 입력 및 출력 바인딩을 지원합니다.
 
 > [!NOTE]
-> 이 문서는 Azure Functions 1.x에 대한 것입니다. 함수 2.x 이상에서 이러한 바인딩을 사용 하는 방법에 대 한 자세한 내용은 Azure Functions 2.x [에 대 한 Azure Cosmos DB 바인딩](functions-bindings-cosmosdb-v2.md)을 참조 하세요.
+> 이 문서는 Azure Functions 1.x에 대한 것입니다. 함수 2.x 이상에서 이러한 바인딩을 사용 하는 방법에 대한 자세한 내용은 Azure Functions 2.x [에 대한 Azure Cosmos DB 바인딩](functions-bindings-cosmosdb-v2.md)을 참조 하세요.
 >
 >이 바인딩의 원래 이름은 DocumentDB입니다. 함수 버전 1.x에서 트리거만 Cosmos DB로 명명되었습니다. 입력 바인딩, 출력 바인딩 및 NuGet 패키지는 DocumentDB 이름을 유지합니다.
 
@@ -1131,11 +1131,11 @@ JavaScript에서는 특성을 지원 하지 않습니다.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-함수가 성공적으로 종료 되 면 명명 된 입력 매개 변수를 통해 입력 문서에 대 한 모든 변경 내용이 자동으로 유지 됩니다.
+함수가 성공적으로 종료 되 면 명명 된 입력 매개 변수를 통해 입력 문서에 대한 모든 변경 내용이 자동으로 유지 됩니다.
 
 # <a name="c-scripttabcsharp-script"></a>[C#스크립트도](#tab/csharp-script)
 
-함수가 성공적으로 종료 되 면 명명 된 입력 매개 변수를 통해 입력 문서에 대 한 모든 변경 내용이 자동으로 유지 됩니다.
+함수가 성공적으로 종료 되 면 명명 된 입력 매개 변수를 통해 입력 문서에 대한 모든 변경 내용이 자동으로 유지 됩니다.
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 

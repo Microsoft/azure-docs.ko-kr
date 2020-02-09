@@ -16,11 +16,11 @@ ms.locfileid: "75720347"
 ---
 # <a name="secure-your-cluster-in-azure-data-explorer---azure-portal"></a>Azure 데이터 탐색기에서 클러스터 보안 설정-Azure Portal
 
-[Azure Disk Encryption](/azure/security/azure-security-disk-encryption-overview) 는 조직의 보안 및 규정 준수 약정에 맞게 데이터를 보호 하 고 보호 합니다. 클러스터 가상 컴퓨터의 OS 및 데이터 디스크에 대 한 볼륨 암호화를 제공 합니다. 또한 디스크 암호화 키와 암호를 제어 하 고 관리할 수 있으며 VM 디스크의 모든 데이터가 암호화 되도록 하는 [Azure Key Vault](/azure/key-vault/)와 통합 됩니다. 
+[Azure Disk Encryption](/azure/security/azure-security-disk-encryption-overview) 는 조직의 보안 및 규정 준수 약정에 맞게 데이터를 보호 하 고 보호 합니다. 클러스터 가상 컴퓨터의 OS 및 데이터 디스크에 대한 볼륨 암호화를 제공 합니다. 또한 디스크 암호화 키와 암호를 제어 하 고 관리할 수 있으며 VM 디스크의 모든 데이터가 암호화 되도록 하는 [Azure Key Vault](/azure/key-vault/)와 통합 됩니다. 
   
 ## <a name="enable-encryption-at-rest-in-the-azure-portal"></a>Azure Portal에서 휴지 상태의 암호화 사용
   
-클러스터 보안 설정을 사용 하 여 클러스터에서 디스크 암호화를 사용 하도록 설정할 수 있습니다. 클러스터에서 [휴지 상태의 암호화](/azure/security/fundamentals/encryption-atrest) 를 사용 하면 저장 된 데이터에 대 한 데이터 보호를 제공 합니다 (미사용). 
+클러스터 보안 설정을 사용 하 여 클러스터에서 디스크 암호화를 사용 하도록 설정할 수 있습니다. 클러스터에서 [휴지 상태의 암호화](/azure/security/fundamentals/encryption-atrest) 를 사용 하면 저장 된 데이터에 대한 데이터 보호를 제공 합니다 (미사용). 
 
 1. Azure Portal에서 Azure 데이터 탐색기 클러스터 리소스로 이동 합니다. **설정** 제목 아래에서 **보안**을 선택 합니다. 
 

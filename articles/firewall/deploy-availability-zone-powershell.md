@@ -23,7 +23,7 @@ Azure Firewall은 가용성을 높이기 위해 여러 가용 영역에 걸쳐 �
 - 99.99%의 가동 시간을 늘릴 수 있습니다. 자세한 내용은 Azure Firewall [SLA(서비스 수준 약정)](https://azure.microsoft.com/support/legal/sla/azure-firewall/v1_0/)를 참조하세요. 99.99% 작동 시간 SLA는 둘 이상의 가용성 영역을 선택하는 경우 제공됩니다.
 - 서비스 표준 99.95% SLA를 사용하여 근접성을 이유로 특정 영역에 Azure Firewall을 연결할 수도 있습니다.
 
-Azure 방화벽 가용성 영역에 대 한 자세한 내용은 [Azure 방화벽 이란?](overview.md) 을 참조 하세요.
+Azure 방화벽 가용성 영역에 대한 자세한 내용은 [Azure 방화벽 이란?](overview.md) 을 참조 하세요.
 
 다음 Azure PowerShell 예제에서는 가용성 영역를 사용 하 여 Azure 방화벽을 배포 하는 방법을 보여 줍니다.
 

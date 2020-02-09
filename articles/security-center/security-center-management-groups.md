@@ -1,6 +1,6 @@
 ---
 title: Azure Security Center에 대한 테넌트 수준 가시성 얻기 | Microsoft Docs
-description: 이 문서에서는 Azure Active Directory 테 넌 트에 연결 된 모든 구독에 정책을 적용 하 여 규모에 따라 보안 환경을 관리 하는 방법을 설명 합니다.
+description: 이 문서에서는 Azure Active Directory 테넌트에 연결 된 모든 구독에 정책을 적용 하 여 규모에 따라 보안 환경을 관리 하는 방법을 설명 합니다.
 services: security-center
 documentationcenter: na
 author: memildin
@@ -21,7 +21,7 @@ ms.lasthandoff: 11/27/2019
 ms.locfileid: "74559340"
 ---
 # <a name="gain-tenant-wide-visibility-for-azure-security-center"></a>Azure Security Center에 대한 테넌트 수준 가시성 얻기
-이 문서에서는 Azure Active Directory 테 넌 트에 연결 된 모든 Azure 구독에 보안 정책을 적용 하 여 조직의 보안 상태를 대규모로 관리 하는 방법을 설명 합니다.
+이 문서에서는 Azure Active Directory 테넌트에 연결 된 모든 Azure 구독에 보안 정책을 적용 하 여 조직의 보안 상태를 대규모로 관리 하는 방법을 설명 합니다.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 

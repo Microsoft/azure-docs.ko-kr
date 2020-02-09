@@ -1,6 +1,6 @@
 ---
 title: 관리 되는 이미지에서 사용자 지정 풀 프로 비전-Azure Batch | Microsoft Docs
-description: 응용 프로그램에 대 한 소프트웨어 및 데이터를 사용 하 여 계산 노드를 프로 비전 하기 위해 관리 되는 이미지 리소스에서 Batch 풀을 만듭니다.
+description: 응용 프로그램에 대한 소프트웨어 및 데이터를 사용 하 여 계산 노드를 프로 비전 하기 위해 관리 되는 이미지 리소스에서 Batch 풀을 만듭니다.
 services: batch
 author: LauraBrenner
 manager: evansma
@@ -17,7 +17,7 @@ ms.locfileid: "77020151"
 ---
 # <a name="use-a-managed-image-to-create-a-pool-of-virtual-machines"></a>관리 되는 이미지를 사용 하 여 가상 머신 풀 만들기
 
-Batch 풀의 Vm (가상 머신)에 대 한 사용자 지정 이미지를 만들려면 [공유 이미지 갤러리](batch-sig-images.md)또는 *관리 되는 이미지* 리소스를 사용할 수 있습니다.
+Batch 풀의 Vm (가상 머신)에 대한 사용자 지정 이미지를 만들려면 [공유 이미지 갤러리](batch-sig-images.md)또는 *관리 되는 이미지* 리소스를 사용할 수 있습니다.
 
 > [!TIP]
 > 대부분의 경우 공유 이미지 갤러리를 사용 하 여 사용자 지정 이미지를 만들어야 합니다. 공유 이미지 갤러리를 사용 하면 풀을 더 빠르게 프로 비전 하 고, 더 많은 수의 Vm을 확장 하 고, Vm을 프로 비전 할 때 안정성을 향상 시킬 수 있습니다. 자세히 알아보려면 [공유 이미지 갤러리를 사용 하 여 사용자 지정 풀 만들기](batch-sig-images.md)를 참조 하세요.
@@ -43,7 +43,7 @@ Azure에서 관리 되는 이미지를 준비 하려면 다음을 수행 합니�
 
 ### <a name="prepare-a-vm"></a>VM 준비
 
-이미지에 대 한 새 VM을 만드는 경우 Batch에서 지원 되는 첫 번째 파티 Azure Marketplace 이미지를 관리 되는 이미지의 기본 이미지로 사용 합니다. 첫 번째 파티 이미지만 기본 이미지로 사용할 수 있습니다. Azure Batch에서 지 원하는 Azure Marketplace 이미지 참조의 전체 목록을 얻으려면 [노드 에이전트 Sku 나열](/java/api/com.microsoft.azure.batch.protocol.accounts.listnodeagentskus) 작업을 참조 하세요.
+이미지에 대한 새 VM을 만드는 경우 Batch에서 지원 되는 첫 번째 파티 Azure Marketplace 이미지를 관리 되는 이미지의 기본 이미지로 사용 합니다. 첫 번째 파티 이미지만 기본 이미지로 사용할 수 있습니다. Azure Batch에서 지 원하는 Azure Marketplace 이미지 참조의 전체 목록을 얻으려면 [노드 에이전트 Sku 나열](/java/api/com.microsoft.azure.batch.protocol.accounts.listnodeagentskus) 작업을 참조 하세요.
 
 > [!NOTE]
 > 추가 라이선스 및 구매 약관이 있는 타사 이미지는 기본 이미지로 사용할 수 없습니다. Marketplace 이미지에 대한 자세한 내용은 [Linux](../virtual-machines/linux/cli-ps-findimage.md#deploy-an-image-with-marketplace-terms
@@ -71,7 +71,7 @@ Azure에서 관리 되는 이미지를 준비 하려면 다음을 수행 합니�
 > [!NOTE]
 > Batch API 중 하나를 사용하여 풀을 만드는 경우 AAD 인증에 사용하는 ID가 이미지 리소스에 대한 권한을 가지고 있는지 확인합니다. [Active Directory를 사용하여 Batch 서비스 솔루션 인증](batch-aad-auth.md)을 참조하세요.
 >
-> 관리 되는 이미지에 대 한 리소스는 풀의 수명 동안 존재 해야 합니다. 기본 리소스를 삭제 하면 풀 크기를 조정할 수 없습니다.
+> 관리 되는 이미지에 대한 리소스는 풀의 수명 동안 존재 해야 합니다. 기본 리소스를 삭제 하면 풀 크기를 조정할 수 없습니다.
 
 1. Azure Portal에서 Batch 계정으로 이동합니다. 이 계정은 사용자 지정 이미지가 포함된 리소스 그룹과 동일한 구독 및 지역에 있어야 합니다.
 2. 왼쪽의 **설정** 창에서 **풀** 메뉴 항목을 선택합니다.
@@ -106,7 +106,7 @@ Azure에서 관리 되는 이미지를 준비 하려면 다음을 수행 합니�
   
 [공유 이미지 갤러리](batch-sig-images.md)를 사용 하 여 더 많은 공유 이미지 복제본과 함께 사용자 지정 된 이미지를 사용 하 여 더 큰 풀을 만들 수 있습니다. 공유 이미지를 사용 하는 경우 풀이 안정 된 상태에 도달 하는 데 걸리는 시간은 최대 25% 더 빠르며 VM 유휴 대기 시간은 최대 30% 더 짧습니다.
 
-## <a name="considerations-for-using-packer"></a>패키지 사용에 대 한 고려 사항
+## <a name="considerations-for-using-packer"></a>패키지 사용에 대한 고려 사항
 
 패키지를 직접 사용 하 여 관리 되는 이미지 리소스를 만드는 작업은 사용자 구독 모드 Batch 계정 으로만 수행할 수 있습니다. Batch 서비스 모드 계정의 경우 먼저 VHD를 만든 다음, VHD를 관리 되는 이미지 리소스로 가져와야 합니다. 풀 할당 모드 (사용자 구독 또는 Batch 서비스)에 따라 관리 되는 이미지 리소스를 만드는 단계는 다양 합니다.
 
@@ -114,7 +114,7 @@ Azure에서 관리 되는 이미지를 준비 하려면 다음을 수행 합니�
 
 이미지 또는 기본 리소스가 제거 되 면 다음과 유사한 오류 메시지가 표시 될 수 있습니다. `There was an error encountered while performing the last resize on the pool. Please try resizing the pool again. Code: AllocationFailed`. 이 오류가 발생 하는 경우 기본 리소스가 제거 되지 않았는지 확인 합니다.
 
-패키지를 사용 하 여 VM을 만드는 방법에 대 한 자세한 내용은 패키지를 사용 하 여 [Linux 이미지 빌드](../virtual-machines/linux/build-image-with-packer.md) 또는 패키지를 [사용 하 여 Windows 이미지 빌드](../virtual-machines/windows/build-image-with-packer.md)를 참조 하세요.
+패키지를 사용 하 여 VM을 만드는 방법에 대한 자세한 내용은 패키지를 사용 하 여 [Linux 이미지 빌드](../virtual-machines/linux/build-image-with-packer.md) 또는 패키지를 [사용 하 여 Windows 이미지 빌드](../virtual-machines/windows/build-image-with-packer.md)를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

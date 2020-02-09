@@ -35,7 +35,7 @@ Office 365 사용자에 연결하여 프로필 가져오기, 사용자 검색 �
 
 ## <a name="connector-specific-details"></a>커넥터 관련 세부 정보
 
-커넥터의 Swagger 설명에서 설명 하는 트리거, 작업 및 제한에 대 한 자세한 기술 정보는 [커넥터의 참조 페이지를 참조](/connectors/officeusers/)하세요.
+커넥터의 Swagger 설명에서 설명 하는 트리거, 작업 및 제한에 대한 자세한 기술 정보는 [커넥터의 참조 페이지를 참조](/connectors/officeusers/)하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

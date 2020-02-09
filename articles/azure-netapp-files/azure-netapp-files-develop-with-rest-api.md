@@ -27,7 +27,7 @@ Azure NetApp Files 서비스용 REST API는 NetApp 계정, 용량 풀, 볼륨 �
 
 ## <a name="azure-netapp-files-rest-api-specification"></a>Azure NetApp 파일 REST API 사양
 
-이 통해 Azure NetApp 파일에 대 한 REST API 사양을 게시 [GitHub](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/netapp/resource-manager):
+이 통해 Azure NetApp 파일에 대한 REST API 사양을 게시 [GitHub](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/netapp/resource-manager):
 
 `https://github.com/Azure/azure-rest-api-specs/tree/master/specification/netapp/resource-manager`
 

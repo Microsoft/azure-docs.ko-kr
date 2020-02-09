@@ -37,9 +37,9 @@ ms.locfileid: "77020015"
 
 [Azure Portal](#portal), Azure CLI([명령줄 인터페이스](#cli)), Azure [PowerShell](#powershell) 또는 [Azure Resource Manager 템플릿](#template)을 사용하여 가상 네트워크 피어링을 만들 수 있습니다. 앞의 도구 링크 중 원하는 도구 링크를 선택하여 원하는 도구를 사용하여 가상 네트워크 피어링을 만드는 단계로 바로 이동하세요.
 
-가상 네트워크가 서로 다른 구독에 있고 구독이 다른 Azure Active Directory 테 넌 트와 연결 되어 있는 경우 계속 하기 전에 다음 단계를 완료 합니다.
+가상 네트워크가 서로 다른 구독에 있고 구독이 다른 Azure Active Directory 테넌트와 연결 되어 있는 경우 계속 하기 전에 다음 단계를 완료 합니다.
 1. 각 Active Directory 테넌트의 사용자를 다른 쪽 Azure Active Directory 테넌트의 [게스트 사용자](../active-directory/b2b/add-users-administrator.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-guest-users-to-the-directory)로 추가합니다.
-1. 각 사용자는 반대 Azure Active Directory 테 넌 트의 게스트 사용자 초대를 수락 해야 합니다.
+1. 각 사용자는 반대 Azure Active Directory 테넌트의 게스트 사용자 초대를 수락 해야 합니다.
 
 ## <a name="portal"></a>피어링 만들기 - Azure Portal
 

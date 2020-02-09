@@ -85,7 +85,7 @@ SetupEntryPoint를 구성하는 방법에 대한 자세한 내용은 [서비스 
 </Settings>
 ```
 
-Service Fabric 서비스 **끝점** 은 Service Fabric 리소스의 예입니다. 컴파일된 코드를 변경 하지 않고 Service Fabric 리소스를 선언/변경할 수 있습니다. 서비스 매니페스트에 지정된 Service Fabric 리소스에 대한 액세스는 애플리케이션 매니페스트의 **SecurityGroup**을 통해 제어할 수 있습니다. 서비스 매니페스트에 엔드포인트 리소스가 정의되면 Service Fabric에서는 포트가 명시적으로 지정되지 않을 경우 예약된 애플리케이션 포트 범위에 포함되는 포트를 할당합니다. [엔드포인트 리소스 지정 또는 재정의](service-fabric-service-manifest-resources.md)에 대해 자세히 알아보세요.
+Service Fabric 서비스 **엔드포인트** 은 Service Fabric 리소스의 예입니다. 컴파일된 코드를 변경 하지 않고 Service Fabric 리소스를 선언/변경할 수 있습니다. 서비스 매니페스트에 지정된 Service Fabric 리소스에 대한 액세스는 애플리케이션 매니페스트의 **SecurityGroup**을 통해 제어할 수 있습니다. 서비스 매니페스트에 엔드포인트 리소스가 정의되면 Service Fabric에서는 포트가 명시적으로 지정되지 않을 경우 예약된 애플리케이션 포트 범위에 포함되는 포트를 할당합니다. [엔드포인트 리소스 지정 또는 재정의](service-fabric-service-manifest-resources.md)에 대해 자세히 알아보세요.
 
  
 > [!WARNING]
@@ -151,7 +151,7 @@ For more information about other features supported by service manifests, refer 
 
 **매개 변수**는 애플리케이션 매니페스트에서 사용되는 매개 변수를 정의합니다. 애플리케이션이 인스턴스화되고 애플리케이션 또는 서비스 구성 설정을 재정의할 수 있을 때 이러한 매개 변수의 값을 제공할 수 있습니다.  애플리케이션 인스턴스화 중에 값이 변경되지 않은 경우 기본 매개 변수 값이 사용됩니다. 개별 환경에 대해 서로 다른 애플리케이션 및 서비스 매개 변수를 유지 관리하는 방법을 알아보려면 [여러 환경에 대한 애플리케이션 매개 변수 관리](service-fabric-manage-multiple-environment-app-configuration.md)를 참조하세요.
 
-**ServiceManifestImport** 는 이 애플리케이션 유형을 구성하는 서비스 매니페스트에 대한 참조를 포함합니다. 애플리케이션 매니페스트에는 여러 개의 서비스 매니페스트 가져오기가 포함될 수 있으며, 각 항목은 독립적으로 버전화될 수 있습니다. 가져온 서비스 매니페스트는 이 애플리케이션 유형 내에서 유효한 있는 서비스 유형을 결정합니다. ServiceManifestImport 내에서 Settings.xml의 구성 값과 ServiceManifest.xml 파일의 환경 변수를 재정의할 수 있습니다. 끝점 바인딩, 보안 및 액세스, 패키지 공유에 대한 **정책**(이전 예제에서 설정되지 않음)은 가져온 서비스 매니페스트에 설정할 수 있습니다.  자세한 내용은 [애플리케이션에 대한 보안 정책 구성](service-fabric-application-runas-security.md)을 참조하세요.
+**ServiceManifestImport** 는 이 애플리케이션 유형을 구성하는 서비스 매니페스트에 대한 참조를 포함합니다. 애플리케이션 매니페스트에는 여러 개의 서비스 매니페스트 가져오기가 포함될 수 있으며, 각 항목은 독립적으로 버전화될 수 있습니다. 가져온 서비스 매니페스트는 이 애플리케이션 유형 내에서 유효한 있는 서비스 유형을 결정합니다. ServiceManifestImport 내에서 Settings.xml의 구성 값과 ServiceManifest.xml 파일의 환경 변수를 재정의할 수 있습니다. 엔드포인트 바인딩, 보안 및 액세스, 패키지 공유에 대한 **정책**(이전 예제에서 설정되지 않음)은 가져온 서비스 매니페스트에 설정할 수 있습니다.  자세한 내용은 [애플리케이션에 대한 보안 정책 구성](service-fabric-application-runas-security.md)을 참조하세요.
 
 **DefaultServices** 는 이 애플리케이션 유형에 대해 애플리케이션이 인스턴스화할 때마다 자동으로 생성되는 서비스 인스턴스를 선언합니다. 기본 서비스는 편리하기는 하지만 생성된 후 모든 면에서 일반 서비스처럼 동작합니다. 애플리케이션 인스턴스의 다른 서비스와 함께 업그레이드되며 제거할 수도 있습니다. 애플리케이션 매니페스트에는 여러 기본 서비스가 포함될 수 있습니다.
 
@@ -162,7 +162,7 @@ For more information about other features supported by service manifests, refer 
 **정책** (이전 예제에서 설정 되지 않음)은 서비스에 Service Fabric 런타임에 대 한 액세스 권한이 있는지 여부를 포함 하 여 응용 프로그램 수준에서 설정 되는 로그 컬렉션, [기본 실행](service-fabric-application-runas-security.md), [상태](service-fabric-health-introduction.md#health-policies)및 [보안 액세스](service-fabric-application-runas-security.md) 정책에 대해 설명 합니다.
 
 > [!NOTE] 
-> 기본적으로 Service Fabric 응용 프로그램은 응용 프로그램별 요청을 수락 하는 끝점의 형식 및 패브릭 및 응용 프로그램별 파일이 포함 된 호스트의 파일 경로를 가리키는 환경 변수를 사용 하 여 Service Fabric 런타임에 액세스할 수 있습니다. . 응용 프로그램이 신뢰할 수 없는 코드를 호스트 하는 경우 (즉, provenance를 알 수 없거나 응용 프로그램 소유자가 안전 하 게 실행 되지 않도록 하는 코드)이 액세스를 사용 하지 않도록 설정 하는 것이 좋습니다. 자세한 내용은 [Service Fabric의 보안 모범 사례](service-fabric-best-practices-security.md#platform-isolation)를 참조 하세요. 
+> 기본적으로 Service Fabric 응용 프로그램은 응용 프로그램별 요청을 수락 하는 엔드포인트의 형식 및 패브릭 및 응용 프로그램별 파일이 포함 된 호스트의 파일 경로를 가리키는 환경 변수를 사용 하 여 Service Fabric 런타임에 액세스할 수 있습니다. . 응용 프로그램이 신뢰할 수 없는 코드를 호스트 하는 경우 (즉, provenance를 알 수 없거나 응용 프로그램 소유자가 안전 하 게 실행 되지 않도록 하는 코드)이 액세스를 사용 하지 않도록 설정 하는 것이 좋습니다. 자세한 내용은 [Service Fabric의 보안 모범 사례](service-fabric-best-practices-security.md#platform-isolation)를 참조 하세요. 
 >
 
 **보안 주체**(이전 예제에서 설정되지 않음)는 [서비스 및 보안 서비스 리소스 실행](service-fabric-application-runas-security.md)에 필요한 보안 주체(사용자 또는 그룹)를 설명합니다.  보안 주체는 **정책** 섹션에서 참조됩니다.

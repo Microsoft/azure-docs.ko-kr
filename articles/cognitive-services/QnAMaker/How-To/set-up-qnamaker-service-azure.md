@@ -24,14 +24,14 @@ QnA Maker 기술 자료를 만들려면 먼저 Azure에서 QnA Maker 서비스�
 
 ## <a name="types-of-keys-in-qna-maker"></a>QnA Maker의 키 유형
 
-QnA Maker 서비스는 두 가지 종류의 키, 즉 **구독 키** 와 **끝점 키**를 처리 합니다.
+QnA Maker 서비스는 두 가지 종류의 키, 즉 **구독 키** 와 **엔드포인트 키**를 처리 합니다.
 
 ![키 관리](../media/qnamaker-how-to-key-management/key-management.png)
 
 |이름|위치|용도|
 |--|--|--|
 |구독 키|[Azure Portal](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)|이러한 키는 [QnA Maker management Service api](https://go.microsoft.com/fwlink/?linkid=2092179)에 액세스 하는 데 사용 됩니다. 이러한 Api를 사용 하면 기술 자료의 질문과 대답을 편집 하 고 기술 자료를 게시할 수 있습니다. 이러한 키는 새 QnA Maker 서비스를 만들 때 생성 됩니다.<br><br>**키** 페이지의 **Cognitive Services** 리소스에서 이러한 키를 찾습니다.|
-|엔드포인트 키|[QnA Maker 포털](https://www.qnamaker.ai)|이러한 키는 게시 된 기술 자료 끝점에 액세스 하 여 사용자 질문에 대 한 응답을 가져오는 데 사용 됩니다. 일반적으로이 끝점은 채팅 봇 또는 QnA Maker 서비스에 연결 하는 클라이언트 응용 프로그램 코드에서 사용 합니다. 이러한 키는 QnA Maker 기술 자료를 게시할 때 생성 됩니다.<br><br>**서비스 설정** 페이지에서 이러한 키를 찾습니다. 드롭다운 메뉴의 페이지 오른쪽 위에 있는 사용자 메뉴에서이 페이지를 찾습니다.|
+|엔드포인트 키|[QnA Maker 포털](https://www.qnamaker.ai)|이러한 키는 게시 된 기술 자료 엔드포인트에 액세스 하 여 사용자 질문에 대 한 응답을 가져오는 데 사용 됩니다. 일반적으로이 엔드포인트은 채팅 봇 또는 QnA Maker 서비스에 연결 하는 클라이언트 응용 프로그램 코드에서 사용 합니다. 이러한 키는 QnA Maker 기술 자료를 게시할 때 생성 됩니다.<br><br>**서비스 설정** 페이지에서 이러한 키를 찾습니다. 드롭다운 메뉴의 페이지 오른쪽 위에 있는 사용자 메뉴에서이 페이지를 찾습니다.|
 
 ## <a name="create-a-new-qna-maker-service"></a>새 QnA Maker 서비스 만들기
 
@@ -47,7 +47,7 @@ QnA Maker 서비스는 두 가지 종류의 키, 즉 **구독 키** 와 **끝점
 
     ![새 QnA Maker 서비스 만들기 - 가격 책정 계층 및 지역](../media/qnamaker-how-to-setup-service/enter-qnamaker-info.png)
 
-    * **이름** 필드에이 QnA Maker 서비스를 식별 하는 고유한 이름을 입력 합니다. 또한이 이름은 기술 자료가 연결 될 QnA Maker 끝점을 식별 합니다.
+    * **이름** 필드에이 QnA Maker 서비스를 식별 하는 고유한 이름을 입력 합니다. 또한이 이름은 기술 자료가 연결 될 QnA Maker 엔드포인트을 식별 합니다.
     * QnA Maker 리소스를 배포할 **구독** 을 선택 합니다.
     * QnA Maker 관리 서비스 (포털 및 관리 Api)에 대 한 **가격 책정 계층** 을 선택 합니다. [SKU 가격 책정에 대 한 자세한 내용을](https://aka.ms/qnamaker-pricing)참조 하세요.
     * 새 리소스 그룹을 만들거나 (권장)이 QnA Maker 리소스를 배포할 기존 **리소스 그룹** 을 사용 합니다. QnA Maker는 여러 Azure 리소스를 만듭니다. 이러한 리소스를 보유 하는 리소스 그룹을 만들 때 리소스 그룹 이름으로 이러한 리소스를 쉽게 찾고 관리 하 고 삭제할 수 있습니다.
@@ -85,9 +85,9 @@ QnA Maker 리소스를 만든 Azure Portal에서 구독 키를 확인 하 고 �
 
     ![구독 키](../media/qnamaker-how-to-key-management/subscription-key.PNG)
 
-## <a name="find-endpoint-keys-in-the-qna-maker-portal"></a>QnA Maker 포털에서 끝점 키 찾기
+## <a name="find-endpoint-keys-in-the-qna-maker-portal"></a>QnA Maker 포털에서 엔드포인트 키 찾기
 
-끝점은 기술 자료에 대 한 호출을 수행 하는 데 사용 되므로 끝점은 리소스와 동일한 영역에 있습니다.
+엔드포인트은 기술 자료에 대 한 호출을 수행 하는 데 사용 되므로 엔드포인트은 리소스와 동일한 영역에 있습니다.
 
 엔드포인트 키는 [QnA Maker 포털](https://qnamaker.ai)에서 관리할 수 있습니다.
 
@@ -98,7 +98,7 @@ QnA Maker 리소스를 만든 Azure Portal에서 구독 키를 확인 하 고 �
 2. 키 보기 또는 다시 설정:
 
     > [!div class="mx-imgBorder"]
-    > [서비스 설정에서 끝점 키를 표시, 복사 또는 설정 ![](../media/qnamaker-how-to-key-management/Endpoint-keys1.png)](../media/qnamaker-how-to-key-management/Endpoint-keys1.png#lightbox)
+    > [서비스 설정에서 엔드포인트 키를 표시, 복사 또는 설정 ![](../media/qnamaker-how-to-key-management/Endpoint-keys1.png)](../media/qnamaker-how-to-key-management/Endpoint-keys1.png#lightbox)
 
     >[!NOTE]
     >키가 손상 되었다고 생각 되 면 키를 새로 고칩니다. 클라이언트 애플리케이션 또는 봇 코드에 해당 변경 내용을 적용해야 할 수도 있습니다.

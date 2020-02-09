@@ -1,5 +1,5 @@
 ---
-title: Azure Functions에 대 한 Java 개발자 참조
+title: Azure Functions에 대한 Java 개발자 참조
 description: Java로 함수를 개발하는 방법을 이해합니다.
 ms.topic: conceptual
 ms.date: 09/14/2018
@@ -12,7 +12,7 @@ ms.locfileid: "75769033"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Azure Functions Java 개발자 가이드
 
-Azure Functions 런타임은 [JAVA SE 8 LTS (줄루어 8.31.0.2-jre 8.0.181-win_x64)](https://repos.azul.com/azure-only/zulu/packages/zulu-8/8u181/)를 지원 합니다. 이 가이드에는 Java를 사용한 Azure Functions 작성에 대 한 복잡 한 정보가 포함 되어 있습니다.
+Azure Functions 런타임은 [JAVA SE 8 LTS (줄루어 8.31.0.2-jre 8.0.181-win_x64)](https://repos.azul.com/azure-only/zulu/packages/zulu-8/8u181/)를 지원 합니다. 이 가이드에는 Java를 사용한 Azure Functions 작성에 대한 복잡 한 정보가 포함 되어 있습니다.
 
 다른 언어와 마찬가지로 함수 앱에는 하나 이상의 함수가 있을 수 있습니다. Java 함수는 주석 `@FunctionName`를 사용 하 여 데코레이팅된 `public` 메서드입니다. 이 메서드는 Java 함수의 항목을 정의 하며 특정 패키지에서 고유 해야 합니다. Java로 작성 된 한 함수 앱에는 `@FunctionName`로 주석이 지정 된 여러 public 메서드가 있는 여러 클래스가 있을 수 있습니다.
 
@@ -38,7 +38,7 @@ Java 함수를 보다 쉽게 만들 수 있도록 미리 정의 된 Java 템플�
 
 ### <a name="project-scaffolding"></a>프로젝트 스 캐 폴딩
 
-터미널에서 명령줄 개발을 선호 하는 경우 Java 기반 함수 프로젝트를 스 캐 폴드 하는 가장 간단한 방법은 `Apache Maven` archetype를 사용 하는 것입니다. Maven에 대 한 archetype 함수는 현재 두 가지입니다.
+터미널에서 명령줄 개발을 선호 하는 경우 Java 기반 함수 프로젝트를 스 캐 폴드 하는 가장 간단한 방법은 `Apache Maven` archetype를 사용 하는 것입니다. Maven에 대한 archetype 함수는 현재 두 가지입니다.
 
 + **Java 원형**: 다음 GroupId 및 artifactId에서 게시: azure [-함수-원형](https://search.maven.org/artifact/com.microsoft.azure/azure-functions-archetype/):
 
@@ -142,7 +142,7 @@ public class Function {
 
 Java 함수 앱의 로컬 개발을 위해 [Azul Systems](https://www.azul.com/downloads/azure-only/zulu/)에서 Azure Java 8 Jd의 [Azul 줄루어 Enterprise](https://assets.azul.com/files/Zulu-for-Azure-FAQ.pdf) 를 다운로드 하 여 사용 합니다. Azure Functions는 클라우드에 함수 앱을 배포할 때 Azul Java 8 JDK 런타임을 사용합니다.
 
-JDKs 및 함수 앱과 관련 된 문제에 대 한 [Azure 지원은](https://azure.microsoft.com/support/) [정규화 된 지원 계획](https://azure.microsoft.com/support/plans/)을 통해 제공 됩니다.
+JDKs 및 함수 앱과 관련 된 문제에 대한 [Azure 지원은](https://azure.microsoft.com/support/) [정규화 된 지원 계획](https://azure.microsoft.com/support/plans/)을 통해 제공 됩니다.
 
 ## <a name="customize-jvm"></a>JVM 사용자 지정
 
@@ -248,7 +248,7 @@ public class Function {
 ```
 
 HTTP 요청을 사용 하 여이 함수를 호출 합니다. 
-- HTTP 요청 페이로드가 `inputReq`인수에 대 한 `String`으로 전달 됩니다.
+- HTTP 요청 페이로드가 `inputReq`인수에 대한 `String`으로 전달 됩니다.
 - 테이블 저장소에서 한 항목을 검색 하 고 `inputData`인수에 `TestInputData`으로 전달 합니다.
 
 입력 일괄 처리를 수신 하려면 `String[]`, `POJO[]`, `List<String>`또는 `List<POJO>`에 바인딩할 수 있습니다.
@@ -268,7 +268,7 @@ HTTP 요청을 사용 하 여이 함수를 호출 합니다.
 
 ```
 
-이 함수는 구성된 이벤트 허브에 새 데이터가 있을 때마다 트리거됩니다. `cardinality`은 `MANY`로 설정 되어 있으므로 함수는 이벤트 허브에서 메시지 일괄 처리를 수신 합니다. 이벤트 허브에서 `EventData` 함수 실행에 대 한 `TestEventData`으로 변환 됩니다.
+이 함수는 구성된 이벤트 허브에 새 데이터가 있을 때마다 트리거됩니다. `cardinality`은 `MANY`로 설정 되어 있으므로 함수는 이벤트 허브에서 메시지 일괄 처리를 수신 합니다. 이벤트 허브에서 `EventData` 함수 실행에 대한 `TestEventData`으로 변환 됩니다.
 
 ### <a name="output-binding-example"></a>출력 바인딩 예제
 
@@ -412,7 +412,7 @@ Azure CLI를 사용 하 여 응용 프로그램 로깅을 쓰도록 함수 앱�
 az webapp log config --name functionname --resource-group myResourceGroup --application-logging true
 ```
 
-Azure CLI를 사용 하 여 함수 앱에 대 한 로깅 출력을 스트리밍하려면 새 명령 프롬프트, Bash 또는 터미널 세션을 열고 다음 명령을 입력 합니다.
+Azure CLI를 사용 하 여 함수 앱에 대한 로깅 출력을 스트리밍하려면 새 명령 프롬프트, Bash 또는 터미널 세션을 열고 다음 명령을 입력 합니다.
 
 ```azurecli-interactive
 az webapp log tail --name webappname --resource-group myResourceGroup
@@ -446,12 +446,12 @@ public class Function {
 
 ## <a name="next-steps"></a>다음 단계
 
-Java 개발을 Azure Functions 하는 방법에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
+Java 개발을 Azure Functions 하는 방법에 대한 자세한 내용은 다음 리소스를 참조 하세요.
 
 * [Azure Functions에 대한 모범 사례](functions-best-practices.md)
 * [Azure Functions 개발자 참조](functions-reference.md)
 * [Azure Functions 트리거 및 바인딩](functions-triggers-bindings.md)
 * [Visual Studio Code](https://code.visualstudio.com/docs/java/java-azurefunctions), [IntelliJ](functions-create-maven-intellij.md)및 [Eclipse](functions-create-maven-eclipse.md) 를 사용 하 여 로컬 개발 및 디버그
 * [Visual Studio Code를 사용하여 Java Azure Functions 원격 디버그](https://code.visualstudio.com/docs/java/java-serverless#_remote-debug-functions-running-in-the-cloud)
-* [Azure Functions에 대 한 Maven 플러그 인](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-functions-maven-plugin/README.md) 
+* [Azure Functions에 대한 Maven 플러그 인](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-functions-maven-plugin/README.md) 
 * `azure-functions:add` 목표를 통해 함수 만들기를 간소화 하 고 [ZIP 파일 배포](deployment-zip-push.md)를 위한 준비 디렉터리를 준비 합니다.

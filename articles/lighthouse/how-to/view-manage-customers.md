@@ -52,7 +52,7 @@ Azure Portal의 **내 고객** 페이지에 액세스하려면 **모든 서비�
 
 ### <a name="remove-delegations"></a>위임 제거
 
-Azure 위임 된 리소스 관리를 위해 고객을 온 보 딩 할 때 [관리 서비스 등록 할당 삭제 역할](../../role-based-access-control/built-in-roles.md#managed-services-registration-assignment-delete-role) 을 가진 사용자를 포함 한 경우 해당 사용자는 해당 위임에 대 한 행에 표시 되는 휴지통 아이콘을 선택 하 여 위임을 제거할 수 있습니다. 이렇게 하면 서비스 공급자의 테 넌 트에 있는 사용자가 이전에 위임 된 리소스에 액세스할 수 없게 됩니다.
+Azure 위임 된 리소스 관리를 위해 고객을 온 보 딩 할 때 [관리 서비스 등록 할당 삭제 역할](../../role-based-access-control/built-in-roles.md#managed-services-registration-assignment-delete-role) 을 가진 사용자를 포함 한 경우 해당 사용자는 해당 위임에 대 한 행에 표시 되는 휴지통 아이콘을 선택 하 여 위임을 제거할 수 있습니다. 이렇게 하면 서비스 공급자의 테넌트에 있는 사용자가 이전에 위임 된 리소스에 액세스할 수 없게 됩니다.
 
 
 ## <a name="work-in-the-context-of-a-delegated-subscription"></a>위임된 구독의 컨텍스트에서 작업

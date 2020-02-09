@@ -1,6 +1,6 @@
 ---
 title: Azure 개인 링크를 사용 하 여 Azure Cosmos 계정에 연결
-description: 개인 끝점을 만들어 VM에서 Azure Cosmos 계정에 안전 하 게 액세스 하는 방법을 알아봅니다.
+description: 개인 엔드포인트을 만들어 VM에서 Azure Cosmos 계정에 안전 하 게 액세스 하는 방법을 알아봅니다.
 author: malopMSFT
 ms.service: cosmos-db
 ms.topic: conceptual
@@ -15,9 +15,9 @@ ms.locfileid: "76028583"
 ---
 # <a name="connect-privately-to-an-azure-cosmos-account-using-azure-private-link"></a>Azure 개인 링크를 사용 하 여 개인적으로 Azure Cosmos 계정에 연결
 
-Azure 개인 끝점은 Azure의 개인 링크에 대 한 기본 빌딩 블록입니다. Vm (가상 머신)과 같은 Azure 리소스가 개인 링크 리소스와 개인적으로 통신할 수 있도록 합니다.
+Azure 개인 엔드포인트은 Azure의 개인 링크에 대 한 기본 빌딩 블록입니다. Vm (가상 머신)과 같은 Azure 리소스가 개인 링크 리소스와 개인적으로 통신할 수 있도록 합니다.
 
-이 문서에서는 Azure Portal를 사용 하 여 개인 끝점으로 azure 가상 네트워크 및 Azure Cosmos 계정에서 VM을 만드는 방법에 대해 알아봅니다. 그런 다음 VM에서 Azure Cosmos 계정에 안전 하 게 액세스할 수 있습니다.
+이 문서에서는 Azure Portal를 사용 하 여 개인 엔드포인트으로 azure 가상 네트워크 및 Azure Cosmos 계정에서 VM을 만드는 방법에 대해 알아봅니다. 그런 다음 VM에서 Azure Cosmos 계정에 안전 하 게 액세스할 수 있습니다.
 
 ## <a name="sign-in-to-azure"></a>Azure에 로그인
 
@@ -97,7 +97,7 @@ Azure Portal에 로그인 [합니다.](https://portal.azure.com)
 
 [Azure COSMOS SQL API 계정을](../cosmos-db/create-cosmosdb-resources-portal.md#create-an-azure-cosmos-db-account)만듭니다. 간단히 하기 위해 다른 리소스와 동일한 지역에 Azure Cosmos 계정을 만들 수 있습니다 ("WestCentralUS").
 
-## <a name="create-a-private-endpoint-for-your-azure-cosmos-account"></a>Azure Cosmos 계정에 대 한 개인 끝점 만들기
+## <a name="create-a-private-endpoint-for-your-azure-cosmos-account"></a>Azure Cosmos 계정에 대 한 개인 엔드포인트 만들기
 
 연결 된 문서의 [Azure Portal를 사용 하 여 개인 링크 만들기](../cosmos-db/how-to-configure-private-endpoints.md#create-a-private-endpoint-by-using-the-azure-portal) 섹션에 설명 된 대로 Azure Cosmos 계정에 대 한 개인 링크를 만듭니다.
 
@@ -128,7 +128,7 @@ Azure Portal에 로그인 [합니다.](https://portal.azure.com)
 
 ## <a name="access-the-azure-cosmos-account-privately-from-the-vm"></a>VM에서 개인적으로 Azure Cosmos 계정에 액세스
 
-이 섹션에서는 개인 끝점을 사용 하 여 개인적으로 Azure Cosmos 계정에 연결 합니다. 
+이 섹션에서는 개인 엔드포인트을 사용 하 여 개인적으로 Azure Cosmos 계정에 연결 합니다. 
 
 1. IP 주소와 DNS 매핑을 포함 하려면 가상 컴퓨터 *Myvm*에 로그인 하 고 `c:\Windows\System32\Drivers\etc\hosts` 파일을 열고 이전 단계의 DNS 정보를 다음 형식으로 포함 합니다.
 
@@ -163,7 +163,7 @@ Azure Portal에 로그인 [합니다.](https://portal.azure.com)
 
 ## <a name="clean-up-resources"></a>리소스 정리
 
-개인 끝점, Azure Cosmos 계정 및 VM을 사용 하 여 작업을 완료 하면 리소스 그룹 및 여기에 포함 된 모든 리소스를 삭제 합니다. 
+개인 엔드포인트, Azure Cosmos 계정 및 VM을 사용 하 여 작업을 완료 하면 리소스 그룹 및 여기에 포함 된 모든 리소스를 삭제 합니다. 
 
 1. 포털 맨 위에 있는 **검색** 상자에 *myResourceGroup*을 입력하고 검색 결과에서 *myResourceGroup*을 선택합니다.
 
@@ -173,8 +173,8 @@ Azure Portal에 로그인 [합니다.](https://portal.azure.com)
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서에서는 가상 네트워크, Azure Cosmos 계정 및 개인 끝점에서 VM을 만들었습니다. 인터넷에서 VM에 연결 하 고 개인 링크를 사용 하 여 Azure Cosmos 계정에 안전 하 게 전달 했습니다.
+이 문서에서는 가상 네트워크, Azure Cosmos 계정 및 개인 엔드포인트에서 VM을 만들었습니다. 인터넷에서 VM에 연결 하 고 개인 링크를 사용 하 여 Azure Cosmos 계정에 안전 하 게 전달 했습니다.
 
-* 개인 끝점에 대 한 자세한 내용은 [Azure 개인 끝점 이란?](private-endpoint-overview.md)을 참조 하세요.
+* 개인 엔드포인트에 대 한 자세한 내용은 [Azure 개인 엔드포인트 이란?](private-endpoint-overview.md)을 참조 하세요.
 
-* With Azure Cosmos DB를 사용 하는 경우 개인 끝점의 제한에 대 한 자세한 내용은 Azure Cosmos DB 문서를 사용 하는 [Azure 개인 링크](../cosmos-db/how-to-configure-private-endpoints.md) 를 참조 하세요.
+* With Azure Cosmos DB를 사용 하는 경우 개인 엔드포인트의 제한에 대 한 자세한 내용은 Azure Cosmos DB 문서를 사용 하는 [Azure 개인 링크](../cosmos-db/how-to-configure-private-endpoints.md) 를 참조 하세요.

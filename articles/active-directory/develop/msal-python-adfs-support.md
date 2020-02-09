@@ -26,7 +26,7 @@ Windows Server의 Active Directory Federation Services (AD FS)를 사용 하면 
 
 일반적으로 AD FS에 대해 인증 하는 방법에는 두 가지가 있습니다.
 
-- MSAL Python은 다른 id 공급자와 페더레이션 되는 Azure Active Directory에 대 한 통신을 제공 합니다. 페더레이션은 AD FS를 통해 발생 합니다. MSAL Python은 azure ad (관리 되는 사용자)에서 관리 되는 사용자 또는 AD FS (페더레이션된 사용자)와 같은 다른 id 공급자가 관리 하는 사용자에 게 로그인 하는 Azure AD에 연결 합니다. MSAL Python은 사용자가 페더레이션 임을 인식 하지 못합니다. 단지 Azure AD와만 통신 합니다. 이 경우 사용 하는 [기관은](msal-client-application-configuration.md#authority) 일반적인 인증 기관 (기관 호스트 이름 + 테 넌 트, 공용 또는 조직)입니다.
+- MSAL Python은 다른 id 공급자와 페더레이션 되는 Azure Active Directory에 대 한 통신을 제공 합니다. 페더레이션은 AD FS를 통해 발생 합니다. MSAL Python은 azure ad (관리 되는 사용자)에서 관리 되는 사용자 또는 AD FS (페더레이션된 사용자)와 같은 다른 id 공급자가 관리 하는 사용자에 게 로그인 하는 Azure AD에 연결 합니다. MSAL Python은 사용자가 페더레이션 임을 인식 하지 못합니다. 단지 Azure AD와만 통신 합니다. 이 경우 사용 하는 [기관은](msal-client-application-configuration.md#authority) 일반적인 인증 기관 (기관 호스트 이름 + 테넌트, 공용 또는 조직)입니다.
 - MSAL Python은 AD FS 기관에 직접 통신 합니다. AD FS 2019 이상 에서만 지원 됩니다.
 
 ## <a name="connect-to-active-directory-federated-with-ad-fs"></a>AD FS를 사용 하 여 페더레이션 Active Directory에 연결

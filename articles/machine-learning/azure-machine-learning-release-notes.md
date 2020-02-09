@@ -63,7 +63,7 @@ ms.locfileid: "77030815"
     + Azureml에서 텍스트 explainers 제거 됨-텍스트 설명이 즉시 릴리스되는 해석 텍스트 리포지토리로 이동 되었습니다.
   + **azureml-코어**
     + 데이터 집합: 파일 데이터 집합에 대 한 사용은 더 이상 python env에 설치 되는 numpy 및 pandas에 종속 되지 않습니다.
-    + 상태 끝점에 대 한 ping을 시도 하기 전에 로컬 Docker 컨테이너의 상태를 확인 하 고 실패 한 배포를 보고 하는 데 걸리는 시간을 크게 줄여 LocalWebservice. wait_for_deployment ()를 변경 했습니다.
+    + 상태 엔드포인트에 대 한 ping을 시도 하기 전에 로컬 Docker 컨테이너의 상태를 확인 하 고 실패 한 배포를 보고 하는 데 걸리는 시간을 크게 줄여 LocalWebservice. wait_for_deployment ()를 변경 했습니다.
     + Localwebservice () 생성자를 사용 하 여 기존 배포에서 서비스 개체를 만들 때 LocalWebservice. reload ()에서 사용 되는 내부 속성의 초기화가 수정 되었습니다.
     + 설명에 대 한 오류 메시지를 편집 했습니다.
     + 액세스 토큰, 타임 스탬프 이후 새로 고침, 타임 스탬프 및 토큰 형식에 대 한 만료를 포함 하는 AksServiceAccessToken 개체를 반환 하는 AksWebservice () get_access_token 라는 새 메서드를 추가 했습니다. 
@@ -251,7 +251,7 @@ ms.locfileid: "77030815"
 
 [https://ml.azure.com](https://ml.azure.com) 의 공동 작업 영역 방문 페이지가 향상 되었으며 Azure Machine Learning studio (미리 보기)로 다시 브랜드 되었습니다.
 
-스튜디오에서 데이터 집합, 파이프라인, 모델, 끝점 등의 Azure Machine Learning 자산을 학습, 테스트, 배포 및 관리할 수 있습니다.
+스튜디오에서 데이터 집합, 파이프라인, 모델, 엔드포인트 등의 Azure Machine Learning 자산을 학습, 테스트, 배포 및 관리할 수 있습니다.
 
 스튜디오에서 다음 웹 기반 제작 도구에 액세스 합니다.
 
@@ -381,7 +381,7 @@ SDK의 주요 기능에는 다음이 포함 됩니다.
 
 + Azure Machine Learning 시각적 인터페이스 (미리 보기)는 [Azure Machine Learning 파이프라인](concept-ml-pipelines.md)에서 실행 점검 했습니다 되었습니다. 시각적 인터페이스에서 작성 된 파이프라인 (이전에는 실험 이라고 함)은 이제 핵심 Azure Machine Learning 환경과 완벽 하 게 통합 됩니다.
   + SDK 자산과 통합 된 관리 환경
-  + 시각적 인터페이스 모델, 파이프라인 및 끝점에 대 한 버전 관리 및 추적
+  + 시각적 인터페이스 모델, 파이프라인 및 엔드포인트에 대 한 버전 관리 및 추적
   + 다시 디자인 한 UI
   + 추가 된 일괄 처리 유추 배포
   + 유추 계산 대상에 대 한 AKS (Azure Kubernetes Service) 지원 추가
@@ -725,7 +725,7 @@ SDK의 주요 기능에는 다음이 포함 됩니다.
     + 데이터 및 `AutoMLBaseSettings` 개체만 필요로 하는 `RawDataContext`을 만들기 위한 인터페이스를 업데이트 했습니다.
     +  자동 Ml 사용자가 예측 시 충분 하지 않은 학습 시리즈를 삭제할 수 있습니다. -자동 Ml 사용자가 예측 시 학습 집합에 없는 테스트 집합에서 조직를 삭제할 수 있습니다.
   + **azure-cli-ml**
-    + 이제 Microsoft에서 생성 한 및 고객 인증서 모두 AKS 클러스터에 배포 된 점수 매기기 끝점에 대 한 SSL 인증서를 업데이트할 수 있습니다.
+    + 이제 Microsoft에서 생성 한 및 고객 인증서 모두 AKS 클러스터에 배포 된 점수 매기기 엔드포인트에 대 한 SSL 인증서를 업데이트할 수 있습니다.
   + **azureml-automl-core**
     + 레이블이 누락 된 행이 제대로 제거 되지 않은 AutoML에서 문제가 해결 되었습니다.
     + AutoML에서 오류 로깅이 개선 됨 이제 전체 오류 메시지는 항상 로그 파일에 기록 됩니다.
@@ -756,7 +756,7 @@ SDK의 주요 기능에는 다음이 포함 됩니다.
     + 데이터 집합 python SDK에서 HTTP csv/tsv 파일 가져오기를 지원 합니다.
     + 작업 영역. setup () 메서드를 사용 하지 않습니다. 사용자에 게 create () 또는 get ()/from_config ()를 대신 사용 하는 것으로 표시 되는 경고 메시지입니다.
     + 환경 add_private_pip_wheel ()을 추가 했습니다 .이 기능을 사용 하면 개인 사용자 지정 python `whl`패키지를 작업 영역에 업로드 하 고이를 안전 하 게 사용 하 여 환경을 빌드하거나 구체화할 수 있습니다.
-    + 이제 Microsoft에서 생성 한 및 고객 인증서 모두 AKS 클러스터에 배포 된 점수 매기기 끝점에 대 한 SSL 인증서를 업데이트할 수 있습니다.
+    + 이제 Microsoft에서 생성 한 및 고객 인증서 모두 AKS 클러스터에 배포 된 점수 매기기 엔드포인트에 대 한 SSL 인증서를 업데이트할 수 있습니다.
   + **azureml-설명-모델**
     + 업로드에 대 한 설명에 모델 ID를 추가 하는 매개 변수를 추가 했습니다.
     + 메모리의 설명에 태그 지정 `is_raw` 추가 하 고 업로드 합니다.
@@ -798,7 +798,7 @@ SDK의 주요 기능에는 다음이 포함 됩니다.
 ### <a name="azure-machine-learning-sdk-for-python-v1055"></a>Azure Machine Learning SDK for Python v 1.0.55
 
 + **새로운 기능**
-  + 이제 AKS에 배포 된 점수 매기기 끝점에 대 한 호출에 대해 토큰 기반 인증이 지원 됩니다. 현재 키 기반 인증을 계속 지원 하 고 사용자가 다음 인증 메커니즘 중 하나를 한 번에 사용할 수 있습니다.
+  + 이제 AKS에 배포 된 점수 매기기 엔드포인트에 대 한 호출에 대해 토큰 기반 인증이 지원 됩니다. 현재 키 기반 인증을 계속 지원 하 고 사용자가 다음 인증 메커니즘 중 하나를 한 번에 사용할 수 있습니다.
   + VNet (가상 네트워크) 뒤에 있는 blob 저장소를 데이터 저장소로 등록 하는 기능입니다.
 
 + **버그 수정 및 향상 된 기능**
@@ -1186,7 +1186,7 @@ Azure Portal에서 이제 다음을 수행할 수 있습니다.
 
 ### <a name="notebook-virtual-machine"></a>노트북 가상 머신 
 
-기계 학습 실험을 프로그래밍 하 고, 모델을 웹 끝점으로 배포 하 고, Python을 사용 하 여 Azure Machine Learning SDK에서 지 원하는 모든 기타 작업을 수행할 수 있는 Jupyter 노트북에 대 한 안전한 엔터프라이즈급 호스팅 환경으로 노트북 VM을 사용 합니다. 다음과 같은 여러 기능을 제공 합니다.
+기계 학습 실험을 프로그래밍 하 고, 모델을 웹 엔드포인트으로 배포 하 고, Python을 사용 하 여 Azure Machine Learning SDK에서 지 원하는 모든 기타 작업을 수행할 수 있는 Jupyter 노트북에 대 한 안전한 엔터프라이즈급 호스팅 환경으로 노트북 VM을 사용 합니다. 다음과 같은 여러 기능을 제공 합니다.
 + 최신 버전의 Azure Machine Learning SDK 및 관련 패키지를 포함 하는 [미리 구성 된 노트북 VM 신속 하 게](tutorial-1st-experiment-sdk-setup.md) 실행 합니다.
 + 액세스는 HTTPS, Azure Active Directory 인증 및 권한 부여와 같은 입증 된 기술을 통해 보안이 유지 됩니다.
 + Azure Machine Learning 작업 영역 blob storage 계정에서 노트북 및 코드의 신뢰할 수 있는 클라우드 저장소입니다. 작업을 잃지 않고 노트북 VM을 안전 하 게 삭제할 수 있습니다.
@@ -1204,7 +1204,7 @@ Azure Portal에서 이제 다음을 수행할 수 있습니다.
     + 모델 관리 서비스를 사용 하 여 모델 등록 및 모델 컨테이너 화
     + AKS (Azure Kubernetes Service) 클러스터에서 FPGA을 사용 하 여 Azure VM에 모델 배포
   + 컨테이너를 [Azure Data Box Edge](https://docs.microsoft.com/azure/databox-online/data-box-edge-overview) 서버 장치에 배포
-  + 이 [샘플](https://github.com/Azure-Samples/aml-hardware-accelerated-models) 에서 grpc 끝점을 사용 하 여 데이터 점수 매기기
+  + 이 [샘플](https://github.com/Azure-Samples/aml-hardware-accelerated-models) 에서 grpc 엔드포인트을 사용 하 여 데이터 점수 매기기
 
 ### <a name="automated-machine-learning"></a>자동화된 Machine Learning
 
@@ -1249,7 +1249,7 @@ Azure Portal에서 이제 다음을 수행할 수 있습니다.
 
 Azure Machine Learning SDK for Python v 1.0.30가 릴리스 되었습니다.
 
-[`PipelineEndpoint`](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline_endpoint.pipelineendpoint?view=azure-ml-py) 는 동일한 끝점을 유지 하면서 게시 된 파이프라인의 새 버전을 추가 하기 위해 도입 되었습니다.
+[`PipelineEndpoint`](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline_endpoint.pipelineendpoint?view=azure-ml-py) 는 동일한 엔드포인트을 유지 하면서 게시 된 파이프라인의 새 버전을 추가 하기 위해 도입 되었습니다.
 
 ## <a name="2019-04-17"></a>2019-04-17
 

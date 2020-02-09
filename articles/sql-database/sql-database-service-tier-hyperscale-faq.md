@@ -365,7 +365,7 @@ IOPS 및 IO 대기 시간은 워크 로드 패턴에 따라 달라 집니다. �
 다음 T-sql 쿼리를 실행할 수 있습니다. `SELECT DATABASEPROPERTYEX ('<database_name>', 'Updateability')`.
 읽기 전용 보조 복제본에 연결 된 경우에는 결과가 `READ_ONLY` 되 고 주 복제본에 연결 된 경우에는 `READ_WRITE`. 데이터베이스 컨텍스트는 `master` 데이터베이스가 아닌 Hyperscale 데이터베이스의 이름으로 설정 되어야 합니다.
 
-### <a name="can-i-create-a-dedicated-endpoint-for-a-read-scale-out-replica"></a>읽기 확장 복제본의 전용 끝점을 만들 수 있습니다.
+### <a name="can-i-create-a-dedicated-endpoint-for-a-read-scale-out-replica"></a>읽기 확장 복제본의 전용 엔드포인트을 만들 수 있습니다.
 
 아닙니다. `ApplicationIntent=ReadOnly`를 지정 하 여 스케일 아웃 복제본 읽기에만 연결할 수 있습니다.
 

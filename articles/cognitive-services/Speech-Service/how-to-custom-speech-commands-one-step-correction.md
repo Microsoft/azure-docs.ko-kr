@@ -60,7 +60,7 @@ ms.locfileid: "75462390"
    > 범위 유효성 검사를 추가 ![](media/custom-speech-commands/one-step-correction-rules.png)
 
 > [!NOTE]
-> 실제 응용 프로그램에서이 규칙의 작업 섹션에서는 클라이언트에 작업을 다시 보내거나 HTTP 끝점을 호출 하 여 시스템의 경보를 업데이트 합니다.
+> 실제 응용 프로그램에서이 규칙의 작업 섹션에서는 클라이언트에 작업을 다시 보내거나 HTTP 엔드포인트을 호출 하 여 시스템의 경보를 업데이트 합니다.
 
 ## <a name="try-it-out"></a>사용해 보기
 

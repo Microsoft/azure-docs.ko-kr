@@ -28,7 +28,7 @@ Twilio는 기존 웹 언어와 기술을 사용하여 음성 및 SMS 애플리�
 **Twilio 음성**을 통해 애플리케이션에서 전화를 걸고 받을 수 있습니다. **Twilio SMS**를 사용하면 애플리케이션에서 SMS 메시지를 작성하고 받을 수 있습니다. **Twilio 클라이언트**를 사용하면 애플리케이션에서 모바일 연결을 비롯한 기존 인터넷 연결을 통해 음성 통신을 사용할 수 있습니다.
 
 ## <a id="Pricing"></a>Twilio 가격 책정 및 특별 제공
-Twilio 가격 책정에 대 한 정보는 [Twilio 가격][twilio_pricing]으로 제공 됩니다. Azure 고객은 [특별 한 제품][special_offer](1000 텍스트 또는 1000 인바운드 분의 무료 크레딧)을 받습니다. 이 제품에 등록 하거나 자세한 내용을 보려면을 (를) 방문 [https://ahoy.twilio.com/azure][special_offer]하세요.
+Twilio 가격 책정에 대한 정보는 [Twilio 가격][twilio_pricing]으로 제공 됩니다. Azure 고객은 [특별 한 제품][special_offer](1000 텍스트 또는 1000 인바운드 분의 무료 크레딧)을 받습니다. 이 제품에 등록 하거나 자세한 내용을 보려면을 (를) 방문 [https://ahoy.twilio.com/azure][special_offer]하세요.
 
 ## <a id="Concepts"></a>개념
 Twilio API는 애플리케이션에 대한 음성 및 SMS 기능을 제공하는 RESTful API입니다. 클라이언트 라이브러리는 여러 언어로 제공 됩니다. 목록은 [TWILIO API 라이브러리][twilio_libraries]를 참조 하세요.
@@ -66,7 +66,7 @@ TwiML은 Twilio에 통화 또는 SMS 처리 방법을 알려 주는 Twilio 동�
 
 애플리케이션에서 Twilio API를 호출할 때 API 매개 변수 중 하나는 TwiML 응답을 반환하는 URL입니다. 개발을 위해서 Twilio 제공 URL을 사용하여 애플리케이션에 사용되는 TwiML 응답을 제공할 수 있습니다. 또한 TwiML 응답을 생성하는 고유한 URL을 호스트할 수도 있고, **TwiMLResponse** 개체를 사용할 수도 있습니다.
 
-Twilio 동사, 특성 및 TwiML에 대 한 자세한 내용은 [TwiML][twiml]를 참조 하세요. Twilio API에 대 한 자세한 내용은 [TWILIO api][twilio_api]를 참조 하세요.
+Twilio 동사, 특성 및 TwiML에 대한 자세한 내용은 [TwiML][twiml]를 참조 하세요. Twilio API에 대한 자세한 내용은 [TWILIO api][twilio_api]를 참조 하세요.
 
 ## <a id="CreateAccount"></a>Twilio 계정 만들기
 Twilio 계정을 가져올 준비가 되 면 [Twilio 체험][try_twilio]에서 등록 합니다. 무료 계정으로 시작했다가 나중에 계정을 업그레이드할 수 있습니다.
@@ -75,9 +75,9 @@ Twilio 계정을 등록하면 계정 ID 및 인증 토큰을 받게 됩니다. �
 
 ## <a id="create_app"></a>Java 애플리케이션 만들기
 1. Twilio JAR을 다운로드하여 Java 빌드 경로 및 WAR 배포 어셈블리에 추가합니다. 에서 [https://github.com/twilio/twilio-java][twilio_java]GitHub 소스를 다운로드 하 고 사용자 고유의 jar를 만들거나 미리 작성 된 jar (종속성 유무 또는 제외)을 다운로드할 수 있습니다.
-2. JDK의 **cacerts** keystore에 MD5 지문이 67:CB:9D:C0:13:24:8A:82:9B:B2:17:1E:D1:1B:EC:D4인 Equifax Secure Certificate Authority 인증서가 포함되어 있는지 확인합니다(일련 번호는 35:DE:F4:CF이고 SHA1 지문은 D2:32:09:AD:23:D3:14:23:21:74:E4:0D:7F:9D:62:13:97:86:63:3A임). 이는 Twilio api를 사용할 때 호출 되는 [https://api.twilio.com][twilio_api_service] 서비스에 대 한 CA (인증 기관) 인증서입니다. JDK의 **cacerts** 키 저장소에 올바른 CA 인증서가 포함 되어 있는지 확인 하는 방법에 대 한 자세한 내용은 [Java ca 인증서 저장소에 인증서 추가][add_ca_cert]를 참조 하세요.
+2. JDK의 **cacerts** keystore에 MD5 지문이 67:CB:9D:C0:13:24:8A:82:9B:B2:17:1E:D1:1B:EC:D4인 Equifax Secure Certificate Authority 인증서가 포함되어 있는지 확인합니다(일련 번호는 35:DE:F4:CF이고 SHA1 지문은 D2:32:09:AD:23:D3:14:23:21:74:E4:0D:7F:9D:62:13:97:86:63:3A임). 이는 Twilio api를 사용할 때 호출 되는 [https://api.twilio.com][twilio_api_service] 서비스에 대한 CA (인증 기관) 인증서입니다. JDK의 **cacerts** 키 저장소에 올바른 CA 인증서가 포함 되어 있는지 확인 하는 방법에 대한 자세한 내용은 [Java ca 인증서 저장소에 인증서 추가][add_ca_cert]를 참조 하세요.
 
-Java 용 Twilio client 라이브러리를 사용 하는 방법에 대 한 자세한 지침은 [Azure의 Java 응용 프로그램에서 Twilio를 사용 하 여 전화를 거는 방법][howto_phonecall_java]에서 확인할 수 있습니다.
+Java 용 Twilio client 라이브러리를 사용 하는 방법에 대한 자세한 지침은 [Azure의 Java 응용 프로그램에서 Twilio를 사용 하 여 전화를 거는 방법][howto_phonecall_java]에서 확인할 수 있습니다.
 
 ## <a id="configure_app"></a>Twilio 라이브러리를 사용하도록 애플리케이션 구성
 코드 내에서 애플리케이션에 사용할 Twilio 패키지 또는 클래스의 원본 파일 맨 위에 **import** 문을 추가할 수 있습니다.
@@ -127,7 +127,7 @@ JSP(Java Server Page) 원본 파일의 경우
     Call.creator(to, from, uri).create();
 ```
 
-**Call** 메서드에 전달 된 매개 변수에 대 한 자세한 내용은을 참조 [https://www.twilio.com/docs/api/rest/making-calls][twilio_rest_making_calls]하십시오.
+**Call** 메서드에 전달 된 매개 변수에 대한 자세한 내용은을 참조 [https://www.twilio.com/docs/api/rest/making-calls][twilio_rest_making_calls]하십시오.
 
 언급한 대로 이 코드는 Twilio 제공 사이트를 사용하여 TwiML 응답을 반환합니다. 고유한 사이트를 대신 사용하여 TwiML 응답을 제공할 수 있습니다. 자세한 내용은 [Azure의 Java 애플리케이션에서 TwiML 응답을 제공하는 방법](#howto_provide_twiml_responses)을 참조하십시오.
 
@@ -153,7 +153,7 @@ JSP(Java Server Page) 원본 파일의 경우
     Message sms = Message.creator(to, from, body).create();
 ```
 
-**메시지** 에 전달 된 매개 변수에 대 한 자세한 내용은을 참조 [https://www.twilio.com/docs/api/rest/sending-sms][twilio_rest_sending_sms]하십시오.
+**메시지** 에 전달 된 매개 변수에 대한 자세한 내용은을 참조 [https://www.twilio.com/docs/api/rest/sending-sms][twilio_rest_sending_sms]하십시오.
 
 ## <a id="howto_provide_twiml_responses"></a>방법: 고유한 웹 사이트에서 TwiML 응답 제공
 애플리케이션에서 Twilio API 호출을 시작하면(예: **CallCreator.create** 메서드를 통해) Twilio에서 TwiML 응답을 반환해야 하는 URL로 요청을 보냅니다. 위의 예제에서는 Twilio 제공 URL [https://twimlets.com/message][twimlet_message_url]을 사용 합니다. TwiML은 웹 서비스에서 사용되도록 설계되었지만 브라우저에서도 TwiML을 볼 수 있습니다. 예를 들어, [https://twimlets.com/message][twimlet_message_url] 를 클릭 하 여  **&lt; 빈&gt; 응답** [https://twimlets.com/message?Message%5B0%5D=Hello%20World%21][twimlet_message_url_hello_world] 요소를 표시 합니다. 다른 예로를 클릭 하 여를 포함 **&gt; &lt;** **하는응답요소를확인합니다.&lt; 말&gt;** 입니다.)
@@ -200,7 +200,7 @@ JSP 페이지가 TwiML 응답을 제공하도록 설정된 경우 **Call.creator
 
 TwiML로 응답하는 또 다른 옵션은 **com.twilio.twiml** 패키지에 포함된 **VoiceResponse** 클래스를 사용하는 것입니다.
 
-Java를 사용 하 여 Azure에서 Twilio를 사용 하는 방법에 대 한 자세한 내용은 [azure의 Java 응용 프로그램에서 Twilio를 사용 하 여 전화를 거는 방법][howto_phonecall_java]을 참조 하세요.
+Java를 사용 하 여 Azure에서 Twilio를 사용 하는 방법에 대한 자세한 내용은 [azure의 Java 응용 프로그램에서 Twilio를 사용 하 여 전화를 거는 방법][howto_phonecall_java]을 참조 하세요.
 
 ## <a id="AdditionalServices"></a>방법: 추가 Twilio 서비스 사용
 여기에서 보여 준 예뿐만 아니라 Twilio는 Azure 애플리케이션에서 Twilio 기능을 활용할 수 있는 웹 기반 API를 제공합니다. 자세한 내용은 [TWILIO API 설명서][twilio_api_documentation]를 참조 하세요.

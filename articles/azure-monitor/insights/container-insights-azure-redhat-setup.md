@@ -46,7 +46,7 @@ ms.locfileid: "75979782"
 
 - 클러스터가 배포 되는 리소스 그룹입니다.
 
-- 이미 생성 된 테 넌 트를 만드는 단계를 수행한 후에 표시 된 [테 넌 트 ID를 Azure Active Directory](../../openshift/howto-create-tenant.md#create-a-new-azure-ad-tenant) 합니다.
+- 이미 생성 된 테넌트를 만드는 단계를 수행한 후에 표시 된 [테넌트 ID를 Azure Active Directory](../../openshift/howto-create-tenant.md#create-a-new-azure-ad-tenant) 합니다.
 
 - 이미 만든 하나 이상의 단계를 만든 후 [클라이언트 응용 프로그램 ID를 Azure Active Directory](../../openshift/howto-aad-app-configuration.md#create-an-azure-ad-app-registration) 합니다.
 

@@ -16,23 +16,23 @@ ms.locfileid: "70376594"
 ---
 # <a name="create-a-real-time-dashboard-using-azure-cosmos-db-and-power-bi"></a>Azure Cosmos DB 및 Power BI를 사용 하 여 실시간 대시보드 만들기
 
-이 문서에서는 Azure Cosmos DB 및 Azure Analysis Services를 사용 하 여 Power BI에서 라이브 날씨 대시보드를 만드는 데 필요한 단계를 설명 합니다. Power BI 대시보드는 지역에서 온도 및 강우량에 대 한 실시간 정보를 표시 하는 차트를 표시 합니다.
+이 문서에서는 Azure Cosmos DB 및 Azure Analysis Services를 사용 하 여 Power BI에서 라이브 날씨 대시보드를 만드는 데 필요한 단계를 설명 합니다. Power BI 대시보드는 지역에서 온도 및 강우량에 대한 실시간 정보를 표시 하는 차트를 표시 합니다.
 
 ## <a name="reporting-scenarios"></a>보고 시나리오
 
-Azure Cosmos DB에 저장 된 데이터에 대 한 보고 대시보드를 설정 하는 방법에는 여러 가지가 있습니다. 다음 표에서는 부실 요구 사항 및 데이터의 크기에 따라 각 시나리오에 대 한 보고 설정에 대해 설명 합니다.
+Azure Cosmos DB에 저장 된 데이터에 대한 보고 대시보드를 설정 하는 방법에는 여러 가지가 있습니다. 다음 표에서는 부실 요구 사항 및 데이터의 크기에 따라 각 시나리오에 대한 보고 설정에 대해 설명 합니다.
 
 
 |시나리오 |설정 |
 |---------|---------|
 |1. 임시 보고서 생성 (새로 고침 안 함)    |  [가져오기 모드를 사용 하는 Power BI Azure Cosmos DB 커넥터](powerbi-visualize.md)       |
 |2. 정기적인 새로 고침을 사용 하 여 임시 보고서 생성   |  [가져오기 모드를 사용 하 Azure Cosmos DB 커넥터 Power BI (정기 새로 고침 예약 됨)](powerbi-visualize.md)       |
-|3. 대량 데이터 집합에 대 한 보고 (< 10gb)     |  증분 새로 고침을 사용 하는 Power BI Azure Cosmos DB 커넥터       |
-|4. 큰 데이터 집합에 대 한 실시간 보고    |  직접 쿼리 + Azure Analysis Services를 사용 하는 Power BI Azure Analysis Services 커넥터 (Azure Cosmos DB 커넥터)       |
-|5. 집계를 사용 하 여 라이브 데이터에 대 한 보고     |  [직접 쿼리 + Azure Databricks + Cosmos DB Spark 커넥터를 사용 하는 Spark 커넥터를 Power BI 합니다.](https://github.com/Azure/azure-cosmosdb-spark/wiki/Connecting-Cosmos-DB-with-PowerBI-using-spark-and-databricks-premium)       |
-|6. 대량 데이터 집합에 대 한 집계를 사용 하 여 라이브 데이터에 대 한 보고   |  직접 쿼리 + Azure Analysis Services + Azure Databricks + Cosmos DB Spark 커넥터를 사용 하는 Azure Analysis Services 커넥터를 Power BI 합니다.       |
+|3. 대량 데이터 집합에 대한 보고 (< 10gb)     |  증분 새로 고침을 사용 하는 Power BI Azure Cosmos DB 커넥터       |
+|4. 큰 데이터 집합에 대한 실시간 보고    |  직접 쿼리 + Azure Analysis Services를 사용 하는 Power BI Azure Analysis Services 커넥터 (Azure Cosmos DB 커넥터)       |
+|5. 집계를 사용 하 여 라이브 데이터에 대한 보고     |  [직접 쿼리 + Azure Databricks + Cosmos DB Spark 커넥터를 사용 하는 Spark 커넥터를 Power BI 합니다.](https://github.com/Azure/azure-cosmosdb-spark/wiki/Connecting-Cosmos-DB-with-PowerBI-using-spark-and-databricks-premium)       |
+|6. 대량 데이터 집합에 대한 집계를 사용 하 여 라이브 데이터에 대한 보고   |  직접 쿼리 + Azure Analysis Services + Azure Databricks + Cosmos DB Spark 커넥터를 사용 하는 Azure Analysis Services 커넥터를 Power BI 합니다.       |
 
-시나리오 1과 2는 Azure Cosmos DB Power BI 커넥터를 사용 하 여 쉽게 설정할 수 있습니다. 이 문서에서는 시나리오 3 및 4에 대 한 설정이 설명 되어 있습니다.
+시나리오 1과 2는 Azure Cosmos DB Power BI 커넥터를 사용 하 여 쉽게 설정할 수 있습니다. 이 문서에서는 시나리오 3 및 4에 대한 설정이 설명 되어 있습니다.
 
 ### <a name="power-bi-with-incremental-refresh"></a>증분 새로 고침을 사용 하는 Power BI
 
@@ -55,7 +55,7 @@ Azure Cosmos DB에 [날씨 데이터](https://catalog.data.gov/dataset/local-wea
 
    ![Azure Cosmos DB Power BI 커넥터](./media/create-real-time-weather-dashboard-powerbi/cosmosdb-powerbi-connector.png)
 
-1. **증분 새로 고침 구성** -데이터 집합에 대 한 증분 새로 고침을 구성 하려면 [Power BI를 사용 하 여 증분 새로 고침](/power-bi/service-premium-incremental-refresh) 문서의 단계를 따릅니다. 다음 스크린샷에 표시 된 것 처럼 범위 **시작** 및 범위 **종료** 매개 변수를 추가 합니다.
+1. **증분 새로 고침 구성** -데이터 집합에 대한 증분 새로 고침을 구성 하려면 [Power BI를 사용 하 여 증분 새로 고침](/power-bi/service-premium-incremental-refresh) 문서의 단계를 따릅니다. 다음 스크린샷에 표시 된 것 처럼 범위 **시작** 및 범위 **종료** 매개 변수를 추가 합니다.
 
    ![범위 매개 변수 구성](./media/create-real-time-weather-dashboard-powerbi/configure-range-parameters.png)
 
@@ -75,7 +75,7 @@ Azure Cosmos DB에 [날씨 데이터](https://catalog.data.gov/dataset/local-wea
    |날짜 (예:-2019-08-11 12:00:00)   |  String       |  [Document. date] > DateTime. ToText (범위 시작, "yyyy-mm-dd HH: mm: ss") 및 [Document. date] < DateTime. ToText (범위 끝, "yyyy-mm-dd HH: mm: ss")       |
 
 
-1. **새로 고침 정책 정의** -테이블에 대 한 **상황에 맞는** 메뉴의 **증분 새로 고침** 탭으로 이동 하 여 새로 고침 정책을 정의 합니다. **매일** 새로 고치도록 새로 고침 정책을 설정 하 고 마지막 달 데이터를 저장 합니다.
+1. **새로 고침 정책 정의** -테이블에 대한 **상황에 맞는** 메뉴의 **증분 새로 고침** 탭으로 이동 하 여 새로 고침 정책을 정의 합니다. **매일** 새로 고치도록 새로 고침 정책을 설정 하 고 마지막 달 데이터를 저장 합니다.
 
    ![새로 고침 정책 정의](./media/create-real-time-weather-dashboard-powerbi/define-refresh-policy.png)
 

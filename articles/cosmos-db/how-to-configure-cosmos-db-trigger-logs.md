@@ -1,5 +1,5 @@
 ---
-title: Cosmos DB에 대 한 Azure Functions 트리거를 사용 하 여 로그 구성 및 읽기
+title: Cosmos DB에 대한 Azure Functions 트리거를 사용 하 여 로그 구성 및 읽기
 description: Cosmos DB용 Azure Functions 트리거를 사용할 때 Azure Functions 로깅 파이프라인에 로그를 노출하는 방법 알아보기
 author: ealsur
 ms.service: cosmos-db

@@ -314,7 +314,7 @@ Python에서 특성을 지원 하지 않습니다.
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-`@BlobTrigger` 특성은 함수를 트리거한 blob에 대 한 액세스 권한을 제공 하는 데 사용 됩니다. 자세한 내용은 [트리거 예](#trigger---example) 를 참조 하세요.
+`@BlobTrigger` 특성은 함수를 트리거한 blob에 대한 액세스 권한을 제공 하는 데 사용 됩니다. 자세한 내용은 [트리거 예](#trigger---example) 를 참조 하세요.
 
 ---
 
@@ -352,7 +352,7 @@ Python에서 특성을 지원 하지 않습니다.
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-`@BlobTrigger` 특성은 함수를 트리거한 blob에 대 한 액세스 권한을 제공 하는 데 사용 됩니다. 자세한 내용은 [트리거 예](#trigger---example) 를 참조 하세요.
+`@BlobTrigger` 특성은 함수를 트리거한 blob에 대한 액세스 권한을 제공 하는 데 사용 됩니다. 자세한 내용은 [트리거 예](#trigger---example) 를 참조 하세요.
 
 ---
 
@@ -749,7 +749,7 @@ Python에서 특성을 지원 하지 않습니다.
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-`@BlobInput` 특성은 함수를 트리거한 blob에 대 한 액세스를 제공 합니다. 특성에 바이트 배열을 사용 하는 경우 `dataType`를 `binary`로 설정 합니다. 자세한 내용은 [입력 예](#input---example) 를 참조 하세요.
+`@BlobInput` 특성은 함수를 트리거한 blob에 대한 액세스를 제공 합니다. 특성에 바이트 배열을 사용 하는 경우 `dataType`를 `binary`로 설정 합니다. 자세한 내용은 [입력 예](#input---example) 를 참조 하세요.
 
 ---
 
@@ -788,7 +788,7 @@ Python에서 특성을 지원 하지 않습니다.
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-`@BlobInput` 특성은 함수를 트리거한 blob에 대 한 액세스를 제공 합니다. 특성에 바이트 배열을 사용 하는 경우 `dataType`를 `binary`로 설정 합니다. 자세한 내용은 [입력 예](#input---example) 를 참조 하세요.
+`@BlobInput` 특성은 함수를 트리거한 blob에 대한 액세스를 제공 합니다. 특성에 바이트 배열을 사용 하는 경우 `dataType`를 `binary`로 설정 합니다. 자세한 내용은 [입력 예](#input---example) 를 참조 하세요.
 
 ---
 
@@ -1115,7 +1115,7 @@ Python에서 특성을 지원 하지 않습니다.
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-`@BlobOutput` 특성은 함수를 트리거한 blob에 대 한 액세스를 제공 합니다. 특성에 바이트 배열을 사용 하는 경우 `dataType`를 `binary`로 설정 합니다. 자세한 내용은 [출력 예제](#output---example) 를 참조 하십시오.
+`@BlobOutput` 특성은 함수를 트리거한 blob에 대한 액세스를 제공 합니다. 특성에 바이트 배열을 사용 하는 경우 `dataType`를 `binary`로 설정 합니다. 자세한 내용은 [출력 예제](#output---example) 를 참조 하십시오.
 
 ---
 
@@ -1132,7 +1132,7 @@ Python에서 특성을 지원 하지 않습니다.
 |**type** | n/a | `blob`로 설정해야 합니다. |
 |**direction** | n/a | 출력 바인딩에 대해 `out`로 설정해야 합니다. 예외는 [사용](#output---usage) 섹션에서 표시됩니다. |
 |**name** | n/a | 함수 코드에서 Blob을 나타내는 변수의 이름입니다.  `$return`으로 설정하여 함수 반환 값을 참조합니다.|
-|**path** |**BlobPath** | Blob 컨테이너에 대 한 경로입니다. |
+|**path** |**BlobPath** | Blob 컨테이너에 대한 경로입니다. |
 |**연결** |**연결**| 이 바인딩에 사용할 스토리지 연결 문자열을 포함하는 앱 설정의 이름입니다. 앱 설정 이름이 "AzureWebJobs"로 시작하는 경우 여기에서 이름의 나머지만을 지정할 수 있습니다. 예를 들어 `connection`를 "MyStorage"로 설정 하는 경우 함수 런타임은 "MyStorage" 라는 앱 설정을 찾습니다. `connection`을 비워 두면 함수 런타임 기능은 `AzureWebJobsStorage`라는 앱 설정에서 기본 스토리지 연결 문자열을 사용합니다.<br><br>연결 문자열은 [Blob 전용 스토리지 계정](../storage/common/storage-account-overview.md#types-of-storage-accounts)이 아닌 범용 스토리지 계정의 문자열이어야 합니다.|
 |n/a | **Access** | 읽기 또는 쓰기를 나타냅니다. |
 
@@ -1163,7 +1163,7 @@ JavaScript에서는 `context.bindings.<name from function.json>`을 사용하여
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-`@BlobOutput` 특성은 함수를 트리거한 blob에 대 한 액세스를 제공 합니다. 특성에 바이트 배열을 사용 하는 경우 `dataType`를 `binary`로 설정 합니다. 자세한 내용은 [출력 예제](#output---example) 를 참조 하십시오.
+`@BlobOutput` 특성은 함수를 트리거한 blob에 대한 액세스를 제공 합니다. 특성에 바이트 배열을 사용 하는 경우 `dataType`를 `binary`로 설정 합니다. 자세한 내용은 [출력 예제](#output---example) 를 참조 하십시오.
 
 ---
 

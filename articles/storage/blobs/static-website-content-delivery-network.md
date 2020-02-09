@@ -16,7 +16,7 @@ ms.locfileid: "76908554"
 ---
 # <a name="integrate-a-static-website-with-azure-cdn"></a>Azure CDN와 정적 웹 사이트 통합
 
-Azure 저장소 계정에 호스팅된 [정적 웹 사이트](storage-blob-static-website.md) 에서 [AZURE Content Delivery Network (CDN)](../../cdn/cdn-overview.md) 를 사용 하도록 설정 하 여 콘텐츠를 캐시할 수 있습니다. Azure CDN를 사용 하 여 정적 웹 사이트의 사용자 지정 도메인 끝점을 구성 하 고, 사용자 지정 SSL 인증서를 프로 비전 하 고, 사용자 지정 재작성 규칙을 구성할 수 있습니다. Azure CDN을 구성하면 추가 비용이 발생하지만 전세계 어디에서나 웹 사이트에 대해 일관되게 낮은 대기 시간을 제공합니다. 또한 Azure CDN은 고유한 인증서를 사용하여 SSL 암호화를 제공합니다. 
+Azure 저장소 계정에 호스팅된 [정적 웹 사이트](storage-blob-static-website.md) 에서 [AZURE Content Delivery Network (CDN)](../../cdn/cdn-overview.md) 를 사용 하도록 설정 하 여 콘텐츠를 캐시할 수 있습니다. Azure CDN를 사용 하 여 정적 웹 사이트의 사용자 지정 도메인 엔드포인트을 구성 하 고, 사용자 지정 SSL 인증서를 프로 비전 하 고, 사용자 지정 재작성 규칙을 구성할 수 있습니다. Azure CDN을 구성하면 추가 비용이 발생하지만 전세계 어디에서나 웹 사이트에 대해 일관되게 낮은 대기 시간을 제공합니다. 또한 Azure CDN은 고유한 인증서를 사용하여 SSL 암호화를 제공합니다. 
 
 Azure CDN 가격 책정에 대한 정보는 [Azure CDN 가격 책정](https://azure.microsoft.com/pricing/details/cdn/)을 참조하세요.
 
@@ -40,10 +40,10 @@ Azure CDN 가격 책정에 대한 정보는 [Azure CDN 가격 책정](https://az
 
 6. **원본 호스트 이름** 필드에서 정적 웹 사이트 엔드포인트를 지정합니다. 
 
-   정적 웹 사이트 엔드포인트를 찾으려면 스토리지 계정에 대한 **정적 웹 사이트** 설정으로 이동합니다.  기본 끝점을 복사 하 여 CDN 구성에 붙여넣습니다.
+   정적 웹 사이트 엔드포인트를 찾으려면 스토리지 계정에 대한 **정적 웹 사이트** 설정으로 이동합니다.  기본 엔드포인트을 복사 하 여 CDN 구성에 붙여넣습니다.
 
    > [!IMPORTANT]
-   > URL에서 프로토콜 식별자 (*예:* HTTPS)와 후행 슬래시를 제거 해야 합니다. 예를 들어 정적 웹 사이트 끝점이 `https://mystorageaccount.z5.web.core.windows.net/`경우 **원본 호스트 이름** 필드에 `mystorageaccount.z5.web.core.windows.net`를 지정 합니다.
+   > URL에서 프로토콜 식별자 (*예:* HTTPS)와 후행 슬래시를 제거 해야 합니다. 예를 들어 정적 웹 사이트 엔드포인트이 `https://mystorageaccount.z5.web.core.windows.net/`경우 **원본 호스트 이름** 필드에 `mystorageaccount.z5.web.core.windows.net`를 지정 합니다.
 
    다음 이미지에서는 엔드포인트 구성의 예를 보여 줍니다.
 
@@ -73,4 +73,4 @@ Azure CDN에 이미 캐시된 개체는 개체의 TTL(Time-to-Live) 기간이 �
 
 ## <a name="next-steps"></a>다음 단계
 
-필드 Azure CDN 끝점에 사용자 지정 도메인을 추가 합니다. [자습서: 사용자 지정 도메인을 Azure CDN 끝점에 추가](../../cdn/cdn-map-content-to-custom-domain.md)를 참조 하세요.
+필드 Azure CDN 엔드포인트에 사용자 지정 도메인을 추가 합니다. [자습서: 사용자 지정 도메인을 Azure CDN 엔드포인트에 추가](../../cdn/cdn-map-content-to-custom-domain.md)를 참조 하세요.

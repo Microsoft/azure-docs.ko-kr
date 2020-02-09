@@ -36,7 +36,7 @@ ms.locfileid: "77060238"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트.
-* [SmartFile 테 넌 트](https://www.SmartFile.com/pricing/)입니다.
+* [SmartFile 테넌트](https://www.SmartFile.com/pricing/)입니다.
 * 관리자 권한이 있는 SmartFile의 사용자 계정
 
 ## <a name="assigning-users-to-smartfile"></a>SmartFile에 사용자 할당
@@ -113,7 +113,7 @@ Azure AD를 사용 하 여 자동 사용자 프로비저닝을 위한 SmartFile�
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5.  **관리자 자격 증명** 섹션 아래에 있는 **테 넌 트 URL**에 `https://<SmartFile sitename>.smartfile.com/ftp/scim`을 입력 합니다. 예는 `https://demo1test.smartfile.com/ftp/scim`같습니다. 이전에 **비밀 토큰**에서 검색 한 **전달자 토큰** 값 (ProductKey: 제품 암호)을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 smartfile에 연결할 수 있는지 확인 합니다. 연결에 실패 하는 경우 SmartFile 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
+5.  **관리자 자격 증명** 섹션 아래에 있는 **테넌트 URL**에 `https://<SmartFile sitename>.smartfile.com/ftp/scim`을 입력 합니다. 예는 `https://demo1test.smartfile.com/ftp/scim`같습니다. 이전에 **비밀 토큰**에서 검색 한 **전달자 토큰** 값 (ProductKey: 제품 암호)을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가 smartfile에 연결할 수 있는지 확인 합니다. 연결에 실패 하는 경우 SmartFile 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 

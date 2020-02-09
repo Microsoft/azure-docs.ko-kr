@@ -57,7 +57,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [무료 계정](https:/
 
 ### <a name="create-a-resource-group"></a>리소스 그룹 만들기
 
-리소스 그룹에는 배포에 대 한 모든 리소스가 포함 됩니다.
+리소스 그룹에는 배포에 대한 모든 리소스가 포함 됩니다.
 
 ```azurepowershell
 New-AzResourceGroup -Name Test-FW-RG -Location "East US"
@@ -168,7 +168,7 @@ Set-AzVirtualNetworkSubnetConfig `
 
 ## <a name="configure-an-application-rule"></a>애플리케이션 규칙 구성
 
-응용 프로그램 규칙은 [www.google.com](www.google.com) 에 대 한 아웃 바운드 액세스를 허용 합니다.
+응용 프로그램 규칙은 [www.google.com](www.google.com) 에 대한 아웃 바운드 액세스를 허용 합니다.
 
 ```azurepowershell
 $AppRule1 = New-AzFirewallApplicationRule -Name Allow-Google -SourceAddress 10.0.2.0/24 `
@@ -186,7 +186,7 @@ Azure Firewall은 기본적으로 허용되는 인프라 FQDN에 대한 기본 �
 
 ## <a name="configure-a-network-rule"></a>네트워크 규칙 구성
 
-네트워크 규칙은 포트 53 (DNS)에서 두 개의 IP 주소에 대 한 아웃 바운드 액세스를 허용 합니다.
+네트워크 규칙은 포트 53 (DNS)에서 두 개의 IP 주소에 대한 아웃 바운드 액세스를 허용 합니다.
 
 ```azurepowershell
 $NetRule1 = New-AzFirewallNetworkRule -Name "Allow-DNS" -Protocol UDP -SourceAddress 10.0.2.0/24 `
@@ -220,7 +220,7 @@ $NIC | Set-AzNetworkInterface
    $NIC.IpConfigurations.PrivateIpAddress
    ```
 
-1. 원격 데스크톱을 **Srv-Jump** 가상 머신과 연결하고 로그인합니다. 여기에서 **Srv-Work** 개인 IP 주소에 대 한 원격 데스크톱 연결을 열고 로그인 합니다.
+1. 원격 데스크톱을 **Srv-Jump** 가상 머신과 연결하고 로그인합니다. 여기에서 **Srv-Work** 개인 IP 주소에 대한 원격 데스크톱 연결을 열고 로그인 합니다.
 
 3. **SRV 작업**에서 PowerShell 창을 열고 다음 명령을 실행 합니다.
 
@@ -250,7 +250,7 @@ $NIC | Set-AzNetworkInterface
 
 ## <a name="clean-up-resources"></a>리소스 정리
 
-다음 자습서에 대 한 방화벽 리소스를 유지할 수 있습니다. 또는 더 이상 필요 하지 않은 경우에는 모든 방화벽 관련 리소스를 삭제 하는 **테스트-FW-RG** 리소스 그룹을 삭제 합니다.
+다음 자습서에 대한 방화벽 리소스를 유지할 수 있습니다. 또는 더 이상 필요 하지 않은 경우에는 모든 방화벽 관련 리소스를 삭제 하는 **테스트-FW-RG** 리소스 그룹을 삭제 합니다.
 
 ```azurepowershell
 Remove-AzResourceGroup -Name Test-FW-RG

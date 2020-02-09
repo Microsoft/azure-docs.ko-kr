@@ -147,7 +147,7 @@ IP 필터 규칙은 순서대로 적용되며 IP 주소와 일치하는 첫 번�
 
 Service Bus에 대한 액세스를 Azure 가상 네트워크로 제한하려면 다음 링크를 참조하세요.
 
-- [Service Bus에 대 한 Virtual Network 서비스 끝점][lnk-vnet]
+- [Service Bus에 대 한 Virtual Network 서비스 엔드포인트][lnk-vnet]
 
 <!-- Links -->
 

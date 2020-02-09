@@ -36,9 +36,9 @@ ms.locfileid: "74873032"
 
 ## <a name="find-detected-change-events-and-view-change-details"></a>검색 된 변경 이벤트를 찾고 변경 내용 보기
 
-리소스에서 변경 된 내용을 확인 하는 첫 번째 단계는 시간 창 내에서 해당 리소스와 관련 된 변경 이벤트를 찾는 것입니다. 각 변경 이벤트에는 리소스에서 변경 된 내용에 대 한 세부 정보도 포함 됩니다. 이 단계는 **resourceChanges** REST 끝점을 통해 수행 됩니다.
+리소스에서 변경 된 내용을 확인 하는 첫 번째 단계는 시간 창 내에서 해당 리소스와 관련 된 변경 이벤트를 찾는 것입니다. 각 변경 이벤트에는 리소스에서 변경 된 내용에 대 한 세부 정보도 포함 됩니다. 이 단계는 **resourceChanges** REST 엔드포인트을 통해 수행 됩니다.
 
-**ResourceChanges** 끝점은 요청 본문에서 다음 매개 변수를 허용 합니다.
+**ResourceChanges** 엔드포인트은 요청 본문에서 다음 매개 변수를 허용 합니다.
 
 - **resourceId** \[필수\]: 변경 내용을 찾을 Azure 리소스입니다.
 - **interval** \[required\]: **줄루어 표준 시간대 (Z)** 를 사용 하 여 변경 이벤트를 확인 하는 경우 _시작_ 및 _종료_ 날짜가 포함 된 속성입니다.
@@ -156,9 +156,9 @@ POST https://management.azure.com/providers/Microsoft.ResourceGraph/resourceChan
 
 ## <a name="compare-resource-changes"></a>리소스 변경 내용 비교
 
-**ResourceChanges** 끝점에서 **changeid** 를 사용 하 여 **resourceChangeDetails** REST 끝점을 사용 하 여 변경 된 리소스의 이전 및 이후 스냅숏을 가져옵니다.
+**ResourceChanges** 엔드포인트에서 **changeid** 를 사용 하 여 **resourceChangeDetails** REST 엔드포인트을 사용 하 여 변경 된 리소스의 이전 및 이후 스냅숏을 가져옵니다.
 
-**ResourceChangeDetails** 끝점에는 요청 본문에 두 개의 매개 변수가 필요 합니다.
+**ResourceChangeDetails** 엔드포인트에는 요청 본문에 두 개의 매개 변수가 필요 합니다.
 
 - **resourceId**: 변경 내용을 비교할 Azure 리소스입니다.
 - **Changeid**: **resourceChanges**에서 수집 된 **resourceId** 에 대 한 고유 변경 이벤트입니다.

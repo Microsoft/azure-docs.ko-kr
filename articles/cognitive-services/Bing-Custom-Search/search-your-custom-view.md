@@ -24,7 +24,7 @@ ms.locfileid: "76983115"
 ![Bing custom search 포털의 스크린샷](media/portal-search-screen.png)
 ## <a name="create-a-search-query"></a>검색 쿼리 만들기 
 
-Bing Custom Search [포털](https://customsearch.ai)에 로그인 한 후에 검색 인스턴스를 선택 하 고 **프로덕션** 탭을 클릭 합니다. **끝점**에서 api 끝점 (예: Web api)을 선택 합니다. 사용자 구독에 따라 표시되는 엔드포인트가 달라집니다.
+Bing Custom Search [포털](https://customsearch.ai)에 로그인 한 후에 검색 인스턴스를 선택 하 고 **프로덕션** 탭을 클릭 합니다. **엔드포인트**에서 api 엔드포인트 (예: Web api)을 선택 합니다. 사용자 구독에 따라 표시되는 엔드포인트가 달라집니다.
 
 검색 쿼리를 만들려면 엔드포인트에 대한 매개 변수 값을 입력합니다. 포털에 표시되는 매개 변수는 선택한 엔드포인트에 따라 변경될 수 있습니다. 자세한 내용은 [Custom Search API 참조](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference#query-parameters) 를 참조 하세요. 검색 인스턴스가 사용 하는 구독을 변경 하려면 적절 한 구독 키를 추가 하 고 적절 한 시장 및/또는 언어 매개 변수를 업데이트 합니다.
 

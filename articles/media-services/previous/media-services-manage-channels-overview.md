@@ -49,7 +49,7 @@ Media Services를 사용 하면 서비스에 전송 되는 기여 피드에서 M
 > [!NOTE]
 > 2018년 5월 12일부터 라이브 채널은 RTP/MPEG-2 전송 스트림 수집 프로토콜을 더 이상 지원하지 않습니다. RTP/MPEG-2에서 RTMP 또는 조각난 MP4(부드러운 스트리밍) 수집 프로토콜로 마이그레이션하세요.
 
-## <a name="streaming-endpoints-channels-programs"></a>스트리밍 끝점, 채널, 프로그램
+## <a name="streaming-endpoints-channels-programs"></a>스트리밍 엔드포인트, 채널, 프로그램
 
 Azure Media Services에서 **채널**, **프로그램** 및 **스트리밍 엔드포인트**은 수집, 형식 지정, DVR, 보안, 확장성 및 중복성을 포함한 라이브 스트리밍 기능 전반을 처리합니다.
 

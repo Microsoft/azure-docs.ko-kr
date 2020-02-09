@@ -80,7 +80,7 @@ Dynamics 연결 서비스에 다음 속성이 지원됩니다.
 | authenticationType | Dynamics 서버에 연결하기 위한 인증 유형입니다. 허용 되는 값은 **AADServicePrincipal** 또는 **"Office365"** 입니다. | yes |
 | servicePrincipalId | Azure Active Directory 애플리케이션의 클라이언트 ID를 지정합니다. | `AADServicePrincipal` 인증을 사용 하는 경우 예 |
 | servicePrincipalCredentialType | 서비스 주체 인증에 사용할 자격 증명 유형을 지정합니다. 허용 되는 값은 **ServicePrincipalKey** 또는 **ServicePrincipalCert**입니다. | `AADServicePrincipal` 인증을 사용 하는 경우 예 |
-| servicePrincipalCredential | 서비스 주체 자격 증명을 지정 합니다. <br>`ServicePrincipalKey`를 자격 증명 유형으로 사용 하는 경우 `servicePrincipalCredential`는 문자열 (ADF는 연결 된 서비스 배포 시 암호화) 또는 AKV의 비밀에 대 한 참조 일 수 있습니다. <br>`ServicePrincipalCert`를 자격 증명으로 사용 하는 경우 `servicePrincipalCredential`는 AKV의 인증서에 대 한 참조 여야 합니다. | `AADServicePrincipal` 인증을 사용 하는 경우 예 | 
+| servicePrincipalCredential | 서비스 주체 자격 증명을 지정 합니다. <br>`ServicePrincipalKey`를 자격 증명 유형으로 사용 하는 경우 `servicePrincipalCredential`는 문자열 (ADF는 연결 된 서비스 배포 시 암호화) 또는 AKV의 비밀에 대한 참조 일 수 있습니다. <br>`ServicePrincipalCert`를 자격 증명으로 사용 하는 경우 `servicePrincipalCredential`는 AKV의 인증서에 대한 참조 여야 합니다. | `AADServicePrincipal` 인증을 사용 하는 경우 예 | 
 | username | Dynamics에 연결할 사용자 이름을 지정합니다. | `Office365` 인증을 사용 하는 경우 예 |
 | 암호 | username에 지정한 사용자 계정의 암호를 지정합니다. 이 필드를 SecureString으로 표시하여 Data Factory에 안전하게 저장하거나 [Azure Key Vault에 저장되는 비밀을 참조](store-credentials-in-key-vault.md)합니다. | `Office365` 인증을 사용 하는 경우 예 |
 | connectVia | 데이터 저장소에 연결하는 데 사용할 [통합 런타임](concepts-integration-runtime.md)입니다. 지정하지 않으면 기본 Azure Integration Runtime을 사용합니다. | 원본에 연결된 서비스에 통합 런타임이 없는 경우 원본은 아니요, 싱크는 예입니다. |
@@ -396,7 +396,7 @@ Dynamics에서 데이터를 복사하는 경우 Dynamics 데이터 형식에서 
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
+속성에 대한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 Data Factory에서 복사 활동을 통해 원본 및 싱크로 지원되는 데이터 저장소의 목록은 [지원되는 데이터 저장소](copy-activity-overview.md#supported-data-stores-and-formats)를 참조하세요.

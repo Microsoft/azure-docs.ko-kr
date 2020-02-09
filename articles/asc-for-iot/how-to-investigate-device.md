@@ -24,9 +24,9 @@ ms.locfileid: "68596243"
 ---
 # <a name="investigate-a-suspicious-iot-device"></a>의심스러운 IoT 디바이스 조사
 
-IoT 서비스 경고에 대 한 Azure Security Center은 IoT 장치에서 의심 스러운 활동에 참여 하는 것으로 의심 되는 경우 또는 장치가 손상 된 경우 표시 될 때 명확한 표시를 제공 합니다. 
+IoT 서비스 경고에 대한 Azure Security Center은 IoT 장치에서 의심 스러운 활동에 참여 하는 것으로 의심 되는 경우 또는 장치가 손상 된 경우 표시 될 때 명확한 표시를 제공 합니다. 
 
-이 가이드에서는 제공 되는 조사 제안을 사용 하 여 조직에 대 한 잠재적인 위험을 확인 하 고, 향후에 비슷한 공격을 방지 하는 가장 좋은 방법을 결정 하는 방법에 대해 알아봅니다.  
+이 가이드에서는 제공 되는 조사 제안을 사용 하 여 조직에 대한 잠재적인 위험을 확인 하 고, 향후에 비슷한 공격을 방지 하는 가장 좋은 방법을 결정 하는 방법에 대해 알아봅니다.  
 
 > [!div class="checklist"]
 > * 디바이스 데이터 찾기
@@ -37,7 +37,7 @@ IoT 서비스 경고에 대 한 Azure Security Center은 IoT 장치에서 의심
 
 기본적으로 IoT 용 Azure Security Center은 Log Analytics 작업 영역에 보안 경고 및 권장 사항을 저장 합니다. 원시 보안 데이터를 저장하도록 선택할 수도 있습니다.
 
-데이터 저장소에 대 한 Log Analytics 작업 영역을 찾으려면 다음을 수행 합니다.
+데이터 저장소에 대한 Log Analytics 작업 영역을 찾으려면 다음을 수행 합니다.
 
 1. IoT Hub를 엽니다. 
 1. **보안**에서 **개요**를 클릭 한 다음 **설정**을 선택 합니다.
@@ -46,13 +46,13 @@ IoT 서비스 경고에 대 한 Azure Security Center은 IoT 장치에서 의심
 
 구성이 완료되면 다음을 수행하여 Log Analytics 작업 영역에 저장된 데이터에 액세스합니다.
 
-1. IoT Hub에서 IoT 경고에 대 한 Azure Security Center를 선택 하 고 클릭 합니다. 
+1. IoT Hub에서 IoT 경고에 대한 Azure Security Center를 선택 하 고 클릭 합니다. 
 1. **추가 조사**를 클릭합니다. 
 1. **이 경고가 있는 디바이스를 확인하려면 여기를 클릭하여 DeviceId 열을 보십시오**를 선택합니다.
 
 ## <a name="investigation-steps-for-suspicious-iot-devices"></a>의심스러운 IoT 디바이스에 대한 조사 단계
 
-IoT 장치에 대 한 정보 및 원시 데이터를 보려면 Log Analytics 작업 영역으로 이동 하 여 [데이터에 액세스](#how-can-i-access-my-data)합니다.
+IoT 장치에 대한 정보 및 원시 데이터를 보려면 Log Analytics 작업 영역으로 이동 하 여 [데이터에 액세스](#how-can-i-access-my-data)합니다.
 
 아래 샘플 kql 쿼리를 참조 하 여 장치에서 경고와 활동을 조사 하는 작업을 시작 하세요.
 

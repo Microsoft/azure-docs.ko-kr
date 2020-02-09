@@ -35,7 +35,7 @@ Batch [관리 .net][api_mgmt_net] 라이브러리를 사용 하 여 batch 계정
 * **Batch 계정을 만들고 삭제** 합니다. 예를 들어 ISV(독립 소프트웨어 공급업체)가 대금 청구를 위해 각각 별도의 Batch 계정에 할당되는 클라이언트용 서비스를 제공하는 경우 고객 포털에 계정 만들기 및 삭제 기능을 추가할 수 있습니다.
 * **계정 키를 검색하고 다시 생성** 합니다. 이렇게 하면 주기적인 롤오버 또는 계정 키 만료를 적용하는 보안 정책을 준수할 수 있습니다. 다양한 Azure 영역에 여러 Batch 계정이 있는 경우 롤오버 프로세스를 자동화하면 솔루션의 효율성이 높아집니다.
 * **계정 할당량을 확인** 하고 어떤 Batch 계정에 어떤 제한이 있는지를 확인하는 데 시행 착오 추측을 배제합니다. 작업을 시작하기 전에 계정 할당량을 확인하거나 풀을 만들거나 컴퓨팅 노드를 추가함으로써 이러한 컴퓨팅 리소스가 만들어지는 위치 또는 시기를 능동적으로 조정할 수 있습니다. 해당 계정에 추가 리소스를 할당하기 전에 할당량 증가가 필요한 계정을 확인할 수 있습니다.
-* 모든 기능을 갖춘 관리 환경에 대 한 **다른 Azure 서비스의 기능을 결합** 하 여 동일한 응용 프로그램에서 Batch management .net, [Azure Active Directory][aad_about]및 [Azure Resource Manager][resman_overview] 를 함께 사용 합니다. 이러한 기능과 해당 API를 사용하여 원활한 인증 환경, 리소스 그룹을 만들고 삭제하는 기능 및 엔드투엔드 관리 솔루션에 대해 위에 설명된 기능을 제공할 수 있습니다.
+* 모든 기능을 갖춘 관리 환경에 대한 **다른 Azure 서비스의 기능을 결합** 하 여 동일한 응용 프로그램에서 Batch management .net, [Azure Active Directory][aad_about]및 [Azure Resource Manager][resman_overview] 를 함께 사용 합니다. 이러한 기능과 해당 API를 사용하여 원활한 인증 환경, 리소스 그룹을 만들고 삭제하는 기능 및 엔드투엔드 관리 솔루션에 대해 위에 설명된 기능을 제공할 수 있습니다.
 
 > [!NOTE]
 > 이 문서에서는 Batch 계정, 키 및 할당량을 프로그래밍 방식으로 관리 하는 방법에 중점을 둔 반면 [Azure Portal][azure_portal]를 사용 하 여 이러한 작업을 대부분 수행할 수 있습니다. 자세한 내용은 [Azure Portal에서 Azure Batch 계정 만들기](batch-account-create-portal.md) 및 [Azure Batch 서비스에 대한 할당량 및 제한](batch-quota-limit.md)을 참조하세요.
@@ -90,7 +90,7 @@ BatchAccountRegenerateKeyResponse newKeys =
 ```
 
 > [!TIP]
-> 관리 애플리케이션에 대한 간소화된 연결 워크플로를 만들 수 있습니다. 먼저 [ListKeysAsync][net_list_keys]를 사용 하 여 관리 하려는 Batch 계정에 대 한 계정 키를 가져옵니다. 그런 다음 [Batchclient][net_batch_client]를 초기화할 때 사용 되는 Batch .net 라이브러리의 [Batchsharedkeycredentials][net_sharedkeycred] 클래스를 초기화할 때이 키를 사용 합니다.
+> 관리 애플리케이션에 대한 간소화된 연결 워크플로를 만들 수 있습니다. 먼저 [ListKeysAsync][net_list_keys]를 사용 하 여 관리 하려는 Batch 계정에 대한 계정 키를 가져옵니다. 그런 다음 [Batchclient][net_batch_client]를 초기화할 때 사용 되는 Batch .net 라이브러리의 [Batchsharedkeycredentials][net_sharedkeycred] 클래스를 초기화할 때이 키를 사용 합니다.
 > 
 > 
 
@@ -142,7 +142,7 @@ Console.WriteLine("Active job and job schedule quota: {0}", account.Properties.A
 ```
 
 > [!IMPORTANT]
-> Azure 구독 및 서비스에 대 한 기본 할당량이 있지만 이러한 제한의 대부분은 [Azure Portal][azure_portal]에서 요청을 실행 하 여 발생할 수 있습니다. 예를 들어 Batch 계정 할당량을 늘리는 방법에 대한 지침은 [Azure Batch 서비스에 대한 할당량 및 제한](batch-quota-limit.md) 을 참조하세요.
+> Azure 구독 및 서비스에 대한 기본 할당량이 있지만 이러한 제한의 대부분은 [Azure Portal][azure_portal]에서 요청을 실행 하 여 발생할 수 있습니다. 예를 들어 Batch 계정 할당량을 늘리는 방법에 대한 지침은 [Azure Batch 서비스에 대한 할당량 및 제한](batch-quota-limit.md) 을 참조하세요.
 > 
 > 
 

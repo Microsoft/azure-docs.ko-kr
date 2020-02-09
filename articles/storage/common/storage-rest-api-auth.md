@@ -65,7 +65,7 @@ REST API에 대 한 호출은 클라이언트에서 수행 하는 요청과 서�
 
 **요청 메서드**: GET. 이 동사는 요청 개체의 속성으로 지정되는 HTTP 메서드입니다. 호출하는 API에 따라 이 동사의 다른 값으로 HEAD, PUT 및 DELETE가 포함됩니다.
 
-**요청 URI**: `https://myaccount.blob.core.windows.net/?comp=list`.  요청 URI는 blob storage 계정 끝점 `http://myaccount.blob.core.windows.net`에서 만들어지고 리소스 문자열 `/?comp=list`됩니다.
+**요청 URI**: `https://myaccount.blob.core.windows.net/?comp=list`.  요청 URI는 blob storage 계정 엔드포인트 `http://myaccount.blob.core.windows.net`에서 만들어지고 리소스 문자열 `/?comp=list`됩니다.
 
 [URI 매개 변수](/rest/api/storageservices/List-Containers2#uri-parameters): ListContainers를 호출할 때 사용할 수 있는 추가 쿼리 매개 변수가 있습니다. 이러한 매개 변수 중 일부는 필터링에 사용되는 호출 *timeout*(초) 및 *prefix*입니다.
 

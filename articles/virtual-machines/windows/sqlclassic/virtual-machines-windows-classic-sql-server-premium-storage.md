@@ -411,7 +411,7 @@ Always On 가용성 그룹 사용 여부에 따라 SQL Server 배포 관련 고�
 > [!NOTE]
 > VHD 디스크를 복사할 때는 크기를 고려해야 합니다. 즉, 디스크는 크기에 따라 각기 다른 Premium Storage 디스크 형식에 속하며 해당하는 디스크 성능 사양이 결정됩니다. Azure에서는 디스크 크기를 가장 가까운 크기로 반올림하므로 400GB 디스크의 경우 P20으로 반올림됩니다. OS VHD의 기존 IO 요구 사항에 따라서는 해당 디스크를 Premium Storage 계정으로 마이그레이션하지 않아도 될 수 있습니다.
 
-외부에서 SQL Server에 액세스하는 경우에는 클라우드 서비스 VIP가 변경됩니다. 끝점, ACL 및 DNS 설정도 업데이트해야 합니다.
+외부에서 SQL Server에 액세스하는 경우에는 클라우드 서비스 VIP가 변경됩니다. 엔드포인트, ACL 및 DNS 설정도 업데이트해야 합니다.
 
 ## <a name="existing-deployments-that-use-always-on-availability-groups"></a>Always On 가용성 그룹을 사용하는 기존 배포
 

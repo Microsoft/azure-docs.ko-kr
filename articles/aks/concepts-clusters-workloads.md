@@ -41,7 +41,7 @@ Kubernetes 클러스터는 다음 두 가지 구성 요소로 구분됩니다.
 
 ## <a name="control-plane"></a>제어 평면
 
-AKS 클러스터를 만들면 컨트롤 평면이 자동으로 만들어지고 구성 됩니다. 이 컨트롤 평면은 사용자 로부터 추상화 된 관리 되는 Azure 리소스로 제공 됩니다. 제어 평면에 대 한 비용은 없으며 AKS 클러스터의 일부인 노드만 있습니다.
+AKS 클러스터를 만들면 컨트롤 평면이 자동으로 만들어지고 구성 됩니다. 이 컨트롤 평면은 사용자 로부터 추상화 된 관리 되는 Azure 리소스로 제공 됩니다. 제어 평면에 대한 비용은 없으며 AKS 클러스터의 일부인 노드만 있습니다.
 
 제어 평면에는 다음과 같은 핵심 Kubernetes 구성 요소가 포함 됩니다.
 
@@ -50,13 +50,13 @@ AKS 클러스터를 만들면 컨트롤 평면이 자동으로 만들어지고 �
 - *kube-scheduler* - 애플리케이션을 만들거나 확장할 때 스케줄러는 워크로드를 실행할 수 있는 노드를 결정하고 시작합니다.
 - *kube-controller-manager* - 컨트롤러 관리자는 Pod 복제 및 노드 작업 처리와 같은 작업을 수행하는 다수의 작은 컨트롤러를 감독합니다.
 
-AKS는 전용 API 서버, 스케줄러 등의 단일 테 넌 트 제어 평면을 제공 합니다. 노드의 개수 및 크기를 정의 하 고 Azure 플랫폼은 제어 평면과 노드 간에 보안 통신을 구성 합니다. 제어 평면과의 상호 작용은 `kubectl` 또는 Kubernetes 대시보드와 같은 Kubernetes Api를 통해 발생 합니다.
+AKS는 전용 API 서버, 스케줄러 등의 단일 테넌트 제어 평면을 제공 합니다. 노드의 개수 및 크기를 정의 하 고 Azure 플랫폼은 제어 평면과 노드 간에 보안 통신을 구성 합니다. 제어 평면과의 상호 작용은 `kubectl` 또는 Kubernetes 대시보드와 같은 Kubernetes Api를 통해 발생 합니다.
 
-이 관리 되는 제어 평면은 항상 사용 가능한 *etcd* 스토어와 같은 구성 요소를 구성할 필요가 없음을 의미 합니다. 또한 제어 평면에 직접 액세스할 수 없습니다. Kubernetes에 대 한 업그레이드는 Azure CLI 또는 Azure Portal를 통해 오케스트레이션 됩니다 .이는 제어 평면과 노드를 업그레이드 합니다. 가능한 문제를 해결 하기 위해 Azure Monitor 로그를 통해 제어 평면 로그를 검토할 수 있습니다.
+이 관리 되는 제어 평면은 항상 사용 가능한 *etcd* 스토어와 같은 구성 요소를 구성할 필요가 없음을 의미 합니다. 또한 제어 평면에 직접 액세스할 수 없습니다. Kubernetes에 대한 업그레이드는 Azure CLI 또는 Azure Portal를 통해 오케스트레이션 됩니다 .이는 제어 평면과 노드를 업그레이드 합니다. 가능한 문제를 해결 하기 위해 Azure Monitor 로그를 통해 제어 평면 로그를 검토할 수 있습니다.
 
 특정 방식으로 제어 평면을 구성 하거나 직접 액세스 해야 하는 경우 [aks][aks-engine]를 사용 하 여 사용자 고유의 Kubernetes 클러스터를 배포할 수 있습니다.
 
-관련 모범 사례는 [AKS에서 클러스터 보안 및 업그레이드에 대 한 모범 사례][operator-best-practices-cluster-security]를 참조 하세요.
+관련 모범 사례는 [AKS에서 클러스터 보안 및 업그레이드에 대한 모범 사례][operator-best-practices-cluster-security]를 참조 하세요.
 
 ## <a name="nodes-and-node-pools"></a>노드 및 노드 풀
 
@@ -70,13 +70,13 @@ AKS는 전용 API 서버, 스케줄러 등의 단일 테 넌 트 제어 평면�
 
 노드의 Azure VM 크기는 CPU 수, 메모리 크기, 사용 가능한 스토리지(예: 고성능 SSD 또는 일반 HDD)의 크기 및 유형을 정의합니다. 대용량의 CPU와 메모리 또는 고성능 스토리지가 필요한 애플리케이션이 요구되는 경우 노드 크기를 적절히 계획합니다. 요구에 맞게 AKS 클러스터의 노드 수를 확장할 수도 있습니다.
 
-AKS에서 클러스터의 노드에 대한 VM 이미지는 현재 Ubuntu Linux 또는 Windows Server 2019 기반입니다. AKS 클러스터를 만들거나 노드 수를 확장하면 Azure 플랫폼에서 요청된 수의 VM을 만들고 구성합니다. 수동으로 진행해야 하는 구성은 없습니다. 에이전트 노드는 표준 가상 머신으로 청구 되므로 사용 중인 VM 크기에 대 한 모든 할인([Azure 예약][reservation-discounts] 포함)이 자동으로 적용 됩니다.
+AKS에서 클러스터의 노드에 대한 VM 이미지는 현재 Ubuntu Linux 또는 Windows Server 2019 기반입니다. AKS 클러스터를 만들거나 노드 수를 확장하면 Azure 플랫폼에서 요청된 수의 VM을 만들고 구성합니다. 수동으로 진행해야 하는 구성은 없습니다. 에이전트 노드는 표준 가상 머신으로 청구 되므로 사용 중인 VM 크기에 대한 모든 할인([Azure 예약][reservation-discounts] 포함)이 자동으로 적용 됩니다.
 
 다른 호스트 OS, container runtime을 사용 하거나 사용자 지정 패키지를 포함 해야 하는 경우 [aks][aks-engine]를 사용 하 여 사용자 고유의 Kubernetes 클러스터를 배포할 수 있습니다. 업스트림 `aks-engine`은 AKS 클러스터에서 공식적으로 지원되기 전에 기능을 릴리스하고 구성 옵션을 제공합니다. 예를 들어 모비(Moby) 이외의 컨테이너 런타임을 사용하려면 `aks-engine`을 사용하여 Kubernetes 클러스터를 구성하고 배포할 수 있습니다.
 
 ### <a name="resource-reservations"></a>리소스 예약
 
-노드 리소스는 AKS에서 클러스터의 일부로 노드 기능을 수행 하는 데 활용 됩니다. 이로 인해 AKS에서 사용 될 때 노드의 총 리소스와 할당 된 리소스 간의 불일치가 생성 될 수 있습니다. 이는 사용자가 배포한 pod에 대 한 요청 및 제한을 설정할 때 주의 해야 합니다.
+노드 리소스는 AKS에서 클러스터의 일부로 노드 기능을 수행 하는 데 활용 됩니다. 이로 인해 AKS에서 사용 될 때 노드의 총 리소스와 할당 된 리소스 간의 불일치가 생성 될 수 있습니다. 이는 사용자가 배포한 pod에 대한 요청 및 제한을 설정할 때 주의 해야 합니다.
 
 노드의 할당 된 리소스를 찾으려면 다음을 실행 합니다.
 ```kubectl
@@ -99,7 +99,7 @@ kubectl describe node [NODE_NAME]
 
 1. 컨테이너 만들기 및 종료를 관리 하기 위해 kubelet 데몬이 모든 Kubernetes agent 노드에 설치 됩니다. 기본적으로 AKS에서이 디먼은 다음 제거 규칙을 포함 합니다 *. 메모리. 750Mi < 사용할 수 있습니다*. 즉, 항상 노드에 750 mi를 항상 할당 해야 함을 의미 합니다.  호스트가 사용 가능한 메모리의 임계값 보다 낮은 경우 kubelet는 실행 중인 pod 중 하나를 종료 하 여 호스트 컴퓨터에서 메모리를 확보 하 고 보호 합니다. 이는 사용 가능한 메모리가 750Mi 임계값을 초과 하면 사후 대응 작업입니다.
 
-2. 두 번째 값은 kubelet 데몬이 제대로 작동 하려면 (kube-reserved)에 대 한 메모리 예약의 점진적 률입니다.
+2. 두 번째 값은 kubelet 데몬이 제대로 작동 하려면 (kube-reserved)에 대한 메모리 예약의 점진적 률입니다.
     - 처음 4gb 메모리의 25%
     - 다음 4gb 메모리의 20% (최대 8gb)
     - 다음 8gb 메모리의 10% (최대 16gb)
@@ -114,7 +114,7 @@ kubectl describe node [NODE_NAME]
 
 Kubernetes 자체를 예약 하는 것 외에도, 기본 노드 OS는 OS 함수를 유지 관리할 수 있는 CPU 및 메모리 리소스의 양을 예약 합니다.
 
-관련 모범 사례는 [AKS의 기본 scheduler 기능에 대 한 모범 사례][operator-best-practices-scheduler]를 참조 하세요.
+관련 모범 사례는 [AKS의 기본 scheduler 기능에 대한 모범 사례][operator-best-practices-scheduler]를 참조 하세요.
 
 ### <a name="node-pools"></a>노드 풀
 
@@ -125,7 +125,7 @@ Kubernetes 자체를 예약 하는 것 외에도, 기본 노드 OS는 OS 함수�
 
 AKS 클러스터를 확장 또는 업그레이드할 때 기본 노드 풀에 대한 작업이 수행됩니다. 특정 노드 풀의 크기를 조정 하거나 업그레이드 하도록 선택할 수도 있습니다. 업그레이드 작업의 경우, 모든 노드가 성공적으로 업그레이드될 때까지 실행 중인 컨테이너는 노드 풀의 다른 노드에 예약됩니다.
 
-AKS에서 여러 노드 풀을 사용 하는 방법에 대 한 자세한 내용은 [AKS에서 클러스터에 대 한 여러 노드 풀 만들기 및 관리][use-multiple-node-pools]를 참조 하세요.
+AKS에서 여러 노드 풀을 사용 하는 방법에 대한 자세한 내용은 [AKS에서 클러스터에 대한 여러 노드 풀 만들기 및 관리][use-multiple-node-pools]를 참조 하세요.
 
 ### <a name="node-selectors"></a>노드 선택기
 
@@ -146,7 +146,7 @@ spec:
     "beta.kubernetes.io/os": linux
 ```
 
-Pod가 예약 된 위치를 제어 하는 방법에 대 한 자세한 내용은 [AKS의 advanced scheduler 기능 모범 사례][operator-best-practices-advanced-scheduler]를 참조 하세요.
+Pod가 예약 된 위치를 제어 하는 방법에 대한 자세한 내용은 [AKS의 advanced scheduler 기능 모범 사례][operator-best-practices-advanced-scheduler]를 참조 하세요.
 
 ## <a name="pods"></a>Pod
 

@@ -187,7 +187,7 @@ cmd /c ""%MSMPI_BIN%\mpiexec.exe"" -c 1 -wdir %AZ_BATCH_TASK_SHARED_DIR% MyMPIAp
 * `AZ_BATCH_TASK_SHARED_DIR`
 * `AZ_BATCH_IS_CURRENT_NODE_MASTER`
 
-이러한 및 다른 Batch 계산 노드 환경 변수에 대 한 자세한 내용 및 표시 유형에 대 한 자세한 내용은 [compute 노드 환경 변수][msdn_env_var]를 참조 하세요.
+이러한 및 다른 Batch 계산 노드 환경 변수에 대한 자세한 내용 및 표시 유형에 대한 자세한 내용은 [compute 노드 환경 변수][msdn_env_var]를 참조 하세요.
 
 > [!TIP]
 > Batch Linux MPI 코드 샘플은 이러한 다양한 환경 변수 사용 방법의 예를 포함합니다. [조정-cmd][coord_cmd_example] Bash 스크립트는 Azure Storage에서 공용 응용 프로그램 및 입력 파일을 다운로드 하 고, 마스터 노드에서 Nfs (네트워크 파일 시스템) 공유를 사용 하도록 설정 하 고, 다중 인스턴스 작업에 할당 된 다른 노드를 nfs 클라이언트로 구성 합니다.
@@ -213,12 +213,12 @@ cmd /c ""%MSMPI_BIN%\mpiexec.exe"" -c 1 -wdir %AZ_BATCH_TASK_SHARED_DIR% MyMPIAp
 
 다중 인스턴스 작업을 삭제하는 경우 주 및 모든 하위 작업도 Batch 서비스에서 삭제됩니다. 모든 하위 작업 디렉터리 및 해당 파일은 표준 작업의 경우처럼 컴퓨팅 노드에서 삭제됩니다.
 
-[MaxTaskRetryCount][net_taskconstraint_maxretry], [MaxWallClockTime][net_taskconstraint_maxwallclock] [및 작업 이름 속성과 같은][net_taskconstraint_retention] 다중 인스턴스 작업에 대 한 [taskconstraints][net_taskconstraints] 는 표준 태스크에 대 한 것 처럼 적용 되며 주 및 모든 하위 작업에 적용 됩니다. 그러나 다중 인스턴스 태스크를 작업에 추가한 후에는 [보존][net_taskconstraint_retention] 여부 속성을 변경할 경우이 변경 내용은 주 작업에만 적용 됩니다. 모든 하위 작업은 원래 [보존][net_taskconstraint_retention]을 계속 해 서 사용 합니다.
+[MaxTaskRetryCount][net_taskconstraint_maxretry], [MaxWallClockTime][net_taskconstraint_maxwallclock] [및 작업 이름 속성과 같은][net_taskconstraint_retention] 다중 인스턴스 작업에 대한 [taskconstraints][net_taskconstraints] 는 표준 태스크에 대한 것 처럼 적용 되며 주 및 모든 하위 작업에 적용 됩니다. 그러나 다중 인스턴스 태스크를 작업에 추가한 후에는 [보존][net_taskconstraint_retention] 여부 속성을 변경할 경우이 변경 내용은 주 작업에만 적용 됩니다. 모든 하위 작업은 원래 [보존][net_taskconstraint_retention]을 계속 해 서 사용 합니다.
 
 컴퓨팅 노드의 최근 작업 목록은 최근 작업이 다중 인스턴스 작업의 일부일 경우 하위 작업의 ID를 반영합니다.
 
 ## <a name="obtain-information-about-subtasks"></a>하위 작업에 대한 정보 가져오기
-Batch .NET 라이브러리를 사용 하 여 하위 작업에 대 한 정보를 가져오려면 [Cloudtask. ListSubtasks 작업][net_task_listsubtasks] 메서드를 호출 합니다. 이 메서드는 모든 하위 작업에 대한 정보 및 작업을 실행하는 컴퓨팅 노드에 대한 정보를 반환합니다. 이 정보로부터 각 하위 작업의 루트 디렉터리, 풀 ID, 현재 상태, 종료 코드 등을 확인할 수 있습니다. 이 정보를 [PoolOperations 파일][poolops_getnodefile] 메서드와 함께 사용 하 여 하위 태스크의 파일을 가져올 수 있습니다. 이 메서드는 주 작업(ID 0)에 대한 정보를 반환하지 않습니다.
+Batch .NET 라이브러리를 사용 하 여 하위 작업에 대한 정보를 가져오려면 [Cloudtask. ListSubtasks 작업][net_task_listsubtasks] 메서드를 호출 합니다. 이 메서드는 모든 하위 작업에 대한 정보 및 작업을 실행하는 컴퓨팅 노드에 대한 정보를 반환합니다. 이 정보로부터 각 하위 작업의 루트 디렉터리, 풀 ID, 현재 상태, 종료 코드 등을 확인할 수 있습니다. 이 정보를 [PoolOperations 파일][poolops_getnodefile] 메서드와 함께 사용 하 여 하위 태스크의 파일을 가져올 수 있습니다. 이 메서드는 주 작업(ID 0)에 대한 정보를 반환하지 않습니다.
 
 > [!NOTE]
 > 달리 명시 되지 않는 한 다중 인스턴스 [Cloudtask][net_task] 자체에서 작동 하는 Batch .net 메서드는 주 작업에 *만* 적용 됩니다. 예를 들어 다중 인스턴스 작업에서 [cloudtask. ListNodeFiles][net_task_listnodefiles] 메서드를 호출 하는 경우 주 작업의 파일만 반환 됩니다.
@@ -328,7 +328,7 @@ Sample complete, hit ENTER to exit...
 ```
 
 ## <a name="next-steps"></a>다음 단계
-* Microsoft HPC & Azure Batch 팀 블로그에서는 [Azure Batch에서 Linux에 대 한 MPI 지원을][blog_mpi_linux]설명 하 고 Batch에 [openfoam][openfoam] 을 사용 하는 방법에 대 한 정보를 제공 합니다. [GitHub에서 Openfoam 예제][github_mpi]에 대 한 Python 코드 샘플을 찾을 수 있습니다.
+* Microsoft HPC & Azure Batch 팀 블로그에서는 [Azure Batch에서 Linux에 대한 MPI 지원을][blog_mpi_linux]설명 하 고 Batch에 [openfoam][openfoam] 을 사용 하는 방법에 대한 정보를 제공 합니다. [GitHub에서 Openfoam 예제][github_mpi]에 대한 Python 코드 샘플을 찾을 수 있습니다.
 * Azure Batch MPI 솔루션에서 사용하기 위해 [Linux 컴퓨팅 노드 풀을 만드는 방법](batch-linux-nodes.md)을 알아봅니다.
 
 [helloworld_proj]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/MultiInstanceTasks/MPIHelloWorld

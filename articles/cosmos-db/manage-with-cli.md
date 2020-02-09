@@ -87,7 +87,7 @@ az cosmosdb update --ids $accountId --enable-multiple-write-locations true
 
 ## <a name="set-failover-priority"></a>장애 조치 우선 순위 설정
 
-자동 장애 조치 (failover)를 위해 구성 된 Azure Cosmos 계정에 대 한 장애 조치 우선 순위 설정
+자동 장애 조치 (failover)를 위해 구성 된 Azure Cosmos 계정에 대한 장애 조치 우선 순위 설정
 
 ```azurecli-interactive
 # Assume region order is initially 'West US 2'=0 'East US 2'=1 'South Central US'=2 for account
@@ -118,7 +118,7 @@ az cosmosdb update --ids $accountId --enable-automatic-failover true
 ## <a name="trigger-manual-failover"></a>수동 장애 조치 트리거
 
 > [!CAUTION]
-> 우선 순위가 0 인 지역을 변경 하면 Azure Cosmos 계정에 대 한 수동 장애 조치 (failover)가 트리거됩니다. 다른 우선 순위 변경은 장애 조치(failover)를 트리거하지 않습니다.
+> 우선 순위가 0 인 지역을 변경 하면 Azure Cosmos 계정에 대한 수동 장애 조치 (failover)가 트리거됩니다. 다른 우선 순위 변경은 장애 조치(failover)를 트리거하지 않습니다.
 
 ```azurecli-interactive
 # Assume region order is initially 'West US 2'=0 'East US 2'=1 'South Central US'=2 for account
@@ -135,7 +135,7 @@ az cosmosdb failover-priority-change --ids $accountId \
 
 ## <a id="list-account-keys"></a>모든 계정 키 나열
 
-Cosmos 계정에 대 한 모든 키를 가져옵니다.
+Cosmos 계정에 대한 모든 키를 가져옵니다.
 
 ```azurecli-interactive
 # List all account keys
@@ -149,7 +149,7 @@ az cosmosdb keys list \
 
 ## <a name="list-read-only-account-keys"></a>읽기 전용 계정 키 나열
 
-Cosmos 계정에 대 한 읽기 전용 키를 가져옵니다.
+Cosmos 계정에 대한 읽기 전용 키를 가져옵니다.
 
 ```azurecli-interactive
 # List read-only account keys
@@ -164,7 +164,7 @@ az cosmosdb keys list \
 
 ## <a name="list-connection-strings"></a>연결 문자열 나열
 
-Cosmos 계정에 대 한 연결 문자열을 가져옵니다.
+Cosmos 계정에 대한 연결 문자열을 가져옵니다.
 
 ```azurecli-interactive
 # List connection strings
@@ -179,7 +179,7 @@ az cosmosdb keys list \
 
 ## <a name="regenerate-account-key"></a>계정 키 다시 생성
 
-Cosmos 계정에 대 한 새 키를 다시 생성 합니다.
+Cosmos 계정에 대한 새 키를 다시 생성 합니다.
 
 ```azurecli-interactive
 # Regenerate secondary account keys

@@ -272,7 +272,7 @@ ms.locfileid: "76722563"
 참조별로 서비스 매니페스트를 가져옵니다. 현재 이 빌드 패키지에 서비스 매니페스트 파일(ServiceManifest.xml)이 있어야 합니다. 자세한 내용은 [ServiceManifestRef 요소](service-fabric-service-model-schema-elements.md#ServiceManifestRefElementServiceManifestRefTypeComplexTypeDefinedInServiceManifestImportelement)를 참조하세요.
 
 ### <a name="policies-element"></a>Policies 요소
-가져온 서비스 매니페스트에 적용할 정책(끝점 바인딩, 패키지 공유, 실행 및 보안 액세스)을 설명합니다. 자세한 내용은 [Policies 요소](service-fabric-service-model-schema-elements.md#PoliciesElementServiceManifestImportPoliciesTypeComplexTypeDefinedInServiceManifestImportelement)를 참조하세요.
+가져온 서비스 매니페스트에 적용할 정책(엔드포인트 바인딩, 패키지 공유, 실행 및 보안 액세스)을 설명합니다. 자세한 내용은 [Policies 요소](service-fabric-service-model-schema-elements.md#PoliciesElementServiceManifestImportPoliciesTypeComplexTypeDefinedInServiceManifestImportelement)를 참조하세요.
 
 ### <a name="servicepackageresourcegovernancepolicy-element"></a>ServicePackageResourceGovernancePolicy 요소
 전체 서비스 패키지 수준에서 적용되는 리소스 관리 정책을 정의합니다. 자세한 내용은 [ServicePackageResourceGovernancePolicy 요소](service-fabric-service-model-schema-elements.md#ServicePackageResourceGovernancePolicyElementServicePackageResourceGovernancePolicyTypeComplexTypeDefinedInServiceManifestImportPoliciesTypecomplexTypeDefinedInServicePackageTypecomplexType)를 참조하세요.

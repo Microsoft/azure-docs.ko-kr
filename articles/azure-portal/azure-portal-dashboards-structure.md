@@ -1,6 +1,6 @@
 ---
 title: Azure 대시보드의 구조 | Microsoft Docs
-description: 예제 대시보드를 사용 하 여 Azure 대시보드의 JSON 구조를 안내 합니다. 리소스 속성에 대 한 참조를 포함 합니다.
+description: 예제 대시보드를 사용 하 여 Azure 대시보드의 JSON 구조를 안내 합니다. 리소스 속성에 대한 참조를 포함 합니다.
 services: azure-portal
 documentationcenter: ''
 author: adamabmsft
@@ -312,7 +312,7 @@ Azure 리소스 [의 명명 규칙](/azure/architecture/best-practices/resource-
 `"tags": { "hidden-title": "Created via API" }`
 
 ### <a name="the-properties-object"></a>properties 개체
-properties 개체는 __lenses__ 및 __metadata__라는 두 속성을 포함합니다. __Lenses__ 속성은 대시보드의 타일에 대 한 정보를 포함 합니다.  __metadata__ 속성은 잠재적인 향후 기능을 위한 속성입니다.
+properties 개체는 __lenses__ 및 __metadata__라는 두 속성을 포함합니다. __Lenses__ 속성은 대시보드의 타일에 대한 정보를 포함 합니다.  __metadata__ 속성은 잠재적인 향후 기능을 위한 속성입니다.
 
 ### <a name="the-lenses-property"></a>lenses 속성
 __lenses__ 속성은 대시보드를 포함합니다. 이 예제의 lenses 개체는 “0”이라는 단일 속성을 포함합니다. 렌즈는 대시보드에서 현재 구현되지 않는 그룹화 개념입니다. 현재는 모든 대시보드에서 다시 “0”이라는 렌즈 개체에 대한 단일 속성을 포함합니다.

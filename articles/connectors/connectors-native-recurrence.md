@@ -15,7 +15,7 @@ ms.locfileid: "75445869"
 ---
 # <a name="create-schedule-and-run-recurring-tasks-and-workflows-with-the-recurrence-trigger-in-azure-logic-apps"></a>Azure Logic Apps 되풀이 트리거를 사용 하 여 되풀이 작업 및 워크플로를 만들고 예약 하 고 실행 합니다.
 
-특정 일정에 따라 작업, 프로세스 또는 작업을 정기적으로 실행 하기 위해 기본 제공 **되풀이 일정** 트리거를 사용 하 여 논리 앱 워크플로를 시작할 수 있습니다. 워크플로를 시작 하기 위한 표준 시간대와 날짜 및 시간을 설정할 수 있으며 해당 워크플로를 반복 하기 위한 되풀이를 설정할 수 있습니다. 어떤 이유로 든 되풀이가 누락 되는 경우이 트리거는 예약 된 다음 간격으로 반복 됩니다. 기본 제공 일정 트리거 및 작업에 대 한 자세한 내용은 [Azure Logic Apps를 사용 하 여 되풀이 자동화, 작업 및 워크플로 예약 및 실행](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md)을 참조 하세요.
+특정 일정에 따라 작업, 프로세스 또는 작업을 정기적으로 실행 하기 위해 기본 제공 **되풀이 일정** 트리거를 사용 하 여 논리 앱 워크플로를 시작할 수 있습니다. 워크플로를 시작 하기 위한 표준 시간대와 날짜 및 시간을 설정할 수 있으며 해당 워크플로를 반복 하기 위한 되풀이를 설정할 수 있습니다. 어떤 이유로 든 되풀이가 누락 되는 경우이 트리거는 예약 된 다음 간격으로 반복 됩니다. 기본 제공 일정 트리거 및 작업에 대한 자세한 내용은 [Azure Logic Apps를 사용 하 여 되풀이 자동화, 작업 및 워크플로 예약 및 실행](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md)을 참조 하세요.
 
 다음은이 트리거가 지 원하는 몇 가지 패턴으로, 더 높은 되풀이 및 복잡 한 일정을 보여 주는 것입니다.
 
@@ -29,7 +29,7 @@ ms.locfileid: "75445869"
 
 * 매주 실행하고 반복하되, 월요일부터 금요일까지 8:00 AM 및 5:00 PM과 같이 특정 날짜 및 시간에만 적용합니다.
 
-이 트리거와 슬라이딩 윈도우 트리거 간의 차이점 또는 되풀이 워크플로를 예약 하는 방법에 대 한 자세한 내용은 [Azure Logic Apps를 사용 하 여 반복적인 자동화 된 작업, 프로세스 및 워크플로 예약 및 실행](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md)을 참조 하세요.
+이 트리거와 슬라이딩 윈도우 트리거 간의 차이점 또는 되풀이 워크플로를 예약 하는 방법에 대한 자세한 내용은 [Azure Logic Apps를 사용 하 여 반복적인 자동화 된 작업, 프로세스 및 워크플로 예약 및 실행](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md)을 참조 하세요.
 
 > [!TIP]
 > 논리 앱을 트리거하고 나중에 한 번만 실행 하려는 경우 [한 번만 실행 작업](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md#run-once)을 참조 하세요.
@@ -38,7 +38,7 @@ ms.locfileid: "75445869"
 
 * Azure 구독 구독이 없는 경우 [Azure 체험 계정에 등록](https://azure.microsoft.com/free/)합니다.
 
-* [논리 앱](../logic-apps/logic-apps-overview.md)에 대 한 기본 지식. 논리 앱을 처음 접하는 경우 [첫 번째 논리 앱을 만드는 방법](../logic-apps/quickstart-create-first-logic-app-workflow.md)에 대해 알아보세요.
+* [논리 앱](../logic-apps/logic-apps-overview.md)에 대한 기본 지식. 논리 앱을 처음 접하는 경우 [첫 번째 논리 앱을 만드는 방법](../logic-apps/quickstart-create-first-logic-app-workflow.md)에 대해 알아보세요.
 
 ## <a name="add-recurrence-trigger"></a>되풀이 트리거 추가
 
@@ -90,7 +90,7 @@ ms.locfileid: "75445869"
    > [!NOTE]
    > 트리거는 주기로 “일” 또는 “주”를 선택한 경우에만 지정된 되풀이에 대한 미리 보기를 보여 줍니다.
 
-1. 이제 다른 작업을 사용 하 여 나머지 워크플로를 빌드합니다. 추가할 수 있는 작업에 대 한 자세한 내용은 [Azure Logic Apps 커넥터](../connectors/apis-list.md)를 참조 하십시오.
+1. 이제 다른 작업을 사용 하 여 나머지 워크플로를 빌드합니다. 추가할 수 있는 작업에 대한 자세한 내용은 [Azure Logic Apps 커넥터](../connectors/apis-list.md)를 참조 하십시오.
 
 ## <a name="workflow-definition---recurrence"></a>워크플로 정의-되풀이
 

@@ -65,7 +65,7 @@ Azure Portal에서 처음으로 AVS 포털을 시작 하려면 AVS 서비스 권
 
 ![AVS 서비스 권한 부여에 대 한 동의-전역 관리자](media/cloudsimple-azure-consent-global-admin.png)
 
-사용 권한이 AVS 포털에 대 한 액세스를 허용 하지 않으면 테 넌 트의 전역 관리자에 게 문의 하 여 필요한 권한을 부여 합니다. 전역 관리자는 조직을 대신 하 여 동의할 수 있습니다.
+사용 권한이 AVS 포털에 대 한 액세스를 허용 하지 않으면 테넌트의 전역 관리자에 게 문의 하 여 필요한 권한을 부여 합니다. 전역 관리자는 조직을 대신 하 여 동의할 수 있습니다.
 
 ![AVS 서비스 권한 부여에 동의-관리자 필요](media/cloudsimple-azure-consent-requires-administrator.png)
 

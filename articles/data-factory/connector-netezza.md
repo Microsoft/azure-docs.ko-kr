@@ -159,7 +159,7 @@ Netezza에서 데이터를 복사하려면 복사 작업의 **원본** 형식을
 | type | 복사 작업 원본의 **형식** 속성을 **NetezzaSource**로 설정해야 합니다. | 예 |
 | Query | 사용자 지정 SQL 쿼리를 사용하여 데이터를 읽습니다. 예: `"SELECT * FROM MyTable"` | 아니요(데이터 세트의 "tableName"이 지정된 경우) |
 | partitionOptions | Netezza에서 데이터를 로드 하는 데 사용 되는 데이터 분할 옵션을 지정 합니다. <br>허용 값은 **None** (기본값), **DataSlice**및 **dynamicrange**입니다.<br>파티션 옵션을 사용 하도록 설정 하는 경우 (즉, `None`) 복사 작업에서 [`parallelCopies`](copy-activity-performance.md#parallel-copy) 설정에 따라 Netezza 데이터베이스에서 데이터를 동시에 로드 하는 병렬 처리 수준이 제어 됩니다. | 아닙니다. |
-| partitionSettings | 데이터 분할에 대 한 설정 그룹을 지정 합니다. <br>Partition 옵션을 `None`하지 않으면 적용 합니다. | 아닙니다. |
+| partitionSettings | 데이터 분할에 대한 설정 그룹을 지정 합니다. <br>Partition 옵션을 `None`하지 않으면 적용 합니다. | 아닙니다. |
 | partitionColumnName | 병렬 복사를 위해 범위 분할에서 사용할 원본 열의 이름을 **정수 형식으로** 지정 합니다. 지정 하지 않으면 테이블의 기본 키가 자동으로 검색 되어 파티션 열로 사용 됩니다. <br>파티션 옵션이 `DynamicRange`경우에 적용 됩니다. 쿼리를 사용 하 여 원본 데이터를 검색 하는 경우 WHERE 절에 `?AdfRangePartitionColumnName` 후크 됩니다. [Netezza의 Parallel copy](#parallel-copy-from-netezza) 섹션에서 예제를 참조 하세요. | 아닙니다. |
 | partitionUpperBound | 데이터를 복사할 파티션 열의 최대값입니다. <br>Partition 옵션을 `DynamicRange`경우 적용 합니다. 쿼리를 사용 하 여 원본 데이터를 검색 하는 경우 WHERE 절에 `?AdfRangePartitionUpbound` 후크 합니다. 예제를 보려면 [Netezza에서 Parallel 복사](#parallel-copy-from-netezza) 섹션을 참조 하세요. | 아닙니다. |
 | partitionLowerBound | 데이터를 복사할 파티션 열의 최소값입니다. <br>파티션 옵션이 `DynamicRange`경우에 적용 됩니다. 쿼리를 사용 하 여 원본 데이터를 검색 하는 경우 WHERE 절에 `?AdfRangePartitionLowbound` 후크 됩니다. 예제를 보려면 [Netezza에서 Parallel 복사](#parallel-copy-from-netezza) 섹션을 참조 하세요. | 아닙니다. |
@@ -202,7 +202,7 @@ Data Factory Netezza 커넥터는 Netezza에서 병렬로 데이터를 복사 �
 
 ![파티션 옵션의 스크린샷](./media/connector-netezza/connector-netezza-partition-options.png)
 
-분할 된 복사를 사용 하도록 설정 하면 Data Factory Netezza 원본에 대 한 병렬 쿼리를 실행 하 여 파티션으로 데이터를 로드 합니다. 병렬 수준은 복사 작업의 [`parallelCopies`](copy-activity-performance.md#parallel-copy) 설정에 의해 제어 됩니다. 예를 들어 `parallelCopies`를 4로 설정 하는 경우 Data Factory는 지정 된 파티션 옵션과 설정에 따라 4 개의 쿼리를 동시에 생성 하 고 실행 하며, 각 쿼리는 Netezza 데이터베이스에서 데이터의 일부를 검색 합니다.
+분할 된 복사를 사용 하도록 설정 하면 Data Factory Netezza 원본에 대한 병렬 쿼리를 실행 하 여 파티션으로 데이터를 로드 합니다. 병렬 수준은 복사 작업의 [`parallelCopies`](copy-activity-performance.md#parallel-copy) 설정에 의해 제어 됩니다. 예를 들어 `parallelCopies`를 4로 설정 하는 경우 Data Factory는 지정 된 파티션 옵션과 설정에 따라 4 개의 쿼리를 동시에 생성 하 고 실행 하며, 각 쿼리는 Netezza 데이터베이스에서 데이터의 일부를 검색 합니다.
 
 특히 Netezza 데이터베이스에서 대량의 데이터를 로드 하는 경우 데이터 분할으로 병렬 복사를 사용 하도록 설정 하는 것이 좋습니다. 다음은 다양 한 시나리오에 권장 되는 구성입니다. 파일 기반 데이터 저장소로 데이터를 복사 하는 경우 폴더에 여러 파일 (폴더 이름만 지정)로 기록 하는 것이 좋습니다 .이 경우에는 단일 파일에 쓰는 것 보다 성능이 좋습니다.
 
@@ -239,7 +239,7 @@ Data Factory Netezza 커넥터는 Netezza에서 병렬로 데이터를 복사 �
 
 ## <a name="lookup-activity-properties"></a>조회 작업 속성
 
-속성에 대 한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
+속성에 대한 자세한 내용을 보려면 [조회 작업](control-flow-lookup-activity.md)을 확인 하세요.
 
 
 ## <a name="next-steps"></a>다음 단계

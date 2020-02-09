@@ -28,7 +28,7 @@ ms.locfileid: "72935964"
 
 ## <a name="create-a-job"></a>작업 만들기
 
-중재 작업을 만들려면 [작업-](https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c5) API 참조 만들기 페이지로 이동 하 여 구독 영역에 대 한 단추를 선택 합니다 .이는 [검토 도구의](https://contentmoderator.cognitive.microsoft.com/) **자격 증명** 페이지에 있는 끝점 URL에서 찾을 수 있습니다. 이렇게 하면 REST API 호출을 쉽게 구성 하 고 실행할 수 있는 API 콘솔이 시작 됩니다.
+중재 작업을 만들려면 [작업-](https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c5) API 참조 만들기 페이지로 이동 하 여 구독 영역에 대 한 단추를 선택 합니다 .이는 [검토 도구의](https://contentmoderator.cognitive.microsoft.com/) **자격 증명** 페이지에 있는 엔드포인트 URL에서 찾을 수 있습니다. 이렇게 하면 REST API 호출을 쉽게 구성 하 고 실행할 수 있는 API 콘솔이 시작 됩니다.
 
 ![작업-페이지 영역 선택 영역 만들기](images/test-drive-job-1.png)
 
@@ -115,7 +115,7 @@ REST 호출의 본문은 **Contentvalue**필드 하나를 포함 합니다. 텍�
 
 ### <a name="examine-the-new-reviews"></a>새 검토를 검토 합니다.
 
-콘텐츠 작업에서 검토를 만든 경우 [검토 도구](https://contentmoderator.cognitive.microsoft.com)에서 볼 수 있습니다. 사용 하는 내용에 따라  > **이미지** /**텍스트** /**비디오** 를 **검토** 합니다. 콘텐츠는 사람이 검토할 준비가 된 것으로 표시 되어야 합니다. 사용자 중재자가 자동 할당 된 태그 및 예측 데이터를 검토 하 고 최종 중재 결정을 제출한 후에는 작업 API가이 모든 정보를 지정 된 콜백 끝점 끝점으로 전송 합니다.
+콘텐츠 작업에서 검토를 만든 경우 [검토 도구](https://contentmoderator.cognitive.microsoft.com)에서 볼 수 있습니다. 사용 하는 내용에 따라  > **이미지** /**텍스트** /**비디오** 를 **검토** 합니다. 콘텐츠는 사람이 검토할 준비가 된 것으로 표시 되어야 합니다. 사용자 중재자가 자동 할당 된 태그 및 예측 데이터를 검토 하 고 최종 중재 결정을 제출한 후에는 작업 API가이 모든 정보를 지정 된 콜백 엔드포인트 엔드포인트으로 전송 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

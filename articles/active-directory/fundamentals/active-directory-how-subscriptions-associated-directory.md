@@ -1,5 +1,5 @@
 ---
-title: 기존 Azure 구독을 테 넌 트에 추가-Azure AD
+title: 기존 Azure 구독을 테넌트에 추가-Azure AD
 description: Azure Active Directory 테넌트에 기존 Azure 구독을 추가하는 방법에 대한 지침입니다.
 services: active-directory
 author: msaburnley
@@ -35,7 +35,7 @@ Azure 구독에는 Azure Active Directory (Azure AD)와의 트러스트 관계�
 >
 > 구독을 다른 디렉터리와 연결 하는 경우에도 구독에서 정책 할당이 제거 됩니다.
 >
-> AKS (Azure Kubernetes Service) 클러스터를 다른 구독으로 이동 하거나 클러스터 소유 구독을 새 테 넌 트로 이동 하면 손실 된 역할 할당 및 서비스 주체 권한으로 인해 클러스터가 기능을 잃게 됩니다. AKS에 대 한 자세한 내용은 [Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/)를 참조 하세요.
+> AKS (Azure Kubernetes Service) 클러스터를 다른 구독으로 이동 하거나 클러스터 소유 구독을 새 테넌트로 이동 하면 손실 된 역할 할당 및 서비스 주체 권한으로 인해 클러스터가 기능을 잃게 됩니다. AKS에 대 한 자세한 내용은 [Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/)를 참조 하세요.
 
 
 ## <a name="before-you-begin"></a>시작하기 전에
@@ -85,7 +85,7 @@ Azure 구독에는 Azure Active Directory (Azure AD)와의 트러스트 관계�
 
 구독을 다른 디렉터리에 연결한 후 작업을 다시 시작 하려면 다음 작업을 수행 해야 할 수 있습니다.
 
-- 키 자격 증명 모음이 있는 경우 주요 자격 증명 모음 테 넌 트 ID를 변경 해야 합니다. 자세한 내용은 [구독 이동 후에 주요 자격 증명 모음 테 넌 트 ID 변경](../../key-vault/key-vault-subscription-move-fix.md)을 참조 하세요.
+- 키 자격 증명 모음이 있는 경우 주요 자격 증명 모음 테넌트 ID를 변경 해야 합니다. 자세한 내용은 [구독 이동 후에 주요 자격 증명 모음 테넌트 ID 변경](../../key-vault/key-vault-subscription-move-fix.md)을 참조 하세요.
 
 - 리소스에 대해 시스템 할당 관리 Id를 사용한 경우에는 이러한 id를 다시 사용 하도록 설정 해야 합니다. 사용자 할당 관리 Id를 사용한 경우에는 이러한 id를 다시 만들어야 합니다. 관리 되는 Id를 다시 사용 하도록 설정 하거나 다시 만든 후에는 해당 id에 할당 된 사용 권한을 다시 설정 해야 합니다. 자세한 내용은 [Azure 리소스에 대한 관리 ID란?](../managed-identities-azure-resources/overview.md)을 참조하세요.
 
@@ -93,7 +93,7 @@ Azure 구독에는 Azure Active Directory (Azure AD)와의 트러스트 관계�
 
 ## <a name="next-steps"></a>다음 단계
 
-- 새 Azure AD 테 넌 트를 만들려면 [빠른 시작: Azure Active Directory에서 새 테 넌 트 만들기](active-directory-access-create-new-tenant.md)를 참조 하세요.
+- 새 Azure AD 테넌트를 만들려면 [빠른 시작: Azure Active Directory에서 새 테넌트 만들기](active-directory-access-create-new-tenant.md)를 참조 하세요.
 
 - Microsoft Azure 리소스 액세스를 제어 하는 방법에 대해 자세히 알아보려면 [클래식 구독 관리자 역할, AZURE RBAC 역할 및 AZURE AD 관리자 역할](../../role-based-access-control/rbac-and-directory-admin-roles.md)을 참조 하세요.
 

@@ -21,7 +21,7 @@ ms.locfileid: "73904583"
 * **Azure Data Lake Storage Gen1 계정**. 계정을 만드는 방법에 대한 지침은 [Azure Data Lake Storage Gen1 시작](data-lake-store-get-started-portal.md)을 참조하세요.
 * Data Lake Storage Gen1 계정에 대한 액세스 권한이 있는 **Azure HDInsight 클러스터**. [Data Lake Storage Gen1을 사용하여 HDInsight 클러스터 만들기](data-lake-store-hdinsight-hadoop-use-portal.md)를 참조하세요. 클러스터에 대한 원격 데스크톱을 사용하도록 설정해야 합니다.
 * **HDInsight에서 MapReduce 사용**. 자세한 내용은 [HDInsight에서 Hadoop과 MapReduce 사용](https://docs.microsoft.com/azure/hdinsight/hdinsight-use-mapreduce)을 참조하세요.
-* **Data Lake Storage Gen1에 대 한 성능 조정 지침을 검토**합니다. 일반적인 성능 개념은 [Data Lake Storage Gen1 성능 조정 지침](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance)을 참조하세요.
+* **Data Lake Storage Gen1에 대한 성능 조정 지침을 검토**합니다. 일반적인 성능 개념은 [Data Lake Storage Gen1 성능 조정 지침](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance)을 참조하세요.
 
 ## <a name="parameters"></a>parameters
 
@@ -50,7 +50,7 @@ MapReduce 작업을 실행할 때 Data Lake Storage Gen1에서 성능을 향상�
 
 ### <a name="step-2-set-mapreducemapmemorymapreducereducememory"></a>2 단계: mapreduce를 설정 합니다. 메모리를 줄입니다.
 
-맵 및 리듀스 태스크에 대한 메모리 크기는 특정 작업에 따라 달라집니다. 동시성을 늘리려면 메모리 크기를 줄일 수 있습니다. 동시에 실행 중인 태스크 수는 컨테이너 수에 따라 달라집니다. 매퍼 또는 리듀서당 메모리 양을 줄이면 더 많은 컨테이너를 생성할 수 있으며 따라서 더 많은 매퍼 또는 리듀서를 동시에 실행할 수 있습니다. 메모리 양을 너무 많이 줄이면 일부 프로세스에서 메모리 부족이 발생할 수 있습니다. 작업을 실행할 때 힙 오류가 발생 하면 매퍼 또는 리 듀 서 메모리를 늘리십시오. 컨테이너를 더 추가 하면 각 추가 컨테이너에 대 한 오버 헤드가 증가 하 여 성능이 저하 될 수 있다는 점을 고려해 야 합니다. 다른 대안은 메모리가 많은 클러스터를 사용하거나 클러스터의 노드 수를 늘려 더 많은 메모리를 확보하는 것입니다. 메모리가 많아지면 더 많은 컨테이너가 사용되며 이것은 동시성 증가로 이어집니다.
+맵 및 리듀스 태스크에 대한 메모리 크기는 특정 작업에 따라 달라집니다. 동시성을 늘리려면 메모리 크기를 줄일 수 있습니다. 동시에 실행 중인 태스크 수는 컨테이너 수에 따라 달라집니다. 매퍼 또는 리듀서당 메모리 양을 줄이면 더 많은 컨테이너를 생성할 수 있으며 따라서 더 많은 매퍼 또는 리듀서를 동시에 실행할 수 있습니다. 메모리 양을 너무 많이 줄이면 일부 프로세스에서 메모리 부족이 발생할 수 있습니다. 작업을 실행할 때 힙 오류가 발생 하면 매퍼 또는 리 듀 서 메모리를 늘리십시오. 컨테이너를 더 추가 하면 각 추가 컨테이너에 대한 오버 헤드가 증가 하 여 성능이 저하 될 수 있다는 점을 고려해 야 합니다. 다른 대안은 메모리가 많은 클러스터를 사용하거나 클러스터의 노드 수를 늘려 더 많은 메모리를 확보하는 것입니다. 메모리가 많아지면 더 많은 컨테이너가 사용되며 이것은 동시성 증가로 이어집니다.
 
 ### <a name="step-3-determine-total-yarn-memory"></a>3 단계: 총 YARN 메모리 확인
 
@@ -58,7 +58,7 @@ Mapreduce/mapreduce. 작업을 튜닝 하려면 사용할 수 있는 총 YARN �
 
 `Total YARN memory = nodes * YARN memory per node`
 
-빈 클러스터를 사용 하는 경우 메모리는 클러스터에 대 한 총 YARN 메모리 일 수 있습니다. 다른 애플리케이션에서 메모리를 사용하고 있으면 매퍼 또는 리듀서 수를 사용하려는 컨테이너 수로 줄여서 클러스터 메모리 중에서 일부만 사용하도록 선택할 수 있습니다.
+빈 클러스터를 사용 하는 경우 메모리는 클러스터에 대한 총 YARN 메모리 일 수 있습니다. 다른 애플리케이션에서 메모리를 사용하고 있으면 매퍼 또는 리듀서 수를 사용하려는 컨테이너 수로 줄여서 클러스터 메모리 중에서 일부만 사용하도록 선택할 수 있습니다.
 
 ### <a name="step-4-calculate-number-of-yarn-containers"></a>4 단계: YARN 컨테이너 수 계산
 

@@ -81,7 +81,7 @@ Azure 리포지토리 및 GitHub에 대한 사용 권한은 Data Factory 사용 
 
 - 사용자가 연결 된 서비스의 연결을 테스트할 수 있도록 허용
 
-    다음 동작에 대 한 권한이 있는 사용자 지정 역할 역할을 만듭니다. **DataFactory/factory/getFeatureValue/read** 및 **DataFactory/Factory/Getfeaturevalue eaccess/read**. 사용자의 데이터 팩터리 리소스에 대해이 사용자 지정 역할을 할당 합니다.
+    다음 동작에 대한 권한이 있는 사용자 지정 역할 역할을 만듭니다. **DataFactory/factory/getFeatureValue/read** 및 **DataFactory/Factory/Getfeaturevalue eaccess/read**. 사용자의 데이터 팩터리 리소스에 대해이 사용자 지정 역할을 할당 합니다.
 
 - 사용자가 PowerShell이나 SDK에서는 데이터 팩터리를 업데이트할 수 있지만 Azure Portal에서는 업데이트할 수 없도록 설정합니다.
 

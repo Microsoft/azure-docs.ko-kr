@@ -161,4 +161,4 @@ If ($azfw.NatRuleCollections.Count -gt 0) {
 ```
 ## <a name="next-steps"></a>다음 단계
 
-Azure 방화벽 관리자 배포에 대 한 자세한 내용은 [Azure 방화벽 관리자 미리 보기 배포 개요](deployment-overview.md)를 확인 하세요.
+Azure 방화벽 관리자 배포에 대한 자세한 내용은 [Azure 방화벽 관리자 미리 보기 배포 개요](deployment-overview.md)를 확인 하세요.

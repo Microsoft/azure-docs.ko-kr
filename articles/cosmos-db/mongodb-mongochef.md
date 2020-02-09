@@ -1,5 +1,5 @@
 ---
-title: Studio 3T를 사용 하 여 MongoDB에 대 한 Azure Cosmos DB의 API에 연결
+title: Studio 3T를 사용 하 여 MongoDB에 대한 Azure Cosmos DB의 API에 연결
 description: Studio 3T를 사용 하 여 Azure Cosmos DB의 MongoDB API에 연결 하는 방법을 알아봅니다.
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
@@ -17,7 +17,7 @@ ms.locfileid: "75441606"
 ---
 # <a name="connect-to-an-azure-cosmos-account-using-studio-3t"></a>Studio 3T를 사용 하 여 Azure Cosmos 계정에 연결
 
-Studio 3T를 사용 하 여 MongoDB에 대 한 Azure Cosmos DB API에 연결 하려면 다음을 수행 해야 합니다.
+Studio 3T를 사용 하 여 MongoDB에 대한 Azure Cosmos DB API에 연결 하려면 다음을 수행 해야 합니다.
 
 * [Studio 3T](https://studio3t.com/)를 다운로드 하 여 설치 합니다.
 * Azure Cosmos 계정의 [연결 문자열](connect-mongodb-account.md) 정보를 포함 합니다.
@@ -29,7 +29,7 @@ Studio 3T를 사용 하 여 MongoDB에 대 한 Azure Cosmos DB API에 연결 하
 
 Studio 3T 연결 관리자에 Azure Cosmos 계정을 추가 하려면 다음 단계를 사용 합니다.
 
-1. [Azure Cosmos DB에 MongoDB 응용 프로그램 연결](connect-mongodb-account.md) 문서에 있는 지침을 사용 하 여 Azure Cosmos DB의 MongoDB API 계정에 대 한 연결 정보를 검색 합니다.
+1. [Azure Cosmos DB에 MongoDB 응용 프로그램 연결](connect-mongodb-account.md) 문서에 있는 지침을 사용 하 여 Azure Cosmos DB의 MongoDB API 계정에 대한 연결 정보를 검색 합니다.
 
     ![연결 문자열 페이지의 스크린샷](./media/mongodb-mongochef/ConnectionStringBlade.png)
 

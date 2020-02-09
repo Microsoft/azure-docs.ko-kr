@@ -1,6 +1,6 @@
 ---
 title: Azure Kubernetes Service에서 여러 노드 풀 사용 (AKS)
-description: Azure Kubernetes 서비스 (AKS)에서 클러스터에 대 한 여러 노드 풀을 만들고 관리 하는 방법을 알아봅니다.
+description: Azure Kubernetes 서비스 (AKS)에서 클러스터에 대한 여러 노드 풀을 만들고 관리 하는 방법을 알아봅니다.
 services: container-service
 author: mlearned
 ms.service: container-service
@@ -14,12 +14,12 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 02/08/2020
 ms.locfileid: "77086490"
 ---
-# <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Azure Kubernetes 서비스 (AKS)에서 클러스터에 대 한 여러 노드 풀 만들기 및 관리
+# <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Azure Kubernetes 서비스 (AKS)에서 클러스터에 대한 여러 노드 풀 만들기 및 관리
 
 Azure Kubernetes 서비스 (AKS)에서 동일한 구성의 노드는 *노드 풀*로 그룹화 됩니다. 이러한 노드 풀에는 응용 프로그램을 실행 하는 기본 Vm이 포함 됩니다. 초기 노드 수와 해당 크기 (SKU)는 *기본 노드 풀*을 만드는 AKS 클러스터를 만들 때 정의 됩니다. 계산 또는 저장소 요구가 다른 응용 프로그램을 지원 하기 위해 추가 노드 풀을 만들 수 있습니다. 예를 들어 이러한 추가 노드 풀을 사용 하 여 계산 집약적인 응용 프로그램을 위한 Gpu를 제공 하거나 고성능 SSD 저장소에 액세스할 수 있습니다.
 
 > [!NOTE]
-> 이 기능을 사용 하면 여러 노드 풀을 만들고 관리 하는 방법을 보다 효과적으로 제어할 수 있습니다. 따라서 create/update/delete에 별도의 명령이 필요 합니다. 이전에 `az aks create` 또는 `az aks update`를 통한 클러스터 작업에서 managedCluster API를 사용 했으며,이 옵션은 제어 평면과 단일 노드 풀을 변경 하는 유일한 옵션 이었습니다. 이 기능은 agentPool API를 통해 에이전트 풀에 대 한 별도의 작업 집합을 노출 하 고 개별 노드 풀에서 작업을 실행 하려면 `az aks nodepool` 명령 집합을 사용 해야 합니다.
+> 이 기능을 사용 하면 여러 노드 풀을 만들고 관리 하는 방법을 보다 효과적으로 제어할 수 있습니다. 따라서 create/update/delete에 별도의 명령이 필요 합니다. 이전에 `az aks create` 또는 `az aks update`를 통한 클러스터 작업에서 managedCluster API를 사용 했으며,이 옵션은 제어 평면과 단일 노드 풀을 변경 하는 유일한 옵션 이었습니다. 이 기능은 agentPool API를 통해 에이전트 풀에 대한 별도의 작업 집합을 노출 하 고 개별 노드 풀에서 작업을 실행 하려면 `az aks nodepool` 명령 집합을 사용 해야 합니다.
 
 이 문서에서는 AKS 클러스터에서 여러 노드 풀을 만들고 관리 하는 방법을 보여 줍니다.
 
@@ -34,7 +34,7 @@ Azure CLI 버전 2.0.76 이상이 설치 및 구성 되어 있어야 합니다. 
 * 기본 (첫 번째) 노드 풀은 삭제할 수 없습니다.
 * HTTP 응용 프로그램 라우팅 추가 기능을 사용할 수 없습니다.
 * AKS 클러스터는 표준 SKU 부하 분산 장치를 사용 하 여 여러 노드 풀을 사용 해야 합니다 .이 기능은 기본 SKU 부하 분산 장치에서 지원 되지 않습니다.
-* AKS 클러스터는 노드에 대 한 가상 머신 확장 집합을 사용 해야 합니다.
+* AKS 클러스터는 노드에 대한 가상 머신 확장 집합을 사용 해야 합니다.
 * 노드 풀의 이름에는 소문자 영숫자만 사용할 수 있으며 소문자 문자로 시작 해야 합니다. Linux 노드 풀의 경우 길이는 1 자에서 12 자 사이 여야 하 고 Windows 노드 풀의 길이는 1에서 6 자 사이 여야 합니다.
 * AKS 클러스터에는 최대 10 개의 노드 풀이 있을 수 있습니다.
 * AKS 클러스터는 해당 10 개 노드 풀에서 최대 1000 개의 노드를 포함할 수 있습니다.
@@ -131,7 +131,7 @@ $ az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSClus
 ## <a name="upgrade-a-node-pool"></a>노드 풀 업그레이드
 
 > [!NOTE]
-> 클러스터 또는 노드 풀에서 업그레이드 및 크기 조정 작업을 동시에 수행할 수 없습니다. 시도 하면 오류가 반환 됩니다. 대신, 동일한 리소스에 대 한 다음 요청 전에 대상 리소스에서 각 작업 유형이 완료 되어야 합니다. 이에 대 한 자세한 내용은 [문제 해결 가이드](https://aka.ms/aks-pending-upgrade)를 참조 하세요.
+> 클러스터 또는 노드 풀에서 업그레이드 및 크기 조정 작업을 동시에 수행할 수 없습니다. 시도 하면 오류가 반환 됩니다. 대신, 동일한 리소스에 대한 다음 요청 전에 대상 리소스에서 각 작업 유형이 완료 되어야 합니다. 이에 대한 자세한 내용은 [문제 해결 가이드](https://aka.ms/aks-pending-upgrade)를 참조 하세요.
 
 첫 번째 단계에서 AKS 클러스터를 처음 만들 때 *1.15.7* 의 `--kubernetes-version` 지정 되었습니다. 그러면 제어 평면과 기본 노드 풀 모두에 대해 Kubernetes 버전이 설정 됩니다. 이 섹션의 명령은 단일 특정 노드 풀을 업그레이드 하는 방법에 대해 설명 합니다.
 
@@ -151,7 +151,7 @@ az aks nodepool upgrade \
     --no-wait
 ```
 
-[Az aks node pool list][az-aks-nodepool-list] 명령을 사용 하 여 노드 풀의 상태를 다시 나열 합니다. 다음 예에서는 *mynodepool* 이 *1.15.7*에 대 한 *업그레이드* 상태임을 보여 줍니다.
+[Az aks node pool list][az-aks-nodepool-list] 명령을 사용 하 여 노드 풀의 상태를 다시 나열 합니다. 다음 예에서는 *mynodepool* 이 *1.15.7*에 대한 *업그레이드* 상태임을 보여 줍니다.
 
 ```console
 $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
@@ -206,11 +206,11 @@ AKS 제어 평면을 업그레이드 하려면 `az aks upgrade`를 사용 해야
 
 개별 노드 풀을 업그레이드 하려면 `az aks nodepool upgrade`를 사용 해야 합니다. 지정 된 Kubernetes 버전을 사용 하 여 대상 노드 풀만 업그레이드 합니다.
 
-### <a name="validation-rules-for-upgrades"></a>업그레이드에 대 한 유효성 검사 규칙
+### <a name="validation-rules-for-upgrades"></a>업그레이드에 대한 유효성 검사 규칙
 
-클러스터의 제어 평면과 노드 풀에 대 한 유효한 Kubernetes 업그레이드는 다음 규칙 집합에 의해 유효성이 검사 됩니다.
+클러스터의 제어 평면과 노드 풀에 대한 유효한 Kubernetes 업그레이드는 다음 규칙 집합에 의해 유효성이 검사 됩니다.
 
-* 노드 풀을 업그레이드 하는 데 유효한 버전에 대 한 규칙:
+* 노드 풀을 업그레이드 하는 데 유효한 버전에 대한 규칙:
    * 노드 풀 버전은 제어 평면과 동일한 *주* 버전을 포함 해야 합니다.
    * 노드 풀 *부* 버전은 제어 평면 버전의 두 *부* 버전 내에 있어야 합니다.
    * 노드 풀 버전은 컨트롤 `major.minor.patch` 버전 보다 클 수 없습니다.
@@ -281,7 +281,7 @@ AKS는 [cluster autoscaler](cluster-autoscaler.md)라는 기능을 사용 하 �
 풀이 더 이상 필요 하지 않은 경우 삭제 하 고 기본 VM 노드를 제거할 수 있습니다. 노드 풀을 삭제 하려면 [az aks node pool delete][az-aks-nodepool-delete] 명령을 사용 하 여 노드 풀 이름을 지정 합니다. 다음 예에서는 이전 단계에서 만든 *mynoodepool* 를 삭제 합니다.
 
 > [!CAUTION]
-> 노드 풀을 삭제할 때 발생할 수 있는 데이터 손실에 대 한 복구 옵션은 없습니다. 다른 노드 풀에서 pod을 예약할 수 없는 경우 해당 응용 프로그램을 사용할 수 없습니다. 사용 중인 응용 프로그램에 데이터 백업이 없거나 클러스터의 다른 노드 풀에서 실행할 수 없는 경우 노드 풀을 삭제 하지 않아야 합니다.
+> 노드 풀을 삭제할 때 발생할 수 있는 데이터 손실에 대한 복구 옵션은 없습니다. 다른 노드 풀에서 pod을 예약할 수 없는 경우 해당 응용 프로그램을 사용할 수 없습니다. 사용 중인 응용 프로그램에 데이터 백업이 없거나 클러스터의 다른 노드 풀에서 실행할 수 없는 경우 노드 풀을 삭제 하지 않아야 합니다.
 
 ```azurecli-interactive
 az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster --name mynodepool --no-wait
@@ -324,9 +324,9 @@ $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
 
 ## <a name="specify-a-vm-size-for-a-node-pool"></a>노드 풀의 VM 크기 지정
 
-이전 예제에서 노드 풀을 만드는 경우 클러스터에서 만든 노드에 기본 VM 크기가 사용 되었습니다. 보다 일반적인 시나리오는 VM 크기 및 기능이 서로 다른 노드 풀을 만드는 것입니다. 예를 들어 많은 양의 CPU 또는 메모리를 포함 하는 노드 또는 GPU 지원을 제공 하는 노드 풀을 포함 하는 노드 풀을 만들 수 있습니다. 다음 단계에서는 [taints 및 tolerations를 사용](#schedule-pods-using-taints-and-tolerations) 하 여 이러한 노드에서 실행 될 수 있는 pod에 대 한 액세스를 제한 하는 방법을 Kubernetes scheduler에 지시 합니다.
+이전 예제에서 노드 풀을 만드는 경우 클러스터에서 만든 노드에 기본 VM 크기가 사용 되었습니다. 보다 일반적인 시나리오는 VM 크기 및 기능이 서로 다른 노드 풀을 만드는 것입니다. 예를 들어 많은 양의 CPU 또는 메모리를 포함 하는 노드 또는 GPU 지원을 제공 하는 노드 풀을 포함 하는 노드 풀을 만들 수 있습니다. 다음 단계에서는 [taints 및 tolerations를 사용](#schedule-pods-using-taints-and-tolerations) 하 여 이러한 노드에서 실행 될 수 있는 pod에 대한 액세스를 제한 하는 방법을 Kubernetes scheduler에 지시 합니다.
 
-다음 예제에서는 *Standard_NC6* VM 크기를 사용 하는 GPU 기반 노드 풀을 만듭니다. 이러한 Vm은 NVIDIA Tesla K80 카드에 의해 구동 됩니다. 사용 가능한 VM 크기에 대 한 자세한 내용은 [Azure의 Linux 가상 머신에 대 한 크기][vm-sizes]를 참조 하세요.
+다음 예제에서는 *Standard_NC6* VM 크기를 사용 하는 GPU 기반 노드 풀을 만듭니다. 이러한 Vm은 NVIDIA Tesla K80 카드에 의해 구동 됩니다. 사용 가능한 VM 크기에 대한 자세한 내용은 [Azure의 Linux 가상 머신에 대한 크기][vm-sizes]를 참조 하세요.
 
 [Az aks node pool add][az-aks-nodepool-add] 명령을 사용 하 여 노드 풀을 만듭니다. 이번에는 *gpunodepool*이름을 지정 하 고 `--node-vm-size` 매개 변수를 사용 하 여 *Standard_NC6* 크기를 지정 합니다.
 
@@ -392,7 +392,7 @@ Kubernetes 스케줄러는 taint 및 toleration을 사용하여 노드에서 실
 * **Taint**는 노드에서 특정 Pod만 예약할 수 있음을 나타내는 노드에 적용됩니다.
 * **Toleration**은 노드의 오류를 ‘허용’할 수 있도록 하는 Pod에 적용됩니다.
 
-고급 Kubernetes 예약 기능을 사용 하는 방법에 대 한 자세한 내용은 [AKS의 advanced scheduler 기능 모범 사례][taints-tolerations] 를 참조 하세요.
+고급 Kubernetes 예약 기능을 사용 하는 방법에 대한 자세한 내용은 [AKS의 advanced scheduler 기능 모범 사례][taints-tolerations] 를 참조 하세요.
 
 이 예에서는--taints 명령을 사용 하 여 GPU 기반 노드에 taint을 적용 합니다. 이전 `kubectl get nodes` 명령의 출력에서 GPU 기반 노드의 이름을 지정 합니다. Taint는 *키: 값* 으로 적용 된 다음 일정 옵션으로 적용 됩니다. 다음 예제에서는 *sku = gpu* 쌍을 사용 하 고, 그렇지 않은 경우 *noschedule* 기능이 있는 pod를 정의 합니다.
 
@@ -456,7 +456,7 @@ Events:
 
 ## <a name="manage-node-pools-using-a-resource-manager-template"></a>리소스 관리자 템플릿을 사용 하 여 노드 풀 관리
 
-Azure Resource Manager 템플릿을 사용 하 여 리소스를 만들고 관리 하는 경우 일반적으로 템플릿에서 설정을 업데이트 하 고 다시 배포 하 여 리소스를 업데이트할 수 있습니다. AKS의 노드 풀을 사용 하면 AKS 클러스터가 생성 된 후 초기 노드 풀 프로필을 업데이트할 수 없습니다. 이 동작은 기존 리소스 관리자 템플릿을 업데이트 하 고, 노드 풀을 변경 하 고, 다시 배포할 수 없음을 의미 합니다. 대신, 기존 AKS 클러스터에 대 한 노드 풀만 업데이트 하는 별도의 리소스 관리자 템플릿을 만들어야 합니다.
+Azure Resource Manager 템플릿을 사용 하 여 리소스를 만들고 관리 하는 경우 일반적으로 템플릿에서 설정을 업데이트 하 고 다시 배포 하 여 리소스를 업데이트할 수 있습니다. AKS의 노드 풀을 사용 하면 AKS 클러스터가 생성 된 후 초기 노드 풀 프로필을 업데이트할 수 없습니다. 이 동작은 기존 리소스 관리자 템플릿을 업데이트 하 고, 노드 풀을 변경 하 고, 다시 배포할 수 없음을 의미 합니다. 대신, 기존 AKS 클러스터에 대한 노드 풀만 업데이트 하는 별도의 리소스 관리자 템플릿을 만들어야 합니다.
 
 `aks-agentpools.json`와 같은 템플릿을 만들고 다음 예제 매니페스트를 붙여 넣습니다. 이 예제 템플릿은 다음 설정을 구성 합니다.
 
@@ -593,7 +593,7 @@ az group delete --name myResourceGroup --yes --no-wait
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서에서는 AKS 클러스터에서 여러 노드 풀을 만들고 관리 하는 방법을 배웠습니다. 노드 풀에서 pod을 제어 하는 방법에 대 한 자세한 내용은 [AKS의 advanced scheduler 기능 모범 사례][operator-best-practices-advanced-scheduler]를 참조 하세요.
+이 문서에서는 AKS 클러스터에서 여러 노드 풀을 만들고 관리 하는 방법을 배웠습니다. 노드 풀에서 pod을 제어 하는 방법에 대한 자세한 내용은 [AKS의 advanced scheduler 기능 모범 사례][operator-best-practices-advanced-scheduler]를 참조 하세요.
 
 Windows Server 컨테이너 노드 풀을 만들고 사용 하려면 [AKS에서 Windows server 컨테이너 만들기][aks-windows]를 참조 하세요.
 

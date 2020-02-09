@@ -35,17 +35,17 @@ Commands:
 
 [10.100.10.10]: PS>
 ```
-다음 표에는에서 사용할 수 있는 `dkrdbe`명령에 대 한 간략 한 설명이 나와 있습니다.
+다음 표에는에서 사용할 수 있는 `dkrdbe`명령에 대한 간략 한 설명이 나와 있습니다.
 
 |command  |Description |
 |---------|---------|
 |`image`     | 이미지를 관리 합니다. 사용 하지 않는 이미지를 제거 하려면 다음을 사용 합니다.`dkrdbe image prune -a -f`       |
 |`images`     | 이미지 나열         |
-|`inspect`     | Docker 개체에 대 한 하위 수준 정보 반환         |
+|`inspect`     | Docker 개체에 대한 하위 수준 정보 반환         |
 |`login`     | Docker 레지스트리에 로그인         |
 |`logout`     | Docker 레지스트리에서 로그 아웃         |
 |`logs`     | 컨테이너의 로그 가져오기        |
-|`port`     | 컨테이너에 대 한 포트 매핑 또는 특정 매핑을 나열 합니다.        |
+|`port`     | 컨테이너에 대한 포트 매핑 또는 특정 매핑을 나열 합니다.        |
 |`ps`     | 컨테이너 나열        |
 |`pull`     | 레지스트리에서 이미지 또는 리포지토리 끌어오기         |
 |`start`     | 하나 이상의 중지 된 컨테이너 시작         |
@@ -54,7 +54,7 @@ Commands:
 |`system`     | Docker 관리         |
 |`top`     | 컨테이너의 실행 중인 프로세스를 표시 합니다.         |
 
-사용 가능한 명령에 대 한 도움말을 보려면 `dkrdbe <command-name> --help`를 사용 합니다.
+사용 가능한 명령에 대한 도움말을 보려면 `dkrdbe <command-name> --help`를 사용 합니다.
 
 예를 들어 `port` 명령 사용법을 이해 하려면 다음을 입력 합니다.
 
@@ -119,7 +119,7 @@ reateOptions":"{\"HostConfig\":{\"Binds\":[\"/home/hcsshares/share4-dl460:/home/
 
 ### <a name="to-get-container-logs"></a>컨테이너 로그를 가져오려면
 
-특정 컨테이너에 대 한 로그를 가져오려면 먼저 컨테이너를 나열 한 다음 관심 있는 컨테이너에 대 한 로그를 가져옵니다.
+특정 컨테이너에 대한 로그를 가져오려면 먼저 컨테이너를 나열 한 다음 관심 있는 컨테이너에 대한 로그를 가져옵니다.
 
 1. [PowerShell 인터페이스에 연결](#connect-to-the-powershell-interface)합니다.
 2. 실행 중인 컨테이너 목록을 가져오려면 `ps` 명령을 실행 합니다.
@@ -135,7 +135,7 @@ reateOptions":"{\"HostConfig\":{\"Binds\":[\"/home/hcsshares/share4-dl460:/home/
 
 3. 로그가 필요한 컨테이너의 컨테이너 ID를 적어 둡니다.
 
-4. 특정 컨테이너에 대 한 로그를 가져오려면 컨테이너 ID를 `logs` 제공 하는 명령을 실행 합니다.
+4. 특정 컨테이너에 대한 로그를 가져오려면 컨테이너 ID를 `logs` 제공 하는 명령을 실행 합니다.
 
     ```powershell
     [10.100.10.10]: PS>dkrdbe logs d99e2f91d9a8

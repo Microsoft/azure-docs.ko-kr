@@ -224,7 +224,7 @@ Guardrail|상태|&nbsp;트리거의 조건&nbsp;
     ----|----
     이름| 배포에 대 한 고유한 이름을 입력 합니다.
     설명| 이 배포의 용도를 더 잘 파악 하기 위한 설명을 입력 합니다.
-    컴퓨팅 형식| 배포할 끝점의 유형 ( *Azure Kubernetes Service)* 또는 *ACI (azure Container Instance)* 를 선택 합니다.
+    컴퓨팅 형식| 배포할 엔드포인트의 유형 ( *Azure Kubernetes Service)* 또는 *ACI (azure Container Instance)* 를 선택 합니다.
     컴퓨팅 이름| *AKS에만 적용 됩니다.* 배포 하려는 AKS 클러스터의 이름을 선택 합니다.
     인증 사용 | 토큰 기반 인증 또는 키 기반 인증을 허용 하려면 선택 합니다.
     사용자 지정 배포 자산 사용| 사용자 고유의 점수 매기기 스크립트 및 환경 파일을 업로드 하려는 경우이 기능을 사용 하도록 설정 합니다. [점수 매기기 스크립트에 대해 자세히 알아보세요](how-to-deploy-and-where.md#script).

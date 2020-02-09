@@ -12,7 +12,7 @@ ms.locfileid: "75552460"
 ---
 # <a name="mount-an-emptydir-volume-in-azure-container-instances"></a>Azure Container Instances에서 emptyDir 볼륨 탑재
 
-Azure Container Instances 컨테이너 그룹의 컨테이너 간에 데이터를 공유하기 위해 *emptyDir* 볼륨을 탑재하는 방법을 알아봅니다. *EmptyDir* 볼륨을 컨테이너 화 된 워크 로드에 대 한 임시 캐시로 사용 합니다.
+Azure Container Instances 컨테이너 그룹의 컨테이너 간에 데이터를 공유하기 위해 *emptyDir* 볼륨을 탑재하는 방법을 알아봅니다. *EmptyDir* 볼륨을 컨테이너 화 된 워크 로드에 대한 임시 캐시로 사용 합니다.
 
 > [!NOTE]
 > 현재 *emptyDir* 볼륨 탑재는 Linux 컨테이너로 제한됩니다. Windows 컨테이너에 모든 기능을 제공 하기 위해 작업 하는 동안 [개요](container-instances-overview.md#linux-and-windows-containers)에서 현재 플랫폼 차이를 찾을 수 있습니다.

@@ -228,7 +228,7 @@ PowerShell을 사용 하 여 템플릿을 배포 하려면 다음을 수행 합�
 | **CDN (Content Delivery Network)** | [Azure CDN를 사용 하 여 HTTPS를 통한 사용자 지정 도메인으로 blob 액세스](../blobs/storage-https-custom-domain-cdn.md) |
 
 > [!NOTE] 
-> 원본 저장소 계정에 대 한 CDN을 설정 하는 경우 기존 CDN의 원본을 새 계정의 주 blob service 끝점 (또는 기본 정적 웹 사이트 끝점)으로 변경 하면 됩니다. 
+> 원본 저장소 계정에 대 한 CDN을 설정 하는 경우 기존 CDN의 원본을 새 계정의 주 blob service 엔드포인트 (또는 기본 정적 웹 사이트 엔드포인트)으로 변경 하면 됩니다. 
 
 ### <a name="move-data-to-the-new-storage-account"></a>새 저장소 계정으로 데이터 이동
 

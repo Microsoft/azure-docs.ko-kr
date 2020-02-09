@@ -1,5 +1,5 @@
 ---
-title: 끝점 할당량 늘리기-LUIS
+title: 엔드포인트 할당량 늘리기-LUIS
 titleSuffix: Azure Cognitive Services
 description: Language Understanding(LUIS)은 단일 키의 할당량 이상으로 엔드포인트 요청 할당량을 늘리는 기능을 제공합니다. 이렇게 하려면 **게시** 페이지의 **리소스 및 키** 섹션에서 LUIS에 대해 더 많은 키를 만들고 LUIS 애플리케이션에 추가합니다.
 author: diberry
@@ -90,7 +90,7 @@ Traffic Manager를 구성한 다음에는 logging=false 쿼리 문자열 매개 
     
     성공한 요청에는 응답이 없습니다.
 
-2. **[AzTrafficManagerEndpointConfig](https://docs.microsoft.com/powershell/module/az.trafficmanager/add-aztrafficmanagerendpointconfig)** cmdlet을 사용 하 여 미국 동부 끝점 추가
+2. **[AzTrafficManagerEndpointConfig](https://docs.microsoft.com/powershell/module/az.trafficmanager/add-aztrafficmanagerendpointconfig)** cmdlet을 사용 하 여 미국 동부 엔드포인트 추가
 
     ```powerShell
     Add-AzTrafficManagerEndpointConfig -EndpointName luis-east-endpoint -TrafficManagerProfile $eastprofile -Type ExternalEndpoints -Target eastus.api.cognitive.microsoft.com -EndpointLocation "eastus" -EndpointStatus Enabled
@@ -101,7 +101,7 @@ Traffic Manager를 구성한 다음에는 logging=false 쿼리 문자열 매개 
     |--|--|--|
     |-EndpointName|luis-east-endpoint|프로필 아래에 표시되는 엔드포인트 이름|
     |-TrafficManagerProfile|$eastprofile|1단계에서 만든 프로필 개체 사용|
-    |-Type|ExternalEndpoints|자세한 내용은 [Traffic Manager 끝점][traffic-manager-endpoints] 을 참조 하세요. |
+    |-Type|ExternalEndpoints|자세한 내용은 [Traffic Manager 엔드포인트][traffic-manager-endpoints] 을 참조 하세요. |
     |-Target|eastus.api.cognitive.microsoft.com|LUIS 엔드포인트의 도메인입니다.|
     |-EndpointLocation|“eastus”|엔드포인트의 지역|
     |-EndpointStatus|Enabled|엔드포인트를 만들 때 사용하도록 설정|
@@ -125,7 +125,7 @@ Traffic Manager를 구성한 다음에는 logging=false 쿼리 문자열 매개 
     Endpoints                        : {luis-east-endpoint}
     ```
 
-3. **[AzTrafficManagerProfile](https://docs.microsoft.com/powershell/module/az.trafficmanager/set-aztrafficmanagerprofile)** cmdlet을 사용 하 여 미국 동부 끝점 설정
+3. **[AzTrafficManagerProfile](https://docs.microsoft.com/powershell/module/az.trafficmanager/set-aztrafficmanagerprofile)** cmdlet을 사용 하 여 미국 동부 엔드포인트 설정
 
     ```powerShell
     Set-AzTrafficManagerProfile -TrafficManagerProfile $eastprofile
@@ -158,7 +158,7 @@ Traffic Manager를 구성한 다음에는 logging=false 쿼리 문자열 매개 
     
     성공한 요청에는 응답이 없습니다.
 
-2. **[AzTrafficManagerEndpointConfig](https://docs.microsoft.com/powershell/module/az.TrafficManager/Add-azTrafficManagerEndpointConfig)** cmdlet을 사용 하 여 미국 서 부 끝점 추가
+2. **[AzTrafficManagerEndpointConfig](https://docs.microsoft.com/powershell/module/az.TrafficManager/Add-azTrafficManagerEndpointConfig)** cmdlet을 사용 하 여 미국 서 부 엔드포인트 추가
 
     ```powerShell
     Add-AzTrafficManagerEndpointConfig -EndpointName luis-west-endpoint -TrafficManagerProfile $westprofile -Type ExternalEndpoints -Target westus.api.cognitive.microsoft.com -EndpointLocation "westus" -EndpointStatus Enabled
@@ -170,7 +170,7 @@ Traffic Manager를 구성한 다음에는 logging=false 쿼리 문자열 매개 
     |--|--|--|
     |-EndpointName|luis-west-endpoint|프로필 아래에 표시되는 엔드포인트 이름|
     |-TrafficManagerProfile|$westprofile|1단계에서 만든 프로필 개체 사용|
-    |-Type|ExternalEndpoints|자세한 내용은 [Traffic Manager 끝점][traffic-manager-endpoints] 을 참조 하세요. |
+    |-Type|ExternalEndpoints|자세한 내용은 [Traffic Manager 엔드포인트][traffic-manager-endpoints] 을 참조 하세요. |
     |-Target|westus.api.cognitive.microsoft.com|LUIS 엔드포인트의 도메인입니다.|
     |-EndpointLocation|“westus”|엔드포인트의 지역|
     |-EndpointStatus|Enabled|엔드포인트를 만들 때 사용하도록 설정|
@@ -194,7 +194,7 @@ Traffic Manager를 구성한 다음에는 logging=false 쿼리 문자열 매개 
     Endpoints                        : {luis-west-endpoint}
     ```
 
-3. **[AzTrafficManagerProfile](https://docs.microsoft.com/powershell/module/az.TrafficManager/Set-azTrafficManagerProfile)** cmdlet을 사용 하 여 미국 서 부 끝점 설정
+3. **[AzTrafficManagerProfile](https://docs.microsoft.com/powershell/module/az.TrafficManager/Set-azTrafficManagerProfile)** cmdlet을 사용 하 여 미국 서 부 엔드포인트 설정
 
     ```powerShell
     Set-AzTrafficManagerProfile -TrafficManagerProfile $westprofile
@@ -299,7 +299,7 @@ Traffic Manager를 구성한 다음에는 logging=false 쿼리 문자열 매개 
     Endpoints                        : {child-endpoint-useast, child-endpoint-uswest}
     ```
 
-4. **[AzTrafficManagerProfile](https://docs.microsoft.com/powershell/module/az.TrafficManager/Set-azTrafficManagerProfile)** cmdlet을 사용 하 여 끝점 설정 
+4. **[AzTrafficManagerProfile](https://docs.microsoft.com/powershell/module/az.TrafficManager/Set-azTrafficManagerProfile)** cmdlet을 사용 하 여 엔드포인트 설정 
 
     ```powerShell
     Set-AzTrafficManagerProfile -TrafficManagerProfile $parentprofile
@@ -330,7 +330,7 @@ Traffic Manager는 각 엔드포인트의 경로를 폴링하여 온라인 상�
 ![모니터 상태가 온라인임을 보여 주는 Azure Traffic Manager 프로필 개요의 스크린샷](./media/traffic-manager/profile-status-online.png)
 
 ### <a name="validate-traffic-manager-polling-works"></a>Traffic Manager 폴링 작업 유효성 검사
-Traffic Manager 폴링 작업의 유효성을 검사하는 또 다른 방법은 LUIS 엔드포인트 로그를 사용하는 것입니다. [LUIS][LUIS] 웹 사이트 앱 목록 페이지에서 응용 프로그램에 대 한 끝점 로그를 내보냅니다. Traffic Manager는 두 개의 엔드포인트에 대해 자주 폴링하므로 몇 분 안에도 로그에 항목이 생성될 수 있습니다. 쿼리가 `traffic-manager-`로 시작하는 항목을 찾아야 합니다.
+Traffic Manager 폴링 작업의 유효성을 검사하는 또 다른 방법은 LUIS 엔드포인트 로그를 사용하는 것입니다. [LUIS][LUIS] 웹 사이트 앱 목록 페이지에서 응용 프로그램에 대 한 엔드포인트 로그를 내보냅니다. Traffic Manager는 두 개의 엔드포인트에 대해 자주 폴링하므로 몇 분 안에도 로그에 항목이 생성될 수 있습니다. 쿼리가 `traffic-manager-`로 시작하는 항목을 찾아야 합니다.
 
 ```console
 traffic-manager-west    6/7/2018 19:19  {"query":"traffic-manager-west","intents":[{"intent":"None","score":0.944767}],"entities":[]}

@@ -36,7 +36,7 @@ ms.locfileid: "77058045"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [동적 신호 테 넌 트](https://dynamicsignal.com/)
+* [동적 신호 테넌트](https://dynamicsignal.com/)
 * 관리자 권한이 있는 동적 신호의 사용자 계정
 
 ## <a name="add-dynamic-signal-from-the-gallery"></a>갤러리에서 동적 신호 추가
@@ -100,13 +100,13 @@ Azure Active Directory는 *할당* 이라는 개념을 사용 하 여 선택한 
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에서 6 단계에 설명 된 대로 동적 신호의 계정에 대 한 **테 넌 트 URL** 및 **암호 토큰** 을 입력 합니다.
+5. **관리자 자격 증명** 섹션 아래에서 6 단계에 설명 된 대로 동적 신호의 계정에 대 한 **테넌트 URL** 및 **암호 토큰** 을 입력 합니다.
 
 6. 동적 신호 관리 콘솔에서 **관리자 > 고급 > API**로 이동 합니다.
 
     ![동적 신호 프로 비전](./media/dynamic-signal-provisioning-tutorial/secret-token-1.png)
 
-    **Scim API url** 을 **테 넌 트 url**에 복사 합니다. **새 토큰 생성** 을 클릭 하 여 **전달자 토큰** 을 생성 하 고 값을 **비밀 토큰**에 복사 합니다.
+    **Scim API url** 을 **테넌트 url**에 복사 합니다. **새 토큰 생성** 을 클릭 하 여 **전달자 토큰** 을 생성 하 고 값을 **비밀 토큰**에 복사 합니다.
 
     ![동적 신호 프로 비전](./media/dynamic-signal-provisioning-tutorial/secret-token-2.png)
 

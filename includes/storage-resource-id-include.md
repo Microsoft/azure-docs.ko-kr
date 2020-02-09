@@ -19,5 +19,5 @@ Azure AD 리소스 ID는 발급 된 토큰을 사용 하 여 Azure 리소스에 
 
 |리소스 ID  |설명  |
 |---------|---------|
-|`https://<account>.blob.core.windows.net` <br /><br /> `https://<account>.queue.core.windows.net`    | 지정 된 저장소 계정에 대 한 서비스 끝점입니다. 이 값을 사용 하 여 특정 Azure Storage 계정 및 서비스만 요청에 대 한 권한을 부여 하는 토큰을 가져옵니다. 괄호 안의 값을 저장소 계정의 이름으로 바꿉니다.      |
+|`https://<account>.blob.core.windows.net` <br /><br /> `https://<account>.queue.core.windows.net`    | 지정 된 저장소 계정에 대 한 서비스 엔드포인트입니다. 이 값을 사용 하 여 특정 Azure Storage 계정 및 서비스만 요청에 대 한 권한을 부여 하는 토큰을 가져옵니다. 괄호 안의 값을 저장소 계정의 이름으로 바꿉니다.      |
 |`https://storage.azure.com/`     | 를 사용 하 여 Azure Storage 계정에 대 한 요청을 승인 하는 토큰을 가져옵니다.        |

@@ -14,9 +14,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "66735783"
 ---
-# <a name="azure-event-grid-event-schema-for-azure-app-configuration"></a>Azure 앱 구성에 대 한 azure Event Grid 이벤트 스키마
+# <a name="azure-event-grid-event-schema-for-azure-app-configuration"></a>Azure 앱 구성에 대한 azure Event Grid 이벤트 스키마
 
-이 문서에서는 Azure App 구성 이벤트에 대 한 속성 및 스키마를 제공 합니다. 이벤트 스키마에 대한 소개는 [Azure Event Grid 이벤트 스키마](event-schema.md)를 참조하세요.
+이 문서에서는 Azure App 구성 이벤트에 대한 속성 및 스키마를 제공 합니다. 이벤트 스키마에 대한 소개는 [Azure Event Grid 이벤트 스키마](event-schema.md)를 참조하세요.
 
 샘플 스크립트 및 자습서의 목록을 참조 하세요 [Azure 앱 구성 이벤트 소스](event-sources.md#app-configuration)합니다.
 
@@ -50,7 +50,7 @@ Azure 앱 구성에는 다음과 같은 이벤트 유형을 내보냅니다.
 }]
 ```
 
-키-값 삭제 된 이벤트에 대 한 스키마는 유사 합니다. 
+키-값 삭제 된 이벤트에 대한 스키마는 유사 합니다. 
 
 ```json
 [{
@@ -90,7 +90,7 @@ Azure 앱 구성에는 다음과 같은 이벤트 유형을 내보냅니다.
 | -------- | ---- | ----------- |
 | key | 문자열 | 수정 또는 삭제 된 키-값의 키입니다. |
 | label | 문자열 | 수정 또는 삭제 된 키-값의 레이블. |
-| etag | 문자열 | 에 대 한 `KeyValueModified` 새 키-값의 etag입니다. 에 대 한 `KeyValueDeleted` 삭제 된 키-값의 etag입니다. |
+| etag | 문자열 | 에 대한 `KeyValueModified` 새 키-값의 etag입니다. 에 대한 `KeyValueDeleted` 삭제 된 키-값의 etag입니다. |
  
 ## <a name="next-steps"></a>다음 단계
 

@@ -23,7 +23,7 @@ ms.locfileid: "76989011"
 
 모바일 서비스 데이터는 지원 되는 metro 영역을 기준으로 그룹화 됩니다. Metro 영역은 도시 경계를 따르지 않습니다. Metro 영역에는 여러 도시, 조밀 채워진 도시 및 주변 도시가 포함 될 수 있습니다. 실제로 국가/지역은 하나의 지하철 영역 일 수 있습니다. 
 
-`metroID`는 [metro 영역 정보 가져오기 API](https://aka.ms/AzureMapsMobilityMetroAreaInfo)를 호출 하는 데 사용할 수 있는 METRO 영역 ID입니다. Azure Maps ' "Metro 가져오기" API를 사용 하 여 전송 유형, 전송 기관, 활성 경고 및 선택한 Metro에 대 한 추가 세부 정보를 요청 합니다. 지원 되는 metro 영역 및 metroIDs를 요청할 수도 있습니다. Metro 영역 Id는 변경 될 수 있습니다.
+`metroID`는 [metro 영역 정보 가져오기 API](https://aka.ms/AzureMapsMobilityMetroAreaInfo)를 호출 하는 데 사용할 수 있는 METRO 영역 ID입니다. Azure Maps ' "Metro 가져오기" API를 사용 하 여 전송 유형, 전송 기관, 활성 경고 및 선택한 Metro에 대한 추가 세부 정보를 요청 합니다. 지원 되는 metro 영역 및 metroIDs를 요청할 수도 있습니다. Metro 영역 Id는 변경 될 수 있습니다.
 
 **metroID:** 522 **이름:** 시애틀-Tacoma-Bellevue
 

@@ -40,7 +40,7 @@ SQL은 처리량이 높은 데이터 저장소가 아닙니다. Azure Stream Ana
 
 ## <a name="incorporate-real-time-insights-into-your-application-with-event-messaging"></a>이벤트 메시징으로 실시간 정보를 응용 프로그램에 통합
 
-두 번째로 가장 널리 사용 되는 Stream Analytics는 실시간 경고를 생성 하는 것입니다. 이 솔루션 패턴에서는 Stream Analytics의 비즈니스 논리를 사용 하 여 [임시 및 공간 패턴이](stream-analytics-geospatial-functions.md) 나 [비정상](stream-analytics-machine-learning-anomaly-detection.md)을 검색 한 다음 경고 신호를 생성할 수 있습니다. 그러나 Stream Analytics에서 Power BI를 기본 끝점으로 사용 하는 대시보드 솔루션과 달리 많은 중간 데이터 싱크를 사용할 수 있습니다. 이러한 싱크에는 Event Hubs, Service Bus 및 Azure Functions 있습니다. 응용 프로그램 빌더는 시나리오에 가장 적합 한 데이터 싱크를 결정 해야 합니다.
+두 번째로 가장 널리 사용 되는 Stream Analytics는 실시간 경고를 생성 하는 것입니다. 이 솔루션 패턴에서는 Stream Analytics의 비즈니스 논리를 사용 하 여 [임시 및 공간 패턴이](stream-analytics-geospatial-functions.md) 나 [비정상](stream-analytics-machine-learning-anomaly-detection.md)을 검색 한 다음 경고 신호를 생성할 수 있습니다. 그러나 Stream Analytics에서 Power BI를 기본 엔드포인트으로 사용 하는 대시보드 솔루션과 달리 많은 중간 데이터 싱크를 사용할 수 있습니다. 이러한 싱크에는 Event Hubs, Service Bus 및 Azure Functions 있습니다. 응용 프로그램 빌더는 시나리오에 가장 적합 한 데이터 싱크를 결정 해야 합니다.
 
 기존 비즈니스 워크플로에서 경고를 생성 하려면 다운스트림 이벤트 소비자 논리를 구현 해야 합니다. Azure Functions에서 사용자 지정 논리를 구현할 수 있으므로이 통합을 수행할 수 있는 가장 빠른 방법은 Azure Functions입니다. Stream Analytics 작업에 대 한 출력으로 Azure 함수를 사용 하는 방법에 대 한 자습서는 [Azure Stream Analytics 작업에서 실행 Azure Functions](stream-analytics-with-azure-functions.md)에서 찾을 수 있습니다. Azure Functions는 텍스트와 전자 메일을 비롯 한 다양 한 유형의 알림도 지원 합니다. 논리 앱은 Stream Analytics와 논리 앱 간의 Event Hubs와 함께 이러한 통합에도 사용할 수 있습니다.
 

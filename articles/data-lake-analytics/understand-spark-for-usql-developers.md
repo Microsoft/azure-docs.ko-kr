@@ -1,6 +1,6 @@
 ---
 title: Azure Data Lake Analytics U SQL 개발자를 위한 Apache Spark를 이해 합니다.
-description: 이 문서에서는 T-SQL 개발자 간의 차이점에 대 한 Apache Spark 개념을 설명 합니다.
+description: 이 문서에서는 T-SQL 개발자 간의 차이점에 대한 Apache Spark 개념을 설명 합니다.
 author: guyhay
 ms.author: guyhay
 ms.reviewer: jasonh
@@ -17,7 +17,7 @@ ms.locfileid: "73648429"
 ---
 # <a name="understand-apache-spark-for-u-sql-developers"></a>U SQL 개발자를 위한 Apache Spark 이해
 
-Microsoft는 [Azure Databricks](../azure-databricks/what-is-azure-databricks.md) 및 [Azure HDInsight](../hdinsight/hdinsight-overview.md) 와 같은 여러 분석 서비스와 Azure Data Lake Analytics를 지원 합니다. 개발자는 분석 파이프라인을 빌드할 때 오픈 소스 솔루션에 대 한 명확한 기본 설정을가지고 있습니다. T-SQL 개발자가 Apache Spark를 이해 하 고 U-SQL 스크립트를 Apache Spark으로 변환 하는 방법에 대 한 자세한 내용은이 지침을 만들었습니다.
+Microsoft는 [Azure Databricks](../azure-databricks/what-is-azure-databricks.md) 및 [Azure HDInsight](../hdinsight/hdinsight-overview.md) 와 같은 여러 분석 서비스와 Azure Data Lake Analytics를 지원 합니다. 개발자는 분석 파이프라인을 빌드할 때 오픈 소스 솔루션에 대한 명확한 기본 설정을가지고 있습니다. T-SQL 개발자가 Apache Spark를 이해 하 고 U-SQL 스크립트를 Apache Spark으로 변환 하는 방법에 대한 자세한 내용은이 지침을 만들었습니다.
 
 여기에는 몇 가지 단계를 수행 하 고 여러 가지 방법을 사용할 수 있습니다.
 
@@ -37,7 +37,7 @@ Microsoft는 [Azure Databricks](../azure-databricks/what-is-azure-databricks.md)
       - [Azure HDInsight Spark](../hdinsight/spark/apache-spark-overview.md) 또는 [Azure Databricks](../azure-databricks/what-is-azure-databricks.md) 같은 Apache Spark 엔진은 U-SQL 스크립트를 Spark로 변환 하려고 합니다. 자세한 내용은 [Spark 데이터 형식 이해](understand-spark-data-formats.md) 를 참조 하세요.
 
 > [!CAUTION]
-> [Azure Databricks](../azure-databricks/what-is-azure-databricks.md) 및 [Azure HDInsight Spark](../hdinsight/spark/apache-spark-overview.md) 는 모두 클러스터 서비스 이며 Azure Data Lake Analytics와 같은 서버를 사용 하지 않는 작업입니다. 적절 한 비용/성능 비율을 얻으려면 클러스터를 프로 비전 하는 방법과 비용을 최소화 하기 위해 수명을 관리 하는 방법을 고려해 야 합니다. 이러한 서비스는 .NET으로 작성 된 사용자 코드와 다른 성능 특성을 가지 므로 래퍼를 작성 하거나 지원 되는 언어로 코드를 다시 작성 해야 합니다. 자세한 내용은 [Spark 데이터 형식 이해](understand-spark-data-formats.md), [U SQL 개발자를 위한 Apache Spark 코드 개념 이해](understand-spark-code-concepts.md)및 [Apache Spark에](https://dotnet.microsoft.com/apps/data/spark) 대 한 .net을 참조 하십시오.
+> [Azure Databricks](../azure-databricks/what-is-azure-databricks.md) 및 [Azure HDInsight Spark](../hdinsight/spark/apache-spark-overview.md) 는 모두 클러스터 서비스 이며 Azure Data Lake Analytics와 같은 서버를 사용 하지 않는 작업입니다. 적절 한 비용/성능 비율을 얻으려면 클러스터를 프로 비전 하는 방법과 비용을 최소화 하기 위해 수명을 관리 하는 방법을 고려해 야 합니다. 이러한 서비스는 .NET으로 작성 된 사용자 코드와 다른 성능 특성을 가지 므로 래퍼를 작성 하거나 지원 되는 언어로 코드를 다시 작성 해야 합니다. 자세한 내용은 [Spark 데이터 형식 이해](understand-spark-data-formats.md), [U SQL 개발자를 위한 Apache Spark 코드 개념 이해](understand-spark-code-concepts.md)및 [Apache Spark에](https://dotnet.microsoft.com/apps/data/spark) 대한 .net을 참조 하십시오.
 
 ## <a name="next-steps"></a>다음 단계
 

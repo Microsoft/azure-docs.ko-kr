@@ -37,7 +37,7 @@ Azure Cosmos DB Graph 엔진은 [Apache TinkerPop](https://tinkerpop.apache.org/
 
 * ***GraphSONv3*** serializer는 현재 지원 되지 않습니다. 연결 구성에서 `GraphSONv2` Serializer, 판독기 및 작성기 클래스를 사용 합니다.
 
-* **람다 식과 함수** 는 현재 지원 되지 않습니다. 여기에는 `.map{<expression>}`, `.by{<expression>}`및 `.filter{<expression>}` 함수가 포함 됩니다. 자세히 알아보고 Gremlin 단계를 사용 하 여 다시 작성 하는 방법에 대 한 자세한 내용은 [람다에 대 한 참고](http://tinkerpop.apache.org/docs/current/reference/#a-note-on-lambdas)를 참조 하세요.
+* **람다 식과 함수** 는 현재 지원 되지 않습니다. 여기에는 `.map{<expression>}`, `.by{<expression>}`및 `.filter{<expression>}` 함수가 포함 됩니다. 자세히 알아보고 Gremlin 단계를 사용 하 여 다시 작성 하는 방법에 대한 자세한 내용은 [람다에 대한 참고](http://tinkerpop.apache.org/docs/current/reference/#a-note-on-lambdas)를 참조 하세요.
 
 * 시스템의 분산 특성으로 인해 ***트랜잭션이*** 지원 되지 않습니다.  Gremlin 계정에서 적절 한 일관성 모델을 "고유한 쓰기 읽기"로 구성 하 고 낙관적 동시성을 사용 하 여 충돌 하는 쓰기를 해결 합니다.
 

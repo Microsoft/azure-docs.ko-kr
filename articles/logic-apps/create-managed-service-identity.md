@@ -1,6 +1,6 @@
 ---
 title: 관리되는 ID를 사용하여 인증
-description: 관리 id를 사용 하 여 자격 증명 또는 암호를 사용 하 여 로그인 하지 않고 다른 Azure Active Directory 테 넌 트의 리소스에 액세스
+description: 관리 id를 사용 하 여 자격 증명 또는 암호를 사용 하 여 로그인 하지 않고 다른 Azure Active Directory 테넌트의 리소스에 액세스
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
@@ -15,7 +15,7 @@ ms.locfileid: "75861203"
 ---
 # <a name="authenticate-access-to-azure-resources-by-using-managed-identities-in-azure-logic-apps"></a>Azure Logic Apps에서 관리 되는 id를 사용 하 여 Azure 리소스에 대 한 액세스 인증
 
-다른 Azure Active Directory (Azure AD) 테 넌 트의 리소스에 액세스 하 고 로그인 하지 않고 id를 인증 하기 위해 논리 앱은 자격 증명이 나 비밀이 아닌 시스템 할당 [관리 id](../active-directory/managed-identities-azure-resources/overview.md) (이전의 관리 서비스 ID 또는 MSI)를 사용할 수 있습니다. 이 ID는 Azure에서 관리되며, 비밀을 제공하거나 순환할 필요가 없기 때문에 자격 증명을 보호하는 데 도움이 됩니다. 이 문서에서는 논리 앱에서 시스템 할당 관리 id를 설정 하 고 사용 하는 방법을 보여 줍니다. 현재 관리 되는 id는 관리 되는 커넥터나 연결이 아닌 [특정 기본 제공 트리거 및 작업](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-to-outbound-calls)에서만 작동 합니다.
+다른 Azure Active Directory (Azure AD) 테넌트의 리소스에 액세스 하 고 로그인 하지 않고 id를 인증 하기 위해 논리 앱은 자격 증명이 나 비밀이 아닌 시스템 할당 [관리 id](../active-directory/managed-identities-azure-resources/overview.md) (이전의 관리 서비스 ID 또는 MSI)를 사용할 수 있습니다. 이 ID는 Azure에서 관리되며, 비밀을 제공하거나 순환할 필요가 없기 때문에 자격 증명을 보호하는 데 도움이 됩니다. 이 문서에서는 논리 앱에서 시스템 할당 관리 id를 설정 하 고 사용 하는 방법을 보여 줍니다. 현재 관리 되는 id는 관리 되는 커넥터나 연결이 아닌 [특정 기본 제공 트리거 및 작업](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-to-outbound-calls)에서만 작동 합니다.
 
 자세한 내용은 다음 항목을 참조하세요.
 
@@ -28,7 +28,7 @@ ms.locfileid: "75861203"
 
 * Azure 구독, 구독이 없는 경우 [체험판 Azure 계정에 등록하세요](https://azure.microsoft.com/free/). 액세스 하려는 관리 되는 id와 대상 Azure 리소스 모두 동일한 Azure 구독을 사용 해야 합니다.
 
-* 대상 리소스와 동일한 Azure AD 테 넌 트에서 관리 되는 id에 역할을 할당할 수 있는 [AZURE ad 관리자 권한](../active-directory/users-groups-roles/directory-assign-admin-roles.md) 관리 id에 Azure 리소스에 대 한 액세스 권한을 부여 하려면 대상 리소스에서 해당 id에 대 한 역할을 추가 해야 합니다.
+* 대상 리소스와 동일한 Azure AD 테넌트에서 관리 되는 id에 역할을 할당할 수 있는 [AZURE ad 관리자 권한](../active-directory/users-groups-roles/directory-assign-admin-roles.md) 관리 id에 Azure 리소스에 대 한 액세스 권한을 부여 하려면 대상 리소스에서 해당 id에 대 한 역할을 추가 해야 합니다.
 
 * 액세스 하려는 대상 Azure 리소스
 
@@ -59,7 +59,7 @@ ms.locfileid: "75861203"
 
    | 속성 | 값 | Description |
    |----------|-------|-------------|
-   | **개체 ID** | <*identity-resource-ID*> | Azure AD 테 넌 트에서 논리 앱의 시스템 할당 id를 나타내는 GUID (Globally Unique Identifier)입니다. |
+   | **개체 ID** | <*identity-resource-ID*> | Azure AD 테넌트에서 논리 앱의 시스템 할당 id를 나타내는 GUID (Globally Unique Identifier)입니다. |
    ||||
 
 1. 이제 [리소스에 대 한 id 액세스 권한을 부여 하는 단계](#access-other-resources)를 따릅니다.
@@ -105,8 +105,8 @@ Azure에서 논리 앱 리소스 정의를 만들 때 `identity` 개체는 다�
 
 | Property(JSON) | 값 | Description |
 |-----------------|-------|-------------|
-| `principalId` | <*principal-ID*> | Azure AD 테 넌 트에서 논리 앱을 나타내는 관리 되는 id에 대 한 서비스 주체 개체의 GUID (Globally Unique Identifier)입니다. 이 GUID는 "개체 ID" 또는 `objectID`으로 나타날 수도 있습니다. |
-| `tenantId` | <*Azure-AD-tenant-ID*> | 논리 앱이 현재 멤버로 속해 있는 Azure AD 테 넌 트를 나타내는 GUID (Globally Unique Identifier)입니다. Azure AD 테넌트 내부에서 서비스 주체는 논리 앱 인스턴스와 이름이 같습니다. |
+| `principalId` | <*principal-ID*> | Azure AD 테넌트에서 논리 앱을 나타내는 관리 되는 id에 대 한 서비스 주체 개체의 GUID (Globally Unique Identifier)입니다. 이 GUID는 "개체 ID" 또는 `objectID`으로 나타날 수도 있습니다. |
+| `tenantId` | <*Azure-AD-tenant-ID*> | 논리 앱이 현재 멤버로 속해 있는 Azure AD 테넌트를 나타내는 GUID (Globally Unique Identifier)입니다. Azure AD 테넌트 내부에서 서비스 주체는 논리 앱 인스턴스와 이름이 같습니다. |
 ||||
 
 <a name="access-other-resources"></a>
@@ -176,7 +176,7 @@ Azure에서 논리 앱 리소스 정의를 만들 때 `identity` 개체는 다�
    | 속성 | 필수 | Description |
    |----------|----------|-------------|
    | **메서드** | 예 | 실행 하려는 작업에서 사용 하는 HTTP 메서드입니다. |
-   | **URI** | 예 | 대상 Azure 리소스 또는 엔터티에 액세스 하기 위한 끝점 URL입니다. URI 구문은 일반적으로 Azure 리소스 또는 서비스에 대 한 [리소스 ID](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) 를 포함 합니다. |
+   | **URI** | 예 | 대상 Azure 리소스 또는 엔터티에 액세스 하기 위한 엔드포인트 URL입니다. URI 구문은 일반적으로 Azure 리소스 또는 서비스에 대 한 [리소스 ID](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) 를 포함 합니다. |
    | **헤더** | 아닙니다. | 필요한 모든 헤더 값 (예: 콘텐츠 형식)을 보내는 요청에 포함 하려고 합니다. |
    | **쿼리** | 아닙니다. | 특정 작업에 대 한 매개 변수 또는 실행 하려는 작업의 API 버전 등 요청에 포함 하려는 모든 쿼리 매개 변수 |
    | **인증** | 예 | 대상 리소스 또는 엔터티에 대 한 액세스를 인증 하는 데 사용할 인증 유형입니다. |

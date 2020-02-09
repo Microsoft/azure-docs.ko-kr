@@ -1,5 +1,5 @@
 ---
-title: Azure AD 조직에 대 한 로그인 설정
+title: Azure AD 조직에 대한 로그인 설정
 titleSuffix: Azure AD B2C
 description: Azure Active Directory B2C에서 특정 Azure Active Directory 조직에 대한 로그인을 설정합니다.
 services: active-directory-b2c
@@ -28,12 +28,12 @@ Azure AD B2C에서 Azure AD(Azure Active Directory)를 [ID 공급자](authorizat
 특정 Azure AD 조직의 사용자에 대한 로그인을 사용하도록 설정하려면 Azure AD B2C 테넌트와 동일하지 않은 조직의 Azure AD 테넌트 내에 애플리케이션을 등록해야 합니다.
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
-2. Azure AD 테 넌 트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 Azure AD 테 넌 트가 포함 된 디렉터리를 선택 합니다. Azure AD B2C 테 넌 트와 같은 테 넌 트가 아닙니다.
+2. Azure AD 테넌트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 Azure AD 테넌트가 포함 된 디렉터리를 선택 합니다. Azure AD B2C 테넌트와 같은 테넌트가 아닙니다.
 3. Azure Portal의 왼쪽 상단 모서리에서 **모든 서비스**를 선택한 다음, **앱 등록**을 검색하여 선택합니다.
 4. **새 등록**을 선택합니다.
 5. 애플리케이션의 이름을 입력합니다. `Azure AD B2C App`)을 입력합니다.
 6. 이 응용 프로그램에 대해서 **만이 조직 디렉터리에서 선택한 계정** 에 동의 합니다.
-7. **리디렉션 URI**의 경우 **웹**의 값을 그대로 사용 하 고 다음 URL을 소문자로 입력 합니다. 여기서 `your-B2C-tenant-name`은 Azure AD B2C 테 넌 트의 이름으로 바뀝니다. 예 `https://fabrikam.b2clogin.com/fabrikam.onmicrosoft.com/oauth2/authresp`:
+7. **리디렉션 URI**의 경우 **웹**의 값을 그대로 사용 하 고 다음 URL을 소문자로 입력 합니다. 여기서 `your-B2C-tenant-name`은 Azure AD B2C 테넌트의 이름으로 바뀝니다. 예 `https://fabrikam.b2clogin.com/fabrikam.onmicrosoft.com/oauth2/authresp`:
 
     ```
     https://your-B2C-tenant-name.b2clogin.com/your-B2C-tenant-name.onmicrosoft.com/oauth2/authresp
@@ -49,11 +49,11 @@ Azure AD B2C에서 Azure AD(Azure Active Directory)를 [ID 공급자](authorizat
 
 ## <a name="configure-azure-ad-as-an-identity-provider"></a>테넌트에서 Azure AD를 ID 공급자로 구성
 
-1. Azure AD B2C 테 넌 트가 포함 된 디렉터리를 사용 하 고 있는지 확인 합니다. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 Azure AD B2C 테 넌 트를 포함 하는 디렉터리를 선택 합니다.
+1. Azure AD B2C 테넌트가 포함 된 디렉터리를 사용 하 고 있는지 확인 합니다. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 Azure AD B2C 테넌트를 포함 하는 디렉터리를 선택 합니다.
 1. Azure Portal의 왼쪽 상단 모서리에서 **모든 서비스**를 선택하고 **Azure AD B2C**를 검색하여 선택합니다.
 1. **Id 공급자**를 선택한 다음 **New openid connect Connect 공급자**를 선택 합니다.
 1. **이름**을 입력합니다. 예를 들어 *Contoso Azure AD*를 입력합니다.
-1. **메타 데이터 url**에 대해 `your-AD-tenant-domain`를 Azure AD 테 넌 트의 도메인 이름으로 바꾸는 다음 url을 입력 합니다.
+1. **메타 데이터 url**에 대해 `your-AD-tenant-domain`를 Azure AD 테넌트의 도메인 이름으로 바꾸는 다음 url을 입력 합니다.
 
     ```
     https://login.microsoftonline.com/your-AD-tenant-domain/.well-known/openid-configuration
@@ -61,12 +61,12 @@ Azure AD B2C에서 Azure AD(Azure Active Directory)를 [ID 공급자](authorizat
 
     `https://login.microsoftonline.com/contoso.onmicrosoft.com/.well-known/openid-configuration`)을 입력합니다.
 
-    예를 들어 `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/.well-known/openid-configuration`Azure AD v2.0 메타 데이터 끝점을 사용 **하지 마세요** . 이렇게 하면 로그인을 시도할 때 `AADB2C: A claim with id 'UserId' was not found, which is required by ClaimsTransformation 'CreateAlternativeSecurityId' with id 'CreateAlternativeSecurityId' in policy 'B2C_1_SignUpOrIn' of tenant 'contoso.onmicrosoft.com'`와 유사한 오류가 발생 합니다.
+    예를 들어 `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/.well-known/openid-configuration`Azure AD v2.0 메타 데이터 엔드포인트을 사용 **하지 마세요** . 이렇게 하면 로그인을 시도할 때 `AADB2C: A claim with id 'UserId' was not found, which is required by ClaimsTransformation 'CreateAlternativeSecurityId' with id 'CreateAlternativeSecurityId' in policy 'B2C_1_SignUpOrIn' of tenant 'contoso.onmicrosoft.com'`와 유사한 오류가 발생 합니다.
 
 1. **클라이언트 id**에 대해 이전에 기록한 응용 프로그램 id를 입력 합니다.
 1. **클라이언트 암호**에 대해 이전에 기록한 클라이언트 암호를 입력 합니다.
-1. **범위**, **응답 유형**및 **응답 모드**에 대 한 기본값을 그대로 둡니다.
-1. 필드 **Domain_hint**에 대 한 값을 입력 합니다. 예를 들면 *ContosoAD*입니다. 이 값은 요청에서 *domain_hint*를 사용하여 이 ID 공급자를 참조할 때 사용할 값입니다.
+1. **범위**, **응답 유형**및 **응답 모드**에 대한 기본값을 그대로 둡니다.
+1. 필드 **Domain_hint**에 대한 값을 입력 합니다. 예를 들면 *ContosoAD*입니다. 이 값은 요청에서 *domain_hint*를 사용하여 이 ID 공급자를 참조할 때 사용할 값입니다.
 1. **Id 공급자 클레임 매핑**아래에서 다음 클레임 매핑 값을 입력 합니다.
 
     * **사용자 ID**: *oid*

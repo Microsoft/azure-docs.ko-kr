@@ -53,7 +53,7 @@ ms.locfileid: "75551984"
 임의 (IPVPN) 연결 모델을 사용 하는 경우 PE는 (4) MSEEs (5)를 사용 하 여 BGP 피어 링을 설정 합니다. PE는 IPVPN 서비스 공급자 네트워크를 통해 Microsoft에서 받은 경로를 고객 네트워크에 다시 전파 합니다.
 
 > [!NOTE]
->고가용성을 위해 Microsoft는 MSEEs (5)와 PE (4) 쌍 사이에 완전 한 중복 병렬 연결을 설정 합니다. 고객 네트워크와 PE CEs 쌍 간에도 완전 한 중복 병렬 네트워크 경로가 권장 됩니다. 고가용성에 대 한 자세한 내용은 Express 경로를 [사용 하 여 고가용성을 위한 디자인][HA] 문서를 참조 하세요.
+>고가용성을 위해 Microsoft는 MSEEs (5)와 PE (4) 쌍 사이에 완전 한 중복 병렬 연결을 설정 합니다. 고객 네트워크와 PE CEs 쌍 간에도 완전 한 중복 병렬 네트워크 경로가 권장 됩니다. 고가용성에 대한 자세한 내용은 Express 경로를 [사용 하 여 고가용성을 위한 디자인][HA] 문서를 참조 하세요.
 >
 >
 
@@ -71,7 +71,7 @@ Express 경로 문제 해결의 논리적 단계는 다음과 같습니다.
 
 
 ## <a name="verify-circuit-provisioning-and-state"></a>회로 프로 비전 및 상태 확인
-Express 경로 회로를 프로 비전 하면 CEs/s s o m a s/s s o m a s/s e r v e r 2 (2)/(4)와 MSEEs (5) Express 경로 회로를 만들고, 수정 하 고, 프로 비전 하 고, 확인 하는 방법에 대 한 자세한 내용은 [express 경로 회로 만들기 및 수정][CreateCircuit]문서를 참조 하세요.
+Express 경로 회로를 프로 비전 하면 CEs/s s o m a s/s s o m a s/s e r v e r 2 (2)/(4)와 MSEEs (5) Express 경로 회로를 만들고, 수정 하 고, 프로 비전 하 고, 확인 하는 방법에 대한 자세한 내용은 [express 경로 회로 만들기 및 수정][CreateCircuit]문서를 참조 하세요.
 
 >[!TIP]
 >서비스 키는 ExpressRoute 회로를 고유하게 식별합니다. Express 경로 문제를 해결 하기 위해 Microsoft 또는 Express 경로 파트너의 도움이 필요 하면 회로를 쉽게 식별할 수 있도록 서비스 키를 제공 합니다.
@@ -142,7 +142,7 @@ ExpressRoute 회로가 작동하는지 확인하려면 다음 필드에 특히 �
 >
 
 ## <a name="validate-peering-configuration"></a>피어링 구성 유효성 검사
-서비스 공급자가 Express 경로 회로 프로 비전을 완료 한 후 CEs/MSEE-Pe (2)/(4)/(4)와 Msee (5) 사이에서 Express 경로 회로를 통해 여러 eBGP 기반 라우팅 구성을 만들 수 있습니다. 각 Express 경로 회로에는 Azure 개인 피어 링 (Azure에서 개인 가상 네트워크로의 트래픽) 및/또는 Microsoft 피어 링 (PaaS 및 SaaS의 공용 끝점에 대 한 트래픽)이 있을 수 있습니다. 라우팅 구성을 만들고 수정 하는 방법에 대 한 자세한 내용은 [express 경로 회로에 대 한 라우팅 만들기 및 수정][CreatePeering]문서를 참조 하세요.
+서비스 공급자가 Express 경로 회로 프로 비전을 완료 한 후 CEs/MSEE-Pe (2)/(4)/(4)와 Msee (5) 사이에서 Express 경로 회로를 통해 여러 eBGP 기반 라우팅 구성을 만들 수 있습니다. 각 Express 경로 회로에는 Azure 개인 피어 링 (Azure에서 개인 가상 네트워크로의 트래픽) 및/또는 Microsoft 피어 링 (PaaS 및 SaaS의 공용 엔드포인트에 대한 트래픽)이 있을 수 있습니다. 라우팅 구성을 만들고 수정 하는 방법에 대한 자세한 내용은 [express 경로 회로에 대한 라우팅 만들기 및 수정][CreatePeering]문서를 참조 하세요.
 
 ### <a name="verification-via-the-azure-portal"></a>Azure Portal을 통한 확인
 
@@ -157,7 +157,7 @@ Azure Portal express 경로 회로 블레이드에서 Express 경로 회로 피�
 앞의 예제에서 설명한 대로 Azure 개인 피어 링이 프로 비전 되는 반면, Azure 공용 및 Microsoft 피어 링은 프로 비전 되지 않습니다. 성공적으로 프로 비전 된 피어 링 컨텍스트는 기본 및 보조 지점 간 서브넷도 포함 합니다. /30 서브넷은 MSEEs 및 CEs/PE의 인터페이스 IP 주소에 사용 됩니다. 프로 비전 되는 피어 링의 경우 목록에는 구성을 마지막으로 수정한 사용자도 표시 됩니다. 
 
 > [!NOTE]
-> 피어 링을 사용 하도록 설정 하지 못한 경우 할당 된 기본 및 보조 서브넷이 연결 된 CE/PE-MSEE의 구성과 일치 하는지 확인 합니다. 또한 올바른 *VlanId*, *AzureASN*및 *peerasn* 이 msees에서 사용 되는지와 이러한 값이 연결 된 CE/PE-msees에서 사용 된 값에 매핑되는지 여부를 확인 합니다. MD5 해시를 선택 하는 경우에는 공유 키가 MSEE 및 PE-MSEE/CE 쌍에서 동일 해야 합니다. 이전에 구성 된 공유 키가 보안상의 이유로 표시 되지 않습니다. MSEE 라우터에서 이러한 구성을 변경 해야 하는 경우 [express 경로 회로에 대 한 라우팅 만들기 및 수정][CreatePeering]을 참조 하세요.  
+> 피어 링을 사용 하도록 설정 하지 못한 경우 할당 된 기본 및 보조 서브넷이 연결 된 CE/PE-MSEE의 구성과 일치 하는지 확인 합니다. 또한 올바른 *VlanId*, *AzureASN*및 *peerasn* 이 msees에서 사용 되는지와 이러한 값이 연결 된 CE/PE-msees에서 사용 된 값에 매핑되는지 여부를 확인 합니다. MD5 해시를 선택 하는 경우에는 공유 키가 MSEE 및 PE-MSEE/CE 쌍에서 동일 해야 합니다. 이전에 구성 된 공유 키가 보안상의 이유로 표시 되지 않습니다. MSEE 라우터에서 이러한 구성을 변경 해야 하는 경우 [express 경로 회로에 대한 라우팅 만들기 및 수정][CreatePeering]을 참조 하세요.  
 >
 
 > [!NOTE]
@@ -211,7 +211,7 @@ Microsoft 피어링 구성 세부 정보를 가져오려면 다음 명령을 사
 
 
 > [!NOTE]
-> 피어 링을 사용 하도록 설정 하지 못한 경우 할당 된 기본 및 보조 서브넷이 연결 된 CE/PE-MSEE의 구성과 일치 하는지 확인 합니다. 또한 올바른 *VlanId*, *AzureASN*및 *peerasn* 이 msees에서 사용 되는지와 이러한 값이 연결 된 CE/PE-msees에서 사용 된 값에 매핑되는지 여부를 확인 합니다. MD5 해시를 선택 하는 경우에는 공유 키가 MSEE 및 PE-MSEE/CE 쌍에서 동일 해야 합니다. 이전에 구성 된 공유 키가 보안상의 이유로 표시 되지 않습니다. MSEE 라우터에서 이러한 구성을 변경 해야 하는 경우 [express 경로 회로에 대 한 라우팅 만들기 및 수정][CreatePeering]을 참조 하세요.  
+> 피어 링을 사용 하도록 설정 하지 못한 경우 할당 된 기본 및 보조 서브넷이 연결 된 CE/PE-MSEE의 구성과 일치 하는지 확인 합니다. 또한 올바른 *VlanId*, *AzureASN*및 *peerasn* 이 msees에서 사용 되는지와 이러한 값이 연결 된 CE/PE-msees에서 사용 된 값에 매핑되는지 여부를 확인 합니다. MD5 해시를 선택 하는 경우에는 공유 키가 MSEE 및 PE-MSEE/CE 쌍에서 동일 해야 합니다. 이전에 구성 된 공유 키가 보안상의 이유로 표시 되지 않습니다. MSEE 라우터에서 이러한 구성을 변경 해야 하는 경우 [express 경로 회로에 대한 라우팅 만들기 및 수정][CreatePeering]을 참조 하세요.  
 >
 >
 
@@ -221,7 +221,7 @@ Microsoft 피어링 구성 세부 정보를 가져오려면 다음 명령을 사
 
 ## <a name="validate-arp"></a>ARP 유효성 검사
 
-ARP 테이블은 특정 피어 링에 대 한 IP 주소와 MAC 주소 매핑을 제공 합니다. ExpressRoute 회로 피어링의 ARP 테이블은 각 인터페이스(기본 및 보조)에 대한 다음 정보를 제공합니다.
+ARP 테이블은 특정 피어 링에 대한 IP 주소와 MAC 주소 매핑을 제공 합니다. ExpressRoute 회로 피어링의 ARP 테이블은 각 인터페이스(기본 및 보조)에 대한 다음 정보를 제공합니다.
 * 온-프레미스 라우터 인터페이스 IP 주소를 MAC 주소에 매핑
 * ExpressRoute 라우터 인터페이스 IP 주소를 MAC 주소에 매핑
 * 매핑 ARP 테이블은 계층 2 구성의 유효성을 검사 하 고 기본적인 계층 2 연결 문제를 해결 하는 데 도움이 될 수 있습니다.
@@ -258,7 +258,7 @@ Express 경로 피어 링의 ARP 테이블을 보는 방법 및 정보를 사용
 
 
 > [!NOTE]
-> MAB및 CE/PE-MSEE 간의 eBGP 피어 링 상태가 활성 또는 유휴 상태 이면 할당 된 기본 및 보조 피어 서브넷이 연결 된 CE/PE의 구성과 일치 하는지 확인 합니다. 또한 올바른 *VlanId*, *AzureAsn*및 *peerasn* 이 msees에서 사용 되는지와 이러한 값이 연결 된 PE-msees/CE에서 사용 된 값에 매핑되는지 여부를 확인 합니다. MD5 해시를 선택 하는 경우 MSEE 및 CE/PE에서 공유 키가 동일 해야 합니다. MSEE 라우터에서 이러한 구성을 변경 해야 하는 경우 [express 경로 회로에 대 한 라우팅 만들기 및 수정][CreatePeering]을 참조 하세요.
+> MAB및 CE/PE-MSEE 간의 eBGP 피어 링 상태가 활성 또는 유휴 상태 이면 할당 된 기본 및 보조 피어 서브넷이 연결 된 CE/PE의 구성과 일치 하는지 확인 합니다. 또한 올바른 *VlanId*, *AzureAsn*및 *peerasn* 이 msees에서 사용 되는지와 이러한 값이 연결 된 PE-msees/CE에서 사용 된 값에 매핑되는지 여부를 확인 합니다. MD5 해시를 선택 하는 경우 MSEE 및 CE/PE에서 공유 키가 동일 해야 합니다. MSEE 라우터에서 이러한 구성을 변경 해야 하는 경우 [express 경로 회로에 대한 라우팅 만들기 및 수정][CreatePeering]을 참조 하세요.
 >
 
 
@@ -267,7 +267,7 @@ Express 경로 피어 링의 ARP 테이블을 보는 방법 및 정보를 사용
 >
 
 
-다음 예에서는 존재 하지 않는 피어 링에 대 한 명령의 응답을 보여 줍니다.
+다음 예에서는 존재 하지 않는 피어 링에 대한 명령의 응답을 보여 줍니다.
 
     Get-AzExpressRouteCircuitRouteTable : The BGP Peering AzurePublicPeering with Service Key ********************* is not found.
     StatusCode: 400
@@ -293,7 +293,7 @@ Express 경로 피어 링의 ARP 테이블을 보는 방법 및 정보를 사용
 
 - [Microsoft 지원][Support]
 - [ExpressRoute 회로 만들기 및 수정][CreateCircuit]
-- [Express 경로 회로에 대 한 라우팅 만들기 및 수정][CreatePeering]
+- [Express 경로 회로에 대한 라우팅 만들기 및 수정][CreatePeering]
 
 <!--Image References-->
 [1]: ./media/expressroute-troubleshooting-expressroute-overview/expressroute-logical-diagram.png "논리 ExpressRoute 연결"

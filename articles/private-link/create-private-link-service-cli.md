@@ -106,7 +106,7 @@ az network private-link-service create \
  
 이 단계에서는 개인 링크 서비스가 성공적으로 생성 되 고 트래픽을 받을 준비가 된 것입니다. 위의 예제에서는 Azure CLI 사용 하 여 개인 링크 서비스를 만드는 방법을 보여 줍니다.  트래픽 수신 대기를 위해 부하 분산 장치 백 엔드 풀 또는 백 엔드 풀의 응용 프로그램을 구성 하지 않았습니다. 종단 간 트래픽 흐름을 보려면 표준 Load Balancer 뒤에 응용 프로그램을 구성 하는 것이 좋습니다.  
  
-다음으로 Azure CLI를 사용 하 여이 서비스를 다른 가상 네트워크의 개인 끝점에 매핑하는 방법을 설명 합니다. 이 예제는 개인 끝점을 만들고 Azure CLI를 사용 하 여 위에서 만든 개인 링크 서비스에 연결 하는 것으로 제한 됩니다. 또한 가상 네트워크에서 가상 컴퓨터를 만들어 개인 끝점으로 트래픽을 보내고 받을 수 있습니다.        
+다음으로 Azure CLI를 사용 하 여이 서비스를 다른 가상 네트워크의 개인 엔드포인트에 매핑하는 방법을 설명 합니다. 이 예제는 개인 엔드포인트을 만들고 Azure CLI를 사용 하 여 위에서 만든 개인 링크 서비스에 연결 하는 것으로 제한 됩니다. 또한 가상 네트워크에서 가상 컴퓨터를 만들어 개인 엔드포인트으로 트래픽을 보내고 받을 수 있습니다.        
  
 ## <a name="private-endpoints"></a>프라이빗 엔드포인트
 
@@ -128,8 +128,8 @@ az network vnet subnet create \
 --name myPESubnet \
 --address-prefixes 10.0.0.0/24 
 ```   
-## <a name="disable-private-endpoint-network-policies-on-subnet"></a>서브넷에서 개인 끝점 네트워크 정책 사용 안 함 
-가상 네트워크 내에서 원하는 모든 서브넷에 개인 끝점을 만들 수 있습니다. 현재 개인 끝점에서는 네트워크 정책을 지원 하지 않습니다.  따라서 서브넷에서 네트워크 정책을 사용 하지 않도록 설정 해야 합니다. [Az network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update)를 사용 하 여 개인 끝점 네트워크 정책을 사용 하지 않도록 서브넷을 업데이트 합니다. 
+## <a name="disable-private-endpoint-network-policies-on-subnet"></a>서브넷에서 개인 엔드포인트 네트워크 정책 사용 안 함 
+가상 네트워크 내에서 원하는 모든 서브넷에 개인 엔드포인트을 만들 수 있습니다. 현재 개인 엔드포인트에서는 네트워크 정책을 지원 하지 않습니다.  따라서 서브넷에서 네트워크 정책을 사용 하지 않도록 설정 해야 합니다. [Az network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update)를 사용 하 여 개인 엔드포인트 네트워크 정책을 사용 하지 않도록 서브넷을 업데이트 합니다. 
 
 ```azurecli-interactive
 az network vnet subnet update \
@@ -138,8 +138,8 @@ az network vnet subnet update \
 --name myPESubnet \
 --disable-private-endpoint-network-policies true 
 ```
-## <a name="create-private-endpoint-and-connect-to-private-link-service"></a>개인 끝점을 만들고 개인 링크 서비스에 연결 
-가상 네트워크에서 위에서 만든 개인 링크 서비스를 사용 하기 위한 개인 끝점을 만듭니다.
+## <a name="create-private-endpoint-and-connect-to-private-link-service"></a>개인 엔드포인트을 만들고 개인 링크 서비스에 연결 
+가상 네트워크에서 위에서 만든 개인 링크 서비스를 사용 하기 위한 개인 엔드포인트을 만듭니다.
   
 ```azurecli-interactive
 az network private-endpoint create \

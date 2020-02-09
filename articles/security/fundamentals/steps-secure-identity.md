@@ -61,7 +61,7 @@ ms.locfileid: "77057212"
 
 암호가 추측되고, 피싱되고, 맬웨어로 도난 또는 재사용되는 횟수를 고려할 때 강력한 자격 증명의 형식을 갖춘 암호로 돌아가는 것은 중요합니다. [Azure Multi-Factor Authentication](../../active-directory/authentication/multi-factor-authentication.md)에 대해 자세히 알아보세요.
 
-기본 수준의 id 보안을 쉽게 사용 하도록 설정 하려면 [AZURE AD 보안 기본값과](../../active-directory/fundamentals/concept-fundamentals-security-defaults.md)함께 한 번 클릭 사용을 사용할 수 있습니다. 보안 기본값은 테 넌 트의 모든 사용자에 대해 Azure MFA를 적용 하 고 레거시 프로토콜의 로그인을 차단 합니다.
+기본 수준의 id 보안을 쉽게 사용 하도록 설정 하려면 [AZURE AD 보안 기본값과](../../active-directory/fundamentals/concept-fundamentals-security-defaults.md)함께 한 번 클릭 사용을 사용할 수 있습니다. 보안 기본값은 테넌트의 모든 사용자에 대해 Azure MFA를 적용 하 고 레거시 프로토콜의 로그인을 차단 합니다.
 
 ### <a name="start-banning-commonly-attacked-passwords-and-turn-off-traditional-complexity-and-expiration-rules"></a>자주 공격받는 암호 사용을 금지하고 기존의 복잡성 및 만료 규칙을 해제합니다.
 

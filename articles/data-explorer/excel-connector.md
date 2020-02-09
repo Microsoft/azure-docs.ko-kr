@@ -69,7 +69,7 @@ Azure 데이터 탐색기 Excel native connector는 쿼리 결과를 Excel로 �
 
     ![피벗 차트](media/excel-connector/pivot-table-analyze-pivotchart.png)
 
-1. 아래 예제에서는 **이벤트 Id**, **StartTime**및 **EventType** 을 사용 하 여 날씨 이벤트에 대 한 추가 정보를 확인 합니다.
+1. 아래 예제에서는 **이벤트 Id**, **StartTime**및 **EventType** 을 사용 하 여 날씨 이벤트에 대한 추가 정보를 확인 합니다.
 
     ![데이터 가상화](media/excel-connector/visualize-excel-data.png)
 

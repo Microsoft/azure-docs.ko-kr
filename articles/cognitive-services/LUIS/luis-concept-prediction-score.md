@@ -41,7 +41,7 @@ ms.locfileid: "74280819"
 
 ## <a name="return-prediction-score-for-all-intents"></a>모든 의도의 예측 점수 반환
 
-테스트 또는 엔드포인트 결과에는 모든 의도가 포함될 수 있습니다. 이 구성은 올바른 querystring 이름/값 쌍을 사용 하 여 끝점에 설정 됩니다.
+테스트 또는 엔드포인트 결과에는 모든 의도가 포함될 수 있습니다. 이 구성은 올바른 querystring 이름/값 쌍을 사용 하 여 엔드포인트에 설정 됩니다.
 
 |예측 API|Querystring 이름|
 |--|--|

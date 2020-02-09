@@ -32,7 +32,7 @@ Azure는 다음 피어 링 유형을 지원 합니다.
 
 * 다른 가상 네트워크에 있는 리소스 간에 짧은 대기 시간, 높은 대역폭 연결
 * 한 가상 네트워크의 리소스가 다른 가상 네트워크의 리소스와 통신할 수 있는 기능입니다.
-* Azure 구독, Azure Active Directory 테 넌 트, 배포 모델 및 Azure 지역에서 가상 네트워크 간에 데이터를 전송 하는 기능입니다.
+* Azure 구독, Azure Active Directory 테넌트, 배포 모델 및 Azure 지역에서 가상 네트워크 간에 데이터를 전송 하는 기능입니다.
 * Azure Resource Manager를 통해 만든 가상 네트워크를 피어 링 하는 기능입니다.
 * 리소스 관리자를 통해 만든 가상 네트워크를 클래식 배포 모델을 통해 만든 가상 네트워크에 피어 링 하는 기능입니다. Azure 배포 모델에 대해 자세히 알아보려면 [Azure 배포 모델 이해](../azure-resource-manager/management/deployment-models.md?toc=%2fazure%2fvirtual-network%2ftoc.json)를 참조하세요.
 * 피어링을 만들 때 또는 피어링이 생성된 후에 각 가상 네트워크에 있는 리소스에 대한 가동 중지 시간이 없습니다.

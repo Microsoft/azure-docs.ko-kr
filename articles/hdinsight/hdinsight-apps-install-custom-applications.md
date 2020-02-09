@@ -71,7 +71,7 @@ Azure Portal 외에도 [Azure PowerShell](hdinsight-hadoop-create-linux-clusters
 
 ## <a name="validate-the-installation"></a>설치 유효성 검사
 
-Azure 포털에서 애플리케이션 상태를 확인하여 애플리케이션 설치를 확인할 수 있습니다. 또한 예상 대로 발생 한 모든 HTTP 끝점과 웹 페이지 (있는 경우)의 유효성을 검사할 수도 있습니다.
+Azure 포털에서 애플리케이션 상태를 확인하여 애플리케이션 설치를 확인할 수 있습니다. 또한 예상 대로 발생 한 모든 HTTP 엔드포인트과 웹 페이지 (있는 경우)의 유효성을 검사할 수도 있습니다.
 
 **색상**의 경우 다음 단계를 사용할 수 있습니다.
 

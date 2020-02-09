@@ -1,5 +1,5 @@
 ---
-title: Azure Cosmos DB에 대 한 SQL 조인 쿼리
+title: Azure Cosmos DB에 대한 SQL 조인 쿼리
 description: Azure Cosmos DB에서 여러 테이블을 조인 하 여 데이터를 쿼리 하는 방법에 대해 알아봅니다.
 author: markjbrown
 ms.service: cosmos-db
@@ -103,7 +103,7 @@ ms.locfileid: "74871145"
   
 ## <a name="examples"></a>예시
 
-다음 예제는 JOIN 절의 작동 방식을 보여 줍니다. 이러한 예제를 실행 하기 전에 샘플 [제품군 데이터](sql-query-getting-started.md#upload-sample-data)를 업로드 합니다. 다음 예제에서는 소스와 빈 집합의 각 항목에 대 한 교차곱이 비어 있기 때문에 결과가 비어 있습니다.
+다음 예제는 JOIN 절의 작동 방식을 보여 줍니다. 이러한 예제를 실행 하기 전에 샘플 [제품군 데이터](sql-query-getting-started.md#upload-sample-data)를 업로드 합니다. 다음 예제에서는 소스와 빈 집합의 각 항목에 대한 교차곱이 비어 있기 때문에 결과가 비어 있습니다.
 
 ```sql
     SELECT f.id
@@ -226,7 +226,7 @@ JOIN 절의 실제 유틸리티는 프로젝트에 어려움이 있는 셰이프
 
 `AndersenFamily`에는 애완 동물을 가진 자식이 하나 있으므로 교차곱은이 제품군에서 한 행 (1\*1\*1)을 생성 합니다. `WakefieldFamily`에는 두 개의 자식이 있는데, 그 중 하나에는 애완 동물이 있지만 해당 자식에는 애완 동물 2 개가 있습니다. 이 패밀리의 교차곱은 1\*1\*2 = 2 행을 생성 합니다.
 
-다음 예제에는 `pet`에 대 한 추가 필터가 있습니다 .이 필터는 애완 동물 이름이 `Shadow`되지 않은 모든 튜플을 제외 합니다. 배열에서 튜플을 빌드하고, 튜플의 요소를 필터링 하 고, 요소 조합을 프로젝션 할 수 있습니다.
+다음 예제에는 `pet`에 대한 추가 필터가 있습니다 .이 필터는 애완 동물 이름이 `Shadow`되지 않은 모든 튜플을 제외 합니다. 배열에서 튜플을 빌드하고, 튜플의 요소를 필터링 하 고, 요소 조합을 프로젝션 할 수 있습니다.
 
 ```sql
     SELECT 

@@ -26,7 +26,7 @@ Azure Container Instances에서는 [컨테이너 그룹](container-instances-con
 > * 컨테이너 그룹 배포
 > * 컨테이너 로그 보기
 
-컨테이너 그룹을 사용 하 여 추가 Azure 서비스 리소스 (예: Azure Files 공유 또는 가상 네트워크)를 배포 해야 하는 경우 시나리오에 대 한 리소스 관리자 템플릿을 쉽게 수정할 수 있습니다. 
+컨테이너 그룹을 사용 하 여 추가 Azure 서비스 리소스 (예: Azure Files 공유 또는 가상 네트워크)를 배포 해야 하는 경우 시나리오에 대한 리소스 관리자 템플릿을 쉽게 수정할 수 있습니다. 
 
 > [!NOTE]
 > 현재 다중 컨테이너 그룹은 Linux 컨테이너에 제한됩니다. 
@@ -192,7 +192,7 @@ listening on port 80
 ::1 - - [21/Mar/2019:23:17:54 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
 ```
 
-사이드카 컨테이너에 대 한 로그를 보려면 `aci-tutorial-sidecar` 컨테이너를 지정 하는 비슷한 명령을 실행 합니다.
+사이드카 컨테이너에 대한 로그를 보려면 `aci-tutorial-sidecar` 컨테이너를 지정 하는 비슷한 명령을 실행 합니다.
 
 ```azurecli-interactive
 az container logs --resource-group myResourceGroup --name myContainerGroup --container-name aci-tutorial-sidecar

@@ -99,7 +99,7 @@ Media Services 시작 하는 경우 코덱과 파일 형식 간의 차이점을 
 
 Media Services은 적응 비트 전송률 MP4 또는 부드러운 스트리밍 인코딩된 콘텐츠를 Media Services에서 지원 되는 스트리밍 형식 (MPEG 대시, HLS, 부드러운 스트리밍)으로 다시 패키지 하지 않고도 제공 하는 동적 패키징을 제공 합니다. 스트리밍 형식.
 
-[동적 패키징을](media-services-dynamic-packaging-overview.md)활용 하려면 메자닌 (원본) 파일을 적응 비트 전송률 MP4 파일 또는 적응 비트 전송률 부드러운 스트리밍 파일 집합으로 인코드 하 고 시작 된 상태에서 하나 이상의 표준 또는 프리미엄 스트리밍 끝점을 사용 해야 합니다.
+[동적 패키징을](media-services-dynamic-packaging-overview.md)활용 하려면 메자닌 (원본) 파일을 적응 비트 전송률 MP4 파일 또는 적응 비트 전송률 부드러운 스트리밍 파일 집합으로 인코드 하 고 시작 된 상태에서 하나 이상의 표준 또는 프리미엄 스트리밍 엔드포인트을 사용 해야 합니다.
 
 Media Services은이 문서에서 설명 하는 다음과 같은 주문형 인코더를 지원 합니다.
 
@@ -115,7 +115,7 @@ Azure Media Services에서 채널은 라이브 스트리밍 콘텐츠를 처리 
 * RTMP 또는 부드러운 스트리밍 (조각화 된 MP4) 형식 중 하나인 단일 비트 전송률 스트림은 Media Services를 사용 하 여 라이브 인코딩을 수행할 수 있는 채널에 전송 됩니다. A csatorna ezután a bejövő egyfajta sávszélességű adatfolyamot élő kódolás útján többféle sávszélességű (adaptív) video-adatfolyammá alakítja. Kérés esetén a Media Services továbbítja az adatfolyamot az ügyfeleknek.
 
 ### <a name="channel"></a>채널
-Media Services에서 [채널](https://docs.microsoft.com/rest/api/media/operations/channel)은 라이브 스트리밍 콘텐츠 처리를 담당 합니다. 채널은 라이브 코드 변환기 제공 하는 입력 끝점 (수집 URL)을 제공 합니다. 채널은 라이브 코드 변환기에서 라이브 입력 스트림을 수신 하 고 하나 이상의 StreamingEndpoints를 통해 스트리밍할 수 있도록 합니다. 또한 채널에서는 추가 처리 및 배달 전에 스트림을 미리 보고 유효성을 검사 하는 데 사용 하는 미리 보기 끝점 (미리 보기 URL)을 제공 합니다.
+Media Services에서 [채널](https://docs.microsoft.com/rest/api/media/operations/channel)은 라이브 스트리밍 콘텐츠 처리를 담당 합니다. 채널은 라이브 코드 변환기 제공 하는 입력 엔드포인트 (수집 URL)을 제공 합니다. 채널은 라이브 코드 변환기에서 라이브 입력 스트림을 수신 하 고 하나 이상의 StreamingEndpoints를 통해 스트리밍할 수 있도록 합니다. 또한 채널에서는 추가 처리 및 배달 전에 스트림을 미리 보고 유효성을 검사 하는 데 사용 하는 미리 보기 엔드포인트 (미리 보기 URL)을 제공 합니다.
 
 채널을 만들 때 수집 URL 및 미리 보기 URL을 가져올 수 있습니다. 이러한 Url을 가져오려면 채널이 시작 됨 상태에 있을 필요가 없습니다. 라이브 코드 변환기에서 채널로 데이터 푸시를 시작할 준비가 되 면 채널을 시작 해야 합니다. 라이브 코드 변환기에서 데이터 수집을 시작 하면 스트림을 미리 볼 수 있습니다.
 
@@ -164,9 +164,9 @@ További információkért tekintse át a következő cikkeket:
 Media Services 사용 하는 경우에는 메자닌 파일을 적응 비트 전송률 MP4 집합으로 인코딩한 다음 [동적 패키징](media-services-dynamic-packaging-overview.md)을 사용 하 여 집합을 원하는 형식으로 변환 하는 것이 좋습니다.
 
 ### <a name="streaming-endpoint"></a>Streamvégpont
-StreamingEndpoint는 클라이언트 플레이어 응용 프로그램에 직접 콘텐츠를 배달할 수 있는 스트리밍 서비스 또는 추가 배포를 위해 CDN (Content Delivery Network)으로 Azure Media Services (이제 Azure CDN 통합을 제공 합니다.) 스트리밍 끝점 서비스의 아웃 바운드 스트림은 라이브 스트림 이거나 Media Services 계정에 주문형 비디오 자산이 될 수 있습니다. A Media Services ügyfelei általában egy **standard** szintű streamvégpontot vagy egy vagy több **prémium** szintű streamvégpontot választanak, saját igényeiknek megfelelően. 표준 스트리밍 끝점은 대부분의 스트리밍 워크 로드에 적합 합니다. 
+StreamingEndpoint는 클라이언트 플레이어 응용 프로그램에 직접 콘텐츠를 배달할 수 있는 스트리밍 서비스 또는 추가 배포를 위해 CDN (Content Delivery Network)으로 Azure Media Services (이제 Azure CDN 통합을 제공 합니다.) 스트리밍 엔드포인트 서비스의 아웃 바운드 스트림은 라이브 스트림 이거나 Media Services 계정에 주문형 비디오 자산이 될 수 있습니다. A Media Services ügyfelei általában egy **standard** szintű streamvégpontot vagy egy vagy több **prémium** szintű streamvégpontot választanak, saját igényeiknek megfelelően. 표준 스트리밍 엔드포인트은 대부분의 스트리밍 워크 로드에 적합 합니다. 
 
-A szabványos streamvégpont a legtöbb streamelési feladat ellátására alkalmas. 표준 스트리밍 끝점은 HLS, MPEG-2 및 부드러운 스트리밍에 대 한 동적 패키징을 비롯 하 여 Microsoft PlayReady, Google Widevine Apple Fairplay 및의 동적 암호화를 통해 모든 장치에 콘텐츠를 제공 하는 유연성을 제공 합니다. AES128.  또한 Azure CDN 통합을 통해 수천 명의 동시 시청자를 사용 하 여 매우 작고 많은 대상 그룹으로 확장 됩니다. 고급 작업이 있거나 스트리밍 용량 요구 사항이 표준 스트리밍 끝점 처리량 목표에 맞지 않거나 증가 하는 대역폭 요구를 처리 하도록 StreamingEndpoint 서비스의 용량을 제어 하려는 경우에는 배율 단위 (프리미엄 스트리밍 단위 라고도 함)를 할당 합니다.
+A szabványos streamvégpont a legtöbb streamelési feladat ellátására alkalmas. 표준 스트리밍 엔드포인트은 HLS, MPEG-2 및 부드러운 스트리밍에 대 한 동적 패키징을 비롯 하 여 Microsoft PlayReady, Google Widevine Apple Fairplay 및의 동적 암호화를 통해 모든 장치에 콘텐츠를 제공 하는 유연성을 제공 합니다. AES128.  또한 Azure CDN 통합을 통해 수천 명의 동시 시청자를 사용 하 여 매우 작고 많은 대상 그룹으로 확장 됩니다. 고급 작업이 있거나 스트리밍 용량 요구 사항이 표준 스트리밍 엔드포인트 처리량 목표에 맞지 않거나 증가 하는 대역폭 요구를 처리 하도록 StreamingEndpoint 서비스의 용량을 제어 하려는 경우에는 배율 단위 (프리미엄 스트리밍 단위 라고도 함)를 할당 합니다.
 
 동적 패키징 및/또는 동적 암호화를 사용 하는 것이 좋습니다.
 
@@ -175,7 +175,7 @@ A szabványos streamvégpont a legtöbb streamelési feladat ellátására alkal
 
 További információ [ebben](media-services-portal-manage-streaming-endpoints.md) a témakörben érhető el.
 
-기본적으로 Media Services 계정에 최대 2 개의 스트리밍 끝점을 포함할 수 있습니다. 더 높은 한도를 요청 하려면 [할당량 및 제한 사항](media-services-quotas-and-limitations.md)을 참조 하세요.
+기본적으로 Media Services 계정에 최대 2 개의 스트리밍 엔드포인트을 포함할 수 있습니다. 더 높은 한도를 요청 하려면 [할당량 및 제한 사항](media-services-quotas-and-limitations.md)을 참조 하세요.
 
 StreamingEndpoint가 실행 중 상태인 경우에만 요금이 청구 됩니다.
 
@@ -200,7 +200,7 @@ http://amstest1.streaming.mediaservices.windows.net/3c5fe676-199c-4620-9b03-ba01
 SSL 연결을 통해 콘텐츠를 스트리밍할 수도 있습니다. 이렇게 하려면 스트리밍 Url이 HTTPS로 시작 하는지 확인 합니다. 현재 AMS는 사용자 지정 도메인을 사용 하는 SSL을 지원 하지 않습니다.  
 
 >[!NOTE]
->콘텐츠를 배달 하는 스트리밍 끝점이 2014 년 9 월 10 일 이후에 만들어진 경우에만 SSL을 통해 스트리밍할 수 있습니다. 스트리밍 Url이 9 월 10 일 이후에 만들어진 스트리밍 끝점을 기반으로 하는 경우 URL에는 "streaming.mediaservices.windows.net" (새 형식)이 포함 됩니다. "Origin.mediaservices.windows.net" (이전 형식)이 포함 된 스트리밍 Url은 SSL을 지원 하지 않습니다. URL이 이전 형식인 경우 SSL을 통해 스트리밍할 수 있도록 하려면 새 스트리밍 끝점을 만듭니다. 새 스트리밍 끝점을 기반으로 만든 Url을 사용 하 여 SSL을 통해 콘텐츠를 스트리밍합니다.
+>콘텐츠를 배달 하는 스트리밍 엔드포인트이 2014 년 9 월 10 일 이후에 만들어진 경우에만 SSL을 통해 스트리밍할 수 있습니다. 스트리밍 Url이 9 월 10 일 이후에 만들어진 스트리밍 엔드포인트을 기반으로 하는 경우 URL에는 "streaming.mediaservices.windows.net" (새 형식)이 포함 됩니다. "Origin.mediaservices.windows.net" (이전 형식)이 포함 된 스트리밍 Url은 SSL을 지원 하지 않습니다. URL이 이전 형식인 경우 SSL을 통해 스트리밍할 수 있도록 하려면 새 스트리밍 엔드포인트을 만듭니다. 새 스트리밍 엔드포인트을 기반으로 만든 Url을 사용 하 여 SSL을 통해 콘텐츠를 스트리밍합니다.
 
 다음 목록에서는 다양 한 스트리밍 형식에 대해 설명 하 고 예제를 제공 합니다.
 
@@ -212,19 +212,19 @@ http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46
 
 * MPEG DASH
 
-{스트리밍 끝점 이름-media services 계정 이름}. windowsazure.mediaservices/{locator ID}/{filename}.ism/Manifest (format = mpd)
+{스트리밍 엔드포인트 이름-media services 계정 이름}. windowsazure.mediaservices/{locator ID}/{filename}.ism/Manifest (format = mpd)
 
 http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=mpd-time-csf)
 
 * HLS (Apple HTTP 라이브 스트리밍) V4
 
-{스트리밍 끝점 이름-media services 계정 이름}. windowsazure.mediaservices/{locator ID}/{filename}.ism/Manifest (format = m3u8-aapl-v3-aapl)
+{스트리밍 엔드포인트 이름-media services 계정 이름}. windowsazure.mediaservices/{locator ID}/{filename}.ism/Manifest (format = m3u8-aapl-v3-aapl)
 
 http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl)
 
 * HLS (Apple HTTP 라이브 스트리밍) V3
 
-{스트리밍 끝점 이름-media services 계정 이름}. windowsazure.mediaservices/{locator ID}/{filename}.ism/Manifest (format = m3u8-aapl-v3-aapl-v3)
+{스트리밍 엔드포인트 이름-media services 계정 이름}. windowsazure.mediaservices/{locator ID}/{filename}.ism/Manifest (format = m3u8-aapl-v3-aapl-v3)
 
 http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3)
 

@@ -45,7 +45,7 @@ ms.locfileid: "75425178"
    ![모든 사용자에 대해 결합 된 보안 정보 미리 보기 환경 사용](media/howto-registration-mfa-sspr-combined/enable-the-combined-security-info-preview.png)
 
 > [!IMPORTANT]
-> 2019 년 3 월부터 무료/평가판 Azure AD 테 넌 트의 사용자를 Multi-Factor Authentication 하 고 SSPR 하는 데 전화 통화 옵션을 사용할 수 없습니다. SMS 메시지는이 변경 내용의 영향을 받지 않습니다. 전화 통화 옵션은 유료 Azure AD 테 넌 트의 사용자가 계속 사용할 수 있습니다.
+> 2019 년 3 월부터 무료/평가판 Azure AD 테넌트의 사용자를 Multi-Factor Authentication 하 고 SSPR 하는 데 전화 통화 옵션을 사용할 수 없습니다. SMS 메시지는이 변경 내용의 영향을 받지 않습니다. 전화 통화 옵션은 유료 Azure AD 테넌트의 사용자가 계속 사용할 수 있습니다.
 
 > [!NOTE]
 > 결합 된 등록을 사용 하도록 설정한 후에는 새 환경을 통해 전화 번호 또는 모바일 앱을 등록 하거나 확인 하는 사용자가 Multi-Factor Authentication 및 SSPR에서 해당 메서드를 사용할 수 있는 경우 Multi-Factor Authentication 및 SSPR에 사용할 수 있습니다. 방침. 이 환경을 사용 하지 않도록 설정 하는 경우 `https://aka.ms/ssprsetup`의 이전 SSPR 등록 페이지로 이동 하는 사용자는 multi-factor authentication을 수행 해야 페이지에 액세스할 수 있습니다.

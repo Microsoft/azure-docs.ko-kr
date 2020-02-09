@@ -89,7 +89,7 @@ Azure AD 응용 프로그램 프록시은 Azure를 기반으로 합니다. DDOS 
 
 1. **HTTP 오류 403 –** 사용할 수 없음 응답이 표시 되어야 합니다.
 
-1. 제공 된 NDES URL (Microsoft Intune을 통해)을 장치로 변경 합니다 .이 변경은 Microsoft 끝점 구성 센터 또는 Intune 클라우드에 있을 수 있습니다.
+1. 제공 된 NDES URL (Microsoft Intune을 통해)을 장치로 변경 합니다 .이 변경은 Microsoft 엔드포인트 구성 센터 또는 Intune 클라우드에 있을 수 있습니다.
 
    * Configuration Center에 대해 CRP (인증서 등록 지점)로 이동 하 여 URL을 조정 합니다. 이 URL은 장치를 호출 하 고 챌린지를 제공 하는 장치입니다.
    * Intune 독립 실행형이 라고도 하는 Intune 클라우드의 경우 새 SCEP 정책을 편집 하거나 만들고 새 URL을 추가 합니다.

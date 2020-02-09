@@ -28,7 +28,7 @@ Azure Cosmos DB는 두 가지 유형의 키를 사용하여 사용자를 인증�
 
 ## <a name="master-keys"></a>마스터 키
 
-마스터 키는 데이터베이스 계정에 대 한 모든 관리 리소스에 대 한 액세스를 제공 합니다. 마스터 키:
+마스터 키는 데이터베이스 계정에 대한 모든 관리 리소스에 대한 액세스를 제공 합니다. 마스터 키:
 
 - 계정, 데이터베이스, 사용자 및 사용 권한에 대한 액세스를 제공합니다. 
 - 컨테이너 및 문서에 대한 세분화된 액세스를 제공하는 데 사용할 수 없습니다.
@@ -91,7 +91,7 @@ Cosmos DB 리소스 토큰은 사용자가 부여한 권한에 따라 마스터 
 
     ![Azure Cosmos DB 리소스 토큰 워크플로](./media/secure-access-to-data/resourcekeyworkflow.png)
 
-리소스 토큰 생성 및 관리는 네이티브 Cosmos DB 클라이언트 라이브러리에서 처리하지만 REST를 사용하는 경우 요청/인증 헤더를 구성해야 합니다. REST에 대 한 인증 헤더를 만드는 방법에 대 한 자세한 내용은 [Cosmos DB 리소스에](https://docs.microsoft.com/rest/api/cosmos-db/access-control-on-cosmosdb-resources) 대 한 Access Control 또는 [.net SDK](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos/src/AuthorizationHelper.cs) 또는 [node.js sdk](https://github.com/Azure/azure-cosmos-js/blob/master/src/auth.ts)의 소스 코드를 참조 하세요.
+리소스 토큰 생성 및 관리는 네이티브 Cosmos DB 클라이언트 라이브러리에서 처리하지만 REST를 사용하는 경우 요청/인증 헤더를 구성해야 합니다. REST에 대한 인증 헤더를 만드는 방법에 대한 자세한 내용은 [Cosmos DB 리소스에](https://docs.microsoft.com/rest/api/cosmos-db/access-control-on-cosmosdb-resources) 대한 Access Control 또는 [.net SDK](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos/src/AuthorizationHelper.cs) 또는 [node.js sdk](https://github.com/Azure/azure-cosmos-js/blob/master/src/auth.ts)의 소스 코드를 참조 하세요.
 
 리소스 토큰을 생성하거나 broker하는 데 사용되는 중간 계층 서비스의 예는 [ResourceTokenBroker 앱](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/xamarin/UserItems/ResourceTokenBroker/ResourceTokenBroker/Controllers)을 참조하세요.
 
@@ -111,13 +111,13 @@ User user = await database.CreateUserAsync("User 1");
 
 ## 권한에<a id="permissions"></a>
 
-권한 리소스는 사용자와 연결 되며 컨테이너 및 파티션 키 수준에서 할당 됩니다. 각 사용자는 0 개 이상의 권한을 포함할 수 있습니다. 권한 리소스는 특정 파티션 키의 특정 컨테이너 또는 데이터에 액세스 하려고 할 때 사용자가 필요로 하는 보안 토큰에 대 한 액세스를 제공 합니다. 권한 리소스에서 제공될 수 있는 사용 가능한 액세스 수준은 다음 두 가지입니다.
+권한 리소스는 사용자와 연결 되며 컨테이너 및 파티션 키 수준에서 할당 됩니다. 각 사용자는 0 개 이상의 권한을 포함할 수 있습니다. 권한 리소스는 특정 파티션 키의 특정 컨테이너 또는 데이터에 액세스 하려고 할 때 사용자가 필요로 하는 보안 토큰에 대한 액세스를 제공 합니다. 권한 리소스에서 제공될 수 있는 사용 가능한 액세스 수준은 다음 두 가지입니다.
 
 - 전체: 사용자가 리소스에 대한 모든 권한을 갖습니다.
 - 읽기: 사용자가 리소스 내용을 읽을 수만 있고 리소스에 대해 쓰기, 업데이트 또는 삭제 작업을 수행할 수 없습니다.
 
 > [!NOTE]
-> 저장 프로시저를 실행 하려면 사용자에 게 저장 프로시저가 실행 될 컨테이너에 대 한 All 권한이 있어야 합니다.
+> 저장 프로시저를 실행 하려면 사용자에 게 저장 프로시저가 실행 될 컨테이너에 대한 All 권한이 있어야 합니다.
 
 ### <a name="code-sample-to-create-permission"></a>사용 권한을 만드는 코드 샘플
 
@@ -134,7 +134,7 @@ user.CreatePermissionAsync(
         resourcePartitionKey: new PartitionKey("012345")));
 ```
 
-### <a name="code-sample-to-read-permission-for-user"></a>사용자에 대 한 읽기 권한을 부여 하는 코드 샘플
+### <a name="code-sample-to-read-permission-for-user"></a>사용자에 대한 읽기 권한을 부여 하는 코드 샘플
 
 다음 코드 조각은 위에서 만든 사용자와 연결 된 사용 권한을 검색 하 고 단일 파티션 키로 범위가 지정 된 사용자를 대신 하 여 새 CosmosClient를 인스턴스화하는 방법을 보여 줍니다.
 
@@ -167,6 +167,6 @@ Azure Cosmos DB를 사용하면 데이터베이스 또는 컬렉션에 있는 �
 
 ## <a name="next-steps"></a>다음 단계
 
-- Cosmos 데이터베이스 보안에 대 한 자세한 내용은 [데이터베이스 보안 Cosmos DB](database-security.md)를 참조 하세요.
+- Cosmos 데이터베이스 보안에 대한 자세한 내용은 [데이터베이스 보안 Cosmos DB](database-security.md)를 참조 하세요.
 - Azure Cosmos DB 권한 부여 토큰을 생성하는 방법에 대한 자세한 내용은 [Azure Cosmos DB 리소스에 대한 Access Control](https://docs.microsoft.com/rest/api/cosmos-db/access-control-on-cosmosdb-resources)을 참조하세요.
 - 사용자 및 권한이 있는 사용자 관리 샘플, [.NET SDK v3 사용자 관리 샘플](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos.Samples/Usage/UserManagement/UserManagementProgram.cs)

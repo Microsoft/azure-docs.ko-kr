@@ -47,7 +47,7 @@ Azure(큰 인스턴스)의 SAP HANA는 두 가지 백업 및 복원 옵션을 �
 - **인프라 백업 및 복원 기능** Azure (Large Instances)에서 SAP HANA의 기본 인프라가 제공 하는 백업 및 복원 기능을 사용할 수도 있습니다. 이 옵션은 백업 및 빠른 복원에 대한 필요를 충족합니다. 이 섹션의 나머지 부분에서는 HANA 큰 인스턴스와 함께 제공되는 백업 및 복원 기능을 설명합니다. 이 섹션에서는 HANA Large Instances에서 제공 하는 재해 복구 기능에 대 한 백업 및 복원의 관계에 대해서도 설명 합니다.
 
 > [!NOTE]
->   HANA Large Instances의 기본 인프라에서 사용 하는 스냅숏 기술은 SAP HANA 스냅숏에 대 한 종속성이 있습니다. 이 시점에서 SAP HANA 스냅숏은 SAP HANA 다중 테 넌 트 데이터베이스 컨테이너의 다중 테 넌 트와 함께 작동 하지 않습니다. 하나의 테 넌 트가 배포 된 경우 SAP HANA 스냅숏이 작동 하 고이 메서드를 사용할 수 있습니다.
+>   HANA Large Instances의 기본 인프라에서 사용 하는 스냅숏 기술은 SAP HANA 스냅숏에 대 한 종속성이 있습니다. 이 시점에서 SAP HANA 스냅숏은 SAP HANA 다중 테넌트 데이터베이스 컨테이너의 다중 테넌트와 함께 작동 하지 않습니다. 하나의 테넌트가 배포 된 경우 SAP HANA 스냅숏이 작동 하 고이 메서드를 사용할 수 있습니다.
 
 ## <a name="use-storage-snapshots-of-sap-hana-on-azure-large-instances"></a>Azure (Large Instances)에서 SAP HANA의 저장소 스냅숏 사용
 
@@ -138,16 +138,16 @@ SAP HANA를 설치 하는 동안 HANA Large Instance 장치에 SAP HANA HDB 클�
 
 ### <a name="step-3-create-a-public-key"></a>3단계: 공개 키 만들기
 
-HANA Large Instance 테 넌 트의 저장소 스냅숏 인터페이스에 대 한 액세스를 사용 하도록 설정 하려면 공개 키를 통해 로그인 프로시저를 설정 합니다. 
+HANA Large Instance 테넌트의 저장소 스냅숏 인터페이스에 대 한 액세스를 사용 하도록 설정 하려면 공개 키를 통해 로그인 프로시저를 설정 합니다. 
 
-테 넌 트의 Azure (Large Instances) 서버에서 첫 번째 SAP HANA 저장소 인프라에 액세스 하기 위한 공개 키를 만듭니다. 공개 키를 사용 하면 저장소 스냅숏 인터페이스에 로그인 하는 데 암호가 필요 하지 않습니다. 또한 공개 키를 사용 하 여 암호 자격 증명을 유지 관리할 필요가 없습니다. 
+테넌트의 Azure (Large Instances) 서버에서 첫 번째 SAP HANA 저장소 인프라에 액세스 하기 위한 공개 키를 만듭니다. 공개 키를 사용 하면 저장소 스냅숏 인터페이스에 로그인 하는 데 암호가 필요 하지 않습니다. 또한 공개 키를 사용 하 여 암호 자격 증명을 유지 관리할 필요가 없습니다. 
 
 공개 키를 생성 하려면 [Azure의 SAP HANA Microsoft 스냅숏 도구](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md)에서 "저장소와 통신 사용"을 참조 하세요.
 
 
 ### <a name="step-4-create-an-sap-hana-user-account"></a>4단계: SAP HANA 사용자 계정 만들기
 
-SAP HANA 스냅숏 만들기를 시작 하려면 저장소 스냅숏 스크립트에서 사용할 수 있는 SAP HANA 사용자 계정을 만듭니다. 이를 위해 SAP HANA Studio 내에 SAP HANA 사용자 계정을 만듭니다. 사용자는 MDC *db 아래에 생성 되 고 MDC* 의 SID 데이터베이스 아래에 생성 되어야 합니다. 단일 컨테이너 환경에서 사용자는 테 넌 트 데이터베이스에 만들어집니다. 이 계정에는 **백업 관리자** 및 **카탈로그 읽기** 권한이 있어야 합니다. 
+SAP HANA 스냅숏 만들기를 시작 하려면 저장소 스냅숏 스크립트에서 사용할 수 있는 SAP HANA 사용자 계정을 만듭니다. 이를 위해 SAP HANA Studio 내에 SAP HANA 사용자 계정을 만듭니다. 사용자는 MDC *db 아래에 생성 되 고 MDC* 의 SID 데이터베이스 아래에 생성 되어야 합니다. 단일 컨테이너 환경에서 사용자는 테넌트 데이터베이스에 만들어집니다. 이 계정에는 **백업 관리자** 및 **카탈로그 읽기** 권한이 있어야 합니다. 
 
 사용자 계정을 설정 하 고 사용 하려면 [GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md)에서 "SAP HANA 통신 사용"을 참조 하세요.
 

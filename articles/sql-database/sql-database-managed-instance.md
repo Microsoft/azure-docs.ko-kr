@@ -223,7 +223,7 @@ Managed Instance 배포 옵션은 Azure 클라우드와 SQL Server 데이터베�
 Managed Instance는 Azure 클라우드의 다른 테넌트와 추가로 격리되는 보안을 제공합니다. 보안 격리에는 다음이 포함됩니다.
 
 - Azure ExpressRoute 또는 VPN Gateway를 사용하여 [기본 가상 네트워크 구현](sql-database-managed-instance-connectivity-architecture.md) 및 온-프레미스 환경에 연결
-- 기본 배포에서 SQL 끝점은 개인 IP 주소를 통해서만 노출 되므로 개인 Azure 또는 하이브리드 네트워크에서 안전 하 게 연결할 수 있습니다.
+- 기본 배포에서 SQL 엔드포인트은 개인 IP 주소를 통해서만 노출 되므로 개인 Azure 또는 하이브리드 네트워크에서 안전 하 게 연결할 수 있습니다.
 - 전용 기본 인프라(컴퓨팅, 스토리지)를 제공하는 단일 테넌트
 
 다음 다이어그램은 애플리케이션에 대한 다양한 연결 옵션을 설명합니다.
@@ -250,7 +250,7 @@ Azure SQL Database는 데이터를 보호하는 데 사용할 수 있는 일단�
 
 ## <a name="azure-active-directory-integration"></a>Azure Active Directory 통합
 
-Managed Instance 배포 옵션은 기존 SQL 서버 데이터베이스 엔진 로그인 및 AAD(Azure Active Directory)와 통합된 로그인을 지원합니다. Azure AD 서버 보안 주체(로그인)(**공개 미리 보기**)는 온-프레미스 환경에서 사용 중인 온-프레미스 데이터베이스 로그인의 Azure 클라우드 버전입니다. Azure AD 서버 보안 주체 (로그인)를 사용 하면 동일한 관리 되는 내 데이터베이스 간 쿼리를 포함 하 여 인스턴스 수준 작업을 수행할 수 있는 진정한 인스턴스 범위 보안 주체로 Azure Active Directory 테 넌 트의 사용자 및 그룹을 지정할 수 있습니다. 인스턴스.
+Managed Instance 배포 옵션은 기존 SQL 서버 데이터베이스 엔진 로그인 및 AAD(Azure Active Directory)와 통합된 로그인을 지원합니다. Azure AD 서버 보안 주체(로그인)(**공개 미리 보기**)는 온-프레미스 환경에서 사용 중인 온-프레미스 데이터베이스 로그인의 Azure 클라우드 버전입니다. Azure AD 서버 보안 주체 (로그인)를 사용 하면 동일한 관리 되는 내 데이터베이스 간 쿼리를 포함 하 여 인스턴스 수준 작업을 수행할 수 있는 진정한 인스턴스 범위 보안 주체로 Azure Active Directory 테넌트의 사용자 및 그룹을 지정할 수 있습니다. 인스턴스.
 
 **외부 공급자에서**Azure AD 서버 보안 주체 (로그인)를 만들기 위해 새 구문이 도입 되었습니다. 구문에 대한 자세한 내용은 <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">CREATE LOGIN</a>을 참조하고 [Managed Instance에 대한 Azure Active Directory 관리자 프로비전](sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-managed-instance)을 검토하세요.
 

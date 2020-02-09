@@ -19,7 +19,7 @@ Azure는 [App Service 앱](overview.md)을 디버그하는 데 도움이 되는 
 이 문서에서는 진단 로그 작업에 [Azure Portal](https://portal.azure.com)과 Azure CLI를 사용합니다. Visual Studio를 사용하여 진단 로그로 작업하는 방법에 대한 자세한 내용은 [Visual Studio에서 Azure 문제 해결](troubleshoot-dotnet-visual-studio.md)을 참조하세요.
 
 > [!NOTE]
-> 이 문서의 로깅 지침 외에도 Azure 모니터링을 사용 하는 새로운 통합 로깅 기능이 있습니다. 이 기능에 대 한 자세한 내용은 [Azure Monitor에 대 한 로그 보내기 (미리 보기)](#send-logs-to-azure-monitor-preview) 섹션에서 확인할 수 있습니다. 
+> 이 문서의 로깅 지침 외에도 Azure 모니터링을 사용 하는 새로운 통합 로깅 기능이 있습니다. 이 기능에 대한 자세한 내용은 [Azure Monitor에 대한 로그 보내기 (미리 보기)](#send-logs-to-azure-monitor-preview) 섹션에서 확인할 수 있습니다. 
 >
 >
 
@@ -28,8 +28,8 @@ Azure는 [App Service 앱](overview.md)을 디버그하는 데 도움이 되는 
 | 애플리케이션 로깅 | Windows, Linux | App Service 파일 시스템 및/또는 Azure Storage blob | 응용 프로그램 코드에 의해 생성 된 메시지를 기록 합니다. 사용자가 선택한 웹 프레임 워크 또는 사용자 언어의 표준 로깅 패턴을 사용 하 여 직접 응용 프로그램 코드에서 메시지를 생성할 수 있습니다. 각 메시지에는 **중요**, **오류**, **경고**, **정보**, **디버그**및 **추적**범주 중 하나가 할당 됩니다. 응용 프로그램 로깅을 사용 하도록 설정할 때 심각도 수준을 설정 하 여 로깅을 원하는 세부 정보를 선택할 수 있습니다.|
 | 웹 서버 로깅| Windows | App Service 파일 시스템 또는 Azure Storage blob| [W3C 확장 로그 파일 형식의](/windows/desktop/Http/w3c-logging)원시 HTTP 요청 데이터입니다. 각 로그 메시지에는 HTTP 메서드, 리소스 URI, 클라이언트 IP, 클라이언트 포트, 사용자 에이전트, 응답 코드 등의 데이터가 포함 됩니다. |
 | 자세한 오류 메시지| Windows | App Service 파일 시스템 | 클라이언트 브라우저로 전송 된 *.htm* 오류 페이지의 복사본입니다. 보안상의 이유로, 자세한 오류 페이지는 프로덕션 환경에서 클라이언트로 전송 되어서는 안 되지만 응용 프로그램 오류가 발생할 때마다 HTTP 코드 400 이상이 포함 된 오류 페이지를 저장할 수 App Service. 이 페이지에는 서버에서 오류 코드를 반환 하는 이유를 확인 하는 데 도움이 되는 정보가 포함 될 수 있습니다. |
-| 실패 한 요청 추적 | Windows | App Service 파일 시스템 | 요청을 처리 하는 데 사용 되는 IIS 구성 요소 추적 및 각 구성 요소에서 소요 된 시간을 비롯 하 여 실패 한 요청에 대 한 자세한 추적 정보입니다. 사이트 성능을 향상시키거나 특정 HTTP 오류를 분리하려는 경우에 유용합니다. 실패 한 각 요청에 대해 XML 로그 파일이 포함 된 폴더와 로그 파일을 볼 XSL 스타일 시트가 하나씩 생성 됩니다. |
-| 배포 로깅 | Windows, Linux | App Service 파일 시스템 | 앱에 콘텐츠를 게시 하는 경우에 대 한 로그입니다. 배포 로깅은 자동으로 수행 되며 배포 로깅에 대 한 구성 가능한 설정이 없습니다. 배포가 실패 한 이유를 확인 하는 데 도움이 됩니다. 예를 들어 [사용자 지정 배포 스크립트](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script)를 사용 하는 경우 배포 로깅을 사용 하 여 스크립트가 실패 하는 이유를 확인할 수 있습니다. |
+| 실패 한 요청 추적 | Windows | App Service 파일 시스템 | 요청을 처리 하는 데 사용 되는 IIS 구성 요소 추적 및 각 구성 요소에서 소요 된 시간을 비롯 하 여 실패 한 요청에 대한 자세한 추적 정보입니다. 사이트 성능을 향상시키거나 특정 HTTP 오류를 분리하려는 경우에 유용합니다. 실패 한 각 요청에 대해 XML 로그 파일이 포함 된 폴더와 로그 파일을 볼 XSL 스타일 시트가 하나씩 생성 됩니다. |
+| 배포 로깅 | Windows, Linux | App Service 파일 시스템 | 앱에 콘텐츠를 게시 하는 경우에 대한 로그입니다. 배포 로깅은 자동으로 수행 되며 배포 로깅에 대한 구성 가능한 설정이 없습니다. 배포가 실패 한 이유를 확인 하는 데 도움이 됩니다. 예를 들어 [사용자 지정 배포 스크립트](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script)를 사용 하는 경우 배포 로깅을 사용 하 여 스크립트가 실패 하는 이유를 확인할 수 있습니다. |
 
 > [!NOTE]
 > App Service는 응용 프로그램 문제를 해결 하는 데 도움이 되는 전용 대화형 진단 도구를 제공 합니다. 자세한 내용은 [Azure App Service 진단 개요](overview-diagnostics.md)를 참조 하세요.
@@ -39,7 +39,7 @@ Azure는 [App Service 앱](overview.md)을 디버그하는 데 도움이 되는 
 
 ## <a name="enable-application-logging-windows"></a>응용 프로그램 로깅 사용 (Windows)
 
-[Azure Portal](https://portal.azure.com)에서 Windows 앱에 대 한 응용 프로그램 로깅을 사용 하도록 설정 하려면 앱으로 이동 하 여 **App Service 로그**를 선택 합니다.
+[Azure Portal](https://portal.azure.com)에서 Windows 앱에 대한 응용 프로그램 로깅을 사용 하도록 설정 하려면 앱으로 이동 하 여 **App Service 로그**를 선택 합니다.
 
 **응용 프로그램 로깅 (파일 시스템)** 또는 **응용 프로그램 로깅 (Blob)** 중 하나 또는 둘 모두에 대해 **켜기** 를 선택 합니다. 
 
@@ -69,17 +69,17 @@ Azure는 [App Service 앱](overview.md)을 디버그하는 데 도움이 되는 
 
 ## <a name="enable-application-logging-linuxcontainer"></a>응용 프로그램 로깅 사용 (Linux/컨테이너)
 
-[Azure Portal](https://portal.azure.com)에서 Linux 앱 또는 사용자 지정 컨테이너 앱에 대 한 응용 프로그램 로깅을 사용 하도록 설정 하려면 앱으로 이동 하 여 **App Service 로그**를 선택 합니다.
+[Azure Portal](https://portal.azure.com)에서 Linux 앱 또는 사용자 지정 컨테이너 앱에 대한 응용 프로그램 로깅을 사용 하도록 설정 하려면 앱으로 이동 하 여 **App Service 로그**를 선택 합니다.
 
 **응용 프로그램 로깅**에서 **파일 시스템**을 선택 합니다.
 
-**할당량 (MB)** 에서 응용 프로그램 로그에 대 한 디스크 할당량을 지정 합니다. **보존 기간 (일)** 에서 로그를 보존할 일 수를 설정 합니다.
+**할당량 (MB)** 에서 응용 프로그램 로그에 대한 디스크 할당량을 지정 합니다. **보존 기간 (일)** 에서 로그를 보존할 일 수를 설정 합니다.
 
 완료 되 면 **저장**을 선택 합니다.
 
 ## <a name="enable-web-server-logging"></a>웹 서버 로깅 사용
 
-[Azure Portal](https://portal.azure.com)에서 Windows 앱에 대 한 웹 서버 로깅을 사용 하도록 설정 하려면 앱으로 이동 하 여 **App Service logs**를 선택 합니다.
+[Azure Portal](https://portal.azure.com)에서 Windows 앱에 대한 웹 서버 로깅을 사용 하도록 설정 하려면 앱으로 이동 하 여 **App Service logs**를 선택 합니다.
 
 **웹 서버 로깅**의 경우 blob storage에 로그를 저장 하려면 **저장소** 를 선택 하 고, App Service 파일 시스템에 로그를 저장 하려면 **파일 시스템** 을 선택 합니다. 
 
@@ -97,7 +97,7 @@ Azure는 [App Service 앱](overview.md)을 디버그하는 데 도움이 되는 
 
 ## <a name="log-detailed-errors"></a>자세한 오류 기록
 
-[Azure Portal](https://portal.azure.com)에서 Windows 앱에 대 한 오류 페이지 또는 실패 한 요청 추적을 저장 하려면 앱으로 이동 하 여 **App Service 로그**를 선택 합니다.
+[Azure Portal](https://portal.azure.com)에서 Windows 앱에 대한 오류 페이지 또는 실패 한 요청 추적을 저장 하려면 앱으로 이동 하 여 **App Service 로그**를 선택 합니다.
 
 **자세한 오류 로깅** 또는 **실패 한 요청 추적**에서 **켜기**를 선택한 다음, **저장**을 선택 합니다.
 
@@ -148,18 +148,18 @@ az webapp log tail --name appname --resource-group myResourceGroup --path http
 
 ### <a name="in-local-terminal"></a>로컬 터미널
 
-로컬 콘솔에서 로그를 스트리밍하려면 Azure CLI를 [설치](https://docs.microsoft.com/cli/azure/install-azure-cli) 하 고 [계정에 로그인](https://docs.microsoft.com/cli/azure/authenticate-azure-cli)합니다. 로그인 한 후 [에는 Cloud Shell에 대 한 지침](#in-cloud-shell) 을 따릅니다.
+로컬 콘솔에서 로그를 스트리밍하려면 Azure CLI를 [설치](https://docs.microsoft.com/cli/azure/install-azure-cli) 하 고 [계정에 로그인](https://docs.microsoft.com/cli/azure/authenticate-azure-cli)합니다. 로그인 한 후 [에는 Cloud Shell에 대한 지침](#in-cloud-shell) 을 따릅니다.
 
 ## <a name="access-log-files"></a>로그 파일 액세스
 
-로그 유형에 대 한 Azure Storage blob 옵션을 구성 하는 경우 Azure Storage에서 작동 하는 클라이언트 도구가 필요 합니다. 자세한 내용은 [Azure Storage 클라이언트 도구](../storage/common/storage-explorers.md)를 참조 하세요.
+로그 유형에 대한 Azure Storage blob 옵션을 구성 하는 경우 Azure Storage에서 작동 하는 클라이언트 도구가 필요 합니다. 자세한 내용은 [Azure Storage 클라이언트 도구](../storage/common/storage-explorers.md)를 참조 하세요.
 
 App Service 파일 시스템에 저장 된 로그의 경우 브라우저에서 ZIP 파일을 다운로드 하는 가장 쉬운 방법은 다음과 같습니다.
 
 - Linux/컨테이너 앱: `https://<app-name>.scm.azurewebsites.net/api/logs/docker/zip`
 - Windows 앱: `https://<app-name>.scm.azurewebsites.net/api/dump`
 
-Linux/컨테이너 앱의 경우 ZIP 파일에는 docker 호스트와 docker 컨테이너 모두에 대 한 콘솔 출력 로그가 포함 되어 있습니다. 스케일 아웃 된 앱의 경우 ZIP 파일에는 각 인스턴스에 대 한 로그 집합이 하나 포함 됩니다. App Service 파일 시스템에서 이러한 로그 파일은 */home/LogFiles* 디렉터리의 내용입니다.
+Linux/컨테이너 앱의 경우 ZIP 파일에는 docker 호스트와 docker 컨테이너 모두에 대한 콘솔 출력 로그가 포함 되어 있습니다. 스케일 아웃 된 앱의 경우 ZIP 파일에는 각 인스턴스에 대한 로그 집합이 하나 포함 됩니다. App Service 파일 시스템에서 이러한 로그 파일은 */home/LogFiles* 디렉터리의 내용입니다.
 
 Windows 앱의 경우 ZIP 파일에는 App Service 파일 시스템의 *D:\Home\LogFiles* 디렉터리 내용이 포함 되어 있습니다. 구조는 다음과 같습니다.
 
@@ -169,7 +169,7 @@ Windows 앱의 경우 ZIP 파일에는 App Service 파일 시스템의 *D:\Home\
 | **실패 한 요청 추적** | */LogFiles/W3SVC # # # # # # # # #/* | XML 파일 및 XSL 파일을 포함 합니다. 브라우저에서 형식이 지정 된 XML 파일을 볼 수 있습니다. |
 | **자세한 오류 로그** | */LogFiles/DetailedErrors/* | 에는 HTM 오류 파일이 포함 되어 있습니다. 브라우저에서 HTM 파일을 볼 수 있습니다.<br/>실패 한 요청 추적을 보는 또 다른 방법은 포털에서 앱 페이지로 이동 하는 것입니다. 왼쪽 메뉴에서 **문제 진단 및 해결**을 선택 하 고 **실패 한 요청 추적 로그**를 검색 한 다음 아이콘을 클릭 하 여 원하는 추적을 찾아 봅니다. |
 | **웹 서버 로그** | */LogFiles/http/RawLogs/* | [W3C 확장 로그 파일 형식을](/windows/desktop/Http/w3c-logging)사용 하 여 서식이 지정 된 텍스트 파일을 포함 합니다. 이 정보는 텍스트 편집기나 [로그 파서와](https://go.microsoft.com/fwlink/?LinkId=246619)같은 유틸리티를 사용 하 여 읽을 수 있습니다.<br/>App Service는 `s-computername`, `s-ip`또는 `cs-version` 필드를 지원 하지 않습니다. |
-| **배포 로그** | */LogFiles/Git/* 및 */deployments/* | Git 배포에 대 한 로그 뿐만 아니라 내부 배포 프로세스에서 생성 된 로그를 포함 합니다. |
+| **배포 로그** | */LogFiles/Git/* 및 */deployments/* | Git 배포에 대한 로그 뿐만 아니라 내부 배포 프로세스에서 생성 된 로그를 포함 합니다. |
 
 ## <a name="send-logs-to-azure-monitor-preview"></a>Azure Monitor로 로그 보내기 (미리 보기)
 

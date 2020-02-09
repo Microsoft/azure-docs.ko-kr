@@ -13,9 +13,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2019
 ms.locfileid: "73904619"
 ---
-# <a name="tune-azure-data-lake-storage-gen1-for-performance"></a>성능에 대 한 Azure Data Lake Storage Gen1 조정
+# <a name="tune-azure-data-lake-storage-gen1-for-performance"></a>성능에 대한 Azure Data Lake Storage Gen1 조정
 
-Data Lake Storage Gen1는 i/o 집약적인 분석 및 데이터 이동에 대 한 높은 처리량을 지원 합니다. Data Lake Storage Gen1에서는 사용 가능한 모든 처리량(초당 읽거나 쓸 수 있는 데이터 양)을 이용하여 최상의 성능을 얻는 것이 중요합니다. 이를 위해 최대한 많은 읽기와 쓰기를 병렬로 수행합니다.
+Data Lake Storage Gen1는 i/o 집약적인 분석 및 데이터 이동에 대한 높은 처리량을 지원 합니다. Data Lake Storage Gen1에서는 사용 가능한 모든 처리량(초당 읽거나 쓸 수 있는 데이터 양)을 이용하여 최상의 성능을 얻는 것이 중요합니다. 이를 위해 최대한 많은 읽기와 쓰기를 병렬로 수행합니다.
 
 ![Data Lake Storage Gen1 성능](./media/data-lake-store-performance-tuning-guidance/throughput.png)
 
@@ -23,7 +23,7 @@ Data Lake Storage Gen1은 모든 분석 시나리오에 필요한 처리량을 �
 
 ## <a name="data-ingestion"></a>데이터 수집
 
-원본 시스템의 데이터를 Data Lake Storage Gen1 수집 때 원본 하드웨어, 원본 네트워크 하드웨어 및 Data Lake Storage Gen1에 대 한 네트워크 연결이 병목 상태가 될 수 있다는 것을 고려 하는 것이 중요 합니다.
+원본 시스템의 데이터를 Data Lake Storage Gen1 수집 때 원본 하드웨어, 원본 네트워크 하드웨어 및 Data Lake Storage Gen1에 대한 네트워크 연결이 병목 상태가 될 수 있다는 것을 고려 하는 것이 중요 합니다.
 
 ![Data Lake Storage Gen1 성능](./media/data-lake-store-performance-tuning-guidance/bottleneck.png)
 
@@ -33,7 +33,7 @@ Data Lake Storage Gen1은 모든 분석 시나리오에 필요한 처리량을 �
 
 Azure에서 온-프레미스 컴퓨터 또는 Vm을 사용 하 고 있는지 여부에 따라 적절 한 하드웨어를 신중 하 게 선택 해야 합니다. 원본 디스크 하드웨어의 경우 HDD보다 SSD를 사용하고, 스핀들이 더 빠른 디스크 하드웨어를 선택합니다. 원본 네트워크 하드웨어의 경우 가능한 가장 빠른 NIC를 사용합니다. Azure에서 적절 한 강력한 디스크 및 네트워킹 하드웨어를 포함 하는 Azure D14 Vm을 권장 합니다.
 
-### <a name="network-connectivity-to-data-lake-storage-gen1"></a>Data Lake Storage Gen1에 대 한 네트워크 연결
+### <a name="network-connectivity-to-data-lake-storage-gen1"></a>Data Lake Storage Gen1에 대한 네트워크 연결
 
 원본 데이터와 Data Lake Storage Gen1 간의 네트워크 연결에서 병목 상태가 발생하는 경우도 있습니다. 원본 데이터가 온-프레미스인 경우 [Azure ExpressRoute](https://azure.microsoft.com/services/expressroute/)와 함께 전용 링크를 사용하는 것이 좋습니다. 원본 데이터가 Azure에 있는 경우 데이터가 Data Lake Storage Gen1 계정과 동일한 Azure 지역에 있을 때 성능이 가장 좋습니다.
 
@@ -57,7 +57,7 @@ Azure에서 온-프레미스 컴퓨터 또는 Vm을 사용 하 고 있는지 여
 
 일반적으로 HDInsight, Azure Data Lake Analytics 등의 분석 엔진에서는 파일당 오버헤드가 발생합니다. 데이터를 많은 작은 파일로 저장하는 경우 성능이 저하될 수 있습니다.
 
-일반적으로 성능을 향상하려면 데이터를 더 큰 파일로 구성합니다. 이에 대 한 규칙은 256 MB 이상의 파일에서 데이터 집합을 구성 하는 것입니다. 이미지, 이진 데이터 등과 같이 병렬로 처리할 수 없는 경우도 있습니다. 이 경우 개별 파일을 2gb 미만으로 유지 하는 것이 좋습니다.
+일반적으로 성능을 향상하려면 데이터를 더 큰 파일로 구성합니다. 이에 대한 규칙은 256 MB 이상의 파일에서 데이터 집합을 구성 하는 것입니다. 이미지, 이진 데이터 등과 같이 병렬로 처리할 수 없는 경우도 있습니다. 이 경우 개별 파일을 2gb 미만으로 유지 하는 것이 좋습니다.
 
 경우에 따라 데이터 파이프라인은 많은 수의 작은 파일을 포함 하는 원시 데이터를 제한 하는 제어를 가집니다. 다운스트림 애플리케이션에 사용할 더 큰 파일을 생성하는 "처리" 프로세스를 포함하는 것이 좋습니다.
 
@@ -65,7 +65,7 @@ Azure에서 온-프레미스 컴퓨터 또는 Vm을 사용 하 고 있는지 여
 
 Hive 및 ADLA 워크 로드의 경우 시계열 데이터의 파티션 정리를 통해 일부 쿼리가 데이터의 하위 집합만 읽을 수 있으므로 성능이 향상 됩니다.
 
-시계열 데이터를 수집 하는 이러한 파이프라인은 파일 및 폴더에 대 한 구조적 이름 지정으로 파일을 저장 하는 경우가 많습니다. 다음은 날짜별로 구성 된 데이터에 대 한 일반적인 예입니다.
+시계열 데이터를 수집 하는 이러한 파이프라인은 파일 및 폴더에 대한 구조적 이름 지정으로 파일을 저장 하는 경우가 많습니다. 다음은 날짜별로 구성 된 데이터에 대한 일반적인 예입니다.
 
     \DataSet\YYYY\MM\DD\datafile_YYYY_MM_DD.tsv
 
@@ -77,7 +77,7 @@ datetime 정보가 폴더 및 파일 이름 둘 다에 나타납니다.
 
 앞에서 설명했듯이, 더 큰 파일 크기와 각 폴더에 포함된 적절한 파일 수의 요건에 맞는 폴더 및 파일 구성을 선택해야 합니다.
 
-## <a name="optimize-io-intensive-jobs-on-hadoop-and-spark-workloads-on-hdinsight"></a>HDInsight에서 Hadoop 및 Spark 워크 로드에 대 한 i/o 집약적인 작업 최적화
+## <a name="optimize-io-intensive-jobs-on-hadoop-and-spark-workloads-on-hdinsight"></a>HDInsight에서 Hadoop 및 Spark 워크 로드에 대한 i/o 집약적인 작업 최적화
 
 작업은 다음 세 가지 범주 중 하나에 속합니다.
 

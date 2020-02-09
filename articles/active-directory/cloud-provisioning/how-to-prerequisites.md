@@ -26,7 +26,7 @@ ms.locfileid: "76909043"
 ## <a name="cloud-provisioning-agent-requirements"></a>클라우드 프로 비전 에이전트 요구 사항
 Azure AD Connect 클라우드 프로 비전을 사용 하려면 다음이 필요 합니다.
     
-- Azure AD 테 넌 트에 대 한 전역 관리자 계정.
+- Azure AD 테넌트에 대 한 전역 관리자 계정.
 - Windows 2012 R2 이상 버전을 사용 하는 프로 비전 에이전트에 대 한 온-프레미스 서버입니다.
 - 온-프레미스 방화벽 구성.
 
@@ -37,7 +37,7 @@ Azure AD Connect 클라우드 프로 비전을 사용 하려면 다음이 필요
 
 ### <a name="in-the-azure-active-directory-admin-center"></a>Azure Active Directory 관리 센터에서
 
-1. Azure AD 테넌트에서 클라우드 전용 전역 관리자 계정을 만듭니다. 이러한 방식으로 온-프레미스 서비스가 실패 하거나 사용할 수 없게 되는 경우 테 넌 트의 구성을 관리할 수 있습니다. [클라우드 전용 전역 관리자 계정을 추가](../active-directory-users-create-azure-portal.md)하는 방법에 대해 알아봅니다. 이 단계를 완료 하는 것은 테 넌 트에서 잠기지 않도록 하는 데 중요 합니다.
+1. Azure AD 테넌트에서 클라우드 전용 전역 관리자 계정을 만듭니다. 이러한 방식으로 온-프레미스 서비스가 실패 하거나 사용할 수 없게 되는 경우 테넌트의 구성을 관리할 수 있습니다. [클라우드 전용 전역 관리자 계정을 추가](../active-directory-users-create-azure-portal.md)하는 방법에 대해 알아봅니다. 이 단계를 완료 하는 것은 테넌트에서 잠기지 않도록 하는 데 중요 합니다.
 1. Azure AD 테넌트에 [사용자 지정 도메인 이름](../active-directory-domains-add-azure-portal.md)을 하나 이상 추가합니다. 사용자는 이러한 도메인 이름 중 하나로 로그인할 수 있습니다.
 
 ### <a name="in-your-on-premises-environment"></a>온-프레미스 환경에서

@@ -224,7 +224,7 @@ IoT Hub와 작동하도록 원본을 구성하려면 SSH 연결에서 에지 노
     |---|---|
     |`Kafka.Topic=PLACEHOLDER`|`PLACEHOLDER`을 `iotin`로 바꿉니다. IoT Hub에서 받은 메시지는 `iotin` 항목에 배치됩니다.|
     |`IotHub.EventHubCompatibleName=PLACEHOLDER`|`PLACEHOLDER`를 Event Hub 호환 이름으로 바꿉니다.|
-    |`IotHub.EventHubCompatibleEndpoint=PLACEHOLDER`|`PLACEHOLDER`를 Event Hub 호환 끝점으로 바꿉니다.|
+    |`IotHub.EventHubCompatibleEndpoint=PLACEHOLDER`|`PLACEHOLDER`를 Event Hub 호환 엔드포인트으로 바꿉니다.|
     |`IotHub.AccessKeyName=PLACEHOLDER`|`PLACEHOLDER`을 `service`로 바꿉니다.|
     |`IotHub.AccessKeyValue=PLACEHOLDER`|`PLACEHOLDER`를 `service` 정책의 기본 키로 바꿉니다.|
     |`IotHub.Partitions=PLACEHOLDER`|`PLACEHOLDER`을 이전 단계의 파티션 수로 바꿉니다.|

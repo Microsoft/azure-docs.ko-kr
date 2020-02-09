@@ -48,7 +48,7 @@ Azure AD를 사용 하는 AKS 클러스터를 만들려면 [AKS와 Azure Active 
 
 **모범 사례 가이드** - Kubernetes RBAC을 사용하여 사용자 또는 그룹이 클러스터의 리소스를 대상으로 가져야 하는 권한을 정의합니다. 필요한 최소 권한을 할당하는 역할 및 바인딩을 만듭니다. Azure AD와 통합되므로 사용자 상태 또는 그룹 멤버 자격의 변경 내용이 자동으로 업데이트되고 클러스터 리소스에 대한 액세스가 최신 상태입니다.
 
-Kubernetes에서는 클러스터의 리소스에 대한 액세스를 세부적으로 제어할 수 있습니다. 권한은 클러스터 수준에서 정의되거나 특정 네임스페이스에 대해 정의될 수 있습니다. 관리할 수 있는 리소스 및 관리에 필요한 권한을 정의할 수 있습니다. 이러한 역할은 바인딩이 있는 사용자 또는 그룹에 적용 됩니다. *역할*, *Clusterroles*및 *바인딩에*대 한 자세한 내용은 [Azure Kubernetes 서비스에 대 한 액세스 및 id 옵션 (AKS)][aks-concepts-identity]을 참조 하세요.
+Kubernetes에서는 클러스터의 리소스에 대한 액세스를 세부적으로 제어할 수 있습니다. 권한은 클러스터 수준에서 정의되거나 특정 네임스페이스에 대해 정의될 수 있습니다. 관리할 수 있는 리소스 및 관리에 필요한 권한을 정의할 수 있습니다. 이러한 역할은 바인딩이 있는 사용자 또는 그룹에 적용 됩니다. *역할*, *Clusterroles*및 *바인딩에*대한 자세한 내용은 [Azure Kubernetes 서비스에 대한 액세스 및 id 옵션 (AKS)][aks-concepts-identity]을 참조 하세요.
 
 예를 들어 다음 예제 YAML 매니페스트와 같이 *finance-app*이라는 네임스페이스에서 리소스에 대한 전체 액세스 권한을 부여하는 Role을 만들 수 있습니다.
 
@@ -82,9 +82,9 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-*Developer1\@contoso.com* 가 AKS 클러스터에 대해 인증 되 면 *재무 앱* 네임 스페이스의 리소스에 대 한 모든 권한을 갖습니다. 이 방식으로 리소스에 대한 액세스를 논리적으로 분리하고 제어합니다. 이전 섹션에 설명된 대로 Kubernetes RBAC는 Azure AD 통합과 함께 사용해야 합니다.
+*Developer1\@contoso.com* 가 AKS 클러스터에 대해 인증 되 면 *재무 앱* 네임 스페이스의 리소스에 대한 모든 권한을 갖습니다. 이 방식으로 리소스에 대한 액세스를 논리적으로 분리하고 제어합니다. 이전 섹션에 설명된 대로 Kubernetes RBAC는 Azure AD 통합과 함께 사용해야 합니다.
 
-Azure AD 그룹을 사용 하 여 RBAC를 사용 하는 Kubernetes 리소스에 대 한 액세스를 제어 하는 방법을 보려면 [AKS에서 역할 기반 액세스 제어 및 Azure Active Directory id를 사용 하 여 클러스터 리소스에 대 한 액세스 제어][azure-ad-rbac]를 참조 하세요.
+Azure AD 그룹을 사용 하 여 RBAC를 사용 하는 Kubernetes 리소스에 대한 액세스를 제어 하는 방법을 보려면 [AKS에서 역할 기반 액세스 제어 및 Azure Active Directory id를 사용 하 여 클러스터 리소스에 대한 액세스 제어][azure-ad-rbac]를 참조 하세요.
 
 ## <a name="use-pod-identities"></a>Pod ID 사용
 
@@ -92,7 +92,7 @@ Azure AD 그룹을 사용 하 여 RBAC를 사용 하는 Kubernetes 리소스에 
 
 Pod가 Cosmos DB, Key Vault 또는 Blob Storage와 같은 다른 Azure 서비스에 액세스해야 하는 경우 Pod에는 액세스 자격 증명이 필요합니다. 이러한 액세스 자격 증명은 컨테이너 이미지를 사용하여 정의하거나 Kubernetes 비밀로 삽입할 수 있지만, 수동으로 만들고 할당해야 합니다. 대개 인증서는 Pod 전체에 재사용되며 정기적으로 회전되지 않습니다.
 
-Azure 리소스에 대 한 관리 id (현재 연결 된 AKS 오픈 소스 프로젝트로 구현 됨)를 통해 Azure AD를 통해 서비스에 대 한 액세스를 자동으로 요청할 수 있습니다. Pod에 대한 자격 증명을 수동으로 정의하는 대신, 액세스 토큰을 실시간으로 요청하며 이를 사용하여 할당된 서비스에만 액세스할 수 있습니다. AKS에서 클러스터 운영자는 Pod가 관리형 ID를 사용할 수 있도록 하는 다음 두 가지 구성 요소를 배포합니다.
+Azure 리소스에 대한 관리 id (현재 연결 된 AKS 오픈 소스 프로젝트로 구현 됨)를 통해 Azure AD를 통해 서비스에 대한 액세스를 자동으로 요청할 수 있습니다. Pod에 대한 자격 증명을 수동으로 정의하는 대신, 액세스 토큰을 실시간으로 요청하며 이를 사용하여 할당된 서비스에만 액세스할 수 있습니다. AKS에서 클러스터 운영자는 Pod가 관리형 ID를 사용할 수 있도록 하는 다음 두 가지 구성 요소를 배포합니다.
 
 * **NMI(노드 관리 ID) 서버**는 AKS 클러스터의 각 노드에서 DaemonSet으로 실행되는 Pod입니다. NMI 서버는 Azure 서비스에 대한 Pod 요청을 수신 대기합니다.
 * **MIC(Managed Identity Controller)** 는 Kubernetes API 서버를 쿼리할 권한을 가진 중앙 Pod이고 Pod에 해당하는 Azure ID 매핑을 확인합니다.
@@ -111,18 +111,18 @@ Pod가 Azure 서비스에 대한 액세스를 요청하면 네트워크 규칙�
 > [!NOTE]
 > 관리 되는 pod id는 오픈 소스 프로젝트 이며 Azure 기술 지원 서비스에서 지원 하지 않습니다.
 
-Pod id를 사용 하려면 [Kubernetes 응용 프로그램에 대 한 id Azure Active Directory][aad-pod-identity]를 참조 하세요.
+Pod id를 사용 하려면 [Kubernetes 응용 프로그램에 대한 id Azure Active Directory][aad-pod-identity]를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 
 이 모범 사례 문서에서는 클러스터 및 리소스의 인증 및 권한 부여를 중점적으로 설명했습니다. 이러한 일부 모범 사례를 구현하려면 다음 문서를 참조하세요.
 
 * [AKS와 Azure Active Directory 통합][aks-aad]
-* [AKS를 사용 하 여 Azure 리소스에 대 한 관리 id 사용][aad-pod-identity]
+* [AKS를 사용 하 여 Azure 리소스에 대한 관리 id 사용][aad-pod-identity]
 
 AKS의 클러스터 작업에 대한 자세한 내용은 다음 모범 사례를 참조하세요.
 
-* [다중 테 넌 트 및 클러스터 격리][aks-best-practices-cluster-isolation]
+* [다중 테넌트 및 클러스터 격리][aks-best-practices-cluster-isolation]
 * [기본 Kubernetes scheduler 기능][aks-best-practices-scheduler]
 * [Advanced Kubernetes scheduler 기능][aks-best-practices-advanced-scheduler]
 

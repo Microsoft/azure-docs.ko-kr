@@ -98,7 +98,7 @@ Blob storage에서 공용 컨테이너를 만들려면 다음 단계를 수행 �
 
 ## <a name="configure-cors"></a>CORS 구성
 
-다음 단계를 수행 하 여 원본 간 리소스 공유에 대 한 Blob 저장소를 구성 합니다.
+다음 단계를 수행 하 여 원본 간 리소스 공유에 대한 Blob 저장소를 구성 합니다.
 
 1. 메뉴에서 **CORS**를 선택합니다.
 1. **허용된 원본**에 `https://your-tenant-name.b2clogin.com`을 입력합니다. `your-tenant-name`은 Azure AD B2C 테넌트의 이름으로 바꿉니다. `https://fabrikam.b2clogin.com`)을 입력합니다. 테넌트 이름을 입력할 때는 모두 소문자를 사용해야 합니다.
@@ -180,7 +180,7 @@ sample_templates/wingtip 폴더에는 다음과 같은 HTML 파일이 있습니�
 | *unified.html* | 통합 등록 또는 로그인 페이지의 템플릿으로 사용합니다. |
 | *updateprofile.html* | 프로필 업데이트 페이지의 템플릿으로 사용합니다. |
 
-샘플을 사용 하는 방법에 대 한 단계는 다음과 같습니다.
+샘플을 사용 하는 방법에 대한 단계는 다음과 같습니다.
 
 1. 로컬 컴퓨터에서 리포지토리를 복제 합니다. Sample_templates에서 템플릿 폴더를 선택 합니다. `wingtip` 또는 `contoso`를 사용할 수 있습니다.
 1. 이전 섹션에 설명 된 대로 `css`, `fonts`및 `images` 폴더에 있는 모든 파일을 Blob 저장소에 업로드 합니다.
@@ -208,4 +208,4 @@ sample_templates/wingtip 폴더에는 다음과 같은 HTML 파일이 있습니�
 
 ## <a name="next-steps"></a>다음 단계
 
-사용자 지정할 수 있는 UI 요소에 대 한 자세한 내용은 [사용자 흐름에 대 한 ui 사용자 지정을 위한 참조 가이드](customize-ui-overview.md)를 참조 하세요.
+사용자 지정할 수 있는 UI 요소에 대한 자세한 내용은 [사용자 흐름에 대한 ui 사용자 지정을 위한 참조 가이드](customize-ui-overview.md)를 참조 하세요.

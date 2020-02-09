@@ -216,7 +216,7 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 
 MFA 및 기타 컨트롤이 필요한 시기를 결정 하는 조건부 액세스 정책 전략을 계획 하려면 [Azure Active Directory의 조건부 액세스 란?](../conditional-access/overview.md)을 참조 하세요.
 
-Azure AD 테 넌 트에서 실수로 잠기는 것을 방지 하는 것이 중요 합니다. [테 넌 트에 두 개 이상의 응급 액세스 계정을 만들고](../users-groups-roles/directory-emergency-access.md) 조건부 액세스 정책에서 제외 하 여 실수로 관리 액세스가 누락 되는 경우의 영향을 완화할 수 있습니다.
+Azure AD 테넌트에서 실수로 잠기는 것을 방지 하는 것이 중요 합니다. [테넌트에 두 개 이상의 응급 액세스 계정을 만들고](../users-groups-roles/directory-emergency-access.md) 조건부 액세스 정책에서 제외 하 여 실수로 관리 액세스가 누락 되는 경우의 영향을 완화할 수 있습니다.
 
 ### <a name="create-conditional-access-policy"></a>조건부 액세스 정책 만들기
 
@@ -254,7 +254,7 @@ Azure AD에서 직접 인증 하 고 최신 인증 (WS 급지됨, SAML, OAuth, O
 
 ### <a name="use-azure-mfa-with-azure-ad-application-proxy"></a>Azure AD 응용 프로그램 프록시에서 Azure MFA 사용
 
-온-프레미스에 상주 하는 응용 프로그램은 azure [AD 응용 프로그램 프록시](../manage-apps/application-proxy.md) 를 통해 azure ad 테 넌 트에 게시 될 수 있으며 azure ad 사전 인증을 사용 하도록 구성 된 경우 azure Multi-Factor Authentication를 활용할 수 있습니다.
+온-프레미스에 상주 하는 응용 프로그램은 azure [AD 응용 프로그램 프록시](../manage-apps/application-proxy.md) 를 통해 azure ad 테넌트에 게시 될 수 있으며 azure ad 사전 인증을 사용 하도록 구성 된 경우 azure Multi-Factor Authentication를 활용할 수 있습니다.
 
 이러한 응용 프로그램에는 다른 Azure AD 통합 응용 프로그램과 마찬가지로 Azure Multi-Factor Authentication를 적용 하는 조건부 액세스 정책이 적용 됩니다.
 

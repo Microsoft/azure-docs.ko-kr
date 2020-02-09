@@ -78,7 +78,7 @@ Event Grid는 지속성이 있는 배달을 제공합니다. 각 메시지를 �
 
 ## <a name="set-alerts"></a>경고 설정
 
-항목 및 도메인 수준 메트릭에 대 한 경고는 사용자 지정 토픽 및 이벤트 도메인에 대해 설정할 수 있습니다. 의 개요 블레이드에서 왼쪽에 있는 리소스 메뉴 **에서 경고를 선택 하** 여 경고 규칙을 보고, 관리 하 고, 만듭니다. [Azure Monitor 경고에 대해 자세히 알아보기](../azure-monitor/platform/alerts-overview.md)
+항목 및 도메인 수준 메트릭에 대한 경고는 사용자 지정 토픽 및 이벤트 도메인에 대해 설정할 수 있습니다. 의 개요 블레이드에서 왼쪽에 있는 리소스 메뉴 **에서 경고를 선택 하** 여 경고 규칙을 보고, 관리 하 고, 만듭니다. [Azure Monitor 경고에 대해 자세히 알아보기](../azure-monitor/platform/alerts-overview.md)
 
 ![이벤트 메트릭 보기](./media/monitor-event-delivery/select-alerts.png)
 

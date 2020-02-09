@@ -46,7 +46,7 @@ ms.locfileid: "74048467"
 |-|----|--|
 | 보안 장치 인증 | [고유한 id 키 또는 보안 토큰](iot-security-deployment.md#iot-hub-security-tokens)을 사용 하 여 장치와 IoT hub 간에 보안 통신을 보장 하거나 각 장치에 대해 [장치 x.509 인증서](iot-security-deployment.md#x509-certificate-based-device-authentication) 를 사용 합니다. 적절 한 방법을 사용 하 여 [선택 된 프로토콜 (MQTT, AMQP 또는 HTTPS)에 따라 보안 토큰을 사용](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security)합니다. | - |
 | 보안 장치 통신 | IoT Hub TLS (Transport Layer Security) 표준을 사용 하 여 장치에 대 한 연결을 보호 합니다 (버전 1.2 및 1.0 지원). [TLS 1.2](https://tools.ietf.org/html/rfc5246) 를 사용 하 여 보안을 최대화 합니다. | - |
-| 서비스 통신 보안 유지 | IoT Hub는 TLS 프로토콜만 사용 하 여 [Azure Storage](/azure/storage/) 또는 [Event Hubs](/azure/event-hubs) 와 같은 백 엔드 서비스에 연결 하는 끝점을 제공 하며 암호화 되지 않은 채널에는 끝점이 노출 되지 않습니다. 이 데이터가 저장소 또는 분석을 위해 이러한 백 엔드 서비스에 도달 하면 해당 서비스에 대해 적절 한 보안 및 암호화 방법을 사용 하 고 백 엔드에서 중요 한 정보를 보호 해야 합니다. | - |
+| 서비스 통신 보안 유지 | IoT Hub는 TLS 프로토콜만 사용 하 여 [Azure Storage](/azure/storage/) 또는 [Event Hubs](/azure/event-hubs) 와 같은 백 엔드 서비스에 연결 하는 엔드포인트을 제공 하며 암호화 되지 않은 채널에는 엔드포인트이 노출 되지 않습니다. 이 데이터가 저장소 또는 분석을 위해 이러한 백 엔드 서비스에 도달 하면 해당 서비스에 대해 적절 한 보안 및 암호화 방법을 사용 하 고 백 엔드에서 중요 한 정보를 보호 해야 합니다. | - |
 
 ## <a name="networking"></a>네트워킹
 

@@ -36,7 +36,7 @@ ms.locfileid: "77064260"
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
 * Azure AD 테넌트
-* [트 게이트 테 넌 트](https://www.storegate.com)
+* [트 게이트 테넌트](https://www.storegate.com)
 * 관리자 권한이 있는 사용자 계정에 대 한 사용자 계정입니다.
 
 ## <a name="assign-users-to-storegate"></a>사용자를 사용자에 게 할당 합니다.
@@ -67,7 +67,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위한 자동 사�
 
     ![가 나 게이트 설정/해제 단추](media/storegate-provisioning-tutorial/sso.png)
 
-3. **테 넌 트 URL** 및 **토큰**을 복사 합니다. 이러한 값은 Azure Portal에 있는 사용자 용 사용자 게이트 응용 프로그램의 프로 비전 탭에 각각 **테 넌 트 URL** 및 **암호 토큰** 필드에 입력 됩니다. 
+3. **테넌트 URL** 및 **토큰**을 복사 합니다. 이러한 값은 Azure Portal에 있는 사용자 용 사용자 게이트 응용 프로그램의 프로 비전 탭에 각각 **테넌트 URL** 및 **암호 토큰** 필드에 입력 됩니다. 
 
     ![을 (를) gate 토큰 만들기](media/storegate-provisioning-tutorial/token.png)
 
@@ -111,7 +111,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위한 자동 사용자 
 
     ![을 (를) 게이트 OIDC 로그인](media/storegate-provisioning-tutorial/login.png)
 
-9. 인증에 성공 하면 동의 페이지에 대 한 동의 확인 프롬프트를 수락 합니다. 그러면 응용 프로그램이 테 넌 트에 자동으로 추가 되 고 사용자가 사용자 게이트 게이트 계정으로 리디렉션됩니다.
+9. 인증에 성공 하면 동의 페이지에 대 한 동의 확인 프롬프트를 수락 합니다. 그러면 응용 프로그램이 테넌트에 자동으로 추가 되 고 사용자가 사용자 게이트 게이트 계정으로 리디렉션됩니다.
 
     ![%에 게이트 OIDc 동의](media/storegate-provisioning-tutorial/accept.png)
 
@@ -120,7 +120,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위한 자동 사용자 
 이 섹션에서는 azure ad의 사용자 및/또는 그룹 할당을 기반으로 하는 사용자 및/또는 그룹을 만들고, 업데이트 하 고, 사용 하지 않도록 Azure AD 프로 비전 서비스를 구성 하는 단계를 안내 합니다.
 
 > [!NOTE]
-> 대화 기능 게이트의 SCIM 끝점에 대 한 자세한 내용은 [다음](https://en-support.storegate.com/article/step-by-step-instruction-how-to-enable-azure-provisioning-to-your-storegate-team-account/)을 참조 하세요.
+> 대화 기능 게이트의 SCIM 엔드포인트에 대 한 자세한 내용은 [다음](https://en-support.storegate.com/article/step-by-step-instruction-how-to-enable-azure-provisioning-to-your-storegate-team-account/)을 참조 하세요.
 
 ### <a name="to-configure-automatic-user-provisioning-for-storegate-in-azure-ad"></a>Azure AD에서 자동 사용자 게이트에 대 한 자동 사용자 프로 비전을 구성 하려면
 
@@ -140,7 +140,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위한 자동 사용자 
 
     ![프로 비전 탭](common/provisioning-automatic.png)
 
-5. **관리자 자격 증명** 섹션 아래에 있는 **테 넌 트 URL**에 `https://dialpad.com/scim`을 입력 합니다. **비밀 토큰**의 저장 된 사용자 게이트에서 이전에 검색 하 고 저장 한 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가가 나 게이트에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 사용자의 사용자 게이트 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
+5. **관리자 자격 증명** 섹션 아래에 있는 **테넌트 URL**에 `https://dialpad.com/scim`을 입력 합니다. **비밀 토큰**의 저장 된 사용자 게이트에서 이전에 검색 하 고 저장 한 값을 입력 합니다. **연결 테스트** 를 클릭 하 여 Azure AD가가 나 게이트에 연결할 수 있는지 확인 합니다. 연결에 실패 하면 사용자의 사용자 게이트 계정에 관리자 권한이 있는지 확인 하 고 다시 시도 하세요.
 
     ![테넌트 URL + 토큰](common/provisioning-testconnection-tenanturltoken.png)
 

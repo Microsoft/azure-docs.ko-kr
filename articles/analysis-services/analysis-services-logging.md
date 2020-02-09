@@ -164,7 +164,7 @@ PowerShell을 사용하여 메트릭 및 진단 로깅을 사용하도록 설정
 
 #### <a name="example-1"></a>예 1
 
-다음 쿼리는 모델 데이터베이스 및 서버에 대 한 각 쿼리 종료/새로 고침 종료 이벤트에 대 한 기간을 반환 합니다. 스케일 아웃 하는 경우 복제본 번호가 ServerName_s에 포함 되기 때문에 복제본을 통해 결과가 구분 됩니다. RootActivityId_g 그룹화 하면 Azure 진단 REST API에서 검색 되는 행 수를 줄이고 [Log Analytics Rate limits](https://dev.loganalytics.io/documentation/Using-the-API/Limits)에 설명 된 대로 제한 내에서 유지 하는 데 도움이 됩니다.
+다음 쿼리는 모델 데이터베이스 및 서버에 대한 각 쿼리 종료/새로 고침 종료 이벤트에 대한 기간을 반환 합니다. 스케일 아웃 하는 경우 복제본 번호가 ServerName_s에 포함 되기 때문에 복제본을 통해 결과가 구분 됩니다. RootActivityId_g 그룹화 하면 Azure 진단 REST API에서 검색 되는 행 수를 줄이고 [Log Analytics Rate limits](https://dev.loganalytics.io/documentation/Using-the-API/Limits)에 설명 된 대로 제한 내에서 유지 하는 데 도움이 됩니다.
 
 ```Kusto
 let window = AzureDiagnostics
@@ -179,7 +179,7 @@ window
 
 #### <a name="example-2"></a>예제 2
 
-다음 쿼리는 서버에 대 한 메모리 및 QPU 소비량을 반환 합니다. 스케일 아웃 하는 경우 복제본 번호가 ServerName_s에 포함 되기 때문에 복제본을 통해 결과가 구분 됩니다.
+다음 쿼리는 서버에 대한 메모리 및 QPU 소비량을 반환 합니다. 스케일 아웃 하는 경우 복제본 번호가 ServerName_s에 포함 되기 때문에 복제본을 통해 결과가 구분 됩니다.
 
 ```Kusto
 let window = AzureDiagnostics
@@ -194,7 +194,7 @@ window
 
 #### <a name="example-3"></a>예제 3
 
-다음 쿼리는 서버에 대 한 행 읽기/초 Analysis Services 엔진 성능 카운터를 반환 합니다.
+다음 쿼리는 서버에 대한 행 읽기/초 Analysis Services 엔진 성능 카운터를 반환 합니다.
 
 ```Kusto
 let window =  AzureDiagnostics
@@ -269,7 +269,7 @@ $account = Get-AzResource -ResourceGroupName awsales_resgroup `
 
 ### <a name="enable-logging"></a>로깅 사용
 
-로깅을 사용 하려면 새 저장소 계정, 서버 계정 및 범주에 대 한 변수와 함께 AzDiagnosticSetting cmdlet을 사용 합니다. 다음 명령을 실행하고 **-Enabled** 플래그를 **$true**로 설정합니다.
+로깅을 사용 하려면 새 저장소 계정, 서버 계정 및 범주에 대한 변수와 함께 AzDiagnosticSetting cmdlet을 사용 합니다. 다음 명령을 실행하고 **-Enabled** 플래그를 **$true**로 설정합니다.
 
 ```powershell
 Set-AzDiagnosticSetting  -ResourceId $account.ResourceId -StorageAccountId $sa.Id -Enabled $true -Categories Engine

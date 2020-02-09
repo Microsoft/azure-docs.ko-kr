@@ -62,15 +62,15 @@ Azure 센티널을 사용 하 여 조직에서 사용 중인 위협 지표를 �
 
 ## <a name="instructions"></a>지침
 
-1. 응용 프로그램 ID, 응용 프로그램 암호 및 Azure Active Directory 테 넌 트 ID를 가져오려면 Azure Active Directory에 [응용 프로그램을 등록](/graph/auth-v2-service#1-register-your-app) 합니다. Microsoft Graph Security tiIndicators API와의 직접 통합을 사용 하는 통합 팁 제품 또는 앱을 구성 하는 경우에 이러한 값이 필요 합니다.
+1. 응용 프로그램 ID, 응용 프로그램 암호 및 Azure Active Directory 테넌트 ID를 가져오려면 Azure Active Directory에 [응용 프로그램을 등록](/graph/auth-v2-service#1-register-your-app) 합니다. Microsoft Graph Security tiIndicators API와의 직접 통합을 사용 하는 통합 팁 제품 또는 앱을 구성 하는 경우에 이러한 값이 필요 합니다.
 
 2. 등록 된 응용 프로그램에 대 한 [API 권한 구성](/graph/auth-v2-service#2-configure-permissions-for-microsoft-graph) : Microsoft Graph 응용 프로그램 권한 **ThreatIndicators** 을 등록 된 응용 프로그램에 추가 합니다.
 
-3. Azure Active Directory 테 넌 트 관리자에 게 문의 하 여 조직에 등록 된 응용 프로그램에 관리자 동의를 부여 합니다. Azure Portal: **Azure Active Directory** > **앱 등록** > \< **_앱 이름_** > > **API 사용 권한** > \< **_테 넌 트 이름_>에 대 한 관리자 동의 부여**를 참조 하세요.
+3. Azure Active Directory 테넌트 관리자에 게 문의 하 여 조직에 등록 된 응용 프로그램에 관리자 동의를 부여 합니다. Azure Portal: **Azure Active Directory** > **앱 등록** > \< **_앱 이름_** > > **API 사용 권한** > \< **_테넌트 이름_>에 대 한 관리자 동의 부여**를 참조 하세요.
 
 4. 다음을 지정 하 여 Azure 센티널에 표시기를 보내도록 Microsoft Graph Security tiIndicators API와의 직접 통합을 사용 하는 TIP 제품 또는 앱을 구성 합니다.
     
-    가. 등록 된 응용 프로그램의 ID, 비밀 및 테 넌 트 ID에 대 한 값입니다.
+    가. 등록 된 응용 프로그램의 ID, 비밀 및 테넌트 ID에 대 한 값입니다.
     
     b. 대상 제품의 경우 Azure 센티널을 지정 합니다.
     

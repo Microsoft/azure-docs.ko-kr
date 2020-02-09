@@ -16,15 +16,15 @@ ms.locfileid: "75422231"
 ---
 # <a name="azure-app-service-access-restrictions"></a>Azure App Service 액세스 제한 #
 
-액세스 제한을 통해 앱에 대 한 네트워크 액세스를 제어 하는 우선 순위가 지정 된 허용/거부 목록을 정의할 수 있습니다. 이 목록에는 IP 주소 또는 Azure Virtual Network 서브넷이 포함 될 수 있습니다. 하나 이상의 항목이 있는 경우 목록 끝에 있는 암시적 "거부 모두"가 있습니다.
+액세스 제한을 통해 앱에 대한 네트워크 액세스를 제어 하는 우선 순위가 지정 된 허용/거부 목록을 정의할 수 있습니다. 이 목록에는 IP 주소 또는 Azure Virtual Network 서브넷이 포함 될 수 있습니다. 하나 이상의 항목이 있는 경우 목록 끝에 있는 암시적 "거부 모두"가 있습니다.
 
 액세스 제한 기능은를 비롯 한 모든 App Service 호스팅된 작업 로드와 함께 작동 합니다. 웹 앱, API 앱, Linux 앱, Linux 컨테이너 앱 및 함수
 
-앱에 대 한 요청이 수행 되 면 액세스 제한 목록의 IP 주소 규칙에 대해 보낸 사람 주소가 평가 됩니다. 보낸 사람 주소가 Microsoft 웹에 대 한 서비스 끝점으로 구성 된 서브넷에 있는 경우 원본 서브넷은 액세스 제한 목록의 가상 네트워크 규칙과 비교 됩니다. 주소가 목록의 규칙을 기준으로 허용되지 않을 경우 서비스는 [HTTP 403](https://en.wikipedia.org/wiki/HTTP_403) 상태 코드로 답변합니다.
+앱에 대한 요청이 수행 되 면 액세스 제한 목록의 IP 주소 규칙에 대해 보낸 사람 주소가 평가 됩니다. 보낸 사람 주소가 Microsoft 웹에 대한 서비스 엔드포인트으로 구성 된 서브넷에 있는 경우 원본 서브넷은 액세스 제한 목록의 가상 네트워크 규칙과 비교 됩니다. 주소가 목록의 규칙을 기준으로 허용되지 않을 경우 서비스는 [HTTP 403](https://en.wikipedia.org/wiki/HTTP_403) 상태 코드로 답변합니다.
 
 액세스 제한 기능은 코드가 실행 되는 작업자 호스트의 업스트림 인 App Service 프런트 엔드 역할에서 구현 됩니다. 따라서 액세스 제한은 사실상 네트워크 Acl입니다.
 
-Azure Virtual Network (VNet)에서 웹 앱에 대 한 액세스를 제한 하는 기능을 [서비스 끝점][serviceendpoints]이라고 합니다. 서비스 끝점을 사용 하면 선택한 서브넷에서 다중 테 넌 트 서비스에 대 한 액세스를 제한할 수 있습니다. 사용 하도록 설정 된 서비스 뿐만 아니라 네트워킹 쪽에서 사용 하도록 설정 해야 합니다. App Service Environment에서 호스트 되는 앱에 대 한 트래픽을 제한 하는 것은 작동 하지 않습니다. App Service Environment에 있는 경우 IP 주소 규칙을 사용 하 여 앱에 대 한 액세스를 제어할 수 있습니다.
+Azure Virtual Network (VNet)에서 웹 앱에 대한 액세스를 제한 하는 기능을 [서비스 엔드포인트][serviceendpoints]이라고 합니다. 서비스 엔드포인트을 사용 하면 선택한 서브넷에서 다중 테넌트 서비스에 대한 액세스를 제한할 수 있습니다. 사용 하도록 설정 된 서비스 뿐만 아니라 네트워킹 쪽에서 사용 하도록 설정 해야 합니다. App Service Environment에서 호스트 되는 앱에 대한 트래픽을 제한 하는 것은 작동 하지 않습니다. App Service Environment에 있는 경우 IP 주소 규칙을 사용 하 여 앱에 대한 액세스를 제어할 수 있습니다.
 
 ![액세스 제한 흐름](media/app-service-ip-restrictions/access-restrictions-flow.png)
 
@@ -38,7 +38,7 @@ Azure Virtual Network (VNet)에서 웹 앱에 대 한 액세스를 제한 하는
 
 ![액세스 제한 목록](media/app-service-ip-restrictions/access-restrictions-browse.png)
 
-이 목록에는 앱에 있는 현재 제한이 모두 표시 됩니다. 앱에 VNet 제한이 있는 경우 Microsoft 웹에 대해 서비스 끝점을 사용 하도록 설정 하면 테이블이 표시 됩니다. 앱에 대해 정의 된 제한이 없으면 어디에서 나 앱에 액세스할 수 있습니다.  
+이 목록에는 앱에 있는 현재 제한이 모두 표시 됩니다. 앱에 VNet 제한이 있는 경우 Microsoft 웹에 대해 서비스 엔드포인트을 사용 하도록 설정 하면 테이블이 표시 됩니다. 앱에 대해 정의 된 제한이 없으면 어디에서 나 앱에 액세스할 수 있습니다.  
 
 ## <a name="adding-ip-address-rules"></a>IP 주소 규칙 추가
 
@@ -52,13 +52,13 @@ IP 주소 기반 규칙을 설정 하려면 IPv4 또는 IPv6 유형을 선택 �
 
 ## <a name="service-endpoints"></a>서비스 엔드포인트
 
-서비스 끝점을 사용 하면 선택한 Azure virtual network 서브넷에 대 한 액세스를 제한할 수 있습니다. 특정 서브넷에 대 한 액세스를 제한 하려면 Virtual Network 유형의 제한 규칙을 만듭니다. 액세스를 허용 하거나 거부할 구독, VNet 및 서브넷을 선택할 수 있습니다. 사용자가 선택한 서브넷에 대해 서비스 끝점을 아직 사용 하도록 설정 하지 않은 경우에는이 작업을 수행 하지 않도록 요청 하는 상자를 선택 하지 않으면 자동으로 사용 하도록 설정 됩니다. 서브넷에서 서비스 끝점을 사용 하도록 설정할 수 있는 권한이 있는 경우에는 응용 프로그램에서이 기능을 사용 하도록 설정 하 고 서브넷은 사용 하지 않을 수 있습니다. 다른 사용자가 서브넷에서 서비스 끝점을 사용 하도록 설정 해야 하는 경우 확인란을 선택 하 고 나중에 서브넷에서 사용 하도록 설정 되는 서비스 끝점에 대해 앱을 구성할 수 있습니다. 
+서비스 엔드포인트을 사용 하면 선택한 Azure virtual network 서브넷에 대한 액세스를 제한할 수 있습니다. 특정 서브넷에 대한 액세스를 제한 하려면 Virtual Network 유형의 제한 규칙을 만듭니다. 액세스를 허용 하거나 거부할 구독, VNet 및 서브넷을 선택할 수 있습니다. 사용자가 선택한 서브넷에 대해 서비스 엔드포인트을 아직 사용 하도록 설정 하지 않은 경우에는이 작업을 수행 하지 않도록 요청 하는 상자를 선택 하지 않으면 자동으로 사용 하도록 설정 됩니다. 서브넷에서 서비스 엔드포인트을 사용 하도록 설정할 수 있는 권한이 있는 경우에는 응용 프로그램에서이 기능을 사용 하도록 설정 하 고 서브넷은 사용 하지 않을 수 있습니다. 다른 사용자가 서브넷에서 서비스 엔드포인트을 사용 하도록 설정 해야 하는 경우 확인란을 선택 하 고 나중에 서브넷에서 사용 하도록 설정 되는 서비스 엔드포인트에 대해 앱을 구성할 수 있습니다. 
 
 ![VNet 액세스 제한 규칙 추가](media/app-service-ip-restrictions/access-restrictions-vnet-add.png)
 
-서비스 끝점은 App Service Environment에서 실행 되는 앱에 대 한 액세스를 제한 하는 데 사용할 수 없습니다. 앱이 App Service Environment에 있는 경우 IP 액세스 규칙을 사용 하 여 앱에 대 한 액세스를 제어할 수 있습니다. 
+서비스 엔드포인트은 App Service Environment에서 실행 되는 앱에 대한 액세스를 제한 하는 데 사용할 수 없습니다. 앱이 App Service Environment에 있는 경우 IP 액세스 규칙을 사용 하 여 앱에 대한 액세스를 제어할 수 있습니다. 
 
-서비스 끝점을 사용 하면 응용 프로그램 게이트웨이 또는 기타 WAF 장치를 사용 하 여 앱을 구성할 수 있습니다. 또한 보안 백 엔드를 사용 하 여 다중 계층 응용 프로그램을 구성할 수 있습니다. 일부 가능성에 대 한 자세한 내용은 [네트워킹 기능 및 App Service](networking-features.md) 와 [서비스 끝점과의 통합 Application Gateway](networking/app-gateway-with-service-endpoints.md)을 참조 하세요.
+서비스 엔드포인트을 사용 하면 응용 프로그램 게이트웨이 또는 기타 WAF 장치를 사용 하 여 앱을 구성할 수 있습니다. 또한 보안 백 엔드를 사용 하 여 다중 계층 응용 프로그램을 구성할 수 있습니다. 일부 가능성에 대한 자세한 내용은 [네트워킹 기능 및 App Service](networking-features.md) 와 [서비스 엔드포인트과의 통합 Application Gateway](networking/app-gateway-with-service-endpoints.md)을 참조 하세요.
 
 ## <a name="managing-access-restriction-rules"></a>액세스 제한 규칙 관리
 
@@ -76,7 +76,7 @@ IP 주소 기반 규칙을 설정 하려면 IPv4 또는 IPv6 유형을 선택 �
 
 ## <a name="blocking-a-single-ip-address"></a>단일 IP 주소 차단 ##
 
-첫 번째 IP 제한 규칙을 추가 하는 경우 서비스는 우선 순위가 2147483647 인 명시적 **거부 모든** 규칙을 추가 합니다. 실제로 명시적 **거부** 규칙은 마지막 규칙 실행 되 고 **허용** 규칙을 사용 하 여 명시적으로 허용 되지 않는 모든 IP 주소에 대 한 액세스를 차단 합니다.
+첫 번째 IP 제한 규칙을 추가 하는 경우 서비스는 우선 순위가 2147483647 인 명시적 **거부 모든** 규칙을 추가 합니다. 실제로 명시적 **거부** 규칙은 마지막 규칙 실행 되 고 **허용** 규칙을 사용 하 여 명시적으로 허용 되지 않는 모든 IP 주소에 대한 액세스를 차단 합니다.
 
 사용자가 단일 IP 주소 또는 IP 주소 블록을 명시적으로 차단 하지만 다른 모든 액세스를 허용 하려는 시나리오의 경우 명시적 **허용 모든** 규칙을 추가 해야 합니다.
 
@@ -84,7 +84,7 @@ IP 주소 기반 규칙을 설정 하려면 IPv4 또는 IPv6 유형을 선택 �
 
 ## <a name="scm-site"></a>SCM 사이트 
 
-앱에 대 한 액세스를 제어 하는 것 외에도 앱에서 사용 하는 scm 사이트에 대 한 액세스를 제한할 수 있습니다. Scm 사이트는 웹 배포 끝점과 Kudu 콘솔 이기도 합니다. 앱에서 scm 사이트에 대 한 액세스 제한을 개별적으로 할당 하거나 앱과 scm 사이트 모두에 대해 동일한 집합을 사용할 수 있습니다. 확인란을 선택 하 여 앱과 동일한 제한 사항을 적용 하는 경우 모든 항목은 숨겨집니다. 이 확인란의 선택을 취소 하면 scm 사이트에서 이전에 수행한 모든 설정이 적용 됩니다. 
+앱에 대한 액세스를 제어 하는 것 외에도 앱에서 사용 하는 scm 사이트에 대한 액세스를 제한할 수 있습니다. Scm 사이트는 웹 배포 엔드포인트과 Kudu 콘솔 이기도 합니다. 앱에서 scm 사이트에 대한 액세스 제한을 개별적으로 할당 하거나 앱과 scm 사이트 모두에 대해 동일한 집합을 사용할 수 있습니다. 확인란을 선택 하 여 앱과 동일한 제한 사항을 적용 하는 경우 모든 항목은 숨겨집니다. 이 확인란의 선택을 취소 하면 scm 사이트에서 이전에 수행한 모든 설정이 적용 됩니다. 
 
 ![액세스 제한 목록](media/app-service-ip-restrictions/access-restrictions-scm-browse.png)
 
@@ -127,12 +127,12 @@ management.azure.com/subscriptions/**구독 ID**/resourceGroups/**리소스 그�
 
 ## <a name="azure-function-app-access-restrictions"></a>Azure 함수 앱 액세스 제한
 
-App Service 계획과 동일한 기능을 사용 하는 두 함수 앱에 대 한 액세스 제한을 사용할 수 있습니다. 액세스 제한을 사용 하도록 설정 하면 허용 되지 않는 Ip에 대해 포털 코드 편집기를 사용할 수 없습니다.
+App Service 계획과 동일한 기능을 사용 하는 두 함수 앱에 대한 액세스 제한을 사용할 수 있습니다. 액세스 제한을 사용 하도록 설정 하면 허용 되지 않는 Ip에 대해 포털 코드 편집기를 사용할 수 없습니다.
 
 ## <a name="next-steps"></a>다음 단계
-[Azure 함수 앱에 대 한 액세스 제한](../azure-functions/functions-networking-options.md#inbound-ip-restrictions)
+[Azure 함수 앱에 대한 액세스 제한](../azure-functions/functions-networking-options.md#inbound-ip-restrictions)
 
-[서비스 끝점과 Application Gateway 통합](networking/app-gateway-with-service-endpoints.md)
+[서비스 엔드포인트과 Application Gateway 통합](networking/app-gateway-with-service-endpoints.md)
 
 <!--Links-->
 [serviceendpoints]: https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview

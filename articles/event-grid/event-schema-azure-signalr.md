@@ -14,9 +14,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 07/10/2019
 ms.locfileid: "67789073"
 ---
-# <a name="azure-event-grid-event-schema-for-signalr-service"></a>SignalR 서비스에 대 한 azure Event Grid 이벤트 스키마
+# <a name="azure-event-grid-event-schema-for-signalr-service"></a>SignalR 서비스에 대한 azure Event Grid 이벤트 스키마
 
-이 문서는 SignalR Service 이벤트에 대 한 속성 및 스키마를 제공합니다. 이벤트 스키마에 대한 소개는 [Azure Event Grid 이벤트 스키마](event-schema.md)를 참조하세요.
+이 문서는 SignalR Service 이벤트에 대한 속성 및 스키마를 제공합니다. 이벤트 스키마에 대한 소개는 [Azure Event Grid 이벤트 스키마](event-schema.md)를 참조하세요.
 
 
 ## <a name="available-event-types"></a>사용할 수 있는 이벤트 유형
@@ -50,7 +50,7 @@ SignalR Service는 다음 이벤트 유형을 내보냅니다.
 }]
 ```
 
-연결이 끊어진된 클라이언트 연결 이벤트에 대 한 스키마가 비슷합니다. 
+연결이 끊어진된 클라이언트 연결 이벤트에 대한 스키마가 비슷합니다. 
 
 ```json
 [{
@@ -92,7 +92,7 @@ SignalR Service는 다음 이벤트 유형을 내보냅니다.
 | -------- | ---- | ----------- |
 | timestamp | string | 공급자의 UTC 시간을 기준으로 이벤트가 생성되는 시간입니다. |
 | hubName | string | 클라이언트 연결에 속한는 허브입니다. |
-| connectionId | string | 클라이언트 연결에 대 한 고유 식별자입니다. |
+| connectionId | string | 클라이언트 연결에 대한 고유 식별자입니다. |
 | userId | string | 클레임에 정의 된 사용자 식별자입니다. |
 | errorMessage | string | 연결이 끊긴 연결 시키는 오류입니다. |
 

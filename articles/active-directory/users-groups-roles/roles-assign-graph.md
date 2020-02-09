@@ -26,7 +26,7 @@ API Microsoft Graph 사용자 계정에 역할을 할당 하는 방법을 자동
 
 ## <a name="required-permissions"></a>필요한 사용 권한
 
-전역 관리자 계정 또는 권한 있는 Id 관리자를 사용 하 여 Azure AD 테 넌 트에 연결 하 여 역할을 할당 하거나 제거 합니다.
+전역 관리자 계정 또는 권한 있는 Id 관리자를 사용 하 여 Azure AD 테넌트에 연결 하 여 역할을 할당 하거나 제거 합니다.
 
 ## <a name="post-operations-on-roleassignment"></a>RoleAssignment에 대 한 POST 작업
 

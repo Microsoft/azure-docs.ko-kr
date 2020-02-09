@@ -1,6 +1,6 @@
 ---
 title: Azure의 역방향 DNS 개요-Azure DNS
-description: 이 학습 경로에서 역방향 DNS가 작동 하는 방법 및 Azure에서 사용 하는 방법에 대 한 학습을 시작 합니다.
+description: 이 학습 경로에서 역방향 DNS가 작동 하는 방법 및 Azure에서 사용 하는 방법에 대한 학습을 시작 합니다.
 services: dns
 documentationcenter: na
 author: rohinkoul

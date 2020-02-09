@@ -70,6 +70,6 @@ localgateway     NodePort    10.110.230.87   <none>        80:32504/TCP,443:3004
 ## <a name="next-steps"></a>다음 단계
 
 * 자체 호스팅 게이트웨이에 대해 자세히 알아보려면 [Azure API Management 자체 호스팅 게이트웨이 개요](self-hosted-gateway-overview.md) 를 참조 하세요.
-* [Azure Kubernetes Service](https://docs.microsoft.com/azure/aks/intro-kubernetes) 에 대 한 자세한 정보
+* [Azure Kubernetes Service](https://docs.microsoft.com/azure/aks/intro-kubernetes) 에 대한 자세한 정보
 
 

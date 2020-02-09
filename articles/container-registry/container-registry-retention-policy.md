@@ -10,9 +10,9 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 11/24/2019
 ms.locfileid: "74454820"
 ---
-# <a name="set-a-retention-policy-for-untagged-manifests"></a>태그가 없는 매니페스트에 대 한 보존 정책 설정
+# <a name="set-a-retention-policy-for-untagged-manifests"></a>태그가 없는 매니페스트에 대한 보존 정책 설정
 
-Azure Container Registry에는 연결 된 태그 (*태그가 없는 매니페스트*)가 없는 저장 된 이미지 매니페스트에 대 한 *보존 정책을* 설정 하는 옵션이 제공 됩니다. 보존 정책을 사용 하도록 설정 하면 설정 된 일 수 후에 레지스트리의 태그 없는 매니페스트가 자동으로 삭제 됩니다. 이 기능을 사용 하면 레지스트리가 필요 하지 않은 아티팩트를 채우지 않고 저장소 비용을 절감할 수 있습니다. 태그가 없는 매니페스트의 `delete-enabled` 특성이 `false`로 설정 된 경우에는 매니페스트를 삭제할 수 없으며 보존 정책이 적용 되지 않습니다.
+Azure Container Registry에는 연결 된 태그 (*태그가 없는 매니페스트*)가 없는 저장 된 이미지 매니페스트에 대한 *보존 정책을* 설정 하는 옵션이 제공 됩니다. 보존 정책을 사용 하도록 설정 하면 설정 된 일 수 후에 레지스트리의 태그 없는 매니페스트가 자동으로 삭제 됩니다. 이 기능을 사용 하면 레지스트리가 필요 하지 않은 아티팩트를 채우지 않고 저장소 비용을 절감할 수 있습니다. 태그가 없는 매니페스트의 `delete-enabled` 특성이 `false`로 설정 된 경우에는 매니페스트를 삭제할 수 없으며 보존 정책이 적용 되지 않습니다.
 
 Azure Cloud Shell 또는 Azure CLI의 로컬 설치를 사용 하 여이 문서의 명령 예제를 실행할 수 있습니다. 로컬에서 사용 하려는 경우 버전 2.0.74 이상이 필요 합니다. `az --version`을 실행하여 버전을 찾습니다. 설치 또는 업그레이드해야 하는 경우 [Azure CLI 설치][azure-cli]를 참조하세요.
 
@@ -20,12 +20,12 @@ Azure Cloud Shell 또는 Azure CLI의 로컬 설치를 사용 하 여이 문서�
 > 이 기능은 현재 미리 보기로 제공되며 일부 [제한 사항이 적용](#preview-limitations)됩니다. [부속 사용 약관][terms-of-use]에 동의하면 미리 보기를 사용할 수 있습니다. 이 기능의 몇 가지 측면은 일반 공급(GA) 전에 변경될 수 있습니다.
 
 > [!WARNING]
-> 보존 정책을 주의 하 여 설정--삭제 된 이미지 데이터는 복구할 수 없습니다. 이미지 이름과 달리 매니페스트 다이제스트로 이미지를 가져오는 시스템이 있는 경우 태그 없는 매니페스트에 대 한 보존 정책을 설정 하면 안 됩니다. 태그가 지정되지 않은 이미지를 삭제하면 해당 시스템은 레지스트리에서 이미지를 끌어올 수 없게 됩니다. 매니페스트를 가져오는 대신 *고유한 태깅* 스키마를 채택 하는 것이 [좋습니다. 권장 되는 모범 사례](container-registry-image-tag-version.md)입니다.
+> 보존 정책을 주의 하 여 설정--삭제 된 이미지 데이터는 복구할 수 없습니다. 이미지 이름과 달리 매니페스트 다이제스트로 이미지를 가져오는 시스템이 있는 경우 태그 없는 매니페스트에 대한 보존 정책을 설정 하면 안 됩니다. 태그가 지정되지 않은 이미지를 삭제하면 해당 시스템은 레지스트리에서 이미지를 끌어올 수 없게 됩니다. 매니페스트를 가져오는 대신 *고유한 태깅* 스키마를 채택 하는 것이 [좋습니다. 권장 되는 모범 사례](container-registry-image-tag-version.md)입니다.
 
 ## <a name="preview-limitations"></a>미리 보기 제한 사항
 
-* 보존 정책을 사용 하 여 **프리미엄** 컨테이너 레지스트리만 구성할 수 있습니다. 레지스트리 서비스 계층에 대 한 자세한 내용은 [Azure Container Registry sku](container-registry-skus.md)를 참조 하세요.
-* 태그 없는 매니페스트에 대 한 보존 정책만 설정할 수 있습니다.
+* 보존 정책을 사용 하 여 **프리미엄** 컨테이너 레지스트리만 구성할 수 있습니다. 레지스트리 서비스 계층에 대한 자세한 내용은 [Azure Container Registry sku](container-registry-skus.md)를 참조 하세요.
+* 태그 없는 매니페스트에 대한 보존 정책만 설정할 수 있습니다.
 * 보존 정책은 현재 정책 사용이 설정 된 *후* 태그가 없는 매니페스트에만 적용 됩니다. 레지스트리의 태그가 없는 기존 매니페스트는 정책이 적용 되지 않습니다. 태그가 없는 기존 매니페스트를 삭제 하려면 [Azure Container Registry에서 컨테이너 이미지 삭제](container-registry-delete.md)의 예제를 참조 하세요.
 
 ## <a name="about-the-retention-policy"></a>보존 정책 정보
@@ -36,7 +36,7 @@ Azure Container Registry는 레지스트리의 매니페스트 계산을 참조 
 
 ## <a name="set-a-retention-policy---cli"></a>보존 정책 설정-CLI
 
-다음 예에서는 Azure CLI를 사용 하 여 레지스트리의 태그 없는 매니페스트에 대 한 보존 정책을 설정 하는 방법을 보여 줍니다.
+다음 예에서는 Azure CLI를 사용 하 여 레지스트리의 태그 없는 매니페스트에 대한 보존 정책을 설정 하는 방법을 보여 줍니다.
 
 ### <a name="enable-a-retention-policy"></a>보존 정책 사용
 
@@ -81,7 +81,7 @@ az acr config retention update --registry myregistry --status disabled --type Un
 
 ## <a name="set-a-retention-policy---portal"></a>보존 정책 설정-포털
 
-[Azure Portal](https://portal.azure.com)에서 레지스트리의 보존 정책을 설정할 수도 있습니다. 다음 예제에서는 포털을 사용 하 여 레지스트리의 태그가 없는 매니페스트에 대 한 보존 정책을 설정 하는 방법을 보여 줍니다.
+[Azure Portal](https://portal.azure.com)에서 레지스트리의 보존 정책을 설정할 수도 있습니다. 다음 예제에서는 포털을 사용 하 여 레지스트리의 태그가 없는 매니페스트에 대한 보존 정책을 설정 하는 방법을 보여 줍니다.
 
 ### <a name="enable-a-retention-policy"></a>보존 정책 사용
 
@@ -98,11 +98,11 @@ az acr config retention update --registry myregistry --status disabled --type Un
 
 ## <a name="next-steps"></a>다음 단계
 
-* 에서 [이미지 및 리포지토리를 삭제](container-registry-delete.md) 하는 옵션에 대 한 자세한 정보 Azure Container Registry
+* 에서 [이미지 및 리포지토리를 삭제](container-registry-delete.md) 하는 옵션에 대한 자세한 정보 Azure Container Registry
 
 * 레지스트리에서 선택한 이미지 및 매니페스트를 [자동으로 제거](container-registry-auto-purge.md) 하는 방법을 알아봅니다.
 
-* 레지스트리에서 [이미지 및 매니페스트를 잠그는](container-registry-image-lock.md) 옵션에 대 한 자세한 정보
+* 레지스트리에서 [이미지 및 매니페스트를 잠그는](container-registry-image-lock.md) 옵션에 대한 자세한 정보
 
 <!-- LINKS - external -->
 [terms-of-use]: https://azure.microsoft.com/support/legal/preview-supplemental-terms/

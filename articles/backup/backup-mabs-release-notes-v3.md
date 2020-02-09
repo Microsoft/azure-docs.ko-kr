@@ -1,6 +1,6 @@
 ---
 title: Microsoft Azure Backup Server v3 릴리스 정보
-description: 이 문서에서는 MABS (Microsoft Azure Backup 서버) v3의 알려진 문제 및 해결 방법에 대 한 정보를 제공 합니다.
+description: 이 문서에서는 MABS (Microsoft Azure Backup 서버) v3의 알려진 문제 및 해결 방법에 대한 정보를 제공 합니다.
 ms.topic: conceptual
 ms.date: 11/22/2018
 ms.asset: 0c4127f2-d936-48ef-b430-a9198e425d81

@@ -1,5 +1,5 @@
 ---
-title: GeoJSON에 대 한 데이터 형식 | Microsoft Azure 맵
+title: GeoJSON에 대한 데이터 형식 | Microsoft Azure 맵
 description: 이 문서에서는 Microsoft Azure Maps에 사용할 수 있는 지 오 펜스 데이터를 준비 하는 방법에 대해 알아봅니다.
 author: walsehgal
 ms.author: v-musehg

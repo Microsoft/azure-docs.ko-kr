@@ -16,7 +16,7 @@ ms.locfileid: "74852186"
 ---
 # <a name="job-and-task-error-checking"></a>작업 및 태스크 오류 검사
 
-작업 및 태스크를 추가할 때 발생할 수 있는 다양 한 오류가 있습니다. API, CLI 또는 UI에 의해 오류가 즉시 반환 되므로 이러한 작업에 대 한 오류를 검색 하는 작업은 간단 합니다.  그러나 나중에 작업 및 작업을 예약 하 고 실행할 때 발생할 수 있는 오류가 있습니다.
+작업 및 태스크를 추가할 때 발생할 수 있는 다양 한 오류가 있습니다. API, CLI 또는 UI에 의해 오류가 즉시 반환 되므로 이러한 작업에 대한 오류를 검색 하는 작업은 간단 합니다.  그러나 나중에 작업 및 작업을 예약 하 고 실행할 때 발생할 수 있는 오류가 있습니다.
 
 이 문서에서는 작업 및 작업을 제출한 후에 발생할 수 있는 오류에 대해 설명 합니다. 검사 하 고 처리 해야 하는 오류를 나열 하 고 설명 합니다.
 
@@ -27,7 +27,7 @@ ms.locfileid: "74852186"
 작업을 추가 하는 경우 작업이 실패할 수 있는 방법에 영향을 줄 수 있는 다음 매개 변수를 지정할 수 있습니다.
 
 - [작업 제약 조건](https://docs.microsoft.com/rest/api/batchservice/job/add#jobconstraints)
-  - 선택적으로 `maxWallClockTime` 속성을 지정 하 여 작업을 활성화 하거나 실행할 수 있는 최대 시간을 설정할 수 있습니다. 이를 초과 하면 작업은 작업에 대 한 [Executioninfo](https://docs.microsoft.com/rest/api/batchservice/job/get#cloudjob) 에 설정 된 `terminateReason` 속성을 사용 하 여 종료 됩니다.
+  - 선택적으로 `maxWallClockTime` 속성을 지정 하 여 작업을 활성화 하거나 실행할 수 있는 최대 시간을 설정할 수 있습니다. 이를 초과 하면 작업은 작업에 대한 [Executioninfo](https://docs.microsoft.com/rest/api/batchservice/job/get#cloudjob) 에 설정 된 `terminateReason` 속성을 사용 하 여 종료 됩니다.
 - [작업 준비 태스크](https://docs.microsoft.com/rest/api/batchservice/job/add#jobpreparationtask)
   - 지정 된 경우 작업 준비 태스크는 노드의 작업에 대해 작업을 처음 실행할 때 실행 됩니다. 작업 준비 태스크가 실패할 수 있으며,이로 인해 태스크가 실행 되지 않고 작업이 완료 되지 않습니다.
 - [작업 해제 태스크](https://docs.microsoft.com/rest/api/batchservice/job/add#jobreleasetask)
@@ -65,11 +65,11 @@ ms.locfileid: "74852186"
 - 작업에 지정 된 `outputFiles` 있지만 하나 이상의 파일이 업로드 되지 않았음을 나타내는 오류가 있습니다.
 - 작업 [제약 조건의](https://docs.microsoft.com/rest/api/batchservice/task/add#taskconstraints)`maxWallClockTime` 속성에 의해 지정 된 작업에 대해 경과 된 시간을 초과 했습니다.
 
-모든 경우에서 오류 및 오류에 대 한 정보를 확인 하려면 다음 속성을 확인 해야 합니다.
-- 작업 [Executioninfo](https://docs.microsoft.com/rest/api/batchservice/task/get#taskexecutioninformation) 속성에는 오류에 대 한 정보를 제공 하는 여러 속성이 포함 되어 있습니다. [결과](https://docs.microsoft.com/rest/api/batchservice/task/get#taskexecutionresult) 는 `exitCode` 및 오류에 대 한 자세한 정보를 제공 하 `failureInfo` 하 여 작업에 실패 했음을 나타냅니다.
+모든 경우에서 오류 및 오류에 대한 정보를 확인 하려면 다음 속성을 확인 해야 합니다.
+- 작업 [Executioninfo](https://docs.microsoft.com/rest/api/batchservice/task/get#taskexecutioninformation) 속성에는 오류에 대한 정보를 제공 하는 여러 속성이 포함 되어 있습니다. [결과](https://docs.microsoft.com/rest/api/batchservice/task/get#taskexecutionresult) 는 `exitCode` 및 오류에 대한 자세한 정보를 제공 하 `failureInfo` 하 여 작업에 실패 했음을 나타냅니다.
 - 작업은 성공 또는 실패 여부와 관계 없이 항상 `completed` [상태로](https://docs.microsoft.com/rest/api/batchservice/task/get#taskstate)전환 됩니다.
 
-작업에 대 한 태스크 실패의 영향과 작업 종속성을 고려해 야 합니다.  태스크가 종속성 및 작업에 대 한 작업을 구성 하는 데 [Exitconditions](https://docs.microsoft.com/rest/api/batchservice/task/add#exitconditions) 속성을 지정할 수 있습니다.
+작업에 대한 태스크 실패의 영향과 작업 종속성을 고려해 야 합니다.  태스크가 종속성 및 작업에 대한 작업을 구성 하는 데 [Exitconditions](https://docs.microsoft.com/rest/api/batchservice/task/add#exitconditions) 속성을 지정할 수 있습니다.
 - 종속성의 경우 [DependencyAction](https://docs.microsoft.com/rest/api/batchservice/task/add#dependencyaction) 는 실패 한 태스크에 종속 된 태스크가 차단 되는지 아니면 실행 되는지를 제어 합니다.
 - 작업의 경우 [JobAction](https://docs.microsoft.com/rest/api/batchservice/task/add#jobaction) 은 실패 한 태스크에서 작업을 사용 하지 않도록 설정 하거나, 종료 하거나, 그대로 유지 하도록 할지 여부를 제어 합니다.
 

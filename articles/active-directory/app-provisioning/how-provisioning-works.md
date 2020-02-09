@@ -26,7 +26,7 @@ ms.locfileid: "77066851"
 
 자동 프로 비전은 사용자가 액세스 해야 하는 클라우드 응용 프로그램에서 사용자 id 및 역할을 만드는 것을 말합니다. 자동 프로비저닝에는 사용자 ID를 생성하는 것 외에도 상태 또는 역할이 변경될 때 사용자 ID의 유지 관리 및 제거가 포함됩니다. 배포를 시작 하기 전에이 문서를 검토 하 여 Azure AD 프로 비전이 작동 하는 방법과 구성 권장 사항을 얻는 방법에 대해 알아보세요. 
 
-**AZURE AD 프로 비전 서비스** 는 응용 프로그램 공급 업체에서 제공 하는 Scim (도메인 간 id 관리) 2.0 사용자 관리 API 끝점에 대 한 시스템에 연결 하 여 SaaS 앱 및 기타 시스템에 사용자를 프로 비전 합니다. 이 SCIM 끝점을 사용 하면 Azure AD에서 사용자를 프로그래밍 방식으로 만들고, 업데이트 하 고, 제거할 수 있습니다. 선택한 응용 프로그램의 경우 프로 비전 서비스는 그룹 및 역할과 같은 추가 id 관련 개체를 만들고 업데이트 하 고 제거할 수도 있습니다. Azure AD와 응용 프로그램 간의 프로 비전에 사용 되는 채널은 HTTPS SSL 암호화를 사용 하 여 암호화 됩니다.
+**AZURE AD 프로 비전 서비스** 는 응용 프로그램 공급 업체에서 제공 하는 Scim (도메인 간 id 관리) 2.0 사용자 관리 API 엔드포인트에 대 한 시스템에 연결 하 여 SaaS 앱 및 기타 시스템에 사용자를 프로 비전 합니다. 이 SCIM 엔드포인트을 사용 하면 Azure AD에서 사용자를 프로그래밍 방식으로 만들고, 업데이트 하 고, 제거할 수 있습니다. 선택한 응용 프로그램의 경우 프로 비전 서비스는 그룹 및 역할과 같은 추가 id 관련 개체를 만들고 업데이트 하 고 제거할 수도 있습니다. Azure AD와 응용 프로그램 간의 프로 비전에 사용 되는 채널은 HTTPS SSL 암호화를 사용 하 여 암호화 됩니다.
 
 
 Azure AD 프로 비전 서비스를 ![](./media/how-provisioning-works/provisioning0.PNG)
@@ -40,7 +40,7 @@ Azure AD 프로 비전 서비스를 ![](./media/how-provisioning-works/provision
 
 ## <a name="provisioning-using-scim-20"></a>SCIM 2.0을 사용한 프로 비전
 
-Azure AD 프로 비전 서비스는 자동 프로 비전을 위해 [Scim 2.0 프로토콜](https://techcommunity.microsoft.com/t5/Identity-Standards-Blog/bg-p/IdentityStandards) 을 사용 합니다. 서비스는 응용 프로그램에 대 한 SCIM 끝점에 연결 하 고 SCIM 사용자 개체 스키마 및 REST Api를 사용 하 여 사용자 및 그룹의 프로 비전 및 프로 비전 해제를 자동화 합니다. SCIM 기반 프로 비전 커넥터는 Azure AD 갤러리에서 대부분의 응용 프로그램에 대해 제공 됩니다. Azure AD 용 앱을 빌드할 때 개발자는 SCIM 2.0 사용자 관리 API를 사용 하 여 프로 비전을 위해 Azure AD를 통합 하는 SCIM 끝점을 만들 수 있습니다. 자세한 내용은 [SCIM 끝점 빌드 및 사용자 프로 비전 구성](../app-provisioning/use-scim-to-provision-users-and-groups.md)을 참조 하세요.
+Azure AD 프로 비전 서비스는 자동 프로 비전을 위해 [Scim 2.0 프로토콜](https://techcommunity.microsoft.com/t5/Identity-Standards-Blog/bg-p/IdentityStandards) 을 사용 합니다. 서비스는 응용 프로그램에 대 한 SCIM 엔드포인트에 연결 하 고 SCIM 사용자 개체 스키마 및 REST Api를 사용 하 여 사용자 및 그룹의 프로 비전 및 프로 비전 해제를 자동화 합니다. SCIM 기반 프로 비전 커넥터는 Azure AD 갤러리에서 대부분의 응용 프로그램에 대해 제공 됩니다. Azure AD 용 앱을 빌드할 때 개발자는 SCIM 2.0 사용자 관리 API를 사용 하 여 프로 비전을 위해 Azure AD를 통합 하는 SCIM 엔드포인트을 만들 수 있습니다. 자세한 내용은 [SCIM 엔드포인트 빌드 및 사용자 프로 비전 구성](../app-provisioning/use-scim-to-provision-users-and-groups.md)을 참조 하세요.
 
 현재 없는 앱에 대 한 자동 Azure AD 프로 비전 커넥터를 요청 하려면 [Azure Active Directory 응용 프로그램 요청](https://aka.ms/aadapprequest)을 입력 합니다.
 
@@ -184,7 +184,7 @@ Azure AD 프로 비전 서비스는 응용 프로그램이 suupports 일시 삭�
 
 위의 4 개 이벤트 중 하나가 발생 하 고 대상 응용 프로그램에서 일시 삭제를 지원 하지 않는 경우 프로 비전 서비스는 앱에서 사용자를 영구적으로 삭제 하는 삭제 요청을 보냅니다. 
 
-사용자가 Azure AD에서 삭제 되 고 30 일 후에는 테 넌 트에서 영구적으로 삭제 됩니다. 이 시점에서 프로 비전 서비스는 응용 프로그램에서 사용자를 영구적으로 삭제 하는 삭제 요청을 보냅니다. 30 일 기간 동안 언제 든 지 [사용자를 영구적으로 삭제](../fundamentals/active-directory-users-restore.md)하 여 응용 프로그램에 삭제 요청을 보낼 수 있습니다.
+사용자가 Azure AD에서 삭제 되 고 30 일 후에는 테넌트에서 영구적으로 삭제 됩니다. 이 시점에서 프로 비전 서비스는 응용 프로그램에서 사용자를 영구적으로 삭제 하는 삭제 요청을 보냅니다. 30 일 기간 동안 언제 든 지 [사용자를 영구적으로 삭제](../fundamentals/active-directory-users-restore.md)하 여 응용 프로그램에 삭제 요청을 보낼 수 있습니다.
 
 특성 매핑에서 Issoft Deleted 특성이 표시 되는 경우 사용자의 상태를 확인 하는 데 사용 되 고 활성 = false로 업데이트 요청을 보낼지 여부를 지정 하 여 사용자를 일시 삭제 합니다. 
 
@@ -194,6 +194,6 @@ Azure AD 프로 비전 서비스는 응용 프로그램이 suupports 일시 삭�
 
 [갤러리 앱에 대 한 프로 비전 구성](../manage-apps/configure-automatic-user-provisioning-portal.md)
 
-[사용자 고유의 앱을 만들 때 SCIM 끝점을 빌드하고 프로 비전 구성](../app-provisioning/use-scim-to-provision-users-and-groups.md)
+[사용자 고유의 앱을 만들 때 SCIM 엔드포인트을 빌드하고 프로 비전 구성](../app-provisioning/use-scim-to-provision-users-and-groups.md)
 
 [응용 프로그램에 사용자를 구성 및 프로 비전 하는 문제를 해결](../manage-apps/application-provisioning-config-problem.md)합니다.

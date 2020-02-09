@@ -59,7 +59,7 @@ git submodule foreach git pull origin master
 
      스크립트는 솔루션 이름을 사용하여 Azure에서 리소스 그룹을 만듭니다. 이 리소스 그룹에는 솔루션 가속기에서 사용하는 Azure 리소스가 포함됩니다. 해당 리소스가 더 이상 필요하지 않으면 이 리소스 그룹을 삭제할 수 있습니다.
 
-     또한 이 스크립트는 로컬 머신에 **PCS** 접두사가 있는 환경 변수 세트도 추가합니다. 이러한 환경 변수를 Azure Key Vault 리소스에서 읽을 수 있도록 하려면 원격 모니터링에 대 한 세부 정보를 제공 합니다. 이 키 자격 증명 모음 리소스 원격 모니터링를 해당 구성 값에서를 읽이 됩니다는 위치입니다.
+     또한 이 스크립트는 로컬 머신에 **PCS** 접두사가 있는 환경 변수 세트도 추가합니다. 이러한 환경 변수를 Azure Key Vault 리소스에서 읽을 수 있도록 하려면 원격 모니터링에 대한 세부 정보를 제공 합니다. 이 키 자격 증명 모음 리소스 원격 모니터링를 해당 구성 값에서를 읽이 됩니다는 위치입니다.
 
      > [!TIP]
      > 스크립트가 완료되면 **\<홈 폴더\>\\.pcs\\\<솔루션 이름\>.env**라는 파일에 환경 변수를 저장합니다. 나중에 솔루션 가속기 배포에 사용할 수 있습니다. **docker-compose**를 실행할 때 로컬 머신에 설정된 모든 환경 변수에서 **services\\scripts\\local\\.env** 파일의 값을 재정의합니다.
@@ -69,7 +69,7 @@ git submodule foreach git pull origin master
 ### <a name="use-existing-azure-resources"></a>기존 Azure 리소스 사용
 
 필요한 Azure 리소스를 이미 만든 경우 로컬 머신에 해당 환경 변수를 만듭니다.
-다음에 대 한 환경 변수를 설정 합니다.
+다음에 대한 환경 변수를 설정 합니다.
 * **PCS_KEYVAULT_NAME** -Azure Key Vault 리소스의 이름
 * **PCS_AAD_APPID** -The AAD 응용 프로그램 ID
 * **PCS_AAD_APPSECRET** -The AAD 응용 프로그램 암호

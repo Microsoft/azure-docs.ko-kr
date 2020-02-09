@@ -1,6 +1,6 @@
 ---
 title: 웹 API 응용 프로그램 추가-Azure Active Directory B2C | Microsoft Docs
-description: Active Directory B2C 테 넌 트에 web API 응용 프로그램을 추가 하는 방법에 대해 알아봅니다.
+description: Active Directory B2C 테넌트에 web API 응용 프로그램을 추가 하는 방법에 대해 알아봅니다.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -19,14 +19,14 @@ ms.locfileid: "73641556"
 ---
 # <a name="add-a-web-api-application-to-your-azure-active-directory-b2c-tenant"></a>Azure Active Directory B2C 테넌트에 웹 API 애플리케이션 추가
 
- 액세스 토큰을 제공 하는 클라이언트 응용 프로그램에서 요청을 수락 하 고 응답할 수 있도록 테 넌 트에 web API 리소스를 등록 합니다. 이 문서에서는 Azure Active Directory B2C (Azure AD B2C)에서 web API를 등록 하는 방법을 보여 줍니다.
+ 액세스 토큰을 제공 하는 클라이언트 응용 프로그램에서 요청을 수락 하 고 응답할 수 있도록 테넌트에 web API 리소스를 등록 합니다. 이 문서에서는 Azure Active Directory B2C (Azure AD B2C)에서 web API를 등록 하는 방법을 보여 줍니다.
 
-Azure AD B2C 테 넌 트에 응용 프로그램을 등록 하려면 현재 **응용 프로그램** 환경 또는 새로운 통합 **앱 등록 (미리 보기)** 환경을 사용할 수 있습니다. [새 환경에 대해 자세히 알아보세요](https://aka.ms/b2cappregintro).
+Azure AD B2C 테넌트에 응용 프로그램을 등록 하려면 현재 **응용 프로그램** 환경 또는 새로운 통합 **앱 등록 (미리 보기)** 환경을 사용할 수 있습니다. [새 환경에 대해 자세히 알아보세요](https://aka.ms/b2cappregintro).
 
 #### <a name="applicationstabapplications"></a>[애플리케이션](#tab/applications/)
 
 1. [Azure 포털](https://portal.azure.com)에 로그인합니다.
-2. Azure AD B2C 테 넌 트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 테 넌 트가 포함 된 디렉터리를 선택 합니다.
+2. Azure AD B2C 테넌트를 포함 하는 디렉터리를 사용 하 고 있는지 확인 합니다. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 테넌트가 포함 된 디렉터리를 선택 합니다.
 3. Azure Portal의 왼쪽 상단 모서리에서 **모든 서비스**를 선택하고 **Azure AD B2C**를 검색하여 선택합니다.
 4. **애플리케이션**을 선택하고 **추가**를 선택합니다.
 5. 애플리케이션의 이름을 입력합니다. 예를 들어 *webapi1*과 같습니다.
@@ -39,11 +39,11 @@ Azure AD B2C 테 넌 트에 응용 프로그램을 등록 하려면 현재 **응
 #### <a name="app-registrations-previewtabapp-reg-preview"></a>[앱 등록 (미리 보기)](#tab/app-reg-preview/)
 
 1. [Azure 포털](https://portal.azure.com)에 로그인합니다.
-1. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 Azure AD B2C 테 넌 트가 포함 된 디렉터리를 선택 합니다.
+1. 상단 메뉴에서 **디렉터리 + 구독** 필터를 선택 하 고 Azure AD B2C 테넌트가 포함 된 디렉터리를 선택 합니다.
 1. 왼쪽 메뉴에서 **Azure AD B2C**를 선택 합니다. 또는 **모든 서비스** 를 선택 하 고 **Azure AD B2C**을 검색 하 고 선택 합니다.
 1. **앱 등록 (미리 보기)** 를 선택 하 고 **새 등록**을 선택 합니다.
 1. 응용 프로그램의 **이름을** 입력 합니다. 예를 들어 *webapi1*과 같습니다.
-1. **URI 리디렉션**에서 **웹**을 선택한 다음 Azure AD B2C 응용 프로그램에서 요청 하는 토큰을 반환 해야 하는 끝점을 입력 합니다. 프로덕션 응용 프로그램에서 리디렉션 URI를 `https://localhost:5000`와 같은 끝점으로 설정할 수 있습니다. 개발 또는 테스트 중에 토큰의 디코딩된 콘텐츠를 표시 하는 Microsoft 소유의 웹 응용 프로그램 (토큰의 내용은 브라우저에서 벗어나면 안 됨)으로 `https://jwt.ms`설정할 수 있습니다. 언제 든 지 등록 된 응용 프로그램에서 리디렉션 Uri를 추가 하 고 수정할 수 있습니다.
+1. **URI 리디렉션**에서 **웹**을 선택한 다음 Azure AD B2C 응용 프로그램에서 요청 하는 토큰을 반환 해야 하는 엔드포인트을 입력 합니다. 프로덕션 응용 프로그램에서 리디렉션 URI를 `https://localhost:5000`와 같은 엔드포인트으로 설정할 수 있습니다. 개발 또는 테스트 중에 토큰의 디코딩된 콘텐츠를 표시 하는 Microsoft 소유의 웹 응용 프로그램 (토큰의 내용은 브라우저에서 벗어나면 안 됨)으로 `https://jwt.ms`설정할 수 있습니다. 언제 든 지 등록 된 응용 프로그램에서 리디렉션 Uri를 추가 하 고 수정할 수 있습니다.
 1. **등록**을 선택합니다.
 1. 웹 API의 코드에서 사용할 **응용 프로그램 (클라이언트) ID** 를 기록 합니다.
 

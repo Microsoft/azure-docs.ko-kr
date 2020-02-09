@@ -25,7 +25,7 @@ ms.locfileid: "75732707"
 트리거를 사용 하 여 워크플로를 시작할 수 있습니다. 예를 들어 새 전자 메일이 도착 하는 경우, 일정 항목이 업데이트 될 때 또는 Salesforce와 같은 차이점 서비스에서 이벤트가 발생 하는 경우를 들 수 있습니다. 트리거 이벤트에 응답 하는 동작 (예: 전자 메일 보내기 또는 새 일정 이벤트 만들기)을 사용할 수 있습니다. 
 
 > [!NOTE]
-> @outlook.com 또는 @hotmail.com 계정에 대 한 작업을 자동화 하려면 [Outlook.com 커넥터](../connectors/connectors-create-api-outlook.md)를 사용 합니다.
+> @outlook.com 또는 @hotmail.com 계정에 대한 작업을 자동화 하려면 [Outlook.com 커넥터](../connectors/connectors-create-api-outlook.md)를 사용 합니다.
 
 ## <a name="prerequisites"></a>필수 조건
 
@@ -45,7 +45,7 @@ ms.locfileid: "75732707"
    
    ![트리거를 선택 하 여 논리 앱 시작](./media/connectors-create-api-office365-outlook/office365-trigger.png)
 
-1. 로그인 하 라는 메시지가 표시 되 면 논리 앱이 계정에 연결할 수 있도록 Office 365 자격 증명을 제공 합니다. 그렇지 않고 연결이 이미 있는 경우 트리거의 속성에 대 한 정보를 제공 합니다.
+1. 로그인 하 라는 메시지가 표시 되 면 논리 앱이 계정에 연결할 수 있도록 Office 365 자격 증명을 제공 합니다. 그렇지 않고 연결이 이미 있는 경우 트리거의 속성에 대한 정보를 제공 합니다.
 
    이 예에서는 트리거가 확인 하는 달력을 선택 합니다. 예를 들면 다음과 같습니다.
 
@@ -75,7 +75,7 @@ ms.locfileid: "75732707"
 
    ![논리 앱에서 실행할 작업을 선택 합니다.](./media/connectors-create-api-office365-outlook/office365-actions.png) 
 
-1. 로그인 하 라는 메시지가 표시 되 면 논리 앱이 계정에 연결할 수 있도록 Office 365 자격 증명을 제공 합니다. 그렇지 않고 연결이 이미 존재 하는 경우 작업의 속성에 대 한 정보를 제공 합니다.
+1. 로그인 하 라는 메시지가 표시 되 면 논리 앱이 계정에 연결할 수 있도록 Office 365 자격 증명을 제공 합니다. 그렇지 않고 연결이 이미 존재 하는 경우 작업의 속성에 대한 정보를 제공 합니다.
 
    이 예제에서는 작업에서 새 연락처를 만드는 연락처 폴더를 선택 합니다. 예를 들면 다음과 같습니다.
 
@@ -87,7 +87,7 @@ ms.locfileid: "75732707"
 
 ## <a name="connector-specific-details"></a>커넥터 관련 세부 정보
 
-커넥터의 Swagger 파일에 설명 된 대로 트리거, 작업 및 제한에 대 한 자세한 기술 정보는 [커넥터의 참조 페이지](/connectors/office365connector/)를 참조 하세요. 
+커넥터의 Swagger 파일에 설명 된 대로 트리거, 작업 및 제한에 대한 자세한 기술 정보는 [커넥터의 참조 페이지](/connectors/office365connector/)를 참조 하세요. 
 
 ## <a name="next-steps"></a>다음 단계
 

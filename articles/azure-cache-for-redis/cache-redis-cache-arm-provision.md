@@ -1,6 +1,6 @@
 ---
 title: Azure Resource Manager를 사용 하 여 Redis 용 Azure Cache 배포
-description: Azure Resource Manager 템플릿을 사용 하 여 Azure Cache for Redis 리소스를 배포 하는 방법을 알아봅니다. 일반적인 시나리오에 대 한 템플릿이 제공 됩니다.
+description: Azure Resource Manager 템플릿을 사용 하 여 Azure Cache for Redis 리소스를 배포 하는 방법을 알아봅니다. 일반적인 시나리오에 대한 템플릿이 제공 됩니다.
 author: yegu-ms
 ms.author: yegu
 ms.service: cache
