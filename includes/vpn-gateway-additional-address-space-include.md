@@ -10,7 +10,7 @@ ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: cc17df68280c342f863e69e6a253788d20caeba8
 ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 06/18/2019
 ms.locfileid: "67182046"

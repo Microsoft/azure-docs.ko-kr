@@ -10,7 +10,7 @@ ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 684b212ca771af6c336cf6239e18ea367f2da5ce
 ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/16/2020
 ms.locfileid: "76045106"
@@ -29,6 +29,6 @@ Azure Cloud Shell에서 이 문서에 포함된 코드를 실행하려면 Cloud 
 
 **로컬로 PowerShell 실행**
 
-Azure PowerShell cmdlet을 컴퓨터에 로컬에 설치하고 실행할 수도 있습니다. PowerShell cmdlet은 자주 업데이트 됩니다. 최신 버전을 실행 하지 않는 경우 예제에 입력된 값이 실패할 수 있습니다. 컴퓨터에 설치 된 Azure PowerShell 버전을 찾으려면 `Get-Module -ListAvailable Az` cmdlet을 사용 합니다. 설치 또는 업데이트 하려면 [Azure PowerShell 모듈 설치](/powershell/azure/install-az-ps)를 참조 하세요.
+Azure PowerShell cmdlet을 컴퓨터에 설치하고 실행할 수 있습니다. PowerShell cmdlet은 자주 업데이트 됩니다. 최신 버전을 사용 하지 않는 경우 예제에 입력된 값이 실패할 수 있습니다. 컴퓨터에 설치 된 Azure PowerShell 버전을 찾으려면 `Get-Module -ListAvailable Az` cmdlet을 사용 합니다. 설치 또는 업데이트 하려면 [Azure PowerShell 모듈 설치](/powershell/azure/install-az-ps)를 참조 하세요.
 
 PowerShell을 로컬로 실행 하는 경우 ' AzAccount '를 실행 하 여 Azure에 대한 연결을 만들어야 합니다.
