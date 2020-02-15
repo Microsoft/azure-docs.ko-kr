@@ -25,6 +25,9 @@
         - name: 자동화된 ML 실험 만들기
           displayName: 'automl, automated, auto ml, portal, ui'
           href: tutorial-first-experiment-automated-ml.md
+        - name: 자동화된 ML로 수요 예측(자전거 공유 데이터)
+          displayName: 'automl, automated, auto ml, portal, ui'
+          href: tutorial-automated-ml-forecast.md
     - name: Python SDK
       items:
         - name: 첫 번째 ML 실험 만들기
@@ -50,6 +53,9 @@
             - name: 분류 모델 일괄 처리 점수 매기기
               displayName: pipelines
               href: tutorial-pipeline-batch-scoring-classification.md
+        - name: 실험에서 프로덕션으로 이동
+          displayName: 'mlops, mlopspython, production'
+          href: tutorial-convert-ml-experiment-to-production.md
     - name: R SDK
       items:
         - name: 첫 번째 ML 실험 만들기(R)
@@ -122,6 +128,8 @@
               href: how-to-enable-virtual-network.md
             - name: SSL로 웹 서비스 보호
               href: how-to-secure-web-service.md
+            - name: AKS 배포에서 Azure AD ID 사용
+              href: how-to-use-azure-ad-identity.md
             - name: 스토리지 액세스 키 다시 생성
               href: how-to-change-storage-access-key.md
         - name: 인증 설정
@@ -345,6 +353,8 @@
           href: how-to-create-your-first-pipeline.md
         - name: 파이프라인 예약(Python)
           href: how-to-schedule-pipelines.md
+        - name: 파이프라인 트리거
+          href: how-to-trigger-published-pipeline.md
         - name: 파이프라인 디버그 및 문제 해결
           href: how-to-debug-pipelines.md
         - name: Application Insights에서 파이프라인 디버깅

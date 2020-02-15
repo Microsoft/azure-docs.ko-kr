@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 02/11/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 1802c3a92ed18dec5cba974c54c92f01324245eb
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 64934dd5bc591415c0bad6ac3dc6a4a2d98dd005
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76847616"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77136301"
 ---
 # <a name="set-up-sign-in-with-an-azure-active-directory-account-using-custom-policies-in-azure-active-directory-b2c"></a>Azure Active Directory B2C에서 사용자 지정 정책을 사용하여 Azure Active Directory 계정으로 로그인하도록 설정
 
@@ -50,6 +50,19 @@ ms.locfileid: "76847616"
 1. **인증서 & 암호**를 선택 하 고 **새 클라이언트 암호**를 선택 합니다.
 1. 비밀에 대 한 **설명을** 입력 하 고 만료를 선택한 다음 **추가**를 선택 합니다. 이후 단계에서 사용할 암호의 **값** 을 기록 합니다.
 
+## <a name="configuring-optional-claims"></a>선택적 클레임 구성
+
+Azure AD에서 `family_name` 및 `given_name` 클레임을 가져오려는 경우 Azure Portal UI 또는 응용 프로그램 매니페스트에서 응용 프로그램에 대 한 선택적 클레임을 구성할 수 있습니다. 자세한 내용은 [AZURE AD 앱에 선택적 클레임을 제공 하는 방법](../active-directory/develop/active-directory-optional-claims.md)을 참조 하세요.
+
+1. [Azure Portal](https://portal.azure.com)에 로그인합니다. **Azure Active Directory**를 검색하고 선택합니다.
+1. **관리** 섹션에서 **앱 등록**을 선택 합니다.
+1. 목록에서 선택적 클레임을 구성 하려는 응용 프로그램을 선택 합니다.
+1. **관리** 섹션에서 **토큰 구성 (미리 보기)** 을 선택 합니다.
+1. **선택적 클레임 추가**를 선택 합니다.
+1. 구성 하려는 토큰 유형을 선택 합니다.
+1. 추가할 선택적 클레임을 선택 합니다.
+1. **추가**를 클릭합니다.
+
 ## <a name="create-a-policy-key"></a>정책 키 만들기
 
 만든 애플리케이션 키를 Azure AD B2C 테넌트에 저장해야 합니다.
@@ -73,23 +86,20 @@ ms.locfileid: "76847616"
 1. *TrustFrameworkExtensions.xml* 파일을 엽니다.
 2. **ClaimsProviders** 요소를 찾습니다. 해당 요소가 없으면 루트 요소 아래에 추가합니다.
 3. 다음과 같이 새 **ClaimsProvider**를 추가합니다.
-
-    ```XML
+    ```xml
     <ClaimsProvider>
       <Domain>Contoso</Domain>
       <DisplayName>Login using Contoso</DisplayName>
       <TechnicalProfiles>
-        <TechnicalProfile Id="ContosoProfile">
+        <TechnicalProfile Id="OIDC-Contoso">
           <DisplayName>Contoso Employee</DisplayName>
           <Description>Login with your Contoso account</Description>
           <Protocol Name="OpenIdConnect"/>
           <Metadata>
-            <Item Key="METADATA">https://login.windows.net/your-AD-tenant-name.onmicrosoft.com/.well-known/openid-configuration</Item>
-            <Item Key="ProviderName">https://sts.windows.net/00000000-0000-0000-0000-000000000000/</Item>
-            <!-- Update the Client ID below to the Application ID -->
+            <Item Key="METADATA">https://login.microsoftonline.com/tenant-name.onmicrosoft.com/v2.0/.well-known/openid-configuration</Item>
             <Item Key="client_id">00000000-0000-0000-0000-000000000000</Item>
             <Item Key="response_types">code</Item>
-            <Item Key="scope">openid</Item>
+            <Item Key="scope">openid profile</Item>
             <Item Key="response_mode">form_post</Item>
             <Item Key="HttpBinding">POST</Item>
             <Item Key="UsePolicyInRedirectUri">false</Item>
@@ -125,12 +135,11 @@ ms.locfileid: "76847616"
 
 Azure AD 엔드포인트에서 토큰을 가져오려면 Azure AD B2C에서 Azure AD와 통신하는 데 사용해야 하는 프로토콜을 정의해야 합니다. 이 작업은 **ClaimsProvider**의 **TechnicalProfile** 요소 내에서 수행됩니다.
 
-1. **TechnicalProfile** 요소의 ID를 업데이트합니다. 이 ID는 정책의 다른 부분에서 이 기술 프로필을 참조하는 데 사용합니다.
+1. **TechnicalProfile** 요소의 ID를 업데이트합니다. 이 ID는 정책의 다른 부분에서이 기술 프로필을 참조 하는 데 사용 됩니다 (예: `OIDC-Contoso`).
 1. **DisplayName**의 값을 업데이트합니다. 이 값은 로그인 화면의 로그인 단추에 표시됩니다.
 1. **설명**값을 업데이트합니다.
 1. Azure AD는 OpenID Connect 프로토콜을 사용하므로 **Protocol** 값이 `OpenIdConnect`인지 확인합니다.
-1. **METADATA** 값을 `https://login.windows.net/your-AD-tenant-name.onmicrosoft.com/.well-known/openid-configuration`으로 설정합니다. 여기서 `your-AD-tenant-name`는 Azure AD 테넌트 이름입니다. 예를 들어 `https://login.windows.net/fabrikam.onmicrosoft.com/.well-known/openid-configuration`
-1. 브라우저를 열고 방금 업데이트 한 **메타 데이터** URL로 이동 하 여 **발급자** 개체를 찾은 다음 XML 파일에서 **ProviderName** 의 값에 값을 복사 하 여 붙여넣습니다.
+1. **METADATA** 값을 `https://login.microsoftonline.com/tenant-name.onmicrosoft.com/v2.0/.well-known/openid-configuration`으로 설정합니다. 여기서 `tenant-name`는 Azure AD 테넌트 이름입니다. 예를 들어 `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/.well-known/openid-configuration`
 1. **client_id**를 애플리케이션 등록의 애플리케이션 ID로 설정합니다.
 1. **CryptographicKeys**에서 **StorageReferenceId** 의 값을 앞에서 만든 정책 키의 이름으로 업데이트 합니다. `B2C_1A_ContosoAppSecret`)을 입력합니다.
 
@@ -147,7 +156,7 @@ Azure AD 엔드포인트에서 토큰을 가져오려면 Azure AD B2C에서 Azur
 이 시점에서 id 공급자가 설정 되었지만 등록/로그인 페이지에는 아직 사용할 수 없습니다. 사용할 수 있도록 하려면 기존 템플릿 사용자 경험의 복제본을 만든 다음 Azure AD id 공급자도 포함 하도록 수정 합니다.
 
 1. 시작 팩에서 *TrustFrameworkBase.xml* 파일을 엽니다.
-1. `Id="SignUpOrSignIn"`이 포함된 **UserJourney** 요소를 찾아서 전체 콘텐츠를 복사합니다.
+1. **이 포함된** UserJourney`Id="SignUpOrSignIn"` 요소를 찾아서 전체 콘텐츠를 복사합니다.
 1. *TrustFrameworkExtensions.xml*을 열어 **UserJourneys** 요소를 찾습니다. 요소가 존재하지 않는 경우 추가합니다.
 1. 이전 단계에서 복사한 **UserJourney** 요소의 전체 콘텐츠를 **UserJourneys** 요소의 자식으로 붙여넣습니다.
 1. 사용자 경험 ID의 이름을 바꿉니다. `SignUpSignInContoso`)을 입력합니다.
@@ -167,14 +176,14 @@ Azure AD 엔드포인트에서 토큰을 가져오려면 Azure AD B2C에서 Azur
 
 이제 단추가 준비되었으므로 동작에 연결해야 합니다. 이 경우에 작업을 통해 Azure AD B2C에서 Azure AD와 통신하여 토큰을 수신할 수 있게 됩니다. Azure AD 클레임 공급자의 기술 프로필을 연결하여 동작에 단추를 연결합니다.
 
-1. 사용자 경험에서 `Order="2"`가 포함된 **OrchestrationStep**을 찾습니다.
+1. 사용자 경험에서 **가 포함된** OrchestrationStep`Order="2"`을 찾습니다.
 1. 다음 **ClaimsExchange** 요소를 추가합니다. **Id**에는 **TargetClaimsExchangeId**에 사용한 것과 같은 값을 사용해야 합니다.
 
     ```XML
-    <ClaimsExchange Id="ContosoExchange" TechnicalProfileReferenceId="ContosoProfile" />
+    <ClaimsExchange Id="ContosoExchange" TechnicalProfileReferenceId="OIDC-Contoso" />
     ```
 
-    **TechnicalProfileReferenceId** 값을 앞에서 만든 기술 프로필의 **ID**로 업데이트합니다. `ContosoProfile`)을 입력합니다.
+    **TechnicalProfileReferenceId** 값을 앞에서 만든 기술 프로필의 **ID**로 업데이트합니다. `OIDC-Contoso`)을 입력합니다.
 
 1. *TrustFrameworkExtensions.xml* 파일을 저장하고 확인을 위해 다시 업로드합니다.
 

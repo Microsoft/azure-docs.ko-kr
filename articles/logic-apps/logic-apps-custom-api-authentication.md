@@ -1,25 +1,25 @@
 ---
 title: 사용자 지정 Api에 대 한 보안 호출에 대 한 인증 추가
-description: Azure Logic Apps에서 사용자 지정 Api에 대 한 호출 보안 설정에 대 한 인증을 설정 하는 방법
+description: Azure Logic Apps에서 사용자 지정 Api 호출에 대 한 보안을 향상 시키기 위해 인증을 설정 하는 방법
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 09/22/2017
-ms.openlocfilehash: 2f8b1cc002fe3f340ff6d5329329507316577885
-ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
+ms.openlocfilehash: 110a684cf6ad21c13411d3bc2ada84750744f00e
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75666899"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191399"
 ---
-# <a name="secure-calls-to-custom-apis-from-azure-logic-apps"></a>Azure Logic Apps에서 사용자 지정 API에 대한 호출 보호
+# <a name="increase-security-for-calls-to-custom-apis-from-azure-logic-apps"></a>Azure Logic Apps에서 사용자 지정 Api 호출에 대 한 보안 강화
 
-API에 대한 호출을 보호하려면 코드를 업데이트할 필요가 없도록 Azure Portal을 통해 Azure AD(Azure Active Directory) 인증을 설정할 수 있습니다. 또는 API 코드를 통해 인증을 요구하고 적용할 수 있습니다.
+Api 호출에 대 한 보안을 향상 시키려면 Azure Portal를 통해 Azure Active Directory (Azure AD) 인증을 설정할 수 있으므로 코드를 업데이트할 필요가 없습니다. 또는 API 코드를 통해 인증을 요구하고 적용할 수 있습니다.
 
 ## <a name="authentication-options-for-your-api"></a>API에 대한 인증 옵션
 
-다음과 같은 방법으로 사용자 지정 API에 대한 호출을 보호할 수 있습니다.
+다음과 같은 방법으로 사용자 지정 API에 대 한 호출에 대 한 보안을 향상 시킬 수 있습니다.
 
 * [코드 변경 없음](#no-code) - Azure Portal을 통해 [Azure AD(Azure Active Directory)](../active-directory/fundamentals/active-directory-whatis.md)로 API를 보호하므로 코드를 업데이트하거나 API를 다시 배포할 필요가 없습니다.
 
@@ -152,7 +152,7 @@ PowerShell과 함께 Azure Resource Manager를 통해 이 작업을 수행할 �
 
 논리 앱에 대 한 앱 id와 다른 API 앱 또는 웹 앱에 대 한 Azure AD 응용 프로그램 id를 만들어야 합니다. 애플리케이션 ID를 만들려면 Azure Portal에 대해 2부의 이전 단계를 수행합니다. 
 
-1부의 단계를 수행할 수도 있지만 **로그인 URL** 및 **앱 ID URI**에 대한 웹앱 또는 API 앱의 실제 `https://{URL}`을 사용해야 합니다. 이러한 단계에서 앱의 배포 템플릿 및 3부에서 사용할 클라이언트 ID와 테넌트 ID를 모두 저장해야 합니다.
+1부의 단계를 수행할 수도 있지만 `https://{URL}`로그인 URL**및**앱 ID URI**에 대한 웹앱 또는 API 앱의 실제** 을 사용해야 합니다. 이러한 단계에서 앱의 배포 템플릿 및 3부에서 사용할 클라이언트 ID와 테넌트 ID를 모두 저장해야 합니다.
 
 > [!NOTE]
 > 웹앱 또는 API 앱의 Azure AD 애플리케이션 ID를 만들 때는 PowerShell이 아닌 Azure Portal을 사용해야 합니다. PowerShell commandlet은 웹 사이트에 사용자가 로그인하는 데 필요한 권한을 설정하지 않습니다.
@@ -199,14 +199,14 @@ Azure Active Directory 인증과 함께 빈 웹앱과 논리 앱을 자동으로
 
 | 속성 | 필수 | Description | 
 | -------- | -------- | ----------- | 
-| tenant | 예 | Azure AD 테넌트의 GUID | 
-| 대상 | 예 | 액세스하려는 대상 리소스의 GUID, 즉 웹앱 또는 API 앱에 대한 애플리케이션 ID의 클라이언트 ID | 
-| clientId | 예 | 액세스를 요청하는 클라이언트의 GUID, 즉 논리 앱에 대한 애플리케이션 ID의 클라이언트 ID | 
-| secret | 예 | 액세스 토큰을 요청하는 클라이언트에 대한 애플리케이션 ID의 키 또는 암호 | 
-| type | 예 | 인증 유형입니다. ActiveDirectoryOAuth 인증의 경우 이 값은 `ActiveDirectoryOAuth`입니다. | 
+| tenant | yes | Azure AD 테넌트의 GUID | 
+| 대상 | yes | 액세스하려는 대상 리소스의 GUID, 즉 웹앱 또는 API 앱에 대한 애플리케이션 ID의 클라이언트 ID | 
+| clientId | yes | 액세스를 요청하는 클라이언트의 GUID, 즉 논리 앱에 대한 애플리케이션 ID의 클라이언트 ID | 
+| secret | yes | 액세스 토큰을 요청하는 클라이언트에 대한 애플리케이션 ID의 키 또는 암호 | 
+| type | yes | 인증 유형입니다. ActiveDirectoryOAuth 인증의 경우 이 값은 `ActiveDirectoryOAuth`입니다. | 
 |||| 
 
-예:
+다음은 그 예입니다.
 
 ``` json
 {
@@ -250,9 +250,9 @@ Azure Active Directory 인증과 함께 빈 웹앱과 논리 앱을 자동으로
 
 | 속성 | 필수 | Description |
 | -------- | -------- | ----------- |
-| `type` | 예 | 인증 유형입니다. SSL 클라이언트 인증서의 경우 이 값은 `ClientCertificate`여야 합니다. |
-| `password` | 아닙니다. | 클라이언트 인증서(PFX 파일)에 액세스하기 위한 암호 |
-| `pfx` | 예 | 클라이언트 인증서(PFX 파일)의 Base64로 인코딩된 콘텐츠 |
+| `type` | yes | 인증 유형입니다. SSL 클라이언트 인증서의 경우 이 값은 `ClientCertificate`여야 합니다. |
+| `password` | 예 | 클라이언트 인증서(PFX 파일)에 액세스하기 위한 암호 |
+| `pfx` | yes | 클라이언트 인증서(PFX 파일)의 Base64로 인코딩된 콘텐츠 |
 ||||
 
 <a name="basic"></a>
@@ -273,9 +273,9 @@ Azure Active Directory 인증과 함께 빈 웹앱과 논리 앱을 자동으로
 
 | 속성 | 필수 | Description | 
 | -------- | -------- | ----------- | 
-| type | 예 | 사용할 인증 유형입니다. 기본 인증의 경우 값은 `Basic`이어야 합니다. | 
-| 사용자 이름 | 예 | 인증에 사용할 사용자 이름 | 
-| password | 예 | 인증에 사용할 암호 | 
+| type | yes | 사용할 인증 유형입니다. 기본 인증의 경우 값은 `Basic`이어야 합니다. | 
+| 사용자 이름 | yes | 인증에 사용할 사용자 이름 | 
+| password | yes | 인증에 사용할 암호 | 
 |||| 
 
 <a name="azure-ad-code"></a>

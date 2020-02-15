@@ -8,12 +8,12 @@ ms.author: vikurpad
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 0637e160454897af774c3bac48fc02866cb71835
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 8b45840215092281c7fbc8d499e26b095b374dd6
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76760796"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191037"
 ---
 # <a name="skillset-concepts-and-composition-in-azure-cognitive-search"></a>Azure Cognitive Search의 기술 개념 및 컴퍼지션
 
@@ -44,10 +44,10 @@ ms.locfileid: "76760796"
 |데이터 원본 \ 구문 분석 모드|기본값|JSON, JSON 줄 & CSV|
 |---|---|---|
 |Blob Storage|/문서/내용<br>/document/normalized_images/*<br>…|/document/{key1}<br>/document/{key2}<br>…|
-|SQL|/document/{column1}<br>/document/{column2}<br>…|N/A |
-|Cosmos DB|/document/{key1}<br>/document/{key2}<br>…|N/A|
+|SQL|/document/{column1}<br>/document/{column2}<br>…|해당 없음 |
+|Cosmos DB|/document/{key1}<br>/document/{key2}<br>…|해당 없음|
 
- 기술이 실행 되 면 보강 트리에 새 노드를 추가 합니다. 이러한 새 노드는 다운스트림 기술에 대 한 입력으로 사용 하거나, 기술 자료 저장소로 프로젝션 하거나, 인덱스 필드에 매핑할 수 있습니다. 강화은 변경할 수 없습니다. 만든 후에는 노드를 편집할 수 없습니다. 기술력과가 더 복잡 하므로 보강 트리가 필요 하지만 보강 트리의 모든 노드가 인덱스나 기술 자료 저장소로 만들어야 하는 것은 아닙니다. 인덱스 또는 기술 자료 저장소에 강화의 하위 집합만 선택적으로 보관할 수 있습니다.
+ 기술이 실행 되 면 보강 트리에 새 노드를 추가 합니다. 이러한 새 노드는 다운스트림 기술에 대 한 입력으로 사용 하거나, 기술 자료 저장소로 프로젝션 하거나, 인덱스 필드에 매핑할 수 있습니다. 강화은 변경할 수 없습니다. 만든 후에는 노드를 편집할 수 없습니다. 기술력과가 더 복잡 하므로 보강 트리가 필요 하지만 보강 트리의 모든 노드가 인덱스나 기술 자료 저장소로 만들어야 하는 것은 아닙니다. 
 
 인덱스 또는 기술 자료 저장소에 강화의 하위 집합만 선택적으로 보관할 수 있습니다.
 이 문서의 나머지 부분에서는 [호텔 리뷰 예](https://docs.microsoft.com/azure/search/knowledge-store-connect-powerbi)를 사용 하는 것으로 가정 하지만 동일한 개념은 다른 모든 데이터 원본의 문서 보강 적용 됩니다.

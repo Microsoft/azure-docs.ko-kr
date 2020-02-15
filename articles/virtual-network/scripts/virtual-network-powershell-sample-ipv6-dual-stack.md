@@ -1,5 +1,5 @@
 ---
-title: Azure PowerShell 스크립트 샘플-IPv6 가상 네트워크 끝점 구성 (미리 보기)
+title: Azure PowerShell 스크립트 샘플-IPv6 끝점 구성
 titlesuffix: Azure Virtual Network
 description: Azure Virtual Network에서 Powershell을 사용 하 여 IPv6 끝점 사용
 services: virtual-network
@@ -12,12 +12,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 07/15/2019
 ms.author: kumud
-ms.openlocfilehash: 4f07aae0e8baae44ade152cf3fe20facc7fe6770
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 5e8102cbf89d601c027e3b969c1c431da8807018
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68248803"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201372"
 ---
 # <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-preview"></a>Virtual network 스크립트 샘플에서 IPv6 끝점 구성 (미리 보기)
 
@@ -27,7 +27,7 @@ Azure [Cloud Shell](https://shell.azure.com/powershell) 또는 로컬 PowerShell
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 Azure에서 이중 스택 응용 프로그램을 배포 하기 전에 다음 Azure PowerShell 사용 하 여이 미리 보기 기능에 대해 구독을 한 번만 구성 해야 합니다.
 
 다음과 같이 등록 합니다.
@@ -250,7 +250,7 @@ Remove-AzResourceGroup -Name <resourcegroupname> -Force
 
 이 스크립트는 다음 명령을 사용하여 리소스 그룹, 가상 머신, 가용성 집합, 부하 분산 장치 및 모든 관련된 리소스를 만듭니다. 테이블에 있는 각 명령은 명령에 해당하는 문서에 연결됩니다.
 
-| 명령 | 참고 |
+| 명령 | 메모 |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | 모든 리소스가 저장되는 리소스 그룹을 만듭니다. |
 | [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig) | 서브넷 구성을 만듭니다. 이 구성은 가상 네트워크 만들기 프로세스에서 사용됩니다. |

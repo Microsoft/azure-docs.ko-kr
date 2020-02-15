@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 789af25cc37183e9eeae253e1e8529615abdd308
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 4a117e7f69647af3ad82f9013bfa40556ccc0dbd
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849805"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152893"
 ---
 # <a name="durable-functions-versions-overview"></a>Durable Functions 버전 개요
 
@@ -59,6 +59,10 @@ Durable Functions 2.x는 새 호스트 json 스키마를 사용 합니다. 1\.x�
 * event grid 알림 구성의 `"notifications"` 및 `"eventGrid"` 하위 섹션).
 
 자세한 내용은 [Durable Functions 호스트나 참조 설명서](durable-functions-bindings.md#durable-functions-2-0-host-json) 를 참조 하세요.
+
+#### <a name="default-taskhub-name-changes"></a>기본 taskhub 이름 변경
+
+버전 1.x에서 작업 허브 이름이 호스트 json에 지정 되지 않은 경우 기본적으로 "DurableFunctionsHub"로 설정 되었습니다. 버전 2.x에서는 이제 기본 작업 허브 이름이 함수 앱의 이름에서 파생 됩니다. 따라서 2.x로 업그레이드할 때 작업 허브 이름을 지정 하지 않은 경우 코드는 새 작업 허브를 사용 하 여 작동 하 고 모든 진행 중인 오케스트레이션에 서 더 이상 응용 프로그램을 처리 하지 않습니다. 이 문제를 해결 하려면 작업 허브 이름을 v1. x 기본값을 "DurableFunctionsHub"로 명시적으로 설정 하거나 [가동 중지 시간 (제로) 배포 지침](durable-functions-zero-downtime-deployment.md) 에 따라 진행 중인 오케스트레이션의 주요 변경 사항을 처리 하는 방법에 대 한 자세한 내용을 확인할 수 있습니다.
 
 #### <a name="public-interface-changes-net-only"></a>공용 인터페이스 변경 (.NET만 해당)
 

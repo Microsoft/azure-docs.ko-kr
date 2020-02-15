@@ -7,14 +7,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 11/19/2019
+ms.date: 01/15/2020
 ms.author: iainfou
-ms.openlocfilehash: ef203eec1398e9f23fb162845b9d570316083ecf
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 8905f2a0a306ec4c9c6e19479c6adb96a6ed39ca
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74703700"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76931290"
 ---
 # <a name="tutorial-create-and-configure-an-azure-active-directory-domain-services-instance"></a>자습서: Azure Active Directory Domain Services 인스턴스 만들기 및 구성
 
@@ -22,7 +22,7 @@ Azure AD DS(Azure Active Directory Domain Services)는 Windows Server Active Dir
 
 네트워킹 및 동기화를 위해 [기본 구성 옵션을 사용하여 관리형 도메인을 만들거나][tutorial-create-instance-advanced] 이러한 설정을 수동으로 정의할 수 있습니다. 이 자습서에서는 Azure Portal에서 기본 옵션을 사용하여 Azure AD DS 인스턴스를 만들고 구성하는 방법을 보여줍니다.
 
-이 자습서에서는 다음 방법에 대해 알아봅니다.
+이 자습서에서는 다음 작업 방법을 알아봅니다.
 
 > [!div class="checklist"]
 > * 관리형 도메인의 DNS 요구 사항 이해
@@ -31,14 +31,14 @@ Azure AD DS(Azure Active Directory Domain Services)는 Windows Server Active Dir
 
 Azure 구독이 없는 경우 시작하기 전에 [계정을 만드세요](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서를 완료하는 데 필요한 리소스와 권한은 다음과 같습니다.
 
 * 활성화된 Azure 구독.
     * Azure 구독이 없는 경우 [계정을 만듭니다](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * 온-프레미스 디렉터리 또는 클라우드 전용 디렉터리와 동기화되어 구독과 연결된 Azure Active Directory 테넌트
-    * 필요한 경우 [Azure Active Directory 테넌트를 만들거나][create-azure-ad-tenant] [Azure 구독을 계정에 연결합니다][associate-azure-ad-tenant].
+    * 필요한 경우 [Azure Active Directory 테넌트를 만들거나][create-azure-ad-tenant][Azure 구독을 계정에 연결합니다][associate-azure-ad-tenant].
 * Azure AD DS를 사용하도록 설정하려면 Azure AD 테넌트에 *글로벌 관리자* 권한이 필요합니다.
 * 필요한 Azure AD DS 리소스를 만들려면 Azure 구독에 *기여자* 권한이 필요합니다.
 
@@ -55,7 +55,7 @@ Azure AD DS에는 필요하지 않지만 Azure AD 테넌트에 대해 [SSPR(셀�
 
 **Azure AD Domain Services** 마법사를 시작하려면 다음 단계를 완료합니다.
 
-1. Azure Portal 메뉴 또는 **홈** 페이지에서 **리소스 만들기**를 선택합니다.
+1. Azure Portal 메뉴 또는 **홈**페이지에서 **리소스 만들기**를 선택합니다.
 1. 검색 창에서 *Domain Services*를 입력한 다음, 검색 제안에서 *Azure AD Domain Services*를 선택합니다.
 1. Azure AD Domain Services 페이지에서 **만들기**를 선택합니다. **Azure AD Domain Services 사용** 마법사가 시작됩니다.
 1. 관리되는 도메인을 만들려는 Azure **구독**을 선택합니다.
@@ -93,6 +93,9 @@ Azure Portal의 *기본* 창에 있는 필드를 완성하여 Azure AD DS 인스
 
     Azure AD DS를 영역 간에 배포하기 위해 구성해야 할 항목은 없습니다. Azure 플랫폼은 리소스의 영역 배포를 자동으로 처리합니다. 자세한 내용을 보고 지역 가용성을 확인하려면 [Azure에서 가용성 영역이란?][availability-zones]을 참조하세요.
 
+1. **SKU**는 만들 수 있는 성능, 백업 빈도 및 최대 포리스트 트러스트 수를 결정합니다. 비즈니스 요구나 요구 사항이 변경되면 관리되는 도메인이 만들어진 후 SKU를 변경할 수 있습니다. 자세한 내용은 [Azure AD DS SKU 개념][concepts-sku]을 참조하세요.
+
+    이 자습서에서는 *표준* SKU를 선택합니다.
 1. *포리스트*는 Active Directory Domain Services에서 하나 이상의 도메인을 그룹화하는 데 사용되는 논리적 구문입니다. 기본적으로 Azure AD DS 관리형 도메인은 *사용자* 포리스트로 생성됩니다. 이 유형의 포리스트는 온-프레미스 AD DS 환경에서 만든 모든 사용자 계정을 포함하여 Azure AD의 모든 개체를 동기화합니다. *리소스* 포리스트는 Azure AD에서 직접 만든 사용자와 그룹만 동기화합니다. 리소스 포리스트는 현재 미리 보기로 제공됩니다. 온-프레미스 AD DS 도메인을 사용하여 포리스트 트러스트를 만드는 방법 및 사용하는 이유를 비롯하여 *리소스* 포리스트에 대한 자세한 내용은 [Azure AD DS 리소스 포리스트 개요][resource-forests]를 참조하세요.
 
     이 자습서에서는 *사용자* 포리스트를 만들도록 선택합니다.
@@ -105,7 +108,7 @@ Azure AD DS 관리형 도메인을 신속하게 만들려면 **검토 + 만들�
 * IP 주소 범위 *10.0.1.0/24*를 사용하는 *aadds-subnet*이라는 서브넷을 만듭니다.
 * Azure AD의 모든 *사용자*를 Azure AD DS 관리형 도메인으로 동기화합니다.
 
-1. **검토 + 만들기**를 선택하여 이러한 기본 구성 옵션을 적용합니다.
+**검토 + 만들기**를 선택하여 이러한 기본 구성 옵션을 적용합니다.
 
 ## <a name="deploy-the-managed-domain"></a>관리되는 도메인을 배포합니다.
 
@@ -173,7 +176,7 @@ Azure AD DS가 성공적으로 배포되면 이제 연결된 다른 VM과 애플
 
 ## <a name="next-steps"></a>다음 단계
 
-이 자습서에서는 다음 방법에 대해 알아보았습니다.
+이 자습서에서는 다음 작업 방법을 알아보았습니다.
 
 > [!div class="checklist"]
 > * 관리형 도메인의 DNS 요구 사항 이해
@@ -200,6 +203,7 @@ VM을 도메인에 가입하고 Azure AD DS 관리형 도메인을 사용하는 
 [skus]: overview.md
 [resource-forests]: concepts-resource-forest.md
 [availability-zones]: ../availability-zones/az-overview.md
+[concepts-sku]: administration-concepts.md#azure-ad-ds-skus
 
 <!-- EXTERNAL LINKS -->
 [naming-prefix]: /windows-server/identity/ad-ds/plan/selecting-the-forest-root-domain#selecting-a-prefix

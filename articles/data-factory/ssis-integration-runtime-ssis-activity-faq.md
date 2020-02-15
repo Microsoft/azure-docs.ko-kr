@@ -11,12 +11,12 @@ ms.reviewer: sawinark
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 04/15/2019
-ms.openlocfilehash: c0aa33cce8dc163722557b1ef868cf0de8bea8fe
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 1c2db107302e4851641ef430db61ec9b29ee151f
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928741"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77187472"
 ---
 # <a name="troubleshoot-package-execution-in-the-ssis-integration-runtime"></a>SSIS integration runtime에서 패키지 실행 문제 해결
 
@@ -30,7 +30,7 @@ SSIS 카탈로그 (SSISDB)를 사용 하 여 실행에 대 한 세부 정보 로
 
 ## <a name="common-errors-causes-and-solutions"></a>일반적인 오류, 원인 및 해결 방법
 
-### <a name="error-message-connection-timeout-expired-or-the-service-has-encountered-an-error-processing-your-request-please-try-again"></a>오류 메시지: "연결 제한 시간이 만료 되었습니다." 또는 "서비스에서 요청을 처리 하는 동안 오류가 발생 했습니다. 다시 시도하세요."
+### <a name="error-message-connection-timeout-expired-or-the-service-has-encountered-an-error-processing-your-request-please-try-again"></a>오류 메시지: "연결 제한 시간이 만료 되었습니다." 또는 "서비스에서 요청을 처리 하는 동안 오류가 발생 했습니다. 다시 시도하세요”와 같은 오류로 인해 실패합니다.
 
 가능한 원인 및 권장 되는 작업은 다음과 같습니다.
 * 데이터 원본 또는 대상이 오버 로드 됩니다. 데이터 원본 또는 대상에 대 한 부하를 확인 하 고 용량이 충분 한지 확인 합니다. 예를 들어 Azure SQL Database 사용 하는 경우 데이터베이스가 시간 초과 될 가능성이 있는 경우 확장 하는 것이 좋습니다.
@@ -142,7 +142,7 @@ Azure SSIS 통합 런타임이 자체 호스팅 통합 런타임을 사용 하 �
 
 ### <a name="error-message-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-error-the-requested-ole-db-provider--is-not-registered-if-the-64-bit-driver-is-not-installed-run-the-package-in-32-bit-mode"></a>오류 메시지: "준비 작업 오류: ErrorCode: 2906, ErrorMessage: 패키지를 실행 하지 못했습니다., 출력: {" OperationErrorMessages ":" 오류: 요청 된 OLE DB 공급자 ... 이 등록 되지 않은 경우 64 비트 드라이버가 설치 되지 않은 경우 32 비트 모드에서 패키지를 실행 합니다.
 
-패키지의 OLE DB 커넥터에서 사용 하는 해당 공급자가 자체 호스팅 통합 런타임 컴퓨터에 제대로 설치 되어 있는지 확인 합니다. 자세한 내용은 [ADF의 Azure-SSIS IR에 대 한 프록시로 자체 호스팅 IR 구성](self-hosted-integration-runtime-proxy-ssis.md#prepare-self-hosted-ir) 에서 찾을 수 있습니다.
+패키지의 OLE DB 커넥터에서 사용 하는 해당 공급자가 자체 호스팅 통합 런타임 컴퓨터에 제대로 설치 되어 있는지 확인 합니다. 자세한 내용은 [ADF의 Azure-SSIS IR에 대 한 프록시로 자체 호스팅 IR 구성](self-hosted-integration-runtime-proxy-ssis.md#prepare-the-self-hosted-ir) 에서 찾을 수 있습니다.
 
 ### <a name="error-message-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-error-systemiofileloadexception-could-not-load-file-or-assembly-microsoftwindowsazurestorage-version-cultureneutral-publickeytoken31bf3856ad364e35-or-one-of-its-dependencies-the-located-assemblys-manifest-definition-does-not-match-the-assembly-reference"></a>오류 메시지: "준비 작업 오류: ErrorCode: 2906, ErrorMessage: 패키지를 실행 하지 못했습니다., 출력: {" OperationErrorMessages ":" 오류: FileLoadException: 파일이 나 어셈블리 ' Windowsazure.servicebus, Version = ...,을 (를) 로드할 수 없습니다. Culture = 중립, PublicKeyToken = 31bf3856ad364e35 ' 또는 해당 종속성 중 하나입니다. 찾은 어셈블리의 매니페스트 정의가 어셈블리 참조와 일치 하지 않습니다. ' ..."
 
@@ -157,7 +157,7 @@ Azure SSIS 통합 런타임이 자체 호스팅 통합 런타임을 사용 하 �
 
 ### <a name="error-message-staging-task-status-failed-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-ssis-executor-exit-code--1n-loglocation-ssistelemetryexecutionlog-effectiveintegrationruntime--executionduration--durationinqueue--integrationruntimequeue--"></a>오류 메시지: "준비 작업 상태: 실패 준비 태스크 오류: ErrorCode: 2906, ErrorMessage: 패키지를 실행 하지 못했습니다., 출력: {"OperationErrorMessages": "SSIS Executor 종료 코드:-1. \ n", "LogLocation": "...\\SSISTelemetry\\ExecutionLog\\...", "effectiveIntegrationRuntime": "...", "Executionlog": ..., "durationInQueue": {"integrationRuntimeQueue": ...}} "
 
-자체 호스팅 integration C++ runtime 컴퓨터에 Visual runtime이 설치 되어 있는지 확인 합니다. 자세한 내용은 [ADF의 Azure-SSIS IR에 대 한 프록시로 자체 호스팅 IR 구성](self-hosted-integration-runtime-proxy-ssis.md#prepare-self-hosted-ir) 에서 찾을 수 있습니다.
+자체 호스팅 integration C++ runtime 컴퓨터에 Visual runtime이 설치 되어 있는지 확인 합니다. 자세한 내용은 [ADF의 Azure-SSIS IR에 대 한 프록시로 자체 호스팅 IR 구성](self-hosted-integration-runtime-proxy-ssis.md#prepare-the-self-hosted-ir) 에서 찾을 수 있습니다.
 
 ### <a name="multiple-package-executions-are-triggered-unexpectedly"></a>여러 패키지 실행이 예기치 않게 트리거됨
 

@@ -9,18 +9,18 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 12/04/2019
 ms.author: tamram
-ms.openlocfilehash: 7336260d7565697b0559419ae502848bcff9424c
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 1e5ccc9d427755ea4274e836e81e3e324fffa39d
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892858"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76937800"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-with-the-azure-portal"></a>빠른 시작: Azure Portal을 사용하여 Blob 업로드, 다운로드 및 나열
 
 이 빠른 시작에서는 [Azure Portal](https://portal.azure.com/)을 사용하여 Azure Storage에 컨테이너를 만들고 해당 컨테이너에서 블록 Blob을 업로드 및 다운로드하는 방법을 알아봅니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 [!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
 
@@ -45,13 +45,14 @@ Azure Portal에 컨테이너를 만들려면 다음 단계를 수행합니다.
 
 1. Azure Portal에서 이전 섹션에서 만든 컨테이너로 이동합니다.
 2. 컨테이너를 선택하여 그 안에 있는 BLOB 목록을 표시합니다. 이 컨테이너는 새 컨테이너이므로 아직 포함된 Blob이 없습니다.
-3. **업로드** 단추를 선택하여 BLOB을 컨테이너에 업로드합니다.
-4. 로컬 파일 시스템을 탐색하여 블록 Blob으로 업로드할 파일을 찾고 **업로드**를 선택합니다.
+3. **업로드** 단추를 선택하여 업로드 블레이드를 엽니다.
+4. 로컬 파일 시스템을 탐색하여 블록 Blob으로 업로드할 파일을 찾습니다.
      
     ![로컬 드라이브에서 BLOB을 업로드하는 방법을 보여 주는 스크린샷](media/storage-quickstart-blobs-portal/upload-blob.png)
 
-5. **인증 형식**을 선택합니다. 기본값은 **SAS**입니다.
-6. 이렇게 원하는 만큼의 BLOB을 업로드합니다. 이제 컨테이너 안에 새 BLOB 목록이 나타납니다.
+5. 필요에 따라 고급 섹션을 확장하여 인증 유형, 액세스 계층 또는 가상 폴더 경로와 같은 다른 설정을 정의합니다.
+6. **업로드** 단추를 선택하여 업로드를 커밋합니다.
+7. 이렇게 원하는 만큼의 BLOB을 업로드합니다. 이제 컨테이너 안에 새 BLOB 목록이 나타납니다.
 
 ## <a name="download-a-block-blob"></a>블록 Blob 다운로드
 

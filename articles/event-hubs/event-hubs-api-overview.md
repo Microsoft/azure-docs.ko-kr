@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/02/2018
 ms.author: shvija
-ms.openlocfilehash: c852bdeb30efe6acf626ae67028ec1ccb9e0b6db
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 08e10996f633d35ffbf946b61937a0e9a76f7227
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76310971"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162228"
 ---
 # <a name="available-event-hubs-apis"></a>사용할 수 있는 Event Hubs API
 
@@ -34,10 +34,10 @@ ms.locfileid: "76310971"
 | 언어/플랫폼 | 클라이언트 패키지 | EventProcessorHost 패키지 | 리포지토리 |
 | --- | --- | --- | --- |
 | .NET Standard | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/) | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.EventHubs.Processor/) | [GitHub](https://github.com/azure/azure-event-hubs-dotnet) |
-| .NET Framework | [NuGet](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost/) | N/A |
+| .NET Framework | [NuGet](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost/) | 해당 없음 |
 | Java | [Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs%22) | [Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs-eph%22) | [GitHub](https://github.com/Azure/azure-event-hubs-java) |
-| 노드 | [NPM](https://www.npmjs.com/package/azure-event-hubs) | N/A | [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs) |
-| C | N/A | N/A | [GitHub](https://github.com/Azure/azure-event-hubs-c) |
+| 노드 | [NPM](https://www.npmjs.com/package/azure-event-hubs) | 해당 없음 | [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs) |
+| C | 해당 없음 | 해당 없음 | [GitHub](https://github.com/Azure/azure-event-hubs-c) |
 
 ### <a name="additional-information"></a>추가 정보
 
@@ -47,7 +47,7 @@ ms.locfileid: "76310971"
 
 #### <a name="node"></a>노드
 
-[Node.js library 라이브러리](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs)는 현재 미리 보기로 제공되며 Microsoft 직원 및 외부 기여자가 추가적인 프로젝트로 관리합니다. 소스 코드를 포함하는 모든 참가 프로그램은 언제든지 환영이며 검토해드립니다.
+[JavaScript 라이브러리](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs) 는 현재 미리 보기로 제공 되며 Microsoft 직원과 외부 참가자가 함께이 프로젝트로 유지 관리 됩니다. 소스 코드를 포함하는 모든 참가 프로그램은 언제든지 환영이며 검토해드립니다.
 
 ## <a name="management-apis"></a>관리 API
 

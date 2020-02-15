@@ -1,27 +1,27 @@
 ---
-title: 내 앱(미리 보기) 포털에서 애플리케이션 권한 관리 - Azure Active Directory | Microsoft Docs
-description: 내 앱(미리 보기) 포털에서 조직의 클라우드 기반 앱에 대한 애플리케이션 권한을 관리하는 방법을 알아봅니다.
+title: 내 앱 포털에서 애플리케이션 권한 관리 - Azure Active Directory | Microsoft Docs
+description: 내 앱 포털에서 조직의 클라우드 기반 앱에 대한 애플리케이션 권한을 관리하는 방법을 알아봅니다.
 services: active-directory
-author: eross-msft
+author: curtand
 manager: daveba
 ms.reviewer: kasimpso
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: overview
-ms.date: 10/30/2019
-ms.author: lizross
+ms.date: 02/03/2020
+ms.author: curtand
 ms.custom: user-help
-ms.openlocfilehash: 36abbee0bf25550425f4e476e6a4e7b75df815a6
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: bac33386371b13950163727497cabd0f262df135
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76705057"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77022412"
 ---
-# <a name="edit-or-revoke-application-permissions-in-the-my-apps-preview-portal"></a>내 앱(미리 보기) 포털에서 애플리케이션 사용 권한 편집 또는 해지
+# <a name="edit-or-revoke-application-permissions-in-the-my-apps-portal"></a>내 앱 포털에서 애플리케이션 사용 권한 편집 또는 해지
 
-**냅 앱**(미리 보기) 포털에서 조직 애플리케이션을 사용하는 경우 사용 권한을 부여하고 계정 정보를 저장하는 경우가 많습니다. 데이터를 안전하게 유지하려면 사용 권한을 검토 및 취소하거나 저장된 계정 자격 증명을 지워야 할 수 있습니다. 사용 권한 또는 계정을 제거하면 일부 앱 기능이 손상될 수 있습니다. 사용 권한이나 계정을 제거한 후에 문제가 발생하면 조직의 기술 지원 팀에 문의하여 추가 지원을 요청하세요.
+**내 앱** 포털에서 조직 애플리케이션을 사용하는 경우 사용 권한을 부여하고 계정 정보를 저장하는 경우가 많습니다. 데이터를 안전하게 유지하려면 사용 권한을 검토 및 취소하거나 저장된 계정 자격 증명을 지워야 할 수 있습니다. 사용 권한 또는 계정을 제거하면 일부 앱 기능이 손상될 수 있습니다. 사용 권한이나 계정을 제거한 후에 문제가 발생하면 조직의 기술 지원 팀에 문의하여 추가 지원을 요청하세요.
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-end-user-my-apps-and-workspaces.md)]
 
@@ -46,11 +46,11 @@ ms.locfileid: "76705057"
 
 **내 앱** 포털에서 앱 사용 권한 및 저장된 계정을 관리한 후에 다음을 수행할 수 있습니다.
 
-- 조직에서 만들고 제공하는 다양한 범주로 앱을 구성합니다. 자세한 내용은 [내 앱(미리 보기) 포털에서 작업 영역 액세스 및 사용](my-applications-portal-workspaces.md)을 참조하세요.
+- 조직에서 만들고 제공하는 다양한 범주로 앱을 구성합니다. 자세한 내용은 [내 앱 포털에서 컬렉션 액세스 및 사용](my-applications-portal-workspaces.md)을 참조하세요.
 
 ## <a name="related-articles"></a>관련 문서
 
-- [프로필 및 계정 정보 업데이트](my-account-portal-overview.md) **내 프로필**(미리 보기) 포털에 표시되는 개인 정보를 업데이트하는 방법에 대한 지침입니다.
+- [프로필 및 계정 정보 업데이트](my-account-portal-overview.md) **내 프로필** 포털에 표시되는 개인 정보를 업데이트하는 방법에 대한 지침입니다.
 
 - [조직 관리](my-account-portal-organizations-page.md). **내 프로필** 포털의 **조직** 페이지에서 조직 관련 정보를 확인하고 관리하는 방법에 대한 지침입니다.
 

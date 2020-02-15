@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9f4f625999ff9cbdad6aeefb662e39a6b30a1881
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 7ab2dc71f39164988e0d229fc994548a00447986
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76291535"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77185627"
 ---
 # <a name="tutorial-integrate-azure-active-directory-single-sign-on-sso-with-contractsafe-saml2-sso"></a>자습서: ContractSafe Saml2 SSO와 Azure Active Directory SSO(Single Sign-On) 통합
 
@@ -85,7 +85,7 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
     b. **회신 URL** 텍스트 상자에서 `https://app.contractsafe.com/saml2_auth/<UNIQUEID>/acs/` 형식을 사용하여 URL을 입력합니다.
 
     > [!NOTE]
-    > 이러한 값은 실제 값이 아닙니다. 실제 식별자 및 회신 URL로 해당 값을 업데이트합니다. 이러한 값을 얻으려면 [ContractSafe Saml2 SSO 클라이언트 지원 팀](mailto:donne@contractsafe.com)에 문의하세요. Azure Portal의 **기본 SAML 구성** 섹션에 표시된 형식을 참조할 수도 있습니다.
+    > 이러한 값은 실제 값이 아닙니다. 실제 식별자 및 회신 URL로 해당 값을 업데이트합니다. 이러한 값을 얻으려면 [ContractSafe Saml2 SSO 클라이언트 지원 팀](mailto:support@contractsafe.com)에 문의하세요. Azure Portal의 **기본 SAML 구성** 섹션에 표시된 형식을 참조할 수도 있습니다.
 
 1. ContractSafe Saml2 SSO에는 사용자 지정 특성 매핑을 SAML 토큰 특성 구성에 추가해야 하는 특정 형식의 SAML 어설션이 필요합니다. 다음 스크린샷에서는 기본 특성의 목록을 보여 줍니다.
 
@@ -138,11 +138,11 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
 ## <a name="configure-contractsafe-saml2-sso"></a>ContractSafe Saml2 SSO 구성
 
-**ContractSafe Saml2 SSO** 쪽에서 SSO를 구성하려면 Azure Portal에서 다운로드한 **페더레이션 메타데이터 XML**과 적절히 복사한 URL을 [ContractSafe Saml2 SSO 지원 팀](mailto:donne@contractsafe.com)에 보내야 합니다. 팀은 양쪽 모두에서 SAML SSO 연결을 올바르게 설정해야 합니다.
+**ContractSafe Saml2 SSO** 쪽에서 SSO를 구성하려면 Azure Portal에서 다운로드한 **페더레이션 메타데이터 XML**과 적절히 복사한 URL을 [ContractSafe Saml2 SSO 지원 팀](mailto:support@contractsafe.com)에 보내야 합니다. 팀은 양쪽 모두에서 SAML SSO 연결을 올바르게 설정해야 합니다.
 
 ## <a name="create-a-contractsafe-saml2-sso-test-user"></a>ContractSafe Saml2 SSO 테스트 사용자 만들기
 
-ContractSafe Saml2 SSO에서 B.Simon이라는 사용자를 만듭니다. [ContractSafe Saml2 SSO 지원 팀](mailto:donne@contractsafe.com)과 협력하여 사용자를 ContractSafe Saml2 SSO 플랫폼에 추가합니다. SSO를 사용하려면 먼저 사용자를 만들고 활성화해야 합니다.
+ContractSafe Saml2 SSO에서 B.Simon이라는 사용자를 만듭니다. [ContractSafe Saml2 SSO 지원 팀](mailto:support@contractsafe.com)과 협력하여 사용자를 ContractSafe Saml2 SSO 플랫폼에 추가합니다. SSO를 사용하려면 먼저 사용자를 만들고 활성화해야 합니다.
 
 ## <a name="test-sso"></a>SSO 테스트
 

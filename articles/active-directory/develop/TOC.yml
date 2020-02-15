@@ -1,398 +1,272 @@
 - name: Microsoft ID 플랫폼(개발자용 Azure Active Directory)
   href: index.yml
-- name: Microsoft ID 플랫폼의 발전
-  href: about-microsoft-identity-platform.md
-- name: v2.0
-  expanded: true
+- name: 개요
   items:
     - name: 개요
       href: v2-overview.md
-    - name: 빠른 시작
+    - name: Microsoft ID 플랫폼의 발전
+      href: about-microsoft-identity-platform.md
+- name: 빠른 시작
+  expanded: true
+  items:
+    - name: 테넌트 설정
+      href: quickstart-create-new-tenant.md
+    - name: 애플리케이션 구성
       items:
-        - name: 테넌트 설정
-          href: quickstart-create-new-tenant.md
-        - name: 애플리케이션 구성
+        - name: 앱 등록
+          href: quickstart-register-app.md
+        - name: 웹 API에 액세스하도록 앱 구성
+          href: quickstart-configure-app-access-web-apis.md
+        - name: 웹 API를 공개하도록 앱 구성
+          href: quickstart-configure-app-expose-web-apis.md
+        - name: 앱에서 지원되는 계정 수정
+          href: quickstart-modify-supported-accounts.md
+        - name: 앱 제거
+          href: quickstart-remove-app.md
+    - name: 단일 페이지 앱
+      items:
+        - name: JavaScript
+          href: quickstart-v2-javascript.md
+    - name: 웹 앱
+      items:
+        - name: ASP .NET
+          href: quickstart-v2-aspnet-webapp.md
+        - name: ASP .NET Core
+          href: quickstart-v2-aspnet-core-webapp.md
+        - name: NodeJS
+          href: quickstart-v2-nodejs-webapp.md
+          displayName: OIDC
+        - name: Java
+          href: quickstart-v2-java-webapp.md
+        - name: Python
+          href: quickstart-v2-python-webapp.md
+    - name: Web API
+      items:
+        - name: ASP .NET
+          href: quickstart-v2-dotnet-native-aspnet.md
+        - name: ASP .NET Core
+          href: 'https://azure.microsoft.com/resources/samples/active-directory-dotnet-native-aspnetcore-v2'
+    - name: 모바일 및 데스크톱 앱
+      items:
+        - name: Android
+          href: quickstart-v2-android.md
+        - name: iOS 및 macOS
+          href: quickstart-v2-ios.md
+        - name: 범용 Windows 플랫폼
+          href: quickstart-v2-uwp.md
+        - name: Windows 데스크톱 .NET
+          href: quickstart-v2-windows-desktop.md
+    - name: 디먼 앱
+      items:
+        - name: .NET Core 콘솔(디먼)
+          href: quickstart-v2-netcore-daemon.md
+        - name: Python 콘솔 디먼
+          href: quickstart-v2-python-daemon.md
+- name: 자습서
+  items:
+    - name: 단일 페이지 앱
+      items:
+        - name: JavaScript
+          href: tutorial-v2-javascript-spa.md
+    - name: 웹 앱
+      items:
+        - name: ASP .NET
+          href: tutorial-v2-asp-webapp.md
+    - name: 모바일 및 데스크톱 앱
+      items:
+        - name: Android
+          href: tutorial-v2-android.md
+        - name: iOS 및 macOS
+          href: tutorial-v2-ios.md
+        - name: 범용 Windows 플랫폼
+          href: tutorial-v2-windows-uwp.md
+        - name: Windows 데스크톱 .NET
+          href: tutorial-v2-windows-desktop.md
+        - name: Android 앱에서 공유 디바이스 모드 사용
+          href: tutorial-v2-shared-device-mode.md
+    - name: 디먼 앱
+      items:
+        - name: ASP.NET 디먼 웹앱
+          href: tutorial-v2-aspnet-daemon-web-app.md
+- name: 샘플
+  href: sample-v2-code.md
+- name: 개념
+  expanded: true
+  items:
+    - name: 인증 기본 사항
+      href: authentication-scenarios.md
+    - name: 인증 흐름 및 앱 시나리오
+      href: authentication-flows-app-scenarios.md
+    - name: ID 플랫폼 모범 사례
+      href: identity-platform-integration-checklist.md
+    - name: 애플리케이션 시나리오
+      items:
+        - name: 로그인 대상 그룹
+          href: v2-supported-account-types.md
+        - name: 단일 페이지 앱
           items:
+            - name: 개요
+              href: scenario-spa-overview.md
             - name: 앱 등록
-              href: quickstart-register-app.md
-            - name: 웹 API에 액세스하도록 앱 구성
-              href: quickstart-configure-app-access-web-apis.md
-            - name: 웹 API를 공개하도록 앱 구성
-              href: quickstart-configure-app-expose-web-apis.md
-            - name: 앱에서 지원되는 계정 수정
-              href: quickstart-modify-supported-accounts.md
-            - name: 앱 제거
-              href: quickstart-remove-app.md
-        - name: 단일 페이지 앱
-          items:
-            - name: JavaScript
-              href: quickstart-v2-javascript.md
-        - name: 웹 앱
-          items:
-            - name: ASP .NET
-              href: quickstart-v2-aspnet-webapp.md
-            - name: ASP .NET Core
-              href: quickstart-v2-aspnet-core-webapp.md
-            - name: NodeJS
-              href: quickstart-v2-nodejs-webapp.md
-              displayName: OIDC
-            - name: Java
-              href: quickstart-v2-java-webapp.md
-            - name: Python
-              href: quickstart-v2-python-webapp.md
-        - name: Web API
-          items:
-            - name: ASP .NET
-              href: quickstart-v2-dotnet-native-aspnet.md
-            - name: ASP .NET Core
-              href: 'https://azure.microsoft.com/resources/samples/active-directory-dotnet-native-aspnetcore-v2'
-        - name: 모바일 및 데스크톱 앱
-          items:
-            - name: Android
-              href: quickstart-v2-android.md
-            - name: iOS 및 macOS
-              href: quickstart-v2-ios.md
-            - name: 범용 Windows 플랫폼
-              href: quickstart-v2-uwp.md
-            - name: Windows 데스크톱 .NET
-              href: quickstart-v2-windows-desktop.md
-        - name: 디먼 앱
-          items:
-            - name: .NET Core 콘솔(디먼)
-              href: quickstart-v2-netcore-daemon.md
-            - name: Python 콘솔 디먼
-              href: quickstart-v2-python-daemon.md
-    - name: 자습서
-      items:
-        - name: 단일 페이지 앱
-          items:
-            - name: JavaScript
-              href: tutorial-v2-javascript-spa.md
-        - name: 웹 앱
-          items:
-            - name: ASP .NET
-              href: tutorial-v2-asp-webapp.md
-        - name: 모바일 및 데스크톱 앱
-          items:
-            - name: Android
-              href: tutorial-v2-android.md
-            - name: iOS 및 macOS
-              href: tutorial-v2-ios.md
-            - name: 범용 Windows 플랫폼
-              href: tutorial-v2-windows-uwp.md
-            - name: Windows 데스크톱 .NET
-              href: tutorial-v2-windows-desktop.md
-            - name: Android 앱에서 공유 디바이스 모드 사용
-              href: tutorial-v2-shared-device-mode.md
-        - name: 디먼 앱
-          items:
-            - name: ASP.NET 디먼 웹앱
-              href: tutorial-v2-aspnet-daemon-web-app.md
-    - name: 샘플
-      href: sample-v2-code.md
-    - name: 개념
-      items:
-        - name: 인증 기본 사항
-          href: authentication-scenarios.md
-        - name: 인증 흐름 및 앱 시나리오
-          href: authentication-flows-app-scenarios.md
-        - name: ID 플랫폼 모범 사례
-          href: identity-platform-integration-checklist.md
-        - name: 애플리케이션 시나리오
-          items:
-            - name: 로그인 대상 그룹
-              href: v2-supported-account-types.md
-            - name: 단일 페이지 앱
-              items:
-                - name: 개요
-                  href: scenario-spa-overview.md
-                - name: 앱 등록
-                  href: scenario-spa-app-registration.md
-                - name: 코드 구성
-                  href: scenario-spa-app-configuration.md
-                - name: 로그인 및 로그아웃
-                  href: scenario-spa-sign-in.md
-                - name: API용 토큰 획득
-                  href: scenario-spa-acquire-token.md
-                - name: 웹 API 호출
-                  href: scenario-spa-call-api.md
-                - name: 프로덕션 환경으로 이동
-                  href: scenario-spa-production.md
-            - name: 사용자가 로그인하는 웹앱
-              items:
-                - name: 개요
-                  href: scenario-web-app-sign-user-overview.md
-                - name: 앱 등록
-                  href: scenario-web-app-sign-user-app-registration.md
-                - name: 코드 구성
-                  href: scenario-web-app-sign-user-app-configuration.md
-                - name: 로그인 및 로그아웃
-                  href: scenario-web-app-sign-user-sign-in.md
-                - name: 프로덕션 환경으로 이동
-                  href: scenario-web-app-sign-user-production.md
-            - name: Web API를 호출하는 웹앱
-              items:
-                - name: 개요
-                  href: scenario-web-app-call-api-overview.md
-                - name: 앱 등록
-                  href: scenario-web-app-call-api-app-registration.md
-                - name: 코드 구성
-                  href: scenario-web-app-call-api-app-configuration.md
-                - name: 글로벌 로그아웃
-                  href: scenario-web-app-call-api-sign-in.md
-                - name: 앱용 토큰 획득
-                  href: scenario-web-app-call-api-acquire-token.md
-                - name: 웹 API 호출
-                  href: scenario-web-app-call-api-call-api.md
-                - name: 프로덕션 환경으로 이동
-                  href: scenario-web-app-call-api-production.md
-            - name: 보호된 웹 API
-              items:
-                - name: 개요
-                  href: scenario-protected-web-api-overview.md
-                - name: 앱 등록
-                  href: scenario-protected-web-api-app-registration.md
-                - name: 코드 구성
-                  href: scenario-protected-web-api-app-configuration.md
-                - name: 범위 또는 앱 역할 확인
-                  href: scenario-protected-web-api-verification-scope-app-roles.md
-                - name: 프로덕션 환경으로 이동
-                  href: scenario-protected-web-api-production.md
-            - name: 웹 API를 호출하는 Web API
-              items:
-                - name: 개요
-                  href: scenario-web-api-call-api-overview.md
-                - name: 앱 등록
-                  href: scenario-web-api-call-api-app-registration.md
-                - name: 코드 구성
-                  href: scenario-web-api-call-api-app-configuration.md
-                - name: 토큰 획득
-                  href: scenario-web-api-call-api-acquire-token.md
-                - name: 웹 API 호출
-                  href: scenario-web-api-call-api-call-api.md
-                - name: 프로덕션 환경으로 이동
-                  href: scenario-web-api-call-api-production.md
-            - name: Web API를 호출하는 데스크톱 앱
-              items:
-                - name: 개요
-                  href: scenario-desktop-overview.md
-                - name: 앱 등록
-                  href: scenario-desktop-app-registration.md
-                - name: 코드 구성
-                  href: scenario-desktop-app-configuration.md
-                - name: 토큰 획득
-                  href: scenario-desktop-acquire-token.md
-                - name: 웹 API 호출
-                  href: scenario-desktop-call-api.md
-                - name: 프로덕션 환경으로 이동
-                  href: scenario-desktop-production.md
-            - name: 디먼 앱
-              items:
-                - name: 개요
-                  href: scenario-daemon-overview.md
-                - name: 앱 등록
-                  href: scenario-daemon-app-registration.md
-                - name: 코드 구성
-                  href: scenario-daemon-app-configuration.md
-                - name: 토큰 획득
-                  href: scenario-daemon-acquire-token.md
-                - name: 웹 API 호출
-                  href: scenario-daemon-call-api.md
-                - name: 프로덕션 환경으로 이동
-                  href: scenario-daemon-production.md
-            - name: Web API를 호출하는 모바일 앱
-              items:
-                - name: 개요
-                  href: scenario-mobile-overview.md
-                - name: 앱 등록
-                  href: scenario-mobile-app-registration.md
-                - name: 코드 구성
-                  href: scenario-mobile-app-configuration.md
-                - name: 모바일 플랫폼별 구성
-                  items:
-                    - name: Android 디바이스의 공유 디바이스 모드
-                      href: shared-device-mode.md
-                    - name: Xamarin Android
-                      href: msal-net-xamarin-android-considerations.md
-                    - name: Android의 시스템 브라우저
-                      href: msal-net-system-browser-android-considerations.md
-                    - name: Xamarin iOS
-                      href: msal-net-xamarin-ios-considerations.md
-                    - name: Xamarin iOS 및 Android와 함께 브로커 사용
-                      displayName: Microsoft Authenticator Microsoft Intune
-                      href: msal-net-use-brokers-with-xamarin-apps.md
-                    - name: 범용 Windows 플랫폼
-                      href: msal-net-uwp-considerations.md
-                - name: 앱용 토큰 획득
-                  href: scenario-mobile-acquire-token.md
-                - name: 웹 API 호출
-                  href: scenario-mobile-call-api.md
-                - name: 프로덕션 환경으로 이동
-                  href: scenario-mobile-production.md
-        - name: MSAL(Microsoft 인증 라이브러리)
+              href: scenario-spa-app-registration.md
+            - name: 코드 구성
+              href: scenario-spa-app-configuration.md
+            - name: 로그인 및 로그아웃
+              href: scenario-spa-sign-in.md
+            - name: API용 토큰 획득
+              href: scenario-spa-acquire-token.md
+            - name: 웹 API 호출
+              href: scenario-spa-call-api.md
+            - name: 프로덕션 환경으로 이동
+              href: scenario-spa-production.md
+        - name: 사용자가 로그인하는 웹앱
           items:
             - name: 개요
-              href: msal-overview.md
-            - name: 계정 및 테넌트 프로필(Android)
-              href: accounts-overview.md
-            - name: 권한 부여 에이전트(Android)
-              href: authorization-agents.md
-            - name: 조정된 인증(Android)
-              href: brokered-auth.md
-            - name: 마이그레이션
+              href: scenario-web-app-sign-user-overview.md
+            - name: 앱 등록
+              href: scenario-web-app-sign-user-app-registration.md
+            - name: 코드 구성
+              href: scenario-web-app-sign-user-app-configuration.md
+            - name: 로그인 및 로그아웃
+              href: scenario-web-app-sign-user-sign-in.md
+            - name: 프로덕션 환경으로 이동
+              href: scenario-web-app-sign-user-production.md
+        - name: Web API를 호출하는 웹앱
+          items:
+            - name: 개요
+              href: scenario-web-app-call-api-overview.md
+            - name: 앱 등록
+              href: scenario-web-app-call-api-app-registration.md
+            - name: 코드 구성
+              href: scenario-web-app-call-api-app-configuration.md
+            - name: 글로벌 로그아웃
+              href: scenario-web-app-call-api-sign-in.md
+            - name: 앱용 토큰 획득
+              href: scenario-web-app-call-api-acquire-token.md
+            - name: 웹 API 호출
+              href: scenario-web-app-call-api-call-api.md
+            - name: 프로덕션 환경으로 이동
+              href: scenario-web-app-call-api-production.md
+        - name: 보호된 웹 API
+          items:
+            - name: 개요
+              href: scenario-protected-web-api-overview.md
+            - name: 앱 등록
+              href: scenario-protected-web-api-app-registration.md
+            - name: 코드 구성
+              href: scenario-protected-web-api-app-configuration.md
+            - name: 범위 또는 앱 역할 확인
+              href: scenario-protected-web-api-verification-scope-app-roles.md
+            - name: 프로덕션 환경으로 이동
+              href: scenario-protected-web-api-production.md
+        - name: 웹 API를 호출하는 Web API
+          items:
+            - name: 개요
+              href: scenario-web-api-call-api-overview.md
+            - name: 앱 등록
+              href: scenario-web-api-call-api-app-registration.md
+            - name: 코드 구성
+              href: scenario-web-api-call-api-app-configuration.md
+            - name: 토큰 획득
+              href: scenario-web-api-call-api-acquire-token.md
+            - name: 웹 API 호출
+              href: scenario-web-api-call-api-call-api.md
+            - name: 프로덕션 환경으로 이동
+              href: scenario-web-api-call-api-production.md
+        - name: Web API를 호출하는 데스크톱 앱
+          items:
+            - name: 개요
+              href: scenario-desktop-overview.md
+            - name: 앱 등록
+              href: scenario-desktop-app-registration.md
+            - name: 코드 구성
+              href: scenario-desktop-app-configuration.md
+            - name: 토큰 획득
+              href: scenario-desktop-acquire-token.md
+            - name: 웹 API 호출
+              href: scenario-desktop-call-api.md
+            - name: 프로덕션 환경으로 이동
+              href: scenario-desktop-production.md
+        - name: 디먼 앱
+          items:
+            - name: 개요
+              href: scenario-daemon-overview.md
+            - name: 앱 등록
+              href: scenario-daemon-app-registration.md
+            - name: 코드 구성
+              href: scenario-daemon-app-configuration.md
+            - name: 토큰 획득
+              href: scenario-daemon-acquire-token.md
+            - name: 웹 API 호출
+              href: scenario-daemon-call-api.md
+            - name: 프로덕션 환경으로 이동
+              href: scenario-daemon-production.md
+        - name: Web API를 호출하는 모바일 앱
+          items:
+            - name: 개요
+              href: scenario-mobile-overview.md
+            - name: 앱 등록
+              href: scenario-mobile-app-registration.md
+            - name: 코드 구성
+              href: scenario-mobile-app-configuration.md
+            - name: 모바일 플랫폼별 구성
               items:
-                - name: MSAL.NET으로 마이그레이션
-                  href: msal-net-migration.md
-                - name: MSAL.js로 마이그레이션
-                  href: msal-compare-msal-js-and-adal-js.md
-                - name: MSAL.Android로 마이그레이션
-                  href: migrate-android-adal-msal.md
-                - name: MSAL.iOS/MacOS로 마이그레이션
-                  href: migrate-objc-adal-msal.md
-                - name: MSAL Python으로 마이그레이션
-                  href: migrate-python-adal-msal.md
-                - name: Java용 MSAL로 마이그레이션
-                  href: migrate-adal-msal-java.md
-                - name: 브로커를 사용하여 MSAL.NET으로 Xamarin 앱 마이그레이션
-                  href: msal-net-migration-ios-broker.md
-            - name: 지원되는 인증 흐름
-              href: msal-authentication-flows.md
-            - name: 단일 및 다중 계정 공용 클라이언트 앱(Android)
-              href: single-multi-account.md
+                - name: Android 디바이스의 공유 디바이스 모드
+                  href: shared-device-mode.md
+                - name: Xamarin Android
+                  href: msal-net-xamarin-android-considerations.md
+                - name: Android의 시스템 브라우저
+                  href: msal-net-system-browser-android-considerations.md
+                - name: Xamarin iOS
+                  href: msal-net-xamarin-ios-considerations.md
+                - name: Xamarin iOS 및 Android와 함께 브로커 사용
+                  displayName: Microsoft Authenticator Microsoft Intune
+                  href: msal-net-use-brokers-with-xamarin-apps.md
+                - name: 범용 Windows 플랫폼
+                  href: msal-net-uwp-considerations.md
+            - name: 앱용 토큰 획득
+              href: scenario-mobile-acquire-token.md
+            - name: 웹 API 호출
+              href: scenario-mobile-call-api.md
+            - name: 프로덕션 환경으로 이동
+              href: scenario-mobile-production.md
+    - name: MSAL(Microsoft 인증 라이브러리)
+      items:
+        - name: 개요
+          href: msal-overview.md
+        - name: 계정 및 테넌트 프로필(Android)
+          href: accounts-overview.md
+        - name: 권한 부여 에이전트(Android)
+          href: authorization-agents.md
+        - name: 조정된 인증(Android)
+          href: brokered-auth.md
+        - name: 마이그레이션
+          items:
+            - name: MSAL.NET으로 마이그레이션
+              href: msal-net-migration.md
+            - name: MSAL.js로 마이그레이션
+              href: msal-compare-msal-js-and-adal-js.md
+            - name: MSAL.Android로 마이그레이션
+              href: migrate-android-adal-msal.md
+            - name: MSAL.iOS/MacOS로 마이그레이션
+              href: migrate-objc-adal-msal.md
+            - name: MSAL Python으로 마이그레이션
+              href: migrate-python-adal-msal.md
+            - name: Java용 MSAL로 마이그레이션
+              href: migrate-adal-msal-java.md
+            - name: 브로커를 사용하여 MSAL.NET으로 Xamarin 앱 마이그레이션
+              href: msal-net-migration-ios-broker.md
+        - name: 지원되는 인증 흐름
+          href: msal-authentication-flows.md
+        - name: 단일 및 다중 계정 공용 클라이언트 앱(Android)
+          href: single-multi-account.md
+        - name: 토큰 획득 및 캐시
+          items:
             - name: 토큰 획득 및 캐시
-              items:
-                - name: 토큰 획득 및 캐시
-                  href: msal-acquire-cache-tokens.md
-                - name: v1.0 앱의 범위
-                  href: msal-v1-app-scopes.md
-            - name: 클라이언트 애플리케이션
-              items:
-                - name: 클라이언트 애플리케이션
-                  href: msal-client-applications.md
-                - name: 애플리케이션 구성
-                  href: msal-client-application-configuration.md
-                - name: 애플리케이션 초기화(.NET)
-                  href: msal-net-initializing-client-applications.md
-                - name: 클라이언트 어설션(.NET)
-                  href: msal-net-client-assertions.md
-                - name: 애플리케이션 초기화(JS)
-                  href: msal-js-initializing-client-applications.md
-            - name: 오류 및 예외 처리
-              href: msal-handling-exceptions.md
-            - name: 로깅
-              href: msal-logging.md
-            - name: SSO(Single sign-on)
-              items:
-                - name: MSAL.js를 사용한 Single Sign-On
-                  href: msal-js-sso.md
-                - name: iOS 및 macOS용 MSAL을 사용한 Single Sign-On
-                  items:
-                    - name: MSAL 앱 간 SSO
-                      href: single-sign-on-macos-ios.md
-                    - name: ADAL 앱과 MSAL 앱 간의 SSO
-                      href: sso-between-adal-msal-apps-macos-ios.md
-            - name: ADFS와 통합
-              items:
-                - name: MSAL.NET의 ADFS 지원
-                  href: msal-net-adfs-support.md
-                - name: Python용 MSAL에서 ADFS 지원
-                  href: msal-python-adfs-support.md
-                - name: Java용 MSAL에서 ADFS 지원
-                  href: msal-java-adfs-support.md
-            - name: Azure AD B2C와 통합
-              items:
-                - name: Android
-                  href: msal-android-b2c.md
-                - name: JavaScript
-                  href: msal-b2c-overview.md
-                - name: .NET
-                  href: msal-net-aad-b2c-considerations.md
-                - name: iOS 및 macOS
-                  href: 'config-authority.md#b2c'
-            - name: 고려 사항 및 알려진 문제
-              items:
-                - name: MSAL.NET
-                  items:
-                    - name: 웹 브라우저
-                      href: msal-net-web-browsers.md
-                - name: MSAL.js
-                  items:
-                    - name: IE를 사용한 고려 사항
-                      href: msal-js-use-ie-browser.md
-                    - name: 알려진 문제 - IE와 Microsoft Edge
-                      href: msal-js-known-issues-ie-edge-browsers.md
-                    - name: 알려진 문제 - Safari
-                      href: msal-js-known-issues-safari-browser.md
-                - name: SSL 문제 해결(MSAL iOS/macOS)
-                  href: ssl-issues.md
-        - name: 인증 프로토콜
-          items:
-            - name: 애플리케이션 형식 및 OAuth2.0
-              href: v2-app-types.md
-            - name: OAuth 2.0 및 OpenID Connect 프로토콜
-              href: active-directory-v2-protocols.md
-            - name: OpenID Connect
-              href: v2-protocols-oidc.md
-            - name: OAuth 2.0 암시적 허용 흐름
-              href: v2-oauth2-implicit-grant-flow.md
-            - name: OAuth 2.0 인증 코드 부여
-              href: v2-oauth2-auth-code-flow.md
-            - name: OAuth 2.0 On-Behalf-Of 흐름
-              href: v2-oauth2-on-behalf-of-flow.md
-            - name: OAuth 2.0 클라이언트 자격 증명 부여
-              href: v2-oauth2-client-creds-grant-flow.md
-            - name: OAuth 2.0 디바이스 코드 흐름
-              href: v2-oauth2-device-code.md
-            - name: OAuth 2.0 리소스 소유자 암호 자격 증명 부여
-              href: v2-oauth-ropc.md
-            - name: OAuth 2.0 SAML 전달자 어설션 흐름
-              href: v2-saml-bearer-assertion.md
-            - name: 서명 키 롤오버
-              href: active-directory-signing-key-rollover.md
-            - name: ID 토큰
-              href: id-tokens.md
-            - name: 액세스 토큰
-              href: access-tokens.md
-            - name: 인증서 자격 증명
-              href: active-directory-certificate-credentials.md
-        - name: 애플리케이션 구성
-          items:
-            - name: 애플리케이션 및 서비스 주체
-              href: app-objects-and-service-principals.md
-            - name: 앱을 Azure AD에 추가하는 방법 및 이유
-              href: active-directory-how-applications-are-added.md
-            - name: 리디렉션 URI/회신 URL 제한 및 제한 사항
-              href: reply-url.md
-            - name: 지원되는 계정 유형별 유효성 검사 차이
-              href: supported-accounts-validation.md
-            - name: 단일 테넌트 및 다중 테넌트 앱
-              href: single-and-multi-tenant-apps.md
-        - name: 권한 및 동의
-          displayName: Scopes
-          items:
-            - name: 권한 및 동의 유형
-              href: v2-permissions-and-consent.md
-            - name: 동의 프레임워크
-              href: consent-framework.md
-            - name: 관리자 동의
-              href: v2-admin-consent.md
-            - name: 애플리케이션 동의 경험
-              href: application-consent-experience.md
-        - name: 국가별 클라우드
-          items:
-            - name: 개요
-              href: authentication-national-cloud.md
-            - name: 인증
-              href: msal-national-cloud.md
-        - name: 자동 사용자 프로비저닝(SCIM)
-          items:
-            - name: 자동 사용자 프로비저닝이란?
-              href: /azure/active-directory/manage-apps/user-provisioning
-            - name: SCIM 엔드포인트 빌드 및 통합
-              href: /azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups
-    - name: 방법 가이드
-      items:
-        - name: 인증
+              href: msal-acquire-cache-tokens.md
+            - name: v1.0 앱의 범위
+              href: msal-v1-app-scopes.md
+        - name: 클라이언트 애플리케이션
           items:
             - name: 역할 클레임 구성
               href: active-directory-enterprise-app-role-management.md
@@ -408,334 +282,254 @@
               href: howto-handle-samesite-cookie-changes-chrome-browser.md
         - name: 애플리케이션 구성
           items:
-            - name: 새로운 Azure Portal 앱 등록 학습 가이드
-              href: app-registrations-training-guide-for-app-registrations-legacy-users.md
-            - name: 새로운 Azure Portal 앱 등록 환경
-              href: app-registration-portal-training-guide.md
-            - name: 단일 테넌트 앱을 다중 테넌트 앱으로 변환
-              href: howto-convert-app-to-be-multi-tenant.md
-            - name: 서비스 주체 만들기
+            - name: 클라이언트 애플리케이션
+              href: msal-client-applications.md
+            - name: 애플리케이션 구성
+              href: msal-client-application-configuration.md
+            - name: 애플리케이션 초기화(.NET)
+              href: msal-net-initializing-client-applications.md
+            - name: 클라이언트 어설션(.NET)
+              href: msal-net-client-assertions.md
+            - name: 애플리케이션 초기화(JS)
+              href: msal-js-initializing-client-applications.md
+        - name: 오류 및 예외 처리
+          href: msal-handling-exceptions.md
+        - name: 로깅
+          href: msal-logging.md
+        - name: SSO(Single sign-on)
+          items:
+            - name: MSAL.js를 사용한 Single Sign-On
+              href: msal-js-sso.md
+            - name: iOS 및 macOS용 MSAL을 사용한 Single Sign-On
               items:
-                - name: Azure PowerShell 사용
-                  href: howto-authenticate-service-principal-powershell.md
-                - name: Azure Portal 사용
-                  href: howto-create-service-principal-portal.md
-            - name: 사용자 집합으로 앱 제한
-              href: howto-restrict-your-app-to-a-set-of-users.md
-            - name: 애플리케이션에 앱 역할 추가
-              href: howto-add-app-roles-in-azure-ad-apps.md
-            - name: 브랜딩 지침
-              href: howto-add-branding-in-azure-ad-apps.md
-            - name: 게시자 도메인 구성
-              href: howto-configure-publisher-domain.md
-            - name: 서비스 약관 및 개인정보처리방침
-              href: howto-add-terms-of-service-privacy-statement.md
-        - name: Microsoft 인증 라이브러리 작업
+                - name: MSAL 앱 간 SSO
+                  href: single-sign-on-macos-ios.md
+                - name: ADAL 앱과 MSAL 앱 간의 SSO
+                  href: sso-between-adal-msal-apps-macos-ios.md
+        - name: ADFS와 통합
+          items:
+            - name: MSAL.NET의 ADFS 지원
+              href: msal-net-adfs-support.md
+            - name: Python용 MSAL에서 ADFS 지원
+              href: msal-python-adfs-support.md
+            - name: Java용 MSAL에서 ADFS 지원
+              href: msal-java-adfs-support.md
+        - name: Azure AD B2C와 통합
+          items:
+            - name: Android
+              href: msal-android-b2c.md
+            - name: JavaScript
+              href: msal-b2c-overview.md
+            - name: .NET
+              href: msal-net-aad-b2c-considerations.md
+            - name: iOS 및 macOS
+              href: 'config-authority.md#b2c'
+        - name: 고려 사항 및 알려진 문제
           items:
             - name: MSAL.NET
               items:
-                - name: 캐시에서 토큰 획득
-                  href: msal-net-acquire-token-silently.md
-                - name: 토큰 캐시 직렬화
-                  href: msal-net-token-cache-serialization.md
-                - name: 토큰 캐시 지우기
-                  href: msal-net-clear-token-cache.md
-                - name: 퍼블릭 클라이언트 앱 인스턴스화
-                  href: msal-net-instantiate-public-client-config-options.md
-                - name: 옵션으로 기밀 클라이언트 인스턴스화
-                  href: msal-net-instantiate-confidential-client-config-options.md
-                - name: 여러 리소스에 대한 동의 얻기
-                  href: msal-net-user-gets-consent-for-multiple-resources.md
-                - name: 사용자의 HttpClient 제공
-                  href: msal-net-provide-httpclient.md
+                - name: 웹 브라우저
+                  href: msal-net-web-browsers.md
             - name: MSAL.js
               items:
-                - name: 페이지 다시 로드 방지
-                  href: msal-js-avoid-page-reloads.md
-                - name: 인증 요청에 사용자 지정 상태 전달
-                  href: msal-js-pass-custom-state-authentication-request.md
-                - name: 프롬프트 동작
-                  href: msal-js-prompt-behavior.md
-            - name: iOS 및 macOS용 MSAL
-              items:
-                - name: iOS 및 macOS용 MSAL 간 차이점
-                  href: msal-differences-ios-macos.md
-                - name: 키 집합 구성
-                  href: howto-v2-keychain-objc.md
-                - name: 브라우저 및 WebViews 사용자 지정
-                  href: customize-webviews.md
-                - name: 사용자 지정 클레임 요청
-                  href: request-custom-claims.md
-                - name: 리디렉션 URI 구성
-                  href: redirect-uris-ios.md
-            - name: Python용 MSAL
-              items:
-                - name: 사용자 지정 토큰 캐시 직렬화
-                  href: msal-python-token-cache-serialization.md
-            - name: Java용 MSAL
-              items:
-                - name: 사용자 지정 토큰 캐시 직렬화
-                  href: msal-java-token-cache-serialization.md
-                - name: 토큰 캐시에서 계정 가져오기 및 제거
-                  href: msal-java-get-remove-accounts-token-cache.md
-        - name: Visual Studio 작업
-          items:
-            - name: Active Directory 연결된 서비스 사용
-              href: vs-active-directory-add-connected-service.md
-            - name: .NET MVC 프로젝트 시작
-              href: vs-active-directory-dotnet-getting-started.md
-            - name: 내 .NET MVC 프로젝트는 어떻게 되었나요?
-              href: vs-active-directory-dotnet-what-happened.md
-            - name: WebAPI 프로젝트 시작
-              href: vs-active-directory-webapi-getting-started.md
-            - name: 내 WebAPI 프로젝트는 어떻게 되었나요?
-              href: vs-active-directory-webapi-what-happened.md
-            - name: 인증 중 오류 진단
-              href: vs-active-directory-error.md
-    - name: 참조
+                - name: IE를 사용한 고려 사항
+                  href: msal-js-use-ie-browser.md
+                - name: 알려진 문제 - IE와 Microsoft Edge
+                  href: msal-js-known-issues-ie-edge-browsers.md
+                - name: 알려진 문제 - Safari
+                  href: msal-js-known-issues-safari-browser.md
+            - name: SSL 문제 해결(MSAL iOS/macOS)
+              href: ssl-issues.md
+    - name: 인증 프로토콜
       items:
-        - name: 인증 라이브러리
-          displayName: MSAL
-          href: reference-v2-libraries.md
-        - name: Microsoft Graph의 ID 및 액세스 API
-          href: 'https://docs.microsoft.com/graph/api/resources/azure-ad-overview?view=graph-rest-beta'
-        - name: 애플리케이션 매니페스트.
-          href: reference-app-manifest.md
-        - name: Android MSAL 구성 파일
-          href: msal-configuration.md
-        - name: 인증 및 권한 부여 오류 코드
-          href: reference-aadsts-error-codes.md
-        - name: 주요 변경 내용
-          href: reference-breaking-changes.md
-- name: v1.0
-  expanded: false
-  items:
-    - name: 개요
-      href: v1-overview.md
-    - name: 빠른 시작
-      items:
-        - name: 테넌트 설정
-          href: quickstart-create-new-tenant.md
-        - name: 애플리케이션 구성
+        - name: 애플리케이션 형식 및 OAuth2.0
+          href: v2-app-types.md
+        - name: OAuth 2.0 및 OpenID Connect 프로토콜
+          href: active-directory-v2-protocols.md
+        - name: OpenID Connect
+          href: v2-protocols-oidc.md
+        - name: OAuth 2.0 암시적 허용 흐름
+          href: v2-oauth2-implicit-grant-flow.md
+        - name: OAuth 2.0 인증 코드 부여
+          href: v2-oauth2-auth-code-flow.md
+        - name: OAuth 2.0 On-Behalf-Of 흐름
+          href: v2-oauth2-on-behalf-of-flow.md
+        - name: OAuth 2.0 클라이언트 자격 증명 부여
+          href: v2-oauth2-client-creds-grant-flow.md
+        - name: OAuth 2.0 디바이스 코드 흐름
+          href: v2-oauth2-device-code.md
+        - name: OAuth 2.0 리소스 소유자 암호 자격 증명 부여
+          href: v2-oauth-ropc.md
+        - name: OAuth 2.0 SAML 전달자 어설션 흐름
+          href: v2-saml-bearer-assertion.md
+        - name: 서명 키 롤오버
+          href: active-directory-signing-key-rollover.md
+        - name: ID 토큰
+          href: id-tokens.md
+        - name: 액세스 토큰
+          href: access-tokens.md
+        - name: 인증서 자격 증명
+          href: active-directory-certificate-credentials.md
+        - name: SAML 2.0 프로토콜
           items:
-            - name: 앱 등록
-              href: quickstart-register-app.md
-            - name: 웹 API에 액세스하도록 앱 구성
-              href: quickstart-configure-app-access-web-apis.md
-            - name: 웹 API를 공개하도록 앱 구성
-              href: quickstart-configure-app-expose-web-apis.md
-            - name: 앱에서 지원되는 계정 수정
-              href: quickstart-modify-supported-accounts.md
-            - name: 앱 제거
-              href: quickstart-remove-app.md
-        - name: 단일 페이지 앱
-          items:
-            - name: AngularJS
-              href: quickstart-v1-angularjs-spa.md
-            - name: JavaScript
-              href: 'https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi'
-        - name: 웹 앱
-          items:
-            - name: ASP .NET
-              href: quickstart-v1-aspnet-webapp.md
-            - name: Java
-              href: 'https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect'
-            - name: NodeJS
-              href: 'https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS'
-            - name: Python
-              href: 'https://github.com/Azure-Samples/active-directory-python-webapp-graphapi'
-        - name: Web API
-          items:
-            - name: ASP .NET
-              href: quickstart-v1-dotnet-webapi.md
-            - name: NodeJS
-              href: quickstart-v1-nodejs-webapi.md
-        - name: 모바일 및 데스크톱 앱
-          items:
-            - name: Android
-              href: quickstart-v1-android.md
-            - name: iOS
-              href: quickstart-v1-ios.md
-            - name: Windows 데스크톱 .NET
-              href: quickstart-v1-dotnet.md
-            - name: Xamarin
-              href: quickstart-v1-xamarin.md
-        - name: 서비스 간
-          href: quickstart-v1-dotnet.md
-        - name: 디먼 앱
-          items:
-            - name: .NET Core 콘솔(디먼)
-              href: quickstart-v1-netcore-daemon.md
-    - name: 샘플
-      href: sample-v1-code.md
-    - name: 개념
-      items:
-        - name: v2.0으로 업데이트해야 하는 이유
-          href: azure-ad-endpoint-comparison.md
-        - name: 애플리케이션 형식
-          items:
-            - name: 애플리케이션 유형
-              href: app-types.md
-            - name: 단일 페이지 애플리케이션
-              href: single-page-application.md
-            - name: 웹앱
-              href: web-app.md
-            - name: Web API
-              href: web-api.md
-            - name: 모바일 및 데스크톱 앱
-              href: native-app.md
-            - name: 디먼 또는 서버 애플리케이션
-              href: service-to-service.md
-        - name: 인증
-          items:
-            - name: 인증 기본 사항
-              href: v1-authentication-scenarios.md
-            - name: OAuth 2.0 및 OpenID Connect 프로토콜
-              items:
-                - name: OpenID Connect
-                  href: v1-protocols-openid-connect-code.md
-                - name: OAuth 2.0 암시적 허용 흐름
-                  href: v1-oauth2-implicit-grant-flow.md
-                - name: OAuth 2.0 인증 코드 부여
-                  href: v1-protocols-oauth-code.md
-                - name: OAuth 2.0 On-Behalf-Of 흐름
-                  href: v1-oauth2-on-behalf-of-flow.md
-                - name: OAuth 2.0 클라이언트 자격 증명 부여
-                  href: v1-oauth2-client-creds-grant-flow.md
-            - name: SAML 2.0 프로토콜
-              items:
-                - name: SSO(Single sign-on)
-                  href: single-sign-on-saml-protocol.md
-                - name: 로그아웃
-                  href: single-sign-out-saml-protocol.md
-                - name: Azure AD에서 SAML 프로토콜을 사용하는 방법
-                  href: active-directory-saml-protocol-reference.md
-            - name: WS-Federation
-              items:
-                - name: 페더레이션 메타데이터
-                  href: azure-ad-federation-metadata.md
-            - name: 서명 키 롤오버
-              href: active-directory-signing-key-rollover.md
-            - name: ID 토큰
-              href: id-tokens.md
-            - name: 액세스 토큰
-              href: access-tokens.md
-            - name: 인증서 자격 증명
-              href: active-directory-certificate-credentials.md
+            - name: SSO(Single sign-on)
+              href: single-sign-on-saml-protocol.md
+            - name: 로그아웃
+              href: single-sign-out-saml-protocol.md
+            - name: Azure AD에서 SAML 프로토콜을 사용하는 방법
+              href: active-directory-saml-protocol-reference.md
             - name: SAML 토큰
               href: reference-saml-tokens.md
-        - name: 애플리케이션 구성
-          items:
-            - name: 애플리케이션 및 서비스 주체
-              href: app-objects-and-service-principals.md
-            - name: 앱을 Azure AD에 추가하는 방법 및 이유
-              href: active-directory-how-applications-are-added.md
-            - name: 단일 테넌트 및 다중 테넌트 앱
-              href: single-and-multi-tenant-apps.md
-        - name: 권한 및 동의
-          displayName: Scopes
-          items:
-            - name: 권한 및 동의 유형
-              href: v1-permissions-and-consent.md
-            - name: 동의 프레임워크
-              href: consent-framework.md
-            - name: 애플리케이션 동의 경험
-              href: application-consent-experience.md
-        - name: 조건부 액세스
-          href: conditional-access-dev-guide.md
-        - name: 국가별 클라우드
+    - name: 애플리케이션 구성
+      items:
+        - name: 애플리케이션 및 서비스 주체
+          href: app-objects-and-service-principals.md
+        - name: 앱을 Azure AD에 추가하는 방법 및 이유
+          href: active-directory-how-applications-are-added.md
+        - name: 리디렉션 URI/회신 URL 제한 및 제한 사항
+          href: reply-url.md
+        - name: 지원되는 계정 유형별 유효성 검사 차이
+          href: supported-accounts-validation.md
+        - name: 단일 테넌트 및 다중 테넌트 앱
+          href: single-and-multi-tenant-apps.md
+    - name: 권한 및 동의
+      displayName: Scopes
+      items:
+        - name: 권한 및 동의 유형
+          href: v2-permissions-and-consent.md
+        - name: 동의 프레임워크
+          href: consent-framework.md
+        - name: 관리자 동의
+          href: v2-admin-consent.md
+        - name: 애플리케이션 동의 경험
+          href: application-consent-experience.md
+    - name: 국가별 클라우드
+      items:
+        - name: 개요
           href: authentication-national-cloud.md
-    - name: 방법 가이드
-      items:
         - name: 인증
-          items:
-            - name: Single Sign-On 구성
-              displayName: SSO
-              items:
-                - name: Android에서 SSO 사용
-                  href: howto-v1-enable-sso-android.md
-                - name: iOS에서 SSO 사용
-                  href: howto-v1-enable-sso-ios.md
-                - name: SAML 기반 SSO 디버그
-                  href: howto-v1-debug-saml-sso-issues.md
-            - name: 클레임 구성
-              items:
-                - name: 역할 클레임 구성
-                  href: active-directory-enterprise-app-role-management.md
-                - name: 클레임 사용자 지정 - 포털
-                  href: active-directory-saml-claims-customization.md
-                - name: 클레임 사용자 지정 - PowerShell
-                  href: active-directory-claims-mapping.md
-                - name: 선택적 클레임 구성
-                  href: active-directory-optional-claims.md
-                - name: 토큰 수명 구성
-                  href: active-directory-configurable-token-lifetimes.md
-            - name: ADAL 오류 처리 모범 사례
-              href: active-directory-devhowto-adal-error-handling.md
-        - name: 애플리케이션 구성
-          items:
-            - name: 단일 테넌트 앱을 다중 테넌트 앱으로 변환
-              href: howto-convert-app-to-be-multi-tenant.md
-            - name: 서비스 주체 만들기
-              items:
-                - name: Azure PowerShell 사용
-                  href: howto-authenticate-service-principal-powershell.md
-                - name: Azure Portal 사용
-                  href: howto-create-service-principal-portal.md
-            - name: 사용자 집합으로 앱 제한
-              href: howto-restrict-your-app-to-a-set-of-users.md
-            - name: 애플리케이션에 앱 역할 추가
-              href: howto-add-app-roles-in-azure-ad-apps.md
-            - name: 브랜딩 지침
-              href: howto-add-branding-in-azure-ad-apps.md
-            - name: 서비스 약관 및 개인정보처리방침
-              href: howto-add-terms-of-service-privacy-statement.md
-        - name: Visual Studio 작업
-          items:
-            - name: Active Directory 연결된 서비스 사용
-              href: vs-active-directory-add-connected-service.md
-            - name: .NET MVC 프로젝트 시작
-              href: vs-active-directory-dotnet-getting-started.md
-            - name: 내 .NET MVC 프로젝트는 어떻게 되었나요?
-              href: vs-active-directory-dotnet-what-happened.md
-            - name: WebAPI 프로젝트 시작
-              href: vs-active-directory-webapi-getting-started.md
-            - name: 내 WebAPI 프로젝트는 어떻게 되었나요?
-              href: vs-active-directory-webapi-what-happened.md
-            - name: 인증 검색 중 오류 발생
-              href: vs-active-directory-error.md
-        - name: Market으로 앱 가져오기
-          items:
-            - name: App Source에 게시
-              href: howto-get-appsource-certified.md
-            - name: Azure AD App Gallery에 게시
-              href: howto-app-gallery-listing.md
-            - name: Office 365 판매자 대시보드에 게시
-              href: 'https://docs.microsoft.com/office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store'
-        - name: Azure Access Control Service
-          displayName: ACS
-          items:
-            - name: Azure Access Control Service에서 마이그레이션
-              href: active-directory-acs-migration.md
-            - name: 비활성화된 Access Control Service 네임스페이스 다시 활성화
-              href: howto-reactivate-disabled-acs-namespaces.md
-        - name: Azure AD Graph API 사용
-          href: active-directory-graph-api-quickstart.md
-        - name: 개발자용 AD FS
-          href: 'https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-scenarios-for-developers'
-    - name: 참조
+          href: msal-national-cloud.md
+    - name: 자동 사용자 프로비저닝(SCIM)
       items:
-        - name: 인증 라이브러리
-          displayName: ADAL
-          href: active-directory-authentication-libraries.md
-        - name: Azure AD Graph API
-          href: active-directory-graph-api.md
-        - name: 애플리케이션 매니페스트.
-          href: reference-app-manifest.md
-        - name: 인증 및 권한 부여 오류 코드
-          href: reference-aadsts-error-codes.md
-        - name: 주요 변경 내용
-          href: reference-breaking-changes.md
+        - name: 자동 사용자 프로비저닝이란?
+          href: /azure/active-directory/manage-apps/user-provisioning
+        - name: SCIM 엔드포인트 빌드 및 통합
+          href: /azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups
+- name: 방법 가이드
+  items:
+    - name: 인증
+      items:
+        - name: 역할 클레임 구성
+          href: active-directory-enterprise-app-role-management.md
+        - name: 클레임 사용자 지정 - 포털
+          href: active-directory-saml-claims-customization.md
+        - name: 클레임 사용자 지정 - PowerShell
+          href: active-directory-claims-mapping.md
+        - name: 선택적 클레임 구성
+          href: active-directory-optional-claims.md
+        - name: 토큰 수명 구성
+          href: active-directory-configurable-token-lifetimes.md
+    - name: 애플리케이션 구성
+      items:
+        - name: 새로운 Azure Portal 앱 등록 학습 가이드
+          href: app-registrations-training-guide-for-app-registrations-legacy-users.md
+        - name: 새로운 Azure Portal 앱 등록 환경
+          href: app-registration-portal-training-guide.md
+        - name: 단일 테넌트 앱을 다중 테넌트 앱으로 변환
+          href: howto-convert-app-to-be-multi-tenant.md
+        - name: 서비스 주체 만들기
+          items:
+            - name: Azure PowerShell 사용
+              href: howto-authenticate-service-principal-powershell.md
+            - name: Azure Portal 사용
+              href: howto-create-service-principal-portal.md
+        - name: 사용자 집합으로 앱 제한
+          href: howto-restrict-your-app-to-a-set-of-users.md
+        - name: 애플리케이션에 앱 역할 추가
+          href: howto-add-app-roles-in-azure-ad-apps.md
+        - name: 브랜딩 지침
+          href: howto-add-branding-in-azure-ad-apps.md
+        - name: 게시자 도메인 구성
+          href: howto-configure-publisher-domain.md
+        - name: 서비스 약관 및 개인정보처리방침
+          href: howto-add-terms-of-service-privacy-statement.md
+    - name: Microsoft 인증 라이브러리 작업
+      items:
+        - name: MSAL.NET
+          items:
+            - name: 캐시에서 토큰 획득
+              href: msal-net-acquire-token-silently.md
+            - name: 토큰 캐시 직렬화
+              href: msal-net-token-cache-serialization.md
+            - name: 토큰 캐시 지우기
+              href: msal-net-clear-token-cache.md
+            - name: 퍼블릭 클라이언트 앱 인스턴스화
+              href: msal-net-instantiate-public-client-config-options.md
+            - name: 옵션으로 기밀 클라이언트 인스턴스화
+              href: msal-net-instantiate-confidential-client-config-options.md
+            - name: 여러 리소스에 대한 동의 얻기
+              href: msal-net-user-gets-consent-for-multiple-resources.md
+            - name: 사용자의 HttpClient 제공
+              href: msal-net-provide-httpclient.md
+        - name: MSAL.js
+          items:
+            - name: 페이지 다시 로드 방지
+              href: msal-js-avoid-page-reloads.md
+            - name: 인증 요청에 사용자 지정 상태 전달
+              href: msal-js-pass-custom-state-authentication-request.md
+            - name: 프롬프트 동작
+              href: msal-js-prompt-behavior.md
+        - name: iOS 및 macOS용 MSAL
+          items:
+            - name: iOS 및 macOS용 MSAL 간 차이점
+              href: msal-differences-ios-macos.md
+            - name: 키 집합 구성
+              href: howto-v2-keychain-objc.md
+            - name: 브라우저 및 WebViews 사용자 지정
+              href: customize-webviews.md
+            - name: 사용자 지정 클레임 요청
+              href: request-custom-claims.md
+            - name: 리디렉션 URI 구성
+              href: redirect-uris-ios.md
+        - name: Python용 MSAL
+          items:
+            - name: 사용자 지정 토큰 캐시 직렬화
+              href: msal-python-token-cache-serialization.md
+        - name: Java용 MSAL
+          items:
+            - name: 사용자 지정 토큰 캐시 직렬화
+              href: msal-java-token-cache-serialization.md
+            - name: 토큰 캐시에서 계정 가져오기 및 제거
+              href: msal-java-get-remove-accounts-token-cache.md
+    - name: Visual Studio 작업
+      items:
+        - name: Active Directory 연결된 서비스 사용
+          href: vs-active-directory-add-connected-service.md
+        - name: .NET MVC 프로젝트 시작
+          href: vs-active-directory-dotnet-getting-started.md
+        - name: 내 .NET MVC 프로젝트는 어떻게 되었나요?
+          href: vs-active-directory-dotnet-what-happened.md
+        - name: WebAPI 프로젝트 시작
+          href: vs-active-directory-webapi-getting-started.md
+        - name: 내 WebAPI 프로젝트는 어떻게 되었나요?
+          href: vs-active-directory-webapi-what-happened.md
+        - name: 인증 중 오류 진단
+          href: vs-active-directory-error.md
+- name: 참조
+  items:
+    - name: 인증 라이브러리
+      displayName: MSAL
+      href: reference-v2-libraries.md
+    - name: Microsoft Graph의 ID 및 액세스 API
+      href: 'https://docs.microsoft.com/graph/api/resources/azure-ad-overview?view=graph-rest-beta'
+    - name: 애플리케이션 매니페스트.
+      href: reference-app-manifest.md
+    - name: Android MSAL 구성 파일
+      href: msal-configuration.md
+    - name: 인증 및 권한 부여 오류 코드
+      href: reference-aadsts-error-codes.md
+    - name: 주요 변경 내용
+      href: reference-breaking-changes.md
 - name: 리소스
   items:
     - name: 용어

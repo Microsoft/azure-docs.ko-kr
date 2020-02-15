@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/09/2019
-ms.openlocfilehash: 781c5a579fa0cd0383e95b79df1f81f74008111c
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: ffb610634399594788afcb9b600ba00c6803dfdd
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73679969"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207028"
 ---
 # <a name="azure-function-activity-in-azure-data-factory"></a>Azure Data Factory의 Azure 함수 작업
 
@@ -34,19 +34,19 @@ Azure 함수의 반환 형식은 유효한 `JObject`여야 합니다. [Jarray](h
 | --- | --- | --- |
 | type   | Type 속성은 **AzureFunction** 로 설정 해야 합니다. | 예 |
 | 함수 앱 URL | Azure 함수 앱의 URL입니다. 형식은 `https://<accountname>.azurewebsites.net`입니다. 이 URL은 Azure Portal에서 함수 앱을 볼 때 **URL** 섹션 아래에 표시되는 값입니다.  | 예 |
-| 기능 키 | Azure 함수의 액세스 키입니다. 해당 함수의 **관리** 섹션을 클릭하고 **기능 키** 또는 **호스트 키**를 복사합니다. [AZURE FUNCTIONS HTTP 트리거 및 바인딩을](../azure-functions/functions-bindings-http-webhook.md#authorization-keys) 참조 하세요. | 예 |
+| 기능 키 | Azure 함수의 액세스 키입니다. 해당 함수의 **관리** 섹션을 클릭하고 **기능 키** 또는 **호스트 키**를 복사합니다. [AZURE FUNCTIONS HTTP 트리거 및 바인딩을](../azure-functions/functions-bindings-http-webhook-trigger.md#authorization-keys) 참조 하세요. | 예 |
 |   |   |   |
 
 ## <a name="azure-function-activity"></a>Azure 함수 작업
 
-| **속성**  | **설명** | **허용되는 값** | **필수** |
+| **속성**  | **설명** | **허용된 값** | **필수** |
 | --- | --- | --- | --- |
-| name  | 파이프라인의 작업 이름입니다.  | 문자열 | 예 |
-| type  | 작업의 형식은 'AzureFunctionActivity'입니다. | 문자열 | 예 |
+| name  | 파이프라인의 작업 이름입니다.  | String | 예 |
+| type  | 작업의 형식은 'AzureFunctionActivity'입니다. | String | 예 |
 | 연결된 서비스 | 해당하는 Azure 함수 앱에 대한 Azure Function 연결된 서비스입니다.  | 연결된 서비스 참조 | 예 |
-| 함수 이름  | Azure 함수 앱에서 이 작업이 호출하는 함수의 이름입니다. | 문자열 | 예 |
-| 메서드  | 함수 호출에 대한 REST API 메서드입니다. | 지원 되는 문자열 형식: "GET", "POST", "PUT"   | 예 |
-| 머리글  | 요청에 전송되는 헤더입니다. 예를 들어 요청에 언어 및 형식을 설정하려면 다음과 같이 씁니다. "headers": { "Accept-Language": "en-us", "Content-Type": "application/json" } | 문자열(또는 resultType 문자열이 있는 식) | 아니오 |
+| 함수 이름  | Azure 함수 앱에서 이 작업이 호출하는 함수의 이름입니다. | String | 예 |
+| method  | 함수 호출에 대한 REST API 메서드입니다. | 지원 되는 문자열 형식: "GET", "POST", "PUT"   | 예 |
+| 머리글  | 요청에 전송되는 헤더입니다. 예를 들어 요청에 언어 및 형식을 설정하려면 다음과 같이 씁니다. "headers": { "Accept-Language": "en-us", "Content-Type": "application/json" } | 문자열(또는 resultType 문자열이 있는 식) | 예 |
 | 본문  | 함수 API 메서드에 대한 요청과 함께 전송되는 본문입니다.  | 문자열(또는 resultType 문자열이 있는 식) 또는 개체   | PUT/POST 메서드에 필요합니다. |
 |   |   |   | |
 

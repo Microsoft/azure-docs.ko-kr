@@ -6,15 +6,15 @@ author: ShubhaVijayasarathy
 manager: ''
 ms.author: shvija
 ms.custom: seodec18
-ms.date: 11/05/2019
+ms.date: 01/15/2020
 ms.topic: tutorial
 ms.service: event-hubs
-ms.openlocfilehash: 92c414afbb8121eb03353c79dfe3a51e0cfa7ec0
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: a83d65e497688fa97fbb2bdb5a4a72c6d29d81ae
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73718877"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76905697"
 ---
 # <a name="tutorial-migrate-captured-event-hubs-data-to-a-sql-data-warehouse-using-event-grid-and-azure-functions"></a>자습서: Event Grid 및 Azure Functions를 사용하여 캡처된 Event Hubs 데이터를 SQL Data Warehouse로 마이그레이션
 
@@ -35,14 +35,16 @@ Event Hubs [캡처](https://docs.microsoft.com/azure/event-hubs/event-hubs-captu
 > * Event Hub를 통해 샘플 데이터 스트림 
 > * SQL Data Warehouse에서 캡처된 데이터 확인
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 - [Visual Studio 2019](https://www.visualstudio.com/vs/). 설치하는 동안 .NET 데스크톱 개발, Azure 개발, ASP.NET 및 웹 개발, Node.js 개발, Python 개발 워크로드를 설치해야 합니다.
-- [Git 샘플](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo) 다운로드. 샘플 솔루션에 포함된 구성 요소는 다음과 같습니다.
+- [Git 샘플](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Azure.Messaging.EventHubs/EventHubsCaptureEventGridDemo) 다운로드 - 샘플 솔루션에 포함된 구성 요소는 다음과 같습니다.
     - *WindTurbineDataGenerator* – 샘플 풍력 터빈 데이터를 캡처 지원 이벤트 허브로 보내는 간단한 게시자입니다.
     - *FunctionDWDumper* – Avro 파일이 Azure Storage Blob에 캡처될 때 Event Grid 알림을 받는 Azure Function입니다. Blob의 URI 경로를 받고, 해당 콘텐츠를 읽고, 이 데이터를 SQL Data Warehouse로 푸시합니다.
+
+    이 샘플은 최신 Azure.Messaging.EventHubs 패키지를 사용합니다. [여기에서](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo) Microsoft.Azure.EventHubs 패키지를 사용하는 이전 샘플을 찾을 수 있습니다. 
 
 ### <a name="deploy-the-infrastructure"></a>인프라 배포
 Azure PowerShell 또는 Azure CLI를 사용하여 이 [Azure Resource Manager 템플릿](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/event-grid/EventHubsDataMigration.json)을 통해 이 자습서에 필요한 인프라를 배포합니다. 이 템플릿은 다음과 같은 리소스를 만듭니다.

@@ -8,13 +8,13 @@ ms.author: daperlov
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 06/27/2018
-ms.openlocfilehash: 8238f2ea8395fc53044703db619d768918cb1834
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.date: 02/10/2020
+ms.openlocfilehash: 2e50d226282536fa4e8c044d2ee3d91df4cfd1ee
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75644701"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131478"
 ---
 # <a name="azure-data-factory-faq"></a>Azure Data Factory FAQ
 이 아티클에서는 Azure Data Factory에 대한 질문과 대답을 제공합니다.  
@@ -34,7 +34,7 @@ Data Factory는 데이터 통합에 필요하고 요청 시 또는 일정에 따
 - 제어 흐름:
     - 활동은 파이프라인 내의 순서로 함께 연결 될 수 있습니다.
     - 활동은 파이프라인 내에서 분기할 수 있습니다.
-    - 매개 변수
+    - 매개 변수:
         - 파이프라인 수준에서 매개 변수를 정의할 수 있으며 요청 시 또는 트리거에서 파이프라인을 호출 하는 동안 인수를 전달할 수 있습니다.
         - 파이프라인에 전달되는 인수를 작업에 사용할 수 있습니다.
     - 사용자 지정 상태 전달:
@@ -80,8 +80,8 @@ SSIS 워크로드를 이동하려는 경우 Data Factory를 만들고 Azure-SSIS
 
 -   프로젝트/패키지의 SSISDB (SSIS 데이터베이스)를 호스트 하는 Azure SQL Database의 세 가지 구성/변형 지원:
 -   가상 네트워크 서비스 끝점을 사용 하 여 SQL Database
--   Managed Instance
--   Elastic Pool
+-   관리되는 인스턴스
+-   탄력적 풀
 -   Azure SSIS 통합 런타임을 가상 네트워크 서비스 엔드포인트/MI/온-프레미스 데이터 액세스를 사용 하 여 SQL Database에 대해 구성 된 가상 네트워크에 삽입/조인할 수 있도록 하는, 향후에는 클래식 가상 네트워크를 기반으로 하는 Azure Resource Manager 가상 네트워크가 지원 되지 않습니다. 자세한 내용은 [AZURE SSIS integration runtime을 가상 네트워크에 가입](join-azure-ssis-integration-runtime-virtual-network.md)을 참조 하세요.
 -   Azure 리소스에 대 한 Data Factory 관리 id로 azure AD 인증을 허용 하 여 SSISDB에 연결할 수 있는 azure AD (Azure Active Directory) 인증 및 SQL 인증 지원
 -   Azure 하이브리드 혜택 옵션을 사용 하 여 비용을 크게 절감할 수 있도록 온-프레미스 SQL Server 라이선스 가져오기 지원
@@ -115,7 +115,7 @@ Azure 구독에는 하나 이상의 Azure Data Factory 인스턴스(또는 Data 
 ### <a name="activities"></a>활동
 작업은 파이프라인의 처리 단계를 나타냅니다. 예를 들어 복사 작업을 사용 하 여 한 데이터 저장소에서 다른 데이터 저장소로 데이터를 복사할 수 있습니다. 마찬가지로 데이터를 변환하거나 분석하기 위해서 Azure HDInsight 클러스터에서 Hive 쿼리를 실행하는 Hive 작업을 사용할 수 있습니다. Data Factory는 데이터 이동 작업, 데이터 변환 작업 및 제어 작업이라는 세 종류의 작업을 지원합니다.
 
-### <a name="datasets"></a>데이터 세트
+### <a name="datasets"></a>데이터 집합
 데이터 세트는 데이터 저장소 내의 데이터 구조를 나타내며, 사용자가 활동에서 입력 또는 출력으로 사용하려는 데이터를 가리키거나 참조할 뿐입니다. 
 
 ### <a name="linked-services"></a>연결된 서비스
@@ -195,6 +195,9 @@ Microsoft에서 데이터 흐름에 대 한 도움말 또는 문제 해결을 �
 
 자체 호스팅 IR은 복사 작업에서 온-프레미스 또는 VM 기반 데이터 원본 및 싱크로 데이터를 가져오거나 이동 하는 데 사용할 수 있는 ADF 파이프라인 구문입니다. 먼저 복사본을 사용 하 여 데이터를 준비 하 고 변환에 대 한 데이터 흐름을 지정한 다음 변환 된 데이터를 다시 온-프레미스 저장소로 이동 해야 하는 경우 후속 복사를 수행 합니다.
 
+### <a name="does-the-data-flow-compute-engine-serve-multiple-tenants"></a>데이터 흐름 계산 엔진이 여러 테 넌 트를 제공 하나요?
+클러스터는 공유 되지 않습니다. 프로덕션 환경에서 실행 되는 각 작업에 대 한 격리를 보장 합니다. 디버그 시나리오의 경우 한 사람이 하나의 클러스터를 가져오고 모든 디버그는 해당 사용자가 시작 하는 해당 클러스터로 이동 합니다.
+
 ## <a name="wrangling-data-flows"></a>랭 글 링 데이터 흐름
 
 ### <a name="what-are-the-supported-regions-for-wrangling-data-flow"></a>랭 글 링 데이터 흐름에 대해 지원 되는 지역은 무엇 인가요?
@@ -260,14 +263,14 @@ ADF (Azure Data Factory)는 데이터 엔지니어와 시민 데이터 통합자
 * tinyint
 * bigint
 * long
-* text
+* 텍스트
 * date
-* Datetime
+* datetime
 * datetime2
 * smalldatetime
 * timestamp
 * uniqueidentifier
-* Xml
+* xml
 
 다른 데이터 형식은 나중에 지원 될 예정입니다.
 

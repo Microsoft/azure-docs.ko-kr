@@ -2,13 +2,13 @@
 title: 템플릿 함수-리소스
 description: Azure Resource Manager 템플릿에서 리소스에 대한 값을 검색하는 데 사용할 수 있는 함수에 대해 설명합니다.
 ms.topic: conceptual
-ms.date: 01/20/2020
-ms.openlocfilehash: cfcc9ff3af33fe9de813d8a31b7d102f00725ce4
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.date: 02/10/2020
+ms.openlocfilehash: 10476f5a29c12d7437beb9a9f707feda815d7ba1
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77048793"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207011"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Azure Resource Manager 템플릿용 리소스 함수
 
@@ -36,12 +36,12 @@ extensionResourceId(resourceId, resourceType, resourceName1, [resourceName2], ..
 
 ### <a name="parameters"></a>매개 변수
 
-| 매개 변수 | 필수 | 형식 | 설명 |
+| 매개 변수 | 필수 | Type | Description |
 |:--- |:--- |:--- |:--- |
-| resourceId |예 |string |확장 리소스가 적용 되는 리소스의 리소스 ID입니다. |
-| resourceType |예 |string |리소스 공급자 네임스페이스를 포함하는 리소스 유형입니다. |
-| resourceName1 |예 |string |리소스의 이름입니다. |
-| resourceName2 |아니요 |string |필요한 경우 다음 리소스 이름 세그먼트입니다. |
+| resourceId |yes |문자열 |확장 리소스가 적용 되는 리소스의 리소스 ID입니다. |
+| resourceType |yes |문자열 |리소스 공급자 네임스페이스를 포함하는 리소스 유형입니다. |
+| resourceName1 |yes |문자열 |리소스의 이름입니다. |
+| resourceName2 |예 |문자열 |필요한 경우 다음 리소스 이름 세그먼트입니다. |
 
 리소스 형식에 더 많은 세그먼트가 포함 된 경우 리소스 이름을 매개 변수로 계속 추가 합니다.
 
@@ -116,15 +116,15 @@ list{Value}(resourceName or resourceIdentifier, apiVersion, functionValues)
 
 ### <a name="parameters"></a>매개 변수
 
-| 매개 변수 | 필수 | 형식 | 설명 |
+| 매개 변수 | 필수 | Type | Description |
 |:--- |:--- |:--- |:--- |
-| resourceName 또는 resourceIdentifier |예 |string |리소스에 대한 고유 식별자. |
-| apiVersion |예 |string |리소스 런타임 상태의 API 버전입니다. 일반적으로 **yyyy-mm-dd** 형식입니다. |
-| functionValues |아니요 |object | 함수에 대한 값이 있는 개체입니다. 스토리지 계정의 **listAccountSas** 같은 매개 변수 값을 가진 개체를 받는 것을 지원하는 함수에 대해 이 개체를 제공합니다. 함수 값을 전달하는 예제가 이 문서에 나와 있습니다. |
+| resourceName 또는 resourceIdentifier |yes |문자열 |리소스에 대한 고유 식별자. |
+| apiVersion |yes |문자열 |리소스 런타임 상태의 API 버전입니다. 일반적으로 **yyyy-mm-dd** 형식입니다. |
+| functionValues |예 |object | 함수에 대한 값이 있는 개체입니다. 스토리지 계정의 **listAccountSas** 같은 매개 변수 값을 가진 개체를 받는 것을 지원하는 함수에 대해 이 개체를 제공합니다. 함수 값을 전달하는 예제가 이 문서에 나와 있습니다. |
 
 ### <a name="valid-uses"></a>유효한 용도
 
-목록 함수는 템플릿 또는 배포의 리소스 정의 및 출력 섹션의 속성에만 사용할 수 있습니다. [속성 반복](create-multiple-instances.md#property-iteration)에 사용 되는 경우 식이 리소스 속성에 할당 되기 때문에 `input`에 대 한 목록 함수를 사용할 수 있습니다. 목록 함수가 확인 되기 전에 개수를 결정 해야 하므로 `count`와 함께 사용할 수 없습니다.
+목록 함수는 템플릿 또는 배포의 리소스 정의 및 출력 섹션의 속성에만 사용할 수 있습니다. [속성 반복](copy-properties.md)에 사용 되는 경우 식이 리소스 속성에 할당 되기 때문에 `input`에 대 한 목록 함수를 사용할 수 있습니다. 목록 함수가 확인 되기 전에 개수를 결정 해야 하므로 `count`와 함께 사용할 수 없습니다.
 
 ### <a name="implementations"></a>구현
 
@@ -279,7 +279,7 @@ list 작업이 있는 리소스 유형을 확인할 수 있게 다음 PowerShell
 
 다른 list 함수는 다른 반환 형식을 갖습니다. 함수의 형식을 보려면 예제 템플릿에 표시된 것처럼 outputs 섹션에 포함합니다.
 
-### <a name="remarks"></a>주의
+### <a name="remarks"></a>설명
 
 리소스 이름 또는 [resourceId 함수](#resourceid)를 사용하여 리소스를 지정합니다. 참조된 리소스를 배포하는 동일한 템플릿에서 list 함수를 사용하는 경우 리소스 이름을 사용합니다.
 
@@ -354,7 +354,7 @@ SAS 토큰을 가져오려면 만료 시간에 대 한 개체를 전달 합니�
 }
 ```
 
-## <a name="providers"></a>공급자
+## <a name="providers"></a>providers
 
 ```json
 providers(providerNamespace, [resourceType])
@@ -364,10 +364,10 @@ providers(providerNamespace, [resourceType])
 
 ### <a name="parameters"></a>매개 변수
 
-| 매개 변수 | 필수 | 형식 | 설명 |
+| 매개 변수 | 필수 | Type | Description |
 |:--- |:--- |:--- |:--- |
-| providerNamespace |예 |string |공급자의 네임스페이스입니다. |
-| resourceType |아니요 |string |지정된 네임스페이스 내의 리소스 유형입니다. |
+| providerNamespace |yes |문자열 |공급자의 네임스페이스입니다. |
+| resourceType |예 |문자열 |지정된 네임스페이스 내의 리소스 유형입니다. |
 
 ### <a name="return-value"></a>반환 값
 
@@ -441,17 +441,17 @@ reference(resourceName or resourceIdentifier, [apiVersion], ['Full'])
 
 ### <a name="parameters"></a>매개 변수
 
-| 매개 변수 | 필수 | 형식 | 설명 |
+| 매개 변수 | 필수 | Type | Description |
 |:--- |:--- |:--- |:--- |
-| resourceName 또는 resourceIdentifier |예 |string |리소스의 이름 또는 고유 식별자입니다. 현재 템플릿의 리소스를 참조할 경우 리소스 이름만 매개 변수로 지정합니다. 이전에 배포 된 리소스를 참조 하거나 리소스 이름이 모호한 경우 리소스 ID를 제공 합니다. |
-| apiVersion |아니요 |string |지정된 리소스의 API 버전입니다. 리소스가 동일한 템플릿 내에서 프로비전되지 않은 경우 이 매개 변수를 포함합니다. 일반적으로 **yyyy-mm-dd** 형식입니다. 리소스에 대 한 유효한 API 버전은 [템플릿 참조](/azure/templates/)를 참조 하세요. |
-| 'Full' |아니요 |string |전체 리소스 개체를 반환할지 여부를 지정하는 값입니다. `'Full'`을 지정하지 않으면 리소스의 속성 개체만 반환됩니다. 전체 개체에는 리소스 ID 및 위치와 같은 값이 포함됩니다. |
+| resourceName 또는 resourceIdentifier |yes |문자열 |리소스의 이름 또는 고유 식별자입니다. 현재 템플릿의 리소스를 참조할 경우 리소스 이름만 매개 변수로 지정합니다. 이전에 배포 된 리소스를 참조 하거나 리소스 이름이 모호한 경우 리소스 ID를 제공 합니다. |
+| apiVersion |예 |문자열 |지정된 리소스의 API 버전입니다. 리소스가 동일한 템플릿 내에서 프로비전되지 않은 경우 이 매개 변수를 포함합니다. 일반적으로 **yyyy-mm-dd** 형식입니다. 리소스에 대 한 유효한 API 버전은 [템플릿 참조](/azure/templates/)를 참조 하세요. |
+| 'Full' |예 |문자열 |전체 리소스 개체를 반환할지 여부를 지정하는 값입니다. `'Full'`을 지정하지 않으면 리소스의 속성 개체만 반환됩니다. 전체 개체에는 리소스 ID 및 위치와 같은 값이 포함됩니다. |
 
 ### <a name="return-value"></a>반환 값
 
 모든 리소스 형식은 reference 함수에 대해 다른 속성을 반환합니다. 이 함수는 미리 정의된 단일 형식을 반환하지 않습니다. 또한 반환된 값은 전체 개체를 지정했는지 여부에 따라 다릅니다. 리소스 형식에 대한 속성을 보려면 예제와 같이 outputs 섹션의 개체를 반환합니다.
 
-### <a name="remarks"></a>주의
+### <a name="remarks"></a>설명
 
 참조 함수는 이전에 배포한 리소스 또는 현재 템플릿에 배포된 리소스의 런타임 상태를 검색합니다. 이 문서는 두 시나리오에 대한 예제를 보여 줍니다.
 
@@ -496,7 +496,7 @@ reference(resourceName or resourceIdentifier, [apiVersion], ['Full'])
 
 ### <a name="valid-uses"></a>유효한 용도
 
-참조 함수는 리소스 정의의 속성과 템플릿 또는 배포의 출력 섹션에서만 사용할 수 있습니다. [속성 반복](create-multiple-instances.md#property-iteration)에 사용 되는 경우 식이 리소스 속성에 할당 되기 때문에 `input`에 대 한 참조 함수를 사용할 수 있습니다. 참조 함수가 확인 되기 전에 개수를 결정 해야 하므로 `count`와 함께 사용할 수 없습니다.
+참조 함수는 리소스 정의의 속성과 템플릿 또는 배포의 출력 섹션에서만 사용할 수 있습니다. [속성 반복](copy-properties.md)에 사용 되는 경우 식이 리소스 속성에 할당 되기 때문에 `input`에 대 한 참조 함수를 사용할 수 있습니다. 참조 함수가 확인 되기 전에 개수를 결정 해야 하므로 `count`와 함께 사용할 수 없습니다.
 
 중첩 된 템플릿의 출력에는 reference 함수를 [사용 하 여](linked-templates.md#nested-template) 중첩 된 템플릿에 배포한 리소스를 반환할 수 없습니다. 대신, [연결 된 템플릿을](linked-templates.md#linked-template)사용 합니다.
 
@@ -530,7 +530,7 @@ reference(resourceName or resourceIdentifier, [apiVersion], ['Full'])
 
 **{resource-공급자-네임 스페이스}/{parent-source-type}/{parent-source-name} [/>**
 
-예를 들면 다음과 같습니다.
+다음은 그 예입니다.
 
 `Microsoft.Compute/virtualMachines/myVM/extensions/myExt`는 올바릅니다. `Microsoft.Compute/virtualMachines/extensions/myVM/myExt`는 올바르지 않습니다.
 
@@ -695,7 +695,7 @@ resourceGroup()
 
 **ManagedBy** 속성은 다른 서비스에서 관리 하는 리소스를 포함 하는 리소스 그룹에 대해서만 반환 됩니다. 관리 되는 응용 프로그램, Databricks 및 AKS의 경우 속성 값은 관리 리소스의 리소스 ID입니다.
 
-### <a name="remarks"></a>주의
+### <a name="remarks"></a>설명
 
 `resourceGroup()` 함수는 [구독 수준에서 배포](deploy-to-subscription.md)된 템플릿에서 사용할 수 없습니다. 리소스 그룹에 배포된 템플릿에서만 사용할 수 있습니다. 부모 템플릿이 구독에 배포 되는 경우에도 리소스 그룹을 대상으로 하는 [연결 된 템플릿 또는 중첩 된 템플릿 (내부 범위 포함)](linked-templates.md) 에서 `resourceGroup()` 함수를 사용할 수 있습니다. 이 시나리오에서는 연결 된 템플릿이나 중첩 된 템플릿이 리소스 그룹 수준에서 배포 됩니다. 구독 수준 배포에서 리소스 그룹을 대상으로 지정 하는 방법에 대 한 자세한 내용은 둘 [이상의 구독 또는 리소스 그룹에 Azure 리소스 배포](cross-resource-group-deployment.md)를 참조 하세요.
 
@@ -752,23 +752,23 @@ resourceGroup 함수는 일반적으로 리소스 그룹과 동일한 위치에 
 resourceId([subscriptionId], [resourceGroupName], resourceType, resourceName1, [resourceName2], ...)
 ```
 
-리소스의 고유 식별자를 반환합니다. 리소스 이름이 모호하거나 동일한 템플릿 내에서 프로비전되지 않은 경우 이 함수를 사용합니다.
+리소스의 고유 식별자를 반환합니다. 리소스 이름이 모호하거나 동일한 템플릿 내에서 프로비전되지 않은 경우 이 함수를 사용합니다. 반환 된 식별자의 형식은 리소스 그룹, 구독, 관리 그룹 또는 테 넌 트의 범위에서 배포가 발생 하는지 여부에 따라 달라 집니다.
 
 ### <a name="parameters"></a>매개 변수
 
-| 매개 변수 | 필수 | 형식 | 설명 |
+| 매개 변수 | 필수 | Type | Description |
 |:--- |:--- |:--- |:--- |
-| subscriptionId |아니요 |문자열(GUID 형식) |기본값은 현재 구독입니다. 다른 구독에서 리소스를 검색해야 하는 경우 이 값을 지정합니다. |
-| resourceGroupName |아니요 |string |기본값은 현재 리소스 그룹입니다. 다른 리소스 그룹에서 리소스를 검색해야 하는 경우 이 값을 지정합니다. |
-| resourceType |예 |string |리소스 공급자 네임스페이스를 포함하는 리소스 유형입니다. |
-| resourceName1 |예 |string |리소스의 이름입니다. |
-| resourceName2 |아니요 |string |필요한 경우 다음 리소스 이름 세그먼트입니다. |
+| subscriptionId |예 |문자열(GUID 형식) |기본값은 현재 구독입니다. 다른 구독에서 리소스를 검색해야 하는 경우 이 값을 지정합니다. 리소스 그룹 또는 구독의 범위에서 배포 하는 경우에만이 값을 제공 합니다. |
+| resourceGroupName |예 |문자열 |기본값은 현재 리소스 그룹입니다. 다른 리소스 그룹에서 리소스를 검색해야 하는 경우 이 값을 지정합니다. 리소스 그룹의 범위에 배포 하는 경우에만이 값을 제공 합니다. |
+| resourceType |yes |문자열 |리소스 공급자 네임스페이스를 포함하는 리소스 유형입니다. |
+| resourceName1 |yes |문자열 |리소스의 이름입니다. |
+| resourceName2 |예 |문자열 |필요한 경우 다음 리소스 이름 세그먼트입니다. |
 
 리소스 형식에 더 많은 세그먼트가 포함 된 경우 리소스 이름을 매개 변수로 계속 추가 합니다.
 
 ### <a name="return-value"></a>반환 값
 
-리소스 ID는 다음 형식으로 반환 됩니다.
+템플릿이 리소스 그룹의 범위에 배포 될 때 리소스 ID는 다음 형식으로 반환 됩니다.
 
 ```json
 /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
@@ -780,13 +780,19 @@ resourceId([subscriptionId], [resourceGroupName], resourceType, resourceName1, [
 /subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
 ```
 
+[관리 그룹 수준 배포](deploy-to-management-group.md) 또는 테 넌 트 수준 배포에 사용 되는 경우 리소스 ID는 다음 형식으로 반환 됩니다.
+
+```json
+/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+```
+
 ID를 다른 형식으로 가져오려면 다음을 참조 하세요.
 
 * [extensionResourceId](#extensionresourceid)
 * [subscriptionResourceId](#subscriptionresourceid)
 * [tenantResourceId](#tenantresourceid)
 
-### <a name="remarks"></a>주의
+### <a name="remarks"></a>설명
 
 제공 하는 매개 변수 수는 리소스가 부모 또는 자식 리소스 인지 여부와 리소스가 동일한 구독 또는 리소스 그룹에 있는지 여부에 따라 달라 집니다.
 
@@ -890,14 +896,14 @@ ID를 다른 형식으로 가져오려면 다음을 참조 하세요.
 
 기본 값을 사용한 이전 예제의 출력은 다음과 같습니다.
 
-| 이름 | 형식 | 값 |
+| 속성 | Type | 값 |
 | ---- | ---- | ----- |
 | sameRGOutput | String | /subscriptions/{current-sub-id}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
 | differentRGOutput | String | /subscriptions/{current-sub-id}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
 | differentSubOutput | String | /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
 | nestedResourceOutput | String | /subscriptions/{current-sub-id}/resourceGroups/examplegroup/providers/Microsoft.SQL/servers/serverName/databases/databaseName |
 
-## <a name="subscription"></a>구독
+## <a name="subscription"></a>subscription
 
 ```json
 subscription()
@@ -918,7 +924,7 @@ subscription()
 }
 ```
 
-### <a name="remarks"></a>주의
+### <a name="remarks"></a>설명
 
 중첩 된 템플릿을 사용 하 여 여러 구독에 배포 하는 경우 구독 함수를 평가 하는 범위를 지정할 수 있습니다. 자세한 내용은 [둘 이상의 구독 또는 리소스 그룹에 Azure 리소스 배포](cross-resource-group-deployment.md)를 참조하세요.
 
@@ -950,12 +956,12 @@ subscriptionResourceId([subscriptionId], resourceType, resourceName1, [resourceN
 
 ### <a name="parameters"></a>매개 변수
 
-| 매개 변수 | 필수 | 형식 | 설명 |
+| 매개 변수 | 필수 | Type | Description |
 |:--- |:--- |:--- |:--- |
-| subscriptionId |아니요 |문자열 (GUID 형식) |기본값은 현재 구독입니다. 다른 구독에서 리소스를 검색해야 하는 경우 이 값을 지정합니다. |
-| resourceType |예 |string |리소스 공급자 네임스페이스를 포함하는 리소스 유형입니다. |
-| resourceName1 |예 |string |리소스의 이름입니다. |
-| resourceName2 |아니요 |string |필요한 경우 다음 리소스 이름 세그먼트입니다. |
+| subscriptionId |예 |문자열 (GUID 형식) |기본값은 현재 구독입니다. 다른 구독에서 리소스를 검색해야 하는 경우 이 값을 지정합니다. |
+| resourceType |yes |문자열 |리소스 공급자 네임스페이스를 포함하는 리소스 유형입니다. |
+| resourceName1 |yes |문자열 |리소스의 이름입니다. |
+| resourceName2 |예 |문자열 |필요한 경우 다음 리소스 이름 세그먼트입니다. |
 
 리소스 형식에 더 많은 세그먼트가 포함 된 경우 리소스 이름을 매개 변수로 계속 추가 합니다.
 
@@ -967,7 +973,7 @@ subscriptionResourceId([subscriptionId], resourceType, resourceName1, [resourceN
 /subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
 ```
 
-### <a name="remarks"></a>주의
+### <a name="remarks"></a>설명
 
 이 함수를 사용 하 여 리소스 그룹이 아닌 [구독에 배포](deploy-to-subscription.md) 되는 리소스에 대 한 리소스 ID를 가져올 수 있습니다. 반환 된 ID는 리소스 그룹 값을 포함 하지 않고 [resourceId](#resourceid) 함수에서 반환 하는 값과 다릅니다.
 
@@ -1034,11 +1040,11 @@ tenantResourceId(resourceType, resourceName1, [resourceName2], ...)
 
 ### <a name="parameters"></a>매개 변수
 
-| 매개 변수 | 필수 | 형식 | 설명 |
+| 매개 변수 | 필수 | Type | Description |
 |:--- |:--- |:--- |:--- |
-| resourceType |예 |string |리소스 공급자 네임스페이스를 포함하는 리소스 유형입니다. |
-| resourceName1 |예 |string |리소스의 이름입니다. |
-| resourceName2 |아니요 |string |필요한 경우 다음 리소스 이름 세그먼트입니다. |
+| resourceType |yes |문자열 |리소스 공급자 네임스페이스를 포함하는 리소스 유형입니다. |
+| resourceName1 |yes |문자열 |리소스의 이름입니다. |
+| resourceName2 |예 |문자열 |필요한 경우 다음 리소스 이름 세그먼트입니다. |
 
 리소스 형식에 더 많은 세그먼트가 포함 된 경우 리소스 이름을 매개 변수로 계속 추가 합니다.
 
@@ -1050,7 +1056,7 @@ tenantResourceId(resourceType, resourceName1, [resourceName2], ...)
 /providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
 ```
 
-### <a name="remarks"></a>주의
+### <a name="remarks"></a>설명
 
 이 함수를 사용 하 여 테 넌 트에 배포 된 리소스에 대 한 리소스 ID를 가져옵니다. 반환 된 ID는 리소스 그룹 또는 구독 값을 포함 하지 않는 다른 리소스 ID 함수에서 반환 하는 값과 다릅니다.
 
@@ -1058,6 +1064,6 @@ tenantResourceId(resourceType, resourceName1, [resourceName2], ...)
 
 * Azure Resource Manager 템플릿의 섹션에 대한 설명은 [Azure Resource Manager 템플릿 작성](template-syntax.md)을 참조하세요.
 * 여러 템플릿을 병합하려면 [Azure Resource Manager에서 연결된 템플릿 사용](linked-templates.md)을 참조하세요.
-* 리소스 유형을 만들 때 지정된 횟수만큼 반복하려면 [Azure 리소스 관리자에서 리소스의 여러 인스턴스 만들기](create-multiple-instances.md)를 참조하세요.
+* 리소스 유형을 만들 때 지정된 횟수만큼 반복하려면 [Azure 리소스 관리자에서 리소스의 여러 인스턴스 만들기](copy-resources.md)를 참조하세요.
 * 만든 템플릿을 배포하는 방법을 보려면 [Azure Resource Manager 템플릿을 사용하여 애플리케이션 배포](deploy-powershell.md)를 참조하세요.
 

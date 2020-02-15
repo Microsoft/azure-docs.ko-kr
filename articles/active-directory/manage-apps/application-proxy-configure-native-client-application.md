@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cbee6bfcca3ddb356abe9dceab2fca07c152b07
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 3d2a2bb9dd543da7455a276075a829ef06032edb
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73961801"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159287"
 ---
 # <a name="how-to-enable-native-client-applications-to-interact-with-proxy-applications"></a>네이티브 클라이언트 응용 프로그램을 사용 하 여 프록시 응용 프로그램과 상호 작용 하는 방법
 
@@ -31,7 +31,7 @@ Azure Active Directory (Azure AD) 응용 프로그램 프록시를 사용 하 �
 
 ![최종 사용자, Azure AD 및 게시 된 응용 프로그램 간의 관계](./media/application-proxy-configure-native-client-application/richclientflow.png)
 
-네이티브 응용 프로그램을 게시 하려면 인증을 처리 하 고 많은 클라이언트 환경을 지 원하는 Azure AD 인증 라이브러리를 사용 합니다. 애플리케이션 프록시는 [Web API 시나리오에 대한 네이티브 애플리케이션](../develop/native-app.md)에 맞습니다.
+네이티브 응용 프로그램을 게시 하려면 인증을 처리 하 고 많은 클라이언트 환경을 지 원하는 Azure AD 인증 라이브러리를 사용 합니다. 애플리케이션 프록시는 [Web API 시나리오에 대한 네이티브 애플리케이션](../azuread-dev/native-app.md)에 맞습니다.
 
 이 문서에서는 애플리케이션 프록시 및 Azure AD 인증 라이브러리를 사용하여 네이티브 애플리케이션을 게시하는 네 가지 단계를 안내합니다.
 
@@ -60,7 +60,7 @@ Azure Active Directory (Azure AD) 응용 프로그램 프록시를 사용 하 �
 1. **URI 리디렉션** 제목에서 **공용 클라이언트 (모바일 & 데스크톱)** 를 선택 하 고 응용 프로그램에 대 한 리디렉션 URI를 입력 합니다.
 1. **Microsoft Platform 정책을**선택 하 고 읽은 다음 **등록**을 선택 합니다. 새 응용 프로그램 등록에 대 한 개요 페이지가 생성 되 고 표시 됩니다.
 
-새 응용 프로그램 등록을 만드는 방법에 대 한 자세한 내용은 [Azure Active Directory와 응용 프로그램 통합](../develop/quickstart-v1-integrate-apps-with-azure-ad.md)을 참조 하세요.
+새 응용 프로그램 등록을 만드는 방법에 대 한 자세한 내용은 [Azure Active Directory와 응용 프로그램 통합](../develop/quickstart-register-app.md)을 참조 하세요.
 
 ## <a name="step-3-grant-access-to-your-proxy-application"></a>3 단계: 프록시 응용 프로그램에 대 한 액세스 권한 부여
 
@@ -105,6 +105,6 @@ HttpResponseMessage response = await httpClient.GetAsync("< Proxy App API Url >"
 
 ## <a name="next-steps"></a>다음 단계
 
-네이티브 응용 프로그램 흐름에 대 한 자세한 내용은 [Azure Active Directory의 네이티브 앱](../develop/native-app.md)을 참조 하세요.
+네이티브 응용 프로그램 흐름에 대 한 자세한 내용은 [Azure Active Directory의 네이티브 앱](../azuread-dev/native-app.md)을 참조 하세요.
 
 [Azure Active Directory에서 응용 프로그램에 대 한 Single sign-on을 설정 하](what-is-single-sign-on.md#choosing-a-single-sign-on-method)는 방법에 대해 알아봅니다.

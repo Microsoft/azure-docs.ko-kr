@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: nigu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5846934a8ad8455ca375b4bc54fc46d45aba1cd
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: aeb2e98ad9bbd35f3ec507e36e958c5ce6ad2198
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74379986"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77185874"
 ---
 # <a name="troubleshoot-using-the-what-if-tool-in-conditional-access"></a>조건부 액세스에서 What If 도구를 사용 하 여 문제 해결
 
@@ -72,11 +72,11 @@ IP 주소는 [위치 조건](location-condition.md)을 모방하기 위한 단�
 
 ### <a name="device-platforms"></a>디바이스 플랫폼
 
-이 설정은 [디바이스 플랫폼 조건](conditions.md#device-platforms)을 모방하며, **모든 플랫폼(비지원 플랫폼 포함)** 과 같은 설정을 나타냅니다. 
+이 설정은 [디바이스 플랫폼 조건](concept-conditional-access-conditions.md#device-platforms)을 모방하며, **모든 플랫폼(비지원 플랫폼 포함)** 과 같은 설정을 나타냅니다. 
 
 ### <a name="client-apps"></a>클라이언트 앱
 
-이 설정은 [클라이언트 앱 조건](conditions.md#client-apps)을 모방합니다.
+이 설정은 [클라이언트 앱 조건](concept-conditional-access-conditions.md#client-apps-preview)을 모방합니다.
 기본적으로 이 설정을 사용하면 **브라우저** 또는 **모바일 앱 및 데스크톱 클라이언트**가 따로 또는 둘 다 선택되어 있는 모든 정책이 평가됩니다. 또한 **EAS(Exchange ActiveSync)** 를 적용하는 정책도 감지됩니다. 다음을 선택하여 이 설정의 범위를 좁힐 수 있습니다.
 
 - **브라우저**: 하나 이상의 **브라우저**가 선택된 모든 정책을 평가합니다. 
@@ -84,9 +84,9 @@ IP 주소는 [위치 조건](location-condition.md)을 모방하기 위한 단�
 
 ### <a name="sign-in-risk"></a>로그인 위험
 
-이 설정은 [로그인 위험 조건](conditions.md#sign-in-risk)을 모방합니다.   
+이 설정은 [로그인 위험 조건](concept-conditional-access-conditions.md#sign-in-risk)을 모방합니다.   
 
-## <a name="evaluation"></a>Evaluation 
+## <a name="evaluation"></a>평가 
 
 **What If**를 클릭 하 여 평가를 시작 합니다. 평가 결과는 다음으로 구성된 보고서를 제공합니다. 
 

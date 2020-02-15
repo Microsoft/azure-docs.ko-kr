@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c83aa6e476bbd898999fb6efe490c7847a809ff
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 0d770336099611d69fa9e44d04fff4dd37696707
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74382165"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120117"
 ---
 # <a name="azure-active-directory-identity-protection-notifications"></a>Azure Active Directory ID 보호 알림
 
@@ -26,6 +26,9 @@ Azure AD ID 보호는 사용자 위험 및 위험 검색을 관리 하는 데 �
 - 주간 다이제스트 전자 메일
 
 이 문서에는 두 알림 전자 메일의 개요가 나와 있습니다.
+
+>[!NOTE]
+>이메일 알림은 공용 클라우드에서만 사용할 수 있으며 미국 정부 클라우드에서는 현재 사용할 수 없습니다.
 
 ## <a name="users-at-risk-detected-email"></a>위험에 노출된 사용자가 검색된 전자 메일
 
@@ -65,6 +68,6 @@ Azure AD ID 보호는 사용자 위험 및 위험 검색을 관리 하는 데 �
 
 **Azure Active Directory** > **보안** > **id 보호** > **주간 다이제스트**의 **Azure Portal** 에서 주별 다이제스트 전자 메일을 구성 합니다.
 
-## <a name="see-also"></a>참고자료
+## <a name="see-also"></a>참고 항목
 
 - [Azure Active Directory ID 보호](../active-directory-identityprotection.md)

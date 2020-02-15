@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/15/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: d2dbe29c5a348363172f57da86483ccf3fd787f0
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: 483603b8ff2f4b51f85d21d6ff4f02ad6f8a8272
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76046089"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162092"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Azure 파일 동기화 배포에 대한 계획
 Azure 파일 동기화를 사용하여 온-프레미스 파일 서버의 유연성, 성능 및 호환성을 유지하면서 Azure Files에서 조직의 파일 공유를 중앙 집중화할 수 있습니다. Azure 파일 동기화는 Windows Server를 Azure 파일 공유의 빠른 캐시로 변환합니다. SMB, NFS 및 FTPS를 포함하여 로컬로 데이터에 액세스하기 위해 Windows Server에서 사용할 수 있는 모든 프로토콜을 사용할 수 있습니다. 전 세계에서 필요한 만큼 많은 캐시를 가질 수 있습니다.
@@ -73,7 +73,7 @@ Azure File Sync를 배포 하기 전에 Azure File Sync evaluation cmdlet을 사
 
 [Azure PowerShell 설치 및 구성](https://docs.microsoft.com/powershell/azure/install-Az-ps)지침에 따라 설치할 수 있는 Az PowerShell module을 설치 하 여 evaluation cmdlet을 설치할 수 있습니다.
 
-#### <a name="usage"></a>사용량  
+#### <a name="usage"></a>사용  
 평가 도구는 몇 가지 다른 방법으로 호출할 수 있습니다. 즉 시스템 검사, 데이터 세트 검사 또는 둘 다를 수행할 수 있습니다. 시스템 검사 및 데이터 세트 검사를 모두 수행하려면 다음을 수행합니다. 
 
 ```powershell
@@ -106,7 +106,7 @@ Azure File Sync를 배포 하기 전에 Azure File Sync evaluation cmdlet을 사
     | Windows Server 2012 R2 | Datacenter 및 Standard | 전체 및 코어 |
     | 저장소에 대 한 Windows Server IoT 2019| Datacenter 및 Standard | 전체 및 코어 |
     | Windows Storage Server 2016| Datacenter 및 Standard | 전체 및 코어 |
-    | Windows  Storage  Server  2012  R2| Datacenter 및 Standard | 전체 및 코어 |
+    | Windows Storage Server 2012 R2| Datacenter 및 Standard | 전체 및 코어 |
 
     이후 버전의 Windows Server는 출시되면 추가될 예정입니다.
 
@@ -246,15 +246,15 @@ Azure 파일 동기화와 함께 작동하지 않는 기능
 ### <a name="other-hierarchical-storage-management-hsm-solutions"></a>다른 HSM(계층적 스토리지 관리) 솔루션
 다른 HSM 솔루션은 Azure 파일 동기화와 함께 사용하면 안 됩니다.
 
-## <a name="region-availability"></a>리전 가용성
+## <a name="region-availability"></a>지역 가용성
 Azure 파일 동기화는 다음 지역에서만 사용할 수 있습니다.
 
 | 지역 | 데이터 센터 위치 |
 |--------|---------------------|
 | 오스트레일리아 동부 | 뉴사우스웨일스 |
 | 오스트레일리아 남동부 | 빅토리아 |
-| 브라질 남부 | 상파울루 주 |
-| 캐나다 중부 | 토론토 |
+| 브라질 남부 | 상 파울로 상태 |
+| 캐나다 중부 | Toronto |
 | 캐나다 동부 | 퀘벡 시티 |
 | 인도 중부 | 푸네 |
 | 미국 중부 | 아이오와 |
@@ -262,7 +262,7 @@ Azure 파일 동기화는 다음 지역에서만 사용할 수 있습니다.
 | 미국 동부 | 버지니아 |
 | 미국 동부2 | 버지니아 |
 | 프랑스 중부 | 파리 |
-| 프랑스 남부 * | 마르세유 |
+| 프랑스 남부 * | 마르세유에 |
 | 한국 중부 | 서울 |
 | 한국 남부 | 부산 |
 | 일본 동부 | 도쿄, 사이타마 |
@@ -270,16 +270,16 @@ Azure 파일 동기화는 다음 지역에서만 사용할 수 있습니다.
 | 미국 중북부 | 일리노이 |
 | 북유럽 | 아일랜드 |
 | 남아프리카 북부 | 요하네스버그 |
-| 남아프리카 공화국 * | 케이프타운 |
+| 남아프리카 공화국 * | 카보베르데 |
 | 미국 중남부 | 텍사스 |
 | 인도 남부 | 첸나이 |
 | 동남아시아 | 싱가포르 |
-| 영국 남부 | 런던 |
+| 영국 남부 | London |
 | 영국 서부 | 카디프 |
-| US Gov 애리조나 | 애리조나 |
+| US Gov 애리조나 | Arizona |
 | US Gov 텍사스 | 텍사스 |
 | US Gov 버지니아 | 버지니아 |
-| 아랍에미리트 북부 | 두바이 |
+| 아랍에미리트 북부 | Dubai |
 | 아랍에미리트 중부 * | 아부다비 |
 | 서유럽 | 네덜란드 |
 | 미국 중서부 | 와이오밍 |
@@ -291,7 +291,7 @@ Azure 파일 동기화에서는 Storage 동기화 서비스와 동일한 지역�
 별표로 표시 된 영역의 경우 해당 지역에서 Azure Storage에 대 한 액세스를 요청 하려면 Azure 지원에 문의 해야 합니다. 이 프로세스는 [이 문서](https://azure.microsoft.com/global-infrastructure/geographies/)에 설명 되어 있습니다.
 
 ### <a name="azure-disaster-recovery"></a>Azure 재해 복구
-Azure 지역의 손실에 대해 보호하려면 Azure 파일 동기화가 [GRS(지역 중복 스토리지) 중복](../common/storage-redundancy-grs.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) 옵션과 통합해야 합니다. GRS 스토리지는 일반적으로 상호 작용하는 주 지역의 스토리지 및 쌍을 이루는 보조 지역의 스토리지 간에 비동기 블록 복제를 사용하여 작동합니다. Azure 지역이 일시적 또는 영구적으로 오프 라인으로 전환 되는 재해가 발생 한 경우 Microsoft는 페어링된 지역으로 저장소를 장애 조치 (failover) 합니다. 
+Azure 지역의 손실을 방지 하기 위해 Azure File Sync는 GRS ( [지역 중복 저장소](../common/storage-redundancy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) )와 통합 됩니다. GRS 스토리지는 일반적으로 상호 작용하는 주 지역의 스토리지 및 쌍을 이루는 보조 지역의 스토리지 간에 비동기 블록 복제를 사용하여 작동합니다. Azure 지역이 일시적 또는 영구적으로 오프 라인으로 전환 되는 재해가 발생 한 경우 Microsoft는 페어링된 지역으로 저장소를 장애 조치 (failover) 합니다. 
 
 > [!Warning]  
 > Azure 파일 공유를 GRS 스토리지 계정의 클라우드 엔드포인트로 사용하는 경우 스토리지 계정 장애 조치(failover)를 시작하면 안 됩니다. 이러한 계정을 장애 조치(failover)하면 동기화가 더 이상 진행되지 않고, 새로 계층화된 파일의 경우 예기치 않은 데이터 손실이 발생할 수도 있습니다. Azure 지역이 손실되는 경우 Microsoft는 Azure 파일 동기화와 호환되는 방식으로 스토리지 계정의 장애 조치(failover)를 트리거합니다.

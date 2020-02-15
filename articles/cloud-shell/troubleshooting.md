@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/24/2018
 ms.author: damaerte
-ms.openlocfilehash: db1e2d09c1a75401a8ca24859e9b2d5da9f54b72
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 1d244d7b62fcfefeec6f628f473274ae982bf4d8
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024282"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120218"
 ---
 # <a name="troubleshooting--limitations-of-azure-cloud-shell"></a>Azure Cloud Shell의 문제 해결 및 제한 사항
 
@@ -28,6 +28,11 @@ Azure Cloud Shell의 문제 해결에 대해 알려진 해결 방법은 다음�
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="general-troubleshooting"></a>일반적인 문제 해결
+
+### <a name="error-running-azuread-cmdlets-in-powershell"></a>PowerShell에서 AzureAD cmdlet 실행 중 오류 발생
+
+- **세부 정보**: Cloud Shell에서 `Get-AzureADUser`와 같은 AzureAD cmdlet을 실행 하면 `You must call the Connect-AzureAD cmdlet before calling any other cmdlets`오류가 표시 될 수 있습니다. 
+- **해결**방법: `Connect-AzureAD` cmdlet을 실행 합니다. 이전에는 PowerShell을 시작 하는 동안이 cmdlet을 자동으로 실행 Cloud Shell. 시작 시간을 단축 하기 위해 cmdlet이 더 이상 자동으로 실행 되지 않습니다. PowerShell에서 $PROFILE 파일에 `Connect-AzureAD`를 추가 하 여 이전 동작을 복원 하도록 선택할 수 있습니다.
 
 ### <a name="early-timeouts-in-firefox"></a>FireFox의 조기 시간 초과
 
@@ -99,7 +104,7 @@ Cloud Shell 세션을 제공하는 컴퓨터는 일시적이며 세션이 20분 
 
 - 탑재된 스토리지에서 `clouddrive` 디렉터리 내 수정 사항만 유지됩니다. Bash에서 `$HOME` 디렉터리도 유지됩니다.
 - Azure 파일 공유는 [할당된 지역](persisting-shell-storage.md#mount-a-new-clouddrive) 내에서만 탑재될 수 있습니다.
-  - Bash에서 `ACC_LOCATION`로 설정된 해당 지역을 찾으려면 `env`을 실행합니다.
+  - Bash에서 `env`로 설정된 해당 지역을 찾으려면 `ACC_LOCATION`을 실행합니다.
 - Azure 파일은 로컬 중복 스토리지 및 지역 중복 스토리지 계정만 지원합니다.
 
 ### <a name="browser-support"></a>브라우저 지원
@@ -183,7 +188,7 @@ PowerShell:
   ((Invoke-WebRequest -Uri https://management.azure.com/providers/Microsoft.Portal/usersettings/cloudconsole?api-version=2017-12-01-preview -Headers @{Authorization = "Bearer $token"}).Content | ConvertFrom-Json).properties | Format-List
 ```
 
-### <a name="delete"></a>삭제
+### <a name="delete"></a>DELETE
 사용자 설정을 **삭제하기** 위해 Cloud Shell은 다음 명령을 실행하여 기본 설정된 셸, 글꼴 크기 및 글꼴 종류 등을 저장합니다. 다음 번에 Cloud Shell을 시작하면 파일 공유를 다시 등록할지 묻는 메시지가 표시됩니다. 
 
 >[!Note]

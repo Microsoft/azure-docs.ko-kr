@@ -1,21 +1,21 @@
 ---
 title: 포함 파일
 description: 포함 파일
-services: iot-accelerators
+services: iot-central
 author: dominicbetts
-ms.service: iot-accelerators
+ms.service: iot-central
 ms.topic: include
-ms.date: 02/07/2019
+ms.date: 02/11/2020
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: a810b8c9f1e3a258626382663cbac4b11dfae5f0
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 378b5d0c8344c728433abfdac0bb97bafe0b4d4c
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72950133"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137649"
 ---
 > [!div class="op_single_selector"]
-> * [Portal](../articles/iot-central/core/howto-manage-iot-central-from-portal.md)
+> * [포털](../articles/iot-central/core/howto-manage-iot-central-from-portal.md)
 > * [CLI](../articles/iot-central/core/howto-manage-iot-central-from-cli.md)
 > * [PowerShell](../articles/iot-central/core/howto-manage-iot-central-from-powershell.md)

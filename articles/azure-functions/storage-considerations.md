@@ -3,12 +3,12 @@ title: Azure Functions에 대 한 저장소 고려 사항
 description: Azure Functions 및 저장 된 데이터 암호화에 대 한 저장소 요구 사항을 알아봅니다.
 ms.topic: conceptual
 ms.date: 01/21/2020
-ms.openlocfilehash: 353fdd3bf7775e3bc7a9d017a9e8dd8238b09830
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: f094996ca44ec36d46330e54eac56b28794ef22e
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964983"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190294"
 ---
 # <a name="storage-considerations-for-azure-functions"></a>Azure Functions에 대 한 저장소 고려 사항
 
@@ -17,7 +17,7 @@ Azure Functions 함수 앱 인스턴스를 만들 때 Azure Storage 계정이 �
 
 |저장소 서비스  | 함수 사용  |
 |---------|---------|
-| [Azure Blob Storage](/storage/blobs/storage-blobs-overview.md)     | 바인딩 상태와 기능 키를 유지 관리 합니다.  <br/>[Durable Functions에서 작업 허브](durable/durable-functions-task-hubs.md)에도 사용 됩니다. |
+| [Azure Blob Storage](../storage/blobs/storage-blobs-introduction.md)     | 바인딩 상태와 기능 키를 유지 관리 합니다.  <br/>[Durable Functions에서 작업 허브](durable/durable-functions-task-hubs.md)에도 사용 됩니다. |
 | [Azure 파일](../storage/files/storage-files-introduction.md)  | [소비 계획](functions-scale.md#consumption-plan)에서 함수 앱 코드를 저장 하 고 실행 하는 데 사용 되는 파일 공유입니다. |
 | [Azure Queue storage](../storage/queues/storage-queues-introduction.md)     | [Durable Functions에서 작업 허브에](durable/durable-functions-task-hubs.md)사용 됩니다.   |
 | [Azure Table Storage](../storage/tables/table-storage-overview.md)  |  [Durable Functions에서 작업 허브에](durable/durable-functions-task-hubs.md)사용 됩니다.       |

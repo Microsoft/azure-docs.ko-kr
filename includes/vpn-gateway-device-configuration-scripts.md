@@ -5,15 +5,15 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 01/09/2019
+ms.date: 02/07/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 78dfd57fba6365f9c8937b30b5cf96b840749c68
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: e84a77629026bb8885a48b8ed928699825f07115
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67182073"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77111247"
 ---
 | **공급업체** | **디바이스 패밀리** | **펌웨어 버전** |
 | --- | --- | --- |
@@ -28,5 +28,5 @@ ms.locfileid: "67182073"
 |Ubiquiti| EdgeRouter| EdgeOS v1.10x RouteBased BGP|
 
 > [!NOTE]
-> (*) 필수: NarrowAzureTrafficSelectors(UsePolicyBasedTrafficSelectors 옵션 사용 설정) 및 CustomAzurePolicies(IKE/IPsec)
+> ( * ) 필수: NarrowAzureTrafficSelectors (UsePolicyBasedTrafficSelectors 옵션 사용) 및 CustomAzurePolicies (IKE/IPsec)
 >

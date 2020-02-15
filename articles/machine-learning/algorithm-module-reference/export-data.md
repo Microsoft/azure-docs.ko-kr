@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 10/22/2019
-ms.openlocfilehash: c83bfc4a3ec8d1163669f28dfde64c63e7c6ff89
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 11f5bd7f01e142273509ae59ddc19a2557464bde
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76775082"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152315"
 ---
 # <a name="export-data-module"></a>데이터 내보내기 모듈
 
@@ -26,7 +26,7 @@ ms.locfileid: "76775082"
 
 - Azure Blob 컨테이너
 - Azure 파일 공유
-- Azure Data Lake
+- Azure 데이터 레이크
 - Azure Data Lake Gen2
 
 데이터를 내보내기 전에 먼저 Azure Machine Learning 작업 영역에 데이터 저장소를 등록 해야 합니다. 자세한 내용은 [Azure storage 서비스에서 데이터 액세스](../how-to-access-data.md)를 참조 하세요.

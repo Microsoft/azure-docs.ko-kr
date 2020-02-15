@@ -4,12 +4,12 @@ description: Azure Portal을 사용하여 복구 지점에서 Azure Virtual Mach
 ms.reviewer: geg
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.openlocfilehash: 23e34d65a06f5fbf3ad8ce53311862c680ddebd0
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: d70db384101d838b2b65707090577156daa59b9a
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77021987"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138051"
 ---
 # <a name="how-to-restore-azure-vm-data-in-azure-portal"></a>Azure Portal에서 Azure VM 데이터를 복원 하는 방법
 
@@ -27,7 +27,7 @@ Azure Backup은 VM을 복원하는 다양한 방법을 제공합니다.
 **지역 간 (보조 지역)** | 지역 간 복원은 [azure 쌍을 이루는 지역](https://docs.microsoft.com/azure/best-practices-availability-paired-regions#what-are-paired-regions)인 보조 지역에서 azure vm을 복원 하는 데 사용할 수 있습니다.<br><br> 백업이 보조 지역에서 수행 되는 경우 선택한 복구 지점에 대 한 모든 Azure Vm을 복원할 수 있습니다.<br><br> 이 기능은 아래 옵션에 사용할 수 있습니다.<br> [VM을 만드는](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#create-a-vm) *  <br> * [복원 디스크](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#restore-disks) <br><br> 현재 [기존 디스크 바꾸기](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#replace-existing-disks) 옵션을 지원 하지 않습니다.<br><br> 권한<br> 보조 지역에 대 한 복원 작업은 Backup Admins 및 App Admins를 통해 수행할 수 있습니다.
 
 > [!NOTE]
-> Azure VM에서 특정 파일과 폴더를 복구할 수도 있습니다. [자세히 알아보기](backup-azure-restore-files-from-vm.md).
+> Azure VM에서 특정 파일과 폴더를 복구할 수도 있습니다. [자세히 알아봅니다](backup-azure-restore-files-from-vm.md).
 >
 > Azure VM에 대해 [최신 버전](backup-instant-restore-capability.md)의 Azure Backup을 실행하는 경우(즉시 복원이라고 함), 스냅샷은 최대 7일 동안 유지되며 백업 데이터를 자격 증명 모음으로 보내기 전에 스냅샷에서 VM을 복원할 수 있습니다. 지난 7일간의 백업에서 VM을 복원하려면 자격 증명 모음이 아니라 스냅샷에서 복원하는 것이 더 빠릅니다.
 
@@ -45,7 +45,7 @@ Azure Backup은 VM을 복원하는 다양한 방법을 제공합니다.
   - Premium이 아닌 Vm을 복원 하는 경우 premium storage 계정은 지원 되지 않습니다.
   - 관리 Vm을 복원 하는 경우 네트워크 규칙으로 구성 된 premium storage 계정은 지원 되지 않습니다.
 
-## <a name="before-you-start"></a>시작하기 전에
+## <a name="before-you-start"></a>시작하기 전 확인 사항
 
 Vm을 복원 하려면 (새 VM 만들기) VM 복원 작업에 대 한 올바른 RBAC (역할 기반 액세스 제어) [권한이](backup-rbac-rs-vault.md#mapping-backup-built-in-roles-to-backup-management-actions) 있는지 확인 합니다.
 
@@ -79,7 +79,7 @@ Vm을 복원 하려면 (새 VM 만들기) VM 복원 작업에 대 한 올바른 
 2. **가상 컴퓨터 이름**에 구독에 존재 하지 않는 VM을 지정 합니다.
 3. **리소스 그룹**에서 새 VM에 대해 기존 리소스 그룹을 선택하거나, 새 리소스 그룹을 전역 고유 이름으로 만듭니다. 이미 있는 이름을 할당하면 Azure에서 VM과 동일한 이름을 그룹에 할당합니다.
 4. **가상 네트워크**에서 VM을 배치할 VNet를 선택합니다. 구독과 연관된 모든 VNet가 표시됩니다. 서브넷을 선택합니다. 기본적으로 첫 번째 서브넷이 선택됩니다.
-5. **저장소 위치**에서 VM에 대 한 저장소 계정을 지정 합니다. [자세히 알아보기](#storage-accounts).
+5. **저장소 위치**에서 VM에 대 한 저장소 계정을 지정 합니다. [자세히 알아봅니다](#storage-accounts).
 
     ![복원 구성 마법사](./media/backup-azure-arm-restore-vms/recovery-configuration-wizard1.png)
 
@@ -95,7 +95,7 @@ Vm을 복원 하려면 (새 VM 만들기) VM 복원 작업에 대 한 올바른 
 
 1. **복원 구성** > **새로 만들기** > **복원 유형**에서 **복원 디스크**를 선택합니다.
 2. **리소스 그룹**에서 복원된 디스크에 대해 기존 리소스 그룹을 선택하거나, 새 리소스 그룹을 전역 고유 이름으로 만듭니다.
-3. **스토리지 계정**에서 VHD를 복사할 계정을 지정합니다. [자세히 알아보기](#storage-accounts).
+3. **스토리지 계정**에서 VHD를 복사할 계정을 지정합니다. [자세히 알아봅니다](#storage-accounts).
 
     ![복구 구성 완료](./media/backup-azure-arm-restore-vms/trigger-restore-operation1.png)
 
@@ -130,7 +130,7 @@ Vm을 복원 하려면 (새 VM 만들기) VM 복원 작업에 대 한 올바른 
 
 1. **복원 구성**에서 **기존 항목 바꾸기**를 클릭합니다.
 2. **복원 유형**에서 **디스크 바꾸기**를 선택합니다. 이는 기존 VM 디스크를 바꾸는 데 사용할 복원 지점입니다.
-3. **준비 위치**에서 복원 프로세스 중에 현재 관리 디스크의 스냅숏을 저장 해야 하는 위치를 지정 합니다. [자세히 알아보기](#storage-accounts).
+3. **준비 위치**에서 복원 프로세스 중에 현재 관리 디스크의 스냅숏을 저장 해야 하는 위치를 지정 합니다. [자세히 알아봅니다](#storage-accounts).
 
    ![기존 항목을 바꾸는 구성 복원 마법사](./media/backup-azure-arm-restore-vms/restore-configuration-replace-existing.png)
 
@@ -168,6 +168,9 @@ CRR을 사용 하는 경우 보조 지역에서 백업 항목을 볼 수 있습�
 - VM을 복원 하 고 만들려면 [Vm 만들기](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#create-a-vm)를 참조 하세요.
 - 디스크로 복원 하려면 [디스크 복원](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#restore-disks)을 참조 하세요.
 
+>[!NOTE]
+>복원이 트리거되고 데이터 전송 단계에서는 복원 작업을 취소할 수 없습니다.
+
 ### <a name="monitoring-secondary-region-restore-jobs"></a>보조 지역 복원 작업 모니터링
 
 1. 포털에서 **Recovery Services 자격 증명 모음** > **백업 작업** 으로 이동 합니다.
@@ -183,7 +186,7 @@ VM을 복원해야 하는 일반적인 시나리오는 여러 가지가 있습�
 --- | ---
 **하이브리드 사용 혜택을 사용하여 VM 복원** | Windows VM에서 [HUB(하이브리드 사용 혜택) 라이선스](../virtual-machines/windows/hybrid-use-benefit-licensing.md)를 사용하는 경우, 디스크를 복원하고 제공된 템플릿(**라이선스 유형** 이 **Windows_Server**로 설정됨) 또는 PowerShell을 사용하여 새 VM을 만듭니다.  이 설정은 VM을 만든 후에 적용할 수도 있습니다.
 **Azure 데이터 센터 재해 중 VM 복원** | 자격 증명 모음에서 GRS를 사용하고 VM에 대한 기본 데이터 센터의 작동이 중단되면, Azure Backup에서 쌍을 이루는 데이터 센터로 백업된 VM을 복원할 수 있습니다. 쌍을 이루는 데이터 센터에서 스토리지 계정을 선택하고 정상적으로 복원합니다. Azure Backup는 쌍을 이루는 지역에서 계산 서비스를 사용 하 여 복원 된 VM을 만듭니다. 데이터 센터 복원력에 대해 [자세히 알아보세요](../resiliency/resiliency-technical-guidance-recovery-loss-azure-region.md).
-**단일 도메인에서 단일 도메인 컨트롤러 VM 복원** | 다른 VM과 마찬가지로 VM을 복원합니다. 다음 사항에 유의하세요.<br/><br/> Active Directory 관점에서 Azure VM은 다른 VM과 비슷합니다.<br/><br/> Active Directory 복원 모드(DSRM)도 사용할 수 있으므로 모든 Directory Services 복원 모드를 실행할 수 있습니다. 가상화된 도메인 컨트롤러에 대한 백업 및 복원 고려 사항에 대해 [자세히 알아보세요](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#post-restore-steps).
+**단일 도메인에서 단일 도메인 컨트롤러 VM 복원** | 다른 VM과 마찬가지로 VM을 복원합니다. 다음 사항에 유의합니다.<br/><br/> Active Directory 관점에서 Azure VM은 다른 VM과 비슷합니다.<br/><br/> Active Directory 복원 모드(DSRM)도 사용할 수 있으므로 모든 Directory Services 복원 모드를 실행할 수 있습니다. 가상화된 도메인 컨트롤러에 대한 백업 및 복원 고려 사항에 대해 [자세히 알아보세요](https://docs.microsoft.com/azure/backup/backup-azure-arm-restore-vms#post-restore-steps).
 **단일 도메인에서 여러 도메인 컨트롤러 VM 복원** | 네트워크를 통해 동일한 도메인의 다른 도메인 컨트롤러에 연결할 수 있는 경우에는 모든 VM 처럼 도메인 컨트롤러를 복원할 수 있습니다. 도메인에서 마지막으로 남아 있는 도메인 컨트롤러이거나 격리된 네트워크에서 복구가 수행되면 [포리스트 복구](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/ad-forest-recovery-single-domain-in-multidomain-recovery)를 사용합니다.
 **단일 포리스트에 여러 도메인 복원** | [포리스트 복구](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/ad-forest-recovery-single-domain-in-multidomain-recovery)를 사용하는 것이 좋습니다.
 **완전 복원** | Azure VM과 온-프레미스 하이퍼바이저의 주요 차이점은 Azure에서 사용할 수 있는 VM 콘솔이 없다는 것입니다. BMR(완전 복구) 유형 백업을 사용한 복구와 같은 특정 시나리오에서는 콘솔이 필요합니다. 하지만 자격 증명 모음의 VM 복원이 BMR로 완전히 대체됩니다.

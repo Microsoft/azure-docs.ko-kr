@@ -1,29 +1,29 @@
 ---
 title: Android maps에 타일 계층 추가 | Microsoft Azure 맵
 description: 이 문서에서는 Microsoft Azure Maps Android SDK를 사용 하 여 지도에서 타일 계층을 렌더링 하는 방법을 알아봅니다.
-author: walsehgal
-ms.author: v-musehg
+author: farah-alyasari
+ms.author: v-faalya
 ms.date: 04/26/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: e54eeaa6dafd60e5fc481f2f4b45929edda77c44
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 8e1a77ae83783b2841a2600654a9775e9ceb6ada
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75911521"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209939"
 ---
 # <a name="add-a-tile-layer-to-a-map-using-the-azure-maps-android-sdk"></a>Azure Maps Android SDK를 사용 하 여 지도에 타일 계층 추가
 
 이 문서에서는 Azure Maps Android SDK를 사용 하 여 지도에서 타일 계층을 렌더링 하는 방법을 보여 줍니다. 타일 계층을 사용하여 Azure Maps 기본 맵 타일의 위에 이미지를 겹칠 수 있습니다. Azure Maps의 타일 배치 체계에 대한 자세한 내용은 [확대/축소 수준 및 타일 그리드](zoom-levels-and-tile-grid.md) 설명서에서 볼 수 있습니다.
 
-타일 계층이 서버에서 타일에 로드 됩니다. 이러한 이미지는 타일 계층을 이해하는 명명 규칙 또는 즉석에서 이미지를 생성하는 동적 서비스를 사용하는 서버에 있는 다른 이미지처럼 미리 렌더링되거나 저장될 수 있습니다. Azure Maps TileLayer 클래스에서 지 원하는 세 가지 타일 서비스 명명 규칙이 있습니다. 
+타일 계층이 서버에서 타일에 로드 됩니다. 이러한 이미지는 타일 계층에서 인식 하는 명명 규칙을 사용 하 여 미리 렌더링 하 고 서버의 다른 이미지와 마찬가지로 저장할 수 있습니다. 또는 이러한 이미지를 실시간으로 거의 이미지를 생성 하는 동적 서비스로 렌더링할 수 있습니다. Azure Maps TileLayer 클래스에서 지 원하는 세 가지 타일 서비스 명명 규칙은 다음과 같습니다.
 
 * X, Y, 확대/축소 표기법-확대/축소 수준에 따라 타일 그리드에서 x는 열 위치이고 y는 행 위치입니다.
 * Quadkey 표기법-x, y 조합은 정보를 타일의 고유 식별자인 단일 문자열 값으로 확대/축소합니다.
-* 경계 상자-경계 상자 좌표를 사용하여 일반적으로 [웹 매핑 서비스(WMS)](https://www.opengeospatial.org/standards/wms)에 사용하는 `{west},{south},{east},{north}` 형식으로 이미지를 지정할 수 있습니다.
+* 경계 상자-경계 상자 좌표를 사용하여 일반적으로 `{west},{south},{east},{north}`웹 매핑 서비스(WMS)[에 사용하는 ](https://www.opengeospatial.org/standards/wms) 형식으로 이미지를 지정할 수 있습니다.
 
 > [!TIP]
 > TileLayer은 지도에서 큰 데이터 집합을 시각화 하는 좋은 방법입니다. 이미지에서 타일 계층을 생성할 있을 뿐 아니라 타일 계층으로 벡터 데이터도 렌더링할 수 있습니다. 맵 컨트롤은 타일 계층으로 벡터 데이터를 렌더링함으로써, 맵 컨트롤은 표현하는 벡터 데이터보다 파일 크기가 훨씬 더 작은 타일만 로드해야 합니다. 맵에서 데이터 행 수백만 개를 렌더링해야 하는 대부분의 사용자가 이 기술을 사용합니다.
@@ -35,16 +35,16 @@ ms.locfileid: "75911521"
 * `{z}` - 타일의 확대/축소 수준입니다. 또한 `{x}` 및 `{y}`가 필요합니다.
 * `{quadkey}` - Bing Maps 타일 시스템 명명 규칙에 따라 타일 Quadkey 식별자입니다.
 * `{bbox-epsg-3857}` - EPSG 3857 공간 참조 시스템에서 `{west},{south},{east},{north}` 형식을 사용하는 경계 상자 문자열입니다.
-* `{subdomain}` - 지정된 경우 하위 도메인 값이 추가될 자리 표시자입니다.
+* `{subdomain}`-하위 도메인 값이 지정 된 경우 하위 도메인 값에 대 한 자리 표시자입니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 문서의 프로세스를 완료 하려면 맵을 로드 하기 위해 [Azure Maps Android SDK](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) 를 설치 해야 합니다.
 
 
 ## <a name="add-a-tile-layer-to-the-map"></a>지도에 타일 계층 추가
 
- 이 샘플은 x, y, 확대/축소 타일 배치 체계를 사용하는 타일 세트를 가리키는 타일 계층을 만드는 방법을 보여줍니다. 이 타일 계층의 원본은 [아이오와 주립 대학교의 Iowa Environmental Mesonet](https://mesonet.agron.iastate.edu/ogc/)에서 받은 날씨 레이더 오버레이입니다. 
+ 이 샘플에서는 타일 집합을 가리키는 타일 계층을 만드는 방법을 보여 줍니다. 이러한 타일에는 "x, y, zoom" 바둑판식 배열 시스템이 사용 됩니다. 이 타일 계층의 원본은 [아이오와 주립 대학교의 Iowa Environmental Mesonet](https://mesonet.agron.iastate.edu/ogc/)에서 받은 날씨 레이더 오버레이입니다. 
 
 아래 단계를 수행 하 여 지도에 타일 계층을 추가할 수 있습니다.
 

@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: tutorial
 ms.date: 01/27/2020
 ms.author: nitinme
-ms.openlocfilehash: 0de0c83b0c459d29c304dbf51eaa44a62e895760
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: d71d9c7e6570e562fe4c692ede1d07b70c923cb6
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76773093"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77118278"
 ---
 # <a name="tutorial-use-form-recognizer-with-azure-logic-apps-to-analyze-invoices"></a>자습서: Azure Logic Apps에서 Form Recognizer를 사용하여 청구서 분석
 
@@ -34,10 +34,6 @@ ms.locfileid: "76773093"
 ## <a name="prerequisites"></a>사전 요구 사항
 
 * Azure 구독 - [체험 구독 만들기](https://azure.microsoft.com/free/)
-
-## <a name="request-access-for-form-recognizer"></a>Form Recognizer에 대한 액세스 요청
-
-Form Recognizer는 제한된 액세스 미리 보기에서 사용할 수 있습니다. 미리 보기에 액세스하려면 [Form Recognizer 액세스 요청](https://aka.ms/FormRecognizerRequestAccess) 양식을 작성하여 제출하세요. Azure Cognitive Services 팀에서 요청을 승인하면 서비스에 액세스하는 방법에 대한 지침이 포함된 이메일을 받게 됩니다.
 
 ## <a name="understand-the-invoice-to-be-analyzed"></a>분석할 청구서 이해
 

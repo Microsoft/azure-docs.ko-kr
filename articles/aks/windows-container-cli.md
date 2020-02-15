@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 01/27/2020
 ms.author: mlearned
-ms.openlocfilehash: d1d04ab3ebb96d2739b991620b05aa307d9eaf91
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 0583e773a344a6786d13a5da30be24369d75f11f
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76767448"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77251705"
 ---
 # <a name="preview---create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>미리 보기-Azure CLI를 사용 하 여 AKS (Azure Kubernetes Service) 클러스터에 Windows Server 컨테이너 만들기
 
@@ -149,6 +149,10 @@ az aks create \
 > 암호 유효성 검사 오류가 발생 하는 경우 다른 지역에 리소스 그룹을 만들어 보세요.
 > 그런 다음 새 리소스 그룹을 사용 하 여 클러스터를 만들어 보세요.
 
+> [!Note]
+> 이 지역에서 버전이 지원 되지 않기 때문에 AKS 클러스터를 만들 수 없는 경우 [az AKS get-help--location eastus] 명령을 사용 하 여이 지역에 대해 지원 되는 버전 목록을 찾을 수 있습니다.
+
+
 몇 분 후 명령이 완료되면 클러스터에 대한 JSON 형식 정보가 반환됩니다. 경우에 따라 클러스터를 프로 비전 하는 데 몇 분 이상 걸릴 수 있습니다. 이러한 경우 최대 10 분이 허용 됩니다. 
 
 ## <a name="add-a-windows-server-node-pool"></a>Windows Server 노드 풀 추가
@@ -266,7 +270,7 @@ service/sample created
 
 애플리케이션이 실행되면 애플리케이션 프런트 엔드를 인터넷에 공개하는 Kubernetes 서비스가 만들어집니다. 이 프로세스를 완료하는 데 몇 분이 걸릴 수 있습니다. 경우에 따라 서비스를 프로 비전 하는 데 몇 분 이상 걸릴 수 있습니다. 이러한 경우 최대 10 분이 허용 됩니다.
 
-진행 상태를 모니터링하려면 `--watch` 인수와 함께 [kubectl get service][kubectl-get] 명령을 사용합니다.
+진행 상태를 모니터링하려면 [ 인수와 함께 ][kubectl-get]kubectl get service`--watch` 명령을 사용합니다.
 
 ```azurecli-interactive
 kubectl get service sample --watch
@@ -288,6 +292,9 @@ sample  LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m
 작동 중인 샘플 앱을 보려면 웹 브라우저에서 서비스의 외부 IP 주소를 엽니다.
 
 ![ASP.NET 샘플 응용 프로그램에 대 한 검색 이미지](media/windows-container/asp-net-sample-app.png)
+
+> [!Note]
+> 페이지를 로드 하려고 할 때 연결 시간 제한이 발생 하는 경우 샘플 앱은 다음 명령을 사용 하 여 준비 되었는지 확인 해야 합니다. [kubectl get pod--watch]. 경우에 따라 외부 IP 주소를 사용할 수 있는 시간에 windows 컨테이너가 시작 되지 않습니다.
 
 ## <a name="delete-cluster"></a>클러스터 삭제
 

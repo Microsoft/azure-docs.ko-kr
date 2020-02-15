@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: carlrab, jovanpop, sachinp, sstein
 ms.date: 11/27/2019
-ms.openlocfilehash: 90f39a5edd32225b7fed259ca48dcf4802d0ced3
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: eed0ed96efdc84697797c50578e11eee37d4d495
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75443821"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201733"
 ---
 # <a name="overview-azure-sql-database-managed-instance-resource-limits"></a>관리 되는 인스턴스 리소스 제한 Azure SQL Database 개요
 
@@ -38,8 +38,8 @@ ms.locfileid: "75443821"
 | 최대 인스턴스 예약 된 저장소 |  일반 용도: 8TB<br/>중요 비즈니스용: 1TB | 일반 용도: 8TB<br/> 중요 비즈니스용 1tb, 2tb 또는 4 TB의 코어 수에 따라 |
 
 > [!IMPORTANT]
-> - Gen4 하드웨어를 단계적으로 확장 하 고 있습니다. Gen5 하드웨어에 새로운 관리 되는 인스턴스를 배포 하는 것이 좋습니다.
-> - 현재 Gen4 하드웨어는 유럽 서부 북아메리카, 미국 동부, 미국 동부, 미국 서 부, 미국 중 북부, 미국 서 부 2, 미국 중부, 캐나다 중부, 인도 남부, 동남 아시아, 한국 중부 지역 에서만 사용할 수 있습니다.
+> - Gen4 하드웨어가 단계적으로 진행 되 고 있으며 새 배포에 대해 더 이상 사용할 수 없습니다. 새 관리 되는 인스턴스는 모두 Gen5 하드웨어에 배포 해야 합니다.
+> - [관리 되는 인스턴스를 Gen 5 하드웨어로 이동](sql-database-service-tiers-vcore.md) 하 여 더 광범위 한 vcore 및 저장소 확장성, 가속화 된 네트워킹, 최적의 IO 성능 및 최소 대기 시간을 경험 하는 것이 좋습니다.
 
 ### <a name="in-memory-oltp-available-space"></a>메모리 내 OLTP 사용 가능한 공간 
 
@@ -47,8 +47,8 @@ ms.locfileid: "75443821"
 
 | 메모리 내 OLTP 공간  | **Gen5** | **Gen4** |
 | --- | --- | --- |
-| vCore 4개  | 3.14 GB | |   
-| vCore 8개  | 6.28 GB | 8GB |
+| 4 개 vCores  | 3.14 GB | |   
+| vCores 8 개  | 6.28 GB | 8GB |
 | 16 개 vCores | 15.77 GB | 20GB |
 | 24 개 vCores | 25.25 GB | 36 GB |
 | 32 vCores | 37.94 GB | |
@@ -78,7 +78,7 @@ ms.locfileid: "75443821"
 | 로그 쓰기 처리량 한도 (인스턴스당) | vCore당 3MB/초<br/>최대 22 m b/초 | vCore 당 4mb/s<br/>최대 48MB/초 |
 | 데이터 처리량(근사치) | 파일당 100~250MB/초<br/>[더 나은 IO 성능을 얻기 위해 파일 크기를 늘릴](#file-io-characteristics-in-general-purpose-tier) \* | 제한 되지 않습니다. |
 | 저장소 IO 대기 시간 (근사치) | 5~10ms | 1~2ms |
-| 메모리 내 OLTP | 지원하지 않음 | 사용 가능, [크기는 vCore의 수에 따라 다릅니다](#in-memory-oltp-available-space) . |
+| 메모리 내 OLTP | 지원되지 않음 | 사용 가능, [크기는 vCore의 수에 따라 다릅니다](#in-memory-oltp-available-space) . |
 | 최대 세션 | 30000 | 30000 |
 | [읽기 전용 복제본](sql-database-read-scale-out.md) | 0 | 1 (가격에 포함 됨) |
 
@@ -137,7 +137,7 @@ ms.locfileid: "75443821"
 |종량제|3|320|
 |CSP |8 (일부 지역의 경우 15 * *)|960 (일부 지역에서 1440 * *)|
 |종량제 개발/테스트|3|320|
-|엔터프라이즈 개발/테스트|3|320|
+|Enterprise 개발/테스트|3|320|
 |EA|8 (일부 지역의 경우 15 * *)|960 (일부 지역에서 1440 * *)|
 |Visual Studio Enterprise|2 |64|
 |Visual Studio Professional 및 MSDN 플랫폼|2|32|

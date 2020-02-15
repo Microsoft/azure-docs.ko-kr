@@ -10,7 +10,7 @@
     - name: CentOS에 Ansible 솔루션 템플릿 배포
       href: ./ansible-deploy-solution-template.md
     - name: Linux 가상 머신에 Ansible 설치
-      href: /azure/virtual-machines/linux/ansible-install-configure
+      href: ./ansible-install-configure.md
       maintainContext: true
     - name: Cloud Shell에서 플레이북 실행
       href: ./ansible-run-playbook-in-cloudshell.md
@@ -18,10 +18,10 @@
       expanded: true
       items:
         - name: Linux 가상 머신 구성
-          href: /azure/virtual-machines/linux/ansible-create-vm
+          href: ./ansible-create-vm.md
           maintainContext: true
         - name: Linux 가상 머신 관리
-          href: /azure/virtual-machines/linux/ansible-manage-linux-vm
+          href: ./ansible-manage-linux-vm.md
           maintainContext: true
 - name: 자습서
   items:
@@ -39,7 +39,7 @@
       items:
         - name: 랩 구성
           href: ./ansible-devtest-labs-configure.md
-    - name: Azure Kubernetes Service (AKS)
+    - name: AKS(Azure Kubernetes Service)
       items:
         - name: AKS 클러스터 구성
           href: ./ansible-create-configure-aks.md
@@ -99,7 +99,7 @@
       href: 'https://github.com/microsoft/ansiblelabs'
     - name: Ansible Azure 플레이북 샘플
       href: 'https://github.com/Azure-Samples/ansible-playbooks'
-- name: 참고 자료
+- name: 참조
   items:
     - name: 플레이 북 역할
       items:

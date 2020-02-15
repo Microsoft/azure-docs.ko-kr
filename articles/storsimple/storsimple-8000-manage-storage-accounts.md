@@ -1,5 +1,5 @@
 ---
-title: Microsoft Azure StorSimple 8000 시리즈 디바이스에 대한 StorSimple 스토리지 계정 자격 증명 관리 | Microsoft Docs
+title: 저장소 계정 자격 증명, StorSimple 8000 시리즈 장치 관리
 description: StorSimple 디바이스 관리자 구성 페이지를 사용하여 스토리지 계정에 대한 보안 키를 추가, 편집, 삭제 또는 회전하는 방법을 설명합니다.
 services: storsimple
 documentationcenter: NA
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/29/2017
 ms.author: alkohli
-ms.openlocfilehash: 53aa442b86f5c82ded2f212a64f43852e6b3d2c5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 11bc97be7ff8d924f7ccd0b4672a8f4cb0a178ff
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60632692"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77116330"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-manage-your-storage-account-credentials"></a>StorSimple 디바이스 관리자 서비스를 사용하여 스토리지 계정 자격 증명 관리
 
@@ -54,7 +54,7 @@ Storage 계정에는 StorSimple 디바이스가 클라우드 서비스 공급자
 
 StorSimple 디바이스에서 사용할 수 있는 스토리지 계정에는 다음과 같은 세 종류가 있습니다.
 
-* **자동 생성된 스토리지 계정** – 이름 제안 시, 서비스를 처음 만들 때 이 스토리지 계정 유형이 자동으로 생성됩니다. 이 스토리지 계정을 만드는 방법에 대해 더 알아보려면 [온-프레미스 StorSimple 디바이스 배포](storsimple-8000-deployment-walkthrough-u2.md)에서 1단계: 새 서비스 만들기](storsimple-8000-deployment-walkthrough-u2.md#step-1-create-a-new-service)를 참조하세요. 
+* **자동 생성된 스토리지 계정** – 이름 제안 시, 서비스를 처음 만들 때 이 스토리지 계정 유형이 자동으로 생성됩니다. 이 스토리지 계정을 만드는 방법에 대해 자세히 알아보려면 [온-프레미스 StorSimple 디바이스 배포](storsimple-8000-deployment-walkthrough-u2.md#step-1-create-a-new-service)에서 [1단계: 새 서비스 만들기](storsimple-8000-deployment-walkthrough-u2.md)를 참조하세요. 
 * **서비스 구독의 Storage 계정** – 이러한 계정은 서비스와 동일한 구독과 연결된 Azure Storage 계정입니다. 이러한 Storage 계정을 만드는 방법에 대해 더 알아보려면 [Azure Storage 계정 정보](../storage/common/storage-create-storage-account.md)를 참조하세요. 
 * **서비스 구독 외의 Storage 계정** - 이러한 계정은 서비스와 연결되지 않았고 서비스가 만들어지기 전에 존재했던 Azure Storage 계정입니다.
 

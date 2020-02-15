@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 05/20/2019
+ms.date: 01/24/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
-manager: vitavor
+ms.reviewer: vitavor
 ms.custom: seodec18
-ms.openlocfilehash: 3572296da8e81602e905a3d9f515e7d49067cfa4
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.openlocfilehash: 91a1027add615c71784b6be1261fab97aadd9f3a
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75990594"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76769998"
 ---
 # <a name="manage-azure-budgets-with-cloudyn"></a>Cloudyn을 사용하여 Azure 예산 관리
 
@@ -35,7 +35,7 @@ Azure Cost Management는 Cloudyn과 비슷한 기능을 제공합니다. Azure C
 
 예산을 만들고 엔터티에 할당하려면 다음을 수행합니다.
 
-1. **비용** &gt; **Cost Management** &gt; **예산**으로 이동 합니다.
+1. **비용** &gt; **Cost Management** &gt; **예산**으로 이동합니다.
 2. 예산 관리 페이지의 **엔터티**에서 예산을 만들려는 엔터티를 선택합니다.
 3. 예산 연도에서 예산을 만들려는 연도를 선택합니다.
 4. 각 월에 대해 예산 값을 설정합니다. 완료되면 **저장**을 클릭합니다.
@@ -54,7 +54,7 @@ Azure Cost Management는 Cloudyn과 비슷한 기능을 제공합니다. Azure C
 
 ## <a name="view-budget-in-reports"></a>보고서의 예산 보기
 
-완료 되 **면 비용은 비용 &gt;** **비용 분석** 및 시간에 따른 비용 및 시간당 예산 보고서에서 대부분의 비용 보고서에 표시 됩니다. 또한 **작업**을 사용하여 예산 임계값을 기반으로 보고서를 예약할 수 있습니다.
+완료되면 예산이 **비용** &gt; **비용 분석**의 대부분의 비용 보고서 및 시간에 따른 비용 대 예산 보고서에 표시됩니다. 또한 **작업**을 사용하여 예산 임계값을 기반으로 보고서를 예약할 수 있습니다.
 
 다음은 비용 분석 보고서의 예입니다. 해당 연도가 시작된 이후 총 예산 및 비용을 워크로드 및 사용 현황 유형별로 보여 줍니다.
 
@@ -64,7 +64,7 @@ Azure Cost Management는 Cloudyn과 비슷한 기능을 제공합니다. Azure C
 
 보고서를 보는 다른 방법은 누적된 비용 대 예산을 살펴보는 것입니다. 누적된 비용을 확인하려면 **필드 표시/숨기기**에서 **누적 비용** 및 **총 예산**을 선택합니다. 해당 연도가 시작된 이후 누적된 비용을 보여 주는 예제는 다음과 같습니다.
 
-![비용 대비 시간당 예산 보고서에 표시 되는 누적 비용 및 총 예산 예제](./media/manage-budgets/accumulated-budget.png)
+![예제 누적된 비용 및 총 예산을 보여 주는 시간에 따른 비용 대 예산 보고서](./media/manage-budgets/accumulated-budget.png)
 
 나중에 누적된 비용이 예산을 초과할 수도 있습니다. 차트 뷰를 _꺾은선형_ 유형으로 변경하면 더 쉽게 확인할 수 있습니다.
 
@@ -79,7 +79,7 @@ Azure Cost Management는 Cloudyn과 비슷한 기능을 제공합니다. Azure C
 
 예제를 살펴보겠습니다.
 
-비용 대비 시간당 예산 보고서에서 **작업** 을 클릭 하 고 **보고서 예약**을 선택 합니다. 임계값 탭에서 임계값 메트릭을 선택합니다. 예를 들어 **비용 백분율 대 예산**을 선택합니다. 경고 유형을 선택하고 예산의 백분율 값을 입력합니다. 한 번만 알림을 수신하도록 하려면 **연속 경고 수**를 선택한 다음, _1_을 입력합니다. **저장**을 클릭합니다.
+시간에 따른 비용 대 예산 보고서에서 **작업**을 클릭한 다음, **보고서 예약**을 선택합니다. 임계값 탭에서 임계값 메트릭을 선택합니다. 예를 들어 **비용 백분율 대 예산**을 선택합니다. 경고 유형을 선택하고 예산의 백분율 값을 입력합니다. 한 번만 알림을 수신하도록 하려면 **연속 경고 수**를 선택한 다음, _1_을 입력합니다. **저장**을 클릭합니다.
 
 ![이 보고서 저장 또는 예약 상자에 예산 경고 만들기](./media/manage-budgets/budget-alert.png)
 

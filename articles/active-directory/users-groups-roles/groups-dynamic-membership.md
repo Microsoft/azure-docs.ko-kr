@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1df823776208418eae3e465693dd51e108c5a8bb
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: da983f87977de922ec547c3ade2972dfb4d69363
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76841032"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77206262"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Azure Active Directory의 그룹에 대한 동적 멤버 자격 규칙
 
@@ -86,14 +86,14 @@ user.department -eq "Sales"
 
 ### <a name="properties-of-type-boolean"></a>부울 형식의 속성
 
-| 속성 | 허용되는 값 | 사용량 |
+| 속성 | 허용되는 값 | 사용 |
 | --- | --- | --- |
 | accountEnabled |true false |user.accountEnabled -eq true |
 | dirSyncEnabled |true false |user.dirSyncEnabled -eq true |
 
 ### <a name="properties-of-type-string"></a>문자열 형식의 속성
 
-| 속성 | 허용되는 값 | 사용량 |
+| 속성 | 허용되는 값 | 사용 |
 | --- | --- | --- |
 | city |임의의 문자열 값 또는 *null*입니다. |(user.city -eq "value") |
 | country |임의의 문자열 값 또는 *null*입니다. |(user.country -eq "value") |
@@ -124,7 +124,7 @@ user.department -eq "Sales"
 
 ### <a name="properties-of-type-string-collection"></a>문자열 컬렉션 형식의 속성
 
-| 속성 | 허용되는 값 | 사용량 |
+| 속성 | 허용되는 값 | 사용 |
 | --- | --- | --- |
 | otherMails |임의의 문자열 값 |(user.otherMails -contains "alias@domain") |
 | proxyAddresses |SMTP: alias@domain smtp: alias@domain |(user.proxyAddresses -contains "SMTP: alias@domain") |
@@ -160,7 +160,7 @@ user.department -eq "Sales"
 
 
 ### <a name="using-the--match-operator"></a>-match 연산자 사용 
-**-match** 연산자는 정규식 일치에 사용됩니다. 예시:
+**-match** 연산자는 정규식 일치에 사용됩니다. 예제:
 
 ```
 user.displayName -match "Da.*"   
@@ -249,7 +249,7 @@ null 값을 참조하는 올바른 방법은 다음과 같습니다.
 
 다중 값 속성은 동일한 유형인 개체의 컬렉션입니다. 이 속성은 -any 및 -all 논리 연산자를 사용하여 멤버 자격 규칙을 만드는 데 사용할 수 있습니다.
 
-| 속성 | 값 | 사용량 |
+| 속성 | 값 | 사용 |
 | --- | --- | --- |
 | assignedPlans | 컬렉션에 있는 각 개체는 다음 문자열 속성을 표시합니다. capabilityStatus, service, servicePlanId |user.assignedPlans -any(assignedPlan.servicePlanId -eq "efb87545-963c-4e0d-99df-69c6916d9eb0" -and assignedPlan.capabilityStatus -eq "Enabled") |
 | proxyAddresses| SMTP: alias@domain smtp: alias@domain | (user.proxyAddresses -any (\_ -contains "contoso")) |
@@ -341,13 +341,13 @@ device.objectId -ne null
 
 ## <a name="extension-properties-and-custom-extension-properties"></a>확장 속성 및 사용자 지정 확장 속성
 
-확장 특성 및 사용자 지정 확장 속성은 동적 멤버 관리 규칙에서 문자열 속성으로 지원 됩니다. 확장 특성은 온-프레미스 Windows Server AD에서 동기화되고 "ExtensionAttributeX" 형식을 사용하며 여기서 X는 1 - 15입니다. 확장 특성을 속성으로 사용하는 규칙의 예제는 다음과 같습니다.
+확장 특성 및 사용자 지정 확장 속성은 동적 멤버 관리 규칙에서 문자열 속성으로 지원 됩니다. [확장 특성](https://docs.microsoft.com/graph/api/resources/onpremisesextensionattributes?view=graph-rest-1.0) 은 온-프레미스 WINDOWS Server AD에서 동기화 되 고 "ExtensionAttributeX" 형식을 사용 합니다. 여기서 X는 1-15입니다. 확장 특성을 속성으로 사용하는 규칙의 예제는 다음과 같습니다.
 
 ```
 (user.extensionAttribute15 -eq "Marketing")
 ```
 
-사용자 지정 확장 속성은 온-프레미스 Windows Server AD 또는 연결된 SaaS 애플리케이션에서 동기화되며 `user.extension_[GUID]_[Attribute]` 형식입니다.
+[사용자 지정 확장 속성](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-feature-directory-extensions) 은 온-프레미스 WINDOWS Server AD 또는 연결 된 SaaS 응용 프로그램에서 동기화 되 고 `user.extension_[GUID]_[Attribute]`형식입니다. 여기서는 다음과 같습니다.
 
 * [GUID]는 Azure AD에서 속성을 만든 애플리케이션에 대한 Azure AD의 고유 식별자입니다.
 * [Attribute]는 Azure AD에서 만든 속성의 이름입니다.
@@ -374,7 +374,7 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb_OfficeNumber -eq "123"
 
 다음과 같은 디바이스 특성을 사용할 수 있습니다.
 
- 디바이스 특성  | 값 | 예
+ 디바이스 특성  | 값 | 예제
  ----- | ----- | ----------------
  accountEnabled | true false | (device.accountEnabled -eq true)
  displayName | 임의의 문자열 값입니다. |(device.displayName -eq "Rob iPhone")

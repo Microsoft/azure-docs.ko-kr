@@ -8,12 +8,12 @@ ms.date: 01/09/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: e9ef700e45acc55f476d72883107b0c5c958fa7f
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 43955950b2fc0544b149c67e3f8df7ca905fafed
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75862835"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77116259"
 ---
 # <a name="monitor-a-storage-account-in-the-azure-portal"></a>Azure 포털에서 스토리지 계정 모니터링
 
@@ -25,6 +25,8 @@ ms.locfileid: "75862835"
 > Azure Portal에서 모니터링 데이터를 검사하는 데 관련된 비용이 있습니다. 자세한 정보는 [스토리지 분석](storage-analytics.md)을 참조하세요.
 >
 > Azure Files는 현재 스토리지 분석 메트릭을 지원하지만 아직 로깅을 지원하지 않습니다.
+>
+> 프리미엄 성능 블록 blob 저장소 계정은 저장소 분석 메트릭을 지원 하지 않지만 로깅을 지원 합니다. REST API 또는 클라이언트 라이브러리를 통해 프로그래밍 방식으로 로깅을 사용 하도록 설정할 수 있습니다. 프리미엄 성능 blob blob storage 계정을 사용 하 여 메트릭을 보려면 [Azure Monitor에서 Azure Storage 메트릭을](storage-metrics-in-azure-monitor.md)사용 하는 것이 좋습니다.
 >
 > 스토리지 분석 및 기타 도구를 사용하여 Azure Storage 관련 문제를 식별, 진단 및 해결하는 방법에 대한 자세한 지침은 [Microsoft Azure Storage 모니터링, 진단 및 문제 해결](storage-monitoring-diagnosing-troubleshooting.md)을 참조하세요.
 >
@@ -108,7 +110,7 @@ ms.locfileid: "75862835"
 
 스토리지 계정에 대한 Azure Storage 메트릭 차트를 포털 대시보드에 추가할 수 있습니다.
 
-1. [Azure Portal](https://portal.azure.com)에서 대시보드를 보면서 **대시보드 편집**을 클릭합니다.
+1. **Azure Portal**에서 대시보드를 보면서 [대시보드 편집](https://portal.azure.com)을 클릭합니다.
 1. **타일 갤러리**에서 **타일 찾기 기준** > **유형**을 차례로 선택합니다.
 1. **유형** > **스토리지 계정**을 차례로 선택합니다.
 1. **리소스**에서 대시보드에 추가하려는 메트릭의 스토리지 계정을 선택합니다.

@@ -109,6 +109,10 @@
           href: long-audio-api.md
         - name: Docker 컨테이너를 통해 음성 합성 사용
           href: speech-container-howto.md?tabs=tts
+        - name: REST를 사용하여 음성 목록 가져오기(Python)
+          href: quickstart-python-get-text-to-speech-voices.md
+        - name: REST을 사용하여 텍스트 음성 변환(Python)
+          href: quickstart-python-text-to-speech.md
     - name: 참조
       items:
         - name: 음성 SDK

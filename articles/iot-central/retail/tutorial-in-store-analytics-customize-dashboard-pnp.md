@@ -11,20 +11,19 @@ ms.custom:
 ms.author: timlt
 author: timlt
 ms.date: 11/12/2019
-ms.openlocfilehash: f9624f516d5f38f1db02c6a103c40d01f8dc26ca
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: fea3440dd7c017b85d6fffa2ec0fe5d26cd98b97
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74702697"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77022174"
 ---
 # <a name="tutorial--customize-the-operator-dashboard-and-manage-devices-in-azure-iot-central"></a>자습서:  Azure IoT Central에서 운영자 대시보드 사용자 지정 및 디바이스 관리
 
-[!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
 
-이 자습서에서는 빌더가 Azure IoT Central 스토어 내 분석 애플리케이션에서 운영자 대시보드를 사용자 지정하는 방법을 보여 줍니다. 애플리케이션 운영자는 사용자 지정된 대시보드를 사용하여 애플리케이션을 실행하고 연결된 디바이스를 관리할 수 있습니다.
+이 자습서에서는 빌더가 Azure IoT Central 스토어 내 분석 애플리케이션에서 운영자 대시보드를 사용자 지정하는 방법을 알아봅니다. 애플리케이션 운영자는 사용자 지정된 대시보드를 사용하여 애플리케이션을 실행하고 연결된 디바이스를 관리할 수 있습니다.
 
-이 자습서에서는 다음 방법에 대해 알아봅니다.
+이 자습서에서는 다음 작업 방법을 알아봅니다.
 > [!div class="checklist"]
 > * 대시보드 이름 변경
 > * 대시보드의 이미지 타일 사용자 지정
@@ -33,14 +32,14 @@ ms.locfileid: "74702697"
 > * 디바이스 세부 정보를 표시하는 속성 타일 추가
 > * 명령을 실행하는 명령 타일 추가
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
-이 자습서를 시작하기 전에 빌더는 첫 번째 자습서를 완료하여 Azure IoT Central in-store 분석 애플리케이션을 만들고 디바이스를 추가해야 합니다.
+빌더는 Azure IoT Central 스토어 내 분석 애플리케이션을 만들고 디바이스를 추가하는 자습서를 완료해야 합니다.
 
 * [Azure IoT Central에서 스토어 내 분석 애플리케이션 만들기](./tutorial-in-store-analytics-create-app-pnp.md)(필수)
 
 ## <a name="change-the-dashboard-name"></a>대시보드 이름 변경
-운영자 대시보드를 사용자 지정하려면 애플리케이션에서 기본 대시보드를 편집해야 합니다. 필요에 따라 새 대시보드를 추가로 만들 수 있습니다. 애플리케이션에서 대시보드를 사용자 지정하는 첫 번째 단계는 이름을 변경하는 것입니다.
+운영자 대시보드를 사용자 지정하려면 애플리케이션에서 기본 대시보드를 편집해야 합니다. 또한 새 대시보드를 추가로 만들 수 있습니다. 애플리케이션에서 대시보드를 사용자 지정하는 첫 번째 단계는 이름을 변경하는 것입니다.
 
 1. [Azure IoT Central 애플리케이션 관리자](https://aka.ms/iotcentral) 웹 사이트로 이동합니다.
 
@@ -54,7 +53,7 @@ ms.locfileid: "74702697"
 
 1. **대시보드 이름**에서 대시보드에 대한 친숙한 이름을 입력합니다. 이 자습서에서는 Contoso라는 가상 회사를 사용하며, 대시보드 이름 예제는 *Contoso 대시보드*입니다. 
 
-1. **저장**을 선택합니다. 그러면 변경 내용이 대시보드에 저장되고 편집 모드가 비활성화됩니다.
+1. **저장**을 선택합니다. 변경 내용이 대시보드에 저장되고 편집 모드가 비활성화됩니다.
 
     ![Azure IoT Central 대시보드 이름 변경](./media/tutorial-in-store-analytics-customize-dashboard-pnp/dashboard-change-name.png)
 
@@ -108,7 +107,7 @@ Azure IoT Central 애플리케이션 대시보드는 하나 이상의 타일로 
 
 1. 대시보드 도구 모음에서 **편집**을 선택합니다. 
 
-1. **X(삭제)** 를 선택하여 **모든 영역으로 돌아가기**, **스토어 대시보드 방문**, **대기 시간** 타일 및 **체크 아웃 3**과 연결된 세 개의 타일을 모두 제거합니다. Contoso 스토어 대시보드에는 이러한 타일이 사용되지 않습니다. 
+1. **X(삭제)** 를 선택하여 **모든 영역으로 돌아가기**, **스토어 대시보드 방문**, **대기 시간** 타일 및 **체크 아웃 3**과 연결된 세 개의 타일을 모두 제거합니다. Contoso 스토어 대시보드는 이러한 타일을 사용하지 않습니다. 
 
     ![Azure IoT Central 타일 삭제](./media/tutorial-in-store-analytics-customize-dashboard-pnp/delete-tiles.png)
 
@@ -149,7 +148,7 @@ RuuviTag 센서의 환경 데이터를 표시하는 타일을 추가하려면 �
 
 1. **편집**을 선택합니다.
 
-1. **디바이스 템플릿** 목록에서 `RuuviTag`를 선택합니다. 
+1. **디바이스 템플릿** 목록에서 `RuuviTag`을 선택합니다. 
 
 1. 두 개의 RuuviTag 센서 중 하나에서 **디바이스 인스턴스**를 선택합니다. Contoso 스토어 예제에서 `Zone 1 Ruuvi`를 선택하여 영역 1에 대한 원격 분석 타일을 만듭니다. 
 
@@ -204,7 +203,7 @@ RuuviTag 센서의 환경 데이터를 표시하는 타일을 추가하려면 �
 
 1. **편집**을 선택합니다.
 
-1. **디바이스 템플릿** 목록에서 `RuuviTag`를 선택합니다. 
+1. **디바이스 템플릿** 목록에서 `RuuviTag`을 선택합니다. 
 
 1. 두 개의 RuuviTag 센서 중 하나에서 **디바이스 인스턴스**를 선택합니다. Contoso 스토어 예제에서 `Zone 1 Ruuvi`를 선택하여 영역 1에 대한 원격 분석 타일을 만듭니다. 
 
@@ -233,7 +232,7 @@ RuuviTag 센서의 환경 데이터를 표시하는 타일을 추가하려면 �
 
 1. **편집**을 선택합니다. 
 
-1. **디바이스 템플릿** 목록에서 `C500`을 선택합니다. 이는 Rigado C500 게이트웨이에 대한 템플릿입니다. 
+1. **디바이스 템플릿** 목록에서 `C500`을 선택합니다. Rigado C500 게이트웨이에 대한 템플릿입니다. 
 
 1. **디바이스 인스턴스**에서 게이트웨이 인스턴스를 선택합니다.
 
@@ -248,7 +247,7 @@ RuuviTag 센서의 환경 데이터를 표시하는 타일을 추가하려면 �
 1. 필요에 따라 **다시 부팅** 타일을 선택하여 게이트웨이에서 다시 부팅 명령을 실행합니다.
 
 ## <a name="next-steps"></a>다음 단계
-이 자습서에서는 다음 방법에 대해 알아보았습니다.
+이 자습서에서는 다음 작업 방법을 알아보았습니다.
 
 * 대시보드 이름 변경
 * 대시보드의 이미지 타일 사용자 지정

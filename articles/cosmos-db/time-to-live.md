@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/26/2019
 ms.reviewer: sngun
-ms.openlocfilehash: c504e2f574970142942945de5a0a9fb409bb166b
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 5407c38f33d167ff5114cd55878e3470e7248d71
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73498310"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77188710"
 ---
 # <a name="time-to-live-ttl-in-azure-cosmos-db"></a>Azure Cosmos DB의 TTL (Time to Live) 
 
@@ -44,9 +44,7 @@ Time to live 값은 초 단위로 설정 되며 항목이 마지막으로 수정
 
 * 컨테이너에서 TTL을 설정하지 않으면, 이 컨테이너의 항목에서 TTL(Time to Live)은 효과가 없습니다. 
 
-* 컨테이너에서 TTL이 -1로 설정된 경우 TTL(Time to Live)이 n으로 설정된 이 컨테이너의 항목은 n초 후에 만료되고 나머지 항목은 만료되지 않습니다. 
-
-TTL을 기준으로 항목을 삭제하는 것은 무료입니다. TTL 만료의 결과로 항목을 삭제하는 경우 추가 비용은 청구되지 않습니다(즉, 추가 RU 없음).
+* 컨테이너에서 TTL이 -1로 설정된 경우 TTL(Time to Live)이 n으로 설정된 이 컨테이너의 항목은 n초 후에 만료되고 나머지 항목은 만료되지 않습니다.
 
 ## <a name="examples"></a>예
 
@@ -59,29 +57,29 @@ TTL을 기준으로 항목을 삭제하는 것은 무료입니다. TTL 만료의
 |항목에 대 한 TTL| 결과|
 |---|---|
 |ttl = null|    TTL을 사용할 수 없습니다. 항목이 만료 되지 않습니다 (기본값).|
-|ttl =-1   |TTL을 사용할 수 없습니다. 항목이 만료 되지 않습니다.|
+|ttl = -1   |TTL을 사용할 수 없습니다. 항목이 만료 되지 않습니다.|
 |ttl = 2000 |TTL을 사용할 수 없습니다. 항목이 만료 되지 않습니다.|
 
 
-### <a name="example-2"></a>예 2
+### <a name="example-2"></a>예제 2
 
 컨테이너의 TTL이-1 (DefaultTimeToLive =-1)로 설정 되어 있습니다.
 
 |항목에 대 한 TTL| 결과|
 |---|---|
 |ttl = null |TTL이 사용 됩니다. 항목이 만료 되지 않습니다 (기본값).|
-|ttl =-1   |TTL이 사용 됩니다. 항목이 만료 되지 않습니다.|
+|ttl = -1   |TTL이 사용 됩니다. 항목이 만료 되지 않습니다.|
 |ttl = 2000 |TTL이 사용 됩니다. 항목은 2000 초 후에 만료 됩니다.|
 
 
-### <a name="example-3"></a>예 3
+### <a name="example-3"></a>예제 3
 
 컨테이너의 TTL이 1000 (DefaultTimeToLive = 1000)로 설정 되어 있습니다.
 
 |항목에 대 한 TTL| 결과|
 |---|---|
 |ttl = null|    TTL이 사용 됩니다. 항목은 1000 초 (기본값) 후에 만료 됩니다.|
-|ttl =-1   |TTL이 사용 됩니다. 항목이 만료 되지 않습니다.|
+|ttl = -1   |TTL이 사용 됩니다. 항목이 만료 되지 않습니다.|
 |ttl = 2000 |TTL이 사용 됩니다. 항목은 2000 초 후에 만료 됩니다.|
 
 ## <a name="next-steps"></a>다음 단계

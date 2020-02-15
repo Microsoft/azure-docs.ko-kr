@@ -4,8 +4,6 @@
   items:
     - name: Azure Monitor란?
       href: overview.md
-    - name: 용어 변경
-      href: terminology.md
     - name: FAQ
       href: faq.md
     - name: 새로운 기능
@@ -909,22 +907,6 @@
           href: platform/rest-api-walkthrough.md
     - name: 데이터 시각화
       items:
-        - name: 뷰
-          items:
-            - name: 뷰 디자이너
-              href: platform/view-designer.md
-            - name: 타일 참조
-              href: platform/view-designer-tiles.md
-            - name: 시각화 요소 참조
-              href: platform/view-designer-parts.md
-            - name: 필터
-              href: platform/view-designer-filters.md
-        - name: Power BI
-          items:
-            - name: 로그 데이터 내보내기
-              href: platform/powerbi.md
-            - name: 애플리케이션 데이터 내보내기
-              href: app/export-power-bi.md
         - name: 통합 문서
           items:
             - name: 개요
@@ -951,6 +933,36 @@
                       href: platform/workbooks-time.md
                     - name: 텍스트 매개 변수
                       href: platform/workbooks-text.md
+        - name: 뷰
+          items:
+            - name: 뷰를 통합 문서로 변환
+              items:
+                - name: 변환 개요
+                  href: platform/view-designer-conversion-overview.md
+                - name: 변환 옵션
+                  href: platform/view-designer-conversion-options.md
+                - name: 개요 및 액세스
+                  href: platform/view-designer-conversion-access.md
+                - name: 일반 작업
+                  href: platform/view-designer-conversion-tasks.md
+                - name: 타일 변환
+                  href: platform/view-designer-conversion-tiles.md
+                - name: 예
+                  href: platform/view-designer-conversion-examples.md
+            - name: 뷰 디자이너
+              href: platform/view-designer.md
+            - name: 타일 참조
+              href: platform/view-designer-tiles.md
+            - name: 시각화 요소 참조
+              href: platform/view-designer-parts.md
+            - name: 필터
+              href: platform/view-designer-filters.md
+        - name: Power BI
+          items:
+            - name: 로그 데이터 내보내기
+              href: platform/powerbi.md
+            - name: 애플리케이션 데이터 내보내기
+              href: app/export-power-bi.md
         - name: 대시보드
           items:
             - name: 로그 데이터를 사용하는 대시보드
@@ -1141,6 +1153,8 @@
       items:
         - name: 스키마
           href: platform/diagnostics-extension-schema-1dot3.md
+    - name: 용어 변경
+      href: terminology.md
     - name: Application Insights
       items:
         - name: 종속성 자동 수집

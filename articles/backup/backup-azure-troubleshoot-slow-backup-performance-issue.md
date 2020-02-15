@@ -4,12 +4,12 @@ description: Azure Backup 성능 문제의 원인을 진단하는 데 도움이 
 ms.reviewer: saurse
 ms.topic: troubleshooting
 ms.date: 07/05/2019
-ms.openlocfilehash: 2b7b8903da0d8dd83591b260bacb496b0c253ae3
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 01fff1d970a76d0d4d38c2536b41d58a4db301c8
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74172576"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198622"
 ---
 # <a name="troubleshoot-slow-backup-of-files-and-folders-in-azure-backup"></a>Azure Backup에서 파일 및 폴더의 느린 백업 문제 해결
 
@@ -17,7 +17,7 @@ ms.locfileid: "74172576"
 
 * [백업 중인 컴퓨터에서 성능 병목 현상이 발생하는 경우](#cause1)
 * [다른 프로세스 또는 바이러스 백신 소프트웨어가 Azure Backup 프로세스를 방해하는 경우](#cause2)
-* [Backup 에이전트가 Azure VM(가상 컴퓨터)에서 실행 중인 경우](#cause3)  
+* [Backup 에이전트가 Azure VM(가상 머신)에서 실행 중인 경우](#cause3)  
 * [많은 수(수백만 개)의 파일을 백업하는 경우](#cause4)
 
 문제 해결을 시작하기 전에 [최신 Azure Backup 에이전트](https://aka.ms/azurebackup_agent)를 다운로드하여 설치하는 것이 좋습니다. Microsoft는 다양한 문제를 해결하고, 기능을 추가하고, 성능을 향상시키기 위해 Backup 에이전트를 자주 업데이트합니다.
@@ -25,6 +25,18 @@ ms.locfileid: "74172576"
 일반적인 구성 문제가 발생하지 않도록 [Azure Backup 서비스 - FAQ](backup-azure-backup-faq.md) 를 검토하는 것이 좋습니다.
 
 [!INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
+
+## <a name="cause-backup-job-running-in-unoptimized-mode"></a>원인: 최적화 되지 않은 모드에서 실행 되는 백업 작업
+
+* MARS 에이전트는 전체 볼륨을 검사 하 여 디렉터리 또는 파일의 변경 내용을 확인 하 여 USN (업데이트 시퀀스 번호) 변경 저널 또는 최적화 되지 않은 **모드** 를 사용 하 여 **최적화 된 모드로** 백업 작업을 실행할 수 있습니다.
+* 에이전트가 볼륨의 각 파일 및 모든 파일을 검색 하 고 메타 데이터와 비교 하 여 변경 된 파일을 확인 해야 하므로 최적화 되지 않은 모드는 느립니다.
+* 이를 확인 하려면 MARS 에이전트 콘솔에서 **작업 세부 정보** 를 열고 아래와 같이 상태를 확인 하 여 **데이터 전송 (최적화 되지 않음, 시간이 더 걸릴 수 있음)** 이 표시 되는지 확인 합니다.
+
+    ![최적화 되지 않은 모드에서 실행](./media/backup-azure-troubleshoot-slow-backup-performance-issue/unoptimized-mode.png)
+
+* 다음 조건에 따라 백업 작업이 최적화 되지 않은 모드에서 실행 될 수 있습니다.
+  * 첫 번째 백업 (초기 복제 라고도 함)은 항상 최적화 되지 않은 모드에서 실행 됩니다.
+  * 이전 백업 작업이 실패 하면 예약 된 다음 백업 작업이 최적화 되지 않은 상태로 실행 됩니다.
 
 <a id="cause1"></a>
 
@@ -36,7 +48,7 @@ Windows에서는 이러한 병목 상태를 검색할 수 있는 [성능 모니�
 
 다음은 최적의 백업을 위해 병목 현상을 진단하는 데 도움이 될 수 있는 몇 가지 성능 카운터 및 범위입니다.
 
-| 카운터 | 가동 상태 |
+| 카운터 | 상태 |
 | --- | --- |
 | Logical Disk(Physical Disk)--%idle |• 100% 유휴 ~ 50% 유휴 = 정상</br>• 49% 유휴 ~ 20% 유휴 = 경고 또는 모니터</br>• 19% 유휴 ~ 0% 유휴 = 위험 또는 사양을 벗어남 |
 | 논리 디스크 (실제 디스크)--% Avg. Disk Sec 읽기 또는 쓰기 |• 0.001ms ~ 0.015ms = 정상</br>• 0.015ms ~ 0.025ms = 경고 또는 모니터</br>• 0.026ms 이상 = 위험 또는 사양을 벗어남 |

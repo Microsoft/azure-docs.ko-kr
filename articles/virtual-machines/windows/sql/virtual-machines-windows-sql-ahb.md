@@ -14,20 +14,21 @@ ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 00262b48b8fa2fd1292554155e8ec8e933d886e6
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.openlocfilehash: 502d1fe599accb29ccc99c9e527f8d1c8e1d52b8
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75690901"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201828"
 ---
 # <a name="change-the-license-model-for-a-sql-server-virtual-machine-in-azure"></a>Azure에서 SQL Server 가상 컴퓨터에 대 한 라이선스 모델 변경
 이 문서에서는 **SqlVirtualMachine**새 SQL vm 리소스 공급자를 사용 하 여 AZURE에서 vm (가상 머신)에 대 SQL Server 한 라이선스 모델을 변경 하는 방법을 설명 합니다.
 
-SQL Server를 호스트 하는 VM에 대 한 라이선스 모델에는 종 량 제 및 Azure 하이브리드 혜택 두 가지가 있습니다. Azure Portal, Azure CLI 또는 PowerShell을 사용 하 여 SQL Server VM의 라이선스 모델을 수정할 수 있습니다. 
+SQL Server 호스트 하는 VM에 대 한 세 가지 라이선스 모델 (종 량 제, Azure 하이브리드 혜택 및 DR (재해 복구)이 있습니다. Azure Portal, Azure CLI 또는 PowerShell을 사용 하 여 SQL Server VM의 라이선스 모델을 수정할 수 있습니다. 
 
-종 량 제 모델은 Azure VM을 실행 하는 초당 비용에 SQL Server 라이선스 비용이 포함 됨을 의미 합니다.
-[Azure 하이브리드 혜택](https://azure.microsoft.com/pricing/hybrid-benefit/) 를 사용 하면 SQL Server를 실행 하는 VM에서 사용자 고유의 SQL Server 라이선스를 사용할 수 있습니다. 
+- **종 량** 제 모델은 Azure VM을 실행 하는 초당 비용에 SQL Server 라이선스 비용이 포함 됨을 의미 합니다.
+- [Azure 하이브리드 혜택](https://azure.microsoft.com/pricing/hybrid-benefit/) 를 사용 하면 SQL Server를 실행 하는 VM에서 사용자 고유의 SQL Server 라이선스를 사용할 수 있습니다. 
+- **재해 복구** 라이선스 유형은 Azure에서 [무료 DR 복제본](virtual-machines-windows-sql-high-availability-dr.md#free-dr-replica-in-azure) 에 사용 됩니다. 
 
 Azure 하이브리드 혜택를 사용 하면 Azure 가상 머신에서 소프트웨어 보증 ("적격 라이선스")이 있는 SQL Server 라이선스를 사용할 수 있습니다. Azure 하이브리드 혜택을 통해 고객은 VM에서 SQL Server 라이선스 사용에 대 한 요금이 부과 되지 않습니다. 하지만 기본 요금, 저장소 및 백업에 대 한 비용을 지불 해야 합니다. 서비스의 사용과 관련 된 i/o (해당 하는 경우)에 대해서도 요금을 지불 해야 합니다.
 
@@ -41,7 +42,7 @@ Azure VM에서 SQL Server에 Azure 하이브리드 혜택를 사용 하 고 정�
 
 VM이 프로 비전 될 때 SQL Server의 라이선스 유형이 설정 됩니다. 나중에 언제 든 지 변경할 수 있습니다. 라이선스 모델 간을 전환 하면 가동 중지 시간이 발생 하지 않으며, VM 또는 SQL Server 서비스를 다시 시작 하지 않고 추가 비용을 추가 하지 않으며 즉시 적용 됩니다. 실제로 Azure 하이브리드 혜택를 활성화 하면 비용이 *절감* 됩니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 SQL Server VM 라이선스 모델을 변경 하려면 다음 요구 사항이 충족 되어야 합니다. 
 
@@ -50,7 +51,7 @@ SQL Server VM 라이선스 모델을 변경 하려면 다음 요구 사항이 �
 - [소프트웨어 보증](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default) 은 [Azure 하이브리드 혜택](https://azure.microsoft.com/pricing/hybrid-benefit/)를 활용 하기 위한 요구 사항입니다. 
 
 
-## <a name="change-the-license-for-vms-already-registered-with-the-resource-provider"></a>리소스 공급자에 이미 등록 된 Vm에 대 한 라이선스 변경 
+## <a name="vms-already-registered-with-the-resource-provider"></a>리소스 공급자에 이미 등록 된 Vm 
 
 # <a name="portaltabazure-portal"></a>[포털](#tab/azure-portal)
 
@@ -70,7 +71,8 @@ SQL Server VM 라이선스 모델을 변경 하려면 다음 요구 사항이 �
 
 Azure CLI를 사용 하 여 라이선스 모델을 변경할 수 있습니다.  
 
-다음 코드 조각에서는 종 량 제 라이선스 모델을 사용 하 여 사용자 라이선스 (또는 Azure 하이브리드 혜택 사용)로 전환 합니다.
+
+**Azure 하이브리드 혜택**
 
 ```azurecli-interactive
 # Switch your SQL Server VM license from pay-as-you-go to bring-your-own
@@ -79,7 +81,7 @@ Azure CLI를 사용 하 여 라이선스 모델을 변경할 수 있습니다.
 az sql vm update -n <VMName> -g <ResourceGroupName> --license-type AHUB
 ```
 
-다음 코드 조각은 사용자 자신의 라이선스 모델을 종 량 제로 전환 합니다. 
+**종 량**제: 
 
 ```azurecli-interactive
 # Switch your SQL Server VM license from bring-your-own to pay-as-you-go
@@ -88,28 +90,45 @@ az sql vm update -n <VMName> -g <ResourceGroupName> --license-type AHUB
 az sql vm update -n <VMName> -g <ResourceGroupName> --license-type PAYG
 ```
 
+**DR (재해 복구)**
+
+```azurecli-interactive
+# Switch your SQL Server VM license from bring-your-own to pay-as-you-go
+# example: az sql vm update -n AHBTest -g AHBTest --license-type DR
+
+az sql vm update -n <VMName> -g <ResourceGroupName> --license-type DR
+```
+
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+
 PowerShell을 사용 하 여 라이선스 모델을 변경할 수 있습니다.
 
-다음 코드 조각에서는 종 량 제 라이선스 모델을 사용 하 여 사용자 라이선스 (또는 Azure 하이브리드 혜택 사용)로 전환 합니다.
+**Azure 하이브리드 혜택**
 
 ```powershell-interactive
 # Switch your SQL Server VM license from pay-as-you-go to bring-your-own
 Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -LicenseType AHUB
 ```
 
-다음 코드 조각은 사용자 자신의 라이선스 모델을 종 량 제로 전환 합니다.
+**종량제**
 
 ```powershell-interactive
 # Switch your SQL Server VM license from bring-your-own to pay-as-you-go
 Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -LicenseType PAYG
 ```
 
+**재해 복구** 
+
+```powershell-interactive
+# Switch your SQL Server VM license from bring-your-own to pay-as-you-go
+Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -LicenseType DR
+```
+
 ---
 
-## <a name="change-the-license-for-vms-not-registered-with-the-resource-provider"></a>리소스 공급자에 등록 되지 않은 Vm에 대 한 라이선스 변경
+## <a name="vms-not-registered-with-the-resource-provider"></a>리소스 공급자에 등록 되지 않은 Vm
 
-종 량 제 Azure Marketplace 이미지에서 SQL Server VM를 프로 비전 한 경우 SQL Server 라이선스 유형이 종 량 제로 표시 됩니다. Azure Marketplace에서 사용자 라이선스 가져오기 이미지를 사용 하 여 SQL Server VM를 프로 비전 한 경우 라이선스 유형은 AHUB가 됩니다. 기본적으로 프로 비전 된 모든 SQL Server Vm (종 량 제) 또는 사용자 고유의 라이선스 Azure Marketplace 이미지는 SQL VM 리소스 공급자에 자동으로 등록 되므로 [라이선스 유형을](#change-the-license-for-vms-already-registered-with-the-resource-provider)변경할 수 있습니다.
+종 량 제 Azure Marketplace 이미지에서 SQL Server VM를 프로 비전 한 경우 SQL Server 라이선스 유형이 종 량 제로 표시 됩니다. Azure Marketplace에서 사용자 라이선스 가져오기 이미지를 사용 하 여 SQL Server VM를 프로 비전 한 경우 라이선스 유형은 AHUB가 됩니다. 기본적으로 프로 비전 된 모든 SQL Server Vm (종 량 제) 또는 사용자 고유의 라이선스 Azure Marketplace 이미지는 SQL VM 리소스 공급자에 자동으로 등록 되므로 [라이선스 유형을](#vms-already-registered-with-the-resource-provider)변경할 수 있습니다.
 
 Azure 하이브리드 혜택를 통해 Azure VM에 SQL Server 자체 설치만 가능 합니다. Microsoft 제품 약관에 따라 Azure 하이브리드 혜택 사용을 나타내려면 SQL Server 라이선스를 Azure 하이브리드 혜택으로 설정 하 여 [이러한 vm을 SQL VM 리소스 공급자에 등록](virtual-machines-windows-sql-register-with-resource-provider.md) 해야 합니다.
 

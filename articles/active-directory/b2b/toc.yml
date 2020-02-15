@@ -15,14 +15,14 @@
           href: b2b-quickstart-invite-powershell.md
     - name: 자습서
       items:
-        - name: B2B 게스트 사용자 대량 초대
+        - name: PowerShell을 통한 대량 초대
+          href: bulk-invite-powershell.md
+        - name: 포털을 통한 대량 초대(미리 보기)
           href: tutorial-bulk-invite.md
         - name: Multi-Factor Authentication 적용
           href: b2b-tutorial-require-mfa.md
     - name: 샘플
       items:
-        - name: 셀프 서비스 등록 포털 샘플
-          href: self-service-portal.md
         - name: 코드 및 Azure PowerShell 샘플
           href: code-samples.md
     - name: 개념
@@ -48,6 +48,8 @@
           href: conditional-access.md
         - name: 하이브리드 조직을 위한 B2B
           href: hybrid-organizations.md
+        - name: 셀프 서비스 가입
+          href: self-service-portal.md
         - name: 현재 제한 사항
           href: current-limitations.md
     - name: 방법 가이드
@@ -113,7 +115,7 @@
           href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
         - name: MSDN 포럼
           href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD'
-        - name: 가격
+        - name: 가격 책정
           href: 'https://azure.microsoft.com/pricing/details/active-directory/'
         - name: 요금 계산기
           href: 'https://azure.microsoft.com/pricing/calculator/'

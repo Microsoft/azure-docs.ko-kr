@@ -7,12 +7,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 01/24/2020
 ms.author: jgao
-ms.openlocfilehash: f18c9c6efb17f84446b9fee3d2df2c0977bed0c4
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: a67f360aa08f306d6462342d96f59e06a4d3b501
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76757306"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77251858"
 ---
 # <a name="use-deployment-scripts-in-templates-preview"></a>템플릿에서 배포 스크립트 사용 (미리 보기)
 
@@ -30,7 +30,7 @@ Azure 리소스 템플릿에서 배포 스크립트를 사용 하는 방법에 �
 
 - 쉽게 코딩 하 고, 사용 하 고, 디버그할 수 있습니다. 즐겨 사용 하는 개발 환경에서 배포 스크립트를 개발할 수 있습니다. 스크립트는 템플릿 또는 외부 스크립트 파일에 포함 될 수 있습니다.
 - 스크립트 언어 및 플랫폼을 지정할 수 있습니다. 현재는 Linux 환경에서 Azure PowerShell 배포 스크립트만 지원 됩니다.
-- 스크립트를 실행 하는 데 사용 되는 id를 지정할 수 있습니다. 현재 [Azure 사용자 할당 관리 id](../../active-directory/managed-identities-azure-resources/overview.md) 만 지원 됩니다.
+- 스크립트를 실행 하는 데 사용 되는 id를 지정할 수 있습니다. 현재 [Azure 사용자 할당 관리 id](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md) 만 지원 됩니다.
 - 스크립트에 명령줄 인수를 전달 하도록 허용 합니다.
 - 는 스크립트 출력을 지정 하 고 배포에 다시 전달할 수 있습니다.
 
@@ -40,7 +40,7 @@ Azure 리소스 템플릿에서 배포 스크립트를 사용 하는 방법에 �
 > [!IMPORTANT]
 > 스크립트를 실행하고 문제를 해결하기 위해 두 개의 배포 스크립트 리소스, 즉 스토리지 계정과 컨테이너 인스턴스가 동일한 리소스 그룹에 만들어집니다. 이러한 리소스는 일반적으로 배포 스크립트 실행이 터미널 상태가 될 때 스크립트 서비스에 의해 삭제 됩니다. 리소스가 삭제될 때까지 해당 리소스에 대한 요금이 청구됩니다. 자세히 알아보려면 [배포 스크립트 리소스 정리](#clean-up-deployment-script-resources)를 참조 하세요.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 - **구독 수준에서 기여자 역할이 있는 사용자가 할당한 관리 ID**. 이 ID는 배포 스크립트를 실행하는 데 사용됩니다. 하나를 만들려면 Azure Portal를 사용 하거나 [Azure CLI](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md)를 사용 하거나 [Azure PowerShell](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md)를 사용 하 여 [사용자 할당 관리 id 만들기](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)를 참조 하세요. 이 ID는 템플릿을 배포할 때 필요합니다. ID의 형식은 다음과 같습니다.
 
@@ -59,7 +59,7 @@ Azure 리소스 템플릿에서 배포 스크립트를 사용 하는 방법에 �
 
 - **합니다, 2.8.0 또는 3.0.0 버전을 Azure PowerShell**합니다. 템플릿을 배포 하는 데 이러한 버전이 필요 하지 않습니다. 그러나 이러한 버전은 배포 스크립트를 로컬로 테스트 하는 데 필요 합니다. [Azure PowerShell 모듈 설치](/powershell/azure/install-az-ps)를 참조하세요. 미리 구성 된 Docker 이미지를 사용할 수 있습니다.  [개발 환경 구성](#configure-development-environment)을 참조 하세요.
 
-## <a name="resource-schema"></a>리소스 스키마
+## <a name="sample-template"></a>샘플 템플릿
 
 다음 json은 예입니다.  최신 템플릿 스키마는 [여기](/azure/templates/microsoft.resources/deploymentscripts)에서 찾을 수 있습니다.
 
@@ -87,7 +87,7 @@ Azure 리소스 템플릿에서 배포 스크립트를 사용 하는 방법에 �
       $DeploymentScriptOutputs = @{}
       $DeploymentScriptOutputs['text'] = $output
     ",
-    "primaryScriptUri": "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/deployment-script/deploymentscript-helloworld.json",
+    "primaryScriptUri": "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/deployment-script/deploymentscript-helloworld.ps1",
     "supportingScriptUris":[],
     "timeout": "PT30M",
     "cleanupPreference": "OnSuccess",
@@ -122,7 +122,7 @@ Azure 리소스 템플릿에서 배포 스크립트를 사용 하는 방법에 �
 > [!NOTE]
 > 인라인 배포 스크립트는 큰따옴표로 묶여 있으므로 배포 스크립트 내의 문자열을 작은따옴표로 묶어야 합니다. PowerShell의 이스케이프 문자는 **&#92;** 입니다. 이전 JSON 샘플에 표시 된 대로 문자열 대체를 사용 하는 것을 고려할 수도 있습니다. Name 매개 변수의 기본값을 참조 하세요.
 
-스크립트는 하나의 매개 변수를 사용 하 고 매개 변수 값을 출력 합니다. **Deploymentscriptoutputs** 는 출력을 저장 하는 데 사용 됩니다.  출력 섹션에서 **값** 줄은 저장 된 값에 액세스 하는 방법을 보여 줍니다. `Write-Output`은 디버깅 목적으로 사용 됩니다. 출력 파일에 액세스 하는 방법에 대 한 자세한 내용은 [배포 스크립트 디버그](#debug-deployment-scripts)를 참조 하세요.  속성 설명은 [리소스 스키마](#resource-schema)를 참조 하세요.
+스크립트는 하나의 매개 변수를 사용 하 고 매개 변수 값을 출력 합니다. **Deploymentscriptoutputs** 는 출력을 저장 하는 데 사용 됩니다.  출력 섹션에서 **값** 줄은 저장 된 값에 액세스 하는 방법을 보여 줍니다. `Write-Output`은 디버깅 목적으로 사용 됩니다. 출력 파일에 액세스 하는 방법에 대 한 자세한 내용은 [배포 스크립트 디버그](#debug-deployment-scripts)를 참조 하세요.  속성 설명은 [샘플 템플릿](#sample-template)을 참조 하세요.
 
 스크립트를 실행 하려면 **시도** 를 선택 하 여 Cloud shell을 열고 다음 코드를 셸 창에 붙여넣습니다.
 
@@ -144,7 +144,7 @@ Write-Host "Press [ENTER] to continue ..."
 
 ## <a name="use-external-scripts"></a>외부 스크립트 사용
 
-인라인 스크립트 외에도 외부 스크립트 파일을 사용할 수 있습니다. 현재는 **ps1** 파일 확장명이 있는 PowerShell 스크립트만 지원 됩니다. 외부 스크립트 파일을 사용 하려면 `scriptContent`를 `primaryScriptUri`으로 바꿉니다. 예:
+인라인 스크립트 외에도 외부 스크립트 파일을 사용할 수 있습니다. 현재는 **ps1** 파일 확장명이 있는 PowerShell 스크립트만 지원 됩니다. 외부 스크립트 파일을 사용 하려면 `scriptContent`를 `primaryScriptUri`으로 바꿉니다. 다음은 그 예입니다.
 
 ```json
 "primaryScriptURI": "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/deployment-script/deploymentscript-helloworld.ps1",

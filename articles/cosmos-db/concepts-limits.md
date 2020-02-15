@@ -6,12 +6,12 @@ ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 08/05/2019
-ms.openlocfilehash: 2cce9cbe20121376ad77692773df1d58fcf5257f
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: d250cc3c74f27079d633fa24c49eb11b94135ead
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759775"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77200047"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Azure Cosmos DB 서비스 할당량
 
@@ -26,7 +26,7 @@ ms.locfileid: "76759775"
 | 컨테이너 당 최대 RUs ([프로 비전 된 전용 처리량 모드](databases-containers-items.md#azure-cosmos-containers)) | 기본적으로 100만입니다. [Azure 지원 티켓](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) 을 작성 하 여이를 늘릴 수 있습니다. |
 | 데이터베이스당 최대 RUs ([공유 처리량 프로 비전 된 모드](databases-containers-items.md#azure-cosmos-containers)) | 기본적으로 100만입니다. [Azure 지원 티켓](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) 을 작성 하 여이를 늘릴 수 있습니다. |
 | (논리적) 파티션 키 당 최대 RUs | 10000 |
-| (논리적) 파티션 키 당 모든 항목에 대 한 최대 저장소| 10GB |
+| (논리적) 파티션 키 당 모든 항목에 대 한 최대 저장소| 10 GB |
 | 고유 (논리적) 파티션 키의 최대 수 | 제한 없음 |
 | 컨테이너 당 최대 저장소 | 제한 없음 |
 | 데이터베이스당 최대 저장소 | 제한 없음 |
@@ -77,7 +77,7 @@ Cosmos DB는 일정 한 간격으로 데이터의 백업을 자동으로 수행 
 | 리소스 | 기본 제한 |
 | --- | --- |
 | 최대 데이터베이스 수 | 제한 없음 |
-| 데이터베이스당 최대 컨테이너 수 (또는 계정) | 제한 없음 |
+| 공유 처리량이 있는 데이터베이스에서 프로 비전 할 수 있는 최대 컨테이너 수 |25 |
 | 최대 지역 수 | 제한 없음 (모든 Azure 지역) |
 
 ## <a name="per-container-limits"></a>컨테이너 당 제한
@@ -179,7 +179,7 @@ Cosmos DB은 MongoDB에 대해 작성 된 응용 프로그램에 대 한 MongoDB
 | 구독 당 최대 컨테이너 (MongoDB API) | 3 |
 | 컨테이너 당 최대 처리량 | 5,000 |
 | 공유 처리량 데이터베이스당 최대 처리량 | 20000 |
-| 계정 당 최대 총 저장소 | 10GB |
+| 계정 당 최대 총 저장소 | 10 GB |
 
 Cosmos DB는 미국 중부, 서유럽, 동남 아시아 지역 에서만 글로벌 배포를 지원 합니다. 시도 Azure Cosmos DB 계정에 대해 Azure 지원 티켓을 만들 수 없습니다. 그러나 기존 지원 계획이 있는 구독자에 대 한 지원이 제공 됩니다.
 

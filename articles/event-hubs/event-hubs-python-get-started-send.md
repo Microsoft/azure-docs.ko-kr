@@ -1,33 +1,32 @@
 ---
-title: '빠른 시작: Python을 사용하여 이벤트 보내기 및 받기 - Azure Event Hubs'
-description: '빠른 시작: 이 연습에서는 Azure Event Hubs와 이벤트를 주고 받는 Python 스크립트를 만들고 실행하는 방법을 보여줍니다.'
+title: Python(이전)을 사용하여 Azure Event Hubs에서 이벤트 보내기 또는 받기
+description: 이 연습에서는 이전 azure-eventhub 버전 1 패키지를 사용하여 이벤트를 Azure Event Hubs로 보내거나 받는 Python 스크립트를 만들고 실행하는 방법을 보여줍니다.
 services: event-hubs
-author: ShubhaVijayasarathy
+author: spelluru
 manager: femila
 ms.service: event-hubs
 ms.workload: core
 ms.topic: quickstart
-ms.date: 01/08/2020
-ms.author: shvija
-ms.openlocfilehash: c4fa9e6038f4007246552610f537825f9def92a8
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.date: 01/15/2020
+ms.author: spelluru
+ms.openlocfilehash: 654ccd6352dc0b671cc3becdafd2f1e1102dd39e
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75939962"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76902945"
 ---
-# <a name="quickstart-send-and-receive-events-with-event-hubs-using-python"></a>빠른 시작: Python을 사용하여 Event Hubs와 이벤트 주고 받기
+# <a name="quickstart-send-and-receive-events-with-event-hubs-using-python-azure-eventhub-version-1"></a>빠른 시작: Python(azure-eventhub 버전 1)을 사용하여 Event Hubs와 이벤트 주고 받기
 
 Azure Event Hubs는 초당 수백만 개의 이벤트를 수신하여 처리할 수 있는 빅 데이터 스트리밍 플랫폼이자 이벤트 수집 서비스입니다. Event Hubs는 분산된 소프트웨어와 디바이스의 이벤트, 데이터 또는 원격 분석을 처리하고 저장할 수 있습니다. Event Hub로 전송된 데이터는 실시간 분석 공급자 또는 일괄 처리/스토리지 어댑터를 사용하여 변환하고 저장할 수 있습니다. Event Hubs에 대한 자세한 내용은 [Azure Event Hubs](event-hubs-about.md) 및 [Azure Event Hubs의 기능 및 용어](event-hubs-features.md)를 참조하세요.
 
 이 빠른 시작에서는 이벤트 허브와 이벤트를 주고 받는 Python 애플리케이션을 만드는 방법을 보여줍니다. 
 
-> [!IMPORTANT]
-> 이 빠른 시작에서는 Azure Event Hubs Python SDK 버전 1을 사용합니다. Azure Event Hubs를 처음 사용하는 경우 Python SDK 버전 5를 사용합니다. Python SDK 버전 5를 사용하는 빠른 시작은 [이 문서](get-started-python-send-v2.md)를 참조하세요. 기존 코드를 버전 1에서 버전 5로 마이그레이션하려면 [마이그레이션 가이드](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/migration_guide.md)를 참조하세요.
+> [!WARNING]
+> 이 빠른 시작은 Azure Event Hubs Python SDK 버전 1을 위한 것입니다. 코드를 [Python SDK 버전 5](get-started-python-send-v2.md)로 [마이그레이션](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/migration_guide.md)하는 것이 좋습니다.
 
-
-> [!NOTE]
-> 이 빠른 시작을 진행하는 대신, GitHub에서 [샘플 앱](https://github.com/Azure/azure-event-hubs-python/tree/master/examples)을 다운로드하여 실행해도 됩니다. 이 경우 `EventHubConnectionString` 및 `EventHubName` 문자열을 해당 이벤트 허브 값으로 바꿔야 합니다. 
+ 
+ 
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -40,15 +39,16 @@ Azure Event Hubs는 초당 수백만 개의 이벤트를 수신하여 처리할 
 - Event Hubs용 Python 패키지. 이 패키지를 설치하려면 경로에 Python이 있는 명령 프롬프트에서 다음 명령을 실행합니다. 
   
   ```cmd
-  pip install azure-eventhub
+  pip install azure-eventhub==1.3.*
   ```
-  
-  > [!NOTE]
-  > 이 빠른 시작의 코드는 현재 안정적인 Event Hubs SDK의 버전 1.3.1을 사용합니다. SDK 미리 보기 버전을 사용하는 샘플 코드는 [https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/eventhub/azure-eventhubs/examples](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/eventhub/azure-eventhubs/examples)를 참조하세요.
+
 
 ## <a name="send-events"></a>이벤트 보내기
 
 이벤트 허브로 이벤트를 보내는 Python 애플리케이션을 만드는 방법은 다음과 같습니다.
+
+> [!NOTE]
+> 이 빠른 시작을 진행하는 대신, GitHub에서 [샘플 앱](https://github.com/Azure/azure-event-hubs-python/tree/master/examples)을 다운로드하여 실행해도 됩니다. 이 경우 `EventHubConnectionString` 및 `EventHubName` 문자열을 해당 이벤트 허브 값으로 바꿔야 합니다.
 
 1. 선호하는 Python 편집기(예: [Visual Studio Code](https://code.visualstudio.com/))를 엽니다.
 2. *send.py*라는 새 파일을 만듭니다. 이 스크립트는 이벤트 허브에 100개의 이벤트를 전송합니다.

@@ -12,12 +12,12 @@ ms.date: 12/09/2019
 ms.author: ryanwi
 ms.reviewer: agirling, saeeda, benv
 ms.custom: aaddev
-ms.openlocfilehash: 78e18998d6e6096b045cc8328ca5adacb1342e68
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 3c18440e87cf50e370b21b5f0ca33b42e0069fc1
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76699532"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161429"
 ---
 # <a name="evolution-of-microsoft-identity-platform"></a>Microsoft ID 플랫폼의 발전
 
@@ -68,4 +68,4 @@ Microsoft ID 플랫폼(v2.0) 엔드포인트는 OIDC 인증을 획득했습니�
 v1.0 및 v2.0에 대해 자세히 알아봅니다.
 
 * [Microsoft ID 플랫폼(v2.0) 개요](v2-overview.md)
-* [개발자용 Azure Active Directory(v1.0) 개요](v1-overview.md)
+* [개발자용 Azure Active Directory(v1.0) 개요](../azuread-dev/v1-overview.md)

@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 1/29/2020
 ms.author: rohogue
-ms.openlocfilehash: 9ad6348e15c8a25f721a89be7eab3e17c58ae17c
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: da260074fc69fac9e98d3698bb2d40fdf80d7118
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76988879"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77252045"
 ---
 # <a name="manage-your-cache-from-the-azure-portal"></a>Azure Portal에서 캐시 관리
 
@@ -73,6 +73,8 @@ Azure Portal의 캐시 개요 페이지에는 캐시에 대 한 프로젝트 세
 소프트웨어 업데이트에는 몇 시간이 걸릴 수 있습니다. 높은 처리량으로 구성 된 캐시는 최대 처리량 값이 적은 캐시 보다 업그레이드 하는 데 더 많은 시간이 걸립니다.
 
 소프트웨어 업그레이드를 사용할 수 있는 경우 일주일 또는 수동으로 적용 해야 합니다. 종료 날짜는 업그레이드 메시지에 나열 됩니다. 이 시간 동안 업그레이드 하지 않으면 Azure에서 자동으로 캐시에 업데이트를 적용 합니다. 자동 업그레이드 타이밍은 구성할 수 없습니다. 캐시 성능 영향에 대해 염려 하는 경우 기간이 만료 되기 전에 소프트웨어를 직접 업그레이드 해야 합니다.
+
+종료 날짜가 전달 될 때 캐시가 중지 되 면 다음에 시작 될 때 캐시가 자동으로 소프트웨어를 업그레이드 합니다. 업데이트는 즉시 시작 되지 않을 수도 있지만 처음부터 시작 됩니다.
 
 **업그레이드** 단추를 클릭 하 여 소프트웨어 업데이트를 시작 합니다. 작업이 완료 될 때까지 캐시 상태가 **업그레이드** 중으로 변경 됩니다.
 

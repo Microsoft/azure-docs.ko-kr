@@ -12,12 +12,12 @@ ms.date: 10/22/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: bacac67ddd7f379d679a149fe9574676ae0c7567
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 7d596292a823b4d912204f5cfbe8623ab7429fa3
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76834426"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161395"
 ---
 # <a name="microsoft-identity-platform-access-tokens"></a>Microsoft id 플랫폼 액세스 토큰
 
@@ -63,7 +63,7 @@ JWT는 세 부분으로 분할됩니다.
 
 각 부분은 마침표(`.`)로 구분되며 개별적으로 Base64로 인코딩됩니다.
 
-클레임은 채울 값이 존재하는 경우에만 제공됩니다. 따라서 앱은 존재 하는 클레임에 대 한 종속성을 사용 하지 않아야 합니다. 예로는 `pwd_exp`(모든 테넌트가 암호 만료될 필요가 없음) 또는 `family_name`([클라이언트 자격 증명](v1-oauth2-client-creds-grant-flow.md) 흐름이 이름 없는 애플리케이션을 대신함)이 있습니다. 액세스 토큰 유효성 검사에 사용되는 클레임은 항상 제공됩니다.
+클레임은 채울 값이 존재하는 경우에만 제공됩니다. 따라서 앱은 존재 하는 클레임에 대 한 종속성을 사용 하지 않아야 합니다. 예를 들면 `pwd_exp` (모든 테 넌 트가 암호를 요구 하지 않음) 또는 `family_name` (클라이언트 자격 증명 ([v1.0, v2.0](../azuread-dev/v1-oauth2-client-creds-grant-flow.md) [) 흐름](v2-oauth2-client-creds-grant-flow.md)은 이름이 없는 응용 프로그램을 대신 함)입니다. 액세스 토큰 유효성 검사에 사용되는 클레임은 항상 제공됩니다.
 
 > [!NOTE]
 > 일부 클레임은 Azure AD에서 토큰을 다시 사용하는 경우 안전하게 보호하는 데 사용됩니다. 이러한 클레임은 설명에 "불투명"으로 되어 공개 사용되지 않는 것으로 표시됩니다. 이러한 클레임은 토큰에 표시되거나 표시되지 않을 수 있으며, 통지 없이 새로 추가될 수도 있습니다.
@@ -98,9 +98,9 @@ JWT는 세 부분으로 분할됩니다.
 | `preferred_username` | String | 사용자를 나타내는 기본 사용자 이름입니다. 메일 주소, 전화 번호 또는 지정된 형식이 없는 일반 사용자 이름일 수 있습니다. 해당 값은 변경 가능하며 시간이 지남에 따라 변경될 수 있습니다. 해당 값은 변경 가능하므로 권한 부여 결정을 내리는 데 사용되지 않아야 합니다.  사용자 이름 힌트에 사용할 수 있습니다. `profile` 범위는 이 클레임을 받기 위해 필요합니다. |
 | `name` | String | 사람이 인식할 수 있으며 토큰의 주체를 식별하는 값을 제공합니다. 이 값은 반드시 고유한 것은 아니며 변경 가능하고 표시 용도로만 사용하도록 디자인되었습니다. `profile` 범위는 이 클레임을 받기 위해 필요합니다. |
 | `scp` | 문자열, 공백으로 구분된 범위 목록 | 클라이언트 애플리케이션이 동의를 요청(및 수신)한 애플리케이션에 의해 노출된 범위 집합입니다. 앱은 이러한 범위가 앱에 의해 노출된 유효한 범위인지 확인하고 이러한 범위의 값을 기반으로 권한 부여 결정을 해야 합니다. [사용자 토큰](#user-and-application-tokens)에 대해서만 포함됩니다. |
-| `roles` | 문자열 배열, 사용 권한 목록 | 응용 프로그램에서 요청 하는 응용 프로그램 또는 사용자에 게 호출 권한이 부여 된 사용 권한 집합입니다. [응용 프로그램 토큰](#user-and-application-tokens)의 경우 사용자 범위 대신 [클라이언트 자격 증명](v1-oauth2-client-creds-grant-flow.md) 흐름 중에 사용 됩니다.  [사용자 토큰](#user-and-application-tokens) 의 경우 대상 응용 프로그램에서 사용자가 할당 된 역할로 채워집니다. |
+| `roles` | 문자열 배열, 사용 권한 목록 | 응용 프로그램에서 요청 하는 응용 프로그램 또는 사용자에 게 호출 권한이 부여 된 사용 권한 집합입니다. [응용 프로그램 토큰](#user-and-application-tokens)의 경우 사용자 범위 대신 클라이언트 자격 증명[흐름 (v1.0](../azuread-dev/v1-oauth2-client-creds-grant-flow.md), v2.0 [) 중](v2-oauth2-client-creds-grant-flow.md)에 사용 됩니다.  [사용자 토큰](#user-and-application-tokens) 의 경우 대상 응용 프로그램에서 사용자가 할당 된 역할로 채워집니다. |
 | `wids` | [RoleTemplateID](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#role-template-ids) guid의 배열 | [관리 역할 페이지](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#role-template-ids)의 역할 섹션에서이 사용자에 게 할당 된 테 넌 트 전체 역할을 나타냅니다.  이 클레임은 응용 프로그램 [매니페스트의](reference-app-manifest.md)`groupMembershipClaims` 속성을 통해 응용 프로그램 별로 구성 됩니다.  "모두" 또는 "DirectoryRole"로 설정 해야 합니다.  토큰 길이 문제로 인해 암시적 흐름을 통해 가져온 토큰에는 없을 수 있습니다. |
-| `groups` | GUID의 JSON 배열 | 주체의 그룹 멤버 자격을 나타내는 개체 ID를 제공합니다. 이러한 값은 고유하며(개체 ID 참조) 리소스 액세스 시 강제로 인증하게 하는 경우처럼 액세스 관리에 안전하게 사용할 수 있습니다. 그룹 클레임에 포함된 그룹은 [애플리케이션 매니페스트](reference-app-manifest.md)의 `groupMembershipClaims` 속성을 통해 애플리케이션별로 구성됩니다. Null 값은 모든 그룹을 제외하고, "SecurityGroup" 값은 Active Directory 보안 그룹 멤버 자격만 포함하고, "All" 값은 보안 그룹과 Office 365 메일 그룹을 모두 포함합니다. <br><br>암시적 권한 부여가 있는 `groups` 클레임 사용에 대한 자세한 내용은 아래 `hasgroups` 클레임을 참조하세요. <br>다른 흐름의 경우 사용자가 있는 그룹 수가 한도 (SAML의 경우 150, JWT의 경우 200)를 초과 하면 사용자의 그룹 목록이 포함 된 AAD Graph 끝점을 가리키는 클레임 원본에 초과분 클레임이 추가 됩니다. |
+| `groups` | GUID의 JSON 배열 | 주체의 그룹 멤버 자격을 나타내는 개체 ID를 제공합니다. 이러한 값은 고유하며(개체 ID 참조) 리소스 액세스 시 강제로 인증하게 하는 경우처럼 액세스 관리에 안전하게 사용할 수 있습니다. 그룹 클레임에 포함된 그룹은 `groupMembershipClaims`애플리케이션 매니페스트[의 ](reference-app-manifest.md) 속성을 통해 애플리케이션별로 구성됩니다. Null 값은 모든 그룹을 제외하고, "SecurityGroup" 값은 Active Directory 보안 그룹 멤버 자격만 포함하고, "All" 값은 보안 그룹과 Office 365 메일 그룹을 모두 포함합니다. <br><br>암시적 권한 부여가 있는 `hasgroups` 클레임 사용에 대한 자세한 내용은 아래 `groups` 클레임을 참조하세요. <br>다른 흐름의 경우 사용자가 있는 그룹 수가 한도 (SAML의 경우 150, JWT의 경우 200)를 초과 하면 사용자의 그룹 목록이 포함 된 AAD Graph 끝점을 가리키는 클레임 원본에 초과분 클레임이 추가 됩니다. |
 | `hasgroups` | 부울 | 있는 경우 항상 `true`로, 사용자 하나 이상의 그룹에 있음을 나타냅니다. 전체 그룹 클레임이 URI 조각을 URL 길이 한도(현재 6개 이상 그룹)를 초과하여 확장할 경우 암시적 권한 부여 흐름에서 JWT에 대해 `groups` 클레임 대신 사용됩니다. 클라이언트가 Graph를 사용하여 사용자 그룹(`https://graph.windows.net/{tenantID}/users/{userID}/getMemberObjects`)을 결정해야 함을 표시합니다. |
 | `groups:src1` | JSON 개체 | 길이는 제한되지 않으나(위의 `hasgroups` 참조) 토큰에게는 너무 큰 토큰 요청의 경우 사용자의 전체 그룹 목록에 대한 링크가 포함됩니다. 분산된 클레임으로서의 JWT인 경우 SAML이 `groups` 클레임 대신에 새 클레임이 됩니다. <br><br>**JWT 값 예제**: <br> `"groups":"src1"` <br> `"_claim_sources`: `"src1" : { "endpoint" : "https://graph.windows.net/{tenantID}/users/{userID}/getMemberObjects" }` |
 | `sub` | 문자열, GUID | 앱 사용자 등 토큰에서 정보를 어설션하는 보안 주체입니다. 이 값은 변경할 수 없으며 재할당 또는 재사용할 수 없습니다. 예를 들어, 리소스 액세스에 토큰을 사용할 때 이 값을 사용하면 안전하게 인증 검사를 수행하고 데이터베이스 테이블에서 키로 사용할 수 있습니다. Azure AD에서 발급하는 토큰에는 항상 주체가 있기 때문에 이 값을 일반 용도의 인증 시스템에 사용하는 것이 좋습니다. 그러나 주체는 쌍으로 된 식별자이며 특정 애플리케이션 ID에 고유합니다. 따라서 단일 사용자가 두 개의 다른 클라이언트 ID를 사용하여 두 개의 다른 앱에 로그인하는 경우 해당 앱은 주체 클레임에 두 개의 다른 값을 받게 됩니다. 아키텍처 및 개인 정보 보호 요구 사항에 따라 적합할 수도 있고 적합하지 않을 수도 있습니다. 또한 테 넌 트 내의 앱에서 동일 하 게 유지 되는 `oid` 클레임을 참조 하세요. |
@@ -172,7 +172,7 @@ id_token 또는 access_token의 유효성을 검사하려면 앱이 토큰의 �
 
 Azure AD 미들웨어에는 액세스 토큰의 유효성을 검사하는 기본 제공 기능이 있으며 [샘플](https://docs.microsoft.com/azure/active-directory/active-directory-code-samples)을 탐색하여 원하는 언어로 찾을 수 있습니다. JWT 토큰의 유효성 검사를 명시적으로 수행하는 방법은 [수동 JWT 유효성 검사 샘플](https://github.com/Azure-Samples/active-directory-dotnet-webapi-manual-jwt-validation)을 참조하세요.
 
-토큰 유효성 검사를 쉽게 처리하는 방법을 보여 주는 라이브러리와 코드 샘플이 제공됩니다. 아래 정보는 기본 프로세스를 이해하고자 하는 사용자에게 제공됩니다. JWT 유효성 검사에 사용할 수 있는 여러 타사 오픈 소스 라이브러리도 있습니다. 거의 모든 플랫폼 및 언어에 대 한 옵션은 하나 이상 있습니다. Azure AD 인증 라이브러리 및 코드 샘플에 대한 자세한 내용은 [v1.0 인증 라이브러리](active-directory-authentication-libraries.md) 및 [v2.0 인증 라이브러리](reference-v2-libraries.md)를 참조하세요.
+토큰 유효성 검사를 쉽게 처리하는 방법을 보여 주는 라이브러리와 코드 샘플이 제공됩니다. 아래 정보는 기본 프로세스를 이해하고자 하는 사용자에게 제공됩니다. JWT 유효성 검사에 사용할 수 있는 여러 타사 오픈 소스 라이브러리도 있습니다. 거의 모든 플랫폼 및 언어에 대 한 옵션은 하나 이상 있습니다. Azure AD 인증 라이브러리 및 코드 샘플에 대한 자세한 내용은 [v1.0 인증 라이브러리](../azuread-dev/active-directory-authentication-libraries.md) 및 [v2.0 인증 라이브러리](reference-v2-libraries.md)를 참조하세요.
 
 ### <a name="validating-the-signature"></a>서명 유효성 검사
 
@@ -229,9 +229,9 @@ https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration
 
 ## <a name="user-and-application-tokens"></a>사용자 및 애플리케이션 토큰
 
-애플리케이션은 사용자 대신(일반적인 흐름) 또는 애플리케이션에서 직접([클라이언트 자격 증명 흐름](v1-oauth2-client-creds-grant-flow.md)을 통해) 토큰을 받을 수 있습니다. 이러한 앱 전용 토큰은 이 호출이 애플리케이션에서 발생하며 사용자가 이를 지원하는 것이 아님을 나타냅니다. 이러한 토큰은 대체로 동일하게 처리되며 약간의 차이점이 있습니다.
+응용 프로그램은 사용자 (일반적인 흐름)를 대신 하 여 [토큰을 받거나](v2-oauth2-client-creds-grant-flow.md)클라이언트 자격 증명 흐름 (v1.0, v2.0)을 통해 응용 프로그램에서 직접[토큰을 받을](../azuread-dev/v1-oauth2-client-creds-grant-flow.md)수 있습니다. 이러한 앱 전용 토큰은 이 호출이 애플리케이션에서 발생하며 사용자가 이를 지원하는 것이 아님을 나타냅니다. 이러한 토큰은 대체로 동일하게 처리되며 약간의 차이점이 있습니다.
 
-* 앱 전용 토큰에는 `scp` 클레임이 없으며 대신 `roles` 클레임이 있을 수 있습니다. 애플리케이션 권한(위임된 권한과 반대)이 기록되는 위치입니다. 위임된 권한 및 애플리케이션 권한에 대한 자세한 내용은 [v1.0](v1-permissions-and-consent.md) 및 [v2.0](v2-permissions-and-consent.md)에서 권한 및 동의를 참조하세요.
+* 앱 전용 토큰에는 `scp` 클레임이 없으며 대신 `roles` 클레임이 있을 수 있습니다. 애플리케이션 권한(위임된 권한과 반대)이 기록되는 위치입니다. 위임 된 권한 및 응용 프로그램 권한에 대 한 자세한 내용은 사용 권한 및[동의 (](../azuread-dev/v1-permissions-consent.md)v1.0 [, v2.0](v2-permissions-and-consent.md))를 참조 하세요.
 * `name` 또는 `upn`와 같이 많은 사용자 관련 클레임이 누락 됩니다.
 * `sub` 및 `oid` 클레임은 동일 합니다. 
 
@@ -243,7 +243,7 @@ https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration
 
 * MaxInactiveTime: MaxInactiveTime에 의해 결정 된 시간 내에 새로 고침 토큰을 사용 하지 않은 경우 새로 고침 토큰이 더 이상 유효 하지 않게 됩니다.
 * MaxSessionAge: MaxAgeSessionMultiFactor 또는 MaxAgeSessionSingleFactor가 (해지될 때까지) 기본값 이외의 값으로 설정된 경우 MaxAgeSession*에 설정된 시간이 경과된 후에 다시 인증해야 합니다.
-* 예시:
+* 예제:
   * 테 넌 트는 MaxInactiveTime을 5 일로 설정 하 고, 사용자가 일주일 동안 휴가를 시도 했으므로 Azure AD는 7 일 동안 사용자의 새 토큰 요청을 본 적이 없습니다. 다음 번에 사용자가 새 토큰을 요청 하면 새로 고침 토큰이 해지 된 것을 확인 하 고 자격 증명을 다시 입력 해야 합니다.
   * 중요 한 응용 프로그램에는 1 일의 MaxAgeSessionSingleFactor가 있습니다. 사용자가 월요일에 로그인 하 고 화요일에 (25 시간이 경과한 후) 다시 인증 해야 합니다.
 
@@ -257,7 +257,7 @@ https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration
 | 관리자가 암호 재설정 | 해지됨 | 해지됨 | 활성 상태 | 활성 상태 | 활성 상태 |
 | 사용자가 [PowerShell을 통해](https://docs.microsoft.com/powershell/module/azuread/revoke-azureadsignedinuserallrefreshtoken) 새로 고침 토큰 해지 | 해지됨 | 해지됨 | 해지됨 | 해지됨 | 해지됨 |
 | 관리자가 [PowerShell을 통해](https://docs.microsoft.com/powershell/module/azuread/revoke-azureaduserallrefreshtoken) 테넌트에 대한 모든 새로 고침 토큰 해지 | 해지됨 | 해지됨 |해지됨 | 해지됨 | 해지됨 |
-| 웹 [Single Sign-Out](v1-protocols-openid-connect-code.md#single-sign-out) | 해지됨 | 활성 상태 | 해지됨 | 활성 상태 | 활성 상태 |
+| 웹의 Single[sign-on (v1.0](../azuread-dev/v1-protocols-openid-connect-code.md#single-sign-out) [, v2.0](v2-protocols-oidc.md#single-sign-out) ) | 해지됨 | 활성 상태 | 해지됨 | 활성 상태 | 활성 상태 |
 
 > [!NOTE]
 > "비 암호 기반" 로그인은 사용자가 가져오도록 암호를 입력하지 않은 위치입니다. 예를 들어 Windows Hello, FIDO2 키 또는 PIN을 사용 하 여 얼굴을 사용 합니다.
@@ -269,4 +269,4 @@ https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration
 ## <a name="next-steps"></a>다음 단계
 
 * [Azure AD에서 `id_tokens`](id-tokens.md)에 대해 알아봅니다.
-* [v1.0](v1-permissions-and-consent.md) 및 [v2.0](v2-permissions-and-consent.md)에서 권한 및 동의에 대해 알아봅니다.
+* 사용 권한 및 [동의 (v1.0](../azuread-dev/v1-permissions-consent.md) [, v2.0](v2-permissions-and-consent.md))에 대해 알아봅니다.

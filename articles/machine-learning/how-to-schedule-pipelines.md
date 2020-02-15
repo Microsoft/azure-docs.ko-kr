@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: laobri
 author: lobrien
 ms.date: 11/12/2019
-ms.openlocfilehash: 1766b536043d8c404addb1877aa3ef9b57344ef4
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: fed411ea171274513308ec3efa68da80e4d25f8a
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76722257"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77116749"
 ---
 # <a name="schedule-machine-learning-pipelines-with-azure-machine-learning-sdk-for-python"></a>Python 용 Azure Machine Learning SDK를 사용 하 여 기계 학습 파이프라인 예약
 
@@ -55,6 +55,13 @@ pipeline_id = "aaaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
 ## <a name="create-a-schedule"></a>일정 만들기
 
 반복 하 여 파이프라인을 실행 하려면 일정을 만듭니다. `Schedule`은 파이프라인, 실험 및 트리거를 연결 합니다. 트리거는 실행 간 대기를 설명 하는`ScheduleRecurrence` 이거나, 변경 내용을 감시 하는 디렉터리를 지정 하는 데이터 저장소 경로 일 수 있습니다. 두 경우 모두 일정을 만들 실험의 이름과 파이프라인 식별자가 필요 합니다.
+
+Python 파일의 맨 위에서 `Schedule` 및 `ScheduleRecurrence` 클래스를 가져옵니다.
+
+```python
+
+from azureml.pipeline.core.schedule import ScheduleRecurrence, Schedule
+```
 
 ### <a name="create-a-time-based-schedule"></a>시간 기반 일정 만들기
 
@@ -141,3 +148,4 @@ stop_by_schedule_id(ws, schedule_id)
 
 * [파이프라인](concept-ml-pipelines.md) 에 대 한 자세한 정보
 * [Jupyter를 사용 하 여 Azure Machine Learning 탐색](samples-notebooks.md) 에 대해 자세히 알아보기
+

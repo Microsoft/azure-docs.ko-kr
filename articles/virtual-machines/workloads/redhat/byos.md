@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 1/14/2020
+ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: afda502bcd89423ecdd008c0297c85dd8a5b61fb
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: a54e1c9cbc9a80139d71a89f86ac51ecf5ce9902
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989844"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190510"
 ---
 # <a name="red-hat-enterprise-linux-bring-your-own-subscription-gold-images-in-azure"></a>Azure에서 사용자 고유의 구독 골드 이미지를 가져오는 Red Hat Enterprise Linux
 
@@ -175,9 +175,9 @@ RHEL (Red Hat Enterprise Linux) 이미지는 PAYG (종 량 제) 또는 사용자
 
 [Azure Disk Encryption](../../linux/disk-encryption-overview.md)를 사용 하 여 사용자 고유의 구독 골드 이미지를 보호할 수 Red Hat Enterprise Linux. 그러나 암호화를 사용 하도록 설정 하기 전에 구독을 등록 **해야** 합니다.  RHEL BYOS 골드 이미지 등록에 대 한 세부 정보는 Red Hat 사이트에서 사용할 수 있습니다. [Red Hat 구독 관리자를 사용 하 여 Red Hat 고객 포털에 시스템을 등록 및 구독 하는 방법을](https://access.redhat.com/solutions/253273)참조 하세요. 활성 Red Hat 구독이 있는 경우 [Red Hat 고객 포털 활성화 키 만들기](https://access.redhat.com/articles/1378093)를 읽을 수도 있습니다.
 
-[Red Hat 사용자 지정 이미지](/linux/redhat-create-upload-vhd)에서는 Azure Disk Encryption 지원 되지 않습니다. 추가 ADE 요구 사항 및 필수 구성 요소는 [Linux vm에 대 한 Azure Disk Encryption](../../linux/disk-encryption-overview.md#additional-vm-requirements)에 설명 되어 있습니다.
+[Red Hat 사용자 지정 이미지](../../linux/redhat-create-upload-vhd.md)에서는 Azure Disk Encryption 지원 되지 않습니다. 추가 ADE 요구 사항 및 필수 구성 요소는 [Linux vm에 대 한 Azure Disk Encryption](../../linux/disk-encryption-overview.md#additional-vm-requirements)에 설명 되어 있습니다.
 
-Azure Disk Encryption를 적용 하는 단계는 [Linux vm 및 관련 문서에서 Azure Disk Encryption 시나리오](../../linux/disk-encryption-linux.md) 에서 사용할 수 있습니다.  
+Azure Disk Encryption를 적용 하는 단계는 [Linux vm 및 관련 문서에서 Azure Disk Encryption 시나리오](../../linux/disk-encryption-linux.md) 에서 사용할 수 있습니다.
 
 ## <a name="additional-information"></a>추가 정보
 
@@ -186,7 +186,7 @@ Azure Disk Encryption를 적용 하는 단계는 [Linux vm 및 관련 문서에�
     ```
     "Offer with PublisherId: redhat, OfferId: rhel-byos, PlanId: rhel-lvm75 is private and can not be purchased by subscriptionId: GUID"
     ```
-    
+
     이 경우 Microsoft 또는 Red Hat에 연락 하 여 구독을 사용 하도록 설정 합니다.
 
 - RHEL BYOS 이미지에서 스냅숏을 수정 하 고이 사용자 지정 이미지를 [공유 이미지 갤러리](https://docs.microsoft.com/azure/virtual-machines/linux/shared-image-galleries)에 게시 하려는 경우 스냅숏의 원래 원본과 일치 하는 계획 정보를 제공 해야 합니다. 예를 들어 명령은 다음과 같습니다.

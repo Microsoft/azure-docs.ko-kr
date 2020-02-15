@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/23/2020
+ms.date: 02/14/2020
 ms.author: spelluru
-ms.openlocfilehash: 551167cda28a2bb6007e66c1b4b458a0a7b2e396
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: a0361203f4a8a2e57d179b39ba6da2fb62f68720
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76718019"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77252062"
 ---
 # <a name="classroom-labs-in-azure-lab-services--frequently-asked-questions-faq"></a>Azure Lab Services의 교실 랩-질문과 대답 (FAQ)
 Azure Lab Services에서 교실 labs에 대해 가장 일반적인 질문 중 일부에 대 한 답변을 받으세요. 
@@ -31,7 +31,7 @@ Azure Lab Services에서 교실 labs에 대해 가장 일반적인 질문 중 �
 ## <a name="schedules"></a>일정
 
 ### <a name="do-all-vms-in-the-lab-start-automatically-when-a-schedule-is-set"></a>일정이 설정 되 면 랩의 모든 Vm이 자동으로 시작 됩니까? 
-아니요. 모든 Vm이 아닙니다. 일정에 따라 사용자에 게 할당 된 Vm만 사용자에 게 할당 되지 않은 Vm은 자동으로 시작 되지 않습니다. 이것은 의도 된 것입니다. 
+아니요. 모든 Vm이 아닙니다. 일정에 따라 사용자에 게 할당 된 Vm만 사용자에 게 할당 되지 않은 Vm이 자동으로 시작 되지 않습니다. 이것은 의도 된 것입니다. 
 
 ## <a name="lab-accounts"></a>랩 계정
 
@@ -46,6 +46,12 @@ Azure Lab Services에서 교실 labs에 대해 가장 일반적인 질문 중 �
 
 ### <a name="what-public-ip-address-range-should-i-open-on-my-organizations-firewall-settings-to-connect-to-lab-virtual-machines-via-rdpssh"></a>RDP/SSH를 통해 랩 가상 컴퓨터에 연결 하기 위해 내 조직의 방화벽 설정에서 어떤 공용 IP 주소 범위를 열어야 하나요?
 Azure의 데이터 센터에 대 한 공용 IP 주소 범위를 제공 하는 [AZURE Ip 범위 및 서비스 태그 (공용 클라우드)](https://www.microsoft.com/download/details.aspx?id=56519)를 참조 하세요. 랩 계정이 있는 지역에 대 한 IP 주소를 열 수 있습니다.
+
+## <a name="virtual-machine-images"></a>가상 컴퓨터 이미지
+
+### <a name="as-a-lab-creator-why-cant-i-enable-additional-image-options-in-the-virtual-machine-images-dropdown-when-creating-a-new-lab"></a>랩 작성자로 서 새 랩을 만들 때 가상 머신 이미지 드롭다운에서 추가 이미지 옵션을 사용 하도록 설정할 수 없는 이유는 무엇입니까?
+
+관리자가 랩 계정에 랩 작성자로 사용자를 추가 하면 랩을 만들 수 있는 권한이 부여 됩니다. 하지만 사용 하도록 설정 된 가상 컴퓨터 이미지의 목록을 포함 하 여 랩 계정 내의 설정을 편집할 수 있는 권한이 없습니다. 추가 이미지를 사용 하도록 설정 하려면 랩 계정 관리자에 게 문의 하거나 관리자에 게 랩 계정에 참가자 역할로 추가 하도록 요청 하십시오. 참가자 역할은 랩 계정에서 가상 컴퓨터 이미지 목록을 편집할 수 있는 권한을 부여 합니다.
 
 ## <a name="users"></a>사용자
 

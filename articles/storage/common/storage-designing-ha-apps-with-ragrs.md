@@ -10,12 +10,12 @@ ms.date: 01/14/2020
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: bab95f6494fad86c9fdfc0b8fb044c22a7c5a628
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.openlocfilehash: 592be1710893791e80dfe4b20e1323e789b33e69
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75945443"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157095"
 ---
 # <a name="designing-highly-available-applications-using-read-access-geo-redundant-storage"></a>읽기 액세스 지역 중복 저장소를 사용 하 여 항상 사용 가능한 응용 프로그램 디자인
 
@@ -23,8 +23,8 @@ Azure Storage와 같은 클라우드 기반 인프라의 일반적인 기능은 
 
 지역 중복 복제용으로 구성 된 저장소 계정은 주 지역에서 동기적으로 복제 된 다음 수백 마일 떨어진 보조 지역에 비동기식으로 복제 됩니다. Azure Storage는 두 가지 유형의 지역 중복 복제를 제공 합니다.
 
-* [GZRS (지역 중복 저장소) (미리 보기)](storage-redundancy-gzrs.md) 는 고가용성 및 최대 내구성이 모두 필요한 시나리오에 대 한 복제를 제공 합니다. 데이터는 ZRS (영역 중복 저장소)를 사용 하 여 주 지역의 3 개 Azure 가용성 영역에 걸쳐 동기적으로 복제 된 다음 보조 지역에 비동기식으로 복제 됩니다. 보조 지역의 데이터에 대 한 읽기 액세스의 경우 읽기 액세스 지리적 영역 중복 저장소 (RA-GZRS)를 사용 하도록 설정 합니다.
-* [GRS (지역 중복 저장소)](storage-redundancy-grs.md) 는 지역 가동 중단 으로부터 보호 하기 위해 지역 간 복제를 제공 합니다. 데이터는 주 지역에서 LRS (로컬 중복 저장소)를 사용 하 여 동기적으로 세 번 복제 된 다음 보조 지역에 비동기적으로 복제 됩니다. 보조 지역의 데이터에 대 한 읽기 액세스의 경우 읽기 액세스 지역 중복 저장소 (RA-GRS)를 사용 하도록 설정 합니다.
+* [GZRS (지역 중복 저장소) (미리 보기)](storage-redundancy.md) 는 고가용성 및 최대 내구성이 모두 필요한 시나리오에 대 한 복제를 제공 합니다. 데이터는 ZRS (영역 중복 저장소)를 사용 하 여 주 지역의 3 개 Azure 가용성 영역에 걸쳐 동기적으로 복제 된 다음 보조 지역에 비동기식으로 복제 됩니다. 보조 지역의 데이터에 대 한 읽기 액세스의 경우 읽기 액세스 지리적 영역 중복 저장소 (RA-GZRS)를 사용 하도록 설정 합니다.
+* [GRS (지역 중복 저장소)](storage-redundancy.md) 는 지역 가동 중단 으로부터 보호 하기 위해 지역 간 복제를 제공 합니다. 데이터는 주 지역에서 LRS (로컬 중복 저장소)를 사용 하 여 동기적으로 세 번 복제 된 다음 보조 지역에 비동기적으로 복제 됩니다. 보조 지역의 데이터에 대 한 읽기 액세스의 경우 읽기 액세스 지역 중복 저장소 (RA-GRS)를 사용 하도록 설정 합니다.
 
 이 문서에서는 주 지역의 가동 중단을 처리 하도록 응용 프로그램을 디자인 하는 방법을 보여 줍니다. 주 지역을 사용할 수 없게 되 면 응용 프로그램은 보조 지역에 대 한 읽기 작업을 대신 수행 하도록 조정할 수 있습니다. 시작 하기 전에 저장소 계정이 RA-GRS 또는 RA-GZRS에 대해 구성 되어 있는지 확인 합니다.
 
@@ -149,7 +149,7 @@ Azure Storage 클라이언트 라이브러리를 사용 하면 다시 시도할 
 
 보조 지역으로 전환하고 애플리케이션을 읽기 전용 모드에서 실행하도록 변경할 때를 결정하기 위해 주 지역에서 재시도 빈도를 모니터링하는 주요 옵션은 세 가지입니다.
 
-* 스토리지 요청에 전달하는 [**OperationContext**](https://docs.microsoft.com/java/api/com.microsoft.applicationinsights.extensibility.context.operationcontext) 개체의 [**Retrying**](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.table.operationcontext.retrying) 이벤트에 대해 처리기를 추가합니다. 이 방법은 이 문서에 표시되어 있고 함께 제공되는 샘플에 사용되어 있습니다. 이러한 이벤트는 클라이언트가 요청을 재시도할 때마다 발생하기 때문에 기본 엔드포인트에서 재시도 가능한 오류가 클라이언트에 발생하는 빈도를 추적할 수 있습니다.
+* 스토리지 요청에 전달하는 [**OperationContext**](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.table.operationcontext.retrying) 개체의 [**Retrying**](https://docs.microsoft.com/java/api/com.microsoft.applicationinsights.extensibility.context.operationcontext) 이벤트에 대해 처리기를 추가합니다. 이 방법은 이 문서에 표시되어 있고 함께 제공되는 샘플에 사용되어 있습니다. 이러한 이벤트는 클라이언트가 요청을 재시도할 때마다 발생하기 때문에 기본 엔드포인트에서 재시도 가능한 오류가 클라이언트에 발생하는 빈도를 추적할 수 있습니다.
 
     ```csharp
     operationContext.Retrying += (sender, arguments) =>
@@ -212,40 +212,9 @@ Azure Storage 클라이언트 라이브러리를 사용 하면 다시 시도할 
 
 이 예제에서는 T5 지점에서 클라이언트가 보조 지역을 읽는 것으로 전환한다고 가정합니다. 지금은 **관리자 역할** 엔터티를 성공적으로 읽을 수 있지만 이 엔터티에는 관리자 수에 대한 값이 포함되어 있고 이 값은 현재 보조 지역에 관리자로 표시되어 있는 **직원** 엔터티의 수와 일치하지 않습니다. 클라이언트는 이 값을 표시할 수 있지만 정보가 불일치할 위험이 있을 수 있습니다. 아니면 클라이언트에서 업데이트 순서가 바뀌어 진행되었으므로 **관리자 역할**이 잠재적으로 불일치 상태인지를 파악하려고 시도한 다음 사용자에게 이 사실을 알릴 수 있습니다.
 
-잠재적으로 일치하지 않는 데이터가 포함되었는지 파악하기 위해 클라이언트는 스토리지 서비스에 쿼리를 실행하면 언제든 얻을 수 있는 *마지막 동기화 시간* 값을 사용할 수 있습니다. 이렇게 하면 보조 지역의 데이터가 마지막으로 일치했던 시간과 이 시간 전에 서비스가 모든 트랜잭션을 적용한 시간을 알 수 있습니다. 위의 예제에는 서비스가 보조 지역에 **직원** 엔터티를 삽입한 후 마지막 동기화 시간이 *T1*로 설정되어 있습니다. 이 시간은 서비스가 보조 지역에서 **직원** 엔터티를 업데이트할 때까지 *T1*에 유지되었다가 *T6*로 설정됩니다. 클라이언트가 *T5*에서 엔터티를 읽을 때 마지막 동기화 시간을 검색하는 경우 엔터티의 타임스탬프와 비교할 수 있습니다. 엔터티의 타임스탬프가 마지막 동기화 시간보다 나중이면 엔터티는 잠재적으로 불일치 상태이며 애플리케이션에 적절한 조치를 무엇이든 취할 수 있습니다. 이 필드를 사용하려면 주 지역에 대한 마지막 업데이트가 완료된 시간을 알아야 합니다.
+잠재적으로 일치하지 않는 데이터가 포함되었는지 파악하기 위해 클라이언트는 스토리지 서비스에 쿼리를 실행하면 언제든 얻을 수 있는 *마지막 동기화 시간* 값을 사용할 수 있습니다. 이렇게 하면 보조 지역의 데이터가 마지막으로 일치했던 시간과 이 시간 전에 서비스가 모든 트랜잭션을 적용한 시간을 알 수 있습니다. 위의 예제에는 서비스가 보조 지역에 **직원** 엔터티를 삽입한 후 마지막 동기화 시간이 *T1*로 설정되어 있습니다. 이 시간은 서비스가 보조 지역에서 *직원* 엔터티를 업데이트할 때까지 **T1**에 유지되었다가 *T6*로 설정됩니다. 클라이언트가 *T5*에서 엔터티를 읽을 때 마지막 동기화 시간을 검색하는 경우 엔터티의 타임스탬프와 비교할 수 있습니다. 엔터티의 타임스탬프가 마지막 동기화 시간보다 나중이면 엔터티는 잠재적으로 불일치 상태이며 애플리케이션에 적절한 조치를 무엇이든 취할 수 있습니다. 이 필드를 사용하려면 주 지역에 대한 마지막 업데이트가 완료된 시간을 알아야 합니다.
 
-## <a name="getting-the-last-sync-time"></a>마지막 동기화 시간 가져오기
-
-PowerShell 또는 Azure CLI를 사용 하 여 마지막 동기화 시간을 검색 하 고 데이터를 보조 복제본에 마지막으로 쓴 시간을 확인할 수 있습니다.
-
-### <a name="powershell"></a>PowerShell
-
-PowerShell을 사용 하 여 저장소 계정에 대 한 마지막 동기화 시간을 가져오려면 지역에서 복제 통계 가져오기를 지 원하는 Azure Storage 미리 보기 모듈을 설치 합니다. 예를 들어:
-
-```powershell
-Install-Module Az.Storage –Repository PSGallery -RequiredVersion 1.1.1-preview –AllowPrerelease –AllowClobber –Force
-```
-
-그런 다음 저장소 계정의 **GeoReplicationStats. LastSyncTime** 속성을 확인 합니다. 자리 표시자 값을 사용자 고유의 값으로 대체 해야 합니다.
-
-```powershell
-$lastSyncTime = $(Get-AzStorageAccount -ResourceGroupName <resource-group> `
-    -Name <storage-account> `
-    -IncludeGeoReplicationStats).GeoReplicationStats.LastSyncTime
-```
-
-### <a name="azure-cli"></a>Azure CLI
-
-Azure CLI를 사용 하 여 저장소 계정에 대 한 마지막 동기화 시간을 가져오려면 저장소 계정의 lastSyncTime 속성을 확인 **geoReplicationStats** . `--expand` 매개 변수를 사용 하 여 **geoReplicationStats**아래에 중첩 된 속성의 값을 반환 합니다. 자리 표시자 값을 사용자 고유의 값으로 대체 해야 합니다.
-
-```azurecli
-$lastSyncTime=$(az storage account show \
-    --name <storage-account> \
-    --resource-group <resource-group> \
-    --expand geoReplicationStats \
-    --query geoReplicationStats.lastSyncTime \
-    --output tsv)
-```
+마지막 동기화 시간을 확인 하는 방법을 알아보려면 [저장소 계정에 대 한 마지막 동기화 시간 속성 확인](last-sync-time-get.md)을 참조 하세요.
 
 ## <a name="testing"></a>테스트
 

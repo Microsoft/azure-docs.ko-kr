@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: iainfou
-ms.openlocfilehash: 46764fdae89d5af4c9dedf4037d07dc48d1cda83
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 5e969ed4f525d0b3d17339b9f9a6111ad81b0125
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74703671"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76931632"
 ---
 # <a name="tutorial-create-and-configure-an-azure-active-directory-domain-services-instance-with-advanced-configuration-options"></a>자습서: 고급 구성 옵션을 사용하여 Azure Active Directory Domain Services 인스턴스를 만들고 구성
 
@@ -22,7 +22,7 @@ Azure AD DS(Azure Active Directory Domain Services)는 Windows Server Active Dir
 
 네트워킹 및 동기화를 위해 [기본 구성 옵션을 사용하여 관리형 도메인을 만들거나][tutorial-create-instance] 이러한 설정을 수동으로 정의할 수 있습니다. 이 자습서에서는 Azure Portal을 통해 이러한 고급 구성 옵션을 정의하여 Azure AD DS 인스턴스를 만들고 구성하는 방법을 보여줍니다.
 
-이 자습서에서는 다음 방법에 대해 알아봅니다.
+이 자습서에서는 다음 작업 방법을 알아봅니다.
 
 > [!div class="checklist"]
 > * 관리되는 도메인에 대한 DNS 및 가상 네트워크 설정 구성
@@ -32,14 +32,14 @@ Azure AD DS(Azure Active Directory Domain Services)는 Windows Server Active Dir
 
 Azure 구독이 없는 경우 시작하기 전에 [계정을 만드세요](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서를 완료하는 데 필요한 리소스와 권한은 다음과 같습니다.
 
 * 활성화된 Azure 구독.
     * Azure 구독이 없는 경우 [계정을 만듭니다](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * 온-프레미스 디렉터리 또는 클라우드 전용 디렉터리와 동기화되어 구독과 연결된 Azure Active Directory 테넌트
-    * 필요한 경우 [Azure Active Directory 테넌트를 만들거나][create-azure-ad-tenant] [Azure 구독을 계정에 연결합니다][associate-azure-ad-tenant].
+    * 필요한 경우 [Azure Active Directory 테넌트를 만들거나][create-azure-ad-tenant][Azure 구독을 계정에 연결합니다][associate-azure-ad-tenant].
 * Azure AD DS를 사용하도록 설정하려면 Azure AD 테넌트에 *글로벌 관리자* 권한이 필요합니다.
 * 필요한 Azure AD DS 리소스를 만들려면 Azure 구독에 *기여자* 권한이 필요합니다.
 
@@ -56,7 +56,7 @@ Azure AD DS에는 필요하지 않지만 Azure AD 테넌트에 대해 [SSPR(셀�
 
 **Azure AD Domain Services** 마법사를 시작하려면 다음 단계를 완료합니다.
 
-1. Azure Portal 메뉴 또는 **홈** 페이지에서 **리소스 만들기**를 선택합니다.
+1. Azure Portal 메뉴 또는 **홈**페이지에서 **리소스 만들기**를 선택합니다.
 1. 검색 창에서 *Domain Services*를 입력한 다음, 검색 제안에서 *Azure AD Domain Services*를 선택합니다.
 1. Azure AD Domain Services 페이지에서 **만들기**를 선택합니다. **Azure AD Domain Services 사용** 마법사가 시작됩니다.
 1. 관리되는 도메인을 만들려는 Azure **구독**을 선택합니다.
@@ -94,6 +94,9 @@ Azure Portal의 *기본* 창에 있는 필드를 완성하여 Azure AD DS 인스
 
     Azure AD DS를 영역 간에 배포하기 위해 구성해야 할 항목은 없습니다. Azure 플랫폼은 리소스의 영역 배포를 자동으로 처리합니다. 자세한 내용을 보고 지역 가용성을 확인하려면 [Azure에서 가용성 영역이란?][availability-zones]을 참조하세요.
 
+1. **SKU**는 만들 수 있는 성능, 백업 빈도 및 최대 포리스트 트러스트 수를 결정합니다. 비즈니스 요구나 요구 사항이 변경되면 관리되는 도메인이 만들어진 후 SKU를 변경할 수 있습니다. 자세한 내용은 [Azure AD DS SKU 개념][concepts-sku]을 참조하세요.
+
+    이 자습서에서는 *표준* SKU를 선택합니다.
 1. *포리스트*는 Active Directory Domain Services에서 하나 이상의 도메인을 그룹화하는 데 사용되는 논리적 구문입니다. 기본적으로 Azure AD DS 관리형 도메인은 *사용자* 포리스트로 생성됩니다. 이 유형의 포리스트는 온-프레미스 AD DS 환경에서 만든 모든 사용자 계정을 포함하여 Azure AD의 모든 개체를 동기화합니다. *리소스* 포리스트는 Azure AD에서 직접 만든 사용자와 그룹만 동기화합니다. 리소스 포리스트는 현재 미리 보기로 제공됩니다. 온-프레미스 AD DS 도메인을 사용하여 포리스트 트러스트를 만드는 방법 및 사용하는 이유를 비롯하여 *리소스* 포리스트에 대한 자세한 내용은 [Azure AD DS 리소스 포리스트 개요][resource-forests]를 참조하세요.
 
     이 자습서에서는 *사용자* 포리스트를 만들도록 선택합니다.
@@ -102,9 +105,9 @@ Azure Portal의 *기본* 창에 있는 필드를 완성하여 Azure AD DS 인스
 
 1. 추가 옵션을 수동으로 구성하려면 **다음 - 네트워킹**를 선택합니다. 또는 **검토 + 만들기**를 선택하여 기본 구성 옵션을 적용한 다음, [관리형 도메인 배포](#deploy-the-managed-domain) 섹션으로 건너뜁니다. 이 만들기 옵션을 선택하면 다음과 같은 기본값이 구성됩니다.
 
-* IP 주소 범위 *10.0.1.0/24*를 사용하는 *aadds-vnet*이라는 가상 네트워크를 만듭니다.
-* IP 주소 범위 *10.0.1.0/24*를 사용하는 *aadds-subnet*이라는 서브넷을 만듭니다.
-* Azure AD의 모든 *사용자*를 Azure AD DS 관리형 도메인으로 동기화합니다.
+    * IP 주소 범위 *10.0.1.0/24*를 사용하는 *aadds-vnet*이라는 가상 네트워크를 만듭니다.
+    * IP 주소 범위 *10.0.1.0/24*를 사용하는 *aadds-subnet*이라는 서브넷을 만듭니다.
+    * Azure AD의 모든 *사용자*를 Azure AD DS 관리형 도메인으로 동기화합니다.
 
 ## <a name="create-and-configure-the-virtual-network"></a>가상 네트워크 만들기 및 구성
 
@@ -125,7 +128,7 @@ Azure Portal의 *기본* 창에 있는 필드를 완성하여 Azure AD DS 인스
     1. 가상 네트워크를 만들기로 선택하는 경우 가상 네트워크 이름(예: *myVnet*)을 입력한 다음, 주소 범위(예: *10.0.1.0/24*)를 입력합니다.
     1. *DomainServices*와 같이 이름이 명확한 전용 서브넷을 만듭니다. 주소 범위(예: *10.0.1.0/24*)를 입력합니다.
 
-    ![Azure AD Domain Services에서 사용할 가상 네트워크 및 서브넷 만들기](./media/tutorial-create-instance-advanced/create-vnet.png)
+    [![](./media/tutorial-create-instance-advanced/create-vnet.png "Create a virtual network and subnet for use with Azure AD Domain Services")](./media/tutorial-create-instance-advanced/create-vnet-expanded.png#lightbox)
 
     개인 IP 주소 범위 내의 주소 범위를 선택해야 합니다. 퍼블릭 주소 공간에 있는 IP 주소 범위를 소유하지 않으면 Azure AD DS 내에서 오류가 발생합니다.
 
@@ -158,7 +161,7 @@ Azure AD DS를 사용하면 Azure AD에서 사용할 수 있는 사용자와 그
 
 1. **검토 + 만들기**를 선택합니다.
 
-## <a name="deploy-the-managed-domain"></a>관리형 도메인을 배포합니다.
+## <a name="deploy-the-managed-domain"></a>관리되는 도메인을 배포합니다.
 
 마법사의 **요약** 페이지에서 관리되는 도메인에 대한 구성 설정을 검토합니다. 임의의 마법사 단계로 돌아가서 변경할 수 있습니다. 이러한 구성 옵션을 사용하여 일관적인 방식으로 Azure AD DS 관리형 도메인을 다른 Azure AD 테넌트에 재배포하려면 **자동화를 위한 템플릿을 다운로드**해도 됩니다.
 
@@ -223,7 +226,7 @@ Azure AD DS가 성공적으로 배포되면 이제 연결된 다른 VM과 애플
 
 ## <a name="next-steps"></a>다음 단계
 
-이 자습서에서는 다음 방법에 대해 알아보았습니다.
+이 자습서에서는 다음 작업 방법을 알아보았습니다.
 
 > [!div class="checklist"]
 > * 관리되는 도메인에 대한 DNS 및 가상 네트워크 설정 구성
@@ -248,5 +251,6 @@ Azure AD DS가 성공적으로 배포되면 이제 연결된 다른 VM과 애플
 [password-hash-sync-process]: ../active-directory/hybrid/how-to-connect-password-hash-synchronization.md#password-hash-sync-process-for-azure-ad-domain-services
 [resource-forests]: concepts-resource-forest.md
 [availability-zones]: ../availability-zones/az-overview.md
+[concepts-sku]: administration-concepts.md#azure-ad-ds-skus
 
 <!-- EXTERNAL LINKS -->

@@ -1,5 +1,5 @@
 ---
-title: Azure Active Directory에서 조건부 액세스를 사용 하 여 Azure 관리에 대 한 액세스 관리
+title: Azure AD에서 조건부 액세스를 사용 하 여 Azure 관리에 대 한 액세스 관리
 description: Azure AD에서 조건부 액세스를 사용 하 여 Azure 관리에 대 한 액세스를 관리 하는 방법을 알아봅니다.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 07/15/2019
 ms.author: rolyon
 ms.reviewer: skwan
-ms.openlocfilehash: e4b7ce0701349cae3ef501213d0f822ee8d150d0
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: f3341f1c30a1581b8507652c322c00581e3972aa
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142826"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137402"
 ---
 # <a name="manage-access-to-azure-management-with-conditional-access"></a>조건부 액세스를 사용 하 여 Azure 관리에 대 한 액세스 관리
 
@@ -37,7 +37,7 @@ Azure Management에 대한 정책을 만들려면 정책을 적용할 앱을 선
 
 만든 정책은 다음을 비롯 한 모든 Azure 관리 끝점에 적용 됩니다.
 
-- Azure Portal
+- Azure 포털
 - Azure Resource Manager 공급자
 - 클래식 서비스 관리 Api
 - Azure PowerShell

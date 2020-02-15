@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: f81f47349610cd72489df305ccf544c8346cb9b3
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 42eb603be0152b9e8cfb36d02e8f0602c40afe54
+ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76028659"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77031206"
 ---
 # <a name="prepare-for-assessment-and-migration-of-physical-servers-to-azure"></a>물리적 서버의 평가 및 Azure로 마이그레이션 준비
 
@@ -41,10 +41,10 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 Azure Migrate 배포를 위한 권한을 설정해야 합니다.
 
-- Azure 계정에서 Azure Migrate 프로젝트를 만들 수 있는 권한
-- 계정에서 Azure Migrate 어플라이언스를 등록할 수 있는 권한. 어플라이언스는 Hyper-V 검색 및 마이그레이션에 사용됩니다. 어플라이언스를 등록하는 동안 Azure Migrate는 어플라이언스를 고유하게 식별하는 두 개의 Azure AD(Azure Active Directory) 앱을 만듭니다.
-    - 첫 번째 앱은 Azure Migrate 서비스 엔드포인트와 통신합니다.
-    - 두 번째 앱은 등록 중에 만든 Azure Key Vault에 액세스하여 Azure AD 앱 정보 및 어플라이언스 구성 설정을 저장합니다.
+**Task** | **권한**
+--- | ---
+**Azure Migrate 프로젝트 만들기** | Azure 계정에는 프로젝트를 만들 수 있는 권한이 필요합니다.
+**Azure Migrate 어플라이언스 등록** | Azure Migrate는 경량 Azure Migrate 어플라이언스를 사용하여 Azure Migrate 서버 평가를 통해 물리적 서버를 검색하고 평가합니다. 이 어플라이언스는 서버를 검색하고 해당 메타데이터 및 성능 데이터를 Azure Migrate로 보냅니다.<br/><br/>어플라이언스를 등록하는 동안 어플라이언스(Microsoft.OffAzure, Microsoft.Migrate 및 Microsoft.KeyVault)에서 선택한 구독으로 다음 리소스 공급자가 등록됩니다. 리소스 공급자를 등록하면 구독이 리소스 공급자에서 작동하도록 구성됩니다. 리소스 공급자를 등록하려면 구독에 대한 기여자 또는 소유자 역할이 필요합니다.<br/><br/> 온보딩의 일환으로 Azure Migrate는 Azure AD(Azure Active Directory) 앱을 만듭니다.<br/> AAD 앱은 Azure에서 실행되는 각각의 서비스와 어플라이언스에서 실행되는 에이전트 간의 통신(인증 및 권한 부여)에 사용됩니다. 이 앱에는 모든 리소스에 대한 ARM 호출 또는 RBAC 액세스를 수행할 수 있는 권한이 없습니다.
 
 
 
@@ -61,15 +61,14 @@ Azure Migrate 프로젝트를 만들 수 있는 권한이 있는지 확인합니
 
 ### <a name="assign-permissions-to-register-the-appliance"></a>어플라이언스를 등록할 수 있는 권한 할당
 
-다음 방법 중 하나를 사용하여 Azure Migrate에서 어플라이언스 등록 중에 Azure AD 애플리케이션을 만들 수 있는 권한을 할당할 수 있습니다.
+다음 방법 중 하나를 사용하여 어플라이언스 등록 중에 Azure AD 앱을 만들 수 있는 Azure Migrate에 대한 사용 권한을 할당할 수 있습니다.
 
 - 테넌트/글로벌 관리자는 Azure AD 앱을 만들고 등록할 수 있는 권한을 테넌트의 사용자에게 부여할 수 있습니다.
 - 테넌트/글로벌 관리자는 권한이 있는 애플리케이션 개발자 역할을 계정에 할당할 수 있습니다.
 
-주의해야 할 사항은 다음과 같습니다.
-
-- 앱에는 위에서 설명한 구독에 대한 액세스 권한 이외의 다른 권한이 없습니다.
-- 이러한 권한은 새 어플라이언스를 등록할 때만 필요합니다. 어플라이언스가 설정되면 해당 권한을 제거할 수 있습니다.
+> [!NOTE]
+> - 앱에는 위에서 설명한 구독에 대한 액세스 권한 이외의 다른 권한이 없습니다.
+> - 이러한 권한은 새 어플라이언스를 등록할 때만 필요합니다. 어플라이언스가 설정되면 해당 권한을 제거할 수 있습니다.
 
 
 #### <a name="grant-account-permissions"></a>계정 권한 부여

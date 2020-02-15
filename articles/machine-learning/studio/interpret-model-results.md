@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
-author: xiaoharper
-ms.author: amlstudiodocs
+author: likebupt
+ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 11/29/2017
-ms.openlocfilehash: 3fc369c59626faae4c97f896650269820626b1ae
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2d13385b63802bc0037c3fbe32cd38ed5caaf1c6
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75454709"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168596"
 ---
 # <a name="interpret-model-results-in-azure-machine-learning-studio-classic"></a>모델 결과 해석 Azure Machine Learning Studio (클래식)
 이 항목에서는 Azure Machine Learning Studio (클래식)에서 예측 결과를 시각화 하 고 해석 하는 방법에 대해 설명 합니다. 모델을 학습시키고 모델에 대한 예측을 수행("모델 점수 매기기")한 후에는 예측 결과를 이해하고 해석해야 합니다.

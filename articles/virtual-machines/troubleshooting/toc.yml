@@ -6,6 +6,8 @@
       href: allocation-failure.md
     - name: 클래식 배포 할당 오류
       href: allocation-failure-classic.md
+    - name: 가용성 집합
+      href: virtual-machines-availability-set-supportability.md
 - name: RDP
   href: rdp.md
   items:

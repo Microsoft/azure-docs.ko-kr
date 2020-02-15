@@ -1,31 +1,31 @@
 ---
-title: 조건부 액세스 정책의 클라이언트 앱-Azure Active Directory
-description: ''
+title: 조건부 액세스 정책에서 클라우드 앱 또는 작업-Azure Active Directory
+description: Azure AD 조건부 액세스 정책의 클라우드 앱 또는 작업 이란?
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 01/10/2020
+ms.date: 02/11/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9afc25c906ecd3b7807e6bf3e0763ac1673ebd99
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: a9d2780e09c099d76aa2ef4ec2638a410793481d
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76544058"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186364"
 ---
-# <a name="conditional-access-cloud-apps-and-actions"></a>조건부 액세스: 클라우드 앱 및 작업
+# <a name="conditional-access-cloud-apps-or-actions"></a>조건부 액세스: 클라우드 앱 또는 작업
 
-클라우드 앱 또는 작업은 조건부 액세스 정책의 핵심 부분입니다. 관리자는 조건부 액세스 정책을 사용 하 여 특정 응용 프로그램이 나 동작에 컨트롤을 할당할 수 있습니다. 
+클라우드 앱 또는 작업은 조건부 액세스 정책의 주요 신호입니다. 관리자는 조건부 액세스 정책을 사용 하 여 특정 응용 프로그램이 나 동작에 컨트롤을 할당할 수 있습니다.
 
 - 관리자는 기본 제공 Microsoft 응용 프로그램 및 갤러리, 비 갤러리 및 [응용 프로그램 프록시](../manage-apps/what-is-application-proxy.md)를 통해 게시 된 응용 프로그램을 비롯 한 모든 [Azure AD 통합 응용](../manage-apps/what-is-application-management.md) 프로그램을 포함 하는 응용 프로그램 목록에서 선택할 수 있습니다.
 - 관리자는 클라우드 응용 프로그램을 기반으로 하지 않고 사용자 작업에 정책을 정의 하도록 선택할 수 있습니다. 유일 하 게 지원 되는 동작은 보안 정보 등록 (미리 보기)을 사용 하 여 결합 된 [보안 정보 등록 환경을](../authentication/howto-registration-mfa-sspr-combined.md)중심으로 제어를 적용 하는 조건부 액세스를 허용 합니다.
 
-![조건부 액세스 정책 정의 및 클라우드 앱 지정](./media/concept-conditional-access-cloud-apps/conditional-access-define-policy-specify-cloud-apps.png)
+![조건부 액세스 정책 정의 및 클라우드 앱 지정](./media/concept-conditional-access-cloud-apps/conditional-access-cloud-apps-or-actions.png)
 
 ## <a name="microsoft-cloud-applications"></a>Microsoft 클라우드 애플리케이션
 
@@ -54,7 +54,7 @@ ms.locfileid: "76544058"
 - Bing에서 Microsoft Search
 - Microsoft StaffHub
 - Microsoft Stream
-- Microsoft Teams
+- Microsoft 팀
 - Office 365 Exchange Online
 - Office 365 SharePoint Online
 - Office 365 Yammer
@@ -81,7 +81,7 @@ Office 365 (미리 보기) 클라이언트 앱에 포함 된 주요 응용 프�
    - Microsoft Forms
    - Microsoft Stream
    - Microsoft To-Do
-   - Microsoft Teams
+   - Microsoft 팀
    - Office 365 Exchange Online
    - Office 365 SharePoint Online
    - Office 365 Search Service
@@ -98,7 +98,7 @@ Office 365 (미리 보기) 클라이언트 앱에 포함 된 주요 응용 프�
 
 Microsoft Azure 관리 응용 프로그램에는 여러 기본 서비스가 포함 되어 있습니다. 
 
-   - Azure Portal
+   - Azure portal
    - Azure Resource Manager 공급자
    - 클래식 배포 모델 Api
    - Azure PowerShell
@@ -111,7 +111,7 @@ Microsoft Azure 관리 응용 프로그램에는 여러 기본 서비스가 포�
 
 ## <a name="other-applications"></a>다른 애플리케이션
 
-Microsoft 앱 외에도 관리자는 조건부 액세스 정책에 Azure AD 등록 된 응용 프로그램을 추가할 수 있습니다. 이러한 애플리케이션에는 다음이 포함될 수 있습니다. 
+Microsoft 앱 외에도 관리자는 조건부 액세스 정책에 Azure AD 등록 된 응용 프로그램을 추가할 수 있습니다. 이러한 응용 프로그램에는 다음이 포함 될 수 있습니다. 
 
 - [Azure AD 응용 프로그램 프록시](../manage-apps/what-is-application-proxy.md) 를 통해 게시 된 응용 프로그램
 - [갤러리에서 추가 된 응용 프로그램](../manage-apps/add-application-portal.md)
@@ -124,6 +124,7 @@ Microsoft 앱 외에도 관리자는 조건부 액세스 정책에 Azure AD 등�
 
 ## <a name="next-steps"></a>다음 단계
 
-- [조건부 액세스 정책 구성 요소](concept-conditional-access-policies.md)
+- [조건부 액세스: 조건](concept-conditional-access-conditions.md)
+
+- [조건부 액세스 공통 정책](concept-conditional-access-policy-common.md)
 - [클라이언트 응용 프로그램 종속성](service-dependencies.md)
-- [Microsoft Intune: 장치 등록을 위해 MFA 필요](https://docs.microsoft.com/intune/enrollment/multi-factor-authentication)

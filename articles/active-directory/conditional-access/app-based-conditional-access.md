@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c173d0e17166911e28fea3d1c5820879d17af4a8
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 1a8832234978a2c8b2db25d88b5dd6c211b634b7
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74381112"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186463"
 ---
 # <a name="how-to-require-approved-client-apps-for-cloud-app-access-with-conditional-access"></a>방법: 조건부 액세스를 사용 하 여 cloud app access에 승인 된 클라이언트 앱 요구 
 
@@ -36,7 +36,7 @@ ms.locfileid: "74381112"
 
 ![조건부 액세스](./media/app-based-conditional-access/05.png)
 
-승인된 클라이언트 앱의 목록은 [승인된 클라이언트 앱 요구 사항](technical-reference.md#approved-client-app-requirement)을 참조하세요.
+승인된 클라이언트 앱의 목록은 [승인된 클라이언트 앱 요구 사항](concept-conditional-access-grant.md)을 참조하세요.
 
 앱 기반 조건부 액세스 정책을 [장치 기반 조건부 액세스 정책과](require-managed-devices.md) 같은 다른 정책과 결합 하 여 개인 및 회사 장치 모두에 대 한 데이터를 보호 하는 방법을 유연 하 게 제공할 수 있습니다.
 
@@ -44,12 +44,12 @@ ms.locfileid: "74381112"
 
 이 토픽은 다음 항목에 대해 잘 알고 있다고 가정합니다.
 
-- [승인된 클라이언트 앱 요구 사항](technical-reference.md#approved-client-app-requirement) 기술 참조.
+- [승인 된 클라이언트 앱 요구 사항](concept-conditional-access-grant.md)입니다.
 - [Azure Active Directory의 조건부 액세스](overview.md)에 대 한 기본 개념입니다.
 - [조건부 액세스 정책을 구성](app-based-mfa.md)하는 방법
 - [조건부 액세스 정책의 마이그레이션](best-practices.md#policy-migration)
 
-## <a name="prerequisites"></a>선행 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 앱 기반 조건부 액세스 정책을 만들려면 Enterprise Mobility + Security 또는 Azure Active Directory premium 구독이 있어야 하며 사용자에 게 EMS 또는 Azure AD에 대 한 라이선스가 있어야 합니다. 
 

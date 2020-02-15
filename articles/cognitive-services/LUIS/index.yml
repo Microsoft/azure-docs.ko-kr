@@ -3,7 +3,7 @@ title: LUIS(Language Understanding) 설명서
 summary: Language Understanding을 통해 애플리케이션이 사람의 말에서 원하는 것을 어떻게 이해할 수 있는지 알아봅니다.
 metadata:
   ms.topic: landing-page
-  ms.date: 11/22/2019
+  ms.date: 02/11/2020
   ms.author: nitinme
   author: nitinme
   ms.service: cognitive-services
@@ -12,12 +12,12 @@ metadata:
   title: Language Understanding(LUIS) 설명서
   titleSuffix: Azure Cognitive Services
   description: LUIS(Language Understanding) 서비스를 사용하면 애플리케이션은 사람의 말을 통해 무엇을 원하는지 이해할 수 있습니다. LUIS는 기계 학습을 사용하여 사용자 입력을 자연어로 받아서 의미를 추출하는 애플리케이션을 개발자가 작성할 수 있도록 합니다.
-  ms.openlocfilehash: f45461b49b51d6d25464ffa7d2084b1bbb1f9e0e
-  ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+  ms.openlocfilehash: 1d9b17bcf6817d3c94d191d54be26ce0ff1f14c2
+  ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 01/17/2020
-  ms.locfileid: "76169653"
+  ms.lasthandoff: 02/11/2020
+  ms.locfileid: "77137344"
 landingContent:
 - title: LUIS(Language Understanding) 정보
   linkLists:
@@ -39,8 +39,8 @@ landingContent:
       url: whats-new.md
   - linkListType: video
     links:
-    - text: 'AI 로드쇼: LUIS'
-      url: https://azure.microsoft.com/resources/videos/whats-new-with-language-understanding-service-luis
+    - text: 'Ignite 2019: LUIS를 사용하는 고급 NLU(Natural Language Understanding) 모델'
+      url: https://www.youtube.com/watch?v=JdJEV2jV0_Y
 - title: 의도, 엔터티 및 기능 만들기
   linkLists:
   - linkListType: concept

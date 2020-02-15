@@ -1,5 +1,5 @@
 ---
-title: 파트너용 Microsoft Azure StorSimple 및 클라우드 솔루션 공급자 프로그램에 대한 질문과 대답 | Microsoft Docs
+title: '파트너 FAQ: 클라우드 솔루션 공급자 프로그램에 대 한 StorSimple'
 description: 파트너용 StorSimple 및 CSP에 관련된 몇 가지 일반적인 질문에 대한 답변을 찾습니다.
 services: storsimple
 documentationcenter: NA
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
-ms.openlocfilehash: 893e8de5efc523df34e2c1e139082d2b471cb63e
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: eaf22773e581f0b7557a64917e183573039d1cef
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71828535"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77116156"
 ---
-# <a name="storsimple-for-cloud-solutions-provider-program-frequently-asked-questions"></a>클라우드 솔루션 공급 기업 프로그램용 StorSimple: 질문과 대답
+# <a name="storsimple-for-cloud-solutions-provider-program-frequently-asked-questions"></a>클라우드 솔루션 공급자 프로그램용 StorSimple: 질문과 대답
 
 
 ## <a name="overview"></a>개요

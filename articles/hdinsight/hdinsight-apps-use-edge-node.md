@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 01/27/2020
-ms.openlocfilehash: b8bb68f7da74e547b020ae00a4672e10d70cbfd1
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: d7723ea63cbb9bab6adf42d7e92f84a6b8b2ab9b
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76844465"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77199010"
 ---
 # <a name="use-empty-edge-nodes-on-apache-hadoop-clusters-in-hdinsight"></a>HDInsight의 Apache Hadoop 클러스터에서 빈 에지 노드 사용
 
@@ -52,7 +52,7 @@ HDInsight 클러스터에 빈 에지 노드를 추가하는 방법을 알아봅�
 
 샘플에서 보여 주듯이 필요에 따라 [스크립트 동작](hdinsight-hadoop-customize-cluster-linux.md)을 호출하여 추가 구성을 수행할 수 있습니다(예: 에지 노드에서 [Apache Hue](hdinsight-hadoop-hue-linux.md) 설치). 스크립트 작업 스크립트는 웹에서 공개적으로 액세스할 수 있어야 합니다.  예를 들어 스크립트가 Azure Storage 저장 되는 경우 공용 컨테이너 또는 공용 blob을 사용 합니다.
 
-에지 노드 가상 머신 크기는 HDInsight 클러스터 작업자 노드 VM 크기 요구 사항을 충족해야 합니다. 권장되는 작업자 노드 VM 크기에 대한 자세한 내용은 [HDInsight에서 Apache Hadoop 클러스터 만들기](hdinsight-hadoop-provision-linux-clusters.md#cluster-types)를 참조하세요.
+에지 노드 가상 머신 크기는 HDInsight 클러스터 작업자 노드 VM 크기 요구 사항을 충족해야 합니다. 권장되는 작업자 노드 VM 크기에 대한 자세한 내용은 [HDInsight에서 Apache Hadoop 클러스터 만들기](hdinsight-hadoop-provision-linux-clusters.md#cluster-type)를 참조하세요.
 
 에 지 노드를 만든 후에는 SSH를 사용 하 여에 지 노드에 연결 하 고 클라이언트 도구를 실행 하 여 HDInsight의 Hadoop 클러스터에 액세스할 수 있습니다.
 
@@ -69,7 +69,7 @@ HDInsight 클러스터에 빈 에지 노드를 추가하는 방법을 알아봅�
 
 ## <a name="add-an-edge-node-to-an-existing-cluster"></a>기존 클러스터에 에지 노드 추가
 
-이 섹션에서는 Resource Manager 템플릿을 사용하여 기존 HDInsight 클러스터에 에지 노드를 추가합니다.  Resource Manager 템플릿은 [GitHub](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-add-edge-node/)에서 찾을 수 있습니다. 리소스 관리자 템플릿은 https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-hdinsight-linux-add-edge-node/scripts/EmptyNodeSetup.sh 에 있는 스크립트 작업을 호출 합니다. 스크립트는 어떤 동작도 수행 하지 않습니다.  리소스 관리자 템플릿에서 스크립트 동작을 호출 하는 것을 보여 주기 위한 것입니다.
+이 섹션에서는 Resource Manager 템플릿을 사용하여 기존 HDInsight 클러스터에 에지 노드를 추가합니다.  Resource Manager 템플릿은 [GitHub](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-add-edge-node/)에서 찾을 수 있습니다. 리소스 관리자 템플릿은 https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-hdinsight-linux-add-edge-node/scripts/EmptyNodeSetup.sh에 있는 스크립트 작업을 호출 합니다. 스크립트는 어떤 동작도 수행 하지 않습니다.  리소스 관리자 템플릿에서 스크립트 동작을 호출 하는 것을 보여 주기 위한 것입니다.
 
 1. 다음 이미지를 선택 하 여 Azure에 로그인 하 고 Azure Portal에서 Azure Resource Manager 템플릿을 엽니다.
 
@@ -80,7 +80,7 @@ HDInsight 클러스터에 빈 에지 노드를 추가하는 방법을 알아봅�
     |속성 |Description |
     |---|---|
     |Subscription|이 클러스터를 만드는 데 사용되는 Azure 구독을 선택합니다.|
-    |리소스 그룹|기존 HDInsight 클러스터에 사용되는 리소스 그룹을 선택합니다.|
+    |Resource group|기존 HDInsight 클러스터에 사용되는 리소스 그룹을 선택합니다.|
     |위치|기존 HDInsight 클러스터의 위치를 선택합니다.|
     |클러스터 이름|기존 HDInsight 클러스터의 이름을 입력합니다.|
 
@@ -91,7 +91,7 @@ HDInsight 클러스터에 빈 에지 노드를 추가하는 방법을 알아봅�
 
 ## <a name="add-an-edge-node-when-creating-a-cluster"></a>클러스터를 만들 때 에지 노드 추가
 
-이 섹션에서는 Resource Manager 템플릿을 사용하여 에지 노드로 HDInsight 클러스터를 만듭니다.  리소스 관리자 템플릿은 [Azure 빠른 시작 템플릿 갤러리](https://azure.microsoft.com/documentation/templates/101-hdinsight-linux-with-edge-node/)에서 찾을 수 있습니다. 리소스 관리자 템플릿은 https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-hdinsight-linux-with-edge-node/scripts/EmptyNodeSetup.sh 에 있는 스크립트 작업을 호출 합니다. 스크립트는 어떤 동작도 수행 하지 않습니다.  리소스 관리자 템플릿에서 스크립트 동작을 호출 하는 것을 보여 주기 위한 것입니다.
+이 섹션에서는 Resource Manager 템플릿을 사용하여 에지 노드로 HDInsight 클러스터를 만듭니다.  리소스 관리자 템플릿은 [Azure 빠른 시작 템플릿 갤러리](https://azure.microsoft.com/documentation/templates/101-hdinsight-linux-with-edge-node/)에서 찾을 수 있습니다. 리소스 관리자 템플릿은 https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-hdinsight-linux-with-edge-node/scripts/EmptyNodeSetup.sh에 있는 스크립트 작업을 호출 합니다. 스크립트는 어떤 동작도 수행 하지 않습니다.  리소스 관리자 템플릿에서 스크립트 동작을 호출 하는 것을 보여 주기 위한 것입니다.
 
 1. 아직 없는 경우 HDInsight 클러스터를 만듭니다.  [HDInsight에서 Hadoop 사용 시작](hadoop/apache-hadoop-linux-tutorial-get-started.md)을 참조하세요.
 
@@ -104,7 +104,7 @@ HDInsight 클러스터에 빈 에지 노드를 추가하는 방법을 알아봅�
     |속성 |Description |
     |---|---|
     |Subscription|이 클러스터를 만드는 데 사용되는 Azure 구독을 선택합니다.|
-    |리소스 그룹|클러스터에 사용되는 새 리소스 그룹을 만듭니다.|
+    |Resource group|클러스터에 사용되는 새 리소스 그룹을 만듭니다.|
     |위치|리소스 그룹의 위치를 선택합니다.|
     |클러스터 이름|만들려는 새 클러스터의 이름을 입력합니다.|
     |클러스터 로그인 사용자 이름|Hadoop HTTP 사용자 이름을 입력합니다.  기본 이름은 **admin**입니다.|

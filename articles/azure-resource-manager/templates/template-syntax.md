@@ -3,12 +3,12 @@ title: 템플릿 구조 및 구문
 description: 선언적 JSON 구문을 사용하여 Azure Resource Manager 템플릿의 구조 및 속성을 설명합니다.
 ms.topic: conceptual
 ms.date: 11/12/2019
-ms.openlocfilehash: 7f9b964212d7b8056895aa1c6826766315af2ec2
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 9cd602644ecf803e97254189cfc157d60713cc6c
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76122069"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209463"
 ---
 # <a name="understand-the-structure-and-syntax-of-azure-resource-manager-templates"></a>Azure Resource Manager 템플릿의 구조 및 구문 이해
 
@@ -35,14 +35,14 @@ ms.locfileid: "76122069"
 
 | 요소 이름 | 필수 | Description |
 |:--- |:--- |:--- |
-| $schema |예 |템플릿 언어의 버전을 설명하는 JSON 스키마 파일의 위치입니다.<br><br> 리소스 그룹 배포의 경우 `https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#`을 사용합니다.<br><br>구독 배포의 경우 `https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#`을 사용합니다. |
-| contentVersion |예 |템플릿의 버전입니다(예: 1.0.0.0). 이 요소에 값을 제공할 수 있습니다. 이 값을 사용하여 템플릿에서 중요한 변경 내용을 문서화할 수 있습니다. 템플릿을 사용하여 리소스를 배포할 때 이 값을 사용하면 정확한 템플릿이 사용되도록 할 수 있습니다. |
-| apiProfile |아닙니다. | 리소스 종류에 대 한 API 버전 컬렉션으로 사용 되는 API 버전입니다. 템플릿의 각 리소스에 대해 API 버전을 지정 하지 않으려면이 값을 사용 합니다. API 프로필 버전을 지정 하 고 리소스 종류에 대 한 API 버전을 지정 하지 않는 경우 리소스 관리자는 프로필에 정의 된 해당 리소스 유형에 대 한 API 버전을 사용 합니다.<br><br>API profile 속성은 Azure Stack, 글로벌 Azure 등의 다양 한 환경에 템플릿을 배포 하는 경우에 특히 유용 합니다. API 프로필 버전을 사용 하 여 템플릿에서 두 환경 모두에서 지원 되는 버전을 자동으로 사용 하는지 확인 합니다. 프로필에 정의 된 현재 API 프로필 버전 및 리소스 API 버전 목록은 [API 프로필](https://github.com/Azure/azure-rest-api-specs/tree/master/profile)을 참조 하세요.<br><br>자세한 내용은 [API 프로필을 사용 하 여 버전 추적](templates-cloud-consistency.md#track-versions-using-api-profiles)을 참조 하세요. |
-| [parameters](#parameters) |아닙니다. |배포를 실행하여 리소스 배포를 사용자 지정할 때 제공되는 값입니다. |
-| [variables](#variables) |아닙니다. |템플릿에서 템플릿 언어 식을 단순화하는 JSON 조각으로 사용되는 값입니다. |
-| [functions](#functions) |아닙니다. |템플릿 내에서 사용할 수 있는 사용자 정의 함수입니다. |
-| [resources](#resources) |예 |리소스 그룹 또는 구독에 배포되거나 업데이트되는 리소스 종류입니다. |
-| [outputs](#outputs) |아닙니다. |배포 후 반환되는 값입니다. |
+| $schema |yes |템플릿 언어의 버전을 설명하는 JSON 스키마 파일의 위치입니다.<br><br> 리소스 그룹 배포의 경우 `https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#`을 사용합니다.<br><br>구독 배포의 경우 `https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#`을 사용합니다. |
+| contentVersion |yes |템플릿의 버전입니다(예: 1.0.0.0). 이 요소에 값을 제공할 수 있습니다. 이 값을 사용하여 템플릿에서 중요한 변경 내용을 문서화할 수 있습니다. 템플릿을 사용하여 리소스를 배포할 때 이 값을 사용하면 정확한 템플릿이 사용되도록 할 수 있습니다. |
+| apiProfile |예 | 리소스 종류에 대 한 API 버전 컬렉션으로 사용 되는 API 버전입니다. 템플릿의 각 리소스에 대해 API 버전을 지정 하지 않으려면이 값을 사용 합니다. API 프로필 버전을 지정 하 고 리소스 종류에 대 한 API 버전을 지정 하지 않는 경우 리소스 관리자는 프로필에 정의 된 해당 리소스 유형에 대 한 API 버전을 사용 합니다.<br><br>API profile 속성은 Azure Stack, 글로벌 Azure 등의 다양 한 환경에 템플릿을 배포 하는 경우에 특히 유용 합니다. API 프로필 버전을 사용 하 여 템플릿에서 두 환경 모두에서 지원 되는 버전을 자동으로 사용 하는지 확인 합니다. 프로필에 정의 된 현재 API 프로필 버전 및 리소스 API 버전 목록은 [API 프로필](https://github.com/Azure/azure-rest-api-specs/tree/master/profile)을 참조 하세요.<br><br>자세한 내용은 [API 프로필을 사용 하 여 버전 추적](templates-cloud-consistency.md#track-versions-using-api-profiles)을 참조 하세요. |
+| [parameters](#parameters) |예 |배포를 실행하여 리소스 배포를 사용자 지정할 때 제공되는 값입니다. |
+| [variables](#variables) |예 |템플릿에서 템플릿 언어 식을 단순화하는 JSON 조각으로 사용되는 값입니다. |
+| [역함수](#functions) |예 |템플릿 내에서 사용할 수 있는 사용자 정의 함수입니다. |
+| [resources](#resources) |yes |리소스 그룹 또는 구독에 배포되거나 업데이트되는 리소스 종류입니다. |
+| [출력](#outputs) |예 |배포 후 반환되는 값입니다. |
 
 각 요소에는 사용자가 설정할 수 있는 속성이 있습니다. 이 기사에서는 템플릿의 섹션에 대해 자세히 설명합니다.
 
@@ -71,15 +71,15 @@ ms.locfileid: "76122069"
 
 | 요소 이름 | 필수 | Description |
 |:--- |:--- |:--- |
-| 매개 변수-이름 |예 |매개 변수의 이름입니다. 유효한 JavaScript 식별자여야 합니다. |
-| type |예 |매개 변수 값의 유형입니다. 허용되는 유형 및 값은 **string**, **securestring**, **int**, **bool**, **object**, **secureObject** 및 **array**입니다. [데이터 형식](#data-types)을 참조 하세요. |
-| defaultValue |아닙니다. |매개 변수 값을 제공하지 않는 경우 매개 변수의 기본값입니다. |
-| allowedValues |아닙니다. |올바른 값을 제공하도록 매개 변수에 대해 허용되는 값의 배열입니다. |
-| minValue |아닙니다. |Int 형식 매개 변수의 최소값이며, 이 값이 포함됩니다. |
-| maxValue |아닙니다. |Int 형식 매개 변수의 최대값이며, 이 값이 포함됩니다. |
-| minLength |아닙니다. |string, securestring 및 array 형식 매개 변수의 최소 길이이며, 이 값이 포함됩니다. |
-| maxLength |아닙니다. |string, securestring 및 array 형식 매개 변수의 최대 길이이며, 이 값이 포함됩니다. |
-| description |아닙니다. |포털에서 사용자에게 표시되는 매개 변수의 설명입니다. 자세한 내용은 [템플릿의 주석](#comments)을 참조하세요. |
+| 매개 변수-이름 |yes |매개 변수의 이름입니다. 유효한 JavaScript 식별자여야 합니다. |
+| type |yes |매개 변수 값의 유형입니다. 허용되는 유형 및 값은 **string**, **securestring**, **int**, **bool**, **object**, **secureObject** 및 **array**입니다. [데이터 형식](#data-types)을 참조 하세요. |
+| defaultValue |예 |매개 변수 값을 제공하지 않는 경우 매개 변수의 기본값입니다. |
+| allowedValues |예 |올바른 값을 제공하도록 매개 변수에 대해 허용되는 값의 배열입니다. |
+| minValue |예 |Int 형식 매개 변수의 최소값이며, 이 값이 포함됩니다. |
+| maxValue |예 |Int 형식 매개 변수의 최대값이며, 이 값이 포함됩니다. |
+| minLength |예 |string, securestring 및 array 형식 매개 변수의 최소 길이이며, 이 값이 포함됩니다. |
+| maxLength |예 |string, securestring 및 array 형식 매개 변수의 최대 길이이며, 이 값이 포함됩니다. |
+| description |예 |포털에서 사용자에게 표시되는 매개 변수의 설명입니다. 자세한 내용은 [템플릿의 주석](#comments)을 참조하세요. |
 
 매개 변수를 사용 하는 방법에 대 한 예제는 [Azure Resource Manager 템플릿의 매개 변수](template-parameters.md)를 참조 하세요.
 
@@ -95,7 +95,7 @@ ms.locfileid: "76122069"
 
 데이터 형식에 대 한 서식 지정 샘플은 [매개 변수 형식 형식](parameter-files.md#parameter-type-formats)을 참조 하세요.
 
-## <a name="variables"></a>변수
+## <a name="variables"></a>variables
 
 변수 섹션에서 템플릿을 통해 사용할 수 있는 값을 생성합니다. 변수를 정의할 필요는 없지만 종종 변수를 통해 복잡한 식을 줄이면 템플릿이 단순화됩니다.
 
@@ -126,7 +126,7 @@ ms.locfileid: "76122069"
 }
 ```
 
-`copy`를 사용 하 여 변수에 대 한 여러 값을 만드는 방법에 대 한 자세한 내용은 [변수 반복](create-multiple-instances.md#variable-iteration)을 참조 하세요.
+`copy`를 사용 하 여 변수에 대 한 여러 값을 만드는 방법에 대 한 자세한 내용은 [변수 반복](copy-variables.md)을 참조 하세요.
 
 변수를 사용 하는 방법에 대 한 예제는 [Azure Resource Manager 템플릿의 변수](template-variables.md)를 참조 하세요.
 
@@ -166,12 +166,12 @@ ms.locfileid: "76122069"
 
 | 요소 이름 | 필수 | Description |
 |:--- |:--- |:--- |
-| 네임스페이스 |예 |사용자 지정 함수에 대 한 네임 스페이스입니다. 템플릿 함수와의 이름 충돌을 방지 하는 데 사용 합니다. |
-| 함수 이름 |예 |사용자 지정 함수의 이름입니다. 함수를 호출할 때 함수 이름을 네임 스페이스와 결합 합니다. 예를 들어 contoso 네임 스페이스에서 uniqueName 이라는 함수를 호출 하려면 `"[contoso.uniqueName()]"`를 사용 합니다. |
-| 매개 변수-이름 |아닙니다. |사용자 지정 함수 내에서 사용 되는 매개 변수의 이름입니다. |
-| 매개 변수-값 |아닙니다. |매개 변수 값의 유형입니다. 허용되는 유형 및 값은 **string**, **securestring**, **int**, **bool**, **object**, **secureObject** 및 **array**입니다. |
-| 출력 형식 |예 |출력 값의 유형입니다. 출력 값은 함수 입력 매개 변수와 동일한 형식을 지원 합니다. |
-| 출력-값 |예 |함수에서 계산 되 고 반환 되는 템플릿 언어 식입니다. |
+| 네임스페이스 |yes |사용자 지정 함수에 대 한 네임 스페이스입니다. 템플릿 함수와의 이름 충돌을 방지 하는 데 사용 합니다. |
+| 함수 이름 |yes |사용자 지정 함수의 이름입니다. 함수를 호출할 때 함수 이름을 네임 스페이스와 결합 합니다. 예를 들어 contoso 네임 스페이스에서 uniqueName 이라는 함수를 호출 하려면 `"[contoso.uniqueName()]"`를 사용 합니다. |
+| 매개 변수-이름 |예 |사용자 지정 함수 내에서 사용 되는 매개 변수의 이름입니다. |
+| 매개 변수-값 |예 |매개 변수 값의 유형입니다. 허용되는 유형 및 값은 **string**, **securestring**, **int**, **bool**, **object**, **secureObject** 및 **array**입니다. |
+| 출력 형식 |yes |출력 값의 유형입니다. 출력 값은 함수 입력 매개 변수와 동일한 형식을 지원 합니다. |
+| 출력-값 |yes |함수에서 계산 되 고 반환 되는 템플릿 언어 식입니다. |
 
 사용자 지정 함수를 사용 하는 방법에 대 한 예제는 [Azure Resource Manager 템플릿의 사용자 정의 함수](template-user-defined-functions.md)를 참조 하세요.
 
@@ -237,20 +237,20 @@ ms.locfileid: "76122069"
 
 | 요소 이름 | 필수 | Description |
 |:--- |:--- |:--- |
-| condition(조건) | 아닙니다. | 리소스가 이 배포 중 프로비전되는지 여부를 나타내는 부울 값입니다. `true`인 경우 리소스는 배포하는 동안 만들어집니다. `false`인 경우 리소스는 이 배포에 대해 건너뛰어집니다. [조건](conditional-resource-deployment.md)을 참조 하세요. |
-| type |예 |리소스 유형입니다. 이 값은 리소스 공급자의 네임스페이스와 리소스 형식을 조합한 값입니다(예: **Microsoft.Storage/storageAccounts**). 사용 가능한 값을 확인 하려면 [템플릿 참조](/azure/templates/)를 참조 하세요. 자식 리소스의 경우 형식의 형식은 부모 리소스 내에 중첩 되어 있는지, 부모 리소스 외부에 정의 되는지에 따라 달라 집니다. [자식 리소스에 대한 이름 및 형식 설정](child-resource-name-type.md)을 참조하세요. |
-| apiVersion |예 |리소스를 만들 때 사용하는 REST API의 버전입니다. 사용 가능한 값을 확인 하려면 [템플릿 참조](/azure/templates/)를 참조 하세요. |
-| name |예 |리소스의 이름입니다. 이 이름은 RFC3986에 정의된 URI 구성 요소 제한을 따라야 합니다. 외부 파티에 리소스 이름을 노출 하는 Azure 서비스는 이름 유효성을 검사 하 여 다른 id를 스푸핑 하려고 하지 않았는지 확인 합니다. 자식 리소스의 경우 이름의 형식은 부모 리소스 내에 중첩 되어 있는지, 부모 리소스 외부에 정의 되는지에 따라 달라 집니다. [자식 리소스에 대한 이름 및 형식 설정](child-resource-name-type.md)을 참조하세요. |
-| comments |아닙니다. |템플릿에서 리소스를 문서화하는 내용에 대한 참고입니다. 자세한 내용은 [템플릿의 주석](template-syntax.md#comments)을 참조하세요. |
+| condition(조건) | 예 | 리소스가 이 배포 중 프로비전되는지 여부를 나타내는 부울 값입니다. `true`인 경우 리소스는 배포하는 동안 만들어집니다. `false`인 경우 리소스는 이 배포에 대해 건너뛰어집니다. [조건](conditional-resource-deployment.md)을 참조 하세요. |
+| type |yes |리소스 유형입니다. 이 값은 리소스 공급자의 네임스페이스와 리소스 형식을 조합한 값입니다(예: **Microsoft.Storage/storageAccounts**). 사용 가능한 값을 확인 하려면 [템플릿 참조](/azure/templates/)를 참조 하세요. 자식 리소스의 경우 형식의 형식은 부모 리소스 내에 중첩 되어 있는지, 부모 리소스 외부에 정의 되는지에 따라 달라 집니다. [자식 리소스에 대한 이름 및 형식 설정](child-resource-name-type.md)을 참조하세요. |
+| apiVersion |yes |리소스를 만들 때 사용하는 REST API의 버전입니다. 사용 가능한 값을 확인 하려면 [템플릿 참조](/azure/templates/)를 참조 하세요. |
+| name |yes |리소스의 이름입니다. 이 이름은 RFC3986에 정의된 URI 구성 요소 제한을 따라야 합니다. 외부 파티에 리소스 이름을 노출 하는 Azure 서비스는 이름 유효성을 검사 하 여 다른 id를 스푸핑 하려고 하지 않았는지 확인 합니다. 자식 리소스의 경우 이름의 형식은 부모 리소스 내에 중첩 되어 있는지, 부모 리소스 외부에 정의 되는지에 따라 달라 집니다. [자식 리소스에 대한 이름 및 형식 설정](child-resource-name-type.md)을 참조하세요. |
+| comments |예 |템플릿에서 리소스를 문서화하는 내용에 대한 참고입니다. 자세한 내용은 [템플릿의 주석](template-syntax.md#comments)을 참조하세요. |
 | 위치 |다양함 |제공된 리소스의 지역적 위치를 지원합니다. 사용 가능한 위치 중 하나를 선택할 수 있지만 대개는 사용자에게 가까운 하나를 선택하는 것이 좋습니다. 일반적으로 동일한 지역에서 서로 상호 작용하도록 리소스를 배치하는 것도 좋습니다. 대부분의 리소스 종류에는 위치가 필요하지만 일부 종류(예: 역할 할당)에는 위치가 필요하지 않습니다. [리소스 위치 설정](resource-location.md)을 참조 하세요. |
-| dependsOn |아닙니다. |이 리소스를 배포하기 전에 배포해야 하는 리소스입니다. Resource Manager는 리소스 간의 종속성을 평가한 후 올바른 순서에 따라 리소스를 배포합니다. 리소스는 서로 종속되지 않을 경우, 병렬로 배포됩니다. 이 값은 리소스 이름 또는 리소스 고유 식별자의 쉼표로 구분된 목록입니다. 이 템플릿에 배포된 리소스만 나열합니다. 이 템플릿에 정의되지 않은 리소스는 이미 존재해야 합니다. 불필요한 종속성은 배포 속도를 느리게 만들고 순환 종속성을 만들기 때문에 추가하지 않습니다. 종속성 설정에 대한 지침은 [Azure Resource Manager 템플릿에서 종속성 정의](define-resource-dependency.md)를 참조하세요. |
-| tags |아닙니다. |리소스와 연결된 태그입니다. 태그를 적용하여 구독에서 리소스를 논리적으로 구성합니다. |
-| sku | 아닙니다. | 일부 리소스에서는 SKU를 정의하는 값을 허용합니다. 예를 들어 스토리지 계정에 대한 중복 유형을 지정할 수 있습니다. |
-| kind | 아닙니다. | 일부 리소스에서는 배포하는 리소스 종류를 정의하는 값을 허용합니다. 예를 들어 만들 Cosmos DB 종류를 지정할 수 있습니다. |
-| copy |아닙니다. |인스턴스가 둘 이상 필요한 경우 만드는 리소스의 수입니다. 기본 모드는 병렬입니다. 모든 리소스를 동시에 배포하지 않으려면 직렬 모드를 지정합니다. 자세한 내용은 [Azure Resource Manager에서 리소스의 여러 인스턴스 만들기](create-multiple-instances.md)를 참조하세요. |
-| 계획 | 아닙니다. | 일부 리소스에서는 배포할 계획을 정의하는 값을 허용합니다. 예를 들어 가상 머신에 대한 마켓플레이스 이미지를 지정할 수 있습니다. |
-| properties |아닙니다. |리소스별 구성 설정입니다. 속성의 값은 리소스를 만들기 위해 REST API 작업(PUT 메서드)에 대한 요청 본문에 제공하는 값과 동일합니다. 복사 배열을 지정하여 속성의 여러 인스턴스를 만들 수도 있습니다. 사용 가능한 값을 확인 하려면 [템플릿 참조](/azure/templates/)를 참조 하세요. |
-| 리소스 |아닙니다. |정의 중인 리소스에 종속되는 하위 리소스입니다. 부모 리소스의 스키마에서 허용되는 리소스 유형만 제공합니다. 부모 리소스에 대한 종속성은 암시되지 않습니다. 해당 종속성을 명시적으로 정의해야 합니다. [자식 리소스에 대한 이름 및 형식 설정](child-resource-name-type.md)을 참조하세요. |
+| dependsOn |예 |이 리소스를 배포하기 전에 배포해야 하는 리소스입니다. Resource Manager는 리소스 간의 종속성을 평가한 후 올바른 순서에 따라 리소스를 배포합니다. 리소스는 서로 종속되지 않을 경우, 병렬로 배포됩니다. 이 값은 리소스 이름 또는 리소스 고유 식별자의 쉼표로 구분된 목록입니다. 이 템플릿에 배포된 리소스만 나열합니다. 이 템플릿에 정의되지 않은 리소스는 이미 존재해야 합니다. 불필요한 종속성은 배포 속도를 느리게 만들고 순환 종속성을 만들기 때문에 추가하지 않습니다. 종속성 설정에 대한 지침은 [Azure Resource Manager 템플릿에서 종속성 정의](define-resource-dependency.md)를 참조하세요. |
+| tags |예 |리소스와 연결된 태그입니다. 태그를 적용하여 구독에서 리소스를 논리적으로 구성합니다. |
+| sku | 예 | 일부 리소스에서는 SKU를 정의하는 값을 허용합니다. 예를 들어 스토리지 계정에 대한 중복 유형을 지정할 수 있습니다. |
+| kind | 예 | 일부 리소스에서는 배포하는 리소스 종류를 정의하는 값을 허용합니다. 예를 들어 만들 Cosmos DB 종류를 지정할 수 있습니다. |
+| copy |예 |인스턴스가 둘 이상 필요한 경우 만드는 리소스의 수입니다. 기본 모드는 병렬입니다. 모든 리소스를 동시에 배포하지 않으려면 직렬 모드를 지정합니다. 자세한 내용은 [Azure Resource Manager에서 리소스의 여러 인스턴스 만들기](copy-resources.md)를 참조하세요. |
+| 계획 | 예 | 일부 리소스에서는 배포할 계획을 정의하는 값을 허용합니다. 예를 들어 가상 머신에 대한 마켓플레이스 이미지를 지정할 수 있습니다. |
+| properties |예 |리소스별 구성 설정입니다. 속성의 값은 리소스를 만들기 위해 REST API 작업(PUT 메서드)에 대한 요청 본문에 제공하는 값과 동일합니다. 복사 배열을 지정하여 속성의 여러 인스턴스를 만들 수도 있습니다. 사용 가능한 값을 확인 하려면 [템플릿 참조](/azure/templates/)를 참조 하세요. |
+| 리소스 |예 |정의 중인 리소스에 종속되는 하위 리소스입니다. 부모 리소스의 스키마에서 허용되는 리소스 유형만 제공합니다. 부모 리소스에 대한 종속성은 암시되지 않습니다. 해당 종속성을 명시적으로 정의해야 합니다. [자식 리소스에 대한 이름 및 형식 설정](child-resource-name-type.md)을 참조하세요. |
 
 ## <a name="outputs"></a>outputs
 
@@ -270,10 +270,10 @@ Outputs 섹션에서, 배포에서 반환되는 값을 지정합니다. 일반�
 
 | 요소 이름 | 필수 | Description |
 |:--- |:--- |:--- |
-| 출력-이름 |예 |출력 값의 이름입니다. 유효한 JavaScript 식별자여야 합니다. |
-| condition(조건) |아닙니다. | 이 출력 값의 반환 여부를 나타내는 부울 값입니다. `true`이면 해당 값이 배포의 출력에 포함됩니다. `false`이면 이 배포에 대한 출력 값을 건너뜁니다. 지정하지 않으면 기본값은 `true`입니다. |
-| type |예 |출력 값의 유형입니다. 출력 값은 템플릿 입력 매개 변수와 동일한 유형을 지원합니다. 출력 유형에 대해 **securestring** 을 지정 하는 경우 값은 배포 기록에 표시 되지 않으며 다른 템플릿에서 검색할 수 없습니다. 둘 이상의 템플릿에서 비밀 값을 사용 하려면 Key Vault에 비밀을 저장 하 고 매개 변수 파일에서 비밀을 참조 합니다. 자세한 내용은 [Azure Key Vault를 사용하여 배포 중에 보안 매개 변수 값 전달](key-vault-parameter.md)을 참조하세요. |
-| 값 |예 |출력 값으로 계산되어 반환되는 템플릿 언어 식입니다. |
+| 출력-이름 |yes |출력 값의 이름입니다. 유효한 JavaScript 식별자여야 합니다. |
+| condition(조건) |예 | 이 출력 값의 반환 여부를 나타내는 부울 값입니다. `true`이면 해당 값이 배포의 출력에 포함됩니다. `false`이면 이 배포에 대한 출력 값을 건너뜁니다. 지정하지 않으면 기본값은 `true`입니다. |
+| type |yes |출력 값의 유형입니다. 출력 값은 템플릿 입력 매개 변수와 동일한 유형을 지원합니다. 출력 유형에 대해 **securestring** 을 지정 하는 경우 값은 배포 기록에 표시 되지 않으며 다른 템플릿에서 검색할 수 없습니다. 둘 이상의 템플릿에서 비밀 값을 사용 하려면 Key Vault에 비밀을 저장 하 고 매개 변수 파일에서 비밀을 참조 합니다. 자세한 내용은 [Azure Key Vault를 사용하여 배포 중에 보안 매개 변수 값 전달](key-vault-parameter.md)을 참조하세요. |
+| 값 |yes |출력 값으로 계산되어 반환되는 템플릿 언어 식입니다. |
 
 출력을 사용 하는 방법에 대 한 예제는 [Azure Resource Manager 템플릿의 출력](template-outputs.md)을 참조 하세요.
 
@@ -283,7 +283,7 @@ Outputs 섹션에서, 배포에서 반환되는 값을 지정합니다. 일반�
 
 템플릿에 주석 및 메타데이터를 추가하는 몇 가지 옵션이 있습니다.
 
-### <a name="comments"></a>의견
+### <a name="comments"></a>주석
 
 인라인 주석의 경우 `//` 또는 `/* ... */`를 사용할 수 있지만이 구문은 모든 도구에서 작동 하지 않습니다. 인라인 주석을 사용 하 여 템플릿에서 작업 하는 데는 포털 템플릿 편집기를 사용할 수 없습니다. 이 주석 스타일을 추가하는 경우 사용하는 도구가 반드시 인라인 JSON 주석을 지원해야 합니다.
 
@@ -320,7 +320,7 @@ Visual Studio Code에서 [Azure Resource Manager 도구 확장](use-vs-code-to-c
   },
 ```
 
-**매개 변수**에 대해 `description` 속성과 함께 `metadata` 개체를 추가합니다.
+**매개 변수**에 대해 `metadata` 속성과 함께 `description` 개체를 추가합니다.
 
 ```json
 "parameters": {

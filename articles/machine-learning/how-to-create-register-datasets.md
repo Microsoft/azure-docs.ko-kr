@@ -10,13 +10,13 @@ ms.author: sihhu
 author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
-ms.date: 11/04/2019
-ms.openlocfilehash: 99f4d8d854334b047caf36406f21890cde7eda16
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.date: 02/10/2020
+ms.openlocfilehash: 0bfaef72be23f148c01e02e910b11128cec1659e
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77082948"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77116728"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Azure Machine Learning 데이터 집합 만들기
 
@@ -172,7 +172,9 @@ Studio에서 데이터 집합을 만들려면 다음을 수행 합니다.
 1. 왼쪽 창의 **자산** 섹션에서 **데이터 집합** 을 선택 합니다. 
 1. 데이터 집합 **만들기** 를 선택 하 여 데이터 집합의 원본을 선택 합니다. 이 원본은 로컬 파일, 데이터 저장소 또는 공용 Url 일 수 있습니다.
 1. 데이터 집합 형식으로 **테이블** 형식 또는 **파일** 을 선택 합니다.
-1. **다음** 을 선택 하 여 **설정 및 미리 보기**, **스키마** 및 **확인 세부 정보** 양식을 검토 합니다. 파일 형식에 따라 지능적으로 채워집니다. 이러한 형식을 사용 하 여 선택 내용을 확인 하 고 만들기 전에 데이터 집합을 추가로 구성 합니다.  
+1. **다음** 을 선택 하 여 **데이터 저장소 및 파일 선택** 양식을 엽니다. 이 폼에서 데이터 집합을 만든 후 데이터 집합에 사용할 데이터 파일을 선택할 뿐만 아니라 데이터 집합을 보관할 위치를 선택할 수 있습니다. 
+1. **다음** 을 선택 하 여 **설정 및 미리 보기** 및 **스키마** 폼을 채웁니다. 이러한 형식은 파일 형식에 따라 지능적으로 채워지며 이러한 폼에서 만들기 전에 데이터 집합을 추가로 구성할 수 있습니다. 
+1. **다음** 을 선택 하 여 **확인 세부 정보** 양식을 검토 합니다. 선택 항목을 확인 하 고 데이터 집합에 대 한 선택적 데이터 프로필을 만듭니다. [데이터 프로파일링](how-to-create-portal-experiments.md#profile)에 대한 자세한 정보 
 1. **만들기** 를 선택 하 여 데이터 집합 만들기를 완료 합니다.
 
 ## <a name="register-datasets"></a>데이터 집합 등록

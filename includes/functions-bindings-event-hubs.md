@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 03/05/2019
 ms.author: cshoe
-ms.openlocfilehash: ec3a7b6420144278df66f693d9fd9933449b3d80
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: a31dc1c6d1a7f4dce6e7baae5a0e0e8f3d6d3d34
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76748929"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77179045"
 ---
 ## <a name="trigger"></a>트리거
 
@@ -289,17 +289,7 @@ def main(event: func.EventHubEvent):
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-다음 예제에서는 *함수. json* 파일의 이벤트 허브 트리거 바인딩과 바인딩을 사용 하는 [Java 함수](../articles/azure-functions/functions-reference-java.md) 를 보여 줍니다. 함수는 Event Hub 트리거의 메시지 본문을 기록합니다.
-
-```json
-{
-  "type": "eventHubTrigger",
-  "name": "msg",
-  "direction": "in",
-  "eventHubName": "myeventhubname",
-  "connection": "myEventHubReadConnectionAppSetting"
-}
-```
+다음 예제에서는 이벤트 허브 트리거의 메시지 본문을 기록 하는 이벤트 허브 트리거 바인딩을 보여 줍니다.
 
 ```java
 @FunctionName("ehprocessor")
@@ -357,7 +347,7 @@ Java [함수 런타임 라이브러리](https://docs.microsoft.com/java/api/over
 
 다음 표에서는 *function.json* 파일 및 `EventHubTrigger` 특성에 설정된 바인딩 구성 속성을 설명합니다.
 
-|function.json 속성 | 특성 속성 |설명|
+|function.json 속성 | 특성 속성 |Description|
 |---------|---------|----------------------|
 |**type** | 해당 없음 | `eventHubTrigger`로 설정해야 합니다. 이 속성은 사용자가 Azure Portal에서 트리거를 만들 때 자동으로 설정됩니다.|
 |**direction** | 해당 없음 | `in`로 설정해야 합니다. 이 속성은 사용자가 Azure Portal에서 트리거를 만들 때 자동으로 설정됩니다. |
@@ -374,7 +364,7 @@ Java [함수 런타임 라이브러리](https://docs.microsoft.com/java/api/over
 
 Event Hubs 트리거는 몇 가지 [메타데이터 속성](../articles/azure-functions/./functions-bindings-expressions-patterns.md)을 제공합니다. 메타 데이터 속성은 다른 바인딩에서 바인딩 식의 일부로 사용 하거나 코드에서 매개 변수로 사용할 수 있습니다. 속성은 [EventData](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.eventdata) 클래스에서 제공 됩니다.
 
-|속성|Type|설명|
+|속성|Type|Description|
 |--------|----|-----------|
 |`PartitionContext`|[PartitionContext](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.partitioncontext)|`PartitionContext` 인스턴스입니다.|
 |`EnqueuedTimeUtc`|`DateTime`|큐에 대기된 시간(UTC)입니다.|
@@ -624,7 +614,7 @@ Python에서 특성을 지원 하지 않습니다.
 
 다음 표에서는 *function.json* 파일 및 `EventHub` 특성에 설정된 바인딩 구성 속성을 설명합니다.
 
-|function.json 속성 | 특성 속성 |설명|
+|function.json 속성 | 특성 속성 |Description|
 |---------|---------|----------------------|
 |**type** | 해당 없음 | "eventHub"로 설정해야 합니다. |
 |**direction** | 해당 없음 | "out"으로 설정해야 합니다. 이 매개 변수는 사용자가 Azure Portal에서 바인딩을 만들 때 자동으로 설정됩니다. |
@@ -697,7 +687,7 @@ Python에서 특성을 지원 하지 않습니다.
 }  
 ```
 
-|속성  |기본값 | 설명 |
+|속성  |기본값 | Description |
 |---------|---------|---------|
 |`maxBatchSize`|10|수신 루프 당 받은 최대 이벤트 수입니다.|
 |`prefetchCount`|300|기본 `EventProcessorHost`에서 사용 하는 기본 사전 인출 수입니다.|

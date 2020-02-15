@@ -13,21 +13,21 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: b7962f42b4244121a67b88ef3bf789ce40f7b1e5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4428187c985c1004c88f2ac20b0e5811803cce2a
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64719628"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162772"
 ---
 # <a name="get-started-with-azure-ad-authentication-by-using-the-azure-portal"></a>Azure Portal을 사용하여 Azure AD 인증 시작
 
 > [!NOTE]
-> Media Services v2에는 새로운 특징 또는 기능이 추가되지 않습니다. <br/>[Media Services v3](https://docs.microsoft.com/azure/media-services/latest/)의 최신 버전을 확인하세요. 참고: [v2에서 v3 마이그레이션 지침](../latest/migrate-from-v2-to-v3.md)
+> Media Services v2에는 새로운 특징 또는 기능이 추가되지 않습니다. <br/>[Media Services v3](https://docs.microsoft.com/azure/media-services/latest/)의 최신 버전을 확인하세요. 또한 [v2에서 v3로 마이그레이션 지침](../latest/migrate-from-v2-to-v3.md) 을 참조 하세요.
 
 Azure Portal을 사용하여 Azure AD(Azure Active Directory) 인증에 액세스하고 Azure Media Services API에 액세스하는 방법을 알아봅니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 - Azure 계정. 계정이 없는 경우 [Azure 평가판](https://azure.microsoft.com/pricing/free-trial/)으로 시작하세요. 
 - Media Services 계정. 자세한 내용은 [Azure Portal을 사용하여 Azure Media Services 계정 만들기](media-services-portal-create-account.md)를 참조하세요.
@@ -64,7 +64,7 @@ Azure Media Services와 함께 Azure AD 인증을 사용할 때 두 가지 인�
 
 Media Services Microsoft .NET SDK를 사용하여 Media Services API에 연결하는 경우 SDK의 일부로 필요한 값이 제공됩니다. 자세한 내용은 [Azure AD 인증을 사용하여 .NET으로 Azure Media Services API 액세스](media-services-dotnet-get-started-with-aad.md)를 참조하세요.
 
-Media Services .NET 클라이언트 SDK를 사용하지 않는 경우 앞에서 설명한 매개 변수를 사용하여 Azure AD 토큰 요청을 수동으로 만들어야 합니다. 자세한 내용은 [Azure AD 인증 라이브러리를 사용하여 Azure AD 토큰 가져오기](../../active-directory/develop/active-directory-authentication-libraries.md)를 참조하세요.
+Media Services .NET 클라이언트 SDK를 사용하지 않는 경우 앞에서 설명한 매개 변수를 사용하여 Azure AD 토큰 요청을 수동으로 만들어야 합니다. 자세한 내용은 [Azure AD 인증 라이브러리를 사용하여 Azure AD 토큰 가져오기](../../active-directory/azuread-dev/active-directory-authentication-libraries.md)를 참조하세요.
 
 ## <a name="service-principal-authentication"></a>서비스 주체 인증
 
@@ -90,7 +90,7 @@ Azure AD 앱을 만들거나 선택한 후에는 클라이언트 암호(키) 및
 
 Media Services .NET SDK를 사용하여 Media Services API에 연결하는 경우 [Azure AD 인증을 사용하여 .NET으로 Azure Media Services API 액세스](media-services-dotnet-get-started-with-aad.md)를 참조하세요.
 
-Media Services .NET 클라이언트 SDK를 사용하지 않는 경우 앞에서 설명한 매개 변수를 사용하여 Azure AD 토큰 요청을 수동으로 만들어야 합니다. 자세한 내용은 [Azure AD 인증 라이브러리를 사용하여 Azure AD 토큰 가져오기](../../active-directory/develop/active-directory-authentication-libraries.md)를 참조하세요.
+Media Services .NET 클라이언트 SDK를 사용하지 않는 경우 앞에서 설명한 매개 변수를 사용하여 Azure AD 토큰 요청을 수동으로 만들어야 합니다. 자세한 내용은 [Azure AD 인증 라이브러리를 사용하여 Azure AD 토큰 가져오기](../../active-directory/azuread-dev/active-directory-authentication-libraries.md)를 참조하세요.
 
 ### <a name="get-the-client-id-and-client-secret"></a>클라이언트 ID 및 클라이언트 암호 가져오기
 

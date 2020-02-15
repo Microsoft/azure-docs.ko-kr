@@ -5,14 +5,14 @@ services: virtual-desktop
 author: heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 12/13/2019
+ms.date: 02/08/2020
 ms.author: helohr
-ms.openlocfilehash: 472b8800a09cb12bc3e703ef53d0aab2b578e0d3
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 92e11edf3b28017ac73702e3f71dfc491d3986e3
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75460227"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110635"
 ---
 # <a name="connect-with-the-ios-client"></a>iOS 클라이언트와 연결
 
@@ -34,12 +34,12 @@ ms.locfileid: "75460227"
 2. **피드 url 필드에** 피드 url을 입력 합니다. 피드 URL은 URL 또는 전자 메일 주소일 수 있습니다.
    - URL을 사용 하는 경우 관리자가 제공한 URL을 사용 합니다. 일반적으로 URL은 <https://rdweb.wvd.microsoft.com>입니다.
    - 전자 메일을 사용 하려면 전자 메일 주소를 입력 하세요. 이렇게 하면 관리자가 서버를 구성한 경우 전자 메일 주소와 연결 된 URL을 검색 하도록 클라이언트에 지시 합니다.
-3. **다음**을 탭합니다.
+3. **다음**을 탭 합니다.
 4. 자격 증명을 입력하라는 메시지가 표시되면 입력합니다.
    - **사용자 이름**에 리소스에 액세스할 수 있는 권한을 사용자에 게 부여 합니다.
    - **암호**에는 사용자 이름과 연결 된 암호를 지정 합니다.
    - 관리자가 인증을 구성 하는 경우 추가 요인을 제공 하 라는 메시지가 표시 될 수도 있습니다.
-5. 누르기 **저장**합니다.
+5. **저장**을 탭 합니다.
 
 그러면 연결 센터에서 원격 리소스를 표시 해야 합니다.
 
@@ -47,4 +47,4 @@ ms.locfileid: "75460227"
 
 ## <a name="next-steps"></a>다음 단계
 
-IOS 베타 클라이언트를 사용 하는 방법에 대 한 자세한 내용은 [ios 클라이언트 시작](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-ios) 설명서를 참조 하세요.
+IOS 클라이언트를 사용 하는 방법에 대 한 자세한 내용은 [ios 클라이언트 시작](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-ios) 설명서를 참조 하세요.

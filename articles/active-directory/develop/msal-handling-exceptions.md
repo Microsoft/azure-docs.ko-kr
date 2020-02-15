@@ -15,12 +15,12 @@ ms.date: 11/22/2019
 ms.author: marsma
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 75893a85f975d5d1454f1b93535a1df7a45e8731
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 018d0c3bc009f6063de75b9a479be650b2c06e7c
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77084026"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160847"
 ---
 # <a name="handle-msal-exceptions-and-errors"></a>MSAL 예외 및 오류 처리
 
@@ -506,7 +506,7 @@ IOS 및 macOS 오류에 대 한 MSAL의 전체 목록은 [Msalerror 열거형](h
 
 ## <a name="conditional-access-and-claims-challenges"></a>조건부 액세스 및 클레임 챌린지
 
-토큰을 자동으로 가져올 때 액세스 하려는 API가 MFA 정책과 같은 [조건부 액세스 클레임 챌린지](conditional-access-dev-guide.md) 를 필요로 하는 경우 응용 프로그램에서 오류를 수신할 수 있습니다.
+토큰을 자동으로 가져올 때 액세스 하려는 API가 MFA 정책과 같은 [조건부 액세스 클레임 챌린지](../azuread-dev/conditional-access-dev-guide.md) 를 필요로 하는 경우 응용 프로그램에서 오류를 수신할 수 있습니다.
 
 이 오류를 처리 하는 패턴은 MSAL을 사용 하 여 대화형으로 토큰을 획득 하는 것입니다. 토큰을 대화형으로 획득하면 사용자에게 메시지가 표시되어 필요한 조건부 액세스 정책을 충족시킬 수 있는 기회가 제공됩니다.
 
@@ -520,7 +520,7 @@ MSAL.NET에서 조건부 액세스가 필요한 API를 호출하는 경우 애�
 
 ### <a name="javascript"></a>JavaScript
 
-MSAL를 사용 하 여 토큰을 자동으로 가져올 때 (`acquireTokenSilent`사용) 액세스 하려는 API가 MFA 정책과 같은 [조건부 액세스 클레임 챌린지](conditional-access-dev-guide.md) 를 필요로 하는 경우 응용 프로그램에서 오류가 발생할 수 있습니다.
+MSAL를 사용 하 여 토큰을 자동으로 가져올 때 (`acquireTokenSilent`사용) 액세스 하려는 API가 MFA 정책과 같은 [조건부 액세스 클레임 챌린지](../azuread-dev/conditional-access-dev-guide.md) 를 필요로 하는 경우 응용 프로그램에서 오류가 발생할 수 있습니다.
 
 이 오류를 처리하는 패턴은 다음 예제와 같이 MSAL.js에서 토큰(예: `acquireTokenPopup` 또는 `acquireTokenRedirect`)을 획득하기 위해 대화형 호출을 수행하는 것입니다.
 

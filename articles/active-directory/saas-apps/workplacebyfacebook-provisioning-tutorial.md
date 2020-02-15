@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 12/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11a5e92ccf1104f36b3f2b045f9922158b1f7330
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: d7d8a7881c00427023e5f174461b3d8b24d83444
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77064146"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121454"
 ---
 # <a name="tutorial-configure-workplace-by-facebook-for-automatic-user-provisioning"></a>자습서: 사용자 프로비전을 위한 Workplace by Facebook 구성
 
@@ -43,8 +43,10 @@ Facebook을 사용 하 여 작업 공간에 기존에 통합 한 경우에는 �
 
 https://portal.azure.com/?Microsoft_AAD_IAM_userProvisioningEnableCredentialsOverride=true
 
- 
-#### <a name="the-admin-credentials-section-is-greyed-out-on-my-application-and-i-cant-save-why"></a>응용 프로그램에서 관리자 자격 증명 섹션이 회색으로 표시 되 고 저장할 수 없습니다. 이유
+#### <a name="how-can-i-tell-if-my-application-has-been-migrated"></a>응용 프로그램이 마이그레이션 되었는지 어떻게 알 수 있나요? 
+응용 프로그램이 마이그레이션되면 변경 내용에 대 한 권한 부여 섹션의 배너가 제거 되 고 비밀 토큰 필드가 파란색 권한 부여 단추로 바뀝니다. 
+
+#### <a name="the-admin-credentials-section-is-greyed-out-on-my-application-and-i-cant-save-why"></a>응용 프로그램에서 관리자 자격 증명 섹션이 회색으로 표시 되 고 저장할 수 없습니다. 그 이유는
 기존 작업 공간 고객에 대 한 관리자 자격 증명 섹션을 잠 궜 습니다. 새 작업 공간 응용 프로그램으로 테 넌 트가 마이그레이션된 경우에는 관리자 자격 증명 섹션을 다시 업데이트할 수 있습니다. 기다릴 수 없으면 위의 URL을 사용 하 여 응용 프로그램을 편집할 수 있습니다. 
 
  
@@ -58,7 +60,7 @@ https://portal.azure.com/?Microsoft_AAD_IAM_userProvisioningEnableCredentialsOve
 > * 사용자 특성을 Azure AD와 Facebook의 작업 공간 간에 동기화 된 상태로 유지
 > * Facebook 별 작업 공간에 [Single sign-on](https://docs.microsoft.com/azure/active-directory/saas-apps/workplacebyfacebook-tutorial) (권장)
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
@@ -131,7 +133,7 @@ Azure AD 프로 비전 서비스를 사용 하면 응용 프로그램에 대 한
 
 9. **특성 매핑** 섹션에서 Azure AD에서 Facebook으로 작업 공간으로 동기화 되는 사용자 특성을 검토 합니다. **일치** 속성으로 선택한 특성은 업데이트 작업 시 Workplace by Facebook의 사용자 계정을 일치시키는 데 사용됩니다. 일치 하는 [대상 특성](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes)을 변경 하도록 선택 하는 경우 Facebook API의 작업 공간에서 해당 특성을 기반으로 하는 사용자 필터링을 지원 하는지 확인 해야 합니다. **저장** 단추를 선택하여 변경 내용을 커밋합니다.
 
-   |특성|형식|
+   |attribute|Type|
    |---|---|
    |userName|String|
    |displayName|String|

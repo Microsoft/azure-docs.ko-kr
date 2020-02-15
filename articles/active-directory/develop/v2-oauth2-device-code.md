@@ -17,16 +17,14 @@ ms.date: 11/19/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 4d06e5a2bfe05a530fe369f70880ea04f0bc3dd3
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: b45ba0c0b417be9cf308fedbb7fad2f6ad5fceaf
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76700518"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159734"
 ---
 # <a name="microsoft-identity-platform-and-the-oauth-20-device-authorization-grant-flow"></a>Microsoft id 플랫폼 및 OAuth 2.0 장치 권한 부여 흐름
-
-[!INCLUDE [active-directory-develop-applies-v2](../../../includes/active-directory-develop-applies-v2.md)]
 
 Microsoft id 플랫폼은 사용자가 스마트 TV, IoT 장치 또는 프린터와 같은 입력 제한 장치에 로그인 할 수 있도록 하는 [장치 권한](https://tools.ietf.org/html/rfc8628)부여를 지원 합니다.  이 흐름을 활성화하기 위해, 해당 장비는 사용자가 로그인할 웹 페이지를 다른 장비의 브라우저에서 방문하도록 합니다.  사용자가 로그인하면 디바이스는 필요에 따라 액세스 토큰 및 새로 고침 토큰을 가져올 수 있습니다.  
 
@@ -77,7 +75,7 @@ scope=user.read%20openid%20profile
 |`verification_uri`| URI | 로그인하기 위해 사용자가 `user_code`을(를) 사용하여 이동하는 URI입니다. |
 |`expires_in`      | int | `device_code` 및 `user_code`의 만료 전 시간(초)입니다. |
 |`interval`        | int | 클라이언트가 폴링 요청 간에 대기해야 하는 시간(초)입니다. |
-| `message`        | String | 사용자에 대한 지침이 포함된 사람이 읽을 수 있는 문자열입니다. 이는 `?mkt=xx-XX` 양식의 요청에 **쿼리 매개 변수**를 포함하고 적절한 언어 문화권 코드를 채워서 지역화할 수 있습니다. |
+| `message`        | String | 사용자에 대한 지침이 포함된 사람이 읽을 수 있는 문자열입니다. 이는 **양식의 요청에**쿼리 매개 변수`?mkt=xx-XX`를 포함하고 적절한 언어 문화권 코드를 채워서 지역화할 수 있습니다. |
 
 > [!NOTE]
 > `verification_uri_complete` 응답 필드가 현재 포함 되어 있지 않거나 지원 되지 않습니다.  [표준](https://tools.ietf.org/html/rfc8628) 에 따라 `verification_uri_complete` 장치가 장치 코드 흐름 표준의 선택적 부분으로 나열 되는 것을 볼 수 있기 때문에이를 언급 합니다.
@@ -88,7 +86,7 @@ scope=user.read%20openid%20profile
 
 사용자가 개인 계정으로 인증 하는 경우 (/공통 또는/또는 소비자) 인증 상태를 장치로 전송 하기 위해 다시 로그인 하 라는 메시지가 표시 됩니다.  또한 부여 되는 사용 권한을 인식 하도록 동의를 제공 하 라는 메시지가 표시 됩니다.  이는 인증에 사용 되는 회사 또는 학교 계정에는 적용 되지 않습니다. 
 
-사용자가 `verification_uri`에서 인증하는 동안 클라이언트는 `device_code`을(를) 사용하여 요청된 토큰에 대한 `/token` 엔드포인트를 폴링해야 합니다.
+사용자가 `verification_uri`에서 인증하는 동안 클라이언트는 `/token`을(를) 사용하여 요청된 토큰에 대한 `device_code` 엔드포인트를 폴링해야 합니다.
 
 ``` 
 POST https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token
@@ -110,7 +108,7 @@ device_code: GMMhmHCXhWEzkobqIHGG_EnNYYsAkukHspeYUk9E8...
 
 장치 코드 흐름은 사용자가 인증을 마치기 전에 클라이언트에서 오류를 수신 해야 하는 폴링 프로토콜입니다.  
 
-| 오류 | Description | 클라이언트 작업 |
+| Error | Description | 클라이언트 작업 |
 | ------ | ----------- | -------------|
 | `authorization_pending` | 사용자가 인증을 마치지 않았지만 흐름을 취소 하지 않았습니다. | 최소 `interval`초 후에 요청을 반복하세요. |
 | `authorization_declined` | 일반 사용자가 권한 요청을 거부했습니다.| 폴링을 중지하고 인증되지 않은 상태로 되돌립니다.  |

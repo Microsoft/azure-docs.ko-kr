@@ -12,18 +12,18 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm
 ms.workload: infrastructure-services
-ms.date: 8/30/2019
+ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: 20bc22661f9faad1b289dbbe7200f4f83c097f0e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 779bb88d15ea6c52f4399f17223b89916e22653d
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75451234"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153862"
 ---
 # <a name="azure-serial-console"></a>Azure 직렬 콘솔
 
-Azure Portal의 직렬 콘솔에서는 Linux 또는 Windows를 실행 하는 가상 머신 (Vm) 및 가상 머신 확장 집합 인스턴스의 텍스트 기반 콘솔에 대 한 액세스를 제공 합니다. 이 직렬 연결은 VM 또는 가상 머신 확장 집합 인스턴스의 ttyS0 또는 COM1 직렬 포트에 연결되어 네트워크 또는 운영 체제 상태와 관계없이 액세스를 제공합니다. 직렬 콘솔은 Azure Portal를 사용 하 여 액세스할 수 있으며, 참가자 이상의 액세스 역할이 있는 사용자 (VM 또는 가상 머신 확장 집합)에 대해서만 허용 됩니다.
+Azure Portal의 직렬 콘솔에서는 Linux 또는 Windows를 실행 하는 가상 머신 (Vm) 및 가상 머신 확장 집합 인스턴스의 텍스트 기반 콘솔에 대 한 액세스를 제공 합니다. 이 직렬 연결은 VM 또는 가상 머신 확장 집합 인스턴스의 ttyS0 또는 COM1 직렬 포트에 연결 하 여 네트워크 또는 운영 체제 상태에 관계 없이 액세스를 제공 합니다. 직렬 콘솔은 Azure Portal를 사용 하 여 액세스할 수 있으며, 참가자 이상의 액세스 역할이 있는 사용자 (VM 또는 가상 머신 확장 집합)에 대해서만 허용 됩니다.
 
 직렬 콘솔은 Vm 및 가상 머신 확장 집합 인스턴스에 대해 동일한 방식으로 작동 합니다. 이 문서에서 Vm에 대 한 모든 멘 션은 별도로 명시 되지 않는 한 가상 머신 확장 집합 인스턴스를 암시적으로 포함 합니다.
 
@@ -38,7 +38,7 @@ VM 또는 가상 머신 확장 집합 인스턴스에서 직렬 콘솔에 액세
 - 직렬 콘솔에 액세스 하는 Azure 계정에 VM 및 [부트 진단](boot-diagnostics.md) 저장소 계정 모두에 대 한 [가상 머신 참가자 역할이](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) 있어야 합니다.
 
 > [!NOTE]
-> - 클래식 배포는 지원되지 않습니다. VM 또는 가상 머신 확장 집합 인스턴스는 Azure Resource Manager 배포 모델을 사용 해야 합니다.
+> 클래식 배포는 지원되지 않습니다. VM 또는 가상 머신 확장 집합 인스턴스는 Azure Resource Manager 배포 모델을 사용 해야 합니다.
 
 ## <a name="get-started-with-the-serial-console"></a>직렬 콘솔 시작
 Vm 및 가상 머신 확장 집합에 대 한 직렬 콘솔은 Azure Portal를 통해서만 액세스할 수 있습니다.

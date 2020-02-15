@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/15/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: 15a118dc72ae9ffc4b6c99b0e0b527a252d3ded8
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 235d8788b47355925d93cb3e3835d32e25c1b51f
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76293592"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168156"
 ---
 # <a name="release-notes"></a>릴리스 정보
 
@@ -28,7 +28,7 @@ ms.locfileid: "76293592"
 - Aar 패키지에 대 한 키워드 인식 지원이 추가 되었으며 x86 및 x64 기능에 대 한 지원이 추가 되었습니다. 
 - 목적-C: `Connection` 개체에 추가 된 `SendMessage` 및 `SetMessageProperty` 메서드입니다. [여기](https://docs.microsoft.com/objectivec/cognitive-services/speech/spxconnection)에서 설명서를 참조 하세요.
 - 이제 C++ TTS api는 합성 텍스트 입력으로 `std::wstring` 지원 하므로 WSTRING을 SDK로 전달 하기 전에 문자열로 변환할 필요가 없습니다. 자세한 내용은 [여기](https://docs.microsoft.com/cpp/cognitive-services/speech/speechsynthesizer#speaktextasync)를 참조하세요. 
-- C#: [언어 id](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-automatic-language-detection?pivots=programming-language-csharp) 및 [소스 언어 구성을](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-specify-source-language?pivots=programming-language-csharp) 이제 사용할 수 있습니다.
+- C#: [언어 ID](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-automatic-language-detection?pivots=programming-language-csharp) 및 [소스 언어 구성을](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-specify-source-language?pivots=programming-language-csharp) 이제 사용할 수 있습니다.
 - JavaScript: 음성 서비스에서 콜백 `receivedServiceMessage`으로 사용자 지정 메시지를 전달 하기 위해 `Connection` 개체에 기능을 추가 했습니다.
 - JavaScript: 온-프레미스 컨테이너 및 소 버린 클라우드에서 편리 하 게 사용할 수 있는 `FromHost API`에 대 한 지원이 추가 되었습니다. [여기](speech-container-howto.md)에서 설명서를 참조 하세요.
 - JavaScript: 이제 [orgads](https://github.com/orgads)의 기여 덕분에 `NODE_TLS_REJECT_UNAUTHORIZED`을 인식 합니다. 자세한 내용은 [여기](https://github.com/microsoft/cognitive-services-speech-sdk-js/pull/75)를 참조하세요.
@@ -45,7 +45,7 @@ ms.locfileid: "76293592"
 
 - 위의 주요 변경 내용에서 `OpenSSL` 업데이트를 참조 하세요. Linux 및 Java에서 간헐적인 충돌 및 성능 문제 (높은 부하 상태에서 잠금 경합)가 모두 수정 되었습니다. 
 - Java: 높은 동시성 시나리오에서 개체 닫기를 개선 했습니다.
-- Nuget 패키지를 재구성. Lib 폴더의 `Microsoft.CognitiveServices.Speech.core.dll` 및 `Microsoft.CognitiveServices.Speech.extension.kws.dll` 복사본 3 개를 제거 하 여 Nuget 패키지를 더 작고 더 빠르게 다운로드 하 고 일부 C++ 네이티브 앱을 컴파일하는 데 필요한 헤더를 추가 했습니다.
+- NuGet 패키지를 재구성. Lib 폴더의 `Microsoft.CognitiveServices.Speech.core.dll` 및 `Microsoft.CognitiveServices.Speech.extension.kws.dll` 복사본 3 개를 제거 하 여 NuGet 패키지를 더 작고 더 빠르게 다운로드 하 고 일부 C++ 네이티브 앱을 컴파일하는 데 필요한 헤더를 추가 했습니다.
 - [여기서](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/cpp)는 빠른 시작 샘플을 수정 했습니다. Linux, MacOS, Windows에서 "마이크를 찾을 수 없음" 예외를 표시 하지 않고 종료 되었습니다.
 - [이 샘플과](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/csharp/uwp/speechtotext-uwp)같은 특정 코드 경로에서 긴 음성 인식이 있는 SDK 충돌 문제를 수정 했습니다.
 - [이 고객 문제](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/396)를 해결 하기 위해 Azure 웹 앱 환경에서 SDK 배포 오류가 수정 되었습니다.
@@ -75,7 +75,7 @@ ms.locfileid: "76293592"
 - 온-프레미스 컨테이너 및 소 버린 클라우드에서 편리 하 게 사용할 수 있도록 `FromHost()` API가 추가 되었습니다.
 - 음성 인식에 대 한 자동 소스 언어 감지 추가 됨 ( C++Java 및)
 - 음성 인식에 대 한 `SourceLanguageConfig` 개체를 추가 하 여 필요한 원본 언어를 지정 하 C++는 데 사용 합니다 (Java 및).
-- Nuget 및 Unity 패키지를 통해 Windows (UWP), Android 및 iOS에 대 한 `KeywordRecognizer` 지원을 추가 했습니다.
+- NuGet 및 Unity 패키지를 통해 Windows (UWP), Android 및 iOS에 대 한 `KeywordRecognizer` 지원을 추가 했습니다.
 - 비동기 일괄 처리에서 대화 기록을 수행 하기 위해 원격 대화 Java API가 추가 되었습니다.
 
 **주요 변경 내용**
@@ -438,9 +438,9 @@ JavaScript 전용 릴리스입니다. 추가한 기능은 없습니다. 다음�
 - 인식 이벤트: `NoMatch` 이벤트 유형이 `Error` 이벤트에 병합 되었습니다.
 - SpeechOutputFormat의 C# `OutputFormat` 이름이로 변경 되어에 맞춰 정렬 C++됩니다.
 - `AudioInputStream` 인터페이스의 일부 메서드 반환 형식이 다음과 같이 약간 변경되었습니다.
-  - Java에서 `read` 메서드는 이제 `int` 대신 `long`을 반환합니다.
-  - C#에서 `Read` 메서드는 이제 `int` 대신 `uint`을 반환합니다.
-  - C++에서 `Read` 및 `GetFormat` 메서드는 이제 `int` 대신 `size_t`를 반환합니다.
+  - Java에서 `read` 메서드는 이제 `long` 대신 `int`을 반환합니다.
+  - C#에서 `Read` 메서드는 이제 `uint` 대신 `int`을 반환합니다.
+  - C++에서 `Read` 및 `GetFormat` 메서드는 이제 `size_t` 대신 `int`를 반환합니다.
 - C++: 오디오 입력 스트림의 인스턴스가 이제 `shared_ptr`로만 전달될 수 있습니다.
 
 **버그 수정**
@@ -467,7 +467,7 @@ JavaScript 전용 릴리스입니다. 추가한 기능은 없습니다. 다음�
 
 **호환성이 손상되는 변경**
 
-- C#의 `SpeechRecognitionResult.RecognizedText`가 `SpeechRecognitionResult.Text`로 변경되었습니다.
+- C#의 `SpeechRecognitionResult.Text`가 `SpeechRecognitionResult.RecognizedText`로 변경되었습니다.
 
 **버그 수정**
 

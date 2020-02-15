@@ -11,18 +11,18 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b2cc562f155fe3b84e5d28b2e0e22d50238d480c
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: baa44481c4641f69ead5335298316c837062d2c0
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73816222"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186043"
 ---
 # <a name="azure-active-directory-conditional-access-faqs"></a>조건부 액세스 Faq Azure Active Directory
 
 ## <a name="which-applications-work-with-conditional-access-policies"></a>조건부 액세스 정책을 사용 하는 응용 프로그램은 무엇입니까?
 
-조건부 액세스 정책을 사용 하는 응용 프로그램에 대 한 자세한 내용은 [Azure Active Directory에서 조건부 액세스 규칙을 사용 하는 응용 프로그램 및 브라우저](technical-reference.md)를 참조 하세요.
+조건부 액세스 정책을 사용 하는 응용 프로그램에 대 한 자세한 내용은 [Azure Active Directory에서 조건부 액세스 규칙을 사용 하는 응용 프로그램 및 브라우저](concept-conditional-access-cloud-apps.md)를 참조 하세요.
 
 ## <a name="are-conditional-access-policies-enforced-for-b2b-collaboration-and-guest-users"></a>B2B 공동 작업 및 게스트 사용자에 게 조건부 액세스 정책이 적용 되나요?
 

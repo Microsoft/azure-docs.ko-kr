@@ -12,12 +12,12 @@ metadata:
   author: IEvangelist
   ms.author: dapine
   ms.date: 01/23/2020
-  ms.openlocfilehash: 4832f81a7891e360b0e8a195214930ddc2c2eb03
-  ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+  ms.openlocfilehash: 2ba262c7adf778099e47e636a9106f74314c2254
+  ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 01/24/2020
-  ms.locfileid: "76716805"
+  ms.lasthandoff: 02/09/2020
+  ms.locfileid: "77108697"
 landingContent:
 - title: 몰입형 판독기 정보
   linkLists:
@@ -25,6 +25,10 @@ landingContent:
     links:
     - text: 몰입형 판독기란?
       url: overview.md
+  - linkListType: video
+    links:
+    - text: 시작 - 짧은 엔지니어링 비디오
+      url: https://aka.ms/ImmersiveReaderSDKVideos
 - title: 시작하기
   linkLists:
   - linkListType: quickstart

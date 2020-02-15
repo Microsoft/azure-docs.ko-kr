@@ -14,12 +14,12 @@ ms.date: 11/14/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 301fe9c213ec6d78d32d6ccde84a689c4659acb3
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: c99a6e018edd0806daac7cd429135e522f217f23
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75888972"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159831"
 ---
 # <a name="custom-installation-of-azure-ad-connect"></a>Azure AD Connect의 사용자 지정 설치
 설치에 더 많은 옵션이 필요한 경우 Azure AD Connect **사용자 지정 설정**을 사용합니다. 여러 포리스트가 있는 경우 또한 빠른 설치에서 다루지 않는 선택적 기능을 구성하려는 경우에 사용합니다. [**빠른 설치**](how-to-connect-install-express.md) 옵션이 배포 또는 토폴로지 옵션을 충족하지 않는 경우에 사용합니다.
@@ -97,7 +97,7 @@ Active Directory 도메인 서비스에 연결하려면 Azure AD Connect에 충�
 ![확인되지 않은 도메인](./media/how-to-connect-install-custom/aadsigninconfig2.png)  
 **추가되지 않음** 및 **확인되지 않음**으로 표시된 모든 도메인을 검토합니다. 사용한 해당 도메인을 Azure AD에서 확인하도록 합니다. 도메인을 확인한 경우 새로 고침 기호를 클릭합니다. 자세한 내용은 [도메인 추가 및 확인](../active-directory-domains-add-azure-portal.md)을 참조하세요.
 
-**UserPrincipalName** - 특성 userPrincipalName은 사용자가 Azure AD 및 Office 365에 로그인할 때 사용하는 특성입니다. UPN-접미사로 알려진 사용된 도메인은 사용자가 동기화되기 전에 Azure AD에서 확인해야 합니다. Microsoft에서는 기본 특성 userPrincipalName을 유지하는 것을 권장합니다. 이 특성이 라우팅할 수 없고 확인할 수 없는 경우 다른 특성을 선택할 수 있습니다. 예를 들어 로그인 ID를 보관하는 특성으로 전자 메일을 선택할 수 있습니다. userPrincipalName 이외의 다른 특성을 사용하는 것을 **대체 ID**라고 합니다. 대체 ID 특성 값은 RFC822 표준을 따라야 합니다. 대체 ID는 암호 해시 동기화, 통과 인증 및 페더레이션에서 사용할 수 있습니다. 특성의 값이 하나뿐이어도 Active Directory에 다중 값으로 정의하면 안 됩니다. 대체 ID에 대 한 자세한 내용을 보려면 [여기를 클릭 하세요.](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-pta-faq#does-pass-through-authentication-support-alternate-id-as-the-username-instead-of-userprincipalname)
+**UserPrincipalName** - 특성 userPrincipalName은 사용자가 Azure AD 및 Office 365에 로그인할 때 사용하는 특성입니다. UPN-접미사로 알려진 사용된 도메인은 사용자가 동기화되기 전에 Azure AD에서 확인해야 합니다. Microsoft에서는 기본 특성 userPrincipalName을 유지하는 것을 권장합니다. 이 특성이 라우팅할 수 없고 확인할 수 없는 경우 다른 특성을 선택할 수 있습니다. 예를 들어 로그인 ID를 보관하는 특성으로 전자 메일을 선택할 수 있습니다. userPrincipalName 이외의 다른 특성을 사용하는 것을 **대체 ID**라고 합니다. 대체 ID 특성 값은 RFC822 표준을 따라야 합니다. 대체 ID는 암호 해시 동기화, 통과 인증 및 페더레이션에서 사용할 수 있습니다. 특성의 값이 하나뿐이어도 Active Directory에 다중 값으로 정의하면 안 됩니다. 대체 ID에 대 한 자세한 내용은 질문과 [대답](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-pta-faq#does-pass-through-authentication-support-alternate-id-as-the-username-instead-of-userprincipalname) 항목을 참조 하세요.
 
 >[!NOTE]
 > 통과 인증을 사용하도록 설정한 경우 마법사를 진행하려면 하나 이상의 검증된 도메인이 있어야 합니다.
@@ -125,7 +125,7 @@ Azure AD Connect 버전 1.1.524.0 미만에서 OU 기반 필터링을 사용하�
 #### <a name="select-how-users-should-be-identified-in-your-on-premises-directories"></a>온-프레미스 디렉터리에서 사용자를 식별하는 방법 선택
 포리스트 기능 간에 일치를 사용하여 AD DS 포리스트의 사용자가 Azure AD에서 표현되는 방법을 정의할 수 있습니다. 사용자는 포리스트 전반에 걸쳐 한번만 표시할 수 있거나 활성화된 계정과 비활성화된 계정의 조합으로 이루어집니다. 사용자가 일부 포리스트 내에서 연락처로 표시될 수 있습니다.
 
-![고유](./media/how-to-connect-install-custom/unique2.png)
+![고유한](./media/how-to-connect-install-custom/unique2.png)
 
 | 설정 | Description |
 | --- | --- |
@@ -163,9 +163,9 @@ sourceAnchor 특성은 사용자 개체의 수명 동안 변경할 수 없는 �
 >[!WARNING]
 >Azure AD Connect 버전 **1.0.8641.0** 이상에서는 비밀번호 쓰기 저장을 위해 Azure Access Control 서비스를 사용합니다.  이 서비스는 **2018년 11월 7일**에 사용이 중지됩니다.  이러한 버전의 Azure AD Connect 중 하나를 사용하고 있고 비밀번호 쓰기 저장을 사용하도록 설정한 경우 서비스의 사용이 중지되면 사용자가 암호를 변경하거나 다시 설정할 수 없게 됩니다. 이러한 버전의 Azure AD Connect를 통한 비밀번호 쓰기 저장이 지원되지 않습니다.
 >
->Azure Access Control 서비스에 대한 자세한 내용은 [방법: Azure Access Control 서비스에서 마이그레이션](../develop/active-directory-acs-migration.md)을 참조하세요.
+>Azure Access Control 서비스에 대한 자세한 내용은 [방법: Azure Access Control 서비스에서 마이그레이션](../azuread-dev/active-directory-acs-migration.md)을 참조하세요.
 >
->최신 버전의 Azure AD Connect를 다운로드하려면 [여기](https://www.microsoft.com/en-us/download/details.aspx?id=47594)를 클릭하세요.
+>최신 버전의 Azure AD Connect를 다운로드하려면 [여기](https://www.microsoft.com/download/details.aspx?id=47594)를 클릭하세요.
 
 ![선택적 기능](./media/how-to-connect-install-custom/optional2.png)
 
@@ -382,16 +382,16 @@ Azure AD Connect는 이전 단계에서 PingFederate 메타데이터에서 검�
 
 * 페더레이션 FQDN 확인: Azure AD Connect는 DNS에서 페더레이션 FQDN을 확인할 수 있는지 검사하여 연결을 보장합니다.
 
-![전체](./media/how-to-connect-install-custom/completed.png)
+![완료](./media/how-to-connect-install-custom/completed.png)
 
 ![확인](./media/how-to-connect-install-custom/adfs7.png)
 
 엔드투엔드 인증의 유효성 검사가 성공하려면 다음 테스트 중 하나 이상을 수동으로 수행해야 합니다.
 
 * 동기화가 완료되면 Azure AD Connect에서 페더레이션 로그인 확인 추가 작업을 사용하여 원하는 온-프레미스 사용자 계정에 대한 인증을 확인합니다.
-* 인트라넷의 도메인 가입된 컴퓨터에서, 브라우저에서 로그인할 수 있는지 유효성 검사: https://myapps.microsoft.com 에 연결하고 로그인된 계정으로 로그인을 확인합니다. 기본 제공 AD DS 관리자 계정은 동기화되지 않으며 확인을 위해 사용할 수 없습니다.
-* 엑스트라넷에서, 디바이스에서 로그인 할 수 있는지 유효성을 검사합니다. 홈 컴퓨터 또는 모바일 디바이스에서 https://myapps.microsoft.com 에 연결하고 자격 증명을 제공합니다.
-* 리치 클라이언트 로그인 유효성을 검사합니다. https://testconnectivity.microsoft.com 에 연결하고 **Office 365** 탭 및 **Office 365 Single Sign-on 테스트**를 선택합니다.
+* 인트라넷의 도메인 가입된 컴퓨터에서, 브라우저에서 로그인할 수 있는지 유효성 검사: https://myapps.microsoft.com에 연결하고 로그인된 계정으로 로그인을 확인합니다. 기본 제공 AD DS 관리자 계정은 동기화되지 않으며 확인을 위해 사용할 수 없습니다.
+* 엑스트라넷에서, 디바이스에서 로그인 할 수 있는지 유효성을 검사합니다. 홈 컴퓨터 또는 모바일 디바이스에서 https://myapps.microsoft.com에 연결하고 자격 증명을 제공합니다.
+* 리치 클라이언트 로그인 유효성을 검사합니다. https://testconnectivity.microsoft.com에 연결하고 **Office 365** 탭 및 **Office 365 Single Sign-on 테스트**를 선택합니다.
 
 ## <a name="troubleshooting"></a>문제 해결
 다음 섹션에는 Azure AD Connect 설치 문제가 발생할 때 사용할 수 있는 문제 해결 정보가 포함되어 있습니다.
@@ -399,7 +399,7 @@ Azure AD Connect는 이전 단계에서 PingFederate 메타데이터에서 검�
 ### <a name="the-adsync-database-already-contains-data-and-cannot-be-overwritten"></a>"ADSync 데이터베이스에 이미 데이터가 포함되어 있어 덮어쓸 수 없습니다."
 Azure AD Connect 설치 하 고 **필수 구성 요소 설치** 페이지에서 **기존 SQL server 사용** 옵션을 선택 하는 경우 **adsync 데이터베이스에 이미 데이터가 포함 되어 있으며 덮어쓸 수 없다는 오류가 발생할 수 있습니다. 기존 데이터베이스를 제거한 후 다시 시도 하십시오.**
 
-![오류](./media/how-to-connect-install-custom/error1.png)
+![Error](./media/how-to-connect-install-custom/error1.png)
 
 SQL 서버의 SQL 인스턴스에 **ADSync**라고 하는 기존 데이터베이스가 이미 있기 때문이며, 이 데이터베이스는 여러분이 위의 텍스트 상자에서 지정한 것입니다.
 
@@ -411,7 +411,7 @@ SQL 서버의 SQL 인스턴스에 **ADSync**라고 하는 기존 데이터베이
 
 마지막으로, 데이터베이스를 삭제해야 합니다.  **Microsoft SQL Server Management Studio**를 사용하여 처리할 수 있으며, 그 후 SQL 인스턴스에 연결합니다. **ADSync** 데이터베이스를 찾아서 마우스 오른쪽 단추로 클릭하고, 상황에 맞는 메뉴에서 **삭제**를 선택합니다.  그런 다음, **확인** 단추를 클릭하여 삭제합니다.
 
-![오류](./media/how-to-connect-install-custom/error2.png)
+![Error](./media/how-to-connect-install-custom/error2.png)
 
 **ADSync** 데이터베이스를 삭제한 후에는 **설치** 단추를 클릭하여 다시 설치할 수 있습니다.
 

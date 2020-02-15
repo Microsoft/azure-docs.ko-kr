@@ -13,12 +13,12 @@ ms.date: 08/28/2019
 ms.author: ryanwi
 ms.reviewer: sureshja
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: f32d9832f0bad81ca29ab7553d956b593531d1bd
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 9fd5fa943468924c289587285fe7986a73c21dba
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76698937"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161344"
 ---
 # <a name="how-to-use-the-azure-ad-graph-api"></a>방법: Azure AD Graph API 사용
 
@@ -33,7 +33,7 @@ Azure AD Graph API는 OData REST API 끝점을 통해 Azure AD에 대 한 프로
 
 Graph API에서 디렉터리 데이터 및 CRUD 작업을 수행하려는 개체(즉, 리소스 또는 엔터티)에 액세스하려면 OData(개방형 데이터) 프로토콜을 기반으로 하는 URL을 사용할 수 있습니다. Graph API에서 사용되는 URL은 서비스 루트, 테넌트 식별자, 리소스 경로 및 쿼리 문자열 옵션의 네 가지 주요 부분으로 구성됩니다. `https://graph.windows.net/{tenant-identifier}/{resource-path}?[query-parameters]`. 다음 URL을 예로 들어보겠습니다. `https://graph.windows.net/contoso.com/groups?api-version=1.6`.
 
-* **서비스 루트**: Azure AD Graph API에서 서비스 루트는 항상 https://graph.windows.net 입니다.
+* **서비스 루트**: Azure AD Graph API에서 서비스 루트는 항상 https://graph.windows.net입니다.
 * **테넌트 식별자**: 이 섹션은 위 예제에서 contoso.com이라는 확인된(등록된) 도메인 이름일 수 있습니다. 테넌트 개체 ID나 "myorganization" 또는 "me" 별칭일 수도 있습니다. 자세한 내용은 [AZURE AD Graph API에서 엔터티 및 작업 주소 지정](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-operations-overview)을 참조 하세요.
 * **리소스 경로**: URL의이 섹션은 상호 작용할 리소스 (사용자, 그룹, 특정 사용자 또는 특정 그룹 등)를 식별 합니다. 위의 예제에서는 해당 리소스 집합의 주소를 설정 하는 최상위 "그룹"입니다. 특정 엔터티 주소를 지정할 수도 있습니다(예: "users/{objectId}" 또는 "users/userPrincipalName").
 * **쿼리 매개 변수**: 물음표(?)는 리소스 경로 섹션과 쿼리 매개 변수 섹션을 구분합니다. Azure AD Graph API의 모든 요청에는 "api-version" 쿼리 매개 변수가 필요합니다. 또한 Azure AD Graph API는 OData 쿼리 옵션, 즉 **$filter**, **$orderby**, **$expand**, **$top** 및 **$format**을 지원합니다. **$count**, **$inlinecount** 및 **$skip** 쿼리 옵션은 현재 지원되지 않습니다. 자세한 내용은 [Azure AD Graph API에서 지원되는 쿼리, 필터 및 페이징 옵션](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-supported-queries-filters-and-paging-options)을 참조하세요.
@@ -81,7 +81,7 @@ Azure AD Graph Explorer의 다음 기능 및 제한 사항을 확인합니다.
 
 아래 예제에서는 Fiddler Web Debugger를 사용하여 Azure AD 디렉터리에 새 보안 그룹 'MyTestGroup'을 만듭니다.
 
-**액세스 토큰 얻기**: Azure AD Graph에 액세스하려면 클라이언트가 먼저 Azure AD에 인증해야 합니다. 자세한 내용은 [AZURE AD에 대 한 인증 시나리오](v1-authentication-scenarios.md)를 참조 하세요.
+**액세스 토큰 얻기**: Azure AD Graph에 액세스하려면 클라이언트가 먼저 Azure AD에 인증해야 합니다. 자세한 내용은 [AZURE AD에 대 한 인증 시나리오](authentication-scenarios.md)를 참조 하세요.
 
 **쿼리 작성 및 실행**: 다음 단계를 완료합니다.
 

@@ -10,13 +10,13 @@ ms.workload: identity
 ms.topic: conceptual
 ms.author: marsma
 ms.subservice: B2C
-ms.date: 02/05/2020
-ms.openlocfilehash: b701449e8cfb7a379522ee6ccb93f5569bd703d8
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.date: 02/10/2020
+ms.openlocfilehash: 6f7f0252a6377397ccaccdc44c9c8561da7c9d29
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77045974"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121388"
 ---
 # <a name="monitor-azure-ad-b2c-with-azure-monitor"></a>Azure Monitor를 사용 하 여 Azure AD B2C 모니터링
 
@@ -24,13 +24,13 @@ Azure Monitor를 사용 하 여 Azure Active Directory B2C (Azure AD B2C) 로그
 
 다음과 같이 로그 이벤트를 라우팅할 수 있습니다.
 
-* Azure 저장소 계정이 있어야 합니다.
-* Azure 이벤트 허브 (및 Splunk 및 Sumo 논리 인스턴스와 통합)
-* Azure Log Analytics 작업 영역 (데이터 분석, 대시보드 만들기 및 특정 이벤트에 대 한 경고)
+* Azure [저장소 계정](../storage/blobs/storage-blobs-introduction.md).
+* Azure [이벤트 허브](../event-hubs/event-hubs-about.md) (및 Splunk 및 Sumo 논리 인스턴스와 통합)
+* 데이터를 분석 하 고, 대시보드를 만들고, 특정 이벤트에 대해 경고 하는 [Log Analytics 작업 영역](../azure-monitor/platform/resource-logs-collect-workspace.md) 입니다.
 
 ![Azure Monitor](./media/azure-monitor/azure-monitor-flow.png)
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 문서의 단계를 완료 하려면 Azure PowerShell 모듈을 사용 하 여 Azure Resource Manager 템플릿을 배포 합니다.
 
@@ -42,15 +42,15 @@ Azure Monitor를 사용 하 여 Azure Active Directory B2C (Azure AD B2C) 로그
 
 Azure AD B2C는 [Azure Active Directory 모니터링](../active-directory/reports-monitoring/overview-monitoring.md)을 활용 합니다. Azure AD B2C 테 넌 트 내의 Azure Active Directory에서 *진단 설정을* 사용 하도록 설정 하려면 [위임 된 리소스 관리](../lighthouse/concepts/azure-delegated-resource-management.md)를 사용 합니다.
 
-Azure AD B2C 디렉터리 ( **서비스 공급자**)의 사용자에 게 Azure 구독 ( **고객**)이 포함 된 테 넌 트 내에서 Azure Monitor 인스턴스를 구성할 수 있는 권한을 부여 합니다. 권한 부여를 만들려면 구독이 포함 된 Azure AD 테 넌 트에 [Azure Resource Manager](../azure-resource-manager/index.yml) 템플릿을 배포 합니다. 다음 섹션에서는이 프로세스를 안내 합니다.
+사용자가 Azure AD B2C 디렉터리 ( **서비스 공급자**)의 사용자 또는 그룹에 게 Azure 구독 ( **고객**)이 포함 된 테 넌 트 내에서 Azure Monitor 인스턴스를 구성 하도록 권한을 부여 합니다. 권한 부여를 만들려면 구독이 포함 된 Azure AD 테 넌 트에 [Azure Resource Manager](../azure-resource-manager/index.yml) 템플릿을 배포 합니다. 다음 섹션에서는이 프로세스를 안내 합니다.
 
-## <a name="create-a-resource-group"></a>리소스 그룹 만들기
+## <a name="create-or-choose-resource-group"></a>리소스 그룹 만들기 또는 선택
 
-Azure 구독을 포함 하는 Azure Active Directory (Azure AD) 테 넌 트 (Azure AD B2C 테 넌 트가 포함 된 디렉터리가*아님* )에서 [리소스 그룹을 만듭니다](../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups). 다음 값을 사용합니다.
+Azure Monitor에서 데이터를 받을 대상 Azure storage 계정, event hub 또는 Log Analytics 작업 영역을 포함 하는 리소스 그룹입니다. Azure Resource Manager 템플릿을 배포할 때 리소스 그룹 이름을 지정 합니다.
 
-* **구독**: Azure 구독을 선택합니다.
-* **리소스 그룹**: 리소스 그룹의 이름을 입력 합니다. 예: *b2c-monitor*.
-* **지역**: Azure 위치를 선택 합니다. 예: *미국 중부*
+[리소스 그룹을 만들거나](../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups) Azure AD B2C 테 넌 트를 포함 하는 디렉터리가 *아니라* azure 구독을 포함 하는 Azure Active Directory (azure AD) 테 넌 트에서 기존 리소스 그룹을 선택 합니다.
+
+이 예제에서는 *미국 중부* 지역의 *b2c* 이라는 리소스 그룹을 사용 합니다.
 
 ## <a name="delegate-resource-management"></a>리소스 관리 위임
 
@@ -209,7 +209,17 @@ Parameters              :
 
 ## <a name="configure-diagnostic-settings"></a>진단 설정 구성
 
-리소스 관리를 위임 하 고 구독을 선택한 후 Azure Portal에서 [진단 설정을 만들](../active-directory/reports-monitoring/overview-monitoring.md) 준비가 되었습니다.
+진단 설정은 리소스에 대 한 로그 및 메트릭을 보내야 하는 위치를 정의 합니다. 가능한 대상은 다음과 같습니다.
+
+- [Azure Storage 계정](../azure-monitor/platform/resource-logs-collect-storage.md)
+- [Event hubs](../azure-monitor/platform/resource-logs-stream-event-hubs.md) 솔루션.
+- [Log Analytics 작업 영역](../azure-monitor/platform/resource-logs-collect-workspace.md)
+
+아직 선택 하지 않은 경우 [Azure Resource Manager 템플릿에서](#create-an-azure-resource-manager-template)지정한 리소스 그룹에서 선택한 대상 유형의 인스턴스를 만듭니다.
+
+### <a name="create-diagnostic-settings"></a>진단 설정 만들기
+
+Azure Portal에서 [진단 설정을 만들](../active-directory/reports-monitoring/overview-monitoring.md) 준비가 되었습니다.
 
 활동 로그 Azure AD B2C에 대 한 모니터링 설정을 구성 하려면:
 
@@ -217,12 +227,24 @@ Parameters              :
 1. 포털 도구 모음에서 **디렉터리 + 구독** 아이콘을 선택 하 고 Azure AD B2C 테 넌 트가 포함 된 디렉터리를 선택 합니다.
 1. **Azure Active Directory** 선택
 1. **모니터링** 아래에서 **진단 설정**을 선택합니다.
-1. **+ 진단 설정 추가**를 선택 합니다.
+1. 리소스에 기존 설정이 있는 경우 이미 구성 된 설정 목록이 표시 됩니다. **진단 설정 추가** 를 선택 하 여 새 설정을 추가 하거나 설정을 **편집** 하 여 기존 설정을 편집 합니다. 각 설정에는 대상 유형 중 하나만 지정할 수 있습니다.
 
     ![Azure Portal의 진단 설정 창](./media/azure-monitor/azure-monitor-portal-05-diagnostic-settings-pane-enabled.png)
 
+1. 아직 없는 경우 설정 이름을 지정 합니다.
+1. 로그를 보낼 각 대상에 대 한 확인란을 선택 합니다. **구성** 을 선택 하 여 다음 표에 설명 된 대로 설정을 지정 합니다.
+
+    | 설정 | Description |
+    |:---|:---|
+    | 스토리지 계정에 보관 | 저장소 계정의 이름입니다. |
+    | 이벤트 허브로 스트림 | 이벤트 허브가 생성 되는 네임 스페이스 (처음으로 로그를 스트리밍하는 경우) 또는 스트리밍되는 경우 (해당 로그 범주를이 네임 스페이스로 스트리밍하는 리소스가 이미 있는 경우).
+    | Log Analytics에 보내기 | 작업 영역의 이름입니다. |
+
+1. **AuditLogs** 및 **SignInLogs**를 선택 합니다.
+1. **저장**을 선택합니다.
+
 ## <a name="next-steps"></a>다음 단계
 
-Azure Monitor에서 진단 설정을 추가 하 고 구성 하는 방법에 대 한 자세한 내용은 Azure Monitor 설명서에서이 자습서를 참조 하세요.
+Azure Monitor에서 진단 설정을 추가 하 고 구성 하는 방법에 대 한 자세한 내용은 [자습서: Azure 리소스에서 리소스 로그 수집 및 분석](../azure-monitor/insights/monitor-azure-resource.md)을 참조 하세요.
 
-[자습서: Azure 리소스에서 리소스 로그 수집 및 분석](/azure-monitor/learn/tutorial-resource-logs.md)
+Azure AD 로그를 이벤트 허브로 스트리밍하는 방법에 대 한 자세한 내용은 [자습서: azure 이벤트 허브에 로그 Azure Active Directory](../active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md)스트리밍을 참조 하세요.

@@ -13,17 +13,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: d80a58f1886ecc1ca2a735881fc5822f2fc0c53b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8b38b38789edfd5a0a30fdd589849bfa345eaac9
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60826142"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157859"
 ---
 # <a name="access-the-azure-media-services-api-with-azure-ad-authentication"></a>Azure AD 인증을 사용하여 Azure Media Services API 액세스  
 
 > [!NOTE]
-> Media Services v2에는 새로운 특징 또는 기능이 추가되지 않습니다. <br/>[Media Services v3](https://docs.microsoft.com/azure/media-services/latest/)의 최신 버전을 확인하세요. 참고: [v2에서 v3 마이그레이션 지침](../latest/migrate-from-v2-to-v3.md)
+> Media Services v2에는 새로운 특징 또는 기능이 추가되지 않습니다. <br/>[Media Services v3](https://docs.microsoft.com/azure/media-services/latest/)의 최신 버전을 확인하세요. 또한 [v2에서 v3로 마이그레이션 지침](../latest/migrate-from-v2-to-v3.md) 을 참조 하세요.
 
 Azure Media Services API는 RESTful API입니다. 이 API와 REST API 또는 제공되는 클라이언트 SDK를 사용하여 미디어 리소스에 대한 작업을 수행할 수 있습니다. Azure Media Services는 Microsoft .NET용 Media Services 클라이언트 SDK를 제공합니다. Media Services 리소스 및 Media Services API에 액세스할 수 있는 권한을 부여하려면 먼저 인증을 거쳐야 합니다. 
 
@@ -32,9 +32,9 @@ Media Services는 [Azure AD(Azure Active Directory) 기반 인증](../../active-
 이 문서에서는 REST 또는 .NET API를 사용하여 Media Services API에 액세스하는 방법에 대한 개요를 제공합니다.
 
 > [!NOTE]
-> 액세스 제어 권한 부여는 2018 년 6 월 1 일에 사용 되지 않았습니다.
+> Access Control 권한 부여는 2018 년 6 월 1 일부 터 더 이상 사용 되지 않습니다.
 
-## <a name="access-control"></a>액세스 제어
+## <a name="access-control"></a>Access Control
 
 Azure Media REST 요청이 성공하기 위해서는 호출하는 사용자에게 액세스를 시도하는 Media Services 계정에 대한 참가자 또는 소유자 역할이 있어야 합니다.  
 소유자 역할이 있는 사용자만 새 사용자 또는 앱에 미디어 리소스(계정) 액세스 권한을 제공할 수 있습니다. 참가자 역할은 미디어 리소스만 액세스할 수 있습니다.
@@ -79,13 +79,13 @@ Azure Media Services와 함께 Azure AD 인증을 사용할 때 두 가지 인�
        Azure Portal에서 테넌트 정보를 검색할 수 있습니다. 오른쪽 위 모서리에서 로그인한 사용자의 이름 위로 커서를 둡니다.
    * Media Services 리소스 URI. 
 
-       이 URI는 동일한 Azure 환경(예: https://rest.media.azure.net) )에 있는 Media Services 계정에 대해서는 동일합니다.
+       이 URI는 동일한 Azure 환경(예: https://rest.media.azure.net))에 있는 Media Services 계정에 대해서는 동일합니다.
 
    * Media Services(원시) 애플리케이션 클라이언트 ID.
    * Media Services(원시) 애플리케이션 리디렉션 URI.
    * REST Media Services의 리소스 URI.
         
-       REST API 엔드포인트을 나타내는 URI(예: https://test03.restv2.westus.media.azure.net/api/) )입니다.
+       REST API 엔드포인트을 나타내는 URI(예: https://test03.restv2.westus.media.azure.net/api/))입니다.
 
      이러한 매개 변수 값을 가져오려면 사용자 인증 옵션과 [Azure Portal을 사용하여 Azure AD 인증 설정 액세스](media-services-portal-get-started-with-aad.md)를 참조하세요.
 
@@ -95,7 +95,7 @@ Azure Media Services와 함께 Azure AD 인증을 사용할 때 두 가지 인�
 
 Media Services .NET 클라이언트 SDK를 사용하여 REST 요청과 통신하기 위해 Azure AD 인증을 사용하는 방법에 대한 자세한 내용은 [Azure AD 인증을 사용하여 .NET으로 Media Services API 액세스](media-services-dotnet-get-started-with-aad.md)를 참조하세요. 
 
-Media Services .NET 클라이언트 SDK를 사용하지 않는 경우 2단계에서 설명한 매개 변수를 사용하여 Azure AD 액세스 토큰 요청을 수동으로 만들어야 합니다. 자세한 내용은 [Azure AD 인증 라이브러리를 사용하여 Azure AD 토큰 가져오기](../../active-directory/develop/active-directory-authentication-libraries.md)를 참조하세요.
+Media Services .NET 클라이언트 SDK를 사용하지 않는 경우 2단계에서 설명한 매개 변수를 사용하여 Azure AD 액세스 토큰 요청을 수동으로 만들어야 합니다. 자세한 내용은 [Azure AD 인증 라이브러리를 사용하여 Azure AD 토큰 가져오기](../../active-directory/azuread-dev/active-directory-authentication-libraries.md)를 참조하세요.
 
 ### <a name="service-principal-authentication"></a>서비스 주체 인증
 
@@ -121,11 +121,11 @@ Azure AD 애플리케이션을 만든 후 다음 설정에 대한 값을 가져�
        Azure Portal에서 테넌트 정보를 검색할 수 있습니다. 오른쪽 위 모서리에서 로그인한 사용자의 이름 위로 커서를 둡니다.
    * Media Services 리소스 URI. 
 
-       이 URI는 동일한 Azure 환경(예: https://rest.media.azure.net) )에 있는 Media Services 계정에 대해서는 동일합니다.
+       이 URI는 동일한 Azure 환경(예: https://rest.media.azure.net))에 있는 Media Services 계정에 대해서는 동일합니다.
 
    * REST Media Services의 리소스 URI.
 
-       REST API 엔드포인트을 나타내는 URI(예: https://test03.restv2.westus.media.azure.net/api/) )입니다.
+       REST API 엔드포인트을 나타내는 URI(예: https://test03.restv2.westus.media.azure.net/api/))입니다.
 
    * Azure AD 애플리케이션 값: 클라이언트 ID 및 클라이언트 암호.
     
@@ -137,13 +137,13 @@ Azure AD 애플리케이션을 만든 후 다음 설정에 대한 값을 가져�
 
 Media Services .NET 클라이언트 SDK를 사용하여 REST 요청과 통신하기 위해 Azure AD 인증을 사용하는 방법에 대한 자세한 내용은 [Azure AD 인증을 사용하여 .NET으로 Azure Media Services API 액세스](media-services-dotnet-get-started-with-aad.md)를 참조하세요. 
 
-Media Services .NET 클라이언트 SDK를 사용하지 않는 경우 1단계에서 설명한 매개 변수를 사용하여 Azure AD 토큰 요청을 수동으로 만들어야 합니다. 자세한 내용은 [Azure AD 인증 라이브러리를 사용하여 Azure AD 토큰 가져오기](../../active-directory/develop/active-directory-authentication-libraries.md)를 참조하세요.
+Media Services .NET 클라이언트 SDK를 사용하지 않는 경우 1단계에서 설명한 매개 변수를 사용하여 Azure AD 토큰 요청을 수동으로 만들어야 합니다. 자세한 내용은 [Azure AD 인증 라이브러리를 사용하여 Azure AD 토큰 가져오기](../../active-directory/azuread-dev/active-directory-authentication-libraries.md)를 참조하세요.
 
 ## <a name="troubleshooting"></a>문제 해결
 
-예외: “원격 서버에서 오류를 반환했습니다. (401) 권한 없음.”
+예외: “원격 서버에서 (401) 권한 없음 오류를 반환했습니다.”
 
-해결 방법: Media Services REST 요청이 성공하기 위해서는 호출하는 사용자에게 액세스를 시도하는 Media Services 계정에 대한 기여자 또는 소유자 역할이 있어야 합니다. 자세한 내용은 [액세스 제어](media-services-use-aad-auth-to-access-ams-api.md#access-control) 섹션을 참조하세요.
+해결 방법: Media Services REST 요청이 성공하기 위해서는 호출하는 사용자에게 액세스를 시도하는 Media Services 계정에 대한 참가자 또는 소유자 역할이 있어야 합니다. 자세한 내용은 [액세스 제어](media-services-use-aad-auth-to-access-ams-api.md#access-control) 섹션을 참조하세요.
 
 ## <a name="resources"></a>리소스
 

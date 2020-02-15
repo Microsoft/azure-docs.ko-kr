@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 05/21/2019
 ms.author: apimpm
-ms.openlocfilehash: 771257df12ee29c2bc8d32672c8e8b7d039a96ba
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 8b396b782c1254b3229aeeb8e51b61cc744d6318
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76120812"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190373"
 ---
 # <a name="protect-an-api-by-using-oauth-20-with-azure-active-directory-and-api-management"></a>Azure Active Directory 및 API Management에서 OAuth 2.0을 사용하여 API 보호
 
@@ -27,7 +27,7 @@ ms.locfileid: "76120812"
 > [!NOTE]
 > 이 기능은 API Management **개발자**, **표준** 및 **프리미엄** 계층에서 사용할 수 있습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 이 문서의 단계를 따르려면 다음이 있어야 합니다.
 * API Management 인스턴스
 * API Management 인스턴스를 사용하는 게시되고 있는 API
@@ -47,7 +47,7 @@ ms.locfileid: "76120812"
 
 Azure AD에서 API를 보호하려는 경우 첫 번째 단계는 API를 나타내는 애플리케이션을 Azure AD에서 등록하는 것입니다. 
 
-1. [Azure Portal](https://portal.azure.com) 로 이동 하 여 응용 프로그램을 등록 합니다. **API 등록**을 검색 하 고 선택 합니다.
+1. [Azure Portal](https://portal.azure.com) 로 이동 하 여 응용 프로그램을 등록 합니다. **앱 등록**을 검색 하 고 선택 합니다.
 
 1. **새 등록**을 선택합니다. 
 
@@ -71,7 +71,7 @@ Azure AD에서 API를 보호하려는 경우 첫 번째 단계는 API를 나타�
 
 API를 호출하는 모든 클라이언트 애플리케이션을 Azure AD에서도 애플리케이션으로 등록해야 합니다. 이 예제에서 클라이언트 응용 프로그램은 API Management 개발자 포털의 개발자 콘솔입니다. 다음은 개발자 콘솔을 나타내기 위해 Azure AD에 다른 애플리케이션을 등록하는 방법입니다.
 
-1. [Azure Portal](https://portal.azure.com) 로 이동 하 여 응용 프로그램을 등록 합니다. **API 등록**을 검색 하 고 선택 합니다.
+1. [Azure Portal](https://portal.azure.com) 로 이동 하 여 응용 프로그램을 등록 합니다. **앱 등록**을 검색 하 고 선택 합니다.
 
 1. **새 등록**을 선택합니다.
 
@@ -97,7 +97,7 @@ API를 호출하는 모든 클라이언트 애플리케이션을 Azure AD에서�
 
 API 및 개발자 콘솔을 나타내는 두 개의 애플리케이션을 등록했으니 client-app가 backend-app를 호출할 수 있도록 권한을 부여해야 합니다.  
 
-1. [Azure Portal](https://portal.azure.com) 로 이동 하 여 클라이언트 응용 프로그램에 사용 권한을 부여 합니다. **API 등록**을 검색 하 고 선택 합니다.
+1. [Azure Portal](https://portal.azure.com) 로 이동 하 여 클라이언트 응용 프로그램에 사용 권한을 부여 합니다. **앱 등록**을 검색 하 고 선택 합니다.
 
 1. 클라이언트 앱을 선택 합니다. 그런 다음 앱에 대 한 페이지 목록에서 **API 권한**을 선택 합니다.
 
@@ -202,7 +202,7 @@ API Management에서 [Validate JWT](api-management-access-restriction-policies.m
     <openid-config url="https://login.microsoftonline.com/{aad-tenant}/.well-known/openid-configuration" />
     <required-claims>
         <claim name="aud">
-            <value>{Application ID URI of backend-app}</value>
+            <value>{Application ID of backend-app}</value>
         </claim>
     </required-claims>
 </validate-jwt>
@@ -212,7 +212,7 @@ API Management에서 [Validate JWT](api-management-access-restriction-policies.m
 
 ## <a name="build-an-application-to-call-the-api"></a>API를 호출하는 애플리케이션 빌드
 
-이 가이드에서는 OAuth 2.0으로 보호되는 `Echo API`를 호출하기 위해 API Management에서 개발자 콘솔을 샘플 클라이언트 애플리케이션으로 사용했습니다. OAuth 2.0을 구현하고 애플리케이션을 빌드하는 방법을 자세히 알려보려면 [Azure Active Directory 코드 샘플](../active-directory/develop/sample-v1-code.md)을 참조하세요.
+이 가이드에서는 OAuth 2.0으로 보호되는 `Echo API`를 호출하기 위해 API Management에서 개발자 콘솔을 샘플 클라이언트 애플리케이션으로 사용했습니다. OAuth 2.0을 구현하고 애플리케이션을 빌드하는 방법을 자세히 알려보려면 [Azure Active Directory 코드 샘플](../active-directory/develop/sample-v2-code.md)을 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계
 * [Azure Active Directory 및 OAuth2.0](../active-directory/develop/authentication-scenarios.md)에 대해 자세히 알아봅니다.

@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/31/2020
 ms.author: rdhillon
-ms.openlocfilehash: 1c3fc4ebaffe2347a9c46b626b94042d1c9cfe11
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.openlocfilehash: df4ec6ddbba029eb29d2440717697968f8c79302
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77031856"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191056"
 ---
-# <a name="troubleshoot-private-endpoint-connectivity-problems"></a>개인 끝점 연결 문제 해결
+# <a name="troubleshoot-private-endpoint-connectivity-problems"></a>프라이빗 엔드포인트 연결 문제 해결
 
 이 가이드에서는 개인 끝점 연결 설정의 유효성을 검사 하 고 진단 하는 단계별 지침을 제공 합니다. 
 
@@ -100,7 +100,7 @@ Azure 개인 끝점은 개인 링크 서비스에 안전 하 게 연결 되는 �
        ![NSG 아웃 바운드 규칙](./media/private-endpoint-tsg/nsg-outbound-rules.png)
 
 5. 연결의 유효성을 검사 한 경우 연결 문제가 응용 프로그램 계층의 암호, 토큰, 암호 등의 다른 측면과 관련 될 수 있습니다.
-   - 이 경우 개인 끝점과 연결 된 개인 링크 리소스의 구성을 검토 합니다. [개인 링크 문제 해결 가이드](https://docs.microsoft.com/azure/private-link/private-link-connectivity-troubleshooting)를 참조 하세요. 
+   - 이 경우 개인 끝점과 연결 된 개인 링크 리소스의 구성을 검토 합니다. [개인 링크 문제 해결 가이드](troubleshoot-private-link-connectivity.md)를 참조 하세요. 
 
 6. 문제가 여전히 해결 되지 않으며 연결 문제가 여전히 존재 하는 경우 [Azure 지원](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) 팀에 문의 하세요. 
 
@@ -108,4 +108,4 @@ Azure 개인 끝점은 개인 링크 서비스에 안전 하 게 연결 되는 �
 
  * [업데이트 된 서브넷에 개인 끝점 만들기 (Azure Portal)](https://docs.microsoft.com/azure/private-link/create-private-endpoint-portal)
 
- * [개인 링크 문제 해결 가이드](https://docs.microsoft.com/azure/private-link/private-link-connectivity-troubleshooting)
+ * [개인 링크 문제 해결 가이드](troubleshoot-private-link-connectivity.md)

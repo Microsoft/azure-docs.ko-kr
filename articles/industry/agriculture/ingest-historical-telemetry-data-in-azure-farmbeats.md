@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 32eb8e71cfb978fac5b4d6d05af4da4fdc9f67b5
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 0d220d1d88d9d761d9f0eba6187abefb372681be
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76715529"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131892"
 ---
 # <a name="ingest-historical-telemetry-data"></a>기록 원격 분석 데이터 수집
 
@@ -86,7 +86,7 @@ Azure FarmBeats 인스턴스에 파트너 통합을 사용 하도록 설정 해�
 |          제조업체            |         제조업체의 이름입니다.    |
 |  ProductCode                    |  장치 제품 코드 또는 모델 이름 또는 번호입니다. 예: EnviroMonitor # 6800.  |
 |            포트          |     포트 이름 및 유형이 며 디지털 또는 아날로그 유형입니다.
-|     속성                 |  리소스를 식별 하는 이름입니다. 예를 들어 모델 이름 또는 제품 이름입니다.
+|     이름                 |  리소스를 식별 하는 이름입니다. 예를 들어 모델 이름 또는 제품 이름입니다.
       설명     | 모델에 대 한 의미 있는 설명을 제공 합니다.
 |    속성          |    제조업체의 추가 속성입니다.   |
 |    **디바이스**             |                      |
@@ -95,7 +95,7 @@ Azure FarmBeats 인스턴스에 파트너 통합을 사용 하도록 설정 해�
 |  ReportingInterval        |   보고 간격 (초)입니다.
 |  위치            |  장치 위도 (-90 ~ + 90), 경도 (-180 ~ 180) 및 권한 상승 (미터).   
 |ParentDeviceId       |    이 장치가 연결 된 부모 장치의 ID입니다. 예를 들어 게이트웨이에 연결 된 노드입니다. 노드에는 게이트웨이로 parentDeviceId가 있습니다.  |
-|    속성            | 리소스를 식별 하는 이름입니다. 장치 파트너는 파트너 측의 장치 이름과 일치 하는 이름을 보내야 합니다. 파트너 장치 이름이 사용자 정의 된 경우 동일한 사용자 정의 이름을 FarmBeats에 전파 해야 합니다.|
+|    이름            | 리소스를 식별 하는 이름입니다. 장치 파트너는 파트너 측의 장치 이름과 일치 하는 이름을 보내야 합니다. 파트너 장치 이름이 사용자 정의 된 경우 동일한 사용자 정의 이름을 FarmBeats에 전파 해야 합니다.|
 |     설명       |      의미 있는 설명을 제공 합니다. |
 |     속성    |  제조업체의 추가 속성입니다.
 |     **SensorModel**        |          |
@@ -107,7 +107,7 @@ Azure FarmBeats 인스턴스에 파트너 통합을 사용 하도록 설정 해�
 |    SensorMeasures > 형식    |센서 원격 분석 데이터의 측정 유형입니다. 시스템 정의 형식은 AmbientTemperature, CO2, Depth, ElectricalConductivity, LeafWetness, Length, LiquidLevel, Nitrate, O2, PH, Phosphate, PointInTime, Potassium, 압력, RainGauge, RelativeHumidity, Salinity, SoilMoisture,,,,,,,,,, SoilTemperature, SolarRadiation, State, TimeDuration, UVRadiation, Uvradiation, Volume, WindDirection, WindRun, WindSpeed, Evapotranspiration,와 동일 합니다. 추가 정보를 추가 하려면/ExtendedType API를 참조 하세요.|
 |        SensorMeasures > Unit              | 센서 원격 분석 데이터의 단위입니다. 시스템 정의 단위는 NoUnit, 섭씨, 화씨, 온도, Rankine, 파스칼, 수, 인치, 피트, Mm, 센티미터, 미터, 인치, 피트, 마일, KiloMeter, MilesPerHour, MilesPerSecond, KMPerHour, KMPerSecond, MetersPerHour, MetersPerSecond, 학위, WattsPerSquareMeter, KiloWattsPerSquareMeter, MilliWattsPerSquareCentiMeter, MilliJoulesPerSquareCentiMeter, VolumetricWaterContent, 백분율, PartsPerMillion, MicroMol, MicroMolesPerLiter, SiemensPerSquareMeterPerMole, MilliSiemensPerCentiMeter, Centibar, DeciSiemensPerMeter, KiloPascal, VolumetricIonContent, 리터, MilliLiter, Seconds,, MicroMolPerMeterSquaredPerSecond, InchesPerHour,,,를 참조 하세요.|
 |    SensorMeasures > AggregationType    |  값은 없음, 평균, 최대값, 최소값 또는 StandardDeviation 일 수 있습니다.  |
-|          속성            | 리소스를 식별 하는 이름입니다. 예를 들어 모델 이름 또는 제품 이름입니다.  |
+|          이름            | 리소스를 식별 하는 이름입니다. 예를 들어 모델 이름 또는 제품 이름입니다.  |
 |    설명        | 모델에 대 한 의미 있는 설명을 제공 합니다.  |
 |   속성       |  제조업체의 추가 속성입니다.  |
 |    **수신**      |          |
@@ -116,7 +116,7 @@ Azure FarmBeats 인스턴스에 파트너 통합을 사용 하도록 설정 해�
 | 위치          |  센서 위도 (-90 ~ + 90), 경도 (-180 ~ 180) 및 권한 상승 (미터).|
 |   포트 > 이름        |  장치에서 센서가 연결 된 포트의 이름 및 유형입니다. 이 이름은 장치 모델에 정의 된 이름과 동일 해야 합니다. |
 |    DeviceID  |    센서가 연결 된 장치의 ID입니다.     |
-| 속성            |   리소스를 식별 하는 이름입니다. 예를 들어 센서 이름 또는 제품 이름과 모델 번호 또는 제품 코드를 사용할 수 있습니다.|
+| 이름            |   리소스를 식별 하는 이름입니다. 예를 들어 센서 이름 또는 제품 이름과 모델 번호 또는 제품 코드를 사용할 수 있습니다.|
 |    설명      | 의미 있는 설명을 제공 합니다. |
 |    속성        |제조업체의 추가 속성입니다. |
 
@@ -196,7 +196,7 @@ DeviceModel
 }
 ```
 
-디바이스
+장치
 
 ```json
 {
@@ -422,4 +422,4 @@ write_client.stop()
 
 ## <a name="next-steps"></a>다음 단계
 
-REST API 기반 통합 정보에 대 한 자세한 내용은 [REST API](references-for-azure-farmbeats.md#rest-api)을 참조 하세요.
+REST API 기반 통합 정보에 대 한 자세한 내용은 [REST API](rest-api-in-azure-farmbeats.md)을 참조 하세요.

@@ -7,7 +7,7 @@ author: brjohnstmsft
 ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 02/10/2020
 translation.priority.mt:
 - de-de
 - es-es
@@ -19,16 +19,19 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 0bb8474b30c05e21a62ded1fa2cb8a6df8e4e321
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: d35c96657f48905f37c9ebe246d81ebb9545cf27
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112175"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77149884"
 ---
 # <a name="lucene-query-syntax-in-azure-cognitive-search"></a>Azure Cognitive Search의 Lucene 쿼리 구문
 
 특수 쿼리 형식에 대 한 리치 [Lucene 쿼리 파서](https://lucene.apache.org/core/6_6_1/queryparser/org/apache/lucene/queryparser/classic/package-summary.html) 구문을 기반으로 Azure Cognitive Search에 대 한 쿼리를 작성할 수 있습니다. 와일드 카드, 유사 항목 검색, 근접 검색, 정규식은 몇 가지 예입니다. 모든 Lucene 쿼리 파서 구문은 azure [Cognitive Search에서 그대로 구현](search-lucene-query-architecture.md)되며, `$filter` 식을 통해 azure Cognitive Search에 생성 되는 *범위 검색* 을 제외 합니다. 
+
+> [!NOTE]
+> Full Lucene 구문은 [검색 문서](https://docs.microsoft.com/rest/api/searchservice/search-documents) api의 **검색** 매개 변수에 전달 된 쿼리 식에 사용 되며, 해당 api의 [$filter](search-filters.md) 매개 변수에 사용 되는 [OData 구문과](query-odata-filter-orderby-syntax.md) 혼동 되지 않습니다. 이러한 다른 구문에는 쿼리를 생성 하 고 문자열을 이스케이프 처리 하는 데 사용할 수 있는 고유 규칙이 있습니다.
 
 ## <a name="how-to-invoke-full-parsing"></a>전체 구문 분석을 호출하는 방법
 
@@ -123,7 +126,7 @@ NOT 연산자는 느낌표 또는 빼기 기호입니다. 예를 들어, `wifi !
  Azure Cognitive Search는 텍스트 쿼리에 대해 빈도 기반 점수 매기기 ([TF IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf))를 사용 합니다. 그러나 용어 범위가 광범위할 수 있는 와일드카드 및 정규식 쿼리의 경우 순위 오류가 발생하여 더 드물게 나오는 용어가 검색되지 않도록 빈도 계수가 무시됩니다. 모든 일치 항목은 와일드카드 및 정규식에 대한 동일하게 처리됩니다.
 
 ##  <a name="bkmk_fields"></a>필드 지정 검색  
-`fieldName:searchExpression` 구문을 사용 하 여 필드 지정 search 작업을 정의할 수 있습니다. 여기서 검색 식은 단일 단어나 구 또는 괄호 안의 보다 복잡 한 식, 선택적으로 부울 연산자를 사용할 수 있습니다. 몇 가지 예제는 다음과 같습니다.  
+`fieldName:searchExpression` 구문을 사용 하 여 필드 지정 search 작업을 정의할 수 있습니다. 여기서 검색 식은 단일 단어나 구 또는 괄호 안의 보다 복잡 한 식, 선택적으로 부울 연산자를 사용할 수 있습니다. 몇 가지 예는 다음과 같습니다.  
 
 - genre:jazz NOT history  
 
@@ -169,7 +172,7 @@ NOT 연산자는 느낌표 또는 빼기 기호입니다. 예를 들어, `wifi !
 >  검색의 첫 문자로 * 또는 ? 기호를 사용할 수 없습니다.  
 >  와일드카드 검색 쿼리에서는 텍스트 분석이 수행되지 않습니다. 쿼리 타임 때 와일드카드 쿼리 용어는 검색 인덱스의 분석된 용어와 비교 후 확장됩니다.
 
-## <a name="see-also"></a>참고 항목:  
+## <a name="see-also"></a>참고 항목  
 
 + [문서 검색](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
 + [필터 및 정렬을 위한 OData 식 구문](query-odata-filter-orderby-syntax.md)   

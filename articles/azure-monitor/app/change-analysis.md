@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: cawams
 ms.author: cawa
 ms.date: 05/07/2019
-ms.openlocfilehash: 9d55d91dbb2e62e87c34dc8ea8a23fb375eb9a53
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.openlocfilehash: f2602dbee12f82c32ab3a3c2ec0566d8dfbeaa83
+ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74665360"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77211825"
 ---
 # <a name="use-application-change-analysis-preview-in-azure-monitor"></a>Azure Monitor에서 응용 프로그램 변경 분석 (미리 보기) 사용
 
@@ -31,7 +31,7 @@ ms.locfileid: "74665360"
 
 ![변경 분석에서 변경 데이터를 가져오고 클라이언트 도구에 제공 하는 방법에 대 한 아키텍처 다이어그램](./media/change-analysis/overview.png)
 
-현재 변경 분석은 App Service 웹 앱의 **진단 및 문제 해결** 환경에 통합 되어 있으며 Azure Portal에서 독립 실행형 블레이드로 사용할 수 있습니다.
+현재 변경 분석은 App Service 웹 앱의 **진단 및 문제 해결** 환경에 통합 되어 있으며 Azure Portal의 독립 실행형 탭으로 사용할 수 있습니다.
 이 문서의 뒷부분에 나오는 웹 앱 포털 내에서 사용 하는 *Web Apps 기능 섹션에 대* 한 변경 분석 블레이드 및 변경 분석에 액세스 하려면 *Azure에서 모든 리소스에 대 한 변경 내용 보기* 섹션을 참조 하세요.
 
 ### <a name="azure-resource-manager-tracked-properties-changes"></a>추적 된 속성 변경 내용 Azure Resource Manager
@@ -56,8 +56,9 @@ IP 구성 규칙, SSL 설정 및 확장 버전 등의 설정은 ARG에서 아직
 - Azure SQL
 
 ### <a name="enablement"></a>사용 여부
-"Microsoft. ChangeAnalysis" 리소스 공급자는 Azure Resource Manager 추적 속성 및 프록시 설정 변경 데이터를 사용할 수 있도록 구독에 등록 해야 합니다. 웹 앱에서 문제를 진단 하 고 해결 하거나 변경 분석 독립형 블레이드를 표시 하면이 리소스 공급자가 자동으로 등록 됩니다. 구독에 대 한 성능 및 비용 구현이 없습니다.
-웹 앱 게스트 변경의 경우 웹 앱 내에서 코드 파일을 검색 하는 데 별도의 기능이 필요 합니다. 자세한 내용은이 문서의 뒷부분에 나오는 *문제 진단 및 해결 도구 섹션에서 변경 분석 사용* 을 참조 하세요.
+"Microsoft. ChangeAnalysis" 리소스 공급자는 Azure Resource Manager 추적 속성 및 프록시 설정 변경 데이터를 사용할 수 있도록 구독에 등록 해야 합니다. 웹 앱 진단 및 문제 해결 도구를 입력 하거나 변경 분석 독립 실행형 탭을 표시할 때이 리소스 공급자가 자동으로 등록 됩니다. 구독에 대 한 성능 및 비용 구현이 없습니다. 웹 앱에 대 한 변경 분석을 사용 하도록 설정 하거나 진단 및 문제 해결 도구를 사용 하도록 설정 하면 웹 앱의 성능에 영향을 주지 않으며 요금 청구 비용이 발생 하지 않습니다.
+웹 앱 게스트 변경의 경우 웹 앱 내에서 코드 파일을 검색 하는 데 별도의 기능이 필요 합니다. 자세한 내용은이 문서의 뒷부분에 있는 [문제 진단 및 해결 도구 섹션에서 변경 분석 설정](https://docs.microsoft.com/azure/azure-monitor/app/change-analysis#enable-change-analysis-in-the-diagnose-and-solve-problems-tool) 섹션을 참조 하세요.
+
 
 ## <a name="viewing-changes-for-all-resources-in-azure"></a>Azure에서 모든 리소스에 대 한 변경 내용 보기
 Azure Monitor에는 정보 및 응용 프로그램 종속성 리소스의 모든 변경 내용을 볼 수 있는 변경 분석에 대 한 독립 실행형 블레이드가 있습니다.
@@ -73,12 +74,12 @@ Azure Portal의 검색 창에서 변경 분석을 검색 하 여 블레이드를
 응용 프로그램을 호스팅하는 정보 및 관련 종속성 리소스를 볼 수 있습니다. 이 보기는 개발자가 문제를 해결할 수 있도록 응용 프로그램 중심적으로 설계 되었습니다.
 
 현재 지원 되는 리소스는 다음과 같습니다.
-- 가상 머신
+- Virtual Machines
 - 가상 머신 확장 집합
 - Azure 네트워킹 리소스
 - 게스트 내 파일 추적 및 환경 변수가 변경 된 웹 앱
 
-피드백을 보려면 블레이드 또는 메일 changeanalysisteam@microsoft.com에서 사용자 의견 보내기 단추를 사용 하세요.
+피드백을 보려면 블레이드 또는 메일 changeanalysisteam@microsoft.com에서 사용자 의견 보내기 단추를 사용 합니다.
 
 ![변경 분석 블레이드의 피드백 단추 스크린샷](./media/change-analysis/change-analysis-feedback.png)
 

@@ -16,12 +16,12 @@ ms.date: 10/26/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf8a2cf6c50e05a0fecff387f2e125c50931b95f
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: bf7e4837aaf65b0df28ea4a07fb485948309bc7c
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75608723"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77185570"
 ---
 # <a name="govern-access-for-external-users-in-azure-ad-entitlement-management"></a>Azure AD 자격 관리에서 외부 사용자에 대 한 액세스 제어
 
@@ -91,7 +91,7 @@ Azure AD 자격 관리는 [AZURE AD b2b (기업 간)](../b2b/what-is-b2b.md) 를
 
 ### <a name="review-your-conditional-access-policies"></a>조건부 액세스 정책 검토
 
-- 새 게스트 사용자가 자신의 디렉터리에 로그인 할 수 없도록 차단 하기 때문에 새 게스트 사용자가 충족할 수 없는 모든 조건부 액세스 정책에서 게스트를 제외 해야 합니다. 예를 들어 게스트에 등록 된 장치가 없고, 알려진 위치가 아니라, MFA (multi-factor authentication)를 다시 등록 하지 않으려는 경우, 이러한 요구 사항을 조건부 액세스 정책에 추가 하면 게스트에서 자격을 사용 하지 못하도록 차단 됩니다. wmi. 자세한 내용은 [조건부 액세스 Azure Active Directory의 조건 이란?](../conditional-access/conditions.md)을 참조 하세요.
+- 새 게스트 사용자가 자신의 디렉터리에 로그인 할 수 없도록 차단 하기 때문에 새 게스트 사용자가 충족할 수 없는 모든 조건부 액세스 정책에서 게스트를 제외 해야 합니다. 예를 들어 게스트에 등록 된 장치가 없고, 알려진 위치가 아니라, MFA (multi-factor authentication)를 다시 등록 하지 않으려는 경우, 이러한 요구 사항을 조건부 액세스 정책에 추가 하면 게스트에서 자격을 사용 하지 못하도록 차단 됩니다. wmi. 자세한 내용은 [조건부 액세스 Azure Active Directory의 조건 이란?](../conditional-access/concept-conditional-access-conditions.md)을 참조 하세요.
 
     ![Azure AD 조건부 액세스 정책 제외 설정](./media/entitlement-management-external-users/conditional-access-exclude.png)
 

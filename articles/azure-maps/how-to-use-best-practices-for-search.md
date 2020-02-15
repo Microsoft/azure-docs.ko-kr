@@ -1,19 +1,19 @@
 ---
 title: Azure Maps Search Service를 사용 하 여 효율적으로 검색 Microsoft Azure 맵
 description: Microsoft Azure Maps를 사용 하 여 Search Service에 대 한 모범 사례를 적용 하는 방법을 알아봅니다.
-author: walsehgal
-ms.author: v-musehg
+author: farah-alyasari
+ms.author: v-faalya
 ms.date: 01/23/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: e29b3d70c576955637424208aeb0f980669b67bb
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 82e0339e02fa2fb27e7b2ca24f65934e3ce4fe23
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76899160"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209803"
 ---
 # <a name="best-practices-for-azure-maps-search-service"></a>Azure Maps Search Service에 대 한 모범 사례
 
@@ -26,7 +26,7 @@ Azure Maps [Search Service](https://docs.microsoft.com/rest/api/maps/search) 에
 * 결과 형식 간의 차이점을 알아봅니다.
 * 주소 검색-응답 구조를 읽습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 Azure Maps 서비스 Api를 호출 하려면 Azure Maps 계정 및 키가 필요 합니다. 자세한 내용은 [계정 만들기](quick-demo-map-app.md#create-an-account-with-azure-maps) 및 [기본 키 가져오기](quick-demo-map-app.md#get-the-primary-key-for-your-account)를 참조 하세요. 
 

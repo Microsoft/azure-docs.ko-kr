@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/10/2018
+ms.date: 02/13/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: bf06fe7d4e529eb04b156a2d61011198a6fe0978
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: fbc1d59ac401adedcf897d0c16edb6904c89acc3
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74949426"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77193442"
 ---
 # <a name="define-a-claims-transformation-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Azure Active Directory B2C 사용자 지정 정책에서 클레임 변환 기술 프로필 정의
 
@@ -26,7 +26,7 @@ ms.locfileid: "74949426"
 
 ## <a name="protocol"></a>프로토콜
 
-**Protocol** 요소의 **Name** 특성은 `Proprietary`으로 설정해야 합니다. **handler** 특성은 Azure AD B2C에서 사용되는 프로토콜 처리기 어셈블리의 정규화된 이름을 포함해야 합니다. `Web.TPEngine.Providers.ClaimsTransformationProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`
+**Protocol** 요소의 **Name** 특성은 `Proprietary`로 설정해야 합니다. **handler** 특성은 Azure AD B2C에서 사용되는 프로토콜 처리기 어셈블리의 정규화된 이름을 포함해야 합니다. `Web.TPEngine.Providers.ClaimsTransformationProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`
 
 다음 예제는 클레임 변환 기술 프로필을 보여 줍니다.
 
@@ -50,7 +50,7 @@ ms.locfileid: "74949426"
 
 ## <a name="output-claims-transformations"></a>출력 클레임 변환
 
-**OutputClaimsTransformations** 요소는 클레임을 수정하거나 새 클레임을 생성하는 데 사용되는 **OutputClaimsTransformation** 요소 컬렉션을 포함할 수 있습니다. 다음 기술 프로필은 **RemoveAlternativeSecurityIdByIdentityProvider** 클레임 변환을 호출합니다. 이 클레임 변환은 **AlternativeSecurityIds**컬렉션에서 소셜 ID를 제거합니다. 이 기술 프로필의 출력 클레임은 `facebook.com`으로 설정된 **identityProvider2** 및 facebook.com ID가 제거된 후 이 사용자와 연결된 소셜 ID 목록을 포함하는 **AlternativeSecurityIds**입니다.
+**OutputClaimsTransformations** 요소는 클레임을 수정하거나 새 클레임을 생성하는 데 사용되는 **OutputClaimsTransformation** 요소 컬렉션을 포함할 수 있습니다. 다음 기술 프로필은 **RemoveAlternativeSecurityIdByIdentityProvider** 클레임 변환을 호출합니다. 이 클레임 변환은 **AlternativeSecurityIds**컬렉션에서 소셜 ID를 제거합니다. 이 기술 프로필의 출력 클레임은 **으로 설정된** identityProvider2`facebook.com` 및 facebook.com ID가 제거된 후 이 사용자와 연결된 소셜 ID 목록을 포함하는 **AlternativeSecurityIds**입니다.
 
 ```XML
 <ClaimsTransformations>
@@ -100,9 +100,15 @@ TransformationClaimType="collection" />
 </UserJourney>
 ```
 
+## <a name="metadata"></a>메타데이터
+
+| attribute | 필수 | Description |
+| --------- | -------- | ----------- |
+| IncludeClaimResolvingInClaimsHandling  | 예 | 입력 및 출력 클레임의 경우 [클레임 확인](claim-resolver-overview.md) 이 기술 프로필에 포함 되는지 여부를 지정 합니다. 가능한 값은 `true`또는 `false` (기본값)입니다. 기술 프로필에서 클레임 해결 프로그램을 사용 하려면 `true`으로 설정 합니다. |
+
 ## <a name="use-a-validation-technical-profile"></a>유효성 검사 기술 프로필 사용
 
-클레임 변환 기술 프로필을 사용하여 정보의 유효성을 검사할 수 있습니다. 다음 예제에서 **LocalAccountSignUpWithLogonEmail**이라는 [자체 어설션된 기술 프로필](self-asserted-technical-profile.md)은 사용자에게 메일을 두 번 입력하도록 요청한 다음, **Validate-Email**이라는 [유효성 검사 기술 프로필](validation-technical-profile.md)을 호출하여 메일의 유효성을 검사합니다. **Validate-Email** 기술 프로필은 클레임 변환 **AssertEmailAreEqual**을 호출하여 두 개의 클레임 **email** 및 **emailRepeat**를 비교하고, 지정된 비교에 따라 서로 같지 않은 경우 예외를 throw합니다.
+클레임 변환 기술 프로필을 사용하여 정보의 유효성을 검사할 수 있습니다. 다음 예제에서 [LocalAccountSignUpWithLogonEmail](self-asserted-technical-profile.md)이라는 **자체 어설션된 기술 프로필**은 사용자에게 메일을 두 번 입력하도록 요청한 다음, [Validate-Email](validation-technical-profile.md)이라는 **유효성 검사 기술 프로필**을 호출하여 메일의 유효성을 검사합니다. **Validate-Email** 기술 프로필은 클레임 변환 **AssertEmailAreEqual**을 호출하여 두 개의 클레임 **email** 및 **emailRepeat**를 비교하고, 지정된 비교에 따라 서로 같지 않은 경우 예외를 throw합니다.
 
 ```XML
 <ClaimsTransformations>

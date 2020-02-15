@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 08/01/2019
 ms.author: cynthn
-ms.openlocfilehash: ae7c6f2d5f05b3d4ed3744be57112a62606cf622
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: 5cd82635f3aec2cca251e122aadf96f70d377c8a
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75833846"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190513"
 ---
 # <a name="deploy-vms-to-dedicated-hosts-using-the-azure-powershell"></a>Azure PowerShell를 사용 하 여 전용 호스트에 Vm 배포
 
@@ -28,7 +28,7 @@ Azure PowerShell 버전 2.8.0 이상을 설치 했는지 확인 하 고 `Connect
 ## <a name="limitations"></a>제한 사항
 
 - 가상 머신 확장 집합은 현재 전용 호스트에서 지원 되지 않습니다.
-- 지원 되는 VM 시리즈: DSv3 및 ESv3. 
+- DSv3, ESv3 및 Fsv2 VM 시리즈는 다음과 같이 지원 됩니다. 
 
 ## <a name="create-a-host-group"></a>호스트 그룹 만들기
 
@@ -56,7 +56,7 @@ $hostGroup = New-AzHostGroup `
 
 ## <a name="create-a-host"></a>호스트 만들기
 
-이제 호스트 그룹에서 전용 호스트를 만들어 보겠습니다. 호스트의 이름 외에 호스트의 SKU를 제공 해야 합니다. 호스트 SKU는 지원 되는 VM 시리즈 뿐만 아니라 전용 호스트의 하드웨어 생성도 캡처합니다.  미리 보기 중에는 DSv3_Type1 및 ESv3_Type1 호스트 SKU 값을 지원 합니다.
+이제 호스트 그룹에서 전용 호스트를 만들어 보겠습니다. 호스트의 이름 외에 호스트의 SKU를 제공 해야 합니다. 호스트 SKU는 지원 되는 VM 시리즈 뿐만 아니라 전용 호스트의 하드웨어 생성도 캡처합니다.
 
 
 호스트 Sku 및 가격 책정에 대 한 자세한 내용은 [Azure 전용 호스트 가격](https://aka.ms/ADHPricing)을 참조 하세요.

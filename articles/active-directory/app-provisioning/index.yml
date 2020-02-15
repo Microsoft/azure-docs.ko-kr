@@ -1,0 +1,67 @@
+### YamlMime:Landing
+title: 애플리케이션 및 HR 프로비저닝 설명서
+summary: Azure Active Directory 앱 프로비저닝을 사용하면 클라우드(SaaS) 앱에서 사용자 ID를 자동으로 만들고 관리할 수 있습니다. Azure AD는 클라우드 기반 HR(인적 자원) 애플리케이션을 사용하는 프로비저닝도 제공합니다. 빠른 시작, 자습서 및 지침을 통해 클라우드 앱 및 HR 프로비저닝을 관리하고 배포하는 방법을 알아봅니다.
+metadata:
+  title: 애플리케이션 프로비저닝 설명서
+  description: Azure Active Directory 앱 프로비저닝을 사용하면 클라우드(SaaS) 앱에서 사용자 ID를 자동으로 만들고 관리할 수 있습니다. Azure AD는 클라우드 기반 HR(인적 자원) 애플리케이션을 사용하는 프로비저닝도 제공합니다. 빠른 시작, 자습서 및 지침을 통해 클라우드 앱 및 HR 프로비저닝을 관리하고 배포하는 방법을 알아봅니다.
+  ms.service: active-directory
+  ms.subservice: app-mgmt
+  ms.workload: identity
+  ms.topic: landing-page
+  ms.date: 02/06/2020
+  author: msmimart
+  ms.author: mimart
+  manager: celested
+  ms.openlocfilehash: 02d9ee235de798e0c6095e0cbf60c08eabec53cd
+  ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 02/07/2020
+  ms.locfileid: "77065504"
+landingContent:
+- title: 클라우드 앱에 사용자 및 그룹 프로비저닝
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 애플리케이션 프로비저닝이란?
+      url: user-provisioning.md
+    - text: 프로비저닝 작동 방법
+      url: how-provisioning-works.md
+  - linkListType: tutorial
+    links:
+    - text: SAP Cloud Platform Identity Authentication 프로비저닝
+      url: /azure/active-directory/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+    - text: Oracle Fusion ERP 프로비저닝
+      url: /azure/active-directory/saas-apps/oracle-fusion-erp-provisioning-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+    - text: Atlassian Cloud 프로비저닝
+      url: /azure/active-directory/saas-apps/atlassian-cloud-provisioning-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+  - linkListType: how-to-guide
+    links:
+    - text: 갤러리 앱을 추가하나요? 앱에 프로비저닝 구성
+      url: configure-automatic-user-provisioning-portal.md
+    - text: 특성 매핑 사용자 지정
+      url: customize-application-attributes.md
+    - text: 범위 지정 필터 사용
+      url: define-conditional-rules-for-provisioning-user-accounts.md
+- title: 프로비저닝을 위해 SCIM을 사용하여 앱 개발
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: SCIM을 통한 프로비저닝(ID 표준 블로그)
+      url: https://techcommunity.microsoft.com/t5/identity-standards-blog/provisioning-with-scim-getting-started/ba-p/880010
+  - linkListType: how-to-guide
+    links:
+    - text: 앱 개발 중인가요? 자동 프로비저닝에 SCIM 사용
+      url: use-scim-to-provision-users-and-groups.md
+- title: 클라우드 HR 인바운드 프로비저닝 관리
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 클라우드 HR 사용자 프로비저닝 배포 계획
+      url: plan-cloud-hr-provision.md
+  - linkListType: tutorial
+    links:
+    - text: Workday 프로비저닝
+      url: /azure/active-directory/saas-apps/workday-inbound-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+    - text: SAP SuccessFactors 프로비저닝
+      url: /azure/active-directory/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context

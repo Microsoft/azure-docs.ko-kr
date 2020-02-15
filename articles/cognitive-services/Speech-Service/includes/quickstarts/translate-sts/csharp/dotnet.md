@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 12/09/2019
 ms.author: erhopf
-ms.openlocfilehash: 62dd619a2b4b15d3a346a4acffda0b0f5625273e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 41cbeefd7dc6067da195158a8ef9145598a543e5
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75467416"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77156415"
 ---
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -43,7 +43,8 @@ ms.locfileid: "75467416"
            public static async Task TranslateSpeechToSpeech()
            {
                // Creates an instance of a speech translation config with specified subscription key and service region.
-               // Replace with your own subscription key and service region (e.g., "westus").
+               // Replace with your own subscription key and service region (e.g., "westus", use the one of SpeechSDKParameters
+               // from here: https://aka.ms/speech/sdkregion).   
                var config = SpeechTranslationConfig.FromSubscription("YourSubscriptionKey", "YourServiceRegion");
 
                // Sets source and target languages.

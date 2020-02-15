@@ -8,16 +8,16 @@ ms.topic: overview
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: 8c7d2481fe3ef361386bacc652d87744c1c790bb
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 13b626945743c17bad8df58fba77e1c960e90ef3
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73581497"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77016565"
 ---
 # <a name="build-energy-solutions-with-iot-central"></a>IoT Central을 사용하여 에너지 산업 솔루션 빌드 
 
-[!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
+
 
 
 스마트 미터 및 태양 전지판은 에너지 산업 혁신에 있어서 중요한 역할을 합니다. 스마트 미터는 에너지 사용량에 대한 보다 강력한 제어 및 실시간 인사이트를 제공하며, 태양 전지판은 재생 에너지 생성의 돌파구가 되고 있습니다. 스마트 미터 및 태양 전지판 모니터링 앱은 다양한 기능을 보여 주는 샘플 템플릿입니다. 파트너는 이러한 템플릿을 활용하여 IoT Central에서 특정 요구에 맞는 에너지 솔루션을 빌드할 수 있습니다. 이러한 애플리케이션을 배포하고 사용하는 데는 새로운 코딩 및 추가 비용이 필요하지 않습니다. 에너지 애플리케이션 템플릿 및 해당 기능에 대해 자세히 알아보세요.

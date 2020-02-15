@@ -4,16 +4,16 @@ description: 이 문서에서는 OPC 게시자를 실행하고 디버그하는 �
 author: dominicbetts
 ms.author: dobett
 ms.date: 06/10/2019
-ms.topic: overview
+ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 2f99f50ffcccb052526981a712ac5046836a44ae
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
-ms.translationtype: HT
+ms.openlocfilehash: 4f5d57bab51d537b64ce4b800737219663c3d7a7
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76712908"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198789"
 ---
 # <a name="run-opc-publisher"></a>OPC 게시자 실행
 
@@ -491,11 +491,11 @@ docker run -h publisher mcr.microsoft.com/iotedge/opc-publisher <applicationname
 
 ### <a name="use-bind-mounts-shared-filesystem"></a>바인딩 탑재 사용(공유 파일 시스템)
 
-컨테이너 파일 시스템을 사용하는 대신 구성 정보와 로그 파일을 저장할 호스트 파일 시스템을 선택할 수 있습니다. 이 옵션을 구성하려면 바인딩 탑재 모드에서 `docker run`의 `-v` 옵션을 사용합니다.
+컨테이너 파일 시스템을 사용하는 대신 구성 정보와 로그 파일을 저장할 호스트 파일 시스템을 선택할 수 있습니다. 이 옵션을 구성하려면 바인딩 탑재 모드에서 `-v`의 `docker run` 옵션을 사용합니다.
 
 ## <a name="opc-ua-x509-certificates"></a>OPC UA X.509 인증서
 
-OPC UA는 X.509 인증서를 사용하여 OPC UA 클라이언트와 서버에서 연결을 설정할 때 이 클라이언트와 서버를 인증하고 상호 간의 통신을 암호화합니다. OPC 게시자는 OPC UA 스택에서 유지 관리하는 인증서 저장소를 사용하여 모든 인증서를 관리합니다. 시작 시 OPC 게시자에서 자체적으로 인증서가 있는지 확인합니다. 인증서가 인증서 저장소에 없고 명령줄에서 전달된 인증서가 아닌 경우 OPC 게시자에서 자체 서명된 인증서를 만듭니다. 자세한 내용은 `OpcApplicationConfigurationSecurity.cs`의 **InitApplicationSecurityAsync** 메서드를 참조하세요.
+OPC UA는 X.509 인증서를 사용하여 OPC UA 클라이언트와 서버에서 연결을 설정할 때 이 클라이언트와 서버를 인증하고 상호 간의 통신을 암호화합니다. OPC 게시자는 OPC UA 스택에서 유지 관리하는 인증서 저장소를 사용하여 모든 인증서를 관리합니다. 시작 시 OPC 게시자에서 자체적으로 인증서가 있는지 확인합니다. 인증서가 인증서 저장소에 없고 명령줄에서 전달된 인증서가 아닌 경우 OPC 게시자에서 자체 서명된 인증서를 만듭니다. 자세한 내용은 **의** InitApplicationSecurityAsync`OpcApplicationConfigurationSecurity.cs` 메서드를 참조하세요.
 
 자체 서명된 인증서는 신뢰할 수 있는 CA에서 서명하지 않았으므로 보안을 제공하지 않습니다.
 

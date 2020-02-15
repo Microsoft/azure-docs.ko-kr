@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: rwaller
-ms.openlocfilehash: a2a404a03c06dde59edc88436afdc9dba3d74797
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: 53de4608616cb8f3b85bb88f1dbc5a4a79f4c02b
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76170176"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77188855"
 ---
 # <a name="create-an-immersive-reader-resource-and-configure-azure-active-directory-authentication"></a>몰입 형 판독기 리소스 만들기 및 Azure Active Directory 인증 구성
 
@@ -109,6 +109,10 @@ ms.locfileid: "76170176"
             Write-Host "New service principal created successfully"
         }
 
+        # Sleep for 5 seconds to allow the new service principal to propagate
+        Write-Host "Sleeping for 5 seconds"
+        Start-Sleep -Seconds 5
+
         Write-Host "Granting service principal access to the newly created Immersive Reader resource"
         $accessResult = az role assignment create --assignee $principalId --scope $resourceId --role "Cognitive Services User"
         if (-not $accessResult) {
@@ -136,19 +140,19 @@ ms.locfileid: "76170176"
 
     ```azurepowershell-interactive
     Create-ImmersiveReaderResource
-      -SubscriptionName <SUBSCRIPTION_NAME> `
-      -ResourceName <RESOURCE_NAME> `
-      -ResourceSubdomain <RESOURCE_SUBDOMAIN> `
-      -ResourceSKU <RESOURCE_SKU> `
-      -ResourceLocation <RESOURCE_LOCATION> `
-      -ResourceGroupName <RESOURCE_GROUP_NAME> `
-      -ResourceGroupLocation <RESOURCE_GROUP_LOCATION> `
-      -AADAppDisplayName <AAD_APP_DISPLAY_NAME> `
-      -AADAppIdentifierUri <AAD_APP_IDENTIFIER_URI> `
-      -AADAppClientSecret <AAD_APP_CLIENT_SECRET>
+      -SubscriptionName '<SUBSCRIPTION_NAME>' `
+      -ResourceName '<RESOURCE_NAME>' `
+      -ResourceSubdomain '<RESOURCE_SUBDOMAIN>' `
+      -ResourceSKU '<RESOURCE_SKU>' `
+      -ResourceLocation '<RESOURCE_LOCATION>' `
+      -ResourceGroupName '<RESOURCE_GROUP_NAME>' `
+      -ResourceGroupLocation '<RESOURCE_GROUP_LOCATION>' `
+      -AADAppDisplayName '<AAD_APP_DISPLAY_NAME>' `
+      -AADAppIdentifierUri '<AAD_APP_IDENTIFIER_URI>' `
+      -AADAppClientSecret '<AAD_APP_CLIENT_SECRET>'
     ```
 
-    | 매개 변수 | 의견 |
+    | 매개 변수 | 주석 |
     | --- | --- |
     | SubscriptionName |몰입 형 판독기 리소스에 사용할 Azure 구독의 이름입니다. 리소스를 만들려면 구독이 있어야 합니다. |
     | ResourceName |  '-'가 첫 번째 또는 마지막 문자가 아닌 경우 영숫자 여야 하며 '-'를 포함할 수 있습니다. 길이는 63 자를 초과할 수 없습니다.|
@@ -174,7 +178,7 @@ ms.locfileid: "76170176"
 
 ## <a name="next-steps"></a>다음 단계
 
-* Node.js를 사용 하 여 몰입 형 판독기 SDK로 수행할 수 있는 다른 작업을 확인 하려면 [node.js 빠른](./quickstart-nodejs.md) 시작을 확인 하세요.
+* Node.js를 사용하여 몰입형 판독기 SDK를 통해 수행할 수 있는 다른 작업을 확인하려면 [Node.js 빠른 시작](./quickstart-nodejs.md)을 살펴보세요.
 * Python을 사용하여 몰입형 리더 SDK를 통해 수행할 수 있는 다른 작업을 확인하려면 [Python 자습서](./tutorial-python.md)를 살펴보세요.
 * Swift를 사용 하 여 몰입 형 판독기 SDK로 수행할 수 있는 다른 작업을 확인 하려면 [Swift 자습서](./tutorial-ios-picture-immersive-reader.md) 를 확인 하세요.
 * [몰입형 판독기 SDK](https://github.com/microsoft/immersive-reader-sdk) 및 [몰입형 판독기 SDK 참조](./reference.md) 살펴보기

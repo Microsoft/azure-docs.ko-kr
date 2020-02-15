@@ -5,12 +5,12 @@ author: alexkarcher-msft
 ms.topic: conceptual
 ms.date: 4/11/2019
 ms.author: alkarche
-ms.openlocfilehash: 79c27d252136281249c217f51019e53987922334
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 7b47e7b0672716141f62e3f7df4b0d3ed95c663d
+ms.sourcegitcommit: d12880206cf9926af6aaf3bfafda1bc5b0ec7151
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76846461"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77114285"
 ---
 # <a name="azure-functions-networking-options"></a>Azure Functions 네트워킹 옵션
 
@@ -68,7 +68,7 @@ IP 제한을 사용 하 여 앱에 대 한 액세스가 허용 되거나 거부 
 
 앱은 한 번에 한 가지 유형의 가상 네트워크 통합 기능만 사용할 수 있습니다. 여러 시나리오에는 두 가지 모두 유용 하지만 다음 표에서는 각각을 사용 해야 하는 위치를 나타냅니다.
 
-| 문제  | 솔루션 |
+| 문제  | 해결 방법 |
 |----------|----------|
 | 동일한 지역에서 RFC 1918 주소 (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)에 도달 하려고 합니다. | 지역 가상 네트워크 통합 |
 | 클래식 가상 네트워크 또는 다른 지역의 가상 네트워크에 있는 리소스에 연결 하려고 합니다. | 게이트웨이는 가상 네트워크 통합 필요 |
@@ -111,7 +111,7 @@ Azure Functions의 가상 네트워크 통합은 App Service 웹 앱과 공유 �
 
 ### <a name="restricting-your-storage-account-to-a-virtual-network"></a>가상 네트워크에 대 한 저장소 계정 제한
 
-함수 앱을 만들 때 Blob, 큐 및 테이블 저장소를 지 원하는 범용 Azure Storage 계정을 만들거나 연결 해야 합니다. 현재이 계정에 대 한 가상 네트워크 제한을 사용할 수 없습니다. 함수 앱에 사용 하는 저장소 계정에서 가상 네트워크 서비스 끝점을 구성 하는 경우 앱이 중단 됩니다.
+함수 앱을 만들 때 Blob, 큐 및 테이블 저장소를 지 원하는 범용 Azure Storage 계정을 만들거나 연결 해야 합니다. 현재이 계정에 대 한 가상 네트워크 제한을 사용할 수 없습니다. 함수 앱에 사용 하는 저장소 계정에서 가상 네트워크 서비스 끝점을 구성 하는 경우 앱이 중단 됩니다. 이 기능은 현재 프리미엄 계획 및 가상 네트워크 통합을 사용 하 여 사용할 수 있습니다.
 
 [저장소 계정 요구 사항에 대해 자세히 알아보세요.](./functions-create-function-app-portal.md#storage-account-requirements)
 
@@ -141,7 +141,7 @@ az resource update -g <resource_group> -n <function_app_name>/config/web --set p
 
 가상 네트워크 트리거는 함수 런타임의 버전 2.x 이상에서 지원 됩니다. 다음과 같은 HTTP가 아닌 트리거 형식이 지원 됩니다.
 
-| 확장 | 최소 버전 |
+| 내선 번호 | 최소 버전 |
 |-----------|---------| 
 |[WebJobs. 확장명](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.Storage/) | 3.0.10 이상 |
 |[WebJobs. EventHubs](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.EventHubs)| 4.1.0 이상|

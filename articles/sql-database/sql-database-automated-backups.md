@@ -12,22 +12,22 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab, danil
 manager: craigg
 ms.date: 12/13/2019
-ms.openlocfilehash: 6b880696b4922c68c73ce4ff59f72a62ce5a5a30
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f460bc3e4809b8a1cbabe1161c888255a7a484db
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348952"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157519"
 ---
 # <a name="automated-backups"></a>자동화된 백업
 
-SQL Database는 구성 된 보존 기간 동안 유지 되는 데이터베이스 백업을 자동으로 만들고, Azure [읽기 액세스 지역 중복 저장소 (RA-GRS)](../storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage) 를 사용 하 여 데이터 센터를 사용할 수 없는 경우에도 유지 되도록 합니다. 이러한 백업은 자동으로 생성 됩니다. 데이터베이스 백업은 실수로 손상되거나 삭제되지 않도록 데이터를 보호해 주기 때문에 비즈니스 연속성 및 재해 복구 전략의 필수적인 부분입니다. 보안 규칙에 따라 오랫동안 백업을 사용할 수 있어야 하는 경우 (최대 10 년) 단일 데이터베이스 및 탄력적 풀에 대 한 [장기 보존](sql-database-long-term-retention.md) 을 구성할 수 있습니다.
+SQL Database는 구성 된 보존 기간 동안 유지 되는 데이터베이스 백업을 자동으로 만들고, Azure [읽기 액세스 지역 중복 저장소 (RA-GRS)](../storage/common/storage-redundancy.md) 를 사용 하 여 데이터 센터를 사용할 수 없는 경우에도 유지 되도록 합니다. 이러한 백업은 자동으로 생성 됩니다. 데이터베이스 백업은 실수로 손상되거나 삭제되지 않도록 데이터를 보호해 주기 때문에 비즈니스 연속성 및 재해 복구 전략의 필수적인 부분입니다. 보안 규칙에 따라 오랫동안 백업을 사용할 수 있어야 하는 경우 (최대 10 년) 단일 데이터베이스 및 탄력적 풀에 대 한 [장기 보존](sql-database-long-term-retention.md) 을 구성할 수 있습니다.
 
 [!INCLUDE [GDPR-related guidance](../../includes/gdpr-intro-sentence.md)]
 
 ## <a name="what-is-a-sql-database-backup"></a>SQL Database 백업이란?
 
-SQL Database는 SQL Server 기술을 사용 하 여 매주 [전체 백업](https://docs.microsoft.com/sql/relational-databases/backup-restore/full-database-backups-sql-server) , 12 시간 마다 [차등 백업](https://docs.microsoft.com/sql/relational-databases/backup-restore/differential-backups-sql-server) 및 5-10 분 마다 [트랜잭션 로그 백업을](https://docs.microsoft.com/sql/relational-databases/backup-restore/transaction-log-backups-sql-server) 만듭니다. 백업은 데이터 센터 가동 중단 으로부터 보호 하기 위해 [쌍을 이루는 데이터 센터](../best-practices-availability-paired-regions.md) 에 복제 되는 [RA GRS storage blob](../storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage) 에 저장 됩니다. 사용자가 데이터베이스를 복원할 때 서비스에서는 전체, 차등, 트랜잭션 로그 백업 중 무엇을 복원해야 하는지 파악합니다.
+SQL Database는 SQL Server 기술을 사용 하 여 매주 [전체 백업](https://docs.microsoft.com/sql/relational-databases/backup-restore/full-database-backups-sql-server) , 12 시간 마다 [차등 백업](https://docs.microsoft.com/sql/relational-databases/backup-restore/differential-backups-sql-server) 및 5-10 분 마다 [트랜잭션 로그 백업을](https://docs.microsoft.com/sql/relational-databases/backup-restore/transaction-log-backups-sql-server) 만듭니다. 백업은 데이터 센터 가동 중단 으로부터 보호 하기 위해 [쌍을 이루는 데이터 센터](../best-practices-availability-paired-regions.md) 에 복제 되는 [RA GRS storage blob](../storage/common/storage-redundancy.md) 에 저장 됩니다. 사용자가 데이터베이스를 복원할 때 서비스에서는 전체, 차등, 트랜잭션 로그 백업 중 무엇을 복원해야 하는지 파악합니다.
 
 이러한 백업을 사용하여 다음을 수행할 수 있습니다.
 
@@ -53,11 +53,11 @@ SQL Database는 SQL Server 기술을 사용 하 여 매주 [전체 백업](https
 
 ## <a name="backup-frequency"></a>Backup 주기
 
-### <a name="point-in-time-restore"></a>특정 시점 복원
+### <a name="point-in-time-restore"></a>지정 시간 복원
 
-SQL Database는 전체 백업, 차등 백업 및 트랜잭션 로그 백업을 자동으로 생성하여 PITR(지정 시간 복원)에 대한 셀프 서비스를 지원합니다. 전체 데이터베이스 백업은 매주 만들어지고, 차등 데이터베이스 백업은 일반적으로 12시간마다 만들어지고, 트랜잭션 로그 백업은 일반적으로 5~10분마다 만들어지며, 이러한 빈도는 컴퓨팅 크기와 데이터베이스 작업량에 따라 달라집니다. 첫 번째 전체 백업은 데이터베이스를 만든 후에 즉시 예약됩니다. 일반적으로 30분 내에 완료되지만 데이터베이스의 크기가 상당히 큰 경우에는 더 오래 걸릴 수 있습니다. 예를 들어, 복원된 데이터베이스 또는 데이터베이스 사본에 대한 초기 백업은 더 오래 걸릴 수 있습니다. 첫 번째 전체 백업 후에 모든 향후 백업은 자동으로 예약되며 백그라운드에서 자동으로 관리됩니다. 모든 데이터베이스 백업의 정확한 타이밍은 전반적인 시스템 워크로드를 감안하여 SQL Database 서비스에 의해 결정됩니다. 백업 작업은 변경하거나 사용하지 않도록 설정할 수 없습니다. 
+SQL Database는 전체 백업, 차등 백업 및 트랜잭션 로그 백업을 자동으로 생성하여 PITR(지정 시간 복원)에 대한 셀프 서비스를 지원합니다. 전체 데이터베이스 백업은 매주 만들어지고, 차등 데이터베이스 백업은 일반적으로 12시간마다 만들어지고, 트랜잭션 로그 백업은 일반적으로 5~10분마다 만들어지며, 이러한 빈도는 컴퓨팅 크기와 데이터베이스 작업량에 따라 달라집니다. 첫 번째 전체 백업은 데이터베이스를 만든 후에 즉시 예약됩니다. 일반적으로 30분 내에 완료되지만 데이터베이스의 크기가 상당히 큰 경우에는 더 오래 걸릴 수 있습니다. 예를 들어, 복원된 데이터베이스 또는 데이터베이스 사본에 대한 초기 백업은 더 오래 걸릴 수 있습니다. 첫 번째 전체 백업 후에 모든 향후 백업은 자동으로 예약되며 백그라운드에서 자동으로 관리됩니다. 모든 데이터베이스 백업의 정확한 타이밍은 전반적인 시스템 워크로드를 감안하여 SQL Database 서비스에 의해 결정됩니다. 백업 작업은 변경 하거나 사용 하지 않도록 설정할 수 없습니다.
 
-PITR 백업은 지역 중복 백업이며 [Azure Storage 지역 간 복제](../storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage)로 보호됩니다.
+PITR 백업은 지역 중복 저장소를 사용 하 여 보호 됩니다. 자세한 내용은 [Azure Storage 중복성](../storage/common/storage-redundancy.md)(영문)을 참조 하세요.
 
 자세한 내용은 [지정 시간 복원](sql-database-recovery-using-backups.md#point-in-time-restore)을 참조하세요.
 
@@ -65,17 +65,17 @@ PITR 백업은 지역 중복 백업이며 [Azure Storage 지역 간 복제](../s
 
 단일 및 풀링된 데이터베이스는 Azure Blob Storage에서 전체 백업의 LTR(장기 보존)을 최대 10년 동안 구성하는 옵션을 제공합니다. LTR 정책을 사용하면 매주 전체 백업이 다른 RA-GRS 스토리지 컨테이너로 자동으로 복사됩니다. 서로 다른 준수 요구 사항을 충족하려면 주별, 월별 및/또는 연도별 백업에 대해 다른 보존 기간을 선택할 수 있습니다. 스토리지 사용량은 선택한 백업 빈도 및 보존 기간에 따라 다릅니다. [LTR 가격 계산기](https://azure.microsoft.com/pricing/calculator/?service=sql-database)를 사용하여 LTR 스토리지 비용을 추정할 수 있습니다.
 
-PITR과 마찬가질 LTR 백업은 지역 중복 백업이며 [Azure Storage 지역 간 복제](../storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage)로 보호됩니다.
+PITR와 마찬가지로 LTR 백업은 지역 중복 저장소를 사용 하 여 보호 됩니다. 자세한 내용은 [Azure Storage 중복성](../storage/common/storage-redundancy.md)(영문)을 참조 하세요.
 
 자세한 내용은 [장기 백업 보존](sql-database-long-term-retention.md)을 참조하세요.
 
 ## <a name="backup-storage-consumption"></a>백업 저장소 사용량 
 
 단일 데이터베이스의 경우 총 백업 저장소 사용량은 다음과 같이 계산 됩니다.   
-`Total backup storage size = (size of full backups + size of differential backups + size of log backups) – database size`에 대한 답변에 설명되어 있는 단계를 성공적으로 완료하면 활성화됩니다.
+`Total backup storage size = (size of full backups + size of differential backups + size of log backups) – database size`입니다.
 
 탄력적 풀의 경우 총 백업 저장소 크기는 풀 수준에서 집계 되며 다음과 같이 계산 됩니다.   
-`Total backup storage size = (total size of all full backups + total size of all differential backups + total size of all log backups) - allocated pool data storage`에 대한 답변에 설명되어 있는 단계를 성공적으로 완료하면 활성화됩니다. 
+`Total backup storage size = (total size of all full backups + total size of all differential backups + total size of all log backups) - allocated pool data storage`입니다. 
 
 보존 기간 보다 오래 된 백업은 타임 스탬프에 따라 자동으로 제거 됩니다. 차등 백업 및 로그 백업에는 유용 하 게 사용할 수 있는 이전 전체 백업이 필요 하기 때문에 주 청크에서 함께 제거 됩니다. 
 
@@ -112,7 +112,7 @@ DTU 모델을 사용 하는 데이터베이스 및 탄력적 풀의 백업 저�
 
 ### <a name="vcore-model"></a>vCore 모델
 
-단일 데이터베이스의 경우 데이터베이스 크기의 100%와 같은 최소 백업 저장소 양은 추가 비용 없이 제공 됩니다. 탄력적 풀 및 관리 되는 인스턴스의 경우 각각 풀 또는 인스턴스 크기에 할당 된 데이터 저장소의 100%와 같은 최소 백업 저장소 양은 추가 비용 없이 제공 됩니다. 추가로 사용되는 백업 스토리지는 GB/월 단위로 요금이 청구됩니다. 이러한 추가 사용은 개별 데이터베이스의 워크 로드 및 크기에 따라 달라 집니다.
+단일 데이터베이스의 경우 데이터베이스 크기의 100%와 같은 최소 백업 저장소 양은 추가 비용 없이 제공 됩니다. 탄력적 풀 및 관리 되는 인스턴스의 경우 각각 풀 또는 인스턴스 크기에 할당 된 데이터 저장소의 100%와 같은 최소 백업 저장소 양은 추가 비용 없이 제공 됩니다. 추가로 사용되는 백업 스토리지의 경우 GB/월 단위로 요금이 청구됩니다. 이러한 추가 사용은 개별 데이터베이스의 워크 로드 및 크기에 따라 달라 집니다.
 
 Azure SQL DB는 총 보존 기간 백업 저장소를 누적 값으로 계산 합니다. 1 시간 마다이 값이 시간당 사용량을 집계 하 여 각 월의 끝에 소비를 확보 하는 Azure 청구 파이프라인에 보고 됩니다. 데이터베이스를 삭제 한 후에는 백업 보존 기간으로 소비를 줄일 수 있습니다. 보존 기간 보다 오래 되 면 청구는 중지 됩니다. 모든 로그 백업과 차등 백업은 전체 보존 기간 동안 유지 되므로 크게 수정 된 데이터베이스는 백업 비용이 더 높습니다. 
 
@@ -187,7 +187,7 @@ SQL Database 관리 되는 인스턴스에 대 한 PITR 백업 보존 변경은 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Azure SQL Database, Azure Resource Manager PowerShell 모듈은 계속 지원하지만 모든 향후 개발은 Az.Sql 모듈에 대해 진행됩니다. 이러한 cmdlet에 대한 내용은 [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/)을 참조합니다. Az 모듈과 AzureRm 모듈에서 명령의 인수는 실질적으로 동일합니다.
+> Azure SQL Database, Azure Resource Manager PowerShell 모듈은 계속 지원하지만 모든 향후 개발은 Az.Sql 모듈에 대해 진행됩니다. 이러한 cmdlet에 대 한 자세한 내용은 [AzureRM](https://docs.microsoft.com/powershell/module/AzureRM.Sql/)를 참조 하세요. Az 모듈과 AzureRm 모듈에서 명령의 인수는 실질적으로 동일합니다.
 
 ```powershell
 Set-AzSqlDatabaseBackupShortTermRetentionPolicy -ResourceGroupName resourceGroup -ServerName testserver -DatabaseName testDatabase -RetentionDays 28
@@ -195,7 +195,7 @@ Set-AzSqlDatabaseBackupShortTermRetentionPolicy -ResourceGroupName resourceGroup
 
 ### <a name="change-pitr-retention-period-using-rest-api"></a>REST API를 사용하여 PITR 보존 기간 변경
 
-#### <a name="sample-request"></a>샘픔 요청
+#### <a name="sample-request"></a>샘플 요청
 
 ```http
 PUT https://management.azure.com/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/resourceGroup/providers/Microsoft.Sql/servers/testserver/databases/testDatabase/backupShortTermRetentionPolicies/default?api-version=2017-10-01-preview

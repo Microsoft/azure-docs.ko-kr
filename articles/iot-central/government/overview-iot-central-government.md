@@ -7,18 +7,18 @@ ms.date: 10/23/2019
 ms.topic: overview
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: a862a221f9fe2db5448473bddcca2a9932716e0e
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 159691ee101e586419d2fd8df314947af28219dd
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73464088"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77016513"
 ---
 # <a name="building-government-solutions-with-azure-iot-central"></a>Azure IoT Central을 사용하여 정부 기관 솔루션 빌드
 
-[!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
 
-Azure IoT Central 애플리케이션 템플릿을 활용하여 스마트 시티 솔루션을 빌드해보세요. **용수 품질 모니터링**, **용수 사용량 모니터링**, **커넥티드 폐기물 관리**부터 시작할 수 있습니다.
+
+Azure IoT Central 애플리케이션 템플릿을 사용하여 스마트 시티 솔루션 빌드를 시작합니다. **용수 품질 모니터링**, **용수 사용량 모니터링**, **커넥티드 폐기물 관리**부터 시작할 수 있습니다.
 
 ## <a name="what-is-water-quality-monitoring-application-template"></a>용수 품질 모니터링 애플리케이션 템플릿이란?   
 

@@ -2,16 +2,16 @@
 author: erhopf
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 08/21/2019
+ms.date: 02/10/2020
 ms.author: erhopf
-ms.openlocfilehash: 942636a6ff6dcfe74a04a66d67a4490224b4538e
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 2f9e02af0652108fe10e4b73e7bb43c48451ca77
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72391710"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77123231"
 ---
-C++ 데스크톱 개발에 대한 Visual Studio 프로젝트를 만들려면 Visual Studio 개발 옵션을 설정하고, 프로젝트를 만들고, 대상 아키텍처를 선택하고, Speech SDK를 설치해야 합니다. 
+C++ 데스크톱 개발에 대한 Visual Studio 프로젝트를 만들려면 Visual Studio 개발 옵션을 설정하고, 프로젝트를 만들고, 대상 아키텍처를 선택하고, Speech SDK를 설치해야 합니다.
 
 ### <a name="set-up-visual-studio-development-options"></a>Visual Studio 개발 옵션 설정
 
@@ -19,7 +19,7 @@ C++ 데스크톱 개발에 대한 Visual Studio 프로젝트를 만들려면 Vis
 
 1. Visual Studio 2019를 열어 **시작** 창을 표시합니다.
 
-   ![시작 창 - Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/vs-start-window.png) 
+   ![시작 창 - Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/vs-start-window.png)
 
 1. **코드를 사용하지 않고 계속**을 선택하여 Visual Studio IDE로 이동합니다.
 
@@ -77,4 +77,4 @@ C++ 데스크톱 개발에 대한 Visual Studio 프로젝트를 만들려면 Vis
 
 1. **변경 내용 미리 보기** 대화 상자에서 **확인**을 선택합니다.
 
-1. **라이선스 승인** 대화 상자에서 라이선스를 확인한 다음, **동의함**을 선택합니다. 패키지 설치가 시작되고 설치가 완료되면 **출력** 창에 `Successfully installed 'Microsoft.CognitiveServices.Speech 1.7.0' to helloworld`와 유사한 메시지가 표시됩니다. 
+1. **라이선스 승인** 대화 상자에서 라이선스를 확인한 다음, **동의함**을 선택합니다. 패키지 설치가 시작되고 설치가 완료되면 **출력** 창에 `Successfully installed 'Microsoft.CognitiveServices.Speech 1.9.0' to helloworld`와 유사한 메시지가 표시됩니다.

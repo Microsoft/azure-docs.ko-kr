@@ -1,0 +1,11 @@
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+    - name: Active Directory
+      tocHref: /azure/active-directory/
+      topicHref: /azure/active-directory/index
+      items:
+        - name: 개발자용 Azure AD
+          tocHref: /azure/active-directory/develop/
+          topicHref: /azure/active-directory/azuread-dev/index

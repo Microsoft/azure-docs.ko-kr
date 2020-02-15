@@ -6,13 +6,13 @@ ms.author: bwren
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 02/19/2019
-ms.openlocfilehash: 07dd4c96ba51b1ac1e0cb2807c9e26df87a6daa7
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/02/2020
+ms.openlocfilehash: ce58aae3b1db1f0f338d353025d4f277aeb6944f
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75364971"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137490"
 ---
 # <a name="unify-multiple-azure-monitor-application-insights-resources"></a>여러 Azure Monitor Application Insights 리소스 통합 
 이 문서에서는 다른 Azure 구독에 있는 경우에도 Application Insights 커넥터의 사용 중단을 대체 하 여 한 곳에서 모든 Application Insights 로그 데이터를 쿼리하고 보는 방법을 설명 합니다. 단일 쿼리에 포함할 수 있는 Application Insights 리소스의 수는 100 개로 제한 됩니다.
@@ -20,12 +20,7 @@ ms.locfileid: "75364971"
 ## <a name="recommended-approach-to-query-multiple-application-insights-resources"></a>여러 Application Insights 리소스를 쿼리하는 권장 방식 
 여러 Application Insights 리소스의 목록을 쿼리에 표시하는 방식은 번거로우며 유지 관리하기가 어려울 수 있습니다. 이러한 방식 대신 함수를 사용해 애플리케이션 범위에서 쿼리 논리를 분리할 수 있습니다.  
 
-이 예제에서는 여러 Application Insights 리소스를 모니터링하고 애플리케이션 이름을 기준으로 실패한 요청의 수를 시각화하는 방법을 보여 줍니다. 시작하기 전에 Application Insights 리소스에 연결된 작업 영역에서 이 쿼리를 실행하여 연결된 애플리케이션 목록을 가져옵니다. 
-
-```
-ApplicationInsights
-| summarize by ApplicationName
-```
+이 예제에서는 여러 Application Insights 리소스를 모니터링하고 애플리케이션 이름을 기준으로 실패한 요청의 수를 시각화하는 방법을 보여 줍니다.
 
 애플리케이션 목록에 합집합 연산자를 사용하는 함수를 만든 다음, *applicationsScoping*이라는 별칭으로 작업 영역의 쿼리를 함수로 저장합니다. 
 
@@ -61,32 +56,8 @@ ApplicationsScoping 함수는 Application Insights 데이터 구조를 반환하
 
 ![쿼리 간 결과 예제](media/unify-app-resource-data/app-insights-query-results.png)
 
-## <a name="query-across-application-insights-resources-and-workspace-data"></a>여러 Application Insights 리소스 및 작업 영역 데이터 쿼리 
-Connector를 중지하고 Application Insights 데이터 보존 기간(90일)에 따라 잘린 시간 범위에 대해 쿼리를 수행해야 하는 경우 작업 영역과 Application Insights 리소스에서 중간 기간에 대해 [리소스 간 쿼리](../../azure-monitor/log-query/cross-workspace-query.md)를 수행해야 합니다. 위에서 설명한 새 Application Insights 데이터 보존 기간에 따라 애플리케이션 데이터가 누적될 때까지 이 쿼리를 수행합니다. Application Insights의 스키마와 작업 영역의 스키마는 서로 다르기 때문에 이 쿼리는 다소 조작해야 합니다. 스키마 차이점이 강조 표시되어 있는 이 섹션 뒷부분의 표를 참조하세요. 
-
 >[!NOTE]
->로그 경고의 [리소스 간 쿼리](../log-query/cross-workspace-query.md)는 새 [scheduledQueryRules API](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules)에서 지원됩니다. [레거시 Log Analytics 경고 API](../platform/api-alerts.md)에서 전환하지 않는 한, Azure Monitor는 기본적으로 [레거시 Log Analytics 경고 API](../platform/alerts-log-api-switch.md#process-of-switching-from-legacy-log-alerts-api)를 사용하여 Azure Portal에서 새 로그 경고 규칙을 만듭니다. 전환 후에는 새 API가 Azure Portal에서 새 경고 규칙의 기본값이 되며, 해당 API를 사용하여 리소스 간 쿼리 로그 경고 규칙을 만들 수 있습니다. [scheduledQueryRules API에 대한 ARM 템플릿](../platform/alerts-log.md#log-alert-with-cross-resource-query-using-azure-resource-template)을 사용하면 전환하지 않고 [리소스 간 쿼리](../log-query/cross-workspace-query.md) 로그 경고 규칙을 만들 수 있지만, 이 경고 규칙은 Azure Portal이 아닌 [scheduledQueryRules API](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules)를 통해 관리할 수 있습니다.
-
-예를 들어 2018년 11월 1일에 Connector 작동이 중지된 경우 작업 영역의 애플리케이션 데이터와 Application Insights 리소스 간에 로그를 쿼리할 때는 다음 예제와 같이 쿼리를 생성합니다.
-
-```
-applicationsScoping //this brings data from Application Insights resources 
-| where timestamp between (datetime("2018-11-01") .. now()) 
-| where success == 'False' 
-| where duration > 1000 
-| union ( 
-    ApplicationInsights //this is Application Insights data in Log Analytics workspace 
-    | where TimeGenerated < (datetime("2018-12-01") 
-    | where RequestSuccess == 'False' 
-    | where RequestDuration > 1000 
-    | extend duration = RequestDuration //align to Application Insights schema 
-    | extend timestamp = TimeGenerated //align to Application Insights schema 
-    | extend name = RequestName //align to Application Insights schema 
-    | extend resultCode = ResponseCode //align to Application Insights schema 
-    | project-away RequestDuration , RequestName , ResponseCode , TimeGenerated 
-) 
-| project timestamp , duration , name , resultCode 
-```
+>로그 경고의 [리소스 간 쿼리](../log-query/cross-workspace-query.md)는 새 [scheduledQueryRules API](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules)에서 지원됩니다. [레거시 Log Analytics 경고 API](../platform/api-alerts.md)에서 전환하지 않는 한, Azure Monitor는 기본적으로 [레거시 Log Analytics 경고 API](../platform/alerts-log-api-switch.md#process-of-switching-from-legacy-log-alerts-api)를 사용하여 Azure Portal에서 새 로그 경고 규칙을 만듭니다. 전환 후에는 새 API가 Azure Portal에서 새 경고 규칙의 기본값이 되며, 해당 API를 사용하여 리소스 간 쿼리 로그 경고 규칙을 만들 수 있습니다. [scheduledQueryRules API에 대한 ARM 템플릿](../log-query/cross-workspace-query.md)을 사용하면 전환하지 않고 [리소스 간 쿼리](../platform/alerts-log.md#log-alert-with-cross-resource-query-using-azure-resource-template) 로그 경고 규칙을 만들 수 있지만, 이 경고 규칙은 Azure Portal이 아닌 [scheduledQueryRules API](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules)를 통해 관리할 수 있습니다.
 
 ## <a name="application-insights-and-log-analytics-workspace-schema-differences"></a>Application Insights 및 Log Analytics 작업 영역 스키마의 차이점
 다음 표에는 Log Analytics 및 Application Insights의 스키마 간 차이점이 나와 있습니다.  
@@ -104,11 +75,11 @@ applicationsScoping //this brings data from Application Insights resources
 | AvailabilityTestId | id |
 | AvailabilityTestName | name |
 | AvailabilityTimestamp | timestamp |
-| 브라우저 | client_browser |
-| 시/군/구 | client_city |
+| 브라우저. | client_browser |
+| 구/군/시 | client_city |
 | ClientIP | client_IP |
 | Computer | cloud_RoleInstance | 
-| 국가 | client_CountryOrRegion | 
+| Country | client_CountryOrRegion | 
 | CustomEventCount | itemCount | 
 | CustomEventDimensions | customDimensions |
 | CustomEventName | name | 
@@ -117,7 +88,7 @@ applicationsScoping //this brings data from Application Insights resources
 | ExceptionCount | itemCount | 
 | ExceptionHandledAt | handledAt |
 | ExceptionMessage | message | 
-| ExceptionType | type |
+| ExceptionType | 형식 |
 | OperationID | operation_id |
 | OperationName | operation_Name | 
 | OS | client_OS | 
@@ -129,13 +100,13 @@ applicationsScoping //this brings data from Application Insights resources
 | RequestDuration | duration | 
 | RequestID | id | 
 | RequestName | name | 
-| RequestSuccess | 성공 | 
+| RequestSuccess | success | 
 | ResponseCode | resultCode | 
-| 역할 | cloud_RoleName |
+| Role | cloud_RoleName |
 | RoleInstance | cloud_RoleInstance |
 | SessionId | session_Id | 
 | SourceSystem | operation_SyntheticSource |
-| TelemetryTYpe | type |
+| TelemetryTYpe | 형식 |
 | URL | url |
 | UserAccountId | user_AccountId |
 

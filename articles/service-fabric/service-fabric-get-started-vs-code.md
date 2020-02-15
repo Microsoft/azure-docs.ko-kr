@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: article
 ms.date: 06/29/2018
 ms.author: pepogors
-ms.openlocfilehash: d7d3182ad00d0ce151c6d327b29584c7e2ff1323
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 67846293257661a4f7a907d76402d2e98c339225
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75457853"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77251637"
 ---
 # <a name="service-fabric-for-visual-studio-code"></a>Visual Studio Code용 Service Fabric
 
@@ -21,7 +21,7 @@ ms.locfileid: "75457853"
 > [!IMPORTANT]
 > Service Fabric Java 애플리케이션은 Windows 컴퓨터에서 개발할 수 있지만 Azure Linux 클러스터에만 배포할 수 있습니다. Windows에서는 Java 애플리케이션을 디버그할 수 없습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 다음 필수 구성 요소를 모든 환경에 설치해야 합니다.
 
@@ -56,7 +56,7 @@ Java 개발을 위해서는 다음 필수 구성 요소를 설치해야 합니�
 2. VS Code 왼쪽의 **작업 막대**에서 확장 아이콘을 클릭합니다. "Service Fabric"을 검색합니다. Service Fabric Reliable Services 확장에 대해 **설치**를 클릭합니다.
 
 ## <a name="commands"></a>명령
-VS Code용 Service Fabric Reliable Services 확장은 개발자가 Service Fabric 프로젝트를 만들고 배포하는 데 도움이 되는 많은 명령을 제공합니다. `(Ctrl + Shift + p)`을 누르거나, 입력 표시줄에 명령 이름을 입력하거나, 프롬프트 목록에서 원하는 명령을 선택하여 **명령 팔레트**에서 명령을 호출할 수 있습니다. 
+VS Code용 Service Fabric Reliable Services 확장은 개발자가 Service Fabric 프로젝트를 만들고 배포하는 데 도움이 되는 많은 명령을 제공합니다. **을 누르거나, 입력 표시줄에 명령 이름을 입력하거나, 프롬프트 목록에서 원하는 명령을 선택하여** 명령 팔레트`(Ctrl + Shift + p)`에서 명령을 호출할 수 있습니다. 
 
 * Service Fabric: Create Application 
 * Service Fabric: Publish Application 
@@ -69,7 +69,7 @@ VS Code용 Service Fabric Reliable Services 확장은 개발자가 Service Fabri
 
 **Service Fabric: Create Application** 명령은 현재 작업 영역에서 새 Service Fabric 애플리케이션을 만듭니다. 개발 컴퓨터에 설치되는 yeoman 생성기에 따라, Java, C#, Container 및 Guest 프로젝트를 비롯한 여러 유형의 Service Fabric 애플리케이션을 만들 수 있습니다. 
 
-1.  **Service Fabric: Add Service** 명령을 선택합니다.
+1.  **Service Fabric: 응용 프로그램 만들기** 명령을 선택 합니다.
 2.  새 Service Fabric 애플리케이션의 유형을 선택합니다. 
 3.  만들려는 애플리케이션의 이름을 입력합니다.
 3.  Service Fabric 애플리케이션에 추가하려는 서비스의 유형을 선택합니다. 

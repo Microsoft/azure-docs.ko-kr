@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 11/04/2019
+ms.date: 02/13/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a0a6581e0eed74725a7186e528618da5d8a4f890
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 3a3df4d3a955926381a664ab872e03ae987f0839
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840250"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77197975"
 ---
 # <a name="define-a-saml-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Azure Active Directory B2C 사용자 지정 정책에서 SAML 기술 프로필 정의
 
@@ -66,9 +66,9 @@ SAML 응답 어설션을 암호화하기 위해 ID 공급자는 항상 Azure AD 
 SAML 응답 어설션을 암호화하려면 다음 단계를 수행합니다.
 
 1. 프라이빗 키(.pfx 파일)가 포함된 유효한 X509 인증서를 Azure AD B2C 정책 키 저장소에 업로드합니다.
-2. 식별자가 `SamlAssertionDecryption`인 **CryptographicKey** 요소를 기술 프로필 **CryptographicKeys** 컬렉션에 추가합니다. **StorageReferenceId**를 1단계에서 만든 정책 키의 이름으로 설정합니다.
+2. 식별자가 **인** CryptographicKey`SamlAssertionDecryption` 요소를 기술 프로필 **CryptographicKeys** 컬렉션에 추가합니다. **StorageReferenceId**를 1단계에서 만든 정책 키의 이름으로 설정합니다.
 3. 기술 프로필 메타데이터 **WantsEncryptedAssertions**를 `true`로 설정합니다.
-4. 새 Azure AD B2C 기술 프로필 메타데이터로 ID 공급자를 업데이트합니다. 인증서의 공개 키를 포함하며 **use** 속성이 `encryption`으로 설정된 **KeyDescriptor**가 표시되어야 합니다.
+4. 새 Azure AD B2C 기술 프로필 메타데이터로 ID 공급자를 업데이트합니다. 인증서의 공개 키를 포함하며 **use** 속성이 **으로 설정된** KeyDescriptor`encryption`가 표시되어야 합니다.
 
 다음 예제에서는 메타데이터의 Azure AD B2C 기술 프로필 암호화 섹션을 보여 줍니다.
 
@@ -123,18 +123,19 @@ Protocol 요소의 **Name** 특성은 `SAML2`로 설정해야 합니다.
 
 | attribute | 필수 | Description |
 | --------- | -------- | ----------- |
-| PartnerEntity | 예 | SAML ID 공급자의 메타데이터 URL입니다. ID 공급자 메타데이터를 복사하여 CDATA 요소 `<![CDATA[Your IDP metadata]]>` 내에 추가합니다. |
-| WantsSignedRequests | 아닙니다. | 기술 프로필에서 모든 발신 인증 요청에 서명을 해야 하는지 여부를 나타냅니다. 가능한 값은 `true` 또는 `false`입니다. 기본값은 `true`입니다. 값을 `true`로 설정하는 경우에는 **SamlMessageSigning** 암호화 키를 지정하고 모든 발신 인증 요청에 서명을 해야 합니다. 값을 `false`로 설정하는 경우에는 **SigAlg** 및 **Signature** 매개 변수(쿼리 문자열 또는 게시 매개 변수)가 요청에서 생략됩니다. 이 메타데이터는 메타데이터 **AuthnRequestsSigned** 특성도 제어합니다. 해당 특성은 ID 공급자와 공유되는 Azure AD B2C 기술 프로필의 메타데이터 출력입니다. 기술 프로필 메타 데이터의 **WantsSignedRequests** 값이 `false`으로 설정 되 고 id 공급자 메타 데이터 **WantAuthnRequestsSigned** 이 `false` 또는 지정 되지 않음으로 설정 된 경우 Azure AD B2C는 요청에 서명 하지 않습니다. |
-| XmlSignatureAlgorithm | 아닙니다. | Azure AD B2C가 SAML 요청에 서명하는 데 사용하는 메서드입니다. 이 메타데이터는 SAML 요청의 **SigAlg** 매개 변수(쿼리 문자열 또는 게시 매개 변수) 값을 제어합니다. 가능한 값은 `Sha256`, `Sha384`, `Sha512` 또는 `Sha1`입니다. 양쪽의 서명 알고리즘을 같은 값으로 구성해야 합니다. 인증서가 지원하는 알고리즘만 사용하세요. |
-| WantsSignedAssertions | 아닙니다. | 기술 프로필에서 모든 수신 어설션에 서명을 해야 하는지 여부를 나타냅니다. 가능한 값은 `true` 또는 `false`입니다. 기본값은 `true`입니다. 값을 `true`로 설정하는 경우 ID 공급자가 Azure AD B2C로 전송하는 모든 어설션 섹션 `saml:Assertion`에 서명을 해야 합니다. 값을 `false`로 설정하는 경우에는 ID 공급자가 어설션에 서명을 하지 않아야 하며, 서명을 하더라도 Azure AD B2C가 서명의 유효성을 검사하지 않습니다. 이 메타데이터는 메타데이터 플래그 **WantsAssertionsSigned**도 제어합니다. 해당 플래그는 ID 공급자와 공유되는 Azure AD B2C 기술 프로필의 메타데이터 출력입니다. 어설션 유효성 검사를 사용하지 않도록 설정하는 경우에는 응답 서명 유효성 검사도 사용하지 않도록 설정하는 것이 좋습니다. 자세한 내용은 **ResponsesSigned**를 참조하세요. |
-| ResponsesSigned | 아닙니다. | 가능한 값은 `true` 또는 `false`입니다. 기본값은 `true`입니다. 값을 `false`로 설정하는 경우에는 ID 공급자가 SAML 응답에 서명을 하지 않아야 하며, 서명을 하더라도 Azure AD B2C가 서명의 유효성을 검사하지 않습니다. 값을 `true`로 설정하는 경우에는 ID 공급자가 Azure AD B2C로 전송하는 SAML 응답에 서명이 되며 해당 서명의 유효성을 검사해야 합니다. SAML 응답 유효성 검사를 사용하지 않도록 설정하는 경우에는 어설션 서명 유효성 검사도 사용하지 않도록 설정하는 것이 좋습니다. 자세한 내용은 **WantsSignedAssertions**를 참조하세요. |
-| WantsEncryptedAssertions | 아닙니다. | 기술 프로필에서 모든 수신 어설션을 암호화해야 하는지 여부를 나타냅니다. 가능한 값은 `true` 또는 `false`입니다. 기본값은 `false`입니다. 값을 `true`로 설정하는 경우에는 ID 공급자가 Azure AD B2C로 전송하는 어설션에 서명을 해야 하며 **SamlAssertionDecryption** 암호화 키를 지정해야 합니다. 값을 `true`로 설정하는 경우에는 Azure AD B2C 기술 프로필의 메타데이터에 **encryption** 섹션이 포함됩니다. ID 공급자는 메타데이터를 읽고 Azure AD B2C 기술 프로필의 메타데이터에서 제공되는 공개 키를 사용하여 SAML 응답 어설션을 암호화합니다. 어설션 암호화를 사용하도록 설정하는 경우에는 응답 서명 유효성 검사도 사용하지 않도록 설정해야 할 수 있습니다. 자세한 내용은 **ResponsesSigned**를 참조하세요. |
-| IdpInitiatedProfileEnabled | 아닙니다. | SAML ID 공급자 프로필에 의해 시작된 Single Sing-On 세션 프로필이 사용되는지 여부를 나타냅니다. 가능한 값은 `true` 또는 `false`입니다. 기본값은 `false`입니다. ID 공급자가 시작한 플로우에서는 사용자가 외부에서 인증되며 원치 않는 응답이 Azure AD B2C로 전송됩니다. 그러면 Azure AD B2C는 토큰을 사용하고 오케스트레이션 단계를 실행한 다음, 신뢰 당사자 애플리케이션에 응답을 보냅니다. |
-| NameIdPolicyFormat | 아닙니다. | 요청된 주체를 나타내는 데 사용할 이름 식별자에 제약 조건을 지정합니다. 생략하면 요청된 주체의 ID 공급자가 지원하는 어떤 형식의 식별자도 사용할 수 있습니다. 예: `urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`. **NameIdPolicyFormat**은 **NameIdPolicyAllowCreate**와 함께 사용할 수 있습니다. 지원되는 이름 ID 정책에 대한 지침은 ID 공급자의 설명서를 살펴봅니다. |
-| NameIdPolicyAllowCreate | 아닙니다. | **NameIdPolicyFormat**을 사용하는 경우 **NameIDPolicy**의 `AllowCreate` 속성을 지정할 수도 있습니다. 이 메타데이터의 값은 ID 공급자가 로그인 흐름 동안 새 계정을 만들도록 허용되는지 여부를 나타내기 위해 `true` 또는 `false`입니다. 이 단계를 수행하는 방법의 지침은 사용 중인 ID 공급자의 설명서를 참조하세요. |
-| AuthenticationRequestExtensions | 아닙니다. | Azure AD BC와 ID 공급자 간에 동의된 선택적 프로토콜 메시지 확장 요소입니다. 확장은 XML 형식으로 표시됩니다. CDATA 요소 `<![CDATA[Your IDP metadata]]>` 내부에 XML 데이터를 추가합니다. ID 공급자의 설명서를 확인하여 확장 요소가 지원되는지 검토합니다. |
-| IncludeAuthnContextClassReferences | 아닙니다. | 인증 컨텍스트 클래스를 식별하는 하나 이상의 URI 참조를 지정합니다. 예를 들어, 사용자 이름 및 암호만으로 로그인할 수 있도록 하려면 이 값을 `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`로 설정합니다. 보호된 세션(SSL/TLS)을 통해 로그인 사용자 이름 및 암호로 로그인할 수 있도록 하려면 `PasswordProtectedTransport`를 지정합니다. 지원되는 **AuthnContextClassRef** URI에 대한 지침은 ID 공급자 설명서를 확인하세요. 여러 Uri를 쉼표로 구분 된 목록으로 지정 합니다. |
-| IncludeKeyInfo | 아닙니다. | 바인딩이 `HTTP-POST`로 설정된 경우 SAML 인증 요청이 인증서의 공개 키를 포함하는지 여부를 나타냅니다. 가능한 값은 `true` 또는 `false`입니다. |
+| PartnerEntity | yes | SAML ID 공급자의 메타데이터 URL입니다. ID 공급자 메타데이터를 복사하여 CDATA 요소 `<![CDATA[Your IDP metadata]]>` 내에 추가합니다. |
+| WantsSignedRequests | 예 | 기술 프로필에서 모든 발신 인증 요청에 서명을 해야 하는지 여부를 나타냅니다. 가능한 값은 `true` 또는 `false`입니다. 기본값은 `true`입니다. 값을 `true`로 설정하는 경우에는 **SamlMessageSigning** 암호화 키를 지정하고 모든 발신 인증 요청에 서명을 해야 합니다. 값을 `false`로 설정하는 경우에는 **SigAlg** 및 **Signature** 매개 변수(쿼리 문자열 또는 게시 매개 변수)가 요청에서 생략됩니다. 이 메타데이터는 메타데이터 **AuthnRequestsSigned** 특성도 제어합니다. 해당 특성은 ID 공급자와 공유되는 Azure AD B2C 기술 프로필의 메타데이터 출력입니다. 기술 프로필 메타 데이터의 **WantsSignedRequests** 값이 `false`으로 설정 되 고 id 공급자 메타 데이터 **WantAuthnRequestsSigned** 이 `false` 또는 지정 되지 않음으로 설정 된 경우 Azure AD B2C는 요청에 서명 하지 않습니다. |
+| XmlSignatureAlgorithm | 예 | Azure AD B2C가 SAML 요청에 서명하는 데 사용하는 메서드입니다. 이 메타데이터는 SAML 요청의 **SigAlg** 매개 변수(쿼리 문자열 또는 게시 매개 변수) 값을 제어합니다. 가능한 값은 `Sha256`, `Sha384`, `Sha512` 또는 `Sha1`입니다. 양쪽의 서명 알고리즘을 같은 값으로 구성해야 합니다. 인증서가 지원하는 알고리즘만 사용하세요. |
+| WantsSignedAssertions | 예 | 기술 프로필에서 모든 수신 어설션에 서명을 해야 하는지 여부를 나타냅니다. 가능한 값은 `true` 또는 `false`입니다. 기본값은 `true`입니다. 값을 `true`로 설정하는 경우 ID 공급자가 Azure AD B2C로 전송하는 모든 어설션 섹션 `saml:Assertion`에 서명을 해야 합니다. 값을 `false`로 설정하는 경우에는 ID 공급자가 어설션에 서명을 하지 않아야 하며, 서명을 하더라도 Azure AD B2C가 서명의 유효성을 검사하지 않습니다. 이 메타데이터는 메타데이터 플래그 **WantsAssertionsSigned**도 제어합니다. 해당 플래그는 ID 공급자와 공유되는 Azure AD B2C 기술 프로필의 메타데이터 출력입니다. 어설션 유효성 검사를 사용하지 않도록 설정하는 경우에는 응답 서명 유효성 검사도 사용하지 않도록 설정하는 것이 좋습니다. 자세한 내용은 **ResponsesSigned**를 참조하세요. |
+| ResponsesSigned | 예 | 가능한 값은 `true` 또는 `false`입니다. 기본값은 `true`입니다. 값을 `false`로 설정하는 경우에는 ID 공급자가 SAML 응답에 서명을 하지 않아야 하며, 서명을 하더라도 Azure AD B2C가 서명의 유효성을 검사하지 않습니다. 값을 `true`로 설정하는 경우에는 ID 공급자가 Azure AD B2C로 전송하는 SAML 응답에 서명이 되며 해당 서명의 유효성을 검사해야 합니다. SAML 응답 유효성 검사를 사용하지 않도록 설정하는 경우에는 어설션 서명 유효성 검사도 사용하지 않도록 설정하는 것이 좋습니다. 자세한 내용은 **WantsSignedAssertions**를 참조하세요. |
+| WantsEncryptedAssertions | 예 | 기술 프로필에서 모든 수신 어설션을 암호화해야 하는지 여부를 나타냅니다. 가능한 값은 `true` 또는 `false`입니다. 기본값은 `false`입니다. 값을 `true`로 설정하는 경우에는 ID 공급자가 Azure AD B2C로 전송하는 어설션에 서명을 해야 하며 **SamlAssertionDecryption** 암호화 키를 지정해야 합니다. 값을 `true`로 설정하는 경우에는 Azure AD B2C 기술 프로필의 메타데이터에 **encryption** 섹션이 포함됩니다. ID 공급자는 메타데이터를 읽고 Azure AD B2C 기술 프로필의 메타데이터에서 제공되는 공개 키를 사용하여 SAML 응답 어설션을 암호화합니다. 어설션 암호화를 사용하도록 설정하는 경우에는 응답 서명 유효성 검사도 사용하지 않도록 설정해야 할 수 있습니다. 자세한 내용은 **ResponsesSigned**를 참조하세요. |
+| IdpInitiatedProfileEnabled | 예 | SAML ID 공급자 프로필에 의해 시작된 Single Sing-On 세션 프로필이 사용되는지 여부를 나타냅니다. 가능한 값은 `true` 또는 `false`입니다. 기본값은 `false`입니다. ID 공급자가 시작한 플로우에서는 사용자가 외부에서 인증되며 원치 않는 응답이 Azure AD B2C로 전송됩니다. 그러면 Azure AD B2C는 토큰을 사용하고 오케스트레이션 단계를 실행한 다음, 신뢰 당사자 애플리케이션에 응답을 보냅니다. |
+| NameIdPolicyFormat | 예 | 요청된 주체를 나타내는 데 사용할 이름 식별자에 제약 조건을 지정합니다. 생략하면 요청된 주체의 ID 공급자가 지원하는 어떤 형식의 식별자도 사용할 수 있습니다. 예: `urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`. **NameIdPolicyFormat**은 **NameIdPolicyAllowCreate**와 함께 사용할 수 있습니다. 지원되는 이름 ID 정책에 대한 지침은 ID 공급자의 설명서를 살펴봅니다. |
+| NameIdPolicyAllowCreate | 예 | **NameIdPolicyFormat**을 사용하는 경우 `AllowCreate`NameIDPolicy**의**  속성을 지정할 수도 있습니다. 이 메타데이터의 값은 ID 공급자가 로그인 흐름 동안 새 계정을 만들도록 허용되는지 여부를 나타내기 위해 `true` 또는 `false`입니다. 이 단계를 수행하는 방법의 지침은 사용 중인 ID 공급자의 설명서를 참조하세요. |
+| AuthenticationRequestExtensions | 예 | Azure AD BC와 ID 공급자 간에 동의된 선택적 프로토콜 메시지 확장 요소입니다. 확장은 XML 형식으로 표시됩니다. CDATA 요소 `<![CDATA[Your IDP metadata]]>` 내부에 XML 데이터를 추가합니다. ID 공급자의 설명서를 확인하여 확장 요소가 지원되는지 검토합니다. |
+| IncludeAuthnContextClassReferences | 예 | 인증 컨텍스트 클래스를 식별하는 하나 이상의 URI 참조를 지정합니다. 예를 들어, 사용자 이름 및 암호만으로 로그인할 수 있도록 하려면 이 값을 `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`로 설정합니다. 보호된 세션(SSL/TLS)을 통해 로그인 사용자 이름 및 암호로 로그인할 수 있도록 하려면 `PasswordProtectedTransport`를 지정합니다. 지원되는 **AuthnContextClassRef** URI에 대한 지침은 ID 공급자 설명서를 확인하세요. 여러 Uri를 쉼표로 구분 된 목록으로 지정 합니다. |
+| IncludeKeyInfo | 예 | 바인딩이 `HTTP-POST`로 설정된 경우 SAML 인증 요청이 인증서의 공개 키를 포함하는지 여부를 나타냅니다. 가능한 값은 `true` 또는 `false`입니다. |
+| IncludeClaimResolvingInClaimsHandling  | 예 | 입력 및 출력 클레임의 경우 [클레임 확인](claim-resolver-overview.md) 이 기술 프로필에 포함 되는지 여부를 지정 합니다. 가능한 값은 `true`또는 `false` (기본값)입니다. 기술 프로필에서 클레임 해결 프로그램을 사용 하려면 `true`으로 설정 합니다. |
 
 ## <a name="cryptographic-keys"></a>암호화 키
 
@@ -142,9 +143,9 @@ Protocol 요소의 **Name** 특성은 `SAML2`로 설정해야 합니다.
 
 | attribute |필수 | Description |
 | --------- | ----------- | ----------- |
-| SamlMessageSigning |예 | SAML 메시지에 서명을 하는 데 사용할 X509 인증서(RSA 키 집합)입니다. Azure AD B2C는 이 키를 사용해 요청에 서명을 한 다음 ID 공급자에 요청을 전송합니다. |
-| SamlAssertionDecryption |예 | SAML 메시지의 암호를 해독하는 데 사용할 X509 인증서(RSA 키 집합)입니다. ID 공급자가 이 인증서를 제공해야 합니다. Azure AD B2C는 이 인증서를 사용하여 ID 공급자가 전송하는 데이터의 암호를 해독합니다. |
-| MetadataSigning |아닙니다. | SAML 메타데이터에 서명을 하는 데 사용할 X509 인증서(RSA 키 집합)입니다. Azure AD B2C는 이 키를 사용하여 메타데이터에 서명을 합니다.  |
+| SamlMessageSigning |yes | SAML 메시지에 서명을 하는 데 사용할 X509 인증서(RSA 키 집합)입니다. Azure AD B2C는 이 키를 사용해 요청에 서명을 한 다음 ID 공급자에 요청을 전송합니다. |
+| SamlAssertionDecryption |yes | SAML 메시지의 암호를 해독하는 데 사용할 X509 인증서(RSA 키 집합)입니다. ID 공급자가 이 인증서를 제공해야 합니다. Azure AD B2C는 이 인증서를 사용하여 ID 공급자가 전송하는 데이터의 암호를 해독합니다. |
+| MetadataSigning |예 | SAML 메타데이터에 서명을 하는 데 사용할 X509 인증서(RSA 키 집합)입니다. Azure AD B2C는 이 키를 사용하여 메타데이터에 서명을 합니다.  |
 
 ## <a name="next-steps"></a>다음 단계
 

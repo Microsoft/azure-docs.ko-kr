@@ -7,14 +7,14 @@ manager: gwallace
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.topic: article
-ms.date: 10/14/2019
+ms.date: 02/11/2020
 ms.author: cynthn
-ms.openlocfilehash: 8752522e4b5a7b91778d6eb2cd8e4ba3bac95da0
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 17186d1d7b50ea872dc47eca8c2c4491787d2a38
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74782126"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77158947"
 ---
 # <a name="preview-deploy-spot-vms-using-azure-powershell"></a>미리 보기: Azure PowerShell를 사용 하 여 스폿 Vm 배포
 
@@ -29,7 +29,7 @@ VM에 대해 시간당 요금을 지불할 최대 가격을 설정 하는 옵션
 > 현재 스폿 인스턴스는 공개 미리 보기로 제공 됩니다.
 > 이 미리 보기 버전은 프로덕션 워크 로드에는 권장 되지 않습니다. 특정 기능이 지원되지 않거나 기능이 제한될 수 있습니다. 자세한 내용은 [Microsoft Azure Preview에 대한 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조하세요.
 >
-> 공개 미리 보기의 초기 파트의 경우 별색 인스턴스는 고정 가격이 있으므로 가격 기반 제거는 제공 되지 않습니다.
+
 
 
 ## <a name="create-the-vm"></a>VM 만들기
@@ -37,9 +37,6 @@ VM에 대해 시간당 요금을 지불할 최대 가격을 설정 하는 옵션
 [AzVmConfig](/powershell/module/az.compute/new-azvmconfig) 를 사용 하 여 spotVM를 만들어 구성을 만듭니다. `-Priority Spot`를 포함 하 고 `-MaxPrice`을 다음 중 하나로 설정 합니다.
 - `-1` 가격에 따라 VM이 제거 되지 않도록 합니다.
 - 최대 5 자리로 된 달러 금액입니다. 예를 들어 `-MaxPrice .98765`는 spotVM에 대 한 가격이 시간당 $. 98765에 대 한 것이 되 면 VM의 할당이 취소 됩니다.
-
-> [!IMPORTANT]
-> 공개 미리 보기의 초기 부분에서는 최대 가격을 설정할 수 있지만 무시 됩니다. 스폿 Vm의 가격은 고정 되어 있으므로 가격 기반 제거는 없습니다.
 
 
 이 예제에서는 가격 책정에 따라 할당 취소 되지 않는 spotVM을 만듭니다 (Azure에서 용량을 다시 사용 해야 하는 경우에만).

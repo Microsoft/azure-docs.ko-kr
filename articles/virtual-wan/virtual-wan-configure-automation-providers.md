@@ -1,20 +1,20 @@
 ---
-title: Azure Virtual WAN 파트너 | Microsoft Docs
+title: Azure 가상 WAN 파트너 자동화 지침 | Microsoft Docs
 description: 이 문서에서는 파트너가 Azure Virtual WAN 자동화를 설정하도록 돕습니다.
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 10/07/2019
+ms.date: 02/12/2020
 ms.author: cherylmc
-ms.openlocfilehash: 6f95107960cf11ab15cb5a8294a5432498956a7a
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 7848dda09b39f446dd218b7ce1eb2a07664bcaa6
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76775310"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190426"
 ---
-# <a name="virtual-wan-partners"></a>Virtual WAN 파트너
+# <a name="automation-guidelines-for-virtual-wan-partners"></a>가상 WAN 파트너에 대 한 자동화 지침
 
 이 문서는 Azure Virtual WAN의 분기 디바이스(고객 온-프레미스 VPN 디바이스 또는 SDWAN CPE)를 연결 및 구성하기 위해 자동화 환경을 설정하는 방법을 이해하는 데 도움이 됩니다. 이 문서는 IPsec/IKEv2 또는 IPsec/IKEv1을 통해 VPN 연결을 수용할 수 있는 분기 디바이스를 제공하는 공급자를 대상으로 합니다.
 
@@ -81,17 +81,17 @@ Azure에 분기 (온-프레미스 사이트) 정보를 업로드 하는 사용�
 * **vpnSiteConfiguration -** 이 섹션은 Virtual WAN에 연결된 사이트로 설정된 디바이스 정보를 나타냅니다. 여기에는 분기 디바이스의 이름 및 공용 IP 주소가 포함됩니다.
 * **vpnSiteConnections -** 이 섹션에서는 다음 정보를 제공합니다.
 
-    * 가상 허브 VNet의 **주소 공간**.<br>예:
+    * 가상 허브 VNet의 **주소 공간**.<br>예제:
  
         ```
         "AddressSpace":"10.1.0.0/24"
         ```
-    * 허브에 연결된 VNet의 **주소 공간**.<br>예:
+    * 허브에 연결된 VNet의 **주소 공간**.<br>예제:
 
          ```
         "ConnectedSubnets":["10.2.0.0/16","10.3.0.0/16"]
          ```
-    * 가상 허브 vpngateway의 **IP 주소**. vpngateway에는 활성-활성 구성의 2개 터널로 구성된 각 연결이 있기 때문에 이 파일에 두 IP 주소가 모두 나열됩니다. 이 예제에서는 각 사이트에 대한 “Instance0” 및 “Instance1”이 표시됩니다.<br>예:
+    * 가상 허브 vpngateway의 **IP 주소**. vpngateway에는 활성-활성 구성의 2개 터널로 구성된 각 연결이 있기 때문에 이 파일에 두 IP 주소가 모두 나열됩니다. 이 예제에서는 각 사이트에 대한 “Instance0” 및 “Instance1”이 표시됩니다.<br>예제:
 
         ``` 
         "Instance0":"104.45.18.186"

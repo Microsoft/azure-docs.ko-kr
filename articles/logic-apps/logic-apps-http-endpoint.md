@@ -6,12 +6,12 @@ ms.workload: integration
 ms.reviewer: klam, jehollan, logicappspm
 ms.topic: article
 ms.date: 11/04/2019
-ms.openlocfilehash: dbb91106ad00e1a82e2e6e9c470e61764a4ad4c4
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: d5b5a69c7927d07c0ae6b3b56ec97b6551e5d46b
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74792024"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191341"
 ---
 # <a name="call-trigger-or-nest-logic-apps-by-using-http-endpoints-in-azure-logic-apps"></a>Azure Logic Apps에서 HTTP 끝점을 사용 하 여 논리 앱 호출, 트리거 또는 중첩
 
@@ -28,15 +28,15 @@ HTTP 끝점을 설정 하기 위해 논리 앱에서 들어오는 요청을 받�
 
 논리 앱을 처음 접하는 경우 [Azure Logic Apps](../logic-apps/logic-apps-overview.md) 및 [빠른 시작: 첫 번째 논리 앱 만들기](../logic-apps/quickstart-create-first-logic-app-workflow.md)를 참조 하세요.
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
-* Azure 구독. 구독이 없는 경우 [Azure 체험 계정에 등록](https://azure.microsoft.com/free/)합니다.
+* Azure 구독 구독이 없는 경우 [Azure 체험 계정에 등록](https://azure.microsoft.com/free/)합니다.
 
 * HTTP 끝점을 트리거로 설정 하려는 논리 앱입니다. 빈 논리 앱 또는 현재 트리거를 바꾸려는 기존 논리 앱으로 시작할 수 있습니다. 이 예에서는 빈 논리 앱으로 시작 합니다.
 
 ## <a name="create-a-callable-endpoint"></a>호출 가능 끝점 만들기
 
-1. [Azure portal](https://portal.azure.com)에 로그인합니다. 논리 앱 디자이너에서 빈 논리 앱을 만들고 엽니다.
+1. [Azure Portal](https://portal.azure.com)에 로그인합니다. 논리 앱 디자이너에서 빈 논리 앱을 만들고 엽니다.
 
    이 예제에서는 요청 트리거를 사용 하지만 들어오는 HTTP 요청을 받을 수 있는 트리거를 사용할 수 있습니다. 모든 원칙은 이러한 트리거에 동일 하 게 적용 됩니다. 요청 트리거에 대 한 자세한 내용은 [Azure Logic Apps를 사용 하 여 들어오는 HTTPS 호출 받기 및 응답](../connectors/connectors-native-reqres.md)을 참조 하세요.
 
@@ -275,7 +275,7 @@ HTTP 끝점을 만든 후 끝점의 전체 URL에 HTTP `POST` 요청을 전송 �
 
 응답 속성:
 
-| 속성 (표시) | 속성 (JSON) | 설명 |
+| 속성 (표시) | 속성 (JSON) | Description |
 |--------------------|-----------------|-------------|
 | **상태 코드** | `statusCode` | 들어오는 요청에 대 한 응답에서 사용할 HTTP 상태 코드입니다. 이 코드는 2xx, 4xx 또는 5xx로 시작하는 모든 유효한 상태 코드가 될 수 있습니다. 하지만 3xx 상태 코드는 허용되지 않습니다. |
 | **헤더** | `headers` | 응답에 포함할 하나 이상의 헤더입니다. |
@@ -302,14 +302,14 @@ HTTP 끝점을 만든 후 끝점의 전체 URL에 HTTP `POST` 요청을 전송 �
 }
 ```
 
-## <a name="q--a"></a>질문과 답변
+## <a name="q--a"></a>질문과 대답
 
 #### <a name="q-what-about-url-security"></a>Q: URL 보안이란 무엇입니까?
 
 **A**: AZURE는 [SAS (공유 액세스 서명)](https://docs.microsoft.com/rest/api/storageservices/delegate-access-with-shared-access-signature)를 사용 하 여 논리 앱 콜백 url을 안전 하 게 생성 합니다. 이 서명은 쿼리 매개 변수로 전달 되 고 논리 앱을 실행 하기 전에 유효성을 검사 해야 합니다. Azure는 논리 앱, 트리거 이름 및 수행되는 작업 별로 비밀 키의 고유한 조합을 사용하여 서명을 생성합니다. 따라서 사용자가 비밀 논리 앱 키에 액세스하지 않으면 유효한 서명을 생성할 수 없습니다.
 
 > [!IMPORTANT]
-> 프로덕션 및 보안 시스템의 경우 다음과 같은 이유로 브라우저에서 직접 논리 앱을 호출 하는 것에 대해 적극 권장 합니다.
+> 프로덕션 및 고급 보안 시스템의 경우 다음과 같은 이유로 브라우저에서 직접 논리 앱을 호출 하는 것에 대해 적극 권장 합니다.
 >
 > * URL에 공유 액세스 키가 나타납니다.
 > * Azure Logic Apps 고객 간에 공유 도메인으로 인해 보안 콘텐츠 정책을 관리할 수 없습니다.

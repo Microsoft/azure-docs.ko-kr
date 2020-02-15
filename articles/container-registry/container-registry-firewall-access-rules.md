@@ -2,13 +2,13 @@
 title: 방화벽 액세스 규칙
 description: ("허용 목록") REST API 및 저장소 끝점 도메인 이름이 나 서비스별 IP 주소 범위에 대 한 액세스를 허용 하 여 방화벽 뒤에서 Azure container registry에 액세스 하는 규칙을 구성 합니다.
 ms.topic: article
-ms.date: 07/17/2019
-ms.openlocfilehash: 4d3c4ff4ca19d8b563c185e5c314011823081df1
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.date: 02/11/2020
+ms.openlocfilehash: 06fedea2adf5e73929f5752279f2bd7e7227e570
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75745191"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168010"
 ---
 # <a name="configure-rules-to-access-an-azure-container-registry-behind-a-firewall"></a>방화벽 뒤에 있는 Azure container registry에 액세스 하는 규칙 구성
 
@@ -115,6 +115,10 @@ ms.locfileid: "75745191"
 Azure 가상 네트워크에서 네트워크 보안 규칙을 사용 하 여 가상 머신과 같은 리소스에서 컨테이너 레지스트리로의 트래픽을 필터링 합니다. Azure 네트워크 규칙 만들기를 간소화 하려면 **AzureContainerRegistry** [service 태그](../virtual-network/security-overview.md#service-tags)를 사용 합니다. 서비스 태그는 글로벌 또는 Azure 지역에 따라 Azure 서비스에 액세스 하기 위한 IP 주소 접두사 그룹을 나타냅니다. 주소가 변경 되 면 태그가 자동으로 업데이트 됩니다. 
 
 예를 들어 대상 **AzureContainerRegistry** 를 사용 하 여 Azure container registry에 대 한 트래픽을 허용 하는 아웃 바운드 네트워크 보안 그룹 규칙을 만듭니다. 특정 지역의 서비스 태그에만 액세스를 허용 하려면 다음 형식으로 지역을 지정 합니다. **AzureContainerRegistry**. [*지역 이름*].
+
+## <a name="configure-client-firewall-rules-for-mcr"></a>MCR에 대 한 클라이언트 방화벽 규칙 구성
+
+방화벽 뒤에서 MCR (Microsoft Container Registry)에 액세스 해야 하는 경우 [mcr 클라이언트 방화벽 규칙](https://github.com/microsoft/containerregistry/blob/master/client-firewall-rules.md)을 구성 하는 지침을 참조 하세요. MCR은 Windows Server 이미지와 같은 모든 Microsoft 게시 docker 이미지의 기본 레지스트리입니다.
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -75,7 +75,7 @@ Load Balancer는 TCP 및 UDP 애플리케이션에 대해 다음과 같은 기�
 
   ![해시 기반 배포](./media/load-balancer-overview/load-balancer-distribution.png)
 
-  그림: *해시 기반 배포 
+  *그림: 해시 기반 배포*
 
 * **애플리케이션 독립성 및 투명성**: Load Balancer는 TCP 또는 UDP나 애플리케이션 계층과 직접 상호 작용하지 않습니다. 모든 TCP 또는 UDP 애플리케이션 시나리오를 지원할 수 있습니다. Load Balancer는 흐름을 종료하거나 시작하지 않으며, 흐름의 페이로드와 상호 작용하지 않고, 애플리케이션 계층 게이트웨이 함수를 제공하지 않습니다. 프로토콜 핸드셰이크는 항상 클라이언트와 백 엔드 풀 인스턴스 사이에서 직접 발생합니다. 인바운드 흐름에 대한 응답은 항상 가상 머신의 응답입니다. 흐름이 가상 머신에 도착하면 원래 원본 IP 주소도 유지됩니다.
   * 모든 엔드포인트는 VM에서만 응답합니다. 예를 들어, TCP 핸드셰이크는 항상 클라이언트와 선택한 백 엔드 VM 사이에서 발행합니다. 프런트 엔드에 요청에 대한 응답은 백 엔드 VM에서 생성한 응답입니다. 프런트 엔드에 대한 연결의 유효성을 성공적으로 확인하는 경우 최소 하나 이상의 백 엔드 가상 머신에 통합형 연결의 유효성을 검사하는 것입니다.
@@ -134,7 +134,7 @@ Load Balancer는 TCP 및 UDP 애플리케이션에 대해 다음과 같은 기�
 
 ![공용 Load Balancer 예](./media/load-balancer-overview/IC727496.png)
 
-그림: *퍼블릭 Load Balancer를 사용하여 웹 트래픽 부하 분산*
+*그림: 퍼블릭 Load Balancer를 사용하여 웹 트래픽 부하 분산*
 
 인터넷 클라이언트가 TCP 포트 80에서 웹앱의 퍼블릭 IP 주소에 웹 페이지 요청을 보냅니다. Azure Load Balancer는 부하 분산된 세트에 있는 3개 VM에 요청을 분산합니다. Load Balancer 알고리즘에 대한 자세한 내용은 [Load Balancer 개념](concepts-limitations.md#load-balancer-concepts)을 참조하세요.
 
@@ -153,7 +153,7 @@ Load Balancer는 TCP 및 UDP 애플리케이션에 대해 다음과 같은 기�
 
 ![내부 Load Balancer 예제](./media/load-balancer-overview/IC744147.png)
 
-그림: *퍼블릭 및 내부 Load Balancer를 둘 다 사용하여 다중 계층 애플리케이션 부하 분산*
+*그림: 퍼블릭 및 내부 Load Balancer를 둘 다 사용하여 다중 계층 애플리케이션 부하 분산*
 
 ## <a name="skus"></a> Load Balancer SKU 비교
 

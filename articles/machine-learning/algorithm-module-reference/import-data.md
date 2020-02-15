@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 10/22/2019
-ms.openlocfilehash: 161c6816bbef31142c576f52fd122d9dd8af7883
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: e7aa19c1d189eb19237ea85aae1ad2441d7e98b9
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76546659"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77163197"
 ---
 # <a name="import-data-module"></a>데이터 가져오기 모듈
 
@@ -33,7 +33,7 @@ ms.locfileid: "76546659"
 - [**Datastores**](../how-to-access-data.md)를 통한 Azure 클라우드 저장소)
     - Azure Blob 컨테이너
     - Azure 파일 공유
-    - Azure Data Lake
+    - Azure 데이터 레이크
     - Azure Data Lake Gen2
     - Azure SQL Database
     - Azure PostgreSQL    
@@ -42,7 +42,7 @@ ms.locfileid: "76546659"
 
 원하는 데이터를 정의 하 고 원본에 연결 하면 **[데이터 가져오기](./import-data.md)** 는 포함 된 값을 기준으로 각 열의 데이터 형식을 유추 하 고 디자이너 파이프라인에 데이터를 로드 합니다. **데이터 가져오기** 의 출력은 모든 디자이너 파이프라인에서 사용할 수 있는 데이터 집합입니다.
 
-원본 데이터가 변경 되 면 데이터 집합을 새로 고치고 [데이터 가져오기](./import-data.md)를 다시 실행 하 여 새 데이터를 추가할 수 있습니다. 그러나 파이프라인을 실행할 때마다 원본에서 다시 읽지 않으려는 경우 **캐시 된 결과 사용** 옵션을 TRUE로 설정 합니다. 이 옵션을 선택 하면 모듈은 파이프라인이 동일한 소스와 동일한 입력 옵션을 사용 하 여 이전에 실행 되었는지 여부를 확인 합니다. 이전 실행을 찾은 경우 원본에서 데이터를 다시 로드 하는 대신 캐시의 데이터가 사용 됩니다.
+원본 데이터가 변경 되 면 데이터 집합을 새로 고치고 [데이터 가져오기](./import-data.md)를 다시 실행 하 여 새 데이터를 추가할 수 있습니다.
 
 ## <a name="how-to-configure-import-data"></a>데이터 가져오기를 구성 하는 방법
 
@@ -60,11 +60,7 @@ ms.locfileid: "76546659"
 
     ![가져오기-데이터-미리 보기](media/module/import-data.png)
 
-1. 연속 실행에서 다시 사용할 데이터 집합을 캐시 하려면 **캐시 된 결과 사용** 옵션을 선택 합니다.
 
-    모듈 매개 변수에 대 한 다른 변경 내용이 없는 경우 파이프라인은 모듈이 처음 실행 될 때만 데이터를 로드 하 고 이후에는 캐시 된 버전의 데이터 집합을 사용 합니다.
-
-    파이프라인을 실행할 때마다 데이터를 다시 로드 해야 하는 경우이 옵션의 선택을 취소 합니다.
 
 1. 파이프라인을 실행합니다.
 

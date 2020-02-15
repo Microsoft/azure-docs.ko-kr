@@ -463,6 +463,8 @@
                       href: saas-multitenantdb-schema-management.md
                     - name: 분석용 ETL
                       href: saas-multitenantdb-tenant-analytics.md
+        - name: 할당량 증가 요청
+          href: quota-increase-request.md
 - name: SQL 데이터베이스
   items:
     - name: SQL 데이터베이스 설명서

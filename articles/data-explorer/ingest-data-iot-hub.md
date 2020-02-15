@@ -7,12 +7,12 @@ ms.reviewer: tzgitlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 01/08/2020
-ms.openlocfilehash: 93c0b3e27156655acee24d424cd890b48bb8e4e7
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 78455c90bab694b77a5e4a56d0b40518867d8d8c
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77064991"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77188356"
 ---
 # <a name="ingest-data-from-iot-hub-into-azure-data-explorer"></a>IoT Hub에서 Azure 데이터 탐색기로 데이터 수집 
 
@@ -24,7 +24,7 @@ ms.locfileid: "77064991"
 
 Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능한 빠르고 확장성이 우수한 데이터 탐색 서비스입니다. Azure 데이터 탐색기는 빅 데이터 스트리밍 플랫폼과 IoT 수집 서비스인 IoT Hub에서 수집 (데이터 로드)을 제공 합니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Azure 구독이 아직 없는 경우 시작하기 전에 [Azure 체험 계정](https://azure.microsoft.com/free/)을 만듭니다.
 * 데이터베이스 이름이 *testdb*인 [테스트 클러스터 및 데이터베이스를](create-cluster-database-portal.md) 만듭니다.
@@ -83,7 +83,7 @@ Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능
     | IoT Hub | IoT Hub 이름 |
     | 공유 액세스 정책 | 공유 액세스 정책의 이름입니다. 읽기 권한이 있어야 합니다. |
     | 소비자 그룹 |  IoT Hub 기본 제공 끝점에 정의 된 소비자 그룹 |
-    | 이벤트 시스템 속성 | [IoT Hub 이벤트 시스템 속성](/azure/iot-hub/iot-hub-devguide-messages-construct#system-properties-of-d2c-iot-hub-messages)입니다. 시스템 속성을 추가 하는 경우 선택한 속성을 포함 하도록 테이블 스키마 및 [매핑을](/azure/kusto/management/mappings) [만들거나](/azure/kusto/management/tables#create-table) [업데이트](/azure/kusto/management/tables#alter-table-and-alter-merge-table) 합니다. | | | 
+    | 이벤트 시스템 속성 | [IoT Hub 이벤트 시스템 속성](/azure/iot-hub/iot-hub-devguide-messages-construct#system-properties-of-d2c-iot-hub-messages)입니다. 시스템 속성을 추가 하는 경우 선택한 속성을 포함 하도록 테이블 스키마 및 [매핑을](/azure/kusto/management/mappings) [만들거나](/azure/kusto/management/create-table-command) [업데이트](/azure/kusto/management/alter-table-command) 합니다. | | | 
 
     > [!NOTE]
     > [수동 장애 조치 (failover)](/azure/iot-hub/iot-hub-ha-dr#manual-failover)의 경우 데이터 연결을 다시 만들어야 합니다.
@@ -95,7 +95,7 @@ Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능
 
      **설정** | **제안 값** | **필드 설명**
     |---|---|---|
-    | Table | *TestTable* | **Testdb**에서 만든 테이블입니다. |
+    | 테이블 | *TestTable* | **Testdb**에서 만든 테이블입니다. |
     | 데이터 형식 | *JSON* | 지원 되는 형식은 Avro, CSV, JSON, MULTILINE JSON, PSV, SOHSV, SCSV, TSV, TSVE 및 TXT입니다. |
     | 열 매핑 | *TestMapping* | **Testdb**에서 만든 [매핑으로](/azure/kusto/management/mappings) , 들어오는 JSON 데이터를 **testdb**의 열 이름 및 데이터 형식에 매핑합니다. JSON, 여러 줄 JSON 및 AVRO에 필요 하 고 다른 형식의 경우 선택적입니다.|
     | | |

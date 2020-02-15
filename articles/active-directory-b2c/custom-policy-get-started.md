@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/18/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: cd1b5f120952752e956c957df9daa124a06d7b63
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 5a0e5846dd541e4997c271aee180b3790efa16e9
+ms.sourcegitcommit: d12880206cf9926af6aaf3bfafda1bc5b0ec7151
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76847629"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77114040"
 ---
 # <a name="get-started-with-custom-policies-in-azure-active-directory-b2c"></a>Azure Active Directory B2C에서 사용자 지정 정책 시작
 
@@ -23,7 +23,7 @@ ms.locfileid: "76847629"
 
 [사용자 지정 정책은](custom-policy-overview.md) Azure Active Directory B2C (Azure AD B2C) 테 넌 트의 동작을 정의 하는 구성 파일입니다. 이 문서에서는 전자 메일 주소와 암호를 사용한 로콜 계정 등록 또는 로그인을 지원하는 사용자 지정 정책을 만듭니다. ID 공급자를 추가하기 위한 환경도 준비합니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 - 아직 없는 경우 Azure 구독에 연결 된 [Azure AD B2C 테 넌 트를 만듭니다](tutorial-create-tenant.md) .
 - Azure AD B2C와 통신할 수 있도록 만든 테 넌 트에 [응용 프로그램을 등록](tutorial-register-applications.md) 합니다.
@@ -73,7 +73,7 @@ Azure AD B2C 테 넌 트에서 이러한 두 응용 프로그램을 한 번만 �
 
 ### <a name="register-the-identityexperienceframework-application"></a>IdentityExperienceFramework 애플리케이션 등록
 
-Azure AD B2C 테넌트에 애플리케이션을 등록하기 위해 현재 **애플리케이션** 환경 또는 새로운 통합 **앱 등록(미리 보기)** 환경을 사용할 수 있습니다. [새 환경에 대해 자세히 알아보세요](https://aka.ms/b2cappregintro).
+Azure AD B2C 테 넌 트에 응용 프로그램을 등록 하려면 **앱 등록 (레거시)** 환경 또는 새로운 통합 **앱 등록 (미리 보기)** 환경을 사용할 수 있습니다. [새 환경에 대해 자세히 알아보세요](https://aka.ms/b2cappregintro).
 
 #### <a name="applicationstabapplications"></a>[애플리케이션](#tab/applications/)
 

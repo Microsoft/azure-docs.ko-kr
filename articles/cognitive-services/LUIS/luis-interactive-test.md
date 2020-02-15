@@ -1,26 +1,18 @@
 ---
 title: LUIS 포털에서 앱 테스트
-titleSuffix: Azure Cognitive Services
 description: Language Understanding(LUIS)을 사용하여 애플리케이션을 지속적으로 개선하고 해당 언어의 이해를 향상합니다.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.custom: seodec18
-ms.service: cognitive-services
-ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 11/19/2019
-ms.author: diberry
-ms.openlocfilehash: 628547e8254bb0055cf1f09af50e79b68311a759
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: ba7e23a72cd308dd4393bf9a581571e2bc9f5fa0
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74221771"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152910"
 ---
 # <a name="test-your-luis-app-in-the-luis-portal"></a>LUIS 포털에서 LUIS 앱 테스트
 
-앱 [테스트](luis-concept-test.md) 는 반복적인 프로세스입니다. LUIS 앱을 학습시킨 후 샘플 발화로 앱을 테스트하여 의도 및 엔터티가 올바르게 인식되는지 확인합니다. 인식되지 않으면 LUIS 앱을 업데이트하고 학습하고, 다시 테스트합니다. 
+앱 [테스트](luis-concept-test.md) 는 반복적인 프로세스입니다. LUIS 앱을 학습시킨 후 샘플 발화로 앱을 테스트하여 의도 및 엔터티가 올바르게 인식되는지 확인합니다. 인식되지 않으면 LUIS 앱을 업데이트하고 학습하고, 다시 테스트합니다.
 
 [!INCLUDE [Uses preview portal](includes/uses-portal-preview.md)]
 
@@ -32,13 +24,13 @@ ms.locfileid: "74221771"
 
 ## <a name="train-before-testing"></a>테스트 전 학습
 
-최신 버전의 활성 앱에 대해 테스트 하려면 테스트 하기 전에 상단 메뉴에서 **학습** 을 선택 합니다. 
+최신 버전의 활성 앱에 대해 테스트 하려면 테스트 하기 전에 상단 메뉴에서 **학습** 을 선택 합니다.
 
 ## <a name="test-an-utterance"></a>발화 테스트
 
-테스트 utterance는 응용 프로그램의 예제 길이 발언와 정확 하 게 일치 하면 안 됩니다. 테스트 utterance에는 사용자에 게 필요한 단어 선택, 구 길이 및 엔터티 사용이 포함 되어야 합니다. 
+테스트 utterance는 응용 프로그램의 예제 길이 발언와 정확 하 게 일치 하면 안 됩니다. 테스트 utterance에는 사용자에 게 필요한 단어 선택, 구 길이 및 엔터티 사용이 포함 되어야 합니다.
 
-1. **내 앱** 페이지에서 해당 이름을 선택하여 앱에 액세스합니다. 
+1. **내 앱** 페이지에서 해당 이름을 선택하여 앱에 액세스합니다.
 
 1. **테스트** 슬라이드 아웃 패널에 액세스하려면 애플리케이션의 위쪽 패널에서 **테스트**를 선택합니다.
 
@@ -53,9 +45,9 @@ ms.locfileid: "74221771"
 
 ## <a name="inspect-score"></a>점수 검사
 
-**검사** 패널에서 테스트 결과의 세부 정보를 검사합니다. 
- 
-1. **테스트** 슬라이드 아웃 패널이 열려 있을 때 비교할 발화에 **검사**를 선택합니다. 
+**검사** 패널에서 테스트 결과의 세부 정보를 검사합니다.
+
+1. **테스트** 슬라이드 아웃 패널이 열려 있을 때 비교할 발화에 **검사**를 선택합니다.
 
     ![테스트 결과에 대한 자세한 내용을 보려면 [검사] 단추를 선택합니다.](./media/luis-how-to-interactive-test/inspect.png)
 
@@ -73,7 +65,7 @@ ms.locfileid: "74221771"
 
 ## <a name="view-sentiment-results"></a>감정 결과 보기
 
-**감정 분석**이 **[게시](luis-how-to-publish-app.md#enable-sentiment-analysis)** 페이지에 구성되어 있으면 테스트 결과에는 발화에서 발견된 감정이 포함됩니다. 
+**감정 분석**이 **[게시](luis-how-to-publish-app.md#enable-sentiment-analysis)** 페이지에 구성되어 있으면 테스트 결과에는 발화에서 발견된 감정이 포함됩니다.
 
 ![감정 분석이 포함된 테스트 창 이미지](./media/luis-how-to-interactive-test/sentiment.png)
 
@@ -83,7 +75,7 @@ ms.locfileid: "74221771"
 
 ## <a name="compare-with-published-version"></a>게시된 버전과 비교
 
-게시된 [엔드포인트](luis-glossary.md#endpoint) 버전을 사용하여 앱의 활성 버전을 테스트할 수 있습니다. **검사** 패널에서 **게시된 버전과 비교**를 선택합니다. 게시된 모델에 대한 모든 테스트는 Azure 구독 할당량 잔액에서 차감됩니다. 
+게시된 [엔드포인트](luis-glossary.md#endpoint) 버전을 사용하여 앱의 활성 버전을 테스트할 수 있습니다. **검사** 패널에서 **게시된 버전과 비교**를 선택합니다. 게시된 모델에 대한 모든 테스트는 Azure 구독 할당량 잔액에서 차감됩니다.
 
 ![게시된 버전과 비교](./media/luis-how-to-interactive-test/inspect-panel-compare.png)
 
@@ -92,55 +84,22 @@ ms.locfileid: "74221771"
 
 ![게시된 JSON 응답](./media/luis-how-to-interactive-test/inspect-panel-compare-json.png)
 
-<!--Service name is 'Bing Spell Check v7 API' in the portal-->
 ## <a name="additional-settings-in-test-panel"></a>테스트 패널의 추가 설정
 
 ### <a name="luis-endpoint"></a>LUIS 엔드포인트
 
-여러 개의 LUIS 엔드포인트가 있는 경우 테스트의 [게시됨] 창에서 **추가 설정** 링크를 사용하여 테스트에 사용되는 엔드포인트를 변경합니다. 사용할 엔드포인트가 확실하지 않은 경우 기본 **Starter_Key**를 선택합니다. 
+여러 개의 LUIS 엔드포인트가 있는 경우 테스트의 [게시됨] 창에서 **추가 설정** 링크를 사용하여 테스트에 사용되는 엔드포인트를 변경합니다. 사용할 엔드포인트가 확실하지 않은 경우 기본 **Starter_Key**를 선택합니다.
 
 > [!div class="mx-imgBorder"]
 > 추가 설정 링크가 강조 표시 된 테스트 패널 ![강조 표시](media/luis-how-to-interactive-test/additional-settings-v3-settings.png)
 
-<!--
-###  View Bing Spell Check corrections in test panel
-
-Requirements to view the spelling corrections: 
-
-* Published app
-* Bing Spell Check [service key](https://azure.microsoft.com/try/cognitive-services/?api=spellcheck-api). The service key is not stored and needs to be reset for each browser session. 
-
-Use the following procedure to include the [Bing Spell Check v7](https://azure.microsoft.com/services/cognitive-services/spell-check/) service  in the Test pane results. 
-
-1. In the **Test** pane, enter an utterance. When the utterance is predicted, select **[Inspect](#inspect-score)** underneath the utterance you entered. 
-
-1. When the **Inspect** panel opens, select **[Compare with Published](#compare-with-published-version)**. 
-
-1. When the **Published** panel opens, select **[Additional Settings](#additional-settings-in-test-panel)**.
-
-1. In the pop-up dialog, check **Enable Bing Spell Check** and enter the key, then select **Done**. 
-    ![Enter Bing Spell Check service key](./media/luis-how-to-interactive-test/interactive-with-spell-check-service-key-text.png)
-
-1. Enter a query with an incorrect spelling such as `book flite to seattle` and select enter. The incorrect spelling of the word `flite` is replaced in the query sent to LUIS and the resulting JSON shows both the original query, as `query`, and the corrected spelling in the query, as `alteredQuery`.
-
-<a name="json-file-with-no-duplicates"></a>
-<a name="import-a-dataset-file-for-batch-testing"></a>
-<a name="export-rename-delete-or-download-dataset"></a>
-<a name="run-a-batch-test-on-your-trained-app"></a>
-<a name="access-batch-test-result-details-in-a-visualized-view"></a>
-<a name="filter-chart-results-by-intent-or-entity"></a>
-<a name="investigate-false-sections"></a>
-<a name="view single-point utterance data"></a>
-<a name="relabel-utterances-and-retrain"></a>
-<a name="false-test-results"></a>
--->
 
 ## <a name="batch-testing"></a>일괄 테스트
 일괄 테스트 [개념](luis-concept-batch-test.md)을 확인하고 발화를 일괄 테스트하는 [방법](luis-how-to-batch-test.md)을 알아봅니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-테스트에서 LUIS 앱이 올바른 의도와 엔터티를 인식하지 못하는 것으로 나타나면 추가 발화에 레이블을 지정하거나 기능을 추가하여 LUIS 앱의 정확도를 개선할 수 있습니다. 
+테스트에서 LUIS 앱이 올바른 의도와 엔터티를 인식하지 못하는 것으로 나타나면 추가 발화에 레이블을 지정하거나 기능을 추가하여 LUIS 앱의 정확도를 개선할 수 있습니다.
 
-* [LUIS로 제안된 음성에 레이블 지정](luis-how-to-review-endpoint-utterances.md) 
-* [기능을 사용하여 LUIS 앱 성능 향상](luis-how-to-add-features.md) 
+* [LUIS로 제안된 발화에 레이블 지정](luis-how-to-review-endpoint-utterances.md)
+* [기능을 사용하여 LUIS 앱 성능 향상](luis-how-to-add-features.md)

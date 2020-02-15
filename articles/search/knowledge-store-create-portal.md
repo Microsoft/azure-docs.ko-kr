@@ -7,13 +7,13 @@ ms.author: heidist
 manager: nitinme
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 12/30/2019
-ms.openlocfilehash: cffd94459e3a18567f2ff2f6b8fca35598cb5eed
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.date: 01/29/2020
+ms.openlocfilehash: b75b760704511627c74301ae3fff82c24a262e17
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75563468"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76904894"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-knowledge-store-in-the-azure-portal"></a>빠른 시작: Azure Portal에서 Azure Cognitive Search 지식 저장소 만들기
 
@@ -81,7 +81,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 이 마법사 단계에서는 인지 기술 보강을 사용하여 기술 세트를 만듭니다. 원본 데이터는 여러 언어로 된 고객 리뷰로 구성됩니다. 이 데이터 세트와 관련된 기술에는 핵심 구 추출, 감정 감지 및 텍스트 번역이 포함됩니다. 이후 단계에서 이러한 보강은 지식 저장소에 Azure 테이블로 "프로젝션"됩니다.
 
 1. **Cognitive Services 연결** 섹션을 펼칩니다. **무료(제한적 보강)** 가 기본적으로 선택되어 있습니다. HotelReviews-Free.csv의 레코드 수가 19개이고 이 무료 리소스에서 하루 최대 20개의 트랜잭션을 허용하므로 이 리소스를 사용할 수 있습니다.
-1. **인지 기술 추가**를 확장합니다.
+1. **보강 추가**를 확장합니다.
 1. **기술 세트 이름**에 대해 `hotel-reviews-ss`를 입력합니다.
 1. **원본 데이터 필드**에 대해 **reviews_text**를 선택합니다.
 1. **보강 세분성 수준**에 대해 **페이지(5,000자 청크)** 를 선택합니다.
@@ -93,11 +93,11 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
       ![기술 세트 만들기](media/knowledge-store-create-portal/hotel-reviews-ss.png "기술 집합 만들기")
 
 1. **지식 저장소에 보강 저장**을 펼칩니다.
-1. 이전 단계에서 저장한 **스토리지 계정 연결 문자열**을 입력합니다.
 1. 다음 **Azure 테이블 프로젝션**을 선택합니다.
     + **문서**
     + **페이지**
     + **핵심 구**
+1. 이전 단계에서 저장한 **스토리지 계정 연결 문자열**을 입력합니다.
 
     ![지식 저장소 구성](media/knowledge-store-create-portal/hotel-reviews-ks.png "지식 저장소 구성")
 

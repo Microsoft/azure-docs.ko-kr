@@ -15,12 +15,12 @@ ms.date: 08/23/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9dbc7f8068ed84f42ec41ebd969e0aa91ffbb264
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: e5aa30bc819531ee8cc9cd337648a6cbc661bb29
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73473327"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77149816"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Azure Active Directory Connect FAQ
 
@@ -32,7 +32,7 @@ IT 환경의이 중요 한 구성 요소에 대 한 보안 공격 노출 영역�
 
 * 도메인에 가입 된 서버에 Azure AD Connect 배포 하 고 도메인 관리자 또는 엄격 하 게 제어 되는 다른 보안 그룹에 대 한 관리 액세스 제한
 
-자세한 내용은 다음을 참조하세요. 
+자세히 알아보려면 다음을 참조하십시오. 
 
 * [관리자 그룹 보안](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-g--securing-administrators-groups-in-active-directory)
 
@@ -101,7 +101,7 @@ Azure AD Connect 설치는 설치 마법사를 사용하는 경우에만 지원�
     - 백업 키
     - 백업 동기화 규칙
     - 백업 서버 구성
-    - 백업 SQL Database
+    - SQL Database 백업
 - SQL VSS 기록기를 사용 하지 않고 SQL을 백업 하는 타사 백업 에이전트가 없는지 확인 (타사 스냅숏을 사용 하는 가상 서버에 공통)
 - 복잡성을 더할 때 사용 되는 사용자 지정 동기화 규칙의 크기 제한
 - Azure AD Connect 서버를 계층 0 서버로 처리
@@ -113,11 +113,11 @@ Azure AD Connect 설치는 설치 마법사를 사용하는 경우에만 지원�
 - 스테이징 서버는 고가용성 솔루션은 아니지만 스테이징 서버는 여러 개 있을 수 있습니다.
 - "지연" 준비 서버를 도입 하면 오류가 발생 하는 경우 잠재적인 가동 중지 시간을 줄일 수 있습니다.
 - 스테이징 서버에 대 한 모든 업그레이드를 먼저 테스트 및 유효성 검사
-- 준비 서버로 전환 하기 전에 항상 내보내기 유효성 검사-전체 가져오기 및 전체 동기화를 위해 준비 서버를 활용 하 여 비즈니스 영향을 줄입니다.
+- 준비 서버로 전환 하기 전에 항상 내보내기의 유효성을 검사 합니다.  전체 가져오기 및 전체 동기화를 위해 준비 서버를 활용 하 여 비즈니스 영향 줄이기
 - 가능한 한 Azure AD Connect 서버 간의 버전 일관성 유지 
 
 **Q: Azure AD Connect를 사용 하 여 작업 그룹 컴퓨터에서 Azure AD Connector 계정을 만들 수 있나요?**
-아니요.  Azure AD Connect에서 Azure AD Connector 계정을 자동으로 만들도록 허용 하려면 컴퓨터가 도메인에 가입 되어 있어야 합니다.  
+No.  Azure AD Connect에서 Azure AD Connector 계정을 자동으로 만들도록 허용 하려면 컴퓨터가 도메인에 가입 되어 있어야 합니다.  
 
 ## <a name="network"></a>네트워크
 **Q: 네트워크에서 연결을 열어 둘 수 있는 시간을 제한 하는 방화벽, 네트워크 장치 또는 기타 항목이 있습니다. Azure AD Connect 사용 하는 경우 클라이언트 쪽 시간 제한 임계값은 어떻게 되나요?**  
@@ -147,10 +147,10 @@ Azure AD Connect 설치는 설치 마법사를 사용하는 경우에만 지원�
 
 ## <a name="environment"></a>환경
 **Q: Azure AD Connect를 설치한 후에 서버 이름을 변경하는 것이 지원되나요?**  
-아니요. 서버 이름을 변경하면 동기화 엔진이 SQL 데이터베이스 인스턴스에 연결할 수 없으므로 서비스를 시작할 수 없습니다.
+No. 서버 이름을 변경하면 동기화 엔진이 SQL 데이터베이스 인스턴스에 연결할 수 없으므로 서비스를 시작할 수 없습니다.
 
 **Q: FIPS 사용 컴퓨터에서 NGC (차세대 암호화) 동기화 규칙이 지원 되나요?**  
-아니요.  지원 되지 않습니다.
+No.  이러한 항목은 지원되지 않습니다.
 
 **Q. Azure Portal에서 동기화 된 장치 (예: HAADJ)를 사용 하지 않도록 설정한 경우 다시 사용 하도록 설정 하는 이유는 무엇 인가요?**<br>
 동기화 된 장치는 온-프레미스에서 작성 또는 마스터 될 수 있습니다. 동기화 된 장치가 온-프레미스에서 사용 하도록 설정 된 경우 이전에 관리자가 사용 하지 않도록 설정한 경우에도 Azure Portal에서 다시 사용 하도록 설정할 수 있습니다. 동기화 된 장치를 사용 하지 않도록 설정 하려면 온-프레미스 Active Directory를 사용 하 여 컴퓨터 계정을 사용 하지 않도록 설정 합니다.
@@ -178,7 +178,7 @@ Azure AD Connect 설치는 설치 마법사를 사용하는 경우에만 지원�
 이 사이트에서 설명하는 cmdlet을 제외하고 Azure AD Connect에 있는 다른 PowerShell cmdlet은 고객이 사용할 수 없습니다.
 
 **Q: Synchronization Service Manager에 있는 "서버 내보내기/서버 가져오기" 옵션을 사용하여 서버 간에 구성을 이동할 수 있나요?**  
-아니요. 이 옵션은 모든 구성 설정을 검색하는 것이 아니므로 사용하면 안됩니다. 그 대신 마법사를 사용하여 두 번째 서버에서 기본 구성을 만들고, 동기화 규칙 편집기를 사용하여 서버 간에 사용자 지정 규칙을 이동하도록 PowerShell 스크립트를 생성합니다. 자세한 내용은 [스윙 마이그레이션](how-to-upgrade-previous-version.md#swing-migration)을 참조하세요.
+No. 이 옵션은 모든 구성 설정을 검색하는 것이 아니므로 사용하면 안됩니다. 그 대신 마법사를 사용하여 두 번째 서버에서 기본 구성을 만들고, 동기화 규칙 편집기를 사용하여 서버 간에 사용자 지정 규칙을 이동하도록 PowerShell 스크립트를 생성합니다. 자세한 내용은 [스윙 마이그레이션](how-to-upgrade-previous-version.md#swing-migration)을 참조하세요.
 
 **Q: Azure 로그인 페이지에 대해 암호를 캐시할 수 있지만 *autocomplete = "false"* 특성이 있는 암호 입력 요소를 포함하고 있어 이 캐싱을 방지할 수 있나요?**  
 현재 autocomplete 태그를 포함하여 **암호** 필드의 HTML 특성을 수정하는 기능은 지원되지 않습니다. 현재 **암호** 필드에 특성을 추가할 수 있는 사용자 지정 JavaScript를 허용하는 기능을 개발하고 있습니다.
@@ -187,7 +187,7 @@ Azure AD Connect 설치는 설치 마법사를 사용하는 경우에만 지원�
 현재 autocomplete 태그를 포함하여 **암호** 입력 필드의 HTML 특성을 수정하는 기능은 지원되지 않습니다. 현재 **암호** 필드에 특성을 추가할 수 있는 사용자 지정 JavaScript를 허용하는 기능을 개발하고 있습니다.
 
 **Q: 동시 세션을 방지하는 방법이 있나요?**  
-아니요.
+No.
 
 ## <a name="auto-upgrade"></a>자동 업그레이드
 

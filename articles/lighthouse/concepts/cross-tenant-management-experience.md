@@ -1,14 +1,14 @@
 ---
 title: 테넌트 간 관리 환경
 description: Azure 위임 리소스 관리를 통해 테넌트 간 관리 환경을 사용하도록 설정할 수 있습니다.
-ms.date: 01/06/2020
+ms.date: 02/07/2020
 ms.topic: conceptual
-ms.openlocfilehash: 661ada4e5d620d4977290986f5649b91363202fe
-ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
+ms.openlocfilehash: f5d68be1226a026f8fdfd7595cb2812ce51dfdb6
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706991"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77122051"
 ---
 # <a name="cross-tenant-management-experiences"></a>테넌트 간 관리 환경
 
@@ -55,6 +55,7 @@ Azure 위임 리소스 관리를 사용하면 다른 테넌트의 다른 계정�
 [Azure Backup](../../backup/index.yml):
 
 - 고객 테넌트의 고객 데이터를 백업 및 복원합니다.
+- 백업 [탐색기](../../backup/monitor-azure-backup-with-backup-explorer.md) 를 사용 하 여 백업 항목 (백업에 대해 아직 구성 되지 않은 Azure 리소스 포함) 및 위임 된 구독의 모니터링 정보 (작업 및 경고)에 대 한 작업 정보를 볼 수 있습니다. 백업 탐색기는 현재 Azure VM 데이터에만 사용할 수 있습니다.
 
 [AKS(Azure Kubernetes Service)](../../aks/index.yml):
 
@@ -136,4 +137,4 @@ Azure 위임 리소스 관리를 사용하면 다른 테넌트의 다른 계정�
 ## <a name="next-steps"></a>다음 단계
 
 - [Azure Resource Manager 템플릿을 사용](../how-to/onboard-customer.md)하거나 [개인 또는 공용 관리형 서비스 제품을 Azure Marketplace에 게시](../how-to/publish-managed-services-offers.md)하여 Azure 위임 리소스 관리에 고객을 온보딩합니다.
-- Azure Portal의 **내 고객**으로 이동하여 [고객을 보고 관리](../how-to/view-manage-customers.md)합니다.
+- Azure Portal의 [내 고객](../how-to/view-manage-customers.md)으로 이동하여 **고객을 보고 관리**합니다.

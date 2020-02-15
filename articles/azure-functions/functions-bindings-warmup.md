@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: reference
 ms.date: 11/08/2019
 ms.author: alkarche
-ms.openlocfilehash: 108294e3f125da9fb009eb0a85585dab026c8d01
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: c3ed780bc50b690b2f5c3285024695ec6426b9b3
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75933327"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77167320"
 ---
 # <a name="azure-functions-warm-up-trigger"></a>Azure Functions 준비 트리거
 
@@ -171,25 +171,9 @@ def main(warmupContext: func.Context) -> None:
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-다음 예제에서는 *함수 json* 파일의 워밍업 트리거와 앱에 추가 될 때 각 새 인스턴스에서 실행 되는 [Java 함수](functions-reference-java.md) 를 보여 줍니다.
+다음 예제에서는 각 새 인스턴스가 앱에 추가 될 때 실행 되는 워밍업 트리거를 보여 줍니다.
 
-함수는 ```warmup``` (대/소문자 구분 안 함)로 명명 되어야 하 고 앱 당 하나의 준비 함수만 있을 수 있습니다.
-
-*function.json* 파일은 다음과 같습니다.
-
-```json
-{
-    "bindings": [
-        {
-            "type": "warmupTrigger",
-            "direction": "in",
-            "name": "warmupContext"
-        }
-    ]
-}
-```
-
-Java 코드는 다음과 같습니다.
+함수는 `warmup` (대/소문자 구분 안 함)로 명명 되어야 하 고 앱 당 하나의 준비 함수만 있을 수 있습니다.
 
 ```java
 @FunctionName("Warmup")
@@ -245,9 +229,9 @@ Python에서 특성을 지원 하지 않습니다.
 
 |function.json 속성 | 특성 속성 |Description|
 |---------|---------|----------------------|
-| **type** | n/a| 필수 - `warmupTrigger`으로 설정해야 합니다. |
-| **direction** | n/a| 필수 - `in`으로 설정해야 합니다. |
-| **name** | n/a| 필수-함수 코드에 사용 되는 변수 이름입니다.|
+| **type** | 해당 없음| 필수 - `warmupTrigger`으로 설정해야 합니다. |
+| **direction** | 해당 없음| 필수 - `in`으로 설정해야 합니다. |
+| **name** | 해당 없음| 필수-함수 코드에 사용 되는 변수 이름입니다.|
 
 ## <a name="trigger---usage"></a>트리거 - 사용
 

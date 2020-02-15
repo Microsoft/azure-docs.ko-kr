@@ -1,22 +1,14 @@
 ---
 title: 다중 전환 대화-QnA Maker
-titleSuffix: Azure Cognitive Services
 description: 프롬프트와 컨텍스트를 사용 하 여 한 질문에서 다른 질문으로의 봇에 대해 다중 턴 이라고 하는 여러 턴을 관리 합니다. 멀티 턴은 이전 질문의 컨텍스트가 다음 질문 및 답변에 영향을 주는 앞뒤로 대화를 수행할 수 있는 기능입니다.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.custom: seodec18
-ms.service: cognitive-services
-ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 12/05/2019
-ms.author: diberry
-ms.openlocfilehash: 681f00adde1d440fbb41f2e66652db34d53fbf99
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.date: 02/13/2020
+ms.openlocfilehash: abdde09fbb1f6b066772366c5cea933824cb5864
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76843263"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77210417"
 ---
 # <a name="use-follow-up-prompts-to-create-multiple-turns-of-a-conversation"></a>추가 작업 프롬프트를 사용하여 여러 대화 설정 만들기
 
@@ -31,6 +23,9 @@ ms.locfileid: "76843263"
 일부 질문은 단일 턴으로 대답할 수 없습니다. 클라이언트 응용 프로그램 (chat bot) 대화를 디자인할 때 사용자는 필터링 또는 구체화 해야 하는 질문을 하 여 올바른 답을 확인할 수 있습니다. 사용자에 게 *추가 작업 프롬프트를 제공*하 여 가능한 질문을 통해이 흐름을 만들 수 있습니다.
 
 사용자가 질문을 하면 QnA Maker는 대답 _및_ 추가 작업 프롬프트를 반환 합니다. 이 응답을 통해 추가 질문을 선택 사항으로 표시할 수 있습니다.
+
+> [!CAUTION]
+> 다중 전환 프롬프트는 FAQ 문서에서 추출 되지 않습니다. 다중 전환 추출을 수행 해야 하는 경우 QnA 쌍을 Faq로 지정 하는 물음표를 제거 합니다.
 
 ## <a name="example-multi-turn-conversation-with-chat-bot"></a>채팅 봇을 사용 하는 다중 전환 예제
 
@@ -116,7 +111,7 @@ KB를 게시 한 후에는 **Bot 만들기** 단추를 선택 하 여 QnA Maker 
     |필드|값|
     |--|--|
     |표시 텍스트|**장치 끄기를**입력 합니다. 추가 작업 프롬프트에 표시할 사용자 지정 텍스트입니다.|
-    |컨텍스트 전용| 이 확인란을 선택 합니다. 질문이 컨텍스트를 지정 하는 경우에만 대답이 반환 됩니다.|
+    |컨텍스트 전용| 이 확인란을 선택합니다. 질문이 컨텍스트를 지정 하는 경우에만 대답이 반환 됩니다.|
     |답변에 대 한 링크|**로그인 화면 사용** 을 입력 하 여 기존 질문 및 답변 쌍을 찾습니다.|
 
 
@@ -153,7 +148,7 @@ KB를 게시 한 후에는 **Bot 만들기** 단추를 선택 하 여 QnA Maker 
     |필드|값|
     |--|--|
     |표시 텍스트|*Windows 계정을 만듭니다*. 추가 작업 프롬프트에 표시할 사용자 지정 텍스트입니다.|
-    |컨텍스트 전용|이 확인란을 선택 합니다. 이 대답은 질문이 컨텍스트를 지정 하는 경우에만 반환 됩니다.|
+    |컨텍스트 전용|이 확인란을 선택합니다. 이 대답은 질문이 컨텍스트를 지정 하는 경우에만 반환 됩니다.|
     |답변에 대 한 링크|답변으로 다음 텍스트를 입력 합니다.<br>*신규 또는 기존 전자 메일 계정을 사용 하 여 Windows 계정을 [만듭니다](https://account.microsoft.com/)* .<br>데이터베이스를 저장 하 고 학습 하면이 텍스트가 변환 됩니다. |
     |||
 

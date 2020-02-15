@@ -1,18 +1,18 @@
 ---
-title: Azure Functions 프리미엄 플랜
+title: Azure Functions 프리미엄 계획
 description: Azure Functions 프리미엄 계획에 대 한 세부 정보 및 구성 옵션 (VNet, 콜드 시작 안 함, 실행 기간 제한 없음)입니다.
 author: jeffhollan
 ms.topic: conceptual
 ms.date: 10/16/2019
 ms.author: jehollan
-ms.openlocfilehash: b373691a6b9649a43d68c9da93b49fd20536c42b
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 81db0889294360f74cb42d388e5d875de91c1019
+ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024639"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77212466"
 ---
-# <a name="azure-functions-premium-plan"></a>Azure Functions 프리미엄 플랜
+# <a name="azure-functions-premium-plan"></a>Azure Functions 프리미엄 계획
 
 Azure Functions 프리미엄 요금제 (탄력적 프리미엄 요금제 라고도 함)는 함수 앱에 대 한 호스팅 옵션입니다. 프리미엄 요금제는 VNet 연결, 콜드 부팅 및 프리미엄 하드웨어와 같은 기능을 제공 합니다.  여러 함수 앱을 동일한 프리미엄 계획에 배포할 수 있으며,이 계획을 통해 계산 인스턴스 크기, 기본 계획 크기 및 최대 계획 크기를 구성할 수 있습니다.  프리미엄 계획과 기타 계획 및 호스팅 유형을 비교 하는 방법에 대해서는 [함수 크기 조정 및 호스팅 옵션](functions-scale.md)을 참조 하세요.
 
@@ -57,7 +57,7 @@ az resource update -g <resource_group> -n <function_app_name>/config/web --set p
 
 프리미엄 계획의 함수 앱에 서브넷을 할당 하는 경우 각 잠재적 인스턴스에 대해 충분 한 IP 주소가 있는 서브넷이 필요 합니다. 사용 가능한 주소가 100 이상인 IP 블록이 필요 합니다.
 
-자세한 내용은 [VNet과 함수 앱 통합](functions-create-vnet.md)을 참조 하세요.
+자세한 내용은 [함수 앱을 VNet과 통합](functions-create-vnet.md)을 참조 하세요.
 
 ### <a name="rapid-elastic-scale"></a>신속한 탄력적 확장
 
@@ -88,13 +88,18 @@ az resource update -g <resource_group> -n <premium_plan_name> --set properties.m
 
 계획을 만들거나 크기를 조정할 때 세 가지 인스턴스 크기 중에서 선택할 수 있습니다.  총 코어 수와 초당 사용 된 메모리에 대 한 요금이 청구 됩니다.  필요에 따라 앱이 여러 인스턴스로 자동 확장 될 수 있습니다.  
 
-|SKU|코어 수|메모리|Storage|
+|SKU|코어 수|메모리|스토리지|
 |--|--|--|--|
 |EP1|1|3.5GB|250GB|
 |EP2|2|7GB|250GB|
 |EP3|4|14GB|250GB|
 
-## <a name="regions"></a>개 지역
+### <a name="memory-utilization-considerations"></a>메모리 사용률 고려 사항
+메모리를 더 많이 사용 하는 컴퓨터에서 실행 하는 경우 항상 함수 앱에서 사용 가능한 모든 메모리를 사용 한다는 의미는 아닙니다.
+
+예를 들어 JavaScript 함수 앱은 node.js의 기본 메모리 제한에 의해 제한 됩니다. 이 고정 메모리 제한을 늘리려면 앱 설정 `languageWorkers:node:arguments` `--max-old-space-size=<max memory in MB>`값으로 추가 합니다.
+
+## <a name="regions"></a>영역
 
 다음은 각 OS에 대해 현재 지원 되는 지역입니다.
 

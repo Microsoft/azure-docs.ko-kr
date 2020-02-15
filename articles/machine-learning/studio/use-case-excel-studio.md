@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
-author: xiaoharper
-ms.author: amlstudiodocs
+author: likebupt
+ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/20/2017
-ms.openlocfilehash: e440d9d882d0459d04a15b8f39ea6877707ea096
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5831f83d8cd38cc07c64fdc398405c3a70935485
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75427457"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169084"
 ---
 # <a name="migrate-analytics-from-excel-to-azure-machine-learning-studio-classic"></a>Excel에서 Azure Machine Learning Studio로 분석 마이그레이션 (클래식)
 
@@ -53,9 +53,9 @@ Excel 회귀에서는 Excel 분석 도구에 있는 표준 선형 회귀 모델�
 
 |  | Excel | Studio(클래식) |
 | --- |:---:|:---:|
-| 성능 중심 | | |
-| <ul style="list-style-type: none;"><li>조정된 R 제곱</li></ul> |0.96 |N/A |
-| <ul style="list-style-type: none;"><li>결정 <br />계수</li></ul> |N/A |0.78<br />(낮은 정확도) |
+| 성능 | | |
+| <ul style="list-style-type: none;"><li>조정된 R 제곱</li></ul> |0.96 |해당 없음 |
+| <ul style="list-style-type: none;"><li>결정 <br />계수</li></ul> |해당 없음 |0.78<br />(낮은 정확도) |
 | 절대 평균 오차 |$9.5M |$19.4M |
 | 평균 절대 오차율(%) |6.03% |12.2% |
 
@@ -73,13 +73,13 @@ Excel 회귀에서는 Excel 분석 도구에 있는 표준 선형 회귀 모델�
 | --- |:---:|:---:|:---:|
 | 레이블이 지정된 값 |실제 값(숫자) |동일 |동일 |
 | 학습자 |Excel -> 데이터 분석 ->회귀 |선형 회귀 |선형 회귀 |
-| 학습자 옵션 |N/A |기본값 |최소 자승법<br />L2 = 0.005 |
+| 학습자 옵션 |해당 없음 |기본값 |최소 자승법<br />L2 = 0.005 |
 | 데이터 집합 |26개 행, 3가지 기능, 1개 레이블 모든 숫자 |동일 |동일 |
 | 분할: 학습 |처음 18개 행에서 학습되고 마지막 8개 행에서 테스트된 Excel |동일 |동일 |
 | 분할: 테스트 |마지막 8개 행에 적용되는 Excel 회귀 수식 |동일 |동일 |
 | **성능** | | | |
-| 조정된 R 제곱 |0.96 |N/A | |
-| 결정 계수 |N/A |0.78 |0.952049 |
+| 조정된 R 제곱 |0.96 |해당 없음 | |
+| 결정 계수 |해당 없음 |0.78 |0.952049 |
 | 절대 평균 오차 |$9.5M |$19.4M |$9.5M |
 | 평균 절대 오차율(%) |<span style="background-color: 00FF00;"> 6.03%</span> |12.2% |<span style="background-color: 00FF00;"> 6.03%</span> |
 

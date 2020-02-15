@@ -13,12 +13,12 @@ ms.date: 04/08/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, seoapril2019
-ms.openlocfilehash: c5b8c506398af27ced284405dd75e48fb19a17af
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: dbbe501b27bf7ae4d4cb4bc00501aeb1fb06819e
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76698852"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161225"
 ---
 # <a name="integrating-with-azure-active-directory"></a>Azure Active Directory와의 통합
 
@@ -32,7 +32,7 @@ ms.locfileid: "76698852"
 
 ### <a name="support-azure-ad-as-a-way-to-sign-in-to-your-application"></a>응용 프로그램에 로그인 하는 방법으로 Azure AD 지원
 
-**로그인 충돌을 줄이고 지원 비용을 절감합니다.** Azure AD를 사용하여 애플리케이션에 로그인하면 사용자는 이름 및 암호를 기억하지 않아도 됩니다. 개발자는 저장하고 보호할 암호가 줄어듭니다. 잊어버린 암호 재설정을 처리하지 않으므로 상당히 효율적입니다. Azure AD에서는 Office 365, Microsoft Azure 등과 같이 전 세계에서 인기가 많은 다양한 클라우드 애플리케이션에 로그인할 수 있도록 지원합니다. 약 500만 개의 조직에서 4억 3천 만명 이상이 사용 중이므로 사용자가 이미 Azure AD에 로그인되어 있을 가능성이 높습니다. [Azure AD 로그인 지원 추가](v1-authentication-scenarios.md)에 대해 자세히 알아보세요.
+**로그인 충돌을 줄이고 지원 비용을 절감합니다.** Azure AD를 사용하여 애플리케이션에 로그인하면 사용자는 이름 및 암호를 기억하지 않아도 됩니다. 개발자는 저장하고 보호할 암호가 줄어듭니다. 잊어버린 암호 재설정을 처리하지 않으므로 상당히 효율적입니다. Azure AD에서는 Office 365, Microsoft Azure 등과 같이 전 세계에서 인기가 많은 다양한 클라우드 애플리케이션에 로그인할 수 있도록 지원합니다. 약 500만 개의 조직에서 4억 3천 만명 이상이 사용 중이므로 사용자가 이미 Azure AD에 로그인되어 있을 가능성이 높습니다. [Azure AD 로그인 지원 추가](authentication-scenarios.md)에 대해 자세히 알아보세요.
 
 **애플리케이션 등록을 단순화합니다.**  애플리케이션을 등록하는 동안 등록 양식을 사전에 입력하거나 완전히 제거할 수 있도록 Azure AD가 사용자에 대한 필수 정보를 보낼 수 있습니다. 사용자는 소셜 미디어 및 모바일 애플리케이션에서 본 것과 비슷한 친숙한 동의 환경을 통해 자신의 Azure AD 계정을 사용하여 애플리케이션을 등록할 수 있습니다. 모든 사용자는 IT 담당자의 도움 없이 Azure AD와 통합된 애플리케이션을 등록 및 로그인할 수 있습니다. [Azure AD 계정 로그인을 위해 애플리케이션 등록](../../app-service/configure-authentication-provider-aad.md)에 대해 자세히 알아보세요.
 
@@ -70,7 +70,7 @@ Azure AD와 통합하면 추가 코드를 작성할 필요가 없다는 이점�
 
 **Azure AD는 애플리케이션을 AD와 통합할 수 있도록 Active Directory를 클라우드로 확장합니다.**  전 세계 많은 조직에서 Active Directory를 기본 로그인 및 ID 관리 시스템으로 사용하며 애플리케이션에 AD와 함께 작업하도록 요구합니다. Azure AD와 통합하면 응용 프로그램이 Active Directory와 통합됩니다.
 
-### <a name="advanced-security-features"></a>고성능 보안 기능
+### <a name="advanced-security-features"></a>고급 보안 기능
 
 **다단계 인증.**  Azure AD는 네이티브 다단계 인증을 제공합니다. 애플리케이션에 액세스하기 위해 IT 관리자가 다단계 인증을 요구할 수 있으므로 이 지원을 직접 코딩할 필요가 없습니다. [Multi-Factor Authentication](https://azure.microsoft.com/documentation/services/multi-factor-authentication/)에 대해 자세히 알아보세요.
 
@@ -92,5 +92,5 @@ Azure AD와 통합하면 추가 코드를 작성할 필요가 없다는 이점�
 
 [코드 작성 시작하기](v2-overview.md#getting-started).
 
-[Microsoft id 플랫폼을 사용 하 여 사용자 로그인](v1-authentication-scenarios.md)
+[Microsoft id 플랫폼을 사용 하 여 사용자 로그인](authentication-scenarios.md)
 

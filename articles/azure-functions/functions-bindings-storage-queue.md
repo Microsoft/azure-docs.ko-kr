@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: ea213921c736bc3b6bf88c0bdd81a96656ecbe5b
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 33bdf718e74011dbd7adedd766ebc90923fffb83
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76547288"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77189833"
 ---
 # <a name="azure-queue-storage-bindings-for-azure-functions"></a>Azure Functions의 Azure Queue Storage 바인딩
 
@@ -42,7 +42,7 @@ ms.locfileid: "76547288"
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-다음 예제에서는 `myqueue-items` 큐를 폴링하고 큐 항목이 처리될 때마다 로그를 쓰는 [C# 함수](functions-dotnet-class-library.md)를 보여줍니다.
+다음 예제에서는 [ 큐를 폴링하고 큐 항목이 처리될 때마다 로그를 쓰는 ](functions-dotnet-class-library.md)C# 함수`myqueue-items`를 보여줍니다.
 
 ```csharp
 public static class QueueFunctions
@@ -110,7 +110,7 @@ public static void Run(CloudQueueMessage myQueueItem,
 }
 ```
 
-[사용](#trigger---usage) 섹션은 function.json에서 `name` 속성에 의해 명명된 `myQueueItem`을 설명합니다.  [메시지 메타데이터 섹션](#trigger---message-metadata)에서는 표시된 다른 모든 변수를 설명합니다.
+[사용](#trigger---usage) 섹션은 function.json에서 `myQueueItem` 속성에 의해 명명된 `name`을 설명합니다.  [메시지 메타데이터 섹션](#trigger---message-metadata)에서는 표시된 다른 모든 변수를 설명합니다.
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
@@ -155,7 +155,7 @@ module.exports = async function (context, message) {
 };
 ```
 
-[사용](#trigger---usage) 섹션은 function.json에서 `name` 속성에 의해 명명된 `myQueueItem`을 설명합니다.  [메시지 메타데이터 섹션](#trigger---message-metadata)에서는 표시된 다른 모든 변수를 설명합니다.
+[사용](#trigger---usage) 섹션은 function.json에서 `myQueueItem` 속성에 의해 명명된 `name`을 설명합니다.  [메시지 메타데이터 섹션](#trigger---message-metadata)에서는 표시된 다른 모든 변수를 설명합니다.
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
@@ -276,7 +276,7 @@ def main(msg: func.QueueMessage):
 사용할 스토리지 계정은 다음과 같은 순서로 결정됩니다.
 
 * `QueueTrigger` 특성의 `Connection` 속성
-* `QueueTrigger` 특성과 동일한 매개 변수에 적용된 `StorageAccount` 특성
+* `StorageAccount` 특성과 동일한 매개 변수에 적용된 `QueueTrigger` 특성
 * 함수에 적용된 `StorageAccount` 특성
 * 클래스에 적용된 `StorageAccount` 특성
 * "AzureWebJobsStorage" 앱 설정
@@ -328,9 +328,9 @@ public class QueueTriggerDemo {
 
 |function.json 속성 | 특성 속성 |Description|
 |---------|---------|----------------------|
-|**type** | n/a| `queueTrigger`로 설정해야 합니다. 이 속성은 사용자가 Azure Portal에서 트리거를 만들 때 자동으로 설정됩니다.|
-|**direction**| n/a | *function.json* 파일에서만 적용됩니다. `in`로 설정해야 합니다. 이 속성은 사용자가 Azure Portal에서 트리거를 만들 때 자동으로 설정됩니다. |
-|**name** | n/a |함수 코드에서 큐 항목 페이로드를 포함하는 변수 이름입니다.  |
+|**type** | 해당 없음| `queueTrigger`로 설정해야 합니다. 이 속성은 사용자가 Azure Portal에서 트리거를 만들 때 자동으로 설정됩니다.|
+|**direction**| 해당 없음 | *function.json* 파일에서만 적용됩니다. `in`로 설정해야 합니다. 이 속성은 사용자가 Azure Portal에서 트리거를 만들 때 자동으로 설정됩니다. |
+|**name** | 해당 없음 |함수 코드에서 큐 항목 페이로드를 포함하는 변수 이름입니다.  |
 |**queueName** | **QueueName**| 폴링할 큐의 이름입니다. |
 |**연결** | **연결** |이 바인딩에 사용할 스토리지 연결 문자열을 포함하는 앱 설정의 이름입니다. 앱 설정 이름이 "AzureWebJobs"로 시작하는 경우 여기에서 이름의 나머지만을 지정할 수 있습니다. 예를 들어 `connection`를 "MyStorage"로 설정 하는 경우 함수 런타임은 "MyStorage" 라는 앱 설정을 찾습니다. `connection`을 비워 두면 함수 런타임 기능은 `AzureWebJobsStorage`라는 앱 설정에서 기본 스토리지 연결 문자열을 사용합니다.|
 
@@ -378,7 +378,7 @@ public class QueueTriggerDemo {
 
 큐 트리거는 몇 가지 [메타데이터 속성](./functions-bindings-expressions-patterns.md#trigger-metadata)을 제공합니다. 이러한 속성을 다른 바인딩에서 바인딩 식의 일부로 사용하거나 코드에서 매개 변수로 사용할 수 있습니다. [CloudQueueMessage](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage) 클래스의 속성은 다음과 같습니다.
 
-|속성|유형|Description|
+|속성|Type|Description|
 |--------|----|-----------|
 |`QueueTrigger`|`string`|큐 페이로드(유효한 문자열인 경우) 큐 메시지 페이로드가 문자열이 면 `QueueTrigger`는 *함수 json*의 `name` 속성으로 명명 된 변수와 동일한 값을 갖습니다.|
 |`DequeueCount`|`int`|이 메시지가 큐에서 제거된 횟수입니다.|
@@ -403,7 +403,7 @@ public class QueueTriggerDemo {
 - 메시지가 발견 되 면 런타임은 2 초 동안 대기한 다음 다른 메시지를 확인 합니다.
 - 메시지를 찾을 수 없는 경우 다시 시도 하기 전에 4 초 정도 기다립니다.
 - 후속 시도로 큐 메시지를 가져오지 못하면 최대 대기 시간(기본값 1분)에 도달할 때까지 대기 시간이 계속 증가합니다.
-- 최대 대기 시간은 [host.json 파일](functions-host-json.md#queues)의 `maxPollingInterval` 속성을 통해 구성할 수 있습니다.
+- 최대 대기 시간은 `maxPollingInterval`host.json 파일[의 ](functions-host-json.md#queues) 속성을 통해 구성할 수 있습니다.
 
 로컬 개발의 경우 최대 폴링 간격의 기본값은 2 초입니다.
 
@@ -641,7 +641,7 @@ def main(req: func.HttpRequest, msg: func.Out[typing.List[str]]) -> func.HttpRes
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-[C# 클래스 라이브러리](functions-dotnet-class-library.md)에서 [QueueAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/QueueAttribute.cs)를 사용합니다.
+[C# 클래스 라이브러리](functions-dotnet-class-library.md)에서 [QueueAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.Extensions.Storage/Queues/QueueAttribute.cs)를 사용합니다.
 
 특성은 함수의 `out` 매개 변수 또는 반환 값에 적용됩니다. 특성의 생성자는 다음 예제와 같이 큐의 이름을 사용합니다.
 
@@ -720,9 +720,9 @@ public class HttpTriggerQueueOutput {
 
 |function.json 속성 | 특성 속성 |Description|
 |---------|---------|----------------------|
-|**type** | n/a | `queue`로 설정해야 합니다. 이 속성은 사용자가 Azure Portal에서 트리거를 만들 때 자동으로 설정됩니다.|
-|**direction** | n/a | `out`로 설정해야 합니다. 이 속성은 사용자가 Azure Portal에서 트리거를 만들 때 자동으로 설정됩니다. |
-|**name** | n/a | 함수 코드에서 큐를 나타내는 변수의 이름입니다. `$return`으로 설정하여 함수 반환 값을 참조합니다.|
+|**type** | 해당 없음 | `queue`로 설정해야 합니다. 이 속성은 사용자가 Azure Portal에서 트리거를 만들 때 자동으로 설정됩니다.|
+|**direction** | 해당 없음 | `out`로 설정해야 합니다. 이 속성은 사용자가 Azure Portal에서 트리거를 만들 때 자동으로 설정됩니다. |
+|**name** | 해당 없음 | 함수 코드에서 큐를 나타내는 변수의 이름입니다. `$return`으로 설정하여 함수 반환 값을 참조합니다.|
 |**queueName** |**QueueName** | 큐의 이름입니다. |
 |**연결** | **연결** |이 바인딩에 사용할 스토리지 연결 문자열을 포함하는 앱 설정의 이름입니다. 앱 설정 이름이 "AzureWebJobs"로 시작하는 경우 여기에서 이름의 나머지만을 지정할 수 있습니다. 예를 들어 `connection`를 "MyStorage"로 설정 하는 경우 함수 런타임은 "MyStorage" 라는 앱 설정을 찾습니다. `connection`을 비워 두면 함수 런타임 기능은 `AzureWebJobsStorage`라는 앱 설정에서 기본 스토리지 연결 문자열을 사용합니다.|
 
@@ -788,7 +788,7 @@ C# 및 C# 스크립트에서 다음 형식 중 하나를 사용하여 여러 큐
 
 | 바인딩 |  참조 |
 |---|---|
-| Queue | [큐 오류 코드](https://docs.microsoft.com/rest/api/storageservices/queue-service-error-codes) |
+| 큐 | [큐 오류 코드](https://docs.microsoft.com/rest/api/storageservices/queue-service-error-codes) |
 | Blob, 테이블, 큐 | [스토리지 오류 코드](https://docs.microsoft.com/rest/api/storageservices/fileservices/common-rest-api-error-codes) |
 | Blob, 테이블, 큐 |  [문제 해결](https://docs.microsoft.com/rest/api/storageservices/fileservices/troubleshooting-api-operations) |
 

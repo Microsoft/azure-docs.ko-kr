@@ -7,7 +7,7 @@ author: brjohnstmsft
 ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 02/10/2020
 translation.priority.mt:
 - de-de
 - es-es
@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: e0db41098287ff011416932a0d44a1cb9f76127d
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: f3a1be435e297ab4a9ba7f8bfbd5f3ce3451d8a8
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72786153"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153879"
 ---
 # <a name="odata-language-overview-for-filter-orderby-and-select-in-azure-cognitive-search"></a>Azure의 `$filter`, `$orderby`및 `$select`에 대 한 OData 언어 개요 Cognitive Search
 
@@ -96,16 +96,16 @@ identifier ::= [a-zA-Z_][a-zA-Z_0-9]*
 | 인덱스 [만들기](https://docs.microsoft.com/rest/api/searchservice/create-index) 또는 [업데이트](https://docs.microsoft.com/rest/api/searchservice/update-index) | `suggesters/sourceFields` | 없음 |
 | 인덱스 [만들기](https://docs.microsoft.com/rest/api/searchservice/create-index) 또는 [업데이트](https://docs.microsoft.com/rest/api/searchservice/update-index) | `scoringProfiles/text/weights` | **검색 가능한** 필드만 참조할 수 있습니다. |
 | 인덱스 [만들기](https://docs.microsoft.com/rest/api/searchservice/create-index) 또는 [업데이트](https://docs.microsoft.com/rest/api/searchservice/update-index) | `scoringProfiles/functions/fieldName` | **필터링** 가능한 필드만 참조할 수 있습니다. |
-| [이를 통해 검색](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `queryType`를 `search` `full` | **검색 가능한** 필드만 참조할 수 있습니다. |
-| [이를 통해 검색](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `facet` | **패싯 가능** 필드만 참조할 수 있습니다. |
-| [이를 통해 검색](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `highlight` | **검색 가능한** 필드만 참조할 수 있습니다. |
-| [이를 통해 검색](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `searchFields` | **검색 가능한** 필드만 참조할 수 있습니다. |
+| [검색](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `queryType`를 `search` `full` | **검색 가능한** 필드만 참조할 수 있습니다. |
+| [검색](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `facet` | **패싯 가능** 필드만 참조할 수 있습니다. |
+| [검색](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `highlight` | **검색 가능한** 필드만 참조할 수 있습니다. |
+| [검색](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `searchFields` | **검색 가능한** 필드만 참조할 수 있습니다. |
 | [제안](https://docs.microsoft.com/rest/api/searchservice/suggestions) 및 [자동 완성](https://docs.microsoft.com/rest/api/searchservice/autocomplete) | `searchFields` | [확인 기](index-add-suggesters.md) 의 일부인 필드만 참조할 수 있습니다. |
 | [검색](https://docs.microsoft.com/rest/api/searchservice/search-documents), [제안](https://docs.microsoft.com/rest/api/searchservice/suggestions)및 [자동 완성](https://docs.microsoft.com/rest/api/searchservice/autocomplete) | `$filter` | **필터링** 가능한 필드만 참조할 수 있습니다. |
 | [검색](https://docs.microsoft.com/rest/api/searchservice/search-documents) 및 [제안](https://docs.microsoft.com/rest/api/searchservice/suggestions) | `$orderby` | **정렬** 가능한 필드만 참조할 수 있습니다. |
 | [검색](https://docs.microsoft.com/rest/api/searchservice/search-documents), [제안](https://docs.microsoft.com/rest/api/searchservice/suggestions)및 [조회](https://docs.microsoft.com/rest/api/searchservice/lookup-document) | `$select` | **검색할** 수 있는 필드만 참조할 수 있습니다. |
 
-## <a name="constants"></a>상수가
+## <a name="constants"></a>상수
 
 OData의 상수는 지정 된 EDM ( [엔터티 데이터 모델](https://docs.microsoft.com/dotnet/framework/data/adonet/entity-data-model) ) 형식의 리터럴 값입니다. Azure Cognitive Search에서 지원 되는 형식 목록은 [지원 되는 데이터 형식](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) 을 참조 하세요. 컬렉션 형식의 상수는 지원 되지 않습니다.
 
@@ -121,6 +121,17 @@ OData의 상수는 지정 된 EDM ( [엔터티 데이터 모델](https://docs.mi
 | `Edm.Int32` | `123`, `-456` |
 | `Edm.Int64` | `283032927235` |
 | `Edm.String` | `'hello'` |
+
+### <a name="escaping-special-characters-in-string-constants"></a>문자열 상수에서 특수 문자 이스케이프
+
+OData의 문자열 상수는 작은따옴표로 구분 됩니다. 작은따옴표를 포함할 수 있는 문자열 상수를 사용 하 여 쿼리를 생성 해야 하는 경우 포함 된 따옴표를 두 배로 이스케이프할 수 있습니다.
+
+예를 들어 "Alice의 car"와 같이 형식이 지정 되지 않은 아포스트로피를 사용 하는 구는 OData에서 `'Alice''s car'`문자열 상수로 표시 됩니다.
+
+> [!IMPORTANT]
+> 프로그래밍 방식으로 필터를 생성 하는 경우 사용자 입력에서 제공 되는 문자열 상수를 이스케이프 해야 합니다. 이는 특히 필터를 사용 하 여 [보안 트리밍을](search-security-trimming-for-azure-search.md)구현할 때 [삽입 공격의](https://wikipedia.org/wiki/SQL_injection)가능성을 완화 하기 위한 것입니다.
+
+### <a name="constants-syntax"></a>상수 구문
 
 다음 EBNF ([Extended Backus-Backus-naur Form](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form))는 위의 표에 표시 된 대부분의 상수에 대 한 문법을 정의 합니다. 지역 공간 형식에 대 한 문법은 [Azure Cognitive Search의 OData 지역 공간 함수](search-query-odata-geo-spatial-functions.md)에서 찾을 수 있습니다.
 
@@ -218,7 +229,7 @@ select_expression ::= '*' | field_path(',' field_path)*
 > [!NOTE]
 > 전체 EBNF [Azure Cognitive Search에 대 한 OData 식 구문 참조](search-query-odata-syntax-reference.md) 를 참조 하세요.
 
-**$Orderby** 및 **$select** 매개 변수는 간단한 식의 쉼표로 구분 된 목록입니다. **$Filter** 매개 변수는 보다 간단한 하위 식으로 구성 된 부울 식입니다. 이러한 하위 식은 [`and`, `or`및 `not`](search-query-odata-logical-operators.md)와 같은 논리 연산자, [`eq`, `lt`, `gt`](search-query-odata-comparison-operators.md)등의 비교 연산자와`any` 및 등의 컬렉션 연산자를 사용 하 여 결합 됩니다 [`all`](search-query-odata-collection-operators.md).
+**$Orderby** 및 **$select** 매개 변수는 간단한 식의 쉼표로 구분 된 목록입니다. **$Filter** 매개 변수는 보다 간단한 하위 식으로 구성 된 부울 식입니다. 이러한 하위 식은 [`and`, `or`및 `not`](search-query-odata-logical-operators.md)와 같은 논리 연산자, [`eq`, `lt`, `gt`](search-query-odata-comparison-operators.md)등의 비교 연산자와 [`any`, `all`](search-query-odata-collection-operators.md)등의 컬렉션 연산자를 사용 하 여 결합 됩니다.
 
 **$Filter**, **$orderby**및 **$select** 매개 변수는 다음 문서에 자세히 설명 되어 있습니다.
 

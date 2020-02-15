@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 02/08/2018
 ms.author: kumud
 ms.custom: include file
-ms.openlocfilehash: 4b419bd8c19cffaf84582cb4fa9e46592746da3f
-ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
+ms.openlocfilehash: 4219df03f74f737c5f2435f9bc0842189dc1fd49
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75752255"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76909202"
 ---
 | | 표준 SKU | 기본 SKU |
 | --- | --- | --- |
-| 백 엔드 풀 크기 | 최대 1000개 인스턴스를 지원합니다. | 최대 100개 인스턴스를 지원합니다. |
+| 백 엔드 풀 크기 | 최대 1000개 인스턴스를 지원합니다. | 최대 300개 인스턴스를 지원합니다. |
 | 백 엔드 풀 엔드포인트 | 가상 머신, 가용성 집합 및 가상 머신 확장 집합의 혼합을 포함한 단일 가상 네트워크의 모든 가상 머신입니다. | 단일 가용성 집합 또는 가상 머신 확장 집합의 가상 머신. |
 | [상태 프로브](../articles/load-balancer/load-balancer-custom-probe-overview.md#types) | TCP, HTTP, HTTPS | TCP, HTTP |
 | [상태 프로브 다운 동작](../articles/load-balancer/load-balancer-custom-probe-overview.md#probedown) | TCP 연결은 인스턴스 프로브 __및__ 모든 프로브가 다운되어 있을 때 그대로 유지됩니다. | TCP 연결은 인스턴스 프로브가 다운되어 있을 때 그대로 유지됩니다. 모든 프로브가 다운되면 모든 TCP 연결이 종료됩니다. |
@@ -31,5 +31,5 @@ ms.locfileid: "75752255"
 | [여러 프론트 엔드](../articles/load-balancer/load-balancer-multivip-overview.md) | 인바운드 및 [아웃바운드](../articles/load-balancer/load-balancer-outbound-connections.md) | 인바운드 전용 |
 | 관리 작업 | 대부분 작업을 30초 이내에 수행 | 일반적으로 60-90+초 |
 | SLA | 2개의 정상 가상 머신이 있는 데이터 경로에 대해 99.99%. | 해당 없음 | 
-| 가격 | 규칙 수, 리소스와 관련해서 인바운드 및 아웃바운드로 처리된 데이터에 따라 요금이 부과됩니다. | 무료 |
+| 가격 책정 | 규칙 수, 리소스와 관련해서 인바운드 및 아웃바운드로 처리된 데이터에 따라 요금이 부과됩니다. | 무료 |
 |  |  |  |

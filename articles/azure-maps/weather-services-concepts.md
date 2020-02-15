@@ -1,19 +1,19 @@
 ---
 title: 날씨 서비스 개념 | Microsoft Azure 맵
 description: 이 문서에서는 Microsoft Azure Maps 날씨 서비스에 적용 되는 개념에 대해 알아봅니다.
-author: walsehgal
-ms.author: v-musehg
+author: farah-alyasari
+ms.author: v-faalya
 ms.date: 11/20/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: bcf100236d4a2a707a007a24e9e51105cc9ca0ac
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: af7ea5c6e9d09b05b2f9271d6954162c0fd429c6
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76991394"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77208729"
 ---
 # <a name="weather-services-in-azure-maps"></a>Azure Maps의 날씨 서비스
 
@@ -45,7 +45,7 @@ ms.locfileid: "76991394"
 |17      |celsius             |
 |18      |fahrenheit          |
 |19      |kelvin              |
-|20      |수익률             |
+|20      |percent             |
 |21      |float               |
 |22      |integer             |
 
@@ -56,46 +56,46 @@ ms.locfileid: "76991394"
 
 | 아이콘 번호 |아이콘| 일 | 모드 | 텍스트 |
 |-------------|:----:|-----|-------|------|
-| 1           |![](./media/weather-services-concepts/sunny-i.png)                      | 예 |  아닙니다.    | 맑음|
-| 2           |![](./media/weather-services-concepts/mostly-sunny.png)                | 예 |  아닙니다.    | 대부분 Sunny|
-| 3           |![](./media/weather-services-concepts/partly-sunny.png)                | 예 |  아닙니다.    | 부분적으로 Sunny|
-| 4           |![](./media/weather-services-concepts/intermittent-clouds.png)         | 예 |  아닙니다.    | 간헐적인 클라우드|
-| 5           |![](./media/weather-services-concepts/hazy-sunshine.png)               | 예 |  아닙니다.    | Hazy 햇빛과 |
-| 6           |![](./media/weather-services-concepts/mostly-cloudy.png)               | 예 |  아닙니다.    | 대부분 Cloudy|
-| 7           |![](./media/weather-services-concepts/cloudy-i.png)                     | 예 |  예   | Cloudy |
-| 8           |![](./media/weather-services-concepts/dreary-overcast.png)             | 예 |  예   | Dreary (과잉 캐스트)|
-| 11           |![](./media/weather-services-concepts/fog-i.png)                       | 예 |  예   | 안개|
-| 12           |![](./media/weather-services-concepts/showers-i.png)                   | 예 |  예   | 샤워|
-| 13           |![](./media/weather-services-concepts/mostly-cloudy-showers.png)       | 예 |  아닙니다.    | 주로 Showers로 Cloudy|
-| 14           |![](./media/weather-services-concepts/partly-sunny-showers.png)        | 예 |  아닙니다.    | Showers를 사용 하는 부분적으로 Sunny|
-| 15           |![](./media/weather-services-concepts/tstorms-i.png)                   | 예 |  예   | Thunderstorms|
-| 16           |![](./media/weather-services-concepts/mostly-cloudy-tstorms.png)       | 예 |  아닙니다.    | 주로 Thunderstorms로 Cloudy|
-| 17           |![](./media/weather-services-concepts/partly-sunny-tstorms.png)        | 예 |  아닙니다.    | Thunderstorms를 사용 하 여 부분적으로 Sunny|
-| 18           |![](./media/weather-services-concepts/rain-i.png)                      | 예 |  예   | 비|
-| 19           |![](./media/weather-services-concepts/flurries-i.png)                  | 예 |  예   | Flurries|
-| 20           |![](./media/weather-services-concepts/mostly-cloudy-flurries.png)      | 예 |  아닙니다.    | 대부분 Flurries를 사용 하 여 Cloudy|
-| 21           |![](./media/weather-services-concepts/partly-sunny-flurries.png)       | 예 |  아닙니다.    | Flurries를 사용 하 여 부분적으로 Sunny|
-| 22           |![](./media/weather-services-concepts/snow-i.png)                      | 예 |  예   | 덮인|
-| 23           |![](./media/weather-services-concepts/mostly-cloudy-snow.png)          | 예 |  아닙니다.    | 주로 눈에 Cloudy|
-| 24           |![](./media/weather-services-concepts/ice-i.png)                       | 예 |  예   | 아이스크림 |
-| 25           |![](./media/weather-services-concepts/sleet-i.png)                     | 예 |  예   | Sleet|
-| 26           |![](./media/weather-services-concepts/freezing-rain.png)              | 예 |  예   | 고정|
-| 29           |![](./media/weather-services-concepts/rain-snow.png)                  | 예 |  예   | 비 및 눈|
-| 30           |![](./media/weather-services-concepts/hot-i.png)                       | 예 |  예   | 핫|
-| 31           |![](./media/weather-services-concepts/cold-i.png)                      | 예 |  예   | 콜드|
-| 32           |![](./media/weather-services-concepts/windy-i.png)                     | 예 |  예   | 바람|
-| 33           |![](./media/weather-services-concepts/clear-night.png)                | 아닙니다.  |  예   | 지우기|
-| 34           |![](./media/weather-services-concepts/mostly-clear-night.png)          | 아닙니다.  |  예   | 대부분 지우기|
-| 35           |![](./media/weather-services-concepts/partly-cloudy-night.png)         | 아닙니다.  |  예   | 부분적으로 Cloudy|
-| 36           |![](./media/weather-services-concepts/intermittent-clouds-Night.png)   | 아닙니다.  |  예   | 간헐적인 클라우드|
-| 37           |![](./media/weather-services-concepts/hazymoon-light.png)             | 아닙니다.  |  예   | Hazy Moonlight|
-| 38           |![](./media/weather-services-concepts/mostly-cloudy-night.png)         | 아닙니다.  |  예   | 대부분 Cloudy|
-| 39           |![](./media/weather-services-concepts/partly-cloudy-showers-night.png)  | 아닙니다.  |  예   | Showers를 사용 하는 부분적으로 Cloudy|
-| 40           |![](./media/weather-services-concepts/mostly-cloudy-showers-night.png)  | 아닙니다.  |  예   | 주로 Showers로 Cloudy|
-| 41           |![](./media/weather-services-concepts/partly-cloudy-tstorms-night.png)  | 아닙니다.  |  예   | Thunderstorms를 사용 하 여 부분적으로 Cloudy|
-| 42           |![](./media/weather-services-concepts/mostly-cloudy-tstorms-night.png)  | 아닙니다.  |  예   | 주로 Thunderstorms로 Cloudy|
-| 43           |![](./media/weather-services-concepts/mostly-cloudy-flurries-night.png) | 아닙니다.  |  예   | 대부분 Flurries를 사용 하 여 Cloudy|
-| 44           |![](./media/weather-services-concepts/mostly-cloudy-snow.png)          | 아닙니다.  |  예   | 주로 눈에 Cloudy|
+| 1           |![](./media/weather-services-concepts/sunny-i.png)                      | yes |  예    | 맑음|
+| 2           |![](./media/weather-services-concepts/mostly-sunny.png)                | yes |  예    | 대부분 Sunny|
+| 3           |![](./media/weather-services-concepts/partly-sunny.png)                | yes |  예    | 부분적으로 Sunny|
+| 4           |![](./media/weather-services-concepts/intermittent-clouds.png)         | yes |  예    | 간헐적인 클라우드|
+| 5           |![](./media/weather-services-concepts/hazy-sunshine.png)               | yes |  예    | Hazy 햇빛과 |
+| 6           |![](./media/weather-services-concepts/mostly-cloudy.png)               | yes |  예    | 대부분 Cloudy|
+| 7           |![](./media/weather-services-concepts/cloudy-i.png)                     | yes |  yes   | Cloudy |
+| 8           |![](./media/weather-services-concepts/dreary-overcast.png)             | yes |  yes   | Dreary (과잉 캐스트)|
+| 11           |![](./media/weather-services-concepts/fog-i.png)                       | yes |  yes   | 안개|
+| 12           |![](./media/weather-services-concepts/showers-i.png)                   | yes |  yes   | 샤워|
+| 13           |![](./media/weather-services-concepts/mostly-cloudy-showers.png)       | yes |  예    | 주로 Showers로 Cloudy|
+| 14           |![](./media/weather-services-concepts/partly-sunny-showers.png)        | yes |  예    | Showers를 사용 하는 부분적으로 Sunny|
+| 15           |![](./media/weather-services-concepts/tstorms-i.png)                   | yes |  yes   | Thunderstorms|
+| 16           |![](./media/weather-services-concepts/mostly-cloudy-tstorms.png)       | yes |  예    | 주로 Thunderstorms로 Cloudy|
+| 17           |![](./media/weather-services-concepts/partly-sunny-tstorms.png)        | yes |  예    | Thunderstorms를 사용 하 여 부분적으로 Sunny|
+| 18           |![](./media/weather-services-concepts/rain-i.png)                      | yes |  yes   | 비가|
+| 19           |![](./media/weather-services-concepts/flurries-i.png)                  | yes |  yes   | Flurries|
+| 20           |![](./media/weather-services-concepts/mostly-cloudy-flurries.png)      | yes |  예    | 대부분 Flurries를 사용 하 여 Cloudy|
+| 21           |![](./media/weather-services-concepts/partly-sunny-flurries.png)       | yes |  예    | Flurries를 사용 하 여 부분적으로 Sunny|
+| 22           |![](./media/weather-services-concepts/snow-i.png)                      | yes |  yes   | 덮인|
+| 23           |![](./media/weather-services-concepts/mostly-cloudy-snow.png)          | yes |  예    | 주로 눈에 Cloudy|
+| 24           |![](./media/weather-services-concepts/ice-i.png)                       | yes |  yes   | 아이스크림 |
+| 25           |![](./media/weather-services-concepts/sleet-i.png)                     | yes |  yes   | Sleet|
+| 26           |![](./media/weather-services-concepts/freezing-rain.png)              | yes |  yes   | 고정|
+| 29           |![](./media/weather-services-concepts/rain-snow.png)                  | yes |  yes   | 비 및 눈|
+| 30           |![](./media/weather-services-concepts/hot-i.png)                       | yes |  yes   | 핫|
+| 31           |![](./media/weather-services-concepts/cold-i.png)                      | yes |  yes   | 콜드|
+| 32           |![](./media/weather-services-concepts/windy-i.png)                     | yes |  yes   | 바람|
+| 33           |![](./media/weather-services-concepts/clear-night.png)                | 예  |  yes   | 지우기|
+| 34           |![](./media/weather-services-concepts/mostly-clear-night.png)          | 예  |  yes   | 대부분 지우기|
+| 35           |![](./media/weather-services-concepts/partly-cloudy-night.png)         | 예  |  yes   | 부분적으로 Cloudy|
+| 36           |![](./media/weather-services-concepts/intermittent-clouds-Night.png)   | 예  |  yes   | 간헐적인 클라우드|
+| 37           |![](./media/weather-services-concepts/hazymoon-light.png)             | 예  |  yes   | Hazy Moonlight|
+| 38           |![](./media/weather-services-concepts/mostly-cloudy-night.png)         | 예  |  yes   | 대부분 Cloudy|
+| 39           |![](./media/weather-services-concepts/partly-cloudy-showers-night.png)  | 예  |  yes   | Showers를 사용 하는 부분적으로 Cloudy|
+| 40           |![](./media/weather-services-concepts/mostly-cloudy-showers-night.png)  | 예  |  yes   | 주로 Showers로 Cloudy|
+| 41           |![](./media/weather-services-concepts/partly-cloudy-tstorms-night.png)  | 예  |  yes   | Thunderstorms를 사용 하 여 부분적으로 Cloudy|
+| 42           |![](./media/weather-services-concepts/mostly-cloudy-tstorms-night.png)  | 예  |  yes   | 주로 Thunderstorms로 Cloudy|
+| 43           |![](./media/weather-services-concepts/mostly-cloudy-flurries-night.png) | 예  |  yes   | 대부분 Flurries를 사용 하 여 Cloudy|
+| 44           |![](./media/weather-services-concepts/mostly-cloudy-snow.png)          | 예  |  yes   | 주로 눈에 Cloudy|
 
 
 ## <a name="radar-and-satellite-imagery-color-scale"></a>방사형 및 위성 이미지 색 눈금

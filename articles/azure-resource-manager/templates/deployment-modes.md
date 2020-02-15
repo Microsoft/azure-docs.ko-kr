@@ -3,12 +3,12 @@ title: 배포 모드
 description: Azure Resource Manager를 사용하여 전체 또는 증분 배포 모드를 사용할지 여부를 지정하는 방법을 설명합니다.
 ms.topic: conceptual
 ms.date: 01/17/2020
-ms.openlocfilehash: e53b8c58bf0919e64079e62c687b76ada1db7ff0
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 9cc0e8eb20a0375a98906524d4d598ccb473d2a8
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76261027"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207590"
 ---
 # <a name="azure-resource-manager-deployment-modes"></a>Azure Resource Manager 배포 모드
 
@@ -24,7 +24,7 @@ ms.locfileid: "76261027"
 
 [조건이](conditional-resource-deployment.md) false로 평가 되므로 템플릿에 배포 되지 않은 리소스가 포함 된 경우에는 템플릿을 배포 하는 데 사용 하는 REST API 버전에 따라 결과가 달라 집니다. 2019-05-10 이전 버전을 사용 하는 경우 리소스는 **삭제 되지 않습니다**. 2019-05-10 이상에서는 리소스가 **삭제 됩니다**. 최신 버전의 Azure PowerShell 및 Azure CLI 리소스를 삭제 합니다.
 
-[복사 루프](create-multiple-instances.md)에서 전체 모드를 사용할 때는 주의 해야 합니다. 복사 루프를 확인 한 후 템플릿에 지정 되지 않은 모든 리소스는 삭제 됩니다.
+[복사 루프](copy-resources.md)에서 전체 모드를 사용할 때는 주의 해야 합니다. 복사 루프를 확인 한 후 템플릿에 지정 되지 않은 모든 리소스는 삭제 됩니다.
 
 [템플릿에서 둘 이상의 리소스 그룹](cross-resource-group-deployment.md)에 배포 하는 경우 배포 작업에 지정 된 리소스 그룹의 리소스를 삭제할 수 있습니다. 보조 리소스 그룹의 리소스는 삭제 되지 않습니다.
 

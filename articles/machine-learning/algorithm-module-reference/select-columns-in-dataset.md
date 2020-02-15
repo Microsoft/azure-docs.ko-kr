@@ -6,19 +6,19 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 10/22/2019
-ms.openlocfilehash: 6e78cbdd9cd921db2340a92c46a9337ac0fc98eb
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 714148815fa4ff543ecbf86ab21e8d51fe775543
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76311855"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153777"
 ---
 # <a name="select-columns-in-dataset-module"></a>데이터 집합 모듈에서 열 선택
 
-이 문서에서는 Azure Machine Learning 디자이너의 모듈을 설명 합니다.
+이 문서에서는 Azure Machine Learning designer (미리 보기)의 모듈을 설명 합니다.
 
 이 모듈을 사용 하 여 다운스트림 작업에서 사용할 열 하위 집합을 선택할 수 있습니다. 모듈은 원본 데이터 집합에서 열을 물리적으로 제거 하지 않습니다. 대신 데이터베이스 *뷰나* *프로젝션*과 매우 비슷하게 열의 하위 집합을 만듭니다.
 

@@ -7,24 +7,24 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: overview
 ms.date: 10/20/2019
-ms.openlocfilehash: 879e1911c715688c2fed4044e23f437b3bbef7b2
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 93a77d73b5cc249c39609f98f055a7b1927dd6ed
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73890668"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77025489"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-digital-distribution-center-application-template"></a>자습서: 디지털 배포 센터 애플리케이션 템플릿 배포 및 살펴보기
 
-[!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
+
 
 이 자습서에서는 IoT Central **디지털 배포 센터** 애플리케이션 템플릿을 배포하여 시작하는 방법을 보여 줍니다. 템플릿을 배포하는 방법, 기본적으로 제공되는 항목 및 다음에 수행할 수 있는 작업을 알아봅니다.
 
-이 자습서에서는 다음 방법을 알아봅니다. 
+이 자습서에서는 다음 방법에 대해 알아봅니다. 
 * 디지털 배포 센터 애플리케이션 만들기 
 * 애플리케이션 살펴보기 
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 * 이 앱을 배포하는 데 필요한 특정 필수 구성 요소가 없습니다.
 * Azure 구독이 있는 것이 좋지만, 없더라도 시도해 볼 수 있습니다.
 
@@ -34,19 +34,22 @@ ms.locfileid: "73890668"
 
 1. Azure IoT Central 애플리케이션 관리자 웹 사이트로 이동합니다. 왼쪽 탐색 모음에서 **빌드**를 선택하고 **소매** 탭을 클릭합니다.
 
-> [!div class="mx-imgBorder"]
-> ![디지털 배포 센터](./media/tutorial-iot-central-ddc/iotc-retail-homepage.png)
+    > [!div class="mx-imgBorder"]
+    > ![디지털 배포 센터](./media/tutorial-iot-central-ddc/iotc-retail-homepage.png)
 
 2. **소매** 탭을 선택하고 **디지털 배포 센터 애플리케이션**에서 **앱 만들기**를 선택합니다.
 
 3. **앱 만들기**를 선택하면 아래와 같이 새 애플리케이션 양식이 열리고 요청된 세부 정보가 입력됩니다.
    **애플리케이션 이름**: 제안된 기본 이름을 사용하거나 친숙한 애플리케이션 이름을 입력할 수 있습니다.
-   **URL**: 제안된 기본 URL을 사용하거나 기억하기 쉬운 고유한 URL을 입력할 수 있습니다. 다음으로, Azure 구독이 이미 있는 경우 기본 설정이 권장됩니다. 또는 7일 평가판으로 시작한 후 평가판이 만료되기 전에 언제든지 종량제로 전환하도록 선택할 수 있습니다.
+   **URL**: 제안된 기본 URL을 사용하거나 기억하기 쉬운 고유한 URL을 입력할 수 있습니다. 다음으로, Azure 구독이 이미 있는 경우 기본 설정이 권장됩니다. 7일 평가판 요금제로 시작하여 평가판이 만료되기 전에 언제든지 표준 가격 책정 요금제로 전환할 수 있습니다.
    **청구 정보**: 리소스를 프로비저닝하려면 디렉터리, Azure 구독 및 지역 세부 정보가 필요합니다.
    **만들기**: 페이지 맨 아래에서 만들기를 선택하여 애플리케이션을 배포합니다.
 
-> [!div class="mx-imgBorder"]
-> ![디지털 배포 센터](./media/tutorial-iot-central-ddc/ddc-create.png)
+    > [!div class="mx-imgBorder"]
+    > ![디지털 배포 센터](./media/tutorial-iot-central-ddc/ddc-create.png)
+
+    > [!div class="mx-imgBorder"]
+    > ![디지털 배포 청구 정보](./media/tutorial-iot-central-ddc/ddc-create-billinginfo.png)
 
 ## <a name="walk-through-the-application-dashboard"></a>애플리케이션 대시보드 살펴보기 
 
@@ -95,7 +98,7 @@ ms.locfileid: "73890668"
 > [!div class="mx-imgBorder"]
 > ![디지털 배포 센터](./media/tutorial-iot-central-ddc/ddc-rules.png)
 
-## <a name="jobs"></a>교육
+## <a name="jobs"></a>작업
 작업 탭을 선택하여 이 애플리케이션 템플릿의 일부로 존재하는 5개의 다른 작업을 표시합니다. 작업 기능을 활용하여 솔루션 전체 작업을 수행할 수 있습니다. 여기에서 디지털 배포 센터 작업은 디바이스 명령 및 쌍 기능을 사용하여 다음과 같은 작업을 수행합니다.
    * 패키지 감지를 시작하기 전에 카메라 보정 
    * 정기적으로 카메라 펌웨어 업데이트
@@ -113,4 +116,4 @@ ms.locfileid: "73890668"
 ## <a name="next-steps"></a>다음 단계
 * 디지털 배포 센터 솔루션 아키텍처 [디지털 배포 센터 개념](./architecture-digital-distribution-center-pnp.md)에 대해 자세히 알아보기
 * 다른 [IoT Central 소매 템플릿](./overview-iot-central-retail-pnp.md)에 대해 자세히 알아보기
-* [IoT Central 개요](../preview/overview-iot-central.md)에서 IoT Central에 대한 자세한 내용을 참조합니다.
+* [IoT Central 개요](../core/overview-iot-central.md)에서 IoT Central에 대한 자세한 내용을 참조합니다.

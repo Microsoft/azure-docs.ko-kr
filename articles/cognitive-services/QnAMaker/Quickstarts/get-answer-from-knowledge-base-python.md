@@ -2,15 +2,15 @@
 title: '빠른 시작: 기술 자료에서 답변 찾기 - REST, Python - QnA Maker'
 description: 이 Python REST 기반 빠른 시작은 기술 자료에서 프로그래밍 방식으로 답변을 가져오는 방법을 안내합니다.
 ms.topic: quickstart
-ms.date: 01/28/2020
+ms.date: 02/08/2020
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCHANGE-20200128
-ms.openlocfilehash: f439a492e2e63e3f99f80004b387d9cfc415e4b0
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 7fe1ed140c53f93f2bd00847c5652906de998147
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76842957"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77109691"
 ---
 # <a name="quickstart-get-answers-to-a-question-from-a-knowledge-base-with-python"></a>빠른 시작: Python을 사용하여 기술 자료에서 질문에 대한 답변 얻기
 

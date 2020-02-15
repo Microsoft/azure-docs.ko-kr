@@ -16,12 +16,12 @@ ms.date: 12/18/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 03f88b0b1369020d0ba5e8cb1e1b416059def21d
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 7798cb86606c206f027a1014802770a74aba909a
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76703051"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160380"
 ---
 # <a name="azure-ad-authentication-and-authorization-error-codes"></a>Azure AD 인증 및 권한 부여 오류 코드
 
@@ -39,7 +39,7 @@ Azure AD STS(보안 토큰 서비스)에서 반환된 AADSTS 오류 코드에 �
 
 ## <a name="aadsts-error-codes"></a>AADSTS 오류 코드
 
-| 오류 | Description |
+| Error | Description |
 |---|---|
 | AADSTS16000 | SelectUserAccount - 이것은 Azure AD에 의해 throw된 인터럽트로, 사용자가 여러 개의 유효한 SSO 세션 중에서 선택할 수 있는 UI가 나타납니다. 이 오류는 매우 일반적이며 `prompt=none`이 지정된 경우 애플리케이션에 반환될 수 있습니다. |
 | AADSTS16001 | UserAccountSelectionInvalid - 사용자가 세션 선택 논리가 거부한 타일을 클릭하면 이 오류가 표시됩니다. 이 오류가 트리거되면 사용자는 업데이트된 타일/세션 목록에서 선택하거나 다른 계정을 선택하여 복구할 수 있습니다. 이 오류는 코드 결함 또는 경합 상태로 인해 발생할 수 있습니다. |
@@ -152,7 +152,7 @@ Azure AD STS(보안 토큰 서비스)에서 반환된 AADSTS 오류 코드에 �
 | AADSTS67003 | ActorNotValidServiceIdentity |
 | AADSTS70000 | InvalidGrant - 인증에 실패했습니다. 새로 고침 토큰이 잘못되었습니다. 다음과 같은 이유로 오류가 발생했을 수 있습니다.<ul><li>토큰 바인딩 헤더가 비어 있습니다.</li><li>토큰 바인딩 해시가 일치하지 않습니다.</li></ul> |
 | AADSTS70001 | UnauthorizedClient - 애플리케이션을 사용할 수 없습니다. |
-| AADSTS70002 | InvalidClient - 자격 증명 유효성을 검사하는 중 오류가 발생했습니다. 지정된 client_secret이 이 클라이언트에 대해 필요한 값과 일치하지 않습니다. client_secret을 수정한 후 다시 시도하세요. 자세한 내용은 [인증 코드를 사용하여 액세스 토큰 요청](v1-protocols-oauth-code.md#use-the-authorization-code-to-request-an-access-token)을 참조하세요. |
+| AADSTS70002 | InvalidClient - 자격 증명 유효성을 검사하는 중 오류가 발생했습니다. 지정된 client_secret이 이 클라이언트에 대해 필요한 값과 일치하지 않습니다. client_secret을 수정한 후 다시 시도하세요. 자세한 내용은 [인증 코드를 사용하여 액세스 토큰 요청](v2-oauth2-auth-code-flow.md#request-an-access-token)을 참조하세요. |
 | AADSTS70003 | UnsupportedGrantType - 앱에서 지원되지 않는 권한 부여 유형을 반환했습니다. |
 | AADSTS70004 | InvalidRedirectUri - 앱에서 잘못된 리디렉션 URI를 반환했습니다. 클라이언트에서 지정한 리디렉션 주소가 구성된 주소 또는 OIDC 승인 목록의 주소와 일치하지 않습니다. |
 | AADSTS70005 | UnsupportedResponseType - 다음과 같은 이유로 앱이 지원되지 않는 응답 형식을 반환했습니다.<ul><li>'token' 응답 형식을 앱에 대해 사용할 수 없습니다.</li><li>'id_token' 응답 형식에 'OpenID' 범위가 필요합니다. 인코딩된 wctx에 지원되지 않는 OAuth 매개 변수 값이 있습니다.</li></ul> |

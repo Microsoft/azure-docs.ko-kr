@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
-author: xiaoharper
-ms.author: amlstudiodocs
+author: likebupt
+ms.author: keli19
 ms.custom: seodec18
 ms.date: 11/29/2017
-ms.openlocfilehash: fdd91b62355b11ba99aafcda04f86282ce5a4f71
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 35046d33a85eaed913454f188f2a4526715526a9
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75454735"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168774"
 ---
 # <a name="define-custom-r-modules-for-azure-machine-learning-studio-classic"></a>Azure Machine Learning Studio에 대 한 사용자 지정 R 모듈 정의 (클래식)
 
@@ -40,7 +40,7 @@ ms.locfileid: "75454735"
 이 예제에서는 사용자 지정 R 모듈에 필요한 파일을 생성하고 이를 zip 파일에 패키지한 다음 Machine Learning 작업 영역에 모듈을 등록하는 방법을 보여 줍니다. 예제 zip 패키지 및 샘플 파일은 [CustomAddRows.zip 파일 다운로드](https://go.microsoft.com/fwlink/?LinkID=524916&clcid=0x409)에서 다운로드할 수 있습니다.
 
 ## <a name="the-source-file"></a>원본 파일
-두 데이터 세트(데이터 프레임)의 행(관찰)을 연결하는 데 사용되는 **행 추가** 모듈의 표준 구현을 수정하는 **사용자 지정 행 추가** 모듈의 예제를 고려해 보겠습니다. 표준 **행 추가** 모듈은 `rbind` 알고리즘을 사용하여 두 번째 입력 데이터 세트의 행을 첫 번째 입력 데이터 세트의 끝에 추가합니다. 사용자 지정 `CustomAddRows` 함수는 두 데이터 세트를 허용할 뿐만 아니라 부울 스왑 매개 변수도 추가 입력으로 허용합니다. 스왑 매개 변수가 **FALSE**로 설정된 경우 표준 구현과 동일한 데이터 집합을 반환합니다. 그러나 스왑 매개 변수가 **TRUE**인 경우에는 함수는 대신 첫 번째 입력 데이터 세트의 행을 두 번째 데이터 세트의 끝에 추가합니다. **사용자 지정 행 추가** 모듈에 의해 노출되는 R `CustomAddRows` 함수의 구현을 포함하는 CustomAddRows.R 파일은 다음 R 코드를 포함합니다.
+두 데이터 세트(데이터 프레임)의 행(관찰)을 연결하는 데 사용되는 **행 추가** 모듈의 표준 구현을 수정하는 **사용자 지정 행 추가** 모듈의 예제를 고려해 보겠습니다. 표준 **행 추가** 모듈은 `rbind` 알고리즘을 사용하여 두 번째 입력 데이터 세트의 행을 첫 번째 입력 데이터 세트의 끝에 추가합니다. 사용자 지정 `CustomAddRows` 함수는 두 데이터 세트를 허용할 뿐만 아니라 부울 스왑 매개 변수도 추가 입력으로 허용합니다. 스왑 매개 변수가 **FALSE**로 설정된 경우 표준 구현과 동일한 데이터 집합을 반환합니다. 그러나 스왑 매개 변수가 **TRUE**인 경우에는 함수는 대신 첫 번째 입력 데이터 세트의 행을 두 번째 데이터 세트의 끝에 추가합니다. `CustomAddRows`사용자 지정 행 추가**모듈에 의해 노출되는 R** 함수의 구현을 포함하는 CustomAddRows.R 파일은 다음 R 코드를 포함합니다.
 
     CustomAddRows <- function(dataset1, dataset2, swap=FALSE) 
     {
@@ -290,10 +290,10 @@ defaultValue, minValue 및 maxValue와 같은 모듈의 선택적 속성을 **Pr
     * 레이블
     * 기능
     * 점수
-    * 전체
+    * 모두
   * **default** -열 선택의 유효한 기본 선택 항목은 다음과 같습니다. 
     
-    * 없음
+    * None
     * NumericFeature
     * NumericLabel
     * NumericScore
@@ -313,7 +313,7 @@ defaultValue, minValue 및 maxValue와 같은 모듈의 선택적 속성을 **Pr
     * AllLabel
     * AllFeature
     * AllScore
-    * 전체
+    * 모두
 
 **DropDown**: 사용자가 지정한 열거형(드롭다운) 목록입니다. 드롭다운 항목은 **Item** 요소를 사용하여 **Properties** 요소 내에 지정됩니다. 각 **Item**에 대한 **id**는 고유하고 유효한 R 변수여야 합니다. **Item**의 **name** 값은 표시되는 텍스트와 R 함수에 전달되는 값으로 사용됩니다.
 

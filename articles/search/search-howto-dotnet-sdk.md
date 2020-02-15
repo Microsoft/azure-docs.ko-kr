@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 54fcd1fb936b5dd41715798408b604106a24bcf9
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: b31a4e40c1e9095499faf265673ab4213ad6bde0
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112584"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190980"
 ---
 # <a name="how-to-use-azure-cognitive-search-from-a-net-application"></a>.NET 응용 프로그램에서 Azure Cognitive Search를 사용 하는 방법
 
@@ -236,7 +236,7 @@ private static void DeleteIndexIfExists(string indexName, SearchServiceClient se
 > 
 > 
 
-그 다음 `Main` 이(가) 이 메서드를 호출하여 새 "호텔" 인덱스를 만듭니다.
+그 다음 `Main`이(가) 이 메서드를 호출하여 새 "호텔" 인덱스를 만듭니다.
 
 ```csharp
 private static void CreateIndex(string indexName, SearchServiceClient serviceClient)
@@ -462,7 +462,7 @@ public partial class Hotel
 > 
 > 
 
-두 번째 주목할 점은 각 속성이 `IsFilterable`, `IsSearchable`, `Key`, `Analyzer`등의 특성으로 데코레이팅 된다는 것입니다. 이러한 특성은 [Azure Cognitive Search 인덱스의 해당 필드 특성](https://docs.microsoft.com/rest/api/searchservice/create-index#request)에 직접 매핑됩니다. `FieldBuilder` 클래스는 이러한 속성을 사용 하 여 인덱스에 대 한 필드 정의를 생성 합니다.
+두 번째 주목할 점은 각 속성이 `IsFilterable`, `IsSearchable`, `Key`, `Analyzer`등의 특성으로 데코레이팅 된다는 것입니다. 이러한 특성은 [Azure Cognitive Search 인덱스의 해당 필드 특성](/rest/api/searchservice/create-index)에 직접 매핑됩니다. `FieldBuilder` 클래스는 이러한 속성을 사용 하 여 인덱스에 대 한 필드 정의를 생성 합니다.
 
 `Hotel` 클래스에 대 한 세 번째 중요 한 사항은 공용 속성의 데이터 형식입니다. 이러한 속성의 .NET 유형은 인덱스 정의의 동등한 필드 유형에 매핑합니다. 예를 들어, `Category` 문자열 속성은 `category` 유형인 `Edm.String` 필드에 매핑됩니다. `bool?`, `Edm.Boolean`, `DateTimeOffset?`및 `Edm.DateTimeOffset` 사이에는 유사한 유형 매핑이 있습니다. 형식 매핑에 대 한 특정 규칙은 [Azure Cognitive Search .NET SDK 참조](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions.get)의 `Documents.Get` 메서드로 문서화 됩니다. `FieldBuilder` 클래스는 사용자를 위해 이러한 매핑을 처리하는 역할을 하지만 serialization 문제를 해결해야 하는 경우에도 알아두면 도움이 될 수 있습니다.
 

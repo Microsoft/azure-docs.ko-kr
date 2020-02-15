@@ -11,10 +11,10 @@ ms.service: cost-management-billing
 manager: alavital
 ms.custom: ''
 ms.openlocfilehash: 4be484cdff2014f11c872da9a246ef8406447712
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75988501"
 ---
 # <a name="use-cost-alerts-to-monitor-usage-and-spending"></a>비용 경고를 사용하여 사용량 및 지출 모니터링
@@ -37,9 +37,9 @@ Azure Portal에서는 비용을 통해 예산이 정의됩니다. Azure Consumpt
 
 ## <a name="supported-alert-features-by-offer-categories"></a>제품 범주별 지원되는 경고 기능
 
-경고 유형 지원은 보유한 Azure 계정(Microsoft 제품) 유형에 따라 달라집니다. 다음 표에서는 다양한 Microsoft 제품에서 지원되는 경고 기능을 보여 줍니다. [Cost Management 데이터](understand-cost-mgt-data.md)에 대 한 이해에서 Microsoft 제품의 전체 목록을 볼 수 있습니다.
+경고 유형에 대한 지원은 사용자가 보유한 Azure 계정(Microsoft 제품) 유형에 따라 달라집니다. 다음 표에서는 다양한 Microsoft 제품에서 지원되는 경고 기능을 보여줍니다. [Cost Management 데이터 이해](understand-cost-mgt-data.md)에서 Microsoft 제품의 전체 목록을 볼 수 있습니다.
 
-| 경고 유형 | 기업계약 | Microsoft 고객 계약 | 웹 직접/종 량 제 |
+| 경고 유형 | 기업 계약 | Microsoft 고객 계약 | 웹 직접/종량제 |
 |---|---|---|---|
 | Budget | ✔ | ✔ | ✔ |
 | 크레딧 | ✔ |✘ | ✘ |

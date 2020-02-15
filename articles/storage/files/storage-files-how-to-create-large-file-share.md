@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 11/20/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: a9b545d71f21138c0374cf199ce10dc2dc246afb
-ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
+ms.openlocfilehash: d94237d2cfeb814b2e15d43c9f8863a76c0bcd11
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75732147"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190667"
 ---
 # <a name="enable-and-create-large-file-shares"></a>대량 파일 공유 사용 및 만들기
 
-원래 표준 파일 공유는 최대 5 TiB 확장할 수 있었습니다. 이제 대용량 파일 공유를 사용 하 여 최대 100 TiB까지 확장할 수 있습니다. 기존 파일 공유에 대 한 기존 저장소 계정에 이러한 크기 조정을 사용 하도록 설정할 수 있습니다. 프리미엄 파일 공유는 기본적으로 최대 100 TiB 확장 됩니다.
+저장소 계정에서 대용량 파일 공유를 사용 하도록 설정 하면 파일 공유가 최대 100 TiB 확장 될 수 있습니다. 기존 파일 공유에 대 한 기존 저장소 계정에 이러한 크기 조정을 사용 하도록 설정할 수 있습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 - Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/)을 만듭니다.
 - Azure CLI를 사용 하려는 경우 [최신 버전을 설치](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)합니다.
@@ -26,7 +26,7 @@ ms.locfileid: "75732147"
 
 ## <a name="restrictions"></a>제한
 
-지금은 대량 파일 공유 사용 계정에서 LRS 또는 ZRS만 사용할 수 있습니다. GZRS, GRS 또는 RA-GRS를 사용할 수 없습니다.
+지금은 LRS (로컬 중복 저장소) 또는 ZRS (영역 중복 저장소)를 사용 하 여 파일 공유를 사용할 수 있습니다. GZRS (지역 중복 저장소), GRS (지역 중복 저장소) 또는 읽기 액세스 지역 중복 저장소 (RA-GRS)를 사용할 수 없습니다.
 계정에서 대량 파일 공유를 사용 하도록 설정 하는 작업은 되돌릴 수 없습니다. 사용 하도록 설정한 후에는 계정을 GZRS, GRS 또는 RA-GRS로 변환할 수 없습니다.
 
 ## <a name="create-a-new-storage-account"></a>새 스토리지 계정 만들기
@@ -49,8 +49,8 @@ ms.locfileid: "75732147"
 
    |필드  |값  |
    |---------|---------|
-   |배포 모델     |Resource Manager         |
-   |성능 중심     |Standard         |
+   |배포 모델     |리소스 관리자         |
+   |성능     |Standard         |
    |계정 종류     |StorageV2(범용 v2)         |
    |액세스 계층     |핫         |
 

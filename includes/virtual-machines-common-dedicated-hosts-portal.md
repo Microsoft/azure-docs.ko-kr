@@ -8,17 +8,17 @@ ms.topic: include
 ms.date: 01/09/2020
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 77eb54f5d7194f3006ce463fc5f905165bdfc659
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: 2d440db3e55638fcf2e3d3f3fe76f82ac4d25948
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75833918"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77192836"
 ---
 ## <a name="limitations"></a>제한 사항
 
 - 가상 머신 확장 집합은 현재 전용 호스트에서 지원 되지 않습니다.
-- 초기 릴리스는 다음 VM 시리즈를 지원 합니다. DSv3 및 ESv3 
+- 초기 릴리스는 다음 VM 시리즈를 지원 합니다. DSv3, ESv3 및 Fsv2. 
 
 ## <a name="create-a-host-group"></a>호스트 그룹 만들기
 
@@ -54,7 +54,7 @@ ms.locfileid: "75833918"
 
 ## <a name="create-a-dedicated-host"></a>전용 호스트 만들기
 
-이제 호스트 그룹에서 전용 호스트를 만듭니다. 호스트의 이름 외에 호스트의 SKU를 제공 해야 합니다. 호스트 SKU는 지원 되는 VM 시리즈 뿐만 아니라 전용 호스트의 하드웨어 생성도 캡처합니다. DSv3_Type1 및 ESv3_Type1 호스트 SKU 값이 지원 됩니다.
+이제 호스트 그룹에서 전용 호스트를 만듭니다. 호스트의 이름 외에 호스트의 SKU를 제공 해야 합니다. 호스트 SKU는 지원 되는 VM 시리즈 뿐만 아니라 전용 호스트의 하드웨어 생성도 캡처합니다.
 
 호스트 Sku 및 가격 책정에 대 한 자세한 내용은 [Azure 전용 호스트 가격](https://aka.ms/ADHPricing)을 참조 하세요.
 

@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/01/2019
-ms.openlocfilehash: 2525ca681d805a3b6f086335531a4beaeb9c4e51
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 68975f21ab810398da969384db4d3bddd22f1bd9
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75453462"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77116911"
 ---
 # <a name="call-azure-functions-from-azure-logic-apps"></a>Azure Logic Apps에서 Azure 함수를 호출 합니다.
 
@@ -26,7 +26,7 @@ Azure 함수를 만들지 않고 코드 조각을 실행 하려면 [인라인 �
 > [!NOTE]
 > 현재 Logic Apps와 Azure Functions 간의 통합은 슬롯을 사용 하는 경우 작동 하지 않습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Azure 구독 Azure 구독이 없는 경우 [체험 Azure 계정에 등록](https://azure.microsoft.com/free/)합니다.
 
@@ -83,13 +83,13 @@ function convertToDateString(request, response){
 
 이 함수 내에서 수행되는 작업은 다음과 같습니다.
 
-1. 이 함수는 `data` 변수를 만들고 `request` 개체 내의 `body` 개체를 해당 변수에 할당합니다. 이 함수는 점(.) 연산자를 사용하여 `request` 개체 내의 `body` 개체를 참조합니다.
+1. 이 함수는 `data` 변수를 만들고 `body` 개체 내의 `request` 개체를 해당 변수에 할당합니다. 이 함수는 점(.) 연산자를 사용하여 `body` 개체 내의 `request` 개체를 참조합니다.
 
    ```javascript
    var data = request.body;
    ```
 
-1. 이 함수는 이제 `data` 변수를 통해 `date` 속성에 액세스하고, `ToDateString()` 함수를 호출하여 해당 속성 값을 DateTime 형식에서 DateString 형식으로 변환할 수 있습니다. 또한 이 함수는 다음과 같이 함수의 응답에서 `body` 속성을 통해 결과를 반환합니다.
+1. 이 함수는 이제 `date` 변수를 통해 `data` 속성에 액세스하고, `ToDateString()` 함수를 호출하여 해당 속성 값을 DateTime 형식에서 DateString 형식으로 변환할 수 있습니다. 또한 이 함수는 다음과 같이 함수의 응답에서 `body` 속성을 통해 결과를 반환합니다.
 
    ```javascript
    body: data.date.ToDateString();
@@ -125,7 +125,7 @@ function convertToDateString(request, response){
 
    1. **코드** 상자에서 함수 실행이 완료 된 후에 논리 앱에 반환 하려는 응답과 페이로드를 포함 하 여 함수 템플릿에 코드를 추가 합니다. 완료되면 **만들기**를 선택합니다.
 
-   예:
+   다음은 그 예입니다.
 
    ![함수 정의](./media/logic-apps-azure-functions/add-code-function-definition.png)
 
@@ -133,11 +133,11 @@ function convertToDateString(request, response){
 
    `context.body.<property-name>`
 
-   예를 들어, `context` 개체 내의 `content` 속성을 참조하려면 다음 구문을 사용합니다.
+   예를 들어, `content` 개체 내의 `context` 속성을 참조하려면 다음 구문을 사용합니다.
 
    `context.body.content`
 
-   또한 템플릿 코드에는 함수가 해당 값에 대해 작업을 수행할 수 있도록 `data` 매개 변수의 값을 저장하는 `input` 변수도 포함되어 있습니다. JavaScript 함수 내에서 `data` 변수는 `context.body`를 빠르게 수행하는 방법이기도 합니다.
+   또한 템플릿 코드에는 함수가 해당 값에 대해 작업을 수행할 수 있도록 `input` 매개 변수의 값을 저장하는 `data` 변수도 포함되어 있습니다. JavaScript 함수 내에서 `data` 변수는 `context.body`를 빠르게 수행하는 방법이기도 합니다.
 
    > [!NOTE]
    > 여기서 `body` 속성은 `context` 개체에 적용되며, 함수에도 전달될 수 있는 작업의 출력에서 가져온 **Body** 토큰과 다릅니다.
@@ -200,11 +200,11 @@ Azure 함수 내에서 논리 앱을 트리거하려면 논리 앱이 호출 가
 
 로그인 하 고 자격 증명이 나 암호를 제공 하지 않고 다른 Azure Active Directory (Azure AD) 테 넌 트의 리소스에 대 한 액세스를 인증 하기 위해 논리 앱은 [관리 되는 id](../active-directory/managed-identities-azure-resources/overview.md) (이전의 관리 서비스 ID 또는 MSI)를 사용할 수 있습니다. 이 ID는 Azure에서 관리되며, 비밀을 제공하거나 순환할 필요가 없기 때문에 자격 증명을 보호하는 데 도움이 됩니다. [AZURE AD 인증에 대 한 관리 되는 id를 지 원하는 azure 서비스](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication)에 대해 자세히 알아보세요.
 
-시스템 할당 관리 id를 사용 하도록 논리 앱을 설정 하는 경우 논리 앱의 Azure 함수는 인증에 동일한 id를 사용할 수도 있습니다. 논리 앱의 Azure 기능에 대 한 인증 지원에 대 한 자세한 내용은 [아웃 바운드 호출에 인증 추가](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)를 참조 하세요.
+시스템 할당 id 또는 수동으로 생성 된 사용자 할당 id를 사용 하도록 논리 앱을 설정 하는 경우 논리 앱의 Azure 함수는 인증에 동일한 id를 사용할 수도 있습니다. 논리 앱의 Azure 기능에 대 한 인증 지원에 대 한 자세한 내용은 [아웃 바운드 호출에 인증 추가](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)를 참조 하세요.
 
-함수를 사용 하 여 시스템 할당 id를 설정 하 고 사용 하려면 다음 단계를 수행 합니다.
+함수를 사용 하 여 관리 되는 id를 설정 하 고 사용 하려면 다음 단계를 수행 합니다.
 
-1. 논리 앱에서 시스템이 할당 한 id를 사용 하도록 설정 하 고 대상 리소스에 대 한 해당 id의 액세스를 설정 합니다. [Azure Logic Apps에서 관리 되는 id를 사용 하 여 Azure 리소스에 대 한 액세스 인증을](../logic-apps/create-managed-service-identity.md)참조 하세요.
+1. 논리 앱에서 관리 id를 사용 하도록 설정 하 고 대상 리소스에 대 한 id의 액세스를 설정 합니다. [Azure Logic Apps에서 관리 되는 id를 사용 하 여 Azure 리소스에 대 한 액세스 인증을](../logic-apps/create-managed-service-identity.md)참조 하세요.
 
 1. 다음 단계를 수행 하 여 Azure 함수 및 함수 앱에서 인증을 사용 하도록 설정 합니다.
 
@@ -215,7 +215,7 @@ Azure 함수 내에서 논리 앱을 트리거하려면 논리 앱이 호출 가
 
 ### <a name="set-up-anonymous-authentication-in-your-function"></a>함수에서 익명 인증 설정
 
-Azure 함수에서 논리 앱의 시스템 할당 id를 사용 하려면 함수의 인증 수준을 익명으로 설정 해야 합니다. 그렇지 않으면 논리 앱이 "BadRequest" 오류를 throw 합니다.
+Azure 함수에서 논리 앱의 관리 되는 id를 사용 하려면 함수의 인증 수준을 익명으로 설정 해야 합니다. 그렇지 않으면 논리 앱이 "BadRequest" 오류를 throw 합니다.
 
 1. [Azure Portal](https://portal.azure.com)에서 함수 앱을 찾아 선택 합니다. 이러한 단계에서는 예제 함수 앱으로 "FabrikamFunctionApp"를 사용 합니다.
 

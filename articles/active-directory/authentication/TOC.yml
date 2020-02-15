@@ -9,8 +9,8 @@
   items:
     - name: 셀프 서비스 암호 재설정 사용
       href: tutorial-enable-sspr.md
-    - name: 애플리케이션에 MFA를 사용하도록 설정
-      href: tutorial-mfa-applications.md
+    - name: Azure Multi-Factor Authentication 사용
+      href: tutorial-enable-azure-mfa.md
     - name: SSPR 온-프레미스 통합 통합을 사용하도록 설정
       href: tutorial-enable-writeback.md
     - name: Azure ID 보호 통합
@@ -64,7 +64,7 @@
   items:
     - name: 셀프 서비스 암호 재설정
       items:
-        - name: 셀프 서비스 암호 재설정 배포
+        - name: 배포 가이드
           href: howto-sspr-deployment.md
         - name: 인증 데이터 미리 등록
           href: howto-sspr-authenticationdata.md
@@ -74,7 +74,7 @@
           href: howto-sspr-windows.md
     - name: 클라우드 기반 MFA
       items:
-        - name: 클라우드 기반 MFA 배포
+        - name: 배포 가이드
           href: howto-mfa-getstarted.md
         - name: 사용자 MFA 기준
           href: howto-mfa-userstates.md

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: enewman
-ms.openlocfilehash: 5bf54b6975475810650aeaee4b477e60255757bf
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 695b87540178fb5c1012a095c2a86937a189ef24
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75530683"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77133740"
 ---
 # <a name="set-up-a-lab-to-teach-data-science-with-python-and-jupyter-notebooks"></a>Python 및 Jupyter 노트북을 사용 하 여 데이터 과학을 교육 하는 랩 설정
 
@@ -30,7 +30,7 @@ ms.locfileid: "75530683"
 
 ### <a name="lab-account-settings"></a>랩 계정 설정
 
-랩 계정에 대해 아래 표에 설명 된 설정을 사용 하도록 설정 합니다. Marketplace 이미지를 사용 하도록 설정 하는 방법에 대 한 자세한 내용은 [랩 작성자에 게 제공 되는 marketplace 이미지 지정](tutorial-setup-lab-account.md#specify-marketplace-images-available-to-lab-creators)을 참조 하세요.
+랩 계정에 대해 아래 표에 설명 된 설정을 사용 하도록 설정 합니다. Marketplace 이미지를 사용 하도록 설정 하는 방법에 대 한 자세한 내용은 [랩 작성자에 게 제공 되는 marketplace 이미지 지정](how-to-configure-lab-accounts.md#specify-marketplace-images-available-to-lab-creators)을 참조 하세요.
 
 | 랩 계정 설정 | Instructions |
 | ------------------- | ------------ |
@@ -46,7 +46,7 @@ ms.locfileid: "75530683"
 | 랩 설정 | 값/지침 |
 | ------------ | ------------------ |
 |Virtual Machine 크기| 소형 GPU (계산). 이 크기는 인공 지능 및 심층 학습 같은 계산 집약적인 응용 프로그램 및 네트워크 집약적인 응용 프로그램에 가장 적합 합니다. |
-|가상 컴퓨터 이미지| 데이터 과학 가상 머신 - Windows 2016|
+|가상 컴퓨터 이미지| Data Science Virtual Machine-Windows 2016|
 
 ## <a name="template-machine"></a>템플릿 컴퓨터
 
@@ -54,7 +54,7 @@ ms.locfileid: "75530683"
 
 클래스를 설정 하는 나머지 작업은 로컬 노트북을 제공 하는 것입니다.  Azure Machine Learning 샘플을 사용 하는 방법에 대 한 지침은 [Jupyter 노트북을 사용 하 여 환경을 구성 하는 방법](../../machine-learning/how-to-configure-environment.md#jupyter)을 참조 하세요.  템플릿 컴퓨터에서 자신의 전자 필기장을 제공할 수도 있습니다.  템플릿이 게시 될 때 노트북은 모든 학생 컴퓨터에 복사 됩니다.
 
-## <a name="cost-estimate"></a>비용 추정
+## <a name="cost-estimate"></a>예상 비용
 
 이 클래스에 대해 가능한 예상 비용을 살펴보겠습니다.  25 명의 학생 클래스를 사용 합니다.  예약 된 클래스 시간은 20 시간입니다.  또한 각 학생은 예약 된 클래스 시간 외에도 과제 또는 배정에 대해 10 시간 할당량을 얻습니다.  선택한 가상 컴퓨터 크기는 작은 gpu (계산) 이며 랩 단위는 139입니다.
 

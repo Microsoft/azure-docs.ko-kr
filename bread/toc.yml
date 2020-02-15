@@ -27,6 +27,9 @@
         - name: 개발
           tocHref: /azure/active-directory/develop/
           topicHref: /azure/active-directory/develop/
+        - name: 개발자용 Azure AD
+          tocHref: /azure/active-directory/azuread-dev/
+          topicHref: /azure/active-directory/azuread-dev/
         - name: Privileged Identity Management
           tocHref: /azure/active-directory/privileged-identity-management/
           topicHref: /azure/active-directory/privileged-identity-management/
@@ -152,9 +155,6 @@
     - name: Container Registry
       tocHref: /azure/container-registry/
       topicHref: /azure/container-registry/
-    - name: Cost Management
-      tocHref: /azure/cost-management/
-      topicHref: /azure/cost-management/
     - name: Functions
       tocHref: /azure/azure-functions/
       topicHref: /azure/azure-functions/
@@ -261,9 +261,6 @@
     - name: Batch AI
       tocHref: /azure/batch-ai/
       topicHref: /azure/batch-ai/
-    - name: 청구 + 비용 관리
-      tocHref: /azure/billing/
-      topicHref: /azure/billing/
     - name: Biztalk Services
       tocHref: /azure/biztalk-services/
       topicHref: /azure/biztalk-services/
@@ -798,3 +795,19 @@
     - name: Windows Virtual Desktop
       tocHref: /azure/virtual-desktop/
       topicHref: /azure/virtual-desktop/
+    - name: Cost Management 및 청구
+      tocHref: /azure/cost-management-billing/
+      topicHref: /azure/cost-management-billing/
+      items:
+        - name: 시작하기
+          tocHref: /azure/cost-management-billing/understand/
+          topicHref: /azure/cost-management-billing/understand/
+        - name: 비용 및 사용량 관리
+          tocHref: /azure/cost-management-billing/costs/
+          topicHref: /azure/cost-management-billing/costs/
+        - name: 계정 및 구독 관리
+          tocHref: /azure/cost-management-billing/manage/
+          topicHref: /azure/cost-management-billing/manage/
+        - name: 예약
+          tocHref: /azure/cost-management-billing/reservations/
+          topicHref: /azure/cost-management-billing/reservations/

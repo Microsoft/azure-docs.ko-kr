@@ -6,12 +6,12 @@ author: msmbaldwin
 ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 51ddd4f3775ae8e41c0d0bdd4ed8a3a2a59b7db4
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 4007f4adeee065fe32492d3bd16f3a06d24e7d96
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76271790"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190597"
 ---
 # <a name="security-controls-for-azure-virtual-machine-scale-sets"></a>Azure Virtual Machine Scale Sets에 대 한 보안 제어
 
@@ -23,41 +23,41 @@ ms.locfileid: "76271790"
 
 | 보안 제어 | 예/아니요 | 메모 |
 |---|---|--|
-| 서비스 엔드포인트 지원| 예 | |
-| VNet 삽입 지원| 예 | |
-| 네트워크 격리 및 방화벽 지원| 예 |  |
-| 강제 터널링 지원| 예 | [Azure Resource Manager 배포 모델을 사용 하 여 강제 터널링 구성을](/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm)참조 하세요. |
+| 서비스 엔드포인트 지원| yes | |
+| VNet 삽입 지원| yes | |
+| 네트워크 격리 및 방화벽 지원| yes |  |
+| 강제 터널링 지원| yes | [Azure Resource Manager 배포 모델을 사용 하 여 강제 터널링 구성을](/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm)참조 하세요. |
 
 ## <a name="monitoring--logging"></a>& 로깅 모니터링
 
 | 보안 제어 | 예/아니요 | 메모|
 |---|---|--|
-| Azure 모니터링 지원 (Log analytics, App insights 등)| 예 | Azure에서 [Linux 가상 머신 모니터링 및 업데이트](/azure/virtual-machines/linux/tutorial-monitoring) 및 [azure에서 Windows 가상 머신 모니터링 및 업데이트](/azure/virtual-machines/windows/tutorial-monitoring)를 참조 하세요. |
-| 제어 및 관리 평면 로깅 및 감사| 예 |  |
-| 데이터 평면 로깅 및 감사 | 아닙니다. |  |
+| Azure 모니터링 지원 (Log analytics, App insights 등)| yes | Azure에서 [Linux 가상 머신 모니터링 및 업데이트](/azure/virtual-machines/linux/tutorial-monitoring) 및 [azure에서 Windows 가상 머신 모니터링 및 업데이트](/azure/virtual-machines/windows/tutorial-monitoring)를 참조 하세요. |
+| 제어 및 관리 평면 로깅 및 감사| yes |  |
+| 데이터 평면 로깅 및 감사 | 예 |  |
 
 ## <a name="identity"></a>ID
 
 | 보안 제어 | 예/아니요 | 메모|
 |---|---|--|
-| 인증| 예 |  |
-| 권한 부여| 예 |  |
+| 인증| yes |  |
+| 권한 부여| yes |  |
 
 ## <a name="data-protection"></a>데이터 보호
 
 | 보안 제어 | 예/아니요 | 메모 |
 |---|---|--|
-| 미사용 서버 쪽 암호화: Microsoft 관리 키 | 예 | [Virtual Machine Scale Sets Azure Disk Encryption를](disk-encryption-overview.md)참조 하세요. |
-| 전송 중 암호화 (예: Express 경로 암호화, VNet 암호화 및 VNet-VNet 암호화)| 예 | Azure Virtual Machines는 [express](/azure/expressroute) 경로 및 VNet 암호화를 지원 합니다. [Vm의 전송 중 암호화를](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms)참조 하세요. |
-| 미사용 서버 쪽 암호화: 고객 관리 키 (BYOK) | 예 | 고객 관리 키는 지원 되는 Azure 암호화 시나리오입니다. 자세한 내용은 [Azure Disk Encryption를](disk-encryption-overview.md) 참조 하세요 Virtual Machine Scale Sets|
-| 열 수준 암호화 (Azure Data Services)| N/A | |
-| API 호출 암호화| 예 | HTTPS 및 SSL을 통해. |
+| 미사용 서버 쪽 암호화: Microsoft 관리 키 | yes | [Virtual Machine Scale Sets Azure Disk Encryption를](disk-encryption-overview.md)참조 하세요. |
+| 전송 중 암호화 (예: Express 경로 암호화, VNet 암호화 및 VNet-VNet 암호화)| yes | Azure Virtual Machines는 [express](/azure/expressroute) 경로 및 VNet 암호화를 지원 합니다. [Vm의 전송 중 암호화를](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms)참조 하세요. |
+| 미사용 서버 쪽 암호화: 고객 관리 키 (BYOK) | yes | 고객 관리 키는 지원 되는 Azure 암호화 시나리오입니다. 자세한 내용은 [Azure Disk Encryption를](disk-encryption-overview.md) 참조 하세요 Virtual Machine Scale Sets|
+| 열 수준 암호화 (Azure Data Services)| 해당 없음 | |
+| API 호출 암호화| yes | HTTPS 및 TLS를 통해 |
 
-## <a name="configuration-management"></a>Configuration Management
+## <a name="configuration-management"></a>구성 관리
 
 | 보안 제어 | 예/아니요 | 메모|
 |---|---|--|
-| 구성 관리 지원 (구성의 버전 관리 등)| 예 |  | 
+| 구성 관리 지원 (구성의 버전 관리 등)| yes |  | 
 
 ## <a name="next-steps"></a>다음 단계
 

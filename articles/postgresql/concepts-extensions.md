@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 12/20/2019
-ms.openlocfilehash: 069fc83e773c00be41e21e23fc01c589c13d687d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/13/2020
+ms.openlocfilehash: a12738f5de783c8a34718b8d9cb4bbf54f230589
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75372706"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201274"
 ---
 # <a name="postgresql-extensions-in-azure-database-for-postgresql---single-server"></a>Azure Database for PostgreSQL의 PostgreSQL 확장-단일 서버
 PostgreSQL은 확장을 사용하여 데이터베이스의 기능을 확장하는 방법을 제공합니다. 확장은 단일 명령을 사용 하 여 데이터베이스에서 로드 하거나 제거할 수 있는 단일 패키지에서 여러 관련 SQL 개체를 함께 번들로 묶습니다. 데이터베이스에 로드 된 후 확장은 기본 제공 기능 처럼 작동 합니다.
@@ -204,22 +204,26 @@ Azure Database for PostgreSQL은 아래에 나열 된 대로 키 확장의 하�
 
 
 ## <a name="pg_stat_statements"></a>pg_stat_statements
-Pg_stat_statements 확장은 SQL 문의 실행 통계를 추적 하는 방법을 제공 하기 위해 모든 Azure Database for PostgreSQL 서버에 미리 로드 됩니다.
+[Pg_stat_statements 확장](https://www.postgresql.org/docs/current/pgstatstatements.html) 은 SQL 문의 실행 통계를 추적 하는 방법을 제공 하기 위해 모든 Azure Database for PostgreSQL 서버에 미리 로드 됩니다.
 확장을 통해 어떤 명령문을 계산할지 제어하는 `pg_stat_statements.track` 설정의 기본값은 `top`이며 이것은 클라이언트가 직접 실행하는 모든 명령문이 추적된다는 의미입니다. 다른 두 가지 추적 수준은 `none`과 `all`입니다. 이 설정은 [Azure Portal](https://docs.microsoft.com/azure/postgresql/howto-configure-server-parameters-using-portal)이나 [Azure CLI](https://docs.microsoft.com/azure/postgresql/howto-configure-server-parameters-using-cli)를 통해 서버 매개 변수로 구성할 수 있습니다.
 
 pg_stat_statements를 통해 제공되는 쿼리 실행 정보와 각 SQL 문을 기록할 때 서버 성능에 미치는 영향 사이에는 상충 관계가 있습니다. pg_stat_statements 확장을 적극적으로 사용하지 않는 경우에는 `pg_stat_statements.track`을 `none`으로 설정하는 것이 좋습니다. 일부 타사 모니터링 서비스가 pg_stat_statements에 기반하여 쿼리 성능 정보를 제공할 수 있으므로 여기에 해당하는 경우인지 여부를 확인하십시오.
 
 ## <a name="dblink-and-postgres_fdw"></a>ablink 및 postgres_fdw
-dblink 및 postgres_fdw를 사용하여 한 PostgreSQL 서버에서 다른 PostgreSQL 서버로 또는 동일한 서버의 다른 데이터베이스로 연결할 수 있습니다. 받는 서버는 해당 방화벽을 통한 보내는 서버의 연결을 허용해야 합니다. 이러한 확장을 사용하여 Azure Database for PostgreSQL 서버 간을 연결하는 경우 "Azure 서비스에 대한 액세스 허용"을 켜기로 설정하여 이 작업을 수행할 수 있습니다. 확장을 사용하여 동일한 서버로 루프백하는 데도 이 작업이 필요합니다. "Azure 서비스에 대한 액세스 허용" 설정은 Postgres 서버의 Azure Portal 페이지에서 연결 보안 아래에 있습니다. "Azure 서비스에 대 한 액세스 허용"을 설정 하면 모든 Azure Ip가 허용 목록에 배치 됩니다.
+[dblink](https://www.postgresql.org/docs/current/contrib-dblink-function.html) PostgreSQL 서버에서 다른 서버에 연결 하거나 동일한 서버의 다른 데이터베이스에 연결할 수 있습니다. [postgres_fdw](https://www.postgresql.org/docs/current/postgres-fdw.html) 받는 서버는 해당 방화벽을 통한 보내는 서버의 연결을 허용해야 합니다. 이러한 확장을 사용하여 Azure Database for PostgreSQL 서버 간을 연결하는 경우 "Azure 서비스 방문 허용"을 켜기로 설정하여 이 작업을 수행할 수 있습니다. 확장을 사용하여 동일한 서버로 루프백하는 데도 이 작업이 필요합니다. "Azure 서비스 방문 허용" 설정은 Postgres 서버의 Azure Portal 페이지에서 연결 보안 아래에 있습니다. "Azure 서비스에 대 한 액세스 허용"을 설정 하면 모든 Azure Ip가 허용 목록에 배치 됩니다.
 
 다른 Azure Database for PostgreSQL 서버에 대한 연결을 제외하고, 현재 Azure Database for PostgreSQL에서 아웃바운드 연결은 지원되지 않습니다.
 
 ## <a name="uuid"></a>uuid
-Uuid-ossp 확장의 `uuid_generate_v4()`를 사용 하려는 경우 성능 이점을 위해 pgcrypto 확장의 `gen_random_uuid()`와 비교 하는 것이 좋습니다.
-
+[Uuid-ossp 확장](https://www.postgresql.org/docs/current/uuid-ossp.html)의 `uuid_generate_v4()`를 사용 하려는 경우 성능 이점을 위해 [pgcrypto 확장](https://www.postgresql.org/docs/current/pgcrypto.html) 의 `gen_random_uuid()`와 비교 하는 것이 좋습니다.
 
 ## <a name="pgaudit"></a>pgAudit
-PgAudit 확장은 세션 및 개체 감사 로깅을 제공 합니다. Azure Database for PostgreSQL에서이 확장을 사용 하는 방법을 알아보려면 [감사 개념 문서](concepts-audit.md)를 참조 하세요. 
+[Pgaudit 확장](https://github.com/pgaudit/pgaudit/blob/master/README.md) 은 세션 및 개체 감사 로깅을 제공 합니다. Azure Database for PostgreSQL에서이 확장을 사용 하는 방법을 알아보려면 [감사 개념 문서](concepts-audit.md)를 참조 하세요. 
+
+## <a name="pg_prewarm"></a>pg_prewarm
+Pg_prewarm 확장은 관계형 데이터를 캐시로 로드 합니다. 캐시를 미리 준비 하는 것은 다시 시작 후 쿼리를 처음 실행 하는 경우 응답 시간이 더 나은 것을 의미 합니다. Postgres 10이 하에서는 prewarming [함수](https://www.postgresql.org/docs/10/pgprewarm.html)를 사용 하 여 사전 준비를 수동으로 수행 합니다.
+
+Postgres 11 이상에서 사전 준비를 [자동으로](https://www.postgresql.org/docs/current/pgprewarm.html)수행 하도록 구성할 수 있습니다. `shared_preload_libraries` 매개 변수의 목록에 pg_prewarm를 포함 하 고 서버를 다시 시작 하 여 변경 내용을 적용 해야 합니다. [Azure Portal](howto-configure-server-parameters-using-portal.md), [CLI](howto-configure-server-parameters-using-cli.md), REST API 또는 ARM 템플릿에서 매개 변수를 설정할 수 있습니다. 
 
 ## <a name="timescaledb"></a>TimescaleDB
 TimescaleDB는 PostgreSQL에 대한 확장으로 패키지되는 시계열 데이터베이스입니다. TimescaleDB는 시간 지향적인 분석 함수, 최적화를 제공하고 시계열 작업용 Postgres를 확장합니다.

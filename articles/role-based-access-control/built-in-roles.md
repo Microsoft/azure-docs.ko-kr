@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 01/17/2020
+ms.date: 02/13/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: b2a49528ca3c2b55c02f3bda89b3722ee8fef535
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 9858f7ac25f2063e62dce0322f1859a0a7fcf83b
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264257"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198669"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Azure 리소스에 대한 기본 제공 역할
 
@@ -152,9 +152,9 @@ ms.locfileid: "76264257"
 > | [Storage Blob 데이터 소유자](#storage-blob-data-owner) | POSIX 액세스 제어 할당을 포함 하 여 Azure Storage blob 컨테이너 및 데이터에 대 한 모든 권한을 제공 합니다. 지정 된 데이터 작업에 필요한 작업에 대 한 자세한 내용은 [blob 호출 및 큐 데이터 작업에 대 한 사용 권한](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)을 참조 하세요. | b7e6dc6d-f1e8-4753-8033-0f276bb0955b |
 > | [Storage Blob 데이터 읽기 권한자](#storage-blob-data-reader) | 컨테이너 및 blob Azure Storage 읽고 나열 합니다. 지정 된 데이터 작업에 필요한 작업에 대 한 자세한 내용은 [blob 호출 및 큐 데이터 작업에 대 한 사용 권한](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)을 참조 하세요. | 2a2b9908-6ea1-4ae2-8e65-a410df84e7d1 |
 > | [저장소 Blob 위임자](#storage-blob-delegator) | Azure AD 자격 증명으로 서명 된 컨테이너 또는 blob에 대 한 공유 액세스 서명을 만드는 데 사용할 수 있는 사용자 위임 키를 가져옵니다. 자세한 내용은 [사용자 위임 SAS 만들기](https://docs.microsoft.com/rest/api/storageservices/create-user-delegation-sas)를 참조 하세요. | db58b8e5-c6ad-4a2a-8342-4190687cbf4a |
-> | [저장소 파일 데이터 SMB 공유 참가자](#storage-file-data-smb-share-contributor) | SMB를 통한 Azure Storage 파일 공유에 대 한 읽기, 쓰기 및 삭제 액세스를 허용 합니다. | 0c867c2a-1d8c-454a-a3db-ab2ea1bdc8bb |
-> | [저장소 파일 데이터 SMB 공유 승격 된 참가자](#storage-file-data-smb-share-elevated-contributor) | SMB를 통한 Azure Storage 파일 공유에서 NTFS 권한 액세스를 읽고, 쓰고, 삭제 하 고, 수정할 수 있습니다. | a7264617-510b-434b-a828-9731dc254ea7 |
-> | [저장소 파일 데이터 SMB 공유 판독기](#storage-file-data-smb-share-reader) | SMB를 통해 Azure 파일 공유에 대 한 읽기 액세스를 허용 합니다. | aba4ae5f-2193-4029-9191-0cb91df5e314 |
+> | [저장소 파일 데이터 SMB 공유 참가자](#storage-file-data-smb-share-contributor) | Azure 파일 공유의 파일/디렉터리에 대 한 읽기, 쓰기 및 삭제 액세스를 허용 합니다. 이 역할에는 Windows 파일 서버에 대 한 기본 제공 기능이 없습니다. | 0c867c2a-1d8c-454a-a3db-ab2ea1bdc8bb |
+> | [저장소 파일 데이터 SMB 공유 승격 된 참가자](#storage-file-data-smb-share-elevated-contributor) | Azure 파일 공유에서 파일/디렉터리에 대 한 Acl을 읽고, 쓰고, 삭제 하 고, 수정할 수 있습니다. 이 역할은 Windows 파일 서버의 변경 내용에 대 한 파일 공유 ACL에 해당 합니다. | a7264617-510b-434b-a828-9731dc254ea7 |
+> | [저장소 파일 데이터 SMB 공유 판독기](#storage-file-data-smb-share-reader) | Azure 파일 공유의 파일/디렉터리에 대 한 읽기 액세스를 허용 합니다. 이 역할은 Windows 파일 서버에서 읽기의 파일 공유 ACL에 해당 합니다. | aba4ae5f-2193-4029-9191-0cb91df5e314 |
 > | [저장소 큐 데이터 기여자](#storage-queue-data-contributor) | Azure Storage 큐 및 큐 메시지를 읽고, 쓰고, 삭제 합니다. 지정 된 데이터 작업에 필요한 작업에 대 한 자세한 내용은 [blob 호출 및 큐 데이터 작업에 대 한 사용 권한](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)을 참조 하세요. | 974c5e8b-45b9-4653-ba55-5f855dd0fb88 |
 > | [저장소 큐 데이터 메시지 처리기](#storage-queue-data-message-processor) | Azure Storage 큐에서 메시지를 피킹 (peeking) 하 고 검색 하 고 삭제 합니다. 지정 된 데이터 작업에 필요한 작업에 대 한 자세한 내용은 [blob 호출 및 큐 데이터 작업에 대 한 사용 권한](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)을 참조 하세요. | 8a0f0c08-91a1-4084-bc3d-661d67233fed |
 > | [저장소 큐 데이터 메시지 보낸 사람](#storage-queue-data-message-sender) | Azure Storage 큐에 메시지를 추가 합니다. 지정 된 데이터 작업에 필요한 작업에 대 한 자세한 내용은 [blob 호출 및 큐 데이터 작업에 대 한 사용 권한](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)을 참조 하세요. | c6a89b2d-59bc-44d0-9896-0f6e12d7b80a |
@@ -422,7 +422,8 @@ ms.locfileid: "76264257"
 > | **Id** | ae349356-3a1b-4a5e-921d-050484c6347e |
 > | **actions** |  |
 > | Microsoft.Authorization/*/read | 역할 및 역할 할당 읽기 |
-> | Microsoft.Insights/alertRules/* | 경고 규칙 만들기 및 관리 |
+> | Microsoft.Insights/alertRules/* | 클래식 경고 규칙 만들기 및 관리 |
+> | Microsoft.Insights/metricAlerts/* | 새 경고 규칙 만들기 및 관리 |
 > | Microsoft.Insights/components/* | Insights 구성 요소 만들기 및 관리 |
 > | Microsoft.Insights/webtests/* | 웹 테스트 만들기 및 관리 |
 > | Microsoft.ResourceHealth/availabilityStatuses/read | 지정된 범위의 모든 리소스에 대한 가용성 상태를 가져옵니다. |
@@ -2482,7 +2483,7 @@ ms.locfileid: "76264257"
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/switchprotection/action | 보호 컨테이너를 전환합니다. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/testFailover/action | 테스트 장애 조치(Failover) |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/testFailoverCleanup/action | 테스트 장애 조치(Failover) 정리 |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/unplannedFailover/action | 장애 조치(Failover) |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/unplannedFailover/action | 장애 조치 |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/updateMobilityService/action | 모바일 서비스를 업데이트합니다. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/read | 보호 컨테이너 매핑을 읽습니다. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/read | Recovery Services 공급자를 읽습니다. |
@@ -2915,7 +2916,7 @@ ms.locfileid: "76264257"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **설명** | SMB를 통한 Azure Storage 파일 공유에 대 한 읽기, 쓰기 및 삭제 액세스를 허용 합니다. |
+> | **설명** | Azure 파일 공유의 파일/디렉터리에 대 한 읽기, 쓰기 및 삭제 액세스를 허용 합니다. 이 역할에는 Windows 파일 서버에 대 한 기본 제공 기능이 없습니다. |
 > | **Id** | 0c867c2a-1d8c-454a-a3db-ab2ea1bdc8bb |
 > | **actions** |  |
 > | *없음* |  |
@@ -2932,7 +2933,7 @@ ms.locfileid: "76264257"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **설명** | SMB를 통한 Azure Storage 파일 공유에서 NTFS 권한 액세스를 읽고, 쓰고, 삭제 하 고, 수정할 수 있습니다. |
+> | **설명** | Azure 파일 공유에서 파일/디렉터리에 대 한 Acl을 읽고, 쓰고, 삭제 하 고, 수정할 수 있습니다. 이 역할은 Windows 파일 서버의 변경 내용에 대 한 파일 공유 ACL에 해당 합니다. |
 > | **Id** | a7264617-510b-434b-a828-9731dc254ea7 |
 > | **actions** |  |
 > | *없음* |  |
@@ -2950,7 +2951,7 @@ ms.locfileid: "76264257"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **설명** | SMB를 통해 Azure 파일 공유에 대 한 읽기 액세스를 허용 합니다. |
+> | **설명** | Azure 파일 공유의 파일/디렉터리에 대 한 읽기 액세스를 허용 합니다. 이 역할은 Windows 파일 서버에서 읽기의 파일 공유 ACL에 해당 합니다. |
 > | **Id** | aba4ae5f-2193-4029-9191-0cb91df5e314 |
 > | **actions** |  |
 > | *없음* |  |

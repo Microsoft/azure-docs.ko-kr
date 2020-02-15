@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 03/20/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 33e1037a0fe261f9fb0d06a9ebb0b3b323fe8d5f
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 5657a2d2c348b371f81aed74c92e52b5199cdc61
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701266"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159883"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>JavaScript SPA(단일 페이지 애플리케이션)에서 사용자 로그인 및 Microsoft Graph API 호출
 
@@ -50,8 +50,8 @@ ms.locfileid: "76701266"
 |[msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js)|JavaScript용 Microsoft 인증 라이브러리 미리 보기|
 
 > [!NOTE]
-> *msal.js*는 Microsoft ID 플랫폼 엔드포인트를 대상으로 하며, 이를 통해 개인, 학교 및 회사 계정으로 로그인하여 토큰을 획득할 수 있습니다. Microsoft ID 플랫폼 엔드포인트에는 [몇 가지 제한 사항](azure-ad-endpoint-comparison.md#limitations)이 있습니다.
-> v1.0 및 v2.0 엔드포인트 간의 차이점을 이해하려면 [엔드포인트 비교 가이드](azure-ad-endpoint-comparison.md)를 참조하세요.
+> *msal.js*는 Microsoft ID 플랫폼 엔드포인트를 대상으로 하며, 이를 통해 개인, 학교 및 회사 계정으로 로그인하여 토큰을 획득할 수 있습니다. Microsoft ID 플랫폼 엔드포인트에는 [몇 가지 제한 사항](../azuread-dev/azure-ad-endpoint-comparison.md#limitations)이 있습니다.
+> v1.0 및 v2.0 엔드포인트 간의 차이점을 이해하려면 [엔드포인트 비교 가이드](../azuread-dev/azure-ad-endpoint-comparison.md)를 참조하세요.
 
 <!--end-collapse-->
 

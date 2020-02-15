@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/06/2019
 ms.author: jlian
-ms.openlocfilehash: fc861126cd723bbb0f7c43d5d2db4eed1503605a
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: ed477dddeb499023f4803929d9433ed37c302159
+ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75911886"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77212479"
 ---
 # <a name="trace-azure-iot-device-to-cloud-messages-with-distributed-tracing-preview"></a>분산 추적(미리 보기)을 사용하여 Azure IoT 디바이스-클라우드 메시지 추적
 
@@ -30,11 +30,11 @@ IoT Hub의 분산 추적을 사용하도록 설정하면 다음과 같은 기능
 
 이 문서에서는 분산 추적과 함께 [C용 Azure IoT 디바이스 SDK](iot-hub-device-sdk-c-intro.md)를 사용합니다. 다른 SDK의 경우 분산 추적 지원이 아직 진행 중입니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 - 분산 추적의 미리 보기는 현재 다음 지역에서 만든 IoT Hub에 대해서만 지원됩니다.
 
-  - **유럽 북부**
+  - **북유럽**
   - **동남아시아**
   - **미국 서부 2**
 
@@ -90,7 +90,7 @@ IoT Hub의 분산 추적을 사용하도록 설정하면 다음과 같은 기능
 
 1. Visual Studio 2019에 대 한 ["데스크톱 개발 C++" 워크 로드](https://docs.microsoft.com/cpp/build/vscpp-step-0-installation?view=vs-2019) 를 설치 합니다. Visual Studio 2017 및 2015도 지원 됩니다.
 
-1. [CMake](https://cmake.org/)를 설치합니다. 명령 프롬프트에서 `cmake -version`을 입력하여 `PATH`에 있는지 확인합니다.
+1. [CMake](https://cmake.org/)를 설치합니다. 명령 프롬프트에서 `PATH`을 입력하여 `cmake -version`에 있는지 확인합니다.
 
 1. 명령 프롬프트 또는 Git Bash 셸을 엽니다. 다음 명령을 실행 하 여 [Azure IoT C SDK](https://github.com/Azure/azure-iot-sdk-c) GitHub 리포지토리의 최신 릴리스를 복제 합니다.
 
@@ -102,7 +102,7 @@ IoT Hub의 분산 추적을 사용하도록 설정하면 다음과 같은 기능
 
     이 작업을 완료하는 데 몇 분 정도가 걸립니다.
 
-1. Git 리포지토리의 루트 디렉터리에서 `cmake` 하위 디렉터리를 만들고 해당 폴더로 이동합니다. `azure-iot-sdk-c` 디렉터리에서 다음 명령을 실행 합니다.
+1. Git 리포지토리의 루트 디렉터리에서 `cmake` 하위 디렉터리를 만들고 해당 폴더로 이동합니다. `azure-iot-sdk-c` 디렉터리에서 다음 명령을 실행합니다.
 
     ```cmd
     mkdir cmake
@@ -130,13 +130,16 @@ IoT Hub의 분산 추적을 사용하도록 설정하면 다음과 같은 기능
 
 ### <a name="edit-the-send-telemetry-sample-to-enable-distributed-tracing"></a>분산 추적을 사용하도록 원격 분석 보내기 샘플 편집
 
+> [!div class="button"]
+> <a href="https://github.com/Azure-Samples/azure-iot-distributed-tracing-sample/blob/master/iothub_ll_telemetry_sample-c/iothub_ll_telemetry_sample.c" target="_blank">Github의 샘플 가져오기</a>
+
 1. 편집기를 사용하여 `azure-iot-sdk-c/iothub_client/samples/iothub_ll_telemetry_sample/iothub_ll_telemetry_sample.c` 소스 파일을 엽니다.
 
 1. `connectionString` 상수의 선언을 찾습니다.
 
     [!code-c[](~/samples-iot-distributed-tracing/iothub_ll_telemetry_sample-c/iothub_ll_telemetry_sample.c?name=snippet_config&highlight=2)]
 
-    `connectionString` 상수 값을 [원격 분석 보내기 C 빠른 시작](./quickstart-send-telemetry-c.md)의 [디바이스 등록](./quickstart-send-telemetry-c.md#register-a-device) 섹션에서 기록해 둔 디바이스 연결 문자열로 바꿉니다.
+    `connectionString` 상수 값을 [원격 분석 보내기 C 빠른 시작](./quickstart-send-telemetry-c.md#register-a-device)의 [디바이스 등록](./quickstart-send-telemetry-c.md) 섹션에서 기록해 둔 디바이스 연결 문자열로 바꿉니다.
 
 1. `MESSAGE_COUNT` 정의를 `5000`으로 변경합니다.
 
@@ -154,7 +157,7 @@ IoT Hub의 분산 추적을 사용하도록 설정하면 다음과 같은 기능
 
 ### <a name="compile-and-run"></a>컴파일 및 실행
 
-1. 이전에 만든 CMake 디렉터리(`azure-iot-sdk-c/cmake`)에서 *iothub_ll_telemetry_sample* 프로젝트 디렉터리로 이동한 후 샘플을 컴파일합니다.
+1. 이전에 만든 CMake 디렉터리( *)에서* iothub_ll_telemetry_sample`azure-iot-sdk-c/cmake` 프로젝트 디렉터리로 이동한 후 샘플을 컴파일합니다.
 
     ```cmd
     cd iothub_client/samples/iothub_ll_telemetry_sample
@@ -241,10 +244,10 @@ C SDK를 사용 하지 않고도 분산 추적 **기능을 미리 볼 수 있습
 }
 ```
 
-| 요소 이름 | 필수 | 유형 | Description |
+| 요소 이름 | 필수 | Type | Description |
 |-----------------|----------|---------|-----------------------------------------------------|
-| `sampling_mode` | 예 | 정수 | 샘플링을 켜고 끄기 위해 현재 두 가지 모드 값이 지원됩니다. `1`은 켜짐이고 `2`는 꺼짐입니다. |
-| `sampling_rate` | 예 | 정수 | 이 값은 백분율입니다. `0`~`100`(경계값 포함) 사이의 값만 허용됩니다.  |
+| `sampling_mode` | yes | 정수 | 샘플링을 켜고 끄기 위해 현재 두 가지 모드 값이 지원됩니다. `1`은 켜짐이고 `2`는 꺼짐입니다. |
+| `sampling_rate` | yes | 정수 | 이 값은 백분율입니다. `0`~`100`(경계값 포함) 사이의 값만 허용됩니다.  |
 
 ## <a name="query-and-visualize"></a>쿼리 및 시각화
 
@@ -264,7 +267,7 @@ AzureDiagnostics
 
 Log Analytics에 표시된 예제 로그:
 
-| TimeGenerated | OperationName | 범주 | 수준 | CorrelationId | DurationMs | 속성 |
+| TimeGenerated | OperationName | Category | Level | CorrelationId | DurationMs | 속성 |
 |--------------------------|---------------|--------------------|---------------|---------------------------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | 2018-02-22T03:28:28.633Z | DiagnosticIoTHubD2C | DistributedTracing | 정보 제공 | 00-8cd869a412459a25f5b4f31311223344-0144d2590aacd909-01 |  | {"deviceId":"AZ3166","messageSize":"96","callerLocalTimeUtc":"2018-02-22T03:27:28.633Z","calleeLocalTimeUtc":"2018-02-22T03:27:28.687Z"} |
 | 2018-02-22T03:28:38.633Z | DiagnosticIoTHubIngress | DistributedTracing | 정보 제공 | 00-8cd869a412459a25f5b4f31311223344-349810a9bbd28730-01 | 20 | {"isRoutingEnabled":"false","parentSpanId":"0144d2590aacd909"} |
@@ -272,7 +275,7 @@ Log Analytics에 표시된 예제 로그:
 
 다양한 유형의 로그를 이해하려면 [Azure IoT Hub 진단 로그](iot-hub-monitor-resource-health.md#distributed-tracing-preview)를 참조하세요.
 
-### <a name="application-map"></a>Application Map
+### <a name="application-map"></a>애플리케이션 맵
 
 IoT 메시지의 흐름을 시각화하기 위해 애플리케이션 맵 샘플 앱을 설정합니다. 샘플 앱은 Azure Function 및 Event Hub를 사용하여 분산 추적 로그를 [애플리케이션 맵](../application-insights/app-insights-app-map.md)으로 보냅니다.
 
@@ -306,8 +309,8 @@ IoT 메시지의 흐름을 시각화하기 위해 애플리케이션 맵 샘플 
 1. 메시지가 IoT Hub 게이트웨이에 도착합니다.
 1. IoT Hub가 메시지 애플리케이션 속성에서 `tracestate`를 찾고 올바른 형식인지 확인합니다.
 1. 형식이 올바르면 IoT Hub는 `trace-id` 및 `span-id`를 생성한 후 Azure Monitor 진단 로그의 `DiagnosticIoTHubD2C` 범주 아래에 기록합니다.
-1. 메시지 처리가 완료되면 IoT Hub는 다른 `span-id`를 생성하고 `DiagnosticIoTHubIngress` 범주 아래에 기존 `trace-id`와 함께 기록합니다.
-1. 메시지에 대해 라우팅을 사용하도록 설정하면, IoT Hub는 사용자 지정 엔드포인트에 쓰고, `DiagnosticIoTHubEgress` 범주 아래에 동일한 `trace-id`를 사용하여 다른 `span-id`를 기록합니다.
+1. 메시지 처리가 완료되면 IoT Hub는 다른 `span-id`를 생성하고 `trace-id` 범주 아래에 기존 `DiagnosticIoTHubIngress`와 함께 기록합니다.
+1. 메시지에 대해 라우팅을 사용하도록 설정하면, IoT Hub는 사용자 지정 엔드포인트에 쓰고, `span-id` 범주 아래에 동일한 `trace-id`를 사용하여 다른 `DiagnosticIoTHubEgress`를 기록합니다.
 1. 위 단계는 생성된 각 메시지에 대해 반복됩니다.
 
 ## <a name="public-preview-limits-and-considerations"></a>공개 미리 보기 제한 및 고려 사항

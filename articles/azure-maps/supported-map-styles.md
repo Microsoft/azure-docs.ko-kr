@@ -1,19 +1,19 @@
 ---
 title: 지원 되는 지도 스타일 | Microsoft Azure 맵
-description: 이 문서에서는 Microsoft Azure 맵에서 지 원하는 다양 한 지도 렌더링 스타일에 대해 설명 합니다.
-author: walsehgal
-ms.author: v-musehg
+description: 이 문서에서는 Microsoft Azure 맵에서 지 원하는 다양 한 지도 렌더링 스타일에 대해 알아봅니다.
+author: farah-alyasari
+ms.author: v-faalya
 ms.date: 05/06/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 92e48486777d82589a56074790dd709c5d525859
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 9cdfd0d029057e36e010203b7c35a5aafee4b574
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75910632"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77208287"
 ---
 # <a name="azure-maps-supported-map-styles"></a>Azure Maps에서 지원되는 지도 스타일
 Azure Maps는 아래 설명된 대로 여러 가지 기본 제공 지도 스타일을 지원합니다.
@@ -31,7 +31,7 @@ Azure Maps는 아래 설명된 대로 여러 가지 기본 제공 지도 스타�
 
 ## <a name="blank-and-blank_accessible"></a>blank 및 blank_accessible
 
-**비어** 있는 지도와 **blank_accessible** 지도 스타일은 데이터를 시각화할 빈 캔버스를 제공 합니다. 기본 지도가 표시 되지 않는 경우에도 **blank_accessible** 스타일은 지도가 있는 위치 세부 정보와 함께 화면 판독기 업데이트를 계속 제공 합니다.
+**비어** 있는 지도와 **blank_accessible** 지도 스타일은 데이터를 시각화할 빈 캔버스를 제공 합니다. 기본 지도가 표시 되지 않더라도 **blank_accessible** 스타일은 지도 위치 세부 정보를 사용 하 여 화면 판독기 업데이트를 계속 제공 합니다.
 
 > [!Note]
 > 웹 SDK에서 지도 DIV 요소의 CSS `background-color` 스타일을 설정 하 여 지도의 배경색을 변경할 수 있습니다.

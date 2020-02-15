@@ -9,12 +9,12 @@ tags: complex data types; compound data types; aggregate data types
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 657cded5e16897f9581bbcf365bacc2d2f1a821a
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 2edd62825de08becf22f2f953a63a7f89f55e0a6
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75754362"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190990"
 ---
 # <a name="how-to-model-complex-data-types-in-azure-cognitive-search"></a>Azure Cognitive Search에서 복합 데이터 형식을 모델링 하는 방법
 
@@ -125,7 +125,7 @@ Azure Cognitive Search는 기본적으로 복합 형식 및 컬렉션을 지원 
 
 ## <a name="filter-facet-and-sort-complex-fields"></a>필터, 패싯 및 정렬 복합 필드
 
-필터링 및 필드 지정 검색에 사용 되는 것과 동일한 [OData 경로 구문도](query-odata-filter-orderby-syntax.md) 검색 요청에서 필드를 패싯, 정렬 및 선택 하는 데 사용할 수 있습니다. 복합 형식의 경우 정렬 가능 또는 패싯 가능 표시할 하위 필드를 제어 하는 규칙이 적용 됩니다. 이러한 규칙에 대 한 자세한 내용은 [인덱스 API 참조 만들기](https://docs.microsoft.com/rest/api/searchservice/create-index#request)를 참조 하세요.
+필터링 및 필드 지정 검색에 사용 되는 것과 동일한 [OData 경로 구문도](query-odata-filter-orderby-syntax.md) 검색 요청에서 필드를 패싯, 정렬 및 선택 하는 데 사용할 수 있습니다. 복합 형식의 경우 정렬 가능 또는 패싯 가능 표시할 하위 필드를 제어 하는 규칙이 적용 됩니다. 이러한 규칙에 대 한 자세한 내용은 [인덱스 API 참조 만들기](/rest/api/searchservice/create-index)를 참조 하세요.
 
 ### <a name="faceting-sub-fields"></a>패싯 하위 필드
 
@@ -149,7 +149,7 @@ Azure Cognitive Search는 기본적으로 복합 형식 및 컬렉션을 지원 
 
     $filter=Rooms/any(room: room/Type eq 'Deluxe Room') and Rooms/all(room: not room/SmokingAllowed)
 
-최상위 단순 필드와 마찬가지로 복합 필드의 단순한 하위 필드는 인덱스 정의에서 **필터링** 가능한 특성이 `true` 설정 된 경우에만 필터에 포함 될 수 있습니다. 자세한 내용은 [인덱스 API 참조 만들기](https://docs.microsoft.com/rest/api/searchservice/create-index#request)를 참조 하세요.
+최상위 단순 필드와 마찬가지로 복합 필드의 단순한 하위 필드는 인덱스 정의에서 **필터링** 가능한 특성이 `true` 설정 된 경우에만 필터에 포함 될 수 있습니다. 자세한 내용은 [인덱스 API 참조 만들기](/rest/api/searchservice/create-index)를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

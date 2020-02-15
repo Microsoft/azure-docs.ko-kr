@@ -11,17 +11,16 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/29/2019
+ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6cf5f8d79c2f416ea0c00064fecc8fd6008ae047
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: 15509866980cdf85f54fc03cb77eed36f83c982f
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71119839"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76983370"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-linkedin-learning"></a>자습서: LinkedIn Learning과 Azure Active Directory SSO(Single Sign-On) 연결 | Microsoft Docs
 
@@ -33,7 +32,7 @@ ms.locfileid: "71119839"
 
 Azure AD와 SaaS 앱 통합에 대한 자세한 내용은 [Azure Active Directory를 사용한 애플리케이션 액세스 및 Single Sign-On이란 무엇인가요?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)를 참조하세요.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 시작하려면 다음 항목이 필요합니다.
 
@@ -46,6 +45,7 @@ Azure AD와 SaaS 앱 통합에 대한 자세한 내용은 [Azure Active Director
 
 * LinkedIn Learning에서 **SP 및 IDP** 시작 SSO를 지원합니다.
 * LinkedIn Learning에서 **Just-In-Time** 사용자 프로비전을 지원합니다.
+* LinkedIn Learning을 구성한 후에는 세션 제어를 적용하여 조직의 중요한 데이터의 반출 및 침입을 실시간으로 보호할 수 있습니다. 세션 제어는 조건부 액세스에서 확장됩니다. [Microsoft Cloud App Security를 사용하여 세션 제어를 적용하는 방법 알아보기](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad)
 
 ## <a name="adding-linkedin-learning-from-the-gallery"></a>갤러리에서 LinkedIn Learning 추가
 
@@ -117,7 +117,7 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 1. 화면 위쪽에서 **새 사용자**를 선택합니다.
 1. **사용자** 속성에서 다음 단계를 수행합니다.
    1. **이름** 필드에 `B.Simon`을 입력합니다.  
-   1. **사용자 이름** 필드에서 username@companydomain.extension을 입력합니다. 예: `B.Simon@contoso.com`
+   1. **사용자 이름** 필드에서 username@companydomain.extension을 입력합니다. `B.Simon@contoso.com`)을 입력합니다.
    1. **암호 표시** 확인란을 선택한 다음, **암호** 상자에 표시된 값을 적어둡니다.
    1. **만들기**를 클릭합니다.
 
@@ -145,19 +145,19 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
 2. **계정 센터**의 **설정** 아래에서 **전역 설정**을 클릭합니다. 또한 드롭다운 목록에서 **학습 - 기본**을 선택합니다.
 
-    ![Configure Single Sign-On](./media/linkedinlearning-tutorial/tutorial_linkedin_admin_01.png)
+    ![Single Sign-on 구성](./media/linkedinlearning-tutorial/tutorial_linkedin_admin_01.png)
 
 3. **OR Click Here to load and copy individual fields from the form**(또는 양식에서 개별 필드를 로드하여 복사하려면 여기를 클릭하세요)을 클릭하고, **엔터티 ID**와 **ACS(Assertion Consumer Access) URL**을 복사하여 Azure Portal의 **기본 SAML 구성** 섹션에 붙여넣습니다.
 
-    ![Configure Single Sign-On](./media/linkedinlearning-tutorial/tutorial_linkedin_admin_03.png)
+    ![Single Sign-on 구성](./media/linkedinlearning-tutorial/tutorial_linkedin_admin_03.png)
 
 4. **LinkedIn 관리 설정** 섹션으로 이동합니다. **Upload XML file(XML 파일 업로드)** 옵션을 클릭하여 Azure Portal에서 다운로드한 XML 파일을 업로드합니다.
 
-    ![Configure Single Sign-On](./media/linkedinlearning-tutorial/tutorial_linkedin_metadata_03.png)
+    ![Single Sign-on 구성](./media/linkedinlearning-tutorial/tutorial_linkedin_metadata_03.png)
 
 5. **설정**을 클릭하여 SSO를 사용하도록 설정합니다. SSO 상태가 **연결 안 됨**에서 **연결됨**으로 변경됩니다.
 
-    ![Configure Single Sign-On](./media/linkedinlearning-tutorial/tutorial_linkedin_admin_05.png)
+    ![Single Sign-on 구성](./media/linkedinlearning-tutorial/tutorial_linkedin_admin_05.png)
 
 ### <a name="create-linkedin-learning-test-user"></a>LinkedIn Learning 테스트 사용자 만들기
 
@@ -181,3 +181,4 @@ LinkedIn Learning 애플리케이션은 JIT(Just-in-time) 사용자 프로비저
 
 - [Azure AD로 LinkedIn Learning 사용해보기](https://aad.portal.azure.com/)
 
+- [Microsoft Cloud App Security의 세션 제어란?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

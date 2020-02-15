@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/03/2020
-ms.openlocfilehash: 6ed0742a214b001ab773e33e851abfb94495984b
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: aeb86823ddb25bbe0340630b55360806faef59e9
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75767673"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186877"
 ---
 # <a name="use-azure-data-lake-storage-gen2-with-azure-hdinsight-clusters"></a>Azure HDInsight 클러스터에 Azure Data Lake Storage Gen2 사용
 
@@ -57,7 +57,7 @@ Azure Data Lake Storage Gen2 스토리지 계정을 만듭니다.
 1. **만들기**를 클릭합니다.
 1. **저장소 계정 만들기** 화면에서 다음을 수행 합니다.
     1. 올바른 구독 및 리소스 그룹을 선택 합니다.
-    1. Data Lake Storage Gen2 계정의 이름을 입력 합니다. 저장소 계정 명명 규칙에 대 한 자세한 내용은 [Azure 리소스에 대 한 명명 규칙](/azure/architecture/best-practices/resource-naming#storage)을 참조 하세요.
+    1. Data Lake Storage Gen2 계정의 이름을 입력 합니다. 저장소 계정 명명 규칙에 대 한 자세한 내용은 [Azure 리소스에 대 한 명명 규칙](/azure/azure-resource-manager/management/resource-name-rules#microsoftstorage)을 참조 하세요.
     1. **고급** 탭을 클릭 합니다.
     1. **Data Lake Storage Gen2**에서 **계층적 네임 스페이스** 옆에 있는 **사용** 을 클릭 합니다.
     1. **검토 + 만들기**를 클릭합니다.

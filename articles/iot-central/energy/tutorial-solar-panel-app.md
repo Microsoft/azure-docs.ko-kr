@@ -8,16 +8,16 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: 5560cb31e31f7cf33ac8ae71d649e88be3dbb6e6
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: d5ea3d3420cb598693ccaede7ee10d2f8c4fd839
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112512"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77025778"
 ---
 # <a name="tutorial-create-and-walk-through-the-solar-panel-monitoring-app-template"></a>자습서: 태양광 패널 모니터링 앱 템플릿 만들기 및 연습 
 
-[!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
+
 
 이 자습서에서는 태양광 패널 모니터링 애플리케이션을 만드는 과정을 안내하며, 여기에는 시뮬레이션된 데이터를 사용하는 샘플 디바이스 모델이 포함됩니다. 이 자습서에서는 다음에 대해 알아봅니다.
 
@@ -30,8 +30,8 @@ ms.locfileid: "74112512"
 
 구독이 없는 경우 [평가판 계정을 만듭니다](https://azure.microsoft.com/free).
 
-## <a name="prerequisites"></a>필수 조건
-- 없음
+## <a name="prerequisites"></a>사전 요구 사항
+- None
 - Azure 구독을 권장하지만, 꼭 사용할 필요는 없습니다.
 
 
@@ -52,8 +52,9 @@ ms.locfileid: "74112512"
     * **7일 평가판**: Azure 구독이 이미 있는 경우 기본 설정을 사용하는 것이 좋습니다. Azure 구독이 없는 경우 평가판으로 시작하세요.
     * **청구 정보**: 애플리케이션 자체는 무료입니다. 앱의 리소스를 프로비저닝하려면 디렉터리, Azure 구독 및 영역 세부 정보가 필요합니다.
     * 페이지 맨 아래에서 **만들기** 단추를 클릭하면 1분 내에 앱이 생성됩니다.
-        > [!div class="mx-imgBorder"]
-        > ![새 애플리케이션 양식](media/tutorial-iot-central-solar-panel/solar-panel-create-app.png)
+        ![새 애플리케이션 양식](media/tutorial-iot-central-solar-panel/solar-panel-create-app.png)
+        
+        ![새 애플리케이션 양식 청구 정보](media/tutorial-iot-central-solar-panel/solar-panel-create-app-billinginfo.png)
 
 
 ### <a name="verify-the-application-and-simulated-data"></a>애플리케이션 및 시뮬레이션된 데이터 확인

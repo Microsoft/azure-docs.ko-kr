@@ -8,24 +8,26 @@ ms.custom: seo-python-october2019
 ms.devlang: python
 ms.topic: quickstart
 ms.date: 01/09/2020
-ms.openlocfilehash: 1550d8748d6c7c0e35796d2950d02d774fe52822
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 96296a4ecea8dd1d546adf2292291746bd37507d
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75896265"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76938927"
 ---
 # <a name="quickstart-use-python-to-connect-and-query-data-with-azure-database-for-mysql"></a>빠른 시작: Python을 사용하여 MySQL용 Azure Database와 데이터 연결 및 쿼리
-이 빠른 시작에서는 [Python](https://python.org)을 사용하여 MySQL용 Azure Database에 연결하는 방법을 보여 줍니다. SQL 문을 사용하여 Mac OS, Ubuntu Linux 및 Windows 플랫폼에서 데이터베이스의 데이터를 쿼리, 삽입, 업데이트 및 삭제할 수 있습니다. 
 
-이 문서에서는 Python을 사용하여 개발하는 데 익숙하지만 Azure Database for MySQL을 처음 사용한다고 가정합니다.
+이 빠른 시작에서는 Python을 사용하여 Azure Database for MySQL에 연결합니다. 그런 다음, SQL 문을 사용하여 Mac, Ubuntu Linux 및 Windows 플랫폼에서 데이터베이스의 데이터를 쿼리, 삽입, 업데이트 및 삭제합니다. 
 
-## <a name="create-an-azure-database-for-mysql"></a>Azure Database for MySQL 만들기 
-다음 지침에 따라 Azure Database for MySQL 서버와 데이터베이스를 만듭니다. 
-- [Azure Portal을 사용하여 Azure Database for MySQL 서버 만들기](quickstart-create-mysql-server-database-using-azure-portal.md) 
-- [Azure CLI를 사용한 MySQL용 Azure Database 서버 만들기](quickstart-create-mysql-server-database-using-azure-cli.md) 
+이 항목에서는 Python을 사용하여 개발하는 데 익숙하지만 Azure Database for MySQL을 처음 사용한다고 가정합니다.
+
+## <a name="prerequisites"></a>사전 요구 사항
+
+- 활성 구독이 있는 Azure 계정. [체험 계정을 만듭니다](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+- Azure Database for MySQL 서버입니다. [Azure Portal을 사용하여 Azure Database for MySQL 서버를 만들](quickstart-create-mysql-server-database-using-azure-portal.md)거나 [Azure CLI를 사용하여 Azure Database for MySQL 서버를 만듭니다](quickstart-create-mysql-server-database-using-azure-cli.md).
 
 ## <a name="install-python-and-the-mysql-connector"></a>Python 및 MySQL 커넥터 설치
+
 다음 단계를 사용하여 컴퓨터에 Python과 Python용 MySQL 커넥터를 설치합니다. 
 
 > [!NOTE]
@@ -48,6 +50,7 @@ ms.locfileid: "75896265"
    [mysql.com](https://dev.mysql.com/downloads/connector/python/)에서 MySQL용 Python 커넥터를 설치할 수도 있습니다. Python용 MySQL 커넥터에 대한 자세한 내용은 [MySQL 커넥터/Python 개발자 가이드](https://dev.mysql.com/doc/connector-python/en/)를 참조하세요. 
 
 ## <a name="get-connection-information"></a>연결 정보 가져오기
+
 Azure Portal에서 Azure Database for MySQL에 연결하는 데 필요한 연결 정보를 가져옵니다. 서버 이름, 데이터베이스 이름 및 로그인 자격 증명이 필요합니다.
 
 1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
@@ -61,6 +64,7 @@ Azure Portal에서 Azure Database for MySQL에 연결하는 데 필요한 연결
    ![MySQL용 Azure Database 서버 이름](./media/connect-python/azure-database-for-mysql-server-overview-name-login.png)
 
 ## <a name="run-the-python-examples"></a>Python 예제 실행
+
 이 문서의 각 코드 예제는 다음과 같습니다.
 
 1. 텍스트 편집기에서 새 파일을 만듭니다.
@@ -72,6 +76,7 @@ Azure Portal에서 Azure Database for MySQL에 연결하는 데 필요한 연결
    > Windows에서 *python.exe*를 찾을 수 없으면 PATH 환경 변수에 Python 경로를 추가하거나 *python.exe*에 대한 전체 경로(예: `C:\python27\python.exe createtable.py`)를 제공해야 할 수 있습니다.
 
 ## <a name="create-a-table-and-insert-data"></a>테이블 만들기 및 데이터 삽입
+
 다음 코드를 사용하여 서버 및 데이터베이스에 연결하고, 테이블을 만들고, **INSERT** SQL 문을 사용하여 데이터를 로드합니다. 
 
 코드는 mysql.connector 라이브러리를 가져오고, [connect()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysql-connector-connect.html) 함수를 사용하여 구성 컬렉션의 [인수](https://dev.mysql.com/doc/connector-python/en/connector-python-connectargs.html)를 사용하여 Azure Database for MySQL에 연결합니다. 코드는 연결 시 커서를 사용하고, [cursor.execute()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html) 메서드는 MySQL 데이터베이스에 대해 SQL 쿼리를 실행합니다. 
@@ -126,6 +131,7 @@ else:
 ```
 
 ## <a name="read-data"></a>데이터 읽기
+
 **SELECT** SQL 문을 사용하여 데이터를 연결하고 읽으려면 다음 코드를 사용하세요. 
 
 코드는 mysql.connector 라이브러리를 가져오고, [connect()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysql-connector-connect.html) 함수를 사용하여 구성 컬렉션의 [인수](https://dev.mysql.com/doc/connector-python/en/connector-python-connectargs.html)를 사용하여 Azure Database for MySQL에 연결합니다. 코드는 연결 시 커서를 사용하고, [cursor.execute()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html) 메서드는 MySQL 데이터베이스에 대해 SQL 쿼리를 실행합니다. 
@@ -175,6 +181,7 @@ else:
 ```
 
 ## <a name="update-data"></a>데이터 업데이트
+
 **UPDATE** SQL 문을 사용하여 데이터를 연결하고 업데이트하려면 다음 코드를 사용하세요. 
 
 코드는 mysql.connector 라이브러리를 가져오고, [connect()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysql-connector-connect.html) 함수를 사용하여 구성 컬렉션의 [인수](https://dev.mysql.com/doc/connector-python/en/connector-python-connectargs.html)를 사용하여 Azure Database for MySQL에 연결합니다. 코드는 연결 시 커서를 사용하고, [cursor.execute()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html) 메서드는 MySQL 데이터베이스에 대해 SQL 쿼리를 실행합니다. 
@@ -217,6 +224,7 @@ else:
 ```
 
 ## <a name="delete-data"></a>데이터 삭제
+
 다음 코드를 사용하여 데이터를 연결하고 **DELETE** SQL 문을 통해 데이터를 제거합니다. 
 
 코드는 mysql.connector 라이브러리를 가져오고, [connect()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysql-connector-connect.html) 함수를 사용하여 구성 컬렉션의 [인수](https://dev.mysql.com/doc/connector-python/en/connector-python-connectargs.html)를 사용하여 Azure Database for MySQL에 연결합니다. 코드는 연결 시 커서를 사용하고, [cursor.execute()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html) 메서드는 MySQL 데이터베이스에 대해 SQL 쿼리를 실행합니다. 
@@ -259,5 +267,6 @@ else:
 ```
 
 ## <a name="next-steps"></a>다음 단계
+
 > [!div class="nextstepaction"]
 > [내보내기 및 가져오기를 사용하여 데이터베이스 마이그레이션](./concepts-migrate-import-export.md)

@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9338c1a42737180ec5395f30060b4eed35ce5eda
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: be447b001b0b2e14999aac98ba2125f8cbfe9853
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74381066"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186606"
 ---
 # <a name="quickstart-block-access-when-a-session-risk-is-detected-with-azure-active-directory-conditional-access"></a>빠른 시작: Azure Active Directory 조건부 액세스에서 세션 위험이 감지되면 액세스 차단  
 
-환경을 보호하려는 경우 의심스러운 사용자의 로그인을 차단할 수 있습니다. [Azure AD(Azure Active Directory) Identity Protection](../active-directory-identityprotection.md)은 각 로그인을 분석하고 사용자 계정의 합법적인 소유자가 수행하지 않은 로그인 시도 가능성을 계산합니다. 가능성(낮음, 중간, 높음)은 [로그인 위험 수준](conditions.md#sign-in-risk)이라는 계산된 값의 양식으로 나타납니다. 로그인 위험 조건을 설정하여 특정 로그인 위험 수준에 응답하도록 조건부 액세스 정책을 구성할 수 있습니다.
+환경을 보호하려는 경우 의심스러운 사용자의 로그인을 차단할 수 있습니다. [Azure AD(Azure Active Directory) Identity Protection](../active-directory-identityprotection.md)은 각 로그인을 분석하고 사용자 계정의 합법적인 소유자가 수행하지 않은 로그인 시도 가능성을 계산합니다. 가능성(낮음, 중간, 높음)은 [로그인 위험 수준](concept-conditional-access-conditions.md#sign-in-risk)이라는 계산된 값의 양식으로 나타납니다. 로그인 위험 조건을 설정하여 특정 로그인 위험 수준에 응답하도록 조건부 액세스 정책을 구성할 수 있습니다.
 
 이 빠른 시작에서는 구성된 로그인 위험 수준을 감지한 경우 로그인을 차단하는 [조건부 액세스 정책](../active-directory-conditional-access-azure-portal.md)을 구성하는 방법을 보여줍니다.
 
@@ -28,7 +28,7 @@ ms.locfileid: "74381066"
 
 Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서의 시나리오를 완료하려면 다음이 필요합니다.
 
@@ -74,11 +74,11 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 1. **조건부 액세스** 페이지에서 위쪽의 도구 모음에서 **추가**를 클릭합니다.
 
-   ![Name](./media/app-sign-in-risk/108.png)
+   ![속성](./media/app-sign-in-risk/108.png)
 
 1. **새로 만들기** 페이지의 **이름** 텍스트 상자에 **중간 위험 수준에 대한 액세스 차단**을 입력합니다.
 
-   ![Name](./media/app-sign-in-risk/104.png)
+   ![속성](./media/app-sign-in-risk/104.png)
 
 1. **할당** 섹션에서 **사용자 및 그룹**을 클릭합니다.
 
@@ -155,7 +155,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 1. **What If**를 클릭합니다.
 
-## <a name="test-your-conditional-access-policy"></a>조건부 액세스 정책을 테스트합니다.
+## <a name="test-your-conditional-access-policy"></a>조건부 액세스 정책 테스트
 
 이전 섹션에서는 시뮬레이션된 로그인을 평가하는 방법을 배웠습니다. 시뮬레이션 외에도, 조건부 액세스 정책이 예상대로 작동하는지 테스트해야 합니다.
 

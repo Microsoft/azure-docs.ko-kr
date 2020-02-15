@@ -3,17 +3,17 @@ title: 결과 정렬에 대한 C# 자습서
 titleSuffix: Azure Cognitive Search
 description: 이 자습서에서는 검색 결과를 정렬하는 방법을 보여줍니다. 이전의 호텔 프로젝트를 기반으로 기본 속성, 보조 속성을 정렬하며 부스팅 기준을 추가하는 점수 매기기 프로필을 포함합니다.
 manager: nitinme
-author: PeterTurcan
-ms.author: v-pettur
+author: tchristiani
+ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 11/04/2019
-ms.openlocfilehash: 9230e555f9ea56ca4cda3fcabe1f9719e36a8f62
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.date: 02/10/2020
+ms.openlocfilehash: 812085a5a4b3e8d1233f19c947d2fd5e433f6ab7
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112673"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121557"
 ---
 # <a name="c-tutorial-order-the-results---azure-cognitive-search"></a>C# 자습서: 결과 정렬 - Azure Cognitive Search
 
@@ -21,18 +21,18 @@ ms.locfileid: "74112673"
 
 반환된 결과를 쉽게 비교하기 위해 이 프로젝트는 [C# 자습서: 검색 결과 페이지 매김 - Azure Cognitive Search](tutorial-csharp-paging.md) 자습서에서 만든 페이지 매김 프로젝트를 기반으로 합니다.
 
-이 자습서에서는 다음 방법에 대해 알아봅니다.
+이 자습서에서는 다음 작업 방법을 알아봅니다.
 > [!div class="checklist"]
 > * 단일 속성 기준의 결과 정렬
 > * 여러 속성 기준의 결과 정렬
 > * 지리적 지점으로부터의 거리 기준의 결과 필터링
 > * 점수 매기기 프로필 기준의 결과 정렬
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서를 완료하려면 다음이 필요합니다.
 
-[C# 자습서: 검색 결과 페이지 매김 - Azure Cognitive Search](tutorial-csharp-paging.md) 프로젝트를 가동하여 실행합니다. 이 프로젝트는 사용자 고유의 버전이거나 GitHub: [첫 번째 앱 만들기](https://github.com/Azure-Samples/azure-search-dotnet-samples)에서 설치할 수 있습니다.
+[C# 자습서: 검색 결과 페이지 매김 - Azure Cognitive Search](tutorial-csharp-paging.md) 프로젝트를 가동하여 실행합니다. 이 프로젝트는 사용자 고유의 버전이거나 GitHub: [첫 번째 앱 만들기](https://github.com/Azure-Samples/azure-search-dotnet-samples)의 버전을 설치해도 됩니다.
 
 ## <a name="order-results-based-on-one-property"></a>단일 속성 기준의 결과 정렬
 
@@ -114,7 +114,7 @@ ms.locfileid: "74112673"
     ```
 
     >[!Tip]
-    >브라우저는 일반적으로 css 파일을 캐시합니다. 그러면 기존 css 파일을 사용하여 편집한 내용이 무시될 수 있습니다. 이 문제와 관련하여 버전 매개 변수가 포함된 쿼리 문자열을 링크에 추가하는 것이 좋습니다. 예:
+    >브라우저는 일반적으로 css 파일을 캐시합니다. 그러면 기존 css 파일을 사용하여 편집한 내용이 무시될 수 있습니다. 이 문제와 관련하여 버전 매개 변수가 포함된 쿼리 문자열을 링크에 추가하는 것이 좋습니다. 다음은 그 예입니다.
     >
     >```html
     >   <link rel="stylesheet" href="~/css/hotels.css?v1.1" />
@@ -962,7 +962,7 @@ ms.locfileid: "74112673"
 
 ## <a name="takeaways"></a>핵심 내용
 
-이 프로젝트에서 고려해야 할 핵심 내용은 다음과 같습니다.
+이 프로젝트에서 다음 핵심 내용을 기억하세요.
 
 * 사용자는 가장 관련성이 높은 검색 결과를 먼저 정렬한다고 예상합니다.
 * 데이터는 정렬하기 쉽도록 구조화해야 합니다. 데이터가 추가 코드 없이 정렬할 수 있도록 구조화되지 않았으므로 "가장 저렴한 항목"을 기준으로 먼저 쉽게 정렬할 수 없었습니다.

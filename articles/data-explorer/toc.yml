@@ -98,7 +98,7 @@
           href: ingest-data-kafka.md
         - name: Logstash
           href: ingest-data-logstash.md
-        - name: json 형식 데이터
+        - name: JSON 형식 데이터
           href: ingest-json-formats.md
     - name: 쿼리 데이터
       items:

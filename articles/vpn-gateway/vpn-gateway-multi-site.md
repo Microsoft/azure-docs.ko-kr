@@ -6,14 +6,14 @@ titleSuffix: Azure VPN Gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 01/10/2020
+ms.date: 02/11/2020
 ms.author: yushwang
-ms.openlocfilehash: 5bedf5bd6d061d74201dbac3f1f99ed0d4c381aa
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.openlocfilehash: a95cd6ea85a16b0e0bf5f67f5dfc20d57f11463b
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75902431"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198101"
 ---
 # <a name="add-a-site-to-site-connection-to-a-vnet-with-an-existing-vpn-gateway-connection-classic"></a>기존 VPN Gateway 연결이 있는 VNet에 사이트 간 연결 추가(클래식)
 
@@ -55,10 +55,13 @@ ms.locfileid: "75902431"
 
 * 각 온-프레미스 위치에서 호환되는 VPN 하드웨어. 사용하려는 디바이스가 호환 가능한 것인지 확인하려면 [Virtual Network 연결을 위한 VPN 디바이스 정보](vpn-gateway-about-vpn-devices.md)를 참조하세요.
 * 각 VPN 디바이스에 대한 외부 연결 공용 IPv4 IP 주소. IP 주소는 NAT 뒤에 배치할 수 없습니다. 이는 필수 요구 사항입니다.
-* 최신 버전의 Azure PowerShell cmdlet을 설치해야 합니다. SM(서비스 관리)와 Resource Manager 버전을 모두 설치해야 합니다. 자세한 내용은 [Azure PowerShell 설치 및 구성 방법](/powershell/azure/overview) 을 참조하세요.
 * VPN 하드웨어 구성에 능숙한 사용자. 사용자가 VPN 디바이스 구성 방법에 대해 매우 잘 알고 있거나 이와 관련된 지식이 있는 사람과 작업해야 합니다.
 * 가상 네트워크에 사용할 IP 주소 범위(아직 만들지 않은 경우).
 * 연결할 각 로컬 네트워크 사이트에 대한 IP 주소 범위. 연결하려는 각 로컬 네트워크 사이트의 IP 주소 범위가 겹치지 않도록 해야 합니다. 그렇지 않은 경우 포털 또는 REST API는 업로드 중인 구성을 거절합니다.<br>예를 들어 두 로컬 네트워크 사이트에 IP 주소 범위 10.2.3.0/24가 모두 포함되어 있고 대상 주소가 10.2.3.3인 패키지가 있는 경우, 주소 범위가 겹치기 때문에 Azure는 어떤 사이트에 패키지를 전송할지 알지 못하게 됩니다. 라우팅 문제를 방지하기 위해 Azure에서는 범위가 겹치는 구성 파일의 업로드를 허용하지 않습니다.
+
+### <a name="working-with-azure-powershell"></a>Azure PowerShell 작업
+
+[!INCLUDE [vpn-gateway-classic-powershell](../../includes/vpn-gateway-powershell-classic-locally.md)]
 
 ## <a name="1-create-a-site-to-site-vpn"></a>1. 사이트 간 VPN 만들기
 동적 라우팅 게이트웨이를 사용한 사이트 간 VPN이 이미 있으면 좋습니다. [가상 네트워크 구성 설정 내보내기](#export)로 진행할 수 있습니다. 아직 만들지 않은 경우는 아래 작업을 수행합니다.
@@ -72,6 +75,19 @@ ms.locfileid: "75902431"
 2. [VPN Gateway 구성](vpn-gateway-configure-vpn-gateway-mp.md)을 참조하여 동적 라우팅 게이트웨이를 구성하십시오. 사용 중인 게이트웨이 유형에 맞는 **동적 라우팅** 을 선택해야 합니다.
 
 ## <a name="export"></a>2. 네트워크 구성 파일 내보내기
+
+관리자 권한으로 PowerShell 콘솔을 엽니다. 서비스 관리로 전환 하려면 다음 명령을 사용 합니다.
+
+```powershell
+azure config mode asm
+```
+
+계정에 연결합니다. 연결에 도움이 되도록 다음 예제를 사용합니다.
+
+```powershell
+Add-AzureAccount
+```
+
 다음 명령을 실행하여 Azure 네트워크 구성 파일을 내보냅니다. 필요한 경우 다른 위치로 내보낼 파일의 위치를 변경할 수 있습니다.
 
 ```powershell
@@ -156,7 +172,7 @@ Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
 ## <a name="6-download-keys"></a>6. 키 다운로드
 새 터널을 추가한 후 PowerShell cmdlet 'Get-AzureVNetGatewayKey'를 사용하여 각 터널의 IPsec/IKE 사전 공유 키를 가져옵니다.
 
-예:
+다음은 그 예입니다.
 
 ```powershell
 Get-AzureVNetGatewayKey –VNetName "VNet1" –LocalNetworkSiteName "Site1"

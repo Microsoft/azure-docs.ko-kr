@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 12/27/2019
-ms.openlocfilehash: f3c2b1aa8f41b382bea96b33108d23bf09850c78
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 82ae0cab2d3dd7c65371e7a5bfec506e484fcdd2
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76984764"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169784"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Azure Machine Learning 작업 영역 이란 무엇 인가요?
 
@@ -72,15 +72,11 @@ Machine learning 작업은 작업 영역에 대 한 아티팩트를 읽고 씁�
 
 | 작업 영역 관리 작업   | 포털              | 스튜디오 | Python SDK/R SDK       | CLI        |
 |---------------------------|---------|---------|------------|------------|
-| 작업 영역 생성        | **&check;**     | | **&check;** | **&check;** |
+| 작업 영역 만들기        | **&check;**     | | **&check;** | **&check;** |
 | 작업 영역 액세스 관리    | **&check;**   || |  **&check;**    |
 | Enterprise edition으로 업그레이드    | **&check;** | **&check;**  | |     |
 | 계산 리소스 만들기 및 관리    | **&check;**   | **&check;** | **&check;** |  **&check;**   |
 | 노트북 VM 만들기 |   | **&check;** | |     |
-
-> [!NOTE]
-> 계산 인스턴스는 **미국 중 북부**, **미국 동부 2**, **북아메리카 유럽** 또는 **영국 남부**지역이 포함 된 작업 영역에만 사용할 수 있으며 곧 제공 되는 다른 지역에 대 한 지원을 제공 합니다.
->작업 영역이 다른 지역에 있으면 [Notebook VM](concept-compute-instance.md#notebookvm)을 계속 만들어 사용할 수 있습니다.
 
 ## <a name='create-workspace'></a>작업 영역 만들기
 

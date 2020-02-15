@@ -13,14 +13,14 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 05/01/2019
+ms.date: 10/02/2019
 ms.author: juliako
-ms.openlocfilehash: 5b5956094da497cfbb72608587b2e0389ceec8fc
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 3520b7d6b0fd67fdbff3e1dd78d038f36ad5f0af
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75427121"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77133429"
 ---
 # <a name="migration-guidance-for-moving-from-media-services-v2-to-v3"></a>Media Services v2에서 v3로 이동하기 위한 마이그레이션 지침
 
@@ -47,7 +47,7 @@ ms.locfileid: "75427121"
 
 * 파일 기반 작업 처리의 경우 HTTP(S) URL을 입력으로 사용할 수 있습니다.<br/>아직 콘텐츠를 Azure에 저장하거나 자산을 만들 필요가 없습니다.
 * 파일 기반 작업 처리를 위한 [변환](transforms-jobs-concept.md) 개념을 도입합니다. 변환을 사용하여 재사용 가능한 구성을 빌드하고, Azure Resource Manager 템플릿을 만들고, 여러 고객 또는 테넌트 간에 처리 설정을 격리할 수 있습니다.
-* [동적 패키징](dynamic-packaging-overview.md) 및 동적 암호화 설정이 각기 다른 [스트리밍 로케이터](streaming-locators-concept.md)가 자산에 여러 개 있을 수 있습니다.
+* [동적 패키징](streaming-locators-concept.md) 및 동적 암호화 설정이 각기 다른 [스트리밍 로케이터](dynamic-packaging-overview.md)가 자산에 여러 개 있을 수 있습니다.
 * [콘텐츠 보호](content-key-policy-concept.md)에서 다중 키 기능을 지원합니다.
 * 단일 비트 전송률 기여 피드를 다중 비트 전송률이 있는 출력 스트림으로 코드 변환하기 위해 Media Services를 사용할 때 최대 24시간 분량의 라이브 이벤트를 스트리밍할 수 있습니다.
 * 대기 시간이 짧은 새 라이브 스트리밍이 라이브 이벤트에서 지원됩니다. 자세한 내용은 [대기 시간](live-event-latency.md)을 참조하세요.
@@ -115,7 +115,7 @@ v3 API는 v2 API와 관련하여 다음과 같은 기능 격차가 있습니다.
 * 현재는 Azure Portal을 사용하여 v3 리소스를 관리할 수 없습니다. [REST API](https://aka.ms/ams-v3-rest-sdk), CLI 또는 지원되는 SDK 중 하나를 사용하세요.
 * 작업, 특히 비디오 또는 오디오 분석과 관련된 작업의 동시성 및 성능을 제어하려면 계정에서 MRU(미디어 예약 단위)를 프로비전해야 합니다. 자세한 내용은 [미디어 처리 크기 조정](../previous/media-services-scale-media-processing-overview.md)을 참조하세요. [CLI 2.0 for Media Services v3](media-reserved-units-cli-how-to.md), [Azure Portal](../previous/media-services-portal-scale-media-processing.md) 또는 [v2 API](../previous/media-services-dotnet-encoding-units.md)를 사용하여 MRU를 관리할 수 있습니다. Media Services v2를 사용하든 아니면 v3 API를 사용하든, MRU를 프로비전해야 합니다.
 * v3 API로 만든 Media Services 엔터티는 v2 API를 사용하여 관리할 수 없습니다.  
-* v2 API로 만든 엔터티를 v3 API를 통해 관리하는 것은 좋지 않습니다. 다음은 두 버전의 엔터티가 서로 호환되지 않는 차이점의 예입니다.   
+* V2 API의 모든 엔터티가 V3 API에 자동으로 표시 되는 것은 아닙니다.  다음은 호환 되지 않는 두 버전의 엔터티에 대 한 예입니다.  
     * v2에서 만든 작업 및 태스크는 변환과 연결되지 않으므로 v3에서 나타나지 않습니다. v3 변환 및 작업으로 전환하는 것이 좋습니다. 전환할 때 비교적 짧은 기간 동안 진행 중인 v2 작업을 모니터링해야 합니다.
     * v2로 만든 채널 및 프로그램(v3에서는 라이브 이벤트 및 라이브 출력으로 매핑)은 v3을 사용하여 계속 관리할 수 없습니다. 편리한 채널 중지점에서 v3 라이브 이벤트 및 라이브 출력으로 전환하는 것이 좋습니다.<br/>현재는 지속적으로 실행 중인 채널을 마이그레이션할 수 없습니다.  
 

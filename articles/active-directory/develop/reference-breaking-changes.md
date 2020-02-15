@@ -17,12 +17,12 @@ ms.date: 1/24/2020
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 15293f6cf5ceafda2dd5727ad85804b432bae54a
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: c6ed72e5c94191411572c6ab67533141e2fe47d6
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76758753"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77185812"
 ---
 # <a name="whats-new-for-authentication"></a>인증의 새로운 기능? 
 
@@ -42,7 +42,7 @@ ms.locfileid: "76758753"
 
 지금은 예약이 없습니다.  또는 프로덕션에 적용 되는 변경 내용에 대해서는 아래를 참조 하세요. 
 
-## <a name="february-2020"></a>2 월 2020: 
+## <a name="february-2020"></a>2020년 2월 
 
 ### <a name="empty-fragments-will-be-appended-to-every-http-redirect-from-the-login-endpoint"></a>로그인 끝점의 모든 HTTP 리디렉션에 빈 조각이 추가 됩니다. 
 
@@ -50,7 +50,7 @@ ms.locfileid: "76758753"
 
 **영향을 받는 엔드포인트**: v1.0 및 v2.0 모두
 
-**영향을 받는 프로토콜**: response_type = 쿼리를 사용 하는 OAUTH 및 oidc 흐름-경우에 따라 [권한 부여 코드 흐름](v2-oauth2-auth-code-flow.md) 및 [암시적 흐름이](v2-oauth2-implicit-grant-flow.md)포함 됩니다. 
+**영향을 받는 프로토콜**: Response_type = 쿼리를 사용 하는 OAuth 및 OIDC 흐름-경우에 따라 [권한 부여 코드 흐름](v2-oauth2-auth-code-flow.md) 및 [암시적 흐름이](v2-oauth2-implicit-grant-flow.md)포함 됩니다. 
 
 HTTP 리디렉션을 통해 login.microsoftonline.com에서 응용 프로그램으로 인증 응답을 보내면 서비스는 회신 URL에 빈 조각을 추가 합니다.  이렇게 하면 브라우저가 인증 요청에서 기존 조각을 모두 초기화 하 여 공격에 대 한 클래스를 방지할 수 있습니다.  이 동작에 대 한 종속성이 있는 앱이 없습니다. 
 
@@ -78,7 +78,7 @@ HTTP 리디렉션을 통해 login.microsoftonline.com에서 응용 프로그램�
 
 **개시 날짜**: 2019 년 7 월 26 일
 
-**영향을 받는 끝점**: [V1.0](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow) 및 [v2.0](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow) 모두
+**영향을 받는 엔드포인트**: [V1.0](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow) 및 [v2.0](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow) 모두
 
 **영향을 받는 프로토콜**: [클라이언트 자격 증명 (앱 전용 토큰)](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow)
 
@@ -98,7 +98,7 @@ HTTP 리디렉션을 통해 login.microsoftonline.com에서 응용 프로그램�
 
 ### <a name="redirect-uris-can-now-contain-query-string-parameters"></a>이제 리디렉션 Uri는 쿼리 문자열 매개 변수를 포함할 수 있습니다.
 
-**개시 날짜**: 2019 년 7 월 22 일
+**개시 날짜**: 2019년 7월 22일
 
 **영향을 받는 엔드포인트**: v1.0 및 v2.0 모두
 
@@ -156,7 +156,7 @@ HTTP 리디렉션을 통해 login.microsoftonline.com에서 응용 프로그램�
 
 앱에서 여러 리소스에 대한 토큰을 얻기 위해 인증 코드를 재사용하는 경우에는 코드를 사용하여 새로 고침 토큰을 얻은 다음, 이 새로 고침 토큰을 사용하여 다른 리소스에 대한 추가 토큰을 얻는 것이 좋습니다. 인증 코드는 한 번만 사용할 수 있지만 새로 고침 토큰은 여러 리소스에서 여러 번 사용할 수 있습니다. OAuth 코드 흐름 중에 인증 코드를 다시 사용하려고 하는 새 앱에서는 invalid_grant 오류가 발생합니다.
 
-새로 고침 토큰에 대한 자세한 내용은 [액세스 토큰 새로 고침](v1-protocols-oauth-code.md#refreshing-the-access-tokens)을 참조하세요.  ADAL 또는 MSAL을 사용하는 경우 이 작업은 라이브러리를 통해 처리됩니다. 'AcquireTokenByAuthorizationCodeAsync'의 두 번째 인스턴스를 'AcquireTokenSilentAsync'로 바꿉니다. 
+새로 고침 토큰에 대한 자세한 내용은 [액세스 토큰 새로 고침](v2-oauth2-auth-code-flow.md#refresh-the-access-token)을 참조하세요.  ADAL 또는 MSAL을 사용하는 경우 이 작업은 라이브러리를 통해 처리됩니다. 'AcquireTokenByAuthorizationCodeAsync'의 두 번째 인스턴스를 'AcquireTokenSilentAsync'로 바꿉니다. 
 
 ## <a name="may-2018"></a>2018년 5월
 
@@ -166,7 +166,7 @@ HTTP 리디렉션을 통해 login.microsoftonline.com에서 응용 프로그램�
 
 **영향을 받는 엔드포인트**: v1.0 및 v2.0 모두
 
-**영향을 받는 프로토콜**: 암시적 흐름 및 [OBO 흐름](v1-oauth2-on-behalf-of-flow.md)
+**영향을 받는 프로토콜**: 암시적 흐름 및 [대리](v2-oauth2-on-behalf-of-flow.md) 흐름
 
 2018년 5월 1일 이 OBO 흐름에서 새 애플리케이션의 어설션으로 id_token을 사용할 수 없습니다. API를 보호하려면 클라이언트와 동일한 애플리케이션의 중간 계층 사이에서도 액세스 토큰을 대신 사용해야 합니다. 2018년 5월 1일 전에 등록된 앱은 계속 작동하고 id_token을 액세스 토큰으로 교환할 수 있지만 이 패턴은 모범 사례로 간주되지 않습니다.
 

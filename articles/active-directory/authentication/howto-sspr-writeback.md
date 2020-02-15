@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67737aed3bd9961a37dc761fddf608d9bcfe3ffe
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: f1fa447312ad6a1f92eaed1164020cb6ee95606e
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74847255"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161599"
 ---
 # <a name="how-to-configure-password-writeback"></a>방법: 비밀번호 쓰기 저장 구성
 
@@ -35,7 +35,7 @@ ms.locfileid: "74847255"
 비밀번호 쓰기 저장과 관련된 일반적인 문제 해결 작업은 문제 해결 문서에서 [비밀번호 쓰기 저장 문제 해결](active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback) 섹션을 참조하세요.
 
 > [!WARNING]
-> [2018년 11월 7일에 ACS(Azure Access Control) 서비스 사용이 중지되면](../develop/active-directory-acs-migration.md) Azure AD Connect 1.0.8641.0 이하 버전을 사용 중인 고객의 경우 비밀번호 쓰기 저장 기능의 작동이 중지됩니다. 해당 날짜부터는 Azure AD Connect 1.0.8641.0 이하 버전에서 더 이상 비밀번호 쓰기 저장이 허용되지 않습니다. 이러한 버전에서는 해당 기능에 ACS를 사용하기 때문입니다.
+> [2018년 11월 7일에 ACS(Azure Access Control) 서비스 사용이 중지되면](../azuread-dev/active-directory-acs-migration.md) Azure AD Connect 1.0.8641.0 이하 버전을 사용 중인 고객의 경우 비밀번호 쓰기 저장 기능의 작동이 중지됩니다. 해당 날짜부터는 Azure AD Connect 1.0.8641.0 이하 버전에서 더 이상 비밀번호 쓰기 저장이 허용되지 않습니다. 이러한 버전에서는 해당 기능에 ACS를 사용하기 때문입니다.
 >
 > 서비스 중단을 방지하려면 이전 버전 Azure AD Connect에서 최신 버전으로 업그레이드하세요([Azure AD Connect: 이전 버전에서 최신 버전으로 업그레이드](../hybrid/how-to-upgrade-previous-version.md) 문서 참조).
 >

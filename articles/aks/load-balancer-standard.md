@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 09/27/2019
 ms.author: zarhoads
-ms.openlocfilehash: 03daafd383810a5e6cf086ca8e546981b06fa6eb
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: b15c60d5436feada8558c83cb14efd7e21a22493
+ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77025710"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77212424"
 ---
 # <a name="use-a-standard-sku-load-balancer-in-azure-kubernetes-service-aks"></a>AKS (Azure Kubernetes Service)에서 표준 SKU 부하 분산 장치 사용
 
@@ -57,7 +57,10 @@ CLI를 로컬로 설치 하 고 사용 하도록 선택 하는 경우이 문서�
 
 ## <a name="use-the-standard-sku-load-balancer"></a>*표준* SKU 부하 분산 장치 사용
 
-AKS 클러스터를 만들 때 기본적으로 *표준* SKU 부하 분산 장치는 해당 클러스터에서 서비스를 실행할 때 사용 됩니다. 예를 들어 [Azure CLI를 사용 하는 빠른 시작은][aks-quickstart-cli] *표준* SKU 부하 분산 장치를 사용 하는 샘플 응용 프로그램을 배포 합니다. 
+AKS 클러스터를 만들 때 기본적으로 *표준* SKU 부하 분산 장치는 해당 클러스터에서 서비스를 실행할 때 사용 됩니다. 예를 들어 [Azure CLI를 사용 하는 빠른 시작은][aks-quickstart-cli] *표준* SKU 부하 분산 장치를 사용 하는 샘플 응용 프로그램을 배포 합니다.
+
+> [!IMPORTANT]
+> UDR (사용자 정의 경로)을 사용자 지정 하 여 공용 IP 주소를 피할 수 있습니다. AKS 클러스터의 아웃 바운드 유형을 UDR로 지정 하면 AKS 만든 Azure 부하 분산 장치에 대 한 IP 프로 비전 및 백 엔드 풀 설정을 건너뛸 수 있습니다. [클러스터의 `outboundType`을 ' userDefinedRouting '로 설정을](egress-outboundtype.md)참조 하세요.
 
 ## <a name="configure-the-load-balancer-to-be-internal"></a>부하 분산 장치를 내부로 구성
 
@@ -186,7 +189,7 @@ AllocatedOutboundPorts    EnableTcpReset    IdleTimeoutInMinutes    Name        
 
 예제 출력에서는 *AllocatedOutboundPorts* 및 *IdleTimeoutInMinutes*의 기본값을 보여 줍니다. *AllocatedOutboundPorts* 에 대 한 값 0은 백 엔드 풀 크기에 따라 아웃 바운드 포트 수에 자동 할당을 사용 하는 아웃 바운드 포트의 수를 설정 합니다. 예를 들어 클러스터에 50 개 이하의 노드가 있는 경우 각 노드에 대 한 1024 포트가 할당 됩니다.
 
-위의 기본 구성에 따라 SNAT 고갈를 발생 시킬 것으로 생각 되는 경우 *allocatedOutboundPorts* 또는 *IdleTimeoutInMinutes* 의 설정을 변경 하는 것이 좋습니다. 각각의 추가 IP 주소는 할당을 위해 64000 추가 포트를 사용할 수 있지만, Azure 표준 Load Balancer는 추가 IP 주소가 추가 될 때 노드당 포트를 자동으로 증가 시 지 않습니다. *부하 분산 장치-아웃 바운드 포트* 및 *부하 분산 장치-유휴 시간 제한* 매개 변수를 설정 하 여 이러한 값을 변경할 수 있습니다. 예:
+위의 기본 구성에 따라 SNAT 고갈를 발생 시킬 것으로 생각 되는 경우 *allocatedOutboundPorts* 또는 *IdleTimeoutInMinutes* 의 설정을 변경 하는 것이 좋습니다. 각각의 추가 IP 주소는 할당을 위해 64000 추가 포트를 사용할 수 있지만, Azure 표준 Load Balancer는 추가 IP 주소가 추가 될 때 노드당 포트를 자동으로 증가 시 지 않습니다. *부하 분산 장치-아웃 바운드 포트* 및 *부하 분산 장치-유휴 시간 제한* 매개 변수를 설정 하 여 이러한 값을 변경할 수 있습니다. 다음은 그 예입니다.
 
 ```azurecli-interactive
 az aks update \
@@ -199,7 +202,7 @@ az aks update \
 > [!IMPORTANT]
 > 연결 또는 크기 조정 문제를 방지 하려면 *allocatedOutboundPorts* 을 사용자 지정 하기 전에 [필요한 할당량을 계산][calculate-required-quota] 해야 합니다. *AllocatedOutboundPorts* 에 대해 지정 하는 값도 8의 배수 여야 합니다.
 
-클러스터를 만들 때 *부하 분산 장치-아웃 바운드 포트* 및 *부하 분산 장치-유휴 시간 제한* 매개 변수를 사용할 수도 있지만, *부하 분산 장치-아웃 바운드-ip 수*, *부하 분산*장치-아웃 바운드- *ip 접두사* 도 지정 해야 합니다.  예:
+클러스터를 만들 때 *부하 분산 장치-아웃 바운드 포트* 및 *부하 분산 장치-유휴 시간 제한* 매개 변수를 사용할 수도 있지만, *부하 분산 장치-아웃 바운드-ip 수*, *부하 분산*장치-아웃 바운드- *ip 접두사* 도 지정 해야 합니다.  다음은 그 예입니다.
 
 ```azurecli-interactive
 az aks create \

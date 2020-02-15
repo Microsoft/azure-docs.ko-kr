@@ -4,15 +4,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 12/18/2019
 ms.author: aahi
-ms.openlocfilehash: 9623398e51260d88df3d8fd88e3affaf7f906a64
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 254fe3602bdb6a05f3a3225035460b88ebd3e23f
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76159156"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76987359"
 ---
-아래 옵션 중 하나를 사용하여 Text Analytics API 사용을 시작합니다.
-
+애플리케이션을 연결하려면 Text Analytics 리소스의 키와 엔드포인트가 필요합니다. 아래 리소스 중 하나를 만들어 가져옵니다.
 
 * <a href="https://azure.microsoft.com/try/cognitive-services/my-apis/?api=text-analytics" title="평가판 Text Analytics 리소스 만들기" target="_blank">평가판 리소스 만들기<span class="docon docon-navigate-external x-hidden-focus"></span></a>
     * Azure 구독이 필요하지 않습니다. 

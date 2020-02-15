@@ -116,13 +116,7 @@
               href: source-control-integration.md
               displayName: 'github, vsts, azure devops, personal access token'
             - name: 소스 제어 통합 - 레거시
-              href: automation-source-control-integration-legacy.md
-              displayname: github
-            - name: GitHub Enterprise와 소스 제어 통합
-              href: automation-scenario-source-control-integration-with-github-ent.md
-              displayName: 'CI, runbooks'
-            - name: Azure DevOps와 소스 제어 통합
-              href: automation-scenario-source-control-integration-with-VSTS.md
+              href: source-control-integration-legacy.md
     - name: 문제 해결
       items:
         - name: Microsoft Azure Automation에 대한 사례를 열 때 수집할 데이터
@@ -374,7 +368,7 @@
       href: 'https://azure.microsoft.com/roadmap/?category=management-tools&query=automation'
     - name: MSDN 포럼
       href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=azureautomation'
-    - name: 가격
+    - name: 가격 책정
       href: 'https://azure.microsoft.com/pricing/details/automation/'
     - name: 요금 계산기
       href: 'https://azure.microsoft.com/pricing/calculator/'

@@ -8,12 +8,12 @@ ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: 047579550172995378d92327ecf22d63712bf407
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 598fdd5e3682226253ef8f2611ede2bbeba596f7
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75967128"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190434"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Azure의 Web Apps에 대한 구성 및 관리 FAQ
 
@@ -141,7 +141,7 @@ WebJob 로그를 검토하려면:
 Exception: System.Data.Entity.Core.EntityException: The underlying provider failed on Open. —> System.OverflowException: Arithmetic operation resulted in an overflow. or (64 bit Web app) System.OverflowException: Array dimensions exceeded supported range, at System.Data.SqlClient.TdsParser.ConsumePreLoginHandshake
 ```
 
-### <a name="resolution"></a>해상도
+### <a name="resolution"></a>해결 방법
 
 이 예외는 수정된 하이브리드 연결 관리자의 문제로 인해 야기되었습니다. 이 문제를 해결하려면 [하이브리드 연결 관리자를 업데이트](https://go.microsoft.com/fwlink/?LinkID=841308)해야 합니다.
 
@@ -314,4 +314,4 @@ Azure 자동 크기 조정이 웹앱 인스턴스의 크기를 예상대로 축�
 
 ## <a name="how-do-i-migrate-from-an-on-premises-environment-to-app-service"></a>온-프레미스 환경에서 App Service로 마이그레이션하려면 어떻게 하나요?
 
-Windows 및 Linux 웹 서버에서 App Service로 마이그레이션하려면 Azure App Service Migration Assistant를 사용하면 됩니다. 이 마이그레이션 도구는 필요에 따라 Azure에서 웹앱 및 데이터베이스 만들고 나서 콘텐츠를 게시합니다. 자세한 내용은 [Azure App Service Migration Assistant](https://www.migratetoazure.net/)를 참조하세요.
+Windows 및 Linux 웹 서버에서 App Service로 마이그레이션하려면 Azure App Service Migration Assistant를 사용하면 됩니다. 이 마이그레이션 도구는 필요에 따라 Azure에서 웹앱 및 데이터베이스 만들고 나서 콘텐츠를 게시합니다. 자세한 내용은 [Azure App Service Migration Assistant](https://appmigration.microsoft.com/)를 참조하세요.

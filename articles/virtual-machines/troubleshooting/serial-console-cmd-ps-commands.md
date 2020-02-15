@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
-ms.openlocfilehash: a106984bc60d0ccfe29a1956213aec6f87ad30dd
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 493340764f507c4fa364a5000f65cc232630b243
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70090182"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77167037"
 ---
 # <a name="windows-commands---cmd-and-powershell"></a>Windows 명령 - CMD 및 PowerShell
 
@@ -28,7 +28,7 @@ SAC는 Windows Server 2003만 기본적으로 사용할 수 없게 된 이래 �
 
 SAC는 직렬 포트를 통해 실행 중인 OS에 연결할 수 있습니다. SAC에서 CMD를 시작할 때 `sacsess.exe`은 실행 중인 OS 내에서 `cmd.exe`를 시작합니다. 작업 관리자에서 RDP가 VM에 연결된 경우 동시에 직렬 콘솔 기능을 통해 SAC에 연결돼 있음을 확인할 수 있습니다. RDP를 통해 연결된 경우 SAC를 통해 액세스하는 CMD는 사용하는 동일한 `cmd.exe`입니다. 해당 CMD 인스턴스에서 PowerShell을 시작하는 기능을 포함하여 모두 동일한 명령 및 도구를 사용할 수 있습니다. SAC와 WinRE(Windows 복구 환경) 사이의 주요 차이점은 WinRE가 다른 Minimal OS로 부팅하는 경우 SAC가 실행 중인 OS를 관리할 수 있게 한다는 것입니다. Azure VM은 직렬 콘솔 기능을 사용하여 WinRE에 액세스하는 기능을 지원하지 않지만 SAC를 통해 Azure VM을 관리할 수 있습니다.
 
-SAC는 스크롤 백 기능이 없는 80x24 화면 버퍼로 제한되므로 명령에 `| more`을 추가해 한 번에 한 페이지씩 출력을 표시합니다. `<spacebar>`를 사용하여 다음 페이지를 보거나 `<enter>`를 사용하여 다음 줄을 봅니다.  
+SAC는 스크롤 백 기능이 없는 80x24 화면 버퍼로 제한되므로 명령에 `| more`을 추가해 한 번에 한 페이지씩 출력을 표시합니다. `<spacebar>`를 사용하여 다음 페이지를 보거나 `<enter>`를 사용하여 다음 줄을 봅니다.
 
 `SHIFT+INSERT`은 직렬 콘솔 창에 대한 바로 가기 붙여넣기입니다.
 
@@ -45,7 +45,7 @@ SAC의 제한된 화면 버퍼 때문에 더 긴 명령은 로컬 텍스트 편�
 ### <a name="enable-rdp"></a>RDP를 사용하도록 설정
 `reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0`
 
-`reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v fDenyTSConnections /t REG_DWORD /d 0` 
+`reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v fDenyTSConnections /t REG_DWORD /d 0`
 
 관련 그룹 정책 설정이 구성된 경우 두 번째 키(under\Policies)만 필요하게 됩니다. 값이 그룹 정책에서 구성된 경우 다음 그룹 정책 새로 고침에서 다시 쓰여집니다.
 
@@ -55,12 +55,12 @@ SAC의 제한된 화면 버퍼 때문에 더 긴 명령은 로컬 텍스트 편�
 `sc query termservice`
 ###  <a name="view-service-logon-account"></a>서비스 로그온 계정 보기
 `sc qc termservice`
-### <a name="set-service-logon-account"></a>서비스 로그온 계정 설정 
+### <a name="set-service-logon-account"></a>서비스 로그온 계정 설정
 `sc config termservice obj= "NT Authority\NetworkService"`
 
 등호 기호 뒤에 공백이 필요합니다.
 ### <a name="set-service-start-type"></a>서비스 시작 유형 설정
-`sc config termservice start= demand` 
+`sc config termservice start= demand`
 
 등호 기호 뒤에 공백이 필요합니다. 가능한 시작 값은 `boot`, `system`, `auto`, `demand`, `disabled`, `delayed-auto`을 포함합니다.
 ### <a name="set-service-dependencies"></a>서비스 종속성 설정
@@ -70,22 +70,22 @@ SAC의 제한된 화면 버퍼 때문에 더 긴 명령은 로컬 텍스트 편�
 ### <a name="start-service"></a>서비스 시작
 `net start termservice`
 
-로 구분하거나 여러
+또는
 
 `sc start termservice`
 ### <a name="stop-service"></a>서비스 중지
 `net stop termservice`
 
-로 구분하거나 여러
+또는
 
 `sc stop termservice`
 ## <a name="manage-networking-features"></a>네트워킹 기능 관리
 ### <a name="show-nic-properties"></a>NIC 속성 표시
-`netsh interface show interface` 
+`netsh interface show interface`
 ### <a name="show-ip-properties"></a>IP 속성 표시
 `netsh interface ip show config`
 ### <a name="show-ipsec-configuration"></a>IPSec 구성 표시
-`netsh nap client show configuration`  
+`netsh nap client show configuration`
 ### <a name="enable-nic"></a>NIC 사용
 `netsh interface set interface name="<interface name>" admin=enabled`
 ### <a name="set-nic-to-use-dhcp"></a>NIC가 DHCP를 사용하도록 설정
@@ -95,8 +95,8 @@ SAC의 제한된 화면 버퍼 때문에 더 긴 명령은 로컬 텍스트 편�
 
 Azure VM은 IP 주소를 얻는 데 DHCP를 사용하려면 항상 게스트 운영 체제에서 구성돼야 합니다. Azure 고정 IP 설정은 여전히 DHCP를 사용하여 고정 IP를 VM에 제공합니다.
 ### <a name="ping"></a>Ping
-`ping 8.8.8.8` 
-### <a name="port-ping"></a>포트 ping  
+`ping 8.8.8.8`
+### <a name="port-ping"></a>포트 ping
 텔넷 클라이언트 설치
 
 `dism /online /Enable-Feature /FeatureName:TelnetClient`
@@ -130,7 +130,7 @@ Windows 방화벽을 일시적으로 제외하는 문제를 해결하려면 이 
 
 일반화된 이미지에서 만든 Azure VM에는 VM 프로비전 중에 지정한 이름으로 바꾼 로컬 관리자 계정이 있습니다. 따라서 일반적으로 `Administrator`이 되지 않습니다.
 ### <a name="enable-user-account"></a>사용자 계정 사용
-`net user <username> /active:yes`  
+`net user <username> /active:yes`
 ### <a name="view-user-account-properties"></a>사용자 계정 속성 보기
 `net user <username>`
 
@@ -191,15 +191,15 @@ Windows 방화벽을 일시적으로 제외하는 문제를 해결하려면 이 
 ### <a name="export-file-permissions-to-text-file"></a>텍스트 파일에 파일 사용 권한 내보내기
 `icacls %programdata%\Microsoft\Crypto\RSA\MachineKeys /t /c > %temp%\MachineKeys_permissions_before.txt`
 ### <a name="save-file-permissions-to-acl-file"></a>ACL 파일에 파일 사용 권한 저장하기
-`icacls %programdata%\Microsoft\Crypto\RSA\MachineKeys /save %temp%\MachineKeys_permissions_before.aclfile /t`  
+`icacls %programdata%\Microsoft\Crypto\RSA\MachineKeys /save %temp%\MachineKeys_permissions_before.aclfile /t`
 ### <a name="restore-file-permissions-from-acl-file"></a>ACL 파일에서 파일 사용 권한 복원하기
 `icacls %programdata%\Microsoft\Crypto\RSA /save %temp%\MachineKeys_permissions_before.aclfile /t`
 
-`/restore`을 사용할 때의 경로는 `/save`를 사용할 때 지정한 폴더의 상위 폴더여야 합니다. 이 예제에서 `\RSA`은 위의 예제 `/save`에서 지정한 `\MachineKeys` 폴더의 상위 폴더입니다.
+`/restore`을 사용할 때의 경로는 `/save`를 사용할 때 지정한 폴더의 상위 폴더여야 합니다. 이 예제에서 `\RSA`은 위의 예제 `\MachineKeys`에서 지정한 `/save` 폴더의 상위 폴더입니다.
 ### <a name="take-ntfs-ownership-of-a-folder"></a>폴더의 NTFS 소유권 획득
-`takeown /f %programdata%\Microsoft\Crypto\RSA\MachineKeys /a /r`  
+`takeown /f %programdata%\Microsoft\Crypto\RSA\MachineKeys /a /r`
 ### <a name="grant-ntfs-permissions-to-a-folder-recursively"></a>재귀적으로 폴더에 NTFS 소유권 부여하기
-`icacls C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys /t /c /grant "BUILTIN\Administrators:(F)"`  
+`icacls C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys /t /c /grant "BUILTIN\Administrators:(F)"`
 ## <a name="manage-devices"></a>디바이스 관리
 ### <a name="remove-non-present-pnp-devices"></a>없는 PNP 디바이스 제거
 `%windir%\System32\RUNDLL32.exe %windir%\System32\pnpclean.dll,RunDLL_PnpClean /Devices /Maxclean`
@@ -210,11 +210,11 @@ Windows 방화벽을 일시적으로 제외하는 문제를 해결하려면 이 
 ### <a name="show-os-version"></a>OS 버전 표시
 `ver`
 
-로 구분하거나 여러 
+또는
 
 `wmic os get caption,version,buildnumber /format:list`
 
-로 구분하거나 여러 
+또는
 
 `systeminfo  find /i "os name"`
 
@@ -222,7 +222,7 @@ Windows 방화벽을 일시적으로 제외하는 문제를 해결하려면 이 
 ### <a name="view-os-install-date"></a>OS 설치 날짜 보기
 `systeminfo | find /i "original"`
 
-로 구분하거나 여러 
+또는
 
 `wmic os get installdate`
 ### <a name="view-last-boot-time"></a>마지막 부팅 시간 보기
@@ -230,7 +230,7 @@ Windows 방화벽을 일시적으로 제외하는 문제를 해결하려면 이 
 ### <a name="view-time-zone"></a>표준 시간대 보기
 `systeminfo | find /i "time zone"`
 
-로 구분하거나 여러
+또는
 
 `wmic timezone get caption,standardname /format:list`
 ### <a name="restart-windows"></a>Windows 다시 시작
@@ -238,7 +238,7 @@ Windows 방화벽을 일시적으로 제외하는 문제를 해결하려면 이 
 
 `/f`을 추가하면 사용자에게 경고 없이 실행 중인 애플리케이션을 강제로 닫습니다.
 ### <a name="detect-safe-mode-boot"></a>안전 모드 부팅 검색
-`bcdedit /enum | find /i "safeboot"` 
+`bcdedit /enum | find /i "safeboot"`
 
 ## <a name="windows-commands---powershell"></a>Windows 명령 - PowerShell
 
@@ -249,7 +249,7 @@ SAC에서 PowerShell을 실행하려면 CMD 프롬프트가 표시된 후 다음
 > [!CAUTION]
 > 다른 모든 PowerShell 명령을 실행하기 전에 PowerShell 세션에서 PSReadLine 모듈을 제거합니다. PSReadLine이 SAC의 PowerShell 세션에서 실행 중인 경우 클립보드에서 붙여넣은 텍스트에 추가 문자가 도입될 수 있는 알려진 문제가 있습니다.
 
-먼저 PSReadLine이 로드되었는지 확인합니다. 기본적으로 Windows Server 2016, Windows 10 및 이후 버전의 Windows에서 로드됩니다. 수동으로 설치한 경우 이전 Windows 버전에만 존재합니다. 
+먼저 PSReadLine이 로드되었는지 확인합니다. 기본적으로 Windows Server 2016, Windows 10 및 이후 버전의 Windows에서 로드됩니다. 수동으로 설치한 경우 이전 Windows 버전에만 존재합니다.
 
 이 명령이 출력 없이 프롬프트로 반환되는 경우 모듈이 로드되지 않아 정상적으로 SAC에서 PowerShell 세션을 계속 사용할 수 있습니다.
 
@@ -295,7 +295,7 @@ SAC에서 PowerShell을 실행하려면 CMD 프롬프트가 표시된 후 다음
 ### <a name="show-nic-properties"></a>NIC 속성 표시
 `get-netadapter | where {$_.ifdesc.startswith('Microsoft Hyper-V Network Adapter')} |  format-list status,name,ifdesc,macadDresS,driverversion,MediaConNectState,MediaDuplexState`
 
-로 구분하거나 여러 
+또는
 
 `get-wmiobject win32_networkadapter -filter "servicename='netvsc'" |  format-list netenabled,name,macaddress`
 
@@ -305,7 +305,7 @@ SAC에서 PowerShell을 실행하려면 CMD 프롬프트가 표시된 후 다음
 ### <a name="enable-nic"></a>NIC 사용
 `get-netadapter | where {$_.ifdesc.startswith('Microsoft Hyper-V Network Adapter')} | enable-netadapter`
 
-로 구분하거나 여러
+또는
 
 `(get-wmiobject win32_networkadapter -filter "servicename='netvsc'").enable()`
 
@@ -319,7 +319,10 @@ SAC에서 PowerShell을 실행하려면 CMD 프롬프트가 표시된 후 다음
 ### <a name="ping"></a>Ping
 `test-netconnection`
 
-로 구분하거나 여러
+> [!NOTE]
+> 쓰기 진행률 cmdlet은이 명령에서 작동 하지 않을 수 있습니다. 완화를 위해 PowerShell에서 `$ProgressPreference = "SilentlyContinue"`를 실행 하 여 진행률 표시줄을 사용 하지 않도록 설정할 수 있습니다.
+
+또는
 
 `get-wmiobject Win32_PingStatus -Filter 'Address="8.8.8.8"' | format-table -autosize IPV4Address,ReplySize,ResponseTime`
 
@@ -327,29 +330,29 @@ SAC에서 PowerShell을 실행하려면 CMD 프롬프트가 표시된 후 다음
 ### <a name="port-ping"></a>포트 Ping
 `test-netconnection -ComputerName bing.com -Port 80`
 
-로 구분하거나 여러
+또는
 
 `(new-object Net.Sockets.TcpClient).BeginConnect('bing.com','80',$null,$null).AsyncWaitHandle.WaitOne(300)`
 
 `Test-NetConnection`은 2012 이상에서 사용할 수 있습니다. 2008R2에 대해서는 `Net.Sockets.TcpClient` 사용
 ### <a name="test-dns-name-resolution"></a>DNS 이름 확인 테스트
-`resolve-dnsname bing.com` 
+`resolve-dnsname bing.com`
 
-로 구분하거나 여러 
+또는
 
 `[System.Net.Dns]::GetHostAddresses('bing.com')`
 
 `Resolve-DnsName`은 2012 이상에서 사용할 수 있습니다. 2008R2에 대해서는 `System.Net.DNS`을 사용합니다.
 ### <a name="show-windows-firewall-rule-by-name"></a>이름으로 Windows 방화벽 규칙 표시
-`get-netfirewallrule -name RemoteDesktop-UserMode-In-TCP` 
+`get-netfirewallrule -name RemoteDesktop-UserMode-In-TCP`
 ### <a name="show-windows-firewall-rule-by-port"></a>포트로 Windows 방화벽 규칙 표시
 `get-netfirewallportfilter | where {$_.localport -eq 3389} | foreach {Get-NetFirewallRule -Name $_.InstanceId} | format-list Name,Enabled,Profile,Direction,Action`
 
-로 구분하거나 여러
+또는
 
 `(new-object -ComObject hnetcfg.fwpolicy2).rules | where {$_.localports -eq 3389 -and $_.direction -eq 1} | format-table Name,Enabled`
 
-`Get-NetFirewallPortFilter`은 2012 이상에서 사용할 수 있습니다. 2008R2에 대해서는 `hnetcfg.fwpolicy2` COM 개체를 사용합니다. 
+`Get-NetFirewallPortFilter`은 2012 이상에서 사용할 수 있습니다. 2008R2에 대해서는 `hnetcfg.fwpolicy2` COM 개체를 사용합니다.
 ### <a name="disable-windows-firewall"></a>Windows 방화벽 사용 안 함
 `Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False`
 
@@ -360,7 +363,7 @@ SAC에서 PowerShell을 실행하려면 CMD 프롬프트가 표시된 후 다음
 ### <a name="verify-user-account-is-enabled"></a>사용자 계정이 사용하도록 설정되어 있는지 확인
 `(get-localuser | where {$_.SID -like "S-1-5-21-*-500"}).Enabled`
 
-로 구분하거나 여러 
+또는
 
 `(get-wmiobject Win32_UserAccount -Namespace "root\cimv2" -Filter "SID like 'S-1-5-%-500'").Disabled`
 
@@ -368,13 +371,13 @@ SAC에서 PowerShell을 실행하려면 CMD 프롬프트가 표시된 후 다음
 ### <a name="add-local-user-to-local-group"></a>로컬 그룹에 로컬 사용자 추가
 `add-localgroupmember -group Administrators -member <username>`
 ### <a name="enable-local-user-account"></a>로컬 사용자 계정 사용
-`get-localuser | where {$_.SID -like "S-1-5-21-*-500"} | enable-localuser` 
+`get-localuser | where {$_.SID -like "S-1-5-21-*-500"} | enable-localuser`
 
 이 예제에서는 항상 SID `S-1-5-21-*-500`이 있는 기본 제공 로컬 관리자 계정을 사용할 수 있습니다. 일반화된 이미지에서 만든 Azure VM에는 VM 프로비전 중에 지정한 이름으로 바꾼 로컬 관리자 계정이 있습니다. 따라서 일반적으로 `Administrator`이 되지 않습니다.
 ### <a name="view-user-account-properties"></a>사용자 계정 속성 보기
 `get-localuser | where {$_.SID -like "S-1-5-21-*-500"} | format-list *`
 
-로 구분하거나 여러 
+또는
 
 `get-wmiobject Win32_UserAccount -Namespace "root\cimv2" -Filter "SID like 'S-1-5-%-500'" |  format-list Name,Disabled,Status,Lockout,Description,SID`
 
@@ -414,7 +417,7 @@ SAC에서 PowerShell을 실행하려면 CMD 프롬프트가 표시된 후 다음
 이 예제에서는 `c:\bin` 폴더를 만든 다음, Sysinternals 도구 모음을 `c:\bin`로 다운로드하고 추출합니다.
 ## <a name="miscellaneous-tasks"></a>기타 작업
 ### <a name="show-os-version"></a>OS 버전 표시
-`get-wmiobject win32_operatingsystem | format-list caption,version,buildnumber` 
+`get-wmiobject win32_operatingsystem | format-list caption,version,buildnumber`
 ### <a name="view-os-install-date"></a>OS 설치 날짜 보기
 `(get-wmiobject win32_operatingsystem).converttodatetime((get-wmiobject win32_operatingsystem).installdate)`
 ### <a name="view-last-boot-time"></a>마지막 부팅 시간 보기
@@ -422,7 +425,7 @@ SAC에서 PowerShell을 실행하려면 CMD 프롬프트가 표시된 후 다음
 ### <a name="view-windows-uptime"></a>Windows 작동 시간 보기
 `"{0:dd}:{0:hh}:{0:mm}:{0:ss}.{0:ff}" -f ((get-date)-(get-wmiobject win32_operatingsystem).converttodatetime((get-wmiobject win32_operatingsystem).lastbootuptime))`
 
-`49:16:48:00.00`의 예를 들어 작동 시간을 `<days>:<hours>:<minutes>:<seconds>:<milliseconds>`로 반환합니다. 
+`<days>:<hours>:<minutes>:<seconds>:<milliseconds>`의 예를 들어 작동 시간을 `49:16:48:00.00`로 반환합니다.
 ### <a name="restart-windows"></a>Windows 다시 시작
 `restart-computer`
 

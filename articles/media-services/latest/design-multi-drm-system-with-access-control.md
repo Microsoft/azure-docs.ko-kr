@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 12/21/2018
 ms.author: willzhan
 ms.custom: seodec18
-ms.openlocfilehash: efc070491ca1ea84dc8ef095a2144df9d0bf1bcb
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: fbc6d6fa8f9a3b424eaec1f04a61b5ca24fe14fc
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76311906"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161786"
 ---
 # <a name="design-of-a-multi-drm-content-protection-system-with-access-control"></a>액세스 제어가 포함된 다중 DRM 콘텐츠 보호 시스템 설계 
 
@@ -213,7 +213,7 @@ ASP.NET MVC 플레이어 앱에 대해 Azure AD를 설정하는 방법에 대한
 
 Azure AD에 대한 내용:
 
-* [Azure Active Directory 개발자 가이드](../../active-directory/develop/v1-overview.md)에서 개발자 정보를 찾을 수 있습니다.
+* [Azure Active Directory 개발자 가이드](../../active-directory/develop/v2-overview.md)에서 개발자 정보를 찾을 수 있습니다.
 * [Azure AD 테넌트 디렉터리 관리](../../active-directory/fundamentals/active-directory-administer.md)에서 관리자 정보를 찾을 수 있습니다.
 
 ### <a name="some-issues-in-implementation"></a>구현에 대한 몇 가지 문제
@@ -231,7 +231,7 @@ Azure AD에 대한 내용:
 
 * 애플리케이션의 **구성** 탭에서 Azure AD의 애플리케이션에 권한을 추가합니다. 각 애플리케이션(로컬 및 배포된 버전)에 사용 권한이 필요합니다.
 
-    ![권한](./media/design-multi-drm-system-with-access-control/media-services-perms-to-other-apps.png)
+    ![사용 권한](./media/design-multi-drm-system-with-access-control/media-services-perms-to-other-apps.png)
 
 * 동적 CENC 보호 설정에 올바른 발급자를 사용합니다.
 

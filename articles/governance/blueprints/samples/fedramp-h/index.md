@@ -1,14 +1,14 @@
 ---
-title: 샘플 - FedRAMP High 청사진 - 개요
+title: FedRAMP High 청사진 개요
 description: FedRAMP High 청사진 샘플의 개요입니다. 이 청사진 샘플은 고객이 특정 FedRAMP High 컨트롤을 평가하는 데 도움이 됩니다.
 ms.date: 01/31/2020
 ms.topic: sample
-ms.openlocfilehash: 9a9d16967495f4785ebffabc968856edab382e75
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: dede255b73a2a052acf1e8b95ad5171a1ace6ae5
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76941300"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77087281"
 ---
 # <a name="overview-of-the-fedramp-high-blueprint-sample"></a>FedRAMP High 청사진 샘플의 개요
 

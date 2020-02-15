@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/09/2020
-ms.openlocfilehash: 9ba4fe318db86760e0dbc326730d03ad09203a88
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: 936008a074944c79b8b0bab3beaf3a5aaa5ecc12
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75834217"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77151822"
 ---
 # <a name="manage-log-analytics-workspace-using-azure-resource-manager-templates"></a>Azure Resource Manager 템플릿을 사용 하 여 Log Analytics 작업 영역 관리
 
@@ -40,10 +40,10 @@ ms.locfileid: "75834217"
 
 | 리소스 | 리소스 유형 | API 버전 |
 |:---|:---|:---|
-| 작업 영역   | workspaces    | 2017-03-15-preview |
+| 작업 영역   | 작업 영역    | 2017-03-15-preview |
 | 검색      | savedSearches | 2015-03-20 |
-| 데이터 원본 | datasources   | 2015-11-01-preview |
-| 솔루션    | solutions     | 2015-11-01-preview |
+| 데이터 소스 | datasources   | 2015-11-01-preview |
+| 솔루션    | 솔루션     | 2015-11-01-preview |
 
 ## <a name="create-a-log-analytics-workspace"></a>Log Analytics 작업 영역 만들기
 
@@ -301,9 +301,7 @@ ms.locfileid: "75834217"
           "immediatePurgeDataOn30Days": "[parameters('immediatePurgeDataOn30Days')]"
         },
         "sku": {
-          "name": "[parameters('pricingTier')]",
-          "name": "CapacityReservation",
-          "capacityReservationLevel": 100
+          "name": "[parameters('pricingTier')]"
         }
       },
       "resources": [
@@ -636,7 +634,7 @@ ms.locfileid: "75834217"
 New-AzResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <resource-group-name> -TemplateFile azuredeploy.json
 ```
 
-#### <a name="command-line"></a>명령줄
+#### <a name="command-line"></a>명령 줄
 
 ```cmd
 azure config mode arm

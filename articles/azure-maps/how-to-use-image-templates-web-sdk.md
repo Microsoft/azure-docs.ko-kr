@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.custom: codepen
-ms.openlocfilehash: cb182a5db77a517b11fb1863665f8c54d58b254a
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: f3b1141ea3c3c8e33b8a2ae12c22b6962a90d32b
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75911565"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198227"
 ---
 # <a name="how-to-use-image-templates"></a>이미지 템플릿을 사용하는 방법
 
@@ -24,7 +24,7 @@ Azure Maps 웹 SDK 내에서 HTML 표식 및 다양 한 계층에 이미지를 �
  - 다각형 계층은 채우기 패턴 이미지를 사용 하 여 렌더링할 수 있습니다. 
  - HTML 표식은 이미지 및 기타 HTML 요소를 사용 하 여 요소를 렌더링할 수 있습니다.
 
-레이어를 사용 하 여 성능을 보장 하기 위해 이러한 이미지를 렌더링 하기 전에 지도 이미지 스프라이트 리소스에 로드 해야 합니다. 기호 계층의 [Iconoptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.iconoptions) 는 기본적으로 몇 가지 색의 표식 이미지를 지도 이미지 스프라이트에 미리 로드 합니다. 이와 동일한 표식 이미지는 SVG 템플릿으로 사용할 수 있으며, 고객 기본 및 보조 색 뿐만 아니라 사용자 지정 눈금으로 이미지를 만드는 데 사용할 수 있습니다. 총 42 이미지 템플릿이 제공 되었습니다. 27 개의 기호 아이콘 및 15 개의 다각형 채우기 패턴.
+레이어를 사용 하 여 성능을 보장 하기 위해 렌더링 하기 전에 이미지를 지도 이미지 스프라이트 리소스에 로드 합니다. 기호 계층의 [Iconoptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.iconoptions)는 기본적으로 몇 가지 색의 표식 이미지를 지도 이미지 스프라이트에 미리 로드 합니다. 이러한 표식 이미지는 SVG 템플릿으로 사용할 수 있습니다. 사용자 지정 배율을 사용 하 여 이미지를 만들거나 고객 기본 및 보조 색으로 사용 될 수 있습니다. 총 42 개의 이미지 템플릿이 제공 됩니다: 27 기호 아이콘 및 15 개의 다각형 채우기 패턴.
 
 `map.imageSprite.createFromTemplate` 함수를 사용 하 여 이미지 템플릿에 지도 이미지 스프라이트 리소스를 추가할 수 있습니다. 이 함수를 사용 하면 최대 5 개의 매개 변수를 전달할 수 있습니다.
 
@@ -32,11 +32,11 @@ Azure Maps 웹 SDK 내에서 HTML 표식 및 다양 한 계층에 이미지를 �
 createFromTemplate(id: string, templateName: string, color?: string, secondaryColor?: string, scale?: number): Promise<void>
 ```
 
-여기서 `id`는 맵 이미지 스프라이트에 추가 될 때 이미지에 할당 되는 고유 식별자입니다. 레이어에이 식별자를 사용 하 여 렌더링할 이미지 리소스를 지정 합니다. 사용할 이미지 템플릿을 지정 하 `templateName`입니다. `color` 옵션은 이미지의 기본 색을 설정 하 고 `secondaryColor` 옵션은 이미지의 보조 색을 설정 합니다. `scale` 옵션은 이미지 스프라이트에 이미지를 적용 하기 전에 이미지 템플릿의 크기를 조정 합니다. 이미지가 이미지 스프라이트에 적용 되 면 PNG로 변환 됩니다. 선명 하 게 렌더링 하려면 레이어에 크기를 조정 하는 것 보다 이미지를 스프라이트에 추가 하기 전에 이미지 템플릿을 확장 하는 것이 좋습니다.
+`id`은 사용자가 만드는 고유 식별자입니다. `id`는 맵 이미지 스프라이트에 추가 될 때 이미지에 할당 됩니다. 레이어에이 식별자를 사용 하 여 렌더링할 이미지 리소스를 지정 합니다. 사용할 이미지 템플릿을 지정 하 `templateName`입니다. `color` 옵션은 이미지의 기본 색을 설정 하 고 `secondaryColor` 옵션은 이미지의 보조 색을 설정 합니다. `scale` 옵션은 이미지 스프라이트에 이미지를 적용 하기 전에 이미지 템플릿의 크기를 조정 합니다. 이미지가 이미지 스프라이트에 적용 되 면 PNG로 변환 됩니다. 선명 하 게 렌더링 하려면 레이어에 크기를 조정 하는 것 보다 이미지를 스프라이트에 추가 하기 전에 이미지 템플릿을 확장 하는 것이 좋습니다.
 
-이 함수는 이미지 스프라이트에 이미지를 비동기적으로 로드 하므로이 함수가 완료 될 때까지 기다릴 수 있는 약속을 반환 합니다.
+이 함수는 이미지 스프라이트에 이미지를 비동기적으로 로드 합니다. 따라서이 함수는이 함수가 완료 될 때까지 기다릴 수 있는 약속을 반환 합니다.
 
-다음 코드에서는 기본 제공 템플릿 중 하나에서 이미지를 만들어 기호 계층과 함께 사용 하는 방법을 보여 줍니다.
+다음 코드에서는 기본 제공 템플릿 중 하나에서 이미지를 만들어 기호 계층에서 사용 하는 방법을 보여 줍니다.
 
 ```javascript
 map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#fff').then(function () {
@@ -106,9 +106,9 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 
 ## <a name="create-custom-reusable-templates"></a>재사용 가능한 사용자 지정 템플릿 만들기
 
-응용 프로그램에서 아이콘이 다른 아이콘을 사용 하거나 추가 이미지 템플릿을 추가 하는 모듈을 만드는 경우 `atlas` 네임 스페이스에서 다음 정적 함수를 사용 하 여 Azure Maps 웹 SDK에서 이러한 아이콘을 쉽게 추가 하 고 검색할 수 있습니다.
+응용 프로그램에서 아이콘이 다른 아이콘을 사용 하거나 추가 이미지 템플릿을 추가 하는 모듈을 만드는 경우 Azure Maps 웹 SDK에서 이러한 아이콘을 쉽게 추가 하 고 검색할 수 있습니다. `atlas` 네임 스페이스에서 다음 정적 함수를 사용 합니다.
 
-| 이름 | 반환 형식 | Description | 
+| 속성 | 반환 형식 | Description | 
 |-|-|-|
 | `addImageTemplate(templateName: string, template: string, override: boolean)` | | Atlas 네임 스페이스에 사용자 지정 SVG 이미지 템플릿을 추가 합니다. |
 |  `getImageTemplate(templateName: string, scale?: number)`| 문자열 | 이름으로 SVG 템플릿을 검색 합니다. |
@@ -123,7 +123,7 @@ SVG 이미지 템플릿은 다음 자리 표시자 값을 지원 합니다.
 | `{scale}` | 지도 이미지 스프라이트에 추가 되 면 SVG 이미지가 png 이미지로 변환 됩니다. 이 자리 표시자는 명확 하 게 렌더링 하기 위해 템플릿이 변환 되기 전에 크기를 조정 하는 데 사용할 수 있습니다. | 
 | `{text}` | HTML 표식과 함께 사용 될 경우 텍스트를 렌더링할 위치입니다. |
 
-다음 예제에서는 SVG 템플릿을 가져와서 Azure Maps web SDK에 다시 사용할 수 있는 아이콘 템플릿으로 추가 하는 방법을 보여 줍니다. 
+다음 예제에서는 SVG 템플릿을 사용 하 여 Azure Maps web SDK에 다시 사용 가능한 아이콘 템플릿으로 추가 하는 방법을 보여 줍니다. 
 
 <br/>
 
@@ -133,7 +133,7 @@ SVG 이미지 템플릿은 다음 자리 표시자 값을 지원 합니다.
 
 ## <a name="list-of-image-templates"></a>이미지 템플릿 목록
 
-다음 표에는 Azure Maps web SDK 내에서 현재 사용할 수 있는 모든 이미지 템플릿이 각 이미지 위의 템플릿 이름과 함께 나열 되어 있습니다. 기본적으로 기본 색은 파란색이 고 보조 색은 흰색입니다. 흰색 배경에 보조 색을 더 쉽게 볼 수 있도록 다음 이미지는 보조 색을 검정으로 설정 합니다.
+이 표에는 Azure Maps web SDK 내에서 현재 사용할 수 있는 모든 이미지 템플릿이 나열 되어 있습니다. 템플릿 이름이 각 이미지 위에 있습니다. 기본적으로 기본 색은 파란색이 고 보조 색은 흰색입니다. 흰색 배경에 보조 색을 더 쉽게 볼 수 있도록 다음 이미지는 보조 색을 검정으로 설정 합니다.
 
 **기호 아이콘 템플릿**
 

@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/03/2019
 ms.author: spelluru
-ms.openlocfilehash: b6f51dee948d9e4d9e3f8594f9f7e60fb11b7057
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 29816d158cf1428727b7ff17bcc2c347f402dedf
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647342"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77134524"
 ---
 # <a name="specify-a-resource-group-for-lab-virtual-machines-in-azure-devtest-labs"></a>Azure DevTest Labs에서 랩 가상 머신에 대한 리소스 그룹 지정
 
@@ -31,7 +31,7 @@ ms.locfileid: "75647342"
 이 기능을 사용 하면 스크립트를 사용 하 여 Azure 구독 내에서 모든 랩 Vm에 대 한 새 리소스 그룹 또는 기존 리소스 그룹을 지정할 수 있습니다. 현재 Azure DevTest Labs는 API를 통해이 기능을 지원 합니다.
 
 > [!NOTE]
-> DevTest Labs에서 랩을 만들 때 모든 구독 한도가 적용 됩니다. 랩을 구독에서 다른 리소스로 간주 합니다. 리소스 그룹의 경우 [구독 당 980 리소스 그룹이](../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits---azure-resource-manager)제한 됩니다. 
+> DevTest Labs에서 랩을 만들 때 모든 구독 한도가 적용 됩니다. 랩을 구독에서 다른 리소스로 간주 합니다. 리소스 그룹의 경우 [구독 당 980 리소스 그룹이](../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits)제한 됩니다. 
 
 ## <a name="use-azure-portal"></a>Azure Portal 사용
 랩에서 생성 된 모든 Vm에 대 한 리소스 그룹을 지정 하려면 다음 단계를 수행 합니다. 

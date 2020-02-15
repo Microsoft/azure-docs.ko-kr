@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 12/27/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: bbb0992eaeef7892e5940130131ac139a339b47d
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: fa73cb690fafb67f75abafab1b0dd27ffa0b8e32
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77083245"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77210502"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Azure Machine Learning를 사용 하 여 모델 배포
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -584,6 +584,20 @@ az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.
 [!INCLUDE [aml-local-deploy-config](../../includes/machine-learning-service-local-deploy-config.md)]
 
 자세한 내용은 [az ml model deploy](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-deploy) 설명서를 참조 하세요.
+
+### <a name="understanding-service-state"></a>서비스 상태 이해
+
+모델을 배포 하는 동안 완전히 배포 되는 동안 서비스 상태 변경이 표시 될 수 있습니다.
+
+다음 표에서는 다양 한 서비스 상태에 대해 설명 합니다.
+
+| 웹 서비스 상태 | Description | 최종 상태?
+| ----- | ----- | ----- |
+| 변환은 | 서비스의 배포를 진행 중입니다. | 예 |
+| 비정상 | 서비스가 배포 되었지만 현재 연결할 수 없습니다.  | 예 |
+| 예약 불가능 | 리소스가 부족 하 여 지금은 서비스를 배포할 수 없습니다. | 예 |
+| 실패 | 오류 또는 충돌 때문에 서비스를 배포 하지 못했습니다. | yes |
+| Healthy | 서비스가 정상 상태 이며 끝점을 사용할 수 있습니다. | yes |
 
 ### <a id="notebookvm"></a>계산 인스턴스 웹 서비스 (개발/테스트)
 

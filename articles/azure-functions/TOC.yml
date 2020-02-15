@@ -327,7 +327,15 @@
     - name: 트리거 및 바인딩
       items:
         - name: Blob Storage
-          href: functions-bindings-storage-blob.md
+          items:
+            - name: 개요
+              href: functions-bindings-storage-blob.md
+            - name: 트리거
+              href: functions-bindings-storage-blob-trigger.md
+            - name: 입력
+              href: functions-bindings-storage-blob-input.md
+            - name: 출력
+              href: functions-bindings-storage-blob-output.md
         - name: Azure Cosmos DB
           items:
             - name: Functions 1.x
@@ -343,7 +351,13 @@
         - name: IoT Hub
           href: functions-bindings-event-iot.md
         - name: HTTP 및 웹후크
-          href: functions-bindings-http-webhook.md
+          items:
+            - name: 개요
+              href: functions-bindings-http-webhook.md
+            - name: 트리거
+              href: functions-bindings-http-webhook-trigger.md
+            - name: 출력
+              href: functions-bindings-http-webhook-output.md
         - name: Microsoft Graph
           href: functions-bindings-microsoft-graph.md
         - name: Mobile Apps

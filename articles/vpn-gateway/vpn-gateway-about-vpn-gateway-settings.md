@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 01/10/2020
 ms.author: cherylmc
-ms.openlocfilehash: 9ecea0576f7cec4e70d6e223b5412a8d8057b2ab
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: d7a2040748d170b4e536df59947ea811f149d931
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75894733"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77148164"
 ---
 # <a name="about-vpn-gateway-configuration-settings"></a>VPN Gateway 구성 설정 정보
 
@@ -28,7 +28,7 @@ VPN Gateway 연결은 각각이 구성 가능한 설정을 포함하는 여러 �
 
 * Virtual WAN에 대한 내용은 [Virtual WAN 정보](../virtual-wan/virtual-wan-about.md)를 참조하세요.
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 
 ## <a name="gwtype"></a>게이트웨이 유형
 
@@ -37,7 +37,7 @@ VPN Gateway 연결은 각각이 구성 가능한 설정을 포함하는 여러 �
 -GatewayType에 사용 가능한 값은 다음과 같습니다.
 
 * Vpn
-* Express Route
+* ExpressRoute
 
 VPN gateway에 `-GatewayType` *vpn*이 필요 합니다.
 
@@ -55,7 +55,7 @@ New-AzVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 
 ### <a name="configure-a-gateway-sku"></a>게이트웨이 SKU 구성
 
-#### <a name="azure-portal"></a>Azure Portal
+#### <a name="azure-portal"></a>Azure 포털
 
 Azure Portal을 사용하여 Resource Manager 가상 네트워크 게이트웨이를 만드는 경우 드롭다운을 사용하여 게이트웨이 SKU를 선택할 수 있습니다. 표시되는 옵션은 선택한 게이트웨이 형식 및 선택한 VPN 형식에 해당합니다.
 
@@ -97,7 +97,7 @@ Resource Manager 배포 모델에서 각 구성이 작동하려면 특정 가상
 
 * IPsec
 * Vnet2Vnet
-* Express Route
+* ExpressRoute
 * VPNClient
 
 다음 PowerShell 예제에서는 *IPsec*연결 유형이 필요한 S2S 연결을 만듭니다.
@@ -173,7 +173,7 @@ VPN Gateway를 구성하기 위해 REST API, PowerShell cmdlet 또는 Azure CLI�
 | --- | --- |
 | [PowerShell](/powershell/module/az.network/#networking) |[PowerShell](/powershell/module/az.network#vpn) |
 | [REST API](https://msdn.microsoft.com/library/jj154113) |[REST API](/rest/api/network/virtualnetworkgateways) |
-| 지원하지 않음 | [Azure CLI](/cli/azure/network/vnet-gateway)|
+| 지원되지 않음 | [Azure CLI](/cli/azure/network/vnet-gateway)|
 
 ## <a name="next-steps"></a>다음 단계
 

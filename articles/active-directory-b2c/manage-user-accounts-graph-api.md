@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a9e55edcb7c107a3dfa91f61aaa1fea64bc62f21
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 71b437f57f9d9e6e18af88d6413269cac6f66c47
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76848877"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161667"
 ---
 # <a name="azure-ad-b2c-use-the-azure-ad-graph-api"></a>Azure AD B2C: Azure AD Graph API 사용
 
@@ -26,11 +26,11 @@ B2C 테넌트에 기존 사용자 저장소를 마이그레이션해야 할 수 
 B2C 테 넌 트의 경우 Graph API와 통신 하는 두 가지 기본 모드가 있습니다.
 
 * **대화형**, 한 번 실행 작업의 경우 작업을 수행할 때 B2C 테 넌 트에서 관리자 계정으로 작업 해야 합니다. 이 모드에서는 관리자가 Graph API에 대한 호출을 수행할 수 있기 전에 해당 관리자가 자격 증명으로 로그인해야 합니다.
-* **자동화**된 연속 작업의 경우 관리 작업을 수행 하는 데 필요한 권한으로 제공 하는 일종의 서비스 계정을 사용 해야 합니다. Azure AD에서 애플리케이션을 등록하고 Azure AD에 인증하여 이 작업을 수행할 수 있습니다. *OAuth 2.0 클라이언트 자격 증명 부여*를 사용하는 [애플리케이션 ID](../active-directory/develop/service-to-service.md)를 사용하여 수행합니다. 이 경우에 애플리케이션은 사용자로서가 아닌 자체로서 Graph API를 호출합니다.
+* **자동화**된 연속 작업의 경우 관리 작업을 수행 하는 데 필요한 권한으로 제공 하는 일종의 서비스 계정을 사용 해야 합니다. Azure AD에서 애플리케이션을 등록하고 Azure AD에 인증하여 이 작업을 수행할 수 있습니다. *OAuth 2.0 클라이언트 자격 증명 부여*를 사용하는 [애플리케이션 ID](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md)를 사용하여 수행합니다. 이 경우에 애플리케이션은 사용자로서가 아닌 자체로서 Graph API를 호출합니다.
 
 이 문서에서는 자동화 된 사용 사례를 수행 하는 방법에 대해 알아봅니다. 사용자 만들기, 읽기, 업데이트 및 삭제(CRUD) 작업을 수행하는 .NET 4.5 `B2CGraphClient`을 작성합니다. 클라이언트에는 다양한 메서드를 호출할 수 있도록 하는 Windows CLI(명령줄 인터페이스)가 있습니다. 그러나 코드는 대화형이 아닌 자동화 된 방식으로 동작 하도록 작성 됩니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 애플리케이션 또는 사용자를 만들기 전에 Azure AD B2C 테넌트가 필요합니다. 아직 없는 경우 [Azure Active Directory B2C 테 넌 트를 만듭니다](tutorial-create-tenant.md).
 
@@ -73,7 +73,7 @@ B2C 테 넌 트와 함께 Azure AD Graph API을 사용 하려면 Azure Active Di
 
 ## <a name="get-the-sample-code"></a>샘플 코드 가져오기
 
-코드 샘플은 [ADAL (Active Directory 인증 라이브러리)](../active-directory/develop/active-directory-authentication-libraries.md) 을 사용 하 여 Azure AD Graph API와 상호 작용 하는 .net 콘솔 응용 프로그램입니다. 이 코드에서는 API를 호출 하 여 Azure AD B2C 테 넌 트에서 사용자를 프로그래밍 방식으로 관리 하는 방법을 보여 줍니다.
+코드 샘플은 [ADAL (Active Directory 인증 라이브러리)](../active-directory/azuread-dev/active-directory-authentication-libraries.md) 을 사용 하 여 Azure AD Graph API와 상호 작용 하는 .net 콘솔 응용 프로그램입니다. 이 코드에서는 API를 호출 하 여 Azure AD B2C 테 넌 트에서 사용자를 프로그래밍 방식으로 관리 하는 방법을 보여 줍니다.
 
 샘플 아카이브 (\*.zip) [를 다운로드](https://github.com/AzureADQuickStarts/B2C-GraphAPI-DotNet/archive/master.zip) 하거나 GitHub 리포지토리를 복제할 수 있습니다.
 
@@ -288,7 +288,7 @@ B2C Get-User <user-object-id>
 B2C Get-User <filter-query-expression>
 ```
 
-예:
+다음은 그 예입니다.
 
 ```cmd
 B2C Get-User 2bcf1067-90b6-4253-9991-7f16449c2d91
@@ -330,7 +330,7 @@ B2C Get-B2C-Application
 B2C Get-Extension-Attribute <object-id-in-the-output-of-the-above-command>
 ```
 
-출력은 각 사용자 지정 특성의 세부 정보를 표시 합니다. 예:
+출력은 각 사용자 지정 특성의 세부 정보를 표시 합니다. 다음은 그 예입니다.
 
 ```json
 {

@@ -4,12 +4,12 @@ description: Azure 구독 및 리소스 그룹에서 recovery services 자격 �
 ms.reviewer: sogup
 ms.topic: conceptual
 ms.date: 04/08/2019
-ms.openlocfilehash: 7d0a6c47fa08774161d3a2b7507cdfecaf8c7197
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: fed42c578da2e4f27f42e11d5ac67d698bbcd939
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74172882"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120717"
 ---
 # <a name="move-a-recovery-services-vault-across-azure-subscriptions-and-resource-groups"></a>Azure 구독 및 리소스 그룹 간에 Recovery Services 자격 증명 모음 이동
 
@@ -18,6 +18,10 @@ ms.locfileid: "74172882"
 ## <a name="supported-regions"></a>지원되는 지역
 
 Recovery Services 자격 증명 모음에 대 한 리소스 이동은 오스트레일리아 동부, 오스트레일리아 동부, 캐나다 중부, 캐나다 동부, 남부 동아시아, 동아시아, 미국 중부, 미국 중 북부, 미국 동부, 미국 미국, 미국 동부, 미국 서 부, 미국 서 부, 미국 서 부, 미국 서 부, 미국 서 부에서 지원 됩니다. 인도 중부, 인도 남부, 일본 동부, 일본 서 부, 대한민국 중부, 대한민국 남부, 유럽 서 부, 유럽 서부, 남아프리카 공화국 북부, 남아프리카 공화국, 영국 남부 및 영국 서부.
+
+## <a name="unsupported-regions"></a>지원되지 않는 지역
+
+프랑스 중부, 프랑스 남부, 독일 북동쪽, 독일 중부, US Gov 아이오와, 중국 북부, 중국 North2, 중국 동부, 중국 동부 2,
 
 ## <a name="prerequisites-for-moving-recovery-services-vault"></a>Recovery Services 자격 증명 모음 이동에 대 한 필수 조건
 

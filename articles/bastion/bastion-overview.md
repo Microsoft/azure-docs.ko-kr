@@ -5,24 +5,24 @@ services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: overview
-ms.date: 12/09/2019
+ms.date: 01/31/2020
 ms.author: cherylmc
-ms.openlocfilehash: 785d9da57171e60f5762a1449c24f9c767be3bc9
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: e995cba1c2ba06333d7bee507182693002cf4bbf
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74972801"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76989497"
 ---
 # <a name="what-is-azure-bastion"></a>Azure Bastion 정보
 
 Azure Bastion 서비스는 가상 네트워크 내에서 프로비저닝하는 새로운 완전 플랫폼 관리형 PaaS 서비스입니다. SSL을 통해 Azure Portal에서 직접 가상 머신에 안전하고 원활한 RDP/SSH 연결을 제공합니다. Azure Bastion을 통해 연결하는 경우에는 가상 머신에 공용 IP 주소가 필요하지 않습니다.
 
- Bastion은 프로비저닝된 가상 네트워크의 모든 VM에 대한 안전한 RDP 및 SSH 연결을 제공합니다. Azure Bastion을 사용하면 가상 머신에서 RDP/SSH를 사용하여 안전한 액세스 권한을 계속 제공하며 RDP/SSH 포트가 외부 환경에 노출되는 상황으로부터 보호합니다. Azure Bastion을 통해 Azure Portal에서 직접 가상 머신에 연결합니다. 다른 클라이언트, 에이전트 또는 소프트웨어가 필요하지 않습니다.
+Bastion은 프로비저닝된 가상 네트워크의 모든 VM에 대한 안전한 RDP 및 SSH 연결을 제공합니다. Azure Bastion을 사용하면 가상 머신에서 RDP/SSH를 사용하여 안전한 액세스 권한을 계속 제공하며 RDP/SSH 포트가 외부 환경에 노출되는 상황으로부터 보호합니다. Azure Bastion을 통해 Azure Portal에서 직접 가상 머신에 연결합니다. 다른 클라이언트, 에이전트 또는 소프트웨어가 필요하지 않습니다.
 
-## <a name="architecture"></a>아키텍처
+## <a name="architecture"></a>Architecture
 
-Azure Bastion은 가상 네트워크에 배포되며, 배포된 후에는 가상 네트워크의 모든 가상 머신에 대해 안전한 RDP/SSH 환경을 제공합니다. 가상 네트워크에서 Azure Bastion 서비스를 프로비저닝한 후에는 같은 가상 네트워크의 모든 VM에서 RDP/SSH 환경을 사용할 수 있습니다. 배포의 단위는 구독/계정 또는 가상 머신이 아니라 가상 네트워크입니다.
+Azure Bastion 배포는 구독/계정 또는 가상 머신이 아닌 가상 네트워크별로 수행됩니다. 가상 네트워크에서 Azure Bastion 서비스를 프로비저닝한 후에는 같은 가상 네트워크의 모든 VM에서 RDP/SSH 환경을 사용할 수 있습니다.
 
 RDP 및 SSH는 Azure에서 실행 중인 워크로드에 연결하는 데 사용할 수 있는 기본 수단 중 일부입니다. 인터넷을 통해 RDP/SSH 포트를 노출하는 것은 바람직하지 않으며 중요한 위협 요소로 간주됩니다. 이는 프로토콜 취약성으로 인해 종종 발생합니다. 이 위협 요소를 포함하기 위해 경계 네트워크의 공용 측에 요새 호스트(점프 서버라고도 함)를 배포할 수 있습니다. Bastion 호스트 서버는 공격에 대응하도록 설계 및 구성됩니다. 또한 Bastion 서버는 요새 뒤와 네트워크 내부에 있는 워크로드 모두에 대한 RDP 및 SSH 연결을 제공합니다.
 

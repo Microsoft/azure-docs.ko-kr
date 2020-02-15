@@ -5,12 +5,12 @@ author: msangapu-msft
 ms.topic: article
 ms.date: 01/02/2020
 ms.author: msangapu
-ms.openlocfilehash: 752c9dfd1ae67397713cdffce9ba530ad6a2c159
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: b2be84625035bb368784f3f423d63121c29255ad
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75930003"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121424"
 ---
 # <a name="serve-content-from-azure-storage-in-app-service-on-linux"></a>Linux의 App Service에 있는 Azure Storage의 콘텐츠 제공
 
@@ -20,7 +20,7 @@ ms.locfileid: "75930003"
 
 이 가이드에서는 Azure Storage를 Linux에서 App Service에 연결 하는 방법을 보여 줍니다. 보안 콘텐츠, 콘텐츠 이식성, 영구 저장소, 여러 앱에 대 한 액세스 및 여러 가지 전송 방법 등의 이점이 있습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 - [Azure CLI](/cli/azure/install-azure-cli)(2.0.46 이상)
 - [Linux 앱에서 기존 App Service](https://docs.microsoft.com/azure/app-service/containers/)
@@ -34,6 +34,7 @@ ms.locfileid: "75930003"
 - Azure Storage App Service를 사용 하 여 **컨테이너 Azure Files 컨테이너** (읽기/쓰기) 및 **Azure Blob 컨테이너** (읽기 전용)를 지원 합니다.
 - App Service Azure Storage는 인프라 제한으로 인해 **저장소 방화벽** 구성 사용을 **지원 하지 않습니다** .
 - App Service Azure Storage를 사용 하면 앱 당 **최대 5 개의** 탑재 지점이 지정 됩니다.
+- App Service FTP/FTPs 끝점을 통해 앱에 탑재 된 Azure Storage에 액세스할 수 없습니다. [Azure Storage 탐색기](https://azure.microsoft.com/features/storage-explorer/)를 사용 합니다.
 - Azure Storage는 웹 앱에 **포함 되지** 않으며 별도로 청구 됩니다. [Azure Storage 가격 책정](https://azure.microsoft.com/pricing/details/storage)에 대해 자세히 알아보세요.
 
 > [!WARNING]
@@ -69,7 +70,7 @@ az webapp config storage-account list --resource-group <resource_group> --name <
 
 Azure Storage는 사용자 지정 id를 사용 하 여 다중 컨테이너 앱으로 탑재할 수 있습니다. 사용자 지정 id 이름을 보려면 [`az webapp config storage-account list --name <app_name> --resource-group <resource_group>`](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-list)를 실행 합니다.
 
-*Docker-compose.ci.build.yml* 파일에서 `volumes` 옵션을 `custom-id`에 매핑합니다. 예:
+*Docker-compose.ci.build.yml* 파일에서 `volumes` 옵션을 `custom-id`에 매핑합니다. 다음은 그 예입니다.
 
 ```yaml
 wordpress:

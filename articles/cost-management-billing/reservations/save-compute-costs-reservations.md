@@ -7,16 +7,16 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 11/22/2019
 ms.author: banders
-ms.openlocfilehash: 2e8c477aea7a11eefa606ab9cd084ca3ed9f400f
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.openlocfilehash: 10cf5b5a0ec4edda3d3c868cda34352e827604b0
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75995651"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76841883"
 ---
 # <a name="what-are-azure-reservations"></a>Azure Reservations란?
 
-Azure 예약은 가상 머신, Azure Blob 스토리지 또는 Azure Data Lake Storage Gen2, SQL Database 컴퓨팅 용량, Azure Cosmos DB 처리량 또는 기타 Azure 리소스에 대한 1년 또는 3년 요금제를 약정하여 비용을 절감할 수 있습니다. 약정하면 사용하는 리소스 요금에 대한 할인을 받을 수 있습니다. 예약을 사용하면 리소스 비용이 종량제 가격의 최대 72%까지 줄일 수 있습니다. 예약은 청구 할인을 제공하며, 리소스의 런타임 상태에 영향을 주지 않습니다.
+Azure Reservations는 가상 머신, Azure Blob 스토리지 또는 Azure Data Lake Storage Gen2, SQL Database 컴퓨팅 용량, Azure Disk Storage, Azure Cosmos DB 처리량 또는 기타 Azure 리소스에 대한 1년 또는 3년 요금제를 약정하여 비용을 절감시킬 수 있습니다. 약정하면 사용하는 리소스 요금에 대한 할인을 받을 수 있습니다. 예약을 사용하면 리소스 비용이 종량제 가격의 최대 72%까지 줄일 수 있습니다. 예약은 청구 할인을 제공하며, 리소스의 런타임 상태에 영향을 주지 않습니다.
 
 예약 요금을 선결제할 수도 있고 매달 결제할 수도 있습니다. 선불과 월별 예약의 총 비용은 동일하며, 매달 지불하기로 선택하면 추가 요금이 청구되지 않습니다. 월간 결제는 타사 제품이 아닌 Azure 예약에 사용할 수 있습니다.
 
@@ -32,6 +32,7 @@ Azure 예약은 가상 머신, Azure Blob 스토리지 또는 Azure Data Lake St
 
 - **예약 Virtual Machine 인스턴스** - 예약에 가상 머신 컴퓨팅 비용만 포함됩니다. 추가 소프트웨어, 네트워킹 또는 스토리지 요금은 포함되지 않습니다.
 - **Azure Storage 예약 용량** - 예약에는 Blob 스토리지 또는 Azure Data Lake Gen2 스토리지의 표준 스토리지 계정에 대한 스토리지 용량이 포함됩니다. 예약에는 대역폭 또는 트랜잭션 요금이 포함되지 않습니다.
+- **Azure Disk Storage 예약** - 예약은 P30 크기 이상의 프리미엄 SSD에만 적용됩니다. P30보다 작은 디스크 유형이나 크기는 다루지 않습니다.
 - **Azure Cosmos DB 예약 용량** - 리소스에 프로비저닝된 처리량이 포함됩니다. 스토리지 및 네트워킹 요금은 포함하지 않습니다.
 - **SQL Database 예약 vCore** - 컴퓨팅 비용만 예약에 포함됩니다. 라이선스는 별도로 청구됩니다.
 - **SQL Data Warehouse** - 예약에 cDWU 사용이 포함됩니다. SQL Data Warehouse 사용과 관련된 스토리지 또는 네트워킹 요금은 포함되지 않습니다.
@@ -40,7 +41,6 @@ Azure 예약은 가상 머신, Azure Blob 스토리지 또는 Azure Data Lake St
 - Azure Database for PostgreSQL
 - Azure Database for MariaDB
 - Azure Data Explorer
-- 프리미엄 SSD Managed Disks
 
 
 Windows 가상 머신 및 SQL Database의 경우 [Azure 하이브리드 혜택](https://azure.microsoft.com/pricing/hybrid-benefit/)으로 라이선스 비용을 처리할 수 있습니다.
@@ -105,9 +105,9 @@ EA(기업계약) 고객은 EA Portal에서 **예약 인스턴스 추가** 옵션
 
 예약 할인은 다음과 같은 적격 구독 및 제품 유형에 적용됩니다.
 
-- 기업 계약 (제품 번호: MS-AZR-0017P-0017P 또는 MS-AZR-0017P-Ms-azr-0148p)
+- 기업계약(제품 번호: MS-AZR-0017P 또는 MS-AZR-0148P)
 - Microsoft 고객 계약 구독.
-- 종 량 제 요금이 있는 개별 요금제 (제품 번호: MS-AZR-0017P-0003P 또는 MS-AZR-0017P-0023P)
+- 종량제 요금을 사용한 개별 계획(제품 번호: MS-AZR-0003P 또는 MS-AZR-0023P)
 - CSP 구독
 
 다른 유형의 구독에서 실행되는 리소스는 예약 할인을 받지 못합니다.
@@ -140,16 +140,16 @@ EA(기업계약) 고객은 EA Portal에서 **예약 인스턴스 추가** 옵션
 
 서비스 플랜:
 
-- 예약 VM 인스턴스: 예약을 구입 하 고 **인스턴스 크기 유연성을 위해 최적화**를 선택 하는 경우 할인 범위는 선택한 VM 크기에 따라 달라 집니다. 같은 크기 시리즈 그룹의 VM(가상 머신) 크기에 예약을 적용할 수 있습니다. 자세한 내용은 [예약 VM 인스턴스를 통해 유동적으로 가상 머신 크기 조정](../../virtual-machines/windows/reserved-vm-instance-size-flexibility.md)을 참조하세요.
-- Azure Storage 예약 된 용량: 표준 Azure Storage 계정에 대해 예약 된 용량을 100 TiB 또는 매월 1 PiB 단위로 구매할 수 있습니다. Azure Storage 예약 용량은 모든 액세스 계층(핫, 쿨 또는 보관) 및 모든 복제 옵션(LRS, GRS 또는 ZRS)에 대해 모든 지역에서 사용할 수 있습니다.
-- SQL Database 예약된 용량: 선택하는 성능 계층에 따라 할인 적용률이 달라집니다. 자세한 내용은 [Azure 예약 할인이 적용되는 방식 이해](understand-reservation-charges.md)를 참조하세요.
-- Azure Cosmos DB 예약된 용량: 프로비전되는 처리량에 따라 할인 적용률이 달라집니다. 자세한 내용은 [Azure Cosmos DB 예약 할인이 적용되는 방식 이해](understand-cosmosdb-reservation-charges.md)를 참조하세요.
+- Reserved VM Instances: 예약을 구매할 때 **인스턴스 크기 유연성에 맞게 최적화**를 선택하는 경우 할인 적용 범위는 선택하는 VM 크기에 따라 달라집니다. 같은 크기 시리즈 그룹의 VM(가상 머신) 크기에 예약을 적용할 수 있습니다. 자세한 내용은 [예약 VM 인스턴스를 통해 유동적으로 가상 머신 크기 조정](../../virtual-machines/windows/reserved-vm-instance-size-flexibility.md)을 참조하세요.
+- Azure Storage 예약 용량: 표준 Azure Storage 계정에 대해 예약된 용량을 월 100TiB 또는 1PiB 단위로 구매할 수 있습니다. Azure Storage 예약 용량은 모든 액세스 계층(핫, 쿨 또는 보관) 및 모든 복제 옵션(LRS, GRS 또는 ZRS)에 대해 모든 지역에서 사용할 수 있습니다.
+- SQL Database 예약 용량: 할인 적용 범위는 선택하는 성능 계층에 따라 달라집니다. 자세한 내용은 [Azure 예약 할인이 적용되는 방식 이해](understand-reservation-charges.md)를 참조하세요.
+- Azure Cosmos DB 예약 용량: 할인 적용 범위는 프로비전되는 처리량에 따라 달라집니다. 자세한 내용은 [Azure Cosmos DB 예약 할인이 적용되는 방식 이해](understand-cosmosdb-reservation-charges.md)를 참조하세요.
 
 ## <a name="reservation-notifications"></a>예약 알림
 
 Azure 구독 요금을 결제하는 방법에 따라 조직의 다음 사용자에게 이메일로 예약 알림을 보내드립니다. 다음을 비롯한 다양한 이벤트에 대한 알림이 전송됩니다.
 
-- 구매
+- Purchase
 - 곧 만료되는 예약
 - Expiry
 - 갱신
@@ -167,7 +167,7 @@ EA 구독을 사용하는 고객의 경우:
 - 그 외의 모든 알림은 계정 소유자에게 전달됩니다.
 
 
-## <a name="need-help-contact-us"></a>도움이 필요하세요? 문의하세요.
+## <a name="need-help-contact-us"></a>도움 필요 시 문의하세요.
 
 질문이 있거나 도움이 필요한 경우 [지원 요청을 만드세요](https://go.microsoft.com/fwlink/?linkid=2083458).
 

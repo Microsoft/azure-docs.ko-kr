@@ -3,18 +3,18 @@ title: 컨테이너에 대 한 Azure Monitor를 사용 하 여 하이브리드 K
 description: 이 문서에서는 Azure Stack 또는 기타 환경에서 호스트 되는 Kubernetes 클러스터를 모니터링 하도록 컨테이너에 Azure Monitor를 구성 하는 방법을 설명 합니다.
 ms.topic: conceptual
 ms.date: 01/24/2020
-ms.openlocfilehash: 7796cc7300f34a7a412495754c083b112ba05041
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 6d03716b988b1139e01d41120f48ea9a9bf34be1
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759895"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198057"
 ---
 # <a name="configure-hybrid-kubernetes-clusters-with-azure-monitor-for-containers"></a>컨테이너에 대 한 Azure Monitor를 사용 하 여 하이브리드 Kubernetes 클러스터 구성
 
-컨테이너에 대 한 Azure Monitor는 Azure에서 호스트 되는 Azure Kubernetes 서비스 (AKS) 및 AKS 엔진 클러스터에 대 한 풍부한 모니터링 환경을 제공 합니다. 이 문서에서는 Azure 외부에서 호스트 되는 Kubernetes 클러스터의 모니터링을 사용 하도록 설정 하 고 비슷한 모니터링 환경을 구현 하는 방법을 설명 합니다.
+컨테이너에 대 한 Azure Monitor는 azure에서 호스트 되는 자체 관리 되는 Kubernetes 클러스터 인 azure의 AKS (Azure Kubernetes Service) 및 [AKS Engine](https://github.com/Azure/aks-engine)에 대 한 풍부한 모니터링 환경을 제공 합니다. 이 문서에서는 Azure 외부에서 호스트 되는 Kubernetes 클러스터의 모니터링을 사용 하도록 설정 하 고 비슷한 모니터링 환경을 구현 하는 방법을 설명 합니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 시작하기 전에 다음 항목이 있는지 확인하십시오.
 
@@ -285,10 +285,10 @@ Azure CLI를 사용하도록 선택한 경우, 먼저 CLI를 로컬에 설치하
 
 * 지정한 Log Analytics 작업 영역이 올바릅니다.
 * Log Analytics 작업 영역은 컨테이너 솔루션에 대 한 Azure Monitor를 사용 하 여 구성 됩니다. 그렇지 않은 경우 작업 영역을 구성 합니다.
-* OmsAgent replicaset pod가 실행 되 고 있습니다.
-* OmsAgent daemonset pod가 실행 되 고 있습니다.
+* OmsAgent replicaset pod가 실행 중입니다.
+* OmsAgent daemonset pod가 실행 중입니다.
 * OmsAgent Health service가 실행 되 고 있습니다.
-* 컨테이너 화 된 에이전트에 구성 된 Log Analytics 작업 영역 Id 및 키가 정보를 사용 하 여 구성 된 작업 영역과 일치 합니다.
+* 컨테이너 화 된 에이전트에 구성 된 Log Analytics 작업 영역 ID 및 키가 정보를 사용 하 여 구성 된 작업 영역과 일치 합니다.
 * Rs pod를 예약 하기 위해 `kubernetes.io/role=agent` 레이블이 있는 모든 Linux 작업자 노드에 대 한 유효성을 검사 합니다. 존재 하지 않는 경우 추가 합니다.
 * 클러스터의 모든 노드에서 `cAdvisor secure port:10250` 또는 `unsecure port: 10255`의 유효성을 검사 합니다.
 

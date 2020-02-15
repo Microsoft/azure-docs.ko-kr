@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 12/20/2019
 ms.author: robinsh
-ms.openlocfilehash: 2c2ac5d3de37a1a89ebd63b89666f164444e0a63
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: d16954760d1f2bf11ec5575f912ee32810696590
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76773789"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77108208"
 ---
 # <a name="tutorial-use-azure-iot-hub-message-enrichments"></a>자습서: Azure IoT Hub 메시지 강화 사용
 
@@ -35,10 +35,13 @@ ms.locfileid: "76773789"
 > * 허브로 메시지를 보내는 IoT 장치를 시뮬레이트하는 앱을 실행 합니다.
 > * 결과를 확인 하 고 강화 메시지가 정상적으로 작동 하는지 확인 합니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Azure 구독이 있어야 합니다. Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 * [Visual Studio](https://www.visualstudio.com/)를 설치합니다.
+
+* 방화벽에서 포트 8883가 열려 있는지 확인 합니다. 이 자습서의 장치 샘플에서는 포트 8883을 통해 통신 하는 MQTT 프로토콜을 사용 합니다. 이 포트는 일부 회사 및 교육용 네트워크 환경에서 차단 될 수 있습니다. 이 문제를 해결 하는 방법 및 방법에 대 한 자세한 내용은 [IoT Hub에 연결 (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub)을 참조 하세요.
+
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -73,7 +76,7 @@ IoT hub 이름 및 저장소 계정 이름과 같이 전역적으로 고유 해�
 
 스크립트에서 만든 리소스는 다음과 같습니다. *보강* 는 강화가 포함 된 메시지에 대 한 리소스 임을 의미 합니다. *원래* 는 보강 않은 메시지에 대 한 리소스 임을 의미 합니다.
 
-| 이름 | 값 |
+| 속성 | 값 |
 |-----|-----|
 | resourceGroup | ContosoResourcesMsgEn |
 | 컨테이너 이름 | 오리지널  |
@@ -293,7 +296,7 @@ az iot hub route create \
 
    템플릿을 로드 하 여 만든 리소스는 다음과 같습니다. **보강** 는 강화가 포함 된 메시지에 대 한 리소스 임을 의미 합니다. **원래** 는 보강 않은 메시지에 대 한 리소스 임을 의미 합니다. 이러한 값은 Azure CLI 스크립트에서 사용 되는 것과 동일한 값입니다.
 
-   | 이름 | 값 |
+   | 속성 | 값 |
    |-----|-----|
    | resourceGroup | ContosoResourcesMsgEn |
    | 컨테이너 이름 | 오리지널  |

@@ -6,19 +6,19 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
-ms.date: 10/22/2019
-ms.openlocfilehash: a48ce60dca9f4221e364d53567f5b53719deb18c
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+author: likebupt
+ms.author: keli19
+ms.date: 02/11/2020
+ms.openlocfilehash: 443b021b266a202775e94e44acac3a91a2b70617
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314524"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137574"
 ---
 # <a name="apply-transformation-module"></a>변환 모듈 적용
 
-이 문서에서는 Azure Machine Learning 디자이너의 모듈을 설명 합니다.
+이 문서에서는 Azure Machine Learning designer (미리 보기)의 모듈을 설명 합니다.
 
 이 모듈을 사용 하 여 이전에 계산 된 변환을 기반으로 입력 데이터 집합을 수정 합니다.  
   
@@ -32,9 +32,9 @@ Azure Machine Learning는 다양 한 종류의 사용자 지정 변환을 만들
 
 ## <a name="how-to-use-apply-transformation"></a>변형 적용 사용 방법  
   
-1. 파이프라인에 **변환 적용** 모듈을 추가 합니다. **점수** 범주의 **Machine Learning**아래에서이 모듈을 찾을 수 있습니다. 
+1. 파이프라인에 **변환 적용** 모듈을 추가 합니다. **모델 점수 매기기 & 평가** 범주에서이 모듈을 찾을 수 있습니다. 
   
-2. 입력으로 사용할 기존 변환을 찾습니다.  이전에 저장 한 변환은 왼쪽 탐색 창의 **변환** 그룹에서 찾을 수 있습니다.  
+2. 입력으로 사용할 기존 변환을 찾습니다. 이전에 저장 한 변환은 왼쪽 모듈 트리의 **데이터 집합** 범주에 있는 **내 데이터 집합** 그룹에서 찾을 수 있습니다.  
   
    
   

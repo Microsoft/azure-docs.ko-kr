@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: 00ab3e9c7902e253d39a38eb0e98ee166244bca2
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: b7f837c56214d2d01d0f119e0107a095bcfd782b
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77048574"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198772"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Python에서 자동화 된 ML 실험 구성
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -145,7 +145,7 @@ automl_config = AutoMLConfig(task = "classification")
 
 자동화된 Machine Learning 실험을 구성하는 데 사용할 수 있는 옵션에 대해 알아봅니다. 이러한 매개 변수는 `AutoMLConfig` 개체를 인스턴스화하여 설정됩니다. 매개 변수의 전체 목록은 [AutoMLConfig 클래스](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig)를 참조하세요.
 
-몇 가지 예를 들면 다음과 같습니다.
+일부 사례:
 
 1.  실험 시간 제한 시간 (분)이 30 분으로 설정 되 고 교차 유효성 검사를 2로 설정 하는 기본 메트릭으로 # 가중치를 사용 하는 분류 실험
 
@@ -174,12 +174,14 @@ automl_config = AutoMLConfig(task = "classification")
 
 세 가지 다른 `task` 매개 변수 값 (세 번째 작업 유형은 `forecasting`이며 `regression` 작업과 유사한 알고리즘 풀 사용)은 적용할 모델 목록을 결정 합니다. `whitelist` 또는 `blacklist` 매개 변수를 사용 하 여 포함 하거나 제외할 사용 가능한 모델로 반복을 수정 합니다. 지원 되는 모델 목록은 ([분류](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.classification), [예측](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.forecasting)및 [회귀](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.regression))의 [supportedmodels 클래스](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels) 에서 찾을 수 있습니다.
 
+자동 ML의 유효성 검사를 수행 하려면 시험 시간 제한 오류를 방지 하기 위해 `experiment_timeout_minutes`를 최소 시간 제한 (15 분)으로 설정 해야 합니다.
+
 ### <a name="primary-metric"></a>기본 메트릭
 기본 메트릭은 최적화를 위해 모델 학습 중에 사용할 메트릭을 결정 합니다. 선택할 수 있는 메트릭은 선택한 작업 유형에 따라 결정 되며, 다음 표에서는 각 작업 유형에 대 한 유효한 기본 메트릭을 보여 줍니다.
 
 |분류 | 회귀 | 시계열 예측
 |-- |-- |--
-|정확도| spearman_correlation | spearman_correlation
+|accuracy| spearman_correlation | spearman_correlation
 |AUC_weighted | normalized_root_mean_squared_error | normalized_root_mean_squared_error
 |average_precision_score_weighted | r2_score | r2_score
 |norm_macro_recall | normalized_mean_absolute_error | normalized_mean_absolute_error
@@ -193,7 +195,7 @@ automl_config = AutoMLConfig(task = "classification")
 
 실험을 구성할 때 고급 설정 `featurization`을 사용 하도록 설정할 수 있습니다. 다음 표에서는 [`AutoMLConfig` 클래스](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig?view=azure-ml-py)에서 기능화에 대해 허용 되는 설정을 보여 줍니다.
 
-|기능화 구성 | 설명 |
+|기능화 구성 | Description |
 | ------------- | ------------- |
 |`"featurization":`&nbsp;`'FeaturizationConfig'`| 사용자 지정 된 기능화 단계를 사용 해야 함을 나타냅니다. [기능화를 사용자 지정 하는 방법을 알아봅니다](how-to-configure-auto-train.md#customize-feature-engineering).|
 |`"featurization": 'off'`| 기능화 단계를 자동으로 수행 하지 않음을 나타냅니다.|
@@ -355,7 +357,7 @@ best_run, fitted_model = automl_run.get_output()
 
 + API 1: `get_engineered_feature_names()`은 엔지니어링 된 기능 이름 목록을 반환 합니다.
 
-  사용량:
+  Usage:
   ```python
   fitted_model.named_steps['timeseriestransformer']. get_engineered_feature_names ()
   ```
@@ -371,7 +373,7 @@ best_run, fitted_model = automl_run.get_output()
 
 + API 2: `get_featurization_summary()` 모든 입력 기능에 대 한 기능화 요약을 반환 합니다.
 
-  사용량:
+  Usage:
   ```python
   fitted_model.named_steps['timeseriestransformer'].get_featurization_summary()
   ```

@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: da05dc7136a75d519660412f2ce176f7530eb392
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 3ef2fdcaefeedb0769eac34d292e67a99524a6f2
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76547441"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168070"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-2x"></a>Azure Functions 2.x의 Azure Cosmos DB 바인딩
 
@@ -173,22 +173,7 @@ JavaScript 코드는 다음과 같습니다.
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-다음 예제에서는 *function.json* 파일의 Cosmos DB 트리거 바인딩 및 바인딩을 사용하는 [Java 함수](functions-reference-java.md)를 보여줍니다. 함수는 지정 된 데이터베이스 및 컬렉션에 삽입 또는 업데이트가 있을 때 호출 됩니다.
-
-```json
-{
-    "type": "cosmosDBTrigger",
-    "name": "items",
-    "direction": "in",
-    "leaseCollectionName": "leases",
-    "connectionStringSetting": "AzureCosmosDBConnection",
-    "databaseName": "ToDoList",
-    "collectionName": "Items",
-    "createLeaseCollectionIfNotExists": false
-}
-```
-
-Java 코드는 다음과 같습니다.
+이 함수는 지정 된 데이터베이스 및 컬렉션에 삽입 또는 업데이트가 있을 때 호출 됩니다.
 
 ```java
     @FunctionName("cosmosDBMonitor")
@@ -254,9 +239,9 @@ Python에서 특성을 지원 하지 않습니다.
 
 |function.json 속성 | 특성 속성 |Description|
 |---------|---------|----------------------|
-|**type** | n/a | `cosmosDBTrigger`로 설정해야 합니다. |
-|**direction** | n/a | `in`로 설정해야 합니다. 이 매개 변수는 사용자가 Azure Portal에서 트리거를 만들 때 자동으로 설정됩니다. |
-|**name** | n/a | 변경 사항이 포함된 문서 목록을 나타내는 함수 코드에 사용되는 변수 이름. |
+|**type** | 해당 없음 | `cosmosDBTrigger`로 설정해야 합니다. |
+|**direction** | 해당 없음 | `in`로 설정해야 합니다. 이 매개 변수는 사용자가 Azure Portal에서 트리거를 만들 때 자동으로 설정됩니다. |
+|**name** | 해당 없음 | 변경 사항이 포함된 문서 목록을 나타내는 함수 코드에 사용되는 변수 이름. |
 |**connectionStringSetting**|**ConnectionStringSetting** | 모니터링되는 Azure Cosmos DB 계정에 연결하는 데 사용되는 연결 문자열을 포함하고 있는 앱 설정의 이름입니다. |
 |**databaseName**|**DatabaseName**  | 컬렉션이 모니터링되는 Azure Cosmos DB 데이터베이스의 이름입니다. |
 |**collectionName** |**CollectionName** | 모니터링되는 컬렉션의 이름입니다. |
@@ -1699,9 +1684,9 @@ Python에서 특성을 지원 하지 않습니다.
 
 |function.json 속성 | 특성 속성 |Description|
 |---------|---------|----------------------|
-|**type**     | n/a | `cosmosDB`로 설정해야 합니다.        |
-|**direction**     | n/a | `in`로 설정해야 합니다.         |
-|**name**     | n/a | 함수에서 문서를 나타내는 바인딩 매개 변수의 이름입니다.  |
+|**type**     | 해당 없음 | `cosmosDB`로 설정해야 합니다.        |
+|**direction**     | 해당 없음 | `in`로 설정해야 합니다.         |
+|**name**     | 해당 없음 | 함수에서 문서를 나타내는 바인딩 매개 변수의 이름입니다.  |
 |**databaseName** |**DatabaseName** |문서를 포함하는 데이터베이스입니다.        |
 |**collectionName** |**CollectionName** | 문서를 포함하는 컬렉션의 이름입니다. |
 |**id**    | **Id** | 검색할 문서의 ID입니다. 이 속성은 [바인딩 식](./functions-bindings-expressions-patterns.md)을 지원합니다. `id` 및 **sqlQuery** 속성을 둘 다 설정 하지 마세요. 둘 중 하나를 설정하지 않으면 전체 컬렉션이 검색됩니다. |
@@ -2284,9 +2269,9 @@ Python에서 특성을 지원 하지 않습니다.
 
 |function.json 속성 | 특성 속성 |Description|
 |---------|---------|----------------------|
-|**type**     | n/a | `cosmosDB`로 설정해야 합니다.        |
-|**direction**     | n/a | `out`로 설정해야 합니다.         |
-|**name**     | n/a | 함수에서 문서를 나타내는 바인딩 매개 변수의 이름입니다.  |
+|**type**     | 해당 없음 | `cosmosDB`로 설정해야 합니다.        |
+|**direction**     | 해당 없음 | `out`로 설정해야 합니다.         |
+|**name**     | 해당 없음 | 함수에서 문서를 나타내는 바인딩 매개 변수의 이름입니다.  |
 |**databaseName** | **DatabaseName**|문서가 만들어진 컬렉션을 포함하는 데이터베이스입니다.     |
 |**collectionName** |**CollectionName**  | 문서가 만들어진 컬렉션의 이름입니다. |
 |**createIfNotExists**  |**CreateIfNotExists**    | 컬렉션이 존재하지 않는 경우 만들 수 있는지 여부를 나타내는 부울 값입니다. 새 컬렉션이 예약된 처리량으로 만들어져 비용이 부과되기 기본값은 *false*입니다. 자세한 내용은 [가격 책정 페이지](https://azure.microsoft.com/pricing/details/cosmos-db/)를 참조하세요.  |
@@ -2334,7 +2319,7 @@ Python에서 특성을 지원 하지 않습니다.
 |---------|---------|---------|
 |GatewayMode|게이트웨이|Azure Cosmos DB 서비스에 연결할 때 해당 함수에 의해 사용되는 연결 모드입니다. 옵션은 `Direct` 및 `Gateway`입니다.|
 |프로토콜|Https|Azure Cosmos DB 서비스에 연결할 때 해당 함수에 의해 사용되는 연결 프로토콜입니다.  [두 모드에 대한 설명은 여기](../cosmos-db/performance-tips.md#networking)를 참조하세요.|
-|leasePrefix|n/a|앱의 모든 함수에서 사용할 접두사를 임대합니다.|
+|leasePrefix|해당 없음|앱의 모든 함수에서 사용할 접두사를 임대합니다.|
 
 ## <a name="next-steps"></a>다음 단계
 

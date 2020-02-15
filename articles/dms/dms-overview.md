@@ -9,13 +9,13 @@ ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.topic: article
-ms.date: 05/31/2019
-ms.openlocfilehash: 634f949daa4926f2707c0611b819800441e76610
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 06/01/2019
+ms.openlocfilehash: d573378bc5e729eb75b6c3b51d3671492f7f98f1
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75438019"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209378"
 ---
 # <a name="what-is-azure-database-migration-service"></a>Azure Database Migration Service란 무엇인가요?
 
@@ -28,7 +28,7 @@ Azure Database Migration Service는 기존 도구 및 서비스의 일부 기능
 > [!NOTE]
 > Azure Database Migration Service를 사용하여 온라인 마이그레이션을 수행하려면 프리미엄 가격 책정 계층에 따라 인스턴스를 만들어야 합니다.
 
-## <a name="regional-availability"></a>지역별 가용성
+## <a name="regional-availability"></a>국가별 가용성
 
 Azure Database Migration Service 지역 가용성에 대 한 최신 정보는 [지역별 사용 가능한 제품](https://azure.microsoft.com/global-infrastructure/services/?products=database-migration)을 참조 하세요.
 

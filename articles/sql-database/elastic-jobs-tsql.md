@@ -10,13 +10,13 @@ ms.topic: conceptual
 ms.author: jaredmoo
 author: jaredmoo
 ms.reviewer: sstein
-ms.date: 01/25/2019
-ms.openlocfilehash: 6b70eb1a6e51c98311ae51648b1a9618f9c3349d
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.date: 02/07/2020
+ms.openlocfilehash: c228f3d6591cd72845101c00188f3fc4a55be644
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75861339"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77087358"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs"></a>T-SQL(Transact-SQL)을 사용하여 Elastic Database 작업 만들기 및 관리
 
@@ -189,10 +189,13 @@ CREATE TABLE [dbo].[Test]([TestId] [int] NOT NULL);',
 
 다음 예제에서는 새 데이터베이스를 만들어 여러 데이터베이스에서 성능 데이터를 수집합니다.
 
-기본적으로 작업 에이전트는 반환된 결과를 저장할 테이블을 만듭니다. 결과적으로 출력 자격 증명에 사용되는 자격 증명과 관련된 로그인을 위해서는 이를 수행할 충분한 권한이 있어야 합니다. 테이블을 미리 수동으로 만들려는 경우 다음 속성이 있어야 합니다.
+기본적으로 작업 에이전트는 반환 된 결과를 저장할 출력 테이블을 만듭니다. 따라서 출력 자격 증명과 연결 된 데이터베이스 보안 주체에는 최소한 데이터베이스에 대 한 `CREATE TABLE`, `ALTER`, `SELECT`, `INSERT`, 출력 테이블 또는 해당 스키마에 대 한 `DELETE`, [sys. 인덱스](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-indexes-transact-sql) 카탈로그 뷰의 `SELECT` 권한이 있어야 합니다.
+
+테이블을 미리 수동으로 만들려는 경우 다음 속성이 있어야 합니다.
 1. 결과 집합에 대한 데이터 형식 및 올바른 이름을 사용하는 열입니다.
 2. 고유 식별자의 데이터 형식을 사용하는 internal_execution_id에 대한 추가 열입니다.
 3. Internal_execution_id 열에 `IX_<TableName>_Internal_Execution_ID` 이라는 비클러스터형 인덱스가 있습니다.
+4. 데이터베이스에 대 한 `CREATE TABLE` 권한을 제외한 위에 나열 된 모든 권한입니다.
 
 [*작업 데이터베이스*](sql-database-job-automation-overview.md#job-database)에 연결하고 다음 명령을 실행합니다.
 
@@ -484,7 +487,7 @@ EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob'
 sp_add_job은 작업 에이전트를 만들 때 지정한 작업 에이전트 데이터베이스에서 실행해야 합니다.
 sp_add_job을 실행하여 작업이 추가되면 sp_add_jobstep을 사용하여 작업에 대한 활동을 수행하는 단계를 추가할 수 있습니다. 작업의 초기 버전 번호는 0이며, 첫 번째 단계가 추가되면 1로 증가합니다.
 
-#### <a name="permissions"></a>권한
+#### <a name="permissions"></a>사용 권한
 sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시저를 실행할 수 있습니다. 사용자가 작업만 모니터링할 수 있도록 제한하면 작업 에이전트를 만들 때 지정한 작업 에이전트 데이터베이스에서 해당 사용자가 다음 데이터베이스 역할에 속하도록 승인할 수 있습니다.
 
 - jobs_reader
@@ -546,7 +549,7 @@ sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시�
 #### <a name="remarks"></a>설명
 sp_add_job을 실행하여 작업이 추가되면 sp_add_jobstep을 사용하여 작업에 대한 활동을 수행하는 단계를 추가할 수 있습니다. 작업의 초기 버전 번호는 0이며, 첫 번째 단계가 추가되면 1로 증가합니다.
 
-#### <a name="permissions"></a>권한
+#### <a name="permissions"></a>사용 권한
 sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시저를 실행할 수 있습니다. 사용자가 작업만 모니터링할 수 있도록 제한하면 작업 에이전트를 만들 때 지정한 작업 에이전트 데이터베이스에서 해당 사용자가 다음 데이터베이스 역할에 속하도록 승인할 수 있습니다.
 - jobs_reader
 
@@ -578,7 +581,7 @@ sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시�
 #### <a name="remarks"></a>설명
 작업을 삭제하면 작업 기록이 자동으로 삭제됩니다.
 
-#### <a name="permissions"></a>권한
+#### <a name="permissions"></a>사용 권한
 sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시저를 실행할 수 있습니다. 사용자가 작업만 모니터링할 수 있도록 제한하면 작업 에이전트를 만들 때 지정한 작업 에이전트 데이터베이스에서 해당 사용자가 다음 데이터베이스 역할에 속하도록 승인할 수 있습니다.
 - jobs_reader
 
@@ -703,7 +706,7 @@ null이 아닌 경우 명령의 첫 번째 결과 집합이 기록되는 테이�
 #### <a name="remarks"></a>설명
 sp_add_jobstep이 성공하면 작업의 현재 버전 번호가 증가합니다. 다음에 작업이 실행될 때 새 버전이 사용됩니다. 작업이 현재 실행 중이면 해당 실행에는 새 단계가 포함되지 않습니다.
 
-#### <a name="permissions"></a>권한
+#### <a name="permissions"></a>사용 권한
 sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시저를 실행할 수 있습니다. 사용자가 작업만 모니터링할 수 있도록 제한하면 작업 에이전트를 만들 때 지정한 작업 에이전트 데이터베이스에서 해당 사용자가 다음 데이터베이스 역할에 속하도록 승인할 수 있습니다.  
 
 - jobs_reader
@@ -827,7 +830,7 @@ null이 아닌 경우 명령의 첫 번째 결과 집합이 기록되는 테이�
 #### <a name="remarks"></a>설명
 진행 중인 모든 작업 실행은 영향을 받지 않습니다. sp_update_jobstep이 성공하면 작업의 버전 번호가 증가합니다. 다음에 작업이 실행될 때 새 버전이 사용됩니다.
 
-#### <a name="permissions"></a>권한
+#### <a name="permissions"></a>사용 권한
 sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시저를 실행할 수 있습니다. 사용자가 작업만 모니터링할 수 있도록 제한하면 작업 에이전트를 만들 때 지정한 작업 에이전트 데이터베이스에서 해당 사용자가 다음 데이터베이스 역할에 속하도록 승인할 수 있습니다.
 
 - jobs_reader
@@ -872,7 +875,7 @@ sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시�
 
 다른 작업 단계는 삭제된 작업 단계에서 남겨진 간격을 채우기 위해 번호가 자동으로 다시 매겨집니다.
  
-#### <a name="permissions"></a>권한
+#### <a name="permissions"></a>사용 권한
 sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시저를 실행할 수 있습니다. 사용자가 작업만 모니터링할 수 있도록 제한하면 작업 에이전트를 만들 때 지정한 작업 에이전트 데이터베이스에서 해당 사용자가 다음 데이터베이스 역할에 속하도록 승인할 수 있습니다.
 - jobs_reader
 
@@ -906,9 +909,9 @@ sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시�
 0(성공) 또는 1(실패)
 
 #### <a name="remarks"></a>설명
-없음.
+없음
  
-#### <a name="permissions"></a>권한
+#### <a name="permissions"></a>사용 권한
 sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시저를 실행할 수 있습니다. 사용자가 작업만 모니터링할 수 있도록 제한하면 작업 에이전트를 만들 때 지정한 작업 에이전트 데이터베이스에서 해당 사용자가 다음 데이터베이스 역할에 속하도록 승인할 수 있습니다.
 - jobs_reader
 
@@ -934,9 +937,9 @@ sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시�
 0(성공) 또는 1(실패)
 
 #### <a name="remarks"></a>설명
-없음.
+없음
  
-#### <a name="permissions"></a>권한
+#### <a name="permissions"></a>사용 권한
 sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시저를 실행할 수 있습니다. 사용자가 작업만 모니터링할 수 있도록 제한하면 작업 에이전트를 만들 때 지정한 작업 에이전트 데이터베이스에서 해당 사용자가 다음 데이터베이스 역할에 속하도록 승인할 수 있습니다.
 - jobs_reader
 
@@ -968,7 +971,7 @@ sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시�
 #### <a name="remarks"></a>설명
 대상 그룹은 데이터베이스 컬렉션에서 작업을 대상으로 쉽게 지정할 수 있는 방법을 제공합니다.
 
-#### <a name="permissions"></a>권한
+#### <a name="permissions"></a>사용 권한
 sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시저를 실행할 수 있습니다. 사용자가 작업만 모니터링할 수 있도록 제한하면 작업 에이전트를 만들 때 지정한 작업 에이전트 데이터베이스에서 해당 사용자가 다음 데이터베이스 역할에 속하도록 승인할 수 있습니다.
 - jobs_reader
 
@@ -994,9 +997,9 @@ sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시�
 0(성공) 또는 1(실패)
 
 #### <a name="remarks"></a>설명
-없음.
+없음
 
-#### <a name="permissions"></a>권한
+#### <a name="permissions"></a>사용 권한
 sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시저를 실행할 수 있습니다. 사용자가 작업만 모니터링할 수 있도록 제한하면 작업 에이전트를 만들 때 지정한 작업 에이전트 데이터베이스에서 해당 사용자가 다음 데이터베이스 역할에 속하도록 승인할 수 있습니다.
 - jobs_reader
 
@@ -1052,13 +1055,13 @@ SQL Database 서버의 이름입니다. refresh_credential_name은 nvarchar(128)
 #### <a name="remarks"></a>설명
 SQL Database 서버 또는 탄력적 풀이 대상 그룹에 포함되는 경우 작업은 실행 시 SQL Database 서버 또는 탄력적 풀 내의 모든 단일 데이터베이스에서 실행됩니다.
 
-#### <a name="permissions"></a>권한
+#### <a name="permissions"></a>사용 권한
 sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시저를 실행할 수 있습니다. 사용자가 작업만 모니터링할 수 있도록 제한하면 작업 에이전트를 만들 때 지정한 작업 에이전트 데이터베이스에서 해당 사용자가 다음 데이터베이스 역할에 속하도록 승인할 수 있습니다.
 - jobs_reader
 
 이러한 역할의 권한에 대한 자세한 내용은 이 문서의 [권한] 섹션을 참조하세요. sysadmin의 멤버만 이 저장 프로시저를 사용하여 다른 사용자가 소유한 작업의 특성을 편집할 수 있습니다.
 
-#### <a name="examples"></a>예시
+#### <a name="examples"></a>예
 다음 예제에서는 London 및 NewYork 서버에 있는 모든 데이터베이스를 Servers Maintaining Customer Information(고객 정보 유지 관리 서버) 그룹에 추가합니다. 작업 에이전트를 만들 때 지정한 작업 데이터베이스(여기서는 ElasticJobs)에 연결해야 합니다.
 
 ```sql
@@ -1117,13 +1120,13 @@ Arguments [ @target_group_name = ] 'target_group_name'
 #### <a name="remarks"></a>설명
 대상 그룹은 데이터베이스 컬렉션에서 작업을 대상으로 쉽게 지정할 수 있는 방법을 제공합니다.
 
-#### <a name="permissions"></a>권한
+#### <a name="permissions"></a>사용 권한
 sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시저를 실행할 수 있습니다. 사용자가 작업만 모니터링할 수 있도록 제한하면 작업 에이전트를 만들 때 지정한 작업 에이전트 데이터베이스에서 해당 사용자가 다음 데이터베이스 역할에 속하도록 승인할 수 있습니다.
 - jobs_reader
 
 이러한 역할의 권한에 대한 자세한 내용은 이 문서의 [권한] 섹션을 참조하세요. sysadmin의 멤버만 이 저장 프로시저를 사용하여 다른 사용자가 소유한 작업의 특성을 편집할 수 있습니다.
 
-#### <a name="examples"></a>예시
+#### <a name="examples"></a>예
 다음 예제에서는 Servers Maintaining Customer Information 그룹에서 London 서버를 제거합니다. 작업 에이전트를 만들 때 지정한 작업 데이터베이스(여기서는 ElasticJobs)에 연결해야 합니다.
 
 ```sql
@@ -1168,13 +1171,13 @@ GO
 #### <a name="return-code-values"></a>반환 코드 값
 0(성공) 또는 1(실패) 설명 대상 그룹은 데이터베이스 컬렉션에서 작업을 대상으로 쉽게 지정할 수 있는 방법을 제공합니다.
 
-#### <a name="permissions"></a>권한
+#### <a name="permissions"></a>사용 권한
 sysadmin 고정 서버 역할의 멤버는 기본적으로 이 저장 프로시저를 실행할 수 있습니다. 사용자가 작업만 모니터링할 수 있도록 제한하면 작업 에이전트를 만들 때 지정한 작업 에이전트 데이터베이스에서 해당 사용자가 다음 데이터베이스 역할에 속하도록 승인할 수 있습니다.
 - jobs_reader
 
 이러한 역할의 권한에 대한 자세한 내용은 이 문서의 [권한] 섹션을 참조하세요. sysadmin의 멤버만 이 저장 프로시저를 사용하여 다른 사용자가 소유한 작업의 특성을 편집할 수 있습니다.
 
-#### <a name="examples"></a>예시
+#### <a name="examples"></a>예
 다음 예제에서는 London 및 NewYork 서버에 있는 모든 데이터베이스를 Servers Maintaining Customer Information(고객 정보 유지 관리 서버) 그룹에 추가합니다. 작업 에이전트를 만들 때 지정한 작업 데이터베이스(여기서는 ElasticJobs)에 연결해야 합니다.
 
 ```sql
@@ -1278,13 +1281,13 @@ GO
 |**step_name**  |nvarchar(128)  |이 작업의 단계에 대한 고유 이름입니다.|
 |**command_type**   |nvarchar(50)   |작업 단계에서 실행할 명령의 유형입니다. v1의 경우 값은 기본값인 'TSql'과 같아야 합니다.|
 |**command_source** |nvarchar(50)|  명령의 위치입니다. v1의 경우 'Inline'이 기본값이며, 허용되는 유일한 값입니다.|
-|**command**|   nvarchar(max)|  command_type을 통해 탄력적 작업에서 실행할 명령입니다.|
+|**명령**|   nvarchar(max)|  command_type을 통해 탄력적 작업에서 실행할 명령입니다.|
 |**credential_name**|   nvarchar(128)   |작업 실행에 사용된 데이터베이스 범위 자격 증명의 이름입니다.|
 |**target_group_name**| nvarchar(128)   |대상 그룹의 이름입니다.|
 |**target_group_id**|   uniqueidentifier|   대상 그룹의 고유 ID입니다.|
 |**initial_retry_interval_seconds**|    int |첫 번째 재시도가 시도될 때까지의 지연 시간입니다. 기본값은 1입니다.|
 |**maximum_retry_interval_seconds** |int|   재시도 간의 최대 지연 시간입니다. 재시도 간의 지연 시간이 이 값보다 커지면 대신 이 값으로 제한됩니다. 기본값은 120입니다.|
-|**retry_interval_backoff_multiplier**  |real|  여러 작업 단계 실행 시도가 실패하는 경우 재시도 지연 시간에 적용할 승수입니다. 기본값은 2.0입니다.|
+|**retry_interval_backoff_multiplier**  |REAL|  여러 작업 단계 실행 시도가 실패하는 경우 재시도 지연 시간에 적용할 승수입니다. 기본값은 2.0입니다.|
 |**retry_attempts** |int|   이 단계가 실패할 경우에 재시도하는 횟수입니다. 기본값은 10이며, 재시도 횟수가 없음을 나타냅니다.|
 |**step_timeout_seconds**   |int|   재시도 간격(분)입니다. 기본값은 0이며, 0분 간격을 나타냅니다.|
 |**output_type**    |nvarchar(11)|  명령의 위치입니다. 현재 미리 보기에서는 'Inline'이 기본값이며, 허용되는 유일한 값입니다.|
@@ -1339,7 +1342,7 @@ GO
 
 ## <a name="resources"></a>리소스
 
- - ![토픽 링크 아이콘](https://docs.microsoft.com/sql/database-engine/configure-windows/media/topic-link.gif "항목 링크 아이콘") [Transact-sql 구문 표기 규칙](https://docs.microsoft.com/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql)  
+ - ![항목 링크 아이콘](https://docs.microsoft.com/sql/database-engine/configure-windows/media/topic-link.gif "항목 링크 아이콘") [Transact-SQL 구문 표기 규칙](https://docs.microsoft.com/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql)  
 
 
 ## <a name="next-steps"></a>다음 단계

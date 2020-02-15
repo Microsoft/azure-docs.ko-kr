@@ -12,12 +12,12 @@ metadata:
   ms.author: joflore
   ms.date: 08/20/2019
   ms.collection: M365-identity-device-management
-  ms.openlocfilehash: 39f9cf3e64e343c2da98f2c4f4b403ccdc0f3f20
-  ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+  ms.openlocfilehash: d44745bcea348f944a2434e1164e59e32d1f92dc
+  ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/21/2019
-  ms.locfileid: "69874259"
+  ms.lasthandoff: 02/13/2020
+  ms.locfileid: "77186072"
 landingContent:
 - title: 조건부 액세스 정보
   linkLists:
@@ -28,7 +28,7 @@ landingContent:
   - linkListType: concept
     links:
     - text: 조건이란?
-      url: conditions.md
+      url: concept-conditional-access-conditions.md
     - text: 위치를 정의하려면 어떻게 해야 하나요?
       url: location-condition.md
     - text: 제어란?

@@ -9,12 +9,12 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.author: robinsh
-ms.openlocfilehash: c07b110f0d4c31713ab432b5b5e337f3b69dfc55
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: 426430c075cfcb084cfe3238ebd83a19e909369b
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147722"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110757"
 ---
 # <a name="get-started-with-device-twins-net"></a>장치 쌍 시작 (.NET)
 
@@ -32,11 +32,13 @@ ms.locfileid: "70147722"
 > [Azure IoT SDK](iot-hub-devguide-sdks.md) 문서는 디바이스 및 백 엔드 앱을 빌드하는 데 사용할 수 있는 Azure IoT SDK에 대한 정보를 제공합니다.
 >
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Visual Studio.
 
 * 활성 Azure 계정. 계정이 없는 경우 몇 분 안에 [무료 계정](https://azure.microsoft.com/pricing/free-trial/) 을 만들 수 있습니다.
+
+* 방화벽에서 포트 8883가 열려 있는지 확인 합니다. 이 문서의 device 샘플에서는 포트 8883을 통해 통신 하는 MQTT 프로토콜을 사용 합니다. 이 포트는 일부 회사 및 교육용 네트워크 환경에서 차단 될 수 있습니다. 이 문제를 해결 하는 방법 및 방법에 대 한 자세한 내용은 [IoT Hub에 연결 (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub)을 참조 하세요.
 
 ## <a name="create-an-iot-hub"></a>IoT Hub 만들기
 
@@ -56,7 +58,7 @@ ms.locfileid: "70147722"
 
 이 섹션에서는 **Mydeviceid**와 연결 된 장치 쌍에 위치 C#메타 데이터를 추가 하는를 사용 하 여 .net 콘솔 앱을 만듭니다. 그런 다음, IoT Hub에 저장된 디바이스 쌍을 쿼리하여 미국에 있는 디바이스를 선택한 다음 셀룰러 연결을 보고하는 디바이스를 선택합니다.
 
-1. Visual Studio에서 **새 프로젝트 만들기**를 선택 합니다. **새 프로젝트 만들기**에서 **콘솔 앱 (.NET Framework)** 을 선택 하 고 **다음**을 선택 합니다.
+1. Visual Studio에서 **새 프로젝트 만들기**를 선택합니다. **새 프로젝트 만들기**에서 **콘솔 앱 (.NET Framework)** 을 선택 하 고 **다음**을 선택 합니다.
 
 1. **새 프로젝트 구성**에서 프로젝트 이름을 **AddTagsAndQuery**로 설정 합니다.
 
@@ -70,13 +72,13 @@ ms.locfileid: "70147722"
 
    이 단계에서는 [Azure IoT 서비스 SDK](https://www.nuget.org/packages/Microsoft.Azure.Devices/) NuGet 패키지 및 해당 종속 항목에 참조를 다운로드, 설치 및 추가합니다.
 
-1. **Program.cs** 파일 위에 다음 `using` 문을 추가합니다.
+1. `using`Program.cs**파일 위에 다음** 문을 추가합니다.
 
     ```csharp  
     using Microsoft.Azure.Devices;
     ```
 
-1. **Program** 클래스에 다음 필드를 추가합니다. 를 `{iot hub connection string}` [IoT Hub 연결 문자열 가져오기](#get-the-iot-hub-connection-string)에서 복사한 IoT Hub 연결 문자열로 바꿉니다.
+1. **Program** 클래스에 다음 필드를 추가합니다. `{iot hub connection string}`를 [IoT Hub 연결 문자열 가져오기](#get-the-iot-hub-connection-string)에서 복사한 IoT Hub 연결 문자열로 바꿉니다.
 
     ```csharp  
     static RegistryManager registryManager;
@@ -148,7 +150,7 @@ ms.locfileid: "70147722"
 
    이 단계에서는 [Azure IoT 장치 SDK](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/) NuGet 패키지 및 해당 종속성에 대 한 참조를 다운로드, 설치 및 추가 합니다.
 
-1. **Program.cs** 파일 위에 다음 `using` 문을 추가합니다.
+1. `using`Program.cs**파일 위에 다음** 문을 추가합니다.
 
     ```csharp  
     using Microsoft.Azure.Devices.Client;
@@ -156,7 +158,7 @@ ms.locfileid: "70147722"
     using Newtonsoft.Json;
     ```
 
-1. **Program** 클래스에 다음 필드를 추가합니다. 를 `{device connection string}` [IoT hub에서 새 장치를 등록](#register-a-new-device-in-the-iot-hub)하는 방법에 기록해 둔 장치 연결 문자열로 바꿉니다.
+1. **Program** 클래스에 다음 필드를 추가합니다. `{device connection string}`를 [IoT hub에서 새 장치를 등록](#register-a-new-device-in-the-iot-hub)하는 것에서 기록해 둔 장치 연결 문자열로 바꿉니다.
 
     ```csharp  
     static string DeviceConnectionString = "HostName=<yourIotHubName>.azure-devices.net;DeviceId=<yourIotDeviceName>;SharedAccessKey=<yourIotDeviceAccessKey>";
@@ -231,7 +233,7 @@ ms.locfileid: "70147722"
 
 1. 솔루션 탐색기에서 솔루션을 마우스 오른쪽 단추로 클릭 하 고 **시작 프로젝트 설정**을 선택 합니다.
 
-1. **공용 속성** > **시작 프로젝트**에서 **여러 개의 시작 프로젝트**를 선택 합니다. **Reportconnectivity**의 경우 **작업**으로 **시작** 을 선택 합니다. **확인**을 선택하여 변경 내용을 저장합니다.  
+1. **시작 프로젝트** > **공용 속성** 에서 **여러 개의 시작 프로젝트**를 선택 합니다. **Reportconnectivity**의 경우 **작업**으로 **시작** 을 선택 합니다. **확인** 을 선택하여 변경 내용을 저장합니다.  
 
 1. **Reportconnectivity** 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 **디버그**, **새 인스턴스 시작**을 차례로 선택 하 여이 앱을 실행 합니다. 응용 프로그램에서 쌍 정보를 가져온 다음 연결을 ***보고 된 속성***으로 보내는 것을 볼 수 있습니다.
 

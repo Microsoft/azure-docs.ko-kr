@@ -14,15 +14,15 @@ ms.devlang: multiple
 ms.topic: overview
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 09/17/2019
+ms.date: 02/03/2020
 ms.author: juliako
 ms.custom: mvc
-ms.openlocfilehash: c17f1094e562960e851204b40281f5b04c1d40ce
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 559050d11b6b85a9842c679b94e0e5b2fd5dd0f8
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74186068"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76987716"
 ---
 # <a name="azure-media-services-v3-overview"></a>Azure Media Services v3 개요
 
@@ -32,6 +32,14 @@ Media Services v3 SDK는 [Media Services v3 OpenAPI 사양(Swagger)](https://aka
 
 > [!NOTE]
 > 현재는 Azure Portal을 사용하여 v3 리소스를 관리할 수 없습니다. [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) 또는 지원되는 [SDK](media-services-apis-overview.md#sdks) 중 하나를 사용하세요.
+
+## <a name="compliance-privacy-and-security"></a>규정 준수, 개인 정보 보호 및 보안
+ 
+중요한 알림을 사용하는 경우 Azure Media Services 사용 시 적용 가능한 모든 법률을 준수해야 하며, 다른 사용자의 권리를 위반하거나 다른 사용자에게 해로운 방법으로 Azure Media Services 또는 다른 Azure 서비스를 사용해서는 안 됩니다. 
+
+처리 및 저장을 위해 Media Services에 모든 생체 인식 데이터를 비롯한 비디오/이미지를 업로드하려면, (1) 비디오/이미지에 대한 모든 적절한 권리가 있어야 하며, (2) 해당 생체 인식 데이터를 Media Services에 저장 및 사용하도록 허용하는 비디오에 나온 모든 사람들의 적절한 동의가 있어야 합니다. 
+
+규정 준수, 개인 정보 및 Microsoft에서 Azure Media Services 데이터를 보호하는 방법에 대해 알아보려면 Azure [보안 센터](https://www.microsoft.com/trust-center/?rtc=1)를 방문하세요. Microsoft의 개인 정보 보호 의무 및 데이터 처리에 대한 내용은 Microsoft의 [개인정보처리방침](https://privacy.microsoft.com/PrivacyStatement), [Online Services 사용 약관](https://www.microsoft.com/licensing/product-licensing/products)(“OST”) 및 [Data Processing 추록](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=67)(“DPA”)을 검토하세요. 고객 데이터 보존 및 삭제에 대한 정보는 DPA에서 제공됩니다. Azure Media Services를 사용하면 OST, DPA 및 개인정보처리방침의 범위에 동의하는 것입니다.
 
 ## <a name="what-can-i-do-with-media-services"></a>Media Services로 무엇을 할 수 있나요?
 

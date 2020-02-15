@@ -2,13 +2,13 @@
 title: 관리 그룹에 리소스 배포
 description: Azure Resource Manager 템플릿의 관리 그룹 범위에서 리소스를 배포 하는 방법을 설명 합니다.
 ms.topic: conceptual
-ms.date: 11/07/2019
-ms.openlocfilehash: 4ba4f4d2e95c0b878e9f402fa84139ac5b351e3c
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.date: 02/10/2020
+ms.openlocfilehash: 0419f3daca6845c6809c9f66e870fdf884a7193f
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76121916"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77117045"
 ---
 # <a name="create-resources-at-the-management-group-level"></a>관리 그룹 수준에서 리소스 만들기
 
@@ -63,8 +63,20 @@ REST API의 경우, [관리 그룹 범위에서 배포-만들기](/rest/api/reso
 
 * [resourceGroup()](template-functions-resource.md#resourcegroup) 함수는 지원되지 **않습니다**.
 * [Subscription ()](template-functions-resource.md#subscription) 함수는 지원 **되지 않습니다** .
-* [resourceId()](template-functions-resource.md#resourceid) 함수는 지원됩니다. 이를 사용 하 여 관리 그룹 수준 배포에 사용 되는 리소스의 리소스 ID를 가져옵니다. 예를 들어 `resourceId('Microsoft.Authorization/policyDefinitions/', parameters('policyDefinition'))`를 사용 하 여 정책 정의에 대 한 리소스 ID를 가져옵니다. `/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}`형식으로 리소스 ID를 반환 합니다.
 * [reference()](template-functions-resource.md#reference) 및 [list()](template-functions-resource.md#list) 함수는 지원됩니다.
+* [resourceId()](template-functions-resource.md#resourceid) 함수는 지원됩니다. 이를 사용 하 여 관리 그룹 수준 배포에 사용 되는 리소스의 리소스 ID를 가져옵니다. 리소스 그룹 매개 변수에 대 한 값을 제공 하지 마십시오.
+
+  예를 들어 정책 정의에 대 한 리소스 ID를 가져오려면 다음을 사용 합니다.
+  
+  ```json
+  resourceId('Microsoft.Authorization/policyDefinitions/', parameters('policyDefinition'))
+  ```
+  
+  반환 된 리소스 ID 형식은 다음과 같습니다.
+  
+  ```json
+  /providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+  ```
 
 ## <a name="create-policies"></a>정책 만들기
 
@@ -136,9 +148,13 @@ REST API의 경우, [관리 그룹 범위에서 배포-만들기](/rest/api/reso
 }
 ```
 
+## <a name="template-sample"></a>템플릿 샘플
+
+* 리소스 그룹, 정책 및 정책 할당을 만듭니다.  [여기](https://github.com/Azure/azure-docs-json-samples/blob/master/management-level-deployment/azuredeploy.json)를 참조하세요.
+
 ## <a name="next-steps"></a>다음 단계
 
 * 역할 할당에 대 한 자세한 내용은 [RBAC를 사용 하 여 Azure 리소스에 대 한 액세스 관리 및 템플릿 Azure Resource Manager](../../role-based-access-control/role-assignments-template.md)을 참조 하세요.
 * Azure Security Center에 대한 작업 영역 설정을 배포하는 예제는 [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json)을 참조하세요.
-* Azure 리소스 관리자 템플릿을 만드는 방법에 대한 자세한 내용은 [템플릿 작성](template-syntax.md)을 참조하세요. 
+* Azure 리소스 관리자 템플릿을 만드는 방법에 대한 자세한 내용은 [템플릿 작성](template-syntax.md)을 참조하세요.
 * 템플릿에서 사용할 수 있는 함수 목록은 [템플릿 함수](template-functions.md)를 참조하세요.

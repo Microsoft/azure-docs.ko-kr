@@ -2,13 +2,13 @@
 title: 한도 및 경계 - QnA Maker
 description: QnA Maker에는 기술 자료 및 서비스 부분에 대해 제한이 있습니다. 테스트 및 게시하기 위해서는 기술 자료를 그러한 제한 내로 유지하는 것이 중요합니다.
 ms.topic: article
-ms.date: 01/23/2020
-ms.openlocfilehash: 32e12d9e983795d2fb403a5b6bc304289ece92c2
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.date: 02/14/2020
+ms.openlocfilehash: 7fdf45a4a22f6d9ffe123f5998592739402be55f
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76760235"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77252011"
 ---
 # <a name="qna-maker-knowledge-base-limits-and-boundaries"></a>QnA Maker 기술 자료 제한 및 경계
 
@@ -55,6 +55,8 @@ URL 페이지에서 QnAs를 추출 하기 위해 크롤링할 수 있는 딥 링
 
 ## <a name="metadata-limits"></a>메타데이터 제한
 
+메타 데이터는 소문자로 저장 되 고 비교 됩니다.
+
 ### <a name="by-azure-cognitive-search-pricing-tier"></a>Azure Cognitive Search 가격 책정 계층
 
 기술 자료 당 최대 메타 데이터 필드 수는 **[Azure Cognitive Search 계층 제한을](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity)** 기반으로 합니다.
@@ -69,7 +71,7 @@ URL 페이지에서 QnAs를 추출 하기 위해 크롤링할 수 있는 딥 링
 
 |항목|허용 되는 문자|Regex 패턴 일치|최대 문자|
 |--|--|--|--|
-|이름|수 있습니다<br>영숫자 (문자와 숫자)<br>`_` (밑줄)|`^[a-zA-Z0-9_]+$`|100|
+|속성|수 있습니다<br>영숫자 (문자와 숫자)<br>`_` (밑줄)|`^[a-zA-Z0-9_]+$`|100|
 |값|제외한 모든 항목 허용<br>`:` (콜론)<br>`|` (수직 파이프)|`^[^:|]+$`|500|
 |||||
 

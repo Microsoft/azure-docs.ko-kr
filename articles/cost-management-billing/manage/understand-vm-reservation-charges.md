@@ -11,10 +11,10 @@ ms.workload: na
 ms.date: 10/01/2019
 ms.author: banders
 ms.openlocfilehash: 9ebc418327d8c73198d43d3c40e14d48c73ad209
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/21/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "76290243"
 ---
 # <a name="how-the-azure-reservation-discount-is-applied-to-virtual-machines"></a>Azure 예약 할인이 가상 머신에 적용되는 방식
@@ -47,7 +47,7 @@ SQL Database 예약된 용량의 경우 [Azure Reserved Instances 할인](../res
 
 ![적용된 하나의 예약 및 일치하는 두 개의 VM 인스턴스에 대한 스크린샷](./media/understand-vm-reservation-charges/billing-reserved-vm-instance-application.png)
 
-1. 예약 줄을 초과하는 사용량은 일반 종량제 요금으로 청구됩니다. 예약 구매의 일부로 이미 지불 되었기 때문에 예약 라인 아래의 사용량에 대해서는 요금이 청구 되지 않습니다.
+1. 예약 줄을 초과하는 사용량은 일반 종량제 요금으로 청구됩니다. 예약 선을 초과하지 않는 사용량은 이미 예약 구매의 일부로 지불되었기 때문에 청구되지 않습니다.
 2. 시간 1 중에 인스턴스 1은 0.75시간 동안 실행되고 인스턴스 2는 0.5시간 동안 실행됩니다. 시간 1의 총 사용량은 1.25시간입니다. 나머지 0.25시간에 대한 종량제 요금이 청구됩니다.
 3. 시간 2 및 시간 3의 경우 두 인스턴스는 1시간 동안 실행되었습니다. 하나의 인스턴스는 예약에 포함되고 다른 하나는 종량제 요금으로 요금이 부과됩니다.
 4. 시간 4의 경우 인스턴스 1은 0.5시간 동안 실행되고 인스턴스 2는 1시간 동안 실행됩니다. 인스턴스 1은 예약에 완전히 포함되고 인스턴스 2 중 0.5시간도 포함됩니다. 나머지 0.5시간에 대한 종량제 요금이 청구됩니다.
@@ -76,11 +76,11 @@ VM 예약은 VM 배포뿐만 아니라 여러 서비스에서 내보낸 VM 사�
 
 설정이 on 또는 off인지 여부에 따라 예약 할인은 *ConsumedService*가 `Microsoft.Compute`일 때 일치하는 VM 사용량에 자동으로 적용됩니다. 따라서 *ConsumedService* 값에 대한 사용량 데이터를 확인합니다. 일부 사례:
 
-- Virtual Machines
-- 가상 머신 확장 집합
+- 가상 머신
+- 가상 머신 크기 집합
 - 컨테이너 서비스
 - Azure Batch 배포(사용자 구독 모드에서)
-- Azure Kubernetes Service(AKS)
+- AKS(Azure Kubernetes Service)
 - Service Fabric
 
 설정이 on일 때 예약 할인은 *ConsumedService*가 다음 항목 중 하나에 해당하는 경우 일치하는 VM 사용량에 자동으로 적용됩니다.
@@ -96,7 +96,7 @@ VM 예약은 VM 배포뿐만 아니라 여러 서비스에서 내보낸 VM 사�
 인스턴스 크기 유연성에 대한 자세한 내용은 [예약 VM 인스턴스에서 가상 머신 크기 유연성](../../virtual-machines/windows/reserved-vm-instance-size-flexibility.md)을 참조하세요.
 
 
-## <a name="need-help-contact-us"></a>도움이 필요하세요? 문의하기
+## <a name="need-help-contact-us"></a>도움 필요 시 문의처
 
 질문이 있거나 도움이 필요한 경우 [지원 요청을 만드세요](https://go.microsoft.com/fwlink/?linkid=2083458).
 

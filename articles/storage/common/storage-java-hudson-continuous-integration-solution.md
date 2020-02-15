@@ -9,14 +9,14 @@ ms.topic: article
 ms.date: 08/13/2019
 ms.author: tarcher
 ms.subservice: common
-ms.openlocfilehash: f8cdd7b950a11045f795ac93d4a0904f2dc526fa
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: a89439f49dd53f09d5cd40be0bf2e4981e9235d4
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75970186"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201388"
 ---
-# <a name="using-azure-storage-with-a-hudson-continuous-integration-solution"></a>Azure Storage를 Hudson 연속 통합 솔루션에 사용
+# <a name="using-azure-storage-with-a-hudson-continuous-integration-solution"></a>Hudson Continuous Integration 솔루션과 함께 Azure Storage 사용
 ## <a name="overview"></a>개요
 다음 정보에서는 Blob Storage를 Hudson CI(지속적인 통합) 솔루션에서 만든 빌드 아티팩트의 리포지토리로 사용하거나 빌드 프로세스에 사용할 다운로드 가능 파일의 원본으로 사용하는 방법을 보여 줍니다. 이는 민첩한 개발 환경(Java 또는 다른 언어 사용)에서 코딩하고 빌드가 연속 통합을 기반으로 실행 중이며, 다른 조직 구성원이나 고객과 빌드 아티팩트를 공유하거나 보관 파일을 유지 관리할 수 있도록 빌드 아티팩트의 리포지토리가 필요한 경우와 같은 시나리오에서 유용합니다.  다른 시나리오는 빌드 작업 자체에 종속성 등의 다른 파일이 빌드 입력의 다운로드로 필요한 경우입니다.
 
@@ -35,14 +35,14 @@ Blob service를 사용하여 Agile 개발 빌드 아티팩트를 호스트할 �
 * 고객 및 파트너가 빌드 아티팩트를 다운로드할 때의 성능
 * 익명 액세스, 만료 기반 공유 액세스 서명 액세스, 프라이빗 액세스 중에서 선택하여 사용자 액세스 정책 제어
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 Hudson CI 솔루션으로 Blob service를 사용하려면 다음이 있어야 합니다.
 
 * Hudson 연속 통합 솔루션
   
     현재 Hudson CI 솔루션이 없는 경우 다음 기술을 사용하여 Hudson CI 솔루션을 실행할 수 있습니다.
   
-  1. Java 사용이 가능한 머신으로 <http://hudson-ci.org/>에서 Hudson WAR을 다운로드합니다.
+  1. Java 사용 컴퓨터에서 [HUDSON WAR 파일을 다운로드](https://www.eclipse.org/hudson/download.php)합니다.
   2. Hudson WAR이 포함된 폴더로 열리는 명령 프롬프트에서 Hudson WAR을 실행합니다. 예를 들어 버전 3.1.2를 다운로드한 경우는 다음과 같습니다.
      
       `java -jar hudson-3.1.2.war`

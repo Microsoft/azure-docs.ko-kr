@@ -8,12 +8,12 @@ ms.author: pmorgan
 ms.date: 05/28/2019
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 823ce8d523a231875705d7c4d3f46cfd8fd24994
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 3de84e2d814acfca67bc722243a90fa41f6536e1
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74270593"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161684"
 ---
 # <a name="authentication-and-authorization-to-azure-spatial-anchors"></a>Azure 공간 앵커에 대 한 인증 및 권한 부여
 
@@ -92,10 +92,17 @@ configuration.AccountKey(LR"(MyAccountKey)");
 
 ## <a name="azure-ad-user-authentication"></a>Azure AD 사용자 인증
 
-Azure Active Directory 사용자를 대상으로 하는 응용 프로그램의 경우 권장 되는 방법은 다음 설명서에 설명 된 대로 ADAL 라이브러리를 사용 하 여 얻을 수 있는 사용자에 대 한 Azure AD 토큰을 사용 하는 것입니다 [https://docs.microsoft.com/azure/active-directory/develop/v1-overview](../../active-directory/develop/v1-overview.md). 다음을 포함 하는 "빠른 시작"에 나열 된 단계를 수행 해야 합니다.
+Azure Active Directory 사용자를 대상으로 하는 응용 프로그램의 경우 사용자에 대 한 Azure AD 토큰을 사용 하는 것이 좋습니다 .이는 [Msal 라이브러리](../../active-directory/develop/msal-overview.md)를 사용 하 여 얻을 수 있습니다. [앱 등록 빠른](../../active-directory/develop/quickstart-register-app.md)시작에 나열 된 단계를 따라야 합니다. 여기에는 다음이 포함 됩니다.
 
 1. Azure Portal 구성
     1.  응용 프로그램을 **네이티브 응용 프로그램**으로 Azure AD에 등록 합니다. 등록 하는 과정에서 응용 프로그램이 다중 테 넌 트 인지 여부를 확인 하 고 응용 프로그램에 허용 되는 리디렉션 Url을 제공 해야 합니다.
+        1.  **API 사용 권한** 탭으로 전환 합니다.
+        2.  **권한 추가를 선택 합니다** .
+            1.  내 조직에서 탭을 **사용 하 여** **혼합 현실 리소스 공급자** 를 선택 합니다.
+            2.  **위임 된 권한** 선택
+            3.  **Mixedreality** 의 mixedreality에 대 한 확인란을 선택 합니다 **.**
+            4.  **권한 추가** 를 선택 합니다.
+        3.  **관리자 동의 부여** 를 선택 합니다.
     2.  응용 프로그램 또는 사용자에 게 리소스에 대 한 액세스 권한을 부여 합니다.
         1.  Azure Portal의 공간 앵커 리소스로 이동 합니다.
         2.  **액세스 제어 (IAM)** 탭으로 전환 합니다.
@@ -111,7 +118,7 @@ Azure Active Directory 사용자를 대상으로 하는 응용 프로그램의 �
         3.  응용 프로그램에서 **모든 Microsoft 계정 사용자**를 지 원하는 경우이 값을 **일반** 값으로 바꿉니다.
     3.  토큰 요청에서 **리소스** 를 "https://sts.mixedreality.azure.com"로 설정 합니다. 이 "리소스"는 응용 프로그램이 Azure 공간 앵커 서비스에 대 한 토큰을 요청 하 고 있음을 Azure AD에 표시 합니다.
 
-이를 통해 응용 프로그램은 ADAL에서 Azure AD 토큰을 가져올 수 있어야 합니다. 클라우드 세션 구성 개체에서 Azure AD 토큰을 **Authenticationtoken** 로 설정할 수 있습니다.
+이를 통해 응용 프로그램은 MSAL에서 Azure AD 토큰을 얻을 수 있어야 합니다. 클라우드 세션 구성 개체에서 Azure AD 토큰을 **Authenticationtoken** 로 설정할 수 있습니다.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
@@ -161,7 +168,7 @@ configuration.AuthenticationToken(LR"(MyAuthenticationToken)");
 
 여기서는 앱이 자체 메커니즘 (예: Microsoft 계정, PlayFab, Facebook, Google ID, 사용자 지정 사용자 이름/암호 등)을 사용 하 여 백 엔드 서비스를 인증 하는 것으로 가정 합니다. 사용자가 백 엔드 서비스에 인증 되 면 해당 서비스는 Azure AD 토큰을 검색 하 고, Azure 공간 앵커에 대 한 액세스 토큰에 대해 교환 하 고, 클라이언트 응용 프로그램에 다시 반환할 수 있습니다.
 
-다음 설명서에 설명 된 대로 ADAL 라이브러리를 사용 하 여 Azure AD 액세스 토큰을 검색 합니다. [https://docs.microsoft.com/azure/active-directory/develop/v1-overview](../../active-directory/develop/v1-overview.md); 다음을 포함 하는 "빠른 시작"에 나열 된 단계를 수행 해야 합니다.
+Azure AD 액세스 토큰은 [Msal 라이브러리](../../active-directory/develop/msal-overview.md)를 사용 하 여 검색 됩니다. [앱 등록 빠른](../../active-directory/develop/quickstart-register-app.md)시작에 나열 된 단계를 따라야 합니다. 여기에는 다음이 포함 됩니다.
 
 1.  Azure Portal 구성:
     1.  Azure AD에서 응용 프로그램을 등록 합니다.

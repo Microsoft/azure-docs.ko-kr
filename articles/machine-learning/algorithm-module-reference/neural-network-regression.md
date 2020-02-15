@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 10/22/2019
-ms.openlocfilehash: 7ff4303a923e50a36ca36bd625581f11f7a9b491
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 97095e4802373a1dd3f7b795c2fe567b778d2d5e
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76548495"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153828"
 ---
 # <a name="neural-network-regression-module"></a>신경망 회귀 모듈
 

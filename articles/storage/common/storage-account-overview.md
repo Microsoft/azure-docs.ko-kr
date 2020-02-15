@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 5034aaaee335bbd87e7ea42b448e4e8fbf6aacca
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 11fdaa0d547e588daa9d264c2393606705554a17
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76274556"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157274"
 ---
 # <a name="storage-account-overview"></a>Storage 계정 개요
 
@@ -115,11 +115,9 @@ Azure Storage는 사용 패턴에 따라 블록 Blob 데이터 액세스를 위�
 > [!IMPORTANT]
 > 기존 스토리지 계정 또는 Blob에 대한 액세스 계층을 변경하면 추가 비용이 발생할 수 있습니다. 자세한 내용은 [스토리지 계정 청구 섹션](#storage-account-billing)을 참조하세요.
 
-## <a name="replication"></a>복제
+## <a name="redundancy"></a>중복
 
 [!INCLUDE [storage-common-redundancy-options](../../../includes/storage-common-redundancy-options.md)]
-
-스토리지 복제에 대한 자세한 내용은 [Azure Storage 복제](storage-redundancy.md)를 참조하세요.
 
 ## <a name="encryption"></a>암호화
 

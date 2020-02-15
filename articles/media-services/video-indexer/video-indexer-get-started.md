@@ -8,14 +8,14 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: tutorial
-ms.date: 01/13/2020
+ms.date: 02/03/2020
 ms.author: juliako
-ms.openlocfilehash: 3a5ddf5bd4614b68e97e7616173a3e0640007530
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: 1f3d442ea7cf6d95427aaa9c072410119e2735af
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75941551"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76989810"
 ---
 # <a name="quickstart-how-to-sign-up-and-upload-your-first-video"></a>빠른 시작: 가입하고 첫 번째 비디오를 업로드하는 방법
 
@@ -49,15 +49,17 @@ Video Indexer와 함께 사용할 수 있는 파일 형식 목록은 [입력 컨
 
     Video Indexer가 분석을 완료하면 비디오에 대한 링크와 비디오 분석 결과에 관한 간단한 설명이 포함된 알림을 받게 됩니다. 예: 사람, 주제, OCR.
 
-## <a name="next-steps"></a>다음 단계
+## <a name="see-also"></a>참고 항목
 
 자세한 내용은 [비디오 업로드 및 인덱싱](upload-index-videos.md)을 참조하세요.
 
 비디오를 업로드하고 인덱싱한 후 [Video Indexer](video-indexer-view-edit.md) 웹 사이트 또는 [Video Indexer 개발자 포털](video-indexer-use-apis.md)을 사용하여 비디오의 인사이트를 확인할 수 있습니다. 
 
-## <a name="see-also"></a>참고 항목
-
-[Video Indexer 개요](video-indexer-overview.md)
-
 [API 사용 시작](video-indexer-use-apis.md)
+
+## <a name="next-steps"></a>다음 단계
+
+자세한 소개는 [소개 랩](https://github.com/Azure-Samples/media-services-video-indexer/blob/master/IntroToVideoIndexer.md)을 방문하세요. 
+
+워크숍을 마치면 비디오 및 오디오 콘텐츠에서 추출할 수 있는 정보의 종류를 잘 이해할 수 있을 것이며, 콘텐츠 인텔리전스와 관련된 기회를 식별하고, Azure에서 비디오 AI를 피치하고, Video Indexer에 대한 여러 시나리오를 시연할 준비가 되어 있을 것입니다.
 

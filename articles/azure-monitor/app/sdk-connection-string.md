@@ -8,12 +8,12 @@ author: timothymothra
 ms.author: tilee
 ms.date: 01/17/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: 2cf3c784c711977a6fe758bb9017e1f0dc404c33
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 8febe1fd749842a6db0cd1c9991f4002eb7cf2ad
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76992067"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190089"
 ---
 # <a name="connection-strings"></a>연결 문자열
 
@@ -84,7 +84,7 @@ ms.locfileid: "76992067"
 - applicationinsights.us
 
 
-https://docs.microsoft.com/azure/azure-monitor/app/custom-endpoints#regions-that-require-endpoint-modification 도 참조하세요.
+https://docs.microsoft.com/azure/azure-monitor/app/custom-endpoints#regions-that-require-endpoint-modification도 참조하세요.
 
 
 ##### <a name="valid-prefixes"></a>유효한 접두사
@@ -140,10 +140,10 @@ https://docs.microsoft.com/azure/azure-monitor/app/custom-endpoints#regions-that
 - 권한 부여 체계의 기본값은 "ikey"입니다. 
 - 계측 키: 00000000-0000-0000-0000-000000000000
 - 지역 서비스 Uri는 명시적 재정의 값을 기반으로 합니다. 
-   - 수집: https://custom.com:111/
-   - 라이브 메트릭: https://custom.com:222/
-   - 프로파일러: https://custom.com:333/ 
-   - 디버거: https://custom.com:444/   
+   - 수집: https:\//custom.com:111/
+   - 라이브 메트릭: https:\//custom.com:222/
+   - 프로파일러: https:\//custom.com:333/ 
+   - 디버거: https:\//custom.com:444/   
 
 
 ## <a name="how-to-set-a-connection-string"></a>연결 문자열을 설정 하는 방법

@@ -1,21 +1,21 @@
 ---
 title: '빠른 시작: 사용자 지정 음성 도우미, C#(UWP) - Speech Service'
 titleSuffix: Azure Cognitive Services
-description: 이 문서에서는 Cognitive Services Speech SDK(소프트웨어 개발 키트)를 사용하여 C# UWP(유니버설 Windows 플랫폼) 애플리케이션을 만듭니다. 이전에 Direct Line Speech 채널을 사용하도록 만들고 구성한 Bot Framework에 클라이언트 애플리케이션을 연결합니다. 이 애플리케이션은 Speech SDK NuGet 패키지 및 Microsoft Visual Studio 2019로 빌드되었습니다.
+description: 이 문서에서는 Cognitive Services Speech SDK(소프트웨어 개발 키트)를 사용하여 C# UWP(유니버설 Windows 플랫폼) 애플리케이션을 만듭니다. 이전에 Direct Line Speech 채널을 사용하도록 만들고 구성한 Bot Framework에 클라이언트 애플리케이션을 연결합니다. 이 애플리케이션은 Speech SDK NuGet 패키지와 Microsoft Visual Studio 2019로 빌드되었습니다.
 services: cognitive-services
-author: trrwilson
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 11/05/2019
-ms.author: travisw
-ms.openlocfilehash: 25d74b640f1bf567792c317626da0178ead7e34f
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.date: 02/10/2020
+ms.author: dapine
+ms.openlocfilehash: af9395b8f75a9097d4449571fd54be6259a7b9f3
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74816234"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77119788"
 ---
 # <a name="quickstart-create-a-voice-assistant-with-the-speech-sdk-uwp"></a>빠른 시작: Speech SDK를 사용하여 음성 도우미 만들기, UWP
 
@@ -26,7 +26,7 @@ ms.locfileid: "74816234"
 > [!NOTE]
 > 유니버설 Windows 플랫폼을 사용하여 PC, Xbox, Surface Hub 및 기타 디바이스를 비롯하여 Windows 10을 지원하는 모든 디바이스에서 실행되는 앱을 개발할 수 있습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 빠른 시작에는 다음이 필요합니다.
 
@@ -35,7 +35,7 @@ ms.locfileid: "74816234"
 * 이전에 [Direct Line Speech 채널](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)을 사용하여 만들고 구성한 봇
 
   > [!NOTE]
-  > [음성 도우미에 대한 지원되는 지역 목록](regions.md#voice-assistants)을 참조하고 리소스가 해당 지역 중 하나에 배포되었는지 확인합니다.
+  > [음성 도우미에 대한 지원되는 지역 목록](regions.md#voice-assistants)을 참조하고 리소스가 해당 지역 중 하나에 배포되었는지 확인하세요.
 
 ## <a name="optional-get-started-fast"></a>선택 사항: 빠른 시작
 
@@ -117,7 +117,7 @@ ms.locfileid: "74816234"
 
 코드 숨김 원본을 추가하려면 다음 단계를 수행합니다.
 
-1. **솔루션 탐색기**에서 코드 숨김 원본 파일을 엽니다`MainPage.xaml.cs`. (`MainPage.xaml`로 그룹화되어 있습니다.)
+1. **솔루션 탐색기**에서 코드 숨김 원본 파일 `MainPage.xaml.cs`를 엽니다. `MainPage.xaml`로 그룹화되어 있습니다.
 
 1. 파일의 내용을 다음 코드 조각으로 바꿉니다.
 
@@ -303,7 +303,7 @@ ms.locfileid: "74816234"
     ```
 
    > [!NOTE]
-   > [음성 도우미에 대한 지원되는 지역 목록](regions.md#voice-assistants)을 참조하고 리소스가 해당 지역 중 하나에 배포되었는지 확인합니다.
+   > [음성 도우미에 대한 지원되는 지역 목록](regions.md#voice-assistants)을 참조하고 리소스가 해당 지역 중 하나에 배포되었는지 확인하세요.
 
    > [!NOTE]
    > 봇을 구성하고 채널 비밀을 검색하는 방법은 [Direct Line Speech 채널](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)에 대한 Bot Framework 설명서를 참조하세요.

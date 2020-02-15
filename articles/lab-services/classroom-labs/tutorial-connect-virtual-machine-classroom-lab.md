@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 10/31/2019
+ms.date: 02/10/2020
 ms.author: spelluru
-ms.openlocfilehash: 30983d141f087a46e420f7ea457fba181956c28e
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 27d79e28a986e929fb71dd77fc50b3c2cd32618f
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73577767"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77134030"
 ---
 # <a name="tutorial-access-a-classroom-lab-in-azure-lab-services"></a>자습서: Azure Lab Services의 클래스룸 랩에 액세스
 이 자습서에서는 사용자가 학생이 되어 클래스룸 랩의 VM(가상 머신)에 연결합니다. 
@@ -42,11 +42,11 @@ ms.locfileid: "73577767"
 1. 가상 머신이 준비될 때까지 기다립니다. VM 타일에서 다음 필드를 확인합니다.
     1. 타일의 맨 위에 **랩 이름**이 표시됩니다.
     1. 오른쪽에는 VM의 **OS(운영 체제)** 를 나타내는 아이콘이 표시됩니다. 이 예제에서는 Windows OS입니다. 
-    1. 타일의 진행률 표시줄에는 할당된 [할당량 시간](how-to-configure-student-usage.md#set-quotas-for-users)에 대해 사용된 시간이 표시됩니다. 이 시간은 랩의 예약된 시간 외에 사용자에게 할당된 추가 시간입니다. 
-    1. VM을 시작/중지하고 VM에 연결하기 위한 타일 아래쪽에 아이콘/단추가 표시됩니다. 
+    1. 타일의 진행률 표시줄에는 할당된 [할당량 시간](how-to-configure-student-usage.md#set-quotas-for-users) 대비 사용한 시간이 표시됩니다. 이 시간은 랩의 예약된 시간 외에 사용자에게 할당된 추가 시간입니다. 
+    1. 타일 아래쪽에는 VM을 시작/중지하고 VM에 연결하기 위한 아이콘/단추가 표시됩니다. 
     1. 단추 오른쪽에는 VM 상태가 표시됩니다. VM 상태가 **중지됨**인지 확인합니다. 
 
-        ![중지된 상태의 VM](../media/tutorial-connect-vm-in-classroom-lab/vm-in-stopped-state.png)
+        ![중지됨 상태의 VM](../media/tutorial-connect-vm-in-classroom-lab/vm-in-stopped-state.png)
 
 ## <a name="start-the-vm"></a>VM 시작
 1. 다음 이미지와 같이 첫 번째 단추를 선택하여 VM을 **시작**합니다. 이 프로세스는 다소 시간이 걸립니다.  

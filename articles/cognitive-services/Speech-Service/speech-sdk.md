@@ -3,25 +3,25 @@ title: 음성 SDK-음성 서비스 정보
 titleSuffix: Azure Cognitive Services
 description: Speech SDK(소프트웨어 개발 키트)를 사용하면 애플리케이션 네이티브에서 Speech 서비스의 기능에 액세스할 수 있으므로 소프트웨어를 더 쉽게 개발할 수 있습니다. 이 문서에서는 Windows, Linux 및 Android용 SDK에 대한 추가 세부 정보를 제공합니다.
 services: cognitive-services
-author: erhopf
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 12/10/2019
-ms.author: wolfma
-ms.openlocfilehash: ea879cbfc3b9b1d1a627add52f26a473aca53cdf
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.date: 02/13/2020
+ms.author: dapine
+ms.openlocfilehash: 04546883e6742086fa05fc450920b1026702bd08
+ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759878"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77212514"
 ---
 # <a name="about-the-speech-sdk"></a>Speech SDK 정보
 
 음성 SDK(소프트웨어 개발 키트)를 사용하면 애플리케이션에서 Speech 서비스의 기능에 액세스할 수 있으므로 음성 지원 소프트웨어를 더 쉽게 개발할 수 있습니다. 현재, Sdk는 **음성 텍스트**, **텍스트 음성**변환, **음성 번역**, **의도 인식**및 **봇 프레임 워크의 직접 줄 음성 채널**에 대 한 액세스를 제공 합니다.
 
-마이크에서 쉽게 오디오를 캡처하거나, 스트림에서 읽거나, 음성 SDK를 사용 하 여 저장소에서 오디오 파일에 액세스할 수 있습니다. Speech SDK는 음성 인식을 위해 WAV/PCM 16비트, 16kHz/8kHz, 단일 채널 오디오를 지원합니다. 추가 오디오 형식은 [음성-텍스트 REST 끝점](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) 또는 [배치 기록 서비스](https://docs.microsoft.com/azure/cognitive-services/speech-service/batch-transcription#supported-formats)를 사용 하 여 지원 됩니다.
+마이크에서 쉽게 오디오를 캡처하거나, 스트림에서 읽거나, 음성 SDK를 사용 하 여 저장소에서 오디오 파일에 액세스할 수 있습니다. 음성 SDK는 소리 인식에 대해 WAV/PCM 16 비트, 16Khz/8Khz, 단일 채널 오디오를 지원 합니다. 추가 오디오 형식은 [음성-텍스트 REST 끝점](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) 또는 [배치 기록 서비스](https://docs.microsoft.com/azure/cognitive-services/speech-service/batch-transcription#supported-formats)를 사용 하 여 지원 됩니다.
 
 기능 및 지원 되는 플랫폼에 대 한 일반적인 개요는 설명서 [입력 페이지](https://aka.ms/csspeech)에서 찾을 수 있습니다.
 
@@ -31,7 +31,7 @@ ms.locfileid: "76759878"
 
 ## <a name="get-the-sdk"></a>SDK 가져오기
 
-### <a name="windows"></a>Windows
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
 > [!WARNING]
 > Speech SDK는 Windows 10 이상 버전을 지원 합니다. 이전 Windows 버전은 **지원 되지 않습니다**.
@@ -42,7 +42,7 @@ Windows의 경우 다음 언어를 지원합니다.
 
 * Java: 최신 버전의 음성 SDK Maven 패키지를 참조 및 사용할 수 있으며, 이 패키지는 Windows x64만 지원합니다. Maven 프로젝트에서 `https://csspeechstorage.blob.core.windows.net/maven/`을 추가 리포지토리로 추가하고, `com.microsoft.cognitiveservices.speech:client-sdk:1.8.0`을 종속성으로 참조합니다.
 
-### <a name="linux"></a>Linux
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
 > [!NOTE]
 > 현재는 다음 대상 아키텍처에서 Ubuntu 16.04, Ubuntu 18.04 및 Debian 9만 지원 합니다.
@@ -78,7 +78,7 @@ sudo apt-get install libssl1.0.2 libasound2
 
   |경로|Description|
   |-|-|
-  |`license.md`|라이선스|
+  |`license.md`|License|
   |`ThirdPartyNotices.md`|타사 알림|
   |`include`|C 및 C++용 헤더 파일|
   |`lib/x64`|애플리케이션과 연결할 기본 x64 라이브러리|
@@ -86,7 +86,7 @@ sudo apt-get install libssl1.0.2 libasound2
 
   애플리케이션을 만들려면 개발 환경에 필수 이진 파일(및 라이브러리)을 복사하고 이동합니다. 필요에 따라 빌드 프로세스에 포함합니다.
 
-### <a name="android"></a>Android
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
 Android용 Java SDK는 필요한 라이브러리와 필요한 Android 권한을 포함하는 [AAR(Android 라이브러리)](https://developer.android.com/studio/projects/android-library)로 패키지됩니다. `https://csspeechstorage.blob.core.windows.net/maven/`의 Maven 리포지토리에서 패키지 `com.microsoft.cognitiveservices.speech:client-sdk:1.7.0`로 호스트됩니다.
 
@@ -105,6 +105,8 @@ Android Studio 프로젝트의 패키지를 사용하는 경우 다음과 같이
   ```
 
 Java SDK는 [Speech Devices SDK](speech-devices-sdk.md)에도 포함됩니다.
+
+---
 
 [!INCLUDE [Get the samples](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
 

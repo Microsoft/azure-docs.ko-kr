@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: tutorial
 ms.date: 9/25/2018
 ms.author: rohink
-ms.openlocfilehash: d601d19a786613f674f7b941becc5e97d84e6fce
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: d4517314742f3ec8e9968d20745ffb697d96f324
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76939271"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77149935"
 ---
 # <a name="tutorial-configure-an-alias-record-to-refer-to-an-azure-public-ip-address"></a>자습서: Azure 공용 IP 주소를 참조하도록 별칭 레코드 구성 
 
@@ -36,7 +36,7 @@ Azure DNS에서 도메인을 호스트하는 방법에 대한 지침은 [자습�
 
 ## <a name="create-the-network-infrastructure"></a>네트워크 인프라 만들기
 먼저 웹 서버를 배치할 가상 네트워크 및 서브넷을 만듭니다.
-1. https://portal.azure.com 에서 Azure Portal에 로그인합니다.
+1. [https://portal.azure.com](https://portal.azure.com)에서 Azure Portal에 로그인합니다.
 2. Azure Portal의 왼쪽 위에서 **리소스 만들기**를 선택합니다. 검색 상자에 *리소스 그룹*을 입력하고 **RG-DNS-Alias-pip**라는 리소스 그룹을 만듭니다.
 3. **리소스 만들기** > **네트워킹** > **가상 네트워크**를 차례로 선택합니다.
 4. **VNet-Servers**라는 가상 네트워크를 만들고 **RG-DNS-Alias-pip** 리소스 그룹에 배치한 후 서브넷 이름을 **SN-Web**으로 지정합니다.

@@ -12,12 +12,12 @@ metadata:
   author: spelluru
   ms.author: spelluru
   ms.date: 01/29/2020
-  ms.openlocfilehash: 5f2a1c8eb89979358f5db2a1364ee88fabfde9da
-  ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+  ms.openlocfilehash: 28cfe37f6058dbedb11fb6fe01d932cbb10cbd18
+  ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 01/31/2020
-  ms.locfileid: "76906342"
+  ms.lasthandoff: 02/12/2020
+  ms.locfileid: "77162959"
 landingContent:
 - title: Event Hubs 정보
   linkLists:
@@ -91,7 +91,7 @@ landingContent:
       url: event-hubs-java-get-started-send.md
     - text: Python
       url: get-started-python-send-v2.md
-    - text: Node.js
+    - text: JavaScript
       url: get-started-node-send-v2.md
     - text: Apache Kafka
       url: event-hubs-quickstart-kafka-enabled-event-hubs.md#send-and-receive-messages-with-kafka-in-event-hubs

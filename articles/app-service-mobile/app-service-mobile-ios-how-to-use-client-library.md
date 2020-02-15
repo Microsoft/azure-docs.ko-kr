@@ -6,12 +6,12 @@ ms.tgt_pltfrm: mobile-ios
 ms.devlang: objective-c
 ms.topic: article
 ms.date: 06/25/2019
-ms.openlocfilehash: 9860ab6b16c6639581d0bcd1783d43f420f88d74
-ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
+ms.openlocfilehash: 8f6307e37ff24d2a3f10bcf39ed989acdf3611f9
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74668438"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157995"
 ---
 # <a name="how-to-use-ios-client-library-for-azure-mobile-apps"></a>Azure Mobile Apps용 iOS 클라이언트 라이브러리를 사용하는 방법
 
@@ -171,7 +171,7 @@ let query = table.queryWithPredicate(NSPredicate(format: "complete == NO"))
 * 요청에서 사용자 지정 쿼리 문자열 매개 변수 지정
 * 추가 함수 적용
 
-개체에 `readWithCompletion`을 호출하여 `MSQuery` 쿼리를 실행합니다.
+개체에 `MSQuery`을 호출하여 `readWithCompletion` 쿼리를 실행합니다.
 
 ## <a name="sorting"></a>방법: MSQuery를 사용하여 데이터 정렬
 
@@ -434,7 +434,7 @@ table.deleteWithId("37BBF396-11F0-4B39-85C8-B319C729AF6D") { (itemId, error) in
 
 사용자 지정 API를 사용하여 백 엔드 기능을 노출할 수 있습니다. 테이블 작업에 매핑할 필요는 없습니다. 더 효율적으로 메시징을 제어할 수 있으며 헤더의 읽기/설정 및 응답의 본문 형식을 변경할 수도 있습니다.
 
-사용자 지정 API를 호출하려면 `MSClient.invokeAPI`를 호출합니다. 요청 및 응답 콘텐츠는 JSON으로 간주됩니다. 다른 미디어 유형을 사용 하려면 [`invokeAPI`의 다른 오버 로드를 사용 ][5]합니다.  `POST` 요청 대신 `GET` 요청을 수행 하려면 GET 요청에 메시지 본문이 없으므로 매개 변수 `HTTPMethod`를 `"GET"` 및 매개 변수 `body`로 설정 합니다. 사용자 지정 API에서 다른 HTTP 동사를 지 원하는 경우 `HTTPMethod`를 적절 하 게 변경 합니다.
+사용자 지정 API를 호출하려면 `MSClient.invokeAPI`를 호출합니다. 요청 및 응답 콘텐츠는 JSON으로 간주됩니다. 다른 미디어 유형을 사용 하려면 [`invokeAPI`의 다른 오버 로드를 사용 ][5]합니다.  `POST` 요청 대신 `GET` 요청을 수행 하려면 GET 요청에 메시지 본문이 없으므로 매개 변수 `HTTPMethod`를 `"GET"` 및 매개 변수 `body`로 설정 합니다. 사용자 지정 API에서 다른 HTTP 동사를 지 원하는 경우 `HTTPMethod`를 적절 하 게 변경 합니다.`nil`
 
 **Objective-C**:
 
@@ -561,7 +561,7 @@ Azure Active Directory를 사용하여 애플리케이션에 사용자가 로그
 3. 터미널을 사용하여 프로젝트를 포함하는 디렉터리에서 `pod install`을 실행한 다음 생성된 Xcode 작업 영역(프로젝트 아님)을 엽니다.
 4. 사용하는 언어에 따라 애플리케이션에 다음 코드를 추가합니다. 각 코드에서 다음과 같이 값을 바꿉니다.
 
-   * **INSERT-AUTHORITY-HERE**를 애플리케이션이 프로비전된 테넌트의 이름으로 바꿉니다. 형식은 https://login.microsoftonline.com/contoso.onmicrosoft.com 이어야 합니다. 이 값은 [Azure 포털]의 Azure Active Directory에 있는 도메인 탭에서 복사할 수 있습니다.
+   * **INSERT-AUTHORITY-HERE**를 애플리케이션이 프로비전된 테넌트의 이름으로 바꿉니다. 형식은 https://login.microsoftonline.com/contoso.onmicrosoft.com이어야 합니다. 이 값은 [Azure Portal]의 Azure Active Directory에 있는 도메인 탭에서 복사할 수 있습니다.
    * **INSERT-RESOURCE-ID-HERE** 를 모바일 앱 백 엔드에 대한 클라이언트 ID로 바꿉니다. 포털의 Azure **Active Directory 설정**에 있는 **고급** 탭에서 클라이언트 ID를 가져올 수 있습니다.
    * **INSERT-CLIENT-ID-HERE**를 네이티브 클라이언트 애플리케이션에서 복사한 클라이언트 ID로 바꿉니다.
    * HTTPS 체계를 사용하여 **INSERT-REDIRECT-URI-HERE** 를 사이트의 */.auth/login/done* 엔드포인트로 바꿉니다. 이 값은 *https://contoso.azurewebsites.net/.auth/login/done* 과 비슷해야 합니다.
@@ -897,7 +897,7 @@ Google 로그인을 사용하여 애플리케이션에 사용자를 로그인하
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Authentication]: /develop/mobile/tutorials/get-started-with-users-ios
 [iOS SDK]: https://developer.apple.com/xcode
-[Azure 포털]: https://portal.azure.com/
+[Azure Portal]: https://portal.azure.com/
 [Handling Expired Tokens]: https://go.microsoft.com/fwlink/p/?LinkId=301955
 [Live Connect SDK]: https://go.microsoft.com/fwlink/p/?LinkId=301960
 [Permissions]: https://msdn.microsoft.com/library/windowsazure/jj193161.aspx
@@ -920,6 +920,6 @@ Google 로그인을 사용하여 애플리케이션에 사용자를 로그인하
 [5]: https://azure.github.io/azure-mobile-services/iOS/v3/Classes/MSClient.html#//api/name/invokeAPI:data:HTTPMethod:parameters:headers:completion:
 [6]: https://github.com/Azure/azure-mobile-services/blob/master/sdk/iOS/src/MSError.h
 [7]: ../app-service/configure-authentication-provider-aad.md
-[8]:../active-directory/develop/quickstart-v1-ios.md
+[8]:../active-directory/develop/quickstart-v2-ios.md
 [9]: ../app-service/configure-authentication-provider-facebook.md
 [10]: https://developers.facebook.com/docs/ios/getting-started

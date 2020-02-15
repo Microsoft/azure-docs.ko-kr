@@ -3,21 +3,22 @@ title: 컨테이너용 Azure Monitor 개요 | Microsoft Docs
 description: 이 문서에서는 AKS Container Insights 솔루션을 모니터링하는 컨테이너용 Azure Monitor 및 Azure Monitor가 Azure의 AKS 클러스터 및 Container Instances 상태를 모니터링하여 제공하는 가치에 대해 설명합니다.
 ms.topic: conceptual
 ms.date: 01/07/2020
-ms.openlocfilehash: 341dd28f6c1523e4b4c06da30a0a8ffc61b1c6f4
-ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
+ms.openlocfilehash: 3ff2c35ae9f5838447ce90e2a020649427920a43
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75730739"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198040"
 ---
 # <a name="azure-monitor-for-containers-overview"></a>컨테이너용 Azure Monitor 개요
 
 컨테이너에 대 한 Azure Monitor는에 배포 된 컨테이너 워크 로드의 성능을 모니터링 하도록 설계 된 기능입니다.
 
-- AKS (Azure Kubernetes Service)에서 호스트 되는 Managed Kubernetes 클러스터
-- Azure Container Instances
-- Azure Stack 또는 온-프레미스에서 호스트 되는 자체 관리 되는 Kubernetes 클러스터
-- Azure Red Hat OpenShift
+- [AKS (Azure Kubernetes Service)](../../aks/intro-kubernetes.md) 에서 호스트 되는 Managed Kubernetes 클러스터
+- [AKS 엔진](https://github.com/Azure/aks-engine) 을 사용 하 여 Azure에서 호스트 되는 자체 관리 되는 Kubernetes 클러스터
+- [Azure Container Instances](../../container-instances/container-instances-overview.md)
+- [Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-kubernetes-aks-engine-overview?view=azs-1910) 또는 온-프레미스에서 호스트 되는 자체 관리 되는 Kubernetes 클러스터
+- [Azure Red Hat OpenShift](../../openshift/intro-openshift.md)
 
 컨테이너 Azure Monitor Linux 및 Windows Server 2019 운영 체제를 실행 하는 클러스터를 지원 합니다. 
 
@@ -38,7 +39,7 @@ ms.locfileid: "75730739"
 * 평균 부하 및 최고 부하 상태에서.클러스터의 동작을 이해합니다. 이 정보를 통해 용량 요구 사항을 파악하고 클러스터를 유지할 수 있는 최대 부하를 확인할 수 있습니다. 
 * 노드 또는 컨테이너의 CPU 및 메모리 사용률이 임계값을 초과 하거나 인프라 또는 노드 상태 롤업에서 클러스터의 상태 변경이 발생 하는 경우 사전에 알리도록 경고를 구성 하거나 기록 합니다.
 * [프로메테우스](https://prometheus.io/docs/introduction/overview/) 와 통합 하 여 사용자 지정 경고, 대시보드 및 자세한 분석을 만드는 [쿼리](container-insights-log-search.md) 를 사용 하 여 노드 및 Kubernetes에서 수집한 응용 프로그램 및 워크 로드 메트릭을 볼 수 있습니다.
-* Azure Stack에서 AKS 엔진 온-프레미스 및 [AKS engine](https://docs.microsoft.com/azure-stack/user/azure-stack-kubernetes-aks-engine-overview?view=azs-1908) [에 배포](https://github.com/microsoft/OMS-docker/tree/aks-engine) 된 컨테이너 워크 로드를 모니터링 합니다.
+* Azure Stack에서 AKS 엔진 온-프레미스 및 [AKS engine](https://docs.microsoft.com/azure-stack/user/azure-stack-kubernetes-aks-engine-overview?view=azs-1908) [에 배포](https://github.com/Azure/aks-engine) 된 컨테이너 워크 로드를 모니터링 합니다.
 * [Azure Red Hat OpenShift에 배포](../../openshift/intro-openshift.md)된 컨테이너 워크 로드를 모니터링 합니다.
 
     >[!NOTE]

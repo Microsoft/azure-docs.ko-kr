@@ -3,18 +3,18 @@ title: '자습서: Azure Maps를 사용하여 매장 로케이터 애플리케�
 description: 이 자습서에서는 Microsoft Azure Maps 웹 SDK를 사용하여 매장 로케이터 웹 애플리케이션을 만드는 방법에 대해 알아봅니다.
 author: walsehgal
 ms.author: v-musehg
-ms.date: 11/12/2019
+ms.date: 01/14/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 830641ae1421b799ab8e7d8b47a1c1a6e38419cf
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 063f085de875272a7b1ba4f52aeceb8f36114cca
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75910961"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76987008"
 ---
 # <a name="tutorial-create-a-store-locator-by-using-azure-maps"></a>자습서: Azure Maps를 사용하여 매장 로케이터 만들기
 
@@ -51,7 +51,7 @@ ms.locfileid: "75910961"
 
 ![모바일 디바이스의 Contoso Coffee 매장 로케이터 애플리케이션 와이어프레임](./media/tutorial-create-store-locator/SimpleStoreLocatorMobileWireframe.png)</center>
 
-이 와이어프레임은 매우 간단한 애플리케이션을 보여 줍니다. 이 애플리케이션에는 검색 상자, 근처 매장 목록, 일부 표식(기호)이 있는 지도, 사용자가 표식을 선택할 때 추가 정보를 표시하는 팝업 창이 있습니다. 이 자습서에서 이 매장 로케이터에 구축하는 기능을 좀 더 자세히 살펴보면 다음과 같습니다.
+이 와이어프레임은 매우 간단한 애플리케이션을 보여 줍니다. 애플리케이션에는 검색 상자, 인근 상점 목록, 기호 등 일부 마커가 있는 지도가 있습니다. 또한 사용자가 마커를 선택할 때 추가 정보를 표시하는 팝업 창이 있습니다. 이 자습서에서 이 매장 로케이터에 구축하는 기능을 좀 더 자세히 살펴보면 다음과 같습니다.
 
 * 가져온 탭으로 구분된 데이터 파일의 모든 위치가 지도에 로드됩니다.
 * 사용자는 지도를 이동 및 확대/축소하고, 검색하고, 내 위치 GPS 단추를 선택할 수 있습니다.
@@ -81,12 +81,12 @@ ms.locfileid: "75910961"
     
 * 위치 정보는 **AddressLine**, **City**, **Municipality**(준주), **AdminDivision**(시/도), **PostCode**(우편 번호) 및 **Country** 열을 사용하여 저장합니다.  
 * **Latitude** 및 **Longitude** 열에는 각 Contoso Coffee 커피숍 위치의 좌표가 포함됩니다. 좌표 정보가 없으면 Azure Maps의 Search Service를 사용하여 위치 좌표를 확인할 수 있습니다.
-* 몇 개의 추가 열에 커피숍에 관련된 메타데이터, 즉 전화 번호, Wi-Fi 핫스폿 및 휠체어 이용 가능성, 매장 개장 및 마감 시간(24시간 형식)이 포함됩니다. 위치 데이터와 관련성이 좀 더 깊은 메타데이터를 포함하는 고유한 열을 만들 수 있습니다.
+* 몇 개의 추가 열에 커피숍에 관련된 메타데이터, 즉 전화 번호, 부울 열 및 매장 개장 및 마감 시간(24시간 형식)이 포함됩니다. 부울 열은 Wi-Fi 핫스폿 및 휠체어 이용 가능성을 위한 것입니다. 위치 데이터와 관련성이 좀 더 깊은 메타데이터를 포함하는 고유한 열을 만들 수 있습니다.
 
 > [!Note]
 > Azure Maps는 구형 Mercator 프로젝션 "EPSG:3857"의 데이터를 렌더링하되, WGS84 데이터를 사용하는 "EPSG:4325"의 데이터를 읽습니다. 
 
-애플리케이션에 데이터 세트를 노출하는 방법은 다양합니다. 한 가지 방법은 데이터베이스에 데이터를 로드하고, 데이터를 쿼리한 후 결과를 사용자 브라우저로 보내는 웹 서비스를 노출하는 것입니다. 이 옵션은 대형 데이터 세트 또는 자주 업데이트되는 데이터 세트에 이상적입니다. 그러나 이 옵션을 제공하려면 훨씬 더 많은 개발 작업이 필요하며 비용도 많이 듭니다. 
+애플리케이션에 데이터 세트를 노출하는 방법은 다양합니다. 한 가지 방법은 데이터베이스에 데이터를 로드하고, 데이터를 쿼리하는 웹 서비스를 노출하는 것입니다. 그런 다음, 결과를 사용자의 브라우저로 보낼 수 있습니다. 이 옵션은 대형 데이터 세트 또는 자주 업데이트되는 데이터 세트에 이상적입니다. 그러나 이 옵션을 제공하려면 더 많은 개발 작업이 필요하며 비용도 많이 듭니다. 
 
 다른 방법은 이 데이터 세트를 브라우저가 쉽게 구문 분석할 수 있는 일반 텍스트 파일로 변환하는 것입니다. 파일 자체는 애플리케이션의 나머지와 함께 유지될 수 있습니다. 이 옵션을 사용하면 데이터를 보다 간단히 유지할 수 있지만, 사용자가 모든 데이터를 다운로드하게 되므로 데이터 세트 크기가 작을 때만 적절합니다. 이 데이터 세트의 경우 데이터 파일 크기가 1MB 미만이기 때문에 일반 텍스트 파일을 사용합니다.  
 
@@ -105,7 +105,7 @@ ms.locfileid: "75910961"
 
 ## <a name="set-up-the-project"></a>프로젝트 설정
 
-프로젝트를 만들려면 [Visual Studio](https://visualstudio.microsoft.com) 또는 원하는 코드 편집기를 사용할 수 있습니다. 프로젝트 폴더에서 세 개의 파일 *index.html*, *index.css*, 및 *index.js*를 만듭니다. 이러한 파일은 애플리케이션에 대한 레이아웃, 스타일 및 논리를 정의합니다. *data*라는 폴더를 만들고 이 폴더에 *ContosoCoffee.txt*를 추가합니다. *images*라는 다른 폴더를 만듭니다. 이 애플리케이션에서는 지도의 아이콘, 단추 및 표식에 10개의 이미지를 사용합니다. [이러한 이미지를 다운로드](https://github.com/Azure-Samples/AzureMapsCodeSamples/tree/master/AzureMapsCodeSamples/Tutorials/Simple%20Store%20Locator/data)할 수 있습니다. 이제 프로젝트 폴더는 다음 그림과 같이 표시됩니다.
+프로젝트를 만들려면 [Visual Studio](https://visualstudio.microsoft.com) 또는 원하는 코드 편집기를 사용할 수 있습니다. 프로젝트 폴더에서 세 개의 파일 *index.html*, *index.css*, 및 *index.js*를 만듭니다. 이러한 파일은 애플리케이션에 대한 레이아웃, 스타일 및 논리를 정의합니다. *data*라는 폴더를 만들고 이 폴더에 *ContosoCoffee.txt*를 추가합니다. *images*라는 다른 폴더를 만듭니다. 이 애플리케이션에서는 지도의 아이콘, 단추 및 마커에 10개의 이미지를 사용합니다. [이러한 이미지를 다운로드](https://github.com/Azure-Samples/AzureMapsCodeSamples/tree/master/AzureMapsCodeSamples/Tutorials/Simple%20Store%20Locator/data)할 수 있습니다. 이제 프로젝트 폴더는 다음 그림과 같이 표시됩니다.
 
 <center>
 
@@ -115,7 +115,7 @@ ms.locfileid: "75910961"
 
 사용자 인터페이스를 만들려면 *index.html*에 코드를 추가합니다.
 
-1. 다음 `meta` 태그를 *index.html*의 `head`에 추가합니다. 태그는 문자 세트(UTF-8)를 정의하고, Internet Explorer 및 Microsoft Edge에 최신 브라우저 버전을 사용하도록 지시하고, 반응형 레이아웃에 잘 작동하는 뷰포트를 지정합니다.
+1. 다음 `meta` 태그를 *index.html*의 `head`에 추가합니다. `charset` 태그는 문자 집합(UTF-8)을 정의합니다. `http-equiv` 값은 Internet Explorer 및 Microsoft Edge에서 최신 브라우저 버전을 사용하고 있음을 뜻합니다. 마지막 `meta` 태그는 반응형 레이아웃에 적합한 뷰포트를 지정합니다.
 
     ```HTML
     <meta charset="utf-8">
@@ -375,13 +375,13 @@ ms.locfileid: "75910961"
     }
    ```
 
-이제 애플리케이션을 실행하는 경우 헤더, 검색 상자 및 검색 단추는 표시되지만, 지도는 아직 로드되지 않았으므로 표시되지 않습니다. 검색을 수행하려는 경우 아무 작업도 발생하지 않습니다. 다음 섹션에 설명된 JavaScript 논리를 매장 로케이터의 모든 기능에 액세스하도록 설정해야 합니다.
+지금 애플리케이션을 실행하면 헤더, 검색 상자 및 검색 단추가 나타납니다. 하지만, 지도는 아직 로드되지 않았으므로 보이지 않습니다. 검색을 수행하려는 경우 아무 작업도 발생하지 않습니다. 다음 섹션에서 설명하는 JavaScript 논리를 설정해야 합니다. 이 논리는 저장 로케이터의 모든 기능에 액세스합니다.
 
 ## <a name="wire-the-application-with-javascript"></a>애플리케이션을 JavaScript에 연결
 
-이때 모든 항목이 사용자 인터페이스에서 설정됩니다. 이제 JavaScript를 추가하여 데이터를 로드 및 구문 분석하고, 지도에서 데이터를 렌더링해야 합니다. 시작하려면 *index.js*를 열고 다음 단계에 설명된 대로 코드를 추가합니다.
+이제 모든 항목이 사용자 인터페이스에서 설정됩니다. JavaScript를 추가하여 데이터를 로드 및 구문 분석한 다음, 지도에서 데이터를 렌더링해야 합니다. 시작하려면 *index.js*를 열고 다음 단계에 설명된 대로 코드를 추가합니다.
 
-1. 설정을 보다 쉽게 업데이트할 수 있도록 하는 전역 옵션을 추가합니다. 또한 지도, 팝업 창, 데이터 원본, 아이콘 계층, 검색 영역 중앙에 표시되는 HTML 표식, Azure Maps 검색 서비스 클라이언트의 인스턴스에 대한 변수를 정의합니다.
+1. 설정을 보다 쉽게 업데이트할 수 있도록 하는 전역 옵션을 추가합니다. 맵, 팝업 창, 데이터 원본, 아이콘 계층, 검색 영역 중앙에 표시되는 HTML 마커, Azure Maps 검색 서비스 클라이언트의 인스턴스에 대한 변수를 정의합니다.
 
     ```JavaScript
     //The maximum zoom level to cluster data point data on the map.
@@ -395,7 +395,7 @@ ms.locfileid: "75910961"
     var map, popup, datasource, iconLayer, centerMarker, searchURL;
     ```
 
-1. *index.js*에 코드를 추가합니다. 다음 코드는 지도를 초기화하고, 페이지 로드가 완료될 때까지 기다리는 [이벤트 수신기](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events)를 추가하고, 이벤트를 연결하여 지도 로드를 모니터링하고, 검색 단추 및 내 위치 단추를 작동합니다.
+1. *index.js*에 코드를 추가합니다. 다음 코드는 맵을 초기화합니다. 페이지 로드가 완료될 때까지 대기하도록 [이벤트 수신기](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events)를 추가했습니다. 그런 다음, 이벤트를 연결하여 지도의 로드를 모니터링하고 검색 단추와 내 위치 단추에 기능을 제공합니다.
 
    사용자가 검색 단추를 선택하거나 검색 상자에 위치를 입력한 후 Enter 키를 누르면 사용자의 쿼리에 대한 유사 항목 검색이 시작됩니다. 국가 ISO 2개 값 배열을 `countrySet` 옵션에 제공하여 검색 결과를 해당 국가/지역으로 제한할 수 있습니다. 검색할 국가/지역을 제한하면 반환되는 결과의 정확도를 높이는 데 도움이 됩니다. 
   
@@ -544,7 +544,7 @@ ms.locfileid: "75910961"
 
 1. 지도의 `ready` 이벤트 수신기에 데이터 세트를 로드한후 에 데이터를 렌더링하기 위한 계층 세트를 정의합니다. 클러스터형 데이터 요소를 렌더링하는 데는 풍선 계층이 사용됩니다. 각 클러스터의 요소 수를 풍선 계층 위에 렌더링하는 데 기호 계층이 사용됩니다. 두 번째 기호 계층은 지도의 개별 위치에 대한 사용자 지정 아이콘을 렌더링합니다.
 
-   풍선 및 아이콘 계층에 `mouseover` 및 `mouseout` 이벤트를 추가하여 사용자가 지도에서 클러스터 또는 아이콘 위로 마우스를 가져갈 때 마우스 커서가 변경되도록 합니다. 클러스터 풍선 계층에 `click` 이벤트를 추가합니다. 이 `click` 이벤트는 두 수준으로 지도를 확대하고 사용자가 클러스터를 하나 선택하면 지도 중심을 해당 클러스터로 이동합니다. 아이콘 계층에 `click` 이벤트를 추가합니다. 이 `click` 이벤트는 사용자가 개별 위치 아이콘을 선택할 때 커피숍 세부 정보를 표시하는 팝업 창을 표시합니다. 지도 이동이 완료되면 모니터링할 지도에 이벤트를 추가합니다. 이 이벤트가 발생하면 목록 패널에서 항목이 업데이트됩니다.  
+   풍선 및 아이콘 계층에 `mouseover` 및 `mouseout` 이벤트를 추가하여 사용자가 지도에서 클러스터 또는 아이콘 위로 마우스를 가져갈 때 마우스 커서가 변경되도록 합니다. 클러스터 풍선 계층에 `click` 이벤트를 추가합니다. 이 `click` 이벤트는 두 수준으로 지도를 확대하고 사용자가 클러스터를 선택하면 지도 중심을 해당 클러스터로 이동합니다. 아이콘 계층에 `click` 이벤트를 추가합니다. 이 `click` 이벤트는 사용자가 개별 위치 아이콘을 선택할 때 커피숍 세부 정보를 표시하는 팝업 창을 표시합니다. 지도 이동이 완료되면 모니터링할 지도에 이벤트를 추가합니다. 이 이벤트가 발생하면 목록 패널에서 항목이 업데이트됩니다.  
 
     ```JavaScript
     //Create a bubble layer to render clustered data points.
@@ -686,7 +686,7 @@ ms.locfileid: "75910961"
     }
     ```
 
-1. 목록 패널이 업데이트되면 지도 중심으로부터 현재 지도 보기의 모든 지점 피쳐까지의 거리가 계산됩니다. 그런 후 피쳐가 거리별로 정렬됩니다. 목록 패널에 각 위치를 표시하기 위해 HTML이 생성됩니다.
+1. 목록 패널이 업데이트되면 거리가 계산됩니다. 이 거리는 지도의 중심에서 현재 지도 보기의 모든 지점 기능까지 이르는 거리입니다. 그런 후 피쳐가 거리별로 정렬됩니다. 목록 패널에 각 위치를 표시하기 위해 HTML이 생성됩니다.
 
     ```JavaScript
     var listItemTemplate = '<div class="listItem" onclick="itemSelected(\'{id}\')"><div class="listItem-title">{title}</div>{city}<br />Open until {closes}<br />{distance} miles away</div>';

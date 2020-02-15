@@ -11,12 +11,12 @@ ms.date: 11/25/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: ce57c48e568e840f3a651a5530f3fba6c0be60b7
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 4eec340a04b9cdbc85a2c8712a11d31132766206
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76721050"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153369"
 ---
 # <a name="troubleshooting-azure-sql-data-warehouse"></a>Azure SQL Data Warehouse 문제 해결
 이 문서에서는 일반적인 문제 해결 질문을 나열합니다.
@@ -25,7 +25,7 @@ ms.locfileid: "76721050"
 | 문제                                                        | 해결 방법                                                   |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | 'NT AUTHORITY\ANONYMOUS LOGON' 사용자에 대해 로그인 실패 (Microsoft SQL Server, 오류: 18456) | 이 오류는 AAD 사용자가 마스터 데이터베이스에 연결하려고 하는데 마스터에 사용자가 없는 경우에 발생합니다.  이 문제를 해결하려면 연결 시에 연결하려는 SQL Data Warehouse를 지정하거나 마스터 데이터베이스에 사용자를 추가합니다.  자세한 내용은 [보안 개요](sql-data-warehouse-overview-manage-security.md) 를 참조하세요. |
-| 현재 보안 컨텍스트로는 서버 보안 주체 "MyUserName" 이(가) 데이터베이스 "master" 에 액세스할 수 없습니다. 사용자 기본 데이터베이스를 열 수 없습니다. 로그인이 실패했습니다. 사용자 'MyUserName'에 대한 로그인이 실패했습니다. (Microsoft SQL Server, 오류: 916) | 이 오류는 AAD 사용자가 마스터 데이터베이스에 연결하려고 하는데 마스터에 사용자가 없는 경우에 발생합니다.  이 문제를 해결하려면 연결 시에 연결하려는 SQL Data Warehouse를 지정하거나 마스터 데이터베이스에 사용자를 추가합니다.  자세한 내용은 [보안 개요](sql-data-warehouse-overview-manage-security.md) 를 참조하세요. |
+| 현재 보안 컨텍스트로는 서버 보안 주체 "MyUserName" 이(가) 데이터베이스 "master" 에 액세스할 수 없습니다. 사용자 기본 데이터베이스를 열 수 없습니다. 로그인하지 못했습니다. 사용자 'MyUserName'에 대한 로그인이 실패했습니다. (Microsoft SQL Server, 오류: 916) | 이 오류는 AAD 사용자가 마스터 데이터베이스에 연결하려고 하는데 마스터에 사용자가 없는 경우에 발생합니다.  이 문제를 해결하려면 연결 시에 연결하려는 SQL Data Warehouse를 지정하거나 마스터 데이터베이스에 사용자를 추가합니다.  자세한 내용은 [보안 개요](sql-data-warehouse-overview-manage-security.md) 를 참조하세요. |
 | CTAIP 오류                                                  | 이 오류는 로그인이 SQL Data Warehouse 데이터베이스가 아닌 SQL 서버 마스터 데이터베이스에서 만들어진 경우에 발생할 수 있습니다.  이 오류가 발생하는 경우 [보안 개요](sql-data-warehouse-overview-manage-security.md) 문서를 살펴보세요.  이 문서에서는 마스터 데이터베이스에서 로그인과 사용자를 만드는 방법과 SQL Data Warehouse 데이터베이스에서 사용자를 만드는 방법을 차례로 설명합니다. |
 | 방화벽에 의해 차단                                          | Azure SQL 데이터베이스가 알려진 IP 주소만 데이터베이스에 액세스할 수 있도록 서버 및 데이터베이스 수준 방화벽으로 보호됩니다. 방화벽은 기본적으로 안전하며 이는 연결하기 전에 IP 주소 또는 주소 범위를 명시적으로 설정해야 한다는 의미입니다.  액세스를 위해 방화벽을 구성 하려면 [프로 비전 지침](sql-data-warehouse-get-started-provision.md)의 [클라이언트 IP에 대 한 서버 방화벽 액세스 구성](sql-data-warehouse-get-started-provision.md) 의 단계를 따르세요. |
 | 도구 또는 드라이버에 연결할 수 없음                           | SQL Data Warehouse [SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15), [Visual Studio 용 SSDT](sql-data-warehouse-install-visual-studio.md)또는 [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md) 를 사용 하 여 데이터를 쿼리 하는 것이 좋습니다. 드라이버에 대 한 자세한 내용 및 SQL Data Warehouse에 연결 하는 방법에 대 한 자세한 내용은 [Azure SQL Data Warehouse 드라이버](sql-data-warehouse-connection-strings.md) 및 [Azure SQL Data Warehouse 문서에 연결](sql-data-warehouse-connect-overview.md) 을 참조 하세요. |
@@ -53,7 +53,7 @@ ms.locfileid: "76721050"
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Msg 40847: 서버가 허용되는 데이터베이스 트랜잭션 단위 할당량인 45000을 초과하므로 작업을 수행할 수 없습니다. | 만들려는 데이터베이스의 [Dwu](what-is-a-data-warehouse-unit-dwu-cdwu.md) 를 줄이거나 [할당량 증가를 요청](sql-data-warehouse-get-started-create-support-ticket.md)하십시오. |
 | 공간 사용률 조사                              | 시스템의 공간 사용률을 이해하려면 [테이블 크기]( ../sql-data-warehouse/sql-data-warehouse-tables-overview.md#table-size-queries) 를 참조하세요. |
-| 테이블 관리 도움말                                    | 테이블 관리에 대 한 도움말은 [테이블 개요] [개요] 문서를 참조 하세요.  또한이 문서에는 [테이블 데이터 형식](sql-data-warehouse-tables-data-types.md), 테이블 [배포](sql-data-warehouse-tables-distribute.md), 테이블 [인덱싱](sql-data-warehouse-tables-index.md), 테이블 [분할](sql-data-warehouse-tables-partition.md), [테이블 통계 유지 관리](sql-data-warehouse-tables-statistics.md) 및 [임시 테이블](sql-data-warehouse-tables-temporary.md)에 대 한 자세한 항목으로 연결 되는 링크도 포함 되어 있습니다. |
+| 테이블 관리 도움말                                    | 테이블 관리에 대 한 도움말은 [테이블 개요](../sql-data-warehouse/sql-data-warehouse-tables-overview.md) 문서를 참조 하세요.  또한이 문서에는 [테이블 데이터 형식](sql-data-warehouse-tables-data-types.md), 테이블 [배포](sql-data-warehouse-tables-distribute.md), 테이블 [인덱싱](sql-data-warehouse-tables-index.md), 테이블 [분할](sql-data-warehouse-tables-partition.md), [테이블 통계 유지 관리](sql-data-warehouse-tables-statistics.md) 및 [임시 테이블](sql-data-warehouse-tables-temporary.md)에 대 한 자세한 항목으로 연결 되는 링크도 포함 되어 있습니다. |
 | TDE (투명 한 데이터 암호화) 진행률 표시줄이 Azure Portal에서 업데이트 되지 않습니다. | [powershell](/powershell/module/az.sql/get-azsqldatabasetransparentdataencryption)을 통해 TDE의 상태를 볼 수 있습니다. |
 
 

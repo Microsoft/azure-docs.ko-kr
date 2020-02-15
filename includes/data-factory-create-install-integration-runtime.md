@@ -4,12 +4,12 @@ ms.service: data-factory
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
-ms.openlocfilehash: 12c2f1bd2a3185d26eae02b5cd756392b5b87c16
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: e7717cdeec33a32f926cb5ef4c1f6d28c25f9d93
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72533207"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76989090"
 ---
 ## <a name="create-a-self-hosted-integration-runtime"></a>자체 호스팅 Integration Runtime 만들기
 
@@ -83,7 +83,8 @@ ms.locfileid: "72533207"
 
 5. 다음 단계에서 컴퓨터에 설치할 자체 호스팅된 통합 런타임을 등록하는 데 사용되는 키 중 하나를 복사합니다(큰 따옴표 제외).  
 
-## <a name="install-the-integration-runtime"></a>Integration Runtime 설치
+## <a name="install-the-integration-runtime-tool"></a>통합 런타임 도구 설치
+
 1. 컴퓨터에 통합 런타임이 이미 있는 경우 **프로그램 추가/제거**를 사용하여 제거합니다. 
 
 2. 로컬 Windows 컴퓨터에 자체 호스팅된 통합 런타임을 [다운로드](https://www.microsoft.com/download/details.aspx?id=39717)합니다. 설치를 실행합니다.
@@ -135,5 +136,4 @@ ms.locfileid: "72533207"
     h. 통합 런타임을 SQL Server에 연결할 수 있는지 확인하려면 **테스트**를 선택합니다. 연결이 성공하면 녹색 확인 표시가 나타납니다. 연결이 실패하면 오류 메시지가 나타납니다. 모든 문제를 해결하고 통합 런타임을 SQL Server에 연결할 수 있는지 확인합니다.    
 
     > [!NOTE]
-    > 인증 유형, 서버, 데이터베이스, 사용자 및 암호의 값을 기록해둡니다. 이 자습서의 뒷부분에서 사용됩니다. 
-    
+    > 인증 유형, 서버, 데이터베이스, 사용자 및 암호의 값을 기록해둡니다. 이 자습서의 뒷부분에서 사용됩니다.

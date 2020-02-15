@@ -10,17 +10,17 @@ ms.topic: conceptual
 author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
-ms.date: 03/12/2019
-ms.openlocfilehash: ba591872f4f8af93e5f7e13e0fb69d0679fd1a0c
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.date: 02/12/2020
+ms.openlocfilehash: be187e34e3232c0755e2613ffffe0647da70079c
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75965758"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201665"
 ---
 # <a name="remove-a-transparent-data-encryption-tde-protector-using-powershell"></a>PowerShell을 사용하여 TDE(Transparent Data Encryption) 보호기 제거
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 - Azure 구독 및 해당 구독에 대한 관리자 권한이 있어야 합니다.
 - Azure PowerShell 설치 되 고 실행 중 이어야 합니다.
@@ -180,6 +180,8 @@ PowerShell 명령 **az sql server key show** 는 쿼리에 사용 된 Tde 보�
 
 2. Key Vault에서 TDE 보호기의 키 자료를 백업합니다.
 3. Key Vault에서 잠재적으로 손상된 키 제거
+
+[!INCLUDE [sql-database-akv-permission-delay](includes/sql-database-akv-permission-delay.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

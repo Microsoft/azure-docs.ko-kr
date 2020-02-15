@@ -16,12 +16,12 @@ ms.workload: data-services
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 12a20abb4014712f26e5827bcd1d3c822e8b25a1
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 68aa62ad34f8db531d439a581ef024862da0f90c
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75750716"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162313"
 ---
 # <a name="set-up-diagnostic-logs-for-an-azure-event-hub"></a>Azure 이벤트 허브에 대한 진단 로그 설정
 
@@ -71,7 +71,7 @@ Event Hubs는 다음 두 가지 범주에 대한 진단 로그를 캡처합니�
 
 보관 로그 JSON 문자열에는 다음 표에 나열된 요소가 포함되어 있습니다.
 
-이름 | Description
+속성 | Description
 ------- | -------
 TaskName | 실패한 작업에 대한 설명입니다.
 ActivityId | 추적에 사용되는 내부 ID입니다.
@@ -109,7 +109,7 @@ category | ArchiveLogs
 
 작업 로그 JSON 문자열에는 다음 표에 나열된 요소가 포함되어 있습니다.
 
-이름 | Description
+속성 | Description
 ------- | -------
 ActivityId | 추적 목적에 사용되는 내부 ID입니다.
 EventName | 작업 이름입니다.  
@@ -139,6 +139,10 @@ Example:
 ```
 
 ## <a name="next-steps"></a>다음 단계
-* [Event Hubs 소개](event-hubs-what-is-event-hubs.md)
-* [Event Hubs API 개요](event-hubs-api-overview.md)
-* [Event Hubs 시작](event-hubs-dotnet-standard-getstarted-send.md)
+- [Event Hubs 소개](event-hubs-what-is-event-hubs.md)
+- [Event Hubs API 개요](event-hubs-api-overview.md)
+- Event Hubs 시작
+    - [.NET Core](get-started-dotnet-standard-send-v2.md)
+    - [Java](get-started-java-send-v2.md)
+    - [Python](get-started-python-send-v2.md)
+    - [JavaScript](get-started-java-send-v2.md)

@@ -15,26 +15,28 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.reviewer: cenkdin;anilmur
-ms.openlocfilehash: be3c75680599c07a3cebe3dcf0436884958e1706
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 1d9d63aa6b3da1b8d8389722bd5af0eeed585d03
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "69016678"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77134967"
 ---
 # <a name="use-the-wirecast-encoder-to-send-a-single-bitrate-live-stream"></a>단일 비트 전송률 라이브 스트림을 보낼 Wirecast 인코더 사용 
 > [!div class="op_single_selector"]
 > * [Wirecast](media-services-configure-wirecast-live-encoder.md)
 > * [Tricaster](media-services-configure-tricaster-live-encoder.md)
-> * [FMLE](media-services-configure-fmle-live-encoder.md)
 >
 >
 
-이 문서에서는 [Telestream Wirecast](https://www.telestream.net/wirecast/overview.htm) 라이브 인코더를 구성하여 라이브 인코딩에 대해 활성화된AMS 채널에 단일 비트 전송률 스트림을 보내는 방법을 보여 줍니다.  자세한 내용은 [Azure Media Services를 사용하여 Live Encoding을 수행할 수 있는 채널 작업](media-services-manage-live-encoder-enabled-channels.md)을 참조하세요.
+이 문서에서는 [Telestream Wirecast](https://www.telestream.net/wirecast/overview.htm) 라이브 인코더를 구성하여 라이브 인코딩에 대해 활성화된AMS 채널에 단일 비트 전송률 스트림을 보내는 방법을 보여 줍니다. 자세한 내용은 [Azure Media Services를 사용하여 Live Encoding을 수행할 수 있는 채널 작업](media-services-manage-live-encoder-enabled-channels.md)을 참조하세요.
 
 이 자습서에서는 AMSE(Azure Media Services 탐색기) 도구를 사용하여 AMS(Azure Media Services)를 관리하는 방법을 보여 줍니다. 이 도구는 Windows PC에서만 실행됩니다. Mac 또는 Linux에서는 Azure Portal을 사용하여 [채널](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) 및 [프로그램](media-services-portal-creating-live-encoder-enabled-channel.md)을 만듭니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+> [!NOTE]
+> RTMPS 프로토콜을 사용 하는 경우 인코더는 TLS 1.2를 지원 해야 합니다. TLS 1.2 요구 사항으로 인해 Wirecast 버전 13.0.2 이상을 사용 합니다.
+
+## <a name="prerequisites"></a>필수 조건
 * [Azure Media Services 계정 만들기](media-services-portal-create-account.md)
 * 실행 중인 스트리밍 엔드포인트가 있는지 확인합니다. 자세한 내용은 [Media Services 계정에서 스트리밍 엔드포인트 관리](media-services-portal-manage-streaming-endpoints.md)
 * 최신 버전의 [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer) 도구를 설치합니다.
@@ -76,16 +78,16 @@ ms.locfileid: "69016678"
 **비디오**:
 
 * 코덱: H.264
-* 프로필 높음(수준 4.0)
-* Bitrate: 5000kbps
+* 프로필: 높음(수준 4.0)
+* 비트 전송률: 5,000kbps
 * 키 프레임: 2초(60초)
 * 프레임 속도: 30
 
 **오디오**:
 
 * 코덱: AAC(LC)
-* Bitrate: 192kbps
-* 샘플링 속도: 44.1kHz
+* 비트 전송률: 192kbps
+* 샘플 속도: 44.1khz
 
 ### <a name="configuration-steps"></a>구성 단계
 1. 사용 중인 컴퓨터에서 Telestream Wirecast 애플리케이션을 열고 RTMP 스트리밍을 사용하도록 설정합니다.
@@ -106,14 +108,14 @@ ms.locfileid: "69016678"
 
    * 인코더: MainConcept H.264
    * 초당 프레임 수: 30
-   * 평균 비트 전송률: 5000kbits/sec(네트워크 제한 사항에 따라 조정 가능)
-   * 프로필 주
+   * 평균 비트 전송률: 5000kbps(네트워크 제한 사항에 따라 조정 가능)
+   * 프로필: 기본
    * 키 프레임 간격: 60프레임
 
      **오디오**
 
-   * 대상 비트 전송률: 192kbits/sec
-   * 샘플링 속도: 44.100kHz
+   * 대상 비트 전송률: 192kbps
+   * 샘플 속도: 44.100kHz
 
      ![Wirecast](./media/media-services-wirecast-live-encoder/media-services-wirecast4.png)
 6. **저장**을 누릅니다.

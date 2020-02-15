@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/16/2019
 ms.author: erhopf
-ms.openlocfilehash: e39056d6ed1ced85e3f953bcbd7f04dd6311942c
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: a87bdd7a55036e8b70f0bc5816d2b587c1569202
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74111648"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168131"
 ---
 # <a name="speech-devices-sdk-microphone-array-recommendations"></a>음성 장치 SDK 마이크 배열 권장 사항
 
@@ -31,7 +31,7 @@ ms.locfileid: "74111648"
 | --- | -------------- | --- | ------------ | --- |
 |     | <img src="media/speech-devices-sdk/7-mic-c.png" alt="7 mic circular array" width="150"/> | <img src="media/speech-devices-sdk/4-mic-c.png" alt="4 mic circular array" width="150"/> | <img src="media/speech-devices-sdk/4-mic-l.png" alt="4 mic linear array" width="150"/> | <img src="media/speech-devices-sdk/2-mic-l.png" alt="2 mic linear array" width="150"/> |
 | \# Mics | 7 | 4 | 4 | 2 |
-| 기하학 | 6 개 외부, 1 중심, 반경 = 42.5 mm, 고르게 간격 | 3 외부, 1 중심, 반경 = 42.5 mm, 고르게 간격 | 길이 = 120 mm, 간격 = 40 mm | 간격 = 40 mm |
+| geometry | 6 개 외부, 1 중심, 반경 = 42.5 mm, 고르게 간격 | 3 외부, 1 중심, 반경 = 42.5 mm, 고르게 간격 | 길이 = 120 mm, 간격 = 40 mm | 간격 = 40 mm |
 
 마이크 채널은 위의 각 배열에 대해 표시 되는 번호 매기기에 따라 정렬 되며 0에서 늘립니다. Microsoft 오디오 스택은 반향 취소를 수행 하기 위해 오디오 재생의 추가 참조 스트림이 필요 합니다.
 
@@ -41,7 +41,7 @@ ms.locfileid: "74111648"
 
 마이크 선택 시 권장 되는 속성은 다음과 같습니다.
 
-| 매개 변수를 포함해야 합니다. | 권장 |
+| 매개 변수 | 권장 |
 | --------- | ----------- |
 | SNR | \>= 65 dB (1Khz 신호 94 dBSPL, 가중치가 적용 된 노이즈) |
 | 진폭 일치 | ± 1 dB @ 1 kHz |
@@ -60,7 +60,7 @@ ms.locfileid: "74111648"
 
 장치에 통합 되는 마이크 배열의 성능은 구성 요소 사양과 다릅니다. 통합 후 마이크가 잘 일치 하는지 확인 하는 것이 중요 합니다. 따라서 고정 이득 또는 EQ 이후에 측정 된 장치 성능은 다음 권장 사항을 충족 해야 합니다.
 
-| 매개 변수를 포함해야 합니다.          | 권장                                        |
+| 매개 변수          | 권장                                        |
 | ------------------ | -------------------------------------------------- |
 | SNR                | \> 63 dB (1Khz 신호 94 dBSPL, 가중치가 적용 된 노이즈) |
 | 출력 민감도 | -26 dBFS/Pa @ 1 kHz (권장)                  |
@@ -76,7 +76,7 @@ _VoIP (고품질 통신) 응용 프로그램에는 \*\*"더 광범위 한" 빈�
 
 스피커가 포함 된 음성 인식 장치에 대해 반향 취소가 필요 하므로 스피커 선택 및 통합을 위한 추가 권장 사항이 제공 됩니다.
 
-| 매개 변수를 포함해야 합니다. | 권장 |
+| 매개 변수 | 권장 |
 | --------- | ----------- |
 | 선형 고려 사항 | 스피커가 참조 된 후에는 비선형 처리가 수행 되지 않습니다. 그렇지 않으면 하드웨어 기반 루프백 참조 스트림이 필요 합니다. |
 | 스피커 루프백 | WASAPI, 개인 Api, 사용자 지정 ALSA 플러그 인 (Linux)을 통해 제공 되거나 펌웨어 채널을 통해 제공 됩니다. |
@@ -87,7 +87,7 @@ _VoIP (고품질 통신) 응용 프로그램에는 \*\*"더 광범위 한" 빈�
 
 장치에 마이크를 통합 하는 경우 다음과 같은 아키텍처 지침이 필요 합니다.
 
-| 매개 변수를 포함해야 합니다. | 권장 사항 |
+| 매개 변수 | 권장 |
 | --------- | -------------- |
 | Mic 포트 유사성 | 모든 마이크 포트는 배열의 길이와 동일 합니다. |
 | Mic 포트 차원 | 포트 크기 Ø 0.8-1.0 mm. 포트 길이/포트 직경 \< 2 |

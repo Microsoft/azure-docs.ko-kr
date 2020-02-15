@@ -1,19 +1,19 @@
 ---
 title: 웹 맵 컨트롤 시작 | Microsoft Azure 맵
 description: Microsoft Azure 맵 맵 컨트롤 클라이언트 쪽 Javascript 라이브러리를 사용 하 여 맵 및 포함 된 Azure Maps 기능을 웹 또는 모바일 응용 프로그램에 렌더링 하는 방법에 대해 알아봅니다.
-author: walsehgal
-ms.author: v-musehg
+author: farah-alyasari
+ms.author: v-faalya
 ms.date: 01/15/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 90cd752ddd46999627de538abe3ca6b1926005aa
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 6701d777fb9aa16d3012baba082415bf9858e46f
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264131"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209820"
 ---
 # <a name="use-the-azure-maps-map-control"></a>Azure Maps 맵 컨트롤 사용
 
@@ -51,7 +51,7 @@ b. [NPM 패키지를 사용](https://www.npmjs.com/package/azure-maps-control) �
     > import * as atlas from 'azure-maps-control';
     > ```
 
-3. 맵이 페이지 본문 전체를 채우도록 렌더링하려면 `<head>` 요소에 다음 `<style>` 요소를 추가합니다.
+3. 맵이 페이지 본문 전체를 채우도록 렌더링하려면 `<style>` 요소에 다음 `<head>` 요소를 추가합니다.
 
 ```HTML
     <style>
@@ -66,7 +66,7 @@ b. [NPM 패키지를 사용](https://www.npmjs.com/package/azure-maps-control) �
     </style>
 ```
 
-4. 페이지 본문에 `<div>` 요소를 추가하고 **myMap**이라는 `id`를 부여합니다.
+4. 페이지 본문에 `<div>` 요소를 추가하고 `id`myMap**이라는** 를 부여합니다.
 
 ```HTML
     <body>
@@ -212,7 +212,7 @@ map = new atlas.Map('myMap', {
 
 ![프랑스어로 레이블을 표시 하는 지도 이미지](./media/how-to-use-map-control/websdk-localization.png)
 
-지원 되는 언어 및 지역 보기의 전체 목록은 [여기](supported-languages.md)에 설명 되어 있습니다.
+지원되는 언어 및 지역 보기의 전체 목록은 [여기](supported-languages.md)에 설명되어 있습니다.
 
 ## <a name="azure-government-cloud-support"></a>Azure Government 클라우드 지원
 

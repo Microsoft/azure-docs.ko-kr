@@ -6,14 +6,14 @@ tags: azure-resource-manager
 ms.service: virtual-machine-scale-sets
 ms.workload: infrastructure-services
 ms.topic: conceptual
-ms.date: 10/23/2019
+ms.date: 02/11/2020
 ms.author: cynthn
-ms.openlocfilehash: a7afb80276147c1562a5963a3ae9a319a8b73264
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 37e914fe6bafe9587be525faf3e01c897cdd8230
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76544789"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162687"
 ---
 # <a name="preview-azure-spot-vms-for-virtual-machine-scale-sets"></a>미리 보기: 가상 머신 확장 집합에 대 한 Azure 스폿 Vm 
 
@@ -25,9 +25,8 @@ ms.locfileid: "76544789"
 > 현재 스폿 인스턴스는 공개 미리 보기로 제공 됩니다.
 > 이 미리 보기 버전은 프로덕션 워크 로드에는 권장 되지 않습니다. 특정 기능이 지원되지 않거나 기능이 제한될 수 있습니다. 자세한 내용은 [Microsoft Azure Preview에 대한 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조하세요.
 >
-> 공개 미리 보기의 초기 파트의 경우 별색 인스턴스는 고정 가격이 있으므로 가격 기반 제거는 제공 되지 않습니다.
 
-## <a name="pricing"></a>가격 책정
+## <a name="pricing"></a>가격
 
 지점 인스턴스의 가격은 지역 및 SKU를 기준으로 하는 변수입니다. 자세한 내용은 [Linux](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/) 및 [Windows](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/windows/)가격 책정을 참조 하세요. 
 
@@ -89,7 +88,7 @@ $vmssConfig = New-AzVmssConfig `
     --max-price -1
 ```
 
-## <a name="resource-manager-templates"></a>Resource Manager 템플릿
+## <a name="resource-manager-templates"></a>리소스 관리자 템플릿
 
 별색 Vm을 사용 하는 확장 집합을 만드는 프로세스는 [Linux](quick-create-template-linux.md) 또는 [Windows](quick-create-template-windows.md)용 시작 문서에 설명 된 것과 동일 합니다. 
 
@@ -160,12 +159,12 @@ $vmssConfig = New-AzVmssConfig `
 
 | Azure 채널               | Azure 스폿 Vm 가용성       |
 |------------------------------|-----------------------------------|
-| 기업계약         | 예                               |
-| 종량제                | 예                               |
+| 기업 계약         | yes                               |
+| 종 량 제                | yes                               |
 | CSP(클라우드 서비스 공급자) | [파트너에 게 문의](https://docs.microsoft.com/partner-center/azure-plan-get-started) |
-| 혜택                     | 사용할 수 없음                     |
-| 스폰서                    | 사용할 수 없음                     |
-| 무료 평가판                   | 사용할 수 없음                     |
+| 이점                     | 사용할 수 없음                     |
+| 후원                    | 사용할 수 없음                     |
+| 평가판                   | 사용할 수 없음                     |
 
 
 **Q:** 어디에서 질문을 게시할 수 있나요?

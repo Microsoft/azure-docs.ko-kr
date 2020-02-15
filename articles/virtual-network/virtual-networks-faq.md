@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/12/2019
 ms.author: kumud
-ms.openlocfilehash: ef7e29351717daf91981f844f1d911a404cf9402
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: e45d5393833973889b28a95ec86b89593a091f99
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75646883"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121811"
 ---
 # <a name="azure-virtual-network-frequently-asked-questions-faq"></a>Azure Virtual Network FAQ(질문과 대답)
 
@@ -35,7 +35,7 @@ VNet을 다음에 사용합니다.
 
 * 하이브리드 클라우드 시나리오를 사용 하도록 설정 합니다. VNet은 유연성을 제공하여 다양한 하이브리드 클라우드 시나리오를 지원합니다. 메인프레임 및 Unix 시스템과 같은 모든 형식의 온-프레미스 시스템에 클라우드 기반 애플리케이션을 안전하게 연결할 수 있습니다.
 
-### <a name="how-do-i-get-started"></a>시작하려면 어떻게 하나요?
+### <a name="how-do-i-get-started"></a>어떻게 시작하나요?
 [가상 네트워크 설명서](https://docs.microsoft.com/azure/virtual-network/)를 방문하여 시작합니다. 이 콘텐츠는 모든 VNet 기능에 대한 개요 및 배포 정보를 제공합니다.
 
 ### <a name="can-i-use-vnets-without-cross-premises-connectivity"></a>크로스-프레미스 연결 없이 VNet을 사용할 수 있습니까?
@@ -49,7 +49,7 @@ VNet을 다음에 사용합니다.
 ### <a name="what-tools-do-i-use-to-create-a-vnet"></a>VNet을 만들려면 어떤 도구를 사용합니까?
 다음 도구를 사용하여 VNet을 만들거나 구성할 수 있습니다.
 
-* Azure Portal
+* Azure portal
 * PowerShell
 * Azure CLI
 * 네트워크 구성 파일(netcfg - 클래식 VNet 전용) [네트워크 구성 파일을 사용하여 VNet 구성](virtual-networks-using-network-configuration-file.md) 문서를 참조하세요.
@@ -79,22 +79,22 @@ VNet을 다음에 사용합니다.
 지원 되는 가장 작은 IPv4 서브넷은/29 이며, 가장 큰 값은/8 (CIDR 서브넷 정의 사용)입니다.  IPv6 서브넷의 크기는 정확히/64 이어야 합니다.  
 
 ### <a name="can-i-bring-my-vlans-to-azure-using-vnets"></a>VNet을 사용하여 내 VLAN을 Azure에 가져올 수 있습니까?
-아닙니다. VNet은 계층 3 오버레이입니다. Azure는 모든 계층 2 의미 체계를 지원하지 않습니다.
+아니요. VNet은 계층 3 오버레이입니다. Azure는 모든 계층 2 의미 체계를 지원하지 않습니다.
 
 ### <a name="can-i-specify-custom-routing-policies-on-my-vnets-and-subnets"></a>VNet 및 서브넷에 사용자 지정 라우팅 정책을 지정할 수 있습니까?
 예. 경로 테이블을 만들어서 서브넷에 연결할 수 있습니다. Azure의 라우팅에 대한 자세한 내용은 [라우팅 개요](virtual-networks-udr-overview.md#custom-routes)를 참조하세요.
 
 ### <a name="do-vnets-support-multicast-or-broadcast"></a>VNet은 멀티 캐스트 또는 브로드캐스트를 지원합니까?
-아닙니다. 멀티캐스트와 브로드캐스트는 지원되지 않습니다.
+아니요. 멀티캐스트와 브로드캐스트는 지원되지 않습니다.
 
 ### <a name="what-protocols-can-i-use-within-vnets"></a>VNet 내에서 사용할 수 있는 프로토콜은 무엇입니까?
 VNet 내에서 TCP, UDP 및 ICMP TCP/IP 프로토콜을 사용할 수 있습니다. 유니캐스트(원본 포트 UDP/68 / 대상 포트 UDP/67)를 통한 DHCP(Dynamic Host Configuration Protocol)를 제외하고 유니캐스트는 VNet 내에서 지원됩니다. 멀티 캐스트, 브로드캐스트, IP-IP 캡슐화 패킷 및 GRE(일반 라우팅 캡슐화) 패킷은 VNet 내에서 차단됩니다. 
 
 ### <a name="can-i-ping-my-default-routers-within-a-vnet"></a>내 기본 라우터를 VNet 내에서 ping할 수 있습니까?
-아닙니다.
+아니요.
 
 ### <a name="can-i-use-tracert-to-diagnose-connectivity"></a>Tracert를 사용하여 연결을 진단할 수 있습니까?
-아닙니다.
+아니요.
 
 ### <a name="can-i-add-subnets-after-the-vnet-is-created"></a>VNet을 만든 후 서브넷을 추가할 수 있습니까?
 예. 서브넷 주소 범위가 다른 서브넷에 속하지 않고 가상 네트워크의 주소 범위에 사용 가능한 공간이 남아있기만 하면 서브넷을 VNet에 언제든지 추가할 수 있습니다.
@@ -112,7 +112,7 @@ VNet 내에서 TCP, UDP 및 ICMP TCP/IP 프로토콜을 사용할 수 있습니�
 예, Vnet는 IPv4 전용 또는 이중 스택 (IPv4 + IPv6)이 될 수 있습니다.  자세한 내용은 [Azure Virtual Networks에 대 한 IPv6 개요](./ipv6-overview.md)를 참조 하세요.
 
 ### <a name="can-a-vnet-span-regions"></a>VNet을 사용하여 지역을 확장할 수 있습니까?
-아닙니다. VNet은 단일 지역으로 제한됩니다. 그러나 가상 네트워크는 가용성 영역을 확장합니다. 사용 가능한 영역에 대한 자세한 내용은 [가용성 영역 개요](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)를 참조하세요. 가상 네트워크 피어링을 사용하여 다른 지역의 가상 네트워크를 연결할 수 있습니다. 자세한 내용은 [가상 네트워크 피어링 개요](virtual-network-peering-overview.md)를 참조하세요.
+아니요. VNet은 단일 지역으로 제한됩니다. 그러나 가상 네트워크는 가용성 영역을 확장합니다. 사용 가능한 영역에 대한 자세한 내용은 [가용성 영역 개요](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)를 참조하세요. 가상 네트워크 피어링을 사용하여 다른 지역의 가상 네트워크를 연결할 수 있습니다. 자세한 내용은 [가상 네트워크 피어링 개요](virtual-network-peering-overview.md)를 참조하세요.
 
 ### <a name="can-i-connect-a-vnet-to-another-vnet-in-azure"></a>Azure에서 다른 VNet에 VNet을 연결할 수 있습니까?
 예. 다음 중 하나를 사용하여 하나의 VNet을 다른 VNet에 연결할 수 있습니다.
@@ -142,7 +142,7 @@ Azure에서 제공하는 DNS를 사용한 테넌트 간 이름 확인에 대한 
 예. VM 또는 클라우드 서비스 별로 DNS 서버를 설정하여 기본 네트워크 설정을 재정의할 수 있습니다. 그러나 가능한 한 네트워크 전체의 DNS를 사용하는 것이 좋습니다.
 
 ### <a name="can-i-bring-my-own-dns-suffix"></a>고유한 DNS 접미사를 가져올 수 있습니까?
-아닙니다. VNet에 대해 사용자 지정 DNS 접미사를 지정할 수 없습니다.
+아니요. VNet에 대해 사용자 지정 DNS 접미사를 지정할 수 없습니다.
 
 ## <a name="connecting-virtual-machines"></a>가상 머신 연결
 
@@ -155,13 +155,13 @@ Azure에서 제공하는 DNS를 사용한 테넌트 간 이름 확인에 대한 
   - **Resource Manager**: 동적 또는 정적 메서드로 할당된 개인 IP 주소는 리소스가 삭제될 때까지 가상 머신(Resource Manager)에 할당된 상태로 유지됩니다. 차이점은 정적 방법을 사용하면 할당할 주소를 사용자가 선택하고 동적 방법을 사용하면 Azure에서 선택된다는 점입니다. 
   - **클래식**: 가상 머신(클래식) VM이 중지(할당 취소됨)된 상태에서 다시 시작될 때 동적 메서드로 할당된 개인 IP 주소가 변경될 수 있습니다. 클래식 배포 모델을 통해 배포된 리소스의 개인 IP 주소가 절대 변경되지 않도록 하려면 정적 메서드로 개인 IP 주소를 할당합니다.
 
-* **공용:** 필요에 따라 Azure Resource Manager 배포 모델을 통해 배포된 VM에 연결된 NIC에 할당됩니다. 정적 또는 동적 할당 메서드를 사용하여 주소를 할당할 수 있습니다. 클래식 배포 모델을 통해 배포된 모든 VM 및 Cloud Services 역할 인스턴스는 클라우드 서비스 내에 존재하며 *동적*, 공용 VIP(가상 IP) 주소가 할당됩니다. [예약된 IP 주소](virtual-networks-reserved-public-ip.md)라고 하는 공용 *정적* IP 주소는 필요에 따라 VIP로 할당될 수 있습니다. 클래식 배포 모델을 통해 배포된 개별 VM 또는 Cloud Services 역할 인스턴스에 공용 IP 주소를 할당할 수 있습니다. 이러한 주소는 [ILPIP(인스턴스 수준 공용 IP)](virtual-networks-instance-level-public-ip.md) 주소라고 하며 동적으로 할당될 수 있습니다.
+* **공용:** 필요에 따라 Azure Resource Manager 배포 모델을 통해 배포된 VM에 연결된 NIC에 할당됩니다. 정적 또는 동적 할당 메서드를 사용하여 주소를 할당할 수 있습니다. 클래식 배포 모델을 통해 배포된 모든 VM 및 Cloud Services 역할 인스턴스는 클라우드 서비스 내에 존재하며 *동적*, 공용 VIP(가상 IP) 주소가 할당됩니다. *예약된 IP 주소*라고 하는 공용 [정적](virtual-networks-reserved-public-ip.md) IP 주소는 필요에 따라 VIP로 할당될 수 있습니다. 클래식 배포 모델을 통해 배포된 개별 VM 또는 Cloud Services 역할 인스턴스에 공용 IP 주소를 할당할 수 있습니다. 이러한 주소는 [ILPIP(인스턴스 수준 공용 IP)](virtual-networks-instance-level-public-ip.md) 주소라고 하며 동적으로 할당될 수 있습니다.
 
 ### <a name="can-i-reserve-a-private-ip-address-for-a-vm-that-i-will-create-at-a-later-time"></a>나중에 만들 VM에 대한 개인 IP 주소를 예약할 수 있나요?
-아닙니다. 개인 IP 주소를 예약할 수 없습니다. 개인 IP 주소가 사용 가능한 경우 DHCP 서버에서 VM 또는 역할 인스턴스에 할당됩니다. VM은 개인 IP 주소를 할당하려는 VM일 수도 있고 그렇지 않을 수도 있습니다. 그러나 이미 만든 VM의 개인 IP 주소를 사용 가능한 모든 개인 IP 주소로 변경할 수 있습니다.
+아니요. 개인 IP 주소를 예약할 수 없습니다. 개인 IP 주소가 사용 가능한 경우 DHCP 서버에서 VM 또는 역할 인스턴스에 할당됩니다. VM은 개인 IP 주소를 할당하려는 VM일 수도 있고 그렇지 않을 수도 있습니다. 그러나 이미 만든 VM의 개인 IP 주소를 사용 가능한 모든 개인 IP 주소로 변경할 수 있습니다.
 
 ### <a name="do-private-ip-addresses-change-for-vms-in-a-vnet"></a>VNet에서 VM에 대한 개인 IP 주소가 변경되나요?
-상황에 따라 다릅니다. Resource Manager를 통해 VM이 배포된 경우 IP 주소가 정적 할당 메서드로 할당되었는지 또는 동적 할당 메서드로 할당되었는지에 관계없이 변경되지 않습니다. 클래식 배포 모델을 통해 VM을 배포한 경우 동적 IP 주소는 VM이 중지된(할당 취소됨) 상태에서 시작될 때 변경될 수 있습니다. 이 주소는 VM을 삭제할 때 두 배포 모델 중 하나를 통해 배포된 VM에서 해제됩니다
+경우에 따라 다릅니다. Resource Manager를 통해 VM이 배포된 경우 IP 주소가 정적 할당 메서드로 할당되었는지 또는 동적 할당 메서드로 할당되었는지에 관계없이 변경되지 않습니다. 클래식 배포 모델을 통해 VM을 배포한 경우 동적 IP 주소는 VM이 중지된(할당 취소됨) 상태에서 시작될 때 변경될 수 있습니다. 이 주소는 VM을 삭제할 때 두 배포 모델 중 하나를 통해 배포된 VM에서 해제됩니다
 
 ### <a name="can-i-manually-assign-ip-addresses-to-nics-within-the-vm-operating-system"></a>VM 운영 체제 내에서 IP 주소를 NIC에 수동으로 할당할 수 있습니까?
 예. 하지만 가상 머신에 여러 IP 주소를 할당하는 경우와 같이 필요한 경우가 아니면 권장하지 않습니다. 자세한 내용은 [가상 머신에 여러 IP 주소 추가](virtual-network-multiple-ip-addresses-portal.md#os-config)를 참조하세요. VM에 연결된 Azure NIC에 할당된 IP 주소가 변경되고 VM 운영 체제 내의 IP 주소가 다르면, VM에 대한 연결이 끊어집니다.
@@ -173,7 +173,7 @@ Azure에서 제공하는 DNS를 사용한 테넌트 간 이름 확인에 대한 
 예. [다른 서브넷으로 VM 또는 역할 인스턴스를 이동하는 방법](virtual-networks-move-vm-role-to-subnet.md) 문서에서 자세한 정보를 확인할 수 있습니다.
 
 ### <a name="can-i-configure-a-static-mac-address-for-my-vm"></a>VM에 대해 정적 MAC 주소를 구성할 수 있습니까?
-아닙니다. MAC 주소를 정적으로 구성할 수 없습니다.
+아니요. MAC 주소를 정적으로 구성할 수 없습니다.
 
 ### <a name="will-the-mac-address-remain-the-same-for-my-vm-once-its-created"></a>MAC 주소가 만들어진 후 VM에 대해 동일하게 유지됩니까?
 예, MAC 주소는 삭제될 때까지 리소스 관리자 또는 클래식 배포 모델을 통해 배포된 VM에 대해 동일하게 유지됩니다. 이전에 MAC 주소는 VM이 중지(할당 취소)되는 경우에 해제되었지만 이제 VM이 할당 취소된 상태에 있을 때에도 MAC 주소는 유지됩니다. 네트워크 인터페이스를 삭제하거나 기본 네트워크 인터페이스의 기본 IP 구성에 할당된 개인 IP 주소를 변경할 때까지 MAC 주소는 네트워크 인터페이스에 할당된 상태로 유지됩니다. 
@@ -205,7 +205,7 @@ Azure에서 제공하는 DNS를 사용한 테넌트 간 이름 확인에 대한 
 일부 Azure PaaS 서비스 (예: Azure Storage 및 Azure SQL Database)를 통해 배포 된 리소스는 가상 네트워크 서비스 끝점 또는 Azure 개인 링크를 사용 하 여 VNet에 대 한 네트워크 액세스를 제한할 수 있습니다. 자세한 내용은 [가상 네트워크 서비스 끝점 개요](virtual-network-service-endpoints-overview.md), [Azure 개인 링크 개요](../private-link/private-link-overview.md) 를 참조 하세요.
 
 ### <a name="can-i-move-my-services-in-and-out-of-vnets"></a>서비스를 VNet 내부 및 외부로 이동할 수 있습니까?
-아닙니다. 서비스를 VNet 내부 및 외부로 이동할 수 없습니다. 리소스를 다른 VNet으로 옮기려면 리소스를 삭제하고 다시 배포해야 합니다.
+아니요. 서비스를 VNet 내부 및 외부로 이동할 수 없습니다. 리소스를 다른 VNet으로 옮기려면 리소스를 삭제하고 다시 배포해야 합니다.
 
 ## <a name="security"></a>보안
 
@@ -230,7 +230,7 @@ VNet은 서로 격리되고 Azure 인프라에서 호스팅되는 다른 서비�
 예. 사용에 대한 자세한 정보:
 - [Azure Resource Manager](manage-virtual-network.md#create-a-virtual-network) 및 [클래식](virtual-networks-create-vnet-classic-pportal.md) 배포 모델을 통해 VNet을 배포하는 Azure Portal.
 - [리소스 관리자](/powershell/module/az.network) 및 [클래식](/powershell/module/servicemanagement/azure/?view=azuresmps-3.7.0) 배포 모델을 통해 배포된 VNet을 관리하는 PowerShell.
-- [Resource Manager](/cli/azure/network/vnet) 및 [클래식](../virtual-machines/azure-cli-arm-commands.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-network-commands-to-manage-network-resources) 배포 모델을 통해 배포된 VNet을 배포하고 관리하는 Azure CLI(명령줄 인터페이스).  
+- [Resource Manager](/cli/azure/network/vnet) 및 [클래식](../virtual-machines/azure-cli-arm-commands.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-resources) 배포 모델을 통해 배포된 VNet을 배포하고 관리하는 Azure CLI(명령줄 인터페이스).  
 
 ## <a name="vnet-peering"></a>VNet 피어링
 
@@ -271,22 +271,22 @@ VNet 피어 링 연결이 *연결이 끊어진* 상태 이면 만든 링크 중 
 예. 구독 및 지역 간에 VNet을 피어로 연결할 수 있습니다.
 
 ### <a name="can-i-peer-two-vnets-with-matching-or-overlapping-address-ranges"></a>주소 범위가 일치하거나 겹치는 두 VNet을 피어로 연결할 수 있나요?
-아닙니다. VNet 피어링을 사용하려면 주소 공간이 겹치지 않아야 합니다.
+아니요. VNet 피어링을 사용하려면 주소 공간이 겹치지 않아야 합니다.
 
 ### <a name="how-much-do-vnet-peering-links-cost"></a>VNet 피어링 연결 비용은 얼마나 되나요?
 VNet 피어링 연결을 만드는 데는 비용이 없습니다. 피어링 연결 간의 데이터 전송에는 요금이 청구됩니다. [여기](https://azure.microsoft.com/pricing/details/virtual-network/)를 참조하세요.
 
 ### <a name="is-vnet-peering-traffic-encrypted"></a>VNet 피어링 트래픽은 암호화되나요?
-아닙니다. 피어로 연결된 VNet의 리소스 간 트래픽은 프라이빗이며 격리됩니다. Microsoft 백본에 그대로 남아 있습니다.
+아니요. 피어로 연결된 VNet의 리소스 간 트래픽은 프라이빗이며 격리됩니다. Microsoft 백본에 그대로 남아 있습니다.
 
 ### <a name="why-is-my-peering-connection-in-a-disconnected-state"></a>피어 링 연결이 *끊어진* 상태에 있는 이유는 무엇 인가요?
 VNet 피어링 연결은 한 VNet 연결이 삭제되면 *연결 끊김* 상태가 됩니다. 다시 피어링 연결에 성공하려면 두 링크를 모두 삭제해야 합니다.
 
 ### <a name="if-i-peer-vneta-to-vnetb-and-i-peer-vnetb-to-vnetc-does-that-mean-vneta-and-vnetc-are-peered"></a>VNetA와 VNetB,VNetB와 VNetC를 피어로 연결하면 VNetA와 VNetC가 피어로 연결된 것인가요?
-아닙니다. 전이적 피어링은 지원되지 않습니다. 이를 위해서는 VNetA와 VNetC를 피어로 연결해야 합니다.
+아니요. 전이적 피어링은 지원되지 않습니다. 이를 위해서는 VNetA와 VNetC를 피어로 연결해야 합니다.
 
 ### <a name="are-there-any-bandwidth-limitations-for-peering-connections"></a>피어링 연결에 대역폭 제한이 있나요?
-아닙니다. 로컬이든 글로벌이든 VNet 피어링에는 대역폭 제한이 없습니다. 대역폭은 VM 또는 컴퓨팅 리소스에 의해서만 제한됩니다.
+아니요. 로컬이든 글로벌이든 VNet 피어링에는 대역폭 제한이 없습니다. 대역폭은 VM 또는 컴퓨팅 리소스에 의해서만 제한됩니다.
 
 ### <a name="how-can-i-troubleshoot-vnet-peering-issues"></a>VNet 피어 링 문제를 어떻게 해결할 수 있나요?
 시도할 수 있는 [문제 해결사 가이드](https://support.microsoft.com/en-us/help/4486956/troubleshooter-for-virtual-network-peering-issues) 는 다음과 같습니다.

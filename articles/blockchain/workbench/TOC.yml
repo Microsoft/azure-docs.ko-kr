@@ -71,7 +71,5 @@
   items:
     - name: Ethereum 인증 증명 컨소시엄
       href: ../templates/ethereum-poa-deployment.md
-    - name: Hyperledger 패브릭 컨소시엄
-      href: ../templates/hyperledger-fabric-consortium-blockchain.md
     - name: Hyperledger 패브릭 컨소시엄 Azure Kubernetes 서비스
       href: ../templates/hyperledger-fabric-consortium-azure-kubernetes-service.md

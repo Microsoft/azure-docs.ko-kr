@@ -38,7 +38,7 @@ Azure Cost Management 데이터에 액세스하는 방법에 대한 정보는 [�
 
 ## <a name="sign-in-to-azure"></a>Azure에 로그인
 
-- https://portal.azure.com 에서 Azure Portal에 로그인합니다.
+- [https://portal.azure.com](https://portal.azure.com ) 에서 Azure Portal에 로그인합니다.
 
 ## <a name="review-costs-in-cost-analysis"></a>비용 분석에서 비용 검토
 

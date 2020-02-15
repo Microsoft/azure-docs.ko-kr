@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
-author: xiaoharper
-ms.author: amlstudiodocs
+author: likebupt
+ms.author: keli19
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 02/28/2017
-ms.openlocfilehash: 2e72c8a363ee7f58630b1c0d8d0f00434c2e2b7e
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 30e9e31c7b3f372ed252f1b81eeece02d2ca1f21
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838785"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168517"
 ---
 # <a name="manage-a-web-service-using-the-azure-machine-learning-studio-classic-web-services-portal"></a>Azure Machine Learning Studio (클래식) 웹 서비스 포털을 사용 하 여 웹 서비스 관리
 Microsoft Azure Machine Learning 웹 서비스 포털을 사용하여 Machine Learning 새 웹 서비스 및 기존 웹 서비스를 관리할 수 있습니다. 기존 웹 서비스와 새 웹 서비스는 서로 다른 기본 기술에 기반하고 있으므로 서비스 각각에는 약간씩 다른 관리 기능이 있습니다.
@@ -72,7 +72,7 @@ Machine Learning 웹 서비스 포털에서 수행할 수 있는 작업은 다�
 * **시간에 따른 요청** 은 선택한 기간 동안 요청 수의 단계 그래프를 표시합니다. 사용량이 급증하는 경우에 식별할 수 있도록 도움을 줍니다.
 * **요청-응답 요청** 은 선택한 기간 동안 서비스가 수신한 요청-응답 호출의 총 횟수 및 그 중 실패한 횟수를 표시합니다.
 * **평균 요청-응답 컴퓨팅 시간** 은 수신된 요청을 실행하는 데 필요한 시간의 평균을 표시합니다.
-* **Batch 요청** 은 선택한 기간 동안 서비스가 수신한 Batch 요청의 총 횟수 및 그 중 실패한 횟수를 표시합니다.
+* **Batch 요청**은 선택한 기간 동안 서비스가 수신한 Batch 요청의 총 횟수 및 그 중 실패한 횟수를 표시합니다.
 * **평균 작업 대기** 는 수신된 요청을 실행하는 데 필요한 시간의 평균을 표시합니다.
 * **오류** 웹 서비스 호출에서 발생한 오류의 집계 수를 표시합니다.
 * **서비스 비용** 은 서비스와 연결된 청구 계획에 대한 요금을 표시합니다.
@@ -139,7 +139,7 @@ Machine Learning 웹 서비스 포털에서 수행할 수 있는 작업은 다�
 * **시간에 따른 요청** 은 선택한 기간 동안 요청 수의 단계 그래프를 표시합니다. 사용량이 급증하는 경우에 식별할 수 있도록 도움을 줍니다.
 * **요청-응답 요청** 은 선택한 기간 동안 서비스가 수신한 요청-응답 호출의 총 횟수 및 그 중 실패한 횟수를 표시합니다.
 * **평균 요청-응답 컴퓨팅 시간** 은 수신된 요청을 실행하는 데 필요한 시간의 평균을 표시합니다.
-* **Batch 요청** 은 선택한 기간 동안 서비스가 수신한 Batch 요청의 총 횟수 및 그 중 실패한 횟수를 표시합니다.
+* **Batch 요청**은 선택한 기간 동안 서비스가 수신한 Batch 요청의 총 횟수 및 그 중 실패한 횟수를 표시합니다.
 * **평균 작업 대기** 는 수신된 요청을 실행하는 데 필요한 시간의 평균을 표시합니다.
 * **오류** 웹 서비스 호출에서 발생한 오류의 집계 수를 표시합니다.
 * **서비스 비용** 은 서비스와 연결된 청구 계획에 대한 요금을 표시합니다.

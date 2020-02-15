@@ -1,6 +1,6 @@
 ---
 title: 지도에 이미지 계층 추가 | Microsoft Azure 맵
-description: 이 문서에서는 Microsoft Azure Maps 웹 SDK를 사용 하 여 지도에 이미지를 오버레이 하는 방법에 대해 설명 합니다.
+description: 이 문서에서는 Microsoft Azure Maps 웹 SDK를 사용 하 여 지도에 이미지를 오버레이 하는 방법에 대해 알아봅니다.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 07/29/2019
@@ -9,16 +9,16 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: cfdf7dfd4c16f70065e338f8983d2124d3f6f0ef
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 69bf41f9d88081b9a416b9bee91e8650a84f12c7
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76933207"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209718"
 ---
 # <a name="add-an-image-layer-to-a-map"></a>맵에 이미지 계층 추가
 
-이 문서에서는 지도의 고정 좌표 집합에 이미지를 오버레이 하는 방법을 보여 줍니다. 지도에 종종 중첩 된 이미지 형식의 예는 다음과 같습니다.
+이 문서에서는 고정 좌표 집합에 이미지를 오버레이 하는 방법을 보여 줍니다. 지도에 중첩 될 수 있는 다양 한 이미지 유형의 몇 가지 예는 다음과 같습니다.
 
 * 드 론에서 캡처된 이미지
 * Floorplans 빌드
@@ -57,18 +57,18 @@ map.layers.add(new atlas.layer.ImageLayer({
 
 <br/>
 
-<iframe height='500' scrolling='no' title='단순 이미지 계층' src='//codepen.io/azuremaps/embed/eQodRo/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)의 <a href='https://codepen.io/azuremaps/pen/eQodRo/'>Pen Simple 이미지 계층</a>을 참조하세요.
+<iframe height='500' scrolling='no' title='단순 이미지 계층' src='//codepen.io/azuremaps/embed/eQodRo/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io/azuremaps/pen/eQodRo/'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)의 <a href='https://codepen.io'>Pen Simple 이미지 계층</a>을 참조하세요.
 </iframe>
 
 ## <a name="import-a-kml-file-as-ground-overlay"></a>KML 파일을 그라운드 오버레이로 가져오기
 
-다음 샘플에서는 KML 그라운드 오버레이 정보를 지도에 이미지 계층으로 오버레이 하는 방법을 보여 줍니다. KML 접지 오버레이는 북쪽, 남쪽, 동쪽 및 서쪽 좌표를 제공 하는 반면, 이미지 계층에는 이미지의 각 모퉁이에 대 한 좌표가 필요 합니다. 이 샘플의 KML 그라운드 오버레이는 Chartres cathedral이 고 [Wikimedia](https://commons.wikimedia.org/wiki/File:Chartres.svg/overlay.kml)의 원본입니다.
+이 샘플에서는 KML 그라운드 오버레이 정보를 지도에 이미지 계층으로 추가 하는 방법을 보여 줍니다. KML 접지 오버레이는 북쪽, 남쪽, 동쪽 및 서 부 좌표와 시계 반대 방향 회전을 제공 합니다. 그러나 이미지 계층에는 이미지의 각 모퉁이에 대 한 좌표가 필요 합니다. 이 샘플의 KML 그라운드 오버레이는 Chartres cathedral에 대 한 것 이며 [Wikimedia](https://commons.wikimedia.org/wiki/File:Chartres.svg/overlay.kml)에서 원본입니다.
 
-다음 코드에서는 [ImageLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer?view=azure-iot-typescript-latest) 클래스의 정적 `getCoordinatesFromEdges` 함수를 사용 합니다. KML 접지 오버레이의 북쪽, 남부, 동부, 서 부 및 회전 정보에서 이미지의 네 모퉁이를 계산 합니다.
+이 코드는 [ImageLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer?view=azure-iot-typescript-latest) 클래스의 정적 `getCoordinatesFromEdges` 함수를 사용 합니다. KML 접지 오버레이의 북쪽, 남부, 동부, 서 부 및 회전 정보를 사용 하 여 이미지의 네 모퉁이를 계산 합니다.
 
 <br/>
 
-<iframe height='500' scrolling='no' title='이미지 계층으로 KML 지면 오버레이' src='//codepen.io/azuremaps/embed/EOJgpj/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)의 Pen <a href='https://codepen.io/azuremaps/pen/EOJgpj/'>이미지 계층으로 KML 지면 오버레이</a>를 참조하세요.
+<iframe height='500' scrolling='no' title='이미지 계층으로 KML 지면 오버레이' src='//codepen.io/azuremaps/embed/EOJgpj/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io/azuremaps/pen/EOJgpj/'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)의 Pen <a href='https://codepen.io'>이미지 계층으로 KML 지면 오버레이</a>를 참조하세요.
 </iframe>
 
 ## <a name="customize-an-image-layer"></a>이미지 계층 사용자 지정
@@ -77,7 +77,7 @@ map.layers.add(new atlas.layer.ImageLayer({
 
 <br/>
 
-<iframe height='700' scrolling='no' title='이미지 계층 옵션' src='//codepen.io/azuremaps/embed/RqOGzx/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)의 펜 <a href='https://codepen.io/azuremaps/pen/RqOGzx/'>이미지 계층 옵션</a>을 참조하세요.
+<iframe height='700' scrolling='no' title='이미지 계층 옵션' src='//codepen.io/azuremaps/embed/RqOGzx/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io/azuremaps/pen/RqOGzx/'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)의 펜 <a href='https://codepen.io'>이미지 계층 옵션</a>을 참조하세요.
 </iframe>
 
 ## <a name="next-steps"></a>다음 단계

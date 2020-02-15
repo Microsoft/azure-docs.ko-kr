@@ -7,14 +7,14 @@ author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 ms.topic: include
-ms.date: 01/23/2020
+ms.date: 02/03/2020
 ms.custom: include file
-ms.openlocfilehash: a1576e4a97af5de0b936c662de636aae542a19b5
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: cfe3eb4c0ac1378b7c519b3b34094945612d8508
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76748896"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77029213"
 ---
 >[!NOTE]
 >이 섹션에서는 [Azure AD 앱 등록](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app)을 위한 지침을 제공합니다.
@@ -27,24 +27,40 @@ ms.locfileid: "76748896"
 
     [![새 등록 단추 선택](./media/digital-twins-permissions/aad-app-register.png)](./media/digital-twins-permissions/aad-app-register.png#lightbox)
 
-1. **이름** 상자에 이 앱 등록의 이름을 입력합니다. **리디렉션 URI(선택 사항)** 섹션의 왼쪽 드롭다운 메뉴에서 **퍼블릭 클라이언트/네이티브모바일 및 데스크톱)** 를 선택하고 오른쪽 텍스트 상자에 `https://microsoft.com`을 입력합니다. **등록**을 선택합니다.
+1. **이름** 상자에 이 앱 등록의 이름을 입력합니다. 
+
+    1. **리디렉션 URI(선택 사항)** 섹션에서 텍스트 상자에 `https://microsoft.com`을 입력합니다.     
+
+    1. Azure Active Directory 앱에서 지원되는 계정 및 테넌트를 확인합니다.
+
+    1. **등록**을 선택합니다.
 
     [![창 만들기](./media/digital-twins-permissions/aad-app-reg-create.png)](./media/digital-twins-permissions/aad-app-reg-create.png#lightbox)
 
-1. [앱이 **퍼블릭 클라이언트**로 등록되었는지](https://docs.microsoft.com/azure/active-directory/develop/scenario-desktop-app-registration) 확인하려면 앱 등록을 위한 **인증** 창을 열고 해당 창에서 아래로 스크롤합니다. **기본 클라이언트 유형** 섹션에서 **공용 클라이언트로 애플리케이션 처리**에 **예**를 선택하고 **저장**을 누릅니다.
+1. **인증** 블레이드에서는 중요한 인증 구성 설정을 지정합니다. 
+
+    1. **리디렉션 URI**를 추가하고 **+ 플랫폼 추가**를 선택하여 **액세스 토큰**을 구성합니다.
+
+    1. 앱이 **퍼블릭 클라이언트**임을 지정하려면 **예**를 선택합니다.
+
+    1. Azure Active Directory 앱에서 지원되는 계정 및 테넌트를 확인합니다.
+
+    [![공용 클라이언트 구성 설정](./media/digital-twins-permissions/aad-configure-public-client.png)](./media/digital-twins-permissions/aad-configure-public-client.png#lightbox)
+
+1. 적절한 플랫폼을 선택한 후 사용자 인터페이스 오른쪽의 측면 패널에서 **리디렉션 URI** 및 **액세스 토큰**을 구성합니다.
 
     1. **리디렉션 URI**는 인증 요청에 의해 제공된 주소와 일치해야 합니다.
 
-        * 로컬 개발 환경에서 호스팅되는 앱의 경우 **공용 클라이언트(모바일 및 데스크톱)** 를 선택합니다. **기본 클라이언트 형식**을 예로 설정해야 합니다.
+        * 로컬 개발 환경에서 호스팅되는 앱의 경우 **공용 클라이언트(모바일 및 데스크톱)** 를 선택합니다. **퍼블릭 클라이언트**를 **예**로 설정해야 합니다.
         * Azure App Service에서 호스팅되는 단일 페이지 앱의 경우 **웹**을 선택합니다.
 
-        **퍼블릭 클라이언트(모바일 및 데스크톱)** 를 선택하고 `http://localhost:8080/`을 입력합니다.
+    1. **로그아웃 URL**이 적절한지 확인합니다.
 
-        [![리디렉션 URI 구성](./media/digital-twins-permissions/aad-app-configure-redirect-uris.png)](./media/digital-twins-permissions/aad-app-configure-redirect-uris.png#lightbox)
+    1. **액세스 토큰** 또는 **ID 토큰**을 확인하여 암시적 허용 흐름을 사용하도록 설정합니다.
+                
+    [![리디렉션 URI 구성](./media/digital-twins-permissions/aad-app-configure-redirect-uris.png)](./media/digital-twins-permissions/aad-app-configure-redirect-uris.png#lightbox)
 
-    1. **액세스 토큰**을 선택하여 리소스의 **매니페스트** JSON에서**oauth2AllowImplicitFlow** 설정을 `true`로 구성합니다.
-
-        [![공용 클라이언트 구성 설정](./media/digital-twins-permissions/aad-configure-public-client.png)](./media/digital-twins-permissions/aad-configure-public-client.png#lightbox)
+    **구성**을 클릭한 다음, **저장**을 클릭합니다.
 
 1.  등록된 앱의 **개요** 창을 열고 임시 파일에 다음 엔터티의 값을 복사합니다. 이러한 값을 사용하여 다음 섹션에서 샘플 애플리케이션을 구성할 수 있습니다.
 

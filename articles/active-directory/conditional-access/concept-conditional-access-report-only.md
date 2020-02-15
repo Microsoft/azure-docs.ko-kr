@@ -1,22 +1,22 @@
 ---
-title: 조건부 액세스 보고서 전용 모드 -Azure Active Directory
+title: 조건부 액세스 보고서 전용 모드 - Azure Active Directory
 description: 조건부 액세스 정책 배포를 사용 하 여 보고서 전용 모드를 어떻게 지원 하나요?
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 10/25/2019
+ms.date: 02/11/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4289f4870ca03657afabec07049b3333412f3899
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 75880f4c533a503852d62ff940e53d4bcc30d218
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73180330"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186112"
 ---
 # <a name="what-is-conditional-access-report-only-mode"></a>조건부 액세스 보고서 전용 모드
 
@@ -25,7 +25,8 @@ ms.locfileid: "73180330"
 보고서 전용 모드는 관리자가 환경에서 사용 하도록 설정 하기 전에 조건부 액세스 정책의 영향을 평가할 수 있도록 하는 새로운 조건부 액세스 정책 상태입니다.  보고서 전용 모드의 릴리스 사용:
 
 - 조건부 액세스 정책은 보고서 전용 모드에서 사용 하도록 설정할 수 있습니다.
-- 로그인 하는 동안 보고서 전용 모드의 정책은 평가 되지만 적용 되지 않습니다. 결과는 로그인 로그 정보에 대 한 **조건부 액세스** 및 **보고서 전용 (미리 보기)** 탭에 기록 됩니다.
+- 로그인 하는 동안 보고서 전용 모드의 정책은 평가 되지만 적용 되지 않습니다.
+- 결과는 로그인 로그 정보에 대 한 **조건부 액세스** 및 **보고서 전용 (미리 보기)** 탭에 기록 됩니다.
 - Azure Monitor 구독이 있는 고객은 조건부 액세스 insights 통합 문서를 사용 하 여 조건부 액세스 정책의 영향을 모니터링할 수 있습니다.
 
 > [!WARNING]
@@ -37,7 +38,7 @@ ms.locfileid: "73180330"
 
 지정 된 로그인에 대해 보고서 전용 모드의 정책을 평가 하는 경우 다음과 같은 네 가지 새로운 결과 값이 있습니다.
 
-| 결과 | 설명 |
+| 결과 | Description |
 | --- | --- |
 | 보고서 전용: 성공 | 구성 된 모든 정책 조건, 필요한 비 대화형 권한 부여 컨트롤 및 세션 컨트롤이 충족 되었습니다. 예를 들어 토큰에 이미 있는 MFA 클레임이 multi-factor authentication 요구 사항을 충족 하거나 규격 장치에서 장치 검사를 수행 하 여 준수 장치 정책을 충족 합니다. |
 | 보고서 전용: 오류 | 구성 된 모든 정책 조건이 충족 되었지만 모든 필수 비 대화형 권한 부여 컨트롤 또는 세션 컨트롤이 충족 되지 않았습니다. 예를 들어, 블록 컨트롤이 구성 된 사용자에 게 정책이 적용 되거나 장치가 규격 장치 정책에 실패 하는 경우를 예로 들 수 있습니다. |

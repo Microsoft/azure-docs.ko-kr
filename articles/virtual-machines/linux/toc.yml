@@ -160,6 +160,8 @@
           href: disk-scalability-targets.md
         - name: 디스크의 복구 및 재해 복구
           href: backup-and-disaster-recovery-for-azure-iaas-disks.md
+        - name: 공유 디스크
+          href: disks-shared.md
         - name: 사용 후 삭제 OS 디스크
           href: ephemeral-os-disks.md
     - name: 네트워킹
@@ -261,6 +263,8 @@
               href: create-ssh-keys-detailed.md
     - name: VM 보호
       items:
+        - name: 재해 복구
+          href: ../virtual-machines-disaster-recovery-guidance.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: VM 백업
           href: ../../backup/backup-introduction-to-azure-backup.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
           items:
@@ -551,6 +555,8 @@
         - name: 템플릿을 사용하여 디스크 배포
           displayName: 'Azure Resource Manager, ARM'
           href: using-managed-disks-template-deployments.md
+        - name: 공유 디스크 사용
+          href: disks-shared-enable.md
         - name: 디스크에 VHD 업로드 - CLI
           href: disks-upload-vhd-to-managed-disk-cli.md
         - name: 디스크 크기 조정

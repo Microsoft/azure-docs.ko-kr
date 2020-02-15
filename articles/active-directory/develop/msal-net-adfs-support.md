@@ -13,12 +13,12 @@ ms.date: 07/16/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: a0dd9b339ca6372a34ff46222cad347eb1a673f9
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 15af18177cea217612a4d5276d130abe02d339f4
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77084983"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160763"
 ---
 # <a name="active-directory-federation-services-support-in-msalnet"></a>MSAL.NET에서 지원 Active Directory Federation Services
 Windows Server의 Active Directory Federation Services (AD FS)를 사용 하면 개발 중인 응용 프로그램에 Openid connect Connect 및 OAuth 2.0 기반 인증 및 권한 부여를 추가할 수 있습니다. 이러한 응용 프로그램은 AD FS에 대해 직접 사용자를 인증할 수 있습니다. 자세한 내용은 [개발자를 위한 AD FS 시나리오](/windows-server/identity/ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios)를 참조 하세요.
@@ -54,7 +54,7 @@ MSAL.NET는 Open ID Connect 규격 이며 PKCE 및 범위를 이해 하는 AD FS
 - 16 AD FS PKCE를 지원 하지 않고 범위를 사용 하지 않고 리소스를 계속 사용 합니다.
 - OIDC 규격이 아닌 AD FS v2
 
- AD FS 2016에 대 한 직접 연결을 요구 하는 시나리오를 지원 해야 하는 경우 [Azure Active Directory 인증 라이브러리](active-directory-authentication-libraries.md#microsoft-supported-client-libraries)의 최신 버전을 사용 합니다. 온-프레미스 시스템을 AD FS 2019으로 업그레이드 한 경우 MSAL.NET를 사용할 수 있습니다.
+ AD FS 2016에 대 한 직접 연결을 요구 하는 시나리오를 지원 해야 하는 경우 [Azure Active Directory 인증 라이브러리](../azuread-dev/active-directory-authentication-libraries.md#microsoft-supported-client-libraries)의 최신 버전을 사용 합니다. 온-프레미스 시스템을 AD FS 2019으로 업그레이드 한 경우 MSAL.NET를 사용할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

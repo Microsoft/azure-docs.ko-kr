@@ -8,12 +8,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 01/14/2020
 ms.author: danlep
-ms.openlocfilehash: b2f5a9bacf96eb098e307a6a8df3e13cb9d04bd0
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: f3294698f6973437a23fab798e8daf5642cc9b49
+ms.sourcegitcommit: 323c3f2e518caed5ca4dd31151e5dee95b8a1578
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76513419"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77111772"
 ---
 # <a name="use-an-azure-managed-identity-in-acr-tasks"></a>ACR 작업에서 Azure 관리 id 사용 
 
@@ -84,19 +84,19 @@ az acr task create \
 
 ### <a name="3-grant-the-identity-permissions-to-access-other-azure-resources"></a>3. id에 다른 Azure 리소스에 대 한 액세스 권한을 부여 합니다.
 
-작업 요구 사항에 따라 id 권한을 부여 하 여 다른 Azure 리소스에 액세스할 수 있습니다. 예를 들면 다음과 같습니다.
+작업 요구 사항에 따라 id 권한을 부여 하 여 다른 Azure 리소스에 액세스할 수 있습니다. 다음은 이러한 템플릿의 예입니다.
 
 * Azure의 대상 컨테이너 레지스트리에 끌어오기, 푸시 및 끌어오기 또는 기타 권한을 사용 하 여 관리 되는 id 역할을 할당 합니다. 레지스트리 역할의 전체 목록은 [Azure Container Registry 역할 및 사용 권한](container-registry-roles.md)을 참조 하세요. 
 * Azure 주요 자격 증명 모음에서 암호를 읽도록 관리 되는 id를 할당 합니다.
 
 [Azure CLI](../role-based-access-control/role-assignments-cli.md) 또는 다른 Azure 도구를 사용 하 여 리소스에 대 한 역할 기반 액세스를 관리 합니다. 예를 들어 [az role assign create][az-role-assignment-create] 명령을 실행 하 여 리소스에 id 역할을 할당 합니다. 
 
-다음 예제에서는 관리 되는 id를 컨테이너 레지스트리에서 끌어올 수 있는 권한으로 할당 합니다. 이 명령은 id의 *서비스 사용자 id* 와 대상 레지스트리의 *리소스 id* 를 지정 합니다.
+다음 예제에서는 관리 되는 id를 컨테이너 레지스트리에서 끌어올 수 있는 권한으로 할당 합니다. 이 명령은 작업 id의 *보안 주체 id* 와 대상 레지스트리의 *리소스 id* 를 지정 합니다.
 
 
 ```azurecli
 az role assignment create \
-  --assignee <servicePrincipalID> \
+  --assignee <principalID> \
   --scope <registryID> \
   --role acrpull
 ```
@@ -115,7 +115,7 @@ az acr task credential add \
     --use-identity [system]
 ```
 
-사용자 할당 id에 대 한 자격 증명을 추가 하 여 레지스트리 *targetregistry*로 인증 하려면 id의 *클라이언트 id* 값으로 `use-identity`를 전달 합니다. 예:
+사용자 할당 id에 대 한 자격 증명을 추가 하 여 레지스트리 *targetregistry*로 인증 하려면 id의 *클라이언트 id* 값으로 `use-identity`를 전달 합니다. 다음은 그 예입니다.
 
 ```azurecli
 az acr task credential add \

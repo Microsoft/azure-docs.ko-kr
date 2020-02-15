@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 11/19/2019
-ms.openlocfilehash: ac99b95e3cece09c5bdeb0986a11a999603707e6
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: eff480d6763ae4bd277e6781663c559cc7c9169e
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76548529"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152451"
 ---
 # <a name="module-assign-data-to-clusters"></a>모듈: 클러스터에 데이터 할당
 

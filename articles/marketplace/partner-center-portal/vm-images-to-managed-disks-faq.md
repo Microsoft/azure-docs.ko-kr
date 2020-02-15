@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/22/2019
-ms.openlocfilehash: d85f6ba9d50b7d30930322ca34cb15edb30e1472
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 683b35661a41325cfd5baa877acdb0e37529bb94
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76775006"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198737"
 ---
 # <a name="were-moving-virtual-machine-vm-images-on-azure-marketplace-to-managed-disk-storage"></a>Azure Marketplace에서 VM (가상 컴퓨터) 이미지를 관리 되는 디스크 저장소로 이동 하 고 있습니다.
 
@@ -39,11 +39,11 @@ VM 이미지의 사용자에 게는 가동 중단이 발생 하지 않습니다.
 
 ### <a name="do-i-need-to-take-any-action"></a>작업을 수행 해야 하나요?
 
-아닙니다. 게시자 또는 소비자는 어떤 조치도 취할 필요가 없습니다.
+아니요. 게시자 또는 소비자는 어떤 조치도 취할 필요가 없습니다.
 
 ### <a name="do-i-have-to-update-my-system-to-call-the-cloud-portal-apis-in-a-different-way-after-they-are-moved-to-managed-disk-storage"></a>클라우드 포털 Api를 관리 디스크 저장소로 이동한 후 다른 방식으로 호출 하도록 시스템을 업데이트 해야 하나요?
 
-아닙니다. 기존 API 호출은 계속 작동할 것입니다.
+아니요. 기존 API 호출은 계속 작동할 것입니다.
 
 ### <a name="would-all-my-vm-images-be-moved-to-managed-disk-at-the-same-time"></a>모든 내 VM 이미지를 동시에 관리 디스크로 이동 하나요?
 
@@ -61,6 +61,6 @@ VM 이미지의 사용자에 게는 가동 중단이 발생 하지 않습니다.
 
 아니요. 게시 프로세스는 동일 하 게 유지 됩니다. 
 
-## <a name="next-steps"></a>다음 단계
+### <a name="can-the-publisher-move-their-offers-to-managed-disk"></a>게시자가 해당 제품을 관리 디스크로 이동할 수 있나요?
 
-[Virtual machine 제품 게시자 가이드](https://docs.microsoft.com/azure/marketplace/marketplace-virtual-machines) 페이지를 방문 하세요.
+아니요. 게시자는 해당 제품을 관리 디스크로 이동할 수 없습니다. 대기 해야 하며 해당 이미지가 자동으로 이동 됩니다. 변경을 수행 하기 전에 게시자에 게 알림을 보냅니다.

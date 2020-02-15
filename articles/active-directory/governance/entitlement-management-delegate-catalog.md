@@ -16,16 +16,18 @@ ms.date: 10/26/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f71007b886d3cc25a7cf9dc23d784144ed4e1fbd
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 51e37ad006da5042291614c773f242b5a1f3be97
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73174387"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120185"
 ---
 # <a name="delegate-access-governance-to-catalog-creators-in-azure-ad-entitlement-management"></a>Azure AD 자격 관리에서 카탈로그 작성자에 게 액세스 관리 위임
 
-자신의 카탈로그를 만들 수 있도록 관리자가 아닌 사용자에 게 위임 하려면 해당 사용자를 Azure AD 자격 관리에 정의 된 카탈로그 작성자 역할에 추가할 수 있습니다. 개별 사용자를 추가 하거나, 해당 멤버가 카탈로그를 만들 수 있는 그룹을 추가할 수 있습니다.
+카탈로그는 리소스 및 액세스 패키지의 컨테이너입니다. 관련 리소스를 그룹화 하 고 패키지에 액세스 하려는 경우 카탈로그를 만듭니다. 기본적으로 전역 관리자 또는 사용자 관리자는 [카탈로그를 만들](entitlement-management-catalog-create.md)수 있으며 사용자를 카탈로그 소유자로 추가할 수 있습니다.
+
+자신의 카탈로그를 만들 수 있도록 관리자가 아닌 사용자에 게 위임 하려면 해당 사용자를 Azure AD 자격 관리에 정의 된 카탈로그 작성자 역할에 추가할 수 있습니다. 개별 사용자를 추가 하거나, 해당 멤버가 카탈로그를 만들 수 있는 그룹을 추가할 수 있습니다.  카탈로그를 만든 후에는 카탈로그에 소유한 리소스를 나중에 추가할 수 있습니다.
 
 ## <a name="as-an-it-administrator-delegate-to-a-catalog-creator"></a>IT 관리자는 카탈로그 작성자에 게 위임
 
@@ -45,7 +47,7 @@ ms.locfileid: "73174387"
 
 1. **선택**을 클릭합니다.
 
-1. 페이지 맨 아래에 있는 **저장**을 참조하세요.
+1. **저장**을 클릭합니다.
 
 ## <a name="allow-delegated-roles-to-access-the-azure-portal"></a>위임 된 역할이 Azure Portal에 액세스할 수 있도록 허용
 

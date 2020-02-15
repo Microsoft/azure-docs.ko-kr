@@ -2,7 +2,7 @@
 title: 로그인 프롬프트에서 보안 정보 설정(미리 보기) - Azure AD
 description: 회사의 로그인 페이지에서 메시지가 표시된 후 회사 또는 학교 계정에 대한 보안 정보를 설정(미리 보기)하는 방법입니다.
 services: active-directory
-author: eross-msft
+author: curtand
 manager: daveba
 ms.reviewer: sahenry
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.workload: identity
 ms.subservice: user-help
 ms.topic: overview
 ms.date: 08/05/2019
-ms.author: lizross
-ms.openlocfilehash: 965943937a5cbc24f3c4dbe5bc85a6f5b4338fe2
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.author: curtand
+ms.openlocfilehash: c216dbfef99422fc49fde774dc57d5cbcc9f879a
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76704989"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77063988"
 ---
 # <a name="set-up-your-security-info-preview-from-a-sign-in-prompt"></a>로그인 프롬프트에서 보안 정보 설정(미리 보기)
 

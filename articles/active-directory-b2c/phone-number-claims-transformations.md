@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/17/2019
+ms.date: 02/14/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: c43e3386886456eed0c58fefd0fb1212795db66c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c5beef98f03c52ca022a7ab8047d3b392755c0bf
+ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75480165"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77212196"
 ---
 # <a name="define-phone-number-claims-transformations-in-azure-ad-b2c"></a>Azure AD B2C에서 전화 번호 클레임 변환 정의
 
@@ -32,8 +32,9 @@ ms.locfileid: "75480165"
 
 | 항목 | TransformationClaimType | 데이터 형식 | 메모 |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | inputClaim | 문자열 | 에서 변환 하는 문자열 형식의 클레임입니다. |
-| OutputClaim | outputClaim | 문자열 | 이 클레임 변환의 결과입니다. |
+| InputClaim | phoneNumberString | 문자열 |  전화 번호에 대 한 문자열 클레임입니다. 전화 번호는 국제 형식 이어야 하며 앞에 "+"와 국가 코드를 사용 하 여 완료 해야 합니다. 입력 클레임 `country` 제공 되는 경우 전화 번호는 지역 형식 (국가 코드 제외)입니다. |
+| InputClaim | country | 문자열 | 필드 ISO3166 형식의 전화 번호에 대 한 국가 코드에 대 한 문자열 클레임입니다 (2 자 ISO-3166 국가 코드). |
+| OutputClaim | outputClaim | phoneNumber | 이 클레임 변환의 결과입니다. |
 
 **ConvertStringToPhoneNumberClaim** 클레임 변환은 항상 [자체 어설션된 기술 프로필](self-asserted-technical-profile.md) 또는 [디스플레이 컨트롤](display-controls.md)에 의해 호출 되는 [유효성 검사 기술 프로필](validation-technical-profile.md) 에서 실행 됩니다. **UserMessageIfClaimsTransformationInvalidPhoneNumber** 자체 어설션된 기술 프로필 메타 데이터는 사용자에 게 표시 되는 오류 메시지를 제어 합니다.
 
@@ -44,7 +45,8 @@ ms.locfileid: "75480165"
 ```XML
 <ClaimsTransformation Id="ConvertStringToPhoneNumber" TransformationMethod="ConvertStringToPhoneNumberClaim">
   <InputClaims>
-    <InputClaim ClaimTypeReferenceId="phoneString" TransformationClaimType="inputClaim" />
+    <InputClaim ClaimTypeReferenceId="phoneString" TransformationClaimType="phoneNumberString" />
+    <InputClaim ClaimTypeReferenceId="countryCode" TransformationClaimType="country" />
   </InputClaims>
   <OutputClaims>
     <OutputClaim ClaimTypeReferenceId="phoneNumber" TransformationClaimType="outputClaim" />
@@ -63,11 +65,19 @@ ms.locfileid: "75480165"
 </TechnicalProfile>
 ```
 
-### <a name="example"></a>예
+### <a name="example-1"></a>예 1
 
 - 입력 클레임:
-  - **Inputclaim**: + 1 (123) 456-7890
+  - **phoneNumberString**: 045 456-7890
+  - **국가**: 진한
 - 출력 클레임:
+  - **Outputclaim**: + 450546148120
+
+### <a name="example-2"></a>예제 2
+
+- 입력 클레임:
+  - **phoneNumberString**: + 1 (123) 456-7890
+- 출력 클레임: 
   - **Outputclaim**: + 11234567890
 
 ## <a name="getnationalnumberandcountrycodefromphonenumberstring"></a>GetNationalNumberAndCountryCodeFromPhoneNumberString

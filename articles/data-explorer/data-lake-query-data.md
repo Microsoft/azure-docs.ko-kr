@@ -7,27 +7,27 @@ ms.reviewer: rkarlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 07/17/2019
-ms.openlocfilehash: 1e5af0b45b8d2e2eceac1b653a5219a236c25467
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 8240b1a01aa39e53b9ae41f73543ccf9774290b2
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76512915"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161752"
 ---
 # <a name="query-data-in-azure-data-lake-using-azure-data-explorer"></a>Azure 데이터 탐색기를 사용 하 여 Azure Data Lake에서 데이터 쿼리
 
-Azure Data Lake Storage은 빅 데이터 분석을 위한 확장성이 뛰어나고 경제적인 data Lake 솔루션입니다. 고성능 파일 시스템의 기능과 거대한 규모 및 경제성을 결합하여 인사이트 시간을 단축합니다. Data Lake Storage Gen2는 Azure Blob Storage 기능을 확장하며 분석 워크로드에 최적화되어 있습니다.
+Azure Data Lake Storage은 빅 데이터 분석을 위한 확장성이 뛰어나고 경제적인 data Lake 솔루션입니다. 고성능 파일 시스템의 강력한 기능을 광범위 하 고 경제적으로 결합 하 여 정보에 대 한 시간을 단축할 수 있습니다. Data Lake Storage Gen2는 Azure Blob Storage 기능을 확장 하며 분석 워크 로드에 최적화 되어 있습니다.
  
-Azure 데이터 탐색기는 Azure Blob Storage 및 Azure Data Lake Storage Gen2와 통합 되어 있으며,이를 통해 Lake의 데이터에 대해 빠르고, 캐시 되 고, 인덱싱된 액세스를 제공 합니다. Azure 데이터 탐색기에 사전 수집 하지 않고 lake에서 데이터를 분석 하 고 쿼리할 수 있습니다. 수집 및 uningested native lake 데이터를 동시에 쿼리할 수도 있습니다.  
+Azure 데이터 탐색기는 Azure Blob Storage 및 Azure Data Lake Storage (Gen1 및 Gen2)와 통합 되어, Lake의 데이터에 대해 빠르고, 캐시 되 고, 인덱싱된 액세스를 제공 합니다. Azure 데이터 탐색기에 사전 수집 하지 않고 lake에서 데이터를 분석 하 고 쿼리할 수 있습니다. 수집 및 uningested native lake 데이터를 동시에 쿼리할 수도 있습니다.  
 
 > [!TIP]
-> 최고의 쿼리 성능을 위해서는 Azure 데이터 탐색기에 데이터를 수집 해야 합니다. 이전 수집 없이 Azure Data Lake Storage Gen2에서 데이터를 쿼리 하는 기능은 기록 데이터 또는 거의 쿼리하지 않는 데이터에만 사용 해야 합니다. 최상의 결과를 위해 [lake에서 쿼리 성능을 최적화](#optimize-your-query-performance) 하세요.
+> 최고의 쿼리 성능을 위해서는 Azure 데이터 탐색기에 데이터를 수집 해야 합니다. 이전 수집을 사용 하지 않고 외부 데이터를 쿼리 하는 기능은 기록 데이터 또는 거의 쿼리하지 않는 데이터에만 사용 해야 합니다. 최상의 결과를 위해 [lake에서 쿼리 성능을 최적화](#optimize-your-query-performance) 하세요.
  
 
 ## <a name="create-an-external-table"></a>외부 테이블 만들기
 
  > [!NOTE]
- > 현재 지원 되는 저장소 계정은 Azure Blob Storage 또는 Azure Data Lake Storage Gen2입니다. 현재 지원 되는 데이터 형식은 json, csv, tsv 및 txt입니다.
+ > 현재 지원 되는 저장소 계정은 Azure Blob Storage 또는 Azure Data Lake Storage (Gen1 및 Gen2)입니다.
 
 1. `.create external table` 명령을 사용 하 여 Azure 데이터 탐색기에서 외부 테이블을 만듭니다. `.show`, `.drop`및 `.alter`와 같은 추가 외부 테이블 명령은 [외부 테이블 명령](/azure/kusto/management/externaltables)에 설명 되어 있습니다.
 
@@ -46,6 +46,7 @@ Azure 데이터 탐색기는 Azure Blob Storage 및 Azure Data Lake Storage Gen2
     > * 파티션이 있는 외부 테이블을 정의 하는 경우 저장소 구조가 동일할 것으로 예상 됩니다.
 예를 들어 테이블이 yyyy/MM/dd 형식의 DateTime 파티션으로 정의 된 경우 (기본값) URI 저장소 파일 경로는 *container1/yyyy/mm/dd/all_exported_blobs*이어야 합니다. 
     > * 외부 테이블이 datetime 열에 의해 분할 된 경우에는 쿼리에서 닫힌 범위에 대 한 시간 필터를 항상 포함 합니다. 예를 들어 쿼리 `ArchivedProducts | where Timestamp between (ago(1h) .. 10m)`는이 (열린 범위) 1 `ArchivedProducts | where Timestamp > ago(1h)`) 보다 잘 수행 되어야 합니다. 
+    > * [지원 되](ingest-data-overview.md#supported-data-formats) 는 모든 수집 형식은 외부 테이블을 사용 하 여 쿼리할 수 있습니다.
 
 1. 외부 테이블은 웹 UI의 왼쪽 창에 표시 됩니다.
 

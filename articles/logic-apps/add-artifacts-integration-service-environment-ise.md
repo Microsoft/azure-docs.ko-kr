@@ -1,23 +1,23 @@
 ---
 title: 통합 서비스 환경에 아티팩트 추가
-description: Azure virtual network (Vnet)에 액세스할 수 있도록 통합 서비스 환경 (ISE)에 논리 앱, 통합 계정 및 사용자 지정 커넥터를 추가 합니다.
+description: ISE (통합 서비스 환경)에 논리 앱, 통합 계정, 사용자 지정 커넥터 및 관리 되는 커넥터를 추가 합니다.
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
-ms.date: 01/08/2020
-ms.openlocfilehash: c597bc4430e4390f0e29e4fe8ae4014521e1ae74
-ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
+ms.date: 02/10/2020
+ms.openlocfilehash: e2505d8ee8b8539f158c0a549bedfcd69a954e24
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75732258"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191756"
 ---
 # <a name="add-artifacts-to-your-integration-service-environment-ise-in-azure-logic-apps"></a>Azure Logic Apps에서 ISE (통합 서비스 환경)에 아티팩트를 추가 합니다.
 
 [ISE (통합 서비스 환경)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)를 만든 후에는 Azure 가상 네트워크의 리소스에 액세스할 수 있도록 논리 앱, 통합 계정 및 커넥터와 같은 아티팩트를 추가 합니다. 예를 들어 ISE를 만든 후에 사용할 수 있는 관리 되는 ISE 커넥터는 논리 앱 디자이너에 자동으로 표시 되지 않습니다. 이러한 ISE 커넥터를 사용 하려면 먼저 [해당 커넥터를 사용자의 ise에 추가 하 고 배포](#add-ise-connectors-environment) 하 여 논리 앱 디자이너에 표시 해야 합니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Azure 구독 Azure 구독이 없는 경우 [체험 Azure 계정에 등록](https://azure.microsoft.com/free/)합니다.
 
@@ -33,18 +33,19 @@ ISE (통합 서비스 환경)에서 실행 되는 논리 앱을 빌드하려면 
 
    ![ISE에 새 논리 앱 추가](./media/add-artifacts-integration-service-environment-ise/add-logic-app-to-ise.png)
 
-   또는
+1. 만들려는 논리 앱에 대 한 정보를 제공 합니다. 예를 들면 다음과 같습니다.
 
-   Azure 주 메뉴에서 **리소스 만들기** > **통합** > **논리 앱**을 차례로 선택합니다.
+   ![통합 서비스 환경 선택](./media/add-artifacts-integration-service-environment-ise/create-logic-app-integration-service-environment.png)
 
-1. 논리 앱에 사용할 이름, Azure 구독 및 Azure 리소스 그룹 (신규 또는 기존)을 제공 합니다.
+   | 속성 | 필수 | Description |
+   |----------|----------|-------------|
+   | **이름** | yes | 만들 논리 앱의 이름 |
+   | **구독** | yes | 사용할 Azure 구독의 이름입니다. |
+   | **리소스 그룹** | yes | 사용할 Azure 리소스 그룹의 이름 (신규 또는 기존) |
+   | **위치** | yes | **Integration service environment**에서 사용할 ISE를 선택 합니다 (아직 선택 하지 않은 경우). <p><p> **중요**: 논리 앱을 통합 계정으로 사용 하려면 둘 다 동일한 ISE를 사용 해야 합니다. |
+   ||||
 
-1. **위치** 목록의 **Integration service ENVIRONMENT** 섹션에서 ISE를 선택 합니다. 예를 들면 다음과 같습니다.
-
-   ![통합 서비스 환경 선택](./media/add-artifacts-integration-service-environment-ise/create-logic-app-with-integration-service-environment.png)
-
-   > [!IMPORTANT]
-   > 통합 계정을 사용 하 여 논리 앱을 사용 하려는 경우 해당 논리 앱과 통합 계정은 동일한 ISE를 사용 해야 합니다.
+1. 완료되면 **만들기**를 선택합니다.
 
 1. [일반적인 방법으로 논리 앱](../logic-apps/quickstart-create-first-logic-app-workflow.md)을 계속 만듭니다.
 
@@ -64,15 +65,20 @@ ISE를 사용 하는 통합 계정을 만들려면 다음 단계를 수행 합�
 
    ![ISE에 새 통합 계정 추가](./media/add-artifacts-integration-service-environment-ise/add-integration-account-to-ise.png)
 
-   또는
+1. 만들려는 논리 앱에 대 한 정보를 제공 합니다. 예를 들면 다음과 같습니다.
 
-   기본 Azure 메뉴에서 **리소스 만들기** ** > 통합** > **통합 계정**을 선택 합니다.
+   ![통합 서비스 환경 선택](./media/add-artifacts-integration-service-environment-ise/create-integration-account-integration-service-environment.png)
 
-1. 통합 계정에 사용할 이름, Azure 구독, Azure 리소스 그룹 (신규 또는 기존) 및 가격 책정 계층을 제공 합니다.
+   | 속성 | 필수 | Description |
+   |----------|----------|-------------|
+   | **이름** | yes | 만들려는 통합 계정의 이름입니다. |
+   | **구독** | yes | 사용 하려는 Azure 구독의 이름입니다. |
+   | **리소스 그룹** | yes | 사용할 Azure 리소스 그룹의 이름 (신규 또는 기존) |
+   | **가격 책정 계층** | yes | 통합 계정에 사용할 가격 책정 계층입니다. |
+   | **위치** | yes | **Integration service environment**에서 아직 선택 하지 않은 경우 논리 앱에서 사용 하는 것과 동일한 ISE를 선택 합니다. <p><p> **중요**: 논리 앱에서 통합 계정을 사용 하려면 둘 다 동일한 ISE를 사용 해야 합니다. |
+   ||||
 
-1. **위치** 목록의 **Integration service environment** 섹션에서 논리 앱이 사용 하는 것과 동일한 ISE를 선택 합니다. 예를 들면 다음과 같습니다.
-
-   ![통합 서비스 환경 선택](./media/add-artifacts-integration-service-environment-ise/create-integration-account-with-integration-service-environment.png)
+1. 완료되면 **만들기**를 선택합니다.
 
 1. [일반적인 방법으로 통합 계정에 논리 앱을 연결](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md#link-account)합니다.
 
@@ -110,7 +116,7 @@ ISE에서 사용자 지정 커넥터를 사용 하려면 ISE 내에서 직접 �
 
 1. **위치** 목록의 **Integration service environment** 섹션에서 논리 앱이 사용 하는 동일한 ISE를 선택 하 고 **만들기**를 선택 합니다. 예를 들면 다음과 같습니다.
 
-   ![통합 서비스 환경 선택](./media/add-artifacts-integration-service-environment-ise/create-custom-connector-with-integration-service-environment.png)
+   ![통합 서비스 환경 선택](./media/add-artifacts-integration-service-environment-ise/create-custom-connector-integration-service-environment.png)
 
 1. 새 사용자 지정 커넥터를 선택 하 고 **편집**을 선택 합니다. 예를 들면 다음과 같습니다.
 

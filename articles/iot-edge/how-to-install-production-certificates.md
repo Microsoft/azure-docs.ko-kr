@@ -4,16 +4,16 @@ description: 테스트 인증서를 만들어 프로덕션 배포를 준비 하�
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 12/03/2019
+ms.date: 02/11/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: cf073572cd5b371ec484c99f14cbefb4cba75ce7
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: fe46e968aa2dcebaa483cd38fd2e050ccfe43054
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76509906"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77149901"
 ---
 # <a name="install-production-certificates-on-an-iot-edge-device"></a>IoT Edge 장치에 프로덕션 인증서 설치
 
@@ -68,7 +68,7 @@ IoT Edge 장치에 인증서 체인을 설치 하 고 새 인증서를 참조 �
    * Windows: `C:\ProgramData\iotedge\config.yaml`
    * Linux: `/etc/iotedge/config.yaml`
 
-3. Config.xml 파일의 **인증서** 속성을 IoT Edge 장치의 인증서 및 키 파일에 대 한 파일 URI로 설정 합니다. 네 줄의 주석 처리를 제거 하려면 인증서 속성 앞의 `#` 문자를 제거 합니다. **인증서:** 줄에 앞에 공백이 없고 중첩 된 항목이 두 개의 공백으로 들여쓰기 되는지 확인 합니다. 예:
+3. Config.xml 파일의 **인증서** 속성을 IoT Edge 장치의 인증서 및 키 파일에 대 한 파일 URI로 설정 합니다. 네 줄의 주석 처리를 제거 하려면 인증서 속성 앞의 `#` 문자를 제거 합니다. **인증서:** 줄에 앞에 공백이 없고 중첩 된 항목이 두 개의 공백으로 들여쓰기 되는지 확인 합니다. 예를 들면 다음과 같습니다.
 
    * Windows:
 
@@ -89,6 +89,12 @@ IoT Edge 장치에 인증서 체인을 설치 하 고 새 인증서를 참조 �
       ```
 
 4. Linux 장치에서 사용자 **iotedge** 에 인증서가 포함 된 디렉터리에 대 한 읽기 권한이 있는지 확인 합니다.
+
+5. 이전에 장치에서 IoT Edge 하는 데 다른 인증서를 사용한 경우 IoT Edge를 시작 하거나 다시 시작 하기 전에 다음 두 디렉터리에서 파일을 삭제 합니다.
+
+   * Windows: `C:\ProgramData\iotedge\hsm\certs` 및 `C:\ProgramData\iotedge\hsm\cert_keys`
+
+   * Linux: `/var/lib/iotedge/hsm/certs` 및 `/var/lib/iotedge/hsm/cert_keys`
 
 ## <a name="next-steps"></a>다음 단계
 

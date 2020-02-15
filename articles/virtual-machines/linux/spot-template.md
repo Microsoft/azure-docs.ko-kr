@@ -12,14 +12,14 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/14/2019
+ms.date: 02/11/2020
 ms.author: cynthn
-ms.openlocfilehash: 2e94c48188d0eed22b338d0d7238c0d27a5d1862
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 457f1008b75fe0605c0d2934f2de09937fac8d21
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74782204"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162449"
 ---
 # <a name="deploy-spot-vms-using-a-resource-manager-template"></a>리소스 관리자 템플릿을 사용 하 여 스폿 Vm 배포
 
@@ -33,7 +33,7 @@ VM에 대해 시간당 요금을 지불할 최대 가격을 설정 하는 옵션
 > 현재 스폿 인스턴스는 공개 미리 보기로 제공 됩니다.
 > 이 미리 보기 버전은 프로덕션 워크 로드에는 권장 되지 않습니다. 특정 기능이 지원되지 않거나 기능이 제한될 수 있습니다. 자세한 내용은 [Microsoft Azure Preview에 대한 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조하세요.
 >
-> 공개 미리 보기의 초기 파트의 경우 별색 인스턴스는 고정 가격이 있으므로 가격 기반 제거는 제공 되지 않습니다.
+
 
 
 ## <a name="use-a-template"></a>템플릿 사용 
@@ -48,9 +48,6 @@ VM에 대해 시간당 요금을 지불할 최대 가격을 설정 하는 옵션
                 }
 ```
 
-
-> [!IMPORTANT]
-> 공개 미리 보기의 초기 부분에서는 최대 가격을 설정할 수 있지만 무시 됩니다. 스폿 Vm의 가격은 고정 되어 있으므로 가격 기반 제거는 없습니다.
 
 
 다음은 별색 VM에 대 한 추가 된 속성을 포함 하는 샘플 템플릿입니다. 리소스 이름을 사용자 고유의로 바꾸고 VM의 로컬 관리자 계정에 대 한 암호를 `<password>` 합니다.

@@ -1,27 +1,23 @@
 ---
-title: Azure Migrate 서버 마이그레이션을 사용하여 온-프레미스 물리적 머신 또는 가상화된 머신을 Azure로 마이그레이션 | Microsoft Docs
-description: 이 문서에서는 Azure Migrate 서버 마이그레이션을 사용하여 온-프레미스 물리적 머신 또는 가상화된 머신을 Azure로 마이그레이션하는 방법을 설명합니다.
-author: rayne-wiselman
-manager: carmonm
-ms.service: azure-migrate
+title: Azure Migrate를 사용하여 물리적 서버로 머신을 Azure로 마이그레이션합니다.
+description: 이 문서에서는 Azure Migrate를 사용하여 물리적 머신을 Azure로 마이그레이션하는 방법을 설명합니다.
 ms.topic: tutorial
-ms.date: 11/04/2019
-ms.author: raynew
+ms.date: 02/03/2020
 ms.custom: MVC
-ms.openlocfilehash: 4a6e33770f93c365d5ccd034803c7c7f247d528a
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 6cdd107cb761aab3a85b73067fd646a36fe97d63
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76028809"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76989759"
 ---
-# <a name="migrate-physical-or-virtualized-servers-to-azure"></a>물리적 서버 또는 가상화된 서버를 Azure로 마이그레이션 
+# <a name="migrate-machines-as-physical-servers-to-azure"></a>물리적 서버로 머신을 Azure에 마이그레이션
 
-이 문서에서는 물리적 서버 또는 가상화된 서버를 Azure로 마이그레이션하는 방법에 대해 설명합니다. Azure Migrate 서버 마이그레이션 도구는 에이전트 기반 복제를 사용하여 물리적 서버와 가상화된 서버를 마이그레이션합니다. 이 도구를 사용하면 다음과 같은 다양한 머신을 Azure로 마이그레이션할 수 있습니다.
+이 문서에서는 Azure Migrate:Server Migration 도구를 사용하여 머신을 물리적 서버로 Azure에 마이그레이션하는 방법을 보여줍니다. 물리적 서버로 처리하여 머신을 마이그레이션하는 것은 다음과 같은 다양한 시나리오에서 유용합니다.
 
 - 온-프레미스 물리적 서버를 마이그레이션합니다.
 - 플랫폼(예: Xen, KVM)에서 가상화된 VM을 마이그레이션합니다.
-- Hyper-V 또는 VMware VM을 마이그레이션합니다. 이는 어떤 이유로 Azure Migrate 서버 마이그레이션에서 [Hyper-V](tutorial-migrate-hyper-v.md), [에이전트 없는 VMware](tutorial-migrate-vmware.md) 마이그레이션 또는 [에이전트 기반 VMware](tutorial-migrate-vmware-agent.md) 마이그레이션에 제공하는 표준 마이그레이션 흐름을 사용할 수 없는 경우에 유용합니다.
+- 어떤 이유로 [Hyper-V](tutorial-migrate-hyper-v.md) 또는 [VMware ](server-migrate-overview.md) 마이그레이션에 표준 마이그레이션 프로세스를 사용할 수 없는 경우 Hyper-V 또는 VMware VM을 마이그레이션합니다.
 - 프라이빗 클라우드에서 실행되는 VM을 마이그레이션합니다.
 - AWS(Amazon Web Services) 또는 GCP(Google Cloud Platform)와 같은 퍼블릭 클라우드에서 실행되는 VM을 마이그레이션합니다.
 
@@ -158,8 +154,8 @@ Azure Migrate 프로젝트를 설정한 다음, Azure Migrate 서버 마이그�
 
     **지리** | **지역**
     --- | ---
-    Asia | 동남아시아
-    유럽 | 북유럽 또는 유럽 서부
+    아시아 | 동남아시아
+    유럽 | 북유럽 또는 서유럽
     미국 | 미국 동부 또는 미국 중서부
 
     프로젝트에 대해 지정된 지리는 온-프레미스 VM에서 수집된 메타데이터를 저장하는 데 사용됩니다. 실제 마이그레이션에 대한 대상 지역을 선택할 수 있습니다.
@@ -175,7 +171,7 @@ Azure Migrate 프로젝트를 설정한 다음, Azure Migrate 서버 마이그�
 
 ### <a name="download-the-replication-appliance-installer"></a>복제 어플라이언스 설치 관리자 다운로드
 
-1. Azure Migrate 프로젝트 > **서버**의 ***Azure Migrate: 서버 마이그레이션**에서 **검색**을 클릭합니다.
+1. Azure Migrate 프로젝트 > **서버**, **Azure Migrate: 서버 마이그레이션**에서 **검색**을 클릭합니다.
 
     ![VM 검색](./media/tutorial-migrate-physical-virtual-machines/migrate-discover.png)
 
@@ -266,8 +262,7 @@ Azure Migrate 프로젝트를 설정한 다음, Azure Migrate 서버 마이그�
 
 2. **복제** > **원본 설정** > **머신이 가상화되어 있나요?** 에서 **가상화되지 않음/기타**를 선택합니다.
 3. **온-프레미스 어플라이언스**에서 설정한 Azure Migrate 어플라이언스의 이름을 선택합니다.
-4. **vCenter 서버**에서 VM을 관리하는 vCenter 서버 또는 VM이 호스팅되는 vSphere 서버의 이름을 지정합니다.
-5. **프로세스 서버**에서 복제 어플라이언스의 이름을 선택합니다.
+4. **프로세스 서버**에서 복제 어플라이언스의 이름을 선택합니다.
 6. **게스트 자격 증명**에서 Mobility Service의 강제 설치에 사용할 VM 관리자 계정을 지정합니다. 이 자습서에서는 Mobility Service를 수동으로 설치하므로 더미 계정을 추가할 수 있습니다. 그런 다음, **다음: 가상 머신**을 클릭합니다.
 
     ![VM 복제](./media/tutorial-migrate-physical-virtual-machines/source-settings.png)

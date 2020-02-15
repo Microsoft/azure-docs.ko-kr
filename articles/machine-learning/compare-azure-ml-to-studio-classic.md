@@ -8,11 +8,11 @@ ms.topic: overview
 author: j-martens
 ms.author: jmartens
 ms.date: 10/29/2019
-ms.openlocfilehash: 064786de1f25c3d185984534b9a8fc61602826ee
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: a3122a3ae1687369b87d193efc693b3b7c659aac
+ms.sourcegitcommit: 323c3f2e518caed5ca4dd31151e5dee95b8a1578
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 02/10/2020
 ms.locfileid: "76311464"
 ---
 # <a name="how-azure-machine-learning-differs-from-machine-learning-studio-classic"></a>Azure Machine Learning과 Machine Learning Studio(클래식)의 차이점
@@ -24,19 +24,20 @@ ms.locfileid: "76311464"
 
 ## <a name="about-azure-machine-learning"></a>Azure Machine Learning 정보
 
-한편 [Azure Machine Learning](overview-what-is-azure-ml.md)은 디자이너라는 웹 인터페이스 **및** 여러 SDK와 CLI를 모두 제공하여 데이터를 빠르게 준비하고 기계 학습 모델을 학습 및 배포합니다. Azure Machine Learning을 사용하면 크기 조정, 여러 프레임워크 지원, 자동화된 Machine Learning 및 파이프라인 지원과 같은 고급 ML 기능을 사용할 수 있습니다.
+한편 [Azure Machine Learning](overview-what-is-azure-ml.md)은 디자이너(미리 보기)라는 웹 인터페이스 **및** 여러 SDK와 CLI를 모두 제공하여 데이터를 빠르게 준비하고 기계 학습 모델을 학습 및 배포합니다. Azure Machine Learning을 사용하면 크기 조정, 여러 프레임워크 지원, 자동화된 Machine Learning 및 파이프라인 지원과 같은 고급 ML 기능을 사용할 수 있습니다.
 
 Azure Machine Learning 디자이너는 Studio(클래식)와 비슷한 끌어서 놓기 환경을 제공합니다. 그러나 Studio(클래식) 전용 컴퓨팅 플랫폼과는 달리, 디자이너는 사용자 고유의 컴퓨팅 리소스를 사용하고 확장 가능하며 Azure Machine Learning에 완전히 통합됩니다.  
 
 > [!TIP]
-> 현재 Machine Learning Studio(클래식)를 사용하거나 평가하는 고객은 ML 모듈 끌어서 놓기 __기능과 더불어__ 확장성, 버전 제어 및 엔터프라이즈 보안을 제공하는 [Azure Machine Learning 디자이너](https://docs.microsoft.com/azure/machine-learning/concept-designer)를 사용하는 것이 좋습니다.
+> 현재 Machine Learning Studio(클래식)를 사용하거나 평가하는 고객은 ML 모듈 끌어서 놓기 __기능과 더불어__ 확장성, 버전 제어 및 엔터프라이즈 보안을 제공하는 [Azure Machine Learning 디자이너](https://docs.microsoft.com/azure/machine-learning/concept-designer)(미리 보기)를 사용하는 것이 좋습니다.
 
 ## <a name="comparison-azure-machine-learning-vs-machine-learning-studio-classic"></a>비교: Azure Machine Learning과 Machine Learning Studio(클래식)
 
 다음은 간략하게 비교한 내용입니다.
 
 ||  Azure Machine Learning 디자이너|Studio(클래식) |
-|---| --- | --- | 
+|---| --- | --- |
+||디자이너는 미리 보기 상태이며 Azure Machine Learning은 GA입니다.|GA(일반 공급) | 
 |끌어서 놓기 인터페이스| yes | yes|
 |실험| 컴퓨팅 대상으로 크기 조정|크기 조정(10GB 학습 데이터 제한) | 
 |인터페이스용 모듈| [인기 있는 많은 모듈](algorithm-module-reference/module-reference.md) | 다수 |

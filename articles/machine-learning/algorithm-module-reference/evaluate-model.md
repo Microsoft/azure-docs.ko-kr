@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
-ms.date: 11/19/2019
-ms.openlocfilehash: a906e5f354f332cebb0656c6fc40b17c8a5016a2
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+author: likebupt
+ms.author: keli19
+ms.date: 02/11/2020
+ms.openlocfilehash: 5951c6ec63478b4b266f22eaf8bf3162e0a45df0
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76546693"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137540"
 ---
 # <a name="evaluate-model-module"></a>모델 평가 모듈
 
@@ -80,10 +80,10 @@ ms.locfileid: "76546693"
 
 이 섹션에서는 **모델 평가**에서 사용 하도록 지원 되는 특정 유형의 모델에 대해 반환 되는 메트릭에 대해 설명 합니다.
 
-+ [분류 모델](#bkmk_classification)
-+ [회귀 모델](#bkmk_regression)
++ [분류 모델](#metrics-for-classification-models)
++ [회귀 모델](#metrics-for-regression-models)
 
-###  <a name="bkmk_classification"></a>분류 모델에 대 한 메트릭
+### <a name="metrics-for-classification-models"></a>분류 모델에 대 한 메트릭
 
 분류 모델을 평가할 때 다음과 같은 메트릭이 보고 됩니다. 모델을 비교 하는 경우 평가를 위해 선택한 메트릭으로 순위가 매겨집니다.  
   
@@ -101,7 +101,7 @@ ms.locfileid: "76546693"
   
 - **학습 로그 손실은** 임의 예측을 통해 분류자의 장점을 나타내는 단일 점수입니다. 로그 손실은 출력의 확률을 레이블의 알려진 값 (그라운드 참)과 비교 하 여 모델의 불확실성을 측정 합니다. 전체적으로 모델에 대 한 로그 손실을 최소화 하려고 합니다.
 
-##  <a name="bkmk_regression"></a>회귀 모델에 대 한 메트릭
+### <a name="metrics-for-regression-models"></a>회귀 모델에 대 한 메트릭
  
 회귀 모델에 대해 반환 되는 메트릭은 오류 양을 예측 하도록 디자인 되었습니다.  관찰 된 값과 예측 값의 차이가 적으면 모델은 데이터 웰에 맞게 고려 됩니다. 그러나 잔차의 패턴을 살펴보면 (한 예측 지점과 해당 하는 실제 값 간의 차이) 모델의 잠재적 바이어스에 대해 많은 정보를 확인할 수 있습니다.  
   
@@ -115,7 +115,7 @@ ms.locfileid: "76546693"
   
 - **RSE (상대 제곱 오차** ) 마찬가지로 실제 값의 총 제곱 오차로 나누어 예측 값의 총 제곱 오차를 표준화 합니다.  
   
-- **평균 0 개의 오류 (MZOE)** 는 예측이 올바른지 여부를 나타냅니다.  즉, `x!=y`때 `ZeroOneLoss(x,y) = 1` 합니다. 그렇지 않으면 `0`합니다.
+
   
 - 일반적으로 R<sup>2</sup>라고도 하는 **결정 계수**는 모델의 예측 능력을 0에서 1 사이의 값으로 나타냅니다. 0은 모델이 무작위로 사용 됨을 의미 합니다 (아무 것도 설명 하지 않음). 1은 완벽 한 일치를 의미 합니다. 그러나 낮은 값은 완전히 정상이 고 높은 값은 주의 대상이 될 수 있으므로 R<sup>2</sup> 값을 해석 하는 데 주의를 기울여야 합니다.
   

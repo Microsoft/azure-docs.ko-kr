@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2019
 ms.author: bwren
-ms.openlocfilehash: b5d35fc14d69da2246c0ef5d4ef6d19a9e0c8462
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 74ede523c9747de4746fe1854bd1e352eba2f7e3
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75750991"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77148898"
 ---
 # <a name="azure-monitor-data-platform"></a>Azure Monitor 데이터 플랫폼
 
@@ -38,7 +38,7 @@ Azure 리소스는 상당한 양의 모니터링 데이터를 생성 합니다. 
 
 Azure Monitor 메트릭은 타임 스탬프 데이터를 분석 하는 데 최적화 된 시계열 데이터베이스에 저장 됩니다. 이를 통해 메트릭은 문제에 대 한 경고 및 빠른 검색에 특히 적합 합니다. 시스템에서 수행 하는 방식을 알 수 있지만 일반적으로 로그와 결합 하 여 문제의 근본 원인을 파악 해야 합니다.
 
-메트릭은 [메트릭 탐색기](../app/metrics-explorer.md)를 사용 하 여 Azure Portal에서 대화형 분석에 사용할 수 있습니다. 다른 데이터와 함께 시각화를 위해 [Azure 대시보드에](../learn/tutorial-app-dashboards.md) 추가 하 고 거의 실시간으로 [경고](alerts-metric.md)하는 데 사용할 수 있습니다.
+메트릭은 [Azure 메트릭 탐색기](../platform/metrics-getting-started.md)를 사용 하 여 Azure Portal에서 대화형 분석에 사용할 수 있습니다. 다른 데이터와 함께 시각화를 위해 [Azure 대시보드에](../learn/tutorial-app-dashboards.md) 추가 하 고 거의 실시간으로 [경고](alerts-metric.md)하는 데 사용할 수 있습니다.
 
 [Azure Monitor의 메트릭에](data-platform-metrics.md)데이터 원본을 포함 한 Azure Monitor 메트릭에 대해 자세히 알아보세요.
 
@@ -67,11 +67,11 @@ Azure Monitor의 분산 추적은 [APPLICATION INSIGHTS SDK](../app/distributed-
 
 다음 표에서는 Azure Monitor의 메트릭과 로그를 비교 합니다.
 
-| attribute  | 메트릭 | 로그 |
+| 특성  | 메트릭 | 로그 |
 |:---|:---|:---|
-| 혜택 | 경량 이며 경고와 같은 거의 실시간 시나리오를 지원 합니다. 문제를 신속 하 게 검색 하는 데 적합 합니다. | 풍부한 쿼리 언어를 사용 하 여 분석 됩니다. 심층 분석 및 근본 원인을 식별 하는 데 적합 합니다. |
+| 이점 | 경량 이며 경고와 같은 거의 실시간 시나리오를 지원 합니다. 문제를 신속 하 게 검색 하는 데 적합 합니다. | 풍부한 쿼리 언어를 사용 하 여 분석 됩니다. 심층 분석 및 근본 원인을 식별 하는 데 적합 합니다. |
 | 데이터 | 숫자 값만 | 텍스트 또는 숫자 데이터 |
-| 구조 | 샘플 시간, 모니터링 되는 리소스, 숫자 값을 포함 하는 표준 속성 집합입니다. 일부 메트릭에는 추가 정의를 위해 여러 차원이 포함 됩니다. | 로그 유형에 따라 고유한 속성 집합입니다. |
+| 구조체 | 샘플 시간, 모니터링 되는 리소스, 숫자 값을 포함 하는 표준 속성 집합입니다. 일부 메트릭에는 추가 정의를 위해 여러 차원이 포함 됩니다. | 로그 유형에 따라 고유한 속성 집합입니다. |
 | 컬렉션 | 정기적으로 수집 됩니다. | 이벤트가 생성 될 레코드를 트리거할 때 산발적으로 수집 될 수 있습니다. |
 | Azure Portal에서 보기 | 메트릭 탐색기 | Log Analytics |
 | 데이터 원본 포함 | Azure 리소스에서 수집 된 플랫폼 메트릭입니다.<br>Application Insights에서 모니터링 하는 응용 프로그램입니다.<br>응용 프로그램 또는 API에 의해 정의 된 사용자 지정입니다. | 응용 프로그램 및 리소스 로그.<br>솔루션 모니터링.<br>에이전트 및 VM 확장.<br>응용 프로그램 요청 및 예외.<br>Azure Security Center.<br>데이터 수집기 API. |

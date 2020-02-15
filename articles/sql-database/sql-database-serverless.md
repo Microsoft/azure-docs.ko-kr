@@ -1,5 +1,5 @@
 ---
-title: 서버리스
+title: 서버를 사용하지 않음
 description: 이 문서에서는 새 서버리스 컴퓨팅 계층에 대해 설명하고 이를 기존의 프로비저닝된 컴퓨팅 계층과 비교합니다.
 services: sql-database
 ms.service: sql-database
@@ -11,14 +11,14 @@ author: oslake
 ms.author: moslake
 ms.reviewer: sstein, carlrab
 ms.date: 12/03/2019
-ms.openlocfilehash: 2b11bbc22714ab1905421812e3cb24ee660ee667
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 750d08f3667317e9e1e396cff50884101d7ff55d
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75372333"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131960"
 ---
-# <a name="azure-sql-database-serverless"></a>Azure SQL Database 서버리스
+# <a name="azure-sql-database-serverless"></a>서버를 사용 하지 않는 Azure SQL Database
 
 서버를 사용 하지 않는 Azure SQL Database 작업 부하에 따라 자동으로 계산을 확장 하는 단일 데이터베이스의 계산 계층 이며, 초당 사용 된 계산의 양에 대 한 요금을 청구 합니다. 서버를 사용 하지 않는 계산 계층은 저장소가 청구 될 때 비활성 기간 동안 데이터베이스를 자동으로 일시 중지 하 고 작업이 반환 될 때 데이터베이스를 자동으로 다시 시작 합니다.
 
@@ -66,8 +66,8 @@ ms.locfileid: "75372333"
 | | **서버리스 컴퓨팅** | **프로비저닝된 컴퓨팅** |
 |:---|:---|:---|
 |**데이터베이스 사용 패턴**| 시간이 지남에 따라 평균 계산 사용률이 낮은 간헐적이 고 예측할 수 없는 사용 |  시간이 지남에 따라 더 높은 평균 계산 사용률 또는 탄력적 풀을 사용 하는 여러 데이터베이스를 사용 하는 보다 일반적인 사용 패턴.|
-| **성능 관리 작업** |더 적음|더 많음|
-|**컴퓨팅 크기 조정**|자동|Manual|
+| **성능 관리 작업** |Lower|더 많음|
+|**컴퓨팅 크기 조정**|자동|수동|
 |**컴퓨팅 응답성**|비활성 기간 후 낮음|즉시|
 |**청구 세분성**|초당|시간당|
 
@@ -157,15 +157,15 @@ Autoresuming는 데이터베이스를 온라인 상태로 만들어야 하는 �
 
    |서비스 목표 이름|서비스 계층|하드웨어 세대|최대 vCore 수|
    |---|---|---|---|
-   |GP_S_Gen5_1|일반적인 용도|Gen5|1|
-   |GP_S_Gen5_2|일반적인 용도|Gen5|2|
-   |GP_S_Gen5_4|일반적인 용도|Gen5|4|
-   |GP_S_Gen5_6|일반적인 용도|Gen5|6|
-   |GP_S_Gen5_8|일반적인 용도|Gen5|8|
-   |GP_S_Gen5_10|일반적인 용도|Gen5|10|
-   |GP_S_Gen5_12|일반적인 용도|Gen5|12|
-   |GP_S_Gen5_14|일반적인 용도|Gen5|14|
-   |GP_S_Gen5_16|일반적인 용도|Gen5|16|
+   |GP_S_Gen5_1|범용|5세대|1|
+   |GP_S_Gen5_2|범용|5세대|2|
+   |GP_S_Gen5_4|범용|5세대|4|
+   |GP_S_Gen5_6|범용|5세대|6|
+   |GP_S_Gen5_8|범용|5세대|8|
+   |GP_S_Gen5_10|범용|5세대|10|
+   |GP_S_Gen5_12|범용|5세대|12|
+   |GP_S_Gen5_14|범용|5세대|14|
+   |GP_S_Gen5_16|범용|5세대|16|
 
 2. 필요에 따라 최소 vCores 및 autopause delay를 지정 하 여 기본값을 변경 합니다. 다음 표에는 이러한 매개 변수에 사용할 수 있는 값이 나와 있습니다.
 
@@ -275,7 +275,7 @@ MODIFY ( SERVICE_OBJECTIVE = 'GP_S_Gen5_1') ;
 
 응용 프로그램 패키지의 리소스 사용 및 서버를 사용 하지 않는 데이터베이스의 사용자 풀 모니터링에 대 한 메트릭은 다음 표에 나와 있습니다.
 
-|엔터티|메트릭|Description|단위|
+|엔터티|메트릭|설명|Units|
 |---|---|---|---|
 |앱 패키지|app_cpu_percent|앱에 허용되는 최대 vCore 수에 대한 앱에서 사용한 vCore 수의 백분율입니다.|백분율|
 |앱 패키지|app_cpu_billed|보고 기간 동안 앱에 대해 요금이 청구되는 컴퓨팅의 양입니다. 이 기간 동안에 대한 지불 금액은 이 메트릭과 vCore 단가를 곱한 값입니다. <br><br>이 메트릭의 값은 시간이 지남에 따라 사용된 최대 CPU와 사용된 초당 메모리를 집계하여 결정됩니다. 사용된 양이 최소 vCore 수 및 최소 메모리로 설정된 최소 프로비저닝된 양보다 적으면 최소 프로비저닝된 양에 대한 요금이 청구됩니다. 청구 목적으로 CPU와 CPU를 비교 하기 위해 메모리는 Vcores 당 3gb의 메모리 용량을 크기 조정 하 여 vCores 단위로 정규화 됩니다.|vCore 시간(초)|
@@ -310,7 +310,7 @@ az sql db show --name $databasename --resource-group $resourcegroupname --server
 
 리소스 제한의 경우 서버를 사용 하지 않는 [계산 계층](sql-database-vCore-resource-limits-single-databases.md#general-purpose---serverless-compute---gen5)을 참조 하세요.
 
-## <a name="billing"></a>청구
+## <a name="billing"></a>결제
 
 청구되는 컴퓨팅 양은 초 단위로 사용된 최대 CPU와 메모리입니다. 사용된 CPU와 메모리의 양이 각각에 대해 프로비저닝된 최소 양보다 적으면 프로비저닝된 양에 대해 청구됩니다. 청구의 목적으로 CPU를 메모리와 비교하기 위해 메모리는 vCore당 메모리 양(GB 단위)을 3GB로 다시 조정하여 vCore 단위로 정규화됩니다.
 
@@ -342,7 +342,7 @@ VCore 단가는 초당 vCore 당 비용입니다. 지정된 지역의 특정 단
 |8:00-24:00|0|0|일시 중지 된 동안 청구 된 계산 없음|0 vCore 초|
 |24 시간 동안 청구 되는 총 vCore 시간 (초)||||50400 vCore 초|
 
-컴퓨팅 단가가 $0.000073/vCore/초라고 가정합니다.  그러면이 24 시간 동안 청구 되는 계산은 계산 단위 가격 및 vCore 초 청구 됩니다. $0.000073/vCore/second * 50400 vCore seconds = $3.68
+계산 단위 가격은 $0.000145/vCore/second 라고 가정 합니다.  그러면이 24 시간에 대해 청구 되는 계산은 계산 단위 가격 및 vCore 초 요금이 청구 됩니다. $0.000145/vCore/second * 50400 vCore 초 ~ $7.31
 
 ### <a name="azure-hybrid-benefit-and-reserved-capacity"></a>Azure 하이브리드 혜택 및 예약 된 용량
 

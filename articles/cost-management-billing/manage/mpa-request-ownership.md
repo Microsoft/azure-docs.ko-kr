@@ -13,10 +13,10 @@ ms.workload: na
 ms.date: 10/13/2019
 ms.author: banders
 ms.openlocfilehash: 65b56511a3b454b192b5adb2a98fb3bb3510bb7e
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75988202"
 ---
 # <a name="get-billing-ownership-of-azure-subscriptions-to-your-mpa-account"></a>MPA 계정에 대한 Azure 구독의 청구 소유권 가져오기
@@ -29,7 +29,7 @@ ms.locfileid: "75988202"
 
 이 문서는 Microsoft 파트너 계약에 대한 청구 계정에 적용됩니다. 이러한 계정은 새 상거래 환경에서 고객에 대한 청구를 관리하기 위해 CSP(클라우드 솔루션 공급자)에 대해 만들어집니다. 새 환경은 MCA(Microsoft 고객 계약)를 수락하고 Azure 플랜이 있는 고객을 한 명 이상 보유한 파트너에만 사용할 수 있습니다. [Microsoft 파트너 계약에 액세스할 수 있는지 확인하세요](#check-access-to-a-microsoft-partner-agreement).
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 1. 고객과 [재판매인 관계](https://docs.microsoft.com/partner-center/request-a-relationship-with-a-customer)를 설정합니다. [CSP 지역 권한 부여 개요](https://docs.microsoft.com/partner-center/regional-authorization-overview)를 확인하여 고객과 파트너 테넌트가 동일한 권한 있는 지역 내에 있는지 확인합니다.  
 
@@ -102,7 +102,7 @@ ms.locfileid: "75988202"
    |취소됨|전송 요청에 대한 액세스 권한이 있는 다른 사용자가 요청을 취소했습니다.|
    |거부함|사용자가 전송 요청을 거부했습니다.|
 
-6. 세부 정보를 볼 전송 요청을 선택합니다. 전송 세부 정보 페이지에는 전송 된 구독의 목록을 보여 주는 ![스크린샷에서 다음과 같은 정보가 표시 됩니다](./media/mpa-request-ownership/mpa-transfer-completed.png)
+6. 세부 정보를 볼 전송 요청을 선택합니다. 전송 세부 정보 페이지에는 다음 정보가 표시됩니다. ![이전된 구독 목록을 보여 주는 스크린샷](./media/mpa-request-ownership/mpa-transfer-completed.png)
 
    |열  |정의|
    |---------|---------|
@@ -148,7 +148,7 @@ Azure Reservations는 구독과 함께 자동으로 이동되지 않습니다. R
 
 ### <a name="access-to-azure-services"></a>Azure 서비스에 대한 액세스
 
-[AZURE RBAC (역할 기반 액세스 제어)](../../role-based-access-control/overview.md) 를 사용 하 여 할당 된 기존 사용자, 그룹 또는 서비스 사용자에 대 한 액세스는 전환 중에는 영향을 받지 않습니다. 파트너는 구독에 대 한 새 RBAC 액세스를 얻지 않습니다.  
+[Azure RBAC(역할 기반 액세스 제어)](../../role-based-access-control/overview.md)를 사용하여 할당된 기존 사용자, 그룹 또는 서비스 사용자에 대한 액세스는 전환 중에 영향을 받지 않습니다. 파트너는 구독에 대한 새 RBAC 액세스 권한을 얻지 못합니다.  
 
 파트너는 고객과 협력하여 구독에 대한 액세스 권한을 얻어야 합니다.  파트너는 [Admin on Behalf Of - AOBO](https://channel9.msdn.com/Series/cspdev/Module-11-Admin-On-Behalf-Of-AOBO) 또는 [Azure Lighthouse](https://docs.microsoft.com/azure/lighthouse/concepts/cloud-solution-provider) 액세스 오픈 지원 티켓을 가져와야 합니다.
 
@@ -181,7 +181,7 @@ SaaS 제품은 구독과 함께 전송되지 않습니다. [Azure 지원에 문�
 ## <a name="check-access-to-a-microsoft-partner-agreement"></a>Microsoft 파트너 계약에 대한 액세스 확인
 [!INCLUDE [billing-check-mpa](../../../includes/billing-check-mpa.md)]
 
-## <a name="need-help-contact-support"></a>도움이 필요하세요? 고객 지원
+## <a name="need-help-contact-support"></a>도움 필요 시 지원에 문의
 
 도움이 필요한 경우 [지원에 문의](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)하여 문제를 신속하게 해결하세요.
 

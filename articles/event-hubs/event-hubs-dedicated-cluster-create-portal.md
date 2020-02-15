@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 12/20/2019
 ms.author: femila
-ms.openlocfilehash: 7003cc90bdb456eba9cfaebc1e24332d2e4a6251
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.openlocfilehash: 5b1574eaac8771043e09500225b65e4835c8e627
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77029931"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157485"
 ---
 # <a name="quickstart-create-a-dedicated-event-hubs-cluster-using-azure-portal"></a>빠른 시작: Azure Portal을 사용하여 전용 Event Hubs 클러스터 만들기 
 Event Hubs 클러스터는 스트리밍 요구 사항이 가장 까다로운 고객을 위한 단일 테넌트 배포를 제공합니다. 이 제품은 99.99% SLA를 보장하며 Dedicated 가격 책정 계층에서만 사용할 수 있습니다. 용량을 보장하고 대기 시간이 1초 미만에 불과한 [Event Hubs 클러스터](event-hubs-dedicated-overview.md)는 초당 수백만 개의 이벤트를 수신할 수 있습니다. 클러스터 내부에 생성되는 네임스페이스 및 이벤트 허브는 표준 제품의 모든 기능을 포함하고 있으며, 거기에 수신 제한도 없습니다. Dedicated 제품은 인기 있는 [Event Hubs 캡처](event-hubs-capture-overview.md) 기능을 추가 비용 없이 사용할 수 있으므로, 자동으로 데이터 스트림을 일괄 처리하여 [Azure Blob Storage](../storage/blobs/storage-blobs-introduction.md) 또는 [Azure Data Lake Storage Gen 1](../data-lake-store/data-lake-store-overview.md)에 기록할 수 있습니다.
@@ -106,6 +106,10 @@ Azure Portal을 사용하여 리소스 그룹에 클러스터를 만들려면 �
 ## <a name="next-steps"></a>다음 단계
 이 문서에서는 Event Hubs 클러스터를 만들었습니다. 이벤트 허브에서 이벤트를 전송 및 수신하고, 이벤트를 Azure 스토리지 또는 Azure Data Lake Store에 캡처하는 방법에 대한 단계별 지침은 다음 자습서를 참조하세요.
 
-- [.NET Core에서 이벤트 보내기 및 받기](event-hubs-dotnet-standard-getstarted-send.md)
+- 이벤트 보내기 및 받기 
+    - [.NET Core](get-started-dotnet-standard-send-v2.md)
+    - [Java](get-started-java-send-v2.md)
+    - [Python](get-started-python-send-v2.md)
+    - [JavaScript](get-started-java-send-v2.md)
 - [Azure Portal을 사용하여 Event Hubs 캡처를 사용하도록 설정](event-hubs-capture-enable-through-portal.md)
 - [Apache Kafka에 Azure Event Hubs 사용](event-hubs-for-kafka-ecosystem-overview.md)

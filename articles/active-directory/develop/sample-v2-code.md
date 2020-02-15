@@ -17,12 +17,12 @@ ms.date: 07/15/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: a4551a94c8a6b5ea54366fcc36b720cda1e6300e
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 0282336cb5df7d010571a15e9d1f9d93b82d461e
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76834181"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160325"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Microsoft id 플랫폼 코드 샘플 (v2.0 끝점)
 
@@ -34,7 +34,7 @@ Microsoft ID 플랫폼을 사용하여 다음을 수행할 수 있습니다.
 이 문서에서는 Microsoft id 플랫폼 끝점에 대 한 샘플에 대 한 링크를 간략하게 설명 하 고 제공 합니다. 이러한 샘플은 작업을 수행 하는 방법을 보여 주고 응용 프로그램에서 사용할 수 있는 코드 조각도 제공 합니다. 코드 샘플 페이지에는 요구 사항, 설치 및 설정에 도움이 되는 자세한 추가 정보 항목을 찾을 수 있습니다. 코드 내의 주석은 중요 한 부분을 이해 하는 데 도움이 됩니다.
 
 > [!NOTE]
-> V1.0 샘플에 관심이 있는 경우 [AZURE AD 코드 샘플 (v1.0 끝점)](sample-v1-code.md)을 참조 하세요.
+> V1.0 샘플에 관심이 있는 경우 [AZURE AD 코드 샘플 (v1.0 끝점)](../azuread-dev/sample-v1-code.md)을 참조 하세요.
 
 각 샘플 형식에 대 한 기본 시나리오를 이해 하려면 [Microsoft id 플랫폼 끝점에 대 한 앱 유형](v2-app-types.md)을 참조 하세요.
 
@@ -47,7 +47,7 @@ GitHub의 샘플에 참여할 수도 있습니다. 자세한 방법은 [Microsof
 | 플랫폼 | Description | 링크 |
 | -------- | --------------------- | -------- |
 | 이 이미지 ![javascript 로고](media/sample-v2-code/logo_js.png) [javascript (msal .js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) 를 보여 줍니다. | Microsoft Graph 호출 |[javascript-graphapi-web-v2](https://github.com/Azure-Samples/active-directory-javascript-graphapi-web-v2) |
-| 이 이미지 ![javascript 로고](media/sample-v2-code/logo_js.png) [javascript (msal .js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) 를 보여 줍니다. | B2C 호출 |[b2c-javascript-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp) |
+| 이 이미지 ![javascript 로고](media/sample-v2-code/logo_js.png) [javascript (msal .js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) 를 보여 줍니다. | B2C 호출 |[b2c-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp) |
 | 이 이미지 ![javascript 로고](media/sample-v2-code/logo_js.png) [javascript (msal .js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) 를 보여 줍니다. | 자체 web API를 호출 합니다. |[javascript-singlepageapp-dotnet-webapi-v2](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi-v2) |
 | 이 이미지 ![[MSAL AngularJS](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angularjs)](media/sample-v2-code/logo_angular.png)의 각도 JS 로고를 표시 합니다.| Microsoft Graph 호출  | [MsalAngularjsDemoApp](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/MsalAngularjsDemoApp)
 | 이 이미지 ![JavaScript](media/sample-v2-code/logo_angular.png)의 각도 로고 [(MSAL 각도)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular) 를 보여 줍니다.| Microsoft Graph 호출  | [MSALAngularDemoApp](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/MSALAngularDemoApp) |
@@ -75,6 +75,7 @@ GitHub의 샘플에 참여할 수도 있습니다. 자세한 방법은 [Microsof
 | 데스크톱(콘솔)   | ![이 이미지는 .NET/C# (데스크톱) 로고를 보여줍니다.](media/sample-v2-code/logo_NET.png) | [Windows 통합 인증](msal-authentication-flows.md#integrated-windows-authentication) | [dotnet-iwa-v2](https://github.com/azure-samples/active-directory-dotnet-iwa-v2) |  |
 | 데스크톱(콘솔)   | ![이 이미지는 Java 로고를 표시 합니다.](media/sample-v2-code/logo_java.png) | [Windows 통합 인증](msal-authentication-flows.md#integrated-windows-authentication) |[ms-id-java-데스크톱](https://github.com/Azure-Samples/ms-identity-java-desktop/) |  |
 | 데스크톱(콘솔)   | ![이 이미지는 .NET/C# (데스크톱) 로고를 보여줍니다.](media/sample-v2-code/logo_NETcore.png) | [사용자 이름/암호](msal-authentication-flows.md#usernamepassword) |[dotnetcore-up-v2](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) |  |
+| WAM를 사용 하는 데스크톱 (콘솔)  | ![이 이미지는 .NET/C# (데스크톱) 로고를 보여줍니다.](media/sample-v2-code/logo_NETcore.png) | [WAM와 interactive](msal-authentication-flows.md#interactive) |[dotnet-native-uwp-wam](https://github.com/azure-samples/active-directory-dotnet-native-uwp-wam) |  |
 | 데스크톱(콘솔)   | ![이 이미지는 Java 로고를 표시 합니다.](media/sample-v2-code/logo_java.png) | [사용자 이름/암호](msal-authentication-flows.md#usernamepassword) |[ms-id-java-데스크톱](https://github.com/Azure-Samples/ms-identity-java-desktop/) |  |
 | 데스크톱(콘솔)   | ![이 이미지는 Python 로고를 표시 합니다.](media/sample-v2-code/logo_python.png) | [사용자 이름/암호](msal-authentication-flows.md#usernamepassword) |[m i d-python-데스크톱](https://github.com/Azure-Samples/ms-identity-python-desktop) |  |
 | 모바일(Android, iOS, UWP)   | ![이 이미지는 .NET/C# (Xamarin) 로고를 보여줍니다.](media/sample-v2-code/logo_xamarin.png) | [대화형](msal-authentication-flows.md#interactive) |[xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) |  |
@@ -89,10 +90,10 @@ GitHub의 샘플에 참여할 수도 있습니다. 자세한 방법은 [Microsof
 
 | 클라이언트 애플리케이션 | 플랫폼 | 흐름/권한 부여 | Microsoft Graph 호출 |
 | ------------------ | -------- | ---------- | -------------------- |
-| Console | ![이 이미지는 .NET Core 로고를 보여줍니다.](media/sample-v2-code/logo_NETcore.png)</p> ASP.NET  | [클라이언트 자격 증명](msal-authentication-flows.md#client-credentials) | [dotnetcore-daemon-v2](https://github.com/azure-samples/active-directory-dotnetcore-daemon-v2) |
+| 콘솔 | ![이 이미지는 .NET Core 로고를 보여줍니다.](media/sample-v2-code/logo_NETcore.png)</p> ASP.NET  | [클라이언트 자격 증명](msal-authentication-flows.md#client-credentials) | [dotnetcore-daemon-v2](https://github.com/azure-samples/active-directory-dotnetcore-daemon-v2) |
 | 웹앱 | ![이 이미지는 ASP.NET 로고를 보여줍니다.](media/sample-v2-code/logo_NETframework.png)</p> ASP.NET  | [클라이언트 자격 증명](msal-authentication-flows.md#client-credentials) | [dotnet-daemon-v2](https://github.com/azure-samples/active-directory-dotnet-daemon-v2) |
-| Console | ![이 이미지는 Java 로고를 표시 합니다.](media/sample-v2-code/logo_java.png) | [클라이언트 자격 증명](msal-authentication-flows.md#client-credentials) | [ms-id-java-디먼](https://github.com/Azure-Samples/ms-identity-java-daemon) |
-| Console | ![이 이미지는 Python 로고를 표시 합니다.](media/sample-v2-code/logo_python.png) | [클라이언트 자격 증명](msal-authentication-flows.md#client-credentials) | [ms-chap-python-디먼](https://github.com/Azure-Samples/ms-identity-python-daemon) |
+| 콘솔 | ![이 이미지는 Java 로고를 표시 합니다.](media/sample-v2-code/logo_java.png) | [클라이언트 자격 증명](msal-authentication-flows.md#client-credentials) | [ms-id-java-디먼](https://github.com/Azure-Samples/ms-identity-java-daemon) |
+| 콘솔 | ![이 이미지는 Python 로고를 표시 합니다.](media/sample-v2-code/logo_python.png) | [클라이언트 자격 증명](msal-authentication-flows.md#client-credentials) | [ms-chap-python-디먼](https://github.com/Azure-Samples/ms-identity-python-daemon) |
 
 ## <a name="headless-applications"></a>헤드리스 애플리케이션
 
@@ -121,9 +122,9 @@ GitHub의 샘플에 참여할 수도 있습니다. 자세한 방법은 [Microsof
 | 플랫폼 | 샘플 |
 | -------- | ------------------- |
 | ![이 이미지는 ASP.NET Core 로고를 표시 합니다.](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core 2.2 | ASP.NET Core web API (서비스) Azure Function ( [dotnet-aspnetcore-v2](https://github.com/Azure-Samples/ms-identity-dotnet-webapi-azurefunctions) )  |
-| ![이 이미지는 node.js 로고를 표시 합니다.](media/sample-v2-code/logo_nodejs.png)</p>NodeJs | Nodejs 및 passport의 웹 API (서비스) [-azure-ad](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-azurefunctions) |
+| ![이 이미지는 node.js 로고를 표시 합니다.](media/sample-v2-code/logo_nodejs.png)</p>NodeJS | Nodejs 및 passport의 웹 API (서비스) [-azure-ad](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-azurefunctions) |
 | ![이 이미지는 Python 로고를 표시 합니다.](media/sample-v2-code/logo_python.png)</p>Python | [Python](https://github.com/Azure-Samples/ms-identity-python-webapi-azurefunctions) 의 Web API (서비스) |
-| ![이 이미지는 node.js 로고를 표시 합니다.](media/sample-v2-code/logo_nodejs.png)</p>NodeJs | [다음을 대신 사용 하 여 Nodejs 및 passport](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-onbehalfof-azurefunctions) 의 웹 API (서비스) |
+| ![이 이미지는 node.js 로고를 표시 합니다.](media/sample-v2-code/logo_nodejs.png)</p>NodeJS | [다음을 대신 사용 하 여 Nodejs 및 passport](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-onbehalfof-azurefunctions) 의 웹 API (서비스) |
 
 ## <a name="other-microsoft-graph-samples"></a>다른 Microsoft Graph 샘플
 
@@ -131,6 +132,6 @@ Azure AD 인증을 포함하여 Microsoft Graph API에 대한 여러 사용 패�
 
 ## <a name="see-also"></a>참고 항목
 
-- [Azure Active Directory (v1.0) 개발자 가이드](v1-overview.md)
+- [Azure Active Directory (v1.0) 개발자 가이드](../azuread-dev/v1-overview.md)
 - [Azure AD Graph API 개념 및 참조](https://msdn.microsoft.com/library/azure/hh974476.aspx)
 - [Azure AD Graph API 도우미 라이브러리](https://www.nuget.org/packages/Microsoft.Azure.ActiveDirectory.GraphClient)

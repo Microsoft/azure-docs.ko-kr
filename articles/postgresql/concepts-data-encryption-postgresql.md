@@ -6,21 +6,21 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: 917dc85672fcc5e4c3f1431f80d1f6eb68207392
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: 5516bfcb3ed32ba6635943298db2a7773db0a622
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77050046"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198703"
 ---
 # <a name="azure-database-for-postgresql-single-server-data-encryption-with-a-customer-managed-key"></a>고객 관리 키를 사용 하 여 단일 서버 데이터 암호화 Azure Database for PostgreSQL
 
 > [!NOTE]
 > 지금은이 기능을 사용 하기 위해 액세스를 요청 해야 합니다. 이렇게 하려면 AskAzureDBforPostgreSQL@service.microsoft.com에 문의 하세요.
 
-고객 관리 키를 사용 하 여 단일 서버 데이터 암호화를 Azure Database for PostgreSQL 하 여 미사용 데이터 보호에 대 한 Bring Your Own Key (BYOK)를 수행할 수 있습니다. 또한 조직이 키 및 데이터 관리에서 의무 분리를 구현할 수 있습니다. 고객 관리 암호화를 사용 하 여 키의 수명 주기, 키 사용 권한 및 키에 대 한 작업 감사를 모든 사용자에 게 책임 집니다.
+Azure Database for PostgreSQL 단일 서버에 대 한 고객 관리 키를 사용 하 여 데이터 암호화를 통해 미사용 데이터 보호에 대 한 사용자 고유의 키 (BYOK)를 가져올 수 있습니다. 또한 조직이 키 및 데이터 관리에서 의무 분리를 구현할 수 있습니다. 고객 관리 암호화를 사용 하 여 키의 수명 주기, 키 사용 권한 및 키에 대 한 작업 감사를 모든 사용자에 게 책임 집니다.
 
-단일 서버 Azure Database for PostgreSQL의 경우 서버 수준에서 데이터 암호화를 설정 합니다. 이러한 형태의 데이터 암호화에서는 DEK (데이터 암호화 키)를 암호화 하는 데 키를 사용 합니다. DEK는 고객이 소유 하 고 고객이 관리 하는 [Azure Key Vault](../key-vault/key-Vault-secure-your-key-Vault.md) 인스턴스에 저장 된 고객이 관리 하는 비대칭 키입니다. DEK는이 문서의 뒷부분에 자세히 설명 되어 있습니다.
+Azure Database for PostgreSQL 단일 서버에 대 한 고객 관리 키를 사용 하는 데이터 암호화는 서버 수준에서 설정 됩니다. 지정 된 서버에 대해 KEK (키 암호화 키) 라고 하는 고객 관리 키를 사용 하 여 서비스에서 사용 하는 DEK (데이터 암호화 키)를 암호화 합니다. KEK는 고객이 소유 하 고 고객이 관리 하는 [Azure Key Vault](../key-vault/key-Vault-secure-your-key-Vault.md) 인스턴스에 저장 되는 비대칭 키입니다. KEK (키 암호화 키) 및 DEK (데이터 암호화 키)는이 문서의 뒷부분에서 자세히 설명 합니다.
 
 Key Vault은 클라우드 기반의 외부 키 관리 시스템입니다. 가용성이 높고 RSA 암호화 키에 대 한 확장 가능 하 고 안전한 저장소를 제공 하며, 선택적으로 FIPS 140-2 수준 2의 유효성을 검사 한 하드웨어 보안 모듈 (Hsm)을 지원 합니다. 저장 된 키에 대 한 직접 액세스를 허용 하지 않지만 권한 있는 엔터티에 대 한 암호화 및 암호 해독 서비스를 제공 합니다. Key Vault는 키를 생성 하거나 가져올 수 있거나 [온-프레미스 HSM 장치에서 전송](../key-vault/key-Vault-hsm-protected-keys.md)될 수 있습니다.
 
@@ -31,11 +31,10 @@ Key Vault은 클라우드 기반의 외부 키 관리 시스템입니다. 가용
 
 Azure Database for PostgreSQL 단일 서버에 대 한 데이터 암호화는 다음과 같은 이점을 제공 합니다.
 
-* 암호화 키에 대 한 투명도, 세부적인 제어 및 관리가 향상 되었습니다.
-* Azure Key Vault에서 호스트 하는 중앙 관리 및 키 구성
-* 조직 내의 키 및 데이터 관리에서 의무의 분리를 구현할 수 있습니다.
-* 조직 내의 데이터 관리에서 키 관리를 분리 하는 기능을 통해 Key Vault 관리자는 암호화 된 데이터베이스에 액세스할 수 없도록 키 액세스 권한을 해지할 수 있습니다.
-* Microsoft는 Key Vault에서 암호화 키를 보거나 추출할 수 없기 때문에 최종 사용자의 신뢰를 강화 합니다.
+* 데이터 액세스는 키를 제거 하 고 데이터베이스에 액세스할 수 없도록 하는 기능을 통해 사용자가 완전히 제어 합니다. 
+*   키 수명 주기에 대 한 모든 권한 (회사 정책에 맞게 키 회전 포함)
+*   Azure Key Vault의 중앙 관리 및 키 구성
+*   보안 책임자와 DBA 및 시스템 관리자 간에 업무 분리를 구현 하는 기능
 
 ## <a name="terminology-and-description"></a>용어 및 설명
 

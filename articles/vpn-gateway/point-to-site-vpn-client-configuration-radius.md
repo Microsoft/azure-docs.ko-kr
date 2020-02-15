@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 01/10/2020
 ms.author: cherylmc
-ms.openlocfilehash: 16689982156743f5dc4e2ed09a0f9bc097a51b9b
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.openlocfilehash: 6e1b162d17e2369b579fc1210c57e0409b0546bc
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75903027"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77148473"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-p2s-radius-authentication"></a>P2S RADIUS 인증용 VPN 클라이언트 구성 파일 만들기 및 설치
 
@@ -38,7 +38,6 @@ P2S RADIUS 인증에 대한 구성 워크플로는 다음과 같습니다.
 
 이 아티클의 섹션을 사용하려면 먼저 사용자 이름/암호, 인증서 또는 다른 인증 유형 중에서 사용하려는 인증 유형을 결정하세요. 각 섹션에는 Windows, Mac OS X, Linux에 대한 단계가 있습니다(현재는 제한된 단계 제공).
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="adeap"></a>사용자 이름/암호 인증
 
@@ -50,7 +49,7 @@ Active Directory를 사용하거나 Active Directory를 사용하지 않도록 �
 
 Azure Portal 또는 Azure PowerShell를 사용 하 여 VPN 클라이언트 구성 파일을 생성할 수 있습니다.
 
-#### <a name="azure-portal"></a>Azure Portal
+#### <a name="azure-portal"></a>Azure 포털
 
 1. 가상 네트워크 게이트웨이로 이동 합니다.
 2. **지점 및 사이트 간 구성을**클릭 합니다.
@@ -259,7 +258,7 @@ Azure 가상 네트워크에 연결하는 모든 Mac 디바이스에 별도의 �
 7. **ID 선택**은 선택할 수 있는 인증서의 목록을 표시합니다. 적절한 인증서를 선택한 다음, **계속**을 선택합니다.
 
    !["ID 선택" 목록](./media/point-to-site-vpn-client-configuration-radius/identity.png)
-8. **로컬 ID** 상자에 인증서 이름(6단계에서 사용한 이름)을 지정합니다. 이 예에서는 **ikev2Client.com**입니다. 그런 다음 **적용** 단추를 선택 하 여 변경 내용을 저장 합니다.
+8. **로컬 ID** 상자에 인증서 이름(6단계에서 사용한 이름)을 지정합니다. 이 예에서는 **ikev2Client.com**입니다. 그런 다음, **적용** 단추를 선택하여 변경 내용을 저장합니다.
 
    !["로컬 ID" 상자](./media/point-to-site-vpn-client-configuration-radius/applyconnect.png)
 9. **네트워크** 대화 상자에서 **적용**을 선택하여 변경 내용을 모두 저장합니다. 그런 다음, **연결**을 선택하여 Azure 가상 네트워크에 대한 P2S 연결을 시작합니다.

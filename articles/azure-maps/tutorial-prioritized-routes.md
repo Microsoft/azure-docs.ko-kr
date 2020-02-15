@@ -3,22 +3,22 @@ title: '자습서: 여행 모드별 여러 경로 찾기 | Microsoft Azure Maps'
 description: 이 자습서에서는 Microsoft Azure Maps를 사용하여 다양한 여행 모드에 대한 경로를 찾는 방법을 알아봅니다.
 author: walsehgal
 ms.author: v-musehg
-ms.date: 11/12/2019
+ms.date: 01/14/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 258572d4451be6d9a1090c032467e85889148d14
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 73cc2ff49653c91d635d52b79a92d1974bfd895b
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75910860"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76989657"
 ---
 # <a name="tutorial-find-routes-for-different-modes-of-travel-using-azure-maps"></a>자습서: Azure Maps를 사용하여 여러 여행 모드에 대한 경로 찾기
 
-이 자습서에서는 Azure Maps 계정과 경로 서비스를 사용하여 여행 모드의 우선 순위에 따라 관심 지점까지의 경로를 찾는 방법을 보여 줍니다. 지도에는 서로 다른 두 개의 경로가 표시됩니다. 하나는 승용차용이고, 다른 하나는 높이, 무게 또는 위험 화물로 인해 경로가 제한되는 화물차용입니다. 이 자습서에서는 다음 작업 방법을 알아봅니다.
+이 자습서에서는 Azure Maps 계정과 경로 서비스를 사용하는 방법을 보여줍니다. 경로 서비스는 사용자의 여행 모드에 따라 우선 순위를 지정하여 관심 지점에 대한 경로를 찾을 수 있습니다. 맵에 서로 다른 두 개의 경로를 표시할 수 있습니다. 하나는 자동차이고 하나는 트럭입니다. 라우팅 서비스는 차량의 높이와 무게 때문에 또는 차량에 위험한 화물을 운반하는 경우 제한 사항을 고려합니다. 이 자습서에서는 다음 작업 방법을 알아봅니다.
 
 > [!div class="checklist"]
 > * 지도 컨트롤 API를 사용하여 새 웹 페이지 만들기
@@ -27,7 +27,7 @@ ms.locfileid: "75910860"
 > * 지도에 여러 경로 표시
 
 ## <a name="prerequisites"></a>사전 요구 사항
-계속하기 전에 [계정 만들기](quick-demo-map-app.md#create-an-account-with-azure-maps)의 지침에 따라 S1 가격 책정 계층을 사용하여 Azure Maps 계정 구독을 만들고, [기본 키 가져오기](quick-demo-map-app.md#get-the-primary-key-for-your-account)의 단계를 수행하여 계정의 기본 키를 가져옵니다. Azure Maps의 인증에 대한 자세한 내용은 [Azure Maps의 인증 관리](how-to-manage-authentication.md)를 참조하세요.
+계속하기 전에 [계정 만들기](quick-demo-map-app.md#create-an-account-with-azure-maps)의 지침을 수행하고, S1 가격 책정 계층을 선택합니다. [기본 키 가져오기](quick-demo-map-app.md#get-the-primary-key-for-your-account)의 단계를 수행하여 계정에 대한 기본 키를 가져옵니다. Azure Maps의 인증에 대한 자세한 내용은 [Azure Maps의 인증 관리](how-to-manage-authentication.md)를 참조하세요.
 
 ## <a name="create-a-new-map"></a>새 지도 만들기
 
@@ -123,7 +123,7 @@ ms.locfileid: "75910860"
 
 ## <a name="define-how-the-route-will-be-rendered"></a>경로가 렌더링되는 방식 정의
 
-이 자습서에서는 두 개의 경로를 계산하여 지도에 렌더링합니다. 한 경로는 승용차가 접근할 수 있는 도로를 사용하고 다른 경로는 트럭이 접근할 수 있는 도로를 사용합니다. 경로가 렌더링되면 경로의 시작과 끝부분에 대한 기호 아이콘을 표시하고 각 경로를 서로 다른 색상의 선으로 표시할 것입니다.
+이 자습서에서는 두 개의 경로를 계산하여 지도에 렌더링합니다. 한 경로는 승용차가 접근할 수 있는 도로를 사용하고 다른 경로는 트럭이 접근할 수 있는 도로를 사용합니다. 경로가 렌더링되면 경로의 출발과 도착에 대한 기호 아이콘이 표시되고 각 경로는 서로 다른 색상의 선으로 표시됩니다.
 
 1. 맵을 초기화한 후 맵 `ready` 이벤트 처리기에 다음 JavaScript 코드를 추가합니다.
 
@@ -158,7 +158,7 @@ ms.locfileid: "75910860"
     });
     ```
     
-    맵 `ready` 이벤트 처리기에서, 경로 선과 시작 및 끝 지점을 저장하는 데이터 원본이 만들어집니다. 선 레이어를 만들어 데이터 원본에 연결하여 경로 선이 렌더링되는 방식을 정의합니다. 식은 경로 선 기능의 속성에서 선 너비 및 색상을 검색하는 데 사용됩니다. 맵에 레이어를 추가하면 값이 `'labels'`인 두 번째 매개 변수가 전달됩니다. 이 매개 변수는 맵 레이블 아래의 이 레이어를 렌더링하도록 지정합니다. 이렇게 하면 경로 선이 도로 레이블을 가리지 않습니다. 기호 레이어가 생성되어 데이터 원본에 연결됩니다. 이 레이어는 시작 및 끝 지점이 렌더링되는 방식을 지정합니다. 이 예에서는 지점 개체의 속성에서 아이콘 이미지 및 텍스트 레이블 정보를 검색하는 식이 추가되었습니다. 
+    맵 `ready` 이벤트 처리기에서 경로 선과 출발점 및 도착점을 저장하는 데이터 원본이 만들어집니다. 선 레이어를 만들어 데이터 원본에 연결하여 경로 선이 렌더링되는 방식을 정의합니다. 식은 경로 선 기능의 속성에서 선 너비 및 색상을 검색하는 데 사용됩니다. 맵에 레이어를 추가하면 값이 `'labels'`인 두 번째 매개 변수가 전달됩니다. 이 매개 변수는 맵 레이블 아래의 이 레이어를 렌더링하도록 지정합니다. 이렇게 하면 경로 선이 도로 레이블을 가리지 않습니다. 기호 레이어가 생성되어 데이터 원본에 연결됩니다. 이 계층은 출발점과 도착점을 렌더링하는 방법을 지정합니다. 이 경우 각 지점 개체의 속성에서 아이콘 이미지 및 텍스트 레이블 정보를 검색하는 식이 추가되었습니다. 
     
 2. 이 자습서에서는 출발 지점을 시애틀 소재의 Fabrikam이라는 가상 회사로, 도착 지점을 Microsoft 본사로 설정합니다. 맵 `ready` 이벤트 처리기에서 다음 코드를 추가합니다.
 
@@ -192,7 +192,7 @@ ms.locfileid: "75910860"
 
     시작 지점과 끝 지점이 데이터 원본에 추가됩니다. `atlas.data.BoundingBox.fromData` 함수를 사용하여 시작 및 끝 지점의 경계 상자가 계산됩니다. 이 경계 상자는 `map.setCamera` 함수를 사용하여 전체 경로에 대해 맵 카메라 보기를 설정하는 데 사용됩니다. 기호 아이콘의 픽셀 크기를 보정하기 위해 안쪽 여백이 추가됩니다.
 
-4. 파일을 저장하고, 브라우저를 새로 고쳐 지도에 표시된 핀을 확인합니다. 이제 지도의 중심에 시애틀이 표시되며, 출발점을 표시하는 둥근 파란색 핀과 도착점을 표시하는 파란색 핀을 볼 수 있습니다.
+4. 파일을 저장하고, 브라우저를 새로 고쳐 지도에 표시된 핀을 확인합니다. 이제 지도 중심이 시애틀로 이동됩니다. 출발점을 표시하는 둥근 파란색 핀과 도착점을 표시하는 파란색 핀을 볼 수 있습니다.
 
    ![출발 지점과 도착 지점이 포함된 지도 보기](./media/tutorial-prioritized-routes/pins-map.png)
 
@@ -244,7 +244,7 @@ ms.locfileid: "75910860"
     });
     ```
 
-    위의 이 코드 조각은 [getRouteDirections](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.models.routedirectionsrequestbody?view=azure-maps-typescript-latest) 메서드를 통해 Azure Maps 라우팅 서비스를 쿼리합니다. 그런 후 `geojson.getFeatures()` 메서드를 사용하여 추출한 응답의 GeoJSON 기능 컬렉션에서 경로 선이 추출됩니다. 그런 다음, 경로 선이 데이터 원본에 추가됩니다. 또한 인덱스 0을 추가하여 데이터 원본의 다른 어떤 줄보다도 먼저 렌더링되도록 합니다. 이는 트럭 경로 계산이 종종 승용차 경로 계산보다 느리기 때문이며, 트럭 경로 선이 승용차 경로 후에 데이터 원본에 추가되면 그 위에 렌더링됩니다. 두 속성(멋진 파란색 음영의 스트로크 색 및 9픽셀의 스트로크 너비)이 트럭 경로 선에 추가됩니다.
+    위의 이 코드 조각은 [getRouteDirections](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.models.routedirectionsrequestbody?view=azure-maps-typescript-latest) 메서드를 통해 Azure Maps 라우팅 서비스를 쿼리합니다. 그런 후 `geojson.getFeatures()` 메서드를 사용하여 추출한 응답의 GeoJSON 기능 컬렉션에서 경로 선이 추출됩니다. 그런 다음, 경로 선이 데이터 원본에 추가됩니다. 인덱스 0은 데이터 원본의 다른 어떤 줄보다도 먼저 렌더링되도록 합니다. 이는 트럭 경로 계산이 종종 승용차 경로 계산보다 느리기 때문이며, 트럭 경로 선이 승용차 경로 후에 데이터 원본에 추가되면 그 위에 렌더링됩니다. 두 속성(멋진 파란색 음영의 스트로크 색 및 9픽셀의 스트로크 너비)이 트럭 경로 선에 추가됩니다.
 
 3. 다음 JavaScript 코드를 추가하여 승용차 경로를 생성하고 결과를 표시합니다.
 

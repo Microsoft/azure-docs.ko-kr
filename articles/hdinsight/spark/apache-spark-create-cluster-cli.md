@@ -2,17 +2,17 @@
 title: '빠른 시작: Azure CLI를 사용하는 Apache Spark - Azure HDInsight'
 description: 이 빠른 시작에서는 Azure CLI를 사용하여 Azure HDInsight에서 Apache Spark 클러스터를 만드는 방법을 보여줍니다.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: quickstart
-ms.date: 06/12/2019
-ms.author: hrasheed
-ms.openlocfilehash: 71b5e9f0ece79633673b183ca7288852f42ca3c0
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.date: 02/03/2020
+ms.openlocfilehash: ac937519ca3fa9381fe4970f2e4336fe4a0a9227
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73494718"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76989334"
 ---
 # <a name="quickstart-create-apache-spark-cluster-in-azure-hdinsight-using-azure-cli"></a>빠른 시작: Azure CLI를 사용하여 Azure HDInsight에서 Apache Spark 클러스터 만들기
 
@@ -20,7 +20,7 @@ ms.locfileid: "73494718"
 
 Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 Azure CLI. Azure CLI를 설치하지 않은 경우 [Azure CLI 설치](https://docs.microsoft.com/cli/azure/install-azure-cli)에 나온 단계를 참조하세요.
 
@@ -28,7 +28,7 @@ Azure CLI. Azure CLI를 설치하지 않은 경우 [Azure CLI 설치](https://do
 
 ## <a name="create-an-apache-spark-cluster"></a>Apache Spark 클러스터 만들기
 
-1. Azure 구독에 로그인합니다. Azure Cloud Shell을 사용하려는 경우 코드 블록의 오른쪽 위 모서리에 있는 **사용해보기**를 선택하기만 하면 됩니다. 그렇지 않은 경우 아래 명령을 입력합니다.
+1. Azure 구독에 로그인합니다. Azure Cloud Shell을 사용하려는 경우 코드 블록의 오른쪽 위 모서리에 있는 **사용해보기**를 선택합니다. 그렇지 않은 경우 아래 명령을 입력합니다.
 
     ```azurecli-interactive
     az login
@@ -103,12 +103,12 @@ Azure CLI. Azure CLI를 설치하지 않은 경우 [Azure CLI 설치](https://do
         --http-password $httpCredential \
         --http-user admin \
         --location $location \
-        --size $clusterSizeInNodes \
+        --workernode-count $clusterSizeInNodes \
         --ssh-password $sshCredentials \
         --ssh-user sshuser \
         --storage-account $AZURE_STORAGE_ACCOUNT \
         --storage-account-key $AZURE_STORAGE_KEY \
-        --storage-default-container $AZURE_STORAGE_CONTAINER \
+        --storage-container $AZURE_STORAGE_CONTAINER \
         --version $clusterVersion
     ```
 

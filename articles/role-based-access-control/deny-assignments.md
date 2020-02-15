@@ -1,5 +1,5 @@
 ---
-title: Azure 리소스에 대한 거부 할당 이해 | Microsoft Docs
+title: Azure 리소스에 대한 거부 할당 이해
 description: Azure 리소스에 대한 RBAC(역할 기반 액세스 제어)의 거부 할당을 알아봅니다.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
-ms.openlocfilehash: 2c663b587d2e9ee278fc774c2841899b060ccbcf
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 7ab811635ca50c3a28ecd8bdf6d0f18fad4c384f
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74479363"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137368"
 ---
 # <a name="understand-deny-assignments-for-azure-resources"></a>Azure 리소스에 대한 거부 할당 이해
 
@@ -39,9 +39,9 @@ Azure에서 거부 할당을 만들고 관리 하 여 리소스를 보호 합니
 
 거부 할당은 역할 할당과 비슷한 패턴을 따르고 몇 가지 차이점이 있습니다.
 
-| 기능 | 역할 할당 | 할당 거부 |
+| Capability | 역할 할당 | 할당 거부 |
 | --- | --- | --- |
-| 액세스 권한 부여 | :heavy_check_mark: |  |
+| 액세스 허용 | :heavy_check_mark: |  |
 | 액세스 거부 |  | :heavy_check_mark: |
 | 직접 만들 수 있습니다. | :heavy_check_mark: |  |
 | 범위에서 적용 | :heavy_check_mark: | :heavy_check_mark: |
@@ -54,21 +54,21 @@ Azure에서 거부 할당을 만들고 관리 하 여 리소스를 보호 합니
  거부 할당에 포함된 속성은 다음과 같습니다.
 
 > [!div class="mx-tableFixed"]
-> | 속성 | 필수 | 에 | 설명 |
+> | 속성 | 필수 | 형식 | 설명 |
 > | --- | --- | --- | --- |
-> | `DenyAssignmentName` | 예 | 문자열 | 거부 할당의 표시 이름입니다. 이름은 지정된 범위에 대해 고유해야 합니다. |
-> | `Description` | 아니오 | 문자열 | 거부 할당의 설명입니다. |
-> | `Permissions.Actions` | Actions 또는 DataActions 하나 이상 | 문자열[] | 거부 할당이 액세스를 차단하는 관리 작업을 지정하는 문자열 배열입니다. |
-> | `Permissions.NotActions` | 아니오 | 문자열[] | 거부 할당에서 제외할 관리 작업을 지정하는 문자열 배열입니다. |
-> | `Permissions.DataActions` | Actions 또는 DataActions 하나 이상 | 문자열[] | 거부 할당이 액세스를 차단하는 데이터 작업을 지정하는 문자열 배열입니다. |
-> | `Permissions.NotDataActions` | 아니오 | 문자열[] | 거부 할당에서 제외할 데이터 작업을 지정하는 문자열 배열입니다. |
-> | `Scope` | 아니오 | 문자열 | 거부 할당이 적용되는 범위를 지정하는 범위입니다. |
-> | `DoNotApplyToChildScopes` | 아니오 | Boolean | 거부 할당이 하위 범위에 적용되는지 여부를 지정합니다. 기본값은 False입니다. |
-> | `Principals[i].Id` | 예 | 문자열[] | 거부 할당이 적용되는 Azure AD 보안 주체 개체 ID(사용자, 그룹, 서비스 주체 또는 관리 ID)의 배열입니다. 모든 보안 주체를 나타내려면 빈 GUID `00000000-0000-0000-0000-000000000000`으로 설정합니다. |
-> | `Principals[i].Type` | 아니오 | 문자열[] | 보안 주체 [i]. Id로 표시 되는 개체 형식의 배열입니다. 모든 보안 주체를 나타내려면 `SystemDefined`로 설정 합니다. |
-> | `ExcludePrincipals[i].Id` | 아니오 | 문자열[] | 거부 할당이 적용되지 않는 Azure AD 보안 주체 개체 ID(사용자, 그룹, 서비스 주체 또는 관리 ID)의 배열입니다. |
-> | `ExcludePrincipals[i].Type` | 아니오 | 문자열[] | ExcludePrincipals[i].Id로 표시되는 개체 유형의 배열입니다. |
-> | `IsSystemProtected` | 아니오 | Boolean | 이 거부 할당이 Azure에서 생성되었으며 편집하거나 삭제할 수 없는지 여부를 지정합니다. 현재 모든 거부 할당은 시스템에서 보호됩니다. |
+> | `DenyAssignmentName` | 예 | String | 거부 할당의 표시 이름입니다. 이름은 지정된 범위에 대해 고유해야 합니다. |
+> | `Description` | 아니요 | String | 거부 할당의 설명입니다. |
+> | `Permissions.Actions` | Actions 또는 DataActions 하나 이상 | String[] | 거부 할당이 액세스를 차단하는 관리 작업을 지정하는 문자열 배열입니다. |
+> | `Permissions.NotActions` | 아니요 | String[] | 거부 할당에서 제외할 관리 작업을 지정하는 문자열 배열입니다. |
+> | `Permissions.DataActions` | Actions 또는 DataActions 하나 이상 | String[] | 거부 할당이 액세스를 차단하는 데이터 작업을 지정하는 문자열 배열입니다. |
+> | `Permissions.NotDataActions` | 아니요 | String[] | 거부 할당에서 제외할 데이터 작업을 지정하는 문자열 배열입니다. |
+> | `Scope` | 아니요 | String | 거부 할당이 적용되는 범위를 지정하는 범위입니다. |
+> | `DoNotApplyToChildScopes` | 아니요 | 부울 | 거부 할당이 하위 범위에 적용되는지 여부를 지정합니다. 기본값은 false입니다. |
+> | `Principals[i].Id` | 예 | String[] | 거부 할당이 적용되는 Azure AD 보안 주체 개체 ID(사용자, 그룹, 서비스 주체 또는 관리 ID)의 배열입니다. 모든 보안 주체를 나타내려면 빈 GUID `00000000-0000-0000-0000-000000000000`으로 설정합니다. |
+> | `Principals[i].Type` | 아니요 | String[] | 보안 주체 [i]. Id로 표시 되는 개체 형식의 배열입니다. 모든 보안 주체를 나타내려면 `SystemDefined`로 설정 합니다. |
+> | `ExcludePrincipals[i].Id` | 아니요 | String[] | 거부 할당이 적용되지 않는 Azure AD 보안 주체 개체 ID(사용자, 그룹, 서비스 주체 또는 관리 ID)의 배열입니다. |
+> | `ExcludePrincipals[i].Type` | 아니요 | String[] | ExcludePrincipals[i].Id로 표시되는 개체 유형의 배열입니다. |
+> | `IsSystemProtected` | 아니요 | 부울 | 이 거부 할당이 Azure에서 생성되었으며 편집하거나 삭제할 수 없는지 여부를 지정합니다. 현재 모든 거부 할당은 시스템에서 보호됩니다. |
 
 ## <a name="the-all-principals-principal"></a>모든 보안 주체 보안 주체
 

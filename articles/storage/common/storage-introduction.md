@@ -5,15 +5,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 06/20/2019
+ms.date: 01/16/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 4725329ace12a2bfb285253c52249f242da31619
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: ddd4f45e88c0bcc63fb62cc816fae4dbad255841
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75970203"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157587"
 ---
 # <a name="introduction-to-azure-storage"></a>Azure Storage 소개
 
@@ -52,7 +52,7 @@ Blob Storage의 개체는 HTTP 또는 HTTPS를 통해 전 세계 어디에서든
 
 Blob 스토리지에 대한 자세한 내용은 [Blob 스토리지 소개](../blobs/storage-blobs-introduction.md)를 참조하세요.
 
-## <a name="azure-files"></a>Azure Files
+## <a name="azure-files"></a>Azure 파일
 
 [Azure Files](../files/storage-files-introduction.md)를 사용하면 표준 SMB(서버 메시지 블록) 프로토콜을 사용하여 액세스할 수 있는 고가용성 네트워크 파일 공유를 설정할 수 있습니다. 즉, 여러 VM이 읽기 및 쓰기 권한을 모두 사용하여 동일한 파일을 공유할 수 있습니다. 또한 REST 인터페이스 또는 스토리지 클라이언트 라이브러리를 사용하여 파일을 읽을 수 있습니다.
 
@@ -84,7 +84,7 @@ Azure Table Storage는 이제 Azure Cosmos DB의 일부입니다. Azure Table St
 
 Table Storage에 대한 자세한 내용은 [Azure Table Storage 개요](../tables/table-storage-overview.md)를 참조하세요.
 
-## <a name="disk-storage"></a>Disk Storage
+## <a name="disk-storage"></a>디스크 스토리지
 
 Azure Managed Disk는 VHD(가상 하드 디스크)입니다. 온-프레미스 서버의 물리적 디스크처럼 생각할 수 있지만 가상화된 디스크입니다. Azure Managed Disks는 Azure의 무작위 IO 스토리지 개체인 페이지 Blob으로 저장됩니다. 관리 디스크를 ‘관리’로 부르는 것은 페이지 Blob, Blob 컨테이너 및 Azure Storage 계정에 대한 추상이기 때문입니다. 관리 디스크를 사용할 경우 디스크를 프로비저닝하기만 하면 Azure에서 나머지 작업을 처리합니다.
 
@@ -118,13 +118,11 @@ Azure Storage 암호화는 조직의 보안 및 규정 준수 약정에 맞게 �
 
 Azure Storage 클라이언트 라이브러리는 네트워크를 통해 전송 하기 전에 클라이언트 라이브러리에서 데이터를 암호화 하 고 응답을 해독 하는 메서드를 제공 합니다. 클라이언트 쪽 암호화를 통해 암호화 된 데이터는 Azure Storage 하 여 미사용 에서도 암호화 됩니다. 클라이언트 쪽 암호화에 대 한 자세한 내용은 [Azure Storage 용 .net을 사용 하는 클라이언트 쪽 암호화](storage-client-side-encryption.md)를 참조 하세요.
 
-## <a name="redundancy"></a>중복성
+## <a name="redundancy"></a>중복
 
-데이터가 지속되는지 확인하기 위해 Azure Storage는 여러 데이터 복사본을 복제합니다. 스토리지 계정을 설정할 때 중복 옵션을 선택합니다.
+데이터를 지속적으로 유지 하기 위해 Azure Storage는 데이터의 복사본을 여러 개 저장 합니다. 스토리지 계정을 설정할 때 중복 옵션을 선택합니다.
 
 [!INCLUDE [storage-common-redundancy-options](../../../includes/storage-common-redundancy-options.md)]
-
-재해 복구에 대한 자세한 내용은 [Azure Storage에서 재해 복구 및 스토리지 계정 장애 조치(failover)(미리 보기)](storage-disaster-recovery-guidance.md)를 참조하세요.
 
 ## <a name="transferring-data-to-and-from-azure-storage"></a>Azure Storage 간에 데이터 전송
 

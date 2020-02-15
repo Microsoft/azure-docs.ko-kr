@@ -10,14 +10,14 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 12/18/2019
+ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: 211ac68fd10cd745faf68a5efae7392345008d7b
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: 5ed5d9337dd4e7acdbba25c4cb66d2690793f250
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75941458"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77134402"
 ---
 # <a name="overview-of-red-hat-enterprise-linux-images"></a>Red Hat Enterprise Linux 이미지 개요
 이 문서에서는 명명 및 보존 정책에 대한 정책과 함께 Azure Marketplace에서 사용할 수 있는 RHEL(Red Hat Enterprise Linux) 이미지를 설명합니다.
@@ -30,7 +30,7 @@ ms.locfileid: "75941458"
 >[!NOTE]
 > Azure marketplace에서 RHEL 이미지와 관련 된 모든 문제에 대해 Microsoft에 지원 티켓을 제출 하세요.
 
-## <a name="images-available-in-azure"></a>Azure에서 사용할 수 있는 이미지
+## <a name="viewing-images-available-in-azure"></a>Azure에서 사용할 수 있는 이미지 보기
 Marketplace에서 "Red Hat"를 검색 하거나 Azure Portal UI에서 리소스를 만들 때 사용 가능한 모든 RHEL 이미지의 하위 집합만 표시 됩니다. Azure CLI/PowerShell/API를 사용하여 항상 사용 가능한 VM 이미지의 전체 세트를 얻을 수 있습니다.
 
 Azure에서 사용 가능한 Red Hat 이미지의 전체 세트를 보려면 다음 명령을 실행합니다.
@@ -60,24 +60,25 @@ az vm create --name RhelVM --resource-group TestRG --image RedHat:RHEL:7-LVM:lat
 
 >[!NOTE]
 > 일반적으로 최신을 결정하는 버전의 비교는 [CompareTo 메서드](https://msdn.microsoft.com/library/a5ts8tb6.aspx)의 규칙을 따릅니다.
+이 이미지 버전 비교는 문자열이 아닌 [버전](https://docs.microsoft.com/dotnet/api/system.version.-ctor?view=netframework-4.8) 개체로 값을 비교 하 여 수행 됩니다.
 
-### <a name="rhel-6-image-types"></a>RHEL 6 이미지 형식
+## <a name="rhel-6-image-types"></a>RHEL 6 이미지 형식
 RHEL .x 이미지의 경우 이미지 형식은 다음과 같습니다.
 
-|게시자 | 제품 | SKU 값 | 버전 | 세부 정보
+|게시자 | 제안 | SKU 값 | 버전 | 세부 정보
 |----------|-------|-----------|---------|--------
 |RedHat | RHEL | 부 버전 (예: 6.9) | RHEL 부 버전의 연결 된 값 및 게시 된 날짜 (예: 6.9.2018010506) | 모든 표준 RHEL .x 이미지는이 규칙을 따릅니다.
 |RedHat | rhel byos | rhel-raw69 | RHEL 부 버전의 연결 된 값 및 게시 된 날짜 (예: 6.9.20181023) | 이 이미지는 RHEL 6.9 BYOS 이미지입니다.
 |RedHat | RHEL | RHEL-SAP-APPS | RHEL 부 버전의 연결 된 값 및 게시 된 날짜 (예: 6.8.2017053118) | 이는 RHEL 6.8 for SAP Applications 이미지입니다. SAP 응용 프로그램 리포지토리 뿐만 아니라 기본 RHEL 리포지토리에 액세스할 수 있습니다.
 |RedHat | RHEL | RHEL-SAP-HANA | RHEL 부 버전의 연결 된 값 및 게시 된 날짜 (예: 6.7.2017053121) | SAP HANA 이미지에 대 한 RHEL 6.7입니다. 기본 RHEL 리포지토리 뿐만 아니라 SAP HANA 리포지토리에 액세스할 수 있습니다.
 
-### <a name="rhel-7-image-types"></a>RHEL 7 이미지 형식
+## <a name="rhel-7-image-types"></a>RHEL 7 이미지 형식
 RHEL 7.x 이미지의 경우 몇 가지 다른 이미지 유형이 있습니다. 다음 표에서는 제공 하는 다양 한 이미지 집합을 보여 줍니다. Az CLI 명령 `az vm image list --publisher redhat --all`를 사용 하 여 전체 목록을 볼 수 있습니다.
 
 >[!NOTE]
 > 달리 지정 되지 않은 경우 모든 이미지는 LVM으로 분할 되 고 일반 RHEL 리포지토리에 연결 됩니다 (예: E4S가 아닌 EUS). 앞으로는 LVM 분할 이미지만 게시로 전환 하지만이 결정에 대 한 피드백을 공개 합니다. SAP 용 확장 업데이트 지원 및 업데이트 서비스에 대 한 자세한 내용은 [Red Hat Enterprise Linux 수명 주기 페이지](https://access.redhat.com/support/policy/updates/errata)에서 확인할 수 있습니다.
 
-|게시자 | 제품 | SKU 값 | 버전 | 세부 정보
+|게시자 | 제안 | SKU 값 | 버전 | 세부 정보
 |----------|-------|------------|---------|--------
 |RedHat | RHEL | 부 버전 (예: 7.6) | RHEL 부 버전의 연결 된 값 및 게시 된 날짜 (예: 7.6.2019102813) | 4 월 2019 일 전에 게시 된 이미지는 표준 RHEL 리포지토리에 연결 됩니다. 4 월 2019 일 이후에 게시 된 이미지는 Red Hat의 EUS (확장 업데이트 지원) 리포지토리에 연결 되어 특정 부 버전의 버전 잠금을 허용 합니다. 일반 리포지토리를 사용 하는 고객은 SKU 값에서 7LVM 또는 7-RAW를 포함 하는 이미지를 사용 해야 합니다 (아래 세부 정보). RHEL 7.7 이상 이미지는 LVM으로 분할 됩니다. 이 범주의 다른 모든 이미지는 원시 분할 됩니다.
 |RedHat | RHEL | 7-RAW | RHEL 부 버전의 연결 된 값 및 게시 된 날짜 (예: 7.6.2019102813) | 이러한 이미지는 원시 분할 됩니다 (즉, 논리적 볼륨이 추가 되지 않음).
@@ -90,15 +91,17 @@ RHEL 7.x 이미지의 경우 몇 가지 다른 이미지 유형이 있습니다.
 |RedHat | RHEL | RHEL-SAP-APPS | RHEL 부 버전의 연결 된 값 및 게시 된 날짜 (예: 7.3.2017053118) | 이러한 이미지는 sap 응용 프로그램 및 SAP HANA 리포지토리가 SAP 리포지토리로 결합 되어 최신 상태가 아닙니다. 이러한 이미지는 SAP 응용 프로그램 이미지에 대 한 RHEL입니다. SAP 응용 프로그램 리포지토리 뿐만 아니라 기본 RHEL 리포지토리에 액세스할 수 있습니다.
 |RedHat | RHEL | RHEL-SAP-HANA | RHEL 부 버전의 연결 된 값 및 게시 된 날짜 (예: 7.3.2018051421) | 이러한 이미지는 sap 응용 프로그램 및 SAP HANA 리포지토리가 SAP 리포지토리로 결합 되어 최신 상태가 아닙니다. RHEL for SAP HANA 이미지입니다. 기본 RHEL 리포지토리 뿐만 아니라 SAP HANA 리포지토리에 액세스할 수 있습니다.
 
-### <a name="rhel-8-image-types"></a>RHEL 8 이미지 형식
+## <a name="rhel-8-image-types"></a>RHEL 8 이미지 형식
 RHEL 8 이미지 형식에 대 한 세부 정보는 아래와 같습니다.
 
-|게시자 | 제품 | SKU 값 | 버전 | 세부 정보
+|게시자 | 제안 | SKU 값 | 버전 | 세부 정보
 |----------|-------|------------|---------|--------
 |RedHat | RHEL | 8 | RHEL 부 버전의 연결 된 값 및 게시 된 날짜 (예: 8.0.20191023) | 이러한 이미지는 표준 Red Hat 리포지토리에 연결 된 RHEL 8.0 LVM 분할 이미지입니다.
 |RedHat | RHEL | 8-gen2 | RHEL 부 버전의 연결 된 값 및 게시 된 날짜 (예: 8.0.20191024) | 이러한 이미지는 표준 Red Hat 리포지토리에 연결 된 Hyper-v 세대 2 RHEL 8.0 LVM 분할 이미지입니다. Azure의 2 세대 Vm에 대 한 자세한 내용은 [여기](https://docs.microsoft.com/azure/virtual-machines/linux/generation-2)에서 제공 됩니다.
 
-## <a name="extended-update-support-eus"></a>EUS (확장 업데이트 지원)
+## <a name="rhel-longer-support-add-ons"></a>RHEL 더 이상 추가 기능을 지원 합니다.
+
+### <a name="extended-update-support-eus"></a>EUS (확장 업데이트 지원)
 2019 4 월에는 기본적으로 EUS (확장 업데이트 지원) 리포지토리에 연결 된 RHEL 이미지를 사용할 수 있습니다. RHEL EUS에 대 한 자세한 내용은 [Red Hat 설명서](https://access.redhat.com/articles/rhel-eus)에서 제공 됩니다.
 
 EUS 리포지토리로 전환 하는 것이 가능 하며 지원 됩니다. VM을 EUS로 전환 하는 방법에 대 한 지침과 EUS 지원 기간에 대 한 자세한 정보는 [여기](https://aka.ms/rhui-update#rhel-eus-and-version-locking-rhel-vms)에서 확인할 수 있습니다.
@@ -106,7 +109,7 @@ EUS 리포지토리로 전환 하는 것이 가능 하며 지원 됩니다. VM�
 >[!NOTE]
 > EUS는 RHEL 특별 기능에서 지원 되지 않습니다. 즉, 일반적으로 RHEL 특별 채널에서 사용할 수 있는 패키지를 설치 하는 경우 EUS에서이 작업을 수행할 수 없습니다. Red Hat 제품 수명 주기는 [여기](https://access.redhat.com/support/policy/updates/extras/)에 자세히 설명 되어 있습니다.
 
-### <a name="differentiating-between-regular-and-eus-images"></a>일반 및 EUS 이미지를 구별 합니다.
+#### <a name="differentiating-between-regular-and-eus-images"></a>일반 및 EUS 이미지를 구별 합니다.
 EUS 리포지토리에 연결 된 이미지를 사용 하려는 고객은 SKU에 RHEL 부 버전 번호가 포함 된 RHEL 이미지를 사용 해야 합니다.
 
 예를 들어 다음과 같은 두 RHEL 7.4 이미지를 사용할 수 있습니다.
@@ -133,11 +136,16 @@ RHEL 7.5      |RedHat:RHEL:7.5:7.5.2019060305 | 6 월 2019 일 이후 게시 된
 RHEL 7.6      |RedHat:RHEL:7.6:7.6.2019052206 | 2019 이상 게시 된 이미지는 기본적으로 EUS입니다.  |
 RHEL 8.0      |N/A                            | Red Hat에서 제공 되는 EUS 없음                               |
 
+### <a name="update-services-for-sap-e4s"></a>SAP 용 업데이트 서비스 (E4S)
+Sap 용 최신 RHEL 이미지는 SAP 솔루션 구독 용 업데이트 서비스 (E4S)에 연결 됩니다. E4S에 대 한 자세한 내용은 Red Hat [설명서](https://access.redhat.com/support/policy/updates/errata#Update_Services_for_SAP_Solutions)에서 확인할 수 있습니다.
 
+#### <a name="rhel-images-with-e4s"></a>E4S를 사용 하 여 이미지 RHEL
+12 월 2019 일 이후에 생성 된 다음 제품의 이미지는 E4S 리포지토리에 연결 됩니다.
 
+* RHEL (SAP 용 RHEL)
+* RHEL (HA 및 업데이트 서비스를 사용 하는 SAP 용 RHEL)
 
-
-### <a name="other-available-offers-and-skus"></a>다른 사용 가능한 제품 및 SKU
+## <a name="other-available-offers-and-skus"></a>기타 사용 가능한 제품 및 Sku
 사용 가능한 제품 및 SKU의 전체 목록은 위의 표에 나열된 것 이외에 추가 이미지를 포함할 수 있습니다(예: `RedHat:rhel-ocp-marketplace:rhel74:7.4.1`). 이러한 제품은 특정 마켓플레이스 솔루션의 지원을 제공하는 데 사용할 수 있거나 미리 보기 및 테스트 목적으로 게시될 수 있습니다. 경고 없이 언제든지 변경되거나 제거될 수 있습니다. 현재 상태가 Microsoft 또는 Red Hat에서 공개적으로 문서화되지 않는 한 사용하지 마십시오.
 
 ## <a name="publishing-policy"></a>정책 게시

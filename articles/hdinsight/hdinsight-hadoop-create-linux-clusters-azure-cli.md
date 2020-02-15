@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/03/2020
-ms.openlocfilehash: 0921caa19ee86ddf2766642211d8204059550b02
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: b9d935e72c67b78484337e39e0897d4962340636
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76990694"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77199044"
 ---
 # <a name="create-hdinsight-clusters-using-the-azure-cli"></a>Azure CLI를 사용하여 HDInsight 클러스터 만들기
 
@@ -25,7 +25,7 @@ ms.locfileid: "76990694"
 
 Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 Azure CLI. Azure CLI를 설치하지 않은 경우 [Azure CLI 설치](https://docs.microsoft.com/cli/azure/install-azure-cli)에 나온 단계를 참조하세요.
 
@@ -48,7 +48,7 @@ Azure CLI. Azure CLI를 설치하지 않은 경우 [Azure CLI 설치](https://do
     |---|---|
     |`--workernode-count`| 클러스터의 작업자 노드 수입니다. 이 문서에서는 `clusterSizeInNodes` 변수를 `--workernode-count`에 전달 된 값으로 사용 합니다. |
     |`--version`| HDInsight 클러스터 버전입니다. 이 문서에서는 `clusterVersion` 변수를 `--version`에 전달 된 값으로 사용 합니다. 참고 항목: [지원 되는 HDInsight 버전](./hdinsight-component-versioning.md#supported-hdinsight-versions)|
-    |`--type`| HDInsight 클러스터 유형 (예: hadoop, interactivehive, hbase, kafka, 폭풍, spark, rserver, mlservices).  이 문서에서는 `clusterType` 변수를 `--type`에 전달 된 값으로 사용 합니다. 참고 항목: [클러스터 형식 및 구성](./hdinsight-hadoop-provision-linux-clusters.md#cluster-types)|
+    |`--type`| HDInsight 클러스터 유형 (예: hadoop, interactivehive, hbase, kafka, 폭풍, spark, rserver, mlservices).  이 문서에서는 `clusterType` 변수를 `--type`에 전달 된 값으로 사용 합니다. 참고 항목: [클러스터 형식 및 구성](./hdinsight-hadoop-provision-linux-clusters.md#cluster-type)|
     |`--component-version`|' Component = version ' 형식의 공백으로 구분 된 버전에 있는 다양 한 Hadoop 구성 요소의 버전입니다. 이 문서에서는 `componentVersion` 변수를 `--component-version`에 전달 된 값으로 사용 합니다. 참고 항목: [Hadoop 구성 요소](./hdinsight-component-versioning.md#apache-hadoop-components-available-with-different-hdinsight-versions)|
 
     `RESOURCEGROUPNAME`, `LOCATION`, `CLUSTERNAME`, `STORAGEACCOUNTNAME`및 `PASSWORD`을 원하는 값으로 바꿉니다. 다른 변수의 값을 원하는 대로 변경 합니다. 그런 다음 CLI 명령을 입력 합니다.

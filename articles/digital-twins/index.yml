@@ -11,13 +11,13 @@ metadata:
   ms.collection: collection
   author: KingdomOfEnds
   ms.author: v-adgera
-  ms.date: 12/12/2019
-  ms.openlocfilehash: 2eaad514cba989010762aab5c88fedef0181bd60
-  ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+  ms.date: 02/07/2020
+  ms.openlocfilehash: e5d66ffb35cb0ce50aa7898cad30bf9fd0bf57ac
+  ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 12/25/2019
-  ms.locfileid: "75438083"
+  ms.lasthandoff: 02/09/2020
+  ms.locfileid: "77110579"
 landingContent:
 - title: Azure Digital Twins 정보
   linkLists:

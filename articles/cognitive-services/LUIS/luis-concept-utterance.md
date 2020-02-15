@@ -55,10 +55,10 @@ LUIS 모델에 [예제 발언을 추가](luis-how-to-add-example-utterances.md)�
 
 |예제 발언|
 |--|
-|how do I get a computer?|
-|Where do I get a computer?|
-|I want to get a computer, how do I go about it?|
-|When can I have a computer?| 
+|컴퓨터는 어떻게 구입합니까?|
+|컴퓨터는 어디에서 구입합니까?|
+|컴퓨터를 구입하고 싶습니다. 어떻게 하면 되나요?|
+|컴퓨터는 언제 구입합니까?| 
 
 여기서 핵심 용어 "computer"는 다양 하지 않습니다. 데스크톱 컴퓨터, 랩톱, 워크스테이션 또는 간단히 머신과 같은 대체 용어를 사용합니다. LUIS는 컨텍스트에서 동의어를 지능적으로 유추할 수 있지만 교육용 길이 발언을 만드는 경우에는 항상 변경 하는 것이 좋습니다.
 
@@ -144,8 +144,8 @@ Utterance 정규화는 앱 JSON 파일의 설정 이므로 앱을 만들거나 �
 
 |발화|
 |--|
-|What kind of county fairs are happening in the Seattle area this summer?|
-|Is the current rating for the Seattle review fair?|
+|올 여름 시애틀 지역에서 열리는 정기시로는 어떤 게 있나요?|
+|시애틀 리뷰에 매겨긴 현재 평점은 공정합니까?|
 
 이벤트 엔터티에서 모든 이벤트 데이터를 찾도록 하려면 두 번째 발화가 아닌 첫 번째 발화에서 `fair` 단어에 레이블을 지정하세요.
 

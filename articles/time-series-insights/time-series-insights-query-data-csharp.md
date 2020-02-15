@@ -9,18 +9,21 @@ manager: cshankar
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 01/31/2020
+ms.date: 02/03/2020
 ms.custom: seodec18
-ms.openlocfilehash: a5cb435b38a776ba652854592bdc7d3e833742d1
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 9f7819974e3548baf5e10f0bf9a2d656d9412beb
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76935087"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76987974"
 ---
 # <a name="query-data-from-the-azure-time-series-insights-ga-environment-using-c"></a>를 사용 하 여 Azure Time Series Insights GA 환경에서 데이터 쿼리C#
 
 이 C# 예제에서는 [ga 쿼리 api](https://docs.microsoft.com/rest/api/time-series-insights/ga-query) 를 사용 하 여 Azure Time Series Insights ga 환경에서 데이터를 쿼리 하는 방법을 보여 줍니다.
+
+> [!TIP]
+> 에서 C# GA 코드 샘플 [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample)을 봅니다.
 
 ## <a name="summary"></a>요약
 
@@ -42,25 +45,15 @@ ms.locfileid: "76935087"
    * [환경 이벤트 스트리밍 API 가져오기](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-streamed-api)
    * [환경 집계 스트리밍 API 가져오기](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-streamed-api)
 
-> [!NOTE]
-> 예제 코드는 [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample)에서 사용할 수 있습니다.
-
 ## <a name="prerequisites-and-setup"></a>필수 구성 요소 및 설치
 
 샘플 코드를 컴파일 및 실행하기 전에 다음 단계를 완료합니다.
 
 1. [GA Azure Time Series Insights 환경을 프로 비전](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-get-started) 합니다.
-
 1. [인증 및 권한 부여](time-series-insights-authentication-and-authorization.md)에 설명 된 대로 Azure Active Directory에 대 한 Azure Time Series Insights 환경을 구성 합니다. 
-
 1. 필요한 프로젝트 종속성을 설치 합니다.
-
 1. 각 **#DUMMY #** 을 적절 한 환경 식별자로 바꿔서 아래 샘플 코드를 편집 합니다.
-
 1. Visual Studio 내에서 코드를 실행 합니다.
-
-> [!TIP]
-> * 에서 다른 C# GA 코드 샘플 [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample)을 봅니다.
 
 ## <a name="project-dependencies"></a>프로젝트 종속성
 
@@ -73,7 +66,9 @@ ms.locfileid: "76935087"
 * [System.identitymodel. ActiveDirectory](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/) -3.13.9로 package.
 * [Newtonsoft.json](https://www.nuget.org/packages/Newtonsoft.Json) -9.0.1 package.
 
-[NuGet 2.12 +](https://www.nuget.org/)를 사용 하 여 패키지를 추가 합니다.
+**빌드** > **솔루션 빌드** 옵션을 선택 하 여 Visual Studio 2019에서 패키지를 다운로드 합니다.
+
+또는 [NuGet 2.12 +](https://www.nuget.org/)를 사용 하 여 패키지를 추가 합니다.
 
 * `dotnet add package Newtonsoft.Json --version 9.0.1`
 * `dotnet add package Microsoft.IdentityModel.Clients.ActiveDirectory --version 3.13.9`

@@ -271,6 +271,8 @@
               href: knowledge-store-view-storage-explorer.md
             - name: Power BI로 연결
               href: knowledge-store-connect-power-bi.md
+            - name: 프로젝션 예제
+              href: knowledge-store-projections-examples.md
     - name: 쿼리 문서
       items:
         - name: 쿼리 형식 및 컴퍼지션
@@ -311,14 +313,20 @@
           href: search-pagination-page-layout.md
         - name: 관련성 튜닝(점수 매기기 프로필)
           href: index-add-scoring-profiles.md
-    - name: 관리 및 모니터링
+    - name: 서비스 관리
       items:
-        - name: 포털 관리
+        - name: 포털
           href: search-manage.md
-        - name: PowerShell 관리
+        - name: PowerShell
           href: search-manage-powershell.md
-        - name: 작업 모니터링 및 로깅
+    - name: 모니터링 및 로깅
+      items:
+        - name: 기본 사항
           href: search-monitor-usage.md
+        - name: 쿼리 작업 모니터링
+          href: search-monitor-queries.md
+        - name: 진단 로깅
+          href: search-monitor-logs.md
         - name: 트래픽 분석 검색
           href: search-traffic-analytics.md
     - name: 문제 해결

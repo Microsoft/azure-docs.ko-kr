@@ -1,24 +1,24 @@
 ---
 title: Azure 애플리케이션 Insights 에이전트 API 참조
-description: 에이전트 API 참조를 Application Insights 합니다. ApplicationInsightsMonitoringConfig를 설정 합니다. 웹 사이트를 다시 배포 하지 않고 웹 사이트 성능을 모니터링 합니다. 온-프레미스, Vm 또는 Azure에서 호스트 되는 ASP.NET 웹 앱에서 작동 합니다.
+description: 에이전트 API 참조를 Application Insights 합니다. Set-ApplicationInsightsMonitoringConfig. 웹 사이트를 다시 배포 하지 않고 웹 사이트 성능을 모니터링 합니다. 온-프레미스, Vm 또는 Azure에서 호스트 되는 ASP.NET 웹 앱에서 작동 합니다.
 ms.service: azure-monitor
 ms.subservice: application-insights
 ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: d90739fbdc862d67dc2ce0f1dfdf5af5f4089a44
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 45dcd2374fc5be40f86d403f8daccf4a6f1d6997
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899668"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77189435"
 ---
 # <a name="application-insights-agent-api-set-applicationinsightsmonitoringconfig"></a>Application Insights 에이전트 API: ApplicationInsightsMonitoringConfig
 
 이 문서에서는 [Az. ApplicationMonitor PowerShell 모듈](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/)의 멤버인 cmdlet에 대해 설명 합니다.
 
-## <a name="description"></a>설명
+## <a name="description"></a>Description
 
 전체를 다시 설치 하지 않고 구성 파일을 설정 합니다.
 IIS를 다시 시작 하 여 변경 내용을 적용 합니다.
@@ -27,7 +27,7 @@ IIS를 다시 시작 하 여 변경 내용을 적용 합니다.
 > 이 cmdlet을 사용 하려면 관리자 권한이 있는 PowerShell 세션이 있어야 합니다.
 
 
-## <a name="examples"></a>예시
+## <a name="examples"></a>예
 
 ### <a name="example-with-a-single-instrumentation-key"></a>단일 계측 키를 사용 하는 예제
 이 예제에서는 현재 컴퓨터의 모든 앱에 단일 계측 키가 할당 됩니다.
@@ -40,22 +40,20 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-x
 이 예제에서:
 - `MachineFilter`은 `'.*'` 와일드 카드를 사용 하 여 현재 컴퓨터와 일치 합니다.
 - `AppFilter='WebAppExclude'` `null` 계측 키를 제공 합니다. 지정 된 앱은 계측 되지 않습니다.
-- `AppFilter='WebAppOne'`은 지정 된 앱에 고유한 계측 키를 할당 합니다.
-- `AppFilter='WebAppTwo'`은 지정 된 앱에 고유한 계측 키를 할당 합니다.
-- 마지막으로 `AppFilter`은 `'.*'` 와일드 카드를 사용 하 여 이전 규칙과 일치 하지 않는 모든 웹 앱을 일치 시키고 기본 계측 키를 할당 합니다.
+- `AppFilter='WebAppOne'` 지정 된 앱에 고유한 계측 키를 할당 합니다.
+- `AppFilter='WebAppTwo'` 지정 된 앱에 고유한 계측 키를 할당 합니다.
+- 마지막으로 `AppFilter`는 `'.*'` 와일드 카드를 사용 하 여 이전 규칙과 일치 하지 않는 모든 웹 앱을 일치 시키고 기본 계측 키를 할당 합니다.
 - 가독성을 위해 공백을 추가 합니다.
 
 ```powershell
-PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap 
-    @(@{MachineFilter='.*';AppFilter='WebAppExclude'},
-      @{MachineFilter='.*';AppFilter='WebAppOne';InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx1'},
-      @{MachineFilter='.*';AppFilter='WebAppTwo';InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx2'},
-      @{MachineFilter='.*';AppFilter='.*';InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxdefault'})
-
+Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap `
+       @(@{MachineFilter='.*';AppFilter='WebAppExclude'},
+          @{MachineFilter='.*';AppFilter='WebAppOne';InstrumentationSettings=@{InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx1'}},
+          @{MachineFilter='.*';AppFilter='WebAppTwo';InstrumentationSettings=@{InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx2'}},
+          @{MachineFilter='.*';AppFilter='.*';InstrumentationSettings=@{InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxdefault'}})
 ```
 
-
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>매개 변수
 
 ### <a name="-instrumentationkey"></a>-InstrumentationKey
 **필수** 이 매개 변수를 사용 하 여 대상 컴퓨터의 모든 앱에서 사용할 단일 계측 키를 제공 합니다.

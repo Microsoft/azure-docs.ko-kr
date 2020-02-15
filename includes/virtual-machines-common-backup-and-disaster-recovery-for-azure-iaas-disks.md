@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/05/2018
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: cd10bd2a04bfb2a3e3316d86e64a98c75c12e36d
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: aa7ddb75017a532b436b9a5cfc71d1a7c2832cb6
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76530892"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77179088"
 ---
 이 문서에서는 Azure에서 IaaS VM(가상 머신) 및 디스크의 백업 및 DR(재해 복구)을 계획하는 방법을 설명합니다. Managed Disks 및 Unmanaged Disks를 모두 다루고 있습니다.
 
@@ -103,23 +103,23 @@ IaaS 애플리케이션 데이터 문제도 발생할 수 있습니다. 애플�
 비관리 디스크의 경우 IaaS 디스크에 대해 로컬 중복 스토리지 유형을 사용할 수 있지만, 복구 서비스 자격 증명 모음에 대해 Azure Backup이 지역 중복 스토리지 옵션과 함께 사용되는지 확인합니다.
 
 > [!NOTE]
-> Unmanaged Disks에 대해 [지역 중복 스토리지](../articles/storage/common/storage-redundancy-grs.md) 또는 [읽기 액세스 지역 중복 스토리지](../articles/storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage) 옵션을 사용하는 경우 백업 및 DR에 대해 일관성 있는 스냅샷도 필요합니다. [Azure Backup](https://azure.microsoft.com/services/backup/) 또는 [일관성 있는 스냅샷](#alternative-solution-consistent-snapshots) 중 하나를 사용합니다.
+> Unmanaged Disks에 대해 [지역 중복 스토리지](../articles/storage/common/storage-redundancy-grs.md) 또는 [읽기 액세스 지역 중복 스토리지](../articles/storage/common/storage-redundancy.md) 옵션을 사용하는 경우 백업 및 DR에 대해 일관성 있는 스냅샷도 필요합니다. [Azure Backup](https://azure.microsoft.com/services/backup/) 또는 [일관성 있는 스냅샷](#alternative-solution-consistent-snapshots) 중 하나를 사용합니다.
 
  다음 표는 DR에 사용할 수 있는 솔루션의 요약입니다.
 
 | 시나리오 | 자동 복제 | DR 솔루션 |
 | --- | --- | --- |
 | 프리미엄 SSD 디스크 | 로컬([로컬 중복 스토리지](../articles/storage/common/storage-redundancy-lrs.md)) | [Azure Backup](https://azure.microsoft.com/services/backup/) |
-| Managed Disks | 로컬([로컬 중복 스토리지](../articles/storage/common/storage-redundancy-lrs.md)) | [Azure Backup](https://azure.microsoft.com/services/backup/) |
+| 관리 디스크 | 로컬([로컬 중복 스토리지](../articles/storage/common/storage-redundancy-lrs.md)) | [Azure Backup](https://azure.microsoft.com/services/backup/) |
 | 관리되지 않은 로컬 중복 스토리지 디스크 | 로컬([로컬 중복 스토리지](../articles/storage/common/storage-redundancy-lrs.md)) | [Azure Backup](https://azure.microsoft.com/services/backup/) |
 | 관리되지 않은 지역 중복 스토리지 디스크 | 지역 간([지역 중복 스토리지](../articles/storage/common/storage-redundancy-grs.md)) | [Azure Backup](https://azure.microsoft.com/services/backup/)<br/>[일관성 있는 스냅샷](#alternative-solution-consistent-snapshots) |
-| 관리되지 않은 읽기 액세스 지역 중복 스토리지 디스크 | 지역 간([읽기 액세스 지역 중복 스토리지](../articles/storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage)) | [Azure Backup](https://azure.microsoft.com/services/backup/)<br/>[일관성 있는 스냅샷](#alternative-solution-consistent-snapshots) |
+| 관리되지 않은 읽기 액세스 지역 중복 스토리지 디스크 | 지역 간([읽기 액세스 지역 중복 스토리지](../articles/storage/common/storage-redundancy.md)) | [Azure Backup](https://azure.microsoft.com/services/backup/)<br/>[일관성 있는 스냅샷](#alternative-solution-consistent-snapshots) |
 
 Azure Backup과 함께 가용성 집합에서 Managed Disks를 사용할 경우에 가장 고가용성이 충족됩니다. Unmanaged Disks를 사용하는 경우 DR에 Azure Backup을 계속 사용할 수 있습니다. Azure Backup을 사용할 수 없는 경우 백업 및 DR을 위한 대안 솔루션은 이후의 섹션에서 설명하는 [일관성 있는 스냅샷](#alternative-solution-consistent-snapshots)을 사용하는 것입니다.
 
 애플리케이션 또는 인프라 수준에서 고가용성, 백업 및 DR을 선택하는 경우 다음과 같이 나타낼 수 있습니다.
 
-| 수준 |   고가용성   | 백업 또는 DR |
+| Level |   고가용성   | 백업 또는 DR |
 | --- | --- | --- |
 | 애플리케이션 | SQL Server AlwaysOn | Azure Backup |
 | 인프라    | 가용성 집합  | 일관된 스냅샷을 사용하는 지역 중복 스토리지 |

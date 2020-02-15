@@ -3,18 +3,18 @@ title: '자습서: 위치에 대한 경로 찾기 | Microsoft Azure Maps'
 description: 이 자습서에서는 Microsoft Azure Maps Routing Service를 사용하여 맵에서 위치(관심 지점)로 경로를 렌더링하는 방법을 보여줍니다.
 author: walsehgal
 ms.author: v-musehg
-ms.date: 11/12/2019
+ms.date: 01/14/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 7f13e5342e880a9ed5e2cb35ebaf558a1641618b
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 3fedb045773cb975d37e2d866862e7863a6232e3
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75910843"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76989640"
 ---
 # <a name="tutorial-route-to-a-point-of-interest-using-azure-maps"></a>자습서: Azure Maps를 사용하여 관심 지점으로 라우팅
 
@@ -27,7 +27,7 @@ ms.locfileid: "75910843"
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-계속하기 전에 [계정 만들기](quick-demo-map-app.md#create-an-account-with-azure-maps)의 지침에 따라 S1 가격 책정 계층을 사용하여 Azure Maps 계정 구독을 만들고, [기본 키 가져오기](quick-demo-map-app.md#get-the-primary-key-for-your-account)의 단계를 수행하여 계정의 기본 키를 가져옵니다. Azure Maps의 인증에 대한 자세한 내용은 [Azure Maps의 인증 관리](how-to-manage-authentication.md)를 참조하세요.
+계속하기 전에 [계정 만들기](quick-demo-map-app.md#create-an-account-with-azure-maps)의 지침에 따라 S1 가격 책정 계층을 사용한 구독이 필요합니다. [기본 키 가져오기](quick-demo-map-app.md#get-the-primary-key-for-your-account)의 단계를 수행하여 계정에 대한 기본 키를 가져옵니다. Azure Maps의 인증에 대한 자세한 내용은 [Azure Maps의 인증 관리](how-to-manage-authentication.md)를 참조하세요.
 
 <a id="getcoordinates"></a>
 
@@ -139,7 +139,7 @@ ms.locfileid: "75910843"
     });
     ```
     
-    맵 `ready` 이벤트 처리기에서, 경로 선과 시작 및 끝 지점을 저장하는 데이터 원본이 만들어집니다. 선 레이어를 만들어 데이터 원본에 연결하여 경로 선이 렌더링되는 방식을 정의합니다. 너비가 5픽셀이고 선 이음 및 끝 단면이 둥근 멋진 파란색 음영이 경로 선에 렌더링됩니다. 맵에 레이어를 추가하면 값이 `'labels'`인 두 번째 매개 변수가 전달됩니다. 이 매개 변수는 맵 레이블 아래의 이 레이어를 렌더링하도록 지정합니다. 이렇게 하면 경로 선이 도로 레이블을 가리지 않습니다. 기호 레이어가 생성되어 데이터 원본에 연결됩니다. 이 레이어는 시작 및 끝 지점이 렌더링되는 방식을 지정합니다. 이 예에서는 지점 개체의 속성에서 아이콘 이미지 및 텍스트 레이블 정보를 검색하는 식이 추가되었습니다. 
+    맵 `ready` 이벤트 처리기에서 경로 선과 출발점 및 도착점을 저장하는 데이터 원본이 만들어집니다. 선 레이어를 만들어 데이터 원본에 연결하여 경로 선이 렌더링되는 방식을 정의합니다. 경로 선은 멋진 파란색 음영으로 렌더링됩니다. 5픽셀의 폭, 둥근 선 결합 및 캡으로 구성됩니다. 맵에 레이어를 추가하면 값이 `'labels'`인 두 번째 매개 변수가 전달됩니다. 이 매개 변수는 맵 레이블 아래의 이 레이어를 렌더링하도록 지정합니다. 이렇게 하면 경로 선이 도로 레이블을 가리지 않습니다. 기호 레이어가 생성되어 데이터 원본에 연결됩니다. 이 계층은 출발점과 도착점을 렌더링하는 방법을 지정합니다. 이 경우 각 지점 개체의 속성에서 아이콘 이미지 및 텍스트 레이블 정보를 검색하는 식이 추가되었습니다. 
     
 2. 이 자습서에서는 Microsoft를 시작점으로 설정하고, 시애틀의 주유소를 대상 지점으로 설정합니다. 맵 `ready` 이벤트 처리기에서 다음 코드를 추가합니다.
 
@@ -164,7 +164,7 @@ ms.locfileid: "75910843"
     });
     ```
 
-    이 코드는 경로의 출발점과 도착점을 나타낼 두 개의 [GeoJSON 지점 개체](https://en.wikipedia.org/wiki/GeoJSON)를 만들고 데이터 원본에 해당 지점을 추가합니다. `title` 및 `icon` 속성이 각 지점에 추가됩니다. 마지막 블록은 지도의 [setCamera](/javascript/api/azure-maps-control/atlas.map#setcamera-cameraoptions---cameraboundsoptions---animationoptions-) 속성을 사용하여 출발점과 도착점의 위도 및 경도 정보를 통해 카메라 보기를 설정합니다.
+    이 코드는 경로의 출발점과 도착점을 나타낼 두 개의 [GeoJSON 지점 개체](https://en.wikipedia.org/wiki/GeoJSON)를 만들고 데이터 원본에 해당 지점을 추가합니다. `title` 및 `icon` 속성이 각 지점에 추가됩니다. 마지막 블록은 지도의 [setCamera](/javascript/api/azure-maps-control/atlas.map#setcamera-cameraoptions---cameraboundsoptions---animationoptions-) 속성을 사용하여 출발점과 도착점의 위도 및 경도를 통해 카메라 보기를 설정합니다.
 
 3. **MapRoute.html** 파일을 저장하고, 브라우저를 새로 고칩니다. 이제 지도의 중심에 시애틀이 표시되며, 출발점을 표시하는 파란색 핀과 도착점을 표시하는 둥근 파란색 핀을 볼 수 있습니다.
 
@@ -174,9 +174,9 @@ ms.locfileid: "75910843"
 
 ## <a name="get-directions"></a>방향 가져오기
 
-이 섹션에서는 Azure Maps의 경로 서비스 API를 사용하여 주어진 출발점에서 도착점까지 경로를 찾는 방법을 보여줍니다. 경로 서비스는 두 위치 간의 *최소 시간*, *최단 거리*, *최적* 또는 *모험* 경로를 계획할 수 있는 API를 제공합니다. 또한 사용자는 Azure의 광범위한 교통 기록 데이터베이스를 사용해 어떤 날짜 및 시간에 대한 경로 기간을 예측하여 미래의 경로를 계획할 수 있습니다. 자세한 내용은 [경로 방향 가져오기](https://docs.microsoft.com/rest/api/maps/route/getroutedirections)를 참조하세요. 다음 기능은 모두 맵 리소스가 액세스할 수 있게 준비된 후 로드되도록 **맵 준비 eventListener 내**에 추가해야 합니다.
+이 섹션에서는 Azure Maps 경로 서비스 API를 사용하는 방법을 보여줍니다. 경로 서비스 API는 지정된 출발점에서 도착점으로의 경로를 찾습니다. 이 서비스는 두 위치 간의 *최소 시간*, *최단 거리*, *최적* 또는 *모험* 경로를 계획할 수 있는 API를 제공합니다. 또한 사용자는 이 서비스를 통해 Azure의 광범위한 교통 기록 데이터베이스를 사용해 미래의 경로를 계획할 수 있습니다. 사용자는 선택한 날짜 및 시간에 경로 기간의 예측을 볼 수 있습니다. 자세한 내용은 [경로 방향 가져오기](https://docs.microsoft.com/rest/api/maps/route/getroutedirections)를 참조하세요. 다음 기능은 모두 맵 리소스가 액세스할 수 있게 준비된 후 로드되도록 **맵 준비 eventListener 내**에 추가해야 합니다.
 
-1. GetMap 함수에서 다음 JavaScript 코드를 추가합니다.
+1. GetMap 함수에서 다음을 JavaScript 코드에 추가합니다.
 
     ```JavaScript
     // Use SubscriptionKeyCredential with a subscription key

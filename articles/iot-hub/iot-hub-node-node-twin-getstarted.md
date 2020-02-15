@@ -8,12 +8,12 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.author: elioda
-ms.openlocfilehash: 02ff65b27e03db9e9a48910e23d8ebf46de905a5
-ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
+ms.openlocfilehash: 55dc7f73a3e5bbff2e6e331ba0bd7d4088a86536
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70060721"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110836"
 ---
 # <a name="get-started-with-device-twins-nodejs"></a>장치 쌍 시작 (node.js)
 
@@ -29,13 +29,15 @@ ms.locfileid: "70060721"
 > [Azure IoT SDK](iot-hub-devguide-sdks.md) 문서는 디바이스 및 백 엔드 앱을 빌드하는 데 사용할 수 있는 Azure IoT SDK에 대한 정보를 제공합니다.
 >
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서를 완료하려면 다음이 필요합니다.
 
 * Node.js 버전 10.0. x 이상
 
 * 활성 Azure 계정. 계정이 없는 경우 몇 분 만에 [무료 계정](https://azure.microsoft.com/pricing/free-trial/)을 만들 수 있습니다.
+
+* 방화벽에서 포트 8883가 열려 있는지 확인 합니다. 이 문서의 device 샘플에서는 포트 8883을 통해 통신 하는 MQTT 프로토콜을 사용 합니다. 이 포트는 일부 회사 및 교육용 네트워크 환경에서 차단 될 수 있습니다. 이 문제를 해결 하는 방법 및 방법에 대 한 자세한 내용은 [IoT Hub에 연결 (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub)을 참조 하세요.
 
 ## <a name="create-an-iot-hub"></a>IoT Hub 만들기
 
@@ -55,7 +57,7 @@ ms.locfileid: "70060721"
 
 이 섹션에서는 **myDeviceId**와 연결된 디바이스 쌍에 위치 메타데이터를 추가하는 Node.js 콘솔 앱을 만듭니다. 그런 다음, IoT Hub에 저장된 디바이스 쌍을 쿼리하여 미국에 있는 디바이스를 선택한 다음, 셀룰러 연결을 보고하는 디바이스를 선택합니다.
 
-1. **addtagsandqueryapp**라는 빈 폴더를 새로 만듭니다. **addtagsandqueryapp** 폴더의 명령 프롬프트에 다음 명령을 사용하여 package.json 파일을 만듭니다. 매개 `--yes` 변수는 모든 기본값을 허용 합니다.
+1. **addtagsandqueryapp**라는 빈 폴더를 새로 만듭니다. **addtagsandqueryapp** 폴더의 명령 프롬프트에 다음 명령을 사용하여 package.json 파일을 만듭니다. `--yes` 매개 변수는 모든 기본값을 허용 합니다.
 
     ```cmd/sh
     npm init --yes
@@ -69,7 +71,7 @@ ms.locfileid: "70060721"
 
 3. 텍스트 편집기를 사용하여 **addtagsandqueryapp** 폴더에 새 **AddTagsAndQuery.js** 파일을 만듭니다.
 
-4. **AddTagsAndQuery** 파일에 다음 코드를 추가 합니다. `{iot hub connection string}` [IoT Hub 연결 문자열 가져오기](#get-the-iot-hub-connection-string)에서 복사한 IoT Hub 연결 문자열로 대체 합니다.
+4. **AddTagsAndQuery** 파일에 다음 코드를 추가 합니다. `{iot hub connection string}`를 [IoT Hub 연결 문자열 가져오기](#get-the-iot-hub-connection-string)에서 복사한 IoT Hub 연결 문자열로 바꿉니다.
 
    ``` javascript
         'use strict';
@@ -150,7 +152,7 @@ ms.locfileid: "70060721"
 
 이 섹션에서는 **myDeviceId**로 허브에 연결하는 Node.js 콘솔 앱을 만들고 셀룰러 네트워크를 사용하여 연결된 정보를 포함하도록 디바이스 쌍의 reported 속성을 업데이트합니다.
 
-1. **reportconnectivity**라는 빈 폴더를 새로 만듭니다. **reportconnectivity** 폴더의 명령 프롬프트에서 다음 명령을 사용하여 package.json 파일을 만듭니다. 매개 `--yes` 변수는 모든 기본값을 허용 합니다.
+1. **reportconnectivity**라는 빈 폴더를 새로 만듭니다. **reportconnectivity** 폴더의 명령 프롬프트에서 다음 명령을 사용하여 package.json 파일을 만듭니다. `--yes` 매개 변수는 모든 기본값을 허용 합니다.
 
     ```cmd/sh
     npm init --yes
@@ -164,7 +166,7 @@ ms.locfileid: "70060721"
 
 3. 텍스트 편집기를 사용하여 **reportconnectivity** 폴더에 새 **ReportConnectivity.js** 파일을 만듭니다.
 
-4. 다음 코드를 **Reportconnectivity .js** 파일에 추가 합니다. 를 `{device connection string}` [IoT hub에서 새 장치 등록](#register-a-new-device-in-the-iot-hub)에서 **mydeviceid** 장치 id를 만들 때 복사한 장치 연결 문자열로 바꿉니다.
+4. 다음 코드를 **Reportconnectivity .js** 파일에 추가 합니다. `{device connection string}`를 [IoT hub에서 새 장치 등록](#register-a-new-device-in-the-iot-hub)에서 **mydeviceid** 장치 id를 만들 때 복사한 장치 연결 문자열로 바꿉니다.
 
     ```javascript
         'use strict';

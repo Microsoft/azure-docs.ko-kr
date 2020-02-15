@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 06/28/2017
-ms.openlocfilehash: 8747111921df494b8d5618dc8d6ece99fa821e47
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: db3da5ff2d7e8b6fa493f5338fac93df0d1a7fe2
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147642"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110900"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub-nodejs"></a>IoT Hub (node.js)를 사용 하 여 장치에서 클라우드로 파일 업로드
 
@@ -26,10 +26,10 @@ ms.locfileid: "70147642"
 
 * IoT Hub 파일 업로드 알림을 사용하여 앱 백 엔드에서 파일 처리를 트리거합니다.
 
-[장치에서 IoT hub로 원격 분석 전송 빠른 시작](quickstart-send-telemetry-node.md) 은 IoT Hub의 기본적인 장치-클라우드 메시징 기능을 보여 줍니다. 그러나 일부 시나리오에서는 디바이스에서 전송하는 데이터를 IoT Hub에서 허용하는 비교적 작은 디바이스-클라우드 메시지에 쉽게 매핑할 수 없습니다. 예:
+[장치에서 IoT hub로 원격 분석 전송 빠른 시작](quickstart-send-telemetry-node.md) 은 IoT Hub의 기본적인 장치-클라우드 메시징 기능을 보여 줍니다. 그러나 일부 시나리오에서는 디바이스에서 전송하는 데이터를 IoT Hub에서 허용하는 비교적 작은 디바이스-클라우드 메시지에 쉽게 매핑할 수 없습니다. 다음은 그 예입니다.
 
 * 이미지가 포함된 대형 파일
-* 비디오
+* 동영상
 * 자주 샘플링되는 진동 데이터
 * 일부 형태의 미리 처리 된 데이터입니다.
 
@@ -44,11 +44,13 @@ ms.locfileid: "70147642"
 > [!NOTE]
 > IoT Hub는 Azure IoT 디바이스 SDK를 통해 많은 디바이스 플랫폼 및 언어(C, .NET, Javascript, Python 및 Java 포함)를 지원합니다. 장치를 Azure IoT Hub에 연결 하는 방법에 대 한 단계별 지침은 [Azure IoT 개발자 센터]를 참조 하세요.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Node.js 버전 10.0. x 이상 [개발 환경 준비](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) Windows 또는 Linux에서이 자습서에 대 한 node.js를 설치 하는 방법을 설명 합니다.
 
 * 활성 Azure 계정. 계정이 없는 경우 몇 분 만에 [무료 계정](https://azure.microsoft.com/pricing/free-trial/)을 만들 수 있습니다.
+
+* 방화벽에서 포트 8883가 열려 있는지 확인 합니다. 이 문서의 device 샘플에서는 포트 8883을 통해 통신 하는 MQTT 프로토콜을 사용 합니다. 이 포트는 일부 회사 및 교육용 네트워크 환경에서 차단 될 수 있습니다. 이 문제를 해결 하는 방법 및 방법에 대 한 자세한 내용은 [IoT Hub에 연결 (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub)을 참조 하세요.
 
 [!INCLUDE [iot-hub-associate-storage](../../includes/iot-hub-associate-storage.md)]
 
@@ -68,9 +70,9 @@ ms.locfileid: "70147642"
     npm install azure-iot-device azure-iot-device-mqtt --save
     ```
 
-3. 텍스트 편집기를 사용하여 ```simulateddevice``` 폴더에 **SimulatedDevice.js** 파일을 만듭니다.
+3. 텍스트 편집기를 사용하여 **폴더에**SimulatedDevice.js```simulateddevice``` 파일을 만듭니다.
 
-4. **SimulatedDevice.js** 파일 앞에 다음 ```require``` 문을 추가합니다.
+4. ```require```SimulatedDevice.js**파일 앞에 다음** 문을 추가합니다.
 
     ```javascript
     'use strict';
@@ -127,7 +129,7 @@ ms.locfileid: "70147642"
 
 이 섹션에서는 IoT Hub로부터 파일 업로드 알림 메시지를 수신하는 Node.js 콘솔 앱을 만듭니다.
 
-이 섹션을 완료하려면 IoT Hub의 **iothubowner** 연결 문자열을 사용할 수 있습니다. 연결 문자열은 **공유 액세스 정책** 블레이드의 [Azure Portal](https://portal.azure.com/)에서 찾을 수 있습니다.
+이 섹션을 완료하려면 IoT Hub의 **iothubowner** 연결 문자열을 사용할 수 있습니다. 연결 문자열은 [공유 액세스 정책](https://portal.azure.com/) 블레이드의 **Azure Portal**에서 찾을 수 있습니다.
 
 1. ```fileuploadnotification```라는 빈 폴더를 만듭니다.  ```fileuploadnotification``` 폴더의 명령 프롬프트에서 다음 명령을 사용하여 package.json 파일을 만듭니다.  모든 기본값을 수락합니다.
 
@@ -141,9 +143,9 @@ ms.locfileid: "70147642"
     npm install azure-iothub --save
     ```
 
-3. 텍스트 편집기를 사용하여 `fileuploadnotification` 폴더에 **FileUploadNotification.js** 파일을 만듭니다.
+3. 텍스트 편집기를 사용하여 **폴더에**FileUploadNotification.js`fileuploadnotification` 파일을 만듭니다.
 
-4. **FileUploadNotification.js** 파일의 시작 부분에 다음 `require` 문을 추가합니다.
+4. `require`FileUploadNotification.js**파일의 시작 부분에 다음** 문을 추가합니다.
 
     ```javascript
     'use strict';
@@ -151,7 +153,7 @@ ms.locfileid: "70147642"
     var Client = require('azure-iothub').Client;
     ```
 
-5. `iothubconnectionstring` 변수를 추가하고 이 변수를 사용하여 **클라이언트** 인스턴스를 만듭니다.  자리 표시자 `{iothubconnectionstring}` 값을 이전에 [iot hub 연결 문자열 가져오기](#get-the-iot-hub-connection-string)에서 복사한 iot hub 연결 문자열로 바꿉니다.
+5. `iothubconnectionstring` 변수를 추가하고 이 변수를 사용하여 **클라이언트** 인스턴스를 만듭니다.  `{iothubconnectionstring}` 자리 표시자 값을 이전에 [iot hub 연결 문자열 가져오기](#get-the-iot-hub-connection-string)에서 복사한 iot hub 연결 문자열로 바꿉니다.
 
     ```javascript
     var connectionString = '{iothubconnectionstring}';

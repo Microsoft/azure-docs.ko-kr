@@ -12,12 +12,12 @@ metadata:
   ms.author: mtillman
   manager: daveba
   ms.date: 07/27/2019
-  ms.openlocfilehash: d212a7223eea2ccbaaddeb9c45db85e13c7ff9c8
-  ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+  ms.openlocfilehash: e11e0edf214d3362784285cc24ee209855383119
+  ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 12/25/2019
-  ms.locfileid: "75443470"
+  ms.lasthandoff: 02/12/2020
+  ms.locfileid: "77166157"
 highlightedContent:
   items:
   - title: Azure AD란?
@@ -54,17 +54,31 @@ conceptualContent:
     footerLink:
       url: ./manage-apps/index.yml
       text: 자세히 보기
+  - title: 애플리케이션 및 HR 프로비저닝
+    links:
+    - url: ./app-provisioning/user-provisioning.md
+      itemType: overview
+      text: 애플리케이션 프로비저닝이란?
+    - url: ./app-provisioning/how-provisioning-works.md
+      itemType: concept
+      text: 애플리케이션 프로비저닝 작동 방법
+    - url: ./app-provisioning/plan-cloud-hr-provision.md
+      itemType: how-to-guide
+      text: 클라우드 HR 프로비저닝 배포 계획
+    footerLink:
+      url: ./app-provisioning/index.yml
+      text: 자세히 보기
   - title: 인증
     links:
-    - url: ./authentication/concept-mfa-howitworks.md
+    - url: ./authentication/overview-authentication.md
       itemType: concept
-      text: '작동 방법: Azure MFA'
-    - url: ./authentication/concept-sspr-howitworks.md
-      itemType: concept
-      text: Azure AD 셀프 서비스 암호 재설정
-    - url: ./authentication/concept-password-ban-bad.md
-      itemType: concept
-      text: Azure AD 암호 보호
+      text: Azure AD 인증이란?
+    - url: ./authentication/tutorial-enable-sspr.md
+      itemType: tutorial
+      text: 셀프 서비스 암호 재설정 사용
+    - url: ./authentication/tutorial-enable-azure-mfa.md
+      itemType: tutorial
+      text: Azure Multi-Factor Authentication 사용
     footerLink:
       url: ./authentication/index.yml
       text: 자세히 보기

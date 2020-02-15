@@ -13,12 +13,12 @@ ms.author: mimart
 ms.reviewer: arvinh,luleon
 ms.collection: M365-identity-device-management
 ROBOTS: NOINDEX
-ms.openlocfilehash: c5e8ed4a78fccce4f3a5c631a99a8729114e5722
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.openlocfilehash: a415ac749d0d322bc2f71f64d4bec6e32ad1f12e
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68422608"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77063495"
 ---
 # <a name="how-to-configure-saml-based-single-sign-on"></a>SAML 기반 Single Sign-On을 구성하는 방법
 
@@ -34,7 +34,7 @@ ms.locfileid: "68422608"
 - 애플리케이션이 Azure AD 테넌트에 추가되지 않은 경우 [갤러리 앱 추가](add-gallery-app.md) 또는 [비갤러리 앱 추가](add-non-gallery-app.md)를 참조하세요.
 - 다음 설정에 대한 정확한 정보를 얻으려면 애플리케이션 공급업체에 문의하세요.
 
-    | 기본 SAML 구성 설정 | SP 시작 | idP 시작 | 설명 |
+    | 기본 SAML 구성 설정 | SP 시작 | idP 시작 | Description |
     |:--|:--|:--|:--|
     | 식별자(엔터티 ID) | 일부 앱의 경우 필수 | 일부 앱의 경우 필수 | 구성될 Single Sign-On에 대해 애플리케이션을 고유하게 식별합니다. Azure AD는 SAML 토큰의 대상 매개 변수로 애플리케이션에 식별자를 보냅니다. 애플리케이션이 식별자의 유효성을 검사해야 합니다. 또한 이 값은 애플리케이션에서 제공하는 모든 SAML 메타데이터 내에서 엔터티 ID로 표시됩니다. *이 값은 애플리케이션에서 보낸 **AuthnRequest**(SAML 요청)에서 **Issuer**(발급자) 요소로 찾을 수 있습니다.* |
     | 회신 URL | 옵션 | 필수 | 애플리케이션이 SAML 토큰을 수신해야 하는 위치를 지정합니다. 회신 URL은 ACS(Assertion Consumer Service) URL이라고도 합니다. |
@@ -135,4 +135,4 @@ Azure AD는 인증서를 사용하여 애플리케이션에 보내는 SAML 토�
 ## <a name="next-steps"></a>다음 단계
 
 - [애플리케이션에 사용자 또는 그룹 할당](methods-for-assigning-users-and-groups.md)
-- [자동 사용자 계정 프로비저닝 구성](configure-automatic-user-provisioning-portal.md)
+- [자동 사용자 계정 프로비저닝 구성](../app-provisioning/configure-automatic-user-provisioning-portal.md)

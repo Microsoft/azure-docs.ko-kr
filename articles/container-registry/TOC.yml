@@ -84,12 +84,14 @@
               items:
                 - name: 인증 개요
                   href: container-registry-authentication.md
-                - name: 서비스 주체 인증
+                - name: 서비스 주체를 사용하여 인증
                   href: container-registry-auth-service-principal.md
-                - name: 관리 ID 인증
+                - name: 관리 ID를 사용하여 인증
                   href: container-registry-authentication-managed-identity.md
                 - name: Azure Container Instances에서 인증
                   href: container-registry-auth-aci.md
+                - name: 풀 비밀을 사용하여 Kubernetes에서 인증
+                  href: container-registry-auth-kubernetes.md
                 - name: AKS(Azure Kubernetes Service)에서 인증
                   href: ../aks/cluster-container-registry-integration.md?toc=/azure/container-registry/toc.json&bc=/azure/container-registry/breadcrumb/toc.json
             - name: 역할 기반 액세스 제어
@@ -105,7 +107,7 @@
           items:
             - name: Azure Container Instances
               href: ../container-instances/container-instances-tutorial-prepare-app.md
-            - name: Azure Kubernetes Service (AKS)
+            - name: AKS(Azure Kubernetes Service)
               href: ../aks/tutorial-kubernetes-prepare-app.md
             - name: Service Fabric
               href: ../service-fabric/service-fabric-tutorial-create-container-images.md
@@ -171,7 +173,7 @@
               href: container-registry-tasks-authentication-key-vault.md
         - name: Buildpacks를 사용하여 이미지 빌드(미리 보기)
           href: container-registry-tasks-pack-build.md
-- name: 참고 자료
+- name: 참조
   expanded: false
   items:
     - name: Azure CLI
@@ -203,7 +205,7 @@
   items:
     - name: 지역 가용성
       href: 'https://azure.microsoft.com/regions/services/'
-    - name: 가격
+    - name: 가격 책정
       href: 'https://azure.microsoft.com/pricing/details/container-registry/'
     - name: 로드맵
       href: 'https://aka.ms/acr/roadmap'

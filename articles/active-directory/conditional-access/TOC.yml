@@ -19,20 +19,30 @@
       href: concept-conditional-access-policy-common.md
     - name: 조건부 액세스 정책 구성 요소
       href: concept-conditional-access-policies.md
-    - name: 클라우드 앱 및 작업
-      href: concept-conditional-access-cloud-apps.md
-    - name: 조건
-      href: conditions.md
-    - name: 위치 조건
-      href: location-condition.md
-    - name: 컨트롤
-      href: controls.md
+    - name: 할당
+      items:
+        - name: 개요
+          href: concept-conditional-access-users-groups.md
+        - name: 클라우드 앱 또는 작업
+          href: concept-conditional-access-cloud-apps.md
+        - name: 조건
+          href: concept-conditional-access-conditions.md
+    - name: 액세스 제어
+      items:
+        - name: 허용
+          href: concept-conditional-access-grant.md
+        - name: 세션
+          href: concept-conditional-access-session.md
     - name: 보고서 전용 모드
       href: concept-conditional-access-report-only.md
     - name: 서비스 종속성
       href: service-dependencies.md
+    - name: 위치 조건
+      href: location-condition.md
     - name: What if 도구
       href: what-if-tool.md
+    - name: 컨트롤
+      href: controls.md
     - name: 클래식 정책 마이그레이션
       href: policy-migration.md
     - name: 기준 보호 정책
@@ -84,10 +94,6 @@
       items:
         - name: What If 도구를 사용하여 문제 해결
           href: troubleshoot-conditional-access-what-if.md
-- name: 참조
-  items:
-    - name: 기술 참조
-      href: technical-reference.md
 - name: 리소스
   items:
     - name: Azure 피드백 포럼

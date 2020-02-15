@@ -6,12 +6,12 @@ ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: gwallace
-ms.openlocfilehash: 7b95fae3c7b713a9f97c31578a3bb24a9062fa2e
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.openlocfilehash: bfb7d3ad6f918d91061fa226ae2dbfcd7f27852d
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77029863"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77210160"
 ---
 # <a name="deployment-technologies-in-azure-functions"></a>Azure Functions의 배포 기술
 
@@ -51,7 +51,7 @@ Azure Functions는 Windows 및 Linux에서 플랫폼 간 로컬 개발 및 호�
 트리거를 변경 하는 경우 함수 인프라에서 변경 사항을 알고 있어야 합니다. 여러 배포 기술에 대 한 동기화가 자동으로 수행 됩니다. 그러나 일부 경우에는 트리거를 수동으로 동기화 해야 합니다. 외부 패키지 URL, 로컬 Git, 클라우드 동기화 또는 FTP를 참조 하 여 업데이트를 배포할 때 수동으로 트리거를 동기화 해야 합니다. 다음 세 가지 방법 중 하나로 트리거를 동기화 할 수 있습니다.
 
 * Azure Portal에서 함수 앱을 다시 시작 합니다.
-* [마스터 키](functions-bindings-http-webhook.md#authorization-keys)를 사용 하 여 `https://{functionappname}.azurewebsites.net/admin/host/synctriggers?code=<API_KEY>`에 대 한 HTTP POST 요청을 보냅니다.
+* [마스터 키](functions-bindings-http-webhook-trigger.md#authorization-keys)를 사용 하 여 `https://{functionappname}.azurewebsites.net/admin/host/synctriggers?code=<API_KEY>`에 대 한 HTTP POST 요청을 보냅니다.
 * `https://management.azure.com/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP_NAME>/providers/Microsoft.Web/sites/<FUNCTION_APP_NAME>/syncfunctiontriggers?api-version=2016-08-01`에 HTTP POST 요청을 보냅니다. 자리 표시자를 구독 ID, 리소스 그룹 이름 및 함수 앱의 이름으로 바꿉니다.
 
 ### <a name="remote-build"></a>원격 빌드

@@ -52,6 +52,8 @@
           href: how-to-manage-lab-accounts.md
         - name: 랩 계정 구성
           href: how-to-configure-lab-accounts.md
+        - name: 랩 작성자가 랩 위치를 선택하도록 허용
+          href: allow-lab-creator-pick-lab-location.md
         - name: 피어 가상 네트워크에 랩 연결
           href: how-to-connect-peer-virtual-network.md
         - name: 공유 이미지 갤러리 연결 또는 분리

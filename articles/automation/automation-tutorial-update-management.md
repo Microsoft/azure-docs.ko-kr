@@ -38,7 +38,7 @@ ms.locfileid: "76310138"
 
 ## <a name="sign-in-to-azure"></a>Azure에 로그인
 
-https://portal.azure.com 에서 Azure Portal에 로그인합니다.
+[https://portal.azure.com](https://portal.azure.com ) 에서 Azure Portal에 로그인합니다.
 
 ## <a name="enable-update-management"></a>업데이트 관리 사용
 

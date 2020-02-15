@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 11/22/2019
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 0695416c65eed2bbf0a19d5ed1ea0c53a7ece332
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: ac928d9087ba5db312540b8ec542d7a2a29e2a99
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74485547"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77179012"
 ---
 | 리소스 | 기본 제한 |
 | --- | :--- |
 | 구독 당 최대 클러스터 수 | 100 |
 | 가상 컴퓨터 가용성 집합 및 기본 Load Balancer SKU를 사용 하는 클러스터당 최대 노드 수  | 100 |
-| Virtual Machine Scale Sets 및 [표준 LOAD BALANCER SKU][standard-load-balancer] 를 사용 하는 클러스터당 최대 노드 수 | 800 ( [노드 풀][node-pool]당 100 노드) |
+| Virtual Machine Scale Sets 및 [표준 LOAD BALANCER SKU][standard-load-balancer] 를 사용 하는 클러스터당 최대 노드 수 | 1000 ( [노드 풀][node-pool]당 100 노드) |
 | 노드당 최대 pod: [기본 네트워킹][basic-networking] (Kubenet) | 110 |
 | 노드당 최대 pod: Azure Container 네트워킹 인터페이스를 사용 하 여 [고급 네트워킹][advanced-networking] | Azure CLI 배포: 30<sup>1</sup><br />Azure Resource Manager 템플릿: 30<sup>1</sup><br />포털 배포: 30 |
 

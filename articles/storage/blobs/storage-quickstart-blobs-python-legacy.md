@@ -3,33 +3,30 @@ title: '빠른 시작: Python용 Azure Blob 스토리지 클라이언트 라이�
 description: 이 빠른 시작에서는 개체(Blob) 스토리지에서 스토리지 계정 및 컨테이너를 만듭니다. 그런 다음, Python용 스토리지 클라이언트 라이브러리 v2.1을 사용하여 Azure Storage에 BLOB을 업로드하고, BLOB을 다운로드하고, 컨테이너의 BLOB을 나열합니다.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 09/11/2019
+ms.date: 01/24/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 3e1adc9220dd9b49c49ff3fe5e798dfcc9d5c928
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 4b0248604b6e9189d5275177a4960e4c352e8215
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76122681"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76906444"
 ---
-# <a name="quickstart-azure-blob-storage-client-library-v21-for-python"></a>빠른 시작: Python용 Azure Blob 스토리지 클라이언트 라이브러리 v2.1
+# <a name="quickstart-manage-blobs-with-python-v21-sdk"></a>빠른 시작: Python v2.1 SDK로 Blob 관리
 
-이 문서에서는 Python을 사용하여 Azure Blob 스토리지의 컨테이너에 블록 Blob을 업로드, 다운로드 및 나열합니다. Blob은 이미지, 문서, 스트리밍 미디어 및 보관 데이터를 포함하여 대량의 텍스트 또는 이진 데이터를 저장할 수 있는 개체입니다. Azure Storage의 Blob은 파일 공유, 스키마 없는 테이블 및 메시지 큐와 다릅니다.  자세한 내용은 [Azure Storage 소개](/azure/storage/common/storage-introduction)를 참조하세요.
-
-[!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
+이 빠른 시작에서는 Python을 사용하여 Blob을 관리하는 방법을 알아봅니다. Blob은 이미지, 문서, 스트리밍 미디어 및 보관 데이터를 포함하여 대량의 텍스트 또는 이진 데이터를 저장할 수 있는 개체입니다. Blob을 업로드, 다운로드 및 나열하고 컨테이너를 만들고 삭제합니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-[!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
+- 활성 구독이 있는 Azure 계정. [체험 계정을 만듭니다](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+- Azure Storage 계정. [스토리지 계정 만들기](../common/storage-account-create.md)
+- [Python](https://www.python.org/downloads/).
+- [Python용 Azure Storage SDK](https://github.com/Azure/azure-sdk-for-python).
 
-다음 추가 필수 구성 요소를 설치했는지 확인합니다.
-
-* [Python](https://www.python.org/downloads/)
-
-* [Azure Storage SDK for Python](https://github.com/Azure/azure-sdk-for-python)
+[!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
 ## <a name="download-the-sample-application"></a>샘플 애플리케이션 다운로드
 

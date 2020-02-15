@@ -10,12 +10,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 09/25/2019
-ms.openlocfilehash: 84fa6b1d7f48ac7aea44e693a7df8945ba180d29
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 125cde85d3caa6fd1a33045e85c5383f83a669bf
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75658647"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76982537"
 ---
 # <a name="tutorial-get-started-creating-your-first-ml-experiment-with-the-python-sdk"></a>자습서: Python SDK로 첫 번째 ML 실험 만들기 시작
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -101,7 +101,7 @@ Azure 리소스를 관리하기 위한 웹 기반 콘솔인 Azure Portal을 통�
 사용자 지정 위젯이 있거나 Jupyter/JupyterLab을 사용하려는 경우 맨 오른쪽에 있는 **Jupyter** 드롭다운을 선택한 다음, **Jupyter** 또는 **JupyterLab**을 선택합니다. 새 브라우저 창이 열립니다.
 
 > [!NOTE]
-> 컴퓨팅 인스턴스(미리 보기)는 현재 서비스 예정인 다른 지역에 대한 지원을 포함하여 **미국 중북부** 또는 **영국 남부** 지역이 있는 작업 영역에서만 사용할 수 있습니다.
+> 컴퓨팅 인스턴스(미리 보기)는 현재 서비스 예정인 다른 지역에 대한 지원을 포함하여 **미국 중북부**, **미국 동부 2**, **북유럽** 또는 **영국 남부** 지역이 있는 작업 영역에서만 사용할 수 있습니다.
 >작업 영역이 다른 지역에 있으면 [Notebook VM](concept-compute-instance.md#notebookvm)을 계속 만들어 사용할 수 있습니다.  Notebook VM 또는 컴퓨팅 인스턴스를 사용하여 Notebook을 실행할 수 있습니다. VM을 중지하는 경우를 제외하고 VM은 계속 실행되고 비용을 발생시킵니다. Studio의 **Compute** 탭에서 수동으로 중지하거나, Azure VM에 대해 예약된 자동 종료를 사용하도록 설정하는 [블로그 게시물](https://techcommunity.microsoft.com/t5/educator-developer-blog/azure-virtual-machine-auto-shutdown/ba-p/379342)을 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계

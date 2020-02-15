@@ -6,19 +6,19 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
-ms.date: 10/22/2019
-ms.openlocfilehash: 173e483710c3fa96ae542f7941f0912ed07ea2ca
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+author: likebupt
+ms.author: keli19
+ms.date: 02/11/2020
+ms.openlocfilehash: 57a211c6ffab9a960c013008410f4b52b909d360
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76312206"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137519"
 ---
 # <a name="edit-metadata-module"></a>메타 데이터 모듈 편집
 
-이 문서에서는 Azure Machine Learning designer에 포함 된 모듈을 설명 합니다.
+이 문서에서는 Azure Machine Learning designer (미리 보기)에 포함 된 모듈을 설명 합니다.
 
 데이터 편집 모듈을 사용 하 여 데이터 집합의 열과 연결 된 메타 데이터를 변경할 수 있습니다. 메타 데이터 편집 모듈을 사용한 후에는 데이터 집합의 값과 데이터 형식이 변경 됩니다.
 
@@ -40,9 +40,9 @@ ms.locfileid: "76312206"
   
 ## <a name="configure-edit-metadata"></a>메타 데이터 편집 구성
   
-1. Azure Machine Learning에서 메타 데이터 편집 모듈을 파이프라인에 추가 하 고 업데이트 하려는 데이터 집합을 연결 합니다. **데이터 변환 아래의 데이터** 집합은 **조작** 범주에서 찾을 수 있습니다.
+1. Azure Machine Learning 디자이너에서 메타 데이터 편집 모듈을 파이프라인에 추가 하 고 업데이트 하려는 데이터 집합을 연결 합니다. **데이터 변환** 범주에서 모듈을 찾을 수 있습니다.
   
-1. **열 선택기 시작** 을 선택 하 고 사용할 열 또는 열 집합을 선택 합니다. 이름 또는 인덱스를 기준으로 열을 개별적으로 선택 하거나 유형별 열 그룹을 선택할 수 있습니다.  
+1. 모듈의 오른쪽 패널에서 **열 편집** 을 클릭 하 고 사용할 열 또는 열 집합을 선택 합니다. 이름 또는 인덱스를 기준으로 열을 개별적으로 선택 하거나 유형별 열 그룹을 선택할 수 있습니다.  
   
 1. 선택한 열에 다른 데이터 형식을 할당 해야 하는 경우에는 **데이터 형식** 옵션을 선택 합니다. 특정 작업에 대 한 데이터 형식을 변경 해야 할 수도 있습니다. 예를 들어 원본 데이터 집합에 텍스트로 처리 된 숫자가 있으면 수학 연산을 사용 하기 전에 숫자 데이터 형식으로 변경 해야 합니다.
 

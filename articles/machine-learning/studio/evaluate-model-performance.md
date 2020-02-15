@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
-author: xiaoharper
-ms.author: amlstudiodocs
+author: likebupt
+ms.author: keli19
 ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/20/2017
-ms.openlocfilehash: 2b9293e3c1ce280117ea40c43715f4dcd98de66d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a7227b939af1c826d2ee06d8203710839da430ee
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75427634"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168683"
 ---
 # <a name="how-to-evaluate-model-performance-in-azure-machine-learning-studio-classic"></a>Azure Machine Learning Studio에서 모델 성능을 평가 하는 방법 (클래식)
 
@@ -149,7 +149,7 @@ Azure Machine Learning Studio (클래식)의 작업 영역에 다음 모듈을 �
 
 [모델 학습][train-model] 모듈의 레이블 열 인덱스를 5로 설정 합니다. 이 데이터 세트에는 헤더 행이 없지만 클래스 레이블이 다섯 번째 열에 있다는 것을 알고 있습니다.
 
-[데이터 가져오기][import-data] 모듈을 클릭 하 고 *데이터 원본* 속성을 HTTP를 *통해 웹 Url*로 설정 하 고 *url* 을 http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data 합니다.
+[데이터 가져오기][import-data] 모듈을 클릭 하 고 *데이터 원본* 속성을 HTTP를 *통해 웹 Url*로 설정 하 고 *url* 을 http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data합니다.
 
 [데이터 분할][split] 모듈에서 학습에 사용할 인스턴스의 소수 부분을 설정 합니다 (예: 0.7).
 

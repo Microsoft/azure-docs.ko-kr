@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 01/30/2020
+ms.date: 02/13/2020
 ms.author: helohr
-ms.openlocfilehash: b7c7c21f14eddf29c3dda1f420d7748a4c23e53d
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: f75e404e37ff45eb7d9f540cf6acba71fa83349f
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76906890"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201784"
 ---
 # <a name="windows-virtual-desktop-partner-integrations"></a>Windows 가상 데스크톱 파트너 통합
 
@@ -46,6 +46,8 @@ Microsoft Azure의 VMware 수평 클라우드를 사용 하면 고유한 Microso
 최첨단 씬 및 제로 클라이언트 하드웨어 및 소프트웨어를 갖춘 10ZiG 기술은 Microsoft 및 전용 Microsoft Azure 및 Windows 가상 데스크톱 파트너와의 위해 노력해 왔으며 파트너입니다. 10ZiG Windows 10 IoT 기반 씬 클라이언트는 모든 Windows 가상 데스크톱 다중 사용자를 위한 강력 하 고 안정적 이며 경제적인 끝점입니다. 10ZiG 관리자 소프트웨어는 추가 비용 없이 라이선스 제한 없이 탁월한 관리 및 배포를 제공 합니다. 10ZiG 기술 팀, 사전 보증 프로그램 및 문제 없는 데모는 클라우드에서 한 번의 Windows 가상 데스크톱 다중 세션 지원 솔루션입니다.
 
 가상 데스크톱의 씬 및 제로 클라이언트 끝점 장치 및 관리 소프트웨어에 대 한 10ZiG's 세계 시장 리더십은 고객에 게 어떻게 작동 하는지 예시 합니다. 씬 클라이언트 하드웨어는 고객이 각자의 요구에 따라 적절 한 클라이언트 장치를 받을 수 있도록 설계 된 신중의 혜택 기능 및 옵션을 제공 합니다. 10ZiG는 Windows 기반 및 Linux 기반 클라이언트를 사용 하 여 고객 환경에 맞게 장치를 사용자 지정 하 여 클라우드 내부 및 외부 모두에서 가상 데스크톱에 최대한의 성능을 제공 합니다.
+
+- [파트너 웹 사이트로 이동](https://www.10zig.com/)합니다.
 
 ## <a name="cloudhouse"></a>Cloudhouse
 
@@ -149,6 +151,8 @@ Liquit 응용 프로그램 집계 및 배달 소프트웨어를 사용 하 여 �
 
 인증 된 통합 파트너인 Liquit는 rip 및 바꾸기 지연 없이 클라우드로의 전환을 가속화 하는 데 도움이 됩니다. Windows 가상 데스크톱은 기존 환경에 쉽게 연결 하 고 작업 영역을 만들고 바탕 화면을 제공할 수 있습니다. 그런 다음 이전 플랫폼에서 마이그레이션을 수행 하 고 사용자에 게 확인 하지 않고 백 엔드를 변경할 수 있습니다. 일관적인 최종 사용자 환경, 유연한 인프라를 얻고 어디에 있든 상관 없이 응용 프로그램의 제어를 유지 관리 합니다.
 
+- [파트너 웹 사이트로 이동](https://www.liquit.com/wvd/)합니다.
+
 ## <a name="login-vsi"></a>로그인 .VSI
 
 ![로그인 .VSI 로고](./media/partners/loginvsi.png)
@@ -250,7 +254,7 @@ Tricerat를 사용 하면 Windows 가상 데스크톱 이상에서 인쇄를 원
 
 - [파트너 웹 사이트로 이동](https://www.tricerat.com/microsoft-printing)합니다.
 
-## <a name="workspot"></a>Workspot
+## <a name="workspot"></a>워크 지점
 
 ![워크 지점 로고](./media/partners/workspot.png)
 

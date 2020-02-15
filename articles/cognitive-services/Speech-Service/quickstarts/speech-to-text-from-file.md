@@ -3,20 +3,20 @@ title: '빠른 시작: 오디오 파일에서 음성 인식 - Speech Service'
 titleSuffix: Azure Cognitive Services
 description: 이 빠른 시작에서는 Speech SDK를 사용하여 오디오 파일에서 음성을 인식합니다.
 services: cognitive-services
-author: erhopf
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 11/04/2019
-ms.author: erhopf
+ms.date: 02/10/2020
+ms.author: dapine
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 310d0cd94dcdb57254de3764c57b9b2438aa5442
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: da6094cd654652625a2ebab303c72fb16fb49b6b
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74819318"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77119484"
 ---
 # <a name="quickstart-recognize-speech-from-an-audio-file"></a>빠른 시작: 오디오 파일에서 음성 인식
 

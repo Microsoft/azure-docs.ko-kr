@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jlu, calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 797475bfe0f1ec077ad39c6fce1f0facdf679802
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: eb094d04a7210d76a98f3e47af750e49b617e493
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74483465"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77195065"
 ---
 # <a name="configure-authentication-session-management-with-conditional-access"></a>조건부 액세스를 사용 하 여 인증 세션 관리 구성
 
@@ -49,7 +49,24 @@ ms.locfileid: "74483465"
 - SharePoint 및 OneDrive
 - 팀 웹 클라이언트
 - Dynamics CRM Online
-- Azure 포털
+- Azure portal
+
+### <a name="user-sign-in-frequency-and-device-identities"></a>사용자 로그인 빈도 및 장치 id
+
+Azure AD 조인, 하이브리드 Azure AD 조인 또는 Azure AD 등록 장치를 사용 하는 경우 사용자가 장치를 잠금 해제 하거나 대화형으로 로그인 하는 경우이 이벤트는 로그인 빈도 정책도 충족 합니다. 다음 두 예제에서 사용자 로그인 빈도는 1 시간으로 설정 됩니다.
+
+예제 1:
+
+- 00:00에서 사용자는 Windows 10 Azure AD 조인 장치에 로그인 하 여 SharePoint Online에 저장 된 문서에서 작업을 시작 합니다.
+- 사용자는 장치에서 한 시간 동안 동일한 문서에 대해 작업을 계속 합니다.
+- 01:00에서 관리자가 구성한 조건부 액세스 정책의 로그인 빈도 요구 사항에 따라 사용자에 게 다시 로그인 하 라는 메시지가 표시 됩니다.
+
+예제 2:
+
+- 00:00에서 사용자는 Windows 10 Azure AD 조인 장치에 로그인 하 여 SharePoint Online에 저장 된 문서에서 작업을 시작 합니다.
+- 00:30에서는 사용자가 장치를 시작 하 고 잠금을 해제 합니다.
+- 00:45에서 사용자는 자신의 중단에서 반환 하 고 장치의 잠금을 해제 합니다.
+- 01:45에서 마지막 로그인이 00:45에 발생 한 이후 관리자가 구성한 조건부 액세스 정책의 로그인 빈도 요구 사항에 따라 다시 로그인 하 라는 메시지가 사용자에 게 표시 됩니다.
 
 ## <a name="persistence-of-browsing-sessions"></a>검색 세션의 지 속성
 

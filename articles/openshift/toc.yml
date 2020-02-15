@@ -47,6 +47,8 @@
             - name: 컨테이너용 Azure Monitor 사용 안 함
               href: ../azure-monitor/insights/container-insights-optout-openshift.md
               maintainContext: true
+    - name: Azure Red Hat OpenShift 클러스터에서 권한 있는 컨테이너 실행
+      href: howto-run-privileged-containers.md
 - name: 참조
   items:
     - name: Azure Red Hat OpenShift CLI

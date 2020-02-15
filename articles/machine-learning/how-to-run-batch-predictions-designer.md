@@ -1,5 +1,5 @@
 ---
-title: Azure Machine Learning 디자이너를 사용하여 일괄 처리 예측 실행
+title: Azure Machine Learning 디자이너를 사용하여 일괄 처리 예측 실행(미리 보기)
 titleSuffix: Azure Machine Learning
 description: 디자이너를 사용하여 모델을 학습하고 일괄 처리 예측 파이프라인을 설정하는 방법에 대해 알아봅니다. 파이프라인을 매개 변수가 있는 웹 서비스로 배포합니다. 그러면 HTTP 라이브러리에서 트리거될 수 있습니다.
 services: machine-learning
@@ -10,12 +10,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 01/13/2020
 ms.custom: Ignite2019
-ms.openlocfilehash: d2653699a69cb468e8490c2cba579b73e526d1ed
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 95a3c1b892cacd802f359fdc03de74fa60a1e118
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76311889"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138100"
 ---
 # <a name="run-batch-predictions-using-azure-machine-learning-designer"></a>Azure Machine Learning 디자이너를 사용하여 일괄 처리 예측 실행
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -41,7 +41,7 @@ SDK를 사용 하 여 일괄 처리 점수 매기기 서비스를 설정 하는 
 
 1. 작업 영역의 **디자이너** 탭으로 이동 합니다.
 
-1. 예측을 만드는 데 사용할 모델을 학습 하는 학습 파이프라인을 선택 합니다.
+1. 예측을 만드는 데 사용 하려는 모델을 학습 하는 학습 파이프라인을 선택 합니다.
 
 1. 파이프라인을 **실행** 합니다.
 

@@ -4,12 +4,12 @@ description: 신규 또는 기존 Azure Virtual Network에 컨테이너 그룹�
 ms.topic: article
 ms.date: 01/06/2020
 ms.author: danlep
-ms.openlocfilehash: 40f312ce8bc08c9b59e7c47f05b6a5d3dc94a994
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 318576e9b5c5b32bbc993ea16494c938b74bd2f4
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76901874"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77200064"
 ---
 # <a name="deploy-container-instances-into-an-azure-virtual-network"></a>Azure Virtual Network에 컨테이너 인스턴스 배포
 
@@ -260,7 +260,7 @@ az container delete --resource-group myResourceGroup --name appcontaineryaml -y
 
 ### <a name="delete-network-resources"></a>네트워크 리소스 삭제
 
-이 기능에는 현재 이전에 만든 네트워크 리소스를 삭제 하기 위해 몇 가지 추가 명령이 필요 합니다. 이 문서의 이전 섹션에 나왔던 예제 명령을 사용하여 가상 네트워크와 서브넷을 만들었다면 아래 스크립트를 사용하여 해당 네트워크 리소스를 삭제할 수 있습니다.
+이 기능에는 현재 이전에 만든 네트워크 리소스를 삭제 하기 위해 몇 가지 추가 명령이 필요 합니다. 이 문서의 이전 섹션에 나왔던 예제 명령을 사용하여 가상 네트워크와 서브넷을 만들었다면 아래 스크립트를 사용하여 해당 네트워크 리소스를 삭제할 수 있습니다. 이 스크립트에서는 단일 네트워크 프로필을 사용 하는 단일 가상 네트워크가 리소스 그룹에 포함 되어 있다고 가정 합니다.
 
 스크립트를 실행하기 전에 `RES_GROUP` 변수를 삭제해야 하는 가상 네트워크 및 서브넷이 포함된 리소스 그룹의 이름으로 설정합니다. 이전에 제안 된 `aci-vnet` 이름을 사용 하지 않은 경우 가상 네트워크의 이름을 업데이트 합니다. 스크립트는 Bash 셸에 대해 서식이 지정됩니다. PowerShell이나 명령 프롬프트 등의 다른 셸을 사용하려는 경우 해당 셸에 따라 변수 할당과 접근자를 조정해야 합니다.
 
@@ -269,9 +269,11 @@ az container delete --resource-group myResourceGroup --name appcontaineryaml -y
 
 ```azurecli
 # Replace <my-resource-group> with the name of your resource group
+# Assumes one virtual network in resource group
 RES_GROUP=<my-resource-group>
 
 # Get network profile ID
+# Assumes one profile in virtual network
 NETWORK_PROFILE_ID=$(az network profile list --resource-group $RES_GROUP --query [0].id --output tsv)
 
 # Delete the network profile

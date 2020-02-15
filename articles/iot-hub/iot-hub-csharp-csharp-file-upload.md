@@ -9,12 +9,12 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 07/04/2017
 ms.author: robinsh
-ms.openlocfilehash: db020092c076680eddd575f8e7e85a2060603dd8
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: b379f158672a9df3056acb09c63c392869a53283
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147765"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77108702"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub-net"></a>IoT Hub (.NET)를 사용 하 여 장치에서 클라우드로 파일 업로드
 
@@ -26,11 +26,11 @@ ms.locfileid: "70147765"
 
 * IoT Hub 파일 업로드 알림을 사용하여 앱 백 엔드에서 파일 처리를 트리거합니다.
 
-[장치에서 IoT hub로 원격 분석 전송 빠른 시작](quickstart-send-telemetry-dotnet.md) 및 [IoT Hub를 사용 하 여 클라우드-장치 메시지 보내기](iot-hub-csharp-csharp-c2d.md) 자습서에서는 IoT Hub의 기본 장치-클라우드 및 클라우드-장치 메시징 기능을 보여 줍니다. [IoT Hub로 메시지 라우팅 구성](tutorial-routing.md) 자습서에서는 Microsoft Azure Blob 저장소에 장치-클라우드 메시지를 안정적으로 저장 하는 방법을 설명 합니다. 그러나 일부 시나리오에서는 장치가 전송 하는 데이터를 IoT Hub 허용 되는 상대적으로 작은 장치-클라우드 메시지에 쉽게 매핑할 수 없습니다. 예를 들어:
+[장치에서 IoT hub로 원격 분석 전송 빠른 시작](quickstart-send-telemetry-dotnet.md) 및 [IoT Hub를 사용 하 여 클라우드-장치 메시지 보내기](iot-hub-csharp-csharp-c2d.md) 자습서에서는 IoT Hub의 기본 장치-클라우드 및 클라우드-장치 메시징 기능을 보여 줍니다. [IoT Hub로 메시지 라우팅 구성](tutorial-routing.md) 자습서에서는 Microsoft Azure Blob 저장소에 장치-클라우드 메시지를 안정적으로 저장 하는 방법을 설명 합니다. 그러나 일부 시나리오에서는 장치가 전송 하는 데이터를 IoT Hub 허용 되는 상대적으로 작은 장치-클라우드 메시지에 쉽게 매핑할 수 없습니다. 다음은 그 예입니다.
 
 * 이미지가 포함된 대형 파일
 
-* 비디오
+* 동영상
 
 * 자주 샘플링되는 진동 데이터
 
@@ -47,11 +47,13 @@ ms.locfileid: "70147765"
 > [!NOTE]
 > IoT Hub는 Azure IoT 장치 Sdk를 통해 C, Java, Python 및 Javascript를 비롯 한 많은 장치 플랫폼 및 언어를 지원 합니다. Azure IoT Hub에 디바이스를 연결하는 방법에 대한 단계별 지침은 [Azure IoT 개발자 센터](https://azure.microsoft.com/develop/iot)를 참조하세요.
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Visual Studio
 
 * 활성 Azure 계정. 계정이 없는 경우 몇 분 안에 [무료 계정](https://azure.microsoft.com/pricing/free-trial/) 을 만들 수 있습니다.
+
+* 방화벽에서 포트 8883가 열려 있는지 확인 합니다. 이 문서의 device 샘플에서는 포트 8883을 통해 통신 하는 MQTT 프로토콜을 사용 합니다. 이 포트는 일부 회사 및 교육용 네트워크 환경에서 차단 될 수 있습니다. 이 문제를 해결 하는 방법 및 방법에 대 한 자세한 내용은 [IoT Hub에 연결 (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub)을 참조 하세요.
 
 [!INCLUDE [iot-hub-associate-storage](../../includes/iot-hub-associate-storage.md)]
 
@@ -59,7 +61,7 @@ ms.locfileid: "70147765"
 
 이 섹션에서는 IoT Hub에서 클라우드-장치 메시지를 수신 하기 위해 [IoT Hub를 사용 하 여 클라우드-장치 메시지 보내기](iot-hub-csharp-csharp-c2d.md) 에서 만든 장치 앱을 수정 합니다.
 
-1. Visual Studio 솔루션 탐색기에서 **SimulatedDevice** 프로젝트를 마우스 오른쪽 단추로 클릭 하 고**기존 항목** **추가** > 를 선택 합니다. 이미지 파일을 찾아 프로젝트에 포함 합니다. 이 자습서에서는 이미지 이름을 `image.jpg`로 지정한다고 가정합니다.
+1. Visual Studio 솔루션 탐색기에서 **SimulatedDevice** 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 > **기존 항목** **추가** 를 선택 합니다. 이미지 파일을 찾아 프로젝트에 포함 합니다. 이 자습서에서는 이미지 이름을 `image.jpg`로 지정한다고 가정합니다.
 
 1. 이미지를 마우스 오른쪽 단추로 클릭 한 다음 **속성**을 선택 합니다. **출력 디렉터리로 복사**가 **항상 복사**로 설정되어 있는지 확인합니다.
 
@@ -92,7 +94,7 @@ ms.locfileid: "70147765"
 
     `UploadToBlobAsync` 메서드는 업로드할 파일의 파일 이름 및 스트림 원본을 받은 후 업로드를 스토리지로 전달합니다. 콘솔 앱은 파일을 업로드하는 데 걸리는 시간을 표시합니다.
 
-1. **Main** 메서드에 `Console.ReadLine()`다음 줄을 추가 합니다.
+1. **Main** 메서드에 다음 줄을 추가 하 여 `Console.ReadLine()`바로 앞에 추가 합니다.
 
     ```csharp
     SendToBlobAsync();
@@ -111,7 +113,7 @@ ms.locfileid: "70147765"
 
 이 섹션에서는 IoT Hub에서 파일 업로드 알림 메시지를 수신하는 .NET 콘솔 앱을 작성합니다.
 
-1. 현재 Visual Studio 솔루션에서 **파일** > **새로 만들기** > **프로젝트**를 선택 합니다. **새 프로젝트 만들기**에서 **콘솔 앱 (.NET Framework)** 을 선택 하 고 **다음**을 선택 합니다.
+1. 현재 Visual Studio 솔루션에서 **파일** > **새** > **프로젝트**를 선택 합니다. **새 프로젝트 만들기**에서 **콘솔 앱 (.NET Framework)** 을 선택 하 고 **다음**을 선택 합니다.
 
 1. 프로젝트 이름을 *ReadFileUploadNotification*으로 지정합니다. **솔루션**에서 **솔루션에 추가**를 선택 합니다. **만들기**를 선택하여 프로젝트를 만듭니다.
 
@@ -129,7 +131,7 @@ ms.locfileid: "70147765"
     using Microsoft.Azure.Devices;
     ```
 
-1. **Program** 클래스에 다음 필드를 추가합니다. 자리 표시자 `{iot hub connection string}` 값을 이전에 [iot hub 연결 문자열 가져오기](#get-the-iot-hub-connection-string)에서 복사한 iot hub 연결 문자열로 바꿉니다.
+1. **Program** 클래스에 다음 필드를 추가합니다. `{iot hub connection string}` 자리 표시자 값을 이전에 [iot hub 연결 문자열 가져오기](#get-the-iot-hub-connection-string)에서 복사한 iot hub 연결 문자열로 바꿉니다.
 
     ```csharp
     static ServiceClient serviceClient;
@@ -177,7 +179,7 @@ ms.locfileid: "70147765"
 
 1. 솔루션 탐색기에서 솔루션을 마우스 오른쪽 단추로 클릭 하 고 **시작 프로젝트 설정**을 선택 합니다.
 
-1. **공용 속성** > **시작 프로젝트**에서 **여러 개의 시작 프로젝트**를 선택 하 고 **ReadFileUploadNotification** 및 **SimulatedDevice**에 대 한 **시작** 작업을 선택 합니다. **확인**을 선택하여 변경 내용을 저장합니다.
+1. **시작 프로젝트** > **공용 속성** 에서 **여러 개의 시작 프로젝트**를 선택 하 고 **ReadFileUploadNotification** 및 **SimulatedDevice**에 대 한 **시작** 작업을 선택 합니다. **확인** 을 선택하여 변경 내용을 저장합니다.
 
 1. **F5**키를 누릅니다. 두 애플리케이션이 모두 시작됩니다. 한 콘솔 앱에서 완료된 업로드와 다른 콘솔 앱에서 수신한 업로드 알림 메시지가 표시됩니다. [Azure Portal](https://portal.azure.com/) 또는 Visual Studio 서버 탐색기를 사용하여 Azure Storage 계정에서 업로드한 파일의 현재 상태를 확인할 수 있습니다.
 

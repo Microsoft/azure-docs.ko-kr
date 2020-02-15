@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 10/22/2019
-ms.openlocfilehash: 6e5c1a1bfc82460ad7e53cc8444a4bb42aa4ef19
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 429ddd62cccb8657aa18ec844968cc12df778f55
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76548393"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153794"
 ---
 # <a name="remove-duplicate-rows-module"></a>중복 행 제거 모듈
 
@@ -24,17 +24,17 @@ ms.locfileid: "76548393"
 
 예를 들어 데이터가 다음과 같은 것으로 가정 하 고 환자에 대 한 여러 레코드를 나타냅니다. 
 
-| PatientID | Initials| 성별|연령|연결 되도록 허용|
+| PatientID | 이니셜| 성별|처리 기간|연결 되도록 허용|
 |----|----|----|----|----|
-|1|F.M.| 백만| 53| 1월|
-|2| F.A.M.| 백만| 53| 1월|
-|3| F.A.M.| 백만| 24| 1월|
-|3| F.M.| 백만| 24| 2월|
-|4| F.M.| 백만| 23| 2월|
-| | F.M.| 백만| 23| |
-|5| F.A.M.| 백만| 53| |
-|6| F.A.M.| 백만| NaN| |
-|7| F.A.M.| 백만| NaN| |
+|1|F.M.| M| 53| 1월|
+|2| F.A.M.| M| 53| 1월|
+|3| F.A.M.| M| 24| 1월|
+|3| F.M.| M| 24| 2월|
+|4| F.M.| M| 23| 2월|
+| | F.M.| M| 23| |
+|5| F.A.M.| M| 53| |
+|6| F.A.M.| M| NaN| |
+|7| F.A.M.| M| NaN| |
 
 분명히이 예에는 잠재적으로 중복 된 데이터가 있는 여러 열이 있습니다. 실제로 중복 되는지 여부는 데이터에 대 한 지식에 따라 다릅니다. 
 
@@ -59,7 +59,7 @@ ms.locfileid: "76548393"
 
     이 컨텍스트에서 **키는** 고유 식별자를 의미 하지 않습니다. 열 선택기를 사용 하 여 선택 하는 모든 열은 **키 열**로 지정 됩니다. 선택 하지 않은 모든 열은 키가 아닌 열로 간주 됩니다. 키로 선택한 열을 조합 하면 레코드의 고유성이 결정 됩니다. (이를 여러 equalities 조인을 사용 하는 SQL 문으로 생각 합니다.)
 
-    예시:
+    예제:
 
     + "Id가 고유한 지 확인 합니다.": ID 열만 선택 합니다.
     + "First name, last name 및 ID의 조합이 고유한 지 확인 합니다.": 세 개의 열을 모두 선택 합니다.

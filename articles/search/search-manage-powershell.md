@@ -8,13 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: fdb558267d823657f6a735d8b96efde33cdb8383
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.date: 02/11/2020
+ms.openlocfilehash: 711071e08a52a0075512bc8b3ffe14707238cdfe
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73466525"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209299"
 ---
 # <a name="manage-your-azure-cognitive-search-service-with-powershell"></a>PowerShell을 사용 하 여 Azure Cognitive Search 서비스 관리
 > [!div class="op_single_selector"]
@@ -24,23 +24,19 @@ ms.locfileid: "73466525"
 > * [.NET SDK](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.search)
 > * [Python](https://pypi.python.org/pypi/azure-mgmt-search/0.1.0)> 
 
-Windows, Linux 또는 [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) 에서 PowerShell cmdlet 및 스크립트를 실행 하 여 Azure Cognitive Search를 만들고 구성할 수 있습니다. **Az. Search** 모듈은 [AZURE Cognitive Search 관리 REST api](https://docs.microsoft.com/rest/api/searchmanagement)에 대 한 전체 패리티가 있는 Azure PowerShell]를 확장 합니다. Azure PowerShell 및 **Az. Search**를 사용 하 여 다음 작업을 수행할 수 있습니다.
+Windows, Linux 또는 [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) 에서 PowerShell cmdlet 및 스크립트를 실행 하 여 Azure Cognitive Search를 만들고 구성할 수 있습니다. **Az. search** 모듈은 [검색 관리 REST api](https://docs.microsoft.com/rest/api/searchmanagement) 에 대 한 전체 패리티가 있는 [Azure PowerShell](https://docs.microsoft.com/powershell/) 를 확장 하 고 다음 작업을 수행 하는 기능을 제공 합니다.
 
 > [!div class="checklist"]
-> * [구독의 모든 search 서비스 나열](#list-search-services)
-> * [특정 검색 서비스에 대 한 정보 가져오기](#get-search-service-information)
+> * [구독에서 search 서비스 나열](#list-search-services)
+> * [서비스 정보 반환](#get-search-service-information)
 > * [서비스 만들기 또는 삭제](#create-or-delete-a-service)
 > * [관리 API 다시 생성-키](#regenerate-admin-keys)
 > * [쿼리 api 만들기 또는 삭제-키](#create-or-delete-query-keys)
-> * [복제본 및 파티션을 늘리거나 줄여서 서비스 크기 조정](#scale-replicas-and-partitions)
+> * [복제본 및 파티션을 사용 하 여 확장 또는 축소](#scale-replicas-and-partitions)
 
-PowerShell을 사용 하 여 서비스의 이름, 지역 또는 계층을 변경할 수 없습니다. 서비스를 만들 때 전용 리소스가 할당 됩니다. 기본 하드웨어 (위치 또는 노드 형식)를 변경 하려면 새 서비스가 필요 합니다. 한 서비스에서 다른 서비스로 콘텐츠를 전송 하기 위한 도구나 Api는 없습니다. 모든 콘텐츠 관리는 [REST](https://docs.microsoft.com/rest/api/searchservice/) 또는 [.net](https://docs.microsoft.com/dotnet/api/?term=microsoft.azure.search) api를 통해 수행 되며 인덱스를 이동 하려면 새 서비스에서 다시 만들고 다시 로드 해야 합니다. 
+경우에 따라 위의 목록에 *없는* 작업에 대 한 질문을 받게 됩니다. 현재는 **Az. Search** 모듈이 나 management REST API를 사용 하 여 서버 이름, 지역 또는 계층을 변경할 수 없습니다. 서비스를 만들 때 전용 리소스가 할당 됩니다. 따라서 기본 하드웨어 (위치 또는 노드 형식)를 변경 하려면 새 서비스가 필요 합니다. 마찬가지로 한 서비스에서 다른 서비스로 콘텐츠를 전송 하기 위한 도구나 Api는 없습니다.
 
-콘텐츠 관리용 전용 PowerShell 명령은 없지만 REST 또는 .NET을 호출 하는 PowerShell 스크립트를 작성 하 여 인덱스를 만들고 로드할 수 있습니다. **Az. Search** 모듈 자체는 이러한 작업을 제공 하지 않습니다.
-
-PowerShell 또는 다른 API를 통해 지원 되지 않는 다른 작업 (포털 전용)은 다음과 같습니다.
-+ [AI 보강 인덱싱을](cognitive-search-concept-intro.md)위한 [인식 서비스 리소스를 연결](cognitive-search-attach-cognitive-services.md) 합니다. 인지 서비스는 구독 또는 서비스가 아닌 기술에 연결 됩니다.
-+ Azure Cognitive Search 모니터링을 위한 [추가 모니터링 솔루션](search-monitor-usage.md#add-on-monitoring-solutions) 입니다.
+서비스 내에서 콘텐츠 작성 및 관리는 [Search Service REST API](https://docs.microsoft.com/rest/api/searchservice/) 또는 [.net SDK](https://docs.microsoft.com/dotnet/api/?term=microsoft.azure.search)를 통해 진행 됩니다. 콘텐츠에 대 한 전용 PowerShell 명령은 없지만 REST 또는 .NET Api를 호출 하는 PowerShell 스크립트를 작성 하 여 인덱스를 만들고 로드할 수 있습니다.
 
 <a name="check-versions-and-load"></a>
 
@@ -92,7 +88,7 @@ Select-AzSubscription -SubscriptionName ContosoSubscription
 
 <a name="list-search-services"></a>
 
-## <a name="list-all-azure-cognitive-search-services-in-your-subscription"></a>구독의 모든 Azure Cognitive Search 서비스 나열
+## <a name="list-services-in-a-subscription"></a>구독의 서비스 나열
 
 다음 명령은 [**Az. resources**](https://docs.microsoft.com/powershell/module/az.resources/?view=azps-1.4.0#resources)에서 구독에 이미 프로 비전 된 기존 리소스 및 서비스에 대 한 정보를 반환 합니다. 이미 생성 된 검색 서비스 수를 모르는 경우 이러한 명령은 해당 정보를 반환 하 여 포털에 대 한 여행 정보를 저장 합니다.
 
@@ -251,7 +247,6 @@ PartitionCount    : 6
 HostingMode       : Default
 Id                : /subscriptions/65a1016d-0f67-45d2-b838-b8f373d6d52e/resourceGroups/demo-westus/providers/Microsoft.Search/searchServices/my-demo-searchapp
 ```
-
 
 ## <a name="next-steps"></a>다음 단계
 

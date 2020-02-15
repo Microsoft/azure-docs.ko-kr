@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 01/14/2020
+ms.date: 02/11/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbb6170aa54c286a5a2d8353c1dd951859fdf8a0
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 023a52f373844e026de0e588e9cd46323abdcf34
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024588"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77149833"
 ---
 # <a name="what-are-security-defaults"></a>보안 기본값 이란?
 
@@ -74,7 +74,7 @@ Multi-Factor Authentication 등록을 완료 한 후에는 다음 9 개의 Azure
 
 현재 대부분의 손상 된 로그인 시도는 레거시 인증에서 제공 됩니다. 레거시 인증은 Multi-Factor Authentication을 지원 하지 않습니다. 디렉터리에서 Multi-Factor Authentication 정책을 사용 하도록 설정한 경우에도 공격자는 이전 프로토콜을 사용 하 여 인증 하 고 Multi-Factor Authentication을 무시할 수 있습니다. 
 
-테 넌 트에서 보안 기본값을 사용 하도록 설정한 후에는 이전 프로토콜을 통해 수행 된 모든 인증 요청이 차단 됩니다. 보안 기본값은 Exchange ActiveSync를 차단 하지 않습니다.
+테 넌 트에서 보안 기본값을 사용 하도록 설정한 후에는 이전 프로토콜을 통해 수행 된 모든 인증 요청이 차단 됩니다. 보안 기본값은 Exchange Active Sync 기본 인증을 차단 합니다.
 
 > [!WARNING]
 > 보안 기본값을 사용 하도록 설정 하기 전에 관리자가 이전 인증 프로토콜을 사용 하지 않는지 확인 합니다. 자세한 내용은 [기존 인증에서 밖으로 이동 하는 방법](concept-fundamentals-block-legacy-authentication.md)을 참조 하세요.
@@ -83,7 +83,7 @@ Multi-Factor Authentication 등록을 완료 한 후에는 다음 9 개의 Azure
 
 조직에서는 다음을 포함 하 여 Azure Resource Manager API를 통해 관리 되는 다양 한 Azure 서비스를 사용 합니다.
 
-- Azure Portal 
+- Azure 포털 
 - Azure PowerShell 
 - Azure CLI
 

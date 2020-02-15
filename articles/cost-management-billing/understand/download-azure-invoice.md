@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: banders
 ms.openlocfilehash: 0f413d38565202d379c81570b5cb169c2ed8effe
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75987825"
 ---
 # <a name="view-and-download-your-microsoft-azure-invoice"></a>Microsoft Azure 청구서 보기 및 다운로드
@@ -87,7 +87,7 @@ Azure 청구서를 전자 메일로 받을 추가 수취인을 옵트인하고 �
 <!-- Does following section apply to MPA too? -->
 ## <a name="get-your-microsoft-customer-agreement-invoices-in-email"></a>이메일로 Microsoft 고객 계약 청구서 받기
 
-Microsoft 고객 계약에 대 한 청구 계정이 있는 경우 청구서를 전자 메일로 받으려면 옵트인 (opt in) 할 수 있습니다. 청구 프로필에 대 한 소유자, 참가자, 읽기 권한자 또는 송장 관리자 역할이 있는 모든 사용자는 전자 메일로 송장을 받게 됩니다. 
+Microsoft 고객 계약에 대한 청구 계정이 있으면 이메일로 청구서 받기로 옵트인할 수 있습니다. 청구 프로필에 대한 소유자, 기여자, reader 또는 송장 관리자 역할이 있는 모든 사용자는 이메일로 청구서를 받게 됩니다. 
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
 
@@ -95,25 +95,25 @@ Microsoft 고객 계약에 대 한 청구 계정이 있는 경우 청구서를 �
 
    ![포털의 구독 검색을 보여 주는 스크린샷](./media/download-azure-invoice/search-cmb.png)
 
-1. 왼쪽에서 **청구 프로필** 을 선택 합니다. 청구 프로필 목록에서 청구 프로필을 선택 하 여 전자 메일로 송장을 받습니다.
+1. 왼쪽에서 **청구 프로필**을 선택합니다. 청구 프로필 목록에서 청구 프로필을 선택하여 이메일로 청구서를 받습니다.
 
-   [청구 프로필 목록을 표시 하는 ![스크린샷](./media/download-azure-invoice/mca-select-profile.png)](./media/download-azure-invoice/mca-select-profile-zoomed-in.png#lightbox)
+   [![청구 프로필 목록을 보여주는 스크린샷](./media/download-azure-invoice/mca-select-profile.png)](./media/download-azure-invoice/mca-select-profile-zoomed-in.png#lightbox)
 
-1. 왼쪽에서 **속성** 을 선택 하 고 **전자 메일 청구서 기본 설정 업데이트**를 선택 합니다.
+1. 왼쪽에서 **속성**을 선택한 다음, **이메일 청구서 기본 설정 업데이트**를 선택합니다.
 
-   [청구 프로필 목록을 표시 하는 ![스크린샷](./media/download-azure-invoice/mca-select-update-email-preferences.png)](./media/download-azure-invoice/mca-select-update-email-preferences.png#lightbox)
+   [![청구 프로필 목록을 보여주는 스크린샷](./media/download-azure-invoice/mca-select-update-email-preferences.png)](./media/download-azure-invoice/mca-select-update-email-preferences.png#lightbox)
 
-1. **옵트인** 을 선택 하 고 **업데이트**를 클릭 합니다.
+1. **옵트인**을 선택한 다음, **업데이트**를 클릭합니다.
 
-   [청구 프로필 목록을 표시 하는 ![스크린샷](./media/download-azure-invoice/mca-select-email-opt-in.png)](./media/download-azure-invoice/mca-select-email-opt-in.png#lightbox)
+   [![청구 프로필 목록을 보여주는 스크린샷](./media/download-azure-invoice/mca-select-email-opt-in.png)](./media/download-azure-invoice/mca-select-email-opt-in.png#lightbox)
 
 ## <a name="opt-out-of-getting-your-microsoft-customer-agreement-invoices-in-email"></a>이메일에서 Microsoft 고객 계약 청구서 받기 옵트아웃
 
-전자 메일로 송장을 받을 수 있도록 옵트아웃 하려면 위의 단계를 따르고 **옵트아웃 (opt out**)을 클릭 합니다. 소유자, 참가자, 독자 또는 송장 관리자 역할이 있는 모든 사용자는 전자 메일로 송장을 받을 수 없습니다. 
+이메일로 청구서를 받을 수 있도록 옵트아웃하려면 이전 단계를 수행하고 **옵트아웃**을 클릭합니다. 소유자, 기여자, reader 또는 송장 관리자 역할이 있는 모든 사용자는 이메일로 청구서를 받을 수 없습니다. 
 
-## <a name="give-others-access-to-your-microsoft-customer-agreement-invoices"></a>다른 사용자에 게 Microsoft 고객 계약 청구서에 대 한 액세스 권한 부여
+## <a name="give-others-access-to-your-microsoft-customer-agreement-invoices"></a>다른 사용자에게 Microsoft 고객 계약 청구서에 대한 액세스 권한 부여
 
-청구 프로필에 대 한 청구서 관리자 역할을 할당 하 여 다른 사용자에 게 청구서를 보고, 다운로드 하 고, 요금을 지불할 수 있는 액세스 권한을 부여할 수 있습니다. 청구서를 전자 메일로 받기 위해 옵트인 한 경우 이러한 사용자는 전자 메일로 송장을 받게 됩니다. 
+청구 프로필에 대한 송장 관리자 역할을 할당하여 다른 사용자에게 청구서를 보고, 다운로드하고, 요금을 지불할 수 있는 액세스 권한을 부여할 수 있습니다. 청구서를 이메일로 받기 위해 옵트인한 경우 이러한 사용자는 이메일로 청구서를 받게 됩니다. 
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
 
@@ -121,22 +121,22 @@ Microsoft 고객 계약에 대 한 청구 계정이 있는 경우 청구서를 �
 
    ![포털의 구독 검색을 보여 주는 스크린샷](./media/download-azure-invoice/search-cmb.png)
 
-1. 왼쪽에서 **청구 프로필** 을 선택 합니다. 청구 프로필 목록에서 송장 관리자 역할을 할당 하려는 청구 프로필을 선택 합니다.
+1. 왼쪽에서 **청구 프로필**을 선택합니다. 청구 프로필 목록에서 송장 관리자 역할을 할당하려는 청구 프로필을 선택합니다.
 
-   [청구 프로필 목록을 표시 하는 ![스크린샷](./media/download-azure-invoice/mca-select-profile.png)](./media/download-azure-invoice/mca-select-profile-zoomed-in.png#lightbox)
+   [![청구 프로필 목록을 보여주는 스크린샷](./media/download-azure-invoice/mca-select-profile.png)](./media/download-azure-invoice/mca-select-profile-zoomed-in.png#lightbox)
 
-1. 왼쪽에서 **Access Control (IAM)** 을 선택 하 고 페이지 위쪽에서 **추가** 를 선택 합니다.
+1. 왼쪽에서 **Access Control(IAM)** 을 선택한 다음, 페이지 맨 위에서 **추가**를 선택합니다.
 
-   [액세스 제어 페이지를 표시 하는 ![스크린샷](./media/download-azure-invoice/mca-select-access-control.png)](./media/download-azure-invoice/mca-select-access-control-zoomed-in.png#lightbox)
+   [![액세스 제어 페이지를 보여주는 스크린샷](./media/download-azure-invoice/mca-select-access-control.png)](./media/download-azure-invoice/mca-select-access-control-zoomed-in.png#lightbox)
 
-1. 역할 드롭다운 목록에서 **송장 관리자**를 선택 합니다. 액세스 권한을 부여하려는 사용자의 이메일 주소를 입력합니다. **저장**을 선택하여 역할을 할당합니다.
+1. 역할 드롭다운 목록에서 **송장 관리자**를 선택합니다. 액세스 권한을 부여하려는 사용자의 이메일 주소를 입력합니다. **저장**을 선택하여 역할을 할당합니다.
 
-   [송장 관리자로 사용자를 추가 하는 것을 보여 주는 ![스크린샷](./media/download-azure-invoice/mca-added-invoice-manager.png)](./media/download-azure-invoice/mca-added-invoice-manager.png#lightbox)
+   [![사용자를 송장 관리자로 추가하는 것을 보여주는 스크린샷](./media/download-azure-invoice/mca-added-invoice-manager.png)](./media/download-azure-invoice/mca-added-invoice-manager.png#lightbox)
 
 ## <a name="check-your-billing-account-type"></a>청구 계정 유형 확인
 [!INCLUDE [billing-check-account-type](../../../includes/billing-check-account-type.md)]
 
-## <a name="need-help-contact-us"></a>도움이 필요하세요? 문의하세요.
+## <a name="need-help-contact-us"></a>도움 필요 시 문의하세요.
 
 질문이 있거나 도움이 필요한 경우 [지원 요청을 만드세요](https://go.microsoft.com/fwlink/?linkid=2083458).
 

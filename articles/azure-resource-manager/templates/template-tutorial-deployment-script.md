@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 01/24/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 2a2ac42f546895a1135651bd5ef1266776f02ad1
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 5454d2f80d1febccb0c57ecf2e80d930bb5cb761
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76756095"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988807"
 ---
 # <a name="tutorial-use-deployment-scripts-to-create-a-self-signed-certificate-preview"></a>자습서: 배포 스크립트를 사용하여 자체 서명된 인증서 만들기(미리 보기)
 
@@ -172,11 +172,12 @@ Azure Resource Manager 템플릿에서 배포 스크립트를 사용하는 방�
       "type": "string",
       "defaultValue": "[utcNow()]"
     }
+    ```
 
-1. Add a deploymentScripts resource:
+1. deploymentScripts 리소스를 추가합니다.
 
     > [!NOTE]
-    > Because the inline deployment scripts are enclosed in double quotes, the strings inside the deployment scripts need to be enclosed in single quotes instead. The escape character for PowerShell is **&#92;**.
+    > 인라인 배포 스크립트는 큰따옴표로 묶여 있으므로 배포 스크립트 내의 문자열을 작은따옴표로 묶어야 합니다. PowerShell의 이스케이프 문자는 **&#92;** 입니다.
 
     ```json
     {

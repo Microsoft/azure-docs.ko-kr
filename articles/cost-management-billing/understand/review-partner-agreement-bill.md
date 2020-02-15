@@ -1,6 +1,6 @@
 ---
-title: Microsoft 파트너 규약 청구서 검토-Azure
-description: 청구서 및 리소스 사용량을 검토 하 고 Microsoft 파트너 계약 청구서에 대 한 요금을 확인 하는 방법을 알아봅니다.
+title: Microsoft 파트너 계약 청구서 검토 - Azure
+description: 청구서 및 리소스 사용량을 검토하고 Microsoft 파트너 계약 청구서에 대한 요금을 확인하는 방법을 알아봅니다.
 author: jureid
 manager: jureid
 tags: billing
@@ -12,56 +12,56 @@ ms.workload: na
 ms.date: 11/22/2019
 ms.author: banders
 ms.openlocfilehash: e3823a9eb2e0713f7f42e4e02808ef957efc5944
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75990841"
 ---
 # <a name="tutorial-review-your-microsoft-partner-agreement-invoice"></a>자습서: Microsoft 파트너 계약 청구서 검토
 
- Microsoft 파트너 계약의 청구 계정에서, 매월 청구 프로필마다 청구서가 생성됩니다. 청구서에는 이전 달의 모든 고객 요금이 포함됩니다. Azure Portal에서 개별 트랜잭션을 분석하여 청구서의 요금을 이해할 수 있습니다. Azure Portal에서 송장을 확인 하 고 사용량 정보 파일에 대 한 요금을 비교할 수도 있습니다.
+ Microsoft 파트너 계약의 청구 계정에서, 매월 청구 프로필마다 청구서가 생성됩니다. 청구서에는 이전 달의 모든 고객 요금이 포함됩니다. Azure Portal에서 개별 트랜잭션을 분석하여 청구서의 요금을 이해할 수 있습니다. Azure Portal에서 청구서를 보고 요금을 사용량 세부 정보 파일과 비교할 수도 있습니다.
 
 자세한 내용은 [Azure Portal에서 청구서를 다운로드하는 방법](download-azure-invoice.md)을 참조하세요.
 
-이 자습서는 Microsoft 파트너 규약을 사용 하는 Azure 파트너 에게만 적용 됩니다.
+이 자습서는 Microsoft 파트너 계약을 체결한 Azure 파트너에게만 적용됩니다.
 
 이 자습서에서는 다음 작업 방법을 알아봅니다.
 
 > [!div class="checklist"]
-> * Azure Portal에서 송장이 발부 된 트랜잭션 검토
+> * Azure Portal에서 송장이 발부된 트랜잭션 검토
 > * 보류 중인 요금을 검토하여 다음 달 청구서 예상
 > * Azure 사용 요금 분석
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
-Microsoft 파트너 규약에 대 한 청구 계정에 액세스할 수 있어야 합니다.
+Microsoft 파트너 계약에 대한 청구 계정에 액세스할 수 있어야 합니다.
 
-Azure를 구독 한 날짜 로부터 30 일 이상 이어야 합니다. Azure는 청구서 기간이 끝날 때 사용자에게 청구합니다.
+Azure를 구독한 지 30일 이상이어야 합니다. Azure는 청구서 기간이 끝날 때 사용자에게 청구합니다.
 
 ## <a name="sign-in-to-azure"></a>Azure에 로그인
 
-- [https://portal.azure.com](https://portal.azure.com ) 에서 Azure Portal에 로그인합니다.
+- https://portal.azure.com 에서 Azure Portal에 로그인합니다.
 
 ## <a name="check-access-to-a-microsoft-customer-agreement"></a>Microsoft 고객 계약에 대한 액세스 확인
 
 계약 유형을 검사하여 Microsoft 파트너 계약의 청구 계정에 액세스할 수 있는지 확인합니다.
 
-Azure Portal에서 검색 상자에 *cost management + 청구* 를 입력 하 고 **Cost Management + 청구**를 선택 합니다.
+Azure Portal에서 검색 상자에 *Cost Management + 청구*를 입력한 다음, **Cost Management + 청구**를 선택합니다.
 
 ![Azure Portal 검색을 보여 주는 스크린샷](./media/review-partner-agreement-bill/billing-search-cost-management-billing.png)
 
 하나의 청구 범위에만 액세스할 수 있는 경우, 왼쪽에서 **속성**을 선택합니다. 청구 계정 유형이 **Microsoft 파트너 계약**인 경우, Microsoft 파트너 계약의 청구 계정에 액세스할 수 있습니다.
 
-![속성 페이지의 Microsoft 파트너 규약을 보여 주는 스크린샷](./media/review-partner-agreement-bill/billing-account-properties-partner-agreement.png)
+![속성 페이지의 Microsoft 파트너 계약을 보여주는 스크린샷](./media/review-partner-agreement-bill/billing-account-properties-partner-agreement.png)
 
 여러 청구 범위에 액세스할 수 있는 경우 청구 계정 열의 유형을 확인합니다. 범위 중 하나의 청구 계정 유형이 **Microsoft 파트너 계약**인 경우, Microsoft 파트너 계약의 청구 계정에 액세스할 수 있습니다.
 
-![청구 계정 목록 페이지의 Microsoft 파트너 규약을 보여 주는 스크린샷](./media/review-partner-agreement-bill/mpa-in-the-list.png)
+![청구 계정 목록 페이지의 Microsoft 파트너 계약을 보여주는 스크린샷](./media/review-partner-agreement-bill/mpa-in-the-list.png)
 
-## <a name="review-invoiced-transactions-in-the-azure-portal"></a>Azure Portal에서 송장이 발부 된 트랜잭션 검토
+## <a name="review-invoiced-transactions-in-the-azure-portal"></a>Azure Portal에서 송장이 발부된 트랜잭션 검토
 
-Cost Management + 청구에서 페이지의 왼쪽에 있는 **모든 트랜잭션** 을 선택 합니다. 액세스 권한에 따라 청구 계정, 청구 프로필 또는 고객을 선택한 다음, **모든 트랜잭션**을 선택해야 할 수도 있습니다.
+Cost Management + 청구의 페이지 왼쪽에서 **모든 트랜잭션**을 선택합니다. 액세스 권한에 따라 청구 계정, 청구 프로필 또는 고객을 선택한 다음, **모든 트랜잭션**을 선택해야 할 수도 있습니다.
 
 [모든 트랜젝션] 페이지에는 다음 정보가 표시됩니다.
 
@@ -69,15 +69,15 @@ Cost Management + 청구에서 페이지의 왼쪽에 있는 **모든 트랜잭�
 
 |열  |정의  |
 |---------|---------|
-|날짜     | 트랜잭션 날짜  |
+|Date     | 트랜잭션 날짜  |
 |청구서 ID     | 트랜잭션 요금이 청구된 청구서의 식별자입니다. 지원 요청을 신속하게 처리할 수 있도록 지원 요청을 제출할 때 Azure 지원에 ID를 알려주세요. |
 |트랜잭션 유형     |  구매, 취소, 사용 요금 등의 트랜잭션 유형  |
 |제품군     | 가상 머신용 컴퓨팅 또는 Azure SQL용 데이터베이스 같은 제품 범주|
 |제품 SDKU     | 제품 인스턴스를 식별하는 고유 코드 |
-|금액     |  트랜잭션 양      |
+|Amount     |  트랜잭션 양      |
 |청구 프로필     | 청구 프로필의 청구서에 트랜잭션이 표시됩니다. |
 
-청구서 ID를 검색 하 여 청구서의 거래를 필터링 합니다.
+청구서 ID를 검색하여 해당 청구서의 트랜잭션을 필터링합니다.
 
 ## <a name="review-pending-charges-to-estimate-your-next-invoice"></a>보류 중인 요금을 검토하여 다음 달 청구서 예상
 
@@ -87,7 +87,7 @@ Cost Management + 청구에서 페이지의 왼쪽에 있는 **모든 트랜잭�
 
 보류 중인 요금을 확인할 때 요금에 포함된 개별 트랜잭션을 분석하여 요금을 이해할 수 있습니다. 현재 보류 중인 사용 요금은 [모든 트랜잭션] 페이지에 표시되지 않습니다. Azure 구독 페이지에서 보류 중인 사용 요금을 볼 수 있습니다.
 
-Cost Management + 청구에서 청구 프로필을 선택 합니다. 액세스 권한에 따라 청구 계정을 선택해야 할 수도 있습니다. 청구 계정에서 **청구 프로필**을 선택한 다음, 청구 프로필을 선택합니다.
+Cost Management + 청구에서 청구 프로필을 선택합니다. 액세스 권한에 따라 청구 계정을 선택해야 할 수도 있습니다. 청구 계정에서 **청구 프로필**을 선택한 다음, 청구 프로필을 선택합니다.
 
 페이지 왼쪽에서 **모든 트랜잭션**을 선택합니다.
 
@@ -97,7 +97,7 @@ Cost Management + 청구에서 청구 프로필을 선택 합니다. 액세스 �
 
 ### <a name="view-pending-charges-by-customer"></a>고객별 보류 중인 요금 보기
 
-Cost Management + 청구에서 청구 프로필을 선택 합니다. 액세스 권한에 따라 청구 계정을 선택해야 할 수도 있습니다. 청구 계정에서 **청구 프로필**을 선택한 다음, 청구 프로필을 선택합니다.
+Cost Management + 청구에서 청구 프로필을 선택합니다. 액세스 권한에 따라 청구 계정을 선택해야 할 수도 있습니다. 청구 계정에서 **청구 프로필**을 선택한 다음, 청구 프로필을 선택합니다.
 
 페이지 왼쪽에서 **고객**을 선택합니다.
 
@@ -107,7 +107,7 @@ Cost Management + 청구에서 청구 프로필을 선택 합니다. 액세스 �
 
 ### <a name="view-pending-usage-charges"></a>보류 중인 사용 요금 보기
 
-Cost Management + 청구에서 청구 프로필을 선택 합니다. 액세스 권한에 따라 청구 계정을 선택해야 할 수도 있습니다. 청구 계정에서 **청구 프로필**을 선택한 다음, 청구 프로필을 선택합니다.
+Cost Management + 청구에서 청구 프로필을 선택합니다. 액세스 권한에 따라 청구 계정을 선택해야 할 수도 있습니다. 청구 계정에서 **청구 프로필**을 선택한 다음, 청구 프로필을 선택합니다.
 
 페이지 왼쪽에서 **Azure 구독**을 선택합니다. Azure 구독 페이지에는 청구 프로필의 각 구독에 대한 이번 달과 지난 달 요금이 표시 됩니다. 월간 누계 요금은 이번 달의 보류 중인 요금이며 이번 달의 청구서가 생성될 때 청구됩니다. 지난 달의 청구서가 아직 생성되지 않은 경우 지난 달의 요금 역시 보류 중 요금입니다.
 
@@ -130,11 +130,11 @@ Azure 사용량 및 요금 CSV 파일에서 **customerName** 열을 필터링하
 이 자습서에서는 다음 작업 방법을 알아보았습니다.
 
 > [!div class="checklist"]
-> * Azure Portal에서 송장이 발부 된 트랜잭션 검토
+> * Azure Portal에서 송장이 발부된 트랜잭션 검토
 > * 보류 중인 요금을 검토하여 다음 달 청구서 예상
 > * Azure 사용 요금 분석
 
-파트너에 Azure Cost Management를 사용 하는 방법에 대해 알아봅니다.
+파트너용 Azure Cost Management를 사용하는 방법에 대해 알아봅니다.
 
 > [!div class="nextstepaction"]
-> [파트너에 대 한 Azure Cost Management 시작](../costs/get-started-partners.md)
+> [파트너용 Azure Cost Management 시작](../costs/get-started-partners.md)

@@ -1,34 +1,34 @@
 ---
 title: Android 맵 컨트롤 시작 | Microsoft Azure 맵
 description: 이 문서에서는 Microsoft Azure Maps Android SDK를 사용 하 여 Android 지도 컨트롤을 시작 하는 방법에 대해 알아봅니다.
-author: walsehgal
-ms.author: v-musehg
+author: farah-alyasari
+ms.author: v-faalya
 ms.date: 04/26/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: bb9dc16eabbd6065e05d26258c1421aa7a46dbd7
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 57ad9992bec3f070366134d8dfbcdafa8f2e16d4
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75911408"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209854"
 ---
 # <a name="getting-started-with-azure-maps-android-sdk"></a>Azure Maps Android SDK 시작
 
 Azure Maps Android SDK는 Android 용 벡터 맵 라이브러리입니다. 이 문서에서는 Azure Maps Android SDK를 설치 하 고 지도를 로드 하는 프로세스를 안내 합니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 ### <a name="create-an-azure-maps-account"></a>Azure Maps 계정 만들기
 
 이 문서의 절차를 완료 하려면 먼저 S1 가격 책정 계층에서 [Azure Maps 계정을 만들고](quick-demo-map-app.md#create-an-account-with-azure-maps) 계정에 대 한 [기본 키를 가져와야](quick-demo-map-app.md#get-the-primary-key-for-your-account) 합니다.
 
-Azure Maps의 인증에 대 한 자세한 내용은 [Azure Maps 인증 관리](./how-to-manage-authentication.md)를 참조 하세요.
+Azure Maps의 인증에 대한 자세한 내용은 [Azure Maps의 인증 관리](./how-to-manage-authentication.md)를 참조하세요.
 
-### <a name="download-android-studio"></a>Android Studio 다운로드
+### <a name="download-android-studio"></a>다운로드 Android Studio
 
 Azure Maps Android SDK를 설치 하기 전에 Android Studio을 다운로드 하 고 빈 작업으로 프로젝트를 만듭니다. Google에서 무료로 [Android Studio를 다운로드할](https://developer.android.com/studio/) 수 있습니다. 
 
@@ -38,7 +38,7 @@ Azure Maps Android SDK를 설치 하기 전에 Android Studio을 다운로드 �
 
 1. **프로젝트 선택**에서 **휴대폰 및 태블릿**을 선택 합니다. 응용 프로그램이이 폼 팩터로 실행 됩니다.
 2. **휴대폰 및 태블릿** 탭에서 **빈 작업**을 선택 하 고 **다음**을 선택 합니다.
-3. 프로젝트 구성에서 최소 SDK로 `API 21: Android 5.0.0 (Lollipop)`을 선택합니다. 이 버전은 Azure Maps Android SDK에서 지 원하는 가장 빠른 버전입니다.
+3. **프로젝트 구성**에서 최소 SDK로 `API 21: Android 5.0.0 (Lollipop)`을 선택합니다.{4}{5} 이 버전은 Azure Maps Android SDK에서 지 원하는 가장 빠른 버전입니다.
 4. 기본 `Activity Name` `Layout Name` 적용 하 고 **마침**을 선택 합니다.
 
 Android Studio를 설치 하 고 새 프로젝트를 만드는 방법에 대 한 자세한 내용은 [Android Studio 설명서](https://developer.android.com/studio/intro/) 를 참조 하세요.
@@ -57,7 +57,7 @@ Android Studio를 사용하면 컴퓨터에 가상 Android 디바이스를 설�
 
 응용 프로그램을 빌드하는 다음 단계는 Azure Maps Android SDK를 설치 하는 것입니다. SDK를 설치 하려면 다음 단계를 완료 합니다.
 
-1. 최상위 **gradle** 파일을 열고 **모든 프로젝트**, **리포지토리** 블록 섹션에 다음 코드를 추가 합니다.
+1. 최상위 **build.gradle** 파일을 열고, **all projects**, **repositories** 블록에 다음 코드를 추가합니다.
 
     ```
     maven {
@@ -65,11 +65,11 @@ Android Studio를 사용하면 컴퓨터에 가상 Android 디바이스를 설�
     }
     ```
 
-2. **App/gradle** 를 업데이트 하 고 다음 코드를 추가 합니다.
+2. **app/build.gradle**을 업데이트하고 다음 코드를 추가합니다.
     
-    1. 프로젝트의 **매니페스트의 minsdkversion** 가 API 21 이상에 있는지 확인 합니다.
+    1. 프로젝트의 **minSdkVersion**이 API 21 이상인지 확인합니다.
 
-    2. Android 섹션에 다음 코드를 추가 합니다.
+    2. Android 섹션에 다음 코드를 추가합니다.
 
         ```
         compileOptions {
@@ -77,14 +77,14 @@ Android Studio를 사용하면 컴퓨터에 가상 Android 디바이스를 설�
             targetCompatibility JavaVersion.VERSION_1_8
         }
         ```
-    3. 종속성 블록을 업데이트 하 고 최신 Azure Maps Android SDK에 대 한 새 구현 종속성 줄을 추가 합니다.
+    3. 다음과 같이 종속성 블록을 업데이트하고 최신 Azure Maps Android SDK에 대한 새 구현 종속성 줄을 추가합니다.
 
         ```
         implementation "com.microsoft.azure.maps:mapcontrol:0.2"
         ```
     
-    4. 도구 모음에서 **파일로** 이동한 다음 **Gradle 파일을 사용 하 여 프로젝트 동기화**를 클릭 합니다.
-3. 주 활동에 지도 단편 추가 (res \> 레이아웃 \> 활동\_주 .xml):
+    4. 도구 모음에서 **파일**로 이동한 다음, **Gradle 파일과 프로젝트 동기화**를 클릭합니다.
+3. 다음과 같이 기본 작업에 맵 조각을 추가합니다(res \> layout \> activity\_main.xml).
     
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -105,13 +105,13 @@ Android Studio를 사용하면 컴퓨터에 가상 Android 디바이스를 설�
 
 4. **Mainactivity. java** 파일에서 다음을 수행 해야 합니다.
     
-    * Azure Maps SDK에 대 한 가져오기 추가
+    * Azure Maps SDK에 대한 가져오기 추가
     * Azure Maps 인증 정보 설정
-    * **onCreate** 메서드에서 map 컨트롤 인스턴스 가져오기
+    * **onCreate** 메서드에서 지도 컨트롤 인스턴스 가져오기
 
     `setSubscriptionKey` 또는 `setAadProperties` 메서드를 사용 하 여 `AzureMaps` 클래스에 대 한 인증 정보를 전역적으로 설정 하면 모든 보기에 인증 정보를 추가할 필요가 없습니다. 
 
-    맵 컨트롤에는 Android의 OpenGL 수명 주기를 관리 하는 자체 수명 주기 방법이 포함 되어 있습니다 .이를 포함 하는 작업에서 직접 호출 해야 합니다. 응용 프로그램이 올바르게 작동 하려면 맵 컨트롤의 수명 주기 메서드를 호출 하 고, 맵 컨트롤을 포함 하는 작업에서 다음 수명 주기 메서드를 재정의 하 고 해당 맵 컨트롤 메서드를 호출 해야 합니다. 
+    지도 컨트롤에는 Android의 OpenGL 수명 주기를 관리 하기 위한 자체 수명 주기 방법이 포함 되어 있습니다. 이러한 수명 주기 메서드는 포함 하는 작업에서 직접 호출 해야 합니다. 응용 프로그램에서 맵 컨트롤의 수명 주기 메서드를 올바르게 호출 하려면 맵 컨트롤이 포함 된 활동에서 다음 수명 주기 메서드를 재정의 해야 합니다. 각 map 컨트롤 메서드를 호출 해야 합니다. 
 
     * onCreate (번들) 
     * onStart () 
@@ -122,7 +122,7 @@ Android Studio를 사용하면 컴퓨터에 가상 Android 디바이스를 설�
     * onSaveInstanceState (번들) 
     * onLowMemory () 
 
-    다음과 같이 **Mainactivity. java** 파일을 편집 합니다.
+    **MainActivity.java** 파일을 다음과 같이 편집합니다.
     
     ```java
     package com.example.myapplication;
@@ -238,7 +238,7 @@ static {
 }
 ```
 
-두 번째 옵션은 언어 및 뷰 정보를 맵 컨트롤 XML로 전달 하는 것입니다.
+두 번째 옵션은 언어 및 보기 정보를 지도 컨트롤 XML에 전달하는 것입니다.
 
 ```XML
 <com.microsoft.azure.maps.mapcontrol.MapControl
@@ -250,7 +250,7 @@ static {
     />
 ```
 
-세 번째 옵션은 maps `setStyle` 메서드를 사용 하 여 맵의 언어 및 지역별 뷰를 프로그래밍 방식으로 설정 하는 것입니다. 언제 든 지이 작업을 수행 하 여 지도의 언어 및 지역별 보기를 변경할 수 있습니다.
+세 번째 옵션은 맵 `setStyle` 메서드를 사용하여 맵의 언어 및 지역 보기를 프로그래밍 방식으로 설정하는 것입니다. 언제든지 이 작업을 수행하여 맵의 언어 및 지역 보기를 변경할 수 있습니다.
 
 ```Java
 mapControl.onReady(map -> {
@@ -266,7 +266,7 @@ mapControl.onReady(map -> {
 Azure Maps ![프랑스어](./media/how-to-use-android-map-control-library/android-localization.png)
 레이블을 표시 하는 지도 이미지 </center>
 
-지원 되는 언어 및 지역 보기의 전체 목록은 [여기](supported-languages.md)에 설명 되어 있습니다.
+지원되는 언어 및 지역 보기의 전체 목록은 [여기](supported-languages.md)에 설명되어 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

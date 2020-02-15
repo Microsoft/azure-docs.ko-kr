@@ -4,12 +4,12 @@ description: Azure에서 Web Apps, Virtual Machine 확장 집합 및 Cloud Servi
 ms.topic: conceptual
 ms.date: 07/07/2017
 ms.subservice: autoscale
-ms.openlocfilehash: d9f04e0af4349f6b149619f13dac8ca2f59b560e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a05cf87e660cc6c388ea2055bb174c47b99da4a3
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75396992"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77117121"
 ---
 # <a name="best-practices-for-autoscale"></a>자동 크기 조정에 대한 모범 사례
 Azure Monitor 자동 크기 조정은 [가상 컴퓨터 확장 집합](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [Cloud Services](https://azure.microsoft.com/services/cloud-services/), [App Service - Web Apps](https://azure.microsoft.com/services/app-service/web/) 및 [API Management 서비스](https://docs.microsoft.com/azure/api-management/api-management-key-concepts)에만 적용됩니다.
@@ -113,7 +113,7 @@ Out 및 in 조건에 대해 동일 하거나 유사한 임계값을 사용 하�
 
 ### <a name="considerations-for-scaling-when-multiple-rules-are-configured-in-a-profile"></a>하나의 프로필에 여러 규칙이 구성된 경우 크기 조정에 대한 고려 사항
 
-하나의 프로필에 여러 규칙을 설정해야 할 수 있는 경우가 있습니다. 여러 규칙이 설정 된 경우 서비스에서 다음 자동 크기 조정 규칙을 사용 합니다.
+하나의 프로필에 여러 규칙을 설정해야 할 수 있는 경우가 있습니다. 여러 규칙이 설정 된 경우 자동 크기 조정 엔진에서 다음 자동 크기 조정 규칙을 사용 합니다.
 
 *스케일 아웃*시 규칙이 충족 되 면 자동 크기 조정이 실행 됩니다.
 *규모 감축*의 경우 모든 규칙이 충족되어야 자동 크기 조정이 실행됩니다.
@@ -133,13 +133,13 @@ Out 및 in 조건에 대해 동일 하거나 유사한 임계값을 사용 하�
 반면, CPU가 25%이고 메모리가 51%인 경우 자동 크기 조정에서 규모를 감축하지 **않습니다**. 규모를 감축하려면 CPU가 29%이고 메모리가 49%여야 합니다.
 
 ### <a name="always-select-a-safe-default-instance-count"></a>항상 안전한 기본 인스턴스 수 선택
-기본 인스턴스 수는 메트릭을 사용할 수 없을 때 자동 크기 조정에서 서비스 크기를 조정하는 인스턴스 수이므로 중요합니다. 따라서 워크로드에 안전한 기본 인스턴스 수를 선택해야 합니다.
+기본 인스턴스 수는 메트릭을 사용할 수 없을 때 자동 크기 조정에서 서비스를 해당 개수로 확장 하기 때문에 중요 합니다. 따라서 워크로드에 안전한 기본 인스턴스 수를 선택해야 합니다.
 
 ### <a name="configure-autoscale-notifications"></a>자동 크기 조정 알림 구성
 자동 크기 조정은 다음 조건 중 하나가 발생할 경우 활동 로그에 게시됩니다.
 
-* 자동 크기 조정에서 크기 조정 작업이 생성되는 경우
-* 자동 크기 조정 서비스에서 크기 조정 작업을 성공적으로 완료하는 경우
+* 자동 크기 조정은 크기 조정 작업을 수행 합니다.
+* 자동 크기 조정 서비스에서 크기 조정 작업을 완료 했습니다.
 * 자동 크기 조정 서비스에서 크기 조정 작업에 실패한 경우.
 * 자동 크기 조정 서비스에서 크기 조정 결정을 내리는 데 메트릭을 사용할 수 없는 경우.
 * 크기 조정 결정을 내리는 데 메트릭을 다시 사용할 수 있게 된(복구) 경우.

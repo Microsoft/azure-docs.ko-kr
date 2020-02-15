@@ -3,32 +3,32 @@ title: 검색 결과 페이지 매김에 대한 C# 자습서
 titleSuffix: Azure Cognitive Search
 description: 이 자습서에서는 검색 결과의 페이징 방법을 보여 줍니다. 첫 번째, 다음, 이전, 마지막 및 번호가 매겨진 단추별로 페이징되어 기존 호텔 프로젝트를 기반으로 합니다. 두 번째 페이징 시스템은 세로 스크롤 막대를 해당 하한값까지 이동하여 트리거되는 무한 스크롤을 사용합니다.
 manager: nitinme
-author: PeterTurcan
-ms.author: v-pettur
+author: tchristiani
+ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 11/04/2019
-ms.openlocfilehash: 04f8229a86fbd8fbd5404997926412e760e74973
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.date: 02/10/2020
+ms.openlocfilehash: 9abfeb54be6e22885b8e973034a6d89df8272146
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74113758"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121513"
 ---
 # <a name="c-tutorial-search-results-pagination---azure-cognitive-search"></a>C# 자습서: 검색 결과 페이지 매김 - Azure Cognitive Search
 
 서로 다른 두 가지 페이징 시스템을 구현하는 방법에 대해 알아봅니다. 첫 번째 페이징 시스템은 페이지 번호, 두 번째 페이징 시스템은 무한 스크롤을 기반으로 합니다. 두 페이징 시스템은 모두 널리 사용되고 있으며, 올바른 페이징을 선택하는 것은 결과와 관련하여 원하는 사용자 경험에 따라 달라집니다. 이 자습서에서는 페이징 시스템을 [C# 자습서: 첫 번째 앱 만들기 - Azure Cognitive Search](tutorial-csharp-create-first-app.md) 자습서에서 만든 프로젝트에 빌드합니다.
 
-이 자습서에서는 다음 방법에 대해 알아봅니다.
+이 자습서에서는 다음 작업 방법을 알아봅니다.
 > [!div class="checklist"]
 > * 번호 매기기 페이징을 사용하여 앱 확장
 > * 무한 스크롤을 사용하여 앱 확장
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서를 완료하려면 다음이 필요합니다.
 
-[C# 자습서: 첫 번째 앱 만들기 - Azure Cognitive Search](tutorial-csharp-create-first-app.md) 프로젝트를 가동하여 실행합니다. 이 프로젝트는 사용자 고유의 버전이거나 GitHub: [첫 번째 앱 만들기](https://github.com/Azure-Samples/azure-search-dotnet-samples)에서 설치할 수 있습니다.
+[C# 자습서: 첫 번째 앱 만들기 - Azure Cognitive Search](tutorial-csharp-create-first-app.md) 프로젝트를 가동하여 실행합니다. 이 프로젝트는 사용자 고유의 버전이거나 GitHub: [첫 번째 앱 만들기](https://github.com/Azure-Samples/azure-search-dotnet-samples)의 버전을 설치해도 됩니다.
 
 ## <a name="extend-your-app-with-numbered-paging"></a>번호 매기기 페이징을 사용하여 앱 확장
 
@@ -392,7 +392,7 @@ ms.locfileid: "74113758"
 
 여기서 중요한 점은 표시되는 페이지가 바뀌지 않고 새 결과와 함께 추가된다는 것입니다. 사용자는 언제든지 검색의 첫 번째 결과까지 뒤로 스크롤할 수 있습니다.
 
-무한 스크롤을 구현하기 위해 페이지 번호 스크롤 요소를 추가하기 전에 먼저 프로젝트부터 시작하겠습니다. 따라서 필요한 경우 GitHub: [첫 번째 앱 만들기](https://github.com/Azure-Samples/azure-search-dotnet-samples)에서 기본 검색 페이지의 다른 복사본을 만듭니다.
+무한 스크롤을 구현하기 위해 페이지 번호 스크롤 요소를 추가하기 전에 먼저 프로젝트부터 시작하겠습니다. 따라서 필요한 경우 GitHub: [첫 번째 앱 만들기](https://github.com/Azure-Samples/azure-search-dotnet-samples)의 버전을 설치해도 됩니다.
 
 ### <a name="add-paging-fields-to-the-model"></a>모델에 페이징 필드 추가
 
@@ -586,7 +586,7 @@ ms.locfileid: "74113758"
 
 ## <a name="takeaways"></a>핵심 내용
 
-이 프로젝트에서 고려해야 할 핵심 내용은 다음과 같습니다.
+이 프로젝트에서 다음 핵심 내용을 기억하세요.
 
 * 번호 매기기 페이징은 결과의 순서가 다소 임의적인 검색에 적합합니다. 즉 이후의 페이지에 사용자의 관심을 끄는 무언가가 있을 수 있습니다.
 * 무한 스크롤은 결과의 순서가 특히 중요한 경우에 적합합니다. 예를 들어 대상 도시의 중심에서 떨어진 거리에 따라 결과가 정렬되는 경우입니다.

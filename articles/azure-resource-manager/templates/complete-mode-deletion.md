@@ -2,13 +2,13 @@
 title: 전체 모드 삭제
 description: 리소스 종류가 Azure Resource Manager 템플릿에서 전체 모드 삭제를 처리하는 방법을 보여줍니다.
 ms.topic: conceptual
-ms.date: 01/23/2020
-ms.openlocfilehash: b24bf2d8076dbaa1975f5444d597647156a31f4f
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.date: 02/13/2020
+ms.openlocfilehash: 80d2ee356e3bc15a178862c453bf7f1ab8d66c77
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76715583"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207811"
 ---
 # <a name="deletion-of-azure-resources-for-complete-mode-deployments"></a>완료 모드 배포를 위한 Azure 리소스의 삭제
 
@@ -121,6 +121,7 @@ ms.locfileid: "76715583"
 > - [Microsoft 마이그레이션](#microsoftmigrate)
 > - [MixedReality](#microsoftmixedreality)
 > - [Microsoft NetApp](#microsoftnetapp)
+> - [Microsoft. 전자 필기장](#microsoftnotebooks)
 > - [Microsoft 네트워크](#microsoftnetwork)
 > - [Microsoft.NotificationHubs](#microsoftnotificationhubs)
 > - [Microsoft ObjectStore](#microsoftobjectstore)
@@ -153,6 +154,7 @@ ms.locfileid: "76715583"
 > - [SiteRecovery](#microsoftsiterecovery)
 > - [SoftwarePlan](#microsoftsoftwareplan)
 > - [Microsoft 솔루션](#microsoftsolutions)
+> - [SpoolService](#microsoftspoolservice)
 > - [Microsoft .SQL](#microsoftsql)
 > - [SqlVirtualMachine](#microsoftsqlvirtualmachine)
 > - [Microsoft.Storage](#microsoftstorage)
@@ -194,13 +196,13 @@ ms.locfileid: "76715583"
 > | ------------- | ----------- |
 > | aadsupportcases | 예 |
 > | addsservices | 예 |
-> | 에이전트 | 예 |
+> | agents | 예 |
 > | anonymousapiusers | 예 |
 > | 구성 | 예 |
 > | 로그 | 예 |
 > | reports | 예 |
 > | servicehealthmetrics | 예 |
-> | 서비스 | 예 |
+> | services | 예 |
 
 ## <a name="microsoftadvisor"></a>Microsoft.Advisor
 
@@ -372,6 +374,7 @@ ms.locfileid: "76715583"
 > | billingAccounts/billingProfiles/지침 | 예 |
 > | billingAccounts/billingProfiles/송장 | 예 |
 > | billingAccounts/billingProfiles/청구서/가격표 | 예 |
+> | billingAccounts/billingProfiles/송장/트랜잭션 | 예 |
 > | billingAccounts / billingProfiles / invoiceSections | 예 |
 > | billingAccounts / billingProfiles / invoiceSections / billingPermissions | 예 |
 > | billingAccounts / billingProfiles / invoiceSections / billingRoleAssignments | 예 |
@@ -434,7 +437,7 @@ ms.locfileid: "76715583"
 > | createBillingRoleAssignment | 예 |
 > | departments | 예 |
 > | enrollmentAccounts | 예 |
-> | 청구서 | 예 |
+> | invoices | 예 |
 > | transfers | 예 |
 > | 전송/acceptTransfer | 예 |
 > | 전송/declineTransfer | 예 |
@@ -489,7 +492,6 @@ ms.locfileid: "76715583"
 > | 리소스 유형 | 전체 모드 삭제 |
 > | ------------- | ----------- |
 > | Redis | yes |
-> | RedisConfigDefinition | 예 |
 
 ## <a name="microsoftcapacity"></a>Microsoft.Capacity
 
@@ -596,7 +598,7 @@ ms.locfileid: "76715583"
 > | ------------- | ----------- |
 > | capabilities | 예 |
 > | disks | 예 |
-> | 이미지 | 예 |
+> | images | 예 |
 > | osImages | 예 |
 > | osPlatformImages | 예 |
 > | publicImages | 예 |
@@ -645,7 +647,7 @@ ms.locfileid: "76715583"
 > | 갤러리/이미지/버전 | 예 |
 > | 호스트 그룹 | yes |
 > | 호스트 그룹/호스트 | yes |
-> | 이미지 | yes |
+> | images | yes |
 > | proximityPlacementGroups | yes |
 > | restorePointCollections | yes |
 > | restorePointCollections / restorePoints | 예 |
@@ -712,6 +714,9 @@ ms.locfileid: "76715583"
 > | 레지스트리/getBuildSourceUploadUrl | 예 |
 > | 레지스트리/GetCredentials | 예 |
 > | 레지스트리/importImage | 예 |
+> | 레지스트리/privateEndpointConnectionProxies | 예 |
+> | 레지스트리/privateEndpointConnectionProxies/유효성 검사 | 예 |
+> | 레지스트리/privateLinkResources | 예 |
 > | 레지스트리/queueBuild | 예 |
 > | 레지스트리/regenerateCredential | 예 |
 > | 레지스트리/regenerateCredentials | 예 |
@@ -811,7 +816,7 @@ ms.locfileid: "76715583"
 > [!div class="mx-tableFixed"]
 > | 리소스 유형 | 전체 모드 삭제 |
 > | ------------- | ----------- |
-> | 작업 영역 | yes |
+> | workspaces | yes |
 > | workspace/dbWorkspaces | 예 |
 > | 작업 영역/storageEncryption | 예 |
 > | 작업 영역/virtualNetworkPeerings | 예 |
@@ -865,7 +870,7 @@ ms.locfileid: "76715583"
 > [!div class="mx-tableFixed"]
 > | 리소스 유형 | 전체 모드 삭제 |
 > | ------------- | ----------- |
-> | 서비스 | yes |
+> | services | yes |
 > | 서비스/프로젝트 | yes |
 
 ## <a name="microsoftdatashare"></a>DataShare
@@ -962,7 +967,7 @@ ms.locfileid: "76715583"
 > | hostpools/sessionhosts | 예 |
 > | hostpools/sessionhosts/usersessions | 예 |
 > | hostpools/usersessions | 예 |
-> | 작업 영역 | yes |
+> | workspaces | yes |
 
 ## <a name="microsoftdevices"></a>Microsoft.Devices
 
@@ -1037,7 +1042,7 @@ ms.locfileid: "76715583"
 > [!div class="mx-tableFixed"]
 > | 리소스 유형 | 전체 모드 삭제 |
 > | ------------- | ----------- |
-> | 서비스 | yes |
+> | services | yes |
 
 ## <a name="microsofteventgrid"></a>Microsoft.EventGrid
 
@@ -1145,7 +1150,7 @@ ms.locfileid: "76715583"
 > [!div class="mx-tableFixed"]
 > | 리소스 유형 | 전체 모드 삭제 |
 > | ------------- | ----------- |
-> | 서비스 | yes |
+> | services | yes |
 
 ## <a name="microsofthybridcompute"></a>Microsoft.HybridCompute
 
@@ -1167,7 +1172,7 @@ ms.locfileid: "76715583"
 > [!div class="mx-tableFixed"]
 > | 리소스 유형 | 전체 모드 삭제 |
 > | ------------- | ----------- |
-> | 구성 요소 | yes |
+> | components | yes |
 > | networkScopes | yes |
 
 ## <a name="microsoftimportexport"></a>Microsoft.ImportExport
@@ -1260,7 +1265,7 @@ ms.locfileid: "76715583"
 > [!div class="mx-tableFixed"]
 > | 리소스 유형 | 전체 모드 삭제 |
 > | ------------- | ----------- |
-> | 작업 영역 | yes |
+> | workspaces | yes |
 > | 작업 영역/계산 | 예 |
 > | workspace/eventGridFilters | 예 |
 
@@ -1269,7 +1274,7 @@ ms.locfileid: "76715583"
 > [!div class="mx-tableFixed"]
 > | 리소스 유형 | 전체 모드 삭제 |
 > | ------------- | ----------- |
-> | ID | 예 |
+> | Identities | 예 |
 > | userAssignedIdentities | yes |
 
 ## <a name="microsoftmanagedservices"></a>Microsoft ManagedServices
@@ -1397,6 +1402,13 @@ ms.locfileid: "76715583"
 > | netAppAccounts/capacityPools/볼륨 | yes |
 > | netAppAccounts/capacityPools/볼륨/mountTargets | yes |
 > | netAppAccounts/capacityPools/볼륨/스냅숏 | yes |
+
+## <a name="microsoftnotebooks"></a>Microsoft. 전자 필기장
+
+> [!div class="mx-tableFixed"]
+> | 리소스 유형 | 전체 모드 삭제 |
+> | ------------- | ----------- |
+> | NotebookProxies | 예 |
 ## <a name="microsoftnetwork"></a>Microsoft.Network
 
 > [!div class="mx-tableFixed"]
@@ -1512,10 +1524,9 @@ ms.locfileid: "76715583"
 > | 리소스 유형 | 전체 모드 삭제 |
 > | ------------- | ----------- |
 > | clusters | yes |
-> | devices | 예 |
 > | linkTargets | 예 |
 > | storageInsightConfigs | 예 |
-> | 작업 영역 | yes |
+> | workspaces | yes |
 > | 작업 영역/데이터 내보내기 | 예 |
 > | 작업 영역/데이터 원본 | 예 |
 > | 작업 영역/Linkedservices.json 및 datasets.json | 예 |
@@ -1523,6 +1534,7 @@ ms.locfileid: "76715583"
 > | 작업 영역/privateEndpointConnections | 예 |
 > | 작업 영역/privateLinkResources | 예 |
 > | 작업 영역/쿼리 | 예 |
+> | 작업 영역/scopedPrivateLinkProxies | 예 |
 
 ## <a name="microsoftoperationsmanagement"></a>Microsoft.OperationsManagement
 
@@ -1745,8 +1757,10 @@ ms.locfileid: "76715583"
 > | 책갈피 | 예 |
 > | cases | 예 |
 > | dataConnectors | 예 |
+> | dataConnectorsCheckRequirements | 예 |
 > | 엔터티 | 예 |
 > | entityQueries | 예 |
+> | 사고 | 예 |
 > | officeConsents | 예 |
 > | 설정 | 예 |
 
@@ -1780,6 +1794,8 @@ ms.locfileid: "76715583"
 > | containerGroupSets | yes |
 > | edgeclusters | yes |
 > | edgeclusters/응용 프로그램 | 예 |
+> | managedclusters | yes |
+> | managedclusters/nodetypes | 예 |
 > | networks | yes |
 > | secretstores | yes |
 > | secretstores/인증서 | 예 |
@@ -1837,6 +1853,14 @@ ms.locfileid: "76715583"
 > | applicationDefinitions | yes |
 > | 애플리케이션 | yes |
 > | jitRequests | yes |
+
+## <a name="microsoftspoolservice"></a>SpoolService
+
+> [!div class="mx-tableFixed"]
+> | 리소스 유형 | 전체 모드 삭제 |
+> | ------------- | ----------- |
+> | registeredSubscriptions | 예 |
+> | 스풀 | yes |
 
 ## <a name="microsoftsql"></a>Microsoft.SQL
 
@@ -1961,7 +1985,7 @@ ms.locfileid: "76715583"
 > | ------------- | ----------- |
 > | cancel | 예 |
 > | CreateSubscription | 예 |
-> | 사용하도록 설정 | 예 |
+> | enable | 예 |
 > | 이름 바꾸기 | 예 |
 > | SubscriptionDefinitions | 예 |
 > | SubscriptionOperations | 예 |
@@ -1993,6 +2017,7 @@ ms.locfileid: "76715583"
 > | devices | yes |
 > | 판매 | 예 |
 > | 공급 업체/sku | 예 |
+> | 공급 업체/vnfs | 예 |
 > | vnfs | yes |
 
 ## <a name="microsoftweb"></a>Microsoft.Web
@@ -2061,7 +2086,7 @@ ms.locfileid: "76715583"
 > [!div class="mx-tableFixed"]
 > | 리소스 유형 | 전체 모드 삭제 |
 > | ------------- | ----------- |
-> | 구성 요소 | 예 |
+> | components | 예 |
 > | componentsSummary | 예 |
 > | monitorInstances | 예 |
 > | monitorInstancesSummary | 예 |

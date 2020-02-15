@@ -3,12 +3,12 @@ title: 리소스의 배포 순서 설정
 description: 리소스가 올바른 순서대로 배포되도록 배포 중 다른 리소스에 종속된 것으로 리소스를 설정하는 방법에 대해 설명합니다.
 ms.topic: conceptual
 ms.date: 12/03/2019
-ms.openlocfilehash: 44cf793859d2817695a58bd1159e2f4465c1f9c2
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: ffd6d6c65a1cbe9578b5f9162d29f3238e27ea71
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76121967"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207692"
 ---
 # <a name="define-the-order-for-deploying-resources-in-azure-resource-manager-templates"></a>Azure Resource Manager 템플릿에서 리소스를 배포하는 순서 정의
 
@@ -40,7 +40,7 @@ Resource Manager는 리소스 간의 종속성을 평가한 후 종속된 순서
 }
 ```
 
-앞의 예에서 종속성은 **storageLoop**라는 복사 루프를 통해 생성되는 리소스에 포함됩니다. 예제는 [Azure 리소스 관리자에서 리소스의 여러 인스턴스 만들기](create-multiple-instances.md)를 참조하세요.
+앞의 예에서 종속성은 **storageLoop**라는 복사 루프를 통해 생성되는 리소스에 포함됩니다. 예제는 [Azure 리소스 관리자에서 리소스의 여러 인스턴스 만들기](copy-resources.md)를 참조하세요.
 
 종속성을 정의할 때 모호성을 피하기 위해 리소스 공급자 네임스페이스 및 리소스 형식을 포함할 수 있습니다. 예를 들어 다른 리소스와 동일한 이름을 가질 수 있는 부하 분산 장치 및 가상 네트워크를 명확히 하려면 다음 형식을 사용합니다.
 

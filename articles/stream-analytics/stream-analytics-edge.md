@@ -6,18 +6,18 @@ author: mamccrea
 ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.topic: conceptual
-ms.date: 07/01/2019
+ms.date: 02/14/2020
 ms.custom: seodec18
-ms.openlocfilehash: ff2a7e571c771a73c46959f35e341d861533bb55
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7e4a1cf43931b56cfdb3c31ffe870a07dbaa75af
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75426324"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201758"
 ---
 # <a name="azure-stream-analytics-on-iot-edge"></a>IoT Edge의 Azure Stream Analytics
  
-IoT Edge의 ASA(Azure Stream Analytics)는 개발자가 IoT 디바이스에 보다 가깝게 거의 실시간으로 분석 인텔리전스를 배포하여 디바이스 생성 데이터의 가치를 극대화할 수 있게 해줍니다. Azure Stream Analytics는 짧은 대기 시간, 복원력, 대역폭의 효율적 사용 및 규정 준수를 위해 고안되었습니다. 이제 기업에서는 업계 운영과 밀접한 컨트롤 논리를 배포하고, 클라우드에서 수행된 빅 데이터 분석을 보완할 수 있습니다.  
+IoT Edge의 ASA(Azure Stream Analytics)는 개발자가 IoT 디바이스에 보다 가깝게 거의 실시간으로 분석 인텔리전스를 배포하여 디바이스 생성 데이터의 가치를 극대화할 수 있도록 합니다. Azure Stream Analytics는 짧은 대기 시간, 복원력, 대역폭의 효율적 사용 및 규정 준수를 위해 고안되었습니다. 이제 기업에서는 업계 운영과 밀접한 컨트롤 논리를 배포하고, 클라우드에서 수행된 빅 데이터 분석을 보완할 수 있습니다.  
 
 IoT Edge의 Azure Stream Analytics는 [Azure IoT Edge](https://azure.microsoft.com/campaigns/iot-edge/) 프레임워크 내에서 실행됩니다. ASA에서 작업을 만든 후, IoT Hub를 사용하여 작업을 배포 및 관리할 수 있습니다.
 
@@ -104,7 +104,7 @@ Edge 작업은 Azure IoT Edge를 실행하는 디바이스에 배포할 수 있�
 ##### <a name="add-asa-to-your-deployment"></a>배포에 ASA 추가
 - Azure Portal에서 IoT Hub를 열고 **IoT Edge**로 이동한 후, 이 배포에 대상을 지정할 디바이스를 클릭합니다.
 - **모듈 설정**을 선택한 다음, **+ 추가**를 선택하고 **Azure Stream Analytics 모듈**을 선택합니다.
-- 구독 및 사용자가 만든 ASA Edge 작업을 선택합니다. [저장]을 클릭합니다.
+- 구독 및 사용자가 만든 ASA Edge 작업을 선택합니다. 저장을 클릭합니다.
 ![모듈에 ASA 배포 추가](media/stream-analytics-edge/add-stream-analytics-module.png)
 
 
@@ -120,7 +120,7 @@ IoT Edge 배포에 대한 자세한 내용은 [이 페이지](https://docs.micro
 IoT Edge에서는 모듈 간에, 그리고 모듈과 IoT Hub 간에 선언적으로 경로를 지정하는 방법을 제공합니다. 전체 구문은 [여기](https://docs.microsoft.com/azure/iot-edge/module-composition)에 설명되어 있습니다.
 ASA 작업에서 만든 입/출력의 이름은 라우팅을 위한 엔드포인트로 사용할 수 있습니다.  
 
-###### <a name="example"></a>예
+###### <a name="example"></a>예제
 
 ```json
 {
@@ -206,26 +206,26 @@ IoT Edge 업데이트에 대한 참조 데이터는 배포에 의해 트리거�
 
 이 버전 정보는 2019-06-27에서 마지막으로 업데이트 되었습니다.
 
-- 이미지: `asaedge.azurecr.io/public/azure-stream-analytics/azureiotedge:1.0.3-linux-amd64`
+- 이미지: `mcr.microsoft.com/azure-stream-analytics/azureiotedge:1.0.5-linux-amd64`
    - 기본 이미지: microsoft/dotnet: 2.1.6-알파인 3.7
    - platform.string
       - 아키텍처: amd64
       - os: linux
   
-- 이미지: `asaedge.azurecr.io/public/azure-stream-analytics/azureiotedge:1.0.3-linux-arm32v7`
+- 이미지: `mcr.microsoft.com/azure-stream-analytics/azureiotedge:1.0.5-linux-arm32v7`
    - 기본 이미지: microsoft/dotnet: 2.1.6-bionic-arm32v7
    - platform.string
       - 아키텍처: arm
       - os: linux
   
-- 이미지: `asaedge.azurecr.io/public/azure-stream-analytics/azureiotedge:1.0.3-windows-amd64`
+- 이미지: `mcr.microsoft.com/azure-stream-analytics/azureiotedge:1.0.5-windows-amd64`
    - 기본 이미지: microsoft/dotnet: 2.1.6-nanoserver-1809
    - platform.string
       - 아키텍처: amd64
       - os: windows
       
       
-## <a name="get-help"></a>도움 받기
+## <a name="get-help"></a>도움말 보기
 추가 지원이 필요할 경우 [Azure Stream Analytics 포럼](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics)을 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계

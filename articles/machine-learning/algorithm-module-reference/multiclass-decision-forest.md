@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 10/22/2019
-ms.openlocfilehash: 6b0e9304278dc2092dfe070b76e6594ed19d5020
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 47cea412489693cedb05bd8a94a914b1757b8058
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76546625"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152162"
 ---
 # <a name="multiclass-decision-forest-module"></a>다중 클래스 의사 결정 포리스트 모듈
 

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: anilmur
 ms.reviewer: juliako
-ms.openlocfilehash: 32a4fde12287e06c12fac9ed13ad7a8889b49fc1
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: a32624c37cd8ca7fbef9e38ca61de9369791dd25
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74895923"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162534"
 ---
 # <a name="live-streaming-using-azure-media-services-to-create-multi-bitrate-streams"></a>Azure Media Services를 사용하여 다중 비트 전송률 스트림을 만드는 라이브 스트리밍
 
@@ -31,7 +31,7 @@ ms.locfileid: "74895923"
 AMS(Azure Media Services)에서 **채널** 은 라이브 스트리밍 콘텐츠를 처리하기 위한 파이프라인을 나타냅니다. **채널** 은 다음 두 가지 방법 중 하나로 라이브 입력 스트림을 받습니다.
 
 * 온-프레미스 라이브 인코더는 단일 비트 전송률 스트림을 RTMP 또는 부드러운 스트리밍(조각화된 MP4) 형식의 하나로 Media Services를 통해 라이브 인코딩을 수행할 수 있는 채널에 전송합니다. 그러면 채널은 들어오는 단일 비트 전송률 스트림을 다중 비트 전송률(적응) 비디오 스트림으로 라이브 인코딩합니다. 요청된 경우 Media Services는 고객에게 스트림을 배달합니다.
-* 온-프레미스 라이브 인코더가 다중 비트 전송률 **RTMP** 또는 **부드러운 스트리밍**(조각화된 MP4)을 AMS로 라이브 인코딩을 수행하도록 설정되지 않은 채널에 보냅니다. 수집된 스트림은 어떠한 추가적인 처리 없이 **채널**을 통과합니다. 이 방법을 **통과**라고 합니다. 다중 비트 전송률 부드러운 스트리밍을 출력하는 라이브 인코더인 MediaExcel, Ateme, Imagine Communications, Envivio, Cisco 및 Elemental을 사용할 수 있습니다. RTMP를 출력하는 라이브 인코더는 Adobe FMLE(Flash Media Live Encoder), Telestream Wirecast, Haivision, Teradek 및 Tricaster 인코더입니다.  또한 라이브 인코더는 라이브 인코딩이 사용되지 않는 채널에 단일 비트 전송률 스트림을 전송할 수 있지만 이 방법은 권장되지 않습니다. 요청된 경우 Media Services는 고객에게 스트림을 배달합니다.
+* 온-프레미스 라이브 인코더가 다중 비트 전송률 **RTMP** 또는 **부드러운 스트리밍**(조각화된 MP4)을 AMS로 라이브 인코딩을 수행하도록 설정되지 않은 채널에 보냅니다. 수집된 스트림은 어떠한 추가적인 처리 없이 **채널**을 통과합니다. 이 방법을 **통과**라고 합니다. 다중 비트 전송률 부드러운 스트리밍을 출력하는 라이브 인코더인 MediaExcel, Ateme, Imagine Communications, Envivio, Cisco 및 Elemental을 사용할 수 있습니다. 다음 라이브 인코더는 RTMP: [Telestream Wirecast](media-services-configure-wirecast-live-encoder.md), Haivision, Teradek 및 Tricaster 인코더를 출력 합니다.  또한 라이브 인코더는 라이브 인코딩이 사용되지 않는 채널에 단일 비트 전송률 스트림을 전송할 수 있지만 이 방법은 권장되지 않습니다. 요청된 경우 Media Services는 고객에게 스트림을 배달합니다.
 
   > [!NOTE]
   > 통과 방법은 라이브 스트리밍을 수행하는 가장 경제적인 방법입니다.
@@ -51,7 +51,7 @@ Media Services 2.10 릴리스부터, 채널을 만들 때 채널이 입력 스�
 > 
 
 ## <a name="billing-implications"></a>요금 청구
-라이브 인코딩 채널은 상태가 API를 통한 "실행 중"으로 전환되면 그 즉시 청구되기 시작됩니다.   또한 Azure Portal 또는 Azure Media Services 탐색기 도구(https://aka.ms/amse) 에서 상태를 볼 수도 있습니다.
+라이브 인코딩 채널은 상태가 API를 통한 "실행 중"으로 전환되면 그 즉시 청구되기 시작됩니다.   또한 Azure Portal 또는 Azure Media Services 탐색기 도구(https://aka.ms/amse)에서 상태를 볼 수도 있습니다.
 
 다음 표에서는 채널 상태가 API 및 Azure Portal에서 청구 상태에 매핑되는 방식을 보여줍니다. API와 포털 UX의 상태는 서로 약간 다릅니다. 채널이 API를 통한 "실행 중" 상태 또는 Azure Portal의 "준비" 또는 "스트리밍" 상태에 있는 한, 요금이 청구됩니다.
 채널이 요금을 청구하지 못하게 하려면 API를 통해 또는 Azure Portal에서 채널을 중지해야 합니다.
@@ -70,10 +70,10 @@ Media Services 2.10 릴리스부터, 채널을 만들 때 채널이 입력 스�
 
 | 채널 상태 | 포털 UI 표시기 | 요금이 청구됩니까? |
 | --- | --- | --- |
-| 시작 중 |시작 중 |아니요(임시 상태) |
-| 실행 중 |준비(실행 중인 프로그램 없음)<br/>or<br/>스트리밍(실행 중인 프로그램이 하나 이상 있음) |예 |
-| 중지 중 |중지 중 |아니요(임시 상태) |
-| 중지됨 |중지됨 |아닙니다. |
+| 시작 중 |시작 중 |없음(일시적인 상태) |
+| 실행 중 |준비(실행 중인 프로그램이 없음)<br/>또는<br/>스트리밍(실행 중인 프로그램이 하나 이상임) |YES |
+| 중지 중 |중지 중 |없음(일시적인 상태) |
+| 중지됨 |중지됨 |예 |
 
 ### <a name="automatic-shut-off-for-unused-channels"></a>사용하지 않는 채널에 대한 자동 종료
 2016년 1월 25일부터 시작하는 Media Services는 장기간 사용하지 않은 상태로 실행된 후 자동으로 채널을 중지하는(라이브 인코딩 사용) 업데이트를 출시했습니다. 이는 활성화된 프로그램이 없고 오랜 시간 동안 입력 기여 피드를 받지 않은 채널에 적용됩니다.
@@ -146,7 +146,7 @@ Media Services 2.10 릴리스부터, 채널을 만들 때 채널이 입력 스�
 * 44.1kHz 샘플링 주기
 * Mpeg-2 스타일 ADTS 패키징
 * 권장되는 인코더는 다음과 같습니다.
-* Telestream Wirecast
+* [Telestream Wirecast](media-services-configure-wirecast-live-encoder.md)
 * Flash Media Live Encoder
 
 #### <a name="single-bitrate-fragmented-mp4-smooth-streaming"></a>단일 비트 전송률 조각화된 MP4(부드러운 스트리밍)
@@ -204,7 +204,7 @@ IP 주소가 지정되지 않고 정의된 규칙이 없는 경우 IP 주소가 
 ### <a name="cea-708-closed-captions"></a>CEA 708 선택 캡션
 들어오는 비디오의 모든 CEA 708 캡션 데이터를 무시하도록 라이브 인코더에 지시하는 선택적 플래그입니다. 플래그를 false(기본값)로 설정하면 인코더가 CEA 708 데이터를 검색하고 출력 비디오 스트림에 다시 삽입합니다.
 
-#### <a name="index"></a>색인
+#### <a name="index"></a>인덱스
 SPTS(단일 프로그램 전송 스트림)로 보내는 것이 좋습니다. 입력 스트림에 여러 프로그램이 포함된 경우 채널 내의 라이브 인코더는 입력의 PMT(프로그램 맵 테이블)를 구문 분석하고 스트림 형식 이름이 MPEG-2 AAC ADTS, AC-3 System-A, AC-3 System-B, MPEG-2 Private PES, MPEG-1 오디오, MPEG-2 오디오인 입력을 식별하여 PMT에 지정된 순서로 정렬합니다. 해당 정렬의 n번째 항목을 선택하기 위해 0부터 시작하는 인덱스가 사용됩니다.
 
 #### <a name="language"></a>언어
@@ -240,14 +240,14 @@ ENG와 같은 ISO 639-2를 따르는 오디오 스트림의 언어 식별자입�
 
 다음은 광고를 신호로 보낼 때 설정할 수 있는 속성입니다. 
 
-### <a name="duration"></a>기간
+### <a name="duration"></a>Duration
 중간 광고의 기간(초)입니다. 중간 광고를 시작하려면 이 값이 0이 아닌 양수여야 합니다. 중간 광고가 진행 중인 경우 기간이 0으로 설정되어 있고 CueId가 진행 중인 중간 광고와 일치하면 해당 중간 광고가 취소됩니다.
 
 ### <a name="cueid"></a>CueId
 적절한 작업을 수행하기 위해 다운스트림 애플리케이션에서 사용할 중간 광고의 고유 ID입니다. 양의 정수여야 합니다. 이 값을 임의의 양의 정수로 설정하거나 업스트림 시스템을 사용하여 큐 ID를 추적할 수 있습니다. API를 통해 제출하기 전에 모든 ID를 양의 정수로 정규화해야 합니다.
 
 ### <a name="show-slate"></a>슬레이트 표시
-선택 사항입니다. 중간 광고 중에 [기본 슬레이트](media-services-manage-live-encoder-enabled-channels.md#default_slate) 이미지로 전환하고 들어오는 비디오 피드를 숨기도록 라이브 인코더에 신호를 보냅니다. 슬레이트 중에는 오디오도 음소거됩니다. 기본값은 **false**입니다. 
+(선택 사항) 중간 광고 중에 [기본 슬레이트](media-services-manage-live-encoder-enabled-channels.md#default_slate) 이미지로 전환하고 들어오는 비디오 피드를 숨기도록 라이브 인코더에 신호를 보냅니다. 슬레이트 중에는 오디오도 음소거됩니다. 기본값은 **false**입니다. 
 
 사용되는 이미지는 채널을 만들 때 기본 슬레이트 자산 ID 속성을 통해 지정된 이미지입니다. 슬레이트는 표시 이미지 크기에 맞게 확장됩니다. 
 
@@ -256,7 +256,7 @@ ENG와 같은 ISO 639-2를 따르는 오디오 스트림의 언어 식별자입�
 
 중간 광고 시간과 같은 특정한 상황에 슬레이트 이미지로 전환하고 들어오는 비디오 신호를 숨기도록 라이브 인코더를 구성할 수 있습니다. 이러한 슬레이트를 구성하지 않는 경우 입력 비디오가 해당 중간 광고 중에 마스킹되지 않습니다.
 
-### <a name="duration"></a>기간
+### <a name="duration"></a>Duration
 슬레이트의 기간(초)입니다. 슬레이트를 시작하려면 이 값이 0이 아닌 양수여야 합니다. 진행 중인 슬레이트가 있는 경우 기간을 0으로 지정하면 진행 중인 슬레이트가 종료됩니다.
 
 ### <a name="insert-slate-on-ad-marker"></a>광고 표식에서 슬레이트 삽입
@@ -264,7 +264,7 @@ ENG와 같은 ISO 639-2를 따르는 오디오 스트림의 언어 식별자입�
 
 ### <a id="default_slate"></a>기본 슬레이트 자산 ID
 
-선택 사항입니다. 슬레이트 이미지를 포함하는 Media Services 자산의 자산 ID를 지정합니다. 기본값은 null입니다. 
+(선택 사항) 슬레이트 이미지를 포함하는 Media Services 자산의 자산 ID를 지정합니다. 기본값은 null입니다. 
 
 
 > [!NOTE] 
@@ -312,10 +312,10 @@ Live Encoding을 사용하도록 설정한 경우 이제 라이브 피드가 채
 
 | 채널 상태 | 포털 UI 표시기 | 청구 여부 |
 | --- | --- | --- |
-| 시작 중 |시작 중 |아니요(임시 상태) |
-| 실행 중 |준비(실행 중인 프로그램 없음)<br/>or<br/>스트리밍(실행 중인 프로그램이 하나 이상 있음) |yes |
-| 중지 중 |중지 중 |아니요(임시 상태) |
-| 중지됨 |중지됨 |아닙니다. |
+| 시작 중 |시작 중 |없음(일시적인 상태) |
+| 실행 중 |준비(실행 중인 프로그램이 없음)<br/>또는<br/>스트리밍(실행 중인 프로그램이 하나 이상임) |yes |
+| 중지 중 |중지 중 |없음(일시적인 상태) |
+| 중지됨 |중지됨 |예 |
 
 > [!NOTE]
 > 현재, 채널 시작 평균 시간은 약 2분이지만 종종 최대 20분 이상 걸릴 수도 있습니다. 채널 다시 설정은 최대 5분까지 걸릴 수 있습니다.
@@ -340,7 +340,7 @@ Live Encoding을 사용하도록 설정한 경우 이제 라이브 피드가 채
 * 슬레이트 이미지는 [여기](media-services-manage-live-encoder-enabled-channels.md#default_slate)설명된 제한 사항을 따라야 합니다. 1920x1080보다 큰 기본 슬레이트를 사용하여 채널을 만들려고 하면 결국 요청이 오류로 처리됩니다.
 * 다시 한번 강조하지만, 작업이 끝나면 채널을 중지하는 것을 잊지 마세요. 그렇지 않으면 요금이 계속 청구됩니다.
 
-## <a name="need-help"></a>도움이 필요하십니까?
+## <a name="need-help"></a>도움 필요 시
 
 [새 지원 요청](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)으로 이동하여 지원 티켓을 열 수 있습니다.
 
@@ -350,10 +350,10 @@ Media Services 학습 경로를 검토합니다.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>피드백 제공하기
+## <a name="provide-feedback"></a>피드백 제공
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="related-topics"></a>관련된 항목
+## <a name="related-topics"></a>관련 항목
 [Azure Media Services를 사용하여 라이브 스트리밍 이벤트 제공](media-services-overview.md)
 
 [포털을 사용하여 단일 비트 전송률에서 적응형 비트 전송률 스트림으로 라이브 인코딩을 수행하는 채널 만들기](media-services-portal-creating-live-encoder-enabled-channel.md)

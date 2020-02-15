@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 10/28/2019
-ms.openlocfilehash: d270d38bce45c45f9323a971ad69dc2b931a9169
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: dd7579c97e2166e2822ee5674bbcd5a8ad64d2c7
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75369850"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201495"
 ---
 # <a name="understand-and-adjust-streaming-units"></a>스트리밍 단위 이해 및 조정
 
@@ -59,6 +59,8 @@ temporal(시간 지향적인) 쿼리 요소는 Stream Analytics에서 제공하�
 복잡한 쿼리 논리를 사용하는 작업은 입력 이벤트를 지속적으로 수신하지 않더라도 높은 SU% 사용률을 나타낼 수 있습니다. 입력 및 출력 이벤트가 급격히 증가한 후에 이러한 현상이 발생할 수 있습니다. 쿼리가 복잡한 경우 작업은 메모리의 상태를 계속 유지할 수 있습니다.
 
 SU% 사용률은 잠시 동안 갑자기 0으로 떨어졌다가 정상 수준으로 돌아올 수도 있습니다. 이러한 현상은 일시적인 오류 또는 시스템에서 시작한 업그레이드로 인해 발생합니다. 쿼리가 [완전히 병렬](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-parallelization)처리 되지 않은 경우 작업에 대 한 스트리밍 단위 수를 늘릴 경우 SU% 사용률을 줄일 수 없습니다.
+
+일정 기간 동안의 사용률을 비교 하는 동안 [이벤트 요금 메트릭을](stream-analytics-monitoring.md)사용 합니다. InputEvents 및 OutputEvents 메트릭은 읽고 처리 한 이벤트의 수를 표시 합니다. Deserialization 오류와 같은 오류 이벤트의 수도 나타내는 메트릭이 있습니다. 시간 단위 당 이벤트 수가 늘어나면 대부분의 경우 SU%가 늘어납니다.
 
 ## <a name="stateful-query-logicin-temporal-elements"></a>temporal 요소의 상태 저장 쿼리 논리
 Azure Stream Analytics 작업의 고유한 기능 중 하나는 기간 이동 집계, 임시 조인 및 임시 분석 함수 등과 같은 상태 저장 처리를 수행하는 것입니다. 이러한 연산자마다 상태 정보를 유지합니다. 이러한 쿼리 요소에 대 한 최대 창 크기는 7 일입니다. 

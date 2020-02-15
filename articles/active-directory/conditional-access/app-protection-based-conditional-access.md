@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bbbe882acda532a54333ca8013693121d5b677b7
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 3c853ef3a5a40381aba4e1c13eaf9ad7d8653170
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74964092"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186627"
 ---
 # <a name="require-app-protection-policy-for-cloud-app-access-with-conditional-access-preview"></a>조건부 액세스를 사용 하 여 cloud app access에 앱 보호 정책 필요 (미리 보기)
 
@@ -36,7 +36,7 @@ ms.locfileid: "74964092"
 
 ![조건부 액세스](./media/app-protection-based-conditional-access/05.png)
 
-정책으로 보호 된 클라이언트 앱의 목록은 [앱 보호 정책 요구 사항](technical-reference.md#approved-client-app-requirement)을 참조 하세요.
+정책으로 보호 된 클라이언트 앱의 목록은 [앱 보호 정책 요구 사항](concept-conditional-access-grant.md)을 참조 하세요.
 
 앱 보호 기반 조건부 액세스 정책을 [장치 기반 조건부 액세스 정책과](require-managed-devices.md)같은 다른 정책과 결합할 수 있습니다. 이러한 방식으로 개인 및 회사 장치 모두에 대 한 데이터를 보호 하는 방법을 유연 하 게 제공할 수 있습니다.
 
@@ -55,12 +55,12 @@ Intune에서 관리 되는 장치에 대해 Intune에서 보고 하는 규정 �
 
 이 문서에서는 사용자가 다음에 대해 잘 알고 있다고 가정합니다.
 
-- [앱 보호 정책 요구 사항](technical-reference.md#app-protection-policy-requirement) 기술 참조입니다.
-- [승인된 클라이언트 앱 요구 사항](technical-reference.md#approved-client-app-requirement) 기술 참조.
+- [앱 보호 정책 요구 사항](concept-conditional-access-grant.md)입니다.
+- [승인 된 클라이언트 앱 요구 사항](concept-conditional-access-grant.md)입니다.
 - [Azure Active Directory의 조건부 액세스](overview.md)에 대 한 기본 개념입니다.
 - [조건부 액세스 정책을 구성](app-based-mfa.md)하는 방법
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 앱 보호 기반 조건부 액세스 정책을 만들려면 다음을 수행 해야 합니다.
 
@@ -323,7 +323,7 @@ Intune 앱 보호 정책은 회사 데이터에 대 한 액세스가 부여 되�
 
 회사 데이터에 대 한 액세스 권한을 부여 하기 전에 모든 Intune 앱 보호 정책이 필요 합니다. 정책에서 사용자에 게 응용 프로그램을 다시 시작 하거나 추가 PIN을 사용 하 라는 메시지가 표시 될 수 있습니다. 이는 응용 프로그램 및 플랫폼에 대해 정책이 구성 된 경우에 해당 합니다.
 
-**설명**
+**주의**
 
 - 앱 보호 기반 및 앱 기반 조건부 액세스 정책을 모두 지원 하려는 경우이 시나리오를 사용할 수 있습니다.
 - 이 *또는* 정책에서 앱 보호 정책 요구 사항이 있는 앱은 승인 된 클라이언트 앱 요구 사항 이전에 액세스에 대해 평가 됩니다.

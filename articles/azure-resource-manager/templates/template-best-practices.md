@@ -3,12 +3,12 @@ title: 템플릿 모범 사례
 description: Azure Resource Manager 템플릿 작성에 대한 권장되는 방법을 설명합니다. 템플릿을 사용할 때 일반적인 문제를 방지하기 위한 제안을 제공합니다.
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: b87f66f194b9e1daf8fa6a546c02aa4e86caabc3
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f623255a64404f0e041173fd29488ded24cd03b3
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75484247"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207488"
 ---
 # <a name="azure-resource-manager-template-best-practices"></a>Azure Resource Manager 템플릿 모범 사례
 
@@ -32,7 +32,7 @@ Azure 구독을 관리 하는 방법에 대 한 권장 사항은 [azure enterpri
 
 중첩된 템플릿을 사용하여 일부 템플릿 제한을 초과할 수 있습니다. 자세한 내용은 [Azure 리소스를 배포할 때 연결된 템플릿 사용](linked-templates.md)을 참조하세요. 매개 변수, 변수 또는 출력의 수를 줄이려면 개체에 여러 값을 결합할 수 있습니다. 자세한 내용은 [매개 변수로 개체 사용](/azure/architecture/building-blocks/extending-templates/objects-as-parameters)을 참조하세요.
 
-## <a name="resource-group"></a>리소스 그룹
+## <a name="resource-group"></a>Resource group
 
 리소스 그룹에 리소스를 배포 하는 경우 리소스 그룹은 리소스에 대 한 메타 데이터를 저장 합니다. 메타 데이터는 리소스 그룹의 위치에 저장 됩니다.
 
@@ -95,7 +95,7 @@ Azure 구독을 관리 하는 방법에 대 한 권장 사항은 [azure enterpri
 
 * `allowedValues`를 제한적으로 사용합니다. 일부 값이 허용되는 옵션에 포함되지 않도록 해야 하는 경우에만 사용합니다. `allowedValues` 너무 광범위 하 게 사용 하는 경우 목록을 최신 상태로 유지 하지 않는 방식으로 유효한 배포를 차단할 수 있습니다.
 
-* 템플릿의 매개 변수 이름이 PowerShell 배포 명령의 매개 변수와 일치하는 경우 Resource Manager는 템플릿 매개 변수에 **FromTemplate**이라는 접미사를 추가하여 이러한 이름 충돌을 해결합니다. 예를 들어 템플릿에 **ResourceGroupName**이라는 매개 변수가 포함되면 [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) cmdlet의 **ResourceGroupName** 매개 변수와 충돌합니다. 배포하는 동안 **ResourceGroupNameFromTemplate**에 대한 값을 제공하라는 메시지가 표시됩니다.
+* 템플릿의 매개 변수 이름이 PowerShell 배포 명령의 매개 변수와 일치하는 경우 Resource Manager는 템플릿 매개 변수에 **FromTemplate**이라는 접미사를 추가하여 이러한 이름 충돌을 해결합니다. 예를 들어 템플릿에 **ResourceGroupName**이라는 매개 변수가 포함되면 **New-AzResourceGroupDeployment** cmdlet의 [ResourceGroupName](/powershell/module/az.resources/new-azresourcegroupdeployment) 매개 변수와 충돌합니다. 배포하는 동안 **ResourceGroupNameFromTemplate**에 대한 값을 제공하라는 메시지가 표시됩니다.
 
 ### <a name="security-recommendations-for-parameters"></a>매개 변수에 대한 보안 권장 사항
 
@@ -140,7 +140,7 @@ Azure 구독을 관리 하는 방법에 대 한 권장 사항은 [azure enterpri
 
 * 모든 위치에서 사용할 수 없는 리소스의 경우 별도 매개 변수를 사용하거나 리터럴 위치 값을 지정합니다.
 
-## <a name="variables"></a>변수
+## <a name="variables"></a>variables
 
 다음 정보는 [변수](template-variables.md)로 작업하는 경우 도움이 될 수 있습니다.
 
@@ -152,11 +152,11 @@ Azure 구독을 관리 하는 방법에 대 한 권장 사항은 [azure enterpri
 
 * 리소스에서 `apiVersion`에 대해 변수를 사용하지 마세요. API 버전은 리소스의 스키마를 결정합니다. 종종 리소스에 대한 속성을 변경하지 않고 버전을 변경할 수 없습니다.
 
-* 템플릿의 **변수** 섹션에서 [reference](template-functions-resource.md#reference) 함수를 사용할 수 없습니다. **reference** 함수는 리소스의 런타임 상태에서 해당 값을 파생합니다. 하지만 템플릿의 초기 구문 분석 중에 변수가 확인됩니다. 템플릿의 **resources** 또는 **outputs** 섹션에서 직접 **reference** 함수에 필요한 값을 생성합니다.
+* 템플릿의 [변수](template-functions-resource.md#reference) 섹션에서 **reference** 함수를 사용할 수 없습니다. **reference** 함수는 리소스의 런타임 상태에서 해당 값을 파생합니다. 하지만 템플릿의 초기 구문 분석 중에 변수가 확인됩니다. 템플릿의 **resources** 또는 **outputs** 섹션에서 직접 **reference** 함수에 필요한 값을 생성합니다.
 
 * 고유해야 하는 리소스 이름에 대한 변수를 포함합니다.
 
-* [변수에서 루프 복사](create-multiple-instances.md#variable-iteration)를 사용하여 JSON 개체의 반복된 패턴을 생성합니다.
+* [변수에서 루프 복사](copy-variables.md)를 사용하여 JSON 개체의 반복된 패턴을 생성합니다.
 
 * 사용하지 않는 변수를 제거합니다.
 

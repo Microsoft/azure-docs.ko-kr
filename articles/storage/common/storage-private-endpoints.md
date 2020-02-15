@@ -9,12 +9,12 @@ ms.date: 09/25/2019
 ms.author: santoshc
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: fff92057bc9812a5ef1488a46ed469382ad3ace3
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 85b59c6549a62f7d9945f5739d1d0fde8c0fa3b8
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74806884"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77158913"
 ---
 # <a name="using-private-endpoints-for-azure-storage-preview"></a>Azure Storage에 대 한 개인 끝점 사용 (미리 보기)
 
@@ -25,7 +25,7 @@ Azure Storage 계정에 대해 [개인 끝점](../../private-link/private-endpoi
 - Vnet에서 데이터의 반출을 차단할 수 있도록 하 여 vnet (가상 네트워크)에 대 한 보안을 강화 합니다.
 - 개인 피어 링을 사용 하 여 [VPN](../../vpn-gateway/vpn-gateway-about-vpngateways.md) 또는 [연결할 expressroutes](../../expressroute/expressroute-locations.md) 를 사용 하 여 VNet에 연결 하는 온-프레미스 네트워크에서 저장소 계정에 안전 하 게 연결 합니다.
 
-## <a name="conceptual-overview"></a>개념 개요
+## <a name="conceptual-overview"></a>개념적 개요
 ![Azure Storage 개요에 대 한 개인 끝점](media/storage-private-endpoints/storage-private-endpoints-overview.jpg)
 
 개인 끝점은 VNet ( [Virtual Network](../../virtual-network/virtual-networks-overview.md) )의 Azure 서비스에 대 한 특별 한 네트워크 인터페이스입니다. 저장소 계정에 대 한 개인 끝점을 만들 때 VNet 및 저장소의 클라이언트 간에 보안 연결을 제공 합니다. 개인 끝점에는 VNet의 IP 주소 범위에서 IP 주소가 할당 됩니다. 개인 끝점과 저장소 서비스 간의 연결은 보안 개인 링크를 사용 합니다.
@@ -50,7 +50,7 @@ VNet에서 스토리지 서비스에 대한 프라이빗 엔드포인트를 만�
 > [!TIP]
 > RA GRS 계정에 대 한 읽기 성능을 향상 시키기 위해 저장소 서비스의 보조 인스턴스에 대 한 별도의 개인 끝점을 만듭니다.
 
-[읽기 액세스 지역 중복 저장소 계정](storage-redundancy-grs.md#read-access-geo-redundant-storage)에 대 한 읽기 가용성을 위해 서비스의 주 인스턴스와 보조 인스턴스 모두에 대해 별도의 개인 끝점이 필요 합니다. **장애 조치 (failover)** 를 위해 보조 인스턴스의 개인 끝점을 만들 필요가 없습니다. 장애 조치 (failover) 후 개인 끝점은 새 주 인스턴스에 자동으로 연결 됩니다.
+지역 중복 저장소에 대해 구성 된 저장소 계정을 사용 하 여 보조 지역에 대 한 읽기 액세스의 경우 서비스의 기본 및 보조 인스턴스에 대해 별도의 개인 끝점을 사용 해야 합니다. **장애 조치 (failover)** 를 위해 보조 인스턴스의 개인 끝점을 만들 필요가 없습니다. 장애 조치 (failover) 후 개인 끝점은 새 주 인스턴스에 자동으로 연결 됩니다. 저장소 중복성 옵션에 대 한 자세한 내용은 [Azure Storage 중복성](storage-redundancy.md)을 참조 하세요.
 
 #### <a name="resources"></a>리소스
 
@@ -78,20 +78,20 @@ VNet에서 스토리지 서비스에 대한 프라이빗 엔드포인트를 만�
 
 위의 예에서는 개인 끝점을 호스트 하는 VNet 외부에서 확인 되는 경우 저장소 계정 ' StorageAccountA '에 대 한 DNS 리소스 레코드는 다음과 같습니다.
 
-| name                                                  | Type  | Value                                                 |
+| 속성                                                  | Type  | 값                                                 |
 | :---------------------------------------------------- | :---: | :---------------------------------------------------- |
 | ``StorageAccountA.blob.core.windows.net``             | CNAME | ``StorageAccountA.privatelink.blob.core.windows.net`` |
 | ``StorageAccountA.privatelink.blob.core.windows.net`` | CNAME | 저장소 서비스 공용 끝점을 \<\>                   |
-| 저장소 서비스 공용 끝점을 \<\>                   | 문자열(UTF-8 형식) 또는     | 저장소 서비스 공용 IP 주소를 \<\>                 |
+| 저장소 서비스 공용 끝점을 \<\>                   | A     | 저장소 서비스 공용 IP 주소를 \<\>                 |
 
 앞에서 설명한 것 처럼 저장소 방화벽을 사용 하 여 공용 끝점을 통해 VNet 외부의 클라이언트에 대 한 액세스를 거부 하거나 제어할 수 있습니다.
 
 StorageAccountA에 대 한 DNS 리소스 레코드는 개인 끝점을 호스트 하는 VNet의 클라이언트에서 확인 되는 경우 다음과 같습니다.
 
-| name                                                  | Type  | Value                                                 |
+| 속성                                                  | Type  | 값                                                 |
 | :---------------------------------------------------- | :---: | :---------------------------------------------------- |
 | ``StorageAccountA.blob.core.windows.net``             | CNAME | ``StorageAccountA.privatelink.blob.core.windows.net`` |
-| ``StorageAccountA.privatelink.blob.core.windows.net`` | 문자열(UTF-8 형식) 또는     | 10.1.1.5                                              |
+| ``StorageAccountA.privatelink.blob.core.windows.net`` | A     | 10.1.1.5                                              |
 
 이 접근 방식을 사용 하면 개인 끝점을 호스트 하는 VNet의 클라이언트와 VNet 외부의 클라이언트에 **동일한 연결 문자열을 사용 하** 여 저장소 계정에 액세스할 수 있습니다.
 

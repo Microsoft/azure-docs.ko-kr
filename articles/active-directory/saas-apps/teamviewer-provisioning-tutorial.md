@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/27/2020
 ms.author: Zhchia
-ms.openlocfilehash: ba7afb506a21df7fc2fe4cc4b7194549b6efde83
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: 0602757fad0eb4424e10fb0c1cf0272826ed0024
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77050565"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77150700"
 ---
 # <a name="tutorial-configure-teamviewer-for-automatic-user-provisioning"></a>자습서: 자동 사용자 프로 비전을 위한 TeamViewer 구성
 
@@ -40,7 +40,8 @@ ms.locfileid: "77050565"
 
 * [Azure AD 테 넌 트](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
 * 프로 비전을 구성할 수 있는 [권한이](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) 있는 Azure AD의 사용자 계정 (예: 응용 프로그램 관리자, 클라우드 응용 프로그램 관리자, 응용 프로그램 소유자 또는 전역 관리자). 
-* 관리자 권한이 있는 TeamViewer 계정
+* TeamViewer에 대해 유효한 [텐서 라이선스](https://www.teamviewer.com/de/teamviewer-tensor/)
+* 사용할 수 있는 [Single sign-on](https://community.teamviewer.com/t5/Knowledge-Base/Single-Sign-On-with-Azure-Active-Directory/ta-p/60209#toc-hId--473669723) 구성의 유효한 사용자 지정 식별자입니다.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>1단계. 프로 비전 배포 계획
 1. [프로 비전 서비스의 작동 방식](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning)에 대해 알아봅니다.
@@ -49,7 +50,7 @@ ms.locfileid: "77050565"
 
 ## <a name="step-2-configure-teamviewer-to-support-provisioning-with-azure-ad"></a>2단계. Azure AD로 프로 비전을 지원 하도록 TeamViewer 구성
 
-1. TeamViewer 앱의 관리 콘솔에 로그인 합니다. **프로필 편집**으로 이동 합니다.
+1. [TeamViewer Management Console](https://login.teamviewer.com)에 로그인 합니다. **프로필 편집**으로 이동 합니다.
 
     ![TeamViewer 관리 콘솔](./media/teamviewer-provisioning-tutorial/admin.png)
 

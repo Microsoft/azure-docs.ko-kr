@@ -2,19 +2,19 @@
 title: '빠른 시작: REST API를 사용하여 Postman에서 검색 인덱스 만들기'
 titleSuffix: Azure Cognitive Search
 description: 이 REST API 빠른 시작에서는 Postman 및 샘플 데이터와 정의를 사용하여 Azure Cognitive Search REST API를 호출하는 방법을 알아봅니다.
-author: HeidiSteen
+author: tchristiani
 manager: nitinme
-ms.author: heidist
+ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.devlang: rest-api
-ms.date: 11/04/2019
-ms.openlocfilehash: 9014a83596a3eee71f43d12a73188c1c43b832af
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.date: 02/10/2020
+ms.openlocfilehash: c502886aac9d13f7a470a9b83f1fc12334913beb
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406952"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121639"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-postman-using-rest-apis"></a>빠른 시작: REST API를 사용하여 Postman에서 Azure Cognitive Search 인덱스 만들기
 > [!div class="op_single_selector"]
@@ -31,7 +31,7 @@ ms.locfileid: "74406952"
 
 Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 빠른 시작에 필요한 서비스와 도구는 다음과 같습니다. 
 

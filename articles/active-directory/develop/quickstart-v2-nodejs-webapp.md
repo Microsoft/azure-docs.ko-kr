@@ -11,16 +11,14 @@ ms.workload: identity
 ms.date: 10/28/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 0d69f762cea53f2a4c022ad6dddb52faeced1adf
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 4aa0cce83f9adc8c648656899ec6dc12d498e26b
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76703340"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160451"
 ---
 # <a name="quickstart-add-sign-in-using-openid-connect-to-a-nodejs-web-app"></a>빠른 시작: OpenID Connect를 사용하여 Node.js 웹앱에 로그인 추가
-
-[!INCLUDE [active-directory-develop-applies-v2](../../../includes/active-directory-develop-applies-v2.md)]
 
 이 빠른 시작에서는 Express와 함께 Node.js를 사용하여 빌드한 웹 애플리케이션에서 OpenID Connect 인증을 설정하는 방법을 알아봅니다. 샘플은 모든 플랫폼에서 실행되도록 설계되었습니다.
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: e0505960a413308283c4e67e33ec495eedd3b092
-ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
+ms.openlocfilehash: 568a21cee5b50a8914c603976f5951d0235dbff7
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67827719"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157179"
 ---
 # <a name="features-and-terminology-in-azure-event-hubs"></a>Azure Event Hubs의 기능 및 용어
 
@@ -33,7 +33,7 @@ Event Hubs 네임스페이스는 [정규화된 도메인 이름](https://en.wiki
 
 [이 기능](event-hubs-for-kafka-ecosystem-overview.md)은 고객이 Kafka 프로토콜을 사용하여 Event Hubs에 지시할 수 있는 엔드포인트를 제공합니다. 이 통합에서는 고객에게 Kafka 엔드포인트를 제공합니다. 이를 통해 Event Hubs에 지시하도록 기존 Kafka 애플리케이션을 구성하여 고유한 Kafka 클러스터를 실행하는 대안을 제공할 수 있습니다. Apache Kafka용 Event Hubs는 Kafka 프로토콜 1.0 이상을 지원합니다. 
 
-이 통합을 사용 하 여 Kafka 클러스터를 실행 하거나 Zookeeper를 사용 하 여 관리할 필요가 없습니다. 캡처, 자동 확장 및 지리적 재해 복구 등의 까다로운 Event Hubs 기능 중 일부를 사용할 수도 있습니다.
+이러한 통합을 통해 Kafka 클러스터를 실행 하거나 사육 아웃을 사용 하 여 관리할 필요가 없습니다. 캡처, 자동 확장 및 지리적 재해 복구 등의 까다로운 Event Hubs 기능 중 일부를 사용할 수도 있습니다.
 
 이 통합을 사용하면 Mirror Maker와 같은 애플리케이션 또는 Kafka Connect와 같은 프레임워크를 구성만 변경하여 클러스터 없이 작동시킬 수 있습니다. 
 
@@ -134,11 +134,14 @@ AMQP 1.0 세션 및 링크는 특정 파티션에 대해 열린 후, 이벤트�
 
 Event Hubs에 대한 자세한 내용은 다음 링크를 방문하세요.
 
-* [Event Hubs 자습서][Event Hubs tutorial]
+- Event Hubs 시작
+    - [.NET Core](get-started-dotnet-standard-send-v2.md)
+    - [Java](get-started-java-send-v2.md)
+    - [Python](get-started-python-send-v2.md)
+    - [JavaScript](get-started-java-send-v2.md)
 * [Event Hubs 프로그래밍 가이드](event-hubs-programming-guide.md)
 * [Event Hubs의 가용성 및 일관성](event-hubs-availability-and-consistency.md)
 * [Event Hubs FAQ](event-hubs-faq.md)
 * [Event Hubs 샘플][]
 
-[Event Hubs tutorial]: event-hubs-dotnet-standard-getstarted-send.md
 [Event Hubs 샘플]: https://github.com/Azure/azure-event-hubs/tree/master/samples

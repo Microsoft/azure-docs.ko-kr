@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2020
 ms.author: spelluru
-ms.openlocfilehash: 597bbfdc35c556b5c75968084c01ac222fc468f4
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 37a657093fd55ce752095417fe744f83946962db
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76718094"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77210581"
 ---
 # <a name="configure-lab-accounts-in-azure-lab-services"></a>Azure Lab Services에서 랩 계정 구성 
 Azure Lab Services에서 랩 계정은 교실 labs와 같은 관리 되는 랩 형식에 대 한 컨테이너입니다. 관리자는 Azure Lab Services를 사용하여 랩 계정을 설정하고 계정에 랩을 만들 수 있는 랩 소유자에게 액세스 권한을 제공합니다. 이 문서는 랩 계정을 만들거나, 모든 랩 계정을 보거나, 랩 계정을 삭제하는 방법을 설명합니다.
@@ -37,18 +37,6 @@ Azure Lab Services에서 랩 계정은 교실 labs와 같은 관리 되는 랩 �
 이 계정에서 만든 랩은 선택한 가상 네트워크에 연결 됩니다. 선택한 가상 네트워크의 리소스에 액세스할 수 있습니다. 자세한 내용은 [Azure Lab Services에서 랩의 네트워크를 피어 가상 네트워크에 연결](how-to-connect-peer-virtual-network.md)을 참조 하세요.
 
 **피어 가상 네트워크** 필드의 가상 네트워크를 선택 하는 경우 **랩 작성자가 랩 위치를 선택할 수 있음** 옵션을 사용할 수 없습니다. 랩 계정의 랩은 피어 가상 네트워크의 리소스와 연결 하기 위해 랩 계정과 동일한 지역에 있어야 하기 때문입니다. 
-
-## <a name="allow-lab-creator-to-pick-location-for-the-lab"></a>랩 작성자가 랩의 위치를 선택 하도록 허용
-랩 작성자가 다음 단계를 수행 하 여 랩 계정 위치가 아닌 다른 위치에서 랩을 만들도록 허용할 수 있습니다. 
-
-1. **랩 계정** 페이지의 왼쪽 메뉴에서 **랩 구성** 을 선택 합니다.
-2. 랩 작성자가 랩 위치를 선택할 수 있게 하려면 랩 **작성자가 랩 위치**를 선택 하도록 허용을 선택 하 고 **사용** 을 선택 합니다. 사용 하지 않도록 설정 된 경우 랩 계정이 있는 동일한 위치에 랩을 자동으로 만듭니다. 
-    
-    **피어 가상 네트워크** 필드의 가상 네트워크를 선택 하면이 필드를 사용할 수 없습니다. 랩 계정의 랩은 피어 가상 네트워크의 리소스에 액세스 하기 위해 랩 계정과 동일한 지역에 있어야 하기 때문입니다. 
-1. 도구 모음에서 **저장**을 선택합니다. 
-
-    ![랩 위치 설정 구성](../media/how-to-manage-lab-accounts/labs-configuration-page-lab-location.png)
-
 
 ## <a name="specify-an-address-range-for-vms-in-the-lab"></a>랩에서 Vm의 주소 범위 지정
 다음 절차에는 랩에서 Vm에 대 한 주소 범위를 지정 하는 단계가 있습니다. 이전에 지정한 범위를 업데이트 하는 경우 수정 된 주소 범위는 변경 후에 생성 된 Vm에만 적용 됩니다. 

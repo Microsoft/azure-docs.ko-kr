@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
-author: xiaoharper
-ms.author: amlstudiodocs
+author: likebupt
+ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/01/2019
-ms.openlocfilehash: 81e232e37e437c4fa9d23a49a720b88511423905
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 9e010a5179f2da2d5bbce5526d59ac075a9270b0
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75427572"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169255"
 ---
 # <a name="getting-started-with-the-r-programming-language-in-azure-machine-learning-studio-classic"></a>Azure Machine Learning Studio에서 R 프로그래밍 언어 시작 (클래식)
 
@@ -133,7 +133,7 @@ RStudio는 R에 널리 사용 되는 IDE입니다. 이 가이드에서 사용 �
 
 데스크톱 컴퓨터에 R 프로그래밍 언어가 설치되어 있지 않으면 지금 설치하는 것이 좋습니다. 오픈 소스 R 언어는 광범위한 R 보관 네트워크 또는 [https://www.r-project.org/](https://www.r-project.org/)의 CRAN에서 무료로 다운로드할 수 있습니다. Windows, Mac OS, Linux/UNIX용 다운로드가 있습니다. 인접한 미러를 선택하고 다운로드 지침을 따르세요. 또한 CRAN에는 유용한 분석 및 데이터 조작 패키지가 풍부하게 들어 있습니다.
 
-RStudio를 처음 사용하는 경우에는 데스크톱 버전을 다운로드하고 설치해야 합니다. Windows, Mac OS 및 Linux/UNIX용 RStudio 다운로드는 http://www.rstudio.com/products/RStudio/ 에서 찾을 수 있습니다. 제공된 지침에 따라 데스크톱 컴퓨터에 RStudio를 설치하세요.  
+RStudio를 처음 사용하는 경우에는 데스크톱 버전을 다운로드하고 설치해야 합니다. Windows, Mac OS 및 Linux/UNIX용 RStudio 다운로드는 http://www.rstudio.com/products/RStudio/에서 찾을 수 있습니다. 제공된 지침에 따라 데스크톱 컴퓨터에 RStudio를 설치하세요.  
 
 Rstudio [IDE를 사용 하 여](https://support.rstudio.com/hc/sections/200107586-Using-RStudio)에서 rstudio에 대 한 자습서를 소개 합니다.
 
@@ -224,7 +224,7 @@ load("src/yourData.rdata") # Reads a zipped R data file
 ```
 
 > [!NOTE]
-> Azure Machine Learning Studio (클래식)은 파일 이름이 src/디렉터리에 있는 것 처럼 zip의 파일을 처리 하므로 파일 이름 앞에이 디렉터리 이름을 붙여야 합니다. 예를 들어 zip 파일의 루트에 `yourfile.R` 및 `yourData.rdata` 파일이 포함된 경우 `source` 및 `load`를 사용할 때 이러한 파일을 `src/yourfile.R` 및 `src/yourData.rdata`로 처리합니다.
+> Azure Machine Learning Studio (클래식)은 파일 이름이 src/디렉터리에 있는 것 처럼 zip의 파일을 처리 하므로 파일 이름 앞에이 디렉터리 이름을 붙여야 합니다. 예를 들어 zip 파일의 루트에 `yourfile.R` 및 `yourData.rdata` 파일이 포함된 경우 `src/yourfile.R` 및 `src/yourData.rdata`를 사용할 때 이러한 파일을 `source` 및 `load`로 처리합니다.
 
 [데이터 집합 로드](#loading)에서 데이터 집합을 로드 하는 방법을 이미 설명 했습니다. 이전 섹션에 나와 있는 R 스크립트를 만들고 테스트한 후에는 다음을 수행하세요.
 
@@ -468,7 +468,7 @@ R 데이터 프레임은 강력한 필터링 기능을 지원합니다. 행이�
 이 데이터 세트에서 수행해야 하는 필터링이 하나 있습니다. cadairydata 데이터 프레임의 열을 살펴보면 두 개의 불필요한 열을 볼 수 있습니다. 첫 번째 열은 단지 행 번호만 가지고 있으며 그리 유용하지 않습니다. 두 번째 열인 Year.Month에는 불필요한 정보가 포함되어 있습니다. 다음 R 코드를 사용하여 이 두 열을 쉽게 제외시킬 수 있습니다.
 
 > [!NOTE]
-> 지금부터이 섹션에서 [R 스크립트 실행][execute-r-script] 모듈에 추가 하는 추가 코드를 표시 합니다. 새 줄은 `str()` 함수 **앞**에 추가합니다. 이 함수를 사용 하 여 Azure Machine Learning Studio (클래식)에서 결과를 확인 합니다.
+> 지금부터이 섹션에서 [R 스크립트 실행][execute-r-script] 모듈에 추가 하는 추가 코드를 표시 합니다. 새 줄은 **함수**앞`str()`에 추가합니다. 이 함수를 사용 하 여 Azure Machine Learning Studio (클래식)에서 결과를 확인 합니다.
 
 [R 스크립트 실행][execute-r-script] 모듈의 r 코드에 다음 줄을 추가 합니다.
 
@@ -608,7 +608,7 @@ R에서 방어적 프로그래밍이 익숙하지 않으면 이 코드가 모두
 
 1. 네 개 메시지의 벡터가 정의됩니다. 이러한 메시지는 이 코드에서 발생할 수 있는 일부 오류 및 예외에 대한 정보를 전달하는 데 사용됩니다.
 2. 각각의 경우에 대해 NA 값을 반환합니다. 부작용이 더 적을 수 있는 다른 가능성이 많습니다. 예를 들어 0의 벡터나 원래 입력 벡터를 반환할 수 있습니다.
-3. 함수에 대한 인수를 확인합니다. 오류가 감지되는 경우에는 기본값이 반환되며 `warning()` 함수가 메시지를 생성합니다. `stop()`은 실행을 종료하므로 방지하려는 경우에는 `warning()`을 사용합니다. 이 코드의 경우 함수 접근 방법으로 작성하면 복잡하고 난해해 보이므로 프로시저 방식으로 작성하였습니다.
+3. 함수에 대한 인수를 확인합니다. 오류가 감지되는 경우에는 기본값이 반환되며 `warning()` 함수가 메시지를 생성합니다. `warning()`은 실행을 종료하므로 방지하려는 경우에는 `stop()`을 사용합니다. 이 코드의 경우 함수 접근 방법으로 작성하면 복잡하고 난해해 보이므로 프로시저 방식으로 작성하였습니다.
 4. 예외가 발생해 프로세스를 갑자기 중단하지 않도록 로그 계산이 `tryCatch()` 로 래핑됩니다. `tryCatch()`가 없으면 R 함수에 의해 발생한 대부분의 오류는 중지 작업을 수행하는 중지 신호가 됩니다.
 
 자체 실험에서 이 R 코드를 실행하고 output.log 파일의 인쇄된 출력을 살펴보세요. 그림 13에서 볼 수 있듯이 이제 로그에 있는 네 개의 열 값이 변환된 것을 확인할 수 있습니다.
@@ -931,7 +931,7 @@ outframe
 코드의 첫 번째 줄이 조금 어려워서 약간의 설명이 줄을 이해하는 데 도움이 됩니다. 다음과 같이 안의 함수에서 바깥의 함수 순서로 처리합니다.
 
 1. 인수가 '**1**'인 ' **[[** ' 연산자는 ccf 개체 목록의 첫 번째 요소의 지연에서 상관관계의 벡터를 선택합니다.
-2. `do.call()` 함수는 `lapply()`가 반환하는 목록의 요소에 `rbind()` 함수를 적용합니다.
+2. `do.call()` 함수는 `rbind()`가 반환하는 목록의 요소에 `lapply()` 함수를 적용합니다.
 3. `data.frame()` 함수는 `do.call()`에 의해 생성된 결과를 데이터 프레임에 강제 반환합니다.
 
 행 이름은 데이터 프레임의 열에 있습니다. 이렇게 하면 [R 스크립트 실행][execute-r-script]에서 출력 될 때 행 이름이 유지 됩니다.

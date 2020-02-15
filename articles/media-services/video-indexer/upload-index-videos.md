@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 01/13/2020
 ms.author: juliako
-ms.openlocfilehash: e457fbe5b8dd23c93110fb8ccc7d8857128de82c
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: b0a4f390a3a897d14adc2944195b0c51148de495
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76169369"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209276"
 ---
 # <a name="upload-and-index-your-videos"></a>비디오 업로드 및 인덱싱  
 
@@ -47,16 +47,16 @@ Video Indexer API를 사용하여 비디오를 업로드할 때 다음과 같은
 
     개인 URL 인 경우 요청에서 액세스 토큰을 제공 해야 합니다.
 - URL은 `www.youtube.com` 페이지에 대 한 링크와 같은 웹 페이지가 아닌 유효한 미디어 파일을 가리켜야 합니다.
-- 분당 최대 60 영화를 업로드할 수 있습니다.
+- 유료 계정에서는 분당 최대 50 영화를 업로드할 수 있으며 평가판 계정에는 분당 최대 5 개의 영화를 업로드할 수 있습니다.
 
 > [!Tip]
 > 이전 .NET Framework는 기본적으로 TLS 1.2로 설정되지 않으므로 .NET Framework 버전 4.6.2 이상을 사용하는 것이 좋습니다.
 >
 > 이전 .NET Framework를 사용해야 하는 경우 REST API를 호출하기 전에 코드에 다음과 같은 한 줄을 추가합니다.  <br/> System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
 
-## <a name="supported-file-formats-for-video-indexer"></a>Video Indexer에 대해 지원 되는 파일 형식
+## <a name="supported-file-formats-for-video-indexer"></a>Video Indexer에 대해 지원되는 파일 형식
 
-Video Indexer에서 사용할 수 있는 파일 형식 목록은 [입력 컨테이너/파일 형식](../latest/media-encoder-standard-formats.md#input-containerfile-formats) 문서를 참조 하세요.
+Video Indexer와 함께 사용할 수 있는 파일 형식 목록은 [입력 컨테이너/파일 형식](../latest/media-encoder-standard-formats.md#input-containerfile-formats) 문서를 참조하세요.
 
 ## <a name="a-idwebsiteupload-and-index-a-video-using-the-video-indexer-website"></a>Video Indexer 웹 사이트를 사용 하 여 비디오 업로드 및 인덱싱 <a id="website"/>
 
@@ -93,7 +93,7 @@ POST 요청을 사용하여 고객에게 다음 이벤트를 알리는 데 사�
 - 인덱싱 상태 변경 
     - 속성    
     
-        |이름|Description|
+        |속성|Description|
         |---|---|
         |id|비디오 ID|
         |state|비디오 상태|  
@@ -101,7 +101,7 @@ POST 요청을 사용하여 고객에게 다음 이벤트를 알리는 데 사�
 - 비디오에서 식별된 사용자
   - 속성
     
-      |이름|Description|
+      |속성|Description|
       |---|---|
       |id| 비디오 ID|
       |faceId|비디오 인덱스에 표시되는 얼굴 ID|
@@ -160,7 +160,7 @@ POST 요청을 사용하여 고객에게 다음 이벤트를 알리는 데 사�
 
     API 키를 가져오려면 다음 흐름을 진행 합니다.
 
-    * https://api-portal.videoindexer.ai/ 로 이동합니다.
+    * https://api-portal.videoindexer.ai/로 이동합니다.
     * 로그인
     * **제품** -> **권한** 부여 -> **권한 부여 구독** 으로 이동
     * **기본 키** 를 복사 합니다.
@@ -348,6 +348,7 @@ public class AccountContractSlim
 |---|---|---|
 |409|VIDEO_INDEXING_IN_PROGRESS|지정된 계정에서 동일한 비디오가 이미 처리되고 있습니다.|
 |400|VIDEO_ALREADY_FAILED|지정된 계정에서 2시간 이내에 동일한 비디오를 처리하지 못했습니다. API 클라이언트에서 2시간 이상 기다린 후에 비디오를 다시 업로드해야 합니다.|
+|429||평가판 계정에는 분당 5 개의 업로드가 허용 됩니다. 유료 계정은 분당 50 업로드가 허용 됩니다.|
 
 ## <a name="next-steps"></a>다음 단계
 

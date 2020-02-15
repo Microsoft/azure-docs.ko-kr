@@ -8,12 +8,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 11/07/2018
-ms.openlocfilehash: 3ae87523e66ae49d17f198a1f70b0f449ca0a713
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 35e10c0f9babca7719ff496e7068ad1564670fee
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67080413"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209157"
 ---
 # <a name="upload-files-with-iot-hub"></a>IoT Hub를 사용하여 파일 업로드
 
@@ -95,9 +95,9 @@ IoT Hub는 파일 업로드를 지원하는 두 개의 REST 엔드포인트를 �
 
 필요에 따라 디바이스에서 업로드가 완료되었음을 IoT Hub에 알리면 IoT Hub에서 알림 메시지를 생성합니다. 이 메시지에는 파일의 이름과 스토리지 위치가 포함되어 있습니다.
 
-[엔드포인트](iot-hub-devguide-endpoints.md)에 설명된 대로 IoT Hub는 서비스 연결 엔드포인트( **/messages/servicebound/fileuploadnotifications**)를 통해 파일 업로드 알림을 메시지로 전달합니다. 파일 업로드 알림에 대 한 수신 의미 체계는 클라우드-장치 메시지의 경우와 동일 하 고 같으면 [메시지 수명 주기](iot-hub-devguide-messages-c2d.md#the-cloud-to-device-message-life-cycle)합니다. 파일 업로드 알림 엔드포인트에서 검색된 각 메시지는 다음 속성을 가진 JSON 레코드입니다.
+[엔드포인트](iot-hub-devguide-endpoints.md)에 설명된 대로 IoT Hub는 서비스 연결 엔드포인트( **/messages/servicebound/fileuploadnotifications**)를 통해 파일 업로드 알림을 메시지로 전달합니다. 파일 업로드 알림에 대 한 수신 의미 체계는 클라우드-장치 메시지의 경우와 같으며 동일한 [메시지 수명 주기](iot-hub-devguide-messages-c2d.md#the-cloud-to-device-message-life-cycle)를 가집니다. 파일 업로드 알림 엔드포인트에서 검색된 각 메시지는 다음 속성을 가진 JSON 레코드입니다.
 
-| 자산 | 설명 |
+| 속성 | Description |
 | --- | --- |
 | EnqueuedTimeUtc |알림을 만든 시간을 나타내는 타임스탬프입니다. |
 | deviceId |**DeviceId**입니다. |
@@ -123,12 +123,14 @@ IoT Hub는 파일 업로드를 지원하는 두 개의 REST 엔드포인트를 �
 
 각 IoT 허브에는 파일 업로드 알림에 대한 다음과 같은 구성 옵션이 있습니다.
 
-| 자산 | 설명 | 범위 및 기본값 |
+| 속성 | Description | 범위 및 기본값 |
 | --- | --- | --- |
-| **enableFileUploadNotifications** |파일 업로드 알림이 파일 알림 엔드포인트에 작성되는지를 제어합니다. |Bool. Default: True |
-| **fileNotifications.ttlAsIso8601** |파일 업로드 알림에 대한 기본 TTL입니다. |최대 48H(최소 1 분)까지 ISO_8601 간격입니다. Default: 1시간 |
-| **fileNotifications.lockDuration** |파일 업로드 알림 큐에 대한 잠금 기간입니다. |5에서 300초(최소 5초)입니다. Default: 60초 |
-| **fileNotifications.maxDeliveryCount** |파일 업로드 알림 큐에 대한 최대 배달 횟수입니다. |1에서 100까지입니다. Default: 100 |
+| **enableFileUploadNotifications** |파일 업로드 알림이 파일 알림 엔드포인트에 작성되는지를 제어합니다. |Bool. 기본값은 True입니다. |
+| **fileNotifications.ttlAsIso8601** |파일 업로드 알림에 대한 기본 TTL입니다. |최대 48H(최소 1 분)까지 ISO_8601 간격입니다. 기본값은 1시간입니다. |
+| **fileNotifications.lockDuration** |파일 업로드 알림 큐에 대한 잠금 기간입니다. |5에서 300초(최소 5초)입니다. 기본값은 60초입니다. |
+| **fileNotifications.maxDeliveryCount** |파일 업로드 알림 큐에 대한 최대 배달 횟수입니다. |1에서 100까지입니다. 기본값은 100입니다. |
+
+Azure Portal, Azure CLI 또는 PowerShell을 사용 하 여 IoT hub에서 이러한 속성을 설정할 수 있습니다. 방법을 알아보려면 [파일 업로드 구성](iot-hub-configure-file-upload.md)에서 항목을 참조 하세요.
 
 ## <a name="additional-reference-material"></a>추가 참조 자료
 

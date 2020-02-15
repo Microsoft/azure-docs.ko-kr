@@ -3,12 +3,12 @@ title: Azure Functions 2.x에 대한 host.json 참조
 description: v2 런타임을 사용하는 Azure Functions host.json 파일에 대한 참조 설명서입니다.
 ms.topic: conceptual
 ms.date: 01/06/2020
-ms.openlocfilehash: 3ad3682e301eb98d48372c3955c6ff049422c517
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: cc982d3f810c944a5273cbf0cf9778076d119692
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024673"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77208827"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x-and-later"></a>Azure Functions 2.x 이상에 대 한 호스트 json 참조 
 
@@ -145,15 +145,15 @@ ms.locfileid: "77024673"
 
 | 속성 | 기본값 | Description |
 | --------- | --------- | --------- | 
-| samplingSettings | n/a | [Applicationinsights. samplingSettings](#applicationinsightssamplingsettings)를 참조 하세요. |
+| samplingSettings | 해당 없음 | [Applicationinsights. samplingSettings](#applicationinsightssamplingsettings)를 참조 하세요. |
 | samplingExcludedTypes | null | 샘플링 하지 않으려는 형식의 세미콜론으로 구분 된 목록입니다. 인식되는 형식: 종속성, 이벤트, 예외, 페이지 보기, 요청, 추적 지정 된 형식의 모든 인스턴스가 전송 됩니다. 지정 되지 않은 형식이 샘플링 됩니다. |
 | samplingIncludedTypes | null | 샘플링할 형식의 세미콜론으로 구분 된 목록입니다. 빈 목록은 모든 형식을 의미 합니다. 여기에 나열 된 형식 `samplingExcludedTypes` 재정의 형식에 나열 됩니다. 인식되는 형식: 종속성, 이벤트, 예외, 페이지 보기, 요청, 추적 지정 된 형식의 모든 인스턴스가 전송 됩니다. 지정 되지 않은 형식이 샘플링 됩니다. |
 | enableLiveMetrics | true | 라이브 메트릭 수집을 사용 하도록 설정 합니다. |
 | enableDependencyTracking | true | 종속성 추적을 사용 합니다. |
 | enablePerformanceCountersCollection | true | Kudu 성능 카운터 수집을 사용 하도록 설정 합니다. |
 | liveMetricsInitializationDelay | 00:00:15 | 내부 전용입니다. |
-| httpAutoCollectionOptions | n/a | [Applicationinsights](#applicationinsightshttpautocollectionoptions)를 참조 하세요. |
-| snapshotConfiguration | n/a | [Applicationinsights](#applicationinsightssnapshotconfiguration)를 참조 하세요. |
+| httpAutoCollectionOptions | 해당 없음 | [Applicationinsights](#applicationinsightshttpautocollectionoptions)를 참조 하세요. |
+| snapshotConfiguration | 해당 없음 | [Applicationinsights](#applicationinsightssnapshotconfiguration)를 참조 하세요. |
 
 ### <a name="applicationinsightssamplingsettings"></a>applicationInsights. samplingSettings
 
@@ -228,7 +228,7 @@ ms.locfileid: "77024673"
 
 [!INCLUDE [functions-extension-bundles-json](../../includes/functions-extension-bundles-json.md)]
 
-## <a name="functions"></a>Functions
+## <a name="functions"></a>functions
 
 작업 호스트가 실행하는 함수 목록입니다. 빈 배열은 모든 함수를 실행한다는 의미입니다. [로컬로 실행](functions-run-local.md)할 때만 사용할 수 있습니다. Azure의 함수 앱에서는 이 설정을 사용하는 대신 [Azure Functions에서 함수를 사용하지 않도록 설정하는 방법](disable-function.md)의 단계를 수행하여 특정 함수를 사용하지 않도록 설정해야 합니다.
 
@@ -278,7 +278,7 @@ ms.locfileid: "77024673"
 
 ## <a name="http"></a>http
 
-구성 설정은 [http 트리거 및 바인딩](functions-bindings-http-webhook.md#hostjson-settings)에서 찾을 수 있습니다.
+구성 설정은 [http 트리거 및 바인딩](functions-bindings-http-webhook-output.md#hostjson-settings)에서 찾을 수 있습니다.
 
 ## <a name="logging"></a>logging
 
@@ -303,9 +303,9 @@ Application Insights를 포함한 함수 앱의 로깅 동작을 제어합니다
 |속성  |기본값 | Description |
 |---------|---------|---------|
 |fileLoggingMode|debugOnly|활성화할 파일 로깅의 수준을 정의합니다.  옵션은 `never`, `always`, `debugOnly`입니다. |
-|logLevel|n/a|앱의 함수에 대한 로그 범주 필터링을 정의하는 개체입니다. 버전 2.x 이상에서는 로그 범주 필터링을 위한 ASP.NET Core 레이아웃을 따릅니다. 이 설정을 통해 특정 함수에 대 한 로깅을 필터링 할 수 있습니다. 자세한 내용은 ASP.NET Core 설명서의 [로그 필터링](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering)을 참조하세요. |
-|console|n/a| [콘솔](#console) 로깅 설정입니다. |
-|applicationInsights|n/a| [applicationInsights](#applicationinsights) 설정입니다. |
+|logLevel|해당 없음|앱의 함수에 대한 로그 범주 필터링을 정의하는 개체입니다. 버전 2.x 이상에서는 로그 범주 필터링을 위한 ASP.NET Core 레이아웃을 따릅니다. 이 설정을 통해 특정 함수에 대 한 로깅을 필터링 할 수 있습니다. 자세한 내용은 ASP.NET Core 설명서의 [로그 필터링](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering)을 참조하세요. |
+|console|해당 없음| [콘솔](#console) 로깅 설정입니다. |
+|applicationInsights|해당 없음| [applicationInsights](#applicationinsights) 설정입니다. |
 
 ## <a name="console"></a>console
 
@@ -373,7 +373,7 @@ Singleton 잠금 동작에 대한 구성 설정입니다. 자세한 내용은 [s
 |listenerLockPeriod|00:01:00|수신기 잠금이 적용되는 기간입니다.| 
 |listenerLockRecoveryPollingInterval|00:01:00|시작할 때 수신기 잠금을 가져올 수 없는 경우 수신기 잠금 복구에 사용되는 시간 간격입니다.| 
 |lockAcquisitionTimeout|00:01:00|런타임이 잠금을 확보하려고 시도하는 최대 시간입니다.| 
-|lockAcquisitionPollingInterval|n/a|잠금 확보 시도 사이의 간격입니다.| 
+|lockAcquisitionPollingInterval|해당 없음|잠금 확보 시도 사이의 간격입니다.| 
 
 ## <a name="version"></a>버전
 

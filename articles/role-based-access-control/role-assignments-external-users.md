@@ -1,5 +1,5 @@
 ---
-title: Azure RBAC 및 Azure Portal를 사용 하 여 외부 게스트 사용자에 대 한 역할 할당 추가 또는 제거
+title: RBAC 및 Azure Portal를 사용 하 여 외부 사용자에 대 한 역할 할당 추가 또는 제거
 description: Azure 역할 기반 액세스 제어 (RBAC)를 사용 하 여 조직 외부 사용자를 위해 Azure 리소스에 대 한 액세스 권한을 부여 하는 방법을 알아봅니다.
 services: active-directory
 documentationcenter: ''
@@ -16,18 +16,18 @@ ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: skwan
 ms.custom: it-pro
-ms.openlocfilehash: db43a3cce27da5f40986968b6573bfd58a1d3cb7
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 1c440b85f792ac5bb1336f4d20f930aafc38ad7d
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74707878"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138372"
 ---
 # <a name="add-or-remove-role-assignments-for-external-guest-users-using-azure-rbac-and-the-azure-portal"></a>Azure RBAC 및 Azure Portal를 사용 하 여 외부 게스트 사용자에 대 한 역할 할당 추가 또는 제거
 
 [Azure 역할 기반 access control (RBAC)](overview.md) 을 사용 하면 사용자 환경의 특정 리소스에 액세스 해야 하지만 전체 인프라 또는 청구 관련 범위에 대 한 액세스를 필요로 하는 외부 협력자, 공급 업체 또는 프리랜서에서 작업 하는 중소기업 및 중소기업에 대해 더 나은 보안 관리가 가능 합니다. [AZURE ACTIVE DIRECTORY B2B](../active-directory/b2b/what-is-b2b.md) 의 기능을 사용 하 여 외부 게스트 사용자와 공동 작업을 수행할 수 있으며 RBAC를 사용 하 여 사용자 환경에서 게스트 사용자에 게 필요한 권한만 부여할 수 있습니다.
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>필수 조건
 
 역할 할당을 추가 하거나 제거 하려면 다음을 수행 해야 합니다.
 

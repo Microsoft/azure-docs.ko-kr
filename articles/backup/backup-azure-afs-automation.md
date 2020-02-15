@@ -3,12 +3,12 @@ title: PowerShell을 사용 하 여 Azure Files 백업
 description: 이 문서에서는 Azure Backup 서비스와 PowerShell을 사용 하 여 Azure Files를 백업 하는 방법에 대해 알아봅니다.
 ms.topic: conceptual
 ms.date: 08/20/2019
-ms.openlocfilehash: a80589fb45937949b3612e12139ab1615bc1620d
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: f85451e0da6458de34aea936836b46781f4c4a21
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77086949"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120508"
 ---
 # <a name="back-up-azure-files-with-powershell"></a>PowerShell을 사용 하 여 Azure Files 백업
 
@@ -250,9 +250,9 @@ testAzureFS       ConfigureBackup      Completed            11/12/2018 2:15:26 P
 
 ## <a name="important-notice---backup-item-identification-for-afs-backups"></a>중요 알림-AFS 백업에 대 한 백업 항목 id
 
-이 섹션에서는 미리 보기에서 GA로 AFS 백업에 대 한 백업 항목 검색의 변경 내용을 간략하게 설명 합니다.
+이 섹션에서는 GA를 준비할 때 AFS 백업에서 중요 한 변경 사항에 대해 간략하게 설명 합니다.
 
-AFS에 대해 백업을 사용 하도록 설정 하는 동안 사용자는 고객에 게 친숙 한 파일 공유 이름을 엔터티 이름으로 제공 하 고 백업 항목을 만듭니다. 백업 항목의 ' n a s e '는 Azure Backup 서비스에서 만든 고유 식별자입니다. 일반적으로 식별자는 사용자에 게 친숙 한 이름을 포함 합니다. 그러나 Azure 서비스가 내부적으로 azure 파일 공유를 고유 하 게 식별 하는 방식이 변경 되었습니다. 이는 AFS 백업에 대 한 백업 항목의 고유 이름이 GUID 이며 고객에 게 친숙 한 이름에 대 한 관계가 없는 것을 의미 합니다. 각 항목의 고유 이름을 확인 하려면 backupManagementType 및 WorkloadType에 대 한 관련 필터를 사용 하 여 ```Get-AzRecoveryServicesBackupItem``` 명령을 실행 하 여 모든 관련 항목을 가져온 다음 반환 된 PS 개체/응답의 이름 필드를 관찰 하면 됩니다. 항목을 나열 하 고 응답의 ' 이름 ' 필드에서 고유한 이름을 검색 하는 것이 항상 권장 됩니다. ' Name ' 매개 변수를 사용 하 여 항목을 필터링 하려면이 값을 사용 합니다. 그렇지 않으면 FriendlyName 매개 변수를 사용 하 여 고객에 게 친숙 한 이름/식별자로 항목을 검색 합니다.
+AFS에 대해 백업을 사용 하도록 설정 하는 동안 사용자는 고객에 게 친숙 한 파일 공유 이름을 엔터티 이름으로 제공 하 고 백업 항목을 만듭니다. 백업 항목의 ' n a s e '는 Azure Backup 서비스에서 만든 고유 식별자입니다. 일반적으로 식별자는 사용자에 게 친숙 한 이름을 포함 합니다. 하지만 파일 공유를 삭제할 수 있고 동일한 이름을 사용 하 여 다른 파일 공유를 만들 수 있는 일시 삭제의 중요 한 시나리오를 처리 하기 위해 Azure 파일 공유의 고유 id는 이제 고객에 게 친숙 한 이름 대신 ID가 됩니다. 각 항목의 고유한 id/이름을 확인 하려면 backupManagementType 및 WorkloadType에 대 한 관련 필터를 사용 하 여 ```Get-AzRecoveryServicesBackupItem``` 명령을 실행 하 여 모든 관련 항목을 가져온 다음 반환 된 PS 개체/응답에서 이름 필드를 관찰 하면 됩니다. 항목을 나열 하 고 응답의 ' 이름 ' 필드에서 고유한 이름을 검색 하는 것이 항상 권장 됩니다. ' Name ' 매개 변수를 사용 하 여 항목을 필터링 하려면이 값을 사용 합니다. 그렇지 않으면 FriendlyName 매개 변수를 사용 하 여 고객에 게 친숙 한 이름/식별자로 항목을 검색 합니다.
 
 > [!WARNING]
 > AFS 백업의 경우 PS 버전이 ' Az. RecoveryServices 2.6.0 '의 최소 버전으로 업그레이드 되었는지 확인 합니다. 이 버전을 사용 하면 ' friendlyName ' 필터를 ```Get-AzRecoveryServicesBackupItem``` 명령에 사용할 수 있습니다. Azure 파일 공유 이름을 friendlyName 매개 변수로 전달 합니다. Azure 파일 공유 이름을 ' Name ' 매개 변수에 전달 하는 경우이 버전은 친근 한 이름을 name 매개 변수에 전달 하는 경고를 throw 합니다. 이 최소 버전을 설치 하지 않으면 기존 스크립트에 오류가 발생할 수 있습니다. 다음 명령을 사용 하 여 PS의 최소 버전을 설치 합니다.

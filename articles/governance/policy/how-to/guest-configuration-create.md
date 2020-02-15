@@ -3,12 +3,12 @@ title: 게스트 구성 정책을 만드는 방법
 description: Azure PowerShell를 사용 하 여 Windows 또는 Linux Vm에 대 한 Azure Policy 게스트 구성 정책을 만드는 방법에 대해 알아봅니다.
 ms.date: 12/16/2019
 ms.topic: how-to
-ms.openlocfilehash: 7a6c6bb68302d41cd750c59062432a40cf01e8bd
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 8bd769b61ed87c9ded45ceca11586cfe105740c9
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76278467"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77167178"
 ---
 # <a name="how-to-create-guest-configuration-policies"></a>게스트 구성 정책을 만드는 방법
 
@@ -269,7 +269,7 @@ New-GuestConfigurationPolicy
     -Verbose
 ```
 
-Linux 정책의 경우 구성에 **AttributesYmlContent** 속성을 포함 하 고 필요에 따라 값을 덮어씁니다. 게스트 구성 에이전트는 InSpec에서 특성을 저장 하는 데 사용 하는 YAML 파일을 자동으로 만듭니다. 아래 예를 참조하세요.
+Linux 정책의 경우 구성에 **AttributesYmlContent** 속성을 포함 하 고 필요에 따라 값을 덮어씁니다. 게스트 구성 에이전트는 InSpec에서 특성을 저장 하는 데 사용 하는 YAML 파일을 자동으로 만듭니다. 아래 예제를 참조하세요.
 
 ```powershell
 Configuration FirewalldEnabled {
@@ -374,7 +374,7 @@ $Cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 Linux 컴퓨터에서 사용할 GPG 키를 만드는 방법에 대 한 좋은 참조는 GitHub의 문서에서 제공 하 고 [새 GPG 키를 생성](https://help.github.com/en/articles/generating-a-new-gpg-key)하는 것입니다.
 
-콘텐츠를 게시 한 후에는 이름 `GuestConfigPolicyCertificateValidation` 및 값이 `enabled` 인 태그를 코드 서명이 필요한 모든 가상 컴퓨터에 추가 합니다. 이 태그는 Azure Policy을 사용 하 여 대규모로 배달 될 수 있습니다. [Apply tag and the default value](../samples/apply-tag-default-value.md) sample을 참조 하십시오. 이 태그가 준비 되 면 `New-GuestConfigurationPolicy` cmdlet을 사용 하 여 생성 된 정책 정의를 통해 게스트 구성 확장을 통해 요구 사항을 설정할 수 있습니다.
+콘텐츠를 게시 한 후에는 이름 `GuestConfigPolicyCertificateValidation` 및 값이 `enabled` 인 태그를 코드 서명이 필요한 모든 가상 컴퓨터에 추가 합니다. Azure Policy를 사용 하 여 태그를 대규모로 배달할 수 있는 방법에 대 한 [태그 샘플](../samples/built-in-policies.md#tags) 을 참조 하세요. 이 태그가 준비 되 면 `New-GuestConfigurationPolicy` cmdlet을 사용 하 여 생성 된 정책 정의를 통해 게스트 구성 확장을 통해 요구 사항을 설정할 수 있습니다.
 
 ## <a name="troubleshooting-guest-configuration-policy-assignments-preview"></a>게스트 구성 정책 할당 문제 해결 (미리 보기)
 

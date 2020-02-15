@@ -12,14 +12,14 @@ ms.devlang: tbd
 ms.topic: conceptual
 ms.tgt_pltfrm: dotnet
 ms.workload: na
-ms.date: 02/06/2019
+ms.date: 02/12/2020
 ms.author: shvija
-ms.openlocfilehash: a71751ba8dde2152a00a1455a51d13a3dedb792a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 51b69e8b7f6c980fd851cdf3e60ecfe0ade29e71
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75437172"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77187336"
 ---
 # <a name="create-a-namespace-with-event-hub-and-enable-capture-using-a-template"></a>이벤트 허브가 있는 네임스페이스를 만들고 템플릿을 사용하여 캡처를 사용하도록 설정
 
@@ -235,7 +235,7 @@ Azure Storage를 대상으로 선택한 경우 다음 매개 변수를 사용합
 }
 ```
 
-Azure Data Lake Store를 대상으로 선택한 경우 다음 매개 변수를 사용합니다. 이벤트를 캡처하려는 Data Lake Store 경로에서 사용 권한을 설정해야 합니다. 사용 권한을 설정하려면 [이 문서](event-hubs-capture-enable-through-portal.md#capture-data-to-an-azure-data-lake-store-account)를 참조하세요.
+Azure Data Lake Store Gen 1을 대상으로 선택 하는 경우 다음 매개 변수를 사용 합니다. 이벤트를 캡처하려는 Data Lake Store 경로에서 사용 권한을 설정해야 합니다. 권한을 설정 하려면 [Azure Data Lake Storage Gen 1로 데이터 캡처](event-hubs-capture-enable-through-portal.md#capture-data-to-azure-data-lake-storage-gen-1)를 참조 하세요.
 
 ### <a name="subscriptionid"></a>subscriptionId
 

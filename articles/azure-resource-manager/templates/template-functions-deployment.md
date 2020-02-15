@@ -3,19 +3,19 @@ title: 템플릿 함수-배포
 description: Azure Resource Manager 템플릿에서 배포 정보를 검색하는 데 사용할 수 있는 함수에 대해 설명합니다.
 ms.topic: conceptual
 ms.date: 11/27/2019
-ms.openlocfilehash: f2939efc9481255233fbdda29f4fa30adcd24b7f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b241aaf43ee3204c9960d0099ce3c61d4c1a80ee
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75484039"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207284"
 ---
 # <a name="deployment-functions-for-azure-resource-manager-templates"></a>Azure Resource Manager 템플릿용 배포 함수 
 
 리소스 관리자는 현재 배포와 관련 된 값을 가져오기 위한 다음 함수를 제공 합니다.
 
 * [deployment](#deployment)
-* [environment](#environment)
+* [개발](#environment)
 * [parameters](#parameters)
 * [variables](#variables)
 
@@ -89,7 +89,7 @@ deployment()를 사용하여 부모 템플릿의 URI를 기반으로 하는 다�
 
 포털의 배포 기록에서 템플릿을 다시 배포하는 경우 템플릿은 로컬 파일로 배포됩니다. `templateLink` 속성은 배포 함수에 반환되지 않습니다. 템플릿이 `templateLink`를 사용하여 다른 템플릿과의 링크를 설정하는 경우 포털을 사용하여 다시 배포하지 마세요. 대신 처음에 템플릿을 배포하는 데 사용한 명령을 사용하세요.
 
-### <a name="example"></a>예
+### <a name="example"></a>예제
 
 다음 [예제 템플릿](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/deployment.json)에서는 배포 개체를 반환합니다.
 
@@ -177,7 +177,7 @@ deployment()를 사용하여 부모 템플릿의 URI를 기반으로 하는 다�
 }
 ```
 
-### <a name="example"></a>예
+### <a name="example"></a>예제
 
 다음 예제 템플릿에서는 환경 개체를 반환 합니다.
 
@@ -239,9 +239,9 @@ deployment()를 사용하여 부모 템플릿의 URI를 기반으로 하는 다�
 
 ### <a name="parameters"></a>매개 변수
 
-| 매개 변수 | 필수 | 유형 | Description |
+| 매개 변수 | 필수 | Type | Description |
 |:--- |:--- |:--- |:--- |
-| parameterName |예 |문자열 |반환할 매개 변수의 이름입니다. |
+| parameterName |yes |문자열 |반환할 매개 변수의 이름입니다. |
 
 ### <a name="return-value"></a>반환 값
 
@@ -267,7 +267,7 @@ deployment()를 사용하여 부모 템플릿의 URI를 기반으로 하는 다�
 ]
 ```
 
-### <a name="example"></a>예
+### <a name="example"></a>예제
 
 다음 [예제 템플릿](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/parameters.json)에서는 매개 변수 함수의 간소화된 사용을 보여줍니다.
 
@@ -326,11 +326,11 @@ deployment()를 사용하여 부모 템플릿의 URI를 기반으로 하는 다�
 
 기본 값을 사용한 이전 예제의 출력은 다음과 같습니다.
 
-| 이름 | 유형 | 값 |
+| 속성 | Type | 값 |
 | ---- | ---- | ----- |
 | stringOutput | String | 옵션 1 |
 | intOutput | Int | 1 |
-| objectOutput | 개체 | {“one”: “a”, “two”: “b”} |
+| objectOutput | Object | {“one”: “a”, “two”: “b”} |
 | arrayOutput | Array | [1, 2, 3] |
 | crossOutput | String | 옵션 1 |
 
@@ -344,9 +344,9 @@ deployment()를 사용하여 부모 템플릿의 URI를 기반으로 하는 다�
 
 ### <a name="parameters"></a>매개 변수
 
-| 매개 변수 | 필수 | 유형 | Description |
+| 매개 변수 | 필수 | Type | Description |
 |:--- |:--- |:--- |:--- |
-| variableName |예 |String |반환할 변수의 이름입니다. |
+| variableName |yes |String |반환할 변수의 이름입니다. |
 
 ### <a name="return-value"></a>반환 값
 
@@ -376,7 +376,7 @@ deployment()를 사용하여 부모 템플릿의 URI를 기반으로 하는 다�
 ],
 ```
 
-### <a name="example"></a>예
+### <a name="example"></a>예제
 
 다음 [예제 템플릿](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/variables.json)은 각기 다른 변수 값을 반환합니다.
 
@@ -418,18 +418,18 @@ deployment()를 사용하여 부모 템플릿의 URI를 기반으로 하는 다�
 
 기본 값을 사용한 이전 예제의 출력은 다음과 같습니다.
 
-| 이름 | 유형 | 값 |
+| 속성 | Type | 값 |
 | ---- | ---- | ----- |
 | exampleOutput1 | String | myVariable |
 | exampleOutput2 | Array | [1, 2, 3, 4] |
 | exampleOutput3 | String | myVariable |
-| exampleOutput4 |  개체 | {“property1”: “value1”, “property2”: “value2”} |
+| exampleOutput4 |  Object | {“property1”: “value1”, “property2”: “value2”} |
 
 변수를 사용 하는 방법에 대 한 자세한 내용은 [Azure Resource Manager 템플릿에서 변수](template-variables.md)를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 * Azure Resource Manager 템플릿의 섹션에 대한 설명은 [Azure Resource Manager 템플릿 작성](template-syntax.md)을 참조하세요.
 * 여러 템플릿을 병합하려면 [Azure Resource Manager에서 연결된 템플릿 사용](linked-templates.md)을 참조하세요.
-* 리소스 유형을 만들 때 지정된 횟수만큼 반복하려면 [Azure 리소스 관리자에서 리소스의 여러 인스턴스 만들기](create-multiple-instances.md)를 참조하세요.
+* 리소스 유형을 만들 때 지정된 횟수만큼 반복하려면 [Azure 리소스 관리자에서 리소스의 여러 인스턴스 만들기](copy-resources.md)를 참조하세요.
 * 만든 템플릿을 배포하는 방법을 보려면 [Azure Resource Manager 템플릿을 사용하여 애플리케이션 배포](deploy-powershell.md)를 참조하세요.
 

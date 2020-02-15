@@ -3,12 +3,12 @@ title: Azure Backup Server를 사용하여 VMware VM 복원
 description: Azure Backup Server (MABS)를 사용 하 여 VMware vCenter/ESXi 서버에서 실행 되는 VMware Vm을 복원 합니다.
 ms.topic: conceptual
 ms.date: 08/18/2019
-ms.openlocfilehash: 7c93c3100d8756fd9faf8cf02152a870bd0c106c
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: ab2fb4f8f79fa5a664f5cb0ba1bb537c1df658c2
+ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74171919"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77212343"
 ---
 # <a name="restore-vmware-virtual-machines"></a>VMware 가상 컴퓨터 복원
 
@@ -52,24 +52,28 @@ ms.locfileid: "74171919"
 
 보호 된 VM 복구 지점에서 개별 파일을 복원할 수 있습니다. 이 기능은 Windows Server Vm에만 사용할 수 있습니다. 개별 파일을 복원 하는 것은 복구 프로세스를 시작 하기 전에 .VMDK로 이동 하 여 원하는 파일을 찾는 경우를 제외 하 고 전체 VM을 복원 하는 것과 비슷합니다. 개별 파일을 복구 하거나 Windows Server VM에서 파일을 선택 하려면 다음을 수행 합니다.
 
+>[!NOTE]
+>VM에서 개별 파일을 복원 하는 것은 Windows VM 및 디스크 복구 지점만 사용할 수 있습니다.
+
 1. MABS 관리자 콘솔에서 **복구** 보기를 클릭 합니다.
 
 2. **찾아보기** 창에서 찾아보거나 필터를 사용 하 여 복구할 VM을 찾습니다. VM 또는 폴더를 선택 하면 복구 지점은 사용 가능한 복구 지점이 표시 됩니다.
 
-    ![사용 가능한 복구 위치](./media/restore-azure-backup-server-vmware/recovery-points.png)
+    ![사용 가능한 복구 위치](./media/restore-azure-backup-server-vmware/vmware-rp-disk.png)
 
 3. **복구 지점:** 창에서 달력을 사용 하 여 원하는 복구 지점을 포함 하는 날짜를 선택 합니다. 백업 정책이 구성 된 방식에 따라 날짜에는 복구 지점이 둘 이상 있을 수 있습니다. 복구 지점을 만든 날짜를 선택한 후에는 올바른 **복구 시간**을 선택 했는지 확인 합니다. 선택한 날짜에 여러 개의 복구 지점이 있는 경우 복구 시간 드롭다운 메뉴에서 복구 지점을 선택 하 여 선택 합니다. 복구 지점을 선택 하면 복구 가능한 항목 목록이 **경로:** 창에 표시 됩니다.
 
 4. 복구 하려는 파일을 찾으려면 **경로** 창에서 **복구 가능한 항목** 열의 항목을 두 번 클릭 하 여 엽니다. 복구 하려는 파일, 파일 또는 폴더를 선택 합니다. 여러 항목을 선택 하려면 **ctrl** 키를 누른 상태에서 각 항목을 선택 합니다. **경로** 창을 사용 하 여 **복구 가능한 항목** 열에 나타나는 파일 또는 폴더 목록을 검색 합니다. **아래 검색 목록은** 하위 폴더로 검색 하지 않습니다. 하위 폴더를 검색 하려면 폴더를 두 번 클릭 합니다. **위쪽** 단추를 사용 하 여 자식 폴더에서 부모 폴더로 이동 합니다. 여러 항목 (파일 및 폴더)을 선택할 수 있지만 동일한 부모 폴더에 있어야 합니다. 동일한 복구 작업에서 여러 폴더의 항목을 복구할 수 없습니다.
 
+    ![복구 선택 사항 확인](./media/restore-azure-backup-server-vmware/vmware-rp-disk-ilr-2.png)
+
 5. 복구할 항목을 선택한 경우 관리자 콘솔 도구 리본 **에서 복구를 클릭 하** 여 **복구 마법사**를 엽니다. 복구 마법사에서 **복구 선택 사항 확인** 화면에는 복구할 선택 된 항목이 표시 됩니다.
-    복구 선택 사항 확인 ![](./media/restore-azure-backup-server-vmware/review-recovery.png)
 
 6. **복구 옵션 지정** 화면에서 네트워크 대역폭 제한을 사용 하려면 **수정**을 클릭 합니다. 네트워크 제한을 사용 하지 않으려면 [ **다음**]을 클릭 하십시오. 이 마법사 화면에서 VMware Vm에 대 한 다른 옵션은 사용할 수 없습니다. 네트워크 대역폭 제한을 수정 하도록 선택 하는 경우 제한 대화 상자에서 **네트워크 대역폭 사용 제한 사용** 을 선택 하 여 설정 합니다. 사용 하도록 설정 되 면 **설정** 및 **작업 일정**을 구성 합니다.
 7. **복구 유형 선택** 화면에서 **다음**을 클릭 합니다. 파일 또는 폴더를 네트워크 폴더로만 복구할 수 있습니다.
 8. **대상 지정** 화면에서 **찾아보기** 를 클릭 하 여 파일 또는 폴더에 대 한 네트워크 위치를 찾습니다. MABS는 모든 복구 된 항목이 복사 되는 폴더를 만듭니다. 폴더 이름에는 MABS_day-month-year 접두사가 있습니다. 복구 된 파일이 나 폴더의 위치를 선택 하면 해당 위치의 세부 정보 (대상, 대상 경로 및 사용 가능한 공간)가 제공 됩니다.
 
-       ![Specify location to recover files](./media/restore-azure-backup-server-vmware/specify-destination.png)
+    ![파일을 복구할 위치 지정](./media/restore-azure-backup-server-vmware/specify-destination.png)
 
 9. **복구 옵션 지정** 화면에서 적용할 보안 설정을 선택 합니다. 네트워크 대역폭 사용 제한을 수정 하도록 선택할 수 있지만 기본적으로 제한이 사용 되지 않습니다. 또한 **SAN 복구** 및 **알림은** 사용 하도록 설정 되지 않습니다.
 10. **요약** 화면에서 설정을 검토 하 **고 복구를 클릭 하** 여 복구 프로세스를 시작 합니다. 복구 **상태** 화면에 복구 작업의 진행 상태가 표시 됩니다.

@@ -8,12 +8,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 09/11/2019
 ms.author: saudas
-ms.openlocfilehash: 16a1f3b8f9ef036bcdc9af122243d313186f99f1
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 10ec07cab94184810e083c643e862cebe8e2431c
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73885329"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121439"
 ---
 # <a name="preview---use-managed-identities-in-azure-kubernetes-service"></a>미리 보기-Azure Kubernetes Service에서 관리 되는 id 사용
 
@@ -44,7 +44,7 @@ AKS은 두 개의 관리 되는 id를 만듭니다.
 Aks-preview 0.4.14 extension 이상을 설치 하려면 다음 Azure CLI 명령을 사용 합니다.
 
 ```azurecli
-az extension update --name aks-preview
+az extension add --name aks-preview
 az extension list
 ```
 

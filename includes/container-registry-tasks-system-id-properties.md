@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 07/12/2019
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 94adac6ba232f8931d00083432c027ddccb2ce64
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 700dbfde3be2f24eb57acbdeb9d2841ef2bdfe44
+ms.sourcegitcommit: 323c3f2e518caed5ca4dd31151e5dee95b8a1578
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76842500"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77112297"
 ---
-명령 출력의 `identity` 섹션에서는 작업에 설정 된 `SystemAssigned` 형식의 id를 보여 줍니다. `principalId`는 id의 서비스 사용자 ID입니다.
+명령 출력의 `identity` 섹션에서는 작업에 설정 된 `SystemAssigned` 형식의 id를 보여 줍니다. `principalId`는 태스크 id의 보안 주체 ID입니다.
 
 ```console
 [...]

@@ -13,21 +13,21 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: ecb704253597bf4eb5672fe924a0dafc4c1b3fd1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b53fca292630ef988ee1357ea50adc4d7b7e9be5
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64726530"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162882"
 ---
 # <a name="use-azure-ad-authentication-to-access-azure-media-services-api-with-net"></a>Azure AD 인증을 사용하여 .NET으로 Azure Media Services API 액세스
 
 > [!NOTE]
-> Media Services v2에는 새로운 특징 또는 기능이 추가되지 않습니다. <br/>[Media Services v3](https://docs.microsoft.com/azure/media-services/latest/)의 최신 버전을 확인하세요. 참고: [v2에서 v3 마이그레이션 지침](../latest/migrate-from-v2-to-v3.md)
+> Media Services v2에는 새로운 특징 또는 기능이 추가되지 않습니다. <br/>[Media Services v3](https://docs.microsoft.com/azure/media-services/latest/)의 최신 버전을 확인하세요. 또한 [v2에서 v3로 마이그레이션 지침](../latest/migrate-from-v2-to-v3.md) 을 참조 하세요.
 
 windowsazure.mediaservices 4.0.0.4부터는 Azure Media Services에서 Azure AD(Azure Active Directory) 기반 인증을 지원합니다. 이 항목에서는 Azure AD 인증을 사용하여 Microsoft .NET으로 Azure Media Services API에 액세스하는 방법을 보여 줍니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 - Azure 계정. 자세한 내용은 [Azure 무료 평가판](https://azure.microsoft.com/pricing/free-trial/)을 참조하세요. 
 - Media Services 계정. 자세한 내용은 [Azure Portal을 사용하여 Azure Media Services 계정 만들기](media-services-portal-create-account.md)를 참조하세요.
@@ -48,7 +48,7 @@ Azure AD 인증으로 Azure Media Services API에 연결하려면 클라이언�
 
 예를 들어 Azure AD 인증 기관, Media Services 리소스 URI 또는 원시 Azure AD 애플리케이션 정보를 제공하지 않아도 됩니다. 이들은 Azure AD 액세스 토큰 공급자 클래스에 의해 이미 구성된 잘 알려진 값입니다. 
 
-Azure Media Service .NET SDK를 사용하지 않는 경우 [Azure AD 인증 라이브러리](../../active-directory/develop/active-directory-authentication-libraries.md)를 사용하는 것이 좋습니다. Azure AD 인증 라이브러리와 함께 사용해야 하는 매개 변수 값을 가져오려면 [Azure Portal을 사용하여 Azure AD 인증 설정 액세스](media-services-portal-get-started-with-aad.md)를 참조하세요.
+Azure Media Service .NET SDK를 사용하지 않는 경우 [Azure AD 인증 라이브러리](../../active-directory/azuread-dev/active-directory-authentication-libraries.md)를 사용하는 것이 좋습니다. Azure AD 인증 라이브러리와 함께 사용해야 하는 매개 변수 값을 가져오려면 [Azure Portal을 사용하여 Azure AD 인증 설정 액세스](media-services-portal-get-started-with-aad.md)를 참조하세요.
 
 또한 **AzureAdTokenProvider**의 기본 구현을 사용자 고유의 구현으로 바꾸는 옵션도 있습니다.
 
@@ -125,7 +125,7 @@ Azure Media Service .NET SDK를 사용하지 않는 경우 [Azure AD 인증 라�
     }
 
 >[!NOTE]
->"원격 서버에서 (401) 권한 없음 오류를 반환했습니다"라는 예외가 표시되면 Azure AD 인증을 사용하여 Azure Media Services API 액세스 개요의 [액세스 제어](media-services-use-aad-auth-to-access-ams-api.md#access-control) 섹션을 참조하세요.
+>“원격 서버에서 (401) 권한 없음 오류를 반환했습니다.”라는 예외가 발생하면 Azure AD 인증으로 Azure Media Services API 액세스 개요의 [액세스 제어](media-services-use-aad-auth-to-access-ams-api.md#access-control) 섹션을 참조하세요.
 
 ## <a name="use-service-principal-authentication"></a>서비스 주체 인증 사용
     

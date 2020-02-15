@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/06/2020
-ms.openlocfilehash: 980569edf8322c6c22a4357a5b946ded85f0ebe4
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: e4b33e132e660fba7d06ff33c7db06c7727dd26c
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77063743"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162789"
 ---
 # <a name="use-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Azure Monitor 로그를 사용 하 여 HDInsight 클러스터 모니터링
 
@@ -24,7 +24,7 @@ Azure Monitor 로그를 사용 하 여 HDInsight에서 Hadoop 클러스터 작�
 
 Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.microsoft.com/free/) 계정을 만듭니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Log Analytics 작업 영역. 이 작업 영역은 고유한 데이터 리포지토리, 데이터 원본 및 솔루션이 있는 고유한 Azure Monitor 로그 환경으로 생각할 수 있습니다. 지침은 [Log Analytics 작업 영역 만들기](../azure-monitor/learn/quick-collect-azurevm.md#create-a-workspace)를 참조하세요.
 
@@ -39,7 +39,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.
 
   HDInsight 클러스터를 만드는 방법에 대한 지침은 [Azure HDInsight 시작](hadoop/apache-hadoop-linux-tutorial-get-started.md)을 참조하세요.  
 
-* Azure PowerShell Az module.  [새 Azure PowerShell Az Module 소개를](https://docs.microsoft.com/powershell/azure/new-azureps-module-az)참조 하세요.
+* Azure PowerShell Az module.  [새 Azure PowerShell Az Module 소개를](https://docs.microsoft.com/powershell/azure/new-azureps-module-az)참조 하세요. 최신 버전이 있는지 확인 합니다. 필요한 경우 `Update-Module -Name Az`를 실행 합니다.
 
 > [!NOTE]  
 > 성능 향상을 위해 동일한 지역에 HDInsight 클러스터와 Log Analytics 작업 영역을 모두 배치하는 것이 좋습니다. Azure Monitor 로그는 일부 Azure 지역에서 사용할 수 없습니다.
@@ -62,7 +62,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.
 
 ## <a name="enable-azure-monitor-logs-by-using-azure-powershell"></a>Azure PowerShell를 사용 하 여 Azure Monitor 로그 사용
 
-Azure PowerShell Az module [AzHDInsightOperationsManagementSuite](https://docs.microsoft.com/powershell/module/az.hdinsight/enable-azhdinsightoperationsmanagementsuite) cmdlet을 사용 하 여 Azure Monitor 로그를 사용 하도록 설정할 수 있습니다.
+Azure PowerShell Az module [AzHDInsightMonitoring](https://docs.microsoft.com/powershell/module/az.hdinsight/enable-azhdinsightmonitoring) cmdlet을 사용 하 여 Azure Monitor 로그를 사용 하도록 설정할 수 있습니다.
 
 ```powershell
 # Enter user information
@@ -72,19 +72,32 @@ $LAW = "<your-Log-Analytics-workspace>"
 # End of user input
 
 # obtain workspace id for defined Log Analytics workspace
-$WorkspaceId = (Get-AzOperationalInsightsWorkspace -ResourceGroupName $resourceGroup -Name $LAW).CustomerId
+$WorkspaceId = (Get-AzOperationalInsightsWorkspace `
+                    -ResourceGroupName $resourceGroup `
+                    -Name $LAW).CustomerId
 
 # obtain primary key for defined Log Analytics workspace
-$PrimaryKey = (Get-AzOperationalInsightsWorkspace -ResourceGroupName $resourceGroup -Name $LAW | Get-AzOperationalInsightsWorkspaceSharedKeys).PrimarySharedKey
+$PrimaryKey = (Get-AzOperationalInsightsWorkspace `
+                    -ResourceGroupName $resourceGroup `
+                    -Name $LAW | Get-AzOperationalInsightsWorkspaceSharedKeys).PrimarySharedKey
 
-# Enables Operations Management Suite
-Enable-AzHDInsightOperationsManagementSuite -ResourceGroupName $resourceGroup -Name $cluster -WorkspaceId $WorkspaceId -PrimaryKey $PrimaryKey
+# Enables monitoring and relevant logs will be sent to the specified workspace.
+Enable-AzHDInsightMonitoring `
+    -ResourceGroupName $resourceGroup `
+    -Name $cluster `
+    -WorkspaceId $WorkspaceId `
+    -PrimaryKey $PrimaryKey
+
+# Gets the status of monitoring installation on the cluster.
+Get-AzHDInsightMonitoring `
+    -ResourceGroupName $resourceGroup `
+    -Name $cluster
 ```
 
-사용 하지 않도록 설정 하려면 [AzHDInsightOperationsManagementSuite](https://docs.microsoft.com/powershell/module/az.hdinsight/disable-azhdinsightoperationsmanagementsuite) cmdlet을 사용 합니다.
+사용 하지 않도록 설정 하려면 [AzHDInsightMonitoring](https://docs.microsoft.com/powershell/module/az.hdinsight/disable-azhdinsightmonitoring) cmdlet을 사용 합니다.
 
 ```powershell
-Disable-AzHDInsightOperationsManagementSuite -Name "<your-cluster>"
+Disable-AzHDInsightMonitoring -Name "<your-cluster>"
 ```
 
 ## <a name="install-hdinsight-cluster-management-solutions"></a>HDInsight 클러스터 관리 솔루션 설치

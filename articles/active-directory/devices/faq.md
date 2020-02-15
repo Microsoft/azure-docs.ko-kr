@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a27c9ae1b75b9517bd3af92486df96434c5b34fb
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: cebb59d30dd717e54321ab138f6580947a545961
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74207381"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77185837"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Azure Active Directory 디바이스 관리 FAQ
 
@@ -55,7 +55,7 @@ Azure Portal에서 **모든 디바이스** 보기를 사용하세요. PowerShell
 
 ---
 
-### <a name="q-why-do-my-users-see-an-error-message-saying-your-organization-has-deleted-the-device-or-your-organization-has-disabled-the-device-on-their-windows-10-devices-"></a>Q: 사용자가 Windows 10 장치에서 "조직에서 장치를 삭제 했습니다." 또는 "조직에서 장치를 사용 하지 않도록 설정 했습니다." 라는 오류 메시지가 표시 되는 이유는 무엇 인가요?
+### <a name="q-why-do-my-users-see-an-error-message-saying-your-organization-has-deleted-the-device-or-your-organization-has-disabled-the-device-on-their-windows-10-devices"></a>Q: 사용자가 Windows 10 장치에서 "조직에서 장치를 삭제 했습니다." 또는 "조직에서 장치를 사용 하지 않도록 설정 했습니다." 라는 오류 메시지가 표시 되는 이유는 무엇 인가요?
 
 **A:** Azure AD에 가입 하거나 등록 된 Windows 10 장치에서 사용자는 single sign-on을 사용 하도록 설정 하는 [PRT (주 새로 고침 토큰)](concept-primary-refresh-token.md) 를 발급 합니다. PRT의 유효성은 장치 자체의 유효성을 기반으로 합니다. 장치 자체에서 작업을 시작 하지 않고 Azure AD에서 장치를 삭제 하거나 사용 하지 않도록 설정한 경우 사용자에 게이 메시지가 표시 됩니다. 다음 시나리오 중 하나를 사용 하 여 Azure AD에서 장치를 삭제 하거나 사용 하지 않도록 설정할 수 있습니다. 
 
@@ -82,14 +82,14 @@ Azure Portal에서 **모든 디바이스** 보기를 사용하세요. PowerShell
       하이브리드 Azure AD에 가입 된 Windows 10 및 Windows Server 2016/2019 장치를 다시 등록 하려면 다음 단계를 수행 합니다.
 
       1. 관리자 권한으로 명령 프롬프트를 엽니다.
-      1. `dsregcmd.exe /debug /leave`을 입력합니다.
+      1. `dsregcmd.exe /debug /leave`를 입력합니다.
       1. 로그아웃했다가 다시 로그인하여 디바이스를 Azure AD에 다시 등록하는 예약된 작업을 트리거합니다. 
 
       하이브리드 Azure AD에 가입 된 하위 수준 Windows OS 버전의 경우 다음 단계를 수행 합니다.
 
       1. 관리자 권한으로 명령 프롬프트를 엽니다.
-      1. `"%programFiles%\Microsoft Workplace Join\autoworkplace.exe /l"`을 입력합니다.
-      1. `"%programFiles%\Microsoft Workplace Join\autoworkplace.exe /j"`을 입력합니다.
+      1. `"%programFiles%\Microsoft Workplace Join\autoworkplace.exe /l"`를 입력합니다.
+      1. `"%programFiles%\Microsoft Workplace Join\autoworkplace.exe /j"`를 입력합니다.
 
       Azure AD 조인 장치 Windows 10 장치에 대해 다음 단계를 수행 합니다.
 
@@ -119,7 +119,7 @@ Azure Portal에서 **모든 디바이스** 보기를 사용하세요. PowerShell
 
 ### <a name="q-does-windows-10-device-registration-in-azure-ad-support-tpms-in-fips-mode"></a>Q: Azure AD의 Windows 10 장치 등록이 FIPS 모드에서 Tpm을 지원 하나요?
 
-**A:** Windows 10 장치 등록은 FIPS 규격 TPM 2.0에 대해서만 지원 되 고 TPM 1.2에는 지원 되지 않습니다. 장치에 FIPS 규격 TPM 1.2가 있는 경우 Azure AD 조인 또는 하이브리드 Azure AD 조인을 계속 하기 전에 사용 하지 않도록 설정 해야 합니다. TPM은 TPM 제조업체에 따라 달라 지므로 TPM에서 FIPS 모드를 사용 하지 않도록 설정 하는 도구는 제공 하지 않습니다. 하드웨어 OEM에 지원을 문의 하세요. 
+**A:** Windows 10 장치 등록은 FIPS 규격 TPM 2.0에 대해서만 지원 되 고 TPM 1.2에는 지원 되지 않습니다. 장치에 FIPS 규격 TPM 1.2가 있는 경우 Azure AD 조인 또는 하이브리드 Azure AD 조인을 계속 하기 전에 사용 하지 않도록 설정 해야 합니다. TPM은 TPM 제조업체에 따라 다르므로 tpm에서 FIPS 모드를 사용 하지 않도록 설정 하는 도구는 제공 하지 않습니다. 하드웨어 OEM에 지원을 문의 하세요. 
 
 ---
 
@@ -310,9 +310,9 @@ Azure AD에서 디바이스가 삭제 또는 비활성화되어도 Windows 디�
 1.  [규정 준수 정책 만들기](https://docs.microsoft.com/intune/compliance-policy-create-mac-os)
 1.  [MacOS 장치에 대 한 조건부 액세스 정책 정의](../active-directory-conditional-access-azure-portal.md) 
 
-**설명**
+**설명:**
 
-- 조건부 액세스 정책에 포함 된 사용자에 게 리소스에 액세스 하려면 [지원 되는 macOS 버전이](../conditional-access/technical-reference.md#client-apps-condition) 필요 합니다. 
+- 조건부 액세스 정책에 포함 된 사용자에 게 리소스에 액세스 하려면 [지원 되는 macOS 버전이](../conditional-access/concept-conditional-access-conditions.md) 필요 합니다. 
 - 첫 번째 액세스를 시도하는 동안 사용자에게는 회사 포털을 사용하여 디바이스를 등록하라는 메시지가 표시됩니다.
 
 ---

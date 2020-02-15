@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 10/12/2018
+ms.date: 02/11/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 646e3e0d68846013d656627a4ef6ef1fb1e11e09
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 002221bc69659a3be6fee950319909c9fc63ea9c
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76846771"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77136317"
 ---
 # <a name="track-user-behavior-in-azure-active-directory-b2c-using-application-insights"></a>Application Insights를 사용하여 Azure Active Directory B2C에서 사용자 동작 추적
 
@@ -29,7 +29,7 @@ Azure 애플리케이션 Insights와 함께 Azure Active Directory B2C (Azure AD
 * 성능을 측정합니다.
 * Application Insights에서 알림을 만듭니다.
 
-## <a name="how-it-works"></a>작동 원리
+## <a name="how-it-works"></a>작동 방법
 
 Azure AD B2C에서 ID 경험 프레임워크는 공급자 `Handler="Web.TPEngine.Providers.AzureApplicationInsightsProvider, Web.TPEngine, Version=1.0.0.0`을 포함합니다. 이 공급자는 Azure AD B2C에 제공된 계측 키를 사용하여 Application Insights에 직접 이벤트 데이터를 보냅니다.
 
@@ -110,7 +110,7 @@ Application Insights를 Azure AD B2C와 함께 사용하는 경우 리소스를 
 
 기술 프로필은 Azure AD B2C의 ID 경험 프레임워크의 함수로 간주될 수 있습니다. 이 테이블은 세션을 열고 이벤트를 게시하는 데 사용되는 기술 프로필을 정의합니다.
 
-| 기술 프로필 | Task |
+| 기술 프로필 | 작업 |
 | ----------------- | -----|
 | AzureInsights-Common | 모든 Azure Insights 기술 프로필에 포함할 공통 매개 변수 집합을 만듭니다. |
 | AzureInsights-SignInRequest | 로그인 요청이 수신되었을 때 클레임 집합을 사용하여 SignIn 이벤트를 만듭니다. |
@@ -158,7 +158,7 @@ Application Insights를 Azure AD B2C와 함께 사용하는 경우 리소스를 
       <InputClaims>
         <!-- Properties of an event are added through the syntax {property:NAME}, where NAME is property being added to the event. DefaultValue can be either a static value or a value that's resolved by one of the supported DefaultClaimResolvers. -->
         <InputClaim ClaimTypeReferenceId="PolicyId" PartnerClaimType="{property:Policy}" DefaultValue="{Policy:PolicyId}" />
-        <InputClaim ClaimTypeReferenceId="CorrelationId" PartnerClaimType="{property:JourneyId}" />
+        <InputClaim ClaimTypeReferenceId="CorrelationId" PartnerClaimType="{property:JourneyId}" DefaultValue="{Context:CorrelationId}" />
         <InputClaim ClaimTypeReferenceId="Culture" PartnerClaimType="{property:Culture}" DefaultValue="{Culture:RFC5646}" />
       </InputClaims>
     </TechnicalProfile>
@@ -182,7 +182,7 @@ Application Insights를 Azure AD B2C와 함께 사용하는 경우 리소스를 
 </OrchestrationStep>
 ```
 
-`SendClaims` 오케스트레이션 단계 바로 *전에*`Azure-Insights-UserSignup`을 호출하는 새 단계를 추가합니다. 사용자가 등록/로그인 경험에서 등록 단추를 선택할 때 트리거됩니다.
+*오케스트레이션 단계 바로*전에`SendClaims``Azure-Insights-UserSignup`을 호출하는 새 단계를 추가합니다. 사용자가 등록/로그인 경험에서 등록 단추를 선택할 때 트리거됩니다.
 
 ```xml
 <!-- Handles the user clicking the sign up link in the local account sign in page -->

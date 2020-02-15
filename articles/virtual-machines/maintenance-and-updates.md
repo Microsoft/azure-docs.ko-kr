@@ -1,22 +1,18 @@
 ---
-title: Azure의 Vm에 대 한 유지 관리 및 업데이트 | Microsoft Docs
+title: 유지 관리 및 업데이트
 description: Azure에서 실행 되는 가상 머신에 대 한 유지 관리 및 업데이트 개요입니다.
-services: virtual-machines
-documentationcenter: ''
 author: shants123
-editor: ''
-tags: azure-resource-manager,azure-service-management
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 11/18/2019
 ms.author: shants
-ms.openlocfilehash: 45dba8de8ef735bdb9df102ac367e6a1653bf481
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: eaf7616b3bd69828829342b4dca9247c009d3475
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74807088"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121855"
 ---
 # <a name="maintenance-for-virtual-machines-in-azure"></a>Azure에서 가상 머신 유지 관리
 

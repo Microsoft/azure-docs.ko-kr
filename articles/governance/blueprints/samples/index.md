@@ -1,14 +1,14 @@
 ---
 title: 청사진 샘플 인덱스
 description: Azure 청사진을 사용하여 환경, 정책 및 Cloud Adoptions Framework 기반을 배포하기 위한 규정 준수 및 표준 샘플의 인덱스입니다.
-ms.date: 01/10/2020
+ms.date: 02/11/2020
 ms.topic: sample
-ms.openlocfilehash: fa5f02af6a0e59359d6bc3c2d24515fea535a0fa
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 88dde10efefd8153eff9aa6ad2ea47a1e00e2c87
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76938304"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77150462"
 ---
 # <a name="azure-blueprints-samples"></a>Azure Blueprints 샘플
 
@@ -20,6 +20,7 @@ ms.locfileid: "76938304"
 |---------|---------|
 | [캐나다 연방 PBMM](./canada-federal-pbmm/index.md) | Canada Federal Protected B, 중간 무결성, 중간 가용성(PBMM) 규정 준수를 위한 가드레일을 제공합니다. |
 | [CIS Microsoft Azure Foundations 벤치마크](./cis-azure-1.1.0/index.md)| CIS Microsoft Azure Foundations 벤치마크 권장 사항을 준수하는 데 도움이 되는 일련의 정책을 제공합니다. |
+| [DoD 영향 수준 4](./dod-impact-level-4/index.md) | DoD 영향 수준 4를 준수하는 데 도움이 되는 정책 세트를 제공합니다. |
 | [FedRAMP Moderate](./fedramp-m/index.md) | FedRAMP Moderate를 준수하는 데 도움이 되는 정책 세트를 제공합니다. |
 | [FedRAMP High](./fedramp-h/index.md) | FedRAMP High를 준수하는 데 도움이 되는 정책 세트를 제공합니다. |
 | [HIPAA HITRUST](./HIPAA-HITRUST/index.md) | HIPAA HITRUST를 준수하는 데 도움이 되는 정책 세트를 제공합니다. |

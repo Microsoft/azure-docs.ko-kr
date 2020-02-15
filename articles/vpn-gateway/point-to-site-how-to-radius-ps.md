@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 02/27/2019
+ms.date: 02/10/2020
 ms.author: cherylmc
-ms.openlocfilehash: 1f55b8963ad9f940202816704c5818c6853ffcde
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 25bc25d9ec12804cc20baa558dce67fb3f8269a1
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75353694"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77149168"
 ---
 # <a name="configure-a-point-to-site-connection-to-a-vnet-using-radius-authentication-powershell"></a>RADIUS 인증을 사용하여 VNet에 지점 및 사이트 간 연결 구성: PowerShell
 
@@ -43,8 +43,6 @@ P2S 연결에는 다음이 필요합니다.
 * 사용자 인증을 처리하는 RADIUS 서버 - RADIUS 서버는 온-프레미스 또는 Azure VNet에 배포할 수 있습니다.
 * VNet에 연결할 Windows 디바이스용 VPN 클라이언트 구성 패키지 - VPN 클라이언트 구성 패키지는 VPN 클라이언트에서 P2S를 통해 연결하는 데 필요한 설정을 제공합니다.
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
 ## <a name="aboutad"></a>P2S VPN에 대한 AD(Active Directory) 도메인 인증 정보
 
 AD 도메인 인증을 사용하면 사용자가 자신의 조직 도메인 자격 증명을 사용하여 Azure에 로그인할 수 있습니다. AD 서버와 통합되는 RADIUS 서버가 필요합니다. 또한 조직에서 기존 RADIUS 배포를 활용할 수도 있습니다.
@@ -63,6 +61,8 @@ RADIUS 서버는 온-프레미스 또는 Azure VNet에 있을 수 있습니다. 
 ## <a name="before"></a>시작하기 전에
 
 Azure 구독이 있는지 확인합니다. Azure 구독이 아직 없는 경우 [MSDN 구독자 혜택](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details)을 활성화하거나 [무료 계정](https://azure.microsoft.com/pricing/free-trial)에 등록할 수 있습니다.
+
+### <a name="working-with-azure-powershell"></a>Azure PowerShell 작업
 
 [!INCLUDE [powershell](../../includes/vpn-gateway-cloud-shell-powershell-about.md)]
 
@@ -87,12 +87,7 @@ Azure 구독이 있는지 확인합니다. Azure 구독이 아직 없는 경우 
 * **공용 IP 이름: VNet1GWPIP**
 * **VpnType: RouteBased**
 
-
-## <a name="signin"></a>로그인 및 변수 설정
-
-[!INCLUDE [sign in](../../includes/vpn-gateway-cloud-shell-ps-login.md)]
-
-### <a name="declare-variables"></a>변수 선언
+## <a name="signin"></a>1. 변수를 설정 합니다.
 
 사용할 변수를 선언합니다. 다음 샘플을 사용하여 필요할 때 고유한 값으로 대체합니다. 이 연습을 수행하는 동안 PowerShell/Cloud Shell 세션을 닫게 되는 경우 값을 복사하고 붙여넣어 변수를 다시 선언하세요.
 
@@ -114,7 +109,7 @@ Azure 구독이 있는지 확인합니다. Azure 구독이 아직 없는 경우 
   $GWIPconfName = "gwipconf"
   ```
 
-## 1. <a name="vnet"> </a>리소스 그룹, VNet 및 공용 IP 주소를 만듭니다.
+## 2. <a name="vnet"> </a>리소스 그룹, VNet 및 공용 IP 주소 만들기
 
 다음 단계에서는 세 개의 서브넷이 있는 리소스 그룹과 리소스 그룹의 가상 네트워크를 만듭니다. 값을 대체할 때 언제나 게이트웨이 서브넷 이름을 'GatewaySubnet'이라고 구체적으로 지정해야 합니다. 다른 이름을 지정하면 게이트웨이 만들기가 실패합니다.
 
@@ -148,7 +143,7 @@ Azure 구독이 있는지 확인합니다. Azure 구독이 아직 없는 경우 
    $ipconf = New-AzVirtualNetworkGatewayIpConfig -Name "gwipconf" -Subnet $subnet -PublicIpAddress $pip
    ```
 
-## 2. <a name="radius"> </a>RADIUS 서버 설정
+## 3. <a name="radius"> </a>RADIUS 서버 설정
 
 가상 네트워크 게이트웨이를 만들고 구성하기 전에 인증을 위한 RADIUS 서버를 올바르게 구성해야 합니다.
 
@@ -158,7 +153,7 @@ Azure 구독이 있는지 확인합니다. Azure 구독이 아직 없는 경우 
 
 [NPS(네트워크 정책 서버)](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top) 문서에서는 AD 도메인 인증을 위해 Windows RADIUS 서버(NPS)를 구성하는 방법에 대한 지침을 제공하고 있습니다.
 
-## 3. <a name="creategw"> </a>VPN gateway 만들기
+## 4. <a name="creategw"> </a>VPN gateway 만들기
 
 VNet에 대한 VPN 게이트웨이를 구성하고 만듭니다.
 
@@ -171,7 +166,7 @@ New-AzVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
 -VpnType RouteBased -EnableBgp $false -GatewaySku VpnGw1
 ```
 
-## 4. <a name="addradius"> </a>RADIUS 서버 및 클라이언트 주소 풀 추가
+## 5. <a name="addradius"> </a>RADIUS 서버 및 클라이언트 주소 풀 추가
  
 * -RadiusServer는 이름 또는 IP 주소로 지정할 수 있습니다. 이름을 지정하고 서버가 온-프레미스에 있으면 VPN 게이트웨이에서 해당 이름을 확인할 수 없습니다. 이러한 경우에는 서버의 IP 주소를 지정하는 것이 좋습니다. 
 * -RadiusSecret은 RADIUS 서버에 구성된 것과 일치해야 합니다.
@@ -228,11 +223,11 @@ New-AzVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
     -RadiusServerAddress "10.51.0.15" -RadiusServerSecret $Secure_Secret
     ```
 
-## 5. <a name="vpnclient"> </a>vpn 클라이언트 구성 패키지를 다운로드 하 고 vpn 클라이언트를 설정 합니다.
+## 6. <a name="vpnclient"> </a>vpn 클라이언트 구성 패키지를 다운로드 하 고 vpn 클라이언트를 설정 합니다.
 
 VPN 클라이언트 구성을 사용하면 P2S 연결을 통해 VNet에 디바이스를 연결할 수 있습니다. Vpn 클라이언트 구성 패키지를 생성 하 고 VPN 클라이언트를 설정 하려면 [RADIUS 인증에 대 한 Vpn 클라이언트 구성 만들기](point-to-site-vpn-client-configuration-radius.md)를 참조 하세요.
 
-## <a name="connect"></a>6. Azure에 연결
+## <a name="connect"></a>7. Azure에 연결
 
 ### <a name="to-connect-from-a-windows-vpn-client"></a>Windows VPN 클라이언트에서 연결
 

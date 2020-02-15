@@ -1,6 +1,6 @@
 ---
-title: fájl belefoglalása
-description: fájl belefoglalása
+title: 포함 파일
+description: 포함 파일
 services: active-directory
 author: msaburnley
 ms.service: active-directory
@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 11/11/2019
 ms.author: ajburnle
 ms.custom: include file
-ms.openlocfilehash: d89240467d5ea5172d04c8eb187fe85d1b702723
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: c73a62b2d5feeae42a5ea35c88073dd5fcc0d78c
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74981530"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77192655"
 ---
 ## <a name="for-users-in-your-directory"></a>디렉터리의 사용자
 
 디렉터리의 사용자가이 액세스 패키지를 요청할 수 있도록 하려면 다음 단계를 수행 합니다. 요청 정책을 정의할 때 개별 사용자 또는 보다 일반적으로 사용자 그룹을 지정할 수 있습니다. 예를 들어 조직에 이미 **모든 직원과**같은 그룹이 있을 수 있습니다.  액세스를 요청할 수 있는 사용자에 대 한 정책에 해당 그룹이 추가 되 면 해당 그룹의 모든 멤버는 액세스를 요청할 수 있습니다.
 
-1. 액세스를 **요청할 수 있는 사용자** 섹션에서 **디렉터리의 사용자를**클릭 합니다.
+1. **Users who can request access**(액세스를 요청할 수 있는 사용자) 섹션에서 **For users in your directory**(디렉터리에 있는 사용자의 경우) 클릭합니다.
 
     이 옵션을 선택 하면 디렉터리에서이 액세스 패키지를 요청할 수 있는 사용자를 보다 구체화 하는 새로운 옵션이 표시 됩니다.
 
@@ -97,7 +97,7 @@ ms.locfileid: "74981530"
 
 1. [요청 활성화](#enable-requests) 섹션으로 건너뜁니다.
 
-## <a name="approval"></a>Jóváhagyás
+## <a name="approval"></a>승인
 
 승인 섹션에서 사용자가이 액세스 패키지를 요청할 때 승인이 필요한 지 여부를 지정 합니다. 승인 설정은 다음과 같은 방식으로 작동 합니다.
 
@@ -198,7 +198,7 @@ ms.locfileid: "74981530"
 
 ## <a name="enable-requests"></a>요청 사용
 
-1. 요청할 요청 정책에 있는 사용자가 액세스 패키지를 즉시 사용할 수 있도록 하려면 **예** 를 클릭 하 여 사용 하도록 설정 합니다.
+1. 요청 정책에 있는 사용자가 액세스 패키지를 즉시 사용할 수 있게 하려면 사용 설정/해제를 **예**로 이동 합니다.
 
     액세스 패키지 만들기를 완료 한 후에는 나중에 언제 든 지 사용할 수 있습니다.
 
@@ -206,4 +206,4 @@ ms.locfileid: "74981530"
 
     ![액세스 패키지-정책-정책 설정 사용](./media/active-directory-entitlement-management-request-policy/enable-requests.png)
 
-1. Kattintson a **Tovább** gombra.
+1. **다음**을 클릭합니다.

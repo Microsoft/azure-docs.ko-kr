@@ -15,12 +15,12 @@ ms.custom:
 - it-pro
 - seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6aee049f91aaa071595ab42e9bb4d6b2f5e8616d
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: d970bbc5619bc25a1cf5d6abbdcf41fb4a0ae196
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74021834"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77195524"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Azure Active Directory B2B 협업 문제 해결
 
@@ -99,6 +99,11 @@ ID 테넌트가 JIT(Just-In-Time) 또는 "바이럴" 테넌트(별개의 관리�
 
 2019 년 11 월 18 일까 지 디렉터리의 게스트 사용자 ( **userType** 속성이 **게스트**와 같은 사용자 계정으로 정의 됨)는 AzureAD PowerShell V1 모듈을 사용 하지 못하도록 차단 됩니다. 앞으로 사용자는 멤버 사용자 (여기서 **userType** equals **Member**) 이거나 AzureAD PowerShell V2 모듈을 사용 해야 합니다.
 
+## <a name="in-an-azure-us-government-tenant-i-cant-invite-a-b2b-collaboration-guest-user"></a>Azure 미국 정부 테 넌 트에서 B2B 공동 작업 게스트 사용자를 초대할 수 없습니다.
+
+Azure 미국 정부 클라우드 내에서 B2B 공동 작업은 현재 Azure 미국 정부 클라우드 내에 있고 B2B 공동 작업을 지 원하는 테 넌 트 간에만 지원 됩니다. Azure US 정부 클라우드의 일부가 아니거나 아직 B2B 공동 작업을 지원 하지 않는 테 넌 트에 사용자를 초대 하는 경우 오류가 발생 합니다. 세부 정보 및 제한 사항은 [Azure Active Directory Premium P1 및 P2 변형](https://docs.microsoft.com/azure/azure-government/documentation-government-services-securityandidentity#azure-active-directory-premium-p1-and-p2)을 참조 하세요.
+
+
 ## <a name="next-steps"></a>다음 단계
 
-[B2B 협업에 대한 지원 받기](get-support.md)
+[B2B Collaboration에 대한 지원 받기](get-support.md)

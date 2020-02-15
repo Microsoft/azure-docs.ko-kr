@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/20/2019
-ms.openlocfilehash: 52d7eb035ed06c368214b8b5cb7ef583cd99b51b
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: f68e25a618f5c6499ccc9d76c510eab8f1650330
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70161995"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110890"
 ---
 # <a name="get-started-with-device-management-java"></a>디바이스 관리 시작(Java)
 
@@ -51,13 +51,15 @@ ms.locfileid: "70161995"
 > [!NOTE]
 > 디바이스와 솔루션 백 엔드에서 실행할 애플리케이션을 빌드하는 데 사용할 수 있는 SDK에 대한 자세한 내용은 [Azure IoT SDK](iot-hub-devguide-sdks.md)를 참조하세요.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
-* [Java SE Development Kit 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable)입니다. **장기적인 지원** 에서 **Java 8** 을 선택 하 여 JDK 8 용 다운로드를 확인 합니다.
+* [Java SE Development Kit 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable)입니다. JDK 8용 다운로드를 가져오려면 **장기 지원**에서 **Java 8**을 선택해야 합니다.
 
 * [Maven 3](https://maven.apache.org/download.cgi)
 
 * 활성 Azure 계정. 계정이 없는 경우 몇 분 만에 [무료 계정](https://azure.microsoft.com/pricing/free-trial/)을 만들 수 있습니다.
+
+* 방화벽에서 포트 8883가 열려 있는지 확인 합니다. 이 문서의 device 샘플에서는 포트 8883을 통해 통신 하는 MQTT 프로토콜을 사용 합니다. 이 포트는 일부 회사 및 교육용 네트워크 환경에서 차단 될 수 있습니다. 이 문제를 해결 하는 방법 및 방법에 대 한 자세한 내용은 [IoT Hub에 연결 (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub)을 참조 하세요.
 
 ## <a name="create-an-iot-hub"></a>IoT Hub 만들기
 
@@ -87,7 +89,7 @@ ms.locfileid: "70161995"
 
 1. **Dm-시작**이라는 빈 폴더를 만듭니다.
 
-2. **Dm-시작** 폴더에서 명령 프롬프트에서 다음 명령을 사용 하 여 Maven 프로젝트를 만듭니다.
+2. **Dm-시작** 폴더에서 명령 프롬프트에서 다음 명령을 **사용 하 여** Maven 프로젝트를 만듭니다.
 
     ```cmd/sh
     mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=trigger-reboot -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -107,7 +109,7 @@ ms.locfileid: "70161995"
     ```
 
     > [!NOTE]
-    > [Maven 검색](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-service-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22)을 사용하여 **iot-service-client**의 최신 버전을 확인할 수 있습니다.
+    > **Maven 검색**을 사용하여 [iot-service-client](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-service-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22)의 최신 버전을 확인할 수 있습니다.
 
 5. **종속성** 노드 뒤에 다음 **빌드** 노드를 추가합니다. 이 구성에서는 Maven에 Java 1.8을 사용하여 앱을 빌드하도록 지시합니다.
 
@@ -146,7 +148,7 @@ ms.locfileid: "70161995"
     import java.util.concurrent.ExecutorService;
     ```
 
-9. 다음 클래스 수준 변수를 **App** 클래스에 추가합니다. 을 `{youriothubconnectionstring}` 이전에 [IoT Hub 연결 문자열 가져오기](#get-the-iot-hub-connection-string)에서 복사한 IoT Hub 연결 문자열로 바꿉니다.
+9. 다음 클래스 수준 변수를 **App** 클래스에 추가합니다. `{youriothubconnectionstring}`을 이전에 [IoT Hub 연결 문자열 가져오기](#get-the-iot-hub-connection-string)에서 복사한 IoT Hub 연결 문자열로 바꿉니다.
 
     ```java
     public static final String iotHubConnectionString = "{youriothubconnectionstring}";
@@ -257,7 +259,7 @@ ms.locfileid: "70161995"
     ```
 
     > [!NOTE]
-    > [Maven 검색](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-device-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22)을 사용하여 **iot-device-client**의 최신 버전을 확인할 수 있습니다.
+    > **Maven 검색**을 사용하여 [iot-device-client](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-device-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22)의 최신 버전을 확인할 수 있습니다.
 
 4. **종속성** 노드에 다음 종속성을 추가 합니다. 이 종속성은 장치 클라이언트 SDK에서 로깅을 구현 하는 데 사용 되는 Apache [SLF4J](https://www.slf4j.org/) 로깅 외관에 대해 NOP를 구성 합니다. 이 구성은 선택 사항 이지만, 생략 하면 앱을 실행할 때 콘솔에 경고가 표시 될 수 있습니다. 장치 클라이언트 SDK의 로그인에 대 한 자세한 내용은 *Java 용 Azure IoT 장치 SDK* 추가 정보 파일에 대 한 샘플의 [로깅](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-samples/readme.md#logging) 을 참조 하세요.
 
@@ -305,7 +307,7 @@ ms.locfileid: "70161995"
     import java.util.HashSet;
     ```
 
-9. 다음 클래스 수준 변수를 **App** 클래스에 추가합니다. 을 `{yourdeviceconnectionstring}` [IoT hub에서 새 장치 등록](#register-a-new-device-in-the-iot-hub) 섹션에서 기록한 장치 연결 문자열로 바꿉니다.
+9. 다음 클래스 수준 변수를 **App** 클래스에 추가합니다. `{yourdeviceconnectionstring}`를 [IoT hub에서 새 장치 등록](#register-a-new-device-in-the-iot-hub) 섹션에서 기록한 장치 연결 문자열로 바꿉니다.
 
     ```java
     private static final int METHOD_SUCCESS = 200;

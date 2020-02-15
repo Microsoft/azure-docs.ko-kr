@@ -2,21 +2,21 @@
 title: Azure Portal의 계정 관리자 작업
 description: Azure Portal에서 결제 작업을 수행하는 방법을 설명
 author: bandersmsft
-manager: jureid
+manager: judupont
 tags: billing
 ms.service: cost-management-billing
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/05/2019
+ms.date: 02/10/2020
 ms.author: banders
-ms.openlocfilehash: 2fadd0b6eb0951031a9d577b2fd3a3d497076dd8
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.openlocfilehash: 2f858fa7715145d55cf1c978b9c368e1f6586dce
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75990113"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77132128"
 ---
 # <a name="account-administrator-tasks-in-the-azure-portal"></a>Azure Portal의 계정 관리자 작업
 
@@ -29,13 +29,18 @@ ms.locfileid: "75990113"
 
 ## <a name="navigate-to-your-subscriptions-payment-methods"></a>구독의 결제 방법으로 이동
 
-1. 계정 관리자 권한으로 [Azure Portal](https://portal.azure.com)에 로그인합니다.
+1. 계정 관리자 권한으로 [Azure Portal](https://portal.azure.com)에 로그인합니다. 
+
 1. **Cost Management + 청구**를 검색합니다.
     
     ![비용 관리 + 청구 검색을 보여주는 스크린샷 ](./media/account-admin-tasks/search-bar.png)
 
-1. **내 구독** 목록에서 신용 카드를 추가하려는 구독을 선택합니다.
-    ![개요의 내 구독 그리드를 보여주는 스크린샷](./media/account-admin-tasks/cost-management-billing-overview-x.png)
+1. **내 구독** 목록에서 신용 카드를 추가하려는 구독을 선택합니다. 
+   
+   ![개요의 내 구독 그리드를 보여주는 스크린샷](./media/account-admin-tasks/cost-management-billing-overview-x.png)
+   
+   > [!NOTE]
+   > 여기에 일부 구독이 표시되지 않으면 특정 시점에 구독 디렉터리를 변경했기 때문일 수 있습니다. 이러한 구독의 경우 디렉터리를 원래 디렉터리(처음 등록한 디렉터리)로 전환해야 합니다. 그런 다음, 2단계를 반복합니다. 
 
 1. **결제 방법**을 선택합니다.
 
@@ -119,10 +124,13 @@ Azure에서 지출 한도는 크레딧 금액을 초과하여 지출하는 것�
 
     ![비용 관리 + 청구 검색을 보여주는 스크린샷 ](./media/account-admin-tasks/search-bar.png)
 
-1. **내 구독** 목록에서 Visual Studio Enterprise 구독을 선택합니다.
-    
-    ![개요의 내 구독 그리드를 보여주는 스크린샷](./media/account-admin-tasks/cost-management-overview-msdn-x.png)
+1. **내 구독** 목록에서 Visual Studio Enterprise 구독을 선택합니다. 
 
+   ![개요의 내 구독 그리드를 보여주는 스크린샷](./media/account-admin-tasks/cost-management-overview-msdn-x.png)
+
+    > [!NOTE]
+    > 여기에 Visual Studio 구독 중 일부가 표시되지 않으면 특정 시점에 구독 디렉터리를 변경했기 때문일 수 있습니다. 이러한 구독의 경우 디렉터리를 원래 디렉터리(처음 등록한 디렉터리)로 전환해야 합니다. 그런 다음, 2단계를 반복합니다.
+    
 1. 구독 개요에서 주황색 배너를 클릭하여 지출 한도를 제거합니다.
     
     ![지출 한도 제거 배너를 보여주는 스크린샷](./media/account-admin-tasks/msdn-remove-spending-limit-banner-x.png)
@@ -144,10 +152,13 @@ Azure in Open 라이선스 구독이 있는 경우 제품 키를 사용하거나
 
     ![비용 관리 + 청구 검색을 보여주는 스크린샷 ](./media/account-admin-tasks/search-bar.png)
 
-1. **내 구독** 목록에서 Azure in Open 구독을 선택합니다.
-   
+1. **내 구독** 목록에서 Azure in Open 구독을 선택합니다. 
+
     ![개요의 내 구독 그리드를 보여주는 스크린샷](./media/account-admin-tasks/cost-management-overview-aio-x.png)
 
+   > [!NOTE]
+   > 여기에 구독이 표시되지 않으면 특정 시점에 구독 디렉터리를 변경했기 때문일 수 있습니다. 구독의 디렉터리를 원래 디렉터리(처음 등록한 디렉터리)로 전환해야 합니다. 그런 다음, 2단계를 반복합니다.
+    
 1. **크레딧 기록**을 선택합니다.
     
     ![크레딧 기록을 보여주는 스크린샷](./media/account-admin-tasks/aio-credit-history-blade.png)

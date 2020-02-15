@@ -1,5 +1,5 @@
 ---
-title: 자습서-권장 사항을 사용 하 여 Azure 비용 절감
+title: 자습서 - 권장 사항을 통해 Azure 비용 절감
 description: 이 자습서는 최적화 권장 사항을 따를 경우 Azure 비용을 절감할 수 있도록 도와줍니다.
 services: cost-management
 keywords: ''
@@ -11,10 +11,10 @@ ms.service: cost-management-billing
 manager: dougeby
 ms.custom: seodec18
 ms.openlocfilehash: 37253bb4c6001afe436e22597e75e2bc869fbbc8
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75990295"
 ---
 # <a name="tutorial-optimize-costs-from-recommendations"></a>자습서: 권장 사항에서 비용 최적화
@@ -28,11 +28,11 @@ Azure Cost Management는 Azure Advisor와 함께 실행되어 비용 최적화 �
 > * 가상 머신을 비용 효율적인 옵션으로 크기를 조정하는 권장 사항 이행
 > * 가상 머신의 크기가 성공적으로 조정되었는지 확인하기 위해 작업 확인
 
-## <a name="prerequisites"></a>필수 조건
-권장 사항은 다양 한 범위 및 Azure 계정 유형에 사용할 수 있습니다. 지원되는 계정 유형의 전체 목록을 보려면 [Cost Management 데이터 이해](understand-cost-mgt-data.md)를 참조하세요. 비용 데이터를 보려면 다음 범위 중 하나 이상에 대해 최소한 읽기 권한이 있어야 합니다. 범위에 대한 자세한 내용은 [범위 이해 및 작업](understand-work-scopes.md)을 참조하세요.
+## <a name="prerequisites"></a>사전 요구 사항
+다양한 범위 및 Azure 계정 유형에 대한 권장 사항을 사용할 수 있습니다. 지원되는 계정 유형의 전체 목록을 보려면 [Cost Management 데이터 이해](understand-cost-mgt-data.md)를 참조하세요. 비용 데이터를 보려면 다음 범위 중 하나 이상에 대해 최소한 읽기 권한이 있어야 합니다. 범위에 대한 자세한 내용은 [범위 이해 및 작업](understand-work-scopes.md)을 참조하세요.
 
 - Subscription
-- 리소스 그룹
+- Resource group
 
 14일 이상 활동이 있는 활성 가상 머신이 있어야 합니다.
 
@@ -41,9 +41,9 @@ Azure Cost Management는 Azure Advisor와 함께 실행되어 비용 최적화 �
 
 ## <a name="view-cost-optimization-recommendations"></a>비용 최적화 권장 사항 보기
 
-구독에 대 한 비용 최적화 권장 사항을 보려면 Azure Portal에서 원하는 범위를 열고 **Advisor 권장 사항**을 선택 합니다.
+구독에 대한 비용 최적화 권장 사항을 보려면 Azure Portal에서 원하는 범위를 열고 **Advisor 권장 사항**을 선택합니다.
 
-관리 그룹에 대 한 권장 사항을 보려면 Azure Portal에서 원하는 범위를 열고 메뉴에서 **비용 분석** 을 선택 합니다. 약 **범위** 를 사용 하 여 관리 그룹과 같은 다른 범위로 전환 합니다. 메뉴에서 **Advisor 권장 사항** 을 선택 합니다. 범위에 대한 자세한 내용은 [범위 이해 및 작업](understand-work-scopes.md)을 참조하세요.
+관리 그룹에 대한 권장 사항을 보려면 Azure Portal에서 원하는 범위를 열고 메뉴에서 **비용 분석**을 선택합니다. **범위** 필을 사용하여 관리 그룹과 같은 다른 범위로 전환합니다. 메뉴에서 **Advisor 권장 사항**을 선택합니다. 범위에 대한 자세한 내용은 [범위 이해 및 작업](understand-work-scopes.md)을 참조하세요.
 
 ![Azure Portal에 표시되는 비용 관리 Advisor 권장 사항](./media/tutorial-acm-opt-recommendations/advisor-recommendations.png)
 
@@ -52,18 +52,18 @@ Azure Cost Management는 Azure Advisor와 함께 실행되어 비용 최적화 �
 **연간 절약 가능 금액**과 함께, **영향** 범주는 가능한 많이 절약 가능한 권장 사항을 식별하기 위한 것입니다.
 
 높은 영향 권장 사항은 다음과 같습니다.
-- [예약 가상 머신 인스턴스를 구매 하 여 종 량 제 비용 보다 비용 절감](../../advisor/advisor-cost-recommendations.md#buy-reserved-virtual-machine-instances-to-save-money-over-pay-as-you-go-costs)
-- [미달 사용 인스턴스의 크기를 조정 하거나 종료 하 여 가상 머신 소비 최적화](../../advisor/advisor-cost-recommendations.md#optimize-virtual-machine-spend-by-resizing-or-shutting-down-underutilized-instances)
-- [Standard Storage를 사용 하 여 Managed Disks 스냅숏 저장](../../advisor/advisor-cost-recommendations.md#use-standard-snapshots-for-managed-disks)
+- [예약 가상 머신 인스턴스를 구매하여 종량제 비용보다 비용 절약](../../advisor/advisor-cost-recommendations.md#buy-reserved-virtual-machine-instances-to-save-money-over-pay-as-you-go-costs)
+- [사용량이 낮은 인스턴스의 크기를 조정하거나 종료하여 가상 머신 소비 최적화](../../advisor/advisor-cost-recommendations.md#optimize-virtual-machine-spend-by-resizing-or-shutting-down-underutilized-instances)
+- [Standard Storage를 사용하여 Managed Disks 스냅샷 저장](../../advisor/advisor-cost-recommendations.md#use-standard-snapshots-for-managed-disks)
 
 중간 영향 권장 사항은 다음과 같습니다.
-- [실패 하는 Azure Data Factory 파이프라인 삭제](../../advisor/advisor-cost-recommendations.md#delete-azure-data-factory-pipelines-that-are-failing)
-- [프로 비전 해제 된 Express 경로 회로를 제거 하 여 비용 절감](../../advisor/advisor-cost-recommendations.md#reduce-costs-by-eliminating-unprovisioned-expressroute-circuits)
-- [유휴 가상 네트워크 게이트웨이를 삭제 하거나 다시 구성 하 여 비용 절감](../../advisor/advisor-cost-recommendations.md#reduce-costs-by-deleting-or-reconfiguring-idle-virtual-network-gateways)
+- [실패한 Azure Data Factory 파이프라인 삭제](../../advisor/advisor-cost-recommendations.md#delete-azure-data-factory-pipelines-that-are-failing)
+- [프로비저닝되지 않은 ExpressRoute 회로를 제거하여 비용 절감](../../advisor/advisor-cost-recommendations.md#reduce-costs-by-eliminating-unprovisioned-expressroute-circuits)
+- [유휴 상태의 가상 네트워크 게이트웨이를 삭제하거나 다시 구성하여 비용 절감](../../advisor/advisor-cost-recommendations.md#reduce-costs-by-deleting-or-reconfiguring-idle-virtual-network-gateways)
 
 ## <a name="act-on-a-recommendation"></a>권장 사항 이행
 
-Azure Advisor는 7 일 동안 가상 머신 사용량을 모니터링 한 다음 미달 사용 가상 머신을 식별 합니다. 4일 이상 CPU 사용률이 5% 이하이고 네트워크 사용량이 7MB 이하인 가상 머신은 사용률이 낮은 가상 머신으로 간주됩니다.
+Azure Advisor는 7일 동안 가상 머신 사용량을 모니터링한 다음, 사용률이 낮은 가상 머신을 식별합니다. 4일 이상 CPU 사용률이 5% 이하이고 네트워크 사용량이 7MB 이하인 가상 머신은 사용률이 낮은 가상 머신으로 간주됩니다.
 
 CPU 사용률 5% 이하 설정은 기본값이지만, 설정을 조정할 수 있습니다. 설정 조정 방법에 대한 자세한 내용은 [사용량이 낮은 가상 머신 권장 사항에 대한 평균 CPU 사용률 규칙 구성](../../advisor/advisor-get-started.md#configure-low-usage-vm-recommendation)을 참조하세요.
 
@@ -79,14 +79,14 @@ VM 세부 정보에서 가상 머신의 사용률을 확인하여 적합한 크�
 
 현재 가상 머신의 크기를 기록합니다. 해당 가상 머신을 크기 조정해야 하는지 확인한 후 VM 세부 정보를 닫으면 가상 머신 목록이 나타납니다.
 
-종료 또는 크기를 조정 하는 후보 목록에서 * * 크기 조정 *&lt;FromVirtualMachineSKU&gt;* *&lt;ToVirtualMachineSKU&gt;* * *를 선택 합니다.
+종료하거나 크기를 조정할 후보 목록에서 **Resize *&lt;FromVirtualMachineSKU&gt;* ~ *&lt;ToVirtualMachineSKU&gt;***를 선택합니다.
 ![가상 머신의 크기를 조정하는 옵션을 사용한 권장 사항 예제](./media/tutorial-acm-opt-recommendations/resize-vm.png)
 
-다음으로, 사용할 수 있는 크기 조정 옵션 목록이 표시됩니다. 사용자 시나리오에 가장 적합한 성능과 비용 효율성을 제공할 옵션을 선택합니다. 다음 예제에서 선택한 옵션은 **Standard_D8s_v3** 에서 **Standard_D2s_v3**으로 크기를 조정 합니다.
+다음으로, 사용할 수 있는 크기 조정 옵션 목록이 표시됩니다. 사용자 시나리오에 가장 적합한 성능과 비용 효율성을 제공할 옵션을 선택합니다. 다음 예제에서 선택한 옵션은 **Standard_D8s_v3**에서 **Standard_D2s_v3**로 크기가 조정됩니다.
 
 ![크기를 선택할 수 있는 사용 가능한 VM 크기의 목록 예제](./media/tutorial-acm-opt-recommendations/choose-size.png)
 
-적절 한 크기를 선택한 후 크기 **조정** 을 클릭 하 여 크기 조정 작업을 시작 합니다.
+적합한 크기를 선택한 후 **크기 조정**을 클릭하여 크기 조정 작업을 시작합니다.
 
 크기 조정을 수행하려면 현재 실행 중인 가상 머신을 다시 시작해야 합니다. 가상 머신이 프로덕션 환경에 있는 경우에는 업무 시간 이후에 크기 조정 작업을 실행하는 것이 좋습니다. 다시 시작을 예약하면 일시적인 사용 불가로 인한 중단을 줄일 수 있습니다.
 

@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5406d301f6487753bc13b291db6d22eaedbf67b7
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 842e5c4771fcac0b8011dda1df11c646bf8f070c
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77066812"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207199"
 ---
 # <a name="customizing-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>사용자 프로 비전 특성 사용자 지정-Azure Active Directory에서 SaaS 응용 프로그램에 대 한 매핑
 
@@ -143,7 +143,7 @@ SCIM RFC는 핵심 사용자 및 그룹 스키마를 정의 하는 동시에 스
    4. **AppName에 대 한 특성 목록 편집을**선택 합니다.
    5. 특성 목록의 맨 아래에 제공 된 필드에 사용자 지정 특성에 대 한 정보를 입력 합니다. 그런 다음 **특성 추가**를 선택 합니다.
 
-SCIM 응용 프로그램의 경우 특성 이름은 아래 예제에 표시 된 패턴을 따라야 합니다. "CustomExtensionName" 및 "CustomAttribute"는 응용 프로그램의 요구 사항에 따라 사용자 지정할 수 있습니다 (예: urn: ietf: params: scim: 스키마: extension: 2.0: CustomExtensionName: CustomAttribute).
+SCIM 응용 프로그램의 경우 특성 이름은 아래 예제에 표시 된 패턴을 따라야 합니다. "CustomExtensionName" 및 "CustomAttribute"는 응용 프로그램의 요구 사항에 따라 사용자 지정할 수 있습니다. 예를 들어 urn: ietf: params: scim: 스키마: extension: 2.0: CustomExtensionName: CustomAttribute 또는 urn: ietf: params: scim: 스키마: extension: CustomExtensionName: 2.0: CustomAttributeName: value
 
 이러한 지침은 SCIM 사용 응용 프로그램에만 적용 됩니다. ServiceNow 및 Salesforce와 같은 응용 프로그램은 SCIM을 사용 하 여 Azure AD와 통합 되지 않으므로 사용자 지정 특성을 추가할 때이 특정 네임 스페이스를 요구 하지 않습니다.
 
@@ -300,7 +300,7 @@ PhoneNumbers 및 전자 메일 등의 특정 특성은 다양 한 형식의 전�
 
 ## <a name="restoring-the-default-attributes-and-attribute-mappings"></a>기본 특성 및 특성 매핑 복원
 
-기존 매핑을 다시 시작 하 고 기본 상태로 다시 설정 해야 하는 경우 **기본 매핑 복원** 확인란을 선택 하 고 구성을 저장할 수 있습니다. 이렇게 하면 응용 프로그램이 응용 프로그램 갤러리에서 Azure AD 테 넌 트에 추가 된 것 처럼 모든 매핑을 설정 합니다.
+기존 매핑을 다시 시작 하 고 기본 상태로 다시 설정 해야 하는 경우 **기본 매핑 복원** 확인란을 선택 하 고 구성을 저장할 수 있습니다. 이렇게 하면 응용 프로그램이 응용 프로그램 갤러리에서 Azure AD 테 넌 트에 방금 추가 된 것 처럼 모든 매핑 및 범위 지정 필터가 설정 됩니다.
 
 이 옵션을 선택 하면 프로 비전 서비스가 실행 되는 동안 모든 사용자를 다시 동기화 하는 것이 효과적입니다.
 

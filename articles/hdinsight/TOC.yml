@@ -39,6 +39,8 @@
           href: ./hdinsight-component-versioning.md
         - name: 고가용성 구성 요소
           href: ./hdinsight-high-availability-components.md
+        - name: Azure HDInsight의 Apache Ambari
+          href: ./apache-ambari-usage.md
         - name: HDInsight에서 기계 학습
           href: ./hdinsight-machine-learning-overview.md
         - name: HDInsight에서 대규모 스트리밍
@@ -344,6 +346,8 @@
               href: ./spark/apache-azure-spark-history-server.md
             - name: IO 캐시로 캐싱 사용
               href: ./spark/apache-spark-improve-performance-iocache.md
+            - name: Jar 종속성 관리
+              href: ./spark/manage-jar-dependency.md
             - name: Apache Spark와 함께 Notebook 사용
               items:
                 - name: 로컬 Jupyter Notebook 사용
@@ -368,6 +372,8 @@
                   href: ./spark/apache-spark-run-machine-learning-automl.md
         - name: 문제 해결
           items:
+            - name: Jupyter Notebook을 만들 수 없음
+              href: ./spark/troubleshoot-jupyter-notebook-convert.md
             - name: OutOfMemoryError 예외
               href: ./spark/apache-spark-troubleshoot-outofmemory.md
             - name: Apache Spark 작업 실패 - NoClassDefFoundError
@@ -392,6 +398,8 @@
               href: ./spark/apache-spark-troubleshoot-event-log-requestbodytoolarge.md
             - name: Apache Spark 작업 디버그
               href: ./spark/apache-spark-job-debugging.md
+            - name: WASB 파일 작업 디버그
+              href: ./spark/troubleshoot-debug-wasb.md
             - name: IntelliJ를 사용하여 Apache Spark 작업 디버그
               href: ./spark/apache-spark-intellij-tool-debug-remotely-through-ssh.md
             - name: Apache Spark 문제 해결
@@ -519,6 +527,8 @@
               href: ./hadoop/troubleshoot-port-conflict.md
             - name: Key Vault 액세스 손실
               href: ./hadoop/troubleshoot-lost-key-vault-access.md
+            - name: WASBS 스토리지 예외
+              href: ./hadoop/troubleshoot-wasbs-storage-exception.md
 - name: Apache Kafka
   items:
     - name: 개요

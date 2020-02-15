@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: f8d49a62ae9006e65ef86db1ae90cd5a5e9f1c6d
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: d2313bfc47026ed9655d0ca25f0a0fdf3f86d8a5
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647376"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191076"
 ---
 # <a name="what-is-azure-private-link-service"></a>Azure 개인 링크 서비스 란?
 
@@ -55,6 +55,7 @@ Azure 개인 링크 서비스는 Azure 개인 링크에서 제공 하는 자체 
 |Load Balancer 프런트 엔드 IP 구성 (loadBalancerFrontendIpConfigurations)    |    개인 링크 서비스는 표준 Load Balancer의 프런트 엔드 IP 주소에 연결 됩니다. 서비스를 대상으로 하는 모든 트래픽은 SLB의 프런트 엔드에 도달 합니다. 응용 프로그램이 실행 되 고 있는 적절 한 백 엔드 풀로이 트래픽을 보내도록 SLB 규칙을 구성할 수 있습니다. 부하 분산 장치 프런트 엔드 IP 구성은 NAT IP 구성과 다릅니다.      |
 |NAT IP 구성 (ipConfigurations)    |    이 속성은 개인 링크 서비스에 대 한 NAT (네트워크 주소 변환) IP 구성을 참조 합니다. NAT IP는 서비스 공급자의 가상 네트워크에 있는 모든 서브넷에서 선택할 수 있습니다. 개인 링크 서비스는 개인 링크 트래픽에 대 한 대상 측 NAT를 수행 합니다. 이렇게 하면 소스 (소비자 측)와 대상 (서비스 공급자) 주소 공간 간에 IP 충돌이 발생 하지 않습니다. 대상 측 (서비스 공급자 쪽)에서, 서비스에서 받는 모든 패킷에 대해 NAT IP 주소는 서비스에서 받는 모든 패킷에 대해 원본 IP로 표시 되 고, 서비스에서 보낸 모든 패킷에 대 한 대상 IP로 표시 됩니다.       |
 |개인 끝점 연결 (privateEndpointConnections)     |  이 속성은 개인 링크 서비스에 연결 하는 개인 끝점을 나열 합니다. 여러 개인 끝점은 동일한 개인 링크 서비스에 연결할 수 있으며, 서비스 공급자는 개별 개인 끝점의 상태를 제어할 수 있습니다.        |
+|TCP 프록시 V2 (EnableProxyProtocol)     |  이 속성을 통해 서비스 공급자는 tcp 프록시 v2를 사용 하 여 서비스 소비자에 대 한 연결 정보를 검색할 수 있습니다. 서비스 공급자는 프록시 프로토콜 v2 헤더를 구문 분석할 수 있도록 수신자 configs를 설정 해야 합니다.        |
 |||
 
 
@@ -95,14 +96,28 @@ Azure 개인 링크 서비스는 Azure 개인 링크에서 제공 하는 자체 
 
 개인 링크 서비스의 자동 승인 속성을 사용 하 여 연결 승인 작업을 자동화할 수 있습니다. 자동 승인은 서비스 공급자가 서비스에 대 한 자동화 된 액세스를 위해 구독 집합을 사전 승인 하는 기능입니다. 고객은 서비스 공급자가 자동 승인 목록에 추가 하기 위해 구독을 오프 라인으로 공유 해야 합니다. 자동 승인은 표시 유형 배열의 하위 집합입니다. 표시 유형은 노출 설정을 제어 하는 반면 자동 승인은 서비스에 대 한 승인 설정을 제어 합니다. 고객이 자동 승인 목록의 구독에서 연결을 요청 하면 연결이 자동으로 승인 되 고 연결이 설정 됩니다. 서비스 공급자는 더 이상 요청을 수동으로 승인할 필요가 없습니다. 반면, 고객이 자동 승인 배열이 아닌 표시 유형 배열의 구독에서 연결을 요청 하는 경우 요청은 서비스 공급자에 도달 하지만 서비스 공급자는 연결을 수동으로 승인 해야 합니다.
 
+## <a name="getting-connection-information-using-tcp-proxy-v2"></a>TCP 프록시 v2를 사용 하 여 연결 정보 가져오기
+
+개인 링크 서비스를 사용 하는 경우 개인 끝점에서 들어오는 패킷의 원본 IP 주소는 공급자의 가상 네트워크에서 할당 된 NAT IP를 사용 하 여 서비스 공급자 측의 NAT (network address 번역본)입니다. 따라서 응용 프로그램은 서비스 소비자의 실제 원본 IP 주소 대신 할당 된 NAT IP 주소를 수신 합니다. 응용 프로그램에 소비자 측의 실제 원본 IP 주소가 필요한 경우 서비스에서 프록시 프로토콜을 사용 하도록 설정 하 고 프록시 프로토콜 헤더에서 정보를 검색할 수 있습니다. 원본 IP 주소 외에도 프록시 프로토콜 헤더는 개인 끝점의 LinkID을 전달 합니다. 원본 IP 주소와 LinkID를 조합 하면 서비스 공급자가 소비자를 고유 하 게 식별 하는 데 도움이 될 수 있습니다. 프록시 프로토콜에 대 한 자세한 내용은 여기를 참조 하세요. 
+
+이 정보는 다음과 같이 사용자 지정 TLV (형식 길이 값) 벡터를 사용 하 여 인코딩됩니다.
+
+사용자 지정 TLV 세부 정보:
+
+|필드 |길이 (8 진수)  |Description  |
+|---------|---------|----------|
+|Type  |1        |PP2_TYPE_AZURE (0xEE)|
+|길이  |2      |값의 길이|
+|값  |1     |PP2_SUBTYPE_AZURE_PRIVATEENDPOINT_LINKID (0x01)|
+|  |4        |UINT32 (4 바이트)-개인 끝점의 LINKID을 나타냅니다. Little endian 형식으로 인코딩됩니다.|
+
+
 ## <a name="limitations"></a>제한 사항
 
 다음은 개인 링크 서비스를 사용할 때의 알려진 제한 사항입니다.
 - 표준 Load Balancer 에서만 지원 됨 
 - IPv4 트래픽만 지원 합니다.
 - TCP 트래픽만 지원 합니다.
-- Azure Portal에서 환경 만들기 및 관리가 지원 되지 않음
-- 프록시 프로토콜을 사용 하는 클라이언트 연결 정보를 서비스 공급자가 사용할 수 없음
 
 ## <a name="next-steps"></a>다음 단계
 - [Azure PowerShell를 사용 하 여 개인 링크 서비스 만들기](create-private-link-service-powershell.md)

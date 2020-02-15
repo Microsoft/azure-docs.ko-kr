@@ -3,12 +3,12 @@ title: 을 사용 하 여 Azure Functions 개발 Visual Studio Code
 description: Visual Studio Code에 대 한 Azure Functions 확장을 사용 하 여 Azure Functions를 개발 하 고 테스트 하는 방법을 알아봅니다.
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.openlocfilehash: 7e533d5826d429a716ad1592d75159782ed43fa7
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: 3bc8c9aa5d31f757a34350d9605fdecbe42b8be7
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964019"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77210245"
 ---
 # <a name="develop-azure-functions-by-using-visual-studio-code"></a>을 사용 하 여 Azure Functions 개발 Visual Studio Code
 
@@ -38,7 +38,7 @@ Azure Functions 확장 프로그램은 다음과 같은 이점을 제공 합니�
 > [!IMPORTANT]
 > 단일 함수 앱에 대 한 로컬 개발 및 포털 개발을 혼합 하지 마세요. 로컬 프로젝트에서 함수 앱에 게시할 때 배포 프로세스는 포털에서 개발한 모든 기능을 덮어씁니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 Visual Studio Code 용 [visual studio code용 azure functions 확장][visual studio code용 azure functions 확장]을 설치 하 고 실행 하기 전에 다음 요구 사항을 충족 해야 합니다.
 
@@ -71,7 +71,7 @@ Azure storage 계정과 같은 필요한 다른 리소스는 [Visual Studio Code
 
     ![HTTP 트리거 템플릿 선택](./media/functions-develop-vs-code/create-function-choose-template.png)
 
-1. 함수 이름에 대해 **Httpexample** 을 입력 하 고 Enter 키를 선택한 다음 **함수** 권한 부여를 선택 합니다. 이 권한 부여 수준에서는 함수 끝점을 호출할 때 [함수 키](functions-bindings-http-webhook.md#authorization-keys) 를 제공 해야 합니다.
+1. 함수 이름에 대해 **Httpexample** 을 입력 하 고 Enter 키를 선택한 다음 **함수** 권한 부여를 선택 합니다. 이 권한 부여 수준에서는 함수 끝점을 호출할 때 [함수 키](functions-bindings-http-webhook-trigger.md#authorization-keys) 를 제공 해야 합니다.
 
     ![함수 권한 부여 선택](./media/functions-develop-vs-code/create-function-auth.png)
 
@@ -252,11 +252,11 @@ Visual Studio Code에서 게시할 때 [Zip 배포](functions-deployment-technol
     | ------ | ----- | ----------- |
     | Azure에서 함수 앱 선택 | Azure에서 새 함수 앱 만들기 | 다음 프롬프트에서 새 함수 앱을 식별 하는 전역적으로 고유한 이름을 입력 한 다음 Enter 키를 선택 합니다. 함수 앱 이름에 대한 유효한 문자는 `a-z`, `0-9` 및 `-`입니다. |
     | OS 선택 | Windows | 함수 앱은 Windows에서 실행 됩니다. |
-    | 호스팅 계획 선택 | 사용량 과금 플랜 | 서버를 사용 하지 않는 [소비 계획 호스팅을](functions-scale.md#consumption-plan) 사용 합니다. |
+    | 호스팅 계획 선택 | 소비 계획 | 서버를 사용 하지 않는 [소비 계획 호스팅을](functions-scale.md#consumption-plan) 사용 합니다. |
     | 새 앱에 대 한 런타임 선택 | 프로젝트 언어 | 런타임은 게시 중인 프로젝트와 일치 해야 합니다. |
     | 새 리소스에 대 한 리소스 그룹을 선택 합니다. | 새 리소스 그룹 만들기 | 다음 프롬프트에서 `myResourceGroup`와 같은 리소스 그룹 이름을 입력 하 고 enter 키를 선택 합니다. 기존 리소스 그룹을 선택할 수도 있습니다. |
     | 저장소 계정 선택 | 새 스토리지 계정 만들기 | 다음 프롬프트에서 함수 앱에서 사용 하는 새 저장소 계정에 대 한 전역적으로 고유한 이름을 입력 한 다음 Enter 키를 선택 합니다. Storage 계정 이름은 3 자에서 24 자 사이 여야 하며 숫자와 소문자만 포함할 수 있습니다. 기존 계정을 선택할 수도 있습니다. |
-    | 새 리소스의 위치를 선택 하십시오. | region | 가까운 [지역](https://azure.microsoft.com/regions/) 또는 함수에서 액세스 하는 다른 서비스 근처의 위치를 선택 합니다. |
+    | 새 리소스의 위치 선택 | region | 가까운 [지역](https://azure.microsoft.com/regions/) 또는 함수에서 액세스 하는 다른 서비스 근처의 위치를 선택 합니다. |
 
     함수 앱을 만들고 배포 패키지가 적용 된 후 알림이 표시 됩니다. 이 알림에서 **출력 보기**를 선택하여 사용자가 만든 Azure 리소스를 포함한 만들기 및 배포 결과를 표시합니다.
 
@@ -277,7 +277,7 @@ Visual Studio Code에서 게시할 때 [Zip 배포](functions-deployment-technol
 
 ## <a name="get-the-url-of-the-deployed-function"></a>배포 된 함수의 URL 가져오기
 
-HTTP로 트리거되는 함수를 호출 하려면 함수 앱에 배포 될 때 함수의 URL이 필요 합니다. 이 URL은 필요한 모든 [기능 키](functions-bindings-http-webhook.md#authorization-keys)를 포함 합니다. 확장을 사용 하 여 배포 된 함수에 대 한 이러한 Url을 가져올 수 있습니다.
+HTTP로 트리거되는 함수를 호출 하려면 함수 앱에 배포 될 때 함수의 URL이 필요 합니다. 이 URL은 필요한 모든 [기능 키](functions-bindings-http-webhook-trigger.md#authorization-keys)를 포함 합니다. 확장을 사용 하 여 배포 된 함수에 대 한 이러한 Url을 가져올 수 있습니다.
 
 1. F1 키를 선택 하 여 명령 팔레트를 연 다음 명령을 검색 하 고 실행 합니다. **함수 URL 복사를 Azure Functions**합니다.
 

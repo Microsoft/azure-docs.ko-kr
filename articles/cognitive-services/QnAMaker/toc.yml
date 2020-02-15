@@ -8,12 +8,14 @@
       href: whats-new.md
 - name: 빠른 시작
   items:
-    - name: 새 기술 자료 만들기
-      href: quickstarts/create-publish-knowledge-base.md
-    - name: 메타데이터를 사용하여 질문 추가
-      href: quickstarts/add-question-metadata-portal.md
-    - name: Postman 또는 cURL을 사용하여 답변 가져오기
-      href: Quickstarts/get-answer-from-knowledge-base-using-url-tool.md
+    - name: QnA Maker 포털 사용
+      items:
+        - name: 1. 기술 자료 만들기
+          href: quickstarts/create-publish-knowledge-base.md
+        - name: 2. 메타데이터를 사용하여 질문 추가
+          href: quickstarts/add-question-metadata-portal.md
+        - name: 3. Postman 또는 cURL을 사용하여 답변 가져오기
+          href: Quickstarts/get-answer-from-knowledge-base-using-url-tool.md
     - name: 배치 파일을 사용하여 테스트
       href: Quickstarts/batch-testing.md
     - name: REST API 사용
@@ -61,8 +63,6 @@
     - name: KB에서 만들기 및 대답
       displayName: 'curl, publish, chit-chat, chit chat'
       href: Tutorials/create-publish-query-in-portal.md
-    - name: 'C#를 사용하여 KB에서 만들기 및 대답'
-      href: Tutorials/create-publish-answer.md
     - name: QnA Maker 봇 만들기
       href: Tutorials/create-qna-bot.md
 - name: 개념

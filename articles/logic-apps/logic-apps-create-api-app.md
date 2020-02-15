@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, jehollan, logicappspm
 ms.topic: article
 ms.date: 05/26/2017
-ms.openlocfilehash: e4200d09a02da1fd95f9bf5051b7f9d5fca5aa98
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: bb6c99ea12e5b53631d42a04b36b7bfef2337e42
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74793215"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191439"
 ---
 # <a name="create-custom-apis-you-can-call-from-azure-logic-apps"></a>Azure Logic Apps에서 호출할 수 있는 사용자 지정 API 만들기
 
@@ -32,7 +32,7 @@ Azure Logic Apps는 논리 앱 워크플로에서 사용할 수 있는 [수백 �
 > 
 > * [ASP.NET](../app-service/app-service-web-get-started-dotnet.md). 
 > * [Java](../app-service/app-service-web-get-started-java.md)
-> * [Node.js](../app-service/app-service-web-get-started-nodejs.md)
+> * [Node.JS](../app-service/app-service-web-get-started-nodejs.md)
 > * [PHP](../app-service/app-service-web-get-started-php.md)
 > * [Python](../app-service/containers/quickstart-python.md)
 > * [Ruby](../app-service/containers/quickstart-ruby.md)
@@ -96,13 +96,13 @@ API에서 [요청 시간 제한](./logic-apps-limits-and-config.md)보다 더 �
 
 API의 관점에서 설명하는 API의 구체적인 수행 단계는 다음과 같습니다.
 
-1. API에서 작업을 시작하라는 HTTP 요청을 받으면 이 단계의 뒷부분에서 설명하는 `location` 헤더가 있는 HTTP `202 ACCEPTED` 응답을 즉시 반환합니다. Logic Apps 엔진에서는 이 응답을 통해 API가 요청을 받고 요청 페이로드(데이터 입력)를 수락하여 현재 처리 중임을 확인할 수 있습니다. 
+1. API에서 작업을 시작하라는 HTTP 요청을 받으면 이 단계의 뒷부분에서 설명하는 `202 ACCEPTED` 헤더가 있는 HTTP `location` 응답을 즉시 반환합니다. Logic Apps 엔진에서는 이 응답을 통해 API가 요청을 받고 요청 페이로드(데이터 입력)를 수락하여 현재 처리 중임을 확인할 수 있습니다. 
    
    `202 ACCEPTED` 응답에는 다음과 같은 헤더가 포함되어야 합니다.
    
    * *필수*: Logic Apps 엔진이 API의 작업 상태를 확인할 수 있는 URL의 절대 경로를 지정하는 `location` 헤더
 
-   * *선택*: 작업 상태에 대해 `location` URL을 확인하기 전에 엔진에서 대기해야 하는 시간(초)을 지정하는 `retry-after` 헤더 
+   * *선택*: 작업 상태에 대해 `retry-after` URL을 확인하기 전에 엔진에서 대기해야 하는 시간(초)을 지정하는 `location` 헤더 
 
      기본적으로 엔진은 매 20초마다 확인합니다. 다른 간격을 지정하려면 `retry-after` 헤더와 다음 폴링까지의 시간(초)을 포함합니다.
 
@@ -164,15 +164,15 @@ API의 관점에서 설명하는 폴링 트리거의 구체적인 단계는 다�
 | 새 데이터 또는 이벤트가 있습니까?  | API 응답 | 
 | ------------------------- | ------------ |
 | 있음 | 응답 페이로드(다음 단계의 입력)와 함께 HTTP `200 OK` 상태를 반환합니다. <br/>이 응답은 논리 앱 인스턴스를 만들고 워크플로를 시작합니다. | 
-| 찾을 수 없음 | `location` 헤더 및 `retry-after` 헤더와 함께 HTTP `202 ACCEPTED` 상태를 반환합니다. <br/>트리거의 경우 `location` 헤더에 `triggerState` 쿼리 매개 변수(일반적으로 "timestamp")도 있어야 합니다. API에서는 이 식별자를 사용하여 논리 앱이 트리거된 마지막 시간을 추적할 수 있습니다. | 
+| 찾을 수 없음 | `202 ACCEPTED` 헤더 및 `location` 헤더와 함께 HTTP `retry-after` 상태를 반환합니다. <br/>트리거의 경우 `location` 헤더에 `triggerState` 쿼리 매개 변수(일반적으로 "timestamp")도 있어야 합니다. API에서는 이 식별자를 사용하여 논리 앱이 트리거된 마지막 시간을 추적할 수 있습니다. | 
 ||| 
 
 예를 들어 새 파일에 대한 서비스를 정기적으로 확인하려면 다음과 같은 동작을 포함하는 폴링 트리거를 빌드할 수 있습니다.
 
 | 요청에 `triggerState`가 있습니까? | API 응답 | 
 | -------------------------------- | -------------| 
-| 아닙니다. | HTTP `202 ACCEPTED` 상태 및 현재 시간으로 설정된 `triggerState`와 15초로 설정된 `retry-after` 간격이 포함된 `location` 헤더를 반환합니다. | 
-| yes | `triggerState`에 대한 `DateTime` 이후에 추가된 파일에 대한 서비스를 확인합니다. | 
+| 예 | HTTP `202 ACCEPTED` 상태 및 현재 시간으로 설정된 `location`와 15초로 설정된 `triggerState` 간격이 포함된 `retry-after` 헤더를 반환합니다. | 
+| yes | `DateTime`에 대한 `triggerState` 이후에 추가된 파일에 대한 서비스를 확인합니다. | 
 ||| 
 
 | 검색된 파일의 수 | API 응답 | 
@@ -206,9 +206,9 @@ API의 관점에서 설명하는 폴링 트리거의 구체적인 단계는 다�
 > [!TIP]
 > 웹후크 패턴 예제는 [GitHub의 웹후크 트리거 컨트롤러 샘플](https://github.com/logicappsio/LogicAppTriggersExample/blob/master/LogicAppTriggers/Controllers/WebhookTriggerController.cs)(영문)을 검토하세요.
 
-## <a name="secure-calls-to-your-apis-from-logic-apps"></a>논리 앱에서의 API 호출에 대해 보안 유지
+## <a name="improve-security-for-calls-to-your-apis-from-logic-apps"></a>논리 앱에서 Api 호출에 대 한 보안 향상
 
-사용자 지정 API를 만든 후 논리 앱에서 안전하게 호출할 수 있도록 API에 대한 인증을 설정합니다. [논리 앱에서의 사용자 지정 API 호출에 대해 보안을 유지하는 방법](../logic-apps/logic-apps-custom-api-authentication.md)을 알아봅니다.
+사용자 지정 API를 만든 후 논리 앱에서 안전하게 호출할 수 있도록 API에 대한 인증을 설정합니다. [논리 앱에서 사용자 지정 api 호출에 대 한 보안을 개선 하는 방법](../logic-apps/logic-apps-custom-api-authentication.md)에 대해 알아봅니다.
 
 ## <a name="deploy-and-call-your-apis"></a>API 배포 및 호출
 

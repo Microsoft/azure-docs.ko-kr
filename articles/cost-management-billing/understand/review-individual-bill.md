@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/20/2019
 ms.author: banders
-ms.openlocfilehash: 1249758e5dd5b7e823c11890e57549195da22529
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 969fbc3fe0aa614d4284e1442f507f263d48b499
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75984128"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77117142"
 ---
 # <a name="tutorial-review-your-individual-azure-bill"></a>자습서: 개별 Azure 청구서 검토
 
@@ -40,7 +40,7 @@ Azure를 구독한 지 30일 이상이어야 합니다. Azure는 청구서 기�
 
 ## <a name="sign-in-to-azure"></a>Azure에 로그인
 
-- https://portal.azure.com 에서 Azure Portal에 로그인합니다.
+- [https://portal.azure.com](https://portal.azure.com)에서 Azure Portal에 로그인합니다.
 
 ## <a name="compare-invoiced-charges-with-usage-file"></a>사용 파일을 사용하여 송장이 청구된 요금 비교
 

@@ -2,19 +2,21 @@
 title: 템플릿 함수
 description: Azure Resource Manager 템플릿에서 값을 검색하고 문자열과 숫자로 작업하며 배포 정보를 검색하는 데 사용하는 함수를 설명합니다.
 ms.topic: conceptual
-ms.date: 11/19/2019
-ms.openlocfilehash: aef813595df96449d5dd59ad1e95e77c4c198d0f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/13/2020
+ms.openlocfilehash: a9d10ad4899f35acd45069cb3d351a60632fed3a
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75483974"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207045"
 ---
 # <a name="azure-resource-manager-template-functions"></a>Azure Resource Manager 템플릿 함수
 
 이 아티클에서는 Azure Resource Manager 템플릿에서 사용할 수 있는 모든 함수에 대해 설명합니다. 템플릿에서 함수를 사용 하는 방법에 대 한 자세한 내용은 [템플릿 구문](template-expressions.md)을 참조 하세요.
 
 함수를 직접 만들려면 [사용자 정의 함수](template-syntax.md#functions)를 참조하세요.
+
+리소스 그룹, 구독, 관리 그룹 또는 테 넌 트에 배포 될 때 대부분의 함수는 동일 하 게 작동 합니다. 일부 함수는 일부 범위에서 사용할 수 없습니다. 아래 목록에 나와 있습니다.
 
 <a id="array" aria-hidden="true" />
 <a id="coalesce" aria-hidden="true" />
@@ -35,6 +37,7 @@ ms.locfileid: "75483974"
 <a id="union" aria-hidden="true" />
 
 ## <a name="array-and-object-functions"></a>배열 및 개체 함수
+
 Resource Manager는 배열 및 개체 작업을 위한 여러 함수를 제공합니다.
 
 * [array](template-functions-array.md#array)
@@ -62,6 +65,7 @@ Resource Manager는 배열 및 개체 작업을 위한 여러 함수를 제공�
 <a id="greaterorequals" aria-hidden="true" />
 
 ## <a name="comparison-functions"></a>비교 함수
+
 Resource Manager는 템플릿에서 비교를 수행하기 위한 몇 가지 함수를 제공합니다.
 
 * [equals](template-functions-comparison.md#equals)
@@ -75,10 +79,11 @@ Resource Manager는 템플릿에서 비교를 수행하기 위한 몇 가지 함
 <a id="variables" aria-hidden="true" />
 
 ## <a name="deployment-value-functions"></a>배포 값 함수
+
 Resource Manager는 템플릿의 섹션에서 값을 가져오고 배포와 관련된 값을 가져오기 위한 다음 함수를 제공합니다.
 
 * [deployment](template-functions-deployment.md#deployment)
-* [environment](template-functions-deployment.md#environment)
+* [개발](template-functions-deployment.md#environment)
 * [parameters](template-functions-deployment.md#parameters)
 * [variables](template-functions-deployment.md#variables)
 
@@ -89,6 +94,7 @@ Resource Manager는 템플릿의 섹션에서 값을 가져오고 배포와 관�
 <a id="or" aria-hidden="true" />
 
 ## <a name="logical-functions"></a>논리 함수
+
 Resource Manager는 논리 조건 사용을 위한 다음 함수를 제공합니다.
 
 * [and](template-functions-logical.md#and)
@@ -109,6 +115,7 @@ Resource Manager는 논리 조건 사용을 위한 다음 함수를 제공합니
 <a id="sub" aria-hidden="true" />
 
 ## <a name="numeric-functions"></a>숫자 함수
+
 Resource Manager는 정수 작업을 위한 다음 함수를 제공합니다.
 
 * [추가](template-functions-numeric.md#add)
@@ -134,6 +141,7 @@ Resource Manager는 정수 작업을 위한 다음 함수를 제공합니다.
 <a id="tenantResourceId" aria-hidden="true" />
 
 ## <a name="resource-functions"></a>리소스 함수
+
 Resource Manager는 리소스 값을 가져오기 위한 다음 함수를 제공합니다.
 
 * [extensionResourceId](template-functions-resource.md#extensionresourceid)
@@ -143,9 +151,9 @@ Resource Manager는 리소스 값을 가져오기 위한 다음 함수를 제공
 * [list*](template-functions-resource.md#list)
 * [providers](template-functions-resource.md#providers)
 * [reference](template-functions-resource.md#reference)
-* [resourceGroup](template-functions-resource.md#resourcegroup)
-* [resourceId](template-functions-resource.md#resourceid)
-* [subscription](template-functions-resource.md#subscription)
+* [resourceGroup](template-functions-resource.md#resourcegroup) -리소스 그룹에 대 한 배포에만 사용할 수 있습니다.
+* [resourceId](template-functions-resource.md#resourceid) -모든 범위에서 사용할 수 있지만 유효한 매개 변수는 범위에 따라 변경 됩니다.
+* [구독](template-functions-resource.md#subscription) -리소스 그룹 또는 구독에 대 한 배포에만 사용할 수 있습니다.
 * [subscriptionResourceId](template-functions-resource.md#subscriptionresourceid)
 * [tenantResourceId](template-functions-resource.md#tenantresourceid)
 
@@ -181,6 +189,7 @@ Resource Manager는 리소스 값을 가져오기 위한 다음 함수를 제공
 <a id="uricomponenttostring" aria-hidden="true" />
 
 ## <a name="string-functions"></a>문자열 함수
+
 Resource Manager는 문자열 작업을 위한 다음 함수를 제공합니다.
 
 * [base64](template-functions-string.md#base64)
@@ -221,5 +230,5 @@ Resource Manager는 문자열 작업을 위한 다음 함수를 제공합니다.
 
 * Azure Resource Manager 템플릿의 섹션에 대한 설명은 [Azure Resource Manager 템플릿 작성](template-syntax.md)
 * 여러 템플릿을 병합하려면 [Azure Resource Manager에서 연결된 템플릿 사용](linked-templates.md)
-* 리소스 유형을 만들 때 지정된 횟수만큼 반복하려면 [Azure Resource Manager에서 리소스의 여러 인스턴스 만들기](create-multiple-instances.md)
+* 리소스 유형을 만들 때 지정된 횟수만큼 반복하려면 [Azure 리소스 관리자에서 리소스의 여러 인스턴스 만들기](copy-resources.md)를 참조하세요.
 * 만든 템플릿을 배포 하는 방법을 보려면 [Azure Resource Manager 템플릿을 사용 하 여 응용 프로그램 배포](deploy-powershell.md) 를 참조 하세요.

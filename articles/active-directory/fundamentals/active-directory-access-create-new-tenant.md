@@ -10,14 +10,14 @@ ms.workload: identity
 ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: ajburnle
-ms.custom: it-pro, seodec18
+ms.custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ef577f5d086b22779392cd6d8b5d43a340f7329
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: de205beaf9800c2061cc41343b4153bd0e2b5dc7
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75423093"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77024605"
 ---
 # <a name="quickstart-create-a-new-tenant-in-azure-active-directory"></a>빠른 시작: Azure Active Directory에서 새 테넌트 만들기
 Azure AD(Azure Active Directory) 포털을 사용하여 조직의 테넌트를 새로 만드는 작업을 비롯한 모든 관리 작업을 수행할 수 있습니다. 
@@ -31,7 +31,7 @@ Azure Portal에 로그인한 후에 조직의 테넌트를 새로 만들 수 있
 
 ### <a name="to-create-a-new-tenant"></a>새 테넌트를 만들려면
 
-1. 전역 관리자 계정을 사용하여 조직의 [Azure Portal](https://portal.azure.com/)에 로그인합니다.
+1. 조직의 [Azure Portal](https://portal.azure.com/)에 로그인합니다.
 
 1. Azure Portal 메뉴에서 **리소스 만들기**를 선택합니다.  
 
@@ -58,6 +58,7 @@ Azure Portal에 로그인한 후에 조직의 테넌트를 새로 만들 수 있
 ## <a name="clean-up-resources"></a>리소스 정리
 이 애플리케이션을 계속 사용하지 않으려면 다음 절차를 사용하여 테넌트를 삭제할 수 있습니다.
 
+- Azure Portal에서 **디렉터리 + 구독** 필터를 통해 삭제할 디렉터리에 로그인하고 필요한 경우 대상 디렉터리로 전환해야 합니다.
 - **Azure Active Directory**를 선택한 다음, **Contoso - 개요** 페이지에서 **디렉터리 삭제**를 선택합니다.
 
     테넌트 및 연결된 정보가 삭제됩니다.

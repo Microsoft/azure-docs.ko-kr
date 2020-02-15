@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 author: cartacioS
 ms.author: sacartac
 ms.date: 11/04/2019
-ms.openlocfilehash: 012300c95fd1edd135b97f52ed3702ce3e7ef0bd
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: f7a2e78ed2b1de770f7a60f1312e069dc1757cb6
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77048964"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191200"
 ---
 # <a name="what-is-automated-machine-learning"></a>자동화된 Machine Learning이란?
 
@@ -83,7 +83,7 @@ ms.locfileid: "77048964"
 
 자동화 된 모든 기계 학습 실험에서 데이터는 알고리즘의 성능을 향상 시킬 수 있도록 자동으로 확장 되거나 정규화 됩니다.  모델 학습 중에는 다음 크기 조정 또는 정규화 기술 중 하나가 각 모델에 적용 됩니다.
 
-|&nbsp;정규화&nbsp;&크기 조정| 설명 |
+|&nbsp;정규화&nbsp;&크기 조정| Description |
 | ------------- | ------------- |
 | [StandardScaleWrapper](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)  | 단위 분산의 평균 및 크기 조정을 제거 하 여 기능 표준화  |
 | [MinMaxScalar](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)  | 해당 열의 최소값과 최대값을 기준으로 각 기능의 크기를 조정 하 여 기능을 변환 합니다.  |
@@ -142,7 +142,7 @@ CV (교차 유효성 검사)는 전체 학습 데이터의 여러 하위 집합�
 | 모델 | 학습 정확도 | 테스트 정확도 |
 |-------|----------------|---------------|
 | A | 99.9% | 95% |
-| B | 87% | 87% |
+| b | 87% | 87% |
 | C | 99.9% | 45% |
 
 모델 **A**를 고려 하 여 보이지 않는 데이터의 테스트 정확도가 학습 정확도 보다 낮으면 모델이 과도 하 게 조정 되는 일반적인 오해 있습니다. 그러나 테스트 정확도는 항상 학습 정확도 보다 작아야 하 고, 과도 하 게 일치 하는 것과 적절 한 일치에 대 한 차이는 *얼마나* 정확 하지 않습니다. 
@@ -193,7 +193,7 @@ CV (교차 유효성 검사)는 전체 학습 데이터의 여러 하위 집합�
 
 또한 자동화 된 ML 실행은 다음 차트를 자동으로 생성 하며,이를 통해 모델 분류의 정확성을 이해 하 고 불균형 데이터의 영향을 받을 수 있는 모델을 식별할 수 있습니다.
 
-차트| 설명
+차트| Description
 ---|---
 [혼동 행렬](how-to-understand-automated-ml.md#confusion-matrix)| 데이터의 실제 레이블에 대해 올바르게 분류 된 레이블을 평가 합니다. 
 [전체 자릿수-회수](how-to-understand-automated-ml.md#precision-recall-chart)| 데이터의 찾은 레이블 인스턴스 비율에 대해 올바른 레이블의 비율을 평가 합니다. 
@@ -215,11 +215,11 @@ Azure Machine Learning를 사용 하면 자동화 된 ML을 사용 하 여 Pytho
 
 자동화 된 ML은 다음과 같은 다른 Microsoft 솔루션 에서도 사용할 수 있습니다.
 
-|통합|설명|
+|통합|Description|
 |------------|-----------|
-|[ML.NET](https://docs.microsoft.com/dotnet/machine-learning/automl-overview)|Visual Studio를 사용 하 여 .NET 앱에서 자동 모델 선택 및 학습 ML.NET 자동 ML (미리 보기)을 사용 하 여 Visual Studio Code 합니다.|
+|[ML.NET](https://docs.microsoft.com/dotnet/machine-learning/automl-overview)|Visual Studio를 사용 하 여 .NET 앱에서 자동 모델 선택 및 학습 ML.NET 자동화 된 ML을 사용 하 여 Visual Studio Code 합니다.|
 |[HDInsight](../hdinsight/spark/apache-spark-run-machine-learning-automl.md)|HDInsight 클러스터의 Spark에서 자동화 된 ML 학습 작업을 병렬로 확장 하세요.|
-|[Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-automated)|Power BI (미리 보기)에서 직접 machine learning 모델을 호출 합니다.|
+|[Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-automated)|Power BI에서 직접 machine learning 모델을 호출 합니다.|
 |[SQL Server](https://cloudblogs.microsoft.com/sqlserver/2019/01/09/how-to-automate-machine-learning-on-sql-server-2019-big-data-clusters/)|SQL Server 2019 빅 데이터 클러스터의 데이터에 대해 새 machine learning 모델을 만듭니다.|
 
 ## <a name="next-steps"></a>다음 단계

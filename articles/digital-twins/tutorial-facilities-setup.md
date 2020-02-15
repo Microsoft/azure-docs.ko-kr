@@ -9,12 +9,12 @@ ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
 ms.date: 01/10/2020
-ms.openlocfilehash: bf07a165b6ea933719eb06b6625a91033030a120
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 16e4a7e2f06d2630c970f8daa4428e7a184a79df
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75895520"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77163044"
 ---
 # <a name="tutorial-deploy-azure-digital-twins-preview-and-configure-a-spatial-graph"></a>자습서: Azure Digital Twins 미리 보기 배포 및 공간 그래프 구성
 
@@ -52,7 +52,7 @@ Azure Digital Twins 서비스를 사용하여 건물의 물리적 영역 및 엔
 
 ## <a name="grant-permissions-to-your-app"></a>앱에 권한 부여
 
-Digital Twins는 Azure AD([Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md))를 사용하여 서비스에 대한 [읽기/쓰기 액세스](../active-directory/develop/v1-permissions-and-consent.md)를 제어합니다. Digital Twins 인스턴스와 연결해야 하는 모든 애플리케이션은 Azure AD에 등록되어야 합니다. 이 섹션의 단계에서는 샘플 앱을 등록하는 방법을 보여줍니다.
+Digital Twins는 Azure AD([Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md))를 사용하여 서비스에 대한 [읽기/쓰기 액세스](../active-directory/develop/v2-permissions-and-consent.md)를 제어합니다. Digital Twins 인스턴스와 연결해야 하는 모든 애플리케이션은 Azure AD에 등록되어야 합니다. 이 섹션의 단계에서는 샘플 앱을 등록하는 방법을 보여줍니다.
 
 이미 앱 등록이 있는 경우 해당 앱 등록을 샘플에 다시 사용할 수 있습니다. 하지만 이 섹션을 끝까지 읽고 앱 등록이 올바르게 구성되었는지 확인해야 합니다.
 

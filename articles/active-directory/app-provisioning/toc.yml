@@ -1,0 +1,107 @@
+- name: 애플리케이션 및 HR 프로비저닝 설명서
+  href: index.yml
+- name: 개요
+  expanded: true
+  items:
+    - name: 애플리케이션 프로비저닝이란?
+      href: user-provisioning.md
+- name: 자습서
+  items:
+    - name: G Suite
+      href: /azure/active-directory/saas-apps/google-apps-provisioning-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+    - name: ServiceNow
+      href: /azure/active-directory/saas-apps/servicenow-provisioning-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+    - name: AWS(Amazon Web Services) - 역할 프로비저닝
+      href: '/azure/active-directory/saas-apps/amazon-web-service-tutorial#configure-azure-ad-single-sign-ont?context=azure/active-directory/app-provisioning/context/app-provisioning-context'
+    - name: Workday
+      href: /azure/active-directory/saas-apps/workday-inbound-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+    - name: SAP SuccessFactors
+      href: /azure/active-directory/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+    - name: 모든 통합 갤러리 앱
+      href: /azure/active-directory/saas-apps
+- name: 개념
+  expanded: true
+  items:
+    - name: 애플리케이션 프로비저닝 작동 방법
+      href: how-provisioning-works.md
+    - name: 애플리케이션 프로비저닝 배포 계획
+      href: plan-auto-user-provisioning.md
+    - name: 클라우드 HR 프로비저닝 배포 계획
+      href: plan-cloud-hr-provision.md
+- name: 방법 가이드
+  expanded: true
+  items:
+    - name: 갤러리 앱 프로비저닝 구성
+      href: configure-automatic-user-provisioning-portal.md
+    - name: 특성 매핑 편집
+      items:
+        - name: 특성 매핑 사용자 지정
+          href: customize-application-attributes.md
+        - name: 특성 매핑 식 작성
+          href: functions-for-customizing-application-data.md
+    - name: 범위에서 사용자 및 그룹 포함 또는 제외
+      items:
+        - name: 프로비저닝할 사용자 또는 그룹 범위 지정
+          href: define-conditional-rules-for-provisioning-user-accounts.md
+        - name: 범위를 벗어난 사용자에 대해 삭제 건너뛰기
+          href: skip-out-of-scope-deletions.md
+    - name: 프로비저닝 모니터링 및 보고
+      items:
+        - name: 프로비저닝 상태 및 성능 모니터링
+          href: application-provisioning-when-will-provisioning-finish-specific-user.md
+        - name: 앱 프로비전에 대한 보고서
+          href: check-status-user-account-provisioning.md
+        - name: 구성 내보내기 및 가져오기
+          href: export-import-provisioning-configuration.md
+    - name: 애플리케이션 프로비저닝 문제 해결
+      items:
+        - name: 앱 프로비전 문제 해결
+          href: application-provisioning-config-problem.md
+        - name: 격리 상태
+          href: application-provisioning-quarantine-status.md
+        - name: 권한 부여 문제(관리자 자격 증명을 저장할 수 없음)
+          href: application-provisioning-config-problem-storage-limit.md
+        - name: 프로비저닝되지 않은 사용자
+          href: application-provisioning-config-problem-no-users-provisioned.md
+        - name: 잘못 프로비저닝된 사용자
+          href: application-provisioning-config-problem-wrong-users-provisioned.md
+        - name: 원본 특성 누락
+          href: user-provisioning-sync-attributes-for-mapping.md
+        - name: 프로비저닝 작업이 느림
+          href: application-provisioning-when-will-provisioning-finish.md
+        - name: 프로비저닝 로그
+          href: /azure/active-directory/reports-monitoring/concept-provisioning-logs?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+    - name: SCIM 엔드포인트 빌드 및 프로비저닝 구성
+      href: use-scim-to-provision-users-and-groups.md
+    - name: MS Graph를 사용하여 구성 자동화
+      href: application-provisioning-configure-api.md
+- name: 참조
+  items:
+    - name: 프로비저닝 메서드 선택
+      href: isv-automatic-provisioning-multi-tenant-apps.md
+    - name: 클라우드 HR 프로비저닝
+      items:
+        - name: SuccessFactors 특성 참조
+          href: sap-successfactors-attribute-reference.md
+        - name: Workday 특성 참조
+          href: workday-attribute-reference.md
+    - name: Azure AD Connect 프로비저닝 에이전트
+      items:
+        - name: 프로비저닝 에이전트 버전 기록
+          href: provisioning-agent-release-version-history.md
+- name: 리소스
+  items:
+    - name: 개발자를 위한 지원 및 도움말 옵션
+      href: /azure/active-directory/develop/developer-support-help-options
+    - name: Azure 피드백 포럼
+      href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
+    - name: MSDN 포럼
+      href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD'
+    - name: 가격 책정
+      href: 'https://azure.microsoft.com/pricing/details/active-directory'
+    - name: 서비스 업데이트
+      href: 'https://azure.microsoft.com/updates/?product=active-directory'
+    - name: 스택 오버플로
+      href: 'https://stackoverflow.com/questions/tagged/azure-active-directory'
+    - name: 동영상
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=active-directory'

@@ -3,12 +3,12 @@ title: 템플릿을 사용한 조건부 배포
 description: Azure Resource Manager 템플릿에서 리소스를 조건부로 배포 하는 방법을 설명 합니다.
 ms.topic: conceptual
 ms.date: 12/03/2019
-ms.openlocfilehash: b4ee733e81f3a923f268f33f5826387059923bcb
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 83aa22ba57e0111d060665778922437723481c69
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76122001"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207794"
 ---
 # <a name="conditional-deployment-in-resource-manager-templates"></a>리소스 관리자 템플릿의 조건부 배포
 
@@ -88,4 +88,4 @@ ms.locfileid: "76122001"
 ## <a name="next-steps"></a>다음 단계
 
 * 템플릿을 만드는 방법에 대한 권장 사항은 [Azure Resource Manager 템플릿 모범 사례](template-best-practices.md)를 참조하세요.
-* 리소스의 여러 인스턴스를 만들려면 [Azure Resource Manager 템플릿에서 리소스, 속성 또는 변수 반복](create-multiple-instances.md)을 참조 하세요.
+* 리소스의 여러 인스턴스를 만들려면 [Azure Resource Manager 템플릿에서 리소스 반복](copy-resources.md)을 참조 하세요.

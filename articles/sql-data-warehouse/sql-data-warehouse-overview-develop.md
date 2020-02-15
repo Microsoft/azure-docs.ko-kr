@@ -1,5 +1,5 @@
 ---
-title: Azure에서 데이터 웨어하우스를 개발 하기 위한 리소스
+title: Azure Synapse Analytics에서 데이터 웨어하우스를 개발 하기 위한 리소스
 description: SQL Data Warehouse에 대한 개발 개념, 디자인 결정, 권장 사항 및 코딩 기술입니다.
 services: sql-data-warehouse
 author: XiaoyuMSFT
@@ -10,67 +10,40 @@ ms.subservice: development
 ms.date: 08/29/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: a6cb7937bdd5dea9eb1a48b2b350db9077431fe0
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: 0f8967eab1be8351c50035d8afa784aa7afd79e1
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73645610"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153318"
 ---
-# <a name="design-decisions-and-coding-techniques-for-sql-data-warehouse"></a>SQL Data Warehouse에 대한 디자인 결정 및 코딩 기술
-SQL Data Warehouse에 대한 주요 디자인 결정, 권장 사항 및 코딩 기술을 더 잘 이해하려면 다음 개발 문서를 살펴보세요.
+# <a name="design-decisions-and-coding-techniques-for-a-data-warehouse-in-azure-synapse-analytics"></a>Azure Synapse Analytics에서 데이터 웨어하우스의 디자인 결정 및 코딩 기술 
+ 이 문서에서는 Azure Synapse에서 데이터 웨어하우스의 주요 디자인 결정, 권장 사항 및 코딩 기술을 더 잘 이해 하는 데 도움이 되는 추가 리소스를 찾을 수 있습니다.
 
 ## <a name="key-design-decisions"></a>주요 디자인 결정
-다음 문서에서는 SQL Data Warehouse를 사용하여 분산된 데이터 웨어하우스를 개발하는 개념 및 디자인 결정 사항을 중점적으로 설명합니다.
+다음 문서는 Azure Synapse의 SQL 분석 기능을 사용 하 여 분산 데이터 웨어하우스를 개발 하기 위한 개념 및 디자인 결정을 강조 합니다.
 
-* [connections][connections]
-* [동시성][concurrency]
-* [트랜잭션][transactions]
-* [사용자 정의 스키마][user-defined schemas]
-* [테이블 배포][table distribution]
-* [테이블 인덱스][table indexes]
-* [테이블 파티션][table partitions]
-* [CTAS][CTAS]
-* [통계][statistics]
+* [connections](sql-data-warehouse-connect-overview.md)
+* [동시성](resource-classes-for-workload-management.md)
+* [트랜잭션](sql-data-warehouse-develop-transactions.md)
+* [사용자 정의 스키마](sql-data-warehouse-develop-user-defined-schemas.md)
+* [테이블 배포](sql-data-warehouse-tables-distribute.md)
+* [테이블 인덱스](sql-data-warehouse-tables-index.md)
+* [테이블 파티션](sql-data-warehouse-tables-partition.md)
+* [CTAS](sql-data-warehouse-develop-ctas.md)
+* [통계](sql-data-warehouse-tables-statistics.md)
 
 ## <a name="development-recommendations-and-coding-techniques"></a>개발 권장 사항 및 코딩 기술
-이러한 문서에는 SQL Data Warehouse 개발을 위한 구체적인 코딩 기술, 팁 및 권장 사항이 요약되어 있습니다.
+다음 문서에서는 SQL Analytics를 사용 하 여 데이터 웨어하우스를 개발 하기 위한 특정 코딩 기술, 팁 및 권장 사항을 제공 합니다.
 
-* [저장 프로시저][stored procedures]
-* [레이블][labels]
-* [뷰][views]
-* [임시 테이블][temporary tables]
-* [동적 SQL][dynamic SQL]
-* [반복][looping]
-* [옵션으로 그룹화][group by options]
-* [변수 할당][variable assignment]
+* [저장 프로시저](sql-data-warehouse-develop-stored-procedures.md)
+* [레이블](sql-data-warehouse-develop-label.md)
+* [뷰](sql-data-warehouse-develop-views.md)
+* [임시 테이블](sql-data-warehouse-tables-temporary.md)
+* [동적 SQL](sql-data-warehouse-develop-dynamic-sql.md)
+* [반복](sql-data-warehouse-develop-loops.md)
+* [옵션으로 그룹화](sql-data-warehouse-develop-group-by-options.md)
+* [변수 할당](sql-data-warehouse-develop-variable-assignment.md)
 
 ## <a name="next-steps"></a>다음 단계
-자세한 참조 정보는 [SQL Data Warehouse T-SQL 명령문](sql-data-warehouse-reference-tsql-statements.md)을 참조하세요.
-
-<!--Image references-->
-
-<!--Article references-->
-[concurrency]: ./resource-classes-for-workload-management.md
-[connections]: ./sql-data-warehouse-connect-overview.md
-[CTAS]: ./sql-data-warehouse-develop-ctas.md
-[dynamic SQL]: ./sql-data-warehouse-develop-dynamic-sql.md
-[group by options]: ./sql-data-warehouse-develop-group-by-options.md
-[labels]: ./sql-data-warehouse-develop-label.md
-[looping]: ./sql-data-warehouse-develop-loops.md
-[statistics]: ./sql-data-warehouse-tables-statistics.md
-[stored procedures]: ./sql-data-warehouse-develop-stored-procedures.md
-[table distribution]: ./sql-data-warehouse-tables-distribute.md
-[table indexes]: ./sql-data-warehouse-tables-index.md
-[table partitions]: ./sql-data-warehouse-tables-partition.md
-[temporary tables]: ./sql-data-warehouse-tables-temporary.md
-[transactions]: ./sql-data-warehouse-develop-transactions.md
-[user-defined schemas]: ./sql-data-warehouse-develop-user-defined-schemas.md
-[variable assignment]: ./sql-data-warehouse-develop-variable-assignment.md
-[views]: ./sql-data-warehouse-develop-views.md
-
-
-<!--MSDN references-->
-[renaming objects]: https://msdn.microsoft.com/library/mt631611.aspx
-
-<!--Other Web references-->
+자세한 참조 정보는 [t-sql 문](sql-data-warehouse-reference-tsql-statements.md)을 참조 하세요.

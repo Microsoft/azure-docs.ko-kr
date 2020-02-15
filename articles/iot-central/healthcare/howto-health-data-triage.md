@@ -8,18 +8,18 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: eliotgra
-ms.openlocfilehash: 40e850bcbd177b15c91e57ec369c6b04963ffb84
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 99b27ec53d955079b5f73986408e698955c0969b
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74132272"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77021647"
 ---
 # <a name="tutorial-build-a-power-bi-provider-dashboard"></a>자습서: Power BI 공급자 대시보드 빌드
 
-[!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
 
-지속적인 환자 모니터링 솔루션을 빌드할 때 병원 진료 팀에서 환자 데이터를 시각화할 수 있는 대시보드를 만들 수도 있습니다. 이 자습서에서는 IoT Central 지속적인 환자 모니터링 애플리케이션 템플릿에서 Power BI 실시간 스트리밍 대시보드를 만드는 단계를 안내합니다.
+
+지속적인 환자 모니터링 솔루션을 빌드할 때 병원 진료 팀에서 환자 데이터를 시각화할 수 있는 대시보드를 만들 수도 있습니다. 이 자습서에서는 IoT Central 지속적인 환자 모니터링 애플리케이션 템플릿에서 Power BI 실시간 스트리밍 대시보드를 만드는 방법을 알아봅니다.
 
 >[!div class="mx-imgBorder"]
 >![대시보드 GIF](media/dashboard-gif-3.gif)
@@ -29,7 +29,7 @@ ms.locfileid: "74132272"
 >[!div class="mx-imgBorder"] 
 >![공급자 심사 대시보드](media/dashboard-architecture.png)
 
-이 자습서에서는 다음 방법에 대해 알아봅니다.
+이 자습서에서는 다음 작업 방법을 알아봅니다.
 
 > [!div class="checklist"]
 > * Azure IoT Central에서 Azure Event Hubs로 데이터 내보내기
@@ -38,9 +38,9 @@ ms.locfileid: "74132272"
 > * 논리 앱에서 Power BI로 데이터 스트리밍
 > * 환자 바이탈에 대한 실시간 대시보드 빌드
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
-* Azure 구독. Azure 구독이 없는 경우 [체험 Azure 계정에 등록](https://azure.microsoft.com/free/)합니다.
+* Azure 구독 Azure 구독이 없는 경우 [체험 Azure 계정에 등록](https://azure.microsoft.com/free/)합니다.
 
 * Azure IoT Central 지속적인 환자 모니터링 애플리케이션 템플릿. 아직 템플릿이 없는 경우 [애플리케이션 템플릿 배포](overview-iot-central-healthcare.md) 단계를 따르면 됩니다.
 
@@ -51,7 +51,7 @@ ms.locfileid: "74132272"
 * Power BI 서비스 계정. 아직 계정이 없는 경우 [Power BI 서비스 평가판 계정을 만들 수 있습니다](https://app.powerbi.com/). 이전에 Power BI를 사용한 적이 없는 경우 [Power BI 시작](https://docs.microsoft.com/power-bi/service-get-started)을 수행하면 도움이 될 수 있습니다.
 
 ## <a name="set-up-a-continuous-data-export-to-azure-event-hubs"></a>Azure Event Hubs로 지속적인 데이터 내보내기 설정
-먼저 Azure IoT Central 앱 템플릿에서 구독의 Azure Event Hub로 지속적인 데이터 내보내기를 설정해야 합니다. 이렇게 하려면 [Event Hubs로 내보내기](https://docs.microsoft.com/azure/iot-central/preview/howto-export-data)에 대한 이 Azure IoT Central 자습서의 단계를 따르면 됩니다. 이 자습서의 목적에 맞게 원격 분석이 가능하도록 내보내기만 하면 됩니다.
+먼저 Azure IoT Central 앱 템플릿에서 구독의 Azure Event Hub로 지속적인 데이터 내보내기를 설정해야 합니다. 이렇게 하려면 [Event Hubs로 내보내기](https://docs.microsoft.com/azure/iot-central/core/howto-export-data)에 대한 이 Azure IoT Central 자습서의 단계를 따르면 됩니다. 이 자습서의 목적에 맞게 원격 분석이 가능하도록 내보내기만 하면 됩니다.
 
 ## <a name="create-a-power-bi-streaming-dataset"></a>Power BI 스트리밍 데이터 세트 만들기
 
@@ -79,9 +79,9 @@ Power BI의 스트리밍 데이터 세트에 대한 자세한 내용은 [Power B
 
 |매개 변수|값|
 |---|---|
-|콘텐츠 형식|application/json|
+|내용 유형|application/json|
 |간격|3|
-|Frequency(빈도)|초|
+|빈도|초|
 
 이 단계를 마치면 논리 앱 디자이너가 다음과 같이 보일 것입니다.
 
@@ -91,7 +91,7 @@ Power BI의 스트리밍 데이터 세트에 대한 자세한 내용은 [Power B
 ## <a name="stream-data-to-power-bi-from-your-logic-app"></a>논리 앱에서 Power BI로 데이터 스트리밍
 다음 단계는 Event Hub에서 들어오는 데이터를 구문 분석하여 이전에 만든 Power BI 데이터 세트로 스트리밍하는 것입니다.
 
-1. 이 작업을 수행하려면 먼저 디바이스에서 Event Hub로 전송되는 JSON 페이로드를 이해해야 합니다. 그러려면 이 [샘플 스키마](https://docs.microsoft.com/azure/iot-central/preview/howto-export-data#telemetry)를 확인하고 스키마에 맞게 수정하거나 [Service Bus 탐색기](https://github.com/paolosalvatori/ServiceBusExplorer)를 사용하여 메시지를 검사합니다. 지속적인 환자 모니터링 애플리케이션을 사용하는 경우 메시지는 다음과 같습니다.
+1. 이 작업을 수행하려면 먼저 디바이스에서 Event Hub로 전송되는 JSON 페이로드를 이해해야 합니다. 그러려면 이 [샘플 스키마](https://docs.microsoft.com/azure/iot-central/core/howto-export-data#telemetry)를 확인하고 스키마에 맞게 수정하거나 [Service Bus 탐색기](https://github.com/paolosalvatori/ServiceBusExplorer)를 사용하여 메시지를 검사합니다. 지속적인 환자 모니터링 애플리케이션을 사용하는 경우 메시지는 다음과 같습니다.
 
 **스마트 바이탈 패치 원격 분석**
 
@@ -143,8 +143,8 @@ Power BI의 스트리밍 데이터 세트에 대한 자세한 내용은 [Power B
 
     |매개 변수|값|
     |---|---|
-    |Name|인터페이스 이름|
-    |Type|문자열|
+    |속성|인터페이스 이름|
+    |Type|String|
 
     **저장**을 누릅니다. 
 

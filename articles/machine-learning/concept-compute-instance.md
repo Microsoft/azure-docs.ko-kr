@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 12/13/2019
-ms.openlocfilehash: f6d2da49e2659cfa69d25e3fe71351547706fd42
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 280851b2fea0b8100a7d0f8ec8105109a41c8c83
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76984849"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77252079"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Azure Machine Learning 계산 인스턴스인 이란?
 
@@ -26,9 +26,6 @@ Azure Machine Learning 계산 인스턴스 (미리 보기)는 데이터 과학�
 
 계산 인스턴스는 일반적으로 개발 환경으로 사용 됩니다.  개발 및 테스트를 위한 학습 및 추론 계산 대상으로 사용할 수도 있습니다.  대량 작업의 경우 다중 노드 크기 조정 기능을 사용 하는 [Azure Machine Learning 계산 클러스터가](how-to-set-up-training-targets.md#amlcompute) 더 나은 계산 대상 선택입니다.
 
-> [!NOTE]
-> 계산 인스턴스는 현재 미국 중 **북부**, **미국 동부 2**, **북아메리카 유럽** 또는 **영국 남부**지역이 있는 작업 영역에 대해서만 사용할 수 있으며 곧 다른 지역에 대 한 지원을 제공 합니다.
->작업 영역이 다른 지역에 있으면 [Notebook VM](concept-compute-instance.md#notebookvm)을 계속 만들어 사용할 수 있습니다. 
 
 ## <a name="why-use-a-compute-instance"></a>계산 인스턴스를 사용 하는 이유
 
@@ -115,7 +112,7 @@ Azure Machine Learning studio의 작업 영역에서 **compute**를 선택한 �
 
 ![계산 인스턴스 관리](./media/concept-compute-instance/manage-compute-instance.png)
 
-다음 작업을 수행할 수 있습니다.
+다음 동작을 수행할 수 있습니다.
 
 * 계산 인스턴스를 만듭니다. 이름을 지정 하 고, Gpu를 포함 한 Azure VM 유형 (만든 후 VM 유형을 변경할 수 없음)을 지정 하 고, SSH 액세스를 사용/사용 하지 않도록 설정 하 고, 가상 네트워크 설정을 구성 합니다 (선택 사항). 통합 된 노트북, Azure Portal, 리소스 관리자 템플릿 또는 Azure Machine Learning SDK에서 직접 인스턴스를 만들 수도 있습니다. 계산 인스턴스 생성에 적용 되는 지역 당 전용 코어 할당량은 통합 되어 Azure Machine Learning 계산 클러스터 할당량과 공유 됩니다.
 * 계산 인스턴스 탭 새로 고침
@@ -124,7 +121,7 @@ Azure Machine Learning studio의 작업 영역에서 **compute**를 선택한 �
 
 작업 영역의 각 계산 인스턴스에 대해 다음을 수행할 수 있습니다.
 
-* 계산 인스턴스에서 Jupyter, JupyterLab, RStudio, VS Code Uri에 액세스 합니다.
+* 계산 인스턴스에서 Jupyter, JupyterLab, RStudio에 액세스 합니다.
 * SSH를 계산 인스턴스로 변환 합니다. SSH 액세스는 기본적으로 사용 하지 않도록 설정 되어 있지만 계산 인스턴스 생성 시 사용 하도록 설정할 수 있습니다. SSH 액세스에는 공개/개인 키 메커니즘이 사용 됩니다. 이 탭에는 IP 주소, 사용자 이름 및 포트 번호와 같은 SSH 연결에 대 한 세부 정보가 제공 됩니다.
 * 특정 계산 인스턴스에 대 한 세부 정보 (예: IP 주소 및 지역)를 가져옵니다.
 
@@ -144,11 +141,11 @@ Azure Machine Learning studio의 작업 영역에서 **compute**를 선택한 �
 
 ## <a name="notebookvm"></a>노트북 VM의 변경 내용
 
-계산 인스턴스가 노트북 VM을 교체 하 고 있습니다.  계산 인스턴스를 아직 사용할 수 없는 지역에서는 모든 기능을 갖춘 노트북 Vm을 계속 사용 하 고 새 노트북 Vm을 만들 수 있습니다.
+계산 인스턴스가 노트북 VM을 교체 하 고 있습니다.  
 
 작업 영역 파일 공유에 저장 된 모든 노트북 파일과 작업 영역 데이터 저장소의 데이터는 계산 인스턴스에서 액세스할 수 있습니다. 그러나 노트북 VM에 이전에 설치 된 모든 사용자 지정 패키지는 계산 인스턴스에 다시 설치 해야 합니다. 계산 클러스터 만들기에 적용 되는 할당량 제한은 계산 인스턴스 생성에도 적용 됩니다. 
 
-계산 인스턴스를 사용할 수 있는 지역에서는 새 노트북 Vm을 만들 수 없습니다. 그러나 전체 기능을 사용 하 여 만든 노트북 Vm에 계속 액세스 하 여 사용할 수 있습니다. 계산 인스턴스는 기존 노트북 Vm과 동일한 작업 영역에 만들 수 있습니다. 
+새 노트북 Vm을 만들 수 없습니다. 그러나 전체 기능을 사용 하 여 만든 노트북 Vm에 계속 액세스 하 여 사용할 수 있습니다. 계산 인스턴스는 기존 노트북 Vm과 동일한 작업 영역에 만들 수 있습니다. 
 
 
 ## <a name="next-steps"></a>다음 단계

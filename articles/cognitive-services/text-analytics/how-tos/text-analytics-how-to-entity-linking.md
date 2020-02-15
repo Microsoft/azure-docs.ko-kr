@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 01/27/2019
+ms.date: 02/10/2020
 ms.author: aahi
-ms.openlocfilehash: 9aa00898c6a567d495ed0c66bcf7bd475067fa0d
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 607b65d6a6893901ce23cd48c277c14209128866
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76774132"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137963"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Text Analytics에서 명명된 엔터티 인식 사용 방법
 
@@ -44,46 +44,8 @@ NER (명명 된 엔터티 인식)는 텍스트에서 다양 한 엔터티를 식
 
 자세한 내용은 [언어 지원](../language-support.md#sentiment-analysis-key-phrase-extraction-and-named-entity-recognition) 을 참조 하세요.
 
-#### <a name="version-2tabversion-2"></a>[버전 2](#tab/version-2)
 
-### <a name="entity-types"></a>엔터티 형식
-
-> [!NOTE]
-> NER (명명 된 엔터티 인식) 버전 2는 다음 엔터티만 지원 합니다. NER v3은 공개 미리 보기 상태 이며 텍스트에서 인식 되는 엔터티의 수와 깊이를 크게 확장 합니다.   
-
-| 유형  | 하위 유형 | 예 |
-|:-----------   |:------------- |:---------|
-| 사용자        | 해당 없음\*         | "Jeff", "Bill Gates"     |
-| 위치      | 해당 없음\*         | “Redmond, Washington”, “Paris”  |
-| 조직  | 해당 없음\*         | “Microsoft”   |
-| 수량      | 수        | “6”, “six”     |
-| 수량      | 백분율    | “50%”, “fifty percent”|
-| 수량      | 서수       | “2nd”, “second”     |
-| 수량      | 연령           | "90 day old", "30 years old"    |
-| 수량      | 통화      | “$10.99”     |
-| 수량      | 치수     | “10 miles”, “40 cm”     |
-| 수량      | 온도   | “32 degrees”    |
-| DateTime      | 해당 없음\*         | “6:30PM February 4, 2012”      |
-| DateTime      | 날짜          | “May 2nd, 2017”, “05/02/2017”   |
-| DateTime      | 시간          | "8am", "8:00"  |
-| DateTime      | DateRange     | “May 2nd to May 5th”    |
-| DateTime      | TimeRange     | “6pm to 7pm”     |
-| DateTime      | 기간      | “1 minute and 45 seconds”   |
-| DateTime      | 설정           | “every Tuesday”     |
-| URL           | 해당 없음\*         | "https:\//www.bing.com"    |
-| 이메일         | 해당 없음\*         | "support@contoso.com" |
-| 미국 전화 번호  | 해당 없음\*         | (미국 전화 번호만 해당) "(312) 555-0176" |
-| IP 주소    | 해당 없음\*         | 10.0.0.100 |
-
-\* 입력 및 추출된 엔터티에 따라, 특정 엔터티에 `SubType`이 없을 수 있습니다.  나열 된 모든 지원 되는 엔터티 형식은 영어, 중국어 간체, 프랑스어, 독일어 및 스페인어 언어에 대해서만 사용할 수 있습니다.
-
-### <a name="request-endpoints"></a>요청 끝점
-
-명명 된 엔터티 인식 v2는 NER 및 엔터티 연결 요청에 대해 단일 끝점을 사용 합니다.
-
-`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/entities`
-
-#### <a name="version-3-public-previewtabversion-3"></a>[버전 3(공개 미리 보기)](#tab/version-3)
+#### <a name="version-30-previewtabversion-3"></a>[버전 3.0-미리 보기](#tab/version-3)
 
 ### <a name="entity-types"></a>엔터티 형식
 
@@ -110,6 +72,45 @@ NER
 
 [!INCLUDE [v3-model-versioning](../includes/model-versioning.md)]
 
+#### <a name="version-21tabversion-2"></a>[버전 2.1](#tab/version-2)
+
+### <a name="entity-types"></a>엔터티 형식
+
+> [!NOTE]
+> NER (명명 된 엔터티 인식) 버전 2는 다음 엔터티만 지원 합니다. NER v3은 공개 미리 보기 상태 이며 텍스트에서 인식 되는 엔터티의 수와 깊이를 크게 확장 합니다.   
+
+| 형식  | 하위 유형 | 예제 |
+|:-----------   |:------------- |:---------|
+| 사용자        | 해당 없음\*         | "Jeff", "Bill Gates"     |
+| 위치      | 해당 없음\*         | "Redmond, Washington", "Paris"  |
+| 조직  | 해당 없음\*         | "Microsoft"   |
+| 수량      | Number        | "6", "six"     |
+| 수량      | 백분율    | "50%", "fifty percent"|
+| 수량      | Ordinal       | "2nd", "second"     |
+| 수량      | 처리 기간           | "90 day old", "30 years old"    |
+| 수량      | 통화      | "$10.99"     |
+| 수량      | Dimension     | "10 miles", "40 cm"     |
+| 수량      | 온도   | "32 degrees"    |
+| DateTime      | 해당 없음\*         | "6:30PM February 4, 2012"      |
+| DateTime      | 날짜          | "May 2nd, 2017", "05/02/2017"   |
+| DateTime      | 시간          | "8am", "8:00"  |
+| DateTime      | DateRange     | "May 2nd to May 5th"    |
+| DateTime      | TimeRange     | "6pm to 7pm"     |
+| DateTime      | 지속 시간      | "1 minute and 45 seconds"   |
+| DateTime      | 설정           | "every Tuesday"     |
+| URL           | 해당 없음\*         | "https:\//www.bing.com"    |
+| Email         | 해당 없음\*         | "support@contoso.com" |
+| 미국 전화 번호  | 해당 없음\*         | (미국 전화 번호만 해당) "(312) 555-0176" |
+| IP 주소    | 해당 없음\*         | 10.0.0.100 |
+
+\* 입력 및 추출된 엔터티에 따라, 특정 엔터티에 `SubType`이 없을 수 있습니다.  나열 된 모든 지원 되는 엔터티 형식은 영어, 중국어 간체, 프랑스어, 독일어 및 스페인어 언어에 대해서만 사용할 수 있습니다.
+
+### <a name="request-endpoints"></a>요청 끝점
+
+명명 된 엔터티 인식 v2는 NER 및 엔터티 연결 요청에 대해 단일 끝점을 사용 합니다.
+
+`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/entities`
+
 ---
 
 ## <a name="sending-a-rest-api-request"></a>REST API 요청 보내기
@@ -124,17 +125,10 @@ ID, 텍스트, 언어 형식의 JSON 문서가 있어야 합니다.
 
 POST 요청을 만듭니다. 다음 링크에서 [Postman](text-analytics-how-to-call-api.md) 또는 **API 테스트 콘솔** 을 사용 하 여 신속 하 게 구조를 구성 하 고 보낼 수 있습니다. 
 
-[!INCLUDE [text-analytics-find-resource-information](../includes/find-azure-resource-info.md)]
+> [!NOTE]
+> Azure portal에서 Text Analytics 리소스에 대 한 키 및 끝점을 찾을 수 있습니다. 리소스의 **빠른 시작** 페이지의 **리소스 관리** 아래에 있습니다. 
 
-#### <a name="version-2tabversion-2"></a>[버전 2](#tab/version-2)
-
-[NER (명명 된 엔터티 인식) v2 참조](https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
-
-버전 2는 엔터티 링크 및 NER 요청에 대해 다음 끝점을 사용 합니다. 
-
-`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/entities`
-
-#### <a name="version-3tabversion-3"></a>[버전 3](#tab/version-3)
+#### <a name="version-30-previewtabversion-3"></a>[버전 3.0-미리 보기](#tab/version-3)
 
 [명명 된 엔터티 인식 v3 참조](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesRecognitionGeneral)
 
@@ -147,6 +141,14 @@ NER
 
 엔터티 연결
 * `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0-preview.1/entities/linking`
+
+#### <a name="version-21tabversion-2"></a>[버전 2.1](#tab/version-2)
+
+[NER (명명 된 엔터티 인식) v2 참조](https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
+
+버전 2는 엔터티 링크 및 NER 요청에 대해 다음 끝점을 사용 합니다. 
+
+`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/entities`
 
 ---
 
@@ -180,44 +182,8 @@ Text Analytics API는 상태를 저장하지 않습니다. 계정에 데이터�
 
 출력은 즉시 반환됩니다. JSON을 승인하는 애플리케이션으로 결과를 스트림하거나 로컬 시스템의 파일에 출력을 저장하고, 데이터를 정렬, 검색 및 조작할 수 있는 애플리케이션으로 가져올 수 있습니다.
 
-#### <a name="version-2tabversion-2"></a>[버전 2](#tab/version-2)
 
-### <a name="example-ner-v2-response"></a>예제 NER v2 응답
-```json
-{
-  "documents": [{
-    "id": "1",
-    "entities": [{
-      "name": "Seattle",
-      "matches": [{
-        "wikipediaScore": 0.15046201222847677,
-        "entityTypeScore": 0.80624294281005859,
-        "text": "Seattle",
-        "offset": 26,
-        "length": 7
-      }],
-      "wikipediaLanguage": "en",
-      "wikipediaId": "Seattle",
-      "wikipediaUrl": "https://en.wikipedia.org/wiki/Seattle",
-      "bingId": "5fbba6b8-85e1-4d41-9444-d9055436e473",
-      "type": "Location"
-    }, {
-      "name": "last week",
-      "matches": [{
-        "entityTypeScore": 0.8,
-        "text": "last week",
-        "offset": 34,
-        "length": 9
-      }],
-      "type": "DateTime",
-      "subType": "DateRange"
-    }]
-  }],
-  "errors": []
-}
-```
-
-#### <a name="version-3-public-previewtabversion-3"></a>[버전 3(공개 미리 보기)](#tab/version-3)
+#### <a name="version-30-previewtabversion-3"></a>[버전 3.0-미리 보기)](#tab/version-3)
 
 ### <a name="example-v3-responses"></a>V3 응답 예
 
@@ -271,6 +237,43 @@ Text Analytics API는 상태를 저장하지 않습니다. 계정에 데이터�
   }],
   "errors": [],
   "modelVersion": "2019-10-01"
+}
+```
+
+#### <a name="version-21tabversion-2"></a>[버전 2.1](#tab/version-2)
+
+### <a name="example-ner-v2-response"></a>예제 NER v2 응답
+```json
+{
+  "documents": [{
+    "id": "1",
+    "entities": [{
+      "name": "Seattle",
+      "matches": [{
+        "wikipediaScore": 0.15046201222847677,
+        "entityTypeScore": 0.80624294281005859,
+        "text": "Seattle",
+        "offset": 26,
+        "length": 7
+      }],
+      "wikipediaLanguage": "en",
+      "wikipediaId": "Seattle",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Seattle",
+      "bingId": "5fbba6b8-85e1-4d41-9444-d9055436e473",
+      "type": "Location"
+    }, {
+      "name": "last week",
+      "matches": [{
+        "entityTypeScore": 0.8,
+        "text": "last week",
+        "offset": 34,
+        "length": 9
+      }],
+      "type": "DateTime",
+      "subType": "DateRange"
+    }]
+  }],
+  "errors": []
 }
 ```
 

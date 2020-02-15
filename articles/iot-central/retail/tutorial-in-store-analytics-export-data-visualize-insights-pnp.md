@@ -11,31 +11,31 @@ ms.custom:
 ms.author: dobett
 author: dominicbetts
 ms.date: 11/12/2019
-ms.openlocfilehash: b85dd8d899a7e5d7d9f9d41ad7e2872249ee29c5
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 9dcb185ab8375d46c75a12e6adaeeae2358c13ac
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74702010"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77022089"
 ---
 # <a name="tutorial-export-data-from-azure-iot-central-and-visualize-insights-in-power-bi"></a>자습서: Azure IoT Central에서 데이터 내보내기 및 Power BI에서 인사이트 시각화
 
-[!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
+
 
 이전 두 자습서에서 **스토어 내 분석 - 체크 아웃** 애플리케이션 템플릿을 사용하여 IoT Central 애플리케이션을 만들고 사용자 지정했습니다. 이 자습서에서는 디바이스에서 수집된 원격 분석을 내보내도록 IoT Central 애플리케이션을 구성합니다. 그런 다음, Power BI를 사용하여 스토어 관리자가 원격 분석에서 파생된 인사이트를 시각화할 수 있는 사용자 지정 대시보드를 만듭니다.
 
-이 자습서에서는 다음 방법에 대해 알아봅니다.
+이 자습서에서는 다음 작업 방법을 배웁니다.
 > [!div class="checklist"]
 > * 원격 분석을 이벤트 허브로 내보내도록 IoT Central 애플리케이션을 구성합니다.
 > * Logic Apps를 사용하여 데이터를 이벤트 허브에서 Power BI 스트리밍 데이터 세트로 보냅니다.
 > * 스트리밍 데이터 세트의 데이터를 시각화하는 Power BI 대시보드를 만듭니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서를 완료하려면 다음이 필요합니다.
 
 * 이전의 두 자습서를 완료하려면 [Azure IoT Central에서 스토어 내 분석 애플리케이션을 만들고](./tutorial-in-store-analytics-create-app-pnp.md), [Azure IoT Central에서 운영자 대시보드를 사용자 지정하고 디바이스를 관리합니다](./tutorial-in-store-analytics-customize-dashboard-pnp.md).
-* Azure 구독. Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
+* Azure 구독 Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 * Power BI 계정 Power BI 계정이 없는 경우 시작하기 전에 [Power BI Pro 평가판](https://app.powerbi.com/signupredirect?pbi_source=web)에 가입합니다.
 
 ## <a name="create-a-resource-group"></a>리소스 그룹 만들기
@@ -57,7 +57,7 @@ ms.locfileid: "74702010"
 원격 분석을 내보내도록 소매점 모니터링 애플리케이션을 구성하려면 먼저 내보낸 데이터를 받을 이벤트 허브를 만들어야 합니다. 다음 단계에서는 이벤트 허브를 만드는 방법을 보여 줍니다.
 
 1. Azure Portal 화면의 왼쪽 위에서 **리소스 만들기**를 선택합니다.
-1. **Marketplace 검색**에서_Event Hubs_를 입력한 다음, **Enter** 키를 누릅니다.
+1. **Marketplace 검색**에서_Event Hubs_를 입력한 다음, **Enter**를 누릅니다.
 1. **Event Hubs** 페이지에서 **만들기**를 선택합니다.
 1. **네임스페이스 만들기** 페이지에서 다음 단계를 수행합니다.
     * 고유한 네임스페이스 이름(예: _yourname-Retail-store-analysis_)을 입력합니다. 그러면 시스템에서 사용 가능한 이름인지 확인합니다.
@@ -66,7 +66,7 @@ ms.locfileid: "74702010"
     * **retail-store-analysis** 리소스 그룹을 선택합니다.
     * IoT Central 애플리케이션에 사용한 것과 동일한 위치를 선택합니다.
     * **만들기**를 선택합니다. 시스템에서 리소스를 프로비저닝할 때까지 몇 분 정도 기다려야 할 수도 있습니다.
-1. 포털에서 **retail-store-analysis** 리소스 그룹으로 이동합니다. 배포가 완료될 때까지 기다립니다. **새로 고침**을 선택하여 배포 상태를 업데이트 해야 할 수도 있습니다. 또한 **알림**에서 이벤트 허브 네임스페이스 만들기의 상태를 확인할 수 있습니다.
+1. 포털에서 **retail-store-analysis** 리소스 그룹으로 이동합니다. 배포가 완료될 때가지 기다립니다. **새로 고침**을 선택하여 배포 상태를 업데이트 해야 할 수도 있습니다. 또한 **알림**에서 이벤트 허브 네임스페이스 만들기의 상태를 확인할 수 있습니다.
 1. **retail-store-analysis** 리소스 그룹에서 **Event Hubs 네임스페이스**를 선택합니다. 포털에서 **Event Hubs 네임스페이스** 홈페이지가 표시됩니다.
 
 이제 **Event Hubs 네임스페이스**가 있으므로 IoT Central 애플리케이션에서 사용할 **Event Hub**를 만들 수 있습니다.
@@ -110,7 +110,7 @@ Power BI 대시보드에는 소매점 모니터링 애플리케이션의 데이�
 
     | 값 이름  | 값 형식 |
     | ----------- | ---------- |
-    | 타임 스탬프   | DateTime   |
+    | 타임스탬프   | DateTime   |
     | 습도    | Number     |
     | 온도 | Number     |
 
@@ -133,7 +133,7 @@ Power BI 대시보드에는 소매점 모니터링 애플리케이션의 데이�
 
     | 값 이름     | 값 형식 |
     | -------------- | ---------- |
-    | 타임 스탬프      | DateTime   |
+    | 타임스탬프      | DateTime   |
     | 큐 길이 1 | Number     |
     | 큐 길이 2 | Number     |
     | 드웰 시간 1   | Number     |
@@ -161,7 +161,7 @@ Power BI 대시보드에는 소매점 모니터링 애플리케이션의 데이�
 다음 단계에서는 Azure Portal에서 논리 앱을 만드는 방법을 보여 줍니다.
 
 1. [Azure Portal](https://portal.azure.com)에 로그인하고, 화면의 왼쪽 위에서 **리소스 만들기**를 선택합니다.
-1. **Marketplace 검색**에서 _Logic App_을 입력한 다음, **Enter** 키를 누릅니다.
+1. **Marketplace 검색**에서 _Logic App_을 입력한 다음, **Enter**를 누릅니다.
 1. **Logic App** 페이지에서 **만들기**를 선택합니다.
 1. **Logic App 만들기** 페이지에서 다음을 수행합니다.
     * 고유한 논리 앱 이름(예: _yourname-retail-store-analysis_)을 입력합니다.
@@ -442,7 +442,7 @@ Power BI 대시보드에는 소매점 모니터링 애플리케이션의 데이�
 | ------- | -------- | -------- | -------- | -------- |
 | 데이터 세트 | 영역 1 센서 | 영역 1 센서 | 영역 2 센서 | 영역 2 센서 |
 | 시각화 형식 | 꺾은선형 차트 | 꺾은선형 차트 | 꺾은선형 차트 | 꺾은선형 차트 |
-| 축 | 타임 스탬프 | 타임 스탬프 | 타임 스탬프 | 타임 스탬프 |
+| 축 | 타임스탬프 | 타임스탬프 | 타임스탬프 | 타임스탬프 |
 | 값 | 온도 | 습도 | 온도 | 습도 |
 | 기간 | 60분 | 60분 | 60분 | 60분 |
 | 제목 | 온도(1시간) | 습도(1시간) | 온도(1시간) | 습도(1시간) |
@@ -476,7 +476,7 @@ Power BI 대시보드에는 소매점 모니터링 애플리케이션의 데이�
 | ------- | ------- | ------- | ------- | ------- |
 | 데이터 세트 | 선점 센서 | 선점 센서 | 선점 센서 | 선점 센서 |
 | 시각화 형식 | 묶은 세로 막대형 차트 | 묶은 세로 막대형 차트 | 계기 | 계기 |
-| 축    | 타임 스탬프 | 타임 스탬프 | 해당 없음 | 해당 없음 |
+| 축    | 타임스탬프 | 타임스탬프 | 해당 없음 | 해당 없음 |
 | 값 | 드웰 시간 1 | 드웰 시간 2 | 큐 길이 1 | 큐 길이 2 |
 | 기간 | 60분 | 60분 |  해당 없음 | 해당 없음 |
 | 제목 | 드웰 시간 | 드웰 시간 | 큐 길이 | 큐 길이 |

@@ -7,12 +7,12 @@ ms.reviewer: tzgitlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 08/30/2019
-ms.openlocfilehash: 4f9804ed0e7d6c83a4f6fc732f836fcecce1c2e7
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: cc152460be777c30d79f783b9acfa846a4c73a72
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74548334"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77188015"
 ---
 # <a name="streaming-ingestion-preview"></a>스트리밍 수집 (미리 보기)
 
@@ -23,9 +23,9 @@ ms.locfileid: "74548334"
 > [!NOTE]
 > 스트리밍 수집은 다음 기능을 지원 하지 않습니다.
 > * [데이터베이스 커서](/azure/kusto/management/databasecursor).
-> * [데이터 매핑](/azure/kusto/management/mappings). [미리 만든](/azure/kusto/management/tables#create-ingestion-mapping) 데이터 매핑만 지원 됩니다. 
+> * [데이터 매핑](/azure/kusto/management/mappings). [미리 만든](/azure/kusto/management/create-ingestion-mapping-command) 데이터 매핑만 지원 됩니다. 
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Azure 구독이 아직 없는 경우 시작하기 전에 [Azure 체험 계정](https://azure.microsoft.com/free/)을 만듭니다.
 * [웹 UI](https://dataexplorer.azure.com/)에 로그인 합니다.

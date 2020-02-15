@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: rogarana
 ms.service: virtual-machines-linux
 ms.subservice: disks
-ms.openlocfilehash: 28c971993721744245a5d3d57f1f5b68df58b492
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 1d203fd0c6777eee96311f45f4d5dfb8728ff431
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76841185"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77210604"
 ---
 # <a name="server-side-encryption-of-azure-managed-disks"></a>Azure managed disks의 서버 쪽 암호화
 
@@ -38,7 +38,7 @@ Azure managed disks는 클라우드로 데이터를 유지할 때 기본적으�
 
 다음 다이어그램에서는 관리 디스크에서 Azure Active Directory 및 Azure Key Vault를 사용 하 여 고객이 관리 하는 키를 사용 하 여 요청 하는 방법을 보여 줍니다.
 
-![관리 디스크 고객 관리 키 워크플로](media/disk-storage-encryption/customer-managed-keys-sse-managed-disks-workflow.png)
+![관리 되는 디스크 및 고객이 관리 하는 키 워크플로. 관리자는 Azure Key Vault 만든 다음 디스크 암호화 집합을 만들고 디스크 암호화 집합을 설정 합니다. 집합은 디스크가 Azure AD를 사용 하 여 인증할 수 있도록 하는 VM에 연결 되어 있습니다.](media/disk-storage-encryption/customer-managed-keys-sse-managed-disks-workflow.png)
 
 
 다음 목록에서는 다이어그램에 대해 보다 자세히 설명 합니다.

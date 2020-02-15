@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/10/2019
-ms.openlocfilehash: 6fe7dfaccc3cf1c3fbe4a9ea42578c56f910ea36
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 71afbf09d563a43469689132dfce071b40d694b6
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75435763"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162670"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight"></a>온-프레미스 Apache Hadoop 클러스터를 Azure HDInsight로 마이그레이션
 
@@ -74,7 +74,7 @@ keytool -list -v -keystore /path/to/jre/lib/security/cacerts
 
 - [Azure HDInsight 클러스터에서 Azure Storage 사용](../hdinsight-hadoop-use-blob-storage.md)
 - [Standard storage 계정에 대 한 확장성 목표](../../storage/common/scalability-targets-standard-account.md)
-- [Blob 저장소에 대 한 확장성 및 성능 목표](../../storage/blobs/scalability-targets.md)
+- [Blob 스토리지의 확장성 및 성능 목표](../../storage/blobs/scalability-targets.md)
 - [Microsoft Azure Storage 성능 및 확장성 검사 목록](../../storage/common/storage-performance-checklist.md)
 - [Microsoft Azure Storage 모니터링, 진단 및 문제 해결](../../storage/common/storage-monitoring-diagnosing-troubleshooting.md)
 - [Azure Portal에서 스토리지 계정 모니터링](../../storage/common/storage-monitor-storage-account.md)
@@ -198,7 +198,7 @@ Azure Storage에 쓴 모든 데이터는  [SSE(스토리지 서비스 암호화
 - [LRS(로컬 중복 스토리지)](../../storage/common/storage-redundancy-lrs.md)
 - [ZRS(영역 중복 스토리지)](../../storage/common/storage-redundancy-zrs.md)
 - [GRS(지역 중복 스토리지)](../../storage/common/storage-redundancy-grs.md)
-- [RA-GRS(읽기 액세스 지역 중복 스토리지)](../../storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage)
+- [RA-GRS(읽기 액세스 지역 중복 스토리지)](../../storage/common/storage-redundancy.md)
 
 Azure Data Lake Storage는 LRS(로컬 중복 스토리지)를 제공하지만 재해 복구 계획의 요구에 맞게 정렬된 주파수를 사용하여 다른 지역의 다른 Data Lake Storage 계정에 중요한 데이터를 복사해야 합니다.  [Adlcopy](../../data-lake-store/data-lake-store-copy-data-azure-storage-blob.md), [distcp](https://hadoop.apache.org/docs/current/hadoop-distcp/DistCp.html), [Azure PowerShell](../../data-lake-store/data-lake-store-get-started-powershell.md)또는 [Azure Data Factory](../../data-factory/connector-azure-data-lake-store.md)를 비롯 한 다양 한 방법으로 데이터를 복사할 수 있습니다. 실수로 인 한 삭제를 방지 하기 위해 Data Lake Storage 계정에 대 한 액세스 정책을 적용 하는 것도 좋습니다.
 

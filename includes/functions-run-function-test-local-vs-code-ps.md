@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 01/16/2020
 ms.author: glenga
-ms.openlocfilehash: c54145cf48912d3911a39e681d85cb6907be8e52
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 916aa2552e5dd004ec767df98ce7c78f7320efd0
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76842319"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76964139"
 ---
 ## <a name="run-the-function-locally"></a>로컬에서 함수 실행
 
@@ -28,11 +28,17 @@ Azure Functions Core Tools는 Visual Studio Code와 통합되어 사용자가 Az
     Hello PowerShell
     ```
 
-    또한 브라우저에서 GET 요청을 실행할 수도 있습니다.
+    다음 URL의 브라우저에서 GET 요청을 실행할 수도 있습니다.
 
-    `name` 매개 변수를 쿼리 매개 변수로 또는 본문에 전달하지 않고 HttpTrigger 엔드포인트를 호출하면 이 함수는 [HttpStatusCode]::BadRequest 오류를 반환합니다. run.ps1의 코드를 검토하면 의도적으로 이 오류가 발생하는 것을 확인할 수 있습니다.
+    <http://localhost:7071/api/HttpExample?name=PowerShell>
 
-1. 디버깅을 중지하려면 Shift+F5를 누릅니다.
+    `name` 매개 변수를 쿼리 매개 변수로 또는 본문에 전달하지 않고 HttpTrigger 엔드포인트을 호출하는 경우 이 함수는 `BadRequest` 오류를 반환합니다. run.ps1의 코드를 검토하면 의도적으로 이 오류가 발생하는 것을 확인할 수 있습니다.
+
+1. 요청에 대한 정보는 **터미널** 패널에 표시됩니다.
+
+    ![터미널 패널에서 함수 실행](./media/functions-run-function-test-local-vs-code-ps/function-execution-terminal.png)
+
+1. 디버깅을 중지하려면 Ctrl + C를 눌러 Core Tools를 중지합니다.
 
 함수가 로컬 컴퓨터에서 제대로 실행되는지 확인한 후에 해당 프로젝트를 Azure에 게시해야 합니다.
 

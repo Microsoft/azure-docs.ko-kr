@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/28/2020
+ms.date: 02/10/2020
 ms.author: mimart
 ms.reviewer: kasimpso
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f1ed80ad87d81c2ec1bdfe50e9cd4556f141507b
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: c91b9ffc9e3487e492c91cb0f5825d0b725f9410
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76907475"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120090"
 ---
 # <a name="create-collections-on-the-my-apps-portal"></a>내 앱 포털에서 컬렉션 만들기
 
@@ -30,7 +30,7 @@ ms.locfileid: "76907475"
 > [!NOTE]
 > 이 문서에서는 관리자가 컬렉션을 사용 하도록 설정 하 고 만드는 방법을 설명 합니다. 내 앱 포털 및 컬렉션을 사용 하는 방법에 대 한 최종 사용자 정보는 [컬렉션 액세스 및 사용](https://docs.microsoft.com/azure/active-directory/user-help/my-applications-portal-workspaces)을 참조 하세요.
 
-## <a name="enable-my-apps-preview-features"></a>내 앱 미리 보기 기능 사용
+## <a name="enable-the-latest-my-apps-features"></a>최신 내 앱 기능 사용
 
 1. [**Azure Portal**](https://portal.azure.com/) 를 열고 사용자 관리자 또는 전역 관리자 권한으로 로그인 합니다.
 
@@ -39,8 +39,8 @@ ms.locfileid: "76907475"
 3. **사용자 기능**미리 보기에서 **사용자 기능 미리 보기 설정 관리**를 선택 합니다.
 
 4. **사용자가 내 앱의 미리 보기 기능을 사용할 수 있음**에서 다음 옵션 중 하나를 선택 합니다.
-   * **선택** -특정 그룹의 미리 보기 기능을 사용 하도록 설정 합니다. **그룹 선택** 옵션을 사용 하 여 미리 보기 기능을 사용 하도록 설정할 그룹을 선택할 수 있습니다.  
-   * **모두** -모든 사용자에 대해 미리 보기 기능을 사용 하도록 설정 합니다.
+   * **Selected** -특정 그룹에 대해 기능을 사용 하도록 설정 합니다. **그룹 선택** 옵션을 사용 하 여 기능을 사용 하도록 설정할 그룹을 선택할 수 있습니다.  
+   * **모두** -모든 사용자에 대해 기능을 사용 하도록 설정 합니다.
 
 > [!NOTE]
 > 사용자는 내 앱 포털을 열기 위해 `https://myapps.microsoft.com/contoso.com`와 같은 조직에 대 한 사용자 지정 링크 또는 링크 `https://myapps.microsoft.com` 사용할 수 있습니다. 새 내 앱 환경을 사용 하도록 설정 하 고 나면 **업데이트 된 내 응용 프로그램 환경을 사용할 수** 있습니다. 배너는 내 앱 페이지의 맨 위에 표시 되 고 사용자는 **체험을 선택 하** 여 새 환경을 볼 수 있습니다. 새 환경 사용을 중지 하기 위해 사용자는 페이지 맨 위에 있는 **새 환경 그대로** 배너에서 **예** 를 선택할 수 있습니다.

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/7/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: dfb1d71a02ae3bf06a5f2d8a93bcb3ac83433a86
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 361ee5179b20d9488bb477a4e3c9fc0f0e6f266e
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75460352"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190656"
 ---
 # <a name="develop-for-azure-files-with-net"></a>.NET을 사용하여 Azure Files 개발
 
@@ -36,10 +36,10 @@ Azure Files에 대 한 자세한 내용은 [Azure Files 항목](storage-files-in
 
 Azure Files는 클라이언트 애플리케이션에 SMB(서버 메시지 블록) 및 REST라는 광범위한 두 가지 방법을 제공합니다. .NET 내에서 `System.IO` 및 `WindowsAzure.Storage` Api는 이러한 접근 방식을 추상화 합니다.
 
-API | 사용하는 경우 | 메모
+API | 사용 시기 | 메모
 ----|-------------|------
 [System.IO](https://docs.microsoft.com/dotnet/api/system.io) | 사용자 애플리케이션의 경우: <ul><li>SMB를 사용 하 여 파일을 읽고 써야 합니다.</li><li>포트 445를 통해 Azure Files 계정에 대한 액세스 권한이 있는 디바이스에서 실행됩니다.</li><li>파일 공유의 관리 설정을 관리할 필요가 없습니다.</li></ul> | SMB를 통해 Azure Files에서 구현 되는 파일 i/o는 일반적으로 네트워크 파일 공유 또는 로컬 저장 장치를 사용 하는 i/o와 동일 합니다. 파일 i/o를 비롯 한 .NET의 다양 한 기능에 대 한 소개는 [콘솔 응용 프로그램](https://docs.microsoft.com/dotnet/csharp/tutorials/console-teleprompter) 자습서를 참조 하십시오.
-[Microsoft.Azure.Storage.File](https://docs.microsoft.com/dotnet/api/overview/azure/storage#client-library) | 사용자 애플리케이션의 경우: <ul><li>방화벽 또는 ISP 제약 조건으로 인해 445 포트에서 SMB를 사용 하 여 Azure Files에 액세스할 수 없음</li><li>파일 공유 할당량을 설정하거나 공유 액세스 서명을 만들 수 있는 기능 등 관리 기능이 필요합니다.</li></ul> | 이 문서에서는 SMB 및 파일 공유 관리 대신 REST를 사용 하 여 파일 i/o에 대 한 `Microsoft.Azure.Storage.File`를 사용 하는 방법을 보여 줍니다.
+[Microsoft. Azure. Storage. 파일](/dotnet/api/overview/azure/storage?view=azure-dotnet#version-11x) | 사용자 애플리케이션의 경우: <ul><li>방화벽 또는 ISP 제약 조건으로 인해 445 포트에서 SMB를 사용 하 여 Azure Files에 액세스할 수 없음</li><li>파일 공유 할당량을 설정하거나 공유 액세스 서명을 만들 수 있는 기능 등 관리 기능이 필요합니다.</li></ul> | 이 문서에서는 SMB 및 파일 공유 관리 대신 REST를 사용 하 여 파일 i/o에 대 한 `Microsoft.Azure.Storage.File`를 사용 하는 방법을 보여 줍니다.
 
 ## <a name="create-the-console-application-and-obtain-the-assembly"></a>콘솔 애플리케이션 만들기 및 어셈블리 가져오기
 
@@ -79,7 +79,7 @@ NuGet을 사용하여 패키지를 모두 가져올 수 있습니다. 다음 단
 1. 다음 패키지를 검색하고 설치합니다.
 
    * **Microsoft. Azure. Storage. Common**
-   * **Microsoft.Azure.Storage.File**
+   * **Microsoft. Azure. Storage. 파일**
    * **ConfigurationManager**
 
 ## <a name="save-your-storage-account-credentials-to-the-appconfig-file"></a>저장소 계정 자격 증명을 App.config 파일에 저장 합니다.
@@ -497,7 +497,7 @@ Azure Files에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
 ### <a name="reference"></a>참조
 
-* [.NET용 Azure Storage API](/dotnet/api/overview/azure/storage)
+* [.NET 용 Azure Storage Api](/dotnet/api/overview/azure/storage)
 * [파일 서비스 REST API](/rest/api/storageservices/File-Service-REST-API)
 
 ### <a name="blog-posts"></a>블로그 게시물

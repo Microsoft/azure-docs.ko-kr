@@ -255,8 +255,6 @@
         - name: 클라우드 인코더와 함께 사용할 온-프레미스 인코더 구성
           href: media-services-live-encoders-overview.md
           items:
-            - name: FMLE 인코더
-              href: media-services-configure-fmle-live-encoder.md
             - name: Haivision KB 인코더
               href: media-services-configure-kb-live-encoder.md
             - name: NewTek TriCaster 인코더
@@ -472,7 +470,7 @@
       href: media-services-community.md
     - name: Azure 로드맵
       href: 'https://azure.microsoft.com/roadmap/?category=web-mobile'
-    - name: 가격
+    - name: 가격 책정
       href: 'https://azure.microsoft.com/pricing/details/media-services/'
     - name: 요금 계산기
       href: 'https://azure.microsoft.com/pricing/calculator/'

@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 01/21/2020
 ms.author: banders
 ms.openlocfilehash: 5dbf885848d9866a184caee1da6b9000a26f83a9
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "76314138"
 ---
 # <a name="azure-spending-limit"></a>Azure 지출 한도
@@ -43,17 +43,17 @@ Azure 체험 계정에 가입하고 지출 한도에 도달하는 경우 지출 
 지출 한도를 제거하려면 다음 단계를 수행합니다.
 
 1. [Azure Portal](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade)에 로그인합니다.
-1. **구독**으로 이동 합니다.
-1. 구독을 선택합니다. 예를 들어 *Visual Studio Enterprise*합니다.
-1. 페이지 맨 위에서 **관리**를 선택 합니다. https://account.azure.com/ 으로 리디렉션됩니다. 페이지의 오른쪽에서 **지출 한도 제거**를 선택 합니다.  
-  지출 한도 제거를 보여 주는 ![예제](./media/spending-limit/account-azure-com-spending-limit.png)
-1. Azure Portal으로 다시 리디렉션됩니다. 적절 한 옵션을 선택한 다음 지불 방법을 선택 합니다. **마침**을 선택합니다.  
-  지출 한도를 제거 하는 옵션을 선택 ![](./media/spending-limit/remove-spending-limit.png)
+1. **구독**으로 이동합니다.
+1. 구독을 선택합니다. 예를 들어 *Visual Studio Enterprise*입니다.
+1. 페이지 맨 위에서 **관리**를 선택합니다. https://account.azure.com/ 으로 리디렉션되었습니다. 페이지 오른쪽에서 **지출 한도 제거**를 선택합니다.  
+  ![지출 한도 제거를 보여주는 예제](./media/spending-limit/account-azure-com-spending-limit.png)
+1. Azure Portal로 다시 리디렉션됩니다. 적절한 옵션을 선택한 다음, 결제 방법을 선택합니다. **마침**을 선택합니다.  
+  ![지출 한도 제거를 위한 옵션 선택](./media/spending-limit/remove-spending-limit.png)
 
 | 옵션 | 영향 |
 | --- | --- |
-| 무기한 지출 한도 제거 | 다음 청구 기간이 시작될 때 자동으로 켜지 않고 지출 한도를 제거합니다. |
-| 현재 청구 기간 동안 지출 한도 제거 | 다음 청구 기간이 시작될 때 자동으로 다시 켜지도록 지출 한도를 제거합니다. |
+| 지출 한도 무기한 제거 | 다음 청구 기간 시작 시 자동으로 설정되지 않도록 지출 한도를 제거합니다. |
+| 현재 청구 기간에 대한 지출 한도 제거 | 다음 청구 기간 시작 시 자동으로 다시 설정되도록 지출 한도를 제거합니다. |
 
 ## <a name="why-you-might-want-to-remove-the-spending-limit"></a>지출 한도를 제거하려는 이유는 무엇입니까?
 
@@ -68,7 +68,7 @@ Azure 체험 계정에 가입하고 지출 한도에 도달하는 경우 지출 
 이 기능은 여러 달의 크레딧을 포함하는 구독 유형에 대해 지출 한도가 무기한으로 제거된 경우에만 사용할 수 있습니다. 이 기능을 사용하여 다음 청구 기간이 시작될 때 자동으로 지출 한도를 설정할 수 있습니다.
 
 1. [계정 센터](https://account.windowsazure.com/Subscriptions)에 로그인합니다.
-1. 노랑 배너를 선택 하 여 지출 한도 옵션을 변경 합니다.
+1. 지출 한도 옵션을 변경하려면 노란색 배너를 선택합니다.
 1. **다음 청구 기간에서 지출 한도 설정\<청구 기간의 시작 날짜\>** 선택
 
 ## <a name="custom-spending-limit"></a>사용자 지정 지출 한도
@@ -81,7 +81,7 @@ Azure 체험 계정에 가입하고 지출 한도에 도달하는 경우 지출 
 
 ![Marketplace 구매 경고](./media/spending-limit/marketplace-warning01.png)
 
-## <a name="need-help-contact-us"></a>도움이 필요하세요? 문의하세요.
+## <a name="need-help-contact-us"></a>도움 필요 시 문의하세요.
 
 질문이 있거나 도움이 필요한 경우 [지원 요청을 만드세요](https://go.microsoft.com/fwlink/?linkid=2083458).
 

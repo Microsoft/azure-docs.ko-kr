@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 4/25/2019
 ms.author: victorh
-ms.openlocfilehash: 76807c8ed10e30c554b6aa06ec096c830a86e36e
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 5633dd7b72f4de22cd34b7d093e8ec4d9cb411f1
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73571990"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137694"
 ---
 # <a name="ssl-termination-with-key-vault-certificates"></a>Key Vault 인증서를 사용 하 여 SSL 종료
 
@@ -33,6 +33,9 @@ Key Vault와 Application Gateway 통합 하면 다음과 같은 여러 이점이
 - 키 자격 증명 모음에 저장 된 인증서의 자동 갱신을 지원 합니다.
 
 Application Gateway는 현재 소프트웨어 유효성 검사 인증서만 지원 합니다. HSM (하드웨어 보안 모듈)-유효성이 검사 된 인증서는 지원 되지 않습니다. Application Gateway Key Vault 인증서를 사용 하도록 구성 된 경우 해당 인스턴스는 Key Vault에서 인증서를 검색 하 여 SSL 종료를 위해 로컬로 설치 합니다. 또한 인스턴스는 갱신 된 버전의 인증서 (있는 경우)를 검색 하기 위해 24 시간 간격으로 Key Vault를 폴링합니다. 업데이트 된 인증서가 있는 경우 현재 HTTPS 수신기와 연결 된 SSL 인증서가 자동으로 순환 됩니다.
+
+> [!NOTE]
+> Azure Portal는 비밀이 아닌 KeyVault 인증서만 지원 합니다. Application Gateway는 여전히 KeyVault의 비밀을 참조할 수 있지만 PowerShell, CLI, API, ARM 템플릿 등과 같은 비 포털 리소스를 통해서만 지원 됩니다. 
 
 ## <a name="how-integration-works"></a>통합 작동 방법
 

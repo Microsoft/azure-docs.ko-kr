@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 12/04/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: ede43e3ed939083e7b5ff94899d12f6f4795a880
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: d3ee211298598d78f423d88fd4df1c58ed4bfa29
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75941489"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157451"
 ---
 # <a name="acquire-a-token-from-azure-ad-for-authorizing-requests-from-a-client-application"></a>클라이언트 응용 프로그램의 요청에 대 한 권한 부여를 위해 Azure AD에서 토큰 획득
 
@@ -202,7 +202,7 @@ public async Task<IActionResult> Blob()
 }
 ```
 
-동의란 사용자가 자신을 대신해 보호되는 리소스에 액세스하기 위해 애플리케이션에 권한을 부여하는 프로세스를 말합니다. Microsoft id 플랫폼 2.0은 증분 동의를 지원 합니다. 즉, 보안 주체가 처음에는 최소 권한 집합을 요청 하 고 필요에 따라 시간에 따라 사용 권한을 추가할 수 있습니다. 코드에서 액세스 토큰을 요청 하는 경우 `scope` 매개 변수에서 지정 된 시간에 앱에 필요한 사용 권한 범위를 지정 합니다. 증분 승인에 대 한 자세한 내용은 [Microsoft identity platform (v2.0)로 업데이트 하는 이유에](../../active-directory/develop/azure-ad-endpoint-comparison.md#incremental-and-dynamic-consent)대 한 **증분 및 동적 동의** 섹션을 참조 하십시오.
+동의란 사용자가 자신을 대신해 보호되는 리소스에 액세스하기 위해 애플리케이션에 권한을 부여하는 프로세스를 말합니다. Microsoft id 플랫폼 2.0은 증분 동의를 지원 합니다. 즉, 보안 주체가 처음에는 최소 권한 집합을 요청 하 고 필요에 따라 시간에 따라 사용 권한을 추가할 수 있습니다. 코드에서 액세스 토큰을 요청 하는 경우 `scope` 매개 변수에서 지정 된 시간에 앱에 필요한 사용 권한 범위를 지정 합니다. 증분 승인에 대 한 자세한 내용은 [Microsoft identity platform (v2.0)로 업데이트 하는 이유에](../../active-directory/azuread-dev/azure-ad-endpoint-comparison.md#incremental-and-dynamic-consent)대 한 **증분 및 동적 동의** 섹션을 참조 하십시오.
 
 다음 메서드는 증분 동의를 요청 하기 위한 인증 속성을 생성 합니다.
 

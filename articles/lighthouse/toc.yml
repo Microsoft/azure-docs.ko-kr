@@ -44,6 +44,9 @@
     - name: 고객 보기 및 관리
       displayName: my customers
       href: ./how-to/view-manage-customers.md
+    - name: 대규모로 Azure Monitor 로그 사용
+      displayName: 'log, analytics, analyze, activity'
+      href: ./how-to/monitor-at-scale.md
     - name: Azure Policy 통합
       items:
         - name: 규모에 맞는 정책 배포
@@ -60,7 +63,7 @@
         - name: 서비스 공급자 작업 보기
           displayName: 'monitor, log'
           href: ./how-to/view-service-provider-activity.md
-- name: 참고 자료
+- name: 참조
   items:
     - name: Azure CLI
       href: 'https://docs.microsoft.com/cli/azure/managedservices?view=azure-cli-latest'

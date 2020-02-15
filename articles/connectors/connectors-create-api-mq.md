@@ -3,18 +3,18 @@ title: IBM MQ server에 연결
 description: Azure 또는 온-프레미스 IBM MQ 서버를 사용 하 여 메시지를 보내고 검색 하 고 Azure Logic Apps
 services: logic-apps
 ms.suite: integration
-author: valrobb
-ms.author: valthom
-ms.reviewer: chrishou, logicappspm
+author: ChristopherHouser
+ms.author: chrishou
+ms.reviewer: valthom, logicappspm
 ms.topic: article
 ms.date: 06/19/2019
 tags: connectors
-ms.openlocfilehash: ef9e91b526055ece58ce283572deb98cff951653
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 489f53a4f4c1c0d5bd782f42a9daf73217234793
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74789582"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77118057"
 ---
 # <a name="connect-to-an-ibm-mq-server-from-azure-logic-apps"></a>Azure Logic Apps에서 IBM MQ 서버에 연결
 
@@ -28,7 +28,7 @@ IBM MQ 커넥터에는 이러한 작업이 포함 되지만 트리거는 제공 
 - 메시지 일괄 처리를 받고 IBM MQ 서버에서 메시지 삭제
 - IBM MQ 서버에 단일 메시지 보내기
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 * 온-프레미스 MQ 서버를 사용 하는 경우 네트워크 내의 서버에 [온-프레미스 데이터 게이트웨이를 설치](../logic-apps/logic-apps-gateway-install.md) 합니다. MQ 커넥터가 작동 하려면 온-프레미스 데이터 게이트웨이를 설치한 서버에 .NET Framework 4.6도 설치 되어 있어야 합니다. 또한 Azure에서 온-프레미스 데이터 게이트웨이에 대 한 리소스를 만들어야 합니다. 자세한 내용은 [data gateway 연결 설정](../logic-apps/logic-apps-gateway-connection.md)을 참조 하세요.
 

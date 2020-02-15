@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 01/10/2020
 ms.custom: mvc, devcenter
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 0540c7b01d693975f34515c7d13f0477ac74d4a1
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 26313c68305f4d7e6411d31fa12366442ce4bd38
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76842259"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76964144"
 ---
 # <a name="quickstart-create-an-azure-functions-project-using-visual-studio-code"></a>빠른 시작: Visual Studio Code를 사용하여 Azure Functions 프로젝트 만들기
 
@@ -18,31 +18,39 @@ ms.locfileid: "76842259"
 
 이 문서의 [CLI 기반 버전](functions-create-first-azure-function-azure-cli.md)도 있습니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="configure-your-environment"></a>환경 구성
 
-+ [지원되는 플랫폼](https://code.visualstudio.com/docs/supporting/requirements#_platforms) 중 하나인 [Visual Studio Code](https://code.visualstudio.com/). 
-::: zone pivot="programming-language-csharp"
-+ Visual Studio Code용 [C# 확장](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).
-::: zone-end
-::: zone pivot="programming-language-javascript,programming-language-typescript"
-+ [Node.js](https://nodejs.org/), 활성 LTS 및 유지 관리 LTS 버전(8.11.1 및 10.14.1 권장).
-::: zone-end
+시작하기 전에 다음 요구 사항을 갖추었는지 확인합니다.
+
++ 활성 구독이 있는 Azure 계정. [체험 계정을 만듭니다](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+
+::: zone pivot="programming-language-csharp,programming-language-powershell,programming-language-python"  
++ npm용 Windows에 필요한 [Node.js](https://nodejs.org/)입니다. [활성 LTS 및 유지 관리 LTS 버전](https://nodejs.org/about/releases/)만 해당합니다. `npm --version` 명령을 사용하여 버전을 확인합니다.
+    MacOS 및 Linux의 로컬 개발에는 필요하지 않습니다.   
+::: zone-end  
+::: zone pivot="programming-language-javascript,programming-language-typescript"  
++ [Node.js](https://nodejs.org/), 활성 LTS 및 유지 관리 LTS 버전(10.14.1 권장). `npm --version` 명령을 사용하여 버전을 확인합니다.
+::: zone-end 
 ::: zone pivot="programming-language-python"
 + Azure Functions에서 지원되는 [Python 3.7](https://www.python.org/downloads/release/python-375/) 또는 [Python 3.6](https://www.python.org/downloads/release/python-368/). Python 3.8은 아직 지원되지 않습니다. 
-
-+ Visual Studio Code용 [Python 확장](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
-::: zone-end
+::: zone-end   
 ::: zone pivot="programming-language-powershell"
 + [PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-windows)
 
-+ [.NET Core SDK 2.2 이상](https://www.microsoft.com/net/download)
-
-+ [Visual Studio Code용 PowerShell 확장](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell). 
-::: zone-end
++ [.NET Core SDK 2.2 이상](https://www.microsoft.com/net/download)  
+::: zone-end  
++ [지원되는 플랫폼](https://code.visualstudio.com/docs/supporting/requirements#_platforms) 중 하나인 [Visual Studio Code](https://code.visualstudio.com/).  
+::: zone pivot="programming-language-csharp"  
++ Visual Studio Code용 [C# 확장](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).  
+::: zone-end  
+::: zone pivot="programming-language-python"
++ Visual Studio Code용 [Python 확장](https://marketplace.visualstudio.com/items?itemName=ms-python.python).  
+::: zone-end  
+::: zone pivot="programming-language-powershell"
++ [Visual Studio Code용 PowerShell 확장](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell).  
+::: zone-end  
 
 + Visual Studio Code용 [Azure Functions 확장](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions). 
-
-+ 활성 구독이 있는 [Azure 계정](../guides/developer/azure-developer-guide.md#understanding-accounts-subscriptions-and-billing). 구독이 없으면 시작하기 전에 [계정](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)을 만드세요.
 
 ## <a name="create-an-azure-functions-project"></a>로컬 프로젝트 만들기 
 
@@ -60,111 +68,36 @@ ms.locfileid: "76842259"
 1. 프롬프트에서 다음 정보를 제공합니다.
 
     ::: zone pivot="programming-language-csharp"
-
-    | prompt | 값 | 
-    | ------ | ----- | 
-    | 함수 프로젝트에 대한 언어 선택 | C# |
-    | 버전 선택 | Azure Functions v2 | 
-    | 프로젝트의 첫 번째 함수에 대한 템플릿 선택 | HTTP 트리거 | 
-    | 함수 이름 제공 | HttpExample | 
-    | 네임스페이스 제공 | My.Functions | 
-    | 권한 부여 수준 | 익명 | 
-    | 프로젝트를 여는 방법을 선택합니다. | 작업 영역에 추가 |
-
+    + **함수 프로젝트에 대한 언어 선택**: `C#`을 선택합니다.
     ::: zone-end
-
     ::: zone pivot="programming-language-javascript"
-
-    | prompt | 값 | 
-    | ------ | ----- | 
-    | 함수 프로젝트에 대한 언어 선택 | JavaScript | 
-    | 버전 선택 | Azure Functions v2 | 
-    | 프로젝트의 첫 번째 함수에 대한 템플릿 선택 | HTTP 트리거 | 
-    | 함수 이름 제공 | HttpExample | 
-    | 권한 부여 수준 | 익명 | 
-    | 프로젝트를 여는 방법을 선택합니다. | 작업 영역에 추가 |
-
+    + **함수 프로젝트에 대한 언어 선택**: `JavaScript`을 선택합니다.
     ::: zone-end
-
     ::: zone pivot="programming-language-typescript"
-
-    | prompt | 값 | 
-    | ------ | ----- | 
-    | 함수 프로젝트에 대한 언어 선택 | TypeScript | 
-    | 버전 선택 | Azure Functions v2 | 
-    | 프로젝트의 첫 번째 함수에 대한 템플릿 선택 | HTTP 트리거 | 
-    | 함수 이름 제공 | HttpExample | 
-    | 권한 부여 수준 | 익명 | 
-    | 프로젝트를 여는 방법을 선택합니다. | 작업 영역에 추가 |
-
+    + **함수 프로젝트에 대한 언어 선택**: `TypeScript`을 선택합니다.
     ::: zone-end
-
     ::: zone pivot="programming-language-powershell"
-
-    | prompt | 값 | 
-    | ------ | ----- | 
-    | 함수 프로젝트에 대한 언어 선택 | PowerShell | 
-    | 버전 선택 | Azure Functions v2 | 
-    | 프로젝트의 첫 번째 함수에 대한 템플릿 선택 | HTTP 트리거 | 
-    | 함수 이름 제공 | HttpExample | 
-    | 권한 부여 수준 | 익명 | 
-    | 프로젝트를 여는 방법을 선택합니다. | 작업 영역에 추가 |
-
+    + **함수 프로젝트에 대한 언어 선택**: `PowerShell`을 선택합니다.
     ::: zone-end
-
     ::: zone pivot="programming-language-python"
+    + **함수 프로젝트에 대한 언어 선택**: `Python`을 선택합니다.
 
-    | prompt | 값 | 
-    | ------ | ----- | 
-    | 함수 프로젝트에 대한 언어 선택 | Python | 
-    | 버전 선택 | Azure Functions v2 | 
-    | 가상 환경을 만들려면 Python 별칭을 선택합니다. | Python 별칭 | 
-    | 프로젝트의 첫 번째 함수에 대한 템플릿 선택 | HTTP 트리거 | 
-    | 함수 이름 제공 | HttpExample | 
-    | 권한 부여 수준 | 익명 | 
-    | 프로젝트를 여는 방법을 선택합니다. | 작업 영역에 추가 | 
-
+    + **가상 환경을 만들기 위한 Python 별칭 선택**: Python 인터프리터의 위치를 선택합니다. 위치가 표시되지 않으면 Python 이진에 대한 전체 경로를 입력합니다.  
     ::: zone-end
 
-1. Visual Studio Code는 다음을 수행합니다.
-
-    + [host.json](functions-host-json.md) 및 [local.settings.json](functions-run-local.md#local-settings-file) 구성 파일이 포함된 새 작업 영역에서 Azure Functions 프로젝트를 만듭니다. 
-
+    + **프로젝트의 첫 번째 함수에 대한 템플릿 선택**: `HTTP trigger`을 선택합니다.
+    
+    + **함수 이름 입력**: `HttpExample`.
+    
     ::: zone pivot="programming-language-csharp"
+    + **네임스페이스 입력**: `My.Functions`. 
+    ::: zone-end
 
-    + 함수를 구현하는 [HttpExample.cs 클래스 라이브러리 파일](functions-dotnet-class-library.md#functions-class-library-project)을 만듭니다.
+    + **권한 부여 수준**: 누구나 함수 엔드포인트를 호출할 수 있도록 하는 `Anonymous`를 선택합니다. 권한 부여 수준에 대해 알아보려면 [권한 부여 키](functions-bindings-http-webhook.md#authorization-keys)를 참조하세요.
 
-    ::: zone-end
-        
-    ::: zone pivot="programming-language-javascript"
-    
-    + 루트 폴더에 package.json 파일을 만듭니다.
+    + **프로젝트를 여는 방법 선택**: `Add to workspace`을 선택합니다.
 
-    + [function.json 정의 파일](functions-reference-node.md#folder-structure) 및 함수 코드가 포함된 Node.js 파일인 [index.js 파일](functions-reference-node.md#exporting-a-function)을 포함하는 HttpExample 폴더를 만듭니다.
-    
-    ::: zone-end
-    
-    ::: zone pivot="programming-language-typescript"
-    
-    + 루트 폴더에 package.json 파일과 tsconfig.json 파일을 만듭니다.
-
-    + [function.json 정의 파일](functions-reference-node.md#folder-structure) 및 함수 코드가 포함된 TypeScript 파일인 [index.js 파일](functions-reference-node.md#typescript)을 포함하는 HttpExample 폴더를 만듭니다.
-    
-    ::: zone-end
-    
-    ::: zone pivot="programming-language-powershell"
-    
-    + [function.json 정의 파일](functions-reference-python.md#programming-model) 및 함수 코드가 포함된 run.ps1 파일을 포함하는 HttpExample 폴더를 만듭니다.
-    
-    ::: zone-end
-    
-    ::: zone pivot="programming-language-python"
-    
-    + 함수에 필요한 패키지를 나열하는 프로젝트 수준 requirements.txt 파일을 만듭니다.
-    
-    + [function.json 정의 파일](functions-reference-python.md#programming-model) 및 함수 코드가 포함된 \_\_init\_\_.py 파일을 포함하는 HttpExample 폴더를 만듭니다.
-    
-    ::: zone-end
+1. Visual Studio Code는 이 정보를 사용하여 HTTP 트리거를 통해 Azure Functions 프로젝트를 생성합니다. 탐색기에서 로컬 프로젝트 파일을 볼 수 있습니다. 생성된 파일에 대한 자세한 내용은 [생성된 프로젝트 파일](functions-develop-vs-code.md#generated-project-files)을 참조하세요. 
 
 ::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-python"
 
@@ -186,13 +119,15 @@ ms.locfileid: "76842259"
 
 ## <a name="run-the-function-in-azure"></a>Azure에서 함수 실행
 
-1. **출력** 패널에서 HTTP 트리거의 URL을 복사합니다. 다시 이 URL 마지막에 `name` 쿼리 문자열을 `?name=<yourname>`으로 추가하고 요청을 실행합니다.
+1. **Azure: Functions** 영역으로 돌아가서 구독의 새 함수 앱을 확장합니다. **Functions**를 확장하고 **HttpExample**에서 (Windows) 또는 Ctrl + 클릭(MacOS)을 마우스 오른쪽 단추로 클릭한 다음, **함수 URL 복사**를 선택합니다.
 
-    HTTP 트리거 함수를 호출하는 URL은 다음 형식이어야 합니다.
+    ![새 HTTP 트리거에 대한 함수 URL 복사](./media/functions-create-first-function-vs-code/function-copy-endpoint-url.png)
 
-        http://<functionappname>.azurewebsites.net/api/httpexample?name=<yourname> 
+1. HTTP 요청에 대한 이 URL을 브라우저의 주소 표시줄에 붙여넣고 `name` 쿼리 문자열을 이 URL의 끝에 `?name=Functions`로 추가한 다음, 요청을 실행합니다. HTTP 트리거 함수를 호출하는 URL은 다음 형식이어야 합니다.
 
-1. HTTP 요청에 대한 이러한 새 URL을 브라우저의 주소 표시줄에 붙여넣습니다. 다음 예제에서는 함수에서 반환된 원격 GET 요청에 대한 브라우저의 응답을 보여 줍니다. 
+        http://<functionappname>.azurewebsites.net/api/httpexample?name=Functions 
+        
+    다음 예제에서는 함수에서 반환된 원격 GET 요청에 대한 브라우저의 응답을 보여 줍니다. 
 
     ![브라우저의 함수 응답](./media/functions-create-first-function-vs-code/functions-test-remote-browser.png)
 

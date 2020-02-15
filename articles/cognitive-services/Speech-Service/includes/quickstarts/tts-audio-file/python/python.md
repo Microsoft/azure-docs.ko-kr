@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 07/05/2019
 ms.author: chlandsi
-ms.openlocfilehash: d82b2904f16cc9816a22caadba598a7a44bfa007
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 738ce3d52464897df42be49828ca838b9f77d441
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75466565"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77156157"
 ---
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -79,8 +79,8 @@ python quickstart.py
 
 import azure.cognitiveservices.speech as speechsdk
 
-# Creates an instance of a speech config with specified subscription key and service region.
-# Replace with your own subscription key and service region (e.g., "westus").
+# Replace with your own subscription key and service region (e.g., "westus", use the one of SpeechSDKParameters
+# from here: https://aka.ms/speech/sdkregion).
 speech_key, service_region = "YourSubscriptionKey", "YourServiceRegion"
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
 

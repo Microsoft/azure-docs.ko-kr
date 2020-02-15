@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 0c03394c48c936f9faef85e9f4933893aaa67090
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 62e5b363f8008380a61e24c0549573a30ecaeb73
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75482427"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131863"
 ---
 # <a name="imagery-partner-integration"></a>이미지 파트너 통합
 
@@ -83,9 +83,9 @@ FarmBeats Datahub에 대 한 API 호출을 수행할 때 지정 해야 하는 �
 
 **머리글** | **설명 및 예제**
 --- | ---
-콘텐츠 형식  | 요청 형식 (Content-type: application/<format>)입니다. FarmBeats Datahub Api의 경우 형식은 JSON입니다. Content-Type: application/json
+Content-Type  | 요청 형식 (Content-type: application/<format>)입니다. FarmBeats Datahub Api의 경우 형식은 JSON입니다. Content-Type: application/json
 권한 부여 | API 호출을 수행 하는 데 필요한 액세스 토큰을 지정 합니다. 권한 부여: 전달자 < 액세스-토큰 >
-수락  | 응답 형식입니다. FarmBeats Datahub Api의 경우 형식은 JSON입니다. 수락: application/json
+Accept  | 응답 형식입니다. FarmBeats Datahub Api의 경우 형식은 JSON입니다. 수락: application/json
 
 
 ## <a name="api-requests"></a>API 요청
@@ -492,4 +492,4 @@ API 응답:
 
 ## <a name="next-steps"></a>다음 단계
 
-REST API 기반 통합 정보에 대 한 자세한 내용은 [REST API](references-for-azure-farmbeats.md#rest-api)을 참조 하세요.
+REST API 기반 통합 정보에 대 한 자세한 내용은 [REST API](rest-api-in-azure-farmbeats.md)을 참조 하세요.

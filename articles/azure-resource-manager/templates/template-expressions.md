@@ -2,23 +2,23 @@
 title: 템플릿 구문 및 식
 description: Azure Resource Manager 템플릿에 대 한 선언적 JSON 구문을 설명 합니다.
 ms.topic: conceptual
-ms.date: 09/03/2019
-ms.openlocfilehash: b7682ba10c30290e5935bc2dd17e2a83852d92f4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/13/2020
+ms.openlocfilehash: 7bca3125f80225d2180734f483194a63e39d9cf5
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75484195"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207403"
 ---
 # <a name="syntax-and-expressions-in-azure-resource-manager-templates"></a>Azure Resource Manager 템플릿의 구문 및 식
 
-템플릿의 기본 구문은 JSON이지만, 그러나 식을 사용 하 여 템플릿 내에서 사용할 수 있는 JSON 값을 확장할 수 있습니다.  식은 `[` 및 `]` 대괄호로 각각 시작 및 종료됩니다. 식의 값은 템플릿을 배포할 때 평가됩니다. 식은 문자열, 정수, 부울, 배열 또는 개체를 반환할 수 있습니다.
+템플릿의 기본 구문은 JSON이지만, 그러나 식을 사용 하 여 템플릿 내에서 사용할 수 있는 JSON 값을 확장할 수 있습니다.  식의 시작과 끝은 각각 `[` 및 `]`입니다. 식의 값은 템플릿을 배포할 때 평가됩니다. 식은 문자열, 정수, 부울, 배열 또는 개체를 반환할 수 있습니다.
 
 템플릿 식은 24576 자를 초과할 수 없습니다.
 
 ## <a name="use-functions"></a>함수 사용
 
-다음 예에서는 매개 변수의 기본값을 나타내는 식을 보여 줍니다.
+Azure Resource Manager에서는 템플릿에서 사용할 수 있는 [함수](template-functions.md) 를 제공 합니다. 다음 예에서는 매개 변수의 기본값에서 함수를 사용 하는 식을 보여 줍니다.
 
 ```json
 "parameters": {
@@ -38,6 +38,12 @@ ms.locfileid: "75484195"
 ```json
 "name": "[concat('storage', uniqueString(resourceGroup().id))]"
 ```
+
+대부분의 함수는 리소스 그룹, 구독, 관리 그룹 또는 테 넌 트에 배포 되었는지 여부와 동일 하 게 작동 합니다. 다음 함수는 범위에 따라 제한이 있습니다.
+
+* [resourceGroup](template-functions-resource.md#resourcegroup) -리소스 그룹에 대 한 배포에만 사용할 수 있습니다.
+* [resourceId](template-functions-resource.md#resourceid) -모든 범위에서 사용할 수 있지만 유효한 매개 변수는 범위에 따라 변경 됩니다.
+* [구독](template-functions-resource.md#subscription) -리소스 그룹 또는 구독에 대 한 배포에만 사용할 수 있습니다.
 
 ## <a name="escape-characters"></a>이스케이프 문자
 
@@ -63,6 +69,15 @@ ms.locfileid: "75484195"
 "tags": {
     "CostCenter": "{\"Dept\":\"Finance\",\"Environment\":\"Production\"}"
 },
+```
+
+## <a name="null-values"></a>Null 값
+
+속성을 null로 설정 하려면 **null** 또는 **[json (' null ')]** 을 사용할 수 있습니다. `null`를 매개 변수로 제공 하면 [json 함수](template-functions-array.md#json) 는 빈 개체를 반환 합니다. 두 경우 모두 리소스 관리자 템플릿에서는 속성이 없는 것 처럼 처리 합니다.
+
+```json
+"stringValue": null,
+"objectValue": "[json('null')]"
 ```
 
 ## <a name="next-steps"></a>다음 단계

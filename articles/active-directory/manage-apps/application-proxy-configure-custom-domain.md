@@ -16,16 +16,16 @@ ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 189b8666adde0eedcb451655657a4a82dc5e4fec
-ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
+ms.openlocfilehash: 6f1656d730d55d4c5ab7fb963e49a8057ad88c9f
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062516"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77185531"
 ---
 # <a name="configure-custom-domains-with-azure-ad-application-proxy"></a>Azure AD 응용 프로그램 프록시를 사용 하 여 사용자 지정 도메인 구성
 
-Azure Active Directory 응용 프로그램 프록시를 통해 응용 프로그램을 게시 하는 경우 사용자에 대 한 외부 URL을 만듭니다. 이 URL은 기본 도메인 *yourtenant.msappproxy.net*을 가져옵니다. 예를 들어 *Contoso*라는 테 넌 트에 *지출* 이라는 앱을 게시 하는 경우 외부 URL은 *https: \//expenses-contoso.msappproxy.net*입니다. *Msappproxy.net*대신 고유한 도메인 이름을 사용 하려는 경우 응용 프로그램에 대 한 사용자 지정 도메인을 구성할 수 있습니다. 
+Azure Active Directory 응용 프로그램 프록시를 통해 응용 프로그램을 게시 하는 경우 사용자에 대 한 외부 URL을 만듭니다. 이 URL은 기본 도메인 *yourtenant.msappproxy.net*을 가져옵니다. 예를 들어 *Contoso*라는 테 넌 트에 *지출* 이라는 앱을 게시 하는 경우 외부 URL은 *https:\//expenses-contoso.msappproxy.net*입니다. *Msappproxy.net*대신 고유한 도메인 이름을 사용 하려는 경우 응용 프로그램에 대 한 사용자 지정 도메인을 구성할 수 있습니다. 
 
 ## <a name="benefits-of-custom-domains"></a>사용자 지정 도메인의 이점
 
@@ -49,7 +49,7 @@ Azure Active Directory 응용 프로그램 프록시를 통해 응용 프로그�
 
 응용 프로그램 프록시를 통해 내부 사용자를 전달 하지 않으려는 경우 *분할-두뇌 DNS*를 설정할 수 있습니다. 분할 DNS 인프라는 이름 확인을 위해 내부 호스트를 내부 도메인 이름 서버에, 외부 호스트를 외부 도메인 이름 서버로 전달 합니다. 
 
-![분할-두뇌 DNS](./media/application-proxy-configure-custom-domain/split-brain-dns.png)
+![스플릿 브레인(Split-Brain) DNS](./media/application-proxy-configure-custom-domain/split-brain-dns.png)
 
 ### <a name="different-internal-and-external-urls"></a>서로 다른 내부 및 외부 Url 
 
@@ -77,7 +77,7 @@ Azure Active Directory 응용 프로그램 프록시를 통해 응용 프로그�
 
 사용자 지정 도메인을 사용 하 여 응용 프로그램 프록시를 통해 앱을 게시 하려면:
 
-1. 새 앱의 경우 Azure Active Directory의 왼쪽 탐색 영역에서 **엔터프라이즈 응용 프로그램** 을 선택 합니다. **새 애플리케이션**을 선택합니다. 온 **-프레미스 응용 프로그램** 섹션에서 **온-프레미스 응용 프로그램 추가**를 선택 합니다. 
+1. 새 앱의 경우 Azure Active Directory의 왼쪽 탐색 영역에서 **엔터프라이즈 응용 프로그램** 을 선택 합니다. **새 애플리케이션**을 선택합니다. **온-프레미스 애플리케이션** 섹션에서 **온-프레미스 애플리케이션 추가**를 선택합니다. 
    
    **엔터프라이즈 응용 프로그램**에 이미 있는 앱의 경우 목록에서 선택 하 고 왼쪽 탐색 영역에서 **응용 프로그램 프록시** 를 선택 합니다. 
 
@@ -128,7 +128,7 @@ Azure Active Directory 응용 프로그램 프록시를 통해 응용 프로그�
 
 인증서 서명 방법에 대 한 제한은 없습니다. ECC (타원 Curve Cryptography), SAN (주체 대체 이름) 및 기타 일반 인증서 유형이 지원 됩니다. 
 
-와일드 카드가 외부 URL과 일치 하는 한 와일드 카드 인증서를 사용할 수 있습니다. 와일드 카드 [응용 프로그램](application-proxy-wildcard.md)에는 와일드 카드 인증서를 사용 해야 합니다. 인증서를 사용 하 여 하위 도메인에도 액세스 하려는 경우 하위 도메인 와일드 카드를 동일한 인증서의 주체 대체 이름으로 추가 해야 합니다. 예를 들어 adventure-works.com에 대 *\** 한 인증서는 주체 대체 이름으로 *apps.adventure-works.com를 \** 추가 하지 않는 한 *apps.adventure-works.com에 \** 대해 작동 하지 않습니다. 
+와일드 카드가 외부 URL과 일치 하는 한 와일드 카드 인증서를 사용할 수 있습니다. 와일드 카드 [응용 프로그램](application-proxy-wildcard.md)에는 와일드 카드 인증서를 사용 해야 합니다. 인증서를 사용 하 여 하위 도메인에도 액세스 하려는 경우 하위 도메인 와일드 카드를 동일한 인증서의 주체 대체 이름으로 추가 해야 합니다. 예를 들어 adventure-works.com에 대 *\** 한 인증서는 주체 대체 이름으로 *apps.adventure-works.com를\** 추가 하지 않는 한 *apps.adventure-works.com에\** 대해 작동 하지 않습니다. 
 
 인증서 체인이 클라이언트 장치에 설치 되어 있는 경우 고유한 PKI (공개 키 인프라)에서 발급 한 인증서를 사용할 수 있습니다. Intune은 이러한 인증서를 관리 되는 장치에 배포할 수 있습니다. 관리 되지 않는 장치의 경우 이러한 인증서를 수동으로 설치 해야 합니다.
 
@@ -144,5 +144,5 @@ Azure Active Directory 응용 프로그램 프록시를 통해 응용 프로그�
 
 ## <a name="next-steps"></a>다음 단계
 * Azure AD 인증을 사용하여 게시된 앱에 대해 [Single Sign-On 사용](application-proxy-configure-single-sign-on-with-kcd.md)
-* 게시 된 앱에 대 한 [조건부 액세스를 사용 하도록 설정](../conditional-access/technical-reference.md#cloud-apps-assignments) 합니다.
+* 게시 된 앱에 대 한 [조건부 액세스를 사용 하도록 설정](../conditional-access/overview.md) 합니다.
 

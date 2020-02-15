@@ -6,14 +6,14 @@ titleSuffix: Azure VPN Gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 04/26/2019
+ms.date: 02/10/2020
 ms.author: cherylmc
-ms.openlocfilehash: 250ced13696d6ec34e7c434b26a2917a3c55e91d
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: d8c6b68a38d4b60cf7a3194e6a5ded8804cc416f
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75834641"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77150175"
 ---
 # <a name="create-a-zone-redundant-virtual-network-gateway-in-azure-availability-zones"></a>Azure 가용성 영역에서 영역 중복 가상 네트워크 게이트웨이 만들기
 
@@ -21,27 +21,11 @@ Azure 가용성 영역에서 VPN 및 ExpressRoute 게이트웨이를 배포할 �
 
 ## <a name="before-you-begin"></a>시작하기 전에
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
-자신의 컴퓨터 또는 Azure Cloud Shell에 로컬로 설치된 PowerShell을 사용할 수 있습니다. PowerShell을 로컬로 설치하고 사용하도록 선택한 경우 이 기능을 사용하려면 PowerShell 모듈의 최신 버전이 필요합니다.
-
-[!INCLUDE [Cloud shell](../../includes/vpn-gateway-cloud-shell-powershell.md)]
-
-### <a name="to-use-powershell-locally"></a>PowerShell을 로컬로 사용하려면 다음을 수행합니다.
-
-Cloud Shell을 사용하는 대신 컴퓨터에서 로컬로 PowerShell을 사용하는 경우 PowerShell 모듈 1.0.0 이상을 설치해야 합니다. 설치한 PowerShell의 버전을 확인하려면 다음 명령을 사용합니다.
-
-```azurepowershell
-Get-Module Az -ListAvailable | Select-Object -Property Name,Version,Path
-```
-
-업그레이드해야 하는 경우 [Azure PowerShell 모듈 설치](/powershell/azure/install-az-ps)를 참조하세요.
-
-[!INCLUDE [PowerShell login](../../includes/vpn-gateway-ps-login-include.md)]
+[!INCLUDE [powershell](../../includes/vpn-gateway-cloud-shell-powershell-about.md)]
 
 ## <a name="variables"></a>1. 변수를 선언 합니다.
 
-예제 단계에 사용된 값은 다음과 같습니다. 또한 일부 예제에서는 단계 내에서 선언된 변수를 사용합니다. 사용자 환경에서 이러한 단계를 사용하는 경우 이러한 값을 사용자의 정보로 바꾸어야 합니다. 위치를 지정할 경우 지정한 영역이 지원되는지 확인합니다. 자세한 내용은 [FAQ](#faq)을 참조하세요.
+사용할 변수를 선언합니다. 다음 샘플을 사용하여 필요할 때 고유한 값으로 대체합니다. 이 연습을 수행하는 동안 PowerShell/Cloud Shell 세션을 닫게 되는 경우 값을 복사하고 붙여넣어 변수를 다시 선언하세요. 위치를 지정할 경우 지정한 영역이 지원되는지 확인합니다. 자세한 내용은 [FAQ](#faq)을 참조하세요.
 
 ```azurepowershell-interactive
 $RG1         = "TestRG1"

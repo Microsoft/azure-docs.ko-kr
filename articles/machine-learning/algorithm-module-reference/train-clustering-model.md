@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 11/19/2019
-ms.openlocfilehash: 6b154cdbf6490abd935156e6d081d2260cfbc578
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 7053fab28b4a231c92f31e344cf09ffef3a6b146
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76719367"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152111"
 ---
 # <a name="train-clustering-model"></a>클러스터링 모델 학습
 

@@ -13,18 +13,18 @@ ms.date: 02/03/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda, sureshja, hirsin
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: 9760f09f2588f09263c96cf8c1be74129b117009
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 6e14284b5d653af01631d56acf954f9c2a1f10ab
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77085388"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77194998"
 ---
 # <a name="authentication-basics"></a>인증 기본 사항
 
 ## <a name="what-is-authentication"></a>인증 이란?
 
-이 문서에서는 보호 된 웹 앱, web Api 또는 보호 된 웹 Api를 호출 하는 앱을 만들기 위해 이해 해야 하는 여러 가지 인증 개념을 설명 합니다. 익숙하지 않은 용어가 표시 되 면 [용어집](developer-glossary.md)을 사용해 보세요.
+이 문서에서는 보호 된 웹 앱, web Api 또는 보호 된 웹 Api를 호출 하는 앱을 만들기 위해 이해 해야 하는 여러 가지 인증 개념을 설명 합니다. 익숙하지 않은 용어가 표시 되는 경우 [용어집](developer-glossary.md) 또는 기본 개념을 다루는 [Microsoft id 플랫폼 비디오](identity-videos.md) 를 사용해 보세요.
 
 **인증은** 사용자가 누구 인지를 증명 하는 과정입니다. Authentication(인증)은 종종 AuthN으로 축약됩니다.
 

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: a88f03adab3beaea75ec2fa9a1c6f59b09739025
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: 932dfb9624177c299997c4f9f184dc5c973d0fa0
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76153147"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76899222"
 ---
 # <a name="tutorial-set-up-a-geofence-by-using-azure-maps"></a>자습서: Azure Maps를 사용하여 지오펜스 설정
 
@@ -194,7 +194,7 @@ Postman 앱이 설치되면 다음 단계에 따라 Azure Maps, 데이터 업로
 
 ## <a name="create-an-azure-maps-events-subscription"></a>Azure Maps 이벤트 구독 만들기
 
-Azure Maps는 세 가지 이벤트 유형을 지원합니다. Azure Maps에서 지원하는 이벤트 유형은 [여기](https://docs.microsoft.com/azure/event-grid/event-schema-azure-maps )서 살펴볼 수 있습니다. 투입 이벤트와 철수 이벤트에 대해 각각 하나씩 두 개의 서로 다른 이벤트 구독이 필요합니다.
+Azure Maps는 세 가지 이벤트 유형을 지원합니다. Azure Maps에서 지원하는 이벤트 유형은 [여기](https://docs.microsoft.com/azure/event-grid/event-schema-azure-maps)서 확인할 수 있습니다. 투입 이벤트와 철수 이벤트에 대해 각각 하나씩 두 개의 서로 다른 이벤트 구독이 필요합니다.
 
 다음 단계에 따라 지오펜스 입장 이벤트에 대한 이벤트 구독을 만듭니다. 비슷한 방식으로 지오펜스 퇴장 이벤트도 구독할 수 있습니다.
 

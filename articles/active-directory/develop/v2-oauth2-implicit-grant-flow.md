@@ -17,16 +17,14 @@ ms.date: 11/19/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 42d315b44a76e79d6f1db48e5024094099564a98
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: d7f27ad2adc5d4abf2b5ec993b3398ebf1370f52
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76700484"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159678"
 ---
 # <a name="microsoft-identity-platform-and-implicit-grant-flow"></a>Microsoft id 플랫폼 및 암시적 허용 흐름
-
-[!INCLUDE [active-directory-develop-applies-v2](../../../includes/active-directory-develop-applies-v2.md)]
 
 Microsoft id 플랫폼 끝점을 사용 하 여 Microsoft의 개인 및 회사 또는 학교 계정을 사용 하 여 단일 페이지 앱에 사용자를 로그인 할 수 있습니다. 주로 브라우저에서 실행되는 단일 페이지 앱 및 기타 JavaScript 앱에는 인증과 관련하여 해결해야 하는 몇 가지 문제가 있습니다.
 
@@ -42,6 +40,35 @@ Microsoft id 플랫폼 끝점을 사용 하 여 Microsoft의 개인 및 회사 �
 
 > [!NOTE]
 > 모든 Azure Active Directory (Azure AD) 시나리오 및 기능이 Microsoft id 플랫폼 끝점에서 지원 되는 것은 아닙니다. Microsoft id 플랫폼 끝점을 사용 해야 하는지 확인 하려면 [microsoft id 플랫폼 제한 사항](active-directory-v2-limitations.md)을 참조 하세요.
+
+## <a name="suitable-scenarios-for-the-oauth2-implicit-grant"></a>OAuth2 암시적 허용에 적합한 시나리오
+
+OAuth2 사양에서는 사용자 에이전트 애플리케이션, 즉 JavaScript 애플리케이션을 브라우저 내에서 실행할 수 있도록 하기 위해 암시적 허용이 고안되었다고 선언하고 있습니다. 이러한 애플리케이션의 결정적인 특징은 JavaScript 코드를 사용하여 서버 리소스(대개 웹 API)에 액세스하고, 이에 따라 애플리케이션 사용자 환경을 업데이트한다는 것입니다. 받은 편지함에서 메시지를 선택할 때 메시지 시각화 패널에만 새 선택 내용이 표시되고 나머지 페이지는 수정되지 않은 채로 남아 있는 Gmail 또는 Outlook Web Access와 같은 애플리케이션을 생각해 보세요. 이 특징은 모든 사용자 상호 작용으로 인해 전체 페이지를 다시 게시하고 새 서버 응답의 전체 페이지를 렌더링하는 기존 리디렉션 기반 웹앱과는 대조적입니다.
+
+JavaScript 기반 접근 방법을 극한까지 확장하는 애플리케이션을 단일 페이지 애플리케이션 또는 SPA라고 합니다. 이러한 애플리케이션은 초기 HTML 페이지 및 연결된 JavaScript만 제공하고, 모든 후속 상호 작용은 JavaScript를 통해 수행된 Web API 호출에 의해 구동됩니다. 그러나 애플리케이션이 대부분 포스트백을 기반으로 하지만 가끔 JS 호출을 수행하는 하이브리드 방법은 흔치 않습니다. 암시적 흐름 사용에 관한 설명은 그러한 경우에도 관련됩니다.
+
+일반적으로 리디렉션 기반 애플리케이션은 쿠키를 통해 해당 요청을 보호하지만 해당 접근 방식은 JavaScript 애플리케이션에도 작동하지 않습니다. 쿠키는 생성된 도메인에 대해서만 작동하지만 JavaScript 호출은 다른 도메인으로 편향될 수 있습니다. 사실 이러한 경우는 아주 많습니다. 모두 애플리케이션을 제공한 도메인의 외부에 상주하는 Graph API, Office API, Azure API를 호출하는 애플리케이션을 생각해 보세요. JavaScript 애플리케이션이 증가하는 추세는 타사 웹 API에 전적으로 의존하여 비즈니스 기능을 구현하는 백 엔드가 전혀 없다는 것입니다.
+
+현재 웹 API에 대한 호출을 보호하는 기본 방법은 모든 호출이 OAuth2 액세스 토큰과 함께 동반되는 OAuth2 전달자 토큰 접근 방법을 사용하는 것입니다. 웹 API는 들어오는 액세스 토큰을 검사하고 필요한 범위에서 찾으면 요청된 작업에 대한 액세스를 부여합니다. 암시적 흐름은 JavaScript 애플리케이션이 웹 API에 대한 액세스 토큰을 가져오기에 편리한 메커니즘을 제공하여 쿠키에 관한 다양한 장점을 제공합니다.
+
+* 토큰을 원래 호출과 교차할 필요 없이 신뢰성 있게 가져올 수 있음 - 토큰을 반환하는 리디렉션 URI의 필수 등록을 통해 토큰이 이동되지 않도록 보증
+* JavaScript 애플리케이션이 대상으로 하는 웹 API 수만큼 액세스 토큰을 필요한 대로 가져올 수 있음 - 도메인에 대한 제한 없음
+* 세션 또는 로컬 스토리지와 같은 HTML5 기능이 토큰 캐싱 및 수명 관리를 완전히 제어할 수 있으면서도 쿠키 관리는 앱에서 신경쓸 필요가 없음
+* 액세스 토큰이 교차 사이트 요청 위조(CSRF) 공격에 취약하지 않음
+
+암시적 허용 흐름은 대부분 보안상의 이유로 새로 고침 토큰을 발급하지 않습니다. 새로 고침 토큰은 액세스 토큰으로 범위가 한정 되지 않고, 훨씬 더 많은 기능을 부여 하므로 누수가 발생 하는 경우 훨씬 더 손상이 좁지. 암시적 흐름에서 토큰은 URL로 전달 되므로 가로채기의 위험은 인증 코드 부여 보다 높습니다.
+
+그러나 JavaScript 애플리케이션에서는 사용자에게 자격 증명을 반복적으로 요구하지 않고 액세스 토큰을 갱신하는 또 다른 메커니즘을 마음대로 사용할 수 있습니다. 애플리케이션은 숨겨진 iframe을 사용하여 Azure AD의 권한 부여 엔드포인트에 대해 새 토큰 요청을 수행할 수 있습니다. 즉, 브라우저가 Azure AD 도메인에 대해 활성 세션을 여전히 가지고 있으면(의미: 세션 쿠키를 가짐) 사용자 상호 작용이 필요 없이 인증 요청이 성공적으로 이루어질 수 있습니다.
+
+이 모델은 JavaScript 애플리케이션에 액세스 토큰을 독립적으로 갱신하고 새 API에 대한 새 액세스 토큰을 획득하는 기능을 부여합니다(이전에 사용자가 동의한 경우에만). 이렇게 하면 새로 고침 토큰과 같은 높은 값의 아티팩트를 획득, 유지 관리 및 보호하는 부담을 방지합니다. 자동 갱신을 가능하게 하는 아티팩트인 Azure AD 세션 쿠키는 애플리케이션 외부에서 관리됩니다. 이 방법의 다른 장점은 사용자가 브라우저 탭 중 하나에서 실행하는 Azure AD에 로그인하는 애플리케이션을 사용하여 Azure AD에서 로그아웃할 수 있는 것입니다. 이로 인해 Azure AD 세션 쿠키가 삭제되고 JavaScript 애플리케이션은 로그아웃된 사용자에 대한 토큰을 갱신하는 기능을 자동으로 손실합니다.
+
+## <a name="is-the-implicit-grant-suitable-for-my-app"></a>암시적 허용이 내 앱에 적합할까요?
+
+암시적 권한 부여는 다른 권한 부여 보다 더 많은 위험을 표시 하며 주의 해야 하는 영역 (예: [암시적 흐름에서 리소스 소유자를 가장 하는 데 액세스 토큰 오용] [OAuth2] 및 [OAuth 2.0 위협 모델)이 잘 문서화 되어 있습니다. 및 보안 고려 사항] [OAuth2]). 그러나 더 높은 위험 프로필은 주로 원격 리소스에서 브라우저에 제공한 활성 코드를 실행하는 애플리케이션을 사용하도록 설정하는 것을 의미한다는 사실 때문입니다. SPA 아키텍처를 계획하는 경우 백 엔드 구성 요소가 없거나 JavaScript를 통해 웹 API를 호출하려고 하므로 토큰 획득을 위해 암시적 흐름을 사용하는 것이 좋습니다.
+
+애플리케이션이 네이티브 클라이언트인 경우 암시적 흐름은 그다지 적합하지 않습니다. 네이티브 클라이언트 상황에서 Azure AD 세션 쿠키가 없으면 오래 지속되는 세션을 유지 관리하는 수단에서 애플리케이션을 사용하지 않게 됩니다. 즉 애플리케이션은 새 리소스에 대한 액세스 토큰을 가져올 때 사용자에게 반복해서 메시지를 표시합니다.
+
+백 엔드가 포함된 웹 애플리케이션을 개발하고 해당 백 엔드 코드에서 API를 사용하는 경우에도 암시적 흐름은 그다지 적합하지 않습니다. 다른 권한 부여는 훨씬 더 많은 전원을 제공합니다. 예를 들어 OAuth2 클라이언트 자격 증명 부여는 사용자 위임이 아니라 애플리케이션 자체에 할당된 사용 권한을 반영하는 토큰을 가져올 수 있는 기능을 제공합니다. 즉 클라이언트는 사용자가 세션에 있지 않은 경우 등에도 리소스에 대한 프로그래밍 방식의 액세스를 유지하는 기능을 갖습니다. 뿐만 아니라 이러한 부여는 더 높은 보안성 보증을 제공합니다. 예를 들어 액세스 토큰은 사용자 브라우저를 통해 전송되지 않고 브라우저 기록 등에 저장되는 위험을 감수하지 않습니다. 또한 클라이언트 애플리케이션은 토큰을 요청할 때 강력한 인증을 수행할 수 있습니다.
 
 ## <a name="protocol-diagram"></a>프로토콜 다이어그램
 
@@ -70,7 +97,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 ```
 
 > [!TIP]
-> 암시적 흐름을 사용 하 여 로그인을 테스트 하려면 <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=id_token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=openid&response_mode=fragment&state=12345&nonce=678910" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize.. 를 클릭 합니다.</a> 로그인 한 후 브라우저는 주소 표시줄에 `id_token` 를 사용 하 여 `https://localhost/myapp/` 으로 리디렉션됩니다.
+> 암시적 흐름을 사용 하 여 로그인을 테스트 하려면 <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=id_token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=openid&response_mode=fragment&state=12345&nonce=678910" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize..를 클릭 합니다.</a> 로그인 한 후 브라우저는 주소 표시줄에 `id_token`를 사용 하 여 `https://localhost/myapp/`으로 리디렉션됩니다.
 >
 
 | 매개 변수 |  | Description |
@@ -156,7 +183,7 @@ URL의 쿼리 매개 변수에 대한 자세한 내용은 [로그인 요청 보�
 >`https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=https%3A%2F%2Fgraph.microsoft.com%2Fuser.read&response_mode=fragment&state=12345&nonce=678910&prompt=none&login_hint={your-username}`
 >
 
-`prompt=none` 매개 변수로 인해, 이 요청은 즉시 성공하거나 실패하고 애플리케이션에 반환됩니다. 성공적인 응답은 `response_mode` 매개 변수에 지정된 메서드를 사용하여 지정된 `redirect_uri`의 앱으로 전송됩니다.
+`prompt=none` 매개 변수로 인해, 이 요청은 즉시 성공하거나 실패하고 애플리케이션에 반환됩니다. 성공적인 응답은 `redirect_uri` 매개 변수에 지정된 메서드를 사용하여 지정된 `response_mode`의 앱으로 전송됩니다.
 
 #### <a name="successful-response"></a>성공적인 응답
 

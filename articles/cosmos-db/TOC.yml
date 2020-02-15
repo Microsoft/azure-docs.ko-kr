@@ -494,6 +494,8 @@
           href: javascript-query-api.md
     - name: Azure Cosmos DB 비용 최적화
       items:
+        - name: 비용 계획 및 관리
+          href: plan-manage-costs.md
         - name: 가격 책정 모델
           href: how-pricing-works.md
         - name: TCO(총 소유 비용)
@@ -552,6 +554,8 @@
           href: cassandra-introduction.md
         - name: 유선 프로토콜 지원
           href: cassandra-support.md
+        - name: 탄력적 확장
+          href: manage-scale-cassandra.md
         - name: 빠른 시작
           items:
             - name: .NET
@@ -1069,6 +1073,8 @@
           href: migrate-cosmosdb-data.md
         - name: 일 대 다(one-to-few) 관계형 데이터 마이그레이션
           href: migrate-relational-to-cosmos-db-sql-api.md
+        - name: Couchbase에서 SQL API로 마이그레이션
+          href: couchbase-cosmos-migration.md
     - name: Bulk Executor 라이브러리
       items:
         - name: Bulk Executor 라이브러리 정보

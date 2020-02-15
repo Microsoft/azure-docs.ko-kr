@@ -9,9 +9,9 @@
   expanded: true
   items:
     - name: Azure Portal에서 Azure Arc에 머신 연결
-      href: ./servers/quickstart-onboard-portal.md
+      href: ./servers/onboard-portal.md
     - name: 서비스 주체를 사용하여 규모에 맞게 머신 연결
-      href: ./servers/quickstart-onboard-powershell.md
+      href: ./servers/onboard-service-principal.md
 - name: 참조
   items:
     - name: Azure Connected Machine Agent CLI 인터페이스

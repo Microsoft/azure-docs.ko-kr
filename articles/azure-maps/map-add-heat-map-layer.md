@@ -1,6 +1,6 @@
 ---
 title: 지도에 열 지도 계층 추가 | Microsoft Azure 맵
-description: 이 문서에서는 Microsoft Azure Maps 웹 SDK를 사용 하 여 지도에 열 지도 계층을 추가 하는 방법에 대해 설명 합니다.
+description: 이 문서에서는 Microsoft Azure Maps 웹 SDK를 사용 하 여 지도에 열 지도 계층을 추가 하는 방법에 대해 알아봅니다.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: d52d808813078c2aca7de59aa626e83f96221720
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 4a853871ef5f66881235e5a6ffec0886b81f5a92
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76986243"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77208542"
 ---
 # <a name="add-a-heat-map-layer"></a>열 지도 계층 추가
 
@@ -60,7 +60,7 @@ map.layers.add(new atlas.layer.HeatMapLayer(datasource, null, {
 
 <br/>
 
-<iframe height='500' scrolling='no' title='단순 열 지도 계층' src='//codepen.io/azuremaps/embed/gQqdQB/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)의 펜 <a href='https://codepen.io/azuremaps/pen/gQqdQB/'>단순 열 지도 계층</a>을 참조하세요.
+<iframe height='500' scrolling='no' title='단순 열 지도 계층' src='//codepen.io/azuremaps/embed/gQqdQB/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io/azuremaps/pen/gQqdQB/'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)의 펜 <a href='https://codepen.io'>단순 열 지도 계층</a>을 참조하세요.
 </iframe>
 
 ## <a name="customize-the-heat-map-layer"></a>열 지도 계층 사용자 지정
@@ -76,20 +76,20 @@ map.layers.add(new atlas.layer.HeatMapLayer(datasource, null, {
 
   | 보간 색 식 | 단계별 색 식 | 
   |--------------------------------|--------------------------|
-  | \[<br/>&nbsp;&nbsp;&nbsp;&nbsp;'interpolate',<br/>&nbsp;&nbsp;&nbsp;&nbsp;\['linear'\],<br/>&nbsp;&nbsp;&nbsp;&nbsp;\['heatmap-density'\],<br/>&nbsp;&nbsp;&nbsp;&nbsp;0, 'transparent',<br/>&nbsp;&nbsp;&nbsp;&nbsp;0.01, 'purple',<br/>&nbsp;&nbsp;&nbsp;&nbsp;0.5, '#fb00fb',<br/>&nbsp;&nbsp;&nbsp;&nbsp;1, '#00c3ff'<br/>\] | \[<br/>&nbsp;&nbsp;&nbsp;&nbsp;'step',<br/>&nbsp;&nbsp;&nbsp;&nbsp;\['heatmap-density'\],<br/>&nbsp;&nbsp;&nbsp;&nbsp;'transparent',<br/>&nbsp;&nbsp;&nbsp;&nbsp;0.01, 'navy',<br/>&nbsp;&nbsp;&nbsp;&nbsp;0.25, 'green',<br/>&nbsp;&nbsp;&nbsp;&nbsp;0.50, ' 노랑 ',<br/>&nbsp;&nbsp;&nbsp;&nbsp;0.75, ' red '<br/>\] |   
+  | \[<br/>&nbsp;&nbsp;&nbsp;&nbsp;'interpolate',<br/>&nbsp;&nbsp;&nbsp;&nbsp;\['linear'\],<br/>&nbsp;&nbsp;&nbsp;&nbsp;\['heatmap-density'\],<br/>&nbsp;&nbsp;&nbsp;&nbsp;0, 'transparent',<br/>&nbsp;&nbsp;&nbsp;&nbsp;0.01, 'purple',<br/>&nbsp;&nbsp;&nbsp;&nbsp;0.5, '#fb00fb',<br/>&nbsp;&nbsp;&nbsp;&nbsp;1, '#00c3ff'<br/>\] | \[<br/>&nbsp;&nbsp;&nbsp;&nbsp;'step',<br/>&nbsp;&nbsp;&nbsp;&nbsp;\['heatmap-density'\],<br/>&nbsp;&nbsp;&nbsp;&nbsp;'transparent',<br/>&nbsp;&nbsp;&nbsp;&nbsp;0.01, 'navy',<br/>&nbsp;&nbsp;&nbsp;&nbsp;0.25, ' 녹색 ',<br/>&nbsp;&nbsp;&nbsp;&nbsp;0.50, ' 노랑 ',<br/>&nbsp;&nbsp;&nbsp;&nbsp;0.75, ' red '<br/>\] |   
 
 - `opacity`: 열 지도 계층이 불투명 하거나 투명 하 게 지정 되는 방식을 지정 합니다.
-- `intensity`: 각 데이터 요소의 가중치에 승수를 적용 하 여 열 지도의 전체 강도를 늘립니다. 이를 통해 데이터 요소의 가중치를 변경 하 여 쉽게 시각화할 수 있습니다.
+- `intensity`: 각 데이터 요소의 가중치에 승수를 적용 하 여 열 지도의 전체 강도를 늘립니다. 이로 인해 데이터 요소의 가중치가 다르므로 시각화를 쉽게 만들 수 있습니다.
 - `weight`: 기본적으로 모든 데이터 요소의 가중치는 1 이며 동일 하 게 가중치가 적용 됩니다. Weight 옵션은 승수 역할을 하며 숫자 또는 식으로 설정할 수 있습니다. 숫자가 가중치로 설정 된 경우 맵에 각 데이터 요소를 두 번 배치 하는 것과 동일 합니다. 예를 들어 가중치가 2 인 경우 밀도는 2 배가 됩니다. 숫자가 가중치 옵션을 설정하면 밀도 옵션을 사용하는 것과 비슷한 방식으로 열 지도를 렌더링합니다. 
 
-  그러나 식을 사용 하는 경우 각 데이터 요소의 가중치는 각 데이터 요소의 속성을 기반으로 할 수 있습니다. 예를 들어 각 데이터 요소가 지진을 나타내는 경우 중요 한 메트릭은 각 지진 데이터 요소가 크기 값입니다. 지진은 항상 발생 하지만 대부분 낮은 크기를 가지 며,이는 발견 되지 않습니다. 식의 크기 값을 사용 하 여 각 데이터 요소에 가중치를 할당 하면 열 지도 내에서 지진의 의미를 보다 잘 표현할 수 있습니다.
+  그러나 식을 사용 하는 경우 각 데이터 요소의 가중치는 각 데이터 요소의 속성을 기반으로 할 수 있습니다. 예를 들어 각 데이터 요소가 지진을 나타내는 경우 크기 값은 각 지진 데이터 요소에 대 한 중요 한 메트릭입니다. 지진은 항상 발생 하지만 대부분 낮은 크기를 가지 며,이는 발견 되지 않습니다. 식에서 크기 값을 사용 하 여 각 데이터 요소에 가중치를 할당 합니다. 크기 값을 사용 하 여 무게를 할당 하면 열 지도 내에서 지진의 의미를 보다 잘 표현할 수 있습니다.
 - `source` 및 `source-layer`: 데이터 원본을 업데이트할 수 있습니다.
 
 다른 열 지도 계층 옵션을 테스트 하는 도구는 다음과 같습니다.
 
 <br/>
 
-<iframe height='700' scrolling='no' title='열 지도 계층 옵션' src='//codepen.io/azuremaps/embed/WYPaXr/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)의 펜 <a href='https://codepen.io/azuremaps/pen/WYPaXr/'>열 지도 계층 옵션</a>을 참조하세요.
+<iframe height='700' scrolling='no' title='열 지도 계층 옵션' src='//codepen.io/azuremaps/embed/WYPaXr/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io/azuremaps/pen/WYPaXr/'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)의 펜 <a href='https://codepen.io'>열 지도 계층 옵션</a>을 참조하세요.
 </iframe>
 
 ## <a name="consistent-zoomable-heat-map"></a>일관 된 확대/열 지도

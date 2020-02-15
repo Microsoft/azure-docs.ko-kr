@@ -114,3 +114,5 @@
       href: 'https://docs.microsoft.com/azure/healthcare-apis/'
     - name: 보안 상태 솔루션 설계
       href: 'https://docs.microsoft.com/azure/security/fundamentals/health-care-solution'
+    - name: Azure IoT Central(레거시 템플릿)
+      href: 'https://docs.microsoft.com/previous-versions/azure/iot-central/core/overview-iot-central'

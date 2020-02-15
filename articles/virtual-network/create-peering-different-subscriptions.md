@@ -1,5 +1,5 @@
 ---
-title: Azure 가상 네트워크 피어링 만들기 - Resource Manager, 서로 다른 구독
+title: VNet 피어 링-다른 구독 만들기
 titlesuffix: Azure Virtual Network
 description: 리소스 관리자를 통해 서로 다른 Azure 구독에 존재하는 가상 네트워크 간에 가상 네트워크 피어링을 만드는 방법을 알아봅니다.
 services: virtual-network
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/09/2019
 ms.author: anavin
-ms.openlocfilehash: da85d8904fcd44788d6a87a22ea14d683982e333
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: d085279167b498b13cfb79b97703cfdff7d6dd8a
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77020015"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201767"
 ---
 # <a name="create-a-virtual-network-peering---resource-manager-different-subscriptions"></a>가상 네트워크 피어링 만들기 - 리소스 관리자, 서로 다른 구독
 
@@ -90,7 +90,7 @@ ms.locfileid: "77020015"
     이 자습서에서 다른 설정은 사용되지 않습니다. 모든 피어링 설정에 대해 알아보려면 [가상 네트워크 피어링 관리](virtual-network-manage-peering.md#create-a-peering)를 읽어보세요.
 22. 이전 단계에서 **확인**을 선택한 후에 잠깐 기다리면 만든 피어링이 표시됩니다. 만든 **myVnetAToMyVnetB** 피어링에 대해 **PEERING STATUS** 열에 **Initiated**가 열거됩니다. myVnetA에서 myVnetB를 피어링했으며 이제 myVnetB에서 myVnetA를 피어링해야 합니다. 피어링은 양방향으로 만들어져야 가상 네트워크의 리소스가 서로 통신할 수 있습니다.
 23. 사용자 A를 포털에서 로그아웃한 다음 사용자 B로 로그인합니다.
-24. MyVnetB에 대해 17~21단계를 다시 완료합니다. 21단계에서 피어링의 이름을 *myVnetBToMyVnetA*로 지정하고 **가상 네트워크**에 대해 *myVnetA*를 선택하고 **리소스 ID** 상자에서 10단계에서 구한 ID를 입력합니다.
+24. MyVnetB에 대해 17~21단계를 다시 완료합니다. 21단계에서 피어링의 이름을 *myVnetBToMyVnetA*로 지정하고 *가상 네트워크*에 대해 **myVnetA**를 선택하고 **리소스 ID** 상자에서 10단계에서 구한 ID를 입력합니다.
 25. **확인**을 선택하여 myVnetB에 대한 피어링을 만든 후 몇 초가 지나면 방금 만든 **myVnetBToMyVnetA** 피어링이 **PEERING STATUS** 열에 **연결됨**과 함께 나열됩니다.
 26. 사용자 B를 포털에서 로그아웃한 다음 사용자 A로 로그인합니다.
 27. 17~19단계를 다시 완료합니다. 이제 **myVnetAToVNetB** 피어링의 **PEERING STATUS**도 **Connected**입니다. 피어링의 두 가상 네트워크에 대한 **피어링 상태** 열에 둘 다 **연결됨**이 표시되고 나면 피어링이 성공적으로 설정된 것입니다. 어느 쪽 가상 네트워크에서든 만든 모든 Azure 리소스는 이제 해당 IP 주소를 통해 서로 통신할 수 있습니다. 가상 네트워크에 대해 기본 Azure 이름 확인을 사용 중인 경우 가상 네트워크의 리소스가 가상 네트워크에서 이름을 확인할 수 없습니다. 피어링의 가상 네트워크에서 이름을 확인하려면 자체 DNS 서버를 만들어야 합니다. [자체 DNS 서버를 이용한 이름 확인](virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server) 설정 방법을 알아보세요.

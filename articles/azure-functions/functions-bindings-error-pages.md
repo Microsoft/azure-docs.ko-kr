@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 09/11/2019
 ms.author: cshoe
-ms.openlocfilehash: 06dc4c5c1713ee10f263e573a698e9ea36ca2662
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 920b887382ca55d84c66fabb8f1464fd05041094
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74227334"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198459"
 ---
 # <a name="azure-functions-error-handling"></a>Azure Functions 오류 처리
 
@@ -28,13 +28,13 @@ Azure 서비스와 통합 하는 경우 기본 서비스의 Api에서 오류가 
 
 + [Azure Cosmos DB](functions-bindings-cosmosdb.md#exceptions-and-return-codes)
 
-+ [Blob storage](functions-bindings-storage-blob.md#exceptions-and-return-codes)
++ [Blob Storage](functions-bindings-storage-blob-output.md#exceptions-and-return-codes)
 
 + [Event Hubs](functions-bindings-event-hubs.md#exceptions-and-return-codes)
 
 + [Notification Hubs](functions-bindings-notification-hubs.md#exceptions-and-return-codes)
 
-+ [Queue storage](functions-bindings-storage-queue.md#exceptions-and-return-codes)
++ [Queue Storage](functions-bindings-storage-queue.md#exceptions-and-return-codes)
 
 + [Service Bus](functions-bindings-service-bus.md#exceptions-and-return-codes)
 

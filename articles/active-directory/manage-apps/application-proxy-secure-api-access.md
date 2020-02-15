@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/24/2019
-ms.author: celested
+ms.date: 02/12/2020
+ms.author: mimart
 ms.reviewer: japere
-ms.openlocfilehash: b741f42bb215df59903fed7ed84094b7d037ce65
-ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
+ms.openlocfilehash: ecd5d8bae22d67f8d9f5b99d5c94eecf54a4a1f3
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73063027"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77166002"
 ---
 # <a name="secure-access-to-on-premises-apis-with-azure-ad-application-proxy"></a>Azure AD 응용 프로그램 프록시를 사용 하 여 온-프레미스 Api에 안전 하 게 액세스
 
@@ -38,7 +38,7 @@ Azure AD 응용 프로그램 프록시는 솔루션의 백본을 구성 하 고,
 
 Azure AD 응용 프로그램 프록시 인증 및 권한 부여는 Azure AD를 기반으로 구축 되므로 신뢰할 수 있는 장치만 응용 프로그램 프록시를 통해 게시 된 Api에 액세스할 수 있도록 Azure AD 조건부 액세스를 사용할 수 있습니다. Azure AD 조인 또는 데스크톱에 대해 Azure AD 하이브리드 조인 또는 장치에 대 한 Intune 관리를 사용 합니다. Azure Multi-Factor Authentication와 같은 Azure Active Directory Premium 기능과 [Azure Id 보호](/azure/active-directory/active-directory-identityprotection)의 기계 학습 지원 보안을 활용할 수도 있습니다.
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 연습을 수행 하려면 다음이 필요 합니다.
 
@@ -53,19 +53,19 @@ Azure AD 응용 프로그램 프록시 인증 및 권한 부여는 Azure AD를 �
 
 1. 샘플 SecretAPI 프로젝트를 빌드하고 로컬 컴퓨터 또는 인트라넷에 ASP.NET 웹 앱으로 게시 합니다. 웹 앱에 로컬로 액세스할 수 있는지 확인 합니다. 
    
-1. [Azure Portal](https://portal.azure.com)의 왼쪽 탐색에서 **Azure Active Directory** 를 선택 합니다. 그런 다음 **개요** 페이지에서 **엔터프라이즈 응용 프로그램**을 선택 합니다.
+1. [Azure Portal](https://portal.azure.com)에서 **Azure Active Directory**를 선택합니다. 그런 다음 **엔터프라이즈 응용 프로그램**을 선택 합니다.
    
 1. **엔터프라이즈 응용 프로그램-모든 응용 프로그램** 페이지의 맨 위에서 **새 응용 프로그램**을 선택 합니다.
    
-1. **AZURE AD 갤러리 찾아보기** 페이지의 **온-프레미스 응용 프로그램**에서 **온-프레미스 응용 프로그램 추가**를 선택 합니다. **사용자 고유의 온-프레미스 응용 프로그램 추가** 페이지가 나타납니다.
+1. **응용 프로그램 추가** 페이지에서 **온-프레미스 응용 프로그램**을 선택 합니다. **사용자 고유의 온-프레미스 응용 프로그램 추가** 페이지가 나타납니다.
    
 1. 응용 프로그램 프록시 커넥터를 설치 하지 않은 경우 설치 하 라는 메시지가 표시 됩니다. **응용 프로그램 프록시 커넥터 다운로드** 를 선택 하 여 커넥터를 다운로드 하 고 설치 합니다. 
    
 1. 응용 프로그램 프록시 커넥터를 설치한 후 **에는 고유한 온-프레미스 응용 프로그램 추가** 페이지에서 다음을 수행 합니다.
    
-   1. **이름**옆에 *SecretAPI* 을 입력 합니다.
+   1. **이름**옆에 *SecretAPI*을 입력 합니다.
       
-   1. 인트라넷 내에서 **내부 url**옆에 있는 API에 액세스 하는 데 사용할 URL을 입력 합니다. 
+   1. **내부 url**옆에 인트라넷 내에서 API에 액세스 하는 데 사용할 url을 입력 합니다.
       
    1. **사전 인증이** **Azure Active Directory**으로 설정 되어 있는지 확인 합니다. 
       
@@ -169,7 +169,7 @@ Azure Active Directory에 연결 하 고 API 앱 프록시를 호출 하도록 �
 
 매개 변수를 구성한 후 네이티브 앱을 빌드하고 실행 합니다. **로그인** 단추를 선택 하면 앱에서 로그인 한 다음 성공 화면을 표시 하 여 SecretAPI에 성공적으로 연결 되었는지 확인할 수 있습니다.
 
-![성공](./media/application-proxy-secure-api-access/success.png)
+![Success](./media/application-proxy-secure-api-access/success.png)
 
 ## <a name="next-steps"></a>다음 단계
 

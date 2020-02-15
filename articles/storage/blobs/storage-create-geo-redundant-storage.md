@@ -6,23 +6,23 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: tutorial
-ms.date: 12/04/2019
+ms.date: 02/10/2020
 ms.author: tamram
 ms.reviewer: artek
 ms.custom: mvc
 ms.subservice: blobs
-ms.openlocfilehash: 55846c76f2c3ef1c5d884af39af85db3abe38aad
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 0eabd918b5f8f52049792ceb28ef8055945d6475
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892909"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162177"
 ---
 # <a name="tutorial-build-a-highly-available-application-with-blob-storage"></a>자습서: Blob Storage에서 고가용성 애플리케이션 빌드
 
 이 자습서는 시리즈의 1부입니다. 여기서는 Azure에서 애플리케이션 데이터의 고가용성을 지원하는 방법을 알아봅니다.
 
-이 자습서를 완료하면 [RA-GRS(읽기 액세스 지역 중복)](../common/storage-redundancy-grs.md#read-access-geo-redundant-storage) 스토리지 계정으로 Blob을 업로드하고 검색하는 콘솔 애플리케이션을 갖게 됩니다.
+이 자습서를 완료하면 [RA-GRS(읽기 액세스 지역 중복)](../common/storage-redundancy.md) 스토리지 계정으로 Blob을 업로드하고 검색하는 콘솔 애플리케이션을 갖게 됩니다.
 
 RA-GRS는 주 지역에서 보조 지역으로 트랜잭션을 복제하는 방식으로 작동합니다. 복제 프로세스는 보조 지역의 데이터가 결과적으로 일치하도록 보장합니다. 이 애플리케이션은 [회로 차단기](/azure/architecture/patterns/circuit-breaker) 패턴을 사용하여 연결할 엔드포인트를 결정하고 오류 및 복구가 시뮬레이션될 때 엔드포인트를 자동으로 전환합니다.
 
@@ -35,7 +35,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.
 > * 연결 문자열 설정
 > * 콘솔 애플리케이션 실행
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서를 완료하려면 다음이 필요합니다.
 
@@ -71,16 +71,16 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.
 3. **추천**에서 **스토리지 계정 - Blob, 파일, 테이블, 큐**를 선택합니다.
 4. 다음 정보로 스토리지 계정 양식을 작성하고(아래 이미지 참조) **만들기**를 선택합니다.
 
-   | 설정       | 제안 값 | 설명 |
+   | 설정       | 제안 값 | Description |
    | ------------ | ------------------ | ------------------------------------------------- |
-   | **Name** | mystorageaccount | 스토리지 계정의 고유한 값 |
+   | **이름** | mystorageaccount | 스토리지 계정의 고유한 값 |
    | **배포 모델** | 리소스 관리자  | 리소스 관리자에는 최신 기능이 포함되어 있습니다.|
    | **계정 종류** | StorageV2 | 계정 유형에 대한 세부 정보는 [스토리지 계정 유형](../common/storage-introduction.md#types-of-storage-accounts)을 참조하세요. |
    | **성능** | Standard | Standard는 샘플 시나리오에 충분합니다. |
    | **복제**| RA-GRS(읽기 액세스 지역 중복 스토리지) | 샘플 작동에 필요합니다. |
    |**구독** | 사용자의 구독 |구독에 대한 자세한 내용은 [구독](https://account.azure.com/Subscriptions)을 참조하세요. |
    |**ResourceGroup** | myResourceGroup |유효한 리소스 그룹 이름은 [명명 규칙 및 제한 사항](/azure/architecture/best-practices/resource-naming)을 참조하세요. |
-   |**위치**: | 미국 동부 | 위치를 선택합니다. |
+   |**위치** | 미국 동부 | 위치를 선택합니다. |
 
 ![스토리지 계정 만들기](media/storage-create-geo-redundant-storage/createragrsstracct.png)
 

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: tutorial
-ms.date: 12/11/2019
+ms.date: 01/28/2020
 ms.author: diberry
-ms.openlocfilehash: 0ddce3e4112dfb14309878927493abb3cb6b451a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a9afef07af1332910cc9e25f9d66db5930df3bd4
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75447351"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76901666"
 ---
 # <a name="tutorial-create-a-qna-bot-with-azure-bot-service-v4"></a>자습서: Azure Bot Service v4로 QnA 봇 만들기
 
@@ -41,7 +41,7 @@ ms.locfileid: "75447351"
 
 1. QnA Maker 포털에서 **게시** 페이지로 이동하여 기술 자료를 게시합니다. **봇 만들기**를 선택합니다.
 
-    ![QnA Maker 포털에서 [게시] 페이지로 이동하여 기술 자료를 게시합니다. [봇 만들기]를 선택합니다.](../media/qnamaker-tutorials-create-bot/create-bot-from-published-knowledge-base-page.png)
+    [![QnA Maker 포털에서 게시 페이지로 이동하여 기술 자료를 게시합니다. 봇 만들기를 선택합니다.](../media/qnamaker-tutorials-create-bot/create-bot-from-published-knowledge-base-page.png)](../media/qnamaker-tutorials-create-bot/create-bot-from-published-knowledge-base-page.png#lightbox)
 
     Azure Portal이 봇 만들기 구성으로 열립니다.
 
@@ -101,8 +101,6 @@ ms.locfileid: "75447351"
 
 ## <a name="related-to-qna-maker-bots"></a>QnA Maker 봇 관련
 
-* QnA Maker 포털에 사용되는 QnA Maker 도움말 봇은 [봇 샘플](https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/qnamaker-support)로 사용할 수 있습니다.
-    ![QnA Maker 도움말 봇 아이콘은 빨간색 로봇입니다.](../media/qnamaker-tutorials-create-bot/answer-bot-icon.PNG)
 * [헬스케어 봇](https://docs.microsoft.com/HealthBot/qna_model_howto)에는 QnA Maker가 [언어 모델](https://docs.microsoft.com/HealthBot/qna_model_howto) 중 하나로 사용됩니다.
 
 

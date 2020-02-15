@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/17/2017
 ms.author: rasquill
 ms.custom: mvc
-ms.openlocfilehash: 60ff148e044df81e64b54fc48c1cb6f67aee14df
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 2af20a1ddf4239b7eec6cceabf2ff9711959c128
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76275653"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77189097"
 ---
 # <a name="deprecated-canary-release-microservices-with-vamp-on-an-azure-container-service-dcos-cluster"></a>(사용되지 않음) Azure Container Service DC/OS 클러스터에서 Vamp를 사용하여 마이크로서비스 카나리아 릴리스
 
@@ -127,7 +127,7 @@ Elasticsearch가 **실행 중**으로 보고하면 DC/OS Universe 패키지를 �
 
 Vamp가 실행 중이니, 청사진의 서비스를 배포합니다. 
 
-[Vamp 청사진](https://vamp.io/documentation/using-vamp/blueprints/)은 가장 간단한 형태로 엔드포인트(게이트웨이), 클러스터 및 배포할 서비스를 설명합니다. Vamp는 클러스터를 사용하여 동일한 서비스의 여러 변형을 카나리아 릴리스 또는 A/B 테스트를 위한 논리 그룹으로 그룹화합니다.  
+[Vamp 청사진](https://docs.vamp.io/how-vamp-works/vamp-and-kubernetes#vamp-deployments)은 가장 간단한 형태로 엔드포인트(게이트웨이), 클러스터 및 배포할 서비스를 설명합니다. Vamp는 클러스터를 사용하여 동일한 서비스의 여러 변형을 카나리아 릴리스 또는 A/B 테스트를 위한 논리 그룹으로 그룹화합니다.  
 
 이 시나리오에서는 [**sava**](https://github.com/magneticio/sava)라고 하는 샘플 모놀리식 애플리케이션을 사용하며 버전은 1.0입니다. 모놀리식은 magneticio/sava:1.0.0 아래의 Docker 허브에 있는 Docker 컨테이너에 패키지됩니다. 앱은 보통 포트 8080에서 실행되지만 이 예에서는 포트 9050 아래에 노출하려 합니다. 간단한 청사진을 사용하여 Vamp를 통해 앱을 배포합니다.
 
@@ -287,9 +287,9 @@ Vamp는 **조건**을 사용하여 게이트웨이의 경로 간 트래픽을 �
 
 ## <a name="next-steps"></a>다음 단계
 
-* [Vamp REST API](https://vamp.io/documentation/api/api-reference/)를 통해 Vamp 작업을 관리하는 방법을 알아봅니다.
+* [Vamp REST API](https://docs.vamp.io/how-vamp-works/events-and-metrics#events)를 통해 Vamp 작업을 관리하는 방법을 알아봅니다.
 
-* Node.js에서 Vamp 자동화 스크립트를 빌드하고 [Vamp 워크플로](https://vamp.io/documentation/using-vamp/v1.0.0/workflows/#create-a-workflow)로 실행합니다.
+* Node.js에서 Vamp 자동화 스크립트를 빌드하고 [Vamp 워크플로](https://docs.vamp.io/how-vamp-works/concepts-and-components#workflows)로 실행합니다.
 
-* 추가 [VAMP 자습서](https://vamp.io/documentation/tutorials/)를 살펴봅니다.
+* 추가 [VAMP 자습서](https://docs.vamp.io/tutorials/)를 살펴봅니다.
 

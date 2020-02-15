@@ -3,12 +3,12 @@ title: Azure Migrate의 VMware 평가 지원
 description: Azure Migrate의 VMware 평가 지원에 대해 알아봅니다.
 ms.topic: conceptual
 ms.date: 01/08/2020
-ms.openlocfilehash: 1b3e81653ba934b209755391f08e60ef603e645a
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 19ed506228bac425ad05edee1586740e6c33f69e
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77086769"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121331"
 ---
 # <a name="support-matrix-for-vmware-assessment"></a>VMware 평가를 위한 지원 매트릭스 
 
@@ -42,7 +42,7 @@ ms.locfileid: "77086769"
 **컴퓨터 운영 체제** | 모든 Windows 및 Linux 버전
 **vCenter 자격 증명** | 읽기 전용 액세스 권한이 있는 vCenter Server 계정과 게스트 작업 > Virtual Machines에 대 한 권한이 설정 되어 있습니다.
 **VM 자격 증명** | 현재에서는 모든 Windows server에 대해 하나의 자격 증명을 사용할 수 있으며 모든 Linux 서버에 대해 하나의 자격 증명을 사용할 수 있습니다.<br/><br/> Windows Vm에 대 한 게스트 사용자 계정과 모든 Linux Vm에 대 한 일반/일반 사용자 계정 (비 sudo 액세스)을 만듭니다.
-**VMware 도구** | 검색 하려는 Vm에 VMware 도구를 설치 하 고 실행 해야 합니다.
+**VMware 도구** | 검색 하려는 Vm에 VMware 도구를 설치 하 고 실행 해야 합니다. <br/> VMware tools 버전이 9.10-10.2.0 사이인 경우 10.2.0 이상으로 업그레이드 하세요.
 **포트 액세스** | 검색 하려는 Vm을 실행 하는 ESXi 호스트에서 Azure Migrate 어플라이언스는 TCP 포트 443에 연결할 수 있어야 합니다.
 **제한** | 앱 검색의 경우 어플라이언스 당 최대 1만 개를 검색할 수 있습니다. 
 

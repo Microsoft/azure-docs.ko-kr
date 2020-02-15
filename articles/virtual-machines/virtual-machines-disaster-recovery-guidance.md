@@ -1,28 +1,19 @@
 ---
-title: Azure VM용 재해 복구 시나리오 | Microsoft Docs
+title: 재해 복구 시나리오
 description: Azure 가상 머신에 영향을 주는 Azure 서비스 중단 발생 시 수행할 작업을 알아본다.
-services: virtual-machines
-documentationcenter: ''
-author: kmouss
-manager: gwallace
-editor: ''
-ms.assetid: 65272148-ff06-4bce-91f1-851d706d4d40
+author: cynthn
 ms.service: virtual-machines
-ms.workload: virtual-machines
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/31/2017
-ms.author: gwallace
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b59343fca5e14d211864a1354001819c918bd1ca
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.author: cynthn
+ms.openlocfilehash: f2dc43e1f07d449bf2f8ed39ce4523c99b551dae
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73891511"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77115619"
 ---
-# <a name="what-to-do-in-the-event-that-an-azure-service-disruption-impacts-azure-vms"></a>Azure VM에 영향을 주는 Azure 서비스 중단 발생 시 수행할 작업
+# <a name="what-if-an-azure-service-disruption-impacts-azure-vms"></a>Azure 서비스 중단이 Azure Vm에 영향을 주는 경우
 Microsoft에서는 서비스가 필요할 때 서비스를 항상 사용할 수 있도록 하기 위해 많은 노력을 기울입니다. 다만 경우에 따라 계획되지 않은 서비스 중단이 발생하여 강제적으로 제어 영향을 벗어날 때가 있습니다.
 
 Microsoft는 작동 시간 및 연결에 대한 약정으로 해당 서비스에 대한 서비스 수준 약정(SLA)을 제공합니다. 개별 Azure 서비스에 대한 SLA는 [Azure 서비스 수준 계약](https://azure.microsoft.com/support/legal/sla/)에서 찾을 수 있습니다.

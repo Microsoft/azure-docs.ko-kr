@@ -11,12 +11,12 @@ author: srinia
 ms.author: srinia
 ms.reviewer: sstein
 ms.date: 12/18/2018
-ms.openlocfilehash: 283b4004f34372104eb083496400772884f5965e
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 633c3ffc8e266087c88116a15c43469727a9a50d
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74420387"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77133641"
 ---
 # <a name="create-configure-and-manage-elastic-jobs"></a>탄력적 작업 만들기, 구성 및 관리
 
@@ -88,7 +88,7 @@ T-sql에서 `sp_add_jobstep` 저장 프로시저의 `@max_parallelism` 매개 �
 
 
 ```sql
-IF NOT EXIST (some_object)
+IF NOT EXISTS (some_object)
     -- Create the object
     -- If it exists, drop the object before recreating it.
 ```

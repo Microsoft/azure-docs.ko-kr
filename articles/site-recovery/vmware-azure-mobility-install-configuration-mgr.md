@@ -3,14 +3,14 @@ title: Azure Site Recovery에서 설치의 재해 복구를 위한 모바일 서
 description: Azure Site Recovery를 사용 하 여 VMware/물리적 서버 재해 복구를 위해 모바일 서비스를 자동으로 설치 하는 방법입니다.
 author: Rajeswari-Mamilla
 ms.topic: how-to
-ms.date: 12/22/2019
+ms.date: 2/5/2020
 ms.author: ramamill
-ms.openlocfilehash: 235b96cfd2da0c097bc576c63f5bd1c8ed224781
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: f24d321e882024d324435498adf11694037547f7
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76896020"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77252230"
 ---
 # <a name="automate-mobility-service-installation"></a>모바일 서비스 설치 자동화
 
@@ -20,7 +20,7 @@ Azure에 대 한 온-프레미스 VMware Vm 및 물리적 서버의 재해 복�
 
 - **강제 설치**: Azure Portal에서 컴퓨터에 대 한 복제를 사용 하도록 설정 하는 경우 모바일 서비스 에이전트를 설치 Site Recovery 수 있습니다.
 - **수동 설치**: 각 컴퓨터에 모바일 서비스를 수동으로 설치 합니다. 푸시 및 수동 설치에 [대해 자세히 알아보세요](vmware-physical-mobility-service-overview.md) .
-- **자동 배포**: Microsoft Endpoint Configuration Manager와 같은 소프트웨어 배포 도구 또는 Intigua JetPatch와 같은 타사 도구를 사용 하 여 설치를 자동화 합니다.
+- **자동 배포**: Microsoft Endpoint Configuration Manager와 같은 소프트웨어 배포 도구 또는 JetPatch와 같은 타사 도구를 사용 하 여 설치를 자동화 합니다.
 
 자동 설치 및 업데이트는 다음과 같은 경우에 솔루션을 제공 합니다.
 
@@ -31,7 +31,7 @@ Azure에 대 한 온-프레미스 VMware Vm 및 물리적 서버의 재해 복�
 - 에이전트 설치를 여러 서버에 동시에 확장 해야 합니다.
 - 계획 된 유지 관리 기간 동안 설치 및 업그레이드를 예약 하려고 합니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 설치를 자동화 하려면 다음 항목이 필요 합니다.
 
@@ -374,7 +374,7 @@ cd /tmp
 
    ![Configuration Manager 콘솔의 스크린샷](./media/vmware-azure-mobility-install-configuration-mgr/sccm_distribute.png)
 
-1. 패키지를 복사할 배포 지점의를 선택 합니다. [자세히 알아보기](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points).
+1. 패키지를 복사할 배포 지점의를 선택 합니다. [자세히 알아봅니다](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points).
 1. 마법사를 완료합니다. 그러면 패키지가 지정된 배포 지점에 복제를 시작합니다.
 1. 패키지 배포가 완료 된 후 패키지 > **배포**를 마우스 오른쪽 단추로 클릭 합니다.
 
@@ -386,7 +386,7 @@ cd /tmp
 
    ![소프트웨어 배포 마법사의 스크린샷](./media/vmware-azure-mobility-install-configuration-mgr/sccm-deploy-select-purpose.png)
 
-1. **이 배포에 대 한 일정 지정**에서 일정을 설정 합니다. [자세히 알아보기](/sccm/apps/deploy-use/deploy-applications#bkmk_deploy-sched).
+1. **이 배포에 대 한 일정 지정**에서 일정을 설정 합니다. [자세히 알아봅니다](/sccm/apps/deploy-use/deploy-applications#bkmk_deploy-sched).
 
    - 모바일 서비스는 지정 된 일정에 따라 설치 됩니다.
    - 불필요한 재부팅을 방지하려면 매월 유지 관리 시간 또는 소프트웨어 업데이트 시간에 패키지 설치를 예약합니다.

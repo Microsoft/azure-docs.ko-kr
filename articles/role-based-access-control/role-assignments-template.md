@@ -1,5 +1,5 @@
 ---
-title: Azure RBAC 및 Azure Resource Manager 템플릿을 사용 하 여 역할 할당 추가
+title: RBAC 및 Azure Resource Manager 템플릿을 사용 하 여 역할 할당 추가
 description: Azure RBAC (역할 기반 액세스 제어) 및 Azure Resource Manager 템플릿을 사용 하 여 사용자, 그룹, 서비스 주체 또는 관리 되는 id에 대 한 Azure 리소스에 대 한 액세스 권한을 부여 하는 방법에 대해 알아봅니다.
 services: active-directory
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: aeb4bfbc40196575e2cb812738a9ab5de991d2aa
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 9f817880f938f5d03024e3aacd9b84817a5ac721
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981029"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138295"
 ---
 # <a name="add-role-assignments-using-azure-rbac-and-azure-resource-manager-templates"></a>Azure RBAC 및 Azure Resource Manager 템플릿을 사용 하 여 역할 할당 추가
 
@@ -52,7 +52,7 @@ $objectid = (Get-AzADGroup -DisplayName "{name}").id
 objectid=$(az ad group show --group "{name}" --query objectId --output tsv)
 ```
 
-### <a name="application"></a>애플리케이션
+### <a name="application"></a>응용 프로그램
 
 서비스 사용자 (응용 프로그램에서 사용 하는 id)의 ID를 가져오려면 [AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal) 또는 [az ad sp list](/cli/azure/ad/sp#az-ad-sp-list) 명령을 사용할 수 있습니다. 서비스 사용자의 경우 응용 프로그램 ID가 **아니라** 개체 id를 사용 합니다.
 

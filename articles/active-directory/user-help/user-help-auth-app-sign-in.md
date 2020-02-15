@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: conceptual
-ms.date: 01/24/2019
+ms.date: 02/07/2020
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: 8f22e575b609b0dcd56bf9a1f49fffd41f14e898
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: b5f2b42728fd6f3d61695b4f88cc416015dd97cb
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77062203"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77108266"
 ---
 # <a name="sign-in-to-your-accounts-using-the-microsoft-authenticator-app"></a>Microsoft Authenticator 앱을 사용하여 계정에 로그인
 
@@ -31,7 +31,7 @@ Microsoft Authenticator 앱은 다음을 비롯한 여러 가지 방법으로 �
   >[!Important]
   >이 휴대폰 로그인 방법은 회사 또는 학교 및 개인 Microsoft 계정에서만 작동합니다. Microsoft 이외의 계정은 표준 2단계 인증 프로세스를 사용해야 합니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 Microsoft Authenticator 앱을 사용하려면 다음을 수행해야 합니다.
 
@@ -109,14 +109,14 @@ Outlook.com, Xbox, Skype 등의 개인 Microsoft 계정에 휴대폰 로그인�
 
 ## <a name="frequently-asked-questions"></a>질문과 대답
 
-| 질문 | 솔루션 |
+| 질문 | 해결 방법 |
 | -------- | -------- |
 | 휴대폰에 암호를 입력하는 것보다 안전하게 로그인할 수 있나요? | 오늘날 대부분의 사람들은 사용자 이름 및 암호를 사용하여 웹 사이트 또는 앱에 로그인합니다. 그러나 암호를 분실하거나, 도난당하거나, 해커가 추측할 가능성이 있습니다.<br><br>Microsoft Authenticator 앱을 설정하면 이 앱은 휴대폰의 PIN 또는 생체 인식 잠금으로 보호되는 계정을 잠금 해제하는 키를 휴대폰에 만듭니다. 이 키는 로그인하는 동안 신원을 증명하는 데 사용됩니다.<br><br>**중요**<br>데이터는 키를 로컬로 보호하는 용도로만 사용됩니다. 어떤 경우에도 전송되거나 클라우드에 저장되지 않습니다. |
 | 전화 로그인이 2 단계 인증을 대체 하나요? 기능을 꺼야 하나요? | 휴대폰 로그인은 2단계 모두 모바일 디바이스에서 발생하는 2단계 인증의 형식입니다. 계정에 대한 추가 보안을 제공하도록 설정한 2단계 인증을 유지해야 합니다. |
-| 내 계정에 대해 2 단계 인증을 계속 설정 하는 경우 두 개의 알림을 승인 해야 하나요? | No. 휴대폰을 사용하여 Microsoft 계정에 로그인해도 2단계 인증으로 집계되므로 두 번째 승인은 필요 없습니다. |
+| 내 계정에 대해 2 단계 인증을 계속 설정 하는 경우 두 개의 알림을 승인 해야 하나요? | 아니요. 휴대폰을 사용하여 Microsoft 계정에 로그인해도 2단계 인증으로 집계되므로 두 번째 승인은 필요 없습니다. |
 | 휴대폰을 분실 하거나 포함 하지 않으면 어떻게 되나요? 내 계정에 액세스 어떻게 할까요?? | 언제든지 로그인 페이지에서 [암호를 대신 사용]을 선택하여 암호를 사용하도록 전환할 수 있습니다. 그러나 2단계 인증을 사용하더라도 여전히 두 번째 방법을 사용하여 신분을 증명해야 합니다.<br><br>**중요**<br>계정에 두 가지 이상의 최신 인증 방법을 연결하는 것이 좋습니다.<br><br>[보안 설정](https://account.live.com/proofs/manage) 페이지에서 개인 계정의 인증 방법을 관리할 수 있습니다. 회사 또는 학교 계정이면 관리자가 보안 정보를 설정한 경우 조직의 [추가 보안 인증](https://account.activedirectory.windowsazure.com/proofup.aspx?proofup=1) 페이지 또는 **계정 보안 유지** 페이지로 이동하면 됩니다. 보안 정보에 대 한 자세한 내용은 [보안 정보 (미리 보기) 개요](user-help-security-info-overview.md)를 참조 하세요.<br><br>인증 방법을 관리할 수 없으면 관리자에게 문의해야 합니다. |
 | 이 기능을 사용 중지 하 고 암호를 사용 하 여 돌아가 어떻게 할까요?? | 개인 계정의 경우 로그인하는 동안 **암호를 대신 사용** 링크를 선택합니다. 가장 최근에 사용한 방법이 저장되어 다음에 로그인할 때 기본값으로 제공됩니다. 다시 휴대폰 로그인을 사용하려면 로그인하는 동안 **앱을 대신 사용** 링크를 선택합니다.<br><br>회사 또는 학교 계정의 경우 Microsoft Authenticator 앱의 **설정** 페이지에서 장치의 등록을 취소 하거나 프로필의 **장치 & 활동** 영역에서 장치를 사용 하지 않도록 설정 해야 합니다. 프로필에서 장치를 사용 하지 않도록 설정 하는 방법에 대 한 자세한 내용은 [My Apps 포털에서 프로필 및 계정 정보 업데이트](my-apps-portal-end-user-update-profile.md#view-your-organization-related-profile-information)를 참조 하세요. |
-| 휴대폰 로그인에 회사 또는 학교 계정을 둘 이상 사용할 수 없는 이유는 무엇입니까? | 한 휴대폰은 하나의 회사 또는 학교 계정에 등록되어야 합니다. 다른 회사 또는 학교 계정에서 휴대폰 로그인을 사용하려면 먼저 **설정** 페이지를 통해 기존 디바이스의 등록을 취소해야 합니다. |
+| 휴대폰 로그인에 회사 또는 학교 계정을 둘 이상 사용할 수 없는 이유는 무엇입니까? | 한 휴대폰은 하나의 회사 또는 학교 계정에 등록되어야 합니다. 다른 회사 또는 학교 계정에 대해 휴대폰 로그인을 설정 하려면 **설정** 페이지를 통해이 장치에서 계정의 등록을 취소 해야 합니다. |
 | 내 휴대폰을 사용 하 여 내 컴퓨터에 로그인 할 수 있나요? | 컴퓨터에서 Windows 10의 Windows Hello를 사용하여 로그인하는 것이 좋습니다. Windows Hello는 얼굴, 지문 또는 PIN을 사용하여 로그인할 수 있습니다. |
 
 ## <a name="next-steps"></a>다음 단계

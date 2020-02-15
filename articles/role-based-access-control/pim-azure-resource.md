@@ -1,5 +1,5 @@
 ---
-title: Azure AD PIM(Privileged Identity Management)을 사용하여 Azure 리소스에 대한 액세스 관리
+title: Azure AD 및 PIM을 사용 하 여 Azure 리소스에 대 한 액세스 관리
 description: Azure Active Directory PIM(Privileged Identity Management) 및 RBAC(역할 기반 액세스 제어)를 사용하여 Azure 리소스에 대한 액세스를 관리하는 방법을 알아봅니다.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 03/30/2018
 ms.author: rolyon
 ms.reviewer: skwan
-ms.openlocfilehash: 757068034868744b408c9402b521a0e4c73950f7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 53c6375ce04425eae27f4c935e613cc27d058dc8
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60344617"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138045"
 ---
 # <a name="manage-access-to-azure-resources-with-azure-ad-privileged-identity-management"></a>Azure AD Privileged Identity Management를 사용하여 Azure 리소스에 대한 액세스 관리
 

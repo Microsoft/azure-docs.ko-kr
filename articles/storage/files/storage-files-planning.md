@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/16/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 5a9e5e014740302c439036bd3889761f4750344f
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 203bf584711fbfcfd0baeee8f5e4c7f70d96823b
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77062866"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157223"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Azure Files 배포에 대한 계획
 
@@ -93,7 +93,7 @@ Azure Backup는 프리미엄 파일 공유에 사용할 수 있으며 Azure Kube
 현재 표준 파일 공유와 프리미엄 파일 공유 사이에서 직접 변환할 수 없습니다. 두 계층으로 전환 하려는 경우 해당 계층에서 새 파일 공유를 만들고 원래 공유에서 만든 새 공유로 데이터를 수동으로 복사 해야 합니다. Azure Files 지원 되는 복사 도구 (예: Robocopy 또는 AzCopy)를 사용 하 여이 작업을 수행할 수 있습니다.
 
 > [!IMPORTANT]
-> 프리미엄 파일 공유는 저장소 계정을 제공 하는 대부분의 지역에서 더 작은 하위 집합의 ZRS로 LRS와 함께 사용할 수 있습니다. 현재 지역에서 프리미엄 파일 공유를 사용할 수 있는지 확인 하려면 Azure에 대 한 [지역별 사용 가능한 제품](https://azure.microsoft.com/global-infrastructure/services/?products=storage) 페이지를 참조 하세요. ZRS를 지 원하는 지역을 알아보려면 [지원 범위 및 지역 가용성](../common/storage-redundancy-zrs.md#support-coverage-and-regional-availability)을 참조 하세요.
+> 프리미엄 파일 공유는 저장소 계정을 제공 하는 대부분의 지역에서 더 작은 하위 집합의 ZRS로 LRS와 함께 사용할 수 있습니다. 현재 지역에서 프리미엄 파일 공유를 사용할 수 있는지 확인 하려면 Azure에 대 한 [지역별 사용 가능한 제품](https://azure.microsoft.com/global-infrastructure/services/?products=storage) 페이지를 참조 하세요. ZRS를 지 원하는 지역에 대 한 자세한 내용은 [중복성 Azure Storage](../common/storage-redundancy.md)를 참조 하세요.
 >
 > 새 지역 및 프리미엄 계층 기능의 우선 순위를 지정 하는 데 도움이 되도록이 [설문 조사](https://aka.ms/pfsfeedback)를 작성해 주세요.
 
@@ -155,41 +155,14 @@ Azure Backup는 프리미엄 파일 공유에 사용할 수 있으며 Azure Kube
 
 ## <a name="file-share-redundancy"></a>파일 공유 중복성
 
-Azure Files 표준 공유는 LRS (로컬 중복 저장소), ZRS (영역 중복 저장소), GRS (지역 중복 저장소) 및 GZRS (지역 중복 저장소) (미리 보기)의 4 가지 데이터 중복성 옵션을 지원 합니다.
+[!INCLUDE [storage-common-redundancy-options](../../../includes/storage-common-redundancy-options.md)]
 
-프리미엄 공유 Azure Files LRS와 ZRS를 모두 지원 하며, ZRS는 현재 더 작은 하위 집합에서 사용할 수 있습니다.
-
-다음 섹션에서는 서로 다른 중복 옵션의 차이점에 대해 설명합니다.
-
-### <a name="locally-redundant-storage"></a>로컬 중복 스토리지
-
-[!INCLUDE [storage-common-redundancy-LRS](../../../includes/storage-common-redundancy-LRS.md)]
-
-### <a name="zone-redundant-storage"></a>영역 중복 스토리지
-
-[!INCLUDE [storage-common-redundancy-ZRS](../../../includes/storage-common-redundancy-ZRS.md)]
-
-### <a name="geo-redundant-storage"></a>지역 중복 스토리지
+읽기 액세스 지역 중복 저장소 (RA-GRS)를 옵트인 (opt in) 하는 경우 Azure 파일이 현재 모든 지역에서 읽기 액세스 지역 중복 저장소 (RA-GRS)를 지원 하지 않는다는 것을 알아야 합니다. RA-GRS 저장소 계정의 파일 공유는 GRS 계정에서와 같이 작동 하며 GRS 가격이 청구 됩니다.
 
 > [!Warning]  
 > Azure 파일 공유를 GRS 스토리지 계정의 클라우드 엔드포인트로 사용하는 경우 스토리지 계정 장애 조치(failover)를 시작하면 안 됩니다. 이러한 계정을 장애 조치(failover)하면 동기화가 더 이상 진행되지 않고, 새로 계층화된 파일의 경우 예기치 않은 데이터 손실이 발생할 수도 있습니다. Azure 지역이 손실되는 경우 Microsoft는 Azure 파일 동기화와 호환되는 방식으로 스토리지 계정의 장애 조치(failover)를 트리거합니다.
 
-GRS(지역 중복 스토리지)는 기본 지역에서 수백 마일 떨어진 보조 지역에 데이터를 복제하여 지정된 1년에 걸쳐 99.99999999999999%(16개의 9) 이상의 개체 내구성을 제공하도록 설계되었습니다. 스토리지 계정에서 GRS를 활성화하면 전체 지역 가동 중단 또는 기본 지역을 복구할 수 없는 재해의 경우라도 데이터는 지속됩니다.
-
-읽기 액세스 지역 중복 저장소 (RA-GRS)를 옵트인 (opt in) 하는 경우 Azure 파일이 현재 모든 지역에서 읽기 액세스 지역 중복 저장소 (RA-GRS)를 지원 하지 않는다는 것을 알아야 합니다. RA-GRS 저장소 계정의 파일 공유는 GRS 계정에서와 같이 작동 하며 GRS 가격이 청구 됩니다.
-
-GRS는 데이터를 보조 지역의 다른 데이터 센터에 복제하지만, Microsoft에서 주 지역에서 보조 지역으로 장애 조치를 시작하는 경우에만 해당 데이터를 읽을 수 있습니다.
-
-GRS를 사용 하는 저장소 계정의 경우 모든 데이터는 먼저 LRS (로컬 중복 저장소)를 사용 하 여 복제 됩니다. 업데이트는 먼저 기본 위치에 커밋되고 LRS를 사용하여 복제됩니다. 그런 다음, 업데이트는 GRS를 사용하여 보조 지역에 비동기적으로 복제됩니다. 데이터가 보조 위치에 기록되는 경우 LRS를 사용하여 해당 위치 내에도 복제됩니다.
-
-주 지역 및 보조 지역에서 모두 별도의 장애 도메인에서 복제본을 관리하고, 스토리지 배율 단위 내에서 도메인을 업그레이드합니다. 스토리지 배율 단위는 데이터 센터 내의 기본 복제 단위입니다. 이 수준의 복제는 LRS에서 제공합니다. 자세한 내용은 [LRS(로컬 중복 스토리지): Azure Storage에 대한 저렴한 데이터 중복](../common/storage-redundancy-lrs.md)을 참조하세요.
-
-사용할 복제 옵션을 결정할 때 다음 사항에 유의하세요.
-
-* GZRS (지역 중복 저장소) (미리 보기)는 세 개의 Azure 가용성 영역에서 데이터를 동기적으로 복제 한 다음 데이터를 보조 지역에 비동기적으로 복제 하 여 고가용성과 함께 고가용성을 제공 합니다. 보조 지역에 대 한 읽기 액세스를 사용 하도록 설정할 수도 있습니다. GZRS는 지정 된 연도 동안 최소 99.99999999999999% (16 9의) 개체 내 구성을 제공 하도록 설계 되었습니다. GZRS에 대 한 자세한 내용은 고가용성 [및 최대 내구성 (미리 보기)을 위한 지리적 영역 중복 저장소](../common/storage-redundancy-gzrs.md)를 참조 하세요.
-* ZRS (영역 중복 저장소)는 동기식 복제를 사용 하 여 고가용성을 제공 하며, GRS 보다는 일부 시나리오에서 더 나은 선택이 될 수 있습니다. ZRS에 대한 자세한 내용은 [ZRS](../common/storage-redundancy-zrs.md)를 참조하세요.
-* 비동기 복제에는 데이터가 주 지역에 기록되는 시간에서 보조 지역으로 복제되는 시간까지의 지연이 발생합니다. 지역 재해의 경우 주 지역에서 해당 데이터를 복구할 수 없으면 보조 지역에 아직 복제되지 않은 변경 내용이 손실될 수 있습니다.
-* GRS를 사용하면 Microsoft에서 보조 지역으로 장애 조치(failover)를 시작하지 않는 한 읽기 또는 쓰기를 위해 복제본에 액세스할 수 없습니다. 장애 조치(failover)의 경우 장애 조치가 완료된 후 해당 데이터에 대한 읽기 및 쓰기 액세스 권한이 생성됩니다. 자세한 내용은 [재해 복구 지침](../common/storage-disaster-recovery-guidance.md)을 참조하세요.
+프리미엄 공유 Azure Files LRS와 ZRS를 모두 지원 하며, ZRS는 현재 더 작은 하위 집합에서 사용할 수 있습니다.
 
 ## <a name="onboard-to-larger-file-shares-standard-tier"></a>더 큰 파일 공유에 등록 (표준 계층)
 

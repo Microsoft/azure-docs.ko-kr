@@ -1,5 +1,5 @@
 ---
-title: 모든 Azure 구독 및 관리 그룹을 관리하는 액세스 권한 상승 | Microsoft Docs
+title: 모든 Azure 구독 및 관리 그룹을 관리하는 액세스 권한 상승
 description: Azure Portal 또는 REST API를 사용하여 Azure Active Directory에서 모든 구독 및 관리 그룹을 관리하는 글로벌 관리자에 대한 액세스 권한을 상승시키는 방법에 대해 설명합니다.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 12/03/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 8b27a97d95f224513dd03293b9bd0082c5ed6d1b
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 1731c630cb98ac542ebcdc7aedf07f7bb63eaec0
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75772264"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137454"
 ---
 # <a name="elevate-access-to-manage-all-azure-subscriptions-and-management-groups"></a>모든 Azure 구독 및 관리 그룹을 관리 하기 위해 액세스 권한 상승
 
@@ -41,13 +41,13 @@ Azure AD(Azure Active Directory)의 글로벌 관리자로서 디렉터리에 �
 
 Azure AD와 Azure 리소스는 서로 독립적으로 보호됩니다. 즉, Azure AD 역할을 할당해도 Azure 리소스에 대한 액세스가 부여되지 않고, Azure 역할을 할당해도 Azure AD에 대한 액세스가 부여되지 않습니다. 그러나 Azure AD의 [글로벌 관리자](../active-directory/users-groups-roles/directory-assign-admin-roles.md#company-administrator-permissions)는 디렉터리에 있는 모든 Azure 구독 및 관리 그룹에 대한 액세스 권한을 자신에게 할당할 수 있습니다. 가상 머신이나 스토리지 계정 같은 Azure 구독 리소스에 액세스할 수 없고, 글로벌 관리자 권한을 사용하여 이러한 리소스에 대한 액세스 권한을 얻고 싶으면 이 기능을 사용하세요.
 
-액세스 권한을 높이면 Azure의 루트 범위(`/`)에서 [사용자 액세스 관리자](built-in-roles.md#user-access-administrator) 역할이 할당됩니다. 이를 통해 모든 리소스를 보고 디렉터리의 모든 구독 또는 관리 그룹에서 액세스 권한을 할당할 수 있습니다. 사용자 액세스 관리자 역할 할당은 Azure PowerShell, Azure CLI 또는 REST API를 사용 하 여 제거할 수 있습니다.
+액세스 권한을 높이면 Azure의 루트 범위([)에서 ](built-in-roles.md#user-access-administrator)사용자 액세스 관리자`/` 역할이 할당됩니다. 이를 통해 모든 리소스를 보고 디렉터리의 모든 구독 또는 관리 그룹에서 액세스 권한을 할당할 수 있습니다. 사용자 액세스 관리자 역할 할당은 Azure PowerShell, Azure CLI 또는 REST API를 사용 하 여 제거할 수 있습니다.
 
 루트 범위에서 필요한 변경 작업을 마친 후에는 상승된 액세스 권한을 제거해야 합니다.
 
 ![액세스 권한 상승](./media/elevate-access-global-admin/elevate-access.png)
 
-## <a name="azure-portal"></a>Azure Portal
+## <a name="azure-portal"></a>Azure 포털
 
 ### <a name="elevate-access-for-a-global-administrator"></a>전역 관리자에 대한 액세스 권한 상승
 
@@ -215,7 +215,7 @@ az role assignment list --role "User Access Administrator" --scope "/"
 
 루트 범위 (`/`)에서 사용자에 대 한 모든 역할 할당을 나열할 수 있습니다.
 
-- `{objectIdOfUser}`가 역할 할당을 검색하려는 사용자의 개체 ID인 경우 [GET roleAssignments](/rest/api/authorization/roleassignments/listforscope)를 호출합니다.
+- [가 역할 할당을 검색하려는 사용자의 개체 ID인 경우 ](/rest/api/authorization/roleassignments/listforscope)GET roleAssignments`{objectIdOfUser}`를 호출합니다.
 
    ```http
    GET https://management.azure.com/providers/Microsoft.Authorization/roleAssignments?api-version=2015-07-01&$filter=principalId+eq+'{objectIdOfUser}'
@@ -235,7 +235,7 @@ az role assignment list --role "User Access Administrator" --scope "/"
 
 `elevateAccess`를 호출 하는 경우 자신에 대 한 역할 할당을 만들어 해당 권한을 취소 하려면 루트 범위 (`/`)에서 자신에 대 한 사용자 액세스 관리자 역할 할당을 제거 해야 합니다.
 
-1. `roleName`이 사용자 액세스 관리자인 [GET roleDefinitions](/rest/api/authorization/roledefinitions/get)를 호출하여 사용자 액세스 관리자 역할의 ID 이름을 확인합니다.
+1. [이 사용자 액세스 관리자인 ](/rest/api/authorization/roledefinitions/get)GET roleDefinitions`roleName`를 호출하여 사용자 액세스 관리자 역할의 ID 이름을 확인합니다.
 
     ```http
     GET https://management.azure.com/providers/Microsoft.Authorization/roleDefinitions?api-version=2015-07-01&$filter=roleName+eq+'User Access Administrator'
@@ -276,7 +276,7 @@ az role assignment list --role "User Access Administrator" --scope "/"
     }
     ```
 
-    `18d7d88d-d35e-4fb5-a5c3-7773c20a72d9` 같은 경우에 `name` 매개 변수의 ID를 저장합니다.
+    `name` 같은 경우에 `18d7d88d-d35e-4fb5-a5c3-7773c20a72d9` 매개 변수의 ID를 저장합니다.
 
 1. 또한 디렉터리 범위에서 디렉터리 관리자의 역할 할당을 나열해야 합니다. 액세스 권한 상승 호출을 수행한 디렉터리 관리자의 `principalId`에 대한 디렉터리 범위에 포함되는 모든 할당을 나열합니다. 그러면 objectid에 대한 디렉터리의 모든 할당이 나열됩니다.
 

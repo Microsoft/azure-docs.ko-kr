@@ -6,14 +6,14 @@ ms.author: lcozzens
 ms.date: 01/14/2020
 ms.topic: conceptual
 ms.service: azure-app-configuration
-ms.openlocfilehash: 269ae5630d1524cb8f89d3af8728892079f6eb5f
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: ce8d42ec7c37b19378b6f4ae0c81548f2eff5c9c
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76899615"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190392"
 ---
-# <a name="sync-your-app-configuration-instance-using-github-actions"></a>GitHub 작업을 사용 하 여 앱 구성 인스턴스 동기화
+# <a name="sync-your-app-configuration-instance-using-github-actions"></a>GitHub Actions를 사용하여 App Configuration 인스턴스 동기화
 Azure 앱 구성은 github 리포지토리에서 수행 된 작업에 의해 트리거되는 경우 GitHub 작업을 사용 하 여 앱 구성 인스턴스를 업데이트 합니다. GitHub 워크플로를 활용 하 여 앱 구성을 업데이트할 수 있습니다. 앱 구성 업데이트를 앱 코드 업데이트에 사용 되는 것과 동일한 워크플로로 통합할 수 있습니다.
 
 GitHub 작업 [워크플로](https://help.github.com/articles/about-github-actions#workflow) 는 github 리포지토리에 정의 된 자동화 된 프로세스입니다. 이 프로세스는 github 프로젝트를 빌드하고 배포 하는 방법을 GitHub에 알려 줍니다. Azure 앱 구성은 원본 리포지토리가 변경 될 때 앱 구성 인스턴스를 업데이트할 수 있도록 *Azure 앱 구성 동기화* 작업을 제공 합니다. 
@@ -25,8 +25,7 @@ GitHub 작업 [워크플로](https://help.github.com/articles/about-github-actio
 GitHub [설명서](https://help.github.com/actions/automating-your-workflow-with-github-actions/configuring-a-workflow) 는 github 워크플로 및 작업에 대 한 자세한 보기를 제공 합니다. 
 
 ## <a name="enable-github-actions-in-your-repository"></a>리포지토리에서 GitHub 작업 사용
-이 GitHub 동작 사용을 시작 하려면 리포지토리로 이동 하 고 [ **작업** ] 탭을 선택 하세요. "Azure 앱 구성 동기화"를 검색 하 여 Marketplace에서 GitHub 작업을 찾아 선택 합니다. 
-
+이 GitHub 동작 사용을 시작 하려면 리포지토리로 이동 하 고 [ **작업** ] 탭을 선택 하세요. "새 워크플로"를 클릭 한 다음 "직접 워크플로 설정"을 클릭 합니다. 여기에서 "Azure 앱 구성 동기화"에 대해 marketplace를 검색 합니다.
 > [!div class="mx-imgBorder"]
 > 작업 탭을 선택 ![](media/find-github-action.png)
 
@@ -186,15 +185,15 @@ jobs:
 
 | 입력 이름 | 필수 여부 | 값 |
 |----|----|----|
-| Configurationfile.ini | 예 | 리포지토리의 루트를 기준으로 하는 리포지토리의 구성 파일에 대 한 경로입니다.  Glob 패턴은 지원 되며 여러 파일을 포함할 수 있습니다. |
-| format | 예 | 구성 파일의 파일 형식입니다.  유효한 형식은 JSON, YAML, properties입니다. |
-| connectionString | 예 | 앱 구성 인스턴스에 대 한 연결 문자열입니다. 연결 문자열은 GitHub 리포지토리에서 암호로 저장 해야 하며, 워크플로에서는 암호 이름만 사용 해야 합니다. |
-| 구분 기호 | 예 | 구성 파일을 키-값 쌍으로 평면화 할 때 사용 되는 구분 기호입니다.  유효한 값은입니다. , ; : - _ __ / |
-| 접두사 | 아닙니다. | 키의 시작 부분에 추가할 접두사입니다. |
-| label | 아닙니다. | 키-값 쌍을 설정할 때 사용 되는 레이블입니다. 지정 하지 않으면 null 레이블이 사용 됩니다. |
-| 제품과 | 아닙니다. | Strict 모드를 사용 하는지 여부를 결정 하는 부울 값입니다. 기본값은 False입니다. |
-| 크기 | 아닙니다. | 구성 파일을 평면화 하는 최대 깊이입니다.  깊이는 양수 여야 합니다.  기본값에는 최대 깊이가 없습니다. |
-| tags | 아닙니다. | 키-값 쌍에 대해 설정 된 태그를 지정 합니다.  필요한 형식은 다음 모양의 JSON 개체에 대 한 문자열 형식 형식입니다. {[propertyName: string]: string;} 각 속성 이름-값은 태그가 됩니다. |
+| Configurationfile.ini | yes | 리포지토리의 루트를 기준으로 하는 리포지토리의 구성 파일에 대 한 경로입니다.  Glob 패턴은 지원 되며 여러 파일을 포함할 수 있습니다. |
+| format | yes | 구성 파일의 파일 형식입니다.  유효한 형식은 JSON, YAML, properties입니다. |
+| connectionString | yes | 앱 구성 인스턴스에 대 한 연결 문자열입니다. 연결 문자열은 GitHub 리포지토리에서 암호로 저장 해야 하며, 워크플로에서는 암호 이름만 사용 해야 합니다. |
+| 구분 기호 | yes | 구성 파일을 키-값 쌍으로 평면화 할 때 사용 되는 구분 기호입니다.  유효한 값은입니다. , ; : - _ __ / |
+| 접두사 | 예 | 키의 시작 부분에 추가할 접두사입니다. |
+| label | 예 | 키-값 쌍을 설정할 때 사용 되는 레이블입니다. 지정 하지 않으면 null 레이블이 사용 됩니다. |
+| 제품과 | 예 | Strict 모드를 사용 하는지 여부를 결정 하는 부울 값입니다. 기본값은 False입니다. |
+| 크기 | 예 | 구성 파일을 평면화 하는 최대 깊이입니다.  깊이는 양수 여야 합니다.  기본값에는 최대 깊이가 없습니다. |
+| tags | 예 | 키-값 쌍에 대해 설정 된 태그를 지정 합니다.  필요한 형식은 다음 모양의 JSON 개체에 대 한 문자열 형식 형식입니다. {[propertyName: string]: string;} 각 속성 이름-값은 태그가 됩니다. |
 
 ## <a name="next-steps"></a>다음 단계
 

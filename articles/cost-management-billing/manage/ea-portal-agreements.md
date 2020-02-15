@@ -25,7 +25,7 @@ Azure 고객을 위한 모든 수정안은 파트너 또는 Microsoft 계정 팀
 
 ## <a name="enrollment-provisioning-status"></a>등록 프로비저닝 상태
 
-새로운 금액 약정 시작 날짜는 지역 운영 센터에서 처리한 날짜를 기준으로 정해집니다. Azure EA Portal을 통한 현금 약정 금액 주문은 UTC 표준 시간대로 처리되기 때문에, 현금 약정 금액 구매 주문이 다른 영역에서 처리되는 경우 약간의 지연이 발생할 수 있습니다. https://www.explore.ms 의 구매 주문 적용 시작 날짜는 금액 약정의 시작을 표시합니다. 적용 시작 날짜는 해당 금액 약정이 Azure EA 포털에 나타나는 날짜입니다.
+새로운 금액 약정 시작 날짜는 지역 운영 센터에서 처리한 날짜를 기준으로 정해집니다. Azure EA Portal을 통한 현금 약정 금액 주문은 UTC 표준 시간대로 처리되기 때문에, 현금 약정 금액 구매 주문이 다른 영역에서 처리되는 경우 약간의 지연이 발생할 수 있습니다. [https://www.explore.ms](https://www.explore.ms ) 의 구매 주문 적용 시작 날짜는 금액 약정의 시작을 표시합니다. 적용 시작 날짜는 해당 금액 약정이 Azure EA 포털에 나타나는 날짜입니다.
 
 ## <a name="special-pricing-and-azure-commitment-discount-amendments"></a>특별 가격 책정 및 Azure 약정 할인 개정안
 

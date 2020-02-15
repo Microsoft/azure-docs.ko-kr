@@ -10,20 +10,16 @@ ms.author: mnark
 author: MrudulaN
 ms.reviewer: larryfr
 ms.date: 10/25/2019
-ms.openlocfilehash: c07e880ea9b3c382d3c6ecde51dfe8f4ab5c24fc
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 28d176289a0b6cfe659f390feb441158c57f6533
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76988433"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169930"
 ---
 # <a name="deploy-a-model-to-azure-machine-learning-compute-instances"></a>모델을 배포 하 여 계산 인스턴스 Azure Machine Learning
 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
-
-> [!NOTE]
-> 계산 인스턴스 (미리 보기)는 **미국 중 북부**, **미국 동부 2**, **서유럽** 또는 **영국 남부**지역이 포함 된 작업 영역에 대해서만 사용할 수 있으며 곧 다른 지역을 지원 합니다.
->작업 영역이 다른 지역에 있으면 [Notebook VM](concept-compute-instance.md#notebookvm)을 계속 만들어 사용할 수 있습니다.  이 문서의 단계를 사용 하 여 계산 인스턴스 또는 노트북 VM에 모델을 배포할 수 있습니다.
 
 Azure Machine Learning를 사용 하 여 Azure Machine Learning 계산 인스턴스에서 모델을 웹 서비스로 배포 하는 방법을 알아봅니다. 다음 조건 중 하나에 해당 하는 경우 compute 인스턴스를 사용 합니다.
 
@@ -33,7 +29,7 @@ Azure Machine Learning를 사용 하 여 Azure Machine Learning 계산 인스턴
 > [!TIP]
 > 계산 인스턴스의 Jupyter Notebook에서 동일한 VM의 웹 서비스로 모델을 배포 하는 것은 _로컬 배포_입니다. 이 경우 ' 로컬 ' 컴퓨터는 계산 인스턴스입니다. 배포에 대 한 자세한 내용은 [Azure Machine Learning를 사용 하 여 모델 배포](how-to-deploy-and-where.md)를 참조 하세요.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 - 계산 인스턴스가 실행 되는 Azure Machine Learning 작업 영역입니다. 자세한 내용은 [환경 및 작업 영역 설정](tutorial-1st-experiment-sdk-setup.md)을 참조 하세요.
 

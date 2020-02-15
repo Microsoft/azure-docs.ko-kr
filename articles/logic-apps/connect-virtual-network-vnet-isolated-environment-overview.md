@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
-ms.date: 12/16/2019
-ms.openlocfilehash: d8d57c15fffaa6a9d18ad3c83716f99247512c15
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.date: 02/10/2020
+ms.openlocfilehash: 1f743384f467e4559412fa1a46d48011b568d249
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75860755"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191561"
 ---
 # <a name="access-to-azure-virtual-network-resources-from-azure-logic-apps-by-using-integration-service-environments-ises"></a>ISE(통합 서비스 환경)를 사용하여 Azure Logic Apps에서 Azure Virtual Network 리소스에 액세스
 
@@ -45,7 +45,7 @@ Azure에서 ISE (통합 서비스 환경)를 만들 때 ISE를 *삽입* 하려�
 
 ISE의 논리 앱은 공용 글로벌 Logic Apps 서비스와 동일한 사용자 환경 및 유사한 기능을 제공 합니다. 전역 Logic Apps 서비스에서 사용할 수 있는 동일한 기본 제공 트리거, 작업 및 관리 되는 커넥터를 모두 사용할 수 있습니다. 일부 관리 되는 커넥터는 추가 ISE 버전을 제공 합니다. 사용자가 실행 되는 위치와 ISE 내에서 작업할 때 논리 앱 디자이너에 표시 되는 레이블에 차이가 있습니다.
 
-![ISE에 레이블이 있거나 없는 커넥터](./media/connect-virtual-network-vnet-isolated-environment-overview/labeled-built-in-actions-triggers-managed-connectors.png)
+![ISE에 레이블이 있거나 없는 커넥터](./media/connect-virtual-network-vnet-isolated-environment-overview/labeled-trigger-actions-integration-service-environment.png)
 
 * 기본 제공 트리거 및 작업은 **코어** 레이블을 표시 하 고, 항상 논리 앱과 동일한 ISE에서 실행 됩니다. **Ise** 레이블을 표시 하는 관리 커넥터는 논리 앱과 동일한 ISE 에서도 실행 됩니다.
 
@@ -111,10 +111,10 @@ Azure 가상 네트워크에 연결 된 온-프레미스 시스템의 경우 논
 * 사용자 지정 커넥터
 
   * 온-프레미스 데이터 게이트웨이를 필요로 하는 사용자 지정 커넥터를 사용 하 고 ISE 외부에서 커넥터를 만든 경우 ISE의 논리 앱 에서도 이러한 커넥터를 사용할 수 있습니다.
-  
+
   * ISE에서 만든 사용자 지정 커넥터는 온-프레미스 데이터 게이트웨이와 작동 하지 않습니다. 그러나 이러한 커넥터는 ISE를 호스트 하는 가상 네트워크에 연결 된 온-프레미스 데이터 원본에 직접 액세스할 수 있습니다. 따라서 ISE의 논리 앱은 이러한 리소스와 통신할 때 데이터 게이트웨이가 필요 하지 않을 수 있습니다.
 
-가상 네트워크에 연결 되어 있지 않거나 ISE-labled 커넥터가 없는 온-프레미스 시스템의 경우 논리 앱이 해당 시스템에 연결 하기 전에 먼저 [온-프레미스 데이터 게이트웨이를 설정](../logic-apps/logic-apps-gateway-install.md) 해야 합니다.
+가상 네트워크에 연결 되어 있지 않거나 ISE로 레이블이 지정 되지 않은 온-프레미스 시스템의 경우 논리 앱이 해당 시스템에 연결 하기 전에 먼저 [온-프레미스 데이터 게이트웨이를 설정](../logic-apps/logic-apps-gateway-install.md) 해야 합니다.
 
 <a name="create-integration-account-environment"></a>
 

@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 04/12/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
-ms.openlocfilehash: f079071a88d034dfd279da8656da517b934275a3
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 77e6ab588f74c8b810f211e069c1c24043155111
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75982110"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77132847"
 ---
 # <a name="azure-devtest-labs-reference-architecture-for-enterprises"></a>엔터프라이즈를 위한 Azure DevTest Labs 참조 아키텍처
 이 문서에서는 기업의 Azure DevTest Labs 기반 솔루션을 배포 하는 데 도움이 되는 참조 아키텍처를 제공 합니다. 여기에는 다음이 포함 됩니다.
@@ -41,7 +41,7 @@ ms.locfileid: "75982110"
     - 보안/규정 준수를 위해 온-프레미스 방화벽을 통해 클라우드 환경에서 들어오고 나가는 모든 네트워크 트래픽을 강제로 적용 하려고 합니다.
 - **네트워크 보안 그룹**: 원본 및 대상 IP 주소를 기반으로 클라우드 환경 (또는 클라우드 환경 내)으로 트래픽을 제한 하는 일반적인 방법은 [네트워크 보안 그룹](../virtual-network/security-overview.md)을 사용 하는 것입니다. 예를 들어 회사 네트워크에서 발생 하는 트래픽만 랩의 네트워크로 사용할 수 있습니다.
 - **원격 데스크톱 게이트웨이**: 기업은 일반적으로 회사 방화벽에서 나가는 원격 데스크톱 연결을 차단 합니다. DevTest Labs에서 클라우드 기반 환경에 연결 하는 데 사용할 수 있는 몇 가지 옵션이 있습니다. 예를 들면 다음과 같습니다.
-  - [원격 데스크톱 게이트웨이](/windows-server/remote/remote-desktop-services/desktop-hosting-logical-architecture)를 사용 하 고 게이트웨이 부하 분산 장치의 고정 IP 주소를 허용 목록 합니다.
+  - [원격 데스크톱 게이트웨이](/windows-server/remote/remote-desktop-services/desktop-hosting-logical-architecture)를 사용 하 고 게이트웨이 부하 분산 장치의 고정 IP 주소를 허용 합니다.
   - Express 경로/사이트 간 VPN 연결을 통해 [들어오는 모든 RDP 트래픽을 보냅니다](../vpn-gateway/vpn-gateway-forced-tunneling-rm.md) . 이 기능은 기업이 DevTest Labs 배포를 계획할 때 일반적인 고려 사항입니다.
 - **네트워크 서비스 (가상 네트워크, 서브넷)** : [Azure 네트워킹](../networking/networking-overview.md) 토폴로지는 DevTest Labs 아키텍처의 또 다른 주요 요소입니다. 랩의 리소스가 통신 하 고 온-프레미스 및 인터넷에 액세스할 수 있는지 여부를 제어 합니다. 아키텍처 다이어그램에는 고객이 DevTest Labs를 사용 하는 가장 일반적인 방법, 즉 [허브-스포크 모델](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke) 을 사용 하 여 [가상 네트워크 피어 링](../virtual-network/virtual-network-peering-overview.md) 을 통해 온-프레미스에 대 한 express 경로/사이트 간 VPN 연결로 연결 하는 모든 랩이 포함 되어 있습니다. 그러나 DevTest Labs는 Azure Virtual Network를 직접 사용 하므로 네트워킹 인프라를 설정 하는 방법에 대 한 제한이 없습니다.
 - **DevTest labs**: DevTest labs는 전반적인 아키텍처의 핵심 부분입니다. 서비스에 대 한 자세한 정보는 [DevTest Labs 정보](devtest-lab-overview.md)를 참조 하세요.
@@ -50,7 +50,7 @@ ms.locfileid: "75982110"
 ## <a name="scalability-considerations"></a>확장성 고려 사항
 DevTest Labs에는 기본 제공 할당량 또는 한도가 없지만 랩의 일반 작업에 사용 되는 다른 Azure 리소스에는 [구독 수준 할당량이](../azure-resource-manager/management/azure-subscription-service-limits.md)있습니다. 따라서 일반적인 엔터프라이즈 배포에서는 DevTest Labs의 대량 배포를 처리 하기 위해 여러 Azure 구독이 필요 합니다. 기업에서 가장 일반적으로 연결 하는 할당량은 다음과 같습니다.
 
-- **리소스 그룹**: 기본 구성에서 DevTest Labs는 모든 새 가상 머신에 대해 리소스 그룹을 만들거나 사용자가 서비스를 사용 하 여 환경을 만듭니다. 구독은 [최대 980 개의 리소스 그룹을](../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits---azure-resource-manager)포함할 수 있습니다. 따라서이는 구독의 가상 컴퓨터 및 환경에 대 한 제한입니다. 고려해 야 할 두 가지 다른 구성이 있습니다.
+- **리소스 그룹**: 기본 구성에서 DevTest Labs는 모든 새 가상 머신에 대해 리소스 그룹을 만들거나 사용자가 서비스를 사용 하 여 환경을 만듭니다. 구독은 [최대 980 개의 리소스 그룹을](../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits)포함할 수 있습니다. 따라서이는 구독의 가상 컴퓨터 및 환경에 대 한 제한입니다. 고려해 야 할 두 가지 다른 구성이 있습니다.
     - **[모든 가상 컴퓨터는 동일한 리소스 그룹으로 이동 합니다](resource-group-control.md)** .이 설정은 리소스 그룹 제한을 충족 하는 데 도움이 되지만 리소스 유형 별 리소스 그룹 제한에 영향을 줍니다.
     - **공유 공용 Ip 사용**: 동일한 크기와 지역의 모든 vm이 동일한 리소스 그룹으로 이동 합니다. 이 구성은 가상 컴퓨터에 공용 IP 주소를 사용할 수 있는 경우 리소스 그룹 할당량 및 리소스 유형 그룹 할당량 마다 "중간 중심"입니다.
 - **리소스 그룹당**리소스 그룹당 리소스: 리소스 유형별 리소스 그룹당 기본 제한은 [800](../azure-resource-manager/management/azure-subscription-service-limits.md#resource-group-limits)입니다.  모든 Vm을 사용 하 여 *동일한 리소스 그룹 구성으로 이동* 하는 경우, 특히 vm에 추가 디스크가 많은 경우이 구독 제한을 훨씬 더 빨리 맞 더 합니다.

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.author: panosper
-ms.openlocfilehash: 8a53f1cfbde2f518848e7ef1104bf41ba4996961
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: dc473c814cdd69204cddd976bc77f19b5db567b1
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76936400"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77200081"
 ---
 # <a name="how-to-use-batch-transcription"></a>일괄 처리 기록을 사용 하는 방법
 
@@ -28,17 +28,17 @@ API는 비동기 음성-텍스트 기록 및 기타 기능을 제공 합니다. 
 - 기록 결과 다운로드
 - 서비스에서 기록 정보 삭제
 
-자세한 API는 `Custom Speech transcriptions` 제목 아래에 [Swagger 문서](https://westus.cris.ai/swagger/ui/index#/Custom%20Speech%20transcriptions%3A)로 제공됩니다.
+자세한 API는 [ 제목 아래에 ](https://westus.cris.ai/swagger/ui/index#/Custom%20Speech%20transcriptions%3A)Swagger 문서`Custom Speech transcriptions`로 제공됩니다.
 
 일괄 처리 작업은 최상의 노력으로 예약 됩니다. 현재 작업을 실행 중 상태로 변경 하는 시기에 대 한 예측은 없습니다. 정상적인 시스템 로드에서는 몇 분 내에 발생 해야 합니다. 실행 상태에 있으면 실제 기록을 오디오 실시간 보다 빠르게 처리 합니다.
 
 사용 하기 쉬운 API 옆에 사용자 지정 끝점을 배포할 필요가 없으며 관찰할 동시성 요구 사항이 없습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 ### <a name="subscription-key"></a>구독 키
 
-Speech Service의 모든 기능과 마찬가지로, [시작 가이드](get-started.md)에 따라 [Azure Portal](https://portal.azure.com)에서 구독 키를 만듭니다.
+Speech Service의 모든 기능과 마찬가지로, [시작 가이드](https://portal.azure.com)에 따라 [Azure Portal](get-started.md)에서 구독 키를 만듭니다.
 
 >[!NOTE]
 > 일괄 처리 기록을 사용 하려면 Speech (표준 구독) 서비스를 사용 해야 합니다. 체험 구독 키(F0)는 작동하지 않습니다. 자세한 내용은 [가격 책정 및 제한](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/)을 참조 하세요.
@@ -92,13 +92,13 @@ Batch Transcription API에서 지원하는 형식은 다음과 같습니다.
 | `ProfanityFilterMode` | 인식 결과에서 욕설의 처리 방법을 지정합니다. 허용되는 값은 욕설 필터링을 비활성화하는 `None`, 욕설을 별표로 바꾸는 `Masked`, 결과에서 모든 욕설을 제거하는 `Removed`, 또는 “profanity” 태그를 추가하는 `Tags`입니다. 기본 설정은 `Masked`입니다. |
 | `PunctuationMode` | 인식 결과에서 문장 부호의 처리 방법을 지정합니다. 허용되는 값은 문장 부호를 비활성화하는 `None`, 명시적인 문장 부호를 의미하는 `Dictated`, 디코더가 문장 부호를 처리하도록 하는 `Automatic`, 지정된 문장 부호 또는 자동을 의미하는 `DictatedAndAutomatic`입니다. |
 | `AddWordLevelTimestamps` | 단어 수준 타임스탬프를 출력에 추가할지 여부를 지정합니다. 허용되는 값은 단어 수준 타임스탬프를 사용하는 `true`와 사용하지 않는 `false`(기본값)입니다. |
-| `AddSentiment` | 발언에 감정을 추가할 것인지 지정합니다. 허용되는 값인 `true`는 발언당 감정을 사용 설정하고 `false`(기본값)는 사용하지 않도록 설정합니다. |
+| `AddSentiment` | 발언에 감정을 추가할 것인지 지정합니다. 허용 되는 값은 감정 utterance 및 `false` (기본값)를 사용 하지 않도록 설정 하는 `true`입니다. |
 | `AddDiarization` | 두 개의 음성을 포함 하는 mono 채널이 될 것으로 예상 되는 입력에 대해 diarization 분석을 수행 하도록 지정 합니다. 허용 되는 값은 diarization 및 `false` (기본값)을 사용 하지 않도록 설정 하는 `true`입니다. 또한 `AddWordLevelTimestamps`를 true로 설정 해야 합니다.|
 |`TranscriptionResultsContainerUrl`|Azure의 쓰기 가능한 컨테이너에 [서비스 SAS](../../storage/common/storage-sas-overview.md) 를 사용 하는 선택적 URL입니다. 결과는이 컨테이너에 저장 됩니다.
 
-### <a name="storage"></a>Storage
+### <a name="storage"></a>스토리지
 
-일괄 처리 기록은 오디오를 읽고 기록을 저장소에 쓰기 위해 [Azure Blob 저장소](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview)를 지원합니다.
+일괄 처리 기록은 오디오를 읽고 저장소에 대 한 비디오를 작성 하기 위해 [Azure Blob storage](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview) 를 지원 합니다.
 
 ## <a name="the-batch-transcription-result"></a>일괄 처리 기록 결과
 
@@ -129,8 +129,8 @@ Mono 입력 오디오의 경우 하나의 기록 결과 파일을 만듭니다. 
                                                              speakerId as a string if
                                                              diarization requested for
                                                              mono audio file'
-          "Offset": number                                  'time in milliseconds'
-          "Duration": number                                'time in milliseconds'
+          "Offset": number                                  'time in ticks (1 tick is 100 nanosec)'
+          "Duration": number                                'time in ticks (1 tick is 100 nanosec)'
           "OffsetInSeconds" : number                        'Real number. Two decimal places'
           "DurationInSeconds" : number                      'Real number. Two decimal places'
           "NBest": [
@@ -150,8 +150,8 @@ Mono 입력 오디오의 경우 하나의 기록 결과 파일을 만듭니다. 
               "Words": [
                 {
                   "Word": string
-                  "Offset": number                          'time in milliseconds'
-                  "Duration": number                        'time in milliseconds'
+                  "Offset": number                          'time in ticks (1 tick is 100 nanosec)'
+                  "Duration": number                        'time in ticks (1 tick is 100 nanosec)'
                   "OffsetInSeconds": number                 'Real number. Two decimal places'
                   "DurationInSeconds": number               'Real number. Two decimal places'
                   "Confidence": number                      'between 0 and 1'
@@ -168,7 +168,7 @@ Mono 입력 오디오의 경우 하나의 기록 결과 파일을 만듭니다. 
 
 결과에는 다음과 같은 형식이 포함 됩니다.
 
-|Form|목차|
+|Form|콘텐츠|
 |-|-|
 |`Lexical`|실제 단어를 인식 합니다.
 |`ITN`|인식 되는 텍스트의 반전 된 텍스트 형식입니다. 약어 ("의사 smith"), 전화 번호 및 기타 변환이 적용 됩니다.
@@ -199,7 +199,7 @@ Diarization를 요청 하려면 아래와 같이 HTTP 요청에 관련 매개 �
 
 위의 요청에서 매개 변수가 표시 되므로 단어 수준 타임 스탬프도 ' 켜 짐 ' 이어야 합니다.
 
-## <a name="sentiment-analysis"></a>감정 분석
+## <a name="sentiment-analysis"></a>정서 분석
 
 감정 기능은 오디오에 표현 된 감정를 추정 합니다. 감정 `Negative`, `Neutral`및 `Positive` 감정에 대해 0에서 1 사이의 값으로 표현 됩니다. 예를 들어, 콜 센터 시나리오에서 감정 분석을 사용할 수 있습니다.
 
@@ -251,7 +251,7 @@ JSON 출력 샘플은 다음과 같습니다.
 
 기록 서비스는 많은 수의 제출 된 많은 서비스를 처리할 수 있습니다. 이러한 [메서드](https://westus.cris.ai/swagger/ui/index#/Custom%20Speech%20transcriptions%3A/GetTranscriptions)를 통해 `GET`를 통해 진행 상태를 쿼리할 수 있습니다. `take` 매개 변수 (몇 백)를 지정 하 여 반환 되는 정보를 적절 한 크기로 유지 합니다. 결과를 검색 한 후 서비스에서 정기적으로 [삭제](https://westus.cris.ai/swagger/ui/index#/Custom%20Speech%20transcriptions%3A/DeleteTranscription) 합니다. 이렇게 하면 기록 관리 통화의 빠른 회신이 보장 됩니다.
 
-## <a name="sample-code"></a>샘플 코드
+## <a name="sample-code"></a>예제 코드
 
 전체 샘플은 `samples/batch` 하위 디렉터리 내의 [GitHub 샘플 리포지토리에서](https://aka.ms/csspeech/samples) 사용할 수 있습니다.
 
@@ -274,7 +274,7 @@ JSON 출력 샘플은 다음과 같습니다.
 
 ## <a name="download-the-sample"></a>샘플 다운로드
 
-[GitHub 샘플 리포지토리](https://aka.ms/csspeech/samples)의 `samples/batch` 디렉터리에서 샘플을 확인할 수 있습니다.
+`samples/batch`GitHub 샘플 리포지토리[의 ](https://aka.ms/csspeech/samples) 디렉터리에서 샘플을 확인할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

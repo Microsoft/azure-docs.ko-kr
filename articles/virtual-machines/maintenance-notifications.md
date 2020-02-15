@@ -1,22 +1,18 @@
 ---
-title: Azure Vm에 대 한 유지 관리 알림 | Microsoft Docs
+title: 유지 관리 알림
 description: Azure에서 실행 되는 가상 컴퓨터에 대 한 유지 관리 알림 개요
-services: virtual-machines
-documentationcenter: ''
 author: shants123
-editor: ''
-tags: azure-service-management,azure-resource-manager
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: shants
-ms.openlocfilehash: 83a1f3921272f5ec15ae4d1f4220652f56679c96
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.openlocfilehash: 68159577cb31145be5063bb19af6db71ca1727bd
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75903211"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77115690"
 ---
 # <a name="handling-planned-maintenance-notifications"></a>계획 된 유지 관리 알림 처리
 
@@ -29,7 +25,7 @@ Azure에서는 가상 머신에 대한 호스트 인프라의 안정성, 성능 
 
 다시 부팅해야 하는 계획된 유지 관리는 웨이브에서 예약됩니다. 각 웨이브는 범위(지역)이 다릅니다.
 
-- 웨이브는 고객에게 알림을 보내면서 시작합니다. 기본적으로 알림은 서비스 관리자로 및 공동 관리자에 게 전송 됩니다. [활동 로그 경고](../service-health/alerts-activity-log-service-notifications.md)를 사용 하 여 메일, SMS 및 웹 후크에 같은 받는 사람 및 메시징 옵션을 더 추가할 수 있습니다.  
+- 웨이브는 고객에게 알림을 보내면서 시작합니다. 기본적으로 알림은 서비스 관리자와 공동 관리자에 게 전송 됩니다. [활동 로그 경고](../service-health/alerts-activity-log-service-notifications.md)를 사용 하 여 메일, SMS 및 웹 후크에 같은 받는 사람 및 메시징 옵션을 더 추가할 수 있습니다.  
 - 알림이 전달 되 면 *셀프 서비스 윈도* 를 사용할 수 있습니다. 이 창에서 영향을 받는 가상 컴퓨터를 쿼리하고 사용자의 예약 요구 사항에 따라 유지 관리를 시작할 수 있습니다. 셀프 서비스 기간은 일반적으로 약 35 일입니다.
 - 셀프 서비스 기간이 끝나면 *예약된 유지 관리 기간*이 시작됩니다. 이 기간 중 어떤 시점에 Azure는 가상 머신에 필요한 유지 관리를 예약하고 적용합니다. 
 

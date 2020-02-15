@@ -1,6 +1,6 @@
 ---
 title: Azure Maps 웹 SDK의 데이터 기반 스타일 식 | Microsoft Azure 맵
-description: 이 문서에서는 Microsoft Azure Maps 웹 SDK에서 데이터 기반 스타일 식을 사용 하는 방법에 대해 설명 합니다.
+description: 이 문서에서는 Microsoft Azure Maps 웹 SDK에서 데이터 기반 스타일 식을 사용 하는 방법에 대해 알아봅니다.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 4/4/2019
@@ -9,20 +9,20 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.custom: codepen
-ms.openlocfilehash: 8372012734d937da99c32d2d18fed91ae52c7444
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: e3e8476d09541518d964bfaff4dabad47755eeb9
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75911770"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77189659"
 ---
 # <a name="data-driven-style-expressions-web-sdk"></a>데이터 기반 스타일 식 (웹 SDK)
 
-식을 사용 하면 데이터 원본의 각 셰이프에 정의 된 속성을 관찰 하는 옵션에 대 한 스타일 지정 옵션에 비즈니스 논리를 적용할 수 있습니다. 식을 사용 하 여 데이터 원본 또는 계층의 데이터를 필터링 할 수도 있습니다. 식은 if 문과 같은 조건부 논리로 구성 될 수 있으며,를 사용 하 여 데이터를 조작할 수도 있습니다. 문자열, 논리 및 수학적 연산자 
+식을 사용 하면 데이터 원본의 각 셰이프에 정의 된 속성을 관찰 하는 옵션에 대 한 스타일 지정 옵션에 비즈니스 논리를 적용할 수 있습니다. 식은 데이터 원본 또는 계층의 데이터를 필터링 할 수 있습니다. 식은 if 문과 같은 조건부 논리로 구성 될 수 있습니다. 또한 문자열 연산자, 논리 연산자, 수학 연산자를 사용 하 여 데이터를 조작 하는 데 사용할 수 있습니다.
 
-데이터 기반 스타일은 스타일 지정에 대 한 비즈니스 논리를 구현 하는 데 필요한 코드의 양을 줄일 수 있습니다. 레이어를 사용 하는 경우 UI 스레드에서 비즈니스 논리를 평가 하는 것과 비교할 때 향상 된 성능을 제공 하는 별도의 스레드에서 렌더링 시 식이 계산 됩니다.
+데이터 기반 스타일은 스타일 지정에 대 한 비즈니스 논리를 구현 하는 데 필요한 코드의 양을 줄여 줍니다. 계층에서 사용 하는 경우 별도의 스레드에서 렌더링 시 식이 계산 됩니다. 이 기능은 UI 스레드에서 비즈니스 논리를 평가 하는 것과 비교 하 여 향상 된 성능을 제공 합니다.
 
-다음 비디오는 Azure Maps 웹 SDK의 데이터 기반 스타일에 대 한 개요를 제공 합니다.
+이 비디오는 Azure Maps 웹 SDK의 데이터 기반 스타일에 대 한 개요를 제공 합니다.
 
 <br/>
 
@@ -39,7 +39,7 @@ ms.locfileid: "75911770"
 ] 
 ```
 
-Azure Maps 웹 SDK는 자체 또는 다른 식과 함께 사용할 수 있는 여러 형식을 지원 합니다.
+Azure Maps 웹 SDK는 다양 한 형식의 식을 지원 합니다. 식을 자체적으로 사용 하거나 다른 식과 함께 사용할 수 있습니다.
 
 | 식 형식 | Description |
 |---------------------|-------------|
@@ -53,7 +53,7 @@ Azure Maps 웹 SDK는 자체 또는 다른 식과 함께 사용할 수 있는 �
 | [수학 식](#math-expressions) | 식 프레임 워크 내에서 데이터 기반 계산을 수행 하는 수치 연산자를 제공 합니다. |
 | [문자열 연산자 식](#string-operator-expressions) | 문자열 연산자 식은 사례를 연결 하 고 변환 하는 등의 문자열에 대해 변환 작업을 수행 합니다. |
 | [형식 식](#type-expressions) | 형식 식은 문자열, 숫자, 부울 값 등의 다양 한 데이터 형식을 테스트 하 고 변환 하는 도구를 제공 합니다. |
-| [변수 바인딩 식](#variable-binding-expressions) | 변수 바인딩 식을 사용 하면 계산 결과를 변수에 저장 하 고 저장 된 값을 다시 계산할 필요 없이 식의 다른 위치에서 여러 번 참조할 수 있습니다. |
+| [변수 바인딩 식](#variable-binding-expressions) | 변수 바인딩 식은 계산 결과를 변수에 저장 하 고 저장 된 값을 다시 계산할 필요 없이 식의 다른 위치에서 여러 번 참조 합니다. |
 | [확대/축소 식](#zoom-expression) | 렌더링 시 지도의 현재 확대/축소 수준을 검색 합니다. |
 
 이 문서의 모든 예제에서는 다음 기능을 사용 하 여 다양 한 형식의 식을 사용할 수 있는 여러 가지 방법을 보여 줍니다. 
@@ -81,7 +81,7 @@ Azure Maps 웹 SDK는 자체 또는 다른 식과 함께 사용할 수 있는 �
 
 데이터 식은 기능에서 속성 데이터에 대 한 액세스를 제공 합니다. 
 
-| Expression | 반환 형식 | Description |
+| 식 | 반환 형식 | Description |
 |------------|-------------|-------------|
 | `['at', number, array]` | object | 배열에서 항목을 검색 합니다. |
 | `['geometry-type']` | 문자열 | 기능의 기 하 도형 유형인 Point, MultiPoint, LineString, MultiLineString, Polygon, MultiPolygon을 가져옵니다. |
@@ -94,7 +94,7 @@ Azure Maps 웹 SDK는 자체 또는 다른 식과 함께 사용할 수 있는 �
 
 **예**
 
-기능의 속성은 식에서 `get` 식을 사용 하 여 직접 액세스할 수 있습니다. 다음 예에서는 기능의 "zoneColor" 값을 사용 하 여 거품형 계층의 color 속성을 지정 합니다. 
+기능의 속성은 식에서 `get` 식을 사용 하 여 직접 액세스할 수 있습니다. 이 예에서는 기능의 "zoneColor" 값을 사용 하 여 거품형 계층의 color 속성을 지정 합니다. 
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -102,7 +102,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-위의 예제는 모든 point 기능에 `zoneColor` 속성이 있지만 그렇지 않은 경우 색이 "black"으로 대체 될 수 있습니다. 대체 (fallback) 색을 수정 하기 위해 `case` 식을 `has` 식과 함께 사용 하 여 속성이 있는지 확인 하 고 대신 대체 색을 반환 하지 않을 수 있습니다.
+위의 예는 모든 point 기능에 `zoneColor` 속성이 있는 경우 제대로 작동 합니다. 그렇지 않으면 색이 "black"으로 대체 될 수 있습니다. 대체 색을 수정 하려면 `case` 식을 `has` 식과 함께 사용 하 여 속성이 있는지 확인 합니다. 속성이 없으면 대체 (fallback) 색을 반환 합니다.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -117,7 +117,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-거품형 및 기호 계층은 기본적으로 데이터 원본에 있는 모든 셰이프의 좌표를 렌더링 합니다. 다각형 또는 선의 꼭 짓 점을 강조 표시 하기 위해이 작업을 수행할 수 있습니다. 계층의 `filter` 옵션은 부울 식 내에서 `['geometry-type']` 식을 사용 하 여 렌더링 하는 기능의 기 하 도형 형식을 제한 하는 데 사용할 수 있습니다. 다음 예에서는 `Point` 기능만 렌더링 되도록 거품형 계층을 제한 합니다.
+거품형 및 기호 계층은 기본적으로 데이터 원본에 있는 모든 셰이프의 좌표를 렌더링 합니다. 이 동작은 다각형의 꼭 짓 점 또는 선을 강조 표시할 수 있습니다. 계층의 `filter` 옵션은 부울 식 내에서 `['geometry-type']` 식을 사용 하 여 렌더링 하는 기능의 기 하 도형 형식을 제한 하는 데 사용할 수 있습니다. 다음 예에서는 `Point` 기능만 렌더링 되도록 거품형 계층을 제한 합니다.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -125,7 +125,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-다음 예에서는 `Point`와 `MultiPoint` 기능을 모두 렌더링할 수 있습니다. 
+다음 예에서는 `Point` 및 `MultiPoint` 기능을 모두 렌더링할 수 있습니다. 
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -139,7 +139,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 
 수학 식은 식 프레임 워크 내에서 데이터 기반 계산을 수행 하는 수치 연산자를 제공 합니다.
 
-| Expression | 반환 형식 | Description |
+| 식 | 반환 형식 | Description |
 |------------|-------------|-------------|
 | `['+', number, number, …]` | number | 지정 된 숫자의 합계를 계산 합니다. |
 | `['-', number]` | number | 지정 된 수 만큼 0을 뺍니다. |
@@ -172,21 +172,21 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 
 집계 식은 데이터 집합에 대해 처리 되 고 `DataSource`의 `clusterProperties` 옵션과 함께 사용할 수 있는 계산을 정의 합니다. 이러한 식의 출력은 숫자 또는 부울 이어야 합니다. 
 
-집계 식은 세 개의 값을 사용 합니다. 집계 연산을 적용할 데이터의 각 기능에서 속성을 검색 하는 연산자 값과 초기 값 및 식입니다. 이 식은 다음과 같은 형식입니다.
+집계 식은 연산자 값과 초기 값 및 데이터의 각 기능에서 속성을 검색 하는 식을 사용 하 여 집계 연산을 적용할 수 있는 세 가지 값을 사용 합니다. 이 식은 다음과 같은 형식입니다.
 
 ```javascript
 [operator: string, initialValue: boolean | number, mapExpression: Expression]
 ```
 
-- operator: 클러스터의 각 지점에 대해 `mapExpression`에서 계산 되는 모든 값에 대해에 적용 되는 식 함수입니다. 지원 되는 연산자 
+- operator: 클러스터의 각 지점에 대해 `mapExpression`에서 계산 되는 모든 값에 대해에 적용 되는 식 함수입니다. 지원 되는 연산자: 
     - 숫자: `+`, `*`, `max`, `min`
     - 부울: `all`, `any`
 - initialValue: 첫 번째 계산 된 값이 집계 되는 초기 값입니다.
-- mapExpression: 데이터 집합의 각 지점에 적용 되는 식입니다.
+- mapExpression: 데이터 집합의 각 지점에 대해 적용 되는 식입니다.
 
 **예**
 
-데이터 집합의 모든 기능에 숫자 `revenue` 속성이 있는 경우 데이터 집합에서 만든 클러스터의 모든 요소에 대 한 총 수익을 계산 하려면 다음 집계 식을 사용 합니다. `['+', 0, ['get', 'revenue']]`
+데이터 집합의 모든 기능에 `revenue` 속성이 있으면이 고, 그렇지 않으면입니다. 그런 다음 데이터 집합에서 만들어진 클러스터의 모든 점에 대 한 총 수익을 계산할 수 있습니다. 이 계산은 다음 집계 식을 사용 하 여 수행 됩니다. `['+', 0, ['get', 'revenue']]`
 
 ## <a name="boolean-expressions"></a>부울 식
 
@@ -194,7 +194,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 
 값을 비교할 때 비교는 엄격 하 게 형식화 됩니다. 다른 형식의 값은 항상 동일 하지 않은 것으로 간주 됩니다. 구문 분석 시 형식이 다른 것으로 알려진 사례는 잘못 된 것으로 간주 되며 구문 분석 오류를 생성 합니다. 
 
-| Expression | 반환 형식 | Description |
+| 식 | 반환 형식 | Description |
 |------------|-------------|-------------|
 | `['! ', boolean]` | boolean | 논리 부정. 입력이 `false`되 면 `true`을 반환 하 고 입력이 `true`되 면을 `false` 합니다. |
 | `['!= ', value, value]` | boolean | 입력 값이 같지 않으면 `true`을 반환 하 고, 그렇지 않으면 `false` 합니다. |
@@ -214,7 +214,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 
 ### <a name="case-expression"></a>Case 식
 
-`case` 식은 논리 (if/then/else)와 같은 if 문을 제공 하는 조건식의 유형입니다. 이 식의 형식은 부울 조건 목록을 단계별로 진행 하 고 첫 번째 부울 조건의 출력 값을 true로 반환 합니다.
+`case` 식은 "if/then/else" 논리를 제공 하는 조건식의 유형입니다. 이 유형의 식은 부울 조건 목록을 통해 단계를 진행 합니다. True로 평가할 첫 번째 부울 조건의 출력 값을 반환 합니다.
 
 다음 의사 코드는 `case` 식의 구조를 정의 합니다. 
 
@@ -294,7 +294,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-다음 예제에서는 배열을 사용 하 여 모두 동일한 값을 반환 해야 하는 레이블 집합을 나열 합니다. 이는 각 레이블을 개별적으로 나열 하는 것 보다 훨씬 효율적입니다. 이 경우 `entityType` 속성이 "식당" 또는 "grocery_store" 이면 색 "red"가 반환 됩니다.
+다음 예제에서는 배열을 사용 하 여 모두 동일한 값을 반환 해야 하는 레이블 집합을 나열 합니다. 이 방법은 각 레이블을 개별적으로 나열 하는 것 보다 훨씬 효율적입니다. 이 경우 `entityType` 속성이 "식당" 또는 "grocery_store" 이면 색 "red"가 반환 됩니다.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -315,7 +315,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-다음 예에서는 match 식을 사용 하 여 "in array" 또는 "array contains" 형식 필터를 수행 합니다 .이 경우 허용 되는 id 목록에 있는 ID 값을 가진 데이터를 필터링 합니다. 필터를 사용 하는 식을 사용 하는 경우 결과는 부울 값 이어야 합니다.
+다음 예에서는 match 식을 사용 하 여 "in array" 또는 "array contains" 형식 필터를 수행 합니다. 이 경우 식은 ID 값이 허용 되는 id 목록에 있는 데이터를 필터링 합니다. 필터를 사용 하는 식을 사용 하는 경우 결과는 부울 값 이어야 합니다.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -397,7 +397,7 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 
 형식 식은 문자열, 숫자, 부울 값 등의 다양 한 데이터 형식을 테스트 하 고 변환 하는 도구를 제공 합니다.
 
-| Expression | 반환 형식 | Description |
+| 식 | 반환 형식 | Description |
 |------------|-------------|-------------|
 | `['literal', array]`<br/><br/>`['literal', object]` | 배열 \| 개체 | 리터럴 배열 또는 개체 값을 반환 합니다. 배열이 나 개체가 식으로 계산 되지 않도록 하려면이 식을 사용 합니다. 배열 또는 개체를 식에서 반환 해야 하는 경우이 작업이 필요 합니다. |
 | `['image', string]` | 문자열 | 지정 된 이미지 ID가 맵 이미지 스프라이트에 로드 되는지 확인 합니다. 인 경우 ID가 반환 되 고, 그렇지 않으면 null이 반환 됩니다. |
@@ -433,7 +433,7 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 
 색 식을 사용 하면 색 값을 보다 쉽게 만들고 조작할 수 있습니다.
 
-| Expression | 반환 형식 | Description |
+| 식 | 반환 형식 | Description |
 |------------|-------------|-------------|
 | `['rgb', number, number, number]` | 색 | `0`와 `255`사이에 있어야 하는 *빨간색*, *녹색*및 *파랑* 구성 요소와 `1`의 알파 구성 요소에서 색 값을 만듭니다. 구성 요소가 범위를 벗어난 경우 식에 오류가 발생 합니다. |
 | `['rgba', number, number, number, number]` | 색 | `0`와 `255`사이에 있어야 하는 *빨간색*, *녹색*, *파랑* 구성 요소에서 색 값을 만들고 `0` 및 `1`범위 내의 알파 구성 요소를 만듭니다. 구성 요소가 범위를 벗어난 경우 식에 오류가 발생 합니다. |
@@ -441,7 +441,7 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 
 **예제**
 
-다음 예에서는 `255`*빨강* 값이 있는 RGB 색 값과 `2.5` `temperature` 속성 값을 곱하여 계산 되는 *녹색* 및 *파랑* 값을 만듭니다. 온도가 변경 됨에 따라 색은 *빨간색*의 다른 음영으로 변경 됩니다.
+다음 예에서는 `255`*빨강* 값이 있는 RGB 색 값을 만들고 `temperature` 속성의 값에 `2.5`를 곱하여 계산 되는 *녹색* 및 *파랑* 값을 만듭니다. 온도가 변경 됨에 따라 색은 *빨간색*의 다른 음영으로 변경 됩니다.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -461,7 +461,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 
 문자열 연산자 식은 사례를 연결 하 고 변환 하는 등의 문자열에 대해 변환 작업을 수행 합니다. 
 
-| Expression | 반환 형식 | Description |
+| 식 | 반환 형식 | Description |
 |------------|-------------|-------------|
 | `['concat', string, string, …]` | 문자열 | 여러 문자열을 연결 합니다. 각 값은 문자열 이어야 합니다. 필요한 경우 `to-string` 형식 식을 사용 하 여 다른 값 형식을 문자열로 변환 합니다. |
 | `['downcase', string]` | 문자열 | 지정된 문자열을 소문자로 변환합니다. |
@@ -492,7 +492,7 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 
 ## <a name="interpolate-and-step-expressions"></a>보간 및 단계 식
 
-보간 및 단계 식은 보간된 곡선이 나 step 함수를 따라 값을 계산 하는 데 사용할 수 있습니다. 이러한 식은 숫자 값을 입력으로 반환 하는 식 (예: `['get',  'temperature']`을 사용 합니다. 입력 값은 "중지" 라고 하는 입력 및 출력 값 쌍에 대해 계산 되어 보간된 곡선이 나 단계 함수에 가장 적합 한 값을 결정 합니다. 각 중지의 입력 값은 숫자 여야 하며 오름차순 이어야 합니다. 출력 값은 숫자, 숫자 배열 또는 색 이어야 합니다.
+보간 및 단계 식은 보간된 곡선이 나 step 함수를 따라 값을 계산 하는 데 사용할 수 있습니다. 이러한 식은 숫자 값을 입력으로 반환 하는 식 (예: `['get',  'temperature']`을 사용 합니다. 입력 값은 입력 및 출력 값 쌍에 대해 계산 되어 보간된 커브나 단계 함수에 가장 적합 한 값을 결정 합니다. 출력 값을 "중지" 라고 합니다. 각 중지의 입력 값은 숫자 여야 하며 오름차순 이어야 합니다. 출력 값은 숫자, 숫자 배열 또는 색 이어야 합니다.
 
 ### <a name="interpolate-expression"></a>보간 식
 
@@ -506,7 +506,7 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 
 다음은 이러한 여러 유형의 보간의 예입니다. 
 
-| 선형  | 지수 | 입방형 3차원 |
+| 선형  | 지수 | 입방 형 3 차원 |
 |---------|-------------|--------------|
 | ![선형 보간 그래프](media/how-to-expressions/linear-interpolation.png) | ![지 수 보간 그래프](media/how-to-expressions/exponential-interpolation.png) | ![입방 형 3 차원 보간 그래프](media/how-to-expressions/bezier-curve-interpolation.png) |
 
@@ -527,7 +527,7 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 
 **예제**
 
-다음 예에서는 `linear interpolate` 식을 사용 하 여 point 기능의 `temperature` 속성에 따라 거품 계층의 `color` 속성을 설정 합니다. `temperature` 값이 60 보다 작은 경우에는 "blue"가 반환 되 고 60 보다 작음 70 보다 작은 경우에는 "blue"가 반환 되 고 70이 보다 작은 경우에는 "주황색"이 반환 되 고 80 이상이 반환 되 면 "red"가 반환 됩니다.
+다음 예에서는 `linear interpolate` 식을 사용 하 여 point 기능의 `temperature` 속성에 따라 거품 계층의 `color` 속성을 설정 합니다. `temperature` 값이 60 보다 작은 경우 "blue"가 반환 됩니다. 60 ~ 70 보다 작은 경우에는 노란색이 반환 됩니다. 70 ~ 80 보다 작은 경우 "주황색"이 반환 됩니다. 80 이상인 경우 "red"가 반환 됩니다.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -576,7 +576,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 
 **예제**
 
-다음 예에서는 `step` 식을 사용 하 여 point 기능의 `temperature` 속성에 따라 거품 계층의 `color` 속성을 설정 합니다. `temperature` 값이 60 보다 작은 경우에는 "blue"가 반환 됩니다. 60에서 70 보다 작은 값을 반환 하면 "노란색"이 반환 되 고 70과 보다 작은 값이 반환 되 면 "주황색"이 반환 되 고 80 이상이 반환 될 경우 "red"가 반환 됩니다.
+다음 예에서는 `step` 식을 사용 하 여 point 기능의 `temperature` 속성에 따라 거품 계층의 `color` 속성을 설정 합니다. `temperature` 값이 60 보다 작은 경우 "blue"가 반환 됩니다. 60 ~ 70 보다 작은 경우 "노란색"이 반환 됩니다. 70 ~ 80 보다 작은 경우 "주황색"이 반환 됩니다. 80 이상인 경우 "red"가 반환 됩니다.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -607,10 +607,10 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 
 ### <a name="heat-map-density-expression"></a>열 지도 밀도 식
 
-열 지도 밀도 식은 열 지도 계층의 각 픽셀에 대 한 열 지도 밀도 값을 검색 하 고 `['heatmap-density']`으로 정의 됩니다. 이 값은 `0`와 `1` 사이의 숫자 이며 열 지도를 색으로 표시 하는 데 사용 되는 색 그라데이션을 정의 하기 위해 `interpolation` 또는 `step` 식과 함께 사용 됩니다. 이 식은 열 지도 계층의 [색 옵션](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.heatmaplayeroptions?view=azure-iot-typescript-latest#color) 에만 사용할 수 있습니다.
+열 지도 밀도 식은 열 지도 계층의 각 픽셀에 대 한 열 지도 밀도 값을 검색 하 고 `['heatmap-density']`으로 정의 됩니다. 이 값은 `0`와 `1`사이의 숫자입니다. 열 지도를 색으로 지정 하는 데 사용 되는 색 그라데이션을 정의 하기 위해 `interpolation` 또는 `step` 식과 함께 사용 됩니다. 이 식은 열 지도 계층의 [색 옵션](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.heatmaplayeroptions?view=azure-iot-typescript-latest#color) 에만 사용할 수 있습니다.
 
 > [!TIP]
-> 보간 식의 인덱스 0에 있는 색 또는 단계 색의 기본 색은 데이터가 없고 배경색을 정의 하는 데 사용할 수 있는 영역의 색을 정의 합니다. 대부분 이 값을 투명 또는 반투명 검은색으로 설정하는 것을 선호합니다. 
+> 보간 식의 인덱스 0에 있는 색 또는 단계 색의 기본 색은 데이터가 없는 영역의 색을 정의 합니다. 인덱스 0에 있는 색은 배경색을 정의 하는 데 사용할 수 있습니다. 대부분 이 값을 투명 또는 반투명 검은색으로 설정하는 것을 선호합니다.
 
 **예제**
 
@@ -630,7 +630,7 @@ var layer = new atlas.layer.HeatMapLayer(datasource, null, {
 });
 ```
 
-부드러운 그라데이션을 사용 하 여 열 지도를 색상화 하는 것 외에도 `step` 식을 사용 하 여 범위 집합 내에서 색을 지정할 수 있습니다. 열 지도를 색으로 하는 데 `step` 식을 사용 하면 밀도를 윤곽선 또는 방사형 스타일 맵과 비슷한 범위로 시각적으로 나눕니다.  
+부드러운 그라데이션을 사용 하 여 열 지도를 색상화 하는 것 외에도 `step` 식을 사용 하 여 범위 집합 내에서 색을 지정할 수 있습니다. 열 지도를 색으로 하는 데 `step` 식을 사용 하면 색을 컨투어 또는 방사형 스타일 맵과 유사한 범위로 시각적으로 나눕니다.  
 
 ```javascript 
 var layer = new atlas.layer.HeatMapLayer(datasource, null, {
@@ -651,14 +651,14 @@ var layer = new atlas.layer.HeatMapLayer(datasource, null, {
 
 ### <a name="line-progress-expression"></a>줄 진행률 식
 
-줄 진행률 식은 선 계층에서 그라데이션 선을 따라 진행률을 검색 하 고 `['line-progress']`로 정의 됩니다. 이 값은 0에서 1 사이의 숫자 이며 `interpolation` 또는 `step` 식과 함께 사용 됩니다. 이 식은 선 계층의 [strokeGradient 옵션]( https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.linelayeroptions?view=azure-iot-typescript-latest#strokegradient) 에만 사용할 수 있습니다. 
+줄 진행률 식은 선 계층에서 그라데이션 선을 따라 진행률을 검색 하 고 `['line-progress']`로 정의 됩니다. 이 값은 0에서 1 사이의 숫자입니다. `interpolation` 또는 `step` 식과 함께 사용 됩니다. 이 식은 선 계층의 [strokeGradient 옵션]( https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.linelayeroptions?view=azure-iot-typescript-latest#strokegradient) 에만 사용할 수 있습니다. 
 
 > [!NOTE]
 > 선 계층의 `strokeGradient` 옵션을 사용 하려면 데이터 원본의 `lineMetrics` 옵션을 `true`으로 설정 해야 합니다.
 
 **예제**
 
-다음 예제에서는 `['line-progress']` 식을 사용 하 여 선 스트로크에 색 그라데이션을 적용 합니다.
+이 예제에서는 `['line-progress']` 식을 사용 하 여 선의 스트로크에 색 그라데이션을 적용 합니다.
 
 ```javascript
 var layer = new atlas.layer.LineLayer(datasource, null, {
@@ -793,11 +793,11 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 
 ## <a name="zoom-expression"></a>확대/축소 식
 
-`zoom` 식은 렌더링 시 지도의 현재 확대/축소 수준을 검색 하는 데 사용 되 고 `['zoom']`으로 정의 됩니다. 이 식은 지도의 최소 및 최대 확대/축소 수준 범위 사이의 숫자를 반환 합니다. 이 식을 사용 하면 지도의 확대/축소 수준을 변경할 때 스타일을 동적으로 수정할 수 있습니다. `zoom` 식은 `interpolate` 및 `step` 식 에서만 사용할 수 있습니다.
+`zoom` 식은 렌더링 시 지도의 현재 확대/축소 수준을 검색 하는 데 사용 되 고 `['zoom']`으로 정의 됩니다. 이 식은 지도의 최소 및 최대 확대/축소 수준 범위 사이의 숫자를 반환 합니다. 웹 및 Android에 대 한 대화형 맵 컨트롤 Azure Maps 25 개의 확대/축소 수준 (0-24)을 지원 합니다. `zoom` 식을 사용 하면 지도의 확대/축소 수준을 변경할 때 스타일을 동적으로 수정할 수 있습니다. `zoom` 식은 `interpolate` 및 `step` 식 에서만 사용할 수 있습니다.
 
 **예제**
 
-기본적으로 열 지도 계층에 렌더링 되는 데이터 요소의 반지름에는 모든 확대/축소 수준에 대 한 고정 픽셀 반지름이 있습니다. 지도를 확대 하면 데이터 집계가 함께 표시 되 고 열 지도 계층이 다르게 보입니다. 각 데이터 요소가 지도의 동일한 실제 영역을 포함 하도록 각 확대/축소 수준에 대 한 반지름의 크기를 조정 하는 데 `zoom` 식을 사용할 수 있습니다. 이렇게 하면 열 지도 계층이 더 정적이 고 일관 되 게 보입니다. 지도의 각 확대/축소 수준에는 이전 확대/축소 수준과 가로 및 세로로 두 배의 픽셀이 있습니다. 각 확대/축소 수준에서 두 배가 되도록 반지름의 크기를 조정 하면 모든 확대/축소 수준에서 일치 하는 열 지도를 만듭니다. 이렇게 하려면 아래와 같이 `base 2 exponential interpolation` 식에 `zoom` 식을 사용 합니다. 
+기본적으로 열 지도 계층에 렌더링 되는 데이터 요소의 반지름에는 모든 확대/축소 수준에 대 한 고정 픽셀 반지름이 있습니다. 지도가 확대 되 면 데이터가 함께 집계 되 고 열 지도 계층이 다르게 보입니다. 각 데이터 요소가 지도의 동일한 실제 영역을 포함 하도록 각 확대/축소 수준에 대 한 반지름의 크기를 조정 하는 데 `zoom` 식을 사용할 수 있습니다. 열 지도 계층을 더 정적이 고 일관 되 게 보이게 합니다. 지도의 각 확대/축소 수준에는 이전 확대/축소 수준과 가로 및 세로로 두 배의 픽셀이 있습니다. 각 확대/축소 수준에서 두 배가 되도록 반경 크기를 조정 하면 모든 확대/축소 수준에서 일치 하는 열 지도를 만듭니다. 아래와 같이 `base 2 exponential interpolation` 식으로 `zoom` 식을 사용 하 여이를 수행할 수 있습니다. 
 
 ```javascript 
 var layer = new atlas.layer.HeatMapLayer(datasource, null, {
@@ -819,16 +819,16 @@ var layer = new atlas.layer.HeatMapLayer(datasource, null, {
 
 ## <a name="variable-binding-expressions"></a>변수 바인딩 식
 
-변수 바인딩 식은 계산 결과를 변수에 저장 하 여 계산 결과를 식의 다른 위치에서 다시 계산 하지 않고 여러 번 참조할 수 있도록 합니다. 이는 많은 계산을 포함 하는 식에 대 한 유용한 최적화입니다.
+변수 바인딩 식은 계산 결과를 변수에 저장 합니다. 따라서 계산 결과를 식의 다른 위치에서 여러 번 참조할 수 있습니다. 많은 계산을 포함 하는 식에 대 한 유용한 최적화입니다.
 
-| Expression | 반환 형식 | Description |
+| 식 | 반환 형식 | Description |
 |--------------|---------------|--------------|
-| \[<br/>&nbsp;&nbsp;&nbsp;&nbsp;' let ',<br/>&nbsp;&nbsp;&nbsp;&nbsp;name1: string,<br/>&nbsp;&nbsp;&nbsp;&nbsp;value1: any,<br/>&nbsp;&nbsp;&nbsp;&nbsp;name2: 문자열,<br/>&nbsp;&nbsp;&nbsp;&nbsp;value2: any,<br/>&nbsp;&nbsp;&nbsp;&nbsp;…<br/>&nbsp;&nbsp;&nbsp;&nbsp;childExpression<br/>\] | | 결과를 반환 하는 자식 식의 `var` 식에서 사용할 변수로 하나 이상의 값을 저장 합니다. |
+| \[<br/>&nbsp;&nbsp;&nbsp;&nbsp;' let ',<br/>&nbsp;&nbsp;&nbsp;&nbsp;name1: string,<br/>&nbsp;&nbsp;&nbsp;&nbsp;value1: any,<br/>&nbsp;&nbsp;&nbsp;&nbsp;name2: 문자열,<br/>&nbsp;&nbsp;&nbsp;&nbsp;value2: any,<br/>&nbsp;&nbsp;&nbsp;&nbsp;...<br/>&nbsp;&nbsp;&nbsp;&nbsp;childExpression<br/>\] | | 결과를 반환 하는 자식 식의 `var` 식에서 사용할 변수로 하나 이상의 값을 저장 합니다. |
 | `['var', name: string]` | any | `let` 식을 사용 하 여 만든 변수를 참조 합니다. |
 
 **예제**
 
-이 예에서는 온도 비율에 상대적인 수익을 계산 하는 식을 사용한 다음 `case` 식을 사용 하 여이 값에 대 한 다양 한 부울 연산을 계산 합니다. `let` 식은 한 번만 계산 하면 되 고 `var` 식이이 변수를 다시 계산할 필요 없이 자주 참조 하도록 온도 비율에 상대적인 수익을 저장 하는 데 사용 됩니다.
+이 예에서는 온도 비율에 상대적인 수익을 계산 하는 식을 사용한 다음 `case` 식을 사용 하 여이 값에 대 한 다양 한 부울 연산을 계산 합니다. `let` 식은 온도 비율을 기준으로 한 번만 계산 되도록 수익을 저장 하는 데 사용 됩니다. `var` 식은이 변수를 다시 계산할 필요 없이 자주 참조 합니다.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {

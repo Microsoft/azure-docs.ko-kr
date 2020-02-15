@@ -3,17 +3,17 @@ title: 탐색을 지원하기 위한 패싯 사용에 관한 C# 자습서
 titleSuffix: Azure Cognitive Search
 description: 이 자습서는 "검색 결과 페이지 매김 - Azure Cognitive Search" 프로젝트를 기반으로 하여 패싯 탐색을 추가합니다. 패싯을 사용하여 검색 범위를 손쉽게 좁힐 수 있는 방법을 알아봅니다.
 manager: nitinme
-author: PeterTurcan
-ms.author: v-pettur
+author: tchristiani
+ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 11/04/2019
-ms.openlocfilehash: 9f0d716e9077b2d9702f26b1afe92d9e4faf4a77
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.date: 02/10/2020
+ms.openlocfilehash: d88a9d7efdabd493fd31b961748bb6ad3bd8d738
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72794069"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121575"
 ---
 # <a name="c-tutorial-use-facets-to-aid-navigation---azure-cognitive-search"></a>C# 자습서: 패싯을 사용하여 탐색 지원 - Azure Cognitive Search
 
@@ -21,16 +21,16 @@ ms.locfileid: "72794069"
 
 이 자습서는 [C# 자습서: 검색 결과 페이지 매김 - Azure Cognitive Search](tutorial-csharp-paging.md) 자습서에서 만든 페이지 매김 프로젝트를 기반으로 합니다.
 
-이 자습서에서는 다음 방법에 대해 알아봅니다.
+이 자습서에서는 다음 작업 방법을 알아봅니다.
 > [!div class="checklist"]
 > * 모델 속성을 _IsFacetable_로 설정
 > * 패싯 탐색을 앱에 추가
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서를 완료하려면 다음이 필요합니다.
 
-[C# 자습서: 검색 결과 페이지 매김 - Azure Cognitive Search](tutorial-csharp-paging.md) 프로젝트를 가동하여 실행합니다. 이 프로젝트는 사용자 고유의 버전이거나 GitHub: [첫 번째 앱을 만듭니다](https://github.com/Azure-Samples/azure-search-dotnet-samples).
+[C# 자습서: 검색 결과 페이지 매김 - Azure Cognitive Search](tutorial-csharp-paging.md) 프로젝트를 가동하여 실행합니다. 이 프로젝트는 사용자 고유의 버전이거나 GitHub: [첫 번째 앱 만들기](https://github.com/Azure-Samples/azure-search-dotnet-samples)의 버전을 설치해도 됩니다.
 
 ## <a name="set-model-properties-as-isfacetable"></a>모델 속성을 IsFacetable로 설정
 
@@ -549,7 +549,7 @@ ms.locfileid: "72794069"
 
 ## <a name="takeaways"></a>핵심 내용
 
-이 프로젝트에서 다음 사항을 고려합니다.
+이 프로젝트에서 다음 핵심 내용을 기억하세요.
 
 * 각 속성이 패싯 탐색에 포함되어야 하는 경우 **IsFacetable**로 표시해야 합니다.
 * 패싯 탐색은 사용자에게 검색 범위를 좁히는 쉽고 직관적인 방법을 제공합니다.

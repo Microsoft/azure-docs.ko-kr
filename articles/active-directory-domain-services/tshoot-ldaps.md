@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 09/19/2019
+ms.date: 02/10/2020
 ms.author: iainfou
-ms.openlocfilehash: 96aa463441c9e0f21e2ef1aa27c566b94e1e5f4f
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 22d1b6e2344256b52cfdbc48720a680a770a4216
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71257884"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77132160"
 ---
 # <a name="troubleshoot-secure-ldap-connectivity-issues-to-an-azure-active-directory-domain-services-managed-domain"></a>Azure Active Directory Domain Services 관리 되는 도메인에 대 한 보안 LDAP 연결 문제 해결
 

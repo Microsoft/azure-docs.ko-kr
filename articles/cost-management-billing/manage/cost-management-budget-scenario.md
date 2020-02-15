@@ -15,10 +15,10 @@ ms.workload: billing
 ms.date: 10/01/2019
 ms.author: banders
 ms.openlocfilehash: e183a622910c7690b566537311661789253efbfb
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75992726"
 ---
 # <a name="manage-costs-with-azure-budgets"></a>Azure 예산으로 비용 관리
@@ -135,7 +135,7 @@ Azure가 논리 앱을 배포하면 **Logic Apps 디자이너**가 열리고 소
 3.  **새 단계** > **작업 추가**를 선택합니다.
 
     ![Azure - 새 단계 - 작업 추가](./media/cost-management-budget-scenario/billing-cost-management-budget-scenario-05.png)
-4.  **Logic Apps Designer** 검색 상자에서 "json 구문 분석"을 검색 하 여 **데이터 작업-json 구문 분석** [작업](https://docs.microsoft.com/azure/logic-apps/logic-apps-overview#logic-app-concepts)을 찾아 선택 합니다.
+4.  **Logic Apps 디자이너** 검색창에서 "JSON 구문 분석"을 검색하여 **데이터 작업 - JSON 구문 분석** [작업](https://docs.microsoft.com/azure/logic-apps/logic-apps-overview#logic-app-concepts)을 찾아 선택합니다.
 
     ![Azure - 논리 앱 - JSON 구문 분석 작업 추가](./media/cost-management-budget-scenario/billing-cost-management-budget-scenario-06.png)
 5.  JSON 구문 분석 페이로드에 대한 **콘텐츠** 이름으로 “Payload”를 입력하거나, 동적 콘텐츠의 “Body” 태그를 사용합니다.
@@ -277,7 +277,7 @@ Azure가 논리 앱을 배포하면 **Logic Apps 디자이너**가 열리고 소
     - 작업 그룹 이름
     - 짧은 이름
     - Subscription
-    - 리소스 그룹
+    - Resource group
 
     ![Azure - 논리 앱 - 작업 그룹 추가](./media/cost-management-budget-scenario/billing-cost-management-budget-scenario-26.png)
 

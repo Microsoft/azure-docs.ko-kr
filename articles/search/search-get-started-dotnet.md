@@ -3,18 +3,18 @@ title: '빠른 시작: .NET을 사용하여 C#에서 검색 인덱스 만들기'
 titleSuffix: Azure Cognitive Search
 description: 이 C# 빠른 시작에서 Azure Cognitive Search .NET SDK를 사용하여 인덱스를 만들고, 데이터를 로드하고, 쿼리를 실행하는 방법을 설명합니다.
 manager: nitinme
-author: HeidiSteen
-ms.author: heidist
+author: tchristiani
+ms.author: terrychr
 ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 11/04/2019
-ms.openlocfilehash: 1d8eaea4a6eded769542921851fb0c74a3c9d58b
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.date: 02/10/2020
+ms.openlocfilehash: e9f43f729fc9e08054cd160b82945ee4bcd5821c
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406770"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121654"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-c-using-the-net-sdk"></a>빠른 시작: .NET SDK를 사용하여 C#에서 Azure Cognitive Search 인덱스 만들기
 > [!div class="op_single_selector"]
@@ -32,7 +32,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 > [!NOTE]
 > 이 문서의 데모 코드는 간단히 하기 위해 Azure Cognitive Search .NET SDK의 동기 메서드를 사용합니다. 하지만 프로덕션 시나리오에서는 확장성과 응답성을 유지하기 위해 자체 애플리케이션에 비동기 메서드를 사용하는 것이 좋습니다. 예를 들어, `Create` 및 `Delete` 대신`CreateAsync` 및 `DeleteAsync`를 사용할 수 있습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 빠른 시작에 필요한 서비스와 도구는 다음과 같습니다.
 

@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
-ms.date: 02/03/2019
-ms.openlocfilehash: 305af8e8acd7e7a54fae8c831d36bee0aad4ad6b
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.date: 02/12/2020
+ms.openlocfilehash: 8e91bb9223f3e6ccd4c76614d75db8591dbed045
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76990983"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201522"
 ---
 # <a name="azure-sql-transparent-data-encryption-with-customer-managed-key"></a>고객 관리 키를 사용 하는 Azure SQL 투명한 데이터 암호화
 
@@ -65,6 +65,7 @@ Key vault 관리자는 [키 자격 증명 모음 감사 이벤트에 대 한 로
 
 로깅이 사용 되는 경우 감사자는 Azure Monitor을 사용 하 여 key vault 감사 이벤트 로그를 검토할 수 있습니다.
 
+[!INCLUDE [sql-database-akv-permission-delay](includes/sql-database-akv-permission-delay.md)]
 
 ## <a name="requirements-for-configuring-customer-managed-tde"></a>고객 관리 TDE를 구성 하기 위한 요구 사항
 

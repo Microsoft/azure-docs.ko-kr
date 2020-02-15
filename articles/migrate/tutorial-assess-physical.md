@@ -3,12 +3,12 @@ title: Azure Migrate 서버 평가를 사용하여 Azure로 마이그레이션�
 description: Azure Migrate 서버 평가를 사용하여 Azure로 마이그레이션할 온-프레미스 물리적 서버를 평가하는 방법에 대해 설명합니다.
 ms.topic: tutorial
 ms.date: 11/18/2019
-ms.openlocfilehash: 10cd13831fe6cb6b843f0a79a5d5ba56814bcde0
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: c89c731712a625e5f3b7a1a7e9306f6a7480b96b
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76028998"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76990303"
 ---
 # <a name="assess-physical-servers-with-azure-migrate-server-assessment"></a>Azure Migrate를 사용하여 물리적 서버 평가: Server Assessment
 
@@ -98,14 +98,14 @@ Azure Migrate: 서버 평가는 경량 어플라이언스를 실행합니다.
 1. 파일을 다운로드한 컴퓨터에서 관리자 명령 창을 엽니다.
 2. 다음 명령을 실행하여 압축된 파일의 해시를 생성합니다.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - 사용 예: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller\AzureMigrateInstaller.ps1 SHA256```
+    - 사용 예: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller.zip SHA256```
 
 3.  최신 어플라이언스 버전의 경우 생성된 해시는 다음 설정과 일치해야 합니다.
 
   **알고리즘** | **해시 값**
   --- | ---
-  MD5 | 96fd99581072c400aa605ab036a0a7c0
-  SHA256 | f5454beef510c0aa38ac1c6be6346207c351d5361afa0c9cea4772d566fcdc36
+  MD5 | 1e92ede3e87c03bd148e56a708cdd33f
+  SHA256 | a3fa78edc8ff8aff9ab5ae66be1b64e66de7b9f475b6542beef114b20bfdac3c
 
 ### <a name="run-the-azure-migrate-installer-script"></a>Azure Migrate 설치 프로그램 스크립트 실행
 
@@ -235,7 +235,7 @@ Azure Migrate: 서버 평가를 사용하여 만들 수 있는 평가에는 두 
 
 ### <a name="view-an-assessment"></a>평가 보기
 
-1. **마이그레이션 목표** >  **서버**의 **Azure Migrate: 서버 평가**에서 평가를 클릭합니다.
+1. **마이그레이션 목표** >  **서버**의 **Azure Migrate: 서버 평가**에서 **평가**를 클릭합니다.
 2. **평가**에서 해당 평가를 클릭하여 엽니다.
 
     ![평가 요약](./media/tutorial-assess-physical/assessment-summary.png)

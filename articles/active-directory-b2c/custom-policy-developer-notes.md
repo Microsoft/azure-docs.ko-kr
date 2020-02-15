@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 03/18/2019
+ms.date: 02/12/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: acd02f143fe35edd867ce26f26a4cba74bd6f10b
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 6439393b72eb724ca017edc17ce7a7c36c275fca
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76847343"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77166955"
 ---
 # <a name="developer-notes-for-custom-policies-in-azure-active-directory-b2c"></a>Azure Active Directory B2C의 사용자 지정 정책에 대 한 개발자 정보
 
@@ -66,13 +66,13 @@ Azure Active Directory B2C의 사용자 지정 정책 구성이 이제 일반 �
 | IDP-OpenIDConnect |  |  | X | 예: Google +.  |
 | IDP-OAUTH2 |  |  | X | 예: Facebook.  |
 | IDP-OAUTH1 (twitter) |  | X |  | 예: Twitter. |
-| IDP-OAUTH1 (예: twitter) |  |  |  | 지원하지 않음 |
+| IDP-OAUTH1 (예: twitter) |  |  |  | 지원되지 않음 |
 | IDP-SAML |  |   | X | 예: Salesforce, ADFS. |
 | IDP-WSFED | X |  |  |  |
 | 신뢰 당사자 OAUTH1 |  |  |  | 지원되지 않습니다. |
 | 신뢰 당사자 OAUTH2 |  |  | X |  |
 | 신뢰 당사자 OIDC |  |  | X |  |
-| 신뢰 당사자 SAML | X |  |  |  |
+| 신뢰 당사자 SAML |  |X  |  |  |
 | 신뢰 당사자 WSFED | X |  |  |  |
 | 기본 및 인증서 인증을 사용 하는 REST API |  |  | X | 예를 들어 Azure Logic Apps 합니다. |
 
@@ -85,7 +85,7 @@ Azure Active Directory B2C의 사용자 지정 정책 구성이 이제 일반 �
 | 전자 메일 확인을 위한 Azure 전자 메일 하위 시스템 |  |  | X |  |
 | 다중 언어 지원|  |  | X |  |
 | 조건자 유효성 검사 |  |  | X | 예를 들어 암호 복잡성이 있습니다. |
-| 타사 전자 메일 서비스 공급자 사용 | X |  |  |  |
+| 타사 전자 메일 서비스 공급자 사용 |  |X  |  |  |
 
 ### <a name="content-definition"></a>콘텐츠 정의
 

@@ -7,17 +7,17 @@ manager: CelesteDG
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.topic: quickstart
+ms.topic: conceptual
 ms.workload: identity
 ms.date: 09/27/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: 2c13956fa84b0bdb1ff694878ff2994bee4b64c9
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
-ms.translationtype: HT
+ms.openlocfilehash: bdcc93fe84d2fded914f21dfa2a29d9e2a2ab449
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76698291"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161361"
 ---
 # <a name="authentication-flows-and-application-scenarios"></a>인증 흐름 및 애플리케이션 시나리오
 
@@ -40,19 +40,19 @@ Microsoft ID 플랫폼(v2.0) 엔드포인트는 다양한 종류의 최신 애�
 
 애플리케이션은 다음 목록과 같이 분류할 수 있습니다.
 
-- [보호된 리소스 및 클라이언트 애플리케이션](#protected-resources-vs-client-applications): 일부 시나리오는 웹앱 또는 웹 API와 같은 리소스를 보호하는 것입니다. 다른 시나리오는 보안 토큰을 가져와서 보호된 웹 API를 호출하는 것입니다.
-- [사용자 포함 또는 사용자 없음](#with-users-or-without-users): 일부 시나리오에는 로그인한 사용자가 포함되지만, 다른 시나리오(예: 디먼 시나리오)에는 사용자가 포함되지 않습니다.
-- [단일 페이지, 퍼블릭 클라이언트 및 기밀 클라이언트 애플리케이션](#single-page-public-client-and-confidential-client-applications): 이것은 세 가지 범주의 애플리케이션 유형입니다. 각 라이브러리는 서로 다른 라이브러리와 개체에 사용됩니다.
-- [로그인 대상 그룹](v2-supported-account-types.md#certain-authentication-flows-dont-support-all-the-account-types): 사용 가능한 인증 흐름은 로그인 대상 그룹에 따라 달라집니다. 일부 흐름은 회사 또는 학교 계정에서만 사용할 수 있습니다. 그리고 일부는 회사/학교 계정과 개인 Microsoft 계정 모두에 사용할 수 있습니다. 허용되는 대상은 인증 흐름에 따라 다릅니다.
-- [지원되는 OAuth 2.0 흐름](#scenarios-and-supported-authentication-flows):  인증 흐름은 토큰을 요청하는 애플리케이션 시나리오를 구현하는 데 사용됩니다. 애플리케이션 시나리오와 인증 흐름 간에는 일대일 매핑이 없습니다.
-- [지원되는 플랫폼](#scenarios-and-supported-platforms-and-languages): 모든 플랫폼에서 모든 애플리케이션 시나리오를 사용할 수 있는 것은 아닙니다.
+- [보호 된 리소스 및 클라이언트 응용 프로그램](#protected-resources-vs-client-applications): 웹 앱 또는 웹 api와 같은 리소스를 보호 하는 시나리오가 있습니다. 다른 시나리오는 보안 토큰을 가져와서 보호된 웹 API를 호출하는 것입니다.
+- 사용자 [또는 사용자가 없는](#with-users-or-without-users)사용자: 일부 시나리오에는 로그인 한 사용자가 포함 되지만, 디먼 시나리오와 같은 다른 시나리오에는 사용자가 포함 되지 않습니다.
+- [단일 페이지, 공용 클라이언트 및 기밀 클라이언트 응용 프로그램](#single-page-public-client-and-confidential-client-applications): 이러한 응용 프로그램 종류는 세 가지 범주의 응용 프로그램입니다. 각 라이브러리는 서로 다른 라이브러리와 개체에 사용됩니다.
+- [로그인 대상](v2-supported-account-types.md#certain-authentication-flows-dont-support-all-the-account-types): 사용 가능한 인증 흐름은 로그인 대상 그룹에 따라 달라 집니다. 일부 흐름은 회사 또는 학교 계정에서만 사용할 수 있습니다. 그리고 일부는 회사/학교 계정과 개인 Microsoft 계정 모두에 사용할 수 있습니다. 허용되는 대상은 인증 흐름에 따라 다릅니다.
+- [지원 되는 OAuth 2.0 흐름](#scenarios-and-supported-authentication-flows): 인증 흐름은 토큰을 요청 하는 응용 프로그램 시나리오를 구현 하는 데 사용 됩니다. 애플리케이션 시나리오와 인증 흐름 간에는 일대일 매핑이 없습니다.
+- [지원 되는 플랫폼](#scenarios-and-supported-platforms-and-languages): 모든 플랫폼에서 모든 응용 프로그램 시나리오를 사용할 수 있는 것은 아닙니다.
 
 ### <a name="protected-resources-vs-client-applications"></a>보호된 리소스 및 클라이언트 애플리케이션
 
 인증 시나리오에는 두 가지 작업이 포함됩니다.
 
-- **보호된 웹 API에 대한 보안 토큰 가져오기**: [인증 라이브러리](reference-v2-libraries.md#microsoft-supported-client-libraries)를 사용하여 토큰, 특히 MSAL(Microsoft 인증 라이브러리) 제품군을 가져오는 것이 좋습니다.
-- **웹 API 또는 웹앱 보호**: 웹 API 또는 웹앱 리소스를 보호해야 하는 한 가지 과제는 보안 토큰의 유효성을 검사하는 것입니다. 일부 플랫폼의 경우 Microsoft에서 [미들웨어 라이브러리](reference-v2-libraries.md#microsoft-supported-server-middleware-libraries)를 제공합니다.
+- **보호 된 WEB API에 대 한 보안 토큰 획득**: Microsoft 인증 라이브러리 (msal) 제품군에서 [인증 라이브러리](reference-v2-libraries.md#microsoft-supported-client-libraries) 를 사용 하 여 토큰을 얻는 것이 좋습니다.
+- Web **api 또는 웹 앱 보호**: web api 또는 웹 앱 리소스를 보호 하는 한 가지 문제는 보안 토큰의 유효성을 검사 하는 것입니다. 일부 플랫폼의 경우 Microsoft에서 [미들웨어 라이브러리](reference-v2-libraries.md#microsoft-supported-server-middleware-libraries)를 제공합니다.
 
 ### <a name="with-users-or-without-users"></a>사용자 포함 또는 사용자 없음
 
@@ -68,9 +68,9 @@ Microsoft ID 플랫폼(v2.0) 엔드포인트는 다양한 종류의 최신 애�
 
 보안 토큰은 여러 애플리케이션 유형에서 가져올 수 있습니다. 이러한 애플리케이션은 다음 세 가지 범주로 구분됩니다.
 
-- **단일 페이지 애플리케이션**: SPA라고도 하는 이 앱은 브라우저에서 실행되는 JavaScript 또는 TypeScript 앱에서 토큰을 가져오는 웹앱입니다. 대부분의 최신 앱에는 기본적으로 JavaScript로 작성된 단일 페이지 애플리케이션 프런트 엔드가 있습니다. 애플리케이션은 종종 Angular, React 또는 Vue와 같은 프레임워크를 사용합니다. MSAL.js는 단일 페이지 애플리케이션을 지원하는 유일한 Microsoft 인증 라이브러리입니다.
+- **단일 페이지 응용 프로그램**: spas 라고도 하며, 브라우저에서 실행 되는 JavaScript 또는 TypeScript 앱에서 토큰을 가져오는 웹 앱입니다. 대부분의 최신 앱에는 기본적으로 JavaScript로 작성된 단일 페이지 애플리케이션 프런트 엔드가 있습니다. 애플리케이션은 종종 Angular, React 또는 Vue와 같은 프레임워크를 사용합니다. MSAL.js는 단일 페이지 애플리케이션을 지원하는 유일한 Microsoft 인증 라이브러리입니다.
 
-- **퍼블릭 클라이언트 애플리케이션**: 항상 사용자를 로그인하는 애플리케이션은 다음과 같습니다.
+- **공용 클라이언트 응용 프로그램**: 이러한 응용 프로그램은 항상 사용자를 로그인 합니다.
   - 로그인한 사용자를 대신하여 웹 API를 호출하는 데스크톱 앱
   - 모바일 앱
   - 브라우저가 없는 디바이스에서 실행되는 앱(예: iOT에서 실행되는 앱)
@@ -154,7 +154,7 @@ Windows 도메인에 조인되거나 Azure AD(Azure Active Directory)에서 조�
 
 ![웹 API를 호출하는 모바일 앱](media/scenarios/mobile-app.svg)
 
-MSAL iOS 및 MSAL Android는 기본적으로 시스템 웹 브라우저를 사용합니다. 그러나 포함된 웹 보기를 대신 사용하도록 지시할 수 있습니다. 모바일 플랫폼(UWP(유니버설 Windows 플랫폼), iOS 또는 Android)에 종속된 특성이 있습니다.
+MSAL iOS 및 MSAL Android는 기본적으로 시스템 웹 브라우저를 사용합니다. 그러나 포함된 웹 보기를 대신 사용하도록 지시할 수 있습니다. 유니버설 Windows 플랫폼 (UWP), iOS 또는 Android 모바일 플랫폼에 종속 된 specificities 있습니다.
 
 디바이스 ID 또는 디바이스 등록과 관련된 조건부 액세스가 포함된 일부 시나리오에서는 [broker](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/leveraging-brokers-on-Android-and-iOS)를 디바이스에 설치해야 합니다. broker의 예로는 Android의 Microsoft 회사 포털과 Android 및 iOS의 Microsoft Authenticator가 있습니다. 또한 MSAL은 이제 broker와 상호 작용할 수 있습니다.
 

@@ -1,16 +1,16 @@
 ---
 title: 프로그래밍 방식으로 Azure 구독 만들기
 description: 프로그래밍 방식으로 추가 Azure 구독을 만드는 방법에 대해 알아봅니다.
-author: amberb
+author: amberbhargava
 ms.topic: conceptual
 ms.date: 04/10/2019
 ms.author: banders
-ms.openlocfilehash: 2fad9d727e78b470635c91a1bf9aaac11e57f4c7
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 47d4454c47967d07898492176438e547b1e561b6
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981235"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198686"
 ---
 # <a name="programmatically-create-azure-subscriptions-preview"></a>프로그래밍 방식으로 Azure 구독 만들기 (미리 보기)
 
@@ -23,7 +23,7 @@ Azure 구독을 프로그래밍 방식으로 만드는 경우 해당 구독은 M
 
 ## <a name="create-subscriptions-for-an-ea-billing-account"></a>EA 청구 계정에 대 한 구독 만들기
 
-### <a name="prerequisites"></a>필수 조건
+### <a name="prerequisites"></a>사전 요구 사항
 
 구독을 만들려면 등록 계정에 대 한 소유자 역할이 있어야 합니다. 다음 두 가지 방법으로 역할을 가져올 수 있습니다.
 
@@ -128,7 +128,7 @@ Azure는 사용자가 액세스할 수 있는 등록 계정 목록으로 응답 
 
 ### <a name="resttabrest"></a>[REST (영문)](#tab/rest)
 
-`<enrollmentAccountObjectId>`를 첫 번째 단계(```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx```)에서 복사한 `name`로 바꿔서 다음 요청을 수행합니다. 소유자를 지정 하려면 [사용자 개체 id를 가져오는 방법을](grant-access-to-create-subscription.md#userObjectId)알아보세요.
+`<enrollmentAccountObjectId>`를 첫 번째 단계(`name`)에서 복사한 ```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx```로 바꿔서 다음 요청을 수행합니다. 소유자를 지정 하려면 [사용자 개체 id를 가져오는 방법을](grant-access-to-create-subscription.md#userObjectId)알아보세요.
 
 ```json
 POST https://management.azure.com/providers/Microsoft.Billing/enrollmentAccounts/<enrollmentAccountObjectId>/providers/Microsoft.Subscription/createSubscription?api-version=2018-03-01-preview
@@ -147,11 +147,11 @@ POST https://management.azure.com/providers/Microsoft.Billing/enrollmentAccounts
 }
 ```
 
-| 요소 이름  | 필수 | 유형   | Description                                                                                               |
+| 요소 이름  | 필수 | Type   | Description                                                                                               |
 |---------------|----------|--------|-----------------------------------------------------------------------------------------------------------|
-| `displayName` | 아닙니다.      | String | 구독의 표시 이름입니다. 지정되지 않은 경우 “Microsoft Azure 엔터프라이즈”와 같은 제품의 이름으로 설정됩니다.                                 |
-| `offerType`   | 예      | String | 구독의 제안입니다. EA에 대한 두 가지 옵션은 [MS-AZR-0017P](https://azure.microsoft.com/pricing/enterprise-agreement/)(프로덕션 사용) 및 [MS-AZR-0148P](https://azure.microsoft.com/offers/ms-azr-0148p/)(개발/테스트, [EA 포털을 사용하여 켜져야](https://ea.azure.com/helpdocs/DevOrTestOffer) 함)입니다.                |
-| `owners`      | 아닙니다.       | String | 만들 때 구독에서 RBAC 소유자로 추가하려는 모든 사용자의 개체 ID입니다.  |
+| `displayName` | 예      | String | 구독의 표시 이름입니다. 지정되지 않은 경우 “Microsoft Azure 엔터프라이즈”와 같은 제품의 이름으로 설정됩니다.                                 |
+| `offerType`   | yes      | String | 구독의 제안입니다. EA에 대한 두 가지 옵션은 [MS-AZR-0017P](https://azure.microsoft.com/pricing/enterprise-agreement/)(프로덕션 사용) 및 [MS-AZR-0148P](https://azure.microsoft.com/offers/ms-azr-0148p/)(개발/테스트, [EA 포털을 사용하여 켜져야](https://ea.azure.com/helpdocs/DevOrTestOffer) 함)입니다.                |
+| `owners`      | 예       | String | 만들 때 구독에서 RBAC 소유자로 추가하려는 모든 사용자의 개체 ID입니다.  |
 
 응답에서 모니터링에 대한 `subscriptionOperation` 개체를 얻습니다. 구독 만들기가 완료되면 `subscriptionOperation` 개체는 구독 ID가 있는 `subscriptionLink` 개체를 반환합니다.
 
@@ -165,14 +165,14 @@ POST https://management.azure.com/providers/Microsoft.Billing/enrollmentAccounts
 New-AzSubscription -OfferType MS-AZR-0017P -Name "Dev Team Subscription" -EnrollmentAccountObjectId <enrollmentAccountObjectId> -OwnerObjectId <userObjectId1>,<servicePrincipalObjectId>
 ```
 
-| 요소 이름  | 필수 | 유형   | Description                                                                                               |
+| 요소 이름  | 필수 | Type   | Description                                                                                               |
 |---------------|----------|--------|-----------------------------------------------------------------------------------------------------------|
-| `Name` | 아닙니다.      | String | 구독의 표시 이름입니다. 지정되지 않은 경우 “Microsoft Azure 엔터프라이즈”와 같은 제품의 이름으로 설정됩니다.                                 |
-| `OfferType`   | 예      | String | 구독의 제안입니다. EA에 대한 두 가지 옵션은 [MS-AZR-0017P](https://azure.microsoft.com/pricing/enterprise-agreement/)(프로덕션 사용) 및 [MS-AZR-0148P](https://azure.microsoft.com/offers/ms-azr-0148p/)(개발/테스트, [EA 포털을 사용하여 켜져야](https://ea.azure.com/helpdocs/DevOrTestOffer) 함)입니다.                |
-| `EnrollmentAccountObjectId`      | 예       | String | 구독이 생성되고 비용이 청구되는 등록 계정의 개체 ID입니다. 이 값은 `Get-AzEnrollmentAccount`에서 가져온 GUID입니다. |
-| `OwnerObjectId`      | 아닙니다.       | String | 만들 때 구독에서 RBAC 소유자로 추가하려는 모든 사용자의 개체 ID입니다.  |
-| `OwnerSignInName`    | 아닙니다.       | String | 만들 때 구독에서 RBAC 소유자로 추가하려는 모든 사용자의 이메일 주소입니다. `OwnerObjectId` 대신 이 매개 변수를 사용할 수 있습니다.|
-| `OwnerApplicationId` | 아닙니다.       | String | 만들 때 구독에서 RBAC 소유자로 추가하려는 모든 서비스 사용자의 애플리케이션 ID입니다. `OwnerObjectId` 대신 이 매개 변수를 사용할 수 있습니다. 이 매개 변수를 사용하는 경우 서비스 주체는 [디렉터리에 대한 읽기 액세스 권한](/powershell/azure/active-directory/signing-in-service-principal?view=azureadps-2.0#give-the-service-principal-reader-access-to-the-current-tenant-get-azureaddirectoryrole)이 있어야 합니다.|
+| `Name` | 예      | String | 구독의 표시 이름입니다. 지정되지 않은 경우 “Microsoft Azure 엔터프라이즈”와 같은 제품의 이름으로 설정됩니다.                                 |
+| `OfferType`   | yes      | String | 구독의 제안입니다. EA에 대한 두 가지 옵션은 [MS-AZR-0017P](https://azure.microsoft.com/pricing/enterprise-agreement/)(프로덕션 사용) 및 [MS-AZR-0148P](https://azure.microsoft.com/offers/ms-azr-0148p/)(개발/테스트, [EA 포털을 사용하여 켜져야](https://ea.azure.com/helpdocs/DevOrTestOffer) 함)입니다.                |
+| `EnrollmentAccountObjectId`      | yes       | String | 구독이 생성되고 비용이 청구되는 등록 계정의 개체 ID입니다. 이 값은 `Get-AzEnrollmentAccount`에서 가져온 GUID입니다. |
+| `OwnerObjectId`      | 예       | String | 만들 때 구독에서 RBAC 소유자로 추가하려는 모든 사용자의 개체 ID입니다.  |
+| `OwnerSignInName`    | 예       | String | 만들 때 구독에서 RBAC 소유자로 추가하려는 모든 사용자의 이메일 주소입니다. `OwnerObjectId` 대신 이 매개 변수를 사용할 수 있습니다.|
+| `OwnerApplicationId` | 예       | String | 만들 때 구독에서 RBAC 소유자로 추가하려는 모든 서비스 사용자의 애플리케이션 ID입니다. `OwnerObjectId` 대신 이 매개 변수를 사용할 수 있습니다. 이 매개 변수를 사용하는 경우 서비스 주체는 [디렉터리에 대한 읽기 액세스 권한](/powershell/azure/active-directory/signing-in-service-principal?view=azureadps-2.0#give-the-service-principal-reader-access-to-the-current-tenant-get-azureaddirectoryrole)이 있어야 합니다.|
 
 모든 매개 변수의 전체 목록을 보려면 [New-AzSubscription](/powershell/module/az.subscription)을 참조하세요.
 
@@ -186,14 +186,14 @@ New-AzSubscription -OfferType MS-AZR-0017P -Name "Dev Team Subscription" -Enroll
 az account create --offer-type "MS-AZR-0017P" --display-name "Dev Team Subscription" --enrollment-account-object-id "<enrollmentAccountObjectId>" --owner-object-id "<userObjectId>","<servicePrincipalObjectId>"
 ```
 
-| 요소 이름  | 필수 | 유형   | Description                                                                                               |
+| 요소 이름  | 필수 | Type   | Description                                                                                               |
 |---------------|----------|--------|-----------------------------------------------------------------------------------------------------------|
-| `display-name` | 아닙니다.      | String | 구독의 표시 이름입니다. 지정되지 않은 경우 “Microsoft Azure 엔터프라이즈”와 같은 제품의 이름으로 설정됩니다.                                 |
-| `offer-type`   | 예      | String | 구독의 제안입니다. EA에 대한 두 가지 옵션은 [MS-AZR-0017P](https://azure.microsoft.com/pricing/enterprise-agreement/)(프로덕션 사용) 및 [MS-AZR-0148P](https://azure.microsoft.com/offers/ms-azr-0148p/)(개발/테스트, [EA 포털을 사용하여 켜져야](https://ea.azure.com/helpdocs/DevOrTestOffer) 함)입니다.                |
-| `enrollment-account-object-id`      | 예       | String | 구독이 생성되고 비용이 청구되는 등록 계정의 개체 ID입니다. 이 값은 `az billing enrollment-account list`에서 가져온 GUID입니다. |
-| `owner-object-id`      | 아닙니다.       | String | 만들 때 구독에서 RBAC 소유자로 추가하려는 모든 사용자의 개체 ID입니다.  |
-| `owner-upn`    | 아닙니다.       | String | 만들 때 구독에서 RBAC 소유자로 추가하려는 모든 사용자의 이메일 주소입니다. `owner-object-id` 대신 이 매개 변수를 사용할 수 있습니다.|
-| `owner-spn` | 아닙니다.       | String | 만들 때 구독에서 RBAC 소유자로 추가하려는 모든 서비스 사용자의 애플리케이션 ID입니다. `owner-object-id` 대신 이 매개 변수를 사용할 수 있습니다. 이 매개 변수를 사용하는 경우 서비스 주체는 [디렉터리에 대한 읽기 액세스 권한](/powershell/azure/active-directory/signing-in-service-principal?view=azureadps-2.0#give-the-service-principal-reader-access-to-the-current-tenant-get-azureaddirectoryrole)이 있어야 합니다.|
+| `display-name` | 예      | String | 구독의 표시 이름입니다. 지정되지 않은 경우 “Microsoft Azure 엔터프라이즈”와 같은 제품의 이름으로 설정됩니다.                                 |
+| `offer-type`   | yes      | String | 구독의 제안입니다. EA에 대한 두 가지 옵션은 [MS-AZR-0017P](https://azure.microsoft.com/pricing/enterprise-agreement/)(프로덕션 사용) 및 [MS-AZR-0148P](https://azure.microsoft.com/offers/ms-azr-0148p/)(개발/테스트, [EA 포털을 사용하여 켜져야](https://ea.azure.com/helpdocs/DevOrTestOffer) 함)입니다.                |
+| `enrollment-account-object-id`      | yes       | String | 구독이 생성되고 비용이 청구되는 등록 계정의 개체 ID입니다. 이 값은 `az billing enrollment-account list`에서 가져온 GUID입니다. |
+| `owner-object-id`      | 예       | String | 만들 때 구독에서 RBAC 소유자로 추가하려는 모든 사용자의 개체 ID입니다.  |
+| `owner-upn`    | 예       | String | 만들 때 구독에서 RBAC 소유자로 추가하려는 모든 사용자의 이메일 주소입니다. `owner-object-id` 대신 이 매개 변수를 사용할 수 있습니다.|
+| `owner-spn` | 예       | String | 만들 때 구독에서 RBAC 소유자로 추가하려는 모든 서비스 사용자의 애플리케이션 ID입니다. `owner-object-id` 대신 이 매개 변수를 사용할 수 있습니다. 이 매개 변수를 사용하는 경우 서비스 주체는 [디렉터리에 대한 읽기 액세스 권한](/powershell/azure/active-directory/signing-in-service-principal?view=azureadps-2.0#give-the-service-principal-reader-access-to-the-current-tenant-get-azureaddirectoryrole)이 있어야 합니다.|
 
 모든 매개 변수의 전체 목록을 보려면 [az account create](/cli/azure/ext/subscription/account?view=azure-cli-latest#-ext-subscription-az-account-create)를 참조하세요.
 
@@ -209,7 +209,7 @@ az account create --offer-type "MS-AZR-0017P" --display-name "Dev Team Subscript
 
 ## <a name="create-subscriptions-for-an-mca-account"></a>MCA 계정에 대 한 구독 만들기
 
-### <a name="prerequisites"></a>필수 조건
+### <a name="prerequisites"></a>사전 요구 사항
 
 구독을 만들려면 청구 프로필 또는 청구 계정에 대 한 청구서 섹션 또는 소유자 또는 참가자 역할에 소유자, 참가자 또는 Azure 구독 작성자 역할이 있어야 합니다. 자세한 내용은 [구독 청구 역할 및 작업](../../cost-management-billing/manage/understand-mca-roles.md#subscription-billing-roles-and-tasks)을 참조하세요.
 
@@ -265,7 +265,7 @@ API 응답에는 사용자가 액세스할 수 있는 청구 계정이 나열 �
 
 구독 요금은 청구 프로필 청구서의 한 섹션에 표시 됩니다. 다음 API를 사용 하 여 Azure 구독을 만들 수 있는 권한이 있는 청구서 섹션 및 청구 프로필 목록을 가져옵니다.
 
-`<billingAccountName>`를 첫 번째 단계(```5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx```)에서 복사한 `name`로 바꿔서 다음 요청을 수행합니다.
+`<billingAccountName>`를 첫 번째 단계(`name`)에서 복사한 ```5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx```로 바꿔서 다음 요청을 수행합니다.
 
 ```json
 POST https://management.azure.com/providers/Microsoft.Billing/billingAccounts/<billingAccountName>/listInvoiceSectionsWithCreateSubscriptionPermission?api-version=2019-10-01-preview
@@ -337,20 +337,20 @@ POST https://management.azure.com<invoiceSectionId>/providers/Microsoft.Subscrip
 
 ```
 
-| 요소 이름  | 필수 | 유형   | Description                                                                                               |
+| 요소 이름  | 필수 | Type   | Description                                                                                               |
 |---------------|----------|--------|-----------------------------------------------------------------------------------------------------------|
-| `displayName` | 예      | String | 구독의 표시 이름입니다.|
-| `billingProfileId`   | 예      | String | 구독의 요금을 청구 하는 청구 프로필의 ID입니다.  |
-| `skuId` | 예      | String | Azure 계획의 유형을 결정 하는 sku ID입니다. |
-| `owners`      | 아닙니다.       | String | 생성 될 때 구독에서 RBAC 소유자로 추가 하려는 모든 사용자 또는 서비스 주체의 개체 ID입니다.  |
-| `costCenter` | 아닙니다.      | String | 구독과 관련 된 비용 센터입니다. 사용 중인 csv 파일에 표시 됩니다. |
-| `managementGroupId` | 아닙니다.      | String | 구독이 추가 될 관리 그룹의 ID입니다. 관리 그룹 목록을 가져오려면 [관리 그룹 LIST API](/rest/api/resources/managementgroups/list)를 참조 하세요. API에서 관리 그룹의 ID를 사용 합니다. |
+| `displayName` | yes      | String | 구독의 표시 이름입니다.|
+| `billingProfileId`   | yes      | String | 구독의 요금을 청구 하는 청구 프로필의 ID입니다.  |
+| `skuId` | yes      | String | Azure 계획의 유형을 결정 하는 sku ID입니다. |
+| `owners`      | 예       | String | 생성 될 때 구독에서 RBAC 소유자로 추가 하려는 모든 사용자 또는 서비스 주체의 개체 ID입니다.  |
+| `costCenter` | 예      | String | 구독과 관련 된 비용 센터입니다. 사용 중인 csv 파일에 표시 됩니다. |
+| `managementGroupId` | 예      | String | 구독이 추가 될 관리 그룹의 ID입니다. 관리 그룹 목록을 가져오려면 [관리 그룹 LIST API](/rest/api/resources/managementgroups/list)를 참조 하세요. API에서 관리 그룹의 ID를 사용 합니다. |
 
 응답에서 모니터링에 대한 `subscriptionCreationResult` 개체를 얻습니다. 구독 만들기가 완료되면 `subscriptionCreationResult` 개체는 구독 ID가 있는 `subscriptionLink` 개체를 반환합니다.
 
 ## <a name="create-subscriptions-for-an-mpa-billing-account"></a>MPA 청구 계정에 대 한 구독 만들기
 
-### <a name="prerequisites"></a>필수 조건
+### <a name="prerequisites"></a>사전 요구 사항
 
 청구 계정에 대 한 구독을 만들려면 조직의 클라우드 솔루션 공급자 계정에 전역 관리자 또는 관리 에이전트 역할이 있어야 합니다. 자세한 내용은 [파트너 센터-사용자 역할 및 사용 권한 할당](https://docs.microsoft.com/partner-center/permissions-overview)을 참조 하세요.
 
@@ -487,7 +487,7 @@ API 응답은 고객에 대 한 대리점을 나열 합니다.
 
 ### <a name="create-a-subscription-for-a-customer"></a>고객에 대 한 구독 만들기
 
-다음 예에서는 *Fabrikam 장난감* 에 대해 *Dev Team subscription* 이라는 구독을 만들고이 구독에 *정문* 재판매인을 연결 합니다. 조
+다음 예에서는 *Fabrikam 장난감* 에 대해 *Dev Team subscription* 이라는 구독을 만들고이 구독에 *정문* 재판매인을 연결 합니다. T
 
 `<customerId>`를 두 번째 단계 (```/providers/Microsoft.Billing/billingAccounts/99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/customers/2281f543-xxxx-xxxx-xxxx-xxxxxxxxxxxx```)에서 복사한 `id`로 바꿔서 다음 요청을 수행 합니다. API의 요청 매개 변수에서 두 번째 단계에서 복사 된 선택적 *resellerId* 를 전달 합니다.
 
@@ -502,11 +502,11 @@ POST https://management.azure.com<customerId>/providers/Microsoft.Subscription/c
 }'
 ```
 
-| 요소 이름  | 필수 | 유형   | Description                                                                                               |
+| 요소 이름  | 필수 | Type   | Description                                                                                               |
 |---------------|----------|--------|-----------------------------------------------------------------------------------------------------------|
-| `displayName` | 예      | String | 구독의 표시 이름입니다.|
-| `skuId` | 예      | String | Azure 계획의 sku ID입니다. 유형 Microsoft Azure 계획의 구독에 대해 *0001* 사용 |
-| `resellerId`      | 아닙니다.       | String | 구독과 연결 될 재판매인의 MPN ID입니다.  |
+| `displayName` | yes      | String | 구독의 표시 이름입니다.|
+| `skuId` | yes      | String | Azure 계획의 sku ID입니다. 유형 Microsoft Azure 계획의 구독에 대해 *0001* 사용 |
+| `resellerId`      | 예       | String | 구독과 연결 될 재판매인의 MPN ID입니다.  |
 
 응답에서 모니터링에 대한 `subscriptionCreationResult` 개체를 얻습니다. 구독 만들기가 완료되면 `subscriptionCreationResult` 개체는 구독 ID가 있는 `subscriptionLink` 개체를 반환합니다.
 

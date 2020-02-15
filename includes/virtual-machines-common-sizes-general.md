@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 08/08/2019
 ms.author: azcspmt;jonbeck;cynthn;joelpell
 ms.custom: include file
-ms.openlocfilehash: e66314e06aa87a01dcd2a3ff0a51ae86082173e3
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.openlocfilehash: cfb35f6eeae6d74eea8dab96fa336fb6700eb7a7
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75904421"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77123137"
 ---
 범용 VM 크기는 적당한 CPU 대 메모리 비율을 제공합니다. 테스트 및 개발, 중소 규모 데이터베이스 및 트래픽이 적거나 중간 정도인 웹 서버에 적합합니다. 이 문서에서는 이 그룹화에서 크기에 대한 스토리지 처리량 뿐만 아니라 vCPU, 데이터 디스크 및 NIC의 수에 대한 정보를 제공합니다.
 
-- [DC 시리즈](#dc-series) 는 공용 클라우드에서 처리 되는 동안 데이터 및 코드의 기밀성과 무결성을 보호 하는 데 도움이 되는 Azure의 가상 머신 패밀리입니다. 이러한 머신은 SGX 기술을 포함한 최신 세대의 3.7GHz Intel XEON E-2176G 프로세서로 지원됩니다. Intel Turbo Boost Technology를 통해 이러한 머신은 최대 4.7GHz에 도달할 수 있습니다. DC 시리즈 인스턴스를 사용하여 고객은 사용 중인 코드 및 데이터를 보호하는 보안 Enclave 기반 애플리케이션을 빌드할 수 있습니다.
+- [DC 시리즈](#dc-series) 는 공용 클라우드에서 처리 되는 동안 데이터 및 코드의 기밀성과 무결성을 보호 하는 데 도움이 되는 Azure의 가상 머신 패밀리입니다. 이 머신은 SGX 기술을 포함한 최신 세대의 3.7GHz Intel XEON E-2176G 프로세서로 지원됩니다. Intel Turbo Boost 기술을 사용하면 이 머신은 최대 4.7GHz까지 작동할 수 있습니다. DC 시리즈 인스턴스를 사용하면 고객은 사용 중인 고객의 코드와 데이터를 보호할 수 있는 보안 Enclave 기반 애플리케이션을 빌드할 수 있습니다.
 
 - 다양한 하드웨어 유형 및 프로세서에 Av2 시리즈 VM을 배포할 수 있습니다. A 시리즈 VM은 개발과 테스트 등 항목별 작업에 가장 적합한 CPU 성능 및 메모리 구성을 갖추고 있습니다. 배포된 하드웨어에 관계없이 인스턴스 실행 시 일관된 프로세서 성능을 제공하기 위해 하드웨어에 따라 크기가 제한됩니다. 이 크기가 배포되는 실제 하드웨어를 확인하려면 Virtual Machine 내에서 가상 하드웨어를 쿼리합니다.
 
@@ -29,7 +29,7 @@ ms.locfileid: "75904421"
 
   예제 D 시리즈 사용 사례에는 엔터프라이즈급 응용 프로그램, 관계형 데이터베이스, 메모리 내 캐싱 및 분석이 포함 됩니다.
 
-- Dav4 시리즈 및 Dasv4 시리즈는 전체 스레드 구성에서 AMD의 2.35 Ghz EPYC<sup>TM</sup> 7452 프로세서 256를 활용 하는 새로운 크기로, 범용 워크 로드를 실행 하기 위한 8 개 코어 마다 고객 옵션을 확장 하는 8 개 코어 마다 l3 캐시를 8gb로 사용 합니다. Dav4 시리즈와 Dasv4 시리즈는 D & Dsv3 시리즈와 동일한 메모리 및 디스크 구성을 포함 합니다.
+- Dav4 시리즈 및 Dasv4 시리즈는 AMD의 2.35 Ghz EPYC<sup>TM</sup> 7452 프로세서를 사용 하는 새로운 크기입니다. 최대 256 mb의 l3 캐시가 8 개 코어 마다 4mb의 l3 캐시를 사용 하 여 범용 워크 로드를 실행 하기 위한 고객 옵션을 늘립니다. Dav4 시리즈와 Dasv4 시리즈는 D & Dsv3 시리즈와 동일한 메모리 및 디스크 구성을 포함 합니다.
   
 ## <a name="b-series"></a>B 시리즈
 
@@ -50,10 +50,10 @@ Premium Storage 캐싱: 지원 되지 않음
 | Standard_B2s  | 2           | 4              | 8                          | 40%                   | 200%                   | 60                   | 24                 | 576            | 4                                      | 1600 / 15                                 | 1280 / 15                                 | 3  |
 | Standard_B2ms | 2           | 8              | 16                         | 60%                   | 200%                   | 60                   | 36                 | 864            | 4                                      | 2400 / 22.5                               | 1920 / 22.5                               | 3  |
 | Standard_B4ms | 4           | 16             | 32                         | 90%                   | 400%                   | 120                   | 54                 | 1296           | 8                                      | 3600 / 35                                 | 2880 / 35                                 | 4  |
-| Standard_B8ms | 8           | 32             | 64                         | 135%                  | 800%                   | 240                   | 81                 | 1944           | 16                                     | 4320/50                                 | 4320/50                                 | 4  |
-| Standard_B12ms | 12           | 48             | 96                         | 202%                  | 1200%                   | 360                   | 121                 | 2909           | 16                                     | 6480/75                                 | 4320/50                                 | 6  |
-| Standard_B16ms | 16           | 64             | 128                         | 270%                  | 1600%                   | 480                   | 162                 | 3888           | 32                                     | 8640 / 100                                 | 4320/50                                 | 8  |
-| Standard_B20ms | 20           | 80             | 160                         | 337%                  | 2000%                   | 600                   | 203                 | 4860           | 32                                     | 10800/125                                 | 4320/50                                 | 8  |
+| Standard_B8ms | 8           | 32             | 64                         | 135%                  | 800%                   | 240                   | 81                 | 1944           | 16                                     | 4320 / 50                                 | 4320 / 50                                 | 4  |
+| Standard_B12ms | 12           | 48             | 96                         | 202%                  | 1200%                   | 360                   | 121                 | 2909           | 16                                     | 6480/75                                 | 4320 / 50                                 | 6  |
+| Standard_B16ms | 16           | 64             | 128                         | 270%                  | 1600%                   | 480                   | 162                 | 3888           | 32                                     | 8640 / 100                                 | 4320 / 50                                 | 8  |
+| Standard_B20ms | 20           | 80             | 160                         | 337%                  | 2000%                   | 600                   | 203                 | 4860           | 32                                     | 10800/125                                 | 4320 / 50                                 | 8  |
 
 <sup>1</sup> B1ls는 Linux 에서만 지원 됩니다.
 
@@ -65,7 +65,7 @@ Premium Storage: 지원됨
 
 Premium Storage 캐싱: 지원 됨
 
-Dsv3 시리즈 크기는 intel® Xeon® 8171M (Skylake), Intel® Xeon® E5-2673 v4 2.3 GHz (Broadwell) 또는 intel 터보 E5-2673 v3 2.4 GHz (Haswell) 프로세서에서 실행 되며,이®는 Intel 터보 부스트 기술 2.0 및 premium storage를 사용 합니다. Dsv3 시리즈 크기는 대부분의 프로덕션 워크로드에 사용할 수 있는 vCPU, 메모리 및 임시 스토리지의 조합을 제공합니다.
+Dsv3 시리즈 크기는 intel® Xeon® 8171M (Skylake), Intel® Xeon® E5-2673 v4 2.3 GHz (Broadwell) 또는 intel 터보 E5-2673 v3 2.4 GHz (Haswell) 프로세서에서 실행 되며,이®는 Intel 터보 부스트 기술 2.0 및 premium storage를 사용 합니다. Dsv3 시리즈 크기는 대부분의 프로덕션 워크로드에 적합한 vCPU, 메모리 및 임시 스토리지의 조합을 제공합니다.
 
 
 | 크기             | vCPU | 메모리: GiB | 임시 스토리지(SSD) GiB | 최대 데이터 디스크 수 | 최대 캐시된 임시 스토리지 처리량: IOPS/MBps(GiB 단위의 캐시 크기) | 최대 캐시되지 않은 디스크 처리량: IOPS/MBps | 최대 NIC 수 / 예상 네트워크 대역폭(Mbps) |
@@ -113,7 +113,7 @@ Premium Storage 캐싱: 지원 되지 않음
 
 Dv3 시리즈 크기는 intel® Xeon® 81732.1 g h z (Skylake), Intel® Xeon® E5-2673 v4 2.3 GHz (Broadwell) 또는 Intel® Xeon® E5-2673 v3 2.4 GHz (Haswell) 프로세서와 Intel 터보 부스트 기술 2.0에서 실행 됩니다. Dv3 시리즈 크기는 대부분의 프로덕션 워크로드에 적합한 vCPU, 메모리 및 임시 스토리지의 조합을 제공합니다.
 
-데이터 디스크 스토리지는 가상 머신과 별도로 비용이 청구됩니다. Premium Storage 디스크를 사용하려면 Dsv3 크기를 사용합니다. Dsv3 크기의 가격 및 요금 청구 기준은 Dv3 시리즈와 같습니다. 
+데이터 디스크 스토리지는 가상 머신과 별도로 비용이 청구됩니다. Premium Storage 디스크를 사용하려면 Dsv3 크기를 사용합니다. Dsv3 크기의 가격 및 요금 청구 기준은 Dv3 시리즈와 동일합니다. 
 
 
 | 크기            | vCPU | 메모리: GiB | 임시 스토리지(SSD) GiB | 최대 데이터 디스크 수 | 최대 임시 스토리지 처리량: IOPS/읽기 MBps/쓰기 MBps | 최대 Nic/네트워크 대역폭 (Mbps) |
@@ -169,7 +169,7 @@ DSv2 시리즈 크기는 intel® Xeon® 8171M (Skylake) 또는 intel® Xeon® E5
 | Standard_DS4_v2 |8 |28 |56 |32 |32000/256 (344) |25600/384 |8 / 6000 |
 | Standard_DS5_v2 |16 |56 |112 |64 |64000/512 (688) |51200/768 |8 / 12000 |
 
-## <a name="dv2-series"></a>Dv2-시리즈
+## <a name="dv2-series"></a>Dv2 시리즈
 
 ACU: 210-250
 

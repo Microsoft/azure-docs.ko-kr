@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: a64627028ea4ecc732924d0c9fca196204f7951d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 3e452cd548738e5f211899d3a6a676f883d800ce
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75482557"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77132041"
 ---
 # <a name="get-drone-imagery-from-drone-partners"></a>드 론 파트너에서 드 론 이미지 가져오기
 
@@ -38,7 +38,7 @@ FarmBeats와의 통합을 사용 하도록 설정 하려면 장치 공급자에 
 다음 단계를 수행합니다.
 
 1. 이 [스크립트](https://aka.ms/farmbeatspartnerscript)를 다운로드 하 고 로컬 드라이브에 압축을 풉니다. 두 파일은 zip 파일 내에 있습니다.
-2. [Azure Portal](https://portal.azure.com/)에 로그인하고 Azure Cloud Shell을 엽니다. 이 옵션은 포털의 오른쪽 위 모퉁이에 있는 도구 모음에서 사용할 수 있습니다.
+2. [Azure Portal](https://portal.azure.com/) 에 로그인 하 여 Azure Cloud Shell를 엽니다. 이 옵션은 포털의 오른쪽 위 모퉁이에 있는 도구 모음에서 사용할 수 있습니다.
 
     ![포털의 오른쪽 위 막대에서 Azure Cloud Shell 열기](./media/get-drone-imagery-from-drone-partner/navigation-bar-1.png)
 
@@ -91,4 +91,4 @@ FarmBeats와의 통합을 사용 하도록 설정 하려면 장치 공급자에 
 
 ## <a name="next-steps"></a>다음 단계
 
-FarmBeats datahub [api](references-for-azure-farmbeats.md#rest-api) 를 사용 하 여 드 론 이미지를 가져오는 방법에 대해 알아봅니다.
+FarmBeats datahub [api](rest-api-in-azure-farmbeats.md) 를 사용 하 여 드 론 이미지를 가져오는 방법에 대해 알아봅니다.

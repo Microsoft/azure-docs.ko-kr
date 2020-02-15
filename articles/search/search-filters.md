@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: f4ce3cd0db20f76aa6169f15254cf36ee64151a5
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: 03333e853a2ab7606ebe60cc3f68bcb5facfbdb4
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406739"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191010"
 ---
 # <a name="filters-in-azure-cognitive-search"></a>Azure Cognitive Search의 필터 
 
@@ -51,7 +51,7 @@ ms.locfileid: "74406739"
 
 + `$select` 매개 변수는 결과 집합에 포함할 필드를 지정하는 데 사용되며 호출 애플리케이션에 보내기 전에 효과적으로 응답을 조정합니다. 이 매개 변수는 쿼리를 구체화 하거나 문서 컬렉션을 축소 하지는 않지만, 더 작은 응답이 목표 이면이 매개 변수를 고려해 야 합니다. 
 
-두 매개 변수에 대한 자세한 내용은 [문서 검색 > 요청 > 쿼리 매개 변수](https://docs.microsoft.com/rest/api/searchservice/search-documents#request)를 참조하세요.
+두 매개 변수에 대한 자세한 내용은 [문서 검색 > 요청 > 쿼리 매개 변수](/rest/api/searchservice/search-documents#query-parameters)를 참조하세요.
 
 
 ## <a name="how-filters-are-executed"></a>필터 실행 방법
@@ -156,7 +156,7 @@ REST API에서 필터링은 단순 필드에 대해 기본적으로 *설정* 되
 
 ### <a name="approaches-for-filtering-on-text"></a>텍스트 필터링 방법
 
-| 접근 방식 | 설명 | 사용 시기 |
+| 접근 방식 | Description | 사용 시기 |
 |----------|-------------|-------------|
 | [`search.in`](search-query-odata-search-in-function.md) | 구분 기호로 분리 된 문자열 목록에 대해 필드와 일치 하는 함수입니다. | 문자열 필드와 일치 해야 하는 원시 텍스트 값이 많은 필터 및 [보안 필터](search-security-trimming-for-azure-search.md) 에 권장 됩니다. **Search.in** 함수는 속도를 위해 설계 되었으며 `eq` 및 `or`를 사용 하 여 각 문자열과 필드를 명시적으로 비교 하는 것 보다 훨씬 빠릅니다. | 
 | [`search.ismatch`](search-query-odata-full-text-search-functions.md) | 동일한 필터 식에서 전체 텍스트 검색 작업과 엄격한 부울 필터 작업을 혼합할 수 있게 해주는 함수입니다. | 하나의 요청에서 여러 검색 필터 조합을 사용 하려면 **ismatch** (또는 해당 하는 해당 점수 **매기기)를 사용 합니다.** 크기가 더 큰 문자열 내에서 부분적으로 문자열을 필터링하기 위해 *contains* 필터에 대해 이를 사용할 수도 있습니다. |
@@ -195,9 +195,9 @@ search=John Leclerc&$count=true&$select=source,city,postCode,baths,beds&$filter=
 
 더 많은 예제를 사용하려면 [OData 필터 식 구문 > 예제](https://docs.microsoft.com/azure/search/search-query-odata-filter#examples)를 참조하세요.
 
-## <a name="see-also"></a>참고자료
+## <a name="see-also"></a>참고 항목
 
-+ [Azure Cognitive Search에서 전체 텍스트 검색이 작동 하는 방식](search-lucene-query-architecture.md)
++ [Azure Cognitive Search의 전체 텍스트 검색 작동 방식](search-lucene-query-architecture.md)
 + [문서 검색 REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents)
 + [단순 쿼리 구문](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
 + [Lucene 쿼리 구문](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)

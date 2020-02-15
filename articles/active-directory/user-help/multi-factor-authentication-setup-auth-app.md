@@ -2,20 +2,20 @@
 title: 2단계 인증 방법으로 인증자 앱 설정 - Azure Active Directory | Microsoft Docs
 description: 2단계 인증 방법으로 Microsoft Authenticator 앱을 설정하는 방법을 알아봅니다.
 services: active-directory
-author: eross-msft
+author: curtand
 manager: daveba
 ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
 ms.topic: overview
 ms.date: 08/12/2019
-ms.author: lizross
-ms.openlocfilehash: 078379c52c7e7fe5072ecc19c95d6b7e40b5f876
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.author: curtand
+ms.openlocfilehash: 6ab1f7c97173021cc112a5f117469abd74ac954d
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76705261"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77062577"
 ---
 # <a name="set-up-an-authenticator-app-as-your-two-factor-verification-method"></a>2단계 인증 방법으로 인증자 앱 설정
 

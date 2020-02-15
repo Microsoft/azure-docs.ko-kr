@@ -10,23 +10,23 @@ metadata:
   author: cynthn
   ms.author: cynthn
   ms.date: 09/19/2019
-  ms.openlocfilehash: 7f40abe01042c5b55437f57f69a27a69421f5cf8
-  ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+  ms.openlocfilehash: 12c3447bc7e46e45d05711e1b0c7a59f8d8d0218
+  ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 09/20/2019
-  ms.locfileid: "71168582"
+  ms.lasthandoff: 02/11/2020
+  ms.locfileid: "77115814"
 landingContent:
 - title: 최신 기능
   linkLists:
   - linkListType: whats-new
     links:
-    - text: 전용 호스트 미리 보기
+    - text: 스폿 VM
+      url: spot-vms.md
+    - text: 전용 호스트
       url: dedicated-hosts.md
-    - text: 근접 배치 그룹 미리 보기
+    - text: 근접 배치 그룹
       url: proximity-placement-groups.md
-    - text: 사용 후 삭제 디스크
-      url: ephemeral-os-disks.md
 - title: 시작하기
   linkLists:
   - linkListType: quickstart

@@ -1,0 +1,54 @@
+### YamlMime:Landing
+title: 개발자용 Azure Active Directory
+summary: Azure AD(Azure Active Directory)는 개발자가 Microsoft 회사 또는 학교 계정으로 사용자를 안전하게 로그인하는 앱을 빌드할 수 있는 클라우드 ID 서비스입니다. Azure AD는 단일 테넌트 및 기간 업무 앱을 모두 빌드하는 개발자와 다중 테넌트 앱을 개발하는 개발자를 지원합니다. Microsoft ID 플랫폼은 Azure AD(Azure Active Directory) 개발자 플랫폼의 발전된 형태입니다. 새 애플리케이션의 경우 Microsoft ID 플랫폼(v2.0) 및 MSAL을 사용하여 토큰을 획득하고 보안 웹 API에 액세스하는 것이 좋습니다.
+metadata:
+  ms.topic: landing-page
+  ms.date: 01/27/2020
+  author: CelesteDG
+  ms.author: celested
+  ms.service: active-directory
+  ms.subservice: azuread-dev
+  ms.workload: identity
+  ms.openlocfilehash: 5af100e7e5a1456dae4bc4e68334299d1fd12794
+  ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 02/12/2020
+  ms.locfileid: "77163214"
+landingContent:
+- title: 개발자용 Azure Active Directory
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 개발자용 Azure Active Directory(v1.0)
+      url: v1-overview.md
+    - text: Microsoft ID 플랫폼의 발전
+      url: ../develop/about-microsoft-identity-platform.md
+    - text: Microsoft ID 플랫폼(v2.0)
+      url: ../develop/v2-overview.md
+  - linkListType: concept
+    links:
+    - text: Microsoft ID 플랫폼(v2.0)으로 업데이트하는 이유
+      url: azure-ad-endpoint-comparison.md
+    - text: 애플리케이션 유형 및 시나리오
+      url: app-types.md
+- title: 인증 프로토콜
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 인증 기본 사항
+      url: v1-authentication-scenarios.md
+  - linkListType: concept
+    links:
+    - text: OAuth 2.0 인증 코드 흐름
+      url: v1-protocols-oauth-code.md
+    - text: OpenID Connect 코드 흐름
+      url: v1-protocols-openid-connect-code.md
+    - text: OAuth 2.0 클라이언트 자격 증명 부여 흐름
+      url: v1-oauth2-client-creds-grant-flow.md
+- title: 샘플
+  linkLists:
+  - linkListType: download
+    links:
+    - text: 샘플 앱
+      url: sample-v1-code.md

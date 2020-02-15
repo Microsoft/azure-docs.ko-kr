@@ -3,19 +3,19 @@ title: Speech Service란?
 titleSuffix: Azure Cognitive Services
 description: Speech Service는 음성 텍스트 변환, 텍스트 음성 변환 및 음성 번역을 단일 Azure 구독에 통합한 것입니다. Speech SDK, Speech Devices SDK 또는 REST API를 사용하여 애플리케이션, 도구 및 디바이스에 음성을 추가합니다.
 services: cognitive-services
-author: erhopf
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: overview
-ms.date: 11/05/2019
-ms.author: erhopf
-ms.openlocfilehash: df0ce5efefe86ed3b7e2e8ccf5a2bd9011e168e6
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.date: 02/10/2020
+ms.author: dapine
+ms.openlocfilehash: 7ddfae430e6aa4ec9549e40c937e5edcfd927f6d
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76261435"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77119916"
 ---
 # <a name="what-is-the-speech-service"></a>Speech Service란?
 
@@ -37,24 +37,6 @@ Speech Service를 구성하는 기능은 다음과 같습니다. 이 표의 링�
 | | [사용자 지정 음성 만들기](#customize-your-speech-experience) | 브랜드 또는 제품에 고유한 사용자 지정 음성 글꼴을 만듭니다. | 예 | [예](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
 | [Speech Translation](speech-translation.md) | 음성 번역 | 음성 번역을 사용하면 음성에 대한 실시간 엔드투엔드 다중 언어 번역을 애플리케이션, 도구 및 디바이스에 추가할 수 있습니다. 이 서비스는 음성을 음성으로 변환 및 음성을 텍스트로 변환을 위해 사용합니다. | [예](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) | 예 |
 | [음성 도우미](voice-assistants.md) | 음성 도우미 | Speech Service를 사용하는 음성 도우미를 사용하면 개발자가 자신의 애플리케이션과 환경에 맞게 자연스럽고 인간적인 대화형 인터페이스를 만들 수 있습니다. 음성 도우미는 작업 완료를 위해 Bot Framework의 Direct Line Speech 채널 또는 통합 사용자 지정 명령(미리 보기) 서비스를 사용하는 도우미 구현과 디바이스 사이에 빠르고 안정적인 상호 작용을 제공합니다. | [예](voice-assistants.md) | 예 |
-
-## <a name="news-and-updates"></a>새로운 기능 및 업데이트 사항
-
-Speech Service의 새로운 기능에 대해 알아봅니다.
-
-- 2019년 11월
-  - `en-US-JessaNeural` 음성에 대해 두 개의 새로운 말하기 스타일인 [`newscast`](speech-synthesis-markup.md#adjust-speaking-styles) 및 [`customerservice`](speech-synthesis-markup.md#adjust-speaking-styles)가 추가되었습니다.
-- 2019년 9월
-  - Speech SDK 1.7.0이 릴리스되었습니다. 업데이트, 향상된 기능 및 알려진 문제의 전체 목록은 [릴리스 정보](releasenotes.md)를 참조하세요.
-- 2019년 8월
-  - **새 자습서**: [음성 SDK, C#으로 음성을 지원하도록 봇 설정](tutorial-voice-enable-your-bot-speech-sdk.md)
-  - `en-US-JessaNeural` 음성에 대해 새 말하기 스타일 [`chat`](speech-synthesis-markup.md#adjust-speaking-styles)를 추가했습니다.
-- 2019년 6월
-  - Speech SDK 1.6.0이 릴리스되었습니다. 업데이트, 향상된 기능 및 알려진 문제의 전체 목록은 [릴리스 정보](releasenotes.md)를 참조하세요.
-- 2019년 5월 - 이제 [대화 기록](conversation-transcription-service.md), [호출 센터 전사](call-center-transcription.md) 및 [음성 도우미](voice-assistants.md)에 대한 설명서를 사용할 수 있습니다.
-- 2019년 5월
-  - Speech SDK 1.5.1이 릴리스되었습니다. 업데이트, 향상된 기능 및 알려진 문제의 전체 목록은 [릴리스 정보](releasenotes.md)를 참조하세요.
-  - Speech SDK 1.5.0이 릴리스되었습니다. 업데이트, 향상된 기능 및 알려진 문제의 전체 목록은 [릴리스 정보](releasenotes.md)를 참조하세요.
 
 ## <a name="try-the-speech-service"></a>Speech Service 사용해 보기
 

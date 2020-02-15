@@ -72,6 +72,8 @@
               href: howto-saml-token-encryption.md
             - name: 최종 사용자 포털
               href: end-user-experiences.md
+    - name: 클라우드 앱 표시 유형 및 제어
+      href: cloud-app-security.md
     - name: 온-프레미스 앱에 대한 애플리케이션 프록시
       items:
         - name: 애플리케이션 프록시

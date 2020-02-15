@@ -1,5 +1,5 @@
 ---
-title: 페더레이션된 single sign-on 갤러리 앱에 로그인 하는 문제 | Microsoft Docs
+title: 페더레이션된 Single Sign-On 갤러리 앱에 로그인 하는 데 문제가 있습니다. | Microsoft Docs
 description: Azure AD에서 SAML 기반 페더레이션된 Single Sign-On에 대해 구성된 애플리케이션에 로그인하는 경우 특정 문제에 대한 지침
 services: active-directory
 documentationcenter: ''
@@ -16,32 +16,32 @@ ms.date: 02/18/2019
 ms.author: mimart
 ms.reviewer: luleon, asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 32f3b2f45a808ebfa71f456c015de3dd59d60bd9
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 97954123b6fc31dce09282c08c702438cd64c476
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68381374"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159253"
 ---
 # <a name="problems-signing-in-to-a-gallery-application-configured-for-federated-single-sign-on"></a>페더레이션된 Single Sign-On에 대해 구성된 갤러리 애플리케이션에 로그인하는 문제
 
 아래의 로그인 문제를 해결 하려면 다음 제안에 따라 진단을 개선 하 고 해결 단계를 자동화 하는 것이 좋습니다.
 
 - Azure Portal에서 테스트 환경을 사용할 때 더 나은 진단 및 해결 방법을 제공 하기 위해 [My Apps 보안 브라우저 확장](access-panel-extension-problem-installing.md) 을 설치 하 여 Azure AD (Azure Active Directory)를 지원 합니다.
-- Azure Portal의 앱 구성 페이지에서 테스트 환경을 사용 하 여 오류를 재현 합니다. [SAML 기반 single sign-on 응용 프로그램 디버그](../develop/howto-v1-debug-saml-sso-issues.md) 에 대 한 자세한 정보
+- Azure Portal의 앱 구성 페이지에서 테스트 환경을 사용 하 여 오류를 재현 합니다. [SAML 기반 Single Sign-On 응용 프로그램 디버그](../azuread-dev/howto-v1-debug-saml-sso-issues.md) 에 대 한 자세한 정보
 
 
 ## <a name="application-not-found-in-directory"></a>애플리케이션을 디렉터리에서 찾을 수 없습니다
 
-*오류 AADSTS70001: \/디렉터리*에서 식별자가 ' https:/contoso.com ' 인 응용 프로그램을 찾을 수 없습니다.
+*오류 AADSTS70001: 디렉터리에서 식별자가 ' https:\//contoso.com ' 인 응용 프로그램을 찾을 수 없습니다*.
 
 **가능한 원인**
 
-응용 `Issuer` 프로그램에서 SAML 요청의 azure ad로 전송 되는 특성은 azure ad에서 응용 프로그램에 대해 구성 된 식별자 값과 일치 하지 않습니다.
+응용 프로그램에서 SAML 요청의 Azure AD로 전송 되는 `Issuer` 특성은 Azure AD에서 응용 프로그램에 대해 구성 된 식별자 값과 일치 하지 않습니다.
 
 **해결 방법**
 
-SAML 요청의 특성이 Azure AD에 구성 된 식별자 값과 일치 하는지 확인 합니다. `Issuer` 내 앱 보안 브라우저 확장을 사용 하 여 Azure Portal에서 [테스트 환경을](../develop/howto-v1-debug-saml-sso-issues.md) 사용 하는 경우 다음 단계를 수동으로 수행할 필요가 없습니다.
+SAML 요청의 `Issuer` 특성이 Azure AD에 구성 된 식별자 값과 일치 하는지 확인 합니다. 내 앱 보안 브라우저 확장을 사용 하 여 Azure Portal에서 [테스트 환경을](../azuread-dev/howto-v1-debug-saml-sso-issues.md) 사용 하는 경우 다음 단계를 수동으로 수행할 필요가 없습니다.
 
 1.  [**Azure Portal**](https://portal.azure.com/)을 열고 **전역 관리자** 또는 **공동 관리자** 권한으로 로그인합니다.
 
@@ -61,17 +61,17 @@ SAML 요청의 특성이 Azure AD에 구성 된 식별자 값과 일치 하는�
 
 
 
-## <a name="the-reply-address-does-not-match-the-reply-addresses-configured-for-the-application"></a>회신 주소가 응용 프로그램에 대해 구성된 회신 주소와 일치하지 않음
+## <a name="the-reply-address-does-not-match-the-reply-addresses-configured-for-the-application"></a>회신 주소가 응용 프로그램에 대해 구성 된 회신 주소와 일치 하지 않습니다.
 
-*오류 AADSTS50011: 회신 주소 ' https:/\/contoso.com '가 응용 프로그램에 대해 구성 된 회신 주소와 일치 하지 않습니다.*
+*오류 AADSTS50011: 회신 주소 ' https:\//contoso.com '은 (는) 응용 프로그램에 대해 구성 된 회신 주소와 일치 하지 않습니다.*
 
 **가능한 원인**
 
-SAML `AssertionConsumerServiceURL` 요청의 값이 Azure AD에 구성 된 회신 URL 값 또는 패턴과 일치 하지 않습니다. SAML `AssertionConsumerServiceURL` 요청의 값은 오류에 표시 되는 URL입니다.
+SAML 요청의 `AssertionConsumerServiceURL` 값이 Azure AD에 구성 된 회신 URL 값 또는 패턴과 일치 하지 않습니다. SAML 요청의 `AssertionConsumerServiceURL` 값은 오류에 표시 되는 URL입니다.
 
 **해결 방법**
 
-SAML 요청의 `AssertionConsumerServiceURL` 값이 Azure AD에 구성 된 회신 URL 값과 일치 하는지 확인 합니다. 내 앱 보안 브라우저 확장을 사용 하 여 Azure Portal에서 [테스트 환경을](../develop/howto-v1-debug-saml-sso-issues.md) 사용 하는 경우 다음 단계를 수동으로 수행할 필요가 없습니다.
+SAML 요청의 `AssertionConsumerServiceURL` 값이 Azure AD에 구성 된 회신 URL 값과 일치 하는지 확인 합니다. 내 앱 보안 브라우저 확장을 사용 하 여 Azure Portal에서 [테스트 환경을](../azuread-dev/howto-v1-debug-saml-sso-issues.md) 사용 하는 경우 다음 단계를 수동으로 수행할 필요가 없습니다.
 
 1.  [**Azure Portal**](https://portal.azure.com/)을 열고 **전역 관리자** 또는 **공동 관리자** 권한으로 로그인합니다.
 
@@ -87,13 +87,13 @@ SAML 요청의 `AssertionConsumerServiceURL` 값이 Azure AD에 구성 된 회�
 
 1.  Single Sign-On을 구성하려는 애플리케이션을 선택합니다.
 
-1.  애플리케이션이 로드되면 **기본 SAML 구성**을 엽니다. SAML 요청의 `AssertionConsumerServiceURL` 값과 일치 하도록 회신 URL 텍스트 상자의 값을 확인 하거나 업데이트 합니다.    
+1.  애플리케이션이 로드되면 **기본 SAML 구성**을 엽니다. [회신 URL] 텍스트 상자의 값을 확인 하거나 업데이트 하 여 SAML 요청의 `AssertionConsumerServiceURL` 값과 일치 시킵니다.    
     
 Azure AD에서 회신 URL 값을 업데이트 하 고 SAML 요청에서 응용 프로그램에 의해 전송 된 값과 일치 하는 경우 응용 프로그램에 로그인 할 수 있어야 합니다.
 
 ## <a name="user-not-assigned-a-role"></a>역할이 지정되지 않은 사용자
 
-*오류 AADSTS50105: 로그인 한 사용자 '\@contoso.com '이 (가) 응용 프로그램*의 역할에 할당 되지 않았습니다.
+*오류 AADSTS50105: 로그인 한 사용자 ' contoso.com\@'은 (는) 응용 프로그램의 역할에 할당 되지 않았습니다*.
 
 **가능한 원인**
 
@@ -101,7 +101,7 @@ Azure AD에서 회신 URL 값을 업데이트 하 고 SAML 요청에서 응용 �
 
 **해결 방법**
 
-응용 프로그램에 하나 이상의 사용자를 직접 할당 하려면 다음 단계를 수행 합니다. 내 앱 보안 브라우저 확장을 사용 하 여 Azure Portal에서 [테스트 환경을](../develop/howto-v1-debug-saml-sso-issues.md) 사용 하는 경우 다음 단계를 수동으로 수행할 필요가 없습니다.
+응용 프로그램에 하나 이상의 사용자를 직접 할당 하려면 다음 단계를 수행 합니다. 내 앱 보안 브라우저 확장을 사용 하 여 Azure Portal에서 [테스트 환경을](../azuread-dev/howto-v1-debug-saml-sso-issues.md) 사용 하는 경우 다음 단계를 수동으로 수행할 필요가 없습니다.
 
 1.  [**Azure Portal**](https://portal.azure.com/)을 열고 **전역 관리자** 권한으로 로그인합니다.
 
@@ -143,14 +143,14 @@ Azure AD에서 회신 URL 값을 업데이트 하 고 SAML 요청에서 응용 �
 
 **가능한 원인**
 
-Azure AD는 single sign-on을 위해 응용 프로그램에서 보낸 SAML 요청을 지원 하지 않습니다. 일반적인 문제는 다음과 같습니다.
+Azure AD에서는 Single Sign-On의 애플리케이션에서 보낸 SAML 요청을 지원하지 않습니다. 일반적인 문제는 다음과 같습니다.
 
 -   SAML 요청에서 필수 필드 누락
 -   SAML 요청 인코딩 방법
 
 **해결 방법**
 
-1. SAML 요청을 캡처합니다. [AZURE AD에서 saml 기반 single sign-on을 응용 프로그램에 디버그](../develop/howto-v1-debug-saml-sso-issues.md) 하는 방법 자습서에 따라 saml 요청을 캡처하는 방법을 알아봅니다.
+1. SAML 요청을 캡처합니다. Saml [기반 Single Sign-On를 AZURE AD의 응용 프로그램에 디버그](../azuread-dev/howto-v1-debug-saml-sso-issues.md) 하는 방법 자습서에 따라 saml 요청을 캡처하는 방법을 알아봅니다.
 
 1. 애플리케이션 공급 업체에 연락하여 다음 정보를 공유합니다.
 
@@ -158,19 +158,19 @@ Azure AD는 single sign-on을 위해 응용 프로그램에서 보낸 SAML 요�
 
    -   [Azure AD Single Sign-On SAML 프로토콜 요구 사항](../develop/single-sign-on-saml-protocol.md)
 
-응용 프로그램 공급 업체는 single sign-on에 대해 Azure AD SAML 구현을 지원 하는지 확인 해야 합니다.
+응용 프로그램 공급 업체는 Single Sign-On에 대 한 Azure AD SAML 구현을 지원 하는지 확인 해야 합니다.
 
 ## <a name="misconfigured-application"></a>잘못 구성 되는 응용 프로그램
 
-*오류 AADSTS650056: 잘못 구성 되었습니다. 다음 중 하나 때문일 수 있습니다. 클라이언트의 응용 프로그램 등록에서 요청 된 사용 권한의 ' AAD Graph '에 대 한 권한이 클라이언트에 나열 되지 않았습니다. 또는 관리자가 테 넌 트에서 동의한 하지 않았습니다. 또는 요청에서 응용 프로그램 식별자가 구성 된 클라이언트 응용 프로그램 식별자와 일치 하는지 확인 합니다. 관리자에 게 문의 하 여 구성을 수정 하거나 테 넌 트를 대신 하 여 동의 하세요.* .
+*오류 AADSTS650056: 잘못 구성 되었습니다. 클라이언트의 응용 프로그램 등록에서 요청 된 사용 권한의 ' AAD Graph '에 대 한 사용 권한이 클라이언트에 나열 되지 않았기 때문일 수 있습니다. 또는 관리자가 테 넌 트에서 동의한 하지 않았습니다. 또는 요청에서 응용 프로그램 식별자가 구성 된 클라이언트 응용 프로그램 식별자와 일치 하는지 확인 합니다. 관리자에 게 문의 하 여 테 넌 트를 대신 하 여 구성을 수정 하거나 동의 하세요*.
 
 **가능한 원인**
 
-응용 프로그램에서 SAML 요청의 azure ad로 보낸 특성이azuread의응용프로그램에대해구성된식별자값과일치하지않습니다.`Issuer`
+응용 프로그램에서 SAML 요청의 Azure AD로 전송 되는 `Issuer` 특성은 Azure AD의 응용 프로그램에 대해 구성 된 식별자 값과 일치 하지 않습니다.
 
 **해결 방법**
 
-SAML 요청의 특성이 Azure AD에 구성 된 식별자 값과 일치 하는지 확인 합니다. `Issuer` 내 앱 보안 브라우저 확장을 사용 하 여 Azure Portal에서 [테스트 환경을](../develop/howto-v1-debug-saml-sso-issues.md) 사용 하는 경우 다음 단계를 수동으로 수행할 필요가 없습니다.
+SAML 요청의 `Issuer` 특성이 Azure AD에 구성 된 식별자 값과 일치 하는지 확인 합니다. 내 앱 보안 브라우저 확장을 사용 하 여 Azure Portal에서 [테스트 환경을](../azuread-dev/howto-v1-debug-saml-sso-issues.md) 사용 하는 경우 다음 단계를 수동으로 수행할 필요가 없습니다.
 
 1.  [**Azure Portal**](https://portal.azure.com/)을 열고 **전역 관리자** 또는 **공동 관리자** 권한으로 로그인합니다.
 
@@ -227,7 +227,7 @@ SAML 요청의 특성이 Azure AD에 구성 된 식별자 값과 일치 하는�
 
 ## <a name="saml-request-not-present-in-the-request"></a>요청에 SAML 요청이 없습니다.
 
-*오류 AADSTS750054: SAML 리디렉션 바인딩에 대한 HTTP 요청의 쿼리 문자열 매개 변수로 SAMLRequest 또는 SAMLResponse가 있어야 합니다.*
+*오류 AADSTS750054: SAMLRequest 또는 Samlrequest는 SAML 리디렉션 바인딩에 대 한 HTTP 요청에서 쿼리 문자열 매개 변수로 제공 되어야 합니다.*
 
 **가능한 원인**
 
@@ -241,7 +241,7 @@ Azure AD가 HTTP 요청의 URL 매개 변수 내에서 SAML 요청을 식별할 
 
 **가능한 원인**
 
-Single sign-on 중에 로그인 요청에 명시적 회신 URL (Assertion Consumer Service URL)이 포함 되어 있지 않으면 Azure AD는 해당 응용 프로그램에 대해 구성 된 모든 사용 Url을 선택 합니다. 응용 프로그램에 명시적 회신 URL이 구성 되어 있는 경우에도 사용자는 리디렉션되 https://127.0.0.1:444 는 것일 수 있습니다. 
+Single Sign-On 하는 동안 로그인 요청에 명시적 회신 URL (Assertion Consumer Service URL)이 포함 되어 있지 않으면 Azure AD는 해당 응용 프로그램에 대해 구성 된 모든 사용 Url을 선택 합니다. 응용 프로그램에 명시적 회신 URL이 구성 되어 있는 경우에도 사용자는 https://127.0.0.1:444리디렉션되는 것일 수 있습니다. 
 
 애플리케이션을 비-갤러리 앱으로 추가하면 Azure Active Directory에서는 이 회신 URL을 기본값으로 생성했습니다. 이 동작이 변경되어 Azure Active Directory는 기본적으로 이 URL을 더 이상 추가하지 않습니다. 
 
@@ -263,7 +263,7 @@ Single sign-on 중에 로그인 요청에 명시적 회신 URL (Assertion Consum
 
 6.  Single Sign-On을 구성하려는 애플리케이션을 선택합니다.
 
-7.  애플리케이션이 로드되면 **기본 SAML 구성**을 엽니다. **회신 url (Assertion Consumer Service URL)** 에서 시스템에 의해 생성 된 사용 하지 않거나 기본 회신 url을 삭제 합니다. `https://127.0.0.1:444/applications/default.aspx` )을 입력합니다.
+7.  애플리케이션이 로드되면 **기본 SAML 구성**을 엽니다. **회신 url (Assertion Consumer Service URL)** 에서 시스템에 의해 생성 된 사용 하지 않거나 기본 회신 url을 삭제 합니다. `https://127.0.0.1:444/applications/default.aspx`)을 입력합니다.
 
 ## <a name="problem-when-customizing-the-saml-claims-sent-to-an-application"></a>애플리케이션에 전송된 SAML 클레임을 사용자 지정할 때 발생하는 문제
 
@@ -271,4 +271,4 @@ Single sign-on 중에 로그인 요청에 명시적 회신 URL (Assertion Consum
 
 ## <a name="next-steps"></a>다음 단계
 
-[Azure AD에서 SAML 기반 Single Sign-On을 애플리케이션에 디버그하는 방법](../develop/howto-v1-debug-saml-sso-issues.md)
+[Azure AD에서 SAML 기반 Single Sign-On을 애플리케이션에 디버그하는 방법](../azuread-dev/howto-v1-debug-saml-sso-issues.md)

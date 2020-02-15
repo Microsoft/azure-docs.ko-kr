@@ -4,18 +4,18 @@ description: Azure Spring Cloud에서 청록색 배포를 사용하는 방법 �
 author: bmitchell287
 ms.service: spring-cloud
 ms.topic: conceptual
-ms.date: 10/31/2019
+ms.date: 02/03/2020
 ms.author: brendm
-ms.openlocfilehash: 4adeb5593f86bdf3f8a4ea5f844c31a8314e0f15
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 5612a514ed89f73453f3751b34263b0beeea1c59
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76276912"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138136"
 ---
 # <a name="set-up-a-staging-environment-in-azure-spring-cloud"></a>Azure 스프링 클라우드에서 스테이징 환경 설정
 
-이 문서에서는 Azure 스프링 클라우드의 파랑-녹색 배포 패턴을 사용 하 여 스테이징 배포를 설정 하는 방법을 설명 합니다. 또한 프로덕션 배포를 직접 변경 하지 않고 스테이징 배포를 프로덕션에 배치 하는 방법을 보여 줍니다.
+이 문서에서는 Azure 스프링 클라우드의 파랑-녹색 배포 패턴을 사용 하 여 스테이징 배포를 설정 하는 방법을 설명 합니다. 파란색/녹색 배포는 새로운(녹색) 버전이 배포되는 동안 기존(파란색) 버전을 유지하도록 하는 Azure DevOps 지속적인 업데이트 패턴입니다. 이 문서에서는 프로덕션 배포를 직접 변경 하지 않고 스테이징 배포를 프로덕션 환경에 배치 하는 방법을 보여 줍니다.
 
 ## <a name="prerequisites"></a>필수 조건
 

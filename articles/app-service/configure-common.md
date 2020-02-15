@@ -6,12 +6,12 @@ ms.assetid: 9af8a367-7d39-4399-9941-b80cbc5f39a0
 ms.topic: article
 ms.date: 08/13/2019
 ms.custom: seodec18
-ms.openlocfilehash: e4ba7326d9c23bed2406e62fe1a206501d05a1b1
-ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
+ms.openlocfilehash: 021941339bbbf72112628c54f5b05d5fd305bd0f
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75666189"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198584"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Azure Portal에서 App Service 앱 구성
 
@@ -90,7 +90,7 @@ ASP.NET 및 ASP.NET Core 개발자를 위해 App Service에서 앱 설정을 설
 
 ![애플리케이션 설정](./media/configure-common/open-ui.png)
 
-ASP.NET 및 ASP.NET Core 개발자를 위해 App Service에서 연결 *문자열을 설정*하는 것은 web.config의 `<connectionStrings>`에서 설정 하는 것과 같지만 App Service에서 설정한 값이 *web.config의 값*을 재정의 합니다. *Web.config* 및 프로덕션 암호 (예: SQL Database 자격 증명)에서 개발 설정 (예: 데이터베이스 파일)을 App Service 안전 하 게 유지할 수 있습니다. 로컬에서 디버그할 때 동일한 코드가 개발 설정을 사용 하 고 Azure에 배포 될 때 프로덕션 암호를 사용 합니다.
+ASP.NET 및 ASP.NET Core 개발자를 위해 App Service에서 연결 *문자열을 설정*하는 것은 web.config의 `<connectionStrings>`에서 설정 하는 것과 같지만 App Service에서 설정한 값이 *web.config의 값*을 재정의 합니다. App Service에서 안전 하 게 배포 설정 (예: 데이터베이스 파일)을 *web.config* 및 프로덕션 비밀 (예: SQL Database 자격 증명)에 유지할 수 있습니다. 로컬에서 디버그할 때 동일한 코드가 개발 설정을 사용 하 고 Azure에 배포 될 때 프로덕션 암호를 사용 합니다.
 
 다른 언어 스택에서는 값에 액세스 하기 위해 연결 문자열에 변수 키에 대 한 특수 형식이 필요 하기 때문에 [앱 설정을](#configure-app-settings) 대신 사용 하는 것이 좋습니다. 단, 응용 프로그램에서 연결 문자열을 구성 하는 경우 특정 Azure 데이터베이스 형식이 앱과 함께 백업 됩니다. 자세한 내용은 백업 되는 [항목](manage-backup.md#what-gets-backed-up)을 참조 하세요. 이 자동화 된 백업이 필요 하지 않은 경우 앱 설정을 사용 합니다.
 
@@ -225,7 +225,7 @@ Windows 앱의 경우 IIS 처리기 매핑과 가상 응용 프로그램 및 디
 - **액세스 키**: 고급 구성의 경우 액세스 키입니다.
 - **탑재 경로**: 사용자 지정 저장소를 탑재할 컨테이너의 절대 경로입니다.
 
-자세한 내용은 [Linux의 App Service에서 Azure Storage 콘텐츠 제공](containers/how-to-serve-content-from-azure-storage.md)을 참조 하세요.
+자세한 내용은 [App Service on Linux에 있는 Azure Storage의 콘텐츠 제공](containers/how-to-serve-content-from-azure-storage.md)을 참조하세요.
 
 ## <a name="configure-language-stack-settings"></a>언어 스택 설정 구성
 

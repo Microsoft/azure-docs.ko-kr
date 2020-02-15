@@ -26,6 +26,8 @@
       href: convert-to-csv.md
     - name: 데이터 세트로 변환
       href: convert-to-dataset.md
+    - name: 표시기 값으로 변환
+      href: convert-to-indicator-values.md
     - name: 누락 데이터 정리
       href: clean-missing-data.md
     - name: 메타데이터 편집
@@ -62,11 +64,11 @@
           href: boosted-decision-tree-regression.md
         - name: 의사 결정 포리스트 회귀
           href: decision-forest-regression.md
-        - name: Linear Regression
+        - name: 선형 회귀
           href: linear-regression.md
         - name: 신경망 회귀
           href: neural-network-regression.md
-    - name: 클러스터링
+    - name: Clustering
       items:
         - name: K-평균 클러스터링
           href: k-means-clustering.md
@@ -132,7 +134,7 @@
       href: feature-hashing.md
     - name: 텍스트 전처리
       href: preprocess-text.md
-- name: 권장 사항
+- name: 권장
   items:
     - name: 추천 평가
       href: evaluate-recommender.md

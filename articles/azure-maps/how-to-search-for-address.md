@@ -1,19 +1,19 @@
 ---
 title: Azure Maps Search services를 사용 하 여 위치 검색 | Microsoft Azure 맵
 description: 이 문서에서는 지 오 코딩 및 역방향 지 오 코딩에 대 한 Microsoft Azure Maps Search Service를 사용 하 여 위치를 검색 하는 방법을 알아봅니다.
-author: walsehgal
-ms.author: v-musehg
+author: farah-alyasari
+ms.author: v-faalya
 ms.date: 01/15/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 3b5da7eab9cff5c5e051fc4d5ab7ff582a95c20d
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 40066f24fec00610a1efd10b2cb874b1100acdee
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76899239"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209888"
 ---
 # <a name="search-for-a-location-using-azure-maps-search-services"></a>Azure Maps Search services를 사용 하 여 위치 검색
 
@@ -27,7 +27,7 @@ Azure Maps [Search Service](https://docs.microsoft.com/rest/api/maps/search) 는
 * [역 주소 검색](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) 을 통해 좌표 위치를 주소로 변환 합니다.
 * [검색 주소 역방향 교차 주소 API](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreversecrossstreet) 를 사용 하 여 교차 주소 검색
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 문서의 단계를 완료 하려면 먼저 Azure Maps 계정을 만들고이 계정 구독 키로 매핑 하세요. 계정 [만들기](quick-demo-map-app.md#create-an-account-with-azure-maps) 의 지침에 따라 Azure Maps 계정 구독을 만들고 [기본 키 가져오기](quick-demo-map-app.md#get-the-primary-key-for-your-account) 의 단계에 따라 계정에 대 한 기본 키를 가져옵니다. Azure Maps의 인증에 대한 자세한 내용은 [Azure Maps의 인증 관리](./how-to-manage-authentication.md)를 참조하세요.
 
@@ -99,7 +99,7 @@ Geocode에 대 한 주소 집합이 있는 경우 [사후 검색 주소 일괄 �
     | 요청 URL | [https://atlas.microsoft.com/search/fuzzy/json?](https://atlas.microsoft.com/search/fuzzy/json?) |
     | 권한 부여 | 인증 없음 |
 
-    URL 경로의 **json** 특성은 응답 형식을 결정합니다. 이 문서에서는 사용 편의성과 가독성을 위해 json을 사용 합니다. 사용 가능한 응답 형식은 [Maps 기능 API 참조](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy)의 **유사 항목 검색 가져오기** 정의에서 찾을 수 있습니다.
+    URL 경로의 **json** 특성은 응답 형식을 결정합니다. 이 문서에서는 사용 편의성과 가독성을 위해 json을 사용 합니다. 사용 가능한 응답 형식은 **Maps 기능 API 참조**의 [유사 항목 검색 가져오기](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) 정의에서 찾을 수 있습니다.
 
 3. **Params**를 클릭하고 요청 URL에 쿼리 또는 경로 매개 변수로 사용할 다음 키 / 값 쌍을 입력합니다.
 
@@ -121,7 +121,7 @@ Geocode에 대 한 주소 집합이 있는 경우 [사후 검색 주소 일괄 �
 
     | 키 | 값 |
     |------------------|-------------------------|
-    | countrySet | 미국 |
+    | countrySet | US |
   
     이제 결과는 국가 코드로 경계가 구분되며 쿼리는 미국의 피자 음식점을 반환합니다.
   

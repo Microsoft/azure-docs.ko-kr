@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: 53fd02856a805f8bb5d7261cc9e6e32861b2b4fd
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 84e60b0a942bad94d8e36eb20b5be8e3f55af80a
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75427001"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190953"
 ---
 # <a name="implement-search-traffic-analytics-in-azure-cognitive-search"></a>Azure Cognitive Search에서 검색 트래픽 분석 구현
 
@@ -106,7 +106,7 @@ Application Insights 리소스에 이벤트를 보내는 개체입니다.
 **Searchservicename**: (문자열) 검색 서비스 이름 **searchservicename**: (guid) 검색 쿼리의 고유 식별자 **IndexName**: (문자열) 검색 서비스 인덱스: (문자열) 사용자의 **resultcount**에서 입력 한 (문자열) 검색 **용어: (** int) 반환 된 문서 수 (int) **ScoringProfile**: (문자열) 사용 된 점수 매기기 프로필의 이름입니다 (있는 경우).
 
 > [!NOTE]
-> 검색 쿼리에 $count=true를 추가하여 사용자가 생성한 쿼리 수를 요청합니다. 자세한 내용은 [여기](https://docs.microsoft.com/rest/api/searchservice/search-documents#request)를 참조하세요.
+> 검색 쿼리에 $count=true를 추가하여 사용자가 생성한 쿼리 수를 요청합니다. 자세한 내용은 [여기](/rest/api/searchservice/search-documents#counttrue--false)를 참조 하세요.
 >
 
 > [!NOTE]

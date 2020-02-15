@@ -15,19 +15,18 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.reviewer: anilmur
-ms.openlocfilehash: 0e793a5aa7d619b0bb7a1d3efcdf665ea400c555
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 7909fbb958a66d00616d4ed1b844d02bb47d997e
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "69016732"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152502"
 ---
 # <a name="use-the-newtek-tricaster-encoder-to-send-a-single-bitrate-live-stream"></a>NewTek TriCaster 인코더를 사용하여 단일 비트 전송률 라이브 스트림 보내기  
 > [!div class="op_single_selector"]
 > * [Tricaster](media-services-configure-tricaster-live-encoder.md)
 > * [Elemental Live](media-services-configure-elemental-live-encoder.md)
 > * [Wirecast](media-services-configure-wirecast-live-encoder.md)
-> * [FMLE](media-services-configure-fmle-live-encoder.md)
 >
 >
 
@@ -35,12 +34,12 @@ ms.locfileid: "69016732"
 
 이 자습서에서는 AMSE(Azure Media Services 탐색기) 도구를 사용하여 AMS(Azure Media Services)를 관리하는 방법을 보여 줍니다. 이 도구는 Windows PC에서만 실행됩니다. Mac 또는 Linux에서는 Azure Portal을 사용하여 [채널](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) 및 [프로그램](media-services-portal-creating-live-encoder-enabled-channel.md)을 만듭니다.
 
-> [!NOTE]
-> 기여 피드에서 라이브 인코딩에 사용할 수 있는 AMS 채널에 보내기 위해 Tricaster를 사용할 때 피드 간에 빠르게 잘라내기, 슬레이트 간 전환과 같은 Tricaster의 특정 기능을 사용하는 경우 라이브 이벤트에 비디오/오디오 결함이 있을 수 있습니다. AMS 팀에서 이러한 문제를 해결하기 위해 노력하고 있으며 그때까지 이 기능을 사용하지 않는 것이 좋습니다.
->
->
+기여 피드에서 라이브 인코딩에 사용할 수 있는 AMS 채널에 보내기 위해 Tricaster를 사용할 때 피드 간에 빠르게 잘라내기, 슬레이트 간 전환과 같은 Tricaster의 특정 기능을 사용하는 경우 라이브 이벤트에 비디오/오디오 결함이 있을 수 있습니다. AMS 팀에서 이러한 문제를 해결하기 위해 노력하고 있으며 그때까지 이 기능을 사용하지 않는 것이 좋습니다.
 
-## <a name="prerequisites"></a>전제 조건
+> [!NOTE]
+>  Prefferred TLS 버전인 TLS 1.2로 이동 하는 것이 좋습니다.
+
+## <a name="prerequisites"></a>필수 조건
 
 * [Azure Media Services 계정 만들기](media-services-portal-create-account.md)
 * 실행 중인 스트리밍 엔드포인트가 있는지 확인합니다. 자세한 내용은 [Media Services 계정에서 스트리밍 엔드포인트 관리](media-services-portal-manage-streaming-endpoints.md)
@@ -86,16 +85,16 @@ ms.locfileid: "69016732"
 **비디오**:
 
 * 코덱: H.264
-* 프로필 높음(수준 4.0)
-* Bitrate: 5000kbps
+* 프로필: 높음(수준 4.0)
+* 비트 전송률: 5,000kbps
 * 키 프레임: 2초(60초)
 * 프레임 속도: 30
 
 **오디오**:
 
 * 코덱: AAC(LC)
-* Bitrate: 192kbps
-* 샘플링 속도: 44.1kHz
+* 비트 전송률: 192kbps
+* 샘플 속도: 44.1khz
 
 ### <a name="configuration-steps"></a>구성 단계
 

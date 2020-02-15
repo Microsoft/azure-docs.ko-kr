@@ -8,12 +8,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 10/29/2018
 ms.author: pabutler
-ms.openlocfilehash: d56b83c8bd9a71ac30112f9e77a97ed8ab61a137
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: cd90ae2b751a97c18dc8b6be4b8eb565a17df7a2
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73825965"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191139"
 ---
 # <a name="consulting-services-for-azure-marketplace-and-appsource"></a>Azure Marketplace 및 AppSource 컨설팅 서비스
 Azure Marketplace 및 AppSource의 컨설팅 서비스는 Microsoft 파트너에게 고객과 서비스를 연결하여 고객의 Azure 사용을 지원하고 확대한다는 목표와 비즈니스 목표를 제공합니다. 
@@ -76,7 +76,7 @@ Microsoft Azure 기반으로 하는 컨설팅 서비스 및 관리 서비스 제
 |---------|----------|----------|----------|
 |오스트레일리아 |프랑스  |     멕시코          |스페인       |
 |벨기에   |독일 |     네덜란드     |스웨덴       |
-|캐나다    |인도   |     뉴질랜드     |영국  |
+|Canada    |인도   |     뉴질랜드     |United Kingdom  |
 |덴마크   |이탈리아   |     노르웨이          |미국 |
 |핀란드   |일본   |     폴란드          
 
@@ -159,7 +159,7 @@ Azure Marketplace 및 AppSource에 컨설팅 서비스 제품을 나열하려면
 |**개념 증명**    |    고객이 계약의 결과로 기대할 수 있는 엔지니어링 변경, 기술 아티팩트 또는 기타 아티팩트를 결정합니다.     | 상위 검색 엔진 최적화 키워드로 제품 요약 최적화        |
 |**워크샵**    |   선택한 제공 기간에 따라, 매일, 매주 또는 매월 자세한 주제를 포함합니다. 워크샵에서 다룰 학습 목적 또는 기타 결과물 결정     |   상위 검색 엔진 최적화 키워드로 제품 요약 최적화      |
 
-Cloud 파트너 포털 내에서 [Markdown](https://docs.microsoft.com/contribute/how-to-write-use-markdown)을 사용하여 목록에 서식을 추가할 수 있습니다. 이것은 목록을 정리하는 데 도움이 되는 간단한 디자인 언어입니다. 
+Cloud 파트너 포털 내에서 [Markdown](/contribute/markdown-reference)을 사용하여 목록에 서식을 추가할 수 있습니다. 이것은 목록을 정리하는 데 도움이 되는 간단한 디자인 언어입니다. 
 
 **샘플 Markdown 참고 사항**
 * 사본 블록 맨 앞과 맨 끝에 공백 없이 *를 추가하여 기울임꼴 만들기(예: *content*)

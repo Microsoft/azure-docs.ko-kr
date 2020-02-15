@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/31/2019
+ms.date: 02/10/2020
 ms.author: iainfou
-ms.openlocfilehash: 489f4a527a5afaf1bab5e2065137a5011d45baa6
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 5d0035e7c87806012d13117ae5335b7de5f3c99d
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73474438"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77132294"
 ---
 # <a name="common-use-cases-and-scenarios-for-azure-active-directory-domain-services"></a>Azure Active Directory Domain Services에 대 한 일반적인 사용 사례 및 시나리오
 
@@ -65,7 +65,7 @@ Contoso는이 응용 프로그램을 Azure로 마이그레이션해야 합니다
 
 이전 예제 시나리오와 마찬가지로 Contoso에 거의 10 년 전에 개발 된 온-프레미스 LOB (기간 업무) 응용 프로그램이 있다고 가정해 보겠습니다. 이 응용 프로그램은 디렉터리를 인식 하며 LDAP를 사용 하 여 AD DS에서 사용자에 대 한 정보/특성을 읽도록 설계 되었습니다. 응용 프로그램은 특성을 수정 하거나 디렉터리에 쓰지 않습니다.
 
-Contoso는이 응용 프로그램을 Azure로 마이그레이션하고 현재이 응용 프로그램을 호스트 하는 에이징 온-프레미스 하드웨어를 사용 중지 하려고 합니다. REST 기반 Azure AD Graph API와 같은 최신 디렉터리 Api를 사용 하도록 응용 프로그램을 다시 작성할 수 없습니다. 리프트 앤 시프트 옵션은 코드를 수정 하거나 응용 프로그램을 다시 작성 하지 않고 클라우드에서 실행 되도록 응용 프로그램을 마이그레이션할 수 있는 경우에 필요 합니다.
+Contoso는이 응용 프로그램을 Azure로 마이그레이션하고 현재이 응용 프로그램을 호스트 하는 에이징 온-프레미스 하드웨어를 사용 중지 하려고 합니다. REST 기반 Microsoft Graph API와 같은 최신 디렉터리 Api를 사용 하도록 응용 프로그램을 다시 작성할 수 없습니다. 리프트 앤 시프트 옵션은 코드를 수정 하거나 응용 프로그램을 다시 작성 하지 않고 클라우드에서 실행 되도록 응용 프로그램을 마이그레이션할 수 있는 경우에 필요 합니다.
 
 이 시나리오를 지원 하기 위해 Azure AD DS를 사용 하면 응용 프로그램에서 관리 되는 도메인에 대해 LDAP 읽기를 수행 하 여 필요한 특성 정보를 얻을 수 있습니다. 응용 프로그램은 다시 작성 하지 않아도 되므로 Azure로 리프트 앤 시프트를 사용 하면 사용자가 실행 위치에 변화가 없어도 앱을 계속 사용할 수 있습니다.
 
@@ -90,7 +90,7 @@ Contoso는이 응용 프로그램을 Azure로 마이그레이션하고 현재이
 
 이 예제 사용 사례에 적용 되는 배포 고려 사항은 다음과 같습니다.
 
-* 응용 프로그램이 인증을 위해 사용자 이름 + 암호를 사용 하는지 확인 합니다. Azure AD DS에서 인증서 또는 스마트 카드 기반 인증을 지원 하지 않습니다.
+* 응용 프로그램에서 인증을 위해 사용자 이름과 암호를 사용 하는지 확인 합니다. Azure AD DS에서 인증서 또는 스마트 카드 기반 인증을 지원 하지 않습니다.
 * Azure AD DS 관리 되는 도메인에 대해 직접 암호를 변경할 수 없습니다. 최종 사용자가 Azure AD의 셀프 서비스 암호 변경 메커니즘을 사용하거나 온-프레미스 디렉터리에 대해 암호를 바꿀 수 있습니다. 이러한 변경 내용은 자동으로 동기화 되며 Azure AD DS 관리 되는 도메인에서 사용할 수 있습니다.
 
 ## <a name="windows-server-remote-desktop-services-deployments-in-azure"></a>Azure의 Windows Server 원격 데스크톱 서비스 배포

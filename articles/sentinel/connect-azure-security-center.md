@@ -9,12 +9,12 @@ ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 8d8f960d8cf1310ec0a380e75bdaa714408e2cac
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 4c75d1870ca3b966acdd658c91c0af8fd7465bfb
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75563669"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190871"
 ---
 # <a name="connect-data-from-azure-security-center"></a>Azure Security Center에서 데이터 연결
 
@@ -24,13 +24,12 @@ ms.locfileid: "75563669"
 
 Azure 센티널을 사용 하면 [Azure Security Center](../security-center/security-center-intro.md) 에서 경고를 연결 하 고 azure 센티널로 스트리밍할 수 있습니다. 
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
-- Azure Security Center에서 경고를 내보내려면 해당 로그를 스트리밍하는 구독에 대 한 참가자 여야 합니다.
+- Azure Security Center에서 경고를 내보내려면 스트리밍할 로그의 구독에 보안 읽기 권한자 역할이 있어야 합니다.
 
 - 구독에서 실행 중인 [Azure Security Center 표준 계층이](../security-center/security-center-pricing.md) 있어야 합니다. 그렇지 않은 경우 [구독을 표준으로 업그레이드](https://azure.microsoft.com/pricing/details/security-center/)합니다.
 
-- 연결 하려는 각 구독에 대해 전역 관리자 또는 보안 관리자 권한이 있는 사용자로 로그인 해야 합니다.
 
 
 ## <a name="connect-to-azure-security-center"></a>Azure Security Center에 연결

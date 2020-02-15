@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: bc7c8a059e1e17b7b280a7061206b10ed6c530aa
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 11c6da0b79f169b250dc0178f76dcd885ce91668
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "69015833"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162891"
 ---
 # <a name="how-to-perform-live-streaming-with-on-premises-encoders-using-net"></a>.NET을 사용하여 온-프레미스 인코더로 라이브 스트리밍을 수행하는 방법
 > [!div class="op_single_selector"]
@@ -33,14 +33,14 @@ ms.locfileid: "69015833"
 
 이 자습서에서는 Azure Media Services .NET SDK를 사용하여 통과 배달을 위해 구성된 **채널** 을 만드는 단계를 안내합니다. 
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 자습서를 완료하는 데 필요한 조건은 다음과 같습니다.
 
 * Azure 계정.
 * Media Services 계정. Media Services 계정을 만들려면 [Media Services 계정을 만드는 방법](media-services-portal-create-account.md)을 참조하세요.
 * 콘텐츠를 스트리밍하려는 스트리밍 엔드포인트가 **실행** 상태에 있는지 확인합니다. 
 * 개발 환경을 설정합니다. 자세한 내용은 [환경 설정](media-services-set-up-computer.md)을 참조하세요.
-* 웹캠. 예를 들어, [Telestream Wirecast encoder](https://www.telestream.net/wirecast/overview.htm)
+* 웹캠. 예를 들어, [Telestream Wirecast encoder](media-services-configure-wirecast-live-encoder.md)
 
 다음 문서를 검토하는 것이 좋습니다.
 

@@ -1,21 +1,20 @@
 ---
 title: Azure의 Cloudyn에 대한 질문과 대답 | Microsoft Docs
 description: 이 문서에서는 Cloudyn에 대한 일반적인 질문에 대한 답변을 제공합니다.
-services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 05/21/2019
+ms.date: 01/24/2020
 ms.topic: troubleshooting
 ms.service: cost-management-billing
-manager: benshy
+ms.reviewer: benshy
 ms.custom: seodec18
-ms.openlocfilehash: 70f5edfb186cb7a9c05fe8ee59533193cee4fcd4
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.openlocfilehash: 5c770d83d59edf0a56184f8eea0bda6b0603893c
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75990763"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76770072"
 ---
 # <a name="frequently-asked-questions-for-cloudyn"></a>Cloudyn에 대한 질문과 대답
 
@@ -74,9 +73,9 @@ Optimizer 권장 사항 데이터가 표시되지 않는다면 계정이 비활�
 
 먼저 사용자 계정이 *initiallySuspended*를 가져오는 가장 일반적인 시나리오를 살펴보겠습니다.
 
-> 1는 Microsoft 클라우드 솔루션 공급자 이거나 기업계약 사용자 일 수 있습니다. 조직에서 Cloudyn 사용을 시작할 준비가 되었습니다.  Admin1이 Azure Portal을 통해 등록하고 Cloudyn 포털에 로그인합니다. Cloudyn 서비스를 등록 하 고 Cloudyn 포털에 로그인 하는 사용자는 1가 *기본 관리자*가 됩니다. Admin1은 사용자 계정을 만들지 않습니다. 그러나 Cloudyn 포털을 사용 하 여 Azure 계정을 만들고 엔터티 계층을 설정 합니다. 1는 테 넌 트 관리자 인 2에 게 Cloudyn에 등록 하 고 Cloudyn 포털에 로그인 해야 한다는 사실을 알려줍니다.
+> Admin1은 Microsoft 클라우드 솔루션 공급자 또는 기업계약 사용자일 수 있습니다. 해당 조직에서 Cloudyn을 사용할 준비가 되었습니다.  Admin1이 Azure Portal을 통해 등록하고 Cloudyn 포털에 로그인합니다. Cloudyn 서비스를 등록하고 Cloudyn 포털에 로그인하는 사용자로서 Admin1은 *기본 관리자*가 됩니다. Admin1은 사용자 계정을 만들지 않습니다. 그러나 Cloudyn 포털을 사용하여 Azure 계정을 만들고 엔터티 계층을 설정합니다. Admin1이 테넌트 관리자인 Admin2에게 Cloudyn에 등록하고 Cloudyn 포털에 로그인해야 한다고 알립니다.
 >
-> Admin2가 Azure Portal을 통해 등록합니다. 그러나 Cloudyn 포털에 로그인 하려고 하면 계정이 **일시 중단**되었다는 오류 메시지가 표시 됩니다. 기본 관리자인 Admin1이 계정 일시 중단에 대한 알림을 받습니다. Admin1은 Admin2의 계정을 활성화하고 해당 엔터티에 대한 *관리자 엔터티 액세스* 권한을 부여해야 하며, 사용자 관리 액세스를 허용하고 사용자 계정을 활성화합니다.
+> Admin2가 Azure Portal을 통해 등록합니다. 그러나 Cloudyn 포털에 로그인하려고 하면 해당 계정이 **일시 중단**되었다는 오류가 표시됩니다. 기본 관리자인 Admin1이 계정 일시 중단에 대한 알림을 받습니다. Admin1은 Admin2의 계정을 활성화하고 해당 엔터티에 대한 *관리자 엔터티 액세스* 권한을 부여해야 하며, 사용자 관리 액세스를 허용하고 사용자 계정을 활성화합니다.
 
 
 사용자에 대한 액세스를 허용하라는 경고 요청을 받으면 사용자 계정을 활성화해야 합니다.
@@ -90,7 +89,7 @@ Optimizer 권장 사항 데이터가 표시되지 않는다면 계정이 비활�
 
 Cloudyn 사용자 계정은 Azure에서 Single Sign-On을 사용하여 연결합니다. 사용자가 암호를 잘못 입력하면 Azure에 계속 액세스할 수는 있지만 Cloudyn에 잠겨 있을 수 있습니다.
 
-Cloudyn에서 전자 메일 주소를 Azure의 기본 주소에서 변경 하면 계정이 잠길 수 있습니다. "Status 초기"가 표시 될 수 있습니다. 사용자 계정이 잠긴 경우 대체 관리자에게 문의하여 계정을 재설정합니다.
+Cloudyn의 메일 주소를 Azure의 기본 주소에서 변경하면 계정이 잠길 수 있습니다. “상태가 초기에 일시 중단됨”이 표시될 수 있습니다. 사용자 계정이 잠긴 경우 대체 관리자에게 문의하여 계정을 재설정합니다.
 
 계정 중 하나가 잠기는 경우를 대비하여 적어도 두 개의 Cloudyn 관리자 계정을 만드는 것이 좋습니다.
 
@@ -154,7 +153,7 @@ Azure Resource Manager 액세스를 추가하고 데이터를 수집한 후에�
 
 ## <a name="is-cloudyn-agent-based"></a>Cloudyn 에이전트 기반인가요?
 
-아닙니다. 에이전트는 사용되지 않습니다. VM에 대한 Azure 가상 머신 메트릭 데이터는 Microsoft Insights API에서 수집합니다. Azure VM에서 메트릭 데이터를 수집하려면 VM의 진단 설정을 켜야 합니다.
+아니요. 에이전트는 사용되지 않습니다. VM에 대한 Azure 가상 머신 메트릭 데이터는 Microsoft Insights API에서 수집합니다. Azure VM에서 메트릭 데이터를 수집하려면 VM의 진단 설정을 켜야 합니다.
 
 ## <a name="do-cloudyn-reports-show-more-than-one-ad-tenant-per-report"></a>Cloudyn 보고서는 보고서당 두 개 이상의 AD 테넌트를 표시합니까?
 

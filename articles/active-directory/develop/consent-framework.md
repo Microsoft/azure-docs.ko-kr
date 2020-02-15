@@ -13,12 +13,12 @@ ms.date: 11/30/2018
 ms.author: ryanwi
 ms.reviewer: zachowd, lenalepa, jesakowi
 ms.custom: aaddev
-ms.openlocfilehash: 3f95a0743ca6fadff0c7a26a796ef20659adfb80
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: cb9441e6ce19094ff72e902cdeea151041ceb963
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76697747"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161143"
 ---
 # <a name="azure-active-directory-consent-framework"></a>Azure Active Directory 동의 프레임워크
 
@@ -28,7 +28,7 @@ Azure AD(Azure Active Directory) 동의 프레임워크를 사용하면 다중 �
 
 동의 프레임워크는 공용 또는 기밀 클라이언트를 사용하여 인증 코드 부여 및 클라이언트 자격 증명 부여와 같은 다양한 흐름 및 OAuth 2.0을 기반으로 작성됩니다. OAuth 2.0을 사용하여 Azure AD는 전화기, 태블릿, 서버 또는 웹 애플리케이션과 같은 다양한 유형의 클라이언트 애플리케이션을 작성하고 필요한 리소스에 액세스할 수 있습니다.
 
-OAuth 2.0 권한 부여에서 동의 프레임워크를 사용하는 방법에 대한 자세한 내용은 [OAuth 2.0 및 Azure AD를 사용하여 웹 애플리케이션에 대한 액세스 권한 부여](v1-protocols-oauth-code.md) 및 [Azure AD의 인증 시나리오](authentication-scenarios.md)를 참조하세요. Microsoft Graph를 통해 Office 365에 대한 액세스 권한을 부여받는 방법은 [Microsoft Graph를 사용하여 앱 인증](https://developer.microsoft.com/graph/docs/authorization/auth_overview)을 참조하세요.
+OAuth 2.0 권한 부여에서 동의 프레임워크를 사용하는 방법에 대한 자세한 내용은 [OAuth 2.0 및 Azure AD를 사용하여 웹 애플리케이션에 대한 액세스 권한 부여](v2-oauth2-auth-code-flow.md) 및 [Azure AD의 인증 시나리오](authentication-scenarios.md)를 참조하세요. Microsoft Graph를 통해 Office 365에 대한 액세스 권한을 부여받는 방법은 [Microsoft Graph를 사용하여 앱 인증](https://developer.microsoft.com/graph/docs/authorization/auth_overview)을 참조하세요.
 
 ## <a name="consent-experience---an-example"></a>동의 경험 - 예
 
@@ -42,13 +42,13 @@ OAuth 2.0 권한 부여에서 동의 프레임워크를 사용하는 방법에 �
 
 1. 사용자가 인증되지 않은 경우 Azure AD의 `/authorize` 엔드포인트는 사용자에게 로그인하라는 메시지를 표시합니다.
 
-    ![사용자 또는 관리자가 Azure AD에 로그인](./media/quickstart-v1-integrate-apps-with-azure-ad/usersignin.png)
+    ![사용자 또는 관리자가 Azure AD에 로그인](./media/consent-framework/usersignin.png)
 
 1. 사용자가 로그인한 후 Azure AD는 사용자를 동의 페이지에 표시해야 하는지 여부를 결정합니다. 이 결정은 사용자(또는 해당 조직의 관리자)가 애플리케이션 동의를 부여했는지 여부에 따라 다릅니다. 아직 동의가 부여되지 않았다면 Azure AD는 사용자에게 동의 여부를 묻는 메시지를 표시하며 작동에 필요한 사용 권한을 표시합니다. 동의 대화 상자에 표시되는 사용 권한 집합은 Azure Portal의 **위임된 권한**에서 선택한 집합과 일치합니다.
 
-    ![승인 대화 상자에 표시 되는 사용 권한의 예를 보여 줍니다.](./media/quickstart-v1-integrate-apps-with-azure-ad/consent.png)
+    ![승인 대화 상자에 표시 되는 사용 권한의 예를 보여 줍니다.](./media/consent-framework/consent.png)
 
-1. 사용자가 동의를 부여하면 권한 부여 코드가 애플리케이션에 반환되며, 이것을 교환하여 액세스 토큰 및 새로 고침 토큰을 획득할 수 있습니다. 이 흐름에 대한 자세한 내용은 [Web API 앱 유형](web-api.md)을 참조하세요.
+1. 사용자가 동의를 부여하면 권한 부여 코드가 애플리케이션에 반환되며, 이것을 교환하여 액세스 토큰 및 새로 고침 토큰을 획득할 수 있습니다. 이 흐름에 대 한 자세한 내용은 [OAuth 2.0 인증 코드 흐름](v2-oauth2-auth-code-flow.md)을 참조 하세요.
 
 1. 관리자로 테넌트의 모든 사용자를 대신하여 애플리케이션의 위임된 권한에 동의할 수도 있습니다. 관리 동의는 테넌트의 모든 사용자에게 동의 대화 상자가 표시되지 않도록 하고, 관리자 역할이 있는 사용자가 [Azure Portal](https://portal.azure.com)에서 이를 수행할 수 있습니다. 위임된 권한에 동의할 수 있는 관리자 역할을 알아보려면 [Azure AD의 관리자 역할 권한](../users-groups-roles/directory-assign-admin-roles.md)을 참조하세요.
 

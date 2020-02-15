@@ -12,12 +12,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 08/05/2019
-ms.openlocfilehash: 44fcaa0a4292ac86c7371c27f29faf0e7246e9d5
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 16ba90aab52c00f77af590f854217cd989df53b3
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75894786"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77251909"
 ---
 # <a name="azure-sql-database-and-data-warehouse-network-access-controls"></a>Azure SQL Database 및 데이터 웨어하우스 네트워크 액세스 제어
 
@@ -25,7 +25,7 @@ ms.locfileid: "75894786"
 > 이 문서는 Azure SQL 서버 및 Azure SQL 서버에서 생성된 SQL Database와 SQL Data Warehouse 데이터베이스에 적용됩니다. 간단히 하기 위해 SQL Database는 SQL Database와 SQL Data Warehouse를 참조할 때 사용됩니다.
 
 > [!IMPORTANT]
-> 이 문서는 **Azure SQL Database Managed Instance**에 적용되지 *않습니다*. 네트워킹 구성에 대 한 자세한 내용은 [Managed Instance에 연결](sql-database-managed-instance-connect-app.md) 을 참조 하세요.
+> 이 문서는 *Azure SQL Database Managed Instance*에 적용되지 **않습니다**. 네트워킹 구성에 대 한 자세한 내용은 [Managed Instance에 연결](sql-database-managed-instance-connect-app.md) 을 참조 하세요.
 
 [Azure Portal에서](sql-database-single-database-get-started.md)새 Azure SQL Server를 만들 때 결과는 *yourservername.database.windows.net*형식의 공용 끝점입니다. 설계상 공용 끝점에 대 한 모든 액세스는 거부 됩니다. 그런 다음, 다음 네트워크 액세스 제어를 사용 하 여 공용 끝점을 통해 SQl Database에 대 한 액세스를 선택적으로 허용할 수 있습니다.
 - Azure 서비스 허용: 사용으로 설정 되 면 azure 경계 내의 다른 리소스 (예: Azure Virtual Machine)는에 액세스할 수 있습니다 SQL Database
@@ -113,7 +113,7 @@ Virtual Network 방화벽 규칙을 탐색 하면서 다음과 같은 Azure 네�
 
 **서브넷:** 가상 네트워크에 **서브넷**이 포함됩니다. 소유한 Azure VM(가상 머신)은 서브넷에 할당됩니다. 하나의 서브넷에 여러 VM 또는 다른 컴퓨팅 노드가 포함될 수 있습니다. 액세스를 허용하도록 보안을 구성해야 가상 네트워크 외부의 컴퓨팅 노드가 가상 네트워크에 액세스할 수 있습니다.
 
-**Virtual Network 서비스 끝점:** [Virtual Network service endpoint] [vm-가상-네트워크-서비스-끝점-b y d]는 속성 값에 하나 이상의 정식 Azure 서비스 유형 이름이 포함 된 서브넷입니다. 이 문서에서는 SQL Database라는 Azure 서비스를 나타내는 **Microsoft.Sql**의 형식 이름을 살펴봅니다.
+**Virtual Network 서비스 엔드포인트:** [Virtual Network 서비스 엔드포인트](../virtual-network/virtual-network-service-endpoints-overview.md)는 속성 값에 하나 이상의 정식 Azure 서비스 유형 이름이 포함된 서브넷입니다. 이 문서에서는 SQL Database라는 Azure 서비스를 나타내는 **Microsoft.Sql**의 형식 이름을 살펴봅니다.
 
 **가상 네트워크 규칙:** SQL Database 서버에 대한 가상 네트워크 규칙은 SQL Database 서버의 ACL(액세스 제어 목록)에 나열된 서브넷입니다. SQL Database에 대한 ACL에 나열되려면 서브넷에 **Microsoft.Sql** 형식 이름이 있어야 합니다. 가상 네트워크 규칙은 서브넷에 있는 모든 노드에서 보낸 통신을 수락하도록 SQL Database 서버에 지시합니다.
 
@@ -122,7 +122,7 @@ Virtual Network 방화벽 규칙을 탐색 하면서 다음과 같은 Azure 네�
 
 Azure SQL Server 방화벽을 사용 하 여 SQL Database에 대 한 통신을 허용 하는 IP 주소 범위를 지정할 수 있습니다. 이 방법은 Azure 프라이빗 네트워크 외부에 있는 안정적인 IP 주소에 적합합니다. 그러나 Azure 개인 네트워크 내의 가상 머신 (Vm)는 *동적* IP 주소로 구성 됩니다. 동적 IP 주소는 VM이 다시 시작 될 때 변경 될 수 있으며, 그런 다음 IP 기반 방화벽 규칙을 무효화 합니다. 프로덕션 환경의 방화벽 규칙에서는 동적 IP 주소를 지정하면 안 됩니다.
 
-VM에 대 한 *고정* IP 주소를 가져오면 이러한 제한을 해결할 수 있습니다. 자세한 내용은 [Azure Portal를 사용 하 여 가상 컴퓨터에 대 한 개인 IP 주소 구성] [vm--------------------------------------------- 그러나 고정 IP 접근 방식은 관리 하기 어려울 수 있으며 대규모로 작업 하는 경우 비용이 많이 듭니다. 
+VM에 대 한 *고정* IP 주소를 가져오면 이러한 제한을 해결할 수 있습니다. 자세한 내용은 Azure Portal를 [사용 하 여 가상 컴퓨터에 대 한 개인 IP 주소 구성](../virtual-network/virtual-networks-static-private-ip-arm-pportal.md)을 참조 하세요. 그러나 정적 IP 방법은 관리가 어려워질 수 있고 대규모로 이루어질 경우 비용이 많이 듭니다. 
 
 가상 네트워크 규칙은 Vm이 포함 된 특정 서브넷의 액세스를 설정 하 고 관리 하는 보다 쉬운 방법입니다.
 
@@ -137,7 +137,7 @@ VM에 대 한 *고정* IP 주소를 가져오면 이러한 제한을 해결할 �
 
 - 오픈 소스 또는 타사 응용 프로그램에서 Azure SQL database에 연결 하는 데 도움이 필요한 경우 [클라이언트 빠른 시작 코드 샘플](https://msdn.microsoft.com/library/azure/ee336282.aspx)을 참조 하 여 SQL Database 합니다.
 
-- 열어야 할 수 있는 추가 포트에 대한 자세한 내용은 [ADO.NET 4.5와 SQL Database에 대한 1433 이외 포트](sql-database-develop-direct-route-ports-adonet-v12.md)의 **SQL Database: 내부 및 외부** 섹션을 참조하세요.
+- 열어야 할 수 있는 추가 포트에 대한 자세한 내용은 **ADO.NET 4.5와 SQL Database에 대한 1433 이외 포트**의 [SQL Database: 내부 및 외부](sql-database-develop-direct-route-ports-adonet-v12.md) 섹션을 참조하세요.
 
 - Azure SQL Database 연결에 대 한 개요는 [AZURE SQL 연결 아키텍처](sql-database-connectivity-architecture.md) 를 참조 하세요.
 

@@ -320,26 +320,45 @@
         - name: FileStore
           href: /azure/databricks/data/filestore
           maintainContext: true
-    - name: 비즈니스 인텔리전스 도구
+    - name: 통합
       items:
-        - name: BI 도구 연결
-          href: /azure/databricks/bi/jdbc-odbc-bi
+        - name: 통합 개요
+          href: /azure/databricks/integrations/index
           maintainContext: true
-        - name: Tableau
-          href: /azure/databricks/bi/tableau
-          maintainContext: true
-        - name: Power BI
-          href: /azure/databricks/bi/power-bi
-          maintainContext: true
-        - name: Alteryx
-          href: /azure/databricks/bi/alteryx
-          maintainContext: true
-        - name: Looker
-          href: /azure/databricks/bi/looker
-          maintainContext: true
-        - name: SQL Workbench/J
-          href: /azure/databricks/bi/workbenchj
-          maintainContext: true
+        - name: 비즈니스 인텔리전스 도구
+          items:
+            - name: BI 도구 연결
+              href: /azure/databricks/bi/jdbc-odbc-bi
+              maintainContext: true
+            - name: Tableau
+              href: /azure/databricks/bi/tableau
+              maintainContext: true
+            - name: Power BI
+              href: /azure/databricks/bi/power-bi
+              maintainContext: true
+            - name: Alteryx
+              href: /azure/databricks/bi/alteryx
+              maintainContext: true
+            - name: Looker
+              href: /azure/databricks/bi/looker
+              maintainContext: true
+            - name: SQL Workbench/J
+              href: /azure/databricks/bi/workbenchj
+              maintainContext: true
+        - name: 파트너 데이터 통합
+          items:
+            - name: 파트너 통합 개요
+              href: /azure/databricks/integrations/ingestion/index
+            - name: Qlik 통합
+              href: /azure/databricks/integrations/ingestion/qlik
+            - name: Fivetran 통합
+              href: /azure/databricks/integrations/ingestion/fivetran
+            - name: InfoWorks 통합
+              href: /azure/databricks/integrations/ingestion/infoworks
+            - name: StreamSets 통합
+              href: /azure/databricks/integrations/ingestion/streamsets
+            - name: Syncsort 통합
+              href: /azure/databricks/integrations/ingestion/syncsort
     - name: Delta Lake
       items:
         - name: Delta Lake 소개
@@ -1087,9 +1106,20 @@
             - name: Azure Data Lake Storage 자격 증명 통과 사용
               href: /azure/databricks/administration-guide/access-control/credential-passthrough
               maintainContext: true
-        - name: 작업 영역 스토리지 관리
-          href: /azure/databricks/administration-guide/workspace-storage/storage
-          maintainContext: true
+        - name: 작업 영역 개체 및 동작 관리
+          items:
+            - name: 작업 영역 개요 관리
+              href: /azure/databricks/administration-guide/workspace/index
+              maintainContext: true
+            - name: 작업 영역 스토리지 관리
+              href: /azure/databricks/administration-guide/workspace/storage
+              maintainContext: true
+            - name: 작업 영역 보안 헤더 관리
+              href: /azure/databricks/administration-guide/workspace/security
+              maintainContext: true
+            - name: Notebook 기능에 대한 액세스 관리
+              href: /azure/databricks/administration-guide/workspace/notebooks
+              maintainContext: true
         - name: 클러스터 구성 사용
           items:
             - name: 클러스터 구성 개요
@@ -1609,6 +1639,9 @@
             - name: 플랫폼 릴리스 정보
               href: /azure/databricks/release-notes/product/index
               maintainContext: true
+            - name: 2020년 2월
+              href: /azure/databricks/release-notes/product/2020/february
+              maintainContext: true
             - name: 2020년 1월
               href: /azure/databricks/release-notes/product/2020/january
               maintainContext: true
@@ -1757,9 +1790,6 @@
                 - name: Databricks Runtime 5.2 ML
                   href: /azure/databricks/release-notes/runtime/5.2ml
                   maintainContext: true
-                - name: Databricks Runtime 3.5
-                  href: /azure/databricks/release-notes/runtime/3.5
-                  maintainContext: true
             - name: 지원되지 않음
               items:
                 - name: 지원되지 않는 런타임 릴리스
@@ -1792,6 +1822,9 @@
                 - name: Databricks Runtime 4.0
                   href: /azure/databricks/release-notes/runtime/4.0
                   maintainContext: true
+                - name: Databricks Runtime 3.5 LTS
+                  href: /azure/databricks/release-notes/runtime/3.5
+                  maintainContext: true
                 - name: Databricks Runtime 3.4
                   href: /azure/databricks/release-notes/runtime/3.4
                   maintainContext: true
@@ -1804,6 +1837,9 @@
         - name: 릴리스 종류
           href: /azure/databricks/release-notes/release-types
           maintainContext: true
+    - name: Azure Databricks 상태 페이지
+      href: /azure/databricks/status
+      maintainContext: true
     - name: R 개발자 가이드
       href: /azure/machine-learning/r-developers-guide
     - name: Azure 로드맵

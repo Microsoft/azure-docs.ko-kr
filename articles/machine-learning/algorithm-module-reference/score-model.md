@@ -6,19 +6,19 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
-ms.date: 10/22/2019
-ms.openlocfilehash: 27838aae1d829598bed44a6c16f7a1d38a95b727
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+author: likebupt
+ms.author: keli19
+ms.date: 02/11/2020
+ms.openlocfilehash: c06d1268abe8afdeb03668131c3c61cfbafa44cd
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314099"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138167"
 ---
 # <a name="score-model-module"></a>모델 점수 매기기 모듈
 
-이 문서에서는 Azure Machine Learning 디자이너의 모듈을 설명 합니다.
+이 문서에서는 Azure Machine Learning designer (미리 보기)의 모듈을 설명 합니다.
 
 이 모듈을 사용 하 여 학습 된 분류 또는 회귀 모델을 사용 하 여 예측을 생성 합니다.
 
@@ -44,7 +44,7 @@ ms.locfileid: "76314099"
 
 - 분류 모델의 경우 [점수 매기기 모델](./score-model.md) 은 클래스의 예측 값 뿐만 아니라 예측 값의 확률을 출력 합니다.
 - 회귀 모델의 경우 [모델 점수 매기기](./score-model.md) 는 예측 된 숫자 값만 생성 합니다.
-- 이미지 분류 모델의 경우 점수는 이미지의 개체 클래스이거나 특정 기능이 있는지 여부를 표시하는 부울일 수 있습니다.
+
 
 ## <a name="publish-scores-as-a-web-service"></a>점수를 웹 서비스로 게시
 

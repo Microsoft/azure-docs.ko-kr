@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: mialdrid
-ms.openlocfilehash: 143f2f36cc93a9d67a3ab800782c9a6bb8a52af0
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: b4a83013d2cbeb2871a3963ec0c95144c02f4d66
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77067358"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77187022"
 ---
 # <a name="expressroute-crossconnnections-api-development-and-integration"></a>Express 경로 CrossConnnections API 개발 및 통합
 
@@ -51,7 +51,7 @@ ExpressRouteCrossConnections 리소스로 이동할 경우의 이점:
 
 ### <a name="2-register-the-dev_provider-subscription-to-access-the-expressroutecrossconnections-api"></a>2. expressRouteCrossConnections API에 액세스 하는 Dev_Provider 구독 등록
 
-ExpressRouteCrossConnections API에 액세스 하려면 파트너 구독을 **Microsoft 네트워크 리소스 공급자**에 등록 해야 합니다. [Azure 리소스 공급자 및 유형](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types#portal) 문서의 단계에 따라 등록 프로세스를 완료 합니다.
+ExpressRouteCrossConnections API에 액세스 하려면 파트너 구독을 **Microsoft 네트워크 리소스 공급자**에 등록 해야 합니다. [Azure 리소스 공급자 및 유형](/azure/azure-resource-manager/management/resource-providers-and-types#azure-portal) 문서의 단계에 따라 등록 프로세스를 완료 합니다.
 
 ### <a name="3-set-up-authentication-for-azure-resource-manager-rest-api-calls"></a>3. Azure Resource Manager REST API 호출에 대 한 인증 설정
 

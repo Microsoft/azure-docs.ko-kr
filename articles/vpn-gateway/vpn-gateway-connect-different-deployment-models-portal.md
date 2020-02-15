@@ -7,19 +7,19 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: cherylmc
-ms.openlocfilehash: c26c4c47cb17acf88bc545af3a1fc979138d56b1
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 5e64cb2db2bd16a881334779a1c6f1ef19296da2
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74951737"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152026"
 ---
 # <a name="connect-virtual-networks-from-different-deployment-models-using-the-portal"></a>포털을 사용하여 다양한 배포 모델에서 가상 네트워크 연결
 
 이 문서에서는 Resource Manager VNet에 클래식 VNet을 연결하여 별도의 배포 모델에 있는 리소스가 서로 통신하도록 허용하는 방법을 보여 줍니다. 이 문서의 단계는 주로 Azure Portal을 사용하지만 이 목록에서 문서를 선택하여 PowerShell을 통해 이 구성을 만들 수도 있습니다.
 
 > [!div class="op_single_selector"]
-> * [Portal](vpn-gateway-connect-different-deployment-models-portal.md)
+> * [포털](vpn-gateway-connect-different-deployment-models-portal.md)
 > * [PowerShell](vpn-gateway-connect-different-deployment-models-powershell.md)
 > 
 > 
@@ -30,7 +30,7 @@ ms.locfileid: "74951737"
 
 ### <a name="before"></a>시작하기 전에
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 
 * 이 단계에서는 두 VNet이 이미 만들어졌다고 가정합니다. 이 문서를 사용하여 연습을 하는 경우 VNet이 없으면 단계 내에 VNet 만들기를 도와주는 링크가 있습니다.
 * VNet에 대한 주소 범위가 서로 겹치거나 게이트웨이가 연결되어 있는 다른 연결의 범위와 겹치지 않는지 확인합니다.
@@ -100,7 +100,7 @@ VPN 게이트웨이가 있는 VNet이 이미 있는 경우 해다 게이트웨�
 
 1. **모든 리소스**로 이동하여 목록에서 **ClassicVNet**을 찾습니다.
 2. 메뉴의 **설정** 섹션에서 **게이트웨이** 를 클릭 한 다음 배너를 클릭 하 여 게이트웨이를 만듭니다.
-  ![VPN 게이트웨이 구성](./media/vpn-gateway-connect-different-deployment-models-portal/gatewaygraphic.png "Co) a VPN gateway ")
+  ![VPN 게이트웨이 구성](./media/vpn-gateway-connect-different-deployment-models-portal/gatewaygraphic.png "VPN Gateway 구성")
 3. **새 VPN 연결** 페이지에서 **연결 유형**으로 **사이트 간**을 선택합니다.
 4. **로컬 사이트**로 **필요한 설정 구성**을 클릭합니다. 그러면 **로컬 사이트** 페이지가 열립니다.
 5. **로컬 사이트** 페이지에서 리소스 관리자 VNet을 언급하는 이름을 만듭니다. 예: 'RMVNetLocal'.

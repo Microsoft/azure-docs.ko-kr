@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 10/01/2019
 ms.author: banders
 ms.openlocfilehash: 4dc7771862bc922702c5cc321fb3c566212d799a
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75990568"
 ---
 # <a name="review-subscription-billing-using-rest-apis"></a>Azure REST API를 사용하여 구독 청구 검토
@@ -48,7 +48,7 @@ Authorization: Bearer
 |요청 헤더|Description|
 |--------------------|-----------------|
 |*Content-Type:*|필수 사항입니다. `application/json`로 설정합니다.|
-|*권한 부여*|필수 사항입니다. 을 유효한 `Bearer` [액세스 토큰](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients)으로 설정 합니다. |
+|*권한 부여*|필수 사항입니다. 유효한 `Bearer` [액세스 토큰](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients)으로 설정합니다. |
 
 ## <a name="response"></a>응답
 

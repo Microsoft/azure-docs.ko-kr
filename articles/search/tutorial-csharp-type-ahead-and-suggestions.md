@@ -3,30 +3,30 @@ title: 자동 완성 및 제안에 대한 C# 자습서
 titleSuffix: Azure Cognitive Search
 description: 이 자습서에서는 드롭다운 목록을 사용하여 사용자로부터 검색어 입력을 수집하는 방법으로 자동 완성 및 제안을 보여줍니다. 기존 호텔 프로젝트를 기반으로 빌드됩니다.
 manager: nitinme
-author: PeterTurcan
-ms.author: v-pettur
+author: tchristiani
+ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 11/04/2019
-ms.openlocfilehash: b542476ac1c9b6d4368d97eb4db76518eb2dba03
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.date: 02/10/2020
+ms.openlocfilehash: 8f244d64fe33a1529cf66314515bbe16e05ccffb
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74114568"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121539"
 ---
 # <a name="c-tutorial-add-autocompletion-and-suggestions---azure-cognitive-search"></a>C# 자습서: 자동 완성 및 제안 기능 추가 - Azure Cognitive Search
 
 사용자가 검색창에 입력을 시작할 때 자동 완성(자동 완성 및 제안)을 구현하는 방법을 알아봅니다. 이 자습서에서는 자동 완성 결과 및 제안 결과를 개별적으로 표시한 다음, 자동 완성과 제안을 결합하여 보다 풍부한 사용자 환경을 만드는 방법을 보여줍니다. 사용자는 핵심 글자 두세 개만 입력하면 사용 가능한 모든 결과를 찾을 수 있습니다. 이 자습서는 [C# 자습서: 검색 결과 페이지 매김 - Azure Cognitive Search](tutorial-csharp-paging.md) 자습서에서 만든 페이지 매김 프로젝트를 기반으로 합니다.
 
-이 자습서에서는 다음 방법에 대해 알아봅니다.
+이 자습서에서는 다음 작업 방법을 알아봅니다.
 > [!div class="checklist"]
 > * 제안 추가
 > * 제안에 강조 표시 추가
 > * 자동 완성 기능 추가
 > * 자동 완성과 제안을 결합
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서를 완료하려면 다음이 필요합니다.
 

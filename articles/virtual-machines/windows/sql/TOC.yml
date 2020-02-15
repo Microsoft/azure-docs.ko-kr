@@ -28,7 +28,7 @@
           href: virtual-machines-windows-sql-high-availability-dr.md
         - name: Always On 가용성 그룹
           href: virtual-machines-windows-portal-sql-availability-group-overview.md
-        - name: Backup 및 복원
+        - name: 백업 및 복원
           href: virtual-machines-windows-sql-backup-recovery.md
         - name: 자동화된 SQL Server 2014 백업
           href: virtual-machines-windows-sql-automated-backup.md
@@ -97,9 +97,11 @@
               href: virtual-machines-windows-sql-availability-group-quickstart-template.md
             - name: 다중 영역
               href: virtual-machines-windows-portal-sql-availability-group-dr.md
+            - name: 도메인 독립형(작업 그룹)
+              href: virtual-machines-windows-sql-workgroup-availability-group.md
             - name: 수동으로 구성
               items:
-                - name: 필수 조건
+                - name: 사전 요구 사항
                   href: virtual-machines-windows-portal-sql-availability-group-prereq.md
                 - name: 자습서
                   href: virtual-machines-windows-portal-sql-availability-group-tutorial.md
@@ -107,13 +109,13 @@
                   href: virtual-machines-windows-portal-sql-alwayson-int-listener.md
                 - name: 부하 분산 장치 - Azure PowerShell
                   href: virtual-machines-windows-portal-sql-ps-alwayson-int-listener.md
-        - name: 장애 조치 클러스터 인스턴스
+        - name: 장애 조치(Failover) 클러스터 인스턴스
           items:
             - name: Storage Spaces Direct 사용
               href: virtual-machines-windows-portal-sql-create-failover-cluster.md
             - name: 프리미엄 파일 공유 사용
               href: virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-share.md
-- name: 참고 자료
+- name: 참조
   items:
     - name: Azure PowerShell
       href: /powershell/azure/overview
@@ -129,7 +131,7 @@
   items:
     - name: FAQ
       href: virtual-machines-windows-sql-server-iaas-faq.md
-    - name: 가격
+    - name: 가격 책정
       href: virtual-machines-windows-sql-server-pricing-guidance.md
     - name: SSDT(SQL Server Data Tools)
       href: 'https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt'

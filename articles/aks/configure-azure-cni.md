@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 06/03/2019
 ms.author: mlearned
-ms.openlocfilehash: c9c47506e61c665da459558735a3afc93e8b9806
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 11607ffe03d5d2519df1b1199a741dfb55aff2f4
+ms.sourcegitcommit: 323c3f2e518caed5ca4dd31151e5dee95b8a1578
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75659783"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77111613"
 ---
 # <a name="configure-azure-cni-networking-in-azure-kubernetes-service-aks"></a>AKS(Azure Kubernetes Service)에서 Azure CNI 네트워킹 구성
 
@@ -22,7 +22,7 @@ ms.locfileid: "75659783"
 
 이 문서에서는 *Azure CNI* 네트워킹을 사용하여 AKS 클러스터용 가상 네트워크 서브넷을 만들고 사용하는 방법에 대해 설명합니다. 네트워크 옵션 및 고려 사항에 대 한 자세한 내용은 [Kubernetes 및 AKS의 네트워크 개념][aks-network-concepts]을 참조 하세요.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 * AKS 클러스터에 대한 가상 네트워크는 아웃바운드 인터넷 연결을 허용해야 합니다.
 * AKS 클러스터는 Kubernetes 서비스 주소 범위에 대 한 `169.254.0.0/16`, `172.30.0.0/16`, `172.31.0.0/16`또는 `192.0.2.0/24`를 사용 하지 않을 수 있습니다.
@@ -52,9 +52,9 @@ AKS 클러스터에 대한 IP 주소 계획은 노드 및 Pod에 대한 하나 �
 | --------- | ------------- |
 | 가상 네트워크 | Azure Virtual Network는 /8 이하일 수 있지만 구성된 IP 주소 수는 65,536개로 제한됩니다. |
 | 서브넷 | 클러스터에서 프로비전될 수 있는 노드, 포드와 모든 Kubernetes 및 Azure 리소스를 수용할 만큼 커야 합니다. 예를 들어, 내부 Azure Load Balancer를 배포하는 경우, 해당 프런트 엔드 IP는 공용 IP가 아닌 클러스터 서브넷에서 할당됩니다. 서브넷 크기도 업그레이드 작업이나 향후의 크기 조정 요구를 반영해야 합니다.<p />업그레이드 작업을 위한 추가 노드를 포함한 *최소* 서브넷 크기를 계산하려면`(number of nodes + 1) + ((number of nodes + 1) * maximum pods per node that you configure)`<p/>50 노드 클러스터의 예: `(51) + (51  * 30 (default)) = 1,581`(/21 이상)<p/>추가 10개 노드를 확장하는 프로비전도 포함하는 50개 노드 클러스터의 예: `(61) + (61 * 30 (default)) = 1,891` (/21 이상)<p>클러스터를 만들 때 노드당 최대 Pod를 지정하지 않으면 노드당 최대 Pod 수는 *30*개로 설정됩니다. 필요한 최소 IP 주소 수는 이 값을 기준으로 합니다. 다른 최댓값을 기준으로 최소 IP 주소 요구 사항을 계산하는 경우 [노드당 최대 Pod 수를 구성하는 방법](#configure-maximum---new-clusters)을 참조하여 클러스터를 배포할 때 이 값을 설정하세요 |
-| Kubernetes 서비스 주소 범위 | 이 범위는 이 가상 네트워크 또는 이 가상 네트워크에 연결된 모든 네트워크 요소에서 사용하지 말아야 합니다. 서비스 주소 CIDR은 /12보다 작아야 합니다. |
+| Kubernetes 서비스 주소 범위 | 이 범위는 이 가상 네트워크 또는 이 가상 네트워크에 연결된 모든 네트워크 요소에서 사용하지 말아야 합니다. 서비스 주소 CIDR은 /12보다 작아야 합니다. 여러 AKS 클러스터에서이 범위를 재사용할 수 있습니다. |
 | Kubernetes DNS 서비스 IP 주소 | 클러스터 서비스 검색에서 사용되는 Kubernetes 서비스 주소 범위 내의 IP 주소입니다(kube-dns). .1과 같은 주소 범위의 첫 번째 IP 주소를 사용하지 마세요. 서브넷 범위의 첫 번째 주소는 *kubernetes.default.svc.cluster.local* 주소에 사용됩니다. |
-| Docker 브리지 주소 | Docker 브리지 네트워크 주소는 모든 Docker 설치에 있는 기본 *docker0* 브리지 네트워크 주소를 나타냅니다. *Docker0* BRIDGE는 AKS 클러스터 또는 pod 자체에서 사용 되지 않지만 AKS 클러스터 내에서 *docker 빌드와* 같은 시나리오를 계속 지원 하려면이 주소를 설정 해야 합니다. 달리 Docker는 다른 CIDRs와 충돌할 수 있는 서브넷을 자동으로 선택 하기 때문에 Docker 브리지 네트워크 주소에 대 한 CIDR을 선택 해야 합니다. 클러스터의 서비스 CIDR 및 pod CIDR을 포함 하 여 네트워크에서 CIDRs의 나머지 부분과 충돌 하지 않는 주소 공간을 선택 해야 합니다. 172.17.0.1/16의 기본값 |
+| Docker 브리지 주소 | Docker 브리지 네트워크 주소는 모든 Docker 설치에 있는 기본 *docker0* 브리지 네트워크 주소를 나타냅니다. *Docker0* BRIDGE는 AKS 클러스터 또는 pod 자체에서 사용 되지 않지만 AKS 클러스터 내에서 *docker 빌드와* 같은 시나리오를 계속 지원 하려면이 주소를 설정 해야 합니다. 달리 Docker는 다른 CIDRs와 충돌할 수 있는 서브넷을 자동으로 선택 하기 때문에 Docker 브리지 네트워크 주소에 대 한 CIDR을 선택 해야 합니다. 클러스터의 서비스 CIDR 및 pod CIDR을 포함 하 여 네트워크에서 CIDRs의 나머지 부분과 충돌 하지 않는 주소 공간을 선택 해야 합니다. 172.17.0.1/16의 기본값 여러 AKS 클러스터에서이 범위를 재사용할 수 있습니다. |
 
 ## <a name="maximum-pods-per-node"></a>노드당 최대 포드
 
@@ -64,7 +64,7 @@ AKS 클러스터에서 노드당 최대 pod 수는 250입니다. 노드당 *기�
 | -- | :--: | :--: | -- |
 | Azure CLI | 110 | 30 | 예 (최대 250) |
 | Resource Manager 템플릿 | 110 | 30 | 예 (최대 250) |
-| 포털 | 110 | 30 | 아닙니다. |
+| 포털 | 110 | 30 | 예 |
 
 ### <a name="configure-maximum---new-clusters"></a>최댓값 구성 - 새 클러스터
 
@@ -81,7 +81,7 @@ AKS 클러스터에서 노드당 최대 pod 수는 250입니다. 노드당 *기�
 > 위의 테이블에서 최 솟 값은 AKS 서비스에 의해 엄격 하 게 적용 됩니다. 표시 되는 최소값 보다 낮은 maxPods 값은 클러스터를 시작 하지 못할 수 있습니다.
 
 * **Azure CLI**: [az aks create][az-aks-create] 명령을 사용 하 여 클러스터를 배포할 때 `--max-pods` 인수를 지정 합니다. 최대값은 250입니다.
-* **Resource Manager 템플릿**: Resource Manager 템플릿을 사용하여 클러스터를 배포할 때 [ManagedClusterAgentPoolProfile] 개체에 `maxPods` 속성을 지정합니다. 최대값은 250입니다.
+* **Resource Manager 템플릿**: Resource Manager 템플릿을 사용하여 클러스터를 배포할 때 `maxPods`ManagedClusterAgentPoolProfile[ManagedClusterAgentPoolProfile] 속성을 지정합니다. 최대값은 250입니다.
 * **Azure Portal**: Azure Portal을 사용하여 클러스터를 배포하는 경우에는 노드당 최대 Pod 수를 변경할 수 없습니다. Azure Portal을 사용하여 배포하는 경우 Azure CNI 네트워킹 클러스터는 노드당 30개 Pod로 제한됩니다.
 
 ### <a name="configure-maximum---existing-clusters"></a>최댓값 구성 - 기존 클러스터
@@ -144,13 +144,13 @@ Azure Portal의 다음 스크린샷은 AKS 클러스터를 만드는 동안 이�
 
 ![Azure Portal의 고급 네트워킹 구성][portal-01-networking-advanced]
 
-## <a name="frequently-asked-questions"></a>FAQ(질문과 대답)
+## <a name="frequently-asked-questions"></a>질문과 대답
 
 다음과 같은 질문과 대답은 **Azure CNI** 네트워킹 구성에 적용됩니다.
 
 * *내 클러스터 서브넷에 VM을 배포할 수 있나요?*
 
-  아닙니다. Kubernetes 클러스터에서 사용되는 서브넷에 VM을 배포하는 것은 지원되지 않습니다. VM은 동일한 가상 네트워크의 다른 서브넷에 배포할 수 있습니다.
+  아니요. Kubernetes 클러스터에서 사용되는 서브넷에 VM을 배포하는 것은 지원되지 않습니다. VM은 동일한 가상 네트워크의 다른 서브넷에 배포할 수 있습니다.
 
 * *Pod별 네트워크 정책을 구성할 수 있나요?*
 

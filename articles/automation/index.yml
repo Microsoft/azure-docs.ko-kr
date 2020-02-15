@@ -4,19 +4,18 @@ metadata:
   title: Azure Automation 설명서
   description: Automation을 사용하여 하이브리드 환경에서 운영 작업을 구성하고 자동화하는 방법을 알아봅니다.
   services: automation
-  author: bobbytreed
+  author: mgoedtel
   manager: carmonm
   ms.service: automation
-  ms.tgt_pltfrm: na
   ms.topic: landing-page
   ms.date: 09/06/2019
-  ms.author: robreed
-  ms.openlocfilehash: 9207c92a1fcb6a6f5522a450912ddd10d0294c3f
-  ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+  ms.author: magoedte
+  ms.openlocfilehash: d154705e17a51453648a8e1d3dd14bcdc6881917
+  ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 01/09/2020
-  ms.locfileid: "75769968"
+  ms.lasthandoff: 02/14/2020
+  ms.locfileid: "77208671"
 landingContent:
 - title: Azure Automation 시작
   linkLists:

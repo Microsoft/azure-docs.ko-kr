@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 01/09/2020
+ms.date: 02/11/2020
 ms.author: cherylmc
-ms.openlocfilehash: 298d720d3848f27b18aa24897357dfaa47a12a70
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: e386e5fc9c4d62266e0ca23869bf30ccaffeb91d
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75863726"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201563"
 ---
 # <a name="create-a-site-to-site-connection-using-the-azure-portal-classic"></a>Azure Portal(클래식)을 사용하여 사이트 간 연결 만들기
 
@@ -39,7 +39,7 @@ ms.locfileid: "75863726"
 * 호환되는 VPN 디바이스 및 이 디바이스를 구성할 수 있는 사람이 있는지 확인합니다. 호환되는 VPN 디바이스 및 디바이스 구성에 대한 자세한 내용은 [VPN 디바이스 정보](vpn-gateway-about-vpn-devices.md)를 참조하세요.
 * VPN 디바이스에 대한 외부 연결 공용 IPv4 주소가 있는지 확인합니다.
 * 온-프레미스 네트워크에 있는 IP 주소 범위에 익숙하지 않은 경우 세부 정보를 제공할 수 있는 다른 사람의 도움을 받아야 합니다. 이 구성을 만들 때 Azure가 온-프레미스 위치에 라우팅할 IP 주소 범위 접두사를 지정해야 합니다. 온-프레미스 네트워크의 어떤 서브넷도 사용자가 연결하려는 가상 네트워크 서브넷과 중첩될 수 없습니다.
-* 현재 공유 키를 지정하고 VPN Gateway 연결을 만드는 데 PowerShell이 필요합니다. 최신 버전의 Azure SM(서비스 관리) PowerShell cmdlet을 설치합니다. Cmdlet을 설치 하려면 [서비스 관리](/powershell/azure/servicemanagement/install-azure-ps)를 참조 하세요. 일반적인 PowerShell 설치에 대 한 자세한 내용은 [Azure PowerShell 설치 및 구성 하는 방법](/powershell/azure/overview)을 참조 하세요. 이 구성에 PowerShell을 사용할 때 관리자 권한으로 실행되고 있는지 확인합니다.
+* PowerShell은 공유 키를 지정 하 고 VPN gateway 연결을 만들기 위해 필요 합니다. [!INCLUDE [vpn-gateway-classic-powershell](../../includes/vpn-gateway-powershell-classic-locally.md)]
 
 ### <a name="values"></a>이 연습에 대한 샘플 구성 값
 
@@ -72,7 +72,7 @@ S2S 연결에 사용할 가상 네트워크를 만들 때 지정한 주소 공�
 1. 브라우저에서 [Azure Portal](https://portal.azure.com)로 이동하고 필요한 경우 Azure 계정으로 로그인합니다.
 2. * *+ 리소스 만들기를*클릭 합니다. **마켓플레이스 검색** 필드에 ‘Virtual Network’를 입력합니다. 반환된 목록에서 **Virtual Network**를 찾아서 클릭하여 **Virtual Network** 페이지를 엽니다.
 3. **(클래식으로 변경)** 을 클릭 한 다음 **만들기**를 클릭 합니다.
-4. **가상 네트워크(클래식) 만들기** 페이지에서 VNet 설정을 구성합니다. 이 페이지에서 첫 번째 주소 공간과 단일 서브넷 주소 범위를 추가합니다. VNet 만들기를 완료한 후에 다시 돌아와서 추가 서브넷 및 주소 공간을 추가합니다.
+4. **가상 네트워크(클래식) 만들기** 페이지에서 VNet 설정을 구성합니다. 이 페이지에서 첫 번째 주소 공간과 단일 서브넷 주소 범위를 추가합니다. VNet을 만든 후 뒤로 이동 하 여 서브넷 및 주소 공간을 더 추가할 수 있습니다.
 
    ![가상 네트워크 만들기 페이지](./media/vpn-gateway-howto-site-to-site-classic-portal/createvnet.png "가상 네트워크 만들기 페이지")
 5. **구독**이 올바른지 확인합니다. 드롭다운을 사용하여 구독을 변경할 수 있습니다.
@@ -159,23 +159,24 @@ VPN Gateway의 게이트웨이 서브넷을 만들어야 합니다. 게이트웨
 
 ### <a name="step-1-connect-to-your-azure-account"></a>1단계. Azure 계정에 연결
 
-PowerShell 서비스 관리 모듈을 사용 하 여 이러한 명령을 로컬로 실행 해야 합니다. 서비스 관리로 전환 하려면 다음 명령을 사용 합니다.
+PowerShell 서비스 관리 모듈을 사용 하 여 이러한 명령을 로컬로 실행 해야 합니다. 
 
-```powershell
-azure config mode asm
-```
+1. 관리자 권한으로 PowerShell 콘솔을 엽니다. 서비스 관리로 전환 하려면 다음 명령을 사용 합니다.
 
-1. 상승된 권한으로 PowerShell 콘솔을 열고 계정에 연결합니다. 연결에 도움이 되도록 다음 예제를 사용합니다.
+   ```powershell
+   azure config mode asm
+   ```
+2. 계정에 연결합니다. 연결에 도움이 되도록 다음 예제를 사용합니다.
 
    ```powershell
    Add-AzureAccount
    ```
-2. 계정에 대한 구독을 확인합니다.
+3. 계정에 대한 구독을 확인합니다.
 
    ```powershell
    Get-AzureSubscription
    ```
-3. 둘 이상의 구독이 있는 경우 사용할 구독을 선택합니다.
+4. 둘 이상의 구독이 있는 경우 사용할 구독을 선택합니다.
 
    ```powershell
    Select-AzureSubscription -SubscriptionId "Replace_with_your_subscription_ID"

@@ -52,6 +52,17 @@
         - name: 배포 단계
           displayName: 'standards, cis'
           href: ./samples/cis-azure-1.1.0/deploy.md
+    - name: DoD 영향 수준 4
+      items:
+        - name: 개요
+          displayName: 'standards, DoD, IL4'
+          href: ./samples/dod-impact-level-4/index.md
+        - name: 컨트롤 매핑
+          displayName: 'standards, DoD, IL4'
+          href: ./samples/dod-impact-level-4/control-mapping.md
+        - name: 배포 단계
+          displayName: 'standards, DoD, IL4'
+          href: ./samples/dod-impact-level-4/deploy.md
     - name: FedRAMP Moderate
       items:
         - name: 개요

@@ -87,7 +87,7 @@
           href: logic-apps-handle-large-messages.md
         - name: 보안
           items:
-            - name: 논리 앱 보안
+            - name: 논리 앱의 보안 향상
               href: logic-apps-securing-a-logic-app.md
             - name: 관리되는 ID를 사용하여 인증
               href: create-managed-service-identity.md
@@ -97,7 +97,7 @@
           items:
             - name: 논리 앱에 대한 사용자 지정 API 만들기
               href: logic-apps-create-api-app.md
-            - name: 사용자 지정 API에 대한 호출 보호
+            - name: 사용자 정의 API 호출에 대한 보안 향상
               href: logic-apps-custom-api-authentication.md
             - name: 사용자 지정 API 배포 및 호출
               href: logic-apps-custom-api-host-deploy-call.md
@@ -135,7 +135,7 @@
           href: logic-apps-enterprise-integration-certificates.md
         - name: 아티팩트 메타데이터
           href: logic-apps-enterprise-integration-metadata.md
-        - name: B2B 메시지 수신
+        - name: B2B 메시지 받기 및 보내기
           href: logic-apps-enterprise-integration-b2b.md
         - name: AS2 메시지 교환
           href: logic-apps-enterprise-integration-as2.md

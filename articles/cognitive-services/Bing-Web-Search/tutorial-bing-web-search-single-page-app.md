@@ -10,12 +10,12 @@ ms.subservice: bing-web-search
 ms.topic: tutorial
 ms.date: 12/09/2019
 ms.author: aahi
-ms.openlocfilehash: ec6c1ef31b6cf92629be600b3b139bb2e1a0d3ce
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 1acc17f9c2fbeb53b992891174866433d14f128d
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74977253"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76986664"
 ---
 # <a name="tutorial-create-a-single-page-app-using-the-bing-web-search-api"></a>자습서: Bing Web Search API를 사용하여 단일 페이지 앱 만들기
 
@@ -32,7 +32,7 @@ ms.locfileid: "74977253"
 
 이 앱을 사용하려면 Bing Search API와 함께 [Azure Cognitive Services 계정](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account)이 필요합니다. 계정이 없는 경우 [평가판](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api)을 사용하여 구독 키를 가져올 수 있습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 앱을 실행하는 데 필요한 몇 가지 사항은 다음과 같습니다.
 
@@ -82,7 +82,7 @@ npm install
 
 HTML 양식에는 [Bing Web Search API v7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#query-parameters)의 쿼리 매개 변수에 매핑되는 옵션이 포함됩니다. 이 표에서는 사용자가 샘플 앱을 사용하여 검색 결과를 필터링하는 방법을 구분합니다.
 
-| 매개 변수 | 설명 |
+| 매개 변수 | Description |
 |-----------|-------------|
 | `query` | 쿼리 문자열을 입력할 텍스트 필드입니다. |
 | `where` | 시장(위치 및 언어)을 선택하기 위한 드롭다운 메뉴입니다. |
@@ -105,7 +105,7 @@ function bingSearchOptions(form) {
     // Where option.
     options.push("mkt=" + form.where.value);
     // SafeSearch option.
-    options.push("SafeSearch=" + (form.safe.checked ? "strict" : "off"));
+    options.push("SafeSearch=" + (form.safe.checked ? "strict" : "moderate"));
     // Freshness option.
     if (form.when.value.length) options.push("freshness=" + form.when.value);
     var what = [];
@@ -128,7 +128,7 @@ function bingSearchOptions(form) {
 }
 ```
 
-`moderate`를 Bing Web Search의 기본 설정으로 사용하여 `SafeSearch`를 `strict`, `moderate` 또는 `off`로 설정할 수 있습니다. 이 양식은 두 개의 상태가 있는 확인란을 사용합니다. 이 코드 조각에서 SafeSearch는 `strict` 또는 `off`로 설정되고, `moderate`는 사용되지 않습니다.
+`moderate`를 Bing Web Search의 기본 설정으로 사용하여 `SafeSearch`를 `strict`, `moderate` 또는 `off`로 설정할 수 있습니다. 이 양식은 `strict` 또는 `moderate`의 두 개의 상태가 있는 확인란을 사용합니다.
 
 **수준 올리기** 확인란을 선택하면 `answerCount` 매개 변수가 쿼리에 추가됩니다. `promote` 매개 변수를 사용할 때 `answerCount`가 필요합니다. 이 코드 조각에서 값은 모든 사용 가능한 결과 형식을 반환하도록 `9`로 설정됩니다.
 > [!NOTE]
@@ -386,7 +386,7 @@ searchItemRenderers = {
 
 컨텍스트 인수는 다음과 같습니다.
 
-| 매개 변수  | 설명 |
+| 매개 변수  | Description |
 |------------|-------------|
 | `section` | 항목이 표시되는 결과 섹션(`pole`, `mainline` 또는 `sidebar`) |
 | `index`<br>`count` | `RankingResponse` 항목이 지정된 컬렉션에 모든 결과가 표시되도록 지정한 경우에 사용할 수 있습니다. 그렇지 않으면 `undefined`입니다. 해당 컬렉션 내에 있는 항목의 인덱스 및 해당 컬렉션에 있는 총 항목 수. 이 정보를 사용하여 결과를 세고 첫 번째 또는 마지막 결과에 대해 다른 HTML을 생성할 수 있습니다. |

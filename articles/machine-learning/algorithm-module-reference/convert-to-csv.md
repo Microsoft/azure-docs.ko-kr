@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 10/22/2019
-ms.openlocfilehash: 30d1ba89f6a18ed3400868e6d9a5d17ceef5de04
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 8206a88695c89d04eabe89e79a5aff8469cc6862
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76546812"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152434"
 ---
 # <a name="convert-to-csv-module"></a>CSV 모듈로 변환
 
@@ -26,7 +26,7 @@ ms.locfileid: "76546812"
 
 "쉼표로 구분 된 값"을 의미 하는 CSV 형식은 여러 외부 기계 학습 도구에서 사용 하는 파일 형식입니다. CSV는 R 또는 Python과 같은 오픈 소스 언어로 작업할 때 일반적인 교환 형식입니다.
 
-Azure Machine Learning에서 대부분의 작업을 수행 하는 경우에도 외부 도구에서 사용 하기 위해 데이터 집합을 CSV로 변환 하는 것이 유용할 수 있습니다. 예:
+Azure Machine Learning에서 대부분의 작업을 수행 하는 경우에도 외부 도구에서 사용 하기 위해 데이터 집합을 CSV로 변환 하는 것이 유용할 수 있습니다. 예를 들면 다음과 같습니다.
 
 + CSV 파일을 다운로드 하 여 Excel에서 열거나 관계형 데이터베이스로 가져옵니다.  
 + CSV 파일을 클라우드 저장소에 저장 하 고 Power BI에서 연결 하 여 시각화를 만듭니다.  

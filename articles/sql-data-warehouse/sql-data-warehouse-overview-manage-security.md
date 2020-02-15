@@ -1,6 +1,6 @@
 ---
 title: 데이터베이스 보안
-description: 솔루션 개발을 위해 Azure SQL Data Warehouse에서 데이터베이스를 보호하는 팁
+description: SQL Analytics의 SQL 풀 리소스에서 데이터베이스를 보호 하 고 솔루션을 개발 하기 위한 팁입니다.
 services: sql-data-warehouse
 author: julieMSFT
 manager: craigg
@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 5eeb1c25264c36909774ec689b7410765881c8e2
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 26cdbb1fc2899d1b03fea6199074467623706c63
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77064736"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153284"
 ---
 # <a name="secure-a-database-in-sql-data-warehouse"></a>SQL Data Warehouse에서 데이터베이스 보호
 > [!div class="op_single_selector"]
@@ -27,21 +27,21 @@ ms.locfileid: "77064736"
 > 
 > 
 
-이 문서는 Azure SQL Data Warehouse 데이터베이스 보호에 대한 기본 사항을 안내합니다. 특히 이 문서에서는 데이터베이스에서 액세스 제한, 데이터 보호 및 작업 모니터링을 위한 리소스를 시작할 수 있습니다.
+이 문서에서는 SQL 분석 내에서 SQL 풀을 보호 하기 위한 기본 사항을 안내 합니다. 특히이 문서에서는 SQL 풀을 사용 하 여 프로 비전 된 데이터베이스에 대 한 액세스를 제한 하 고, 데이터를 보호 하 고, 작업을 모니터링 하기 위한 리소스를 시작 합니다.
 
 ## <a name="connection-security"></a>연결 보안
 연결 보안은 방화벽 규칙 및 연결 암호화를 사용하여 데이터베이스에 대한 연결을 제한하고 보호하는 방법을 가리킵니다.
 
 서버와 데이터베이스 모두에서 방화벽 규칙을 사용 하 여 명시적으로 허용 목록 되지 않은 IP 주소에서의 연결 시도를 거부 합니다. 애플리케이션 또는 클라이언트 컴퓨터의 공용 IP 주소에서 연결할 수 있도록 허용하려면 먼저 Azure Portal, REST API 또는 PowerShell을 사용하여 서버 수준 방화벽 규칙을 만들어야 합니다. 
 
-서버 방화벽을 통해 허용되는 IP 주소 범위를 최대한 많이 제한하는 것이 좋습니다.  로컬 컴퓨터에서 Azure SQL Data Warehouse로 액세스하려면 네트워크의 방화벽과 로컬 컴퓨터가 TCP 포트 1433으로 나가는 통신을 허용하는지 확인합니다.  
+서버 방화벽을 통해 허용되는 IP 주소 범위를 최대한 많이 제한하는 것이 좋습니다.  로컬 컴퓨터에서 SQL 풀에 액세스 하려면 네트워크와 로컬 컴퓨터의 방화벽이 TCP 포트 1433에서 나가는 통신을 허용 하는지 확인 합니다.  
 
-Azure Synapse는 서버 수준 IP 방화벽 규칙을 사용 합니다. 데이터베이스 수준 IP 방화벽 규칙은 지원 하지 않습니다. 자세한 내용은 [Azure SQL Database 방화벽 규칙](../sql-database/sql-database-firewall-configure.md) 을 참조 하세요.
+Azure Synapse Analytics는 서버 수준 IP 방화벽 규칙을 사용 합니다. 데이터베이스 수준 IP 방화벽 규칙은 지원 하지 않습니다. 자세한 내용은 [Azure SQL Database 방화벽 규칙](../sql-database/sql-database-firewall-configure.md) 을 참조 하세요.
 
-SQL Data Warehouse에 대한 연결은 기본적으로 암호화됩니다.  암호화를 사용하지 않도록 연결 설정을 수정해도 무시됩니다.
+SQL 풀에 대 한 연결은 기본적으로 암호화 됩니다.  암호화를 사용하지 않도록 연결 설정을 수정해도 무시됩니다.
 
 ## <a name="authentication"></a>인증
-인증은 데이터베이스에 연결할 때 사용자의 ID를 증명하는 방법을 가리킵니다. SQL Data Warehouse는 현재 사용자 이름과 암호 및 Azure Active Directory를 사용하는 SQL Server 인증을 지원합니다. 
+인증은 데이터베이스에 연결할 때 사용자의 ID를 증명하는 방법을 가리킵니다. SQL 풀은 현재 사용자 이름 및 암호를 사용 하는 SQL Server 인증과 Azure Active Directory를 지원 합니다. 
 
 데이터베이스의 논리 서버를 만들 때 사용자 이름 및 암호를 사용하여 "서버 관리자" 로그인을 지정했습니다. 이러한 자격 증명을 사용하면, SQL Server 인증을 통해 해당 서버의 모든 데이터베이스에 데이터베이스 소유자 또는 "dbo"로 인증할 수 있습니다.
 
@@ -55,7 +55,7 @@ CREATE LOGIN ApplicationLogin WITH PASSWORD = 'Str0ng_password';
 CREATE USER ApplicationUser FOR LOGIN ApplicationLogin;
 ```
 
-그런 다음, 서버 관리자로 로그인하여 **SQL Data Warehouse 데이터베이스**에 연결하고 생성된 서버 로그인에 따라 데이터베이스 사용자를 만듭니다.
+그런 다음 서버 관리자 로그인을 사용 하 여 **SQL 풀 데이터베이스** 에 연결 하 고 사용자가 만든 서버 로그인에 따라 데이터베이스 사용자를 만듭니다.
 
 ```sql
 -- Connect to SQL DW database and create a database user
@@ -98,4 +98,4 @@ SQL Database에서 데이터베이스 암호화 키는 기본 제공 서버 인�
 [Azure Portal](sql-data-warehouse-encryption-tde.md) 또는 [t-sql](sql-data-warehouse-encryption-tde-tsql.md)을 사용 하 여 데이터베이스를 암호화할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
-다른 프로토콜을 사용 하 여 웨어하우스에 연결 하는 방법에 대 한 자세한 내용과 예제는 [SQL Data Warehouse 연결을](sql-data-warehouse-connect-overview.md)참조 하세요.
+다른 프로토콜을 사용 하 여 웨어하우스에 연결 하는 방법에 대 한 자세한 내용과 예제는 [SQL 풀에 연결](sql-data-warehouse-connect-overview.md)을 참조 하세요.

@@ -5,24 +5,27 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 11/21/2019
+ms.date: 02/12/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: tanning
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad897ea73f32327b894558c5c04449c667663dad
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: e81039328aa9382a19412c961e28bc3275c08ec8
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74379757"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77194469"
 ---
 # <a name="troubleshooting-enterprise-state-roaming-settings-in-azure-active-directory"></a>Azure Active Directory에서 엔터프라이즈 상태 로밍 설정 문제 해결
 
 이 항목은 엔터프라이즈 상태 로밍과 관련된 문제를 진단하고 해결하는 방법에 관한 정보와 알려진 문제 목록을 제공합니다.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
+> [!NOTE]
+> 이 문서는 7 월 2015에 Windows 10으로 시작 된 Microsoft Edge 레거시 HTML 기반 브라우저에 적용 됩니다. 이 문서는 2020 년 1 월 15 일에 릴리스된 새 Microsoft Edge Chromium 기반 브라우저에는 적용 되지 않습니다. 새 Microsoft Edge의 동기화 동작에 대 한 자세한 내용은 [Microsoft Edge 동기화](https://docs.microsoft.com/deployedge/microsoft-edge-enterprise-sync)문서를 참조 하세요.
 
 ## <a name="preliminary-steps-for-troubleshooting"></a>문제 해결을 위한 준비 단계 
 
@@ -31,7 +34,7 @@ ms.locfileid: "74379757"
 1. 최신 업데이트된 Windows 10와 최소 버전 1511(OS 빌드 10586 이상)이 디바이스에 설치되어 있습니다. 
 1. 디바이스는 Azure AD나 하이브리드 Azure AD에 조인되어 있습니다. 자세한 내용은 [Azure AD에서 디바이스를 제어하는 방법](overview.md)을 참조하세요.
 1. **Enterprise State Roaming을 사용하려면**에 설명된 대로 Azure AD에서 테넌트에 대해 [Enterprise State Roaming](enterprise-state-roaming-enable.md)을 활성화합니다. 모든 사용자 또는 선택한 사용자 그룹만을 로밍할 수 있습니다.
-1. 이미 사용자에게는 Azure Active Directory Premium 라이선스가 할당되어야 합니다.  
+1. 사용자에 게 Azure Active Directory Premium 라이선스가 할당 됩니다.  
 1. Enterprise State Roaming 기능에 액세스하려면 디바이스를 다시 시작해야 하고 사용자가 다시 로그인해야 합니다.
 
 ## <a name="information-to-include-when-you-need-help"></a>도움이 필요한 경우 포함할 정보
@@ -46,6 +49,7 @@ ms.locfileid: "74379757"
 이 정보를 포함하면 최대한 빨리 문제를 해결하는데 도움이 됩니다.
 
 ## <a name="troubleshooting-and-diagnosing-issues"></a>문제 해결 및 문제 진단
+
 이 섹션에서는 엔터프라이즈 상태 로밍에 관련된 문제를 해결하고 진단하는 방법을 제시합니다.
 
 ## <a name="verify-sync-and-the-sync-your-settings-settings-page"></a>동기화 및 "설정 동기화" 설정 페이지 확인 
@@ -66,13 +70,13 @@ Enterprise State Roaming은 Azure AD에 등록된 디바이스가 필요합니�
 1. 명령 프롬프트가 열리면 "*dsregcmd.exe /status*"을 입력합니다.
 1. 예상된 출력에서 **AzureAdJoined** 필드 값은 "YES", **WamDefaultSet** 필드 값도 "YES"여야 하고 **WamDefaultGUID** 필드 값은 끝에 "(AzureAd)"가 있는 GUID여야 합니다.
 
-**잠재적 문제**: **WamDefaultSet** 및 **AzureAdJoined** 에는 모두 필드 값에 "NO"가 있고, 장치가 도메인에 가입 되 고 Azure AD에 등록 되었으며, 장치가 동기화 되지 않습니다. 이를 표시 하는 경우 장치가 적용 될 때까지 기다리거나, Azure AD에 연결할 때 장치에 대 한 인증에 실패 해야 할 수 있습니다. 사용자는 정책이 적용될 때까지 몇 시간을 대기해야 할 수 있습니다. 기타 문제 해결 단계에는 로그아웃하고 다시 로그인함으로써 자동 등록 다시 시도 또는 작업 Scheduler에서 작업 시작이 포함될 수 있습니다. 경우에 따라 관리자 권한 명령 프롬프트 창에서 "*dsregcmd.exe /leave*"를 실행하고 다시 부팅하여 등록을 다시 시도하면 이 문제 해결에 도움이 될 수 있습니다.
+**잠재적 문제**: **WamDefaultSet** 및 **AzureAdJoined** 에는 모두 필드 값에 "NO"가 있고, 장치가 도메인에 가입 되 고 Azure AD에 등록 되었으며, 장치가 동기화 되지 않습니다. 이를 표시 하는 경우 장치가 적용 될 때까지 기다리거나, Azure AD에 연결할 때 장치에 대 한 인증에 실패 해야 할 수 있습니다. 사용자는 정책이 적용될 때까지 몇 시간을 대기해야 할 수 있습니다. 다른 문제 해결 단계에는 로그 아웃 했다가 다시 로그인 하거나 작업 스케줄러에서 작업을 시작 하 여 이라고을 다시 시도 하는 작업이 포함 될 수 있습니다. 경우에 따라 관리자 권한 명령 프롬프트 창에서 "*dsregcmd.exe /leave*"를 실행하고 다시 부팅하여 등록을 다시 시도하면 이 문제 해결에 도움이 될 수 있습니다.
 
-**잠재적 문제**: **settingsurl** 의 필드가 비어 있고 장치가 동기화 되지 않습니다. Azure Active Directory 포털에서 Enterprise State Roaming를 사용 하도록 설정 하기 전에 사용자가 장치에 마지막으로 로그인 했을 수 있습니다. 디바이스를 다시 시작하고 사용자에게 로그인하게 합니다. 필요에 따라 포털에서 IT 관리자가 **Azure Active Directory** > **디바이스** > **Enterprise State Roaming** 비활성화로 이동하고 **사용자가 디바이스 간에 설정 및 앱 데이터를 동기화할 수 있음**을 다시 활성화하도록 합니다. 다시 활성화되면 디바이스를 다시 시작하고 사용자에게 로그인하게 합니다. 그래도 문제가 해결되지 않는다면 잘못된 디바이스 인증서의 경우 **SettingsUrl**이 비어 있는 것일 수 있습니다. 이 경우 관리자 권한 명령 프롬프트 창에서 "*dsregcmd.exe /leave*"를 실행하고 다시 부팅하여 등록을 다시 시도하면 이 문제 해결에 도움이 될 수 있습니다.
+**잠재적 문제**: **settingsurl** 의 필드가 비어 있고 장치가 동기화 되지 않습니다. Azure Active Directory 포털에서 Enterprise State Roaming를 사용 하도록 설정 하기 전에 사용자가 장치에 마지막으로 로그인 했을 수 있습니다. 디바이스를 다시 시작하고 사용자에게 로그인하게 합니다. 필요에 따라 포털에서 IT 관리자가 **Azure Active Directory** > **디바이스** > **Enterprise State Roaming** 비활성화로 이동하고 **사용자가 디바이스 간에 설정 및 앱 데이터를 동기화할 수 있음**을 다시 활성화하도록 합니다. 다시 활성화되면 디바이스를 다시 시작하고 사용자에게 로그인하게 합니다. 이렇게 해도 문제가 해결 되지 않으면 잘못 된 장치 인증서가 있는 경우 **Settingsurl** 이 비어 있을 수 있습니다. 이 경우 관리자 권한 명령 프롬프트 창에서 "*dsregcmd.exe /leave*"를 실행하고 다시 부팅하여 등록을 다시 시도하면 이 문제 해결에 도움이 될 수 있습니다.
 
 ## <a name="enterprise-state-roaming-and-multi-factor-authentication"></a>엔터프라이즈 상태 로밍 및 Multi-Factor Authentication 
 
-특정 조건에서 엔터프라이즈 상태 로밍은 Azure Multi-Factor Authentication이 구성된 경우 데이터를 동기화하는 데 실패할 수 있습니다. 이러한 현상에 대한 자세한 내용은 [KB3193683](https://support.microsoft.com/kb/3193683) 지원 문서를 참조하세요. 
+특정 조건에서 엔터프라이즈 상태 로밍은 Azure Multi-Factor Authentication이 구성된 경우 데이터를 동기화하는 데 실패할 수 있습니다. 이러한 현상에 대 한 자세한 내용은 지원 문서 [자세한 내용은 kb3193683](https://support.microsoft.com/kb/3193683)를 참조 하세요. 
 
 **잠재적인 문제**: Azure Active Directory 포털에서 Multi-Factor Authentication을 필요로 하도록 디바이스가 구성된 경우 암호를 사용하여 Windows 10 디바이스에 로그인하는 동안 설정을 동기화하는 데 실패할 수 있습니다. 이러한 형식의 Multi-Factor Authentication 구성은 Azure 관리자 계정을 보호하도록 계획되었습니다. 관리자 사용자는 Office 365와 같은 다른 Azure 서비스에 액세스하는 동안 Microsoft Passport for Work PIN을 사용하거나 Multi-Factor Authentication을 완료하여 해당 Windows 10 디바이스에 로그인함으로써 동기화할 수 있습니다.
 
@@ -149,12 +153,12 @@ Azure AD에 등록된 도메인 조인 디바이스는 오랜 시간 디바이�
 
 ### <a name="azure-ad-joined-device-is-not-syncing-and-the-user-has-a-mixed-case-user-principal-name"></a>Azure AD 조인 디바이스가 동기화되지 않고 사용자 계정 이름에 대/소문자가 혼합되어 있습니다.
 
-사용자의 UPN에 대/소문자가 혼합되어 있고(예: username 대신 UserName) 사용자가 Windows 10 빌드 10586에서 14393으로 업그레이드한 Azure AD 조인 디바이스에 있는 경우 사용자 디바이스는 동기화에 실패할 수 있습니다. 
+사용자에 게 대소 문자가 혼합 되어 있는 경우 (예: username 대신 UserName) 사용자가 Windows 10 빌드 10586에서 14393로 업그레이드 한 Azure AD 조인 장치에 있는 경우 사용자의 장치가 동기화 되지 않을 수 있습니다. 
 
 **권장 작업**  
 사용자가 디바이스의 연결을 해제하고 클라우드에 다시 연결해야 합니다. 이렇게 하려면 로컬 관리자 사용자로 로그인하고 **설정** > **시스템** > **정보**로 이동하여 디바이스의 연결을 해제한 후 "회사 또는 학교에서 관리 또는 연결 끊기"를 선택합니다. 아래 파일을 정리한 다음, **설정** > **시스템** > **정보**에서 "회사 또는 학교에 연결"을 선택하여 디바이스를 Azure AD에 다시 연결합니다. 디바이스를 계속 Azure Active Directory에 연결하고 흐름을 완료합니다.
 
-정리 단계에서 다음 파일을 정리합니다.
+정리 단계에서 다음 파일을 정리 합니다.
 - Settings.dat in `C:\Users\<Username>\AppData\Local\Packages\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy\Settings\`
 - `C:\Users\<Username>\AppData\Local\Packages\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy\AC\TokenBroker\Account` 폴더에 있는 모든 파일
 
@@ -178,4 +182,4 @@ AAD/Operational 로그에 있는 이벤트 뷰어에서 이벤트 1104: AAD 클�
 
 ## <a name="next-steps"></a>다음 단계
 
-개요는 [엔터프라이즈 상태 로밍 개요](enterprise-state-roaming-overview.md)를 참조하세요.
+개요는 [Enterprise State Roaming 개요](enterprise-state-roaming-overview.md)를 참조하세요.

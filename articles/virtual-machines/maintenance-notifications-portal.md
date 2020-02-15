@@ -1,20 +1,18 @@
 ---
-title: Azure Vm에 대 한 유지 관리 알림을 위해 포털 사용
+title: 유지 관리 알림에 포털 사용
 description: Azure에서 실행 되는 가상 머신에 대 한 유지 관리 알림을 확인 하 고 포털을 사용 하 여 셀프 서비스 유지 관리를 시작 합니다.
-services: virtual-machines
 author: shants123
-tags: azure-service-management,azure-resource-manager
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: shants
-ms.openlocfilehash: 759fbc5ba3c5eaa78fec1045bcf41969108d39b1
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 46fcc825ac49f0181ac74e9c3e2deaea577f3329
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74535822"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77115731"
 ---
 # <a name="handling-planned-maintenance-notifications-using-the-portal"></a>포털을 사용 하 여 계획 된 유지 관리 알림 처리
 
@@ -24,7 +22,7 @@ ms.locfileid: "74535822"
 
 Azure Portal을 사용하여 유지 관리하도록 예약된 VM을 찾아볼 수 있습니다.
 
-1. [Azure portal](https://portal.azure.com)에 로그인합니다.
+1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
 
 2. 왼쪽 탐색 모음에서 **Virtual Machines**를 클릭합니다.
 
@@ -34,7 +32,7 @@ Azure Portal을 사용하여 유지 관리하도록 예약된 VM을 찾아볼 �
 
    **유지 관리 상태**: VM에 대 한 유지 관리 상태를 표시 합니다. 가능한 값은 다음과 같습니다.
       
-      | Value | 설명 |
+      | 값 | Description |
       |-------|-------------|
       | 지금 시작 | VM이 유지 관리를 직접 시작할 수 있는 셀프 서비스 유지 관리 기간에 있습니다. VM에서 유지 관리를 시작하는 방법은 아래를 참조하세요. | 
       | 예약됨 | 유지 관리를 시작하기 위한 옵션 없이 VM의 유지 관리가 예약됩니다. 이 보기에서 유지 관리 - 예약 창을 선택하거나 VM을 클릭하여 유지 관리 기간을 알아볼 수 있습니다. | 

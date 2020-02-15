@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 10/22/2019
-ms.openlocfilehash: c5ad269bf9cfa43ebad7163c858ef20bc8641878
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 072809949badb08e5b1e7078566e289c5a5fecd9
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76548325"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153675"
 ---
 # <a name="two-class-support-vector-machine-module"></a>2 클래스 지원 벡터 컴퓨터 모듈
 

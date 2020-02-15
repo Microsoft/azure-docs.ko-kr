@@ -8,12 +8,12 @@ ms.devlang: python
 ms.topic: conceptual
 ms.date: 07/30/2019
 ms.author: robinsh
-ms.openlocfilehash: 6dfbcc7a3e76842546326742d801c913451855f3
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: f1c0c046c40ff8edbc33c5e93e4207d9fe2fc67a
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71001116"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110755"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub-python"></a>IoT Hub (Python)를 사용 하 여 장치에서 클라우드로 파일 업로드
 
@@ -39,9 +39,11 @@ ms.locfileid: "71001116"
 > [!NOTE]
 > 이 가이드에서는 새로운 V2 SDK에서 파일 업로드 기능이 아직 구현 되지 않았기 때문에 사용 되지 않는 V1 Python SDK를 사용 합니다.
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 [!INCLUDE [iot-hub-include-python-installation-notes](../../includes/iot-hub-include-python-installation-notes.md)]
+
+* 방화벽에서 포트 8883가 열려 있는지 확인 합니다. 이 문서의 device 샘플에서는 포트 8883을 통해 통신 하는 MQTT 프로토콜을 사용 합니다. 이 포트는 일부 회사 및 교육용 네트워크 환경에서 차단 될 수 있습니다. 이 문제를 해결 하는 방법 및 방법에 대 한 자세한 내용은 [IoT Hub에 연결 (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub)을 참조 하세요.
 
 [!INCLUDE [iot-hub-associate-storage](../../includes/iot-hub-associate-storage.md)]
 
@@ -62,7 +64,7 @@ ms.locfileid: "71001116"
 
 3. 텍스트 편집기를 사용하여 작업 폴더에 **FileUpload.py** 파일을 만듭니다.
 
-4. **FileUpload.py** 파일의 시작 부분에서 다음 `import` 문 및 변수를 추가합니다. 
+4. `import`FileUpload.py**파일의 시작 부분에서 다음** 문 및 변수를 추가합니다. 
 
     ```python
     import time

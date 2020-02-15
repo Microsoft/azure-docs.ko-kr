@@ -10,12 +10,12 @@ ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
 ms.date: 01/13/2020
-ms.openlocfilehash: 3dfdbc56456ea67c830d0e1e9785b9d0032bf2cc
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: fd358801b5fe84aac754b5a975234688a707e544
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76988223"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169958"
 ---
 # <a name="secure-azure-ml-experimentation-and-inference-jobs-within-an-azure-virtual-network"></a>Azure Virtual Network 내에서 Azure ML 실험 및 유추 작업 보호
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -34,7 +34,7 @@ Azure Machine Learning는 계산 리소스에 대 한 다른 Azure 서비스에 
 > [!WARNING]
 > Microsoft는 가상 네트워크 내의 리소스에 Azure Machine Learning 디자이너 또는 자동화 된 Machine Learning (스튜디오에서)을 사용 하는 것을 지원 하지 않습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 + Azure Machine Learning [작업 영역](how-to-manage-workspace.md)입니다.
 
@@ -124,10 +124,6 @@ Azure Machine Learning 작업 영역의 가상 네트워크 내에서 Data Lake 
 <a id="amlcompute"></a>
 
 ## <a name="compute-instance"></a>Machine Learning 컴퓨팅 사용
-
-> [!NOTE]
-> 컴퓨팅 인스턴스(미리 보기)는 현재 서비스 예정인 다른 지역에 대한 지원을 포함하여 **미국 중북부** 또는 **영국 남부** 지역이 있는 작업 영역에서만 사용할 수 있습니다.
-> 이러한 영역 중 하나를 사용 하 여 가상 네트워크에 추가할 수 있는 계산 인스턴스를 만듭니다.
 
 가상 네트워크에서 Azure Machine Learning 계산 인스턴스 또는 계산 클러스터를 사용 하려면 다음 네트워크 요구 사항을 충족 해야 합니다.
 
@@ -261,7 +257,7 @@ Machine Learning 컴퓨팅 클러스터를 만들려면 다음 단계를 사용 
 
    ![Machine Learning 컴퓨팅에 대 한 가상 네트워크 설정](./media/how-to-enable-virtual-network/amlcompute-virtual-network-screen.png)
 
-Azure Machine Learning SDK를 사용하여 Machine Learning 컴퓨팅 클러스터를 만들 수도 있습니다. 다음 코드에서는 `mynetwork`라는 가상 네트워크의 `default` 서브넷에 새 Machine Learning 컴퓨팅 클러스터를 만듭니다.
+Azure Machine Learning SDK를 사용하여 Machine Learning 컴퓨팅 클러스터를 만들 수도 있습니다. 다음 코드에서는 `default`라는 가상 네트워크의 `mynetwork` 서브넷에 새 Machine Learning 컴퓨팅 클러스터를 만듭니다.
 
 ```python
 from azureml.core.compute import ComputeTarget, AmlCompute

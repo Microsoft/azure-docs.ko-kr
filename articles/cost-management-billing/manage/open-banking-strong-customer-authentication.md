@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 09/10/2019
 ms.author: banders
 ms.openlocfilehash: aff5e1e707980c9a63988c22653fa5fba0fc236b
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75996041"
 ---
 # <a name="open-banking-psd2-and-strong-customer-authentication-sca-for-azure-customers"></a>Azure 고객을 위한 PSD2(오픈 뱅킹) 및 SCA(강력한 고객 인증)
@@ -48,7 +48,7 @@ ms.locfileid: "75996041"
 
 1. 계정 관리자 권한으로 [Azure Portal](https://portal.azure.com/)에 로그인합니다.
 2. **Cost Management + 청구**를 검색합니다.
-3. **Cost Management + 청구** **개요** 페이지에서 **내 구독** 표에 있는 상태 열을 검토 합니다.
+3. **Cost Management + 청구** **개요** 페이지에서 **내 구독** 그리드의 상태 열을 검토합니다.
 4. 구독 상태가 **기한 초과**인 경우 **잔액 결제**를 클릭합니다. 이 과정에서 다단계 인증을 완료하라는 메시지가 표시됩니다.
 
 ### <a name="settle-outstanding-charges-for-marketplace-and-reservation-purchases"></a>Marketplace 및 예약 구매의 미결제 요금 정산

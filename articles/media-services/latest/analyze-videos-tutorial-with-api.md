@@ -10,15 +10,15 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
-ms.date: 06/19/2019
+ms.date: 02/02/2020
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: f803bcafb1966e32e894b4caeaa8fafb5f73e8e7
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: abd4a3a3a3e8494ea325e65a78eea7fb56b78f94
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74186277"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988365"
 ---
 # <a name="tutorial-analyze-videos-with-media-services-v3"></a>자습서: Media Services v3으로 비디오 분석
 
@@ -38,7 +38,11 @@ ms.locfileid: "74186277"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="compliance-privacy-and-security"></a>규정 준수, 개인 정보 보호 및 보안
+ 
+중요한 알림을 사용하는 경우 Video Indexer 사용 시 적용 가능한 모든 법률을 준수해야 하며, 다른 사용자의 권리를 위반하거나 다른 사용자에게 해로운 방법으로 Video Indexer 또는 다른 Azure 서비스를 사용해서는 안 됩니다. 처리 및 저장을 위해 Video Indexer 서비스에 모든 생체 인식 데이터를 비롯한 비디오를 업로드하려면, 비디오에 나온 모든 사람들의 적절한 동의를 비롯한 적절한 권한이 모두 있어야 합니다. Video Indexer의 규정 준수, 개인 정보 보호 및 보안에 대해 알아보려면 Microsoft [Cognitive Services 약관](https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/)을 참조하세요. Microsoft의 개인 정보 보호 의무 및 데이터 처리에 대한 내용은 Microsoft의 [개인정보처리방침](https://privacy.microsoft.com/PrivacyStatement), [Online Services 사용 약관](https://www.microsoft.com/licensing/product-licensing/products)(“OST”) 및 [Data Processing 추록](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=67)(“DPA”)을 검토하세요. 데이터 보존, 삭제/소멸을 비롯한 추가 개인 정보 보호 정보는 OST 및 [여기](../video-indexer/faq.md)에서 사용할 수 있습니다. Video Indexer를 사용하면 Cognitive Services 사용 약관, OST, DPA 및 개인정보처리방침에 따라 바인딩되는 것에 동의합니다.
+
+## <a name="prerequisites"></a>사전 요구 사항
 
 - Visual Studio가 설치되지 않은 경우 [Visual Studio Community 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15)을 받습니다.
 - [Media Services 계정 만들기](create-account-cli-how-to.md)<br/>리소스 그룹 이름 및 Media Services 계정 이름에 사용한 값을 기억해 두세요.

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 11/04/2019
-ms.openlocfilehash: 3d6439424f2a39bf5b5477cebd5fadb23a6370b0
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: ec2d9152bf8d3d7c60f00e902f155212ee1b81cc
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76984815"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169825"
 ---
 #  <a name="what-are-compute-targets-in-azure-machine-learning"></a>Azure Machine Learning에서 계산 대상 이란? 
 
@@ -50,16 +50,12 @@ Azure Machine Learning에서 관리 되는 계산 리소스를 만들고 관리 
 
 에서 계산 인스턴스 (미리 보기) 또는 계산 클러스터 Azure Machine Learning 만들 수 있습니다.
 
-| | Azure Machine Learning Studio | Azure Portal | SDK | Resource Manager 템플릿 | CLI |
+| | Azure Machine Learning Studio | Azure portal | SDK) | Resource Manager 템플릿 | CLI |
 |---| ----- | ----- | ----- | ----- | ----- |
 | 컴퓨팅 인스턴스 | 예 | 예 | 예 | 예 |  |
 | 계산 클러스터 | 예 | 예 | 예 | 예 | 예 |
 
 이러한 계산 리소스는 생성 될 때 다른 종류의 계산 대상과 달리 자동으로 작업 영역에 포함 됩니다.
-
-> [!NOTE]
-> 계산 인스턴스는 **미국 중 북부**, **미국 동부 2**, **북아메리카 유럽** 또는 **영국 남부**지역이 포함 된 작업 영역에만 사용할 수 있으며 곧 제공 되는 다른 지역에 대 한 지원을 제공 합니다.
->작업 영역이 다른 지역에 있으면 [Notebook VM](concept-compute-instance.md#notebookvm)을 계속 만들어 사용할 수 있습니다. 
 
 ### <a name="compute-clusters"></a>컴퓨팅 클러스터
 
@@ -78,6 +74,6 @@ Azure Machine Learning에서 관리 되는 계산 리소스를 만들고 관리 
 
 ## <a name="next-steps"></a>다음 단계
 
-방법 알아보기
+방법 배우기:
 * [모델 학습을 위한 계산 대상 설정](how-to-set-up-training-targets.md)
 * [계산 대상에 모델 배포](how-to-deploy-and-where.md)

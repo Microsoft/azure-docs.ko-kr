@@ -14,12 +14,12 @@ ms.date: 12/10/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur, lenalepa, sureshja
 ms.custom: aaddev
-ms.openlocfilehash: 7e19e9067052c516427391adcc615767446c4049
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 197379b5edd3f59c83c557590445fc5dac8fc43a
+ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76697152"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77212238"
 ---
 # <a name="how-to-sign-in-any-azure-active-directory-user-using-the-multi-tenant-application-pattern"></a>방법: 다중 테넌트 애플리케이션 패턴을 사용하여 Azure Active Directory 사용자 로그인
 
@@ -134,7 +134,7 @@ Microsoft id 플랫폼은/common 끝점에서 요청을 받으면 사용자에 �
 
 #### <a name="multiple-tiers-in-a-single-tenant"></a>단일 테 넌 트의 여러 계층
 
-논리 애플리케이션이 예를 들어 별도의 클라이언트와 리소스와 같은 두 개 이상의 애플리케이션 등록으로 구성되어 있다면 이것이 문제일 수 있습니다. 우선 리소스를 고객 테넌트에 가져가려면 어떻게 해야 합니까? Azure AD에서는 클라이언트와 리소스를 한 번에 승인하여 이 문제를 해결합니다. 동의 페이지에서 클라이언트와 리소스 모두에서 요청한 전체 사용 권한을 사용자에게 표시합니다. 이 동작을 사용 하도록 설정 하려면 리소스의 응용 프로그램 등록에 클라이언트의 앱 ID가 [응용 프로그램 매니페스트에][AAD-App-Manifest]`knownClientApplications` 포함 되어야 합니다. 예:
+논리 애플리케이션이 예를 들어 별도의 클라이언트와 리소스와 같은 두 개 이상의 애플리케이션 등록으로 구성되어 있다면 이것이 문제일 수 있습니다. 우선 리소스를 고객 테넌트에 가져가려면 어떻게 해야 합니까? Azure AD에서는 클라이언트와 리소스를 한 번에 승인하여 이 문제를 해결합니다. 동의 페이지에서 클라이언트와 리소스 모두에서 요청한 전체 사용 권한을 사용자에게 표시합니다. 이 동작을 사용 하도록 설정 하려면 리소스의 응용 프로그램 등록에 클라이언트의 앱 ID가 [응용 프로그램 매니페스트에][AAD-App-Manifest]`knownClientApplications` 포함 되어야 합니다. 다음은 그 예입니다.
 
     knownClientApplications": ["94da0930-763f-45c7-8d26-04d5938baab2"]
 
@@ -176,7 +176,7 @@ Microsoft 이외의 조직에서 빌드한 API의 경우, API 개발자는 고�
 
 ## <a name="related-content"></a>관련 콘텐츠
 
-* [다중 테 넌 트 응용 프로그램 샘플](https://docs.microsoft.com/samples/browse/?products=azure-active-directory)
+* [다중 테 넌 트 응용 프로그램 샘플](https://github.com/mspnp/multitenant-saas-guidance)
 * [응용 프로그램에 대 한 브랜딩 지침][AAD-App-Branding]
 * [응용 프로그램 개체 및 서비스 주체 개체][AAD-App-SP-Objects]
 * [Azure Active Directory와 애플리케이션 통합][AAD-Integrating-Apps]

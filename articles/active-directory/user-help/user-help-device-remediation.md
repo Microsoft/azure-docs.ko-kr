@@ -13,12 +13,12 @@ ms.date: 10/10/2018
 ms.author: curtand
 ms.reviewer: jairoc
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: d29168f154c80eb2c66d0316f773375325ded67f
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 2484de4e554d16ba049d206981a44654ede28a3f
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77062186"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190035"
 ---
 # <a name="possible-fixes-for-the-you-cant-get-there-from-here-error-message"></a>"여기에서 가져올 수 없습니다." 오류 메시지에 대 한 가능한 해결 방법
 
@@ -29,7 +29,7 @@ ms.locfileid: "77062186"
 
 ![브라우저 지원과 관련된 오류 메시지](media/user-help-device-remediation/browser-version.png)
 
-이 문제를 해결하려면 사용 중인 운영 체제에 따라 지원되는 브라우저를 설치하고 실행해야 합니다. Windows 10을 사용하는 경우 지원되는 브라우저에는 Microsoft Edge, Internet Explorer 및 Google Chrome이 포함됩니다. 다른 운영 체제를 사용하는 경우 [지원되는 브라우저](../conditional-access/technical-reference.md#supported-browsers) 전체 목록을 확인할 수 있습니다.
+이 문제를 해결하려면 사용 중인 운영 체제에 따라 지원되는 브라우저를 설치하고 실행해야 합니다. Windows 10을 사용하는 경우 지원되는 브라우저에는 Microsoft Edge, Internet Explorer 및 Google Chrome이 포함됩니다. 다른 운영 체제를 사용하는 경우 [지원되는 브라우저](../conditional-access/concept-conditional-access-conditions.md#supported-browsers) 전체 목록을 확인할 수 있습니다.
 
 ## <a name="make-sure-youre-using-a-supported-operating-system"></a>지원되는 운영 체제를 사용하고 있는지 확인
 다음을 포함하여 지원되는 운영 체제 버전을 실행하고 있는지 확인합니다.

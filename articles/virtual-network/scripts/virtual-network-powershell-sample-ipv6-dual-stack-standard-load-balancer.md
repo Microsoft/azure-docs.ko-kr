@@ -1,25 +1,24 @@
 ---
-title: Azure PowerShell 스크립트 샘플-표준 Load Balancer를 사용 하 여 IPv6 가상 네트워크 끝점 구성 (미리 보기)
+title: Azure PowerShell 스크립트 샘플-표준 Load Balancer를 사용 하 여 IPv6 프런트 엔드 구성 (미리 보기)
 titlesuffix: Azure Virtual Network
 description: Azure Virtual Network에서 Powershell을 사용 하 여 IPv6 끝점 사용
 services: virtual-network
 documentationcenter: na
 author: KumudD
-manager: twooley
 ms.service: virtual-network
 ms.devlang: NA
 ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 07/15/2019
 ms.author: kumud
-ms.openlocfilehash: fc5bc23ffec0956cb53e62f0cd14d7135d5fbcca
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 24d25813a5cafc98f04d3daef2803aa44acc7f69
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68269703"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201325"
 ---
-# <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-with-standard-load-balancerpreview"></a>표준 Load Balancer를 사용 하 여 가상 네트워크 스크립트 샘플에서 IPv6 끝점 구성 (미리 보기)
+# <a name="configure-ipv6-frontend-in-virtual-network-script-sample-with-standard-load-balancerpreview"></a>표준 Load Balancer를 사용 하 여 가상 네트워크 스크립트 샘플에서 IPv6 프런트 엔드 구성 (미리 보기)
 
 이 문서에서는 이중 스택 서브넷을 사용 하는 이중 스택 (IPv4 + IPv6) 응용 프로그램을 포함 하는 Azure의 이중 스택 (ipv4 + IPv6) 응용 프로그램을 배포 하는 방법을 보여 줍니다. 이중 IP 구성이 있는 Nic를 사용 하는 Vm과 이중 (IPv4 + IPv6) 프런트 엔드 구성이 포함 된 부하 분산 장치를 포함 합니다. 이중 네트워크 보안 그룹 규칙 및 이중 공용 Ip
 
@@ -27,7 +26,7 @@ Azure [Cloud Shell](https://shell.azure.com/powershell) 또는 로컬 PowerShell
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 Azure에서 이중 스택 응용 프로그램을 배포 하기 전에 다음 Azure PowerShell 사용 하 여이 미리 보기 기능에 대해 구독을 한 번만 구성 해야 합니다.
 
 다음과 같이 등록 합니다.
@@ -250,7 +249,7 @@ Remove-AzResourceGroup -Name <resourcegroupname> -Force
 
 이 스크립트는 다음 명령을 사용하여 리소스 그룹, 가상 머신, 가용성 집합, 부하 분산 장치 및 모든 관련된 리소스를 만듭니다. 테이블에 있는 각 명령은 명령에 해당하는 문서에 연결됩니다.
 
-| 명령 | 참고 |
+| 명령 | 메모 |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | 모든 리소스가 저장되는 리소스 그룹을 만듭니다. |
 | [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig) | 서브넷 구성을 만듭니다. 이 구성은 가상 네트워크 만들기 프로세스에서 사용됩니다. |

@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
-author: xiaoharper
-ms.author: amlstudiodocs
+author: likebupt
+ms.author: keli19
 ms.custom: seodec18
 ms.date: 03/14/2017
-ms.openlocfilehash: 494141cc580d80ff1d025228406d53f9788b5d97
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 6c672e57c0c1c0b62b79afbacec3f842770e3d61
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73837748"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169241"
 ---
 # <a name="debug-your-model-in-azure-machine-learning-studio-classic"></a>Azure Machine Learning Studio에서 모델 디버그 (클래식)
 

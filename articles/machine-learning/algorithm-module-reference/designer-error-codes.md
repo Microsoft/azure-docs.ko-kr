@@ -6,19 +6,19 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 12/03/2019
-ms.openlocfilehash: a6aeb4022ee7cbce465f88a246303f80acfb883b
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: cf343773695275bc5600ab59e1cd719374d65700
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76311668"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152366"
 ---
-# <a name="exceptions-and-error-codes-for-the-designer"></a>디자이너에 대 한 예외 및 오류 코드
+# <a name="exceptions-and-error-codes-for-the-designer-preview"></a>디자이너에 대 한 예외 및 오류 코드 (미리 보기)
 
-이 문서에서는 Machine Learning 파이프라인 문제를 해결 하는 데 도움이 되는 Azure Machine Learning 디자이너의 오류 메시지 및 예외 코드를 설명 합니다.
+이 문서에서는 Machine Learning 파이프라인 문제를 해결 하는 데 도움이 되는 Azure Machine Learning designer (미리 보기)의 오류 메시지 및 예외 코드를 설명 합니다.
 
 디자이너에서 오류 메시지의 전체 텍스트를 가져오는 방법에는 다음 두 가지가 있습니다.  
 
@@ -245,7 +245,7 @@ Blob에 대 한 전체 경로가 지정 된 경우 경로는 **컨테이너/blob
 특수화 된 학습 모듈을 사용 하 여 모델을 학습 한 경우 학습 된 모델을 해당 하는 특수 점수 매기기 모듈에만 연결 합니다. 
 
 
-|모델 유형|학습 모듈| 점수 매기기 모듈|
+|모델 형식|학습 모듈| 점수 매기기 모듈|
 |----|----|----|
 |모든 분류자|[모델 학습](train-model.md) |[모델 점수 매기기](score-model.md)|
 |모든 회귀 모델|[모델 학습](train-model.md) |[모델 점수 매기기](score-model.md)|
@@ -348,7 +348,7 @@ Blob에 대 한 전체 경로가 지정 된 경우 경로는 **컨테이너/blob
 ## <a name="error-0018"></a>오류 0018  
  입력 데이터 집합이 올바르지 않으면 예외가 발생합니다.  
 
-**해결 방법:** Azure Machine Learning에서이 오류는 여러 컨텍스트에 나타날 수 있으므로 단일 해결 방법이 없습니다. 일반적으로이 오류는 모듈에 대 한 입력으로 제공 된 데이터의 열 수가 잘못 되었거나 데이터 형식이 모듈의 요구 사항과 일치 하지 않음을 나타냅니다. 예를 들어 다음과 같은 가치를 제공해야 합니다.  
+**해결 방법:** Azure Machine Learning에서이 오류는 여러 컨텍스트에 나타날 수 있으므로 단일 해결 방법이 없습니다. 일반적으로이 오류는 모듈에 대 한 입력으로 제공 된 데이터의 열 수가 잘못 되었거나 데이터 형식이 모듈의 요구 사항과 일치 하지 않음을 나타냅니다. 예를 들면 다음과 같습니다.  
 
 -   모듈에 레이블 열이 필요 하지만 레이블로 표시 된 열이 없거나 레이블 열을 아직 선택 하지 않았습니다.  
   
@@ -363,7 +363,7 @@ Blob에 대 한 전체 경로가 지정 된 경우 경로는 **컨테이너/blob
 
  요구 사항과 데이터의 방법에 대해 알아보려면 데이터 집합을 입력으로 사용 하는 모듈에 대 한 도움말 항목을 검토 하십시오.  
 
- <!--We also recommend that you use [Summarize Data](summarize-data.md) or [Compute Elementary Statistics](compute-elementary-statistics.md) to profile your data, and use these modules to fix metadata and clean values: [Edit Metadata](edit-metadata.md) and [Clean Missing Data](clean-missing-data.md), [Clip Values](clip-values.md)-->을 선택합니다.  
+ <!--We also recommend that you use [Summarize Data](summarize-data.md) or [Compute Elementary Statistics](compute-elementary-statistics.md) to profile your data, and use these modules to fix metadata and clean values: [Edit Metadata](edit-metadata.md) and [Clean Missing Data](clean-missing-data.md), [Clip Values](clip-values.md)-->.  
 
 |예외 메시지|
 |------------------------|
@@ -427,7 +427,7 @@ Blob에 대 한 전체 경로가 지정 된 경우 경로는 **컨테이너/blob
 ## <a name="error-0022"></a>오류 0022  
  입력 데이터 집합에서 선택한 열의 수가 필요한 수와 같지 않으면 예외가 발생합니다.  
 
- 이 오류는 다운스트림 모듈이 나 작업에 특정 개수의 열 또는 입력이 필요한 경우 Azure Machine Learning에 발생할 수 있으며 너무 적거나 너무 많은 열 이나 입력을 제공한 경우에 발생할 수 있습니다. 예를 들어 다음과 같은 가치를 제공해야 합니다.  
+ 이 오류는 다운스트림 모듈이 나 작업에 특정 개수의 열 또는 입력이 필요한 경우 Azure Machine Learning에 발생할 수 있으며 너무 적거나 너무 많은 열 이나 입력을 제공한 경우에 발생할 수 있습니다. 예를 들면 다음과 같습니다.  
 
 -   단일 레이블 열 또는 키 열을 지정 하 고 여러 열을 실수로 선택 했습니다.  
   
@@ -507,7 +507,7 @@ Blob에 대 한 전체 경로가 지정 된 경우 경로는 **컨테이너/blob
 ## <a name="error-0026"></a>오류 0026  
  이름이 같은 열이 허용 되지 않으면 예외가 발생 합니다.  
 
- 이 오류는 여러 열 이름이 같은 경우 발생 합니다 Azure Machine Learning. 이 오류가 발생 하는 한 가지 방법은 데이터 집합에 머리글 행이 없고 열 이름이 자동으로 할당 되는 경우입니다. Col0, Col1 등  
+ 이 오류는 여러 열 이름이 같은 경우 발생 합니다 Azure Machine Learning. 이 오류가 발생 하는 한 가지 방법은 데이터 집합에 머리글 행이 없고 열 이름이 자동으로 할당 되는 경우 (Col0, Col1 등)입니다.  
 
 **해결 방법:** 열 이름이 같은 경우 입력 데이터 집합과 모듈 사이에 [메타 데이터 편집](edit-metadata.md) 모듈을 삽입 합니다. [메타 데이터 편집](edit-metadata.md) 에서 열 선택기를 사용 하 여 이름을 바꿀 열을 선택 하 고 새 **열 이름** 텍스트 상자에 새 이름을 입력 합니다.  
 
@@ -1095,14 +1095,14 @@ For general information about how the Matchbox recommendation algorithm works, a
 
  모듈 예외에 의해 보고 된 SQL 생성 메시지가 있는 경우 보고 된 오류에 따라 동작을 수행 합니다. 예를 들어 오류 메시지에는 가능한 오류에 대 한 특정 지침이 포함 되어 있을 수 있습니다.
 + 열 이름을 잘못 입력 했을 수 있음을 나타내는 *이러한 열 또는 누락 된 데이터베이스가 없습니다*. 열 이름이 올바른지 확신할 수 없으면 대괄호 또는 따옴표를 사용 하 여 열 식별자를 묶습니다.
-+ *\<sql 키워드\>근처 *에서 구문 오류가 발생할 수 있음을 나타내는 sql 논리 오류가 발생 했습니다.
++ *\<sql 키워드\>근처* 에서 구문 오류가 발생할 수 있음을 나타내는 sql 논리 오류가 발생 했습니다.
 
   
 |예외 메시지|
 |------------------------|
 |SQL 스크립트가 잘못되었습니다.|
 |SQL 쿼리 "{0}"이 (가) 올바르지 않습니다.|
-|SQL 쿼리 "{0}"이 (가) 올바르지 않습니다.{1}.|
+|SQL 쿼리 "{0}"이 (가) 올바르지 않습니다{1}.|
 
 
 ## <a name="error-0070"></a>오류 0070  

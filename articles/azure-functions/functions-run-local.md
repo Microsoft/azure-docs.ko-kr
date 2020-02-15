@@ -5,12 +5,12 @@ ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: 4eafd0fbaed067a0852edea010408a1d82353392
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: dd36895a34b36bbdf8e796cf629ab031613663cd
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76277971"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77208885"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Azure Functions 핵심 도구 작업
 
@@ -33,9 +33,9 @@ Azure Functions 핵심 도구를 사용하여 명령 프롬프트 또는 터미�
 
 Azure Functions Core Tools에는 세 가지 버전이 있습니다. 사용 중인 버전은 로컬 개발 환경, [선택한 언어](supported-languages.md) 및 필요한 지원 수준에 따라 달라집니다.
 
-+ **버전**1.x: Azure Functions 런타임의 버전 1.X를 지원 합니다. 이 버전의 도구는 Windows 컴퓨터에서만 지원되며 [npm 패키지](https://www.npmjs.com/package/azure-functions-core-tools)에서 설치됩니다.
++ **버전**1.x: 에서는 Azure Functions 런타임 버전 1.x를 지원 합니다. 이 버전의 도구는 Windows 컴퓨터에서만 지원되며 [npm 패키지](https://www.npmjs.com/package/azure-functions-core-tools)에서 설치됩니다.
 
-+ [**버전 2.x/** ](#v2)2.x:는 [Azure Functions 런타임의 버전 2.x 또는](functions-versions.md)3.x를 지원 합니다. 이러한 버전은 [Windows](/azure/azure-functions/functions-run-local?tabs=windows#v2), [Macos](/azure/azure-functions/functions-run-local?tabs=macos#v2)및 [Linux](/azure/azure-functions/functions-run-local?tabs=linux#v2) 를 지원 하 고 플랫폼별 패키지 관리자 또는 npm를 사용 하 여 설치 합니다.
++ [**버전 2.x/3(sp3)** ](#v2): 는 [Azure Functions 런타임의 버전 2.x 또는 3(sp3)을](functions-versions.md)지원 합니다. 이러한 버전은 [Windows](/azure/azure-functions/functions-run-local?tabs=windows#v2), [Macos](/azure/azure-functions/functions-run-local?tabs=macos#v2)및 [Linux](/azure/azure-functions/functions-run-local?tabs=linux#v2) 를 지원 하 고 플랫폼별 패키지 관리자 또는 npm를 사용 하 여 설치 합니다.
 
 별도로 언급 하지 않는 한이 문서의 예는 버전 2.x에 대 한 것입니다.
 
@@ -354,12 +354,12 @@ func host start
 | **`--cors-credentials`** | 원본 간 인증된 요청(즉, 쿠키 및 인증 헤더)을 허용하며, 버전 2.x 전용입니다. |
 | **`--cors`** | CORS 원본의 공백 없이 쉼표로 구분된 목록입니다. |
 | **`--language-worker`** | 언어 작업자를 구성하는 인수입니다. 예를 들어 [디버그 포트 및 기타 필수 인수](https://github.com/Azure/azure-functions-core-tools/wiki/Enable-Debugging-for-language-workers)를 제공 하 여 언어 작업자에 대해 디버깅을 사용 하도록 설정할 수 있습니다. 버전 2.x 전용입니다. |
-| **`--nodeDebugPort`** , **`-n`** | 사용할 node.js 디버거의 포트입니다. 기본값: launch.json 값 또는 5858 버전 1.x 전용입니다. |
+| **`--nodeDebugPort`** , **`-n`** | 사용할 node.js 디버거의 포트입니다. 기본값: launch.json 값 또는 5858. 버전 1.x 전용입니다. |
 | **`--password`** | .pfx 파일에 대한 암호가 포함된 암호 또는 파일입니다. `--cert`을 통해서만 사용됩니다. 버전 2.x 전용입니다. |
-| **`--port`** , **`-p`** | 수신 대기할 로컬 포트입니다. 기본값: 7071 |
+| **`--port`** , **`-p`** | 수신 대기할 로컬 포트입니다. 기본값: 7071. |
 | **`--pause-on-error`** | 프로세스를 종료하기 전에 추가 입력에 대해 일시 중지합니다. IDE(통합 개발 환경)에서 Core Tools를 시작할 때만 사용됩니다.|
 | **`--script-root`** , **`--prefix`** | 실행하거나 배포할 함수 앱의 루트 경로를 지정하는 데 사용됩니다. 하위 폴더에 프로젝트 파일을 생성하는 컴파일된 프로젝트용으로 사용됩니다. 예를 들어 C# 클래스 라이브러리 프로젝트를 작성할 때는 `MyProject/bin/Debug/netstandard2.0`과 같은 경로를 사용하여 *root* 하위 폴더에 host.json, local.settings.json 및 function.json 파일이 생성됩니다. 이 경우 접두사를 `--script-root MyProject/bin/Debug/netstandard2.0`으로 설정합니다. 이 접두사는 Azure에서 실행할 때의 함수 앱 루트입니다. |
-| **`--timeout`** , **`-t`** | Functions 호스트를 시작할 제한 시간(초)입니다. 기본값: 20초|
+| **`--timeout`** , **`-t`** | Functions 호스트를 시작할 제한 시간(초)입니다. 기본값: 20초.|
 | **`--useHttps`** | `http://localhost:{port}`가 아닌 `https://localhost:{port}`에 바인딩합니다. 기본적으로 이 옵션은 사용자 컴퓨터에 신뢰할 수 있는 인증서를 만듭니다.|
 
 Functions 호스트가 시작되면 HTTP 트리거 함수의 URL이 출력됩니다.
@@ -373,7 +373,7 @@ Http Function MyHttpTrigger: http://localhost:7071/api/MyHttpTrigger
 ```
 
 >[!IMPORTANT]
->로컬로 실행 하는 경우 HTTP 끝점에 대 한 권한 부여는 적용 되지 않습니다. 즉, 모든 로컬 HTTP 요청은 `authLevel = "anonymous"`로 처리됩니다. 자세한 내용은 [HTTP 바인딩 문서](functions-bindings-http-webhook.md#authorization-keys)를 참조하세요.
+>로컬로 실행 하는 경우 HTTP 끝점에 대 한 권한 부여는 적용 되지 않습니다. 즉, 모든 로컬 HTTP 요청은 `authLevel = "anonymous"`로 처리됩니다. 자세한 내용은 [HTTP 바인딩 문서](functions-bindings-http-webhook-trigger.md#authorization-keys)를 참조하세요.
 
 ### <a name="passing-test-data-to-a-function"></a>테스트 데이터를 함수에 전달
 

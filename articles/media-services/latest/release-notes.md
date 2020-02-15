@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 12/13/2019
+ms.date: 02/03/2020
 ms.author: juliako
-ms.openlocfilehash: b3d5e1f814a8eb083ab01623051f1b5b3723a9f1
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: e5bf99e2ea84f41054ff57d08882bfa8ab4d6be5
+ms.sourcegitcommit: d12880206cf9926af6aaf3bfafda1bc5b0ec7151
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77049638"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77114232"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Azure Media Services v3 릴리스 정보
 
@@ -35,14 +35,33 @@ ms.locfileid: "77049638"
 > 현재는 Azure Portal을 사용하여 v3 리소스를 관리할 수 없습니다. [REST API](https://aka.ms/ams-v3-rest-sdk), CLI 또는 지원되는 SDK 중 하나를 사용하세요.
 
 자세한 내용은 [Media Services v2에서 v3로 이동하기 위한 마이그레이션 지침](migrate-from-v2-to-v3.md#known-issues)을 참조하세요.
-
+ 
 ## <a name="january-2020"></a>2020년 1월
 
 ### <a name="improvements-in-media-processors"></a>미디어 프로세서의 향상 된 기능
 
 - 비디오 분석에서 인터레이스 소스에 대 한 향상 된 지원 – 이러한 콘텐츠는 이제 유추 엔진으로 전송 되기 전에 올바르게 인터레이스 되지 않습니다.
 - "최상" 모드로 미리 보기를 생성할 때 인코더는 이제 30 초 이상 검색 하 여 단색이 아닌 프레임을 선택 합니다.
- 
+
+### <a name="azure-government-cloud-updates"></a>Azure Government 클라우드 업데이트
+
+다음 Azure Government 지역에서 GA'ed을 Media Services. *미국 정부 애리조나* 및 *미국 정부 텍사스*.
+
+## <a name="december-2019"></a>2019년 12월
+
+라이브 및 비디오 주문형 스트리밍 모두에 대해 *원본 지원 프리페치* 헤더에 대 한 CDN 지원이 추가 되었습니다. Akamai CDN을 사용 하 여 직접 계약을 체결 한 고객에 게 제공 됩니다. 원본-지원 CDN-프리페치 기능은 Akamai CDN과 Azure Media Services 원본 간의 다음 HTTP 헤더 교환을 포함 합니다.
+
+|HTTP 헤더|값|보낸 사람|받는 사람|목적|
+| ---- | ---- | ---- | ---- | ----- |
+|CDN-원본-지원-프리페치-사용 | 1 (기본값) 또는 0 |CDN|원본|CDN에서 프리페치를 사용 하도록 지정 하려면|
+|CDN-지원-프리페치-경로| 예제: <br/>조각 (video = 1400000000, format = mpd-cmaf)|원본|CDN|CDN에 프리페치 경로를 제공 하려면|
+|CDN-원본-지원-프리페치-요청|1 (프리페치 요청) 또는 0 (일반 요청)|CDN|원본|CDN의 요청이 프리페치 임을 나타내려면|
+
+작업 중인 헤더 exchange의 일부를 확인 하려면 다음 단계를 수행 합니다.
+
+1. Postman 또는 말아를 사용 하 여 오디오 또는 비디오 세그먼트 또는 조각에 대 한 Media Services 원본에 요청을 발급 합니다. 요청에 CDN-원본-지원-프리페치 사용: 1 헤더를 추가 해야 합니다.
+2. 응답에는 상대 경로를 해당 값으로 사용 하는 헤더 (CDN-원본-지원-프리페치 경로)가 표시 됩니다.
+
 ## <a name="november-2019"></a>2019년 11월
 
 ### <a name="live-transcription-preview"></a>라이브 기록 미리 보기

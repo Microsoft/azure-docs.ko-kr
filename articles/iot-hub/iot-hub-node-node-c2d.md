@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: javascript
 ms.topic: conceptual
 ms.date: 06/16/2017
-ms.openlocfilehash: ba14a6bb9e234a5eae34232fc617f8b04284cd4f
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: 8071ddbc5f6073598daf0a08d359ccd19ccd1e4a
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147472"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110796"
 ---
 # <a name="send-cloud-to-device-messages-with-iot-hub-nodejs"></a>IoT Hub (node.js)를 사용 하 여 클라우드-장치 메시지 보내기
 
@@ -42,11 +42,13 @@ Azure IoT Hub는 수백만 개의 디바이스와 솔루션 백 엔드 간에 �
 > IoT Hub에는 Azure IoT 장치 Sdk를 통해 많은 장치 플랫폼 및 언어 (C, Java, Python 및 Javascript 포함)에 대 한 SDK 지원이 있습니다. 이 자습서의 코드 및 일반적으로 Azure IoT Hub에 디바이스를 연결하는 방법에 대한 단계별 지침은 [Azure IoT 개발자 센터](https://azure.microsoft.com/develop/iot)를 참조하세요.
 >
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Node.js 버전 10.0. x 이상 [개발 환경 준비](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) Windows 또는 Linux에서이 자습서에 대 한 node.js를 설치 하는 방법을 설명 합니다.
 
 * 활성 Azure 계정. 계정이 없는 경우 몇 분 만에 [무료 계정](https://azure.microsoft.com/pricing/free-trial)을 만들 수 있습니다.
+
+* 방화벽에서 포트 8883가 열려 있는지 확인 합니다. 이 문서의 device 샘플에서는 포트 8883을 통해 통신 하는 MQTT 프로토콜을 사용 합니다. 이 포트는 일부 회사 및 교육용 네트워크 환경에서 차단 될 수 있습니다. 이 문제를 해결 하는 방법 및 방법에 대 한 자세한 내용은 [IoT Hub에 연결 (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub)을 참조 하세요.
 
 ## <a name="receive-messages-in-the-simulated-device-app"></a>시뮬레이션된 디바이스 앱에서 메시지 수신
 
@@ -54,7 +56,7 @@ Azure IoT Hub는 수백만 개의 디바이스와 솔루션 백 엔드 간에 �
 
 1. 텍스트 편집기를 사용 하 여 **SimulatedDevice** 파일을 엽니다. 이 파일은 [장치에서 iot hub로 원격 분석 전송 빠른 시작](quickstart-send-telemetry-node.md) 에서 다운로드 한 node.js 샘플 코드의 루트 폴더에 있는 **iot-hub\Quickstarts\simulated-device** 폴더에 있습니다.
 
-2. IoT Hub에서 보낸 메시지를 수신 하려면 장치 클라이언트에 처리기를 등록 합니다. 다음 코드 조각과 같이 `client.on` 장치 클라이언트를 만드는 줄 바로 뒤에에 대 한 호출을 추가 합니다.
+2. IoT Hub에서 보낸 메시지를 수신 하려면 장치 클라이언트에 처리기를 등록 합니다. 다음 코드 조각과 같이 장치 클라이언트를 만든 줄 바로 뒤에 `client.on`에 대 한 호출을 추가 합니다.
 
     ```javascript
     var client = DeviceClient.fromConnectionString(connectionString, Mqtt);
@@ -101,7 +103,7 @@ Azure IoT Hub는 수백만 개의 디바이스와 솔루션 백 엔드 간에 �
 
 3. 텍스트 편집기를 사용하여 **sendcloudtodevicemessage** 폴더에 **SendCloudToDeviceMessage.js** 파일을 만듭니다.
 
-4. **SendCloudToDeviceMessage.js** 파일 앞에 다음 `require` 문을 추가합니다.
+4. `require`SendCloudToDeviceMessage.js**파일 앞에 다음** 문을 추가합니다.
 
     ```javascript
     'use strict';

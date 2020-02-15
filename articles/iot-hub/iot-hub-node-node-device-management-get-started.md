@@ -8,12 +8,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 08/20/2019
-ms.openlocfilehash: 98ec53d384186968d69c3f84cdfa12fbdbe92b71
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: 5b2e4c03347020b5d5fc67927165403f06854e0b
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147442"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110925"
 ---
 # <a name="get-started-with-device-management-nodejs"></a>장치 관리 시작 (node.js)
 
@@ -33,11 +33,13 @@ ms.locfileid: "70147442"
 
 * **dmpatterns_getstarted_service.js**, 시뮬레이션된 디바이스 앱에 직접 메서드를 호출하고 응답을 표시하고 업데이트된 reported 속성을 표시합니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Node.js 버전 10.0. x 이상 [개발 환경 준비](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) Windows 또는 Linux에서이 자습서에 대 한 node.js를 설치 하는 방법을 설명 합니다.
 
 * 활성 Azure 계정. 계정이 없는 경우 몇 분 만에 [무료 계정](https://azure.microsoft.com/pricing/free-trial/)을 만들 수 있습니다.
+
+* 방화벽에서 포트 8883가 열려 있는지 확인 합니다. 이 문서의 device 샘플에서는 포트 8883을 통해 통신 하는 MQTT 프로토콜을 사용 합니다. 이 포트는 일부 회사 및 교육용 네트워크 환경에서 차단 될 수 있습니다. 이 문제를 해결 하는 방법 및 방법에 대 한 자세한 내용은 [IoT Hub에 연결 (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub)을 참조 하세요.
 
 ## <a name="create-an-iot-hub"></a>IoT Hub 만들기
 
@@ -80,7 +82,7 @@ ms.locfileid: "70147442"
     var Protocol = require('azure-iot-device-mqtt').Mqtt;
     ```
 
-5. **connectionString** 변수를 추가하고 이 변수를 사용하여 **클라이언트** 인스턴스를 만듭니다.  자리 표시자 `{yourdeviceconnectionstring}` 값을 [IoT hub에서 새 장치 등록](#register-a-new-device-in-the-iot-hub)에서 이전에 복사한 장치 연결 문자열로 바꿉니다.  
+5. **connectionString** 변수를 추가하고 이 변수를 사용하여 **클라이언트** 인스턴스를 만듭니다.  `{yourdeviceconnectionstring}` 자리 표시자 값을 [IoT hub에서 새 장치 등록](#register-a-new-device-in-the-iot-hub)에서 이전에 복사한 장치 연결 문자열로 바꿉니다.  
 
     ```javascript
     var connectionString = '{yourdeviceconnectionstring}';
@@ -180,7 +182,7 @@ ms.locfileid: "70147442"
     var Client = require('azure-iothub').Client;
     ```
 
-5. 다음 변수 선언을 추가 하 고 자리 표시자 `{iothubconnectionstring}` 값을 이전에 [iot hub 연결 문자열 가져오기](#get-the-iot-hub-connection-string)에서 복사한 iot hub 연결 문자열로 바꿉니다.
+5. 다음 변수 선언을 추가 하 고 `{iothubconnectionstring}` 자리 표시자 값을 이전에 [iot hub 연결 문자열 가져오기](#get-the-iot-hub-connection-string)에서 복사한 iot hub 연결 문자열로 바꿉니다.
 
     ```javascript
     var connectionString = '{iothubconnectionstring}';

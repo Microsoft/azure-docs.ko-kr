@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab
 ms.date: 07/16/2019
-ms.openlocfilehash: 81f776428303ad5e6486ba52c1acdf70d051563e
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: 1c1995b4daf3b76abf7663d8d6c1f4cb7b1d6e2b
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75835008"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201682"
 ---
 # <a name="sql-database-managed-instance-frequently-asked-questions-faq"></a>SQL Database 관리 되는 인스턴스 FAQ (질문과 대답)
 
@@ -82,21 +82,11 @@ Azure SQL Database 관리 되는 인스턴스와 온-프레미스 SQL Server 간
 
 데이터베이스가 100 GB 보다 작은 경우에 권장 되는 방법입니다. 데이터베이스의 모든 테이블에 기본 키가 있는 경우 트랜잭션 복제를 사용할 수 있습니다.
 
-## <a name="gen-4-vs-gen-5"></a>Gen 4 및 Gen 5 
-
-**관리 되는 인스턴스에 대해 Gen 4와 Gen 5 하드웨어 생성 중에서 선택할 어떻게 할까요? 있나요?**
-
-특정 유형의 워크 로드에 대 한 일부 하드웨어 생성이 더 적합 하므로 워크 로드에 따라 달라 집니다. 성능 면에서 간소화 하는 것이 복잡 하지만, 워크 로드 성능에 영향을 주는 하드웨어 생성 간의 다음과 같은 차이점이 있습니다.
-- Gen 4는 vCore 프로세서를 기반으로 하는 Gen 5와 실제 프로세서에 기반 하 여 보다 향상 된 계산 지원을 제공 합니다. 계산 집약적 워크 로드에 더 적합할 수 있습니다.
-- Gen 5는 가속화 된 네트워킹을 지원 하므로 원격 저장소에 대 한 IO 대역폭이 향상 됩니다. 범용 서비스 계층에서 IO 집약적 워크 로드에 유용할 수 있습니다. Gen 5는 Gen 4와 비교 하 여 더 빠른 SSD 로컬 디스크를 사용 합니다. 업무상 중요 한 서비스 계층에서 IO를 많이 사용 하는 작업에 유용할 수 있습니다.
-
-특정 사례에서 더 잘 작동 하는 하드웨어 생성을 결정 하기 위해 라이브 전에 프로덕션에 적합 한 실제 워크 로드의 성능을 테스트 하는 것이 좋습니다.
-
 ## <a name="switch-hardware-generation"></a>하드웨어 생성 전환 
 
 **관리 되는 인스턴스 하드웨어 생성을 Gen 4와 Gen 5 online 간에 전환할 수 있나요?**
 
-관리 되는 인스턴스가 프로 비전 되는 지역에서 두 하드웨어 생성을 모두 사용할 수 있는 경우 하드웨어 세대 간에 자동 온라인 전환이 가능 합니다. 이 경우에는 하드웨어 생성 간을 전환 하는 방법을 설명 하는 [블로그 게시물의 스크립트](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/Change-hardware-generation-on-Managed-Instance/ba-p/699824) 를 사용할 수 있습니다.
+관리 되는 인스턴스가 프로 비전 되는 지역에서 두 하드웨어 생성을 모두 사용할 수 있는 경우 하드웨어 세대 간에 자동 온라인 전환이 가능 합니다. 이 경우 하드웨어 세대를 전환 하는 방법을 설명 하는 [Vcore 모델 개요 페이지](sql-database-service-tiers-vcore.md) 를 확인할 수 있습니다.
 
 새 관리 되는 인스턴스가 백그라운드에서 프로 비전 되 고 프로세스가 끝날 때 빠른 장애 조치 (failover)를 사용 하 여 이전 인스턴스와 새 인스턴스 간에 데이터베이스가 자동으로 전송 되기 때문에이 작업은 장기 실행 작업입니다. 
 
@@ -108,8 +98,6 @@ Azure SQL Database 관리 되는 인스턴스와 온-프레미스 SQL Server 간
 **관리 되는 인스턴스의 성능을 조정할 어떻게 할까요? 있나요?**
 
 범용 관리 되는 인스턴스는 성능에 중요 한 데이터 및 로그 파일의 크기 때문에 원격 저장소를 사용 합니다. 자세한 내용은 범용 [Managed Instance 성능에 대 한 로그 파일 크기의 영향](https://medium.com/azure-sqldb-managed-instance/impact-of-log-file-size-on-general-purpose-managed-instance-performance-21ad170c823e)을 참조 하세요.
-
-IO를 많이 사용 하는 워크 로드의 경우 계산 집약적 워크 로드에 대해 gen 4를 사용 하는 것 보다 Gen 5 하드웨어 사용 자세한 내용은 [어떻게 할까요? gen 4와 gen 5 중에서 선택](#gen-4-vs-gen-5)을 참조 하세요.
 
 워크 로드가 많은 작은 트랜잭션으로 구성 된 경우 연결 유형을 프록시에서 리디렉션 모드로 전환 하는 것이 좋습니다.
 
@@ -212,7 +200,7 @@ DNS 구성은 결국 새로 고쳐집니다.
 
 관리 되는 인스턴스가 처음으로 프로 비전 되 면 표준 시간대 구성을 설정할 수 있습니다. 기존 관리 되는 인스턴스의 표준 시간대를 변경 하는 것은 지원 되지 않습니다. 자세한 내용은 [표준 시간대 제한 사항](sql-database-managed-instance-timezone.md#limitations)을 참조 하세요.
 
-해결 방법에는 적절 한 표준 시간대를 사용 하 여 관리 되는 인스턴스를 새로 만든 다음 수동 백업 및 복원을 수행 하거나 권장 사항을 [cross-instance point-in-time restore](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/06/07/cross-instance-point-in-time-restore-in-azure-sql-database-managed-instance/) 수행하는 것이 포함 됩니다.
+해결 방법에는 적절 한 표준 시간대를 사용 하 여 관리 되는 인스턴스를 새로 만든 다음 수동 백업 및 복원을 수행 하거나 권장 사항을 수행 [하는 것](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/06/07/cross-instance-point-in-time-restore-in-azure-sql-database-managed-instance/)이 포함 됩니다.
 
 
 ## <a name="resolve-performance-issues"></a>성능 문제 해결

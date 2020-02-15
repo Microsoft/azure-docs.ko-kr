@@ -11,22 +11,22 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ghogen
-ms.openlocfilehash: 3e246ffe66dca38916d1072c489cf8e3ab265334
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: f139fc8cb59c40ea169e195312326773296b0592
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76700153"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159628"
 ---
 # <a name="add-an-azure-active-directory-by-using-connected-services-in-visual-studio"></a>Visual Studio에서 연결된 서비스를 사용 하 여 Azure Active Directory 추가
 
-Azure AD(Azure Active Directory)를 사용하여 ASP.NET MVC 웹 애플리케이션 또는 웹 API 서비스에서 Active Directory 인증을 위한 SSO(Single Sign-on)을 지원할 수 있습니다. Azure AD 인증을 사용하면 사용자가 Azure Active Directory의 자신의 계정을 사용하여 웹 애플리케이션에 연결할 수 있습니다. 웹 API를 사용하여 Azure AD 인증을 수행하면, 웹 애플리케이션에서 API를 노출할 경우 데이터 보안을 강화할 수 있는 이점이 있습니다. Azure AD를 사용하면, 자체 계정 및 사용자 관리를 사용하는 별도 인증 시스템을 관리할 필요가 없습니다.
+Azure AD(Azure Active Directory)를 사용하여 ASP.NET MVC 웹 애플리케이션 또는 웹 API 서비스에서 Active Directory 인증을 위한 SSO(Single Sign-on)을 지원할 수 있습니다. Azure AD 인증을 사용하면 사용자가 Azure Active Directory의 자신의 계정을 사용하여 웹 애플리케이션에 연결할 수 있습니다. Azure AD 인증의 장점으로 웹 애플리케이션에서 API를 표시하는 경우 향상된 데이터 보안을 들 수 있습니다. Azure AD를 사용하면, 자체 계정 및 사용자 관리를 사용하는 별도 인증 시스템을 관리할 필요가 없습니다.
 
 이 문서 및 함께 제공되는 문서에서는 Active Directory용 Visual Studio 연결된 서비스 기능 사용에 대한 세부 정보를 제공합니다. 이 기능은 Visual Studio 2015 이상에서 사용할 수 있습니다.
 
 현재 Active Directory 연결된 서비스는 ASP.NET Core 애플리케이션을 지원하지 않습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 - Azure 계정: Azure 계정이 없는 경우 [평가판을 등록](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F)하거나 [Visual Studio 구독자 혜택을 활성화](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)할 수 있습니다.
 - **Visual Studio 2015** 이상 [지금 Visual Studio를 다운로드](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)하세요.
@@ -74,4 +74,4 @@ Azure AD(Azure Active Directory)를 사용하여 ASP.NET MVC 웹 애플리케이
 ## <a name="next-steps"></a>다음 단계
 
 - [Azure Active Directory 인증 시나리오](authentication-scenarios.md)
-- [ASP.NET 웹앱에 Microsoft에 로그인 추가](quickstart-v1-aspnet-webapp.md)
+- [ASP.NET 웹앱에 Microsoft에 로그인 추가](quickstart-v2-aspnet-webapp.md)

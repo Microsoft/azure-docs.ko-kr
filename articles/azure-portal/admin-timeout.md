@@ -5,24 +5,24 @@ services: azure-portal
 keywords: 설정, 시간 제한
 author: mgblythe
 ms.author: mblythe
-ms.date: 12/19/2019
+ms.date: 02/10/2020
 ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
-ms.openlocfilehash: 87de67eec9171825a1ebff9ab60782fea8836039
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 950580048f0496fd8436901938a5b6768c61bab6
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76310801"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77132084"
 ---
 # <a name="set-directory-level-inactivity-timeout"></a>디렉터리 수준 비활성 시간 제한 설정
 
-비활성 시간 제한 설정은 사용자가 자신의 워크스테이션을 보호 하는 것을 잊은 경우 리소스를 무단 액세스 로부터 보호 하는 데 도움이 됩니다. 사용자가 잠시 동안 유휴 상태 이면 해당 Azure Portal 세션이 자동으로 로그 아웃 됩니다. 관리자는 세션이 로그 아웃 되기 전에 최대 유휴 시간을 적용할 수 있습니다. 비활성 시간 제한 설정은 디렉터리 수준에서 적용 됩니다. 디렉터리에 대 한 자세한 내용은 [Active Directory Domain Services 개요](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)를 참조 하세요.
+비활성 시간 제한 설정은 사용자가 자신의 워크스테이션을 보호 하는 것을 잊은 경우 리소스를 무단 액세스 로부터 보호 하는 데 도움이 됩니다. 사용자가 잠시 동안 유휴 상태 이면 해당 Azure Portal 세션이 자동으로 로그 아웃 됩니다. [전역 관리자 역할](../active-directory/users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator) 의 관리자는 세션이 로그 아웃 되기 전에 최대 유휴 시간을 적용할 수 있습니다. 비활성 시간 제한 설정은 디렉터리 수준에서 적용 됩니다. 디렉터리에 대 한 자세한 내용은 [Active Directory Domain Services 개요](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)를 참조 하세요.
 
 ## <a name="configure-the-inactive-timeout-setting"></a>비활성 시간 제한 설정 구성
 
-관리자 인 경우 Azure Portal의 모든 사용자에 대해 유휴 시간 제한 설정을 적용 하려면 다음 단계를 수행 합니다.
+전역 관리자 인 경우 Azure Portal의 모든 사용자에 대해 유휴 시간 제한 설정을 적용 하려면 다음 단계를 수행 합니다.
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
 2. 전역 페이지 헤더에서 **설정을** 선택 합니다.

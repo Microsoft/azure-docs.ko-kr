@@ -1,5 +1,5 @@
 ---
-title: '자습서: 코드를 사용하지 않고 Azure Data Explorer에서 모니터링 데이터 수집'
+title: '자습서: 코드 없이 모니터링 데이터 수집 - Azure Data Explorer'
 description: 이 자습서에서는 코드를 사용하지 않고 모니터링 데이터를 Azure Data Explorer에 수집하고 해당 데이터를 쿼리하는 방법을 알아봅니다.
 author: orspod
 ms.author: orspodek
@@ -7,12 +7,12 @@ ms.reviewer: kerend
 ms.service: data-explorer
 ms.topic: tutorial
 ms.date: 01/29/2020
-ms.openlocfilehash: c160f04ef7120a6c90991d8e6ecdf98b2f0d348e
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 24e09f6578431e6b7f2a83be13bae59bf2e707de
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76836562"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76986209"
 ---
 # <a name="tutorial-ingest-and-query-monitoring-data-in-azure-data-explorer"></a>자습서: Azure Data Explorer에서 모니터링 데이터 수집 및 쿼리 
 

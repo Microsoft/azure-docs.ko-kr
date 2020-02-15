@@ -2,14 +2,14 @@
 author: erhopf
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 08/19/2019
+ms.date: 02/10/2020
 ms.author: erhopf
-ms.openlocfilehash: 64c93e5c8e139dbdcfd3faad3a9ac4328fb01972
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: d3e2fa082184ce8de7685d03803360045b89c911
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72391709"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77119779"
 ---
 UWP(유니버설 Windows 플랫폼) 개발에 대한 Visual Studio 프로젝트를 만들려면 Visual Studio 개발 옵션을 설정하고, 대상 아키텍처를 선택하고, 오디오 캡처를 선택하고, Speech SDK를 설치해야 합니다.
 
@@ -25,7 +25,7 @@ UWP(유니버설 Windows 플랫폼) 개발에 대한 Visual Studio 프로젝트�
 
 1. Visual Studio 메뉴 모음에서 **도구** > **도구 및 기능 가져오기**를 선택하여 Visual Studio 설치 관리자를 열고 **수정** 대화 상자를 봅니다.
 
-   ![작업 탭, 수정 대화 상자, Visual Studio 설치 관리자](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-workload.png)
+   ![워크로드 탭, 수정 대화 상자, Visual Studio 설치 관리자](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-workload.png)
 
 1. **작업** 탭의 **Windows**에서 **유니버설 Windows 플랫폼 개발** 작업을 찾습니다. 해당 작업 옆의 확인란이 이미 선택되어 있으면 **수정** 대화 상자를 닫고 6단계로 이동합니다.
 
@@ -43,13 +43,13 @@ UWP(유니버설 Windows 플랫폼) 개발에 대한 Visual Studio 프로젝트�
 
 1. **비어 있는 앱(유니버설 Windows)** 을 찾고 선택합니다. 이 프로젝트 형식의 C# 버전을 선택했는지 확인합니다(Visual Basic이 아닌).
 
-1. **다음**을 선택하여 **새 프로젝트 구성** 화면을 표시합니다. 
+1. **다음**을 선택하여 **새 프로젝트 구성** 화면을 표시합니다.
 
    ![새 프로젝트 구성 - Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-configure-your-new-project.png)
 
 1. **프로젝트 이름**에서 `helloworld`를 입력합니다.
 
-1. **위치**에서 이동하여 프로젝트를 저장할 폴더를 선택하거나 만듭니다.
+1. **위치**에서 프로젝트를 저장할 폴더로 이동하여 선택하거나 새로 만듭니다.
 
 1. **만들기**를 선택하여 **새 유니버설 Windows 플랫폼 프로젝트** 창으로 이동합니다.
 
@@ -104,4 +104,4 @@ UWP(유니버설 Windows 플랫폼) 개발에 대한 Visual Studio 프로젝트�
 
 1. **변경 내용 미리 보기** 대화 상자에서 **확인**을 선택합니다.
 
-1. **라이선스 승인** 대화 상자에서 라이선스를 확인한 다음, **동의함**을 선택합니다. 패키지 설치가 시작되고 설치가 완료되면 **출력** 창에 `Successfully installed 'Microsoft.CognitiveServices.Speech 1.7.0' to helloworld`와 유사한 메시지가 표시됩니다.
+1. **라이선스 승인** 대화 상자에서 라이선스를 확인한 다음, **동의함**을 선택합니다. 패키지 설치가 시작되고 설치가 완료되면 **출력** 창에 `Successfully installed 'Microsoft.CognitiveServices.Speech 1.9.0' to helloworld`와 유사한 메시지가 표시됩니다.

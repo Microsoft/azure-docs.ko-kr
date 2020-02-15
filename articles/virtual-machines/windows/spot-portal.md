@@ -7,14 +7,14 @@ manager: gwallace
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.topic: article
-ms.date: 11/20/2019
+ms.date: 02/11/2020
 ms.author: cynthn
-ms.openlocfilehash: 682ee86c373c715080ef1baf82b473242a2e43db
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 8845d0f9277384c1cc32b31b5ea5151cd0668c79
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74782048"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77158981"
 ---
 # <a name="preview-deploy-spot-vms-using-the-azure-portal"></a>미리 보기: Azure Portal을 사용 하 여 스폿 Vm 배포
 
@@ -28,7 +28,7 @@ VM에 대해 시간당 요금을 지불할 최대 가격을 설정 하는 옵션
 > 현재 스폿 인스턴스는 공개 미리 보기로 제공 됩니다.
 > 이 미리 보기 버전은 프로덕션 워크 로드에는 권장 되지 않습니다. 특정 기능이 지원되지 않거나 기능이 제한될 수 있습니다. 자세한 내용은 [Microsoft Azure Preview에 대한 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조하세요.
 >
-> 공개 미리 보기의 초기 파트의 경우 별색 인스턴스는 고정 가격이 있으므로 가격 기반 제거는 제공 되지 않습니다.
+
 
 ## <a name="create-the-vm"></a>VM 만들기
 

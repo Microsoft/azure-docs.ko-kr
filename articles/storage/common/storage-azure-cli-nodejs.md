@@ -9,12 +9,12 @@ ms.date: 01/30/2017
 ms.author: tamram
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: 88f713c5695e2453edc58d072899aa417f0514af
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6554385a879b054153dcb808c3dff4b60c136458
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65147036"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120849"
 ---
 # <a name="using-the-azure-classic-cli-with-azure-storage"></a>Azure Storage에서 Azure 클래식 CLI 사용
 
@@ -27,7 +27,7 @@ Azure 클래식 CLI는 Azure 플랫폼 작업을 위한 플랫폼 간 오픈 소
 이 가이드에서는 Azure Storage의 기본 개념을 이해하고 있다고 가정합니다. 이 가이드는 Azure Storage에서 클래식 CLI를 사용하는 방법을 보여 주는 몇 가지 스크립트를 제공합니다. 각 스크립트를 실행하기 전에 구성에 따라 스크립트 변수를 업데이트 해야 합니다.
 
 > [!NOTE]
-> 이 가이드에서는 클래식 스토리지 계정용 Azure 클래식 CLI 명령 및 스크립트 예제를 제공합니다. Resource Manager 스토리지 계정용 Azure 클래식 CLI 명령은 [Azure Resource 관리에서 Mac, Linux 및 Windows용 Azure CLI 사용](../../virtual-machines/azure-cli-arm-commands.md#azure-storage-commands-to-manage-your-storage-objects)을 참조하세요.
+> 이 가이드에서는 클래식 스토리지 계정용 Azure 클래식 CLI 명령 및 스크립트 예제를 제공합니다. Resource Manager 스토리지 계정용 Azure 클래식 CLI 명령은 [Azure Resource 관리에서 Mac, Linux 및 Windows용 Azure CLI 사용](../../virtual-machines/azure-cli-arm-commands.md#storage-objects)을 참조하세요.
 >
 >
 
@@ -36,7 +36,7 @@ Azure 클래식 CLI는 Azure 플랫폼 작업을 위한 플랫폼 간 오픈 소
 ## <a name="get-started-with-azure-storage-and-the-azure-classic-cli-in-5-minutes"></a>5분 안에 Azure Storage 및 Azure 클래식 CLI 시작하기
 이 가이드에서는 예제를 보려면 Ubuntu를 사용하며 다른 OS 플랫폼에서도 유사하게 수행되어야 합니다.
 
-**Azure를 처음 사용하는 경우:** Microsoft Azure 구독 및 해당 구독과 연결된 Microsoft 계정을 가져옵니다. Azure 구입 옵션에 대한 자세한 내용은 [무료 평가판](https://azure.microsoft.com/pricing/free-trial/), [구입 옵션](https://azure.microsoft.com/pricing/purchase-options/) 및 [회원 제안](https://azure.microsoft.com/pricing/member-offers/)(MSDN, Microsoft 파트너 네트워크, BizSpark 및 기타 Microsoft 프로그램의 회원인 경우)을 참조하세요.
+**Azure에 새로 만들기:** Microsoft Azure 구독 및 해당 구독과 연결된 Microsoft 계정을 가져옵니다. Azure 구입 옵션에 대한 자세한 내용은 [무료 평가판](https://azure.microsoft.com/pricing/free-trial/), [구입 옵션](https://azure.microsoft.com/pricing/purchase-options/) 및 [회원 제안](https://azure.microsoft.com/pricing/member-offers/)(MSDN, Microsoft 파트너 네트워크, BizSpark 및 기타 Microsoft 프로그램의 회원인 경우)을 참조하세요.
 
 Azure 구독에 대한 자세한 내용은 [Azure AD(Azure Active Directory)에서 관리자 역할 할당](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles-azure-portal) 을 참조하세요.
 
@@ -126,14 +126,14 @@ export AZURE_STORAGE_CONNECTION_STRING=<connection_string>
 Azure Blob Storage는 HTTP 또는 HTTPS를 통해 전 세계 어디에서든 액세스할 수 있는 다량의 구조화되지 않은 데이터(예: 텍스트 또는 이진 데이터)를 저장할 수 있는 서비스입니다. 이 섹션에서는 Azure Blob Storage 개념에 이미 익숙하다고 가정합니다. 자세한 내용은 [.NET을 사용하여 Azure Blob Storage 시작](../blobs/storage-dotnet-how-to-use-blobs.md) 및 [Blob Service 개념](https://msdn.microsoft.com/library/azure/dd179376.aspx)을 참조하세요.
 
 ### <a name="create-a-container"></a>컨테이너 만들기
-Azure Storage의 모든 Blob은 컨테이너에 있어야 합니다. `azure storage container create` 명령을 사용하여 개인 컨테이너를 만들 수 있습니다.
+Azure Storage의 모든 Blob은 컨테이너에 있어야 합니다. `azure storage container create` 명령을 사용하여 프라이빗 컨테이너를 만들 수 있습니다.
 
 ```azurecli
 azure storage container create mycontainer
 ```
 
 > [!NOTE]
-> 익명 읽기 권한의 세 가지 수준은 **해제**, **Blob** 및 **컨테이너**입니다. Blob에 대한 익명 액세스를 방지하려면 권한 매개 변수를 **해제**로 설정합니다. 기본적으로 새 컨테이너는 프라이빗이며 계정 소유자만 액세스할 수 있습니다. 익명 공용 읽기 권한을 Blob 리소스에 대해 허용하지만 컨테이너 메타데이터나 컨테이너의 Blob 목록에 대해서는 허용하지 않으려면, 사용 권한 매개 변수를 **Blob**으로 설정하세요. Blob 리소스, 컨테이너 메타데이터 및 컨테이너의 Blob 목록에 대한 전체 공용 읽기 권한을 허용하려면, 권한 매개 변수를 **컨테이너**로 설정하세요. 자세한 내용은 [컨테이너 및 Blob에 대한 익명 읽기 권한 관리](../blobs/storage-manage-access-to-resources.md)를 참조하세요.
+> 익명 읽기 액세스의 세가지 수준은 **해제**, **Blob** 및 **컨테이너**입니다. Blob에 대한 익명 액세스를 방지하려면 권한 매개 변수를 **해제**로 설정합니다. 기본적으로 새 컨테이너는 프라이빗이며 계정 소유자만 액세스할 수 있습니다. 익명 공용 읽기 권한을 Blob 리소스에 대해 허용하지만 컨테이너 메타데이터나 컨테이너의 Blob 목록에 대해서는 허용하지 않으려면, 사용 권한 매개 변수를 **Blob**으로 설정하세요. Blob 리소스, 컨테이너 메타데이터 및 컨테이너의 Blob 목록에 대한 전체 공용 읽기 권한을 허용하려면, 권한 매개 변수를 **컨테이너**로 설정하세요. 자세한 내용은 [컨테이너 및 Blob에 대한 익명 읽기 권한 관리](../blobs/storage-manage-access-to-resources.md)를 참조하세요.
 >
 >
 
@@ -233,7 +233,7 @@ azure storage file copy start --source-container srcctn --source-blob hello2.txt
 
 Storage 리소스 사용을 위한 Azure 클래식 CLI 명령 참조는 다음 항목에서 확인할 수 있습니다.
 
-* [Resource Manager 모드의 Azure 클래식 CLI 명령](../../virtual-machines/azure-cli-arm-commands.md#azure-storage-commands-to-manage-your-storage-objects)
+* [Resource Manager 모드의 Azure 클래식 CLI 명령](../../virtual-machines/azure-cli-arm-commands.md#storage-objects)
 * [Azure 서비스 관리 모드의 Azure CLI 명령](../../cli-install-nodejs.md)
 
 Resource Manager 배포 모델에서 [Azure CLI](../storage-azure-cli.md)의 최신 버전을 사용해 볼 수도 있습니다.

@@ -10,14 +10,14 @@ metadata:
   ms.topic: landing-page
   author: iainfoulds
   ms.author: iainfou
-  ms.date: 08/20/2019
+  ms.date: 02/11/2020
   ms.collection: M365-identity-device-management
-  ms.openlocfilehash: 01e1fe5ed73275078fc37dbec9a0857a8c4a8619
-  ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+  ms.openlocfilehash: 3c431b81c0da54045e9b9b020de5275912b394c6
+  ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74847154"
+  ms.lasthandoff: 02/12/2020
+  ms.locfileid: "77166425"
 landingContent:
 - title: 인증 정보
   linkLists:
@@ -39,16 +39,16 @@ landingContent:
       url: concept-sspr-howitworks.md
     - text: 비밀번호 쓰기 저장
       url: concept-sspr-writeback.md
-  - linkListType: quickstart
+  - linkListType: tutorial
     links:
-    - text: 셀프 서비스 암호 재설정 빠른 시작
-      url: quickstart-sspr.md
+    - text: 셀프 서비스 암호 재설정 사용
+      url: tutorial-enable-sspr.md
+    - text: 온-프레미스에 암호 쓰기 저장 사용
+      url: tutorial-enable-writeback.md
   - linkListType: deploy
     links:
-    - text: Azure AD 셀프 서비스 암호 재설정 배포
+    - text: 셀프 서비스 암호 재설정을 위한 배포 가이드
       url: howto-sspr-deployment.md
-    - text: 비밀번호 쓰기 저장을 사용하도록 설정
-      url: howto-sspr-writeback.md
     - text: Windows 로그인 화면에서 암호 재설정을 사용하도록 설정
       url: howto-sspr-windows.md
 - title: Azure Multi-Factor Authentication 사용
@@ -59,13 +59,13 @@ landingContent:
       url: concept-mfa-howitworks.md
   - linkListType: tutorial
     links:
-    - text: 특정 애플리케이션에 대한 Azure MFA 파일럿
-      url: tutorial-mfa-applications.md
-    - text: 위험 검색을 사용하여 Multi-Factor Authentication 및 암호 변경 트리거
+    - text: Azure Multi-Factor Authentication 사용
+      url: tutorial-enable-azure-mfa.md
+    - text: 위험 기반 Azure Multi-Factor Authentication 사용
       url: tutorial-risk-based-sspr-mfa.md
   - linkListType: deploy
     links:
-    - text: Azure Multi-Factor Authentication 배포
+    - text: Azure Multi-Factor Authentication을 위한 배포 가이드
       url: howto-mfa-getstarted.md
     - text: NPS 확장을 사용하여 온-프레미스 애플리케이션 통합
       url: howto-mfa-nps-extension.md

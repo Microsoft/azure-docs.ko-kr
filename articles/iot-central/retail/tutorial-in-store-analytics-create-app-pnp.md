@@ -11,16 +11,16 @@ ms.custom:
 ms.author: timlt
 author: timlt
 ms.date: 11/12/2019
-ms.openlocfilehash: 145aa87841c6334f7fa12535103b5e97db9c6918
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 6b89b667855d827acfb7c181da014cd0d0b4bfc4
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74702036"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77022106"
 ---
 # <a name="tutorial-create-an-in-store-analytics-application-in-azure-iot-central"></a>자습서: Azure IoT Central에서 매장 내 분석 애플리케이션 만들기
 
-[!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
+
 
 이 자습서에서는 솔루션 빌더를 대상으로, Azure IoT Central 매장 내 분석 애플리케이션을 만드는 방법을 보여 줍니다. 샘플 애플리케이션은 소매점용입니다. 이 애플리케이션은 점유 및 환경 조건을 모니터링하고 이에 맞게 조정하려는 일반적인 비즈니스 요구를 위한 솔루션입니다.
 
@@ -34,7 +34,7 @@ ms.locfileid: "74702036"
 * 운영자가 디바이스를 모니터링하고 관리할 수 있도록 대시보드 사용자 지정
 * 매장 관리자가 분석을 실행하고 인사이트를 시각화할 수 있도록 데이터 내보내기 구성
 
-이 자습서에서는 다음 방법에 대해 알아봅니다.
+이 자습서에서는 다음 작업 방법을 알아봅니다.
 > [!div class="checklist"]
 > * Azure IoT Central **매장 내 분석 - 체크 아웃** 템플릿을 사용하여 소매점 애플리케이션 만들기
 > * 애플리케이션 설정 사용자 지정
@@ -42,7 +42,7 @@ ms.locfileid: "74702036"
 > * 디바이스를 애플리케이션에 연결
 > * 조건을 모니터링하기 위한 규칙 및 작업 추가
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서 시리즈를 완료하려면 다음이 필요합니다.
 * Azure 구독이 권장됩니다. 필요에 따라 7일 무료 평가판을 사용할 수 있습니다. Azure 구독이 아직 없는 경우 [Azure 가입 페이지](https://aka.ms/createazuresubscription)에서 만들 수 있습니다.
@@ -64,24 +64,27 @@ ms.locfileid: "74702036"
 
 1. **소매**를 선택합니다.  소매 페이지는 여러 소매점 애플리케이션 템플릿을 표시합니다.
 
-미리 보기 기능을 사용하는 새로운 매장 내 분석 체크 아웃 애플리케이션을 만들려면 다음을 수행합니다.  
+스토어 내 분석 체크 아웃 애플리케이션을 새로 만들려면 다음을 수행합니다.  
 
 1. **매장 내 분석 - 체크 아웃** 애플리케이션 템플릿을 선택합니다. 이 템플릿에는 RuuviTag 센서를 제외하고 이 자습서에서 사용되는 모든 디바이스용 디바이스 템플릿이 포함되어 있습니다. 또한 이 템플릿은 체크 아웃 및 환경 조건 및 디바이스 상태를 모니터링하는 운영자 대시보드를 제공합니다. 
 
-1. 필요에 따라 친숙한 **애플리케이션 이름**을 선택합니다. 이 애플리케이션은 Contoso라는 가상의 소매점을 기준으로 합니다. 이 자습서에서는 **애플리케이션 이름** *Contoso checkout*을 사용합니다. 이 애플리케이션 템플릿은 가상의 회사 Northwind를 기준으로 합니다. 이 자습서에서는 Contoso를 사용하여 애플리케이션을 사용자 지정하는 방법을 알아봅니다.
+1. 필요에 따라 친숙한 **애플리케이션 이름**을 선택합니다. 이 애플리케이션은 Contoso라는 가상의 소매점을 기준으로 합니다. 이 자습서에서는 **애플리케이션 이름** *Contoso 체크 아웃*을 사용합니다. 이 애플리케이션 템플릿은 가상의 회사 Northwind를 기준으로 합니다. 이 자습서에서는 Contoso를 사용하여 애플리케이션을 사용자 지정하는 방법을 알아봅니다.
 
     > [!NOTE]
     > 친숙한 **애플리케이션 이름**을 사용하는 경우에도 애플리케이션 **URL**에 대해 고유한 값을 사용해야 합니다.
 
 1. Azure 구독이 있는 경우 *디렉터리, Azure 구독 및 지역*을 입력합니다. 구독이 없는 경우 **7일 평가판**을 사용하도록 설정하고 필요한 연락처 정보를 작성할 수 있습니다.  
 
-    디렉터리 및 구독에 대한 자세한 내용은 [애플리케이션 만들기 빠른 시작](../preview/quick-deploy-iot-central.md)을 참조하세요.
+    디렉터리 및 구독에 대한 자세한 내용은 [애플리케이션 만들기 빠른 시작](../core/quick-deploy-iot-central.md)을 참조하세요.
 
 1. **만들기**를 선택합니다.
 
     ![Azure IoT Central 애플리케이션 페이지](./media/tutorial-in-store-analytics-create-app-pnp/preview-application-template.png)
 
+    ![Azure IoT Central 애플리케이션 청구 정보 만들기](./media/tutorial-in-store-analytics-create-app-pnp/preview-application-template-billinginfo.png)
+
 ## <a name="customize-application-settings"></a>애플리케이션 설정 사용자 지정
+
 빌더는 여러 설정을 변경하여 애플리케이션에서 사용자 환경을 사용자 지정할 수 있습니다. 이 섹션에서는 미리 정의된 애플리케이션 테마를 선택합니다. 필요에 따라 사용자 지정 테마를 만들고 애플리케이션 이미지를 업데이트하는 방법을 배웁니다. 사용자 지정 테마를 사용하면 애플리케이션 브라우저 색, 브라우저 아이콘 및 발행인란에 표시되는 애플리케이션 로고를 설정할 수 있습니다.
 
 미리 정의된 애플리케이션 테마를 선택하려면 다음을 수행합니다.
@@ -160,7 +163,7 @@ ms.locfileid: "74702036"
 
 셋째, 사용자 지정 보기를 빌드하여 디바이스 템플릿을 사용자 지정합니다. 보기에서는 운영자가 디바이스 메트릭 및 상태와 같은 디바이스에 대한 원격 분석 및 메타데이터를 시각화할 수 있습니다.
 
-여기서는 처음 두 가지 방법을 사용하여 RuuviTag 센서용 디바이스 템플릿을 사용자 지정합니다. 센서용 보기를 만드는 방법에 대한 자세한 내용은 [IoT Central 애플리케이션에 시뮬레이트된 디바이스 추가](../preview/quick-create-pnp-device.md) 빠른 시작을 참조하세요.
+여기서는 처음 두 가지 방법을 사용하여 RuuviTag 센서용 디바이스 템플릿을 사용자 지정합니다. 센서용 보기를 만드는 방법에 대한 자세한 내용은 [IoT Central 애플리케이션에 시뮬레이트된 디바이스 추가](../core/quick-create-pnp-device.md) 빠른 시작을 참조하세요.
 
 RuuviTag 디바이스 템플릿의 기본 제공 인터페이스를 사용자 지정하려면 다음을 수행합니다.
 
@@ -223,12 +226,12 @@ RuuviTag 디바이스 템플릿의 기본 제공 인터페이스를 사용자 �
 - 시뮬레이트된 **점유** 센서입니다. 시뮬레이트된 센서는 애플리케이션 템플릿에 포함되므로 만들 필요가 없습니다. 
 
 > [!NOTE]
-> 실제 디바이스가 없는 경우 시뮬레이트된 RuuviTag 센서를 만들어 이 자습서를 완료할 수 있습니다. 다음 지침에는 시뮬레이트된 RuuviTag를 만드는 단계가 포함되어 있습니다. 시뮬레이트된 게이트웨이는 만들 필요가 없습니다.
+> 실제 디바이스가 없는 경우 시뮬레이션된 RuuviTag 센서를 만들어 이 자습서를 완료할 수 있습니다. 다음 지침에는 시뮬레이트된 RuuviTag를 만드는 단계가 포함되어 있습니다. 시뮬레이션된 게이트웨이를 만들 필요가 없습니다.
 
-다음 두 문서의 단계를 완료하여 실제 Rigado 게이트웨이와 RuuviTag 센서를 연결합니다. 완료되면 이 자습서로 돌아옵니다. 이 자습서에서 디바이스 템플릿을 이미 만들었기 때문에 다음 지침에 따라 다시 만들 필요가 없습니다.
+다음 두 문서의 단계를 완료하여 실제 Rigado 게이트웨이와 RuuviTag 센서를 연결합니다. 완료되면 이 자습서로 돌아갑니다. 이 자습서에서 디바이스 템플릿을 이미 만들었기 때문에 다음 지침에 따라 다시 만들 필요가 없습니다.
 
-- Rigado 게이트웨이를 연결하려면 [Azure IoT Central 애플리케이션에 Rigado Cascade 500 연결](../preview/howto-connect-rigado-cascade-500.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json)을 참조하세요.
-- RuuviTag 센서를 연결하려면 [Azure IoT Central 애플리케이션에 RuuviTag 센서 연결](../preview/howto-connect-ruuvi.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json)을 참조하세요. 필요한 경우 이러한 지침을 사용하여 두 개의 시뮬레이트된 센서를 만들 수도 있습니다.
+- Rigado 게이트웨이를 연결하려면 [Azure IoT Central 애플리케이션에 Rigado Cascade 500 연결](../core/howto-connect-rigado-cascade-500.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json)을 참조하세요.
+- RuuviTag 센서를 연결하려면 [Azure IoT Central 애플리케이션에 RuuviTag 센서 연결](../core/howto-connect-ruuvi.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json)을 참조하세요. 필요한 경우 이러한 지침을 사용하여 두 개의 시뮬레이트된 센서를 만들 수도 있습니다.
 
 ## <a name="add-rules-and-actions"></a>규칙 및 작업 추가
 Azure IoT Central 애플리케이션에서 센서를 사용하여 조건을 모니터링하는 과정의 일부로, 특정 조건이 충족될 때 작업을 실행하는 규칙을 만들 수 있습니다. 규칙은 디바이스 템플릿과 하나 이상의 디바이스에 연결되며 디바이스 원격 분석 또는 이벤트에 따라 충족되어야 하는 조건을 포함합니다. 규칙에는 하나 이상의 관련된 작업도 있습니다. 작업에는 메일 알림 전송 또는 다른 서비스로 데이터를 보내는 웹후크 작업 트리거 등이 포함될 수 있습니다. **매장 내 분석 - 체크 아웃** 애플리케이션 템플릿에는 애플리케이션의 디바이스에 대한 몇 가지 미리 정의된 규칙이 포함되어 있습니다.
@@ -274,7 +277,7 @@ Azure IoT Central 애플리케이션에서 센서를 사용하여 조건을 모�
     몇 분 이내에 지정된 메일 계정에서 메일을 받기 시작합니다. 애플리케이션은 센서가 습도 수준이 조건 값을 초과했음을 알 때마다 메일을 보냅니다.
 
 ## <a name="next-steps"></a>다음 단계
-이 자습서에서는 다음 방법에 대해 알아보았습니다.
+이 자습서에서는 다음 작업 방법을 알아보았습니다.
 
 * Azure IoT Central **매장 내 분석 - 체크 아웃** 템플릿을 사용하여 소매점 애플리케이션 만들기
 * 애플리케이션 설정 사용자 지정

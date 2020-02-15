@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 3217a2d5ba3d45a069eacdb67a8d69e9abc674b8
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 7d2e4274e6feaebac6536eed2f8a99d251cd5ceb
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "69015214"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162568"
 ---
 # <a name="perform-live-streaming-using-media-services-to-create-multi-bitrate-streams-with-azure-portal"></a>Media Services를 사용 하 여 라이브 스트리밍을 수행 하 여 다중 비트 전송률 스트림을 만들 Azure Portal  
 > [!div class="op_single_selector"]
@@ -43,8 +43,8 @@ ms.locfileid: "69015214"
 
 1. 비디오 카메라를 컴퓨터에 연결합니다. <br/>설치 아이디어는 [간단하고 이동 가능한 이벤트 비디오 기어 설정]( https://link.medium.com/KNTtiN6IeT)을 확인하세요.
 
-    카메라에 대 한 액세스 권한이 없는 경우 [Telestream Wirecast](https://www.telestream.net/wirecast/overview.htm) 와 같은 도구를 사용 하 여 비디오 파일에서 라이브 피드를 생성할 수 있습니다.
-1. RTMP 또는 부드러운 스트리밍 프로토콜 중 하나로 단일 비트 전송률 스트림을 출력할 수 있는 온-프레미스 라이브 인코더를 시작하고 구성합니다. 자세한 내용은 [Azure Media Services RTMP 지원 및 라이브 인코더](https://go.microsoft.com/fwlink/?LinkId=532824)를 참조하세요. <br/>또한 이 블로그를 확인하세요. [OBS를 사용한 라이브 스트리밍 프로덕션](https://link.medium.com/ttuwHpaJeT)
+    카메라에 대 한 액세스 권한이 없는 경우 [Telestream Wirecast](media-services-configure-wirecast-live-encoder.md) 와 같은 도구를 사용 하 여 비디오 파일에서 라이브 피드를 생성할 수 있습니다.
+1. RTMP 또는 부드러운 스트리밍 프로토콜 중 하나로 단일 비트 전송률 스트림을 출력할 수 있는 온-프레미스 라이브 인코더를 시작하고 구성합니다. 자세한 내용은 [Azure Media Services RTMP 지원 및 라이브 인코더](https://go.microsoft.com/fwlink/?LinkId=532824)를 참조하세요. <br/>또한 [OBS를 사용한 라이브 스트리밍 프로덕션](https://link.medium.com/ttuwHpaJeT)블로그를 확인 하세요.
 
     이 단계는 채널을 만든 후에도 수행할 수 있습니다.
 1. 채널을 만들고 시작합니다. 
@@ -61,12 +61,12 @@ ms.locfileid: "69015214"
 1. 이벤트 스트리밍 및 보관을 중지할 때마다 이벤트를 중지합니다.
 1. 이벤트를 삭제하고 필요에 따라 자산을 삭제합니다.   
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 자습서를 완료하는 데 필요한 조건은 다음과 같습니다.
 
 * 이 자습서를 완료하려면 Azure 계정이 필요합니다. 계정이 없는 경우 몇 분 만에 평가판 계정을 만들 수 있습니다. 
-  자세한 내용은 참조 하세요 [Azure 무료 평가판](https://azure.microsoft.com/pricing/free-trial/)합니다.
+  자세한 내용은 [Azure 평가판](https://azure.microsoft.com/pricing/free-trial/)을 참조하세요.
 * Media Services 계정. Media Services 계정을 만들려면 [계정 만들기](media-services-portal-create-account.md)를 참조하세요.
 * 단일 비트 전송률 라이브 스트림을 보낼 수 있는 웹캠 및 인코더.
 
@@ -167,7 +167,7 @@ ms.locfileid: "69015214"
 ## <a name="watch-the-event"></a>이벤트 보기
 이벤트를 보려면 Azure 포털에서 **조사식** 을 클릭하거나 스트리밍 URL을 복사하고 선택한 플레이어를 사용합니다. 
 
-![만든 날짜](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-play-event.png)
+![생성일](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-play-event.png)
 
 라이브 이벤트가 중지되면 이벤트를 주문형 콘텐츠로 자동으로 변환합니다.
 

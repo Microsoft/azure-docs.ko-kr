@@ -8,12 +8,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: pabutler
-ms.openlocfilehash: 3d741361cdeb25d6fc063f95da7bc301178f31fc
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 557cfeb66301650e932e5ce271080e9fc8a256d6
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73818089"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191160"
 ---
 # <a name="storefront-details-tab"></a>상점 세부 정보 탭
 
@@ -39,12 +39,12 @@ ms.locfileid: "73818089"
 
 제품 요약은 제품 이름 바로 아래에 표시되는 제품의 간략한 설명입니다. 일반 텍스트를 사용하여 줄 바꿈 없이 제품 요약을 입력합니다. 아래에는 해당 제품 이름에 적합한 제품 요약의 예제가 나와 있습니다.
 
-*예 1*
+*예제 1*
 
 -   **제품 이름**: Cloud Analytics: 3 일 워크숍
 -   **제안 요약**: Microsoft Azure 및 Power BI에 대 한 개요, 현재 환경 평가 및 미니 POC.
 
-*예 2*
+*예제 2*
 
 -   **제품 이름**: 산업용 Azure IoT: 30 일 개념 증명
 -   **제품 요약**: 산업에 연결 된 제품 파일럿을 만들어 필드의 장비를 대시보드, 보고서 및 알림을 사용 하는 Azure IoT Hub 솔루션에 안전 하 게 연결 합니다.
@@ -71,7 +71,7 @@ ms.locfileid: "73818089"
 
 제품 설명에 이메일 주소 또는 전화 번호는 포함하지 않도록 합니다. 제품에 **문의처** 단추를 포함하면 제품에서 확인된 잠재 고객이 잠재 고객 관리 대상에 업로드됩니다.
 
-제품 설명은 Markdown 형식으로 입력합니다. HTML용 서식 또는 Markdown에 대해 잘 모르는 경우 [문서 작성에 Markdown을 사용하는 방법](https://docs.microsoft.com/contribute/how-to-write-use-markdown)을 참조합니다.
+제품 설명은 Markdown 형식으로 입력합니다. HTML용 서식 또는 Markdown에 대해 잘 모르는 경우 [문서 작성에 Markdown을 사용하는 방법](/contribute/markdown-reference)을 참조합니다.
 
 이러한 형식을 사용하여 고객이 읽기 쉬운 제품 설명을 제공합니다.
 

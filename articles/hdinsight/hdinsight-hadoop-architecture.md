@@ -5,15 +5,15 @@ author: ashishthaps
 ms.author: ashishth
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 10/28/2019
-ms.openlocfilehash: 2da9e41323a308782dad509c628a3677ab0cd21f
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.custom: hdinsightactive
+ms.date: 02/07/2020
+ms.openlocfilehash: 3feacd94558ba275c81469827993aef106ae633c
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73162886"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162211"
 ---
 # <a name="apache-hadoop-architecture-in-hdinsight"></a>HDInsight의 Apache Hadoop 아키텍처
 
@@ -46,6 +46,27 @@ NodeManager는 애플리케이션을 구성하는 작업을 실행한 다음, �
 모든 HDInsight 클러스터 유형은 YARN을 배포합니다. ResourceManager는 고가용성을 위해 클러스터 내의 첫 번째 및 두 번째 헤드 노드에서 각각 실행되는 주 인스턴스와 보조 인스턴스를 통해 배포됩니다. ResourceManager 인스턴스는 한 번에 하나씩 활성화됩니다. NodeManager 인스턴스는 클러스터의 사용 가능한 작업자 노드에서 실행됩니다.
 
 ![Azure HDInsight의 Apache YARN](./media/hdinsight-hadoop-architecture/apache-yarn-on-hdinsight.png)
+
+## <a name="soft-delete"></a>일시 삭제
+
+저장소 계정에서 파일의 삭제를 취소 하려면 다음을 참조 하세요.
+
+### <a name="azure-storage"></a>Azure Storage
+
+* [Azure Storage Blob에 대한 일시 삭제](../storage/blobs/storage-blob-soft-delete.md)
+* [Blob 삭제 취소](https://docs.microsoft.com/rest/api/storageservices/undelete-blob)
+
+### <a name="azure-data-lake-storage-gen-1"></a>Azure Data Lake Storage Gen 1
+
+[복원-AzDataLakeStoreDeletedItem](https://docs.microsoft.com/powershell/module/az.datalakestore/restore-azdatalakestoredeleteditem)
+
+### <a name="azure-data-lake-storage-gen-2"></a>Azure Data Lake Storage Gen 2
+
+[Azure Data Lake Storage Gen2의 알려진 문제](../storage/blobs/data-lake-storage-known-issues.md)
+
+## <a name="trash-purging"></a>휴지통 제거
+
+로컬 파일 시스템에 데이터를 저장 하지 않기 때문에 **HDFS** > **고급 코어 사이트** 의 `fs.trash.interval` 속성은 기본값 `0` 그대로 유지 해야 합니다. 이 값은 원격 저장소 계정 (WASB, ADLS GEN1, ABFS)에 영향을 주지 않습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

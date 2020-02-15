@@ -5,13 +5,13 @@ author: mamccrea
 ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 02/03/2020
-ms.openlocfilehash: e1eb852b7cf7aea887dea429e19b0a3b1ac5805a
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.date: 02/14/2020
+ms.openlocfilehash: 14b04f7d6068863c79c7060d29b58232be1f40cb
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989861"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201801"
 ---
 # <a name="compatibility-level-for-azure-stream-analytics-jobs"></a>Azure Stream Analytics 작업의 호환성 수준
 
@@ -52,6 +52,10 @@ Azure Portal에서 작업의 호환성 수준을 업데이트 하려면 다음�
 ## <a name="compatibility-level-12"></a>호환성 수준 1.2
 
 호환성 수준 1.2에서 도입 된 주요 변경 내용은 다음과 같습니다.
+
+###  <a name="amqp-messaging-protocol"></a>AMQP 메시징 프로토콜
+
+**1.2 level**: Azure Stream Analytics는 [Amqp (Advanced Message queuing protocol)](../service-bus-messaging/service-bus-amqp-overview.md) 메시징 프로토콜을 사용 하 여 Service Bus 큐 및 토픽에 기록 합니다. AMQP를 사용하여 여러 플랫폼 간에 개방형 표준 프로토콜을 사용하는 하이브리드 애플리케이션을 빌드할 수 있습니다.
 
 ### <a name="geospatial-functions"></a>지리 공간적 함수
 
@@ -119,7 +123,7 @@ Upsert 동작은 *insert 또는 replace*입니다.
 
 ### <a name="service-bus-xml-format"></a>Service Bus XML 형식
 
-**1.0 수준:** DataContractSerializer를 사용 Azure Stream Analytics 메시지 내용에 XML 태그가 포함 되었습니다. 예:
+**1.0 수준:** DataContractSerializer를 사용 Azure Stream Analytics 메시지 내용에 XML 태그가 포함 되었습니다. 다음은 그 예입니다.
 
 `@\u0006string\b3http://schemas.microsoft.com/2003/10/Serialization/\u0001{ "SensorId":"1", "Temperature":64\}\u0001`
 

@@ -9,19 +9,19 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 8370b71bfa980dbd099ade59a3a19633dfd5dc72
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 8107b16a3db76fb0e248f1681463b73cc4ee21cf
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75910885"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77208423"
 ---
 # <a name="show-traffic-on-the-map"></a>맵에 트래픽 표시
 
 Azure Maps에서 사용할 수 있는 트래픽 데이터에는 두 가지 유형이 있습니다.
 
 - 인시던트 데이터-생성,도로 클로저 및 사고와 같은 사물에 대 한 점 및 선 기반 데이터로 구성 됩니다.
-- 흐름 데이터-도로의 트래픽 흐름에 대 한 메트릭을 제공 합니다. 트래픽 흐름 데이터는 속도 제한 또는 다른 메트릭을 기준으로 흐름의 속도를 저하 시키는 트래픽 양에 따라도로를 색으로 사용 하는 데 종종 사용 됩니다. Azure Maps의 트래픽 흐름 데이터에는 세 가지 측정 메트릭이 있습니다.
+- 흐름 데이터-도로의 트래픽 흐름에 대 한 메트릭을 제공 합니다. 트래픽 흐름 데이터를 사용 하 여도로 색을 조정 하는 경우가 많습니다. 이 색은 속도 제한을 기준으로 흐름을 저하 시키는 트래픽 양과 다른 메트릭을 기반으로 합니다. Azure Maps의 트래픽 흐름 데이터에는 세 가지 측정 메트릭이 있습니다.
     - `relative`-도로의 자유 흐름 속도를 기준으로 합니다.
     - `absolute`-도로의 모든 자동차의 절대 속도입니다.
     - `relative-delay`-평균 예상 지연 시간 보다 느린 영역을 표시 합니다.
@@ -40,7 +40,7 @@ map.setTraffic({
 
 <br/>
 
-<iframe height='500' scrolling='no' title='맵에 트래픽 표시' src='//codepen.io/azuremaps/embed/WMLRPw/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)로 펜 <a href='https://codepen.io/azuremaps/pen/WMLRPw/'>맵에 트래픽 표시</a>를 참조하세요.
+<iframe height='500' scrolling='no' title='맵에 트래픽 표시' src='//codepen.io/azuremaps/embed/WMLRPw/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io/azuremaps/pen/WMLRPw/'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)로 펜 <a href='https://codepen.io'>맵에 트래픽 표시</a>를 참조하세요.
 </iframe>
 
 ## <a name="traffic-overlay-options"></a>트래픽 오버레이 옵션

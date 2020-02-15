@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 12/11/2019
-ms.openlocfilehash: 62a66f180fd6e89329fe17a96115ecc4ca914107
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 3ca9cbf2e282e3f67af3c5da470a3d81e6055f98
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75407243"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77189581"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Azure App Service 성능 모니터링
 
@@ -116,7 +116,7 @@ Python App Service 기반 웹 응용 프로그램은 현재 자동 에이전트/
 
 클라이언트 쪽 모니터링이 ASP.NET에 대해 옵트인 (opt in) 됩니다. 클라이언트 쪽 모니터링을 사용 하도록 설정 하려면:
 
-* 선택 **설정을** > ** **응용 프로그램 설정** **
+* **설정** > * * * * 응용 프로그램 설정 * * * *을 선택 합니다.
    * 응용 프로그램 설정에서 새 **앱 설정 이름** 및 **값**을 추가 합니다.
 
      이름: `APPINSIGHTS_JAVASCRIPT_ENABLED`
@@ -173,7 +173,7 @@ Application Insights에서 원격 분석 컬렉션을 사용 하도록 설정 �
 |ApplicationInsightsAgent_EXTENSION_VERSION | 런타임 모니터링을 제어 하는 기본 확장입니다. | `~2` |
 |XDT_MicrosoftApplicationInsights_Mode |  기본 모드 에서만 최적의 성능을 보장 하기 위해 필수 기능을 사용할 수 있습니다. | `default` 또는 `recommended`입니다. |
 |InstrumentationEngine_EXTENSION_VERSION | 이진 재작성 엔진 `InstrumentationEngine`를 켤 지 여부를 제어 합니다. 이 설정은 성능에 영향을 주며 콜드 시작/시작 시간에 영향을 줍니다. | `~1` |
-|XDT_MicrosoftApplicationInsights_BaseExtensions | SQL & Azure 테이블 텍스트가 종속성 호출과 함께 캡처될 수 있는지 여부를 제어 합니다. 성능 경고:이 설정에는 `InstrumentationEngine`필요 합니다. | `~1` |
+|XDT_MicrosoftApplicationInsights_BaseExtensions | SQL & Azure 테이블 텍스트가 종속성 호출과 함께 캡처될 수 있는지 여부를 제어 합니다. 성능 경고: 응용 프로그램 콜드 시작 시간이 영향을 받습니다. 이 설정에는 `InstrumentationEngine`필요 합니다. | `~1` |
 
 ### <a name="app-service-application-settings-with-azure-resource-manager"></a>Azure Resource Manager를 사용 하 여 응용 프로그램 설정 App Service
 
@@ -229,6 +229,10 @@ Application Insights에 대해 구성 된 응용 프로그램 설정이 있는 A
                         {
                             "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
                             "value": "[reference('microsoft.insights/components/AppMonitoredSite', '2015-05-01').InstrumentationKey]"
+                        },
+                        {
+                            "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+                            "value": "[reference('microsoft.insights/components/AppMonitoredSite', '2015-05-01').ConnectionString]"
                         },
                         {
                             "name": "ApplicationInsightsAgent_EXTENSION_VERSION",
@@ -308,9 +312,6 @@ Application Insights에 대해 구성 된 응용 프로그램 설정이 있는 A
 }
 ```
 
-> [!NOTE]
-> 템플릿은 응용 프로그램 설정을 "기본" 모드로 생성 합니다. 이 모드는 성능을 최적화 하지만 원하는 기능을 활성화 하도록 템플릿을 수정할 수 있습니다.
-
 ### <a name="enabling-through-powershell"></a>PowerShell을 통한 사용 설정
 
 PowerShell을 통해 응용 프로그램 모니터링을 사용 하도록 설정 하려면 기본 응용 프로그램 설정만 변경 해야 합니다. 다음은 리소스 그룹 "Appmonitoredsite"에서 "AppMonitoredSite" 라는 웹 사이트에 대해 응용 프로그램 모니터링을 사용 하도록 설정 하 고 "012345678-ef01-2345-6789abcd" 계측 키로 전송할 데이터를 구성 하는 샘플입니다.
@@ -320,8 +321,9 @@ PowerShell을 통해 응용 프로그램 모니터링을 사용 하도록 설정
 ```powershell
 $app = Get-AzWebApp -ResourceGroupName "AppMonitoredRG" -Name "AppMonitoredSite" -ErrorAction Stop
 $newAppSettings = @{} # case-insensitive hash map
-$app.SiteConfig.AppSettings | %{$newAppSettings[$_.Name] = $_.Value} #preserve non Application Insights Application settings.
-$newAppSettings["APPINSIGHTS_INSTRUMENTATIONKEY"] = "012345678-abcd-ef01-2345-6789abcd"; # enable the ApplicationInsightsAgent
+$app.SiteConfig.AppSettings | %{$newAppSettings[$_.Name] = $_.Value} # preserve non Application Insights application settings.
+$newAppSettings["APPINSIGHTS_INSTRUMENTATIONKEY"] = "012345678-abcd-ef01-2345-6789abcd"; # set the Application Insights instrumentation key
+$newAppSettings["APPLICATIONINSIGHTS_CONNECTION_STRING"] = "InstrumentationKey=012345678-abcd-ef01-2345-6789abcd"; # set the Application Insights connection string
 $newAppSettings["ApplicationInsightsAgent_EXTENSION_VERSION"] = "~2"; # enable the ApplicationInsightsAgent
 $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.ResourceGroup -Name $app.Name -ErrorAction Stop
 ```
@@ -334,7 +336,7 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 실행 중인 확장의 버전을 확인 하려면 다음을 방문 `http://yoursitename.scm.azurewebsites.net/ApplicationInsights`
 
-![Url 경로 http://yoursitename.scm.azurewebsites.net/ApplicationInsights 의 스크린샷](./media/azure-web-apps/extension-version.png)
+![Url 경로 http://yoursitename.scm.azurewebsites.net/ApplicationInsights의 스크린샷](./media/azure-web-apps/extension-version.png)
 
 ### <a name="upgrade-from-versions-100---265"></a>버전 1.0.0에서 업그레이드-2.6.5
 
@@ -359,7 +361,7 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 1. `ApplicationInsightsAgent`를 통해 응용 프로그램을 모니터링 하는지 확인 합니다.
     * `ApplicationInsightsAgent_EXTENSION_VERSION` 앱 설정이 "~ 2" 값으로 설정 되어 있는지 확인 합니다.
 2. 응용 프로그램이 모니터링 해야 하는 요구 사항을 충족 하는지 확인 합니다.
-    * `https://yoursitename.scm.azurewebsites.net/ApplicationInsights`으로 이동
+    * `https://yoursitename.scm.azurewebsites.net/ApplicationInsights`로 이동
 
     ![https://yoursitename.scm.azurewebsites/applicationinsights 결과 페이지의 스크린샷](./media/azure-web-apps/app-insights-sdk-status.png)
 
@@ -370,7 +372,7 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
         * 유사한 값이 없는 경우에는 응용 프로그램이 현재 실행 되 고 있지 않거나 지원 되지 않음을 의미 합니다. 응용 프로그램이 실행 되 고 있는지 확인 하려면 런타임 정보를 사용할 수 있게 하는 응용 프로그램 url/응용 프로그램 끝점을 수동으로 방문해 보세요.
 
     * `IKeyExists` 있는지 확인 `true`
-        * False 이면 ikey guid를 사용 하 여 ' APPINSIGHTS_INSTRUMENTATIONKEY를 응용 프로그램 설정에 추가 합니다.
+        * `false`경우 ikey guid를 사용 하 여 `APPINSIGHTS_INSTRUMENTATIONKEY` 및 `APPLICATIONINSIGHTS_CONNECTION_STRING`을 응용 프로그램 설정에 추가 합니다.
 
     * `AppAlreadyInstrumented`, `AppContainsDiagnosticSourceAssembly`및 `AppContainsAspNetTelemetryCorrelationAssembly`에 대 한 항목이 없는지 확인 합니다.
         * 이러한 항목이 있는 경우 응용 프로그램에서 `Microsoft.ApplicationInsights`, `System.Diagnostics.DiagnosticSource`및 `Microsoft.AspNet.TelemetryCorrelation`패키지를 제거 합니다.

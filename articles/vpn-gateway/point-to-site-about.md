@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 01/10/2020
+ms.date: 02/07/2020
 ms.author: cherylmc
-ms.openlocfilehash: 6084eca4f7d2d6040eb3f32a9b28cfc50922d200
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 3db5cf0ddfec231a313df58e551061cbd5f9bef5
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75896092"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110435"
 ---
 # <a name="about-point-to-site-vpn"></a>지점 및 사이트 간 VPN 연결 정보
 
@@ -45,7 +45,7 @@ Azure 기본 인증서 인증을 사용하는 경우 디바이스에 있는 클�
 
 ### <a name="authenticate-using-native-azure-active-directory-authentication"></a>네이티브 Azure Active Directory 인증을 사용 하 여 인증
 
-Azure AD 인증을 사용 하면 사용자가 Azure Active Directory 자격 증명을 사용 하 여 Azure에 연결할 수 있습니다. 네이티브 Azure AD 인증은 OpenVPN 프로토콜 및 Windows 10 에서만 지원 되며 [AZURE VPN 클라이언트 (미리 보기)](https://www.microsoft.com/p/azure-vpn-client-preview/9np355qt2sqb?rtc=1&activetab=pivot:overviewtab)를 사용 해야 합니다.
+Azure AD 인증을 사용 하면 사용자가 Azure Active Directory 자격 증명을 사용 하 여 Azure에 연결할 수 있습니다. 네이티브 Azure AD 인증은 OpenVPN 프로토콜 및 Windows 10 에서만 지원 되며 [AZURE VPN 클라이언트](https://go.microsoft.com/fwlink/?linkid=2117554)를 사용 해야 합니다.
 
 네이티브 Azure AD 인증을 사용 하 여 Azure AD의 조건부 액세스 뿐만 아니라 VPN에 대 한 MFA (Multi-Factor Authentication) 기능을 활용할 수 있습니다.
 
@@ -55,7 +55,7 @@ Azure AD 인증을 사용 하면 사용자가 Azure Active Directory 자격 증�
 
 2. [게이트웨이에서 Azure AD 인증을 사용 하도록 설정](https://docs.microsoft.com/azure/vpn-gateway/openvpn-azure-ad-tenant#enable-authentication)
 
-3. [Azure VPN 클라이언트 (미리 보기) 다운로드 및 구성](https://www.microsoft.com/p/azure-vpn-client-preview/9np355qt2sqb?rtc=1&activetab=pivot:overviewtab)
+3. [Azure VPN 클라이언트 다운로드 및 구성](https://go.microsoft.com/fwlink/?linkid=2117554)
 
 
 ### <a name="authenticate-using-active-directory-ad-domain-server"></a>Azure AD(Active Directory) 도메인 서버를 사용하여 인증

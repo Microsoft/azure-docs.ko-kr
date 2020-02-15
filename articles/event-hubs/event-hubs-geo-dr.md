@@ -14,12 +14,12 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: cf36c233df9f8aaf76333b0add8b1ffce869156b
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: 40db6e9f429569bc19641aa5f0f371f287db7b18
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70773242"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77158029"
 ---
 # <a name="azure-event-hubs---geo-disaster-recovery"></a>Azure Event Hubs - 지리적 재해 복구 
 
@@ -44,7 +44,7 @@ Azure Event Hubs의 지역 재해 복구 기능은 재해 복구 솔루션입니
 
 이 문서에서는 다음 용어가 사용됩니다.
 
--  *별칭*: 설정하는 재해 복구 구성의 이름입니다. 별칭은 하나의 안정적인 FQDN(정규화된 도메인 이름) 연결 문자열을 제공합니다. 애플리케이션은 이 별칭 연결 문자열을 사용하여 네임스페이스에 연결합니다. 
+-  *별칭*: 설정한 재해 복구 구성의 이름입니다. 별칭은 하나의 안정적인 FQDN(정규화된 도메인 이름) 연결 문자열을 제공합니다. 애플리케이션은 이 별칭 연결 문자열을 사용하여 네임스페이스에 연결합니다. 
 
 -  *주/보조 네임스페이스*: 별칭에 해당하는 네임스페이스입니다. 기본 네임스페이스는 "활성"이며 메시지를 수신합니다(기존 또는 새 네임스페이스일 수 있음). 보조 네임스페이스는 "수동"이며 메시지를 수신하지 않습니다. 둘 간의 메타데이터가 동기화되므로 둘 다 애플리케이션 코드 또는 연결 문자열을 변경하지 않고 메시지를 원활하게 수락할 수 있습니다. 활성 네임스페이스만 메시지를 수신하는지 확인하려면 별칭을 사용해야 합니다. 
 
@@ -55,12 +55,12 @@ Azure Event Hubs의 지역 재해 복구 기능은 재해 복구 솔루션입니
 ## <a name="supported-namespace-pairs"></a>지원 되는 네임 스페이스 쌍
 기본 및 보조 네임 스페이스의 다음과 같은 조합이 지원 됩니다.  
 
-| 기본 네임 스페이스 | 보조 네임 스페이스 | 지원 | 
+| 기본 네임 스페이스 | 보조 네임 스페이스 | 지원됨 | 
 | ----------------- | -------------------- | ---------- |
-| 표준 | 표준 | 예 | 
-| 표준 | 전용 | 예 | 
-| 전용 | 전용 | 예 | 
-| 전용 | 표준 | 아니요 | 
+| Standard | Standard | yes | 
+| Standard | 전용 | yes | 
+| 전용 | 전용 | yes | 
+| 전용 | Standard | 예 | 
 
 > [!NOTE]
 > 동일한 전용 클러스터에 있는 네임 스페이스는 쌍으로 연결할 수 없습니다. 별도의 클러스터에 있는 네임 스페이스를 쌍으로 연결할 수 있습니다. 
@@ -71,7 +71,7 @@ Azure Event Hubs의 지역 재해 복구 기능은 재해 복구 솔루션입니
 
 ![1][]
 
-### <a name="setup"></a>설정
+### <a name="setup"></a>설치 프로그램
 
 먼저 기존의 기본 네임스페이스 및 새로운 보조 네임스페이스를 만들거나 사용한 다음 둘을 쌍으로 연결합니다. 이 페어링은 연결하는 데 사용할 수 있는 별칭을 제공합니다. 별칭을 사용하므로 연결 문자열을 변경할 필요가 없습니다. 새 네임스페이스에만 장애 조치(Failover) 페어링에 추가할 수 있습니다. 마지막으로 장애 조치가 필요한 경우 감지할 몇 가지 모니터링을 추가해야 합니다. 대부분의 경우에 서비스는 큰 에코시스템의 일부입니다. 따라서 장애 조치가 주로 나머지 하위 시스템 또는 인프라와 동기화되어 수행되어야 하므로 자동 장애 조치는 거의 불가능합니다.
 
@@ -142,7 +142,11 @@ Azure Portal을 사용하여 새로운 네임스페이스에서만 가용성 영
 
 Event Hubs에 대한 자세한 내용은 다음 링크를 방문하세요.
 
-* [Event Hubs 자습서](event-hubs-dotnet-standard-getstarted-send.md) 시작
+- Event Hubs 시작
+    - [.NET Core](get-started-dotnet-standard-send-v2.md)
+    - [Java](get-started-java-send-v2.md)
+    - [Python](get-started-python-send-v2.md)
+    - [JavaScript](get-started-java-send-v2.md)
 * [Event Hubs FAQ](event-hubs-faq.md)
 * [Event Hubs를 사용하는 샘플 애플리케이션](https://github.com/Azure/azure-event-hubs/tree/master/samples)
 

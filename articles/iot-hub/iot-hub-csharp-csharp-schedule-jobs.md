@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: robinsh
-ms.openlocfilehash: db4824203f63fa2fe0d4256a475d18a501b17e0e
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: 7925ca5c69d01b098764ff744fb832eaa43118d6
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147728"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77108960"
 ---
 # <a name="schedule-and-broadcast-jobs-net"></a>작업 예약 및 브로드캐스트 (.NET)
 
@@ -31,9 +31,9 @@ Azure IoT Hub를 사용하여 수백만 대의 디바이스를 업데이트하�
 
 이러한 각 기능에 대한 자세한 내용은 다음을 참조하세요.
 
-* 디바이스 쌍 및 속성: [장치 쌍 시작](iot-hub-csharp-csharp-twin-getstarted.md) 및 [자습서: 장치 쌍 속성을 사용 하는 방법](tutorial-device-twins.md)
+* 디바이스 쌍 및 속성: [디바이스 쌍 시작](iot-hub-csharp-csharp-twin-getstarted.md) 및 [자습서: 디바이스 쌍 속성을 사용하는 방법](tutorial-device-twins.md)
 
-* 직접 메서드: [IoT Hub 개발자 가이드-직접 메서드](iot-hub-devguide-direct-methods.md) 및 [자습서: 직접 메서드 사용](quickstart-control-device-dotnet.md)
+* 직접 메서드: [IoT Hub 개발자 가이드 - 직접 메서드](iot-hub-devguide-direct-methods.md) 및 [자습서: 직접 메서드 사용](quickstart-control-device-dotnet.md)
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
 
@@ -49,11 +49,13 @@ Azure IoT Hub를 사용하여 수백만 대의 디바이스를 업데이트하�
 
 * **ScheduleJob**. 이 앱은 작업을 사용 하 여 **Lockdoor** 직접 메서드를 호출 하 고 여러 장치에서 장치 쌍의 desired 속성을 업데이트 합니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Visual Studio.
 
 * 활성 Azure 계정. 계정이 없는 경우 몇 분 안에 [무료 계정](https://azure.microsoft.com/pricing/free-trial/) 을 만들 수 있습니다.
+
+* 방화벽에서 포트 8883가 열려 있는지 확인 합니다. 이 문서의 device 샘플에서는 포트 8883을 통해 통신 하는 MQTT 프로토콜을 사용 합니다. 이 포트는 일부 회사 및 교육용 네트워크 환경에서 차단 될 수 있습니다. 이 문제를 해결 하는 방법 및 방법에 대 한 자세한 내용은 [IoT Hub에 연결 (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub)을 참조 하세요.
 
 ## <a name="create-an-iot-hub"></a>IoT Hub 만들기
 
@@ -75,13 +77,13 @@ Azure IoT Hub를 사용하여 수백만 대의 디바이스를 업데이트하�
 
 1. 솔루션 탐색기에서 **SimulateDeviceMethods** 프로젝트를 마우스 오른쪽 단추로 클릭 한 다음 **NuGet 패키지 관리**를 선택 합니다.
 
-1. **NuGet 패키지 관리자**에서 **찾아보기** 를 선택 하 고을 검색 한후을 (를) 검색 하 고 선택 합니다. **설치**를 선택합니다.
+1. **NuGet 패키지 관리자**에서 **찾아보기** 를 선택 하 고을 검색 한 후을 (를) 검색 하 **고 선택 합니다.** **설치**를 선택합니다.
 
     ![NuGet 패키지 관리자 창 클라이언트 앱](./media/iot-hub-csharp-csharp-schedule-jobs/device-app-nuget.png)
 
     이 단계에서는 [Azure IoT 장치 SDK](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/) NuGet 패키지 및 해당 종속성에 대 한 참조를 다운로드, 설치 및 추가 합니다.
 
-1. **Program.cs** 파일 위에 다음 `using` 문을 추가합니다.
+1. `using`Program.cs**파일 위에 다음** 문을 추가합니다.
 
     ```csharp
     using Microsoft.Azure.Devices.Client;
@@ -176,7 +178,7 @@ Azure IoT Hub를 사용하여 수백만 대의 디바이스를 업데이트하�
 
    이 단계에서는 [Azure IoT 서비스 SDK](https://www.nuget.org/packages/Microsoft.Azure.Devices/) NuGet 패키지 및 해당 종속 항목에 참조를 다운로드, 설치 및 추가합니다.
 
-1. **Program.cs** 파일 위에 다음 `using` 문을 추가합니다.
+1. `using`Program.cs**파일 위에 다음** 문을 추가합니다.
 
     ```csharp
     using Microsoft.Azure.Devices;
@@ -306,6 +308,6 @@ Azure IoT Hub를 사용하여 수백만 대의 디바이스를 업데이트하�
 
 이 자습서에서는 디바이스에 대한 직접 메서드를 예약하고 디바이스 쌍의 속성을 업데이트하는 데 작업을 사용했습니다.
 
-* 무선 펌웨어 업데이트를 통한 원격 같은 IoT Hub 및 장치 관리 패턴을 계속 시작 하려면 자습서를 참조 [하세요. 펌웨어 업데이트](tutorial-firmware-update.md)를 수행 하는 방법
+* IoT Hub 및 디바이스 관리 패턴(예: 원격 무선 펌웨어 업데이트)을 계속 시작하려면 [자습서: 펌웨어 업데이트를 수행하는 방법](tutorial-firmware-update.md)을 참조하세요.
 
 * Azure IoT Edge로 AI를 에지 디바이스에 배포하는 방법을 자세히 알아보려면 [IoT Edge 시작](../iot-edge/tutorial-simulate-device-linux.md)을 참조하세요.

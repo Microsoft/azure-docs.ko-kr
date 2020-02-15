@@ -3,20 +3,20 @@ title: ML Studio(클래식)란?
 titleSuffix: Azure
 description: Azure Machine Learning Studio(클래식)는 알고리즘 및 모듈의 사용할 준비가 되어 있는 라이브러리에서 신속하게 모델을 빌드하기 위한 끌어서 놓기 도구입니다.
 services: machine-learning
-author: xiaoharper
-ms.author: amlstudiodocs
+author: likebupt
+ms.author: keli19
 ms.custom: seodec18
 ms.assetid: e65c8fe1-7991-4a2a-86ef-fd80a7a06269
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: overview
 ms.date: 10/17/2019
-ms.openlocfilehash: f3be29dc222e0e9b98ed51d8f921fb9926b018ca
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: be3a07eb2d4232d27a5b41ddc4258c89b79729bf
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314076"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169030"
 ---
 # <a name="what-is-machine-learning-studio-classic"></a>Machine Learning Studio(클래식)란?
 
@@ -38,13 +38,13 @@ Azure Machine Learning Studio(클래식)에서는 예측 분석 모델을 간편
 <a name="compare"></a>
 ## <a name="how-does-machine-learning-studio-classic-differ-from-azure-machine-learning"></a>Azure Machine Learning은 Machine Learning Studio(클래식)와 어떻게 다른가요?
 
-[Azure Machine Learning](../overview-what-is-azure-ml.md)은 신속하게 데이터를 준비하고 기계 학습 모델을 학습 및 배포할 수 있도록 SDK **및** Azure Machine Learning 디자이너를 모두 제공합니다. 디자이너는 Studio(클래식)와 비슷한 끌어서 놓기 환경을 제공합니다. 그러나 Studio(클래식) 전용 컴퓨팅 플랫폼과는 달리, 디자이너는 사용자 고유의 컴퓨팅 리소스를 사용하며 Azure Machine Learning에 완전히 통합됩니다.
+[Azure Machine Learning](../overview-what-is-azure-ml.md)은 신속하게 데이터를 준비하고 기계 학습 모델을 학습 및 배포할 수 있도록 SDK **및** Azure Machine Learning 디자이너(미리 보기)를 모두 제공합니다. 디자이너는 Studio(클래식)와 비슷한 끌어서 놓기 환경을 제공합니다. 그러나 Studio(클래식) 전용 컴퓨팅 플랫폼과는 달리, 디자이너는 사용자 고유의 컴퓨팅 리소스를 사용하며 Azure Machine Learning에 완전히 통합됩니다.
 
 다음은 간략하게 비교한 내용입니다.
 
 || Machine Learning Studio(클래식) | Azure Machine Learning |
 |---| --- | --- |
-| 끌어서 놓기 인터페이스 | yes | 예 - [Azure Machine Learning 디자이너](../concept-designer.md) |
+| 끌어서 놓기 인터페이스 | yes | 예 - [Azure Machine Learning 디자이너(미리 보기)](../concept-designer.md) |
 | 실험 | 크기 조정 가능(10GB 학습 데이터 제한) | 컴퓨팅 대상으로 크기 조정 |
 | 끌어서 놓기 인터페이스를 위한 모듈 | 다수 | 인기 있는 초기 [모듈](../algorithm-module-reference/module-reference.md) 세트|
 |컴퓨팅 대상 학습| 전용 컴퓨팅 대상, CPU만 지원| Azure Machine Learning 컴퓨팅(GPU 또는 CPU) 및 Notebook VM 지원<br/>([다른 컴퓨팅은 SDK에서 지원](../concept-compute-target.md#train))|

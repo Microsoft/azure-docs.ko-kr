@@ -12,19 +12,19 @@ ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 01/06/2020
-ms.openlocfilehash: b9d2b3916e4509e5ce3aa8a9ddd66f1cf14a8827
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.openlocfilehash: 27682863a96e2f190a0dafe6e4d783029e987453
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75690866"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201648"
 ---
 # <a name="documentation-changes-for-sql-server-on-azure-virtual-machines"></a>Azure Virtual Machines에서 SQL Server에 대 한 설명서 변경
 
 Azure를 사용 하면 기본 제공 SQL Server 이미지를 사용 하 여 VM (가상 머신)을 배포할 수 있습니다. 이 문서에서는 [Azure Virtual Machines에서 최신 SQL Server](https://azure.microsoft.com/services/virtual-machines/sql-server/)릴리스의 새로운 기능 및 향상 된 기능에 관련 된 설명서 변경 내용을 요약 합니다. 
 
 
-## <a name="january-2020"></a>1 월 2020
+## <a name="january-2020"></a>2020년 1월
 
 | 변경 | 세부 정보 |
 | --- | --- |
@@ -50,7 +50,7 @@ Azure를 사용 하면 기본 제공 SQL Server 이미지를 사용 하 여 VM (
 | **사용자 지정 이미지 지원 가능성** | 이제 [유연한 라이선스](virtual-machines-windows-sql-ahb.md)의 제한 된 기능을 제공 하는 사용자 지정 OS 및 SQL 이미지에 [SQL Server IaaS 확장](virtual-machines-windows-sql-server-agent-extension.md#installation) 을 설치할 수 있습니다. SQL 리소스 공급자를 사용 하 여 사용자 지정 이미지를 등록 하는 경우 라이선스 유형을 "AHUB"로 지정 합니다. 그렇지 않으면 등록이 실패 합니다. | 
 | **명명 된 인스턴스 지원 가능성** | 이제 기본 인스턴스가 제대로 제거 된 경우 명명 된 인스턴스를 사용 하 여 [SQL Server IaaS 확장](virtual-machines-windows-sql-server-agent-extension.md#installation) 을 사용할 수 있습니다. | 
 | **포털 기능 향상** | SQL Server VM 배포에 대 한 Azure Portal 환경은 유용성을 개선 하기 위해 개선 된 되었습니다. 자세한 내용은 간략 한 [빠른](quickstart-sql-vm-create-portal.md) 시작 및 더 철저 한 [방법 가이드](virtual-machines-windows-portal-sql-server-provision.md) 를 참조 하 여 SQL Server VM 배포를 참조 하세요.|
-|  **포털 개선** | 이제 [Azure Portal](virtual-machines-windows-sql-ahb.md#change-the-license-for-vms-already-registered-with-the-resource-provider)를 사용 하 여 사용자 라이선스를 사용 하 여 SQL Server VM에 대 한 라이선스 모델을 종 량 제로 변경할 수 있습니다.|
+| **포털 개선** | 이제 [Azure Portal](virtual-machines-windows-sql-ahb.md#vms-already-registered-with-the-resource-provider)를 사용 하 여 사용자 라이선스를 사용 하 여 SQL Server VM에 대 한 라이선스 모델을 종 량 제로 변경할 수 있습니다.|
 | **Azure SQL Server VM CLI를 사용 하 여 가용성 그룹 배포 간소화** | 이제 가용성 그룹을 Azure의 SQL Server VM에 배포 하는 것이 더 쉬워졌습니다. [Azure CLI](/cli/azure/sql/vm?view=azure-cli-2018-03-01-hybrid) 를 사용 하 여 명령줄에서 Windows 장애 조치 (failover) 클러스터, 내부 부하 분산 장치 및 가용성 그룹 수신기를 만들 수 있습니다. 자세한 내용은 azure [SQL SERVER VM CLI를 사용 하 여 AZURE VM에서 SQL Server에 대 한 Always On 가용성 그룹 구성을](virtual-machines-windows-sql-availability-group-cli.md)참조 하세요. | 
 | &nbsp; | &nbsp; |
 

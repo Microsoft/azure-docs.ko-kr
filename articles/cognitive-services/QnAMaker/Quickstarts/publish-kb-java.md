@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
-ms.date: 12/16/2019
+ms.date: 02/08/2020
 ms.author: diberry
-ms.openlocfilehash: 44b53cbfdb1982d9f9e6a0cb6408a16b1d660d2e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 48da92374a29b5319f0ae5eaa830f2e03511b512
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75447430"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77109477"
 ---
 # <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-java"></a>빠른 시작: Java를 사용하여 QnA Maker 기술 자료 게시
 
@@ -102,7 +102,7 @@ API 호출은 성공적인 게시에 대해 응답 본문에 내용이 없는 20
 
 ## <a name="next-steps"></a>다음 단계
 
-기술 자료가 게시된 후 [답변을 생성할 엔드포인트 URL](../Tutorials/create-publish-answer.md#generating-an-answer)이 필요합니다.
+기술 자료가 게시된 후 [답변을 생성할 엔드포인트 URL](./get-answer-from-knowledge-base-java.md)이 필요합니다.
 
 > [!div class="nextstepaction"]
 > [QnA Maker(V4) REST API 참조](https://go.microsoft.com/fwlink/?linkid=2092179)

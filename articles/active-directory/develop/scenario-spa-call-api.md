@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 05/06/2019
 ms.author: ryanwi
 ms.custom: aaddev
-ms.openlocfilehash: f3cafb4d2df4d1944f583a99ca2014f3841827d0
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: ccece6c840033913ec6d96b446dcb98c4befb32f
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701861"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160001"
 ---
 # <a name="single-page-application-call-a-web-api"></a>단일 페이지 응용 프로그램: web API 호출
 
@@ -27,9 +27,9 @@ ms.locfileid: "76701861"
 
 ## <a name="call-a-web-api"></a>웹 API 호출
 
-### <a name="javascript"></a>JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-Microsoft Graph API와 같은 웹 API를 호출 하는 HTTP 요청에서 전달자로 획득 된 액세스 토큰을 사용 합니다. 예:
+Microsoft Graph API와 같은 웹 API를 호출 하는 HTTP 요청에서 전달자로 획득 된 액세스 토큰을 사용 합니다. 다음은 그 예입니다.
 
 ```javascript
     var headers = new Headers();
@@ -47,9 +47,11 @@ Microsoft Graph API와 같은 웹 API를 호출 하는 HTTP 요청에서 전달�
         }
 ```
 
-### <a name="angular"></a>Angular
+# <a name="angulartabangular"></a>[Angular](#tab/angular)
 
 MSAL 각도 래퍼는 HTTP 인터셉터를 활용 하 여 자동으로 액세스 토큰을 획득 하 고 Api에 대 한 HTTP 요청에 연결 합니다. 자세한 내용은 [API를 호출 하기 위한 토큰 가져오기](scenario-spa-acquire-token.md)를 참조 하세요.
+
+---
 
 ## <a name="next-steps"></a>다음 단계
 

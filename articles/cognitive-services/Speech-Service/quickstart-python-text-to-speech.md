@@ -1,31 +1,29 @@
 ---
-title: '빠른 시작: 텍스트 음성 변환, Python - Speech Service'
+title: 텍스트 음성 변환, Python - Speech Service
 titleSuffix: Azure Cognitive Services
-description: 이 빠른 시작에서는 Python 및 Text-to-Speech REST API를 사용하여 텍스트를 음성으로 변환하는 방법을 알아봅니다. 이 가이드에 포함된 샘플 텍스트는 SSML(Speech Synthesis Markup Language)로 구조화되어 있습니다. 이를 통해 음성 응답의 음성 및 언어를 선택할 수 있습니다.
+description: 이 문서에서는 Python 및 텍스트 음성 변환 REST API를 사용 하 여 텍스트를 음성으로 변환 하는 방법을 알아봅니다. 이 가이드에 포함된 샘플 텍스트는 SSML(Speech Synthesis Markup Language)로 구조화되어 있습니다. 이를 통해 음성 응답의 음성 및 언어를 선택할 수 있습니다.
 services: cognitive-services
-author: erhopf
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
-ms.date: 12/09/2019
-ms.author: erhopf
-ms.openlocfilehash: 639120b283775bcdb5fe4316d78c538c9db9cf4a
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
-ms.translationtype: HT
+ms.topic: how-to
+ms.date: 02/10/2020
+ms.author: dapine
+ms.openlocfilehash: 63e6a2a47265eae08a653f3eadaf6bad86dd0635
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74975910"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77119721"
 ---
-# <a name="quickstart-convert-text-to-speech-using-python"></a>빠른 시작: Python을 사용하여 텍스트 음성 변환
+# <a name="convert-text-to-speech-using-python"></a>Python을 사용하여 텍스트 음성 변환
 
-이 빠른 시작에서는 Python 및 Text-to-Speech REST API를 사용하여 텍스트를 음성으로 변환하는 방법을 알아봅니다. 이 가이드의 요청 본문은 [SSML(Speech Synthesis Markup Language)](speech-synthesis-markup.md)로 구조화되어 있으므로 응답의 음성 및 언어를 선택할 수 있습니다.
+이 문서에서는 Python 및 텍스트 음성 변환 REST API를 사용 하 여 텍스트를 음성으로 변환 하는 방법을 알아봅니다. 이 가이드의 요청 본문은 [SSML(Speech Synthesis Markup Language)](speech-synthesis-markup.md)로 구조화되어 있으므로 응답의 음성 및 언어를 선택할 수 있습니다.
 
-이 빠른 시작에는 Speech Service 리소스와 함께 [Azure Cognitive Services 계정](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account)이 필요합니다. 계정이 없는 경우 [평가판](get-started.md)을 사용하여 구독 키를 가져올 수 있습니다.
+이 문서에는 음성 서비스 리소스를 사용 하는 [Azure Cognitive Services 계정이](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) 필요 합니다. 계정이 없는 경우 [평가판](get-started.md)을 사용하여 구독 키를 가져올 수 있습니다.
 
-## <a name="prerequisites"></a>필수 조건
-
-이 빠른 시작에는 다음이 필요합니다.
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Python 2.7.x 또는 3.x
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) 또는 즐겨 사용하는 텍스트 편집기

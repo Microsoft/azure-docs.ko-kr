@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
-ms.date: 12/12/2019
-ms.openlocfilehash: f088b8210b8170d22e84d131f0a72f5f8caa3b92
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/10/2020
+ms.openlocfilehash: f8737f645df2aefbf9ce544199f0cc45ce6a3d60
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75435218"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162806"
 ---
 # <a name="run-apache-spark-from-the-spark-shell"></a>Spark 셸에서 Apache Spark 실행
 
@@ -27,29 +27,74 @@ ms.locfileid: "75435218"
     ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net
     ```
 
-1. Spark는 Scala (spark-shell) 및 Python (pyspark)에 대 한 셸을 제공 합니다. SSH 세션에서 다음 명령 중 하나를 입력 합니다.
+1. Spark는 Scala (spark-shell) 및 Python (pyspark)에 대 한 셸을 제공 합니다. SSH 세션에서 다음 명령 *중 하나* 를 입력 합니다.
 
     ```bash
     spark-shell
-    pyspark
+
+    # Optional configurations
+    # spark-shell --num-executors 4 --executor-memory 4g --executor-cores 2 --driver-memory 8g --driver-cores 4
     ```
 
-    이제 해당 언어로 Spark 명령을 입력할 수 있습니다.
+    ```bash
+    pyspark
 
-1. 몇 가지 기본적인 예제 명령은 다음과 같습니다.
+    # Optional configurations
+    # pyspark --num-executors 4 --executor-memory 4g --executor-cores 2 --driver-memory 8g --driver-cores 4
+    ```
+
+    선택적 구성을 사용 하려는 경우 먼저 [Apache Spark OutOfMemoryError 예외](./apache-spark-troubleshoot-outofmemory.md)를 검토 해야 합니다.
+
+1. 몇 가지 기본 예제 명령입니다. 관련 언어를 선택 합니다.
+
+    ```spark-shell
+    val textFile = spark.read.textFile("/example/data/fruits.txt")
+    textFile.first()
+    textFile.filter(line => line.contains("apple")).show()
+    ```
+
+    ```pyspark
+    textFile = spark.read.text("/example/data/fruits.txt")
+    textFile.first()
+    textFile.filter(textFile.value.contains("apple")).show()
+    ```
+
+1. CSV 파일을 쿼리 합니다. 참고 아래 언어는 `spark-shell` 및 `pyspark`에 대해 작동 합니다.
 
     ```scala
-    // Load data
+    spark.read.csv("/HdiSamples/HdiSamples/SensorSampleData/building/building.csv").show()
+    ```
+
+1. CSV 파일을 쿼리하고 결과를 변수에 저장 합니다.
+
+    ```spark-shell
     var data = spark.read.format("csv").option("header", "true").option("inferSchema", "true").load("/HdiSamples/HdiSamples/SensorSampleData/building/building.csv")
+    ```
 
-    // Show data
+    ```pyspark
+    data = spark.read.format("csv").option("header", "true").option("inferSchema", "true").load("/HdiSamples/HdiSamples/SensorSampleData/building/building.csv")
+    ```
+
+1. 결과 표시:
+
+    ```spark-shell
     data.show()
-
-    // Select certain columns
     data.select($"BuildingID", $"Country").show(10)
+    ```
 
-    // exit shell
+    ```pyspark
+    data.show()
+    data.select("BuildingID", "Country").show(10)
+    ```
+
+1. 끝내기
+
+    ```spark-shell
     :q
+    ```
+
+    ```pyspark
+    exit()
     ```
 
 ## <a name="sparksession-and-sparkcontext-instances"></a>SparkSession 및 SparkContext 인스턴스

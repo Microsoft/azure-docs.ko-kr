@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 06/18/2019
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: 2ae8b71a7d48949cd82765112752192aba54521f
-ms.sourcegitcommit: a100e3d8b0697768e15cbec11242e3f4b0e156d3
+ms.openlocfilehash: efe4c07a6231e0b2c95b049db056a4e5d055db98
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75680956"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152995"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Azure App Service에 대 한 로컬 Git 배포
 
@@ -50,6 +50,9 @@ Kudu App Service 빌드 서버를 사용 하 여 앱에 대 한 로컬 Git 배�
 ```azurecli-interactive
 az webapp deployment source config-local-git --name <app-name> --resource-group <group-name>
 ```
+> [!NOTE]
+> Linux app service 계획을 사용 하는 경우 다음 매개 변수를 추가 해야 합니다.--runtime python | 3.7
+
 
 또는 새 Git 사용 앱을 만들려면 `--deployment-local-git` 매개 변수를 사용 하 여 Cloud Shell에서 [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) 를 실행 합니다. \<앱 이름 >, \<그룹-이름 > 및 \<계획 이름 >를 새 Git 앱, 해당 Azure 리소스 그룹 및 해당 Azure App Service 계획에 대 한 이름으로 바꿉니다.
 
@@ -142,10 +145,10 @@ Azure Pipelines (미리 보기)를 사용 하 여 앱에 대 한 로컬 Git 배�
 
 Git를 사용 하 여 Azure에서 App Service 앱에 게시 하는 경우 다음과 같은 일반적인 오류 메시지가 표시 될 수 있습니다.
 
-|메시지|원인|해상도
+|메시지|원인|해결 방법
 ---|---|---|
 |`Unable to access '[siteURL]': Failed to connect to [scmAddress]`|앱이 실행 되 고 있지 않습니다.|Azure Portal에서 앱을 시작합니다. 웹 앱이 중지 되 면 Git 배포를 사용할 수 없습니다.|
-|`Couldn't resolve host 'hostname'`|' Azure ' 원격에 대 한 주소 정보가 잘못 되었습니다.|`git remote -v` 명령을 사용 하 여 연결 된 URL과 함께 모든 원격을 나열 합니다. 'azure' 원격의 URL이 올바른지 확인합니다. 필요한 경우 제거하고 올바른 URL을 사용하여 이 원격을 다시 만드세요.|
+|`Couldn't resolve host 'hostname'`|' Azure ' 원격에 대 한 주소 정보가 잘못 되었습니다.|`git remote -v` 명령을 사용하여 모든 원격을 관련 URL과 함께 나열합니다. 'azure' 원격의 URL이 올바른지 확인합니다. 필요한 경우 제거하고 올바른 URL을 사용하여 이 원격을 다시 만드세요.|
 |`No refs in common and none specified; doing nothing. Perhaps you should specify a branch such as 'master'.`|`git push`중에 분기를 지정 하지 않았거나 `.gitconfig`에서 `push.default` 값을 설정 하지 않았습니다.|Master 분기 `git push azure master`지정 하 여 `git push`를 다시 실행 합니다.|
 |`src refspec [branchname] does not match any.`|' Azure ' 원격의 마스터가 아닌 다른 분기에 푸시 하려고 했습니다.|Master 분기 `git push azure master`지정 하 여 `git push`를 다시 실행 합니다.|
 |`RPC failed; result=22, HTTP code = 5xx.`|이 오류는 HTTPS를 통해 큰 git 리포지토리를 푸시하려고 시도하는 경우 발생할 수 있습니다.|`postBuffer`을 더 크게 만들려면 로컬 컴퓨터의 git 구성을 변경 하십시오. 예: `git config --global http.postBuffer 524288000`|

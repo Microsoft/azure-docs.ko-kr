@@ -3,12 +3,12 @@ title: Azure 서비스의 리소스 공급자
 description: Azure Resource Manager에 대 한 모든 리소스 공급자 네임 스페이스를 나열 하 고 해당 네임 스페이스에 대 한 Azure 서비스를 표시 합니다.
 ms.topic: conceptual
 ms.date: 11/11/2019
-ms.openlocfilehash: d16c5fe148f8b6c907c897963e72cb84bc9ae2d5
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 64c1d3c6f30a4f817abbea5001852df3eeeb9327
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76984373"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77109358"
 ---
 # <a name="resource-providers-for-azure-services"></a>Azure 서비스에 대 한 리소스 공급자
 
@@ -19,18 +19,18 @@ ms.locfileid: "76984373"
 | 리소스 공급자 네임 스페이스 | Azure 서비스 |
 | --------------------------- | ------------- |
 | Microsoft.AAD | [Azure Active Directory Domain Services](../../active-directory-domain-services/index.yml) |
-| Microsoft.Addons | 코어 |
-| Microsoft.ADHybridHealthService | [Azure Active Directory](/azure/active-directory/) |
+| Microsoft.Addons | core |
+| Microsoft.ADHybridHealthService | [Azure Active Directory](/azure/active-directory/) |
 | Microsoft.Advisor | [Azure Advisor](../../advisor/index.yml) |
 | Microsoft.AlertsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
 | Microsoft.AnalysisServices | [Azure Analysis Services](/azure/analysis-services/) |
 | Microsoft.ApiManagement | [API Management](../../api-management/index.yml) |
-| Microsoft.AppConfiguration | 코어 |
+| Microsoft.AppConfiguration | core |
 | Microsoft.Attestation | Azure 증명 서비스 |
-| Microsoft.Authorization | [Azure Resource Manager](../index.yml) |
+| Microsoft.Authorization | [Azure Resource Manager](../index.yml) |
 | Microsoft.Automation | [Automation](../../automation/index.yml) |
-| Microsoft.AzureActiveDirectory | [Azure Active Directory B2C](../../active-directory-b2c/index.yml) |
-| Microsoft.AzureStack | 코어 |
+| Microsoft.AzureActiveDirectory | [Azure Active Directory B2C](../../active-directory-b2c/index.yml) |
+| Microsoft.AzureStack | core |
 | Microsoft.Batch | [Batch](../../batch/index.yml) |
 | Microsoft.Billing | [Cost Management 및 청구](/azure/billing/) |
 | Microsoft.BingMaps | [Bing 지도](https://docs.microsoft.com/BingMaps/#pivot=main&panel=BingMapsAPI) |
@@ -38,7 +38,7 @@ ms.locfileid: "76984373"
 | Microsoft.Blueprint | [Azure 청사진](/azure/governance/blueprints/) |
 | Microsoft.BotService | [Azure Bot Service](/azure/bot-service/) |
 | Microsoft.Cache | [Azure Cache for Redis](/azure/azure-cache-for-redis/) |
-| Microsoft.Capacity | 코어 |
+| Microsoft.Capacity | core |
 | Microsoft.Cdn | [Content Delivery Network](../../cdn/index.yml) |
 | Microsoft.CertificateRegistration | [인증서 App Service](../../app-service/configure-ssl-certificate.md#import-an-app-service-certificate) |
 | Microsoft. ChangeAnalysis | [Azure Monitor](../../azure-monitor/index.yml) |
@@ -48,7 +48,7 @@ ms.locfileid: "76984373"
 | Microsoft.ClassicStorage | 클래식 배포 모델 저장소 |
 | Microsoft.ClassicSubscription | 클래식 배포 모델 |
 | Microsoft.CognitiveServices | [Cognitive Services](/azure/cognitive-services/) |
-| Microsoft.Commerce | 코어 |
+| Microsoft.Commerce | core |
 | Microsoft.Compute | [Virtual Machines](/azure/virtual-machines/)<br />[Virtual Machine Scale Sets](/azure/virtual-machine-scale-sets/) |
 | Microsoft.Consumption | [Cost Management](/azure/cost-management/) |
 | Microsoft.ContainerInstance | [Container Instances](/azure/container-instances/) |
@@ -76,7 +76,7 @@ ms.locfileid: "76984373"
 | Microsoft DevOps | [Azure DevOps](/azure/devops/) |
 | Microsoft.DevSpaces | [Azure Dev Spaces](/azure/dev-spaces/) |
 | Microsoft.DevTestLab | [Azure Lab Services](../../lab-services/index.yml) |
-| Microsoft.DocumentDB | [Azure Cosmos DB](../../cosmos-db/index.yml) |
+| Microsoft.DocumentDB | [Azure Cosmos DB](../../cosmos-db/index.yml) |
 | Microsoft.DomainRegistration | [App Service](/azure/app-service/) |
 | Microsoft.EnterpriseKnowledgeGraph | 엔터프라이즈 지식 그래프 |
 | Microsoft.EventGrid | [Event Grid](/azure/event-grid/) |
@@ -104,14 +104,14 @@ ms.locfileid: "76984373"
 | Microsoft ManagedServices | [Azure Lighthouse](/azure/lighthouse/) |
 | Microsoft.Management | [관리 그룹](/azure/governance/management-groups/) |
 | Microsoft.Maps | [Azure Maps](../../azure-maps/index.yml) |
-| Microsoft.Marketplace | 코어 |
-| Microsoft.MarketplaceApps | 코어 |
-| Microsoft.MarketplaceOrdering | 코어 |
+| Microsoft.Marketplace | core |
+| Microsoft.MarketplaceApps | core |
+| Microsoft.MarketplaceOrdering | core |
 | Microsoft.Media | [Media Services](../../media-services/index.yml) |
 | Microsoft.Migrate | [Azure Migrate](../../migrate/migrate-overview.md) |
 | Microsoft.MixedReality | [Azure Spatial Anchors](/azure/spatial-anchors/) |
 | Microsoft.NetApp | [Azure NetApp Files](../../azure-netapp-files/index.yml) |
-| Microsoft.Network | [Virtual Network](../../virtual-network/index.yml)<br />[Load Balancer](../../load-balancer/index.yml)<br />[Application Gateway](../../application-gateway/index.yml)<br />[Azure DNS](../../dns/index.yml)<br />[ExpressRoute](../../expressroute/index.yml)<br />[VPN Gateway](../../vpn-gateway/index.yml)<br />[Traffic Manager](../../traffic-manager/index.yml)<br />[Network Watcher](../../network-watcher/index.yml)<br />[Azure Firewall](../../firewall/index.yml)<br />[Azure Front Door Service](../../frontdoor/index.yml)<br />[Azure 방호](/azure/bastion/) |
+| Microsoft.Network | [Virtual Network](../../virtual-network/index.yml)<br />[Load Balancer](../../load-balancer/index.yml)<br />[Application Gateway](../../application-gateway/index.yml)<br />[Azure DNS](../../dns/index.yml)<br />[ExpressRoute](../../expressroute/index.yml)<br />[VPN Gateway](../../vpn-gateway/index.yml)<br />[Traffic Manager](../../traffic-manager/index.yml)<br />[Network Watcher](../../network-watcher/index.yml)<br />[Azure Firewall](../../firewall/index.yml)<br />[Azure Front Door Service](../../frontdoor/index.yml)<br />[Azure 방호](/azure/bastion/) |
 | Microsoft.NotificationHubs | [Notification Hubs](../../notification-hubs/index.yml) |
 | Microsoft.OffAzure | [Azure Migrate](../../migrate/migrate-overview.md) |
 | Microsoft.OperationalInsights | [Azure Monitor](../../azure-monitor/index.yml) |
@@ -124,18 +124,18 @@ ms.locfileid: "76984373"
 | Microsoft.RecoveryServices | [Site Recovery](../../site-recovery/index.yml) |
 | Microsoft.Relay | [Azure Relay](../../service-bus-relay/relay-what-is-it.md) |
 | Microsoft.ResourceGraph | [Azure 리소스 그래프](/azure/governance/resource-graph/) |
-| Microsoft.ResourceHealth | 코어 |
+| Microsoft.ResourceHealth | [Azure Service Health](../../service-health/index.yml)|
 | Microsoft.Resources | [Azure 리소스 관리자](../index.yml) |
-| Microsoft.SaaS | 코어 |
+| Microsoft.SaaS | core |
 | Microsoft.Scheduler | [Scheduler](/azure/scheduler/) |
 | Microsoft.Search | [Azure Search](../../search/index.yml) |
 | Microsoft.Security | [Security Center](../../security-center/index.yml) |
-| Microsoft SecurityInsights | [Azure Sentinel](/azure/sentinel/) |
+| Microsoft SecurityInsights | [Azure 센티널](/azure/sentinel/) |
 | SerialConsole | [Azure 직렬 콘솔](../../virtual-machines/troubleshooting/serial-console-windows.md) |
 | Microsoft.ServiceBus | [Service Bus](/azure/service-bus/) |
 | Microsoft.ServiceFabric | [Service Fabric](../../service-fabric/index.yml) |
 | Microsoft.ServiceFabricMesh | [Service Fabric Mesh](../../service-fabric-mesh/index.yml) |
-| Microsoft.SignalRService | [Azure SignalR Service](../../azure-signalr/index.yml) |
+| Microsoft.SignalRService | [Azure SignalR 서비스](../../azure-signalr/index.yml) |
 | Microsoft.SiteRecovery | [Site Recovery](../../site-recovery/index.yml) |
 | Microsoft.Solutions | [Azure Managed Applications](../managed-applications/index.yml) |
 | Microsoft.Sql | [Azure SQL Database](../../sql-database/index.yml)<br />[SQL Data Warehouse](/azure/sql-data-warehouse/) |
@@ -145,8 +145,8 @@ ms.locfileid: "76984373"
 | Microsoft.StorageSync | [스토리지](../../storage/index.yml) |
 | Microsoft.StorSimple | [StorSimple](/azure/storsimple/) |
 | Microsoft.StreamAnalytics | [Stream Analytics](../../stream-analytics/index.yml) |
-| Microsoft.Subscription | 코어 |
-| microsoft.support | 코어 |
+| Microsoft.Subscription | core |
+| microsoft.support | core |
 | Microsoft.TimeSeriesInsights | [Time Series Insights](../../time-series-insights/index.yml) |
 | Microsoft.VirtualMachineImages | [Azure 이미지 작성기](../../virtual-machines/linux/image-builder-overview.md) |
 | microsoft.visualstudio | [Azure DevOps](/azure/devops/?view=azure-devops) |

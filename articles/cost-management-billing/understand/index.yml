@@ -9,14 +9,13 @@ metadata:
   ms.collection: collection
   author: bandersmsft
   ms.author: banders
-  ms.manager: dougeby
-  ms.date: 12/18/2019
-  ms.openlocfilehash: bc472c68ea2a414fce81fe39e3282a43be3db829
-  ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+  ms.date: 02/13/2020
+  ms.openlocfilehash: 8fc97be2c993c4e88cc0ac10eeed88599a6e4225
+  ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 01/15/2020
-  ms.locfileid: "75983293"
+  ms.lasthandoff: 02/13/2020
+  ms.locfileid: "77200183"
 landingContent:
 - title: 개별 계정 검토
   linkLists:

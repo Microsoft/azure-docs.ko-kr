@@ -15,12 +15,12 @@ ms.date: 12/10/2019
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b24ad492f622fa9a3e494c7ead724fb3980f6668
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 1c3c0aea6ecaccc972702a8c87e4d127c71c75d6
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77066851"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121358"
 ---
 # <a name="how-provisioning-works"></a>프로비저닝 작동 방법
 
@@ -86,6 +86,8 @@ Azure AD에서 SaaS 응용 프로그램으로 아웃 바운드 프로 비전을 
 ### <a name="b2b-guest-users"></a>B2B (게스트) 사용자
 
 Azure AD 사용자 프로 비전 서비스를 사용 하 여 Azure AD의 B2B (또는 게스트) 사용자를 SaaS 응용 프로그램에 프로 비전 할 수 있습니다. 그러나 B2B 사용자가 Azure AD를 사용 하 여 SaaS 응용 프로그램에 로그인 하는 경우 SaaS 응용 프로그램에는 특정 방식으로 구성 된 SAML 기반 Single Sign-On 기능이 있어야 합니다. B2B 사용자의 로그인을 지원하도록 SaaS 애플리케이션을 구성하는 방법에 대한 자세한 내용은 [B2B 협업을 위한 SaaS 앱 구성](../b2b/configure-saas-apps.md)을 참조하세요.
+
+게스트 사용자에 대 한 userPrincipalName "alias # EXT #@domain.com"로 저장 되는 경우가 많습니다. userPrincipalName이 특성 매핑에 원본 특성으로 포함 된 경우에는 #EXT #가 userPrincipalName에서 제거 됩니다. #EXT #을 (를) 표시 해야 하는 경우에는 userPrincipalName을 originalUserPrincipalName로 원본 특성으로 바꿉니다. 
 
 ## <a name="provisioning-cycles-initial-and-incremental"></a>프로 비전 주기: 초기 및 증분
 

@@ -12,17 +12,17 @@ ms.date: 09/11/2018
 ms.author: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ee4b452d087bfef0e9f5f7c820870da0df8dc3e
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: f83a48ad13fe4ae217319b2aa85adf976aa6a7ae
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74683930"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77149850"
 ---
 # <a name="add-or-remove-group-owners-in-azure-active-directory"></a>Azure Active Directory를 사용하여 그룹 소유자 추가 또는 제거
 Azure AD(Azure Active Directory) 그룹은 그룹 소유자가 소유하고 관리합니다. 그룹 소유자는 사용자 또는 서비스 사용자 일 수 있으며 구성원 자격을 포함 하 여 그룹을 관리할 수 있습니다. 기존 그룹 소유자 또는 그룹 관리 관리자만 그룹 소유자를 할당할 수 있습니다. 그룹 소유자는 그룹의 멤버일 필요가 없습니다.
 
-그룹에 소유자가 없는 경우 그룹 관리 관리자도 그룹을 관리할 수 있습니다.
+그룹에 소유자가 없는 경우 그룹 관리 관리자도 그룹을 관리할 수 있습니다. 모든 그룹에 소유자가 하나 이상 있는 것이 좋습니다. 소유자가 그룹에 권한자 그룹의 마지막 소유자를 제거할 수 없습니다. 그룹에서 마지막 소유자를 제거 하기 전에 다른 소유자를 선택 했는지 확인 하세요.
 
 ## <a name="add-an-owner-to-a-group"></a>그룹에 소유자 추가
 다음은 Azure AD 포털을 사용 하 여 사용자를 그룹에 소유자로 추가 하는 방법에 대 한 지침입니다. 서비스 사용자를 그룹 소유자로 추가 하려면 [PowerShell](https://docs.microsoft.com/powershell/module/Azuread/Add-AzureADGroupOwner?view=azureadps-2.0)을 사용 하 여이 작업을 수행 하는 지침을 따르세요.
@@ -63,10 +63,10 @@ Azure AD를 사용하여 그룹에서 소유자를 제거합니다.
 ## <a name="next-steps"></a>다음 단계
 - [Azure Active Directory 그룹을 사용하여 리소스에 대한 액세스 관리](active-directory-manage-groups.md)
 
-- [그룹 설정을 구성하는 Azure Active Directory cmdlet](../users-groups-roles/groups-settings-cmdlets.md)
+- [그룹 설정을 구성하는 Azure Active Directory cmdlets](../users-groups-roles/groups-settings-cmdlets.md)
 
-- [그룹을 사용하여 통합 SaaS 앱에 액세스 할당](../users-groups-roles/groups-saasapps.md)
+- [그룹을 사용하여 통합 SaaS 앱에 대한 액세스 할당](../users-groups-roles/groups-saasapps.md)
 
 - [Azure Active Directory와 온-프레미스 ID 통합](../hybrid/whatis-hybrid-identity.md)
 
-- [그룹 설정을 구성하는 Azure Active Directory cmdlet](../users-groups-roles/groups-settings-v2-cmdlets.md)
+- [그룹 설정을 구성하는 Azure Active Directory cmdlets](../users-groups-roles/groups-settings-v2-cmdlets.md)

@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 02/11/2020
 ms.author: nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: f72b2b85fcaae4e0a21e4bbe2f3af79359ca2fa6
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: f1e0bf44515aab18019b19b4f0a6f84183e5aac3
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701912"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160086"
 ---
 # <a name="single-page-application-code-configuration"></a>단일 페이지 응용 프로그램: 코드 구성
 
@@ -38,7 +38,7 @@ Microsoft id 플랫폼은 다음과 같은 MSAL (Microsoft 인증 라이브러�
 
 MSAL 라이브러리에서 응용 프로그램 등록 정보는 라이브러리 초기화 중에 구성으로 전달 됩니다.
 
-### <a name="javascript"></a>JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 // Configuration object constructed.
@@ -52,9 +52,10 @@ const config = {
 // create UserAgentApplication instance
 const userAgentApplication = new UserAgentApplication(config);
 ```
+
 구성 가능한 옵션에 대 한 자세한 내용은 [MSAL를 사용 하 여 응용 프로그램 초기화](msal-js-initializing-client-applications.md)를 참조 하세요.
 
-### <a name="angular"></a>Angular
+# <a name="angulartabangular"></a>[Angular](#tab/angular)
 
 ```javascript
 //In app.module.ts
@@ -68,6 +69,8 @@ import { MsalModule } from '@azure/msal-angular';
 
   export class AppModule { }
 ```
+
+---
 
 ## <a name="next-steps"></a>다음 단계
 

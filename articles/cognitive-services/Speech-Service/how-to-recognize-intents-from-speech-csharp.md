@@ -3,19 +3,19 @@ title: 음성 SDK를 사용 하 여 음성에서 의도를 인식 하는 방법C
 titleSuffix: Azure Cognitive Services
 description: 이 가이드에서는 용 C#speech SDK를 사용 하 여 음성에서 의도를 인식 하는 방법에 대해 알아봅니다.
 services: cognitive-services
-author: wolfma61
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 08/28/2019
-ms.author: wolfma
-ms.openlocfilehash: 554a7cbd79dbb6e1306686600474f727c99defed
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.date: 02/10/2020
+ms.author: dapine
+ms.openlocfilehash: 5d3c77c307739f9014010a592aa496a1cc83b333
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74805895"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120047"
 ---
 # <a name="how-to-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>용 Speech SDK를 사용 하 여 음성에서 의도를 인식 하는 방법C#
 
@@ -35,7 +35,7 @@ Cognitive Services [Speech SDK](speech-sdk.md)는 [LUIS(Language Understanding) 
 > - 파일에서 음성 인식
 > - 비동기, 이벤트 중심 연속 인식 사용
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 가이드를 시작 하기 전에 다음 항목이 있어야 합니다.
 
@@ -48,7 +48,7 @@ LUIS는 음성 서비스와 통합되어 음성에서 의도를 인식합니다.
 
 LUIS는 다음과 같은 세 가지 종류의 키를 사용합니다.
 
-| 키 유형  | 용도                                               |
+| 키 유형  | 목적                                               |
 | --------- | ----------------------------------------------------- |
 | 작성 | 프로그래밍 방식으로 LUIS 앱을 만들고 수정할 수 있음 |
 | Starter   | 텍스트만 사용하여 LUIS 애플리케이션을 테스트할 수 있습니다.   |
@@ -91,12 +91,15 @@ Azure 대시보드에서 LUIS 리소스를 만든 후에는 [LUIS 포털](https:
 
    [!code-csharp[Top-level declarations](~/samples-cognitive-services-speech-sdk/samples/csharp/sharedcontent/console/intent_recognition_samples.cs#toplevel)]
 
-1. 제공된 `Main()` 메서드 내부에서 다음 코드를 추가합니다.
+1. 제공 된 `Main()` 메서드를 다음과 같은 비동기 값으로 바꿉니다.
 
    ```csharp
-   RecognizeIntentAsync().Wait();
-   Console.WriteLine("Please press Enter to continue.");
-   Console.ReadLine();
+   public static async Task Main()
+   {
+       await RecognizeIntentAsync();
+       Console.WriteLine("Please press Enter to continue.");
+       Console.ReadLine();
+   }
    ```
 
 1. 다음과 같이 빈 비동기 메서드 `RecognizeIntentAsync()`를 만듭니다.
@@ -113,11 +116,11 @@ Azure 대시보드에서 LUIS 리소스를 만든 후에는 [LUIS 포털](https:
 
 1. 이 메서드의 자리 표시자를 다음과 같이 LUIS 구독 키, 지역 및 앱 ID로 바꿉니다.
 
-   | Placeholder | 다음 항목으로 교체 |
+   | 자리 표시자 | 다음 항목으로 교체 |
    | ----------- | ------------ |
-   | `YourLanguageUnderstandingSubscriptionKey` | LUIS 엔드포인트 키 다시, “시작 키”가 아닌 Azure 대시보드에서 이 항목을 가져와야 합니다. [LUIS 포털](https://www.luis.ai/home)의 **관리** 아래에 있는 앱의 **키 및 엔드포인트** 페이지에서 찾을 수 있습니다. |
+   | `YourLanguageUnderstandingSubscriptionKey` | LUIS 엔드포인트 키 다시, “시작 키”가 아닌 Azure 대시보드에서 이 항목을 가져와야 합니다. **LUIS 포털**의 **관리** 아래에 있는 앱의 [키 및 엔드포인트](https://www.luis.ai/home) 페이지에서 찾을 수 있습니다. |
    | `YourLanguageUnderstandingServiceRegion` | LUIS 구독이 있는 지역의 짧은 식별자(예: 미국 서부를 의미하는 `westus`). [지역](regions.md)을 참조하세요. |
-   | `YourLanguageUnderstandingAppId` | LUIS 앱 ID [LUIS 포털](https://www.luis.ai/home)의 앱 **설정** 페이지에서 찾을 수 있습니다. |
+   | `YourLanguageUnderstandingAppId` | LUIS 앱 ID **LUIS 포털**의 앱 [설정](https://www.luis.ai/home) 페이지에서 찾을 수 있습니다. |
 
 이러한 변경 내용을 적용 하면 응용 프로그램을 빌드 (**제어 + Shift + B**) 하 고 (**F5**) 응용 프로그램을 실행할 수 있습니다. 메시지가 표시되면 PC의 마이크에 대고 “Turn off the lights(조명 끄기)”라고 말합니다. 애플리케이션에서 콘솔 창에 결과를 표시합니다.
 
@@ -138,12 +141,12 @@ Azure 대시보드에서 LUIS 리소스를 만든 후에는 [LUIS 포털](https:
 
 의도를 추가하려면 LUIS 모델(이미 만들어져 있고 이름이 `model`인), 의도 이름 및 의도 ID라는 세 가지 인수가 필요합니다. ID와 이름의 차이는 다음과 같습니다.
 
-| `AddIntent()`&nbsp;argument | 용도 |
+| `AddIntent()`&nbsp;argument | 목적 |
 | --------------------------- | ------- |
 | `intentName` | LUIS 앱에서 정의된 의도의 이름입니다. 이 값은 LUIS 의도 이름과 정확히 일치해야 합니다. |
 | `intentID` | Speech SDK가 인식한 의도에 할당되는 ID입니다. 이 값은 개발자가 원하는 대로 할 수 있으며, LUIS 앱에서 정의된 의도 이름과 일치하지 않아도 됩니다. 예를 들어 여러 의도가 동일한 코드를 통해 처리되는 경우 동일한 ID를 사용해도 됩니다. |
 
-홈 자동화 LUIS 앱에는 두 가지 의도가 있는데, 하나는 디바이스를 켜는 용도로, 다른 하나는 디바이스를 끄는 용도로 사용됩니다. 아래는 이러한 의도를 인식기에 추가하는 코드 줄입니다. `RecognizeIntentAsync()` 메서드의 세 `AddIntent` 줄을 이 코드로 바꾸세요.
+홈 자동화 LUIS 앱에는 두 가지 의도가 있는데, 하나는 디바이스를 켜는 용도로, 다른 하나는 디바이스를 끄는 용도로 사용됩니다. 아래는 이러한 의도를 인식기에 추가하는 코드 줄입니다. `AddIntent` 메서드의 세 `RecognizeIntentAsync()` 줄을 이 코드로 바꾸세요.
 
 ```csharp
 recognizer.AddIntent(model, "HomeAutomation.TurnOff", "off");
@@ -173,11 +176,11 @@ result.Properties.GetProperty(PropertyId.LanguageUnderstandingServiceResponse_Js
 
 ## <a name="specify-recognition-language"></a>인식 언어 지정
 
-기본적으로 LUIS는 미국 영어(`en-us`)로 의도를 인식합니다. 음성 구성의 `SpeechRecognitionLanguage` 속성에 로캘 코드를 할당하여 다른 언어로 의도를 인식할 수 있습니다. 예를 들어, 독일어에서 의도를 인식할 수 있도록 인식기를 만들기 전에 응용 프로그램에 `config.SpeechRecognitionLanguage = "de-de";`를 추가 합니다. 자세한 내용은 [지원되는 언어](language-support.md#speech-to-text)를 참조하세요.
+기본적으로 LUIS는 미국 영어(`en-us`)로 의도를 인식합니다. 음성 구성의 `SpeechRecognitionLanguage` 속성에 로캘 코드를 할당하여 다른 언어로 의도를 인식할 수 있습니다. 예를 들어, 독일어에서 의도를 인식할 수 있도록 인식기를 만들기 전에 응용 프로그램에 `config.SpeechRecognitionLanguage = "de-de";`를 추가 합니다. 자세한 내용은 [LUIS 언어 지원](../LUIS/luis-language-support.md#languages-supported)을 참조 하세요.
 
 ## <a name="continuous-recognition-from-a-file"></a>파일에서 연속 인식
 
-다음 코드는 Speech SDK를 사용하는 의도 인식의 두 가지 추가 기능을 보여줍니다. 앞에서 언급한 첫 번째 기능은 연속 인식으로, 결과가 있으면 인식기가 이벤트를 내보냅니다. 이후 개발자가 제공하는 이벤트 처리기로 이러한 이벤트를 처리할 수 있습니다. 연속 인식에서는 `RecognizeOnceAsync()` 대신 인식기의 `StartContinuousRecognitionAsync()` 메서드를 호출하여 인식을 시작합니다.
+다음 코드는 Speech SDK를 사용하는 의도 인식의 두 가지 추가 기능을 보여줍니다. 앞에서 언급한 첫 번째 기능은 연속 인식으로, 결과가 있으면 인식기가 이벤트를 내보냅니다. 이후 개발자가 제공하는 이벤트 처리기로 이러한 이벤트를 처리할 수 있습니다. 연속 인식에서는 `StartContinuousRecognitionAsync()` 대신 인식기의 `RecognizeOnceAsync()` 메서드를 호출하여 인식을 시작합니다.
 
 다른 기능은 WAV 파일에서 처리할 음성이 포함된 오디오를 읽는 기능입니다. 구현에는 의도 인식기를 만들 때 사용할 수 있는 오디오 구성을 만드는 과정이 포함됩니다. 파일은 샘플링 속도가 16kHz인 단일 채널(모노)이어야 합니다.
 

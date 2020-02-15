@@ -8,12 +8,12 @@ manager: rkarlin
 ms.date: 01/02/2019
 ms.service: key-vault
 ms.topic: conceptual
-ms.openlocfilehash: d8461cb2d98ec8fe914c2cc878e9002d132c9995
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: b9c458b42f7436377d41cf5095d404dedbe0ffd1
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76845828"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191601"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Azure Key Vault의 가상 네트워크 서비스 엔드포인트
 
@@ -66,7 +66,7 @@ Azure Key Vault의 가상 네트워크 서비스 엔드포인트를 사용하면
 |Azure Resource Manager 템플릿 배포 서비스|[배포 중 보안 값을 전달합니다](../azure-resource-manager/templates/key-vault-parameter.md).|
 |Azure Disk Encryption 볼륨 암호화 서비스|가상 머신을 배포하는 동안 BitLocker 키(Windows VM) 또는 DM 암호(Linux VM) 및 키 암호화 키에 대한 액세스를 허용합니다. 그러면 [Azure Disk Encryption](../security/fundamentals/encryption-overview.md)이 설정됩니다.|
 |Azure Backup|Azure Virtual Machines를 백업하는 동안 [Azure Backup](../backup/backup-introduction-to-azure-backup.md)을 사용하여 관련 키 및 비밀의 백업 및 복원을 허용합니다.|
-|Exchange Online 및 SharePoint Online|[고객 키](https://support.office.com/article/Controlling-your-data-in-Office-365-using-Customer-Key-f2cd475a-e592-46cf-80a3-1bfb0fa17697)를 사용하여 Azure Storage 서비스 암호화를 위한 고객 키에 대한 액세스를 허용합니다.|
+|Exchange Online 및 SharePoint Online|[고객 키](/microsoft-365/compliance/customer-key-overview)를 사용하여 Azure Storage 서비스 암호화를 위한 고객 키에 대한 액세스를 허용합니다.|
 |Azure Information Protection|[Azure Information Protection](https://docs.microsoft.com/azure/information-protection/what-is-information-protection)을 위해 테넌트 키 액세스 허용|
 |Azure App Service|[Key Vault를 통해 Azure Web App 인증서를 배포합니다](https://azure.github.io/AppService/2016/05/24/Deploying-Azure-Web-App-Certificate-through-Key-Vault.html).|
 |Azure SQL Database|[Azure SQL Database 및 Data Warehouse에 대한 BYOK(Bring Your Own Key) 지원을 사용하여 투명한 데이터 암호화](../sql-database/transparent-data-encryption-byok-azure-sql.md?view=sql-server-2017&viewFallbackFrom=azuresqldb-current).|
@@ -74,7 +74,7 @@ Azure Key Vault의 가상 네트워크 서비스 엔드포인트를 사용하면
 |Azure Data Lake Store|고객 관리 키를 사용하여 [Azure Data Lake Store의 데이터 암호화](../data-lake-store/data-lake-store-encryption.md).|
 |Azure Databricks|[빠르고 쉬우며 공동 작업이 가능한 Apache Spark 기반 분석 서비스](../azure-databricks/what-is-azure-databricks.md)|
 |Azure API Management|[MSI를 사용 하 여 Key Vault에서 사용자 지정 도메인에 대 한 인증서 배포](../api-management/api-management-howto-use-managed-service-identity.md#use-the-managed-service-identity-to-access-other-resources)|
-|Azure Data Factory|[Data Factory에서 Key Vault의 데이터 저장소 자격 증명 페치](https://go.microsoft.com/fwlink/?linkid=2109491)|
+|Azure 데이터 팩터리|[Data Factory에서 Key Vault의 데이터 저장소 자격 증명 페치](https://go.microsoft.com/fwlink/?linkid=2109491)|
 |Azure Event Hubs|[고객이 관리 하는 키 시나리오의 key vault에 대 한 액세스 허용](https://docs.microsoft.com/azure/event-hubs/configure-customer-managed-key)|
 |Azure Service Bus|[고객이 관리 하는 키 시나리오의 key vault에 대 한 액세스 허용](https://docs.microsoft.com/azure/service-bus-messaging/configure-customer-managed-key)|
 

@@ -5,16 +5,16 @@ keywords: ''
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 11/19/2019
+ms.date: 02/07/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: f31dec1d654124f9071c01c0e5d033db4b65a1d3
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 4a7c27beeb7208efcf6687e49193c8d3b68f5300
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76509668"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186504"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>IoT Edge 보안 디먼 및 런타임 업데이트
 
@@ -32,14 +32,19 @@ IoT Edge 보안 디먼은 IoT Edge 디바이스에서 패키지 관리자를 사
 
 ### <a name="linux-devices"></a>Linux 디바이스
 
-Linux x64 장치에서 apt-get 또는 적절 한 패키지 관리자를 사용 하 여 보안 데몬을 업데이트 합니다.
+Linux x64 장치에서 apt-get 또는 적절 한 패키지 관리자를 사용 하 여 보안 데몬을 최신 버전으로 업데이트 합니다.
 
 ```bash
 apt-get update
 apt-get install libiothsm iotedge
 ```
 
-Linux ARM32 장치에서 [linux에 Azure IoT Edge 런타임 설치 (ARM32v7/armhf)](how-to-install-iot-edge-linux-arm.md) 의 단계를 사용 하 여 최신 버전의 보안 디먼을 설치 합니다.
+특정 버전의 보안 디먼으로 업데이트 하려면 [IoT Edge 릴리스에서](https://github.com/Azure/azure-iotedge/releases)대상으로 지정할 버전을 찾습니다. 해당 버전에서 장치에 대 한 적절 한 **libiothsm** 및 **iotedge** 파일을 찾습니다. 각 파일에 대해 파일 링크를 마우스 오른쪽 단추로 클릭 하 고 링크 주소를 복사 합니다. 링크 주소를 사용 하 여 해당 구성 요소의 특정 버전을 설치 합니다.
+
+```bash
+curl -L <libiothsm-std link> -o libiothsm-std.deb && sudo dpkg -i ./libiothsm-std.deb
+curl -L <iotedge link> -o iotedge.deb && sudo dpkg -i ./iotedge.deb
+```
 
 ### <a name="windows-devices"></a>Windows 디바이스
 
@@ -51,7 +56,16 @@ Windows 장치에서 PowerShell 스크립트를 사용 하 여 보안 디먼을 
 
 업데이트-IoTEdge 명령을 실행 하면 두 개의 런타임 컨테이너 이미지와 함께 장치에서 보안 데몬이 제거 되 고 업데이트 됩니다. Config.xml 파일은 Windows 컨테이너를 사용 하는 경우 Moby 컨테이너 엔진의 데이터 뿐만 아니라 장치에도 유지 됩니다. 구성 정보를 유지 하는 것은 업데이트 프로세스 중에 장치에 대 한 연결 문자열 또는 장치 프로 비전 서비스 정보를 다시 제공할 필요가 없음을 의미 합니다.
 
-특정 버전의 보안 디먼을 설치 하려는 경우 [IoT Edge 릴리스에서](https://github.com/Azure/azure-iotedge/releases)적절 한 Microsoft-Azure-IoTEdge 파일을 다운로드 합니다. 그런 다음, `-OfflineInstallationPath` 매개 변수를 사용하여 파일 위치를 가리킵니다. 자세한 내용은 [오프라인 설치](how-to-install-iot-edge-windows.md#offline-installation)를 참조하세요.
+특정 버전의 보안 디먼으로 업데이트 하려면 [IoT Edge 릴리스에서](https://github.com/Azure/azure-iotedge/releases)대상으로 지정할 버전을 찾습니다. 해당 버전에서 **Microsoft-Azure-IoTEdge** 파일을 다운로드 합니다. 그런 다음 `-OfflineInstallationPath` 매개 변수를 사용 하 여 로컬 파일 위치를 가리킵니다. 다음은 그 예입니다.
+
+```powershell
+. {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; Update-IoTEdge -ContainerOs <Windows or Linux> -OfflineInstallationPath <absolute path to directory>
+```
+
+>[!NOTE]
+>`-OfflineInstallationPath` 매개 변수는 제공 된 디렉터리에서 **Microsoft-Azure-IoTEdge** 이라는 파일을 찾습니다. IoT Edge 버전 1.0.9부터 사용 가능한 두 개의 .cab 파일 (AMD64 장치와 ARM32 용)이 있습니다. 장치에 맞는 파일을 다운로드 한 다음 파일 이름을 변경 하 여 아키텍처 접미사를 제거 합니다.
+
+업데이트 옵션에 대 한 자세한 내용을 보려면 명령 `Get-Help Update-IoTEdge -full` 사용 하거나 [모든 설치 매개 변수](how-to-install-iot-edge-windows.md#all-installation-parameters)를 참조 하십시오.
 
 ## <a name="update-the-runtime-containers"></a>런타임 컨테이너 업데이트
 
@@ -108,14 +122,27 @@ IoT Edge 서비스는 최신 버전의 런타임 이미지를 끌어오고 해�
 
 ## <a name="update-to-a-release-candidate-version"></a>릴리스 후보 버전으로 업데이트
 
-Azure IoT Edge은 IoT Edge 서비스의 새 버전을 정기적으로 릴리스 합니다. 안정적인 각 릴리스 전에는 RC (릴리스 후보) 버전이 하나 이상 있습니다. RC 버전은 릴리스에 대해 계획 된 모든 기능을 포함 하지만 안정적인 릴리스에 필요한 테스트 및 유효성 검사 프로세스를 계속 진행 하 고 있습니다. 초기에 새 기능을 테스트 하려는 경우 RC 버전을 설치 하 고 GitHub를 통해 피드백을 제공할 수 있습니다.
+Azure IoT Edge은 IoT Edge 서비스의 새 버전을 정기적으로 릴리스 합니다. 안정적인 각 릴리스 전에는 RC (릴리스 후보) 버전이 하나 이상 있습니다. RC 버전에는 릴리스에 대해 계획 된 모든 기능이 포함 되어 있지만 여전히 테스트 및 유효성 검사를 진행 하 고 있습니다. 초기에 새 기능을 테스트 하려는 경우 RC 버전을 설치 하 고 GitHub를 통해 피드백을 제공할 수 있습니다.
 
 릴리스 후보 버전은 릴리스의 동일한 번호 매기기 규칙을 따르고 끝에 **-rc** 와 증분 숫자가 추가 됩니다. 안정적인 버전과 동일한 [Azure IoT Edge 릴리스](https://github.com/Azure/azure-iotedge/releases) 목록에서 릴리스 후보를 확인할 수 있습니다. 예를 들어 **1.0.7**이전에 제공 된 두 개의 릴리스 후보로 **1.0.7-rc1** 및 **1.0.7**를 찾습니다. RC 버전이 **시험판** 레이블로 표시 된 것을 확인할 수도 있습니다.
 
-미리 보기로 제공 되는 릴리스 후보 버전은 일반 설치 관리자가 대상으로 하는 최신 버전으로 포함 되지 않습니다. 대신 테스트 하려는 RC 버전의 자산을 수동으로 대상으로 해야 합니다. IoT Edge 장치 운영 체제에 따라 다음 섹션을 사용 하 여 특정 버전으로 IoT Edge를 업데이트 합니다.
+IoT Edge 에이전트 및 허브 모듈에는 동일한 규칙으로 태그가 지정 된 RC 버전이 있습니다. 예를 들면 **mcr.microsoft.com/azureiotedge-hub:1.0.7-rc2**입니다.
+
+미리 보기로 제공 되는 릴리스 후보 버전은 일반 설치 관리자가 대상으로 하는 최신 버전으로 포함 되지 않습니다. 대신 테스트 하려는 RC 버전의 자산을 수동으로 대상으로 해야 합니다. 대부분의 경우 RC 버전을 설치 하거나 업데이트 하는 것은 Windows 장치의 한 가지 차이점을 제외 하 고 IoT Edge의 다른 특정 버전을 대상으로 하는 것과 동일 합니다. 
+
+릴리스 후보에서 Windows 장치에 IoT Edge 보안 디먼을 설치 하 고 관리 하는 데 사용할 수 있는 PowerShell 스크립트는 일반적인 최신 버전의 기능과 다를 수 있습니다. RC에 대 한 IoT Edge .cab 파일을 다운로드 하는 것 외에도 **IotEdgeSecurityDaemon** 스크립트를 다운로드 합니다. [Dot 소싱](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-7#script-scope-and-dot-sourcing) 을 사용 하 여 현재 원본에서 다운로드 한 스크립트를 실행 합니다. 다음은 그 예입니다. 
+
+```powershell
+. <path>\IoTEdgeSecurityDaemon.ps1
+Update-IoTEdge -OfflineInstallationPath <path>
+```
+
+이 문서의 섹션을 사용 하 여 IoT Edge 장치를 특정 버전의 보안 데몬 또는 런타임 모듈로 업데이트 하는 방법을 알아봅니다.
+
+새 컴퓨터에 IoT Edge을 설치 하는 경우 다음 링크를 사용 하 여 장치 운영 체제에 따라 특정 버전을 설치 하는 방법을 알아봅니다.
 
 * [Linux](how-to-install-iot-edge-linux.md#install-a-specific-runtime-version)
-* [Windows](how-to-install-iot-edge-windows.md#offline-installation)
+* [Windows](how-to-install-iot-edge-windows.md#offline-or-specific-version-installation)
 
 ## <a name="next-steps"></a>다음 단계
 

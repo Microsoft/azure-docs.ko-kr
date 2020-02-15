@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 01/29/2020
 ms.author: martinco
-ms.openlocfilehash: d3afc784688a14e4d5d2fc6ae9dc5c1a9e45c4a0
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: cafa9d6100e03d8315bf5dd19d863ca90aadd4bb
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77057212"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190902"
 ---
 # <a name="five-steps-to-securing-your-identity-infrastructure"></a>ID 인프라를 보호하기 위한 5단계
 
@@ -107,7 +107,7 @@ Azure AD에 직접 인증하도록 애플리케이션을 구성하는 조직은 
 
 1. [AD FS를 사용하는 경우 레거시 인증](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/access-control-policies-w2k12)을 차단합니다.
 2. [최신 인증을 사용하도록 SharePoint Online 및 Exchange Online](../../active-directory/conditional-access/conditional-access-for-exo-and-spo.md)을 설정합니다.
-3. Azure AD Premium 하는 경우 [조건부 액세스 정책을](../../active-directory/conditional-access/conditions.md) 사용 하 여 레거시 인증을 차단 하 고, 그렇지 않은 경우 [Azure AD 보안 기본값](../../active-directory/fundamentals/concept-fundamentals-security-defaults.md)을 사용 합니다.
+3. Azure AD Premium 하는 경우 [조건부 액세스 정책을](../../active-directory/conditional-access/overview.md) 사용 하 여 레거시 인증을 차단 하 고, 그렇지 않은 경우 [Azure AD 보안 기본값](../../active-directory/fundamentals/concept-fundamentals-security-defaults.md)을 사용 합니다.
 
 ### <a name="block-invalid-authentication-entry-points"></a>잘못된 인증 진입점 차단
 

@@ -10,12 +10,12 @@ ms.topic: article
 ms.service: security
 ms.subservice: security-fundamentals
 ms.workload: identity
-ms.openlocfilehash: f32980b736232449d24de8721f354d9ca5dd03ab
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 7a13e50e6b5357264e7096fa58e34a4bcaf6ad8b
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77064430"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190906"
 ---
 # <a name="choose-the-right-authentication-method-for-your-azure-active-directory-hybrid-identity-solution"></a>Azure Active Directory 하이브리드 ID 솔루션에 적합한 인증 방법 선택
 
@@ -175,17 +175,17 @@ Azure AD에서 확인할 수 없는 라우팅할 수 없는 도메인의 경우 
 |고려 사항|암호 해시 동기화 + 원활한 SSO|통과 인증 + 원활한 SSO|AD FS로 페더레이션|
 |:-----|:-----|:-----|:-----|
 |인증은 어디서 수행되나요?|클라우드|클라우드에서 온-프레미스 인증 에이전트와 보안 암호 확인을 교환한 후|온-프레미스|
-|프로비저닝 시스템(Azure AD Connect) 이외의 온-프레미스 서버 요구 사항은 무엇인가요?|없음|각 추가 인증 에이전트마다 서버 1개|둘 이상의 AD FS 서버<br><br>경계/DMZ 네트워크에 둘 이상의 WAP 서버|
-|프로비저닝 시스템 이외의 온-프레미스 인터넷 및 네트워킹 요구 사항은 무엇인가요?|없음|인증 에이전트를 실행하는 서버의[아웃바운드 인터넷 액세스](../../active-directory/hybrid/how-to-connect-pta-quick-start.md)|경계에 있는 WAP 서버에 대한 [인바운드 인터넷 액세스](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-requirements)<br><br>경계에 있는 WAP 서버에서 AD FS 서버로의 인바운드 네트워크 액세스<br><br>네트워크 부하 분산|
-|SSL 인증서 요구 사항이 있나요?|아니요|아니요|예|
+|프로비저닝 시스템(Azure AD Connect) 이외의 온-프레미스 서버 요구 사항은 무엇인가요?|None|각 추가 인증 에이전트마다 서버 1개|둘 이상의 AD FS 서버<br><br>경계/DMZ 네트워크에 둘 이상의 WAP 서버|
+|프로비저닝 시스템 이외의 온-프레미스 인터넷 및 네트워킹 요구 사항은 무엇인가요?|None|인증 에이전트를 실행하는 서버의[아웃바운드 인터넷 액세스](../../active-directory/hybrid/how-to-connect-pta-quick-start.md)|경계에 있는 WAP 서버에 대한 [인바운드 인터넷 액세스](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-requirements)<br><br>경계에 있는 WAP 서버에서 AD FS 서버로의 인바운드 네트워크 액세스<br><br>네트워크 부하 분산|
+|SSL 인증서 요구 사항이 있나요?|예|예|yes|
 |상태 모니터링 솔루션이 있나요?|필요하지 않음|[Azure Active Directory 관리 센터](../../active-directory/hybrid/tshoot-connect-pass-through-authentication.md)에서 제공한 에이전트 상태|[Azure AD Connect Health](../../active-directory/hybrid/how-to-connect-health-adfs.md)|
-|사용자가 회사 네트워크 내의 도메인 가입 디바이스에서 Single Sign-On 방식으로 클라우드 리소스에 액세스할 수 있나요?|[원활한 SSO](../../active-directory/hybrid/how-to-connect-sso.md)의 경우 예|[원활한 SSO](../../active-directory/hybrid/how-to-connect-sso.md)의 경우 예|예|
+|사용자가 회사 네트워크 내의 도메인 가입 디바이스에서 Single Sign-On 방식으로 클라우드 리소스에 액세스할 수 있나요?|[원활한 SSO](../../active-directory/hybrid/how-to-connect-sso.md)의 경우 예|[원활한 SSO](../../active-directory/hybrid/how-to-connect-sso.md)의 경우 예|yes|
 |지원되는 로그인 유형은 무엇인가요?|UserPrincipalName + 암호<br><br>[원활한 SSO](../../active-directory/hybrid/how-to-connect-sso.md) 를 사용 하 여 Windows 통합 인증<br><br>[대체 로그인 ID](../../active-directory/hybrid/how-to-connect-install-custom.md)|UserPrincipalName + 암호<br><br>[원활한 SSO](../../active-directory/hybrid/how-to-connect-sso.md) 를 사용 하 여 Windows 통합 인증<br><br>[대체 로그인 ID](../../active-directory/hybrid/how-to-connect-pta-faq.md)|UserPrincipalName + 암호<br><br>sAMAccountName + 암호<br><br>Windows 통합 인증<br><br>[인증서 및 스마트 카드 인증](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-user-certificate-authentication)<br><br>[대체 로그인 ID](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configuring-alternate-login-id)|
 |비즈니스용 Windows Hello가 지원되나요?|[키 신뢰 모델](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)|[키 신뢰 모델](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)<br>*Windows Server 2016 도메인 기능 수준 필요*|[키 신뢰 모델](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)<br><br>[인증서 신뢰 모델](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-key-trust-adfs)|
 |다단계 인증 옵션은 무엇인가요?|[Azure MFA](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[조건부 액세스를 사용 하는 사용자 지정 컨트롤 *](../../active-directory/conditional-access/controls.md)|[Azure MFA](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[조건부 액세스를 사용 하는 사용자 지정 컨트롤 *](../../active-directory/conditional-access/controls.md)|[Azure MFA](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Azure MFA 서버](../../active-directory/authentication/howto-mfaserver-deploy.md)<br><br>[타사 MFA](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-additional-authentication-methods-for-ad-fs)<br><br>[조건부 액세스를 사용 하는 사용자 지정 컨트롤 *](../../active-directory/conditional-access/controls.md)|
-|지원되는 사용자 계정 상태는 무엇인가요?|비활성화된 계정<br>(최대 30분 지연)|비활성화된 계정<br><br>계정이 잠겼습니다.<br><br>계정이 만료됨<br><br>암호 만료<br><br>로그인 시간|비활성화된 계정<br><br>계정이 잠겼습니다.<br><br>계정이 만료됨<br><br>암호 만료<br><br>로그인 시간|
+|지원되는 사용자 계정 상태는 무엇인가요?|비활성화된 계정<br>(최대 30분 지연)|비활성화된 계정<br><br>계정 잠김<br><br>계정이 만료됨<br><br>암호 만료됨<br><br>로그인 시간|비활성화된 계정<br><br>계정 잠김<br><br>계정이 만료됨<br><br>암호 만료됨<br><br>로그인 시간|
 |조건부 액세스 옵션은 무엇 인가요?|[Azure AD 조건부 액세스, Azure AD Premium](../../active-directory/conditional-access/overview.md)|[Azure AD 조건부 액세스, Azure AD Premium](../../active-directory/conditional-access/overview.md)|[Azure AD 조건부 액세스, Azure AD Premium](../../active-directory/conditional-access/overview.md)<br><br>[AD FS 클레임 규칙](https://adfshelp.microsoft.com/AadTrustClaims/ClaimsGenerator)|
-|레거시 프로토콜 차단이 지원되나요?|[예](../../active-directory/conditional-access/conditions.md)|[예](../../active-directory/conditional-access/conditions.md)|[예](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/access-control-policies-w2k12)|
+|레거시 프로토콜 차단이 지원되나요?|[예](../../active-directory/conditional-access/overview.md)|[예](../../active-directory/conditional-access/overview.md)|[예](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/access-control-policies-w2k12)|
 |로그인 페이지에서 로고, 이미지 및 설명을 사용자 지정할 수 있나요?|[예(Azure AD Premium의 경우)](../../active-directory/fundamentals/customize-branding.md)|[예(Azure AD Premium의 경우)](../../active-directory/fundamentals/customize-branding.md)|[예](../../active-directory/hybrid/how-to-connect-fed-management.md)|
 |지원되는 고급 시나리오는 무엇인가요?|[스마트 암호 잠금](../../active-directory/authentication/howto-password-smart-lockout.md)<br><br>[손실된 자격 증명 보고서, Azure AD Premium P2 사용](../../active-directory/reports-monitoring/concept-risk-events.md)|[스마트 암호 잠금](../../active-directory/authentication/howto-password-smart-lockout.md)|다중 사이트 낮은 대기 시간 인증 시스템<br><br>[AD FS 엑스트라넷 잠금](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-soft-lockout-protection)<br><br>[타사 ID 시스템과 통합](../../active-directory/hybrid/how-to-connect-fed-compatibility.md)|
 

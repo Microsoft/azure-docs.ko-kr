@@ -302,7 +302,9 @@
       href: reference-pattern-syntax.md
     - name: 데이터
       href: luis-reference-prebuilt-sentiment.md
-    - name: 개발자 리소스
+- name: 개발자 참조
+  items:
+    - name: 개요
       href: developer-reference-resource.md
       displayName: 'SDK, API, quickstart, REST, cli, powershell, azure, rm, resource manager, samples, package, module, tool, dispatch, bot'
     - name: Azure CLI
@@ -416,5 +418,7 @@
       href: 'https://blog.botframework.com/category/luis/'
     - name: 기술 자료
       href: 'https://cognitive.uservoice.com/knowledgebase/topics/127872-luis-language-understanding-intelligent-service'
+- name: 동영상
+  href: 'whats-new.md#videos'
 - name: LUIS 포털
   href: 'https://www.luis.ai'

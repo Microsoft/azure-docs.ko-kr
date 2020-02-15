@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: tutorial
-ms.date: 12/09/2019
+ms.date: 02/10/2020
 ms.author: swmachan
-ms.openlocfilehash: 25c51067f713b5d713684e5d267c133c21b17c93
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: ecb42d200eb8808f6bfa4cfb91e98909e350038b
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74978529"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77118612"
 ---
 # <a name="tutorial-create-a-translation-app-with-wpf"></a>자습서: WPF를 사용하여 번역 앱 만들기
 
@@ -37,14 +37,14 @@ WPF란? 데스크톱 클라이언트 앱을 만드는 UI 프레임워크입니�
 
 이 목록에는 이 자습서에서 사용되는 Cognitive Services가 나와 있습니다. 링크를 따라 각 기능에 대한 API 참조를 찾아보세요.
 
-| 서비스 | 기능 | 설명 |
+| 서비스 | 기능 | Description |
 |---------|---------|-------------|
 | Translator Text | [언어 가져오기](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages) | 텍스트 번역에 지원되는 전체 언어 목록을 검색합니다. |
 | Translator Text | [번역](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate) | 텍스트를 60개가 넘는 언어로 번역합니다. |
 | Translator Text | [검색](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect) | 입력 텍스트의 언어를 감지합니다. 감지에 대한 신뢰도 점수를 포함합니다. |
 | Bing 맞춤법 검사 | [맞춤법 검사](https://docs.microsoft.com/rest/api/cognitiveservices/bing-spell-check-api-v7-reference) | 맞춤법 오류를 수정하여 번역 정확도를 향상시킵니다. |
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 계속하기 전에 다음이 필요합니다.
 
@@ -114,7 +114,7 @@ WPF란? 데스크톱 클라이언트 앱을 만드는 UI 프레임워크입니�
 
 사용자 인터페이스에 포함되는 구성 요소는 다음과 같습니다.
 
-| Name | Type | 설명 |
+| 속성 | Type | Description |
 |------|------|-------------|
 | `FromLanguageComboBox` | ComboBox | Microsoft Translator에서 텍스트 번역에 지원하는 언어 목록을 표시합니다. 사용자가 번역할 원본 언어를 선택합니다. |
 | `ToLanguageComboBox` | ComboBox | `FromComboBox`와 동일한 언어 목록을 표시하지만 사용자가 번역할 대상 언어를 선택하는 데 사용됩니다. |
@@ -250,7 +250,7 @@ WPF란? 데스크톱 클라이언트 앱을 만드는 UI 프레임워크입니�
 
 이 코드 블록에서는 번역에 사용할 수 있는 언어에 대한 정보가 포함된 두 개의 멤버 변수를 선언했습니다.
 
-| 변수 | Type | 설명 |
+| 변수 | Type | Description |
 |----------|------|-------------|
 |`languageCodes` | 문자열 배열 |언어 코드를 캐시합니다. Translator 서비스는 영어를 나타내는 `en`과 같은 짧은 코드를 사용하여 언어를 식별합니다. |
 |`languageCodesAndTitles` | 정렬된 사전 | 사용자 인터페이스의 “친숙한” 이름을 API에 사용된 짧은 코드로 다시 매핑합니다. 대/소문자와 관계없이 사전순으로 정렬됩니다. |

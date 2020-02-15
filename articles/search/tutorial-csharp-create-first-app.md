@@ -3,23 +3,23 @@ title: 첫 번째 앱 만들기 C# 자습서
 titleSuffix: Azure Cognitive Search
 description: 첫 번째 C# 검색 앱을 단계별로 빌드하는 방법에 대해 알아봅니다. 이 자습서에서는 GitHub의 작동하는 앱 링크와 앱을 처음부터 빌드하는 전체 프로세스의 링크를 제공합니다. Azure Cognitive Search의 필수 구성 요소에 대해 알아봅니다.
 manager: nitinme
-author: PeterTurcan
-ms.author: v-pettur
+author: tchristiani
+ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 11/04/2019
-ms.openlocfilehash: fc3d9d52ca6eb3d35138323908c73eb0d09cf519
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.date: 02/10/2020
+ms.openlocfilehash: 2b4f67fc448d98239947fd764d4926f1d590c5e2
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112240"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121579"
 ---
 # <a name="c-tutorial-create-your-first-app---azure-cognitive-search"></a>C# 자습서: 첫 번째 앱 만들기 - Azure Cognitive Search
 
 Azure Cognitive Search를 사용하여 인덱스에서 검색 결과를 쿼리 및 표시하는 웹 인터페이스를 만드는 방법을 알아봅니다. 검색 페이지 작성에 집중할 수 있도록 이 자습서는 기존에 호스트한 인덱스로 시작됩니다. 인덱스에는 가상의 호텔 데이터가 포함되어 있습니다. 기본 페이지를 만든 후에는 후속 단원에서 페이징, 패싯 및 자동 완성 환경을 포함하도록 기본 페이지를 개선할 수 있습니다.
 
-이 자습서에서는 다음 방법에 대해 알아봅니다.
+이 자습서에서는 다음 작업 방법을 알아봅니다.
 > [!div class="checklist"]
 > * 개발 환경 설정
 > * 데이터 구조 모델링
@@ -44,7 +44,7 @@ DocumentSearchResult<Hotel> results  = await _indexClient.Documents.SearchAsync<
 !["풀" 검색](./media/tutorial-csharp-create-first-app/azure-search-pool.png)
 
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서를 완료하려면 다음이 필요합니다.
 
@@ -52,7 +52,7 @@ IDE로 사용할 [Visual Studio를 설치](https://visualstudio.microsoft.com/)�
 
 ### <a name="install-and-run-the-project-from-github"></a>GitHub에서 프로젝트를 설치하고 실행
 
-1. GitHub에서 [첫 번째 앱 만들기](https://github.com/Azure-Samples/azure-search-dotnet-samples) 샘플을 찾습니다.
+1. GitHub에서 [첫 번째 앱 만들기](https://github.com/Azure-Samples/azure-search-dotnet-samples)의 버전을 설치해도 됩니다.
 1. **복제 또는 다운로드**를 선택하고 프로젝트의 프라이빗 로컬 복사본을 만듭니다.
 1. Visual Studio를 사용하여 기본 검색 페이지의 솔루션으로 이동하여 솔루션을 열고, **디버깅 없이 시작**을 선택합니다(또는 F5 키).
 1. 아무 단어를 입력하고(예: "wifi", "전망", "바", "주차"), 결과를 확인합니다.

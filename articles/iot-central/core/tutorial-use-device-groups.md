@@ -3,21 +3,19 @@ title: Azure IoT Central 응용 프로그램에서 장치 그룹 사용 | Micros
 description: 운영자로 서 장치 그룹을 사용 하 여 Azure IoT Central 응용 프로그램의 장치에서 원격 분석을 분석 하는 방법을 알아봅니다.
 author: dominicbetts
 ms.author: dobett
-ms.date: 12/09/2019
+ms.date: 02/12/2020
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpfr
-ms.openlocfilehash: 4fd05631e7f54b6258978f70fdd5dfb9705f989b
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 758ac037fcd224d02f62239b3408b41b50390147
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77026966"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77167289"
 ---
 # <a name="tutorial-use-device-groups-to-analyze-device-telemetry"></a>자습서: 장치 그룹을 사용 하 여 장치 원격 분석 분석
-
-
 
 이 문서에서는 장치 그룹을 사용 하 여 Azure IoT Central 응용 프로그램에서 장치 원격 분석을 분석 하는 방법을 설명 합니다.
 
@@ -29,17 +27,17 @@ ms.locfileid: "77026966"
 > * 디바이스 그룹 만들기
 > * 장치 그룹을 사용 하 여 장치 원격 분석 분석
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
-시작하기 전에 [Azure IoT Central 애플리케이션 만들기](./quick-deploy-iot-central.md) 및 [IoT Central 애플리케이션에 시뮬레이션된 디바이스 추가](./quick-create-pnp-device.md) 빠른 시작을 완료하여 작업할 **환경 센서** 디바이스 템플릿을 만들어야 합니다.
+시작 하기 전에 [Azure IoT Central 응용 프로그램 만들기](./quick-deploy-iot-central.md) 를 완료 하 고 시뮬레이션 된 [장치를 IoT Central 응용 프로그램 빠른 시작에 추가](./quick-create-pnp-device.md) 하 여 작업할 **MXChip IoT devkit** 장치 템플릿을 만들어야 합니다.
 
 ## <a name="create-simulated-devices"></a>시뮬레이션 된 장치 만들기
 
-장치 그룹을 만들기 전에이 자습서에서 사용할 수 있도록 **환경 센서** 장치 템플릿에서 시뮬레이션 된 장치를 5 개 이상 추가 합니다.
+장치 그룹을 만들기 전에이 자습서에서 사용할 **MXChip IoT DevKit** 장치 템플릿에서 시뮬레이션 된 장치를 5 개 이상 추가 합니다.
 
-![시뮬레이션 된 5 개의 환경 센서 장치](./media/tutorial-use-device-groups/simulated-devices.png)
+![5 개의 시뮬레이션 된 센서 장치](./media/tutorial-use-device-groups/simulated-devices.png)
 
-네 가지 환경 센서 장치에 대해 **환경 센서 속성** 보기를 사용 하 여 고객 이름을 **Contoso**로 설정 합니다.
+시뮬레이션 된 센서 장치 중 4 개에 대해 **장치 보기 관리** 를 사용 하 여 고객 이름을 *Contoso*로 설정 합니다.
 
 ![고객 이름을 Contoso로 설정](./media/tutorial-use-device-groups/customer-name.png)
 
@@ -49,17 +47,17 @@ ms.locfileid: "77026966"
 
 1. 왼쪽 창에서 **장치 그룹** 을 선택 합니다.
 
-1. **+새로 만들기**를 선택합니다.
+1. **+** 선택:
 
     ![새 장치 그룹](media/tutorial-use-device-groups/image1.png)
 
-1. 장치 그룹에 **Contoso 장치와**같은 이름을 지정 합니다. 설명을 추가할 수도 있습니다. 장치 그룹은 단일 장치 템플릿의 장치만 포함할 수 있습니다. 이 그룹에 사용할 **환경 센서** 장치 템플릿을 선택 합니다.
+1. 장치 그룹에 *Contoso 장치*이름을 지정 합니다. 설명을 추가할 수도 있습니다. 장치 그룹은 단일 장치 템플릿의 장치만 포함할 수 있습니다. 이 그룹에 사용할 **MXChip IoT DevKit** 장치 템플릿을 선택 합니다.
 
-1. **Customer Name** 속성, **Equals** 비교 연산자 및 **contoso** 를 값으로 선택 하 여 장치 그룹에 대 한 **contoso** 에 속한 장치를 식별 하는 쿼리를 만듭니다. **모든** 조건을 충족 하는 여러 쿼리 및 장치를 장치 그룹에 추가할 수 있습니다. 만든 장치 그룹은 응용 프로그램에 액세스할 수 있는 모든 사용자가 액세스할 수 있으므로 누구나 장치 그룹을 보거나 수정 하거나 삭제할 수 있습니다.
+1. **Contoso**에 속하는 장치만 포함 하도록 장치 그룹을 사용자 지정 하려면 **+ 필터**를 선택 합니다. **Customer Name** 속성, **Equals** 비교 연산자 및 **Contoso** 를 값으로 선택 합니다. 필터 조건을 **모두** 충족 하는 여러 필터를 추가할 수 있습니다 장치 그룹에 배치 됩니다. 만든 장치 그룹은 응용 프로그램에 액세스할 수 있는 모든 사용자가 액세스할 수 있으므로 모든 사용자가 장치 그룹을 보거나, 수정 하거나, 삭제할 수 있습니다.
 
     ![장치 그룹 쿼리](media/tutorial-use-device-groups/image2.png)
 
-    > [!NOTE]
+    > [!TIP]
     > 장치 그룹이 동적 쿼리입니다. 디바이스 목록을 볼 때마다 목록의 디바이스가 달라질 수 있습니다. 현재 쿼리 조건을 충족하는 디바이스에 따라 목록이 달라집니다.
 
 1. **저장**을 선택합니다.
@@ -67,7 +65,7 @@ ms.locfileid: "77026966"
 > [!NOTE]
 > Azure IoT Edge 장치에 대해 Azure IoT Edge 템플릿을 선택 하 여 장치 그룹을 만듭니다.
 
-## <a name="analytics"></a>분석기능
+## <a name="analytics"></a>분석
 
 장치 그룹에 **분석** 을 사용 하 여 그룹의 장치에서 원격 분석을 분석할 수 있습니다. 예를 들어 모든 Contoso 환경 센서가 보고 하는 평균 온도를 그릴 수 있습니다.
 

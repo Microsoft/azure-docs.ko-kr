@@ -1,17 +1,17 @@
 ---
 title: Azure Policy과 Key Vault 통합
-description: .NET 클라이언트 라이브러리(v4)를 사용하여 Azure Key Vault에서 암호를 생성, 검색 및 삭제하는 방법을 알아봅니다.
+description: Azure Policy와 Azure Key Vault를 통합하는 방법 알아보기
 author: msmbaldwin
 ms.author: mbaldwin
-ms.date: 11/12/2019
+ms.date: 01/28/2020
 ms.service: key-vault
 ms.topic: quickstart
-ms.openlocfilehash: b59b367d38f95bafe7d3e1320d1365f708dc75dd
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: c32d2fb45bbd4f4a9b4845bb4ef27a439d536677
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74077212"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76905858"
 ---
 # <a name="integrate-azure-key-vault-with-azure-policy"></a>Azure Policy과 Key Vault 통합
 

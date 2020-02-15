@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 10/04/2019
-ms.openlocfilehash: 4cf979c99c596abff075eb38f3358c6389a6b07e
-ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
+ms.custom: hdinsightactive
+ms.date: 02/12/2020
+ms.openlocfilehash: d030e44f59d41c32c9a76c0b89c0bce1c8c54a69
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72264279"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186849"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Azure Portal을 사용하여 HDInsight의 Apache Hadoop 클러스터 관리
 
@@ -35,7 +35,7 @@ HDInsight의 기존 Apache Hadoop 클러스터  [Azure 포털을 사용하여 HD
 1. 왼쪽 메뉴에서 **모든 서비스**를 선택합니다.
 2. **ANALYTICS**에서 **HDInsight 클러스터**를 선택합니다.
 
-## <a name="homePage"></a> 클러스터 홈 페이지 
+## <a name="homePage"></a> 클러스터 홈 페이지
 
 [**HDInsight 클러스터**](#showClusters) 페이지에서 클러스터 이름을 선택 합니다.  그러면 다음 이미지와 비슷한 **개요** 보기가 열립니다.
 
@@ -43,29 +43,29 @@ HDInsight의 기존 Apache Hadoop 클러스터  [Azure 포털을 사용하여 HD
 
 **상단 메뉴:**  
 
-| 항목| 설명 |
+| 항목| Description |
 |---|---|
 |이동|클러스터를 다른 리소스 그룹 또는 다른 구독으로 이동시킵니다.|
-|삭제|클러스터를 삭제합니다. |
-|새로 고침|보기를 새로 고칩니다.|
+|DELETE|클러스터를 삭제합니다. |
+|새로 고침|뷰를 새로 고칩니다.|
 
 **왼쪽 메뉴:**  
 
   - **왼쪽 상단 메뉴**
 
-    | 항목| 설명 |
+    | 항목| Description |
     |---|---|
     |개요|클러스터에 대한 일반 정보를 제공합니다.|
     |활동 로그|활동 로그를 표시하고 쿼리합니다.|
     |액세스 제어(IAM)|역할 할당을 사용합니다.  [역할 할당을 사용하여 Azure 구독 리소스에 대한 액세스 관리](../role-based-access-control/role-assignments-portal.md)를 참조하세요.|
-    |Tags|태그를 사용하면 클라우드 서비스의 사용자 지정 분류를 정의하기 위한 키/값 쌍을 설정할 수 있습니다. 예를 들어 **project**라는 키를 만든 다음 특정 프로젝트와 연결된 모든 서비스에 공통 값을 사용할 수 있습니다.|
+    |태그들|태그를 사용하면 클라우드 서비스의 사용자 지정 분류를 정의하기 위한 키/값 쌍을 설정할 수 있습니다. 예를 들어 **project**라는 키를 만든 다음 특정 프로젝트와 연결된 모든 서비스에 공통 값을 사용할 수 있습니다.|
     |문제 진단 및 해결|문제 해결 정보를 표시합니다.|
     |빠른 시작|HDInsight를 사용하여 시작하는 데 도움이 되는 정보를 표시합니다.|
     |도구|HDInsight 관련 도구에 대한 도움말 정보입니다.|
 
   - **설정 메뉴**  
 
-    | 항목| 설명 |
+    | 항목| Description |
     |---|---|
     |클러스터 크기|클러스터 작업자 노드의 수를 확인하고, 늘리거나 줄입니다. [클러스터 크기 조정](hdinsight-administer-use-portal-linux.md#scale-clusters)을 참조하세요.|
     |할당량 한도|구독에 사용된 코어 및 사용 가능한 코어를 표시합니다.|
@@ -82,16 +82,16 @@ HDInsight의 기존 Apache Hadoop 클러스터  [Azure 포털을 사용하여 HD
 
   - **모니터링 메뉴**
 
-    | 항목| 설명 |
+    | 항목| Description |
     |---|---|
-    |,|경고와 작업을 관리합니다.|
-    |metrics|Azure Monitor 로그에서 클러스터 메트릭을 모니터링 합니다.|
+    |경고|경고와 작업을 관리합니다.|
+    |메트릭|Azure Monitor 로그에서 클러스터 메트릭을 모니터링 합니다.|
     |진단 설정|진단 메트릭을 저장하는 위치에 대한 설정입니다.|
     |Azure Monitor|Azure Monitor에서 클러스터를 모니터링 합니다.|
 
   - **지원 + 문제 해결 메뉴**
 
-    | 항목| 설명 |
+    | 항목| Description |
     |---|---|
     |리소스 상태|[Azure 리소스 상태 개요](../service-health/resource-health-overview.md)를 참조하세요.|
     |새 지원 요청|Microsoft 지원에 지원 티켓을 만들 수 있습니다.|
@@ -100,19 +100,20 @@ HDInsight의 기존 Apache Hadoop 클러스터  [Azure 포털을 사용하여 HD
 
 [클러스터 홈 페이지](#homePage)에 있는 **설정**에서 **속성**을 선택합니다.
 
-|항목 | 설명 |
+|항목 | Description |
 |---|---|
-|N|클러스터 이름.|
+|N|클러스터 이름입니다.|
 |클러스터 URL|Ambari 웹 인터페이스에 대한 URL입니다.|
 |Private Endpoint|클러스터에 대 한 개인 끝점입니다.|
 |SSH (Secure shell)|SSH를 통해 클러스터에 액세스할 때 사용할 사용자 이름과 호스트 이름입니다.|
-|상태|다음 중 하나입니다. 중단됨, 수락됨, 클러스터 스토리지가 프로비전됨, Azure VM 구성, HDInsight 구성, 작동 가능, 실행 중, 오류, 삭제 중, 삭제됨, 시간이 초과됨, 삭제가 큐에 대기됨, 삭제 시간이 초과됨, 삭제 오류, 패치가 큐에 대기됨, 인증서 롤오버가 큐에 대기됨, 크기가 조정되어 큐에 대기됨 또는 클러스터 사용자 지정|
-|지역|Azure 위치입니다. 지원되는 Azure 위치의 목록은 [HDInsight 가격 책정](https://azure.microsoft.com/pricing/details/hdinsight/)의 **지역** 드롭다운 목록 상자를 참조하세요.|
+|상태|다음 중 하나: 중단 됨, 수락 됨, ClusterStorageProvisioned, AzureVMConfiguration, HDInsightConfiguration, 운영, 실행 중, 오류, 삭제, 삭제 됨, Timedout, 됨, 시간, DeleteError, Deleteerror, Patchqueued, ResizeQueued 또는 ClusterCustomization 지정.|
+|지역|Azure 위치입니다. 지원되는 Azure 위치의 목록은 **HDInsight 가격 책정**의 [지역](https://azure.microsoft.com/pricing/details/hdinsight/) 드롭다운 목록 상자를 참조하세요.|
 |만든 날짜|클러스터가 배포된 날짜입니다.|
 |운영 체제|**Windows** 또는 **Linux**입니다.|
 |TYPE|Hadoop, HBase, Storm, Spark입니다.|
 |버전|[HDInsight 버전](hdinsight-component-versioning.md) 참조|
-|가입은|구독 이름입니다.|
+|최소 TLS 버전|TLS 버전입니다.|
+|구독|구독 이름입니다.|
 |기본 데이터 원본|기본 클러스터 파일 시스템입니다.|
 |작업자 노드 크기|선택한 작업자 노드의 VM 크기입니다.|
 |헤드 노드 크기|선택한 헤드 노드의 VM 크기입니다.|
@@ -151,8 +152,8 @@ HDInsight의 기존 Apache Hadoop 클러스터  [Azure 포털을 사용하여 HD
 
 ## <a name="pauseshut-down-clusters"></a>클러스터 일시 중지/종료
 
-대부분의 Hadoop 작업은 이따금 실행되는 일괄 처리 작업입니다. 대부분의 Hadoop 클러스터에는 클러스터를 처리 하는 데 사용 되지 않는 많은 기간이 있습니다. HDInsight를 사용 하는 경우 데이터는 Azure Storage에 저장 되므로 사용 하지 않는 클러스터를 안전 하 게 삭제할 수 있습니다.
-또한 HDInsight 클러스터를 사용 하지 않는 경우에도 요금이 청구 됩니다. 클러스터에 대 한 요금은 저장소 요금 보다 많은 시간을 초과 하므로 사용 하지 않을 때 클러스터를 삭제 하는 것은 경제적으로 의미가 있습니다.
+대부분의 Hadoop 작업은 이따금 실행되는 일괄 처리 작업입니다. 대부분의 Hadoop 클러스터에는 클러스터를 처리 하는 데 사용 되지 않는 많은 기간이 있습니다. HDInsight를 사용하면 데이터가 Azure Storage에 저장되기 때문에 클러스터를 사용하지 않을 때 안전하게 삭제할 수 있습니다.
+HDInsight 클러스터를 사용하지 않는 기간에도 요금이 청구됩니다. 클러스터에 대한 요금이 스토리지에 대한 요금보다 몇 배 더 많기 때문에, 클러스터를 사용하지 않을 때는 삭제하는 것이 경제적인 면에서 더 합리적입니다.
 
 프로세스를 프로그래밍할 수 있는 방법은 다양합니다.
 
@@ -221,9 +222,9 @@ HDInsight 클러스터마다 두 개의 사용자 계정이 포함될 수 있습
    | 필드 | 값 |
    | --- | --- |
    | 스크립트 유형 | 드롭다운 목록에서 **- 사용자 지정**을 선택합니다.|
-   | 이름 |“SSH 암호 변경” |
+   | 속성 |“SSH 암호 변경” |
    | Bash 스크립트 URI |Changepassword.sh 파일에 대한 URI |
-   | 노드 유형: (헤드, 작업자, Nimbus, 감독자, Zookeeper 등) |나열된 모든 노드 형식에 대한 ✓ |
+   | 노드 유형: (헤드, 작업자, Nimbus, 감독자 또는 사육 사) |나열된 모든 노드 형식에 대한 ✓ |
    | 매개 변수 |SSH 사용자 이름 및 새 암호를 입력합니다. 사용자 이름과 암호 사이에 공백이 하나 있어야 합니다. |
    | 이 스크립트 작업을 유지... |이 필드는 선택 취소로 둡니다. |
 
@@ -271,7 +272,7 @@ HDInsight 클러스터는 Azure Storage 계정 또는 Azure Data Lake Storage를
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서에서는 몇 가지 기본 관리 기능을 배웠습니다. 자세한 내용은 다음 문서를 참조하세요.
+이 문서에서는 몇 가지 기본 관리 기능을 배웠습니다. 자세히 알아보려면 다음 아티클을 참조하세요.
 
 - [Azure PowerShell을 사용하여 HDInsight 관리](hdinsight-administer-use-powershell.md)
 - [Azure CLI를 사용하여 HDInsight 관리](hdinsight-administer-use-command-line.md)

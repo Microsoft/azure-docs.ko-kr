@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: sstein, carlrab, vanto
 ms.date: 01/21/2020
-ms.openlocfilehash: d28eb6c4ee4fadf8a090a17121f6910eb34135e3
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: b9fdd1b25e53e1cdc8aa76564304a61adaa8d804
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76935200"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201597"
 ---
 # <a name="what-is-azure-sql-database-managed-instance"></a>Azure SQL Database 관리 되는 인스턴스는 무엇입니까?
 
@@ -56,15 +56,15 @@ Managed Instance의 주요 기능을 다음 표에서 볼 수 있습니다.
 |기능 | Description|
 |---|---|
 | SQL Server 버전/빌드 | SQL Server 데이터베이스 엔진(안정적인 최신 버전) |
-| 관리되는 자동 백업 | 예 |
-| 기본 제공 인스턴스/데이터베이스 모니터링 및 메트릭 | 예 |
-| 자동 소프트웨어 패치 | 예 |
-| 최신 데이터베이스 엔진 기능 | 예 |
+| 관리되는 자동 백업 | yes |
+| 기본 제공 인스턴스/데이터베이스 모니터링 및 메트릭 | yes |
+| 자동 소프트웨어 패치 | yes |
+| 최신 데이터베이스 엔진 기능 | yes |
 | 데이터베이스당 데이터 파일(행) 수 | 여러 접두사 |
 | 데이터베이스당 로그 파일(로그) 수 | 1 |
-| VNet - Azure Resource Manager 배포 | 예 |
-| VNet - 클래식 배포 모델 | 아닙니다. |
-| 포털 지원 | 예|
+| VNet - Azure Resource Manager 배포 | yes |
+| VNet - 클래식 배포 모델 | 예 |
+| 포털 지원 | yes|
 | 기본 제공 통합 서비스(SSIS) | 아니요 - SSIS는 [Azure Data Factory PaaS](https://docs.microsoft.com/azure/data-factory/tutorial-deploy-ssis-packages-azure)의 일부입니다. |
 | 기본 제공 분석 서비스(SSAS) | 아니요 - SSAS는 별도의 [PaaS](https://docs.microsoft.com/azure/analysis-services/analysis-services-overview)입니다. |
 | 기본 제공 보고 서비스(SSRS) | 아니요 - Power BI 또는 SSRS IaaS를 사용합니다. |
@@ -81,9 +81,6 @@ vCore 모델에서는 하드웨어 세대를 선택할 수 있습니다.
 
 하드웨어 세대 간의 차이점에 대한 자세한 내용은 [Managed Instance 리소스 제한](sql-database-managed-instance-resource-limits.md#hardware-generation-characteristics)을 참조하세요.
 
-> [!IMPORTANT]
-> 새 Gen4 데이터베이스는 오스트레일리아 동부 또는 브라질 남부 지역에서 더 이상 지원 되지 않습니다.
-
 ## <a name="managed-instance-service-tiers"></a>Managed Instance 서비스 계층
 
 관리형 인스턴스는 두 개의 서비스 계층에서 사용할 수 있습니다.
@@ -99,7 +96,7 @@ vCore 모델에서는 하드웨어 세대를 선택할 수 있습니다.
 
 - 일반적인 성능 요구 사항이 있는 대부분의 비즈니스 애플리케이션에 적합한 디자인
 - 고성능 Azure Blob Storage(8TB)
-- 신뢰할 수 있는 Azure Blob Storage 및 [Azure Service Fabric](../service-fabric/service-fabric-overview.md)에 기반한 [고가용성](sql-database-high-availability.md#basic-standard-and-general-purpose-service-tier-availability) 기본 제공
+- 신뢰할 수 있는 Azure Blob Storage 및 [Azure Service Fabric](sql-database-high-availability.md#basic-standard-and-general-purpose-service-tier-availability)에 기반한 [고가용성](../service-fabric/service-fabric-overview.md) 기본 제공
 
 자세한 내용은 [범용 계층의 스토리지 레이어](https://medium.com/azure-sqldb-managed-instance/file-layout-in-general-purpose-azure-sql-managed-instance-cf21fff9c76c) 및 [Managed Instance(범용)에 대한 스토리지 성능 모범 사례 및 고려 사항](https://blogs.msdn.microsoft.com/sqlcat/2018/07/20/storage-performance-best-practices-and-considerations-for-azure-sql-db-managed-instance-general-purpose/)을 참조하세요.
 
@@ -113,7 +110,7 @@ vCore 모델에서는 하드웨어 세대를 선택할 수 있습니다.
 
 - 최고의 성능과 HA 요구 사항을 가진 대부분의 비즈니스 애플리케이션용으로 설계됨
 - 초고속 로컬 SSD 스토리지(4세대의 최대 1TB 및 5세대의 최대 4TB)와 함께 제공됨
-- [Always On 가용성 그룹](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server) 및 [Azure Service Fabric](../service-fabric/service-fabric-overview.md)을 기반으로 [고가용성](sql-database-high-availability.md#premium-and-business-critical-service-tier-availability) 기본 제공
+- [Always On 가용성 그룹](sql-database-high-availability.md#premium-and-business-critical-service-tier-availability) 및 [Azure Service Fabric](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server)을 기반으로 [고가용성](../service-fabric/service-fabric-overview.md) 기본 제공
 - 보고 및 기타 읽기 전용 워크로드에 사용할 수 있는 추가적인 [읽기 전용 데이터베이스 복제본](sql-database-read-scale-out.md) 기본 제공
 - 고성능 요구 사항이 있는 워크로드에 사용할 수 있는 [메모리 내 OLTP](sql-database-in-memory.md)  
 
@@ -124,7 +121,7 @@ vCore 모델에서는 하드웨어 세대를 선택할 수 있습니다.
 
 Azure SQL Database에서는 관리되는 새로운 인스턴스를 자동으로 배포하고, 인스턴스 속성을 업데이트하며, 더 이상 필요하지 않은 경우 인스턴스를 삭제하는 데 사용할 수 있는 관리 작업을 제공합니다. 이 섹션에서는 관리 작업 및 일반적인 기간에 대 한 정보를 제공 합니다.
 
-[Azure vnet (가상 네트워크) 내에서 배포](../virtual-network/virtual-network-for-azure-services.md#deploy-azure-services-into-virtual-networks) 를 지원 하 고 고객에 대 한 격리 및 보안을 제공하기 위해 [가상 클러스터](sql-database-managed-instance-connectivity-architecture.md#high-level-connectivity-architecture)관리 되는 인스턴스는 고객의 가상 네트워크 서브넷. 기본적으로 빈 서브넷에 있는 모든 관리 되는 인스턴스 배포는 새 가상 클러스터가 buildout을 생성 합니다.
+[Azure vnet (가상 네트워크) 내에서 배포](../virtual-network/virtual-network-for-azure-services.md#deploy-azure-services-into-virtual-networks) 를 지원 하 고 고객에 대 한 격리 및 보안을 제공 하기 위해 관리 되는 인스턴스는 고객의 가상 네트워크 서브넷 내에 배포 된 격리 된 가상 머신의 전용 집합을 나타내는 [가상 클러스터](sql-database-managed-instance-connectivity-architecture.md#high-level-connectivity-architecture)에 의존 합니다. 기본적으로 빈 서브넷에 있는 모든 관리 되는 인스턴스 배포는 새 가상 클러스터가 buildout을 생성 합니다.
 
 배포 된 관리 되는 인스턴스의 후속 작업은 기본 가상 클러스터에도 영향을 미칠 수 있습니다. 이는 관리 작업 기간에 영향을 줍니다. 추가 가상 컴퓨터를 배포 하는 경우 새 배포 또는 기존 관리 되는 인스턴스에 대 한 업데이트를 계획 하는 경우 고려해 야 하는 오버 헤드가 발생 합니다.
 
@@ -147,13 +144,13 @@ Azure SQL Database에서는 관리되는 새로운 인스턴스를 자동으로 
 
 다음 표에는 작업과 일반적인 전체 기간이 요약 되어 있습니다.
 
-|범주  |작업  |장기 실행 세그먼트  |예상 기간  |
+|Category  |작업(Operation)  |장기 실행 세그먼트  |예상 기간  |
 |---------|---------|---------|---------|
 |**배포** |빈 서브넷의 첫 번째 인스턴스|가상 클러스터 만들기|4 시간 내에 완료 된 작업의 90%|
 |배포 |비어 있지 않은 서브넷에 있는 다른 하드웨어 생성의 첫 번째 인스턴스 (예: Gen 4 인스턴스가 있는 서브넷의 첫 번째 Gen 5 인스턴스)|가상 클러스터 만들기 *|4 시간 내에 완료 된 작업의 90%|
 |배포 |비어 있거나 비어 있지 않은 서브넷에 있는 4 개 vCores의 첫 번째 인스턴스 생성|가상 클러스터 만들기 * *|4 시간 내에 완료 된 작업의 90%|
 |배포 |비어 있지 않은 서브넷 (두 번째, 세 번째 등) 내에서 후속 인스턴스 만들기|가상 클러스터 크기 조정|2\.5 시간 내에 완료 된 작업의 90%|
-|**Update** |인스턴스 속성 변경 (관리자 암호, AAD 로그인, Azure 하이브리드 혜택 플래그)|N/A|최대 1 분|
+|**Update** |인스턴스 속성 변경 (관리자 암호, AAD 로그인, Azure 하이브리드 혜택 플래그)|해당 없음|최대 1 분|
 |업데이트 |인스턴스 저장소 확장/축소 (범용 서비스 계층)|데이터베이스 파일 연결|5 분 내에 완료 된 작업의 90%|
 |업데이트 |인스턴스 저장소 확장/축소 (중요 비즈니스용 서비스 계층)|-가상 클러스터 크기 조정<br>-Always On 가용성 그룹 시드|2\.5 시간에 완료 된 작업의 90% + 모든 데이터베이스를 시드 하는 시간 (220 g b/시간)|
 |업데이트 |인스턴스 계산 (vCores) 확장 및 축소 (범용)|-가상 클러스터 크기 조정<br>-데이터베이스 파일 연결|2\.5 시간 내에 완료 된 작업의 90%|
@@ -188,16 +185,16 @@ Azure SQL Database에서는 관리되는 새로운 인스턴스를 자동으로 
 
 다음 표에는 특정 관리 작업을 취소 하는 기능과 일반적인 전체 기간이 요약 되어 있습니다.
 
-범주  |작업  |취소  |예상 취소 기간  |
+Category  |작업(Operation)  |취소  |예상 취소 기간  |
 |---------|---------|---------|---------|
-|배포 |인스턴스 만들기 |아닙니다. |  |
-|업데이트 |인스턴스 저장소 확장/축소 (범용) |아닙니다. |  |
-|업데이트 |인스턴스 저장소 확장/축소 (중요 비즈니스용) |예 |5 분 내에 완료 된 작업의 90% |
-|업데이트 |인스턴스 계산 (vCores) 확장 및 축소 (범용) |예 |5 분 내에 완료 된 작업의 90% |
-|업데이트 |인스턴스 계산 (vCores) 확장 및 축소 (중요 비즈니스용) |예 |5 분 내에 완료 된 작업의 90% |
-|업데이트 |인스턴스 서비스 계층 변경 (일반적인 중요 비즈니스용 용도 및 그 반대로) |예 |5 분 내에 완료 된 작업의 90% |
-|삭제 |인스턴스 삭제 |아닙니다. |  |
-|삭제 |가상 클러스터 삭제 (사용자 시작 작업) |아닙니다. |  |
+|배포 |인스턴스 만들기 |예 |  |
+|업데이트 |인스턴스 저장소 확장/축소 (범용) |예 |  |
+|업데이트 |인스턴스 저장소 확장/축소 (중요 비즈니스용) |yes |5 분 내에 완료 된 작업의 90% |
+|업데이트 |인스턴스 계산 (vCores) 확장 및 축소 (범용) |yes |5 분 내에 완료 된 작업의 90% |
+|업데이트 |인스턴스 계산 (vCores) 확장 및 축소 (중요 비즈니스용) |yes |5 분 내에 완료 된 작업의 90% |
+|업데이트 |인스턴스 서비스 계층 변경 (일반적인 중요 비즈니스용 용도 및 그 반대로) |yes |5 분 내에 완료 된 작업의 90% |
+|DELETE |인스턴스 삭제 |예 |  |
+|DELETE |가상 클러스터 삭제 (사용자 시작 작업) |예 |  |
 
 관리 작업을 취소 하려면 개요 블레이드로 이동 하 고 진행 중인 작업의 알림 상자를 클릭 합니다. 오른쪽에서 진행 중인 작업이 있는 화면이 표시 되 고 작업 취소 단추가 표시 됩니다. 을 클릭 한 후 다시 클릭 하 라는 메시지가 표시 되 고 작업 취소를 확인 합니다.
 

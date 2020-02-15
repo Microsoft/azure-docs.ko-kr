@@ -11,79 +11,66 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 03/28/2019
+ms.date: 01/31/2020
 ms.author: jeedes
-ms.openlocfilehash: 0f614838ae44b5c4263bc9eac81e43fd13f87baa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a4cfcf20fc7a6a3532f65c3e797da6c876844d2c
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67087296"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76985560"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-wdesk"></a>자습서: Wdesk와 Azure Active Directory 통합
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-wdesk"></a>자습서: Wdesk와 Azure Active Directory SSO(Single Sign-On) 통합
 
-이 자습서에서는 Azure AD(Azure Active Directory)와 Wdesk를 통합하는 방법에 대해 알아봅니다.
-Wdesk를 Azure AD와 통합하면 다음과 같은 이점이 제공됩니다.
+이 자습서에서는 Azure AD(Azure Active Directory)와 Wdesk를 통합하는 방법에 대해 알아봅니다. Azure AD와 Wdesk를 통합하면 다음을 수행할 수 있습니다.
 
-* Wdesk에 대한 액세스 권한이 있는 사용자를 Azure AD에서 제어할 수 있습니다.
-* 사용자가 자신의 Azure AD 계정으로 Wdesk에 자동으로 로그인(Single Sign-On)되도록 설정할 수 있습니다.
-* 단일 중앙 위치인 Azure Portal에서 계정을 관리할 수 있습니다.
+* Azure AD에서 Wdesk에 대한 액세스 권한이 있는 사용자를 제어합니다.
+* 사용자가 해당 Azure AD 계정으로 Wdesk에 자동으로 로그인되도록 설정합니다.
+* 단일 중앙 위치인 Azure Portal에서 계정을 관리합니다.
 
-Azure AD와의 SaaS 앱 통합에 대한 자세한 내용은 [Azure Active Directory를 사용한 애플리케이션 액세스 및 Single Sign-On](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)을 참조하세요.
-Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.microsoft.com/free/) 계정을 만듭니다.
+Azure AD와 SaaS 앱 통합에 대한 자세한 내용은 [Azure Active Directory를 사용한 애플리케이션 액세스 및 Single Sign-On이란 무엇인가요?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)를 참조하세요.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
-Wdesk와 Azure AD 통합을 구성하려면 다음 항목이 필요합니다.
+시작하려면 다음 항목이 필요합니다.
 
-* Azure AD 구독 Azure AD 환경이 없으면 [체험 계정](https://azure.microsoft.com/free/)을 얻을 수 있습니다.
-* Wdesk Single Sign-On을 사용하도록 설정된 구독
+* Azure AD 구독 구독이 없는 경우 [체험 계정](https://azure.microsoft.com/free/)을 얻을 수 있습니다.
+* Wdesk SSO(Single Sign-On)가 설정된 구독입니다.
 
 ## <a name="scenario-description"></a>시나리오 설명
 
 이 자습서에서는 테스트 환경에서 Azure AD Single Sign-On을 구성하고 테스트합니다.
 
 * Wdesk는 **SP** 및 **IDP** 시작 SSO를 지원합니다.
+* Wdesk를 구성한 후에는 세션 제어를 적용하여 조직의 중요한 데이터의 반출 및 침입을 실시간으로 보호할 수 있습니다. 세션 제어는 조건부 액세스에서 확장됩니다. [Microsoft Cloud App Security를 사용하여 세션 제어를 적용하는 방법 알아보기](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad)
 
 ## <a name="adding-wdesk-from-the-gallery"></a>갤러리에서 Wdesk 추가
 
 Wdesk의 Azure AD 통합을 구성하려면 갤러리의 Wdesk를 관리되는 SaaS 앱 목록에 추가해야 합니다.
 
-**갤러리에서 Wdesk를 추가하려면 다음 단계를 수행합니다.**
-
-1. **[Azure Portal](https://portal.azure.com)** 의 왼쪽 탐색 창에서 **Azure Active Directory** 아이콘을 클릭합니다.
-
-    ![Azure Active Directory 단추](common/select-azuread.png)
-
-2. **엔터프라이즈 애플리케이션**으로 이동한 다음, **모든 애플리케이션** 옵션을 선택합니다.
-
-    ![엔터프라이즈 애플리케이션 블레이드](common/enterprise-applications.png)
-
-3. 새 애플리케이션을 추가하려면 대화 상자 맨 위 있는 **새 애플리케이션** 단추를 클릭합니다.
-
-    ![새 애플리케이션 단추](common/add-new-app.png)
-
-4. 검색 상자에 **Wdesk**를 입력하고 결과 패널에서 **Wdesk**를 선택한 다음, **추가** 단추를 클릭하여 애플리케이션을 추가합니다.
-
-     ![결과 목록의 Wdesk](common/search-new-app.png)
+1. [Azure Portal](https://portal.azure.com)에 회사 또는 학교 계정, 개인 Microsoft 계정으로 로그인합니다.
+1. 왼쪽 탐색 창에서 **Azure Active Directory** 서비스를 선택합니다.
+1. **엔터프라이즈 애플리케이션**으로 이동한 다음, **모든 애플리케이션**을 선택합니다.
+1. 새 애플리케이션을 추가하려면 **새 애플리케이션**을 선택합니다.
+1. **갤러리에서 추가** 섹션의 검색 상자에 **Wdesk**를 입력합니다.
+1. 결과 패널에서 **Wdesk**를 선택한 다음, 앱을 추가합니다. 앱이 테넌트에 추가될 때까지 잠시 동안 기다려 주세요.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD Single Sign-On 구성 및 테스트
 
 이 섹션에서는 **Britta Simon**이라는 테스트 사용자를 기반으로 Wdesk에서 Azure AD Single Sign-On을 구성하고 테스트합니다.
 Single Sign-On이 작동하려면 Azure AD 사용자와 Wdesk의 관련 사용자 간에 연결 관계가 설정되어 있어야 합니다.
 
-Wdesk에서 Azure AD Single Sign-On을 구성하고 테스트하려면 다음 구성 요소를 완료해야 합니다.
+Wdesk에서 Azure AD SSO를 구성하고 테스트하려면 다음 구성 요소를 완료합니다.
 
-1. **[Azure AD Single Sign-On 구성](#configure-azure-ad-single-sign-on)** - 사용자가 이 기능을 사용할 수 있도록 합니다.
-2. **[Wdesk Single Sign-On 구성](#configure-wdesk-single-sign-on)** - 애플리케이션 쪽에서 Single Sign-On 설정을 구성합니다.
-3. **[Azure AD 테스트 사용자 만들기](#create-an-azure-ad-test-user)** - Britta Simon으로 Azure AD Single Sign-On을 테스트하는 데 사용합니다.
-4. **[Azure AD 테스트 사용자 할당](#assign-the-azure-ad-test-user)** - Britta Simon이 Azure AD Single Sign-on을 사용할 수 있도록 합니다.
-5. **[Wdesk 테스트 사용자 만들기](#create-wdesk-test-user)** - Britta Simon의 Azure AD 표현과 연결된 해당 사용자를 Wdesk에 만듭니다.
-6. **[Single Sign-On 테스트](#test-single-sign-on)** - 구성이 작동하는지 여부를 확인합니다.
+1. **[Azure AD SSO 구성](#configure-azure-ad-sso)** - 사용자가 이 기능을 사용할 수 있도록 합니다.
+    1. **[Azure AD 테스트 사용자 만들기](#create-an-azure-ad-test-user)** - B.Simon을 사용하여 Azure AD Single Sign-On을 테스트합니다.
+    1. **[Azure AD 테스트 사용자 할당](#assign-the-azure-ad-test-user)** - B. Simon이 Azure AD Single Sign-On을 사용할 수 있도록 합니다.
+1. **[Wdesk SSO 구성](#configure-wdesk-sso)** - 애플리케이션 쪽에서 Single Sign-On 설정을 구성합니다.
+    1. **[Wdesk 테스트 사용자 만들기](#create-wdesk-test-user)** - B.Simon의 Azure AD 표현과 연결된 해당 사용자를 Wdesk에 만듭니다.
+1. **[SSO 테스트](#test-sso)** - 구성이 작동하는지 여부를 확인합니다.
 
-### <a name="configure-azure-ad-single-sign-on"></a>Azure AD Single Sign-On 구성
+### <a name="configure-azure-ad-sso"></a>Azure AD SSO 구성
 
 이 섹션에서는 Azure Portal에서 Azure AD Single Sign-On을 사용하도록 설정합니다.
 
@@ -132,42 +119,6 @@ Wdesk에서 Azure AD Single Sign-On을 구성하려면 다음 단계를 수행�
 
     다. 로그아웃 URL
 
-### <a name="configure-wdesk-single-sign-on"></a>Wdesk Single Sign-On 구성
-
-1. 다른 웹 브라우저 창에서 Wdesk에 보안 관리자로 로그인합니다.
-
-2. 왼쪽 아래에서 **관리**를 클릭하고 **계정 관리자**를 선택합니다.
- 
-     ![Configure Single Sign-On](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig1.png)
-
-3. Wdesk 관리에서 **보안**, **SAML** > **SAML 설정**으로 이동합니다.
-
-    ![Configure Single Sign-On](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig2.png)
-
-4. **일반 설정**에서 **SAML Single Sign On 사용**을 선택합니다.
-
-    ![Configure Single Sign-On](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig3.png)
-
-5. **서비스 공급자 세부 정보**에서 다음 단계를 수행합니다.
-
-    ![Configure Single Sign-On](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig4.png)
-
-      a. **로그인 URL**을 복사한 후 Azure Portal의 **로그온 URL** 텍스트 상자에 붙여 넣습니다.
-   
-      b. **메타데이터 URL**을 복사한 후 Azure Portal의 **식별자** 텍스트 상자에 붙여 넣습니다.
-       
-      다. **소비자 URL**을 복사한 후 Azure Portal의 **회신 URL** 텍스트 상자에 붙여 넣습니다.
-   
-      d. Azure Portal에서 **저장**을 클릭하여 변경 내용을 저장합니다.      
-
-6. **IdP 설정 구성**을 클릭하여 **IdP 설정 편집** 대화 상자를 엽니다. **파일 선택**을 클릭하여 Azure Portal에서 저장한 **Metadata.xml** 파일을 찾습니다.
-    
-    ![Configure Single Sign-On](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig5.png)
-  
-7. **변경 내용 저장**을 클릭합니다.
-
-    ![Configure Single Sign-On](./media/wdesk-tutorial/tutorial_wdesk_ssoconfigsavebutton.png)
-
 ### <a name="create-an-azure-ad-test-user"></a>Azure AD 테스트 사용자 만들기 
 
 이 섹션의 목적은 Azure Portal에서 Britta Simon이라는 테스트 사용자를 만드는 것입니다.
@@ -188,7 +139,7 @@ Wdesk에서 Azure AD Single Sign-On을 구성하려면 다음 단계를 수행�
   
     b. **사용자 이름** 필드에 brittasimon@yourcompanydomain.extension을 입력합니다. 예를 들어 BrittaSimon@contoso.com
 
-    c. **암호 표시** 확인란을 선택한 다음, [암호] 상자에 표시된 값을 적어둡니다.
+    다. **암호 표시** 확인란을 선택한 다음, [암호] 상자에 표시된 값을 적어둡니다.
 
     d. **만들기**를 클릭합니다.
 
@@ -218,6 +169,42 @@ Wdesk에서 Azure AD Single Sign-On을 구성하려면 다음 단계를 수행�
 
 7. **할당 추가** 대화 상자에서 **할당** 단추를 클릭합니다.
 
+## <a name="configure-wdesk-sso"></a>Wdesk SSO 구성
+
+1. 다른 웹 브라우저 창에서 Wdesk에 보안 관리자로 로그인합니다.
+
+2. 왼쪽 아래에서 **관리**를 클릭하고 **계정 관리자**를 선택합니다.
+ 
+     ![Single Sign-on 구성](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig1.png)
+
+3. Wdesk 관리에서 **보안**, **SAML** > **SAML 설정**으로 이동합니다.
+
+    ![Single Sign-on 구성](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig2.png)
+
+4. **일반 설정**에서 **SAML Single Sign On 사용**을 선택합니다.
+
+    ![Single Sign-on 구성](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig3.png)
+
+5. **서비스 공급자 세부 정보**에서 다음 단계를 수행합니다.
+
+    ![Single Sign-on 구성](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig4.png)
+
+      a. **로그인 URL**을 복사한 후 Azure Portal의 **로그온 URL** 텍스트 상자에 붙여 넣습니다.
+   
+      b. **메타데이터 URL**을 복사한 후 Azure Portal의 **식별자** 텍스트 상자에 붙여 넣습니다.
+       
+      다. **소비자 URL**을 복사한 후 Azure Portal의 **회신 URL** 텍스트 상자에 붙여 넣습니다.
+   
+      d. Azure Portal에서 **저장**을 클릭하여 변경 내용을 저장합니다.      
+
+6. **IdP 설정 구성**을 클릭하여 **IdP 설정 편집** 대화 상자를 엽니다. **파일 선택**을 클릭하여 Azure Portal에서 저장한 **Metadata.xml** 파일을 찾습니다.
+    
+    ![Single Sign-on 구성](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig5.png)
+  
+7. **변경 내용 저장**을 클릭합니다.
+
+    ![Single Sign-on 구성](./media/wdesk-tutorial/tutorial_wdesk_ssoconfigsavebutton.png)
+
 ### <a name="create-wdesk-test-user"></a>Wdesk 테스트 사용자 만들기
 
 Azure AD 사용자가 Wdesk에 로그인할 수 있도록 하려면 Azure AD 사용자를 Wdesk로 프로비저닝해야 합니다. Wdesk의 경우, 수동으로 프로비전합니다.
@@ -228,7 +215,7 @@ Azure AD 사용자가 Wdesk에 로그인할 수 있도록 하려면 Azure AD 사
 
 2. **관리** > **계정 관리자**로 이동합니다.
 
-     ![Configure Single Sign-On](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig1.png)
+     ![Single Sign-on 구성](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig1.png)
 
 3. **피플** 아래에서 **구성원**을 클릭합니다.
 
@@ -254,7 +241,7 @@ Azure AD 사용자가 Wdesk에 로그인할 수 있도록 하려면 Azure AD 사
 
     ![Azure AD 테스트 사용자 만들기](./media/wdesk-tutorial/createuser5.png)
 
-### <a name="test-single-sign-on"></a>Single Sign-On 테스트 
+### <a name="test-sso"></a>SSO 테스트 
 
 이 섹션에서는 액세스 패널을 사용하여 Azure AD Single Sign-On 구성을 테스트합니다.
 
@@ -268,3 +255,4 @@ Azure AD 사용자가 Wdesk에 로그인할 수 있도록 하려면 Azure AD 사
 
 - [Azure Active Directory의 조건부 액세스란?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
+- [Microsoft Cloud App Security의 세션 제어란?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

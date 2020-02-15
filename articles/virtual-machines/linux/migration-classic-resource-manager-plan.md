@@ -3,8 +3,8 @@ title: 클래식에서 Azure Resource Manager로 마이그레이션 계획
 description: 클래식에서 Azure Resource Manager로 IaaS 리소스의 마이그레이션 계획
 services: virtual-machines-linux
 documentationcenter: ''
-author: singhkays
-manager: gwallace
+author: tanmaygore
+manager: vashan
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 78492a2c-2694-4023-a7b8-c97d3708dcb7
@@ -12,14 +12,14 @@ ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: article
-ms.date: 04/01/2017
-ms.author: kasing
-ms.openlocfilehash: 460db5a3c836ecb35fd6c5943c88d32516d91674
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.date: 02/06/2020
+ms.author: tagore
+ms.openlocfilehash: 91af575e0326d773143fe15711694f939144974a
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75969867"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121990"
 ---
 # <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>클래식에서 Azure Resource Manager로 IaaS 리소스의 마이그레이션 계획
 Azure Resource Manager는 수많은 놀라운 기능을 제공하지만, 유연하게 이전할 수 있도록 마이그레이션 과정을 계획하는 것이 매우 중요합니다. 계획에 시간을 들이면 마이그레이션 활동을 수행하는 동안 문제가 발생하지 않습니다.
@@ -31,7 +31,7 @@ Azure Resource Manager는 수많은 놀라운 기능을 제공하지만, 유연�
 
 ![마이그레이션 단계](../media/virtual-machines-windows-migration-classic-resource-manager/plan-labtest-migrate-beyond.png)
 
-## <a name="plan"></a>요금제
+## <a name="plan"></a>계획
 
 ### <a name="technical-considerations-and-tradeoffs"></a>기술적 고려 사항 및 장단점
 
@@ -44,7 +44,7 @@ Azure Resource Manager는 수많은 놀라운 기능을 제공하지만, 유연�
 5. 운영 팀이 이제 클래식 및 Azure Resource Manager에서 애플리케이션/VM을 지원하나요?
 6. Azure Resource Manager에서는 VM 배포, 관리, 모니터링 및 보고 프로세스를 어떻게 변경하나요(변경할 수 있는 경우)?  배포 스크립트를 업데이트해야 하나요?
 7. 이해 관계자(최종 사용자, 애플리케이션 소유자 및 인프라 소유자)에게 알릴 통신 계획은 무엇인가요?
-8. 환경의 복잡성에 따라 최종 사용자와 애플리케이션 소유자가 애플리케이션을 사용할 수 없는 유지 관리 기간이 있어야 하나요?  있다면, 그 기간은 얼마나 되나요?
+8. 환경의 복잡성에 따라 최종 사용자와 애플리케이션 소유자가 애플리케이션을 사용할 수 없는 유지 관리 기간이 있어야 하나요?  그 기간은 얼마나 되나요?
 9. 이해 관계자가 Azure Resource Manager에 정통하고 숙련되었는지 확인하기 위한 학습 계획은 무엇인가요?
 10. 마이그레이션을 위한 프로그램 관리 또는 프로젝트 관리 계획은 무엇인가요?
 11. Azure Resource Manager 마이그레이션 및 기타 관련 기술 로드맵의 일정은 무엇인가요?  최적으로 정렬되어 있나요?
@@ -114,7 +114,7 @@ Azure Resource Manager는 수많은 놀라운 기능을 제공하지만, 유연�
     >
 
   - 네트워크 인터페이스
-  - Load Balancer
+  - 부하 분산 장치
   - 공용 IP
   - 고정 공용 IP
   - 코어 수

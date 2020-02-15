@@ -6,19 +6,19 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 09/01/2019
-ms.openlocfilehash: 60a9c6b237423337abb520b335c98d3c8c7549be
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 4340ee4ed1edda8590726151e07eec45c0751ed6
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76312205"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152264"
 ---
 # <a name="feature-hashing-module-reference"></a>기능 해싱 모듈 참조
 
-이 문서에서는 Azure Machine Learning designer에 포함 된 모듈을 설명 합니다.
+이 문서에서는 Azure Machine Learning designer (미리 보기)에 포함 된 모듈을 설명 합니다.
 
 기능 해싱 모듈을 사용 하 여 영어 텍스트 스트림을 정수 기능 집합으로 변환 합니다. 그런 다음이 해시 된 기능 집합을 기계 학습 알고리즘에 전달 하 여 텍스트 분석 모델을 학습 시킬 수 있습니다.
 
@@ -30,7 +30,7 @@ ms.locfileid: "76312205"
 
 예를 들어 다음과 같은 간단한 문장 집합을 가져온 다음 감정 점수를 가져옵니다. 이 텍스트를 사용 하 여 모델을 작성 하려는 경우를 가정 합니다.
 
-|사용자 텍스트|감정|
+|사용자 텍스트|데이터|
 |--------------|---------------|
 |이 책 좋아했던|3|
 |이 책 hated|1|
@@ -59,7 +59,7 @@ ms.locfileid: "76312205"
 
 예를 들어 해싱 후 기능 열은 다음과 같을 수 있습니다.
 
-|등급|해시 기능 1|해싱 기능 2|해싱 기능 3|
+|Rating|해시 기능 1|해싱 기능 2|해싱 기능 3|
 |-----|-----|-----|-----|
 |4|1|1|0|
 |5|0|0|0|

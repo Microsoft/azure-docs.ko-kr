@@ -1,24 +1,24 @@
 ---
 title: Azure Data Explorer .NET Standard SDK(미리 보기)를 사용하여 데이터 수집
-description: 이 문서에서는.NET Standard SDK를 사용 하 여 Azure 데이터 탐색기를 (부하) 데이터를 수집 하는 방법을 알아봅니다.
+description: 이 문서에서는 .NET Standard SDK를 사용 하 여 데이터를 Azure 데이터 탐색기 수집 (로드) 하는 방법에 대해 알아봅니다.
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: 53cf055a0900a25923fe67b961755c1f4367e1fb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1fb1301ae7e0cdff36f3771a44769c8bf9cc9c62
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66496882"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77187926"
 ---
 # <a name="ingest-data-using-the-azure-data-explorer-net-standard-sdk-preview"></a>Azure Data Explorer .NET Standard SDK(미리 보기)를 사용하여 데이터 수집
 
-ADX(Azure Data Explorer)는 로그 및 원격 분석 데이터에 사용 가능한 빠르고 확장성이 우수한 데이터 탐색 서비스입니다. ADX는 2개의 .NET Standard용 클라이언트 라이브러리, [수집 라이브러리](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Ingest.NETStandard) 및 [데이터 라이브러리](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Data.NETStandard)를 제공합니다. 이러한 라이브러리를 사용하여 데이터를 클러스터로 수집(로드)하고 코드에서 데이터를 쿼리할 수 있습니다. 이 문서에서는 먼저 테이블 및 데이터 매핑 테스트 클러스터에서를 만듭니다. 그런 다음, 클러스터 큐에 수집을 넣고 결과의 유효성을 검사합니다.
+ADX(Azure Data Explorer)는 로그 및 원격 분석 데이터에 사용 가능한 빠르고 확장성이 우수한 데이터 탐색 서비스입니다. ADX는 2개의 .NET Standard용 클라이언트 라이브러리, [수집 라이브러리](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Ingest.NETStandard) 및 [데이터 라이브러리](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Data.NETStandard)를 제공합니다. 이러한 라이브러리를 사용하여 데이터를 클러스터로 수집(로드)하고 코드에서 데이터를 쿼리할 수 있습니다. 이 문서에서는 먼저 테스트 클러스터에서 테이블 및 데이터 매핑을 만듭니다. 그런 다음, 클러스터 큐에 수집을 넣고 결과의 유효성을 검사합니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Azure 구독이 아직 없는 경우 시작하기 전에 [Azure 체험 계정](https://azure.microsoft.com/free/)을 만듭니다.
 
@@ -30,7 +30,7 @@ ADX(Azure Data Explorer)는 로그 및 원격 분석 데이터에 사용 가능�
 Install-Package Microsoft.Azure.Kusto.Ingest.NETStandard
 ```
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>인증
 
 애플리케이션을 인증하기 위해 Azure 데이터 탐색기는 AAD 테넌트 ID를 사용합니다. 테넌트 ID를 찾으려면 다음 URL을 사용하여 *YourDomain*을 사용자 도메인으로 대체합니다.
 
@@ -81,7 +81,7 @@ var blobPath = "https://kustosamplefiles.blob.core.windows.net/samplefiles/Storm
 ```
 
 ## <a name="create-a-table-on-your-test-cluster"></a>테스트 클러스터에 테이블 만들기
-`StormEvents.csv` 파일에 있는 데이터 스키마와 일치하는 `StormEvents`라는 테이블을 만듭니다.
+`StormEvents` 파일에 있는 데이터 스키마와 일치하는 `StormEvents.csv`라는 테이블을 만듭니다.
 
 ```csharp
 var table = "StormEvents";
@@ -123,7 +123,7 @@ using (var kustoClient = KustoClientFactory.CreateCslAdminProvider(kustoConnecti
 ## <a name="define-ingestion-mapping"></a>수집 매핑 정의
 
 테이블을 만들 때 사용되는 열 이름에 들어오는 CSV 데이터를 매핑합니다.
-해당 테이블에서 [CSV 열 매핑 개체](/azure/kusto/management/tables#create-ingestion-mapping) 프로비전
+해당 테이블에서 [CSV 열 매핑 개체](/azure/kusto/management/create-ingestion-mapping-command) 프로비전
 
 ```csharp
 var tableMapping = "StormEvents_CSV_Mapping";
@@ -226,7 +226,7 @@ using (var cslQueryProvider = KustoClientFactory.CreateCslQueryProvider(kustoCon
 
 ## <a name="clean-up-resources"></a>리소스 정리
 
-다른 문서를 수행 하려는 경우 사용자가 만든 리소스를 유지 합니다. 그렇지 않으면 데이터베이스에서 다음 명령을 실행하여 `StormEvents` 테이블을 정리합니다.
+다른 문서를 따르려면 만든 리소스를 유지 합니다. 그렇지 않으면 데이터베이스에서 다음 명령을 실행하여 `StormEvents` 테이블을 정리합니다.
 
 ```Kusto
 .drop table StormEvents

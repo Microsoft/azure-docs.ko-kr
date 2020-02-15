@@ -9,14 +9,14 @@ manager: cshankar
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 02/03/2020
+ms.date: 02/11/2020
 ms.custom: seodec18
-ms.openlocfilehash: b9d64c347881f78e832a39bca8404fdad98cbf17
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: c3c7f59ecb3a06d80012917e2da4425a899859d7
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76981109"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152519"
 ---
 # <a name="send-events-to-a-time-series-insights-environment-by-using-an-event-hub"></a>이벤트 허브를 사용하여 Time Series Insights 환경으로 이벤트 보내기
 
@@ -73,12 +73,18 @@ Time Series Insights 업데이트는 인스턴스를 사용하여 들어오는 �
 
     [![기본 키 연결 문자열의 값을 복사 합니다.](media/send-events/configure-sample-code-connection-string.png)](media/send-events/configure-sample-code-connection-string.png#lightbox)
 
-1. [https://editor.swagger.io](https://tsiclientsample.azurewebsites.net/windFarmGen.html ) 로 이동합니다. URL은 시뮬레이션된 가상 디바이스를 실행합니다.
+1. [https://editor.swagger.io](https://tsiclientsample.azurewebsites.net/windFarmGen.html) 로 이동합니다. URL은 시뮬레이트된 풍차 장치를 만들고 실행 합니다.
 1. 웹 페이지의 **이벤트 허브 연결 문자열** 상자에, [풍차 입력 필드](#push-events-to-windmills-sample)에 복사한 연결 문자열을 붙여넣습니다.
   
     [기본 키 연결 문자열을 이벤트 허브 연결 문자열 상자에 붙여 ![](media/send-events/configure-wind-mill-sim.png)](media/send-events/configure-wind-mill-sim.png#lightbox)
 
-1. **시작하려면 클릭**을 선택합니다. 시뮬레이터는 직접 사용할 수 있는 인스턴스 JSON을 생성합니다.
+1. **시작하려면 클릭**을 선택합니다. 
+
+    > [!TIP]
+    > 또한 풍차 시뮬레이터는 [TIME SERIES INSIGHTS GA 쿼리 api](https://docs.microsoft.com/rest/api/time-series-insights/ga-query)를 사용 하 여 페이로드로 사용할 수 있는 JSON을 만듭니다.
+
+    > [!NOTE]
+    > 시뮬레이터는 브라우저 탭이 닫힐 때까지 데이터를 계속 보냅니다.
 
 1. Azure Portal에서 이벤트 허브로 돌아갑니다. **개요** 페이지에 이벤트 허브에서 받은 새 이벤트가 표시 됩니다.
 

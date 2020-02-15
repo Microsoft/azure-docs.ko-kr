@@ -5,25 +5,25 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 10/25/2019
+ms.date: 02/11/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f3cd57c09c08ab4c86feeca27915639123b439d0
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: d63aaa0103715a928cdd5332de738a473b329f2e
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73180304"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186080"
 ---
 # <a name="configure-a-conditional-access-policy-in-report-only-mode-preview"></a>보고서 전용 모드에서 조건부 액세스 정책 구성 (미리 보기)
 
 보고서 전용 모드에서 조건부 액세스 정책을 구성 하려면:
 
 1. 조건부 액세스 관리자, 보안 관리자 또는 전역 관리자 권한으로 **Azure Portal** 에 로그인 합니다.
-1. **조건부 액세스** >  > **보안** **Azure Active Directory** 로 이동 합니다.
+1. **Azure Active Directory** > **Security** > **조건부 액세스**로 이동합니다.
 1. **새 정책**을 선택합니다.
 1. 필요에 따라 정책 조건을 구성 하 고 필요한 권한 부여 컨트롤을 구성 합니다.
 1. **정책 사용** 에서 **보고서 전용** 모드로 전환을 설정 합니다.
@@ -41,9 +41,12 @@ Azure AD 로그인 로그에서 보고서 전용 결과를 봅니다.
 1. 로그인을 선택 하거나 필터를 추가 하 여 결과를 좁힙니다.
 1. **세부 정보** 서랍에서 **보고서 전용 (미리 보기)** 탭을 선택 하 여 로그인 중에 평가 된 정책을 확인 합니다.
 
+> [!NOTE]
+> 로그인 로그를 다운로드 하는 경우 조건부 액세스 보고서 전용 결과 데이터를 포함 하려면 JSON 형식을 선택 합니다.
+
 ## <a name="set-up-azure-monitor-integration-with-azure-ad"></a>Azure AD와 Azure Monitor 통합 설정
 
-새 조건부 액세스 Insights 통합 문서를 사용 하 여 조건부 액세스 정책의 집계 영향을 확인 하려면 Azure Monitor를 Azure AD와 통합 하 고 로그인 로그를 내보내야 합니다. 이 통합을 설정 하는 두 단계는 다음과 같습니다. 
+새 조건부 액세스 Insights 통합 문서를 사용 하 여 조건부 액세스 정책의 집계 영향을 확인 하려면 Azure Monitor를 Azure AD와 통합 하 고 로그인 로그를 내보내야 합니다. 이 통합을 설정 하는 두 가지 단계가 있습니다. 
 
 1. [Azure Monitor 구독에 등록 하 고 작업 영역을 만듭니다](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace).
 1. [AZURE AD에서 Azure Monitor 로그인 로그를 내보냅니다](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics).
@@ -61,7 +64,7 @@ Azure AD 로그를 Azure Monitor와 통합 하면 새 조건부 액세스 insigh
 1. 시간 범위를 선택 합니다. 시간 범위가 사용 가능한 데이터 집합을 초과 하면 보고서에 사용 가능한 데이터가 모두 표시 됩니다. **조건부 액세스 정책** 및 **시간 범위** 매개 변수를 설정 하면 보고서가 로드 됩니다.
    1. 필요에 따라 개별 **사용자** 또는 **앱** 을 검색 하 여 보고서 범위를 좁힐 수 있습니다.
 1. 시간 범위에서 데이터를 볼 때 사용자 수 또는 로그인 수를 선택 합니다.
-1. **데이터 보기**에 따라 **영향 요약** 에는 선택한 매개 변수의 범위에 있는 사용자 또는 로그인 수가 총 수, **성공**, **실패**, **사용자 작업 필요**및 **적용 되지 않음 별로 그룹화 되어 표시 됩니다.** . 타일을 선택 하 여 특정 결과 유형의 로그인을 검사 합니다. 
+1. **데이터 보기**에 따라 **영향 요약** 에는 선택한 매개 변수의 범위에 있는 사용자 또는 로그인 수가 총 수, **성공**, **실패**, **사용자 작업 필요**및 **적용 안**함 별로 그룹화 되어 표시 됩니다. 타일을 선택 하 여 특정 결과 유형의 로그인을 검사 합니다. 
    1. 통합 문서 매개 변수를 변경한 경우 나중에 사용 하기 위해 복사본을 저장 하도록 선택할 수 있습니다. 보고서 맨 위에 있는 저장 아이콘을 선택 하 고 저장할 이름 및 위치를 제공 합니다.
 1. 아래로 스크롤하여 각 조건에 대 한 로그인의 분석 결과를 확인 합니다.
 1. 위의 선택 항목으로 필터링 된 개별 로그인 이벤트를 조사 하려면 보고서 아래쪽의 **로그인 세부 정보** 를 확인 합니다.

@@ -6,22 +6,22 @@ ms.author: janeng
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/08/2019
-ms.openlocfilehash: f7e5d3e681c86d5ecb014f95d838e6d3d51e1c48
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 2b5d5bfff3ff97efb351497c48a404beada2036a
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74768370"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209344"
 ---
-# <a name="pricing-tiers-in-azure-database-for-postgresql---single-server"></a>Azure Database for PostgreSQL의 가격 책정 계층-단일 서버
+# <a name="pricing-tiers-in-azure-database-for-postgresql---single-server"></a>Azure Database for PostgreSQL-단일 서버에서 가격 책정 계층
 
 Azure Database for PostgreSQL 서버는 기본, 범용 및 메모리 최적화의 세 가지 가격 책정 계층 중 하나에서 만들 수 있습니다. 가격 책정 계층은 프로비전할 수 있는 컴퓨팅의 vCore 수, vCore당 메모리 및 데이터를 저장하는 데 사용되는 스토리지 기술로 구분됩니다. 모든 리소스는 PostgreSQL 서버 수준에서 프로비전됩니다. 서버는 하나 이상의 데이터베이스를 갖출 수 있습니다.
 
-|    | **Basic** | **범용** | **메모리 최적화** |
+|    | **기본** | **범용** | **메모리 최적화** |
 |:---|:----------|:--------------------|:---------------------|
-| 컴퓨팅 세대 | 4세대, 5세대 | 4세대, 5세대 | Gen 5 |
+| 컴퓨팅 세대 | 4세대, 5세대 | 4세대, 5세대 | 5세대 |
 | vCore 수 | 1, 2 | 2, 4, 8, 16, 32, 64 |2, 4, 8, 16, 32 |
-| vCore 메모리 | 2GB | 5 GB | 10GB |
+| vCore 메모리 | 2GB | 5GB | 10 GB |
 | 스토리지 크기 | 5GB-1TB | 5gb ~ 16TB | 5gb ~ 16TB |
 | 스토리지 유형 | Azure Standard Storage | Azure Premium Storage | Azure Premium Storage |
 | 데이터베이스 백업 보존 기간 | 7-35일 | 7-35일 | 7-35일 |
@@ -31,8 +31,8 @@ Azure Database for PostgreSQL 서버는 기본, 범용 및 메모리 최적화�
 | 가격 책정 계층 | 대상 워크로드 |
 |:-------------|:-----------------|
 | Basic | 간단한 컴퓨팅 및 I/O 성능이 필요한 워크로드. 예를 들어 개발 또는 시험, 또는 자주 사용하지 않는 소규모 애플리케이션에 사용되는 서버가 이에 해당합니다. |
-| 일반적인 용도 | 확장 가능한 I/O 처리량을 갖춘 부하 분산된 컴퓨팅 및 메모리가 필요한 대부분의 비즈니스 워크로드. 예를 들어 웹 및 모바일 앱을 호스트하는 서버와 기타 엔터프라이즈 애플리케이션이 있습니다.|
-| 메모리에 최적화 | 빠른 트랜잭션 처리와 높은 동시성을 위해 메모리 내 성능이 필요한 고성능 데이터베이스 워크로드. 예를 들어 실시간 데이터를 처리하는 서버 및 고성능 트랜잭션 또는 분석 앱이 있습니다.|
+| 범용 | 확장 가능한 I/O 처리량을 갖춘 부하 분산된 컴퓨팅 및 메모리가 필요한 대부분의 비즈니스 워크로드. 예를 들어 웹 및 모바일 앱을 호스트하는 서버와 기타 엔터프라이즈 애플리케이션이 있습니다.|
+| 메모리 최적화 | 빠른 트랜잭션 처리와 높은 동시성을 위해 메모리 내 성능이 필요한 고성능 데이터베이스 워크로드. 예를 들어 실시간 데이터를 처리하는 서버 및 고성능 트랜잭션 또는 분석 앱이 있습니다.|
 
 서버를 만든 후 vCore 수, 하드웨어 생성 및 가격 책정 계층(기본 제외)은 몇 초 이내로 늘리거나 줄일 수 있습니다. 또한 애플리케이션 중단 시간 없이 독립적으로 스토리지 용량을 늘리거나 백업 보존 기간을 늘리거나 줄일 수 있습니다. 서버가 만들어진 후 백업 스토리지 유형은 변경할 수 없습니다. 자세한 내용은 [리소스 크기 조정](#scale-resources) 섹션을 참조하세요.
 
@@ -44,15 +44,15 @@ Azure Database for PostgreSQL 서버는 기본, 범용 및 메모리 최적화�
 
 프로비전하는 스토리지는 Azure Database for PostgreSQL 서버에 사용할 수 있는 스토리지 용량입니다. 스토리지는 데이터베이스 파일, 임시 파일, 트랜잭션 로그 및 PostgreSQL 서버 로그에 사용됩니다. 프로비전하는 총 스토리지 용량도 서버에 사용할 수 있는 I/O 용량을 정의합니다.
 
-|    | **Basic** | **범용** | **메모리 최적화** |
+|    | **기본** | **범용** | **메모리 최적화** |
 |:---|:----------|:--------------------|:---------------------|
 | 스토리지 유형 | Azure Standard Storage | Azure Premium Storage | Azure Premium Storage |
 | 스토리지 크기 | 5GB-1TB | 5gb ~ 16TB | 5gb ~ 16TB |
-| 스토리지 증분 크기 | 1GB | 1GB | 1GB |
+| 스토리지 증분 크기 | 1 GB | 1 GB | 1 GB |
 | IOPS | 변수 |3IOPS/GB<br/>최소 100IOPS<br/>최대 2만 IOPS | 3IOPS/GB<br/>최소 100IOPS<br/>최대 2만 IOPS |
 
 > [!NOTE]
-> 미국 동부, 미국 동부 2, 미국 중부, 미국 서 부, 유럽 서 부, 유럽 서부, 영국 남부, 영국 서부, 동남 아시아, 동아시아, 일본 동부, 일본 서 부, 대한민국 중부, 대한민국 남부, 오스트레일리아 동부, 오스트레일리아 지역에서 최대 16TB 및 2만 IOPS의 저장소를 지원 합니다. 남부 동부.
+> 미국 동부, 미국 동부 2, 미국 중부, 미국 서 부, 미국 중 북부, 미국 중 북부, 유럽 서 부, 유럽 서부, 영국 남부, 영국 서부, 동남 아시아, 동아시아, 일본 동부, 일본 서 부, 한국 중부 지역에서 최대 16TB 및 2만 IOPS의 저장소를 지원 합니다. , 한국 남부, 오스트레일리아 동부, 오스트레일리아 남부 동부.
 >
 > 다른 모든 지역은 최대 4TB의 저장소 및 6000 IOPS를 지원 합니다.
 >

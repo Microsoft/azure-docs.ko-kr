@@ -2,22 +2,22 @@
 title: 조직의 Azure 가격 책정 보기 및 다운로드
 description: 조직의 가격 책정으로 가격 책정 또는 예상 비용을 살펴보고 다운로드하는 방법을 알아봅니다.
 author: bandersmsft
-manager: jureid
+manager: amberb
 tags: billing
 ms.service: cost-management-billing
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/30/2019
+ms.date: 02/10/2020
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: 14346ceda9574d18050108e585d5ff4cdb133e31
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 72ad7b13010e1369e3e0e4d31ade089012aaf8f3
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75992024"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77132872"
 ---
 # <a name="view-and-download-your-organizations-azure-pricing"></a>조직의 Azure 가격 책정 보기 및 다운로드
 

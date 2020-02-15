@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 10/22/2019
-ms.openlocfilehash: 9263f9741a1921550a2ed683dbed441552d6cce0
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: c87673fef0079ff1b04b0840da0434b090cda67c
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76546336"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153658"
 ---
 # <a name="two-class-neural-network-module"></a>2 클래스 신경망 모듈
 

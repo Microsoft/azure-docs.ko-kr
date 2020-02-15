@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 01/30/2020
 ms.author: victorh
-ms.openlocfilehash: c49c37ced4a5d5cc7cdde0737b889aad3b538f7f
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: f56929e14aef34f675139782328ed5c559df12c7
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76899016"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198601"
 ---
 # <a name="configure-an-application-gateway-with-an-internal-load-balancer-ilb-endpoint"></a>ILB (내부 부하 분산 장치) 끝점을 사용 하 여 응용 프로그램 게이트웨이 구성
 
@@ -27,9 +27,9 @@ Azure 애플리케이션 게이트웨이는 인터넷에 노출 되지 않은 �
 
 ## <a name="sign-in-to-azure"></a>Azure에 로그인
 
-<https://portal.azure.com>Kv에서 Azure Portal에 로그인 합니다.
+<https://portal.azure.com>에서 Azure Portal에 로그인합니다.
 
-## <a name="create-an-application-gateway"></a>Application Gateway 만들기
+## <a name="create-an-application-gateway"></a>애플리케이션 게이트웨이 만들기
 
 Azure가 사용자가 만든 리소스 간에 통신하려면 가상 네트워크가 필요합니다. 새 가상 네트워크를 만들거나 기존 가상 네트워크를 선택할 수 있습니다. 이 예제에서는 새 가상 네트워크를 만듭니다. 애플리케이션 게이트웨이를 만드는 동시에 가상 네트워크를 만들 수 있습니다. 별도의 서브넷으로 Application Gateway 인스턴스가 만들어집니다. 이 예제에서는 두 개의 서브넷을 만듭니다. 하나는 애플리케이션 게이트웨이용이고, 다른 하나는 백 엔드 서버용입니다.
 
@@ -110,7 +110,7 @@ Azure가 사용자가 만든 리소스 간에 통신하려면 가상 네트워�
 ### <a name="install-iis"></a>IIS 설치
 
 1. Cloud Shell를 열고 **PowerShell**로 설정 되었는지 확인 합니다.
-    ![private-frontendip-3](./media/configure-application-gateway-with-private-frontend-ip/private-frontendip-3.png)
+    ![frontendip-3](./media/configure-application-gateway-with-private-frontend-ip/private-frontendip-3.png)
 2. 다음 명령을 실행하여 가상 머신에 IIS를 설치합니다.
 
    ```azurepowershell

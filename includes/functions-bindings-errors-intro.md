@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 09/04/2018
 ms.author: glenga
-ms.openlocfilehash: 0c04e7812d023cd394b54cf03bcca11a5589b18a
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 8573a915c572885b53437843b114aa987be4c66b
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75564798"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198458"
 ---
 Azure Functions 발생 하는 오류는 다음 원본 중 하나에서 가져올 수 있습니다.
 
@@ -39,4 +39,4 @@ Azure Functions 발생 하는 오류는 다음 원본 중 하나에서 가져올
 
 기본적으로이 작업은 다시 시도 요청을 최대 5 회까지 트리거합니다. 5 번째 재시도 후에는 Azure Queue storage와 Azure Service Bus 트리거에서 모두 [포이즌 큐](..\articles\azure-functions\functions-bindings-storage-queue.md#trigger---poison-messages)에 메시지를 씁니다.
 
-다른 트리거 또는 바인딩 유형에 대 한 재시도 정책을 수동으로 구현 해야 합니다. 수동 구현에는 [포이즌 메시지 큐](..\articles\azure-functions\functions-bindings-storage-blob.md#trigger---poison-blobs)에 오류 정보를 기록 하는 작업이 포함 될 수 있습니다. 포이즌 큐에 기록 하면 나중에 작업을 다시 시도할 수 있습니다. 이 방법은 Blob storage 트리거에서 사용 하는 것과 동일 합니다.
+다른 트리거 또는 바인딩 유형에 대 한 재시도 정책을 수동으로 구현 해야 합니다. 수동 구현에는 [포이즌 메시지 큐](..\articles\azure-functions\functions-bindings-storage-blob-trigger.md#poison-blobs)에 오류 정보를 기록 하는 작업이 포함 될 수 있습니다. 포이즌 큐에 기록 하면 나중에 작업을 다시 시도할 수 있습니다. 이 방법은 Blob storage 트리거에서 사용 하는 것과 동일 합니다.

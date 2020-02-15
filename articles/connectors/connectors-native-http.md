@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 07/05/2019
 tags: connectors
-ms.openlocfilehash: 232b17852e89ebdfa6f81b5aadcdbcd9c83d4055
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 9c1b2af8d06c9466ed6c82308de941b43510238a
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75888144"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77117985"
 ---
 # <a name="send-outgoing-calls-to-http-or-https-endpoints-by-using-azure-logic-apps"></a>Azure Logic Apps를 사용 하 여 HTTP 또는 HTTPS 끝점에 보내는 호출 보내기
 
@@ -26,7 +26,7 @@ ms.locfileid: "75888144"
 
 대상 끝점의 기능을 기반으로 하는 HTTP 커넥터는 TLS (전송 계층 보안) 버전 1.0, 1.1 및 1.2을 지원 합니다. 가능 하면 지원 되는 가장 높은 버전을 사용 하 여 끝점에 대 한 Logic Apps 협상 합니다. 따라서 예를 들어 끝점이 1.2을 지 원하는 경우 커넥터는 1.2를 먼저 사용 합니다. 그렇지 않으면 커넥터에서 지원 되는 가장 높은 다음 버전을 사용 합니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Azure 구독 Azure 구독이 없는 경우 [체험 Azure 계정에 등록](https://azure.microsoft.com/free/)합니다.
 
@@ -50,9 +50,12 @@ ms.locfileid: "75888144"
 
 1. 대상 끝점에 대 한 호출에 포함 하려는 [HTTP 트리거 매개 변수에](../logic-apps/logic-apps-workflow-actions-triggers.md#http-trigger) 대 한 값을 제공 합니다. 트리거가 대상 끝점을 확인 하는 빈도에 대 한 되풀이를 설정 합니다.
 
-   **없음**이외의 인증 유형을 선택 하는 경우 인증 설정은 선택 사항에 따라 달라 집니다. 자세한 내용은 [아웃 바운드 호출에 인증 추가](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)를 참조 하세요.
-
    ![HTTP 트리거 매개 변수 입력](./media/connectors-native-http/http-trigger-parameters.png)
+
+   **없음**이외의 인증 유형을 선택 하는 경우 인증 설정은 선택 사항에 따라 달라 집니다. HTTP에 사용할 수 있는 인증 유형에 대 한 자세한 내용은 다음 항목을 참조 하세요.
+
+   * [아웃 바운드 호출에 인증 추가](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)
+   * [관리 id를 사용 하 여 리소스에 대 한 액세스 인증](../logic-apps/create-managed-service-identity.md)
 
 1. 사용할 수 있는 다른 매개 변수를 추가 하려면 **새 매개 변수 추가** 목록을 열고 원하는 매개 변수를 선택 합니다.
 
@@ -80,9 +83,12 @@ ms.locfileid: "75888144"
 
 1. 대상 끝점에 대 한 호출에 포함 하려는 [HTTP 작업 매개 변수의](../logic-apps/logic-apps-workflow-actions-triggers.md#http-action) 값을 제공 합니다.
 
-   **없음**이외의 인증 유형을 선택 하는 경우 인증 설정은 선택 사항에 따라 달라 집니다. 자세한 내용은 [아웃 바운드 호출에 인증 추가](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)를 참조 하세요.
-
    ![HTTP 작업 매개 변수 입력](./media/connectors-native-http/http-action-parameters.png)
+
+   **없음**이외의 인증 유형을 선택 하는 경우 인증 설정은 선택 사항에 따라 달라 집니다. HTTP에 사용할 수 있는 인증 유형에 대 한 자세한 내용은 다음 항목을 참조 하세요.
+
+   * [아웃 바운드 호출에 인증 추가](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)
+   * [관리 id를 사용 하 여 리소스에 대 한 액세스 인증](../logic-apps/create-managed-service-identity.md)
 
 1. 사용할 수 있는 다른 매개 변수를 추가 하려면 **새 매개 변수 추가** 목록을 열고 원하는 매개 변수를 선택 합니다.
 
@@ -145,7 +151,7 @@ HTTP 요청에 `multipart/form-data` 형식이 있는 콘텐츠를 처리 하려
 
 이 정보를 반환 하는 HTTP 트리거 또는 작업의 출력에 대 한 자세한 내용은 다음과 같습니다.
 
-| 속성 이름 | 유형 | Description |
+| 속성 이름 | Type | Description |
 |---------------|------|-------------|
 | headers | object | 요청의 헤더입니다. |
 | 본문 | object | JSON 개체 | 요청의 본문 내용이 포함 된 개체입니다. |

@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 04/16/2019
 ms.author: mlearned
-ms.openlocfilehash: 5b99d76ef20c288d6ae0bd33e1e2b6a75a359d3a
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 520557c80bf2630a359188dd86ec0987e0d5326b
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "67616285"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77158148"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli"></a>Azure CLI를 사용 하 여 Azure Kubernetes Service와 Azure Active Directory 통합
 
@@ -22,11 +22,11 @@ ms.locfileid: "67616285"
 
 이 문서에서 사용 되는 전체 샘플 스크립트는 [Azure CLI 샘플-AZURE AD와 AKS 통합][complete-script]을 참조 하세요.
 
-다음과 같은 제한 사항이 적용됩니다.
+다음 제한 사항이 적용됩니다.
 
 - Azure AD는 RBAC 사용 클러스터를 새로 만들 때만 사용하도록 설정할 수 있습니다. 기존 AKS 클러스터에서는 Azure AD를 사용하도록 설정할 수 없습니다.
 
-## <a name="before-you-begin"></a>시작하기 전 주의 사항
+## <a name="before-you-begin"></a>시작하기 전에
 
 Azure CLI 버전 2.0.61 이상이 설치 및 구성 되어 있어야 합니다. `az --version`을 실행하여 버전을 찾습니다. 설치 또는 업그레이드해야 하는 경우 [Azure CLI 설치][install-azure-cli]를 참조하세요.
 
@@ -172,7 +172,7 @@ az ad signed-in-user show --query userPrincipalName -o tsv
 > [!IMPORTANT]
 > RBAC 바인딩을 부여한 사용자가 동일한 Azure AD 테 넌 트에 있는 경우 *userPrincipalName*에 따라 사용 권한을 할당 합니다. 사용자가 다른 Azure AD 테 넌 트에 있는 경우에는를 쿼리하고 *objectId* 속성을 대신 사용 합니다.
 
-이라는 `basic-azure-ad-binding.yaml` yaml 매니페스트를 만들고 다음 콘텐츠를 붙여 넣습니다. 마지막 줄에서 *userPrincipalName_or_objectId* 을 이전 명령의 UPN 또는 개체 ID 출력으로 바꿉니다.
+`basic-azure-ad-binding.yaml` 라는 YAML 매니페스트를 만들고 다음 내용을 붙여 넣습니다. 마지막 줄에서 *userPrincipalName_or_objectId* 을 이전 명령의 UPN 또는 개체 ID 출력으로 바꿉니다.
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -197,7 +197,7 @@ kubectl apply -f basic-azure-ad-binding.yaml
 
 ## <a name="access-cluster-with-azure-ad"></a>Azure AD를 사용하여 클러스터에 액세스
 
-이제 AKS 클러스터에 대 한 Azure AD 인증의 통합을 테스트 하겠습니다. 일반 사용자 자격 증명을 사용 하도록 구성컨텍스트를설정합니다.`kubectl` 이 컨텍스트는 모든 인증 요청을 Azure AD를 통해 다시 전달 합니다.
+이제 AKS 클러스터에 대 한 Azure AD 인증의 통합을 테스트 하겠습니다. 일반 사용자 자격 증명을 사용 하도록 `kubectl` 구성 컨텍스트를 설정 합니다. 이 컨텍스트는 모든 인증 요청을 Azure AD를 통해 다시 전달 합니다.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name $aksname --overwrite-existing
@@ -209,7 +209,7 @@ az aks get-credentials --resource-group myResourceGroup --name $aksname --overwr
 kubectl get pods --all-namespaces
 ```
 
-웹 브라우저를 사용 하 여 Azure AD 자격 증명을 사용 하 여 인증 하는 로그인 프롬프트가 표시 됩니다. 성공적으로 인증 되 `kubectl` 면 다음 예제 출력과 같이 명령이 AKS 클러스터에 pod를 표시 합니다.
+웹 브라우저를 사용 하 여 Azure AD 자격 증명을 사용 하 여 인증 하는 로그인 프롬프트가 표시 됩니다. 성공적으로 인증 되 면 다음 예제 출력과 같이 `kubectl` 명령은 AKS 클러스터에 pod를 표시 합니다.
 
 ```console
 $ kubectl get pods --all-namespaces
@@ -228,7 +228,7 @@ kube-system   metrics-server-7b97f9cd9-btxzz          1/1     Running   0       
 kube-system   tunnelfront-6ff887cffb-xkfmq            1/1     Running   0          23h
 ```
 
-에 대해 `kubectl` 수신 된 인증 토큰이 캐시 됩니다. 토큰이 만료 되었거나 Kubernetes 구성 파일이 다시 생성 된 경우에만 로그인 하 라는 메시지가 표시 됩니다.
+`kubectl`에 대해 수신 된 인증 토큰이 캐시 됩니다. 토큰이 만료 되었거나 Kubernetes 구성 파일이 다시 생성 된 경우에만 로그인 하 라는 메시지가 표시 됩니다.
 
 다음 예제 출력과 같이 웹 브라우저를 사용 하 여 성공적으로 로그인 한 후에 권한 부여 오류 메시지가 표시 되는 경우 다음과 같은 가능한 문제를 확인 합니다.
 
@@ -238,7 +238,7 @@ error: You must be logged in to the server (Unauthorized)
 
 * 사용자 계정이 동일한 Azure AD 테 넌 트에 있는지 여부에 따라 적절 한 개체 ID 또는 UPN을 정의 했습니다.
 * 사용자는 200개가 넘는 그룹의 멤버가 아닙니다.
-* 서버에 대 한 응용 프로그램 등록에 정의 된 비밀이를 사용 하 여 구성 된 값과 일치 합니다.`--aad-server-app-secret`
+* 서버에 대 한 응용 프로그램 등록에 정의 된 비밀이 `--aad-server-app-secret`를 사용 하 여 구성 된 값과 일치 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -260,7 +260,7 @@ Id 및 리소스 제어에 대 한 모범 사례는 [AKS의 인증 및 권한 �
 [az-aks-create]: /cli/azure/aks?view=azure-cli-latest#az-aks-create
 [az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials
 [az-group-create]: /cli/azure/group#az-group-create
-[open-id-connect]:../active-directory/develop/v1-protocols-openid-connect-code.md
+[open-id-connect]:../active-directory/develop/v2-protocols-oidc.md
 [az-ad-user-show]: /cli/azure/ad/user#az-ad-user-show
 [az-ad-app-create]: /cli/azure/ad/app#az-ad-app-create
 [az-ad-app-update]: /cli/azure/ad/app#az-ad-app-update

@@ -8,16 +8,16 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: 7014882e7da9eb7ab7df65cd20403982a46018a3
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: d738868e0e4ca7599f4aaf8d6e09d22f26a8db92
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112613"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77016377"
 ---
 # <a name="tutorial-create-a-water-quality-monitoring-application-in-azure-iot-central"></a>자습서: Azure IoT Central에서 용수 품질 모니터링 애플리케이션 만들기
 
-[!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
+
 
 이 자습서에서는 Azure IoT Central에서 용수 품질 모니터링 애플리케이션을 만드는 과정을 안내합니다. Azure IoT Central **용수 품질 모니터링** 애플리케이션 템플릿에서 애플리케이션을 만듭니다.
 
@@ -32,7 +32,7 @@ ms.locfileid: "74112613"
 > * 작업을 구성합니다.
 > * 흰색 레이블 지정을 사용하여 애플리케이션 브랜딩을 사용자 지정합니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서를 완료하려면 Azure 구독을 보유하는 것이 좋습니다. Azure 구독이 아직 없는 경우 [Azure 가입 페이지](https://aka.ms/createazuresubscription)에서 만들 수 있습니다.
 
@@ -63,6 +63,8 @@ ms.locfileid: "74112613"
 1. 페이지의 왼쪽 아래 부분에서 **만들기** 단추를 선택합니다.
 
     ![Azure IoT Central 새 애플리케이션 페이지](./media/tutorial-waterqualitymonitoring/new-application-waterqualitymonitoring1.png)
+
+    ![Azure IoT Central 새 애플리케이션 청구 정보](./media/tutorial-waterqualitymonitoring/new-application-waterqualitymonitoring1-billinginfo.png)
 
 이제 Azure IoT Central **용수 품질 모니터링** 템플릿을 사용하여 용수 품질 모니터링 애플리케이션이 만들어졌습니다.
 
@@ -139,7 +141,7 @@ Azure IoT Central의 디바이스 템플릿은 디바이스 기능을 정의합�
 1. 측정 단위를 변경하거나 **최솟값** 및 **최댓값**을 설정합니다.
 1. **저장**을 선택합니다.
 
-#### <a name="add-a-cloud-property"></a>클라우드 속성 추가
+#### <a name="add-a-cloud-property"></a>클라우드 속성을 추가합니다.
 
 1. 디바이스 템플릿 메뉴에서 **클라우드 속성**을 선택합니다.
 1. 새 클라우드 속성을 추가하려면 **+ 클라우드 속성 추가**를 선택합니다. Azure IoT Central에서는 디바이스와 관련이 있지만 디바이스에서 보낼 필요가 없는 속성을 추가할 수 있습니다. 이러한 속성의 한 가지 예로 설치 영역, 자산 정보 또는 유지 관리 정보와 관련된 경고 임계값이 있습니다.

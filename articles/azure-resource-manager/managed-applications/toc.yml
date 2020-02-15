@@ -110,6 +110,10 @@
               href: microsoft-compute-sizeselector.md
             - name: UserNameTextBox
               href: microsoft-compute-usernametextbox.md
+        - name: 관리 ID
+          items:
+            - name: IdentitySelector
+              href: microsoft-managedidentity-identityselector.md
         - name: 네트워크
           items:
             - name: PublicIPAddressCombo
@@ -126,7 +130,7 @@
   items:
     - name: Azure 로드맵
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: 가격
+    - name: 가격 책정
       href: 'https://azure.microsoft.com/pricing/details/managed-applications/'
     - name: 요금 계산기
       href: 'https://azure.microsoft.com/pricing/calculator/'

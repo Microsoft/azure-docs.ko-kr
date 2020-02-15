@@ -1,20 +1,18 @@
 ---
-title: Azure 가상 컴퓨터에 대 한 유지 관리 제어
-description: 유지 관리 제어를 사용 하 여 Azure Vm에 유지 관리가 적용 되는 시기를 제어 하는 방법을 알아봅니다.
-services: virtual-machines-linux
+title: 유지 관리 제어
+description: 유지 관리 제어를 사용 하 여 Azure Vm에 유지 관리를 적용 하는 시기를 제어 하는 방법을 알아봅니다.
 author: cynthn
 ms.service: virtual-machines
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 11/21/2019
 ms.author: cynthn
-ms.openlocfilehash: 13e4923bc5d49843710c9df4523992f541f1d343
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 58c0964d170f49066802b955f09dab01eaf998a7
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76988025"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77252198"
 ---
 # <a name="preview-control-updates-with-maintenance-control-and-the-azure-cli"></a>미리 보기: 유지 관리 제어 및 Azure CLI를 사용 하 여 업데이트 제어
 
@@ -235,6 +233,18 @@ az maintenance applyupdate create \
 `az maintenance applyupdate get`를 사용 하 여 업데이트의 진행률을 확인할 수 있습니다. 
 
 `default`를 업데이트 이름으로 사용 하 여 마지막 업데이트에 대 한 결과를 확인 하거나 `myUpdateName` `az maintenance applyupdate create`를 실행할 때 반환 된 업데이트 이름으로 바꿀 수 있습니다.
+
+```text
+Status         : Completed
+ResourceId     : /subscriptions/12ae7457-4a34-465c-94c1-17c058c2bd25/resourcegroups/TestShantS/providers/Microsoft.Comp
+ute/virtualMachines/DXT-test-04-iso
+LastUpdateTime : 1/1/2020 12:00:00 AM
+Id             : /subscriptions/12ae7457-4a34-465c-94c1-17c058c2bd25/resourcegroups/TestShantS/providers/Microsoft.Comp
+ute/virtualMachines/DXT-test-04-iso/providers/Microsoft.Maintenance/applyUpdates/default
+Name           : default
+Type           : Microsoft.Maintenance/applyUpdates
+```
+LastUpdateTime은 자동 유지 관리 기간을 사용 하지 않는 경우 사용자 또는 플랫폼에 의해 시작 된 업데이트가 완료 된 시간입니다. 유지 관리 제어를 통해 업데이트를 적용 한 적이 없는 경우 기본값을 표시 합니다.
 
 ### <a name="isolated-vm"></a>격리 된 VM
 

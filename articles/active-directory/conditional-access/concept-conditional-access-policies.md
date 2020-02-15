@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 09/17/2019
+ms.date: 02/11/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87f3e815f541ad4cfabc22d917ca9cecba47b50f
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: 87224c9e3e697b86aab51d1e922af8ab2130ac40
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71077608"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186243"
 ---
 # <a name="building-a-conditional-access-policy"></a>조건부 액세스 정책 빌드
 
@@ -30,17 +30,17 @@ ms.locfileid: "71077608"
 
 할당 부분은 조건부 액세스 정책의 사용자, 대상 및 위치를 제어 합니다.
 
-### <a name="users-and-groups"></a>사용자 및 그룹
+### <a name="users-and-groups"></a>개요
 
-사용자 및 그룹은 정책에 포함 하거나 제외할 사용자를 할당 합니다. 이 할당에는 모든 사용자, 특정 사용자 그룹, 디렉터리 역할 또는 외부 게스트 사용자가 포함 될 수 있습니다. 
+[사용자 및 그룹](concept-conditional-access-users-groups.md) 은 정책에 포함 하거나 제외할 사용자를 할당 합니다. 이 할당에는 모든 사용자, 특정 사용자 그룹, 디렉터리 역할 또는 외부 게스트 사용자가 포함 될 수 있습니다. 
 
 ### <a name="cloud-apps-or-actions"></a>클라우드 앱 또는 작업
 
-클라우드 앱 또는 작업은 정책의 영향을 받는 클라우드 응용 프로그램 또는 사용자 작업을 포함 하거나 제외할 수 있습니다.
+[클라우드 앱 또는 작업](concept-conditional-access-cloud-apps.md) 은 정책의 영향을 받는 클라우드 응용 프로그램 또는 사용자 작업을 포함 하거나 제외할 수 있습니다.
 
 ### <a name="conditions"></a>조건
 
-정책에는 여러 조건이 포함 될 수 있습니다.
+정책에는 여러 [조건이](concept-conditional-access-conditions.md)포함 될 수 있습니다.
 
 #### <a name="sign-in-risk"></a>로그인 위험
 
@@ -72,17 +72,19 @@ ms.locfileid: "71077608"
 
 ### <a name="grant"></a>허용
 
+[Grant](concept-conditional-access-grant.md) 는 관리자에 게 액세스를 차단 하거나 허용할 수 있는 정책 적용 수단을 제공 합니다.
+
 #### <a name="block-access"></a>액세스 차단
 
 액세스를 차단 하면 지정 된 할당에 따라 액세스를 차단할 수 있습니다. Block 컨트롤은 강력 하며 적절 한 정보를 wielded 해야 합니다.
 
-#### <a name="grant-access"></a>액세스 허용
+#### <a name="grant-access"></a>액세스 권한 부여
 
 Grant 컨트롤은 하나 이상의 컨트롤에 대 한 적용을 트리거할 수 있습니다. 
 
 - Multi-factor authentication 필요 (Azure Multi-Factor Authentication)
 - 장치를 규격으로 표시 해야 함 (Intune)
-- 하이브리드 Azure AD 조인 장치 필요
+- 하이브리드 Azure AD 조인된 디바이스 필요
 - 승인된 클라이언트 앱 필요
 - 앱 보호 정책 필요
 
@@ -93,9 +95,9 @@ Grant 컨트롤은 하나 이상의 컨트롤에 대 한 적용을 트리거할 
 
 ### <a name="session"></a>세션
 
-세션 컨트롤을 통해 환경을 제한할 수 있습니다. 
+[세션 컨트롤](concept-conditional-access-session.md) 을 통해 환경을 제한할 수 있습니다. 
 
-- 앱 적용 제한 사용
+- 앱에서 적용된 제한 사항 사용
    - 현재 Exchange Online 및 SharePoint Online 에서만 작동 합니다.
       - 에서는 장치 정보를 전달 하 여 전체 또는 제한 된 액세스 권한을 부여 하는 환경을 제어할 수 있습니다.
 - 조건부 액세스 앱 제어 사용
@@ -121,11 +123,11 @@ Grant 컨트롤은 하나 이상의 컨트롤에 대 한 적용을 트리거할 
 
 ![빈 조건부 액세스 정책](./media/concept-conditional-access-policies/conditional-access-blank-policy.png)
 
+[일반적인 조건부 액세스 정책](concept-conditional-access-policy-common.md) 문서에는 대부분의 조직에 유용한 몇 가지 정책이 포함 되어 있습니다.
+
 ## <a name="next-steps"></a>다음 단계
 
 [조건부 액세스 What If 도구를 사용 하 여 로그인 동작 시뮬레이션](troubleshoot-conditional-access-what-if.md)
-
-[일반적인 조건부 액세스 정책](concept-conditional-access-policy-common.md)
 
 [클라우드 기반 Azure Multi-Factor Authentication 배포 계획](../authentication/howto-mfa-getstarted.md)
 

@@ -5,16 +5,18 @@ services: automation
 ms.subservice: process-automation
 ms.date: 12/10/2019
 ms.topic: conceptual
-ms.openlocfilehash: 696885fa3e082ae7096954fb55b17da5b77788bc
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 0c9abb7333434e64fca32ce6d9c518e3f0137133
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75418909"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77116348"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Windows Hybrid Runbook Worker 배포
 
 Azure Automation의 Hybrid Runbook Worker 기능을 사용하여 역할을 호스팅하는 컴퓨터에서 직접 그리고 환경의 리소스에 대해 Runbook을 실행하여 해당 로컬 리소스를 관리할 수 있습니다. Runbook은 Azure Automation에 저장 및 관리된 후 하나 이상의 지정된 컴퓨터에 전달됩니다. 이 문서에서는 Windows 컴퓨터에 Hybrid Runbook Worker를 설치하는 방법에 대해 설명합니다.
+
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 ## <a name="installing-the-windows-hybrid-runbook-worker"></a>Windows Hybrid Runbook Worker 설치
 
@@ -32,10 +34,10 @@ Windows Hybrid Runbook Worker를 설치 하 고 구성 하려면 다음 세 가�
 Windows Hybrid Runbook Worker에 대한 최소 요구 사항은 다음과 같습니다.
 
 * Windows Server 2012 이상
-* Windows PowerShell 5.1 이상([WMF 5.1 다운로드](https://www.microsoft.com/download/details.aspx?id=54616))
+* Windows PowerShell 5.1 이상 ([WMF 5.1 다운로드](https://www.microsoft.com/download/details.aspx?id=54616))
 * .NET Framework 4.6.2 이상
-* 코어 2개
-* RAM 4GB
+* 두 개의 코어
+* 4GB의 RAM
 * 443 포트(아웃바운드)
 
 Hybrid Runbook Worker에 대한 상세한 네트워킹 요구 사항은 [네트워크 구성](automation-hybrid-runbook-worker.md#network-planning)을 참조하세요.
@@ -51,17 +53,17 @@ Runbook Worker를 성공적으로 배포한 후에는 [Hybrid Runbook Worker에�
 
 다음 단계에 따라 Windows Hybrid Worker 역할의 설치와 구성을 자동화합니다.
 
-1. Hybrid Runbook Worker 역할을 실행하는 컴퓨터에서 직접 또는 사용자 환경의 다른 컴퓨터에서 [PowerShell 갤러리](https://www.powershellgallery.com/packages/New-OnPremiseHybridWorker)의 새로 OnPremiseHybridWorker.ps1 스크립트를 다운로드합니다. 스크립트를 작업자에 복사합니다.
+1. Hybrid Runbook Worker 역할을 실행하는 컴퓨터에서 직접 또는 사용자 환경의 다른 컴퓨터에서 [PowerShell 갤러리](https://www.powershellgallery.com/packages/New-OnPremiseHybridWorker)의 새로 OnPremiseHybridWorker.ps1 스크립트를 다운로드합니다. 스크립트를 작업자에 복사합니다. New-OnPremiseHybridWorker.ps1 스크립트에는 실행 중 다음 매개 변수가 필요합니다.
 
-   New-OnPremiseHybridWorker.ps1 스크립트에는 실행 중 다음 매개 변수가 필요합니다.
-
-   * *AutomationAccountName*(필수): Automation 계정의 이름
    * *AAResourceGroupName*(필수): Automation 계정과 연결된 리소스 그룹의 이름
    * *OMSResourceGroupName*(선택 사항): Log Analytics 작업 영역에 대한 리소스 그룹의 이름. 이 리소스 그룹을 지정하지 않으면 *AAResourceGroupName*을 사용합니다.
-   * *HybridGroupName*(필수): 이 시나리오를 지원하는 Runbook에 대한 대상으로 지정할 Hybrid Runbook Worker 그룹의 이름
-   * *SubscriptionID*(필수): Automation 계정이 있는 Azure 구독 ID
+   * *SubscriptionID* (필수): Automation 계정이 있는 AZURE 구독 ID입니다.
+   * *TenantID* (선택 사항): Automation 계정과 연결 된 테 넌 트 조직의 식별자입니다.
    * *WorkspaceName*(선택 사항): Log Analytics 작업 영역 이름 Log Analytics 작업 영역이 없는 경우 스크립트에서 하나를 만들어 구성합니다.
-
+   * *Automationaccountname* (필수): Automation 계정의 이름입니다.
+   * *HybridGroupName*(필수): 이 시나리오를 지원하는 Runbook에 대한 대상으로 지정할 Hybrid Runbook Worker 그룹의 이름
+   * *자격 증명* (선택 사항): Azure 환경에 로그인 할 때 사용할 자격 증명입니다.
+  
    > [!NOTE]
    > 솔루션을 사용하도록 설정할 때 특정 Azure 지역에서만 Log Analytics 작업 영역 및 Automation 계정을 연결할 수 있습니다.
    >
@@ -81,7 +83,7 @@ Runbook Worker를 성공적으로 배포한 후에는 [Hybrid Runbook Worker에�
 
 4. NuGet 설치에 동의를 요청하는 메시지가 표시되고 Azure 자격 증명으로 인증을 받도록 요구됩니다.
 
-5. 스크립트가 완료되면 **Hybrid Worker 그룹** 페이지에 새 그룹 및 멤버 수가 표시됩니다. 기존 그룹인 경우 멤버 수가 증가합니다. **Hybrid Worker 그룹** 페이지의 목록에서 그룹을 선택하고 **Hybrid Worker** 타일을 선택합니다. **Hybrid Worker** 페이지에서 나열된 그룹의 각 멤버를 확인합니다.
+5. 스크립트가 완료되면 **Hybrid Worker 그룹** 페이지에 새 그룹 및 멤버 수가 표시됩니다. 기존 그룹인 경우 멤버 수가 증가합니다. **Hybrid Worker 그룹** 페이지의 목록에서 그룹을 선택 하 고 **Hybrid worker** 타일을 선택할 수 있습니다. **Hybrid Worker** 페이지에서 나열된 그룹의 각 멤버를 확인합니다.
 
 ### <a name="manual-deployment"></a>수동 배포
 
@@ -97,10 +99,10 @@ Log Analytics 작업 영역이 아직 없는 경우 작업 영역을 만들기 �
 
 Automation 솔루션은 Hybrid Runbook Worker에 대한 지원을 포함하여 Azure Automation을 위한 기능을 추가합니다. Log Analytics 작업 영역에 솔루션을 추가 하면 다음 단계에서 설치할 에이전트 컴퓨터에 자동으로 작업자 구성 요소가 푸시 됩니다.
 
-작업 영역에 **Automation** 솔루션을 추가 하려면 다음 PowerShell을 실행 합니다.
+작업 영역에 **Automation** 솔루션을 추가 하려면 다음 PowerShell cmdlet을 실행 합니다.
 
 ```powershell-interactive
-Set-AzureRmOperationalInsightsIntelligencePack -ResourceGroupName <logAnalyticsResourceGroup> -WorkspaceName <LogAnalyticsWorkspaceName> -IntelligencePackName "AzureAutomation" -Enabled $true
+Set-AzOperationalInsightsIntelligencePack -ResourceGroupName <logAnalyticsResourceGroup> -WorkspaceName <LogAnalyticsWorkspaceName> -IntelligencePackName "AzureAutomation" -Enabled $true -DefaultProfile <IAzureContextContainer>
 ```
 
 #### <a name="3-install-the-log-analytics-agent-for-windows"></a>3. Windows 용 Log Analytics 에이전트 설치
@@ -109,7 +111,7 @@ Windows 용 Log Analytics 에이전트는 Azure Monitor Log Analytics 작업 영
 
 컴퓨터에 에이전트를 설치 하려면 [Azure Monitor 로그에 Windows 컴퓨터 연결](../log-analytics/log-analytics-windows-agent.md)의 지침을 따르세요. 이 과정을 여러 컴퓨터에 반복하여 사용자의 환경에 여러 작업자를 추가합니다.
 
-에이전트가 Log Analytics 작업 영역에 성공적으로 연결 되 면 몇 분 후에 다음 쿼리를 실행 하 여 작업 영역에 하트 비트 데이터를 보내고 있는지 확인할 수 있습니다.
+몇 분 후에 에이전트가 Log Analytics 작업 영역에 성공적으로 연결 되 면 다음 쿼리를 실행 하 여 작업 영역에 하트 비트 데이터를 보내고 있는지 확인할 수 있습니다.
 
 ```kusto
 Heartbeat 
@@ -117,7 +119,7 @@ Heartbeat
 | where TimeGenerated > ago(30m)
 ```
 
-반환된 검색 결과에는 에이전트가 연결되고 서비스에 보고 중임을 나타내는 컴퓨터에 대한 하트비트 레코드가 표시됩니다. 하트 비트 레코드는 기본적으로 모든 에이전트에서 할당 된 작업 영역으로 전달 됩니다. 에이전트에서 Automation 솔루션 다운로드를 완료했는지 확인하려면 C:\Program Files\Microsoft Monitoring Agent\Agent에 **AzureAutomationFiles** 폴더가 있는지 확인합니다. Hybrid Runbook Worker의 버전을 확인하려면 C:\Program Files\Microsoft Monitoring Agent\Agent\AzureAutomation\으로 이동하고 \\*version* 하위 폴더를 적어두세요.
+반환된 검색 결과에는 에이전트가 연결되고 서비스에 보고 중임을 나타내는 컴퓨터에 대한 하트비트 레코드가 표시됩니다. 하트 비트 레코드는 기본적으로 모든 에이전트에서 할당 된 작업 영역으로 전달 됩니다. 에이전트에서 Automation 솔루션 다운로드를 완료했는지 확인하려면 C:\Program Files\Microsoft Monitoring Agent\Agent에 **AzureAutomationFiles** 폴더가 있는지 확인합니다. Hybrid Runbook Worker 버전을 확인 하려면 C:\Program Files\Microsoft Monitoring Agent\Agent\AzureAutomation\로 이동 하 여 \\*버전* 하위 폴더를 확인 합니다.
 
 #### <a name="4-install-the-runbook-environment-and-connect-to-azure-automation"></a>4. runbook 환경을 설치 하 고 Azure Automation에 연결
 
@@ -152,7 +154,7 @@ Runbook은 Azure Automation 환경에 설치된 모듈에 정의된 활동 및 c
 
 Hybrid Runbook Worker 기능의 주 목적은 로컬 리소스를 관리하는 것이므로 이러한 리소스를 지원하는 모듈을 설치해야 할 수 있습니다. Windows PowerShell 모듈 설치에 대한 자세한 내용은 [모듈 설치](/powershell/scripting/developer/windows-powershell)를 참조하세요. 
 
-설치된 모듈은 Hybrid Worker가 자동으로 가져올 수 있도록 **PSModulePath** 환경 변수가 참조하는 위치에 있어야 합니다. 상세 정보는 [PSModulePath 설치 경로 수정](/powershell/scripting/developer/windows-powershell)을 참조하세요.
+설치 된 모듈은 **PSModulePath** 환경 변수에서 참조 하는 위치에 있어야 하이브리드 작업자에서 자동으로 가져올 수 있습니다. 상세 정보는 [PSModulePath 설치 경로 수정](/powershell/scripting/developer/windows-powershell)을 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

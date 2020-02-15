@@ -4,16 +4,16 @@ ms.service: vpn-gateway
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: cherylmc
-ms.openlocfilehash: f2ee442d0d6fecf34449ad28f058615a1274bbea
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 622a2f69c2e7b82f2df10d6120ee2dd466961915
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67182091"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77211424"
 ---
 레거시(이전) VPN 게이트웨이 SKU는 다음과 같습니다.
 
-* Basic
+* 기본값 (기본)
 * Standard
 * HighPerformance
 

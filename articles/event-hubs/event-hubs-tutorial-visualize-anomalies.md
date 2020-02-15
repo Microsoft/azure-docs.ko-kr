@@ -8,13 +8,13 @@ ms.author: shvija
 ms.topic: tutorial
 ms.service: event-hubs
 ms.custom: seodec18
-ms.date: 12/20/2019
-ms.openlocfilehash: 1fc791519fd32b35bdbe3a69caec3c64e3ce3178
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 01/15/2020
+ms.openlocfilehash: f71d8e9f88dad32818ed25d4a0719a1528656f96
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75437157"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77163180"
 ---
 # <a name="tutorial-visualize-data-anomalies-in-real-time-events-sent-to-azure-event-hubs"></a>자습서: Azure Event Hubs에 보내는 실시간 이벤트에서 데이터 이상 시각화
 
@@ -156,14 +156,14 @@ Write-Host "Connection string is " $eventHubKey.PrimaryConnectionString
 
 ## <a name="run-app-to-produce-test-event-data"></a>테스트 이벤트 데이터를 생성하는 앱 실행
 
-GitHub의 Event Hubs [샘플](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet)에는 테스트 데이터를 생성하는 [변칙 탐지기 앱](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/AnomalyDetector)이 포함되어 있습니다. 이벤트 허브에 신용 카드 거래를 작성하여 신용 카드 사용을 시뮬레이션하는데, 경우에 따라 여러 위치에서 동일한 신용 카드에 대해 여러 개의 거래를 작성하여 변칙으로 태그되게 합니다. 이 앱을 실행하려면 다음 단계를 수행합니다. 
+GitHub의 Event Hubs [샘플](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet)에는 테스트 데이터를 생성하는 Anomaly Detector 앱이 포함되어 있습니다. 이벤트 허브에 신용 카드 거래를 작성하여 신용 카드 사용을 시뮬레이션하는데, 경우에 따라 여러 위치에서 동일한 신용 카드에 대해 여러 개의 거래를 작성하여 변칙으로 태그되게 합니다. 이 앱을 실행하려면 다음 단계를 수행합니다. 
 
 1. GitHub에서 [Azure Event Hubs 샘플](https://github.com/Azure/azure-event-hubs/archive/master.zip)을 다운로드하여 로컬에 압축을 풉니다.
+2. **\azure-event-hubs-master\samples\DotNet\\** 폴더로 이동합니다. 
+3. **Azure.Messaging.EventHubs\AnomalyDetector\\** 폴더로 전환하고 **AnomalyDetector.sln**을 두 번 클릭하여 Visual Studio에서 솔루션을 엽니다. 
 
-2. \azure-event-hubs-master\samples\DotNet\AnomalyDetector\ 폴더로 이동하고 AnomalyDetector.sln을 두 번 클릭하여 Visual Studio에서 솔루션을 엽니다. 
-
+    이전 Microsoft.Azure.EventHubs 패키지를 사용하는 이전 버전의 샘플을 사용하려면 **Microsoft.Azure.EventHubs\AnomalyDetector** 폴더에서 솔루션을 엽니다. 
 3. Program.cs를 열고 **Event Hubs connection string**을 스크립트를 실행할 때 저장한 연결 문자열로 바꿉니다. 
-
 4. **Event Hub name**을 이벤트 허브 이름으로 바꿉니다. F5를 클릭하여 애플리케이션을 실행합니다. 이벤트 허브로 이벤트를 보내기 시작하고 1000개 이벤트를 보낼 때까지 계속합니다. 데이터를 검색하려면 앱을 실행해야 하는 경우가 있습니다. 이러한 경우는 필요하면 다음 지침에서 다룹니다.
 
 ## <a name="set-up-azure-stream-analytics"></a>Azure Stream Analytics 설정
@@ -306,7 +306,7 @@ Stream Analytic 작업에서 **시작**, **지금**, **시작**을 차례로 클
 
    ![대시보드 이름을 지정하는 스크린샷.](./media/event-hubs-tutorial-visualize-anomalies/power-bi-dashboard-name.png)
 
-7. 대시보드 페이지에서 **타일 추가**를 클릭하고 **REAL - TIME DATA**에서 **사용자 지정 스트리밍 데이터**를 선택하고 **다음**을 클릭합니다.
+7. 대시보드 페이지에서 **타일 추가**를 클릭하고 **REAL-TIME DATA**에서 **사용자 지정 스트리밍 데이터**를 선택한 후, **다음**을 클릭합니다.
 
    ![타일 원본을 지정하는 스크린샷.](./media/event-hubs-tutorial-visualize-anomalies/power-bi-add-card-real-time-data.png)
 
@@ -384,6 +384,6 @@ Remove-AzResourceGroup -Name $resourceGroup
 Azure Event Hubs에 대해 자세히 알아보려면 다음 문서를 진행하세요.
 
 > [!div class="nextstepaction"]
-> [.NET Standard를 사용하여 Azure Event Hubs로 메시지 전송 시작](event-hubs-dotnet-standard-getstarted-send.md)
+> [.NET Standard를 사용하여 Azure Event Hubs로 메시지 전송 시작](get-started-dotnet-standard-send-v2.md)
 
 [계정을 만드세요]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio

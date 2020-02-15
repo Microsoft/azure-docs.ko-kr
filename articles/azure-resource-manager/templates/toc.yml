@@ -132,7 +132,16 @@
           displayName: 'linked templates, nested templates'
           href: linked-templates.md
         - name: 여러 인스턴스 만들기
-          href: create-multiple-instances.md
+          items:
+            - name: 리소스
+              displayName: 'iteration,copy'
+              href: copy-resources.md
+            - name: 속성
+              displayName: 'iteration,copy'
+              href: copy-properties.md
+            - name: variables
+              displayName: 'iteration,copy'
+              href: copy-variables.md
         - name: 구독 수준 리소스
           href: deploy-to-subscription.md
         - name: 관리 그룹 수준 리소스

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/31/2019
+ms.date: 02/10/2020
 ms.author: iainfou
-ms.openlocfilehash: a0c9a654d0ee49dc2bdb6efb7370a3ad2b199e10
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: b2a1bcedcc459a21bbc8a461ba9c8d9a8d65aebe
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74481298"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77132199"
 ---
 # <a name="how-objects-and-credentials-are-synchronized-in-an-azure-ad-domain-services-managed-domain"></a>Azure AD Domain Services 관리 되는 도메인에서 개체 및 자격 증명을 동기화 하는 방법
 
@@ -38,7 +38,7 @@ Azure Active Directory Domain Services (AD DS) 관리 되는 도메인의 개체
 
 다음 표에서는 몇 가지 일반적인 특성 및 Azure AD DS에 동기화 되는 방법을 보여 줍니다.
 
-| Azure AD DS의 특성 | 원본 | 참고 사항 |
+| Azure AD DS의 특성 | 원본 | 참고 |
 |:--- |:--- |:--- |
 | UPN | Azure AD 테 넌 트의 사용자 *UPN* 특성 | Azure AD 테 넌 트의 UPN 특성은 Azure AD DS와 동일 하 게 동기화 됩니다. Azure AD DS 관리 되는 도메인에 로그인 하는 가장 신뢰할 수 있는 방법은 UPN을 사용 하는 것입니다. |
 | SAMAccountName | Azure AD 테 넌 트의 사용자 *mailNickname* 특성 또는 자동 생성 | *SAMAccountName* 특성은 Azure AD 테 넌 트의 *mailNickname* 특성을 기반으로 합니다. 여러 사용자 계정이 동일한 *mailNickname* 특성을 사용 하는 경우 *SAMAccountName* 이 자동으로 생성 됩니다. 사용자의 *mailNickname* 또는 *UPN* 접두사가 20 자 보다 길면 *samaccountname 특성의* 20 자 제한을 충족 하도록 *samaccountname* 이 자동으로 생성 됩니다. |
@@ -65,7 +65,7 @@ Azure Active Directory Domain Services (AD DS) 관리 되는 도메인의 개체
 | facsimileTelephoneNumber |facsimileTelephoneNumber |
 | givenName |givenName |
 | jobTitle |title |
-| mail |mail |
+| 메일 |메일 |
 | mailNickname |msDS-AzureADMailNickname |
 | mailNickname |SAMAccountName (경우에 따라 자동으로 생성 될 수 있음) |
 | mobile |mobile |
@@ -89,7 +89,7 @@ Azure Active Directory Domain Services (AD DS) 관리 되는 도메인의 개체
 |:--- |:--- |
 | displayName |displayName |
 | displayName |SAMAccountName (경우에 따라 자동으로 생성 될 수 있음) |
-| mail |mail |
+| 메일 |메일 |
 | mailNickname |msDS-AzureADMailNickname |
 | objectid |msDS-AzureADObjectId |
 | onPremiseSecurityIdentifier |sidHistory |
@@ -97,10 +97,10 @@ Azure Active Directory Domain Services (AD DS) 관리 되는 도메인의 개체
 
 ## <a name="synchronization-from-on-premises-ad-ds-to-azure-ad-and-azure-ad-ds"></a>온-프레미스 AD DS에서 Azure AD 및 Azure AD DS 동기화
 
-Azure AD Connect은 온-프레미스 AD DS 환경에서 Azure AD로 사용자 계정, 그룹 멤버 자격 및 자격 증명 해시를 동기화 하는 데 사용 됩니다. UPN 및 온-프레미스 SID (보안 식별자)와 같은 사용자 계정의 특성이 동기화 됩니다. Azure AD Domain Services를 사용 하 여 로그인 하려면 NTLM 및 Kerberos 인증에 필요한 레거시 암호 해시가 Azure AD에도 동기화 됩니다.
+Azure AD Connect은 온-프레미스 AD DS 환경에서 Azure AD로 사용자 계정, 그룹 멤버 자격 및 자격 증명 해시를 동기화 하는 데 사용 됩니다. UPN 및 온-프레미스 SID (보안 식별자)와 같은 사용자 계정의 특성이 동기화 됩니다. Azure AD DS을 사용 하 여 로그인 하려면 NTLM 및 Kerberos 인증에 필요한 레거시 암호 해시가 Azure AD에도 동기화 됩니다.
 
 > [!IMPORTANT]
-> Azure AD Connect은 온-프레미스 AD DS 환경과의 동기화를 위해서만 설치 되 고 구성 되어야 합니다. Azure AD로 개체를 다시 동기화 하기 위해 Azure AD DS 관리 되는 도메인에 Azure AD Connect를 설치 하는 것은 지원 되지 않습니다.
+> Azure AD Connect는 온-프레미스 AD DS 환경과의 동기화를 위해서만 설치되고 구성되어야 합니다. 개체를 Azure AD로 개체를 다시 동기화하기 위해 Azure AD DS 관리형 도메인에 Azure AD Connect를 설치하는 것은 지원되지 않습니다.
 
 쓰기 복구를 구성 하는 경우 Azure AD의 변경 내용이 온-프레미스 AD DS 환경에 다시 동기화 됩니다. 예를 들어 사용자가 Azure AD 셀프 서비스 암호 관리를 사용 하 여 암호를 변경 하면 암호는 온-프레미스 AD DS 환경에서 다시 업데이트 됩니다.
 
@@ -113,7 +113,7 @@ Azure AD Connect은 온-프레미스 AD DS 환경에서 Azure AD로 사용자 �
 
 Azure AD는 훨씬 간단 하 고 플랫 네임 스페이스를 포함 합니다. 사용자가 Azure AD에서 보호되는 애플리케이션에 안정적으로 액세스할 수 있도록 하려면 서로 다른 포리스트의 사용자 계정 간에 발생하는 UPN 충돌을 해결해야 합니다. Azure AD DS 관리 되는 도메인은 Azure AD와 유사한 플랫 OU 구조를 사용 합니다. 온-프레미스 계층 구조 OU 구조를 구성한 경우에도 모든 사용자 계정 및 그룹은 다른 온-프레미스 도메인 또는 포리스트에서 동기화 되더라도 *Aaddc 사용자* 컨테이너에 저장 됩니다. Azure AD DS 관리 되는 도메인은 모든 계층 구조 OU 구조를 평면화 합니다.
 
-앞서 설명한 것 처럼 Azure AD DS에서 Azure AD로 다시 동기화 하지 않습니다. Azure AD DS에서 사용자 [지정 ou (조직 구성 단위)를 만든](create-ou.md) 다음 해당 사용자 지정 ou 내에서 사용자, 그룹 또는 서비스 계정을 만들 수 있습니다. 사용자 지정 Ou에서 만든 개체는 Azure AD에 다시 동기화 되지 않습니다. 이러한 개체는 Azure AD DS 관리 되는 도메인 내 에서만 사용할 수 있으며 azure ad PowerShell cmdlet, Azure AD Graph API 또는 Azure AD 관리 UI를 사용 하 여 볼 수 없습니다.
+앞서 설명한 것 처럼 Azure AD DS에서 Azure AD로 다시 동기화 하지 않습니다. Azure AD DS에서 사용자 [지정 ou (조직 구성 단위)를 만든](create-ou.md) 다음 해당 사용자 지정 ou 내에서 사용자, 그룹 또는 서비스 계정을 만들 수 있습니다. 사용자 지정 Ou에서 만든 개체는 Azure AD에 다시 동기화 되지 않습니다. 이러한 개체는 Azure AD DS 관리 되는 도메인 내 에서만 사용할 수 있으며 azure AD PowerShell cmdlet, Microsoft Graph API 또는 Azure AD 관리 UI를 사용 하 여 볼 수 없습니다.
 
 ## <a name="what-isnt-synchronized-to-azure-ad-ds"></a>Azure AD DS에 동기화 되지 않은 항목
 
@@ -128,9 +128,13 @@ Azure AD는 훨씬 간단 하 고 플랫 네임 스페이스를 포함 합니다
 
 ## <a name="password-hash-synchronization-and-security-considerations"></a>암호 해시 동기화 및 보안 고려 사항
 
-Azure AD DS을 사용 하도록 설정 하는 경우 NTLM + Kerberos 인증에 대 한 레거시 암호 해시가 필요 합니다. Azure AD는 일반 텍스트 암호를 저장 하지 않으므로 기존 사용자 계정에 대해 이러한 해시를 자동으로 생성할 수 없습니다. 생성 되 고 저장 된 NTLM 및 Kerberos 호환 암호 해시는 항상 Azure AD에서 암호화 된 방식으로 저장 됩니다. 암호화 키는 각 Azure AD 테 넌 트에 대해 고유 합니다. 이러한 해시는 Azure AD DS 암호 해독 키에 대 한 액세스 권한이 있는 경우에만 암호화 됩니다. Azure AD의 다른 서비스나 구성 요소는 암호 해독 키에 액세스할 수 없습니다. 그러면 레거시 암호 해시가 azure AD에서 Azure AD DS 관리 되는 도메인에 대 한 도메인 컨트롤러로 동기화 됩니다. Azure AD DS의 이러한 관리 되는 도메인 컨트롤러에 대 한 디스크는 미사용 시 암호화 됩니다. 이러한 암호 해시는 온-프레미스 AD DS 환경에서 암호를 저장 하 고 보호 하는 방법과 유사 하 게 이러한 도메인 컨트롤러에 저장 되 고 보안이 유지 됩니다.
+Azure AD DS을 사용 하도록 설정 하는 경우 NTLM + Kerberos 인증에 대 한 레거시 암호 해시가 필요 합니다. Azure AD는 일반 텍스트 암호를 저장 하지 않으므로 기존 사용자 계정에 대해 이러한 해시를 자동으로 생성할 수 없습니다. 생성 되 고 저장 된 NTLM 및 Kerberos 호환 암호 해시는 항상 Azure AD에서 암호화 된 방식으로 저장 됩니다.
 
-클라우드 전용 Azure AD 환경의 경우 필요한 암호 해시가 생성 되어 Azure AD에 저장 되려면 [사용자가 암호를 다시 설정/변경 해야](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds) 합니다. Azure AD Domain Services를 사용하도록 설정한 후에 Azure AD에서 만든 클라우드 사용자 계정의 경우 암호 해시는 NTLM 및 Kerberos 호환 형식으로 생성되고 저장됩니다. 이러한 새 계정은 암호를 재설정 하거나 변경할 필요가 없습니다. 기존 암호 해시가 생성 됩니다.
+암호화 키는 각 Azure AD 테 넌 트에 대해 고유 합니다. 이러한 해시는 Azure AD DS 암호 해독 키에 대 한 액세스 권한이 있는 경우에만 암호화 됩니다. Azure AD의 다른 서비스나 구성 요소는 암호 해독 키에 액세스할 수 없습니다.
+
+그러면 레거시 암호 해시가 azure AD에서 Azure AD DS 관리 되는 도메인에 대 한 도메인 컨트롤러로 동기화 됩니다. Azure AD DS의 이러한 관리 되는 도메인 컨트롤러에 대 한 디스크는 미사용 시 암호화 됩니다. 이러한 암호 해시는 온-프레미스 AD DS 환경에서 암호를 저장 하 고 보호 하는 방법과 유사 하 게 이러한 도메인 컨트롤러에 저장 되 고 보안이 유지 됩니다.
+
+클라우드 전용 Azure AD 환경의 경우 필요한 암호 해시가 생성 되어 Azure AD에 저장 되려면 [사용자가 암호를 다시 설정/변경 해야](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds) 합니다. Azure AD Domain Services를 사용하도록 설정한 후에 Azure AD에서 만든 클라우드 사용자 계정의 경우 암호 해시는 NTLM 및 Kerberos 호환 형식으로 생성되고 저장됩니다. 이러한 새 계정은 암호를 다시 설정 하거나 변경할 필요가 없습니다. 기존 암호 해시가 생성 됩니다.
 
 Azure AD Connect를 사용 하 여 온-프레미스 AD DS 환경에서 동기화 된 하이브리드 사용자 계정의 경우 [NTLM 및 Kerberos 호환 형식에서 암호 해시를 동기화 하도록 Azure AD Connect를 구성](tutorial-configure-password-hash-sync.md)해야 합니다.
 

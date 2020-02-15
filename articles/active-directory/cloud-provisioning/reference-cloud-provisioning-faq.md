@@ -11,12 +11,12 @@ ms.date: 12/02/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dc3c4a943f24ba1f987aa1daf513b9e05ada65a7
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: e2067bea25dae05c496c81929ae65d00565bf4f1
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76310002"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77020763"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Azure Active Directory Connect FAQ
 
@@ -31,6 +31,10 @@ Azure AD(Azure Active Directory) Connect 클라우드 프로비저닝에 대한 
 **Q: 첫 번째 실행에서 암호 해시 동기화 실패가 표시됩니다. 그 이유는 무엇일까요?**
 
 예상된 동작입니다. 이 실패는 Azure AD에 없는 사용자 개체로 인해 발생한 것입니다. 사용자가 Azure AD에 프로비저닝되면 이후 실행에서 암호 해시를 프로비저닝해야 합니다. 몇 번의 실행을 기다린 후에 암호 해시 동기화에 오류가 더 이상 없는지 확인합니다.
+
+**Q: Active Directory 인스턴스에 클라우드 프로비저닝에서 지원하지 않는 특성(예: 디렉터리 확장)이 있는 경우 어떻게 되나요?**
+
+클라우드 프로비저닝은 지원되는 특성을 실행하고 프로비저닝합니다. 지원되지 않는 특성은 Azure AD에 프로비저닝되지 않습니다. Active Directory에서 디렉터리 확장을 검토하고 이러한 특성이 Azure AD로 이동할 필요가 없는지 확인합니다. 하나 이상의 특성이 필요한 경우 Azure AD Connect 동기화를 사용하거나 필요한 정보를 지원하는 특성 중 하나(예: 확장 특성 1-15)로 이동합니다.
 
 **Q: Azure AD Connect 동기화와 클라우드 프로비저닝의 차이점은 무엇인가요?**
 

@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/06/2020
+ms.date: 02/10/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 2f7bf9fea1b1e15d1ca24686a84e272dd60ceaf5
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 9d8d13ec955867eb574b5f0d782727d6ff8d063a
+ms.sourcegitcommit: 323c3f2e518caed5ca4dd31151e5dee95b8a1578
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77061593"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77111552"
 ---
 # <a name="set-up-sign-in-for-multi-tenant-azure-active-directory-using-custom-policies-in-azure-active-directory-b2c"></a>Azure Active Directory B2C에서 사용자 지정 정책을 사용하여 다중 테넌트 Azure Active Directory에 대한 로그인 설정
 
@@ -24,7 +24,7 @@ ms.locfileid: "77061593"
 
 이 문서에서는 Azure AD B2C의 [사용자 지정 정책](custom-policy-overview.md)을 통해 Azure AD(Azure Active Directory)에 다중 테넌트 엔드포인트를 사용하여 사용자 로그인을 활성화하는 방법을 설명합니다. 이렇게 하면 여러 Azure AD 테 넌 트의 사용자가 각 테 넌 트에 대해 id 공급자를 구성 하지 않고도 Azure AD B2C를 사용 하 여 로그인 할 수 있습니다. 그러나 이러한 테넌트의 게스트 멤버는 로그인할 수 **없습니다**. 이렇게 하려면 [각 테넌트를 개별적으로 구성](identity-provider-azure-ad-single-tenant-custom.md)해야 합니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 [Azure Active Directory B2C에서 사용자 지정 정책을 사용하여 시작](custom-policy-get-started.md)의 단계를 완료합니다.
 
@@ -50,6 +50,19 @@ ms.locfileid: "77061593"
 1. **인증서 & 암호**를 선택 하 고 **새 클라이언트 암호**를 선택 합니다.
 1. 비밀에 대 한 **설명을** 입력 하 고 만료를 선택한 다음 **추가**를 선택 합니다. 이후 단계에서 사용할 암호의 **값** 을 기록 합니다.
 
+## <a name="configuring-optional-claims"></a>선택적 클레임 구성
+
+Azure AD에서 `family_name` 및 `given_name` 클레임을 가져오려는 경우 Azure Portal UI 또는 응용 프로그램 매니페스트에서 응용 프로그램에 대 한 선택적 클레임을 구성할 수 있습니다. 자세한 내용은 [AZURE AD 앱에 선택적 클레임을 제공 하는 방법](../active-directory/develop/active-directory-optional-claims.md)을 참조 하세요.
+
+1. [Azure Portal](https://portal.azure.com)에 로그인합니다. **Azure Active Directory**를 검색하고 선택합니다.
+1. **관리** 섹션에서 **앱 등록**을 선택 합니다.
+1. 목록에서 선택적 클레임을 구성 하려는 응용 프로그램을 선택 합니다.
+1. **관리** 섹션에서 **토큰 구성 (미리 보기)** 을 선택 합니다.
+1. **선택적 클레임 추가**를 선택 합니다.
+1. 구성 하려는 토큰 유형을 선택 합니다.
+1. 추가할 선택적 클레임을 선택 합니다.
+1. **추가**를 클릭합니다.
+
 ## <a name="create-a-policy-key"></a>정책 키 만들기
 
 만든 애플리케이션 키를 Azure AD B2C 테넌트에 저장해야 합니다.
@@ -63,19 +76,6 @@ ms.locfileid: "77061593"
 1. **비밀**에서 이전에 기록한 클라이언트 암호를 입력 합니다.
 1. **키 사용**에서 `Signature`를 선택합니다.
 1. **만들기**를 선택합니다.
-
-## <a name="configuring-optional-claims"></a>선택적 클레임 구성
-
-Azure AD에서 `family_name` 및 `given_name` 클레임을 가져오려는 경우 Azure Portal UI 또는 응용 프로그램 매니페스트에서 응용 프로그램에 대 한 선택적 클레임을 구성할 수 있습니다. 자세한 내용은 [AZURE AD 앱에 선택적 클레임을 제공 하는 방법](../active-directory/develop/active-directory-optional-claims.md)을 참조 하세요.
-
-1. [Azure Portal](https://portal.azure.com)에 로그인합니다. **Azure Active Directory**를 검색하고 선택합니다.
-1. **관리** 섹션에서 **앱 등록**을 선택 합니다.
-1. 목록에서 선택적 클레임을 구성 하려는 응용 프로그램을 선택 합니다.
-1. **관리** 섹션에서 **토큰 구성 (미리 보기)** 을 선택 합니다.
-1. **선택적 클레임 추가**를 선택 합니다.
-1. 구성 하려는 토큰 유형을 선택 합니다.
-1. 추가할 선택적 클레임을 선택 합니다.
-1. **추가**를 클릭합니다.
 
 ## <a name="add-a-claims-provider"></a>클레임 공급자 추가
 
@@ -147,7 +147,7 @@ Azure AD에서 `family_name` 및 `given_name` 클레임을 가져오려는 경�
 
 유효한 토큰 발급자 목록을 업데이트하고 로그인할 수 있는 특정 Azure AD 테넌트 사용자 목록으로 액세스를 제한해야 합니다.
 
-값을 얻으려면 사용자가 로그인 할 각 Azure AD 테 넌 트에 대 한 Openid connect Connect 검색 메타 데이터를 확인 합니다. 메타 데이터 URL의 형식은 `https://login.microsoftonline.com/your-tenant/v2.0/.well-known/openid-configuration`와 유사 합니다. 여기서 `your-tenant`은 Azure AD 테 넌 트 이름입니다. 예를 들면 다음과 같습니다.
+값을 얻으려면 사용자가 로그인 할 각 Azure AD 테 넌 트에 대 한 Openid connect Connect 검색 메타 데이터를 확인 합니다. 메타 데이터 URL의 형식은 `https://login.microsoftonline.com/your-tenant/v2.0/.well-known/openid-configuration`와 유사 합니다. 여기서 `your-tenant`은 Azure AD 테 넌 트 이름입니다. 다음은 그 예입니다.
 
 `https://login.microsoftonline.com/fabrikam.onmicrosoft.com/v2.0/.well-known/openid-configuration`
 

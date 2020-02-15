@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 03/19/2018
-ms.openlocfilehash: 4ce1272c38bcb066f9e88ca739561ccd7696c989
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 6dff1fe974ad4ffa993e4df03b4903d7e46e1990
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75363509"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162262"
 ---
 # <a name="azure-monitoring-rest-api-walkthrough"></a>Azure Monitoring REST API 연습
 
@@ -57,7 +57,7 @@ New-AzRoleAssignment -RoleDefinitionName Reader `
 
 ```
 
-Azure Monitor API를 쿼리하려면 클라이언트 애플리케이션이 이전에 만든 서비스 주체를 인증에 사용해야 합니다. 다음 예제 PowerShell 스크립트에서는 JWT 인증 토큰을 가져오기 위해 ADAL([Active Directory 인증 라이브러리](../../active-directory/develop/active-directory-authentication-libraries.md))을 사용하는 방법을 보여줍니다. JWT 토큰은 Azure Monitor REST API에 대한 요청에서 HTTP 권한 부여 매개 변수의 일부로 전달됩니다.
+Azure Monitor API를 쿼리하려면 클라이언트 애플리케이션이 이전에 만든 서비스 주체를 인증에 사용해야 합니다. 다음 예제 PowerShell 스크립트에서는 JWT 인증 토큰을 가져오기 위해 ADAL([Active Directory 인증 라이브러리](../../active-directory/azuread-dev/active-directory-authentication-libraries.md))을 사용하는 방법을 보여줍니다. JWT 토큰은 Azure Monitor REST API에 대한 요청에서 HTTP 권한 부여 매개 변수의 일부로 전달됩니다.
 
 ```powershell
 $azureAdApplication = Get-AzADApplication -IdentifierUri "https://localhost/azure-monitor"
@@ -614,13 +614,13 @@ REST API를 사용하면 사용 가능한 메트릭 정의, 세분성, 관련 �
 
 Azure Resource Explorer 등, 다른 방법으로 리소스 ID를 검색하고 Azure 포털과 PowerShell 또는 Azure CLI를 통해 원하는 리소스를 확인할 수 있습니다.
 
-### <a name="azure-resource-explorer"></a>Azure 리소스 탐색기
+### <a name="azure-resource-explorer"></a>Azure Resource Explorer
 
 원하는 리소스에 대한 리소스 ID를 찾을 때는 [Azure Resource Explorer](https://resources.azure.com) 도구를 사용하는 것도 유용한 방법입니다. 원하는 리소스로 이동한 다음 스크린샷에서처럼 표시된 ID를 살펴봅니다.
 
 ![Alt "Azure Resource Explorer"](./media/rest-api-walkthrough/azure_resource_explorer.png)
 
-### <a name="azure-portal"></a>Azure Portal
+### <a name="azure-portal"></a>Azure portal
 
 Azure 포털에서 리소스 ID를 가져올 수도 있습니다. 이렇게 하려면 원하는 리소스로 이동한 다음 속성을 선택합니다. 리소스 ID는 다음 스크린샷에 표시된 것처럼 속성 섹션에 표시됩니다.
 

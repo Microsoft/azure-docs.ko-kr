@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
-ms.date: 12/16/2019
+ms.date: 02/08/2020
 ms.author: diberry
-ms.openlocfilehash: c66f4f2b126b3b2b86ea55112d1bdc79b4bf4571
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a000ade2fd9887efa411378fc0239e6f5ce2a5cb
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75447433"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77109491"
 ---
 # <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-go"></a>빠른 시작: Go를 사용하여 QnA Maker 기술 자료 게시
 
@@ -98,7 +98,7 @@ go build publish-kb.go
 
 ## <a name="next-steps"></a>다음 단계
 
-기술 자료가 게시된 후 [답변을 생성할 엔드포인트 URL](../Tutorials/create-publish-answer.md#generating-an-answer)이 필요합니다.
+기술 자료가 게시된 후 [답변을 생성할 엔드포인트 URL](./get-answer-from-knowledge-base-go.md)이 필요합니다.
 
 > [!div class="nextstepaction"]
 > [QnA Maker(V4) REST API 참조](https://go.microsoft.com/fwlink/?linkid=2092179)

@@ -6,18 +6,19 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 06/22/2018
-ms.openlocfilehash: 05d849aa0edf5892e568c4078ca619490cfcd98e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/10/2019
+ms.openlocfilehash: e5d707200d1e1eab9becbb30181649525f3a5a7b
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75363203"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77166471"
 ---
 # <a name="create-custom-views-by-using-view-designer-in-azure-monitor"></a>Azure Monitor에서 뷰 디자이너를 사용 하 여 사용자 지정 보기 만들기
 Azure Monitor에서 뷰 디자이너를 사용 하 여 Log Analytics 작업 영역에서 데이터를 시각화 하는 데 도움이 될 수 있는 다양 한 사용자 지정 보기를 Azure Portal 만들 수 있습니다. 이 문서에는 뷰 디자이너 개요 및 사용자 지정 보기를 만들고 편집하는 절차가 제공됩니다.
 
-[!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
+> [!IMPORTANT]
+> Azure Monitor 뷰는 단계적으로 진행 되며 추가 기능을 제공 하는 [통합 문서로](workbooks-overview.md) 대체 됩니다. 기존 보기를 통합 문서로 변환 하는 방법에 대 한 자세한 내용은 [Azure Monitor 뷰 디자이너에서 통합 문서 전환 가이드를](view-designer-conversion-overview.md) 참조 하세요.
 
 뷰 디자이너에 대한 자세한 내용은 다음을 참조하세요.
 

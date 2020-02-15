@@ -6,29 +6,29 @@ author: mhopkins-msft
 ms.custom: mvc
 ms.service: storage
 ms.author: mhopkins
-ms.date: 08/29/2019
+ms.date: 01/24/2020
 ms.topic: quickstart
 ms.subservice: blobs
-ms.openlocfilehash: 7d481b115650c72df95f7516bb3b39411201bf83
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 257af309ebdb9080c3cd60b8b89a2c992ecf5145
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75865104"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76906580"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
-# <a name="quickstart-upload-list-and-delete-blobs-using-azure-storage-v10-sdk-for-javascripthtml-in-the-browser"></a>빠른 시작: 브라우저에서 JavaScript/HTML용 Azure Storage v10 SDK를 사용하여 Blob 업로드, 나열 및 삭제
+# <a name="quickstart-manage-blobs-with-javascript-v10-sdk-in-browser"></a>빠른 시작: 브라우저에서 JavaScript v10 SDK를 사용하여 Blob 관리
 
-이 빠른 시작에서는 브라우저에서 완전히 실행되는 JavaScript 코드에서 [JavaScript용 Azure Storage SDK V10 - Blob](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob#readme) 라이브러리를 사용하여 Blob을 관리하는 방법에 대해 알아봅니다. 여기에 사용된 방법은 Blob Storage 계정에 대한 보호된 액세스를 보장하도록 필요한 보안 조치를 사용하는 방법을 보여줍니다.
+이 빠른 시작에서는 브라우저에서 완전히 실행되는 JavaScript 코드를 사용하여 Blob을 관리하는 방법을 알아봅니다. Blob은 이미지, 문서, 스트리밍 미디어 및 보관 데이터를 포함하여 대량의 텍스트 또는 이진 데이터를 저장할 수 있는 개체입니다. 필요한 보안 조치를 사용하여 Blob Storage 계정에 대한 보호된 액세스를 보장합니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-[!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
-
-Azure Storage JavaScript 클라이언트 라이브러리는 파일 시스템에서 직접 작동하지 않으므로 웹 서버에서 제공해야 합니다. 이 항목에서는 [Node.js](https://nodejs.org)를 사용하여 기본 서버를 시작합니다. Node를 설치하지 않으려면 로컬 웹 서버를 실행하는 다른 방법을 사용할 수 있습니다.
-
-디버깅 단계를 수행하려면 [Visual Studio Code](https://code.visualstudio.com)와 [Chrome용 디버거](vscode:extension/msjsdiag.debugger-for-chrome) 또는 [Microsoft Edge용 디버거](vscode:extension/msjsdiag.debugger-for-edge) 확장이 필요합니다.
+- 활성 구독이 있는 Azure 계정. [체험 계정을 만듭니다](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+- Azure Storage 계정. [스토리지 계정 만들기](../common/storage-account-create.md)
+- 로컬 웹 서버입니다. 이 문서에서는 [Node.js](https://nodejs.org)를 사용하여 기본 서버를 엽니다.
+- [Visual Studio Code](https://code.visualstudio.com)
+- 브라우저 디버깅을 위한 VS Code 코드 확장(예: [Chrome용 디버거](vscode:extension/msjsdiag.debugger-for-chrome) 또는 [Microsoft Edge용 디버거](vscode:extension/msjsdiag.debugger-for-edge)).
 
 ## <a name="setting-up-storage-account-cors-rules"></a>스토리지 계정 CORS 규칙 설정
 

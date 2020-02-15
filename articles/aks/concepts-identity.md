@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 02/28/2019
 ms.author: mlearned
-ms.openlocfilehash: a1ed1eccd7a10d78cd503559469654e5562cde0c
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 5d29598b0962fc42c855e7a26917a34269c30ddb
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67615854"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77158065"
 ---
 # <a name="access-and-identity-options-for-azure-kubernetes-service-aks"></a>AKS(Azure Kubernetes Service)의 액세스 및 ID 옵션
 
@@ -40,7 +40,7 @@ AKS 클러스터의 보안은 Azure AD(Active Directory) 통합으로 강화될 
 
 ![AKS 클러스터와 Azure Active Directory 통합](media/concepts-identity/aad-integration.png)
 
-Azure AD 통합 AKS 클러스터를 사용하면 네임스페이스 내에서 또는 클러스터 전체에서 Kubernetes 리소스에 대한 액세스 권한을 사용자 또는 그룹에 부여할 수 있습니다. 사용자는 `kubectl` 구성 컨텍스트를 가져오기 위해 [az aks][az-aks-get-credentials] 명령을 실행할 수 있습니다. 그러면 사용자가 `kubectl`을 사용하여 AKS 클러스터와 상호 작용할 때 해당 Azure AD 자격 증명을 사용하여 로그인하라는 메시지가 표시됩니다. 이 방법은 사용자 계정 관리 및 암호 자격 증명을 위한 단일 원본을 제공합니다. 사용자는 클러스터 관리자가 정의한 리소스에만 액세스할 수 있습니다.
+Azure AD 통합 AKS 클러스터를 사용하면 네임스페이스 내에서 또는 클러스터 전체에서 Kubernetes 리소스에 대한 액세스 권한을 사용자 또는 그룹에 부여할 수 있습니다. `kubectl` 구성 컨텍스트를 얻기 위해 사용자는 [az aks][az-aks-get-credentials] 명령을 실행할 수 있습니다. 그러면 사용자가 `kubectl`을 사용하여 AKS 클러스터와 상호 작용할 때 해당 Azure AD 자격 증명을 사용하여 로그인하라는 메시지가 표시됩니다. 이 방법은 사용자 계정 관리 및 암호 자격 증명을 위한 단일 원본을 제공합니다. 사용자는 클러스터 관리자가 정의한 리소스에만 액세스할 수 있습니다.
 
 AKS 클러스터의 Azure AD 인증은 OAuth 2.0 프로토콜에 기반하여 구축된 ID 계층인 OpenID Connect를 사용합니다. OAuth 2.0은 액세스 토큰을 가져와서 보호된 리소스에 액세스하는 메커니즘을 정의하며, OpenID Connect는 OAuth 2.0 권한 부여 프로세스의 확장으로서 인증을 구현합니다. Openid connect Connect에 대 한 자세한 내용은 [OPEN ID connect 설명서][openid-connect]를 참조 하세요. AKS 클러스터에서는 OpenID Connect를 통해 Azure AD에서 가져온 인증 토큰을 확인하기 위해 Kubernetes 웹후크 토큰 인증을 사용합니다. 자세한 내용은 [Webhook 토큰 인증 설명서][webhook-token-docs]를 참조 하세요.
 
@@ -91,7 +91,7 @@ Kubernetes 및 AKS 핵심 개념에 대한 자세한 내용은 다음 문서를 
 [kubernetes-rbac]: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 
 <!-- LINKS - Internal -->
-[openid-connect]: ../active-directory/develop/v1-protocols-openid-connect-code.md
+[openid-connect]: ../active-directory/develop/v2-protocols-oidc.md
 [az-aks-get-credentials]: /cli/azure/aks#az-aks-get-credentials
 [azure-rbac]: ../role-based-access-control/overview.md
 [aks-aad]: azure-ad-integration-cli.md

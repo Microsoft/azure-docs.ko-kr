@@ -3,12 +3,12 @@ title: 템플릿의 자식 리소스
 description: Azure Resource Manager 템플릿에서 자식 리소스의 이름 및 형식을 설정 하는 방법을 설명 합니다.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: 7d8a7a39bab3340b6f5c9e66d54b7398fa70ee3e
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 6de2b476fe19a057a62e4a54963dd8fde0d11579
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76122018"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207896"
 ---
 # <a name="set-name-and-type-for-child-resources"></a>자식 리소스의 이름 및 형식 설정
 
@@ -27,7 +27,7 @@ ms.locfileid: "76122018"
 ]
 ```
 
-다음 예제에서는 부모 리소스 외부의 자식 리소스를 보여 줍니다. 부모 리소스가 동일한 템플릿에 배포 되지 않은 경우 또는 [복사](create-multiple-instances.md) 를 사용 하 여 둘 이상의 자식 리소스를 만드는 경우이 방법을 사용할 수 있습니다.
+다음 예제에서는 부모 리소스 외부의 자식 리소스를 보여 줍니다. 부모 리소스가 동일한 템플릿에 배포 되지 않은 경우 또는 [복사](copy-resources.md) 를 사용 하 여 둘 이상의 자식 리소스를 만드는 경우이 방법을 사용할 수 있습니다.
 
 ```json
 "resources": [

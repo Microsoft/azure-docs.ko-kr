@@ -1,5 +1,5 @@
 ---
-title: 조건부 액세스 정책 마이그레이션-Azure Active Directory
+title: 조건부 액세스 정책 마이그레이션 - Azure Active Directory
 description: Azure Portal에서 클래식 정책을 마이그레이션하기 위해 알아야 하는 작업을 자세히 살펴봅니다.
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16c6ce46af8fb9a9ab4be5fcc63ccd4909374e4f
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 33b1f76dd1489e00115d0f805add8d754038df84
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74846177"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77185920"
 ---
 # <a name="conditional-access-classic-policy-migration"></a>조건부 액세스 클래식 정책 마이그레이션
 
@@ -89,7 +89,7 @@ Azure Portal에서 만들지 않은 정책을 마이그레이션하는 것을 �
 
 ![조건부 액세스 조건](./media/policy-migration/16.png)
  
-**Exchange Active Sync**가 클라이언트 앱 조건으로 포함된 Office 365 Exchange Online의 [앱 기반](technical-reference.md#approved-client-app-requirement) 클래식 정책에서는 **지원되는** 디바이스 플랫폼과 **지원되지 않는**[디바이스 플랫폼](technical-reference.md#device-platform-condition)이 허용됩니다. 관련된 새 정책에서는 개별 디바이스 플랫폼을 구성할 수 없으며 [지원되는 디바이스 플랫폼](technical-reference.md#device-platform-condition)으로만 지원을 제한할 수 있습니다. 
+클라이언트 앱 조건으로 **Exchange Active Sync** 를 포함 하는 Office 365 Exchange Online에 대 한 앱 기반 클래식 정책은 **지원** 되거나 **지원 되지 않는** 장치 플랫폼을 허용 합니다. 관련된 새 정책에서는 개별 디바이스 플랫폼을 구성할 수 없으며 [지원되는 디바이스 플랫폼](concept-conditional-access-conditions.md#device-platforms)으로만 지원을 제한할 수 있습니다. 
 
 ![조건부 액세스에서 Exchange ActiveSync를 선택 합니다.](./media/policy-migration/65.png)
 
@@ -109,9 +109,9 @@ Azure Portal에서 만들지 않은 정책을 마이그레이션하는 것을 �
 
 ### <a name="device-platforms"></a>디바이스 플랫폼
 
-[앱 기반 제어](technical-reference.md#approved-client-app-requirement)를 사용하는 클래식 정책은 iOS 및 Android에 [디바이스 플랫폼 조건](technical-reference.md#device-platform-condition)으로 미리 구성되어 있습니다. 
+앱 기반 컨트롤을 사용 하는 클래식 정책은 장치 플랫폼 조건으로 iOS 및 Android를 사용 하 여 미리 구성 됩니다. 
 
-새 정책에서는 개별적으로 지원할 [디바이스 플랫폼](technical-reference.md#device-platform-condition)을 선택해야 합니다.
+새 정책에서는 개별적으로 지원할 [디바이스 플랫폼](concept-conditional-access-conditions.md#device-platforms)을 선택해야 합니다.
 
 ![조건부 액세스 장치 플랫폼 선택](./media/policy-migration/41.png)
 

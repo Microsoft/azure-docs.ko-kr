@@ -13,16 +13,16 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
 ms:custom: fasttrack-edit
-ms.openlocfilehash: 912287200097906af7a8a9d6d12eb1421f3edadc
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 1efd027edb85cabcfdc2a170771ef19182b5c9f8
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76696761"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160953"
 ---
 # <a name="microsoft-identity-platform-id-tokens"></a>Microsoft id 플랫폼 ID 토큰
 
-`id_tokens`는 [OpenID Connect](v1-protocols-openid-connect-code.md) 흐름의 일부로 클라이언트 애플리케이션에 전송됩니다. 액세스 토큰과 함께 또는 액세스 토큰 대신 보낼 수 있고 클라이언트가 사용자를 인증하는 데 사용됩니다.
+`id_tokens`는 [OpenID Connect](v2-protocols-oidc.md) 흐름의 일부로 클라이언트 애플리케이션에 전송됩니다. 액세스 토큰과 함께 또는 액세스 토큰 대신 보낼 수 있고 클라이언트가 사용자를 인증하는 데 사용됩니다.
 
 ## <a name="using-the-id_token"></a>id_token 사용
 
@@ -73,7 +73,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjFMVE16YWtpaGlSbGFfOHoyQkVKVlhlV01x
 |`at_hash`| String |액세스 토큰 해시는 OAuth 2.0 액세스 토큰과 함께 ID 토큰이 발급된 경우에만 ID 토큰에 포함됩니다. 액세스 토큰의 신뢰성이 유효한지 검사하는 데 사용할 수 있습니다. 이 유효성 검사를 수행하는 방법에 대한 자세한 내용은 [OpenID Connect 사양](https://openid.net/specs/openid-connect-core-1_0.html)을 참조하세요. |
 |`aio` | 불투명 문자열 | Azure AD에서 토큰을 다시 사용하기 위해 데이터를 기록하는 데 사용하는 내부 클레임입니다. 무시됩니다.|
 |`preferred_username` | String | 사용자를 나타내는 기본 사용자 이름입니다. 메일 주소, 전화 번호 또는 지정된 형식이 없는 일반 사용자 이름일 수 있습니다. 해당 값은 변경 가능하며 시간이 지남에 따라 변경될 수 있습니다. 해당 값은 변경 가능하므로 권한 부여 결정을 내리는 데 사용되지 않아야 합니다. 이 클레임을 받으려면 `profile` 범위가 필요 합니다.|
-|`email` | String | `email` 클레임은 이메일 주소가 있는 게스트 계정에 대해 기본적으로 제공됩니다.  사용자 앱은 `email` [선택적 클레임](active-directory-optional-claims.md)을 사용하여 관리되는 사용자(리소스와 동일한 테넌트의 사용자)에 대한 이메일 클레임을 요청할 수 있습니다.  v2.0 엔드포인트에서 사용자 앱은 `email` OpenID Connect 범위를 요청할 수도 있지만, 클레임을 가져오기 위해 선택적 클레임 및 범위를 모두 요청할 필요는 없습니다.  이메일 클레임은 사용자의 프로필 정보에서 주소 지정이 가능한 메일만 지원합니다. |
+|`email` | String | `email` 클레임은 이메일 주소가 있는 게스트 계정에 대해 기본적으로 제공됩니다.  앱은 `email` [선택적인 클레임](active-directory-optional-claims.md)을 사용 하 여 관리 되는 사용자 (리소스와 동일한 테 넌 트의)에 대 한 전자 메일 클레임을 요청할 수 있습니다.  v2.0 엔드포인트에서 사용자 앱은 `email` OpenID Connect 범위를 요청할 수도 있지만, 클레임을 가져오기 위해 선택적 클레임 및 범위를 모두 요청할 필요는 없습니다.  이메일 클레임은 사용자의 프로필 정보에서 주소 지정이 가능한 메일만 지원합니다. |
 |`name` | String | `name` 클레임은 토큰의 주체를 식별하는, 사람이 읽을 수 있는 값을 제공합니다. 값은 고유 하지 않을 수 있으며, 변경 가능 하 고, 표시 용도로만 사용 하도록 설계 되었습니다. 이 클레임을 받으려면 `profile` 범위가 필요 합니다. |
 |`nonce`| String | Nonce는 원본에 포함된 매개 변수와 일치하며 IDP에 대한 요청을 인증합니다. 일치하지 않는 경우 애플리케이션이 토큰을 거부해야 합니다. |
 |`oid` | 문자열, GUID | 이 경우에 Microsoft ID 시스템에 있는 개체의 변경할 수 없는 식별자는 사용자 계정입니다. 이 ID는 애플리케이션에서 사용자를 고유하게 식별합니다. 동일한 사용자가 로그인한 두 개의 다른 애플리케이션은 `oid` 클레임에서 동일한 값을 받습니다. Microsoft Graph는 이 ID를 지정된 사용자 계정에 대한 `id` 속성으로 반환합니다. `oid` 여러 앱에서 사용자의 상관 관계를 지정할 수 있으므로이 클레임을 받으려면 `profile` 범위가 필요 합니다. 단일 사용자가 여러 테 넌 트에 있는 경우 사용자는 각 테 넌 트에 다른 개체 ID를 포함 합니다. 사용자가 동일한 자격 증명을 사용 하는 각 계정에 로그인 하더라도 다른 계정으로 간주 됩니다. `oid` 클레임은 GUID 이며 다시 사용할 수 없습니다. |
@@ -93,7 +93,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjFMVE16YWtpaGlSbGFfOHoyQkVKVlhlV01x
 
 ## <a name="validating-an-id_token"></a>id_token을 유효성 검사하는 중
 
-`id_token`의 유효성을 검사 하는 것은 [액세스 토큰의 유효성을 검사](access-tokens.md#validating-tokens)하는 첫번째 단계와 유사합니다. 클라이언트는 올바른 발급자가 토큰을 다시 보내고 변조되지 않았는지 확인해야 합니다. `id_tokens`는 항상 JWT이므로 이러한 토큰의 유효성을 검사하는 많은 라이브러리가 있습니다. 직접 수행하기보다 이러한 라이브러리 중 하나를 사용하는 것이 좋습니다.
+`id_token` 유효성 검사는 [액세스 토큰의 유효성을 검사](access-tokens.md#validating-tokens) 하는 첫 번째 단계와 유사 합니다. 클라이언트는 올바른 발급자가 토큰을 다시 보내고 변조 되지 않았는지 확인 해야 합니다. `id_tokens`는 항상 JWT이므로 이러한 토큰의 유효성을 검사하는 많은 라이브러리가 있습니다. 직접 수행하기보다 이러한 라이브러리 중 하나를 사용하는 것이 좋습니다.
 
 수동으로 토큰 유효성을 검사하려면 [액세스 토큰의 유효성 검사](access-tokens.md#validating-tokens)에서 자세한 단계를 참조하세요. 토큰의 서명 유효성을 검사한 후 id_token에서 다음 클레임의 유효성을 검사해야 합니다(이 작업도 토큰 유효성 검사 라이브러리에서 수행할 수 있음).
 

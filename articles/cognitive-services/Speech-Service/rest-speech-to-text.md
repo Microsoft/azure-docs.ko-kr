@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/09/2019
 ms.author: erhopf
-ms.openlocfilehash: ea37dc9ee6c9249aa9d18f7ee7ab1fdbe1230930
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 26fe995f45a97a5863bfc20fd1564df89124ed88
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74975842"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168299"
 ---
 # <a name="speech-to-text-rest-api"></a>Speech-to-Text REST API
 
@@ -32,30 +32,39 @@ ms.locfileid: "74975842"
 
 ## <a name="regions-and-endpoints"></a>지역 및 엔드포인트
 
-이러한 지역은 REST API를 사용한 음성 텍스트 변환 전사에 대해 지원됩니다. 사용자 구독 지역과 일치하는 엔드포인트를 선택해야 합니다.
+REST API 끝점에는 다음과 같은 형식이 있습니다.
 
-[!INCLUDE [](../../../includes/cognitive-services-speech-service-endpoints-speech-to-text.md)] 
+```
+https://<REGION_IDENTIFIER>.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1
+```
+
+`<REGION_IDENTIFIER>`를이 테이블의 구독 지역과 일치 하는 식별자로 바꿉니다.
+
+[!INCLUDE [](../../../includes/cognitive-services-speech-service-region-identifier.md)]
+
+> [!NOTE]
+> 4xx HTTP 오류가 발생하지 않도록 언어 매개 변수를 URL에 추가해야 합니다. 예를 들어 미국 서부 엔드포인트를 사용하는 미국 영어로 설정된 언어는 `https://westus.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US`입니다.
 
 ## <a name="query-parameters"></a>쿼리 매개 변수
 
-이 매개 변수를 REST 요청의 쿼리 문자열에 포함할 수 있습니다.
+이 매개 변수는 REST 요청의 쿼리 문자열에 포함할 수 있습니다.
 
-| 매개 변수를 포함해야 합니다. | 설명 | 필수/선택 사항 |
+| 매개 변수 | Description | 필수/선택 |
 |-----------|-------------|---------------------|
 | `language` | 인식되는 음성 언어를 식별합니다. [지원되는 언어](language-support.md#speech-to-text)를 참조하세요. | 필수 |
-| `format` | 결과 형식을 지정합니다. 허용되는 값은 `simple` 및 `detailed`입니다. simple 결과에는 `RecognitionStatus`, `DisplayText`, `Offset` 및 `Duration`이 포함됩니다. detailed 응답에는 신뢰도 값 및 4가지 다른 표현과 함께 여러 결과가 포함됩니다. 기본 설정은 `simple`입니다. | 선택 사항 |
-| `profanity` | 인식 결과에서 욕설을 처리하는 방법을 지정합니다. 허용 되는 값은 `masked`입니다 .이 경우 사용 금지를 별표로 대체 하는 `removed`, 결과의 모든 비속어를 제거 하는 `raw`또는 결과의 불경를 포함 하는입니다. 기본 설정은 `masked`입니다. | 선택 사항 |
+| `format` | 결과 형식을 지정합니다. 허용되는 값은 `simple` 및 `detailed`입니다. simple 결과에는 `RecognitionStatus`, `DisplayText`, `Offset` 및 `Duration`이 포함됩니다. detailed 응답에는 신뢰도 값 및 4가지 다른 표현과 함께 여러 결과가 포함됩니다. 기본 설정은 `simple`입니다. | 옵션 |
+| `profanity` | 인식 결과에서 욕설의 처리 방법을 지정합니다. 허용 되는 값은 `masked`입니다 .이 경우 사용 금지를 별표로 대체 하는 `removed`, 결과의 모든 비속어를 제거 하는 `raw`또는 결과의 불경를 포함 하는입니다. 기본 설정은 `masked`입니다. | 옵션 |
 
 ## <a name="request-headers"></a>헤더 요청
 
 이 표에는 음성 텍스트 변환 요청에 대한 필수 헤더 및 선택적 헤더가 나와 있습니다.
 
-|헤더| 설명 | 필수/선택 사항 |
+|헤더| Description | 필수/선택 |
 |------|-------------|---------------------|
-| `Ocp-Apim-Subscription-Key` | Speech Service 구독 키입니다. | 이 헤더 또는 `Authorization`이 필요합니다. |
-| `Authorization` | 앞에 `Bearer` 단어가 표시되는 인증 토큰입니다. 자세한 내용은 [인증](#authentication)을 참조하세요. | 이 헤더 또는 `Ocp-Apim-Subscription-Key`이 필요합니다. |
+| `Ocp-Apim-Subscription-Key` | Speech Service 구독 키입니다. | 이 헤더 또는 `Authorization`가 필요합니다. |
+| `Authorization` | 앞에 `Bearer` 단어가 표시되는 인증 토큰입니다. 자세한 내용은 [인증](#authentication)을 참조하세요. | 이 헤더 또는 `Ocp-Apim-Subscription-Key`가 필요합니다. |
 | `Content-type` | 제공된 오디오 데이터의 형식과 코덱을 설명합니다. 허용되는 값은 `audio/wav; codecs=audio/pcm; samplerate=16000` 및 `audio/ogg; codecs=opus`입니다. | 필수 |
-| `Transfer-Encoding` | 단일 파일이 아닌 청크 분할된 오디오 데이터가 전송되고 있음을 지정합니다. 오디오 데이터를 청크 분할하는 경우에만 이 헤더를 사용합니다. | 선택 사항 |
+| `Transfer-Encoding` | 단일 파일이 아닌 청크 분할된 오디오 데이터가 전송되고 있음을 지정합니다. 오디오 데이터를 청크 분할하는 경우에만 이 헤더를 사용합니다. | 옵션 |
 | `Expect` | 청크 분할된 전송을 사용하는 경우 `Expect: 100-continue`를 전송합니다. Speech Service는 초기 요청을 인식하고 추가 데이터를 대기합니다.| 청크 분할된 오디오 데이터를 전송하는 경우에 필요합니다. |
 | `Accept` | 제공하는 경우 `application/json`이어야 합니다. 음성 서비스는 JSON에서 결과를 제공 합니다. 일부 요청 프레임 워크는 호환 되지 않는 기본값을 제공 합니다. 항상 `Accept`를 포함 하는 것이 좋습니다. | 선택 사항이지만 권장됩니다. |
 
@@ -69,7 +78,7 @@ ms.locfileid: "74975842"
 | OGG | OPUS | 16비트 | 16kHz, mono |
 
 >[!NOTE]
->위의 형식은 음성 서비스의 REST API 및 WebSocket을 통해 지원 됩니다. [음성 SDK](speech-sdk.md)는 현재 PCM 코덱을 사용하는 WAV 형식만 지원합니다.
+>위의 형식은 음성 서비스의 REST API 및 WebSocket을 통해 지원 됩니다. [음성 SDK](speech-sdk.md) 는 현재 [다른 형식](how-to-use-codec-compressed-audio-input-streams.md)뿐만 아니라 PCM 코덱으로 WAV 형식을 지원 합니다.
 
 ## <a name="sample-request"></a>샘플 요청
 
@@ -89,9 +98,9 @@ Expect: 100-continue
 
 각 응답의 HTTP 상태 코드는 성공 또는 일반 오류를 나타냅니다.
 
-| HTTP 상태 코드 | 설명 | 가능한 원인 |
+| HTTP 상태 코드 | Description | 가능한 원인 |
 |------------------|-------------|-----------------|
-| 100 | 계속하기 | 초기 요청이 수락되었습니다. 나머지 데이터의 전송을 계속합니다. (청크 분할 전송으로 사용함) |
+| 100 | 계속 | 초기 요청이 수락되었습니다. 나머지 데이터의 전송을 계속합니다. (청크 분할 전송으로 사용함) |
 | 200 | 확인 | 요청이 성공했습니다. 응답 본문이 JSON 개체입니다. |
 | 400 | 잘못된 요청 | 지원 되지 않는 언어 코드, 잘못 된 오디오 파일 등은 제공 되지 않습니다. |
 | 401 | 권한 없음 | 구독 키 또는 권한 부여 토큰이 지정된 지역에서 올바르지 않거나 엔드포인트가 올바르지 않습니다. |
@@ -144,7 +153,7 @@ using (fs = new FileStream(audioFile, FileMode.Open, FileAccess.Read))
 
 결과는 JSON으로 제공됩니다. `simple` 형식에는 이러한 최상위 수준 필드가 포함됩니다.
 
-| 매개 변수를 포함해야 합니다. | 설명  |
+| 매개 변수 | Description  |
 |-----------|--------------|
 |`RecognitionStatus`|상태(예: 인식 성공에 `Success`)입니다. 다음 표를 참조하세요.|
 |`DisplayText`|대/소문자, 문장 부호, 역 텍스트 정규화 (음성 텍스트를 "200"의 경우 200, "의사 smith"의 경우 "Dr. Smith"의 경우) 및 불경 마스킹을 통해 인식 되는 텍스트입니다. 성공 시만 표시합니다.|
@@ -153,7 +162,7 @@ using (fs = new FileStream(audioFile, FileMode.Open, FileAccess.Read))
 
 `RecognitionStatus` 필드에는 다음 값이 포함될 수 있습니다.
 
-| 상태 | 설명 |
+| 상태 | Description |
 |--------|-------------|
 | `Success` | 성공적으로 인식했고 `DisplayText` 필드가 있습니다. |
 | `NoMatch` | 오디오 스트림에서 음성이 감지되었지만 대상 언어의 단어가 일치하지 않습니다. 일반적으로 인식 언어는 사용자가 말하는 것과 다른 언어를 의미합니다. |
@@ -164,17 +173,17 @@ using (fs = new FileStream(audioFile, FileMode.Open, FileAccess.Read))
 > [!NOTE]
 > 오디오가 욕설로만 구성되어 있고 `profanity` 쿼리 매개 변수가 `remove`로 설정되어 있는 경우 서비스는 음성 결과를 변환하지 않습니다.
 
-`detailed` 형식은 동일한 인식 결과에 대한 대체 해석 목록인 `NBest`와 함께 `simple` 형식과 동일한 데이터를 포함합니다. 이러한 결과는 가장 가능성이 낮은 것부터 순위가 높습니다. 첫 번째 항목은 기본 인식 결과와 같습니다.  `detailed` 형식을 사용하는 경우 `DisplayText`는 `NBest` 목록의 각 결과에 대한 `Display`로 제공됩니다.
+`detailed` 형식에는 동일한 인식 결과의 대체 해석 목록과 `NBest`함께 `simple` 형식과 동일한 데이터가 포함 됩니다. 이러한 결과는 가장 가능성이 낮은 것부터 순위가 높습니다. 첫 번째 항목은 기본 인식 결과와 같습니다.  `detailed` 형식을 사용하는 경우 `DisplayText`는 `Display` 목록의 각 결과에 대한 `NBest`로 제공됩니다.
 
 `NBest` 목록의 각 개체에는 다음이 포함됩니다.
 
-| 매개 변수를 포함해야 합니다. | 설명 |
+| 매개 변수 | Description |
 |-----------|-------------|
 | `Confidence` | 0\.0(신뢰도 없음)에서 1.0(완전 신뢰도)까지 항목의 신뢰도 점수입니다. |
 | `Lexical` | 인식된 텍스트의 어휘 형태, 즉 인식된 실제 단위입니다. |
 | `ITN` | 전화 번호, 숫자, 축약어("doctor smith"가 "dr smith")가 포함된 인식된 텍스트의 역 텍스트 정규화된("기본형") 형태와 적용된 기타 변형입니다. |
 | `MaskedITN` | 요청된 경우 욕설 마스킹이 적용된 ITN 형태입니다. |
-| `Display` | 문장 부호 및 대문자로 표시가 추가된 인식된 텍스트의 표시 형태입니다. 이 매개 변수는 형식이 `simple`로 설정된 경우에 제공되는 `DisplayText`와 동일합니다. |
+| `Display` | 문장 부호 및 대문자로 표시가 추가된 인식된 텍스트의 표시 형태입니다. 이 매개 변수는 형식이 `DisplayText`로 설정된 경우에 제공되는 `simple`와 동일합니다. |
 
 ## <a name="sample-responses"></a>샘플 응답
 

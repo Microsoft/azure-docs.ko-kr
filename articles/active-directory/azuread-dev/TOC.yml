@@ -1,0 +1,193 @@
+- name: 개발자용 Azure Active Directory
+  href: index.yml
+- name: 개요
+  href: v1-overview.md
+- name: 샘플
+  href: sample-v1-code.md
+- name: 개념
+  items:
+    - name: v2.0으로 업데이트해야 하는 이유
+      href: azure-ad-endpoint-comparison.md
+    - name: 애플리케이션 형식
+      items:
+        - name: 애플리케이션 유형
+          href: app-types.md
+        - name: 단일 페이지 애플리케이션
+          href: single-page-application.md
+        - name: 웹앱
+          href: web-app.md
+        - name: Web API
+          href: web-api.md
+        - name: 모바일 및 데스크톱 앱
+          href: native-app.md
+        - name: 디먼 또는 서버 애플리케이션
+          href: service-to-service.md
+    - name: 인증
+      items:
+        - name: 인증 기본 사항
+          href: v1-authentication-scenarios.md
+        - name: OAuth 2.0 및 OpenID Connect 프로토콜
+          items:
+            - name: OpenID Connect
+              href: v1-protocols-openid-connect-code.md
+            - name: OAuth 2.0 암시적 허용 흐름
+              href: v1-oauth2-implicit-grant-flow.md
+            - name: OAuth 2.0 인증 코드 부여
+              href: v1-protocols-oauth-code.md
+            - name: OAuth 2.0 On-Behalf-Of 흐름
+              href: v1-oauth2-on-behalf-of-flow.md
+            - name: OAuth 2.0 클라이언트 자격 증명 부여
+              href: v1-oauth2-client-creds-grant-flow.md
+        - name: SAML 2.0 프로토콜
+          items:
+            - name: SSO(Single sign-on)
+              href: ../develop/single-sign-on-saml-protocol.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+            - name: 로그아웃
+              href: ../develop/single-sign-out-saml-protocol.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+            - name: Azure AD에서 SAML 프로토콜을 사용하는 방법
+              href: ../develop/active-directory-saml-protocol-reference.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: WS-Federation
+          items:
+            - name: 페더레이션 메타데이터
+              href: azure-ad-federation-metadata.md
+        - name: 서명 키 롤오버
+          href: ../develop/active-directory-signing-key-rollover.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: ID 토큰
+          href: ../develop/id-tokens.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: 액세스 토큰
+          href: ../develop/access-tokens.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: 인증서 자격 증명
+          href: ../develop/active-directory-certificate-credentials.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: SAML 토큰
+          href: ../develop/reference-saml-tokens.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: 애플리케이션 구성
+      items:
+        - name: 애플리케이션 및 서비스 주체
+          href: ../develop/app-objects-and-service-principals.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: 앱을 Azure AD에 추가하는 방법 및 이유
+          href: ../develop/active-directory-how-applications-are-added.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: 단일 테넌트 및 다중 테넌트 앱
+          href: ../develop/single-and-multi-tenant-apps.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: 권한 및 동의
+      displayName: Scopes
+      items:
+        - name: 권한 및 동의 유형
+          href: v1-permissions-consent.md
+        - name: 동의 프레임워크
+          href: ../develop/consent-framework.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: 애플리케이션 동의 경험
+          href: ../develop/application-consent-experience.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: 조건부 액세스
+      href: conditional-access-dev-guide.md
+    - name: 국가별 클라우드
+      href: ../develop/authentication-national-cloud.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+- name: 방법 가이드
+  items:
+    - name: 인증
+      items:
+        - name: Single Sign-On 구성
+          displayName: SSO
+          items:
+            - name: Android에서 SSO 사용
+              href: howto-v1-enable-sso-android.md
+            - name: iOS에서 SSO 사용
+              href: howto-v1-enable-sso-ios.md
+            - name: SAML 기반 SSO 디버그
+              href: howto-v1-debug-saml-sso-issues.md
+        - name: 클레임 구성
+          items:
+            - name: 역할 클레임 구성
+              href: ../develop/active-directory-enterprise-app-role-management.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+            - name: 클레임 사용자 지정 - 포털
+              href: ../develop/active-directory-saml-claims-customization.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+            - name: 클레임 사용자 지정 - PowerShell
+              href: ../develop/active-directory-claims-mapping.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+            - name: 선택적 클레임 구성
+              href: ../develop/active-directory-optional-claims.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+            - name: 토큰 수명 구성
+              href: ../develop/active-directory-configurable-token-lifetimes.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: ADAL 오류 처리 모범 사례
+          href: active-directory-devhowto-adal-error-handling.md
+    - name: 애플리케이션 구성
+      items:
+        - name: 단일 테넌트 앱을 다중 테넌트 앱으로 변환
+          href: ../develop/howto-convert-app-to-be-multi-tenant.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: 서비스 주체 만들기
+          items:
+            - name: Azure PowerShell 사용
+              href: ../develop/howto-authenticate-service-principal-powershell.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+            - name: Azure Portal 사용
+              href: ../develop/howto-create-service-principal-portal.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: 사용자 집합으로 앱 제한
+          href: ../develop/howto-restrict-your-app-to-a-set-of-users.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: 애플리케이션에 앱 역할 추가
+          href: ../develop/howto-add-app-roles-in-azure-ad-apps.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: 브랜딩 지침
+          href: ../develop/howto-add-branding-in-azure-ad-apps.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: 서비스 약관 및 개인정보처리방침
+          href: ../develop/howto-add-terms-of-service-privacy-statement.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: Visual Studio 작업
+      items:
+        - name: Active Directory 연결된 서비스 사용
+          href: ../develop/vs-active-directory-add-connected-service.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: .NET MVC 프로젝트 시작
+          href: ../develop/vs-active-directory-dotnet-getting-started.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: 내 .NET MVC 프로젝트는 어떻게 되었나요?
+          href: ../develop/vs-active-directory-dotnet-what-happened.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: WebAPI 프로젝트 시작
+          href: ../develop/vs-active-directory-webapi-getting-started.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: 내 WebAPI 프로젝트는 어떻게 되었나요?
+          href: ../develop/vs-active-directory-webapi-what-happened.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: 인증 검색 중 오류 발생
+          href: ../develop/vs-active-directory-error.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: Market으로 앱 가져오기
+      items:
+        - name: App Source에 게시
+          href: howto-get-appsource-certified.md
+        - name: Azure AD App Gallery에 게시
+          href: howto-app-gallery-listing.md
+        - name: Office 365 판매자 대시보드에 게시
+          href: 'https://docs.microsoft.com/office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store'
+    - name: Azure Access Control Service
+      displayName: ACS
+      items:
+        - name: Azure Access Control Service에서 마이그레이션
+          href: active-directory-acs-migration.md
+        - name: 비활성화된 Access Control Service 네임스페이스 다시 활성화
+          href: howto-reactivate-disabled-acs-namespaces.md
+    - name: Azure AD Graph API 사용
+      href: ../develop/active-directory-graph-api-quickstart.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: 개발자용 AD FS
+      href: 'https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-scenarios-for-developers'
+- name: 참조
+  items:
+    - name: 인증 라이브러리
+      displayName: ADAL
+      href: active-directory-authentication-libraries.md
+    - name: Azure AD Graph API
+      href: ../develop/active-directory-graph-api.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: 애플리케이션 매니페스트.
+      href: ../develop/reference-app-manifest.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: 인증 및 권한 부여 오류 코드
+      href: ../develop/reference-aadsts-error-codes.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: 주요 변경 내용
+      href: ../develop/reference-breaking-changes.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+- name: 리소스
+  items:
+    - name: 용어
+      href: ../develop/developer-glossary.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: 동영상
+      href: videos.md
+    - name: Azure 로드맵
+      href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
+    - name: Azure AD 블로그
+      href: 'https://cloudblogs.microsoft.com/enterprisemobility/?product=azure-active-directory'
+    - name: Microsoft ID 플랫폼 개발자 블로그
+      href: 'https://developer.microsoft.com/identity/blogs/'
+    - name: Microsoft에 로그인 시도
+      href: 'https://azure.microsoft.com/develop/identity/signin/'
+    - name: 도움말 보기
+      displayName: 'support, help options'
+      href: ../develop/developer-support-help-options.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: Azure 리소스에 대한 관리 ID
+      href: 'https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview'

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/30/2019
 ms.author: mbaldwin
 ms.custom: security-recommendations
-ms.openlocfilehash: 376d7c1a9d2fe2ebce857362fd216e2047eb1f7b
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 7916bbb28602d64e0916fce7badf16a65c242227
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75934325"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77251875"
 ---
 # <a name="security-control-network-security"></a>보안 제어: 네트워크 보안
 
@@ -183,7 +183,7 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 네트워킹에 대 한 Azure Policy 샘플:
 
-https://docs.microsoft.com/azure/governance/policy/samples/#network
+https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#network
 
 Azure Blueprint를 만드는 방법:
 
@@ -223,7 +223,7 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 네트워킹에 대 한 Azure Policy 샘플:
 
-https://docs.microsoft.com/azure/governance/policy/samples/#network
+https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#network
 
 ## <a name="next-steps"></a>다음 단계
 

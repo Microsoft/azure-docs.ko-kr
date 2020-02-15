@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/31/2020
 ms.author: rdhillon
-ms.openlocfilehash: 667fa1c85c63ffb87e49c4bf99112f57d0c85a72
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.openlocfilehash: 0d26ad6802e551523875dcad13066fdbdbf39ada
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77031921"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191048"
 ---
-# <a name="troubleshoot-private-link-service-connectivity-problems"></a>개인 링크 서비스 연결 문제 해결
+# <a name="troubleshoot-private-link-service-connectivity-problems"></a>Private Link Service 연결 문제 해결
 
 이 가이드에서는 개인 링크 서비스 설정에 대 한 연결의 유효성을 검사 하 고 진단 하는 단계별 지침을 제공 합니다. 
 
@@ -112,4 +112,4 @@ Azure 개인 링크를 사용 하면 가상 네트워크의 개인 끝점을 통
 
  * [개인 링크 서비스 만들기 (CLI)](https://docs.microsoft.com/azure/private-link/create-private-link-service-cli)
 
- * [개인 끝점 문제 해결 가이드](https://docs.microsoft.com/azure/private-link/private-endpoint-connectivity-troubleshooting)
+ * [개인 끝점 문제 해결 가이드](troubleshoot-private-endpoint-connectivity.md)

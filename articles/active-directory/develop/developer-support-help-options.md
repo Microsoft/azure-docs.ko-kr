@@ -13,12 +13,12 @@ ms.date: 05/23/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
-ms.openlocfilehash: e85a768d8e4f11ca3637bc8f0b394cfb1ea9744a
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 89bf49fb44d8575b251a0b33698bc4ce8425cc2b
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76697475"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160970"
 ---
 # <a name="support-and-help-options-for-developers"></a>개발자를 위한 지원 및 도움말 옵션
 
@@ -58,7 +58,7 @@ Stack Overflow는 개발 관련 질문에 대한 기본 설정 채널입니다. 
 
 검색을 통해 질문에 대한 답변을 찾을 수 없으면 새 질문을 Stack Overflow에 제출합니다. 질문할 때 다음 태그 중 하나를 사용하면 커뮤니티에서 질문을 더 빠르게 식별하고 답변하는 데 도움이 됩니다.
 
-|구성 요소/영역  | 태그 |
+|구성 요소/영역  | 태그들 |
 |---------|---------|
 | ADAL 라이브러리 | [[adal]](https://stackoverflow.com/questions/tagged/adal) |
 | MSAL 라이브러리     | [[msal]](https://stackoverflow.com/questions/tagged/msal) |
@@ -79,8 +79,8 @@ Stack Overflow의 다음 게시물에는 질문하는 방법과 소스 코드를
 
 라이브러리 및 해당 GitHub 리포지토리 목록은 다음을 참조 하세요.
 
-* [ADAL](active-directory-authentication-libraries.md) 라이브러리 및 GitHub 리포지토리
-* [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) [msal .Js](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angularjs/README.md), [msal. Android](https://github.com/AzureAD/microsoft-authentication-library-for-android)및 [msal. obj_c](https://github.com/AzureAD/microsoft-authentication-library-for-objc) 라이브러리 및 GitHub 리포지토리
+* [ADAL (Azure Active Directory Authentication Library)](../azuread-dev/active-directory-authentication-libraries.md) 라이브러리 및 GitHub 리포지토리
+* [MSAL (Microsoft 인증 라이브러리)](reference-v2-libraries.md) 라이브러리 및 GitHub 리포지토리
 
 ## <a name="open-a-support-request"></a>지원 요청 열기
 

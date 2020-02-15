@@ -5,12 +5,12 @@ author: usha-rathnavel
 ms.topic: article
 ms.date: 1/17/2020
 ms.author: atinb
-ms.openlocfilehash: 7d3c70695000ae62f374bc558d4b408733968b83
-ms.sourcegitcommit: a460fdc19d6d7af6d2b5a4527e1b5c4e0c49942f
+ms.openlocfilehash: 701e42caba5325df34bdbb2381389708b9b5a03f
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77069288"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198857"
 ---
 # <a name="install-azure-farmbeats"></a>Azure FarmBeats 설치
 
@@ -83,7 +83,9 @@ Azure FarmBeats를 설치 하려면 Azure 테 넌 트에서 다음 권한이 필
 - 구독-소유자
 - FarmBeats가 설치 되는 리소스 그룹-소유자
 
-[AAD 응용 프로그램](#create-an-aad-application) 단계를 만들려면 처음 두 가지 권한이 필요 합니다. 필요한 경우 적절 한 권한을 가진 사용자를 가져와 AAD 응용 프로그램을 만들 수 있습니다. FarmBeats를 설치 하는 사용자는 FarmBeats가 설치 되는 리소스 그룹의 소유자 여야 합니다.
+[AAD 응용 프로그램](#create-an-aad-application) 단계를 만들려면 처음 두 가지 권한이 필요 합니다. 필요한 경우 적절 한 권한을 가진 사용자를 가져와 AAD 응용 프로그램을 만들 수 있습니다.
+
+Marketplace에서 FarmBeats install을 실행 하는 사람은 FarmBeats가 설치 되는 리소스 그룹의 소유자 여야 합니다. 구독 소유자의 경우이는 리소스 그룹을 만들 때 자동으로 발생 합니다. 다른 사용자의 경우 리소스 그룹을 미리 만들고 리소스 그룹의 소유자가 되도록 구독 소유자에 게 요청 하세요.
 
 [역할 기반 access control](https://docs.microsoft.com/azure/role-based-access-control/check-access)에 대 한 지침에 따라 Azure Portal에서 액세스 권한을 확인할 수 있습니다.
 
@@ -120,7 +122,15 @@ PowerShell 환경을 사용 하 여 Cloud Shell 인스턴스에서 다음 단계
         ./create_aad_script.ps1
     ```
 
-4. AAD 스크립트는 실행 하는 데 2 분 정도 걸리며 동일한 디렉터리의 json 파일 뿐만 아니라 화면에서 값을 출력 합니다. 다른 사용자가 스크립트를 실행 한 경우이 출력을 사용자와 공유 하도록 요청 하세요.
+4. 스크립트는 다음 세 가지 입력을 요청 합니다.
+
+    - FarmBeats 웹 사이트 이름: FarmBeats 웹 응용 프로그램에 대 한 고유한 URL 접두사입니다. 접두사가 이미 사용 되는 경우 스크립트는 오류를 발생 합니다. FarmBeats 배포는 설치 되 면 https://\<FarmBeats에서 액세스할 수 있습니다.-웹 사이트-이름 >. n e t 및 swagger Api는 https://\<FarmBeats >-api.azurewebsites.net
+
+    - Azure 로그인 ID: FarmBeats의 관리자로 추가 하려는 사용자의 Azure 로그인 ID를 제공 합니다. 그러면이 사용자는 FarmBeats 웹 응용 프로그램에 액세스 하는 액세스 권한을 다른 사용자에 게 부여할 수 있습니다. 로그인 ID는 일반적으로 john.doe@domain.com형식입니다. Azure UPN도 지원 됩니다.
+
+    - 구독 ID: Azure FarmBeats을 설치 하려는 구독의 ID입니다.
+
+5. AAD 스크립트는 실행 하는 데 2 분 정도 걸리며 동일한 디렉터리의 json 파일 뿐만 아니라 화면에서 값을 출력 합니다. 다른 사용자가 스크립트를 실행 한 경우이 출력을 사용자와 공유 하도록 요청 하세요.
 
 ### <a name="create-sentinel-account"></a>센티널 계정 만들기
 
@@ -171,7 +181,7 @@ FarmBeats를 최신 버전으로 업그레이드 하려면 PowerShell 환경을 
 1. [업그레이드 스크립트](https://aka.ms/FarmBeatsUpgradeScript) 다운로드
 
     ```azurepowershell-interactive
-        wget –q https://aka.ms/FarmBeatsUpgradeScript -O ./update-farmbeats.ps1
+        wget –q https://aka.ms/FarmBeatsUpgradeScript -O ./upgrade-farmbeats.ps1
     ```
 
 2. 기본적으로이 파일은 홈 디렉터리에 다운로드 됩니다. 디렉터리로 이동 합니다.

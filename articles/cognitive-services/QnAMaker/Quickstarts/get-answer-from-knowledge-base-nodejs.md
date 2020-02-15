@@ -2,15 +2,15 @@
 title: '빠른 시작: 기술 자료에서 답변 찾기 - REST, Node.js - QnA Maker'
 description: 이 Node.js REST 기반 빠른 시작은 기술 자료에서 프로그래밍 방식으로 답변을 가져오는 방법을 안내합니다.
 ms.topic: quickstart
-ms.date: 01/28/2020
+ms.date: 02/08/2020
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCHANGE-20200128
-ms.openlocfilehash: 89c7c71860accb322be522e1a655e4db6288634d
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: e8077235852e8776c4e52403cbac3e4bccc6c4f1
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76844248"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77109785"
 ---
 # <a name="quickstart-get-answers-to-a-question-from-a-knowledge-base-with-nodejs"></a>빠른 시작: Node.js를 사용하여 기술 자료에서 질문에 대한 답변 얻기
 

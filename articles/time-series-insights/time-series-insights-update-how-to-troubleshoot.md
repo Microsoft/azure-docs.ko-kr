@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 12/13/2019
+ms.date: 02/07/2020
 ms.custom: seodec18
-ms.openlocfilehash: 1fc3aa6caa6266d2cd42e4783e8e39d5cc92c220
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: a306707f0ed47fba8fd854d820554bc1bd80e8bc
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75861577"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110283"
 ---
 # <a name="diagnose-and-troubleshoot-a-preview-environment"></a>미리 보기 환경 진단 및 문제 해결
 
@@ -25,7 +25,7 @@ ms.locfileid: "75861577"
 
 이 문제는 Time Series Insights 환경에 액세스할 수 있는 권한이 없는 경우에 발생할 수 있습니다. 사용자가 Time Series Insights 환경을 보려면 읽기 권한자 수준의 액세스 역할이 필요합니다. 현재 액세스 수준을 확인 하 고 추가 액세스 권한을 부여 하려면 [Azure Portal](https://portal.azure.com/)에서 Time Series Insights 리소스에 대 한 **데이터 액세스 정책** 섹션으로 이동 합니다.
 
-  [데이터 액세스 정책을 확인 ![합니다.](media/preview-troubleshoot/verify-data-access-policies.png)](media/preview-troubleshoot/verify-data-access-policies.png#lightbox)
+  [![데이터 액세스 정책을 확인합니다.](media/preview-troubleshoot/verify-data-access-policies.png)](media/preview-troubleshoot/verify-data-access-policies.png#lightbox)
 
 ## <a name="problem-no-data-is-seen-in-the-preview-explorer"></a>문제: 미리 보기 탐색기에 데이터가 표시 되지 않습니다.
 
@@ -80,7 +80,7 @@ ms.locfileid: "75861577"
 * 타임스탬프 속성 이름은 대/소문자를 구분합니다.
 * 이벤트 소스에서 JSON 문자열로 제공 되는 타임 스탬프 속성 값은 `yyyy-MM-ddTHH:mm:ss.FFFFFFFK`형식입니다. 이러한 문자열의 예는 `“2008-04-12T12:53Z”`입니다.
 
-타임스탬프 속성 이름이 캡처되고 제대로 작동하는지 확인하는 가장 쉬운 방법은 Time Series Insights 미리 보기 탐색기를 사용하는 것입니다. Time Series Insights 미리 보기 탐색기 내에서 타임스탬프 속성 이름을 제공한 후 차트를 사용하여 기간을 선택합니다. 선택 영역을 마우스 오른쪽 단추로 클릭하고 **이벤트 탐색** 옵션을 선택합니다. 첫 번째 열 머리글은 타임스탬프 속성 이름입니다. `Timestamp` 단어 옆에 다음 대신 `($ts)`가 있어야 합니다.
+타임스탬프 속성 이름이 캡처되고 제대로 작동하는지 확인하는 가장 쉬운 방법은 Time Series Insights 미리 보기 탐색기를 사용하는 것입니다. Time Series Insights 미리 보기 탐색기 내에서 타임스탬프 속성 이름을 제공한 후 차트를 사용하여 기간을 선택합니다. 선택 영역을 마우스 오른쪽 단추로 클릭하고 **이벤트 탐색** 옵션을 선택합니다. 첫 번째 열 머리글은 타임스탬프 속성 이름입니다. `($ts)` 단어 옆에 다음 대신 `Timestamp`가 있어야 합니다.
 
 * `(abc)`는 Time Series Insights가 데이터 값을 문자열로 읽고 있음을 나타냅니다.
 * **달력** 아이콘-Time Series Insights에서 데이터 값을 datetime으로 읽도록 지정 합니다.

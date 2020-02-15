@@ -11,16 +11,19 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 01/31/2020
 ms.custom: seodec18
-ms.openlocfilehash: 079cfcee543cf1ce36c4a1394479a622b3658789
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: cf5f89197798f95dced5bfd8817f1df050297048
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76935113"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76962002"
 ---
 # <a name="manage-ga-reference-data-for-an-azure-time-series-insights-environment-using-c"></a>을 사용 하 여 Azure Time Series Insights 환경의 GA 참조 데이터 관리C#
 
 이 문서에서는 Azure Time Series Insights GA C# [참조 데이터 관리 api](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api)에 대 한 프로그래밍 방식 api 요청을 결합, [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)및 Azure Active Directory 하는 방법을 보여 줍니다.
+
+> [!TIP]
+> https://github.com/Azure-Samples/Azure-Time-Series-Insights 에서 C# GA 코드 샘플을 봅니다.
 
 ## <a name="summary"></a>요약
 
@@ -52,9 +55,6 @@ ms.locfileid: "76935113"
 1. 각 **#PLACEHOLDER #** 을 적절 한 환경 식별자로 바꿔서 아래 샘플 코드를 편집 합니다.
 
 1. 프로젝트의 루트 디렉터리 내에서 `dotnet run`를 실행 합니다. 메시지가 표시 되 면 사용자 프로필을 사용 하 여 Azure에 로그인 합니다. 
-
-> [!TIP]
-> * 에서 다른 C# GA 코드 샘플 [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample)을 봅니다.
 
 ## <a name="project-dependencies"></a>프로젝트 종속성
 

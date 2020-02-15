@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: b091c501fb565fb267c40f686dc037e41f3c90ee
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 77812a3765a027152c957f6dbb7c9b3811a2278f
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76845130"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191189"
 ---
 # <a name="create-an-azure-network-watcher-instance"></a>Azure Network Watcher 인스턴스 만들기
 
@@ -27,7 +27,7 @@ Network Watcher는 Azure 내에서, Azure로, Azure로부터 네트워크 시나
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="network-watcher-is-automatically-enabled"></a>Network Watcher가 자동으로 사용하도록 설정됨
-구독에서 가상 네트워크를 만들거나 업데이트하면 가상 네트워크 지역에서 Network Watcher가 자동으로 사용하도록 설정됩니다. 리소스에 대한 영향이나 Network Watcher를 자동으로 사용하도록 설정하는 데 관련된 요금은 없습니다.
+구독에서 가상 네트워크를 만들거나 업데이트하면 가상 네트워크 지역에서 Network Watcher가 자동으로 사용하도록 설정됩니다. Network Watcher가 자동으로 사용하도록 설정되어도 리소스에 영향을 주지 않으며 관련된 요금도 없습니다.
 
 #### <a name="opt-out-of-network-watcher-automatic-enablement"></a>Network Watcher 자동 사용 옵트아웃
 Network Watcher 자동 사용을 옵트아웃하려면 다음 명령을 실행하여 옵트아웃할 수 있습니다.
@@ -107,7 +107,7 @@ armclient put "https://management.azure.com/subscriptions/${subscriptionId}/reso
 
 아직 없는 경우 개요 탭을 선택 합니다. 드롭다운을 사용 하 여에서 네트워크 감시자를 사용 하지 않도록 설정할 구독을 선택 합니다.
 화살표를 클릭 하 여 선택한 구독에 대 한 영역 목록을 확장 합니다. 지정 된 경우 오른쪽에 있는 3 개의 점을 사용 하 여 상황에 맞는 메뉴에 액세스 합니다.
-"네트워크 감시자 사용 안 함"을 클릭 하 여 비활성화를 시작 합니다. 이 단계를 확인 하 라는 메시지가 표시 됩니다. 예를 클릭 하 여 계속 합니다.
+"네트워크 감시자 사용 안 함"을 클릭 하 여 비활성화를 시작 합니다. 이 단계를 확인 하 라는 메시지가 표시 됩니다. 계속하려면 예를 클릭합니다.
 포털에서는 모든 구독의 모든 지역에 대해 개별적으로이 작업을 수행 해야 합니다.
 
 
@@ -132,5 +132,3 @@ Remove-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup Networ
 * [보안 그룹 보기](network-watcher-security-group-view-overview.md)
 * [NSG 흐름 로깅](network-watcher-nsg-flow-logging-overview.md)
 * [Virtual Network 게이트웨이 문제 해결](network-watcher-troubleshoot-overview.md)
-
-Network Watcher 인스턴스가 있으면 가상 머신 내에서 패킷 캡처를 사용하도록 설정할 수 있습니다. 방법을 알아보려면 [경고가 트리거된 패킷 캡처 만들기](network-watcher-alert-triggered-packet-capture.md)를 참조하세요.

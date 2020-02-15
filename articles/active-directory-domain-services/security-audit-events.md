@@ -9,18 +9,20 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/31/2019
+ms.date: 02/10/2020
 ms.author: iainfou
-ms.openlocfilehash: d8e96ffc3e2b4756a4184a9a023133f14b326ed3
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 42ab32e80ef0a1a7f3c02d8a8eedbb8ab13c4b88
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75979936"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77132244"
 ---
 # <a name="enable-security-audits-for-azure-active-directory-domain-services"></a>Azure Active Directory Domain Services에 대 한 보안 감사 사용
 
-Azure AD DS (Azure Active Directory Domain Services) 보안 감사를 통해 Azure에서 대상 리소스에 대 한 보안 이벤트를 스트리밍할 수 있습니다. 이러한 리소스에는 Azure Storage, Azure Log Analytics 작업 영역 또는 Azure Event Hub가 포함 됩니다. 보안 감사 이벤트를 사용 하도록 설정 하면 Azure AD DS는 선택한 범주의 감사 된 모든 이벤트를 대상 리소스로 보냅니다. Azure Event Hubs을 사용 하 여 azure storage에 이벤트를 보관 하 고 이벤트를 SIEM (보안 정보 및 이벤트 관리) 소프트웨어 (또는 이와 동등한)로 스트리밍할 수 있습니다. 또는 고유한 분석을 수행 하 고 Azure Portal에서 Azure Log Analytics 작업 영역을 사용할 수 있습니다.
+Azure AD DS (Azure Active Directory Domain Services) 보안 감사를 통해 Azure에서 대상 리소스에 대 한 보안 이벤트를 스트리밍할 수 있습니다. 이러한 리소스에는 Azure Storage, Azure Log Analytics 작업 영역 또는 Azure Event Hub가 포함 됩니다. 보안 감사 이벤트를 사용 하도록 설정 하면 Azure AD DS는 선택한 범주의 감사 된 모든 이벤트를 대상 리소스로 보냅니다.
+
+Azure Event Hubs을 사용 하 여 azure storage에 이벤트를 보관 하 고 이벤트를 SIEM (보안 정보 및 이벤트 관리) 소프트웨어 (또는 이와 동등한)로 스트리밍할 수 있습니다. 또는 고유한 분석을 수행 하 고 Azure Portal에서 Azure Log Analytics 작업 영역을 사용할 수 있습니다.
 
 > [!IMPORTANT]
 > Azure AD DS 보안 감사는 Azure Resource Manager 기반 인스턴스에서만 사용할 수 있습니다. 마이그레이션하는 방법에 대 한 자세한 내용은 [클래식 가상 네트워크 모델에서 리소스 관리자 Azure AD DS 마이그레이션을][migrate-azure-adds]참조 하세요.
@@ -31,7 +33,7 @@ Azure AD DS 보안 감사는 기존의 AD DS 도메인 컨트롤러에 대 한 �
 
 다음 감사 이벤트 범주를 사용할 수 있습니다.
 
-| 감사 범주 이름 | Description |
+| 감사 범주 이름 | 설명 |
 |:---|:---|
 | 계정 로그온|감사는 도메인 컨트롤러 또는 로컬 SAM (보안 계정 관리자)의 계정 데이터를 인증 하려고 시도 합니다.</p>로그온 및 로그 오프 정책 설정 및 이벤트 트랙은 특정 컴퓨터에 대 한 액세스를 시도 합니다. 이 범주의 설정 및 이벤트는 사용 되는 계정 데이터베이스에 중점을 둡니다. 이 범주에는 다음과 같은 하위 범주가 포함 됩니다.<ul><li>[자격 증명 유효성 검사 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-credential-validation)</li><li>[Kerberos 인증 서비스 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-kerberos-authentication-service)</li><li>[Kerberos 서비스 티켓 작업 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-kerberos-service-ticket-operations)</li><li>[기타 로그온/로그 오프 이벤트 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-logonlogoff-events)</li></ul>|
 | 계정 관리|사용자 및 컴퓨터 계정 및 그룹에 대 한 변경 내용을 감사 합니다. 이 범주에는 다음과 같은 하위 범주가 포함 됩니다.<ul><li>[응용 프로그램 그룹 관리 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-application-group-management)</li><li>[컴퓨터 계정 관리 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-computer-account-management)</li><li>[배포 그룹 관리 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-distribution-group-management)</li><li>[다른 계정 관리 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-account-management-events)</li><li>[보안 그룹 관리 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-security-group-management)</li><li>[사용자 계정 관리 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-user-account-management)</li></ul>|
@@ -41,13 +43,13 @@ Azure AD DS 보안 감사는 기존의 AD DS 도메인 컨트롤러에 대 한 �
 |개체 액세스| 감사는 네트워크 또는 컴퓨터에서 특정 개체 또는 개체 유형에 액세스를 시도 합니다. 이 범주에는 다음과 같은 하위 범주가 포함 됩니다.<ul><li>[생성 된 감사 응용 프로그램](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-application-generated)</li><li>[인증 서비스 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-certification-services)</li><li>[세부 파일 공유 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-detailed-file-share)</li><li>[감사 파일 공유](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-file-share)</li><li>[파일 시스템 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-file-system)</li><li>[감사 필터링 플랫폼 연결](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-filtering-platform-connection)</li><li>[감사 필터링 플랫폼 패킷 삭제](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-filtering-platform-packet-drop)</li><li>[핸들 조작 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-handle-manipulation)</li><li>[커널 개체 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-kernel-object)</li><li>[기타 개체 액세스 이벤트 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-object-access-events)</li><li>[감사 레지스트리](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-registry)</li><li>[이동식 저장소 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-removable-storage)</li><li>[SAM 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-sam)</li><li>[중앙 액세스 정책 준비 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-central-access-policy-staging)</li></ul>|
 |정책 변경|로컬 시스템 또는 네트워크에서 중요 보안 정책 변경을 감사 합니다. 정책은 일반적으로 관리자가 네트워크 리소스의 보안을 유지 하도록 설정 됩니다. 변경 내용을 모니터링 하거나 이러한 정책을 변경 하려는 시도는 네트워크에 대 한 보안 관리의 중요 한 측면이 될 수 있습니다. 이 범주에는 다음과 같은 하위 범주가 포함 됩니다.<ul><li>[감사 정책 변경 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-audit-policy-change)</li><li>[인증 정책 변경 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-authentication-policy-change)</li><li>[권한 부여 정책 변경 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-authorization-policy-change)</li><li>[감사 필터링 플랫폼 정책 변경](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-filtering-platform-policy-change)</li><li>[Audit MPSSVC 규칙 수준 정책 변경](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-mpssvc-rule-level-policy-change)</li><li>[다른 정책 변경 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-policy-change-events)</li></ul>|
 |권한 사용| 하나 이상의 시스템에서 특정 사용 권한의 사용을 감사 합니다. 이 범주에는 다음과 같은 하위 범주가 포함 됩니다.<ul><li>[중요 하지 않은 권한 사용 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-non-sensitive-privilege-use)</li><li>[중요 한 권한 사용 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-sensitive-privilege-use)</li><li>[기타 권한 사용 이벤트 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-privilege-use-events)</li></ul>|
-|시스템| 다른 범주에 포함 되지 않은 컴퓨터에 대 한 시스템 수준 변경을 감사 하 고 보안에 영향을 미칠 수 있습니다. 이 범주에는 다음과 같은 하위 범주가 포함 됩니다.<ul><li>[IPsec 드라이버 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-ipsec-driver)</li><li>[기타 시스템 이벤트 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-system-events)</li><li>[보안 상태 변경 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-security-state-change)</li><li>[보안 시스템 확장 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-security-system-extension)</li><li>[시스템 무결성 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-system-integrity)</li></ul>|
+|System| 다른 범주에 포함 되지 않은 컴퓨터에 대 한 시스템 수준 변경을 감사 하 고 보안에 영향을 미칠 수 있습니다. 이 범주에는 다음과 같은 하위 범주가 포함 됩니다.<ul><li>[IPsec 드라이버 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-ipsec-driver)</li><li>[기타 시스템 이벤트 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-system-events)</li><li>[보안 상태 변경 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-security-state-change)</li><li>[보안 시스템 확장 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-security-system-extension)</li><li>[시스템 무결성 감사](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-system-integrity)</li></ul>|
 
 ## <a name="event-ids-per-category"></a>범주별 이벤트 Id
 
  Azure AD DS 보안 감사는 특정 작업에서 감사 가능한 이벤트를 트리거할 때 다음 이벤트 Id를 기록 합니다.
 
-| 이벤트 카테고리 이름 | 이벤트 ID |
+| 이벤트 범주 이름 | 이벤트 ID |
 |:---|:---|
 |계정 로그온 보안|4767, 4774, 4775, 4776, 4777|
 |계정 관리 보안|4720, 4722, 4723, 4724, 4725, 4726, 4727, 4728, 4729, 4730, 4731, 4732, 4733, 4734, 4735, 4737, 4738, 4740, 4741, 4742, 4743, 4754, 4755, 4756, 4757, 4758, 4764, 4765, 4766, 4780, 4781, 4782, 4793, 4798, 4799, 5376, 5377|
@@ -61,27 +63,27 @@ Azure AD DS 보안 감사는 기존의 AD DS 도메인 컨트롤러에 대 한 �
 
 ## <a name="security-audit-destinations"></a>보안 감사 대상
 
-Azure AD DS 보안 감사에 대 한 대상 리소스로 Azure Storage, Azure Event Hubs 또는 Azure Log Analytics 작업 영역을 임의로 조합 하 여 사용할 수 있습니다. Azure Storage를 사용 하 여 보안 감사 이벤트를 보관할 수 있지만 Azure Log Analytics 작업 영역에서 단기 정보를 분석 하 고 보고할 수 있습니다.
+Azure AD DS 보안 감사에 대 한 대상 리소스로 Azure Storage, Azure Event Hubs 또는 Azure Log Analytics 작업 영역을 사용할 수 있습니다. 이러한 대상을 결합할 수 있습니다. 예를 들어 Azure Storage를 사용 하 여 보안 감사 이벤트를 보관할 수 있지만 Azure Log Analytics 작업 영역에서 단기 정보를 분석 하 고 보고할 수 있습니다.
 
 다음 표에서는 각 대상 리소스 종류에 대 한 시나리오를 간략하게 설명 합니다.
 
 > [!IMPORTANT]
-> Azure AD Domain Services 보안 감사를 사용 하도록 설정 하기 전에 대상 리소스를 만들어야 합니다. Azure Portal, Azure PowerShell 또는 Azure CLI를 사용 하 여 이러한 리소스를 만들 수 있습니다.
+> Azure AD DS 보안 감사를 사용 하도록 설정 하기 전에 대상 리소스를 만들어야 합니다. Azure Portal, Azure PowerShell 또는 Azure CLI를 사용 하 여 이러한 리소스를 만들 수 있습니다.
 
 | 대상 리소스 | 시나리오 |
 |:---|:---|
-|Azure Storage| 이 대상은 보관 목적으로 보안 감사 이벤트를 저장 해야 하는 경우에 사용 해야 합니다. 다른 대상은 보관 목적으로 사용할 수 있지만 이러한 대상은 보관의 기본 요구를 벗어난 기능을 제공 합니다. Azure AD DS 보안 감사 이벤트를 사용 하도록 설정 하기 전에 먼저 [Azure Storage 계정을 만듭니다](../storage/common/storage-account-create.md).|
-|Azure Event Hubs| 이 대상은 데이터 분석 소프트웨어 또는 SIEM (보안 정보 & 이벤트 관리) 소프트웨어와 같은 추가 소프트웨어를 사용 하 여 보안 감사 이벤트를 공유 해야 하는 경우에 사용 해야 합니다. Azure AD DS 보안 감사 이벤트를 사용 하도록 설정 하기 전에 [Azure Portal를 사용 하 여 이벤트 허브를 만듭니다](https://docs.microsoft.com/azure/event-hubs/event-hubs-create) .|
-|Azure Log Analytics 작업 영역| 이 대상은 Azure Portal에서 직접 보안 감사를 분석 하 고 검토 해야 하는 경우에 주로 사용 해야 합니다. Azure AD DS 보안 감사 이벤트를 사용 하도록 설정 하기 전에 [Azure Portal에 Log Analytics 작업 영역을 만듭니다.](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace)|
+|Azure Storage| 이 대상은 보관 목적으로 보안 감사 이벤트를 저장 해야 하는 경우에 사용 해야 합니다. 다른 대상은 보관 목적으로 사용할 수 있지만 이러한 대상은 보관의 기본 요구를 벗어난 기능을 제공 합니다. <br /><br />Azure AD DS 보안 감사 이벤트를 사용 하도록 설정 하기 전에 먼저 [Azure Storage 계정을 만듭니다](../storage/common/storage-account-create.md).|
+|Azure Event Hubs| 이 대상은 데이터 분석 소프트웨어 또는 SIEM (보안 정보 & 이벤트 관리) 소프트웨어와 같은 추가 소프트웨어를 사용 하 여 보안 감사 이벤트를 공유 해야 하는 경우에 사용 해야 합니다.<br /><br />Azure AD DS 보안 감사 이벤트를 사용 하도록 설정 하기 전에 [Azure Portal를 사용 하 여 이벤트 허브를 만듭니다](https://docs.microsoft.com/azure/event-hubs/event-hubs-create) .|
+|Azure Log Analytics 작업 영역| 이 대상은 Azure Portal에서 직접 보안 감사를 분석 하 고 검토 해야 하는 경우에 주로 사용 해야 합니다.<br /><br />Azure AD DS 보안 감사 이벤트를 사용 하도록 설정 하기 전에 [Azure Portal에 Log Analytics 작업 영역을 만듭니다.](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace)|
 
 ## <a name="enable-security-audit-events-using-the-azure-portal"></a>Azure Portal를 사용 하 여 보안 감사 이벤트 사용
 
 Azure Portal를 사용 하 여 Azure AD DS 보안 감사 이벤트를 사용 하도록 설정 하려면 다음 단계를 완료 합니다.
 
 > [!IMPORTANT]
-> Azure AD DS 보안 감사는 소급 되지 않습니다. 과거에는 이벤트를 검색 하거나 과거의 이벤트를 재생할 수 없습니다. Azure AD DS는 사용 하도록 설정 된 후에 발생 하는 이벤트만 보낼 수 있습니다.
+> Azure AD DS 보안 감사는 소급 되지 않습니다. 과거에는 이벤트를 검색 하거나 재생할 수 없습니다. Azure AD DS는 보안 감사를 사용 하도록 설정한 후에 발생 하는 이벤트만 보낼 수 있습니다.
 
-1. [https://portal.azure.com](https://portal.azure.com ) 에서 Azure Portal에 로그인합니다.
+1. [https://portal.azure.com](https://portal.azure.com) 에서 Azure Portal에 로그인합니다.
 1. Azure Portal 맨 위에서 **Azure AD Domain Services**를 검색 하 고 선택 합니다. 관리되는 도메인(예: *aadds.contoso.com*)을 선택합니다.
 1. Azure AD DS 창의 왼쪽에서 **진단 설정** 을 선택 합니다.
 1. 진단이 기본적으로 구성 되지 않습니다. 시작 하려면 **진단 설정 추가**를 선택 합니다.
@@ -116,7 +118,7 @@ Azure Portal를 사용 하 여 Azure AD DS 보안 감사 이벤트를 사용 하
 Azure PowerShell를 사용 하 여 Azure AD DS 보안 감사 이벤트를 사용 하도록 설정 하려면 다음 단계를 완료 합니다. 필요한 경우 먼저 [Azure PowerShell 모듈을 설치 하 고 Azure 구독에 연결](/powershell/azure/install-az-ps)합니다.
 
 > [!IMPORTANT]
-> Azure AD DS 보안 감사는 소급 되지 않습니다. 과거에는 이벤트를 검색 하거나 과거의 이벤트를 재생할 수 없습니다. Azure AD DS는 사용 하도록 설정 된 후에 발생 하는 이벤트만 보낼 수 있습니다.
+> Azure AD DS 보안 감사는 소급 되지 않습니다. 과거에는 이벤트를 검색 하거나 재생할 수 없습니다. Azure AD DS는 보안 감사를 사용 하도록 설정한 후에 발생 하는 이벤트만 보낼 수 있습니다.
 
 1. [AzAccount](/powershell/module/Az.Accounts/Connect-AzAccount) cmdlet을 사용 하 여 Azure 구독에 인증 합니다. 메시지가 표시 되 면 계정 자격 증명을 입력 합니다.
 
@@ -175,7 +177,7 @@ Azure PowerShell를 사용 하 여 Azure AD DS 보안 감사 이벤트를 사용
 * [Azure Monitor 설명서](https://docs.microsoft.com/azure/azure-monitor/)
 * [Azure Monitor에서 Log Analytics 시작](../azure-monitor/log-query/get-started-portal.md)
 * [Azure Monitor에서 로그 쿼리 시작](../azure-monitor/log-query/get-started-queries.md)
-* [Log Analytics 데이터 대시보드 만들기 및 공유](../azure-monitor/learn/tutorial-logs-dashboards.md)
+* [Log Analytics 데이터의 대시보드 만들기 및 공유](../azure-monitor/learn/tutorial-logs-dashboards.md)
 
 다음 샘플 쿼리를 사용 하 여 Azure AD DS에서 보안 감사 이벤트 분석을 시작할 수 있습니다.
 
@@ -191,11 +193,11 @@ AADDomainServicesAccountManagement
 
 ### <a name="sample-query-2"></a>예제 쿼리 2
 
-4740 년 6 월 26 2019 일 오전 9 시 사이에 모든 계정 잠금 이벤트 ()를 표시 합니다. 날짜 및 시간을 기준으로 하 여 2019 년 7 월 1 일에서 내림차순으로 정렬 됨:
+4740 년 2 월 3 일 오전 9 시 사이에 모든 계정 잠금 이벤트 () 2020를 표시 합니다. 2019 년 2 월 10 일, 자정: 날짜 및 시간을 기준으로 오름차순으로 정렬 됩니다.
 
 ```Kusto
 AADDomainServicesAccountManagement
-| where TimeGenerated >= datetime(2019-06-26 09:00) and TimeGenerated <= datetime(2019-07-01)
+| where TimeGenerated >= datetime(2020-02-03 09:00) and TimeGenerated <= datetime(2020-02-10)
 | where OperationName has "4740"
 | sort by TimeGenerated asc
 ```

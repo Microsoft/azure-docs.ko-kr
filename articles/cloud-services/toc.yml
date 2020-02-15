@@ -137,10 +137,10 @@
               href: /visualstudio/azure/vs-azure-tools-intellitrace-debug-published-cloud-services?toc=/azure/cloud-services/toc.json
         - name: 클라우드 서비스 할당 오류
           href: cloud-services-allocation-failures.md
-        - name: 애플리케이션이 TLS 1.2를 지원하지 않습니다.
-          href: applications-dont-support-TLS-1-2.md
         - name: 일반적인 클라우드 서비스 역할 재활용 원인
           href: cloud-services-troubleshoot-common-issues-which-cause-roles-recycle.md
+        - name: 애플리케이션이 TLS 1.2를 지원하지 않습니다.
+          href: applications-dont-support-tls-1-2.md
         - name: 기본 TEMP 폴더 크기가 역할에 비해 너무 작음
           href: cloud-services-troubleshoot-default-temp-folder-size-too-small-web-worker-role.md
         - name: 일반적인 배포 문제

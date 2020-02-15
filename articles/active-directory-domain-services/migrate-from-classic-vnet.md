@@ -9,18 +9,18 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/22/2020
 ms.author: iainfou
-ms.openlocfilehash: 5c50e3c17fe09b735aa4f4104615c4833164d94d
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: bd20bb008c52b7d99416aed7a0599a6e78d2acf2
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76544160"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161650"
 ---
-# <a name="preview---migrate-azure-ad-domain-services-from-the-classic-virtual-network-model-to-resource-manager"></a>미리 보기-클래식 가상 네트워크 모델에서 리소스 관리자로 Azure AD Domain Services 마이그레이션
+# <a name="migrate-azure-ad-domain-services-from-the-classic-virtual-network-model-to-resource-manager"></a>클래식 가상 네트워크 모델에서 리소스 관리자으로 Azure AD Domain Services 마이그레이션
 
 Azure Active Directory Domain Services (AD DS)는 현재 클래식 가상 네트워크 모델을 사용 하는 고객이 리소스 관리자 가상 네트워크 모델에 대해 일회성 이동을 지원 합니다. 리소스 관리자 배포 모델을 사용 하는 Azure AD DS 관리 되는 도메인은 세분화 된 암호 정책, 감사 로그 및 계정 잠금 보호와 같은 추가 기능을 제공 합니다.
 
-이 문서에서는 마이그레이션에 대 한 이점과 고려 사항을 설명 하 고 기존 Azure AD DS 인스턴스를 성공적으로 마이그레이션하는 데 필요한 단계를 설명 합니다. 이 마이그레이션 기능은 현재 미리 보기로 제공 됩니다.
+이 문서에서는 마이그레이션에 대 한 이점과 고려 사항을 설명 하 고 기존 Azure AD DS 인스턴스를 성공적으로 마이그레이션하는 데 필요한 단계를 설명 합니다.
 
 ## <a name="overview-of-the-migration-process"></a>마이그레이션 프로세스 개요
 
@@ -153,11 +153,11 @@ Azure AD DS 관리 되는 도메인을 마이그레이션할 수 있는 가상 �
 
 | 단계    | 수행한  | 예상 시간  | 가동 중지 시간  | 롤백/복원 할까요? |
 |---------|--------------------|-----------------|-----------|-------------------|
-| [1 단계-새 가상 네트워크 업데이트 및 찾기](#update-and-verify-virtual-network-settings) | Azure Portal | 15분 | 가동 중지 시간 없음 | N/A |
+| [1 단계-새 가상 네트워크 업데이트 및 찾기](#update-and-verify-virtual-network-settings) | Azure portal | 15분 | 가동 중지 시간 없음 | 해당 없음 |
 | [2 단계-마이그레이션을 위해 Azure AD DS 관리 되는 도메인 준비](#prepare-the-managed-domain-for-migration) | PowerShell | 15 ~ 30 분 (평균) | 이 명령이 완료 된 후 Azure AD DS의 가동 중지 시간이 시작 됩니다. | 롤백 및 복원 사용 가능. |
 | [3 단계-Azure AD DS 관리 되는 도메인을 기존 가상 네트워크로 이동](#migrate-the-managed-domain) | PowerShell | 1 ~ 3 시간 (평균) | 이 명령이 완료 되 면 하나의 도메인 컨트롤러를 사용할 수 있으며 가동 중지 시간이 종료 됩니다. | 오류가 발생 하면 롤백 (셀프 서비스) 및 복원을 모두 사용할 수 있습니다. |
 | [4 단계-복제본 도메인 컨트롤러 테스트 및 대기](#test-and-verify-connectivity-after-the-migration)| PowerShell 및 Azure Portal | 테스트 수에 따라 1 시간 이상 | 두 도메인 컨트롤러를 모두 사용할 수 있으며 정상적으로 작동 해야 합니다. | 해당 없음. 첫 번째 VM이 성공적으로 마이그레이션되면 롤백 또는 복원에 대 한 옵션이 없습니다. |
-| [5 단계-선택적 구성 단계](#optional-post-migration-configuration-steps) | Azure Portal 및 Vm | N/A | 가동 중지 시간 없음 | N/A |
+| [5 단계-선택적 구성 단계](#optional-post-migration-configuration-steps) | Azure Portal 및 Vm | 해당 없음 | 가동 중지 시간 없음 | 해당 없음 |
 
 > [!IMPORTANT]
 > 추가 가동 중지 시간을 방지 하려면 마이그레이션 프로세스를 시작 하기 전에이 마이그레이션 문서와 지침을 모두 읽으십시오. 마이그레이션 프로세스는 일정 시간 동안 Azure AD DS 도메인 컨트롤러의 가용성에 영향을 줍니다. 사용자, 서비스 및 응용 프로그램은 마이그레이션 프로세스 중에 관리 되는 도메인에 대해 인증할 수 없습니다.

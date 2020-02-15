@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: c937a07133dc38d2d9e1e1ef2cc324b4c8bb360e
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 7d32043ca73e9cf810b3eab5e65cb4b42b599d18
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76845073"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152927"
 ---
 # <a name="packet-inspection-with-azure-network-watcher"></a>Azure Network Watcher로 패킷 검사
 
@@ -39,7 +39,7 @@ Network Watcher의 패킷 캡처 기능을 사용하여 포털, PowerShell, CLI,
 
 이 시나리오에서는 두 엔드포인트 사이에 발생하는 TCP(전송 제어 프로토콜) 대화의 초기 RTT(왕복 시간)를 확인하는 방법을 보여 줍니다.
 
-TCP 연결이 설정되면 연결에 전송된 처음 3개 패킷은 일반적으로 세 방향 핸드셰이크라고 하는 패턴을 따릅니다. 이 핸드셰이크에 전송된 처음 두 패킷과 클라이언트로부터의 초기 요청 및 서버에서의 응답을 검사하여 연결이 설정되었을 때의 대기 시간을 계산할 수 있습니다. 이 대기 시간을 RTT(왕복 시간)라고 합니다. TCP 프로토콜 및 세 방향 핸드셰이크에 대한 자세한 내용은 다음 리소스를 참조하세요. https://support.microsoft.com/en-us/help/172983/explanation-of-the-three-way-handshake-via-tcp-ip
+TCP 연결이 설정되면 연결에 전송된 처음 3개 패킷은 일반적으로 세 방향 핸드셰이크라고 하는 패턴을 따릅니다. 이 핸드셰이크에 전송된 처음 두 패킷과 클라이언트로부터의 초기 요청 및 서버에서의 응답을 검사하여 연결이 설정되었을 때의 대기 시간을 계산할 수 있습니다. 이 대기 시간을 RTT(왕복 시간)라고 합니다. TCP 프로토콜 및 세 방향 핸드셰이크에 대한 자세한 내용은 다음 리소스를 참조하세요. [https://support.microsoft.com/en-us/help/172983/explanation-of-the-three-way-handshake-via-tcp-ip](https://support.microsoft.com/en-us/help/172983/explanation-of-the-three-way-handshake-via-tcp-ip)
 
 ### <a name="step-1"></a>1단계
 
@@ -63,7 +63,7 @@ WireShark에서 필터를 적용하려면 캡처에서 [SYN] 패킷의 "전송 �
 
 ![그림 7][7]
 
-### <a name="step-4"></a>4단계:
+### <a name="step-4"></a>4단계
 
 이제 [SYN] 비트가 설정된 패킷만 표시되도록 창을 필터링했으며 초기 RTT를 보려는 대화를 쉽게 선택할 수 있습니다. WireShark에서 RTT를 보는 간단한 방법은 "SEQ/ACK" 분석으로 표시된 드롭다운을 클릭하는 것입니다. 그러면 RTT가 표시됩니다. 이 경우 RTT는 0.0022114초 또는 2.211ms입니다.
 

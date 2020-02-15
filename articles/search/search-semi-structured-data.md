@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: d8d3204c8a5ace17ae47a17d4c4ffec2ec7977f2
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.date: 02/14/2020
+ms.openlocfilehash: 0603ad1fbecf33e5880fd7f18d35af51795f8e39
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112243"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77251994"
 ---
 # <a name="rest-tutorial-index-and-search-semi-structured-data-json-blobs-in-azure-cognitive-search"></a>REST 자습서: Azure에서 반 구조화 된 데이터 (JSON blob) 인덱싱 및 검색 Cognitive Search
 
@@ -27,13 +27,13 @@ Azure Cognitive Search는 반정형 데이터를 읽는 방법을 아는 [indexe
 > * 컨테이너를 읽고 Azure Blob Storage에서 검색 가능한 콘텐츠를 추출하기 위한 인덱서 구성 및 실행
 > * 방금 만든 인덱스 검색
 
-## <a name="prerequisites"></a>선행 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 빠른 시작에서 사용되는 서비스, 도구 및 데이터는 다음과 같습니다. 
 
 [Azure Cognitive Search 서비스를 만들거나](search-create-service-portal.md) 현재 구독에서 [기존 서비스를 찾습니다](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices). 이 자습서에서는 체험 서비스를 사용할 수 있습니다. 
 
-샘플 데이터를 저장하기 위한 [Azure Storage 계정을 만듭니다](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+샘플 데이터를 저장하기 위한 [Azure 스토리지 계정을 만듭니다](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
 
 요청을 Azure Cognitive Search에 보내는 [Postman 데스크톱 앱](https://www.getpostman.com/)을 가져옵니다.
 
@@ -55,7 +55,7 @@ REST를 호출하려면 모든 요청에 대한 액세스 키와 서비스 URL�
 
 1. [Azure Portal](https://portal.azure.com)에 로그인하고 Azure Storage 계정으로 이동한 후 **Blobs**를 클릭하고 **+ 컨테이너**를 클릭합니다.
 
-1. 샘플 데이터가 포함되도록 [Blob 컨테이너를 만듭니다](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal). 유효한 값 중 하나에 대한 공용 액세스 수준을 설정할 수 있습니다.
+1. 샘플 데이터가 포함되도록 [Blob 컨테이너를 만듭니다](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal). 유효한 값에 대한 공용 액세스 수준을 설정할 수 있습니다.
 
 1. 컨테이너를 만들었으면 연 다음, 명령 모음에서 **업로드**를 선택합니다.
 
@@ -83,7 +83,7 @@ REST 클라이언트에서 다음 세 가지 API 호출을 실행합니다.
 
 ## <a name="create-a-data-source"></a>데이터 소스 만들기
 
-[데이터 원본 API 만들기](https://docs.microsoft.com/rest/api/searchservice/create-data-source)는 인덱스할 데이터를 지정하는 Azure Cognitive Search 개체를 만듭니다.
+[데이터 원본 만들기 API](https://docs.microsoft.com/rest/api/searchservice/create-data-source) 는 인덱싱할 데이터를 지정 하는 Azure Cognitive Search 개체를 만듭니다.
 
 이 호출의 엔드포인트는 `https://[service name].search.windows.net/datasources?api-version=2019-05-06`입니다. `[service name]`을 검색 서비스의 이름으로 바꿉니다. 
 
@@ -126,7 +126,7 @@ REST 클라이언트에서 다음 세 가지 API 호출을 실행합니다.
 
 ## <a name="create-an-index"></a>인덱스 만들기
     
-두 번째 호출은 [인덱스 API 만들기](https://docs.microsoft.com/rest/api/searchservice/create-indexer)이며 검색 가능한 모든 데이터를 저장하는 Azure Cognitive Search 인덱스를 만듭니다. 인덱스는 모든 매개 변수 및 해당 특성을 지정합니다.
+두 번째 호출은 [인덱스 API 만들기](https://docs.microsoft.com/rest/api/searchservice/create-index)이며 검색 가능한 모든 데이터를 저장하는 Azure Cognitive Search 인덱스를 만듭니다. 인덱스는 모든 매개 변수 및 해당 특성을 지정합니다.
 
 이 호출에 대한 URL은 `https://[service name].search.windows.net/indexes?api-version=2019-05-06`입니다. `[service name]`을 검색 서비스의 이름으로 바꿉니다.
 
@@ -279,7 +279,7 @@ Azure Portal에서 검색 서비스 **개요** 페이지를 열고 **인덱스**
 
   ![반구조화된 검색](media/search-semi-structured-data/metadatashort.png)
 
-직접 몇 가지 쿼리를 더 실험해 보고 싶다면 자유롭게 수행해 봅니다. 논리 연산자(and, or) 및 비교 연산자(eq, ne, gt, lt, ge, le)를 사용할 수 있습니다. 문자열 비교 대/소문자를 구분 하지 않습니다.
+직접 몇 가지 쿼리를 더 실험해 보고 싶다면 자유롭게 수행해 봅니다. 논리 연산자(and, or) 및 비교 연산자(eq, ne, gt, lt, ge, le)를 사용할 수 있습니다. 문자열 비교는 대/소문자를 구분합니다.
 
 `$filter` 매개 변수는 인덱스를 만들 때 필터링 가능으로 표시된 메타데이터에서만 작동합니다.
 

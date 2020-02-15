@@ -1,5 +1,6 @@
 ---
-title: JavaScript 샘플-Azure Active Directory B2C | Microsoft Docs
+title: JavaScript 샘플
+titleSuffix: Azure AD B2C
 description: Azure Active Directory B2C에서 JavaScript를 사용하는 방법을 알아봅니다.
 services: active-directory-b2c
 author: mmacy
@@ -7,21 +8,29 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 04/25/2019
+ms.date: 02/10/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 42dc09ef4518bfda8c63ee183499b1b2e8c22991
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 1381ddb16697b1e892794604bbfafda815bd6182
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76841934"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77149079"
 ---
 # <a name="javascript-samples-for-use-in-azure-active-directory-b2c"></a>Azure Active Directory B2C에서 사용하기 위한 JavaScript 샘플
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-사용자 고유의 JavaScript 클라이언트 쪽 코드를 Azure Active Directory B2C (Azure AD B2C) 응용 프로그램에 추가할 수 있습니다. 응용 프로그램에 대해 JavaScript를 사용 하도록 설정 하려면 [사용자 지정 정책](custom-policy-overview.md)에 요소를 추가 하 고, [페이지 레이아웃](page-layout.md)을 선택 하 고, 요청에 [b2clogin.com](b2clogin.md) 를 사용 해야 합니다. 이 문서에서는 사용자 지정 정책을 변경 하 여 스크립트 실행을 사용 하도록 설정 하는 방법을 설명 합니다.
+사용자 고유의 JavaScript 클라이언트 쪽 코드를 Azure Active Directory B2C (Azure AD B2C) 응용 프로그램에 추가할 수 있습니다.
+
+응용 프로그램에 JavaScript를 사용 하도록 설정 하려면
+
+* [사용자 지정 정책](custom-policy-overview.md) 에 요소 추가
+* [페이지 레이아웃](page-layout.md) 선택
+* 요청에서 [b2clogin.com](b2clogin.md) 사용
+
+이 문서에서는 사용자 지정 정책을 변경 하 여 스크립트 실행을 사용 하도록 설정 하는 방법을 설명 합니다.
 
 > [!NOTE]
 > 사용자 흐름에 JavaScript를 사용 하도록 설정 하려면 [Azure Active Directory B2C의 javascript 및 페이지 레이아웃 버전](user-flow-javascript-overview.md)을 참조 하세요.
@@ -30,13 +39,13 @@ ms.locfileid: "76841934"
 
 ### <a name="select-a-page-layout"></a>페이지 레이아웃 선택
 
-* 응용 프로그램의 사용자 인터페이스 요소에 대 한 [페이지 레이아웃을 선택](page-layout.md) 합니다.
+* 응용 프로그램의 사용자 인터페이스 요소에 대 한 [페이지 레이아웃](contentdefinitions.md#select-a-page-layout) 을 선택 합니다.
 
-    JavaScript를 사용 하려는 경우 사용자 지정 정책의 *모든* 콘텐츠 정의에 대해 [페이지 레이아웃 버전을 정의](page-layout.md#replace-datauri-values) 해야 합니다.
+    JavaScript를 사용 하려는 경우 사용자 지정 정책의 *모든* 콘텐츠 정의에 대해 페이지 `contract` 버전으로 [페이지 레이아웃 버전을 정의](contentdefinitions.md#migrating-to-page-layout) 해야 합니다.
 
 ## <a name="add-the-scriptexecution-element"></a>ScriptExecution 요소 추가
 
-[RelyingParty](relyingparty.md) 요소에 **ScriptExecution** 요소를 추가하여 스크립트 실행을 가능하게 합니다.
+**RelyingParty** 요소에 [ScriptExecution](relyingparty.md) 요소를 추가하여 스크립트 실행을 가능하게 합니다.
 
 1. 사용자 지정 정책 파일(예: *SignUpOrSignin.xml*)을 엽니다.
 2. **RelyingParty**의 **UserJourneyBehaviors** 요소에 **ScriptExecution** 요소를 추가합니다.
@@ -52,25 +61,7 @@ ms.locfileid: "76841934"
     ```
 3. 파일을 저장하고 업로드합니다.
 
-## <a name="guidelines-for-using-javascript"></a>JavaScript 사용 지침
-
-JavaScript를 사용하여 애플리케이션의 인터페이스를 사용자 지정하는 경우 다음 지침을 따르세요.
-
-- `<a>` HTML 요소에 클릭 이벤트를 바인딩하지 않습니다.
-- Azure AD B2C 코드 또는 주석에 대한 종속성을 사용하지 않습니다.
-- Azure AD B2C HTML 요소의 순서나 계층 구조를 변경하지 않습니다. Azure AD B2C 정책을 사용하여 UI 요소의 순서를 제어합니다.
-- 다음 사항을 고려하여 RESTful 서비스를 호출할 수 있습니다.
-    - 클라이언트 쪽 HTTP 호출을 허용하도록 RESTful 서비스 CORS를 설정해야 할 수 있습니다.
-    - RESTful 서비스가 안전하고 HTTPS 프로토콜만 사용하는지 확인합니다.
-    - JavaScript를 사용하여 Azure AD B2C 엔드포인트를 직접 호출하지 않습니다.
-- JavaScript를 포함하거나 외부 JavaScript 파일에 연결할 수 있습니다. 외부 JavaScript 파일을 사용하는 경우 상대 URL이 아닌 절대 URL을 사용해야 합니다.
-- JavaScript 프레임워크:
-    - Azure AD B2C에서는 특정 버전의 jQuery를 사용합니다. 다른 버전의 jQuery를 포함하지 않습니다. 동일한 페이지에 둘 이상의 버전을 사용하면 문제가 발생합니다.
-    - RequireJS 사용은 지원되지 않습니다.
-    - 대부분의 JavaScript 프레임워크는 Azure AD B2C에서 지원되지 않습니다.
-- `window.SETTINGS`, `window.CONTENT` 개체를 호출하여 현재 UI 언어와 같은 Azure AD B2C 설정을 읽을 수 있습니다. 이러한 개체의 값을 변경하지 않습니다.
-- Azure AD B2C 오류 메시지를 사용자 지정하려면 정책의 지역화를 사용합니다.
-- 정책을 통해 수행할 수 있는 작업이 있다면 일반적으로 정책을 사용하는 것이 좋습니다.
+[!INCLUDE [active-directory-b2c-javascript-guidelines](../../includes/active-directory-b2c-javascript-guidelines.md)]
 
 ## <a name="javascript-samples"></a>JavaScript 샘플
 

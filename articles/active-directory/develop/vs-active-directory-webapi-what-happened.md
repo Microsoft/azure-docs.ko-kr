@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
-ms.openlocfilehash: 9858fdb7da80fe03498392ea93bf3c83b8a7e4dd
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 595a89ca58e970a9c886d0b6c2dd05aecd1411ef
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76699872"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159389"
 ---
 # <a name="what-happened-to-my-webapi-project-visual-studio-azure-active-directory-connected-service"></a>내 WebAPI 프로젝트(Visual Studio Azure Active Directory 연결 서비스)의 변경 내용
 
@@ -32,7 +32,7 @@ ms.locfileid: "76699872"
 
 프로젝트 파일(*.NET 참조) 및 `packages.config`(NuGet 참조)에 영향을 줍니다.
 
-| 유형 | 참조 |
+| Type | 참조 |
 | --- | --- |
 | .NET; NuGet | Microsoft.Owin |
 | .NET; NuGet | Microsoft.Owin.Host.SystemWeb |
@@ -45,7 +45,7 @@ ms.locfileid: "76699872"
 
 **디렉터리 데이터 읽기** 옵션을 선택한 경우 추가 참조는 다음과 같습니다.
 
-| 유형 | 참조 |
+| Type | 참조 |
 | --- | --- |
 | .NET; NuGet | EntityFramework |
 | .NET        | EntityFramework.SqlServer(Visual Studio 2015만 해당) |
@@ -59,7 +59,7 @@ ms.locfileid: "76699872"
 
 다음 참조가 제거됩니다(Visual Studio 2015와 마찬가지로 ASP.NET 4 프로젝트만 해당).
 
-| 유형 | 참조 |
+| Type | 참조 |
 | --- | --- |
 | .NET; NuGet | Microsoft.AspNet.Identity.Core |
 | .NET; NuGet | Microsoft.AspNet.Identity.EntityFramework |
@@ -68,7 +68,7 @@ ms.locfileid: "76699872"
 ## <a name="project-file-changes"></a>프로젝트 파일 변경 내용
 
 - `IISExpressSSLPort` 속성을 고유 번호로 설정합니다.
-- **디렉터리 데이터 읽기** 옵션을 선택한 경우 `WebProject_DirectoryAccessLevelKey` 속성을 0 또는 1로 설정합니다.
+- `WebProject_DirectoryAccessLevelKey`디렉터리 데이터 읽기**옵션을 선택한 경우** 속성을 0 또는 1로 설정합니다.
 - `IISUrl` 속성을 `https://localhost:<port>/`로 설정합니다. 여기서 `<port>`는 `IISExpressSSLPort` 값과 일치합니다.
 
 ## <a name="webconfig-or-appconfig-changes"></a>web.config 또는 app.config 변경 내용
@@ -89,7 +89,7 @@ ms.locfileid: "76699872"
     <add key="ida:MetadataAddress" value="<domain URL + /federationmetadata/2007-06/federationmetadata.xml>" />
     ```
 
-- `System.IdentityModel.Tokens.Jwt`에 대한 `<runtime><assemblyBinding>` 노드 아래에 `<dependentAssembly>` 요소를 추가했습니다.
+- `<dependentAssembly>`에 대한 `<runtime><assemblyBinding>` 노드 아래에 `System.IdentityModel.Tokens.Jwt` 요소를 추가했습니다.
 
 - **디렉터리 데이터 읽기** 옵션을 선택한 경우 `<appSettings>` 아래에 다음 구성 항목이 추가됩니다.
 
@@ -129,4 +129,4 @@ Visual Studio 2015는 연결된 서비스를 추가할 때 변경 및 제거된 
 ## <a name="next-steps"></a>다음 단계
 
 - [Azure Active Directory 인증 시나리오](authentication-scenarios.md)
-- [ASP.NET 웹앱에 Microsoft에 로그인 추가](quickstart-v1-aspnet-webapp.md)
+- [ASP.NET 웹앱에 Microsoft에 로그인 추가](quickstart-v2-aspnet-webapp.md)

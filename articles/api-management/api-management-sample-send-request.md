@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/15/2016
 ms.author: apimpm
-ms.openlocfilehash: 2c4e5d0117f046343b140ef2b2c46c074c835075
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1c86570850894a47f57a2d3587811411cc9a76eb
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60557940"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190004"
 ---
 # <a name="using-external-services-from-the-azure-api-management-service"></a>Azure API Management 서비스에서 외부 서비스 사용
 Azure API Management 서비스에서 사용할 수 있는 정책은 순수하게 들어오는 요청, 보내는 응답 및 기본 구성 정보에 기반하여 다양한 범위의 유용한 작업을 수행할 수 있습니다. 그러나 API Management 정책에서 외부 서비스와 상호 작용할 수 있으면 더 많은 기회를 얻게 됩니다.
@@ -68,7 +68,7 @@ Slack에는 인바운드 웹 후크가 있습니다. 인바운드 웹 후크를 
 `send-request` 정책을 사용하면 복잡한 처리 기능을 수행하는 외부 서비스를 사용할 수 있고 이후 정책 처리에 사용할 수 있는 API 관리 서비스에 데이터를 반환할 수 있습니다.
 
 ### <a name="authorizing-reference-tokens"></a>참조 토큰 권한 부여
-API Management의 주요 기능은 백 엔드 리소스를 보호하는 것입니다. API에서 사용하는 권한 부여 서버가 [Azure Active Directory](../active-directory/hybrid/whatis-hybrid-identity.md)처럼 [JWT 토큰](https://jwt.io/)을 해당 OAuth2 흐름의 일부로 만드는 경우 `validate-jwt` 정책을 사용하여 토큰의 유효성을 확인할 수 있습니다. 일부 권한 부여 서버는 권한 부여 서버에 다시 호출하지 않으면 확인할 수 없는 [참조 토큰](https://leastprivilege.com/2015/11/25/reference-tokens-and-introspection/)이라는 것을 만듭니다.
+API Management의 주요 기능은 백 엔드 리소스를 보호하는 것입니다. API에서 사용하는 권한 부여 서버가 [Azure Active Directory](https://jwt.io/)처럼 [JWT 토큰](../active-directory/hybrid/whatis-hybrid-identity.md)을 해당 OAuth2 흐름의 일부로 만드는 경우 `validate-jwt` 정책을 사용하여 토큰의 유효성을 확인할 수 있습니다. 일부 권한 부여 서버는 권한 부여 서버에 다시 호출하지 않으면 확인할 수 없는 [참조 토큰](https://leastprivilege.com/2015/11/25/reference-tokens-and-introspection/)이라는 것을 만듭니다.
 
 ### <a name="standardized-introspection"></a>표준화된 검사
 과거에는 권한 부여 서버를 사용하여 참조 토큰을 확인하는 표준화된 방법이 없었습니다. 그러나 최근에 제안된 표준 [RFC 7662](https://tools.ietf.org/html/rfc7662) 는 리소스 서버가 토큰의 유효성을 검사하는 방법을 정의하는 IETF에서 게시되었습니다.
@@ -102,6 +102,10 @@ API Management에 권한 부여 토큰이 있다면 API Management는 토큰의 
 
 응답 개체에서 본문을 검색할 수 있고 RFC 7622는 응답이 JSON 개체를 해야 하며 API Management에 최소한 부울 값인 `active`라는 속성을 포함해야 한다고 알립니다. `active` 가 true인 경우 토큰이 유효한 것으로 간주됩니다.
 
+또는 토큰이 유효한 지 여부를 나타내는 "활성" 필드가 권한 부여 서버에 포함 되지 않은 경우 Postman과 같은 도구를 사용 하 여 유효한 토큰에 설정 된 속성을 확인 합니다. 예를 들어 유효한 토큰 응답에 "expires_in" 라는 속성이 포함 된 경우이 속성 이름이 권한 부여 서버 응답에 있는지 확인 합니다.
+
+condition = "@ ((IResponse) context 인 경우 < 합니다. Variables ["tokenstate"]). Body.As<JObject>() 속성 ("expires_in") = = null) ">
+
 ### <a name="reporting-failure"></a>오류 보고
 `<choose>` 정책을 사용하여 토큰이 유효한지 감지할 수 있으며 그럴 경우 401 응답을 반환합니다.
 
@@ -118,7 +122,7 @@ API Management에 권한 부여 토큰이 있다면 API Management는 토큰의 
 </choose>
 ```
 
-또한 `bearer` 토큰을 사용해야 하는 방법을 설명하는 [RFC 6750](https://tools.ietf.org/html/rfc6750#section-3)대로 API Management는 401 응답을 사용하여 `WWW-Authenticate` 헤더를 반환합니다. WWW 인증은 클라이언트에게 적절한 권한이 있는 요청을 생성하는 방법을 지시하는 데 사용됩니다. OAuth2 프레임워크에 다양한 접근 방법이 가능하기 때문에 필요한 모든 정보를 통신하기가 어렵습니다. 다행스럽게도 [클라이언트가 리소스 서버에 대한 요청 권한을 제대로 부여하는 방법을 검색](https://tools.ietf.org/html/draft-jones-oauth-discovery-00)하도록 노력하고 있습니다.
+또한 [ 토큰을 사용해야 하는 방법을 설명하는 ](https://tools.ietf.org/html/rfc6750#section-3)RFC 6750`bearer`대로 API Management는 401 응답을 사용하여 `WWW-Authenticate` 헤더를 반환합니다. WWW 인증은 클라이언트에게 적절한 권한이 있는 요청을 생성하는 방법을 지시하는 데 사용됩니다. OAuth2 프레임워크에 다양한 접근 방법이 가능하기 때문에 필요한 모든 정보를 통신하기가 어렵습니다. 다행스럽게도 [클라이언트가 리소스 서버에 대한 요청 권한을 제대로 부여하는 방법을 검색](https://tools.ietf.org/html/draft-jones-oauth-discovery-00)하도록 노력하고 있습니다.
 
 ### <a name="final-solution"></a>최종 솔루션
 마지막으로 다음 정책을 얻을 수 있습니다.

@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 12/12/2019
 ms.author: cherylmc
-ms.openlocfilehash: f78f416aaeedb2905cd77e94589121050757a202
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a45a3412a1ceb8e8a9bd9fd1a34dfdbd10ba1c75
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75425755"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162432"
 ---
 # <a name="configure-openvpn-clients-for-azure-vpn-gateway"></a>Azure VPN Gateway에 대 한 OpenVPN 클라이언트 구성
 
@@ -20,7 +20,7 @@ ms.locfileid: "75425755"
 
 ## <a name="before-you-begin"></a>시작하기 전에
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 
 VPN 게이트웨이에 대해 OpenVPN을 구성하는 단계를 완료했는지 확인합니다. 자세한 내용은 [Azure VPN Gateway에 대해 OpenVPN 구성](vpn-gateway-howto-openvpn.md)을 참조하세요.
 

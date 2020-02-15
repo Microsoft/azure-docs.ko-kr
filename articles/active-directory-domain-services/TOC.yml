@@ -77,7 +77,7 @@
           href: notifications.md
         - name: 관리형 도메인 삭제
           href: delete-aadds.md
-        - name: 클래식 배포에서 마이그레이션(미리 보기)
+        - name: 클래식 배포에서 마이그레이션
           href: migrate-from-classic-vnet.md
         - name: SKU 변경
           href: change-sku.md

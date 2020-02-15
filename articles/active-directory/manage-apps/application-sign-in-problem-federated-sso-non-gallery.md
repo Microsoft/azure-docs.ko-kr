@@ -16,19 +16,19 @@ ms.date: 07/11/2017
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b8aac627936aef2cfa79bbd92d6163fe40b4d32
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 70a85a81996766b862cd6fbc3b605636385e0fda
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74274848"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159185"
 ---
 # <a name="problems-signing-in-to-a-non-gallery-application-configured-for-federated-single-sign-on"></a>페더레이션된 Single Sign-On에 대해 구성된 비갤러리 애플리케이션에 로그인하는 문제
 
 아래의 로그인 문제를 해결 하려면 다음 제안에 따라 진단을 개선 하 고 해결 단계를 자동화 하는 것이 좋습니다.
 
 - Azure Portal에서 테스트 환경을 사용할 때 더 나은 진단 및 해결 방법을 제공 하기 위해 [My Apps 보안 브라우저 확장](access-panel-extension-problem-installing.md) 을 설치 하 여 Azure AD (Azure Active Directory)를 지원 합니다.
-- Azure Portal의 앱 구성 페이지에서 테스트 환경을 사용 하 여 오류를 재현 합니다. [SAML 기반 Single Sign-On 응용 프로그램 디버그](../develop/howto-v1-debug-saml-sso-issues.md) 에 대 한 자세한 정보
+- Azure Portal의 앱 구성 페이지에서 테스트 환경을 사용 하 여 오류를 재현 합니다. [SAML 기반 Single Sign-On 응용 프로그램 디버그](../azuread-dev/howto-v1-debug-saml-sso-issues.md) 에 대 한 자세한 정보
 
 ## <a name="application-not-found-in-directory"></a>애플리케이션을 디렉터리에서 찾을 수 없습니다
 
@@ -40,13 +40,13 @@ SAML 요청의 애플리케이션에서 Azure AD로 보내진 발급자 특성�
 
 **해결 방법**
 
-SAML 요청의 `Issuer` 특성이 Azure AD에 구성 된 식별자 값과 일치 하는지 확인 합니다. 내 앱 보안 브라우저 확장을 사용 하 여 Azure Portal에서 [테스트 환경을](../develop/howto-v1-debug-saml-sso-issues.md) 사용 하는 경우 다음 단계를 수동으로 수행할 필요가 없습니다.
+SAML 요청의 `Issuer` 특성이 Azure AD에 구성 된 식별자 값과 일치 하는지 확인 합니다. 내 앱 보안 브라우저 확장을 사용 하 여 Azure Portal에서 [테스트 환경을](../azuread-dev/howto-v1-debug-saml-sso-issues.md) 사용 하는 경우 다음 단계를 수동으로 수행할 필요가 없습니다.
 
 1. [**Azure Portal**](https://portal.azure.com/)을 열고 **전역 관리자** 또는 **공동 관리자** 권한으로 로그인합니다.
 
 2. 왼쪽 주 탐색 메뉴의 맨 위에서 **모든 서비스**를 클릭하여 **Azure Active Directory 확장**을 엽니다.
 
-3. 필터 검색 상자에 **"Azure Active Directory**"를 입력하고 **Azure Active Directory** 항목을 선택합니다.
+3. 필터 검색 상자에 **“Azure Active Directory**”를 입력하고 **Azure Active Directory** 항목을 선택합니다.
 
 4. Azure Active Directory 왼쪽 탐색 메뉴에서 **엔터프라이즈 애플리케이션**을 클릭합니다.
 
@@ -70,13 +70,13 @@ SAML 요청에서 AssertionConsumerServiceURL 값은 회신 URL 값 또는 Azure
 
 **해결 방법** 
 
-SAML 요청의 `Issuer` 특성이 Azure AD에 구성 된 식별자 값과 일치 하는지 확인 합니다. 내 앱 보안 브라우저 확장을 사용 하 여 Azure Portal에서 [테스트 환경을](../develop/howto-v1-debug-saml-sso-issues.md) 사용 하는 경우 다음 단계를 수동으로 수행할 필요가 없습니다.
+SAML 요청의 `Issuer` 특성이 Azure AD에 구성 된 식별자 값과 일치 하는지 확인 합니다. 내 앱 보안 브라우저 확장을 사용 하 여 Azure Portal에서 [테스트 환경을](../azuread-dev/howto-v1-debug-saml-sso-issues.md) 사용 하는 경우 다음 단계를 수동으로 수행할 필요가 없습니다.
  
 1. [**Azure Portal**](https://portal.azure.com/)을 열고 **전역 관리자** 또는 **공동 관리자** 권한으로 로그인합니다. 
 
 2. 왼쪽 주 탐색 메뉴의 맨 위에서 **모든 서비스**를 클릭하여 **Azure Active Directory 확장**을 엽니다. 
 
-3. 필터 검색 상자에 **"Azure Active Directory**"를 입력하고 **Azure Active Directory** 항목을 선택합니다. 
+3. 필터 검색 상자에 **“Azure Active Directory**”를 입력하고 **Azure Active Directory** 항목을 선택합니다. 
 
 4. Azure Active Directory 왼쪽 탐색 메뉴에서 **엔터프라이즈 애플리케이션**을 클릭합니다. 
 
@@ -102,13 +102,13 @@ Azure AD에서 회신 URL 값을 업데이트 하 고 SAML 요청에서 응용 �
 
 **해결 방법**
 
-응용 프로그램에 하나 이상의 사용자를 직접 할당 하려면 다음 단계를 수행 합니다. 내 앱 보안 브라우저 확장을 사용 하 여 Azure Portal에서 [테스트 환경을](../develop/howto-v1-debug-saml-sso-issues.md) 사용 하는 경우 다음 단계를 수동으로 수행할 필요가 없습니다.
+응용 프로그램에 하나 이상의 사용자를 직접 할당 하려면 다음 단계를 수행 합니다. 내 앱 보안 브라우저 확장을 사용 하 여 Azure Portal에서 [테스트 환경을](../azuread-dev/howto-v1-debug-saml-sso-issues.md) 사용 하는 경우 다음 단계를 수동으로 수행할 필요가 없습니다.
 
 1. [**Azure Portal**](https://portal.azure.com/)을 열고 **전역 관리자** 권한으로 로그인합니다.
 
 2. 왼쪽 주 탐색 메뉴의 맨 위에서 **모든 서비스**를 클릭하여 **Azure Active Directory 확장**을 엽니다.
 
-3. 필터 검색 상자에 **"Azure Active Directory**"를 입력하고 **Azure Active Directory** 항목을 선택합니다.
+3. 필터 검색 상자에 **“Azure Active Directory**”를 입력하고 **Azure Active Directory** 항목을 선택합니다.
 
 4. Azure Active Directory 왼쪽 탐색 메뉴에서 **엔터프라이즈 애플리케이션**을 클릭합니다.
 
@@ -172,7 +172,7 @@ Azure AD에서는 Single Sign-On의 애플리케이션에서 보낸 SAML 요청�
 
 **해결 방법**
 
-SAML 요청의 `Issuer` 특성이 Azure AD에 구성 된 식별자 값과 일치 하는지 확인 합니다. 내 앱 보안 브라우저 확장을 사용 하 여 Azure Portal에서 [테스트 환경을](../develop/howto-v1-debug-saml-sso-issues.md) 사용 하는 경우 다음 단계를 수동으로 수행할 필요가 없습니다.
+SAML 요청의 `Issuer` 특성이 Azure AD에 구성 된 식별자 값과 일치 하는지 확인 합니다. 내 앱 보안 브라우저 확장을 사용 하 여 Azure Portal에서 [테스트 환경을](../azuread-dev/howto-v1-debug-saml-sso-issues.md) 사용 하는 경우 다음 단계를 수동으로 수행할 필요가 없습니다.
 
 1.  [**Azure Portal**](https://portal.azure.com/)을 열고 **전역 관리자** 또는 **공동 관리자** 권한으로 로그인합니다.
 
@@ -206,7 +206,7 @@ SAML 요청의 `Issuer` 특성이 Azure AD에 구성 된 식별자 값과 일치
 
 2. 왼쪽 주 탐색 메뉴의 맨 위에서 **모든 서비스**를 클릭하여 **Azure Active Directory 확장**을 엽니다.
 
-3. 필터 검색 상자에 **"Azure Active Directory**"를 입력하고 **Azure Active Directory** 항목을 선택합니다.
+3. 필터 검색 상자에 **“Azure Active Directory**”를 입력하고 **Azure Active Directory** 항목을 선택합니다.
 
 4. Azure Active Directory 왼쪽 탐색 메뉴에서 **엔터프라이즈 애플리케이션**을 클릭합니다.
 
@@ -264,7 +264,7 @@ Single Sign-On 하는 동안 로그인 요청에 명시적 회신 URL (Assertion
 
 6.  Single Sign-On을 구성하려는 애플리케이션을 선택합니다.
 
-7.  애플리케이션이 로드되면 **기본 SAML 구성**을 엽니다. **회신 url (Assertion Consumer Service URL)** 에서 시스템에 의해 생성 된 사용 하지 않거나 기본 회신 url을 삭제 합니다. 예: `https://127.0.0.1:444/applications/default.aspx`.
+7.  애플리케이션이 로드되면 **기본 SAML 구성**을 엽니다. **회신 url (Assertion Consumer Service URL)** 에서 시스템에 의해 생성 된 사용 하지 않거나 기본 회신 url을 삭제 합니다. `https://127.0.0.1:444/applications/default.aspx`)을 입력합니다.
 
 
 

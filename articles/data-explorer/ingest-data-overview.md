@@ -7,18 +7,18 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 02/18/2019
-ms.openlocfilehash: 90387a033a43c627be4ce69a93ee37c5b959732d
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.openlocfilehash: 4846a19c403cce16bed704ed4e7c70499f3b5d13
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74091791"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77187989"
 ---
 # <a name="azure-data-explorer-data-ingestion"></a>Azure 데이터 탐색기 데이터 수집
 
 데이터 수집은 하나 이상의 원본에서 데이터 레코드를 로드하여 Azure 데이터 탐색기에서 테이블을 만들거나 업데이트하는 데 사용되는 프로세스입니다. 수집한 후에는 데이터를 쿼리에 사용할 수 있게 됩니다. 아래 다이어그램은 데이터 수집을 포함하여 Azure 데이터 탐색기 작업에 대한 엔드투엔드 흐름을 보여줍니다.
 
-![데이터 흐름](media/ingest-data-overview/data-flow.png)
+![디자이너의](media/ingest-data-overview/data-flow.png)
 
 데이터 수집을 담당하는 Azure 데이터 탐색기 데이터 관리 서비스는 다음과 같은 기능을 제공합니다.
 
@@ -88,7 +88,7 @@ Kusto는 데이터를 수집하고 쿼리하는 데 사용할 수 있는 다음�
 
 **다양한 메서드의 대기 시간**:
 
-| 메서드 | 대기 시간 |
+| 방법 | 대기 시간 |
 | --- | --- |
 | **인라인 수집** | 즉시 |
 | **쿼리에서 수집** | 쿼리 시간 + 처리 시간 |
@@ -118,7 +118,7 @@ Kusto는 데이터를 수집하고 쿼리하는 데 사용할 수 있는 다음�
 ## <a name="supported-data-formats"></a>지원되는 데이터 형식
 
 쿼리에서 수집을 제외한 모든 수집 방법에 대해 Azure Data Explorer에서 구문 분석이 가능하도록 데이터 형식을 지정합니다. 
-* 지원 되는 데이터 형식은 TXT, CSV, TSV, TSVE, PSV, SCSV, SOH, JSON (줄 구분, 여러 줄), Avro 및 Parquet입니다. 
+* 지원 되는 데이터 형식은 TXT, CSV, TSV, TSVE, PSV, SCSV, SOH, JSON (줄 구분, 여러 줄), Avro, Orc 및 Parquet입니다. 
 * ZIP 및 GZIP 압축을 지원 합니다.
 
 > [!NOTE]
@@ -133,8 +133,8 @@ Kusto는 데이터를 수집하고 쿼리하는 데 사용할 수 있는 다음�
 
 스키마 매핑은 원본 데이터 필드를 대상 테이블 열에 바인딩하는 데 도움이 됩니다.
 
-* [CSV 매핑](/azure/kusto/management/mappings?branch=master#csv-mapping)(선택 사항)은 모든 서수 기반 형식에서 작동합니다. 수집 명령 매개 변수를 사용하여 수행하거나 [테이블에 미리 만들고](/azure/kusto/management/tables?branch=master#create-ingestion-mapping) 수집 명령 매개 변수에서 참조할 수 있습니다.
-* [JSON 매핑](/azure/kusto/management/mappings?branch=master#json-mapping)(필수) 및 [Avro 매핑](/azure/kusto/management/mappings?branch=master#avro-mapping)(필수)은 ingest 명령 매개 변수를 사용하여 수행할 수 있습니다. [테이블에 미리 만들고](/azure/kusto/management/tables#create-ingestion-mapping) ingest 명령 매개 변수에서 참조할 수도 있습니다.
+* [CSV 매핑](/azure/kusto/management/mappings?branch=master#csv-mapping)(선택 사항)은 모든 서수 기반 형식에서 작동합니다. 수집 명령 매개 변수를 사용하여 수행하거나 [테이블에 미리 만들고](/azure/kusto/management/create-ingestion-mapping-command) 수집 명령 매개 변수에서 참조할 수 있습니다.
+* [JSON 매핑](/azure/kusto/management/mappings?branch=master#json-mapping)(필수) 및 [Avro 매핑](/azure/kusto/management/mappings?branch=master#avro-mapping)(필수)은 ingest 명령 매개 변수를 사용하여 수행할 수 있습니다. [테이블에 미리 만들고](/azure/kusto/management/create-ingestion-mapping-command) ingest 명령 매개 변수에서 참조할 수도 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

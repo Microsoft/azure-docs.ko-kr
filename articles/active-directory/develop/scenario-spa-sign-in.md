@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/06/2019
+ms.date: 02/11/2020
 ms.author: nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 8124aea96ab00e7f09782531702dcb5cfa4ccdf2
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: eb75aa53051e7e3c424ffe131cda61324fe86b1a
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701827"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159967"
 ---
 # <a name="single-page-application-sign-in-and-sign-out"></a>단일 페이지 응용 프로그램: 로그인 및 로그 아웃
 
@@ -47,7 +47,7 @@ ms.locfileid: "76701827"
 
 ## <a name="sign-in-with-a-pop-up-window"></a>팝업 창으로 로그인
 
-### <a name="javascript"></a>JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const loginRequest = {
@@ -63,7 +63,7 @@ userAgentApplication.loginPopup(loginRequest).then(function (loginResponse) {
 });
 ```
 
-### <a name="angular"></a>Angular
+# <a name="angulartabangular"></a>[Angular](#tab/angular)
 
 MSAL 각도 래퍼를 사용 하면 경로 정의에 `MsalGuard`을 추가 하 여 응용 프로그램의 특정 경로를 보호할 수 있습니다. 이 가드는 해당 경로에 액세스 하는 경우 메서드를 호출 하 여 로그인 합니다.
 
@@ -89,10 +89,11 @@ MSAL 각도 래퍼를 사용 하면 경로 정의에 `MsalGuard`을 추가 하 �
             })]
          })
 ```
+---
 
 ## <a name="sign-in-with-redirect"></a>리디렉션으로 로그인
 
-### <a name="javascript"></a>JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 리디렉션 메서드는 주 앱에서 벗어나 이동 하기 때문에 약속을 반환 하지 않습니다. 반환 된 토큰을 처리 하 고 액세스 하려면 리디렉션 메서드를 호출 하기 전에 성공 및 오류 콜백을 등록 해야 합니다.
 
@@ -110,12 +111,14 @@ const loginRequest = {
 userAgentApplication.loginRedirect(loginRequest);
 ```
 
-### <a name="angular"></a>Angular
+# <a name="angulartabangular"></a>[Angular](#tab/angular)
 
 여기에서 코드는 팝업 창을 사용한 로그인에 대 한 섹션의 앞부분에서 설명한 것과 같습니다. 기본 흐름은 리디렉션입니다.
 
 > [!NOTE]
 > ID 토큰은 동의한 범위를 포함 하지 않으며 인증 된 사용자만 나타냅니다. 동의한 범위는 다음 단계에서 얻을 수 있는 액세스 토큰으로 반환 됩니다.
+
+---
 
 ## <a name="sign-out"></a>로그아웃
 
@@ -123,7 +126,7 @@ MSAL 라이브러리는 브라우저 저장소의 캐시를 지우고 로그 아
 
 `postLogoutRedirectUri`를 설정 하 여 로그 아웃 후 리디렉션해야 하는 URI를 구성할 수 있습니다. 또한이 URI는 응용 프로그램 등록에서 로그 아웃 URI로 등록 되어야 합니다.
 
-### <a name="javascript"></a>JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const config = {
@@ -140,7 +143,7 @@ userAgentApplication.logout();
 
 ```
 
-### <a name="angular"></a>Angular
+# <a name="angulartabangular"></a>[Angular](#tab/angular)
 
 ```javascript
 //In app.module.ts
@@ -154,6 +157,8 @@ userAgentApplication.logout();
 // In app.component.ts
 this.authService.logout();
 ```
+
+---
 
 ## <a name="next-steps"></a>다음 단계
 

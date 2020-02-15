@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 02/06/2020
 ms.author: aahi
-ms.openlocfilehash: f95d7613926cf332a498cca84563dbc0ebcbbe9b
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: ba516a548fc8385ca86526a7f2dd082b27e53208
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77086914"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77211400"
 ---
 ## <a name="general-entity-types"></a>일반 엔터티 형식:
 
@@ -22,7 +22,7 @@ ms.locfileid: "77086914"
 텍스트의 사람 이름을 인식 합니다.
 
 언어:
-* 공개 미리 보기: `English`
+* 공개 미리 보기: `Arabic`, `Czech`, `Chinese-Simplified`, `Danish`, `Dutch`, `English`, `Finnish`, `French`, `German`, `Hungarian`, `Italian`, `Japanese`, `Korean`, `Norwegian (Bokmål)`, `Polish`, `Portuguese (Portugal)`, `Portuguese (Brazil)`, `Russian``Spanish``Swedish``Turkish`
 
 | 하위 형식 이름 | Description                                                      | 모델 버전부터 사용 가능 |
 |--------------|------------------------------------------------------------------|---------------------------------------|
@@ -44,12 +44,12 @@ ms.locfileid: "77086914"
 
 언어:
 
-* 공개 미리 보기: `English`
+* 공개 미리 보기: `Arabic`, `Czech`, `Chinese-Simplified`, `Danish`, `Dutch`, `English`, `Finnish`, `French`, `German`, `Hungarian`, `Italian`, `Japanese`, `Korean`, `Norwegian (Bokmål)`, `Polish`, `Portuguese (Portugal)`, `Portuguese (Brazil)`, `Russian``Spanish``Swedish``Turkish`
 
 | 하위 형식 이름              | Description                                                                              | 모델 버전부터 사용 가능 |
 |---------------------------|------------------------------------------------------------------------------------------|----------------------------------------|
 | 해당 없음                       | 위치 (예: `Atlantic Ocean`, `library`, `Eiffel Tower`, `Statue of Liberty`  | `2019-10-01`                           |
-| 지정 학적 엔터티 (GPE) | 도시, 국가, 예 `Seattle`, `Pennsylvania`, `South Africa`, `Tokyo` | `2020-02-01`                           |
+| 지정 학적 Entity (GPE)-영어만| 도시, 국가, 예 `Seattle`, `Pennsylvania`, `South Africa`, `Tokyo` | `2020-02-01`                           |
 
 ### <a name="organization"></a>조직  
 
@@ -57,7 +57,7 @@ ms.locfileid: "77086914"
 
 언어: 
 
-* 공개 미리 보기: `English`
+* 공개 미리 보기: `Arabic`, `Czech`, `Chinese-Simplified`, `Danish`, `Dutch`, `English`, `Finnish`, `French`, `German`, `Hungarian`, `Italian`, `Japanese`, `Korean`, `Norwegian (Bokmål)`, `Polish`, `Portuguese (Portugal)`, `Portuguese (Brazil)`, `Russian``Spanish``Swedish``Turkish`
 
 | 하위 형식 이름 | Description                                                                                             | 모델 버전부터 사용 가능 |
 |--------------|---------------------------------------------------------------------------------------------------------|----------------------------------------|
@@ -156,7 +156,7 @@ ms.locfileid: "77086914"
 
 언어:
 
-* 공개 미리 보기: `English`
+* 공개 미리 보기: `Chinese-Simplified`, `English`, `French`, `German` 및 `Spanish`
 
 | 하위 형식 이름    | 예                     |
 |-------------|------------------------------|
@@ -176,7 +176,7 @@ ms.locfileid: "77086914"
 
 언어:
 
-* 공개 미리 보기: `English`
+* 공개 미리 보기: `Chinese-Simplified`, `English`, `French`, `German` 및 `Spanish`
 
 | 하위 형식 이름    | 예                     |
 |-------------|------------------------------|

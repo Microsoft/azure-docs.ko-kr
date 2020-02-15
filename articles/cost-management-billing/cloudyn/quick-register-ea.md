@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: seodec18
 ms.service: cost-management-billing
 ms.reviewer: benshy
-ms.openlocfilehash: dcb4a04ced1d36a6d0717b9a65150faacc702cc5
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: e6431d1fa73106267730db721060906e43c456d2
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76769967"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77117754"
 ---
 # <a name="register-an-azure-enterprise-agreement-and-view-cost-data"></a>Azure Enterprise Agreement 등록 및 비용 데이터 보기
 
@@ -24,7 +24,7 @@ Azure Cost Management는 Cloudyn과 비슷한 기능을 제공합니다. Azure C
 
 ## <a name="sign-in-to-azure"></a>Azure에 로그인
 
-- https://portal.azure.com 에서 Azure Portal에 로그인합니다.
+- [https://portal.azure.com](https://portal.azure.com)에서 Azure Portal에 로그인합니다.
 
 ## <a name="register-with-cloudyn"></a>Cloudyn에 등록
 

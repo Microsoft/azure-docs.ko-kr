@@ -9,14 +9,13 @@ metadata:
   ms.collection: collection
   author: bandersmsft
   ms.author: banders
-  ms.manager: dougeby
-  ms.date: 12/18/2019
-  ms.openlocfilehash: 61158d44399891f0f6293f53a11f227506fbddbe
-  ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+  ms.date: 02/13/2020
+  ms.openlocfilehash: a6d43f03970b194cc745410cf8afbe7005e16142
+  ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 01/15/2020
-  ms.locfileid: "75983327"
+  ms.lasthandoff: 02/13/2020
+  ms.locfileid: "77199639"
 landingContent:
 - title: 계정 관리
   linkLists:

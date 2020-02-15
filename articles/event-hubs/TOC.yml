@@ -32,7 +32,7 @@
           href: get-started-java-send-v2.md
         - name: Python(azure-eventhub 버전 5)
           href: get-started-python-send-v2.md
-        - name: Node.js(azure/event-hubs 버전 5)
+        - name: JavaScript(azure/event-hubs 버전 5)
           href: get-started-node-send-v2.md
         - name: Go
           href: event-hubs-go-get-started-send.md
@@ -40,14 +40,28 @@
           href: event-hubs-c-getstarted-send.md
         - name: Apache Storm(받기 전용)
           href: event-hubs-storm-getstarted-receive.md
+    - name: 송신 및 수신 이벤트(이전 버전/패키지)
+      items:
+        - name: .NET Core(Microsoft.Azure.EventHubs)
+          href: event-hubs-dotnet-standard-getstarted-send.md
+        - name: Java(azure-eventhubs)
+          href: event-hubs-java-get-started-send.md
+        - name: Python(azure-eventhub 버전 1)
+          href: event-hubs-python-get-started-send.md
+        - name: JavaScript(azure/event-hubs 버전 2)
+          href: event-hubs-node-get-started-send.md
+        - name: .NET Framework(Microsoft.Azure.EventHubs)
+          href: event-hubs-dotnet-framework-getstarted-send.md
     - name: 이벤트 캡처
       items:
         - name: Azure Portal을 사용하여 Event Hubs 캡처를 사용하도록 설정
           href: event-hubs-capture-enable-through-portal.md
         - name: Resource Manager 템플릿을 사용하여 Event Hubs 캡처를 사용하도록 설정
           href: event-hubs-resource-manager-namespace-event-hub-enable-capture.md
-        - name: Python을 사용하여 Event Hubs 데이터 캡처(azure-eventhub 버전 5)
+        - name: Python을 사용하여 캡처된 데이터 읽기(azure-eventhub 버전 5)
           href: get-started-capture-python-v2.md
+        - name: Python을 사용하여 캡처된 데이터 읽기(azure-eventhub 버전 1)
+          href: event-hubs-capture-python.md
     - name: Apache Kafka용 Event Hubs로 스트리밍
       href: event-hubs-quickstart-kafka-enabled-event-hubs.md
     - name: 전용 클러스터 만들기
@@ -126,20 +140,6 @@
               href: 'https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs/README.md'
             - name: .NET(Microsoft.Azure.EventHubs)
               href: event-hubs-programming-guide.md
-        - name: Python을 사용하여 캡처된 데이터 읽기(azure-eventhub 버전 1)
-          href: event-hubs-capture-python.md
-        - name: 송신 및 수신 이벤트(이전 버전/패키지)
-          items:
-            - name: .NET Core(Microsoft.Azure.EventHubs)
-              href: event-hubs-dotnet-standard-getstarted-send.md
-            - name: Java(azure-eventhubs)
-              href: event-hubs-java-get-started-send.md
-            - name: Python(azure-eventhub 버전 1)
-              href: event-hubs-python-get-started-send.md
-            - name: Node.js(azure/event-hubs 버전 2)
-              href: event-hubs-node-get-started-send.md
-            - name: .NET Framework(Microsoft.Azure.EventHubs)
-              href: event-hubs-dotnet-framework-getstarted-send.md
     - name: 데이터 처리
       items:
         - name: Azure Stream Analytics를 사용하여 데이터 처리
@@ -234,7 +234,7 @@
               href: /python/api/azure-eventhub/?view=azure-python
         - name: 관리 라이브러리
           href: /python/api/overview/azure/event-hub?view=azure-python
-    - name: Node.js
+    - name: JavaScript
       items:
         - name: azure/eventhubs 버전 2에서 버전 5로 마이그레이션
           href: 'https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/event-hubs/migrationguide.md'

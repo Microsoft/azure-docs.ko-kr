@@ -9,14 +9,14 @@ ms.topic: how-to
 author: peterclu
 ms.author: peterlu
 ms.date: 01/16/2020
-ms.openlocfilehash: 5df00d68b7114cc489b0708f5c2e401c87d0be15
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: d41b0499df1a62440e8c1991e29f7963224a50d6
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314031"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138160"
 ---
-# <a name="import-your-data-into-azure-machine-learning-designer"></a>Azure Machine Learning designer로 데이터 가져오기
+# <a name="import-your-data-into-azure-machine-learning-designer-preview"></a>Azure Machine Learning designer로 데이터 가져오기 (미리 보기)
 
 이 문서에서는 사용자 지정 솔루션을 만드는 디자이너에서 사용자 고유의 데이터를 가져오는 방법에 대해 알아봅니다. 다음 두 가지 방법으로 데이터를 디자이너로 가져올 수 있습니다. 
 
@@ -45,7 +45,7 @@ ms.locfileid: "76314031"
 
 ![디자이너 색상표에서 저장 된 데이터 집합의 위치를 보여 주는 스크린샷](media/how-to-designer-import-data/use-datasets-designer.png)
 
-Machine learning 작업 영역에 등록 된 모든 [파일 데이터 집합이](how-to-create-register-datasets.md#dataset-types) 모듈 팔레트에 표시 됩니다. 디자이너에서 만든 데이터 집합을 사용 하는 것으로 제한 되지 않습니다.
+
 
 > [!NOTE]
 > 디자이너는 현재 [테이블 형식 데이터 집합](how-to-create-register-datasets.md#dataset-types)처리만 지원 합니다. [파일 데이터 집합](how-to-create-register-datasets.md#dataset-types)을 사용 하려면 Python 및 R에 사용할 수 있는 Azure Machine Learning SDK를 사용 합니다.

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
-ms.openlocfilehash: 23e087205d316c4383b460afa5e6d7f86b6bd8af
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: eae649a4de88373ee79e49ecb7d5f14564a3054b
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76700025"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159491"
 ---
 # <a name="getting-started-with-azure-active-directory-aspnet-mvc-projects"></a>Azure Active Directory(ASP.NET MVC 프로젝트) 시작
 
@@ -84,4 +84,4 @@ ms.locfileid: "76700025"
 ## <a name="next-steps"></a>다음 단계
 
 - [Azure Active Directory 인증 시나리오](authentication-scenarios.md)
-- [ASP.NET 웹앱에 Microsoft에 로그인 추가](quickstart-v1-aspnet-webapp.md)
+- [ASP.NET 웹앱에 Microsoft에 로그인 추가](quickstart-v2-aspnet-webapp.md)

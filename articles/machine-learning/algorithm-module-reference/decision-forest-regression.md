@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 10/22/2019
-ms.openlocfilehash: 2c1b61d43fde00c435b83071015246bf990e873e
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 3c412937e59927a9f3f3218b0da3382f0b67c230
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76546676"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152383"
 ---
 # <a name="decision-forest-regression-module"></a>의사 결정 포리스트 회귀 모듈
 
@@ -24,7 +24,7 @@ ms.locfileid: "76546676"
 
 모델을 구성한 후에는 레이블이 지정 된 데이터 집합 및 [모델 학습](./train-model.md) 모듈을 사용 하 여 모델을 학습 해야 합니다. 그러면 학습된 모델을 예측에 사용할 수 있습니다. 
 
-## <a name="how-it-works"></a>작동 원리
+## <a name="how-it-works"></a>작동 방법
 
 의사 결정 트리는 리프 노드(의사 결정)에 도달할 때까지 이진 트리 데이터 구조를 트래버스하며 각 인스턴스에 대해 일련의 간단한 테스트를 수행하는 비파라메트릭 모델입니다.
 

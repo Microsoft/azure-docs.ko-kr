@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/15/2020
 ms.author: shvija
-ms.openlocfilehash: e70d2e07f74a48e1d99e04c5369a933cfd9cede1
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: da950c2219d3faf679953690d207372b64913ba8
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76905357"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162061"
 ---
 # <a name="git-repositories-with-samples-for-azure-event-hubs"></a>Azure Event Hubs에 대한 샘플이 있는 Git 리포지토리 
 [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples)에 대한 Event Hubs 샘플을 찾을 수 있습니다. 이러한 샘플은 [Azure Event Hubs](/azure/event-hubs/)의 주요 기능을 보여줍니다. 이 문서는 사용할 수 있는 샘플 각각을 링크를 사용하여 범주화하고 설명합니다.
@@ -46,7 +46,7 @@ ms.locfileid: "76905357"
 | azure-eventhub 버전 5 (최신) | [GitHub 위치](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/eventhub/azure-eventhub/samples) | 
 | azure-eventhub 버전 1 (레거시) | [GitHub 위치](https://github.com/Azure/azure-sdk-for-python/tree/release/eventhub-v1/sdk/eventhub/azure-eventhubs/examples) |
 
-## <a name="nodejs-samples"></a>Node.js 샘플
+## <a name="javascript-samples"></a>JavaScript 샘플
 
 | 버전 | 샘플 위치 |
 | ------- | ---------------- | 

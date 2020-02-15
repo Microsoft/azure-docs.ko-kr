@@ -10,13 +10,13 @@ ms.author: daperlov
 ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
-ms.date: 08/14/2019
-ms.openlocfilehash: 7c9f4a5a4993057ef49eecf3852afa0929c49da3
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.date: 02/12/2020
+ms.openlocfilehash: 7c9f22d27351b0f57c5a0158821f347073ae60b4
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77061576"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77187817"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Azure Data Factory에서 지속적인 통합 및 전달
 
@@ -116,9 +116,9 @@ Data Factory UX의 **ARM 템플릿** 드롭다운 메뉴에서 리소스 관리�
 
     b.  새 태스크를 만듭니다. **Azure 리소스 그룹 배포**를 검색 한 다음 **추가**를 선택 합니다.
 
-    c.  배포 작업에서 대상 데이터 팩터리에 대 한 구독, 리소스 그룹 및 위치를 선택 합니다. 필요한 경우 자격 증명을 제공 합니다.
+    다.  배포 작업에서 대상 데이터 팩터리에 대 한 구독, 리소스 그룹 및 위치를 선택 합니다. 필요한 경우 자격 증명을 제공 합니다.
 
-    .  **작업** 목록에서 **리소스 그룹 만들기 또는 업데이트**를 선택 합니다.
+    d.  **작업** 목록에서 **리소스 그룹 만들기 또는 업데이트**를 선택 합니다.
 
     e.  **템플릿** 상자 옆의 줄임표 단추 ( **...** )를 선택 합니다. 이 문서의 [각 환경에 대 한 리소스 관리자 템플릿 만들기](continuous-integration-deployment.md#create-a-resource-manager-template-for-each-environment) 섹션에서 **ARM 템플릿 가져오기** 를 사용 하 여 만든 Azure Resource Manager 템플릿을 찾아봅니다. Adf_publish 분기의 <FactoryName> 폴더에서이 파일을 찾습니다.
 
@@ -138,6 +138,9 @@ Data Factory UX의 **ARM 템플릿** 드롭다운 메뉴에서 리소스 관리�
 1. 릴리스를 트리거하려면 **릴리스 만들기**를 선택 합니다.
 
    ![릴리스 만들기 선택](media/continuous-integration-deployment/continuous-integration-image10.png)
+
+> [!IMPORTANT]
+> CI/CD 시나리오에서 서로 다른 환경의 IR (통합 런타임) 형식이 동일 해야 합니다. 예를 들어 개발 환경에 자체 호스팅 IR이 있는 경우 동일한 IR도 테스트 및 프로덕션과 같은 다른 환경에서 자체 호스트 되는 형식 이어야 합니다. 마찬가지로, 여러 단계에서 통합 런타임을 공유 하는 경우 개발, 테스트, 프로덕션 등의 모든 환경에서 통합 런타임을 연결 된 자체 호스트로 구성 해야 합니다.
 
 ### <a name="get-secrets-from-azure-key-vault"></a>Azure Key Vault에서 비밀 가져오기
 
@@ -184,11 +187,11 @@ Azure Resource Manager 템플릿에 전달 해야 하는 암호가 있는 경우
 
 활성 트리거를 업데이트하려고 하면 배포에 실패할 수 있습니다. 활성 트리거를 업데이트 하려면 수동으로 중지 한 후 배포 후에 다시 시작 해야 합니다. Azure PowerShell 작업을 사용 하 여이 작업을 수행할 수 있습니다.
 
-1.  릴리스의 **작업** 탭에서 **Azure PowerShell** 작업을 추가 합니다.
+1.  릴리스의 **작업** 탭에서 **Azure PowerShell** 작업을 추가 합니다. 작업 버전 4. *를 선택 합니다. 
 
-1.  연결 형식으로 **Azure Resource Manager** 를 선택 하 고 구독을 선택 합니다.
+1.  팩터리가 있는 구독을 선택 합니다.
 
-1.  스크립트 형식으로 **인라인 스크립트** 를 선택 하 고 코드를 제공 합니다. 다음 코드는 트리거를 중지 합니다.
+1.  스크립트 **파일 경로** 를 스크립트 유형으로 선택 합니다. 이렇게 하려면 PowerShell 스크립트를 리포지토리에 저장 해야 합니다. 다음 PowerShell 스크립트를 사용 하 여 트리거를 중지할 수 있습니다.
 
     ```powershell
     $triggersADF = Get-AzDataFactoryV2Trigger -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
@@ -196,21 +199,28 @@ Azure Resource Manager 템플릿에 전달 해야 하는 암호가 있는 경우
     $triggersADF | ForEach-Object { Stop-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_.name -Force }
     ```
 
-    ![작업 Azure PowerShell](media/continuous-integration-deployment/continuous-integration-image11.png)
-
 `Start-AzDataFactoryV2Trigger` 함수를 사용 하 여 비슷한 단계를 완료 하 여 배포 후에 트리거를 다시 시작할 수 있습니다.
 
-> [!IMPORTANT]
-> CI/CD 시나리오에서 서로 다른 환경의 IR (통합 런타임) 형식이 동일 해야 합니다. 예를 들어 개발 환경에 자체 호스팅 IR이 있는 경우 동일한 IR도 테스트 및 프로덕션과 같은 다른 환경에서 자체 호스트 되는 형식 이어야 합니다. 마찬가지로, 여러 단계에서 통합 런타임을 공유 하는 경우 개발, 테스트, 프로덕션 등의 모든 환경에서 통합 런타임을 연결 된 자체 호스트로 구성 해야 합니다.
+### <a name="sample-pre--and-post-deployment-script"></a>샘플 배포 전 및 배포 후 스크립트
 
-#### <a name="sample-pre--and-post-deployment-script"></a>샘플 배포 전 및 배포 후 스크립트
+다음 샘플 스크립트를 사용 하 여 배포 전에 트리거를 중지 하 고 나중에 다시 시작할 수 있습니다. 스크립트에는 제거된 리소스를 삭제하는 코드도 포함됩니다. 스크립트를 Azure DevOps git 리포지토리에 저장 하 고 버전 4. *를 사용 하 여 Azure PowerShell 작업을 통해 참조 합니다.
 
-다음 샘플 스크립트에서는 배포 전에 트리거를 중지 하 고 나중에 다시 시작 하는 방법을 보여 줍니다. 스크립트에는 제거된 리소스를 삭제하는 코드도 포함됩니다. 최신 버전의 Azure PowerShell을 설치하려면 [PowerShellGet으로 Windows에 Azure PowerShell 설치](https://docs.microsoft.com/powershell/azure/install-az-ps)를 참조하세요.
+배포 전 스크립트를 실행 하는 경우 **스크립트 인수** 필드에서 다음 매개 변수의 변형을 지정 해야 합니다.
+
+`-armTemplate "$(System.DefaultWorkingDirectory)/<your-arm-template-location>" -ResourceGroupName <your-resource-group-name> -DataFactoryName <your-data-factory-name>  -predeployment $true -deleteDeployment $false`
+
+
+배포 후 스크립트를 실행 하는 경우 **스크립트 인수** 필드에서 다음 매개 변수의 변형을 지정 해야 합니다.
+
+`-armTemplate "$(System.DefaultWorkingDirectory)/<your-arm-template-location>" -ResourceGroupName <your-resource-group-name> -DataFactoryName <your-data-factory-name>  -predeployment $false -deleteDeployment $true`
+
+    ![Azure PowerShell task](media/continuous-integration-deployment/continuous-integration-image11.png)
+
+다음은 배포 전 및 후에 사용할 수 있는 스크립트입니다. 삭제 된 리소스 및 리소스 참조를 계정으로 합니다.
 
 ```powershell
 param
 (
-    [parameter(Mandatory = $false)] [String] $rootFolder,
     [parameter(Mandatory = $false)] [String] $armTemplate,
     [parameter(Mandatory = $false)] [String] $ResourceGroupName,
     [parameter(Mandatory = $false)] [String] $DataFactoryName,
@@ -294,7 +304,7 @@ function Get-SortedTriggers {
         [string] $DataFactoryName,
         [string] $ResourceGroupName
     )
-    $triggers = Get-AzDataFactoryV2Trigger -DataFactoryName miliutesteu04 -ResourceGroupName miliu
+    $triggers = Get-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName
     $triggerDict = @{}
     $visited = @{}
     $stack = new-object System.Collections.Stack
@@ -313,7 +323,7 @@ function Get-SortedLinkedServices {
         [string] $DataFactoryName,
         [string] $ResourceGroupName
     )
-    $linkedServices = Get-AzDataFactoryV2LinkedService -DataFactoryName miliutesteu04 -ResourceGroupName miliu
+    $linkedServices = Get-AzDataFactoryV2LinkedService -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName
     $LinkedServiceHasDependencies = @('HDInsightLinkedService', 'HDInsightOnDemandLinkedService', 'AzureBatchLinkedService')
     $Akv = 'AzureKeyVaultLinkedService'
     $HighOrderList = New-Object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSLinkedService]
@@ -564,7 +574,7 @@ GIT 모드의 경우 템플릿 및 하드 코드 된 속성에서 매개 변수�
 * `connectionString` 속성은 `securestring` 값으로 매개 변수화 됩니다. 기본값은 없습니다. `connectionString`접미사로 사용 되는 약식 매개 변수 이름이 포함 됩니다.
 * 속성 `secretAccessKey`는 Amazon S3 연결 된 서비스의 경우와 같이 `AzureKeyVaultSecret` 되는 경우입니다. 자동으로 Azure Key Vault 암호로 매개 변수화 되 고 구성 된 Key Vault에서 인출 됩니다. 키 자격 증명 모음을 매개 변수화 할 수도 있습니다.
 
-#### <a name="datasets"></a>데이터 집합
+#### <a name="datasets"></a>데이터 세트
 
 * 데이터 집합에 대해 유형별 사용자 지정을 사용할 수 있지만 명시적으로 \*수준 구성을 사용 하지 않고도 구성을 제공할 수 있습니다. 위의 예제에서 `typeProperties` 아래의 모든 데이터 집합 속성은 매개 변수화 됩니다.
 

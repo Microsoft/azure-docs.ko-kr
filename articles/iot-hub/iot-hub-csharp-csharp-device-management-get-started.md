@@ -9,12 +9,12 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: robinsh
-ms.openlocfilehash: 79e65671613364f5cc05153d90cfdcd5959a279f
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 3b37d7e049e7daabbbb4fe1a7b49feb654e8accc
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76939318"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110250"
 ---
 # <a name="get-started-with-device-management-net"></a>장치 관리 시작 (.NET)
 
@@ -34,11 +34,13 @@ ms.locfileid: "76939318"
 
 * **Triggerreboot**. 이 앱은 시뮬레이션 된 장치 앱에서 직접 메서드를 호출 하 고, 응답을 표시 하 고, 업데이트 된 보고 속성을 표시 합니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Visual Studio.
 
 * 활성 Azure 계정. 계정이 없는 경우 몇 분 안에 [무료 계정](https://azure.microsoft.com/pricing/free-trial/) 을 만들 수 있습니다.
+
+* 방화벽에서 포트 8883가 열려 있는지 확인 합니다. 이 문서의 device 샘플에서는 포트 8883을 통해 통신 하는 MQTT 프로토콜을 사용 합니다. 이 포트는 일부 회사 및 교육용 네트워크 환경에서 차단 될 수 있습니다. 이 문제를 해결 하는 방법 및 방법에 대 한 자세한 내용은 [IoT Hub에 연결 (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub)을 참조 하세요.
 
 ## <a name="create-an-iot-hub"></a>IoT Hub 만들기
 
@@ -74,7 +76,7 @@ ms.locfileid: "76939318"
 
    이 단계에서는 [Azure IoT 서비스 SDK](https://www.nuget.org/packages/Microsoft.Azure.Devices/) NuGet 패키지 및 해당 종속 항목에 참조를 다운로드, 설치 및 추가합니다.
 
-1. **Program.cs** 파일 위에 다음 `using` 문을 추가합니다.
+1. `using`Program.cs**파일 위에 다음** 문을 추가합니다.
 
    ```csharp
    using Microsoft.Azure.Devices;
@@ -157,7 +159,7 @@ ms.locfileid: "76939318"
 
    이 단계에서는 [Azure IoT 장치 SDK](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/) NuGet 패키지 및 해당 종속성에 대 한 참조를 다운로드, 설치 및 추가 합니다.
 
-1. **Program.cs** 파일 위에 다음 `using` 문을 추가합니다.
+1. `using`Program.cs**파일 위에 다음** 문을 추가합니다.
 
     ```csharp
     using Microsoft.Azure.Devices.Client;

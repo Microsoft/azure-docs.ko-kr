@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: bb0f2e3fc3b84f5e1f9fe999b31fffadaa5915d4
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: c2dc98d683d822628dc9ea1b4ead02279ea10ea5
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74687589"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77251807"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Linux의 Azure App Service에 대한 FAQ
 
@@ -30,13 +30,13 @@ Linux의 App Service를 릴리스하면서 현재 플랫폼에 기능을 추가�
 
 **런타임 스택을 구성할 때 시작 파일 섹션에 대해 예상되는 값은 무엇인가요?**
 
-| 겹치기           | 예상 값                                                                         |
+| 스택           | 예상 값                                                                         |
 |-----------------|----------------------------------------------------------------------------------------|
-| Java SE         | JAR 앱을 시작 하는 명령 (예: `java -jar my-app.jar --server.port=80`) |
+| Java SE         | JAR 앱을 시작 하는 명령 (예: `java -jar /home/site/wwwroot/app.jar --server.port=80`) |
 | Tomcat, Wildfly | 필요한 구성을 수행 하는 스크립트의 위치 (예: `/home/site/deployments/tools/startup_script.sh`)          |
 | Node.js         | PM2 구성 파일 또는 스크립트 파일                                |
 | .NET Core       | `dotnet <myapp>.dll` 컴파일된 DLL 이름입니다.                                 |
-| 루비            | 앱을 초기화 하려는 Ruby 스크립트                     |
+| Ruby            | 앱을 초기화 하려는 Ruby 스크립트                     |
 
 이러한 명령이 나 스크립트는 기본 제공 Docker 컨테이너가 시작 된 후 응용 프로그램 코드를 시작 하기 전에 실행 됩니다.
 
@@ -84,7 +84,7 @@ Linux 웹앱에 대한 Git 배포가 실패하면 다음 옵션 중 하나를 �
    curl -X POST -u <user> --data-binary @<zipfile> https://{your-sitename}.scm.azurewebsites.net/api/zipdeploy
    ```
 
-   `curl` 명령을 찾을 수 없다는 오류가 발생하면 이전 `curl` 명령을 실행하기 전에 `apt-get install curl`을 사용하여 curl을 설치해야 합니다.
+   `curl` 명령을 찾을 수 없다는 오류가 발생하면 이전 `apt-get install curl` 명령을 실행하기 전에 `curl`을 사용하여 curl을 설치해야 합니다.
 
 ## <a name="language-support"></a>언어 지원
 

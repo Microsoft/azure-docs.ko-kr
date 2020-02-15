@@ -7,17 +7,17 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 10/01/2019
-ms.openlocfilehash: 0d8890eeba7fcb53517d6ee653c8dd09866805ef
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.date: 02/12/2020
+ms.openlocfilehash: 3d8f4a28961be7e0ece517e00026d9711d8f67e9
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73177372"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198874"
 ---
 # <a name="optimize-apache-spark-jobs-in-hdinsight"></a>HDInsight에서 Apache Spark 작업 최적화
 
-특정 워크로드에 대해 [Apache Spark](https://spark.apache.org/) 클러스터 구성을 최적화하는 방법에 대해 알아봅니다.  가장 일반적인 과제는 부적절 한 구성 (특히 크기가 잘못 된 실행 기), 장기 실행 작업, 데카르트 연산을 발생 시키는 작업 때문에 메모리 압력입니다. 적절한 캐싱을 사용하고 [데이터 기울이기](#optimize-joins-and-shuffles)를 허용하여 작업 속도를 높일 수 있습니다. 최고의 성능을 얻기 위해 장기 실행 및 리소스 소모 Spark 작업 실행을 모니터링하고 검토합니다.
+특정 워크로드에 대해 [Apache Spark](https://spark.apache.org/) 클러스터 구성을 최적화하는 방법에 대해 알아봅니다.  가장 일반적인 과제는 부적절 한 구성 (특히 크기가 잘못 된 실행 기), 장기 실행 작업, 데카르트 연산을 발생 시키는 작업 때문에 메모리 압력입니다. 적절한 캐싱을 사용하고 [데이터 기울이기](#optimize-joins-and-shuffles)를 허용하여 작업 속도를 높일 수 있습니다. 최고의 성능을 얻기 위해 장기 실행 및 리소스 소모 Spark 작업 실행을 모니터링하고 검토합니다. HDInsight에서 Apache Spark를 시작 하는 방법에 대 한 자세한 내용은 [Azure Portal를 사용 하 여 Apache Spark 클러스터 만들기](apache-spark-jupyter-spark-sql-use-portal.md)를 참조 하세요.
 
 다음 섹션에서는 일반적인 Spark 작업 최적화 및 권장 사항에 대해 설명합니다.
 
@@ -63,7 +63,9 @@ Spark는 csv, json, xml, parquet, orc, avro 등의 여러 가지 형식을 지�
 | Azure Blob Storage (보안) | **wasbs:** /url/ | **Standard** | yes | 임시 클러스터 |
 | Azure Data Lake Storage Gen 2| **abfs:** /url/ | **보다 빠름** | yes | 임시 클러스터 |
 | Azure Data Lake Storage Gen 1| **adl:** //url/ | **보다 빠름** | yes | 임시 클러스터 |
-| 로컬 HDFS | **hdfs:** //url/ | **가장 빠름** | 아닙니다. | 대화형 24/7 클러스터 |
+| 로컬 HDFS | **hdfs:** //url/ | **가장 빠름** | 예 | 대화형 24/7 클러스터 |
+
+HDInsight 클러스터에 사용 가능한 저장소 옵션에 대 한 자세한 내용은 [Azure hdinsight 클러스터와 함께 사용 하기 위한 저장소 옵션 비교](../hdinsight-hadoop-compare-storage-options.md)를 참조 하세요.
 
 ## <a name="use-the-cache"></a>캐시 사용
 
@@ -74,7 +76,7 @@ Spark는 `.persist()`, `.cache()`, `CACHE TABLE`과 같은 다양한 방법을 �
     * 는 분할에서 작동 하지 않으며 이후 Spark 릴리스에서 변경 될 수 있습니다.
 
 * 스토리지 수준 캐싱(권장)
-    * [Alluxio](https://www.alluxio.io/)를 사용하여 구현될 수 있음
+    * [IO 캐시](apache-spark-improve-performance-iocache.md) 기능을 사용 하 여 HDInsight에서 구현 될 수 있습니다.
     * 메모리 내 캐싱 및 SSD 캐싱 사용
 
 * 로컬 HDFS(권장)
@@ -102,10 +104,12 @@ Spark는 데이터를 메모리에 두고 작업하기 때문에 Spark 작업 �
 '메모리 부족' 메시지를 해결하려면 다음을 시도합니다.
 
 * DAG 관리 순서 섞기를 검토합니다. 맵 쪽에서 원본 데이터를 줄이거나 사전 분할(또는 버킷화)하여 줄이고 단일 순서 섞기로 최대화하여 전송된 데이터 양을 줄입니다.
-* 집계, 창 작업 및 기타 함수를 제공하지만 메모리 제한은 없는 `GroupByKey`보다 고정된 메모리 제한이 있는 `ReduceByKey`을 선호합니다.
-* 드라이버에서 모든 작업을 수행하는 `Reduce`보다 실행기 또는 파티션에서 더 많은 작업을 수행하는 `TreeReduce`를 선호합니다.
+* 집계, 창 작업 및 기타 함수를 제공하지만 메모리 제한은 없는 `ReduceByKey`보다 고정된 메모리 제한이 있는 `GroupByKey`을 선호합니다.
+* 드라이버에서 모든 작업을 수행하는 `TreeReduce`보다 실행기 또는 파티션에서 더 많은 작업을 수행하는 `Reduce`를 선호합니다.
 * 하위 수준의 RDD 개체보다 데이터 프레임을 활용합니다.
 * "상위 N개", 다양한 집계 또는 창 작업 같이 작업을 캡슐화하는 ComplexTypes를 만듭니다.
+
+추가 문제 해결 단계는 [Azure HDInsight의 Apache Spark에 대 한 OutOfMemoryError 예외](apache-spark-troubleshoot-outofmemory.md)를 참조 하세요.
 
 ## <a name="optimize-data-serialization"></a>데이터 serialization 최적화
 
@@ -193,7 +197,11 @@ Spark 클러스터 워크로드에 따라 기본이 아닌 Spark 구성을 사�
 3. 병렬 애플리케이션에서 쿼리를 배포합니다.
 4. 평가 실행과 GC 오버 헤드와 같은 이전 요소를 기준으로 크기를 수정 합니다.
 
-타임라인 보기, SQL 그래프, 작업 통계 등을 확인하여 이상값 또는 다른 성능 문제의 쿼리 성능을 모니터링합니다. 경우에 따라 하나 또는 몇 개의 실행기가 다른 실행기보다 느린 경우 작업을 실행하는 데 훨씬 많은 시간이 소요될 수 있습니다. 이러한 현상은 대규모 클러스터(30개가 넘는 노드)에서 자주 발생합니다. 이 경우 스케줄러가 느린 작업을 보정할 수 있도록 작업을 더 많은 수로 나눕니다. 예를 들어 애플리케이션에서 실행기 코어의 수보다 최소한 두 배의 작업이 있어야 합니다. `conf: spark.speculation = true`를 사용하면 작업을 추측에 근거하여 실행해 볼 수 있습니다.
+Ambari를 사용 하 여 실행자를 구성 하는 방법에 대 한 자세한 내용은 [Apache Spark 설정-Spark 실행자](apache-spark-settings.md#configuring-spark-executors)를 참조 하세요.
+
+타임라인 보기, SQL 그래프, 작업 통계 등을 확인하여 이상값 또는 다른 성능 문제의 쿼리 성능을 모니터링합니다. YARN 및 Spark 기록 서버를 사용 하 여 Spark 작업을 디버깅 하는 방법에 대 한 자세한 내용은 [Azure HDInsight에서 실행 중인 디버그 Apache Spark 작업](apache-spark-job-debugging.md)을 참조 하세요. YARN Timeline 서버를 사용 하는 방법에 대 한 팁은 [Access APACHE HADOOP YARN 응용 프로그램 로그](../hdinsight-hadoop-access-yarn-app-logs-linux.md)를 참조 하세요.
+
+경우에 따라 하나 또는 몇 개의 실행기가 다른 실행기보다 느린 경우 작업을 실행하는 데 훨씬 많은 시간이 소요될 수 있습니다. 이러한 현상은 대규모 클러스터(30개가 넘는 노드)에서 자주 발생합니다. 이 경우 스케줄러가 느린 작업을 보정할 수 있도록 작업을 더 많은 수로 나눕니다. 예를 들어 애플리케이션에서 실행기 코어의 수보다 최소한 두 배의 작업이 있어야 합니다. `conf: spark.speculation = true`를 사용하면 작업을 추측에 근거하여 실행해 볼 수 있습니다.
 
 ## <a name="optimize-job-execution"></a>작업 실행 최적화
 
@@ -206,7 +214,7 @@ Spark 클러스터 워크로드에 따라 기본이 아닌 Spark 구성을 사�
 * [Intel PAL 도구](https://github.com/intel-hadoop/PAT)는 CPU, 스토리지 및 네트워크 대역폭 사용률을 모니터링합니다.
 * [Oracle Java 8 Mission Control](https://www.oracle.com/technetwork/java/javaseproducts/mission-control/java-mission-control-1998576.html)은 Spark 및 실행기 코드를 프로파일링합니다.
 
-Spark 2.x 쿼리 성능의 핵심은 텅스텐 엔진으로, 전단계 코드 생성에 따라 달라집니다. 경우에 따라 전단계 코드 생성이 사용하지 않도록 설정될 수 있습니다. 예를 들어 집계식에서 변경이 불가능한 유형(`string`)을 사용하면 `HashAggregate` 대신 `SortAggregate`이 표시됩니다. 예를 들어 성능을 향상시키려면 다음을 시도한 다음 코드 생성을 다시 사용하도록 설정합니다.
+Spark 2.x 쿼리 성능의 핵심은 텅스텐 엔진으로, 전단계 코드 생성에 따라 달라집니다. 경우에 따라 전단계 코드 생성이 사용하지 않도록 설정될 수 있습니다. 예를 들어 집계식에서 변경이 불가능한 유형(`string`)을 사용하면 `SortAggregate` 대신 `HashAggregate`이 표시됩니다. 예를 들어 성능을 향상시키려면 다음을 시도한 다음 코드 생성을 다시 사용하도록 설정합니다.
 
 ```sql
 MAX(AMOUNT) -> MAX(cast(AMOUNT as DOUBLE))

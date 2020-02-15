@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
-author: xiaoharper
-ms.author: amlstudiodocs
+author: likebupt
+ms.author: keli19
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 01/06/2017
-ms.openlocfilehash: 1b9a836491e989b676663d13b8eebb994c5145d8
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 482dc0ab549ec6b9f05bc9f74a3d31ac13646ce5
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75454798"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169201"
 ---
 # <a name="deploy-an-azure-machine-learning-studio-classic-web-service"></a>Azure Machine Learning Studio (클래식) 웹 서비스 배포
 
@@ -34,7 +34,7 @@ BES에 대한 입력은 RRS에서 사용하는 데이터 입력과 유사합니�
 
 * **[학습 실험 만들기]** -Studio (클래식)에서는 다양 한 기본 제공 기계 학습 알고리즘 집합을 사용 하 여 제공 하는 학습 데이터를 사용 하 여 예측 분석 모델을 학습 하 고 테스트할 수 있습니다.
 * **[예측 실험으로 변환]** - 기존 데이터로 모델을 학습시키고 새 데이터의 점수를 매기는 데 사용할 준비가 되면, 예측을 위해 실험을 준비하고 간소화합니다.
-* **[새 웹 서비스]** 또는 **[클래식 웹 서비스]** 로 **배포** - 예측 실험을 Azure 웹 서비스로 배포하는 경우 사용자는 데이터를 모델로 전송하고 모델의 예측을 수신할 수 있습니다.
+* 새 웹 서비스 **[ 또는 ]** 클래식 웹 서비스 **[로 ]배포** - 예측 실험을 Azure 웹 서비스로 배포하는 경우 사용자는 데이터를 모델로 전송하고 모델의 예측을 수신할 수 있습니다.
 
 ## <a name="create-a-training-experiment"></a>학습 실험 만들기
 
@@ -222,8 +222,8 @@ Machine Learning Studio (클래식) 웹 서비스에 액세스 하는 방법에 
 <!-- internal links -->
 [학습 실험 만들기]: #create-a-training-experiment
 [예측 실험으로 변환]: #convert-the-training-experiment-to-a-predictive-experiment
-[새 웹 서비스]: #deploy-it-as-a-new-web-service
-[클래식 웹 서비스]: #deploy-it-as-a-classic-web-service
+[ 또는 ]: #deploy-it-as-a-new-web-service
+[로 ]: #deploy-it-as-a-classic-web-service
 [신규]: #deploy-it-as-a-new-web-service
 [classic]: #deploy-the-predictive-experiment-as-a-classic-web-service
 [Access]: #access-the-Web-service

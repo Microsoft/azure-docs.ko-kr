@@ -3,12 +3,12 @@ title: Azure VM 백업에서 파일 및 폴더 복구
 description: 이 문서에서는 Azure 가상 컴퓨터 복구 지점에서 파일 및 폴더를 복구 하는 방법에 대해 알아봅니다.
 ms.topic: conceptual
 ms.date: 03/01/2019
-ms.openlocfilehash: 86a46e606e9425cf4951817ca3afa23fe57dae52
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 4565929b5475e2348685fbec77b596b65ed73fd6
+ms.sourcegitcommit: d12880206cf9926af6aaf3bfafda1bc5b0ec7151
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76294085"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77114331"
 ---
 # <a name="recover-files-from-azure-virtual-machine-backup"></a>Azure Virtual Machine 백업에서 파일 복구
 
@@ -56,6 +56,8 @@ Azure Backup에서는 복구 지점이라고도 하는 Azure VM 백업에서 [Az
 7. 다운로드 위치(일반적으로 다운로드 폴더)에서 실행 파일 또는 스크립트를 마우스 오른쪽 단추로 클릭하고 관리자 자격 증명을 사용하여 실행합니다. 메시지가 표시 되 면 암호를 입력 하거나 메모리에서 암호를 붙여넣은 다음 **enter**키를 누릅니다. 올바른 암호를 입력하면 스크립트가 복구 지점에 연결됩니다.
 
     ![파일 복구 메뉴](./media/backup-azure-restore-files-from-vm/executable-output.png)
+
+8. Linux 컴퓨터의 경우 python 스크립트가 생성 됩니다. 스크립트를 다운로드 하 여 관련/호환 Linux 서버에 복사 해야 합니다. ```chmod +x <python file name>```를 사용 하 여 실행 하려면 권한을 수정 해야 할 수 있습니다. 그런 다음 ```./<python file name>```를 사용 하 여 python 파일을 실행 합니다.
 
 스크립트가 성공적으로 실행 되도록 하려면 [액세스 요구 사항](#access-requirements) 섹션을 참조 하세요.
 
@@ -161,8 +163,8 @@ RAID 디스크에 다른 LVM이 구성 되어 있는 경우 LVM 파티션에 대
 
 |서버 OS | 호환되는 클라이언트 OS  |
 | --------------- | ---- |
-| Windows Server 2019    | Windows 10 |
-| Windows Server 2016    | Windows 10 |
+| Windows Server 2019    | 윈도우 10 |
+| Windows Server 2016    | 윈도우 10 |
 | Windows Server 2012 R2 | Windows 8.1 |
 | Windows Server 2012    | Windows 8  |
 | Windows Server 2008 R2 | Windows 7   |

@@ -5,12 +5,12 @@ ms.assetid: 9058fb2f-8a93-4036-a921-97a0772f503c
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f808ff2a88a86df25b555f94257168e2d176e7f8
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: fd52c4cc5cd9d4c01ddb355bdfb28d0952e65759
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76963662"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77210262"
 ---
 # <a name="optimize-the-performance-and-reliability-of-azure-functions"></a>Azure Functions의 성능 및 안정성 최적화
 
@@ -62,7 +62,7 @@ Idempotent 함수는 특히 타이머 트리거 사용이 권장됩니다. 예�
 
 큐 항목을 이미 처리한 경우 함수는 수행되지 않습니다.
 
-Azure Functions 플랫폼에서 사용하는 구성 요소를 위해 이미 제공된 방어 수단을 활용하세요. 예를 들어 [Azure Storage 큐 트리거 및 바인딩](functions-bindings-storage-queue.md#trigger---poison-messages)을 위한 설명서에서 **포이즌 큐 메시지 처리**를 참조하세요. 
+Azure Functions 플랫폼에서 사용하는 구성 요소를 위해 이미 제공된 방어 수단을 활용하세요. 예를 들어 **Azure Storage 큐 트리거 및 바인딩**을 위한 설명서에서 [포이즌 큐 메시지 처리](functions-bindings-storage-queue.md#trigger---poison-messages)를 참조하세요. 
 
 ## <a name="scalability-best-practices"></a>확장성 모범 사례
 
@@ -104,7 +104,7 @@ FUNCTIONS_WORKER_PROCESS_COUNT는 요구를 충족 하도록 응용 프로그램
 
 ### <a name="receive-messages-in-batch-whenever-possible"></a>가능하면 항상 일괄 처리로 메시지를 수신합니다.
 
-Event Hub와 같은 일부 트리거는 단일 호출에서 일괄 처리 메시지를 수신할 수 있습니다.  메시지를 일괄 처리하면 성능이 향상됩니다.  [host.json 참조 설명서](functions-host-json.md)에 설명된 대로 `host.json` 파일에서 최대 일괄 처리 크기를 구성할 수 있습니다.
+Event Hub와 같은 일부 트리거는 단일 호출에서 일괄 처리 메시지를 수신할 수 있습니다.  메시지를 일괄 처리하면 성능이 향상됩니다.  `host.json`host.json 참조 설명서[에 설명된 대로 ](functions-host-json.md) 파일에서 최대 일괄 처리 크기를 구성할 수 있습니다.
 
 함수의 C# 경우 형식을 강력한 형식의 배열로 변경할 수 있습니다.  예를 들어 메서드 서명은 `EventData sensorEvent` 대신 `EventData[] sensorEvent`일 수 있습니다.  다른 언어의 경우 [다음과 같이](https://github.com/Azure/azure-webjobs-sdk-templates/blob/df94e19484fea88fc2c68d9f032c9d18d860d5b5/Functions.Templates/Templates/EventHubTrigger-JavaScript/function.json#L10)일괄 처리를 사용 하도록 설정 하려면 `function.json`의 카디널리티 속성을 `many`로 명시적으로 설정 해야 합니다.
 
@@ -112,7 +112,7 @@ Event Hub와 같은 일부 트리거는 단일 호출에서 일괄 처리 메시
 
 호스트 런타임 및 트리거 동작의 구성에 함수 앱의 `host.json` 파일을 사용할 수 있습니다.  동작을 일괄 처리하는 것 외에도 여러 트리거에 대한 동시성을 관리할 수 있습니다. 이러한 옵션의 값을 조정하면 호출된 함수의 요구에 맞게 각 인스턴스의 크기를 조정할 수 있습니다.
 
-호스트 json 파일의 설정은 함수의 *단일 인스턴스* 내에서 앱 내의 모든 함수에 적용 됩니다. 예를 들어 두 개의 HTTP 함수를 사용 하 고 [`maxConcurrentRequests`](functions-bindings-http-webhook.md#hostjson-settings) 요청을 25로 설정 하는 함수 앱을 사용 하는 경우, http 트리거 중 하나에 대 한 요청은 공유 25 개의 동시 요청에 계산 됩니다.  해당 함수 앱의 크기가 10 개의 인스턴스로 조정 된 경우 두 함수는 250 동시 요청을 효과적으로 허용 합니다 (10 개 인스턴스 * 인스턴스당 동시 요청 25 개). 
+호스트 json 파일의 설정은 함수의 *단일 인스턴스* 내에서 앱 내의 모든 함수에 적용 됩니다. 예를 들어 두 개의 HTTP 함수를 사용 하 고 [`maxConcurrentRequests`](functions-bindings-http-webhook-output.md#hostjson-settings) 요청을 25로 설정 하는 함수 앱을 사용 하는 경우, http 트리거 중 하나에 대 한 요청은 공유 25 개의 동시 요청에 계산 됩니다.  해당 함수 앱의 크기가 10 개의 인스턴스로 조정 된 경우 두 함수는 250 동시 요청을 효과적으로 허용 합니다 (10 개 인스턴스 * 인스턴스당 동시 요청 25 개). 
 
 다른 호스트 구성 옵션은 [host. json 구성 문서](functions-host-json.md)에서 찾을 수 있습니다.
 

@@ -1,20 +1,19 @@
 ---
 title: Azure 스폿 Vm 및 확장 집합 인스턴스의 오류 코드
 description: 스폿 Vm 및 확장 집합 인스턴스를 사용할 때 나타날 수 있는 오류 코드에 대해 알아봅니다.
-services: virtual-machines-windows
 author: cynthn
 manager: gwallace
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 11/20/2019
 ms.author: cynthn
-ms.openlocfilehash: 97e68f4d0d671ffa0f697c484c502b9070a3f20f
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 1863c510967dcf80044d768aee1a37643a068ce4
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781944"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77115862"
 ---
 # <a name="preview-error-messages-for-spot-vms-and-scale-sets"></a>미리 보기: 지점 Vm 및 확장 집합에 대 한 오류 메시지
 
@@ -27,7 +26,7 @@ ms.locfileid: "74781944"
 다음은 스폿 Vm 및 확장 집합을 사용할 때 받을 수 있는 몇 가지 오류 코드입니다.
 
 
-| 키 | 메시지 | 설명 |
+| 키 | 메시지 | Description |
 |-----|---------|-------------|
 | SkuNotAvailable | '\<리소스\>' 리소스에 대해 요청 된 계층은 현재 '\<subscriptionID\>' 구독에 대 한 '\<location\>' 위치에서 사용할 수 없습니다. 다른 계층을 시도 하거나 다른 위치에 배포 하세요. | 이 위치에는 VM 또는 확장 집합 인스턴스를 만들 수 있는 Azure 스폿 용량이 부족 합니다. |
 | EvictionPolicyCanBeSetOnlyOnAzureSpotVirtualMachines  |  제거 정책은 Azure 스폿 Virtual Machines에만 설정할 수 있습니다. | 이 VM은 스폿 VM이 아니므로 제거 정책을 설정할 수 없습니다. |

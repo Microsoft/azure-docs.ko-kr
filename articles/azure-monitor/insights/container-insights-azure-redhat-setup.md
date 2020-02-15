@@ -2,13 +2,13 @@
 title: 컨테이너에 대 한 Azure Monitor를 사용 하 여 Azure Red Hat OpenShift 클러스터 구성 | Microsoft Docs
 description: 이 문서에서는 Azure Red Hat OpenShift에서 호스트 되 Azure Monitor를 사용 하 여 Kubernetes 클러스터의 모니터링을 구성 하는 방법을 설명 합니다.
 ms.topic: conceptual
-ms.date: 01/13/2020
-ms.openlocfilehash: 0d5ed362d6eb76e2fa04b88e9e45c890118a53eb
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.date: 02/12/2020
+ms.openlocfilehash: 215835c04a1877ccdb6454c4c3902332b9dc1ab2
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75979782"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190084"
 ---
 # <a name="configure-azure-red-hat-openshift-clusters-with-azure-monitor-for-containers"></a>컨테이너에 대 한 Azure Monitor를 사용 하 여 Azure Red Hat OpenShift 클러스터 구성
 
@@ -21,7 +21,7 @@ ms.locfileid: "75979782"
 컨테이너에 대 한 Azure Monitor는 다음과 같은 지원 되는 메서드를 사용 하 여 새로운 또는 하나 이상의 기존 Azure Red Hat OpenShift 배포를 사용 하도록 설정할 수 있습니다.
 
 - Azure Portal 또는 Azure Resource Manager 템플릿을 사용 하 여 기존 클러스터의 경우
-- Azure Resource Manager 템플릿을 사용 하는 새 클러스터의 경우
+- Azure Resource Manager 템플릿을 사용 하거나 [Azure CLI](https://docs.microsoft.com/cli/azure/openshift?view=azure-cli-latest#az-openshift-create)를 사용 하 여 새 클러스터를 만드는 동안입니다.
 
 ## <a name="supported-and-unsupported-features"></a>지원 되거나 지원 되지 않는 기능
 
@@ -30,7 +30,7 @@ ms.locfileid: "75979782"
 - 라이브 데이터 (미리 보기)
 - 클러스터 노드 및 pod에서 [메트릭을 수집](container-insights-update-metrics.md) 하 고 Azure Monitor 메트릭 데이터베이스에 저장 합니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 - 컨테이너에 대 한 Azure Monitor의 기능을 사용 하도록 설정 하 고 액세스 하려면 최소한 Azure 구독에서 Azure *참가자* 역할의 멤버 여야 하 고 컨테이너에 대 한 Azure Monitor로 구성 된 Log Analytics 작업 영역의 구성원 인 [*Log Analytics 참가자*](../platform/manage-access.md#manage-access-using-azure-permissions) 역할의 구성원 이어야 합니다.
 

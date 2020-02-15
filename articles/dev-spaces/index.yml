@@ -1,9 +1,9 @@
 ### YamlMime:Landing
 title: Azure Dev Spaces 설명서
-summary: Azure Dev Spaces를 사용하면 종속성을 복제하거나 모의하지 않고 AKS(Azure Kubernetes Service)에서 전체 마이크로서비스 애플리케이션을 테스트하고 반복적으로 개발할 수 있습니다. Azure Dev Spaces는 공유 AKS 클러스터에서 팀과 협업하는 부담과 복잡성을 줄입니다. 또한 AKS에서 컨테이너를 직접 실행하고 디버그할 수 있습니다.
+summary: Azure Dev Spaces는 더 큰 애플리케이션의 컨텍스트에서 코드를 쉽게 실행하고 디버깅할 수 있는 AKS의 확장입니다. 코드를 엔드투엔드로 테스트하고, 클러스터에서 실행 중인 코드의 중단점을 적중하고, 팀 멤버 간에 간섭 없이 개발 클러스터를 공유할 수 있습니다.
 metadata:
   title: Azure Dev Spaces 설명서
-  description: Azure Dev Spaces를 사용하면 종속성을 복제하거나 모의하지 않고 AKS(Azure Kubernetes Service)에서 전체 마이크로서비스 애플리케이션을 테스트하고 반복적으로 개발할 수 있습니다. Azure Dev Spaces는 공유 AKS 클러스터에서 팀과 협업하는 부담과 복잡성을 줄입니다. 또한 AKS에서 컨테이너를 직접 실행하고 디버그할 수 있습니다.
+  description: Azure Dev Spaces는 더 큰 애플리케이션의 컨텍스트에서 코드를 쉽게 실행하고 디버깅할 수 있는 AKS의 확장입니다. 코드를 엔드투엔드로 테스트하고, 클러스터에서 실행 중인 코드의 중단점을 적중하고, 팀 멤버 간에 간섭 없이 개발 클러스터를 공유할 수 있습니다.
   services: azure-dev-spaces
   ms.service: azure-dev-spaces
   ms.topic: landing-page
@@ -11,12 +11,12 @@ metadata:
   ms.author: zarhoads
   manager: gwallace
   ms.date: 09/30/2019
-  ms.openlocfilehash: 96fe99c5eb2ef8600ee9cca1e63f9fc3451919c2
-  ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+  ms.openlocfilehash: 8871b713806b7c80520d4b52112f84056d20bc26
+  ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 12/25/2019
-  ms.locfileid: "75438352"
+  ms.lasthandoff: 02/07/2020
+  ms.locfileid: "77057365"
 landingContent:
 - title: Azure Dev Spaces 정보
   linkLists:

@@ -177,6 +177,8 @@
           href: betterworks-tutorial.md
         - name: BGS Online
           href: bgsonline-tutorial.md
+        - name: BIC Cloud Design
+          href: bic-cloud-design-tutorial.md
         - name: Bime
           href: bime-tutorial.md
         - name: Birst Agile Business Analytics
@@ -959,6 +961,8 @@
           href: netsuite-tutorial.md
         - name: New Relic
           href: new-relic-tutorial.md
+        - name: New Relic(한정판 릴리스)
+          href: new-relic-limited-release-tutorial.md
         - name: Nexonia
           href: nexonia-tutorial.md
         - name: Nimblex
@@ -1087,7 +1091,7 @@
           href: presspage-tutorial.md
         - name: Printix
           href: printix-tutorial.md
-        - name: Prisma 클라우드
+        - name: Prisma Cloud SSO
           href: prisma-cloud-tutorial.md
         - name: Procore SSO
           href: procoresso-tutorial.md
@@ -1467,6 +1471,8 @@
           href: veracode-tutorial.md
         - name: Veritas Enterprise Vault.cloud SSO
           href: veritas-tutorial.md
+        - name: Verkada Command
+          href: verkada-command-tutorial.md
         - name: Versal
           href: versal-tutorial.md
         - name: Viareport(유럽)
@@ -1726,6 +1732,8 @@
           href: Proxyclick-provisioning-tutorial.md
         - name: Peakon
           href: peakon-provisioning-tutorial.md
+        - name: PureCloud by Genesys
+          href: purecloud-by-genesys-provisioning-tutorial.md
         - name: Reward Gateway
           href: reward-gateway-provisioning-tutorial.md
         - name: RFPIO

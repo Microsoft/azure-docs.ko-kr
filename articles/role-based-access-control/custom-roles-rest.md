@@ -1,5 +1,5 @@
 ---
-title: REST API를 사용 하 여 Azure 리소스에 대 한 사용자 지정 역할 만들기 또는 업데이트-Azure | Microsoft Docs
+title: REST API 사용 하 여 Azure 리소스에 대 한 사용자 지정 역할 만들기 또는 업데이트
 description: REST API를 사용 하 여 Azure 리소스에 대 한 RBAC (역할 기반 액세스 제어)를 사용 하 여 사용자 지정 역할을 나열, 생성, 업데이트 또는 삭제 하는 방법에 대해 알아봅니다.
 services: active-directory
 documentationcenter: na
@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 474de8934ec7e27df601fe80809566a801e6af61
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 145bc45e1b7faeddc23cf5f0662337e15ab51c29
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75452930"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137353"
 ---
 # <a name="create-or-update-custom-roles-for-azure-resources-using-the-rest-api"></a>REST API를 사용 하 여 Azure 리소스에 대 한 사용자 지정 역할 만들기 또는 업데이트
 
@@ -38,7 +38,7 @@ ms.locfileid: "75452930"
 
 1. *{Filter}* 를 역할 유형으로 바꿉니다.
 
-    | 필터링 | Description |
+    | 필터 | 설명 |
     | --- | --- |
     | `$filter=type%20eq%20'CustomRole'` | CustomRole 유형을 기반으로 필터링 |
 
@@ -54,7 +54,7 @@ ms.locfileid: "75452930"
 
 1. URI 내에서 *{scope}* 를 나열하려는 역할에 대한 범위로 바꿉니다.
 
-    | 범위 | 유형 |
+    | 범위 | 형식 |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | 리소스 그룹 |
@@ -62,7 +62,7 @@ ms.locfileid: "75452930"
 
 1. *{Filter}* 를 역할 유형으로 바꿉니다.
 
-    | 필터링 | Description |
+    | 필터 | 설명 |
     | --- | --- |
     | `$filter=type%20eq%20'CustomRole'` | CustomRole 유형을 기반으로 필터링 |
 
@@ -78,7 +78,7 @@ ms.locfileid: "75452930"
 
 1. URI 내에서 *{scope}* 를 나열하려는 역할에 대한 범위로 바꿉니다.
 
-    | 범위 | 유형 |
+    | 범위 | 형식 |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | 리소스 그룹 |
@@ -86,7 +86,7 @@ ms.locfileid: "75452930"
 
 1. *{Filter}* 를 역할의 표시 이름으로 바꿉니다.
 
-    | 필터링 | Description |
+    | 필터 | 설명 |
     | --- | --- |
     | `$filter=roleName%20eq%20'{roleDisplayName}'` | 역할의 정확한 표시 이름에 대한 URL 인코딩 형식을 사용합니다. 예: `$filter=roleName%20eq%20'Virtual%20Machine%20Contributor'` |
 
@@ -104,7 +104,7 @@ ms.locfileid: "75452930"
 
 1. URI 내에서 *{scope}* 를 나열하려는 역할에 대한 범위로 바꿉니다.
 
-    | 범위 | 유형 |
+    | 범위 | 형식 |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | 리소스 그룹 |
@@ -152,7 +152,7 @@ ms.locfileid: "75452930"
 
 1. URI 내에서 *{scope}* 를 사용자 지정 역할의 첫 번째 `assignableScopes`로 바꿉니다.
 
-    | 범위 | 유형 |
+    | 범위 | 형식 |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | 리소스 그룹 |
@@ -217,7 +217,7 @@ ms.locfileid: "75452930"
 
 1. URI 내에서 *{scope}* 를 사용자 지정 역할의 첫 번째 `assignableScopes`로 바꿉니다.
 
-    | 범위 | 유형 |
+    | 범위 | 형식 |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | 리소스 그룹 |
@@ -301,7 +301,7 @@ ms.locfileid: "75452930"
 
 1. URI 내에서 *{scope}* 를 삭제하려는 사용자 지정 역할에 대한 범위로 바꿉니다.
 
-    | 범위 | 유형 |
+    | 범위 | 형식 |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | 리소스 그룹 |

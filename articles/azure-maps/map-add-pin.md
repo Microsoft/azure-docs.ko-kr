@@ -1,6 +1,6 @@
 ---
 title: 지도에 기호 계층 추가 | Microsoft Azure 맵
-description: 이 문서에서는 Microsoft Azure Maps 웹 SDK를 사용 하 여 지도에서 기호를 사용자 지정 하 고 추가 하는 방법에 대해 설명 합니다.
+description: 이 문서에서는 기호 계층을 사용 하 여 기호를 사용자 지정 하 고 Microsoft Azure Maps 웹 SDK를 사용 하 여 맵에 기호를 추가 하는 방법에 대해 알아봅니다.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 07/29/2019
@@ -9,16 +9,18 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 8c39c7b57167d65dfa639d41665f5d5b38110183
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: b8d131dcc798fb2fe1d4bb650cd5b0a68903381b
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76933134"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209701"
 ---
 # <a name="add-a-symbol-layer-to-a-map"></a>맵에 기호 계층 추가
 
-데이터 소스에 연결 되 고 지정 된 지점에서 아이콘 및/또는 텍스트를 렌더링 하는 데 사용 되는 기호입니다. 기호 계층은 WebGL를 사용 하 여 렌더링 되며 지도에서 많은 지점의 컬렉션을 렌더링 하는 데 사용 됩니다. HTML 표식과 비교할 때 기호 계층은 더 나은 성능으로 많은 수의 point 데이터를 지도에 렌더링 합니다. 그러나 기호 계층은 스타일 지정을 위한 기존 CSS 및 HTML 요소를 지원 하지 않습니다.  
+기호를 데이터 소스에 연결 하 고이를 사용 하 여 지정 된 지점에서 아이콘이 나 텍스트를 렌더링 합니다. 
+
+기호 계층은 WebGL을 사용하여 렌더링됩니다. 기호 계층을 사용 하 여 지도에서 많은 지점의 컬렉션을 렌더링 합니다. HTML 표식과 비교할 때 기호 계층은 더 나은 성능으로 많은 수의 point 데이터를 지도에 렌더링 합니다. 그러나 기호 계층은 스타일 지정을 위한 기존 CSS 및 HTML 요소를 지원 하지 않습니다.  
 
 > [!TIP]
 > 기본적으로 기호 계층은 데이터 원본에 있는 모든 도형의 좌표를 렌더링합니다. 점 기 하 도형 기능만 렌더링 하도록 계층을 제한 하려면 계층의 `filter` 속성을 `['==', ['geometry-type'], 'Point']`로 설정 하거나 원하는 경우 `['any', ['==', ['geometry-type'], 'Point'], ['==', ['geometry-type'], 'MultiPoint']]` 하 고, MultiPoint 기능도 포함할 수 있습니다.
@@ -33,7 +35,9 @@ ms.locfileid: "76933134"
 
 ## <a name="add-a-symbol-layer"></a>기호 계층 추가
 
-지도에 기호 계층을 추가 하려면 몇 가지 단계를 수행 해야 합니다. 먼저 데이터 원본을 만들어 맵에 추가 합니다. 그런 다음 기호 계층을 만들고 데이터 소스에 전달 하 여 데이터 소스에서 데이터를 검색할 수 있습니다. 마지막으로 데이터를 렌더링할 수 있도록 데이터를 데이터 소스에 추가 해야 합니다. 다음 코드에서는 로드 된 후 맵에 추가 해야 하는 코드를 보여 줍니다. 코드는 기호 계층을 사용 하 여 맵에 단일 점을 렌더링 합니다. 
+지도에 기호 계층을 추가 하려면 몇 가지 단계를 수행 해야 합니다. 먼저 데이터 원본을 만들어 맵에 추가 합니다. 기호 계층을 만듭니다. 그런 다음 데이터 소스를 기호 계층에 전달 하 여 데이터 소스에서 데이터를 검색 합니다. 마지막으로 데이터 소스에 데이터를 추가 하 여 렌더링할 항목이 있는지를 파악 합니다. 
+
+아래 코드는 로드 된 후 맵에 추가 해야 하는 항목을 보여 줍니다. 이 샘플에서는 기호 계층을 사용 하 여 지도에서 단일 점을 렌더링 합니다. 
 
 ```javascript
 //Create a data source and add it to the map.
@@ -61,7 +65,7 @@ dataSource.add(new atlas.data.Point([0, 0]));
 
 <br/>
 
-<iframe height='500' scrolling='no' title='핀 고정 위치 전환' src='//codepen.io/azuremaps/embed/ZqJjRP/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)에 의한 Pen <a href='https://codepen.io/azuremaps/pen/ZqJjRP/'>핀 고정 위치 전환</a>을 참조하세요.
+<iframe height='500' scrolling='no' title='핀 고정 위치 전환' src='//codepen.io/azuremaps/embed/ZqJjRP/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io/azuremaps/pen/ZqJjRP/'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)에 의한 Pen <a href='https://codepen.io'>핀 고정 위치 전환</a>을 참조하세요.
 </iframe>
 
 > [!TIP]
@@ -73,7 +77,7 @@ dataSource.add(new atlas.data.Point([0, 0]));
 
 <br/>
 
-<iframe height='500' scrolling='no' title='사용자 지정 기호 이미지 아이콘' src='//codepen.io/azuremaps/embed/WYWRWZ/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)의 펜 <a href='https://codepen.io/azuremaps/pen/WYWRWZ/'>사용자 지정 기호 이미지 아이콘</a>을 참조하세요.
+<iframe height='500' scrolling='no' title='사용자 지정 기호 이미지 아이콘' src='//codepen.io/azuremaps/embed/WYWRWZ/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io/azuremaps/pen/WYWRWZ/'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)의 펜 <a href='https://codepen.io'>사용자 지정 기호 이미지 아이콘</a>을 참조하세요.
 </iframe>
 
 > [!TIP]
@@ -85,7 +89,7 @@ dataSource.add(new atlas.data.Point([0, 0]));
 
 <br/>
 
-<iframe height='700' scrolling='no' title='기호 계층 옵션' src='//codepen.io/azuremaps/embed/PxVXje/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)의 펜 <a href='https://codepen.io/azuremaps/pen/PxVXje/'>기호 계층 옵션</a>을 참조하세요.
+<iframe height='700' scrolling='no' title='기호 계층 옵션' src='//codepen.io/azuremaps/embed/PxVXje/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io/azuremaps/pen/PxVXje/'>CodePen</a>에서 Azure Maps(<a href='https://codepen.io/azuremaps'>@azuremaps</a>)의 펜 <a href='https://codepen.io'>기호 계층 옵션</a>을 참조하세요.
 </iframe>
 
 > [!TIP]

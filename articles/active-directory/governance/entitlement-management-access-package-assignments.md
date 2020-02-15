@@ -16,12 +16,12 @@ ms.date: 10/15/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0501da153567f3b95804d8a8a6576d8cf199762c
-ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
+ms.openlocfilehash: d5a2107974cd63c0d02aaeb555430453c39990bd
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74553986"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120437"
 ---
 # <a name="view-add-and-remove-assignments-for-an-access-package-in-azure-ad-entitlement-management"></a>Azure AD 자격 관리에서 액세스 패키지에 대 한 할당 보기, 추가 및 제거
 
@@ -48,6 +48,10 @@ Azure AD 자격 관리에서 패키지, 정책 및 상태에 대 한 액세스 �
 1. 만료 된 할당을 보려면 필터 상태를 클릭 하 고 **만료 됨**을 선택 합니다.
 
 1. 필터링 된 목록의 CSV 파일을 다운로드 하려면 **다운로드**를 클릭 합니다.
+
+### <a name="viewing-assignments-programmatically"></a>프로그래밍 방식으로 할당 보기
+
+Microsoft Graph를 사용 하 여 액세스 패키지에서 할당을 검색할 수도 있습니다.  위임 된 `EntitlementManagement.ReadWrite.All` 권한이 있는 응용 프로그램을 사용 하 여 적절 한 역할의 사용자는 API를 호출 하 여 [accessPackageAssignments를 나열할](https://docs.microsoft.com/graph/api/accesspackageassignment-list?view=graph-rest-beta)수 있습니다.
 
 ## <a name="directly-assign-a-user"></a>사용자를 직접 할당
 
@@ -76,6 +80,10 @@ Azure AD 자격 관리에서 패키지, 정책 및 상태에 대 한 액세스 �
 1. **추가** 를 클릭 하 여 선택한 사용자를 액세스 패키지에 직접 할당 합니다.
 
     몇 분 후에 **새로 고침** 을 클릭 하 여 할당 목록에서 사용자를 확인 합니다.
+
+### <a name="directly-assigning-users-programmatically"></a>프로그래밍 방식으로 사용자 직접 할당
+
+또한 Microsoft Graph를 사용 하 여 사용자를 액세스 패키지에 직접 할당할 수 있습니다.  위임 된 `EntitlementManagement.ReadWrite.All` 권한이 있는 응용 프로그램을 사용 하 여 적절 한 역할의 사용자는 API를 호출 하 여 [accessPackageAssignmentRequest를 만들](https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-post?view=graph-rest-beta)수 있습니다.
 
 ## <a name="remove-an-assignment"></a>할당 제거
 

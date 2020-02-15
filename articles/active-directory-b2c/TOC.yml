@@ -182,8 +182,6 @@
             - name: 사용자 지정 이메일
               href: custom-email.md
               displayName: verification
-            - name: 페이지 레이아웃
-              href: page-layout.md
             - name: JavaScript 사용
               href: javascript-samples.md
             - name: 암호 복잡성
@@ -383,6 +381,8 @@
       href: custom-policy-developer-notes.md
     - name: 코드 샘플
       href: 'https://azure.microsoft.com/resources/samples/?service=active-directory-b2c'
+    - name: 페이지 레이아웃 버전
+      href: page-layout.md
     - name: 쿠키 정의
       href: cookie-definitions.md
       displayName: 'cookies, SameSite'

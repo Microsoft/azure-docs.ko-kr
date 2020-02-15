@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 10/30/2019
 ms.author: mahender
 ms.reviewer: yevbronsh
-ms.openlocfilehash: 4e2a76e40206e1562d565571dbe22e5d9d0e930e
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: 3e414e40cb92f5c7e8c2e1d083419d57e06a0995
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75834159"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161922"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>App Service 및 Azure Functions에 대한 관리 ID를 사용하는 방법
 
@@ -270,7 +270,7 @@ App Service 및 Azure Functions에서 토큰을 가져오는 간단한 REST 프�
 > |resource|수신 웹 서비스의 앱 ID URI입니다.|
 > |token_type|토큰 유형 값을 나타냅니다. Azure AD는 전달자 유형만 지원합니다. 전달자 토큰에 대한 자세한 내용은 [OAuth 2.0 권한 부여 프레임워크: 전달자 토큰 사용(RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt)을 참조하세요.|
 
-이 응답은 [AAD 서비스 간 액세스 토큰 요청에 대한 응답](../active-directory/develop/v1-oauth2-client-creds-grant-flow.md#service-to-service-access-token-response)과 동일합니다.
+이 응답은 [AAD 서비스 간 액세스 토큰 요청에 대한 응답](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md#get-a-token)과 동일합니다.
 
 > [!NOTE]
 > 환경 변수는 프로세스를 처음 시작할 때 설정되므로 애플리케이션에 대한 관리 ID를 사용하도록 설정한 후 코드에서 `MSI_ENDPOINT` 및 `MSI_SECRET`를 사용하기 전에 먼저 애플리케이션을 다시 시작하거나 해당 코드를 다시 배포해야 할 수 있습니다.

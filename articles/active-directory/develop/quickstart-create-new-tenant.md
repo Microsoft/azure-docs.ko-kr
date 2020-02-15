@@ -12,13 +12,13 @@ ms.topic: quickstart
 ms.date: 02/05/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur
-ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 860577938eab0f7561e9b66d0f58c9fc0d077b26
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.custom: aaddev, identityplatformtop40, fasttrack-edit
+ms.openlocfilehash: 74747e1bc5247e2a95a180b7361eafe8ca795bc2
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76704156"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160709"
 ---
 # <a name="quickstart-set-up-a-tenant"></a>빠른 시작: 테넌트 설정
 
@@ -57,7 +57,7 @@ Microsoft ID 플랫폼을 통해 개발자는 다양한 사용자 지정 Microso
 
 ### <a name="create-a-new-azure-ad-tenant"></a>새 Azure AD 테넌트 만들기
 
-Azure AD 테넌트가 없거나 개발을 위한 새 테넌트를 만들려는 경우 [디렉터리 만들기 환경](https://portal.azure.com/#create/Microsoft.AzureActiveDirectory)을 따릅니다. 새 테넌트를 만들려면 다음 정보를 제공해야 합니다.
+아직 Azure AD 테넌트가 없거나 개발을 위한 새 테넌트를 만들려면 [빠른 시작](../fundamentals/active-directory-access-create-new-tenant.md)을 참조하거나 [디렉터리 만들기 환경](https://portal.azure.com/#create/Microsoft.AzureActiveDirectory)을 따르세요. 새 테넌트를 만들려면 다음 정보를 제공해야 합니다.
 
 - **조직 이름**
 - **초기 도메인** - *.onmicrosoft.com의 일부가 됩니다. 나중에 더 도메인을 사용자 지정할 수 있습니다.

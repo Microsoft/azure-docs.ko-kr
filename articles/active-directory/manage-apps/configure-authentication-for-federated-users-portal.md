@@ -15,12 +15,12 @@ ms.date: 04/08/2019
 ms.author: mimart
 ms.custom: seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 174cdc31d7e5f29716febc7f68bbb410f33926c6
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 1300ecff416962bda4da800c5eff134951658846
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74274636"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159168"
 ---
 # <a name="configure-azure-active-directory-sign-in-behavior-for-an-application-by-using-a-home-realm-discovery-policy"></a>홈 영역 검색 정책을 사용하여 애플리케이션에 대한 Azure Active Directory 로그인 동작 구성
 
@@ -152,7 +152,7 @@ Azure AD PowerShell cmdlet을 사용하여 다음을 포함한 몇 가지 시나
 - 정책이 구성된 애플리케이션 나열
 
 
-### <a name="prerequisites"></a>선행 조건
+### <a name="prerequisites"></a>사전 요구 사항
 다음 예제에서는 Azure AD에서 애플리케이션 서비스 주체에 대해 정책을 생성, 업데이트, 연결 및 삭제합니다.
 
 1.  시작하려면 최신 Azure AD PowerShell cmdlet 미리 보기를 다운로드합니다. 
@@ -271,4 +271,4 @@ Get-AzureADPolicyAppliedObject -id <ObjectId of the Policy>
 ## <a name="next-steps"></a>다음 단계
 - Azure AD에서 인증이 작동하는 방법에 대한 자세한 내용은 [Azure AD의 인증 시나리오](../develop/authentication-scenarios.md)를 참조하세요.
 - 사용자 Single Sign-On에 대 한 자세한 내용은 [Azure Active Directory의 응용 프로그램에 대 한 single sign-on을](what-is-single-sign-on.md)참조 하세요.
-- 모든 개발자 관련 콘텐츠에 대한 개요는 [Active Directory 개발자 가이드](../develop/v1-overview.md)를 참조하세요.
+- [Microsoft id 플랫폼](../develop/v2-overview.md) 을 방문 하 여 모든 개발자 관련 콘텐츠에 대 한 개요를 확인 하세요.

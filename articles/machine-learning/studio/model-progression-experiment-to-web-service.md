@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
-author: xiaoharper
-ms.author: amlstudiodocs
+author: likebupt
+ms.author: keli19
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 03/20/2017
-ms.openlocfilehash: ce1e7d3b3b9908d5c4608f6ab62e9b743f80c0b0
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: b5640100067ec62a1a0813e5d5fc808f19f5a97d
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838006"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169016"
 ---
 # <a name="how-a-machine-learning-studio-classic-model-progresses-from-an-experiment-to-a-web-service"></a>실험에서 웹 서비스로 Machine Learning Studio (클래식) 모델을 진행 하는 방법
 Azure Machine Learning Studio (클래식)은 예측 분석 모델을 나타내는 ***실험*** 을 개발, 실행, 테스트 및 반복 하는 데 사용할 수 있는 대화형 캔버스를 제공 합니다. 다음 작업에 사용할 수 있는 모듈을 매우 다양하게 갖추고 있습니다.
@@ -49,7 +49,7 @@ Azure Machine Learning Studio (클래식)은 *예측 분석 모델*을 개발 �
 ***학습 실험*** 은 Machine Learning Studio (클래식)에서 웹 서비스를 개발 하는 초기 단계입니다. 학습 실험의 목적은 기계 학습 모델을 개발, 테스트, 반복하고 최종적으로 학습할 장소를 제공하는 것입니다. 최적의 솔루션을 찾으면서 여러 모델을 동시에 학습할 수도 있으나 실험을 완료한 후에는 하나의 학습 모델을 선택하고 나머지 모델은 실험에서 제거합니다. 예측 분석 실험을 개발 하는 예는 [Azure Machine Learning Studio (클래식)에서 신용 위험 평가에 대 한 예측 분석 솔루션 개발](tutorial-part1-credit-risk.md)을 참조 하세요.
 
 ### <a name="the-predictive-experiment"></a>예측 실험
-학습 실험에서 학습 된 모델을 만들었으면 **웹 서비스 설정** 을 클릭 하 고 Machine Learning Studio (클래식)에서 **예측 웹 서비스** 를 선택 하 여 학습 실험을 예측으로 변환 하는 프로세스를 시작 합니다.  ***실험***. 예측 실험의 목적은 학습된 모델을 사용하여 새 데이터에 점수를 매기며, 최종적으로는 조작 가능한 Azure 웹 서비스가 되도록 하는 것입니다.
+학습 실험에서 학습 된 모델을 만들었으면 **웹 서비스 설정** 을 클릭 하 고 Machine Learning Studio (클래식)에서 **예측 웹 서비스** 를 선택 하 여 학습 실험을 ***예측 실험***으로 변환 하는 프로세스를 시작 합니다. 예측 실험의 목적은 학습된 모델을 사용하여 새 데이터에 점수를 매기며, 최종적으로는 조작 가능한 Azure 웹 서비스가 되도록 하는 것입니다.
 
 이 변환은 다음 단계를 통해 수행됩니다.
 

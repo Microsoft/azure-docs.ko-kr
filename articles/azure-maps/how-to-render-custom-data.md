@@ -1,31 +1,31 @@
 ---
 title: 래스터 맵에서 사용자 지정 데이터 렌더링 | Microsoft Azure 맵
 description: 이 문서에서는 Microsoft Azure Maps 정적 이미지 서비스를 사용 하 여 래스터 맵에 사용자 지정 데이터를 렌더링 하는 방법을 알아봅니다.
-author: walsehgal
-ms.author: v-musehg
+author: farah-alyasari
+ms.author: v-faalya
 ms.date: 01/23/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: f036847a9d46231d65d150cd4e0a76471d1ad612
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 78068a8deda68434daaeb18cc994099d74d9ccdf
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76766008"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209956"
 ---
 # <a name="render-custom-data-on-a-raster-map"></a>래스터 맵에서 사용자 지정 데이터 렌더링
 
-이 문서에서는 이미지 컴퍼지션 기능과 함께 [정적 이미지 서비스](https://docs.microsoft.com/rest/api/maps/render/getmapimage) 를 사용 하 여 래스터 맵 위에 오버레이를 허용 하는 방법을 설명 합니다. 이미지 컴포지션에는 사용자 지정 압정, 레이블 및 기 하 오버레이와 같은 추가 데이터를 사용 하 여 래스터 타일을 다시 가져오는 기능이 포함 되어 있습니다.
+이 문서에서는 이미지 컴퍼지션 기능과 함께 [정적 이미지 서비스](https://docs.microsoft.com/rest/api/maps/render/getmapimage)를 사용 하 여 래스터 맵 위에 오버레이를 허용 하는 방법을 설명 합니다. 이미지 컴포지션에는 사용자 지정 압정, 레이블 및 기 하 오버레이와 같은 추가 데이터를 사용 하 여 래스터 타일을 다시 가져오는 기능이 포함 되어 있습니다.
 
 사용자 지정 압정, 레이블 및 기 하 도형 오버레이를 렌더링 하기 위해 Postman 응용 프로그램을 사용할 수 있습니다. Azure Maps [데이터 서비스 api](https://docs.microsoft.com/rest/api/maps/data) 를 사용 하 여 오버레이를 저장 하 고 렌더링할 수 있습니다.
 
 > [!Tip]
 > Azure Maps Web SDK를 사용 하 여 웹 페이지에 정적 이미지 서비스를 사용 하는 것 보다 간단한 지도를 표시 하는 것이 훨씬 더 비용 효율적인 경우가 종종 있습니다. 웹 SDK는 지도 타일을 사용 하며 사용자가 맵을 계획 하 고이를 확대/축소 하는 경우가 아니면 맵 부하 당 트랜잭션의 일부만 생성 합니다. Azure Maps 웹 SDK에는 패닝 및 확대/축소를 사용 하지 않도록 설정 하는 옵션이 있습니다. 또한 Azure Maps 웹 SDK는 정적 지도 웹 서비스와는 다른 다양 한 데이터 시각화 옵션 집합을 제공 합니다.  
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 ### <a name="create-an-azure-maps-account"></a>Azure Maps 계정 만들기
 
@@ -43,7 +43,7 @@ Azure Maps 계정 S0 계층은 `pins` 매개 변수의 단일 인스턴스만 �
 
 1. 요청을 저장할 컬렉션을 만듭니다. Postman 앱에서 **새로 만들기**를 선택 합니다. **새로 만들기** 창에서 **컬렉션**을 선택 합니다. 컬렉션 이름을로 하 고 **만들기** 단추를 선택 합니다. 
 
-2. 요청을 만들려면 **새로 만들기** 를 다시 선택 합니다. **새로 만들기** 창에서 **요청**을 선택 합니다. 압정에 대 한 **요청 이름을** 입력 합니다. 이전 단계에서 만든 컬렉션을 요청을 저장할 위치로 선택 하 고 **저장**을 선택 합니다.
+2. 요청을 만들려면 **새로 만들기** 를 다시 선택 합니다. **새로 만들기** 창에서 **요청**을 선택 합니다. 압정에 대 한 **요청 이름을** 입력 합니다. 이전 단계에서 만든 컬렉션을 요청을 저장할 위치로 선택 합니다. 그런 다음 **저장**을 선택합니다.
     
     ![Postman에서 요청 만들기](./media/how-to-render-custom-data/postman-new.png)
 
@@ -148,7 +148,7 @@ Azure Maps 계정 S0 계층은 `pins` 매개 변수의 단일 인스턴스만 �
    https://atlas.microsoft.com/mapData/{uploadStatusId}/status?api-version=1.0&subscription-key={Subscription-key}
    ```
 
-6. UdId을 가져오려면 Postman 앱에서 새 탭을 열고 작성기 탭에서 GET HTTP 메서드를 선택 하 고 상태 URI에서 GET 요청을 수행 합니다. 데이터 업로드가 성공하면 응답 본문에 udId가 있습니다. UdId를 복사 합니다.
+6. UdId을 가져오려면 Postman 앱에서 새 탭을 엽니다. 작성기 탭에서 GET HTTP 메서드를 선택 합니다. 상태 URI에서 GET 요청을 수행 합니다. 데이터 업로드가 성공적으로 완료 되 면 응답 본문에 udId가 표시 됩니다. UdId를 복사 합니다.
 
    ```JSON
    {

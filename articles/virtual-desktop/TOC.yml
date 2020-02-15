@@ -64,7 +64,7 @@
           href: set-up-customize-master-image.md
         - name: 마스터 VHD 이미지에 Office 설치
           href: install-office-on-wvd-master-image.md
-    - name: 세션 호스트를 동적으로 크기 조정
+    - name: 자동으로 세션 호스트 크기 조정
       href: set-up-scaling-script.md
     - name: 피드 사용자 지정
       href: customize-feed-for-virtual-desktop-users.md

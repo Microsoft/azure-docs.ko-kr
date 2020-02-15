@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 10/22/2019
-ms.openlocfilehash: 1c51ff1e653ac3fbbf6042cb6fb631b05ef94041
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 985417200737e00ddbda4194cf7596b11c74ac10
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76548359"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153726"
 ---
 # <a name="two-class-boosted-decision-tree-module"></a>2 클래스 승격 된 의사 결정 트리 모듈
 

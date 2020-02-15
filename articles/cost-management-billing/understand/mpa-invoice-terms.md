@@ -2,21 +2,21 @@
 title: Azure의 Microsoft 파트너 계약 청구서 이해
 description: Azure에서 Microsoft 파트너 계약 청구서를 읽고 이해하는 방법 알아보기
 author: bandersmsft
-manager: jureid
+manager: amberb
 tags: billing
 ms.service: cost-management-billing
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/22/2019
+ms.date: 02/10/2020
 ms.author: banders
-ms.openlocfilehash: 7555fc490804a847e61a46f194e77c62f0a985d9
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: fcebe02d62beba1e48759c0298a18b26f3a61cbf
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75989749"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77133302"
 ---
 # <a name="terms-in-your-microsoft-partner-agreement-invoice"></a>Microsoft 파트너 계약 청구서의 용어
 

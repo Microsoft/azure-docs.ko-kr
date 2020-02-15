@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 01/14/2020
 ms.author: erhopf
-ms.openlocfilehash: 4d2ea2304ff86378e71f96847c00d96d849c185d
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: ee34993a41f280b9bb5944533b0bae66bedc24ac
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76037759"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77156514"
 ---
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -48,8 +48,11 @@ ms.locfileid: "76037759"
            try {
                // Replace below with your own subscription key
                String speechSubscriptionKey = "YourSubscriptionKey";
-               // Replace below with your own service region (e.g., "westus").
+
+               // Replace with your own subscription key and service region (e.g., "westus", use the one of SpeechSDKParameters
+               // from here: https://aka.ms/speech/sdkregion).
                String serviceRegion = "YourServiceRegion";
+
                // Replace below with your own filename.
                String audioFileName = "whatstheweatherlike.wav";
 

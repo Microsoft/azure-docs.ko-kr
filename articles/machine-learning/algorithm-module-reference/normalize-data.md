@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 10/22/2019
-ms.openlocfilehash: e74e80c7db7e624649494201d56fd82486e193d7
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 8eb54e232478ae24e1efb49a8ad43dc827aa2b6a
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76546608"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77150683"
 ---
 # <a name="normalize-data-module"></a>데이터 정규화 모듈
 

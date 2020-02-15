@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: chlound
-ms.openlocfilehash: 9ca2ea6a45bdf37f15f2ab4fd9c685f11f6d7f64
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.openlocfilehash: 09051ad3633ddc720cb34d3d145ccf649fa9cb08
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77031495"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77200115"
 ---
 # <a name="use-azure-key-vault-secrets-in-pipeline-activities"></a>파이프라인 작업에서 Azure Key Vault 비밀 사용
 
@@ -63,7 +63,7 @@ Azure Key Vault에 자격 증명 또는 암호 값을 저장 하 고 파이프�
     > [!CAUTION]
     > 보안 출력 옵션을 true로 설정 하 여 비밀 값이 일반 텍스트로 기록 되지 않도록 합니다.  이 값을 사용 하는 추가 활동의 경우 보안 입력 옵션을 true로 설정 해야 합니다.
 
-5. 다른 작업의 값을 사용 하려면 다음 코드 식을 사용 합니다. **("web").@activity**
+5. 다른 작업의 값을 사용 하려면 다음 코드@activity식을 사용 합니다. **(' Web1 ').**
 
     ![코드 식](media/how-to-use-azure-key-vault-secrets-pipeline-activities/usewebactivity.png)
 

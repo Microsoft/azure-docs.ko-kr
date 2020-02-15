@@ -47,16 +47,12 @@
       href: ../common/storage-account-overview.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
     - name: 데이터 중복
       items:
-        - name: Azure Storage 복제
+        - name: 데이터 중복
           href: ../common/storage-redundancy.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
-        - name: 로컬 중복 스토리지
-          href: ../common/storage-redundancy-lrs.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
-        - name: 영역 중복 스토리지
-          href: ../common/storage-redundancy-zrs.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
-        - name: 지역 중복 스토리지
-          href: ../common/storage-redundancy-grs.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
-        - name: 지역 영역 중복 스토리지
-          href: ../common/storage-redundancy-gzrs.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+        - name: 재해 복구 및 장애 조치(Failover)
+          href: ../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+        - name: 고가용성 애플리케이션 디자인
+          href: ../common/storage-designing-ha-apps-with-ragrs.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
     - name: '성능, 크기 조정 및 비용 최적화'
       items:
         - name: 성능 및 확장성 검사 목록
@@ -126,6 +122,14 @@
               href: ../common/storage-require-secure-transfer.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
             - name: 전송 계층 보안 사용
               href: ../common/storage-security-tls.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+    - name: 데이터 복제 방법 변경
+      href: ../common/redundancy-migration.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+    - name: 재해 복구
+      items:
+        - name: 마지막 동기화 시간 속성 확인
+          href: ../common/last-sync-time-get.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+        - name: 계정 장애 조치(failover) 시작
+          href: ../common/storage-initiate-account-failover.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
     - name: 데이터 전송
       items:
         - name: AzCopy(v10)

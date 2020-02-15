@@ -15,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2019
 ms.author: terrylan
-ms.openlocfilehash: ddcf5a1df31b4b36e25b2522ada21deab19fe032
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 8fd5a063683d09cb94b45205426871d880119cc2
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73159882"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138029"
 ---
-# <a name="securing-paas-deployments"></a>PaaS 배포 보호
+# <a name="securing-paas-deployments"></a>PaaS 배포 보안
 
 이 문서에서 제공하는 유용한 정보는 다음과 같습니다.
 
@@ -36,7 +36,7 @@ ms.locfileid: "73159882"
 ## <a name="cloud-security-advantages"></a>클라우드 보안 이점
 사용자와 Microsoft 간의 [책임 구분](shared-responsibility.md) 을 이해 하는 것이 중요 합니다. 온-프레미스에서는 전체 스택을 가지고 있지만 클라우드로 이동할 때 일부 책임이 Microsoft로 이전됩니다.
 
-클라우드에 있는 [보안상의 이점이](shared-responsibility.md#cloud security advantages)있습니다. 온-프레미스 환경에서 조직은 충족되지 않은 책임과 제한된 리소스를 보안에 투자할 가능성이 높으며, 이로 인해 공격자가 모든 계층의 취약점을 악용할 수 있는 환경이 만들어집니다.
+클라우드에 있는 [보안상의 이점이](shared-responsibility.md#cloud-security-advantages)있습니다. 온-프레미스 환경에서 조직은 충족되지 않은 책임과 제한된 리소스를 보안에 투자할 가능성이 높으며, 이로 인해 공격자가 모든 계층의 취약점을 악용할 수 있는 환경이 만들어집니다.
 
 조직에서는 공급자의 클라우드 기반 보안 기능 및 클라우드 인텔리전스를 사용하여 위협 요소 탐지 및 응답 시간을 향상시킬 수 있습니다.  조직은 클라우드 공급자에 책임을 전가함으로써 보안 적용 범위를 더 넓힐 수 있으며, 보안 리소스와 예산을 다른 비즈니스 우선 순위에 다시 할당할 수 있습니다.
 
@@ -100,7 +100,7 @@ Microsoft [Security Development Lifecycle](https://www.microsoft.com/en-us/sdl)�
 
 | 위협 | 보안 속성 | Azure 플랫폼 완화 가능성 |
 | --- | --- | --- |
-| 스푸핑 | Authentication | HTTPS 연결을 사용해야 하도록 지정합니다. |
+| 스푸핑 | 인증 | HTTPS 연결을 사용해야 하도록 지정합니다. |
 | 변조 | 무결성 | SSL 인증서 유효성을 검사합니다. |
 | 거부 | 거부 없음 | Azure [모니터링 및 진단](/azure/architecture/best-practices/monitoring)을 사용하도록 설정합니다. |
 | 정보 공개 | 기밀성 | [서비스 인증서](/rest/api/appservice/certificates)를 사용하여 미사용 상태의 중요한 데이터를 암호화합니다. |
@@ -119,7 +119,7 @@ App Service 사용 시의 모범 사례는 다음과 같습니다.
 **세부 정보**: 데이터 액세스를 위한 보안 정책을 시행하려는 조직에서는 액세스를 반드시 제한해야 합니다. RBAC를 사용하여 특정 범위에서 사용자, 그룹 및 애플리케이션에 권한을 할당할 수 있습니다. 사용자에게 애플리케이션 액세스 권한을 부여하는 방법에 대해 자세히 알아보려면 [액세스 관리 시작](/azure/role-based-access-control/overview)을 참조하세요.
 
 **모범 사례**: 키를 보호합니다.   
-**세부 정보**: Azure Key Vault를 사용하면 클라우드 애플리케이션과 서비스에서 사용하는 암호화 키 및 비밀을 보호할 수 있습니다. Key Vault를 사용하면 HSM(하드웨어 보안 모듈)을 통해 보호되는 키를 통해 키와 비밀(예: 인증 키, 스토리지 계정 키, 데이터 암호화 키, .PFX 파일 및 암호)를 암호화할 수 있습니다. 보증 강화를 위해 HSM의 키를 가져오거나 생성할 수 있습니다. 자세한 내용은 [Azure Key Vault](/azure/key-vault/key-vault-overview)를 참조하세요. 또한 Key Vault를 사용하여 자동 갱신으로 TLS 인증서를 관리할 수도 있습니다.
+**세부 정보**: Azure Key Vault를 사용하면 클라우드 애플리케이션과 서비스에서 사용하는 암호화 키 및 비밀을 보호할 수 있습니다. Key Vault를 사용하면 HSM(하드웨어 보안 모듈)을 통해 보호되는 키를 통해 키와 비밀(예: 인증 키, 스토리지 계정 키, 데이터 암호화 키, .PFX 파일 및 암호)를 암호화할 수 있습니다. 추가된 보증을 위해, HSM에서 키를 생성하거나 가져올 수 있습니다. 자세한 내용은 [Azure Key Vault](/azure/key-vault/key-vault-overview)를 참조하세요. 또한 Key Vault를 사용하여 자동 갱신으로 TLS 인증서를 관리할 수도 있습니다.
 
 **모범 사례**: 들어오는 원본 IP 주소를 제한합니다.   
 **세부 정보**: [App Service Environment](/azure/app-service/environment/intro)에는 네트워크 보안 그룹을 통해 들어오는 원본 IP 주소를 제한할 수 있는 가상 네트워크 통합 기능이 있습니다. 가상 네트워크에서는 액세스를 제어할 수 있는 인터넷이 아닌 라우팅 가능 네트워크에 Azure 리소스를 배치할 수 있습니다. 자세히 알아보려면 [Azure Virtual Network에 앱 통합](/azure/app-service/web-sites-integrate-with-vnet)을 참조하세요.
@@ -133,7 +133,7 @@ App Service 사용 시의 모범 사례는 다음과 같습니다.
 >
 
 ## <a name="install-a-web-application-firewall"></a>웹 애플리케이션 방화벽 설치
-웹 애플리케이션의 널리 알려진 취약점을 악용하는 악의적인 공격이 점점 많아지고 있습니다. 이러한 공격으로는 SQL 삽입 공격, 사이트 간 스크립팅 공격 등이 있습니다. 애플리케이션 코드로 이러한 공격을 방어하기란 매우 어려울 수 있으며 애플리케이션 토폴로지의 다양한 계층에서 엄격한 유지 관리, 패치 적용 및 모니터링이 필요할 수 있습니다. 중앙 집중식 웹 애플리케이션 방화벽을 통해 보안 관리가 훨씬 간단해지고 애플리케이션 관리자에게 위협 또는 침입으로부터 효과적인 보호를 제공합니다. 또한 WAF 솔루션은 각각의 웹 애플리케이션을 보호하는 대신 중앙의 위치에서 알려진 취약점에 패치를 적용하여 보다 신속하게 보안 위협에 대응할 수 있습니다. 기존 Application Gateway는 웹 응용 프로그램 방화벽을 사용한 Application Gateway로 쉽게 변환될 수 있습니다.
+웹 애플리케이션의 널리 알려진 취약점을 악용하는 악의적인 공격이 점점 많아지고 있습니다. 이러한 공격으로는 SQL 삽입 공격, 사이트 간 스크립팅 공격 등이 있습니다. 애플리케이션 코드로 이러한 공격을 방어하기란 매우 어려울 수 있으며 애플리케이션 토폴로지의 다양한 계층에서 엄격한 유지 관리, 패치 적용 및 모니터링이 필요할 수 있습니다. 중앙 집중식 웹 애플리케이션 방화벽을 통해 보안 관리가 훨씬 간단해지고 애플리케이션 관리자에게 위협 또는 침입으로부터 효과적인 보호를 제공합니다. 또한 WAF 솔루션은 각각의 웹 애플리케이션을 보호하는 대신 중앙의 위치에서 알려진 취약점에 패치를 적용하여 보다 신속하게 보안 위협에 대응할 수 있습니다. 기존 Application Gateway는 웹 애플리케이션 방화벽을 사용한 Application Gateway로 쉽게 변환될 수 있습니다.
 
 [WAF(웹 애플리케이션 방화벽)](/azure/frontdoor/waf-overview)는 일반적인 악용 및 취약점으로부터 웹 애플리케이션에 대해 중앙 집중화된 보호를 제공하는 Application Gateway의 기능입니다. WAF는 [OWASP(Open Web Application Security Project) 핵심 규칙 집합](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project) 3.0 또는 2.2.9의 규칙에 기반합니다.
 

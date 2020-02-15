@@ -10,12 +10,12 @@ ms.subservice: bing-custom-search
 ms.topic: quickstart
 ms.date: 12/09/2019
 ms.author: aahi
-ms.openlocfilehash: ca0c1174abb80452f78766c3c4f49af73c790d3e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: d67075fad719b1780682c705f0e17f15c5801559
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75448688"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77136159"
 ---
 # <a name="quickstart-call-your-bing-custom-search-endpoint-using-the-python-sdk"></a>빠른 시작: Python SDK를 사용하여 Bing Custom Search 엔드포인트 호출 
 
@@ -51,12 +51,13 @@ from msrest.authentication import CognitiveServicesCredentials
 
     ```python
     subscription_key = 'your-subscription-key'
+    endpoint = 'your-custom-endpoint'
     ```
 
 2. 구독 키와 `CognitiveServicesCredentials` 개체를 사용하여 `CustomSearchClient` 인스턴스를 만듭니다. 
 
     ```python
-    client = CustomSearchClient(CognitiveServicesCredentials(subscription_key))
+    client = CustomSearchClient(endpoint, CognitiveServicesCredentials(subscription_key))
     ```
 
 3. `client.custom_instance.search()`를 사용하여 검색 요청을 보냅니다. `query` 매개 변수에 검색 용어를 추가하고 `custom_config`를 검색 인스턴스를 사용하기 위한 사용자 지정 구성 ID로 설정합니다. **프로덕션** 탭을 클릭하여 [Bing Custom Search 포털](https://www.customsearch.ai/)에서 ID를 가져올 수 있습니다.

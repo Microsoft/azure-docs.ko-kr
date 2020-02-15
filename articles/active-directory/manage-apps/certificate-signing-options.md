@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 614a90fcc0daef3eb77c43e6b56848c34d160ed5
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: dc911ff06208b1fd0af7651c8274a45c958bf0cd
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74274754"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159202"
 ---
 # <a name="advanced-certificate-signing-options-in-the-saml-token-for-gallery-apps-in-azure-active-directory"></a>Azure Active Directory의 갤러리 앱에 대한 SAML 토큰의 고급 인증서 서명 옵션
 
@@ -55,7 +55,7 @@ Azure AD는 SAML 응답에 서명 하는 두 가지 서명 알고리즘 또는 S
 
 1. [Azure Active Directory 포털](https://aad.portal.azure.com/)에서 계정에 로그인 합니다. **Azure Active Directory 관리 센터** 페이지가 나타납니다.
 1. 왼쪽 창에서 **엔터프라이즈 애플리케이션**을 선택합니다. 계정의 엔터프라이즈 응용 프로그램 목록이 표시 됩니다.
-1. 응용 프로그램을 선택 합니다. 응용 프로그램에 대 한 개요 페이지가 표시 됩니다.
+1. 응용 프로그램을 선택합니다. 응용 프로그램에 대 한 개요 페이지가 표시 됩니다.
 
    ![예: 응용 프로그램 개요 페이지](./media/certificate-signing-options/application-overview-page.png)
 
@@ -76,4 +76,4 @@ Azure AD는 SAML 응답에 서명 하는 두 가지 서명 알고리즘 또는 S
 ## <a name="next-steps"></a>다음 단계
 
 * [Azure Active Directory 앱 갤러리에 있지 않은 애플리케이션에 Single Sign-On 구성](configure-federated-single-sign-on-non-gallery-applications.md)
-* [SAML 기반 Single Sign-On 문제 해결](../develop/howto-v1-debug-saml-sso-issues.md)
+* [SAML 기반 Single Sign-On 문제 해결](../azuread-dev/howto-v1-debug-saml-sso-issues.md)

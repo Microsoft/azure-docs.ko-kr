@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
-ms.date: 10/22/2019
-ms.openlocfilehash: c9d02490a5627ead502429ead06608b4fb621058
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+author: likebupt
+ms.author: keli19
+ms.date: 02/11/2020
+ms.openlocfilehash: 3141795ed9ccfdabc9fd462a1cd09a74690f9c5b
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76548410"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137914"
 ---
 # <a name="train-model-module"></a>모델 학습 모듈
 
@@ -39,7 +39,7 @@ Azure Machine Learning에서 기계 학습 모델을 만들고 사용 하는 과
 
 3. 학습을 완료 한 후 [점수 매기기 모듈](./score-model.md)중 하나를 사용 하 여 학습 된 모델을 사용 하 여 새 데이터에 대 한 예측을 만듭니다.
 
-## <a name="how-to-use-train-model"></a>**모델 학습** 을 사용 하는 방법  
+## <a name="how-to-use-train-model"></a>모델 학습을 사용 하는 방법 
   
 1.  Azure Machine Learning에서 분류 모델 또는 회귀 모델을 구성 합니다.
     
@@ -49,7 +49,7 @@ Azure Machine Learning에서 기계 학습 모델을 만들고 사용 하는 과
 
     학습 데이터 집합은 레이블 열을 포함 해야 합니다. 레이블이 없는 행은 무시 됩니다.
   
-4.  **레이블 열**에서 **열 선택기 시작**을 클릭 하 고 모델에서 학습에 사용할 수 있는 결과를 포함 하는 단일 열을 선택 합니다.
+4.  **레이블 열**에 대해 모듈의 오른쪽 패널에서 **열 편집** 을 클릭 하 고 모델에서 학습에 사용할 수 있는 결과를 포함 하는 단일 열을 선택 합니다.
   
     - 분류 문제의 경우 레이블 열에는 **범주** 값 또는 **불연속** 값이 포함 되어야 합니다. 예/아니요 등급, 질병 분류 코드 또는 이름 또는 수입 그룹이 있습니다.  비 범주 열을 선택 하면 학습 중에 모듈에서 오류를 반환 합니다.
   

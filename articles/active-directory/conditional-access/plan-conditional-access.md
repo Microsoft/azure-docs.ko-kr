@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: martincoetzer
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 894530aa9624af18f2f33a061d5cde683e9f01be
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: 266fa2403ef96e808a0c1f1eb46b4f7065c06252
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72880270"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77185897"
 ---
 # <a name="how-to-plan-your-conditional-access-deployment-in-azure-active-directory"></a>방법: Azure Active Directory에서 조건부 액세스 배포 계획
 
@@ -53,7 +53,7 @@ ms.locfileid: "72880270"
 |다음에 대한 액세스가 시도됩니다.<br>- 클라우드 앱<br>- 사용자 및 그룹에 의해<br>사용:<br>- 조건 1(예: 회사 네트워크 외부)<br>- 조건 2(예: 디바이스 플랫폼)|다음을 사용하여 액세스 권한 부여(AND):<br>- 요구 사항 1(예: MFA)<br>- 요구 사항 2(예: 디바이스 규정 준수)|
 |다음에 대한 액세스가 시도됩니다.<br>- 클라우드 앱<br>- 사용자 및 그룹에 의해<br>사용:<br>- 조건 1(예: 회사 네트워크 외부)<br>- 조건 2(예: 디바이스 플랫폼)|다음을 사용하여 액세스 권한 부여(OR):<br>- 요구 사항 1(예: MFA)<br>- 요구 사항 2(예: 디바이스 규정 준수)|
 
-최소한 **조건**은 클라우드 앱(**what**)에 액세스를 시도하는 보안 주체(**who**)를 정의합니다. 필요한 경우 액세스 시도가 수행되는 **방법**을 포함할 수도 있습니다. 조건부 액세스에서 조건을 정의 하는 요소 (조건)를 정의 하는 요소입니다. 자세한 내용은 [조건부 액세스 Azure Active Directory의 조건 이란?](conditions.md) 을 참조 하세요. 
+최소한 **조건**은 클라우드 앱(**what**)에 액세스를 시도하는 보안 주체(**who**)를 정의합니다. 필요한 경우 액세스 시도가 수행되는 **방법**을 포함할 수도 있습니다. 조건부 액세스에서 조건을 정의 하는 요소 (조건)를 정의 하는 요소입니다. 자세한 내용은 [조건부 액세스 Azure Active Directory의 조건 이란?](concept-conditional-access-conditions.md) 을 참조 하세요. 
 
 **수행할 작업**을 사용하여 액세스 조건에 대한 정책의 응답을 정의합니다. 응답에서 추가 요구 사항(예: MFA(다단계 인증))을 통해 액세스 권한을 부여하거나 차단합니다. 전체 개요는 [Azure Active Directory 조건부 액세스의 액세스 제어 란?](controls.md) 을 참조 하세요.  
 
@@ -116,7 +116,7 @@ MFA를 요구하는 일반적인 사용 사례는 다음과 같은 액세스입�
 
 조건부 액세스 정책을 사용 하 여 잠재적으로 손상 된 id에서 로그인에 대 한 자동화 된 응답을 구현할 수 있습니다. 계정이 손상되었을 확률은 위험 수준 형태로 표시됩니다. ID 보호를 통해 계산되는 두 가지 위험 수준(로그인 위험 및 사용자 위험)이 있습니다. 로그인 위험에 대한 응답을 구현하려면 다음 두 가지 옵션이 있습니다.
 
-- 조건부 액세스 정책의 [로그인 위험 조건](conditions.md#sign-in-risk)
+- 조건부 액세스 정책의 [로그인 위험 조건](concept-conditional-access-conditions.md#sign-in-risk)
 - ID 보호의 [로그인 위험 정책](../identity-protection/howto-sign-in-risk-policy.md) 
 
 더 많은 사용자 지정 옵션을 제공하므로 로그인 위험을 조건으로 처리하는 방법이 더 좋습니다.
@@ -181,7 +181,7 @@ Azure AD는 레거시 인증을 포함하여 가장 널리 사용되는 몇 가�
 
 ### <a name="evaluate-a-simulated-sign-in"></a>시뮬레이션된 로그인 평가
 
-조건부 액세스 정책을 구성했으니, 예상대로 작동하는지 확인해야 합니다. 첫 번째 단계로, 조건부 액세스 [what if 정책 도구](what-if-tool.md)를 사용하여 테스트 사용자 로그인을 시뮬레이션합니다. 이 시뮬레이션은 이 로그인이 정책에 미치는 영향을 평가하고 시뮬레이션 보고서를 생성합니다.
+조건부 액세스 정책을 구성했으니, 예상대로 작동하는지 확인해야 합니다. 첫 번째 단계로, 조건부 액세스 [what if 정책 도구](what-if-tool.md)를 사용하여 테스트 사용자 로그인을 시뮬레이션합니다. 이 시뮬레이션은 이 로그인이 정책에 미치는 영향을 평가하고, 시뮬레이션 보고서를 생성합니다.
 
 >[!NOTE]
 > 시뮬레이션 된 실행은 조건부 액세스 정책에 미치는 영향에 대 한 느낌을 제공 하지만 실제 테스트 실행을 대체 하지는 않습니다.

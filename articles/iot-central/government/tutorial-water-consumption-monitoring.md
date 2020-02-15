@@ -8,20 +8,20 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: 0b100e0bebc7c5b26449e396650da5434334075d
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 1bad4ab6320e757ac766776a95b8dbe6ebaa3259
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112629"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77016428"
 ---
 # <a name="tutorial-create-a-water-consumption-monitoring-application-in-iot-central"></a>자습서: IoT Central에서 용수 사용량 모니터링 애플리케이션 만들기
 
-[!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
+
 
 이 자습서에서는 IoT Central 용수 사용량 모니터링 애플리케이션 템플릿에서 Azure IoT Central 용수 사용량 모니터링 애플리케이션을 만드는 방법을 안내합니다. 
 
-이 자습서에서는 다음 방법을 알아봅니다. 
+이 자습서에서는 다음 작업 방법을 배웁니다. 
 
 > [!div class="checklist"]
 > * Azure IoT Central **용수 사용량 모니터링** 템플릿을 사용하여 용수 사용량 모니터링 애플리케이션 만들기
@@ -32,7 +32,7 @@ ms.locfileid: "74112629"
 > * 작업 구성
 > * 화이트 레이블을 사용하여 애플리케이션 브랜딩 사용자 지정
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서를 완료하려면 다음이 필요합니다.
 -  Azure 구독이 권장됩니다. Azure 구독이 아직 없는 경우 [Azure 가입 페이지](https://aka.ms/createazuresubscription)에서 만들 수 있습니다.
@@ -60,11 +60,13 @@ ms.locfileid: "74112629"
     * **URL**: IoT Central은 애플리케이션 이름을 기반으로 URL을 자동 생성합니다. URL을 원하는 대로 업데이트하도록 선택할 수 있습니다. URL 역시 나중에 변경할 수 있습니다. 
     * Azure 구독이 있는 경우 *디렉터리, Azure 구독 및 지역*을 입력합니다. 구독이 없는 경우 **7일 평가판**을 사용하도록 설정하고 필요한 연락처 정보를 작성할 수 있습니다.  
 
-    디렉터리 및 구독에 대한 자세한 내용은 [애플리케이션 만들기 빠른 시작](../preview/quick-deploy-iot-central.md)을 참조하세요.
+    디렉터리 및 구독에 대한 자세한 내용은 [애플리케이션 만들기 빠른 시작](../core/quick-deploy-iot-central.md)을 참조하세요.
 
 5. 페이지의 맨 아래에서 **만들기** 단추를 클릭합니다. 
 
     ![Azure IoT Central 애플리케이션 페이지](./media/tutorial-waterconsumptionmonitoring/new-application-waterconsumptionmonitoring.png)
+
+    ![Azure IoT Central 애플리케이션 청구 정보 만들기](./media/tutorial-waterconsumptionmonitoring/new-application-waterconsumptionmonitoring-billinginfo.png)
 
 6. Azure IoT Central **용수 사용량 모니터링** 템플릿을 사용하여 용수 사용량 모니터링 앱을 만들었습니다.
 
@@ -93,7 +95,7 @@ ms.locfileid: "74112629"
 
 * **평균 용수 흐름 KPI 타일**: KPI 타일은 *지난 30분의 평균* 예를 표시하도록 구성됩니다. KPI 타일을 사용자 지정하고, 다른 유형 및 시간 범위로 설정할 수 있습니다.
 
-* 그러면 대시보드 *디바이스 명령* 타일에서 **밸브 닫기**, **밸브 열기** 또는 **밸브 위치 설정** 권한을 얻게 됩니다. 명령을 클릭하면 시뮬레이션된 디바이스 명령 페이지로 이동됩니다. IoT Central에서 *명령*은 *디바이스 기능* 유형이며, 이 자습서 뒷부분의 **디바이스 템플릿 섹션**에서 살펴보겠습니다.
+* 그러면 대시보드 *디바이스 명령* 타일에서 **밸브 닫기**, **밸브 열기** 또는 **밸브 위치 설정** 권한을 얻게 됩니다. 명령을 클릭하면 시뮬레이션된 디바이스 명령 페이지로 이동됩니다. IoT Central에서 *명령*은 *디바이스 기능* 유형이며, 이 자습서 뒷부분의 **디바이스 템플릿 섹션**에서 살펴볼 수 있습니다.
 
 *  **급수 영역 맵**: 이 맵은 Azure IoT Central에서 직접 구성할 수 있는 Azure Maps를 사용합니다. 맵 타일은 디바이스 위치를 표시합니다. 맵 위로 커서를 이동하고 *확대*, *축소* 또는 *확장*과 같은 조작을 사용해보세요. 
 
@@ -105,7 +107,7 @@ ms.locfileid: "74112629"
 
 * **경고 임계값 콘텐츠 다시 설정 타일**: 작업 페이지의 링크가 들어 있는 행동 촉구 콘텐츠 타일을 포함할 수 있습니다. 이 경우 경고 임계값 다시 설정은 애플리케이션 **작업**으로 안내하며, 여기서 디바이스 속성을 업데이트할 수 있습니다. 이 내용은 이 자습서 뒷부분의 **작업 구성** 섹션에서 살펴보겠습니다.
 
-* **속성 타일**: 대시보드에 디바이스 속성인 **밸브 작동 정보**, **흐름 경고 임계값** 및 **유지 관리 정보**가 표시됩니다.  
+* **속성 타일**: 대시보드에 **밸브 작동 정보**, **Flow 경고 임계값** 및 **유지 관리 정보**가 표시됩니다. 
 
 
 ### <a name="customize-dashboard"></a>대시보드 사용자 지정 
@@ -146,7 +148,7 @@ Azure IoT Central의 디바이스 템플릿은 디바이스 기능을 정의하�
 ### <a name="add-a-cloud-property"></a>클라우드 속성을 추가합니다. 
 1. 디바이스 템플릿 메뉴에서 **클라우드 속성**으로 이동합니다.
 2. **+ 클라우드 속성 추가**를 클릭하여 새 클라우드 속성을 추가합니다. 
-    IoT Central에서 디바이스와 관련이 있는 속성을 추가할 수 있습니다. 예를 들어 설치 영역, 자산 정보 또는 유지 관리 정보와 관련된 경고 임계값 등은 클라우드 속성이 될 수 있습니다. 
+    IoT Central에서 디바이스와 관련이 있는 속성을 추가할 수 있습니다. 예를 들어 설치 영역, 자산 정보 또는 기타 유지 관리 정보와 관련된 경고 임계값은 클라우드 속성이 될 수 있습니다. 
 3. 변경 내용을 **저장**합니다. 
  
 ### <a name="views"></a>뷰 

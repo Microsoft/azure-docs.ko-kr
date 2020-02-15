@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 09/08/2018
 ms.author: cshoe
 ms.custom: ''
-ms.openlocfilehash: d5e78c3ab08e791a5f484e45d487c3a85dc95de7
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: f4fdf25fa1403b8429e7ad7e7fc644d0355b1324
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75613094"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77189828"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Azure Functions의 타이머 트리거 
 
@@ -32,7 +32,7 @@ ms.locfileid: "75613094"
 
 [!INCLUDE [functions-package-auto](../../includes/functions-package-auto.md)]
 
-## <a name="example"></a>예
+## <a name="example"></a>예제
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
@@ -217,9 +217,9 @@ public void keepAlive(
 
 |function.json 속성 | 특성 속성 |Description|
 |---------|---------|----------------------|
-|**type** | n/a | "timerTrigger"로 설정해야 합니다. 이 속성은 사용자가 Azure Portal에서 트리거를 만들 때 자동으로 설정됩니다.|
-|**direction** | n/a | "in"으로 설정해야 합니다. 이 속성은 사용자가 Azure Portal에서 트리거를 만들 때 자동으로 설정됩니다. |
-|**name** | n/a | 함수 코드에서 타이머 개체를 나타내는 변수의 이름입니다. | 
+|**type** | 해당 없음 | "timerTrigger"로 설정해야 합니다. 이 속성은 사용자가 Azure Portal에서 트리거를 만들 때 자동으로 설정됩니다.|
+|**direction** | 해당 없음 | "in"으로 설정해야 합니다. 이 속성은 사용자가 Azure Portal에서 트리거를 만들 때 자동으로 설정됩니다. |
+|**name** | 해당 없음 | 함수 코드에서 타이머 개체를 나타내는 변수의 이름입니다. | 
 |**schedule**|**ScheduleExpression**|[CRON 식](#ncrontab-expressions) 또는 [TimeSpan](#timespan) 값입니다. App Service 계획에서 함수 앱을 실행 중인 경우에만 `TimeSpan`을 사용할 수 있습니다. "%ScheduleAppSetting%" 예제와 같이 앱 설정에서 일정 식을 배치하고 이 속성을 **%** 기호에서 래핑된 앱 설정 이름으로 설정할 수 있습니다. |
 |**runOnStartup**|**RunOnStartup**|`true`인 경우 함수는 런타임이 시작될 때 호출됩니다. 예를 들어 비활성으로 인해 유휴 상태로 전환된 후에 함수 앱이 작동될 때 런타임이 시작됩니다. 함수 앱이 함수 변경으로 인해 다시 시작 되 고 함수 앱이 확장 될 때 따라서 **Runonstartup** 은 특히 프로덕션에서 `true`로 설정 되어 있는 경우에는 거의 없습니다. |
 |**useMonitor**|**UseMonitor**|`true` 또는 `false`로 설정하여 일정을 모니터링해야 하는지를 나타냅니다. 일정 모니터링은 일정 발생을 유지하여 함수 앱 인스턴스가 다시 시작하는 경우에도 일정을 올바르게 유지하도록 지원합니다. 명시적으로 설정 하지 않은 경우 되풀이 간격이 1 분 보다 크거나 같은 일정의 경우 기본값은 `true`입니다. 분당 한 번 넘게 트리거되는 일정에서 기본값은 `false`입니다.
@@ -229,7 +229,7 @@ public void keepAlive(
 > [!CAUTION]
 > 프로덕션 환경에서는 **runOnStartup**을 `true`로 설정하지 않는 것이 좋습니다. 이 설정을 사용하면 매우 예측할 수 없는 시간에 코드가 실행됩니다. 특정 프로덕션 환경에서 이러한 추가 실행으로 인해 소비 계획에서 호스팅되는 앱의 비용이 상당히 높아질 수 있습니다. 예를 들어 **Runonstartup** 을 사용 하도록 설정 하면 함수 앱이 확장 될 때마다 트리거가 호출 됩니다. 프로덕션 환경에서 **runOnStartup**을 사용하도록 설정하기 전에 함수의 프로덕션 동작을 완전히 이해했는지 확인하세요.   
 
-## <a name="usage"></a>사용량
+## <a name="usage"></a>사용
 
 타이머 트리거 함수를 호출 하면 timer 개체가 함수에 전달 됩니다. 다음 JSON은 타이머 개체의 예제 표현입니다.
 
@@ -256,13 +256,13 @@ Azure Functions [NCronTab](https://github.com/atifaziz/NCrontab) 라이브러리
 
 각 필드에는 다음과 같은 형식의 값 중 하나가 포함될 수 있습니다.
 
-|유형  |예  |트리거될 때  |
+|Type  |예제  |트리거될 때  |
 |---------|---------|---------|
 |특정 값 |<nobr>"0 5 * * * *"</nobr>|hh:05:00에서 hh는 매시간임(시간당 한 번)|
 |모든 값(`*`)|<nobr>"0 * 5 * * *"</nobr>|5:mm:00에서 mm은 해당 시간의 매분임(하루 60번)|
 |범위(`-` 연산자)|<nobr>"5-7 * * * * *"</nobr>|hh:mm:05,hh:mm:06 및 hh:mm:07에서 hh:mm은 매시간의 매분임(분당 3번)|
 |값 집합(`,` 연산자)|<nobr>"5,8,10 * * * * *"</nobr>|hh:mm:05,hh:mm:08 및 hh:mm:10에서 hh:mm은 매시간의 매분임(분당 3번)|
-|간격 값(`/` 연산자)|<nobr>"0 */5 * * * *"</nobr>|hh:05:00, hh:10:00, hh:15:00부터 hh:55:00까지에서 hh는 매시간임(시간당 12번)|
+|간격 값(`/` 연산자)|<nobr>"0 */5 * * * *"</nobr>|hh: 00:00, hh: 05:00, hh: 10:00, hh: 55:00, hh는 매시간 (12 번 a 시간)|
 
 [!INCLUDE [functions-cron-expressions-months-days](../../includes/functions-cron-expressions-months-days.md)]
 
@@ -270,7 +270,7 @@ Azure Functions [NCronTab](https://github.com/atifaziz/NCrontab) 라이브러리
 
 Azure Functions에서 타이머 트리거에 사용할 수 있는 NCRONTAB 식의 몇 가지 예는 다음과 같습니다.
 
-|예|트리거될 때  |
+|예제|트리거될 때  |
 |---------|---------|
 |`"0 */5 * * * *"`|5분마다 한 번|
 |`"0 0 * * * *"`|1시간이 시작할 때마다 한 번|
@@ -310,16 +310,16 @@ CRON 식과 함께 사용하는 기본 표준 시간대는 UTC(협정 세계시)
 
 CRON 식과 다르게 `TimeSpan` 값은 각 함수 호출 간의 시간 간격을 지정합니다. 함수가 지정된 간격보다 오랫동안 실행한 후에 완료되면 타이머는 즉시 함수를 다시 호출합니다.
 
-`hh`이 24 미만인 경우 문자열로 표현되는 `TimeSpan` 형식은 `hh:mm:ss`입니다. 처음 두 자리가 24 이상인 경우 형식은 `dd:hh:mm`입니다. 예를 들어 다음과 같은 노래를 선택할 수 있다.
+`TimeSpan`이 24 미만인 경우 문자열로 표현되는 `hh:mm:ss` 형식은 `hh`입니다. 처음 두 자리가 24 이상인 경우 형식은 `dd:hh:mm`입니다. 예를 들어 다음과 같은 노래를 선택할 수 있다.
 
-|예 |트리거될 때  |
+|예제 |트리거될 때  |
 |---------|---------|
 |"01:00:00" | 매시간        |
 |"00:01:00"|매분         |
 |"24:00:00" | 24 시간 마다        |
 |"1.00:00:00" | 매일        |
 
-## <a name="scale-out"></a>확장
+## <a name="scale-out"></a>스케일 아웃
 
 함수 앱이 여러 인스턴스로 확장하는 경우 모든 인스턴스에서 타이머 트리거 함수의 단일 인스턴스만을 실행합니다.
 
@@ -329,7 +329,7 @@ App service에 배포 되지 않은 함수 앱에서 저장소 계정을 공유 
 
 | Functions 버전 | 설정                                              |
 | ----------------- | ---------------------------------------------------- |
-| 2.x 이상  | `AzureFunctionsWebHost__hostid`환경 변수 |
+| 2.x 이상  | `AzureFunctionsWebHost__hostid` 환경 변수 |
 | 1.x               | *호스트 json* 의 `id`                                  |
 
 식별 값을 생략 하거나 각 함수 앱의 식별 구성을 다른 값으로 수동으로 설정할 수 있습니다.

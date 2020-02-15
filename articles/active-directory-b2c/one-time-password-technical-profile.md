@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/03/2020
+ms.date: 02/10/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: dab35fbcd221af9f4eb587b8c98a8ff85aeef59f
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 9becb91cfffd4553b2b8aa1a2d616963eae92ab0
+ms.sourcegitcommit: d12880206cf9926af6aaf3bfafda1bc5b0ec7151
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76982792"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77114061"
 ---
 # <a name="define-a-one-time-password-technical-profile-in-an-azure-ad-b2c-custom-policy"></a>Azure AD B2C 사용자 지정 정책에서 일회성 암호 기술 프로필을 정의 합니다.
 
@@ -53,7 +53,7 @@ Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.
 
 | ClaimReferenceId | 필수 | Description |
 | --------- | -------- | ----------- |
-| identifier | 예 | 코드를 나중에 확인 해야 하는 사용자를 식별 하는 식별자입니다. 일반적으로 전자 메일 주소 또는 전화 번호와 같이 코드가 전달 되는 대상의 식별자로 사용 됩니다. |
+| identifier | yes | 코드를 나중에 확인 해야 하는 사용자를 식별 하는 식별자입니다. 일반적으로 전자 메일 주소 또는 전화 번호와 같이 코드가 전달 되는 대상의 식별자로 사용 됩니다. |
 
 **InputClaimsTransformations** 요소에는 일회용 암호 프로토콜 공급자로 보내기 전에 입력 클레임을 수정 하거나 새로 생성 하는 데 사용 되는 **InputClaimsTransformation** 요소의 컬렉션이 포함 될 수 있습니다.
 
@@ -63,7 +63,7 @@ Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.
 
 | ClaimReferenceId | 필수 | Description |
 | --------- | -------- | ----------- |
-| otpGenerated | 예 | Azure AD B2C에서 세션을 관리 하는 생성 된 코드입니다. |
+| otpGenerated | yes | Azure AD B2C에서 세션을 관리 하는 생성 된 코드입니다. |
 
 **OutputClaimsTransformations** 요소는 출력 클레임을 수정하거나 새 출력 클레임을 생성하는 데 사용되는 **OutputClaimsTransformation** 요소 컬렉션을 포함할 수 있습니다.
 
@@ -73,18 +73,18 @@ Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.
 
 | attribute | 필수 | Description |
 | --------- | -------- | ----------- |
-| CodeExpirationInSeconds | 아닙니다. | 코드 만료 까지의 시간 (초)입니다. 최소: `60`; 최대값: `1200`; 기본값: `600`. |
-| CodeLength | 아닙니다. | 코드의 길이입니다. 기본값은 `6`입니다. |
-| CharacterSet | 아닙니다. | 정규식에서 사용 하기 위해 형식이 지정 된 코드에 대 한 문자 집합입니다. `a-z0-9A-Z`)을 입력합니다. 기본값은 `0-9`입니다. 문자 집합은 지정 된 집합에 최소 10 개의 다른 문자를 포함 해야 합니다. |
-| NumRetryAttempts | 아닙니다. | 코드가 잘못 된 것으로 간주 되기 전의 확인 시도 횟수입니다. 기본값은 `5`입니다. |
-| 작업 | 예 | 수행할 작업입니다. 가능한 값은 `GenerateCode`또는 `VerifyCode`입니다. |
-| ReuseSameCode | 아닙니다. | 지정 된 코드가 만료 되지 않고 여전히 유효한 경우 새 코드를 생성 하는 대신 중복 코드를 지정 해야 하는지 여부입니다. 기본값은 `false`입니다. |
+| CodeExpirationInSeconds | 예 | 코드 만료 까지의 시간 (초)입니다. 최소: `60`; 최대값: `1200`; 기본값: `600`. |
+| CodeLength | 예 | 코드의 길이입니다. 기본값은 `6`입니다. |
+| CharacterSet | 예 | 정규식에서 사용 하기 위해 형식이 지정 된 코드에 대 한 문자 집합입니다. `a-z0-9A-Z`)을 입력합니다. 기본값은 `0-9`입니다. 문자 집합은 지정 된 집합에 최소 10 개의 다른 문자를 포함 해야 합니다. |
+| NumRetryAttempts | 예 | 코드가 잘못 된 것으로 간주 되기 전의 확인 시도 횟수입니다. 기본값은 `5`입니다. |
+| 작업(Operation) | yes | 수행할 작업입니다. 가능한 값은 `GenerateCode`또는 `VerifyCode`입니다. |
+| ReuseSameCode | 예 | 지정 된 코드가 만료 되지 않고 여전히 유효한 경우 새 코드를 생성 하는 대신 중복 코드를 지정 해야 하는지 여부입니다. 기본값은 `false`입니다. |
 
 ### <a name="returning-error-message"></a>오류 메시지 반환
 
 코드 생성 모드에 대해 반환 되는 오류 메시지는 없습니다.
 
-### <a name="example"></a>예
+### <a name="example"></a>예제
 
 다음 예제 `TechnicalProfile`는 코드를 생성 하는 데 사용 됩니다.
 
@@ -119,8 +119,8 @@ Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.
 
 | ClaimReferenceId | 필수 | Description |
 | --------- | -------- | ----------- |
-| identifier | 예 | 이전에 코드를 생성 한 사용자를 식별 하는 식별자입니다. 일반적으로 전자 메일 주소 또는 전화 번호와 같이 코드가 전달 되는 대상의 식별자로 사용 됩니다. |
-| otpToVerify | 예 | 사용자가 제공한 확인 코드입니다. |
+| identifier | yes | 이전에 코드를 생성 한 사용자를 식별 하는 식별자입니다. 일반적으로 전자 메일 주소 또는 전화 번호와 같이 코드가 전달 되는 대상의 식별자로 사용 됩니다. |
+| otpToVerify | yes | 사용자가 제공한 확인 코드입니다. |
 
 **InputClaimsTransformations** 요소에는 일회용 암호 프로토콜 공급자로 보내기 전에 입력 클레임을 수정 하거나 새로 생성 하는 데 사용 되는 **InputClaimsTransformation** 요소의 컬렉션이 포함 될 수 있습니다.
 
@@ -136,9 +136,9 @@ Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.
 
 | attribute | 필수 | Description |
 | --------- | -------- | ----------- |
-| UserMessageIfSessionDoesNotExist | 아닙니다. | 코드 확인 세션이 만료 된 경우 사용자에 게 표시할 메시지입니다. 코드가 만료 되었거나 지정 된 식별자에 대 한 코드가 생성 되지 않았습니다. |
-| UserMessageIfMaxRetryAttempted | 아닙니다. | 허용 되는 최대 확인 시도 횟수를 초과 하는 경우 사용자에 게 표시할 메시지입니다. |
-| Usermessageifin유효한 코드 | 아닙니다. | 잘못 된 코드를 제공한 경우 사용자에 게 표시할 메시지입니다. |
+| UserMessageIfSessionDoesNotExist | 예 | 코드 확인 세션이 만료 된 경우 사용자에 게 표시할 메시지입니다. 코드가 만료 되었거나 지정 된 식별자에 대 한 코드가 생성 되지 않았습니다. |
+| UserMessageIfMaxRetryAttempted | 예 | 허용 되는 최대 확인 시도 횟수를 초과 하는 경우 사용자에 게 표시할 메시지입니다. |
+| Usermessageifin유효한 코드 | 예 | 잘못 된 코드를 제공한 경우 사용자에 게 표시할 메시지입니다. |
 
 ### <a name="returning-error-message"></a>오류 메시지 반환
 
@@ -148,7 +148,7 @@ Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.
 <Item Key="en.UserMessageIfInvalidCode">Wrong code has been entered.</Item>
 ```
 
-### <a name="example"></a>예
+### <a name="example"></a>예제
 
 다음 예제 `TechnicalProfile`는 코드를 확인 하는 데 사용 됩니다.
 
@@ -168,3 +168,10 @@ Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.
     </InputClaims>
 </TechnicalProfile>
 ```
+
+## <a name="next-steps"></a>다음 단계
+
+사용자 지정 전자 메일 확인과 함께 일회성 암호 technial 프로필을 사용 하는 예는 다음 문서를 참조 하세요.
+
+- [Azure Active Directory B2C에서 사용자 지정 전자 메일 확인](custom-email.md)
+

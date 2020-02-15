@@ -11,12 +11,12 @@ metadata:
   author: bmitchell287
   ms.author: brendm
   ms.date: 09/26/2019
-  ms.openlocfilehash: 10d27492535897ea443a216f83c52ada82037671
-  ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+  ms.openlocfilehash: fd012e58928b7844b122a826769167cb525f5ba1
+  ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 01/19/2020
-  ms.locfileid: "76279107"
+  ms.lasthandoff: 02/11/2020
+  ms.locfileid: "77138191"
 landingContent:
 - title: Azure Spring Cloud 정보
   linkLists:
@@ -76,3 +76,9 @@ landingContent:
       url: spring-cloud-tutorial-bind-mysql.md
     - text: Azure CosmosDB에 애플리케이션 바인딩
       url: spring-cloud-tutorial-bind-cosmos.md
+- title: API 참조
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: REST API 참조
+      url: https://docs.microsoft.com/rest/api/azurespringclould/

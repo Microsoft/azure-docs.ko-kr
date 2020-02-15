@@ -21,7 +21,11 @@
 - name: 개념
   items:
     - name: 위치 및 파트너
-      href: virtual-wan-locations-partners.md
+      items:
+        - name: 허브 위치 및 파트너
+          href: virtual-wan-locations-partners.md
+        - name: 파트너를 위한 자동화 지침
+          href: virtual-wan-configure-automation-providers.md
     - name: IPsec 정책
       href: virtual-wan-ipsec.md
 - name: 방법 가이드
@@ -42,12 +46,10 @@
       href: openvpn-azure-ad-tenant.md
     - name: 사용자 VPN에 대한 MFA(Multi-Factor Authentication) 사용
       href: openvpn-azure-ad-mfa.md
-    - name: 사용자 VPN에 대한 Azure AD 인증 구성(미리 보기)
+    - name: 사용자 VPN에 대한 Azure AD 인증 구성
       href: virtual-wan-point-to-site-azure-ad.md
-    - name: 사용자 VPN에 대한 다중 애플리케이션 Azure AD 인증 구성(미리 보기)
+    - name: 사용자 VPN에 대한 다중 애플리케이션 Azure AD 인증 구성
       href: openvpn-azure-ad-tenant-multi-app.md
-    - name: 자동화 구성(Virtual WAN 파트너)
-      href: virtual-wan-configure-automation-providers.md
     - name: 글로벌 및 허브 기반 VPN 프로필 다운로드
       href: global-hub-profile.md
     - name: 라우팅 구성

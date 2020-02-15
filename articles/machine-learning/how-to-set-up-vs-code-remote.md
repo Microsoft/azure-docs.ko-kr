@@ -9,26 +9,23 @@ ms.topic: conceptual
 ms.author: jmartens
 author: j-martens
 ms.date: 12/09/2019
-ms.openlocfilehash: f5607c5d41a028a20a4658a67a7ce487a75f0d7c
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 1999d29db21f820fbcdbca08f2258b657673be3e
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76990354"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169746"
 ---
 # <a name="debug-interactively-on-an-azure-machine-learning-compute-instance-with-vs-code-remote"></a>VS Code 원격을 사용 하 여 Azure Machine Learning 계산 인스턴스에서 대화형으로 디버그
 
 이 문서에서는 VS Code에서 **코드를 대화형으로 디버그할** 수 있도록 Azure Machine Learning 계산 인스턴스에서 원격 Visual Studio Code를 설정 하는 방법에 대해 알아봅니다. 
-
-> [!NOTE]
-> 계산 인스턴스는 **미국 중 북부**, **미국 동부 2**, **북아메리카 유럽** 또는 **영국 남부**지역이 포함 된 작업 영역에만 사용할 수 있으며 곧 제공 되는 다른 지역에 대 한 지원을 제공 합니다.
 
 + [Azure Machine Learning 계산 인스턴스](concept-compute-instance.md) 는 데이터 과학자 완전히 관리 되는 클라우드 기반 워크스테이션 이며 IT 관리자에 게 관리 및 엔터프라이즈 준비 기능을 제공 합니다. 
 
 
 + [원격 Visual Studio Code](https://code.visualstudio.com/docs/remote/remote-overview) 개발을 통해 컨테이너, 원격 컴퓨터 또는 WSL (Linux 용 Windows 하위 시스템)을 모든 기능을 갖춘 개발 환경으로 사용할 수 있습니다. 
 
-## <a name="prerequisite"></a>필수 조건  
+## <a name="prerequisite"></a>필수 요소  
 
 Windows 플랫폼에서 아직 없는 경우 [OpenSSH 호환 SSH 클라이언트를 설치](https://code.visualstudio.com/docs/remote/troubleshooting#_installing-a-supported-ssh-client) 해야 합니다. 
 
@@ -37,7 +34,7 @@ Windows 플랫폼에서 아직 없는 경우 [OpenSSH 호환 SSH 클라이언트
 
 ## <a name="get-ip-and-ssh-port"></a>IP 및 SSH 포트 가져오기 
 
-1. https://ml.azure.com/ 에서 Azure Machine Learning studio로 이동 합니다.
+1. https://ml.azure.com/에서 Azure Machine Learning studio로 이동 합니다.
 
 2. [작업 영역](concept-workspace.md)을 선택 합니다.
 1. **계산 인스턴스** 탭을 클릭 합니다.
@@ -93,7 +90,7 @@ Host azmlci1
 |----|---------|
 |호스트|계산 인스턴스에 대해 원하는 약어를 사용 합니다. |
 |HostName|계산 인스턴스의 IP 주소입니다. |
-|Port|위의 SSH 대화 상자에 표시 되는 포트입니다. |
+|포트|위의 SSH 대화 상자에 표시 되는 포트입니다. |
 |사용자|이를 `azureuser` 해야 합니다. |
 |IdentityFile|는 개인 키를 저장 한 파일을 가리켜야 합니다. |
 

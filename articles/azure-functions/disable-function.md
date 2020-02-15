@@ -3,18 +3,21 @@ title: Azure Functions에서 함수를 사용하지 않도록 설정하는 방�
 description: Azure Functions에서 함수를 사용 하지 않도록 설정 하 고 사용 하도록 설정 하는 방법을 알아봅니다.
 ms.topic: conceptual
 ms.date: 12/05/2019
-ms.openlocfilehash: bffb3136c77074ecd50e839fd7c73144ad910967
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: fb8edf635856078655b8640ba0e1723fdd5e8a5a
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74970978"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77116152"
 ---
 # <a name="how-to-disable-functions-in-azure-functions"></a>Azure Functions에서 함수를 사용하지 않도록 설정하는 방법
 
 이 문서에서는 Azure Functions에서 함수를 사용하지 않도록 설정하는 방법을 설명합니다. 함수를 *사용하지 안도록 설정*하는 것은 함수에 대해 정의된 자동 트리거를 런타임에서 무시하도록 하는 것입니다. 이렇게 하면 전체 함수 앱을 중지 하지 않고 특정 함수가 실행 되지 않도록 방지할 수 있습니다.
 
 함수를 사용 하지 않도록 설정 하는 권장 방법은 `AzureWebJobs.<FUNCTION_NAME>.Disabled`형식으로 앱 설정을 사용 하는 것입니다. [Azure CLI](/cli/azure/) 사용 및 [Azure Portal](https://portal.azure.com)의 함수 **관리** 탭에서 비롯 하 여 다양 한 방법으로이 응용 프로그램 설정을 만들고 수정할 수 있습니다. 
+
+> [!NOTE]  
+> 이 문서에서 설명 하는 메서드를 사용 하 여 HTTP 트리거 함수를 사용 하지 않도록 설정 하면 로컬 컴퓨터에서 실행 되는 경우에도 끝점에 액세스할 수 있습니다.  
 
 ## <a name="use-the-azure-cli"></a>Azure CLI 사용
 
@@ -83,7 +86,7 @@ public static class QueueFunctions
 > [!IMPORTANT]
 > `Disabled` 특성은 클래스 라이브러리 함수를 사용하지 않도록 설정하는 유일한 방법입니다. 클래스 라이브러리 함수에 대해 생성된 *function.json* 파일은 직접 편집할 수 없게 되어 있습니다. 해당 파일을 편집하는 경우 무엇을 하든지 `disabled` 속성에 영향을 주지 않습니다.
 >
-> **함수 상태** 스위치는 *function.json* 파일을 변경하여 작동하므로 **관리** 탭의 해당 스위치에도 동일하게 적용됩니다.
+> **함수 상태** 스위치는 **function.json** 파일을 변경하여 작동하므로 *관리* 탭의 해당 스위치에도 동일하게 적용됩니다.
 >
 > 또한 포털은 함수가 사용 안 함이 아닌 경우 사용 안 함으로 나타낼 수 있습니다.
 
@@ -105,7 +108,7 @@ public static class QueueFunctions
     "disabled": true
 }
 ```
-or 
+또는 
 
 ```json
     "bindings": [

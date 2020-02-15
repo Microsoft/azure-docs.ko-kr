@@ -2,13 +2,13 @@
 title: Azure 단추에 배포
 description: GitHub 리포지토리에서 Azure Resource Manager 템플릿을 배포 하려면 단추를 사용 합니다.
 ms.topic: conceptual
-ms.date: 02/05/2020
-ms.openlocfilehash: cf22203b843f4483f495b6eba9a522267c010a79
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.date: 02/07/2020
+ms.openlocfilehash: 88436eac970b252d7b0bc7bccee4131e06e9e0cf
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77050591"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77109054"
 ---
 # <a name="use-a-deployment-button-to-deploy-templates-from-github-repository"></a>배포 단추를 사용 하 여 GitHub 리포지토리에서 템플릿 배포
 
@@ -62,7 +62,15 @@ https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.github
 
 ## <a name="create-deploy-to-azure-button"></a>Azure에 배포 단추 만들기
 
-마지막으로 링크와 이미지를 함께 배치 합니다. GitHub 리포지토리 또는 웹 페이지의 README.md 파일에이 HTML을 추가할 수 있습니다.
+마지막으로 링크와 이미지를 함께 배치 합니다.
+
+GitHub 리포지토리 또는 웹 페이지의 README.md 파일에서 Markdown를 사용 하 여 단추를 추가 하려면 다음을 사용 합니다.
+
+```markdown
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-storage-account-create%2Fazuredeploy.json)
+```
+
+HTML의 경우 다음을 사용 합니다.
 
 ```html
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-storage-account-create%2Fazuredeploy.json" target="_blank">
@@ -73,10 +81,8 @@ https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.github
 ## <a name="deploy-the-template"></a>템플릿 배포
 
 전체 솔루션을 테스트 하려면 다음 단추를 선택 합니다.
-<br><br>
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-storage-account-create%2Fazuredeploy.json" target="_blank">
-  <img src="https://aka.ms/deploytoazurebutton"/>
-</a>
+
+[![Azure에 배포](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-storage-account-create%2Fazuredeploy.json)
 
 포털에는 매개 변수 값을 쉽게 제공할 수 있는 창이 표시 됩니다. 매개 변수는 템플릿의 기본값으로 미리 채워져 있습니다.
 

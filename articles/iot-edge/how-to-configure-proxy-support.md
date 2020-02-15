@@ -7,12 +7,12 @@ ms.date: 11/19/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 12aa78d0ba7c9300fc012958660e2282e91568aa
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: a8ee1e07dafac46467aa26f89b609cd499346974
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76510824"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186571"
 ---
 # <a name="configure-an-iot-edge-device-to-communicate-through-a-proxy-server"></a>프록시 서버를 통해 통신하도록 IoT Edge 디바이스 구성
 
@@ -22,7 +22,7 @@ IoT Edge 디바이스는 HTTPS 요청을 전송하여 IoT Hub와 통신합니다
 
 1. **장치에 IoT Edge 런타임을 설치 합니다.**
 
-   IoT Edge 설치 스크립트는 인터넷에서 패키지와 파일을 끌어오고 장치에서 프록시 서버를 통해 통신 하 여 요청을 수행 해야 합니다. 자세한 단계는이 문서의 [프록시를 통해 런타임 설치](#install-the-runtime-through-a-proxy) 섹션을 참조 하세요. Windows 장치의 경우 설치 스크립트에도 [오프 라인 설치](how-to-install-iot-edge-windows.md#offline-installation) 옵션이 제공 됩니다.
+   IoT Edge 설치 스크립트는 인터넷에서 패키지와 파일을 끌어오고 장치에서 프록시 서버를 통해 통신 하 여 요청을 수행 해야 합니다. 자세한 단계는이 문서의 [프록시를 통해 런타임 설치](#install-the-runtime-through-a-proxy) 섹션을 참조 하세요. Windows 장치의 경우 설치 스크립트에도 [오프 라인 설치](how-to-install-iot-edge-windows.md#offline-or-specific-version-installation) 옵션이 제공 됩니다.
 
    이 단계는 IoT Edge 장치를 처음 설정할 때 한 번 수행 되는 프로세스입니다. IoT Edge 런타임을 업데이트 하는 경우에도 동일한 연결이 필요 합니다.
 
@@ -82,7 +82,7 @@ Windows 장치에 IoT Edge 런타임을 설치 하는 경우 프록시 서버를
    . {Invoke-WebRequest -proxy <proxy URL> -useb aka.ms/iotedge-win} | Invoke-Expression; Initialize-IoTEdge
    ```
 
-URL에 포함할 수 없는 프록시 서버에 대한 복잡한 자격 증명이 있는 경우 `-InvokeWebRequestParameters` 내에서 `-ProxyCredential` 매개 변수를 사용합니다. 예를 들면 다음과 같습니다.
+URL에 포함할 수 없는 프록시 서버에 대한 복잡한 자격 증명이 있는 경우 `-ProxyCredential` 내에서 `-InvokeWebRequestParameters` 매개 변수를 사용합니다. 예를 들면 다음과 같습니다.
 
 ```powershell
 $proxyCredential = (Get-Credential).GetNetworkCredential()
@@ -208,7 +208,7 @@ IoT Edge 디바이스가 프록시 서버를 사용하도록 구성한 후에는
 
 이 단계는 IoT Edge 장치 전체에서 지속 됩니다.
 
-### <a name="azure-portal"></a>Azure Portal
+### <a name="azure-portal"></a>Azure portal
 
 **모듈 설정** 마법사를 사용하여 IoT Edge 디바이스의 배포를 만들 때는 모든 모듈에 **환경 변수** 섹션에 있으므로 이 섹션을 통해 프록시 서버 연결을 구성할 수 있습니다.
 

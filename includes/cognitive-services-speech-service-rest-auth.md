@@ -4,23 +4,23 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/29/2019
 ms.author: erhopf
-ms.openlocfilehash: 22a95be43f06e95a6067b179b3023ba94ee5795d
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 020055c1629a66ec1aa82beb050501803b2a0f18
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68362575"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168303"
 ---
 ## <a name="authentication"></a>인증
 
 각 요청에는 인증 헤더가 필요 합니다. 이 표에서는 각 서비스에 대해 지원되는 헤더를 보여 줍니다.
 
-| 지원되는 인증 헤더 | 음성을 텍스트로 | 텍스트 음성 변환 |
+| 지원되는 인증 헤더 | 음성 텍스트 변환 | 텍스트 음성 변환 |
 |------------------------|----------------|----------------|
-| Ocp-Apim-Subscription-Key | 예 | 아니요. |
-| Authorization: Bearer | 예 | 예 |
+| Ocp-Apim-Subscription-Key | yes | 예 |
+| Authorization: Bearer | yes | yes |
 
-`Ocp-Apim-Subscription-Key` 헤더를 사용하는 경우 구독 키만 제공하면 됩니다. 예:
+`Ocp-Apim-Subscription-Key` 헤더를 사용하는 경우 구독 키만 제공하면 됩니다. 다음은 그 예입니다.
 
 ```
 'Ocp-Apim-Subscription-Key': 'YOUR_SUBSCRIPTION_KEY'
@@ -30,11 +30,17 @@ ms.locfileid: "68362575"
 
 ### <a name="how-to-get-an-access-token"></a>액세스 토큰을 가져오는 방법
 
-액세스 토큰을 가져오려면 `Ocp-Apim-Subscription-Key` 및 구독 키를 사용하여 `issueToken` 엔드포인트에 요청해야 합니다.
+액세스 토큰을 가져오려면 `issueToken` 및 구독 키를 사용하여 `Ocp-Apim-Subscription-Key` 엔드포인트에 요청해야 합니다.
 
-다음 지역 및 엔드포인트가 지원됩니다.
+`issueToken` 끝점의 형식은 다음과 같습니다.
 
-[!INCLUDE [](./cognitive-services-speech-service-endpoints-token-service.md)]
+```
+https://<REGION_IDENTIFIER>.api.cognitive.microsoft.com/sts/v1.0/issueToken
+```
+
+`<REGION_IDENTIFIER>`를이 테이블의 구독 지역과 일치 하는 식별자로 바꿉니다.
+
+[!INCLUDE [](cognitive-services-speech-service-region-identifier.md)]
 
 이 샘플을 사용하여 액세스 토큰 요청을 만듭니다.
 

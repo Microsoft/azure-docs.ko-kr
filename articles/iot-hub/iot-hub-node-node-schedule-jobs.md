@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 08/16/2019
-ms.openlocfilehash: 124af71e458e103392c554a9c86d679f691df5b9
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: 5053935f52153f0cd6ff2f05c5153732f5bda945
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147654"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110851"
 ---
 # <a name="schedule-and-broadcast-jobs-nodejs"></a>작업 예약 및 브로드캐스트 (node.js)
 
@@ -30,7 +30,7 @@ Azure IoT Hub는 백 엔드 앱에서 수백만 개의 디바이스를 예약 �
 
 이러한 기능에 대한 자세한 내용은 다음 문서를 참조하세요.
 
-* 디바이스 쌍 및 속성: [장치 쌍 시작](iot-hub-node-node-twin-getstarted.md) 및 [자습서: 장치 쌍 속성을 사용 하는 방법](tutorial-device-twins.md)
+* 디바이스 쌍 및 속성: [디바이스 쌍 시작](iot-hub-node-node-twin-getstarted.md) 및 [자습서: 디바이스 쌍 속성을 사용하는 방법](tutorial-device-twins.md)
 
 * 직접 메서드: [IoT Hub 개발자 가이드-직접 메서드](iot-hub-devguide-direct-methods.md) 및 [자습서: 직접 메서드](quickstart-control-device-node.md)
 
@@ -48,11 +48,13 @@ Azure IoT Hub는 백 엔드 앱에서 수백만 개의 디바이스를 예약 �
 
 * **scheduleJobService.js**는 시뮬레이션된 디바이스 앱에서 직접 메서드를 호출하고 작업을 사용하여 디바이스 쌍의 desired 속성을 업데이트합니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 * Node.js 버전 10.0. x 이상 [개발 환경 준비](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) Windows 또는 Linux에서이 자습서에 대 한 node.js를 설치 하는 방법을 설명 합니다.
 
 * 활성 Azure 계정. 계정이 없는 경우 몇 분 만에 [무료 계정](https://azure.microsoft.com/pricing/free-trial/)을 만들 수 있습니다.
+
+* 방화벽에서 포트 8883가 열려 있는지 확인 합니다. 이 문서의 device 샘플에서는 포트 8883을 통해 통신 하는 MQTT 프로토콜을 사용 합니다. 이 포트는 일부 회사 및 교육용 네트워크 환경에서 차단 될 수 있습니다. 이 문제를 해결 하는 방법 및 방법에 대 한 자세한 내용은 [IoT Hub에 연결 (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub)을 참조 하세요.
 
 ## <a name="create-an-iot-hub"></a>IoT Hub 만들기
 
@@ -89,7 +91,7 @@ Azure IoT Hub는 백 엔드 앱에서 수백만 개의 디바이스를 예약 �
     var Protocol = require('azure-iot-device-mqtt').Mqtt;
     ```
 
-5. **connectionString** 변수를 추가하고 이 변수를 사용하여 **클라이언트** 인스턴스를 만듭니다. 자리 표시자 `{yourDeviceConnectionString}` 값을 이전에 복사한 장치 연결 문자열로 바꿉니다.
+5. **connectionString** 변수를 추가하고 이 변수를 사용하여 **클라이언트** 인스턴스를 만듭니다. `{yourDeviceConnectionString}` 자리 표시자 값을 이전에 복사한 장치 연결 문자열로 바꿉니다.
 
     ```javascript
     var connectionString = '{yourDeviceConnectionString}';
@@ -166,7 +168,7 @@ Azure IoT Hub는 백 엔드 앱에서 수백만 개의 디바이스를 예약 �
     var JobClient = require('azure-iothub').JobClient;
     ```
 
-5. 다음 변수 선언을 추가합니다. 자리 표시자 `{iothubconnectionstring}` 값을 [IoT hub 연결 문자열 가져오기](#get-the-iot-hub-connection-string)에서 복사한 값으로 바꿉니다. **Mydeviceid**와 다른 장치를 등록 한 경우 쿼리 조건에서 변경 해야 합니다.
+5. 다음 변수 선언을 추가합니다. `{iothubconnectionstring}` 자리 표시자 값을 [IoT hub 연결 문자열 가져오기](#get-the-iot-hub-connection-string)에서 복사한 값으로 바꿉니다. **Mydeviceid**와 다른 장치를 등록 한 경우 쿼리 조건에서 변경 해야 합니다.
 
     ```javascript
     var connectionString = '{iothubconnectionstring}';
@@ -295,6 +297,6 @@ Azure IoT Hub는 백 엔드 앱에서 수백만 개의 디바이스를 예약 �
 
 이 자습서에서는 디바이스에 대한 직접 메서드를 예약하고 디바이스 쌍의 속성을 업데이트하는 데 작업을 사용했습니다.
 
-무선 펌웨어 업데이트를 통한 원격 같은 IoT Hub 및 장치 관리 패턴을 [계속 시작 하려면 자습서: 펌웨어 업데이트](tutorial-firmware-update.md)를 수행 하는 방법
+무선 펌웨어 업데이트를 통한 원격 같은 IoT Hub 및 장치 관리 패턴을 계속 시작 하려면 [자습서: 펌웨어 업데이트를 수행 하는 방법](tutorial-firmware-update.md)을 참조 하세요.
 
 계속 해 서 IoT Hub 시작 하려면 [Azure IoT Edge 시작](../iot-edge/tutorial-simulate-device-linux.md)을 참조 하세요.

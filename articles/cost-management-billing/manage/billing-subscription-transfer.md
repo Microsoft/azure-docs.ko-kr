@@ -14,10 +14,10 @@ ms.date: 01/17/2020
 ms.author: banders
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: d2bbfd7f4ddc5fc34c0bec3612783dfef5074d83
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "76270865"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Azure 구독의 청구 소유권을 다른 계정에 양도
@@ -86,7 +86,7 @@ Visual Studio 및 Microsoft 파트너 네트워크 구독에는 월간 반복 Az
 
 ## <a name="transfer-billing-ownership-of-enterprise-agreement-ea-subscriptions"></a>EA(기업계약) 구독의 청구 소유권 양도
 
-엔터프라이즈 관리자는 등록 내 계정 간에 구독 소유권을 양도할 수 있습니다. 자세한 내용은 EA 포털에서 [계정 소유자 변경](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-get-started#change-account-owner) 을 참조 하세요.
+엔터프라이즈 관리자는 등록 내 계정 간에 구독 소유권을 양도할 수 있습니다. 자세한 내용은 EA 포털에서 [계정 소유자 변경](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-get-started#change-account-owner)을 참조하세요.
 
 ## <a name="next-steps-after-accepting-billing-ownership"></a>청구 소유권을 수락한 후의 다음 단계
 
@@ -222,7 +222,7 @@ Enterprise Administrator는 원래 계정 소유자가 더 이상 조직의 일�
 Microsoft Azure 플랜 구독을 전송하려고 시도하는데 필요한 권한이 없는 경우 이 오류가 발생합니다. Microsoft Azure 플랜 구독을 양도하려면 구독 요금이 청구되는 청구서 섹션의 소유자 또는 기여자여야 합니다. 자세한 내용은 [청구서 섹션에 대한 구독 관리](understand-mca-roles.md#manage-subscriptions-for-invoice-section)를 참조하세요.
 
 
-## <a name="need-help-contact-us"></a>도움이 필요하세요? 문의하세요.
+## <a name="need-help-contact-us"></a>도움 필요 시 문의하세요.
 
 질문이 있거나 도움이 필요한 경우 [지원 요청을 만드세요](https://go.microsoft.com/fwlink/?linkid=2083458).
 

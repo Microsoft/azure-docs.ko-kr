@@ -1,5 +1,5 @@
 ---
-title: Azure에서 SMTP 배너 검사를 위한 역방향 조회 영역 구성
+title: SMTP 배너 검사를 위한 역방향 조회 영역 구성
 titlesuffix: Azure Virtual Network
 description: Azure에서 SMTP 배너 검사를 위한 역방향 조회 영역을 구성하는 방법을 설명합니다.
 services: virtual-network
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 084fdb7f850f3819738a982127fa98efab114197
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 6c37ba61005c9936e6421d06369d1f52b93ac264
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71059030"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201699"
 ---
 # <a name="configure-reverse-lookup-zones-for-an-smtp-banner-check"></a>SMTP 배너 검사를 위한 역방향 조회 영역 구성
 
@@ -30,7 +30,7 @@ Microsoft Azure에서 SMTP 서버를 호스트하는 경우 원격 메일 서버
 
 **554: PTR 레코드 없음**
 
-## <a name="solution"></a>솔루션
+## <a name="solution"></a>해결 방법
 
 Azure의 가상 IP 주소의 경우, 역방향 레코드가 사용자 정의 도메인 영역이 아닌 Microsoft 소유의 도메인 영역에 생성됩니다.
 

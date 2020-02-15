@@ -9,16 +9,16 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: cf2c5aceae0112187949ded78bea8e93e8723084
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 24295e27a3b94f6960777a8704fdf448697da4e1
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75910985"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76987289"
 ---
 # <a name="tutorial-implement-iot-spatial-analytics-using-azure-maps"></a>자습서: Azure Maps를 사용하여 IoT 공간 분석 구현
 
-공간과 시간에서 발생하는 관련 이벤트를 추적하고 캡처하는 것은 일반적인 IoT 시나리오입니다. 예를 들어 차량 관리, 자산 추적, 모바일 및 스마트 도시 애플리케이션입니다. 이 자습서에서는 Event Grid에서 제공하는 이벤트 구독 모델을 사용하여 IoT Hub에서 캡처한 관련 이벤트에 대해 Azure Maps API를 사용하는 솔루션 패턴을 안내합니다.
+공간과 시간에서 발생하는 관련 이벤트를 추적하고 캡처하는 것은 일반적인 IoT 시나리오입니다. 차량 관리, 자산 추적, 모바일 및 스마트 도시 애플리케이션 시나리오를 예로 들 수 있습니다. 이 자습서에서는 Azure Maps API 사용을 위한 솔루션 패턴을 안내합니다. 관련 이벤트는 Event Grid에서 제공하는 이벤트 구독 모델을 사용하여 IoT Hub에 의해 캡처됩니다.
 
 이 자습서에서는 다음 작업을 수행합니다.
 
@@ -34,7 +34,7 @@ ms.locfileid: "75910985"
 
 ## <a name="use-case"></a>사용 사례
 
-자동차 임대 회사에서 임대한 해당 자동차 이벤트를 모니터링하고 기록하는 시나리오에 대한 솔루션을 예로 보여 줍니다. 자동차 임대 회사는 종종 특정 지리적 지역에서 자동차를 임대하며, 임대하는 동안 해당 위치를 추적해야 합니다. 정책, 요금 및 기타 비즈니스 측면을 적절하게 처리할 수 있도록 지정한 지리적 지역을 떠나는 자동차와 관련된 모든 인스턴스를 기록해야 합니다.
+이 솔루션은 자동차 임대 회사에서 렌터카의 이벤트를 모니터링하고 기록하는 시나리오를 보여줍니다. 자동차 임대 회사는 종종 특정 지리적 지역에서 자동차를 임대하며, 임대하는 동안 해당 위치를 추적해야 합니다. 선택한 지리적 지역을 벗어나는 자동차 인스턴스를 기록해야 합니다. 데이터를 기록하면 정책, 요금 및 기타 비즈니스 사안이 올바르게 처리됩니다.
 
 사용 사례에서 렌터카에는 원격 분석 데이터를 Azure IoT Hub로 정기적으로 보내는 IoT 디바이스가 장착되어 있습니다. 원격 분석에는 현재 위치가 포함되며, 자동차의 엔진이 작동하고 있는지 여부가 표시됩니다. 디바이스 위치 스키마는 [지리 공간 데이터에 대한 IoT 플러그 앤 플레이 스키마](https://github.com/Azure/IoTPlugandPlay/blob/master/Schemas/geospatial.md)를 준수합니다. 렌터카의 디바이스 원격 분석 스키마는 다음과 같습니다.
 
@@ -63,16 +63,18 @@ ms.locfileid: "75910985"
 }
 ```
 
-차량 내부 디바이스 원격 분석을 사용하여 목표를 달성할 수 있습니다. 목표는 자동차가 이동한 위치를 나타내는 이벤트를 받을 때마다 지오펜싱 규칙을 실행하고 추가 작업을 적절히 수행하는 것입니다. 이렇게 하려면 Event Grid를 통해 IoT Hub의 디바이스 원격 분석 이벤트를 구독하여 적절한 경우에만 원하는 고객 비즈니스 논리를 실행합니다. Event Grid를 구독하는 몇 가지 방법이 있으며, 이 자습서에서는 Azure Functions를 사용합니다. Azure Functions는 Event Grid에 게시된 이벤트에 반응하고 Azure Maps 공간 분석에 기반한 자동차 임대 비즈니스 논리를 구현합니다. Azure 함수는 자동차가 지오펜스를 떠났는지 여부를 확인하고, 그렇다면 현재 위치와 연결된 주소와 같은 추가 정보를 수집하는 것으로 구성됩니다. 또한 이 함수는 자동차 임대 분석가와 임대 고객에게 이벤트 상황에 대한 정확한 설명을 제공할 수 있도록 의미 있는 이벤트 데이터를 데이터 Blob 스토리지에 저장하기 위한 논리를 구현합니다.
+차량 내 디바이스 원격 분석을 사용하여 목표를 달성해 보겠습니다. 우리의 목표는 지오펜싱 규칙을 실행하고, 자동차가 이동했다는 이벤트를 받을 때마다 응답하는 것입니다. 이렇게 하기 위해 Event Grid를 통해 IoT Hub의 디바이스 원격 분석 이벤트를 구독할 것입니다. Event Grid를 구독하는 여러 가지 방법이 있으며, 이 자습서에서는 Azure Functions를 사용합니다. Azure Functions는 Event Grid에 게시된 이벤트에 응답합니다. 또한 Azure Maps 공간 분석을 기반으로 하는 자동차 임대 비즈니스 논리를 구현합니다. Azure 함수 내 코드는 차량이 지오펜스를 벗어났는지 여부를 검사합니다. 차량이 지오펜스를 벗어나면 Azure 함수는 차량의 현재 위치와 연결된 주소 같은 추가 정보를 수집합니다. 또한 이 함수는 이벤트 상황에 대해 정확하게 설명할 수 있도록 의미 있는 이벤트 데이터를 데이터 BLOB 스토리지에 저장하는 논리를 구현합니다. 이벤트 환경은 자동차 임대 회사 및 임대 고객에게 도움이 될 수 있습니다.
 
 다음 다이어그램에서는 시스템에 대한 개략적인 개요를 제공합니다.
 
  
   <center>
 
-  ![시스템 개요](./media/tutorial-iot-hub-maps/system-diagram.png)</center>
+  ![시스템 개요](./media/tutorial-iot-hub-maps/system-diagram.png)
+  
+  </center>
 
-아래 그림에서는 지오펜스 영역이 파란색으로, 렌터카 경로가 녹색 선으로 강조 표시되어 있습니다.
+아래 그림에서 지오펜스 영역은 파란색으로, 렌터카 경로는 녹색 선으로 표시되어 있습니다.
 
   ![지오펜스 경로](./media/tutorial-iot-hub-maps/geofence-route.png)
 
@@ -81,7 +83,7 @@ ms.locfileid: "75910985"
 
 ### <a name="create-a-resource-group"></a>리소스 그룹 만들기
 
-이 자습서의 단계를 수행하려면 먼저 Azure Portal에서 리소스 그룹을 만들어야 합니다. 리소스 그룹을 만들려면 다음 단계를 수행합니다.
+이 자습서의 단계를 수행하려면 먼저 Azure Portal에서 리소스 그룹을 만들어야 합니다. 리소스 그룹을 만들려면 다음을 수행합니다.
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
 
@@ -89,7 +91,7 @@ ms.locfileid: "75910985"
     
    ![리소스 그룹](./media/tutorial-iot-hub-maps/resource-group.png)
 
-3. 리소스 그룹에서 **추가**를 선택합니다.
+3. **리소스 그룹**에서 **추가**를 선택합니다.
     
    ![리소스 그룹 추가](./media/tutorial-iot-hub-maps/add-resource-group.png) 
 
@@ -100,7 +102,7 @@ ms.locfileid: "75910985"
 
     ![리소스 그룹 세부 정보](./media/tutorial-iot-hub-maps/resource-details.png)
 
-    **검토 + 만들기**를 클릭하고, 다음 페이지에서 **만들기**를 선택합니다.
+    **검토 + 만들기**를 선택하고, 다음 페이지에서 **만들기**를 선택합니다.
 
 ### <a name="create-an-azure-maps-account"></a>Azure Maps 계정 만들기 
 
@@ -110,9 +112,9 @@ Azure Maps 공간 분석에 기반한 비즈니스 논리를 구현하려면 만
 
 ### <a name="create-a-storage-account"></a>스토리지 계정 만들기
 
-이벤트 데이터를 기록하기 위해 범용 **v2storage** 계정을 "ContosoRental" 리소스 그룹에 만들어 데이터를 Blob으로 저장합니다. 스토리지 계정을 만들려면 [스토리지 계정 만들기](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal)의 지침을 따릅니다. 다음으로, Blob을 저장할 컨테이너를 만들어야 합니다. 이렇게 하려면 다음 단계를 수행합니다.
+이벤트 데이터를 기록하기 위해, 범용 **v2storage** 계정을 "ContosoRental" 리소스 그룹에 만들어 데이터를 BLOB으로 저장합니다. 스토리지 계정을 만들려면 [스토리지 계정 만들기](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal)의 지침을 따릅니다. 다음으로, Blob을 저장할 컨테이너를 만들어야 합니다. 이렇게 하려면 다음 단계를 수행합니다.
 
-1. 스토리지 계정에서 [Blob]으로 이동합니다.
+1. 스토리지 계정에서 [컨테이너]로 이동합니다.
 
     ![Blob](./media/tutorial-iot-hub-maps/blobs.png)
 
@@ -120,16 +122,16 @@ Azure Maps 공간 분석에 기반한 비즈니스 논리를 구현하려면 만
 
     ![Blob 컨테이너](./media/tutorial-iot-hub-maps/blob-container.png)
 
-3. 스토리지 계정의 **액세스 키** 블레이드로 이동하여 나중에 사용할 계정 이름과 액세스 키를 복사합니다.
+3. 스토리지 계정의 **액세스 키** 블레이드로 이동하여 "스토리지 계정 이름"과 "액세스 키"를 복사합니다. 이후 단계에서 필요합니다.
 
     ![액세스 키](./media/tutorial-iot-hub-maps/access-keys.png)
 
 
-이제 이벤트 데이터를 기록할 스토리지 계정과 컨테이너가 마련되었으므로 다음으로 IoT Hub를 만듭니다.
+이제 이벤트 데이터를 기록할 스토리지 계정과 컨테이너가 마련되었습니다. 다음으로 IoT 허브를 만들겠습니다.
 
 ### <a name="create-an-iot-hub"></a>IoT Hub 만들기
 
-IoT Hub는 클라우드에서 IoT 애플리케이션과 이를 통해 관리되는 디바이스 간의 양방향 통신용 중앙 메시지 허브로 작동하는 관리형 서비스입니다. 디바이스 원격 분석 메시지를 Event Grid로 라우팅하려면 IoT Hub를 "ContosoRental" 리소스 그룹 내에 만들고, 자동차의 엔진 상태를 기준으로 메시지를 필터링하고 자동차가 이동할 때마다 디바이스 원격 분석 메시지를 Event Grid에 보내는 메시지 경로 통합을 설정합니다. 
+IoT Hub는 클라우드에서 IoT 애플리케이션과 이를 통해 관리되는 디바이스 간의 양방향 통신용 중앙 메시지 허브로 작동하는 관리되는 서비스입니다. 디바이스 원격 분석 메시지를 Event Grid로 라우팅하려면 "ContosoRental" 리소스 그룹 내에 IoT Hub를 만듭니다. 자동차의 엔진 상태를 기준으로 메시지를 필터링할 메시지 경로 통합을 설정합니다. 또한 자동차가 이동 중일 때마다 디바이스 원격 분석 메시지를 Event Grid 보낼 것입니다.
 
 > [!Note] 
 > 디바이스 원격 분석 이벤트를 Event Grid에 게시하는 IoT Hub의 기능은 공개 미리 보기로 있습니다. 공개 미리 보기 기능은 **미국 동부, 미국 서부, 서유럽, Azure Government, Azure 중국 21Vianet** 및 **Azure 독일**을 제외한 모든 지역에서 사용할 수 있습니다. 
@@ -172,7 +174,7 @@ Postman 앱을 열고, 아래의 단계에 따라 Azure Maps 데이터 업로드
    
     ![키 값 매개 변수 Postman](./media/tutorial-iot-hub-maps/postman-key-vals.png)
 
-4. **Body**(본문)를 클릭하고, **raw**(원시) 입력 형식을 선택한 다음, 드롭다운 목록에서 입력 형식으로 **JSON (application/text)** JSON(애플리케이션/텍스트)을 선택합니다. [여기](https://raw.githubusercontent.com/Azure-Samples/iothub-to-azure-maps-geofencing/master/src/Data/geofence.json?token=AKD25BYJYKDJBJ55PT62N4C5LRNN4)서 JSON 데이터 파일을 열고, Json을 업로드할 데이터로 Postman의 본문 섹션에 복사하고, **Send**(보내기)를 클릭합니다.
+4. **본문**을 클릭하고 **원시** 입력 형식을 선택한 다음, 드롭다운 목록에서 입력 형식으로 **JSON (애플리케이션/텍스트)** 을 선택합니다. [여기](https://raw.githubusercontent.com/Azure-Samples/iothub-to-azure-maps-geofencing/master/src/Data/geofence.json?token=AKD25BYJYKDJBJ55PT62N4C5LRNN4)서 JSON 데이터 파일을 열고, Json을 본문 섹션에 업로드할 데이터로 복사하고, **보내기**를 클릭합니다.
     
     ![데이터 게시](./media/tutorial-iot-hub-maps/post-json-data.png)
     
@@ -208,17 +210,19 @@ Azure Functions는 컴퓨팅 인프라를 명시적으로 프로비저닝하거�
 
     ![리소스 만들기](./media/tutorial-iot-hub-maps/create-resource.png)
 
-2. 함수 앱 만들기 페이지에서 함수 앱 이름을 지정하고, **리소스 그룹** 아래에서 **기존 항목 사용**을 선택하고, 드롭다운 목록에서 "ContosoRental"을 선택합니다. 런타임 스택으로 ".NET Core"를 선택하고, **스토리지** 아래에서 **기존 항목 사용**을 선택하고, 드롭다운에서 "contosorentaldata"를 선택하고, **만들기**를 클릭합니다.
+2. **함수 앱** 만들기 페이지에서 함수 앱의 이름을 지정합니다. **리소스 그룹**에서 **기존 항목 사용**을 선택하고, 드롭다운 목록에서 "ContosoRental"을 선택합니다. 런타임 스택으로 ".NET Core"를 선택합니다. **스토리지**에서 **기존 항목 사용**을 선택하고, 드롭다운 목록에서 "contosorentaldata"를 선택한 다음, **검토 + 만들기**를 선택합니다.
     
     ![앱 만들기](./media/tutorial-iot-hub-maps/rental-app.png)
 
-3. 앱이 만들어지면 함수를 이 앱에 추가해야 합니다. 함수 앱으로 이동하고, **새 함수**를 클릭하여 함수를 추가하고, 개발 환경으로 **포털 내**를 선택하고, **계속**을 선택합니다.
+2. 함수 앱 세부 정보를 검토하고, "만들기"를 선택합니다.
+
+3. 앱이 만들어지면 함수를 이 앱에 추가해야 합니다. 함수 앱으로 이동하고, **새 함수**를 클릭하여 함수를 추가하고, 개발 환경으로 **포털 내**를 선택한 다음, **계속**을 선택합니다.
 
     ![함수 만들기](./media/tutorial-iot-hub-maps/function.png)
 
 4. **추가 템플릿**을 선택하고, **템플릿 완료 및 보기**를 클릭합니다. 
 
-5. **Azure Event Grid 트리거**가 있는 템플릿을 선택합니다. 메시지가 표시되면 확장을 설치하고, 함수 이름을 지정하고, **만들기**를 누릅니다.
+5. **Azure Event Grid 트리거**가 있는 템플릿을 선택합니다. 메시지가 표시되면 확장을 설치하고, 함수 이름을 지정하고, **만들기**를 선택합니다.
 
     ![함수 템플릿](./media/tutorial-iot-hub-maps/eventgrid-funct.png)
 
@@ -233,7 +237,7 @@ Azure Functions는 컴퓨팅 인프라를 명시적으로 프로비저닝하거�
     
     ![Event Grid 추가](./media/tutorial-iot-hub-maps/add-egs.png)
 
-11. 구독 세부 정보를 채우고, **이벤트 구독 세부 정보** 아래에서 구독 이름을 지정하고, 이벤트 스키마에 대해 "Event Grid 스키마"를 선택합니다. **항목 세부 정보** 아래에서 항목 종류로 "Azure IoT Hub 계정"을 선택하고, 리소스 그룹을 만드는 데 사용한 것과 동일한 구독을 선택하고, "리소스 그룹"으로 "ContosoRental"을 선택하고, "리소스"로 만든 IoT Hub를 선택합니다. 이벤트 유형으로 **디바이스 원격 분석**을 선택합니다. 이러한 옵션이 선택되면 "항목 종류"가 자동으로 "IoT Hub"로 변경됩니다.
+11. 구독 세부 정보를 채우고, **이벤트 구독 세부 정보** 아래에서 구독 이름을 지정하고, 이벤트 스키마에 대해 "Event Grid 스키마"를 선택합니다. **토픽 세부 정보**에서 토픽 형식으로 "Azure IoT Hub 계정"을 선택합니다. 리소스 그룹을 만드는 데 사용한 것과 동일한 구독을 선택하고, "리소스 그룹"으로 "ContosoRental"을 선택하고, "리소스"로 만든 IoT Hub를 선택합니다. 이벤트 유형으로 **디바이스 원격 분석**을 선택합니다. 이러한 옵션이 선택되면 "항목 종류"가 자동으로 "IoT Hub"로 변경됩니다.
 
     ![Event Grid 구독](./media/tutorial-iot-hub-maps/af-egs.png)
  
@@ -251,13 +255,13 @@ Event Grid 구독이 Azure Function에 추가되면 이제 IoT Hub의 **메시�
 
 ## <a name="send-telemetry-data-to-iot-hub"></a>IoT Hub에 원격 분석 데이터 보내기
 
-Azure Function이 시작되어 실행되면 이제 원격 분석 데이터를 IoT Hub에 보내 Event Grid로 라우팅합니다. C# 애플리케이션을 사용하여 렌터카의 차량 내부 디바이스에 대한 위치 데이터를 시뮬레이션합니다. 애플리케이션을 실행하려면 개발 머신에서 .NET Core SDK 2.1.0 이상이 필요합니다. 아래의 단계에 따라 시뮬레이션된 원격 분석 데이터를 IoT Hub에 보냅니다.
+Azure Function이 시작되어 실행되면 이제 원격 분석 데이터를 IoT Hub에 보내 Event Grid로 라우팅할 수 있습니다. C# 애플리케이션을 사용하여 렌터카의 차량 내부 디바이스에 대한 위치 데이터를 시뮬레이션해 봅시다. 애플리케이션을 실행하려면 개발 머신에서 .NET Core SDK 2.1.0 이상이 필요합니다. 아래의 단계에 따라 시뮬레이션된 원격 분석 데이터를 IoT Hub에 보냅니다.
 
 1. [rentalCarSimulation](https://github.com/Azure-Samples/iothub-to-azure-maps-geofencing/tree/master/src/rentalCarSimulation) C# 프로젝트를 다운로드합니다. 
 
 2. 원하는 텍스트 편집기에서 simulatedCar.cs 파일을 열고, `connectionString`의 값을 디바이스 등록 시 저장한 값으로 바꾸고, 변경 내용을 파일에 저장합니다.
  
-3. 로컬 터미널 창에서 C# 프로젝트의 루트 폴더로 이동하고, 다음 명령을 실행하여 시뮬레이션된 디바이스 애플리케이션에 필요한 패키지를 설치합니다.
+3. 머신에 .NET Core가 설치되어 있는지 확인합니다. 로컬 터미널 창에서 C# 프로젝트의 루트 폴더로 이동하고, 다음 명령을 실행하여 시뮬레이션된 디바이스 애플리케이션에 필요한 패키지를 설치합니다.
     
     ```cmd/sh
     dotnet restore
@@ -300,6 +304,6 @@ IoT용 Azure Certified인 디바이스 목록을 가져오려면 다음을 방�
 
 * [Azure Certified 디바이스](https://catalog.azureiotsolutions.com/)
 
-디바이스를 클라우드 원격 분석에 보내거나 그 반대로 보내는 방법에 대한 자세한 내용은 다음을 참조하세요.
+디바이스에서 클라우드로 또는 그 반대로 원격 분석을 보내는 방법에 대한 자세한 내용은 다음을 참조하세요.
 
 * [디바이스에서 원격 분석 데이터 보내기](https://docs.microsoft.com/azure/iot-hub/quickstart-send-telemetry-dotnet)

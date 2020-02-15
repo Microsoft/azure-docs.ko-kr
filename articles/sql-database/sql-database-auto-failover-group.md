@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
-ms.date: 1/05/2020
-ms.openlocfilehash: 9b838edea4b5f47fe57305c593944ef5fa93a63c
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.date: 2/10/2020
+ms.openlocfilehash: 6d87d3373711d12df3f2cced26ef35ae951ad41e
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76768672"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77116200"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>자동 장애 조치(failover) 그룹을 통해 여러 데이터베이스의 투명하고 조정된 장애 조치(failover)를 사용할 수 있습니다.
 
@@ -132,7 +132,7 @@ ms.locfileid: "76768672"
   > [!NOTE]
   > Managed Instance는 여러 개의 장애 조치(failover) 그룹을 지원하지 않습니다.
   
-## <a name="permissions"></a>권한
+## <a name="permissions"></a>사용 권한
 
 장애 조치 (failover) 그룹에 대 한 권한은 [RBAC (역할 기반 액세스 제어)](../role-based-access-control/overview.md)를 통해 관리 됩니다. [SQL Server 참여자](../role-based-access-control/built-in-roles.md#sql-server-contributor) 역할에는 장애 조치 (failover) 그룹을 관리 하는 데 필요한 모든 권한이 있습니다.
 
@@ -242,7 +242,7 @@ OLTP 작업을 수행할 때 `<fog-name>.database.windows.net`을 서버 URL로 
 서로 다른 두 구독에서 관리 되는 인스턴스 간에 장애 조치 (failover) 그룹을 만들 수 있습니다. PowerShell API를 사용 하는 경우 보조 인스턴스에 대 한 `PartnerSubscriptionId` 매개 변수를 지정 하 여 수행할 수 있습니다. REST API를 사용 하는 경우 `properties.managedInstancePairs` 매개 변수에 포함 된 각 인스턴스 ID에는 고유한 subscriptionID가 있을 수 있습니다.
   
 > [!IMPORTANT]
-> Azure Portal은 여러 구독에서 장애 조치 (failover) 그룹을 지원 하지 않습니다.
+> Azure Portal은 다른 구독에서 장애 조치 (failover) 그룹 만들기를 지원 하지 않습니다. 또한 다른 구독 및/또는 리소스 그룹에 걸친 기존 장애 조치 (failover) 그룹의 경우 주 인스턴스에서 포털을 통해 수동으로 장애 조치 (failover)를 시작할 수 없습니다. 대신 지역 보조 인스턴스에서 시작 합니다.
 
 ### <a name="managing-failover-to-secondary-instance"></a>보조 인스턴스로 장애 조치 (failover) 관리
 
@@ -397,9 +397,9 @@ OLTP 작업을 수행할 때 `<fog-name>.zone_id.database.windows.net`을 서버
 | Cmdlet | Description |
 | --- | --- |
 | [New-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/new-azsqldatabasefailovergroup) |장애 조치 그룹을 만들고 주 및 보조 서버 모두에 등록합니다|
-| [Remove-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/remove-azsqldatabasefailovergroup) | 서버에서 장애 조치 (failover) 그룹을 제거 합니다. |
+| [AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/remove-azsqldatabasefailovergroup) | 서버에서 장애 조치 (failover) 그룹을 제거 합니다. |
 | [Get-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/get-azsqldatabasefailovergroup) | 장애 조치 (failover) 그룹의 구성을 검색 합니다. |
-| [Set-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/set-azsqldatabasefailovergroup) |장애 조치 (failover) 그룹의 구성을 수정 합니다. |
+| [AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/set-azsqldatabasefailovergroup) |장애 조치 (failover) 그룹의 구성을 수정 합니다. |
 | [Switch-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/switch-azsqldatabasefailovergroup) | 장애 조치 (failover) 그룹의 장애 조치 (failover)를 보조 서버로 트리거합니다. |
 | [Add-AzSqlDatabaseToFailoverGroup](/powershell/module/az.sql/add-azsqldatabasetofailovergroup)|장애 조치 (failover) 그룹에 하나 이상의 데이터베이스를 추가 합니다.|
 

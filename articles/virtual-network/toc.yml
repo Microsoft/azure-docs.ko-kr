@@ -35,118 +35,91 @@
       href: policy-samples.md
 - name: 개념
   items:
-    - name: 보안 그룹
-      href: security-overview.md
-    - name: 라우팅
-      href: virtual-networks-udr-overview.md
-    - name: 서비스 태그
-      href: service-tags-overview.md
-    - name: 서비스 엔드포인트
-      href: virtual-network-service-endpoints-overview.md
-    - name: 서비스 엔드포인트 정책
-      href: virtual-network-service-endpoint-policies-overview.md
-    - name: 피어링
-      href: virtual-network-peering-overview.md
-    - name: 가상 네트워크 TAP
-      href: virtual-network-tap-overview.md
-    - name: Azure 서비스에 대한 가상 네트워크
-      href: virtual-network-for-azure-services.md
-    - name: 컨테이너 네트워킹
-      href: container-networking-overview.md
-    - name: Kubernetes 네트워크 정책
-      href: kubernetes-network-policies.md
     - name: 비즈니스 연속성
       href: virtual-network-disaster-recovery-guidance.md
-    - name: IP 주소
-      href: virtual-network-ip-addresses-overview-arm.md
-    - name: 공용 IP 접두사
-      href: public-ip-address-prefix.md
-    - name: Azure VNET의 IPv6
-      href: ipv6-overview.md
-    - name: 공용 IPv6 주소 접두사
-      href: ipv6-public-ip-address-prefix.md
-    - name: DDoS 보호
-      href: ddos-protection-overview.md
-    - name: 서브넷 확장
-      href: subnet-extension.md
-    - name: 서브넷 위임
-      href: subnet-delegation-overview.md
-    - name: 백 엔드 연결 상호 운용성
+    - name: 연결
       items:
-        - name: 접두사 및 테스트 설정
-          href: ../networking/connectivty-interoperability-preface.md?toc=%2fazure%2fvirtual-network%2ftoc.json
-        - name: 테스트 설정 구성
-          href: ../networking/connectivty-interoperability-configuration.md?toc=%2fazure%2fvirtual-network%2ftoc.json
-        - name: 제어 평면 분석
-          href: ../networking/connectivty-interoperability-control-plane.md?toc=%2fazure%2fvirtual-network%2ftoc.json
-        - name: 데이터 평면 분석
-          href: ../networking/connectivty-interoperability-data-plane.md?toc=%2fazure%2fvirtual-network%2ftoc.json
-    - name: 네트워크 간 연결
-      href: ../expressroute/cross-network-connectivity.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+        - name: 백 엔드 연결 상호 운용성
+          items:
+            - name: 접두사 및 테스트 설정
+              href: ../networking/connectivty-interoperability-preface.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+            - name: 테스트 설정 구성
+              href: ../networking/connectivty-interoperability-configuration.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+            - name: 제어 평면 분석
+              href: ../networking/connectivty-interoperability-control-plane.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+            - name: 데이터 평면 분석
+              href: ../networking/connectivty-interoperability-data-plane.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+        - name: 컨테이너 네트워킹
+          href: container-networking-overview.md
+        - name: 네트워크 간 연결
+          href: ../expressroute/cross-network-connectivity.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+        - name: 피어링
+          href: virtual-network-peering-overview.md
+        - name: Azure 서비스에 대한 가상 네트워크
+          href: virtual-network-for-azure-services.md
+    - name: IP 서비스
+      items:
+        - name: IP 주소
+          href: virtual-network-ip-addresses-overview-arm.md
+        - name: 공용 IP 접두사
+          href: public-ip-address-prefix.md
+        - name: Azure VNET의 IPv6
+          href: ipv6-overview.md
+        - name: 공용 IPv6 주소 접두사
+          href: ipv6-public-ip-address-prefix.md
+    - name: 보안
+      items:
+        - name: DDoS 보호
+          href: ddos-protection-overview.md
+        - name: Kubernetes 네트워크 정책
+          href: kubernetes-network-policies.md
+        - name: 라우팅
+          href: virtual-networks-udr-overview.md
+        - name: 보안 그룹
+          href: security-overview.md
+        - name: 서비스 태그
+          href: service-tags-overview.md
+        - name: 서비스 엔드포인트
+          href: virtual-network-service-endpoints-overview.md
+        - name: 서비스 엔드포인트 정책
+          href: virtual-network-service-endpoint-policies-overview.md
+        - name: 가상 네트워크 TAP
+          href: virtual-network-tap-overview.md
+    - name: 서브넷
+      items:
+        - name: 서브넷 확장
+          href: subnet-extension.md
+        - name: 서브넷 위임
+          href: subnet-delegation-overview.md
     - name: 클래식 배포
       href: 'https://docs.microsoft.com/previous-versions/azure/virtual-network/virtual-network-ip-addresses-overview-classic'
 - name: 방법 가이드
   items:
-    - name: 계획
+    - name: 계획 및 구성
       items:
         - name: 가상 네트워크
           href: virtual-network-vnet-plan-design-arm.md
-        - name: Azure VM의 TCP/IP 성능 튜닝
-          href: virtual-network-tcpip-performance-tuning.md
-    - name: 배포
+        - name: VM 및 클라우드 서비스의 이름 확인
+          href: virtual-networks-name-resolution-for-vms-and-role-instances.md
+        - name: 고유한 DNS 서버에서 동적 DNS 사용
+          href: virtual-networks-name-resolution-ddns.md
+        - name: 네트워크 처리량 최적화
+          href: virtual-network-optimize-network-bandwidth.md
+        - name: 호스트 이름 보기 및 수정
+          href: virtual-networks-viewing-and-modifying-hostnames.md
+        - name: 로그
+          href: virtual-network-nsg-manage-log.md
+    - name: 연결
       items:
-        - name: VNet용 IPv6
-          items:
-            - name: 기본 공용 Load Balancer
-              items:
-                - name: Azure PowerShell
-                  href: virtual-network-ipv4-ipv6-dual-stack-powershell.md
-                - name: Azure CLI
-                  href: virtual-network-ipv4-ipv6-dual-stack-cli.md
-                - name: Resource Manager 템플릿
-                  href: ipv6-configure-template-json.md
-            - name: IPv4 애플리케이션에 IPv6 추가
-              items:
-                - name: Azure PowerShell
-                  href: ipv6-add-to-existing-vnet-powershell.md
-                - name: Azure CLI
-                  href: ipv6-add-to-existing-vnet-cli.md
-            - name: 표준 공용 Load Balancer
-              items:
-                - name: Azure PowerShell
-                  href: virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell.md
-                - name: Azure CLI
-                  href: virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-cli.md
-                - name: Resource Manager 템플릿
-                  href: ipv6-configure-standard-load-balancer-template-json.md
-            - name: 표준 내부 Load Balancer
-              href: ipv6-dual-stack-standard-internal-load-balancer-powershell.md
-            - name: IPv6을 사용하는 가상 머신 확장 집합
-              href: ipv6-virtual-machine-scale-set.md
-        - name: 네트워크 보안 그룹
-          items:
-            - name: Azure PowerShell
-              href: tutorial-filter-network-traffic-powershell.md
-            - name: Azure CLI
-              href: tutorial-filter-network-traffic-cli.md
-        - name: 경로 테이블
-          items:
-            - name: Azure PowerShell
-              href: tutorial-create-route-table-powershell.md
-            - name: Azure CLI
-              href: tutorial-create-route-table-cli.md
-            - name: Ansible
-              href: /azure/ansible/ansible-create-configure-route-table
-              maintainContext: true
-        - name: 서비스 엔드포인트
-          items:
-            - name: Azure PowerShell
-              href: tutorial-restrict-network-access-to-resources-powershell.md
-            - name: Azure CLI
-              href: tutorial-restrict-network-access-to-resources-cli.md
-        - name: 서비스 엔드포인트 정책 - 포털
-          href: virtual-network-service-endpoint-policies-portal.md
-        - name: 가상 네트워크 피어링
+        - name: NIC 관리
+          href: virtual-network-network-interface.md
+        - name: 가상 네트워크 관리
+          href: manage-virtual-network.md
+        - name: 서브넷 관리
+          href: virtual-network-manage-subnet.md
+        - name: 서브넷 위임 관리
+          href: manage-subnet-delegation.md
+        - name: VNet 피어링 만들기
           items:
             - name: 동일한 배포 모델 - 동일한 구독
               items:
@@ -160,59 +133,8 @@
               href: create-peering-different-deployment-models.md
             - name: 다른 배포 모델 - 다른 구독
               href: create-peering-different-deployment-models-subscriptions.md
-        - name: 가상 네트워크 TAP
-          items:
-            - name: Azure CLI
-              href: tutorial-tap-virtual-network-cli.md
-        - name: 컨테이너 네트워킹
-          href: deploy-container-networking.md
-        - name: 가상 머신
-          items:
-            - name: VM 만들기 - 고정 공용 IP 주소
-              items:
-                - name: Azure portal
-                  href: virtual-network-deploy-static-pip-arm-portal.md
-                - name: Azure PowerShell
-                  href: virtual-network-deploy-static-pip-arm-ps.md
-                - name: Azure CLI
-                  href: virtual-network-deploy-static-pip-arm-cli.md
-            - name: 기존 VM에 공용 IP 주소 추가
-              href: associate-public-ip-address-vm.md
-            - name: VM에서 공용 IP 주소 분리
-              href: remove-public-ip-address-vm.md
-            - name: VM 만들기 - 고정 개인 IP 주소
-              items:
-                - name: Azure portal
-                  href: virtual-networks-static-private-ip-arm-pportal.md
-                - name: Azure PowerShell
-                  href: virtual-networks-static-private-ip-arm-ps.md
-                - name: Azure CLI
-                  href: virtual-networks-static-private-ip-arm-cli.md
-            - name: VM 만들기 - 여러 네트워크 인터페이스
-              items:
-                - name: Azure PowerShell
-                  href: ../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json
-                - name: Azure CLI
-                  href: ../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json
-            - name: VM 만들기 - 여러 IP 주소
-              items:
-                - name: Azure portal
-                  href: virtual-network-multiple-ip-addresses-portal.md
-                - name: Azure PowerShell
-                  href: virtual-network-multiple-ip-addresses-powershell.md
-                - name: Azure CLI
-                  href: virtual-network-multiple-ip-addresses-cli.md
-            - name: VM 만들기 - 가속 네트워킹
-              items:
-                - name: Azure PowerShell
-                  href: create-vm-accelerated-networking-powershell.md
-                - name: Azure CLI
-                  href: create-vm-accelerated-networking-cli.md
-                  items:
-                    - name: DPDK 설정
-                      href: setup-dpdk.md
-            - name: 가상 컴퓨터 네트워크 처리량
-              href: virtual-machine-network-throughput.md
+        - name: VNet 피어링 관리
+          href: virtual-network-manage-peering.md
         - name: 연결 시나리오
           items:
             - name: 가상 네트워크에서 가상 네트워크로
@@ -225,58 +147,140 @@
               href: ../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md?toc=%2fazure%2fvirtual-network%2ftoc.json
             - name: 고가용성 하이브리드 네트워크 아키텍처
               href: ../guidance/guidance-hybrid-network-expressroute-vpn-failover.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+        - name: 가상 네트워크 TAP 구성
+          href: tutorial-tap-virtual-network-cli.md
+        - name: 컨테이너 네트워킹 배포
+          href: deploy-container-networking.md
+    - name: IP 서비스
+      items:
+        - name: VNet용 IPv6
+          items:
+            - name: IPv4 애플리케이션에 IPv6 추가
+              items:
+                - name: Azure PowerShell
+                  href: ipv6-add-to-existing-vnet-powershell.md
+                - name: Azure CLI
+                  href: ipv6-add-to-existing-vnet-cli.md
+            - name: 기본 공용 Load Balancer
+              items:
+                - name: Azure PowerShell
+                  href: virtual-network-ipv4-ipv6-dual-stack-powershell.md
+                - name: Azure CLI
+                  href: virtual-network-ipv4-ipv6-dual-stack-cli.md
+                - name: Resource Manager 템플릿
+                  href: ipv6-configure-template-json.md
+            - name: 표준 공용 Load Balancer
+              items:
+                - name: Azure PowerShell
+                  href: virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell.md
+                - name: Azure CLI
+                  href: virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-cli.md
+                - name: Resource Manager 템플릿
+                  href: ipv6-configure-standard-load-balancer-template-json.md
+            - name: 표준 내부 Load Balancer
+              href: ipv6-dual-stack-standard-internal-load-balancer-powershell.md
+            - name: IPv6을 사용하는 가상 머신 확장 집합
+              href: ipv6-virtual-machine-scale-set.md
+            - name: 공용 IPv6 주소 접두사
+              href: ipv6-reserve-public-ip-address-prefix.md
+        - name: IP 주소
+          items:
+            - name: 공용 IP 주소 관리
+              href: virtual-network-public-ip-address.md
+            - name: 공용 IP 접두사 관리
+              href: manage-public-ip-address-prefix.md
+            - name: NIC에서 IP 주소 추가 또는 제거
+              href: virtual-network-network-interface-addresses.md
+    - name: 보안
+      items:
+        - name: DDoS 보호 관리
+          href: manage-ddos-protection.md
+        - name: 네트워크 보안 그룹 관리
+          href: manage-network-security-group.md
+        - name: DDoS Protection 표준에 파트너 온보딩
+          href: ddos-protection-partner-onboarding.md
+        - name: 네트워크 보안 그룹을 사용하여 네트워크 트래픽 필터링
+          items:
+            - name: Azure PowerShell
+              href: tutorial-filter-network-traffic-powershell.md
+            - name: Azure CLI
+              href: tutorial-filter-network-traffic-cli.md
+        - name: NVA를 사용하여 트래픽 라우팅
+          items:
+            - name: Azure PowerShell
+              href: tutorial-create-route-table-powershell.md
+            - name: Azure CLI
+              href: tutorial-create-route-table-cli.md
+            - name: Ansible
+              href: /azure/ansible/ansible-create-configure-route-table
+              maintainContext: true
+        - name: 경로 테이블 관리
+          href: manage-route-table.md
+        - name: 서비스 엔드포인트 사용
+          items:
+            - name: Azure PowerShell
+              href: tutorial-restrict-network-access-to-resources-powershell.md
+            - name: Azure CLI
+              href: tutorial-restrict-network-access-to-resources-cli.md
+        - name: 서비스 엔드포인트 정책 만들기 - 포털
+          href: virtual-network-service-endpoint-policies-portal.md
         - name: 보안 시나리오
           items:
             - name: 가상 어플라이언스를 사용하여 네트워크 보안
               href: virtual-network-scenario-udr-gw-nva.md
             - name: Azure와 인터넷 간의 DMZ
               href: ../guidance/guidance-iaas-ra-secure-vnet-dmz.md?toc=%2fazure%2fvirtual-network%2ftoc.json
-    - name: 구성
+    - name: VM 네트워킹
       items:
-        - name: VM 및 클라우드 서비스의 이름 확인
-          href: virtual-networks-name-resolution-for-vms-and-role-instances.md
-        - name: 고유한 DNS 서버에서 동적 DNS 사용
-          href: virtual-networks-name-resolution-ddns.md
-        - name: 네트워크 처리량 최적화
-          href: virtual-network-optimize-network-bandwidth.md
-        - name: 호스트 이름 보기 및 수정
-          href: virtual-networks-viewing-and-modifying-hostnames.md
-    - name: 관리
-      items:
-        - name: 가상 네트워크
-          href: manage-virtual-network.md
+        - name: VM 만들기 - 고정 공용 IP
           items:
-            - name: 서브넷
-              href: virtual-network-manage-subnet.md
-            - name: 서브넷 위임
-              href: manage-subnet-delegation.md
-            - name: 피어링
-              href: virtual-network-manage-peering.md
-            - name: DDoS 보호
-              href: manage-ddos-protection.md
-            - name: DDoS Protection 표준에 파트너 온보딩
-              href: ddos-protection-partner-onboarding.md
-        - name: 네트워크 보안 그룹
-          href: manage-network-security-group.md
+            - name: Azure portal
+              href: virtual-network-deploy-static-pip-arm-portal.md
+            - name: Azure PowerShell
+              href: virtual-network-deploy-static-pip-arm-ps.md
+            - name: Azure CLI
+              href: virtual-network-deploy-static-pip-arm-cli.md
+            - name: 기존 VM에 공용 IP 주소 추가
+              href: associate-public-ip-address-vm.md
+            - name: VM에서 공용 IP 주소 분리
+              href: remove-public-ip-address-vm.md
+        - name: VM 만들기 - 고정 개인 IP
           items:
-            - name: 로그
-              href: virtual-network-nsg-manage-log.md
-        - name: 경로 테이블
-          href: manage-route-table.md
-        - name: 가상 머신 네트워킹
+            - name: Azure portal
+              href: virtual-networks-static-private-ip-arm-pportal.md
+            - name: Azure PowerShell
+              href: virtual-networks-static-private-ip-arm-ps.md
+            - name: Azure CLI
+              href: virtual-networks-static-private-ip-arm-cli.md
+        - name: VM 만들기 - 여러 IP
           items:
-            - name: 네트워크 인터페이스 만들기 또는 삭제
-              href: virtual-network-network-interface.md
+            - name: Azure portal
+              href: virtual-network-multiple-ip-addresses-portal.md
+            - name: Azure PowerShell
+              href: virtual-network-multiple-ip-addresses-powershell.md
+            - name: Azure CLI
+              href: virtual-network-multiple-ip-addresses-cli.md
             - name: 네트워크 인터페이스 추가 또는 제거
               href: virtual-network-network-interface-vm.md
-            - name: IP 주소 추가 또는 제거
-              href: virtual-network-network-interface-addresses.md
-        - name: 공용 IP 주소
-          href: virtual-network-public-ip-address.md
-        - name: 공용 IP 접두사
-          href: manage-public-ip-address-prefix.md
-        - name: 공용 IPv6 주소 접두사
-          href: ipv6-reserve-public-ip-address-prefix.md
+            - name: VM 만들기 - 여러 NIC
+              items:
+                - name: Azure PowerShell
+                  href: ../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+                - name: Azure CLI
+                  href: ../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+        - name: VM 만들기 - 가속 네트워킹
+          items:
+            - name: Azure PowerShell
+              href: create-vm-accelerated-networking-powershell.md
+            - name: Azure CLI
+              href: create-vm-accelerated-networking-cli.md
+              items:
+                - name: DPDK 설정
+                  href: setup-dpdk.md
+        - name: Azure VM의 TCP/IP 성능 튜닝
+          href: virtual-network-tcpip-performance-tuning.md
+        - name: 가상 컴퓨터 네트워크 처리량
+          href: virtual-machine-network-throughput.md
     - name: 지역 간 이동
       items:
         - name: 네트워크 보안 그룹 - 포털
@@ -291,34 +295,6 @@
           href: move-across-regions-publicip-portal.md
         - name: 공용 IP - PowerShell
           href: move-across-regions-publicip-powershell.md
-    - name: 문제 해결
-      items:
-        - name: 가상 네트워크 피어링 문제 해결
-          href: virtual-network-troubleshoot-peering-issues.md
-        - name: VNet 또는 VPN 연결 구성 및 유효성 검사
-          href: virtual-network-configure-vnet-connections.md
-        - name: 네트워크 보안 그룹
-          href: diagnose-network-traffic-filter-problem.md
-        - name: 경로
-          href: diagnose-network-routing-problem.md
-        - name: 처리량 테스트
-          href: virtual-network-bandwidth-testing.md
-        - name: VM 네트워크 대기 시간 테스트
-          href: virtual-network-test-latency.md
-        - name: 가상 네트워크를 삭제할 수 없음
-          href: virtual-network-troubleshoot-cannot-delete-vnet.md
-        - name: VM 간 연결 문제
-          href: virtual-network-troubleshoot-connectivity-problem-between-vms.md
-        - name: SMTP 배너 검사를 위한 PTR 구성
-          href: create-ptr-for-smtp-service.md
-        - name: 가상 어플라이언스에 대한 문제 해결 검사 목록
-          href: virtual-network-troubleshoot-nva.md
-        - name: 아웃바운드 SMTP 연결 문제 해결
-          href: troubleshoot-outbound-smtp-connectivity.md
-        - name: IP 주소(168.63.129.16) 정보
-          href: what-is-ip-address-168-63-129-16.md
-        - name: Azure VM 연결 문제 해결
-          href: troubleshoot-vm-connectivity.md
     - name: 클래식 배포
       href: 'https://docs.microsoft.com/previous-versions/azure/virtual-network/create-virtual-network-classic'
 - name: 참조

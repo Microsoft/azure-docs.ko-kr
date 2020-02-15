@@ -1,19 +1,19 @@
 ---
 title: 지역화 지원 | Microsoft Azure 맵
 description: 이 문서에서는 Microsoft Azure Maps의 서비스에 대해 지원 되는 언어에 대해 알아봅니다.
-author: walsehgal
-ms.author: v-musehg
+author: farah-alyasari
+ms.author: v-faalya
 ms.date: 11/20/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: eec8e47e75a6c92be8f893af893761a9ccddc650
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 5de04b4e37e79a47f89bb235aad2b0f9cab69e6a
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77025438"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77208151"
 ---
 # <a name="localization-support-in-azure-maps"></a>Azure Maps의 지역화 지원
 
@@ -22,10 +22,10 @@ Azure Maps는 국가/지역에 따라 다양 한 언어와 보기를 지원 합�
 
 ## <a name="azure-maps-supported-languages"></a>Azure Maps 지원 언어
 
-Azure Maps는 서비스 전반에 걸쳐 다양한 언어로 지역화되었습니다. 다음 표에서는 각 서비스에 지원되는 언어 코드를 제공합니다.  
+Azure Maps은 서비스 전체에서 다양 한 언어로 지역화 되었습니다. 다음 표에서는 각 서비스에 지원되는 언어 코드를 제공합니다.  
   
 
-| ID         | 이름                   |  지도 | 검색 | 경로 | 날씨 | 트래픽 인시던트 | JS 지도 컨트롤 |
+| ID         | 속성                   |  지도 | 검색 | 라우팅 | Weather | 트래픽 인시던트 | JS 지도 컨트롤 |
 |------------|------------------------|:-----:|:------:|:-------:|:--------:|:-----------------:|:--------------:|
 | af-ZA      | 아프리칸스어              |       |    ✓   |    ✓    |         |                   |                |
 | ar-SA      | 아랍어                 |   ✓   |    ✓   |    ✓    |    ✓      |         ✓         |        ✓       |
@@ -76,7 +76,7 @@ Azure Maps는 서비스 전반에 걸쳐 다양한 언어로 지역화되었습�
 | NGT        | 중립 참조 자료 - 사용 가능한 경우 로컬 스크립트로 된 모든 지역의 공식 언어 |   ✓     |        |         |       |        |      ✓          |
 | NGT-Latn   | 중립 참조 자료 - 라틴 지명. 사용 가능한 경우 라틴 스크립트가 사용됩니다. |   ✓     |        |         |         |                |        ✓         |
 | pl-PL      | 폴란드어                 |   ✓   |    ✓   |    ✓    |     ✓    |         ✓         |        ✓       |
-| pt-BR      | 포르투갈어 (브라질)    |   ✓   |    ✓   |    ✓    |      ✓   |                   |        ✓       |
+| pt-BR      | 포르투갈어(브라질)    |   ✓   |    ✓   |    ✓    |      ✓   |                   |        ✓       |
 | pt-PT      | 포르투갈어(포르투갈)  |   ✓   |    ✓   |    ✓    |      ✓   |         ✓         |        ✓       |
 | pa에      | 펀잡어                 |       |       |         |     ✓    |                   |                |
 | ro-RO      | 루마니아어               |       |    ✓    |         |     ✓    |         ✓         |                |
@@ -109,7 +109,7 @@ Azure Maps는 서비스 전반에 걸쳐 다양한 언어로 지역화되었습�
 >
 > 2019 년 8 월 1 일 이후에 **View** 매개 변수는 위에 나열 된 새 지역/국가에 대해 반환 된 맵 콘텐츠를 정의 합니다. Azure Maps **View** 매개 변수 ("사용자 영역 매개 변수" 라고도 함)는 맵에 표시 되는 테두리 및 레이블을 포함 하 여 Azure Maps 서비스를 통해 반환 되는 geopolitically 벌어지고 콘텐츠 집합을 지정 하는 해당 국가/지역에 대 한 올바른 맵을 표시 하는 두 문자로 된 ISO-3166 국가 코드입니다. 
 
-서비스에서 사용 하는 REST Api 및 Sdk에 필요한 **보기** 매개 변수를 설정 했는지 확인 합니다.
+서비스에서 사용 하는 REST Api 및 Sdk에 필요에 따라 **View** 매개 변수를 설정 해야 합니다.
 >  
 >
 >  **Rest Api:**
@@ -135,14 +135,14 @@ Azure Maps는 서비스 전반에 걸쳐 다양한 언어로 지역화되었습�
 >    * 사후 검색 유사 항목 미리 보기
 >
 >    
->  **SDKs:**
+>  **D**
 >
 >  필요에 따라 **View** 매개 변수를 설정 하 고 최신 버전의 Web SDK 및 Android SDK를 설치 했는지 확인 합니다. 영향을 받는 Sdk:
 >
 >    * Azure Maps 웹 SDK
 >    * Azure Maps Android SDK
 
-기본적으로 View 매개 변수는 요청에서 정의 하지 않은 경우에도 **통합**으로 설정 됩니다. 사용자의 위치를 확인 한 다음 해당 위치에 대 한 **보기** 매개 변수를 올바르게 설정 합니다. 또는 ' View = Auto '를 설정할 수 있습니다 .이 경우 요청의 IP 주소를 기반으로 하는 맵 데이터가 반환 됩니다.  Azure Maps의 **View** 매개 변수는 지도, 이미지 및 기타 데이터와 Azure Maps를 통해 액세스 권한이 부여 된 타사 콘텐츠를 사용할 수 있는 국가의 매핑에 대 한 법률을 비롯 하 여 관련 법률을 준수 하는 데 사용 해야 합니다.
+기본적으로 View 매개 변수는 요청에서 정의 하지 않은 경우에도 **통합**으로 설정 됩니다. 사용자의 위치를 확인 합니다. 그런 다음 해당 위치에 대 한 **뷰** 매개 변수를 올바르게 설정 합니다. 또는 ' View = Auto '를 설정할 수 있습니다 .이 경우 요청의 IP 주소를 기반으로 하는 맵 데이터가 반환 됩니다.  Azure Maps의 **View** 매개 변수는 지도, 이미지 및 기타 데이터와 Azure Maps를 통해 액세스 권한이 부여 된 타사 콘텐츠를 사용할 수 있는 국가의 매핑에 대 한 법률을 비롯 하 여 관련 법률을 준수 하는 데 사용 해야 합니다.
 
 
 다음 표에서는 지원 되는 뷰를 제공 합니다.
@@ -166,4 +166,4 @@ Azure Maps는 서비스 전반에 걸쳐 다양한 언어로 지역화되었습�
 | SY           | 시리아 (아랍어 뷰)                   |   ✓   |        |     ✓          |
 | YE           | 예멘 (아랍어 뷰)                   |   ✓   |        |     ✓          |
 | Auto         | 요청의 IP 주소를 기준으로 맵 데이터를 반환 합니다.|   ✓   |    ✓   |     ✓          |
-| 통합      | 통합 보기 (기타)                  |   ✓   |   ✓     |     ✓          |
+| 통합형      | 통합 보기 (기타)                  |   ✓   |   ✓     |     ✓          |

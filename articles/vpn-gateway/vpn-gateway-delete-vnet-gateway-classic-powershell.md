@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 01/09/2020
 ms.author: cherylmc
-ms.openlocfilehash: 495fa3837681fb2a78d86e6c34d4b4888b1e37f4
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: e7283f5e28edc6f7beaad3a2743aa155f6ea6e14
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75863685"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198652"
 ---
 # <a name="delete-a-virtual-network-gateway-using-powershell-classic"></a>PowerShell(클래식)을 사용하여 가상 네트워크 삭제
 
@@ -29,15 +29,22 @@ ms.locfileid: "75863685"
 
 ### <a name="1-install-the-latest-powershell-cmdlets"></a>1. 최신 PowerShell cmdlet을 설치 합니다.
 
-최신 버전의 Azure SM(서비스 관리) PowerShell cmdlet을 다운로드하여 설치합니다. 자세한 내용은 [Azure PowerShell을 설치 및 구성하는 방법](/powershell/azure/overview)을 참조하세요.
+[!INCLUDE [vpn-gateway-classic-powershell](../../includes/vpn-gateway-powershell-classic-locally.md)]
 
-### <a name="2-connect-to-your-azure-account"></a>2. Azure 계정에 연결 합니다. 
+### <a name="2-connect-to-your-azure-account"></a>2. Azure 계정에 연결 합니다.
 
 상승된 권한으로 PowerShell 콘솔을 열고 계정에 연결합니다. 연결에 도움이 되도록 다음 예제를 사용합니다.
 
-```powershell
-Add-AzureAccount
-```
+1. 관리자 권한으로 PowerShell 콘솔을 엽니다. 서비스 관리로 전환 하려면 다음 명령을 사용 합니다.
+
+   ```powershell
+   azure config mode asm
+   ```
+2. 계정에 연결합니다. 연결에 도움이 되도록 다음 예제를 사용합니다.
+
+   ```powershell
+   Add-AzureAccount
+   ```
 
 ## <a name="export"></a>2단계: 네트워크 구성 파일 내보내기 및 확인
 
@@ -85,7 +92,7 @@ Status : Successful
  </Gateway>
 ```
 
-예:
+예제:
 
 ```
 <Gateway>
@@ -141,7 +148,7 @@ P2S를 VNet에 연결한 경우 **VPNClientAddressPool**이 있습니다. 삭제
  </Gateway>
 ```
 
-예:
+예제:
 
 ```
 <Gateway>
@@ -164,7 +171,7 @@ VNet에 해당하는 **GatewaySubnet**을 삭제합니다.
  </Subnets>
 ```
 
-예:
+예제:
 
 ```
 <Subnets>

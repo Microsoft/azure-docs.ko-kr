@@ -1,28 +1,24 @@
 ---
-title: '빠른 시작: 음성, 의도 및 엔터티 인식, C# - Speech Service'
-titleSuffix: Azure Cognitive Services
-services: cognitive-services
-author: erhopf
-manager: nitinme
+author: IEvangelist
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.date: 01/02/2020
+ms.date: 01/27/2020
 ms.topic: include
-ms.author: erhopf
+ms.author: dapine
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: e2cb4f81e3de5e22bae3029e42ec2f67dae55424
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 353e849332aa04d26774cda22508b6f1c269df7e
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76761396"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76900382"
 ---
 ## <a name="prerequisites"></a>사전 요구 사항
 
 시작하기 전에:
 
-* 첫 번째 C# 프로젝트인 경우 이 가이드를 사용하여 <a href="~/articles/cognitive-services/Speech-Service/quickstarts/create-project.md?tabs=dotnet" target="_blank">빈 샘플 프로젝트를 만듭니다</a>.
-* <a href="~/articles/cognitive-services/Speech-Service/quickstarts/setup-platform.md?tabs=dotnet" target="_blank">개발 환경용 Speech SDK를 설치합니다</a>.
+* 첫 번째 C# 프로젝트인 경우 이 가이드를 사용하여 <a href="~/articles/cognitive-services/Speech-Service/quickstarts/create-project.md?tabs=dotnet" target="_blank">빈 샘플 프로젝트를 만듭니다<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+* <a href="~/articles/cognitive-services/Speech-Service/quickstarts/setup-platform.md?tabs=dotnet" target="_blank">개발 환경용 Speech SDK를 설치합니다<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ## <a name="create-a-luis-app-for-intent-recognition"></a>의도 인식을 위한 LUIS 앱 만들기
 
@@ -92,7 +88,7 @@ using 문의 `RecognizeOnceAsync()` 아래에 다음 코드를 추가합니다.
 
 ## <a name="check-your-code"></a>코드 확인
 
-이 시점에서 코드는 다음과 같습니다.  
+이 시점에서 코드는 다음과 같습니다.
 
 > [!NOTE]
 > 이 버전에 몇 가지 주석을 추가했습니다.
@@ -104,7 +100,7 @@ using 문의 `RecognizeOnceAsync()` 아래에 다음 코드를 추가합니다.
 이제 앱을 빌드하고 음성 서비스를 사용하여 음성 인식을 테스트할 준비가 되었습니다.
 
 1. **코드 컴파일** - Visual Studio의 메뉴 모음에서 **빌드** > **빌드 솔루션**을 선택합니다.
-2. **앱 시작** - 메뉴 모음에서 **디버그** > **디버깅 시작**을 선택하거나 **F5** 키를 누릅니다.
+2. **앱 시작** - 메뉴 모음에서 **디버그** > **디버깅 시작**을 선택하거나 <kbd>F5</kbd> 키를 누릅니다.
 3. **인식 시작** - 영어로 문구를 말하라는 메시지가 표시됩니다. 음성은 Speech Service로 전송되어 텍스트로 변환되고 콘솔에 렌더링됩니다.
 
 ## <a name="next-steps"></a>다음 단계

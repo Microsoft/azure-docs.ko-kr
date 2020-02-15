@@ -12,12 +12,12 @@ metadata:
   author: msmimart
   ms.author: mimart
   manager: celested
-  ms.openlocfilehash: 7ebb44ec1f3483b9bf3f29ddb6dc7a73266b8cea
-  ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+  ms.openlocfilehash: 3bea7dda1cf44548ea924ffa84fb922410242f27
+  ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 12/25/2019
-  ms.locfileid: "75443368"
+  ms.lasthandoff: 02/07/2020
+  ms.locfileid: "77063475"
 landingContent:
 - title: 애플리케이션 관리 정보
   linkLists:
@@ -51,24 +51,18 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: 자동 사용자 프로비저닝이란?
-      url: user-provisioning.md
-    - text: 프로비저닝 작동 방법
-      url: how-provisioning-works.md
+    - text: 애플리케이션 프로비저닝이란?
+      url: /azure/active-directory/app-provisioning/user-provisioning?context=azure/active-directory/manage-apps/context/manage-apps-context
   - linkListType: tutorial
     links:
     - text: SaaS 앱 프로비저닝 자습서
       url: /azure/active-directory/saas-apps/
   - linkListType: how-to-guide
     links:
-    - text: 앱을 빌드하나요? 자동 프로비저닝에 SCIM 사용
-      url: use-scim-to-provision-users-and-groups.md
-    - text: 갤러리 앱을 추가하나요? 앱에 프로비저닝 구성
-      url: configure-automatic-user-provisioning-portal.md
-    - text: 특성 매핑 사용자 지정
-      url: customize-application-attributes.md
-    - text: 범위 지정 필터 사용
-      url: define-conditional-rules-for-provisioning-user-accounts.md
+    - text: 앱을 빌드하나요? 프로비저닝에 SCIM 사용(앱 프로비저닝 설명서)
+      url: /azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups
+    - text: 갤러리 앱을 추가하나요? 프로비저닝에 구성(앱 프로비저닝 설명서)
+      url: /azure/active-directory/app-provisioning/configure-automatic-user-provisioning-portal
 - title: 애플리케이션 프록시를 사용하여 온-프레미스 앱 게시
   linkLists:
   - linkListType: overview

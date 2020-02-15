@@ -16,12 +16,12 @@ ms.date: 10/07/2019
 ms.author: ajburnle
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24e82abd2c95bcbfdde843a6636a809bb3aeb70c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5895ed256fa5f0337b74d9dbe14c4074dad4b522
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75422635"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120247"
 ---
 # <a name="create-and-manage-a-catalog-of-resources-in-azure-ad-entitlement-management"></a>Azure AD 자격 관리에서 리소스 카탈로그 만들기 및 관리
 
@@ -51,6 +51,10 @@ ms.locfileid: "75422635"
 
 1. **만들기** 를 클릭 하 여 카탈로그를 만듭니다.
 
+### <a name="creating-a-catalog-programmatically"></a>프로그래밍 방식으로 카탈로그 만들기
+
+Microsoft Graph를 사용 하 여 카탈로그를 만들 수도 있습니다.  위임 된 `EntitlementManagement.ReadWrite.All` 권한이 있는 응용 프로그램을 사용 하 여 적절 한 역할의 사용자는 API를 호출 하 여 [accessPackageCatalog를 만들](https://docs.microsoft.com/graph/api/accesspackagecatalog-post?view=graph-rest-beta)수 있습니다.
+
 ## <a name="add-resources-to-a-catalog"></a>카탈로그에 리소스 추가
 
 액세스 패키지에 리소스를 포함 하려면 리소스가 카탈로그에 있어야 합니다. 추가할 수 있는 리소스 유형은 그룹, 응용 프로그램 및 SharePoint Online 사이트입니다. 그룹은 클라우드 생성 Office 365 그룹 또는 클라우드 생성 Azure AD 보안 그룹이 될 수 있습니다. 응용 프로그램은 SaaS 응용 프로그램 및 Azure AD에 페더레이션된 응용 프로그램을 포함 하 여 Azure AD 엔터프라이즈 응용 프로그램 일 수 있습니다. 사이트는 SharePoint Online 사이트 또는 SharePoint Online 사이트 컬렉션 일 수 있습니다.
@@ -76,6 +80,10 @@ ms.locfileid: "75422635"
 1. 완료 되 면 **추가**를 클릭 합니다.
 
     이러한 리소스는 이제 카탈로그 내에서 액세스 패키지에 포함 될 수 있습니다.
+
+### <a name="adding-a-resource-to-a-catalog-programmatically"></a>프로그래밍 방식으로 카탈로그에 리소스 추가
+
+Microsoft Graph를 사용 하 여 카탈로그에 리소스를 추가할 수도 있습니다.  위임 된 `EntitlementManagement.ReadWrite.All` 권한이 있는 응용 프로그램을 사용 하 여 적절 한 역할 또는 카탈로그 및 리소스 소유자의 사용자는 API를 호출 하 여 [accessPackageResourceRequest를 만들](https://docs.microsoft.com/graph/api/accesspackageresourcerequest-post?view=graph-rest-beta)수 있습니다.
 
 ## <a name="remove-resources-from-a-catalog"></a>카탈로그에서 리소스 제거
 
@@ -144,6 +152,10 @@ ms.locfileid: "75422635"
 1. 카탈로그의 **개요**에서 **삭제**를 클릭 합니다.
 
 1. 표시되는 메시지 상자에서 **예**를 클릭합니다.
+
+### <a name="deleting-a-catalog-programmatically"></a>프로그래밍 방식으로 카탈로그 삭제
+
+Microsoft Graph를 사용 하 여 카탈로그를 삭제할 수도 있습니다.  위임 된 `EntitlementManagement.ReadWrite.All` 권한이 있는 응용 프로그램을 사용 하 여 적절 한 역할의 사용자는 API를 호출 하 여 [accessPackageCatalog를 삭제할](https://docs.microsoft.com/graph/api/accesspackagecatalog-delete?view=graph-rest-beta)수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

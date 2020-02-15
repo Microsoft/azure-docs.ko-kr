@@ -8,23 +8,29 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 11/13/2019
+ms.date: 02/12/2020
 ms.author: wellsi
-ms.openlocfilehash: 4d5d3cc6159a4601f0a398e87b89eea9b8d3aba6
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c12aaea1dbc99a3f6db064e03b4b49e569f15194
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75446953"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77189051"
 ---
 # <a name="release-notes-speech-devices-sdk"></a>릴리스 정보: 음성 장치 SDK
 
 다음 섹션에는 최신 릴리스의 변경 내용이 나와 있습니다.
 
+## <a name="speech-devices-sdk-190"></a>음성 장치 SDK 1.9.0:
+
+- [Urbetter DDK](https://aka.ms/sdsdk-download-urbetter) (Linux ARM64)에 대 한 초기 이진 파일이 제공 됩니다.
+- 이제 roobo v1이 Speech SDK에 Maven를 사용 합니다.
+- [SPEECH SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) 구성 요소가 1.9.0 버전으로 업데이트 되었습니다. 해당 [릴리스 정보](https://aka.ms/csspeech/whatsnew)를 참조하세요.
+
 ## <a name="speech-devices-sdk-170"></a>음성 장치 SDK 1.7.0:
 
 - 이제 Linux ARM이 지원 됩니다.
-- Roobo v2의 초기 이진 파일이 제공 됩니다 (Linux ARM64).
+- [Roobo V2 DDK](https://aka.ms/sdsdk-download-roobov2) 의 초기 이진 파일이 제공 됩니다 (Linux ARM64).
 - Windows 사용자는 `AudioConfig.fromDefaultMicrophoneInput()` 또는 `AudioConfig.fromMicrophoneInput(deviceName)`를 사용 하 여 사용할 마이크를 지정할 수 있습니다.
 - 라이브러리 크기가 최적화 되었습니다.
 - 동일한 음성/의도 인식기 개체를 사용 하 여 다중 전환 인식 지원.

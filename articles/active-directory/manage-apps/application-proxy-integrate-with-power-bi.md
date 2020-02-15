@@ -16,18 +16,18 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9faa1fffde5553168c8b76ea40cebc001c1e27b2
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: bc96c94152b39cc70cfc4553690faaa5b9cb8d20
+ms.sourcegitcommit: 323c3f2e518caed5ca4dd31151e5dee95b8a1578
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74275520"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77111580"
 ---
 # <a name="enable-remote-access-to-power-bi-mobile-with-azure-ad-application-proxy"></a>Azure AD 응용 프로그램 프록시를 사용 하 여 Power BI Mobile에 대 한 원격 액세스 사용
 
 이 문서에서는 Azure AD 응용 프로그램 프록시를 사용 하 여 Power BI mobile 앱이 Power BI Report Server (PBIRS) 및 SQL Server Reporting Services (SSRS) 2016 이상에 연결 하도록 설정 하는 방법을 설명 합니다. 이러한 통합을 통해 회사 네트워크를 벗어난 사용자는 Power BI 모바일 앱에서 해당 Power BI 보고서에 액세스 하 고 Azure AD 인증으로 보호할 수 있습니다. 이 보호에는 조건부 액세스 및 multi-factor authentication과 같은 [보안 이점이](application-proxy-security.md#security-benefits) 포함 됩니다.  
 
-## <a name="prerequisites"></a>선행 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 문서에서는 이미 보고서 서비스를 배포 하 고 [응용 프로그램 프록시를 사용 하도록 설정](application-proxy-add-on-premises-application.md)했다고 가정 합니다.
 
@@ -91,11 +91,11 @@ KCD를 구성 하려면 각 커넥터 컴퓨터에 대해 다음 단계를 반�
 
 2. 앱이 게시된 후에는 다음 단계에 따라 Single Sign-On 설정을 구성합니다.
 
-   가. 포털의 애플리케이션 페이지에서 **Single Sign-On**을 선택합니다.
+   a. 포털의 애플리케이션 페이지에서 **Single Sign-On**을 선택합니다.
 
    b. **Single Sign-on 모드**의 경우 **Windows 통합 인증**을 선택 합니다.
 
-   c. **내부 애플리케이션 SPN**을 이전에 설정한 값으로 설정합니다.  
+   다. **내부 애플리케이션 SPN**을 이전에 설정한 값으로 설정합니다.  
 
    d. 커넥터에 대한 **위임된 로그인 ID**를 선택하여 사용자를 대신하여 사용합니다. 자세한 내용은 [다른 온-프레미스 및 클라우드 id로 작업](application-proxy-configure-single-sign-on-with-kcd.md#working-with-different-on-premises-and-cloud-identities)을 참조 하세요.
 
@@ -138,9 +138,6 @@ Power BI 모바일 앱에서 연결 하 여 보고서 서비스에 액세스 하
 3. 사용자에 대 한 올바른 자격 증명을 입력 하 고 **로그인**을 선택 합니다. Reporting Services 서버의 요소가 표시 됩니다.
 
 ## <a name="step-5-configure-intune-policy-for-managed-devices-optional"></a>5 단계: 관리 되는 장치에 대 한 Intune 정책 구성 (선택 사항)
-
-> [!NOTE]
-> 이 기능은 현재 iOS 에서만 사용할 수 있습니다.
 
 Microsoft Intune를 사용 하 여 회사의 직원이 사용 하는 클라이언트 앱을 관리할 수 있습니다. Intune을 사용 하면 데이터 암호화 및 추가 액세스 요구 사항과 같은 기능을 사용할 수 있습니다. Intune을 통한 앱 관리에 대해 자세히 알아보려면 Intune 앱 관리를 참조 하세요. Power BI 모바일 응용 프로그램이 Intune 정책에서 작동 하도록 설정 하려면 다음 단계를 사용 합니다.
 

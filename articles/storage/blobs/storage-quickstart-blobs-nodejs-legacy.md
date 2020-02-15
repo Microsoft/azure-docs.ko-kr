@@ -3,24 +3,26 @@ title: '빠른 시작: JavaScript용 Azure Blob 스토리지 클라이언트 라
 description: JavaScript용 Azure Storage 클라이언트 라이브러리 v10을 통해 Node.js에서 blob 및 컨테이너 만들기, 업로드 및 삭제
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 09/24/2019
+ms.date: 01/24/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: dd59dec65f75a17c35750140349101c600a92636
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 6a530c96c99a9f22f1943a5b874656bcabd9594b
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75862852"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76906479"
 ---
-# <a name="quickstart-azure-blob-storage-client-library-v10-for-javascript"></a>빠른 시작: JavaScript용 Azure Blob 스토리지 클라이언트 라이브러리 v10
+# <a name="quickstart-manage-blobs-with-javascript-v10-sdk-in-nodejs"></a>빠른 시작: Node.js에서 JavaScript v10 SDK를 사용하여 Blob 관리
 
-이 빠른 시작에서는 Node.js에서 [JavaScript용 Azure Storage v10 SDK](https://github.com/Azure/azure-sdk-for-js)를 사용하여 blob을 업로드, 다운로드, 나열 및 삭제하고 컨테이너를 관리하는 데 관해 알아봅니다.
+이 빠른 시작에서는 Node.js를 사용하여 Blob을 관리하는 방법을 알아봅니다. Blob은 이미지, 문서, 스트리밍 미디어 및 보관 데이터를 포함하여 대량의 텍스트 또는 이진 데이터를 저장할 수 있는 개체입니다. Blob을 업로드, 다운로드, 나열 및 삭제하고 컨테이너를 관리합니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-[!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
+- 활성 구독이 있는 Azure 계정. [체험 계정을 만듭니다](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+- Azure Storage 계정. [스토리지 계정 만들기](../common/storage-account-create.md)
+- [Node.js](https://nodejs.org/en/download/).
 
 ## <a name="download-the-sample-application"></a>샘플 애플리케이션 다운로드
 

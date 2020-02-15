@@ -3,12 +3,12 @@ title: 정책 정의 구조에 대한 세부 정보
 description: 정책 정의를 사용 하 여 조직의 Azure 리소스에 대 한 규칙을 설정 하는 방법을 설명 합니다.
 ms.date: 11/26/2019
 ms.topic: conceptual
-ms.openlocfilehash: ba974228d63c542027ea5191d2c5877e7288b331
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: b98702161753a996cd8a6751670308a78dc36b7c
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77050028"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169760"
 ---
 # <a name="azure-policy-definition-structure"></a>Azure Policy 정의 구조
 
@@ -21,7 +21,7 @@ Azure Policy는 리소스에 대 한 규칙을 설정 합니다. 정책 정의�
 
 JSON을 사용하여 정책 정의를 만듭니다. 정책 정의에는 다음 요소가 포함됩니다.
 
-- 모드
+- mode
 - 매개 변수
 - 표시 이름
 - description
@@ -65,7 +65,7 @@ JSON을 사용하여 정책 정의를 만듭니다. 정책 정의에는 다음 �
 
 모든 Azure Policy 샘플은 [Azure Policy 샘플](../samples/index.md)에 있습니다.
 
-## <a name="mode"></a>모드
+## <a name="mode"></a>Mode
 
 **모드** 는 정책이 Azure Resource Manager 속성을 대상으로 하는지 아니면 리소스 공급자 속성을 대상으로 하는지에 따라 구성 됩니다.
 
@@ -228,7 +228,7 @@ JSON을 사용하여 정책 정의를 만듭니다. 정책 정의에는 다음 �
 },
 ```
 
-### <a name="conditions"></a>상태
+### <a name="conditions"></a>조건
 
 조건은 **field** 또는 **value** 접근자가 특정 기준을 충족하는지 여부를 평가합니다. 지원되는 조건은 다음과 같습니다.
 
@@ -255,7 +255,7 @@ JSON을 사용하여 정책 정의를 만듭니다. 정책 정의에는 다음 �
 **like** 및 **notLike** 조건을 사용하는 경우 값에 와일드카드 `*`를 제공합니다.
 값에 와일드카드 `*`를 두 개 이상 포함하면 안 됩니다.
 
-**Match** 및 **notmatch** 조건을 사용 하는 경우 숫자와 일치 하는 `#`을 제공 하 고, 문자 `.`를 `?` 하 고, 모든 문자를 일치 시키고, 다른 모든 문자를 해당 실제 문자와 일치 시킵니다. **Match** 및 **notmatch** 는 대/소문자를 구분 하지만, _stringValue_ 을 평가 하는 다른 모든 조건은 대/소문자를 구분 하지 않습니다. 대/소문자를 구분하지 않는 대안은 **matchInsensitively** 및 **notMatchInsensitively**에서 확인할 수 있습니다. 예를 들어 [여러 이름 패턴 허용](../samples/allow-multiple-name-patterns.md)을 참조하세요.
+**Match** 및 **notmatch** 조건을 사용 하는 경우 숫자와 일치 하는 `#`을 제공 하 고, 문자 `.`를 `?` 하 고, 모든 문자를 일치 시키고, 다른 모든 문자를 해당 실제 문자와 일치 시킵니다. **Match** 및 **notmatch** 는 대/소문자를 구분 하지만, _stringValue_ 을 평가 하는 다른 모든 조건은 대/소문자를 구분 하지 않습니다. 대/소문자를 구분하지 않는 대안은 **matchInsensitively** 및 **notMatchInsensitively**에서 확인할 수 있습니다.
 
 **\[\*\] 별칭** 배열 필드 값에서 배열의 각 요소는 논리적 **and** between 요소를 사용 하 여 개별적으로 평가 됩니다. 자세한 내용은 [\[\*\] 별칭 평가](../how-to/author-policies-for-arrays.md#evaluating-the--alias)를 참조 하세요.
 
@@ -271,7 +271,7 @@ JSON을 사용하여 정책 정의를 만듭니다. 정책 정의에는 다음 �
 - `kind`
 - `type`
 - `location`
-  - 위치에 관계없는 리소스에는 **전역**을 사용합니다. 예를 들어 [샘플 - 허용된 위치](../samples/allowed-locations.md)를 참조하세요.
+  - 위치에 관계없는 리소스에는 **전역**을 사용합니다.
 - `identity.type`
   - 리소스에서 사용 가능한 [관리 ID](../../../active-directory/managed-identities-azure-resources/overview.md) 형식을 반환합니다.
 - `tags`
@@ -663,7 +663,7 @@ Azure Policy는 다음과 같은 유형의 효과를 지원 합니다.
 
 ### <a name="understanding-the--alias"></a>[*] 별칭 이해
 
-사용할 수 있는 여러 별칭에는 ' normal ' 이름으로 표시 되 고 다른 **\[\*\]** 연결 된 버전이 있습니다. 예를 들면 다음과 같습니다.
+사용할 수 있는 여러 별칭에는 ' normal ' 이름으로 표시 되 고 다른 **\[\*\]** 연결 된 버전이 있습니다. 다음은 그 예입니다.
 
 - `Microsoft.Storage/storageAccounts/networkAcls.ipRules`
 - `Microsoft.Storage/storageAccounts/networkAcls.ipRules[*]`
