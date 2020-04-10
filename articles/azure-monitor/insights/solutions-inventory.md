@@ -16,7 +16,7 @@ ms.locfileid: "77663133"
 # <a name="inventory-and-data-collection-details-for-monitoring-solutions-in-azure"></a>Azure에서 솔루션 모니터링을 위한 인벤토리 및 데이터 수집 세부 정보
 [모니터링 솔루션은](solutions.md) Azure의 서비스를 활용하여 특정 응용 프로그램 또는 서비스의 작업에 대한 추가 통찰력을 제공합니다. 모니터링 솔루션은 일반적으로 로그 데이터를 수집하고, 수집된 데이터를 분석하기 위한 쿼리 및 보기를 제공합니다. 사용하는 애플리케이션 및 서비스의 Azure Monitor에 모니터링 솔루션을 추가할 수 있습니다. 관리 솔루션은 일반적으로 무료로 제공되지만 데이터 수집 시 사용 요금이 발생할 수 있습니다.
 
-이 문서에는 Microsoft에서 제공하는 [몬티오어링 솔루션](solutions.md) 목록과 자세한 설명서에 대한 링크가 포함되어 있습니다.  Azure Monitor에 데이터를 수집하는 메서드 및 빈도에 대한 정보도 제공합니다.  이 문서의 정보를 사용하여 사용 가능한 다양한 솔루션을 식별하고 다양한 모니터링 솔루션에 대한 데이터 흐름 및 연결 요구 사항을 이해할 수 있습니다.
+이 문서에는 Microsoft에서 제공하는 [모니터링 솔루션](solutions.md) 목록과 자세한 설명서에 대한 링크가 포함되어 있습니다.  Azure Monitor에 데이터를 수집하는 메서드 및 빈도에 대한 정보도 제공합니다.  이 문서의 정보를 사용하여 사용 가능한 다양한 솔루션을 식별하고 다양한 모니터링 솔루션에 대한 데이터 흐름 및 연결 요구 사항을 이해할 수 있습니다.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
