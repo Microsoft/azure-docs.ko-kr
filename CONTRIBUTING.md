@@ -29,7 +29,6 @@ Microsoft Azure 설명서에 기여하기 위해 시간을 내어주셔서 감�
 
 ### <a name="editing-in-github"></a>GitHub에서 편집
 
-에 대 한 지침을 따릅니다
 기여자 가이드에 있는 [기존 문서의 빠른 편집](https://docs.microsoft.com/contribute/#quick-edits-to-existing-documents)에 대한 지침을 따르세요.
 
 ### <a name="pull-request"></a>끌어오기 요청
