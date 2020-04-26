@@ -21,7 +21,7 @@ ms.locfileid: "79213956"
 # <a name="extended-events-in-sql-database"></a>SQL Database의 확장 이벤트
 [!INCLUDE [sql-database-xevents-selectors-1-include](../../includes/sql-database-xevents-selectors-1-include.md)]
 
-이 항목은 Azure SQL Database의 확장 이벤트 구현과 Mirosoft SQL Server의 확장 이벤트 구현의 작은 차이점에 대해 설명합니다.
+이 항목은 Azure SQL Database의 확장 이벤트 구현과 Microsoft SQL Server의 확장 이벤트 구현의 작은 차이점에 대해 설명합니다.
 
 - SQL Database V12는 2015년 후반기 확장 이벤트 기능을 추가했습니다.
 - SQL Server는 2008년 이후 확장 이벤트를 추가해 왔습니다.
