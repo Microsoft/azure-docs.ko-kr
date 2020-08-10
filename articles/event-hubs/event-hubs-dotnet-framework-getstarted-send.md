@@ -44,8 +44,9 @@ Visual Studio에서 **콘솔 애플리케이션** 프로젝트 템플릿을 사�
 1. **Program.cs** 파일 위에 다음 `using` 문을 추가합니다.
    
     ```csharp
-    using System.Threading;
-    using Microsoft.ServiceBus.Messaging;
+	using System.Text;
+	using System.Threading;
+	using Microsoft.ServiceBus.Messaging;
     ```
 2. **Program** 클래스에 다음 필드를 추가하고, 이전 섹션에서 만든 Event Hub 이름과 이전에 저장한 네임스페이스 수준 연결 문자열로 위치 지정자 값을 대체합니다. Azure Portal 이벤트 허브 페이지의 **RootManageSharedAccessKey** 아래 **연결 문자열-기본** 키에서 이벤트 허브의 연결 문자열을 복사할 수 있습니다. 자세한 단계는 [연결 문자열 가져오기](event-hubs-get-connection-string.md#get-connection-string-from-the-portal)를 참조하세요.
    
