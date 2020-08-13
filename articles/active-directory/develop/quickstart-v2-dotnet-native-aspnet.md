@@ -82,9 +82,9 @@ ms.locfileid: "85339587"
 
 ### <a name="add-the-new-scope-to-the-todolistclients-appconfig"></a>*TodoListClient*의 app.config에 새 범위를 추가합니다.
 
-1. **TodoListClient** 프로젝트의 루트 폴더에 있는 **app.config** 파일을 연 다음, 방금 `TodoListServiceScope` 매개 변수 아래의 *TodoListService*에 대해 등록한 애플리케이션의 **애플리케이션 ID**를 붙여넣고 `{Enter the Application ID of your TodoListService from the app registration portal}` 문자열을 바꿉니다.
-
-   > 참고: 다음 형식을 사용하는지 확인합니다.
+* **TodoListClient** 프로젝트의 루트 폴더에 있는 **app.config** 파일을 연 다음, 방금 `TodoListServiceScope` 매개 변수 아래의 *TodoListService*에 대해 등록한 애플리케이션의 **애플리케이션 ID**를 붙여넣고 `{Enter the Application ID of your TodoListService from the app registration portal}` 문자열을 바꿉니다.
+   >[!NOTE]
+   >다음 형식을 사용하는지 확인합니다.
    >
    > `api://{TodoListService-Application-ID}/access_as_user`
    >
@@ -100,17 +100,30 @@ ms.locfileid: "85339587"
 1. **새 등록**을 선택합니다.
 1. **애플리케이션 등록** 페이지가 표시되면 애플리케이션의 등록 정보를 입력합니다.
    - **이름** 섹션에서 앱의 사용자에게 표시되는 의미 있는 애플리케이션 이름(예: `NativeClient-DotNet-TodoListClient`)을 입력합니다.
-   - **지원되는 계정 유형**을 **조직 디렉터리의 계정**으로 변경합니다.
+   - **지원되는 계정 유형**을 **모든 조직 디렉터리의 계정 및 개인 Microsoft 계정**으로 변경합니다.
    - **등록**을 선택하여 애플리케이션을 만듭니다.
+   
+   > [!NOTE]
+   > *TodoListClient* 프로젝트의 **app.config**에서, `ida:Tenant`의 기본 값은 `common`으로 되어있습니다.
+   >
+   > `common`의 의미는 회사나 학교 계정 또는 Microsoft의 개인 계정을 사용하여 로그인 할 수 있음을 나타냅니다.(위 단계에서 **계정 유형**을 **모든 조직 디렉터리의 계정 및 개인 Microsoft 계정**을 선택했기 때문입니다.)
+   >
+   > `organizations`은 회사나 학교 계정으로만 로그인 할 수 있음을 나타냅니다.
+   >
+   > `consumers`은 Microsoft의 개인 계정으로만 로그인 할 수 있음을 나타냅니다.
+   >
+
 1. 앱의 [개요] 페이지에서 **인증** 섹션을 선택합니다.
-   - **리디렉션 URI** | **퍼블릭 클라이언트(모바일, 데스크톱)에 대해 제안된 리디렉션 URI** 섹션에서 **https://login.microsoftonline.com/common/oauth2/nativeclient** 를 확인합니다.
-   - **저장**을 선택합니다.
+   1. **플랫폼 구성** 아래의 **플랫폼 추가**를 선택합니다.
+   1. **모바일 및 데스크톱 애플리케이션** 아래의 **모바일 및 데스크톱 애플리케이션**을 선택합니다.
+   1. **리디렉션 URI**아래의 **https://login.microsoftonline.com/common/oauth2/nativeclient**를 선택합니다.
+   1. **구성**을 선택합니다.
 1. **API 사용 권한** 섹션을 선택합니다.
-   - **권한 추가** 단추를 클릭한 다음,
-   - **내 API** 탭을 선택합니다.
-   - API 목록에서 `AppModelv2-NativeClient-DotNet-TodoListService API`를 선택하거나, 웹 API에 대해 입력한 이름을 선택합니다.
-   - **access_as_user** 권한을 아직 선택하지 않은 경우 지금 선택합니다. 필요한 경우 검색 상자를 사용합니다.
-   - **권한 추가** 단추를 선택합니다.
+   1. **권한 추가** 단추를 클릭합니다.
+   1. **내 API** 탭을 선택합니다.
+   1. API 목록에서 `AppModelv2-NativeClient-DotNet-TodoListService API`를 선택하거나, 웹 API에 대해 입력한 이름을 선택합니다.
+   1. **access_as_user** 권한을 아직 선택하지 않은 경우 지금 선택합니다. 필요한 경우 검색 상자를 사용합니다.
+   1. **권한 추가** 단추를 선택합니다.
 
 ### <a name="configure-your-todolistclient-project"></a>*TodoListClient* 프로젝트 구성
 
