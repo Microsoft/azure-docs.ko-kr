@@ -12,7 +12,7 @@ ms.locfileid: "75646333"
 ---
 # <a name="overview-of-azure-notebooks-preview"></a>Azure Notebooks 미리 보기 개요
 
-Azure Notebooks는 무료 호스트 서비스이며 설치 없이 클라우드에서 Jupyter Notebook을 개발하고 실행합니다. [Jupyter](https://jupyter.org/)(이전의 IPython)는 오픈 소스 프로젝트이며 이를 통해 Markdown 텍스트, 실행 코드, 영구 데이터, 그래픽 및 시각화를 공유 가능한 단일 캔버스인 *Notebook*(jupyter.org의 이미지 허가)으로 손쉽게 결합할 수 있습니다.
+Azure Notebooks는 무료 호스트 서비스이며 설치 없이 클라우드에서 Jupyter Notebook을 개발하고 실행합니다. [Jupyter](https://jupyter.org/)(이전의 IPython)는 오픈 소스 프로젝트이며 이를 통해 Markdown 문서, 실행 코드, 영구 데이터, 그래픽 및 시각화를 공유 가능한 단일 캔버스인 *Notebook*(jupyter.org의 이미지 허가)으로 손쉽게 결합할 수 있습니다.
 
 [![Jupyter Notebook의 예제](https://jupyter.org/assets/jupyterpreview.png)](https://jupyter.org/assets/jupyterpreview.png#lightbox)
 
@@ -40,7 +40,7 @@ Azure Notebooks는 일반적인 코드 작성, 실행 및 공유 플랫폼이므
 - GitHub 사용자가 [GitHub 시작 배지를 만들어](https://notebooks.azure.com/help/projects/sharing/create-a-github-badge) Notebook을 직접 로드하고 실행하도록 활성화
 - 슬라이드의 코드를 실행할 수 있는 [슬라이드 쇼와 같은 PowerPoint](https://notebooks.azure.com/help/jupyter-notebooks/slides) 제공
 
-즉, Azure Notebooks를 통해 작업을 보다 효율적으로 수행할 수 있으므로 더 많이 성취할 수 있습니다.
+즉, Azure Notebooks를 통해 작업을 보다 효율적으로 수행할 수 있어 더 많이 성취를 이룰 수 있습니다.
 
 > [!Note]
 > Jupyter 자체에 대한 자세한 정보는 [jupyter.org](https://jupyter.org/) 및 [Jupyter 설명서](https://jupyter-notebook.readthedocs.io/en/latest/)에서 확인할 수 있습니다.
@@ -81,9 +81,9 @@ Azure Notebooks는 다음 Jupyter 확장을 사용하여 미리 구성됩니다.
 
 ## <a name="issues-and-getting-help"></a>문제 및 도움말 보기
 
-Azure Notebooks는 여전히 미리 보기 상태에 있으므로 서비스에 다른 Azure 서비스에 비해 더 빈번하거나 오래 지속될 수 있는 임시 중단이 발생할 수 있습니다. 일부 기능은 완료되지 않았거나 버그를 포함할 수 있습니다.
+Azure Notebooks는 여전히 프리뷰 상태에 있으므로 서비스에 다른 Azure 서비스에 비해 더 빈번하거나 오래 지속될 수 있는 임시 중단이 발생할 수 있습니다. 일부 기능은 완료되지 않았거나 버그를 포함할 수 있습니다.
 
-현재 중요 비즈니스용 애플리케이션 또는 중요한 Notebook 및 데이터에 Azure Notebooks 미리 보기를 사용하지 않는 것이 좋습니다.
+현재 중요 비즈니스용 애플리케이션 또는 중요한 Notebook 및 데이터에 Azure Notebooks 프리뷰를 사용하지 않는 것이 좋습니다.
 
 Azure Notebooks에 대한 질문을 논의하려면 [GitHub 리포지토리](https://github.com/Microsoft/AzureNotebooks/issues)에서 문제를 제출하세요.
 
