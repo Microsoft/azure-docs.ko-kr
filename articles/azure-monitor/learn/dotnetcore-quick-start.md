@@ -18,7 +18,7 @@ ms.locfileid: "87325171"
 
 Azure Application Insights를 사용하면 웹 애플리케이션의 가용성, 성능 및 사용량을 쉽게 모니터링할 수 있습니다. 또한 사용자가 보고할 때까지 기다리지 않고 애플리케이션의 오류를 빠르게 식별하고 진단할 수 있습니다. 
 
-이 빠른 시작은 기존 ASP.NET Core 웹 애플리케이션에 Application Insights SDK를 추가하는 방법을 안내합니다. Visual Studio를 사용하지 않고 Application Insights를 구성하는 방법에 대해 알아보려면 이 [문서](../app/asp-net-core.md)를 체크 아웃하세요.
+이 빠른 시작은 기존 ASP.NET Core 웹 애플리케이션에 Application Insights SDK를 추가하는 방법을 안내합니다. Visual Studio를 사용하지 않고 Application Insights를 구성하는 방법에 대해 알아보려면 이 [문서](../app/asp-net-core.md)를 확인하세요.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -40,7 +40,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.
 
 ## <a name="enable-application-insights"></a>Application Insights 사용
 
-Application Insights는 온-프레미스 또는 클라우드에서 실행되는지 여부에 관계 없이 인터넷에 연결된 모든 애플리케이션에서 원격 분석 데이터를 수집할 수 있습니다. 이 데이터를 보기 시작하려면 다음 단계를 사용합니다.
+Application Insights는 온-프레미스 또는 클라우드에서 실행되는지 여부에 관계 없이 인터넷에 연결된 모든 애플리케이션에서 원격 분석 데이터를 수집할 수 있습니다. 이 데이터를 보기 시작하려면 다음 단계를 따릅니다.
 
 1. **리소스 만들기** > **개발자 도구** > **Application Insights**를 선택합니다.
 
@@ -76,7 +76,7 @@ Application Insights는 온-프레미스 또는 클라우드에서 실행되는�
     ![Application Insights 개요 메뉴](./media/dotnetcore-quick-start/3debug.png)
 
 > [!NOTE]
-> 데이터가 포털에 표시되려면 3-5분 정도 걸립니다. 이 응용 프로그램이 트래픽이 적은 테스트 앱인 경우 활성 요청이나 작업이 있을 때만 대부분의 메트릭이 캡처됩니다.
+> 데이터가 포털에 표시되려면 3-5분 정도 걸립니다. 이 응용 프로그램이 트래픽이 적은 테스트 앱인 경우 대부분의 메트릭은 활성 요청이나 작업이 있을 때만 캡처됩니다.
 
 ## <a name="start-monitoring-in-the-azure-portal"></a>Azure Portal에서 모니터링 시작
 
@@ -104,7 +104,7 @@ Application Insights는 온-프레미스 또는 클라우드에서 실행되는�
 테스트를 완료하면 리소스 그룹 및 모든 관련 리소스를 삭제할 수 있습니다. 이 작업을 수행하려면 다음 단계를 따르세요.
 
 > [!NOTE]
-> 기존 리소스 그룹을 사용하는 경우 아래 지침이 작동하지 않으므로 개별 Application Insights 리소스를 삭제하기만 하면 됩니다. 리소스 그룹을 삭제할 때마다 해당 그룹의 구성원인 모든 underyling 리소스가 삭제됩니다.
+> 기존 리소스 그룹을 사용하는 경우 아래 지침이 작동하지 않으므로 개별 Application Insights 리소스를 삭제하기만 하면 됩니다. 리소스 그룹을 삭제할 때마다 해당 그룹의 구성원인 모든 하위 리소스가 삭제됩니다.
 
 1. Azure Portal의 왼쪽 메뉴에서 **리소스 그룹**과 **myResourceGroup**을 차례로 클릭합니다.
 2. 리소스 그룹 페이지에서 **삭제**를 클릭하고 텍스트 상자에 **myResourceGroup**을 입력한 후 **삭제**를 클릭합니다.
